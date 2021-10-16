@@ -18,7 +18,6 @@ GL_COMMIT=	6ef5c821f66d92c2a1ca3fc964b511425dacd18e
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 gtkmm30 \
 		libsigc++20 pango pangomm
 
-
 DESKTOP_ENTRIES=	"Sysctlview" \
 			"Show and set the kernel state" \
 			"sysctlview" \

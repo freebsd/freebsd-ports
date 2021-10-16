@@ -12,7 +12,6 @@ COMMENT=	Sender authentication milter supporting SPF and Sender ID
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl-incdir=${OPENSSLINC} \
 		--with-ssl-libdir=${OPENSSLLIB}

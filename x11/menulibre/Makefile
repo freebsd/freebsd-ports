@@ -20,7 +20,6 @@ USES=		desktop-file-utils gettext gnome python:3.4+
 USE_GNOME=	intltool pygobject3
 USE_PYTHON=	distutils
 
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluesabre
 

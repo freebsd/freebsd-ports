@@ -10,7 +10,6 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
 
-
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Groupfolders app for Nextcloud
 

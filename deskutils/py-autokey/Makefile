@@ -24,7 +24,6 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	distutils concurrent
 USE_GITHUB=	yes
 
-
 NO_ARCH=	yes
 
 OPTIONS_MULTI=	GUI

@@ -26,7 +26,6 @@ MESON_ARGS=	-Dsystemd=false -Ddevice-udev=false \
 		-Dmount-udisks=false -Dmount-eeze=false -Dbluez5=false \
 		-Dconnman=false --sysconfdir=/usr/local/etc
 
-
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 

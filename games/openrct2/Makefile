@@ -43,7 +43,6 @@ PORTDATA=	*
 PORTDOCS=	changelog.txt contributors.md licence.txt openrct2.d.ts \
 		readme.txt scripting.md
 
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

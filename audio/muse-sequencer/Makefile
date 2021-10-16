@@ -32,7 +32,6 @@ USE_QT=		core gui svg xml widgets buildtools_build linguisttools_build qmake_bui
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
 USE_LDCONFIG=	yes
 
-
 CMAKE_OFF=	ENABLE_ALSA ENABLE_DSSI
 
 WRKSRC_SUBDIR=	muse3

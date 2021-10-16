@@ -135,7 +135,6 @@ GH_TUPLE=	\
 GL_TUPLE=	gitlab-org:gitaly:e078d5bd7c5eb37caa222faa15010ce6decc6aa6:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:labkit:9205b46eea68f47a36cefa783a306476f0b2dbfd:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
-
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \

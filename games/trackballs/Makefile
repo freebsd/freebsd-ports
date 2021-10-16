@@ -26,7 +26,6 @@ LICENSE_PERMS_ETHYMONICS=	dist-mirror dist-sell pkg-mirror pkg-sell \
 
 USE_GITHUB=	yes
 
-
 CMAKE_ARGS+=	-DTRACKBALLS_DOC_DIR=${DOCSDIR} \
 		-DTRACKBALLS_MAN_DIR=${PREFIX}/man
 

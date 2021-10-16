@@ -34,5 +34,4 @@ SHEBANG_FILES=	data/icons/meson_updateiconcache.py \
 
 GLIB_SCHEMAS=	org.gnome.Patience.WindowState.gschema.xml
 
-
 .include <bsd.port.mk>

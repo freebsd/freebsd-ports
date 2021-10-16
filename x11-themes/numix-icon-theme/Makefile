@@ -13,7 +13,6 @@ USES=		gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	numixproject
 
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 

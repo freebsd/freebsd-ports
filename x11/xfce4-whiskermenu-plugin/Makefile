@@ -17,7 +17,6 @@ USES=		cmake compiler:c++14-lang gettext-tools gnome localbase pkgconfig \
 USE_GNOME=	cairo gtk30
 USE_XFCE=	panel
 
-
 OPTIONS_DEFINE=	NLS
 
 OPTIONS_SUB=	yes

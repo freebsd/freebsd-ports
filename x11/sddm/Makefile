@@ -56,5 +56,4 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/xinit-session ${STAGEDIR}${PREFIX}/share/sddm/scripts
 	${REINPLACE_CMD} -e 's#@@LOCALBASE@@#${LOCALBASE}#' ${STAGEDIR}${PREFIX}/share/sddm/scripts/xinit-session
 
-
 .include <bsd.port.mk>

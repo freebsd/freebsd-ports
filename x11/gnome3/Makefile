@@ -76,5 +76,4 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 DOCS_RUN_DEPENDS=	gnome-user-docs>=0:misc/gnome-user-docs \
 			gnome-getting-started-docs>=0:misc/gnome-getting-started-docs
 
-
 .include <bsd.port.mk>

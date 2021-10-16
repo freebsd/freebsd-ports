@@ -24,7 +24,6 @@ RUN_DEPENDS=	ploticus>=2.40:math/ploticus				\
 		p5-URI>=1.73:net/p5-URI					\
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple
 
-
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure patch

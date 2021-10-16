@@ -28,5 +28,4 @@ DOCS_MESON_TRUE=	gtk_doc
 #       description: 'Which image processing backend to use')
 #option('with-docs', type : 'combo', choices : ['auto', 'yes', 'no'], value : 'auto')
 
-
 .include <bsd.port.mk>

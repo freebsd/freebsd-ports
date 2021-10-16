@@ -31,7 +31,6 @@ MASTER_SITES=	https://gitlab.com/spectral-im/spectral/-/archive/${PORTVERSION}/:
 		https://github.com/oKcerG/${SFPMNAME}/archive/:sfpm \
 		https://github.com/quotient-im/${QUOTNAME}/archive/:quot
 
-
 post-extract:
 	${RMDIR} ${WRKSRC}/include/${SFPMNAME} ${WRKSRC}/include/${QUOTNAME}
 	${LN} -s ${WRKDIR}/${SFPMNAME}-${SFPMVERSION} ${WRKSRC}/include/${SFPMNAME}

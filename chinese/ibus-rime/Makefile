@@ -19,7 +19,6 @@ RUN_DEPENDS=	${_SCHEMA_DEPENDS}
 USES=		cmake gnome pkgconfig
 USE_CSTD=	c99
 
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
 

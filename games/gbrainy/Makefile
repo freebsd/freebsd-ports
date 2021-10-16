@@ -24,5 +24,4 @@ GNU_CONFIGURE=	yes
 
 MAKE_ENV+=	MONO_REGISTRY_PATH=${WRKDIR}
 
-
 .include <bsd.port.mk>

@@ -33,7 +33,6 @@ USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		buildtools_build qmake_build testlib_build
 USE_LDCONFIG=	yes
 
-
 OPTIONS_DEFINE=		INOTIFY DOCS
 OPTIONS_DEFAULT=	INOTIFY
 OPTIONS_SUB=		yes

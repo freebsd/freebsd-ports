@@ -33,7 +33,6 @@ SHEBANG_FILES=	src/kconf_update/kalarm*.pl
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

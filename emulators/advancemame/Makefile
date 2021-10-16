@@ -50,7 +50,6 @@ BINARY_ALIAS=		freetype-config=true
 DEPRECATED=	Heavily outdated and unmaintained
 EXPIRATION_DATE=	2021-10-31
 
-
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc

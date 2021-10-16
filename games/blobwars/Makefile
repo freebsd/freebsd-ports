@@ -15,7 +15,6 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/doc/license
 USES=		gmake gnome pkgconfig sdl
 USE_SDL=	image2 mixer2 net2 sdl2 ttf2
 
-
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NLS

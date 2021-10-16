@@ -32,7 +32,6 @@ NO_ARCH=	yes
 
 USE_GNOME=	gtksourceview4 introspection:run intltool librsvg2 pygobject3
 
-
 SHEBANG_FILES=	virt-manager \
 		virt-install \
 		virt-clone \

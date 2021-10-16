@@ -10,7 +10,6 @@ COMMENT=	GBA emulator written in golang
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
 USES=		gl go:modules openal pkgconfig

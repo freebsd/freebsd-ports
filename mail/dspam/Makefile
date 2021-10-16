@@ -165,7 +165,6 @@ _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
 		-e '/^%%FreeBSD/D'
 
-
 .if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--enable-syslog
 .else

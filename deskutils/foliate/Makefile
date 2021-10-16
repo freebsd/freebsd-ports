@@ -18,7 +18,6 @@ USES=		desktop-file-utils gnome localbase meson python:3.6+ shebangfix
 USE_GNOME=	cairo gtk30 introspection
 GLIB_SCHEMAS=	com.github.johnfactotum.Foliate.gschema.xml
 
-
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson/postinstall.py \
 		${WRKSRC}/src/assets/KindleUnpack/*.py
 

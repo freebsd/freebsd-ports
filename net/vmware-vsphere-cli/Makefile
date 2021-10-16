@@ -43,7 +43,6 @@ RUN_DEPENDS=		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 			p5-Net-INET6Glue>0:net/p5-Net-INET6Glue \
 			p5-Net-HTTP>0:net/p5-Net-HTTP
 
-
 USES=			perl5 shebangfix
 USE_PERL5=		configure
 NO_PACKAGE=		May not be redistributed.  Must accept license to download.

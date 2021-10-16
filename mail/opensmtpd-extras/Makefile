@@ -46,7 +46,6 @@ NO_OPTIONS_SORT=	yes
 BUILD_DEPENDS=	smtpctl:mail/opensmtpd
 RUN_DEPENDS=	smtpctl:mail/opensmtpd
 
-
 .if empty(SLAVE_PORT)
 OPTIONS_GROUP=			TABLE QUEUE SCHEDULER
 OPTIONS_GROUP_QUEUE=		QUEUE_RAM

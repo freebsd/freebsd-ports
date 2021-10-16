@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lainsce
 USE_GNOME=	glib20 gtk30 gtksourceview3
 
-
 GLIB_SCHEMAS=	com.github.lainsce.quilter.gschema.xml
 
 LDFLAGS+=	${LOCALBASE}/lib/libmarkdown.a

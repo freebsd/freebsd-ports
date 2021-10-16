@@ -21,7 +21,6 @@ USE_QT=		core dbus gui declarative \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcomposite
 
-
 QT_BINARIES=	yes
 
 .include <bsd.port.mk>

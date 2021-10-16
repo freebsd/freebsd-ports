@@ -61,7 +61,6 @@ CHMLIB_CONFIGURE_ON=	--enable-chmlib=yes
 CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:misc/chmlib
 
-
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt textcat32_conf.txt

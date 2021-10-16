@@ -76,7 +76,6 @@ PLIST+=	${.CURDIR}/pkg-plist.powerpc
 CONFIGURE_ARGS+=	--enable-btls
 .endif
 
-
 post-extract-MONOLITE-on:
 	${MKDIR} ${WRKSRC}/mcs/class/lib/monolite-linux
 	${MV} ${WRKDIR}/monolite-linux-${MONOLITE_VERSION}-latest ${WRKSRC}/mcs/class/lib/monolite-linux/${MONOLITE_VERSION}

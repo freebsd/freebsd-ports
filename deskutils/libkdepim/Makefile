@@ -22,7 +22,6 @@ USE_QT=		concurrent core dbus designer gui network testlib uiplugin uitools \
 
 USE_LDCONFIG=	yes
 
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

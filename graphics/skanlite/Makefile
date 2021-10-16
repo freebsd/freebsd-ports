@@ -19,5 +19,4 @@ USE_KDE=	auth config configwidgets codecs completion \
 USE_QT=		core concurrent dbus gui network widgets xml \
 		buildtools_build qmake_build testlib_build
 
-
 .include <bsd.port.mk>

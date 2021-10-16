@@ -56,7 +56,6 @@ pre-configure:
 	# https://github.com/jwilk/pdf2djvu/issues/144
 	${REINPLACE_CMD} -e 's|poppler-splash|poppler|g' ${WRKSRC}/configure
 
-
 post-build-DOCS-on:
 	@cd ${WRKSRC}/doc && ${GMAKE}
 

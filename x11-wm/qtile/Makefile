@@ -47,5 +47,4 @@ post-install:
 	(cd ${WRKDIR} && ${INSTALL_DATA} qtile.desktop \
 		${STAGEDIR}${PREFIX}/share/xsessions)
 
-
 .include <bsd.port.mk>

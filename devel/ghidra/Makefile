@@ -46,7 +46,6 @@ SHEBANG_FILES=	Ghidra/RuntimeScripts/Common/server/jaas_external_program.example
 		Ghidra/RuntimeScripts/Linux/server/* \
 		Ghidra/RuntimeScripts/Linux/support/*
 
-
 # Gradle cache path must be absolute (see https://github.com/gradle/gradle/issues/1338)
 GRADLE_HOME_BASE=	/tmp
 GRADLE_RUN=		${SETENV} ${MAKE_ENV} gradle5 --gradle-user-home \

@@ -27,5 +27,4 @@ GH_ACCOUNT=	iurie-sw
 USE_GNOME=	cairo
 USE_XORG=	x11
 
-
 .include <bsd.port.mk>

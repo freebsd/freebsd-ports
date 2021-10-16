@@ -34,5 +34,4 @@ do-install:
 	@(cd ${WRKSRC}; ${FIND} . -not -type d) | ${SORT} | \
 		${SED} -e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
 
-
 .include <bsd.port.mk>

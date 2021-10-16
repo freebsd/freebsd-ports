@@ -33,7 +33,6 @@ CMAKE_TESTING_TARGET=	testall
 
 CXXFLAGS+=	-I${WRKSRC}/third-party/google-test/googletest
 
-
 BINARY_ALIAS=	git=false
 
 LDFLAGS+=	-pthread # only for tests: see https://gitlab.com/palisade/palisade-release/-/issues/23

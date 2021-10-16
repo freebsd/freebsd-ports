@@ -10,7 +10,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblfcbase.so:devel/lfcbase
 
-
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dragon
 

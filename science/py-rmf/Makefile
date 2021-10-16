@@ -33,5 +33,4 @@ do-test: # one testcase fails: https://github.com/salilab/rmf/issues/126
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-
 .include <bsd.port.mk>

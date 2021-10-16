@@ -25,7 +25,6 @@ NO_ARCH=	yes
 
 PORTDOCS=	*.rst
 
-
 DESKTOP_ENTRIES="PySpaceWar" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 

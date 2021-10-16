@@ -47,7 +47,6 @@ RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-URI-db>=0.15:net/p5-URI-db \
 		p5-namespace-autoclean>=0.16:devel/p5-namespace-autoclean
 
-
 USES=		gettext perl5
 USE_PERL5=	modbuild
 NO_ARCH=	YES

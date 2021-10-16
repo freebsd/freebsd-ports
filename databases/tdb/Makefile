@@ -53,7 +53,6 @@ PLIST_FILES+=		include/tdb.h \
 			lib/libtdb.so.1 \
 			${PKGCONFIGDIR}/tdb.pc
 
-
 .if defined(NO_PYTHON)
 USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python

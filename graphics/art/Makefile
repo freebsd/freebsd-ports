@@ -32,7 +32,6 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
-
 .include <bsd.port.pre.mk>
 
 # breaks with llvm-8

@@ -25,7 +25,6 @@ USE_GL=		gl
 USE_GNOME=	glib20
 USE_XORG=	x11
 
-
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-c++11-narrowing
 LDFLAGS_i386=	-Wl,-znotext

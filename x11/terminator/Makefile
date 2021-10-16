@@ -28,7 +28,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PYDISTUTILS_PKGNAME=	Terminator
 
-
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>

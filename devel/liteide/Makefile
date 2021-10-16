@@ -27,7 +27,6 @@ GH_TUPLE=	visualfc:gocode:cfcb188102ae:visualfc_gocode \
 		visualfc:goversion:v1.0.1:visualfc_goversion/vendor/github.com/visualfc/goversion \
 		yuin:goldmark:v1.2.1:yuin_goldmark/vendor/github.com/yuin/goldmark
 
-
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_QT=		buildtools_build core gui network printsupport widgets xml

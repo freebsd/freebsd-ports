@@ -28,7 +28,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-
 # pytest needs a UTF-8 environment, and it will try and write outside
 # ${WRKDIR} unless told not to.
 

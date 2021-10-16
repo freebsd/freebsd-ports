@@ -25,5 +25,4 @@ post-patch:
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${STAGEDIR}${PREFIX} > ${WRKSRC}/conf-home
 
-
 .include <bsd.port.mk>

@@ -220,7 +220,6 @@ GH_TUPLE=	\
 GL_TUPLE=	gitlab-org:gitaly:31bbf1c0f7cd100c63f44f52a14575da1579276a:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:labkit:56e2f8af39d9bea0f038a8d2135a1cc89016c62a:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
-
 GO_BUILDFLAGS=	-tags="tracer_static,tracer_static_jaeger" \
 		-ldflags=" \
 		-X gitlab.com/gitlab-org/cluster-integration/gitlab-agent/cmd.Version=v${PORTVERSION} \
@@ -249,5 +248,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/kas ${STAGEDIR}${PREFIX}/bin/kas
 
 .include <bsd.port.mk>
-
 
