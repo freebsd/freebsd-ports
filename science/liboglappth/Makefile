@@ -10,7 +10,7 @@ MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gl libtool pathfix
 USE_GL=		glu

@@ -24,7 +24,7 @@ LZO_DESC=	Support lzo compression via liblzo2
 MBEDTLS_DESC=	Crypto support from mbedTLS
 NETTLE_DESC=	Crypto support from Nettle
 OPENSSL_DESC=	Crypto support from OpenSSL
-ZSTD_DESC=      Support zstd compression
+ZSTD_DESC=	Support zstd compression
 
 USES=		cpe iconv libtool localbase:ldflags pathfix
 GNU_CONFIGURE=	yes

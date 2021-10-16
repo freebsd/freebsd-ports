@@ -34,11 +34,11 @@ CONFLICTS_INSTALL=	mongodb36 mongodb4[024]
 
 OPTIONS_DEFINE=	LTO SASL SSL
 OPTIONS_DEFAULT=LTO SASL SSL
-OPTIONS_EXCLUDE_aarch64=        ${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-OPTIONS_EXCLUDE_aarch64_14=     LTO # Does not work with llvm12 on aarch64.
+OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
+OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12 on aarch64.
 
-SHEBANG_FILES=  buildscripts/scons.py
-python_OLD_CMD= @python_interpreter@
+SHEBANG_FILES=	buildscripts/scons.py
+python_OLD_CMD=	@python_interpreter@
 
 MAKE_ARGS=	--use-system-zlib \
 		--use-system-pcre \

@@ -1,8 +1,8 @@
 PORTNAME=	kdiagram
 DISTVERSION=	2.8.0
 CATEGORIES=	graphics kde
-MASTER_SITES=   KDE/stable/${PORTNAME}/${DISTVERSION}/
-DIST_SUBDIR=    KDE/${PORTNAME}
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
+DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library to create business diagrams

@@ -4,7 +4,7 @@ PORTNAME=	mustache
 PORTVERSION=	0.99.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=  0
+PKGNAMESUFFIX=	0
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework-agnostic way to render logic-free views

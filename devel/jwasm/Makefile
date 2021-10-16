@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		alias dos2unix gmake
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	Baron-von-Riedesel
 GH_PROJECT=	JWasm
 GH_TAGNAME=	f0a2fdd

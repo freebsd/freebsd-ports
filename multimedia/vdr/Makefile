@@ -13,7 +13,7 @@ COMMENT=	Video Disk Recorder - development version
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=  v4l_compat>=1.0.20120501:multimedia/v4l_compat \
+BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat \
 		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype

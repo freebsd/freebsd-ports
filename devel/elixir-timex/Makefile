@@ -12,7 +12,7 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker
 
-MIX_BUILD_DEPS= devel/elixir-combine \
+MIX_BUILD_DEPS=	devel/elixir-combine \
 		devel/elixir-gettext \
 		devel/elixir-tzdata \
 		www/elixir-httpoison

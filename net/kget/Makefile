@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE download manager
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
-LIB_DEPENDS=    libKF5Torrent.so:net-p2p/libktorrent  \
+LIB_DEPENDS=	libKF5Torrent.so:net-p2p/libktorrent  \
 		libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \

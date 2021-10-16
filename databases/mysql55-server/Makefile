@@ -52,11 +52,11 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .include <bsd.port.options.mk>
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-USES+=          compiler:gcc-c++11-lib
-USE_CXXSTD=     gnu++11
+USES+=		compiler:gcc-c++11-lib
+USE_CXXSTD=	gnu++11
 .else
-USES+=          compiler:c++11-lang
-USE_CXXSTD=     gnu++98
+USES+=		compiler:c++11-lang
+USE_CXXSTD=	gnu++98
 .endif
 
 .if ${PORT_OPTIONS:MSSL}

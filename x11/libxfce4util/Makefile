@@ -29,8 +29,8 @@ OPTIONS_SUB=		yes
 GIR_DESC=		Use Gobject Introspection
 
 GIR_USE=		gnome=introspection:build
-GIR_CONFIGURE_ON=       --enable-introspection=yes
-GIR_CONFIGURE_OFF=      --enable-introspection=no
+GIR_CONFIGURE_ON=	--enable-introspection=yes
+GIR_CONFIGURE_OFF=	--enable-introspection=no
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime

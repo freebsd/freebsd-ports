@@ -10,7 +10,7 @@ COMMENT=	Frontend to easily manage filesystem connections
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=         aarch64 amd64 armv6 armv7 i386 powerpc \
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc \
 			powerpc64 powerpc64le powerpcspe
 ONLY_FOR_ARCHS_REASON=	Does not compile
 

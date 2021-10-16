@@ -18,7 +18,7 @@ GH_ACCOUNT=	hselasky
 PLIST_FILES=	sbin/alsa-seq-server \
 		man/man8/alsa-seq-server.8.gz
 
-OPTIONS_DEFINE=        DEBUG
+OPTIONS_DEFINE=	DEBUG
 
 MAKE_ARGS+=	HAVE_MAN="YES"
 MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	gplink-[0-9]*
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-dependency-tracking --disable-html-doc
+CONFIGURE_ARGS=	--disable-dependency-tracking --disable-html-doc
 USES=		bison:alias gmake tar:bz2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*//}
 

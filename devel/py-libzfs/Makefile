@@ -10,7 +10,7 @@ COMMENT=	Python libzfs bindings
 
 LICENSE=	BSD2CLAUSE
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	truenas
 GH_PROJECT=	py-libzfs
 GH_TAGNAME=	8702fda

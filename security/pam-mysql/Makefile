@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf compiler:c11 libtool:keepla mysql pkgconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=     NigelCunningham
+GH_ACCOUNT=	NigelCunningham
 GH_PROJECT=	pam-MySQL
 GNU_CONFIGURE=	yes
 
@@ -27,11 +27,11 @@ PLIST_FILES=	lib/pam_mysql.so lib/pam_mysql.la
 OPTIONS_DEFINE=	DOCS SSL
 OPTIONS_DEFAULT=	DOCS SSL
 
-SSL_DESC=       Build with OpenSSL support (non-crypt()ish MD5 and SHA1 hash)
-SSL_CONFIGURE_ENV= openssl_CFLAGS="${OPENSSLINC}" \
-	           openssl_LIBS="${OPENSSLLIB}"
-SSL_CONFIGURE_WITH=openssl
-SSL_USES=	ssl
+SSL_DESC=		Build with OpenSSL support (non-crypt()ish MD5 and SHA1 hash)
+SSL_CONFIGURE_ENV=	openssl_CFLAGS="${OPENSSLINC}" \
+			openssl_LIBS="${OPENSSLLIB}"
+SSL_CONFIGURE_WITH=	openssl
+SSL_USES=		ssl
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pam_mysql.so

@@ -13,7 +13,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Peltoche
 
-CARGO_CRATES=   aho-corasick-0.7.13 \
+CARGO_CRATES=	aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
 		arrayref-0.3.6 \

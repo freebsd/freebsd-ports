@@ -13,7 +13,7 @@ LICENSE_DIR=	${WRKSRC}/llvm
 .include "Makefile.LICENSE"
 LICENSE+=	LLVM2
 LICENSE_FILE_LLVM2=	${LICENSE_DIR}/LICENSE.TXT
-LICENSE_NAME_LLVM2= 	Apache License 2.0 with LLVM Exceptions
+LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE:=	${LICENSE:NARM}
 
@@ -280,7 +280,7 @@ MAN1SRCS+=	clang.1 \
 		diagtool.1 \
 		scan-build.1
 CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
-SHEBANG_FILES+= clang/tools/clang-format/git-clang-format \
+SHEBANG_FILES+=	clang/tools/clang-format/git-clang-format \
 		clang/tools/clang-format/clang-format-diff.py \
 		clang/tools/scan-view/bin/scan-view \
 		clang/utils/hmaptool/hmaptool

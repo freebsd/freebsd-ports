@@ -70,7 +70,7 @@ BINARY_ALIAS=	freetype-config=true
 
 # during build phase gnu configure is run a lot
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-native-texlive-build \
+CONFIGURE_ARGS=	--disable-native-texlive-build \
 		--disable-web-progs \
 		--disable-psutils \
 		--enable-shared \

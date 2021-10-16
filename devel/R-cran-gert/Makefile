@@ -16,7 +16,7 @@ CRAN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass \
 		R-cran-zip>=2.1.0:archivers/R-cran-zip
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
-LIB_DEPENDS=    libgit2.so:devel/libgit2
+LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		cran:auto-plist
 

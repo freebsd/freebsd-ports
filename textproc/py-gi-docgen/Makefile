@@ -3,7 +3,7 @@ PORTVERSION=	2021.5
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	GNOME
-PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Documentation generator for GObject-based libraries
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typogrify>0:textproc/py-typogrify@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON= 	autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 

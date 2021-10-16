@@ -9,7 +9,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from X.Org
 
 LICENSE=	MIT
-LICENSE_FILE= ${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	tradcpp:devel/tradcpp
 RUN_DEPENDS=	gccmakedep:devel/gccmakedep \

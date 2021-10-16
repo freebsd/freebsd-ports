@@ -16,7 +16,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlessioDP
 
-GH_TUPLE=       \
+GH_TUPLE=	\
 		aead:argon2:a87724528b07:aead_argon2/vendor/github.com/aead/argon2 \
 		aead:chacha20:8b13a72661da:aead_chacha20/vendor/github.com/aead/chacha20 \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \

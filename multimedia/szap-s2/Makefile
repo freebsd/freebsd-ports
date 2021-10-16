@@ -11,7 +11,7 @@ COMMENT=	Simple zapping tool for the Linux DVB S2 API
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:multimedia/v4l_compat
 
 USES=		gmake tar:bzip2
 USE_CSTD=	gnu89

@@ -26,7 +26,7 @@ GH_ACCOUNT=	xmlroff
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	xmlroff
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-gtk-doc \
+CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-gp
 INSTALL_TARGET=	install-strip
 

@@ -27,6 +27,6 @@ OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 
 NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=   nls
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

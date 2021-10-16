@@ -5,7 +5,7 @@ CATEGORIES=	biology
 
 # As of March 2018, unanimity is no longer open source.
 # See https://github.com/PacificBiosciences/ccs.
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PacBio BAM C++ library, with SWIG bindings
 
 LICENSE=	BSD3CLAUSE

@@ -30,7 +30,7 @@ JAVA_VERSION=	1.8+
 
 CONFLICTS_INSTALL=	puppetserver5-* puppetserver6-*
 
-SHEBANG_FILES=  ext/bin/puppetserver
+SHEBANG_FILES=	ext/bin/puppetserver
 
 USERS=		puppet
 GROUPS=		puppet

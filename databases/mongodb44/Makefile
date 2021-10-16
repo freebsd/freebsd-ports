@@ -30,7 +30,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 USES=		compiler:c++17-lang cpe python:3.5+,build scons
 USE_RC_SUBR=	mongod
 
-PORTSCOUT=     limit:^4\.4\.
+PORTSCOUT=	limit:^4\.4\.
 
 CONFLICTS_INSTALL=	mongodb36 mongodb4[02]
 

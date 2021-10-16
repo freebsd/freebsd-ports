@@ -16,7 +16,7 @@ USE_PHP=	json pdo_pgsql
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	dlangille
 GH_PROJECT=	SamDrucker
 

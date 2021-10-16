@@ -8,7 +8,7 @@ MASTER_SITES=	http://smyrak.com/freebsd/dists/
 DISTNAME=	Jimmac
 
 MAINTAINER=	ps.ports@smyrak.com
-COMMENT=	Beautiful Jimmac X cursor themes.
+COMMENT=	Beautiful Jimmac X cursor themes
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

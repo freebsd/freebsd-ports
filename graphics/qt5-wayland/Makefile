@@ -19,7 +19,7 @@ USE_GL=		egl gl
 USE_GNOME=	glib20
 USE_QT=		core dbus gui declarative \
 		buildtools_build qmake_build
-USE_XORG=       x11 xcomposite
+USE_XORG=	x11 xcomposite
 
 
 QT_BINARIES=	yes

@@ -1,15 +1,15 @@
-PORTNAME=       git-lab
-DISTVERSION=    0.1
-CATEGORIES=     devel
+PORTNAME=	git-lab
+DISTVERSION=	0.1
+CATEGORIES=	devel
 
-MAINTAINER=     adridg@FreeBSD.org
-COMMENT=        GitLab management commands for git CLI
+MAINTAINER=	adridg@FreeBSD.org
+COMMENT=	GitLab management commands for git CLI
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=2.1.8:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gitlab>=2.7.1:devel/py-python-gitlab@${PY_FLAVOR}
 
-USES=           python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITLAB=	yes

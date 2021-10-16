@@ -5,7 +5,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gatemken@cisco.com
-COMMENT= 	Quickly filter or group "chained" models
+COMMENT=	Quickly filter or group "chained" models
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${FILESDIR}/LICENSE

@@ -28,7 +28,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # The port does not build with C++11 or later (bug 219275).
-USE_CXXSTD=     gnu++98
+USE_CXXSTD=	gnu++98
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 

@@ -22,7 +22,7 @@ PLIST_FILES=	bin/adcomplain
 
 # fix-shebang normally runs before the patches in ${FILESDIR} are applied.  In
 # this case, we need it to run after, so that it can fix the right shebang.
-TARGET_ORDER_OVERRIDE= 750:fix-shebang
+TARGET_ORDER_OVERRIDE=	750:fix-shebang
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/adcomplain.pl \

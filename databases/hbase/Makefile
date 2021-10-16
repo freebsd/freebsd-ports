@@ -43,7 +43,7 @@ USERS=		${HBASE_USER}
 GROUPS=		${HBASE_GROUP}
 
 SUB_FILES=	hbase-env-dist.sh pkg-message
-USE_RC_SUBR=    hbase_master hbase_regionserver
+USE_RC_SUBR=	hbase_master hbase_regionserver
 SUB_LIST=	HBASE_USER="${HBASE_USER}" \
 		JAVA_HOME="${JAVA_HOME}" \
 		HBASE_LOG_DIR="${HBASE_LOGDIR}" \

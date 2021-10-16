@@ -17,7 +17,7 @@ USES=		xorg-cat:driver
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libxatracker.so:graphics/mesa-gallium-xa
 
-CONFIGURE_ARGS= --without-libudev
+CONFIGURE_ARGS=	--without-libudev
 
 .include <bsd.port.options.mk>
 

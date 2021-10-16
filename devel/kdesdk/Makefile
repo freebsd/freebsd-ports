@@ -29,7 +29,7 @@ DEVUTILS_DESC=		KDE development utilities
 DEVUTILS_RUN_DEPENDS=	kde-dev-utils>=${KDE_APPLICATIONS_VERSION}:devel/kde-dev-utils
 
 DEVSCRIPTS_DESC=	KDE development scripts
-DEVSCRIPTS_RUN_DEPENDS= kde-dev-scripts>=${KDE_APPLICATIONS_VERSION}:devel/kde-dev-scripts
+DEVSCRIPTS_RUN_DEPENDS=	kde-dev-scripts>=${KDE_APPLICATIONS_VERSION}:devel/kde-dev-scripts
 
 DOLPHIN_DESC=		Plugins for Dolphin file manager
 DOLPHIN_RUN_DEPENDS=	dolphin-plugins>=${KDE_APPLICATIONS_VERSION}:devel/dolphin-plugins

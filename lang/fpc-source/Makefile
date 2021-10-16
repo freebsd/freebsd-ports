@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/ \
 		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/ \
 		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/ \
 		SF/freepascal/Source/${PORTVERSION}
-PKGNAMESUFFIX=  -source
+PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org

@@ -17,8 +17,8 @@ _BUILD_COMMIT=	71385e9
 
 GO_MODULE=	github.com/makeworld-the-better-one/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
- 	      	-s -w \
-		-X main.version=${_BUILD_VERSION}  \
+		-s -w \
+		-X main.version=${_BUILD_VERSION} \
 		-X main.commit=${_BUILD_COMMIT}"
 
 PLIST_FILES=	bin/${PORTNAME}

@@ -17,7 +17,7 @@ USES=		bison compiler:c11 gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vandry
 
-CONFIGURE_ARGS= --prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/mairix \
 		man/man1/mairix.1.gz \

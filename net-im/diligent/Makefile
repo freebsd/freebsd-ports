@@ -25,7 +25,7 @@ GH_ACCOUNT=	trueos
 PLIST_FILES=	bin/diligent \
 		share/applications/diligent.desktop \
 		share/icons/diligent.png
-SUB_FILES=      diligent.desktop
+SUB_FILES=	diligent.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diligent ${STAGEDIR}${PREFIX}/bin

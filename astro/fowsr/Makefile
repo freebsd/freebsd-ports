@@ -14,7 +14,7 @@ WRKSRC_SUBDIR=	${PORTNAME}.src
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apachler
-GH_TAGNAME= 571db38
+GH_TAGNAME=	571db38
 
 USES=		gmake dos2unix
 

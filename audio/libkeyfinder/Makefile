@@ -1,6 +1,6 @@
 PORTNAME=	libkeyfinder
 PORTVERSION=	2.2.4
-DISTVERSIONPREFIX=      v
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 USES=		cmake
 
 USE_GITHUB=	yes
-GH_ACCOUNT=     mixxxdj
+GH_ACCOUNT=	mixxxdj
 
 CMAKE_ARGS+=	-DBUILD_TESTING:BOOL=OFF
 

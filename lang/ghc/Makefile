@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-BOOT_GHC_VERSION=      8.6.3
+BOOT_GHC_VERSION=	8.6.3
 .elif ${ARCH} == aarch64 || ${ARCH:Marmv*}
 BOOT_GHC_VERSION=	8.10.7
 .else

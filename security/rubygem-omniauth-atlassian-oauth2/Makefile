@@ -7,7 +7,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	An Atlassian OAuth2 strategy for OmniAuth
+COMMENT=	Atlassian OAuth2 strategy for OmniAuth
 
 LICENSE=	MIT
 

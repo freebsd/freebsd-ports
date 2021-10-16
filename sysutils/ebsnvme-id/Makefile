@@ -21,7 +21,7 @@ PLIST_FILES=	etc/rc.d/dev_aws_disk		\
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300039
-IGNORE= needs NVME_GET_NSID ioctl
+IGNORE=		needs NVME_GET_NSID ioctl
 .endif
 
 post-install:

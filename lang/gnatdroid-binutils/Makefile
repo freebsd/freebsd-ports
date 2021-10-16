@@ -22,7 +22,7 @@ USES=		gmake tar:bzip2
 HAS_CONFIGURE=	yes
 NO_MTREE=	yes
 
-NO_LICENSES_INSTALL= yes
+NO_LICENSES_INSTALL=	yes
 
 WRKSRC=			${WRKDIR}/binutils-${PORTVERSION}
 PREFIX?=		${LOCALBASE}/android

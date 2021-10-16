@@ -20,8 +20,8 @@ WRKSRC=		${WRKDIR}/Pachi
 SCOREDIR=	/var/games/${PORTNAME}
 SCOREFILE=	${SCOREDIR}/scores.dat
 
-SUB_FILES=      pkg-deinstall pkg-install
-SUB_LIST=       SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}"
+SUB_FILES=	pkg-deinstall pkg-install
+SUB_LIST=	SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}"
 
 PORTDATA=	*
 

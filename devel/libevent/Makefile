@@ -4,7 +4,7 @@ PORTNAME=	libevent
 DISTVERSION=	2.1.12
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel
-MASTER_SITES=   https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}${DISTVERSIONSUFFIX}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}${DISTVERSIONSUFFIX}/
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts

@@ -15,6 +15,6 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib
 USES=		cmake dos2unix localbase:ldflags
 
 USE_GITHUB=	yes
-GH_ACCOUNT=     mixxxdj
+GH_ACCOUNT=	mixxxdj
 
 .include <bsd.port.mk>

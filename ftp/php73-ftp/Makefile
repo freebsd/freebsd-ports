@@ -4,7 +4,7 @@ MASTERDIR=	${.CURDIR}/../../lang/php73
 
 PKGNAMESUFFIX=	-ftp
 
-TEST_TARGET=    test
+TEST_TARGET=	test
 
 post-patch:
 	@${REINPLACE_CMD} s/HAVE_OPENSSL_EXT/__FreeBSD__/ \

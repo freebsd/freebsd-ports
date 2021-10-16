@@ -16,6 +16,6 @@ USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO
-WRKSRC= 	${WRKDIR}/${DISTNAME}-0
+WRKSRC=		${WRKDIR}/${DISTNAME}-0
 
 .include <bsd.port.mk>

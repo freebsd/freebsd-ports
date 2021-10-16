@@ -14,7 +14,7 @@ USES=		desthack readline
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	es_cv_abused_getenv=no
-CONFIGURE_ARGS= --with-readline
+CONFIGURE_ARGS=	--with-readline
 CFLAGS:=	${CFLAGS:N-O*}
 ALL_TARGET=	es
 

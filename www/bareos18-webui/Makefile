@@ -1,7 +1,7 @@
-PORTNAME=       bareos
-DISTVERSIONPREFIX=      Release/
-DISTVERSION=    18.2.11
-CATEGORIES?=    www sysutils
+PORTNAME=	bareos
+DISTVERSIONPREFIX=	Release/
+DISTVERSION=	18.2.11
+CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	18-webui
 
 MAINTAINER=	acm@FreeBSD.org

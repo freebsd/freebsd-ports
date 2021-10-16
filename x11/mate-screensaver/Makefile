@@ -28,7 +28,7 @@ USE_MATE=	desktop libmatekbd menus session:run
 USE_XORG=	ice sm x11 xext xscrnsaver xxf86vm
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-console-kit=yes \
+CONFIGURE_ARGS=	--with-console-kit=yes \
 		--with-systemd=no
 
 GLIB_SCHEMAS=	org.mate.screensaver.gschema.xml

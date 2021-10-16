@@ -27,7 +27,7 @@ LD_FLAG_STRING=	-s \
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
 LD_FLAG_X_PREFIX=	-X github.com/prometheus/common/version
 
-GH_TUPLE=       \
+GH_TUPLE=	\
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \

@@ -14,10 +14,10 @@ COMMENT=	cfengine sample policies for installations and upgrades
 
 LICENSE=	GPLv3
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	cfengine
-GH_PROJECT=     masterfiles
-GH_TAGNAME=     ${HASH}
+GH_PROJECT=	masterfiles
+GH_TAGNAME=	${HASH}
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	cfengine
 

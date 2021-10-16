@@ -16,15 +16,15 @@ GH_ACCOUNT=	churchers
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=                BHYVE_FIRMWARE EXAMPLES GRUB2_BHYVE TMUX
-BHYVE_FIRMWARE_DESC=   Required to run UEFI guests
-EXAMPLES_DESC=         Install example guest templates
-GRUB2_BHYVE_DESC=      Required to run Linux or any other guests that need a Grub bootloader
-TMUX_DESC=             Tmux console access instead of cu/nmdm
+OPTIONS_DEFINE=		BHYVE_FIRMWARE EXAMPLES GRUB2_BHYVE TMUX
+BHYVE_FIRMWARE_DESC=	Required to run UEFI guests
+EXAMPLES_DESC=		Install example guest templates
+GRUB2_BHYVE_DESC=	Required to run Linux or any other guests that need a Grub bootloader
+TMUX_DESC=		Tmux console access instead of cu/nmdm
 
-BHYVE_FIRMWARE_RUN_DEPENDS=    bhyve-firmware>0:sysutils/bhyve-firmware
-GRUB2_BHYVE_RUN_DEPENDS=       grub2-bhyve>0:sysutils/grub2-bhyve
-TMUX_RUN_DEPENDS=              tmux:sysutils/tmux
+BHYVE_FIRMWARE_RUN_DEPENDS=	bhyve-firmware>0:sysutils/bhyve-firmware
+GRUB2_BHYVE_RUN_DEPENDS=	grub2-bhyve>0:sysutils/grub2-bhyve
+TMUX_RUN_DEPENDS=		tmux:sysutils/tmux
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vm ${STAGEDIR}${PREFIX}/sbin

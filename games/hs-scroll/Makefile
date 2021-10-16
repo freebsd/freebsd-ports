@@ -6,7 +6,7 @@ PORTREVISION=	10
 CATEGORIES=	games haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A roguelike game
+COMMENT=	Roguelike game
 
 LICENSE=	GPLv2
 

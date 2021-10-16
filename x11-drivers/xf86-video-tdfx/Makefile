@@ -6,8 +6,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org tdfx display driver
 
-LICENSE=        MIT
-LICENSE_FILE=   ${WRKSRC}/COPYING
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gl xorg-cat:driver
 USE_GL=		gl

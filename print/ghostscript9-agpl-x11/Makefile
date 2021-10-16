@@ -10,7 +10,7 @@ COMMENT=	PostScript and PDF interpreter, X11 support
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=  jbig2dec>=0.17:graphics/jbig2dec
+BUILD_DEPENDS=	jbig2dec>=0.17:graphics/jbig2dec
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \

@@ -6,7 +6,7 @@ MASTER_SITES=	https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/10161/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-zh_CN
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.x86_64
-EXTRACT_SUFX=   .rpm
+EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Complete office suite with PDF editor
@@ -16,14 +16,14 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_TEXT=	See: https://www.wps.cn/privacy/full_useragreement/
 LICENSE_PERMS=	no-auto-accept no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-ONLY_FOR_ARCHS= amd64
+ONLY_FOR_ARCHS=	amd64
 
 CONFLICTS_INSTALL=	linux-wps-office
 
 USES=		desktop-file-utils gnome linux shebangfix
 USE_LINUX=	png pulseaudio-libs xorglibs
 
-SHEBANG_FILES= 	usr/bin/et \
+SHEBANG_FILES=	usr/bin/et \
 		usr/bin/wpp \
 		usr/bin/wps \
 		usr/bin/wpspdf

@@ -4,8 +4,8 @@ PORTNAME=	viewvc
 DISTVERSION=	1.3.0-20201006
 PORTREVISION=	1
 CATEGORIES=	devel python
-PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=  -devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
@@ -40,7 +40,7 @@ SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion
 
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}pygments>=1.1:textproc/py-pygments@${PY_FLAVOR}
 
-CONFLICTS_INSTALL=      viewvc-1.[12].[0-9]*
+CONFLICTS_INSTALL=	viewvc-1.[12].[0-9]*
 
 .include <bsd.port.options.mk>
 

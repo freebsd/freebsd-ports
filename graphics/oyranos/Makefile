@@ -55,7 +55,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PLIST_SUB+=	VER=${PORTVERSION}
 
 .if !exists(/usr/bin/clang)
-USE_GCC=   yes
+USE_GCC=	yes
 .endif
 
 post-patch:

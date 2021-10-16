@@ -26,8 +26,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 USES=		cmake:insource compiler:c++11-lang gl gnome jpeg \
 		openal:soft pkgconfig xorg uniquefiles:dirs
 USE_GITHUB=	yes
-GH_ACCOUNT=    	liballeg
-GH_PROJECT=    	allegro5
+GH_ACCOUNT=	liballeg
+GH_PROJECT=	allegro5
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga sm ice xi xinerama xrandr \
 		xscrnsaver
 USE_GL=		gl glu

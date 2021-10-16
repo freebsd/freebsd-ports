@@ -11,7 +11,7 @@ COMMENT=	High level open source game development suite, core libs
 
 USES=		dos2unix libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
+CONFIGURE_ARGS=	--bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.c *.h

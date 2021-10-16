@@ -44,12 +44,12 @@ CONFIGURE_ARGS=	--with-shell=/bin/sh \
 		--with-test-font-path=${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE= 		BRAILLE COLORD DOCS
+OPTIONS_DEFINE=			BRAILLE COLORD DOCS
 OPTIONS_GROUP=			FILTERS CUPS_BROWSED
 OPTIONS_GROUP_FILTERS=		GHOSTSCRIPT IMAGES MUPDF POPPLER
 OPTIONS_GROUP_CUPS_BROWSED=	AVAHI LDAP
-OPTIONS_SINGLE= 		PDFTOPS
-OPTIONS_SINGLE_PDFTOPS= 	PSGHOSTSCRIPT PSHYBRID PSMUPDF PSPOPPLER
+OPTIONS_SINGLE=			PDFTOPS
+OPTIONS_SINGLE_PDFTOPS=		PSGHOSTSCRIPT PSHYBRID PSMUPDF PSPOPPLER
 OPTIONS_DEFAULT=		COLORD GHOSTSCRIPT IMAGES POPPLER AVAHI LDAP \
 				PSHYBRID
 OPTIONS_SUB=			yes
@@ -85,7 +85,7 @@ IMAGES_USES=			jpeg
 
 MUPDF_BUILD_DEPENDS=		mutool:graphics/mupdf
 MUPDF_RUN_DEPENDS=		mutool:graphics/mupdf
-MUPDF_CONFIGURE_ENABLE= 	mutool
+MUPDF_CONFIGURE_ENABLE=		mutool
 MUPDF_DESC=			PDF-to-raster using MuPDF
 
 POPPLER_CONFIGURE_ENABLE=	poppler
@@ -96,12 +96,12 @@ POPPLER_LIB_DEPENDS=		libpoppler-cpp.so:graphics/poppler
 
 CUPS_BROWSED_DESC=		cups-browsed(8) options
 
-AVAHI_CONFIGURE_ENABLE= 	avahi
+AVAHI_CONFIGURE_ENABLE=		avahi
 AVAHI_CONFIGURE_OFF=		--with-browseremoteprotocols=cups
 AVAHI_CONFIGURE_ON=		--with-browseremoteprotocols="dnssd cups"
 AVAHI_DESC=			Discover Zeroconf/Bonjour network printers
 AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
-AVAHI_SUB_LIST= 		AVAHI_DAEMON=avahi_daemon
+AVAHI_SUB_LIST=			AVAHI_DAEMON=avahi_daemon
 AVAHI_SUB_LIST_OFF=		AVAHI_DAEMON=
 
 LDAP_CONFIGURE_ENABLE=		ldap
@@ -116,7 +116,7 @@ PSGHOSTSCRIPT_CONFIGURE_ON=	--with-pdftops=gs
 PSGHOSTSCRIPT_DESC=		Ghostscript gs(1)
 PSGHOSTSCRIPT_IMPLIES=		GHOSTSCRIPT
 
-PSHYBRID_BUILD_DEPENDS= 	pdftops:graphics/poppler-utils
+PSHYBRID_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 PSHYBRID_RUN_DEPENDS=		pdftops:graphics/poppler-utils
 PSHYBRID_CONFIGURE_ON=		--with-pdftops=hybrid
 PSHYBRID_DESC=			Ghostscript or Poppler depending on printer
@@ -128,8 +128,8 @@ PSMUPDF_IMPLIES=		MUPDF
 
 PSPOPPLER_BUILD_DEPENDS=	pdftops:graphics/poppler-utils
 PSPOPPLER_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-PSPOPPLER_CONFIGURE_ON= 	--with-pdftops=pdftops
-PSPOPPLER_DESC= 		Poppler pdftops(1)
+PSPOPPLER_CONFIGURE_ON=		--with-pdftops=pdftops
+PSPOPPLER_DESC=			Poppler pdftops(1)
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \

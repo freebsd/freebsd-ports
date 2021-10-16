@@ -30,7 +30,7 @@ NO_ARCH=	yes
 MESON_ARGS=	-Dthemes=cinnamon,gnome-shell,gtk2,gtk3,metacity,plank,unity,xfwm \
 		-Dcinnamon_version=4.8 \
 		-Dgnome_shell_version=3.38 \
-    		-Dgtk3_version=3.24
+		-Dgtk3_version=3.24
 # Speed up build in Poudriere.  It calls inkscape a bazillion times
 # and each instance tries to connect to 127.0.0.1:9090 which seems
 # to be because of gtk3's broadway backend.  Disable all GDK backends.

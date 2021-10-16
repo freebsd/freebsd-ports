@@ -1,5 +1,5 @@
-PORTNAME=       thirtybees
-PORTVERSION=    1.1.0
+PORTNAME=	thirtybees
+PORTVERSION=	1.1.0
 CATEGORIES=	www finance
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

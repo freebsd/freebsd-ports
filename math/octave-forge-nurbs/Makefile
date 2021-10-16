@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 # Force newer GCC on platforms using GCC 4.2 as base
 .if ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=        yes
+USE_GCC=	yes
 .endif
 
 post-build:

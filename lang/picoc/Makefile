@@ -13,7 +13,7 @@ BROKEN_riscv64=	Fails to link: missing sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zsaleeba
-GH_TAGNAME= 4555e84
+GH_TAGNAME=	4555e84
 
 USES=		gmake readline
 

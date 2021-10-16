@@ -49,20 +49,20 @@ QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 
 OPTIONS_DEFINE=	EXAMPLES
 
-CFLAGS_i386= -fPIC
-CXXFLAGS_i386= -fPIC
-LDFLAGS_i386= -Wl,-z,notext
+CFLAGS_i386=	-fPIC
+CXXFLAGS_i386=	-fPIC
+LDFLAGS_i386=	-Wl,-z,notext
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
-ALL_TARGET=     debug
-PLIST_SUB+=     DEBUG_LIB_SUFFIX="_debug"
-RESDIR=         ${WRKSRC}/debug
+ALL_TARGET=	debug
+PLIST_SUB+=	DEBUG_LIB_SUFFIX="_debug"
+RESDIR=		${WRKSRC}/debug
 .else
-ALL_TARGET=     release
-PLIST_SUB+=     DEBUG_LIB_SUFFIX=""
-RESDIR=         ${WRKSRC}/release
+ALL_TARGET=	release
+PLIST_SUB+=	DEBUG_LIB_SUFFIX=""
+RESDIR=		${WRKSRC}/release
 .endif
 
 pre-configure:

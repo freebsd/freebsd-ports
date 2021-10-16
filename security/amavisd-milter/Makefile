@@ -3,7 +3,7 @@
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.7.0
 CATEGORIES=	security mail
-MASTER_SITES=   https://github.com/prehor/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/prehor/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	rx@rx.cz
 COMMENT=	Milter for amavisd-new

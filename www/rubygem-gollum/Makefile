@@ -27,7 +27,7 @@ USE_RC_SUBR=	${PORTNAME}
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/gollum
-PLIST_DIRS=     %%WWWDIR%%
+PLIST_DIRS=	%%WWWDIR%%
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/gollum

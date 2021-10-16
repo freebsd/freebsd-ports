@@ -4,6 +4,6 @@ MASTERDIR=	${.CURDIR}/../../lang/php74
 
 PKGNAMESUFFIX=	-pcntl
 
-TEST_TARGET=    test
+TEST_TARGET=	test
 
 .include "${MASTERDIR}/Makefile"

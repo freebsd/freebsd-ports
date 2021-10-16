@@ -9,8 +9,8 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Pam module for authenticating with flat passwd files
 
 USES=		uidfix
-USE_GITHUB=     yes
-GH_ACCOUNT=     tiwe-de
+USE_GITHUB=	yes
+GH_ACCOUNT=	tiwe-de
 GH_PROJECT=	libpam-pwdfile
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd

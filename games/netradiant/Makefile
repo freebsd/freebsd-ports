@@ -44,7 +44,7 @@ OPTIONS_SUB=	yes
 GAMES=	DarkPlaces Doom3 ET Neverball Nexuiz OpenArena Osirion Quake1 \
 	Quake2 Quake2World Quake3 Quake4 Quake Quetoo Tremulous UFOAI \
 	Unvanquished Warsow Xonotic
-GAMEPACK_DISTFILES= ${GAMES:S/$/Pack.zip:gp/}
+GAMEPACK_DISTFILES=	${GAMES:S/$/Pack.zip:gp/}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/#include/s,<sys/dir,&ent,' \

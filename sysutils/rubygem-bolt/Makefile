@@ -41,12 +41,12 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/bolt \
 		etc/bash_completion.d/bolt
 
-OPTIONS_SINGLE= PUPPET
+OPTIONS_SINGLE=	PUPPET
 OPTIONS_SINGLE_PUPPET=PUPPET6 PUPPET7
 OPTIONS_DEFAULT=PUPPET7
 
-PUPPET6_DESC=   Depend on sysutils/puppet6
-PUPPET7_DESC=   Depend on sysutils/puppet7
+PUPPET6_DESC=	Depend on sysutils/puppet6
+PUPPET7_DESC=	Depend on sysutils/puppet7
 
 PUPPET6_RUN_DEPENDS=puppet:sysutils/puppet6
 PUPPET7_RUN_DEPENDS=puppet:sysutils/puppet7

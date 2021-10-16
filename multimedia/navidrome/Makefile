@@ -4,9 +4,9 @@ PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.0
 CATEGORIES=	multimedia
-MASTER_SITES=   http://cdn.pacyworld.com/morante.net/freebsd/ports/distfiles/navidrome/:npmcache
-DISTFILES=      ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
-DIST_SUBDIR=    navidrome
+MASTER_SITES=	http://cdn.pacyworld.com/morante.net/freebsd/ports/distfiles/navidrome/:npmcache
+DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
+DIST_SUBDIR=	navidrome
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Modern Music Server and Streamer compatible with Subsonic/Airsonic

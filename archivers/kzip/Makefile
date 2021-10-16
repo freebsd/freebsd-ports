@@ -10,9 +10,9 @@ DISTNAME=	kzipmix-${DISTVERSION}-bsd-static
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	PKZIP-compatible compressor focusing on space over speed
 
-LICENSE=		KZIP
+LICENSE=	KZIP
 LICENSE_NAME=	KZIP License
-LICENSE_FILE=   ${FILESDIR}/license.txt
+LICENSE_FILE=	${FILESDIR}/license.txt
 LICENSE_PERMS=	pkg-mirror no-dist-sell no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386

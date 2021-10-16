@@ -18,7 +18,7 @@ GH_ACCOUNT=	intel
 GH_TAGNAME=	9aafb51
 CMAKE_ARGS=	-DLLVM_DIR:PATH="${LOCALBASE}/${FLAVOR}"
 CMAKE_INSTALL_PREFIX=		${PREFIX}/${FLAVOR}
-_PLIST_FILES= 	include/llvm/GenXIntrinsics/GenXIntrOpts.h \
+_PLIST_FILES=	include/llvm/GenXIntrinsics/GenXIntrOpts.h \
 		include/llvm/GenXIntrinsics/GenXIntrinsicDescription.gen \
 		include/llvm/GenXIntrinsics/GenXIntrinsicInst.h \
 		include/llvm/GenXIntrinsics/GenXIntrinsics.h \

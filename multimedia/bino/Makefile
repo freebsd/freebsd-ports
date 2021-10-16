@@ -26,7 +26,7 @@ USE_CXXSTD=	c++11
 # no port fow equalizer now, lirc detecting not working
 CONFIGURE_ARGS=	--without-equalizer --without-lirc --docdir=${DOCSDIR}
 
-EXTRA_PATCHES= ${FILESDIR}/glew-fix-7098cd6a.patch
+EXTRA_PATCHES=	${FILESDIR}/glew-fix-7098cd6a.patch
 
 INFO=		bino
 

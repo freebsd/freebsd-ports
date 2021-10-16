@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
 
-MAINTAINER= 	jsm@FreeBSD.org	
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LICENSE=	GPLv2

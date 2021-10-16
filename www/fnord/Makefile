@@ -23,7 +23,7 @@ TCPSERVER_DESC=		Use DJB's tcpserver
 CGI_DESC=		Enable CGI support
 DIR_LIST_DESC=		Enable directory listing
 SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
-OLD_STYLE_REDIRECT_DESC= Enable old style redirection
+OLD_STYLE_REDIRECT_DESC=	Enable old style redirection
 
 DAEMONTOOLS_RUN_DEPENDS=	setuidgid:sysutils/daemontools
 TCPSERVER_RUN_DEPENDS=		tcpserver:sysutils/ucspi-tcp

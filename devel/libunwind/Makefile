@@ -13,7 +13,7 @@ COMMENT=	Generic stack unwinding library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS= aarch64 amd64 armv7 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64 powerpc64le
 
 USES=		compiler:c11 cpe libtool pathfix pkgconfig
 

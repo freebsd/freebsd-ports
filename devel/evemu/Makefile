@@ -29,9 +29,9 @@ PYTHON_USES_OFF=		python:build
 PYTHON_CONFIGURE_ENABLE=	python-bindings
 PYTHON_USE=			PYTHON=py3kplist
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CFLAGS+=	-include stdlib.h -include limits.h
-USE_LDCONFIG=   yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 REINPLACE_ARGS=	-i ''
 

@@ -22,12 +22,12 @@ USE_QT=		concurrent core gui network printsupport sql sql-sqlite3 \
 		buildtools_build
 USE_KDE=	coreaddons widgetsaddons
 
-OPTIONS_DEFINE=       DEBUG DOCS
+OPTIONS_DEFINE=	DEBUG DOCS
 
-DEBUG_VARS=           BUILD_TYPE=debug
-DEBUG_VARS_OFF=       BUILD_TYPE=release
+DEBUG_VARS=	BUILD_TYPE=debug
+DEBUG_VARS_OFF=	BUILD_TYPE=release
 
-ALL_TARGET=           ${BUILD_TYPE}-all
+ALL_TARGET=	${BUILD_TYPE}-all
 
 pre-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT

@@ -11,7 +11,7 @@ COMMENT=	Small and high extensible IRC client
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-warnings
+CONFIGURE_ARGS=	--with-warnings
 DATADIR=	${PREFIX}/share/irc
 USES=		cpe iconv ncurses tar:bzip2
 

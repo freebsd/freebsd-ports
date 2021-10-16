@@ -10,10 +10,10 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_GITLAB=     yes
-GL_SITE=        https://foss.heptapod.net
-GL_ACCOUNT=     bsdutils
-GL_COMMIT=      ad3835a3a2d38aab86c03ed615058da0f1fbf244
+USE_GITLAB=	yes
+GL_SITE=	https://foss.heptapod.net
+GL_ACCOUNT=	bsdutils
+GL_COMMIT=	ad3835a3a2d38aab86c03ed615058da0f1fbf244
 
 USE_CABAL=	ansi-terminal-0.10.3 \
 		ansi-wl-pprint-0.6.9_1 \

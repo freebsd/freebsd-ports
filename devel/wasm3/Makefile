@@ -4,7 +4,7 @@ DISTVERSION=	0.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
-COMMENT=	The fastest WebAssembly interpreter, and the most universal runtime.
+COMMENT=	The fastest WebAssembly interpreter, and the most universal runtime
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +15,7 @@ USES=		cmake:insource localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	wasm3
 GH_PROJECT=	wasm3
-GH_TUPLE+= 	vshymanskyy:uvwasi:b063d686848:uvwasi/_deps/uvwasi-src
+GH_TUPLE+=	vshymanskyy:uvwasi:b063d686848:uvwasi/_deps/uvwasi-src
 
 PLIST_FILES=	bin/wasm3
 

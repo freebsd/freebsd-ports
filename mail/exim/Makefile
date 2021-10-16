@@ -283,10 +283,10 @@ SEDLIST+=	-e 's,^\# (DISABLE_DNSSEC=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MDMARC}
-SEDLIST+= -e 's,XX_DMARC_LIBS_XX,-L${LOCALBASE}/lib -lopendmarc,' \
+SEDLIST+=	-e 's,XX_DMARC_LIBS_XX,-L${LOCALBASE}/lib -lopendmarc,' \
 		-e 's,^\# (SUPPORT_DMARC=),\1,'
 .else
-SEDLIST+= -e 's,XX_DMARC_LIBS_XX,,'
+SEDLIST+=	-e 's,XX_DMARC_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MWISHLIST}

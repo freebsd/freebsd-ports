@@ -34,7 +34,7 @@ BU_PREFIX?=	${GCC_TARGET}
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 # libstdcxx won't build, but we don't need it or multiple float-abi libs.
-CONFIGURE_ARGS= --target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
+CONFIGURE_ARGS=	--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--without-headers \
 		--with-gmp=${LOCALBASE} \
 		--with-pkgversion="FreeBSD Ports Collection for ${PKGNAMEPREFIX:C/-//g}" \

@@ -14,7 +14,7 @@ COMMENT=	Kochi Japanese TrueType font
 LICENSE=	COPYINGATTACHED
 LICENSE_NAME=	Free redistribution with copyright document attached
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fonts:fc tar:bzip2
 FONTPATHSPEC=	${FONTNAME}:pri=60

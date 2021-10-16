@@ -25,9 +25,9 @@ BUILD_DEPENDS=	orcc:devel/orc \
 USES=		compiler:c++14-lang cmake ncurses pkgconfig \
 		dos2unix python:3.6+ shebangfix
 USE_LDCONFIG=	yes
-USE_GITHUB=     yes
-GH_ACCOUNT=     EttusResearch
-GH_TAGNAME=     90ce6062b6b5df2eddeee723777be85108e4e7c7
+USE_GITHUB=	yes
+GH_ACCOUNT=	EttusResearch
+GH_TAGNAME=	90ce6062b6b5df2eddeee723777be85108e4e7c7
 
 CONFLICTS=	usrp-[0-9]*
 
@@ -51,13 +51,14 @@ CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
 #CMAKE_ARGS+=	--debug-output --trace
 
-OPTIONS_DEFINE= DOCS DOXYGEN
-OPTIONS_DEFAULT= DOCS
+OPTIONS_DEFINE=		DOCS DOXYGEN
+OPTIONS_DEFAULT=	DOCS
 
-OPTIONS_SUB=	yes
-DOXYGEN_BUILD_DEPENDS=  doxygen:devel/doxygen
+OPTIONS_SUB=		yes
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON"
-DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" -DENABLE_MANUAL:STRING="OFF"
+DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
+			-DENABLE_MANUAL:STRING="OFF"
 
 do-install:
 # install host component

@@ -25,7 +25,7 @@ CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
 .endif
 
 USES=		autoreconf:build gmake libtool qmake:no_configure qt:5 ssl
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_QT=		buildtools gui \
 		linguist_build \

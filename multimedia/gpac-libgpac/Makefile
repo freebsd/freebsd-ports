@@ -13,7 +13,7 @@ COMMENT=	Gpac MPEG-4 Systems library and headers
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=  bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 ALL_TARGET=	lib
 INSTALL_TARGET=	install-lib

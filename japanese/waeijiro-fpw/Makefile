@@ -43,7 +43,7 @@ SOURCE_FILE=	${WRKDIR}/${SRCFILE}
 .endif
 MAKE_ARGS+=	SRC_DICT=${SOURCE_FILE:Q}
 
-OPTIONS_DEFINE= DOCS
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

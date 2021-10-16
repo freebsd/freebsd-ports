@@ -201,8 +201,8 @@ PLIST_SUB+=	WSREP="@comment "
 .endif
 
 .if ${ARCH} == i386
-USE_GCC=       yes
-CFLAGS+=       -latomic -fasynchronous-unwind-tables
+USE_GCC=	yes
+CFLAGS+=	-latomic -fasynchronous-unwind-tables
 .endif
 
 .if ${OPSYS} == DragonFly

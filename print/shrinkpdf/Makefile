@@ -3,7 +3,7 @@ PORTVERSION=	20191221
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.alfredklomp.com/programming/shrinkpdf/
 DISTNAME=	${PORTNAME}.sh
-EXTRACT_SUFX=   # none
+EXTRACT_SUFX=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	grembo@FreeBSD.org

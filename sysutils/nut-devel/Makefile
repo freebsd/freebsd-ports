@@ -13,8 +13,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network UPS Tools
 
 USE_GITHUB=	yes
-GH_ACCOUNT=     networkupstools 
-GH_TAGNAME=     15cebc68
+GH_ACCOUNT=	networkupstools
+GH_TAGNAME=	15cebc68
 NUT_COMMIT_DATE=	2021.10.04
 
 GNU_CONFIGURE=	yes

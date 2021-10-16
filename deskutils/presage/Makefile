@@ -4,7 +4,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	An intelligent predictive text entry system
+COMMENT=	Intelligent predictive text entry system
 
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
