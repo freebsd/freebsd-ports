@@ -1,0 +1,27 @@
+--- rem2html/Makefile.in.orig	2021-10-16 12:02:17 UTC
++++ rem2html/Makefile.in
+@@ -12,16 +12,14 @@ all:
+ 	true
+ 
+ install:
+-	@if test "$(PERL)" = "" ; then \
+-	    echo "Not installing rem2html; Perl is required"; exit 0; fi; \
+-	 for m in $(PERLMODS_NEEDED) ; \
+-         do \
+-	    perl -M$$m -e 1 > /dev/null 2>&1; \
+-	    if test $$? != 0 ; then echo "Not installing rem2html; missing $$m"; exit 0; fi; \
+-	done; \
+-	echo "Installing rem2html in $(DESTDIR)$(bindir)"; \
+-	mkdir -p $(DESTDIR)$(bindir) && sed -e 's|^#!perl|#!$(PERL)|' < rem2html > $(DESTDIR)$(bindir)/rem2html && chmod 755 $(DESTDIR)$(bindir)/rem2html && exit 0; \
+-	exit 1;
++	@for m in $(PERLMODS_NEEDED) ; \
++        do \
++	    perl -M$$m -e 1 ; \
++	done
++	@echo "Installing rem2html in $(DESTDIR)$(bindir)"
++	mkdir -p $(DESTDIR)$(bindir)
++	sed -e 's|^#!perl|#!$(PERL)|' < rem2html > rem2html.out
++	$(INSTALL_SCRIPT) rem2html.out $(DESTDIR)$(bindir)/rem2html
+ 
+ 
+ 
