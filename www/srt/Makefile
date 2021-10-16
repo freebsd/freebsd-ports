@@ -1,6 +1,6 @@
 PORTNAME=	srt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,6 @@ GH_ACCOUNT=	Haivision
 
 SHEBANG_FILES=	scripts/srt-ffplay
 
-CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS # test TestIPv6.v6_calls_v4 hangs: https://github.com/Haivision/srt/issues/2007
+CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS
 
 .include <bsd.port.mk>
