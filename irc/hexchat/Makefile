@@ -59,7 +59,7 @@ FISHLIM_MESON_TRUE=	with-fishlim
 LUA_MESON_ON=		-Dwith-lua=lua-${LUA_VER}
 LUA_MESON_OFF=		-Dwith-lua=false
 LUA_USES=		lua
-LUA_USE=		GCC=any
+LUA_USE=		GCC=yes
 PERL_MESON_TRUE=	with-perl
 PERL_USES=		perl5
 TEXTFE_MESON_TRUE=	text-frontend
