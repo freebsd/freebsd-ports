@@ -51,6 +51,12 @@ _STRIP_TARGETS=	lib/kitty/kitty/fast_data_types.so lib/kitty/kitty/glfw-x11.so \
 		lib/kitty/kittens/choose/subseq_matcher.so bin/kitty
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 || ${ARCH:Mriscv64*}
+MAKE_ENV+=	KITTY_NO_LTO=1
+.endif
+
 do-build:
 	(cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py linux-package --update-check-interval 0)
