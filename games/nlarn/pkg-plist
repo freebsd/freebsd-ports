@@ -4,8 +4,6 @@ bin/nlarn
 %%DATADIR%%/fortune
 %%DATADIR%%/maze
 %%DATADIR%%/maze_doc.txt
-%%DATADIR%%/monsters.lua
 %%DATADIR%%/nlarn-128.bmp
 %%DATADIR%%/nlarn.hlp
-%%DATADIR%%/nlarn.ini-sample
 %%DATADIR%%/nlarn.msg

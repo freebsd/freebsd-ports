@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-05-23 06:13:27 UTC
++++ Makefile
+@@ -104,7 +104,7 @@ LDFLAGS += $(shell pkg-config --libs glib-2.0)
+ 
+ # Unless requested otherwise build with curses.
+ ifneq ($(SDLPDCURSES),Y)
+-	LDFLAGS += -lcurses -lpanel
++	LDFLAGS += $(shell pkg-config --libs ncurses) -lpanel
+ else
+ 	PDCLIB   := PDCurses/sdl2/pdcurses.a
+ 	CFLAGS   += $(shell pkg-config --cflags SDL2_ttf) -IPDCurses -DSDLPDCURSES
