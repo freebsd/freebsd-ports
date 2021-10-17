@@ -15,7 +15,8 @@ RUN_DEPENDS=	rubygem-connection_pool>=2.2.2:net/rubygem-connection_pool \
 		rubygem-rack>=2.0,3<3,3:www/rubygem-rack \
 		rubygem-redis>=4.2.0:databases/rubygem-redis
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	contribsys
 USE_RUBY=	yes
 
 NO_ARCH=	yes
