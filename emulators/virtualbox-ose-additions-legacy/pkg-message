@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Oracleⓡ VirtualBoxⓡ Guest Additions are installed.
+VirtualBox Guest Additions are installed.
 
 To enable and start the required services: 
 
