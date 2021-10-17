@@ -1051,5 +1051,6 @@
     SUBDIR += xtrabackup
     SUBDIR += xtrabackup8
     SUBDIR += zabbix3-libzbxpgsql
+    SUBDIR += zodb
 
 .include <bsd.port.subdir.mk>
