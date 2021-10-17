@@ -21,6 +21,7 @@ RUN_DEPENDS=	ImageMagick7-nox11>=0:graphics/ImageMagick7-nox11 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	thoughtbot
 
 .include <bsd.port.mk>
