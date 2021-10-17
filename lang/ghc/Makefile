@@ -16,7 +16,7 @@ COMMENT=	Compiler for the functional language Haskell
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv6 armv7 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv6 armv7
 
 USES=			autoreconf compiler:c11 gmake iconv:patch,translit \
 			localbase:ldflags ncurses perl5 tar:xz
@@ -87,17 +87,15 @@ PORTDOCS=		*
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 
 # This version of ncurses is needed by bootstrap compiler
-.if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT) && ${ARCH} != powerpc64
+.if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
-.if ${ARCH} == powerpc64 || ${OSVERSION} >= 1400018
+.if ${OSVERSION} >= 1400018
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-BOOT_GHC_VERSION=	8.6.3
-.elif ${ARCH} == aarch64 || ${ARCH:Marmv*}
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 BOOT_GHC_VERSION=	8.10.7
 .else
 BOOT_GHC_VERSION=	8.6.5
@@ -131,7 +129,6 @@ _EXECUTABLES+=	${GHC_LIBDIR}/bin/ghc-iserv-dyn
 
 .if empty(PORT_OPTIONS:MBOOT)
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
-BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:boot
 .endif # MBOOT
 
@@ -150,7 +147,7 @@ BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 .  endif
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH} == powerpc64
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 .  ifdef QEMU_EMULATING
 IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
 .  endif
@@ -179,11 +176,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^infodir/d' ${BOOT_DIR}/mk/build.mk
 	@${REINPLACE_CMD} -e '/^docdir/d' ${BOOT_DIR}/mk/build.mk
 	@${REINPLACE_CMD} -e '/^htmldir/d' ${BOOT_DIR}/mk/build.mk
-.endif
-
-.if ${ARCH} == powerpc64 && ${PPC_ABI} == ELFv2
-	@${REINPLACE_CMD} -e 's/ELF_V1/ELF_V2/' \
-		${WRKSRC}/configure ${WRKSRC}/aclocal.m4
 .endif
 
 pre-configure:
