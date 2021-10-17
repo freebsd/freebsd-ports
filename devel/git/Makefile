@@ -36,8 +36,6 @@ tiny_PKGNAMESUFFIX=		-tiny
 USES=		autoreconf cpe gmake iconv shebangfix tar:xz
 CPE_VENDOR=	git-scm
 
-CPE_VENDOR=	git-scm
-
 .if ${SUBPORT} == core
 USES+=		ssl
 COMMENT_lite=	(lite flavor)
