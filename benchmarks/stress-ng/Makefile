@@ -1,8 +1,8 @@
 PORTNAME=	stress-ng
+DISTVERSIONPREFIX=	V
 DISTVERSION=	0.13.05
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Stress test benchmarks
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		compiler:c11 gmake tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	ColinIanKing
 
 ALL_TARGET=	# empty
 
