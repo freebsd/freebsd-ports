@@ -1,5 +1,6 @@
---- src/login.c.orig	2020-02-03 07:51:05 UTC
-+++ src/login.c
+diff -ru bak.ly-0.5.2/src/login.c ly-0.5.2/src/login.c
+--- src/login.c	2021-10-16 23:20:01.325733000 -0400
++++ src/login.c	2021-10-16 23:21:46.738595000 -0400
 @@ -18,7 +18,7 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
@@ -9,7 +10,19 @@
  #include <xcb/xcb.h>
  
  int get_free_display()
-@@ -243,9 +243,15 @@ void env_init(struct passwd* pwd)
+@@ -213,6 +213,11 @@
+ 	// clean env
+ 	environ[0] = NULL;
+ 
++	if (lang == NULL)
++	{
++		lang = "C.UTF-8";
++	}
++
+ 	if (term != NULL)
+ 	{
+ 		setenv("TERM", term, 1);
+@@ -243,9 +248,15 @@
  
  void env_xdg(const char* tty_id, const enum display_server display_server)
  {
@@ -28,7 +41,7 @@
  	setenv("XDG_SESSION_CLASS", "user", 0);
  	setenv("XDG_SEAT", "seat0", 0);
  	setenv("XDG_VTNR", tty_id, 0);
-@@ -271,8 +277,8 @@ void env_xdg(const char* tty_id, const enum display_se
+@@ -271,8 +282,8 @@
  	}
  }
  
@@ -39,7 +52,7 @@
  	char *username,
  	pid_t display_pid
  ) {
-@@ -283,24 +289,23 @@ void add_utmp_entry(
+@@ -283,24 +294,23 @@
  	/* only correct for ptys named /dev/tty[pqr][0-9a-z] */
  	strcpy(entry->ut_id, ttyname(STDIN_FILENO) + strlen("/dev/tty"));
  
@@ -76,7 +89,7 @@
  }
  
  void xauth(const char* display_name, const char* shell, const char* dir)
-@@ -581,7 +586,7 @@ void auth(
+@@ -581,7 +591,7 @@
  		char vt[5];
  
  		snprintf(tty_id, 3, "%d", config.tty);
@@ -85,7 +98,7 @@
  
  		// set env
  		env_init(pwd);
-@@ -636,13 +641,13 @@ void auth(
+@@ -636,13 +646,13 @@
  	}
  
  	// add utmp audit
