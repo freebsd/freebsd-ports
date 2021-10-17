@@ -18,7 +18,8 @@ RUN_DEPENDS=	rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
 		rubygem-unicode-display_width>=1.4.0<3.0:devel/rubygem-unicode-display_width
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
