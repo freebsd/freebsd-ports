@@ -31,13 +31,12 @@ SUB_LIST=		GHC_VERSION=${GHC_VERSION} \
 			NCURSESINC="${NCURSESBASE}/include" NCURSESLIB="${NCURSESLIB}" \
 			CFLAGS="${CFLAGS}"
 
+OPTIONS_DEFINE=		DYNAMIC GMP PROFILE DOCS
+OPTIONS_DEFAULT=	DYNAMIC PROFILE GMP
+
 OPTIONS_GROUP=		BOOTSTRAP
 BOOTSTRAP_DESC=		Bootsrap using installed ghc
 OPTIONS_GROUP_BOOTSTRAP=BOOT
-OPTIONS_DEFINE=		DYNAMIC GMP PROFILE DOCS
-OPTIONS_SUB=		yes
-
-OPTIONS_DEFAULT=	DYNAMIC PROFILE GMP
 
 BOOT_DESC=		Use installed GHC for bootstrapping
 DOCS_DESC=		Install HTML documentation
@@ -78,6 +77,7 @@ LLVM_VERSION=		10
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	10
 
+OPTIONS_SUB=		yes
 PLIST_SUB=		GHC_VERSION=${GHC_VERSION} CABAL_VERSION=${CABAL_VERSION}
 
 PORTDOCS=		*
@@ -91,17 +91,11 @@ CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
-.if ${OSVERSION} >= 1400018
-CONFIGURE_ARGS+=	--enable-dtrace=0
-.endif
-
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 BOOT_GHC_VERSION=	8.10.7
 .else
 BOOT_GHC_VERSION=	8.6.5
 .endif
-
-NO_CCACHE=	ccache: error: Failed to create directory /nonexistent/.ccache/tmp: Permission denied
 
 DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
 DATADIR=		${PREFIX}/share/ghc-${GHC_VERSION}
@@ -128,8 +122,7 @@ _EXECUTABLES+=	${GHC_LIBDIR}/bin/ghc-iserv-dyn
 .endif
 
 .if empty(PORT_OPTIONS:MBOOT)
-BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
-DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:boot
+DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
 .endif # MBOOT
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
@@ -144,12 +137,6 @@ RUN_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
-.  endif
-.endif
-
-.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-.  ifdef QEMU_EMULATING
-IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
 .  endif
 .endif
 
@@ -186,12 +173,8 @@ pre-configure:
 .if empty(PORT_OPTIONS:MBOOT)
 	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_ENV_BOOTSTRAP} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
 	cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install
-.else
-# otherwise, make sure we have "ghc" in PATH
-	if ! ${WHICH} -s ghc ; then \
-		echo "No 'ghc' executable is found in your PATH! Turn off BOOT option." ; false ; \
-	fi
 .endif
+
 # If DOCS are set, install HsColour in-place
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${SLAVES_PREFIX}
