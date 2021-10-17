@@ -33,7 +33,8 @@ tiny_DESCR=			${.CURDIR}/pkg-descr-tiny
 tiny_PKGNAMESUFFIX=		-tiny
 .endif
 
-USES=		autoreconf gmake iconv shebangfix tar:xz
+USES=		autoreconf cpe gmake iconv shebangfix tar:xz
+CPE_VENDOR=	git-scm
 
 CPE_VENDOR=	git-scm
 
