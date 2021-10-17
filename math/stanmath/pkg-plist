@@ -25,6 +25,7 @@ include/stan/math/fwd/fun/Eigen_NumTraits.hpp
 include/stan/math/fwd/fun/Phi.hpp
 include/stan/math/fwd/fun/Phi_approx.hpp
 include/stan/math/fwd/fun/abs.hpp
+include/stan/math/fwd/fun/accumulator.hpp
 include/stan/math/fwd/fun/acos.hpp
 include/stan/math/fwd/fun/acosh.hpp
 include/stan/math/fwd/fun/arg.hpp
@@ -161,11 +162,13 @@ include/stan/math/mix/meta.hpp
 include/stan/math/opencl/buffer_types.hpp
 include/stan/math/opencl/cholesky_decompose.hpp
 include/stan/math/opencl/copy.hpp
+include/stan/math/opencl/double_d.hpp
 include/stan/math/opencl/err.hpp
 include/stan/math/opencl/err/check_mat_size_one.hpp
 include/stan/math/opencl/err/check_opencl.hpp
 include/stan/math/opencl/err/check_symmetric.hpp
 include/stan/math/opencl/err/check_triangular.hpp
+include/stan/math/opencl/indexing_rev.hpp
 include/stan/math/opencl/is_constant.hpp
 include/stan/math/opencl/kernel_cl.hpp
 include/stan/math/opencl/kernel_generator.hpp
@@ -210,8 +213,10 @@ include/stan/math/opencl/kernels/batch_identity.hpp
 include/stan/math/opencl/kernels/categorical_logit_glm_lpmf.hpp
 include/stan/math/opencl/kernels/check_symmetric.hpp
 include/stan/math/opencl/kernels/cholesky_decompose.hpp
+include/stan/math/opencl/kernels/cumulative_sum.hpp
 include/stan/math/opencl/kernels/device_functions/Phi.hpp
 include/stan/math/opencl/kernels/device_functions/Phi_approx.hpp
+include/stan/math/opencl/kernels/device_functions/atomic_add_double.hpp
 include/stan/math/opencl/kernels/device_functions/beta.hpp
 include/stan/math/opencl/kernels/device_functions/binomial_coefficient_log.hpp
 include/stan/math/opencl/kernels/device_functions/digamma.hpp
@@ -239,8 +244,11 @@ include/stan/math/opencl/kernels/gp_exponential_cov.hpp
 include/stan/math/opencl/kernels/gp_matern32_cov.hpp
 include/stan/math/opencl/kernels/gp_matern52_cov.hpp
 include/stan/math/opencl/kernels/helpers.hpp
+include/stan/math/opencl/kernels/indexing_rev.hpp
 include/stan/math/opencl/kernels/inv_lower_tri_multiply.hpp
 include/stan/math/opencl/kernels/matrix_multiply.hpp
+include/stan/math/opencl/kernels/mergesort.hpp
+include/stan/math/opencl/kernels/mrrr.hpp
 include/stan/math/opencl/kernels/multiply_transpose.hpp
 include/stan/math/opencl/kernels/neg_binomial_2_log_glm_lpmf.hpp
 include/stan/math/opencl/kernels/neg_rect_lower_tri_multiply.hpp
@@ -248,9 +256,11 @@ include/stan/math/opencl/kernels/ordered_logistic_glm_lpmf.hpp
 include/stan/math/opencl/kernels/ordered_logistic_lpmf.hpp
 include/stan/math/opencl/kernels/pack.hpp
 include/stan/math/opencl/kernels/rep_matrix.hpp
+include/stan/math/opencl/kernels/tridiagonalization.hpp
 include/stan/math/opencl/kernels/unpack.hpp
 include/stan/math/opencl/matrix_cl.hpp
 include/stan/math/opencl/matrix_cl_view.hpp
+include/stan/math/opencl/mrrr.hpp
 include/stan/math/opencl/multiply_transpose.hpp
 include/stan/math/opencl/opencl_context.hpp
 include/stan/math/opencl/pinned_matrix.hpp
@@ -282,6 +292,7 @@ include/stan/math/opencl/prim/cols.hpp
 include/stan/math/opencl/prim/columns_dot_product.hpp
 include/stan/math/opencl/prim/columns_dot_self.hpp
 include/stan/math/opencl/prim/crossprod.hpp
+include/stan/math/opencl/prim/cumulative_sum.hpp
 include/stan/math/opencl/prim/diag_matrix.hpp
 include/stan/math/opencl/prim/diag_post_multiply.hpp
 include/stan/math/opencl/prim/diag_pre_multiply.hpp
@@ -296,6 +307,8 @@ include/stan/math/opencl/prim/double_exponential_cdf.hpp
 include/stan/math/opencl/prim/double_exponential_lccdf.hpp
 include/stan/math/opencl/prim/double_exponential_lcdf.hpp
 include/stan/math/opencl/prim/double_exponential_lpdf.hpp
+include/stan/math/opencl/prim/eigenvalues_sym.hpp
+include/stan/math/opencl/prim/eigenvectors_sym.hpp
 include/stan/math/opencl/prim/exp_mod_normal_cdf.hpp
 include/stan/math/opencl/prim/exp_mod_normal_lccdf.hpp
 include/stan/math/opencl/prim/exp_mod_normal_lcdf.hpp
@@ -370,6 +383,10 @@ include/stan/math/opencl/prim/poisson_log_glm_lpmf.hpp
 include/stan/math/opencl/prim/poisson_log_lpmf.hpp
 include/stan/math/opencl/prim/poisson_lpmf.hpp
 include/stan/math/opencl/prim/prod.hpp
+include/stan/math/opencl/prim/qr_Q.hpp
+include/stan/math/opencl/prim/qr_R.hpp
+include/stan/math/opencl/prim/qr_thin_Q.hpp
+include/stan/math/opencl/prim/qr_thin_R.hpp
 include/stan/math/opencl/prim/rank.hpp
 include/stan/math/opencl/prim/rayleigh_cdf.hpp
 include/stan/math/opencl/prim/rayleigh_lccdf.hpp
@@ -395,6 +412,8 @@ include/stan/math/opencl/prim/skew_double_exponential_lcdf.hpp
 include/stan/math/opencl/prim/skew_double_exponential_lpdf.hpp
 include/stan/math/opencl/prim/skew_normal_lpdf.hpp
 include/stan/math/opencl/prim/softmax.hpp
+include/stan/math/opencl/prim/sort_asc.hpp
+include/stan/math/opencl/prim/sort_desc.hpp
 include/stan/math/opencl/prim/squared_distance.hpp
 include/stan/math/opencl/prim/std_normal_cdf.hpp
 include/stan/math/opencl/prim/std_normal_lccdf.hpp
@@ -425,6 +444,7 @@ include/stan/math/opencl/prim/weibull_cdf.hpp
 include/stan/math/opencl/prim/weibull_lccdf.hpp
 include/stan/math/opencl/prim/weibull_lcdf.hpp
 include/stan/math/opencl/prim/weibull_lpdf.hpp
+include/stan/math/opencl/qr_decomposition.hpp
 include/stan/math/opencl/ref_type.hpp
 include/stan/math/opencl/ref_type_for_opencl.hpp
 include/stan/math/opencl/rev.hpp
@@ -455,6 +475,7 @@ include/stan/math/opencl/rev/copy.hpp
 include/stan/math/opencl/rev/cos.hpp
 include/stan/math/opencl/rev/cosh.hpp
 include/stan/math/opencl/rev/crossprod.hpp
+include/stan/math/opencl/rev/cumulative_sum.hpp
 include/stan/math/opencl/rev/diag_matrix.hpp
 include/stan/math/opencl/rev/diag_post_multiply.hpp
 include/stan/math/opencl/rev/diag_pre_multiply.hpp
@@ -545,8 +566,10 @@ include/stan/math/opencl/rev/vari.hpp
 include/stan/math/opencl/rev/variance.hpp
 include/stan/math/opencl/scalar_type.hpp
 include/stan/math/opencl/stringify.hpp
+include/stan/math/opencl/symmetric_eigensolver.hpp
 include/stan/math/opencl/to_ref_for_opencl.hpp
 include/stan/math/opencl/tri_inverse.hpp
+include/stan/math/opencl/tridiagonalization.hpp
 include/stan/math/opencl/value_type.hpp
 include/stan/math/opencl/zeros_strict_tri.hpp
 include/stan/math/prim.hpp
@@ -632,9 +655,11 @@ include/stan/math/prim/err/is_size_match.hpp
 include/stan/math/prim/err/is_square.hpp
 include/stan/math/prim/err/is_symmetric.hpp
 include/stan/math/prim/err/is_unit_vector.hpp
+include/stan/math/prim/err/make_iter_name.hpp
 include/stan/math/prim/err/out_of_range.hpp
 include/stan/math/prim/err/system_error.hpp
 include/stan/math/prim/err/throw_domain_error.hpp
+include/stan/math/prim/err/throw_domain_error_mat.hpp
 include/stan/math/prim/err/throw_domain_error_vec.hpp
 include/stan/math/prim/err/validate_non_negative_index.hpp
 include/stan/math/prim/err/validate_positive_index.hpp
@@ -756,7 +781,9 @@ include/stan/math/prim/fun/generalized_inverse.hpp
 include/stan/math/prim/fun/get.hpp
 include/stan/math/prim/fun/get_base1.hpp
 include/stan/math/prim/fun/get_base1_lhs.hpp
+include/stan/math/prim/fun/get_imag.hpp
 include/stan/math/prim/fun/get_lp.hpp
+include/stan/math/prim/fun/get_real.hpp
 include/stan/math/prim/fun/gp_dot_prod_cov.hpp
 include/stan/math/prim/fun/gp_exp_quad_cov.hpp
 include/stan/math/prim/fun/gp_exponential_cov.hpp
@@ -978,6 +1005,7 @@ include/stan/math/prim/fun/tcrossprod.hpp
 include/stan/math/prim/fun/tgamma.hpp
 include/stan/math/prim/fun/to_array_1d.hpp
 include/stan/math/prim/fun/to_array_2d.hpp
+include/stan/math/prim/fun/to_complex.hpp
 include/stan/math/prim/fun/to_matrix.hpp
 include/stan/math/prim/fun/to_ref.hpp
 include/stan/math/prim/fun/to_row_vector.hpp
@@ -1009,6 +1037,7 @@ include/stan/math/prim/fun/zeros_int_array.hpp
 include/stan/math/prim/fun/zeros_row_vector.hpp
 include/stan/math/prim/fun/zeros_vector.hpp
 include/stan/math/prim/functor.hpp
+include/stan/math/prim/functor/algebra_solver_adapter.hpp
 include/stan/math/prim/functor/apply.hpp
 include/stan/math/prim/functor/apply_scalar_binary.hpp
 include/stan/math/prim/functor/apply_scalar_unary.hpp
@@ -1064,6 +1093,7 @@ include/stan/math/prim/meta/is_base_pointer_convertible.hpp
 include/stan/math/prim/meta/is_complex.hpp
 include/stan/math/prim/meta/is_constant.hpp
 include/stan/math/prim/meta/is_container.hpp
+include/stan/math/prim/meta/is_container_or_var_matrix.hpp
 include/stan/math/prim/meta/is_dense_dynamic.hpp
 include/stan/math/prim/meta/is_detected.hpp
 include/stan/math/prim/meta/is_double_or_int.hpp
@@ -1080,6 +1110,7 @@ include/stan/math/prim/meta/is_matrix_cl.hpp
 include/stan/math/prim/meta/is_plain_type.hpp
 include/stan/math/prim/meta/is_rev_matrix.hpp
 include/stan/math/prim/meta/is_stan_scalar.hpp
+include/stan/math/prim/meta/is_stan_scalar_or_eigen.hpp
 include/stan/math/prim/meta/is_string_convertible.hpp
 include/stan/math/prim/meta/is_var.hpp
 include/stan/math/prim/meta/is_var_dense_dynamic.hpp
@@ -1551,9 +1582,12 @@ include/stan/math/rev/fun/LDLT_factor.hpp
 include/stan/math/rev/fun/Phi.hpp
 include/stan/math/rev/fun/Phi_approx.hpp
 include/stan/math/rev/fun/abs.hpp
+include/stan/math/rev/fun/accumulator.hpp
 include/stan/math/rev/fun/acos.hpp
 include/stan/math/rev/fun/acosh.hpp
 include/stan/math/rev/fun/adjoint_of.hpp
+include/stan/math/rev/fun/append_col.hpp
+include/stan/math/rev/fun/append_row.hpp
 include/stan/math/rev/fun/arg.hpp
 include/stan/math/rev/fun/as_array_or_scalar.hpp
 include/stan/math/rev/fun/as_bool.hpp
@@ -1686,6 +1720,8 @@ include/stan/math/rev/fun/read_corr_matrix.hpp
 include/stan/math/rev/fun/read_cov_L.hpp
 include/stan/math/rev/fun/read_cov_matrix.hpp
 include/stan/math/rev/fun/rep_matrix.hpp
+include/stan/math/rev/fun/rep_row_vector.hpp
+include/stan/math/rev/fun/rep_vector.hpp
 include/stan/math/rev/fun/rising_factorial.hpp
 include/stan/math/rev/fun/round.hpp
 include/stan/math/rev/fun/rows_dot_product.hpp
@@ -1711,6 +1747,7 @@ include/stan/math/rev/fun/tgamma.hpp
 include/stan/math/rev/fun/to_arena.hpp
 include/stan/math/rev/fun/to_var.hpp
 include/stan/math/rev/fun/to_var_value.hpp
+include/stan/math/rev/fun/to_vector.hpp
 include/stan/math/rev/fun/trace.hpp
 include/stan/math/rev/fun/trace_gen_inv_quad_form_ldlt.hpp
 include/stan/math/rev/fun/trace_gen_quad_form.hpp
@@ -1728,6 +1765,7 @@ include/stan/math/rev/functor/algebra_solver_fp.hpp
 include/stan/math/rev/functor/algebra_solver_newton.hpp
 include/stan/math/rev/functor/algebra_solver_powell.hpp
 include/stan/math/rev/functor/algebra_system.hpp
+include/stan/math/rev/functor/apply_scalar_binary.hpp
 include/stan/math/rev/functor/apply_scalar_unary.hpp
 include/stan/math/rev/functor/apply_vector_unary.hpp
 include/stan/math/rev/functor/coupled_ode_system.hpp
