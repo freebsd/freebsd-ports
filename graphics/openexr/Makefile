@@ -1,7 +1,7 @@
 # Created by: nork@FreeBSD.org
 
 PORTNAME=	openexr
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -27,7 +27,7 @@ PATCH_STRIP=	-p0
 
 _MAJORVER=	3_1
 _VER=		30
-_MINVER=	1
+_MINVER=	2
 _PLVER=		0
 
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
@@ -40,12 +40,12 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
+DOCS_CMAKE_BOOL=DOCS
+DOCS_BUILD_DEPENDS=breathe-apidoc:devel/py-breathe
 
 _DOCSRCDIR1=	${WRKSRC}
-_DOCSRCDIR2=	${WRKSRC}/docs
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
-_DOC_FILES2=	*.odt *.pdf
 
 # too many reports about compilation failures, so
 # sanity check we are using the same C++ standard library
@@ -61,10 +61,10 @@ pre-configure:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOC_FILES1:S|^|${_DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${_DOC_FILES2:S|^|${_DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR}
+	( cd ${BUILD_WRKSRC}/docs/sphinx && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} )
+	${RM} -r ${STAGEDIR}${DOCSDIR}/.??* ${STAGEDIR}${DOCSDIR}/../OpenEXR/sphinx
 
 post-install-DOCS-off:
-	${RM} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/*.pdf
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME} 2>/dev/null || :
 
 post-install-EXAMPLES-on:
