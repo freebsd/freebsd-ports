@@ -1,10 +1,8 @@
-For any serious and interactive use, the Oracleⓡ VM VirtualBoxⓡ 
-Guest Additions will make your life much easier by providing closer 
-integration between host and guest and improving the interactive 
-performance of guest systems. 
+VirtualBox Guest Additions provide closer integration between host and 
+guest, and improve the performance of guest systems.
 
 This FreeBSD-provided package can be installed in FreeBSD guest machines. 
 
 Addition to host machines is not required. 
 
-WWW: https://www.virtualbox.org/manual/UserManual.html#guestadditions
+WWW: https://www.virtualbox.org/
