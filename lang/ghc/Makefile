@@ -74,6 +74,7 @@ GHC_VERSION=		8.10.7
 CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		10
+BOOT_GHC_VERSION=	8.10.7
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	10
 
@@ -89,12 +90,6 @@ CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 # This version of ncurses is needed by bootstrap compiler
 .if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
-.endif
-
-.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-BOOT_GHC_VERSION=	8.10.7
-.else
-BOOT_GHC_VERSION=	8.6.5
 .endif
 
 DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
