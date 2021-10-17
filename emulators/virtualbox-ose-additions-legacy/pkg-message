@@ -5,8 +5,8 @@ Oracleⓡ VirtualBoxⓡ Guest Additions are installed.
 
 To enable and start the required services: 
 
-# sysrc vboxguest_enable="YES" && service vboxguest start
-# sysrc vboxservice_enable="YES" && service vboxservice start
+# sysrc vboxguest_enable="YES" ; sync ; service vboxguest start
+# sysrc vboxservice_enable="YES" ; service vboxservice start
 
 The vboxguest service will load a required kernel module. 
 
