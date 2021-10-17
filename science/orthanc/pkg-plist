@@ -13,6 +13,6 @@ include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
 sbin/Orthanc
 %%DATADIR%%/plugins/libModalityWorklists.so
-%%DATADIR%%/plugins/libModalityWorklists.so.%%PORTVERSION%%
+%%DATADIR%%/plugins/libModalityWorklists.so.%%DISTVERSION%%
 %%DATADIR%%/plugins/libServeFolders.so
-%%DATADIR%%/plugins/libServeFolders.so.%%PORTVERSION%%
+%%DATADIR%%/plugins/libServeFolders.so.%%DISTVERSION%%
