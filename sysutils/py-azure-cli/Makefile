@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-identity>0:devel/py-azure-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault>=1.1:devel/py-azure-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault-administration>=4.0.0.b3:devel/py-azure-keyvault-administration@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-keyvault-keys>=4.4.0:devel/py-azure-keyvault-keys@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-keyvault-keys>=4.4.0:security/py-azure-keyvault-keys@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-loganalytics>=0.1.0:devel/py-azure-loganalytics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-advisor>=9.0.0:devel/py-azure-mgmt-advisor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-apimanagement>=0.2.0:devel/py-azure-mgmt-apimanagement@${PY_FLAVOR} \
