@@ -1,8 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	x42-plugins
-DISTVERSION=	20210714 # the version is published here: http://gareus.org/misc/x42-plugins.php
-PORTREVISION=	1
+DISTVERSION=	20211016 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
@@ -27,11 +26,13 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 
 USES=		compiler:c++11-lang gl gmake gnome localbase pkgconfig tar:xz \
 		shebangfix xorg
-USE_GITHUB=	nodefault
-GH_TUPLE=	x42:convoLV2:ff291a3:x/convoLV2zita4
 USE_GNOME=	glib20 pango cairo
 USE_XORG=	x11
 USE_GL=		glu gl
+
+USE_GITHUB=	nodefault
+GH_TUPLE=	x42:convoLV2:ff291a3:x/convoLV2zita4
+
 MAKE_ENV=	BUILDOPENGL=yes BUILDGTK=no LV2DIR=${PREFIX}/lib/lv2 MANDIR=${PREFIX}/man/man1
 SHEBANG_FILES=	stepseq.lv2/gridgen.sh
 
