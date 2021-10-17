@@ -14,7 +14,8 @@ RUN_DEPENDS=	rubygem-sexp_processor>=4.9<5:devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+CPE_VENDOR=	ryan_davis
 
 PLIST_FILES=	bin/ruby_parse \
 		bin/ruby_parse_extract_error
