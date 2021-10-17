@@ -1,3 +1,41 @@
+  <vuln vid="c9387e4d-2f5f-11ec-8be6-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.36</lt></range>
+      </package>
+      <package>
+	<name>mysql80-client</name>
+	<range><lt>8.0.27</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2021.html">
+	  <p>This Critical Patch Update contains 66 new security patches for
+	    Oracle MySQL. 8 of these vulnerabilities may be remotely exploitable
+	    without authentication, i.e., may be exploited over a network without
+	    requiring user credentials.<br/>
+	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 9.8.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpuoct2021.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-16</discovery>
+      <entry>2021-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a9c5e89d-2d15-11ec-8363-0022489ad614">
     <topic>Node.js -- October 2021 Security Releases</topic>
     <affects>
