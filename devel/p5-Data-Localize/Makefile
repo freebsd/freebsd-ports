@@ -1,6 +1,5 @@
 PORTNAME=	Data-Localize
-PORTVERSION=	0.00027
-PORTREVISION=	1
+PORTVERSION=	0.00028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -18,7 +17,7 @@ RUN_DEPENDS=	\
 	p5-Log-Minimal>=0.14:devel/p5-Log-Minimal
 
 USES=	perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 NO_ARCH=	YES
 
 .include <bsd.port.mk>
