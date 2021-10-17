@@ -1,7 +1,7 @@
 # Created by: Nicola Vitale	<nivit@email.it>
 
 PORTNAME=	enchant
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
