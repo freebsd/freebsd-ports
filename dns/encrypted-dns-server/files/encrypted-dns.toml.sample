@@ -34,7 +34,7 @@ upstream_addr = "9.9.9.9:53"
 
 ## File name to save the state to
 
-state_file = "/usr/local/etc/encrypted-dns/encrypted-dns.state"
+state_file = "encrypted-dns.state"
 
 
 ## UDP timeout in seconds
@@ -95,7 +95,7 @@ client_ttl_holdon = 60
 daemonize = false
 
 
-## Log file
+## Log file, when running as a background process
 
 # log_file = "/var/log/encrypted-dns.log"
 
@@ -200,11 +200,11 @@ key_cache_capacity = 10000
 #        Metrics        #
 #########################
 
-[metrics]
+# [metrics]
 
-type = "prometheus"
-listen_addr = "0.0.0.0:9100"
-path = "/metrics"
+# type = "prometheus"
+# listen_addr = "0.0.0.0:9100"
+# path = "/metrics"
 
 
 
