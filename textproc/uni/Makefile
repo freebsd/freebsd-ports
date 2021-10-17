@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@FreeBSD.org>
 
 PORTNAME=	uni
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
