@@ -1,6 +1,5 @@
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.28.0
-PORTREVISION=	3
+PORTVERSION=	2.29.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2.7:net-mgmt/py-adal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.5.0.1:sysutils/py-pkginfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.2.0<2.0.0:devel/py-azure-mgmt-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.8:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=3.2<3.4:security/py-cryptography@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
