@@ -1,4 +1,4 @@
-TIMESTAMP = 1623830205
+TIMESTAMP = 1634590373
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/atty-0.2.14.crate) = d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
@@ -77,8 +77,8 @@ SHA256 (rust/crates/num_cpus-1.13.0.crate) = 05499f3756671c15885fee9034446956fff
 SIZE (rust/crates/num_cpus-1.13.0.crate) = 14704
 SHA256 (rust/crates/once_cell-1.7.2.crate) = af8b08b04175473088b46763e51ee54da5f9a164bc162f615b91bc179dbf15a3
 SIZE (rust/crates/once_cell-1.7.2.crate) = 28250
-SHA256 (rust/crates/packed_simd_2-0.3.5.crate) = 0e64858a2d3733fdd61adfdd6da89aa202f7ff0e741d2fc7ed1e452ba9dc99d7
-SIZE (rust/crates/packed_simd_2-0.3.5.crate) = 98197
+SHA256 (rust/crates/packed_simd_2-0.3.6.crate) = 71c0c06716cfc81616fa8e22b721ce92fecd594508bc0eb3d04ae3ef35ac10c5
+SIZE (rust/crates/packed_simd_2-0.3.6.crate) = 98119
 SHA256 (rust/crates/pcre2-0.2.3.crate) = 85b30f2f69903b439dd9dc9e824119b82a55bf113b29af8d70948a03c1b11ab1
 SIZE (rust/crates/pcre2-0.2.3.crate) = 19605
 SHA256 (rust/crates/pcre2-sys-0.2.5.crate) = dec30e5e9ec37eb8fbf1dea5989bc957fd3df56fbee5061aa7b7a99dbb37b722
