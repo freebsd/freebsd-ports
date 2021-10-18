@@ -17,7 +17,8 @@ RUN_DEPENDS=	rubygem-hike1>=1.2,1<2,1:devel/rubygem-hike1 \
 		rubygem-rack16>=1.0<2:www/rubygem-rack16 \
 		rubygem-tilt1>=1.1<2:devel/rubygem-tilt1
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
