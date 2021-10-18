@@ -12,7 +12,8 @@ COMMENT=	NetHack derivative
 
 RUN_DEPENDS=	timidity:audio/timidity
 
-USES=		ncurses perl5 sdl xorg zip
+USES=		cpe ncurses perl5 sdl xorg zip
+CPE_VENDOR=	${PORTNAME}_project
 DATADIR=	${PREFIX}/share/falconseyedir
 MAKE_ENV=	NHDIR="${DATADIR}" NETHACKCONFIG="${NETHACKCONFIG}"
 MAKE_ARGS=	WINTTYLIB="-lncurses"
