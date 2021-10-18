@@ -85,7 +85,7 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 DOSBOX_RUN_DEPENDS=	dosbox:emulators/dosbox
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine-gecko-2.47.2-x86.msi:emulators/wine-gecko
+GECKO_RUN_DEPENDS=	wine-gecko>0:emulators/wine-gecko
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
