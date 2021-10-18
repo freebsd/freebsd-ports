@@ -7,8 +7,7 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live, Full Version
 
 USE_TEX=	full texhash
-USES=		cpe metaport
-CPE_VENDOR=	tug
+USES=		metaport
 
 OPTIONS_DEFINE=	DOCS SOURCE
 
