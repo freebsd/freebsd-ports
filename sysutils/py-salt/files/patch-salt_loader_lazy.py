@@ -1,6 +1,6 @@
---- salt/loader.py.orig	2020-10-22 05:33:25 UTC
-+++ salt/loader.py
-@@ -1468,7 +1468,7 @@ class LazyLoader(salt.utils.lazy.LazyDict):
+--- salt/loader/lazy.py.orig	2021-09-27 17:31:38 UTC
++++ salt/loader/lazy.py
+@@ -447,7 +447,7 @@ class LazyLoader(salt.utils.lazy.LazyDict):
              try:
                  pycache_files = [
                      os.path.join("__pycache__", x)
