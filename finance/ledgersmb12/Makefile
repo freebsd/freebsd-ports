@@ -17,7 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 SHEBANG_FILES=	utils/devel/chart-load-test.sh \
 		utils/devel/find-use \
 		utils/pos/pos-hardware-client-startup-script
