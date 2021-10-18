@@ -9,7 +9,8 @@ COMMENT=	Pagination plugin for web frameworks and other apps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	mislav_marohnic
 USE_RUBY=	yes
 
 NO_ARCH=	yes
