@@ -17,7 +17,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-dependency-tracking --disable-doxygen-doc --with-xmlsec
-USES=		gmake libtool pkgconfig tar:bzip2 ssl autoreconf
+USES=		cpe gmake libtool pkgconfig tar:bzip2 ssl autoreconf
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	openssl_LIBS="-L${OPENSSLLIB} -lcrypto"  openssl_CFLAGS=-I${OPENSSLBASE}
 
