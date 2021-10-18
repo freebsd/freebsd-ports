@@ -5,12 +5,12 @@ VirtualBox Guest Additions are installed.
 
 To enable and start the required services: 
 
-# sysrc vboxguest_enable="YES" ; sync ; service vboxguest start
-# sysrc vboxservice_enable="YES" ; service vboxservice start
+# sysrc vboxguest_enable="YES"
+# sysrc vboxservice_enable="YES"
 
-The vboxguest service will load a required kernel module. If a 
-kernel panic (system crash) occurs, this may be avoided by 
-limiting the FreeBSD guest to one CPU. 
+To start the services, restart the system. If a kernel panic (system crash) 
+occurs during startup, this may be avoided by limiting the FreeBSD guest to 
+one CPU. 
 
 For features such as window scaling and clipboard sharing, membership of 
 the wheel group is required. With username jerry as an example: 
