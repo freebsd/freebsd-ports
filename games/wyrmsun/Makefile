@@ -24,6 +24,8 @@ CMAKE_ARGS=	-DBIN_DIR=bin
 PORTDATA=	*
 PORTDOCS=	*
 
+PORTSCOUT=	limit:^[0-9]\..*
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
