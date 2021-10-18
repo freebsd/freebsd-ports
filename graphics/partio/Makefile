@@ -1,7 +1,6 @@
 PORTNAME=	partio
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	graphics math
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -25,8 +24,8 @@ GH_ACCOUNT=	wdas
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DOCS DOXYGEN EXAMPLES PYQT
-PYQT_DESC=		Install PyQt-based auxiliary tools
+OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES PYQT TEST
+PYQT_DESC=	Install PyQt-based auxiliary tools
 
 # DOCS must be selected for PORTDOCS to work
 DOXYGEN_IMPLIES=	DOCS
@@ -37,25 +36,24 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 PYQT_USES=		pyqt:5
 PYQT_USE=		PYQT=core,gui,widgets
-PYQT_PLIST_FILES=	bin/partinspect
+PYQT_PLIST_FILES=	bin/partedit bin/partinspect
+
+TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
+TEST_CMAKE_ON=		-DPARTIO_GTEST_ENABLED:BOOL=ON
+TEST_VARS=		SHEBANG_FILES+="src/tests/testpartio.py \
+			src/tests/testpartjson.py"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	    '/^project/s,${PORTNAME},& VERSION ${PORTVERSION},' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,OpenGL::OpenGL,$${OPENGL_LIBRARIES},' \
-		${WRKSRC}/src/tools/CMakeLists.txt
+		'/^project/s,${PORTNAME},& VERSION ${PORTVERSION}, ; \
+		s,/usr,${LOCALBASE},' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,^from Qt,from PyQt5,' \
+		${WRKSRC}/src/tools/partedit.py \
 		${WRKSRC}/src/tools/partinspect.py
-	@${REINPLACE_CMD} -e '/^install/d' ${WRKSRC}/src/tests/CMakeLists.txt
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/add_subdirectory(src\/doc)/d' \
 		${WRKSRC}/CMakeLists.txt
-
-# Remove those files that don't yet work
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/partedit
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -67,5 +65,8 @@ post-install-EXAMPLES-on:
 
 post-install-PYQT-off:
 	cd ${STAGEDIR}${PREFIX} && ${RM} ${PYQT_PLIST_FILES}
+
+do-test-TEST-on:
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 
 .include <bsd.port.mk>
