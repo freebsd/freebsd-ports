@@ -20,7 +20,8 @@ BUILD_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
-USES=		compiler:c++11-lib gmake pkgconfig python:3.6+ shebangfix ssl
+USES=		compiler:c++11-lib cpe gmake pkgconfig python:3.6+ shebangfix ssl
+CPE_VENDOR=	libretro
 
 OPTIONS_DEFINE=	CACA FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11 DOCS
 OPTIONS_DEFAULT=FFMPEG OSS SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11
