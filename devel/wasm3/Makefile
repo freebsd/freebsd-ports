@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
-USES=		cmake:insource localbase:ldflags
+USES=		cmake:insource cpe localbase:ldflags
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	wasm3
 GH_PROJECT=	wasm3
