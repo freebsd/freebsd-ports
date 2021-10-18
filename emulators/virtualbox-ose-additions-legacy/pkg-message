@@ -3,12 +3,12 @@
   message: <<EOM
 VirtualBox Guest Additions are installed.
 
-To enable and start the required services: 
+To enable the required services: 
 
-# sysrc vboxguest_enable="YES" ; sync ; service vboxguest start
-# sysrc vboxservice_enable="YES" ; service vboxservice start
+# sysrc vboxguest_enable="YES"
+# sysrc vboxservice_enable="YES"
 
-The vboxguest service will load a required kernel module. 
+To start the services, restart the system. 
 
 For features such as window scaling and clipboard sharing, membership of 
 the wheel group is required. With username jerry as an example: 
