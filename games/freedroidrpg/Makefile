@@ -20,7 +20,8 @@ BROKEN_FreeBSD_14=	ld: error: duplicate symbol: tux_rendering
 LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		jpeg gmake localbase lua:52+ python sdl xorg
+USES=		cpe jpeg gmake localbase lua:52+ python sdl xorg
+CPE_VENDOR=	freedroid
 USE_XORG=	x11
 USE_SDL=	sdl image gfx
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
