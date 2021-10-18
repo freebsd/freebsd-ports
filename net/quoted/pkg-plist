@@ -1,4 +1,4 @@
-@unexec rm -f /var/run/quoted.pid
+@rmtry /var/run/quoted.pid
 bin/quoted
 etc/quotes
 man/man1/quoted.1.gz
