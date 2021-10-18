@@ -4273,6 +4273,7 @@
     SUBDIR += py-boolean.py
     SUBDIR += py-boto
     SUBDIR += py-botocore
+    SUBDIR += py-breathe
     SUBDIR += py-bsd
     SUBDIR += py-btest
     SUBDIR += py-build
