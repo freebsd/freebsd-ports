@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	libaacplus_project
 
 CONFLICTS=	aacplusenc-0*
 
