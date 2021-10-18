@@ -10,7 +10,8 @@ MASTER_SITES=	http://roy.marples.name/downloads/openresolv/ \
 MAINTAINER=	roy@marples.name
 COMMENT=	Resolvconf compatible framework for managing resolv.conf
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	${PORTNAME}_project
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-deinstall pkg-message
