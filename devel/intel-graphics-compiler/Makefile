@@ -1,11 +1,16 @@
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
 DISTVERSION=	1.0.11222
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	991fd3d661ef.patch:-p1 # spirv-llvm-translator
+PATCHFILES+=	2d4627d3043e.patch:-p1 # llvm13
+PATCHFILES+=	aa930a43b490.patch:-p1 # llvm13
+PATCHFILES+=	73a32f051a88.patch:-p1 # llvm13
+PATCHFILES+=	84e9ea6e0cb7.patch:-p1 # llvm13
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
@@ -21,7 +26,7 @@ LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
-FLAVORS=	${12 11:L:S/^/llvm/}
+FLAVORS=	${13 12 11:L:S/^/llvm/}
 
 CONFLICTS_INSTALL=	${PORTNAME}-llvm*
 
