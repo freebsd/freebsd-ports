@@ -1,6 +1,19 @@
---- configure.ac.orig	2018-08-24 15:19:14 UTC
-+++ configure.ac
-@@ -3298,6 +3298,8 @@ case "$host" in
+--- configure.ac.orig	2018-08-24 17:19:14.000000000 +0200
++++ configure.ac	2021-10-17 17:15:00.295997000 +0200
+@@ -201,6 +201,12 @@ case "$host" in
+ 		libdl=
+ 		libgc_threads=pthreads
+ 		use_sigposix=yes
++		case "$host" in
++		aarch64-*)
++			support_boehm=no
++			with_gc=sgen
++			;;
++		esac
+ 		has_dtrace=yes
+ 		with_sgen_default_concurrent=yes
+ 		;;
+@@ -3298,6 +3304,8 @@ case "$host" in
  			BTLS_PLATFORM=i386
  			;;
  		  openbsd*|freebsd*|kfreebsd-gnu*)
@@ -9,7 +22,7 @@
  		        ;;
  		esac
  		;;
-@@ -3322,6 +3324,8 @@ case "$host" in
+@@ -3322,6 +3330,8 @@ case "$host" in
  			boehm_supported=false
  			;;
  		  openbsd*|freebsd*|kfreebsd-gnu*)
@@ -18,7 +31,7 @@
  			;;
  		  mingw*)
  			;;
-@@ -3355,11 +3359,10 @@ case "$host" in
+@@ -3355,11 +3365,10 @@ case "$host" in
  		INTL="intl"
  		;;
  	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
@@ -31,3 +44,11 @@
  		else
  			TARGET=POWERPC;
  			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
+@@ -4425,6 +4434,7 @@ if test "x$enable_btls" = "xyes"; then
+ 		;;
+ 	aarch64)
+ 		btls_arch=aarch64
++		btls_cflags="-march=armv8-a+crypto"
+ 		;;
+ 	android-armv5)
+ 		BTLS_CMAKE_ARGS="-DANDROID_ABI=\"armeabi\" -DANDROID_NATIVE_API_LEVEL=14"
