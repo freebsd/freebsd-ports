@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.3:net/py-aiohttp-socks@${PY
 		${PYTHON_PKGNAMEPREFIX}secp256k1>0:math/py-secp256k1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.9:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		cpe python:3.6+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_PKGNAME=	Electrum
