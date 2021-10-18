@@ -8,9 +8,10 @@ To enable and start the required services:
 # sysrc vboxguest_enable="YES"
 # sysrc vboxservice_enable="YES"
 
-To start the services, restart the system. If a kernel panic (system crash) 
-occurs during startup, this may be avoided by limiting the FreeBSD guest to 
-one CPU. 
+To start the services, restart the system. 
+
+In some situations, a panic will occur when the kernel module loads. 
+Having no more than one virtual CPU might mitigate the issue.
 
 For features such as window scaling and clipboard sharing, membership of 
 the wheel group is required. With username jerry as an example: 
