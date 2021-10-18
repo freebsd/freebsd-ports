@@ -9,8 +9,6 @@ COMMENT=	GNU gettext meta package
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 
-USES=		cpe gettext-runtime:run gettext-tools:run metaport
-
-CPE_VENDOR=	gnu
+USES=		gettext-runtime:run gettext-tools:run metaport
 
 .include <bsd.port.mk>
