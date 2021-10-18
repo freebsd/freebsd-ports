@@ -14,9 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${PY_FLAVOR} \
 		xdg-utils>=1.0.2:devel/xdg-utils \
 		deluge:net-p2p/deluge-cli
 
-USES=		cpe gnome metaport python:3.5+
+USES=		gnome metaport python:3.5+
 USE_GNOME=	gtk30 librsvg2 pygobject3
-
-CPE_VENDOR=	deluge-torrent
 
 .include <bsd.port.mk>
