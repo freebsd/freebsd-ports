@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
 
@@ -30,5 +31,8 @@ USES+=		compiler:c++17-lang
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ducc0*.so
+
+do-test: install
+	@cd ${WRKSRC} && py.test
 
 .include <bsd.port.mk>
