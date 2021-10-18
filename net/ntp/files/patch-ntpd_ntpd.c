@@ -5,7 +5,7 @@
  #endif /* LIBSECCOMP and KERN_SECCOMP */
  
 -#ifdef __FreeBSD__
-+#if defined(__FreeBSD_version) && __FreeBSD_version < 1400037
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1400038
  #include <sys/procctl.h>
  #ifndef PROC_STACKGAP_CTL
  /*
