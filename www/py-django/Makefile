@@ -10,8 +10,7 @@ COMMENT=	High-level Python Web Framework (meta port)
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe metaport
-CPE_VENDOR=	djangoproject
+USES=		metaport
 USE_PYTHON=	flavors
 
 PORTSCOUT=	ignore:1
