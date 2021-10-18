@@ -12,9 +12,9 @@ EOM
 }
 { type: install
   message: <<EOM
-SDDM lists a "user session" which requires an .xinitrc in the user's
-home directory, or as a fallback, xterm. It is advised to write an
-.xinitrc if you want to use the "user session" feature.
+SDDM lists a "user session" which needs either an .xinitrc in the user's
+home directory, or as a fallback, xterm. In order to use the "user session"
+feature, a ~/.xinitrc is recommended.
 EOM
 }
 ]
