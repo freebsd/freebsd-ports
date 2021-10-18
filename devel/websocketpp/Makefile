@@ -9,7 +9,8 @@ LICENSE=	MIT BSD3CLAUSE ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:insource
+USES=		cmake:insource cpe
+CPE_VENDOR=	zaphoyd
 USE_GITHUB=	yes
 GH_ACCOUNT=	zaphoyd
 
