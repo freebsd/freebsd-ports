@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib libedit
+USES=		cmake compiler:c++11-lib cpe libedit
+CPE_VENDOR=	${PORTNAME}-cli
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
