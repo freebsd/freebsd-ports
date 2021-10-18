@@ -9,7 +9,8 @@ COMMENT=	Verbose replacement for getopt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing python:test shebangfix tar:bz2
+USES=		cmake:testing cpe python:test shebangfix tar:bz2
+CPE_VENDOR=	${PORTNAME}_project
 
 SHEBANG_GLOB=	*.py
 
