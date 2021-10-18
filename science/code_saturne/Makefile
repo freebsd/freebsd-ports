@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	code_saturne
-PORTVERSION=	7.0.0
+PORTVERSION=	7.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
