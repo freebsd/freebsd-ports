@@ -8,6 +8,8 @@ COMMENT=	Stb single-file public domain libraries for C/C++
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	nothings
 GH_TAGNAME=	f54acd4
