@@ -1,7 +1,8 @@
 PORTNAME=	sublime-merge
-PORTVERSION=	2060
+PORTVERSION=	2062
 CATEGORIES=	devel linux
 MASTER_SITES=	https://download.sublimetext.com/
+PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Cross-platform Git client, done the Sublime Text way

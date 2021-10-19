@@ -1445,6 +1445,7 @@
     SUBDIR += linux-c7-strace
     SUBDIR += linux-c7-systemd-libs
     SUBDIR += linux-ltp
+    SUBDIR += linux-sublime-merge
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += listserialc
@@ -7018,7 +7019,6 @@
     SUBDIR += stuffbin
     SUBDIR += stxxl
     SUBDIR += stylua
-    SUBDIR += sublime-merge
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
