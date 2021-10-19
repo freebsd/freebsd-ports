@@ -20,7 +20,8 @@ OPTIONS_DEFAULT=	TLS
 
 CONFLICTS=	tkabber-devel-[0-9]*
 
-USES=		shebangfix tar:xz
+USES=		cpe shebangfix tar:xz
+CPE_VENDOR=	${PORTNAME}_project
 SHEBANG_FILES=	contrib/extract-translations/extract.tcl
 
 IPV6_USES=	tk:86+
