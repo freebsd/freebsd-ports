@@ -6,7 +6,7 @@
 %%TOOLS%%bin/dpdk-pmdinfo.py
 %%TOOLS%%bin/dpdk-proc-info
 %%TOOLS%%bin/dpdk-telemetry.py
-%%TOOLS%%bin/dpdk-test
+%%TESTS%%bin/dpdk-test
 bin/dpdk-test-acl
 bin/dpdk-test-bbdev
 bin/dpdk-test-cmdline

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	dpdk
 DISTVERSION=	20.11.1
 CATEGORIES=	net
@@ -14,13 +12,12 @@ LICENSE=	BSD3CLAUSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Only tested on 64-bit x86 hardware
 
-LIB_DEPENDS=	libjansson.so:devel/jansson
 BUILD_DEPENDS=	objdump:devel/binutils
+LIB_DEPENDS=	libjansson.so:devel/jansson
 
 USES=		meson kmod pkgconfig:both shebangfix tar:xz python:3.5+
-WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${PORTVERSION}
-MESON_ARGS=	-Dmachine=default -Ddefault_library=shared -Denable_kmods=true
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Dmachine=default -Ddefault_library=shared -Denable_kmods=true
 SHEBANG_FILES=	usertools/dpdk-pmdinfo.py \
 		usertools/dpdk-telemetry-client.py \
 		usertools/dpdk-telemetry.py \
@@ -35,6 +32,8 @@ SHEBANG_FILES=	usertools/dpdk-pmdinfo.py \
 		examples/performance-thread/l3fwd-thread/test.sh \
 		examples/pipeline/examples/vxlan_table.py \
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${PORTVERSION}
+
 OPTIONS_DEFINE=		EXAMPLES DEBUG TOOLS TESTS
 OPTIONS_DEFAULT=	TOOLS
 OPTIONS_SUB=		yes
@@ -42,9 +41,9 @@ DEBUG_DESC=		Debugging support (unoptimized build, impacts performance)
 TOOLS_DESC=		Install tool scripts
 TESTS_DESC=		Build the automated unit test binary
 
-EXAMPLES_MESON_ON=	-Dexamples=all
 DEBUG_MESON_ON=		--buildtype=debug
 DEBUG_MESON_OFF=	--buildtype=release
+EXAMPLES_MESON_ON=	-Dexamples=all
 TESTS_MESON_TRUE=	tests
 TOOLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools@${PY_FLAVOR}
 
