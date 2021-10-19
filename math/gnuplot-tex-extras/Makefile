@@ -9,6 +9,7 @@ COMMENT=	Extra files for Gnuplot TeX support
 
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
+USES=		cpe
 USE_TEX=	texmf
 NO_BUILD=	yes
 PLIST_FILES=	${TEX_FILES:S,^,${TEX_DIR}/,}
