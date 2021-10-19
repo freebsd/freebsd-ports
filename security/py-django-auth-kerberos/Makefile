@@ -10,7 +10,6 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Kerberos authentication backend for Django
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kerberos>1.1.10:security/py-kerberos@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR}
