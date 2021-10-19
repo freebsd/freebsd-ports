@@ -13,7 +13,8 @@ ONLY_FOR_ARCHS_REASON=	relies on hard-coded x86 code, and is only supported on 6
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		fortran gmake localbase:ldflags python:build shebangfix
+USES=		cpe fortran gmake localbase:ldflags python:build shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	hfp
