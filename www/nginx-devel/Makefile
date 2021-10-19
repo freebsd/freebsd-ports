@@ -224,7 +224,7 @@ CFLAGS+=	-DNDEBUG
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5} && (empty(PORT_OPTIONS:MGSSAPI_HEIMDAL) && empty(PORT_OPTIONS:MGSSAPI_MIT))
 IGNORE=		required at least GSSAPI_HEIMDAL or \
-		GSSAPI_MIT_USES to be defined. Please do \
+		GSSAPI_MIT to be defined. Please do \
 		'make config' again
 .endif
 
