@@ -1,3 +1,84 @@
+  <vuln vid="bdaecfad-3117-11ec-b3b0-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>95.0.4638.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop_19.html">
+	  <p>This release contains 19 security fixes, including:</p>
+	  <ul>
+	    <li>[1246631] High CVE-2021-37981: Heap buffer overflow in Skia.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-09-04</li>
+	    <li>[1248661] High CVE-2021-37982: Use after free in Incognito.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group on 2021-09-11</li>
+	    <li>[1249810] High CVE-2021-37983: Use after free in Dev Tools.
+	      Reported by Zhihua Yao of KunLun Lab on 2021-09-15</li>
+	    <li>[1253399] High CVE-2021-37984: Heap buffer overflow in PDFium.
+	      Reported by Antti Levomäki, Joonas Pihlaja andChristian Jali
+	      from Forcepoint on 2021-09-27</li>
+	    <li>[1241860] High CVE-2021-37985: Use after free in V8. Reported
+	      by Yangkang (@dnpushme) of 360 ATA on 2021-08-20</li>
+	    <li>[1242404] Medium CVE-2021-37986: Heap buffer overflow in
+	      Settings. Reported by raven (@raid_akame) on 2021-08-23</li>
+	    <li>[1206928] Medium CVE-2021-37987: Use after free in Network APIs.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-05-08</li>
+	    <li>[1228248] Medium CVE-2021-37988: Use after free in Profiles.
+	      Reported by raven (@raid_akame) on 2021-07-12</li>
+	    <li>[1233067] Medium CVE-2021-37989: Inappropriate implementation
+	      in Blink. Reported by Matt Dyas, Ankur Sundara on 2021-07-26</li>
+	    <li>[1247395] Medium CVE-2021-37990: Inappropriate implementation
+	      in WebView. Reported by Kareem Selim of CyShield on
+	      2021-09-07</li>
+	    <li>[1250660] Medium CVE-2021-37991: Race in V8. Reported by Samuel
+	      Gross of Google Project Zero on 2021-09-17</li>
+	    <li>[1253746] Medium CVE-2021-37992: Out of bounds read in WebAudio.
+	      Reported by sunburst@Ant Security Light-Year Lab on
+	      2021-09-28</li>
+	    <li>[1255332] Medium CVE-2021-37993: Use after free in PDF
+	      Accessibility. Reported by Cassidy Kim of Amber Security Lab,
+	      OPPO Mobile Telecommunications Corp. Ltd. on 2021-10-02</li>
+	    <li>[1243020] Medium CVE-2021-37996: Insufficient validation of
+	      untrusted input in Downloads. Reported by Anonymous on
+	      2021-08-24</li>
+	    <li>[1100761] Low CVE-2021-37994: Inappropriate implementation in
+	      iFrame Sandbox. Reported by David Erceg on 2020-06-30</li>
+	    <li>[1242315] Low CVE-2021-37995: Inappropriate implementation in
+	      WebApp Installer. Reported by Terence Eden on 2021-08-23</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37981</cvename>
+      <cvename>CVE-2021-37982</cvename>
+      <cvename>CVE-2021-37983</cvename>
+      <cvename>CVE-2021-37984</cvename>
+      <cvename>CVE-2021-37985</cvename>
+      <cvename>CVE-2021-37986</cvename>
+      <cvename>CVE-2021-37987</cvename>
+      <cvename>CVE-2021-37988</cvename>
+      <cvename>CVE-2021-37989</cvename>
+      <cvename>CVE-2021-37990</cvename>
+      <cvename>CVE-2021-37991</cvename>
+      <cvename>CVE-2021-37992</cvename>
+      <cvename>CVE-2021-37993</cvename>
+      <cvename>CVE-2021-37994</cvename>
+      <cvename>CVE-2021-37995</cvename>
+      <cvename>CVE-2021-37996</cvename>
+      <url>https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-19</discovery>
+      <entry>2021-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9387e4d-2f5f-11ec-8be6-d4c9ef517024">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
