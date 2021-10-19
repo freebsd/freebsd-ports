@@ -4,6 +4,8 @@ bin/spike-dasm
 bin/spike-log-parser
 bin/termios-xspike
 bin/xspike
+include/fesvr/byteorder.h
+include/fesvr/config.h
 include/fesvr/context.h
 include/fesvr/device.h
 include/fesvr/dtm.h
