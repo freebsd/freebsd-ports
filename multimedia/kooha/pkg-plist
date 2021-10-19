@@ -17,6 +17,7 @@ share/locale/gl/LC_MESSAGES/kooha.mo
 share/locale/he/LC_MESSAGES/kooha.mo
 share/locale/hi/LC_MESSAGES/kooha.mo
 share/locale/hr/LC_MESSAGES/kooha.mo
+share/locale/hu/LC_MESSAGES/kooha.mo
 share/locale/id/LC_MESSAGES/kooha.mo
 share/locale/it/LC_MESSAGES/kooha.mo
 share/locale/ja/LC_MESSAGES/kooha.mo
@@ -29,6 +30,8 @@ share/locale/pt/LC_MESSAGES/kooha.mo
 share/locale/pt_BR/LC_MESSAGES/kooha.mo
 share/locale/ru/LC_MESSAGES/kooha.mo
 share/locale/sk/LC_MESSAGES/kooha.mo
+share/locale/sr/LC_MESSAGES/kooha.mo
+share/locale/sr@latin/LC_MESSAGES/kooha.mo
 share/locale/sv/LC_MESSAGES/kooha.mo
 share/locale/tr/LC_MESSAGES/kooha.mo
 share/locale/uk/LC_MESSAGES/kooha.mo
