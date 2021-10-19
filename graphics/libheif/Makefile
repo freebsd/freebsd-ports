@@ -1,11 +1,12 @@
 PORTNAME=	libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b7caef96e012f6e516fee2e50a836b07b7c5a8fc.patch:-p1
+PATCHFILES=	b7caef96e012f6e516fee2e50a836b07b7c5a8fc.patch:-p1 \
+		7976e1858a857e33200cd33d01689fd040de6d3d.patch:-p1
 
 MAINTAINER=	freebsd@sebastiansteinmetz.ch
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder
