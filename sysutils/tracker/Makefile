@@ -2,7 +2,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	2.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -29,8 +29,8 @@ MESON_ARGS=	-Ddocs=false \
 		-Dman=true \
 		-Dnetwork_manager=disabled \
 		-Dstemmer=disabled \
-		-Dbash_completion=true \
-		-Dsystemd_user_services=false
+		-Dbash_completion=${PREFIX}/etc/bash_completion.d \
+		-Dsystemd_user_services=no
 GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.FTS.gschema.xml \
 		org.freedesktop.Tracker.Store.gschema.xml \
