@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	aisleriot
-DISTVERSION=	3.22.18
+DISTVERSION=	3.22.19
 CATEGORIES=	games gnome
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/
 DIST_SUBDIR=	gnome3
