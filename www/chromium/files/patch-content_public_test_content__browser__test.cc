@@ -1,6 +1,6 @@
---- content/public/test/content_browser_test.cc.orig	2021-04-14 18:41:03 UTC
+--- content/public/test/content_browser_test.cc.orig	2021-09-14 01:51:57 UTC
 +++ content/public/test/content_browser_test.cc
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -92,7 +92,7 @@ void ContentBrowserTest::SetUp() {
+@@ -93,7 +93,7 @@ void ContentBrowserTest::SetUp() {
    // LinuxInputMethodContextFactory has to be initialized.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
    ui::InitializeInputMethodForTesting();
  #endif
  
-@@ -107,7 +107,7 @@ void ContentBrowserTest::TearDown() {
+@@ -108,7 +108,7 @@ void ContentBrowserTest::TearDown() {
    // LinuxInputMethodContextFactory has to be shutdown.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

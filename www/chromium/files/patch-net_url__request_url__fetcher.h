@@ -1,6 +1,6 @@
---- net/url_request/url_fetcher.h.orig	2021-04-14 18:41:07 UTC
+--- net/url_request/url_fetcher.h.orig	2021-09-14 01:52:00 UTC
 +++ net/url_request/url_fetcher.h
-@@ -352,8 +352,8 @@ class NET_EXPORT URLFetcher {
+@@ -353,8 +353,8 @@ class NET_EXPORT URLFetcher {
    // annotations on Linux & Windows.
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

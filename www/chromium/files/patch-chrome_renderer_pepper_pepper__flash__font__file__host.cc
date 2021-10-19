@@ -1,4 +1,4 @@
---- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2021-09-14 01:51:52 UTC
 +++ chrome/renderer/pepper/pepper_flash_font_file_host.cc
 @@ -16,7 +16,7 @@
  #include "ppapi/proxy/ppapi_messages.h"
@@ -7,7 +7,7 @@
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "components/services/font/public/cpp/font_loader.h"
- #include "content/public/common/common_sandbox_support_linux.h"
+ #include "pdf/font_table_linux.h"
  #elif defined(OS_WIN)
 @@ -30,7 +30,7 @@ PepperFlashFontFileHost::PepperFlashFontFileHost(
      const ppapi::proxy::SerializedFontDescription& description,
@@ -25,5 +25,5 @@
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (font_file_.IsValid()) {
-     result = content::GetFontTable(font_file_.GetPlatformFile(), table,
-                                    0 /* offset */,
+     result =
+         pdf::GetFontTable(font_file_.GetPlatformFile(), table, /*offset=*/0,

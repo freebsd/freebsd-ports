@@ -1,6 +1,6 @@
---- tools/gn/src/gn/version.h.orig	2021-04-14 18:49:11 UTC
+--- tools/gn/src/gn/version.h.orig	2021-09-14 02:05:25 UTC
 +++ tools/gn/src/gn/version.h
-@@ -15,9 +15,9 @@ class Version {
+@@ -22,9 +22,9 @@ class Version {
  
    static std::optional<Version> FromString(std::string s);
  

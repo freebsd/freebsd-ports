@@ -1,22 +1,19 @@
---- content/common/BUILD.gn.orig	2021-05-12 22:05:53 UTC
+--- content/common/BUILD.gn.orig	2021-09-24 04:26:05 UTC
 +++ content/common/BUILD.gn
-@@ -338,7 +338,7 @@ source_set("common") {
+@@ -333,7 +333,7 @@ source_set("common") {
      sources -= [ "cursors/webcursor_aura.cc" ]
    }
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
-       "common_sandbox_support_linux.cc",
        "sandbox_init_linux.cc",
-@@ -354,6 +354,15 @@ source_set("common") {
+       "zygote/sandbox_support_linux.cc",
+@@ -348,6 +348,12 @@ source_set("common") {
      ]
    }
  
 +  if (is_bsd) {
-+    sources += [
-+      "common_sandbox_support_linux.cc",
-+    ]
 +    deps += [
 +      "//third_party/fontconfig",
 +    ]
@@ -25,7 +22,7 @@
    if (use_zygote_handle) {
      sources += [
        "zygote/zygote_handle_impl_linux.h",
-@@ -403,7 +412,7 @@ source_set("common") {
+@@ -397,7 +403,7 @@ source_set("common") {
    }
  }
  

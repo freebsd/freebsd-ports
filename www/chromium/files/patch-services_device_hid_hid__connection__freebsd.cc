@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2021-07-28 08:43:36 UTC
+--- services/device/hid/hid_connection_freebsd.cc.orig	2021-09-29 12:19:04 UTC
 +++ services/device/hid/hid_connection_freebsd.cc
-@@ -0,0 +1,241 @@
+@@ -0,0 +1,242 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -183,8 +183,9 @@
 +    scoped_refptr<HidDeviceInfo> device_info,
 +    base::ScopedFD fd,
 +    scoped_refptr<base::SequencedTaskRunner> blocking_task_runner,
-+    bool allow_protected_reports)
-+    : HidConnection(device_info, allow_protected_reports),
++    bool allow_protected_reports,
++    bool allow_fido_reports)
++    : HidConnection(device_info, allow_protected_reports, allow_fido_reports),
 +      helper_(nullptr, base::OnTaskRunnerDeleter(blocking_task_runner)),
 +      blocking_task_runner_(std::move(blocking_task_runner)) {
 +  helper_.reset(new BlockingTaskRunnerHelper(std::move(fd), device_info,

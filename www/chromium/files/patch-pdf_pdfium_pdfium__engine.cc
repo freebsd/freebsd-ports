@@ -1,7 +1,7 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2021-07-19 18:45:19 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2021-09-24 04:26:09 UTC
 +++ pdf/pdfium/pdfium_engine.cc
 @@ -84,7 +84,7 @@
- #include "v8/include/cppgc/platform.h"
+ #include "gin/public/cppgc.h"
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -9,48 +9,12 @@
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -514,7 +514,7 @@ void InitializeSDK(bool enable_v8) {
+@@ -521,7 +521,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
  
    FPDF_InitLibraryWithConfig(&config);
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   g_font_mapping_mode = font_mapping_mode;
    InitializeLinuxFontMapper();
  #endif
- 
-@@ -545,7 +545,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client,
-   IFSDK_PAUSE::user = nullptr;
-   IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
- 
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   // PreviewModeClient does not know its pp::Instance.
-   SetLastInstance(client_->GetPluginInstance());
- #endif
-@@ -1003,7 +1003,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
- 
-   KillFormFocus();
- 
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   SetLastInstance(client_->GetPluginInstance());
- #endif
- 
-@@ -3154,7 +3154,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
-   DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
- 
-   last_progressive_start_time_ = base::Time::Now();
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   SetLastInstance(client_->GetPluginInstance());
- #endif
- 
-@@ -3643,7 +3643,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
-     FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
-   }
-   most_visible_page_ = index;
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   SetLastInstance(client_->GetPluginInstance());
- #endif
-   if (most_visible_page_ != -1 && called_do_document_action_) {

@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2021-07-19 18:45:16 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2021-09-14 01:51:57 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
 @@ -29,7 +29,7 @@
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
@@ -18,7 +18,7 @@
    void SetDisplayThreadPriority(base::PlatformThreadId thread_id) override;
  #endif
    blink::BlameContext* GetTopLevelBlameContext() override;
-@@ -268,7 +268,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -271,7 +271,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -27,7 +27,7 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -289,7 +289,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -292,7 +292,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mojo::PendingRemote<blink::mojom::CodeCacheHost> code_cache_host_remote_;
    mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_;
  

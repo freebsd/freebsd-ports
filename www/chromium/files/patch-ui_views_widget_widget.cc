@@ -1,6 +1,6 @@
---- ui/views/widget/widget.cc.orig	2021-07-28 08:23:02 UTC
+--- ui/views/widget/widget.cc.orig	2021-09-24 04:26:39 UTC
 +++ ui/views/widget/widget.cc
-@@ -48,7 +48,7 @@
+@@ -51,7 +51,7 @@
  #include "ui/views/window/custom_frame_view.h"
  #include "ui/views/window/dialog_delegate.h"
  
@@ -9,7 +9,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -1664,7 +1664,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -1777,7 +1777,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
        parent_)
      return parent_->GetNativeTheme();
  

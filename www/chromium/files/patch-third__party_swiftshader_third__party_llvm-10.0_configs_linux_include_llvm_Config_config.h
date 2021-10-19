@@ -1,6 +1,15 @@
---- third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h.orig	2021-04-14 18:43:10 UTC
+--- third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h.orig	2021-09-24 04:28:16 UTC
 +++ third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h
-@@ -9,17 +9,21 @@
+@@ -5,24 +5,30 @@
+ #include "llvm/Config/llvm-config.h"
+ 
+ /* For detecting __GLIBC__ usage */
++#ifndef __FreeBSD__
+ #include <features.h>
++#endif
+ 
+ /* Bug report URL. */
+ #define BUG_REPORT_URL "https://bugs.llvm.org/"
  
  /* Define to 1 to enable backtraces, and to 0 otherwise. */
  /* #undef ENABLE_BACKTRACES */
@@ -22,7 +31,7 @@
  
  /* Define to 1 if you have the <CrashReporterClient.h> header file. */
  /* #undef HAVE_CRASHREPORTERCLIENT_H */
-@@ -29,7 +33,7 @@
+@@ -32,7 +38,7 @@
  
  /* Define to 1 if you have the declaration of `arc4random', and to 0 if you
     don't. */
@@ -31,7 +40,7 @@
  
  /* Define to 1 if you have the declaration of `FE_ALL_EXCEPT', and to 0 if you
     don't. */
-@@ -53,7 +57,7 @@
+@@ -56,7 +62,7 @@
  #define HAVE_DLOPEN 1
  
  /* Define if dladdr() is available on this platform. */
@@ -40,7 +49,7 @@
  
  /* Define to 1 if you have the <errno.h> header file. */
  #define HAVE_ERRNO_H 1
-@@ -92,7 +96,7 @@
+@@ -95,7 +101,7 @@
  #define HAVE_ISATTY 1
  
  /* Define to 1 if you have the `edit' library (-ledit). */
@@ -49,7 +58,7 @@
  
  /* Define to 1 if you have the `pfm' library (-lpfm). */
  /* #undef HAVE_LIBPFM */
-@@ -111,21 +115,25 @@
+@@ -114,21 +120,25 @@
  
  /* Define to 1 if you have the `z' library (-lz). */
  /* #undef HAVE_LIBZ */
@@ -75,9 +84,9 @@
 +/* #define HAVE_MALLINFO 1 */
 +/* #undef HAVE_MALLINFO */
  
- /* Define to 1 if you have the <malloc/malloc.h> header file. */
- /* #undef HAVE_MALLOC_MALLOC_H */
-@@ -137,7 +145,7 @@
+ /* Some projects using SwiftShader bypass cmake (eg Chromium via gn) */
+ /* so we need to check glibc version for the new API to be safe */
+@@ -146,7 +156,7 @@
  #define HAVE_POSIX_FALLOCATE 1
  
  /* Define to 1 if you have the `posix_spawn' function. */
@@ -86,7 +95,7 @@
  
  /* Define to 1 if you have the `pread' function. */
  #define HAVE_PREAD 1
-@@ -155,16 +163,16 @@
+@@ -164,16 +174,16 @@
  #define HAVE_PTHREAD_RWLOCK_INIT 1
  
  /* Define to 1 if you have the `sbrk' function. */
@@ -106,7 +115,7 @@
  
  /* Define to 1 if you have the `setrlimit' function. */
  #define HAVE_SETRLIMIT 1
-@@ -212,13 +220,13 @@
+@@ -221,13 +231,13 @@
  #define HAVE_SYS_TYPES_H 1
  
  /* Define if the setupterm() function is supported this platform. */
@@ -122,7 +131,7 @@
  
  /* Define to 1 if you have the <unistd.h> header file. */
  #define HAVE_UNISTD_H 1
-@@ -227,7 +235,7 @@
+@@ -236,7 +246,7 @@
  /* #undef HAVE_VALGRIND_VALGRIND_H */
  
  /* Define to 1 if you have the <zlib.h> header file. */
@@ -131,7 +140,7 @@
  
  /* Have host's _alloca */
  /* #undef HAVE__ALLOCA */
-@@ -301,7 +309,7 @@
+@@ -310,7 +320,7 @@
  #elif defined(__arm__)
  #define LLVM_DEFAULT_TARGET_TRIPLE "armv7-linux-gnueabihf"
  #elif defined(__aarch64__)
@@ -140,7 +149,7 @@
  #elif defined(__mips__)
  #define LLVM_DEFAULT_TARGET_TRIPLE "mipsel-linux-gnu"
  #elif defined(__mips64)
-@@ -313,7 +321,7 @@
+@@ -322,7 +332,7 @@
  #endif
  
  /* Define if zlib compression is available */

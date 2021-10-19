@@ -1,6 +1,6 @@
---- content/renderer/render_thread_impl.cc.orig	2021-07-19 18:45:16 UTC
+--- content/renderer/render_thread_impl.cc.orig	2021-10-08 06:25:49 UTC
 +++ content/renderer/render_thread_impl.cc
-@@ -180,7 +180,7 @@
+@@ -185,7 +185,7 @@
  
  #if defined(OS_MAC)
  #include <malloc/malloc.h>
@@ -9,7 +9,7 @@
  #include <malloc.h>
  #endif
  
-@@ -695,7 +695,7 @@ void RenderThreadImpl::Init() {
+@@ -702,7 +702,7 @@ void RenderThreadImpl::Init() {
                         compositor_thread_pipeline_.get()));
    }
  
@@ -18,7 +18,7 @@
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -718,7 +718,7 @@ void RenderThreadImpl::Init() {
+@@ -725,7 +725,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -27,7 +27,7 @@
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1040,11 +1040,11 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1059,11 +1059,11 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
    const bool enable_video_accelerator =
  
@@ -41,7 +41,7 @@
        (gpu_channel_host->gpu_feature_info()
             .status_values[gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_DECODE] ==
         gpu::kGpuFeatureStatusEnabled);
-@@ -1054,7 +1054,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1073,7 +1073,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

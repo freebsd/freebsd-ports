@@ -1,6 +1,6 @@
---- tools/gn/build/gen.py.orig	2021-04-14 18:49:10 UTC
+--- tools/gn/build/gen.py.orig	2021-09-24 04:34:58 UTC
 +++ tools/gn/build/gen.py
-@@ -90,6 +90,9 @@ class Platform(object):
+@@ -91,6 +91,9 @@ class Platform(object):
    def is_solaris(self):
      return self._platform == 'solaris'
  
@@ -10,10 +10,10 @@
    def is_posix(self):
      return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd', 'haiku', 'solaris', 'msys', 'netbsd']
  
-@@ -405,6 +408,11 @@ def WriteGNNinja(path, platform, host, options):
-     elif platform.is_haiku():
-       cflags.append('-fPIC')
-       cflags.extend(['-D_BSD_SOURCE'])
+@@ -429,6 +432,11 @@ def WriteGNNinja(path, platform, host, options):
+       cflags.append('-Wno-unused-function')
+       cflags.append('-D_OPEN_SYS_FILE_EXT')
+       cflags.append('-DPATH_MAX=1024')
 +    elif platform.is_freebsd():
 +      cflags.extend(['-Wno-deprecated-register', '-Wno-parentheses-equality'])
 +      ldflags.extend(['-pthread'])

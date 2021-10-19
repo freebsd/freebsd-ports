@@ -1,4 +1,4 @@
---- base/posix/unix_domain_socket.cc.orig	2021-06-09 22:13:52 UTC
+--- base/posix/unix_domain_socket.cc.orig	2021-09-14 01:51:47 UTC
 +++ base/posix/unix_domain_socket.cc
 @@ -5,7 +5,10 @@
  #include "base/posix/unix_domain_socket.h"
@@ -11,7 +11,7 @@
  #if !defined(OS_NACL_NONSFI)
  #include <sys/un.h>
  #endif
-@@ -29,6 +32,14 @@ namespace base {
+@@ -28,6 +31,14 @@ namespace base {
  
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
@@ -26,7 +26,7 @@
  #if !defined(OS_NACL_NONSFI)
  bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
    int raw_socks[2];
-@@ -151,7 +162,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -150,7 +161,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
  #if !defined(OS_NACL_NONSFI) && !defined(OS_APPLE)
        // The PNaCl toolchain for Non-SFI binary build and macOS do not support
        // ucred. macOS supports xucred, but this structure is insufficient.
@@ -35,7 +35,7 @@
  #endif  // !defined(OS_NACL_NONSFI) && !defined(OS_APPLE)
        ;
    char control_buffer[kControlBufferSize];
-@@ -181,9 +192,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -180,9 +191,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
        // SCM_CREDENTIALS.
        if (cmsg->cmsg_level == SOL_SOCKET &&
            cmsg->cmsg_type == SCM_CREDENTIALS) {

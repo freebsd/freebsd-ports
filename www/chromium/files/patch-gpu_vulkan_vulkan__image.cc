@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_image.cc.orig	2021-04-14 18:41:04 UTC
+--- gpu/vulkan/vulkan_image.cc.orig	2021-09-14 01:51:58 UTC
 +++ gpu/vulkan/vulkan_image.cc
-@@ -325,7 +325,7 @@ bool VulkanImage::InitializeWithExternalMemory(
+@@ -326,7 +326,7 @@ bool VulkanImage::InitializeWithExternalMemory(
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

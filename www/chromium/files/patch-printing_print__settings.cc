@@ -1,6 +1,6 @@
---- printing/print_settings.cc.orig	2021-07-19 18:45:19 UTC
+--- printing/print_settings.cc.orig	2021-09-24 04:26:09 UTC
 +++ printing/print_settings.cc
-@@ -278,9 +278,9 @@ void PrintSettings::Clear() {
+@@ -283,9 +283,9 @@ void PrintSettings::Clear() {
  #endif
    is_modifiable_ = true;
    pages_per_sheet_ = 1;

@@ -1,6 +1,6 @@
---- base/files/file_util.h.orig	2021-07-19 18:45:05 UTC
+--- base/files/file_util.h.orig	2021-09-24 04:25:55 UTC
 +++ base/files/file_util.h
-@@ -284,14 +284,14 @@ BASE_EXPORT bool SetPosixFilePermissions(const FilePat
+@@ -280,14 +280,14 @@ BASE_EXPORT bool SetPosixFilePermissions(const FilePat
  BASE_EXPORT bool ExecutableExistsInPath(Environment* env,
                                          const FilePath::StringType& executable);
  
@@ -17,7 +17,7 @@
  
  #endif  // OS_POSIX
  
-@@ -614,7 +614,7 @@ BASE_EXPORT bool VerifyPathControlledByAdmin(const bas
+@@ -610,7 +610,7 @@ BASE_EXPORT bool VerifyPathControlledByAdmin(const bas
  // the directory |path|, in the number of FilePath::CharType, or -1 on failure.
  BASE_EXPORT int GetMaximumPathComponentLength(const base::FilePath& path);
  
@@ -26,7 +26,7 @@
  // Broad categories of file systems as returned by statfs() on Linux.
  enum FileSystemType {
    FILE_SYSTEM_UNKNOWN,  // statfs failed.
-@@ -661,7 +661,7 @@ BASE_EXPORT bool CopyAndDeleteDirectory(const FilePath
+@@ -657,7 +657,7 @@ BASE_EXPORT bool CopyAndDeleteDirectory(const FilePath
                                          const FilePath& to_path);
  #endif  // defined(OS_WIN)
  
@@ -35,7 +35,7 @@
  // CopyFileContentsWithSendfile will use the sendfile(2) syscall to perform a
  // file copy without moving the data between kernel and userspace. This is much
  // more efficient than sequences of read(2)/write(2) calls. The |retry_slow|
-@@ -673,7 +673,7 @@ BASE_EXPORT bool CopyAndDeleteDirectory(const FilePath
+@@ -669,7 +669,7 @@ BASE_EXPORT bool CopyAndDeleteDirectory(const FilePath
  BASE_EXPORT bool CopyFileContentsWithSendfile(File& infile,
                                                File& outfile,
                                                bool& retry_slow);

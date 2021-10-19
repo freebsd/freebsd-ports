@@ -1,6 +1,6 @@
---- base/files/file_util_unittest.cc.orig	2021-04-14 18:40:48 UTC
+--- base/files/file_util_unittest.cc.orig	2021-09-14 01:51:47 UTC
 +++ base/files/file_util_unittest.cc
-@@ -1638,7 +1638,7 @@ TEST_F(FileUtilTest, DeleteDirRecursiveWithOpenFile) {
+@@ -1640,7 +1640,7 @@ TEST_F(FileUtilTest, DeleteDirRecursiveWithOpenFile) {
  #endif
  }
  
@@ -9,7 +9,7 @@
  // This test will validate that files which would block when read result in a
  // failure on a call to ReadFileToStringNonBlocking. To accomplish this we will
  // use a named pipe because it appears as a file on disk and we can control how
-@@ -1671,7 +1671,7 @@ TEST_F(FileUtilTest, TestNonBlockingFileReadLinux) {
+@@ -1673,7 +1673,7 @@ TEST_F(FileUtilTest, TestNonBlockingFileReadLinux) {
    ASSERT_EQ(result.size(), 1u);
    EXPECT_EQ(result[0], 'a');
  }
@@ -18,7 +18,7 @@
  
  TEST_F(FileUtilTest, MoveFileNew) {
    // Create a file
-@@ -3506,7 +3506,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
+@@ -3508,7 +3508,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
  }
  #endif  // defined(OS_WIN)
  
@@ -27,7 +27,7 @@
  TEST_F(FileUtilTest, ReadFileToStringWithProcFileSystem) {
    FilePath file_path("/proc/cpuinfo");
    std::string data = "temp";
-@@ -3524,7 +3524,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithProcFileSyste
+@@ -3526,7 +3526,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithProcFileSyste
  
    EXPECT_FALSE(ReadFileToStringWithMaxSize(file_path, nullptr, 4));
  }

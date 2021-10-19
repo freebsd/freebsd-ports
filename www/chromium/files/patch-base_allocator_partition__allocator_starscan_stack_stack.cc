@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2021-07-28 10:41:10 UTC
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2021-09-24 04:25:55 UTC
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
 @@ -17,6 +17,10 @@
  #include <pthread.h>
@@ -30,10 +30,10 @@
 @@ -71,6 +83,9 @@ void* GetStackTop() {
    // See https://code.google.com/p/nativeclient/issues/detail?id=3431.
    return __libc_stack_end;
- #endif  // defined(LIBC_GLIBC)
+ #else
 +#if defined(OS_FREEBSD)
 +  pthread_attr_destroy(&attr);
 +#endif
    return nullptr;
+ #endif  // defined(LIBC_GLIBC)
  }
- 

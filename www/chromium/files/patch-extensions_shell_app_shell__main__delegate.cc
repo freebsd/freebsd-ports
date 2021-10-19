@@ -1,6 +1,6 @@
---- extensions/shell/app/shell_main_delegate.cc.orig	2021-04-14 18:41:04 UTC
+--- extensions/shell/app/shell_main_delegate.cc.orig	2021-09-14 01:51:57 UTC
 +++ extensions/shell/app/shell_main_delegate.cc
-@@ -39,7 +39,7 @@
+@@ -42,7 +42,7 @@
  
  #if defined(OS_WIN)
  #include "base/base_paths_win.h"
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MAC)
  #include "base/base_paths_mac.h"
-@@ -75,7 +75,7 @@ base::FilePath GetDataPath() {
+@@ -78,7 +78,7 @@ base::FilePath GetDataPath() {
      return cmd_line->GetSwitchValuePath(switches::kContentShellDataPath);
  
    base::FilePath data_dir;

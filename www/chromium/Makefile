@@ -1,8 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	92.0.4515.159
-PORTREVISION=	2
+PORTVERSION=	94.0.4606.81
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -14,7 +13,6 @@ COMMENT=	Google web browser based on WebKit
 LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
-BROKEN_i386=			../../base/files/file_util_posix.cc:1258:29: error: no matching function for call to 'sendfile' (ssize_t vs off_t)
 ONLY_FOR_ARCHS=			aarch64 amd64 i386
 
 BUILD_DEPENDS=	bash:shells/bash \
@@ -72,10 +70,10 @@ USES=		bison compiler:c++17-lang cpe desktop-file-utils dos2unix gl gnome jpeg l
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
-DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h \
-		third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
+DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
 USE_GL=		gbm gl
-USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
+USE_GNOME=	atk dconf gdkpixbuf2 glib20 gtk30 libxml2 libxslt
+INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xcursor xext xdamage xfixes xi \
@@ -101,7 +99,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
-		fieldtrial_testing_like_official_build=true \
 		is_clang=true \
 		optimize_webui=false \
 		toolkit_views=true \
@@ -113,7 +110,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_gnome_keyring=false \
 		use_lld=true \
 		use_sysroot=false \
-		use_system_freetype=true \
+		use_system_freetype=false \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
 		extra_cxxflags="${CXXFLAGS}" \
@@ -269,7 +266,11 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		ffmpeg flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+		flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+	# Chromium uses an unreleased version of FFmpeg, so configure it
+	${CP} -R \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/ \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/freebsd
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files

@@ -1,6 +1,6 @@
---- base/debug/debugger_posix.cc.orig	2021-07-19 18:45:05 UTC
+--- base/debug/debugger_posix.cc.orig	2021-09-24 04:25:55 UTC
 +++ base/debug/debugger_posix.cc
-@@ -93,7 +93,7 @@ bool BeingDebugged() {
+@@ -92,7 +92,7 @@ bool BeingDebugged() {
      KERN_PROC,
      KERN_PROC_PID,
      getpid()
@@ -9,7 +9,7 @@
      , sizeof(struct kinfo_proc),
      0
  #endif
-@@ -101,33 +101,35 @@ bool BeingDebugged() {
+@@ -100,33 +100,35 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.

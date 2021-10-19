@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2021-07-19 18:45:05 UTC
+--- base/process/process_metrics.h.orig	2021-09-14 01:51:47 UTC
 +++ base/process/process_metrics.h
 @@ -37,7 +37,7 @@
  #include "base/win/windows_types.h"
@@ -9,7 +9,7 @@
      defined(OS_AIX)
  #include <string>
  #include <utility>
-@@ -55,7 +55,7 @@ class Value;
+@@ -54,7 +54,7 @@ class Value;
  // Full declaration is in process_metrics_iocounters.h.
  struct IoCounters;
  
@@ -18,7 +18,7 @@
  // Minor and major page fault counts since the process creation.
  // Both counts are process-wide, and exclude child processes.
  //
-@@ -65,7 +65,7 @@ struct PageFaultCounts {
+@@ -64,7 +64,7 @@ struct PageFaultCounts {
    int64_t minor;
    int64_t major;
  };
@@ -27,7 +27,7 @@
  
  // Convert a POSIX timeval to microseconds.
  BASE_EXPORT int64_t TimeValToMicroseconds(const struct timeval& tv);
-@@ -106,7 +106,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -105,7 +105,7 @@ class BASE_EXPORT ProcessMetrics {
    // convenience wrapper for CreateProcessMetrics().
    static std::unique_ptr<ProcessMetrics> CreateCurrentProcessMetrics();
  
@@ -36,7 +36,7 @@
    // Resident Set Size is a Linux/Android specific memory concept. Do not
    // attempt to extend this to other platforms.
    BASE_EXPORT size_t GetResidentSetSize() const;
-@@ -132,7 +132,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -131,7 +131,7 @@ class BASE_EXPORT ProcessMetrics {
    // will result in a time delta of 2 seconds/per 1 wall-clock second.
    TimeDelta GetCumulativeCPUUsage() WARN_UNUSED_RESULT;
  
@@ -45,7 +45,7 @@
      defined(OS_AIX)
    // Emits the cumulative CPU usage for all currently active threads since they
    // were started into the output parameter (replacing its current contents).
-@@ -167,7 +167,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -166,7 +166,7 @@ class BASE_EXPORT ProcessMetrics {
    bool ParseProcTimeInState(const std::string& content,
                              PlatformThreadId tid,
                              TimeInStatePerThread& time_in_state_per_thread);
@@ -54,7 +54,7 @@
          // defined(OS_AIX)
  
    // Returns the number of average idle cpu wakeups per second since the last
-@@ -216,14 +216,14 @@ class BASE_EXPORT ProcessMetrics {
+@@ -215,14 +215,14 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_POSIX)
  
@@ -71,7 +71,7 @@
  
    // Returns total memory usage of malloc.
    size_t GetMallocUsage();
-@@ -235,7 +235,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -234,7 +234,7 @@ class BASE_EXPORT ProcessMetrics {
    ProcessMetrics(ProcessHandle process, PortProvider* port_provider);
  #endif  // !defined(OS_MAC)
  
@@ -80,7 +80,7 @@
      defined(OS_AIX)
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
-@@ -246,10 +246,10 @@ class BASE_EXPORT ProcessMetrics {
+@@ -245,10 +245,10 @@ class BASE_EXPORT ProcessMetrics {
        uint64_t absolute_package_idle_wakeups);
  #endif
  
@@ -93,7 +93,7 @@
          // defined(OS_AIX)
  
  #if defined(OS_WIN)
-@@ -271,7 +271,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -270,7 +270,7 @@ class BASE_EXPORT ProcessMetrics {
    // Number of bytes transferred to/from disk in bytes.
    uint64_t last_cumulative_disk_usage_ = 0;
  
@@ -102,7 +102,7 @@
      defined(OS_AIX)
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
-@@ -315,7 +315,7 @@ BASE_EXPORT size_t GetHandleLimit();
+@@ -314,7 +314,7 @@ BASE_EXPORT size_t GetHandleLimit();
  BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
  #endif  // defined(OS_POSIX)
  
@@ -152,7 +152,7 @@
      defined(OS_AIX)
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
-@@ -477,7 +477,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
+@@ -478,7 +478,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
  // Returns the amount of time spent in user space since boot across all CPUs.
  BASE_EXPORT TimeDelta GetUserCpuTimeSinceBoot();
  
@@ -161,7 +161,7 @@
          // defined(OS_AIX)
  
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -589,7 +589,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -590,7 +590,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

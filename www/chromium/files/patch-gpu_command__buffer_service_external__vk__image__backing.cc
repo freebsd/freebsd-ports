@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/external_vk_image_backing.cc.orig	2021-07-19 18:45:17 UTC
+--- gpu/command_buffer/service/external_vk_image_backing.cc.orig	2021-09-14 01:51:57 UTC
 +++ gpu/command_buffer/service/external_vk_image_backing.cc
-@@ -30,7 +30,7 @@
+@@ -31,7 +31,7 @@
  #include "ui/gl/gl_version_info.h"
  #include "ui/gl/scoped_binders.h"
  
@@ -9,16 +9,16 @@
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -601,7 +601,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
- ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
+@@ -557,7 +557,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
                                      MemoryTypeTracker* tracker,
-                                     WGPUDevice wgpuDevice) {
+                                     WGPUDevice wgpuDevice,
+                                     WGPUBackendType backend_type) {
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && BUILDFLAG(USE_DAWN)
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && BUILDFLAG(USE_DAWN)
    auto wgpu_format = viz::ToWGPUFormat(format());
  
    if (wgpu_format == WGPUTextureFormat_Undefined) {
-@@ -620,7 +620,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+@@ -576,7 +576,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
  
    return std::make_unique<ExternalVkImageDawnRepresentation>(
        manager, this, tracker, wgpuDevice, wgpu_format, std::move(memory_fd));
@@ -27,7 +27,7 @@
    NOTIMPLEMENTED_LOG_ONCE();
    return nullptr;
  #endif
-@@ -633,7 +633,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+@@ -589,7 +589,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
    gl::GLApi* api = gl::g_current_gl_context;
    absl::optional<ScopedDedicatedMemoryObject> memory_object;
    if (!use_separate_gl_texture()) {

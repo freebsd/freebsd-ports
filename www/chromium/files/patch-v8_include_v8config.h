@@ -1,6 +1,6 @@
---- v8/include/v8config.h.orig	2021-04-14 18:43:14 UTC
+--- v8/include/v8config.h.orig	2021-09-24 04:28:21 UTC
 +++ v8/include/v8config.h
-@@ -293,7 +293,18 @@ path. Add it with -I<path> to the command line
+@@ -338,7 +338,18 @@ path. Add it with -I<path> to the command line
  
  # define V8_HAS_CPP_ATTRIBUTE_NODISCARD (V8_HAS_CPP_ATTRIBUTE(nodiscard))
  

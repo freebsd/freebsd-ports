@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/subprocess_posix.cc.orig	2021-04-14 18:43:06 UTC
+--- third_party/perfetto/src/base/subprocess_posix.cc.orig	2021-09-14 01:58:28 UTC
 +++ third_party/perfetto/src/base/subprocess_posix.cc
 @@ -20,7 +20,8 @@
  
@@ -29,7 +29,7 @@
  #endif
  
    auto die = [args](const char* err) __attribute__((noreturn)) {
-@@ -431,4 +437,4 @@ void Subprocess::KillAndWaitForTermination(int sig_num
+@@ -440,4 +446,4 @@ void Subprocess::KillAndWaitForTermination(int sig_num
  }  // namespace base
  }  // namespace perfetto
  

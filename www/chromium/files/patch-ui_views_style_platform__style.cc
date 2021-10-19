@@ -1,6 +1,6 @@
---- ui/views/style/platform_style.cc.orig	2021-07-19 18:45:44 UTC
+--- ui/views/style/platform_style.cc.orig	2021-09-24 04:26:39 UTC
 +++ ui/views/style/platform_style.cc
-@@ -57,7 +57,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
+@@ -52,7 +52,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
  const bool PlatformStyle::kAdjustBubbleIfOffscreen =
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
      false;
  #else
      true;
-@@ -87,7 +87,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
+@@ -82,7 +82,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
  #endif  // OS_MAC
  
  #if !BUILDFLAG(ENABLE_DESKTOP_AURA) || \

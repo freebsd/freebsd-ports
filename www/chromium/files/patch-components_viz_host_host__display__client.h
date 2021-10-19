@@ -1,6 +1,6 @@
---- components/viz/host/host_display_client.h.orig	2021-04-14 18:41:02 UTC
+--- components/viz/host/host_display_client.h.orig	2021-09-24 04:26:05 UTC
 +++ components/viz/host/host_display_client.h
-@@ -46,7 +46,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
+@@ -45,7 +45,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

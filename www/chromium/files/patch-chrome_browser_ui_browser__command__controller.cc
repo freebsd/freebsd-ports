@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2021-07-19 18:45:10 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2021-09-24 04:26:00 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -89,7 +89,7 @@
  
@@ -27,7 +27,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -989,7 +989,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -1009,7 +1009,7 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

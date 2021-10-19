@@ -1,4 +1,4 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2021-04-14 18:40:54 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2021-09-14 01:51:51 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
 @@ -27,7 +27,7 @@
            <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
@@ -26,4 +26,4 @@
 +<if expr="is_posix and not chromeos and not lacros">
          <div class="hr" hidden="[[!pageVisibility.bookmarksBar]]"></div>
          <settings-toggle-button
-             pref="{{prefs.browser.custom_chrome_frame}}"
+             hidden="[[!showCustomChromeFrame_]]"

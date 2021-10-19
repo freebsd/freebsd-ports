@@ -1,6 +1,6 @@
---- base/sampling_heap_profiler/sampling_heap_profiler.cc.orig	2021-04-14 18:40:48 UTC
+--- base/sampling_heap_profiler/sampling_heap_profiler.cc.orig	2021-09-14 01:51:47 UTC
 +++ base/sampling_heap_profiler/sampling_heap_profiler.cc
-@@ -30,6 +30,10 @@
+@@ -27,6 +27,10 @@
  #include <sys/prctl.h>
  #endif
  
@@ -11,7 +11,7 @@
  #if defined(OS_ANDROID) && BUILDFLAG(CAN_UNWIND_WITH_CFI_TABLE) && \
      defined(OFFICIAL_BUILD)
  #include "base/trace_event/cfi_backtrace_android.h"  // no-presubmit-check
-@@ -65,6 +69,10 @@ const char* GetAndLeakThreadName() {
+@@ -62,6 +66,10 @@ const char* GetAndLeakThreadName() {
  #elif defined(OS_APPLE)
    int err = pthread_getname_np(pthread_self(), name, kBufferLen);
    if (err == 0 && *name != '\0')

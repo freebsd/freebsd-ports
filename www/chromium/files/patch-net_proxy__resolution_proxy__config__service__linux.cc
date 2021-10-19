@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2021-07-19 18:45:19 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2021-09-14 01:52:00 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
@@ -18,7 +18,7 @@
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
  int StringToIntOrDefault(base::StringPiece value, int default_value) {
-@@ -1003,6 +1006,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+@@ -1004,6 +1007,7 @@ class SettingGetterImplKDE : public ProxyConfigService
  
    DISALLOW_COPY_AND_ASSIGN(SettingGetterImplKDE);
  };
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -1217,9 +1221,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1218,9 +1222,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

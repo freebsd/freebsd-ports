@@ -1,6 +1,6 @@
---- chrome/browser/crash_upload_list/crash_upload_list.cc.orig	2021-05-12 22:05:43 UTC
+--- chrome/browser/crash_upload_list/crash_upload_list.cc.orig	2021-09-24 04:25:58 UTC
 +++ chrome/browser/crash_upload_list/crash_upload_list.cc
-@@ -48,7 +48,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
+@@ -52,7 +52,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
  // to log uploads in CrashUploadList::kReporterLogFilename.
  // Linux is handled below.
  #if !(BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS) || \
