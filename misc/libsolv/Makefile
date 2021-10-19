@@ -8,7 +8,8 @@ COMMENT=	Package dependency solver using a satisfiability algorithm
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.BSD
 
-USES=		cmake localbase:ldflags
+USES=		cmake cpe localbase:ldflags
+CPE_VENDOR=	opensuse
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
