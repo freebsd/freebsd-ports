@@ -2,12 +2,13 @@
 
 PORTNAME=	plv8
 PORTVERSION=	3.0.0
+PORTREVISION=   1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 PKGNAMESUFFIX=	js
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	PL/v8js procedural language for PostgreSQL database
 
 LICENSE=	PostgreSQL
