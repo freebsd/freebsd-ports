@@ -12,9 +12,10 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${LOCALBASE}/lib/libjack.so:audio/jack
 
-USES=		compiler:c++11-lang desktop-file-utils gl mlt:6 pkgconfig \
+USES=		compiler:c++11-lang cpe desktop-file-utils gl mlt:6 pkgconfig \
 		qmake qt:5 sdl shared-mime-info \
 		xorg
+CPE_VENDOR=	meltytech
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
