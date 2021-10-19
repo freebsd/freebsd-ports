@@ -14,7 +14,7 @@ BROKEN_sparc64=		fails to compile: uses x86 asm
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		autoreconf bison gmake gnome libtool pathfix
+USES=		autoreconf bison cpe gmake gnome libtool pathfix
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
