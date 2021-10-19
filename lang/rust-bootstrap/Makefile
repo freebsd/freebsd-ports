@@ -30,7 +30,8 @@ FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
 		powerpc64le powerpc
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		ninja:build perl5 python:3.6+,build tar:xz
+USES=		cpe ninja:build perl5 python:3.6+,build tar:xz
+CPE_VENDOR=	${PORTNAME}-lang
 .if ${FLAVOR} == powerpc64_elfv1
 USE_GCC=	9:build
 .endif
