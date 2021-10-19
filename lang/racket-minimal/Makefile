@@ -25,7 +25,8 @@ NOT_FOR_ARCHS_REASON=	unsupported platform
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		gmake iconv libtool localbase tar:tgz
+USES=		cpe gmake iconv libtool localbase tar:tgz
+CPE_VENDOR=	${PORTNAME}-lang
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libffi \
 		--enable-places \
