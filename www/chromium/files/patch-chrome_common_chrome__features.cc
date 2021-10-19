@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2021-07-19 18:45:10 UTC
+--- chrome/common/chrome_features.cc.orig	2021-09-24 04:26:00 UTC
 +++ chrome/common/chrome_features.cc
-@@ -83,13 +83,13 @@ const base::Feature kAsyncDns {
+@@ -82,13 +82,13 @@ const base::Feature kAsyncDns {
  #endif
  };
  
@@ -16,7 +16,38 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  // Enable Borealis on Chrome OS.
-@@ -282,7 +282,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
+@@ -99,13 +99,13 @@ const base::Feature kBorealis{"Borealis", base::FEATUR
+ const base::Feature kChangePictureVideoMode{"ChangePictureVideoMode",
+                                             base::FEATURE_ENABLED_BY_DEFAULT};
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
+ // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
+ // Apps will not launch and will be marked in the UI as deprecated.
+ const base::Feature kChromeAppsDeprecation{"ChromeAppsDeprecation",
+                                            base::FEATURE_DISABLED_BY_DEFAULT};
+-#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ #if defined(OS_WIN)
+ const base::Feature kChromeCleanupScanCompletedNotification{
+@@ -216,12 +216,12 @@ const base::Feature kDefaultPinnedAppsUpdate2021Q2{
+     "DefaultPinnedAppsUpdate2021Q2", base::FEATURE_ENABLED_BY_DEFAULT};
+ #endif
+ 
+-#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ // Enables Desktop PWAs shortcuts menu to be visible and executable in ChromeOS,
+ // MacOS and Linux.
+ const base::Feature kDesktopPWAsAppIconShortcutsMenuUI{
+   "DesktopPWAsAppIconShortcutsMenuUI",
+-#if defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_DISABLED_BY_DEFAULT
+ #else
+       base::FEATURE_ENABLED_BY_DEFAULT
+@@ -273,7 +273,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
  // Enables or disables Desktop PWAs to be auto-started on OS login.
  const base::Feature kDesktopPWAsRunOnOsLogin {
    "DesktopPWAsRunOnOsLogin",
@@ -25,28 +56,12 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -378,13 +378,13 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
-+#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \
-     defined(OS_MAC)
- COMPONENT_EXPORT(CHROME_FEATURES)
- // Enables ephemeral Guest profiles on desktop.
- extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop{
-     "EnableEphemeralGuestProfilesOnDesktop", base::FEATURE_DISABLED_BY_DEFAULT};
--#endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || (defined(OS_LINUX) || defined(OS_BSD) ||
-         // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
- 
- #if defined(OS_WIN)
-@@ -566,7 +566,7 @@ const base::Feature kIncognitoBrandConsistencyForAndro
-     "IncognitoBrandConsistencyForAndroid", base::FEATURE_DISABLED_BY_DEFAULT};
- #endif
+@@ -558,7 +558,7 @@ const base::Feature kIncognitoReauthenticationForAndro
+ const base::Feature kIncognitoNtpRevamp{"IncognitoNtpRevamp",
+                                         base::FEATURE_DISABLED_BY_DEFAULT};
  
 -#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 +#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS)
+     defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  // When enabled, removes any theme or background customization done by the user
  // on the Incognito UI.

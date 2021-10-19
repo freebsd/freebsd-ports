@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-07-19 18:45:13 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-09-14 01:51:55 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -18,7 +18,7 @@
  #include <wincred.h>
@@ -9,25 +9,25 @@
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -35,7 +35,7 @@
+@@ -33,7 +33,7 @@
+ #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
+ #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -71,7 +71,7 @@
+@@ -67,7 +67,7 @@
+ #include "base/system/sys_info.h"
+ #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "base/system/sys_info.h"
  #endif
  
-@@ -108,6 +108,10 @@ std::string GetMachineName() {
+@@ -102,6 +102,10 @@ std::string GetMachineName() {
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
    return std::string();
@@ -38,7 +38,7 @@
  #elif defined(OS_IOS)
    // Use the Vendor ID as the machine name.
    return ios::device_util::GetVendorId();
-@@ -158,7 +162,7 @@ std::string GetMachineName() {
+@@ -152,7 +156,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -47,12 +47,12 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -183,7 +187,7 @@ std::string GetOSArchitecture() {
+@@ -177,7 +181,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {
--#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_APPLE)
-+#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_APPLE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_APPLE)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_APPLE) || defined(OS_BSD)
    struct passwd* creds = getpwuid(getuid());
    if (!creds || !creds->pw_name)
      return std::string();

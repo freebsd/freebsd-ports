@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.h.orig	2021-04-15 08:13:27 UTC
+--- services/device/hid/hid_service_freebsd.h.orig	2021-09-29 12:19:04 UTC
 +++ services/device/hid/hid_service_freebsd.h
-@@ -0,0 +1,47 @@
+@@ -0,0 +1,48 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -26,6 +26,7 @@
 +
 +  void Connect(const std::string& device_guid,
 +               bool allow_protected_reports,
++	       bool allow_fido_reports,
 +               ConnectCallback connect) override;
 +  base::WeakPtr<HidService> GetWeakPtr() override;
 +

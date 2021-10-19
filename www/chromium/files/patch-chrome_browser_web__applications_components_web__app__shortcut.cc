@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/components/web_app_shortcut.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/browser/web_applications/components/web_app_shortcut.cc.orig	2021-09-14 01:51:52 UTC
 +++ chrome/browser/web_applications/components/web_app_shortcut.cc
-@@ -33,7 +33,7 @@ namespace {
+@@ -34,7 +34,7 @@ namespace {
  
  #if defined(OS_MAC)
  const int kDesiredIconSizesForShortcut[] = {16, 32, 128, 256, 512};

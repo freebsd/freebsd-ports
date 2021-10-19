@@ -1,6 +1,6 @@
---- content/browser/utility_process_host.cc.orig	2021-05-12 22:05:52 UTC
+--- content/browser/utility_process_host.cc.orig	2021-09-24 04:26:05 UTC
 +++ content/browser/utility_process_host.cc
-@@ -67,7 +67,7 @@ UtilityProcessHost::UtilityProcessHost()
+@@ -68,7 +68,7 @@ UtilityProcessHost::UtilityProcessHost()
  
  UtilityProcessHost::UtilityProcessHost(std::unique_ptr<Client> client)
      : sandbox_type_(sandbox::policy::SandboxType::kUtility),
@@ -9,7 +9,7 @@
        child_flags_(ChildProcessHost::CHILD_ALLOW_SELF),
  #else
        child_flags_(ChildProcessHost::CHILD_NORMAL),
-@@ -240,8 +240,8 @@ bool UtilityProcessHost::StartProcess() {
+@@ -233,8 +233,8 @@ bool UtilityProcessHost::StartProcess() {
        sandbox::policy::switches::kNoSandbox,
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,4 +1,4 @@
---- media/video/fake_gpu_memory_buffer.cc.orig	2021-04-14 18:41:06 UTC
+--- media/video/fake_gpu_memory_buffer.cc.orig	2021-09-14 01:51:59 UTC
 +++ media/video/fake_gpu_memory_buffer.cc
 @@ -10,7 +10,7 @@
  #include "media/base/format_utils.h"
@@ -19,8 +19,8 @@
    base::ScopedFD fd(open("/dev/zero", O_RDWR));
    DCHECK(fd.is_valid());
 @@ -78,7 +78,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
-   static base::NoDestructor<base::AtomicSequenceNumber> buffer_id_generator;
-   handle_.id = gfx::GpuMemoryBufferId(buffer_id_generator->GetNext());
+   static base::AtomicSequenceNumber buffer_id_generator;
+   handle_.id = gfx::GpuMemoryBufferId(buffer_id_generator.GetNext());
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)

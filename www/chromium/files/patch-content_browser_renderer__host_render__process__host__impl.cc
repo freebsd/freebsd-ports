@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2021-07-19 18:45:15 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2021-10-01 01:36:48 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -224,7 +224,7 @@
+@@ -231,7 +231,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  
-@@ -1371,7 +1371,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -1376,7 +1376,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1382,7 +1382,7 @@ size_t GetPlatformProcessLimit() {
+@@ -1387,7 +1387,7 @@ size_t GetPlatformProcessLimit() {
  #else
    // TODO(https://crbug.com/104689): Implement on other platforms.
    return kUnknownPlatformProcessLimit;
@@ -27,7 +27,7 @@
  }
  #endif  // !defined(OS_ANDROID) && !BUILDFLAG(IS_CHROMEOS_ASH)
  
-@@ -1456,7 +1456,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1463,7 +1463,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
          return;
      }
  
@@ -36,7 +36,7 @@
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -1884,7 +1884,7 @@ bool RenderProcessHostImpl::Init() {
+@@ -1915,7 +1915,7 @@ bool RenderProcessHostImpl::Init() {
    renderer_prefix =
        browser_command_line.GetSwitchValueNative(switches::kRendererCmdPrefix);
  
@@ -45,7 +45,7 @@
    int flags = renderer_prefix.empty() ? ChildProcessHost::CHILD_ALLOW_SELF
                                        : ChildProcessHost::CHILD_NORMAL;
  #elif defined(OS_MAC)
-@@ -3294,8 +3294,8 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3370,8 +3370,8 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableInProcessStackTraces,
      sandbox::policy::switches::kDisableSeccompFilterSandbox,
      sandbox::policy::switches::kNoSandbox,
@@ -56,7 +56,7 @@
      switches::kDisableDevShmUsage,
  #endif
  #if defined(OS_MAC)
-@@ -4968,6 +4968,8 @@ void RenderProcessHostImpl::OnProcessLaunched() {
+@@ -5041,6 +5041,8 @@ void RenderProcessHostImpl::OnProcessLaunched() {
      // TODO(https://crbug.com/875933): Fix initial priority on Android to
      // reflect |priority_.is_background()|.
      DCHECK_EQ(blink::kLaunchingProcessIsBackgrounded, !priority_.visible);

@@ -1,16 +1,12 @@
---- chrome/browser/ui/BUILD.gn.orig	2021-07-19 18:45:09 UTC
+--- chrome/browser/ui/BUILD.gn.orig	2021-09-24 04:25:59 UTC
 +++ chrome/browser/ui/BUILD.gn
-@@ -615,7 +615,7 @@ static_library("ui") {
-     deps += [ "//chrome/browser/vr:vr_base" ]
+@@ -642,10 +642,20 @@ static_library("ui") {
+     ]
    }
  
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {
-     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
-     deps += [
-       "//components/crash/core/app",
-@@ -623,6 +623,13 @@ static_library("ui") {
-     ]
+     deps += [ "//components/crash/core/app" ]
    }
  
 +  if (is_bsd) {
@@ -18,12 +14,15 @@
 +      "webui/crashes_ui.cc",
 +      "webui/crashes_ui.h",
 +    ]
++    deps -= [
++      "//components/crash/core/browser",
++    ]
 +  }
 +
-   if (is_win || is_android || is_linux || is_chromeos) {
+   if (is_android) {
      sources += [
-       "webui/sandbox/sandbox_internals_ui.cc",
-@@ -3425,7 +3432,7 @@ static_library("ui") {
+       "android/android_about_app_info.cc",
+@@ -3530,7 +3540,7 @@ static_library("ui") {
      }
    }
  

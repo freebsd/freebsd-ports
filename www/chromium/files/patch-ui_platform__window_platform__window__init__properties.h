@@ -1,15 +1,15 @@
---- ui/platform_window/platform_window_init_properties.h.orig	2021-07-19 18:45:44 UTC
+--- ui/platform_window/platform_window_init_properties.h.orig	2021-09-24 04:26:39 UTC
 +++ ui/platform_window/platform_window_init_properties.h
-@@ -47,7 +47,7 @@ enum class PlatformWindowShadowType {
- 
- class WorkspaceExtensionDelegate;
+@@ -52,7 +52,7 @@ class WorkspaceExtensionDelegate;
+ class ScenicWindowDelegate;
+ #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  class X11ExtensionDelegate;
  #endif
  
-@@ -93,7 +93,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -106,7 +106,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
  
    PlatformWindowShadowType shadow_type = PlatformWindowShadowType::kDefault;
  

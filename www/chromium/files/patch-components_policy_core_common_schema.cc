@@ -1,6 +1,6 @@
---- components/policy/core/common/schema.cc.orig	2021-04-14 18:41:00 UTC
+--- components/policy/core/common/schema.cc.orig	2021-09-14 01:51:55 UTC
 +++ components/policy/core/common/schema.cc
-@@ -24,7 +24,11 @@
+@@ -25,7 +25,11 @@
  #include "base/strings/stringprintf.h"
  #include "components/policy/core/common/json_schema_constants.h"
  #include "components/policy/core/common/schema_internal.h"

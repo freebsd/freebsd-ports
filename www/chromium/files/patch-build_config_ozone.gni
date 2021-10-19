@@ -1,12 +1,12 @@
---- build/config/ozone.gni.orig	2021-04-14 18:40:48 UTC
+--- build/config/ozone.gni.orig	2021-09-24 04:25:56 UTC
 +++ build/config/ozone.gni
-@@ -79,6 +79,9 @@ declare_args() {
-       ozone_platform = "x11"
-       ozone_platform_drm = true
-       ozone_platform_x11 = true
+@@ -85,6 +85,9 @@ declare_args() {
+     } else if (is_chromeos_lacros) {
+       ozone_platform = "wayland"
+       ozone_platform_wayland = true
 +    } else if (is_bsd) {
 +      ozone_platform = "x11"
 +      ozone_platform_x11 = true
-     } else if (is_linux || is_chromeos_lacros) {
+     } else if (is_linux) {
        ozone_platform = "x11"
        ozone_platform_wayland = true

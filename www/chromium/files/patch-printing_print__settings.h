@@ -1,4 +1,4 @@
---- printing/print_settings.h.orig	2021-07-19 18:45:19 UTC
+--- printing/print_settings.h.orig	2021-09-24 04:26:09 UTC
 +++ printing/print_settings.h
 @@ -19,11 +19,11 @@
  #include "ui/gfx/geometry/rect.h"
@@ -14,7 +14,7 @@
  
  namespace printing {
  
-@@ -82,9 +82,9 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -72,9 +72,9 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
      }
    };
  
@@ -26,7 +26,7 @@
  
    PrintSettings();
    PrintSettings(const PrintSettings&) = delete;
-@@ -223,12 +223,12 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -222,12 +222,12 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -41,7 +41,7 @@
  
  #if defined(OS_CHROMEOS)
    void set_send_user_info(bool send_user_info) {
-@@ -322,10 +322,10 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -326,10 +326,10 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  

@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list.cc.orig	2021-07-19 18:45:17 UTC
+--- gpu/config/gpu_control_list.cc.orig	2021-09-24 04:26:07 UTC
 +++ gpu/config/gpu_control_list.cc
 @@ -19,7 +19,11 @@
  #include "build/build_config.h"
@@ -12,7 +12,7 @@
  
  namespace gpu {
  namespace {
-@@ -277,7 +281,7 @@ bool GpuControlList::More::GLVersionInfoMismatch(
+@@ -262,7 +266,7 @@ bool GpuControlList::More::GLVersionInfoMismatch(
  GpuControlList::GLType GpuControlList::More::GetDefaultGLType() {
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    return kGLTypeGL;
@@ -21,7 +21,7 @@
      defined(OS_OPENBSD)
    return kGLTypeGL;
  #elif defined(OS_MAC)
-@@ -783,7 +787,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -768,7 +772,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif defined(OS_FUCHSIA)
    return kOsFuchsia;

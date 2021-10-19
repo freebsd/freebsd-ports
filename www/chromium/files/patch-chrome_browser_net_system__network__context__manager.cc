@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2021-05-12 22:05:44 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2021-09-24 04:25:58 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -82,11 +82,11 @@
  
@@ -27,7 +27,7 @@
  
  #if defined(OS_POSIX)
    auth_dynamic_params->ntlm_v2_enabled =
-@@ -364,10 +364,10 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -376,10 +376,10 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kBasicAuthOverHttpEnabled,
                               auth_pref_callback);
  
@@ -40,7 +40,7 @@
  
  #if defined(OS_POSIX)
    pref_change_registrar_.Add(prefs::kNtlmV2Enabled, auth_pref_callback);
-@@ -422,10 +422,10 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -434,10 +434,10 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterStringPref(prefs::kAuthServerAllowlist, std::string());
    registry->RegisterStringPref(prefs::kAuthNegotiateDelegateAllowlist,
                                 std::string());
@@ -53,7 +53,7 @@
  
  #if defined(OS_POSIX)
    registry->RegisterBooleanPref(
-@@ -521,7 +521,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -566,7 +566,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

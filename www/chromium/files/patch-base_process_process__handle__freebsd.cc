@@ -1,20 +1,11 @@
---- base/process/process_handle_freebsd.cc.orig	2021-07-19 18:45:05 UTC
+--- base/process/process_handle_freebsd.cc.orig	2021-09-24 04:25:55 UTC
 +++ base/process/process_handle_freebsd.cc
-@@ -3,7 +3,6 @@
- // found in the LICENSE file.
- 
- #include "base/process/process_handle.h"
--#include "base/stl_util.h"
- 
- #include <limits.h>
- #include <stddef.h>
-@@ -12,14 +11,20 @@
- #include <sys/user.h>
+@@ -12,15 +12,19 @@
  #include <unistd.h>
  
+ #include "base/cxx17_backports.h"
 +#include "base/files/file_path.h"
-+#include "base/stl_util.h"
-+
+ 
  namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {

@@ -1,15 +1,15 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2021-05-12 22:06:00 UTC
+--- third_party/blink/renderer/core/layout/layout_view.cc.orig	2021-09-14 01:52:02 UTC
 +++ third_party/blink/renderer/core/layout/layout_view.cc
-@@ -62,7 +62,7 @@
- #include "third_party/blink/renderer/platform/instrumentation/tracing/traced_value.h"
+@@ -64,7 +64,7 @@
  #include "third_party/blink/renderer/platform/runtime_enabled_features.h"
+ #include "ui/display/screen_info.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -345,7 +345,7 @@ void LayoutView::UpdateLayout() {
+@@ -347,7 +347,7 @@ void LayoutView::UpdateLayout() {
    DCHECK(!layout_state_);
    LayoutState root_layout_state(*this);
  

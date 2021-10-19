@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2021-07-28 08:43:36 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2021-09-29 12:19:04 UTC
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,391 @@
+@@ -0,0 +1,397 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -46,9 +46,11 @@
 +struct HidServiceFreeBSD::ConnectParams {
 +  ConnectParams(scoped_refptr<HidDeviceInfo> device_info,
 +                bool allow_protected_reports,
++		bool allow_fido_reports,
 +                ConnectCallback callback)
 +      : device_info(std::move(device_info)),
 +	allow_protected_reports(allow_protected_reports),
++	allow_fido_reports(allow_fido_reports),
 +        callback(std::move(callback)),
 +        task_runner(base::ThreadTaskRunnerHandle::Get()),
 +        blocking_task_runner(
@@ -57,6 +59,7 @@
 +
 +  scoped_refptr<HidDeviceInfo> device_info;
 +  bool allow_protected_reports;
++  bool allow_fido_reports;
 +  ConnectCallback callback;
 +  scoped_refptr<base::SequencedTaskRunner> task_runner;
 +  scoped_refptr<base::SequencedTaskRunner> blocking_task_runner;
@@ -351,6 +354,7 @@
 +
 +void HidServiceFreeBSD::Connect(const std::string& device_guid,
 +                                bool allow_protected_reports,
++				bool allow_fido_reports,
 +                                ConnectCallback callback) {
 +  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +
@@ -365,6 +369,7 @@
 +
 +  auto params = std::make_unique<ConnectParams>(device_info,
 +                                                allow_protected_reports,
++						allow_fido_reports,
 +						std::move(callback));
 +  scoped_refptr<base::SequencedTaskRunner> blocking_task_runner =
 +      params->blocking_task_runner;
@@ -387,7 +392,8 @@
 +    std::move(params->device_info),
 +    std::move(params->fd),
 +    std::move(params->blocking_task_runner),
-+    params->allow_protected_reports
++    params->allow_protected_reports,
++    params->allow_fido_reports
 +  ));
 +}
 +

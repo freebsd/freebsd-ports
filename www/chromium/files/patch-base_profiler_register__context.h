@@ -1,4 +1,4 @@
---- base/profiler/register_context.h.orig	2021-04-14 18:40:48 UTC
+--- base/profiler/register_context.h.orig	2021-09-14 01:51:47 UTC
 +++ base/profiler/register_context.h
 @@ -17,7 +17,7 @@
  #include <windows.h>
@@ -9,7 +9,7 @@
  #include <sys/ucontext.h>
  #endif
  
-@@ -190,6 +190,48 @@ inline uintptr_t& RegisterContextInstructionPointer(mc
+@@ -209,6 +209,48 @@ inline uintptr_t& RegisterContextInstructionPointer(mc
  }
  
  #endif  // #if defined(ARCH_CPU_ARM_FAMILY) && defined(ARCH_CPU_32_BITS)

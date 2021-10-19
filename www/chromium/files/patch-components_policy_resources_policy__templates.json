@@ -1,6 +1,6 @@
---- components/policy/resources/policy_templates.json.orig	2021-07-19 18:45:14 UTC
+--- components/policy/resources/policy_templates.json.orig	2021-09-24 04:26:04 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -1246,7 +1246,7 @@
+@@ -1272,7 +1272,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -9,7 +9,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1272,7 +1272,7 @@
+@@ -1298,7 +1298,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,8 +18,8 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1293,7 +1293,7 @@
-       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
+@@ -1329,7 +1329,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'okalitova@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
 -      'supported_on': ['chrome.*:58-', 'chrome_os:58-'],
@@ -27,7 +27,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -4604,7 +4604,7 @@
+@@ -4705,7 +4705,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -4660,7 +4660,7 @@
+@@ -4761,7 +4761,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -9137,7 +9137,7 @@
+@@ -9320,7 +9320,7 @@
        'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -10851,7 +10851,7 @@
+@@ -11161,7 +11161,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -11698,7 +11698,7 @@
+@@ -12008,7 +12008,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

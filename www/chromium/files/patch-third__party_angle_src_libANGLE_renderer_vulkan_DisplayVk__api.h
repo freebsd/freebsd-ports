@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig	2021-04-14 18:42:58 UTC
+--- third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig	2021-09-14 01:58:21 UTC
 +++ third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
-@@ -19,7 +19,7 @@ bool IsVulkanWin32DisplayAvailable();
+@@ -23,7 +23,7 @@ bool IsVulkanWin32DisplayAvailable();
  DisplayImpl *CreateVulkanWin32Display(const egl::DisplayState &state);
  #endif  // defined(ANGLE_PLATFORM_WINDOWS)
  
@@ -9,7 +9,7 @@
  bool IsVulkanXcbDisplayAvailable();
  DisplayImpl *CreateVulkanXcbDisplay(const egl::DisplayState &state);
  
-@@ -28,7 +28,7 @@ DisplayImpl *CreateVulkanSimpleDisplay(const egl::Disp
+@@ -32,7 +32,7 @@ DisplayImpl *CreateVulkanSimpleDisplay(const egl::Disp
  
  bool IsVulkanHeadlessDisplayAvailable();
  DisplayImpl *CreateVulkanHeadlessDisplay(const egl::DisplayState &state);

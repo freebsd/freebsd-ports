@@ -1,6 +1,6 @@
---- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2021-04-14 18:41:09 UTC
+--- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2021-09-14 01:52:02 UTC
 +++ third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
-@@ -29,6 +29,9 @@ def init(root_src_dir):
+@@ -37,6 +37,9 @@ def init(root_src_dir, enable_style_format=True):
      elif sys.platform.startswith(("cygwin", "win")):
          platform = "win"
          exe_suffix = ".exe"

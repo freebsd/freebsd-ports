@@ -1,18 +1,16 @@
---- components/BUILD.gn.orig	2021-07-19 18:45:12 UTC
+--- components/BUILD.gn.orig	2021-09-24 04:26:02 UTC
 +++ components/BUILD.gn
-@@ -351,9 +351,13 @@ test("components_unittests") {
+@@ -360,6 +360,13 @@ test("components_unittests") {
+       ]
      }
  
-     if (!is_fuchsia) {  # !iOS and !Fuchsia
-+      if (!is_bsd) {
-+        deps += [
-+          "//components/crash/content/browser:unit_tests",
-+          "//components/crash/core/app:unit_tests",
-+        ]
-+      }
-       deps += [
--        "//components/crash/content/browser:unit_tests",
--        "//components/crash/core/app:unit_tests",
-         "//components/data_reduction_proxy/core/browser:unit_tests",
-         "//components/data_reduction_proxy/core/common:unit_tests",
-       ]
++    if (is_bsd) {
++      deps -= [
++        "//components/crash/content/browser:unit_tests",
++        "//components/crash/core/app:unit_tests",
++      ]
++    }
++
+     data_deps += [
+       ":components_tests_pak",
+       "//third_party/mesa_headers",

@@ -1,6 +1,6 @@
---- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2021-07-19 18:45:17 UTC
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2021-09-14 01:51:57 UTC
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
-@@ -119,7 +119,7 @@ gfx::BufferFormat GetPlaneBufferFormat(gfx::BufferPlan
+@@ -124,7 +124,7 @@ gfx::BufferFormat GetPlaneBufferFormat(gfx::BufferPlan
  uint32_t GetPlatformSpecificTextureTarget() {
  #if defined(OS_MAC)
    return macos_specific_texture_target;
@@ -9,7 +9,7 @@
      defined(OS_WIN)
    return GL_TEXTURE_EXTERNAL_OES;
  #elif defined(OS_FUCHSIA)
-@@ -150,7 +150,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
+@@ -155,7 +155,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
  
  GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextureTarget(
      gfx::BufferFormat format) {
