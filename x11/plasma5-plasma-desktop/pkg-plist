@@ -1752,6 +1752,7 @@ share/locale/hi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hi/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/hi/LC_MESSAGES/kcm_smserver.mo
 share/locale/hi/LC_MESSAGES/kcm_solid_actions.mo
+share/locale/hi/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/hi/LC_MESSAGES/kcmaccess.mo
 share/locale/hi/LC_MESSAGES/kcmkclock.mo
 share/locale/hi/LC_MESSAGES/kcmkeyboard.mo
@@ -1760,11 +1761,17 @@ share/locale/hi/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/hi/LC_MESSAGES/knetattach5.mo
 share/locale/hi/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/hi/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
