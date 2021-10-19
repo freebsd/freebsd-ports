@@ -13,6 +13,9 @@ COMMENT=	Video art software for VJs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Application uses deprecated OpenGL support in libmpv, see the comment in https://github.com/zbanks/radiance/issues/118
+EXPIRATION_DATE=	2022-01-19
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libmpv.so:multimedia/mpv \
