@@ -19,7 +19,8 @@ CONFLICTS=	chillispot-[0-9]*
 
 CONFIGURE_ARGS=-localstatedir=/var
 GNU_CONFIGURE=	yes
-USES=		perl5 libtool
+USES=		cpe perl5 libtool
+CPE_VENDOR=	${PORTNAME}_project
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	coovachilli
