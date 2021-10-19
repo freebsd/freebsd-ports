@@ -1,7 +1,7 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
 
 PORTNAME=	oci
-PORTVERSION=	2.46.0
+PORTVERSION=	2.47.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ LICENSE_FILE_UPL=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_UPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
-	        ${PYTHON_PKGNAMEPREFIX}configparser>=3.5.0b1:devel/py-configparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=3.2.1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.5.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.3<3.0.0:devel/py-dateutil@${PY_FLAVOR} \
