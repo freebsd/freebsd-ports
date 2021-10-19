@@ -1,0 +1,12 @@
+--- lib/mlrisc-lib/Makefile.orig	2021-08-16 18:18:28 UTC
++++ lib/mlrisc-lib/Makefile
+@@ -17,6 +17,9 @@ all: MLRISC/README.mlton
+ MLRISC/README.mlton: MLRISC.tgz MLRISC.patch
+ 	$(RM) MLRISC
+ 	$(GZIP) -dc MLRISC.tgz | $(TAR) xf -
++	$(SED) -i.bak 's|gcc|$(CC)|g' \
++		MLRISC/c-call/varargs/interp/Makefile \
++		MLRISC/c-call/test/Makefile
+ 	$(FIND) MLRISC -name '._*' -prune -exec $(RM) '{}' ';'
+ 	$(CHMOD) -R a+r MLRISC
+ 	$(CHMOD) -R g-s MLRISC
