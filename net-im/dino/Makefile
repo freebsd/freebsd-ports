@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake desktop-file-utils gettext-tools gnome \
+USES=		cmake cpe desktop-file-utils gettext-tools gnome \
 		ninja pkgconfig
 
 USE_GITHUB=	yes
