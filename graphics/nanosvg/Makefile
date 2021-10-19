@@ -8,6 +8,8 @@ COMMENT=	Simple C++ header-only SVG parser
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	memononen
 GH_TAGNAME=	ccdb199
