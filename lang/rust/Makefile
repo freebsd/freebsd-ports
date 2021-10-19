@@ -88,6 +88,10 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${RUST_BO
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} != FreeBSD
+IGNORE=		is only for FreeBSD
+.endif
+
 .if ${ARCH} == powerpc
 # bfd to link rustc_driver; lld currently can't
 BUILD_DEPENDS+=	ld.bfd:devel/binutils
@@ -98,6 +102,21 @@ _RUST_TOOLS+=	rls
 
 .if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
+.endif
+
+# If the kernel does not return sane kern.proc.pathname values
+# for hardlinks then disable hardlinks in the build to avoid
+# intermittent "can't find crate for `std`" build failures,
+# c.f. PR248184
+#
+# XXX: Avoiding OSVERSION since it is derived from userland but
+# the running kernel might still be newer with sane behavior
+# anyway...
+.if exists(${PATCHDIR}/no-hardlinks)
+_KERN_OSRELDATE!=	${SYSCTL} -n kern.osreldate 2>/dev/null || echo 0
+.  if ${_KERN_OSRELDATE} < 1400040
+EXTRA_PATCHES+=		${PATCHDIR}/no-hardlinks
+.  endif
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
