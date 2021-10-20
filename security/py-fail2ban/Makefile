@@ -1,6 +1,6 @@
 PORTNAME=	fail2ban
-PORTVERSION=	0.11.2
-PORTREVISION=	2
+DISTVERSION=	0.11.2
+PORTREVISION=	3
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,24 +15,22 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 USES=		cpe python:3.6+,patch shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+PYDISTUTILS_BUILDARGS+=	--without-tests
+PYDISTUTILS_INSTALLARGS+=	--install-data=${ETCDIR}
 USE_RC_SUBR=	fail2ban
-
-NO_ARCH=	yes
 
 SHEBANG_FILES=	config/filter.d/ignorecommands/apache-fakegooglebot
 SHEBANG_LANG=	fail2ban-python
 
+NO_ARCH=	yes
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-PYDISTUTILS_BUILDARGS+=		--without-tests
-PYDISTUTILS_INSTALLARGS+=	--install-data=${ETCDIR}
+PORTDOCS=	DEVELOP README.md
 
-PORTDOCS=	README.md DEVELOP
+OPTIONS_DEFINE=		DOCS INOTIFY
+OPTIONS_DEFAULT=	INOTIFY
 
-OPTIONS_DEFINE=	DOCS INOTIFY
-OPTIONS_DEFAULT=INOTIFY
-
-INOTIFY_DESC=		Support for (lib)inotify to monitor filesystem changes
+INOTIFY_DESC=	Support for (lib)inotify to monitor filesystem changes
 
 INOTIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyinotify>=0.8.3:devel/py-pyinotify@${PY_FLAVOR}
 
@@ -41,13 +39,11 @@ FILES=		${WRKSRC}/bin/fail2ban-client \
 		${WRKSRC}/fail2ban/client/fail2bancmdline.py \
 		${WRKSRC}/fail2ban/client/fail2banregex.py \
 		${WRKSRC}/man/fail2ban-client.1 \
-		${WRKSRC}/man/fail2ban-client.h2m \
-		${WRKSRC}/setup.py
+		${WRKSRC}/man/fail2ban-client.h2m ${WRKSRC}/setup.py
 
 MAN_FILES=	${WRKSRC}/man/fail2ban-client.1 \
 		${WRKSRC}/man/fail2ban-client.h2m \
-		${WRKSRC}/man/fail2ban-regex.1 \
-		${WRKSRC}/man/fail2ban-server.1 \
+		${WRKSRC}/man/fail2ban-regex.1 ${WRKSRC}/man/fail2ban-server.1 \
 		${WRKSRC}/man/fail2ban.1
 
 FAIL2BAN_DBDIR=	/var/db/${PORTNAME}
