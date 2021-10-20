@@ -23,7 +23,8 @@ PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} \
 		PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
-USES=		linux shebangfix
+USES=		cpe linux shebangfix
+CPE_VENDOR=	oracle
 USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
