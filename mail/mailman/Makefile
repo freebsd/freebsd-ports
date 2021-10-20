@@ -3,12 +3,9 @@
 PORTNAME=	mailman
 DISTVERSION=	2.1.35
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
+MASTER_SITES=	GNU \
+		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
 		https://launchpad.net/mailman/${DISTVERSION:R}/${DISTVERSION}/+download/
-# GNU does not carry the 2.1.35 tarball, as of 2021-10-20T17:45Z
-#MASTER_SITES=	GNU \
-#		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
-#		https://launchpad.net/mailman/${DISTVERSION:R}/${DISTVERSION}/+download/
 DIST_SUBDIR=	mailman
 
 PATCH_SITES=	LOCAL/mandree
