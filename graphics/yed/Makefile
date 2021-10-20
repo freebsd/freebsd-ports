@@ -16,7 +16,8 @@ LICENSE_TEXT=	Description of the license can be obtained from the following URL:
 # Downloading requires acceptance of license agreement
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	yworks
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 
