@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
 		libsoup-2.4.so:devel/libsoup \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		compiler:c11 gnome meson pkgconfig python:run shebangfix tar:xz
+USES=		compiler:c11 cpe gnome meson pkgconfig python:run shebangfix tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME=	glib20 introspection:build libxml2
 
 MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
