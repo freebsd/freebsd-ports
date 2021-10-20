@@ -1,7 +1,17 @@
 sbin/adcli
 man/man8/adcli.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/adcli.html
+%%PORTDOCS%%%%DOCSDIR%%/contrib.html
+%%PORTDOCS%%%%DOCSDIR%%/devel-building-style.html
+%%PORTDOCS%%%%DOCSDIR%%/devel-building.html
+%%PORTDOCS%%%%DOCSDIR%%/devel-debugging.html
+%%PORTDOCS%%%%DOCSDIR%%/devel-testing.html
+%%PORTDOCS%%%%DOCSDIR%%/devel.html
 %%PORTDOCS%%%%DOCSDIR%%/gtk-doc.css
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
