@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 # exact version required to avoid hard-to-debug issues
 LIB_DEPENDS=	libImath-3_1.so.29:math/Imath
 
-USES=		cmake compiler:c++14-lang pathfix pkgconfig
+USES=		cmake compiler:c++14-lang cpe pathfix pkgconfig
 
 USE_GITHUB=	yes
 GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
