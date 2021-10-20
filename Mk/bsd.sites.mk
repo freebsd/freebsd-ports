@@ -806,11 +806,6 @@ MASTER_SITE_KDE+= \
 	https://kde.cs.nctu.edu.tw/ftp/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_LIBREOFFICE_DEV)
-MASTER_SITE_LIBREOFFICE_DEV+= \
-	https://dev-www.libreoffice.org/src/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_MATE)
 MASTER_SITE_MATE+= \
 	https://pub.mate-desktop.org/releases/%SUBDIR%/
