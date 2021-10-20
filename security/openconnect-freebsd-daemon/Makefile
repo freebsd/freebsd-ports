@@ -1,5 +1,5 @@
 PORTNAME=	openconnect-freebsd-daemon
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	0mp@FreeBSD.org
