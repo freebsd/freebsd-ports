@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0:converters/p5-Convert-ASN1 \
 		${LOCALBASE}/bin/mrtg:net-mgmt/mrtg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
-USES=		perl5
+USES=		cpe perl5
+CPE_VENDOR=	${PORTNAME}_project
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
