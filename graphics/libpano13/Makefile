@@ -16,7 +16,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_GnuTar
 
-USES=		cmake jpeg libtool pathfix pkgconfig
+USES=		cmake cpe jpeg libtool pathfix pkgconfig
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS JAVA STATIC
