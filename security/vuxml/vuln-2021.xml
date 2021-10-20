@@ -1,3 +1,41 @@
+  <vuln vid="8d65aa3b-31ce-11ec-8c32-a14e8e520dc7">
+    <topic>mailman -- brute-force vuln on list admin password, and CSRF vuln in releases before 2.1.35</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.35</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.35</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1873/NEWS#L8">
+	  <p>A potential for for a list member to carry out an off-line brute
+	    force attack to obtain the list admin password has been reported by
+	    Andre Protas, Richard Cloke and Andy Nuttall of Apple. This is
+	    fixed.</p>
+	  <p>A CSRF attack via the user options page could allow takeover of a
+	      users account. This is fixed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-42096</cvename>
+      <cvename>CVE-2021-42097</cvename>
+      <url>https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1873/NEWS#L8</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1947639</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1947640</url>
+    </references>
+    <dates>
+      <discovery>2021-10-18</discovery>
+      <entry>2021-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bdaecfad-3117-11ec-b3b0-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
