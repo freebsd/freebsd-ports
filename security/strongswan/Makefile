@@ -1,8 +1,8 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.3
+DISTVERSION=	5.9.4
 CATEGORIES=	security net-vpn
-MASTER_SITES=	http://download.strongswan.org/ \
-		http://download2.strongswan.org/
+MASTER_SITES=	https://download.strongswan.org/ \
+		https://download2.strongswan.org/
 
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
