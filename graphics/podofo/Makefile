@@ -15,7 +15,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn
 
-USES=		cmake compiler:c++11-lang dos2unix pkgconfig ssl
+USES=		cmake compiler:c++11-lang cpe dos2unix pkgconfig ssl
+CPE_VENDOR=	${PORTNAME}_project
 
 CMAKE_ARGS=	-DFONTCONFIG_LIBRARIES=${LOCALBASE}/lib/libfontconfig.so \
 		-DOPENSSL_INCLUDE_DIR=${OPENSSLINC} \
