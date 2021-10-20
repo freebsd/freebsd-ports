@@ -1,5 +1,6 @@
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext libarchive kde:5 \
-		cpe qt:5 shared-mime-info tar:xz
+		cpe qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n iconthemes \
 		itemmodels itemviews jobwidgets khtml kio parts pty service \

@@ -2,6 +2,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.28
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
@@ -36,7 +37,7 @@ ANY2DJVU_DESC=		Install any2djvu script (requires curl)
 ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 DESKTOPFILES_DESC=	Install icons and mime types
 DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
-DESKTOPFILES_USES=	gnome shared-mime-info
+DESKTOPFILES_USES=	gnome
 
 post-patch:
 # Remove custom optimization compiler flags
