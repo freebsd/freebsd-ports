@@ -13,7 +13,8 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		librsync.so:net/librsync \
 		libsqlite3.so:databases/sqlite3
 
-USES=		autoreconf pkgconfig shebangfix
+USES=		autoreconf cpe pkgconfig shebangfix
+CPE_VENDOR=	linbit
 USE_GITHUB=	yes
 GH_ACCOUNT=	LINBIT
 GH_TAGNAME=	a8d38eb
