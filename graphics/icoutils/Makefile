@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		localbase shebangfix tar:bzip2
+USES=		cpe localbase shebangfix tar:bzip2
+CPE_VENDOR=	${PORTNAME}_project
 CONFIGURE_ARGS=	--disable-nls
 GNU_CONFIGURE=	yes
 
