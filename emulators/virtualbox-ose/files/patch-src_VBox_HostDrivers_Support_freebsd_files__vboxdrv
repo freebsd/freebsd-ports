@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/Support/freebsd/files_vboxdrv.orig	2019-01-25 18:19:55 UTC
+--- src/VBox/HostDrivers/Support/freebsd/files_vboxdrv.orig	2021-10-18 17:58:03 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/files_vboxdrv
 @@ -119,6 +119,7 @@ FILES_VBOXDRV_NOBIN=" \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletable.cpp=>common/misc/handletable.c \
@@ -8,17 +8,19 @@
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/once.cpp=>common/misc/once.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/term.cpp=>common/misc/term.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/misc/thread.cpp=>common/misc/thread.c \
-@@ -128,14 +129,15 @@ FILES_VBOXDRV_NOBIN=" \
+@@ -128,16 +129,17 @@ FILES_VBOXDRV_NOBIN=" \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/RTStrCopyEx.cpp=>common/string/RTStrCopyEx.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/RTStrNCmp.cpp=>common/string/RTStrNCmp.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/RTStrNLen.cpp=>common/string/RTStrNLen.c \
 +    ${PATH_ROOT}/src/VBox/Runtime/common/string/memchr.cpp=>common/string/memchr.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/strformat.cpp=>common/string/strformat.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/string/RTStrFormat.cpp=>common/string/RTStrFormat.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/strformatnum.cpp=>common/string/strformatnum.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/strformatrt.cpp=>common/string/strformatrt.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/strformattype.cpp=>common/string/strformattype.c \
 +    ${PATH_ROOT}/src/VBox/Runtime/common/string/stringalloc.cpp=>common/string/stringalloc.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/strprintf.cpp=>common/string/strprintf.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/string/strprintf-ellipsis.cpp=>common/string/strprintf-ellipsis.c \
      ${PATH_ROOT}/src/VBox/Runtime/common/string/strtonum.cpp=>common/string/strtonum.c \
 -    ${PATH_ROOT}/src/VBox/Runtime/common/string/memchr.cpp=>common/string/memchr.c \
 -    ${PATH_ROOT}/src/VBox/Runtime/common/string/stringalloc.cpp=>common/string/stringalloc.c \

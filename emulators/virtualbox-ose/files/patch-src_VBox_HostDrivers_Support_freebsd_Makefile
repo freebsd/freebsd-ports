@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2019-01-25 18:19:55 UTC
+--- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2021-10-18 17:58:03 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/Makefile
 @@ -82,6 +82,7 @@ SRCS += \
  	assert.c \
@@ -8,17 +8,19 @@
  	once.c \
  	term.c \
  	thread.c
-@@ -94,14 +95,15 @@ SRCS += \
+@@ -94,16 +95,17 @@ SRCS += \
  	RTStrCopy.c \
  	RTStrCopyEx.c \
  	RTStrCopyP.c \
 +	memchr.c \
  	strformat.c \
+ 	RTStrFormat.c \
  	strformatnum.c \
  	strformatrt.c \
  	strformattype.c \
 +	stringalloc.c \
  	strprintf.c \
+ 	strprintf-ellipsis.c \
  	strtonum.c \
 -	memchr.c \
 -	stringalloc.c

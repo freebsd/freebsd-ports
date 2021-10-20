@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2021-01-07 15:41:26 UTC
+--- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2021-10-18 17:58:03 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
 @@ -44,8 +44,10 @@
  #include <sys/fcntl.h>
@@ -50,10 +50,11 @@
              /*
               * Configure character devices. Add symbolic links for compatibility.
               */
-@@ -324,6 +342,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
+@@ -322,7 +340,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
+     return VBoxDrvFreeBSDIOCtlSlow(pSession, ulCmd, pvData, pTd);
+ }
  
- 
- /**
++ /**
 + * Alternative Device I/O Control entry point on hosts with SMAP support.
 + *
 + * @returns depends...
@@ -70,7 +71,7 @@
 +     * SMAP check.
 +     */
 +    RTCCUINTREG fSavedEfl = ASMAddFlags(X86_EFL_AC);
-+
+ 
 +    int rc = VBoxDrvFreeBSDIOCtl(pDev, ulCmd, pvData, fFile, pTd);
 +
 +#ifdef VBOX_WITH_EFLAGS_AC_SET_IN_VBOXDRV
@@ -92,11 +93,10 @@
 +}
 +
 +
-+/**
+ /**
   * Deal with the 'slow' I/O control requests.
   *
-  * @returns 0 on success, appropriate errno on failure.
-@@ -372,11 +429,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -372,11 +428,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
           */
          SUPREQHDR Hdr;
          pvUser = *(void **)pvData;
@@ -111,7 +111,7 @@
          }
          if (RT_UNLIKELY((Hdr.fFlags & SUPREQHDR_FLAGS_MAGIC_MASK) != SUPREQHDR_FLAGS_MAGIC))
          {
-@@ -401,13 +457,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -401,13 +456,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
              OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: failed to allocate buffer of %d bytes; ulCmd=%#lx\n", cbReq, ulCmd));
              return ENOMEM;
          }
@@ -129,11 +129,10 @@
          }
          if (Hdr.cbIn < cbReq)
              RT_BZERO((uint8_t *)pHdr + Hdr.cbIn, cbReq - Hdr.cbIn);
-@@ -435,9 +490,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
-                 OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: too much output! %#x > %#x; uCmd=%#lx!\n", cbOut, cbReq, ulCmd));
+@@ -436,8 +490,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
                  cbOut = cbReq;
              }
--            rc = copyout(pHdr, pvUser, cbOut);
+             rc = copyout(pHdr, pvUser, cbOut);
 -            if (RT_UNLIKELY(rc))
 -                OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: copyout(%p,%p,%#x) -> %d; uCmd=%#lx!\n", pHdr, pvUser, cbOut, rc, ulCmd));
 +            if (RT_FAILURE(RTR0MemUserCopyTo(pvUser, pHdr, cbOut)))
@@ -151,9 +150,9 @@
  }
  
  
-@@ -624,11 +677,25 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
- #endif /* SUPDRV_WITH_MSR_PROBER */
+@@ -623,20 +676,43 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  
+ #endif /* SUPDRV_WITH_MSR_PROBER */
  
 +/**
 + * Check if the CPU has SMAP support.
@@ -166,23 +165,20 @@
 +#endif
 +    return false;
 +}
-+
-+
- SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
- {
-     va_list va;
-     char szMsg[256];
-     int cch;
-+    IPRT_FREEBSD_SAVE_EFL_AC();
  
-     va_start(va, pszFormat);
-     cch = RTStrPrintfV(szMsg, sizeof(szMsg), pszFormat, va);
-@@ -636,12 +703,19 @@ SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
++
+ SUPR0DECL(int) SUPR0PrintfV(const char *pszFormat, va_list va)
+ {
+     char szMsg[256];
++    IPRT_FREEBSD_SAVE_EFL_AC();
++
+     RTStrPrintfV(szMsg, sizeof(szMsg), pszFormat, va);
+     szMsg[sizeof(szMsg) - 1] = '\0';
  
      printf("%s", szMsg);
- 
++
 +    IPRT_FREEBSD_RESTORE_EFL_AC();
-     return cch;
+     return 0;
  }
  
  
@@ -198,4 +194,4 @@
 +#endif
 +    return fFlags;
  }
--
+ 

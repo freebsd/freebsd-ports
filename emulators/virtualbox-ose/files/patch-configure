@@ -1,4 +1,4 @@
---- configure.orig	2021-07-28 16:13:45 UTC
+--- configure.orig	2021-10-18 17:47:25 UTC
 +++ configure
 @@ -139,10 +139,14 @@ CXX_FLAGS=""
  if [ "$OS" = "freebsd" ]; then
@@ -25,7 +25,7 @@
    fi
  }
 @@ -1564,6 +1568,7 @@ EOF
-           FLGQT5=`pkg-config Qt5Core Qt5Gui --cflags`
+           FLGQT5=`pkg-config Qt5Core --cflags`
            # gcc 4.8 is able to compile with C++11 (see also VBOX_GCC_std in Config.kmk)
            [ $(($cc_maj * 100 + $cc_min)) -ge 408 ] && FLGQT5="$FLGQT5 -std=c++11"
 +          FLGQT5="$FLGQT5 -std=c++11"
@@ -61,27 +61,25 @@
          gsoap_version=`pkg-config gsoapssl++ --modversion`
          log_success "found version $gsoap_version"
          return
-@@ -2510,7 +2515,7 @@ for option in "$@"; do
+@@ -2519,7 +2524,7 @@ for option in "$@"; do
      --with-openssl-dir=*)
        OPENSSLDIR=`echo $option | cut -d'=' -f2`
        INCCRYPTO="-I${OPENSSLDIR}/include"
--      LIBCRYPTO="${OPENSSLDIR}/lib/libcrypto.a ${OPENSSLDIR}/lib/libssl.a"
+-      LIBCRYPTO="${OPENSSLDIR}/lib/libssl.a ${OPENSSLDIR}/lib/libcrypto.a"
 +      LIBCRYPTO="-L${OPENSSLDIR}/lib -lssl -lcrypto"
+       # On Linux static OpenSSL typically needs a few additional libraries.
+       [ "$OS" = "linux" ] && LIBCRYPTO="-ldl $LIBPTHREAD -lm"
        ;;
-     --with-ow-dir=*)
-       WATCOM=`echo $option | cut -d'=' -f2`
-@@ -2853,14 +2858,23 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
-   [ $WITH_PYTHON -eq 1 ] && check_python
+@@ -2865,12 +2870,22 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_JAVA   -eq 1 ] && check_java
  
--  # PulseAudio
+   # PulseAudio
 -  if [ $WITH_PULSE -eq 1 ]; then
 -    check_pulse
 -  elif [ $WITH_PULSE -eq 0 ]; then # Force disabling PulseAudio.
 -    cnf_append "VBOX_WITH_AUDIO_PULSE" ""
 -  elif [ $WITH_PULSE -eq 2 ]; then # --enable-pulse was passed, force PulseAudio.
 -    cnf_append "VBOX_WITH_AUDIO_PULSE" "1"
--  fi
 +  if [ "$OS" = "linux" -o "$OS" = "freebsd" -o "$OS" = "netbsd" ]; then
 +    if [ $WITH_ALSA -eq 1 ]; then
 +      check_alsa
@@ -98,11 +96,10 @@
 +    if [ $WITH_DBUS -eq 0 ]; then
 +      cnf_append "VBOX_WITH_DBUS" ""
 +    fi
-+  fi  
+   fi
  fi
  
- # Linux-specific
-@@ -2875,14 +2889,6 @@ if [ "$OS" = "linux" ]; then
+@@ -2886,14 +2901,6 @@ if [ "$OS" = "linux" ]; then
      cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then
