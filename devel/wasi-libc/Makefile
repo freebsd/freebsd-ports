@@ -1,5 +1,5 @@
 PORTNAME=	wasi-libc
-DISTVERSION=	g20201005
+DISTVERSION=	g20210923
 CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -18,10 +18,10 @@ BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
-GH_TAGNAME=	9083fe84568fb4de76152757abfd216ba34ad908
-GH_TUPLE=	WebAssembly:WASI:54a8be9:wasi/tools/wasi-headers/WASI
+GH_TAGNAME=	ad5133410f66b93a2381db5b542aad5e0964db96
+GH_TUPLE=	WebAssembly:WASI:ef8c1a53fe:wasi/tools/wasi-headers/WASI
 NO_ARCH=	yes
-LLVM_VERSION?=	11
+LLVM_VERSION?=	13
 
 ALL_TARGET=	finish
 
@@ -34,7 +34,7 @@ WASI_SYSROOT=	${PREFIX}/share/wasi-sysroot
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${WASI_SYSROOT} \
 		WASM_AR=${LOCALBASE}/bin/llvm-ar${LLVM_VERSION} \
 		WASM_CC=${LOCALBASE}/bin/clang${LLVM_VERSION} \
-		WASM_CFLAGS="-O2 -DNDEBUG -I${FILESDIR}" \
+		WASM_CFLAGS="-O2 -DNDEBUG -isystem ${FILESDIR}" \
 		WASM_NM=${LOCALBASE}/bin/llvm-nm${LLVM_VERSION}
 
 # NOTE: phony targets cause make install to rebuild everything
