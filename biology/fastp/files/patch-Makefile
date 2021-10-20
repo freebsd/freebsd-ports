@@ -1,42 +1,57 @@
---- Makefile.orig	2020-04-08 07:26:52 UTC
+--- Makefile.orig	2021-10-19 02:19:29 UTC
 +++ Makefile
-@@ -3,9 +3,11 @@ DIR_SRC := ./src
+@@ -2,11 +2,13 @@ DIR_INC := ./inc
+ DIR_SRC := ./src
  DIR_OBJ := ./obj
  
- PREFIX ?= /usr/local
-+DESTDIR ?=
- BINDIR ?= $(PREFIX)/bin
- INCLUDE_DIRS ?=
- LIBRARY_DIRS ?=
-+STRIP_CMD ?= strip
+-PREFIX ?= /usr/local
+-BINDIR ?= $(PREFIX)/bin
+-INCLUDE_DIRS ?=
+-LIBRARY_DIRS ?=
++PREFIX	?= /usr/local
++BINDIR	?= $(PREFIX)/bin
++INCLUDE_DIRS	?=
++LIBRARY_DIRS	?=
  
++STRIP	?= strip
++
  SRC := $(wildcard ${DIR_SRC}/*.cpp)
  OBJ := $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC}))
-@@ -15,13 +17,14 @@ TARGET := fastp
+ 
+@@ -15,15 +17,19 @@ TARGET := fastp
  BIN_TARGET := ${TARGET}
  
  CXX ?= g++
--CXXFLAGS := -std=c++11 -g -O3 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) ${CXXFLAGS}
+-CXXFLAGS := -std=c++11 -pthread -g -O3 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) ${CXXFLAGS}
++# Optional flags that the user can override by setting CXXFLAGS in the
++# env or make argument
 +CXXFLAGS ?= -g -O3
++# Required flags
 +CXXFLAGS += -std=c++11 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
- LIBS := -lz -lpthread
+ LIBS := -lisal -ldeflate -lpthread
+ STATIC_FLAGS := -static -Wl,--no-as-needed -pthread
 -LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS) $(LD_FLAGS)
++# Append required flags to standard LDFLAGS from env
 +LDFLAGS += $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS)
+ STATIC_LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(STATIC_FLAGS) $(LIBS) $(STATIC_LD_FLAGS)
  
- 
+-
  ${BIN_TARGET}:${OBJ}
 -	$(CXX) $(OBJ) -o $@ $(LD_FLAGS)
 +	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
  
- ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp make_obj_dir
- 	$(CXX) -c $< -o $@ $(CXXFLAGS)
-@@ -38,5 +41,8 @@ make_obj_dir:
+ static:${OBJ}
+ 	$(CXX) $(OBJ) -o ${BIN_TARGET} $(STATIC_LD_FLAGS)
+@@ -49,6 +55,11 @@ make_obj_dir:
+ 		mkdir $(DIR_OBJ) ; \
  	fi
  
++# Respect DESTDIR for staged installs (used by most package managers)
  install:
 -	install $(TARGET) $(BINDIR)/$(TARGET)
 +	install $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
  	@echo "Installed."
 +
++# Many package managers use install-strip target if debugging is not enabled
 +install-strip: install
-+	$(STRIP_CMD) $(DESTDIR)$(BINDIR)/$(TARGET)
++	$(STRIP) $(DESTDIR)$(BINDIR)/$(TARGET)
