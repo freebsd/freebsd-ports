@@ -1,5 +1,6 @@
 PORTNAME=	seatd
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -28,7 +29,7 @@ OPTIONS_SUB=	yes
 # https://lists.sr.ht/~kennylevinsen/seatd-devel/%3CQHZRRQ.73ZI29COPK131%40unrelenting.technology%3E
 BASU_DESC=		ConsoleKit2 support via basu (experimental)
 BASU_PATCH_SITES=	https://github.com/DankBSD/${PORTNAME}/commit/:ck2
-BASU_PATCHFILES=	c35529dd761d.patch:-p1:ck2 76ccbf3617da.patch:-p1:ck2
+BASU_PATCHFILES=	51a9b3c2c0e8.patch:-p1:ck2 5a8acd56cd61.patch:-p1:ck2
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_USES=		localbase # https://github.com/emersion/basu/issues/36
 BASU_MESON_ENABLED=	libseat-consolekit2
