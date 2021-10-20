@@ -1,10 +1,6 @@
 PORTNAME=	tiramisu
-DISTVERSION=	2.0
+DISTVERSION=	2.0-20211019
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	964ea74c9889.patch:-p1 # https://github.com/Sweets/tiramisu/pull/35
-PATCHFILES+=	1c3d3e64cffb.patch:-p1 # https://github.com/Sweets/tiramisu/pull/35
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Desktop notifications, the UNIX way
