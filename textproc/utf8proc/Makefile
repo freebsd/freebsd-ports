@@ -3,6 +3,7 @@
 PORTNAME=	utf8proc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -11,7 +12,7 @@ COMMENT=	UTF-8 processing library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		gmake perl5
+USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaStrings
