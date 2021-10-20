@@ -10,7 +10,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	git:devel/git
 
-USES=		compiler:c11 gmake readline # c11 is induced by the FreeBSD headers via isnan(3), etc, otherwise the project is all c99 code
+USES=		compiler:c11 cpe gmake readline # c11 is induced by the FreeBSD headers via isnan(3), etc, otherwise the project is all c99 code
+CPE_VENDOR=	artifex
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
