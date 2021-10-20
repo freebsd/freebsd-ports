@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	netsurf-browser
 USE_LDCONFIG=	yes
 MAKE_ENV=	BUILD_CC="${CC}" COMPONENT_TYPE="lib-shared"
 PLIST_SUB=	VERSION=${PORTVERSION}
