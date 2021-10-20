@@ -13,6 +13,7 @@ _INCLUDE_USES_SHARED_MIME_INFO_MK=	yes
 IGNORE=	USES=shared-mime-info does not require args
 .endif
 
+BUILD_DEPENDS+=	update-mime-database:misc/shared-mime-info
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info
 
 .endif
