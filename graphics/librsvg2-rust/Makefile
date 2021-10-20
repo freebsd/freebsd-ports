@@ -22,7 +22,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libpng.so:graphics/png
 
-USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:xz
+USES=		compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libxml2 pango introspection:build
 USE_LDCONFIG=	yes
 
