@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	rlang
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
