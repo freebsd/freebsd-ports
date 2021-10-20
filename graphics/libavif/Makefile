@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake:testing compiler:c11 jpeg pkgconfig
+USES=		cmake:testing compiler:c11 cpe jpeg pkgconfig
+CPE_VENDOR=	aomedia
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	AOMediaCodec
