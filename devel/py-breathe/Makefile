@@ -17,14 +17,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} 
 USES=		gmake python:3.6+
 USE_GITHUB=	yes
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+
+BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES PDFDOCS
 OPTIONS_SUB=		yes
 PDFDOCS_DESC=		Build PDF documentation (implies DOCS)
 PDFDOCS_IMPLIES=	DOCS
 PDFDOCS_BUILD_DEPENDS=	pdflatex:print/tex-formats
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 post-patch:
 		${REINPLACE_CMD} "s/^git_tag = subprocess.*/git_tag = b'v${PORTVERSION}'/" \
