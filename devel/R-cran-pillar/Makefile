@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	pillar
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
