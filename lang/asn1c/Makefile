@@ -13,7 +13,8 @@ GH_ACCOUNT=	vlm
 GH_PROJECT=	asn1c
 
 GNU_CONFIGURE=	yes
-USES=		perl5 gmake
+USES=		cpe perl5 gmake
+CPE_VENDOR=	${PORTNAME}_project
 SUB_FILES=	pkg-message
 
 .include <bsd.port.mk>
