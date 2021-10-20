@@ -1,28 +1,30 @@
 PORTNAME=	breathe
 PORTVERSION=	4.31.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	an extension to reStructuredText and Sphinx to render Doxygen xml output
+COMMENT=	Extension to reStructuredText and Sphinx to render Doxygen xml output
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		doxygen:devel/doxygen \
-			${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-PDFDOCS_BUILD_DEPENDS=	pdflatex:print/tex-formats
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
+		doxygen:devel/doxygen
 
 USES=		gmake python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	distutils
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
+USE_PYTHON=	distutils
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES PDFDOCS
-OPTIONS_SUB=	yes
-PDFDOCS_DESC=	Build PDF documentation (implies DOCS)
-PDFDOCS_IMPLIES=DOCS
+OPTIONS_DEFINE=		DOCS EXAMPLES PDFDOCS
+OPTIONS_SUB=		yes
+PDFDOCS_DESC=		Build PDF documentation (implies DOCS)
+PDFDOCS_IMPLIES=	DOCS
+PDFDOCS_BUILD_DEPENDS=	pdflatex:print/tex-formats
 
 post-patch:
 		${REINPLACE_CMD} "s/^git_tag = subprocess.*/git_tag = b'v${PORTVERSION}'/" \
@@ -46,14 +48,14 @@ post-install-DOCS-on:
 			${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} && \
 			${RM} -r ${STAGEDIR}${DOCSDIR}/html/_sources
 
-post-install-PDFDOCS-on:
-		${MKDIR} ${STAGEDIR}${DOCSDIR}
-		${INSTALL_MAN} ${WRKSRC}/documentation/build/latex/*.pdf ${STAGEDIR}${DOCSDIR}
-
 post-install-EXAMPLES-on:
 		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 		cd ${WRKSRC}/examples && \
 			${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-PDFDOCS-on:
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_MAN} ${WRKSRC}/documentation/build/latex/*.pdf ${STAGEDIR}${DOCSDIR}
 
 do-test:
 		cd ${WRKSRC}/tests && \
