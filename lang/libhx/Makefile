@@ -1,17 +1,16 @@
 # Created by: Sylvio Cesar <sylvio@FreeBSD.org>
 
 PORTNAME=	libHX
-PORTVERSION=	3.25
+PORTVERSION=	4.2
 CATEGORIES=	lang
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}
+MASTER_SITES=	https://inai.de/files/libhx/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	C/C++ library with common data structures and functions
 
 LICENSE=	LGPL21+
 
 USES=		cpe libtool localbase tar:xz
-
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
