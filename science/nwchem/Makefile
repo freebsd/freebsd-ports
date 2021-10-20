@@ -2,6 +2,7 @@ PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.0.2
 DISTVERSIONSUFFIX=	-release
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +40,13 @@ WRKSRC_SUBDIR=	src
 BINARY_ALIAS=	gcc=${CC} gfortran=gfortran${GCC_DEFAULT}
 
 PLIST_FILES=	bin/nwchem etc/nwchemrc
+
+OPTIONS_DEFINE=		PYTHON
+OPTIONS_DEFAULT=	PYTHON
+
+PYTHON_DESC=		Enable Python syntax in input files
+PYTHON_USES=		python
+PYTHON_MAKE_ENV=	PYTHONVERSION=${PYTHON_VER} NWCHEM_MODULES="all python"
 
 post-extract:
 	@${RM} ${WRKSRC}/atomscf/src.orig
