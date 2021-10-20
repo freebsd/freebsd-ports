@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		shebangfix tar:tgz
+USES=		cpe shebangfix tar:tgz
+CPE_VENDOR=	apache
 
 SHEBANG_FILES=	bin/*.sh
 
