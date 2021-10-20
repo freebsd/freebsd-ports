@@ -18,7 +18,8 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	CHANGES EXAMPLES README PNGwriterQuickReference.pdf
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang cpe
+CPE_VENDOR=	${PORTNAME}_project
 CMAKE_ON=	BUILD_SHARED_LIBS PNGwriter_USE_FREETYPE
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
