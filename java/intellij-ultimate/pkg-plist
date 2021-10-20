@@ -2,7 +2,6 @@ bin/idea
 man/man1/idea.1.gz
 share/applications/idea.desktop
 %%DATADIR%%/Install-Linux-tar.txt
-%%DATADIR%%/bin/appInfo.xml
 %%DATADIR%%/bin/appletviewer.policy
 %%DATADIR%%/bin/brokenPlugins.db
 %%DATADIR%%/bin/format.sh
@@ -139,7 +138,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/junit4.jar
 %%DATADIR%%/lib/junixsocket-core.jar
 %%DATADIR%%/lib/kotlin-gradle-plugin-model-1.4.32.jar
-%%DATADIR%%/lib/kotlin-reflect-1.5.10-release-896.jar
+%%DATADIR%%/lib/kotlin-reflect-1.5.10-release-931.jar
 %%DATADIR%%/lib/kotlin-stdlib-jdk8.jar
 %%DATADIR%%/lib/kotlin-test.jar
 %%DATADIR%%/lib/kotlinx-coroutines-debug-1.5.0.jar
@@ -252,7 +251,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/mssql-1.19.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/oracle-1.54.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/postgres-1.35.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.39.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.70.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/snowflake-1.17.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-212.78.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
@@ -350,8 +349,8 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-34490f0bdf90.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-34490f0bdf90.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -457,12 +456,18 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/ts-session-latest.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/ts-session-provider.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/util.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-api.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-common.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-plugin-provider.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-plugin.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint8-plugin.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/package-lock.json
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/package.json
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-api.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-common.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-plugin-provider.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-plugin.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint8-plugin.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
@@ -1134,7 +1139,6 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/grazie/lib/commons-text-1.8.jar
 %%DATADIR%%/plugins/grazie/lib/dx-1.7.jar
 %%DATADIR%%/plugins/grazie/lib/emoji-java-5.1.1.jar
-%%DATADIR%%/plugins/grazie/lib/grazi-language-detector-0.1.13.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
 %%DATADIR%%/plugins/grazie/lib/hppc-0.8.2.jar
 %%DATADIR%%/plugins/grazie/lib/hunspell-1.1.1.jar
@@ -1148,6 +1152,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/grazie/lib/morfologik-speller-2.1.7.jar
 %%DATADIR%%/plugins/grazie/lib/morfologik-stemming-2.1.7.jar
 %%DATADIR%%/plugins/grazie/lib/nlp-common-0.1.26.jar
+%%DATADIR%%/plugins/grazie/lib/nlp-detector-jvm-0.0.2.jar
 %%DATADIR%%/plugins/grazie/lib/nlp-tokenizer-0.1.26.jar
 %%DATADIR%%/plugins/grazie/lib/segment-2.0.1.jar
 %%DATADIR%%/plugins/grazie/lib/unit-api-1.0.jar
@@ -1164,7 +1169,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/java-pwa/lib/java-pwa.jar
 %%DATADIR%%/plugins/java/lib/aether-dependency-resolver.jar
 %%DATADIR%%/plugins/java/lib/completion-ranking-java-0.3.4.jar
-%%DATADIR%%/plugins/java/lib/debugger-memory-agent-1.0.32.jar
+%%DATADIR%%/plugins/java/lib/debugger-memory-agent-1.0.35.jar
 %%DATADIR%%/plugins/java/lib/ecj-4.16.jar
 %%DATADIR%%/plugins/java/lib/java-api.jar
 %%DATADIR%%/plugins/java/lib/java-impl.jar
@@ -1249,7 +1254,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/maven/lib/maven3/lib/commons-cli.license
 %%DATADIR%%/plugins/maven/lib/maven3/lib/commons-io-2.5.jar
 %%DATADIR%%/plugins/maven/lib/maven3/lib/commons-io.license
-%%DATADIR%%/plugins/maven/lib/maven3/lib/commons-lang3-3.8.1.jar
+%%DATADIR%%/plugins/maven/lib/maven3/lib/commons-lang3-%%PYTHON_VER%%.1.jar
 %%DATADIR%%/plugins/maven/lib/maven3/lib/commons-lang3.license
 %%DATADIR%%/plugins/maven/lib/maven3/lib/ext/README.txt
 %%DATADIR%%/plugins/maven/lib/maven3/lib/guava-25.1-android.jar
@@ -1361,6 +1366,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/space/lib/okhttp-3.12.10.jar
 %%DATADIR%%/plugins/space/lib/okio-1.15.0.jar
 %%DATADIR%%/plugins/space/lib/space-idea-sdk-1.1.73769.jar
+%%DATADIR%%/plugins/space/lib/space-java-jps.jar
 %%DATADIR%%/plugins/space/lib/space.jar
 %%DATADIR%%/plugins/spy-js/lib/socketio.jar
 %%DATADIR%%/plugins/spy-js/lib/spy-js.jar

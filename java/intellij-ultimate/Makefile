@@ -1,12 +1,8 @@
-# Created by: Andrey Cherkashin <andoriyu@gmail.com>
-
-# Based on the java/intellij port
-
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2021.2
+DISTVERSION=	2021.2.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
-DISTNAME=	ideaIU-${PORTVERSION}-no-jbr
+DISTNAME=	ideaIU-${DISTVERSION}-no-jbr
 DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	andoriyu@gmail.com
@@ -39,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	212.4746.92
+BUILD_VERSION=	212.5457.46
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
