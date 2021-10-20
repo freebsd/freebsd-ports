@@ -15,7 +15,8 @@ BROKEN_riscv64=		fails to build: ../include/libEMF/wine/winnt.h:77:3: Unknown CP
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool
+USES=		cpe libtool
+CPE_VENDOR=	${PORTNAME:tl}_project
 
 GNU_CONFIGURE=	yes
 
