@@ -1,10 +1,7 @@
 PORTNAME=	flexget
 DISTVERSIONPREFIX=	v
-PORTVERSION=	3.1.141
+PORTVERSION=	3.1.142
 CATEGORIES=	www
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	1565bf2b2c79.patch:-p1 # https://github.com/Flexget/Flexget/issues/3205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multipurpose automation tool for all of your media
