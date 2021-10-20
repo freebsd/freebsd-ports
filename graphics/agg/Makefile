@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/copying
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool pathfix pkgconfig sdl xorg
+USES=		autoreconf cpe gmake libtool pathfix pkgconfig sdl xorg
+CPE_VENDOR=	antigrain
 USE_XORG=	x11
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
