@@ -17,8 +17,9 @@ LIB_DEPENDS=	libvips.so:graphics/vips \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		bison desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
+USES=		bison cpe desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
 		shared-mime-info
+CPE_VENDOR=	${PORTNAME}_project
 
 DOS2UNIX_GLOB=	*.def
 USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
