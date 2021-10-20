@@ -15,7 +15,7 @@ BUILD_DEPENDS=	kakasi:japanese/kakasi \
 RUN_DEPENDS=	kakasi:japanese/kakasi \
 		nkf:japanese/nkf
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 SHEBANG_FILES=	../contrib/bnamazu
 GNU_CONFIGURE=	yes
 
