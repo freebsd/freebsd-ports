@@ -9,7 +9,8 @@ COMMENT=	Per face texture library
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake:insource compiler:c++11-lang pkgconfig
+USES=		cmake:insource compiler:c++11-lang cpe pkgconfig
+CPE_VENDOR=	disneyanimation
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
