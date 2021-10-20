@@ -8,7 +8,8 @@ CATEGORIES=	graphics linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	sil
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
