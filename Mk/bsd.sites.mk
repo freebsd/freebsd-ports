@@ -46,7 +46,7 @@ MASTER_SITE_AFTERSTEP+= \
 
 .if !defined(IGNORE_MASTER_SITE_APACHE)
 MASTER_SITE_APACHE+= \
-	https://www.apache.org/dist/%SUBDIR%/ \
+	https://downloads.apache.org/%SUBDIR%/ \
 	https://archive.apache.org/dist/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Web/apache/%SUBDIR%/ \
 	http://apache.mirror.uber.com.au/%SUBDIR%/ \
