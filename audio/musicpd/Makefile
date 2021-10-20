@@ -1,7 +1,7 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.23
+PORTVERSION=	0.23.1
 CATEGORIES=	audio
-MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION}/
+MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org
