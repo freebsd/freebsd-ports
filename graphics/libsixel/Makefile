@@ -9,7 +9,8 @@ COMMENT=	Encoder/decoder library for DEC SIXEL graphics
 
 LICENSE=	MIT
 
-USES=		libtool pkgconfig
+USES=		cpe libtool pkgconfig
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
