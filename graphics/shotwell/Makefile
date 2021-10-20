@@ -31,8 +31,9 @@ LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
 		libxml2.so:textproc/libxml2
 
 # USES compiler: also see option OPENMP below
-USES=		compiler:c++11-lib desktop-file-utils gettext gnome meson \
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome meson \
 		ninja pkgconfig python:3.4+,build shebangfix sqlite tar:xz xorg
+CPE_VENDOR=	gnome
 USE_GNOME=	cairo dconf gtk30
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
