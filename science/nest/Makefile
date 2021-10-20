@@ -1,7 +1,7 @@
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.20.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,21 +15,25 @@ BROKEN_i386=	https://github.com/nest/nest-simulator/issues/1205
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libltdl.so:devel/libltdl
 
-USES=		cmake ncurses pkgconfig readline
+USES=		cmake:testing ncurses pkgconfig readline
 USE_GITHUB=	yes
 GH_PROJECT=	nest-simulator
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		PYTHON DOCS
-OPTIONS_DEFAULT=	PYTHON
+#OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_USES=		python
 PYTHON_USE=		python=cython
 PYTHON_CMAKE_ON=	-DCYTHON_EXECUTABLE:STRING=${PREFIX}/bin/cython-${PYTHON_VER}
+PYTHON_BROKEN=		https://github.com/nest/nest-simulator/issues/2193
 
 PORTDOCS=		*
+
+# 2 tests are known to fail, see https://github.com/nest/nest-simulator/issues/2190
+# tests require the port to be installed with DOCS=ON, see https://github.com/nest/nest-simulator/issues/2191
 
 .include <bsd.port.options.mk>
 
