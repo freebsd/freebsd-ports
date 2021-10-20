@@ -1,3 +1,38 @@
+  <vuln vid="c848059a-318b-11ec-aa15-0800270512f4">
+    <topic>fail2ban -- possible RCE vulnerability in mailing action using mailutils</topic>
+    <affects>
+      <package>
+	<name>py36-fail2ban</name>
+	<name>py37-fail2ban</name>
+	<name>py38-fail2ban</name>
+	<name>py39-fail2ban</name>
+	<name>py310-fail2ban</name>
+	<range><lt>0.11.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Żoczek reports:</p>
+	<blockquote cite="https://github.com/fail2ban/fail2ban/security/advisories/GHSA-m985-3f3v-cwmm">
+	  <p>
+	    Command <code>mail</code> from mailutils package used in mail actions
+	    like <code>mail-whois</code> can execute command if unescaped sequences
+	    (<code>\n~</code>) are available in "foreign" input (for instance in
+	    whois output).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32749</cvename>
+      <url>https://github.com/fail2ban/fail2ban/security/advisories/GHSA-m985-3f3v-cwmm</url>
+    </references>
+    <dates>
+      <discovery>2021-07-16</discovery>
+      <entry>2021-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="757ee63b-269a-11ec-a616-6c3be5272acd">
     <topic>Grafana -- Snapshot authentication bypass</topic>
     <affects>
