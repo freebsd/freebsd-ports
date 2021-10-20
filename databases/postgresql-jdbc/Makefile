@@ -1,7 +1,7 @@
 # Created by: Palle Girgensohn <girgen@partitur.se>
 
 PORTNAME=	postgresql
-PORTVERSION=	42.2.20
+PORTVERSION=	42.3.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc
@@ -14,6 +14,7 @@ COMMENT=	Java JDBC implementation for PostgreSQL
 LICENSE=	BSD3CLAUSE
 
 USE_JAVA=	yes
+JAVA_VERSION=	8+
 NO_ARCH=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/postgresql.jar
 
