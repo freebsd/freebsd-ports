@@ -191,6 +191,7 @@ share/wasi-sysroot/include/values.h
 share/wasi-sysroot/include/wasi/api.h
 share/wasi-sysroot/include/wasi/libc-environ.h
 share/wasi-sysroot/include/wasi/libc-find-relpath.h
+share/wasi-sysroot/include/wasi/libc-nocwd.h
 share/wasi-sysroot/include/wasi/libc.h
 share/wasi-sysroot/include/wchar.h
 share/wasi-sysroot/include/wctype.h
@@ -208,7 +209,9 @@ share/wasi-sysroot/lib/wasm32-wasi/libpthread.a
 share/wasi-sysroot/lib/wasm32-wasi/libresolv.a
 share/wasi-sysroot/lib/wasm32-wasi/librt.a
 share/wasi-sysroot/lib/wasm32-wasi/libutil.a
+share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-getpid.a
 share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-mman.a
+share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-process-clocks.a
 share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-signal.a
 share/wasi-sysroot/lib/wasm32-wasi/libxnet.a
 share/wasi-sysroot/share/wasm32-wasi/defined-symbols.txt
