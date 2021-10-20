@@ -11,7 +11,8 @@ COMMENT=	Agile dynamic language for the JVM
 
 LICENSE=	APACHE20
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 
 NO_ARCH=	yes
