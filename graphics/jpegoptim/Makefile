@@ -12,7 +12,8 @@ COMMENT=	Utility to optimize jpeg files
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		jpeg
+USES=		cpe jpeg
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
