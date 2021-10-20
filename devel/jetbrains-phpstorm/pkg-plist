@@ -28,7 +28,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-PS-212.5284.49
+%%DATADIR%%/lib/build-marker-PS-212.5457.49
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -65,7 +65,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/jps-model.jar
 %%DATADIR%%/lib/junit4.jar
 %%DATADIR%%/lib/junixsocket-core.jar
-%%DATADIR%%/lib/kotlin-reflect-1.5.10-release-896.jar
+%%DATADIR%%/lib/kotlin-reflect-1.5.10-release-931.jar
 %%DATADIR%%/lib/kotlin-stdlib-jdk8.jar
 %%DATADIR%%/lib/kotlin-test.jar
 %%DATADIR%%/lib/kotlinx-coroutines-debug-1.5.0.jar
@@ -204,8 +204,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-34490f0bdf90.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-34490f0bdf90.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -432,8 +432,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php/lib/completion-ranking-php-0.3.0.jar
 %%DATADIR%%/plugins/php/lib/php-openapi-src.jar
 %%DATADIR%%/plugins/php/lib/php.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-348f3915624a.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-348f3915624a.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-5f3cb6fd568b.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-5f3cb6fd568b.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
 %%DATADIR%%/plugins/phpstorm-docker/lib/phpstorm-docker.jar
