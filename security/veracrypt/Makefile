@@ -13,7 +13,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
 
 LICENSE_FILE=	${DOCSDIR}/LICENSE
 
-USES=		compiler:c++11-lang desktop-file-utils fuse gmake iconv pkgconfig tar:bz2
+USES=		compiler:c++11-lang cpe desktop-file-utils fuse gmake iconv pkgconfig tar:bz2
+CPE_VENDOR=	idrix
 USE_WX=		3.0+
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
