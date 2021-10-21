@@ -1,7 +1,7 @@
 # Created by: Brent J. Nordquist <bjn@visi.com>
 
 PORTNAME=	gdbm
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
