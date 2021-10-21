@@ -455,6 +455,7 @@
     SUBDIR += node
     SUBDIR += node10
     SUBDIR += node14
+    SUBDIR += node16
     SUBDIR += nostromo
     SUBDIR += novnc
     SUBDIR += novnc-websockify

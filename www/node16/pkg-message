@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+Note: If you need npm (Node Package Manager), please install www/npm.
+EOM
+}
+]

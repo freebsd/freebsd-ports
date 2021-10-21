@@ -47,7 +47,7 @@ DTRACE_CONFIGURE_ON=	--with-dtrace
 
 HAS_CONFIGURE=	yes
 
-CONFLICTS_INSTALL=	node10-[0-9]* node12-[0-9]* node-[0-9]*
+CONFLICTS_INSTALL=	node10-[0-9]* node16-[0-9]* node-[0-9]*
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
