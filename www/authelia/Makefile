@@ -17,7 +17,7 @@ BROKEN_armv6=	imports modernc.org/libc/errno: build constraints exclude all Go f
 BROKEN_armv7=	imports modernc.org/libc/errno: build constraints exclude all Go files
 BROKEN_i386=	imports modernc.org/libc/errno: build constraints exclude all Go files
 
-USES=		go:modules
+USES=		cpe go:modules
 
 GO_MODULE=	github.com/authelia/authelia/v4
 GO_TARGET=	./cmd/${PORTNAME}
