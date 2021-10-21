@@ -20,6 +20,8 @@ CONFLICTS_INSTALL=	rundeck2
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+USES=		cpe
+CPE_VENDOR=	pagerduty
 USE_RC_SUBR=	rundeck
 
 RUNDECK_HOME=	${PREFIX}/rundeck
