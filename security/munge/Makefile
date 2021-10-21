@@ -14,7 +14,8 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-prefix=${OPENSSLBASE}
-USES=		autoreconf libtool pathfix perl5 ssl
+USES=		autoreconf cpe libtool pathfix perl5 ssl
+CPE_VENDOR=	opensuse
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
 INSTALL_TARGET=	install-strip
