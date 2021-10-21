@@ -10,7 +10,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rsync:net/rsync
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 samba tar:bzip2
+USES=		cmake compiler:c++11-lang cpe gettext kde:5 qt:5 samba tar:bzip2
+CPE_VENDOR=	${PORTNAME}_project
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons dnssd i18n iconthemes jobwidgets kio notifications \
 		plasma-framework service solid wallet widgetsaddons \
