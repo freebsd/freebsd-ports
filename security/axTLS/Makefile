@@ -37,7 +37,8 @@ PROT_HIGH_DESC=		Use the strongest cipher(s) at the cost of speed
 CONFIG_SUB=	PREFIX=\"${PREFIX}\" WWWDIR=\"${WWWDIR}\" \
 		HTTP_PORT=${WITH_HTTP_PORT} SSL_PORT=${WITH_SSL_PORT}
 NO_OPTIONS_SORT=yes
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	${PORTNAME:tl}_project
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 STAGE=		${WRKSRC}/_stage
