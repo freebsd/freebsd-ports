@@ -34,8 +34,9 @@ LIB_DEPENDS=	libcss.so:textproc/libcss \
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		duk:lang/duktape
 
-USES=		bison desktop-file-utils gmake gnome iconv:translit jpeg \
+USES=		bison cpe desktop-file-utils gmake gnome iconv:translit jpeg \
 		localbase pkgconfig shebangfix ssl
+CPE_VENDOR=	${PORTNAME}-browser
 USE_GNOME=	cairo glib20 gtk30 librsvg2
 
 SHEBANG_FILES=	utils/split-messages.pl
