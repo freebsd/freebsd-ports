@@ -11,7 +11,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libpwquality.so:security/libpwquality \
 		libboost_python${PYTHON_SUFFIX}.so:devel/boost-python-libs
 
-USES=		cmake compiler:c++17-lang gettext kde:5 python qt:5
+USES=		cmake compiler:c++17-lang cpe gettext kde:5 python qt:5
 USE_KDE=	coreaddons dbusaddons \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
