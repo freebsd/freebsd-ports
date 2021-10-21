@@ -15,9 +15,8 @@ Features:
 - only crawl and index the directories you choose.
 - D-Bus interface for easy integration with other applications, eg Deskbar
   Applet.
-- no dependency on GNOME or KDE.
 - support for common file types.
 - search your desktop and the Web.
 - query remote indexes.
 
-WWW: http://code.google.com/p/pinot-search/
+WWW: https://github.com/FabriceColin/pinot/
