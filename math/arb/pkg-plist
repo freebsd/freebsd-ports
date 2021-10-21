@@ -10,6 +10,7 @@ include/acb_poly.h
 include/arb.h
 include/arb_calc.h
 include/arb_fmpz_poly.h
+include/arb_fpwrap.h
 include/arb_hypgeom.h
 include/arb_mat.h
 include/arb_poly.h
@@ -25,4 +26,4 @@ include/mag.h
 include/partitions.h
 lib/libarb.so
 lib/libarb.so.2
-lib/libarb.so.2.11.0
+lib/libarb.so.2.12.0
