@@ -11,6 +11,9 @@ COMMENT=	Utility to test for faulty memory subsystem
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
+CPE_VENDOR=	pryopus
+
 PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
 post-patch:
