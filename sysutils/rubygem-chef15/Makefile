@@ -45,7 +45,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-tty-screen>=0.6<1:devel/rubygem-tty-screen \
 		rubygem-uuidtools>=2.1.5<3:devel/rubygem-uuidtools
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
