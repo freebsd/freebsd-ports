@@ -9,7 +9,8 @@ COMMENT=	Leak git repositories from misconfigured websites
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	${PORTNAME}_project
 
 GO_MODULE=	github.com/liamg/gitjacker
 GO_TARGET=	./cmd/${PORTNAME}
