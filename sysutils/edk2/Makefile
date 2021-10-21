@@ -14,7 +14,8 @@ PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
 FLAVORS=	macchiatobin fvp rpi3 rpi4 xen_x64
 FLAVOR?=	macchiatobin
 
-USES=	gmake python:3.7+,build
+USES=	cpe gmake python:3.7+,build
+CPE_VENDOR=	tianocore
 USE_GCC=	yes:build
 
 BUILD_DEPENDS+=	dtc>=1.4.1:sysutils/dtc \
