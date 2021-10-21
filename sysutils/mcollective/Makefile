@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-stomp>=0:devel/rubygem-stomp
 
-USES=		shebangfix
+USES=		cpe shebangfix
+CPE_VENDOR=	puppet
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	mcollectived
