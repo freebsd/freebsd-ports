@@ -13,7 +13,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
-USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig tar:xz
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
