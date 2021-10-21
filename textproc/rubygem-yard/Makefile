@@ -11,7 +11,8 @@ COMMENT=	Documentation generation tool for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	yardoc
 USE_RUBY=	yes
 
 NO_ARCH=	yes
