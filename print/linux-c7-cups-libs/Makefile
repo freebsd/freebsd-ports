@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-libs
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common UNIX Printing System libraries
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	avahi-libs
 USE_LINUX_RPM=	yes
