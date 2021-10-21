@@ -15,7 +15,8 @@ RUN_DEPENDS=	rubygem-ffi>=1.0:devel/rubygem-ffi \
 		rubygem-hocon>=1.3:devel/rubygem-hocon \
 		rubygem-thor>=1.0.1:devel/rubygem-thor
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	puppet
 USE_RUBY=	yes
 
 NO_ARCH=	yes
