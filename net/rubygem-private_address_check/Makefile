@@ -11,7 +11,8 @@ COMMENT=	Check address for private network (RFC 1918)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
