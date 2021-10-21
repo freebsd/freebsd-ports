@@ -12,7 +12,8 @@ COMMENT=	Cyber operations within a web browser
 
 LICENSE=	APACHE20
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	gchq
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	gchq
