@@ -9,7 +9,8 @@ COMMENT=	Create book from Markdown files (like GitBook but implemented in Rust)
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo cpe
+CPE_VENDOR=	rust-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	mdBook
