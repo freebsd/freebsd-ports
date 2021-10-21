@@ -18,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:www/tomcat7
 
 IGNORE=		does not work correctly
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}lms
 USE_JAVA=	yes
 
 NO_BUILD=	yes
