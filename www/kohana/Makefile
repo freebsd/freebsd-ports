@@ -10,7 +10,8 @@ COMMENT=	Elegant HMVC PHP5 framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		php zip
+USES=		cpe php zip
+CPE_VENDOR=	${PORTNAME}framework
 
 NO_BUILD=	yes
 NO_ARCH=	yes
