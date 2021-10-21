@@ -101,7 +101,7 @@ EMACS_FLAVOR=	full
 .endif
 
 .if ${FLAVOR:Mdevel*}
-EMACS_VER=			29.0.50
+EMACS_VER=		29.0.50
 EMACS_PORTDIR=		editors/emacs-devel
 .else
 EMACS_VER=		27.2
@@ -113,12 +113,14 @@ EMACS_LIBDIR=		share/emacs
 EMACS_LIBDIR_WITH_VER=	share/emacs/${EMACS_VER}
 EMACS_PORT_NAME=	emacs${EMACS_MAJOR_VER}
 
-.if ${FLAVOR:M*nox}
-EMACS_PKGNAMESUFFIX=		-${EMACS_PORT_NAME}_nox
-.elif ${FLAVOR:Mcanna}
-EMACS_PKGNAMESUFFIX=		-${EMACS_PORT_NAME}_canna
+.if ${EMACS_FLAVOR} == "devel_full"
+EMACS_PKGNAMESUFFIX=	-emacs_devel
+.elif ${EMACS_FLAVOR} == "devel_nox"
+EMACS_PKGNAMESUFFIX=	-emacs_devel_nox
+.elif ${EMACS_FLAVOR} == "full"
+EMACS_PKGNAMESUFFIX=
 .else
-EMACS_PKGNAMESUFFIX=		-${EMACS_PORT_NAME}
+EMACS_PKGNAMESUFFIX=	-emacs_${EMACS_FLAVOR}
 .endif
 
 EMACS_CMD=	${PREFIX}/bin/emacs-${EMACS_VER}
