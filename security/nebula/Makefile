@@ -10,7 +10,8 @@ COMMENT=	Scalable overlay networking tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	slack
 USE_GITHUB=	yes
 GH_ACCOUNT=	slackhq
 GH_TUPLE=	\
