@@ -10,7 +10,8 @@ COMMENT=	Java-based Application Server, 3.x branch
 
 LICENSE=	GPLv2
 
-USES=		libtool python ssl
+USES=		cpe libtool python ssl
+CPE_VENDOR=	caucho
 USE_JAVA=	yes
 
 # Pass JAVA_HOME as determined by bsd.java.mk
