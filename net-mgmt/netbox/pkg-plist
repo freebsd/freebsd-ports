@@ -21,7 +21,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/virtualization.md
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/vlans.md
 %%PORTDOCS%%%%DOCSDIR%%/customization/custom-fields.md
-%%PORTDOCS%%%%DOCSDIR%%/customization/custom-links.md
 %%PORTDOCS%%%%DOCSDIR%%/customization/custom-scripts.md
 %%PORTDOCS%%%%DOCSDIR%%/customization/custom-validation.md
 %%PORTDOCS%%%%DOCSDIR%%/customization/export-templates.md
