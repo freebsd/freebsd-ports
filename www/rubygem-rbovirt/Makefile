@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
 		rubygem-rest-client>=1.7.0:www/rubygem-rest-client
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	amos_benari
 USE_RUBY=	yes
 
 NO_ARCH=	yes
