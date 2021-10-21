@@ -1,9 +1,15 @@
-These additions are for installation inside a FreeBSD guest.
+VirtualBox Guest Additions provide closer integration between host and
+guest, and improve the performance of guest systems.
 
-VirtualBox is a family of powerful x86 virtualization products for
-enterprise as well as home use. Not only is VirtualBox an extremely
-feature rich, high performance product for enterprise customers, it
-is also the only professional solution that is freely available as
-Open Source Software under the terms of the GNU General Public License.
+Non-legacy additions i.e. emulators/virtualbox-ose-additions are
+recommended for most use cases.
+
+Where legacy (5.2.x) is a requirement, this FreeBSD-provided package
+can be installed in the FreeBSD guest machine.
+
+<https://www.virtualbox.org/wiki/Changelog-5.2> emphasises that
+5.2.x is no longer supported by Oracle.
+
+Additions are not intended for use on Host machines.
 
 WWW: https://www.virtualbox.org/

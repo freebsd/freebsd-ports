@@ -1,23 +1,36 @@
 [
 { type: install
   message: <<EOM
-VirtualBox Guest Additions were installed.
+VirtualBox Guest Additions are installed.
 
+To enable and start the required services:
 
-You need to enable the vboxguest startscript to load the kernel module and
-vboxservice to use host time synchronization.
+# sysrc vboxguest_enable="YES"
+# sysrc vboxservice_enable="YES"
 
-vboxguest_enable="YES"
-vboxservice_enable="YES"
+To start the services, restart the system.
 
-You also have to add all X11 users that want to use any of the additional
-features (clipboard sharing, window scaling) to the wheel group.
+In some situations, a panic will occur when the kernel module loads.
+Having no more than one virtual CPU might mitigate the issue.
 
-% pw groupmod wheel -m jerry
+For features such as window scaling and clipboard sharing, membership of
+the wheel group is required. With username jerry as an example:
 
-Reboot the machine to load the needed kernel modules.
+# pw groupmod wheel -m jerry
 
-For detailed informations please visit http://wiki.freebsd.org/VirtualBox
+The settings dialogue for FreeBSD guests encourages use of the VMSVGA
+graphics controller. Whilst this might suit installations of FreeBSD
+without a desktop environment (a common use case), it is not appropriate
+where Guest Additions are installed.
+
+Where Guest Additions are installed:
+
+1. prefer VBoxSVGA
+
+2. do not enable 3D acceleration (doing so will invisibly
+   lose the preference for VBoxSVGA)
+
+– you may ignore the yellow alert that encourages use of VMSVGA.
 EOM
 }
 ]

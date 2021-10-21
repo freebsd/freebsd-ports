@@ -1,7 +1,10 @@
-VirtualBox is a family of powerful x86 virtualization products for
-enterprise as well as home use. Not only is VirtualBox an extremely
-feature rich, high performance product for enterprise customers, it
-is also the only professional solution that is freely available as
-Open Source Software under the terms of the GNU General Public License.
+Oracle VM VirtualBox is a hosted hypervisor for x86 virtualisation.
+Supported guests include BSD, Haiku, Linux, OS/2, ReactOS, Solaris and
+Windows.
+
+Guest Additions are available from: emulators/virtualbox-ose-additions
+
+For the Extension Pack: FreeBSD is not a supported host platform.
+Installation of the Pack will not extend the feature set.
 
 WWW: https://www.virtualbox.org/
