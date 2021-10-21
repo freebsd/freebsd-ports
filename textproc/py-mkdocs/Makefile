@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchdog>=2.0:devel/py-watchdog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes
