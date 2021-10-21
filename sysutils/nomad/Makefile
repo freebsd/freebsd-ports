@@ -9,7 +9,8 @@ COMMENT=	Cluster manager and scheduler
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	hashicorp
 
 GO_BUILDFLAGS=	-tags ui \
 		-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}"
