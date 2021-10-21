@@ -11,6 +11,8 @@ COMMENT=	Multicast routing daemon providing DVMRP for IPv4
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+CPE_VENDOR=	troglobit
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
 USE_RC_SUBR=	mrouted
