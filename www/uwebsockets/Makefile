@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	libdeflate>0:archivers/libdeflate \
 		usockets>0:net/usockets
 
-USES=		compiler:c++17-lang gmake
+USES=		compiler:c++17-lang cpe gmake
+CPE_VENDOR=	${PORTNAME}_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uNetworking
