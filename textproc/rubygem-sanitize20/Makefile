@@ -15,7 +15,8 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.4.4:textproc/rubygem-nokogiri
 PORTSCOUT=	limit:^2\.0
 
 NO_ARCH=	yes
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 .include <bsd.port.mk>
