@@ -11,7 +11,8 @@ COMMENT=	Program set interconverts between various bibliography formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	${PORTNAME}_project
 
 HAS_CONFIGURE=	yes
 TEST_TARGET=	test
