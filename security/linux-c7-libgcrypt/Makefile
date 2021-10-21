@@ -11,7 +11,8 @@ COMMENT=	Crypto library based on code used in GnuPG (Linux CentOS ${LINUX_DIST_V
 
 LICENSE=	LGPL21+
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	gnupg
 USE_LDCONFIG=	yes
 USE_LINUX=	libgpg-error
 USE_LINUX_RPM=	yes
