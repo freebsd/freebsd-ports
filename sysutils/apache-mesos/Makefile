@@ -34,7 +34,8 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libsvn_subr-1.so:devel/subversion \
 		libzookeeper_mt.so:devel/libzookeeper
 
-USES=		gmake libarchive libtool python:run shebangfix
+USES=		cpe gmake libarchive libtool python:run shebangfix
+CPE_VENDOR=	apache
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/cli/mesos-cat \
 		src/cli/mesos-ps \
