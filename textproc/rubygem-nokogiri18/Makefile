@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
 
-USES=		gem gnome pkgconfig
+USES=		cpe gem gnome pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_RUBY=	yes
 
