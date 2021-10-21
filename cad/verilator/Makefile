@@ -1,7 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.212
-PORTREVISION=	1
+DISTVERSION=	4.214
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical opt
 USES=		bison compiler:c++14-lang gmake localbase:ldflags pathfix perl5 python:build,run,test shebangfix tar:tgz
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	bin/verilator_ccache_report
+SHEBANG_FILES=	bin/verilator_ccache_report bin/verilator_profcfunc bin/verilator_gantt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
