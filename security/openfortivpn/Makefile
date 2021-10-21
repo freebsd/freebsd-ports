@@ -11,7 +11,8 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf pkgconfig ssl
+USES=		autoreconf cpe pkgconfig ssl
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	adrienverge
 
