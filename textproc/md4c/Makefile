@@ -8,7 +8,8 @@ COMMENT=	Markdown Parser written in C
 
 LICENSE=	MIT
 
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	mity
