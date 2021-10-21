@@ -19,7 +19,8 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-rss>=0:www/rubygem-rss \
 		rubygem-sinatra>=1.2.7:www/rubygem-sinatra
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
