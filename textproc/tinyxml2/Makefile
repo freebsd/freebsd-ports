@@ -11,7 +11,8 @@ COMMENT=	Small C++ XML Parser
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:insource compiler:c++11-lang dos2unix pathfix
+USES=		cmake:insource compiler:c++11-lang cpe dos2unix pathfix
+CPE_VENDOR=	${PORTNAME}_project
 
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ON=	BUILD_SHARED_LIBS
