@@ -8,7 +8,8 @@ MASTER_SITES=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Reference implementation of the Java EE application server
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	oracle
 USE_JAVA=	yes
 NO_BUILD=	yes
 
