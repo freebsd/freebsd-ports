@@ -9,7 +9,7 @@
  
  INTERNALLIB =
  
-@@ -27,9 +27,9 @@ ces_builtin.c:	${CHARSETS_C} ${CHARSETS_
+@@ -27,11 +27,11 @@ ces_builtin.c:	${CHARSETS_C} ${CHARSETS_O}
  		${.CURDIR}/../iconv_builtin -mo ${.TARGET} \
  			${CHARSETS_C} PIC ${CHARSETS_O}
  
@@ -19,8 +19,11 @@
 -.So.so:
 +.So.so .pico.so:
  	@${LDDESTDIRENV} ${CC} -shared -Wl,-x -o ${.TARGET} \
- 		-Wl,-soname,${.TARGET} `lorder ${.ALLSRC} | tsort -q` \
+-		-Wl,-soname,${.TARGET} `lorder ${.ALLSRC} | tsort -q` \
++		-Wl,-soname,${.TARGET} ${.ALLSRC} \
  		${LDDESTDIR} ${LDADD}
+ 
+ beforeinstall:
 @@ -41,8 +41,8 @@ beforeinstall:
  		${INSTALLFLAGS} ${SHLINSTALLFLAGS} ${CHARSETS_SO} \
  		${DESTDIR}${MODULEDIR}
