@@ -11,7 +11,8 @@ COMMENT=	Fast, safe and extensible Markdown to (X)HTML parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 PLIST_FILES=	bin/redcarpet
