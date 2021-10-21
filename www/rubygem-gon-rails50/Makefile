@@ -14,7 +14,8 @@ RUN_DEPENDS=	rubygem-actionpack50>=3.0:www/rubygem-actionpack50 \
 		rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-request_store>=1.0:devel/rubygem-request_store
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
