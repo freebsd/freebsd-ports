@@ -21,7 +21,8 @@ ONLY_FOR_ARCHS_REASON=	i2p libwrapper.so library binary only available for i386 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:math/gmp
 LIB_DEPENDS=	libiconv.so:converters/libiconv
 
-USES=		gettext tar:bz2
+USES=		cpe gettext tar:bz2
+CPE_VENDOR=	geti2p
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
