@@ -14,7 +14,8 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig libtool
+USES=		cpe pkgconfig libtool
+CPE_VENDOR=	${PORTNAME}_project
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
