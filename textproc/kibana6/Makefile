@@ -16,6 +16,8 @@ EXPIRATION_DATE=	2021-06-23
 
 RUN_DEPENDS=	node10>=10.15.2:www/node10
 
+USES=		cpe
+CPE_VENDOR=	elastic
 USE_RC_SUBR=	${PORTNAME}
 
 CONFLICTS=	kibana7* kibana[3-5]*
