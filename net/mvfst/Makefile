@@ -15,7 +15,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfolly.so:devel/folly \
 		libglog.so:devel/glog
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang cpe
+CPE_VENDOR=	facebook
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
 GH_TAGNAME=	5d78c63965239cf6cfacbdc33f7de9b6e1245a3a
