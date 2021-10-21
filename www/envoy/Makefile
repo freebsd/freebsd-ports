@@ -31,7 +31,8 @@ LIB_DEPENDS=	libcircllhist.so:devel/libcircllhist \
 		libnghttp2.so:www/libnghttp2 \
 		libspdlog.so:devel/spdlog
 
-USES=		compiler:c++14-lang gmake ssl
+USES=		compiler:c++14-lang cpe gmake ssl
+CPE_VENDOR=	${PORTNAME}proxy
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}proxy gogo:protobuf googleapis:gapis \
 		prometheus:pm grpc:grpc
