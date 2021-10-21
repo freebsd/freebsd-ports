@@ -11,7 +11,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
-USES=		gem ssl
+USES=		cpe gem ssl
+CPE_VENDOR=	ruby-lang
 USE_RUBY=	yes
 
 .include <bsd.port.mk>
