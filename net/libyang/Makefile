@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
-USES=	cmake compiler:c++11-lang pkgconfig
+USES=	cmake compiler:c++11-lang cpe pkgconfig
+CPE_VENDOR=	cesnet
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
