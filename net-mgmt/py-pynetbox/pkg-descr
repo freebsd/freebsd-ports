@@ -1,0 +1,4 @@
+This package offers direct access to the API of NetBox and allows to manipulate
+several objects within a NetBox instance.
+
+WWW: https://github.com/netbox-community/pynetbox

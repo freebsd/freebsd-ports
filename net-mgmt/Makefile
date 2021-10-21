@@ -318,6 +318,7 @@
     SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang
     SUBDIR += py-pyeapi
+    SUBDIR += py-pynetbox
     SUBDIR += py-pynxos
     SUBDIR += py-pysmi
     SUBDIR += py-pysnmp
