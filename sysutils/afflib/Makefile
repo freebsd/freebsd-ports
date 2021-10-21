@@ -21,7 +21,8 @@ GH_PROJECT=	AFFLIBv3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-s3=yes
-USES=		autoreconf fuse libtool pathfix readline ssl
+USES=		autoreconf cpe fuse libtool pathfix readline ssl
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
