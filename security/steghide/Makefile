@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
 		libmhash.so:security/mhash
 
-USES=		compiler gmake jpeg libtool:build localbase perl5
+USES=		compiler cpe gmake jpeg libtool:build localbase perl5
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-fpermissive
 LIBS+=		-lmcrypt
