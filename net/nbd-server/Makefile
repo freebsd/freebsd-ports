@@ -13,7 +13,8 @@ COMMENT=	Server for the Linux network block device (nbd)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome pkgconfig
+USES=		cpe gnome pkgconfig
+CPE_VENDOR=	wouter_verhelst
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
