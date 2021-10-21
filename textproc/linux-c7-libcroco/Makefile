@@ -9,7 +9,8 @@ COMMENT=	CSS2 parsing library (CentOS ${LINUX_DIST_VER})
 
 LICENSE=	MIT
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_LINUX=	libxml2
 USE_LINUX_RPM=	yes
