@@ -12,7 +12,8 @@ COMMENT=	Yet-another-markdown-parser but fast, pure Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
