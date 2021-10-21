@@ -1,36 +1,27 @@
---- CMakeLists.txt.orig	2019-04-23 07:25:32 UTC
+--- CMakeLists.txt.orig	2021-09-15 13:04:13 UTC
 +++ CMakeLists.txt
-@@ -100,7 +100,7 @@ include( GNUInstallDirs )
- get_filename_component(CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX} REALPATH BASE_DIR "${CMAKE_BINARY_DIR}")
- # If CMAKE_INSTALL_PREFIX is omitted CMake will set the installation prefix to its default '/usr/local'.
- # This is not desired. A subdirectory is allowed, e.g. 'usr/local/nest'.
--if ( "${CMAKE_INSTALL_PREFIX}" STREQUAL "/usr/local" )
-+if ( FALSE AND "${CMAKE_INSTALL_PREFIX}" STREQUAL "/usr/local" )
-   message( FATAL_ERROR "Do not install into '${CMAKE_INSTALL_PREFIX}'. Please set -DCMAKE_INSTALL_PREFIX:PATH=<install prefix>." )
- endif ()
- 
-@@ -109,7 +109,7 @@ endif ()
+@@ -92,7 +92,7 @@ set( CMAKE_INSTALL_DATADIR "share/${PROJECT_NAME}" CAC
  ################################################################################
  
  # needed for pynest test suite
--if ( ${with-python} STREQUAL "ON" OR  ${with-python} STREQUAL "2" OR  ${with-python} STREQUAL "3" )
-+if ( BUILD_PYTHON AND (${with-python} STREQUAL "ON" OR  ${with-python} STREQUAL "2" OR  ${with-python} STREQUAL "3") )
+-if ( ${with-python} STREQUAL "ON" )
++if ( BUILD_PYTHON AND ${with-python} STREQUAL "ON" )
    find_program( NOSETESTS NAMES nosetests )
  endif ()
  
-@@ -198,7 +198,7 @@ enable_testing()
- set( TEST_LOGFILE ${PROJECT_BINARY_DIR}/reports/installcheck.log )
- file( MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/reports/ )
+@@ -194,7 +194,7 @@ message("-- NEST version: ${NEST_VERSION_STRING}")
+ enable_testing()
+ set( TEST_OPTS "" )
  
 -if ( HAVE_PYTHON )
 +if ( BUILD_PYTHON AND HAVE_PYTHON )
-   add_custom_target( installcheck
-     COMMAND ${CMAKE_COMMAND} -E env
-       NEST_PATH="${CMAKE_INSTALL_FULL_BINDIR}"
-@@ -225,8 +225,12 @@ endif ()
- if ( HAVE_LIBNEUROSIM )
-   add_subdirectory( conngen )
+   set( TEST_OPTS "${TEST_OPTS};--with-python=${PYTHON}" )
  endif ()
+ 
+@@ -223,8 +223,12 @@ add_custom_target( installcheck
+ ##################        Define Subdirectories here          ##################
+ ################################################################################
+ 
 -add_subdirectory( doc )
 -add_subdirectory( examples )
 +if (INSTALL_DOCS)
@@ -42,10 +33,10 @@
  add_subdirectory( extras )
  add_subdirectory( lib )
  add_subdirectory( libnestutil )
-@@ -238,7 +242,7 @@ add_subdirectory( nestkernel )
- add_subdirectory( precise )
+@@ -234,7 +238,7 @@ add_subdirectory( nest )
+ add_subdirectory( nestkernel )
+ add_subdirectory( thirdparty )
  add_subdirectory( testsuite )
- add_subdirectory( topology )
 -if ( HAVE_PYTHON )
 +if ( BUILD_PYTHON AND HAVE_PYTHON )
    add_subdirectory( pynest )
