@@ -11,7 +11,8 @@ COMMENT=	UltraVNC repeater
 
 LICENSE=	GPLv2+
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	ultravnc
 USE_RC_SUBR=	${PORTNAME}
 WRKSRC=		${WRKDIR}/Ver${PORTVERSION:C/\.//}
 ALL_TARGET=	${PORTNAME}
