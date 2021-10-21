@@ -15,8 +15,9 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		autoreconf compiler:c++11-lang libtool localbase:ldflags pathfix \
+USES=		autoreconf compiler:c++11-lang cpe libtool localbase:ldflags pathfix \
 		pkgconfig
+CPE_VENDOR=	ntop
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-pic
