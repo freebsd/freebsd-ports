@@ -9,7 +9,8 @@ COMMENT=	Elvish = Expressive Programming Language + Versatile Interactive Shell
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	elv
 USE_GITHUB=	yes
 GH_ACCOUNT=	elves
 GH_PROJECT=	elvish
