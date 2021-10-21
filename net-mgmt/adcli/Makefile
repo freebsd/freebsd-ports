@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	ac_cv_path_KRB5_CONFIG=${KRB5CONFIG}	\
 	ac_cv_path_XMLTO=${PORT_OPTIONS:MDOCS:S|DOCS|${LOCALBASE}/bin/xmlto|:S|^$|${TRUE}|}
 CONFIGURE_ARGS=	--sysconfdir=/etc
 
-USES=	autoreconf
+USES=	autoreconf libtool
 
 # Kerberos may or may not be there, but LDAP always is:
 CFLAGS+=	-I${LOCALBASE}/include
