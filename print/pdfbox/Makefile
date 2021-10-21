@@ -19,6 +19,8 @@ RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle15 \
 
 JAR_NAMES=	pdfbox fontbox preflight xmpbox pdfbox-tools pdfbox-debugger
 
+USES=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=		yes
