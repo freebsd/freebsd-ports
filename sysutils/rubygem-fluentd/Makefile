@@ -27,7 +27,7 @@ PLIST_FILES=	bin/fluent-cap-ctl bin/fluent-cat bin/fluent-ctl \
 		bin/fluent-plugin-config-format bin/fluent-plugin-generate \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 USE_RC_SUBR=	fluentd
 USERS=		fluentd
