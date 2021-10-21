@@ -11,7 +11,8 @@ COMMENT=	Ruby library provide swappable XML backends
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	erik_michaels-ober
 USE_RUBY=	yes
 
 NO_ARCH=	yes
