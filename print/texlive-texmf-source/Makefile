@@ -11,7 +11,8 @@ COMMENT=	TeX Live Typesetting System, texmf Tree (source)
 
 CONFLICTS_INSTALL=	texlive-base-201[234]*
 
-USES=		tar:xz
+USES=		cpe tar:xz
+CPE_VENDOR=	tug
 USE_TEX=	texmf>=20150523
 TEXHASHDIRS=	${TEXMFDISTDIR}
 NO_BUILD=	yes
