@@ -11,7 +11,8 @@ COMMENT=	Embedded C/C++ web server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
