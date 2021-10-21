@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
 
-USES=		php:web zip
+USES=		cpe php:web zip
+CPE_VENDOR=	enhancesoft
 USE_PHP=	gd gettext imap json mbstring mysqli xml
 NO_ARCH=	yes
 NO_BUILD=	yes
