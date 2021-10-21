@@ -15,7 +15,8 @@ LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 
-USES=		cargo
+USES=		cargo cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
