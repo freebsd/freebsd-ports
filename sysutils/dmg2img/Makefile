@@ -12,7 +12,8 @@ COMMENT=	DMG2IMG convert tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ssl
+USES=		cpe ssl
+CPE_VENDOR=	${PORTNAME}_project
 
 PLIST_FILES=	bin/dmg2img \
 		bin/vfdecrypt
