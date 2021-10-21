@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
-USES=		cmake gnome sqlite
+USES=		cmake cpe gnome sqlite
+CPE_VENDOR=	${PORTNAME}_project
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
