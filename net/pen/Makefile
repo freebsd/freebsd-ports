@@ -10,7 +10,8 @@ COMMENT=	Load balancer for UDP and TCP based protocols
 
 LICENSE=	GPLv2
 
-USES=		ssl
+USES=		cpe ssl
+CPE_VENDOR=	${PORTNAME}_project
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	pen
