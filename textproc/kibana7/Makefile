@@ -20,7 +20,8 @@ LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	node14>=14.17.0:www/node14
 
-USES=		compiler:c++14-lang python:build
+USES=		compiler:c++14-lang cpe python:build
+CPE_VENDOR=	elastic
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
