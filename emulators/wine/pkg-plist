@@ -1378,7 +1378,7 @@ lib/wine/d3d10.dll.so
 lib/wine/d3d10_1.dll.so
 lib/wine/d3d10core.dll.so
 lib/wine/d3d11.dll.so
-%%VKD3D%%lib/wine/d3d12.dll.so
+%%X11%%lib/wine/d3d12.dll.so
 lib/wine/d3d8.dll.so
 lib/wine/d3d8thk.dll.so
 lib/wine/d3d9.dll.so
@@ -1844,7 +1844,7 @@ lib/wine/fakedlls/d3d10.dll
 lib/wine/fakedlls/d3d10_1.dll
 lib/wine/fakedlls/d3d10core.dll
 lib/wine/fakedlls/d3d11.dll
-%%VKD3D%%lib/wine/fakedlls/d3d12.dll
+%%X11%%lib/wine/fakedlls/d3d12.dll
 lib/wine/fakedlls/d3d8.dll
 lib/wine/fakedlls/d3d8thk.dll
 lib/wine/fakedlls/d3d9.dll
@@ -2625,7 +2625,7 @@ lib/wine/libd3d10.def
 lib/wine/libd3d10_1.def
 lib/wine/libd3d10core.def
 lib/wine/libd3d11.def
-%%VKD3D%%lib/wine/libd3d12.def
+%%X11%%lib/wine/libd3d12.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dcompiler.def
