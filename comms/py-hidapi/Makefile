@@ -1,8 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	hidapi
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+DISTVERSION=	0.11.0.post2
 CATEGORIES=	comms python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +15,8 @@ LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist cython distutils
+
+MAKE_ENV+=	DISTUTILS_DEBUG=1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|usb-1.0|usb|g' ${WRKSRC}/setup.py
