@@ -14,8 +14,8 @@
  	@echo Generating manpage...
 -	@sed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
 -	@sed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
-+	@gsed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
-+	@gsed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
++	@sed "s,_CONFDIR_,$(CONFDIR),g ; s,_HOMEDIR_,$(HOMEDIR),g ; s,_MANSEC_,$(MAN_SEC),g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
++	@sed "s,_CONFDIR_,$(CONFDIR),g ; s,_HOMEDIR_,$(HOMEDIR),g ; s,_MANSEC_,$(MAN_SEC),g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
  
  
  install:

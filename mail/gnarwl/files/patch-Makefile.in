@@ -5,7 +5,7 @@
  SBIN=damnit
  MAN_SEC=8
 -VER=$(shell basename `pwd` | sed s\\$(BIN)-\\\\)
-+VER=$(shell basename `pwd` | gsed s\\$(BIN)-\\\\)
++VER=$(shell basename `pwd` | sed s,$(BIN)-,,)
  
  ##
  # Path settings (no trailing slashes!)
@@ -15,7 +15,7 @@
  CC=@CC@
 -CFLAGS=-DLDAP_DEPRECATED -DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -g -Wall -O2 -I..
 -LFLAGS=-lldap -lgdbm -ldl -lresolv
-+CFLAGS=@CFLAGS@ -DLDAP_DEPRECATED -DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -Wall -I.. @CPPFLAGS@
++CFLAGS=@CFLAGS@ -DLDAP_DEPRECATED -DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -fcommon -Wall -I.. @CPPFLAGS@
 +LFLAGS=@LDFLAGS@ @LIBS@
  
  ##
