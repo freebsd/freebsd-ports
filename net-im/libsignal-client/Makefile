@@ -1,6 +1,7 @@
 PORTNAME=	libsignal-client
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.6
+PORTEPOCH=	1
 CATEGORIES=	net-im java
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,219 +15,226 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
-GH_TUPLE=	signalapp:curve25519-dalek:2694ad3b789635f90f941648ae952f58d59ffc73:curvedalek \
-		dignifiedquire:num-bigint:56576b592fea6341b7e1711a1629e4cc1bfc419c:numbigintdig
+GH_TUPLE=	signalapp:curve25519-dalek:2694ad3b789635f90f941648ae952f58d59ffc73:curvedalek
 USE_LDCONFIG=	yes
 
-CARGO_CRATES=	addr2line-0.16.0 \
+CARGO_CRATES=	addr2line-0.14.1 \
 		adler-1.0.2 \
-		aead-0.4.3 \
-		aes-0.7.5 \
-		aes-gcm-0.9.4 \
-		aes-gcm-siv-0.10.3 \
-		anyhow-1.0.44 \
+		aead-0.4.1 \
+		aes-0.7.4 \
+		aes-gcm-0.9.2 \
+		aes-gcm-siv-0.10.1 \
+		aho-corasick-0.7.15 \
+		anyhow-1.0.38 \
 		arrayref-0.3.6 \
-		async-trait-0.1.51 \
+		async-trait-0.1.42 \
 		atty-0.2.14 \
+		autocfg-0.1.7 \
 		autocfg-1.0.1 \
-		backtrace-0.3.61 \
-		base64-0.13.0 \
-		bitflags-1.3.2 \
+		backtrace-0.3.56 \
+		base64-0.12.3 \
+		bitflags-1.2.1 \
 		blake2-0.9.2 \
 		block-buffer-0.9.0 \
 		block-modes-0.8.1 \
 		block-padding-0.2.1 \
-		bstr-0.2.17 \
-		bumpalo-3.7.1 \
-		byteorder-1.4.3 \
-		bytes-1.1.0 \
-		cast-0.2.7 \
-		cc-1.0.70 \
+		bstr-0.2.15 \
+		bumpalo-3.6.1 \
+		byteorder-1.4.2 \
+		bytes-1.0.1 \
+		cast-0.2.3 \
+		cc-1.0.67 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.0 \
-		chacha20-0.7.3 \
+		chacha20-0.7.2 \
 		chacha20poly1305-0.8.2 \
 		chrono-0.4.19 \
 		cipher-0.3.0 \
 		clap-2.33.3 \
-		combine-4.6.1 \
-		cpufeatures-0.2.1 \
-		criterion-0.3.5 \
-		criterion-plot-0.4.4 \
-		crossbeam-channel-0.5.1 \
-		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.5 \
-		crossbeam-utils-0.8.5 \
+		combine-4.5.2 \
+		cpufeatures-0.1.5 \
+		cpuid-bool-0.1.2 \
+		criterion-0.3.4 \
+		criterion-plot-0.4.3 \
+		crossbeam-channel-0.5.0 \
+		crossbeam-deque-0.8.0 \
+		crossbeam-epoch-0.9.2 \
+		crossbeam-utils-0.8.2 \
 		crypto-mac-0.8.0 \
 		crypto-mac-0.9.1 \
 		cslice-0.2.0 \
-		csv-1.1.6 \
+		csv-1.1.5 \
 		csv-core-0.1.10 \
-		ctr-0.8.0 \
+		ctr-0.7.0 \
 		derivative-2.2.0 \
 		digest-0.9.0 \
-		displaydoc-0.2.1 \
 		either-1.6.1 \
 		fixedbitset-0.2.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		futures-core-0.3.17 \
-		futures-macro-0.3.17 \
-		futures-task-0.3.17 \
-		futures-util-0.3.17 \
+		futures-core-0.3.13 \
+		futures-macro-0.3.13 \
+		futures-task-0.3.13 \
+		futures-util-0.3.13 \
+		generator-0.6.24 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
-		getrandom-0.2.3 \
-		ghash-0.4.4 \
-		gimli-0.25.0 \
+		getrandom-0.2.2 \
+		ghash-0.4.2 \
+		gimli-0.23.0 \
 		half-1.7.1 \
-		hashbrown-0.11.2 \
-		heck-0.3.3 \
-		hermit-abi-0.1.19 \
-		hex-0.4.3 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.18 \
+		hex-0.4.2 \
 		hmac-0.9.0 \
-		indexmap-1.7.0 \
+		indexmap-1.6.1 \
+		itertools-0.9.0 \
 		itertools-0.10.1 \
-		itoa-0.4.8 \
+		itoa-0.4.7 \
 		jni-0.19.0 \
 		jni-sys-0.3.0 \
-		js-sys-0.3.55 \
+		js-sys-0.3.47 \
 		keccak-0.1.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.103 \
+		libc-0.2.97 \
 		libloading-0.6.7 \
 		libm-0.2.1 \
-		linkme-0.2.7 \
-		linkme-impl-0.2.7 \
+		linkme-0.2.4 \
+		linkme-impl-0.2.4 \
 		log-0.4.14 \
 		log-panics-2.0.0 \
-		memchr-2.4.1 \
-		memoffset-0.6.4 \
+		loom-0.4.0 \
+		memchr-2.3.4 \
+		memoffset-0.6.1 \
 		miniz_oxide-0.4.4 \
-		multimap-0.8.3 \
+		multimap-0.8.2 \
 		neon-0.9.1 \
 		neon-build-0.9.1 \
 		neon-macros-0.9.1 \
 		neon-runtime-0.9.1 \
-		num-bigint-0.4.2 \
+		num-bigint-0.2.6 \
+		num-bigint-dig-0.6.1 \
 		num-integer-0.1.44 \
 		num-iter-0.1.42 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		num_enum-0.5.4 \
-		num_enum_derive-0.5.4 \
-		object-0.26.2 \
-		oid-0.2.1 \
-		once_cell-1.8.0 \
+		num_enum-0.5.1 \
+		num_enum_derive-0.5.1 \
+		object-0.23.0 \
+		oid-0.1.1 \
+		once_cell-1.7.2 \
 		oorandom-11.1.3 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.36 \
-		openssl-sys-0.9.67 \
-		paste-1.0.5 \
-		pem-0.8.3 \
+		openssl-0.10.32 \
+		openssl-sys-0.9.60 \
+		paste-1.0.4 \
+		pem-0.8.1 \
 		pest-2.1.3 \
 		petgraph-0.5.1 \
-		picky-6.3.0 \
-		picky-asn1-0.3.3 \
-		picky-asn1-der-0.2.5 \
-		picky-asn1-x509-0.6.1 \
-		pin-project-lite-0.2.7 \
+		picky-6.2.0 \
+		picky-asn1-0.3.1 \
+		picky-asn1-der-0.2.4 \
+		picky-asn1-x509-0.5.0 \
+		pin-project-lite-0.2.4 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.20 \
-		plotters-0.3.1 \
-		plotters-backend-0.3.2 \
-		plotters-svg-0.3.1 \
-		poly1305-0.7.2 \
-		polyval-0.5.3 \
+		pkg-config-0.3.19 \
+		plotters-0.3.0 \
+		plotters-backend-0.3.0 \
+		plotters-svg-0.3.0 \
+		poly1305-0.7.1 \
+		polyval-0.5.1 \
 		ppv-lite86-0.2.10 \
-		proc-macro-crate-1.1.0 \
+		proc-macro-crate-0.1.5 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.29 \
+		proc-macro2-1.0.24 \
 		prost-0.8.0 \
 		prost-build-0.8.0 \
 		prost-derive-0.8.0 \
 		prost-types-0.8.0 \
-		quote-1.0.10 \
+		quote-1.0.9 \
 		rand-0.7.3 \
-		rand-0.8.4 \
+		rand-0.8.3 \
 		rand_chacha-0.2.2 \
-		rand_chacha-0.3.1 \
+		rand_chacha-0.3.0 \
 		rand_core-0.5.1 \
-		rand_core-0.6.3 \
+		rand_core-0.6.2 \
 		rand_hc-0.2.0 \
-		rand_hc-0.3.1 \
-		rayon-1.5.1 \
-		rayon-core-1.9.1 \
-		redox_syscall-0.2.10 \
-		regex-1.5.4 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
+		rand_hc-0.3.0 \
+		rayon-1.5.0 \
+		rayon-core-1.9.0 \
+		redox_syscall-0.2.5 \
+		regex-1.4.3 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.22 \
 		remove_dir_all-0.5.3 \
-		rsa-0.4.1 \
-		rustc-demangle-0.1.21 \
+		rsa-0.3.0 \
+		rustc-demangle-0.1.18 \
+		rustc_version-0.2.3 \
 		rustc_version-0.3.3 \
-		rustc_version-0.4.0 \
+		rustversion-1.0.4 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
+		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-0.11.0 \
-		semver-1.0.4 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
-		serde-1.0.130 \
+		serde-1.0.123 \
 		serde_bytes-0.11.5 \
-		serde_cbor-0.11.2 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
-		sha-1-0.9.8 \
-		sha2-0.9.8 \
+		serde_cbor-0.11.1 \
+		serde_derive-1.0.123 \
+		serde_json-1.0.62 \
+		sha-1-0.9.4 \
+		sha2-0.9.3 \
 		sha3-0.9.1 \
-		simple_asn1-0.5.4 \
-		slab-0.4.4 \
-		smallvec-1.7.0 \
+		simple_asn1-0.4.1 \
+		slab-0.4.2 \
+		smallvec-1.6.1 \
 		snow-0.8.0 \
 		spin-0.5.2 \
 		static_assertions-1.1.0 \
-		subtle-2.4.1 \
-		syn-1.0.78 \
+		subtle-2.4.0 \
+		syn-1.0.60 \
 		syn-mid-0.5.3 \
-		synstructure-0.12.5 \
+		synstructure-0.12.4 \
 		tempfile-3.2.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.29 \
-		thiserror-impl-1.0.29 \
+		thiserror-1.0.24 \
+		thiserror-impl-1.0.24 \
+		thread_local-1.1.3 \
 		time-0.1.43 \
-		tinytemplate-1.2.1 \
+		tinytemplate-1.2.0 \
 		toml-0.5.8 \
-		typenum-1.14.0 \
+		typenum-1.12.0 \
 		ucd-trie-0.1.3 \
-		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
-		universal-hash-0.4.1 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		universal-hash-0.4.0 \
 		unzip3-1.0.0 \
 		uuid-0.8.2 \
-		vcpkg-0.2.15 \
-		version_check-0.9.3 \
-		walkdir-2.3.2 \
+		vcpkg-0.2.11 \
+		version_check-0.9.2 \
+		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.78 \
-		wasm-bindgen-backend-0.2.78 \
-		wasm-bindgen-macro-0.2.78 \
-		wasm-bindgen-macro-support-0.2.78 \
-		wasm-bindgen-shared-0.2.78 \
-		web-sys-0.3.55 \
-		which-4.2.2 \
+		wasm-bindgen-0.2.70 \
+		wasm-bindgen-backend-0.2.70 \
+		wasm-bindgen-macro-0.2.70 \
+		wasm-bindgen-macro-support-0.2.70 \
+		wasm-bindgen-shared-0.2.70 \
+		web-sys-0.3.47 \
+		which-4.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		x25519-dalek-1.1.1 \
+		x25519-dalek-1.1.0 \
 		zeroize-1.3.0 \
-		zeroize_derive-1.2.0
+		zeroize_derive-1.0.1
 CARGO_USE_GITHUB=	yes
 CARGO_BUILD_ARGS=	--package libsignal-jni
 MAKE_ENV=		CARGO_PROFILE_RELEASE_LTO=thin \
