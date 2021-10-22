@@ -11,6 +11,7 @@ include/xgboost/intrusive_ptr.h
 include/xgboost/json.h
 include/xgboost/json_io.h
 include/xgboost/learner.h
+include/xgboost/linalg.h
 include/xgboost/linear_updater.h
 include/xgboost/logging.h
 include/xgboost/metric.h
