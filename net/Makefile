@@ -155,6 +155,7 @@
     SUBDIR += findomain
     SUBDIR += flower
     SUBDIR += foreman-proxy
+    SUBDIR += fort
     SUBDIR += fpc-ldap
     SUBDIR += fpc-libenet
     SUBDIR += fpc-pcap

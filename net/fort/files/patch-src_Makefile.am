@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2021-09-20 02:51:17 UTC
++++ src/Makefile.am
+@@ -130,7 +130,7 @@ fort_SOURCES += $(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+ fort_CFLAGS  = -Wall -Wno-cpp -Wpedantic
+ # Feel free to temporarily remove this one if you're not using gcc 7.3.0.
+ #fort_CFLAGS += $(GCC_WARNS)
+-fort_CFLAGS += -std=gnu11 -O2 -g $(FORT_FLAGS) ${XML2_CFLAGS}
++fort_CFLAGS += -std=gnu11 -O2 -g $(FORT_FLAGS) ${XML2_CFLAGS} ${JANSSON_CFLAGS}
+ fort_LDFLAGS = $(LDFLAGS_DEBUG)
+ fort_LDADD   = ${JANSSON_LIBS} ${CURL_LIBS} ${XML2_LIBS}
+ 
