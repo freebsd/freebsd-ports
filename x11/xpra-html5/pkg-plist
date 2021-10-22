@@ -38,6 +38,7 @@ share/xpra/www/favicon.ico
 share/xpra/www/favicon.ico.br
 share/xpra/www/favicon.ico.gz
 share/xpra/www/favicon.png
+share/xpra/www/icons/authentication.png
 share/xpra/www/icons/close.png
 share/xpra/www/icons/default_cursor.png
 share/xpra/www/icons/empty.png

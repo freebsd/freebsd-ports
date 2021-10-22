@@ -1,5 +1,5 @@
 PORTNAME=	xpra-html5
-PORTVERSION=	4.4
+PORTVERSION=	4.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -11,10 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	brotli:archivers/brotli
 
-USES=		python:3.6+
+USES=		python:3.6+,build
 
 OPTIONS_DEFINE=		MINIFY
-OPTIONS_DEFAULT=	MINIFY
 
 MINIFY_DESC=		Minify JavaScript source files
 MINIFY_BUILD_DEPENDS=	yuicompressor:www/yuicompressor
