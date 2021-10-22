@@ -2,6 +2,7 @@
 
 PORTNAME=	sidekiq-cron
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # Use the same rubygem-sidekiq for www/gitlab-ce and its dependencies
 RUN_DEPENDS=	rubygem-fugit>=1.1<2:devel/rubygem-fugit \
-		rubygem-sidekiq5>=4.2.1:devel/rubygem-sidekiq5
+		rubygem-sidekiq>=4.2.1:devel/rubygem-sidekiq
 
 USES=		gem
 USE_RUBY=	yes

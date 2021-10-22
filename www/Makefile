@@ -1838,14 +1838,12 @@
     SUBDIR += rubygem-actioncable52
     SUBDIR += rubygem-actioncable60
     SUBDIR += rubygem-actioncable61
-    SUBDIR += rubygem-actioncable613
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-actionpack50
     SUBDIR += rubygem-actionpack52
     SUBDIR += rubygem-actionpack60
     SUBDIR += rubygem-actionpack61
-    SUBDIR += rubygem-actionpack613
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
@@ -2009,7 +2007,6 @@
     SUBDIR += rubygem-lograge-rails52
     SUBDIR += rubygem-lograge-rails60
     SUBDIR += rubygem-lograge-rails61
-    SUBDIR += rubygem-lograge-rails613
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-merb-assets
@@ -2075,7 +2072,6 @@
     SUBDIR += rubygem-rails52
     SUBDIR += rubygem-rails60
     SUBDIR += rubygem-rails61
-    SUBDIR += rubygem-rails613
     SUBDIR += rubygem-rails_12factor
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-rails_serve_static_assets
@@ -2086,7 +2082,6 @@
     SUBDIR += rubygem-railties52
     SUBDIR += rubygem-railties60
     SUBDIR += rubygem-railties61
-    SUBDIR += rubygem-railties613
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
@@ -2108,7 +2103,6 @@
     SUBDIR += rubygem-responders-rails52
     SUBDIR += rubygem-responders-rails60
     SUBDIR += rubygem-responders-rails61
-    SUBDIR += rubygem-responders-rails613
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder

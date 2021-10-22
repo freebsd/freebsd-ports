@@ -10,7 +10,7 @@ COMMENT=	OAuth2 provider for Rails and Grape
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties613>=5:www/rubygem-railties613
+RUN_DEPENDS=	rubygem-railties61>=5:www/rubygem-railties61
 
 USES=		gem
 USE_RUBY=	yes

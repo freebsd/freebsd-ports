@@ -16499,3 +16499,28 @@ sysutils/cfengine-masterfiles311|sysutils/cfengine-masterfiles317|2021-09-30|Has
 mail/postfix35|mail/postfix|2021-09-30|Has expired: It is only here until FreeBSD 11 is EoL (Postfix >= 3.6 requires OpenSSL >= 1.1.x)
 graphics/drm-fbsd11.2-kmod||2021-09-30|Removed, only useful on EOL FreeBSD 11.4
 devel/qca-legacy|devel/qca|2021-09-30|Removed, only useful on EOL FreeBSD 11.4
+databases/rubygem-activemodel613|databases/rubygem-activemodel61|2021-10-22|Removed: Use databases/rubygem-activemodel61 instead
+databases/rubygem-activerecord613|databases/rubygem-activerecord61|2021-10-22|Removed: Use databases/rubygem-activerecord61 instead
+devel/rubygem-actionview613|devel/rubygem-actionview61|2021-10-22|Removed: Use devel/rubygem-actionview61 instead
+devel/rubygem-activejob613|devel/rubygem-activejob61|2021-10-22|Removed: Use devel/rubygem-activejob61 instead
+devel/rubygem-activesupport613|devel/rubygem-activesupport61|2021-10-22|Removed: Use devel/rubygem-activesupport61 instead
+devel/rubygem-devise-rails613|devel/rubygem-devise-rails61|2021-10-22|Removed: Use devel/rubygem-devise-rails61 instead
+devel/rubygem-devise47-rails613|devel/rubygem-devise47-rails61|2021-10-22|Removed: Use devel/rubygem-devise47-rails61 instead
+devel/rubygem-gettext_i18n_rails_js-rails613|devel/rubygem-gettext_i18n_rails_js-rails61|2021-10-22|Removed: Use devel/rubygem-gettext_i18n_rails_js-rails61 instead
+devel/rubygem-peek-rails613|devel/rubygem-peek-rails61|2021-10-22|Removed: Use devel/rubygem-peek-rails61 instead
+devel/rubygem-rails-i18n-rails613|devel/rubygem-rails-i18n-rails61|2021-10-22|Removed: Use devel/rubygem-rails-i18n-rails61 instead
+devel/rubygem-web-console-rails613|devel/rubygem-web-console-rails61|2021-10-22|Removed: Use devel/rubygem-web-console-rails61 instead
+devel/rubygem-webpacker-rails613|devel/rubygem-webpacker-rails61|2021-10-22|Removed: Use devel/rubygem-webpacker-rails61 instead
+mail/rubygem-actionmailbox613|mail/rubygem-actionmailbox61|2021-10-22|Removed: Use mail/rubygem-actionmailbox61 instead
+mail/rubygem-actionmailer613|mail/rubygem-actionmailer61|2021-10-22|Removed: Use mail/rubygem-actionmailer61 instead
+net/rubygem-activestorage613|net/rubygem-activestorage61|2021-10-22|Removed: Use net/rubygem-activestorage61 instead
+security/rubygem-devise-two-factor-rails613|security/rubygem-devise-two-factor-rails61|2021-10-22|Removed: Use security/rubygem-devise-two-factor-rails61 instead
+textproc/rubygem-actiontext613|textproc/rubygem-actiontext61|2021-10-22|Removed: Use textproc/rubygem-actiontext61 instead
+textproc/rubygem-sass-rails-rails613|textproc/rubygem-sass-rails-rails61|2021-10-22|Removed: Use textproc/rubygem-sass-rails-rails61 instead
+textproc/rubygem-sassc-rails-rails613|textproc/rubygem-sassc-rails-rails61|2021-10-22|Removed: Use textproc/rubygem-sassc-rails-rails61 instead
+www/rubygem-actioncable613|www/rubygem-actioncable61|2021-10-22|Removed: Use www/rubygem-actioncable61 instead
+www/rubygem-actionpack613|www/rubygem-actionpack61|2021-10-22|Removed: Use www/rubygem-actionpack61 instead
+www/rubygem-lograge-rails613|www/rubygem-lograge-rails61|2021-10-22|Removed: Use www/rubygem-lograge-rails61 instead
+www/rubygem-rails613|www/rubygem-rails61|2021-10-22|Removed: Use www/rubygem-rails61 instead
+www/rubygem-railties613|www/rubygem-railties61|2021-10-22|Removed: Use www/rubygem-railties61 instead
+www/rubygem-responders-rails613|www/rubygem-responders-rails61|2021-10-22|Removed: Use www/rubygem-responders-rails61 instead
