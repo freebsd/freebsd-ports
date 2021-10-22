@@ -1,6 +1,5 @@
 PORTNAME=	obs-studio
-DISTVERSION=	27.0.1
-PORTREVISION=	4
+DISTVERSION=	27.1.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +42,7 @@ LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
 
 USES=		cmake compiler:c++17-lang gl gnome lua pkgconfig python:3.4+ \
 		qt:5 xorg
-USE_QT=		core gui svg widgets x11extras xml buildtools_build imageformats_run qmake_build
+USE_QT=		core gui network svg widgets x11extras xml buildtools_build imageformats_run qmake_build
 USE_GNOME=	glib20
 USE_GL=		gl
 USE_XORG=	ice sm x11 xcb xcomposite xext xfixes xinerama xrandr
