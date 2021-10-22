@@ -213,7 +213,7 @@ XWIDGETS_CONFIGURE_WITH=	xwidgets
 _GCC_PORT!=	${BSDMAKE} -V_GCC_PORT USE_GCC=11+ _GCC_PORT_CHOSEN=yes
 .endif
 
-.if ${ARCH} == powerpc64le
+.if ${ARCH:Mpowerpc64*}
 USE_GCC=	yes
 .endif
 
