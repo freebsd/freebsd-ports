@@ -1472,6 +1472,7 @@
     SUBDIR += py-sphinxcontrib-qthelp
     SUBDIR += py-sphinxcontrib-serializinghtml
     SUBDIR += py-sphinxcontrib-websupport
+    SUBDIR += py-sphinxemoji
     SUBDIR += py-sphinxext-opengraph
     SUBDIR += py-spylls
     SUBDIR += py-stemming
