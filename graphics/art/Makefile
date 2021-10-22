@@ -1,5 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.9.3
+DISTVERSION=	1.10.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -32,18 +32,7 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
-.include <bsd.port.pre.mk>
-
-# breaks with llvm-8
-.if ${CHOSEN_COMPILER_TYPE} == clang
-LLVM_VERSION=	10
-BUILD_DEPENDS+=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
-CPP=		clang-cpp${LLVM_VERSION}
-.endif
-
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/ART
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
