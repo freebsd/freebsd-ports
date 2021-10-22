@@ -18,6 +18,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgcr-base-3.so:security/gcr \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgdata.so:devel/libgdata \
+		libharfbuzz.so:print/harfbuzz \
 		libical.so:devel/libical \
 		libnss3.so:security/nss \
 		libicudata.so:devel/icu \
@@ -33,9 +34,10 @@ PORTSCOUT=	limitw:1,even
 
 USES=		bdb:5 cmake compiler:c++11-lib cpe gettext gnome gperf \
 		iconv localbase pathfix pkgconfig python:3.6+,build\
-		sqlite tar:xz
+		sqlite tar:xz xorg
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome
 
@@ -72,10 +74,6 @@ WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| python3| ${PYTHON_VERSION}|g' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/systemd
