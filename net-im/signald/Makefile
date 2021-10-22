@@ -68,7 +68,7 @@ COMMENT=	Daemon to facilitate communication via Signal Private Messenger
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 EXTRACT_DEPENDS=zip:archivers/zip
 BUILD_DEPENDS=	gradle6>=6.7:devel/gradle6
