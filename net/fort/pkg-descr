@@ -1,0 +1,7 @@
+FORT validator is an MIT-licensed RPKI Relying Party, this is a tool offered as
+part of the FORT project. It is a solution that allows operators to validate BGP
+routing information against the RPKI repository for use in router configuration
+and resolution. The service performs the validation of the entire RPKI
+repository, and which serves the resulting ROAs for easy access by your routers.
+
+WWW: https://fortproject.net/en/validator

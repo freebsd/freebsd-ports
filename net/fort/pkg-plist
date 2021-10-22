@@ -1,0 +1,5 @@
+bin/fort
+man/man8/fort.8.gz
+@dir %%ETCDIR%%/repository
+@dir %%ETCDIR%%/tal
+@sample %%ETCDIR%%/fort-config.json.sample
