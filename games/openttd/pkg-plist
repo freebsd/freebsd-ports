@@ -17,6 +17,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/ai/compat_1.9.nut
 %%DATADIR%%/ai/compat_1.10.nut
 %%DATADIR%%/ai/compat_1.11.nut
+%%DATADIR%%/ai/compat_12.nut
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
 %%DATADIR%%/baseset/openttd.grf
@@ -40,6 +41,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/game/compat_1.9.nut
 %%DATADIR%%/game/compat_1.10.nut
 %%DATADIR%%/game/compat_1.11.nut
+%%DATADIR%%/game/compat_12.nut
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/basque.lng
@@ -47,6 +49,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/lang/brazilian_portuguese.lng
 %%DATADIR%%/lang/bulgarian.lng
 %%DATADIR%%/lang/catalan.lng
+%%DATADIR%%/lang/chuvash.lng
 %%DATADIR%%/lang/croatian.lng
 %%DATADIR%%/lang/czech.lng
 %%DATADIR%%/lang/danish.lng
@@ -59,13 +62,16 @@ man/man6/openttd.6.gz
 %%DATADIR%%/lang/faroese.lng
 %%DATADIR%%/lang/finnish.lng
 %%DATADIR%%/lang/french.lng
+%%DATADIR%%/lang/frisian.lng
 %%DATADIR%%/lang/gaelic.lng
 %%DATADIR%%/lang/galician.lng
 %%DATADIR%%/lang/german.lng
 %%DATADIR%%/lang/greek.lng
 %%DATADIR%%/lang/hebrew.lng
+%%DATADIR%%/lang/hindi.lng
 %%DATADIR%%/lang/hungarian.lng
 %%DATADIR%%/lang/icelandic.lng
+%%DATADIR%%/lang/ido.lng
 %%DATADIR%%/lang/indonesian.lng
 %%DATADIR%%/lang/irish.lng
 %%DATADIR%%/lang/italian.lng
@@ -75,9 +81,13 @@ man/man6/openttd.6.gz
 %%DATADIR%%/lang/latvian.lng
 %%DATADIR%%/lang/lithuanian.lng
 %%DATADIR%%/lang/luxembourgish.lng
+%%DATADIR%%/lang/macedonian.lng
 %%DATADIR%%/lang/malay.lng
+%%DATADIR%%/lang/maltese.lng
+%%DATADIR%%/lang/marathi.lng
 %%DATADIR%%/lang/norwegian_bokmal.lng
 %%DATADIR%%/lang/norwegian_nynorsk.lng
+%%DATADIR%%/lang/persian.lng
 %%DATADIR%%/lang/polish.lng
 %%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
@@ -94,6 +104,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/lang/traditional_chinese.lng
 %%DATADIR%%/lang/turkish.lng
 %%DATADIR%%/lang/ukrainian.lng
+%%DATADIR%%/lang/urdu.lng
 %%DATADIR%%/lang/vietnamese.lng
 %%DATADIR%%/lang/welsh.lng
 %%DATADIR%%/scripts/autoexec.scr.example
