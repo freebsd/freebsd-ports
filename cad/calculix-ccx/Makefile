@@ -1,8 +1,7 @@
 # Created by: Pedro Giffuni
 
 PORTNAME=	ccx
-PORTVERSION=	2.17
-PORTREVISION=	2
+PORTVERSION=	2.18
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 PKGNAMEPREFIX=	CalculiX-

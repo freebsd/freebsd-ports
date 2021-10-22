@@ -1,8 +1,7 @@
 # Created by: Pedro Giffuni
 
 PORTNAME=	calculix
-PORTVERSION=	2.17.1
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
