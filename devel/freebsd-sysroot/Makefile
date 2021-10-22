@@ -91,6 +91,16 @@ _SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.0 # secure-plt
 DISTFILES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DISTFILES'!}@}
 .endif
 
+# to be removed if the port ever switched to base.txz for armv*
+.if ${FLAVOR:Marmv*}
+BROKEN_mips=	little-endian UFS fails to be read on big-endian architectures
+BROKEN_mips64=	little-endian UFS fails to be read on big-endian architectures
+BROKEN_powerpc=	little-endian UFS fails to be read on big-endian architectures
+BROKEN_powerpcspe=	little-endian UFS fails to be read on big-endian architectures
+BROKEN_powerpc64=	little-endian UFS fails to be read on big-endian architectures
+BROKEN_sparc64=	little-endian UFS fails to be read on big-endian architectures
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
