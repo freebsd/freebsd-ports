@@ -1,11 +1,6 @@
-# Created by: O. Hartmann <ohartmann@walstatt.org>
-
 PORTNAME=	opencl
-PORTVERSION=	3.0
+PORTVERSION=	3.0.8
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	d7283be010f2.patch:-p2 # https://github.com/KhronosGroup/OpenCL-Headers/pull/93
 
 MAINTAINER=	ohartmann@walstatt.org
 COMMENT=	Open Computing Language (OpenCL) specifications V3.0 (header files)
@@ -18,8 +13,8 @@ GH_PROJECT=	OpenCL-Headers OpenCL-CLHPP:clhpp
 GH_TAGNAME=	${HEADER_TAG} ${CLHPP_TAG}:clhpp
 
 # the header releases don't have tags yet, so use git commit for now
-HEADER_TAG=	b04034a
-CLHPP_TAG=	64c206f	#  include missing CL/opencl.hpp
+HEADER_TAG=	v2021.06.30
+CLHPP_TAG=	v2.0.15	#  include missing CL/opencl.hpp
 
 NO_BUILD=	yes
 NO_ARCH=	yes
