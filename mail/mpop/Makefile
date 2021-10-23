@@ -5,7 +5,7 @@ DISTVERSION=	1.4.15
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast POP3 client
 
 LICENSE=	GPLv3+
