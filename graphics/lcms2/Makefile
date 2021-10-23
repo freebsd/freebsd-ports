@@ -11,7 +11,9 @@ COMMENT=	Accurate, fast, and small-footprint color management engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool localbase:ldflags pathfix
+USES=		cpe libtool localbase:ldflags pathfix
+CPE_VENDOR=	littlecms
+CPE_PRODUCT=	little_cms_color_engine
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
