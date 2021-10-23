@@ -14,7 +14,9 @@ COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 LICENSE=	APACHE20
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	apache
+CPE_PRODUCT=	ant
 USE_JAVA=	yes
 
 OPTIONS_DEFINE=	DOCS
