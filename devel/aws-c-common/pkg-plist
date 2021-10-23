@@ -8,6 +8,7 @@ include/aws/common/atomics_fallback.inl
 include/aws/common/atomics_gnu.inl
 include/aws/common/atomics_gnu_old.inl
 include/aws/common/atomics_msvc.inl
+include/aws/common/bus.h
 include/aws/common/byte_buf.h
 include/aws/common/byte_order.h
 include/aws/common/byte_order.inl
@@ -28,6 +29,7 @@ include/aws/common/error.h
 include/aws/common/error.inl
 include/aws/common/exports.h
 include/aws/common/fifo_cache.h
+include/aws/common/file.h
 include/aws/common/hash_table.h
 include/aws/common/lifo_cache.h
 include/aws/common/linked_hash_table.h
@@ -55,8 +57,8 @@ include/aws/common/posix/common.inl
 include/aws/common/predicates.h
 include/aws/common/priority_queue.h
 include/aws/common/process.h
+include/aws/common/promise.h
 include/aws/common/ref_count.h
-include/aws/common/resource_name.h
 include/aws/common/ring_buffer.h
 include/aws/common/ring_buffer.inl
 include/aws/common/rw_lock.h
@@ -74,7 +76,6 @@ include/aws/common/uuid.h
 include/aws/common/xml_parser.h
 include/aws/common/zero.h
 include/aws/common/zero.inl
-include/aws/testing/aws_test_allocators.h
 include/aws/testing/aws_test_harness.h
 lib/aws-c-common/cmake/aws-c-common-config.cmake
 lib/aws-c-common/cmake/shared/aws-c-common-targets-%%CMAKE_BUILD_TYPE%%.cmake
