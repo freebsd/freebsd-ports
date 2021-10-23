@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	bsdcflow-[0-9]* cflow-[0-9]*
 
-USES=		gmake tar:bzip2
+USES=		cpe gmake tar:bzip2
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	cflow
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
