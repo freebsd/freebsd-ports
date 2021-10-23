@@ -8,7 +8,6 @@ include/aws/io/io.h
 include/aws/io/logging.h
 include/aws/io/message_pool.h
 include/aws/io/pipe.h
-include/aws/io/pki_utils.h
 include/aws/io/retry_strategy.h
 include/aws/io/shared_library.h
 include/aws/io/socket.h
@@ -19,7 +18,7 @@ include/aws/io/tls_channel_handler.h
 include/aws/io/uri.h
 include/aws/testing/io_testing_channel.h
 lib/aws-c-io/cmake/aws-c-io-config.cmake
-lib/aws-c-io/cmake/shared/aws-c-io-targets-release.cmake
+lib/aws-c-io/cmake/shared/aws-c-io-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-io/cmake/shared/aws-c-io-targets.cmake
 lib/libaws-c-io.so
 lib/libaws-c-io.so.1.0.0
