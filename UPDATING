@@ -5,6 +5,63 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211115:
+  AFFECTS: AFFECTS: users of *-emacs2x-* packages
+  AUTHOR: jrm@FreeBSD.org
+
+  To avoid problems when editors/emacs or editors/emacs-devel are
+  updated, the emacs major version has been removed from these package
+  names.
+
+  For example, the old and new package names of devel/magit are
+
+  -----------------------------------------------------------
+  | Old Package Name          | New Package Name            |
+  |-------------------------- |-----------------------------|
+  | magit-emacs27             | magit                       |
+  | magit-emacs27_nox         | magit-emacs_nox             |
+  | magit-emacs27_canna       | magit-emacs_canna           |
+  |                           |                             |
+  | magit-emacs29_nox         | magit-emacs_devel_nox       |
+  | magit-emacs29             | magit-emacs_devel           |
+  -----------------------------------------------------------
+
+  To handle these final package name changes, follow a similar procedure
+  as the one described in the 20200811 entry.  That is, simply running
+  `pkg upgrade` will not upgrade, e.g., foo-emacs27_nox to
+  foo-emacs_nox.
+
+  Binary package users:
+
+  To update these packages, run these commands under /bin/sh with superuser
+  privileges before upgrading.
+
+  # default flavor of editors/emacs installed
+  for i in $(pkg query -g %n '*-emacs27'); do
+    if [ "$i" != "notmuch-emacs27" ]; then
+      nn=$(echo "$i" | sed -e 's/-emacs27//')
+    else
+      nn=$(echo "$i" | sed -e 's/-emacs27/-emacs/')
+    fi
+    pkg set -yn "$i":"$nn"
+  done
+
+  # canna or nox flavor of editors/emacs installed
+  for i in $(pkg query -g %n '*-emacs27*'); do
+    nn=$(echo "$i" | sed -e 's/emacs27/emacs/')
+    pkg set -yn "$i":"$nn"
+  done
+
+  # editors/emacs-devel installed
+  for i in $(pkg query -g %n '*-emacs29*'); do
+    nn=$(echo "$i" | sed -e 's/emacs29/emacs_devel/')
+    pkg set -yn "$i":"$nn"
+  done
+
+  portmaster users:
+
+  portmaster -r emacs
+
 20211110:
   AFFECTS: users of www/node*, www/npm*, www/yarn*
   AUTHOR: mfechner@FreeBSD.org
