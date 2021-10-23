@@ -1,5 +1,6 @@
 # Created by: TAKANO, Yuji
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-el${EMACS_PKGNAMESUFFIX}
 
 COMMENT=	Emacs input method for Mozc

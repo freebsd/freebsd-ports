@@ -2,7 +2,7 @@
 
 PORTNAME=	ddskk
 DISTVERSION=	16.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
 		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/ \
