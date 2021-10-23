@@ -1,4 +1,4 @@
---- node.gypi.orig	2021-03-03 05:40:19 UTC
+--- node.gypi.orig	2021-10-19 00:48:32 UTC
 +++ node.gypi
 @@ -319,6 +319,9 @@
      [ 'node_use_openssl=="true"', {
@@ -8,5 +8,5 @@
 +          'defines': [ 'OPENSSL_NO_ASM' ],
 +        }],
          [ 'node_shared_openssl=="false"', {
+           'defines': [ 'OPENSSL_API_COMPAT=0x10100000L', ],
            'dependencies': [
-             './deps/openssl/openssl.gyp:openssl',

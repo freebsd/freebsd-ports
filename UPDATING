@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211023:
+  AFFECTS: users of www/node
+  AUTHOR: bhughes@FreeBSD.org
+
+  The www/node port has been updated to Node.js v17.0.0, the latest
+  upstream release. A new port, www/node16, has been created for the
+  upcoming v16.x LTS branch. Users wanting to stay on v16.x can replace
+  www/node with www/node16 with one of the following commands:
+
+  # pkg install www/node16
+    or
+  # portmaster -o www/node16 www/node
+    or
+  # portupgrade -o www/node16 www/node
+
 20211012:
   AFFECTS: users of devel/git
   AUTHOR: garga@FreeBSD.org
