@@ -24,6 +24,7 @@ OPTIONS_DEFAULT_aarch64=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
 OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_powerpc64=	LUAJIT
+OPTIONS_DEFAULT_powerpc64le=	LUAJIT
 
 LUAJIT_DESC=		Use LuaJIT (instead of just Lua)
 LUAJIT_LIB_DEPENDS=	${LUAJIT_LIB_DEPENDS_${ARCH}}
@@ -31,6 +32,7 @@ LUAJIT_LIB_DEPENDS_aarch64=	libluajit-5.1.so:lang/luajit-openresty
 LUAJIT_LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
 LUAJIT_LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
 LUAJIT_LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
+LUAJIT_LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
 LUAJIT_CMAKE_ON=	-DWITH_LUA_ENGINE=LuaJIT
 LUAJIT_USES_OFF=	lua
 LUAJIT_CMAKE_OFF=	-DWITH_LUA_ENGINE=Lua
