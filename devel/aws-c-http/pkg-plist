@@ -1,0 +1,15 @@
+include/aws/http/connection.h
+include/aws/http/connection_manager.h
+include/aws/http/exports.h
+include/aws/http/http.h
+include/aws/http/proxy.h
+include/aws/http/request_response.h
+include/aws/http/server.h
+include/aws/http/statistics.h
+include/aws/http/status_code.h
+include/aws/http/websocket.h
+lib/aws-c-http/cmake/aws-c-http-config.cmake
+lib/aws-c-http/cmake/shared/aws-c-http-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/aws-c-http/cmake/shared/aws-c-http-targets.cmake
+lib/libaws-c-http.so
+lib/libaws-c-http.so.1.0.0
