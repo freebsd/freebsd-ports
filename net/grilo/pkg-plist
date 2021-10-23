@@ -28,13 +28,13 @@ lib/girepository-1.0/GrlNet-0.3.typelib
 lib/girepository-1.0/GrlPls-0.3.typelib
 lib/libgrilo-0.3.so
 lib/libgrilo-0.3.so.0
-lib/libgrilo-0.3.so.0.313.1
+lib/libgrilo-0.3.so.0.314.1
 lib/libgrlnet-0.3.so
 lib/libgrlnet-0.3.so.0
-lib/libgrlnet-0.3.so.0.313.0
+lib/libgrlnet-0.3.so.0.314.0
 lib/libgrlpls-0.3.so
 lib/libgrlpls-0.3.so.0
-lib/libgrlpls-0.3.so.0.313.0
+lib/libgrlpls-0.3.so.0.314.0
 libdata/pkgconfig/grilo-0.3.pc
 libdata/pkgconfig/grilo-net-0.3.pc
 libdata/pkgconfig/grilo-pls-0.3.pc

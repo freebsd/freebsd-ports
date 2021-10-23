@@ -1,7 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	grilo
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.14
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
