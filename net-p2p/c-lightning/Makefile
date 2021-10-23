@@ -20,8 +20,9 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	bitcoin-cli:net-p2p/bitcoin-utils
 
-USES=		autoreconf:build compiler:c11 gettext gmake libtool \
+USES=		autoreconf:build compiler:c11 cpe gettext gmake libtool \
 		python:3.5+,build
+CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 ALL_TARGET=	default
 
