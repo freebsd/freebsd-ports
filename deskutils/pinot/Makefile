@@ -2,6 +2,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -67,21 +68,15 @@ INSTALL_TARGET=	install-strip
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		Core/pinot-index.cpp Core/pinot-index.1 Makefile.am	\
-		textcat31_conf.txt aclocal.m4 Makefile.in		\
-		textcat3_conf.txt textcat_conf.txt textcat32_conf.txt
+		textcat31_conf.txt aclocal.m4 textcat3_conf.txt	\
+		textcat_conf.txt textcat32_conf.txt
 SHR2FIX=	Core/pinot-search.1
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
-post-extract:
-# remove pre-generated messages catalogs
-	${FIND} ${WRKSRC}/po -name "*.gmo" -delete
-
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} -e \
 		'/<command>/s|pdftotext|${LOCALBASE}/libexec/xpdf/pdftotext|' \
 		${WRKSRC}/Tokenize/filters/external-filters.xml
-
-pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|'	\
 		${LM2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
