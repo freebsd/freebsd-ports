@@ -1,0 +1,16 @@
+$OpenBSD: patch-SSLeay_xs,v 1.3 2021/09/01 15:04:37 bluhm Exp $
+
+https://github.com/radiator-software/p5-net-ssleay/pull/285/commits/3cea3697bfc75ab3e5f4725eb1588ed9c4bff27a
+
+Index: SSLeay.xs
+--- SSLeay.xs.orig
++++ SSLeay.xs
+@@ -6172,7 +6172,7 @@ SSL_total_renegotiations(ssl)
+   OUTPUT:
+   RETVAL
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+ void
+ SSL_SESSION_get_master_key(s)
+      SSL_SESSION *   s
