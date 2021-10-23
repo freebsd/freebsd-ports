@@ -14,8 +14,10 @@ LIB_DEPENDS=	librest-0.7.so:devel/librest \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		autoreconf gettext gmake gnome libtool localbase:ldflags pathfix \
+USES=		autoreconf cpe gettext gmake gnome libtool localbase:ldflags pathfix \
 		pkgconfig tar:xz
+CPE_VENDOR=	gnome
+CPE_PRODUCT=	lib${PORTNAME}
 USE_GNOME=	glib20 intlhack introspection:build libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
