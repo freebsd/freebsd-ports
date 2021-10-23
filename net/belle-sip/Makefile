@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libbctoolbox.so:net/bctoolbox
 
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	linphone
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 
