@@ -7,4 +7,4 @@ libdata/pkgconfig/ocl-icd.pc
 %%MANPAGES%%man/man7/libOpenCL.7.gz
 %%MANPAGES%%man/man7/libOpenCL.so.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/ocl_icd_bindings.c
-%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/html/libOpenCL.html
+%%PORTDOCS%%%%DOCSDIR%%/html/libOpenCL.html

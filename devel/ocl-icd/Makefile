@@ -2,7 +2,7 @@
 
 PORTNAME=	ocl-icd
 DISTVERSIONPREFIX=	v
-PORTVERSION=	2.2.13
+PORTVERSION=	2.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -11,7 +11,7 @@ COMMENT=	OpenCL Installable Client Driver
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	opencl>=3.0:devel/opencl
+BUILD_DEPENDS=	opencl>3.0:devel/opencl
 
 USES=		autoreconf gmake libtool localbase:ldflags pathfix
 
