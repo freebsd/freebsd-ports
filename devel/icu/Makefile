@@ -26,7 +26,9 @@ CONFIGURE_ARGS+=--with-data-packaging=archive \
 CPPFLAGS+=	-DICU_NO_USER_DATA_OVERRIDE
 MAKE_ARGS=	VERBOSE=1
 TEST_TARGET=	check
-USES+=		compiler:c++11-lib gmake pathfix python:build tar:tgz
+USES+=		compiler:c++11-lib cpe gmake pathfix python:build tar:tgz
+CPE_VENDOR=	${PORTNAME}-project
+CPE_PRODUCT=	international_components_for_unicode
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/icu/source
 
