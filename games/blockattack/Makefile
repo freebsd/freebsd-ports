@@ -1,7 +1,6 @@
 PORTNAME=	blockattack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
-PORTREVISION=	1
+DISTVERSION=	2.7.0
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,8 +10,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip \
-		boost-libs>0:devel/boost-libs \
-		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
+		boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libphysfs.so:devel/physfs
 
 USES=		cmake compiler:c++11-lib gettext localbase:ldflags \
@@ -23,10 +21,12 @@ GH_PROJECT=	${PORTNAME}-game
 SHEBANG_FILES=	packdata.sh source/misc/translation/*.sh
 bash_CMD=	/bin/sh
 CMAKE_ON=	Boost_USE_STATIC_LIBS
-CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-lintl
 
 post-patch:
+# Drop dependency on bash/zsh features: directory stacking
+	@${REINPLACE_CMD} -e 's/pushd/cd/; s/popd/cd -/' \
+		${WRKSRC}/packdata.sh
 # Respect PREFIX when looking for data directories
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		-e 's,/usr/local,${PREFIX},' \
