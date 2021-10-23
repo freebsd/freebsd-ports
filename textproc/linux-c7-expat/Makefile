@@ -11,7 +11,9 @@ COMMENT=	XML 1.0 parser written in C (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	MIT
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	${CPE_PRODUCT}_project
+CPE_PRODUCT=	lib${PORTNAME}
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
