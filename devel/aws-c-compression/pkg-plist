@@ -1,0 +1,8 @@
+include/aws/compression/compression.h
+include/aws/compression/exports.h
+include/aws/compression/huffman.h
+lib/aws-c-compression/cmake/aws-c-compression-config.cmake
+lib/aws-c-compression/cmake/shared/aws-c-compression-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/aws-c-compression/cmake/shared/aws-c-compression-targets.cmake
+lib/libaws-c-compression.so
+lib/libaws-c-compression.so.1.0.0
