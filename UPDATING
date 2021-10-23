@@ -5,6 +5,62 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211024:
+  AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
+  AUTHOR: kbowling@FreeBSD.org
+
+  The default version of PostgreSQL has been switched from 12 to 13.
+  The upgrade procedure can use up twice the space the databases
+  currently needs. If you have a big amount of stored data take a
+  closer look at the manpage of pg_upgrade for avoidance and/or
+  speedup of the upgrade.
+
+  The upgrade instructions consider a basic usage and do not match
+  complex scenarios like replication, sharding, or similar.
+
+  Upgrade instructions:
+
+  First stop your PostgreSQL, create PostgreSQL-binaries and backup your data.
+  If you have another Version of PostgreSQL installed, for example 12.8, your
+  files are named according to this.
+
+  # service postgresql stop
+  # pkg create postgresql12-server postgresql12-contrib
+  # mkdir /tmp/pg-upgrade
+  # tar xf postgresql12-server-12.8.txz -C /tmp/pg-upgrade
+  # tar xf postgresql12-contrib-12.8.txz -C /tmp/pg-upgrade
+  # pkg delete -f databases/postgresql12-server databases/postgresql12-contrib databases/postgresql12-client
+
+  Now update PostgreSQL:
+
+    pkg user:
+    # pkg install databases/postgresql13-server databases/postgresql13-contrib
+    # pkg upgrade
+
+    Portmaster users:
+    # portmaster databases/postgresql13-server databases/postgresql13-contrib
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall databases/postgresql13-server databases/postgresql13-contrib
+    # portupgrade -a
+
+  After installing the new PostgreSQL version you need to convert
+  all your databases to new version:
+
+  # su -l postgres -c "/usr/local/bin/initdb --encoding=utf-8 --lc-collate=C -D /var/db/postgres/data13 -U postgres"
+  # su -l postgres -c "pg_upgrade -b /tmp/pg-upgrade/usr/local/bin/ -d /var/db/postgres/data12/ -B /usr/local/bin/ -D /var/db/postgres/data13/ -U postgres "
+
+  Now the migration is finished. You can start PostgreSQL again with:
+
+  # service postgresql start
+
+  ATTENTION:
+  1) The default user changed from "pgsql" to "postgres" in 11. The migration steps above now assume
+     the "postgres" database user and FreeBSD user.
+  2) See the updating entry 20190829 if you are updating from a release prior to 11.
+  3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+
 20211023:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
