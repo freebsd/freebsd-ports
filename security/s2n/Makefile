@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	s2n
-PORTVERSION=	0.10.23
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 USES=		cmake ssl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	awslabs
+GH_ACCOUNT=	aws
+GH_PROJECT=	s2n-tls
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
