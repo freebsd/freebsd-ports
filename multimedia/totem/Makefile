@@ -1,7 +1,7 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 
 PORTNAME=	totem
-PORTVERSION=	3.38.1
+PORTVERSION=	3.38.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
