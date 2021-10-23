@@ -11,7 +11,10 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool localbase:ldflags
+USES=		autoreconf cpe gmake libtool localbase:ldflags
+CPE_VENDOR=	audiocoding
+CPE_PRODUCT=	freeware_advanced_audio_decoder_2
+
 INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
