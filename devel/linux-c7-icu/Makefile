@@ -9,7 +9,9 @@ CATEGORIES=	devel linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	International Components for Unicode (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	${PORTNAME}-project
+CPE_PRODUCT=	international_components_for_unicode
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
