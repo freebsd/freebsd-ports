@@ -1,5 +1,5 @@
 PORTNAME=	webdis
-DISTVERSION=	0.1.17
+DISTVERSION=	0.1.18
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
