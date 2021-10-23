@@ -1,0 +1,9 @@
+include/aws/mqtt/client.h
+include/aws/mqtt/exports.h
+include/aws/mqtt/mqtt.h
+include/aws/mqtt/private/mqtt_client_test_helper.h
+lib/aws-c-mqtt/cmake/aws-c-mqtt-config.cmake
+lib/aws-c-mqtt/cmake/shared/aws-c-mqtt-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/aws-c-mqtt/cmake/shared/aws-c-mqtt-targets.cmake
+lib/libaws-c-mqtt.so
+lib/libaws-c-mqtt.so.1.0.0
