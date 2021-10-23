@@ -14,7 +14,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bareos
 GH_PROJECT=	bareos-webui
 
-USES=		php
+USES=		cpe php
+CPE_PRODUCT=	bareos
 USE_PHP=	openssl gettext ctype hash json session iconv
 NO_BUILD=	yes
 NO_ARCH=	yes
