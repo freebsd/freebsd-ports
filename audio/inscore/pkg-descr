@@ -1,0 +1,7 @@
+INScore is an environment for the design of interactive augmented music scores.
+It extends the music representation to arbitrary graphic objects, including
+symbolic music notation. It provides time synchronization in the graphic space,
+signals graphic representations, interaction processes representation, dynamic
+and interactive scores. It supports Web and local network extensions.
+
+WWW: https://inscore.grame.fr/

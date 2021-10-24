@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+You installed INScore, the environment for the design of interactive
+augmented music scores.
+
+INScore works based on OSC (Open Sound Control) signals in the form of
+network packets (by default on the port 7000), or in the form of
+.inscore programs.
+
+INScore understands .inscore syntax, which is OSC format amended with
+commands for general purpose programming, which makes it a programming
+language.
+
+OSC signals are expected to be sent through the network by some of
+numerous programs supporting this standard.
+
+The main executable, inscoreviewer, opens the window, listens to the
+port 7000, and also expects .inscore files to be dropped into its
+window.
+
+Please use .inscore files in examples to see what INScore can do.
+EOM
+}
+]

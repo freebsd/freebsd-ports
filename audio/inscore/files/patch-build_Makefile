@@ -1,0 +1,11 @@
+--- build/Makefile.orig	2021-02-23 07:13:54 UTC
++++ build/Makefile
+@@ -38,7 +38,7 @@ endif
+ GENERATOR ?= 
+ 
+ all :
+-	$(MAKE) modules
++	#$(MAKE) modules
+ 	$(MAKE) inscore
+ 
+ test:
