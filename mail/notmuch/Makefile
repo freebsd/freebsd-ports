@@ -1,7 +1,7 @@
 # Created by: DarwinSurvivor <darwinsurvivor@gmail.com>
 
 PORTNAME=	notmuch
-PORTVERSION=	0.33.2
+DISTVERSION=	0.34
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/${WRKSRC_SUBDIR:C/[^\/]+/../g}/COPYING-GPL-3
 
 .ifndef MASTERDIR
 LIB_DEPENDS=	libgmime-3.0.so:mail/gmime30 \
+		libsexp.so:devel/sfsexp \
 		libtalloc.so:devel/talloc \
 		libxapian.so:databases/xapian-core
 TEST_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb \
