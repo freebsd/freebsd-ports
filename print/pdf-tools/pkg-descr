@@ -10,4 +10,4 @@ Actually, displaying PDF files is just one part of PDF Tools.  Since poppler can
 provide us with all kinds of information about a document and is also able to
 modify it, there is a lot more we can do with it.
 
-WWW: https://github.com/politza/pdf-tools
+WWW: https://github.com/vedang/pdf-tools
