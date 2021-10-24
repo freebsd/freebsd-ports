@@ -1,7 +1,7 @@
 # Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
 
 PORTNAME=	fet
-DISTVERSION=	6.1.8
+DISTVERSION=	6.2.0
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
@@ -16,16 +16,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++14-lang gl qmake qt:5 tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools_build core printsupport widgets
+USE_QT=		core printsupport widgets buildtools_build
 
 INSTALL_TARGET=	${WRKSRC}/fet-cl
 
-DESKTOP_ENTRIES="FET" \
-		"Free timetable software" \
-		"" \
-		"fet" \
-		"Education;Qt;" \
-		true
+DESKTOP_ENTRIES=	"FET" \
+			"Free timetable software" \
+			"" \
+			"fet" \
+			"Education;Qt;" \
+			true
 
 PORTEXAMPLES=	*
 
@@ -34,8 +34,9 @@ OPTIONS_SUB=	yes
 
 ONLYCL_DESC=	Build only command line version (without Qt GUI)
 
-ONLYCL_VARS=	QMAKE_SOURCE_PATH=${WRKSRC}/src/src-cl.pro
-ONLYCL_VARS_OFF=	INSTALL_TARGET+=${WRKSRC}/fet USE_QT+="gui network"
+ONLYCL_VARS=		QMAKE_SOURCE_PATH=${WRKSRC}/src/src-cl.pro
+ONLYCL_VARS_OFF=	INSTALL_TARGET+=${WRKSRC}/fet \
+			USE_QT+="gui network"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \
