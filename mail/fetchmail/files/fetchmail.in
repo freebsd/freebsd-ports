@@ -164,9 +164,13 @@ if [ "x${fetchmail_users}" != "x" ]; then
  		eval fetchmail_${i}="\${${uvarname}-\${fetchmail_${i}}}"
 	done
 else
-	pidfile=/var/run/fetchmail/fetchmail.pid
+	fetchmail_home=/var/run/fetchmail
 fi
 required_files=${fetchmail_config}
+
+# set up environment
+export FETCHMAILHOME=${fetchmail_home}
+export FETCHMAILUSER=${fetchmail_user}
 
 # add early command line arguments
 # if logfile set in config file, do not override with rc.conf default (note logfile overrides syslog)
@@ -184,5 +188,4 @@ if [ "$(fetchmail_dump_config poll_interval)" = "0," ] ; then
 fi
 
 # actually execute the fetchmail program
-export FETCHMAILUSER=$fetchmail_user
 run_rc_command "$1"
