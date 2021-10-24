@@ -63,7 +63,7 @@ SNMP_CONFIGURE_ENABLE=	network-build
 X11_DESC=		Graphical User Interface (Qt)
 X11_CONFIGURE_ENABLE=	gui-build qt5
 X11_USES=		pyqt:5
-X11_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
+X11_USE=		PYQT=pyqt5_run
 
 XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN

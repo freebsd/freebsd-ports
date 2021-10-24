@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cadquery>=0:cad/py-cadquery@${PY_FLAVOR} \
 
 USES=		pyqt:5 python:3.6+
 USE_PYTHON=	autoplist distutils
-USE_PYQT=	core gui widgets
+USE_PYQT=	pyqt5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CadQuery

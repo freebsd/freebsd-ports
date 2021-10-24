@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		gl python:3.5+ pyqt:5
 USE_GL=		gl
-USE_PYQT=	core gui
+USE_PYQT=	pyqt5
 USE_PYTHON=	autoplist distutils
 USE_WX=		3.0+
 

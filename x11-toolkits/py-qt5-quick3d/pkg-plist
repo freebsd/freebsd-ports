@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtQuick3D.pyi
-%%PYTHON_SITELIBDIR%%/PyQt5/QtQuick3D.so
-%%API%%%%PYQT_APIDIR%%/api/python/QtQuick3D.api
-%%PYQT_SIPDIR%%/QtQuick3D/QtQuick3Dmod.sip
-%%PYQT_SIPDIR%%/QtQuick3D/qquick3d.sip
-%%PYQT_SIPDIR%%/QtQuick3D/qquick3dgeometry.sip
-%%PYQT_SIPDIR%%/QtQuick3D/qquick3dobject.sip

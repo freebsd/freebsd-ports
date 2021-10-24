@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PY_MERCURIAL} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		pyqt:5 python:3.5+
-USE_PYQT=	core gui network qscintilla2 xml
+USE_PYQT=	qscintilla2 pyqt5
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	NAUTILUS NLS

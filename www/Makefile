@@ -1723,11 +1723,7 @@
     SUBDIR += py-python-multipart
     SUBDIR += py-pyweblib
     SUBDIR += py-pywikibot
-    SUBDIR += py-qt5-webchannel
     SUBDIR += py-qt5-webengine
-    SUBDIR += py-qt5-webkit
-    SUBDIR += py-qt5-webkitwidgets
-    SUBDIR += py-qt5-websockets
     SUBDIR += py-quilt3
     SUBDIR += py-rackspace-monitoring
     SUBDIR += py-recaptcha

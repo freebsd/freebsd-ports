@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 		qt5-graphicaleffects>0:graphics/qt5-graphicaleffects \
 		qt5-quickcontrols>0:x11-toolkits/qt5-quickcontrols \
 		qt5-quickcontrols2>0:x11-toolkits/qt5-quickcontrols2 \
-		${PYTHON_PKGNAMEPREFIX}qt5-svg>0:graphics/py-qt5-svg \
 		Uranium>=${DISTVERSION}:cad/uranium \
 		libCharon>=${DISTVERSION}:net/libcharon \
 		CuraEngine>=${DISTVERSION}:cad/cura-engine \
@@ -32,7 +31,7 @@ LIB_DEPENDS=	libArcus.so:net/libarcus \
 
 USES=		cmake gettext shebangfix python:3.5+ pyqt:5 \
 		desktop-file-utils shared-mime-info
-USE_PYQT=	gui widgets qml
+USE_PYQT=	pyqt5
 CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts" \
 	-DCURA_VERSION=${DISTVERSION}
 USE_GITHUB=	yes

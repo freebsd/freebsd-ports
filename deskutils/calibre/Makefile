@@ -58,7 +58,7 @@ USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags \
 		ssl tar:xz xorg
 USE_RC_SUBR=	calibre
 SUB_LIST+=	PYTHON_VERSION=${PYTHON_VERSION}
-USE_PYQT=	core gui network pysip qtbuilder sip svg webengine widgets xmlpatterns
+USE_PYQT=	pyqt5 pysip qtbuilder sip webengine
 USE_QT=		buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
 USE_GNOME=	glib20

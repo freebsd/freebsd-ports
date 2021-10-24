@@ -16,7 +16,7 @@ RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}QtPy>=1.7.1:devel/py-QtPy@${PY_FLAVOR}
 
 USES=			desktop-file-utils gmake gnome python pyqt:5 qt:5 shebangfix
 USE_GITHUB=		yes
-USE_PYQT=		core gui network widgets
+USE_PYQT=		pyqt5
 
 NO_ARCH=		yes
 

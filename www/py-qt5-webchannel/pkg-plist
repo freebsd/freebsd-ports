@@ -1,5 +1,0 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebChannel.so
-%%PYQT_SIPDIR%%/QtWebChannel/QtWebChannelmod.sip
-%%PYQT_SIPDIR%%/QtWebChannel/qwebchannel.sip
-%%PYQT_SIPDIR%%/QtWebChannel/qwebchannelabstracttransport.sip
-%%API%%%%PYQT_APIDIR%%/api/python/QtWebChannel.api

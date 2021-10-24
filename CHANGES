@@ -10,6 +10,26 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220127:
+AUTHOR: kde@FreeBSD.org
+
+  PyQt modules have been merged into devel/py-qt5-pyqt.
+
+  This allows us to simplify PyQt framework and to be in adequacy with the
+  packages that the author of these libraries proposes, namely:
+
+  * PyQt - devel/py-qt5-pyqt
+  * PyQt-Charts - x11-toolkits/py-qt5-chart
+  * PyQt-NetworkAuth – net/py-qt5-networkauth
+  * PyQt-WebEngine – www/py-qt5-webengine
+  * SIP – devel/py-sip
+  * py-sip - devel/py-qt5-sip
+  * PyQt-builder - devel/py-qtbuilder
+  * Qscintilla - devel/py-qt5-qscintilla2
+
+  Ports depending on PyQt, must be declared with USE_PYQT=pyqt5 instead of
+  USE_PYQT=core gui svg etc.
+
 20220117:
 AUTHOR: tobik@FreeBSD.org
 

@@ -273,7 +273,6 @@
     SUBDIR += purescript
     SUBDIR += py-hy
     SUBDIR += py-lupa
-    SUBDIR += py-qt5-qml
     SUBDIR += py-textX
     SUBDIR += python
     SUBDIR += python-doc-html

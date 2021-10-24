@@ -13,5 +13,5 @@ lib/cmake/Savitar/SavitarConfig.cmake
 lib/cmake/Savitar/SavitarConfigVersion.cmake
 lib/libSavitar.so
 lib/libSavitar.so.0
-lib/libSavitar.so.0.1.1
+lib/libSavitar.so.0.1.2
 %%PYTHON_SITELIBDIR%%/Savitar.so

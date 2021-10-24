@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}zbar-py>=1.0.4:graphics/py-zbar-py@${PY_FLAVOR}
 
 USES=		desktop-file-utils pyqt:5 python:3.6+ shebangfix
-USE_PYQT=	core_run gui_run network_run widgets_run
+USE_PYQT=	pyqt5_run
 USE_PYTHON=	autoplist distutils
 
 SHEBANG_FILES=	qtqr.py

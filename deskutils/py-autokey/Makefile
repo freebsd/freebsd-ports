@@ -36,7 +36,7 @@ GTK3_USES=	gnome
 GTK3_USE=	GNOME=gtk30,gtksourceview3,pygobject3
 
 QT5_USES=	pyqt:5
-QT5_USE=	PYQT=dbus,qscintilla2,sip,svg,xml
+QT5_USE=	PYQT=pyqt5,sip
 
 post-patch:
 	@${REINPLACE_CMD} 's|share/man|man|g' ${WRKSRC}/setup.py

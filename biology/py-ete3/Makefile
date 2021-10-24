@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 USES=		python:3.5+ pyqt:5 shebangfix
 SHEBANG_GLOB=	*.py
 USE_PYTHON=	distutils concurrent autoplist
-USE_PYQT=	core gui opengl printsupport svg widgets
+USE_PYQT=	pyqt5
 
 NO_ARCH=	yes
 

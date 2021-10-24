@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220127:
+  AFFECTS: users of PyQt
+  AUTHOR: kde@FreeBSD.org
+
+  Most of the PyQt ports have been merged into single port devel/py-qt5-pyqt. 
+  `pkg upgrade` will handle update automatically .
+
 20220126:
   AFFECTS: users of mail/bogofilter, mail/bogofilter-lmdb
   AUTHOR: mandree@FreeBSD.org

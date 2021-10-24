@@ -16845,3 +16845,35 @@ net/php73-ldap|net/php74-ldap|2022-01-26|Has expired: Security support ended on 
 net/php73-soap|net/php74-soap|2022-01-26|Has expired: Security support ended on 2021-12-06
 mail/bogofilter|mail/bogofilter-bdb|2022-01-26|Port renamed to make LMDB the new default DB
 mail/bogofilter-lmdb|mail/bogofilter|2022-01-26|Port renamed to make LMDB the new default DB
+comms/py-qt5-sensors|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+comms/py-qt5-serialport|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+databases/py-qt5-sql|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-core|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-dbus|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-dbussupport|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-designer|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-designerplugin|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-help|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-location|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-positioning|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-remoteobjects|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+devel/py-qt5-test|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+graphics/py-qt5-svg|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+lang/py-qt5-qml|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+misc/py-qt5-demo|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+multimedia/py-qt5-multimedia|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+multimedia/py-qt5-multimediawidgets|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+net/py-qt5-network|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+print/py-qt5-printsupport|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+textproc/py-qt5-xml|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+textproc/py-qt5-xmlpatterns|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+www/py-qt5-webchannel|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+www/py-qt5-webkit|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+www/py-qt5-webkitwidgets|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+www/py-qt5-websockets|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+x11-toolkits/py-qt5-gui|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+x11-toolkits/py-qt5-quick|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+x11-toolkits/py-qt5-quick3d|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+x11-toolkits/py-qt5-quickwidgets|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+x11-toolkits/py-qt5-widgets|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt
+x11/py-qt5-opengl|deve/py-qt5-pyqt|Merged into devel/py-qt5-pyqt

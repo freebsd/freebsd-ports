@@ -1,6 +1,5 @@
 PORTNAME=	libArcus
-PORTVERSION=	4.8.0
-PORTREVISION=	6
+PORTVERSION=	4.12.1
 PORTEPOCH=	1
 CATEGORIES=	net cad
 DIST_SUBDIR=	Ultimaker
@@ -11,10 +10,11 @@ COMMENT=	Communication library between internal components for Ultimaker
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	sip:devel/py-sip4
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		cmake compiler:c++11-lang python:3.5+ pyqt:5
-USE_PYQT=	sip pysip
+USE_PYQT=	pysip
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 USE_LDCONFIG=	yes

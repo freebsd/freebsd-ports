@@ -1,9 +1,0 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebSockets.so
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebSockets.pyi
-%%PYQT_SIPDIR%%/QtWebSockets/QtWebSocketsmod.sip
-%%PYQT_SIPDIR%%/QtWebSockets/qmaskgenerator.sip
-%%PYQT_SIPDIR%%/QtWebSockets/qwebsocket.sip
-%%PYQT_SIPDIR%%/QtWebSockets/qwebsocketcorsauthenticator.sip
-%%PYQT_SIPDIR%%/QtWebSockets/qwebsocketprotocol.sip
-%%PYQT_SIPDIR%%/QtWebSockets/qwebsocketserver.sip
-%%API%%%%PYQT_APIDIR%%/api/python/QtWebSockets.api

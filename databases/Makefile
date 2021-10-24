@@ -820,7 +820,6 @@
     SUBDIR += py-python-memcached
     SUBDIR += py-python-sql
     SUBDIR += py-python-swiftclient
-    SUBDIR += py-qt5-sql
     SUBDIR += py-queries
     SUBDIR += py-rb
     SUBDIR += py-redis

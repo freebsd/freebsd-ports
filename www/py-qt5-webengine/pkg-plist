@@ -1,13 +1,4 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngine.pyi
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngine.so
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineCore.pyi
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineCore.so
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineWidgets.pyi
-%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineWidgets.so
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD
-%%API%%%%PYQT_APIDIR%%/api/python/PyQtWebEngine.api
+%%PYQT_APIDIR%%/PyQtWebEngine.api
 %%PYQT_SIPDIR%%/QtWebEngine/QtWebEnginemod.sip
 %%PYQT_SIPDIR%%/QtWebEngine/qquickwebengineprofile.sip
 %%PYQT_SIPDIR%%/QtWebEngine/qquickwebenginescript.sip
@@ -38,3 +29,12 @@
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebenginescriptcollection.sip
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebenginesettings.sip
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebengineview.sip
+%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngine.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineCore.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineWidgets.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtWebEngine/QtWebEngine.toml
+%%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtWebEngineCore/QtWebEngineCore.toml
+%%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtWebEngineWidgets/QtWebEngineWidgets.toml
+%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD

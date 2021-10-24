@@ -51,7 +51,7 @@ OPTIONS_SUB=		yes
 HARDWARE_DESC=	Enable Bitcoin hardware wallet support
 
 GUI_USES=		desktop-file-utils pyqt:5
-GUI_USE=		PYQT=sip,widgets,gui_run
+GUI_USE=		PYQT=sip,pyqt5
 HARDWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>=0.1.30:security/py-btchip-python@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ckcc-protocol>=0.7.7:security/py-ckcc-protocol@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}hidapi>=0:comms/py-hidapi@${PY_FLAVOR} \

@@ -22,7 +22,7 @@ USES=		desktop-file-utils pyqt:5 python:3.5+ shared-mime-info shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 GH_PROJECT=	${PORTNAME}-qt
-USE_PYQT=	core gui svg webkitwidgets widgets
+USE_PYQT=	pyqt5
 USE_PYTHON=	distutils optsuffix
 SHEBANG_FILES=	src/language/generate_translations.py\
 		src/language/show_translations.py\

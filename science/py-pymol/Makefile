@@ -42,7 +42,7 @@ OPTIONS_SINGLE_GUI=	QT5 TK
 OPTIONS_DEFAULT=	QT5
 
 QT5_USES=	pyqt:5
-QT5_USE=	PYQT=core_run,gui_run,opengl_run
+QT5_USE=	PYQT=pyqt5_run
 
 post-patch-TK-on:
 	@${REINPLACE_CMD} -e ' \

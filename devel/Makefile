@@ -5151,18 +5151,9 @@
     SUBDIR += py-qcs-api-client
     SUBDIR += py-qstylizer
     SUBDIR += py-qt5
-    SUBDIR += py-qt5-core
-    SUBDIR += py-qt5-dbus
-    SUBDIR += py-qt5-dbussupport
-    SUBDIR += py-qt5-designer
-    SUBDIR += py-qt5-designerplugin
-    SUBDIR += py-qt5-help
-    SUBDIR += py-qt5-location
-    SUBDIR += py-qt5-positioning
+    SUBDIR += py-qt5-pyqt
     SUBDIR += py-qt5-qscintilla2
-    SUBDIR += py-qt5-remoteobjects
     SUBDIR += py-qt5-sip
-    SUBDIR += py-qt5-test
     SUBDIR += py-qtbuilder
     SUBDIR += py-qtconsole
     SUBDIR += py-qutip
@@ -5247,6 +5238,7 @@
     SUBDIR += py-simpletal
     SUBDIR += py-simpy
     SUBDIR += py-sip
+    SUBDIR += py-sip4
     SUBDIR += py-six
     SUBDIR += py-smmap
     SUBDIR += py-smmap2

@@ -1,5 +1,4 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtChart.so
-%%PYTHON_SITELIBDIR%%/PyQt5/QtChart.pyi
+%%PYQT_APIDIR%%/PyQtChart.api
 %%PYQT_SIPDIR%%/QtChart/QtChartmod.sip
 %%PYQT_SIPDIR%%/QtChart/qabstractaxis.sip
 %%PYQT_SIPDIR%%/QtChart/qabstractbarseries.sip
@@ -52,4 +51,8 @@
 %%PYQT_SIPDIR%%/QtChart/qvxymodelmapper.sip
 %%PYQT_SIPDIR%%/QtChart/qxylegendmarker.sip
 %%PYQT_SIPDIR%%/QtChart/qxyseries.sip
-%%API%%%%PYQT_APIDIR%%/api/python/PyQtChart.api
+%%PYTHON_SITELIBDIR%%/PyQt5/QtChart.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtChart/QtChart.toml
+%%PYTHON_SITELIBDIR%%/PyQtChart-%%PYQT_PYQTVERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/PyQtChart-%%PYQT_PYQTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/PyQtChart-%%PYQT_PYQTVERSION%%.dist-info/RECORD

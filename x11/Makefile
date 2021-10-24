@@ -295,7 +295,6 @@
     SUBDIR += py-pyscreenshot
     SUBDIR += py-python-xapp
     SUBDIR += py-pyvirtualdisplay
-    SUBDIR += py-qt5-opengl
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
     SUBDIR += qimageblitz

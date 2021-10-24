@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USES=		python:3.5+ pyqt:5 shebangfix
-USE_PYQT=	core gui network printsupport widgets sip
+USE_PYQT=	pyqt5 sip
 
 SHEBANG_FILES=	source/treeline.py
 

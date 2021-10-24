@@ -28,7 +28,7 @@ GH_ACCOUNT=	code-saturne
 USES=		autoreconf bison compiler:c11 fortran gettext gnome gmake \
 		iconv localbase libtool pyqt:5 python:3.7+ shebangfix xorg
 USE_GNOME=	libxml2
-USE_PYQT=	core gui sip widgets xml_build
+USE_PYQT=	pyqt5 sip
 USE_XORG=	x11
 SHEBANG_FILES=	install_saturne.py tests/unittests.py bin/*.py build-aux/*.py
 CFLAGS+=	-D__XSI_VISIBLE

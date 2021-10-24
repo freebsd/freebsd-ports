@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.3+ pyqt:5
 USE_PYTHON=	distutils autoplist noflavors
-USE_PYQT=	core_run gui_run widgets_run
+USE_PYQT=	pyqt5_run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mihtjel

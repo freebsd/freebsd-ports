@@ -39,7 +39,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python:3.7+ pyqt:5
 USE_PYTHON=	distutils cython autoplist noflavors
-USE_PYQT=	core_run gui_run printsupport_run widgets_run webengine_run
+USE_PYQT=	pyqt5_run webengine_run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	biolab

@@ -106,8 +106,7 @@ USES=		bison cmake compiler:features desktop-file-utils \
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	core gui location network positioning qml quick quickwidgets \
-		qscintilla2 pysip sip sql svg webkit_run webkitwidgets_run xml
+USE_PYQT=	pyqt5 qscintilla2 pysip sip 
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \

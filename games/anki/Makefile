@@ -70,7 +70,7 @@ GH_TUPLE+=	bazelbuild:bazel-skylib:e59b620:bzlskylib \
 		ankitects:rules_rust:f66001a:bzlrrust \
 		ankitects:rules_sass:275ace7:bzlrsass
 
-USE_PYQT=	core gui network printsupport sip svg webchannel webengine widgets xml_build
+USE_PYQT=	pyqt5 sip webengine
 
 SHEBANG_FILES=	qt/tools/runanki.system.in
 

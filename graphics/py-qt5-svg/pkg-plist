@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/PyQt5/QtSvg.so
-%%PYTHON_SITELIBDIR%%/PyQt5/QtSvg.pyi
-%%PYQT_SIPDIR%%/QtSvg/QtSvgmod.sip
-%%PYQT_SIPDIR%%/QtSvg/qgraphicssvgitem.sip
-%%PYQT_SIPDIR%%/QtSvg/qsvggenerator.sip
-%%PYQT_SIPDIR%%/QtSvg/qsvgrenderer.sip
-%%PYQT_SIPDIR%%/QtSvg/qsvgwidget.sip
-%%API%%%%PYQT_APIDIR%%/api/python/QtSvg.api

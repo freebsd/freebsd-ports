@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 USES=		cpe python:3.5+ pyqt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	micahflee
-USE_PYQT=	core gui sip widgets  # "sip" should be "sip_build", but "import PyQt5.QtCore" wants "sip". See bug#225040
+USE_PYQT=	pyqt5 sip
 USE_PYTHON=	distutils autoplist noflavors
 
 post-patch:
