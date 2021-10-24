@@ -1,6 +1,6 @@
---- Makefile.defs.orig
+--- Makefile.defs.orig	2021-10-20 11:23:25 UTC
 +++ Makefile.defs
-@@ -57,14 +57,15 @@
+@@ -57,14 +57,15 @@ else
  makefile_defs=1
  export makefile_defs
  
@@ -10,7 +10,7 @@
  #version number
  VERSION_MAJOR = 3
  VERSION_MINOR = 1
- VERSION_SUBMINOR = 2
+ VERSION_SUBMINOR = 6
  VERSION_BUILD =
 +
 +# main binary name
