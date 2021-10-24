@@ -6955,6 +6955,7 @@
     SUBDIR += serdisplib
     SUBDIR += sfml
     SUBDIR += sfml1
+    SUBDIR += sfsexp
     SUBDIR += sgb
     SUBDIR += shapelib
     SUBDIR += shards

@@ -1,0 +1,12 @@
+include/cstring.h
+include/faststack.h
+include/sexp.h
+include/sexp_errors.h
+include/sexp_memory.h
+include/sexp_ops.h
+include/sexp_vis.h
+lib/libsexp.a
+lib/libsexp.so
+lib/libsexp.so.1
+lib/libsexp.so.1.0.0
+libdata/pkgconfig/sfsexp.pc

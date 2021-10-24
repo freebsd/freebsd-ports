@@ -1,0 +1,8 @@
+--- sfsexp.pc.in.orig	2021-10-24 02:04:26 UTC
++++ sfsexp.pc.in
+@@ -8,4 +8,4 @@ Description: small and fast s-expressions library
+ URL: https://github.com/mjsottile/sfsexp
+ Version: @VERSION@
+ Libs: -L@libdir@ -lsexp
+-Cflags: -I@includedir@/sfsexp
++Cflags: -I@includedir@
