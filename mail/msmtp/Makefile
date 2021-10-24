@@ -1,12 +1,11 @@
 # Created by: R.I.Pienaar <rip@devco.net>
 
 PORTNAME=	msmtp
-PORTVERSION=	1.8.17
+PORTVERSION=	1.8.18
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
 PATCH_SITES=	https://github.com/marlam/msmtp-mirror/commit/
-PATCHFILES=	7f03f3767ee6b7311621386c77cb5575fcaa13d0.patch:-p1
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	SMTP plugin for MUAs
