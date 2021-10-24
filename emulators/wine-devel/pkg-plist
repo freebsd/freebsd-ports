@@ -2277,7 +2277,7 @@ lib/wine/%%WINEARCH%%-unix/wiaservc.dll.so
 lib/wine/%%WINEARCH%%-unix/wimgapi.dll.so
 %%STAGING%%%%WINE32%%lib/wine/%%WINEARCH%%-unix/win32k.sys.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/win32s16.dll16.so
-%%WINE32%%lib/wine/%%WINEARCH%%-unix/win32u.dll.so
+lib/wine/%%WINEARCH%%-unix/win32u.dll.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/win87em.dll16.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/winaspi.dll16.so
@@ -3314,7 +3314,7 @@ lib/wine/%%WINEARCH%%-windows/wiaservc.dll
 lib/wine/%%WINEARCH%%-windows/wimgapi.dll
 %%STAGING%%%%WINE32%%lib/wine/%%WINEARCH%%-windows/win32k.sys
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win32s16.dll16
-%%WINE32%%lib/wine/%%WINEARCH%%-windows/win32u.dll
+lib/wine/%%WINEARCH%%-windows/win32u.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win87em.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winaspi.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/windebug.dll16
