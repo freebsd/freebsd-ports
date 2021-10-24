@@ -1,4 +1,4 @@
---- configure.ac.orig	2021-05-04 11:24:32 UTC
+--- configure.ac.orig	2021-10-23 20:04:23 UTC
 +++ configure.ac
 @@ -7,9 +7,9 @@ AC_PROG_RANLIB
  AM_PROG_CC_C_O
@@ -9,97 +9,91 @@
  PKG_CHECK_MODULES(GLIB, [glib-2.0 >= 2.16.0])
 -PKG_CHECK_MODULES(LIBWNCK, [libwnck-3.0])
 +PKG_CHECK_MODULES(LIBWNCK, [libwnck-1.0 >= 2.22.0])
- PKG_CHECK_MODULES(LIBXKLAVIER, [libxklavier >= 3.0])
+ PKG_CHECK_MODULES(LIBXKLAVIER, [libxklavier >= 5.0])
  AC_SUBST(GTK_CFLAGS)
  AC_SUBST(GTK_LIBS)
---- src/statusicon.c.orig	2021-04-18 16:21:09 UTC
+--- src/statusicon.c.orig	2021-10-19 19:39:16 UTC
 +++ src/statusicon.c
-@@ -74,7 +74,9 @@ gtk_status_icon_clicked( GtkStatusIcon *status_icon, g
+@@ -65,7 +65,9 @@ void gtk_status_icon_clicked(GtkStatusIcon *status_ico
+     return;
  
-     if( xkb_config_get_group_count() > 2 )
-     {
--        gtk_menu_popup_at_pointer( GTK_MENU( lb_mouse_popup ), NULL );
-+        gtk_menu_popup( GTK_MENU( lb_mouse_popup ), NULL, NULL,
-+                        gtk_status_icon_position_menu, status_icon,
-+                        0, gtk_get_current_event_time() );
-     }
-     else
-     {
-@@ -114,7 +116,9 @@ gtk_status_icon_popup_menu( GtkStatusIcon *status_icon
-     if( status_icon == NULL )
-         return;
+   if (xkb_config_get_group_count() > 2) {
+-    gtk_menu_popup_at_pointer(GTK_MENU(lb_mouse_popup), NULL);
++    gtk_menu_popup(GTK_MENU(lb_mouse_popup), NULL, NULL,
++      gtk_status_icon_position_menu, status_icon,
++      0, gtk_get_current_event_time());
+   } else {
+     xkb_config_next_group();
+   }
+@@ -97,7 +99,9 @@ void gtk_status_icon_popup_menu(GtkStatusIcon *status_
+   if (status_icon == NULL)
+     return;
  
--    gtk_menu_popup_at_pointer( GTK_MENU( rb_mouse_popup ), NULL );
-+    gtk_menu_popup( GTK_MENU( rb_mouse_popup ),
-+                    NULL, NULL, gtk_status_icon_position_menu, status_icon, button,
-+                    activate_time );
+-  gtk_menu_popup_at_pointer(GTK_MENU(rb_mouse_popup), NULL);
++  gtk_menu_popup(GTK_MENU(rb_mouse_popup),
++    NULL, NULL, gtk_status_icon_position_menu, status_icon, button,
++    activate_time);
  }
  
- void
-@@ -150,7 +154,7 @@ statusicon_update_current_image( void )
-         }
- 
-         gtk_status_icon_set_from_pixbuf( trayicon, pixmap );
--        gtk_status_icon_set_tooltip_text( trayicon, g_ascii_strup( group_name, -1 ) );
-+        gtk_status_icon_set_tooltip( trayicon, g_ascii_strup( group_name, -1 ) );
-     }
-     else if( icon_type == APPINDICATOR )
-     {
-@@ -218,7 +222,7 @@ statusicon_update_menu( void )
-     if( icon_type == APPINDICATOR )
-     {
-         // Separator
--        mi = gtk_separator_menu_item_new();
-+        mi = gtk_menu_item_new();
-         gtk_widget_show( mi );
-         gtk_menu_shell_append( GTK_MENU_SHELL( lb_mouse_popup ), mi );
-         gtk_widget_set_sensitive( mi, FALSE );
-@@ -229,21 +233,20 @@ statusicon_update_menu( void )
-         rb_mouse_popup = gtk_menu_new();
+ void statusicon_set_group(GtkWidget *item, gpointer data) {
+@@ -127,7 +131,7 @@ void statusicon_update_current_image(void) {
      }
  
--    mi = gtk_image_menu_item_new_from_stock( "gtk-about", NULL );
-+    mi = gtk_image_menu_item_new_from_stock( GTK_STOCK_ABOUT, NULL );
-     g_signal_connect( G_OBJECT( mi ), "activate", (GCallback)xkb_about, NULL );
-     gtk_menu_shell_append( GTK_MENU_SHELL( rb_mouse_popup ), mi );
-     gtk_widget_show( mi );
+     gtk_status_icon_set_from_pixbuf(trayicon, pixmap);
+-    gtk_status_icon_set_tooltip_text(
++    gtk_status_icon_set_tooltip(
+         trayicon, g_strdup(gettext(xkb_config_get_pretty_layout_name(-1))));
+   } else if (icon_type == APPINDICATOR) {
+ #ifdef HAVE_APPINDICATOR
+@@ -184,7 +188,7 @@ void statusicon_update_menu(void) {
  
-     if( icon_type == SYSTRAY )
-     {
--        // Separator
--        mi = gtk_separator_menu_item_new();
-+        mi = gtk_menu_item_new();
-         gtk_widget_show( mi );
-         gtk_menu_shell_append( GTK_MENU_SHELL( rb_mouse_popup ), mi );
-         gtk_widget_set_sensitive( mi, FALSE );
-     }
+   if (icon_type == APPINDICATOR) {
+     // Separator
+-    mi = gtk_separator_menu_item_new();
++    mi = gtk_menu_item_new();
+     gtk_widget_show(mi);
+     gtk_menu_shell_append(GTK_MENU_SHELL(lb_mouse_popup), mi);
+     gtk_widget_set_sensitive(mi, FALSE);
+@@ -193,20 +197,20 @@ void statusicon_update_menu(void) {
+     rb_mouse_popup = gtk_menu_new();
+   }
  
--    mi = gtk_image_menu_item_new_from_stock( "gtk-quit", NULL );
-+    mi = gtk_image_menu_item_new_from_stock( GTK_STOCK_QUIT, NULL );
-     g_signal_connect( G_OBJECT( mi ), "activate", (GCallback)xkb_main_quit, NULL );
-     gtk_menu_shell_append( GTK_MENU_SHELL( rb_mouse_popup ), mi );
-     gtk_widget_show( mi );
---- src/xkb-callbacks.c.orig	2020-11-05 20:09:34 UTC
+-  mi = gtk_image_menu_item_new_from_stock("gtk-about", NULL);
++  mi = gtk_image_menu_item_new_from_stock(GTK_STOCK_ABOUT, NULL);
+   g_signal_connect(G_OBJECT(mi), "activate", (GCallback)xkb_about, NULL);
+   gtk_menu_shell_append(GTK_MENU_SHELL(rb_mouse_popup), mi);
+   gtk_widget_show(mi);
+ 
+   if (icon_type == SYSTRAY) {
+     // Separator
+-    mi = gtk_separator_menu_item_new();
++    mi = gtk_menu_item_new();
+     gtk_widget_show(mi);
+     gtk_menu_shell_append(GTK_MENU_SHELL(rb_mouse_popup), mi);
+     gtk_widget_set_sensitive(mi, FALSE);
+   }
+ 
+-  mi = gtk_image_menu_item_new_from_stock("gtk-quit", NULL);
++  mi = gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT, NULL);
+   g_signal_connect(G_OBJECT(mi), "activate", (GCallback)xkb_main_quit, NULL);
+   gtk_menu_shell_append(GTK_MENU_SHELL(rb_mouse_popup), mi);
+   gtk_widget_show(mi);
+--- src/xkb-callbacks.c.orig	2021-10-19 18:47:24 UTC
 +++ src/xkb-callbacks.c
-@@ -74,18 +74,12 @@ xkb_about( void )
-         GtkWidget* about_dialog = gtk_about_dialog_new();
-         gtk_window_set_icon(
-             (GtkWindow*)about_dialog,
--            gtk_icon_theme_load_icon(
--                gtk_icon_theme_get_default(),
--                "gtk-about",
--                GTK_ICON_SIZE_DIALOG,
--                0,
--                NULL
--            )
-+            gtk_widget_render_icon(about_dialog, GTK_STOCK_ABOUT, GTK_ICON_SIZE_DIALOG, NULL)
-         );
+@@ -64,12 +64,12 @@ void xkb_about(void) {
+     GtkWidget *about_dialog = gtk_about_dialog_new();
+     gtk_window_set_icon(
+         (GtkWindow *)about_dialog,
+-        gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "gtk-about",
+-                                 GTK_ICON_SIZE_DIALOG, 0, NULL));
++        gtk_widget_render_icon(about_dialog, GTK_STOCK_ABOUT,
++                               GTK_ICON_SIZE_DIALOG, NULL));
  
--        const gchar** authors = (const gchar**) g_strsplit( AUTHORS, "\n", -1 );
-+        const gchar* authors[] = { AUTHORS, NULL };
-         gtk_about_dialog_set_authors( (GtkAboutDialog*)about_dialog, authors );
--        gtk_about_dialog_set_program_name( (GtkAboutDialog*)about_dialog, PACKAGE );
-+        gtk_about_dialog_set_name( (GtkAboutDialog*)about_dialog, PACKAGE );
-         gtk_about_dialog_set_version( (GtkAboutDialog*)about_dialog, VERSION );
-         gtk_about_dialog_set_comments( (GtkAboutDialog*)about_dialog, DESCRIPTION );
-         gtk_about_dialog_set_website( (GtkAboutDialog*)about_dialog, PACKAGE_URL );
+-    const gchar **authors = (const gchar **)g_strsplit(AUTHORS, "\n", -1);
++    const gchar *authors[] = { AUTHORS, NULL };
+     gtk_about_dialog_set_authors((GtkAboutDialog *)about_dialog, authors);
+-    gtk_about_dialog_set_program_name((GtkAboutDialog *)about_dialog, PACKAGE);
++    gtk_about_dialog_set_name((GtkAboutDialog *)about_dialog, PACKAGE);
+     gtk_about_dialog_set_version((GtkAboutDialog *)about_dialog, VERSION);
+     gtk_about_dialog_set_comments((GtkAboutDialog *)about_dialog, DESCRIPTION);
+     gtk_about_dialog_set_website((GtkAboutDialog *)about_dialog, PACKAGE_URL);
