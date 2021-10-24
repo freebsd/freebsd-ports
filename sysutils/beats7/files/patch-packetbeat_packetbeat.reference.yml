@@ -1,0 +1,11 @@
+--- packetbeat/packetbeat.reference.yml.orig	2021-10-24 20:47:25 UTC
++++ packetbeat/packetbeat.reference.yml
+@@ -1653,7 +1653,7 @@ output.elasticsearch:
+ 
+ # The directory from where to read the dashboards. The default is the `kibana`
+ # folder in the home path.
+-#setup.dashboards.directory: ${path.home}/kibana
++#setup.dashboards.directory: %%DATADIR%%/packetbeat/kibana
+ 
+ # The URL from where to download the dashboards archive. It is used instead of
+ # the directory if it has a value.

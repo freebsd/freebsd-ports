@@ -6,6 +6,36 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20211024:
+  AFFECTS: sysutils/beats7
+  AUTHOR: otis@FreeBSD.org
+
+  The following breaking changes apply to beats 7.15.0 and newer:
+
+    - All beats:
+    Loading Kibana assets (dashboards, index templates) rely on Saved Object API.
+    So to provide a reliable service, Beats can only import and export dashboards
+    using at least Kibana 7.15.
+
+    - Filebeat:
+      - Remove all alias fields pointing to ECS fields from modules. This affects
+        the Suricata and Traefik modules.
+      - Fix Crowdstrike ingest pipeline that was creating flattened process fields.
+      - Rename log.path to log.file.path in filestream to be consistent with log
+        input and ECS.
+
+    - Heartbeat:
+      - Remove long deprecated watch_poll functionality.
+      - Fix inconsistency in event.dataset values between heartbeat and fleet by
+        always setting this value to the monitor type / fleet dataset.
+
+    - Metricbeat:
+      - Fix Elasticsearch jvm.gc.collectors.old being exposed as young
+
+  Full changelog:
+    https://www.elastic.co/guide/en/beats/libbeat/current/release-notes-7.15.0.html
+    https://www.elastic.co/guide/en/beats/libbeat/current/release-notes-7.15.1.html
+
+20211024:
   AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: kbowling@FreeBSD.org
 

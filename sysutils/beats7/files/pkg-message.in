@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+The modules.d and monitors.d files are now installed into
+%%EXAMPLESDIR%%
+
+See README file in %%ETCDIR%% for respective beat information.
+
+See UPDATING file in ports top level directory for list of breaking changes.
+EOM
+}
+]

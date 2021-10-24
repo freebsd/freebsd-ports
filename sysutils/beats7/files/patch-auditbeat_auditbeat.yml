@@ -1,0 +1,13 @@
+--- auditbeat/auditbeat.yml.orig	2021-10-24 20:40:41 UTC
++++ auditbeat/auditbeat.yml
+@@ -82,6 +82,10 @@ setup.template.settings:
+ # website.
+ #setup.dashboards.url:
+ 
++# The directory from where to read the dashboards. The default is the `kibana`
++# folder in the home path.
++#setup.dashboards.directory: %%DATADIR%%/auditbeat/kibana
++
+ # =================================== Kibana ===================================
+ 
+ # Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
