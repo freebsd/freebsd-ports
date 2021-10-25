@@ -17,6 +17,6 @@ USES=		compiler:c++11-lang localbase python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cec*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
