@@ -14,9 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cpe localbase shebangfix tar:bzip2
-CPE_VENDOR=	${PORTNAME}_project
+
 CONFIGURE_ARGS=	--disable-nls
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	icoutils_project
 
 SHEBANG_FILES=	extresso/*.in
 
