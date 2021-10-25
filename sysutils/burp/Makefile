@@ -17,9 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	bash:shells/bash
 
-#USES=		gmake libtool ncurses pkgconfig ssl tar:bz2
 USES=		cpe libtool ncurses pkgconfig ssl tar:bz2
-CPE_VENDOR=	${PORTNAME}_project
 
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
@@ -29,6 +27,8 @@ USE_RC_SUBR=	burp
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CONFLICTS_INSTALL=	burp-devel
+
+CPE_VENDOR=	burp_project
 
 PORTSCOUT=	limit:^2\.2\.
 
