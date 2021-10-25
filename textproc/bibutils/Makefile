@@ -12,10 +12,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying
 
 USES=		cpe gmake
-CPE_VENDOR=	${PORTNAME}_project
 
 HAS_CONFIGURE=	yes
 TEST_TARGET=	test
+
+CPE_VENDOR=	bibutils_project
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
