@@ -13,9 +13,15 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVO
 
 USES=		cmake compiler:c++11-lang python:3.5+
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == armv7
+USE_GCC=	yes
+.endif
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnuradio
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
