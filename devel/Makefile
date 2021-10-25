@@ -6573,6 +6573,7 @@
     SUBDIR += rubygem-pathspec
     SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-pdk
+    SUBDIR += rubygem-pedump
     SUBDIR += rubygem-peek
     SUBDIR += rubygem-peek-gc-rails52
     SUBDIR += rubygem-peek-host
