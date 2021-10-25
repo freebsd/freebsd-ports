@@ -1,6 +1,5 @@
 PORTNAME=	doorkeeper
-PORTVERSION=	5.5.3
-PORTREVISION=	1
+PORTVERSION=	5.5.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-railties613>=5:www/rubygem-railties613
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	doorkeeper_project
 
 .include <bsd.port.mk>
