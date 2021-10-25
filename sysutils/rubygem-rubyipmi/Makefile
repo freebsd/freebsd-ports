@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	rubyipmi
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
