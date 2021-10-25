@@ -1,3 +1,3 @@
-TIMESTAMP = 1634111894
-SHA256 (rubygem/aws-sdk-secretsmanager-1.50.0.gem) = 202dd816e920d58282622d551aa01e6a287417a95a71546ea6673c04a998fb05
-SIZE (rubygem/aws-sdk-secretsmanager-1.50.0.gem) = 55296
+TIMESTAMP = 1635181593
+SHA256 (rubygem/aws-sdk-secretsmanager-1.51.0.gem) = defc5a63fc94cd7d22cc8b1ef024ba3fe548ef323cbc018b8600b4cf61d61c11
+SIZE (rubygem/aws-sdk-secretsmanager-1.51.0.gem) = 55296
