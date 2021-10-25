@@ -6421,6 +6421,7 @@
     SUBDIR += rubygem-io-nonblock
     SUBDIR += rubygem-io-wait
     SUBDIR += rubygem-iobuffer
+    SUBDIR += rubygem-iostruct
     SUBDIR += rubygem-irb
     SUBDIR += rubygem-iso8601
     SUBDIR += rubygem-jaeger-client
