@@ -1,7 +1,6 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
-PORTREVISION=	1
+DISTVERSION=	0.15.2
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -16,7 +15,7 @@ GH_ACCOUNT=	sayanarijit
 
 CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		anyhow-1.0.44 \
-		assert_cmd-2.0.1 \
+		assert_cmd-2.0.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
@@ -35,8 +34,9 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.20.0 \
-		crossterm-0.21.0 \
+		crossterm-0.22.1 \
 		crossterm_winapi-0.8.0 \
+		crossterm_winapi-0.9.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		difflib-0.4.0 \
@@ -57,7 +57,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		itoa-0.4.8 \
 		js-sys-0.3.53 \
 		lazy_static-1.4.0 \
-		libc-0.2.103 \
+		libc-0.2.105 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
@@ -69,7 +69,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		mime_guess-2.0.3 \
 		mio-0.7.13 \
 		miow-0.3.7 \
-		mlua-0.6.4 \
+		mlua-0.6.6 \
 		natord-1.0.9 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
