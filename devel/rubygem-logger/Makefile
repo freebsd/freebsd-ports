@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	logger
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
