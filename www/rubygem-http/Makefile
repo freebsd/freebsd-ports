@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	http
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
