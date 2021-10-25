@@ -1,6 +1,0 @@
-Chef Provisioning is a Cookbook and Recipe based approach for managing your
-infrastructure. Users can codify their infrastructure and use Chef to converge
-their infrastructure to the desired state. It has a plugin model (called
-Drivers) to manage different infrastructures, including AWS, Azure and Fog.
-
-WWW: https://github.com/chef/chef-provisioning
