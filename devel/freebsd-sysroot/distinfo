@@ -1,4 +1,4 @@
-TIMESTAMP = 1631386015
+TIMESTAMP = 1635148272
 SHA256 (rust/bootstrap/aarch64/12.2-RELEASE/base.txz) = 3f82224fbcc6b2a2e1a1358cec5f32c0a08b5c5e6796e1a998369eb624a11cf3
 SIZE (rust/bootstrap/aarch64/12.2-RELEASE/base.txz) = 158493712
 SHA256 (rust/bootstrap/amd64/12.2-RELEASE/base.txz) = 8bd49ce35c340a04029266fbbe82b1fdfeb914263e39579eecafb2e67d00693a
@@ -19,3 +19,5 @@ SHA256 (rust/bootstrap/powerpc64_elfv2/13.0-RELEASE/base.txz) = 6a028dd5a632c24b
 SIZE (rust/bootstrap/powerpc64_elfv2/13.0-RELEASE/base.txz) = 150665524
 SHA256 (rust/bootstrap/powerpc64le/13.0-RELEASE/base.txz) = c83790cbaf80672992761a4940c486e3c4abe0f0d2efeabd4720bc8b95d86709
 SIZE (rust/bootstrap/powerpc64le/13.0-RELEASE/base.txz) = 158236628
+SHA256 (rust/bootstrap/riscv64/13.0-RELEASE/base.txz) = 2ba96c3b03bc81096281541239afbeb6e4e5beca4042cf159f0551959b53873f
+SIZE (rust/bootstrap/riscv64/13.0-RELEASE/base.txz) = 154987320

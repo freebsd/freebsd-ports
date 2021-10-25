@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKDIR}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
-		powerpc64le powerpc
+		powerpc64le powerpc riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
 powerpc64_elfv1_BUILD_DEPENDS=	powerpc64-gcc9>0:devel/freebsd-gcc9@powerpc64
@@ -52,6 +52,7 @@ _SYSROOT_VER=				${_SYSROOT_VER_${FLAVOR}:U12.2-RELEASE}
 _SYSROOT_VER_powerpc64_elfv2=		13.0-RELEASE
 _SYSROOT_VER_powerpc64le=		13.0-RELEASE
 _SYSROOT_VER_powerpc=			13.0-RELEASE
+_SYSROOT_VER_riscv64=			13.0-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_armv6=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv6-RPI-B.img.xz
@@ -63,6 +64,7 @@ _SYSROOT_DIST_powerpc64_elfv1=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.
 _SYSROOT_DIST_powerpc64_elfv2=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz
+_SYSROOT_DIST_riscv64=			releases/riscv/riscv64/${_SYSROOT_VER}/base.txz
 _SYSROOT_INCLUDE=			COPYRIGHT lib/* usr/include/* usr/lib/* \
 					usr/libdata/* \
 					${_SYSROOT_INCLUDE_${FLAVOR}}
