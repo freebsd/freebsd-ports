@@ -27,4 +27,7 @@ PORTDOCS=	*
 
 DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/cmake/Qhull/QhullTargets-${CMAKE_BUILD_TYPE:tl}.cmake
+
 .include <bsd.port.mk>
