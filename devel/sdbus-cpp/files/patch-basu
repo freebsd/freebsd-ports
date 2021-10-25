@@ -1,0 +1,214 @@
+libsystemd is Linux-only, so replace with basu
+
+--- CMakeLists.txt.orig	2021-10-25 07:02:37 UTC
++++ CMakeLists.txt
+@@ -16,15 +16,14 @@ option(BUILD_LIBSYSTEMD "Build libsystemd static libra
+ 
+ if(NOT BUILD_LIBSYSTEMD)
+     find_package(PkgConfig REQUIRED)
+-    pkg_check_modules(Systemd IMPORTED_TARGET GLOBAL libsystemd>=236)
++    pkg_check_modules(Systemd IMPORTED_TARGET GLOBAL basu)
+     if(NOT TARGET PkgConfig::Systemd)
+         message(FATAL_ERROR "libsystemd of version at least 236 is required, but was not found "
+                             "(you may turn BUILD_LIBSYSTEMD on for sdbus-c++ to try downloading "
+                             "and building libsystemd in as part of sdbus-c++ during configuration)")
+     endif()
+     add_library(Systemd::Libsystemd ALIAS PkgConfig::Systemd)
+-    string(REGEX MATCHALL "([0-9]+)" SYSTEMD_VERSION_LIST "${Systemd_VERSION}")
+-    list(GET SYSTEMD_VERSION_LIST 0 LIBSYSTEMD_VERSION)
++    set(LIBSYSTEMD_VERSION "239")
+     message(STATUS "Building with libsystemd v${LIBSYSTEMD_VERSION}")
+ else()
+     # Build static libsystemd library as an external project
+--- src/Connection.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Connection.cpp
+@@ -30,7 +30,7 @@
+ #include <sdbus-c++/Message.h>
+ #include <sdbus-c++/Error.h>
+ #include "ScopeGuard.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <unistd.h>
+ #include <poll.h>
+ #include <sys/eventfd.h>
+--- src/Connection.h.orig	2021-10-25 07:02:37 UTC
++++ src/Connection.h
+@@ -32,7 +32,7 @@
+ #include "IConnection.h"
+ #include "ScopeGuard.h"
+ #include "ISdBus.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <memory>
+ #include <thread>
+ #include <string>
+--- src/Error.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Error.cpp
+@@ -25,7 +25,7 @@
+  */
+ 
+ #include <sdbus-c++/Error.h>
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include "ScopeGuard.h"
+ 
+ namespace sdbus
+--- src/Flags.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Flags.cpp
+@@ -25,7 +25,7 @@
+  */
+ 
+ #include <sdbus-c++/Flags.h>
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ 
+ namespace sdbus
+ {
+--- src/IConnection.h.orig	2021-10-25 07:02:37 UTC
++++ src/IConnection.h
+@@ -27,7 +27,7 @@
+ #ifndef SDBUS_CXX_INTERNAL_ICONNECTION_H_
+ #define SDBUS_CXX_INTERNAL_ICONNECTION_H_
+ 
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <string>
+ #include <memory>
+ #include <functional>
+--- src/ISdBus.h.orig	2021-10-25 07:02:37 UTC
++++ src/ISdBus.h
+@@ -28,7 +28,7 @@
+ #ifndef SDBUS_CXX_ISDBUS_H
+ #define SDBUS_CXX_ISDBUS_H
+ 
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ 
+ namespace sdbus::internal {
+ 
+--- src/Message.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Message.cpp
+@@ -31,7 +31,7 @@
+ #include "ISdBus.h"
+ #include "IConnection.h"
+ #include "ScopeGuard.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <cassert>
+ 
+ namespace sdbus {
+--- src/Object.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Object.cpp
+@@ -34,7 +34,7 @@
+ #include "ScopeGuard.h"
+ #include "IConnection.h"
+ #include "VTableUtils.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <utility>
+ #include <cassert>
+ 
+--- src/Object.h.orig	2021-10-25 07:02:37 UTC
++++ src/Object.h
+@@ -29,7 +29,7 @@
+ 
+ #include <sdbus-c++/IObject.h>
+ #include "IConnection.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <string>
+ #include <map>
+ #include <vector>
+--- src/Proxy.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Proxy.cpp
+@@ -31,7 +31,7 @@
+ #include "sdbus-c++/IConnection.h"
+ #include "sdbus-c++/Error.h"
+ #include "ScopeGuard.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <cassert>
+ #include <chrono>
+ #include <utility>
+--- src/Proxy.h.orig	2021-10-25 07:02:37 UTC
++++ src/Proxy.h
+@@ -29,7 +29,7 @@
+ 
+ #include <sdbus-c++/IProxy.h>
+ #include "IConnection.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <string>
+ #include <memory>
+ #include <map>
+--- src/SdBus.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/SdBus.cpp
+@@ -178,7 +178,8 @@ int SdBus::sd_bus_open_system(sd_bus **ret)
+ 
+ int SdBus::sd_bus_open_system_remote(sd_bus **ret, const char *host)
+ {
+-    return ::sd_bus_open_system_remote(ret, host);
++    // Removed in https://git.sr.ht/~emersion/basu/commit/01d33b244eb6
++    return -EOPNOTSUPP;
+ }
+ 
+ int SdBus::sd_bus_request_name(sd_bus *bus, const char *name, uint64_t flags)
+--- src/Types.cpp.orig	2021-10-25 07:02:37 UTC
++++ src/Types.cpp
+@@ -27,7 +27,7 @@
+ #include <sdbus-c++/Types.h>
+ #include <sdbus-c++/Error.h>
+ #include "MessageUtils.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <cassert>
+ 
+ namespace sdbus {
+--- src/VTableUtils.c.orig	2021-10-25 07:02:37 UTC
++++ src/VTableUtils.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #include "VTableUtils.h"
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ 
+ sd_bus_vtable createVTableStartItem(uint64_t flags)
+ {
+--- src/VTableUtils.h.orig	2021-10-25 07:02:37 UTC
++++ src/VTableUtils.h
+@@ -27,7 +27,7 @@
+ #ifndef SDBUS_CXX_INTERNAL_VTABLEUTILS_H_
+ #define SDBUS_CXX_INTERNAL_VTABLEUTILS_H_
+ 
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ #include <stdbool.h>
+ 
+ #ifdef __cplusplus
+--- tests/integrationtests/AdaptorAndProxy_test.cpp.orig	2021-10-25 07:02:37 UTC
++++ tests/integrationtests/AdaptorAndProxy_test.cpp
+@@ -510,8 +510,8 @@ TEST_F(SdbusTestObject, AnswersMachineUuidViaPeerInter
+     // a non-systemd Linux), org.freedesktop.DBus.Peer.GetMachineId() will not work. To solve
+     // this, you can create /etc/machine-id yourself as symlink to /var/lib/dbus/machine-id,
+     // and then org.freedesktop.DBus.Peer.GetMachineId() will start to work.
+-    if (::access("/etc/machine-id", F_OK) == -1)
+-        GTEST_SKIP() << "/etc/machine-id file does not exist, GetMachineId() will not work";
++    if (::access("/var/lib/dbus/machine-id", F_OK) == -1)
++        GTEST_SKIP() << "/var/lib/dbus/machine-id file does not exist, GetMachineId() will not work";
+ 
+     ASSERT_NO_THROW(m_proxy->GetMachineId());
+ }
+--- tests/integrationtests/DBusStandardInterfacesTests.cpp.orig	2021-10-25 07:02:37 UTC
++++ tests/integrationtests/DBusStandardInterfacesTests.cpp
+@@ -65,8 +65,8 @@ TEST_F(SdbusTestObject, AnswersMachineUuidViaPeerInter
+     // a non-systemd Linux), org.freedesktop.DBus.Peer.GetMachineId() will not work. To solve
+     // this, you can create /etc/machine-id yourself as symlink to /var/lib/dbus/machine-id,
+     // and then org.freedesktop.DBus.Peer.GetMachineId() will start to work.
+-    if (::access("/etc/machine-id", F_OK) == -1)
+-        GTEST_SKIP() << "/etc/machine-id file does not exist, GetMachineId() will not work";
++    if (::access("/var/lib/dbus/machine-id", F_OK) == -1)
++        GTEST_SKIP() << "/var/lib/dbus/machine-id file does not exist, GetMachineId() will not work";
+ 
+     ASSERT_NO_THROW(m_proxy->GetMachineId());
+ }
