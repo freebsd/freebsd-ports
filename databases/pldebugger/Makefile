@@ -4,23 +4,25 @@ DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL pl/pgsql Debugger API
 
 LICENSE=	ART20
 
 USES=		gmake pgsql
-WANT_PGSQL=	server
-USE_GITHUB=	yes
-GH_ACCOUNT=	EnterpriseDB
+
 LLD_UNSAFE=	yes
 MAKE_ENV=	USE_PGXS=1
+WANT_PGSQL=	server
 
 DOCSDIR=	${PREFIX}/share/doc/postgresql/extension
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	EnterpriseDB
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/plugin_debugger.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/plugin_debugger.so
 
 .include <bsd.port.mk>
