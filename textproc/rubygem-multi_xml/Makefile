@@ -12,10 +12,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cpe gem
-CPE_VENDOR=	erik_michaels-ober
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	erik_michaels-ober
 
 OPTIONS_DEFINE=	NOKOGIRI
 NOKOGIRI_DESC=	Use Nokogiri for parsing
