@@ -3,6 +3,7 @@
 PORTNAME=	rocksdb
 PORTVERSION=	6.22.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -82,8 +83,8 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${BENCHMARKS} ${TOOLS} ${STAGEDIR}${PREFIX}/bin/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librocksdb${PKGNAMESUFFIX}.so
 	${INSTALL_DATA} ${WRKSRC}/librocksdb${PKGNAMESUFFIX}_tools.so ${STAGEDIR}${PREFIX}/lib/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librocksdb${PKGNAMESUFFIX}.so ${STAGEDIR}${PREFIX}/lib/librocksdb${PKGNAMESUFFIX}_tools.so
 	${INSTALL_DATA} ${WRKSRC}/make_config.mk ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.post.mk>
