@@ -77,7 +77,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR}
 
 USES=		cpe python:3.6+
-CPE_VENDOR=	openstack
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -89,6 +88,8 @@ GROUPS=		cinder
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
 CONFLICTS_INSTALL=	py??-cinder-*
+
+CPE_VENDOR=	openstack
 
 PORTSCOUT=	skipv:2015.1.4
 
