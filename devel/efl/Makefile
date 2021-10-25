@@ -305,6 +305,11 @@ MESON_ARGS+=			${EVAS-LOADERS-DISABLER}
 MESON_ARGS+=	-Db_asneeded=false
 .endif
 
+.if ${ARCH:Marmv?}
+BUILD_DEPENDS+=	as:devel/binutils@native
+CFLAGS+=	-no-integrated-as
+.endif
+
 .if ${PORT_OPTIONS:MLUA} && ${PORT_OPTIONS:MCXX}
 EFL_BINDINGS=	-Dbindings=lua,cxx
 .else
