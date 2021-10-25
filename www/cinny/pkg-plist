@@ -85,6 +85,7 @@
 %%WWWDIR%%/assets/search.062efbb79fafd84810e946829b5b6115.svg
 %%WWWDIR%%/assets/send.507da28d5579add6eccc11cba4870a69.svg
 %%WWWDIR%%/assets/settings.63c73133e69b9475120089774abfbaf1.svg
+%%WWWDIR%%/assets/shield-empty.cdace7230f57a19690c3140667fb4e9d.svg
 %%WWWDIR%%/assets/shield.498420bdf2ec5957adc2646fa892026d.svg
 %%WWWDIR%%/assets/space-lock.2efa7b53ab33a849560b10cddf5f2ad0.svg
 %%WWWDIR%%/assets/space.05c198da2fedc28c7a57d8c86a588e82.svg
@@ -95,8 +96,8 @@
 %%WWWDIR%%/assets/vlc.12ce0b57b1b136a0150c3c5f147ef08f.svg
 %%WWWDIR%%/assets/volume-full.a74609ebaadf79cabc7fee7590f52793.svg
 %%WWWDIR%%/index.html
-%%WWWDIR%%/main.75ade5cf8809afa5ff80.bundle.css
-%%WWWDIR%%/main.fd969c4481e8d8e73066.bundle.js
-%%WWWDIR%%/main.fd969c4481e8d8e73066.bundle.js.LICENSE.txt
+%%WWWDIR%%/main.73cd25575dd1b41f02db.bundle.css
+%%WWWDIR%%/main.e323d4ad519a34a0e33a.bundle.js
+%%WWWDIR%%/main.e323d4ad519a34a0e33a.bundle.js.LICENSE.txt
 %%WWWDIR%%/olm.wasm
 %%WWWDIR%%/polyfill.1b01f0f1fe35ab48e585.bundle.js
