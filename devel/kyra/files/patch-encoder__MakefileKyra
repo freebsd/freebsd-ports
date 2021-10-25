@@ -1,6 +1,6 @@
---- encoder/MakefileKyra.orig
+--- encoder/MakefileKyra.orig	2005-09-21 18:12:50 UTC
 +++ encoder/MakefileKyra
-@@ -110,7 +110,7 @@
+@@ -110,7 +110,7 @@ OBJS := $(addsuffix .o,$(basename ${SRCS}))
  # Output
  #****************************************************************************
  

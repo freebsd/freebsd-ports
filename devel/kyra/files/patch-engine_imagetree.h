@@ -1,6 +1,6 @@
---- engine/imagetree.h.orig	2007-11-12 17:22:54.000000000 +0100
-+++ engine/imagetree.h	2007-11-12 17:23:06.000000000 +0100
-@@ -190,7 +190,7 @@
+--- engine/imagetree.h.orig	2005-03-31 01:02:38 UTC
++++ engine/imagetree.h
+@@ -190,7 +190,7 @@ class KrImageTree
  	void Clear( KrImNode* root );	// delete the entire tree
  
  	// Recursive hit test walk.

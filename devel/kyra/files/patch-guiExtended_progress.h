@@ -1,6 +1,6 @@
---- guiExtended/progress.h.orig	2007-11-12 17:24:08.000000000 +0100
-+++ guiExtended/progress.h	2007-11-12 17:24:34.000000000 +0100
-@@ -43,7 +43,7 @@
+--- guiExtended/progress.h.orig	2004-11-21 19:28:32 UTC
++++ guiExtended/progress.h
+@@ -43,7 +43,7 @@ class KrProgress : public KrWidget (public)
  	/** if width of the resource is greater then its height then makes
  		a horizontal, else makes a vertical progress bar
  	*/
@@ -9,7 +9,7 @@
  							int height,
  							KrRGBA FillColor,
  							KrRGBA ChangeColor,
-@@ -53,7 +53,7 @@
+@@ -53,7 +53,7 @@ class KrProgress : public KrWidget (public)
  	/** if width of the resource is greater then its height then makes
  		a horizontal, else makes a vertical progress bar
  	*/
