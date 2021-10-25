@@ -19,10 +19,11 @@ RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
 		rubygem-virtus>=1.0.0:devel/rubygem-virtus
 
 USES=		cpe gem
-CPE_VENDOR=	ruby-grape
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	ruby-grape
 
 # www/gitlab-ce requires grape = 1.4.0
 PORTSCOUT=	ignore:1
