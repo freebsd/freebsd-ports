@@ -1,7 +1,15 @@
-When is an extremely simple personal calendar program, aimed
-at the Unix geek who wants something minimalistic. It can
-keep track of things you need to do on particular dates. Its
-file format is a simple text file, which you can edit in your
-favorite editor.
+When is an extremely simple personal calendar program, aimed at the Unix geek
+who wants something minimalistic. It can keep track of things you need to do on
+particular dates. There are a lot of calendar and "personal information manager"
+programs out there, so what reasons are there to use When?
 
-WWW: http://www.lightandmatter.com/when/when.html
+- It's a very short and simple program, so you can easily tinker with it
+  yourself.
+- It doesn't depend on any libraries, so it's easy to install. You should be
+  able to install it on any system where Perl is available, even if you don't
+  have privileges for installing libraries.
+- Its file format is a simple text file, which you can edit in your favorite
+  editor.
+
+WWW: https://www.lightandmatter.com/when/when.html
+WWW: https://github.com/bcrowell/when
