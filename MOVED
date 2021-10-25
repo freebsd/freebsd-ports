@@ -16543,3 +16543,12 @@ devel/geany-plugin-xmlsnippets@gtk2|devel/geany-plugin-xmlsnippets|2021-10-10|Pr
 net-mgmt/unifi5|net-mgmt/unifi6|2021-10-16|Has expired: Use net-mgmt/unifi6 instead
 net/asterisk13|net/asterisk18|2021-10-24|Has expired: Asterisk 13.x will reach EOL on 2021-10-24. Please migrate to net/asterisk18
 textproc/py-tomli_w|textproc/py-tomli-w|2021-10-25|Rename to match upstream naming
+devel/rubygem-chef-provisioning||2021-10-25|Chef Provisioning is EoL'd on August 31, 2019
+devel/rubygem-grit||2021-10-25|Deprecated by upstream. Unmaintained since January 29, 2014
+graphics/rubygem-goocanvas||2021-10-25|Deprecated by upstream. Unmaintained since October 12, 2014
+sysutils/rubygem-chef15|sysutils/rubygem-chef|2021-10-25|Chef Infra Client 15 and under is EoL'd on April 30, 2021
+sysutils/rubygem-chef-config15|sysutils/rubygem-chef-config|2021-10-25|Chef Infra Client 15 and under is EoL'd on April 30, 2021
+sysutils/rubygem-chef-dk||2021-10-25|ChefDK is EoL'd on December 31, 2020
+sysutils/rubygem-chef-utils15|sysutils/rubygem-chef-utils|2021-10-25|Chef Infra Client 15 and under is EoL'd on April 30, 2021
+sysutils/rubygem-ohai15|sysutils/rubygem-ohai|2021-10-25|Chef Infra Client 15 and under is EoL'd on April 30, 2021
+www/rubygem-kensa||2021-10-25|Kensa is deprecated in favor of the addons-admin Heroku CLI plugin since December 14, 2018
