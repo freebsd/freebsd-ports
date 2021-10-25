@@ -57,6 +57,8 @@
 #		  overridden by the user variable WITH_WX_VER if set. It can
 #		  contain multiple versions in order of preference (last ones
 #		  are tried first).
+# WANT_WXGTK_VER - Set to the preferred GTK+ version, "2" or "3", "3" being
+#		  the default (only applicable to wxWidgets 3.0 for now).
 #
 # The following variables are intended for the user and can be defined in
 # make.conf.
@@ -132,7 +134,7 @@ _WX_PORT_contrib_2.8=	x11-toolkits/wxgtk28-contrib
 _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 
 # wxgtk 3.0
-_WX_PORT_wx_3.0=	x11-toolkits/wxgtk30
+_WX_PORT_wx_3.0=	x11-toolkits/wxgtk30@${_GTKFLAVOR}
 _WX_LIB_wx_3.0=		wx_baseu-3.0
 
 _WX_PORT_python_3.0=	x11-toolkits/py-wxPython40@${PY_FLAVOR}
@@ -405,8 +407,11 @@ _WX_VER=		${ver}
 # Set variables.
 #
 
-.if ${_WX_VER:R} == 3
+.if ${_WX_VER} == 3.1
 _GTKVER=	3
+.elif ${_WX_VER} == 3.0
+_GTKVER=	${WANT_WXGTK_VER:U3}
+_GTKFLAVOR=	gtk${_GTKVER}
 .else
 _GTKVER=	2
 .endif
