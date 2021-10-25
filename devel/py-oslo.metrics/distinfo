@@ -1,3 +1,3 @@
-TIMESTAMP = 1632036826
-SHA256 (oslo.metrics-0.3.0.tar.gz) = 9e25c21943e12df9b7390025b92b5112118d4b43bc96a5191eb0a112a0e4e84a
-SIZE (oslo.metrics-0.3.0.tar.gz) = 18637
+TIMESTAMP = 1635181063
+SHA256 (oslo.metrics-0.4.0.tar.gz) = ebbd9eab24869dcd9ef6445d0ad6a806329b42cb409139598056c06f1b0f1f3a
+SIZE (oslo.metrics-0.4.0.tar.gz) = 18988
