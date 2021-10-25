@@ -21,6 +21,6 @@ pre-configure:
 	cd ${WRKSRC} && cython-${PYTHON_VER} pcap.pyx
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pcap*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
