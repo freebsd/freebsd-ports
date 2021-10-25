@@ -17,10 +17,11 @@ RUN_DEPENDS=	rubygem-rack16>=1.5<2:www/rubygem-rack16 \
 		rubygem-tilt>=1.3<3:devel/rubygem-tilt
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}rb
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	sinatrarb
 
 PORTSCOUT=	limit:^1\.
 
