@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd mdnsresponderposix
 
 CPE_VENDOR=	apple
-CPE_PRODUCT=	${PORTNAME:tl}
 
 EXTRA_BIN=	mDNSClientPosix mDNSNetMonitor mDNSProxyResponderPosix mDNSResponderPosix
 EXTRA_MAN1=	dns-sd.1
