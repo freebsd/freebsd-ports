@@ -950,6 +950,7 @@
     SUBDIR += p5-HTTP-Tiny-Multipart
     SUBDIR += p5-HTTP-Tiny-SPDY
     SUBDIR += p5-HTTP-Tiny-UA
+    SUBDIR += p5-HTTP-Tiny-UNIX
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTP-XSCookies
     SUBDIR += p5-HTTPD-Log-Filter
