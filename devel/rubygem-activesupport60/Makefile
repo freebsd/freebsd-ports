@@ -19,10 +19,11 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \
 		rubygem-zeitwerk>=2.2.2<3:devel/rubygem-zeitwerk
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	activesupport_project
 
 PORTSCOUT=	limit:^6\.0\.
 
