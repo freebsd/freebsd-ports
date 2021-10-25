@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	base64
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
