@@ -1,6 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-10-18
-PORTREVISION=	1
+DISTVERSION=	2021-10-25
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -79,7 +78,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
 		lsp-server-0.5.2 \
-		lsp-types-0.90.1 \
+		lsp-types-0.91.0 \
 		matchers-0.0.1 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
@@ -149,7 +148,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		tracing-log-0.1.2 \
 		tracing-subscriber-0.2.25 \
 		tracing-tree-0.1.10 \
-		ungrammar-1.14.8 \
+		ungrammar-1.14.9 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.7 \
 		unicode-normalization-0.1.19 \
