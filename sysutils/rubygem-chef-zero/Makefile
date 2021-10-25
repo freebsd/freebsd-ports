@@ -1,7 +1,7 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
 
 PORTNAME=	chef-zero
-PORTVERSION=	14.0.17
+PORTVERSION=	15.0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -12,10 +12,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
-		rubygem-hashie3>=2.0<4.0:devel/rubygem-hashie3 \
-		rubygem-mixlib-log>=2.0<4:devel/rubygem-mixlib-log \
+		rubygem-hashie>=2.0<5.0:devel/rubygem-hashie \
+		rubygem-mixlib-log>=2.0<4.0:devel/rubygem-mixlib-log \
 		rubygem-rack>=2.0.6,3<3,3:www/rubygem-rack \
-		rubygem-uuidtools>=2.1<3:devel/rubygem-uuidtools
+		rubygem-uuidtools>=2.1<3:devel/rubygem-uuidtools \
+		rubygem-webrick>=0:www/rubygem-webrick
 
 USES=		gem
 USE_RUBY=	yes
