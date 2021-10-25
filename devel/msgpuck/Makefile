@@ -10,9 +10,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c11 cpe
-CPE_VENDOR=	tarantool
 
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	tarantool
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
