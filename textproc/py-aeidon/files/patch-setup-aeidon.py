@@ -20,7 +20,7 @@
  setup(
      name="aeidon",
 -    version=get_aeidon_version(),
-+    version=%%PORTVERSION%%,
++    version="%%PORTVERSION%%",
      author="Osmo Salomaa",
      author_email="otsaloma@iki.fi",
      description="Reading, writing and manipulating text-based subtitle files",
