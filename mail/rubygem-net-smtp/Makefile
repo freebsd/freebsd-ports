@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	net-smtp
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
