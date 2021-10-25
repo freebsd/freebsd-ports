@@ -12,4 +12,6 @@ COMMENT=	Perl extension to say your class/object working like something else
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
