@@ -15,8 +15,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool localbase:ldflags pathfix
-CPE_VENDOR=	littlecms
-CPE_PRODUCT=	little_cms_color_engine
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -24,6 +22,9 @@ TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
+
+CPE_VENDOR=	littlecms
+CPE_PRODUCT=	little_cms_color_engine
 
 OPTIONS_DEFINE=	DOCS JPEGICC TIFFICC
 OPTIONS_DEFAULT=JPEGICC TIFFICC
