@@ -16552,3 +16552,7 @@ sysutils/rubygem-chef-dk||2021-10-25|ChefDK is EoL'd on December 31, 2020
 sysutils/rubygem-chef-utils15|sysutils/rubygem-chef-utils|2021-10-25|Chef Infra Client 15 and under is EoL'd on April 30, 2021
 sysutils/rubygem-ohai15|sysutils/rubygem-ohai|2021-10-25|Chef Infra Client 15 and under is EoL'd on April 30, 2021
 www/rubygem-kensa||2021-10-25|Kensa is deprecated in favor of the addons-admin Heroku CLI plugin since December 14, 2018
+textproc/rubygem-compass||2021-10-25|Compass is no longer supported since August 4, 2016
+textproc/rubygem-compass-core||2021-10-25|Compass is no longer supported since August 4, 2016
+textproc/rubygem-compass-import-once||2021-10-25|Compass is no longer supported since August 4, 2016
+textproc/rubygem-compass-blueprint||2021-10-25|Depend on unsupported textproc/rubygem-compass
