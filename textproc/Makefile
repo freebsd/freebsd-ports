@@ -1601,7 +1601,6 @@
     SUBDIR += rubygem-colored2
     SUBDIR += rubygem-commonmarker
     SUBDIR += rubygem-compass-blueprint
-    SUBDIR += rubygem-compass-import-once
     SUBDIR += rubygem-creole
     SUBDIR += rubygem-css_parser
     SUBDIR += rubygem-cssmin
