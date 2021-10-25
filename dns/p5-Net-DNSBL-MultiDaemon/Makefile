@@ -31,6 +31,8 @@ RHBL_RUN_DEPENDS=	p5-URBL-Prepare>=0.08:dns/p5-URBL-Prepare
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	MultiDaemon.pm lib/Net/DNSBL/Utilities.pm
 
 .include <bsd.port.mk>
