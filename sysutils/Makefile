@@ -1190,6 +1190,7 @@
     SUBDIR += rubygem-itamae
     SUBDIR += rubygem-librarian-puppet
     SUBDIR += rubygem-license-acceptance
+    SUBDIR += rubygem-license_scout
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-logify
     SUBDIR += rubygem-mogilefs-client
