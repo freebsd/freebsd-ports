@@ -1,5 +1,5 @@
 PORTNAME=	rubocop
-PORTVERSION=	1.22.0
+PORTVERSION=	1.22.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -19,11 +19,12 @@ RUN_DEPENDS=	rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-unicode-display_width>=1.4.0<3.0:devel/rubygem-unicode-display_width
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/rubocop
+
+CPE_VENDOR=	rubocop_project
 
 .include <bsd.port.mk>
