@@ -22,9 +22,10 @@ USE_PYTHON=	autoplist concurrent distutils
 MAKE_ENV=	USE_SHARED_BROTLI=1
 
 post-patch:
+# Clean up bundled libraries
 	@${RM} -fr ${WRKSRC}/libbrotli/
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/brotlicffi/_brotlicffi*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
