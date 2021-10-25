@@ -1,5 +1,5 @@
 bin/dnscap
-%%CDS%%bin/dnscap-rssm-rssac002
+bin/dnscap-rssm-rssac002
 lib/dnscap/anonaes128.a
 lib/dnscap/anonaes128.so
 lib/dnscap/anonmask.a
@@ -16,13 +16,13 @@ lib/dnscap/pcapdump.a
 lib/dnscap/pcapdump.so
 lib/dnscap/royparse.a
 lib/dnscap/royparse.so
-%%CDS%%lib/dnscap/rssm.a
-%%CDS%%lib/dnscap/rssm.so
-%%CDS%%lib/dnscap/rzkeychange.a
-%%CDS%%lib/dnscap/rzkeychange.so
+lib/dnscap/rssm.a
+lib/dnscap/rssm.so
+lib/dnscap/rzkeychange.a
+lib/dnscap/rzkeychange.so
 lib/dnscap/txtout.a
 lib/dnscap/txtout.so
-%%CDS%%man/man1/dnscap-rssm-rssac002.1.gz
+man/man1/dnscap-rssm-rssac002.1.gz
 man/man1/dnscap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/README.md

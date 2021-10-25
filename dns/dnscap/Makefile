@@ -2,6 +2,7 @@
 
 PORTNAME=	dnscap
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
@@ -25,7 +26,6 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CDS DOCS THREADS
 OPTIONS_DEFAULT=THREADS
-OPTIONS_SUB=	yes
 CDS_DESC=	CBOR DNS Stream (CDS) format (experimental)
 
 CDS_CONFIGURE_OFF=	ac_cv_lib_tinycbor_cbor_parser_init=no
