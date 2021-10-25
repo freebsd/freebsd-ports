@@ -18,10 +18,11 @@ RUN_DEPENDS=	rubygem-i18n>=0.7,2:devel/rubygem-i18n \
 		rubygem-tzinfo1>=1.1<2:devel/rubygem-tzinfo1
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	activesupport_project
 
 PORTSCOUT=	limit:^4\.2\.
 
