@@ -56,6 +56,8 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/IPC/Process.pm
 %%SITE_PERL%%/Test2/Harness/Log.pm
 %%SITE_PERL%%/Test2/Harness/Log/CoverageAggregator.pm
+%%SITE_PERL%%/Test2/Harness/Log/CoverageAggregator/ByRun.pm
+%%SITE_PERL%%/Test2/Harness/Log/CoverageAggregator/ByTest.pm
 %%SITE_PERL%%/Test2/Harness/Plugin.pm
 %%SITE_PERL%%/Test2/Harness/Renderer.pm
 %%SITE_PERL%%/Test2/Harness/Renderer/Formatter.pm
@@ -146,6 +148,8 @@ bin/yath
 %%PERL5_MAN3%%/Test2::Harness::IPC::Process.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Log.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Log::CoverageAggregator.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Log::CoverageAggregator::ByRun.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Log::CoverageAggregator::ByTest.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Plugin.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Renderer.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Renderer::Formatter.3.gz
