@@ -115,10 +115,10 @@ include/rocksdb/write_buffer_manager.h
 %%LITE%%lib/librocksdb-lite.so.%%SHLIB_VER%%
 %%LITE%%lib/librocksdb-lite.so.%%PORTVERSION%%
 %%LITE%%lib/librocksdb-lite_tools.so
-lib/librocksdb.a
-lib/librocksdb.so
-lib/librocksdb.so.6
-lib/librocksdb.so.%%SHLIB_VER%%
-lib/librocksdb.so.%%PORTVERSION%%
-lib/librocksdb_tools.so
+%%NO_LITE%%lib/librocksdb.a
+%%NO_LITE%%lib/librocksdb.so
+%%NO_LITE%%lib/librocksdb.so.6
+%%NO_LITE%%lib/librocksdb.so.%%SHLIB_VER%%
+%%NO_LITE%%lib/librocksdb.so.%%PORTVERSION%%
+%%NO_LITE%%lib/librocksdb_tools.so
 libdata/pkgconfig/rocksdb.pc

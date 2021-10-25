@@ -58,13 +58,13 @@ ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
 
 .if !defined(LITE)
 CONFLICTS_INSTALL=	rocksdb-lite
-PLIST_SUB+=	LITE="@comment "
+PLIST_SUB+=	LITE="@comment " NO_LITE=""
 .else
 PKGNAMESUFFIX=	-lite
 CONFLICTS_INSTALL=	rocksdb
 CFLAGS+=	-DROCKSDB_LITE=1
 MAKE_ENV+=	LIBNAME=librocksdb${PKGNAMESUFFIX} DISABLE_JEMALLOC=1
-PLIST_SUB+=	LITE=""
+PLIST_SUB+=	LITE="" NO_LITE="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
