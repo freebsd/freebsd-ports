@@ -1,5 +1,5 @@
 PORTNAME=	rollbar
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ COMMENT=	Easy and powerful exception tracking with Rollbar
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0.12.1:www/py-requests@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0.12.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.6+
