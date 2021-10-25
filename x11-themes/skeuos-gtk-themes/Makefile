@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	skeuos-gtk
-DISTVERSION=	20211006
+DISTVERSION=	20211013
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-themes
 
