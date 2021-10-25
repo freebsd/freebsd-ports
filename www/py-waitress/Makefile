@@ -13,9 +13,10 @@ LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe python:3.6+
-CPE_VENDOR=	agendaless
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	agendaless
 
 .include <bsd.port.mk>
