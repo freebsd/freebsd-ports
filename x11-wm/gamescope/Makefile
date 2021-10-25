@@ -28,11 +28,12 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 
 USES=		compiler:c++11-lib meson pkgconfig sdl xorg
 USE_GITHUB=	yes
+USE_GITLAB=	nodefault
 USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
-GH_TUPLE=	emersion:libliftoff:v0.1.0-25-gb7a6958:libliftoff/subprojects/libliftoff \
-		nothings:stb:af1a5bc:stb/subprojects/stb
+GH_TUPLE=	nothings:stb:af1a5bc:stb/subprojects/stb
+GL_TUPLE=	https://gitlab.freedesktop.org:emersion:libliftoff:b7a6958bcacdedf6e451d8821c807299943ef150:libliftoff/subprojects/libliftoff
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	PIPEWIRE

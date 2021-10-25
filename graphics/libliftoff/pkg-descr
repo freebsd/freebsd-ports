@@ -3,4 +3,4 @@ in your way. Users create "virtual planes" called layers, set KMS
 properties on them, and libliftoff will pick planes for these layers
 if possible.
 
-WWW: https://github.com/emersion/libliftoff
+WWW: https://gitlab.freedesktop.org/emersion/libliftoff
