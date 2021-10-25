@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
-CPE_VENDOR=	yardoc
 USE_RUBY=	yes
 
 NO_ARCH=	yes
@@ -20,5 +19,7 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/yard \
 		bin/yardoc \
 		bin/yri
+
+CPE_VENDOR=	yardoc
 
 .include <bsd.port.mk>
