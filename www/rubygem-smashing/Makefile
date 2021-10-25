@@ -22,11 +22,12 @@ RUN_DEPENDS=	rubygem-coffee-script>=2.4<3:devel/rubygem-coffee-script \
 		rubygem-thor>=1.0<2:devel/rubygem-thor
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/smashing
+
+CPE_VENDOR=	smashing_project
 
 .include <bsd.port.mk>
