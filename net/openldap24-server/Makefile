@@ -49,7 +49,7 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	3
+PORTREVISION_CLIENT=	4
 PORTREVISION_SERVER=	6
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	11.7
@@ -622,8 +622,11 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$${prog}; \
 	done
 
-	for library in lber ldap ldap_r; do \
+	for library in lber ldap_r; do \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib$${library}-${OPENLDAP_MAJOR}.so.${OPENLDAP_SHLIB_MAJOR}; \
+	done
+	for suffix in -${OPENLDAP_MAJOR}.so.2 -${OPENLDAP_MAJOR}.so.${OPENLDAP_SHLIB_MAJOR}.${OPENLDAP_SHLIB_MINOR} .a .la .so; do \
+		${LN} -sf libldap_r$${suffix} ${STAGEDIR}${PREFIX}/lib/libldap$${suffix}; \
 	done
 .else
 	${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
