@@ -33,12 +33,15 @@ PLIST_FILES=	bin/slade share/slade3/slade.pk3 \
 		share/metainfo/net.mancubus.SLADE.metainfo.xml \
 		share/icons/net.mancubus.SLADE.png
 
-OPTIONS_DEFINE=	FLUIDSYNTH
+OPTIONS_DEFINE=	FLUIDSYNTH GTK3
 OPTIONS_DEFAULT=	FLUIDSYNTH
 
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_RUN_DEPENDS=	${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2:audio/fluid-soundfont
 FLUIDSYNTH_CMAKE_OFF=	-DNO_FLUIDSYNTH:BOOL=ON
+
+GTK3_CMAKE_OFF=		-DWX_GTK3:BOOL=OFF
+GTK3_VARS_OFF=		WANT_WXGTK_VER=2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"alsa","oss", ; \
