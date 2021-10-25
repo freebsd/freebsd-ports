@@ -16,9 +16,10 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six@${PY_FLAVOR}
 
 USES=		cpe python:3.6+
-CPE_VENDOR=	google
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	google
 
 .include <bsd.port.mk>
