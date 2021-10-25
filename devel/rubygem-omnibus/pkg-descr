@@ -1,0 +1,6 @@
+Omnibus is a framework for building self-installing, full-stack software builds.
+Omnibus provides both a DSL for defining Omnibus projects for your software, as
+well as a command-line tool for generating installer artifacts from that
+definition.
+
+WWW: https://github.com/chef/omnibus
