@@ -1,10 +1,11 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
-PORTNAME=	tomli_w
+PORTNAME=	tomli-w
 PORTVERSION=	0.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	tomli_w-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lil' TOML writer
