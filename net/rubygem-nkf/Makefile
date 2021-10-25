@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	nkf
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
