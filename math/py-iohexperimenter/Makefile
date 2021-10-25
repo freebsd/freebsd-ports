@@ -21,6 +21,6 @@ USE_PYTHON=	autoplist concurrent distutils
 USE_CXXSTD=	c++14
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/IOHexperimenter/_IOHprofiler*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
