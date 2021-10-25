@@ -14,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/kramdown
+
+CPE_VENDOR=	kramdown_project
 
 .include <bsd.port.mk>
