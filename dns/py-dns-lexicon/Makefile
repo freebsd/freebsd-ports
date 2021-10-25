@@ -1,7 +1,7 @@
 # Created by: Goran Mekić <meka@tilda.center>
 
 PORTNAME=	dns-lexicon
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.1
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
