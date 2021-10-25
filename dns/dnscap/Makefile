@@ -32,9 +32,6 @@ CDS_CONFIGURE_OFF=	ac_cv_lib_tinycbor_cbor_parser_init=no
 CDS_LIB_DEPENDS=	libtinycbor.so:devel/tinycbor
 THREADS_CONFIGURE_ENABLE=	threads
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(HAVE_\)\(CBOR_CBOR_H\)|\1TINY\2|; s|cbor/cbor.h|tiny&|' ${WRKSRC}/configure.ac ${WRKSRC}/src/dump_cbor.c ${WRKSRC}/src/dump_cds.c
-
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.am
 

@@ -1,0 +1,13 @@
+--- src/config.h.in.orig	2021-03-11 16:02:41 UTC
++++ src/config.h.in
+@@ -9,8 +9,8 @@
+ /* Define to 1 if you have the <arpa/nameser.h> header file. */
+ #undef HAVE_ARPA_NAMESER_H
+ 
+-/* Define to 1 if you have the <cbor/cbor.h> header file. */
+-#undef HAVE_CBOR_CBOR_H
++/* Define to 1 if you have the <tinycbor/cbor.h> header file. */
++#undef HAVE_TINYCBOR_CBOR_H
+ 
+ /* Define to 1 if you have the <cbor.h> header file. */
+ #undef HAVE_CBOR_H
