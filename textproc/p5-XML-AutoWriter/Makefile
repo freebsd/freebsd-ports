@@ -15,8 +15,11 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		dos2unix perl5
-DOS2UNIX_GLOB=	*.pm
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+DOS2UNIX_GLOB=	*.pm
 
 post-patch:
 	${RM} ${WRKSRC}/lib/XML/*.orig
