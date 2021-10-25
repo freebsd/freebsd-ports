@@ -2,6 +2,7 @@
 
 PORTNAME=	local_time
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +11,6 @@ COMMENT=	Rails engine for cache-friendly, client-side local time
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
-
-RUN_DEPENDS=	rubygem-coffee-rails4>=0:devel/rubygem-coffee-rails4
 
 USES=		gem
 USE_RUBY=	yes
