@@ -228,9 +228,15 @@
     SUBDIR += avro-cpp
     SUBDIR += awless
     SUBDIR += aws-c-common
+    SUBDIR += aws-c-compression
     SUBDIR += aws-c-event-stream
+    SUBDIR += aws-c-http
     SUBDIR += aws-c-io
+    SUBDIR += aws-c-mqtt
+    SUBDIR += aws-c-s3
+    SUBDIR += aws-c-sdkutils
     SUBDIR += aws-checksums
+    SUBDIR += aws-crt-cpp
     SUBDIR += aws-sdk-cpp
     SUBDIR += aws-sdk-php
     SUBDIR += awscli

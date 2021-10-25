@@ -36,6 +36,7 @@
     SUBDIR += assh
     SUBDIR += authenticator
     SUBDIR += autossh
+    SUBDIR += aws-c-auth
     SUBDIR += aws-c-cal
     SUBDIR += aws-iam-authenticator
     SUBDIR += aws-vault
