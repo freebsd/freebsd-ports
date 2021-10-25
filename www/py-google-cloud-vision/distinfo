@@ -1,3 +1,3 @@
-TIMESTAMP = 1634111822
-SHA256 (google-cloud-vision-2.4.4.tar.gz) = 46a16f745e2c6034e0cf4b997ea3a7d6dadc4905faaab6d41fcf7de7bcdb5285
-SIZE (google-cloud-vision-2.4.4.tar.gz) = 639381
+TIMESTAMP = 1634391172
+SHA256 (google-cloud-vision-2.5.0.tar.gz) = e56e35fa647d794429c6fc1595b2ebf5f4d627f0b3d6499a000b54be343ea37e
+SIZE (google-cloud-vision-2.5.0.tar.gz) = 643031
