@@ -17,9 +17,10 @@ RUN_DEPENDS=	rubygem-mustermann>=1.0<2:devel/rubygem-mustermann \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}rb
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	sinatrarb
 
 .include <bsd.port.mk>
