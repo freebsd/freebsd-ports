@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tomli-w
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,8 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 .include <bsd.port.mk>
