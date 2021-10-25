@@ -4,15 +4,14 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gems for cool.io
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	\
-	rubygem-iobuffer>=1.0.0:devel/rubygem-iobuffer
+RUN_DEPENDS=	rubygem-iobuffer>=1.0.0:devel/rubygem-iobuffer
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
