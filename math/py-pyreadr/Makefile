@@ -23,6 +23,6 @@ post-patch:
 	@${RM} -fr ${WRKSRC}/win_libs/
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyreadr/librdata${PYTHON_EXT_SUFFIX}.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
