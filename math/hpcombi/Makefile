@@ -12,7 +12,7 @@ COMMENT=	Fast combinatorics in C++ using SSE/AVX instruction sets
 LICENSE=	GPLv3
 
 ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	Uses Advanced Vector Extensions (AVX) instructions set
+ONLY_FOR_ARCHS_REASON=	uses AVX instruction set
 
 BUILD_DEPENDS=	sparsehash>0:devel/sparsehash
 LIB_DEPENDS=	libbenchmark.so:devel/benchmark

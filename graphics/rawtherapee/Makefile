@@ -107,7 +107,7 @@ OPENMP_CMAKE_BOOL=	OPTION_OMP
 # might add ARM64 later on if they are established by the
 # time FreeBSD 13 is out.
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=Only amd64 is supported on non-released FreeBSD versions.
+ONLY_FOR_ARCHS_REASON=only amd64 is supported on non-released FreeBSD versions
 .endif
 
 .if ${PORT_OPTIONS:MNATIVE}

@@ -16,6 +16,7 @@ LICENSE_TEXT=	Commercial use is prohibited
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	linked from prebuilt object files
 
 USES=		zip
 WRKSRC=		${WRKDIR}/${DISTNAME}/Linux-o

@@ -17,7 +17,7 @@ LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	Only ported to amd64, aarch64 and powerpc64le on FreeBSD. Upstream supports arm64, ppc64le, s390x and x86-64.
+ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \

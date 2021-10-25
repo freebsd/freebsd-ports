@@ -10,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Not yet ported to FreeBSD arm / powerpc
+ONLY_FOR_ARCHS_REASON=	not yet ported to other architectures
 
 USES=		gmake
 

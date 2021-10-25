@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	The wasmer-vm crate currently only supports aarch64 and amd64.
+ONLY_FOR_ARCHS_REASON=	wasmer-vm crate currently only supports aarch64 and amd64
 
 USES=		cargo
 

@@ -11,7 +11,7 @@ COMMENT=	Multi Arcade Machine Emulator
 LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=		amd64 armv7 i386 powerpc powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than armv7, x86 and powerpc*
+ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, x86, and powerpc*
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libexpat.so:textproc/expat2 \

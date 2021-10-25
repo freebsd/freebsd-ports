@@ -13,7 +13,7 @@ LICENSE_FILE=	${FILESDIR}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
+ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and arm64
 
 USES=		desktop-file-utils gnome linux tar:xz
 USE_LINUX=	gtk3

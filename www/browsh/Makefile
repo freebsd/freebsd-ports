@@ -12,7 +12,7 @@ COMMENT=	Text-based browser supporting HTML5, CSS3, JS, video and WebGL
 LICENSE=	LGPL21
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
-ONLY_FOR_ARCHS_REASON=	Upstream does not provide binaries for other architerctures
+ONLY_FOR_ARCHS_REASON=	upstream does not provide binaries for other architerctures
 
 RUN_DEPENDS=	firefox>63:www/firefox
 

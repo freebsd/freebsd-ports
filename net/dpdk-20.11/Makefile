@@ -10,7 +10,7 @@ COMMENT=	DPDK: Software libraries for packet processing
 LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Only tested on 64-bit x86 hardware
+ONLY_FOR_ARCHS_REASON=	only tested on 64-bit x86 hardware
 
 BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libjansson.so:devel/jansson

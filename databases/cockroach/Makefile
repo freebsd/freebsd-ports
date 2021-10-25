@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/cockroachdb/cockroach/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	"A 64-bit system is strongly recommended"
+ONLY_FOR_ARCHS_REASON=	64-bit system is strongly recommended
 
 BUILD_DEPENDS=	autoconf:devel/autoconf \
 		bash:shells/bash \

@@ -10,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	The vmware gfx protocol is only supported on x86-compatible architectures.
+ONLY_FOR_ARCHS_REASON=	vmware gfx protocol is only supported on x86-compatible architectures
 
 USES=		xorg-cat:driver
 

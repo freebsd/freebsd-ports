@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKDIR}/jsource-${JVERSION}/license.txt
 BROKEN=		does not build
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Not built or tested for other archs. i386 needs hostdefs and netdefs files to be generated.
+ONLY_FOR_ARCHS_REASON=	not built or tested on other architectures; i386 needs hostdefs and netdefs files to be generated
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \

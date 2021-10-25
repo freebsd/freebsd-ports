@@ -31,7 +31,7 @@ SPICE_BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 SPICE_LIB_DEPENDS=	libspice-server.so:devel/libspice-server
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
 
 USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
 		pkgconfig python:3.6+ shebangfix iconv bison

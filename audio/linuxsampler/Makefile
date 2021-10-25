@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	"not yet ported"
+ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		dssi>0:audio/dssi

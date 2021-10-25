@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
+ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
 LIB_DEPENDS=	libva.so:multimedia/libva
 RUN_DEPENDS=	cmrtlib>0:multimedia/cmrtlib

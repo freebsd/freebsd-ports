@@ -19,7 +19,7 @@ LICENSE_TEXT=	Some tools installed by this port require a license for\
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	_mm_popcnt_u64
+ONLY_FOR_ARCHS_REASON=	uses _mm_popcnt_u64() function
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \

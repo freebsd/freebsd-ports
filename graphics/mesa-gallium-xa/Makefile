@@ -13,7 +13,7 @@ USE_XORG=	xorgproto
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	Used only by VMWare supported architectures
+ONLY_FOR_ARCHS_REASON=	used only by VMware supported architectures
 
 MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgallium-drivers="svga" \

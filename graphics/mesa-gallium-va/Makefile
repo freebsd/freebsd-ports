@@ -17,7 +17,7 @@ X11_USE=		xorg=xorgproto,x11,xcb,xdamage,xext,xfixes,xshmfence,xxf86vm,xrandr
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 ONLY_FOR_ARCHS=		i386 amd64 aarch64 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	Used only by amd/radeon hardware
+ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 
 MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgallium-drivers="radeonsi,r600" \

@@ -65,7 +65,7 @@ NONE_CONFIGURE_ON=	--without-gui
 NONE_CONFIGURE_ENV=	WISH=/usr/bin/true
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	Uses x86 specific libc functions and has not been ported
+ONLY_FOR_ARCHS_REASON=	uses x86-specific libc functions, has not been ported
 
 DOCS_INFO=		pcb
 

@@ -19,7 +19,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
 		auto-accept
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	The i386 client has not been ported
+ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 USES=		dos2unix linux
 DOS2UNIX_FILES=	usr/share/doc/fahclient/*

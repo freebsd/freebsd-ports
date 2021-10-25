@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64
+ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
 
 RUN_DEPENDS=	git:devel/git \
 		gpg2:security/gnupg

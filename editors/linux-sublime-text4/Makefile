@@ -13,7 +13,7 @@ LICENSE_FILE=	${FILESDIR}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and aarch64
+ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and aarch64
 
 RUN_DEPENDS=	linux-c7-curl>0:ftp/linux-c7-curl
 
