@@ -15,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-multipart-post>=1.2<3:www/rubygem-multipart-post
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	faraday_project
 
 PORTSCOUT=	limit:^0\.
 
