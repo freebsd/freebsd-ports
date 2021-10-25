@@ -1,7 +1,6 @@
 PORTNAME=	guidolib
-DISTVERSIONPREFIX=	v
-DISTVERSION=	168-207
-DISTVERSIONSUFFIX=	-gd1c151b5
+PORTVERSION=	1.7.1 # https://guido.grame.fr/dox/api/ has version in the format N.N.N
+PORTEPOCH=	1
 CATEGORIES=	audio graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +19,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
+GH_TAGNAME=	v${PORTVERSION:S/.//g}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 
@@ -43,8 +43,5 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/package/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 	${CP} -r ${WRKSRC}/package/doc/html ${STAGEDIR}${DOCSDIR}
-
-do-install-EXAMPLES-on: # workaround for https://github.com/grame-cncm/guidolib/issues/130
-	@${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/new-tags-v1.51/symbols
 
 .include <bsd.port.mk>
