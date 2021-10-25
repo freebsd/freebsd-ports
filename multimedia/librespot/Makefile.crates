@@ -169,7 +169,7 @@ CARGO_CRATES=	aes-0.6.0 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rand_distr-0.4.1 \
+		rand_distr-0.4.2 \
 		rand_hc-0.3.1 \
 		redox_syscall-0.2.10 \
 		regex-1.5.4 \
