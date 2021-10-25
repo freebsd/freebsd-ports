@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	grpc
-PORTVERSION=	1.40.0
+PORTVERSION=	1.41.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -44,5 +44,15 @@ PLIST_SUB=	SHLIB_MAJOR=${PORTVERSION:R} \
 .if ${SSL_DEFAULT} == base
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-CMakeLists.txt
 .endif
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/third_party/abseil-cpp/
+	@${RM} -r ${WRKSRC}/third_party/benchmark/
+	@${RM} -r ${WRKSRC}/third_party/boringssl-with-bazel/
+	@${RM} -r ${WRKSRC}/third_party/cares/
+	@${RM} -r ${WRKSRC}/third_party/protobuf/
+	@${RM} -r ${WRKSRC}/third_party/re2/
+	@${RM} -r ${WRKSRC}/third_party/zlib/
 
 .include <bsd.port.post.mk>
