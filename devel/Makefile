@@ -6158,6 +6158,7 @@
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-console
     SUBDIR += rubygem-contracts
+    SUBDIR += rubygem-contracts016
     SUBDIR += rubygem-cookbook-omnifetch
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-corefines
