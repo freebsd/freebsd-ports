@@ -6931,6 +6931,7 @@
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zeitwerk
     SUBDIR += rubygem-zentest
+    SUBDIR += rubygem-zhexdump
     SUBDIR += rubygem-zlib
     SUBDIR += rudeconfig
     SUBDIR += rudiments
