@@ -13,10 +13,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe ssl
-CPE_VENDOR=	${PORTNAME}_project
 
 PLIST_FILES=	bin/dmg2img \
 		bin/vfdecrypt
+
+CPE_VENDOR=	dmg2img_project
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS = / s|$$| -I${OPENSSLINC}|; s| -lcrypto| -L${OPENSSLLIB}&|' ${WRKSRC}/Makefile
