@@ -190,8 +190,8 @@
     SUBDIR += libreoffice6
     SUBDIR += linux-bcompare
     SUBDIR += linux-sublime
-    SUBDIR += linux-sublime3
     SUBDIR += linux-sublime-text4
+    SUBDIR += linux-sublime3
     SUBDIR += linux-wps-office
     SUBDIR += madedit
     SUBDIR += marker

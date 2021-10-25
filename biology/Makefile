@@ -138,7 +138,6 @@
     SUBDIR += psi88
     SUBDIR += py-Genesis-PyAPI
     SUBDIR += py-PySCeS
-    SUBDIR += py-pybigwig
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
@@ -162,6 +161,7 @@
     SUBDIR += py-orange3-single-cell
     SUBDIR += py-pandas-charm
     SUBDIR += py-py2bit
+    SUBDIR += py-pybigwig
     SUBDIR += py-pyfaidx
     SUBDIR += py-pysam
     SUBDIR += py-python-libsbml

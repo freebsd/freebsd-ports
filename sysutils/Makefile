@@ -1517,8 +1517,8 @@
     SUBDIR += wmapmload
     SUBDIR += wmbluecpu
     SUBDIR += wmbsdbatt
-    SUBDIR += wmcube
     SUBDIR += wmcpuload
+    SUBDIR += wmcube
     SUBDIR += wmdiskmon
     SUBDIR += wmflame
     SUBDIR += wmmemfree
