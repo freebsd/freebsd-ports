@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-agent
-PORTVERSION=	14.3.3
+PORTVERSION=	14.4.0
 PORTREVISION=	0
 CATEGORIES=	net
 
@@ -19,12 +19,12 @@ USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org/cluster-integration
 # Find the commit hash here: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/tags
-GL_COMMIT=	80c75d64b933d306966baba139f4b99301bd50a1
+GL_COMMIT=	8b11694dd188b58234e776e3b0bad604145041b3
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 195dd
+# 194dd
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		Azure:go-autorest:79a63e70c4d8:azure_go_autorest_adal \
@@ -92,15 +92,15 @@ GH_TUPLE=	\
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
-		golang:net:0714010a04ed:golang_net/vendor/golang.org/x/net \
+		golang:net:aaa1db679c0d:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:6f1e6394065a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:e5e7981a1069:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:d867a43fc93e:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:1f47c861a9ac:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.4:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.7:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
