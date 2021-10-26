@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.45.0
+PORTVERSION=	1.46.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	4d9934063df5eacce7d681d921ba456b7f10ed1e
+GL_COMMIT=	5e86747b6287381e2f23afe837ede1820876cf8d
 
 # Build with: make gomod-vendor
 # 53dd
@@ -37,6 +37,7 @@ GH_TUPLE=	\
 		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:d4f498aebedc:google_pprof/vendor/github.com/google/pprof \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
@@ -65,7 +66,6 @@ GH_TUPLE=	\
 		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
 		sebest:xff:6c115e0ffa35:sebest_xff/vendor/github.com/sebest/xff \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tj:assert:v0.0.3:tj_assert/vendor/github.com/tj/assert \
 		tj:go-redirects:5c02ead0bbc5:tj_go_redirects/vendor/github.com/tj/go-redirects
