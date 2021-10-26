@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2021-10-01 16:06:26 UTC
+--- config/gitlab.yml.example.orig	2021-10-21 22:00:37 UTC
 +++ config/gitlab.yml.example
 @@ -1128,14 +1128,14 @@ production: &base
      # real path not the symlink.
@@ -50,7 +50,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1220,13 +1220,13 @@ production: &base
+@@ -1223,13 +1223,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -66,7 +66,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1453,13 +1453,13 @@ test:
+@@ -1459,13 +1459,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:

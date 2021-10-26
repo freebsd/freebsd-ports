@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.3.2
-PORTREVISION=	3
+PORTVERSION=	14.4.0
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -15,16 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=2.13.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-agent>=14.3.3:net/gitlab-agent \
-	gitlab-pages>=1.44.0:www/gitlab-pages \
+	gitlab-elasticsearch-indexer>=2.16.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-agent>=14.4.0:net/gitlab-agent \
+	gitlab-pages>=1.46.0:www/gitlab-pages \
 	gitlab-shell>=13.21.1:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
-	rubygem-rails61>=6.1.3.2<6.1.4:www/rubygem-rails61 \
+	rubygem-rails61>=6.1.4.1<6.1.4.2:www/rubygem-rails61 \
 	rubygem-bootsnap14>=1.4.6<2.0:devel/rubygem-bootsnap14 \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
@@ -80,7 +80,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-gitlab_omniauth-ldap>=2.1.1<2.2.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap>0.16.3:net/rubygem-net-ldap \
 	rubygem-grape>=1.5.2<1.6:devel/rubygem-grape \
-	rubygem-grape-entity>=0.9.0<0.10.0,1:devel/rubygem-grape-entity \
+	rubygem-grape-entity>=0.10.0<0.11.0,1:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=1.0.6<1.1.0:www/rubygem-rack-cors \
 	rubygem-graphql>=1.11.8<1.12:devel/rubygem-graphql \
 	rubygem-graphiql-rails>=1.4.10<1.5.0:devel/rubygem-graphiql-rails \
@@ -100,7 +100,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-fog-openstack>=1.0<2.0:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1<1.2.0:net/rubygem-fog-rackspace \
 	rubygem-fog-aliyun>=0.3<1.0:net/rubygem-fog-aliyun \
-	rubygem-gitlab-fog-azure-rm>=1.1.1<1.2:net/rubygem-gitlab-fog-azure-rm \
+	rubygem-gitlab-fog-azure-rm>=1.2.0<1.3:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-api-client>=0.33<1:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4<0.2.0:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
@@ -115,7 +115,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-deckar01-task_list=2.3.1:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0<1.8.0:textproc/rubygem-github-markup17 \
-	rubygem-commonmarker>=0.21<1.0:textproc/rubygem-commonmarker \
+	rubygem-commonmarker>=0.23.2<0.24:textproc/rubygem-commonmarker \
 	rubygem-kramdown>=2.3.1<2.4:textproc/rubygem-kramdown \
 	rubygem-redcloth>=4.3.2<4.4.0:www/rubygem-redcloth \
 	rubygem-rdoc>=6.3.2<7:devel/rubygem-rdoc \
@@ -126,7 +126,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-asciidoctor-include-ext>=0.3.1<0.4.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml>=0.0.12<0.1:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-asciidoctor-kroki>=0.5.0<0.6:textproc/rubygem-asciidoctor-kroki \
-	rubygem-rouge>=3.26.0<3.27:textproc/rubygem-rouge \
+	rubygem-rouge>=3.26.1<3.27:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.11.5<1.12:textproc/rubygem-nokogiri \
@@ -140,10 +140,10 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-puma_worker_killer>=0.3.1:www/rubygem-puma_worker_killer \
 	rubygem-state_machines-activerecord>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=7.0<8.0:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq5>=5.2.9<5.3.0:devel/rubygem-sidekiq5 \
+	rubygem-sidekiq>=6.2.2<6.3:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron>=1.0<2.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.8.1<1.9.0:databases/rubygem-redis-namespace \
-	rubygem-gitlab-sidekiq-fetcher>=0.5.6<0.5.7:devel/rubygem-gitlab-sidekiq-fetcher \
+	rubygem-gitlab-sidekiq-fetcher>=0.8.0<0.9:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-fugit12>=1.2.1<1.3.0:devel/rubygem-fugit12 \
 	rubygem-httparty>=0.16.4<0.17.0:www/rubygem-httparty \
 	rubygem-rainbow>=3.0<4.0:devel/rubygem-rainbow \
@@ -153,7 +153,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-version_sorter>=2.2.4<2.3.0:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.7<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
-	rubygem-redis>=4.1.4<5:databases/rubygem-redis \
+	rubygem-redis>=4.4.0<4.5:databases/rubygem-redis \
 	rubygem-connection_pool>=2.0<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack-rails61>=5.2.0<5.3:databases/rubygem-redis-actionpack-rails61 \
 	rubygem-discordrb-webhooks>=3.4<4.0:net-im/rubygem-discordrb-webhooks \
@@ -222,7 +222,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
-	rubygem-gitaly>=14.3.0.pre.rc1<14.4.0:net/rubygem-gitaly \
+	rubygem-gitaly>=14.3.0.pre.rc2<14.4.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2,1<0.0.3,1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
 	rubygem-google-protobuf317>=3.17.1<3.18:devel/rubygem-google-protobuf317 \
@@ -270,7 +270,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	92acfb1b8a9019b3fa3c817d251b2624d55da26d
+GL_COMMIT=	51b27ab58055b65e14e68b19604e4823389adb73
 
 USERS=	git
 GROUPS=	git
@@ -301,13 +301,10 @@ do-install:
 	# get files for workdir with: find . -name "*.example"
 	${MV} ${WRKSRC}/config/puma.rb.example ${WRKSRC}/config/puma.rb.sample
 	${MV} ${WRKSRC}/config/secrets.yml.example ${WRKSRC}/config/secrets.yml.sample
-	${MV} ${WRKSRC}/config/redis.cache.yml.example ${WRKSRC}/config/redis.cache.yml.sample
 	${MV} ${WRKSRC}/config/sidekiq.yml.example ${WRKSRC}/config/sidekiq.yml.sample
 	${MV} ${WRKSRC}/config/cable.yml.example ${WRKSRC}/config/cable.yml.sample
 	${MV} ${WRKSRC}/config/gitlab.yml.example ${WRKSRC}/config/gitlab.yml.sample
-	${MV} ${WRKSRC}/config/redis.queues.yml.example ${WRKSRC}/config/redis.queues.yml.sample
 	${MV} ${WRKSRC}/config/initializers/devise_password_length.rb.example ${WRKSRC}/config/initializers/devise_password_length.rb.sample
-	${MV} ${WRKSRC}/config/redis.shared_state.yml.example ${WRKSRC}/config/redis.shared_state.yml.sample
 	${MV} ${WRKSRC}/config/resque.yml.example ${WRKSRC}/config/resque.yml.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab ${WRKSRC}/lib/support/nginx/gitlab.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab-ssl ${WRKSRC}/lib/support/nginx/gitlab-ssl.sample
