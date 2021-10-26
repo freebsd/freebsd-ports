@@ -4,7 +4,7 @@
    state->pc = reinterpret_cast<void*>(mcontext.__gregs[_REG_PC]);
    state->sp = reinterpret_cast<void*>(mcontext.__gregs[_REG_SP]);
    state->fp = reinterpret_cast<void*>(mcontext.__gregs[_REG_FP]);
-+#elif V8_TARGET_ARCH_PPC_BE
++#elif V8_TARGET_ARCH_PPC64
 +  state->pc = reinterpret_cast<void*>(mcontext.mc_srr0);
 +  state->sp = reinterpret_cast<void*>(mcontext.mc_frame[1]);
 +  state->fp = reinterpret_cast<void*>(mcontext.mc_frame[31]);
