@@ -306,7 +306,7 @@ MESON_ARGS+=	-Db_asneeded=false
 .endif
 
 .if ${ARCH:Marmv?}
-BUILD_DEPENDS+=	as:devel/binutils@native
+BUILD_DEPENDS+=	as:devel/binutils
 CFLAGS+=	-no-integrated-as
 .endif
 
