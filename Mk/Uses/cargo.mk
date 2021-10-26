@@ -347,14 +347,18 @@ do-test:
 
 # cargo-crates will output the crates list from Cargo.lock.  If there
 # is no Cargo.lock for some reason, try and generate it first.
-cargo-crates: extract
+cargo-crates: cargo-crates-generate-lockfile
+	@${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
+
+# cargo-crates-generate-lockfile will try to generate a Cargo.lock file
+# if it does not exist.
+cargo-crates-generate-lockfile: extract
 	@if [ ! -r "${CARGO_CARGOLOCK}" ]; then \
 		${ECHO_MSG} "===> ${CARGO_CARGOLOCK} not found.  Trying to generate it..."; \
 		cd ${WRKSRC}; ${_CARGO_RUN} generate-lockfile \
 			--manifest-path ${CARGO_CARGOTOML} \
 			--verbose; \
 	fi
-	@${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
 
 # cargo-crates-licenses will try to grab license information from
 # all downloaded crates.
@@ -365,4 +369,17 @@ cargo-crates-licenses: configure
 		-e 's@^${CARGO_VENDOR_DIR}/@@' \
 		-e 's@/Cargo.toml:license.*= *"@|@' \
 		-e 's@"$$@@g' | sort | /usr/bin/column -t -s '|'
+
+# cargo-crates-merge will in-place update CARGO_CRATES in the port
+# based on the crates list from Cargo.lock.  If there is no Cargo.lock
+# for some reason, try and generate it first.
+cargo-crates-merge: cargo-crates-generate-lockfile
+	@if ! type portedit > /dev/null 2>&1; then \
+		${ECHO_MSG} "===> Please install \"ports-mgmt/portfmt\""; exit 1; \
+	fi
+	@f="${MASTERDIR}/Makefile"; [ -r "${MASTERDIR}/Makefile.crates" ] && f="${MASTERDIR}/Makefile.crates"; \
+		${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK} | \
+			portedit merge -i $$f; \
+		${ECHO_MSG} "CARGO_CRATES in $$f was updated"
+
 .endif
