@@ -1,6 +1,5 @@
 PORTNAME=	setuptools_scm
-PORTVERSION=	4.1.2
-PORTREVISION=	3
+PORTVERSION=	5.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +27,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=		TOML
 OPTIONS_DEFAULT=	TOML
 
-TOML_DESC=		Support for parsing pyproject.toml files [PEP 517/518]
+TOML_DESC=		Support PEP 517/518 (Keep this enabled to avoid build errors)
 TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR}
 
 do-test:
