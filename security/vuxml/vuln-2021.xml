@@ -1,3 +1,47 @@
+  <vuln vid="757ee63b-269a-11ec-a616-6c3be5272acd">
+    <topic>Grafana -- Snapshot authentication bypass</topic>
+    <affects>
+      <package>
+	<name>grafana8</name>
+	<name>grafana7</name>
+	<name>grafana6</name>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.1.6</lt></range>
+	<range><ge>2.0.1</ge><lt>7.5.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/">
+	  <p>Unauthenticated and authenticated users are able to view the snapshot with the lowest database key by accessing the literal paths:</p>
+	  <ul>
+	    <li><code>/dashboard/snapshot/:key</code>, or</li>
+	    <li><code>/api/snapshots/:key</code></li>
+	  </ul>
+	  <p>If the snapshot "public_mode" configuration setting is set to true (vs default of false), unauthenticated users are able to delete the snapshot with the lowest database key by accessing the literal path:</p>
+	  <ul>
+	    <li><code>/api/snapshots-delete/:deleteKey</code></li>
+	  </ul>
+	  <p>Regardless of the snapshot "public_mode" setting, authenticated users are able to delete the snapshot with the lowest database key by accessing the literal paths:</p>
+	  <ul>
+	    <li><code>/api/snapshots/:key</code>, or</li>
+	    <li><code>/api/snapshots-delete/:deleteKey</code></li>
+	  </ul>
+	  <p>The combination of deletion and viewing enables a complete walk through all snapshot data while resulting in complete snapshot data loss.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39226</cvename>
+      <url>https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/</url>
+    </references>
+    <dates>
+      <discovery>2021-09-15</discovery>
+      <entry>2021-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4b15f7d-d33a-4cd0-a97b-709d6af0e43e">
     <topic>minio -- policy restriction issue</topic>
     <affects>
