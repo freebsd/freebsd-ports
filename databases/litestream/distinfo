@@ -1,6 +1,6 @@
-TIMESTAMP = 1623776373
-SHA256 (benbjohnson-litestream-v0.3.5_GH0.tar.gz) = 53b4c100acd6e5c69457ea251dd3276c6786aa2d1a7e18a2f9518557f66fd209
-SIZE (benbjohnson-litestream-v0.3.5_GH0.tar.gz) = 101545
+TIMESTAMP = 1635268558
+SHA256 (benbjohnson-litestream-v0.3.6_GH0.tar.gz) = 42323c31af2f70891854709dcd56ce7c970ebdb42d563da1bc81d8abc47f434a
+SIZE (benbjohnson-litestream-v0.3.6_GH0.tar.gz) = 101523
 SHA256 (Azure-azure-pipeline-go-v0.2.3_GH0.tar.gz) = 99bd58f4a07dd02d9615e3638b3bb6dbfad80ef678ccdb8e17e3fa2b0fef343e
 SIZE (Azure-azure-pipeline-go-v0.2.3_GH0.tar.gz) = 17102
 SHA256 (Azure-azure-storage-blob-go-v0.13.0_GH0.tar.gz) = 6bf7145210331efa3f0417f6684cf764c22743cf23122048ec136600daebf443
