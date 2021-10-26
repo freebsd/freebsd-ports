@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.3.2
-PORTREVISION=	1
+DISTVERSION=	14.4.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -15,7 +15,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-rugged>=1.1<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport61>=6.1.3.2<6.1.4:devel/rubygem-activesupport61 \
+		rubygem-activesupport61>=6.1.4.1<6.1.4.2:devel/rubygem-activesupport61 \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
@@ -23,7 +23,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.21<0.22:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.21.1<0.22:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 		rubygem-google-protobuf317>=3.17.3<3.18:devel/rubygem-google-protobuf317
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -45,12 +45,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	52407ecfce7fc39b4f5f6db15cc6cb4e9a8c1f60
+GL_COMMIT=	7abdbce59731637552b86002fcbe8754b3d98623
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 137dd
+# 138dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -227,3 +227,4 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
+
