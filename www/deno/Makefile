@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.1
-PORTREVISION=	1
+DISTVERSION=	1.15.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -106,10 +105,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-url-0.1.0 \
 		deno-libffi-0.0.7 \
 		deno-libffi-sys-0.0.7 \
-		deno_ast-0.3.0 \
-		deno_doc-0.16.0 \
-		deno_graph-0.7.0 \
-		deno_lint-0.17.0 \
+		deno_ast-0.4.1 \
+		deno_doc-0.17.1 \
+		deno_graph-0.8.2 \
+		deno_lint-0.18.1 \
 		der-0.4.4 \
 		derive_more-0.99.16 \
 		diff-0.1.12 \
@@ -120,8 +119,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dprint-core-0.46.4 \
 		dprint-plugin-json-0.13.0 \
 		dprint-plugin-markdown-0.10.0 \
-		dprint-plugin-typescript-0.57.2 \
-		dprint-swc-ecma-ast-view-0.39.0 \
+		dprint-plugin-typescript-0.58.1 \
+		dprint-swc-ecma-ast-view-0.42.0 \
 		ecdsa-0.12.4 \
 		either-1.6.1 \
 		elliptic-curve-0.10.6 \
@@ -337,7 +336,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.68 \
 		serde_repr-0.1.7 \
 		serde_urlencoded-0.7.0 \
-		serde_v8-0.15.0 \
 		sha-1-0.9.8 \
 		sha2-0.9.8 \
 		shell-escape-0.1.5 \
@@ -356,32 +354,32 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		str-buf-1.0.5 \
-		string_cache-0.8.1 \
+		string_cache-0.8.2 \
 		string_cache_codegen-0.5.1 \
 		string_enum-0.3.1 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		subtle-2.4.1 \
-		swc_atoms-0.2.7 \
-		swc_bundler-0.68.1 \
-		swc_common-0.13.4 \
-		swc_ecma_ast-0.54.3 \
-		swc_ecma_codegen-0.74.4 \
+		swc_atoms-0.2.9 \
+		swc_bundler-0.75.0 \
+		swc_common-0.14.1 \
+		swc_ecma_ast-0.55.0 \
+		swc_ecma_codegen-0.77.0 \
 		swc_ecma_codegen_macros-0.6.0 \
-		swc_ecma_dep_graph-0.42.0 \
-		swc_ecma_loader-0.21.0 \
-		swc_ecma_parser-0.73.11 \
-		swc_ecma_transforms-0.81.0 \
-		swc_ecma_transforms_base-0.37.1 \
-		swc_ecma_transforms_classes-0.23.0 \
-		swc_ecma_transforms_macros-0.2.1 \
-		swc_ecma_transforms_optimization-0.51.0 \
-		swc_ecma_transforms_proposal-0.46.0 \
-		swc_ecma_transforms_react-0.48.1 \
-		swc_ecma_transforms_typescript-0.48.0 \
-		swc_ecma_utils-0.47.1 \
-		swc_ecma_visit-0.40.0 \
-		swc_ecmascript-0.73.0 \
+		swc_ecma_dep_graph-0.44.0 \
+		swc_ecma_loader-0.22.0 \
+		swc_ecma_parser-0.75.2 \
+		swc_ecma_transforms-0.88.0 \
+		swc_ecma_transforms_base-0.40.0 \
+		swc_ecma_transforms_classes-0.26.0 \
+		swc_ecma_transforms_macros-0.2.3 \
+		swc_ecma_transforms_optimization-0.58.1 \
+		swc_ecma_transforms_proposal-0.51.0 \
+		swc_ecma_transforms_react-0.53.0 \
+		swc_ecma_transforms_typescript-0.54.0 \
+		swc_ecma_utils-0.48.0 \
+		swc_ecma_visit-0.41.0 \
+		swc_ecmascript-0.80.0 \
 		swc_eq_ignore_macros-0.1.0 \
 		swc_macros_common-0.3.3 \
 		swc_visit-0.2.6 \
@@ -418,6 +416,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		try-lock-0.2.3 \
 		tungstenite-0.13.0 \
 		twoway-0.2.2 \
+		typed-arena-2.0.1 \
 		typenum-1.14.0 \
 		ucd-trie-0.1.3 \
 		unchecked-index-0.2.2 \
