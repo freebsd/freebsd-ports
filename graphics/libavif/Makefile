@@ -42,7 +42,6 @@ GAV1_CMAKE_BOOL=	AVIF_CODEC_LIBGAV1
 LIBYUV_DESC=		Colorspace conversion via libyuv
 LIBYUV_BUILD_DEPENDS=	libyuv>=0.0.1774:graphics/libyuv
 LIBYUV_LIB_DEPENDS=	libyuv.so:graphics/libyuv
-LIBYUV_BROKEN=		requires https://chromium.googlesource.com/libyuv/libyuv.git/+/fc61dde1eb4b%5E%21/
 
 PIXBUF_USES=		gnome
 PIXBUF_USE=		GNOME=gdkpixbuf2
