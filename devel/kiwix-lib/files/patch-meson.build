@@ -5,7 +5,7 @@
  
  # See https://github.com/kiwix/kiwix-lib/issues/371
 -if ['arm', 'mips', 'm68k', 'ppc', 'sh4'].contains(target_machine.cpu_family())
-+if ['arm', 'mips', 'm68k', 'sh4'].contains(target_machine.cpu_family())
++if ['mips', 'm68k', 'sh4'].contains(target_machine.cpu_family())
    extra_libs += '-latomic'
  endif
  
