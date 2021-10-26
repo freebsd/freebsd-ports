@@ -11,13 +11,9 @@ COMMENT=	Game Boy Advance emulator with GTK frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/gpl.txt
 
-BROKEN_aarch64=		fails to build: regparm is not valid on this platform
-BROKEN_armv6=		fails to build: regparm is not valid on this platform
-BROKEN_armv7=		fails to build: regparm is not valid on this platform
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake:insource,noninja compiler:c++11-lang dos2unix gl gnome \
+USES=		cmake:insource,noninja dos2unix gl gnome \
 		pkgconfig sdl xorg
 DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
 USE_XORG=	x11 xext
@@ -77,6 +73,14 @@ LINK_LIB_DEPENDS=	libsfml-system.so:devel/sfml
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_RUN_DEPENDS=	lircd:comms/lirc
 LIRC_CMAKE_BOOL=	ENABLE_LIRC
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|; \
