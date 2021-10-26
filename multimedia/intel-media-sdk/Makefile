@@ -1,6 +1,6 @@
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
-DISTVERSION=	21.4.0
+DISTVERSION=	21.4.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
