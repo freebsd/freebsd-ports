@@ -970,6 +970,7 @@
     SUBDIR += rubygem-puppetdb_cli
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
+    SUBDIR += rubygem-redis44
     SUBDIR += rubygem-redis-actionpack
     SUBDIR += rubygem-redis-actionpack-rails5
     SUBDIR += rubygem-redis-actionpack-rails50

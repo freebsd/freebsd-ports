@@ -153,7 +153,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-version_sorter>=2.2.4<2.3.0:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.7<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
-	rubygem-redis>=4.4.0<4.5:databases/rubygem-redis \
+	rubygem-redis44>=4.4.0<4.5:databases/rubygem-redis44 \
 	rubygem-connection_pool>=2.0<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack-rails61>=5.2.0<5.3:databases/rubygem-redis-actionpack-rails61 \
 	rubygem-discordrb-webhooks>=3.4<4.0:net-im/rubygem-discordrb-webhooks \
