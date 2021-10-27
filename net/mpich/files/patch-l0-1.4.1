@@ -1,0 +1,50 @@
+https://github.com/pmodels/mpich/pull/5623
+
+src/gpu/mpl_gpu_ze.c:163:71: error: use of undeclared identifier 'ZE_IPC_MEMORY_FLAG_TBD'
+        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, ZE_IPC_MEMORY_FLAG_TBD, ptr);
+                                                                      ^
+
+--- src/mpi/romio/mpl/src/gpu/mpl_gpu_ze.c.orig	2021-05-25 17:37:05 UTC
++++ src/mpi/romio/mpl/src/gpu/mpl_gpu_ze.c
+@@ -160,7 +160,7 @@ int MPL_gpu_ipc_handle_map(MPL_gpu_ipc_mem_handle_t ip
+     int mpl_err = MPL_SUCCESS;
+     ze_result_t ret;
+     ret =
+-        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, ZE_IPC_MEMORY_FLAG_TBD, ptr);
++        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, 0, ptr);
+     if (ret != ZE_RESULT_SUCCESS) {
+         mpl_err = MPL_ERR_GPU_INTERNAL;
+         goto fn_fail;
+--- src/mpl/src/gpu/mpl_gpu_ze.c.orig	2021-05-25 17:37:05 UTC
++++ src/mpl/src/gpu/mpl_gpu_ze.c
+@@ -160,7 +160,7 @@ int MPL_gpu_ipc_handle_map(MPL_gpu_ipc_mem_handle_t ip
+     int mpl_err = MPL_SUCCESS;
+     ze_result_t ret;
+     ret =
+-        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, ZE_IPC_MEMORY_FLAG_TBD, ptr);
++        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, 0, ptr);
+     if (ret != ZE_RESULT_SUCCESS) {
+         mpl_err = MPL_ERR_GPU_INTERNAL;
+         goto fn_fail;
+--- src/pm/hydra2/mpl/src/gpu/mpl_gpu_ze.c.orig	2021-05-25 17:37:05 UTC
++++ src/pm/hydra2/mpl/src/gpu/mpl_gpu_ze.c
+@@ -160,7 +160,7 @@ int MPL_gpu_ipc_handle_map(MPL_gpu_ipc_mem_handle_t ip
+     int mpl_err = MPL_SUCCESS;
+     ze_result_t ret;
+     ret =
+-        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, ZE_IPC_MEMORY_FLAG_TBD, ptr);
++        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, 0, ptr);
+     if (ret != ZE_RESULT_SUCCESS) {
+         mpl_err = MPL_ERR_GPU_INTERNAL;
+         goto fn_fail;
+--- src/pm/hydra/mpl/src/gpu/mpl_gpu_ze.c.orig	2021-05-25 17:37:05 UTC
++++ src/pm/hydra/mpl/src/gpu/mpl_gpu_ze.c
+@@ -160,7 +160,7 @@ int MPL_gpu_ipc_handle_map(MPL_gpu_ipc_mem_handle_t ip
+     int mpl_err = MPL_SUCCESS;
+     ze_result_t ret;
+     ret =
+-        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, ZE_IPC_MEMORY_FLAG_TBD, ptr);
++        zeMemOpenIpcHandle(global_ze_context, dev_handle, ipc_handle, 0, ptr);
+     if (ret != ZE_RESULT_SUCCESS) {
+         mpl_err = MPL_ERR_GPU_INTERNAL;
+         goto fn_fail;
