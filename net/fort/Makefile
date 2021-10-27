@@ -1,5 +1,6 @@
 PORTNAME=	fort
 DISTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	toni@devboks.com
@@ -12,8 +13,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl libjansson.so:devel/jansson \
 		libxml2.so:textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync
 
-USES=		autoreconf pkgconfig ssl
-USE_GCC=	yes
+USES=		autoreconf compiler:c11 pkgconfig ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	fort
 
@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|%%DISTVERSION%%|${DISTVERSION}|" \
+		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e "s|/tmp/fort|${ETCDIR}|" \
 		${WRKSRC}/examples/config.json
 	@${REINPLACE_CMD} -e "s|/usr/local/ssl|/etc/ssl|" \
