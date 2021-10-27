@@ -1,3 +1,3 @@
-TIMESTAMP = 1625706079
-SHA256 (xorg/lib-libxcvt-93c1eef3e325f292aa5b3bb137bea778e449bf1e_GL0.tar.gz) = 88be864a4f4d19abc6c21b8d41ae0b252219cd9fe55c45b458c567ecb3b6422c
-SIZE (xorg/lib-libxcvt-93c1eef3e325f292aa5b3bb137bea778e449bf1e_GL0.tar.gz) = 8442
+TIMESTAMP = 1635324496
+SHA256 (xorg/lib-libxcvt-6fe840b9295cfdc41bd734586c5b8756f6af6f9b_GL0.tar.gz) = c566825fa5d76eaa53c7dc2a27e2f0a72235cb919eab1f86d5b56219f2e5fdf3
+SIZE (xorg/lib-libxcvt-6fe840b9295cfdc41bd734586c5b8756f6af6f9b_GL0.tar.gz) = 10229
