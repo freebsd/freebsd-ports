@@ -162,7 +162,6 @@
     SUBDIR += vmips
     SUBDIR += vmsbackup
     SUBDIR += vmw
-    SUBDIR += vpcs
     SUBDIR += vxtools
     SUBDIR += wine
     SUBDIR += wine-devel

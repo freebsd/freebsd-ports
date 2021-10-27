@@ -283,7 +283,6 @@
     SUBDIR += ipsvd
     SUBDIR += ipxe
     SUBDIR += irrd
-    SUBDIR += irrd-legacy
     SUBDIR += isboot-kmod
     SUBDIR += isc-dhcp44-client
     SUBDIR += isc-dhcp44-relay

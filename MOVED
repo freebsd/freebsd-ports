@@ -16581,3 +16581,6 @@ textproc/rubygem-compass||2021-10-25|Compass is no longer supported since August
 textproc/rubygem-compass-core||2021-10-25|Compass is no longer supported since August 4, 2016
 textproc/rubygem-compass-import-once||2021-10-25|Compass is no longer supported since August 4, 2016
 textproc/rubygem-compass-blueprint||2021-10-25|Depend on unsupported textproc/rubygem-compass
+emulators/vpcs||2021-10-27|Has expired: Upstream unmaintained
+devel/google-gdata||2021-10-27|Has expired: Google is no longer using GoogleData APIs
+net/irrd-legacy|net/irrd|2021-10-27|Has expired: Use net/irrd

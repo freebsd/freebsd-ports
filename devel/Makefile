@@ -899,7 +899,6 @@
     SUBDIR += golint
     SUBDIR += google-cloud-cpp
     SUBDIR += google-cloud-cpp117
-    SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
     SUBDIR += googletest
