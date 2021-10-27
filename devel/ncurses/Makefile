@@ -1,10 +1,10 @@
 # Created by: Andrey Zakhvatov
 
 PORTNAME=	ncurses
-DISTVERSION=	6.2-${SNAPSHOT}
+DISTVERSION=	6.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/ \
-		https://invisible-mirror.net/archives/ncurses/current/
+MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
+		https://invisible-mirror.net/archives/ncurses/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
-USES=		cpe pkgconfig shebangfix tar:tgz
+USES=		cpe pkgconfig shebangfix
 
-SNAPSHOT=		20210626
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share \
 			--with-terminfo-dirs="${PREFIX}/share/terminfo:${LOCALBASE}/share/site-terminfo" \
@@ -55,7 +54,7 @@ CPE_VENDOR=	gnu
 SHEBANG_FILES=	test/tracemunch
 
 PLIST_SUB+=	ABI_VER=6 \
-		REL_VER=${DISTVERSION:S/-${SNAPSHOT}//}
+		REL_VER=${DISTVERSION}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -96,7 +95,7 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncurses.so.${PORTVERSION:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.${DISTVERSION:S/-${SNAPSHOT}//}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.${DISTVERSION}
 
 	# backwards compatibility, remove 2021-07-02
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libncurses.so ${STAGEDIR}${PREFIX}/lib/libncursesw.so
