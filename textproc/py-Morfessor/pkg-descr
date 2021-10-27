@@ -1,0 +1,9 @@
+The goal of the Morpho project is to develop unsupervised data-driven methods
+that discover the regularities behind word forming in natural languages. In
+particular, we are focussing on the discovery of morphemes, which are the
+primitive units of syntax, the smallest individually meaningful elements in the
+utterances of a language. Morphemes are important in automatic generation and
+recognition of a language, especially in languages in which words may have many
+different inflected forms.
+
+WWW: http://morpho.aalto.fi/projects/morpho/

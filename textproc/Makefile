@@ -1241,6 +1241,7 @@
     SUBDIR += pup
     SUBDIR += py-Chameleon
     SUBDIR += py-CommonMark
+    SUBDIR += py-Morfessor
     SUBDIR += py-QDarkStyle
     SUBDIR += py-Tempita
     SUBDIR += py-acora
