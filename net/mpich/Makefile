@@ -55,8 +55,7 @@ DHYDRA_DESC=	Make hydra the default process manager
 
 L0_DESC=		oneAPI Level Zero support
 L0_LIB_DEPENDS=		libze_loader.so:devel/level-zero
-L0_CONFIGURE_ENV_OFF=	ac_cv_header_level_zero_ze_api_h=no \
-			ac_cv_lib_ze_loader_zeInit=no
+L0_CONFIGURE_OFF=	--without-ze
 
 CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
 		--with-libfabric=${LOCALBASE} \
