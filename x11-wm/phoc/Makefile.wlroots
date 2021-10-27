@@ -9,5 +9,6 @@ LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
 RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
 USE_GL+=	gbm egl
 USE_XORG+=	x11
-GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:b2fd6d8dd88d67ee48be67f5be4ee614a5826b13:wlroots/subprojects/wlroots
+GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:5413b1ec61c6e3390929db595c0ec92f92ea2594:wlroots/subprojects/wlroots
+MESON_ARGS+=	-Dwlroots:default_library=static
 PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
