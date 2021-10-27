@@ -1,7 +1,7 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1-76
-DISTVERSIONSUFFIX=	-gb4194014
+DISTVERSION=	3.3.0-26
+DISTVERSIONSUFFIX=	-gaba0a596
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -11,12 +11,12 @@ COMMENT=	Interface to Git for Emacs (Development Version)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.18.1:devel/dash.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient@${EMACS_FLAVOR} \
-		with-editor${EMACS_PKGNAMESUFFIX}>=3.0.4:editors/with-editor@${EMACS_FLAVOR}
-RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.18.1:devel/dash.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient@${EMACS_FLAVOR} \
-		with-editor${EMACS_PKGNAMESUFFIX}>=3.0.4:editors/with-editor@${EMACS_FLAVOR}
+BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.3.7:devel/transient@${EMACS_FLAVOR} \
+		with-editor${EMACS_PKGNAMESUFFIX}>=3.0.5:editors/with-editor@${EMACS_FLAVOR}
+RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.3.7:devel/transient@${EMACS_FLAVOR} \
+		with-editor${EMACS_PKGNAMESUFFIX}>=3.0.5:editors/with-editor@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
