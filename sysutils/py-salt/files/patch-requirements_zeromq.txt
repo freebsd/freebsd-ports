@@ -1,0 +1,10 @@
+--- requirements/zeromq.txt.old	2021-10-27 08:27:29.631303000 +0200
++++ requirements/zeromq.txt	2021-10-27 08:27:56.967052000 +0200
+@@ -2,5 +2,5 @@
+ -r crypto.txt
+ 
+ pyzmq<=20.0.0 ; python_version < "3.6"
+-pyzmq>=17.0.0,<22.0.0 ; python_version < "3.9"
+-pyzmq>19.0.2,<22.0.0 ; python_version >= "3.9"
++pyzmq>=17.0.0 ; python_version < "3.9"
++pyzmq>19.0.2 ; python_version >= "3.9"
