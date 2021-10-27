@@ -9,7 +9,8 @@ COMMENT=	Modern command-line interface to Git
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	chriswalz
 GH_TUPLE=	\

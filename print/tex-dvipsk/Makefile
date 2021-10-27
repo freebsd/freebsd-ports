@@ -44,7 +44,7 @@ EXCLUDE_FILES= \
 	texmf-dist/dvips/xdvi
 WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-paper \
+CONFIGURE_ARGS=	--with-paper \
 		--with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib \

@@ -1,5 +1,5 @@
 PORTNAME=	libxsmm
-DISTVERSION=	1.16.1
+DISTVERSION=	1.16.3
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,8 @@ ONLY_FOR_ARCHS_REASON=	relies on hard-coded x86 code, and is only supported on 6
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		fortran gmake localbase:ldflags python:build shebangfix
+USES=		cpe fortran gmake localbase:ldflags python:build shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	hfp
@@ -21,6 +22,8 @@ USE_LDCONFIG=	yes
 
 MAKE_ARGS=	STATIC=0 DEPSTATIC=0 MAKE_PARALLEL=1
 LDFLAGS+=	-lm
+
+TEST_TARGET=	tests
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 

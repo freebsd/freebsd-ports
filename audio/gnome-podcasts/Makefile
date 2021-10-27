@@ -1,6 +1,6 @@
 PORTNAME=	podcasts
 DISTVERSION=	0.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
@@ -18,18 +18,15 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
-USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk30
 USE_GSTREAMER1=	bad good libav
-GH_TUPLE=	danigm:gettext-rs:61938b9f5f1d3bdc31f9839f53fabe5ccf136a78:gettextrs
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_COMMIT=	e93a7ddabfe8289138280c3f613038b809b5033d
 SHEBANG_FILES=	scripts/cargo.sh scripts/compile-gschema.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	org.gnome.Podcasts.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.13 \
 		ammonia-3.1.0 \
@@ -90,7 +87,6 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		futures-task-0.3.5 \
 		futures-util-0.3.5 \
 		gdk-0.13.1 \
-		gettext-sys-0.19.9 \
 		gdk-pixbuf-0.9.0 \
 		gdk-pixbuf-sys-0.10.0 \
 		gdk-sys-0.10.0 \
@@ -291,8 +287,8 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		ws2_32-sys-0.2.1 \
 		xdg-2.2.0 \
 		xml-rs-0.8.3 \
-		xml5ever-0.16.1
-CARGO_USE_GITHUB=	yes
+		xml5ever-0.16.1 \
+		gettext-rs,gettext-sys@git+https://github.com/danigm/gettext-rs?branch=no-gettext\#61938b9f5f1d3bdc31f9839f53fabe5ccf136a78
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no

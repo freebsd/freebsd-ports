@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 OPTIONS_DEFINE=	IDN
 OPTIONS_DEFAULT=IDN
 
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

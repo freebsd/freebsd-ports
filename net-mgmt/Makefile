@@ -277,6 +277,7 @@
     SUBDIR += pandorafms_server
     SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
+    SUBDIR += php-fpm_exporter
     SUBDIR += php73-snmp
     SUBDIR += php74-snmp
     SUBDIR += php80-snmp
@@ -292,6 +293,7 @@
     SUBDIR += prometheus-collectd-exporter
     SUBDIR += prometheus1
     SUBDIR += prometheus2
+    SUBDIR += promscale
     SUBDIR += pushgateway
     SUBDIR += py-adal
     SUBDIR += py-aggregate6
@@ -307,6 +309,7 @@
     SUBDIR += py-napalm
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
+    SUBDIR += py-netbox-plugin-extensions
     SUBDIR += py-nxapi-plumbing
     SUBDIR += py-opn-cli
     SUBDIR += py-pdagent
@@ -315,6 +318,7 @@
     SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang
     SUBDIR += py-pyeapi
+    SUBDIR += py-pynetbox
     SUBDIR += py-pynxos
     SUBDIR += py-pysmi
     SUBDIR += py-pysnmp
@@ -376,7 +380,6 @@
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi-poller
-    SUBDIR += unifi5
     SUBDIR += unifi6
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer

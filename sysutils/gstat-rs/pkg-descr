@@ -1,0 +1,21 @@
+Replacement for gstat(8)
+
+This is a gstat replacement, written in Rust.  It is more featureful than the
+original, and works much better on systems with large numbers of disks.  The
+key differences are:
+
+* gstat-rs supports sorting the disks using the '+', '-', and 'r' keys, and the
+  "--sort" and "-r" command line options.
+* gstat-rs can enable/disable columns at any time using the insert and
+  delete keys.  gstat can only do that at startup, and only for certain
+  infrequently used columns.
+* If the screen has enough space, gstat-rs will display multiple disks side by
+  side.
+* gstat-rs can pause the display without exiting the program.
+* gstat-rs's settings are automatically persisted to a config file.
+* gstat-rs does not support batch mode (`-bBC`) output.  If you want that kind
+  of information, use iostat(8) instead.
+* gstat-rs does not display GEOM consumers (`-c`), but it can easily be
+  added if there's any demand for that feature.
+
+WWW: https://github.com/asomers/gstat-rs

@@ -16,7 +16,6 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
 
 USES=		cmake gettext gnome tar:xz
-INSTALLS_ICONS=	yes
 STRIP=
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
-COMMENT=	A Simple S3 Class for Representing Vectors of Binary Data ('BLOBS')
+COMMENT=	Simple S3 Class for Representing Vectors of Binary Data ('BLOBS')
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

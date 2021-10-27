@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	2.13.0
+PORTVERSION=	2.16.0
 PORTREVISION=	0
 CATEGORIES=	textproc
 
@@ -21,17 +21,19 @@ USES=		gmake go:modules pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer/-/tags
-GL_COMMIT=	31d8f69fc3155cfb266d2d8828722bf25dc8f22e
+GL_COMMIT=	16bf7ce3b308ef505f6624cae32a9ae6b6db93ea
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 30dd
+# 32dd
 GH_TUPLE=	\
 		aws:aws-sdk-go:v1.27.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		deoxxa:aws_signing_client:c20ee106809e:deoxxa_aws_signing_client/vendor/github.com/deoxxa/aws_signing_client \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
+		go-enry:go-enry:v2.7.1:go_enry_go_enry_v2/vendor/github.com/go-enry/go-enry/v2 \
+		go-enry:go-oniguruma:v1.2.1:go_enry_go_oniguruma/vendor/github.com/go-enry/go-oniguruma \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
 		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \

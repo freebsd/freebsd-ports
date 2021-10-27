@@ -2,7 +2,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	2.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -25,14 +25,12 @@ USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
 		pkgconfig python:3.4+,build sqlite tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 MESON_ARGS=	-Ddocs=false \
 		-Dman=true \
 		-Dnetwork_manager=disabled \
 		-Dstemmer=disabled \
-		-Dbash_completion=true \
-		-Dbash_completion_dir=${PREFIX}/etc/bash_completion.d \
-		-Dsystemd_user_services=false
+		-Dbash_completion=${PREFIX}/etc/bash_completion.d \
+		-Dsystemd_user_services=no
 GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.FTS.gschema.xml \
 		org.freedesktop.Tracker.Store.gschema.xml \

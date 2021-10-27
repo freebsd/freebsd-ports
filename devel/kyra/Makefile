@@ -15,10 +15,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-BROKEN_aarch64=		invalid output constraint =A in assembler
-BROKEN_armv6=		invalid output constraint =A in assembler
-BROKEN_armv7=		invalid output constraint =A in assembler
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		compiler gl gmake jpeg sdl zip

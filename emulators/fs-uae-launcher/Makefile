@@ -21,7 +21,6 @@ USES=		gettext gmake gnome pathfix pyqt:5 python:3.4+
 USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	core sip gui widgets opengl
 
-INSTALLS_ICONS=	yes
 MAKE_ARGS+=	DESTDIR=${STAGEDIR} prefix=${PREFIX} PYTHON=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib=${PYTHON_SITELIBDIR}

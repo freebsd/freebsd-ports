@@ -14,6 +14,8 @@ COMMENT=	Open Source DNS benchmark utility
 
 LICENSE=	APACHE20
 
+BROKEN=	incompatible with Python 3
+
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:devel/py-Jinja2@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:graphics/py-graphy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR} \

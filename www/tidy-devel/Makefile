@@ -15,7 +15,8 @@ COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	htacg
 
 SLAVEDIRS=	www/tidy-lib
 WRKSRC=		${WRKDIR}/${PORTNAME}

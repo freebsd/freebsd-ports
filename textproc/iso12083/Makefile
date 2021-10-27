@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/kuriyama/iso12083
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML DTDs from the The Electronic Publishing Special Interest Group
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr

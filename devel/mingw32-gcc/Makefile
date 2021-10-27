@@ -30,7 +30,8 @@ SSP_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USE_LDCONFIG=	yes
-USES=		bison iconv gmake libtool makeinfo perl5 tar:bzip2
+USES=		bison cpe iconv gmake libtool makeinfo perl5 tar:bzip2
+CPE_VENDOR=	gnu
 USE_PERL5=	build
 
 GCC_TARG=	${PKGNAMEPREFIX:S/-$//}

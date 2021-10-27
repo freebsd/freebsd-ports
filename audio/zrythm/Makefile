@@ -1,6 +1,6 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-alpha.25.0.1
+DISTVERSION=	1.0.0-alpha.25.1.22
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,11 +56,15 @@ SHEBANG_FILES=	scripts/collect_translatables.sh
 
 GLIB_SCHEMAS=	org.zrythm.Zrythm.gschema.xml
 
-INSTALLS_ICONS=	yes
-
 LDFLAGS+=	${LOCALBASE}/lib/libfftw3_threads.so ${LOCALBASE}/lib/libfftw3f_threads.so # these libs are required but aren't returned by pkg-config for fftw3
 
 BINARY_ALIAS=	git=false python3=${PYTHON_CMD}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+MESON_ARGS=	-Db_lto=false
+.endif
 
 post-patch: # https://git.zrythm.org/zrythm/zrythm/issues/299
 	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/ext/midilib/src/*.c

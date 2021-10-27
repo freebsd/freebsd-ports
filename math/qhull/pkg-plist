@@ -53,7 +53,6 @@ include/libqhullcpp/RoadTest.h
 include/libqhullcpp/functionObjects.h
 lib/cmake/Qhull/QhullConfig.cmake
 lib/cmake/Qhull/QhullConfigVersion.cmake
-lib/cmake/Qhull/QhullTargets-release.cmake
 lib/cmake/Qhull/QhullTargets.cmake
 lib/libqhull.so
 lib/libqhull.so.7

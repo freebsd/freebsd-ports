@@ -24,6 +24,7 @@ include/hwloc/export.h
 include/hwloc/gl.h
 include/hwloc/helper.h
 include/hwloc/inlines.h
+include/hwloc/levelzero.h
 include/hwloc/memattrs.h
 include/hwloc/nvml.h
 include/hwloc/opencl.h
@@ -35,7 +36,7 @@ include/hwloc/shmem.h
 lib/libhwloc.a
 lib/libhwloc.so
 lib/libhwloc.so.15
-lib/libhwloc.so.15.4.1
+lib/libhwloc.so.15.5.0
 libdata/pkgconfig/hwloc.pc
 man/man1/hwloc-annotate.1.gz
 man/man1/hwloc-bind.1.gz
@@ -64,6 +65,10 @@ man/man3/HWLOC_DISTANCES_KIND_FROM_OS.3.gz
 man/man3/HWLOC_DISTANCES_KIND_FROM_USER.3.gz
 man/man3/HWLOC_DISTANCES_KIND_MEANS_BANDWIDTH.3.gz
 man/man3/HWLOC_DISTANCES_KIND_MEANS_LATENCY.3.gz
+man/man3/HWLOC_DISTANCES_TRANSFORM_LINKS.3.gz
+man/man3/HWLOC_DISTANCES_TRANSFORM_MERGE_SWITCH_PORTS.3.gz
+man/man3/HWLOC_DISTANCES_TRANSFORM_REMOVE_NULL.3.gz
+man/man3/HWLOC_DISTANCES_TRANSFORM_TRANSITIVE_CLOSURE.3.gz
 man/man3/HWLOC_DISTRIB_FLAG_REVERSE.3.gz
 man/man3/HWLOC_LOCAL_NUMANODE_FLAG_ALL.3.gz
 man/man3/HWLOC_LOCAL_NUMANODE_FLAG_LARGER_LOCALITY.3.gz
@@ -130,9 +135,12 @@ man/man3/HWLOC_TOPOLOGY_DIFF_OBJ_ATTR_INFO.3.gz
 man/man3/HWLOC_TOPOLOGY_DIFF_OBJ_ATTR_NAME.3.gz
 man/man3/HWLOC_TOPOLOGY_DIFF_OBJ_ATTR_SIZE.3.gz
 man/man3/HWLOC_TOPOLOGY_DIFF_TOO_COMPLEX.3.gz
+man/man3/HWLOC_TOPOLOGY_FLAG_DONT_CHANGE_BINDING.3.gz
 man/man3/HWLOC_TOPOLOGY_FLAG_IMPORT_SUPPORT.3.gz
 man/man3/HWLOC_TOPOLOGY_FLAG_INCLUDE_DISALLOWED.3.gz
 man/man3/HWLOC_TOPOLOGY_FLAG_IS_THISSYSTEM.3.gz
+man/man3/HWLOC_TOPOLOGY_FLAG_RESTRICT_TO_CPUBINDING.3.gz
+man/man3/HWLOC_TOPOLOGY_FLAG_RESTRICT_TO_MEMBINDING.3.gz
 man/man3/HWLOC_TOPOLOGY_FLAG_THISSYSTEM_ALLOWED_RESOURCES.3.gz
 man/man3/HWLOC_TYPE_DEPTH_BRIDGE.3.gz
 man/man3/HWLOC_TYPE_DEPTH_MULTIPLE.3.gz
@@ -228,8 +236,11 @@ man/man3/hwloc_cudart_get_device_cpuset.3.gz
 man/man3/hwloc_cudart_get_device_osdev_by_index.3.gz
 man/man3/hwloc_cudart_get_device_pci_ids.3.gz
 man/man3/hwloc_cudart_get_device_pcidev.3.gz
-man/man3/hwloc_distances_add.3.gz
+man/man3/hwloc_distances_add_commit.3.gz
+man/man3/hwloc_distances_add_create.3.gz
 man/man3/hwloc_distances_add_flag_e.3.gz
+man/man3/hwloc_distances_add_handle_t.3.gz
+man/man3/hwloc_distances_add_values.3.gz
 man/man3/hwloc_distances_get.3.gz
 man/man3/hwloc_distances_get_by_depth.3.gz
 man/man3/hwloc_distances_get_by_name.3.gz
@@ -244,6 +255,8 @@ man/man3/hwloc_distances_remove.3.gz
 man/man3/hwloc_distances_remove_by_depth.3.gz
 man/man3/hwloc_distances_remove_by_type.3.gz
 man/man3/hwloc_distances_s.3.gz
+man/man3/hwloc_distances_transform.3.gz
+man/man3/hwloc_distances_transform_e.3.gz
 man/man3/hwloc_distrib.3.gz
 man/man3/hwloc_distrib_flags_e.3.gz
 man/man3/hwloc_export_obj_userdata.3.gz
@@ -311,6 +324,8 @@ man/man3/hwloc_ibv_get_device_cpuset.3.gz
 man/man3/hwloc_ibv_get_device_osdev.3.gz
 man/man3/hwloc_ibv_get_device_osdev_by_name.3.gz
 man/man3/hwloc_info_s.3.gz
+man/man3/hwloc_levelzero_get_device_cpuset.3.gz
+man/man3/hwloc_levelzero_get_device_osdev.3.gz
 man/man3/hwloc_linux_get_tid_cpubind.3.gz
 man/man3/hwloc_linux_get_tid_last_cpu_location.3.gz
 man/man3/hwloc_linux_read_path_as_cpumask.3.gz
@@ -451,6 +466,8 @@ man/man3/hwloc_topology_t.3.gz
 man/man3/hwloc_type_filter_e.3.gz
 man/man3/hwloc_type_sscanf.3.gz
 man/man3/hwloc_type_sscanf_as_depth.3.gz
+man/man3/hwloc_windows_get_nr_processor_groups.3.gz
+man/man3/hwloc_windows_get_processor_group_cpuset.3.gz
 man/man3/hwlocality_advanced_io.3.gz
 man/man3/hwlocality_api_version.3.gz
 man/man3/hwlocality_bitmap.3.gz
@@ -464,6 +481,7 @@ man/man3/hwlocality_diff.3.gz
 man/man3/hwlocality_distances_add.3.gz
 man/man3/hwlocality_distances_consult.3.gz
 man/man3/hwlocality_distances_get.3.gz
+man/man3/hwlocality_distances_remove.3.gz
 man/man3/hwlocality_gl.3.gz
 man/man3/hwlocality_glibc_sched.3.gz
 man/man3/hwlocality_helper_ancestors.3.gz
@@ -477,6 +495,7 @@ man/man3/hwlocality_helper_topology_sets.3.gz
 man/man3/hwlocality_helper_types.3.gz
 man/man3/hwlocality_info_attr.3.gz
 man/man3/hwlocality_levels.3.gz
+man/man3/hwlocality_levelzero.3.gz
 man/man3/hwlocality_linux.3.gz
 man/man3/hwlocality_linux_libnuma_bitmask.3.gz
 man/man3/hwlocality_linux_libnuma_ulongs.3.gz
@@ -495,6 +514,7 @@ man/man3/hwlocality_setsource.3.gz
 man/man3/hwlocality_shmem.3.gz
 man/man3/hwlocality_syntheticexport.3.gz
 man/man3/hwlocality_tinker.3.gz
+man/man3/hwlocality_windows.3.gz
 man/man3/hwlocality_xmlexport.3.gz
 man/man7/hwloc.7.gz
 share/bash-completion/completions/hwloc

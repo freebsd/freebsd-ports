@@ -206,6 +206,7 @@
     SUBDIR += fpc-openal
     SUBDIR += freac
     SUBDIR += freealut
+    SUBDIR += freebsd-13-mixer
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
     SUBDIR += ft2play
@@ -318,6 +319,7 @@
     SUBDIR += id3v2
     SUBDIR += ifp-line
     SUBDIR += infamous-plugins-lv2
+    SUBDIR += inscore
     SUBDIR += intersect-lv2
     SUBDIR += invada-studio-plugins-lv2
     SUBDIR += ir-lv2

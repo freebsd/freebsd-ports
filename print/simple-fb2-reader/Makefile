@@ -16,6 +16,5 @@ USES=		cmake desktop-file-utils gettext-runtime gnome pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cactus64k
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

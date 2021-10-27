@@ -7,7 +7,7 @@ COMMENT=	Driver based class to calculate Discordian holidays
 
 LICENSE=	PHP301
 
-BUILD_DEPENDS=  ${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
+BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
 
 USES=		pear

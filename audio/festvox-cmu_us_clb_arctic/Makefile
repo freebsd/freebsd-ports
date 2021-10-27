@@ -4,6 +4,6 @@ COMMENT=	CMU US English female voice for festival
 
 MASTERDIR=	${.CURDIR}/../festvox-cmu_us_slt_arctic
 
-PORTDATA=       *
+PORTDATA=	*
 
 .include "${MASTERDIR}/Makefile"

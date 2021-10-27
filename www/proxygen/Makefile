@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.09.20.00
+DISTVERSION=	2021.10.04.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,8 @@ LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++14-lang perl5 python:3.6+,build ssl
+USES=		cmake compiler:c++14-lang cpe perl5 python:3.6+,build ssl
+CPE_VENDOR=	facebook
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 USE_LDCONFIG=	yes

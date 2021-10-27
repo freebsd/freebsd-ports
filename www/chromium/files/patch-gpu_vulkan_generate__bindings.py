@@ -1,6 +1,6 @@
---- gpu/vulkan/generate_bindings.py.orig	2021-06-11 09:51:44 UTC
+--- gpu/vulkan/generate_bindings.py.orig	2021-09-14 01:51:58 UTC
 +++ gpu/vulkan/generate_bindings.py
-@@ -183,7 +183,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -184,7 +184,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
@@ -9,7 +9,7 @@
      'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
      'functions': [
        'vkGetSemaphoreFdKHR',
-@@ -199,7 +199,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -200,7 +200,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
@@ -18,7 +18,7 @@
      'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
      'functions': [
        'vkGetMemoryFdKHR',
-@@ -250,7 +250,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -251,7 +251,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {

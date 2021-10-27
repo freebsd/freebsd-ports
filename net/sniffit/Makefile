@@ -11,9 +11,11 @@ COMMENT=	Packet sniffer program. For educational use
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=autoreconf
+USES=		autoreconf cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
+
+CPE_VENDOR=	sniffit_project
 
 GNU_CONFIGURE=	yes
 

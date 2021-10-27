@@ -39,7 +39,8 @@ SAML2_CONFIGURE_ON=	--enable-saml2
 
 USERS=			sogod
 GROUPS=			sogod
-USES=			gettext-runtime gnustep objc pkgconfig shebangfix ssl
+USES=			cpe gettext-runtime gnustep objc pkgconfig shebangfix ssl
+CPE_VENDOR=		inverse
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 

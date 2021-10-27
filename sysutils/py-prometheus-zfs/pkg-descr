@@ -1,0 +1,5 @@
+This is a simple exporter for the Prometheus metrics for ZFS using
+py-libzfs. It comes with a zfsprom service that can be run in the
+background as an HTTP server.
+
+WWW: https://github.com/matusnovak/prometheus-zfs

@@ -1,6 +1,6 @@
 PORTNAME=	birdfont
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.29.4
+DISTVERSION=	2.29.5
 CATEGORIES=	graphics x11-fonts
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -25,7 +25,6 @@ USES=		compiler:c++11-lang gettext-tools gnome pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	johanmattssonm
 USE_GNOME=	cairo glib20 gtk30
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py
 

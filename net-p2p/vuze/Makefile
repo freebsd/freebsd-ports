@@ -25,7 +25,6 @@ JAVA_OS=	native
 USE_ANT=	yes
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 JARFILE=	${PORTNAME}.jar
 

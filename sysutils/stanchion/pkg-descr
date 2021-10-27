@@ -1,5 +1,0 @@
-Stanchion is an application to enforce the serialization of requests. It
-consists of two main parts: a simple HTTP interface and a processing backend
-that manages requests and interacts with a local Riak instance.
-
-WWW: https://github.com/basho/stanchion

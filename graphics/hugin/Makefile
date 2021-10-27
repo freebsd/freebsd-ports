@@ -28,7 +28,6 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
 		jpeg pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
 USE_GL=		gl glew glu glut
-INSTALLS_ICONS=	yes
 USE_WX=		3.0+
 USE_XORG=	x11
 

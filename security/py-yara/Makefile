@@ -16,7 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	VirusTotal
 GH_PROJECT=	yara-python
 
-USES=		localbase python:3.6+
+USES=		cpe localbase python:3.6+
+CPE_VENDOR=	virustotal
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	--dynamic-linking
 

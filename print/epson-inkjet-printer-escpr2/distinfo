@@ -1,7 +1,7 @@
-TIMESTAMP = 1630033200
-SHA256 (epson-inkjet-printer-escpr2-1.1.41-1lsb3.2.i486.rpm) = 85c09fc23535a23c8f0f9447c29683797b4b094ad7021c96dd8b2c1e3562b78b
-SIZE (epson-inkjet-printer-escpr2-1.1.41-1lsb3.2.i486.rpm) = 3053704
-SHA256 (epson-inkjet-printer-escpr2-1.1.41-1lsb3.2.x86_64.rpm) = e0a30ec2a4aeb5214026847813ef09fb0fef3f137eb674156b15495ab6473c0b
-SIZE (epson-inkjet-printer-escpr2-1.1.41-1lsb3.2.x86_64.rpm) = 3053166
-SHA256 (epson-inkjet-printer-escpr2-1.1.41-1lsb3.2.src.rpm) = 45ff6e7cb020e776b6ea9d333354c6720fa3a1d6c9150ef37d14368033f09e85
-SIZE (epson-inkjet-printer-escpr2-1.1.41-1lsb3.2.src.rpm) = 3919314
+TIMESTAMP = 1633575600
+SHA256 (epson-inkjet-printer-escpr2-1.1.42-1lsb3.2.i486.rpm) = 41cfadb7cc640731f1b6d268378739d4276464e8506d4008f0e0e5ab320e8d00
+SIZE (epson-inkjet-printer-escpr2-1.1.42-1lsb3.2.i486.rpm) = 3070432
+SHA256 (epson-inkjet-printer-escpr2-1.1.42-1lsb3.2.x86_64.rpm) = fdc0e79107a8b25b7a78d48a42e091adb5738e4932e2b24c8061dd1559476f1d
+SIZE (epson-inkjet-printer-escpr2-1.1.42-1lsb3.2.x86_64.rpm) = 3069894
+SHA256 (epson-inkjet-printer-escpr2-1.1.42-1lsb3.2.src.rpm) = 0ac654babc30a1735638d64a008911774ced980af9c0b599862ac2cc9596a8c0
+SIZE (epson-inkjet-printer-escpr2-1.1.42-1lsb3.2.src.rpm) = 3941611

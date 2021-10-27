@@ -34,6 +34,7 @@ OPTIONS_DEFAULT_amd64=	LUAJIT
 OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_powerpc=	LUAJIT
 OPTIONS_DEFAULT_powerpc64=	LUAJIT
+OPTIONS_DEFAULT_powerpc64le=	LUAJIT
 
 LUAJIT_CMAKE_BOOL=	SOLARUS_USE_LUAJIT
 LUAJIT_DESC=	Use LuaJIT instead of standard Lua
@@ -44,7 +45,7 @@ CMAKE_ARGS+=	-DSOLARUS_MANUAL_INSTALL_DESTINATION:STRING="man"
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 

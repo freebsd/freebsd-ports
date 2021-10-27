@@ -12,7 +12,8 @@ COMMENT=	Session and Caching library with WSGI Middleware
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	beakerbrowser
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

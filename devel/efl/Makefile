@@ -2,7 +2,7 @@
 
 PORTNAME=	efl
 DISTVERSION=	1.25.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -30,7 +30,7 @@ CONFLICTS_INSTALL=	libeio
 USES=		compiler:c++14-lang gettext-tools gnome iconv \
 		jpeg libtool meson ninja ssl pathfix pkgconfig python:3.5+ shared-mime-info \
 		shebangfix tar:xz xorg
-SHEBANG_FILES=  src/tests/elementary/spec/generator.py \
+SHEBANG_FILES=	src/tests/elementary/spec/generator.py \
 		src/bin/exactness/exactness_play.in \
 		src/bin/exactness/exactness_record.in
 USE_XORG=	x11 xcb xcursor xcomposite xdamage xext xfixes xi xinerama \
@@ -41,7 +41,6 @@ MESON_ARGS=	-Dsystemd=false -Deeze=false
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALLS_ICONS=	yes
 
 PLIST_SUB=	BRANCHVERSION=${PORTVERSION:R} PORTVERSION=${PORTVERSION}
 
@@ -304,6 +303,11 @@ MESON_ARGS+=			${EVAS-LOADERS-DISABLER}
 # Work-around build failure, which is caused by subtle problem in lld and -as-needed flag
 .if ${ARCH} == i386
 MESON_ARGS+=	-Db_asneeded=false
+.endif
+
+.if ${ARCH:Marmv?}
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-no-integrated-as
 .endif
 
 .if ${PORT_OPTIONS:MLUA} && ${PORT_OPTIONS:MCXX}

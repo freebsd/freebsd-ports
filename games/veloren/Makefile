@@ -1,7 +1,7 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,25 +23,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 
 USES=		cargo python:3.4+,build xorg
 USE_XORG=	xcb
-USE_GITHUB=	nodefault
-GH_TUPLE=	hasenbanck:egui_wgpu_backend:63a002c6a9b6c016e45806dd065864431caab621:egui_wgpu_backend \
-		gfx-rs:gfx:27a1dae3796d33d23812f2bb8c7e3b5aea18b521:gfxauxil \
-		Imberflur:iced:18a48a5eeefd2aa6e50f5dd0751ac2e94c88a9eb:iced_core \
-		gfx-rs:naga:057d03ad86f18e3bb3866b20901d8d4e892dd3d6:naga \
-		xMAC94x:portpicker-rs:df6b37872f3586ac3b21d08b56c8ec7cd92fb172:portpicker \
-		amethyst:specs:f985bec5d456f7b0dd8aae99848f9473c2cd9d46:specs \
-		fdehau:tui-rs:54b841fab6cfdb38e8dc1382176e965787964b4c:tui \
-		gfx-rs:wgpu:a92b8549a8e2cb9dac781bafc5ed32828f3caf46:wgpu \
-		Imberflur:wgpu-profiler:b156eb145bc223386ef344860d9b33b3c181650c:wgpuprofiler \
-		Frinksy:rust-xkbcommon-sys:8f615dd6cd90a4ab77c45627830dde49b592b9b5:xkbcommonsys
 USE_GITLAB=	yes
 GL_COMMIT=	e4716147a7356eb13088e7d74ace3ccdcb5cd900
-GL_TUPLE=	veloren:auth:fb3dcbc4962b367253f8f2f92760ef44d2679c9a:authcommon \
-		veloren:conrod:ca9fd429ca7db854e018acc6dcb2cd8abd9e070d:conrod_core \
-		Frinksy:keyboard-keynames:721c8b301f8003332d0cc767ab2649fdd330e842:keyboardkeynames \
-		veloren:refinery:8ecf4b4772d791e6c8c0a3f9b66a7530fad1af3e:refinery \
-		veloren:specs-idvs:8be2abcddf8f524cb5876e8dd20a7e47cfaf7573:specsidvs \
-		veloren:vek:df6842cc874a697dec8896c66851817e744af7e8:vek
 CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
@@ -661,23 +644,24 @@ CARGO_CRATES=	ab_glyph-0.2.11 \
 		xkb-0.2.1 \
 		xkbcommon-sys-0.7.5 \
 		xml-rs-0.8.3 \
-		yasna-0.4.0
-CARGO_USE_GITHUB=	yes
-CARGO_USE_GITLAB=	yes
-CARGO_GIT_SUBDIR=	authcommon:authc:authc \
-			conrod_core:conrod_core:conrod_core \
-			conrod_core:conrod_winit:backends/conrod_winit \
-			gfxauxil:gfx-backend-dx11:src/backend/dx11 \
-			gfxauxil:gfx-backend-dx12:src/backend/dx12 \
-			gfxauxil:gfx-backend-empty:src/backend/empty \
-			gfxauxil:gfx-backend-gl:src/backend/gl \
-			gfxauxil:gfx-backend-metal:src/backend/metal \
-			gfxauxil:gfx-backend-vulkan:src/backend/vulkan \
-			gfxauxil:hal:src/hal \
-			iced_core:iced:native \
-			iced_core:iced_winit:winit \
-			refinery:refinery:refinery \
-			wgpu:wgpu:wgpu
+		yasna-0.4.0 \
+		wgpu-profiler@git+https://github.com/Imberflur/wgpu-profiler\#b156eb145bc223386ef344860d9b33b3c181650c \
+		tui@git+https://github.com/fdehau/tui-rs.git?branch=paragraph-scroll\#54b841fab6cfdb38e8dc1382176e965787964b4c \
+		vek@git+https://gitlab.com/veloren/vek.git?branch=fix_intrinsics2\#df6842cc874a697dec8896c66851817e744af7e8 \
+		specs-idvs@git+https://gitlab.com/veloren/specs-idvs.git?rev=8be2abcddf8f524cb5876e8dd20a7e47cfaf7573\#8be2abcddf8f524cb5876e8dd20a7e47cfaf7573 \
+		xkbcommon-sys@git+https://github.com/Frinksy/rust-xkbcommon-sys.git?rev=8f615dd6cd90a4ab77c45627830dde49b592b9b5\#8f615dd6cd90a4ab77c45627830dde49b592b9b5 \
+		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#ca9fd429ca7db854e018acc6dcb2cd8abd9e070d \
+		keyboard-keynames@git+https://gitlab.com/Frinksy/keyboard-keynames.git?rev=721c8b301f8003332d0cc767ab2649fdd330e842\#721c8b301f8003332d0cc767ab2649fdd330e842 \
+		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=fb3dcbc4962b367253f8f2f92760ef44d2679c9a\#fb3dcbc4962b367253f8f2f92760ef44d2679c9a \
+		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced\#18a48a5eeefd2aa6e50f5dd0751ac2e94c88a9eb \
+		specs,specs-derive@git+https://github.com/amethyst/specs.git?rev=f985bec5d456f7b0dd8aae99848f9473c2cd9d46\#f985bec5d456f7b0dd8aae99848f9473c2cd9d46 \
+		naga@git+https://github.com/gfx-rs/naga\#057d03ad86f18e3bb3866b20901d8d4e892dd3d6 \
+		gfx-auxil,gfx-backend-dx11,gfx-backend-dx12,gfx-backend-empty,gfx-backend-gl,gfx-backend-metal,gfx-backend-vulkan,gfx-hal,range-alloc@git+https://github.com/gfx-rs/gfx?rev=27a1dae3796d33d23812f2bb8c7e3b5aea18b521\#27a1dae3796d33d23812f2bb8c7e3b5aea18b521 \
+		wgpu,wgpu-core,wgpu-types@git+https://github.com/gfx-rs/wgpu.git?rev=a92b8549a8e2cb9dac781bafc5ed32828f3caf46\#a92b8549a8e2cb9dac781bafc5ed32828f3caf46 \
+		refinery,refinery-core,refinery-macros@git+https://gitlab.com/veloren/refinery.git?rev=8ecf4b4772d791e6c8c0a3f9b66a7530fad1af3e\#8ecf4b4772d791e6c8c0a3f9b66a7530fad1af3e \
+		portpicker@git+https://github.com/xMAC94x/portpicker-rs?rev=df6b37872f3586ac3b21d08b56c8ec7cd92fb172\#df6b37872f3586ac3b21d08b56c8ec7cd92fb172 \
+		egui_wgpu_backend@git+https://github.com/hasenbanck/egui_wgpu_backend.git?rev=63a002c6a9b6c016e45806dd065864431caab621\#63a002c6a9b6c016e45806dd065864431caab621
+
 # https://gitlab.com/veloren/veloren/issues/264
 CARGO_ENV+=		RUSTC_BOOTSTRAP=1
 # XXX https://github.com/rust-lang/cargo/issues/4101

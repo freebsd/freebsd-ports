@@ -17,7 +17,6 @@ LIB_DEPENDS=	libgweather-3.so:net/libgweather \
 
 USES=		gmake gettext-runtime gnome pkgconfig xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

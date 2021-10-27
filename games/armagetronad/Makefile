@@ -24,8 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 CONFIGURE_ARGS=	--disable-etc --disable-games --enable-music
 
-INSTALLS_ICONS=	yes
-
 BINARY_ALIAS=	sdl11-config=sdl-config
 
 OPTIONS_DEFINE=	DOCS

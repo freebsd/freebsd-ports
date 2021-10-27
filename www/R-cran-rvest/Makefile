@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	rvest
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

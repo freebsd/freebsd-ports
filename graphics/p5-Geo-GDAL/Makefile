@@ -17,10 +17,13 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-USES=		compiler:c++14-lang perl5 tar:xz
+USES=		compiler:c++14-lang cpe perl5 tar:xz
 
 USE_CXXSTD=	c++14
 WRKSRC_SUBDIR=	swig/perl
+
+CPE_VENDOR=	osgeo
+CPE_PRODUCT=	gdal
 
 post-patch:
 	@${LN} -s ${LOCALBASE}/bin/gdal-config ${WRKSRC}/../../apps/gdal-config

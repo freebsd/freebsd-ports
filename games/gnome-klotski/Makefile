@@ -22,7 +22,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake gnome localbase meson pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.Klotski.gschema.xml
 

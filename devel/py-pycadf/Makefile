@@ -20,10 +20,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>=1.2.0:devel/py-debtcollector@
 		${PYTHON_PKGNAMEPREFIX}pytz>=2013.6,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	openstack
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^data_files|no_&|' ${WRKSRC}/setup.cfg

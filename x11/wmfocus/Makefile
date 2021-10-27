@@ -1,7 +1,7 @@
 PORTNAME=	wmfocus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,7 +22,6 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	svenstaro
-GH_TUPLE=	JayceFayne:swayipc-rs:f6b045f6dff3b8135c74c996cb95a39c874e4939:swayipc
 CARGO_FEATURES=	i3
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -117,9 +116,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		x11-2.18.2 \
 		xcb-0.9.0 \
 		xcb-util-0.3.0 \
-		xkbcommon-0.4.0
-CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	swayipc:swayipc:blocking
+		xkbcommon-0.4.0 \
+		swayipc,swayipc-types@git+https://github.com/JayceFayne/swayipc-rs\#f6b045f6dff3b8135c74c996cb95a39c874e4939
 
 post-patch:
 # lang/python3 cannot be used as a dependency

@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.8.121
+PORTVERSION=	1.9.129
 CATEGORIES=	devel
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -17,9 +17,29 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
 		libaws-c-common.so:devel/aws-c-common \
 		libaws-checksums.so:devel/aws-checksums \
-		libaws-c-event-stream.so:devel/aws-c-event-stream
+		libaws-c-event-stream.so:devel/aws-c-event-stream \
+		libaws-crt-cpp.so:devel/aws-crt-cpp \
+		libaws-c-mqtt.so:devel/aws-c-mqtt \
+		libaws-c-s3.so:devel/aws-c-s3 \
+		libaws-c-auth.so:security/aws-c-auth \
+		libaws-c-http.so:devel/aws-c-http \
+		libaws-c-io.so:devel/aws-c-io \
+		libs2n.so:security/s2n \
+		libaws-c-compression.so:devel/aws-c-compression \
+		libaws-c-cal.so:security/aws-c-cal \
+		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
+		libnghttp2.so:www/libnghttp2 \
+		libssh2.so:security/libssh2 \
+		libdbus-1.so:devel/dbus \
+		libsndfile.so:audio/libsndfile \
+		libFLAC.so:audio/flac \
+		libopus.so:audio/opus \
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
 
-USES=		cmake:noninja localbase:ldflags pkgconfig compiler:c++11-lib ssl
+USES=		cmake:noninja compiler:c++11-lib gettext-runtime localbase:ldflags \
+		pkgconfig ssl xorg
+USE_XORG=	x11 xcb ice sm xtst xau xdmcp xext xi
 
 BUILD_ONLY?=
 
@@ -28,7 +48,8 @@ OPTIONS_SUB=	yes
 
 TEST_CMAKE_OFF=	-DENABLE_TESTING=OFF
 
-CMAKE_ARGS+=	-DBUILD_DEPS=OFF -DBUILD_ONLY="${BUILD_ONLY}"
+CMAKE_ARGS+=	-DBUILD_DEPS=OFF -DBUILD_ONLY="${BUILD_ONLY}" \
+		-DCMAKE_PREFIX_PATH=${LOCALBASE} -DCMAKE_INSTALL_LIBDIR=lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws

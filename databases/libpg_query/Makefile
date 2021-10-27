@@ -14,7 +14,8 @@ COMMENT=	C library for accessing the PostgreSQL parser outside of the server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 gmake pgsql
+USES=		compiler:c11 cpe gmake pgsql
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

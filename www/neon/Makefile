@@ -11,7 +11,8 @@ COMMENT=	HTTP and WebDAV client library for Unix systems
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/src/COPYING.LIB
 
-USES=		libtool localbase:ldflags pathfix pkgconfig
+USES=		cpe libtool localbase:ldflags pathfix pkgconfig
+CPE_VENDOR=	webdav
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

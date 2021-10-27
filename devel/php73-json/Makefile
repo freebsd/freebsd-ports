@@ -4,6 +4,6 @@ MASTERDIR=	${.CURDIR}/../../lang/php73
 
 PKGNAMESUFFIX=	-json
 
-TEST_TARGET=    test
+TEST_TARGET=	test
 
 .include "${MASTERDIR}/Makefile"

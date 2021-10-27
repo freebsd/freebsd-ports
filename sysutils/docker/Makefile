@@ -16,7 +16,7 @@ PLIST_FILES=		bin/docker
 USE_GITHUB=		yes
 GH_PROJECT=		docker-ce
 
-USES=	go
+USES=	cpe go
 
 GO_PKGNAME=	github.com/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cli/cmd/docker

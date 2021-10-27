@@ -5,7 +5,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to override LWP HTTP/HTTPS backend with your PSGI app
 
 LICENSE=	ART10 GPLv1+

@@ -1,0 +1,135 @@
+PORTNAME=	weggli
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.2
+PORTREVISION=	1
+CATEGORIES=	security
+
+MAINTAINER=	0mp@FreeBSD.org
+COMMENT=	Semantic search tool for C and C++ codebases
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	googleprojectzero
+CARGO_CRATES=	aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		assert_cmd-2.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		bitflags-1.2.1 \
+		bstr-0.2.15 \
+		bumpalo-3.6.1 \
+		byteorder-1.4.3 \
+		cast-0.2.3 \
+		cc-1.0.65 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		colored-2.0.0 \
+		const_fn-0.4.3 \
+		criterion-0.3.4 \
+		criterion-plot-0.4.3 \
+		crossbeam-channel-0.5.0 \
+		crossbeam-deque-0.8.0 \
+		crossbeam-epoch-0.9.1 \
+		crossbeam-utils-0.8.1 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
+		ctor-0.1.17 \
+		difference-2.0.0 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.6.1 \
+		float-cmp-0.8.0 \
+		ghost-0.1.2 \
+		half-1.7.1 \
+		hermit-abi-0.1.17 \
+		indoc-1.0.3 \
+		instant-0.1.9 \
+		inventory-0.1.10 \
+		inventory-impl-0.1.10 \
+		itertools-0.9.0 \
+		itertools-0.10.0 \
+		itoa-0.4.7 \
+		js-sys-0.3.48 \
+		lazy_static-1.4.0 \
+		libc-0.2.80 \
+		lock_api-0.4.2 \
+		log-0.4.11 \
+		memchr-2.3.4 \
+		memoffset-0.6.1 \
+		nix-0.17.0 \
+		normalize-line-endings-0.3.0 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		oorandom-11.1.3 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.2 \
+		paste-1.0.4 \
+		plotters-0.3.0 \
+		plotters-backend-0.3.0 \
+		plotters-svg-0.3.0 \
+		predicates-1.0.8 \
+		predicates-2.0.2 \
+		predicates-core-1.0.2 \
+		predicates-tree-1.0.3 \
+		proc-macro2-1.0.24 \
+		pyo3-0.13.0 \
+		pyo3-macros-0.13.0 \
+		pyo3-macros-backend-0.13.0 \
+		quote-1.0.8 \
+		rayon-1.5.0 \
+		rayon-core-1.9.0 \
+		redox_syscall-0.1.57 \
+		regex-1.4.2 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.21 \
+		rustc_version-0.2.3 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.121 \
+		serde_cbor-0.11.1 \
+		serde_derive-1.0.121 \
+		serde_json-1.0.64 \
+		simplelog-0.10.0 \
+		smallvec-1.6.0 \
+		strsim-0.8.0 \
+		syn-1.0.58 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		time-0.1.44 \
+		tinytemplate-1.2.1 \
+		tree-sitter-0.19.2 \
+		treeline-0.1.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		unindent-0.1.7 \
+		vec_map-0.8.2 \
+		void-1.0.2 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.71 \
+		wasm-bindgen-backend-0.2.71 \
+		wasm-bindgen-macro-0.2.71 \
+		wasm-bindgen-macro-support-0.2.71 \
+		wasm-bindgen-shared-0.2.71 \
+		web-sys-0.3.48 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

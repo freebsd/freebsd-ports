@@ -15,6 +15,7 @@ GH_ACCOUNT=	ldn-softdev
 
 LDFLAGS+=	-lexecinfo -lpthread
 
+PORTSCOUT=	skipv:standard.json
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	"Release Notes.md" "User Guide.md" "Walk-path tutorial.md" \
 		README.md

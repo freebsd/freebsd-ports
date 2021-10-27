@@ -1,7 +1,7 @@
 PORTNAME=	dose-response
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
@@ -200,7 +200,6 @@ PLIST_FILES+=	share/icons/hicolor/${size}x${size}/apps/${PORTNAME}.png
 .endfor
 
 PORTDOCS=	CHANGELOG.md DEVELOPER-NOTES.md README.md
-INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES=	"Dose Response" \
 			"${COMMENT}" \
 			"${PORTNAME}" \

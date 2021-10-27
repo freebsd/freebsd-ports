@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: cfssl
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `cfssl':
+#
+# cfssl_enable="YES"
+#
+# An example cfssl_flags:
+# cfssl_flags="-db-config /usr/local/etc/ssl/db.json -ca /usr/local/etc/ssl/ca.pem -ca-key /usr/local/etc/ssl/ca-key.pem -config /usr/local/etc/ssl/ca-config.json"
+#
+
+. /etc/rc.subr
+
+name="cfssl"
+rcvar=cfssl_enable
+
+load_rc_config "$name"
+: ${cfssl_enable="NO"}
+: ${cfssl_flags:=""}
+
+command="/usr/sbin/daemon"
+cfssl_command="%%PREFIX%%/bin/cfssl"
+cfssl_user="cfssl"
+pidfile="/var/run/$name.pid"
+flags=" "
+command_args="-S -p ${pidfile} ${cfssl_command} serve ${cfssl_flags}"
+procname="%%PREFIX%%/bin/cfssl"
+start_precmd="cfssl_precmd"
+
+cfssl_precmd()
+{
+	install -o ${cfssl_user} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"

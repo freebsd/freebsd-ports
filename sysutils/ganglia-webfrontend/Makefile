@@ -11,7 +11,9 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmond:sysutils/ganglia-monitor-core
 
-USES=		php:web
+USES=		cpe php:web
+CPE_VENDOR=	${PORTNAME}
+CPE_PRODUCT=	${PORTNAME}-web
 USE_GITHUB=	yes
 GH_PROJECT=	ganglia-web
 USE_PHP=	filter gd session xml

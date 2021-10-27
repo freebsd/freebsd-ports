@@ -27,7 +27,6 @@ USES=		gettext-tools gmake gnome pkgconfig tar:xz xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

@@ -17,11 +17,12 @@
 %%MANPAGES%%man/man5/notmuch-hooks.5.gz
 %%MANPAGES%%man/man7/notmuch-properties.7.gz
 %%MANPAGES%%man/man7/notmuch-search-terms.7.gz
+%%MANPAGES%%man/man7/notmuch-sexp-queries.7.gz
 bin/notmuch
 include/notmuch.h
 lib/libnotmuch.so
 lib/libnotmuch.so.5
-lib/libnotmuch.so.5.4.0
+lib/libnotmuch.so.5.5.0
 share/bash-completion/completions/notmuch
 share/zsh/site-functions/_email-notmuch
 share/zsh/site-functions/_notmuch

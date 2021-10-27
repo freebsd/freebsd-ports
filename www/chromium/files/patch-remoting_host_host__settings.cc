@@ -1,4 +1,4 @@
---- remoting/host/host_settings.cc.orig	2021-07-28 08:16:52 UTC
+--- remoting/host/host_settings.cc.orig	2021-09-14 01:52:00 UTC
 +++ remoting/host/host_settings.cc
 @@ -13,9 +13,9 @@
  #include "remoting/host/mac/constants_mac.h"
@@ -12,7 +12,7 @@
  
  namespace remoting {
  
-@@ -46,7 +46,7 @@ HostSettings* HostSettings::GetInstance() {
+@@ -48,7 +48,7 @@ HostSettings* HostSettings::GetInstance() {
  #if defined(OS_APPLE)
    static const base::FilePath settings_file(kHostSettingsFilePath);
    static base::NoDestructor<FileHostSettings> instance(settings_file);

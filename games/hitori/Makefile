@@ -20,7 +20,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 gettext gmake gnome localbase meson pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 librsvg2 libxml2:build
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.hitori.gschema.xml
 

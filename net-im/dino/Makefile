@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake desktop-file-utils gettext-tools gnome \
+USES=		cmake cpe desktop-file-utils gettext-tools gnome \
 		ninja pkgconfig
 
 USE_GITHUB=	yes
@@ -30,7 +30,6 @@ HAS_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS+=	-Wl,--export-dynamic
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 USE_GNOME=	cairo gdkpixbuf2 glib20 gnomeprefix gtk30 intlhack
 

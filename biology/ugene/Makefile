@@ -1,7 +1,7 @@
 # Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
 
 PORTNAME=	ugene
-PORTVERSION=	40.0
+PORTVERSION=	40.1
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org

@@ -47,10 +47,14 @@
 %%DATADIR%%/lib/prim/Agda/Builtin/Int.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/List.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/List.agdai
+%%DATADIR%%/lib/prim/Agda/Builtin/Maybe.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Maybe.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Nat.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Nat.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Reflection.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Reflection.agdai
+%%DATADIR%%/lib/prim/Agda/Builtin/Reflection/External.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Reflection/External.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Reflection/Properties.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Reflection/Properties.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Sigma.agda

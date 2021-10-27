@@ -1,6 +1,6 @@
---- check_smartmon.orig	2019-04-16 21:26:22 UTC
+--- check_smartmon.orig	2021-10-08 16:10:20 UTC
 +++ check_smartmon
-@@ -52,8 +52,8 @@ def parseCmdLine(args):
+@@ -52,14 +52,14 @@ def parseCmdLine(args):
          version = "%%prog %s" % (__version__)
  
          parser = OptionParser(usage=usage, version=version)
@@ -11,6 +11,13 @@
          parser.add_option("-v", "--verbosity", action="store",
                          dest="verbosity", type="int", default=0,
                          metavar="LEVEL", help="set verbosity level to LEVEL; defaults to 0 (quiet), \
+                                         possible values go up to 3")
+         parser.add_option("-t", "--type", action="store", dest="devtype", default="ata", metavar="DEVTYPE",
+-                        help="type of device (ATA|SCSI)")
++                        help="type of device (ata|scsi)")
+         parser.add_option("-w", "--warning-threshold", metavar="TEMP", action="store",
+                         type="int", dest="warningThreshold", default=55,
+                         help="set temperature warning threshold to given temperature (defaults to 55)")
 @@ -123,7 +123,7 @@ def callSmartMonTools(path, device):
                                  "")
          healthStatusOutput = ""
@@ -29,7 +36,7 @@
          # done
  
          return (0 ,"", healthStatusOutput, temperatureOutput)
-@@ -153,6 +153,7 @@ def parseOutput(healthMessage, temperatu
+@@ -153,6 +153,7 @@ def parseOutput(healthMessage, temperatureMessage, dev
  
          vprint(3, "parseOutput: Device type is %s" % devType)
  
@@ -37,7 +44,7 @@
          if devType == "ata":
                  # parse health status
                  #
-@@ -162,13 +163,16 @@ def parseOutput(healthMessage, temperatu
+@@ -162,13 +163,16 @@ def parseOutput(healthMessage, temperatureMessage, dev
                  getNext = 0
                  for line in lines:
                          if getNext:
@@ -56,7 +63,7 @@
                  if getNext:
                          parts = statusLine.split()
                          healthStatus = parts[-1]
-@@ -181,7 +185,7 @@ def parseOutput(healthMessage, temperatu
+@@ -181,7 +185,7 @@ def parseOutput(healthMessage, temperatureMessage, dev
                          parts = line.split()
                          if len(parts):
                                  # 194 is the temperature value id
@@ -65,7 +72,7 @@
                                          temperature = int(parts[9])
                                          break
                                  # fi
-@@ -190,9 +194,11 @@ def parseOutput(healthMessage, temperatu
+@@ -190,9 +194,11 @@ def parseOutput(healthMessage, temperatureMessage, dev
          # if devType == ata
  
          if devType == "scsi":
@@ -78,7 +85,7 @@
                          if stat_re.search( line ):
                                 parts = line.split()
                                 healthStatus = parts[-1]
-@@ -201,19 +207,25 @@ def parseOutput(healthMessage, temperatu
+@@ -201,39 +207,49 @@ def parseOutput(healthMessage, temperatureMessage, dev
                  # done
  
                  # get temperature from temperatureMessage
@@ -107,15 +114,36 @@
          vprint(3, "Temperature: %d" %temperature)
  
          return (healthStatus, temperature)
-@@ -225,6 +237,7 @@ def createReturnInfo(healthStatus, tempe
+ # end
+ 
+-def createReturnInfo(healthStatus, temperature, warningThreshold,
++def createReturnInfo(device, healthStatus, temperature, warningThreshold,
+                 criticalThreshold):
+         """Create return information according to given thresholds."""
  
          # this is absolutely critical!
          if healthStatus not in [ "PASSED", "OK" ]:
+-                return (2, "CRITICAL: device does not pass health status")
 +                vprint(2, "Health status: %s" % healthStatus)
-                 return (2, "CRITICAL: device does not pass health status")
++                return (2, "CRITICAL: device (%s) does not pass health status" %device)
          # fi
  
-@@ -241,7 +254,7 @@ def createReturnInfo(healthStatus, tempe
+         if temperature > criticalThreshold:
+-                return (2, "CRITICAL: device temperature (%d) exceeds critical temperature threshold (%s)" % (temperature, criticalThreshold))
++                return (2, "CRITICAL: device (%s) temperature (%d) exceeds critical temperature threshold (%s)|TEMP=%d;%d;%d;" 
++			% (device, temperature, criticalThreshold, temperature, warningThreshold, criticalThreshold))
+         elif temperature > warningThreshold:
+-                return (1, "WARNING: device temperature (%d) exceeds warning temperature threshold (%s)" % (temperature, warningThreshold))
++                return (1, "WARNING: device (%s) temperature (%d) exceeds warning temperature threshold (%s)|TEMP=%d;%d;%d;" 
++			% (device, temperature, warningThreshold, temperature, warningThreshold, criticalThreshold))
+         else:
+-                return (0, "OK: device is functional and stable (temperature: %d)" % temperature)
++                return (0, "OK: device (%s) is functional and stable (temperature: %d)|TEMP=%d;%d;%d;" 
++			% (device, temperature, temperature, warningThreshold, criticalThreshold))
+         # fi
+ # end
+ 
+@@ -241,7 +257,7 @@ def createReturnInfo(healthStatus, temperature, warnin
  def exitWithMessage(value, message):
          """Exit with given value and status message."""
  
@@ -124,7 +152,7 @@
          sys.exit(value)
  # end
  
-@@ -254,7 +267,7 @@ def vprint(level, message):
+@@ -254,7 +270,7 @@ def vprint(level, message):
          """
  
          if level <= verbosity:
@@ -133,11 +161,30 @@
          # fi
  # end
  
-@@ -287,6 +300,7 @@ if __name__ == "__main__":
+@@ -287,12 +303,13 @@ if __name__ == "__main__":
          # check device type, ATA is default
          vprint(2, "Get device type")
          devtype = options.devtype
 +        vprint(2, "command line supplied device type is: %s" % devtype)
          if not devtype:
-                 devtype = "ATA"
+-                devtype = "ATA"
++                if device_re.search( device ):
++                        devtype = "scsi"
++                else:
++                        devtype= "ata"
  
+-        if device_re.search( device ):
+-                devtype = "scsi"
+-
+         vprint(1, "Device type: %s" % devtype)
+ 
+         # call smartctl and parse output
+@@ -303,7 +320,7 @@ if __name__ == "__main__":
+         vprint(2, "Parse smartctl output")
+         (healthStatus, temperature) = parseOutput(healthStatusOutput, temperatureOutput, devtype)
+         vprint(2, "Generate return information")
+-        (value, message) = createReturnInfo(healthStatus, temperature,
++        (value, message) = createReturnInfo(device, healthStatus, temperature,
+                         options.warningThreshold, options.criticalThreshold)
+ 
+         # exit program

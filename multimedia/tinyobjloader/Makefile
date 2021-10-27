@@ -10,7 +10,8 @@ COMMENT=	C++ single file wavefront obj loader
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 

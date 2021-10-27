@@ -1,0 +1,4 @@
+sphinxcontrib-towncrier is an RST directive for injecting a Towncrier-generated
+changelog draft containing fragments for the unreleased (next) project version.
+
+WWW: https://github.com/sphinx-contrib/sphinxcontrib-towncrier

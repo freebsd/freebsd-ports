@@ -59,8 +59,10 @@ step_ca_startprecmd()
 		echo "No configured Step CA found."
 		echo "Creating new one...."
 		export STEPPATH=${step_ca_steppath}
-		%%PREFIX%%/bin/step ca init
+		%%PREFIX%%/bin/step ca init --ssh
 		chown -R ${step_ca_user}:${step_ca_group} ${step_ca_steppath}
+	else
+		export STEPPATH=${step_ca_steppath}
 	fi
 
 	if [ ! -e ${step_ca_password} ]; then

@@ -7,6 +7,9 @@ lib/hexchat/plugins/checksum.so
 lib/hexchat/plugins/python.so
 %%LUA%%lib/hexchat/plugins/lua.so
 %%SYSINFO%%lib/hexchat/plugins/sysinfo.so
+lib/hexchat/python/_hexchat.py
+lib/hexchat/python/hexchat.py
+lib/hexchat/python/xchat.py
 libdata/pkgconfig/hexchat-plugin.pc
 man/man1/hexchat.1.gz
 share/metainfo/io.github.Hexchat.appdata.xml

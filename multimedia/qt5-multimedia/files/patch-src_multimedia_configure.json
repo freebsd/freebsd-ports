@@ -2,9 +2,9 @@ This adds a configure knob to Qt itself, which responds to the
 FreeBSD Makefile knobs; otherwise, we can't turn off finding
 OpenAL when it is installed.
 
---- src/multimedia/configure.json.orig	2019-10-15 04:21:48 UTC
+--- src/multimedia/configure.json.orig	2020-10-27 08:02:12 UTC
 +++ src/multimedia/configure.json
-@@ -12,6 +12,7 @@
+@@ -13,6 +13,7 @@
              "directshow": { "type": "boolean" },
              "wmf": { "type": "boolean" },
              "gstreamer": { "type": "optionalString", "values": [ "no", "yes", "0.10", "1.0" ] },
@@ -12,3 +12,14 @@ OpenAL when it is installed.
              "pulseaudio": "boolean"
          }
      },
+@@ -101,9 +102,9 @@
+         "gstreamer_gl_1_0": {
+             "label": "GStreamer OpenGL 1.0",
+             "export": "gstreamer_gl",
+             "test":  {
+-                "include": "gst/gl/gl.h"
++                "include": "gst/gl/gl.h-BogusNotFound"
+             },
+             "use": "gstreamer_1_0",
+             "sources": [
+                 { "type": "pkgConfig", "args": "gstreamer-gl-1.0" }

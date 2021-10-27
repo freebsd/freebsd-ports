@@ -43,7 +43,8 @@ RUN_DEPENDS=	rubygem-bcrypt_pbkdf10>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf10 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 
-USES=		shebangfix
+USES=		cpe shebangfix
+CPE_VENDOR=	hashicorp
 SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \
 		scripts/sign.sh \
 		scripts/website_push_www.sh

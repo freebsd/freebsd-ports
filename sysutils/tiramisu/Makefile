@@ -1,5 +1,5 @@
 PORTNAME=	tiramisu
-DISTVERSION=	1.0
+DISTVERSION=	2.0-20211019
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -7,6 +7,8 @@ COMMENT=	Desktop notifications, the UNIX way
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	valac:lang/vala
 
 USES=		gmake gnome pkgconfig
 USE_GITHUB=	yes

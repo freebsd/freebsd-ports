@@ -22,7 +22,6 @@ SHEBANG_FILES=	data/examples/commands.ru_RU.UTF-8.php \
 php_OLD_CMD=	/usr/bin/php5
 NO_ARCH=	yes
 NO_BUILD=	yes
-INSTALLS_ICONS=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/data
 

@@ -11,11 +11,6 @@ COMMENT=	Replacement for qmail's sendmail drop-in
 
 USES=		qmail
 
-BROKEN_aarch64=		fails to build: regparm is not valid on this platform
-BROKEN_armv6=		fails to build: regparm is not valid on this platform
-BROKEN_armv7=		fails to build: auto-aliastest.c:3:34: error: alias must point to a defined variable or function
-BROKEN_riscv64=		fails to build: auto-aliastest.c:3:34: error: alias must point to a defined variable or function
-
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 
 PLIST_FILES=	sbin/usendmail
@@ -24,6 +19,12 @@ SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_PREFIX},' \

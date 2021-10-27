@@ -28,8 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${SAMBALIBS}
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${SAMBAINCLUDES}
 
-INSTALLS_ICONS=	yes
-
 NO_PACKAGE=	must generate a fresh private key at install time
 LEGAL_PACKAGE=	yes
 

@@ -22,7 +22,6 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 RUN_DEPENDS=	${_SCHEMA_DEPENDS}
 
 USES=		cmake gettext gnome localbase pkgconfig tar:xz
-INSTALLS_ICONS=	yes
 
 _SCHEMA_DEPENDS=	\
 	${LOCALBASE}/share/rime-data/luna_pinyin.schema.yaml:chinese/rime-luna-pinyin	\

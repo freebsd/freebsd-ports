@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
 PORTNAME=	pciids
-PORTVERSION=	20210829
+PORTVERSION=	20210930
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +16,7 @@ NO_BUILD=	yes
 PORTDATA=	pci.ids
 
 GH_ACCOUNT=	pciutils
-GH_TAGNAME=	df39912
+GH_TAGNAME=	d3bccd4
 USE_GITHUB=	yes
 
 do-install:

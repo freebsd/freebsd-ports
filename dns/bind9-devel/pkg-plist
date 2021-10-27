@@ -57,7 +57,6 @@ include/dns/keyflags.h
 include/dns/keymgr.h
 include/dns/keytable.h
 include/dns/keyvalues.h
-include/dns/lib.h
 include/dns/librpz.h
 include/dns/log.h
 include/dns/lookup.h
@@ -97,7 +96,6 @@ include/dns/secproto.h
 include/dns/soa.h
 include/dns/ssu.h
 include/dns/stats.h
-include/dns/tcpmsg.h
 include/dns/time.h
 include/dns/timer.h
 include/dns/tkey.h
@@ -116,7 +114,6 @@ include/dns/zoneverify.h
 include/dns/zt.h
 include/dst/dst.h
 include/dst/gssapi.h
-include/dst/result.h
 include/irs/resconf.h
 include/isc/aes.h
 include/isc/align.h
@@ -192,7 +189,6 @@ include/isc/regex.h
 include/isc/region.h
 include/isc/resource.h
 include/isc/result.h
-include/isc/resultclass.h
 include/isc/rwlock.h
 include/isc/safe.h
 include/isc/serial.h
@@ -224,7 +220,6 @@ include/isccc/base64.h
 include/isccc/cc.h
 include/isccc/ccmsg.h
 include/isccc/events.h
-include/isccc/result.h
 include/isccc/sexpr.h
 include/isccc/symtab.h
 include/isccc/symtype.h
@@ -240,7 +235,6 @@ include/ns/client.h
 include/ns/events.h
 include/ns/hooks.h
 include/ns/interfacemgr.h
-include/ns/lib.h
 include/ns/listenlist.h
 include/ns/log.h
 include/ns/notify.h

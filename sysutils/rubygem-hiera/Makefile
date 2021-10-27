@@ -11,7 +11,8 @@ COMMENT=	Pluggable data store for hierarchical data
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	puppet
 USE_RUBY=	yes
 
 NO_ARCH=	yes

@@ -15,8 +15,10 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpdclient.so:audio/libmpdclient \
 		libpcre.so:devel/pcre
 
-USES=		compiler:c++17-lang iconv localbase:ldflags meson ncurses \
+USES=		compiler:c++17-lang cpe iconv localbase:ldflags meson ncurses \
 		pkgconfig tar:xz
+
+CPE_VENDOR=	ncmpc_project
 
 OPTIONS_DEFINE=		COLORS DOCS LYRICS MANPAGES NLS
 OPTIONS_DEFAULT=	COLORS LYRICS MANPAGES

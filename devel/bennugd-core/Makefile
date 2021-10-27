@@ -11,14 +11,14 @@ COMMENT=	High level open source game development suite, core libs
 
 USES=		dos2unix libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
+CONFIGURE_ARGS=	--bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.c *.h
 INSTALL_TARGET=	install-strip
 
 ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	Segfaults on !i386
+ONLY_FOR_ARCHS_REASON=	dies with segmentation fault on !i386
 
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 

@@ -1,0 +1,12 @@
+ZODB provides an object-oriented database for Python that provides
+a high-degree of transparency. ZODB runs on Python 2.7 or Python 3.4
+ and above. It also runs on PyPy.
+
+*no separate language for database operations
+*very little impact on your code to make objects persistent
+*no database mapper that partially hides the database.
+*Using an object-relational mapping is not like using an object-oriented
+database.
+*almost no seam between code and database.
+
+WWW: https://github.com/zopefoundation/zodb

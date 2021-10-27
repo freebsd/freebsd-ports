@@ -10,7 +10,9 @@ COMMENT=	Kubernetes command-line tool
 
 LICENSE=	APACHE20
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	jenkins
+CPE_PRODUCT=	kubernetes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes

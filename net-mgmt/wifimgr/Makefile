@@ -17,7 +17,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		desktop-file-utils gnome pkgconfig tar:bzip2 xorg
 USE_GNOME=	cairo
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	GTK2 NLS

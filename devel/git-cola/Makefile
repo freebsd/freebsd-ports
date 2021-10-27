@@ -18,7 +18,6 @@ USES=			desktop-file-utils gmake gnome python pyqt:5 qt:5 shebangfix
 USE_GITHUB=		yes
 USE_PYQT=		core gui network widgets
 
-INSTALLS_ICONS=		yes
 NO_ARCH=		yes
 
 # NO_VENDOR_LIBS ensures we use ports QtPy not embedded version

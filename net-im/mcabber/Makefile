@@ -1,7 +1,7 @@
 # Created by: vsevolod
 
 PORTNAME=	mcabber
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 

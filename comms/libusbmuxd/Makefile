@@ -13,7 +13,8 @@ LIB_DEPENDS=	libplist-2.0.so:devel/libplist
 
 CONFLICTS_INSTALL=usbmuxd-1.0.[6-8]
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		cpe libtool pathfix pkgconfig tar:bzip2
+CPE_VENDOR=	libimobiledevice
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

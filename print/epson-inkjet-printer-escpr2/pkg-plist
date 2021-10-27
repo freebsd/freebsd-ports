@@ -31,6 +31,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3710_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3750_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3760_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3800_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3830_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3850_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-4750_Series-epson-inkjet-printer-escpr2.ppd.gz
@@ -183,6 +184,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-XP-6100_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-XP-8500_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-XP-8600_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-XP-8700_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-XP-970_Series-epson-inkjet-printer-escpr2.ppd.gz
 share/cups/model/epson-inkjet-printer-escpr2
 @dir %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/cups/lib/filter

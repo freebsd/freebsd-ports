@@ -6,7 +6,7 @@ MASTER_SITES=	KDE/stable/latte-dock
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Launcher for Qt and Plasma desktops
 
-LICENSE_COMB=   multi
+LICENSE_COMB=	multi
 LICENSE=	GPLv2+ LGPL20+ LGPL21 LGPL3
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util

@@ -1,28 +1,28 @@
---- chrome/browser/flag_descriptions.cc.orig	2021-07-19 18:45:08 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2021-09-24 04:25:58 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -5015,7 +5015,7 @@ const char kInstallableInkDropDescription[] =
+@@ -5110,7 +5110,7 @@ const char kDownloadShelfWebUIDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS)
+     defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
  const char kEnableOopPrintDriversName[] =
-@@ -5039,10 +5039,10 @@ const char kSettingsLandingPageRedesignDescription[] =
+@@ -5134,10 +5134,10 @@ const char kSettingsLandingPageRedesignDescription[] =
      "Changes the layout of the chrome://settings page to only show one section "
      "at a time.";
  
 -#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
 +#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) ||
-         // defined(OS_CHROMEOS)
+         // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5058,7 +5058,7 @@ const char kDesktopDetailedLanguageSettingsName[] =
+@@ -5153,7 +5153,7 @@ const char kDesktopDetailedLanguageSettingsName[] =
  const char kDesktopDetailedLanguageSettingsDescription[] =
      "Enable the new detailed language settings page";
  
@@ -31,20 +31,9 @@
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX)
  #if BUILDFLAG(USE_TCMALLOC)
-@@ -5085,20 +5085,20 @@ const char kWebShareDescription[] =
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
-+#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \
-     defined(OS_MAC)
- const char kEnableEphemeralGuestProfilesOnDesktopName[] =
-     "Enable ephemeral Guest profiles on Desktop";
- const char kEnableEphemeralGuestProfilesOnDesktopDescription[] =
-     "Enables ephemeral Guest profiles on Windows, Linux, and Mac.";
--#endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || (defined(OS_LINUX) || defined(OS_BSD) ||
-         // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
+@@ -5178,11 +5178,11 @@ const char kWebShareDescription[] =
+     "platforms.";
+ #endif  // defined(OS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC)
  
 -#if defined(OS_LINUX) && defined(USE_OZONE)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
@@ -56,7 +45,7 @@
  
  // Feature flags --------------------------------------------------------------
  
-@@ -5184,7 +5184,7 @@ const char kAutofillCreditCardUploadDescription[] =
+@@ -5249,7 +5249,7 @@ const char kAutofillCreditCardUploadDescription[] =
  
  #endif  // defined(TOOLKIT_VIEWS) || defined(OS_ANDROID)
  
@@ -65,9 +54,9 @@
  const char kSendWebUIJavaScriptErrorReportsName[] =
      "Send WebUI JavaScript Error Reports";
  const char kSendWebUIJavaScriptErrorReportsDescription[] =
-@@ -5193,7 +5193,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
-     "will be sent to Google.";
- #endif
+@@ -5264,7 +5264,7 @@ const char kElasticOverscrollDescription[] =
+     "Enables Elastic Overscrolling on touchscreens and precision touchpads.";
+ #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
 -#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
 +#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \

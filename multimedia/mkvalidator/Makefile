@@ -16,7 +16,8 @@ BROKEN_sparc64=		build broken on big endian architectures
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-USES=		gmake iconv localbase tar:bzip2
+USES=		cpe gmake iconv localbase tar:bzip2
+CPE_VENDOR=	matroska
 HAS_CONFIGURE=	yes
 MAKE_ENV=	V=1
 MAKEFILE=	GNUmakefile

@@ -1,8 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 
 PORTNAME=	zim
-DISTVERSION=	0.73.5
-PORTREVISION=	1
+DISTVERSION=	0.74.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
@@ -18,11 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext gnome python:3.3+ shared-mime-info
+USES=		cpe desktop-file-utils gettext gnome python:3.3+ shared-mime-info
+CPE_VENDOR=	zim-wiki
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	autoplist distutils noflavors
 
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		DITAA GIT GNUPLOT GNUR GRAPHVIZ LATEX \

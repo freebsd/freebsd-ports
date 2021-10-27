@@ -2,6 +2,7 @@
 
 PORTNAME=	anki
 DISTVERSION=	2.1.48
+PORTREVISION=	1
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -60,12 +61,6 @@ GH_ACCOUNT=	ankitects
 # Translation files
 GH_TUPLE=	ankitects:anki-core-i18n:56d46d6:ftlrslib \
 		ankitects:anki-desktop-ftl:5359f84:ftlextra
-# Cargo crates
-GH_TUPLE+=	ankitects:hyper-timeout:0cb6f7d14c62819e37cd221736f8b0555e823712:hypertimeout \
-		ankitects:linkcheck:2f20798ce521cc594d510d4e417e76d5eac04d4b:linkcheck \
-		ankitects:reqwest:7591444614de02b658ddab125efba7b2bb4e2335:reqwest \
-		ankitects:tokio-io-timeout:1ee0892217e9a76bba4bb369ec5fab8854935a3c:tokioiotimeout \
-		timothee-haudebourg:pct-str:4adccd8d4a222ab2672350a102f06ae832a0572d:pctstr
 # Bazel Skylib framework and sets of bazel rules
 GH_TUPLE+=	bazelbuild:bazel-skylib:e59b620:bzlskylib \
 		bazelbuild:rules_cc:40548a2:bzlrcc \
@@ -403,8 +398,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winreg-0.7.0 \
 		wyz-0.2.0 \
 		xml5ever-0.16.1 \
-		zip-0.5.13
-CARGO_USE_GITHUB=	yes
+		zip-0.5.13 \
+		reqwest@git+https://github.com/ankitects/reqwest.git?rev=7591444614de02b658ddab125efba7b2bb4e2335\#7591444614de02b658ddab125efba7b2bb4e2335 \
+		hyper-timeout@git+https://github.com/ankitects/hyper-timeout.git?rev=0cb6f7d14c62819e37cd221736f8b0555e823712\#0cb6f7d14c62819e37cd221736f8b0555e823712 \
+		linkcheck@git+https://github.com/ankitects/linkcheck.git?rev=2f20798ce521cc594d510d4e417e76d5eac04d4b\#2f20798ce521cc594d510d4e417e76d5eac04d4b \
+		tokio-io-timeout@git+https://github.com/ankitects/tokio-io-timeout.git?rev=1ee0892217e9a76bba4bb369ec5fab8854935a3c\#1ee0892217e9a76bba4bb369ec5fab8854935a3c \
+		pct-str@git+https://github.com/timothee-haudebourg/pct-str.git?rev=4adccd8d4a222ab2672350a102f06ae832a0572d\#4adccd8d4a222ab2672350a102f06ae832a0572d
 CARGO_CARGOTOML=	${WRKSRC}/pylib/rsbridge/Cargo.toml
 
 CARGO_BUILD=	no
@@ -489,8 +488,6 @@ post-extract:
 	@${MV} ${WRKSRC}/pip/pyqt5/defs.bzl ${WRKSRC}/pip/pyqt5/defs.bzl.dist
 	@${MV} ${WRKSRC}/pylib/rsbridge/BUILD.bazel ${WRKSRC}/pylib/rsbridge/BUILD.bazel.dist
 	@${MV} ${WRKSRC}/rslib/i18n/BUILD.bazel ${WRKSRC}/rslib/i18n/BUILD.bazel.dist
-	# Required for a successful Rust compilation
-	@${MV} ${WRKSRC}/Cargo.lock ${WRKSRC}/Cargo.lock.dist
 	# Copy the replacement files
 	@${CP} ${FILESDIR}/bazel/repos.bzl ${WRKSRC}/
 	@${CP} ${FILESDIR}/bazel/pyqt5.bzl ${WRKSRC}/pip/pyqt5/defs.bzl

@@ -23,7 +23,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	akiraux
 GH_PROJECT=	Akira
 GLIB_SCHEMAS=	com.github.akiraux.akira.gschema.xml
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	build-aux/meson/post_install.py
 
 post-patch:

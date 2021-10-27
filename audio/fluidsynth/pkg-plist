@@ -18,7 +18,7 @@ include/fluidsynth/types.h
 include/fluidsynth/version.h
 include/fluidsynth/voice.h
 lib/libfluidsynth.so
-lib/libfluidsynth.so.2
-lib/libfluidsynth.so.2.3.7
+lib/libfluidsynth.so.3
+lib/libfluidsynth.so.3.0.3
 libdata/pkgconfig/fluidsynth.pc
 man/man1/fluidsynth.1.gz

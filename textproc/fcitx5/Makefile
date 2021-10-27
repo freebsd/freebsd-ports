@@ -63,7 +63,6 @@ MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 USE_GL=		egl
 USE_GNOME=	cairo glib20 gdkpixbuf2 pango
 USE_KDE=	ecm
-INSTALLS_ICONS=	yes
 
 USE_LDCONFIG=	yes
 

@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed, commercial use requires a commercial license
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
+ONLY_FOR_ARCHS_REASON=	not clear if it can be built on other architectures
+
 BROKEN_i386=	need to fix the fft library handling
 
 BUILD_DEPENDS=	bash:shells/bash \

@@ -19,7 +19,8 @@ RUN_DEPENDS=	rubygem-activemodel5>=4.2.0:databases/rubygem-activemodel5 \
 		rubygem-mime-types>=0:misc/rubygem-mime-types \
 		rubygem-terrapin>=0.6.0:devel/rubygem-terrapin
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	thoughtbot
 USE_RUBY=	yes
 
 NO_ARCH=	yes

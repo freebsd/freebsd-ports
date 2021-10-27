@@ -10,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	Uses explicit SSE instructions without any way to turn them off, can be removed once this bug is fixed: https://github.com/fraunhoferhhi/vvdec/issues/9; also is for 64-bit systems
+ONLY_FOR_ARCHS_REASON=	uses explicit SSE instructions without any way to turn them off, can be removed once this bug is fixed: https://github.com/fraunhoferhhi/vvdec/issues/9; also is for 64-bit systems
 
 USES=		cmake compiler:c++14-lang
 USE_LDCONFIG=	yes

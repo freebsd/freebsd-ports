@@ -1,5 +1,5 @@
 PORTNAME=	dune-metagrid
-DISTVERSION=	g20180822
+DISTVERSION=	g20210929
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	5bc4c7e73bd76ccdaef842a5150c294095107a60
+GL_COMMIT=	45fe80d530d18d8b86e77f20e38865f2101e571a
 
 NO_ARCH=	yes
 

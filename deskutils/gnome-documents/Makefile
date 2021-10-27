@@ -32,7 +32,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
 		meson pkgconfig python:3.6+,build tar:xz
 USE_GNOME=	cairo gnomedesktop3 introspection libxslt:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

@@ -1,6 +1,5 @@
 PORTNAME=	mtm
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -10,18 +9,21 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/README.rst
 
 # NB: ncurses 6.1 is required.
-USES=		localbase:ldflags
+USES=		localbase
 
 USE_CSTD=	gnu99
 USE_GITHUB=	yes
 GH_ACCOUNT=	deadpixi
 
+MAKE_ENV=	DESTDIR="${DESTDIR}${PREFIX}"
+
+CFLAGS+=	-I${NCURSESINC} ${CPPFLAGS}
+LIBS+=		-L${NCURSESLIB} -lncurses -lutil
+
+BINARY_ALIAS=	strip=true
+
 PLIST_FILES=	bin/mtm \
 		share/man/man1/mtm.1.gz
-
-CFLAGS+=	-I${NCURSESINC}
-LDFLAGS+=	-L${NCURSESLIB} -ltinfow
-
 PORTDATA=	mtm.ti
 
 do-install:
@@ -34,10 +36,13 @@ do-install:
 
 .include <bsd.port.options.mk>
 
+.if make(makesum) || make(fetch) && "${NO_CHECKSUM}" == yes
+.else
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
 USES+=		ncurses:base
 .else
 USES+=		ncurses:port
+.endif
 .endif
 
 .include <bsd.port.mk>

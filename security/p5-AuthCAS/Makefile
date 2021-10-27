@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
-
 USES=		perl5 shebangfix
 SHEBANG_FILES=	sampleCasClient.pl
 USE_PERL5=	configure

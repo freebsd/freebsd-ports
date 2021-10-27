@@ -22,7 +22,6 @@ USES=		compiler:c++11-lang gettext gmake gnome iconv localbase \
 		pkgconfig xorg
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

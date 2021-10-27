@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activemodel5>=5.0:databases/rubygem-activemodel5 \
 		rubygem-actionpack5>=5.0:www/rubygem-actionpack5
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	plataformatec
 USE_RUBY=	yes
 
 NO_ARCH=	yes

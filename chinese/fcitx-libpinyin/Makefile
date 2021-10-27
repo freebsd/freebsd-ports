@@ -22,7 +22,6 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libFcitxQt5WidgetsAddons.so:textproc/fcitx-qt5
 
 USES=		cmake gettext gnome pkgconfig tar:xz
-INSTALLS_ICONS=	yes
 
 _MODEL_VER=	20161206
 

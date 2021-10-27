@@ -2,9 +2,7 @@
 # Its build is known to succeed with MAX_FILES_RStudio=4096 in poudriere.conf
 
 PORTNAME=	RStudio
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1717
-PORTREVISION=	2
+DISTVERSION=	2021.09.0+351
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools

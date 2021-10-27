@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	grisbi
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/${PORTVERSION}
 
@@ -19,12 +19,11 @@ LIB_DEPENDS=	libofx.so:finance/libofx		\
 USES=		tar:bzip2 desktop-file-utils gmake gnome iconv localbase	\
 		pkgconfig shared-mime-info ssl
 
-USE_GNOME=	cairo glib20 gtk30 intltool libgsf libxml2
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libgsf libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 GLIB_SCHEMAS=	org.gtk.grisbi.gschema.xml
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 

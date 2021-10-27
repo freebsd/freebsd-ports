@@ -1,0 +1,8 @@
+QuickQanava is a C++14 library designed to display graphs and relational content
+in a QtQuick application. QuickQanava provide QML components and C++ classes
+to visualize medium-sized directed graphs in a C++/QML application. QuickQanava
+does not provide advanced layout algorithms, but rather focus on displaying
+relational content in advanced dynamic user interfaces (with DnD support,
+resizable content, visual connection of nodes).
+
+WWW: http://cneben.github.io/QuickQanava/index.html

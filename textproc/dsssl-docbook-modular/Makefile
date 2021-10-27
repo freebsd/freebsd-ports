@@ -14,7 +14,7 @@ PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	docbook-dsssl-mn-20070525.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 
 BUILD_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr

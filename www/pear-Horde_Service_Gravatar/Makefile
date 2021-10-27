@@ -7,7 +7,7 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API accessor for gravatar.com
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Http \
 		Horde_Url
 

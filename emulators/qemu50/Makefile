@@ -109,7 +109,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
 

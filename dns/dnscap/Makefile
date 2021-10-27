@@ -2,6 +2,7 @@
 
 PORTNAME=	dnscap
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
@@ -25,15 +26,11 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CDS DOCS THREADS
 OPTIONS_DEFAULT=THREADS
-OPTIONS_SUB=	yes
 CDS_DESC=	CBOR DNS Stream (CDS) format (experimental)
 
 CDS_CONFIGURE_OFF=	ac_cv_lib_tinycbor_cbor_parser_init=no
 CDS_LIB_DEPENDS=	libtinycbor.so:devel/tinycbor
 THREADS_CONFIGURE_ENABLE=	threads
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(HAVE_\)\(CBOR_CBOR_H\)|\1TINY\2|; s|cbor/cbor.h|tiny&|' ${WRKSRC}/configure.ac ${WRKSRC}/src/dump_cbor.c ${WRKSRC}/src/dump_cds.c
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.am

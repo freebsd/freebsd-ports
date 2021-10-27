@@ -2,6 +2,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -42,7 +43,6 @@ USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gl gnome jpeg \
 OPTIONS_EXCLUDE=LTO
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	ice sm x11 xext xrandr
 

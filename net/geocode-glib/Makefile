@@ -20,7 +20,6 @@ USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Denable-installed-tests=false
-#MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 OPTIONS_DEFINE=	DOCS
 

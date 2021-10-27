@@ -27,7 +27,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 USES=		gnome pkgconfig xorg
 USE_GNOME=	gtk20 cairo
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_LDCONFIG=	yes
 

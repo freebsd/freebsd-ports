@@ -10,6 +10,8 @@ COMMENT=	German localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:devel/bugzilla44
 
+USES=		cpe
+CPE_VENDOR=	mozilla
 NO_WRKSUBDIR=	yes
 
 # adjust BZ_REVNUM if bugzilla revision was incremented and there are no

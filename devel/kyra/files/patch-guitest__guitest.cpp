@@ -1,6 +1,6 @@
---- guitest/guitest.cpp.orig
+--- guitest/guitest.cpp.orig	2005-04-07 05:53:51 UTC
 +++ guitest/guitest.cpp
-@@ -96,19 +96,19 @@
+@@ -96,19 +96,19 @@ class MyConsole : public KrConsole
  		switch ( event.type )
  		{
  			case KrWidgetEvent::ACTIVATED:

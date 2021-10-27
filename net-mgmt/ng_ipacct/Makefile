@@ -2,6 +2,7 @@
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20210316
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -23,7 +24,7 @@ MAKE_ENV+=	BINDIR="${PREFIX}/sbin"
 
 USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
-CFLAGS+=	-DMEM_USE_ZONE
+CFLAGS+=	-DMEM_USE_ZONE -DVIMAGE
 
 post-patch:
 	@${REINPLACE_CMD} 's,{MANDIR},{DESTDIR}$$&,' ${WRKSRC}/man_ru/Makefile
@@ -33,9 +34,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ng_ipacct/ng_ipacct.h ${STAGEDIR}${PREFIX}/include/netgraph
 	${INSTALL_DATA} ${FILESDIR}/ng_ipacct.conf \
 		${STAGEDIR}${PREFIX}/etc/ng_ipacct.conf.sample
-
-OPTIONS_DEFINE=	VIMAGE
-VIMAGE_DESC=	VIMAGE virtual networking support
-VIMAGE_CFLAGS=	-DVIMAGE
 
 .include <bsd.port.mk>

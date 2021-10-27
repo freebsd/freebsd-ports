@@ -2,10 +2,14 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.alsa-project.org/pub/plugins/ \
-		GENTOO
+MASTER_SITES=	GH
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	alsa-project
+GH_PROJECT=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
@@ -14,7 +18,7 @@ LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		alias libtool:keepla localbase pkgconfig tar:bzip2
+USES=		alias autoreconf libtool:keepla localbase pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	RM="${RM}"
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch

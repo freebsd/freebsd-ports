@@ -13,7 +13,9 @@ COMMENT=	Horde LZ4 Compression Extension for php
 
 LICENSE=	MIT
 
-USES=	php:ext tar:tgz
+USES=		cpe php:ext tar:tgz
+
+CPE_VENDOR=	horde
 
 OPTIONS_DEFINE=	LZ4
 OPTIONS_DEFAULT=LZ4

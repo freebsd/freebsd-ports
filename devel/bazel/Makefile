@@ -49,6 +49,11 @@ FINALRC=	2
 EXTRA_PATCHES+=	${FILESDIR}/extra-i386_tools_cpp_BUILD.static.bsd
 .endif
 
+pre-patch:
+	@${CP} ${FILESDIR}/extra-patch-absl_base_internal_unscaledcycleclock.cc \
+		${FILESDIR}/extra-patch-bazel_grpc__deps.bzl \
+		${WRKSRC}/third_party/grpc/
+
 # Have the location of the system-wide rc file reside ${ETCDIR}.
 # Also adapt the sample file to disable persistent java workers as they
 # do not work reliably on FreeBSD.

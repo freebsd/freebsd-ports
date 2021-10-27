@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	pgroonga
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
@@ -9,6 +9,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
 
 LICENSE=	PostgreSQL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 

@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	polari
-PORTVERSION=	40.1
+PORTVERSION=	41.0
 CATEGORIES=	irc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -28,7 +28,6 @@ USES=		desktop-file-utils gettext gnome localbase \
 		meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 introspection
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.Polari.gschema.xml
 

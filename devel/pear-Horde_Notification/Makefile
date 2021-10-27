@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Notification System
 
-USES=		horde php
+USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
 USE_PHP=	gettext

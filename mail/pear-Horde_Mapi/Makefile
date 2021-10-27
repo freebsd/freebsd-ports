@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde MAPI utility library
 
-USES=		horde php
+USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Exception
 

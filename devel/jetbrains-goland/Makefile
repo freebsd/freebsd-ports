@@ -1,5 +1,5 @@
 PORTNAME=	goland
-PORTVERSION=	2021.2.3
+PORTVERSION=	2021.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -16,7 +16,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		lsof:sysutils/lsof
 
-USES=		python:run shebangfix
+USES=		cpe python:run shebangfix
+CPE_VENDOR=	jetbrains
 
 USE_JAVA=	yes
 JAVA_VERSION=	11+

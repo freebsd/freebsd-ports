@@ -4,6 +4,6 @@ PostgreSQL instance from various sources. It is implemented as a background
 worker.
 
 Install databases/powa-archivist on your database servers, and this port
-on any achine with psql access to the databases.
+on any machine with psql access to the databases.
 
 WWW: http://powa.readthedocs.org/

@@ -1,7 +1,7 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
 
 PORTNAME=	chef
-PORTVERSION=	16.14.1
+PORTVERSION=	16.16.13
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -48,7 +48,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-tty-table>=0.11<1:devel/rubygem-tty-table \
 		rubygem-uuidtools>=2.1.5<3.0:devel/rubygem-uuidtools
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes

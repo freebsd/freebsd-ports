@@ -1,6 +1,6 @@
---- content/public/app/content_main_delegate.h.orig	2021-04-14 18:41:03 UTC
+--- content/public/app/content_main_delegate.h.orig	2021-09-14 01:51:56 UTC
 +++ content/public/app/content_main_delegate.h
-@@ -49,7 +49,7 @@ class CONTENT_EXPORT ContentMainDelegate {
+@@ -53,7 +53,7 @@ class CONTENT_EXPORT ContentMainDelegate {
    // Called right before the process exits.
    virtual void ProcessExiting(const std::string& process_type) {}
  
@@ -9,7 +9,7 @@
    // Tells the embedder that the zygote process is starting, and allows it to
    // specify one or more zygote delegates if it wishes by storing them in
    // |*delegates|.
-@@ -58,7 +58,7 @@ class CONTENT_EXPORT ContentMainDelegate {
+@@ -62,7 +62,7 @@ class CONTENT_EXPORT ContentMainDelegate {
  
    // Called every time the zygote process forks.
    virtual void ZygoteForked() {}

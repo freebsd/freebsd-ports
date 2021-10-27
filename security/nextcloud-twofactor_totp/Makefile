@@ -33,6 +33,7 @@ WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-	${RM} ${STAGEDIR}${WWWDIR}/COPYING
+	(cd ${WRKSRC}; ${FIND} . -not -type d) | ${SORT} | \
+		${SED} -e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

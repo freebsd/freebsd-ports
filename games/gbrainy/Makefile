@@ -24,6 +24,4 @@ GNU_CONFIGURE=	yes
 
 MAKE_ENV+=	MONO_REGISTRY_PATH=${WRKDIR}
 
-INSTALLS_ICONS=	yes
-
 .include <bsd.port.mk>

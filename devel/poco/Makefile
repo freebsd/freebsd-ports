@@ -15,10 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2
 
-USES=		cmake compiler:c++14-lang localbase pkgconfig tar:bz2
+USES=		cmake compiler:c++14-lang cpe localbase pkgconfig tar:bz2
 USE_LDCONFIG=	yes
 
 CONFLICTS=	poco-ssl-[0-9]*
+
+CPE_VENDOR=	pocoproject
 
 CMAKE_ARGS=	-DPOCO_UNBUNDLED:BOOL=ON
 SHLIB_MAJOR=	71

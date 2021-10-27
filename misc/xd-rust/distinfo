@@ -161,5 +161,3 @@ SHA256 (rust/crates/winapi-util-0.1.5.tar.gz) = 70ec6ce85bb158151cae5e5c87f95a8e
 SIZE (rust/crates/winapi-util-0.1.5.tar.gz) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (nix-rust-nix-5d2a8c221af121abe73e313bdfce8ae2f4372a83_GH0.tar.gz) = 8dac2f3bba943a1ab3139be573c72bcadf83c5b9dc6f262ee757039b6dd1ae63
-SIZE (nix-rust-nix-5d2a8c221af121abe73e313bdfce8ae2f4372a83_GH0.tar.gz) = 218767

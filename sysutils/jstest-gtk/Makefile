@@ -14,7 +14,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto
 USES=		cmake compiler:c++11-lang gnome libtool localbase:ldflags \
 		pkgconfig xorg
 USE_GNOME=	gtkmm30 libsigc++20
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 
 # gitlab variables

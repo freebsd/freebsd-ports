@@ -18,7 +18,7 @@ USES=		go:modules
 BUILD_DATE=	$$(date +%d-%B-%Y)
 
 GO_TARGET=	./cmd/${PORTNAME}
-GO_BUILDFLAGS=  -ldflags "\
+GO_BUILDFLAGS=	-ldflags "\
                 -s -w \
 		-X github.com/prometheus/common/version.Version=${DISTVERSION} \
 		-X github.com/prometheus/common/version.Revision="31cacc4" \

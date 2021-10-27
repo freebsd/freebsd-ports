@@ -1,7 +1,7 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	matrix-
 
@@ -27,8 +27,6 @@ DBDIR=		/var/db/${PORTNAME}
 USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
 GL_COMMIT=	0d6ae2e1e74ee33fbc8dfcec01a8902e0a4d65d3
-USE_GITHUB=	nodefault
-GH_TUPLE=	timokoesters:heed:f6f825da7fb2c758867e05ad973ef800a6fe1d5d:heed
 CARGO_CRATES=	adler32-1.2.0 \
 		ahash-0.7.4 \
 		aho-corasick-0.7.18 \
@@ -361,12 +359,10 @@ CARGO_CRATES=	adler32-1.2.0 \
 		zeroize_derive-1.1.0 \
 		zstd-0.5.4+zstd.1.4.7 \
 		zstd-safe-2.0.6+zstd.1.4.7 \
-		zstd-sys-1.4.18+zstd.1.4.7
-CARGO_USE_GITHUB=	yes
+		zstd-sys-1.4.18+zstd.1.4.7 \
+		heed,heed-traits,heed-types@git+https://github.com/timokoesters/heed.git?rev=f6f825da7fb2c758867e05ad973ef800a6fe1d5d\#f6f825da7fb2c758867e05ad973ef800a6fe1d5d
 
 post-patch:
-	@${REINPLACE_CMD} -E -e '/^heed = /s,(path = "[^"]+),\1/heed,' \
-		${CARGO_CARGOTOML}
 	@${REINPLACE_CMD} -e 's,/etc/conduit.toml,${PREFIX}/etc/conduit.toml,' \
 		${WRKSRC}/src/main.rs
 	@${REINPLACE_CMD} -e 's,/var/lib/conduit,${DBDIR},' \

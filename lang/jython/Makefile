@@ -22,6 +22,9 @@ RUN_DEPENDS=	bash:shells/bash
 # Extract only license files
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions \
 			LICENSE.txt LICENSE_Apache.txt
+
+USES=		cpe
+CPE_VENDOR=	python
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

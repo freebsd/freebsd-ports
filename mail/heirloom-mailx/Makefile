@@ -15,7 +15,8 @@ OPTIONS_DEFINE=	IPV6 DOCS
 CONFLICTS=	mailx-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		iconv localbase ssl tar:bzip2
+USES=		cpe iconv localbase ssl tar:bzip2
+CPE_VENDOR=	heirloom
 CPPFLAGS+=	-DOPENSSL_NO_SSL2
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		SYSCONFDIR="${PREFIX}/etc" \

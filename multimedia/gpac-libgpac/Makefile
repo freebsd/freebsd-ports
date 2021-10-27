@@ -13,11 +13,11 @@ COMMENT=	Gpac MPEG-4 Systems library and headers
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=  bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 ALL_TARGET=	lib
 INSTALL_TARGET=	install-lib
-USES=		gmake dos2unix shebangfix
+USES=		cpe gmake dos2unix shebangfix
 SHEBANG_FILES=	check_revision.sh
 bash_OLD_CMD+=	/bin/sh
 USE_GITHUB=	yes

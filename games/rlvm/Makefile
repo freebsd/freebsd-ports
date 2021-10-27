@@ -32,7 +32,6 @@ EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude vendor/,}
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
 MAKE_ARGS=	VERBOSE=1
-INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS.TXT NEWS.TXT README.md STATUS.TXT notes
 
 OPTIONS_DEFINE=	DEBUG DOCS NLS TEST

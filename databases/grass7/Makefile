@@ -1,8 +1,7 @@
 # Created by: Mikael URANKAR and Loïc BARTOLETTI
 
 PORTNAME=	grass
-PORTVERSION=	7.8.5
-PORTREVISION=	4
+PORTVERSION=	7.8.6
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -148,18 +147,6 @@ GRASS_INST_DIR=	${PORTNAME}${VER}
 MANDIRS=	${PREFIX}/grass${VER}/docs/man/man1
 
 post-patch:
-	${REINPLACE_CMD} -e \
-		's|make -C|$$(MAKE) -C| ; \
-		 /^BINDIR/s|=.*|=	$${DESTDIR}$${UNIX_BIN}| ; \
-		 /test /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
-		 /tar /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
-		 /chmod /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
-		 /tar /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
-		 /rm /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
-		 /$$(MAKE) /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
-		 /^$$(INST_DIR)\//s|$$(INST_DIR)|$${DESTDIR}$${INST_DIR}|g ; \
-		 s|> $$(INST_DIR)|> $${DESTDIR}$${INST_DIR}|' \
-		${WRKSRC}/include/Make/Install.make
 	${REINPLACE_CMD} \
 		's|= python3|= ${PYTHON_CMD:T}|' ${WRKSRC}/include/Make/Platform.make.in
 	${REINPLACE_CMD} -e \

@@ -20,8 +20,6 @@ GH_ACCOUNT=		alexpevzner
 
 MAKE_ARGS=		CC=${CC} PKG_CONFIG=pkgconf
 
-MANPAGES=		sane-airscan.5 airscan-discover.1
-
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/airscan.conf \
 		${STAGEDIR}${PREFIX}/etc/sane.d/airscan.conf.sample

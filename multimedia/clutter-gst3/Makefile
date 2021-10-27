@@ -27,7 +27,6 @@ USE_GL=		gl egl
 USE_GSTREAMER1=	yes
 USE_XORG=	xcomposite xdamage xext xfixes xi xrandr x11
 USE_LDCONFIG=	yes
-MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 CONFIGURE_ARGS=	--disable-udev
 
 CPPFLAGS+=	${PTHREAD_CFLAGS}

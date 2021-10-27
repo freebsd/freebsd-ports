@@ -21,7 +21,6 @@ USE_GNOME=		cairo glib20 intltool gtk30
 USE_GSTREAMER1=		yes
 GNU_CONFIGURE=		yes
 # USE_LDCONFIG=		yes
-INSTALLS_ICONS=		yes
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject

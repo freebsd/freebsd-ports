@@ -4,7 +4,7 @@ https://bug1612184.bmoattachments.org/attachment.cgi?id=9126363
 
 diff -r 388a4d04e911 media/webrtc/gn-configs/ppc64_False_ppc64_freebsd.json
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ media/webrtc/gn-configs/ppc64_False_ppc64_freebsd.json	Thu Feb 13 11:11:51 2020 +0100
++++ dom/media/webrtc/third_party_build/gn-configs/ppc64_False_ppc64_freebsd.json	Thu Feb 13 11:11:51 2020 +0100
 @@ -0,0 +1,13237 @@
 +{
 +    "gn_gen_args": {
@@ -13246,7 +13246,7 @@ diff -r 388a4d04e911 media/webrtc/gn-configs/ppc64_False_ppc64_freebsd.json
 \ No newline at end of file
 diff -r 388a4d04e911 media/webrtc/gn-configs/ppc64_True_ppc64_freebsd.json
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ media/webrtc/gn-configs/ppc64_True_ppc64_freebsd.json	Thu Feb 13 11:11:51 2020 +0100
++++ dom/media/webrtc/third_party_build/gn-configs/ppc64_True_ppc64_freebsd.json	Thu Feb 13 11:11:51 2020 +0100
 @@ -0,0 +1,12693 @@
 +{
 +    "gn_gen_args": {
@@ -25943,17 +25943,17 @@ diff -r 388a4d04e911 media/webrtc/gn-configs/ppc64_True_ppc64_freebsd.json
 +}
 \ No newline at end of file
 diff -r 388a4d04e911 media/webrtc/trunk/webrtc/moz.build
---- media/webrtc/trunk/webrtc/moz.build	Wed Jan 29 05:21:52 2020 +0000
-+++ media/webrtc/trunk/webrtc/moz.build	Thu Feb 13 11:12:15 2020 +0100
-@@ -291,6 +291,13 @@
-         "/media/webrtc/trunk/webrtc/modules/video_processing/video_processing_neon_gn"
+--- third_party/libwebrtc/webrtc/moz.build.orig	2020-11-10 17:07:54 UTC
++++ third_party/libwebrtc/webrtc/moz.build
+@@ -312,6 +312,13 @@ if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"]
+         "/third_party/libwebrtc/webrtc/modules/video_processing/video_processing_neon_gn"
      ]
  
 +if CONFIG["CPU_ARCH"] == "ppc64" and CONFIG["OS_TARGET"] == "FreeBSD":
 +
 +    DIRS += [
-+        "/media/webrtc/trunk/webrtc/api/audio_codecs/isac/audio_decoder_isac_float_gn",
-+        "/media/webrtc/trunk/webrtc/api/audio_codecs/isac/audio_encoder_isac_float_gn"
++        "/third_party/libwebrtc/webrtc/api/audio_codecs/isac/audio_decoder_isac_float_gn",
++        "/third_party/libwebrtc/webrtc/api/audio_codecs/isac/audio_encoder_isac_float_gn"
 +    ]
 +
  if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "FreeBSD":

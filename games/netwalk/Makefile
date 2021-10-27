@@ -15,7 +15,6 @@ USES=		gmake gnome iconv sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	blynn
 GH_TAGNAME=	cb6b089
-INSTALLS_ICONS=	yes
 USE_SDL=	sdl ttf
 USE_XORG=	x11 xau xdmcp
 

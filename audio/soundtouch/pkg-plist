@@ -5,9 +5,11 @@ include/soundtouch/FIFOSamplePipe.h
 include/soundtouch/STTypes.h
 include/soundtouch/SoundTouch.h
 include/soundtouch/soundtouch_config.h
+lib/cmake/SoundTouch/SoundTouchConfig.cmake
+lib/cmake/SoundTouch/SoundTouchConfigVersion.cmake
+lib/cmake/SoundTouch/SoundTouchTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SoundTouch/SoundTouchTargets.cmake
 lib/libSoundTouch.so
-lib/libSoundTouch.so.1
-lib/libSoundTouch.so.1.0.0
+lib/libSoundTouch.so.2
+lib/libSoundTouch.so.2.3.1
 libdata/pkgconfig/soundtouch.pc
-share/aclocal/soundtouch.m4
-%%PORTDOCS%%%%DOCSDIR%%/README.html

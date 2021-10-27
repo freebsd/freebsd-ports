@@ -1,6 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20210814-124438-54e29167
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,11 +24,7 @@ GH_TUPLE=	harfbuzz:harfbuzz:2.7.2:harfbuzz/deps/harfbuzz/harfbuzz \
 		glennrp:libpng:v1.6.36-805-g8439534da:libpng/deps/freetype/libpng \
 		madler:zlib:v1.2.11:zlib/deps/freetype/zlib \
 		freetype:freetype:VER-2-10-2-80-g6a2b3e400:freetype/deps/freetype/freetype2 \
-		glium:glium:aed95270f0714036003589d6e52de196e7ff75d1:glium \
-		yeslogic:allsorts:3947164a201ab5e15d5f23204faaaaaad52531aa:allsorts \
-		libssh2:libssh2:libssh2-1.9.0-93-g5627b82:libssh2/../ssh2-rs-c65067040c97a0cf7f96c69d6fc87764a32c34ae/libssh2-sys/libssh2 \
-		wez:ssh2-rs:c65067040c97a0cf7f96c69d6fc87764a32c34ae:libsshsys \
-		wez:xkbcommon-rs:01a0a0cd5663405e6e4abb1ad3add9add1496f58:xkbcommon
+		libssh2:libssh2:libssh2-1.9.0-93-g5627b82:libssh2/../ssh2-rs-c65067040c97a0cf7f96c69d6fc87764a32c34ae/libssh2-sys/libssh2
 PLIST_FILES=	bin/strip-ansi-escapes \
 		bin/${PORTNAME} \
 		bin/${PORTNAME}-gui \
@@ -541,8 +537,11 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		zstd-safe-3.0.1+zstd.1.4.9 \
 		zstd-sys-1.4.20+zstd.1.4.9 \
 		zvariant-2.8.0 \
-		zvariant_derive-2.8.0
-CARGO_USE_GITHUB=	yes
+		zvariant_derive-2.8.0 \
+		xkbcommon@git+https://github.com/wez/xkbcommon-rs.git?rev=01a0a0cd5663405e6e4abb1ad3add9add1496f58\#01a0a0cd5663405e6e4abb1ad3add9add1496f58 \
+		glium@git+https://github.com/glium/glium.git?rev=aed95270f0714036003589d6e52de196e7ff75d1\#aed95270f0714036003589d6e52de196e7ff75d1 \
+		allsorts@git+https://github.com/yeslogic/allsorts.git?rev=3947164a201ab5e15d5f23204faaaaaad52531aa\#3947164a201ab5e15d5f23204faaaaaad52531aa \
+		libssh2-sys,ssh2@git+https://github.com/wez/ssh2-rs.git?branch=win32ssl\#c65067040c97a0cf7f96c69d6fc87764a32c34ae
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
 

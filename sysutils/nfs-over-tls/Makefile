@@ -8,14 +8,14 @@ COMMENT=	Utilities for NFS over TLS
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=    libssl.so:security/openssl
+LIB_DEPENDS=	libssl.so:security/openssl
 
 USES=		kmod ssl
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1300133
-IGNORE=         Requires FreeBSD 13 or later with in-kernel TLS support \
+IGNORE=		Requires FreeBSD 13 or later with in-kernel TLS support \
 		and OpenSSL with KTLS enabled
 .endif
 

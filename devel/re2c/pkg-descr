@@ -1,8 +1,12 @@
-re2c is a tool for generating C-based recognizers from regular
-expressions.  re2c-based scanners are efficient:  for programming
-languages, given similar specifications, an re2c-based scanner is
-typically almost twice as fast as a flex-based scanner with little or no
-increase in size (possibly a decrease on cisc architectures).  Indeed,
-re2c-based scanners are quite competitive with hand-crafted ones.
+Re2c is a free and open-source lexer generator for C, C++ and Go with a
+focus on generating fast code. It compiles regular expression
+specifications to deterministic finite automata and encodes them in the
+form of conditional jumps in the target language. This approach is
+generally faster than table-based lexers, and the generated code is easier
+to debug and understand. A flexible user interface allows one to adapt the
+generated lexer to a particular environment and input model, avoiding the
+overhead on unnecessary checks and buffers. Re2c is based on the lookahead
+TDFA algorithm that allows it to perform fast and lightweight submatch
+extraction.
 
-WWW: http://re2c.org/
+WWW: https://re2c.org/

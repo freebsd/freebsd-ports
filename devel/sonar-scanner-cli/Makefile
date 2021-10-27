@@ -1,6 +1,6 @@
 PORTNAME=	sonar-scanner-cli
 DISTVERSION=	4.4.0.2170
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/${PORTNAME}/
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	node:www/node
 
 USES=		cpe zip
 CPE_VENDOR=	sonarsource
+CPE_PRODUCT=	sonarqube_scanner
 USE_JAVA=	yes
 
 WRKSRC=		${WRKDIR}/sonar-scanner-${DISTVERSION}

@@ -17,6 +17,5 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:x11-themes/ico
 GNU_CONFIGURE=	yes
 USES=		gmake gnome pkgconfig
 USE_GNOME=	intlhack
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

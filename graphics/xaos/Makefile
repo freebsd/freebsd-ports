@@ -6,7 +6,7 @@ DISTVERSION=	4.2.1
 PORTREVISION=	1
 CATEGORIES=	graphics math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joerg.preiss@slesa.de
 COMMENT=	Real-time interactive fractal browser
 
 LICENSE=	GPLv2

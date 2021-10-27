@@ -54,8 +54,9 @@ TEST_DEPENDS=		git:devel/git \
 			${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
 			npm-node14>0:www/npm-node14
 
-USES=		bison dos2unix gettext-tools gl gnome jpeg localbase:ldflags \
+USES=		bison dos2unix cpe gettext-tools gl gnome jpeg localbase:ldflags \
 		ninja pkgconfig python:2.7,build,test shebangfix tar:xz xorg
+CPE_VENDOR=	electronjs
 DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
 USE_GITHUB=	yes
 GH_TAGNAME=	${DISTVERSIONPREFIX}${ELECTRON_VER}
@@ -151,6 +152,12 @@ GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
+
+# Add extra-patch-no-mempcpy-nasm only when there's no mempcpy() in base.
+# Nested variable expansion avoids executing the test when not needed for
+# expanding EXTRA_PATCHES.
+EXTRA_PATCHES+=	${"${:!${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h \
+	|| ${TRUE}!}" == "":?${PATCHDIR}/extra-patch-no-mempcpy-nasm:}
 
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64=""

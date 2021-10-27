@@ -2,7 +2,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	5
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -78,8 +78,19 @@ LIB_DEPENDS=								\
 		libcairo.so:graphics/cairo				\
 		libpng.so:graphics/png					\
 		libgraphite.so:graphics/silgraphite			\
+		libblas.so:math/blas					\
+		libCbcSolver.so:math/cbc				\
+		libCgl.so:math/cgl					\
+		libcoinasl.so:math/asl					\
+		libClpSolver.so:math/clp				\
 		libCoinMP.so:math/coinmp				\
+		libCoinUtils.so:math/coinutils				\
+		libcoinmumps.so:math/ipopt				\
+		libnauty.so:math/nauty					\
+		libopenblas.so:math/openblas				\
+		libOsi.so:math/osi					\
 		libfreetype.so:print/freetype2				\
+		libharfbuzz.so:print/harfbuzz				\
 		libnss3.so:security/nss					\
 		libexpat.so:textproc/expat2				\
 		libhunspell-1.7.so:textproc/hunspell			\
@@ -96,6 +107,9 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
+# For libgfortran.so and libquadmath.so
+BUILD_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
+RUN_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
@@ -116,9 +130,9 @@ AOOVERSION1=	4
 AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m3\(Build:9822\)
-GITREVISION=	6aec515561
-TIMESTAMP=	1619649022
+AOOTAG=		AOO420m4\(Build:9823\)
+GITREVISION=	febe0adc7c
+TIMESTAMP=	1633255994
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -144,7 +158,6 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache

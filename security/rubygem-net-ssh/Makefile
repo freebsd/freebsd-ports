@@ -6,7 +6,7 @@ PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Non-interactive SSH processing
 
 LICENSE=	MIT

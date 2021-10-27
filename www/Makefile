@@ -455,6 +455,7 @@
     SUBDIR += node
     SUBDIR += node10
     SUBDIR += node14
+    SUBDIR += node16
     SUBDIR += nostromo
     SUBDIR += novnc
     SUBDIR += novnc-websockify
@@ -949,6 +950,7 @@
     SUBDIR += p5-HTTP-Tiny-Multipart
     SUBDIR += p5-HTTP-Tiny-SPDY
     SUBDIR += p5-HTTP-Tiny-UA
+    SUBDIR += p5-HTTP-Tiny-UNIX
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTP-XSCookies
     SUBDIR += p5-HTTPD-Log-Filter
@@ -1713,7 +1715,7 @@
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
     SUBDIR += py-pygsheets
-    SUBDIR += py-pyjwt
+    SUBDIR += py-pyjwt1
     SUBDIR += py-pylsqpack
     SUBDIR += py-pyocclient
     SUBDIR += py-pyramid
@@ -1995,7 +1997,6 @@
     SUBDIR += rubygem-kaminari-rails52
     SUBDIR += rubygem-kaminari-rails60
     SUBDIR += rubygem-kaminari-rails61
-    SUBDIR += rubygem-kensa
     SUBDIR += rubygem-kubeclient
     SUBDIR += rubygem-layout_yullio_generator
     SUBDIR += rubygem-less
@@ -2281,6 +2282,7 @@
     SUBDIR += twiki-WysiwygPlugin
     SUBDIR += twms
     SUBDIR += typo3-10
+    SUBDIR += typo3-11
     SUBDIR += typo3-9
     SUBDIR += uchiwa
     SUBDIR += ufdbguard

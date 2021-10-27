@@ -1,0 +1,6 @@
+HTTP::Tiny::UNIX is a subclass of HTTP::Tiny to connect to HTTP server over Unix
+socket. URL syntax is "http:" + path to unix socket + "/" + uri path. For
+example: http:/var/run/apid.sock//api/v1/matches. URL not matching this pattern
+will be passed to HTTP::Tiny.
+
+WWW: https://metacpan.org/dist/HTTP-Tiny-UNIX

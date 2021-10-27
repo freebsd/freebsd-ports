@@ -22,6 +22,6 @@ post-patch:
 	@${RM} -r ${WRKSRC}/leveldb/ ${WRKSRC}/snappy/
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/leveldb*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

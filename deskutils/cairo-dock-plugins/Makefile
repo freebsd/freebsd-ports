@@ -12,7 +12,6 @@ COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-
 RUN_DEPENDS=	wget:ftp/wget
 LIB_DEPENDS=	libgldi.so:deskutils/cairo-dock
 

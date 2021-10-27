@@ -1,8 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	swell-foop
-PORTVERSION=	40.1
-PORTREVISION=	1
+PORTVERSION=	41.0.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -25,7 +24,6 @@ USES=		gettext gnome localbase meson pkgconfig python:3.6+,build \
 		tar:xz
 USE_GNOME=	gtk30
 GLIB_SCHEMAS=	org.gnome.SwellFoop.gschema.xml
-INSTALLS_ICONS=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 .include <bsd.port.mk>

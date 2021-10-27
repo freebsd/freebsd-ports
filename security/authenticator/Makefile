@@ -1,6 +1,6 @@
 PORTNAME=	authenticator
 DISTVERSION=	4.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -17,24 +17,17 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzbar.so:graphics/zbar
 
 USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
-USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_GNOME=	gtk40 libadwaita
 USE_GSTREAMER1=	gl gtk4 zbar
-GH_TUPLE=	bilelmoussaoui:ashpd:d7ec2103565301b8476d6706ef34090e197b021c:ashpd \
-		gtk-rs:gtk3-rs:6e3c8739f9f5b8dc0a234f4a485e254574af5953:gtk3 \
-		gtk-rs:gtk4-rs:13a8317a2ef8738362b9fa7f55a29dd5d3dbc459:gtk4
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Authenticator
 GL_COMMIT=	ba1894159358275be2765bc42ef89782a2d1d45d
-GL_TUPLE=	https://gitlab.freedesktop.org:gstreamer:gstreamer-rs:762450bb5335d8c79cc29a6111874d89bd3b5c00:gstreamer \
-		bilelmoussaoui:libadwaita-rs:6ae4d3670565064acc9da2f51434eca0a0c51ac9:libadwaita
 SHEBANG_FILES=	build-aux/meson_post_install.py
 CARGO_ENV=	ZBAR_INCLUDE_DIRS="${LOCALBASE}/include" ZBAR_LIB_DIRS="${LOCALBASE}/lib"
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	com.belmoussaoui.Authenticator.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	adler-1.0.2 \
 		adler32-1.2.0 \
@@ -343,33 +336,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		zbus-1.8.0 \
 		zbus_macros-1.8.0 \
 		zvariant-2.6.0 \
-		zvariant_derive-2.6.0
-CARGO_USE_GITHUB=	yes
-CARGO_USE_GITLAB=	yes
-CARGO_GIT_SUBDIR=	gstreamer:gst_base:gstreamer-base \
-			gstreamer:gst:gstreamer \
-			gtk3:cairo-rs:cairo \
-			gtk3:cairo-sys-rs:cairo/sys \
-			gtk3:gdk-pixbuf-sys:gdk-pixbuf/sys \
-			gtk3:gdk-pixbuf:gdk-pixbuf \
-			gtk3:gio-sys:gio/sys \
-			gtk3:gio:gio \
-			gtk3:glib-sys:glib/sys \
-			gtk3:glib:glib \
-			gtk3:gobject-sys:glib/gobject-sys \
-			gtk3:graphene-sys:graphene/sys \
-			gtk3:graphene:graphene \
-			gtk3:pango-sys:pango/sys \
-			gtk3:pango:pango \
-			gtk4:gdk-sys:gdk4/sys \
-			gtk4:gdk4:gdk4 \
-			gtk4:gdk4wayland:gdk4-wayland \
-			gtk4:gdk4x11:gdk4-x11 \
-			gtk4:gdk:gdk4 \
-			gtk4:gtk-sys:gtk4/sys \
-			gtk4:gtk4:gtk4 \
-			gtk4:gtk:gtk4 \
-			libadwaita:adw:libadwaita
+		zvariant_derive-2.6.0 \
+		gstreamer,gstreamer-base,gstreamer-base-sys,gstreamer-sys@git+https://gitlab.freedesktop.org/gstreamer/gstreamer-rs\#762450bb5335d8c79cc29a6111874d89bd3b5c00 \
+		gdk4,gdk4-sys,gdk4-wayland,gdk4-wayland-sys,gdk4-x11,gdk4-x11-sys,gsk4,gsk4-sys,gtk4,gtk4-macros,gtk4-sys@git+https://github.com/gtk-rs/gtk4-rs\#13a8317a2ef8738362b9fa7f55a29dd5d3dbc459 \
+		libadwaita,libadwaita-sys@git+https://gitlab.gnome.org/bilelmoussaoui/libadwaita-rs\#6ae4d3670565064acc9da2f51434eca0a0c51ac9 \
+		ashpd@git+https://github.com/bilelmoussaoui/ashpd\#d7ec2103565301b8476d6706ef34090e197b021c \
+		cairo-rs,cairo-sys-rs,gdk-pixbuf,gdk-pixbuf-sys,gio,gio-sys,glib,glib-macros,glib-sys,gobject-sys,graphene-rs,graphene-sys,pango,pango-sys@git+https://github.com/gtk-rs/gtk3-rs\#6e3c8739f9f5b8dc0a234f4a485e254574af5953
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no

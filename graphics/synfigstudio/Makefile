@@ -38,7 +38,6 @@ BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--disable-update-mimedb
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes

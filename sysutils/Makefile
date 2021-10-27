@@ -483,6 +483,7 @@
     SUBDIR += grub2-pcbsd
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
+    SUBDIR += gstat-rs
     SUBDIR += gstopd
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
@@ -1052,6 +1053,7 @@
     SUBDIR += py-ploy_ezjail
     SUBDIR += py-plumbum
     SUBDIR += py-power
+    SUBDIR += py-prometheus-zfs
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess
@@ -1122,11 +1124,11 @@
     SUBDIR += retail
     SUBDIR += rex
     SUBDIR += rhc
-    SUBDIR += riak-cs
     SUBDIR += rinse
     SUBDIR += rmlint
     SUBDIR += rocr
     SUBDIR += roct
+    SUBDIR += root-tail
     SUBDIR += rovclock
     SUBDIR += rpi-firmware
     SUBDIR += rset
@@ -1150,15 +1152,12 @@
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-chef-api
     SUBDIR += rubygem-chef-bin
+    SUBDIR += rubygem-chef-cleanroom
     SUBDIR += rubygem-chef-config
-    SUBDIR += rubygem-chef-config15
-    SUBDIR += rubygem-chef-dk
     SUBDIR += rubygem-chef-telemetry
     SUBDIR += rubygem-chef-utils
-    SUBDIR += rubygem-chef-utils15
     SUBDIR += rubygem-chef-vault
     SUBDIR += rubygem-chef-zero
-    SUBDIR += rubygem-chef15
     SUBDIR += rubygem-choria-mcorpc-support
     SUBDIR += rubygem-facter
     SUBDIR += rubygem-fluent-mixin-plaintextformatter
@@ -1187,13 +1186,13 @@
     SUBDIR += rubygem-itamae
     SUBDIR += rubygem-librarian-puppet
     SUBDIR += rubygem-license-acceptance
+    SUBDIR += rubygem-license_scout
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-logify
     SUBDIR += rubygem-mogilefs-client
     SUBDIR += rubygem-mothra
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
-    SUBDIR += rubygem-ohai15
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-puppet_forge
     SUBDIR += rubygem-puppetfile-resolver
@@ -1308,7 +1307,6 @@
     SUBDIR += sshsudo
     SUBDIR += ssync
     SUBDIR += stalepid
-    SUBDIR += stanchion
     SUBDIR += stepsync
     SUBDIR += storcli
     SUBDIR += stow
@@ -1516,6 +1514,7 @@
     SUBDIR += wmapmload
     SUBDIR += wmbluecpu
     SUBDIR += wmbsdbatt
+    SUBDIR += wmcpuload
     SUBDIR += wmcube
     SUBDIR += wmdiskmon
     SUBDIR += wmflame

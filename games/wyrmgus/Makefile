@@ -1,7 +1,7 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
 
 PORTNAME=	wyrmgus
-PORTVERSION=	5.0.1
+PORTVERSION=	5.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games devel
 
@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtolua++-${LUA_VER}.so:lang/tolua++
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tokenizer.hpp:devel/boost-libs
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     Andrettin
-GH_PROJECT=     Wyrmgus
+USE_GITHUB=	yes
+GH_ACCOUNT=	Andrettin
+GH_PROJECT=	Wyrmgus
 
 USES=		cmake compiler:c++17-lang lua:51 pkgconfig sdl sqlite qt:5 xorg
 USE_QT=		core gui widgets multimedia location \

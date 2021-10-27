@@ -2,6 +2,7 @@
 
 PORTNAME=	libraw
 PORTVERSION=	0.20.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -37,7 +38,6 @@ LCMS2_LIB_DEPENDS=			liblcms2.so:graphics/lcms2
 
 OPENMP_DESC=				OpenMP support (implies GCC)
 OPENMP_CONFIGURE_ENABLE=		openmp
-OPENMP_USES=				compiler:openmp
 
 RPIRAW_DESC=				Raspberry Pi RAW+JPEG support
 RPIRAW_CPPFLAGS=			-DUSE_6BY9RPI

@@ -14,13 +14,14 @@ BUILD_DEPENDS=	pcapnav-config:net/libpcapnav
 LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libopts.so:devel/autogen
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf cpe gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	appneta
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
+CPE_VENDOR=	appneta
 TEST_TARGET=	test
 
 OPTIONS_DEFAULT=	LIBPCAP_BASE

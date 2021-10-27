@@ -7,7 +7,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Permissions System
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Db \
 		Horde_Exception \
 		Horde_Group \

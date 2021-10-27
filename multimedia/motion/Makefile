@@ -20,7 +20,8 @@ LIB_DEPENDS=	libwebp.so:graphics/webp \
 		libmicrohttpd.so:www/libmicrohttpd
 
 # USES block
-USES=		autoreconf gmake jpeg localbase pkgconfig gettext
+USES=		autoreconf cpe gmake jpeg localbase pkgconfig gettext
+CPE_VENDOR=	${PORTNAME}_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Motion-Project

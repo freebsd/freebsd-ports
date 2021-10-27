@@ -10,6 +10,9 @@ COMMENT=	Java project management tool, 3.3.x branch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Outdated, unsupported upstream
+EXPIRATION_DATE=2022-01-15
+
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
 USES=		cpe

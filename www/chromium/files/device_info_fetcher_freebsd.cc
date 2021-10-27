@@ -26,8 +26,6 @@
 #include "base/system/sys_info.h"
 #include "net/base/network_interfaces.h"
 
-using SettingValue = enterprise_signals::DeviceInfo::SettingValue;
-
 namespace enterprise_signals {
 
 namespace {

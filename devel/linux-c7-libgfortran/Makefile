@@ -9,7 +9,8 @@ CATEGORIES=	devel linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for gfortran (Linux Centos ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 

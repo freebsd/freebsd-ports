@@ -68,6 +68,8 @@ MBIO_CMAKE_BOOL=	BUILD_PLUGIN_MBIO
 PGPOINTCLOUD_CMAKE_BOOL=	BUILD_PLUGIN_PGPOINTCLOUD
 PGPOINTCLOUD_USES=	pgsql
 
+CXXFLAGS_powerpc64=	-mvsx
+
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${WRKSRC}/scripts/bash-completion/pdal \

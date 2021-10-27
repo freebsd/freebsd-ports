@@ -18,7 +18,6 @@ RUN_DEPENDS=	aria2c:www/aria2
 USES=		compiler:c11 gettext-tools gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool cairo
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 # Avoid warning, with redefinition of typedef (C11 feature)

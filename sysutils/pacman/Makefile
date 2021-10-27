@@ -16,7 +16,8 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarchive.so.13:archivers/libarchive
 
-USES=		gmake libtool localbase:ldflags pathfix perl5 pkgconfig shebangfix ssl
+USES=		cpe gmake libtool localbase:ldflags pathfix perl5 pkgconfig shebangfix ssl
+CPE_VENDOR=	${PORTNAME}_project
 SHEBANG_FILES=	${WRKSRC}/scripts/makepkg-template.pl.in \
 		${WRKSRC}/scripts/libmakepkg/lint_config.sh.in
 GNU_CONFIGURE=	yes

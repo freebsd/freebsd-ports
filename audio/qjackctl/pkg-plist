@@ -11,6 +11,7 @@ share/metainfo/qjackctl.appdata.xml
 %%DATADIR%%/translations/qjackctl_fr.qm
 %%DATADIR%%/translations/qjackctl_it.qm
 %%DATADIR%%/translations/qjackctl_ja.qm
+%%DATADIR%%/translations/qjackctl_ko.qm
 %%DATADIR%%/translations/qjackctl_nl.qm
 %%DATADIR%%/translations/qjackctl_pt.qm
 %%DATADIR%%/translations/qjackctl_ru.qm

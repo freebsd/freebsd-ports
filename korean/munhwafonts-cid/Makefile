@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Munhwa CID fonts collection(Basic set)
 
 # sample fonts(cid, free Korean fonts is just only one.. :< )
-CID_FONTS_KO=   Munhwa-Regular Munhwa-Bold \
+CID_FONTS_KO=	Munhwa-Regular Munhwa-Bold \
 		MunhwaGothic-Regular MunhwaGothic-Bold
 FONTSDIR=	share/fonts/CIDFont
 

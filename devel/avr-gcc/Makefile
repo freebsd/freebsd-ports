@@ -22,8 +22,9 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 RUN_DEPENDS=	avr-as:devel/binutils@avr \
 		avr-ld:devel/binutils@avr
 
-USES=		bison compiler:c++11-lang gmake iconv libtool localbase \
+USES=		bison compiler:c++11-lang cpe gmake iconv libtool localbase \
 		makeinfo perl5 tar:xz
+CPE_VENDOR=	gnu
 USE_CXXSTD=	gnu++03
 USE_LDCONFIG=	${PREFIX}/lib/gcci/avr/${SUFFIX}
 USE_PERL5=	build

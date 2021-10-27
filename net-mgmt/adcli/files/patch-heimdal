@@ -65,21 +65,30 @@ Submitted upstream:
 +#endif
  #include <ldap.h>
  
---- library/adenroll.c	2015-12-11 05:37:01.000000000 -0500
-+++ library/adenroll.c	2016-06-15 19:46:42.925270000 -0400
-@@ -29,5 +29,10 @@
+--- library/adenroll.c	2021-02-20 08:51:40.000000000 -0500
++++ library/adenroll.c	2021-10-12 20:53:10.777253000 -0400
+@@ -29,5 +29,11 @@
  
  #include <gssapi/gssapi_krb5.h>
 -#include <krb5/krb5.h>
 +#ifdef HEIMDAL
 +#	include <krb5.h>
 +#	define krb5_free_data_contents(ctx, data)	krb5_data_free(data)
++#	define krb5_free_enctypes(ctx, enctypes)	free(enctypes)
 +#else
 +#	include <krb5/krb5.h>
 +#endif
  #include <ldap.h>
  #include <sasl/sasl.h>
-@@ -228,5 +233,9 @@ generate_host_password  (adcli_enroll *e
+@@ -315,5 +321,7 @@
+ 	char *password;
+ 	krb5_context k5;
++#ifndef HEIMDAL
+ 	krb5_error_code code;
++#endif
+ 	krb5_data buffer;
+ 	int at;
+@@ -330,6 +338,10 @@
  		buffer.data = password + at;
  
 +#ifdef HEIMDAL
@@ -89,7 +98,15 @@ Submitted upstream:
  		return_val_if_fail (code == 0, NULL);
 +#endif
  
-@@ -895,5 +904,6 @@ set_password_with_computer_creds (adcli_
+ 		at += filter (buffer.data, buffer.length);
+@@ -1302,5 +1314,5 @@
+ 		_adcli_err ("Cannot set %s password: %.*s%s%s",
+ 		            s_or_c (enroll),
+-		            (int)result_code_string.length, result_code_string.data,
++		            (int)result_code_string.length, (char *)result_code_string.data,
+ 		            message ? ": " : "", message ? message : "");
+ 		res = ADCLI_ERR_CREDENTIALS;
+@@ -1350,5 +1362,6 @@
  	}
  
 -	code = krb5_change_password (k5, &creds, enroll->computer_password,
@@ -97,14 +114,21 @@ Submitted upstream:
 +	code = krb5_set_password (k5, &creds, enroll->computer_password, NULL,
  	                             &result_code, &result_code_string, &result_string);
  
-@@ -1252,5 +1262,5 @@ ensure_host_keytab (adcli_result res,
+@@ -1372,5 +1385,5 @@
+ #endif
+ 		_adcli_err ("Cannot change computer password: %.*s%s%s",
+-		            (int)result_code_string.length, result_code_string.data,
++		            (int)result_code_string.length, (char *)result_code_string.data,
+ 		            message ? ": " : "", message ? message : "");
+ 		res = ADCLI_ERR_CREDENTIALS;
+@@ -1749,5 +1762,5 @@
  		return_unexpected_if_fail (code == 0);
  
 -		enroll->keytab_name = name;
 +		enroll->keytab_name = realloc(name, strlen(name) + 1);
  		enroll->keytab_name_is_krb5 = 1;
  	}
-@@ -1268,6 +1278,6 @@ load_keytab_entry (krb5_context k5,
+@@ -1765,6 +1778,6 @@
  	krb5_error_code code;
  	krb5_principal principal;
 -	const char *realm;
@@ -113,7 +137,7 @@ Submitted upstream:
 +	size_t len, entry_realm_len;
  	char *value;
  	char *name;
-@@ -1275,11 +1285,22 @@ load_keytab_entry (krb5_context k5,
+@@ -1772,11 +1785,22 @@
  	/* Skip over any entry without a principal or realm */
  	principal = entry->principal;
 -	if (!principal || !principal->realm.length)
@@ -138,14 +162,14 @@ Submitted upstream:
 +		value = _adcli_str_dupn (entry_realm, entry_realm_len);
  		adcli_conn_set_domain_realm (enroll->conn, value);
  		_adcli_info ("Found realm in keytab: %s", value);
-@@ -1290,5 +1311,5 @@ load_keytab_entry (krb5_context k5,
+@@ -1787,5 +1811,5 @@
  	/* Only look at entries that match the realm */
  	len = strlen (realm);
 -	if (principal->realm.length != len && strncmp (realm, principal->realm.data, len) != 0)
 +	if (entry_realm_len != len && strncmp (realm, entry_realm, len) != 0)
  		return TRUE;
  
-@@ -1388,7 +1409,13 @@ match_principal_and_kvno (krb5_context k
+@@ -1888,7 +1912,13 @@
  }
  
 -#define DEFAULT_SALT 1
@@ -161,7 +185,7 @@ Submitted upstream:
 +static krb5_salt *
  build_principal_salts (adcli_enroll *enroll,
                         krb5_context k5,
-@@ -1396,23 +1423,29 @@ build_principal_salts (adcli_enroll *enr
+@@ -1896,23 +1926,29 @@
  {
  	krb5_error_code code;
 -	krb5_data *salts;
@@ -199,7 +223,7 @@ Submitted upstream:
 -	assert (count == i);
  	return salts;
  }
-@@ -1420,10 +1453,15 @@ build_principal_salts (adcli_enroll *enr
+@@ -1920,10 +1956,15 @@
  static void
  free_principal_salts (krb5_context k5,
 -                      krb5_data *salts)
@@ -216,16 +240,16 @@ Submitted upstream:
 +#endif
  
  	free (salts);
-@@ -1440,5 +1478,5 @@ add_principal_to_keytab (adcli_enroll *e
+@@ -1976,5 +2017,5 @@
  	krb5_data password;
  	krb5_error_code code;
 -	krb5_data *salts;
 +	krb5_salt *salts;
  	krb5_enctype *enctypes;
  
-@@ -1525,5 +1563,9 @@ update_keytab_for_principals (adcli_enro
+@@ -2076,5 +2117,9 @@
  		res = add_principal_to_keytab (enroll, k5, enroll->keytab_principals[i],
- 		                               name, &which_salt);
+ 		                               name, &which_salt, flags);
 +#ifdef HEIMDAL
 +		krb5_xfree(name);
 +#else
@@ -233,12 +257,26 @@ Submitted upstream:
 +#endif
  
  		if (res != ADCLI_SUCCESS)
---- library/adkrb5.c	2015-12-07 03:59:59.000000000 -0500
-+++ library/adkrb5.c	2016-06-15 19:41:21.641988000 -0400
-@@ -28,5 +28,9 @@
+@@ -3349,5 +3394,10 @@
+ 	/* check that ENCTYPE_UNKNOWN is filtered out */
+ 	check_enctypes[0] = permitted_enctypes[0];
++#ifdef HEIMDAL
++	/* XXX Not sure, if this is needed under Heimdal at all */
++	check_enctypes[1] = KRB5_ENCTYPE_NULL;
++#else
+ 	check_enctypes[1] = ENCTYPE_UNKNOWN;
++#endif
+ 	check_enctypes[2] = 0;
+ 	adcli_enroll_set_keytab_enctypes (enroll, check_enctypes);
+--- library/adkrb5.c	2021-02-20 08:51:40.000000000 -0500
++++ library/adkrb5.c	2021-10-12 21:44:40.955444000 -0400
+@@ -28,5 +28,12 @@
  
  #include <gssapi/gssapi_krb5.h>
 -#include <krb5/krb5.h>
++#ifndef ENOKEY
++#	define ENOKEY	ENOTCAPABLE
++#endif
 +#ifdef HEIMDAL
 +#	include <krb5.h>
 +#else
@@ -246,7 +284,7 @@ Submitted upstream:
 +#endif
  
  #include <assert.h>
-@@ -79,5 +83,9 @@
+@@ -83,5 +90,9 @@
  		/* See if we should remove this entry */
  		if (!match_func (k5, &entry, match_data)) {
 +#ifdef HEIMDAL
@@ -256,7 +294,7 @@ Submitted upstream:
 +#endif
  			continue;
  		}
-@@ -92,5 +100,9 @@
+@@ -96,5 +107,9 @@
  
  		code = krb5_kt_remove_entry (k5, keytab, &entry);
 +#ifdef HEIMDAL
@@ -266,14 +304,61 @@ Submitted upstream:
 +#endif
  
  		if (code != 0)
-@@ -213,5 +225,5 @@
+@@ -220,14 +235,20 @@
+                         void *data)
+ {
+-	krb5_boolean similar = FALSE;
+ 	match_enctype_kvno *closure = data;
++#ifndef HEIMDAL
++	krb5_boolean similar = FALSE;
+ 	krb5_error_code code;
++#endif
+ 
+ 	assert (closure->enctype);
+ 
++#ifndef HEIMDAL
+ 	code = krb5_c_enctype_compare (k5, closure->enctype, entry->key.enctype,
+ 	                               &similar);
+ 
+ 	if (code == 0 && entry->vno == closure->kvno && similar) {
++#else
++	if (krb5_kt_compare(k5, entry, NULL, closure->kvno, closure->enctype)) {
++#endif
+ 		closure->matched = 1;
+ 		return 1;
+@@ -267,5 +288,11 @@
+ 		}
+ 
+-		code = krb5_copy_keyblock_contents (k5, &entry.key, keyblock);
++		code = krb5_copy_keyblock_contents (k5,
++#ifdef HEIMDAL
++		    &entry.keyblock,
++#else
++		    &entry.key,
++#endif
++		    keyblock);
+ 		krb5_free_keytab_entry_contents (k5, &entry);
+ 		break;
+@@ -301,5 +328,10 @@
+ 		memset (&entry, 0, sizeof (entry));
+ 
+-		code = _adcli_krb5_get_keyblock (k5, keytab, &entry.key,
++		code = _adcli_krb5_get_keyblock (k5, keytab,
++#ifdef HEIMDAL
++		                                 &entry.keyblock,
++#else
++		                                 &entry.key,
++#endif
+ 		                                 match_enctype_and_kvno, &closure);
+ 		if (code != 0 || closure.matched == 0) {
+@@ -329,5 +361,5 @@
                                  krb5_data *password,
                                  krb5_enctype *enctypes,
 -                                krb5_data *salt)
 +                                const krb5_salt *salt)
  {
  	krb5_keytab_entry entry;
-@@ -222,5 +234,10 @@
+@@ -338,5 +370,10 @@
  		memset (&entry, 0, sizeof(entry));
  
 +#ifdef HEIMDAL
@@ -284,22 +369,22 @@ Submitted upstream:
 +#endif
  		if (code != 0)
  			return code;
-@@ -248,5 +265,5 @@
+@@ -364,5 +401,5 @@
                                krb5_data *password,
                                krb5_enctype *enctypes,
 -                              krb5_data *salt)
 +                              const krb5_salt *salt)
  {
  	krb5_error_code code;
-@@ -274,5 +291,5 @@
+@@ -390,5 +427,5 @@
                                    krb5_data *password,
                                    krb5_enctype *enctypes,
 -                                  krb5_data *salts,
 +                                  const krb5_salt *salts,
                                    int *discovered)
  {
-@@ -286,5 +303,11 @@
- 	return_val_if_fail (code == 0, code);
+@@ -420,5 +457,11 @@
+ 	}
  
 -	for (i = 0; salts[i].data != NULL; i++) {
 +	for (i = 0;
@@ -310,8 +395,8 @@ Submitted upstream:
 +#endif
 +	    i++) {
  		code = _adcli_krb5_keytab_test_salt (k5, scratch, principal, kvno,
- 		                                     password, enctypes, &salts[i]);
-@@ -305,11 +328,15 @@
+ 		                                     password, salt_enctypes, &salts[i]);
+@@ -440,11 +483,15 @@
                         krb5_principal principal,
                         const char *host_netbios,
 -                       krb5_data *salt)
@@ -331,7 +416,7 @@ Submitted upstream:
 +	char *data;
  
  	/*
-@@ -318,41 +345,55 @@
+@@ -453,41 +500,55 @@
  	 */
  
 -	realm = krb5_princ_realm (k5, principal);
@@ -414,9 +499,26 @@ Submitted upstream:
 +#endif
  #include <ldap.h>
  #include <sasl/sasl.h>
---- library/adutil.c	2016-01-19 14:56:21.000000000 -0500
-+++ library/adutil.c	2016-06-15 18:34:42.841301000 -0400
-@@ -295,5 +295,5 @@ _adcli_strv_set (char ***field,
+--- library/adutil.c	2021-02-20 08:51:40.000000000 -0500
++++ library/adutil.c	2021-10-12 22:06:04.556460000 -0400
+@@ -38,4 +38,9 @@
+ #include <time.h>
+ #include <sys/wait.h>
++#ifdef __linux__
++#	include <endian.h>
++#else
++#	include <sys/endian.h>	/* le32toh() */
++#endif
+ 
+ static adcli_message_func message_func = NULL;
+@@ -84,4 +89,6 @@
+ }
+ 
++static void messagev(adcli_message_type, const char *, va_list) GNUC_PRINTF(2, 0);
++
+ static void
+ messagev (adcli_message_type type,
+@@ -414,5 +421,5 @@
  
  char *
 -_adcli_str_dupn (void *data,

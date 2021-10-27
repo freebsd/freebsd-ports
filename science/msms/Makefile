@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	none # No redistribution is allowed, no commercial use, only for use by individuals
 
 ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	Binaries available only for ${ONLY_FOR_ARCHS}.
+ONLY_FOR_ARCHS_REASON=	binaries available only for ${ONLY_FOR_ARCHS}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -9,7 +9,7 @@ COMMENT=	Trim adapter sequences from Illumina data using heuristic rules
 LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc64le
-ONLY_FOR_ARCHS_REASON=	Hard-coded SSE instructions
+ONLY_FOR_ARCHS_REASON=	uses hard-coded SSE instructions
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3

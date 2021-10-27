@@ -1,11 +1,10 @@
 PORTNAME=	howm
-PORTVERSION=	1.4.3
-PORTREVISION=	5
+PORTVERSION=	1.4.7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Write fragmentarily and read collectively
 
 LICENSE=	GPLv2+

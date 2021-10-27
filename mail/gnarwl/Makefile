@@ -9,11 +9,9 @@ MASTER_SITES=	http://www.onyxbits.de/sites/default/files/download/15/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email autoresponder that gets data from LDAP
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: mail_status
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: mail_status
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
-BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:textproc/gsed
 
 USES=		iconv gmake groff tar:tgz
 USE_OPENLDAP=	yes

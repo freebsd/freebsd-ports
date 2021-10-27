@@ -11,7 +11,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libiconv.so:converters/libiconv
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	ethereum
+CPE_PRODUCT=	go_ethereum
 
 OPTIONS_DEFINE=	DEVTOOLS
 OPTIONS_SUB=	yes

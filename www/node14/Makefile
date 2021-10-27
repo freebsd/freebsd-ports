@@ -1,6 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.17.6
+DISTVERSION=	14.18.1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	14
@@ -47,7 +47,7 @@ DTRACE_CONFIGURE_ON=	--with-dtrace
 
 HAS_CONFIGURE=	yes
 
-CONFLICTS_INSTALL=	node10-[0-9]* node12-[0-9]* node-[0-9]*
+CONFLICTS_INSTALL=	node10-[0-9]* node16-[0-9]* node-[0-9]*
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
@@ -69,8 +69,8 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 		LINK.host=${CXX} LDFLAGS.host="${LDFLAGS}"
 
 BUILD_DEPENDS+=	brotli>=1.0.9,1:archivers/brotli \
-		c-ares>=1.17.1:dns/c-ares \
-		libuv>=1.41.0:devel/libuv \
+		c-ares>=1.17.2:dns/c-ares \
+		libuv>=1.42.0:devel/libuv \
 		libnghttp2>=1.42.0:www/libnghttp2 \
 		objdump:devel/binutils
 LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \

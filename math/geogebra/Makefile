@@ -32,8 +32,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	geogebra.desktop geogebra.sh
 SUB_LIST=	JAVA=${JAVA}
 
-INSTALLS_ICONS=	yes
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/geogebra.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

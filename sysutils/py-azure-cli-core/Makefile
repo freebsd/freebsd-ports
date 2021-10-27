@@ -1,6 +1,5 @@
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.28.0
-PORTREVISION=	2
+PORTVERSION=	2.29.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2.7:net-mgmt/py-adal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}knack>=0.8.2:devel/py-knack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msal>=1.10.0<2.0.0:devel/py-msal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.0.8<3.0.0:security/py-paramiko@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt1>=0:www/py-pyjwt1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.1.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.22:www/py-requests@${PY_FLAVOR} \
@@ -29,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2.7:net-mgmt/py-adal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.5.0.1:sysutils/py-pkginfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.2.0<2.0.0:devel/py-azure-mgmt-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.8:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=3.2<3.4:security/py-cryptography@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

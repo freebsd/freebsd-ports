@@ -1,6 +1,6 @@
 PORTNAME=	libpoly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.10
+DISTVERSION=	0.1.11
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,5 +32,8 @@ do-build:
 
 do-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS}
+
+do-test: install
+	@cd ${WRKSRC}/test/python && ${PYTHON_CMD} ${WRKSRC}/test/python/check.py
 
 .include <bsd.port.mk>

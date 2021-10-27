@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	PHP_CodeSniffer
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

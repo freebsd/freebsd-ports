@@ -13,7 +13,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cesanta
 GH_TAGNAME=	632b3a3
 
-USES=		gmake dos2unix
+USES=		cpe gmake dos2unix
+CPE_VENDOR=	cesanta
 
 ALL_TARGET=	web_server
 MAKE_ENV=	LIBS=-lpthread

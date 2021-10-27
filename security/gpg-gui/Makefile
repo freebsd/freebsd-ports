@@ -14,7 +14,6 @@ RUN_DEPENDS=	gpg2:security/gnupg
 
 USES=		gnome meson pkgconfig
 USE_GNOME=	glib20 gtk30
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AnsgarKlein

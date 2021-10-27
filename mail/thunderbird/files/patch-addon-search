@@ -1,11 +1,9 @@
 https://github.com/mozilla/addons/issues/708
 https://github.com/mozilla/addons-frontend/issues/4610
 
-diff --git mail/app/profile/all-thunderbird.js mail/app/profile/all-thunderbird.js
-index 75c2c5e435e35..4d8c09c02759b 100644
---- comm/mail/app/profile/all-thunderbird.js
-+++ comm/mail/app/profile/all-thunderbird.js
-@@ -153,10 +153,10 @@ pref("extensions.getAddons.maxResults", 15);
+--- comm/mail/app/profile/all-thunderbird.js.orig	2021-08-11 18:47:33.538900000 +0200
++++ comm/mail/app/profile/all-thunderbird.js	2021-08-11 18:51:30.055570000 +0200
+@@ -159,10 +159,10 @@
  pref("extensions.getAddons.get.url", "https://services.addons.thunderbird.net/api/v3/addons/search/?guid=%IDS%&lang=%LOCALE%");
  pref("extensions.getAddons.compatOverides.url", "https://services.addons.thunderbird.net/api/v3/addons/compat-override/?guid=%IDS%&lang=%LOCALE%");
  pref("extensions.getAddons.link.url", "https://addons.thunderbird.net/%LOCALE%/%APP%/");
@@ -16,10 +14,10 @@ index 75c2c5e435e35..4d8c09c02759b 100644
 -pref("extensions.webservice.discoverURL", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/discovery/pane/%VERSION%/%OS%");
 +pref("extensions.getAddons.search.url", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/api/%API_VERSION%/search/%TERMS%/all/%MAX_RESULTS%/Linux/%VERSION%/%COMPATIBILITY_MODE%?src=thunderbird");
 +pref("extensions.webservice.discoverURL", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/discovery/pane/%VERSION%/Linux");
- pref("extensions.getAddons.siteRegExp", "^https://.*addons\\.thunderbird\\.net");
  pref("extensions.getAddons.langpacks.url", "https://services.addons.thunderbird.net/api/v3/addons/language-tools/?app=thunderbird&type=language&appversion=%VERSION%");
+ pref("extensions.getAddons.discovery.api_url", "https://services.addons.thunderbird.net/api/v4/discovery/?lang=%LOCALE%&edition=%DISTRIBUTION%");
  
-@@ -180,9 +180,9 @@ pref("security.cert_pinning.enforcement_level", 1);
+@@ -191,9 +191,9 @@
  //  .. etc ..
  //
  pref("extensions.update.enabled", true);
@@ -31,11 +29,9 @@ index 75c2c5e435e35..4d8c09c02759b 100644
  
  pref("extensions.update.interval", 86400);  // Check for updates to Extensions and
                                              // Themes every day
-diff --git toolkit/mozapps/extensions/internal/AddonRepository.jsm toolkit/mozapps/extensions/internal/AddonRepository.jsm
-index f70fd8d7e3bd8..81e8cd7764fdf 100644
---- toolkit/mozapps/extensions/internal/AddonRepository.jsm
-+++ toolkit/mozapps/extensions/internal/AddonRepository.jsm
-@@ -602,7 +602,7 @@ var AddonRepository = {
+--- toolkit/mozapps/extensions/internal/AddonRepository.jsm.orig	2021-08-11 18:52:27.424729000 +0200
++++ toolkit/mozapps/extensions/internal/AddonRepository.jsm	2021-08-11 18:54:16.222790000 +0200
+@@ -584,7 +584,7 @@
        addon.version = String(aEntry.current_version.version);
        if (Array.isArray(aEntry.current_version.files)) {
          for (let file of aEntry.current_version.files) {
@@ -44,11 +40,9 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
              if (file.url) {
                addon.sourceURI = NetUtil.newURI(file.url);
              }
-diff --git toolkit/mozapps/extensions/internal/XPIDatabase.jsm toolkit/mozapps/extensions/internal/XPIDatabase.jsm
-index f70fd8d7e3bd8..81e8cd7764fdf 100644
---- toolkit/mozapps/extensions/internal/XPIDatabase.jsm
-+++ toolkit/mozapps/extensions/internal/XPIDatabase.jsm
-@@ -355,7 +355,7 @@ class AddonInternal {
+--- toolkit/mozapps/extensions/internal/XPIDatabase.jsm.orig	2021-08-11 18:55:01.952372000 +0200
++++ toolkit/mozapps/extensions/internal/XPIDatabase.jsm	2021-08-11 18:55:57.455245000 +0200
+@@ -483,7 +483,7 @@
      // Something is causing errors in here
      try {
        for (let platform of this.targetPlatforms) {
@@ -56,4 +50,4 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
 +        if (platform.os == "Linux" || platform.os == Services.appinfo.OS) {
            if (platform.abi) {
              needsABI = true;
-             if (platform.abi === abi)
+             if (platform.abi === abi) {

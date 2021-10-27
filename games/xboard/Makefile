@@ -75,7 +75,6 @@ CFLAGS+=	-I${LOCALBASE}/include -fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		xboard
 USE_PERL5=	build
-INSTALLS_ICONS=	yes
 DATADIR?=	${PREFIX}/share/games/${PORTNAME}
 XBOARDCONF?=	${WRKSRC}/xboard.conf
 

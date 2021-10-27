@@ -1,6 +1,6 @@
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	21.3.1
+DISTVERSION=	21.3.2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -21,7 +21,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
+ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
 USES=		cmake:testing compiler:c++11-lib
 USE_GITHUB=	yes

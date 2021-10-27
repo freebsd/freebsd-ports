@@ -3,7 +3,7 @@
 PORTNAME=	shellinabox
 PORTVERSION=	2.20
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2
 
-USES=	autoreconf libtool ssl
+USES=	autoreconf cpe libtool ssl
+CPE_VENDOR=	${PORTNAME}_project
 
 OPTIONS_DEFINE=	CORES NOLOGIN
 CORES_DESC=	Patch shellinaboxd to enable core dumps

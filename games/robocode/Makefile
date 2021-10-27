@@ -14,7 +14,8 @@ COMMENT=	Game for learning Java[tm] programming language
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/license/epl-v10.html
 
-USES=		dos2unix zip:infozip
+USES=		cpe dos2unix zip:infozip
+CPE_VENDOR=	${PORTNAME}_project
 DOS2UNIX_GLOB=	*.css *.team *.properties package-list MANIFEST.MF
 USE_JAVA=	yes
 JAVA_EXTRACT=	yes

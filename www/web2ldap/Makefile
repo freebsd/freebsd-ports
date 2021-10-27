@@ -1,7 +1,7 @@
 # Created by: Oddbjorn Steffensen <oddbjorn@tricknology.org>
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.6.13
+PORTVERSION=	1.6.15
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP https://www.web2ldap.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

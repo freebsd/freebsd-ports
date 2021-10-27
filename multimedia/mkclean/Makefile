@@ -18,7 +18,8 @@ BROKEN_sparc64=	Does not install: gmake: GNUmakefile: No such file or directory
 
 HAS_CONFIGURE=	yes
 
-USES=		compiler:c++11-lang iconv localbase:ldflags gmake tar:bzip2
+USES=		compiler:c++11-lang cpe iconv localbase:ldflags gmake tar:bzip2
+CPE_VENDOR=	matroska
 
 LDFLAGS+=	${ICONV_LIB}
 

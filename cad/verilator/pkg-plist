@@ -8,8 +8,6 @@ bin/verilator_profcfunc
 libdata/pkgconfig/verilator.pc
 man/man1/verilator.1.gz
 man/man1/verilator_coverage.1.gz
-man/man1/verilator_gantt.1.gz
-man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/bin/verilator_ccache_report
 %%DATADIR%%/bin/verilator_includer
 %%DATADIR%%/examples/cmake_hello_c/CMakeLists.txt
@@ -47,6 +45,8 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/examples/xml_py/Makefile
 %%DATADIR%%/examples/xml_py/sub.v
 %%DATADIR%%/examples/xml_py/top.v
+%%DATADIR%%/examples/xml_py/vl_file_copy
+%%DATADIR%%/examples/xml_py/vl_hier_graph
 %%DATADIR%%/include/gtkwave/fastlz.c
 %%DATADIR%%/include/gtkwave/fastlz.h
 %%DATADIR%%/include/gtkwave/fst_config.h
@@ -75,6 +75,7 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_heavy.h
 %%DATADIR%%/include/verilated_imp.h
 %%DATADIR%%/include/verilated_intrinsics.h
+%%DATADIR%%/include/verilated_profiler.h
 %%DATADIR%%/include/verilated_save.cpp
 %%DATADIR%%/include/verilated_save.h
 %%DATADIR%%/include/verilated_sc.h

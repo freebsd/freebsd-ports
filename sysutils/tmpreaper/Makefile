@@ -12,6 +12,8 @@ COMMENT=	Cleans up files in directories based on their age
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
+CPE_VENDOR=	debian
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/tmpreaper man/man8/tmpreaper.8.gz

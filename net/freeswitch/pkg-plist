@@ -60,6 +60,7 @@ include/freeswitch/switch_xml_config.h
 include/freeswitch/test/switch_fct.h
 include/freeswitch/test/switch_test.h
 lib/freeswitch/mod/mod_amr.so
+lib/freeswitch/mod/mod_av.so
 lib/freeswitch/mod/mod_b64.so
 lib/freeswitch/mod/mod_cdr_csv.so
 lib/freeswitch/mod/mod_cdr_sqlite.so

@@ -1,14 +1,12 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		21.2.09
+DISTVERSION=		21.3.00
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
-
-BROKEN_powerpc64=	fails to compile: ./predicates_init.c:46: error: implicit declaration of function 'fpsetprec'
 
 CRAN_DEPENDS=	R-cran-lme4>0:math/R-cran-lme4 \
 		R-cran-snow>0:science/R-cran-snow \

@@ -1,5 +1,5 @@
 bin/ssl-admin
-%%ETCDIR%%/openssl.conf.sample
-%%ETCDIR%%/ssl-admin.conf.sample
+@sample %%ETCDIR%%/openssl.conf.sample
+@sample %%ETCDIR%%/ssl-admin.conf.sample
 man/man1/ssl-admin.1.gz
 man/man5/ssl-admin.conf.5.gz

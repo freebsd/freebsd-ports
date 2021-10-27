@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	aws-c-cal
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 

@@ -41,7 +41,6 @@ LEVELS_BD_FANS=	JuergenBonhagen rnd_the_h_world Walpurgis_Collection
 PORTDOCS=	*
 PORTDATA=	*
 
-INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
 DESKTOP_ENTRIES="R'n'D jue" "" "${PORTNAME}" \

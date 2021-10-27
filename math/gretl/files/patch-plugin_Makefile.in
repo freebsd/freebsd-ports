@@ -1,6 +1,6 @@
---- plugin/Makefile.in.orig	2021-05-07 16:11:37 UTC
+--- plugin/Makefile.in.orig	2021-10-02 03:59:05 UTC
 +++ plugin/Makefile.in
-@@ -423,14 +423,14 @@ $(GRETLLIB):
+@@ -436,14 +436,14 @@ $(GRETLLIB):
  .PHONY:
  
  install: $(GRETLLIB) $(PLUGINS) $(URCDATA) $(DWDATA) installdirs

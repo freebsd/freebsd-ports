@@ -20,8 +20,9 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		liburcu-bp.so:sysutils/liburcu \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		autoreconf bison compiler:c11 gettext gnome libtool pkgconfig python \
+USES=		autoreconf bison compiler:c11 cpe gettext gnome libtool pkgconfig python \
 		readline shebangfix sqlite ssl
+CPE_VENDOR=	gluster
 
 SHEBANG_FILES=	build-aux/pkg-version \
 		events/src/glustereventsd.py events/src/peer_eventsapi.py \

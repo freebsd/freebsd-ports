@@ -31,7 +31,6 @@ USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
 USE_LOCALE=	en_US.UTF-8
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--with-gfortran \
 		--without-emf \

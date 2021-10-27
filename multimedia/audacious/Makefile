@@ -29,7 +29,6 @@ gtk2_PKGNAMESUFFIX=	-gtk2
 gtk2_CONFLICTS_INSTALL=	audacious
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \

@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/externally_managed_app_install_task.cc.orig	2021-07-28 07:47:22 UTC
+--- chrome/browser/web_applications/externally_managed_app_install_task.cc.orig	2021-09-24 04:26:00 UTC
 +++ chrome/browser/web_applications/externally_managed_app_install_task.cc
-@@ -318,7 +318,7 @@ void ExternallyManagedAppInstallTask::OnWebAppInstalle
+@@ -320,7 +320,7 @@ void ExternallyManagedAppInstallTask::OnWebAppInstalle
    options.os_hooks[OsHookType::kProtocolHandlers] = true;
    options.os_hooks[OsHookType::kUninstallationViaOsSettings] = true;
  #if defined(OS_WIN) || defined(OS_MAC) || \

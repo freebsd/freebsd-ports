@@ -1,16 +1,21 @@
 PORTNAME=	signald
-DISTVERSION=	0.14.1
+DISTVERSION=	0.15.0
 CATEGORIES=	net-im java
 MASTER_SITES=	https://plugins.gradle.org/m2/gradle/plugin/de/fuerstenau/BuildConfigPlugin/1.1.8/:buildconfig \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:jackann \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:jackcore \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.9.2/:jackdbind \
-		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_24/:sservice \
+		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_27/:sservice \
 		https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-javalite/3.10.0/:protobuf \
 		https://repo.maven.apache.org/maven2/com/googlecode/libphonenumber/libphonenumber/8.12.17/:libphone \
+		https://repo.maven.apache.org/maven2/io/prometheus/simpleclient/0.11.0/:simpleclient \
+		https://repo.maven.apache.org/maven2/io/prometheus/simpleclient_hotspot/0.11.0/:simpleclient_hotspot \
+		https://repo.maven.apache.org/maven2/io/prometheus/simpleclient_httpserver/0.11.0/:simpleclient_httpserver \
+		https://repo.maven.apache.org/maven2/io/reactivex/rxjava3/rxjava/3.1.2/:rxjava \
 		https://repo.maven.apache.org/maven2/com/kohlschutter/junixsocket/junixsocket-common/2.3.2/:jcommon \
 		https://repo.maven.apache.org/maven2/com/kohlschutter/junixsocket/junixsocket-native-common/2.3.2/:jncommon \
-		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.6.0/:okhttp \
+		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.9.1/:okhttp \
+		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/logging-interceptor/4.9.1/:okhttp_interceptor \
 		https://repo.maven.apache.org/maven2/com/squareup/okio/2.6.0/:okjvm \
 		https://repo.maven.apache.org/maven2/info/picocli/picocli/4.5.2/:picocli \
 		https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.14.0/:log4j_api \
@@ -20,11 +25,12 @@ MASTER_SITES=	https://plugins.gradle.org/m2/gradle/plugin/de/fuerstenau/BuildCon
 		https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/:jetann \
 		https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.71/:jetkotstdcommon \
 		https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.3.71/:jetkotstd \
-		https://repo.maven.apache.org/maven2/org/signal/zkgroup-java/0.7.0/:zkgroup \
+		https://repo.maven.apache.org/maven2/org/reactivestreams/reactive-streams/1.0.3/:reactivestreams \
+		https://repo.maven.apache.org/maven2/org/signal/zkgroup-java/0.7.3/:zkgroup \
 		https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.8.0-beta4/:slf4japi \
 		https://repo.maven.apache.org/maven2/org/slf4j/slf4j-nop/1.8.0-beta4/:slf4jnop \
 		https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.6/:threeten \
-		https://repo.maven.apache.org/maven2/org/whispersystems/signal-client-java/0.8.1/:sclient
+		https://repo.maven.apache.org/maven2/org/whispersystems/signal-client-java/0.9.6/:sclient
 DISTFILES=	BuildConfigPlugin-1.1.8.jar:buildconfig \
 		annotations-13.0.jar:jetann \
 		bcprov-jdk15on-1.66.jar:bcprov \
@@ -37,18 +43,24 @@ DISTFILES=	BuildConfigPlugin-1.1.8.jar:buildconfig \
 		kotlin-stdlib-1.3.71.jar:jetkotstd \
 		kotlin-stdlib-common-1.3.71.jar:jetkotstdcommon \
 		libphonenumber-8.12.17.jar:libphone \
+		logging-interceptor-4.9.1.jar:okhttp_interceptor \
 		log4j-api-2.14.0.jar:log4j_api \
 		log4j-core-2.14.0.jar:log4j_core \
-		okhttp-4.6.0.jar:okhttp \
+		okhttp-4.9.1.jar:okhttp \
 		okio-2.6.0.jar:okjvm \
 		picocli-4.5.2.jar:picocli \
 		protobuf-javalite-3.10.0.jar:protobuf \
-		signal-client-java-0.8.1.jar:sclient \
-		signal-service-java-2.15.3_unofficial_24.jar:sservice \
+		reactive-streams-1.0.3.jar:reactivestreams \
+		rxjava-3.1.2.jar:rxjava \
+		signal-client-java-0.9.6.jar:sclient \
+		signal-service-java-2.15.3_unofficial_27.jar:sservice \
+		simpleclient-0.11.0.jar:simpleclient \
+		simpleclient_hotspot-0.11.0.jar:simpleclient_hotspot \
+		simpleclient_httpserver-0.11.0.jar:simpleclient_httpserver \
 		slf4j-api-1.8.0-beta4.jar:slf4japi \
 		slf4j-nop-1.8.0-beta4.jar:slf4jnop \
 		threetenbp-1.3.6.jar:threeten \
-		zkgroup-java-0.7.0.jar:zkgroup
+		zkgroup-java-0.7.3.jar:zkgroup
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Daemon to facilitate communication via Signal Private Messenger
@@ -56,7 +68,7 @@ COMMENT=	Daemon to facilitate communication via Signal Private Messenger
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 EXTRACT_DEPENDS=zip:archivers/zip
 BUILD_DEPENDS=	gradle6>=6.7:devel/gradle6
@@ -67,7 +79,7 @@ LIB_DEPENDS=	libsignal_jni.so:net-im/libsignal-client \
 USES=		gmake shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	signald
-GL_COMMIT=	227706969ee084c4e06b424bdf0a95a43bdeb051
+GL_COMMIT=	65cf5e8a1cf2b81fd1f5c3936e0164d53c5a9b29
 
 USE_JAVA=	yes
 JAVA_VERSION=	11+

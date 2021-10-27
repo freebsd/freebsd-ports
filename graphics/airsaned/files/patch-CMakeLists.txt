@@ -1,0 +1,71 @@
+--- CMakeLists.txt.orig	2021-09-18 16:22:32 UTC
++++ CMakeLists.txt
+@@ -20,6 +20,7 @@ endif()
+ 
+ set(THREADS_PREFER_PTHREAD_FLAG ON)
+ find_package(Threads REQUIRED)
++include(GNUInstallDirs)
+ 
+ include_directories(.)
+ if(APPLE)
+@@ -66,6 +67,13 @@ add_executable(${PROJECT_NAME}
+     zeroconf/hotplugnotifier.cpp
+     ${ZEROCONF_FILES}
+ )
++
++if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++  set(USB_LIBRARY usb)
++else()
++  set(USB_LIBRARY usb-1.0)
++endif()
++
+ target_link_libraries(
+     ${PROJECT_NAME}
+     Threads::Threads
+@@ -73,7 +81,7 @@ target_link_libraries(
+     jpeg
+     png
+     ${ZEROCONF_LIBS}
+-    usb-1.0
++    ${USB_LIBRARY}
+ )
+ 
+ if(APPLE)
+@@ -105,8 +113,10 @@ install(CODE "
+ else()
+ 
+ install(TARGETS ${PROJECT_NAME}
+-    RUNTIME DESTINATION bin
++    RUNTIME DESTINATION ${BINDIR}
+ )
++
++if(CMAKE_SYSTEM_NAME STREQUAL Linux)
+ install(FILES systemd/airsaned.service
+     DESTINATION /lib/systemd/system
+ )
+@@ -114,21 +124,9 @@ install(FILES systemd/airsaned.default
+     DESTINATION /etc/default
+     RENAME airsane
+ )
++endif()
+ 
+-install(CODE "
+-    if(NOT EXISTS /etc/airsane/ignore.conf)
+-        file(INSTALL ${CMAKE_SOURCE_DIR}/etc/ignore.conf DESTINATION /etc/airsane)
+-    endif()
+-")
+-install(CODE "
+-    if(NOT EXISTS /etc/airsane/options.conf)
+-        file(INSTALL ${CMAKE_SOURCE_DIR}/etc/options.conf DESTINATION /etc/airsane)
+-    endif()
+-")
+-install(CODE "
+-    if(NOT EXISTS /etc/airsane/Gnome-scanner.png)
+-        file(INSTALL ${CMAKE_SOURCE_DIR}/etc/Gnome-scanner.png DESTINATION /etc/airsane)
+-    endif()
+-")
+-
++install(FILES etc/ignore.conf etc/options.conf etc/Gnome-scanner.png
++    DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/airsane
++)
+ endif()

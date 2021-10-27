@@ -1,5 +1,5 @@
 PORTNAME=	puppetserver
-PORTVERSION=	7.4.0
+PORTVERSION=	7.4.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/:upstream \
 		https://raw.githubusercontent.com/jruby/jruby/fb3ba4b3543b72e735ba53b51e6b7ec8a9916e1b/lib/ruby/stdlib/ffi/:ffi
@@ -30,7 +30,7 @@ JAVA_VERSION=	1.8+
 
 CONFLICTS_INSTALL=	puppetserver5-* puppetserver6-*
 
-SHEBANG_FILES=  ext/bin/puppetserver
+SHEBANG_FILES=	ext/bin/puppetserver
 
 USERS=		puppet
 GROUPS=		puppet

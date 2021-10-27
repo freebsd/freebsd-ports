@@ -1,8 +1,8 @@
 Tool to compile and run C programs like a shell script.
 
-First of all, this is not the same as tcc. TCC is a compiler. TCC will preform
-its own set of optimizations, just as GCC will preform its own and Clang will
-preform its own. The purpose of this script is to give a simple front-end to a
+First of all, this is not the same as tcc. TCC is a compiler. TCC will perform
+its own set of optimizations, just as GCC will perform its own and Clang will
+perform its own. The purpose of this script is to give a simple front-end to a
 compiler.
 
 Whether it's GCC, Clang, or something else entirely, one can get to choose

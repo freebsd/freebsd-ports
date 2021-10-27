@@ -26,7 +26,6 @@ USES=		gettext gl gmake gnome localbase meson pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool libxml2:build
 USE_GL=		egl
 USE_XORG+=	x11 xext xdamage xfixes xcomposite xi xrandr
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.TwentyFortyEight.gschema.xml
 

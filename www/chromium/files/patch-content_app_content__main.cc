@@ -1,6 +1,6 @@
---- content/app/content_main.cc.orig	2021-07-19 18:45:15 UTC
+--- content/app/content_main.cc.orig	2021-09-24 04:26:05 UTC
 +++ content/app/content_main.cc
-@@ -62,7 +62,7 @@
+@@ -63,7 +63,7 @@
  #include "base/posix/global_descriptors.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/files/scoped_file.h"
  #endif
  
-@@ -233,7 +233,7 @@ int RunContentProcess(const ContentMainParams& params,
+@@ -243,7 +243,7 @@ RunContentProcess(const ContentMainParams& params,
  #endif
      base::EnableTerminationOnOutOfMemory();
  
@@ -18,7 +18,7 @@
      // The various desktop environments set this environment variable that
      // allows the dbus client library to connect directly to the bus. When this
      // variable is not set (test environments like xvfb-run), the dbus client
-@@ -308,7 +308,7 @@ int RunContentProcess(const ContentMainParams& params,
+@@ -318,7 +318,7 @@ RunContentProcess(const ContentMainParams& params,
      InitializeMac();
  #endif
  

@@ -12,7 +12,8 @@ COMMENT=	P2P name resolution daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	mwarning
 GH_PROJECT=	KadNode

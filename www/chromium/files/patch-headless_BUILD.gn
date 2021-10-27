@@ -1,4 +1,4 @@
---- headless/BUILD.gn.orig	2021-07-19 18:45:17 UTC
+--- headless/BUILD.gn.orig	2021-09-24 04:26:07 UTC
 +++ headless/BUILD.gn
 @@ -289,7 +289,7 @@ source_set("headless_shared_sources") {
    sources += generated_devtools_api
@@ -15,24 +15,42 @@
  
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {
-     deps += [ "//components/crash/content/browser" ]
-   }
-   if (is_component_build && is_win) {
-@@ -488,7 +488,7 @@ component("headless_non_renderer") {
+     deps += [
+       "//components/crash/content/browser",
+       "//components/crash/core/app",
+@@ -504,7 +504,7 @@ component("headless_non_renderer") {
        "//v8",
      ]
  
 -    if (!is_fuchsia) {
 +    if (!is_fuchsia && !is_bsd) {
-       deps += [ "//components/crash/content/browser" ]
+       deps += [
+         "//components/crash/content/browser",
+         "//components/crash/core/app",
+@@ -648,7 +648,7 @@ if (!is_component_build) {
+       ]
      }
-     if (is_win) {
-@@ -817,7 +817,7 @@ static_library("headless_shell_lib") {
+ 
+-    if (is_mac || is_win || is_linux || is_chromeos) {
++    if ((is_mac || is_win || is_linux || is_chromeos) && !is_bsd) {
+       deps += [ "//components/crash/core/app" ]
+     }
+   }
+@@ -877,7 +877,7 @@ static_library("headless_shell_lib") {
      public_deps += [ ":headless_non_renderer" ]
    }
  
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {
      deps += [ "//components/crash/content/browser" ]
+   }
+ 
+@@ -908,7 +908,7 @@ static_library("headless_shell_lib") {
+     deps += [ "//components/os_crypt" ]
+   }
+ 
+-  if (is_win || (is_posix && !is_mac)) {
++  if (is_win || (is_posix && !is_mac && !is_bsd)) {
+     deps += [ "//components/crash/core/app" ]
    }
  

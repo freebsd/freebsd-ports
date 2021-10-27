@@ -1067,7 +1067,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perlmodlib.1.gz
 %%MAN1%%/perlmodstyle.1.gz
 %%MAN1%%/perlmroapi.1.gz
-%%MAN1%%/perlnetware.1.gz
 %%MAN1%%/perlnewmod.1.gz
 %%MAN1%%/perlnumber.1.gz
 %%MAN1%%/perlobj.1.gz
@@ -1870,7 +1869,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perlmodlib.pod
 %%PRIV_LIB%%/pod/perlmodstyle.pod
 %%PRIV_LIB%%/pod/perlmroapi.pod
-%%PRIV_LIB%%/pod/perlnetware.pod
 %%PRIV_LIB%%/pod/perlnewmod.pod
 %%PRIV_LIB%%/pod/perlnumber.pod
 %%PRIV_LIB%%/pod/perlobj.pod

@@ -15,7 +15,8 @@ LICENSE=	EPL
 
 PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
-USES=		dos2unix zip
+USES=		cpe dos2unix zip
+CPE_VENDOR=	${PORTNAME}_project
 DOS2UNIX_GLOB=	*.css *.team *.properties package-list MANIFEST.MF
 USE_JAVA=	yes
 JAVA_EXTRACT=	yes

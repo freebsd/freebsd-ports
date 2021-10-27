@@ -1,8 +1,8 @@
---- plugins/libimhex/source/helpers/file.cpp.orig	2021-09-11 12:12:38 UTC
+--- plugins/libimhex/source/helpers/file.cpp.orig	2021-09-30 10:52:12 UTC
 +++ plugins/libimhex/source/helpers/file.cpp
 @@ -5,12 +5,12 @@ namespace hex {
  
-     File::File(const std::string &path, Mode mode) {
+     File::File(const std::string &path, Mode mode) : m_path(path) {
          if (mode == File::Mode::Read)
 -            this->m_file = fopen64(path.c_str(), "rb");
 +            this->m_file = fopen(path.c_str(), "rb");
@@ -15,8 +15,8 @@
 +            this->m_file = fopen(path.c_str(), "w+b");
      }
  
-     File::~File() {
-@@ -19,7 +19,7 @@ namespace hex {
+     File::File() {
+@@ -27,7 +27,7 @@ namespace hex {
      }
  
      void File::seek(u64 offset) {
@@ -24,11 +24,11 @@
 +        fseeko(this->m_file, offset, SEEK_SET);
      }
  
-     std::vector<u8> File::readBytes(size_t numBytes) {
-@@ -44,16 +44,16 @@ namespace hex {
-     }
+     void File::close() {
+@@ -81,10 +81,10 @@ namespace hex {
+     size_t File::getSize() const {
+         if (!isValid()) return 0;
  
-     size_t File::getSize() {
 -        auto startPos = ftello64(this->m_file);
 -        fseeko64(this->m_file, 0, SEEK_END);
 -        size_t size = ftello64(this->m_file);
@@ -40,11 +40,12 @@
  
          return size;
      }
- 
+@@ -92,7 +92,7 @@ namespace hex {
      void File::setSize(u64 size) {
+         if (!isValid()) return;
+ 
 -        ftruncate64(fileno(this->m_file), size);
 +        ftruncate(fileno(this->m_file), size);
      }
  
- }
-\ No newline at end of file
+     void File::flush() {

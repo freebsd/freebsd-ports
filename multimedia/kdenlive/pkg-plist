@@ -177,6 +177,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/avfilter_lagfun.xml
 %%DATADIR%%/effects/avfilter_lenscorrection.xml
 %%DATADIR%%/effects/avfilter_limiter.xml
+%%DATADIR%%/effects/avfilter_loudnorm.xml
 %%DATADIR%%/effects/avfilter_lut3d.xml
 %%DATADIR%%/effects/avfilter_mcdeint.xml
 %%DATADIR%%/effects/avfilter_negate.xml
@@ -241,6 +242,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/frei0r_bigsh0t_transform_360.xml
 %%DATADIR%%/effects/frei0r_brightness.xml
 %%DATADIR%%/effects/frei0r_c0rners.xml
+%%DATADIR%%/effects/frei0r_cairogradient.xml
 %%DATADIR%%/effects/frei0r_cairoimagegrid.xml
 %%DATADIR%%/effects/frei0r_cartoon.xml
 %%DATADIR%%/effects/frei0r_cluster.xml
@@ -307,6 +309,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/frei0r_vignette.xml
 %%DATADIR%%/effects/gain.xml
 %%DATADIR%%/effects/gamma.xml
+%%DATADIR%%/effects/gpstext.xml
 %%DATADIR%%/effects/grain.xml
 %%DATADIR%%/effects/greyscale.xml
 %%DATADIR%%/effects/invert.xml
@@ -316,7 +319,9 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/luma.xml
 %%DATADIR%%/effects/lumaliftgaingamma.xml
 %%DATADIR%%/effects/mask_apply.xml
+%%DATADIR%%/effects/mask_start.xml
 %%DATADIR%%/effects/mask_start_frei0r_alphaspot.xml
+%%DATADIR%%/effects/mask_start_frei0r_select0r.xml
 %%DATADIR%%/effects/mask_start_rotoscoping.xml
 %%DATADIR%%/effects/mask_start_shape.xml
 %%DATADIR%%/effects/mirror.xml

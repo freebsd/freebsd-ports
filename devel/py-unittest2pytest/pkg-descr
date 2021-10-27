@@ -1,0 +1,13 @@
+unittest2pytest is a tool that helps rewriting Python unittest
+test-cases into pytest test-cases.
+
+In contrast to other similar tools, this unittest2pytest
+
+* handles keyword arguments,
+* handles single-line test-cases and several tests on one line,
+* uses context-handlers where appropriate.
+
+This is done by using lib2to3 and Python's mighty inspect module.
+
+WWW: https://pypi.org/project/unittest2pytest/
+WWW: https://github.com/pytest-dev/unittest2pytest

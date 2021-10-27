@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde stream handler
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Exception
 
 .include <bsd.port.mk>

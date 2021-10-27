@@ -10,11 +10,13 @@ COMMENT=	Rack, a Ruby Webserver Interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/rackup
+
+CPE_VENDOR=	rack_project
 
 .include <bsd.port.mk>

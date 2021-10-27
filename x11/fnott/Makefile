@@ -1,5 +1,5 @@
 PORTNAME=	fnott
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.2
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -24,7 +24,8 @@ USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/xdg.c
 
 .include <bsd.port.mk>

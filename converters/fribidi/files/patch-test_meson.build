@@ -1,0 +1,11 @@
+--- test/meson.build.orig	2021-10-13 20:07:06 UTC
++++ test/meson.build
+@@ -19,7 +19,7 @@ foreach t : tests
+ endforeach
+ 
+ if get_option('fuzzer_ldflags') != ''
+-  cases = run_command(import('python3').find_python(), '-c',
++  cases = run_command(import('python').find_installation(), '-c',
+     '''import os; print('\n'.join(os.listdir('@0@')))'''.format(join_paths(meson.current_source_dir(), 'fuzzing'))
+   ).stdout().strip().split('\n')
+   foreach case : cases

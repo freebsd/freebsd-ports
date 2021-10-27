@@ -1,0 +1,17 @@
+TYPO3 v11 LTS is scheduled to be released in October 2021.
+
+Updates and security fixes will be provided for three years starting from the
+release date. We encourage users and agencies to install and use the v11 sprint
+releases until the LTS release is available. Further details about the releases
+and release dates are available in the roadmap.
+
+System requirements
+* PHP 7.4 or 8.0
+* MySQL 5.7+ / MariaDB / Postgres / SQLite support
+* Modern Browsers
+
+Supported Until
+Free: 2024-10-31
+ELTS: 2027-10-31
+
+WWW: https://typo3.org/

@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2021-10-23 10:33:37 UTC
++++ CMakeLists.txt
+@@ -111,6 +111,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${DEP_AWS
+ aws_prepare_shared_lib_exports(${PROJECT_NAME})
+ 
+ install(FILES ${AWS_AUTH_ROOT_HEADERS} DESTINATION "include/aws/auth" COMPONENT Development)
++install(FILES ${AWS_AUTH_PRIVATE_HEADERS} DESTINATION "include/aws/auth/private" COMPONENT Development)
+ 
+ if (BUILD_SHARED_LIBS)
+    set (TARGET_DIR "shared")

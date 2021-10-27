@@ -12,9 +12,9 @@ COMMENT=	Racoon2 IPsec daemon
 
 CONFLICTS=	racoon2-legacy-*
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     zoulasc
-GH_TAGNAME=     ${HASH}
+USE_GITHUB=	yes
+GH_ACCOUNT=	zoulasc
+GH_TAGNAME=	${HASH}
 
 USES=		autoreconf libtool:build perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--enable-natt \

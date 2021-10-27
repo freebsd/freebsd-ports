@@ -31,9 +31,9 @@ pre-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-EXTRA_PATCHES=  ${FILESDIR}/extra-patch-dpf_Makefile.base.mk
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-dpf_Makefile.base.mk
 .else
-EXTRA_PATCHES=  ${FILESDIR}/extra-patch-nosse-dpf_Makefile.base.mk
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-nosse-dpf_Makefile.base.mk
 .endif
 
 .include <bsd.port.post.mk>

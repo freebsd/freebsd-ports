@@ -1,20 +1,24 @@
---- meson.build.orig	2019-12-21 06:38:06 UTC
-+++ meson.build
-@@ -16,11 +16,21 @@ cc = meson.get_compiler('c')
+--- meson.build.orig	2021-10-01 21:52:09.000000000 +0200
++++ meson.build	2021-10-07 10:35:49.739120000 +0200
+@@ -15,7 +15,7 @@
+ 
  libgio_dep = dependency('gio-2.0', version: '>= 2.34.0')
  libgmodule_dep = dependency('gmodule-2.0')
- global_deps = []
+-
 +libssl_dep_found = false
- if cc.get_id() == 'msvc'
-   libssl_dep = cc.find_library('libeay32')
+ libcanberra_dep = dependency('libcanberra', version: '>= 0.22',
+                              required: get_option('libcanberra'))
+ dbus_glib_dep = dependency('dbus-glib-1', required: get_option('dbus'))
+@@ -25,7 +25,16 @@
+   libssl_dep = cc.find_library('libssl')
  else
    libssl_dep = dependency('openssl', version: '>= 0.9.8',
--                          required: get_option('with-ssl'))
+-                          required: get_option('tls'))
 +                          required: false)
 +  if not libssl_dep.found()
 +    libssl_dep = [
-+        cc.find_library('ssl', required: get_option('with-ssl')),
-+        cc.find_library('crypto', required: get_option('with-ssl'))
++        cc.find_library('ssl', required: get_option('tls')),
++        cc.find_library('crypto', required: get_option('tls'))
 +    ]
 +    libssl_dep_found = libssl_dep[0].found()
 +  else
@@ -23,22 +27,30 @@
  endif
  
  config_h = configuration_data()
-@@ -49,7 +59,7 @@ config_h.set('GLIB_VERSION_MIN_REQUIRED', 'GLIB_VERSIO
- config_h.set('HAVE_MEMRCHR', cc.has_function('memrchr'))
- config_h.set('HAVE_STRINGS_H', cc.has_header('strings.h'))
+@@ -37,7 +46,7 @@
+ config_h.set10('ENABLE_NLS', true)
+ 
+ # Optional features
+-config_h.set('USE_OPENSSL', libssl_dep.found())
++config_h.set('USE_OPENSSL', libssl_dep_found)
+ config_h.set('USE_LIBCANBERRA', libcanberra_dep.found())
+ config_h.set('USE_DBUS', dbus_glib_dep.found())
+ config_h.set('USE_PLUGIN', get_option('plugin'))
+@@ -57,7 +66,7 @@
+   join_paths(get_option('prefix'), get_option('libdir'), 'hexchat/plugins')
+ )
  
 -if libssl_dep.found()
 +if libssl_dep_found
    config_h.set('HAVE_X509_GET_SIGNATURE_NID',
      cc.has_function('X509_get_signature_nid', dependencies: libssl_dep)
    )
-@@ -129,9 +139,6 @@ global_ldflags = []
- test_ldflags = [
-   '-Wl,-z,relro',
-   '-Wl,-z,now',
--  # mingw
--  '-Wl,--dynamicbase',
--  '-Wl,--nxcompat',
- ]
- foreach ldflag : test_ldflags
-   if meson.version().version_compare('>= 0.46.0')
+@@ -178,7 +187,7 @@
+   }, section: 'Directories')
+ 
+   summary({
+-    'TLS (openssl)': libssl_dep.found(),
++    'TLS (openssl)': libssl_dep_found,
+     'Plugin Support': get_option('plugin'),
+     'DBus Support': dbus_glib_dep.found(),
+     'libcanberra': libcanberra_dep.found(),

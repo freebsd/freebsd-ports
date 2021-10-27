@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Controller libraries
 
-USES=	horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Injector \
 		Horde_Log \

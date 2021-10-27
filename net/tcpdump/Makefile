@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
-USES=		gmake
+USES=		cpe gmake
 
 GNU_CONFIGURE=	yes
 UNPRIV_USER?=	tcpdump

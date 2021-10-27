@@ -12,7 +12,8 @@ COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 
 LICENSE=	GPLv2
 
-USES=		autoreconf pathfix ssl zip
+USES=		autoreconf cpe pathfix ssl zip
+CPE_VENDOR=	genivia
 
 CONFIGURE_ENV=	LEX=flex YACC=yacc
 GNU_CONFIGURE=	yes

@@ -11,10 +11,12 @@ COMMENT=	Ruby library provide swappable XML backends
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	erik_michaels-ober
 
 OPTIONS_DEFINE=	NOKOGIRI
 NOKOGIRI_DESC=	Use Nokogiri for parsing

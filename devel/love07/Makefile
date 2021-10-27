@@ -37,7 +37,7 @@ DOS2UNIX_FILES=	src/modules/graphics/opengl/GLee.h
 
 PLIST_FILES=	bin/love07
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}07
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

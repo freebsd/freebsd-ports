@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	aws-c-event-stream
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel

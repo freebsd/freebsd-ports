@@ -17,7 +17,6 @@ USES=		desktop-file-utils gnome pkgconfig shared-mime-info tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPT_CFLAGS=" "	# Inhibit -O3, our default CFLAGS are upheld
 USE_GNOME=	gtk20
-INSTALLS_ICONS=	yes
 LIBS+=		-lm
 PORTDOCS=	CHANGELOG KEYS NEWS README THANKS TODO
 

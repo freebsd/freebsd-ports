@@ -1,8 +1,8 @@
---- base/cpu.cc.orig	2021-07-19 18:45:05 UTC
+--- base/cpu.cc.orig	2021-09-14 01:51:47 UTC
 +++ base/cpu.cc
 @@ -16,7 +16,7 @@
  
- #include "base/stl_util.h"
+ #include "base/cxx17_backports.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \

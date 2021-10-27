@@ -1,13 +1,31 @@
---- chrome/BUILD.gn.orig	2021-07-19 18:45:05 UTC
+--- chrome/BUILD.gn.orig	2021-09-24 04:25:56 UTC
 +++ chrome/BUILD.gn
-@@ -1368,6 +1368,10 @@ group("browser_dependencies") {
-     public_deps += [ "//chromeos/lacros" ]
+@@ -276,7 +276,9 @@ if (!is_android && !is_mac) {
+           ":xdg_mime",  # Needs to be public for installer to consume files.
+         ]
+ 
+-        data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
++        if (!is_bsd) {
++          data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
++        }
+       }
+ 
+       ldflags = []
+@@ -1366,7 +1368,7 @@ group("browser_dependencies") {
+     ]
    }
  
-+  if (is_bsd) {
-+    public_deps -= [ "//components/crash/core/app" ]
-+  }
-+
-   if (is_chromeos_ash) {
-     public_deps += [
-       "//ash/constants",
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     public_deps += [ "//components/crash/core/app" ]
+   }
+ 
+@@ -1686,7 +1688,7 @@ if (enable_resource_allowlist_generation) {
+ }
+ 
+ if (is_linux || is_chromeos) {
+-  if (is_official_build) {
++  if (is_official_build && !is_bsd) {
+     group("linux_symbols") {
+       deps = [
+         ":angle_egl_symbols",

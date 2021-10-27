@@ -24,7 +24,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		compiler:c++17-lang gmake gnome iconv:wchar_t libtool localbase \
 		pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo gtk30
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

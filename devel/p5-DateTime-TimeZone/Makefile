@@ -1,5 +1,5 @@
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	2.47
+PORTVERSION=	2.50
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Singleton>=1.03:devel/p5-Class-Singleton \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-Params-ValidationCompiler>=0.13:devel/p5-Params-ValidationCompiler \
 		p5-Specio>=0:devel/p5-Specio \
-		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
-		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 TEST_DEPENDS=	p5-DateTime>=1.44:devel/p5-DateTime \
 		p5-Test-Fatal>0:devel/p5-Test-Fatal \
 		p5-Test-Output>0:devel/p5-Test-Output \

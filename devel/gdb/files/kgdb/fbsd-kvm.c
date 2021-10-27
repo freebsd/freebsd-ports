@@ -144,6 +144,8 @@ kgdb_dmesg(void)
 	} catch (const gdb_exception_error &e) {
 		return;
 	}
+	if (size == 0)
+		return;
 	rseq = MSGBUF_SEQ_TO_POS(size, rseq);
 	wseq = MSGBUF_SEQ_TO_POS(size, wseq);
 	if (rseq == wseq)

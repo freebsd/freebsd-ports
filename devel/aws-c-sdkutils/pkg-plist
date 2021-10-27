@@ -1,0 +1,9 @@
+include/aws/sdkutils/aws_profile.h
+include/aws/sdkutils/exports.h
+include/aws/sdkutils/resource_name.h
+include/aws/sdkutils/sdkutils.h
+lib/aws-c-sdkutils/cmake/aws-c-sdkutils-config.cmake
+lib/aws-c-sdkutils/cmake/shared/aws-c-sdkutils-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/aws-c-sdkutils/cmake/shared/aws-c-sdkutils-targets.cmake
+lib/libaws-c-sdkutils.so
+lib/libaws-c-sdkutils.so.1.0.0

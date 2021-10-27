@@ -85,6 +85,8 @@ QMAIL_PORTNAME=			netqmail
 QMAIL_VERSION=			1.06
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_QMAILQUEUE_PATCH=	yes
+USES+=				cpe
+CPE_VENDOR=			netqmail
 .else
 # This is only used for slave ports.
 QMAIL_PORTNAME=			qmail

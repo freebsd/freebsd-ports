@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	wagtail
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.11:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django32>=3.0<3.3:www/py-django32@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj32-django-modelcluster>=5.1<6.0:www/py-dj32-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj32-django-modelcluster>=5.2<6.0:www/py-dj32-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-taggit>=1.0<2.0:www/py-dj32-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-treebeard>=4.2.0<5.0:www/py-dj32-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-djangorestframework>=3.11.1<4.0:www/py-dj32-djangorestframework@${PY_FLAVOR} \

@@ -18,7 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-doxygen-doc --disable-dependency-tracking
-USES=		gmake libtool pkgconfig tar:bzip2 ssl
+USES=		cpe gmake libtool pkgconfig tar:bzip2 ssl
+CPE_VENDOR=	shibboleth
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

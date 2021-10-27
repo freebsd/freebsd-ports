@@ -1,8 +1,8 @@
-PORTNAME=		jail_exporter
+PORTNAME=	jail_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.13.0
-PORTREVISION=	8
-CATEGORIES=		sysutils
+DISTVERSION=	0.15.1
+PORTREVISION=	1
+CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Prometheus exporter for FreeBSD jail metrics

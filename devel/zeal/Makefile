@@ -23,6 +23,5 @@ USE_QT=		concurrent core gui network webkit widgets x11extras \
 USE_XORG=	ice sm x11 xcb xext
 
 GH_ACCOUNT=	zealdocs
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

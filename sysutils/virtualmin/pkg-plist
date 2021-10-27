@@ -11108,11 +11108,6 @@ lib/webmin/virtual-server/mass_aedit_form.cgi
 lib/webmin/virtual-server/mass_change.cgi
 lib/webmin/virtual-server/mass_create.cgi
 lib/webmin/virtual-server/mass_create_form.cgi
-lib/webmin/virtual-server/mass_delete_domains.cgi
-lib/webmin/virtual-server/mass_disable.cgi
-lib/webmin/virtual-server/mass_domains_change.cgi
-lib/webmin/virtual-server/mass_domains_form.cgi
-lib/webmin/virtual-server/mass_enable.cgi
 lib/webmin/virtual-server/mass_form.cgi
 lib/webmin/virtual-server/mass_scripts.cgi
 lib/webmin/virtual-server/mass_ucreate.cgi

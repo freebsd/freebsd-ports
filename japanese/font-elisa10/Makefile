@@ -11,9 +11,9 @@ COMMENT=	Elisa 10-dot Kanji font
 
 LICENSE=	NOTPARTIAL-NOTCOMMERCIAL
 LICENSE_NAME=	Whole, not partial, and not commercial
-LICENSE_TEXT=   Free redistribution of the whole package allowed, \
+LICENSE_TEXT=	Free redistribution of the whole package allowed, \
 		not partial, and not commercial
-LICENSE_PERMS=  dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 

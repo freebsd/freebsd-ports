@@ -1,6 +1,6 @@
 PORTNAME=	delta
 DISTVERSION=	0.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 PKGNAMEPREFIX=	git-
 
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS+=	libgit2.so:devel/libgit2 \
 		libonig.so:devel/oniguruma
 
-USES=		cargo
+USES=		cargo cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	dandavison
 

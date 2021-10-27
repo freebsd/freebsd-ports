@@ -17,7 +17,6 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libhangul.so:korean/libhangul
 
 USES=		cmake gettext gnome pkgconfig tar:xz
-INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

@@ -13,11 +13,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbinio.so:devel/libbinio
 
-USES=		autoreconf compiler:c++11-lang libtool makeinfo pathfix \
+USES=		autoreconf compiler:c++11-lang cpe libtool makeinfo pathfix \
 		pkgconfig
 USE_CSTD=	gnu89
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	adplug_project
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-maintainer-mode

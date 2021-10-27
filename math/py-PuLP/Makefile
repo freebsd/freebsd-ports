@@ -1,5 +1,5 @@
 PORTNAME=	PuLP
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amply>=0.1.2:math/py-amply@${PY_FLAVOR} \
 		cbc:math/cbc \
 		glpsol:math/glpk
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME:tl}project
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes
@@ -23,8 +24,7 @@ post-patch:
 	@${CP} ${WRKSRC}/pulp/pulp.cfg.linux ${WRKSRC}/pulp/pulp.cfg.freebsd
 	@${REINPLACE_CMD} -E 's/^(CplexPath|PulpCbcPath) = .*/#&/' ${WRKSRC}/pulp/pulp.cfg.freebsd
 
-do-test: install # one test is known to fail: https://github.com/coin-or/pulp/issues/472
+do-test: install # one test is known to fail: https://github.com/coin-or/pulp/issues/494
 	@cd ${TEST_WRKSRC} && py.test
-		
 
 .include <bsd.port.mk>

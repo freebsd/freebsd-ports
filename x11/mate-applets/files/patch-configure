@@ -1,6 +1,78 @@
---- configure.orig	2016-02-01 10:05:32.777229000 +0100
-+++ configure	2016-02-01 10:05:56.624276000 +0100
-@@ -16587,7 +16587,7 @@
+--- configure.orig	2021-08-07 11:28:45 UTC
++++ configure
+@@ -9534,7 +9534,7 @@ $as_echo_n "checking whether the $compiler linker ($LD
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -9833,7 +9833,7 @@ _LT_EOF
+ 	wlarc=
+       else
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       fi
+       ;;
+ 
+@@ -9852,7 +9852,7 @@ _LT_EOF
+ _LT_EOF
+       elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -9881,7 +9881,7 @@ _LT_EOF
+ 	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
+ 	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	    archive_expsym_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	    archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 	  else
+ 	    ld_shlibs=no
+ 	  fi
+@@ -9899,7 +9899,7 @@ _LT_EOF
+     *)
+       if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -10547,7 +10547,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >&6; }
+ 	hardcode_direct_absolute=yes
+ 	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
+ 	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	  archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-retain-symbols-file,$export_symbols'
++	  archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-version-script,$lib-ver'
+ 	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
+ 	  export_dynamic_flag_spec='$wl-E'
+ 	else
+@@ -11396,7 +11396,7 @@ freebsd* | dragonfly*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+@@ -12531,7 +12531,7 @@ striplib=
+ old_striplib=
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
+ $as_echo_n "checking whether stripping libraries is possible... " >&6; }
+-if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
+   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -17173,7 +17173,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -9,7 +81,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    MATELOCALEDIR="$ac_define_dir"
  
-@@ -17434,7 +17434,7 @@
+@@ -17595,7 +17595,7 @@ fi
  
  	   ;;
         # list of supported OS cores that do not use libapm
@@ -18,16 +90,7 @@
            if test -n "${OS_SYS}"; then
  	       ACPIINC="-I${OS_SYS}"
  	   else
-@@ -17949,7 +17952,7 @@
- 
-   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
-   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
--  ac_define_dir=`eval echo $"${iconsdir}"`
-+  ac_define_dir=`eval echo $iconsdir`
-   ac_define_dir=`eval echo $ac_define_dir`
-   MATE_ICONDIR="$ac_define_dir"
- 
-@@ -17962,7 +17965,7 @@
+@@ -18421,7 +18421,7 @@ pkgdatadir="${datadir}/mate-applets"
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -36,7 +99,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    MATE_PIXMAPSDIR="$ac_define_dir"
  
-@@ -17975,7 +17978,7 @@
+@@ -18434,7 +18434,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -45,16 +108,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    PKGDATADIR="$ac_define_dir"
  
-@@ -17988,7 +17991,7 @@
- 
-   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
-   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
--  ac_define_dir=`eval echo $"${builderdir}"`
-+  ac_define_dir=`eval echo $builderdir`
-   ac_define_dir=`eval echo $ac_define_dir`
-   GTK_BUILDERDIR="$ac_define_dir"
- 
-@@ -18001,7 +18004,7 @@
+@@ -18447,7 +18447,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -63,7 +117,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    DATADIR="$ac_define_dir"
  
-@@ -18014,7 +18017,7 @@
+@@ -18460,7 +18460,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -72,7 +126,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    PKG_DATA_DIR="$ac_define_dir"
  
-@@ -18027,7 +18030,7 @@
+@@ -18473,7 +18473,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -81,7 +135,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    SYSCONFDIR="$ac_define_dir"
  
-@@ -18040,7 +18043,7 @@
+@@ -18486,7 +18486,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -90,7 +144,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    LIBDIR="$ac_define_dir"
  
-@@ -18053,7 +18056,7 @@
+@@ -18499,7 +18499,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -99,7 +153,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    PREFIX="$ac_define_dir"
  
-@@ -18066,7 +18069,7 @@
+@@ -18512,7 +18512,7 @@ _ACEOF
  
  
    EXP_VAR=DATADIR

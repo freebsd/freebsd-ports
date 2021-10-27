@@ -1,0 +1,5 @@
+dune-multidomaingrid is a meta grid built on top of the DUNE grid interface.
+It can be used to carve out subdomains from an underlying host grid which are
+then available as fully featured DUNE grids in their own right.
+
+WWW: https://www.dune-project.org/

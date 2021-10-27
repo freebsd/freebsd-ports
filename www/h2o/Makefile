@@ -20,7 +20,7 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
 USE_GITHUB=	yes
 USE_PERL5=	run
-USE_LDCONFIG=  yes
+USE_LDCONFIG=	yes
 
 CPE_VENDOR=	dena
 

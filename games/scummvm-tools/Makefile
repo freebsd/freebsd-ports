@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	2.2.0
+PORTVERSION=	2.5.0
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
@@ -41,7 +41,7 @@ OPTIONS_DEFAULT=WXGTK
 OPTIONS_SUB=	yes
 
 WXGTK_USE=	WX=2.8
-WXGTK_VARS=	WX_COMP=wx:lib:build WX_CONFIG_ARGS=absolute
+WXGTK_VARS=	WX_COMPS=wx WX_CONFIG_ARGS=absolute
 WXGTK_CONFIGURE_ENABLE=	wxwidgets
 
 pre-patch:

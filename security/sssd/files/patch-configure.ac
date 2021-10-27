@@ -1,8 +1,6 @@
-diff --git configure.ac configure.ac
-index 9df463d9c..17d0d9ea7 100644
---- configure.ac
+--- configure.ac.orig	2020-03-17 13:31:28 UTC
 +++ configure.ac
-@@ -44,8 +44,6 @@ AM_CONDITIONAL([HAVE_GCC], [test "$ac_cv_prog_gcc" = yes])
+@@ -44,8 +44,6 @@ AM_CONDITIONAL([HAVE_GCC], [test "$ac_cv_prog_gcc" = y
  AC_CHECK_HEADERS(stdint.h dlfcn.h)
  AC_CONFIG_HEADER(config.h)
  
@@ -11,3 +9,14 @@ index 9df463d9c..17d0d9ea7 100644
  m4_include([src/build_macros.m4])
  BUILD_WITH_SHARED_BUILD_DIR
  
+@@ -356,8 +354,8 @@ them please use argument --without-python3-bindings wh
+     AM_CHECK_PYTHON_HEADERS([],
+                             AC_MSG_ERROR([Could not find python3 headers]))
+ 
+-    AC_SUBST([py3execdir], [$pyexecdir])
+-    AC_SUBST([python3dir], [$pythondir])
++    AC_SUBST([py3execdir], [$(eval echo $pyexecdir)])
++    AC_SUBST([python3dir], [$(eval echo $pythondir)])
+     AC_SUBST([PYTHON3_CFLAGS], [$PYTHON_CFLAGS])
+     AC_SUBST([PYTHON3_LIBS], [$PYTHON_LIBS])
+     AC_SUBST([PYTHON3_INCLUDES], [$PYTHON_INCLUDES])

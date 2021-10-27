@@ -10,12 +10,14 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Cisco remote authentication/authorization/accounting server
 
 GNU_CONFIGURE=	yes
-USES=		bison perl5 libtool
+USES=		bison cpe perl5 libtool
 USE_PERL5=	build
 USE_RC_SUBR=	tac_plus
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \
 		--with-userid=$$(/usr/bin/id -u tacacs 2>/dev/null || echo '559')
+
+CPE_VENDOR=	cisco
 
 USERS=		tacacs
 GROUPS=		tacacs

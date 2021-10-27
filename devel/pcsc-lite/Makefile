@@ -1,7 +1,7 @@
 # Created by: Toni Andjelkovic <toni@soth.at>
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.4
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/

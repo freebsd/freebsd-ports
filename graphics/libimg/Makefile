@@ -30,8 +30,8 @@ WRKSRC=		${WRKDIR}/Img-${PORTVERSION}
 DOS2UNIX_GLOB=	*.[ch] *.tcl *.msg *.in *.test license.terms
 
 # We don't need the bundled libraries:
-EXTRACT_AFTER_ARGS= --exclude 'config.*' --exclude Makefile	\
-		--exclude 'compat' --exclude win
+EXTRACT_AFTER_ARGS=	--exclude 'config.*' --exclude Makefile --exclude \
+			'compat' --exclude win
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
 CONFIGURE_ARGS+=--enable-shared --disable-stubs

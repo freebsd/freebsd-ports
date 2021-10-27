@@ -1,7 +1,7 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 
 PORTNAME=	gajim
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -22,14 +22,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		cpe dos2unix gettext gnome python:3.7+ xorg
+USES=		cpe gettext gnome python:3.7+ xorg
 USE_PYTHON=	autoplist distutils noflavors
 USE_GNOME=	pygobject3
 USE_XORG=	x11 xext xscrnsaver
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${DISTVERSION}
 NO_ARCH=	yes
-DOS2UNIX_FILES=	gajim/plugins/plugins_i18n.py
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DBUS DOCS SPELL OMEMO OPENGPG
 OPTIONS_DEFAULT=DBUS SPELL OMEMO OPENGPG

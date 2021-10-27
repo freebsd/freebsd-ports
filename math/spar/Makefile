@@ -9,8 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/Spar/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular math parser
 
-LICENSE=        GPLv2
-LICENSE_FILE=   ${WRKSRC}/COPYING
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		dos2unix libtool ncurses readline
 DOS2UNIX_FILES=	lib/randist/rand.c

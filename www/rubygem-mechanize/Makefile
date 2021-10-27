@@ -22,7 +22,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-webrick>=1.7<2:www/rubygem-webrick \
 		rubygem-webrobots>=0.1.2<0.2:www/rubygem-webrobots
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes

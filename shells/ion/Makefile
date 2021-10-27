@@ -1,6 +1,6 @@
 PORTNAME=	ion
 DISTVERSION=	1.0.5-1355
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-shell
 
@@ -11,16 +11,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
-USE_GITHUB=	nodefault
-GH_TUPLE=	alkis:decimal:972c8547a0a76c7ad9a314e28a335aa57d46a543:decimal
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.redox-os.org
 GL_ACCOUNT=	redox-os
 GL_COMMIT=	a8872014dbce730ccd00aaa722397dc394a52bf4
-GL_TUPLE=	redox-os:calc:afba9c5d184ddb9db5e4e71dc357da0499e212cf:calculate \
-		redox-os:liner:3f3d1d4e6058067e9d03a9b1510d8f2edac073c7:liner \
-		redox-os:small:022635fcb0b0b631b3a06c79c45fa8ebaf4f64f5:small \
-		redox-os:termion:c27678efc2ed14576361c7ce6d806a6bb576f1a9:termion
 
 CARGO_CRATES=	adler32-1.0.3 \
 		aho-corasick-0.7.4 \
@@ -250,9 +244,12 @@ CARGO_CRATES=	adler32-1.0.3 \
 		x11-dl-2.18.3 \
 		xdg-2.2.0 \
 		xml-rs-0.7.0 \
-		xml-rs-0.8.0
-CARGO_USE_GITHUB=	yes
-CARGO_USE_GITLAB=	yes
+		xml-rs-0.8.0 \
+		small@git+https://gitlab.redox-os.org/redox-os/small\#022635fcb0b0b631b3a06c79c45fa8ebaf4f64f5 \
+		liner@git+https://gitlab.redox-os.org/redox-os/liner\#3f3d1d4e6058067e9d03a9b1510d8f2edac073c7 \
+		termion@git+https://gitlab.redox-os.org/redox-os/termion\#c27678efc2ed14576361c7ce6d806a6bb576f1a9 \
+		calculate@git+https://gitlab.redox-os.org/redox-os/calc\#afba9c5d184ddb9db5e4e71dc357da0499e212cf \
+		decimal@git+https://github.com/alkis/decimal.git\#972c8547a0a76c7ad9a314e28a335aa57d46a543
 
 CONFLICTS_INSTALL=	ion
 
@@ -261,8 +258,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 # liner-0.4.4 does not build with Rust 1.40.0.  Use the newer copy
 # that is also already available.
 post-patch:
-	@${REINPLACE_CMD} 's,^liner = .*,liner = \{ path = "${WRKSRC_liner}" \},' \
-		${WRKSRC_calculate}/Cargo.toml
+	@${REINPLACE_CMD} 's,^liner = .*,liner = \{ git = "https://gitlab.redox-os.org/redox-os/liner" \},' \
+		${WRKSRC_crate_calculate}/Cargo.toml
 
 post-configure:
 	${ECHO_CMD} ${GL_COMMIT} > ${WRKSRC}/git_revision.txt

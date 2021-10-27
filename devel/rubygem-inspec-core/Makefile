@@ -2,6 +2,7 @@
 
 PORTNAME=	inspec-core
 PORTVERSION=	4.41.20
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-chef-telemetry>=1.0.8<2:sysutils/rubygem-chef-telemetry \
 		rubygem-faraday14>=0.9.0<1.5:www/rubygem-faraday14 \
 		rubygem-faraday_middleware>=1.0<2:www/rubygem-faraday_middleware \
-		rubygem-hashie3>=3.4<5:devel/rubygem-hashie3 \
+		rubygem-hashie>=3.4<5:devel/rubygem-hashie \
 		rubygem-license-acceptance>=0.2.13<3.0:sysutils/rubygem-license-acceptance \
 		rubygem-method_source>=0.8<2.0:devel/rubygem-method_source \
 		rubygem-mixlib-log>=3.0<4:devel/rubygem-mixlib-log \

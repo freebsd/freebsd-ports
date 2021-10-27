@@ -1,0 +1,404 @@
+@owner news
+@group news
+@preexec mkdir -p %%NEWSBASE%%
+%%CWDNEWSBASE%%
+bin/actmerge
+bin/actsync
+bin/actsyncd
+bin/archive
+@(root,,4550) bin/auth/passwd/ckpasswd
+%%KERBEROS%%bin/auth/passwd/auth_krb5
+bin/auth/passwd/radius
+bin/auth/resolv/domain
+bin/auth/resolv/ident
+bin/batcher
+bin/buffchan
+bin/buffindexed_d
+bin/cnfsheadconf
+bin/cnfsstat
+bin/control/checkgroups.pl
+bin/control/ihave.pl
+bin/control/newgroup.pl
+bin/control/rmgroup.pl
+bin/control/sendme.pl
+bin/control/sendsys.pl
+bin/control/senduuname.pl
+bin/control/version.pl
+bin/controlbatch
+bin/controlchan
+bin/convdate
+bin/ctlinnd
+bin/cvtbatch
+bin/docheckgroups
+bin/expire
+bin/expireover
+bin/expirerm
+bin/fastrm
+bin/filechan
+bin/filter/INN.py
+bin/filter/filter_innd.pl
+bin/filter/filter_innd.py
+bin/filter/filter_nnrpd.pl
+bin/filter/nnrpd.py
+bin/filter/nnrpd_access.pl
+bin/filter/nnrpd_access.py
+bin/filter/nnrpd_auth.pl
+bin/filter/nnrpd_auth.py
+bin/filter/nnrpd_dynamic.py
+bin/filter/startup_innd.pl
+bin/getlist
+bin/grephistory
+bin/imapfeed
+@(,news,%%MODE_INEWS%%) bin/inews
+bin/inncheck
+bin/innconfval
+@(root,,4550) bin/innbind
+bin/innd
+bin/inndf
+bin/innfeed
+bin/innmail
+bin/innreport
+bin/innstat
+bin/innupgrade
+bin/innwatch
+bin/innxbatch
+bin/innxmit
+bin/mailpost
+bin/makedbz
+bin/makehistory
+bin/mod-active
+bin/news.daily
+bin/news2mail
+bin/ninpaths
+bin/nnrpd
+bin/nntpget
+bin/nntpsend
+bin/ovdb_init
+bin/ovdb_monitor
+bin/ovdb_server
+bin/ovdb_stat
+bin/overchan
+%%SQLITE%%bin/ovsqlite-server
+bin/perl-nocem
+bin/pgpverify
+bin/procbatch
+bin/prunehistory
+bin/pullnews
+bin/rc.news
+@(,uucp,4550) bin/rnews
+bin/rnews.libexec/c7unbatch
+bin/rnews.libexec/decode
+bin/rnews.libexec/encode
+bin/rnews.libexec/bunbatch
+bin/rnews.libexec/gunbatch
+bin/scanlogs
+bin/scanspool
+bin/send-ihave
+bin/send-nntp
+bin/send-uucp
+bin/sendinpaths
+bin/sendxbatches
+bin/shlock
+bin/shrinkfile
+bin/signcontrol
+bin/simpleftp
+bin/sm
+bin/tally.control
+bin/tinyleaf
+bin/tdx-util
+bin/writelog
+doc/CONTRIBUTORS
+doc/GPL
+doc/HACKING
+doc/INSTALL
+doc/LICENSE
+doc/NEWS
+doc/README
+%%SNAPSHOT%%doc/README.snapshot
+doc/TODO
+doc/config-design
+doc/config-semantics
+doc/config-syntax
+doc/external-auth
+doc/history
+doc/history-innfeed
+doc/hook-perl
+doc/hook-python
+doc/sample-control
+http/innreport.css
+include/inn/buffer.h
+include/inn/concat.h
+include/inn/confparse.h
+include/inn/dbz.h
+include/inn/dispatch.h
+include/inn/fdflag.h
+include/inn/hashtab.h
+include/inn/history.h
+include/inn/innconf.h
+include/inn/inndcomm.h
+include/inn/libinn.h
+include/inn/list.h
+include/inn/macros.h
+include/inn/md5.h
+include/inn/messages.h
+include/inn/mmap.h
+include/inn/network-innbind.h
+include/inn/network.h
+include/inn/newsuser.h
+include/inn/nntp.h
+include/inn/options.h
+include/inn/ov.h
+include/inn/overview.h
+include/inn/paths.h
+include/inn/portable-getaddrinfo.h
+include/inn/portable-getnameinfo.h
+include/inn/portable-macros.h
+include/inn/portable-socket.h
+include/inn/portable-stdbool.h
+include/inn/qio.h
+include/inn/sequence.h
+include/inn/storage.h
+include/inn/system.h
+include/inn/timer.h
+include/inn/tst.h
+include/inn/utility.h
+include/inn/vector.h
+include/inn/version.h
+include/inn/wire.h
+include/inn/xmalloc.h
+include/inn/xwrite.h
+lib/perl/INN/Config.pm
+lib/perl/INN/Utils/Shlock.pm
+lib/innreport_inn.pm
+lib/innshellvars
+lib/innshellvars.pl
+lib/innshellvars.tcl
+lib/libinn.a
+lib/libinn.so
+lib/libinn.so.%%INNLIB%%
+lib/libinn.so.%%INNLIB_LONG%%
+lib/libinnhist.a
+lib/libinnhist.so
+lib/libinnhist.so.%%LIBVER%%
+lib/libinnhist.so.%%LIBVER_LONG%%
+lib/libstorage.a
+lib/libstorage.so
+lib/libstorage.so.%%LIBVER%%
+lib/libstorage.so.%%LIBVER_LONG%%
+@comment --------------------------------------------------------------
+@cwd
+man/man1/convdate.1.gz
+man/man1/fastrm.1.gz
+man/man1/getlist.1.gz
+man/man1/grephistory.1.gz
+man/man1/inews.1.gz
+man/man1/innconfval.1.gz
+man/man1/innmail.1.gz
+man/man1/nntpget.1.gz
+man/man1/pgpverify.1.gz
+man/man1/pullnews.1.gz
+man/man1/rnews.1.gz
+man/man1/shlock.1.gz
+man/man1/shrinkfile.1.gz
+man/man1/simpleftp.1.gz
+man/man1/sm.1.gz
+man/man3/INN::Config.3pm.gz
+man/man3/INN::Utils::Shlock.3pm.gz
+man/man3/clientlib.3.gz
+man/man3/dbz.3.gz
+man/man3/inndcomm.3.gz
+man/man3/libauth.3.gz
+man/man3/libinn.3.gz
+man/man3/libinnhist.3.gz
+man/man3/libstorage.3.gz
+man/man3/list.3.gz
+man/man3/qio.3.gz
+man/man3/tst.3.gz
+man/man3/uwildmat.3.gz
+man/man5/active.5.gz
+man/man5/active.times.5.gz
+man/man5/buffindexed.conf.5.gz
+man/man5/control.ctl.5.gz
+man/man5/cycbuff.conf.5.gz
+man/man5/distrib.pats.5.gz
+man/man5/distributions.5.gz
+man/man5/expire.ctl.5.gz
+man/man5/history.5.gz
+man/man5/incoming.conf.5.gz
+man/man5/inn-radius.conf.5.gz
+man/man5/inn.conf.5.gz
+man/man5/innfeed.conf.5.gz
+man/man5/innwatch.ctl.5.gz
+man/man5/localgroups.5.gz
+man/man5/moderators.5.gz
+man/man5/motd.innd.5.gz
+man/man5/motd.news.5.gz
+man/man5/motd.nnrpd.5.gz
+man/man5/newsfeeds.5.gz
+man/man5/newsgroups.5.gz
+man/man5/newslog.5.gz
+man/man5/nnrpd.track.5.gz
+man/man5/nntpsend.ctl.5.gz
+man/man5/nocem.ctl.5.gz
+man/man5/ovdb.5.gz
+%%SQLITE%%man/man5/ovsqlite.5.gz
+man/man5/passwd.nntp.5.gz
+man/man5/readers.conf.5.gz
+man/man5/storage.conf.5.gz
+man/man5/subscriptions.5.gz
+man/man8/actsync.8.gz
+man/man8/actsyncd.8.gz
+man/man8/archive.8.gz
+%%KERBEROS%%man/man8/auth_krb5.8.gz
+man/man8/batcher.8.gz
+man/man8/buffchan.8.gz
+man/man8/ckpasswd.8.gz
+man/man8/cnfsheadconf.8.gz
+man/man8/cnfsstat.8.gz
+man/man8/controlchan.8.gz
+man/man8/ctlinnd.8.gz
+man/man8/cvtbatch.8.gz
+man/man8/docheckgroups.8.gz
+man/man8/domain.8.gz
+man/man8/expire.8.gz
+man/man8/expireover.8.gz
+man/man8/expirerm.8.gz
+man/man8/filechan.8.gz
+man/man8/ident.8.gz
+man/man8/imapfeed.8.gz
+man/man8/innbind.8.gz
+man/man8/inncheck.8.gz
+man/man8/innd.8.gz
+man/man8/inndf.8.gz
+man/man8/innfeed.8.gz
+man/man8/innreport.8.gz
+man/man8/innstat.8.gz
+man/man8/innupgrade.8.gz
+man/man8/innwatch.8.gz
+man/man8/innxbatch.8.gz
+man/man8/innxmit.8.gz
+man/man8/inpaths.8.gz
+man/man8/mailpost.8.gz
+man/man8/makedbz.8.gz
+man/man8/makehistory.8.gz
+man/man8/mod-active.8.gz
+man/man8/news.daily.8.gz
+man/man8/news2mail.8.gz
+man/man8/ninpaths.8.gz
+man/man8/nnrpd.8.gz
+man/man8/nntpsend.8.gz
+man/man8/ovdb_init.8.gz
+man/man8/ovdb_monitor.8.gz
+man/man8/ovdb_server.8.gz
+man/man8/ovdb_stat.8.gz
+%%SQLITE%%man/man8/ovsqlite-server.8.gz
+man/man8/overchan.8.gz
+man/man8/perl-nocem.8.gz
+man/man8/procbatch.8.gz
+man/man8/prunehistory.8.gz
+man/man8/radius.8.gz
+man/man8/rc.news.8.gz
+man/man8/scanlogs.8.gz
+man/man8/scanspool.8.gz
+man/man8/send-nntp.8.gz
+man/man8/send-uucp.8.gz
+man/man8/sendinpaths.8.gz
+man/man8/tally.control.8.gz
+man/man8/tdx-util.8.gz
+man/man8/tinyleaf.8.gz
+man/man8/writelog.8.gz
+@comment --------------------------------------------------------------
+%%EXAMPLESDIR%%/actsync.cfg
+%%EXAMPLESDIR%%/actsync.ign
+%%EXAMPLESDIR%%/buffindexed.conf
+%%EXAMPLESDIR%%/control.ctl
+%%EXAMPLESDIR%%/control.ctl.local
+%%EXAMPLESDIR%%/cycbuff.conf
+%%EXAMPLESDIR%%/distrib.pats
+%%EXAMPLESDIR%%/distributions
+%%EXAMPLESDIR%%/expire.ctl
+%%EXAMPLESDIR%%/incoming.conf
+%%EXAMPLESDIR%%/inn-radius.conf
+%%EXAMPLESDIR%%/inn.conf
+%%EXAMPLESDIR%%/innfeed.conf
+%%EXAMPLESDIR%%/innreport.conf
+%%EXAMPLESDIR%%/innshellvars.local
+%%EXAMPLESDIR%%/innshellvars.pl.local
+%%EXAMPLESDIR%%/innshellvars.tcl.local
+%%EXAMPLESDIR%%/innwatch.ctl
+%%EXAMPLESDIR%%/localgroups
+%%EXAMPLESDIR%%/moderators
+%%EXAMPLESDIR%%/motd.innd.sample
+%%EXAMPLESDIR%%/motd.nnrpd.sample
+%%EXAMPLESDIR%%/news2mail.cf
+%%EXAMPLESDIR%%/newsfeeds
+%%EXAMPLESDIR%%/nnrpd.track
+%%EXAMPLESDIR%%/nntpsend.ctl
+%%EXAMPLESDIR%%/nocem.ctl
+%%EXAMPLESDIR%%/ovdb.conf
+%%SQLITE%%%%EXAMPLESDIR%%/ovsqlite.conf
+%%EXAMPLESDIR%%/passwd.nntp
+%%EXAMPLESDIR%%/readers.conf
+%%EXAMPLESDIR%%/send-uucp.cf
+%%EXAMPLESDIR%%/storage.conf
+%%EXAMPLESDIR%%/subscriptions
+@dir %%EXAMPLESDIR%%/db
+@comment --------------------------------------------------------------
+@sample %%DBDIR%%/active.sample
+@sample %%DBDIR%%/active.times.sample
+@sample %%DBDIR%%/newsgroups.sample
+@comment --------------------------------------------------------------
+%%WITHOUT_TAGGED_HASH%%@postunexec f=history.hash;  if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@postunexec f=history.index; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
+%%WITHOUT_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
+%%WITH_TAGGED_HASH%%@postunexec f=history.pag; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITH_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
+@sample %%CONFDIR%%/actsync.cfg.sample
+@sample %%CONFDIR%%/actsync.ign.sample
+@sample %%CONFDIR%%/buffindexed.conf.sample
+@sample %%CONFDIR%%/control.ctl.local.sample
+@sample %%CONFDIR%%/control.ctl.sample
+@sample %%CONFDIR%%/cycbuff.conf.sample
+@sample %%CONFDIR%%/distrib.pats.sample
+@sample %%CONFDIR%%/distributions.sample
+@sample %%CONFDIR%%/expire.ctl.sample
+@sample %%CONFDIR%%/incoming.conf.sample
+@sample %%CONFDIR%%/inn.conf.sample
+@sample %%CONFDIR%%/innfeed.conf.sample
+@sample %%CONFDIR%%/innreport.conf.sample
+@sample %%CONFDIR%%/innshellvars.local.sample
+@sample %%CONFDIR%%/innshellvars.pl.local.sample
+@sample %%CONFDIR%%/innshellvars.tcl.local.sample
+@sample %%CONFDIR%%/innwatch.ctl.sample
+@sample %%CONFDIR%%/localgroups.sample
+@sample %%CONFDIR%%/moderators.sample
+@sample %%CONFDIR%%/news2mail.cf.sample
+@sample %%CONFDIR%%/newsfeeds.sample
+@sample %%CONFDIR%%/nnrpd.track.sample
+@sample %%CONFDIR%%/nntpsend.ctl.sample
+@sample %%CONFDIR%%/nocem.ctl.sample
+@sample %%CONFDIR%%/ovdb.conf.sample
+%%SQLITE%%@sample %%CONFDIR%%/ovsqlite.conf.sample
+@sample %%CONFDIR%%/passwd.nntp.sample
+@sample %%CONFDIR%%/readers.conf.sample
+@sample %%CONFDIR%%/send-uucp.cf.sample
+@sample %%CONFDIR%%/storage.conf.sample
+@sample %%CONFDIR%%/subscriptions.sample
+@comment --------------------------------------------------------------
+@cwd /
+@dir %%TMPDIR%%
+@dir %%SHAREDIR%%
+@dir %%NEWSSPOOL%%/overview
+@dir %%NEWSSPOOL%%/outgoing
+@dir %%NEWSSPOOL%%/innfeed
+@dir %%NEWSSPOOL%%/incoming/bad
+@dir %%NEWSSPOOL%%/incoming
+@dir %%NEWSSPOOL%%/articles
+@dir %%NEWSSPOOL%%/archive
+@dir %%NEWSSPOOL%%
+@dir %%RUNDIR%%
+@dir %%DBDIR%%
+@dir %%LOGDIR%%/OLD
+@dir %%LOGDIR%%
+@postunexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)

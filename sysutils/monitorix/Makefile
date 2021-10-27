@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-ParallelUserAgent>=0:www/p5-ParallelUserAgent \
 		p5-HTTP-Server-Simple>=0:www/p5-HTTP-Server-Simple \
 		p5-Config-General>=0:devel/p5-Config-General
 
-USES=		perl5
+USES=		cpe perl5
+CPE_VENDOR=	fibranet
 USE_PERL5=	run
 NO_ARCH=	yes
 NO_BUILD=	yes

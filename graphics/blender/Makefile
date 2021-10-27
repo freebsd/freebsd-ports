@@ -2,7 +2,7 @@
 
 PORTNAME=	blender
 DISTVERSION=	2.91.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -31,7 +31,6 @@ USES=		cmake compiler:c++14-lang cpe gl gnome jpeg python:3.8 shebangfix \
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
-INSTALLS_ICONS=	yes
 CMAKE_OFF=	WITH_IMAGE_OPENJPEG WITH_PYTHON_INSTALL \
 		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
 		WITH_CYCLES_LOGGING

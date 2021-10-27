@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
+DISTVERSION=	0.17.4
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -90,6 +90,7 @@ GH_TUPLE=	\
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		thales-e-security:pool:v0.0.2:thales_e_security_pool/vendor/github.com/thales-e-security/pool \
 		urfave:cli:v1.22.4:urfave_cli/vendor/github.com/urfave/cli
+
 USE_RC_SUBR=	step-ca
 
 GO_TARGET=	./cmd/step-ca:${PREFIX}/sbin/step-ca  \

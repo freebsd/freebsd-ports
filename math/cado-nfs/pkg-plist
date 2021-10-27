@@ -18,7 +18,7 @@ lib/cado-nfs-3.0.0/linalg/bwc/cleanup
 lib/cado-nfs-3.0.0/linalg/bwc/dispatch
 lib/cado-nfs-3.0.0/linalg/bwc/gather
 lib/cado-nfs-3.0.0/linalg/bwc/krylov
-lib/cado-nfs-3.0.0/linalg/bwc/lingen_pz
+%%LINGEN_PZ%%lib/cado-nfs-3.0.0/linalg/bwc/lingen_pz
 lib/cado-nfs-3.0.0/linalg/bwc/lingen_u64k1
 lib/cado-nfs-3.0.0/linalg/bwc/mf_bal
 lib/cado-nfs-3.0.0/linalg/bwc/mksol

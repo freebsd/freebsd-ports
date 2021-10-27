@@ -34,7 +34,6 @@ USE_GNOME=	cairo gtk30 intltool libxml2
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Maps.gschema.xml

@@ -1,15 +1,6 @@
---- configure.ac.orig	2017-03-17 10:36:31 UTC
+--- configure.ac.orig	2019-05-27 12:57:40 UTC
 +++ configure.ac
-@@ -2,7 +2,7 @@ AC_INIT([newt_pr.h])
- 
- PACKAGE=newt
- VERSION=0.52.20
--SONAME=0.52
-+SONAME=52
- 
- AC_CONFIG_HEADER([config.h])
- 
-@@ -24,7 +24,7 @@ AC_CHECK_SIZEOF([void *])
+@@ -23,7 +23,7 @@ AC_CHECK_SIZEOF([void *])
  AC_MSG_CHECKING([for GNU ld])
  LD=`$CC -print-prog-name=ld 2>&5`
  
@@ -18,7 +9,7 @@
    # Not
    GNU_LD=""
    AC_MSG_RESULT([no])
-@@ -102,7 +102,7 @@ else
+@@ -107,7 +107,7 @@ else
      AC_SUBST([TCL_LIB_FLAG])
      WHIPTCLLIB=whiptcl
      # needed with tcl8.6

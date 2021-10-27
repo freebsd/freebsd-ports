@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	webdrivers
-PORTVERSION=	4.6.1
+PORTVERSION=	5.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri \
 		rubygem-rubyzip>=1.3.0:archivers/rubygem-rubyzip \
-		rubygem-selenium-webdriver>=3.0<4.0:www/rubygem-selenium-webdriver
+		rubygem-selenium-webdriver>=4.0<5:www/rubygem-selenium-webdriver
 
 USES=		gem
 USE_RUBY=	yes

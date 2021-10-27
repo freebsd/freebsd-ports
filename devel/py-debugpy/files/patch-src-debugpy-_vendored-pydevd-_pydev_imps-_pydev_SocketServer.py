@@ -1,4 +1,4 @@
---- src/debugpy/_vendored/pydevd/_pydev_imps/_pydev_SocketServer.py.orig	2021-09-09 10:13:20 UTC
+--- src/debugpy/_vendored/pydevd/_pydev_imps/_pydev_SocketServer.py.orig	2021-10-13 09:14:03 UTC
 +++ src/debugpy/_vendored/pydevd/_pydev_imps/_pydev_SocketServer.py
 @@ -336,12 +336,12 @@ class BaseServer:
          The default is to print a traceback and continue.
@@ -26,15 +26,15 @@
                  raise ValueError('%s. x=%d and list=%r' % (e.message, pid,
                                                             self.active_children))
  
-@@ -703,10 +703,7 @@ class DatagramRequestHandler(BaseRequestHandler):
-     """Define self.rfile and self.wfile for datagram sockets."""
+@@ -704,9 +704,9 @@ class DatagramRequestHandler(BaseRequestHandler):
  
      def setup(self):
--        try:
+         try:
 -            from cStringIO import StringIO
--        except ImportError:
++            from io import StringIO
+         except ImportError:
 -            from StringIO import StringIO
-+        from io import StringIO
++            from io import StringIO
          self.packet, self.socket = self.request
          self.rfile = StringIO(self.packet)
          self.wfile = StringIO()

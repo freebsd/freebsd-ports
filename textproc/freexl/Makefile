@@ -11,7 +11,8 @@ COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
 LICENSE=	GPLv2+ LGPL21+ MPL11
 LICENSE_COMB=	dual
 
-USES=		gmake iconv libtool pathfix
+USES=		cpe gmake iconv libtool pathfix
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_search_locale_charset=no
 USE_LDCONFIG=	yes

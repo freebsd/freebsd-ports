@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--disable-sdl \
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 LDFLAGS_i386=	-Wl,-znotext
 
-INSTALLS_ICONS=	yes
-
 PORTDOCS=	*
 PORTDATA=	*
 

@@ -15,8 +15,6 @@ lib/caja/extensions-2.0/libcaja-wallpaper.so
 lib/caja/extensions-2.0/libcaja-xattr-tags.so
 libdata/pkgconfig/caja-sendto.pc
 man/man1/caja-sendto.1.gz
-%%DATADIR%%/caja-image-resize.ui
-%%DATADIR%%/caja-image-rotate.ui
 %%DATADIR%%/share-dialog.ui
 share/caja/extensions/libcaja-gksu.caja-extension
 share/caja/extensions/libcaja-image-converter.caja-extension
@@ -69,6 +67,7 @@ share/locale/es/LC_MESSAGES/caja-extensions.mo
 share/locale/es_AR/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CL/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CO/LC_MESSAGES/caja-extensions.mo
+share/locale/es_ES/LC_MESSAGES/caja-extensions.mo
 share/locale/es_MX/LC_MESSAGES/caja-extensions.mo
 share/locale/et/LC_MESSAGES/caja-extensions.mo
 share/locale/eu/LC_MESSAGES/caja-extensions.mo
@@ -102,6 +101,7 @@ share/locale/ko/LC_MESSAGES/caja-extensions.mo
 share/locale/ku/LC_MESSAGES/caja-extensions.mo
 share/locale/ku_IQ/LC_MESSAGES/caja-extensions.mo
 share/locale/ky/LC_MESSAGES/caja-extensions.mo
+share/locale/li/LC_MESSAGES/caja-extensions.mo
 share/locale/lt/LC_MESSAGES/caja-extensions.mo
 share/locale/lv/LC_MESSAGES/caja-extensions.mo
 share/locale/mai/LC_MESSAGES/caja-extensions.mo

@@ -27,7 +27,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libcolord.so:graphics/colord
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		bison compiler:c++11-lib desktop-file-utils gettext gl \
+USES=		bison compiler:c++11-lib cpe desktop-file-utils gettext gl \
 		gnome jpeg localbase:ldflags meson pkgconfig \
 		python:3.5+,build shebangfix tar:xz xorg
 USE_GL=		egl
@@ -35,9 +35,9 @@ USE_GNOME=	cairo gtk30 intltool librsvg2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrandr xi
 MESON_ARGS=	-Dlibrsvg=true \
 		-Dlibchamplain=false
+CPE_VENDOR=	gnome
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	*.py data/gschemas/*.py gthumb/*.py po/*.py
 

@@ -1,6 +1,6 @@
---- chrome/common/chrome_paths.cc.orig	2021-07-19 18:45:10 UTC
+--- chrome/common/chrome_paths.cc.orig	2021-09-24 04:26:00 UTC
 +++ chrome/common/chrome_paths.cc
-@@ -43,15 +43,23 @@
+@@ -43,17 +43,25 @@
  
  namespace {
  
@@ -23,8 +23,11 @@
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 +#endif
  
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
+ #if BUILDFLAG(ENABLE_WIDEVINE)
+ // The name of the hint file that tells the latest component updated Widevine
 @@ -172,7 +180,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        break;
@@ -34,7 +37,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -416,6 +424,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -415,6 +423,9 @@ bool PathProvider(int key, base::FilePath* result) {
      case chrome::DIR_POLICY_FILES: {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
@@ -44,7 +47,7 @@
  #else
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
  #endif
-@@ -427,7 +438,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -426,7 +437,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                            \
      ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
@@ -53,7 +56,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
          return false;
-@@ -435,7 +446,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -434,7 +445,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -62,7 +65,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -470,7 +481,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -469,7 +480,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
        break;
  
@@ -71,7 +74,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if defined(OS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -484,6 +495,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -483,6 +494,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/opt/chrome/native-messaging-hosts"));
@@ -81,7 +84,7 @@
  #else
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/chromium/native-messaging-hosts"));
-@@ -496,7 +510,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -495,7 +509,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        cur = cur.Append(FILE_PATH_LITERAL("NativeMessagingHosts"));
        break;

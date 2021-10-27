@@ -1,7 +1,7 @@
 PORTNAME=	frr
 PORTVERSION=	7.5.1
 DISTVERSIONPREFIX=	frr-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	7-pythontools
@@ -33,8 +33,11 @@ do-install:
 .else
 
 BUILD_DEPENDS=	gawk:lang/gawk
+
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
-		libyang.so:net/libyang
+		libyang.so:net/libyang \
+		libpcre.so:devel/pcre \
+		libcares.so:dns/c-ares
 
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
 		makeinfo python:build,3.6+ readline shebangfix

@@ -1,8 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	fs-uae
-PORTVERSION=	3.0.5
-PORTREVISION=	2
+PORTVERSION=	3.1.35
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/stable/${PORTVERSION}/
 
@@ -24,8 +23,6 @@ USE_SDL=	sdl2
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_XORG=	x11
-
-INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-c++11-narrowing

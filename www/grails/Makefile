@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:tu}
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	gopivotal
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 IGNORE_riscv64=		fails to compile: lj_arch.h:73:2: No support for this architecture (yet)
 
-USES=		gmake
+USES=		cpe gmake
 
 CONFLICTS_INSTALL=	luajit
 

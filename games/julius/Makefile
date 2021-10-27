@@ -1,9 +1,6 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	julius
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-caesariii

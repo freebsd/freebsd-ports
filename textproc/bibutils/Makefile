@@ -11,10 +11,12 @@ COMMENT=	Program set interconverts between various bibliography formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying
 
-USES=		gmake
+USES=		cpe gmake
 
 HAS_CONFIGURE=	yes
 TEST_TARGET=	test
+
+CPE_VENDOR=	bibutils_project
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

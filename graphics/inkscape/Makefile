@@ -2,7 +2,7 @@
 
 PORTNAME=	inkscape
 DISTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.org/gallery/item/26932/
 
@@ -54,8 +54,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_2021-05-24_c4e8f9ed74
 
-INSTALLS_ICONS=	yes
-
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct
 
@@ -77,7 +75,6 @@ DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 
 GVFS_USE=		GNOME=gvfs
 
-OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	WITH_OPENMP
 
 POPPLER_DESC=		PDF preview rendering

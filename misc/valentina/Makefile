@@ -20,7 +20,7 @@ GL_COMMIT=	5b7e98bf48a86e3c444423a9f03533440a39aad9
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 
-QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
+QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath" PREFIX=${PREFIX}
 .if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)
 QMAKE_ARGS+=	CONFIG+="no_ccache"
 .endif

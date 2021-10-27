@@ -75,16 +75,16 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.22.5
+KDE_PLASMA_VERSION?=		5.23.2
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.86.0
+KDE_FRAMEWORKS_VERSION?=	5.87.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	21.08.1
-KDE_APPLICATIONS_SHLIB_VER?=	5.18.1
+KDE_APPLICATIONS_VERSION?=	21.08.2
+KDE_APPLICATIONS_SHLIB_VER?=	5.18.2
 KDE_APPLICATIONS_BRANCH?=	stable
 
 # Extended KDE universe applications.
@@ -636,7 +636,7 @@ kde-plasma-sdk_PORT=		devel/plasma5-plasma-sdk
 kde-plasma-sdk_PATH=		${KDE_PREFIX}/bin/plasmoidviewer
 
 kde-plasma-workspace_PORT=	x11/plasma5-plasma-workspace
-kde-plasma-workspace_LIB=	libkdeinit5_kcminit.so
+kde-plasma-workspace_LIB=	libkworkspace5.so
 
 kde-plasma-workspace-wallpapers_PORT=	x11-themes/plasma5-plasma-workspace-wallpapers
 kde-plasma-workspace-wallpapers_PATH=	${KDE_PREFIX}/share/wallpapers/Autumn/contents/images/1280x1024.jpg

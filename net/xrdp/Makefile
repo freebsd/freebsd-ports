@@ -2,7 +2,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.16
+DISTVERSION=	0.9.17
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -20,11 +20,13 @@ RUN_DEPENDS=	xterm:x11/xterm \
 		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		${LOCALBASE}/lib/pulse-14.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 
-USES=		autoreconf:build compiler:c11 jpeg localbase libtool pkgconfig \
+USES=		autoreconf:build compiler:c11 cpe jpeg localbase libtool pkgconfig \
 		ssl xorg
 USE_XORG=	ice pixman sm x11 xfixes xrandr
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
+
+CPE_VENDOR=	neutrinolabs
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
@@ -50,7 +52,7 @@ FUSE_DESC=	Enable drive redirection via FUSE (experimental)
 MP3LAME_DESC=	Enable MP3 Lame for audio redirection
 OPUS_DESC=	Enable Opus for audio redirection
 
-DEBUG_CONFIGURE_ENABLE=	xrdpdebug
+DEBUG_CONFIGURE_ENABLE=	debug-all
 FDKAAC_CONFIGURE_ENABLE=	fdkaac
 FDKAAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
 FUSE_CONFIGURE_ENABLE=	fuse

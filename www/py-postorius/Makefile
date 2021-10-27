@@ -20,7 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.3:mail/py-django-mailma
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>0:devel/py-isort@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -16,7 +16,6 @@ GH_ACCOUNT=	NitruxSA
 GH_PROJECT=	luv-icon-theme
 
 DATADIR=	${PREFIX}/share/icons/Luv
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 

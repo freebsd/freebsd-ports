@@ -9,6 +9,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	Unknown or unsupported processor: i386
+BROKEN_powerpc=	Unknown or unsupported processor: powerpc
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 

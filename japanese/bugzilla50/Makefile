@@ -14,7 +14,8 @@ NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../../devel/bugzilla50/Makefile.common"
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	mozilla
 
 LANGDIR=	${WWWDIR}/template/ja
 

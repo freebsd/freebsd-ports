@@ -25,7 +25,6 @@ USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

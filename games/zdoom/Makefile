@@ -2,7 +2,7 @@
 
 PORTNAME=	zdoom
 PORTVERSION=	2.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -46,6 +46,11 @@ FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CMAKE_BOOL=	WITH_FLUIDSYNTH
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DNO_ASM:BOOL=ON
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

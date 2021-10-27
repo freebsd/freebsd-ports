@@ -20,7 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=0,1:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	rdflib_project
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

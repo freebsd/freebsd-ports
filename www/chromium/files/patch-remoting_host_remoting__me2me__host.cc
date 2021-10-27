@@ -1,6 +1,6 @@
---- remoting/host/remoting_me2me_host.cc.orig	2021-07-19 18:45:20 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2021-09-24 04:26:09 UTC
 +++ remoting/host/remoting_me2me_host.cc
-@@ -119,7 +119,7 @@
+@@ -118,7 +118,7 @@
  #include "remoting/host/mac/permission_utils.h"
  #endif  // defined(OS_APPLE)
  
@@ -9,7 +9,7 @@
  #include <gtk/gtk.h>
  
  #include "base/linux_util.h"
-@@ -127,7 +127,7 @@
+@@ -126,7 +126,7 @@
  #include "remoting/host/linux/certificate_watcher.h"
  #include "ui/events/platform/x11/x11_event_source.h"
  #include "ui/gfx/x/xlib_support.h"
@@ -77,7 +77,16 @@
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1764,7 +1764,7 @@ void HostProcess::OnCrash(const std::string& function_
+@@ -1581,7 +1581,7 @@ void HostProcess::StartHost() {
+ 
+   // Remote open URL is fully supported on Linux and still in development for
+   // Windows.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   desktop_environment_options_.set_enable_remote_open_url(true);
+ #elif !defined(NDEBUG) && defined(OS_WIN)
+   // The modern default apps settings dialog is only available to Windows 8+.
+@@ -1771,7 +1771,7 @@ void HostProcess::OnCrash(const std::string& function_
  int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
  
@@ -86,7 +95,7 @@
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
    x11::InitXlib();
-@@ -1801,7 +1801,7 @@ int HostProcessMain() {
+@@ -1808,7 +1808,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  
@@ -95,7 +104,7 @@
    // Create an X11EventSource on all UI threads, so the global X11 connection
    // (x11::Connection::Get()) can dispatch X events.
    auto event_source =
-@@ -1810,7 +1810,7 @@ int HostProcessMain() {
+@@ -1817,7 +1817,7 @@ int HostProcessMain() {
    input_task_runner->PostTask(FROM_HERE, base::BindOnce([]() {
                                  new ui::X11EventSource(x11::Connection::Get());
                                }));
@@ -104,7 +113,7 @@
  
    // Create & start the HostProcess using these threads.
    // TODO(wez): The HostProcess holds a reference to itself until Shutdown().
-@@ -1823,11 +1823,11 @@ int HostProcessMain() {
+@@ -1830,11 +1830,11 @@ int HostProcessMain() {
    // Run the main (also UI) task executor until the host no longer needs it.
    run_loop.Run();
  

@@ -13,7 +13,9 @@ COMMENT=	WWW CGI script to browse CVS repository trees
 
 CONFLICTS=	cvsweb-3.*
 
-USES=		perl5
+USES=		cpe perl5
+
+CPE_VENDOR=	freebsd
 
 NO_BUILD=	yes
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"

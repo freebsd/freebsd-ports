@@ -1,8 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis
-PORTVERSION=	6.2.5
-PORTREVISION=	1
+PORTVERSION=	6.2.6
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -12,7 +11,9 @@ COMMENT=	Persistent key-value database with built-in net interface
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		compiler:c11 gmake
+USES+=		compiler:c11 cpe gmake
+
+CPE_VENDOR=	redislabs
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA

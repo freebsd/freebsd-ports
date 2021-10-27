@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	mate
-PORTVERSION=	1.24.1
+PORTVERSION=	1.26.0
 CATEGORIES=	x11 mate
 
 MAINTAINER=	gnome@FreeBSD.org

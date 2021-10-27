@@ -37,7 +37,6 @@ GH_PROJECT=		photos
 USE_GNOME=		cairo gdkpixbuf2 gtk30 intltool
 GLIB_SCHEMAS=		io.elementary.photos-extras.gschema.xml \
 			io.elementary.photos.gschema.xml
-INSTALLS_ICONS=		yes
 USE_GSTREAMER1=		yes
 USE_LDCONFIG=		yes
 USE_XORG=		x11

@@ -11,7 +11,7 @@ COMMENT=	Combinatorial BLAS library: an extensible parallel graph library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	fails to build: uses x86 asm
 
 LIB_DEPENDS=	libmpi.so:net/mpich

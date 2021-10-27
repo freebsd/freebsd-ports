@@ -25,7 +25,6 @@ USE_XFCE=	xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-vendor-info=${OPSYS} --without-html-dir \
 		--enable-glibtop --enable-epoxy \
 		--disable-gudev

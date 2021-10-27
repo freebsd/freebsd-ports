@@ -6,7 +6,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Hash Table Interface
 
 OPTIONS_DEFINE=	MEMCACHE
-USES=	horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Exception
 
 MEMCACHE_USE=	HORDE_RUN=Horde_Memcache

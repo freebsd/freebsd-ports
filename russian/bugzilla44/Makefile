@@ -9,6 +9,9 @@ COMMENT=	Russian localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:devel/bugzilla44
 
+USES=		cpe
+CPE_VENDOR=	mozilla
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 
 .include "${.CURDIR}/../../devel/bugzilla44/Makefile.common"

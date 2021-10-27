@@ -1,0 +1,7 @@
+The LLVM Project is a collection of modular and reusable compiler and
+toolchain technologies.
+
+This port includes Clang builtins for WASI
+(WebAssembly System Interface).
+
+WWW: http://llvm.org/

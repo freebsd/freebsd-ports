@@ -12,12 +12,12 @@ COMMENT=	Data backends for the Evolution integrated mail/PIM suite
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libfribidi.so:converters/fribidi \
 		libgcr-base-3.so:security/gcr \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgdata.so:devel/libgdata \
+		libharfbuzz.so:print/harfbuzz \
 		libical.so:devel/libical \
 		libnss3.so:security/nss \
 		libicudata.so:devel/icu \
@@ -32,15 +32,15 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 PORTSCOUT=	limitw:1,even
 
 USES=		bdb:5 cmake compiler:c++11-lib cpe gettext gnome gperf \
-		iconv localbase pathfix pkgconfig python:3.6+,build\
-		sqlite tar:xz
+		iconv:wchar_t localbase pathfix pkgconfig python:3.6+,build\
+		sqlite tar:xz xorg
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome
 
-CMAKE_ARGS=	-DENABLE_VALA_BINDINGS=ON \
-		-DENABLE_INTROSPECTION=ON \
+CMAKE_ARGS=	-DENABLE_INTROSPECTION=ON \
 		-DENABLE_UOA=OFF
 
 CMAKE_ARGS+=	-DWITH_LIBDB_CFLAGS=-I${LOCALBASE}/include/db5 \
@@ -56,8 +56,8 @@ GLIB_SCHEMAS=	org.gnome.evolution-data-server.addressbook.gschema.xml \
 PLIST_SUB=	EVO_VERSION="1.2"
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	WEATHER KERBEROS LDAP
-OPTIONS_DEFAULT=WEATHER KERBEROS LDAP
+OPTIONS_DEFINE=	WEATHER KERBEROS LDAP VALA
+OPTIONS_DEFAULT=WEATHER KERBEROS LDAP VALA
 
 KERBEROS_CMAKE_ON=	-DWITH_KRB5=/usr
 KERBEROS_CMAKE_OFF=	-DWITH_KRB5=OFF
@@ -67,15 +67,15 @@ LDAP_CMAKE_ON=		-DWITH_OPENLDAP=${LOCALBASE}
 LDAP_CMAKE_OFF=		-DWITH_OPENLDAP=OFF
 LDAP_USE=		openldap=yes
 
+VALA_DESC=		Build Vala language bindings
+VALA_BUILD_DEPENDS=	vapigen:lang/vala
+VALA_CMAKE_BOOL=	ENABLE_VALA_BINDINGS
+
 WEATHER_DESC=	Weather calendar backend
 WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| python3| ${PYTHON_VERSION}|g' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/systemd

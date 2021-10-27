@@ -16,7 +16,9 @@ COMMENT=	Library for reading and writing files in FITS data format
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libf2c.so:lang/f2c
 
-USES=		localbase pkgconfig
+USES=		cpe localbase pkgconfig
+
+CPE_VENDOR=	nasa
 
 ALL_TARGET=	libcfitsio.a shared
 CONFIGURE_ARGS=	ac_cv_prog_FC=f2c

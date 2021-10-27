@@ -42,7 +42,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sh_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN}  ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
-	
 
 do-install-HBL-on:
 	${INSTALL_DATA} ${WRKSRC}/sh_hbl.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh_hbl.cf.sample

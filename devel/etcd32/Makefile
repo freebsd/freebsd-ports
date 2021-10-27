@@ -1,6 +1,7 @@
 PORTNAME=	etcd
 PORTVERSION=	3.2.32
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 PKGNAMESUFFIX=	32
@@ -12,14 +13,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go
-
-CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd33-* \
-			coreos-etcd34-* coreos-etcdctl-0.*
+USE_GITHUB=	yes
+GH_ACCOUNT=	coreos
 
 GO_PKGNAME=	github.com/coreos/etcd
 GO_TARGET=	./cmd/etcd ./cmd/etcdctl
-USE_GITHUB=	yes
-GH_ACCOUNT=	coreos
+
+CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd33-* \
+			coreos-etcd34-* coreos-etcdctl-0.*
 
 PLIST_FILES=	bin/etcd \
 		bin/etcdctl

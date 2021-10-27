@@ -23,7 +23,6 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 intltool libxml2 pan
 GLIB_SCHEMAS=	io.ahoi.oregano.gschema.xml
 
 INSTALLS_OMF=	yes
-INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|$${MANDIR}|${MANPREFIX}/man|' ${WRKSRC}/data/wscript

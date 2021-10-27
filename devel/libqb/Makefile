@@ -19,7 +19,8 @@ GROUPS=			haclient
 QB_SOCKET_DIR?=		/var/run/qb
 PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
-USES=			autoreconf gmake libtool pathfix pkgconfig python
+USES=			autoreconf cpe gmake libtool pathfix pkgconfig python
+CPE_VENDOR=		clusterlabs
 USE_BINUTILS=		yes
 USE_GITHUB=		yes
 USE_LDCONFIG=		yes

@@ -9,7 +9,8 @@ CATEGORIES=	devel linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GLib bindings for D-Bus (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	freedesktop
 USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs expat
 USE_LINUX_RPM=	yes

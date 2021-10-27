@@ -1,0 +1,16 @@
+Postfix Admin is a web-based management tool written in PHP for
+Postfix with Postfix-style Virtual Domains using MySQL or
+PostgreSQL lookups.  Postfix Admin is known to work on Apache
+and Lighttpd, but is designed to work on any web server with
+PHP 5.1.2+ support.
+
+Postfix Admin features:
+
+- Virtual Mailboxes, Virtual Aliases and Forwarders;
+- Domain-to-Domain Forwarding (Catch-All Aliases);
+- Vacation (auto-responder) for Virtual Mailboxes;
+- Quota, Alias & Mailbox limits per domain;
+- Backup MX;
+- Packaged with over 25 languages.
+
+WWW: http://www.postfixadmin.org/

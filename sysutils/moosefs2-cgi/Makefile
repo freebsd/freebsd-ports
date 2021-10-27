@@ -4,8 +4,6 @@ PKGNAMESUFFIX=	-cgi
 
 COMMENT=	MooseFS CGI interface
 
-LICENSE=	GPLv2
-
 MFS_COMPONENT=	cgi
 
 MASTERDIR=	${.CURDIR}/../moosefs2-master

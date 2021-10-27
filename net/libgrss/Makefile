@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libxml2.so:textproc/libxml2
 
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME=	glib20 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

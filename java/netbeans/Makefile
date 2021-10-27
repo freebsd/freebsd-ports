@@ -12,7 +12,9 @@ COMMENT=	Modular, standards-based integrated development environment
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		shebangfix zip
+USES=		cpe shebangfix zip
+
+CPE_VENDOR=	apache
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+

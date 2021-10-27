@@ -10,6 +10,7 @@ COMMENT=	PHP and JavaScript AJAX library
 LICENSE=	LGPL21+
 
 NO_ARCH=	yes
-USES=		pear
+USES=		cpe pear
+CPE_VENDOR=	pear
 
 .include <bsd.port.mk>

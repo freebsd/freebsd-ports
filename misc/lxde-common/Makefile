@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/lxde
-INSTALLS_ICONS=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/desktop.conf \

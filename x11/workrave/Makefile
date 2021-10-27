@@ -16,7 +16,6 @@ USES=		compiler:c++11-lang gettext gmake gnome libtool localbase \
 		pkgconfig xorg
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm30 intlhack intltool introspection:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xmu xorgproto xscrnsaver xtst
 

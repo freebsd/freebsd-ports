@@ -1,6 +1,6 @@
 PORTNAME=	ImageMagick
 DISTVERSION=	7.0.11-12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \
 		https://www.imagemagick.org/download/releases/ \
@@ -230,13 +230,11 @@ _IMAGEMAGICK_THREADS=no
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=OpenMP requires threads${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . else
-CONFIGURE_ARGS+=	--enable-openmp
-USES+=		compiler:openmp
+CONFIGURE_ARGS+=       --enable-openmp
 . endif
 .else
-CONFIGURE_ARGS+=	--disable-openmp
+CONFIGURE_ARGS+=       --disable-openmp
 .endif
-
 .if defined(WITH_WINDOWS_FONT_DIR)
 CONFIGURE_ARGS+=	--with-windows-font-dir=${WITH_WINDOWS_FONT_DIR}
 .endif

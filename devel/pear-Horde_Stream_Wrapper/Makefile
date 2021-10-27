@@ -7,6 +7,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Stream wrappers
 
-USES=	horde
+USES=	horde cpe
 
 .include <bsd.port.mk>

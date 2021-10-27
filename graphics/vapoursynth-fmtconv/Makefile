@@ -1,10 +1,10 @@
 PORTNAME=	fmtconv
-PORTVERSION=	r25
+PORTVERSION=	r26
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Format conversion tools for Vapoursynth and Avisyth+
+COMMENT=	Format conversion tools for Vapoursynth and Avisynth+
 
 LICENSE=	WTFPL
 

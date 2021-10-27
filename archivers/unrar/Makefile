@@ -18,8 +18,6 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 USES+=		compiler:c++11-lang cpe
 
-CPE_VENDOR=	rarlab
-
 LDFLAGS+=	-lpthread
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" STRIP="${STRIP_CMD}"
 MAKEFILE=	makefile
@@ -30,6 +28,8 @@ PLIST_FILES=	bin/unrar
 SLAVEDIRS=	archivers/unrar-iconv
 
 CONFLICTS_INSTALL?=	unrar-iconv
+
+CPE_VENDOR=	rarlab
 
 OPTIONS_DEFINE=	OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES

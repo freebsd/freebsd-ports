@@ -11,8 +11,8 @@ LICENSE=	APACHE20
 USES=		compiler cpe go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-09-03T03-56-13Z
-COMMIT_ID=	a19e3bc9d9dd08299229e49081780c79e6cf6a2b
+GHTAG=		RELEASE.2021-10-23T03-28-24Z
+COMMIT_ID=	9694fa8d3a67ca61f37a94d26c9d210fe6f6c145
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -36,12 +36,13 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		cheggaaa:pb:v1.0.29:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		colinmarc:hdfs:v2.2.0:colinmarc_hdfs_v2/vendor/github.com/colinmarc/hdfs/v2 \
 		coredns:coredns:v1.4.0:coredns_coredns/vendor/github.com/coredns/coredns \
-		coreos:go-oidc:v2.2.1:coreos_go_oidc/vendor/github.com/coreos/go-oidc \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		coreos:go-systemd:v22.3.1:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
+		cosnicolaou:pbzip2:v1.0.1:cosnicolaou_pbzip2/vendor/github.com/cosnicolaou/pbzip2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dchest:siphash:v1.2.1:dchest_siphash/vendor/github.com/dchest/siphash \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
+		diamondburned:duration:faac084b6075:group_name/vendor/maze.io/x/duration \
 		djherbis:atime:v1.0.0:djherbis_atime/vendor/github.com/djherbis/atime \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		dswarbrick:smart:909a45200d6d:dswarbrick_smart/vendor/github.com/dswarbrick/smart \
@@ -89,7 +90,8 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:f52c844e1c1c:golang_sys/vendor/golang.org/x/sys \
 		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
@@ -127,12 +129,12 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		josharian:intern:v1.0.0:josharian_intern/vendor/github.com/josharian/intern \
 		json-iterator:go:v1.1.11:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
-		klauspost:compress:v1.13.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.13.5:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
-		klauspost:cpuid:v2.0.4:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
+		klauspost:cpuid:v2.0.6:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		klauspost:readahead:v1.3.1:klauspost_readahead/vendor/github.com/klauspost/readahead \
-		klauspost:reedsolomon:v1.9.11:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
+		klauspost:reedsolomon:v1.9.13:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
 		kubernetes-sigs:controller-runtime:v0.8.0:kubernetes_sigs_controller_runtime/vendor/sigs.k8s.io/controller-runtime \
 		kubernetes-sigs:structured-merge-diff:v4.1.0:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
@@ -160,24 +162,24 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:argon2:v1.0.0:minio_argon2/vendor/github.com/minio/argon2 \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:colorjson:v1.0.1:minio_colorjson/vendor/github.com/minio/colorjson \
-		minio:console:v0.9.6:minio_console/vendor/github.com/minio/console \
+		minio:console:v0.11.0:minio_console/vendor/github.com/minio/console \
 		minio:csvparser:v1.0.0:minio_csvparser/vendor/github.com/minio/csvparser \
 		minio:direct-csi:f7776f7961bf:minio_direct_csi/vendor/github.com/minio/direct-csi \
 		minio:filepath:v1.0.0:minio_filepath/vendor/github.com/minio/filepath \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:kes:v0.14.0:minio_kes/vendor/github.com/minio/kes \
-		minio:madmin-go:v1.1.0:minio_madmin_go/vendor/github.com/minio/madmin-go \
+		minio:madmin-go:v1.1.10:minio_madmin_go/vendor/github.com/minio/madmin-go \
 		minio:mc:cebf3318546f:minio_mc/vendor/github.com/minio/mc \
 		minio:md5-simd:v1.1.1:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:cee488b95ff2:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
-		minio:operator:26350f153661:minio_operator/vendor/github.com/minio/operator \
+		minio:minio-go:v7.0.15:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:operator:31460bbbc4b7:minio_operator/vendor/github.com/minio/operator \
 		minio:parquet-go:v1.0.0:minio_parquet_go/vendor/github.com/minio/parquet-go \
-		minio:pkg:v1.1.2:minio_pkg/vendor/github.com/minio/pkg \
+		minio:pkg:v1.1.5:minio_pkg/vendor/github.com/minio/pkg \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:v0.2.1:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.3.0:minio_sio/vendor/github.com/minio/sio \
-		minio:zipindex:v0.2.0:minio_zipindex/vendor/github.com/minio/zipindex \
+		minio:zipindex:v0.2.1:minio_zipindex/vendor/github.com/minio/zipindex \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
@@ -193,7 +195,6 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		nats-io:stan.go:v0.8.3:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
 		ncw:directio:v1.0.5:ncw_directio/vendor/github.com/ncw/directio \
 		nsqio:go-nsq:v1.0.8:nsqio_go_nsq/vendor/github.com/nsqio/go-nsq \
-		olivere:elastic:v7.0.22:olivere_elastic_v7/vendor/github.com/olivere/elastic/v7 \
 		philhofer:fwd:v1.1.1:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pierrec:lz4:v2.6.0:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -201,21 +202,20 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		pkg:xattr:v0.4.1:pkg_xattr/vendor/github.com/pkg/xattr \
 		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		posener:complete:v1.2.3:posener_complete/vendor/github.com/posener/complete \
-		pquerna:cachecontrol:1555304b9b35:pquerna_cachecontrol/vendor/github.com/pquerna/cachecontrol \
 		prometheus:client_golang:v1.8.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.14.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
+		rs:dnscache:295bba877686:rs_dnscache/vendor/github.com/rs/dnscache \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
 		secure-io:sio-go:v0.3.1:secure_io_sio_go/vendor/github.com/secure-io/sio-go \
 		shirou:gopsutil:v3.21.7:shirou_gopsutil_v3/vendor/github.com/shirou/gopsutil \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		streadway:amqp:v1.0.0:streadway_amqp/vendor/github.com/streadway/amqp \
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
@@ -229,12 +229,11 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.6.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:c23abee72d19:uber_go_zap/vendor/go.uber.org/zap \
-		unrolled:secure:v1.0.7:unrolled_secure/vendor/github.com/unrolled/secure \
+		unrolled:secure:v1.0.9:unrolled_secure/vendor/github.com/unrolled/secure \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
-		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten \
 		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
 		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep \
-		diamondburned:duration:faac084b6075:group_name/vendor/maze.io/x/duration
+		yargevad:filepathx:v1.0.0:yargevad_filepathx/vendor/github.com/yargevad/filepathx
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage

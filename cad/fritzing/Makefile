@@ -17,7 +17,6 @@ USES=		compiler:c++11-lang dos2unix gmake gnome python qmake qt:5 \
 		tar:bzip2
 USE_QT=		buildtools concurrent core dbus gui imageformats network printsupport qmake serialport sql-sqlite3 svg xml
 DOS2UNIX_REGEX=	.*pro
-INSTALLS_ICONS=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	fritzing-app fritzing-parts:parts
 

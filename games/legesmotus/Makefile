@@ -37,7 +37,7 @@ SERVERSCANNER_DESC=	Build server scanner
 CLIENT_CONFIGURE_OFF=	--disable-client
 CLIENT_USES=		gl sdl
 CLIENT_USE=		SDL=sdl,image,ttf,mixer GL=gl
-CLIENT_DESKTOP_ENTRIES= "Leges Motus" \
+CLIENT_DESKTOP_ENTRIES=	"Leges Motus" \
 			"" \
 			"${DATADIR}/sprites/blue_head32.png" \
 			"legesmotus" \

@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.1.1
+DISTVERSION=	24.1.2
 PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		cpe gmake ncurses perl5
+USES=		compiler cpe gmake ncurses perl5
 CPE_VENDOR=	erlang
 CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--enable-dirty-schedulers \
 		--enable-smp-support \
 		--enable-threads
 MAKE_ARGS=	all
-
 
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
@@ -59,7 +58,7 @@ OPTIONS_EXCLUDE_armv6=	DTRACE
 OPTIONS_EXCLUDE_armv7=	DTRACE
 OPTIONS_EXCLUDE_i386=	DTRACE
 OPTIONS_EXCLUDE_riscv64=	DTRACE
-OPTIONS_SUB=			yes
+OPTIONS_SUB=	yes
 
 CHUNKS_DESC=	Enable in-line documentation in Erlang console
 CORBA_DESC=	Enable Corba support
@@ -75,7 +74,8 @@ WX_DESC=	Enable WX application
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-CHUNKS_MAKE_ARGS+=		docs DOC_TARGETS=chunks
+CHUNKS_MAKE_ARGS+=		DOC_TARGETS=chunks \
+				docs
 DIRTY_CONFIGURE_WITH=		dirty-schedulers
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
@@ -105,6 +105,11 @@ WX_VARS=			USE_GL="gl glu" \
 				WX_COMPS="wx"
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 130
+# PR 258494
+CONFIGURE_ARGS+=	--disable-pgo
+.endif
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-DMAP_NORESERVE=0

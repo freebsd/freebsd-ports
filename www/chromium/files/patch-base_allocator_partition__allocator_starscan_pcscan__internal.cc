@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/starscan/pcscan_internal.cc.orig	2021-07-28 07:02:32 UTC
+--- base/allocator/partition_allocator/starscan/pcscan_internal.cc.orig	2021-09-24 04:25:55 UTC
 +++ base/allocator/partition_allocator/starscan/pcscan_internal.cc
-@@ -72,7 +72,7 @@ namespace internal {
+@@ -59,7 +59,7 @@ namespace internal {
  
  namespace {
  

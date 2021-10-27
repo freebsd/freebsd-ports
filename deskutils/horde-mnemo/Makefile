@@ -10,7 +10,7 @@ COMMENT=	Horde web based notes manager
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe horde php
+USES=		horde php cpe
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -31,8 +31,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Support \
 		Horde_Text_Filter \
 		Horde_Util
-
-CPE_VENDOR=	horde
 
 OPTIONS_DEFAULT=	PDF
 OPTIONS_DEFINE=		PDF

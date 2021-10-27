@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake:insource compiler:c++11-lang gnome sdl
 USE_SDL=	sdl ttf
 DATADIR=	${PREFIX}/share/divideandsucceed
-INSTALLS_ICONS=	yes
 
 post-install:
 	${LN} -s ../../share/icons/hicolor/64x64/apps/divideandsucceed.png ${STAGEDIR}${PREFIX}/share/pixmaps/

@@ -10,6 +10,8 @@ COMMENT=	Simple facade or abstraction for various logging frameworks
 
 LICENSE=	MIT
 
+USES=		cpe
+CPE_VENDOR=	qos
 USE_JAVA=	YES
 NO_BUILD=	YES
 

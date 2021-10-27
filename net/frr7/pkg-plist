@@ -85,6 +85,7 @@ include/frr/pullwr.h
 include/frr/pw.h
 include/frr/queue.h
 include/frr/qobj.h
+include/frr/resolver.h
 include/frr/ringbuf.h
 include/frr/route_types.h
 include/frr/routemap.h
@@ -126,10 +127,15 @@ lib/libfrr.a
 lib/libfrr.so
 lib/libfrr.so.0
 lib/libfrr.so.0.0.0
+lib/libfrrcares.a
+lib/libfrrcares.so
+lib/libfrrcares.so.0
+lib/libfrrcares.so.0.0.0
 lib/libfrrospfapiclient.a
 lib/libfrrospfapiclient.so
 lib/libfrrospfapiclient.so.0
 lib/libfrrospfapiclient.so.0.0.0
+%%SNMP%%lib/frr/modules/bgpd_bmp.so
 %%SNMP%%lib/frr/modules/bgpd_snmp.so
 %%SNMP%%lib/frr/modules/ospf6d_snmp.so
 %%SNMP%%lib/frr/modules/ospfd_snmp.so

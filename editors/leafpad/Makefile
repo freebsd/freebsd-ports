@@ -15,7 +15,6 @@ USE_GNOME=	gtk20 intlhack
 USES=		desktop-file-utils gettext gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
-INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 

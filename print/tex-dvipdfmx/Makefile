@@ -50,7 +50,7 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/fonts/map/dvipdfm/
 WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipdfm-x
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-system-kpathsea \
+CONFIGURE_ARGS=	--with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib \
 		--with-system-libpaper \

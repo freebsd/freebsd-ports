@@ -1,0 +1,20 @@
+--- configure.orig	2021-08-14 19:53:52 UTC
++++ configure
+@@ -35665,7 +35665,7 @@ else $as_nop
+       elxsi | \
+       fr30 | \
+       h8300 | \
+-      i?86 | x86_64 | \
++      i?86 | x86_64 | amd64 | \
+       i860 | \
+       ia64 | \
+       m32r | \
+@@ -35714,7 +35714,7 @@ find_stack_direction (int *addr, int depth)
+   return dir + dummy;
+ }
+ int
+-main (int argc, char *argv)
++main (int argc, char *argv[])
+ {
+   printf ("%d\n", find_stack_direction (NULL, argc + 20));
+   return 0;

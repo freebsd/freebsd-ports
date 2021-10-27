@@ -9,14 +9,14 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color vt102 terminal emulator with transparency support
 
-MAKE_JOBS_UNSAFE= yes
+MAKE_JOBS_UNSAFE=	yes
 
 USES=		cpe dos2unix xorg
 DOS2UNIX_FILES=	src/rxvt.h
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-wtmp \
+CONFIGURE_ARGS=	--enable-wtmp \
 		--enable-xgetdefault \
 		--disable-memset \
 		--disable-swapscreen \

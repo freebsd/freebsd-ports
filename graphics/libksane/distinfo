@@ -1,3 +1,3 @@
-TIMESTAMP = 1630583917
-SHA256 (KDE/release-service/21.08.1/libksane-21.08.1.tar.xz) = 7d78ac9fc3c97235a698c6993044c3d8851e413dc7207d4dd6cae2cf5cd39cf4
-SIZE (KDE/release-service/21.08.1/libksane-21.08.1.tar.xz) = 155488
+TIMESTAMP = 1633447453
+SHA256 (KDE/release-service/21.08.2/libksane-21.08.2.tar.xz) = d2dfb261a92e783b03bd02aa138426d757727205fa5359ac24a7328e812b9324
+SIZE (KDE/release-service/21.08.2/libksane-21.08.2.tar.xz) = 156768

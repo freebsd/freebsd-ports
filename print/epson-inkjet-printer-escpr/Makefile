@@ -10,22 +10,21 @@ COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters
 LIB_DEPENDS=	libcupsimage.so:print/cups
+RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters
 
 USES=		autoreconf dos2unix libtool
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 PORTDOCS=	AUTHORS NEWS README README.ja
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-lsb
 INSTALL_TARGET=	install-strip
-SUB_FILES=	pkg-message
-USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS
-
 # PORTSCOUT=ignore:1 MASTER_SITES is changed in each version
 PORTSCOUT=	ignore:1
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,15 +1,17 @@
 PORTNAME=	consul
-PORTVERSION=	1.9.9
+PORTVERSION=	1.10.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
+# co-maintainer: brd
 COMMENT=	Service discovery and configuration made easy
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	hashicorp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp

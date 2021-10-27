@@ -23,7 +23,6 @@ USES=		desktop-file-utils gettext gmake gnome libtool meson pathfix \
 		pkgconfig python:3.6+ shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.crypto.pgp.gschema.xml

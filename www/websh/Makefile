@@ -4,11 +4,14 @@ PORTNAME=	websh
 PORTVERSION=	3.6.0b5
 PORTREVISION=	5
 CATEGORIES=	www tcl
-MASTER_SITES=	APACHE/tcl/${PORTNAME}/source
+MASTER_SITES=	https://archive.apache.org/dist/tcl/${PORTNAME}/source/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
+
+DEPRECATED=	Abandoned upstream, last release in 2009
+EXPIRATION_DATE=2022-03-31
 
 MAKE_JOBS_UNSAFE=	yes
 

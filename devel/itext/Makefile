@@ -22,7 +22,8 @@ RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		dos2unix tar:bzip2
+USES=		cpe dos2unix tar:bzip2
+CPE_VENDOR=	${PORTNAME}pdf
 DOS2UNIX_GLOB=	*.java
 USE_JAVA=	yes
 USE_ANT=	yes

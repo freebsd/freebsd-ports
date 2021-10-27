@@ -1,7 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	grilo
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.14
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -16,8 +16,9 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		liboauth.so:net/liboauth \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=		gettext gnome localbase meson pathfix pkgconfig \
+USES=		cpe gettext gnome localbase meson pathfix pkgconfig \
 		python:3.4+,build tar:xz
+CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build libxml2
 BINARY_ALIAS=	python=${PYTHON_VERSION}

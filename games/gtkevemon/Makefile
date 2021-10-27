@@ -9,8 +9,8 @@ COMMENT=	Skill monitoring standalone application for EVE Online
 LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
 		libcurl.so:ftp/curl
 
-USE_GITHUB=     yes
-GH_TAGNAME=     ac2ca34
+USE_GITHUB=	yes
+GH_TAGNAME=	ac2ca34
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig:both ssl
 USE_CXXSTD=	c++11

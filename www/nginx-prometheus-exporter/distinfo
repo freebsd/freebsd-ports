@@ -1,3 +1,3 @@
-TIMESTAMP = 1592757496
-SHA256 (nginxinc-nginx-prometheus-exporter-v0.8.0_GH0.tar.gz) = 04003952d22d3043cdd6eb60aedb382ab0bdaf74ac450fa2a4a927d79ac24e95
-SIZE (nginxinc-nginx-prometheus-exporter-v0.8.0_GH0.tar.gz) = 2059700
+TIMESTAMP = 1632902223
+SHA256 (nginxinc-nginx-prometheus-exporter-v0.9.0_GH0.tar.gz) = ea4fc130c2e19751b4563c819a0641639077f9c300776a1bd7116b56a14f7eca
+SIZE (nginxinc-nginx-prometheus-exporter-v0.9.0_GH0.tar.gz) = 2213762

@@ -28,8 +28,6 @@ USE_GSTREAMER1=	core good bad soup
 
 GLIB_SCHEMAS=	io.github.Pithos.gschema.xml
 
-INSTALLS_ICONS=	yes
-
 SHEBANG_FILES=	bin/pithos.in docs/conf.py meson_post_install.py
 
 post-patch:

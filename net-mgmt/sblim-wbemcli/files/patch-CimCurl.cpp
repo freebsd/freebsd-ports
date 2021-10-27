@@ -1,4 +1,4 @@
---- CimCurl.cpp.orig	2009-03-04 19:10:54.000000000 +0000
+--- CimCurl.cpp.orig	2013-09-20 23:26:32 UTC
 +++ CimCurl.cpp
 @@ -27,6 +27,7 @@
  #include <string.h>
@@ -6,5 +6,5 @@
  
 +#include <unistd.h>
  #include "CimCurl.h"
- 
- extern int useNl;
+ #include <unistd.h> // for getpass()
+ #include <cerrno> 

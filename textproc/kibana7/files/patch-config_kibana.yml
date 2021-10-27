@@ -1,0 +1,11 @@
+--- config/kibana.yml.orig	2021-10-26 12:51:47 UTC
++++ config/kibana.yml
+@@ -91,7 +91,7 @@
+ #elasticsearch.logQueries: false
+ 
+ # Specifies the path where Kibana creates the process ID file.
+-#pid.file: /run/kibana/kibana.pid
++pid.file: /var/run/kibana.pid
+ 
+ # Enables you to specify a file where Kibana stores log output.
+ #logging.dest: stdout

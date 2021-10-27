@@ -1,9 +1,9 @@
---- components/crash/core/app/BUILD.gn.orig	2021-04-14 18:40:59 UTC
+--- components/crash/core/app/BUILD.gn.orig	2021-09-14 01:51:54 UTC
 +++ components/crash/core/app/BUILD.gn
 @@ -3,7 +3,7 @@
  # found in the LICENSE file.
  
- # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+ # TODO(crbug.com/1226159): Complete crash reporting integration on Fuchsia.
 -assert(!is_fuchsia)
 +assert(!is_fuchsia && !is_bsd)
  

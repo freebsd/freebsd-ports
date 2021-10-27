@@ -8,7 +8,8 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	mozilla
 USE_LDCONFIG=	yes
 USE_LINUX=	nspr sqlite3
 USE_LINUX_RPM=	yes

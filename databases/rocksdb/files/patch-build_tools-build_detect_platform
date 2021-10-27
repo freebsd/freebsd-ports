@@ -1,8 +1,8 @@
 Remove -fno-builtin-memcmp and -ltcmalloc
 
---- build_tools/build_detect_platform.orig	2020-05-27 23:38:10 UTC
+--- build_tools/build_detect_platform.orig	2021-06-25 21:15:04 UTC
 +++ build_tools/build_detect_platform
-@@ -126,7 +126,7 @@ PLATFORM_SHARED_VERSIONED=true
+@@ -145,7 +145,7 @@ PLATFORM_SHARED_VERSIONED=true
  # generic port files (working on all platform by #ifdef) go directly in /port
  GENERIC_PORT_FILES=`cd "$ROCKSDB_ROOT"; find port -name '*.cc' | tr "\n" " "`
  
@@ -11,7 +11,7 @@ Remove -fno-builtin-memcmp and -ltcmalloc
  case "$TARGET_OS" in
      Darwin)
          PLATFORM=OS_MACOSX
-@@ -147,7 +147,7 @@ case "$TARGET_OS" in
+@@ -166,7 +166,7 @@ case "$TARGET_OS" in
          PLATFORM=OS_LINUX
          COMMON_FLAGS="$COMMON_FLAGS -DOS_LINUX"
          if [ -z "$USE_CLANG" ]; then
@@ -20,7 +20,7 @@ Remove -fno-builtin-memcmp and -ltcmalloc
          else
              PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -latomic"
          fi
-@@ -174,34 +174,34 @@ EOF
+@@ -196,21 +196,21 @@ EOF
          ;;
      SunOS)
          PLATFORM=OS_SOLARIS
@@ -45,6 +45,17 @@ Remove -fno-builtin-memcmp and -ltcmalloc
          PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread"
          # PORT_FILES=port/freebsd/freebsd_specific.cc
          ;;
+@@ -218,7 +218,7 @@ EOF
+         PLATFORM=OS_GNU_KFREEBSD
+         COMMON_FLAGS="$COMMON_FLAGS -DOS_GNU_KFREEBSD"
+         if [ -z "$USE_CLANG" ]; then
+-            COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp"
++            COMMON_FLAGS="$COMMON_FLAGS"
+         else
+             PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -latomic"
+         fi
+@@ -227,14 +227,14 @@ EOF
+         ;;
      NetBSD)
          PLATFORM=OS_NETBSD
 -        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_NETBSD"
@@ -60,7 +71,7 @@ Remove -fno-builtin-memcmp and -ltcmalloc
          PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -pthread"
          # PORT_FILES=port/openbsd/openbsd_specific.cc
  	FIND=gfind
-@@ -209,7 +209,7 @@ EOF
+@@ -242,7 +242,7 @@ EOF
          ;;
      DragonFly)
          PLATFORM=OS_DRAGONFLYBSD
@@ -69,7 +80,7 @@ Remove -fno-builtin-memcmp and -ltcmalloc
          PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread"
          # PORT_FILES=port/dragonfly/dragonfly_specific.cc
          ;;
-@@ -219,7 +219,7 @@ EOF
+@@ -252,7 +252,7 @@ EOF
          PLATFORM_CXXFLAGS="-std=gnu++11"
          COMMON_FLAGS="$COMMON_FLAGS -DCYGWIN"
          if [ -z "$USE_CLANG" ]; then
@@ -78,7 +89,7 @@ Remove -fno-builtin-memcmp and -ltcmalloc
          else
              PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -latomic"
          fi
-@@ -228,7 +228,7 @@ EOF
+@@ -261,7 +261,7 @@ EOF
          ;;
      OS_ANDROID_CROSSCOMPILE)
          PLATFORM=OS_ANDROID
@@ -87,10 +98,10 @@ Remove -fno-builtin-memcmp and -ltcmalloc
  	PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS "  # All pthread features are in the Android C library
          # PORT_FILES=port/android/android.cc
          CROSS_COMPILE=true
-@@ -410,9 +410,9 @@ EOF
+@@ -451,9 +451,9 @@ EOF
      if ! test $JEMALLOC && ! test $ROCKSDB_DISABLE_TCMALLOC; then
          # jemalloc is not available. Let's try tcmalloc
-         if echo 'int main() {}' | $CXX $CFLAGS -x c++ - -o /dev/null \
+         if echo 'int main() {}' | $CXX $PLATFORM_CXXFLAGS -x c++ - -o /dev/null \
 -          -ltcmalloc 2>/dev/null; then
 -            PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -ltcmalloc"
 -            JAVA_LDFLAGS="$JAVA_LDFLAGS -ltcmalloc"

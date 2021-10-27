@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/openjade/${PORTNAME:tl}/${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of SGML/XML tools
 
 LICENSE=	JamesClark

@@ -8,7 +8,9 @@ CATEGORIES=	x11-toolkits linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	gnome
+CPE_PRODUCT=	gtk
 USE_LDCONFIG=	yes
 USE_LINUX=	atk gdkpixbuf2 pango xorglibs
 USE_LINUX_RPM=	yes

@@ -4,7 +4,7 @@ PORTNAME=	log4net
 PORTVERSION=	1.2.10
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	APACHE/incubator/log4net/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/incubator/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	incubating-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,7 +25,7 @@ SUB_LIST=	PORTVERSION=${PORTVERSION}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE= DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	@(cd ${INSTALL_WRKSRC}/bin/mono/2.0/release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil /root ${STAGEDIR}${PREFIX}/lib/ /gacdir ${STAGEDIR}${PREFIX}/lib /package 2.0 /i log4net.dll)

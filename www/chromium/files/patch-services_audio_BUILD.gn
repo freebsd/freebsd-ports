@@ -1,6 +1,6 @@
---- services/audio/BUILD.gn.orig	2021-05-12 22:05:58 UTC
+--- services/audio/BUILD.gn.orig	2021-09-14 01:52:00 UTC
 +++ services/audio/BUILD.gn
-@@ -76,7 +76,7 @@ source_set("audio") {
+@@ -78,7 +78,7 @@ source_set("audio") {
      "//services/audio/public/mojom",
    ]
  

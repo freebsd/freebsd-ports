@@ -2,7 +2,7 @@
 
 PORTNAME=	gummi
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/alexandervdm/gummi/releases/download/${PORTVERSION}/
 
@@ -18,11 +18,11 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libsynctex.so:devel/tex-synctex
 RUN_DEPENDS=	etex:print/tex-formats
 
-USES=		desktop-file-utils gmake gnome iconv pkgconfig xorg
+USES=		cpe desktop-file-utils gmake gnome iconv pkgconfig xorg
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 USE_XORG=	xcomposite xcursor xdamage xft
 USE_GNOME=	cairo glib20 gtksourceview3 intlhack
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
 OPTIONS_DEFINE=	NLS

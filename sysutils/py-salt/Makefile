@@ -1,7 +1,7 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
 
 PORTNAME=	salt
-PORTVERSION=	3003.3
+PORTVERSION=	3004
 PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
@@ -114,7 +114,7 @@ do-install-FISH-on:
 
 do-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/pkg/zsh_completion.zsh \
+	${INSTALL_DATA} ${WRKSRC}/pkg/salt.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_salt
 
 post-install:

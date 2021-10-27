@@ -1,6 +1,6 @@
---- chrome/app/chrome_main_delegate.cc.orig	2021-07-19 18:45:06 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2021-10-01 01:36:38 UTC
 +++ chrome/app/chrome_main_delegate.cc
-@@ -150,12 +150,12 @@
+@@ -153,15 +153,17 @@
  #include "v8/include/v8.h"
  #endif
  
@@ -13,9 +13,14 @@
 -    defined(OS_LINUX) || defined(OS_CHROMEOS)
 +    defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "chrome/browser/policy/policy_path_parser.h"
++#if !defined(OS_BSD)
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -259,7 +259,7 @@ void SetUpExtendedCrashReporting(bool is_browser_proce
++#endif
+ 
+ #if BUILDFLAG(ENABLE_NACL)
+ #include "components/nacl/common/nacl_switches.h"
+@@ -265,7 +267,7 @@ void SetUpExtendedCrashReporting(bool is_browser_proce
  
  #endif  // defined(OS_WIN)
  
@@ -24,7 +29,7 @@
  void AdjustLinuxOOMScore(const std::string& process_type) {
    int score = -1;
  
-@@ -294,7 +294,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
+@@ -300,7 +302,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
    if (score > -1)
      base::AdjustOOMScore(base::GetCurrentProcId(), score);
  }
@@ -33,7 +38,7 @@
  
  // Returns true if this subprocess type needs the ResourceBundle initialized
  // and resources loaded.
-@@ -340,7 +340,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
+@@ -346,7 +348,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -42,7 +47,7 @@
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -350,7 +350,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+@@ -356,7 +358,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
      PLOG(FATAL) << "execlp failed";
    }
  }
@@ -51,7 +56,7 @@
  
  #if !defined(OS_MAC) && !defined(OS_ANDROID)
  void SIGTERMProfilingShutdown(int signal) {
-@@ -404,7 +404,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -410,7 +412,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -60,7 +65,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -416,7 +416,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -422,7 +424,7 @@ void InitializeUserDataDir(base::CommandLine* command_
        user_data_dir = base::FilePath::FromUTF8Unsafe(user_data_dir_string);
      }
    }
@@ -69,7 +74,7 @@
  #if defined(OS_MAC)
    policy::path_parser::CheckUserDataDirPolicy(&user_data_dir);
  #endif  // OS_MAC
-@@ -487,7 +487,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
+@@ -493,7 +495,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
    startup_metric_utils::RecordApplicationStartTime(now);
  #endif
  
@@ -78,7 +83,16 @@
      defined(OS_CHROMEOS)
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
-@@ -739,7 +739,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -673,6 +675,8 @@ void ChromeMainDelegate::PostFieldTrialInitialization(
+   // not always enabled on Linux/ChromeOS.
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS)
+   bool enable_gwp_asan = crash_reporter::IsCrashpadEnabled();
++#elif defined(OS_BSD)
++  bool enable_gwp_asan = false;
+ #else
+   bool enable_gwp_asan = true;
+ #endif
+@@ -781,7 +785,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    v8_crashpad_support::SetUp();
  #endif
  
@@ -87,7 +101,7 @@
    if (!crash_reporter::IsCrashpadEnabled()) {
      breakpad::SetFirstChanceExceptionHandler(v8::TryHandleWebAssemblyTrapPosix);
    }
-@@ -752,7 +752,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -794,7 +798,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -96,7 +110,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -961,7 +961,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1005,7 +1009,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  
    crash_reporter::InitializeCrashKeys();
  
@@ -105,7 +119,7 @@
    ChromeCrashReporterClient::Create();
  #endif
  
-@@ -974,7 +974,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1018,7 +1022,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    child_process_logging::Init();
  #endif
  #if defined(ARCH_CPU_ARM_FAMILY) && \
@@ -114,7 +128,7 @@
    // Create an instance of the CPU class to parse /proc/cpuinfo and cache
    // cpu_brand info.
    base::CPU cpu_info;
-@@ -1092,7 +1092,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1136,7 +1140,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
          locale;
    }
  
@@ -123,7 +137,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1113,7 +1113,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1157,7 +1161,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      }
  #endif  // defined(OS_ANDROID)
    }
@@ -132,7 +146,7 @@
  
  #if defined(OS_ANDROID)
    CHECK_EQ(base::android::GetLibraryProcessType(),
-@@ -1133,7 +1133,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1177,7 +1181,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  void ChromeMainDelegate::SandboxInitialized(const std::string& process_type) {
    // Note: If you are adding a new process type below, be sure to adjust the
    // AdjustLinuxOOMScore function too.
@@ -141,7 +155,7 @@
    AdjustLinuxOOMScore(process_type);
  #endif
  #if defined(OS_WIN)
-@@ -1175,7 +1175,7 @@ int ChromeMainDelegate::RunProcess(
+@@ -1219,7 +1223,7 @@ int ChromeMainDelegate::RunProcess(
  
      // This entry is not needed on Linux, where the NaCl loader
      // process is launched via nacl_helper instead.
@@ -150,7 +164,7 @@
      {switches::kNaClLoaderProcess, NaClMain},
  #else
      {"<invalid>", nullptr},  // To avoid constant array of size 0
-@@ -1203,7 +1203,7 @@ void ChromeMainDelegate::ProcessExiting(const std::str
+@@ -1247,7 +1251,7 @@ void ChromeMainDelegate::ProcessExiting(const std::str
  #endif  // !defined(OS_ANDROID)
  }
  
@@ -159,7 +173,7 @@
  void ChromeMainDelegate::ZygoteStarting(
      std::vector<std::unique_ptr<content::ZygoteForkDelegate>>* delegates) {
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -1240,7 +1240,7 @@ void ChromeMainDelegate::ZygoteForked() {
+@@ -1284,7 +1288,7 @@ void ChromeMainDelegate::ZygoteForked() {
    crash_keys::SetCrashKeysFromCommandLine(*command_line);
  }
  

@@ -12,7 +12,7 @@ COMMENT=	Fast open-source OLAP database management system
 LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
+ONLY_FOR_ARCHS_REASON=	only supported on amd64
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash

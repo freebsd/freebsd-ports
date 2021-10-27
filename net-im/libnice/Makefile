@@ -6,12 +6,12 @@ CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Library and transmitter that implements ICE-19
+COMMENT?=	Library and transmitter that implements ICE-19
 
 LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgnutls.so:security/gnutls
+LIB_DEPENDS?=	libgnutls.so:security/gnutls
 BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
 USES=		gettext gmake gnome libtool localbase:ldflags pathfix pkgconfig meson python
@@ -29,7 +29,7 @@ MESON_ARGS+=-Dtests=disabled
 
 .if defined(LIBNICE_SLAVE)
 USE_GSTREAMER1=	yes
-MESON_ARGS+=-Dgstreamer=enabled -Dgst_version=1.0
+MESON_ARGS+=-Dgstreamer=enabled
 .else
 MESON_ARGS+=-Dgstreamer=disabled -Dgtk_doc=enabled
 .endif

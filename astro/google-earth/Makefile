@@ -17,6 +17,9 @@ LICENSE_NAME=	Google Earth
 LICENSE_TEXT=	Not really sure about the redistribution terms
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Needs newer version to connect to server
+EXPIRATION_DATE=2022-01-01
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}

@@ -23,7 +23,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}random2>=1.0.1:math/py-random2@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysol-cards>=0.10.0:games/py-pysol-cards@${PY_FLAVOR}
 LIB_DEPENDS=	${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_armv6=	libgmp.so:math/gmp
+LIB_DEPENDS_armv7=	libgmp.so:math/gmp
 LIB_DEPENDS_i386=	libgmp.so:math/gmp
+LIB_DEPENDS_mips=	libgmp.so:math/gmp
+LIB_DEPENDS_powerpc=	libgmp.so:math/gmp
 
 OPTIONS_DEFINE=	DOCS TCMALLOC
 TCMALLOC_DESC=	Use Google's TCMalloc

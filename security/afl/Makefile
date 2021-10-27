@@ -16,14 +16,12 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 # In theory afl supports other architectures with the LLVM plugin.
 # It has to be compiled with AFL_NO_X86=1 in that case.
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
+ONLY_FOR_ARCHS_REASON=	uses binary instrumentation
 
 USES=		gmake tar:tgz
 
 ALL_TARGET=	all libdislocator
 TEST_TARGET=	test_build
-
-CONFLICTS_INSTALL=	afl++
 
 OPTIONS_DEFINE=		DEBUG DOCS LLVM
 OPTIONS_DEFAULT=	LLVM

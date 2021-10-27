@@ -16,7 +16,8 @@ GH_ACCOUNT=	j-jorge
 GH_TAGNAME=	d72ba82
 
 # option NLS (for gettext) is wrong as this port allways needs NLS:
-USES=	libtool cmake:insource,noninja gmake iconv pkgconfig perl5 gettext
+USES=	cpe libtool cmake:insource,noninja gmake iconv pkgconfig perl5 gettext
+CPE_VENDOR=	${PORTNAME}_project
 USE_PERL5=	build run
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

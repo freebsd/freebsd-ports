@@ -1,0 +1,202 @@
+PORTNAME=	neolink
+PORTVERSION=	0.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	g20210903
+PORTREVISION=	1
+CATEGORIES=	multimedia
+
+MAINTAINER=	kevans@FreeBSD.org
+COMMENT=	RTSP bridge to Reolink IP cameras
+
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server
+
+USES=	cargo gnome
+USE_GNOME=	glib20
+USE_GSTREAMER1=	yes
+USE_RC_SUBR=	neolink
+
+USERS=	${PORTNAME}
+GROUPS=	${PORTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	thirtythreeforty
+GH_TAGNAME=	cf54129
+
+CARGO_CRATES=	aes-0.6.0 \
+		aes-soft-0.6.4 \
+		aesni-0.10.0 \
+		aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.42 \
+		arrayvec-0.5.2 \
+		assert_matches-1.5.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base-x-0.2.8 \
+		bitflags-1.2.1 \
+		bitvec-0.19.5 \
+		bumpalo-3.7.0 \
+		byte-slice-cast-1.0.0 \
+		cfb-mode-0.6.0 \
+		cfg-expr-0.8.0 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		cipher-0.2.5 \
+		clap-2.33.3 \
+		const_fn-0.4.8 \
+		cookie-factory-0.3.2 \
+		crossbeam-0.7.3 \
+		crossbeam-channel-0.4.4 \
+		crossbeam-deque-0.7.4 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-queue-0.2.3 \
+		crossbeam-utils-0.7.2 \
+		discard-1.0.4 \
+		either-1.6.1 \
+		env_logger-0.9.0 \
+		err-derive-0.2.4 \
+		form_urlencoded-1.0.1 \
+		funty-1.1.0 \
+		futures-channel-0.3.16 \
+		futures-core-0.3.16 \
+		futures-executor-0.3.16 \
+		futures-io-0.3.16 \
+		futures-sink-0.3.16 \
+		futures-task-0.3.16 \
+		futures-util-0.3.16 \
+		generic-array-0.14.4 \
+		gio-0.14.0 \
+		gio-sys-0.14.0 \
+		glib-0.14.2 \
+		glib-macros-0.14.1 \
+		glib-sys-0.14.0 \
+		gobject-sys-0.14.0 \
+		gstreamer-0.17.1 \
+		gstreamer-app-0.17.0 \
+		gstreamer-app-sys-0.17.0 \
+		gstreamer-base-0.17.0 \
+		gstreamer-base-sys-0.17.0 \
+		gstreamer-net-0.17.0 \
+		gstreamer-net-sys-0.17.0 \
+		gstreamer-rtsp-0.17.0 \
+		gstreamer-rtsp-server-0.17.0 \
+		gstreamer-rtsp-server-sys-0.17.0 \
+		gstreamer-rtsp-sys-0.17.0 \
+		gstreamer-sdp-0.17.0 \
+		gstreamer-sdp-sys-0.17.0 \
+		gstreamer-sys-0.17.0 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		humantime-2.1.0 \
+		idna-0.2.3 \
+		if_chain-1.0.1 \
+		indoc-0.3.6 \
+		indoc-impl-0.3.6 \
+		itertools-0.9.0 \
+		itertools-0.10.1 \
+		itoa-0.4.7 \
+		lazy_static-1.4.0 \
+		lexical-core-0.7.6 \
+		libc-0.2.98 \
+		log-0.4.14 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		md5-0.7.0 \
+		memchr-2.3.4 \
+		memoffset-0.5.6 \
+		muldiv-1.0.0 \
+		nom-6.2.1 \
+		num-integer-0.1.44 \
+		num-rational-0.4.0 \
+		num-traits-0.2.14 \
+		once_cell-1.8.0 \
+		opaque-debug-0.3.0 \
+		paste-1.0.5 \
+		percent-encoding-2.1.0 \
+		pin-project-lite-0.2.7 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		pretty-hex-0.2.1 \
+		proc-macro-crate-1.0.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.28 \
+		quote-1.0.9 \
+		radium-0.5.3 \
+		regex-1.4.6 \
+		regex-syntax-0.6.25 \
+		rustc_version-0.2.3 \
+		rustversion-1.0.5 \
+		ryu-1.0.5 \
+		scopeguard-1.1.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.127 \
+		serde_derive-1.0.127 \
+		serde_json-1.0.66 \
+		sha1-0.6.0 \
+		slab-0.4.3 \
+		smallvec-1.6.1 \
+		socket2-0.3.19 \
+		standback-0.2.17 \
+		static_assertions-1.1.0 \
+		stdweb-0.4.20 \
+		stdweb-derive-0.5.3 \
+		stdweb-internal-macros-0.2.9 \
+		stdweb-internal-runtime-0.1.5 \
+		strsim-0.8.0 \
+		structopt-0.3.22 \
+		structopt-derive-0.4.15 \
+		strum-0.21.0 \
+		strum_macros-0.21.1 \
+		syn-1.0.74 \
+		synstructure-0.12.5 \
+		system-deps-3.2.0 \
+		tap-1.0.1 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.26 \
+		thiserror-impl-1.0.26 \
+		time-0.2.27 \
+		time-macros-0.1.1 \
+		time-macros-impl-0.1.2 \
+		tinyvec-1.3.1 \
+		tinyvec_macros-0.1.0 \
+		toml-0.5.8 \
+		typenum-1.13.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.8.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		unindent-0.1.7 \
+		url-2.2.2 \
+		validator-0.10.1 \
+		validator_derive-0.10.1 \
+		vec_map-0.8.2 \
+		version-compare-0.0.11 \
+		version_check-0.9.3 \
+		wasm-bindgen-0.2.74 \
+		wasm-bindgen-backend-0.2.74 \
+		wasm-bindgen-macro-0.2.74 \
+		wasm-bindgen-macro-support-0.2.74 \
+		wasm-bindgen-shared-0.2.74 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wyz-0.2.0 \
+		xml-rs-0.8.4 \
+		yaserde-0.3.16 \
+		yaserde_derive-0.3.17
+
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample_config.toml \
+	    ${STAGEDIR}${ETCDIR}/config.toml.sample
+
+.include <bsd.port.mk>

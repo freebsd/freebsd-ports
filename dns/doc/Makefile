@@ -3,7 +3,7 @@
 PORTNAME=	doc
 PORTVERSION=	2.2.3
 CATEGORIES=	dns
-MASTER_SITES=   LOCAL/sanpei \
+MASTER_SITES=	LOCAL/sanpei \
 		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
 MAINTAINER=	ports@FreeBSD.org

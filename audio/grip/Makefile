@@ -19,7 +19,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		compiler:c++11-lang gmake gnome libtool localbase pathfix \
 		pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-INSTALLS_ICONS=	yes
 USE_XORG=	ice sm x11 xext
 
 GNU_CONFIGURE=		yes

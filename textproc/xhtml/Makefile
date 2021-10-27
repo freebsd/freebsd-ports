@@ -8,14 +8,15 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/kuriyama
 DISTNAME=	xhtml1-20020801
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	W3C's XHTML DTD
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 USES=		zip
-NO_MTREE=	YES
-NO_BUILD=	YES
+NO_MTREE=	yes
+NO_ARCH=	yes
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xhtml1-20020801
 SUB_FILES=	catalog.xml
 SUB_LIST+=	DTDDIR="${DTDDIR}"

@@ -1,0 +1,7 @@
+Intel HEXL is an open-source library which provides efficient implementations of
+integer arithmetic on Galois fields. Such arithmetic is prevalent in
+cryptography, particularly in homomorphic encryption (HE) schemes. Intel HEXL
+targets integer arithmetic with word-sized primes, typically 30-60 bits. Intel
+HEXL provides an API for 64-bit unsigned integers and targets Intel CPUs.
+
+WWW: https://intel.github.io/hexl/v1.2.1/doxygen/html/index.html

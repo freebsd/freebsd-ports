@@ -1,7 +1,7 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -14,7 +14,6 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	svenstaro
-GH_TUPLE=	svenstaro:mime_guess:ac76840e14bc6f2f7cbbb347052ec7e4de7e3043:mime_guess
 CARGO_CRATES=	actix-codec-0.4.0 \
 		actix-files-0.6.0-beta.6 \
 		actix-http-3.0.0-beta.9 \
@@ -320,8 +319,8 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		zip-0.5.13 \
 		zstd-0.7.0+zstd.1.4.9 \
 		zstd-safe-3.1.0+zstd.1.4.9 \
-		zstd-sys-1.5.0+zstd.1.4.9
-CARGO_USE_GITHUB=	yes
+		zstd-sys-1.5.0+zstd.1.4.9 \
+		mime_guess@git+https://github.com/svenstaro/mime_guess.git\#ac76840e14bc6f2f7cbbb347052ec7e4de7e3043
 
 PLIST_FILES=	bin/miniserve
 PORTDOCS=	README.md

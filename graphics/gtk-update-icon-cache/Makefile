@@ -2,6 +2,7 @@
 
 PORTNAME=	gtk-update-icon-cache
 PORTVERSION=	3.24.26
+PORTREVISION=	1
 CATEGORIES=	graphics
 DIST_SUBDIR=	gnome
 
@@ -11,7 +12,7 @@ COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gnome meson pkgconfig
+USES=		gettext gnome meson pkgconfig trigger
 USE_GNOME=	gdkpixbuf2
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org

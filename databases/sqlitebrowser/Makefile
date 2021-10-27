@@ -22,8 +22,6 @@ USE_QT=		core concurrent gui network printsupport testlib widgets \
 		buildtools_build linguisttools_build qmake_build xml
 USE_GITHUB=	yes
 
-INSTALLS_ICONS=	yes
-
 PORTSCOUT=	ignore:1
 
 post-patch:

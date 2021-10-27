@@ -1,0 +1,5 @@
+The mixer utility is used to set and display soundcard mixer device levels. It
+is a copy of the mixer(8) command from FreeBSD 13.0 from before the utility was
+completely redesigned for FreeBSD 14.0.
+
+WWW: https://github.com/0mp/freebsd-13-mixer

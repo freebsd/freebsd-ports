@@ -22,7 +22,7 @@ DESCR=		${.CURDIR}/pkg-descr
 CMAKE_ARGS+=	-DWITH_PAM=1
 
 # Workaround to clang11/gcc10 with -fno-common by default
-CFLAGS+=        -fcommon
+CFLAGS+=	-fcommon
 
 PLUGIN_ONLY=	yes
 
@@ -32,4 +32,4 @@ do-install:
 
 .include "${MASTERDIR}/Makefile"
 
-RUN_DEPENDS= # This plugin has no run dependencies. It should work with any desired mysql client/server.
+RUN_DEPENDS=	# This plugin has no run dependencies. It should work with any desired mysql client/server.

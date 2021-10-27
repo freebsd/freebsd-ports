@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Nagios-Plugin>=0:net-mgmt/p5-Nagios-Plugin \
 		p5-Beanstalk-Client>=0:net/p5-Beanstalk-Client
 
-
 USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes

@@ -6,6 +6,9 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2b6bf67ca60faf5a3ebe914fad53257a634ae48a.patch:-p1
+
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Columnar store for analytics with PostgreSQL
 

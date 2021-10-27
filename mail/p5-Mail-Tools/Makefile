@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	MailTools-${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for dealing with Internet e-mail messages
 
 LICENSE=	ART10 GPLv1+

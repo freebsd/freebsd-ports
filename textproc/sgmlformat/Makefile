@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	textproc print
 MASTER_SITES=	LOCAL/kuriyama
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
 USES=		perl5 uidfix

@@ -21,7 +21,7 @@ USES=		ada tar:bzip2 pgsql
 WANT_PGSQL=	lib
 HAS_CONFIGURE=	yes
 WRKPATH=	${WRKDIR}/build
-CONFIGURE_ARGS= --prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-relocatable \
 		--work-path=${WRKPATH} \
 		--processors=${MAKE_JOBS_NUMBER}

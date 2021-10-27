@@ -1,7 +1,7 @@
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -13,7 +13,7 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools@${PY_FLAVOR} \
@@ -52,7 +52,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl>=0.7.0:devel/py-absl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11.2:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python:3.7+ shebangfix jpeg ssl compiler:c++17-lang
+USES=		cpe python:3.7+ shebangfix jpeg ssl compiler:c++17-lang
+CPE_VENDOR=	google
 SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
@@ -75,6 +76,7 @@ post-patch:
 	# the bzl files.
 	@${MKDIR} ${WRKDIR}/bazel-cache
 	@${MKDIR} ${WRKDIR}/bazel-distdir
+	@${CP} ${FILESDIR}/extra-patch-absl_base_internal_unscaledcycleclock.cc ${WRKSRC}/third_party/
 
 .for file in ${DISTFILES:C/\:(.*)//}
 	@${ECHO} "Moving ${file} to ${WRKDIR}/bazel-cache"

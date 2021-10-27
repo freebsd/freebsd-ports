@@ -1,5 +1,4 @@
 share/java/zi/Africa/Abidjan
-share/java/zi/Africa/Accra
 share/java/zi/Africa/Algiers
 share/java/zi/Africa/Bissau
 share/java/zi/Africa/Cairo
@@ -34,13 +33,11 @@ share/java/zi/America/Argentina/San_Luis
 share/java/zi/America/Argentina/Tucuman
 share/java/zi/America/Argentina/Ushuaia
 share/java/zi/America/Asuncion
-share/java/zi/America/Atikokan
 share/java/zi/America/Bahia
 share/java/zi/America/Bahia_Banderas
 share/java/zi/America/Barbados
 share/java/zi/America/Belem
 share/java/zi/America/Belize
-share/java/zi/America/Blanc-Sablon
 share/java/zi/America/Boa_Vista
 share/java/zi/America/Bogota
 share/java/zi/America/Boise
@@ -52,9 +49,7 @@ share/java/zi/America/Cayenne
 share/java/zi/America/Chicago
 share/java/zi/America/Chihuahua
 share/java/zi/America/Costa_Rica
-share/java/zi/America/Creston
 share/java/zi/America/Cuiaba
-share/java/zi/America/Curacao
 share/java/zi/America/Danmarkshavn
 share/java/zi/America/Dawson
 share/java/zi/America/Dawson_Creek
@@ -105,7 +100,6 @@ share/java/zi/America/Miquelon
 share/java/zi/America/Moncton
 share/java/zi/America/Monterrey
 share/java/zi/America/Montevideo
-share/java/zi/America/Nassau
 share/java/zi/America/New_York
 share/java/zi/America/Nipigon
 share/java/zi/America/Nome
@@ -120,7 +114,6 @@ share/java/zi/America/Pangnirtung
 share/java/zi/America/Paramaribo
 share/java/zi/America/Phoenix
 share/java/zi/America/Port-au-Prince
-share/java/zi/America/Port_of_Spain
 share/java/zi/America/Porto_Velho
 share/java/zi/America/Puerto_Rico
 share/java/zi/America/Punta_Arenas
@@ -150,12 +143,10 @@ share/java/zi/America/Yakutat
 share/java/zi/America/Yellowknife
 share/java/zi/Antarctica/Casey
 share/java/zi/Antarctica/Davis
-share/java/zi/Antarctica/DumontDUrville
 share/java/zi/Antarctica/Macquarie
 share/java/zi/Antarctica/Mawson
 share/java/zi/Antarctica/Palmer
 share/java/zi/Antarctica/Rothera
-share/java/zi/Antarctica/Syowa
 share/java/zi/Antarctica/Troll
 share/java/zi/Antarctica/Vostok
 share/java/zi/Asia/Almaty
@@ -355,7 +346,6 @@ share/java/zi/Pacific/Chatham
 share/java/zi/Pacific/Chuuk
 share/java/zi/Pacific/Easter
 share/java/zi/Pacific/Efate
-share/java/zi/Pacific/Enderbury
 share/java/zi/Pacific/Fakaofo
 share/java/zi/Pacific/Fiji
 share/java/zi/Pacific/Funafuti
@@ -364,6 +354,7 @@ share/java/zi/Pacific/Gambier
 share/java/zi/Pacific/Guadalcanal
 share/java/zi/Pacific/Guam
 share/java/zi/Pacific/Honolulu
+share/java/zi/Pacific/Kanton
 share/java/zi/Pacific/Kiritimati
 share/java/zi/Pacific/Kosrae
 share/java/zi/Pacific/Kwajalein

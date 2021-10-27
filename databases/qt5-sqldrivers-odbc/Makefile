@@ -1,4 +1,3 @@
-
 COMMENT=	Qt ${DB_DESC} plugin
 
 DB=		ODBC

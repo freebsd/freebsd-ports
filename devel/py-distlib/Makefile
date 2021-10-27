@@ -1,5 +1,5 @@
 PORTNAME=	distlib
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python:3.6+ zip
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

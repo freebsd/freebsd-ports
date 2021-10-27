@@ -11,10 +11,14 @@ COMMENT=	PGP packet visualizer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		cpe
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pgpdump \
 		share/man/man1/pgpdump.1.gz
+
+CPE_VENDOR=	pgpdump_project
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${STAGEDIR}${PREFIX}/bin

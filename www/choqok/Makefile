@@ -27,5 +27,4 @@ USE_QT=		concurrent core dbus gui network networkauth webkit widgets xml \
 
 USE_LDCONFIG=	yes
 
-
 .include <bsd.port.mk>

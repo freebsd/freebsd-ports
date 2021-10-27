@@ -28,7 +28,6 @@ USE_QT=		concurrent core dbus gui network printsupport uitools \
 		buildtools_build qmake_build testlib_build
 USE_LDCONFIG=	yes
 
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

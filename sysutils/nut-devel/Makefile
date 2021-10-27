@@ -2,7 +2,6 @@
 
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -13,9 +12,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network UPS Tools
 
 USE_GITHUB=	yes
-GH_ACCOUNT=     networkupstools 
-GH_TAGNAME=     4722a4f0
-NUT_COMMIT_DATE=	2021.09.28
+GH_ACCOUNT=	networkupstools
+GH_TAGNAME=	a85ec65c
+NUT_COMMIT_DATE=	2021.10.16
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -68,6 +67,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP} \
 		--with-dev
+
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 

@@ -36,8 +36,6 @@ LIBS+=		-lssl -lcrypto
 
 WRKSRC_SUBDIR=	sources
 
-INSTALLS_ICONS=	yes
-
 post-extract: # unbundle
 	@${RM} -r ${WRKSRC}/lib/_option_qcustomplot ${WRKSRC}/lib/_option_rtmidi ${WRKSRC}/lib/_option_stk
 

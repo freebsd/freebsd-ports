@@ -12,6 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING/gpl.txt
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING/lgpl.txt
 
+BROKEN_aarch64=	fails to build: Fatal Error: config-f90.h: No such file or directory
+
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		compiler:c11 fortran gmake libtool localbase perl5 shebangfix

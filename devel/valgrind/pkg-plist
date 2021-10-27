@@ -299,3 +299,5 @@ libexec/valgrind/dh_view.js
 %%MANPAGES%%man/man1/valgrind-listener.1.gz
 %%MANPAGES%%man/man1/valgrind.1.gz
 %%MANPAGES%%man/man1/vgdb.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/valgrind_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/valgrind_manual.ps

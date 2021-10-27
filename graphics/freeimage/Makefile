@@ -21,7 +21,8 @@ LICENSE_PERMS_FIPL=	dist-mirror pkg-mirror auto-accept
 BROKEN_mips=		fails to compile: section referenced in discarded section
 BROKEN_mips64=		fails to compile: opcode not supported on this processor: mips3 (mips3) 'madd $4,$5'
 
-USES=		dos2unix gmake zip
+USES=		cpe dos2unix gmake zip
+CPE_VENDOR=	${PORTNAME}_project
 DOS2UNIX_FILES=	Source/LibOpenJPEG/opj_malloc.h \
 		Source/LibRawLite/dcraw/dcraw.c \
 		Source/LibRawLite/internal/dcraw_common.cpp \

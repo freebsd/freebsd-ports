@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 USES=		cpe
 CPE_VENDOR=	jetico
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/g:S/-/./}
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/bcwipe man/man1/bcwipe.1.gz

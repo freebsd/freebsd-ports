@@ -32,7 +32,6 @@ USE_XORG=	x11 xfixes sm
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dnetworkmanager=false \

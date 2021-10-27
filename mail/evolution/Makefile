@@ -48,7 +48,6 @@ USES=		compiler:c11 cpe desktop-file-utils cmake gettext gnome \
 USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome
 CMAKE_ARGS=	-DENABLE_TEXT_HIGHLIGHT=YES \

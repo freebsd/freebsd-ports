@@ -16,11 +16,13 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 RUN_DEPENDS=	tesseract-data>=0:graphics/tesseract-data
 
-USES=		autoreconf compiler:c++11-lang gmake gnome localbase \
+USES=		autoreconf compiler:c++11-lang cpe gmake gnome localbase \
 		libtool pathfix pkgconfig shebangfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	tesseract_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-ocr

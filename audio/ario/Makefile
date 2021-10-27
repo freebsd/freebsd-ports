@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USES=		gmake gnome libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30 pango atk cairo gdkpixbuf2 glib20 libxml2
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	AVAHI DBUS DEBUG LIBMPDCLIENT2 MPDIDLE NLS PLAYLISTS SEARCH TAGLIB

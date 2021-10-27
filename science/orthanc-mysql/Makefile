@@ -1,7 +1,7 @@
 # Created by: maintainer.freebsd@xpoundit.com
 
 PORTNAME=	orthanc-mysql
-DISTVERSION=	4.0
+DISTVERSION=	4.3
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-mysql/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
@@ -30,12 +30,14 @@ USES=		cmake localbase mysql:client python:build ssl
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/OrthancMySQL-${PORTVERSION}
-CMAKE_SOURCE_PATH=	${WRKSRC}/MySQL
-CMAKE_OFF=	DBUILD_UNIT_TESTS USE_SYSTEM_ORTHANC_SDK USE_SYSTEM_UUID
+
 CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/MySQL/ThirdPartyDownloads/Orthanc-1.9.3/OrthancFramework/Sources \
 		-DORTHANC_FRAMEWORK_SOURCE=path
-CXXFLAGS+=	-I${LOCALBASE}/include -DNDEBUG
+CMAKE_OFF=	DBUILD_UNIT_TESTS USE_SYSTEM_ORTHANC_SDK USE_SYSTEM_UUID
+CMAKE_SOURCE_PATH=	${WRKSRC}/MySQL
+
 CFLAGS+=	-DORTHANC_ENABLE_LOGGING_PLUGIN -DNDEBUG
+CXXFLAGS+=	-I${LOCALBASE}/include -DNDEBUG
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 

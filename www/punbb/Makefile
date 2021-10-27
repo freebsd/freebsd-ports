@@ -22,7 +22,8 @@ BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 SUB_FILES=	pkg-message
 
 NO_BUILD=	yes
-USES=		php tar:bzip2
+USES=		cpe php tar:bzip2
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=		LANGUAGE_PACK EXTRAS
 OPTIONS_DEFAULT=	LANGUAGE_PACK EXTRAS

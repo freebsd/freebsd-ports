@@ -46,6 +46,8 @@ bin/meld
 %%PYTHON_SITELIBDIR%%/meld/__pycache__/recent.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/meld/__pycache__/settings.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/meld/__pycache__/settings.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/meld/__pycache__/signalhelpers%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/meld/__pycache__/signalhelpers%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/meld/__pycache__/sourceview.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/meld/__pycache__/sourceview.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/meld/__pycache__/task.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -97,6 +99,7 @@ bin/meld
 %%PYTHON_SITELIBDIR%%/meld/preferences.py
 %%PYTHON_SITELIBDIR%%/meld/recent.py
 %%PYTHON_SITELIBDIR%%/meld/settings.py
+%%PYTHON_SITELIBDIR%%/meld/signalhelpers.py
 %%PYTHON_SITELIBDIR%%/meld/sourceview.py
 %%PYTHON_SITELIBDIR%%/meld/task.py
 %%PYTHON_SITELIBDIR%%/meld/tree.py
@@ -275,7 +278,9 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 %%DATADIR%%/icons/vc-resolve-24.png
 %%DATADIR%%/icons/vc-update-24.png
 %%DATADIR%%/meld.css
+%%DATADIR%%/styles/meld-base.style-scheme.xml
 %%DATADIR%%/styles/meld-base.xml
+%%DATADIR%%/styles/meld-dark.style-scheme.xml
 %%DATADIR%%/styles/meld-dark.xml
 %%DATADIR%%/ui/EditableList.ui
 %%DATADIR%%/ui/application.ui

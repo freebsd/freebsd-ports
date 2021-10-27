@@ -16,7 +16,7 @@ USES=		gmake python
 USE_RC_SUBR=	xenguest
 
 ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	"Requires i386 XEN or amd64 XENHVM kernels"
+ONLY_FOR_ARCHS_REASON=	requires i386 XEN or amd64 XENHVM kernel
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/xe-daemon \

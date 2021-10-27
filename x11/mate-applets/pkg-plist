@@ -3146,7 +3146,7 @@ share/help/eu/mate-accessx-status/legal.xml
 %%BATTERY%%share/help/eu/mate-battstat/figures/context-menu.png
 %%BATTERY%%share/help/eu/mate-battstat/index.docbook
 %%BATTERY%%share/help/eu/mate-battstat/legal.xml
-share/help/eu/mate-char-palette/figures/charpalette_applet.png
+%%BATTERY%%share/help/eu/mate-char-palette/figures/charpalette_applet.png
 share/help/eu/mate-char-palette/figures/charpick-preferences.png
 share/help/eu/mate-char-palette/figures/charpick_characters.png
 share/help/eu/mate-char-palette/index.docbook
@@ -9544,9 +9544,6 @@ share/locale/zh_CN/LC_MESSAGES/mate-applets.mo
 share/locale/zh_HK/LC_MESSAGES/mate-applets.mo
 share/locale/zh_TW/LC_MESSAGES/mate-applets.mo
 share/locale/zu/LC_MESSAGES/mate-applets.mo
-%%BATTERY%%%%DATADIR%%/builder/battstat_applet.ui
-%%DATADIR%%/builder/stickynotes.ui
-%%DATADIR%%/builder/trashapplet-empty-progress.ui
 %%DATADIR%%/geyes/Bizarre/Bizarre-eye.png
 %%DATADIR%%/geyes/Bizarre/Bizarre-pupil.png
 %%DATADIR%%/geyes/Bizarre/config
@@ -9585,13 +9582,3 @@ share/mate-panel/applets/org.mate.applets.NetspeedApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.applets.StickyNotesApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.applets.TimerApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.applets.TrashApplet.mate-panel-applet
-share/mate/ui/accessx-status-applet-menu.xml
-%%BATTERY%%share/mate/ui/battstat-applet-menu.xml
-share/mate/ui/charpick-applet-menu.xml
-share/mate/ui/drivemount-applet-menu.xml
-share/mate/ui/geyes-applet-menu.xml
-share/mate/ui/mateweather-applet-menu.xml
-share/mate/ui/multiload-applet-menu.xml
-share/mate/ui/netspeed-menu.xml
-share/mate/ui/stickynotes-applet-menu.xml
-share/mate/ui/trashapplet-menu.xml

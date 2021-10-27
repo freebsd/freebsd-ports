@@ -1,7 +1,7 @@
 PORTNAME=	SamDruckerClientShell
 PORTVERSION=	0.2.6
 CATEGORIES=	sysutils
-MASTER_SITES=   GH
+MASTER_SITES=	GH
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Client for sending package information to SamDrucker

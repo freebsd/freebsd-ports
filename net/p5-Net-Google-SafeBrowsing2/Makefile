@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-libwww>=5:www/p5-libwww \
 		p5-String-HexConvert>=0.01:textproc/p5-String-HexConvert \
 		p5-File-Slurp>9:devel/p5-File-Slurp
 
-
 OPTIONS_DEFINE=	MYSQL SQLITE POSTGRES
 
 MYSQL_DESC=	uses MySQL as the storage backend

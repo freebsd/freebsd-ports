@@ -1,6 +1,6 @@
 PORTNAME=	gscloud
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -15,35 +15,36 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gridscale
 GH_TUPLE=	cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-logr:logr:v0.2.0:go_logr_logr/vendor/github.com/go-logr/logr \
+		go-logr:logr:v0.4.0:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:7f63de1d35b0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
+		golang:net:3d97a244fca7:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:a50acf3fe073:golang_sys/vendor/golang.org/x/sys \
+		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
-		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
+		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
+		google:go-cmp:v0.5.2:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:gofuzz:v1.1.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
-		gridscale:gsclient-go:v3.6.0:gridscale_gsclient_go_v3/vendor/github.com/gridscale/gsclient-go/v3 \
+		gridscale:gsclient-go:v3.6.2:gridscale_gsclient_go_v3/vendor/github.com/gridscale/gsclient-go/v3 \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
 		kirsle:configdir:e45d2f54772f:kirsle_configdir/vendor/github.com/kirsle/configdir \
-		kubernetes-sigs:structured-merge-diff:v4.0.2:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
+		kubernetes-sigs:structured-merge-diff:v4.1.0:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
-		kubernetes:apimachinery:v0.20.5:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:client-go:v0.20.5:kubernetes_client_go/vendor/k8s.io/client-go \
-		kubernetes:klog:v2.4.0:kubernetes_klog/vendor/k8s.io/klog/v2 \
+		kubernetes:apimachinery:v0.21.0:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
+		kubernetes:client-go:v0.21.0:kubernetes_client_go/vendor/k8s.io/client-go \
+		kubernetes:klog:v2.8.0:kubernetes_klog/vendor/k8s.io/klog/v2 \
 		kubernetes:utils:67b214c5f920:kubernetes_utils/vendor/k8s.io/utils \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-runewidth:v0.0.12:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \

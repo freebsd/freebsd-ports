@@ -1,9 +1,6 @@
-GEANY_VER=		1.37
-GEANY_PLUGINS_GTK2=	multiterm
+GEANY_VER=		1.38
 
-GEANY_PLUGINS_GTK3=	markdown
-
-GEANY_PLUGINS_ALL=	addons \
+GEANY_PLUGINS=		addons \
 			autoclose \
 			automark \
 			codenav \
@@ -22,6 +19,7 @@ GEANY_PLUGINS_ALL=	addons \
 			lipsum \
 			lua \
 			macro \
+			markdown \
 			miniscript \
 			numberedbookmarks \
 			overview \
@@ -64,7 +62,6 @@ lua_DESC=		Lua scripting
 macro_DESC=		user defined macros
 markdown_DESC=		real-time preview of rendered Markdown
 miniscript_DESC=	pipe text/documents via script (shell, perl, awk, etc.)
-multiterm_DESC=		multi-tabbed virtual terminals emulator
 numberedbookmarks_DESC=	additional numbered bookmarks
 overview_DESC=		zoomed-out view of open files
 pairtaghighlighter_DESC=	highlight matching opening/closing HTML tags

@@ -1,6 +1,6 @@
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	71
+PORTREVISION=	73
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -26,8 +26,9 @@ RUN_DEPENDS=	p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny \
 		psbook:print/psutils
 
-USES=		compiler:c++11-lib ghostscript gnome localbase pkgconfig perl5 \
+USES=		compiler:c++11-lib cpe ghostscript gnome localbase pkgconfig perl5 \
 		python:run shebangfix tar:xz
+CPE_VENDOR=	tug
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo
 USE_PERL5=	run
@@ -69,7 +70,7 @@ BINARY_ALIAS=	freetype-config=true
 
 # during build phase gnu configure is run a lot
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-native-texlive-build \
+CONFIGURE_ARGS=	--disable-native-texlive-build \
 		--disable-web-progs \
 		--disable-psutils \
 		--enable-shared \

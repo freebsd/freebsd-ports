@@ -67,6 +67,9 @@ lib/lv2/nodelay.lv2/nodelay.ttl
 lib/lv2/onsettrigger.lv2/manifest.ttl
 lib/lv2/onsettrigger.lv2/onsettrigger.so
 lib/lv2/onsettrigger.lv2/onsettrigger.ttl
+lib/lv2/phaserotate.lv2/manifest.ttl
+lib/lv2/phaserotate.lv2/phaserotate.so
+lib/lv2/phaserotate.lv2/phaserotate.ttl
 lib/lv2/sisco.lv2/manifest.ttl
 lib/lv2/sisco.lv2/sisco.so
 lib/lv2/sisco.lv2/sisco.ttl

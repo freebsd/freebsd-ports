@@ -10,10 +10,12 @@ COMMENT=	Extract data from InstallShield CAB files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake pathfix ssl
+USES=		cmake cpe pathfix ssl
 
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	unshield_project
 
 GH_ACCOUNT=	twogood
 USE_GITHUB=	yes

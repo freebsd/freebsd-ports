@@ -15,8 +15,6 @@ GH_ACCOUNT=	jbreams
 GH_TAGNAME=	3da5cfa120
 USE_GNOME=	gtk30 gtkmm30
 
-INSTALLS_ICONS=	yes
-
 PLIST_FILES=	bin/gonepass \
 		share/applications/gonepass.desktop \
 		share/pixmaps/gonepass.png

@@ -25,7 +25,6 @@ USE_XORG=	x11
 
 GH_ACCOUNT=	vinszent
 GLIB_SCHEMAS=	com.vinszent.GnomeTwitch.gschema.xml
-INSTALLS_ICONS=	yes
 
 # for meson_post-install.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}

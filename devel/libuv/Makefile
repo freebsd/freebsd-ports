@@ -14,7 +14,7 @@ LICENSE_NAME=	NODE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf cpe libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

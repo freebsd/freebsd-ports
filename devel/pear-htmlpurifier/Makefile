@@ -15,7 +15,7 @@ COMMENT=	PHP HTML filter library
 LICENSE=	LGPL21
 
 PEAR_CHANNEL=	htmlpurifier.org
-USES=	pear
+USES=		cpe pear
 
 NO_ARCH=	yes
 

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-hashie>=3.4.6:devel/rubygem-hashie \
 		rubygem-rack>=1.6.2,3<3,3:www/rubygem-rack
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes

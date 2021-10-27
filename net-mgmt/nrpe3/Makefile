@@ -39,8 +39,8 @@ SSL_CFLAGS=		-I${OPENSSLINC}
 ARGS_CONFIGURE_ON=	--enable-command-args
 ARGS_CONFIGURE_OFF=	--disable-command-args
 
-MONPLUGINS_RUN_DEPENDS= ${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
-NAGPLUGINS_RUN_DEPENDS= ${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
+MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios

@@ -13,7 +13,6 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-
 RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts

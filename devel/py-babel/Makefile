@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:2.7+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	pocoo
 
 NO_ARCH=	yes
 PORTDOCS=	docs/*

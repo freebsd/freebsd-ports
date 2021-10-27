@@ -23,7 +23,8 @@ LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		libtool perl5 shebangfix
+USES=		cpe libtool perl5 shebangfix
+CPE_VENDOR=	trusteddomain
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	opendmarc
 

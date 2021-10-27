@@ -32,7 +32,7 @@ SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
 DESKTOP_ENTRIES="Art of Illusion" "3D modelling and rendering studio" \
 		"${PORTNAME}" "${PORTNAME}" "Graphics;3DGraphics;" ""
 
-OPTIONS_DEFINE= DOCS
+OPTIONS_DEFINE=	DOCS
 
 DOCS_DISTFILES=	manual${PORTVERSION}${EXTRACT_SUFX}:docs
 DOCS_USES=	dos2unix

@@ -7,7 +7,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.textuality.com/bonnie/
 DISTNAME=	bonnie
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
 
 NO_WRKSUBDIR=	yes

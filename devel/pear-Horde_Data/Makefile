@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Data API
 
-USES=	horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Browser \
 		Horde_Exception \
 		Horde_Icalendar \

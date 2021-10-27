@@ -19,8 +19,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.0.0:textproc/py-markupsafe@${
 
 NO_ARCH=	yes
 .if empty(PKGNAMESUFFIX)
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
+
+CPE_VENDOR=	pocoo
 .endif
 .if ${PKGNAMESUFFIX} == -doc
 USES=		gmake python:3.6+

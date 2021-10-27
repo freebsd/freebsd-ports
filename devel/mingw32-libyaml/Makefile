@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--host="mingw32"
 CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O3	# Override CFLAGS for a cross-build
 SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
-USES=		libtool
+USES=		cpe libtool
+CPE_VENDOR=	pyyaml
 
 .include <bsd.port.mk>

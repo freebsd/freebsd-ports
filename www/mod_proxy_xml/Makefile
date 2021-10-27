@@ -11,6 +11,10 @@ DISTFILES=	xmlns.h mod_proxy_xml.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rewriting URI references in XML
 
+BROKEN=		Doesn't work as intended
+DEPRECATED=	Abandoned upstream, last release in 2004
+EXPIRATION_DATE=2022-03-31
+
 USE_GNOME=	libxml2
 USES=		apache:2.2+ gnome
 

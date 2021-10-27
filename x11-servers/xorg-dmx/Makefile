@@ -1,7 +1,7 @@
 # Created by: lesi@FreeBSD.org
 
 PORTNAME=	xorg-dmx
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Distributed Multihead X from X.Org
 

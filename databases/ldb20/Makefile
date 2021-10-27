@@ -88,7 +88,6 @@ PLIST_FILES=		include/ldb_version.h \
 			${LDB_LIBS} \
 			${PKGCONFIGDIR}/ldb.pc
 
-
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib

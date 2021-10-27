@@ -24,6 +24,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/assets/js/clipboard.min.js
 %%PORTDOCS%%%%DOCSDIR%%/googlec3812dcf278679ec.html
 %%PORTDOCS%%%%DOCSDIR%%/guides/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/getting-started-with-vm-operator.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-dashes-agent.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-grafana-dash.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-dashboard.png
@@ -32,6 +33,9 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-ha-explore-count-up.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-ha-explore.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-scheme.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator-grafana1.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator-grafana2.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-vmagent-grafana-dash.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-vmagent-values.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmsingle-grafana-dashboards.png

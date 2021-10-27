@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING-2.0
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 SHEBANG_FILES=	makepasswd
 USE_PERL5=	run
 

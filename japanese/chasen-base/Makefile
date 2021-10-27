@@ -14,7 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:devel/darts
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include ${ICONV_CONFIGURE_BASE}
-USES=		iconv libtool
+USES=		cpe iconv libtool
+CPE_VENDOR=	naist.jp
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

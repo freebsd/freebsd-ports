@@ -17,7 +17,8 @@ BROKEN_FreeBSD_14=	ld: error: duplicate symbol: guile_global_error
 
 LIB_DEPENDS=	libguile.so:lang/guile1
 
-USES=		tar:xz libtool
+USES=		cpe tar:xz libtool
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libserveez-install
 USE_LDCONFIG=	yes

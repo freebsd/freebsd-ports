@@ -4,7 +4,7 @@ DISTVERSION=	8.2.4
 CATEGORIES=	comms
 PKGNAMESUFFIX=	-com
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 
 LICENSE=	BSD3CLAUSE

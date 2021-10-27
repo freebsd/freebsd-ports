@@ -1,7 +1,7 @@
 # Created by: dpejesh@yahoo.com
 
 PORTNAME=	resource-agents
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 

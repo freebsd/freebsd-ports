@@ -1,8 +1,9 @@
-Ptex is a per-face texture mapping system developed
-by Walt Disney Animation Studios.
+Ptex is a per-face texture mapping system developed by Walt Disney
+Animation Studios.
 
 Ptex applies a separate texture to each face of a polygon mesh.
-It's file format can efficiently store hundreds of thousands
-of texture images in a single file.
+
+Its file format can efficiently store hundreds of thousands of
+texture images in a single file.
 
 WWW: http://ptex.us

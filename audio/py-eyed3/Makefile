@@ -14,7 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	travis_shirk
 USE_PYTHON=	autoplist distutils
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecation>0:devel/py-deprecation@${PY_FLAVOR} \

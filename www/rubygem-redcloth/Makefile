@@ -13,7 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RUBY=	yes
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	promptworks
 
 PLIST_FILES=	bin/redcloth
 

@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libliquid.so:comms/liquid-dsp
 
-CMAKE_INSTALL_PREFIX=   ${STAGEDIR}${PREFIX}
+CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
 
 USES=		cmake compiler:c++11-lang pkgconfig qmake qt:5
 USE_GITHUB=	yes

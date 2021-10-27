@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.112.0
+PORTVERSION=	3.116.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
+		rubygem-aws-sdk-account>=1<2:devel/rubygem-aws-sdk-account \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-acmpca>=1<2:devel/rubygem-aws-sdk-acmpca \
 		rubygem-aws-sdk-alexaforbusiness>=1<2:devel/rubygem-aws-sdk-alexaforbusiness \
@@ -43,6 +44,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-chimesdkidentity>=1<2:devel/rubygem-aws-sdk-chimesdkidentity \
 		rubygem-aws-sdk-chimesdkmessaging>=1<2:devel/rubygem-aws-sdk-chimesdkmessaging \
 		rubygem-aws-sdk-cloud9>=1<2:devel/rubygem-aws-sdk-cloud9 \
+		rubygem-aws-sdk-cloudcontrolapi>=1<2:devel/rubygem-aws-sdk-cloudcontrolapi \
 		rubygem-aws-sdk-clouddirectory>=1<2:devel/rubygem-aws-sdk-clouddirectory \
 		rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
 		rubygem-aws-sdk-cloudfront>=1<2:devel/rubygem-aws-sdk-cloudfront \
@@ -74,6 +76,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-connect>=1<2:devel/rubygem-aws-sdk-connect \
 		rubygem-aws-sdk-connectcontactlens>=1<2:devel/rubygem-aws-sdk-connectcontactlens \
 		rubygem-aws-sdk-connectparticipant>=1<2:devel/rubygem-aws-sdk-connectparticipant \
+		rubygem-aws-sdk-connectwisdomservice>=1<2:devel/rubygem-aws-sdk-connectwisdomservice \
 		rubygem-aws-sdk-costandusagereportservice>=1<2:devel/rubygem-aws-sdk-costandusagereportservice \
 		rubygem-aws-sdk-costexplorer>=1<2:devel/rubygem-aws-sdk-costexplorer \
 		rubygem-aws-sdk-customerprofiles>=1<2:devel/rubygem-aws-sdk-customerprofiles \
@@ -178,6 +181,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-macie>=1<2:devel/rubygem-aws-sdk-macie \
 		rubygem-aws-sdk-macie2>=1<2:devel/rubygem-aws-sdk-macie2 \
 		rubygem-aws-sdk-managedblockchain>=1<2:devel/rubygem-aws-sdk-managedblockchain \
+		rubygem-aws-sdk-managedgrafana>=1<2:devel/rubygem-aws-sdk-managedgrafana \
 		rubygem-aws-sdk-marketplacecatalog>=1<2:devel/rubygem-aws-sdk-marketplacecatalog \
 		rubygem-aws-sdk-marketplacecommerceanalytics>=1<2:devel/rubygem-aws-sdk-marketplacecommerceanalytics \
 		rubygem-aws-sdk-marketplaceentitlementservice>=1<2:devel/rubygem-aws-sdk-marketplaceentitlementservice \
@@ -207,6 +211,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-opsworkscm>=1<2:devel/rubygem-aws-sdk-opsworkscm \
 		rubygem-aws-sdk-organizations>=1<2:devel/rubygem-aws-sdk-organizations \
 		rubygem-aws-sdk-outposts>=1<2:devel/rubygem-aws-sdk-outposts \
+		rubygem-aws-sdk-panorama>=1<2:devel/rubygem-aws-sdk-panorama \
 		rubygem-aws-sdk-personalize>=1<2:devel/rubygem-aws-sdk-personalize \
 		rubygem-aws-sdk-personalizeevents>=1<2:devel/rubygem-aws-sdk-personalizeevents \
 		rubygem-aws-sdk-personalizeruntime>=1<2:devel/rubygem-aws-sdk-personalizeruntime \
@@ -278,6 +283,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-transcribestreamingservice>=1<2:devel/rubygem-aws-sdk-transcribestreamingservice \
 		rubygem-aws-sdk-transfer>=1<2:devel/rubygem-aws-sdk-transfer \
 		rubygem-aws-sdk-translate>=1<2:devel/rubygem-aws-sdk-translate \
+		rubygem-aws-sdk-voiceid>=1<2:devel/rubygem-aws-sdk-voiceid \
 		rubygem-aws-sdk-waf>=1<2:devel/rubygem-aws-sdk-waf \
 		rubygem-aws-sdk-wafregional>=1<2:devel/rubygem-aws-sdk-wafregional \
 		rubygem-aws-sdk-wafv2>=1<2:devel/rubygem-aws-sdk-wafv2 \

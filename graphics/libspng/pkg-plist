@@ -8,7 +8,9 @@ libdata/pkgconfig/spng.pc
 %%PORTDOCS%%%%DOCSDIR%%/chunk.md
 %%PORTDOCS%%%%DOCSDIR%%/context.md
 %%PORTDOCS%%%%DOCSDIR%%/decode.md
+%%PORTDOCS%%%%DOCSDIR%%/encode.md
 %%PORTDOCS%%%%DOCSDIR%%/errors.md
 %%PORTDOCS%%%%DOCSDIR%%/index.md
+%%PORTDOCS%%%%DOCSDIR%%/migrate-libpng.md
 %%PORTDOCS%%%%DOCSDIR%%/usage.md
 %%PORTDOCS%%%%DOCSDIR%%/version.md

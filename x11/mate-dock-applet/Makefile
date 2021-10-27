@@ -1,8 +1,7 @@
 # Created by: Eric Turgeon <ericbsd@FreeBSD.org>
 
 PORTNAME=	mate-dock-applet
-PORTVERSION=	20.04.0
-PORTREVISION=	2
+PORTVERSION=	21.10.0
 CATEGORIES=	x11 mate
 DIST_SUBDIR=	mate
 
@@ -28,7 +27,6 @@ GH_ACCOUNT=	ubuntu-mate
 USE_GNOME=	gtk30 libwnck3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk3
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	src/*.in
 

@@ -1,7 +1,7 @@
-PORTNAME=       bareos
-DISTVERSIONPREFIX=      Release/
-DISTVERSION=    19.2.10
-CATEGORIES?=    www sysutils
+PORTNAME=	bareos
+DISTVERSIONPREFIX=	Release/
+DISTVERSION=	19.2.10
+CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	19-webui
 
 MAINTAINER=	acm@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/webui/LICENSE
 
 USE_GITHUB=	yes
 
-USES=		cmake gettext php:build
+USES=		cmake cpe gettext php:build
 USE_PHP=	ctype gettext hash iconv json openssl session
 NO_BUILD=	yes
 NO_ARCH=	yes

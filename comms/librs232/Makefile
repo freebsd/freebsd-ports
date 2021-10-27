@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple serial library
 
 LICENSE=	GPLv3
-LICENSE_FILE=   ${WRKSRC}/gpl.txt
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

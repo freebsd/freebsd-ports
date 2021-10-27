@@ -1,6 +1,6 @@
-TIMESTAMP = 1620454413
-SHA256 (keepkey-python-keepkey-v6.7.0_GH0.tar.gz) = 623e6be6987440ef638341a304a04de60cd280c2e42122fcbd19fda67717b209
-SIZE (keepkey-python-keepkey-v6.7.0_GH0.tar.gz) = 231248
+TIMESTAMP = 1635266709
+SHA256 (keepkey-python-keepkey-v7.2.1_GH0.tar.gz) = 7bfe65a10044ab112d44902bdc89a06f5167cadb1f80ea5afbbf8a273e941119
+SIZE (keepkey-python-keepkey-v7.2.1_GH0.tar.gz) = 348099
 SHA256 (keepkey-device-protocol-84d438b_GH0.tar.gz) = fbbccb73411c68fa45b2f0e71045834fc262a9980980b474d96e202e2a939f72
 SIZE (keepkey-device-protocol-84d438b_GH0.tar.gz) = 43636
 SHA256 (keepkey-ethereum-lists-e216e92_GH0.tar.gz) = 25bd68921271a3193aaaf5e9b5cdad16259d5dcabd221d575c9294b42924d18b

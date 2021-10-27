@@ -13,11 +13,11 @@
  
  config:
 -	@sed "s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_VER_\\$(VER)\\g ; s\\_MAN_SEC_\\$(MAN_SEC)\\g" < config.tmpl > gnarwl.cfg
-+	@gsed "s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_VER_\\$(VER)\\g ; s\\_MAN_SEC_\\$(MAN_SEC)\\g" < config.tmpl > gnarwl.cfg.sample
++	@sed "s,_HOMEDIR_,$(HOMEDIR),g ; s,_VER_,$(VER),g ; s,_MAN_SEC_,$(MAN_SEC),g" < config.tmpl > gnarwl.cfg.sample
  
  spec:
 -	@sed "s\\_BIN_\\$(BIN)\\g ; s\\_VER_\\$(VER)\\g; s\\_SBIN_\\$(SBIN)\\g; s\\_SEC_\\$(MAN_SEC)\\g" < spec.tmpl > $(BIN)-$(VER).spec 
-+	@gsed "s\\_BIN_\\$(BIN)\\g ; s\\_VER_\\$(VER)\\g; s\\_SBIN_\\$(SBIN)\\g; s\\_SEC_\\$(MAN_SEC)\\g" < spec.tmpl > $(BIN)-$(VER).spec 
++	@sed "s,_BIN_,$(BIN),g ; s,_VER_,$(VER),g; s,_SBIN_,$(SBIN),g; s,_SEC_,$(MAN_SEC),g" < spec.tmpl > $(BIN)-$(VER).spec
  
  install:
 -	mkdir -m 755 -p  $(HOMEDIR)/block $(HOMEDIR)/bin $(CONFDIR)

@@ -16,7 +16,6 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gnome zip
-INSTALLS_ICONS=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 

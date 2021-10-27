@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gmake gnome localbase pkgconfig tar:xz xorg
+USES=		cpe gmake gnome localbase pkgconfig tar:xz xorg
+CPE_VENDOR=	${PORTNAME}_project
 USE_GNOME=	gtk20 glib20 cairo vte intltool
 USE_XORG=	x11 xext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk3=no
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS
 

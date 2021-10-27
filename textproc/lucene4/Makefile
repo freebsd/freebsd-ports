@@ -3,7 +3,7 @@
 PORTNAME=	lucene
 PORTVERSION=	4.10.4
 CATEGORIES=	textproc java devel
-MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/java/${PORTVERSION}/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,9 @@ COMMENT=	Full-text search engine for Java, 4.x branch
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Unsupported by upstream, released in 2015
+EXPIRATION_DATE=2022-03-31
 
 CONFLICTS=	lucene-[0-9].*
 

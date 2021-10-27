@@ -22,7 +22,6 @@ USES=		compiler:c++11-lang gettext-runtime gl gmake gnome pkgconfig \
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xmu xt
-INSTALLS_ICONS=	yes
 
 CFLAGS+=	-fcommon # change the default because GlobalOrb.h has many common definitions
 

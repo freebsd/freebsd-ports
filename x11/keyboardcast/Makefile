@@ -18,6 +18,5 @@ GH_ACCOUNT=	ekoort
 USES=		gnome pkgconfig xorg
 USE_XORG=	xmu x11
 USE_GNOME=	libwnck libglade2 gtk20
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	coffeescript
-DISTVERSION=	2.5.1
+DISTVERSION=	2.6.1
 CATEGORIES=	lang
 
 MAINTAINER=	egypcio@FreeBSD.org

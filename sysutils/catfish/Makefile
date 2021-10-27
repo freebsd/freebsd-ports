@@ -2,6 +2,7 @@
 
 PORTNAME=	catfish
 PORTVERSION=	4.16.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -27,7 +28,6 @@ USE_GNOME=	gtk30 intltool pygobject3
 CPE_VENDOR=	catfish_project
 
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 PORTSCOUT=	limitw:1,even
 

@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source XML framework for Java
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_JAVA=	yes
 NO_BUILD=	yes
 

@@ -1,8 +1,12 @@
 PORTNAME=	pdf2djvu
 DISTVERSION=	0.9.17.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
+
+# Poppler 21.10 support
+PATCH_SITES=	https://github.com/jwilk/pdf2djvu/commit/
+PATCHFILES=	e528d3ab88c582e8481c9014982263d9c9e992fe.patch:-p1
 
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Creates DjVu files from PDF files
@@ -51,7 +55,6 @@ pre-configure:
 	# Poppler 20.12 no longer installs the pc file for this private backend.
 	# https://github.com/jwilk/pdf2djvu/issues/144
 	${REINPLACE_CMD} -e 's|poppler-splash|poppler|g' ${WRKSRC}/configure
-
 
 post-build-DOCS-on:
 	@cd ${WRKSRC}/doc && ${GMAKE}

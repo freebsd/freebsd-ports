@@ -1,0 +1,1952 @@
+--- suds/bindings/binding.py.orig	2021-09-20 17:08:56 UTC
++++ suds/bindings/binding.py
+@@ -88,7 +88,7 @@ class Binding:
+         @return: A collection of parameter definitions
+         @rtype: [I{pdef},..]
+         """
+-        raise Exception, 'not implemented'
++        raise Exception('not implemented')
+ 
+     def get_message(self, method, args, kwargs):
+         """
+@@ -286,7 +286,7 @@ class Binding:
+         @return: The XML content for the <body/>
+         @rtype: [L{Element},..]
+         """
+-        raise Exception, 'not implemented'
++        raise Exception('not implemented')
+ 
+     def headercontent(self, method):
+         """
+@@ -339,7 +339,7 @@ class Binding:
+         @return: The body content.
+         @rtype: [L{Element},...]
+         """
+-        raise Exception, 'not implemented'
++        raise Exception('not implemented')
+ 
+     def body(self, content):
+         """
+--- suds/client.py.orig	2021-09-20 17:08:56 UTC
++++ suds/client.py
+@@ -37,12 +37,12 @@ from suds.transport import TransportError, Request
+ from suds.transport.https import HttpAuthenticated
+ from suds.umx.basic import Basic as UmxBasic
+ from suds.wsdl import Definitions
+-import sudsobject
++from . import sudsobject
+ 
+-from cookielib import CookieJar
++from http.cookiejar import CookieJar
+ from copy import deepcopy
+-import httplib
+-from urlparse import urlparse
++import http.client
++from urllib.parse import urlparse
+ 
+ from logging import getLogger
+ log = getLogger(__name__)
+@@ -181,7 +181,7 @@ class Client(UnicodeMixin):
+         if ( suds.__build__ ):
+             s.append('  build: %s' % suds.__build__)
+         for sd in self.sd:
+-            s.append('\n\n%s' % unicode(sd))
++            s.append('\n\n%s' % str(sd))
+         return ''.join(s)
+ 
+ 
+@@ -223,7 +223,7 @@ class Factory:
+         else:
+             try:
+                 result = self.builder.build(type)
+-            except Exception, e:
++            except Exception as e:
+                 log.error("create '%s' failed", name, exc_info=True)
+                 raise BuildError(name, e)
+         timer.stop()
+@@ -312,20 +312,20 @@ class ServiceSelector:
+         """
+         service = None
+         if not len(self.__services):
+-            raise Exception, 'No services defined'
++            raise Exception('No services defined')
+         if isinstance(name, int):
+             try:
+                 service = self.__services[name]
+                 name = service.name
+             except IndexError:
+-                raise ServiceNotFound, 'at [%d]' % name
++                raise ServiceNotFound('at [%d]' % name)
+         else:
+             for s in self.__services:
+                 if name == s.name:
+                     service = s
+                     break
+         if service is None:
+-            raise ServiceNotFound, name
++            raise ServiceNotFound(name)
+         return PortSelector(self.__client, service.ports, name)
+ 
+     def __ds(self):
+@@ -413,13 +413,13 @@ class PortSelector:
+         """
+         port = None
+         if not len(self.__ports):
+-            raise Exception, 'No ports defined: %s' % self.__qn
++            raise Exception('No ports defined: %s' % self.__qn)
+         if isinstance(name, int):
+             qn = '%s[%d]' % (self.__qn, name)
+             try:
+                 port = self.__ports[name]
+             except IndexError:
+-                raise PortNotFound, qn
++                raise PortNotFound(qn)
+         else:
+             qn = '.'.join((self.__qn, name))
+             for p in self.__ports:
+@@ -427,7 +427,7 @@ class PortSelector:
+                     port = p
+                     break
+         if port is None:
+-            raise PortNotFound, qn
++            raise PortNotFound(qn)
+         qn = '.'.join((self.__qn, port.name))
+         return MethodSelector(self.__client, port.methods, qn)
+ 
+@@ -488,7 +488,7 @@ class MethodSelector:
+         m = self.__methods.get(name)
+         if m is None:
+             qn = '.'.join((self.__qn, name))
+-            raise MethodNotFound, qn
++            raise MethodNotFound(qn)
+         return Method(self.__client, m)
+ 
+ 
+@@ -519,10 +519,10 @@ class Method:
+         client = clientclass(self.client, self.method)
+         try:
+             return client.invoke(args, kwargs)
+-        except WebFault, e:
++        except WebFault as e:
+             if self.faults():
+                 raise
+-            return (httplib.INTERNAL_SERVER_ERROR, e)
++            return (http.client.INTERNAL_SERVER_ERROR, e)
+ 
+     def faults(self):
+         """ get faults option """
+@@ -613,7 +613,7 @@ class SoapClient:
+             reply = self.options.transport.send(request)
+             timer.stop()
+             metrics.log.debug('waited %s on server reply', timer)
+-        except TransportError, e:
++        except TransportError as e:
+             content = e.fp and e.fp.read() or ''
+             return self.process_reply(reply=content, status=e.httpcode,
+                 description=tostr(e), original_soapenv=original_soapenv)
+@@ -623,12 +623,12 @@ class SoapClient:
+     def process_reply(self, reply, status=None, description=None,
+         original_soapenv=None):
+         if status is None:
+-            status = httplib.OK
+-        if status in (httplib.ACCEPTED, httplib.NO_CONTENT):
++            status = http.client.OK
++        if status in (http.client.ACCEPTED, http.client.NO_CONTENT):
+             return
+         failed = True
+         try:
+-            if status == httplib.OK:
++            if status == http.client.OK:
+                 log.debug('HTTP succeeded:\n%s', reply)
+             else:
+                 log.debug('HTTP failed - %d - %s:\n%s', status, description,
+@@ -657,19 +657,19 @@ class SoapClient:
+             #   An INSTANCE MUST use a "500 Internal Server Error" HTTP status
+             # code if the response message is a SOAP Fault.
+             replyroot = None
+-            if status in (httplib.OK, httplib.INTERNAL_SERVER_ERROR):
++            if status in (http.client.OK, http.client.INTERNAL_SERVER_ERROR):
+                 replyroot = _parse(reply)
+                 plugins.message.parsed(reply=replyroot)
+                 fault = self.get_fault(replyroot)
+                 if fault:
+-                    if status != httplib.INTERNAL_SERVER_ERROR:
++                    if status != http.client.INTERNAL_SERVER_ERROR:
+                         log.warn("Web service reported a SOAP processing "
+                             "fault using an unexpected HTTP status code %d. "
+                             "Reporting as an internal server error.", status)
+                     if self.options.faults:
+                         raise WebFault(fault, replyroot)
+-                    return (httplib.INTERNAL_SERVER_ERROR, fault)
+-            if status != httplib.OK:
++                    return (http.client.INTERNAL_SERVER_ERROR, fault)
++            if status != http.client.OK:
+                 if self.options.faults:
+                     # (todo)
+                     #   Use a more specific exception class here.
+@@ -688,7 +688,7 @@ class SoapClient:
+             failed = False
+             if self.options.faults:
+                 return result
+-            return (httplib.OK, result)
++            return (http.client.OK, result)
+         finally:
+             if failed and original_soapenv:
+                 log.error(original_soapenv)
+@@ -717,7 +717,7 @@ class SoapClient:
+         @rtype: dict
+         """
+         action = self.method.soap.action
+-        if isinstance(action, unicode):
++        if isinstance(action, str):
+             action = action.encode('utf-8')
+         stock = {'Content-Type':'text/xml; charset=utf-8', 'SOAPAction':action}
+         result = dict(stock, **self.options.headers)
+@@ -742,7 +742,7 @@ class SimClient(SoapClient):
+     @classmethod
+     def simulation(cls, kwargs):
+         """ get whether loopback has been specified in the I{kwargs}. """
+-        return kwargs.has_key(SimClient.injkey)
++        return SimClient.injkey in kwargs
+ 
+     def invoke(self, args, kwargs):
+         """
+--- suds/mx/__init__.py.orig	2021-09-20 17:08:56 UTC
++++ suds/mx/__init__.py
+@@ -43,7 +43,7 @@ class Content(Object):
+         Object.__init__(self)
+         self.tag = tag
+         self.value = value
+-        for k,v in kwargs.items():
++        for k,v in list(kwargs.items()):
+             setattr(self, k, v)
+ 
+     def __getattr__(self, name):
+@@ -52,8 +52,7 @@ class Content(Object):
+                 v = None
+                 setattr(self, name, v)
+             else:
+-                raise AttributeError, \
+-                    'Content has no attribute %s' % name
++                raise AttributeError('Content has no attribute %s' % name)
+         else:
+             v = self.__dict__[name]
+         return v
+--- suds/mx/literal.py.orig	2021-09-20 17:08:56 UTC
++++ suds/mx/literal.py
+@@ -131,9 +131,8 @@ class Typed(Core):
+         if current == content.type:
+             self.resolver.pop()
+         else:
+-            raise Exception, \
+-                'content (end) mismatch: top=(%s) cont=(%s)' % \
+-                (current, content)
++            raise Exception('content (end) mismatch: top=(%s) cont=(%s)' % \
++                (current, content))
+ 
+     def node(self, content):
+         #
+--- suds/plugin.py.orig	2021-09-20 17:08:56 UTC
++++ suds/plugin.py
+@@ -205,7 +205,7 @@ class PluginContainer:
+                     plugins.append(p)
+             return PluginDomain(ctx, plugins)
+         else:
+-            raise Exception, 'plugin domain (%s), invalid' % name
++            raise Exception('plugin domain (%s), invalid' % name)
+ 
+ 
+ class PluginDomain:
+@@ -252,6 +252,6 @@ class Method:
+                 method = getattr(plugin, self.name, None)
+                 if method and callable(method):
+                     method(ctx)
+-            except Exception, pe:
++            except Exception as pe:
+                 log.exception(pe)
+         return ctx
+--- suds/properties.py.orig	2021-09-20 17:08:56 UTC
++++ suds/properties.py
+@@ -67,23 +67,23 @@ class Link(object):
+         """
+         if pA in pB.links or \
+            pB in pA.links:
+-            raise Exception, 'Already linked'
++            raise Exception('Already linked')
+         dA = pA.domains()
+         dB = pB.domains()
+         for d in dA:
+             if d in dB:
+-                raise Exception, 'Duplicate domain "%s" found' % d
++                raise Exception('Duplicate domain "%s" found' % d)
+         for d in dB:
+             if d in dA:
+-                raise Exception, 'Duplicate domain "%s" found' % d
+-        kA = pA.keys()
+-        kB = pB.keys()
++                raise Exception('Duplicate domain "%s" found' % d)
++        kA = list(pA.keys())
++        kB = list(pB.keys())
+         for k in kA:
+             if k in kB:
+-                raise Exception, 'Duplicate key %s found' % k
++                raise Exception('Duplicate key %s found' % k)
+         for k in kB:
+             if k in kA:
+-                raise Exception, 'Duplicate key %s found' % k
++                raise Exception('Duplicate key %s found' % k)
+         return self
+ 
+     def teardown(self):
+@@ -177,7 +177,7 @@ class Definition:
+         if len(self.classes) and \
+             not isinstance(value, self.classes):
+                 msg = '"%s" must be: %s' % (self.name, self.classes)
+-                raise AttributeError,msg
++                raise AttributeError(msg)
+ 
+ 
+     def __repr__(self):
+@@ -251,7 +251,7 @@ class Properties:
+         """
+         if isinstance(other, Properties):
+             other = other.defined
+-        for n,v in other.items():
++        for n,v in list(other.items()):
+             self.set(n, v)
+         return self
+ 
+@@ -372,7 +372,7 @@ class Properties:
+             history = []
+         history.append(self)
+         keys = set()
+-        keys.update(self.definitions.keys())
++        keys.update(list(self.definitions.keys()))
+         for x in self.links:
+             if x in history:
+                 continue
+@@ -408,7 +408,7 @@ class Properties:
+         @return: self
+         @rtype: L{Properties}
+         """
+-        for d in self.definitions.values():
++        for d in list(self.definitions.values()):
+             self.defined[d.name] = d.default
+         return self
+ 
+@@ -434,10 +434,10 @@ class Properties:
+     def str(self, history):
+         s = []
+         s.append('Definitions:')
+-        for d in self.definitions.values():
++        for d in list(self.definitions.values()):
+             s.append('\t%s' % repr(d))
+         s.append('Content:')
+-        for d in self.defined.items():
++        for d in list(self.defined.items()):
+             s.append('\t%s' % str(d))
+         if self not in history:
+             history.append(self)
+--- suds/servicedefinition.py.orig	2021-09-20 17:08:56 UTC
++++ suds/servicedefinition.py
+@@ -80,7 +80,7 @@ class ServiceDefinition(UnicodeMixin):
+         timer.start()
+         for port in self.service.ports:
+             p = self.findport(port)
+-            for op in port.binding.operations.values():
++            for op in list(port.binding.operations.values()):
+                 m = p[0].method(op.name)
+                 binding = m.binding.input
+                 method = (m.name, binding.param_defs(m))
+@@ -138,7 +138,7 @@ class ServiceDefinition(UnicodeMixin):
+ 
+     def publictypes(self):
+         """Get all public types."""
+-        for t in self.wsdl.schema.types.values():
++        for t in list(self.wsdl.schema.types.values()):
+             if t in self.params: continue
+             if t in self.types: continue
+             item = (t, t)
+@@ -152,7 +152,7 @@ class ServiceDefinition(UnicodeMixin):
+         WSDL document.
+         """
+         used = [ns[0] for ns in self.prefixes]
+-        used += [ns[0] for ns in self.wsdl.root.nsprefixes.items()]
++        used += [ns[0] for ns in list(self.wsdl.root.nsprefixes.items())]
+         for n in range(0,1024):
+             p = 'ns%d'%n
+             if p not in used:
+@@ -235,6 +235,6 @@ class ServiceDefinition(UnicodeMixin):
+     def __unicode__(self):
+         try:
+             return self.description()
+-        except Exception, e:
++        except Exception as e:
+             log.exception(e)
+         return tostr(e)
+--- suds/store.py.orig	2021-09-20 17:08:56 UTC
++++ suds/store.py
+@@ -566,7 +566,7 @@ class DocumentStore:
+         protocol, location = self.__split(url)
+         content = self.__find(location)
+         if protocol == 'suds' and content is None:
+-            raise Exception, 'location "%s" not in document store' % location
++            raise Exception('location "%s" not in document store' % location)
+         return content
+ 
+     def __find(self, location):
+--- suds/sudsobject.py.orig	2021-09-20 17:08:56 UTC
++++ suds/sudsobject.py
+@@ -110,7 +110,7 @@ class Factory:
+             inst = subclass()
+         else:
+             inst = Object()
+-        for a in dict.items():
++        for a in list(dict.items()):
+             setattr(inst, a[0], a[1])
+         return inst
+ 
+@@ -146,7 +146,7 @@ class Object(UnicodeMixin):
+                 self.__keylist__.remove(name)
+         except:
+             cls = self.__class__.__name__
+-            raise AttributeError, "%s has no attribute '%s'" % (cls, name)
++            raise AttributeError("%s has no attribute '%s'" % (cls, name))
+ 
+     def __getitem__(self, name):
+         if isinstance(name, int):
+@@ -179,7 +179,7 @@ class Iter:
+         self.keylist = self.__keylist(sobject)
+         self.index = 0
+ 
+-    def next(self):
++    def __next__(self):
+         keylist = self.keylist
+         nkeys = len(self.keylist)
+         while self.index < nkeys:
+@@ -271,7 +271,7 @@ class Printer:
+             if len(object) == 0:
+                 return '<empty>'
+             return self.print_collection(object, h, n+2)
+-        if isinstance(object, basestring):
++        if isinstance(object, str):
+             return '"%s"' % tostr(object)
+         return '%s' % tostr(object)
+ 
+@@ -325,7 +325,7 @@ class Printer:
+             s.append('\n')
+             s.append(self.indent(n))
+         s.append('{')
+-        for item in d.items():
++        for item in list(d.items()):
+             s.append('\n')
+             s.append(self.indent(n+1))
+             if isinstance(item[1], (list,tuple)):
+--- suds/transport/http.py.orig	2021-09-20 17:08:56 UTC
++++ suds/transport/http.py
+@@ -22,12 +22,12 @@ from suds.properties import Unskin
+ from suds.transport import *
+ 
+ import base64
+-from cookielib import CookieJar
+-import httplib
++from http.cookiejar import CookieJar
++import http.client
+ import socket
+ import sys
+-import urllib2
+-from urlparse import urlparse
++import urllib.request, urllib.error, urllib.parse
++from urllib.parse import urlparse
+ 
+ from logging import getLogger
+ log = getLogger(__name__)
+@@ -62,10 +62,10 @@ class HttpTransport(Transport):
+         try:
+             url = self.__get_request_url(request)
+             log.debug('opening (%s)', url)
+-            u2request = urllib2.Request(url)
++            u2request = urllib.request.Request(url)
+             self.proxy = self.options.proxy
+             return self.u2open(u2request)
+-        except urllib2.HTTPError, e:
++        except urllib.error.HTTPError as e:
+             raise TransportError(str(e), e.code, e.fp)
+ 
+     def send(self, request):
+@@ -74,7 +74,7 @@ class HttpTransport(Transport):
+         msg = request.message
+         headers = request.headers
+         try:
+-            u2request = urllib2.Request(url, msg, headers)
++            u2request = urllib.request.Request(url, msg, headers)
+             self.addcookies(u2request)
+             self.proxy = self.options.proxy
+             request.headers.update(u2request.headers)
+@@ -85,10 +85,10 @@ class HttpTransport(Transport):
+                 headers = fp.headers.dict
+             else:
+                 headers = fp.headers
+-            result = Reply(httplib.OK, headers, fp.read())
++            result = Reply(http.client.OK, headers, fp.read())
+             log.debug('received:\n%s', result)
+-        except urllib2.HTTPError, e:
+-            if e.code in (httplib.ACCEPTED, httplib.NO_CONTENT):
++        except urllib.error.HTTPError as e:
++            if e.code in (http.client.ACCEPTED, http.client.NO_CONTENT):
+                 result = None
+             else:
+                 raise TransportError(e.msg, e.code, e.fp)
+@@ -140,7 +140,7 @@ class HttpTransport(Transport):
+ 
+         """
+         if self.urlopener is None:
+-            return urllib2.build_opener(*self.u2handlers())
++            return urllib.request.build_opener(*self.u2handlers())
+         return self.urlopener
+ 
+     def u2handlers(self):
+@@ -152,7 +152,7 @@ class HttpTransport(Transport):
+ 
+         """
+         handlers = []
+-        handlers.append(urllib2.ProxyHandler(self.proxy))
++        handlers.append(urllib.request.ProxyHandler(self.proxy))
+         return handlers
+ 
+     def u2ver(self):
+@@ -165,7 +165,7 @@ class HttpTransport(Transport):
+         try:
+             part = urllib2.__version__.split('.', 1)
+             return float('.'.join(part))
+-        except Exception, e:
++        except Exception as e:
+             log.exception(e)
+             return 0
+ 
+--- suds/umx/__init__.py.orig	2021-09-20 17:08:56 UTC
++++ suds/umx/__init__.py
+@@ -40,7 +40,7 @@ class Content(Object):
+         self.node = node
+         self.data = None
+         self.text = None
+-        for k,v in kwargs.items():
++        for k,v in list(kwargs.items()):
+             setattr(self, k, v)
+ 
+     def __getattr__(self, name):
+@@ -49,8 +49,7 @@ class Content(Object):
+                 v = None
+                 setattr(self, name, v)
+             else:
+-                raise AttributeError, \
+-                    'Content has no attribute %s' % name
++                raise AttributeError('Content has no attribute %s' % name)
+         else:
+             v = self.__dict__[name]
+         return v
+--- suds/wsdl.py.orig	2021-09-20 17:08:56 UTC
++++ suds/wsdl.py
+@@ -31,8 +31,8 @@ from suds.sudsobject import Object, Facade, Metadata
+ from suds.reader import DocumentReader
+ 
+ import re
+-import soaparray
+-from urlparse import urljoin
++from . import soaparray
++from urllib.parse import urljoin
+ 
+ from logging import getLogger
+ log = getLogger(__name__)
+@@ -232,7 +232,7 @@ class Definitions(WObject):
+         for p in service.ports:
+             binding = p.binding
+             ptype = p.binding.type
+-            operations = p.binding.type.operations.values()
++            operations = list(p.binding.type.operations.values())
+             for name in [op.name for op in operations]:
+                 m = Facade('Method')
+                 m.name = name
+@@ -249,8 +249,8 @@ class Definitions(WObject):
+ 
+     def set_wrapped(self):
+         """ set (wrapped|bare) flag on messages """
+-        for b in self.bindings.values():
+-            for op in b.operations.values():
++        for b in list(self.bindings.values()):
++            for op in list(b.operations.values()):
+                 for body in (op.soap.input.body, op.soap.output.body):
+                     body.wrapped = False
+                     if not self.options.unwrap:
+@@ -482,7 +482,7 @@ class PortType(NamedObject):
+         @param definitions: A definitions object.
+         @type definitions: L{Definitions}
+         """
+-        for op in self.operations.values():
++        for op in list(self.operations.values()):
+             if op.input is None:
+                 op.input = Message(Element('no-input'), definitions)
+             else:
+@@ -505,7 +505,7 @@ class PortType(NamedObject):
+                 qref = qualify(f.message, self.root, definitions.tns)
+                 msg = definitions.messages.get(qref)
+                 if msg is None:
+-                    raise Exception, "msg '%s', not-found" % f.message
++                    raise Exception("msg '%s', not-found" % f.message)
+                 f.message = msg
+ 
+     def operation(self, name):
+@@ -519,7 +519,7 @@ class PortType(NamedObject):
+         """
+         try:
+             return self.operations[name]
+-        except Exception, e:
++        except Exception as e:
+             raise MethodNotFound(name)
+ 
+     def __gt__(self, other):
+@@ -654,7 +654,7 @@ class Binding(NamedObject):
+         @type definitions: L{Definitions}
+         """
+         self.resolveport(definitions)
+-        for op in self.operations.values():
++        for op in list(self.operations.values()):
+             self.resolvesoapbody(definitions, op)
+             self.resolveheaders(definitions, op)
+             self.resolvefaults(definitions, op)
+@@ -683,8 +683,7 @@ class Binding(NamedObject):
+         """
+         ptop = self.type.operation(op.name)
+         if ptop is None:
+-            raise Exception, \
+-                "operation '%s' not defined in portType" % op.name
++            raise Exception("operation '%s' not defined in portType" % op.name)
+         soap = op.soap
+         parts = soap.input.body.parts
+         if len(parts):
+@@ -720,15 +719,14 @@ class Binding(NamedObject):
+             ref = qualify(mn, self.root, definitions.tns)
+             message = definitions.messages.get(ref)
+             if message is None:
+-                raise Exception, "message'%s', not-found" % mn
++                raise Exception("message'%s', not-found" % mn)
+             pn = header.part
+             for p in message.parts:
+                 if p.name == pn:
+                     header.part = p
+                     break
+             if pn == header.part:
+-                raise Exception, \
+-                    "message '%s' has not part named '%s'" % (ref, pn)
++                raise Exception("message '%s' has not part named '%s'" % (ref, pn))
+ 
+     def resolvefaults(self, definitions, op):
+         """
+@@ -741,8 +739,7 @@ class Binding(NamedObject):
+         """
+         ptop = self.type.operation(op.name)
+         if ptop is None:
+-            raise Exception, \
+-                "operation '%s' not defined in portType" % op.name
++            raise Exception("operation '%s' not defined in portType" % op.name)
+         soap = op.soap
+         for fault in soap.faults:
+             for f in ptop.faults:
+@@ -751,8 +748,7 @@ class Binding(NamedObject):
+                     continue
+             if hasattr(fault, 'parts'):
+                 continue
+-            raise Exception, \
+-                "fault '%s' not defined in portType '%s'" % (fault.name, self.type.name)
++            raise Exception("fault '%s' not defined in portType '%s'" % (fault.name, self.type.name))
+ 
+     def operation(self, name):
+         """
+@@ -854,7 +850,7 @@ class Service(NamedObject):
+         @type names: [str,..]
+         """
+         for p in self.ports:
+-            for m in p.methods.values():
++            for m in list(p.methods.values()):
+                 if names is None or m.name in names:
+                     m.location = url
+ 
+--- suds/xsd/deplist.py.orig	2021-09-20 17:08:56 UTC
++++ suds/xsd/deplist.py
+@@ -77,7 +77,7 @@ class DepList:
+             while len(self.stack):
+                 try:
+                     top = self.top()
+-                    ref = top[1].next()
++                    ref = next(top[1])
+                     refd = self.index.get(ref)
+                     if refd is None:
+                         log.debug('"%s" not found, skipped', Repr(ref))
+@@ -137,4 +137,4 @@ if __name__ == '__main__':
+     x = ('x', ())
+     L = DepList()
+     L.add(c, e, d, b, f, a, x)
+-    print [x[0] for x in L.sort()]
++    print([x[0] for x in L.sort()])
+--- suds/xsd/query.py.orig	2021-09-20 17:08:56 UTC
++++ suds/xsd/query.py
+@@ -54,7 +54,7 @@ class Query(Object):
+         @return: The item matching the search criteria.
+         @rtype: L{sxbase.SchemaObject}
+         """
+-        raise Exception, 'not-implemented by subclass'
++        raise Exception('not-implemented by subclass')
+ 
+     def filter(self, result):
+         """
+--- suds/xsd/sxbasic.py.orig	2021-09-20 17:08:56 UTC
++++ suds/xsd/sxbasic.py
+@@ -26,7 +26,7 @@ from suds.xsd.query import *
+ from suds.sax import Namespace
+ from suds.transport import TransportError
+ from suds.reader import DocumentReader
+-from urlparse import urljoin
++from urllib.parse import urljoin
+ 
+ from logging import getLogger
+ log = getLogger(__name__)
+@@ -667,7 +667,7 @@ class Include(SchemaObject):
+             root.set(TNS, tns)
+         else:
+             if self.schema.tns[1] != tns:
+-                raise Exception, '%s mismatch' % TNS
++                raise Exception('%s mismatch' % TNS)
+ 
+ 
+     def description(self):
+--- tests/external/axis1.py.orig	2021-09-20 17:08:56 UTC
++++ tests/external/axis1.py
+@@ -36,34 +36,34 @@ credentials = dict(username='jortel', password='abc123
+ class MyInitPlugin(InitPlugin):
+ 
+     def initialized(self, context):
+-        print 'PLUGIN (init): initialized: ctx=%s' % context.__dict__
++        print('PLUGIN (init): initialized: ctx=%s' % context.__dict__)
+ 
+ 
+ class MyDocumentPlugin(DocumentPlugin):
+ 
+     def loaded(self, context):
+-        print 'PLUGIN (document): loaded: ctx=%s' % context.__dict__
++        print('PLUGIN (document): loaded: ctx=%s' % context.__dict__)
+ 
+     def parsed(self, context):
+-        print 'PLUGIN (document): parsed: ctx=%s' % context.__dict__
++        print('PLUGIN (document): parsed: ctx=%s' % context.__dict__)
+ 
+ 
+ class MyMessagePlugin(MessagePlugin):
+ 
+     def marshalled(self, context):
+-        print 'PLUGIN (message): marshalled: ctx=%s' % context.__dict__
++        print('PLUGIN (message): marshalled: ctx=%s' % context.__dict__)
+ 
+     def sending(self, context):
+-        print 'PLUGIN (message): sending: ctx=%s' % context.__dict__
++        print('PLUGIN (message): sending: ctx=%s' % context.__dict__)
+ 
+     def received(self, context):
+-        print 'PLUGIN (message): received: ctx=%s' % context.__dict__
++        print('PLUGIN (message): received: ctx=%s' % context.__dict__)
+ 
+     def parsed(self, context):
+-        print 'PLUGIN (message): parsed: ctx=%s' % context.__dict__
++        print('PLUGIN (message): parsed: ctx=%s' % context.__dict__)
+ 
+     def unmarshalled(self, context):
+-        print 'PLUGIN: (massage): unmarshalled: ctx=%s' % context.__dict__
++        print('PLUGIN: (massage): unmarshalled: ctx=%s' % context.__dict__)
+ 
+ 
+ myplugins = (
+@@ -75,27 +75,27 @@ myplugins = (
+ 
+ def start(url):
+     global errors
+-    print '\n________________________________________________________________\n'
+-    print 'Test @ ( %s )\nerrors = %d\n' % (url, errors)
++    print('\n________________________________________________________________\n')
++    print('Test @ ( %s )\nerrors = %d\n' % (url, errors))
+ 
+ try:
+     url = 'http://localhost:8081/axis/services/basic-rpc-encoded?wsdl'
+     start(url)
+     t = HttpAuthenticated(**credentials)
+     client = Client(url, transport=t, cache=None, plugins=myplugins)
+-    print client
++    print(client)
+     #
+     # create a name object using the wsdl
+     #
+-    print 'create name'
++    print('create name')
+     name = client.factory.create('ns0:Name')
+-    name.first = u'jeff'+unichr(1234)
++    name.first = 'jeff'+chr(1234)
+     name.last = 'ortel'
+-    print name
++    print(name)
+     #
+     # create a phone object using the wsdl
+     #
+-    print 'create phone'
++    print('create phone')
+     phoneA = client.factory.create('ns0:Phone')
+     phoneA.npa = 410
+     phoneA.nxx = 555
+@@ -119,18 +119,18 @@ try:
+     # create a person object using the wsdl
+     #
+     person = client.factory.create('ns0:Person')
+-    print '{empty} person=\n%s' % person
++    print('{empty} person=\n%s' % person)
+     person.name = name
+     person.age = 43
+     person.phone = [phoneA,phoneB,phoneC]
+     person.pets = [dog]
+-    print 'person=\n%s' % person
++    print('person=\n%s' % person)
+     #
+     # add the person (using the webservice)
+     #
+-    print 'addPersion()'
++    print('addPersion()')
+     result = client.service.addPerson(person)
+-    print '\nreply(\n%s\n)\n' % str(result)
++    print('\nreply(\n%s\n)\n' % str(result))
+ 
+     #
+     # Async
+@@ -159,22 +159,22 @@ try:
+     ap.age = person.age
+     ap.phone = person.phone
+     ap.pets = person.pets
+-    print 'AnotherPerson\n%s' % ap
++    print('AnotherPerson\n%s' % ap)
+     #
+     # update the person's name (using the webservice)
+     #
+-    print 'updatePersion()'
++    print('updatePersion()')
+     result = client.service.updatePerson(ap, newname)
+-    print '\nreply(\n%s\n)\n' % str(result)
++    print('\nreply(\n%s\n)\n' % str(result))
+     result = client.service.updatePerson(ap, None)
+-    print '\nreply(\n%s\n)\n' % str(result)
+-except WebFault, f:
++    print('\nreply(\n%s\n)\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+@@ -182,19 +182,19 @@ try:
+     start(url)
+     t = HttpAuthenticated(**credentials)
+     client = Client(url, transport=t, cache=None)
+-    print client
++    print(client)
+     #
+     # create a name object as dict
+     #
+-    print 'create name'
++    print('create name')
+     name = {}
+     name['first'] = 'Elmer'
+     name['last'] = 'Fudd'
+-    print name
++    print(name)
+     #
+     # create a phone as dict
+     #
+-    print 'create phone'
++    print('create phone')
+     phoneA = {}
+     phoneA['npa'] = 410
+     phoneA['nxx'] = 555
+@@ -219,133 +219,133 @@ try:
+     # create a person as dict
+     #
+     person = {}
+-    print '{empty} person=\n%s' % person
++    print('{empty} person=\n%s' % person)
+     person['name'] = name
+     person['age'] = 43
+     person['phone'] = [phoneA,phoneB, phoneC]
+     person['pets'] = [dog]
+-    print 'person=\n%s' % person
++    print('person=\n%s' % person)
+     #
+     # add the person (using the webservice)
+     #
+-    print 'addPersion()'
++    print('addPersion()')
+     result = client.service.addPerson(person)
+-    print '\nreply(\n%s\n)\n' % str(result)
+-except WebFault, f:
++    print('\nreply(\n%s\n)\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+-    print "echo(' this is cool ')"
++    print("echo(' this is cool ')")
+     result = client.service.echo('this is cool')
+-    print '\nreply( "%s" )\n' % str(result)
+-    print 'echo(None)'
++    print('\nreply( "%s" )\n' % str(result))
++    print('echo(None)')
+     result = client.service.echo(None)
+-    print '\nreply( "%s" )\n' % str(result)
+-except WebFault, f:
++    print('\nreply( "%s" )\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+-    print 'hello()'
++    print('hello()')
+     result = client.service.hello()
+-    print '\nreply( %s )\n' % str(result)
+-except WebFault, f:
++    print('\nreply( %s )\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+-    print 'testVoid()'
++    print('testVoid()')
+     result = client.service.getVoid()
+-    print '\nreply( %s )\n' % str(result)
+-except WebFault, f:
++    print('\nreply( %s )\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+-    print '** new style arrays **'
++    print('** new style arrays **')
+     words = ['my', 'dog', 'likes', 'steak']
+     result = client.service.printList(words)
+-    print '\nreply( %s )\n' % str(result)
++    print('\nreply( %s )\n' % str(result))
+ 
+-    print '** old style arrays **'
++    print('** old style arrays **')
+     array = client.factory.create('ArrayOf_xsd_string')
+-    print 'ArrayOf_xsd_string=\n%s' % array
++    print('ArrayOf_xsd_string=\n%s' % array)
+     array.item = ['my', 'dog', 'likes', 'steak']
+     result = client.service.printList(array)
+-    print '\nreply( %s )\n' % str(result)
+-except WebFault, f:
++    print('\nreply( %s )\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     s = 'hello'
+     for n in range(0, 3):
+-        print 'getList(%s, %d)' % (s, n)
++        print('getList(%s, %d)' % (s, n))
+         result = client.service.getList(s, n)
+-        print '\nreply( %s )\n' % str(result)
++        print('\nreply( %s )\n' % str(result))
+         assert ( isinstance(result, list) and len(result) == n )
+-except WebFault, f:
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+-    print 'testExceptions()'
++    print('testExceptions()')
+     result = client.service.throwException()
+-    print '\nreply( %s )\n' % tostr(result)
++    print('\nreply( %s )\n' % tostr(result))
+     raise Exception('Fault expected and not raised')
+-except WebFault, f:
+-    print f
+-    print f.fault
+-except Exception, e:
++except WebFault as f:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://localhost:8081/axis/services/basic-rpc-encoded?wsdl'
+     start(url)
+     client = Client(url, faults=False, **credentials)
+-    print 'testExceptions()'
++    print('testExceptions()')
+     result = client.service.throwException()
+-    print '\nreply( %s )\n' % str(result)
+-except WebFault, f:
++    print('\nreply( %s )\n' % str(result))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+-print '\nFinished: errors=%d' % errors
++print('\nFinished: errors=%d' % errors)
+--- tests/external/axis2.py.orig	2021-09-20 17:08:56 UTC
++++ tests/external/axis2.py
+@@ -24,7 +24,7 @@ from datetime import datetime
+ 
+ errors = 0
+ url = 'http://localhost:8080/axis2/services/BasicService?wsdl'
+-print 'url=%s' % url
++print('url=%s' % url)
+ 
+ #
+ # create a service client using the wsdl.
+@@ -34,25 +34,25 @@ client = Client(url)
+ #
+ # print the service (introspection)
+ #
+-print client
++print(client)
+ 
+-print 'printList()'
+-print client.service.printList(['a','b'])
++print('printList()')
++print(client.service.printList(['a','b']))
+ 
+ #
+ # create a name object using the wsdl
+ #
+-print 'create name'
++print('create name')
+ name = client.factory.create('ns2:Name')
+-name.first = u'jeff'+unichr(1234)
++name.first = 'jeff'+chr(1234)
+ name.last = 'ortel'
+ 
+-print name
++print(name)
+ 
+ #
+ # create a phone object using the wsdl
+ #
+-print 'create phone'
++print('create phone')
+ phoneA = client.factory.create('ns2:Phone')
+ phoneA.npa = 410
+ phoneA.nxx = 822
+@@ -67,10 +67,10 @@ phoneB.number = 4406
+ # create a dog
+ #
+ dog = client.factory.create('ns2:Dog')
+-print dog
++print(dog)
+ dog.name = 'Chance'
+ dog.trained = True
+-print dog
++print(dog)
+ 
+ #
+ # create a person object using the wsdl
+@@ -80,7 +80,7 @@ person = client.factory.create('ns2:Person')
+ #
+ # inspect empty person
+ #
+-print '{empty} person=\n%s' % person
++print('{empty} person=\n%s' % person)
+ 
+ person.name = name
+ person.age = None
+@@ -92,14 +92,14 @@ person.pets.append(dog)
+ #
+ # inspect person
+ #
+-print 'person=\n%s' % person
++print('person=\n%s' % person)
+ 
+ #
+ # add the person (using the webservice)
+ #
+-print 'addPersion()'
++print('addPersion()')
+ result = client.service.addPerson(person)
+-print '\nreply(\n%s\n)\n' % result.encode('utf-8')
++print('\nreply(\n%s\n)\n' % result.encode('utf-8'))
+ 
+ #
+ # create a new name object used to update the person
+@@ -111,96 +111,96 @@ newname.last = None
+ #
+ # update the person's name (using the webservice) and print return person object
+ #
+-print 'updatePersion()'
++print('updatePersion()')
+ result = client.service.updatePerson(person, newname)
+-print '\nreply(\n%s\n)\n' % str(result)
++print('\nreply(\n%s\n)\n' % str(result))
+ result = client.service.updatePerson(person, None)
+-print '\nreply(\n%s\n)\n' % str(result)
++print('\nreply(\n%s\n)\n' % str(result))
+ 
+ 
+ #
+ # invoke the echo service
+ #
+-print 'echo()'
++print('echo()')
+ client.service.echo(None)
+ result = client.service.echo('this is cool')
+-print '\nreply( %s )\n' % str(result)
++print('\nreply( %s )\n' % str(result))
+ 
+-print 'echo() with {none}'
++print('echo() with {none}')
+ result = client.service.echo(None)
+-print '\nreply( %s )\n' % str(result)
++print('\nreply( %s )\n' % str(result))
+ 
+ #
+ # invoke the hello service
+ #
+-print 'hello()'
++print('hello()')
+ result = client.service.hello()
+-print '\nreply( %s )\n' % str(result)
++print('\nreply( %s )\n' % str(result))
+ 
+ #
+ # invoke the testVoid service
+ #
+ try:
+-    print 'getVoid()'
++    print('getVoid()')
+     result = client.service.getVoid()
+-    print '\nreply( %s )\n' % str(result)
+-except Exception, e:
+-    print e
++    print('\nreply( %s )\n' % str(result))
++except Exception as e:
++    print(e)
+ 
+ #
+ # test list args
+ #
+-print 'getList(list)'
++print('getList(list)')
+ mylist = ['my', 'dog', 'likes', 'steak']
+ result = client.service.printList(mylist)
+-print '\nreply( %s )\n' % str(result)
++print('\nreply( %s )\n' % str(result))
+ # tuple
+-print 'testListArgs(tuple)'
++print('testListArgs(tuple)')
+ mylist = ('my', 'dog', 'likes', 'steak')
+ result = client.service.printList(mylist)
+-print '\nreply( %s )\n' % str(result)
++print('\nreply( %s )\n' % str(result))
+ 
+ #
+ # test list returned
+ #
+ for n in range(0, 3):
+-    print 'getList(str, %d)' % n
++    print('getList(str, %d)' % n)
+     result = client.service.getList('hello', n)
+-    print '\nreply( %s )\n' % str(result)
++    print('\nreply( %s )\n' % str(result))
+     assert ( isinstance(result, list) and len(result) == n )
+ 
+-print 'addPet()'
++print('addPet()')
+ dog = client.factory.create('ns2:Dog')
+ dog.name = 'Chance'
+ dog.trained = True
+-print dog
++print(dog)
+ try:
+     result = client.service.addPet(person, dog)
+-    print '\nreply( %s )\n' % str(result)
+-except Exception, e:
+-    print e
++    print('\nreply( %s )\n' % str(result))
++except Exception as e:
++    print(e)
+ 
+-print '___________________ E X C E P T I O N S __________________________'
++print('___________________ E X C E P T I O N S __________________________')
+ 
+ #
+ # test exceptions
+ #
+ try:
+-    print 'throwException() faults=True'
++    print('throwException() faults=True')
+     result = client.service.throwException()
+-    print '\nreply( %s )\n' % tostr(result)
+-except Exception, e:
+-    print e
++    print('\nreply( %s )\n' % tostr(result))
++except Exception as e:
++    print(e)
+ 
+ #
+ # test faults
+ #
+ try:
+-    print 'throwException() faults=False'
++    print('throwException() faults=False')
+     client.set_options(faults=False)
+     result = client.service.throwException()
+-    print '\nreply( %s )\n' % tostr(result)
+-except Exception, e:
+-    print e
++    print('\nreply( %s )\n' % tostr(result))
++except Exception as e:
++    print(e)
+ 
+-print '\nfinished: errors=%d' % errors
++print('\nfinished: errors=%d' % errors)
+--- tests/external/jasper.py.orig	2021-09-20 17:08:56 UTC
++++ tests/external/jasper.py
+@@ -26,22 +26,22 @@ errors = 0
+ 
+ 
+ def start(url):
+-    print '\n________________________________________________________________\n'
+-    print 'Test @ ( %s )' % url
++    print('\n________________________________________________________________\n')
++    print('Test @ ( %s )' % url)
+ 
+ try:
+     url = 'http://localhost:9090/jasperserver-pro/services/repository?wsdl'
+     start(url)
+     client = Client(url, username='jeff', password='ortel')
+-    print client
+-    print client.service.list('')
+-except WebFault, f:
++    print(client)
++    print(client.service.list(''))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+-print '\nFinished: errors = %d' % errors
++print('\nFinished: errors = %d' % errors)
+--- tests/external/public.py.orig	2021-09-20 17:08:56 UTC
++++ tests/external/public.py
+@@ -28,151 +28,151 @@ errors = 0
+ 
+ def start(url):
+     global errors
+-    print '\n________________________________________________________________\n'
+-    print 'Test @ ( %s ) %d' % (url, errors)
++    print('\n________________________________________________________________\n')
++    print('Test @ ( %s ) %d' % (url, errors))
+ 
+ try:
+     url = 'http://mssoapinterop.org/asmx/simple.asmx?WSDL'
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+     # string
+     input = "42"
+     d = dict(inputString=input)
+     result = client.service.echoString(**d)
+-    print 'echoString() = %s' % result
++    print('echoString() = %s' % result)
+     assert result == input
+     # int
+     input = 42
+     result = client.service.echoInteger(input)
+-    print 'echoInteger() = %s' % result
++    print('echoInteger() = %s' % result)
+     assert result == input
+     # float
+     input = 4.2
+     result = client.service.echoFloat(input)
+-    print 'echoFloat() = %s' % result
++    print('echoFloat() = %s' % result)
+     assert result == input
+     # suds 0.3.8+
+     result = client.service.echoIntegerArray([])
+-    print 'echoIntegerArray() = %s' % result
++    print('echoIntegerArray() = %s' % result)
+     assert result is None
+     input = [1,2,3,4]
+     result = client.service.echoIntegerArray(input)
+-    print 'echoIntegerArray() = %s' % result
++    print('echoIntegerArray() = %s' % result)
+     assert result == input
+     result = client.service.echoIntegerArray(inputIntegerArray=input)
+-    print 'echoIntegerArray() = %s' % result
++    print('echoIntegerArray() = %s' % result)
+     assert result == input
+-except WebFault, f:
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://jira.atlassian.com/rpc/soap/jirasoapservice-v2?wsdl'
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+     token = client.service.login('soaptester', 'soaptester')
+-    print 'token="%s"' % token
++    print('token="%s"' % token)
+     user = client.service.getUser(token, 'soaptester')
+-    print 'user="%s"' % user
+-except WebFault, f:
++    print('user="%s"' % user)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://jira.atlassian.com/rpc/soap/jirasoapservice-v2?wsdl'
+     start(url+'  ** cloned **')
+     client = Client(url).clone()
+-    print '**clone**\n%s' % client
++    print('**clone**\n%s' % client)
+     token = client.service.login('soaptester', 'soaptester')
+-    print '**clone** token="%s"' % token
++    print('**clone** token="%s"' % token)
+     user = client.service.getUser(token, 'soaptester')
+-    print '**clone** user="%s"' % user
+-except WebFault, f:
++    print('**clone** user="%s"' % user)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = ' http://www.boyzoid.com/comp/randomQuote.cfc?wsdl '
+     start(url)
+     client = Client(url)
+-    print client
+-    print client.service.getQuote(False)
+-except WebFault, f:
++    print(client)
++    print(client.service.getQuote(False))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://www.zenfolio.com/zf/api/zfapi.asmx?wsdl'
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+     #client.setport(0)
+     group = client.factory.create('Group')
+-    print 'Group:\n%s' % group
+-    print 'LoadGroupHierarchy("demo")'
++    print('Group:\n%s' % group)
++    print('LoadGroupHierarchy("demo")')
+     groupHierarchy = client.service.LoadGroupHierarchy("demo")
+-    print 'result:\n%s' % groupHierarchy
+-except WebFault, f:
++    print('result:\n%s' % groupHierarchy)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://cert.synxis.com/interface/ChannelConnect.asmx?WSDL'
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+     #client.setport(0)
+     tpa = client.factory.create('ns1:TPA_Extensions')
+-    print client.service.Ping(tpa, "hello")
+-except WebFault, f:
++    print(client.service.Ping(tpa, "hello"))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'https://sec.neurofuzz-software.com/paos/genSSHA-SOAP.php?wsdl'
+     start(url)
+     client = Client(url)
+-    print client
+-    print client.service.genSSHA('hello', 'sha1')
+-except WebFault, f:
++    print(client)
++    print(client.service.genSSHA('hello', 'sha1'))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+@@ -180,79 +180,79 @@ try:
+     start(url)
+     client = Client(url)
+     #print client.factory.resolver.schema
+-    print client
+-    print 'Logon()'
++    print(client)
++    print('Logon()')
+     reply = client.service.Logon('testuser','test')
+-    print reply
+-except WebFault, f:
++    print(reply)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://soa.ebrev.info/service.wsdl'
+     start(url)
+     client = Client(url)
+-    print client
+-except WebFault, f:
++    print(client)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = 'http://arcweb.esri.com/services/v2/MapImage.wsdl'
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+     env = client.factory.create('ns2:Envelope')
+-    print env
++    print(env)
+     options = client.factory.create('ns4:MapImageOptions')
+-    print options
+-except WebFault, f:
++    print(options)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = "http://www.thomas-bayer.com/axis2/services/BLZService?wsdl"
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+     #client.setport(0)
+-    print client.service.getBank("76251020")
+-except WebFault, f:
++    print(client.service.getBank("76251020"))
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ try:
+     url = "http://arcweb.esri.com/services/v2/RouteFinder.wsdl"
+     start(url)
+     client = Client(url)
+-    print client
+-except WebFault, f:
++    print(client)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+ timer = metrics.Timer()
+@@ -264,19 +264,19 @@ try:
+     client = Client(url)
+     #client.setport(0)
+     timer.stop()
+-    print 'create client: %s' % timer
++    print('create client: %s' % timer)
+     timer.start()
+     s = str(client)
+     timer.stop()
+-    print 'str(client): %s' % timer
+-    print 'client:\n%s' % s
+-except WebFault, f:
++    print('str(client): %s' % timer)
++    print('client:\n%s' % s)
++except WebFault as f:
+     errors += 1
+-    print f
+-    print f.fault
+-except Exception, e:
++    print(f)
++    print(f.fault)
++except Exception as e:
+     errors += 1
+-    print e
++    print(e)
+     tb.print_exc()
+ 
+-print '\nFinished: errors = %d' % errors
++print('\nFinished: errors = %d' % errors)
+--- tests/external/rhq.py.orig	2021-09-20 17:08:56 UTC
++++ tests/external/rhq.py
+@@ -32,8 +32,8 @@ errors = 0
+ 
+ def start(url):
+     global errors
+-    print '\n________________________________________________________________\n'
+-    print 'Test @ ( %s ) %d' % (url, errors)
++    print('\n________________________________________________________________\n')
++    print('Test @ ( %s ) %d' % (url, errors))
+ 
+ 
+ def rhqTest():
+@@ -43,7 +43,7 @@ def rhqTest():
+     url = 'http://localhost.localdomain:7080/rhq-rhq-enterprise-server-ejb3/WebservicesManagerBean?wsdl'
+     start(url)
+     client = Client(url)
+-    print client
++    print(client)
+ 
+     try:
+ 
+@@ -51,7 +51,7 @@ def rhqTest():
+         # create name
+         #
+         name = client.factory.create('name')
+-        name.first = u'Jeff'+unichr(1234)
++        name.first = 'Jeff'+chr(1234)
+         name.last = 'Ortel &amp;lt; Company'
+         #
+         # create a phone object using the wsdl
+@@ -77,22 +77,22 @@ def rhqTest():
+         # create a person object using the wsdl
+         #
+         person = client.factory.create('person')
+-        print person
++        print(person)
+         person.name = name
+         person.age = 43
+         person.phone.append(phoneA)
+         person.phone.append(phoneB)
+         person.pet.append(dog)
+         person.pet.append(cat)
+-        print person
++        print(person)
+         #
+         # addPerson()
+         #
+-        print 'addPersion()'
++        print('addPersion()')
+         result = client.service.addPerson(person)
+         sent = client.last_sent()
+         rcvd = client.last_received()
+-        print '\nreply(\n%s\n)\n' % result
++        print('\nreply(\n%s\n)\n' % result)
+         #
+         # create a new name object used to update the person
+         #
+@@ -102,110 +102,110 @@ def rhqTest():
+         #
+         # update the person's name (using the webservice)
+         #
+-        print 'updatePersion()'
++        print('updatePersion()')
+         result = client.service.updatePerson(person, newname)
+-        print '\nreply(\n%s\n)\n' % str(result)
++        print('\nreply(\n%s\n)\n' % str(result))
+         result = client.service.updatePerson(person, None)
+-        print '\nreply(\n%s\n)\n' % str(result)
+-    except WebFault, f:
++        print('\nreply(\n%s\n)\n' % str(result))
++    except WebFault as f:
+         errors += 1
+-        print f
+-        print f.fault
+-    except Exception, e:
++        print(f)
++        print(f.fault)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+     try:
+-        print "echo('this is cool')"
++        print("echo('this is cool')")
+         result = client.service.echo('this is cool')
+-        print '\nreply( %s )\n' % str(result)
+-        print 'echo(None)'
++        print('\nreply( %s )\n' % str(result))
++        print('echo(None)')
+         result = client.service.echo(None)
+-        print '\nreply( %s )\n' % str(result)
+-    except WebFault, f:
++        print('\nreply( %s )\n' % str(result))
++    except WebFault as f:
+         errors += 1
+-        print f
+-        print f.fault
+-    except Exception, e:
++        print(f)
++        print(f.fault)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+     try:
+-        print 'hello()'
++        print('hello()')
+         result = client.service.hello()
+-        print '\nreply( %s )\n' % str(result)
+-    except WebFault, f:
++        print('\nreply( %s )\n' % str(result))
++    except WebFault as f:
+         errors += 1
+-        print f
+-        print f.fault
+-    except Exception, e:
++        print(f)
++        print(f.fault)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+     try:
+-        print 'testVoid()'
++        print('testVoid()')
+         result = client.service.testVoid()
+-        print '\nreply( %s )\n' % str(result)
+-    except WebFault, f:
++        print('\nreply( %s )\n' % str(result))
++    except WebFault as f:
+         errors += 1
+-        print f
+-        print f.fault
+-    except Exception, e:
++        print(f)
++        print(f.fault)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+     try:
+         mylist = ['my', 'dog', 'likes', 'steak']
+-        print 'testListArgs(%s)' % mylist
++        print('testListArgs(%s)' % mylist)
+         result = client.service.testListArg(mylist)
+-        print '\nreply( %s )\n' % str(result)
+-    except WebFault, f:
++        print('\nreply( %s )\n' % str(result))
++    except WebFault as f:
+         errors += 1
+-        print f
+-        print f.fault
+-    except Exception, e:
++        print(f)
++        print(f.fault)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+     try:
+         s = 'hello'
+         for n in range(0, 3):
+-            print 'getList(%s, %d)' % (s, n)
++            print('getList(%s, %d)' % (s, n))
+             result = client.service.getList(s, n)
+-            print '\nreply( %s )\n' % str(result)
++            print('\nreply( %s )\n' % str(result))
+             if len(result) != n:
+                 errors += 1
+-                print 'expected (%d), reply (%d)' % (n, len(result))
+-    except WebFault, f:
++                print('expected (%d), reply (%d)' % (n, len(result)))
++    except WebFault as f:
+         errors += 1
+-        print f
+-        print f.fault
+-    except Exception, e:
++        print(f)
++        print(f.fault)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+     try:
+-        print 'testExceptions()'
++        print('testExceptions()')
+         result = client.service.testExceptions()
+-        print '\nreply( %s )\n' % tostr(result)
++        print('\nreply( %s )\n' % tostr(result))
+         raise Exception('Fault expected and not raised')
+-    except WebFault, f:
+-        print f
+-        print f.fault
+-        print f.document
+-    except Exception, e:
++    except WebFault as f:
++        print(f)
++        print(f.fault)
++        print(f.document)
++    except Exception as e:
+         errors += 1
+-        print e
++        print(e)
+         tb.print_exc()
+ 
+ 
+ if __name__ == '__main__':
+     errors = 0
+     rhqTest()
+-    print '\nFinished: errors=%d' % errors
++    print('\nFinished: errors=%d' % errors)
+--- tests/external/saxenc.py.orig	2021-09-20 17:08:56 UTC
++++ tests/external/saxenc.py
+@@ -26,30 +26,30 @@ def basic():
+     p = Parser()
+     d = p.parse(string=xml)
+     a = d.root()
+-    print 'A(parsed)=\n%s' % a
++    print('A(parsed)=\n%s' % a)
+     assert str(a) == xml
+     b = Element('a')
+     b.setText('Me &&amp; &lt;b>my</b> shadow\'s <i>dog</i> love to \'play\' and sing "la,la,la";')
+-    print 'B(encoded)=\n%s' % b
++    print('B(encoded)=\n%s' % b)
+     assert str(b) == xml
+-    print 'A(text-decoded)=\n%s' % a.getText()
+-    print 'B(text-decoded)=\n%s' % b.getText()
++    print('A(text-decoded)=\n%s' % a.getText())
++    print('B(text-decoded)=\n%s' % b.getText())
+     assert a.getText() == b.getText()
+-    print 'test pruning'
++    print('test pruning')
+     j = Element('A')
+     j.set('n', 1)
+     j.append(Element('B'))
+-    print j
++    print(j)
+     j.prune()
+-    print j
++    print(j)
+ 
+ def cdata():
+     xml = '<a><![CDATA[<b>This is my &amp;&lt;tag&gt;</b>]]></a>'
+     p = Parser()
+     d = p.parse(string=xml)
+-    print d
++    print(d)
+     a = d.root()
+-    print a.getText()
++    print(a.getText())
+ 
+ if __name__ == '__main__':
+     #basic()

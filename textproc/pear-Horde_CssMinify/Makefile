@@ -7,6 +7,6 @@ CATEGORIES=	textproc www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde CSS Minification
 
-USES=	horde
+USES=	horde cpe
 
 .include <bsd.port.mk>

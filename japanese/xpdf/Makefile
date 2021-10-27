@@ -18,6 +18,10 @@ RUN_DEPENDS=	xpdf:graphics/xpdf \
 		${FONTSDIR}/Ryumin-Light:japanese/font-std \
 		${FONTSDIR}/GothicBBB-Medium:japanese/font-std
 
+USES=		cpe
+
+CPE_VENDOR=	xpdfreader
+
 NO_BUILD=	yes
 SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \

@@ -19,8 +19,9 @@ LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 CONFLICTS_INSTALL=	tinker-[0-9]*
 CONFIGURE_ARGS=	--disable-nls ${ICONV_CONFIGURE_ARG} --with-readline --with-ui
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib libtool:keepla pathfix \
+USES=		autoreconf compiler:c++11-lib cpe libtool:keepla pathfix \
 		iconv ncurses readline shebangfix perl5
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 SHEBANG_FILES=	src/tools/ispellaff2myspell
 USE_LDCONFIG=	yes

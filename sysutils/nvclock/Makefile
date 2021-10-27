@@ -31,7 +31,6 @@ NVCONTROL_CONFIGURE_OFF=	--disable-nvcontrol
 X11_USES=		gnome
 X11_USE=		GNOME=gtk20
 X11_CONFIGURE_OFF=	--disable-gtk
-X11_VARS=		INSTALLS_ICONS=yes
 X11_PLIST_FILES=	bin/nvclock_gtk share/applications/nvclock.desktop \
 			share/icons/hicolor/48x48/apps/nvclock.png
 

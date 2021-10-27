@@ -13,7 +13,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	kubernetes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes

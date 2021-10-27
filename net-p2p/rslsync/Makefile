@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	It is a binary-only program. Source code not available.
+ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
 CONFLICTS_INSTALL=	rslsync-beta
 

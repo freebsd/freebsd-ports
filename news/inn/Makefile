@@ -49,6 +49,8 @@ SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
 
 PLIST_SUB+=		SNAPSHOT=""
 .else
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-storage_buffindexed_shmem.c
+
 PLIST_SUB+=		SNAPSHOT="@comment "
 .endif
 
@@ -87,7 +89,7 @@ PLIST_SUB+=		SQLITE=""
 TO_BE_STRIPPED+=	bin/ovsqlite-server
 CONFIG_FILES+=		ovsqlite.conf
 .else
-.  if ${BRANCH:U} == CURRENT
+.  if ${BRANCH:U} == 2.7
 CONFIGURE_ARGS+=	--without-sqlite3
 .  endif
 PLIST_SUB+=		SQLITE="@comment "

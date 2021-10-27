@@ -12,7 +12,7 @@ COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe pkgconfig python:3.6+
+USES=		cpe pkgconfig python:3.6-3.9
 USE_PYTHON=	distutils concurrent optsuffix
 USE_RC_SUBR=	uwsgi
 CPE_VENDOR=	unbit

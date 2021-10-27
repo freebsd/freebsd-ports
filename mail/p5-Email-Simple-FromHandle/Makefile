@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Simple>=0:mail/p5-Email-Simple \
 		p5-IO-String>=0:devel/p5-IO-String
 
-
 USES=		perl5
 USE_PERL5=	configure
 

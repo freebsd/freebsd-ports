@@ -18,13 +18,13 @@ USES=		fortran gmake pathfix libtool
 
 OPTIONS_DEFINE=	DOCS
 
-OPTIONS_RADIO=  BLAS
-OPTIONS_RADIO_BLAS=     OPENBLAS NETLIB ATLAS
-OPTIONS_DEFAULT=        OPENBLAS
+OPTIONS_RADIO=		BLAS
+OPTIONS_RADIO_BLAS=	ATLAS NETLIB OPENBLAS
+OPTIONS_DEFAULT=	OPENBLAS
 
-OPENBLAS_USES=  blaslapack:openblas
-NETLIB_USES=    blaslapack:netlib
-ATLAS_USES=     blaslapack:atlas
+OPENBLAS_USES=	blaslapack:openblas
+NETLIB_USES=	blaslapack:netlib
+ATLAS_USES=	blaslapack:atlas
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

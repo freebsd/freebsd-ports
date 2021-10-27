@@ -1,6 +1,6 @@
 --- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2021-07-28 16:16:27 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
-@@ -14,228 +14,1350 @@
+@@ -14,228 +14,1354 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -1397,7 +1397,11 @@
 +			    cnp->cn_flags & DOWHITEOUT &&
 +			    cnp->cn_flags & ISWHITEOUT))) {
 +				error = VOP_ACCESS(dvp, VWRITE, cnp->cn_cred,
++#if __FreeBSD_version < 1400037
 +				    cnp->cn_thread);
++#else
++				    curthread);
++#endif
 +				if (error != 0)
 +					goto out;
 +

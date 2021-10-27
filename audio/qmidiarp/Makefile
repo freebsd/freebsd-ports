@@ -28,7 +28,6 @@ USE_QT=		core gui network widgets buildtools_build \
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-qt5 --enable-translations=yes
-INSTALLS_ICONS=	yes
 
 CXXFLAGS+=	-Duint=uint32_t # workaround for https://sourceforge.net/p/qmidiarp/bugs/27/
 

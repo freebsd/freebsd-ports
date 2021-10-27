@@ -19,11 +19,11 @@ USE_PYQT=	core gui printsupport widgets sip_build qtbuilder
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core gui printsupport widgets buildtools_build qmake_build
 
-OPTIONS_DEFINE=         DEBUG
-DEBUG_CONFIGURE_ON=     --debug --trace
+OPTIONS_DEFINE=		DEBUG
+DEBUG_CONFIGURE_ON=	--debug --trace
 
-WRKSRC=         ${WRKDIR}/${DISTNAME}/Python
-ALL_TARGET=     #empty
+WRKSRC=		${WRKDIR}/${DISTNAME}/Python
+ALL_TARGET=	#empty
 
 post-extract:
 	${CP} ${WRKSRC}/pyproject-qt5.toml ${WRKSRC}/pyproject.toml

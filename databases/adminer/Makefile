@@ -12,7 +12,7 @@ COMMENT=	Full-featured database management tool written in PHP
 
 LICENSE=	APACHE20
 
-USES=		php
+USES=		cpe php
 USE_PHP=	session
 
 NO_BUILD=	yes

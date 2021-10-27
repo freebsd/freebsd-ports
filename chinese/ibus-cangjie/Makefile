@@ -20,7 +20,6 @@ USES=		autoreconf gmake gnome libtool pkgconfig python:3.4+
 USE_GNOME=	introspection:run pygobject3 intltool
 GLIB_SCHEMAS=	org.cangjians.ibus.cangjie.gschema.xml \
 		org.cangjians.ibus.quick.gschema.xml
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes

@@ -1,11 +1,11 @@
---- chrome/app/BUILD.gn.orig	2021-07-19 18:45:06 UTC
+--- chrome/app/BUILD.gn.orig	2021-09-24 04:25:56 UTC
 +++ chrome/app/BUILD.gn
-@@ -144,7 +144,7 @@ static_library("test_support") {
+@@ -154,7 +154,7 @@ static_library("test_support") {
      "//v8:v8_headers",
    ]
  
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {
-     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     # TODO(crbug.com/1226159): Complete crash reporting integration on Fuchsia.
      deps += [
        "//components/crash/core/app",

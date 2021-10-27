@@ -89,7 +89,6 @@ GLIB_SCHEMAS=	com.github.wwmm.pulseeffects.gschema.xml \
 		com.github.wwmm.pulseeffects.sourceoutputs.webrtc.gschema.xml \
 		com.github.wwmm.pulseeffects.spectrum.gschema.xml
 
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	meson_post_install.py
 

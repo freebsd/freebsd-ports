@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libublio.so:devel/libublio
 
-USES=		autoreconf localbase pkgconfig
+USES=		autoreconf cpe localbase pkgconfig
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	relan
 GNU_CONFIGURE=	yes

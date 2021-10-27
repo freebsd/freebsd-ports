@@ -9,4 +9,4 @@ Optional thin wrappers allow usage of the library from other languages, e.g.:
 * Julia wrappers (the SymEngine.jl repository)
 * Haskell wrappers (the symengine.hs repository)
 
-WWW: https://github.com/symengine/symengine
+WWW: https://symengine.org/

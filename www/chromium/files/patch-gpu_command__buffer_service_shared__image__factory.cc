@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image_factory.cc.orig	2021-07-19 18:45:17 UTC
+--- gpu/command_buffer/service/shared_image_factory.cc.orig	2021-09-24 04:26:07 UTC
 +++ gpu/command_buffer/service/shared_image_factory.cc
-@@ -28,12 +28,12 @@
+@@ -29,12 +29,12 @@
  #include "ui/gl/gl_implementation.h"
  #include "ui/gl/trace_util.h"
  
@@ -15,7 +15,7 @@
      BUILDFLAG(ENABLE_VULKAN)
  #include "gpu/command_buffer/service/external_vk_image_factory.h"
  #elif defined(OS_ANDROID) && BUILDFLAG(ENABLE_VULKAN)
-@@ -66,8 +66,8 @@
+@@ -68,8 +68,8 @@
  
  namespace gpu {
  
@@ -26,7 +26,7 @@
      BUILDFLAG(ENABLE_VULKAN)
  
  namespace {
-@@ -143,7 +143,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -162,7 +162,7 @@ SharedImageFactory::SharedImageFactory(
    // |gr_context_type|.
    if (gr_context_type_ == GrContextType::kVulkan) {
  #if BUILDFLAG(ENABLE_VULKAN)

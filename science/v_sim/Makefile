@@ -48,7 +48,6 @@ CONFIGURE_ARGS=	--htmldir=${PREFIX}/share/doc --with-openbabel		\
 		--with-libxc=${LOCALBASE} --enable-python-module
 CPPFLAGS+=	${CFLAGS}
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
 

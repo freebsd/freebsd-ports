@@ -10,7 +10,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		cmake gnome
+USES=		cmake cpe gnome
+CPE_VENDOR=	rpm
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

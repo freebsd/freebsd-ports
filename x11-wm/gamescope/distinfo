@@ -1,8 +1,8 @@
-TIMESTAMP = 1631728967
-SHA256 (Plagman-gamescope-3.9.2_GH0.tar.gz) = 1ea332cd57fe1cde6b76e21e3e568f73b4d6b7b85db24d76b5ca9fbd3107ece6
-SIZE (Plagman-gamescope-3.9.2_GH0.tar.gz) = 87957
-SHA256 (emersion-libliftoff-v0.1.0-3-g516cf94_GH0.tar.gz) = 6577292c106aaec29db5296f37c6e796171cb7bad9a5316a5b65b9e9cd8139bc
-SIZE (emersion-libliftoff-v0.1.0-3-g516cf94_GH0.tar.gz) = 29766
+TIMESTAMP = 1634527050
+SHA256 (Plagman-gamescope-3.9.5_GH0.tar.gz) = b49c407f6db1bde0765fdab5b8aaa424cc962b8608f2fbd98873de6e3e820eab
+SIZE (Plagman-gamescope-3.9.5_GH0.tar.gz) = 92411
+SHA256 (emersion-libliftoff-v0.1.0-25-gb7a6958_GH0.tar.gz) = 03e1ef580885a823be468dd6b712ce99ac49aa7ed3ddd617ab1e0528893e6eec
+SIZE (emersion-libliftoff-v0.1.0-25-gb7a6958_GH0.tar.gz) = 30779
 SHA256 (nothings-stb-af1a5bc_GH0.tar.gz) = 3facf6e6f8c3e1715e1a088f22bad9c9202973f9369fb3f088f46cced3f64058
 SIZE (nothings-stb-af1a5bc_GH0.tar.gz) = 1387334
 SHA256 (swaywm-wlroots-0.14.0-239-g9579d62a_GH0.tar.gz) = 84b288330b95d2b1d4e1881b7b220e25535990a5c695dc5bd65cb77e68804105

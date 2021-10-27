@@ -1,5 +1,6 @@
 PORTNAME=	mailman
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ COMMENT=	GNU Mailing List Management System, Core
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>=1.1:mail/py-aiosmtpd@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}alembic>0:databases/py-alembic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}alembic14>0:databases/py-alembic14@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}atpublic>0:devel/py-atpublic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=1.14.0:dns/py-dnspython@${PY_FLAVOR} \
@@ -27,7 +28,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>=1.1:mail/py-aiosmtpd@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}zope.event>0:devel/py-zope.event@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		cpe python:3.5+
+CPE_VENDOR=	gnu
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	mailman
 

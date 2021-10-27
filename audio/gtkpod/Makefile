@@ -20,7 +20,6 @@ SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
 		scripts/sync-palm-jppy.py
 USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

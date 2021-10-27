@@ -8,6 +8,7 @@ share/applications/gxkb.desktop
 %%DATADIR%%/flags/cz_qwerty.png
 %%DATADIR%%/flags/de.png
 %%DATADIR%%/flags/ee.png
+%%DATADIR%%/flags/epo.png
 %%DATADIR%%/flags/es.png
 %%DATADIR%%/flags/fi.png
 %%DATADIR%%/flags/fr.png

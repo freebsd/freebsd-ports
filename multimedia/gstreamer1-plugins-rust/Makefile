@@ -1,6 +1,6 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,15 +11,14 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 
+BROKEN_aarch64=	fails to build: device_name: [0i8; 64usize], expected `u8`, found `i8`
+
 BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 
 USES=		cargo gnome meson pkgconfig ssl
-USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
-GH_TUPLE=	rust-av:flavors:ceb65b8ce94e183c4cf4011da0a40e3a4892c2c0:flavors \
-		fengalin:tokio:2fd1551867c145cabe4548da2e37adc3bdf457a4:tokio
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs
@@ -394,9 +393,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		ws2_32-sys-0.2.1 \
 		wyz-0.2.0 \
 		xml-rs-0.8.4 \
-		zeroize-1.4.1
-CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	tokio:tokio:tokio
+		zeroize-1.4.1 \
+		tokio,tokio-macros@git+https://github.com/fengalin/tokio\#2fd1551867c145cabe4548da2e37adc3bdf457a4 \
+		flavors@git+https://github.com/rust-av/flavors\#ceb65b8ce94e183c4cf4011da0a40e3a4892c2c0
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no

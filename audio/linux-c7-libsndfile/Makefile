@@ -9,10 +9,12 @@ CATEGORIES=	audio linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF) (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	flac gsm libogg libvorbis
 USE_LINUX_RPM=	yes
+
+CPE_VENDOR=	libsndfile_project
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

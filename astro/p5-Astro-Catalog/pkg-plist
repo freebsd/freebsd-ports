@@ -1,3 +1,4 @@
+bin/catalog_convert
 etc/skycat.cfg.sample
 etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog.pm
@@ -9,7 +10,9 @@ etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog/IO/FINDOFF.pm
 %%SITE_PERL%%/Astro/Catalog/IO/FITSTable.pm
 %%SITE_PERL%%/Astro/Catalog/IO/GaiaPick.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Hedwig.pm
 %%SITE_PERL%%/Astro/Catalog/IO/JCMT.pm
+%%SITE_PERL%%/Astro/Catalog/IO/JCMT_OT_SC.pm
 %%SITE_PERL%%/Astro/Catalog/IO/LCOGTFITSTable.pm
 %%SITE_PERL%%/Astro/Catalog/IO/Northstar.pm
 %%SITE_PERL%%/Astro/Catalog/IO/RITMatch.pm
@@ -18,6 +21,7 @@ etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog/IO/Simple.pm
 %%SITE_PERL%%/Astro/Catalog/IO/TST.pm
 %%SITE_PERL%%/Astro/Catalog/IO/UKIRTBS.pm
+%%SITE_PERL%%/Astro/Catalog/IO/VEX.pm
 %%SITE_PERL%%/Astro/Catalog/IO/VOTable.pm
 %%SITE_PERL%%/Astro/Catalog/IO/XY.pm
 %%SITE_PERL%%/Astro/Catalog/Item.pm
@@ -38,6 +42,7 @@ etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog/Transport/REST.pm
 %%SITE_PERL%%/Astro/Catalog/Transport/WebService.pm
 %%SITE_PERL%%/Tk/AstroCatalog.pm
+%%PERL5_MAN1%%/catalog_convert.1.gz
 %%PERL5_MAN3%%/Astro::Catalog.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::ASCII.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::ASSM.3.gz
@@ -47,7 +52,9 @@ etc/sss.cfg.sample
 %%PERL5_MAN3%%/Astro::Catalog::IO::FINDOFF.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::FITSTable.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::GaiaPick.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::Hedwig.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::JCMT.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::JCMT_OT_SC.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::LCOGTFITSTable.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::Northstar.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::RITMatch.3.gz
@@ -56,6 +63,7 @@ etc/sss.cfg.sample
 %%PERL5_MAN3%%/Astro::Catalog::IO::Simple.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::TST.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::UKIRTBS.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::VEX.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::VOTable.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::IO::XY.3.gz
 %%PERL5_MAN3%%/Astro::Catalog::Item.3.gz

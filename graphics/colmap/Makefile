@@ -1,6 +1,6 @@
 PORTNAME=	colmap
 DISTVERSION=	3.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -45,7 +45,6 @@ DOCS_BUILD_DEPENDS=	gmake:devel/gmake \
 			${NONEXISTENT}:textproc/py-sphinx_rtd_theme
 DOCS_PORTDOCS=		*
 
-OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	OPENMP_ENABLED
 .if !exists(/usr/include/omp.h)
 # XXX ports/199603: LLVM openmp in base doesn't support armv6, armv7 yet

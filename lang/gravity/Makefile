@@ -9,7 +9,8 @@ COMMENT=	Embeddable programming language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c11
+USES=		cmake compiler:c11 cpe
+CPE_VENDOR=	creolabs
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

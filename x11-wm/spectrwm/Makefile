@@ -18,7 +18,7 @@ RUN_DEPENDS+=	dmenu:x11/dmenu
 USE_GITHUB=	yes
 GH_ACCOUNT=	conformal
 
-OPTIONS_DEFINE= EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 .include	<bsd.port.options.mk>
 

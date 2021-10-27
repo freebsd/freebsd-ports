@@ -12,7 +12,6 @@ COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-
 USES=		cmake compiler:c++11-lang cpe gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth auth bookmarks codecs completion config \
 		configwidgets coreaddons doctools ecm guiaddons i18n \

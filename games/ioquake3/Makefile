@@ -14,7 +14,7 @@ COMMENT?=	Cleaned-up and enhanced version of Quake 3
 LICENSE?=	GPLv2
 LICENSE_FILE?=	${WRKSRC}/COPYING.txt
 
-USES=		pkgconfig gmake
+USES=		cpe pkgconfig gmake
 
 # Port configuration flags:
 #	CLIENT SERVER TOOLS DLRENDERER GAMELIBS OPUS OPENGL2

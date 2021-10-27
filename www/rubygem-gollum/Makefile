@@ -20,14 +20,15 @@ RUN_DEPENDS=	git:devel/git \
 		rubygem-sinatra1>=1.4.4:www/rubygem-sinatra1 \
 		rubygem-useragent>=0.16.2:devel/rubygem-useragent
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/gollum
-PLIST_DIRS=     %%WWWDIR%%
+PLIST_DIRS=	%%WWWDIR%%
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/gollum

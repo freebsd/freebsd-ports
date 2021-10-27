@@ -94,7 +94,7 @@ ALL_TARGET+=	\
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH:Mpowerpc64*}
 USE_GCC=	yes
 .endif
 

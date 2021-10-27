@@ -18,11 +18,12 @@ BUILD_DEPENDS=	${SYSROOT}>0:lang/${SYSROOT} \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake tar:bzip2
+USES=		cpe gmake tar:bzip2
+CPE_VENDOR=	gnu
 HAS_CONFIGURE=	yes
 NO_MTREE=	yes
 
-NO_LICENSES_INSTALL= yes
+NO_LICENSES_INSTALL=	yes
 
 WRKSRC=			${WRKDIR}/binutils-${PORTVERSION}
 PREFIX?=		${LOCALBASE}/android

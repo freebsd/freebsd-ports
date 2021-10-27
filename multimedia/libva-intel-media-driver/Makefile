@@ -1,6 +1,6 @@
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	21.3.4
+DISTVERSION=	21.4.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
@@ -23,7 +23,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
+ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	gmmlib>=19.3.1:multimedia/gmmlib \
 		libva>=2.7.0:multimedia/libva

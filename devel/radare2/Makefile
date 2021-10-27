@@ -17,8 +17,10 @@ NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
 LIB_DEPENDS=	libcapstone.so:devel/capstone4
 
-USES=		gmake localbase pathfix pkgconfig
+USES=		cpe gmake localbase pathfix pkgconfig
 USE_GITHUB=	yes
+
+CPE_VENDOR=	radare
 
 CONFIGURE_ARGS=	--with-syscapstone
 CFLAGS+=	-I${PREFIX}/include/capstone

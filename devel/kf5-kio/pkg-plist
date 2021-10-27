@@ -175,11 +175,13 @@ include/KF5/KIOFileWidgets/kpreviewwidgetbase.h
 include/KF5/KIOFileWidgets/krecentdirs.h
 include/KF5/KIOFileWidgets/kstatusbarofflineindicator.h
 include/KF5/KIOFileWidgets/kurlnavigator.h
+include/KF5/KIOGui/KEMailClientLauncherJob
 include/KF5/KIOGui/KIO/ApplicationLauncherJob
 include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
 include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/KTerminalLauncherJob
+include/KF5/KIOGui/kemailclientlauncherjob.h
 include/KF5/KIOGui/kio/applicationlauncherjob.h
 include/KF5/KIOGui/kio/commandlauncherjob.h
 include/KF5/KIOGui/kio/faviconrequestjob.h
@@ -652,6 +654,8 @@ share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/proxy/index.docbook
 share/doc/HTML/ru/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/trash/index.docbook
+share/doc/HTML/ru/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
 share/doc/HTML/ru/kioslave5/data/index.docbook
 share/doc/HTML/ru/kioslave5/file/index.cache.bz2

@@ -9,14 +9,16 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance Asterisk voice/video conferencing plugin
 
+DEPRECATED=	Outdated, depends on unsupported version of net/asterisk
+EXPIRATION_DATE=2021-12-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build with net/asterisk1{6,8}
+
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
-
-BUILD_DEPENDS=	asterisk:net/asterisk13
-RUN_DEPENDS=	asterisk:net/asterisk13
 
 USES=		compiler:features gmake
 USE_CSTD=	gnu89

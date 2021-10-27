@@ -6,7 +6,6 @@ man/man1/engrampa.1.gz
 share/applications/engrampa.desktop
 share/caja/extensions/libcaja-engrampa.caja-extension
 share/dbus-1/services/org.mate.Engrampa.service
-%%DATADIR%%/packages.match
 share/help/C/engrampa/figures/engrampa_home.png
 share/help/C/engrampa/figures/engrampa_leftarrow.png
 share/help/C/engrampa/figures/engrampa_main_window.png

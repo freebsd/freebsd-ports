@@ -2,9 +2,10 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	editors java
-MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
+MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
+		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:extsrc \
 		SF/oooextras.mirror/:sf
@@ -75,8 +76,19 @@ LIB_DEPENDS=								\
 		libcairo.so:graphics/cairo				\
 		libpng.so:graphics/png					\
 		libgraphite.so:graphics/silgraphite			\
+		libblas.so:math/blas					\
+		libCbcSolver.so:math/cbc				\
+		libCgl.so:math/cgl					\
+		libcoinasl.so:math/asl					\
+		libClpSolver.so:math/clp				\
 		libCoinMP.so:math/coinmp				\
+		libCoinUtils.so:math/coinutils				\
+		libcoinmumps.so:math/ipopt				\
+		libnauty.so:math/nauty					\
+		libopenblas.so:math/openblas				\
+		libOsi.so:math/osi					\
 		libfreetype.so:print/freetype2				\
+		libharfbuzz.so:print/harfbuzz				\
 		libnss3.so:security/nss					\
 		libexpat.so:textproc/expat2				\
 		libhunspell-1.7.so:textproc/hunspell			\
@@ -93,6 +105,9 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
+# For libgfortran.so and libquadmath.so
+BUILD_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
+RUN_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
@@ -111,10 +126,10 @@ CONFLICTS_INSTALL=	apache-openoffice-devel-*
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	10
+AOOVERSION3=	11
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO4110m2\(Build:9807\)
-GITREVISION=	b1cdbd2c1b
+AOOTAG=		AOO4111m1\(Build:9808\)
+GITREVISION=	bdb20b2a64
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -130,7 +145,6 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
@@ -441,6 +455,8 @@ do-build:
 	. ../${FREEBSD_ENV_SET} ;					  \
 	build.pl --all -P$${numproc} -- -P$${dmproc}
 
+PYDL=	${STAGEDIR}${OOPATH}/program/python-core-2.7.18/lib/lib-dynload
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
 		${STAGEDIR}${PREFIX}/share/mime/packages
@@ -452,6 +468,7 @@ do-install:
 			${TAR} -s '|./[^/]*/||' -xz -f $$i \
 				-C ${STAGEDIR}${PRINSTALLATION_BASEDIR} ; \
 		done
+	${RM} ${PYDL}/_sqlite3.so ${PYDL}/gdbm.so ${PYDL}/readline.so
 	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \

@@ -48,7 +48,6 @@ CPE_PRODUCT=	gnome_display_manager
 USE_GNOME=	cairo dconf gtk30 intltool introspection
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xau xcb xdmcp xorgproto
-INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 GNU_CONFIGURE=	yes

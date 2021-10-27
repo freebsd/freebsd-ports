@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold <m@absolight.net>
 
 PORTNAME=	DateTime-Calendar-Christian
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

@@ -16,7 +16,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		php:flavors
+USES=		cpe php:flavors
+CPE_VENDOR=	getcomposer
 USE_PHP=	ctype filter intl json mbstring openssl phar
 
 CONFLICTS_INSTALL=	php*-composer2-*

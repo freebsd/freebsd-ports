@@ -1,3 +1,772 @@
+  <vuln vid="c848059a-318b-11ec-aa15-0800270512f4">
+    <topic>fail2ban -- possible RCE vulnerability in mailing action using mailutils</topic>
+    <affects>
+      <package>
+	<name>py36-fail2ban</name>
+	<name>py37-fail2ban</name>
+	<name>py38-fail2ban</name>
+	<name>py39-fail2ban</name>
+	<name>py310-fail2ban</name>
+	<range><lt>0.11.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Żoczek reports:</p>
+	<blockquote cite="https://github.com/fail2ban/fail2ban/security/advisories/GHSA-m985-3f3v-cwmm">
+	  <p>
+	    Command <code>mail</code> from mailutils package used in mail actions
+	    like <code>mail-whois</code> can execute command if unescaped sequences
+	    (<code>\n~</code>) are available in "foreign" input (for instance in
+	    whois output).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32749</cvename>
+      <url>https://github.com/fail2ban/fail2ban/security/advisories/GHSA-m985-3f3v-cwmm</url>
+    </references>
+    <dates>
+      <discovery>2021-07-16</discovery>
+      <entry>2021-10-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="757ee63b-269a-11ec-a616-6c3be5272acd">
+    <topic>Grafana -- Snapshot authentication bypass</topic>
+    <affects>
+      <package>
+	<name>grafana8</name>
+	<name>grafana7</name>
+	<name>grafana6</name>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.1.6</lt></range>
+	<range><ge>2.0.1</ge><lt>7.5.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/">
+	  <p>Unauthenticated and authenticated users are able to view the snapshot with the lowest database key by accessing the literal paths:</p>
+	  <ul>
+	    <li><code>/dashboard/snapshot/:key</code>, or</li>
+	    <li><code>/api/snapshots/:key</code></li>
+	  </ul>
+	  <p>If the snapshot "public_mode" configuration setting is set to true (vs default of false), unauthenticated users are able to delete the snapshot with the lowest database key by accessing the literal path:</p>
+	  <ul>
+	    <li><code>/api/snapshots-delete/:deleteKey</code></li>
+	  </ul>
+	  <p>Regardless of the snapshot "public_mode" setting, authenticated users are able to delete the snapshot with the lowest database key by accessing the literal paths:</p>
+	  <ul>
+	    <li><code>/api/snapshots/:key</code>, or</li>
+	    <li><code>/api/snapshots-delete/:deleteKey</code></li>
+	  </ul>
+	  <p>The combination of deletion and viewing enables a complete walk through all snapshot data while resulting in complete snapshot data loss.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39226</cvename>
+      <url>https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/</url>
+    </references>
+    <dates>
+      <discovery>2021-09-15</discovery>
+      <entry>2021-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f4b15f7d-d33a-4cd0-a97b-709d6af0e43e">
+    <topic>minio -- policy restriction issue</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>2021.10.23.03.28.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>minio developers report:</p>
+	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-v64v-g97p-577c">
+	  <p>Looks like policy restriction was not working properly for normal users when they are not svc or STS accounts.</p>
+	  <ul>
+	    <li>svc accounts are now properly fixed to get right permissions when its inherited, so we do not have to set 'owner = true'</li>
+	    <li>sts accounts have always been using right permissions, do not need an explicit lookup</li>
+	    <li>regular users always have proper policy mapping</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41137</cvename>
+      <url>https://github.com/minio/minio/security/advisories/GHSA-v64v-g97p-577c</url>
+    </references>
+    <dates>
+      <discovery>2021-10-12</discovery>
+      <entry>2021-10-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8d65aa3b-31ce-11ec-8c32-a14e8e520dc7">
+    <topic>mailman -- brute-force vuln on list admin password, and CSRF vuln in releases before 2.1.35</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.35</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.35</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1873/NEWS#L8">
+	  <p>A potential for for a list member to carry out an off-line brute
+	    force attack to obtain the list admin password has been reported by
+	    Andre Protas, Richard Cloke and Andy Nuttall of Apple. This is
+	    fixed.</p>
+	  <p>A CSRF attack via the user options page could allow takeover of a
+	      users account. This is fixed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-42096</cvename>
+      <cvename>CVE-2021-42097</cvename>
+      <url>https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1873/NEWS#L8</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1947639</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1947640</url>
+    </references>
+    <dates>
+      <discovery>2021-10-18</discovery>
+      <entry>2021-10-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bdaecfad-3117-11ec-b3b0-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>95.0.4638.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop_19.html">
+	  <p>This release contains 19 security fixes, including:</p>
+	  <ul>
+	    <li>[1246631] High CVE-2021-37981: Heap buffer overflow in Skia.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-09-04</li>
+	    <li>[1248661] High CVE-2021-37982: Use after free in Incognito.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group on 2021-09-11</li>
+	    <li>[1249810] High CVE-2021-37983: Use after free in Dev Tools.
+	      Reported by Zhihua Yao of KunLun Lab on 2021-09-15</li>
+	    <li>[1253399] High CVE-2021-37984: Heap buffer overflow in PDFium.
+	      Reported by Antti Levomäki, Joonas Pihlaja andChristian Jali
+	      from Forcepoint on 2021-09-27</li>
+	    <li>[1241860] High CVE-2021-37985: Use after free in V8. Reported
+	      by Yangkang (@dnpushme) of 360 ATA on 2021-08-20</li>
+	    <li>[1242404] Medium CVE-2021-37986: Heap buffer overflow in
+	      Settings. Reported by raven (@raid_akame) on 2021-08-23</li>
+	    <li>[1206928] Medium CVE-2021-37987: Use after free in Network APIs.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-05-08</li>
+	    <li>[1228248] Medium CVE-2021-37988: Use after free in Profiles.
+	      Reported by raven (@raid_akame) on 2021-07-12</li>
+	    <li>[1233067] Medium CVE-2021-37989: Inappropriate implementation
+	      in Blink. Reported by Matt Dyas, Ankur Sundara on 2021-07-26</li>
+	    <li>[1247395] Medium CVE-2021-37990: Inappropriate implementation
+	      in WebView. Reported by Kareem Selim of CyShield on
+	      2021-09-07</li>
+	    <li>[1250660] Medium CVE-2021-37991: Race in V8. Reported by Samuel
+	      Gross of Google Project Zero on 2021-09-17</li>
+	    <li>[1253746] Medium CVE-2021-37992: Out of bounds read in WebAudio.
+	      Reported by sunburst@Ant Security Light-Year Lab on
+	      2021-09-28</li>
+	    <li>[1255332] Medium CVE-2021-37993: Use after free in PDF
+	      Accessibility. Reported by Cassidy Kim of Amber Security Lab,
+	      OPPO Mobile Telecommunications Corp. Ltd. on 2021-10-02</li>
+	    <li>[1243020] Medium CVE-2021-37996: Insufficient validation of
+	      untrusted input in Downloads. Reported by Anonymous on
+	      2021-08-24</li>
+	    <li>[1100761] Low CVE-2021-37994: Inappropriate implementation in
+	      iFrame Sandbox. Reported by David Erceg on 2020-06-30</li>
+	    <li>[1242315] Low CVE-2021-37995: Inappropriate implementation in
+	      WebApp Installer. Reported by Terence Eden on 2021-08-23</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37981</cvename>
+      <cvename>CVE-2021-37982</cvename>
+      <cvename>CVE-2021-37983</cvename>
+      <cvename>CVE-2021-37984</cvename>
+      <cvename>CVE-2021-37985</cvename>
+      <cvename>CVE-2021-37986</cvename>
+      <cvename>CVE-2021-37987</cvename>
+      <cvename>CVE-2021-37988</cvename>
+      <cvename>CVE-2021-37989</cvename>
+      <cvename>CVE-2021-37990</cvename>
+      <cvename>CVE-2021-37991</cvename>
+      <cvename>CVE-2021-37992</cvename>
+      <cvename>CVE-2021-37993</cvename>
+      <cvename>CVE-2021-37994</cvename>
+      <cvename>CVE-2021-37995</cvename>
+      <cvename>CVE-2021-37996</cvename>
+      <url>https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-19</discovery>
+      <entry>2021-10-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c9387e4d-2f5f-11ec-8be6-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.36</lt></range>
+      </package>
+      <package>
+	<name>mysql80-client</name>
+	<range><lt>8.0.27</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2021.html">
+	  <p>This Critical Patch Update contains 66 new security patches for
+	    Oracle MySQL. 8 of these vulnerabilities may be remotely exploitable
+	    without authentication, i.e., may be exploited over a network without
+	    requiring user credentials.<br/>
+	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 9.8.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpuoct2021.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-16</discovery>
+      <entry>2021-10-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a9c5e89d-2d15-11ec-8363-0022489ad614">
+    <topic>Node.js -- October 2021 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node</name>
+	<range><lt>16.11.1</lt></range>
+      </package>
+      <package>
+	<name>node14</name>
+	<range><lt>14.18.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/">
+	  <h1>HTTP Request Smuggling due to spaced in headers (Medium)(CVE-2021-22959)</h1>
+	  <p>The http parser accepts requests with a space (SP) right after the header name before the colon. This can lead to HTTP Request Smuggling (HRS).</p>
+	  <h1>HTTP Request Smuggling when parsing the body (Medium)(CVE-2021-22960)</h1>
+	  <p>The parse ignores chunk extensions when parsing the body of chunked requests. This leads to HTTP Request Smuggling (HRS) under certain conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22959</cvename>
+      <cvename>CVE-2021-22960</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2021-10-12</discovery>
+      <entry>2021-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a1b931f-2b86-11ec-8acd-c80aa9043978">
+    <topic>OpenSSH -- OpenSSH 6.2 through 8.7 failed to correctly initialise supplemental groups when executing an AuthorizedKeysCommand or AuthorizedPrincipalsCommand</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<name>openssh-portable-hpn</name>
+	<name>openssh-portable-gssapi</name>
+	<range><ge>6.2.p1,1</ge><lt>8.7.p1_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenBSD Project reports:</p>
+	<blockquote cite="https://www.openssh.com/txt/release-8.8">
+	    <p>
+		sshd(8) from OpenSSH 6.2 through 8.7 failed to correctly initialise
+		supplemental groups when executing an AuthorizedKeysCommand or
+		AuthorizedPrincipalsCommand, where a AuthorizedKeysCommandUser or
+		AuthorizedPrincipalsCommandUser directive has been set to run the
+		command as a different user. Instead these commands would inherit
+		the groups that sshd(8) was started with.
+	    </p>
+	    <p>
+		Depending on system configuration, inherited groups may allow
+		AuthorizedKeysCommand/AuthorizedPrincipalsCommand helper programs to
+		gain unintended privilege.
+	    </p>
+	    <p>
+		Neither AuthorizedKeysCommand nor AuthorizedPrincipalsCommand are
+		enabled by default in sshd_config(5).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41617</cvename>
+      <url>https://www.openssh.com/txt/release-8.8</url>
+    </references>
+    <dates>
+      <discovery>2021-09-26</discovery>
+      <entry>2021-10-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a7dd4c2d-77e4-46de-81a2-c453c317f9de">
+    <topic>couchdb -- user privilege escalation</topic>
+    <affects>
+      <package>
+	<name>couchdb</name>
+	<range><lt>3.1.2,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cory Sabol reports:</p>
+    <blockquote cite="https://docs.couchdb.org/en/stable/cve/2021-38295.html">
+      <p>A malicious user with permission to create documents in a
+       database is able to attach a HTML attachment to a document.
+       If a CouchDB admin opens that attachment in a browser, e.g.
+       via the CouchDB admin interface Fauxton, any JavaScript code
+       embedded in that HTML attachment will be executed within the
+       security context of that admin. A similar route is available
+       with the already deprecated _show and _list functionality.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39205</cvename>
+      <url>https://docs.couchdb.org/en/stable/cve/2021-38295.html</url>
+    </references>
+    <dates>
+      <discovery>2021-08-09</discovery>
+      <entry>2021-10-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9a8514f3-2ab8-11ec-b3a1-8c164582fbac">
+    <topic>Ansible -- Ansible user credentials disclosure in ansible-connection module</topic>
+    <affects>
+      <package>
+	<name>py36-ansible-core</name>
+	<name>py37-ansible-core</name>
+	<name>py38-ansible-core</name>
+	<name>py39-ansible-core</name>
+	<name>py310-ansible-core</name>
+	<range><lt>2.11.6</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible-base</name>
+	<name>py37-ansible-base</name>
+	<name>py38-ansible-base</name>
+	<name>py39-ansible-base</name>
+	<name>py310-ansible-base</name>
+	<range><lt>2.10.15</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible2</name>
+	<name>py37-ansible2</name>
+	<name>py38-ansible2</name>
+	<name>py39-ansible2</name>
+	<name>py310-ansible2</name>
+	<range><lt>2.9.27</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible</name>
+	<name>py37-ansible</name>
+	<name>py38-ansible</name>
+	<name>py39-ansible</name>
+	<name>py310-ansible</name>
+	<range><lt>2.9.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat reports:</p>
+	<blockquote cite="">
+       <p>A flaw was found in Ansible Engine's ansible-connection
+       module, where sensitive information such as the Ansible
+       user credentials is disclosed by default in the traceback
+       error message. The highest threat from this vulnerability
+       is to confidentiality.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3620</cvename>
+      <url>https://access.redhat.com/security/cve/CVE-2021-3620</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-3620</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.9/changelogs/CHANGELOG-v2.9.rst#v2-9-27</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.10/changelogs/CHANGELOG-v2.10.rst#v2-10-15</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.11/changelogs/CHANGELOG-v2.11.rst#v2-11-6</url>
+    </references>
+    <dates>
+      <discovery>2021-06-25</discovery>
+      <entry>2021-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="04d2cf7f-2942-11ec-b48c-1c1b0d9ea7e6">
+    <topic>Apache OpenOffice -- multiple vulnerabilities.</topic>
+    <affects>
+      <package>
+	<name>apache-openoffice</name>
+	<range><lt>4.1.11</lt></range>
+      </package>
+      <package>
+	<name>apache-openoffice-devel</name>
+	<range><lt>4.2.1633255994,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Openoffice project reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33035">
+	  <p>Apache OpenOffice opens dBase/DBF documents and shows the contents as spreadsheets. DBF are database files with data organized in fields. When reading DBF data the size of certain fields is not checked: the data is just copied into local variables. A carefully crafted document could overflow the allocated space, leading to the execution of arbitrary code by altering the contents of the program stack. This issue affects Apache OpenOffice up to and including version 4.1.10</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41830">
+	  <p>It is possible for an attacker to manipulate signed documents and macros to appear to come from a trusted source. All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11. See CVE-2021-25633 for the LibreOffice advisory </p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41831">
+	  <p>It is possible for an attacker to manipulate the timestamp of signed documents. All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11. See CVE-2021-25634 for the LibreOffice advisory.</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41832">
+	  <p>It is possible for an attacker to manipulate documents to appear to be signed by a trusted source. All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11. See CVE-2021-25635 for the LibreOffice advisory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33035</cvename>
+      <cvename>CVE-2021-41830</cvename>
+      <cvename>CVE-2021-41831</cvename>
+      <cvename>CVE-2021-41832</cvename>
+      <url>https://cwiki.apache.org/confluence/display/OOOUSERS/AOO+4.1.11+Release+Notes/#AOO4.1.11ReleaseNotes-Security</url>
+    </references>
+    <dates>
+      <discovery>2021-05-04</discovery>
+      <entry>2021-10-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4fce9635-28c0-11ec-9ba8-002324b2fba8">
+    <topic>go -- misc/wasm, cmd/link: do not let command line arguments overwrite global data</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/48797">
+	  <p>When invoking functions from WASM modules, built using GOARCH=wasm
+	  GOOS=js, passing very large arguments can cause portions of the module
+	  to be overwritten with data from the arguments.</p>
+	  <p>If using wasm_exec.js to execute WASM modules, users will need to
+	  replace their copy after rebuilding any modules.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-38297</cvename>
+      <url>https://github.com/golang/go/issues/48797</url>
+    </references>
+    <dates>
+      <discovery>2021-10-06</discovery>
+      <entry>2021-10-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7d3d94d3-2810-11ec-9c51-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>94.0.4606.81</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop.html">
+	  <p>This release contains 4 security fixes, including:</p>
+	  <ul>
+	    <li>[1252878] High CVE-2021-37977: Use after free in Garbage
+	      Collection. Reported by Anonymous on 2021-09-24</li>
+	    <li>[1236318] High CVE-2021-37978: Heap buffer overflow in Blink.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-08-04</li>
+	    <li>[1247260] High CVE-2021-37979: Heap buffer overflow in WebRTC.
+	      Reported by Marcin Towalski of Cisco Talos on 2021-09-07</li>
+	    <li>[1254631] High CVE-2021-37980: Inappropriate implementation in
+	      Sandbox. Reported by Yonghwi Jin (@jinmo123) on 2021-09-30</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37977</cvename>
+      <cvename>CVE-2021-37978</cvename>
+      <cvename>CVE-2021-37979</cvename>
+      <cvename>CVE-2021-37980</cvename>
+      <url>https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-07</discovery>
+      <entry>2021-10-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d001c189-2793-11ec-8fb1-206a8a720317">
+    <topic>Apache httpd -- Path Traversal and Remote Code Execution</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><ge>2.4.49</ge><lt>2.4.51</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache http server project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>critical: Path Traversal and Remote Code Execution in Apache HTTP
+	  Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)
+	  (CVE-2021-42013).</p>
+	  <p>It was found that the fix for CVE-2021-41773 in Apache HTTP
+	  Server 2.4.50 was insufficient. An attacker could use a path
+	  traversal attack to map URLs to files outside the directories
+	  configured by Alias-like directives.</p>
+	  <p>If files outside of these directories are not protected by the
+	  usual default configuration "require all denied", these requests
+	  can succeed. If CGI scripts are also enabled for these aliased
+	  pathes, this could allow for remote code execution.</p>
+	  <p>This issue only affects Apache 2.4.49 and Apache 2.4.50 and not
+	  earlier versions.</p>
+	  <p>Acknowledgements: Reported by Juan Escobar from Dreamlab
+	  Technologies, Fernando Munoz from NULL Life CTF Team, and
+	  Shungo Kumasaka</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-42013</cvename>
+    </references>
+    <dates>
+      <discovery>2021-10-07</discovery>
+      <entry>2021-10-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9bad457e-b396-4452-8773-15bec67e1ceb">
+    <topic>jenkins -- Jenkins core bundles vulnerable version of the commons-httpclient library</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.315</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.303.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-10-06/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-2475 / CVE-2014-3577</h5>
+	  <p>Jenkins core bundles vulnerable version of the commons-httpclient library</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3577</cvename>
+      <url>https://www.jenkins.io/security/advisory/2021-10-06/</url>
+    </references>
+    <dates>
+      <discovery>2021-10-06</discovery>
+      <entry>2021-10-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="25b78bdd-25b8-11ec-a341-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><ge>2.4.49</ge><lt>2.4.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache http server project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <ul>
+	    <li>moderate: null pointer dereference in h2 fuzzing
+	      (CVE-2021-41524)</li>
+	    <li>important: Path traversal and file disclosure vulnerability in
+	      Apache HTTP Server 2.4.49 (CVE-2021-41773)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41524</cvename>
+      <cvename>CVE-2021-41773</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-05</discovery>
+      <entry>2021-10-05</entry>
+      <modified>2021-10-06</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f05dbd1f-2599-11ec-91be-001b217b3468">
+    <topic>Bacula-Web -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bacula-web</name>
+	<range><lt>8.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bacula-Web reports:</p>
+	<blockquote cite="https://www.bacula-web.org/releases/2021-07-11-bacula-web-8.4.2/">
+	  <p>Address Smarty CVE</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26119</cvename>
+      <cvename>CVE-2021-26120</cvename>
+      <url>https://www.bacula-web.org/releases/2021-07-11-bacula-web-8.4.2/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-11</discovery>
+      <entry>2021-10-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9b4806c1-257f-11ec-9db5-0800270512f4">
+    <topic>redis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.0.20211005</lt></range>
+      </package>
+      <package>
+	<name>redis</name>
+	<range><lt>6.2.6</lt></range>
+      </package>
+      <package>
+	<name>redis6</name>
+	<range><lt>6.0.16</lt></range>
+      </package>
+      <package>
+	<name>redis5</name>
+	<range><lt>5.0.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis Team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/GS_9L2KCk9g/m/Q7ZN1R1cDAAJ">
+	  <dl>
+	    <dt>CVE-2021-41099</dt>
+	    <dd>
+	      Integer to heap buffer overflow handling certain string commands
+	      and network payloads, when proto-max-bulk-len is manually configured.
+	    </dd>
+	    <dt>CVE-2021-32762</dt>
+	    <dd>
+	      Integer to heap buffer overflow issue in redis-cli and redis-sentinel
+	      parsing large multi-bulk replies on some older and less common platforms.
+	    </dd>
+	    <dt>CVE-2021-32687</dt>
+	    <dd>
+	      Integer to heap buffer overflow with intsets, when set-max-intset-entries
+	      is manually configured to a non-default, very large value.
+	    </dd>
+	    <dt>CVE-2021-32675</dt>
+	    <dd>
+	      Denial Of Service when processing RESP request payloads with a large
+	      number of elements on many connections.
+	    </dd>
+	    <dt>CVE-2021-32672</dt>
+	    <dd>
+	      Random heap reading issue with Lua Debugger.
+	    </dd>
+	    <dt>CVE-2021-32628</dt>
+	    <dd>
+	      Integer to heap buffer overflow handling ziplist-encoded data types,
+	      when configuring a large, non-default value for hash-max-ziplist-entries,
+	      hash-max-ziplist-value, zset-max-ziplist-entries or zset-max-ziplist-value.
+	    </dd>
+	    <dt>CVE-2021-32627</dt>
+	    <dd>
+	      Integer to heap buffer overflow issue with streams, when configuring
+	      a non-default, large value for proto-max-bulk-len and
+	      client-query-buffer-limit.
+	    </dd>
+	    <dt>CVE-2021-32626</dt>
+	    <dd>
+	      Specially crafted Lua scripts may result with Heap buffer overflow.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41099</cvename>
+      <cvename>CVE-2021-32762</cvename>
+      <cvename>CVE-2021-32687</cvename>
+      <cvename>CVE-2021-32675</cvename>
+      <cvename>CVE-2021-32672</cvename>
+      <cvename>CVE-2021-32628</cvename>
+      <cvename>CVE-2021-32627</cvename>
+      <cvename>CVE-2021-32626</cvename>
+      <url>https://groups.google.com/g/redis-db/c/GS_9L2KCk9g</url>
+    </references>
+    <dates>
+      <discovery>2021-10-04</discovery>
+      <entry>2021-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f84ab297-2285-11ec-9e79-08002789875b">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>

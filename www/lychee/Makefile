@@ -1,7 +1,7 @@
 PORTNAME=	lychee
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www net
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -16,7 +16,6 @@ GH_ACCOUNT=	lycheeverse
 
 PLIST_FILES=	bin/lychee
 
-GH_TUPLE=	softprops:hubcaps:a9e6616ecc7b8eef0ea0eaf6055d9610c8961500:hubcaps
 CARGO_INSTALL_PATH=	lychee-bin
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.15 \
@@ -312,8 +311,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		winreg-0.7.0 \
 		winutil-0.1.1 \
 		wiremock-0.5.2 \
-		xml5ever-0.16.1
-CARGO_USE_GITHUB=	yes
+		xml5ever-0.16.1 \
+		hubcaps@git+https://github.com/softprops/hubcaps.git\#a9e6616ecc7b8eef0ea0eaf6055d9610c8961500
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lychee

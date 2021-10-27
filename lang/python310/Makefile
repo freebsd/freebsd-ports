@@ -2,6 +2,7 @@
 
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -138,6 +139,7 @@ post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
 	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: https://bugs.python.org/issue17975
 .endif
+	${LN} -sf libpython${PYTHON_VER}${ABIFLAGS}.so.1.0 ${STAGEDIR}${PREFIX}/lib/libpython${PYTHON_VER}${ABIFLAGS}.so.1
 # This code block exists for the qemu-user enabled cross build environment.
 # When using this environment in poudriere, CC is not set to the default
 # of /usr/bin/cc and a cross-compile toolchain is used.  We need to hand

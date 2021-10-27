@@ -1,7 +1,7 @@
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -212,7 +212,6 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		xdg-2.2.0 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5
-CARGO_USE_GITHUB=	yes
 CARGO_INSTALL_PATH=	alacritty
 
 CARGO_FEATURES+=	--no-default-features

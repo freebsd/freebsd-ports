@@ -27,7 +27,6 @@ USE_QT=		buildtools_build concurrent core dbus gui network \
 		linguisttools qmake_build sql sql-sqlite3 testlib_build \
 		widgets x11extras
 USE_XORG=	ice sm x11 xcb xext
-INSTALLS_ICONS=	yes
 
 CMAKE_ARGS=	-DUSE_SYSTEM_TAGLIB=ON -DENABLE_UDISKS2=OFF \
 		-DENABLE_GSTREAMER:BOOL=true \

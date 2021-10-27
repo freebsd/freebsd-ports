@@ -18,4 +18,6 @@ RUN_DEPENDS=	p5-File-BaseDir>=0.03:devel/p5-File-BaseDir
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

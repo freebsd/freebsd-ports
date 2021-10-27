@@ -20,7 +20,7 @@ PLIST_FILES=	bin/clamassassin
 GNU_CONFIGURE=	yes
 # Woky configure script doesn't actually respect prefix
 # Instead, it looks for 'bindir'... so set that.
-CONFIGURE_ARGS= --bindir=${STAGEDIR}${PREFIX}/bin
+CONFIGURE_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin
 
 OPTIONS_DEFINE=	CLAMDSCAN SUBREWRITE
 OPTIONS_DEFAULT=	CLAMDSCAN

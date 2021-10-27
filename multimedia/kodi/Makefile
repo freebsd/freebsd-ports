@@ -61,7 +61,6 @@ KODI_ARCH_powerpc64le=	powerpc64le
 
 PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jre

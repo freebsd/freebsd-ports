@@ -29,7 +29,7 @@ quoted_start()
     if [ -e ${required_files} ] ; then
       ${command_plus_args}
       sleep 1
-      pid=`ps ax | awk '{if (match($5, ".*/quoted$") || $5 == "quoted") print $1}`
+      pid=`ps ax | awk '{if (match($5, ".*/quoted$") || $5 == "quoted") print $1}'`
       if [ -z ${pid} ]; then
         echo "${name} failed to start"
         return 1

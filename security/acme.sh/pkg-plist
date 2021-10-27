@@ -14,6 +14,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/haproxy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/keychain.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/kong.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/lighttpd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/mailcow.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/myapi.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/mydevil.sh
@@ -151,6 +152,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_transip.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_unoeuro.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_variomedia.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_veesp.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_vultr.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_websupport.sh
@@ -165,6 +167,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/mailgun.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/pop.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/postmark.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/pushbullet.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/pushover.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/sendgrid.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/slack.sh

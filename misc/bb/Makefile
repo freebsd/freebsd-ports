@@ -15,11 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libaa.so:graphics/aalib \
 		libmikmod.so:audio/libmikmod
 
-BROKEN_aarch64=		fails to build: regparm is not valid on this platform
-BROKEN_armv6=		fails to build: regparm is not valid on this platform
-BROKEN_armv7=		fails to build: regparm is not valid on this platform
-BROKEN_riscv64=		fails to build: regparm is not valid on this platform
-
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/bb-1.3.0
 PORTDOCS=	README
@@ -27,6 +22,12 @@ PLIST_FILES=	bin/bb man/man1/bb.1.gz share/bb/bb.s3m share/bb/bb2.s3m \
 		share/bb/bb3.s3m
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g" \

@@ -26,7 +26,6 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools gmake \
 		gnome localbase pkgconfig tar:xz
 USE_GNOME=	cairo dconf:run gtk30 intlhack libxslt
 GLIB_SCHEMAS=	org.gnome.EasyTAG.gschema.xml org.gnome.EasyTAG.enums.xml
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-DHAVE_GTK
 

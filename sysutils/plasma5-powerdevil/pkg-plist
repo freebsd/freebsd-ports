@@ -22,6 +22,7 @@ lib/systemd/user/plasma-powerdevil.service
 %%QT_PLUGINDIR%%/powerdevildpmsaction_config.so
 %%QT_PLUGINDIR%%/powerdevilhandlebuttoneventsaction_config.so
 %%QT_PLUGINDIR%%/powerdevilkeyboardbrightnesscontrolaction_config.so
+%%QT_PLUGINDIR%%/powerdevilpowerprofileaction_config.so
 %%QT_PLUGINDIR%%/powerdevilrunscriptaction_config.so
 %%QT_PLUGINDIR%%/powerdevilsuspendsessionaction_config.so
 share/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service
@@ -75,6 +76,7 @@ share/kservices5/powerdevildpmsaction.desktop
 share/kservices5/powerdevilglobalconfig.desktop
 share/kservices5/powerdevilhandlebuttoneventsaction.desktop
 share/kservices5/powerdevilkeyboardbrightnesscontrolaction.desktop
+share/kservices5/powerdevilpowerprofileaction.desktop
 share/kservices5/powerdevilprofilesconfig.desktop
 share/kservices5/powerdevilrunscriptaction.desktop
 share/kservices5/powerdevilsuspendsessionaction.desktop
@@ -189,6 +191,7 @@ share/locale/hi/LC_MESSAGES/powerdevil.mo
 share/locale/hr/LC_MESSAGES/powerdevil.mo
 share/locale/hr/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/hr/LC_MESSAGES/powerdevilprofilesconfig.mo
+share/locale/hsb/LC_MESSAGES/powerdevil.mo
 share/locale/hu/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/hu/LC_MESSAGES/powerdevil.mo
 share/locale/hu/LC_MESSAGES/powerdevilactivitiesconfig.mo

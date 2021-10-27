@@ -3,13 +3,16 @@
 PORTNAME=	commons-modeler
 PORTVERSION=	2.0.1
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE_COMMONS_BINARIES
+MASTER_SITES=	https://archive.apache.org/dist/commons/modeler/binaries/
 PKGNAMEPREFIX=	apache-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mechanisms to create Model MBeans compatible with JMX specification
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Abandoned upstream, last release in 2013
+EXPIRATION_DATE=2022-03-31
 
 USE_JAVA=	yes
 NO_BUILD=	yes

@@ -2,7 +2,7 @@
 
 PORTNAME=	pfstools
 DISTVERSION=	2.1.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -88,8 +88,6 @@ GLVIEW_USE=		GL=glut GL=gl,glu
 VIEW_CMAKE_BOOL=	WITH_QT
 VIEW_USES=		gl qt:5
 VIEW_USE=		GL=glut GL=gl,glu QT=core,gui,widgets,buildtools_build,qmake_build
-
-OPENMP_USES=		compiler:openmp
 
 .include <bsd.port.options.mk>
 

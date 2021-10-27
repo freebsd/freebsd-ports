@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://sources.buildroot.net/
 DISTNAME=	DirectFB-${PORTVERSION}
 
-MAINTAINER=	anatoly.borodin@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic development lightweight API
 
 LICENSE=	LGPL21

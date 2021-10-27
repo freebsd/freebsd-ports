@@ -1,11 +1,7 @@
 PORTNAME=	slop
-PORTVERSION=	7.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+DISTVERSION=	7.6
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	38886dd13ccb.patch:-p1 # https://github.com/naelstrof/slop/pull/150
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Make a screen selection and print the selection coordinates to stdout

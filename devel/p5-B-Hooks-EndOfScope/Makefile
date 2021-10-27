@@ -1,7 +1,7 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 
 PORTNAME=	B-Hooks-EndOfScope
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

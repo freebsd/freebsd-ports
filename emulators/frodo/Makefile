@@ -32,6 +32,10 @@ USES+=		sdl
 USE_SDL=	sdl
 .endif
 
+.if ${ARCH:Mpowerpc*}
+USE_GCC=	yes
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|wish|wish${TK_VER}|' \
 		${WRKSRC}/C64_x.i

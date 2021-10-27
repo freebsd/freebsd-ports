@@ -26,7 +26,7 @@ GH_PROJECT=	linux
 GH_TAGNAME=	86dd3afb590eccc1903611bdaa8bac87757eb80d
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=No one has added other architecture ld formats yet
+ONLY_FOR_ARCHS_REASON=ld formats not available for other architectures
 
 WRKSRC_SUBDIR=	tools/lkl
 MAKE_JOBS_UNSAFE=yes

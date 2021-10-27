@@ -17,7 +17,7 @@ DATE_HOLIDAYS_DESC=	Depend on PEAR Date_Holidays
 TIMEOBJECTS_DESC=	Depenbd on Horde timeobjects
 XMLWRITER_DESC=		Depend on PHP xmlwriter extension
 
-USES=		cpe horde php
+USES=		horde php cpe
 USE_PHP=	gettext json simplexml
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -52,8 +52,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Url \
 		Horde_Util \
 		Horde_View
-
-CPE_VENDOR=	horde
 
 RUN_DEPENDS+=	${PEARDIR}/Date.php:devel/pear-Date@${PHP_FLAVOR}
 

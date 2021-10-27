@@ -15,7 +15,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 mips powerpc powerpc64 powerp
 BROKEN_armv6=	fails to link: ../lib/.libs/liblightning.so: undefined reference to `__addsf3'
 BROKEN_armv7=	fails to link: ../lib/.libs/liblightning.so: undefined reference to `__addsf3'
 
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-disassembler=no
 INSTALL_TARGET=	install-strip

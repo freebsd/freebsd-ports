@@ -17,7 +17,6 @@ CONFLICTS=	gnome-utils-2.[0-9]*
 
 USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack gtk30
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

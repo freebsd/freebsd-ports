@@ -18,7 +18,8 @@ CONFLICTS=	rrdtool-1.*
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		cpe gmake libtool
+CPE_VENDOR=	${PORTNAME}_project
 
 CONFIGURE_ARGS=	--disable-tcl --disable-python
 

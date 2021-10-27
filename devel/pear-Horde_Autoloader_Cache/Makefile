@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Autoloader Cache
 
-USES=		horde php
+USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Autoloader
 USE_PHP=	json
 

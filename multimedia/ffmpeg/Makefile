@@ -1,8 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	ffmpeg
-PORTVERSION=	4.4
-PORTREVISION=	3
+PORTVERSION=	4.4.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -34,7 +33,7 @@ NOPRECIOUSMAKEVARS=	yes # ARCH
 PORTSCOUT=	limit:^4\.
 
 # Option CHROMAPRINT disabled, it cannot work and people are baffled.
-OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ARIBB24 ASM ASS BS2B CACA CDIO CELT \
+OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ARIBB24 ASM ASS BS2B CACA CDIO \
 		CODEC2 DAV1D DAVS2 DC1394 DEBUG DOCS DRM FDK_AAC FLITE \
 		FONTCONFIG FREETYPE FREI0R FRIBIDI GLSLANG GME GSM ICONV ILBC \
 		JACK KLVANC KVAZAAR LADSPA LAME LENSFUN LIBBLURAY LIBRSVG2 \
@@ -187,10 +186,6 @@ CACA_CONFIGURE_ENABLE=	libcaca
 # cdio
 CDIO_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_ENABLE=	libcdio
-
-# celt
-CELT_LIB_DEPENDS=	libcelt0.so:audio/celt
-CELT_CONFIGURE_ENABLE=	libcelt
 
 # chromaprint
 CHROMAPRINT_BROKEN=		Dependency loop
@@ -613,6 +608,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--datadir="${DATADIR}" \
 		--pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		--disable-static \
+		--disable-libcelt \
 		--enable-shared \
 		--enable-pic \
 		--enable-gpl \

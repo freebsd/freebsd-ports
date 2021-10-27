@@ -2,6 +2,7 @@
 
 PORTNAME=	fog-local
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Module for the 'fog' gem to support local filesystem storage
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-core1>=1.27<3.0:devel/rubygem-fog-core1
+RUN_DEPENDS=	rubygem-fog-core>=1.27<3.0:devel/rubygem-fog-core
 
 USES=		gem
 USE_RUBY=	yes

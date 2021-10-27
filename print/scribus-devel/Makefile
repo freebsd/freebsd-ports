@@ -2,7 +2,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -44,7 +44,6 @@ USE_QT=		buildtools_build core declarative gui linguisttools_build \
 		network opengl printsupport qmake_build widgets xml
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 USE_GNOME=	libxml2
-INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -DCMAKE_COLOR_MAKEFILE:BOOL=ON
 

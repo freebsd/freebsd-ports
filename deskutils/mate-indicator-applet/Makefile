@@ -1,6 +1,6 @@
 # Created by: Eric Turgeon <ericbsd@FreeBSD.org>
 PORTNAME=	mate-indicator-applet
-PORTVERSION=	1.24.0
+PORTVERSION=	1.26.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -17,17 +17,15 @@ BUILD_DEPENDS=	libindicator>=12.10.1:devel/libindicator
 RUN_DEPENDS=	mate-applets>=1.22.0:x11/mate-applets \
 		libindicator>=12.10.1:devel/libindicator
 
-
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
  		pkgconfig tar:xz
 USE_CSTD=	c11
 
-USE_MATE= 	panel
+USE_MATE=	panel
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 
 PORTNAME=	totem
-PORTVERSION=	3.38.1
+PORTVERSION=	3.38.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -39,7 +39,6 @@ USES=		compiler desktop-file-utils gettext gl gnome localbase meson \
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 pygobject3 gnomedesktop3
 USE_XORG=	x11 xorgproto xtst ice sm
 USE_GSTREAMER1=	core good bad soup ugly
-INSTALLS_ICONS=	yes
 USE_GL=		egl
 USE_LDCONFIG=	yes
 

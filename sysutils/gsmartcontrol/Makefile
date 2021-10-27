@@ -27,7 +27,6 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		compiler:c++11-lang gnome libtool pkgconfig tar:bzip2
 USE_CXXSTD=	c++11
 USE_GNOME=	atkmm cairo glibmm gtk30 gtkmm30 libsigc++20 pangomm
-INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-libglade

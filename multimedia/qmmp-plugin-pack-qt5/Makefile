@@ -1,5 +1,5 @@
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 	SF/qmmp-dev/${PORTNAME}/${PORTVERSION:R}/
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqmmpui.so:multimedia/qmmp-qt5
-BUILD_DEPENDS=	qmmp-qt5>=1.2.0:multimedia/qmmp-qt5
+BUILD_DEPENDS=	qmmp-qt5>=1.5.0:multimedia/qmmp-qt5
 
 CONFLICTS=	${PORTNAME}-0.*
 PORTSCOUT=	limit:^1\..*

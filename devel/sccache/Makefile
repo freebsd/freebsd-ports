@@ -1,7 +1,7 @@
 PORTNAME=	sccache
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.15
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ COMMENT=	Like ccache with cloud storage support
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 USES=		cargo ssl

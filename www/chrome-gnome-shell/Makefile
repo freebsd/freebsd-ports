@@ -26,7 +26,6 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR=lib
 INSTALL_TARGET=	install
 
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/find_program_ex/s|gsha256sum|gsha256sum sha256|g' ${WRKSRC}/CMakeLists.txt

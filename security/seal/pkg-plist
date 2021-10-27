@@ -36,7 +36,6 @@ include/SEAL-%%VER%%/seal/util/gcc.h
 include/SEAL-%%VER%%/seal/util/globals.h
 include/SEAL-%%VER%%/seal/util/hash.h
 include/SEAL-%%VER%%/seal/util/hestdparms.h
-include/SEAL-%%VER%%/seal/util/intel_seal_ext.h
 include/SEAL-%%VER%%/seal/util/iterator.h
 include/SEAL-%%VER%%/seal/util/locks.h
 include/SEAL-%%VER%%/seal/util/mempool.h

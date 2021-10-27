@@ -19,7 +19,8 @@ BROKEN_riscv64=		fails to build: Unknown or unidentifiable processor "riscv"
 OPTIONS_DEFINE=		SSL GMP DOCS
 OPTIONS_DEFAULT=	SSL GMP
 
-USES=		compiler gmake python:build shebangfix tar:tgz
+USES=		compiler cpe gmake python:build shebangfix tar:tgz
+CPE_VENDOR=	${PORTNAME}_project
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--prefix=${PREFIX} --cc ${CHOSEN_COMPILER_TYPE} \

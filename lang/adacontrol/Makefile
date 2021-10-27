@@ -21,7 +21,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	build
 PORTDOCS=	adacontrol*
 
-OPTIONS_DEFINE= DOCS PROJECTS
+OPTIONS_DEFINE=	DOCS PROJECTS
 
 PROJECTS_DESC=		Support the direct processing of .gpr files
 PROJECTS_BUILD_DEPENDS=	gprbuild:devel/gprbuild \

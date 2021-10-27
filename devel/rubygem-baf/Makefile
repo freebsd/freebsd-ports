@@ -1,5 +1,5 @@
 PORTNAME=	baf
-PORTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,8 +8,9 @@ COMMENT=	Basic Application Framework
 
 LICENSE=	BSD3CLAUSE
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

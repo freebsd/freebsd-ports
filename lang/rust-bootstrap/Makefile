@@ -2,7 +2,7 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.55.0
+PORTVERSION=	1.56.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
@@ -19,7 +19,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	untested on other archs
+ONLY_FOR_ARCHS_REASON=	untested on other architectures
 
 BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysroot@${FLAVOR} \
 		cmake:devel/cmake \
@@ -30,7 +30,8 @@ FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
 		powerpc64le powerpc
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		ninja:build perl5 python:3.6+,build tar:xz
+USES=		cpe ninja:build perl5 python:3.6+,build tar:xz
+CPE_VENDOR=	${PORTNAME}-lang
 .if ${FLAVOR} == powerpc64_elfv1
 USE_GCC=	9:build
 .endif

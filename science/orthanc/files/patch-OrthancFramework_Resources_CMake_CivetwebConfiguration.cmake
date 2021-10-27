@@ -1,6 +1,6 @@
---- OrthancFramework/Resources/CMake/CivetwebConfiguration.cmake.orig	2021-05-12 13:54:35 UTC
+--- OrthancFramework/Resources/CMake/CivetwebConfiguration.cmake.orig	2021-08-30 20:14:33 UTC
 +++ OrthancFramework/Resources/CMake/CivetwebConfiguration.cmake
-@@ -98,32 +98,38 @@ else()
+@@ -109,32 +109,38 @@ else()
  
    cmake_reset_check_state()
    set(CMAKE_REQUIRED_LIBRARIES dl pthread)
@@ -34,7 +34,7 @@
 +      message(FATAL_ERROR "Unable to use mg_start from civetweb library")
 +    endif()
 +
-+    CHECK_LIBRARY_EXISTS(${CIVETWEB_LIB} mg_disable_keep_alive "" CIVETWEB_HAS_DISABLE_KEEP_ALIVE)
++    CHECK_LIBRARY_EXISTS(${CIVETWEB_LIB} mg_disable_connection_keep_alive "" CIVETWEB_HAS_DISABLE_KEEP_ALIVE)
 +    if (CIVETWEB_HAS_DISABLE_KEEP_ALIVE)
 +      add_definitions(
 +        -DCIVETWEB_HAS_DISABLE_KEEP_ALIVE=1
@@ -42,7 +42,7 @@
 +        )
 +      message("Performance: Your system-wide distribution of civetweb is configured for best performance")
 +    else()
-+      message(WARNING "Performance: Your system-wide distribution of civetweb does not feature the mg_disable_keep_alive() function, and WebDAV will only be available for read-only access")
++      message(WARNING "Performance: Your system-wide distribution of civetweb does not feature the mg_disable_connection_keep_alive() function, and WebDAV will only be available for read-only access")
 +      add_definitions(
 +        -DCIVETWEB_HAS_DISABLE_KEEP_ALIVE=0
 +        -DCIVETWEB_HAS_WEBDAV_WRITING=0

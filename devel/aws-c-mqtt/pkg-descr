@@ -1,0 +1,4 @@
+This library contains an MQTT implementation that is simple
+and easy to use, but also quite powerful and low on unnecessary copies.
+
+WWW: https://github.com/awslabs/aws-c-mqtt

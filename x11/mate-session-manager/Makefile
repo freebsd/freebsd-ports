@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	mate-session-manager
-PORTVERSION=	1.24.3
+PORTVERSION=	1.26.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--disable-docbook-docs \
 		--with-default-wm=mate-wm \
 		--enable-upower \
 		--with-systemd=no
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.mate.session.gschema.xml
 

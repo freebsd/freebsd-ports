@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Known issues:
+- mesa-devel > 21.2.b.3070 breaks Vulkan renderer on Intel GPUs
+  https://github.com/yuzu-emu/yuzu/issues/7116
+EOM
+}
+]

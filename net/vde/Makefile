@@ -16,7 +16,8 @@ CONFLICTS=	vde2-[0-9]*
 MAKE_ARGS=	CC="${CC}"
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
-USES=		gmake tar:tgz
+USES=		cpe gmake tar:tgz
+CPE_VENDOR=	${PORTNAME}_project
 
 CFLAGS+=	-fPIC
 

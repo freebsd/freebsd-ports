@@ -35,7 +35,6 @@ USE_GNOME=	cairo gnomedesktop3 gtk30
 USES=		gettext gnome localbase:ldflags meson perl5 \
 		pkgconfig python:3.6+,build tar:xz xorg
 USE_PERL5=	build
-INSTALLS_ICONS=	yes
 #		-Dnssdb_dir=${LOCALBASE}/share/certs/ca-root-nss.crt
 MESON_ARGS=	-Dnssdb_dir=${LOCALBASE}/share/certs/ \
 		-Dalsa=false \

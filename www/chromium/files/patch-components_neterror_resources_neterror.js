@@ -1,6 +1,6 @@
---- components/neterror/resources/neterror.js.orig	2021-04-14 18:40:59 UTC
+--- components/neterror/resources/neterror.js.orig	2021-09-14 01:51:54 UTC
 +++ components/neterror/resources/neterror.js
-@@ -144,7 +144,7 @@ function detailsButtonClick() {
+@@ -123,7 +123,7 @@ function detailsButtonClick() {
  }
  
  let primaryControlOnLeft = true;

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils cython
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-bsd
 GH_TAGNAME=	6d148fa

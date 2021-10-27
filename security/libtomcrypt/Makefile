@@ -13,7 +13,8 @@ COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool:build tar:xz
+USES=		cpe gmake libtool:build tar:xz
+CPE_VENDOR=	libtom
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

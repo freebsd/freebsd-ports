@@ -2,7 +2,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.16
-PORTREVISION=	4
+PORTREVISION=	7
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -380,7 +380,6 @@ WITH_DVD_DEVICE?=/dev/cd0
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-INSTALLS_ICONS=	yes
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}

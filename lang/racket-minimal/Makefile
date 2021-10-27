@@ -25,7 +25,8 @@ NOT_FOR_ARCHS_REASON=	unsupported platform
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		gmake iconv libtool localbase tar:tgz
+USES=		cpe gmake iconv libtool localbase tar:tgz
+CPE_VENDOR=	${PORTNAME}-lang
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libffi \
 		--enable-places \
@@ -42,9 +43,11 @@ OPTIONS_DEFAULT=	CS
 OPTIONS_SUB=	yes
 
 OPTIONS_DEFAULT_powerpc=	BC
+OPTIONS_DEFAULT_powerpc64=	BC
 OPTIONS_DEFINE_amd64=	FUTURES JIT
 OPTIONS_DEFINE_i386=	FUTURES JIT
 OPTIONS_EXCLUDE_powerpc=	CS
+OPTIONS_EXCLUDE_powerpc64=	CS
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	BC CS

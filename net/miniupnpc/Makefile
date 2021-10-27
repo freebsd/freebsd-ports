@@ -10,9 +10,11 @@ COMMENT?=	UPnP IGD client lightweight library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		gmake
+USES+=		cpe gmake
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	miniupnp_project
 
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX}

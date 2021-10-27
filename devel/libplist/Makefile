@@ -10,7 +10,8 @@ COMMENT?=	Library to handle Apple Property List format
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES+=		autoreconf compiler gnome libtool pathfix pkgconfig tar:bzip2
+USES+=		autoreconf compiler cpe gnome libtool pathfix pkgconfig tar:bzip2
+CPE_VENDOR=	libimobiledevice
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

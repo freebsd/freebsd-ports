@@ -3,7 +3,7 @@
 PORTNAME=	mypaint
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/garynthompson/${PORTNAME}/commit/
@@ -35,12 +35,9 @@ PYDISTUTILS_BUILD_TARGET=	build build_ext
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-std=c99
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	OPENMP
 OPTIONS_DEFAULT_amd64=	OPENMP
-
-OPENMP_USES=			compiler:openmp
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mypaint/lib/_mypaintlib*.so

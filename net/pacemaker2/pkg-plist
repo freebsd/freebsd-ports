@@ -18,6 +18,7 @@ include/pacemaker/crm/common/logging_compat.h
 include/pacemaker/crm/common/mainloop.h
 include/pacemaker/crm/common/mainloop_compat.h
 include/pacemaker/crm/common/nvpair.h
+include/pacemaker/crm/common/output.h
 include/pacemaker/crm/common/results.h
 include/pacemaker/crm/common/util.h
 include/pacemaker/crm/common/util_compat.h
@@ -26,7 +27,6 @@ include/pacemaker/crm/common/xml_compat.h
 include/pacemaker/crm/compatibility.h
 include/pacemaker/crm/crm.h
 include/pacemaker/crm/crm_compat.h
-include/pacemaker/crm/fencing/compat.h
 include/pacemaker/crm/lrmd.h
 include/pacemaker/crm/msg_xml.h
 include/pacemaker/crm/msg_xml_compat.h
@@ -48,15 +48,15 @@ lib/libcib.so.27.2.0
 lib/libcrmcluster.a
 lib/libcrmcluster.so
 lib/libcrmcluster.so.29
-lib/libcrmcluster.so.29.0.6
+lib/libcrmcluster.so.29.0.7
 lib/libcrmcommon.a
 lib/libcrmcommon.so
 lib/libcrmcommon.so.34
-lib/libcrmcommon.so.34.6.0
+lib/libcrmcommon.so.34.7.0
 lib/libcrmservice.a
 lib/libcrmservice.so
 lib/libcrmservice.so.28
-lib/libcrmservice.so.28.2.3
+lib/libcrmservice.so.28.2.4
 lib/liblrmd.a
 lib/liblrmd.so
 lib/liblrmd.so.28
@@ -64,7 +64,7 @@ lib/liblrmd.so.28.1.2
 lib/libpacemaker.a
 lib/libpacemaker.so
 lib/libpacemaker.so.1
-lib/libpacemaker.so.1.2.0
+lib/libpacemaker.so.1.2.1
 lib/libpe_rules.a
 lib/libpe_rules.so
 lib/libpe_rules.so.26
@@ -72,11 +72,11 @@ lib/libpe_rules.so.26.3.0
 lib/libpe_status.a
 lib/libpe_status.so
 lib/libpe_status.so.28
-lib/libpe_status.so.28.4.0
+lib/libpe_status.so.28.4.1
 lib/libstonithd.a
 lib/libstonithd.so
 lib/libstonithd.so.26
-lib/libstonithd.so.26.5.0
+lib/libstonithd.so.26.5.1
 lib/ocf/resource.d/pacemaker/ClusterMon
 lib/ocf/resource.d/pacemaker/Dummy
 lib/ocf/resource.d/pacemaker/HealthCPU
@@ -92,7 +92,7 @@ lib/ocf/resource.d/pacemaker/o2cb
 lib/ocf/resource.d/pacemaker/ping
 lib/ocf/resource.d/pacemaker/remote
 %%PYTHON_SITELIBDIR%%/cts/CIB.py
-%%PYTHON_SITELIBDIR%%/cts/CM_common.py
+%%PYTHON_SITELIBDIR%%/cts/ClusterManager.py
 %%PYTHON_SITELIBDIR%%/cts/CM_corosync.py
 %%PYTHON_SITELIBDIR%%/cts/CTS.py
 %%PYTHON_SITELIBDIR%%/cts/CTSaudits.py
@@ -102,8 +102,8 @@ lib/ocf/resource.d/pacemaker/remote
 %%PYTHON_SITELIBDIR%%/cts/__init__.py
 %%PYTHON_SITELIBDIR%%/cts/__pycache__/CIB%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/cts/__pycache__/CIB%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/cts/__pycache__/CM_common%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/cts/__pycache__/CM_common%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/cts/__pycache__/ClusterManager%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/cts/__pycache__/ClusterManager%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/cts/__pycache__/CM_corosync%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/cts/__pycache__/CM_corosync%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/cts/__pycache__/CTS%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -248,6 +248,10 @@ sbin/stonith_admin
 %%DATADIR%%/api/api-result-2.7.rng
 %%DATADIR%%/api/api-result-2.8.rng
 %%DATADIR%%/api/api-result-2.9.rng
+%%DATADIR%%/api/api-result-2.10.rng
+%%DATADIR%%/api/api-result-2.11.rng
+%%DATADIR%%/api/api-result-2.12.rng
+%%DATADIR%%/api/api-result-2.13.rng
 %%DATADIR%%/api/api-result-next.rng
 %%DATADIR%%/api/api-result.rng
 %%DATADIR%%/api/command-output-1.0.rng
@@ -259,10 +263,14 @@ sbin/stonith_admin
 %%DATADIR%%/api/crm_mon-2.7.rng
 %%DATADIR%%/api/crm_mon-2.8.rng
 %%DATADIR%%/api/crm_mon-2.9.rng
+%%DATADIR%%/api/crm_mon-2.12.rng
+%%DATADIR%%/api/crm_mon-2.13.rng
 %%DATADIR%%/api/crm_resource-2.4.rng
 %%DATADIR%%/api/crm_resource-2.6.rng
 %%DATADIR%%/api/crm_resource-2.7.rng
+%%DATADIR%%/api/crm_resource-2.11.rng
 %%DATADIR%%/api/crm_simulate-2.8.rng
+%%DATADIR%%/api/crm_simulate-2.12.rng
 %%DATADIR%%/api/crmadmin-2.4.rng
 %%DATADIR%%/api/digests-2.6.rng
 %%DATADIR%%/api/digests-2.9.rng
@@ -271,7 +279,9 @@ sbin/stonith_admin
 %%DATADIR%%/api/generic-list-2.4.rng
 %%DATADIR%%/api/item-1.1.rng
 %%DATADIR%%/api/node-attrs-2.8.rng
+%%DATADIR%%/api/node-history-2.12.rng
 %%DATADIR%%/api/nodes-2.8.rng
+%%DATADIR%%/api/pacemakerd-2.10.rng
 %%DATADIR%%/api/resources-2.4.rng
 %%DATADIR%%/api/status-2.0.rng
 %%DATADIR%%/api/stonith_admin-1.0.rng
@@ -365,6 +375,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/cli/crm_diff_new.xml
 %%DATADIR%%/tests/cli/crm_diff_old.xml
 %%DATADIR%%/tests/cli/crm_mon-partial.xml
+%%DATADIR%%/tests/cli/crm_mon-unmanaged.xml
 %%DATADIR%%/tests/cli/crm_mon.xml
 %%DATADIR%%/tests/cli/crm_resource_digests.xml
 %%DATADIR%%/tests/cli/crmadmin-cluster-remote-guest-nodes.xml
@@ -585,6 +596,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/dot/coloc-unpromoted-anti.dot
 %%DATADIR%%/tests/scheduler/dot/coloc_fp_logic.dot
 %%DATADIR%%/tests/scheduler/dot/colocate-primitive-with-clone.dot
+%%DATADIR%%/tests/scheduler/dot/colocate-unmanaged-group.dot
 %%DATADIR%%/tests/scheduler/dot/colocated-utilization-clone.dot
 %%DATADIR%%/tests/scheduler/dot/colocated-utilization-group.dot
 %%DATADIR%%/tests/scheduler/dot/colocated-utilization-primitive-1.dot
@@ -806,6 +818,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/dot/probe-2.dot
 %%DATADIR%%/tests/scheduler/dot/probe-3.dot
 %%DATADIR%%/tests/scheduler/dot/probe-4.dot
+%%DATADIR%%/tests/scheduler/dot/probe-pending-node.dot
 %%DATADIR%%/tests/scheduler/dot/probe-timeout.dot
 %%DATADIR%%/tests/scheduler/dot/promoted-0.dot
 %%DATADIR%%/tests/scheduler/dot/promoted-1.dot
@@ -1376,6 +1389,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/exp/coloc-unpromoted-anti.exp
 %%DATADIR%%/tests/scheduler/exp/coloc_fp_logic.exp
 %%DATADIR%%/tests/scheduler/exp/colocate-primitive-with-clone.exp
+%%DATADIR%%/tests/scheduler/exp/colocate-unmanaged-group.exp
 %%DATADIR%%/tests/scheduler/exp/colocated-utilization-clone.exp
 %%DATADIR%%/tests/scheduler/exp/colocated-utilization-group.exp
 %%DATADIR%%/tests/scheduler/exp/colocated-utilization-primitive-1.exp
@@ -1597,6 +1611,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/exp/probe-2.exp
 %%DATADIR%%/tests/scheduler/exp/probe-3.exp
 %%DATADIR%%/tests/scheduler/exp/probe-4.exp
+%%DATADIR%%/tests/scheduler/exp/probe-pending-node.exp
 %%DATADIR%%/tests/scheduler/exp/probe-timeout.exp
 %%DATADIR%%/tests/scheduler/exp/promoted-0.exp
 %%DATADIR%%/tests/scheduler/exp/promoted-1.exp
@@ -2167,6 +2182,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/scores/coloc-unpromoted-anti.scores
 %%DATADIR%%/tests/scheduler/scores/coloc_fp_logic.scores
 %%DATADIR%%/tests/scheduler/scores/colocate-primitive-with-clone.scores
+%%DATADIR%%/tests/scheduler/scores/colocate-unmanaged-group.scores
 %%DATADIR%%/tests/scheduler/scores/colocated-utilization-clone.scores
 %%DATADIR%%/tests/scheduler/scores/colocated-utilization-group.scores
 %%DATADIR%%/tests/scheduler/scores/colocated-utilization-primitive-1.scores
@@ -2388,6 +2404,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/scores/probe-2.scores
 %%DATADIR%%/tests/scheduler/scores/probe-3.scores
 %%DATADIR%%/tests/scheduler/scores/probe-4.scores
+%%DATADIR%%/tests/scheduler/scores/probe-pending-node.scores
 %%DATADIR%%/tests/scheduler/scores/probe-timeout.scores
 %%DATADIR%%/tests/scheduler/scores/promoted-0.scores
 %%DATADIR%%/tests/scheduler/scores/promoted-1.scores
@@ -2959,6 +2976,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/summary/coloc-unpromoted-anti.summary
 %%DATADIR%%/tests/scheduler/summary/coloc_fp_logic.summary
 %%DATADIR%%/tests/scheduler/summary/colocate-primitive-with-clone.summary
+%%DATADIR%%/tests/scheduler/summary/colocate-unmanaged-group.summary
 %%DATADIR%%/tests/scheduler/summary/colocated-utilization-clone.summary
 %%DATADIR%%/tests/scheduler/summary/colocated-utilization-group.summary
 %%DATADIR%%/tests/scheduler/summary/colocated-utilization-primitive-1.summary
@@ -3180,6 +3198,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/summary/probe-2.summary
 %%DATADIR%%/tests/scheduler/summary/probe-3.summary
 %%DATADIR%%/tests/scheduler/summary/probe-4.summary
+%%DATADIR%%/tests/scheduler/summary/probe-pending-node.summary
 %%DATADIR%%/tests/scheduler/summary/probe-timeout.summary
 %%DATADIR%%/tests/scheduler/summary/promoted-0.summary
 %%DATADIR%%/tests/scheduler/summary/promoted-1.summary
@@ -3750,6 +3769,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/xml/coloc-unpromoted-anti.xml
 %%DATADIR%%/tests/scheduler/xml/coloc_fp_logic.xml
 %%DATADIR%%/tests/scheduler/xml/colocate-primitive-with-clone.xml
+%%DATADIR%%/tests/scheduler/xml/colocate-unmanaged-group.xml
 %%DATADIR%%/tests/scheduler/xml/colocated-utilization-clone.xml
 %%DATADIR%%/tests/scheduler/xml/colocated-utilization-group.xml
 %%DATADIR%%/tests/scheduler/xml/colocated-utilization-primitive-1.xml
@@ -3971,6 +3991,7 @@ sbin/stonith_admin
 %%DATADIR%%/tests/scheduler/xml/probe-2.xml
 %%DATADIR%%/tests/scheduler/xml/probe-3.xml
 %%DATADIR%%/tests/scheduler/xml/probe-4.xml
+%%DATADIR%%/tests/scheduler/xml/probe-pending-node.xml
 %%DATADIR%%/tests/scheduler/xml/probe-timeout.xml
 %%DATADIR%%/tests/scheduler/xml/promoted-0.xml
 %%DATADIR%%/tests/scheduler/xml/promoted-1.xml

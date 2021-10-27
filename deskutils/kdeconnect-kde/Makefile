@@ -15,7 +15,6 @@ RUN_DEPENDS=	sshpass:security/sshpass \
 		sshfs:sysutils/fusefs-sshfs \
 		kpeoplevcard>0:net/kpeoplevcard
 
-
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qca qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \

@@ -2,6 +2,7 @@
 
 PORTNAME=	pluma
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -29,8 +30,16 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-SHEBANG_FILES=	${WRKSRC}/plugins/externaltools/data/search-recursive.tool.in \
+SHEBANG_FILES=	\
+		${WRKSRC}/data/pluma-bugreport.sh.in \
+		${WRKSRC}/plugins/externaltools/data/build.tool.in \
+		${WRKSRC}/plugins/externaltools/data/open-terminal-here.tool.in \
+		${WRKSRC}/plugins/externaltools/data/remove-trailing-spaces.tool.in \
+		${WRKSRC}/plugins/externaltools/data/run-command.tool.in \
+		${WRKSRC}/plugins/externaltools/data/search-recursive.tool.in \
 		${WRKSRC}/plugins/externaltools/data/switch-c.tool.in
+SHEBANG_LANG=	sh
+sh_CMD=		/bin/sh
 
 GLIB_SCHEMAS=	org.mate.pluma.gschema.xml \
 		org.mate.pluma.plugins.filebrowser.gschema.xml \

@@ -31,8 +31,6 @@ USE_XORG=	x11 xext xinerama xrandr xscrnsaver
 
 USE_GNOME=	cairo gdkpixbuf2 intltool introspection:build libgnomekbd pygobject3
 
-INSTALLS_ICONS=	yes
-
 SHEBANG_GLOB=	*.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

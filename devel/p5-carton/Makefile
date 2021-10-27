@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Carton-v${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module dependency manager
 
 LICENSE=	ART10 GPLv1+

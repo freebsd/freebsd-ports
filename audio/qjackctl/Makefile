@@ -2,8 +2,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_9_4
-PORTREVISION=	1
+DISTVERSION=	0_9_5
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,13 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		autoreconf compiler:c++11-lib gl gmake localbase pkgconfig qt:5
-GNU_CONFIGURE=	yes
 USE_QT=		core gui network widgets x11extras xml buildtools_build linguisttools_build qmake_build
 USE_GL=		gl
 USE_CXXSTD=	c++11
+USE_GCC=	yes # workaround for https://sourceforge.net/p/qjackctl/tickets/57/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-jack_version
 
 BINARY_ALIAS=	qmake=${QMAKE}
 

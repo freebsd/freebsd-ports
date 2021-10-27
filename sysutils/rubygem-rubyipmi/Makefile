@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	rubyipmi
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,12 @@ COMMENT=	Command line wrapper for ipmitool and freeipmi
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:sysutils/freeipmi
+RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:sysutils/freeipmi \
+		rubygem-highline>=0:devel/rubygem-highline
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

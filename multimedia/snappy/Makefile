@@ -21,7 +21,6 @@ USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	yes
-INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

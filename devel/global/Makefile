@@ -11,7 +11,7 @@ COMMENT=	Source code tag system
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool ncurses perl5 shebangfix
+USES=		cpe libtool ncurses perl5 shebangfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -19,6 +19,8 @@ TEST_TARGET=	check
 USE_CSTD=	c99
 
 INFO=		global
+
+CPE_VENDOR=	gnu
 
 SHEBANG_GLOB=	*.pl
 

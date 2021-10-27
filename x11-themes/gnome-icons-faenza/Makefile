@@ -17,7 +17,6 @@ USES=		gnome
 WRKSRC=		${WRKDIR}/${PORTNAME}-icon-theme-${PORTVERSION:R}
 NO_BUILD=	yes
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 THEMES=		Faenza Faenza-Dark Faenza-Darkest Faenza-Darker \
 		Faenza-Ambiance Faenza-Radiance

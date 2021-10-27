@@ -34,7 +34,6 @@ GLIB_SCHEMAS=	org.gnome.pomodoro.gschema.xml \
 		org.gnome.pomodoro.plugins.actions.gschema.xml \
 		org.gnome.pomodoro.plugins.gnome.gschema.xml \
 		org.gnome.pomodoro.plugins.sounds.gschema.xml
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	NEWS README.md
 

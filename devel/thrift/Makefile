@@ -12,7 +12,8 @@ COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	APACHE20
 
-USES=		bison cmake compiler:c++11-lang libtool pkgconfig
+USES=		bison cmake compiler:c++11-lang cpe libtool pkgconfig
+CPE_VENDOR=	apache
 USE_LDCONFIG=	yes
 
 # For C++ support, use devel/thrift-cpp

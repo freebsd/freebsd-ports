@@ -1,7 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME=	xorg-vfbserver
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	1
 
 COMMENT=	X virtual framebuffer server from X.Org

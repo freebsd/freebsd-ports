@@ -1,6 +1,6 @@
---- content/browser/font_access/font_enumeration_cache.h.orig	2021-07-19 18:45:15 UTC
+--- content/browser/font_access/font_enumeration_cache.h.orig	2021-09-24 04:26:05 UTC
 +++ content/browser/font_access/font_enumeration_cache.h
-@@ -15,7 +15,7 @@
+@@ -22,7 +22,7 @@
  #include "third_party/blink/public/common/font_access/font_enumeration_table.pb.h"
  #include "third_party/blink/public/mojom/font_access/font_access.mojom.h"
  

@@ -17,12 +17,14 @@ RUN_DEPENDS=	rubygem-connection_pool>=2.2.2<3:net/rubygem-connection_pool \
 		rubygem-rack-protection>=1.5.0:www/rubygem-rack-protection \
 		rubygem-redis>=3.3.5<5:databases/rubygem-redis
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/sidekiq bin/sidekiqctl
+
+CPE_VENDOR=	contribsys
 
 PORTSCOUT=	limit:^5\.
 

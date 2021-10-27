@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -16,8 +16,6 @@ USES=		cmake compiler:c++14-lang gettext-tools gnome localbase pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	cairo gtk30
 USE_XFCE=	panel
-
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 

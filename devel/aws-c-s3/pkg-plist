@@ -1,0 +1,9 @@
+include/aws/s3/exports.h
+include/aws/s3/s3.h
+include/aws/s3/s3_client.h
+lib/aws-c-s3/cmake/aws-c-s3-config.cmake
+lib/aws-c-s3/cmake/shared/aws-c-s3-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/aws-c-s3/cmake/shared/aws-c-s3-targets.cmake
+lib/libaws-c-s3.so
+lib/libaws-c-s3.so.0unstable
+lib/libaws-c-s3.so.1.0.0

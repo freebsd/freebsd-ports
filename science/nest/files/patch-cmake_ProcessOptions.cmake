@@ -1,11 +1,11 @@
---- cmake/ProcessOptions.cmake.orig	2019-05-11 20:18:03 UTC
+--- cmake/ProcessOptions.cmake.orig	2021-10-21 05:42:49 UTC
 +++ cmake/ProcessOptions.cmake
-@@ -385,7 +385,7 @@ function( NEST_PROCESS_WITH_PYTHON )
-             # confirmed working: 0.19.2+
-             # in between unknown
-             if ( CYTHON_VERSION VERSION_LESS "0.19.2" )
--              message( FATAL_ERROR "Your Cython version is too old. Please install "
-+              message( FATAL_ERROR "Your Cython version (" ${CYTHON_VERSION} ") is too old. Please install "
-                                    "newer version (0.19.2+)" )
-             endif ()
+@@ -421,7 +421,7 @@ function( NEST_PROCESS_WITH_PYTHON )
+       set( Python_INCLUDE_DIRS "${Python_INCLUDE_DIRS}" PARENT_SCOPE )
+       set( Python_LIBRARIES "${Python_LIBRARIES}" PARENT_SCOPE )
  
+-      if ( cythonize-pynest )
++      if ( BUILD_PYTHON AND cythonize-pynest )
+         # Need updated Cython because of a change in the C api in Python 3.7
+         find_package( Cython 0.28.3 REQUIRED )
+         if ( CYTHON_FOUND )

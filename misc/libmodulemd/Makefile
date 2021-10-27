@@ -19,6 +19,6 @@ USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Ddeveloper_build=false -Dskip_formatters=true -Dwith_manpages="enabled" -Dwith_docs=false
+MESON_ARGS=	-Dwith_manpages="enabled" -Dwith_docs=false
 
 .include <bsd.port.mk>

@@ -1,17 +1,15 @@
---- base/process/process_iterator_freebsd.cc.orig	2021-04-14 18:40:48 UTC
+--- base/process/process_iterator_freebsd.cc.orig	2021-09-24 04:25:55 UTC
 +++ base/process/process_iterator_freebsd.cc
-@@ -10,6 +10,10 @@
- #include <sys/sysctl.h>
- #include <unistd.h>
+@@ -21,7 +21,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+     : index_of_kinfo_proc_(),
+       filter_(filter) {
  
-+/* getuid() */
-+#include <unistd.h>
-+#include <sys/types.h>
-+
- #include "base/logging.h"
- #include "base/stl_util.h"
- #include "base/strings/string_split.h"
-@@ -40,7 +44,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+-  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, getuid() };
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, (int) getuid() };
+ 
+   bool done = false;
+   int try_num = 1;
+@@ -40,7 +40,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
        num_of_kinfo_proc += 16;
        kinfo_procs_.resize(num_of_kinfo_proc);
        len = num_of_kinfo_proc * sizeof(struct kinfo_proc);
@@ -20,7 +18,7 @@
          // If we get a mem error, it just means we need a bigger buffer, so
          // loop around again.  Anything else is a real error and give up.
          if (errno != ENOMEM) {
-@@ -50,7 +54,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -50,7 +50,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
          }
        } else {
          // Got the list, just make sure we're sized exactly right
@@ -29,7 +27,7 @@
          kinfo_procs_.resize(num_of_kinfo_proc);
          done = true;
        }
-@@ -72,18 +76,13 @@ bool ProcessIterator::CheckForNextProcess() {
+@@ -72,18 +72,13 @@ bool ProcessIterator::CheckForNextProcess() {
    for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++index_of_kinfo_proc_) {
      size_t length;
      struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];

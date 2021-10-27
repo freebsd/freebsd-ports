@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
+CPE_VENDOR=	inversepath
 USE_GITHUB=	yes
 GH_ACCOUNT=	f-secure-foundry
 USE_PERL5=	run

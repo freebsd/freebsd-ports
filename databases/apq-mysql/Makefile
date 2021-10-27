@@ -22,7 +22,7 @@ USES=		ada tar:bzip2 mysql
 IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
 HAS_CONFIGURE=	yes
 WRKPATH=	${WRKDIR}/build
-CONFIGURE_ARGS= --prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-relocatable \
 		--work-path=${WRKPATH} \
 		--processors=${MAKE_JOBS_NUMBER}

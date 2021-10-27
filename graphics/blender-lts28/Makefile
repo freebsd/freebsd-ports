@@ -1,6 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	2.83.15
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -23,12 +23,11 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++14-lang gl gnome jpeg python:3.7 shebangfix \
+USES=		cmake compiler:c++14-lang gl cpe gnome jpeg python:3.7 shebangfix \
 		tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
-INSTALLS_ICONS=	yes
 CMAKE_OFF=	WITH_IMAGE_OPENJPEG WITH_PYTHON_INSTALL \
 		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
 		WITH_CYCLES_LOGGING

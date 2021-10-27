@@ -1,7 +1,7 @@
 # Created by: Matt Lancereau <matt@rimasec.net>
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -18,7 +18,6 @@ USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS

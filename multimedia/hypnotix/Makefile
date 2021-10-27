@@ -21,7 +21,6 @@ USE_GNOME=	gtk30 glib20 gdkpixbuf2 pango
 GLIB_SCHEMAS=	org.x.hypnotix.gschema.xml
 
 SHEBANG_GLOB=	*.py
-INSTALLS_ICONS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 

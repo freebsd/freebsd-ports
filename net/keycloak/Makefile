@@ -28,6 +28,8 @@ PLIST_SUB+=	POSTGRES=""
 PLIST_SUB+=	POSTGRES="@comment "
 .endif
 
+USES=		cpe
+CPE_VENDOR=	redhat
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 JAVA_OS=	native

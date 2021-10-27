@@ -4,7 +4,7 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl wrapper to use with Amanda (with libthr.so.* linked)
 
 USES=		perl5

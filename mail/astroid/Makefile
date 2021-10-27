@@ -31,6 +31,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	astroidmail
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 \
 		gtkmm30 introspection libsigc++20 pango pangomm vte3
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

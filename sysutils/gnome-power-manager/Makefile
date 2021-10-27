@@ -18,7 +18,6 @@ LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase:ldflags meson pathfix pkgconfig tar:xz
-INSTALLS_ICONS=	yes
 USE_GNOME=	cairo gtk30 intlhack
 MESON_ARGS=	-Denable-tests=false
 

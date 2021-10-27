@@ -16,7 +16,8 @@ LICENSE_COMB=	multi
 
 BROKEN_mips64=		fails to package: ansidecl.h: No such file or directory
 
-USES=		gmake tar:bzip2 libtool
+USES=		cpe gmake tar:bzip2 libtool
+CPE_VENDOR=	gnu
 
 HAS_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH:S/aarch64/arm64/:S/amd64/x86_64/:C/armv[0-9]+/arm/:C/powerpc64.*/powerpc/:S/riscv64/riscv/}-unknown-${OPSYS:tl}${OSREL}

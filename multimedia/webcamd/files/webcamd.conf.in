@@ -4,7 +4,7 @@ notify 100 {
 	match "subsystem"	"INTERFACE";
 	match "type"		"ATTACH";
 	match "intclass"	"0x0e";
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev 2>/dev/null";
 };
 
 # Vendor specific USB webcams and DVB devices.
@@ -13,7 +13,7 @@ notify 100 {
 	match "subsystem"	"INTERFACE";
 	match "type"		"ATTACH";
 	match "intclass"	"0xff";
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev 2>/dev/null";
 };
 
 # Unspecified USB webcams and DVB devices.
@@ -22,7 +22,7 @@ notify 100 {
 	match "subsystem"	"INTERFACE";
 	match "type"		"ATTACH";
 	match "intclass"	"0x00";
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev 2>/dev/null";
 };
 
 # Logitech webcams
@@ -33,7 +33,7 @@ notify 100 {
 	match "vendor"	       "0x046d";
 	match "intclass"       "0x0a";
 	match "intsubclass"    "0xff";
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev 2>/dev/null";
 };
 
 # Generic USB input devices.
@@ -48,7 +48,7 @@ notify 100 {
 # and mouse
 #
 	match "vendor"		"0x056a";
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface 2>/dev/null";
 };
 
 # Elantech touchscreen
@@ -60,7 +60,7 @@ notify 100 {
 	match "vendor"		"0x04f3";
 	match "product"		"0x2071";
 
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface 2>/dev/null";
 };
 
 # Logitech gamepad 
@@ -72,6 +72,6 @@ notify 100 {
 	match "vendor"		"0x046d";
 	match "product"		"0xc216|0xc219";
 
-	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface 2>/dev/null";
 };
 

@@ -2,7 +2,7 @@ PORTNAME=	kafka
 PORTVERSION=	2.8.0
 
 CATEGORIES=	net java
-MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
 
 MAINTAINER=	timp87@gmail.com
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		shebangfix tar:tgz
+USES=		cpe shebangfix tar:tgz
+CPE_VENDOR=	apache
 
 SHEBANG_FILES=	bin/*.sh
 

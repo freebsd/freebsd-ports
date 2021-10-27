@@ -21,7 +21,6 @@ USE_GL=		gl glu
 USE_GNOME=	cairo gtk20
 USE_SDL=	sdl2 image2
 USE_XORG=	ice sm x11 xext xi
-INSTALLS_ICONS=	yes
 
 PLIST_FILES=	bin/milton ${DATADIR_REL}/Carlito.ttf
 .for n in 16 32 48 64 128 256

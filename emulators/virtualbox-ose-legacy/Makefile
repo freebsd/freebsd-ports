@@ -2,7 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-legacy
@@ -162,7 +162,6 @@ USE_GL=		gl glu
 USE_QT=		buildtools_build core dbus gui linguisttools_build opengl
 USE_QT+=	printsupport widgets x11extras
 USE_XORG=	xcb
-INSTALLS_ICONS=	yes
 VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1

@@ -29,7 +29,8 @@ PREFIX=		/usr
 CONFIGURE_ENV+= ${_tool}_FOR_TARGET="${${_tool}}"
 .endfor
 
-USES=	gmake libtool tar:xz makeinfo
+USES=		cpe gmake libtool tar:xz makeinfo
+CPE_VENDOR=	gnu
 PLIST_SUB=	OPSYS=${OPSYS:tl} \
 		SUFFIX=${SUFFIX} \
 		GCC_TARGET=${GCC_TARGET} \

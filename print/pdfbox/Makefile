@@ -4,7 +4,7 @@ PORTNAME=	pdfbox
 PORTVERSION=	2.0.14
 PORTREVISION=	1
 CATEGORIES=	print textproc java
-MASTER_SITES=	APACHE/pdfbox/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTVERSION}/
 DISTFILES=	${JAR_NAMES:S/$/-${PORTVERSION}.jar/}
 EXTRACT_ONLY=	# none
 
@@ -19,6 +19,8 @@ RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle15 \
 
 JAR_NAMES=	pdfbox fontbox preflight xmpbox pdfbox-tools pdfbox-debugger
 
+USES=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=		yes

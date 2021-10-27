@@ -1,6 +1,7 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
-CARGO_CRATES=	ansi_term-0.11.0 \
-		ansi_term-0.12.1 \
+CARGO_CRATES=	ansi_term-0.12.1 \
 		anyhow-1.0.44 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
@@ -43,6 +43,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		cc-1.0.69 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
+		clap-3.0.0-beta.4 \
+		clap_derive-3.0.0-beta.4 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
 		criterion-0.3.5 \
@@ -67,6 +69,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		gloo-timers-0.2.1 \
 		half-1.7.1 \
 		hashbrown-0.11.2 \
+		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		indexmap-1.7.0 \
 		instant-0.1.10 \
@@ -85,6 +88,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		once_cell-1.8.0 \
 		oorandom-11.1.3 \
 		opaque-debug-0.2.3 \
+		os_str_bytes-3.1.0 \
 		parking-2.0.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -96,6 +100,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
 		polling-2.1.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.28 \
 		quote-1.0.9 \
 		rayon-1.5.1 \
@@ -117,12 +123,15 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.4 \
 		socket2-0.4.1 \
-		strsim-0.8.0 \
+		strsim-0.10.0 \
 		syn-1.0.75 \
+		termcolor-1.1.2 \
 		textwrap-0.11.0 \
+		textwrap-0.14.2 \
 		tinytemplate-1.2.1 \
 		typenum-1.13.0 \
 		ucd-trie-0.1.3 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		value-bag-1.0.0-alpha.7 \

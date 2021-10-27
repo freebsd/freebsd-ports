@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
-USES=		cmake pkgconfig
+USES=		cmake cpe pkgconfig
+CPE_VENDOR=	${PORTNAME}_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	roehling

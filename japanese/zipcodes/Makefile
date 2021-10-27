@@ -4,7 +4,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/kuriyama
 DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 
 BUILD_DEPENDS=	nkf:japanese/nkf

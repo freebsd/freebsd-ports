@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE.md
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
+CPE_VENDOR=	${PORTNAME}-lang
 
 OPTIONS_DEFINE=	DOCS
 

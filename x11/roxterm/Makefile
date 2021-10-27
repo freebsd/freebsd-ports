@@ -22,7 +22,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	realh
 USE_GNOME=	cairo librsvg2:run libxslt:build vte3
 USE_CSTD=	c99
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS
 

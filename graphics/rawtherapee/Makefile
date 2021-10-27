@@ -42,7 +42,6 @@ USE_BINUTILS=	yes
 USE_GCC=	yes
 
 USE_GNOME=	gtkmm30 librsvg2
-INSTALLS_ICONS=	yes
 
 _LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER}
 # gcc needs -flto=${MAKE_JOBS_NUMBER} for parallel link (fixed in GCC 10?)
@@ -108,7 +107,7 @@ OPENMP_CMAKE_BOOL=	OPTION_OMP
 # might add ARM64 later on if they are established by the
 # time FreeBSD 13 is out.
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=Only amd64 is supported on non-released FreeBSD versions.
+ONLY_FOR_ARCHS_REASON=only amd64 is supported on non-released FreeBSD versions
 .endif
 
 .if ${PORT_OPTIONS:MNATIVE}

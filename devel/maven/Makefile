@@ -1,7 +1,7 @@
 # Created by: JonathanChen <jonc@chen.org.nz>
 
 PORTNAME=	maven
-DISTVERSION=	3.8.1
+DISTVERSION=	3.8.3
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
@@ -29,7 +29,7 @@ INSTANCE_FILE=	${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/
 
 post-extract:
-	${RM} -r ${WRKSRC}/lib/jansi-native ${WRKSRC}/bin/*.bat
+	${RM} -r ${WRKSRC}/lib/jansi-native ${WRKSRC}/bin/*.cmd
 	${ECHO_CMD} "${DATADIR}" > ${WRKSRC}/${INSTANCE_FILE}
 
 do-install:

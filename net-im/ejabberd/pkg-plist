@@ -866,6 +866,12 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.sql
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.new.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mssql.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mysql.new.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mysql.old-to-new.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mysql.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/pg.new.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/pg.sql
 sbin/%%PORTNAME%%ctl
 %%DATADIR%%/captcha.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

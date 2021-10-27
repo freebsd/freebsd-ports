@@ -25,7 +25,6 @@ USES=		cmake compiler:c++14-lang cpe desktop-file-utils gettext \
 USE_GNOME=	cairo gtk30
 USE_WX=		3.1+
 WX_COMPS=	wx
-INSTALLS_ICONS=	yes
 PORTDOCS=	README.txt
 
 CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \

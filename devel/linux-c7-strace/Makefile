@@ -9,7 +9,9 @@ COMMENT=	System call tracer (CentOS ${LINUX_DIST_VER})
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libdw.so.1:devel/linux-c7-elfutils-libs
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LINUX_RPM=	nolib
+
+CPE_VENDOR=	strace_project
 
 .include <bsd.port.mk>

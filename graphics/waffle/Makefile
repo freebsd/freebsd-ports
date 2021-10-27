@@ -11,7 +11,6 @@ PATCHFILES=	39ad2b26f46e90cbae13a9cbc58e1f9df03f0980.patch:-p1 \
 		e4a1e7e9670b77d5b145520d60c4b7570fe3c6ea.patch:-p1 \
 		8c202f88ab4f0f851e3f19dd82bc6b5236120564.patch:-p1
 
-
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Library that allows to defer selection of an OpenGL API until runtime
 

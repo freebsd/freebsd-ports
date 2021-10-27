@@ -1,16 +1,20 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	unionfs
-PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE based implementation of the well-known unionfs
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
+
+USES=		cmake fuse localbase:ldflags python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny
@@ -22,12 +26,14 @@ PLIST_FILES=	bin/unionfs \
 		bin/unionfsctl \
 		man/man8/unionfs.8.gz
 
-USES=		fuse cmake localbase:ldflags
-
-post-patch:
-	@${REINPLACE_CMD} "s,share/man,man,g" ${WRKSRC}/man/CMakeLists.txt
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+
+pre-test:
+	${RLN} ${BUILD_WRKSRC}/src/unionfs ${WRKSRC}/src/unionfs
+	${RLN} ${BUILD_WRKSRC}/src/unionfsctl ${WRKSRC}/src/unionfsctl
+
+do-test:
+	cd ${WRKSRC} && ${SETNEV} ${MAKE_ENV} ${PYTHON_CMD} -m pytest -k test_help --verbose
 
 .include <bsd.port.mk>

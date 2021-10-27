@@ -19,7 +19,6 @@ USE_GNOME=	cairo gtk30 glib20 intltool
 USE_XFCE=	libexo thunar
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		GIT NLS SUBVERSION

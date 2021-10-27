@@ -1,5 +1,5 @@
 PORTNAME=	qmmp
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 	SF/qmmp-dev/${PORTNAME}/${PORTVERSION:R}/
@@ -18,7 +18,6 @@ USES=		cmake gnome pathfix pkgconfig tar:bzip2
 USE_QT=		core gui network widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_SUB=	yes
 OPTIONS_GROUP=	DOCUMENTS PLUGIN_APPLICATION PLUGIN_FORMATS \

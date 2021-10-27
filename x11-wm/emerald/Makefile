@@ -15,7 +15,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gl gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2 xorg

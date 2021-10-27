@@ -1,3 +1,3 @@
-TIMESTAMP = 1632037486
-SHA256 (rubygem/aws-sdk-elasticloadbalancing-1.34.0.gem) = 469466e6f21768833575ef026422196148af29ba992843151000607dd93e813f
-SIZE (rubygem/aws-sdk-elasticloadbalancing-1.34.0.gem) = 45056
+TIMESTAMP = 1635181309
+SHA256 (rubygem/aws-sdk-elasticloadbalancing-1.35.0.gem) = 0d9dbeca335dc127ebd087abf01ba3ce34edfc281a3d9fd03f08e8d230cab4c5
+SIZE (rubygem/aws-sdk-elasticloadbalancing-1.35.0.gem) = 45056

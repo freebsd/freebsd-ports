@@ -204,10 +204,10 @@ lib/Palisade/PalisadeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/Palisade/PalisadeTargets.cmake
 lib/libPALISADEbinfhe.so
 lib/libPALISADEbinfhe.so.1
-lib/libPALISADEbinfhe.so.1.11.4
+lib/libPALISADEbinfhe.so.1.11.5
 lib/libPALISADEcore.so
 lib/libPALISADEcore.so.1
-lib/libPALISADEcore.so.1.11.4
+lib/libPALISADEcore.so.1.11.5
 lib/libPALISADEpke.so
 lib/libPALISADEpke.so.1
-lib/libPALISADEpke.so.1.11.4
+lib/libPALISADEpke.so.1.11.5

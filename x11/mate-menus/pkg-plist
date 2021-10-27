@@ -139,6 +139,7 @@ share/locale/zh_TW/LC_MESSAGES/mate-menus.mo
 share/locale/zu/LC_MESSAGES/mate-menus.mo
 %%DATADIR%%/examples/mate-menus-ls.py
 share/mate/desktop-directories/mate-audio-video.directory
+share/mate/desktop-directories/mate-collection.directory
 share/mate/desktop-directories/mate-development.directory
 share/mate/desktop-directories/mate-education.directory
 share/mate/desktop-directories/mate-game.directory

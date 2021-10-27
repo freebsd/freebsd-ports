@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	exiv2
-DISTVERSION=	0.27.4
+DISTVERSION=	0.27.5
 DISTVERSIONSUFFIX=	-Source
 PORTEPOCH=	1
 CATEGORIES=	graphics

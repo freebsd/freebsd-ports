@@ -11,7 +11,8 @@ COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 gmake libtool:build pathfix perl5
+USES=		compiler:c11 cpe gmake libtool:build pathfix perl5
+CPE_VENDOR=	leonerd
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 USE_PERL5=	test

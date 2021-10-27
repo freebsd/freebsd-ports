@@ -8,7 +8,6 @@ include/dune/grid/cacheitgrid/dgfparser.hh
 include/dune/grid/cacheitgrid/entity.hh
 include/dune/grid/cacheitgrid/entitypointer.hh
 include/dune/grid/cacheitgrid/entityseed.hh
-include/dune/grid/cacheitgrid/geometry.hh
 include/dune/grid/cacheitgrid/grid.hh
 include/dune/grid/cacheitgrid/gridview.hh
 include/dune/grid/cacheitgrid/hierarchiciterator.hh
@@ -43,7 +42,6 @@ include/dune/grid/filteredgrid/boundarysegmentindexset.hh
 include/dune/grid/filteredgrid/capabilities.hh
 include/dune/grid/filteredgrid/datahandle.hh
 include/dune/grid/filteredgrid/declaration.hh
-include/dune/grid/filteredgrid/entity.hh
 include/dune/grid/filteredgrid/entityiterator.hh
 include/dune/grid/filteredgrid/entitypointer.hh
 include/dune/grid/filteredgrid/grid.hh
@@ -132,6 +130,8 @@ include/dune/grid/spheregrid/iterator.hh
 include/dune/grid/spheregrid/maptosphere.hh
 include/dune/grid/spheregrid/persistentcontainer.hh
 include/dune/grid/spheregrid/twistutility.hh
+include/dune/grid/test/checkcalls.cc
+include/dune/grid/test/sfc.cc
 lib/cmake/dune-metagrid/dune-metagrid-config-version.cmake
 lib/cmake/dune-metagrid/dune-metagrid-config.cmake
 lib/dunecontrol/dune-metagrid/dune.module

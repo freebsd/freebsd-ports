@@ -14,8 +14,9 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error
 
-USES=		gettext gmake iconv:translit libtool localbase:ldflags \
+USES=		cpe gettext gmake iconv:translit libtool localbase:ldflags \
 		pathfix pkgconfig
+CPE_VENDOR=	aquamaniac
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \

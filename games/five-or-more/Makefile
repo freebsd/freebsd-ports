@@ -22,7 +22,6 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 librsvg2
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.five-or-more.gschema.xml
 

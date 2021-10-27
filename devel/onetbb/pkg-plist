@@ -4,6 +4,7 @@ include/oneapi/tbb/blocked_range2d.h
 include/oneapi/tbb/blocked_range3d.h
 include/oneapi/tbb/blocked_rangeNd.h
 include/oneapi/tbb/cache_aligned_allocator.h
+include/oneapi/tbb/collaborative_call_once.h
 include/oneapi/tbb/combinable.h
 include/oneapi/tbb/concurrent_hash_map.h
 include/oneapi/tbb/concurrent_lru_cache.h
@@ -24,6 +25,7 @@ include/oneapi/tbb/detail/_concurrent_unordered_base.h
 include/oneapi/tbb/detail/_config.h
 include/oneapi/tbb/detail/_containers_helpers.h
 include/oneapi/tbb/detail/_exception.h
+include/oneapi/tbb/detail/_export.h
 include/oneapi/tbb/detail/_flow_graph_body_impl.h
 include/oneapi/tbb/detail/_flow_graph_cache_impl.h
 include/oneapi/tbb/detail/_flow_graph_impl.h
@@ -37,6 +39,7 @@ include/oneapi/tbb/detail/_flow_graph_tagged_buffer_impl.h
 include/oneapi/tbb/detail/_flow_graph_trace_impl.h
 include/oneapi/tbb/detail/_flow_graph_types_impl.h
 include/oneapi/tbb/detail/_hash_compare.h
+include/oneapi/tbb/detail/_intrusive_list_node.h
 include/oneapi/tbb/detail/_machine.h
 include/oneapi/tbb/detail/_mutex_common.h
 include/oneapi/tbb/detail/_namespace_injection.h
@@ -51,6 +54,7 @@ include/oneapi/tbb/detail/_segment_table.h
 include/oneapi/tbb/detail/_small_object_pool.h
 include/oneapi/tbb/detail/_string_resource.h
 include/oneapi/tbb/detail/_task.h
+include/oneapi/tbb/detail/_task_handle.h
 include/oneapi/tbb/detail/_template_helpers.h
 include/oneapi/tbb/detail/_utils.h
 include/oneapi/tbb/detail/_waitable_atomic.h
@@ -91,6 +95,7 @@ include/tbb/blocked_range2d.h
 include/tbb/blocked_range3d.h
 include/tbb/blocked_rangeNd.h
 include/tbb/cache_aligned_allocator.h
+include/tbb/collaborative_call_once.h
 include/tbb/combinable.h
 include/tbb/concurrent_hash_map.h
 include/tbb/concurrent_lru_cache.h
@@ -138,14 +143,14 @@ lib/cmake/TBB/TBBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb.so
 lib/libtbb.so.12
-lib/libtbb.so.12.3
-lib/libtbbbind_2_4.so
-lib/libtbbbind_2_4.so.3
-lib/libtbbbind_2_4.so.3.3
+lib/libtbb.so.12.4
+lib/libtbbbind_2_0.so
+lib/libtbbbind_2_0.so.3
+lib/libtbbbind_2_0.so.3.4
 lib/libtbbmalloc.so
 lib/libtbbmalloc.so.2
-lib/libtbbmalloc.so.2.3
+lib/libtbbmalloc.so.2.4
 lib/libtbbmalloc_proxy.so
 lib/libtbbmalloc_proxy.so.2
-lib/libtbbmalloc_proxy.so.2.3
-libdata/pkgconfig/tbb.pc
+lib/libtbbmalloc_proxy.so.2.4
+libdata/pkgconfig/tbb%%PCSUFX%%.pc

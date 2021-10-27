@@ -4,15 +4,16 @@ PORTNAME=	zebra
 PORTVERSION=	0.95a
 PORTREVISION=	10
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
-		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
-		http://ftp.sunet.se/pub/network/zebra/
+MASTER_SITES=	ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+DEPRECATED=	Abandoned upstream, last release in 2005. Consider migrating to net/frr7 or net/bird2
+EXPIRATION_DATE=2021-12-31
 
 CONFLICTS=	openbgpd-[0-9]* quagga-[0-9]* quagga-re-[0-9]* openospfd-[0-9]*
 

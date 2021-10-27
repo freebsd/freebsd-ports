@@ -8,7 +8,9 @@ COMMENT=	Kubernetes scheduler daemon
 
 LICENSE=	APACHE20
 
-USES=		go
+USES=		cpe go
+CPE_VENDOR=	jenkins
+CPE_PRODUCT=	kubernetes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes

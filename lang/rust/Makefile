@@ -1,7 +1,7 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 
 PORTNAME=	rust
-PORTVERSION?=	1.55.0
+PORTVERSION?=	1.56.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -32,7 +32,9 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		ninja:build pkgconfig python:3.6+,build ssl tar:xz
+USES=		cpe ninja:build pkgconfig python:3.6+,build ssl tar:xz
+
+CPE_VENDOR=	rust-lang
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		OPENSSL_DIR="${OPENSSLBASE}" \
@@ -51,7 +53,6 @@ TMPDIR?=	${WRKDIR}
 OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
 OPTIONS_EXCLUDE_armv6=	DOCS
-OPTIONS_EXCLUDE_armv7=	DOCS
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
@@ -66,10 +67,8 @@ WASM_VARS=		_RUST_BUILD_WASM=true \
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=			2021-07-29
-BOOTSTRAPS_DATE_powerpc?=		2021-09-09
-RUST_BOOTSTRAP_VERSION?=		1.54.0
-RUST_BOOTSTRAP_VERSION_powerpc?=	1.55.0
+BOOTSTRAPS_DATE?=		2021-09-09
+RUST_BOOTSTRAP_VERSION?=	1.55.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -122,7 +121,7 @@ DISTFILES:=	${DISTFILES:M*\:src} \
 post-patch:
 	@${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
 .if defined(NIGHTLY_DATE)
-	@${REINPLACE_CMD} '/^rustfmt:/d' ${WRKSRC}/src/stage0.txt
+	@${REINPLACE_CMD} 's/"rustfmt"/"nothx"/' ${WRKSRC}/src/stage0.json
 .endif
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
@@ -168,7 +167,6 @@ do-configure:
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'codegen-units=1' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml

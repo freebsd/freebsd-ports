@@ -3,8 +3,8 @@
 # Please update update atril-lite also
 
 PORTNAME=	atril
-PORTVERSION=	1.25.1
-PORTREVISION=	3
+PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -35,7 +35,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--disable-synctex
-INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 # INSTALL_TARGET=	install-strip

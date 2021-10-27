@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	sushi
-PORTVERSION=	3.34.0
-PORTREVISION=	2
+PORTVERSION=	41.0
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -34,7 +33,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 gettext gl gnome localbase meson \
 		pkgconfig tar:xz xorg
 USE_CSTD=	c11
-INSTALLS_ICONS=	yes
 USE_GNOME=	cairo gtksourceview4 intlhack introspection
 USE_GL=		egl
 USE_GSTREAMER1=	yes

@@ -1,0 +1,17 @@
+pg_filedump is a utility to format PostgreSQL heap/index/control files into a
+human-readable form. You can format/dump the files several ways, as listed in
+the Invocation section, as well as dumping straight binary.
+
+The type of file (heap/index) can usually be determined automatically by the
+content of the blocks within the file. However, to format a pg_control file you
+must use the -c option.
+
+The default is to format the entire file using the block size listed in block 0
+and display block relative addresses. These defaults can be modified using
+run-time options.
+
+Some options may seem strange but they're there for a reason. For example, block
+size. It's there because if the header of block 0 is corrupt, you need a method
+of forcing a block size.
+
+WWW: https://github.com/df7cb/pg_filedump

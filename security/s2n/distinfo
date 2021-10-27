@@ -1,3 +1,3 @@
-TIMESTAMP = 1609762871
-SHA256 (awslabs-s2n-v0.10.23_GH0.tar.gz) = 0f752e384cfa929da3dcd8f6223b2fe262f937e7cc771ac4c824cd4b33849dd5
-SIZE (awslabs-s2n-v0.10.23_GH0.tar.gz) = 6188649
+TIMESTAMP = 1634841045
+SHA256 (aws-s2n-tls-v1.1.2_GH0.tar.gz) = 91b5940ff345482cfd582a4c6d04950a9788f70ac3e383af41ac1eeee0441d1e
+SIZE (aws-s2n-tls-v1.1.2_GH0.tar.gz) = 7387552

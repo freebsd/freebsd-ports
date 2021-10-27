@@ -22,7 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:print/foomatic-db \
 		foomatic-rip:print/cups-filters \
 		gsed:textproc/gsed
 
-USES=		ghostscript gmake shebangfix
+USES=		cpe ghostscript gmake shebangfix
+CPE_VENDOR=	rkkda
 SHEBANG_FILES=	msexpand printer-profile.sh
 
 MAKE_JOBS_UNSAFE=	yes

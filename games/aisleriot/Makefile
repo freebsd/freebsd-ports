@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	aisleriot
-DISTVERSION=	3.22.17
+DISTVERSION=	3.22.18
 CATEGORIES=	games gnome
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/
 DIST_SUBDIR=	gnome3
@@ -33,7 +33,5 @@ SHEBANG_FILES=	data/icons/meson_updateiconcache.py \
 		src/meson_gconf.py
 
 GLIB_SCHEMAS=	org.gnome.Patience.WindowState.gschema.xml
-
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

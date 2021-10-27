@@ -1,4 +1,4 @@
---- Makefile.orig	2020-07-23 19:41:38 UTC
+--- Makefile.orig	2021-09-15 19:39:24 UTC
 +++ Makefile
 @@ -1,9 +1,9 @@
  
@@ -24,9 +24,9 @@
 +       -lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% \
 +       -lpthread -lm
  
- ccx_2.17: $(OCCXMAIN) ccx_2.17.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.17.c; $(FC)  -Wall -O2 -o $@ $(OCCXMAIN) ccx_2.17.a $(LIBS)
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.17.c; $(FC) -O2 -o $@ $(OCCXMAIN) ccx_2.17.a $(LIBS)
+ ccx_2.18: $(OCCXMAIN) ccx_2.18.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.18.c; $(FC)  -Wall -O2 -o $@ $(OCCXMAIN) ccx_2.18.a $(LIBS) -fopenmp
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.18.c; $(FC) -o $@ $(OCCXMAIN) ccx_2.18.a $(LIBS) -fopenmp
  
- ccx_2.17.a: $(OCCXF) $(OCCXC)
+ ccx_2.18.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?

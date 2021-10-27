@@ -1,44 +1,38 @@
 # Created by: Jaap Boender <jaapb@kerguelen.org>
 
 PORTNAME=	ssl
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.9
 CATEGORIES=	security devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OpenSSL bindings for OCaml
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	dune:devel/ocaml-dune
+
+USES=		ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	savonet
 GH_PROJECT=	ocaml-ssl
-
-USES=		autoreconf gmake ssl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
-MAKE_ENV=	OCAMLFIND_INSTFLAGS="-ldconf ignore"
-MAKE_JOBS_UNSAFE=	yes
-
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAMLFIND_PLIST=	yes
-
-ALL_TARGET=	all doc
-
-CPPFLAGS+=	-I${OPENSSLINC}
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
+USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
-PORTDOCS=	*
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}/html
+do-build:
+	cd ${BUILD_WRKSRC} && dune build -p ${PORTNAME} -j ${MAKE_JOBS_NUMBER}
+
+do-install:
+	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
+		--libdir=${OCAML_SITELIBDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	go-for-it
-DISTVERSION=	1.9.3
+DISTVERSION=	1.9.5
 CATEGORIES=	deskutils
 
 MAINTAINER=	nc@FreeBSD.org
@@ -19,7 +19,6 @@ GH_ACCOUNT=	JMoerman
 GH_PROJECT=	Go-For-It
 USE_GNOME=	cairo glib20 gtk30 intltool
 GLIB_SCHEMAS=	com.github.jmoerman.go-for-it.gschema.xml
-INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
 

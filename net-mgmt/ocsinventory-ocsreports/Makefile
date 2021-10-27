@@ -1,8 +1,8 @@
 PORTNAME=	ocsinventory-ocsreports
-PORTVERSION=	2.8
+PORTVERSION=	2.9.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/
-DISTNAME=	OCSNG_UNIX_SERVER_${PORTVERSION}
+DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Webconsole for OCS Inventory NG

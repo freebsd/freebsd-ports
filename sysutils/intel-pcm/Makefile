@@ -1,7 +1,7 @@
 # Created by: Adrian Chadd
 
 PORTNAME=	intel-pcm
-PORTVERSION=	202105
+PORTVERSION=	202109
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org

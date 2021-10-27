@@ -21,6 +21,5 @@ GH_ACCOUNT=	${PORTNAME}-player
 SHEBANG_FILES=	src/generate-authors.py meson-post-install.py
 GLIB_SCHEMAS=	io.github.GnomeMpv.gschema.xml \
 		io.github.celluloid_player.Celluloid.gschema.xml
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

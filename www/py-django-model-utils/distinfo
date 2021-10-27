@@ -1,3 +1,3 @@
-TIMESTAMP = 1607539825
-SHA256 (django-model-utils-4.1.1.tar.gz) = eb5dd05ef7d7ce6bc79cae54ea7c4a221f6f81e2aad7722933aee66489e7264b
-SIZE (django-model-utils-4.1.1.tar.gz) = 67717
+TIMESTAMP = 1634391164
+SHA256 (django-model-utils-4.2.0.tar.gz) = e7a95e102f9c9653427eadab980d5d59e1dea972913b9c9e01ac37f86bba0ddf
+SIZE (django-model-utils-4.2.0.tar.gz) = 71565

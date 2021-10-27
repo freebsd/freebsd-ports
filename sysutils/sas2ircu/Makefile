@@ -19,7 +19,7 @@ USES=		zip
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	Binaries only available for i386 and amd64 from Broadcom
+ONLY_FOR_ARCHS_REASON=	binaries only available for i386 and amd64 from Broadcom
 
 OPTIONS_DEFINE=	DOCS
 

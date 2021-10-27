@@ -1,6 +1,6 @@
 PORTNAME=	findomain
 DISTVERSION=	5.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Findomain
-GH_TUPLE=	Edu4rdSHL:rust-headless-chrome:54ae12d9d33ed41f9f4b60b489e706d501d4f58a:headless_chrome \
-		Edu4rdSHL:trust-dns:451a00fbe3c0972adb4cdbd9d2e2f2a39a44da0e:dns_resolver
 
 CARGO_CRATES=	addr2line-0.16.0 \
 		adler-1.0.2 \
@@ -256,9 +254,9 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		winreg-0.6.2 \
 		winreg-0.7.0 \
 		yaml-rust-0.3.5 \
-		yaml-rust-0.4.5
-CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	dns_resolver:trust-dns-resolver:crates/resolver
+		yaml-rust-0.4.5 \
+		trust-dns-proto,trust-dns-resolver@git+https://github.com/Edu4rdSHL/trust-dns?branch=main\#451a00fbe3c0972adb4cdbd9d2e2f2a39a44da0e \
+		headless_chrome@git+https://github.com/Edu4rdSHL/rust-headless-chrome\#54ae12d9d33ed41f9f4b60b489e706d501d4f58a
 
 WRKSRC=		${WRKDIR}/Findomain-${DISTVERSION}
 

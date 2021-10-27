@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	13.0.0rc4
+DISTVERSION=	13.0.0
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -175,10 +175,10 @@ MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_AMDGCN_BCLIB=OFF
 OPENMP_PORTDOCS=	openmp
-PYCLANG_DESC=	Install python bindings to libclang
+PYCLANG_DESC=		Install python bindings to libclang
 PYCLANG_IMPLIES=	CLANG
-PYCLANG_VARS=	_USES_PYTHON=python:3.6+
-PYCLANG_CMAKE_ON= -DCLANG_PYTHON_BINDINGS_VERSIONS=${PYTHON_VER}
+PYCLANG_VARS=		_USES_PYTHON=python:3.6+
+PYCLANG_CMAKE_ON=	-DCLANG_PYTHON_BINDINGS_VERSIONS=${PYTHON_VER}
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo
@@ -380,7 +380,9 @@ STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 			MSP430 NVPTX SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
+_BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
+_BE_LIBS_BACKWARDS_AMDGPU=MCACustomBehaviour
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler 
@@ -388,17 +390,21 @@ _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser Disassembler
 _BE_LIBS_MSP430=	AsmParser Disassembler
 _BE_LIBS_Mips=		AsmParser Disassembler
+_BE_LIBS_BACKWARDS_Mips=Exegesis
 _BE_LIBS_PowerPC=	AsmParser Disassembler
+_BE_LIBS_BACKWARDS_PowerPC=Exegesis
 _BE_LIBS_RISCV=		AsmParser Disassembler
 _BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
 _BE_LIBS_WebAssembly=	AsmParser Disassembler Utils
 _BE_LIBS_X86=		AsmParser Disassembler
+_BE_LIBS_BACKWARDS_X86=Exegesis
 _BE_LIBS_XCore=		Disassembler
 .for BE in FREEBSD NATIVE STANDARD
 .for BE_ARCH in ${${BE}_BACKENDS}
 _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
-			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/}
+			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/} \
+			${_BE_LIBS_BACKWARDS_${BE_ARCH}:S/$/${BE_ARCH}/}
 .endfor
 .endfor
 BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}

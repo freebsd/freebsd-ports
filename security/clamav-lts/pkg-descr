@@ -1,0 +1,8 @@
+This the Long Term Support (LTS) version of Clam Antivirus.
+Clam Antivirus is command line virus scanner written entirely in C
+and its database is kept up to date. It also detects polymorphic
+viruses, scans compressed files and supported by AMaViS.
+Optionally you can use the clamav-milter interface to connect
+clamav with sendmail.
+
+WWW: https://www.clamav.net/

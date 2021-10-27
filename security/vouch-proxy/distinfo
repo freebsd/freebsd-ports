@@ -1,5 +1,5 @@
-TIMESTAMP = 1631601930
-SHA256 (go/security_vouch-proxy/vouch-proxy-v0.34.1/v0.34.1.mod) = b680ea0fb42752f9568ca2687b5ddd95fee5200cd8d70dbe43c8be3d64d79108
-SIZE (go/security_vouch-proxy/vouch-proxy-v0.34.1/v0.34.1.mod) = 1300
-SHA256 (go/security_vouch-proxy/vouch-proxy-v0.34.1/v0.34.1.zip) = d433a99712a36c6c6b4026549b445ed771e3e1a478474540701fb7382df5bd1f
-SIZE (go/security_vouch-proxy/vouch-proxy-v0.34.1/v0.34.1.zip) = 264779
+TIMESTAMP = 1634542817
+SHA256 (go/security_vouch-proxy/vouch-proxy-v0.35.1/v0.35.1.mod) = b680ea0fb42752f9568ca2687b5ddd95fee5200cd8d70dbe43c8be3d64d79108
+SIZE (go/security_vouch-proxy/vouch-proxy-v0.35.1/v0.35.1.mod) = 1300
+SHA256 (go/security_vouch-proxy/vouch-proxy-v0.35.1/v0.35.1.zip) = 14434137f88431b9386bcac87e982784d119c3e3ddb4536e3aaa573cb9610a13
+SIZE (go/security_vouch-proxy/vouch-proxy-v0.35.1/v0.35.1.zip) = 265705

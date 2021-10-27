@@ -1,7 +1,7 @@
 PORTNAME=	vector
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology
@@ -19,19 +19,13 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 USES=		cargo lua:53 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	timberio
+GH_TUPLE=	bytecodealliance:wasmtime:3de418630a263ca214931d69f796879be50d4f72:wasmtime \
+		bytecodealliance:sightglass:b409ba75a7a89cbf4cbf9ec44880e4ae6509a85c:sightglass \
+		WebAssembly:WASI:3fd0abd12c1f53772eeff46d3cf21d7e2475c885:wasi_lucet \
+		WebAssembly:WASI:2b027d91c29e6141a3768e638076daa23f51621c:wasi_wasmtime
 
 PLIST_FILES=	bin/vector
 
-GH_TUPLE=	bytecodealliance:lucet:d4fc14a03bdb99ac83173d27fddf1aca48412a86:lucet \
-		bytecodealliance:wasmtime:3de418630a263ca214931d69f796879be50d4f72:wasmtime \
-		bytecodealliance:sightglass:b409ba75a7a89cbf4cbf9ec44880e4ae6509a85c:sightglass \
-		WebAssembly:WASI:3fd0abd12c1f53772eeff46d3cf21d7e2475c885:wasi_lucet \
-		WebAssembly:WASI:2b027d91c29e6141a3768e638076daa23f51621c:wasi_wasmtime \
-		timberio:leveldb:64265815bcf1b69f30e6cb35bf687fbd6dd64afb:leveldb \
-		timberio:leveldb-sys:bbdd99a6fab0a7444a8c6eb0cc86a1a5a75f7fa1:leveldbsys \
-		kyren:rlua:25bd7e6bffef9597466a98bfca80a3056c9e6320:rlua \
-		tower-rs:tower:c87fdd9c1e4c0728fdaa87d3fafe3e48da9b498a:tower \
-		tokio-rs:tracing:65547d8809fcc726b8187db85b23c42e32ef5dce:tracingfutures
 CARGO_CRATES=	adler-0.2.3 \
 		ahash-0.2.18 \
 		aho-corasick-0.7.7 \
@@ -555,26 +549,25 @@ CARGO_CRATES=	adler-0.2.3 \
 		xml-rs-0.8.0 \
 		yaml-rust-0.4.3 \
 		zeroize-1.1.0 \
-		zstd-sys-1.4.15+zstd.1.4.4
-CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	tracingfutures:tracing-futures:tracing-futures \
-			tracingfutures:tracing-tower:tracing-tower \
-			tower:tower03:tower \
-			lucet:lucetc:lucetc \
-			lucet:lucet-runtime:lucet-runtime \
-			lucet:lucet-wasi:lucet-wasi
+		zstd-sys-1.4.15+zstd.1.4.4 \
+		leveldb-sys@git+https://github.com/timberio/leveldb-sys?branch=v3.0.0\#bbdd99a6fab0a7444a8c6eb0cc86a1a5a75f7fa1 \
+		leveldb@git+https://github.com/timberio/leveldb\#64265815bcf1b69f30e6cb35bf687fbd6dd64afb \
+		cranelift-bforest,cranelift-codegen,cranelift-codegen-meta,cranelift-codegen-shared,cranelift-entity,cranelift-frontend,cranelift-module,cranelift-native,cranelift-object,cranelift-wasm,lucet-module,lucet-runtime,lucet-runtime-internals,lucet-runtime-macros,lucet-validate,lucet-wasi,lucet-wasi-generate,lucet-wiggle,lucet-wiggle-generate,lucet-wiggle-macro,lucetc,wasi-common,wig,wiggle,wiggle-generate,wiggle-macro,winx,witx,yanix@git+https://github.com/bytecodealliance/lucet.git?rev=d4fc14a03bdb99ac83173d27fddf1aca48412a86\#d4fc14a03bdb99ac83173d27fddf1aca48412a86 \
+		tower@git+https://github.com/tower-rs/tower\#c87fdd9c1e4c0728fdaa87d3fafe3e48da9b498a \
+		rlua@git+https://github.com/kyren/rlua\#25bd7e6bffef9597466a98bfca80a3056c9e6320 \
+		tracing-futures,tracing-tower@git+https://github.com/tokio-rs/tracing?rev=65547d8809fcc726b8187db85b23c42e32ef5dce\#65547d8809fcc726b8187db85b23c42e32ef5dce
 
 post-extract:
 	${RMDIR} ${WRKSRC_wasmtime}/crates/wasi-common/WASI
 	${MV} ${WRKSRC_wasi_wasmtime} ${WRKSRC_wasmtime}/crates/wasi-common/WASI
-	${RMDIR} ${WRKSRC_lucet}/wasmtime ${WRKSRC_lucet}/sightglass ${WRKSRC_lucet}/wasi
-	${MV} ${WRKSRC_wasmtime} ${WRKSRC_lucet}/wasmtime
-	${MV} ${WRKSRC_sightglass} ${WRKSRC_lucet}/sightglass
-	${MV} ${WRKSRC_wasi_lucet} ${WRKSRC_lucet}/wasi
+	${RMDIR} ${WRKSRC_crate_lucet-runtime}/wasmtime ${WRKSRC_crate_lucet-runtime}/sightglass ${WRKSRC_crate_lucet-runtime}/wasi
+	${MV} ${WRKSRC_wasmtime} ${WRKSRC_crate_lucet-runtime}/wasmtime
+	${MV} ${WRKSRC_sightglass} ${WRKSRC_crate_lucet-runtime}/sightglass
+	${MV} ${WRKSRC_wasi_lucet} ${WRKSRC_crate_lucet-runtime}/wasi
 
 post-patch:
 	${REINPLACE_CMD} -e 's|.probe("lua")|.probe("lua-5.3")|' \
-		${WRKSRC_rlua}/build.rs
+		${WRKSRC_crate_rlua}/build.rs
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vector

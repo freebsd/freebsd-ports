@@ -1,0 +1,5 @@
+TIMESTAMP = 1634754069
+SHA256 (statgen-bamUtil-v1.0.15_GH0.tar.gz) = 24ac4bdb81eded6e33f60dba85ec3d32ebdb06d42f75df775c2632bbfbd8cce9
+SIZE (statgen-bamUtil-v1.0.15_GH0.tar.gz) = 1929150
+SHA256 (statgen-libStatGen-v1.0.15_GH0.tar.gz) = 075dcd891409c48d76c0c66186c0cc479bc3cd50bba093e7f318e1d1d19961ff
+SIZE (statgen-libStatGen-v1.0.15_GH0.tar.gz) = 560782

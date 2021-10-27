@@ -1,4 +1,4 @@
-TIMESTAMP = 1632383454
+TIMESTAMP = 1634687422
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/anyhow-1.0.43.crate) = 28ae2b3dec75a406790005a200b1bd89785afc02517a00ca99ecfe093ee9e6cf
@@ -371,5 +371,5 @@ SHA256 (rust/crates/zvariant-2.8.0.crate) = fa4b785b8b32b0f8433b4474e6bb4ea77b37
 SIZE (rust/crates/zvariant-2.8.0.crate) = 60913
 SHA256 (rust/crates/zvariant_derive-2.8.0.crate) = b42af4ee88fb928781391216c34be77ec7cdb3546042b2947ce38d86aa5f37dd
 SIZE (rust/crates/zvariant_derive-2.8.0.crate) = 8771
-SHA256 (SeaDve-Kooha-v2.0.0_GH0.tar.gz) = bd56477d35b21cfb1fb5c7ccff539f6abc7f67c0809d4faaf453c99a1fcc7824
-SIZE (SeaDve-Kooha-v2.0.0_GH0.tar.gz) = 251562
+SHA256 (SeaDve-Kooha-v2.0.1_GH0.tar.gz) = 984ee062fabfe6bbdf8024dd5e4d1c5ce2fafc3b75539f2ba52449bdd4cc3f98
+SIZE (SeaDve-Kooha-v2.0.1_GH0.tar.gz) = 257283

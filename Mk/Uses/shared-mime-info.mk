@@ -15,6 +15,5 @@ IGNORE=	USES=shared-mime-info does not require args
 
 BUILD_DEPENDS+=	update-mime-database:misc/shared-mime-info
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info
-PLIST_FILES+=	"@shared-mime-info share/mime"
 
 .endif

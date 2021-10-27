@@ -24,7 +24,6 @@ USE_XORG=	xorgproto x11 xcursor xi xrandr
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pluggable-dialogs
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	dialogs/mime-settings/helpers/xfce4-compose-mail
 
 PORTSCOUT=	limitw:1,even

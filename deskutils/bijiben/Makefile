@@ -28,7 +28,6 @@ USES=		compiler:c++11-lib desktop-file-utils gettext gnome \
 		shared-mime-info shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo evolutiondataserver3 intltool
-INSTALLS_ICONS=	yes
 MESON_ARGS=	-Dzeitgeist=true
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson_post_install.py
 

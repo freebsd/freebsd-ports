@@ -10,6 +10,8 @@ lib/tuxpaint/plugins/blur.so
 lib/tuxpaint/plugins/bricks.so
 lib/tuxpaint/plugins/calligraphy.so
 lib/tuxpaint/plugins/cartoon.so
+lib/tuxpaint/plugins/checkerboard.so
+lib/tuxpaint/plugins/clone.so
 lib/tuxpaint/plugins/confetti.so
 lib/tuxpaint/plugins/distortion.so
 lib/tuxpaint/plugins/emboss.so
@@ -31,6 +33,7 @@ lib/tuxpaint/plugins/mosaic.so
 lib/tuxpaint/plugins/negative.so
 lib/tuxpaint/plugins/noise.so
 lib/tuxpaint/plugins/perspective.so
+lib/tuxpaint/plugins/pixels.so
 lib/tuxpaint/plugins/puzzle.so
 lib/tuxpaint/plugins/rails.so
 lib/tuxpaint/plugins/rainbow.so
@@ -149,6 +152,7 @@ share/locale/rw/LC_MESSAGES/tuxpaint.mo
 share/locale/sa/LC_MESSAGES/tuxpaint.mo
 share/locale/sat/LC_MESSAGES/tuxpaint.mo
 share/locale/sat@olchiki/LC_MESSAGES/tuxpaint.mo
+share/locale/sc/LC_MESSAGES/tuxpaint.mo
 share/locale/sd/LC_MESSAGES/tuxpaint.mo
 share/locale/sd@devanagari/LC_MESSAGES/tuxpaint.mo
 share/locale/shs/LC_MESSAGES/tuxpaint.mo

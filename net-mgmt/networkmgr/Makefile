@@ -2,6 +2,7 @@
 
 PORTNAME=	networkmgr
 DISTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ericbsd@FreeBSD.org
@@ -16,8 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 USES=		gnome python:3.7+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	GhostBSD
-USE_GNOME=	gtk-update-icon-cache pygobject3
-INSTALLS_ICONS=	yes
+USE_GNOME=	pygobject3
 USE_PYTHON=	distutils noflavors
 SHEBANG_GLOB=	*.py
 

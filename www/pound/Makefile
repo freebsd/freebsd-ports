@@ -21,7 +21,8 @@ COMMENT=	HTTP/HTTPS reverse-proxy and load-balancer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-USES=		tar:tgz ssl
+USES=		cpe tar:tgz ssl
+CPE_VENDOR=	apsis
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 USE_RC_SUBR=	${PORTNAME}

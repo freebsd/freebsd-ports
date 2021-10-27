@@ -1,6 +1,8 @@
 include/dune/alugrid/3d/alu3dinclude.hh
 include/dune/alugrid/3d/alu3diterators.hh
+include/dune/alugrid/3d/alu3diterators_imp.cc
 include/dune/alugrid/3d/alugrid.hh
+include/dune/alugrid/3d/aluinline.hh
 include/dune/alugrid/3d/communication.hh
 include/dune/alugrid/3d/datacollectorcaps.hh
 include/dune/alugrid/3d/datahandle.hh
@@ -18,19 +20,24 @@ include/dune/alugrid/3d/grid_inline.hh
 include/dune/alugrid/3d/gridfactory.cc
 include/dune/alugrid/3d/gridfactory.hh
 include/dune/alugrid/3d/gridview.hh
+include/dune/alugrid/3d/indexsets.cc
 include/dune/alugrid/3d/indexsets.hh
 include/dune/alugrid/3d/iterator.cc
 include/dune/alugrid/3d/iterator.hh
 include/dune/alugrid/3d/iterator_imp.cc
 include/dune/alugrid/3d/mappings.hh
 include/dune/alugrid/3d/mappings_imp.cc
+include/dune/alugrid/3d/topology.cc
 include/dune/alugrid/3d/topology.hh
 include/dune/alugrid/common/alugrid_assert.hh
 include/dune/alugrid/common/backuprestore.hh
+include/dune/alugrid/common/bisectioncompatibility.hh
 include/dune/alugrid/common/bndprojection.hh
 include/dune/alugrid/common/capabilities.hh
 include/dune/alugrid/common/declaration.hh
 include/dune/alugrid/common/defaultindexsets.hh
+include/dune/alugrid/common/duneassert.hh
+include/dune/alugrid/common/fromtogridfactory.hh
 include/dune/alugrid/common/geostorage.hh
 include/dune/alugrid/common/hsfc.hh
 include/dune/alugrid/common/interfaces.hh
@@ -38,6 +45,7 @@ include/dune/alugrid/common/intersectioniteratorwrapper.hh
 include/dune/alugrid/common/ldbhandleif.hh
 include/dune/alugrid/common/macrogridview.hh
 include/dune/alugrid/common/memory.hh
+include/dune/alugrid/common/meshquality.hh
 include/dune/alugrid/common/persistentcontainer.hh
 include/dune/alugrid/common/structuredgridfactory.hh
 include/dune/alugrid/common/transformation.hh
@@ -86,6 +94,7 @@ include/dune/alugrid/impl/serial/refcount.hh
 include/dune/alugrid/impl/serial/refinementrules.h
 include/dune/alugrid/impl/serial/serialize.h
 include/dune/alugrid/impl/serial/walk.h
+include/utils/bisection-compatibility/bisectioncompatibility.hh
 lib/cmake/dune-alugrid/dune-alugrid-config-version.cmake
 lib/cmake/dune-alugrid/dune-alugrid-config.cmake
 lib/cmake/dune-alugrid/dune-alugrid-targets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -95,6 +104,7 @@ lib/dunecontrol/dune-alugrid/dune.module
 lib/libdunealugrid.so
 libdata/pkgconfig/dune-alugrid.pc
 %%DATADIR%%/config.h.cmake
+share/dune/cmake/modules/AlugridTortureTests.cmake
 share/dune/cmake/modules/CMakeLists.txt
 share/dune/cmake/modules/DuneAlugridMacros.cmake
 share/dune/cmake/modules/FindDLMalloc.cmake

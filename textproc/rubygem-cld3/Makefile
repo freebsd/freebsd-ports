@@ -1,6 +1,5 @@
 PORTNAME=	cld3
-DISTVERSION=	3.3.0
-PORTREVISION=	2
+PORTVERSION=	3.4.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
-RUN_DEPENDS=	rubygem-ffi110>=1.1.0<1.12.0:devel/rubygem-ffi110
+RUN_DEPENDS=	rubygem-ffi>=1.1.0<1.16.0:devel/rubygem-ffi
 
 USES=		gem pkgconfig
 USE_RUBY=	yes

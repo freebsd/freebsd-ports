@@ -1,0 +1,19 @@
+--- sublime_merge.desktop.orig	2021-05-17 02:56:17 UTC
++++ sublime_merge.desktop
+@@ -4,15 +4,10 @@
+ Name=Sublime Merge
+ GenericName=Git Client
+ Comment=Sublime Merge is a Git client, from the makers of Sublime Text
+-Exec=/opt/sublime_merge/sublime_merge %F
++Exec=sublime_merge %F
+ Terminal=false
+ MimeType=text/plain;
+ Icon=sublime-merge
+ Categories=Development;
+ StartupNotify=true
+-Actions=new-window;
+ 
+-[Desktop Action new-window]
+-Name=New Window
+-Exec=/opt/sublime_merge/sublime_merge --launch-or-new-window
+-OnlyShowIn=Unity;

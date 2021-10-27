@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	mate-media
-PORTVERSION=	1.24.1
+PORTVERSION=	1.26.0
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -29,7 +29,6 @@ USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

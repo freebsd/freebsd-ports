@@ -12,6 +12,9 @@ EXTRACT_SUFX=
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for simple text rewriting
 
+DEPRECATED=	Abandoned upstream, last release in 2006, Apache includes mod_sed
+EXPIRATION_DATE=2022-03-31
+
 LICENSE=	GPLv2
 
 USES=		apache:2.2+

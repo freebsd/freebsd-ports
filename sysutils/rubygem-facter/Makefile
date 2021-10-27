@@ -1,7 +1,7 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
 
 PORTNAME=	facter
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,11 @@ LICENSE=	APACHE20
 
 # rubygem-ffi is a soft dependency, but is used on FreeBSD to resolve some facts
 RUN_DEPENDS=	rubygem-ffi>=1.0:devel/rubygem-ffi \
-		rubygem-hocon>=1.3:devel/rubygem-hocon \
-		rubygem-thor>=1.0.1:devel/rubygem-thor
+		rubygem-hocon>=1.3<2:devel/rubygem-hocon \
+		rubygem-thor>=1.0.1<2.0:devel/rubygem-thor
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	puppet
 USE_RUBY=	yes
 
 NO_ARCH=	yes

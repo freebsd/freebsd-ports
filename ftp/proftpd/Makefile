@@ -206,7 +206,6 @@ post-configure:
 pre-build:
 	@cd ${WRKSRC} && ${MAKE_CMD} include/buildstamp.h
 
-
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/proftpd
 

@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team
 
 PORTNAME=	mozo
-PORTVERSION=	1.24.1
+PORTVERSION=	1.26.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -16,21 +16,17 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mate-desktop-item-edit:x11/mate-panel
 
 USES=		gettext-tools gmake gnome localbase mate pathfix pkgconfig \
 		python:3.7+ tar:xz
-USE_MATE=	menus
 USE_GNOME=	gtk30 intltool pygobject3
+USE_MATE=	menus
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
 PORTSCOUT=	limitw:1,even
 
+NLS_USES=	gettext
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-	    ${WRKSRC}/Mozo/util.py
 
 .include <bsd.port.mk>

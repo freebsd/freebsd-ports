@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	23.3.4.7
+DISTVERSION=	23.3.4.8
 PORTREVISION=	0
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		autoreconf:build cpe gmake ncurses perl5
+USES=		autoreconf:build compiler cpe gmake ncurses perl5
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
@@ -93,6 +93,11 @@ WX_VARS=			USE_GL="gl glu" \
 				WX_COMPS="wx"
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 130
+# PR 258494
+CONFIGURE_ARGS+=	--disable-pgo
+.endif
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-DMAP_NORESERVE=0

@@ -1,0 +1,11 @@
+--- configure.orig	2021-10-14 09:28:15 UTC
++++ configure
+@@ -6984,7 +6984,7 @@ fi
+ 	echo "* (otherwise, a default of CFLAGS=-O3 will be used)    *"
+ 	echo "********************************************************"
+ 	echo ""
+-        CFLAGS="-O3"
++        CFLAGS="$ac_cv_env_CFLAGS_value"
+   fi
+ 
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts $CFLAGS" >&5

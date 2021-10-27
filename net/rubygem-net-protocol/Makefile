@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	net-protocol
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

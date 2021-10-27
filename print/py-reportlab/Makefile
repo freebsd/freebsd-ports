@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PY_PILLOW}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	distutils autoplist
 
 CONFLICTS=	py*-reportlab[^3]-[^3].* \

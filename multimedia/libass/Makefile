@@ -14,11 +14,12 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		autoreconf compiler:c11 iconv libtool pathfix pkgconfig tar:xz
+USES=		autoreconf compiler:c11 cpe iconv libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS_i386=	-Wl,-znotext
+CPE_VENDOR=	libass_project
 
 OPTIONS_DEFINE_amd64=	ASM
 OPTIONS_DEFINE_i386=	ASM

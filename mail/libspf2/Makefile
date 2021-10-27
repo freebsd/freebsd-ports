@@ -13,9 +13,10 @@ COMMENT=	Sender Policy Framework 2 C Implementation
 LICENSE=	BSD2CLAUSE LGPL21 LGPL3
 LICENSE_COMB=	dual
 
+USES=		cpe libtool
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
 USE_LDCONFIG=	yes
 
 post-patch:

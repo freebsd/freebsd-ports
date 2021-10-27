@@ -3,7 +3,7 @@
 PORTNAME=	poi
 PORTVERSION=	4.1.2
 CATEGORIES=	textproc devel java
-MASTER_SITES=	APACHE/${PORTNAME}/release/bin
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/release/bin/
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}-${RELEASE_DATE}
 

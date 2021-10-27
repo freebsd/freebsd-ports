@@ -19,7 +19,6 @@ USE_GITHUB=	yes
 GH_PROJECT=	icons
 
 USE_GNOME=	librsvg2
-INSTALLS_ICONS=	yes
 
 MESON_ARGS=	-Dpalettes=false \
 		-Dvolume_icons=false

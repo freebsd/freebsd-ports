@@ -1,0 +1,4 @@
+License Scout is a utility that discovers and aggregates the licenses for your
+software project's transitive dependencies.
+
+WWW: https://github.com/chef/license_scout

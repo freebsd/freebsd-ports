@@ -1,10 +1,10 @@
 PORTNAME=	fossil
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 DISTVERSIONPREFIX=	src-
 PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	devel www
-MASTER_SITES=	https://fossil-scm.org/home/tarball/7aedd5/
+MASTER_SITES=	https://fossil-scm.org/home/tarball/version-${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database

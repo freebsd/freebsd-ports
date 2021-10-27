@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	MHASH OPENSSL
 MHASH_DESC=	Depend on mhash PHP extension
 OPENSSL_DESC=	Depend on OpenSSL PHP extension
 
-USES=	horde
+USES=	horde cpe
 MHASH_USES=	php
 MHASH_USE=	PHP=hash
 OPENSSL_USES=	php

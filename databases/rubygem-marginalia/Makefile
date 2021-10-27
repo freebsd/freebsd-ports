@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-actionpack61>=2.3:www/rubygem-actionpack61 \
 		rubygem-activerecord61>=2.3:databases/rubygem-activerecord61
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes

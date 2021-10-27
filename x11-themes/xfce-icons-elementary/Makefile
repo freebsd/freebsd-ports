@@ -23,7 +23,6 @@ GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	elementary-xfce
 
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\/$$(PREFIX)|$$(PREFIX)|g' \

@@ -12,7 +12,7 @@ RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
 
 ONLY_FOR_ARCHS=		i386 amd64 powerpc64le powerpc64
-ONLY_FOR_ARCHS_REASON=	Clover needs a GPU supported by the Radeon KMS driver
+ONLY_FOR_ARCHS_REASON=	needs a GPU supported by the Radeon KMS driver
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"

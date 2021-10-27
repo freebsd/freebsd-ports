@@ -15,7 +15,8 @@ RUN_DEPENDS=	rubygem-crass>=1.0.2<1.1:www/rubygem-crass \
 		rubygem-nokogiri>=1.8.0:textproc/rubygem-nokogiri \
 		rubygem-nokogumbo>=2.0<3:textproc/rubygem-nokogumbo
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes

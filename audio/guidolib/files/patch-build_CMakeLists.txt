@@ -1,0 +1,20 @@
+--- build/CMakeLists.txt.orig	2021-10-25 09:44:31 UTC
++++ build/CMakeLists.txt
+@@ -256,7 +256,7 @@ else()
+ 	set (INSTALL_BIN 		${CMAKE_INSTALL_PREFIX}/bin)
+ 	set (INSTALL_LIB 		${CMAKE_INSTALL_PREFIX}/lib)
+ 	set (INSTALL_INC 		${CMAKE_INSTALL_PREFIX}/include/guido)
+-	set (INSTALL_SAMPLES 	${CMAKE_INSTALL_PREFIX}/share/guidolib/examples)
++	set (INSTALL_SAMPLES 	share/examples/guidolib)
+ 	set (INSTALL_APPS 		${CMAKE_INSTALL_PREFIX}/bin)
+ 	set (INSTALL_DOC 		${CMAKE_INSTALL_PREFIX}/share/guidolib/doc)
+ 	set (INSTALL_INTERFACES ${CMAKE_INSTALL_PREFIX}/share/guidolib)
+@@ -319,7 +319,7 @@ install (
+ 	DIRECTORY ${GMN} DESTINATION ${INSTALL_SAMPLES}
+ 	FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+ 	DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+-	FILES_MATCHING PATTERN "*.gmn"
++	#FILES_MATCHING PATTERN "*.gmn" # workaround for https://github.com/grame-cncm/guidolib/issues/130
+ 	PATTERN "SheetMusic" EXCLUDE
+ )
+ 

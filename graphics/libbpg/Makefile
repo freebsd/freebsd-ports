@@ -13,7 +13,8 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lib gmake jpeg localbase:ldflags
+USES=		compiler:c++11-lib cpe gmake jpeg localbase:ldflags
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	X265_LIBS=${X265_LIBS}

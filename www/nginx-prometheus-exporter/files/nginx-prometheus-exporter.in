@@ -42,7 +42,8 @@ load_rc_config $name
 pidfile=/var/run/nginx_prometheus_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/nginx-prometheus-exporter"
-command_args="-p ${pidfile} /usr/bin/env ${procname} \
+command_args="-f -T ${name} -p ${pidfile} \
+    /usr/bin/env ${procname} \
     --nginx.scrape-uri=${nginx_prometheus_exporter_scrape_uri} \
     --web.listen-address=${nginx_prometheus_exporter_listen_address} \
     ${nginx_prometheus_exporter_args}"

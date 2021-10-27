@@ -1,6 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.15.0
 PORTREVISION=	1
 CATEGORIES=	math
 
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
 		libmp++.so:math/mppp \
+		libtbb.so:devel/onetbb \
 		libsleef.so:math/sleef \
 		libspdlog.so:devel/spdlog
 TEST_DEPENDS=	xtensor>0:math/xtensor

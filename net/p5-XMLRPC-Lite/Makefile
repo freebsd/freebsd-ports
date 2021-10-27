@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SOAP-Lite>=1.11:net/p5-SOAP-Lite
 
-
 CONFIGURE_ARGS=	--noprompt
 INSTALL_TARGET=	pure_install
 USE_PERL5=	configure

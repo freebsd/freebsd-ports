@@ -9,7 +9,8 @@ COMMENT=	Sed/awk/cut/join/sort for name-indexed data such as CSV, TSV and JSON
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		autoreconf libtool
+USES=		autoreconf cpe libtool
+CPE_VENDOR=	johnkerl
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnkerl
 

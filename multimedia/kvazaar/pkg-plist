@@ -3,9 +3,11 @@ include/kvazaar.h
 lib/libkvazaar.a
 lib/libkvazaar.so
 lib/libkvazaar.so.6
-lib/libkvazaar.so.6.2.0
+lib/libkvazaar.so.6.6.0
 libdata/pkgconfig/kvazaar.pc
 man/man1/kvazaar.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.greatest
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.x264asm
 %%PORTDOCS%%%%DOCSDIR%%/README.md

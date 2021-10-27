@@ -21,7 +21,6 @@ GL_ACCOUNT=	rmnvgr
 GL_COMMIT=	b8cd4f28c82d5da9b93cd892355b66f8b7340129
 USE_GNOME=	gtk30 pygobject3
 GLIB_SCHEMAS=	fr.romainvigier.MetadataCleaner.gschema.xml
-INSTALLS_ICONS=	yes
 USE_PYTHON=	concurrent flavors
 
 SHEBANG_GLOB=	*.py *.py.in

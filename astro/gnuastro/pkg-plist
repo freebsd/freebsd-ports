@@ -76,8 +76,8 @@ include/gnuastro/units.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.13
-lib/libgnuastro.so.13.0.0
+lib/libgnuastro.so.14
+lib/libgnuastro.so.14.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz

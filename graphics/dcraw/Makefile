@@ -14,13 +14,15 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		liblcms2.so:graphics/lcms2
 
-USES=		jpeg localbase tar:xz
+USES=		cpe jpeg localbase tar:xz
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jasper
 LIBS+=		-ljasper -ljpeg -llcms2 -lm
 
 PLIST_FILES=	bin/dcraw \
 		share/man/man1/dcraw.1.gz
+
+CPE_VENDOR=	dcraw_project
 
 do-build:
 	@cd ${WRKSRC}/ && ${CC} -o dcraw ${CPPFLAGS} ${CFLAGS} dcraw.c ${LDFLAGS} ${LIBS}

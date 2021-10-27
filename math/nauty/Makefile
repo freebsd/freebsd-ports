@@ -1,10 +1,11 @@
 # Created by: bremner@unb.ca
 
 PORTNAME=	nauty
-PORTVERSION=	27r3
+PORTVERSION=	2.7r3
+PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Nauty & Traces are programs for computing graph automorphism

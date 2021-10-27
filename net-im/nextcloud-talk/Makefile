@@ -18,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
 
-USES=		php:flavors
+USES=		cpe php:flavors
+CPE_VENDOR=	nextcloud
 NO_BUILD=	yes
 NO_ARCH=	yes
 

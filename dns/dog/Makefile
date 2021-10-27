@@ -1,7 +1,7 @@
 PORTNAME=	dog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	dns net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,7 +15,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ogham
-GH_TUPLE=	llogiq:mutagen:c7abc956a10e8a3e2cc71f21279ea0a42f7b7c10:mutagen
 
 CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
@@ -89,9 +88,8 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.6.2
-CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	mutagen:mutagen:mutagen
+		winreg-0.6.2 \
+		mutagen,mutagen-core,mutagen-transform@git+https://github.com/llogiq/mutagen\#c7abc956a10e8a3e2cc71f21279ea0a42f7b7c10
 
 PORTDOCS=	README.md
 

@@ -119,6 +119,7 @@
     SUBDIR += R-cran-statmod
     SUBDIR += R-cran-survey
     SUBDIR += R-cran-tensor
+    SUBDIR += R-cran-terra
     SUBDIR += R-cran-truncnorm
     SUBDIR += R-cran-units
     SUBDIR += R-cran-uroot
@@ -252,6 +253,7 @@
     SUBDIR += dune-istl
     SUBDIR += dune-localfunctions
     SUBDIR += dune-metagrid
+    SUBDIR += dune-multidomaingrid
     SUBDIR += dune-pdelab
     SUBDIR += dune-polygongrid
     SUBDIR += dune-spgrid
@@ -371,6 +373,7 @@
     SUBDIR += jtransforms
     SUBDIR += jts
     SUBDIR += kalgebra
+    SUBDIR += kalker
     SUBDIR += kbruch
     SUBDIR += kcalc
     SUBDIR += kfr

@@ -237,7 +237,7 @@ krill:*:294:
 jottad:*:295:
 writefreely:*:296:
 conduit:*:297:
-# free: 298
+neolink:*:298:
 owncast:*:299:
 backuppc:*:300:
 # free: 301
@@ -815,8 +815,8 @@ opensearch:*:855:
 bitmark:*:872:
 bitmark-recorder:*:873:
 librespeed:*:874:
-# free: 875
-# free: 876
+cfssl:*:875:
+_lms:*:876:
 gemserv:*:877:
 gerbera:*:878:
 _encrypted-dns:*:879:

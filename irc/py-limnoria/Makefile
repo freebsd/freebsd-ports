@@ -17,7 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python:3.6+ # 2.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

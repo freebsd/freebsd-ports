@@ -8,6 +8,10 @@ COMMENT=	C single header audio playback and capture library
 LICENSE=	PD MIT
 LICENSE_COMB=	dual
 
+USES=		cpe
+
+CPE_VENDOR=	miniaudio_project
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mackron
 GH_TAGNAME=	dbca7a3b44594e0226f887472b31f54aa5f14214

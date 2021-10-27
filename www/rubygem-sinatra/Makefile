@@ -16,9 +16,11 @@ RUN_DEPENDS=	rubygem-mustermann>=1.0<2:devel/rubygem-mustermann \
 		rubygem-rack-protection>=${PORTVERSION}:www/rubygem-rack-protection \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	sinatrarb
 
 .include <bsd.port.mk>

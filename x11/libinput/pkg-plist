@@ -8,6 +8,8 @@ libexec/libinput/libinput-debug-events
 %%DEBUG_GUI%%libexec/libinput/libinput-debug-gui
 libexec/libinput/libinput-analyze
 libexec/libinput/libinput-analyze-per-slot-delta
+libexec/libinput/libinput-analyze-recording
+libexec/libinput/libinput-analyze-touch-down-state
 libexec/libinput/libinput-debug-tablet
 libexec/libinput/libinput-list-devices
 libexec/libinput/libinput-measure
@@ -21,6 +23,8 @@ libexec/libinput/libinput-record
 libexec/libinput/libinput-replay
 man/man1/libinput-analyze.1.gz
 man/man1/libinput-analyze-per-slot-delta.1.gz
+man/man1/libinput-analyze-recording.1.gz
+man/man1/libinput-analyze-touch-down-state.1.gz
 man/man1/libinput-debug-events.1.gz
 %%DEBUG_GUI%%man/man1/libinput-debug-gui.1.gz
 man/man1/libinput-debug-tablet.1.gz
@@ -39,6 +43,7 @@ man/man1/libinput-replay.1.gz
 man/man1/libinput.1.gz
 %%DATADIR%%/10-generic-keyboard.quirks
 %%DATADIR%%/10-generic-lid.quirks
+%%DATADIR%%/10-generic-mouse.quirks
 %%DATADIR%%/10-generic-trackball.quirks
 %%DATADIR%%/30-vendor-aiptek.quirks
 %%DATADIR%%/30-vendor-alps.quirks
@@ -55,16 +60,24 @@ man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-trust.quirks
 %%DATADIR%%/30-vendor-vmware.quirks
 %%DATADIR%%/30-vendor-wacom.quirks
+%%DATADIR%%/50-framework.quirks
 %%DATADIR%%/50-system-acer.quirks
 %%DATADIR%%/50-system-apple.quirks
 %%DATADIR%%/50-system-asus.quirks
 %%DATADIR%%/50-system-chicony.quirks
+%%DATADIR%%/50-system-chuwi.quirks
 %%DATADIR%%/50-system-cyborg.quirks
 %%DATADIR%%/50-system-dell.quirks
+%%DATADIR%%/50-system-gigabyte.quirks
 %%DATADIR%%/50-system-google.quirks
 %%DATADIR%%/50-system-hp.quirks
+%%DATADIR%%/50-system-huawei.quirks
 %%DATADIR%%/50-system-lenovo.quirks
+%%DATADIR%%/50-system-pine64.quirks
+%%DATADIR%%/50-system-prestigio.quirks
+%%DATADIR%%/50-system-purism.quirks
 %%DATADIR%%/50-system-sony.quirks
 %%DATADIR%%/50-system-system76.quirks
 %%DATADIR%%/50-system-toshiba.quirks
 share/zsh/site-functions/_libinput
+@dir %%ETCDIR%%

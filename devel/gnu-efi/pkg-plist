@@ -23,8 +23,8 @@ include/efi/efipxebc.h
 include/efi/efirtlib.h
 include/efi/efiser.h
 include/efi/efisetjmp.h
+include/efi/efishell.h
 include/efi/efishellintf.h
-include/efi/efishellparm.h
 include/efi/efistdarg.h
 include/efi/efitcp.h
 include/efi/efiudp.h

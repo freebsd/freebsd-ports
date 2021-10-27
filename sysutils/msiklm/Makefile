@@ -9,7 +9,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	This hardware is only found on x86 systems
+ONLY_FOR_ARCHS_REASON=	this hardware is only found on x86 systems
 
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 

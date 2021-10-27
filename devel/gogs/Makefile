@@ -14,7 +14,7 @@ BUILD_DEPENDS=	go-bindata:devel/go-bindata
 RUN_DEPENDS=	git:devel/git \
 		bash:shells/bash
 
-USES=		go:modules
+USES=		cpe go:modules
 
 GO_MODULE=	gogs.io/gogs
 GO_TARGET=	:${PREFIX}/libexec/${PORTNAME}/${PORTNAME}

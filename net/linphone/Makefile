@@ -14,7 +14,7 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		liblinphone++.so:net/liblinphone
 
 USES=		cmake compiler:c++11-lib pkgconfig qt:5
-USE_QT= 	buildtools_build concurrent core declarative \
+USE_QT=		buildtools_build concurrent core declarative \
 		graphicaleffects_run gui linguisttools network qmake_build \
 		quickcontrols_run quickcontrols2 speech svg testlib widgets
 

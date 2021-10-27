@@ -1,15 +1,15 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2021-07-19 18:45:08 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2021-09-24 04:25:58 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -450,7 +450,7 @@
- #include "components/user_manager/user.h"
+@@ -361,7 +361,7 @@
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
+ #include "storage/browser/file_system/external_mount_points.h"
 -#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -511,7 +511,7 @@
+@@ -425,7 +425,7 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -18,19 +18,20 @@
  #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
  #endif
  
-@@ -530,9 +530,9 @@
+@@ -442,10 +442,10 @@
+ #include "components/crash/content/browser/crash_handler_host_linux.h"
+ #endif
  
- // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
- // migration is complete.
--#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD) || \
+     BUILDFLAG(IS_CHROMEOS_ASH)
  #include "chrome/browser/enterprise/connectors/device_trust/navigation_throttle.h"
--#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
-+#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) ||
++#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD) ||
+         // BUILDFLAG(IS_CHROMEOS_ASH)
  
  // TODO(crbug.com/939205):  Once the upcoming App Service is available, use a
- // single navigation throttle to display the intent picker on all platforms.
-@@ -550,7 +550,7 @@
+@@ -464,7 +464,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -39,7 +40,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -951,11 +951,13 @@ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHos
+@@ -860,11 +860,13 @@ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHos
  }
  
  int GetCrashSignalFD(const base::CommandLine& command_line) {
@@ -53,7 +54,7 @@
  
    // Extensions have the same process type as renderers.
    if (command_line.HasSwitch(extensions::switches::kExtensionProcess)) {
-@@ -1377,7 +1379,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1255,7 +1257,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    main_parts = std::make_unique<ChromeBrowserMainPartsLacros>(parameters,
                                                                &startup_data_);
@@ -62,7 +63,7 @@
    main_parts =
        std::make_unique<ChromeBrowserMainPartsLinux>(parameters, &startup_data_);
  #elif defined(OS_ANDROID)
-@@ -1408,7 +1410,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1289,7 +1291,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLacros>());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -71,7 +72,7 @@
    main_parts->AddParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
  #else
-@@ -2192,7 +2194,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2058,7 +2060,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -80,7 +81,7 @@
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
  #else
-@@ -3753,7 +3755,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3649,7 +3651,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -89,7 +90,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3788,7 +3790,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
+@@ -3684,7 +3686,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
      mappings->Share(kCrashDumpSignal, crash_signal_fd);
    }
  }
@@ -98,21 +99,22 @@
  
  #if defined(OS_WIN)
  std::wstring ChromeContentBrowserClient::GetAppContainerSidForSandboxType(
-@@ -4146,11 +4148,11 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4067,12 +4069,12 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
          &throttles);
    }
  
--#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD) || \
+     BUILDFLAG(IS_CHROMEOS_ASH)
    MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
--#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
-+#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) ||
++#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD) ||
+         // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if !defined(OS_ANDROID)
-   MaybeAddThrottle(DevToolsWindow::MaybeCreateNavigationThrottle(handle),
-@@ -4172,7 +4174,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4101,7 +4103,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \

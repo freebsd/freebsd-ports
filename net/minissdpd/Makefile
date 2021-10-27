@@ -11,7 +11,8 @@ COMMENT=	UPnP IGD discovery speed enhancer
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	miniupnp_project
 USE_RC_SUBR=	minissdpd
 
 CFLAGS+=	-D_GNU_SOURCE

@@ -1,7 +1,7 @@
 # Created by: Peter Lai <cowbert@gmail.com>
 
 PORTNAME=	mod_rivet
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	www tcl
 MASTER_SITES=	APACHE/tcl/rivet
 DISTNAME=	rivet-${PORTVERSION}

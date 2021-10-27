@@ -3,7 +3,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -18,7 +18,7 @@ LICENSE_PERMS_SFI-SCLA=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
 
 # Ignore this if you feel adventurous
 ONLY_FOR_ARCHS=		aarch64 amd64 arm armv6 armv7 i386 powerpc64le
-ONLY_FOR_ARCHS_REASON=	Needs a little endian environment
+ONLY_FOR_ARCHS_REASON=	requires little endian environment
 
 BUILD_DEPENDS=	string_theory>=3.1:devel/string_theory \
 		rapidjson>=1.1.0:devel/rapidjson \

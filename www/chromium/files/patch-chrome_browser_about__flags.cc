@@ -1,6 +1,6 @@
---- chrome/browser/about_flags.cc.orig	2021-07-21 14:11:02 UTC
+--- chrome/browser/about_flags.cc.orig	2021-09-24 04:25:57 UTC
 +++ chrome/browser/about_flags.cc
-@@ -192,7 +192,7 @@
+@@ -195,7 +195,7 @@
  #include "ui/gl/gl_switches.h"
  #include "ui/native_theme/native_theme_features.h"
  
@@ -9,25 +9,25 @@
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -992,7 +992,7 @@ const FeatureEntry::FeatureVariation kMemoriesVariatio
-     nullptr,
- }};
+@@ -966,7 +966,7 @@ const FeatureEntry::FeatureVariation kMemoriesVariatio
+      base::size(kMemoryVariationRemote), nullptr},
+ };
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD) || \
      defined(OS_WIN)
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
-@@ -1263,7 +1263,7 @@ const FeatureEntry::FeatureVariation kOmniboxBookmarkP
-         nullptr,
-     },
- };
+@@ -1164,7 +1164,7 @@ const FeatureEntry::FeatureVariation kOmniboxBookmarkP
+     {"Dynamic Replace URL (Title - Path|URL)",
+      kOmniboxBookmarkPathsDynamicReplaceUrl,
+      base::size(kOmniboxBookmarkPathsDynamicReplaceUrl), nullptr}};
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) ||
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD) ||
          // defined(OS_WIN)
  
  const FeatureEntry::FeatureVariation
-@@ -3151,7 +3151,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3131,7 +3131,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kDeprecateLowUsageCodecs)},
  #endif  // defined(OS_CHROMEOS)
  
@@ -36,7 +36,7 @@
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -3169,7 +3169,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3149,7 +3149,7 @@ const FeatureEntry kFeatureEntries[] = {
          kOsMac | kOsWin | kOsCrOS | kOsAndroid | kOsLinux,
          SINGLE_DISABLE_VALUE_TYPE(switches::kDisableAcceleratedVideoDecode),
      },
@@ -45,7 +45,7 @@
      {
          "disable-accelerated-video-encode",
          flag_descriptions::kAcceleratedVideoEncodeName,
-@@ -3510,7 +3510,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3511,7 +3511,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"enable-login-detection", flag_descriptions::kEnableLoginDetectionName,
       flag_descriptions::kEnableLoginDetectionDescription, kOsAll,
       FEATURE_VALUE_TYPE(login_detection::kLoginDetection)},
@@ -54,7 +54,7 @@
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
       SINGLE_VALUE_TYPE(
-@@ -3520,7 +3520,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3521,7 +3521,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableNavigationPredictorDescription,
       kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(blink::features::kNavigationPredictor)},
@@ -63,7 +63,7 @@
      {"enable-preconnect-to-search",
       flag_descriptions::kEnablePreconnectToSearchName,
       flag_descriptions::kEnablePreconnectToSearchDescription, kOsAll,
-@@ -4346,7 +4346,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4326,7 +4326,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsAll,
       FEATURE_VALUE_TYPE(omnibox::kOmniboxTrendingZeroPrefixSuggestionsOnNTP)},
  
@@ -72,25 +72,22 @@
      defined(OS_WIN)
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
-@@ -4443,7 +4443,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kOmniboxKeywordSpaceTriggeringSettingName,
-      flag_descriptions::kOmniboxKeywordSpaceTriggeringSettingDescription,
-      kOsDesktop, FEATURE_VALUE_TYPE(omnibox::kKeywordSpaceTriggeringSetting)},
+@@ -4438,7 +4438,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kOmniboxPreserveLongerShortcutsTextName,
+      flag_descriptions::kOmniboxPreserveLongerShortcutsTextDescription,
+      kOsDesktop, FEATURE_VALUE_TYPE(omnibox::kPreserveLongerShortcutsText)},
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) ||
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD) ||
          // defined(OS_WIN)
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -4721,7 +4721,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4707,12 +4707,12 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(chrome::android::kReaderModeInCCT)},
  #endif  // !defined(OS_ANDROID)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
-     {"direct-manipulation-stylus",
-      flag_descriptions::kDirectManipulationStylusName,
-@@ -4732,7 +4732,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"webui-feedback", flag_descriptions::kWebuiFeedbackName,
       flag_descriptions::kWebuiFeedbackDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kWebUIFeedback)},
@@ -99,16 +96,16 @@
          // defined(OS_CHROMEOS)
  
  #if !defined(OS_ANDROID)
-@@ -5373,7 +5373,7 @@ const FeatureEntry kFeatureEntries[] = {
-                                     kSharingDeviceExpirationVariations,
-                                     "SharingDeviceExpiration")},
+@@ -5322,7 +5322,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kSharingSendViaSyncDescription, kOsAll,
+      FEATURE_VALUE_TYPE(kSharingSendViaSync)},
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
      {"sharing-hub-desktop-app-menu",
       flag_descriptions::kSharingHubDesktopAppMenuName,
       flag_descriptions::kSharingHubDesktopAppMenuDescription, kOsDesktop,
-@@ -5382,7 +5382,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5331,7 +5331,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kSharingHubDesktopOmniboxName,
       flag_descriptions::kSharingHubDesktopOmniboxDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(sharing_hub::kSharingHubDesktopOmnibox)},
@@ -117,7 +114,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
      {"ash-enable-pip-rounded-corners",
-@@ -5856,7 +5856,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5805,7 +5805,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kMouseSubframeNoImplicitCaptureDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
  
@@ -126,7 +123,7 @@
      defined(OS_CHROMEOS)
      {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
       flag_descriptions::kGlobalMediaControlsDescription,
-@@ -5897,7 +5897,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5846,7 +5846,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kGlobalMediaControlsOverlayControlsDescription,
       kOsWin | kOsMac | kOsLinux,
       FEATURE_VALUE_TYPE(media::kGlobalMediaControlsOverlayControls)},
@@ -134,36 +131,27 @@
 +#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) ||
          // defined(OS_CHROMEOS)
  
- #if BUILDFLAG(ENABLE_SPELLCHECK) && defined(OS_WIN)
-@@ -6089,7 +6089,7 @@ const FeatureEntry kFeatureEntries[] = {
-          kPasswordsAccountStorageVariations,
-          "ButterForPasswords")},
- 
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS)
-     {"passwords-account-storage-iph",
-      flag_descriptions::kEnablePasswordsAccountStorageIPHName,
-@@ -6097,7 +6097,7 @@ const FeatureEntry kFeatureEntries[] = {
-      kOsWin | kOsMac | kOsLinux,
-      FEATURE_VALUE_TYPE(
-          feature_engagement::kIPHPasswordsAccountStorageFeature)},
--#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) ||
-         // defined(OS_CHROMEOS)
- 
-     {"autofill-always-return-cloud-tokenized-card",
-@@ -6701,7 +6701,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(features::kIncognitoBrandConsistencyForAndroid)},
+     {"safety-tips", flag_descriptions::kSafetyTipName,
+@@ -6648,7 +6648,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(features::kIncognitoReauthenticationForAndroid)},
  #endif
  
 -#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 +#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS)
+     defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
      {"incognito-brand-consistency-for-desktop",
       flag_descriptions::kIncognitoBrandConsistencyForDesktopName,
-@@ -6806,7 +6806,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(language::kDetailedLanguageSettings)},
+@@ -6667,7 +6667,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kInheritNativeThemeFromParentWidgetDescription,
+      kOsDesktop,
+      FEATURE_VALUE_TYPE(views::features::kInheritNativeThemeFromParentWidget)},
+-#endif  // defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) ||
++#endif  // defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
+ 
+     {"content-settings-redesign",
+@@ -6778,7 +6778,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(language::kForceAppLanguagePrompt)},
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
@@ -171,7 +159,7 @@
      {"commander", flag_descriptions::kCommanderName,
       flag_descriptions::kCommanderDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kCommander)},
-@@ -6835,8 +6835,8 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6805,8 +6805,8 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kSyncAutofillWalletOfferDataDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kSyncAutofillWalletOfferData)},
  
@@ -182,33 +170,16 @@
      BUILDFLAG(ENABLE_PRINTING)
      {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
       flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
-@@ -6855,14 +6855,14 @@ const FeatureEntry kFeatureEntries[] = {
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
-+#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \
-     defined(OS_MAC)
-     {"enable-ephemeral-guest-profiles-on-desktop",
-      flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopName,
-      flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopDescription,
-      kOsWin | kOsLinux | kOsMac,
-      FEATURE_VALUE_TYPE(features::kEnableEphemeralGuestProfilesOnDesktop)},
--#endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || (defined(OS_LINUX) || defined(OS_BSD) ||
-         // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
- 
- #if defined(OS_ANDROID)
-@@ -7148,7 +7148,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(media::kVaapiAV1Decoder)},
- #endif  // defined(OS_CHROMEOS)
+@@ -7091,7 +7091,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(media::kVaapiVp9kSVCHWEncoding)},
+ #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
 +#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \
      defined(OS_MAC)
      {
          "ui-debug-tools",
-@@ -7225,7 +7225,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7181,7 +7181,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(metrics::structured::kBluetoothSessionizedMetrics)},
  #endif
  
@@ -217,3 +188,21 @@
      {"use-ozone-platform", flag_descriptions::kUseOzonePlatformName,
       flag_descriptions::kUseOzonePlatformDescription, kOsLinux,
       FEATURE_VALUE_TYPE(features::kUseOzonePlatform)},
+@@ -7224,7 +7224,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(chromeos::features::kLauncherAppSort)},
+ #endif
+ 
+-#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+     {"enable-desktop-pwas-app-icon-shortcuts-menu-ui",
+      flag_descriptions::kDesktopPWAsAppIconShortcutsMenuUIName,
+      flag_descriptions::kDesktopPWAsAppIconShortcutsMenuUIDescription,
+@@ -7487,7 +7487,7 @@ const FeatureEntry kFeatureEntries[] = {
+          ash::features::kHoldingSpaceInProgressDownloadsIntegration)},
+ #endif
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
++#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \
+     defined(OS_MAC) || (defined(OS_ANDROID))
+     {"omnibox-updated-connection-security-indicators",
+      flag_descriptions::kOmniboxUpdatedConnectionSecurityIndicatorsName,

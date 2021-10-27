@@ -15,7 +15,8 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libunistring.so:devel/libunistring
 TEST_DEPENDS=	automake:devel/automake
 
-USES=		gmake iconv libtool localbase readline tar:xz
+USES=		cpe gmake iconv libtool localbase readline tar:xz
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	comsatd imap4d pop3d

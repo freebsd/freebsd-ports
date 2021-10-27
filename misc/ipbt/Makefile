@@ -11,8 +11,11 @@ COMMENT=	High-tech ttyrec player with improvements over ttyplay
 
 USES=		ncurses perl5 shebangfix
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
 ALL_TARGET=	${PORTNAME}
-MAKE_ARGS=	LFLAGS="${LDFLAGS}" NCURSES_LIB="${NCURSESLIBS}
+MAKE_ARGS=	LFLAGS="${LDFLAGS}" NCURSES_LIB="${NCURSESLIBS}"
 PLIST_FILES=	bin/ipbt bin/ttygrep bin/ttydump man/man1/ipbt.1.gz
 SHEBANG_FILES=	sbcsgen.pl Makefile ttygrep ttydump
 

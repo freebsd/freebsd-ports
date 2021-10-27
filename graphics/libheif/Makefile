@@ -1,11 +1,12 @@
 PORTNAME=	libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b7caef96e012f6e516fee2e50a836b07b7c5a8fc.patch:-p1
+PATCHFILES=	b7caef96e012f6e516fee2e50a836b07b7c5a8fc.patch:-p1 \
+		7976e1858a857e33200cd33d01689fd040de6d3d.patch:-p1
 
 MAINTAINER=	freebsd@sebastiansteinmetz.ch
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder
@@ -13,8 +14,9 @@ COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang gettext-runtime gnome \
+USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome \
 		localbase:ldflags pkgconfig
+CPE_VENDOR=	struktur
 USE_GNOME=	gdkpixbuf2 glib20
 USE_LDCONFIG=	yes
 

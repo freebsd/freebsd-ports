@@ -31,8 +31,9 @@ LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
 		libxml2.so:textproc/libxml2
 
 # USES compiler: also see option OPENMP below
-USES=		compiler:c++11-lib desktop-file-utils gettext gnome meson \
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome meson \
 		ninja pkgconfig python:3.4+,build shebangfix sqlite tar:xz xorg
+CPE_VENDOR=	gnome
 USE_GNOME=	cairo dconf gtk30
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
@@ -44,7 +45,6 @@ python_CMD=	${SETENV} ${PYTHON_VERSION}
 
 MESON_ARGS=	-Dudev=false -Dextra-plugins=true -Dinstall-apport-hook=false \
 		-Dpublishers=facebook,flickr,gallery3,picasa,piwigo,rajce,tumblr,yandex,youtube
-INSTALLS_ICONS=	yes
 PORTSCOUT=	limitw:1,even
 MAKE_JOBS_UNSAFE=	yes
 

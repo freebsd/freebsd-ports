@@ -1,9 +1,9 @@
---- setup.py.orig	2021-09-03 06:33:24 UTC
+--- setup.py.orig	2021-10-08 09:21:53 UTC
 +++ setup.py
-@@ -49,7 +49,7 @@ DEPENDENCIES = [
-     'azure-common~=1.1',
+@@ -48,7 +48,7 @@ DEPENDENCIES = [
+     'azure-cli-telemetry==1.0.6.*',
      'azure-mgmt-core>=1.2.0,<1.3.0',     # the preview version of azure-mgmt-core is 1.3.0b1, it cannot fit azure-core >=1.14.0
-     'cryptography>=3.2,<3.4',
+     'cryptography',
 -    'humanfriendly>=4.7,<10.0',
 +    'humanfriendly>=4.7,<11.0',
      'jmespath',

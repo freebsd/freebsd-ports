@@ -39,7 +39,7 @@ USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	clementine-player
 GH_PROJECT=	Clementine
-GH_TAGNAME=     1.4.0rc1
+GH_TAGNAME=	1.4.0rc1
 
 CPE_VENDOR=	clementine-player
 
@@ -76,8 +76,6 @@ USE_GSTREAMER1=	cdparanoia \
 		taglib \
 		twolame \
 		vorbis
-
-INSTALLS_ICONS=	yes
 
 CFLAGS+=	-Wno-inconsistent-missing-override \
 		-Wno-unused-variable \

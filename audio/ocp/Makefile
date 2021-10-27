@@ -24,8 +24,6 @@ LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 USES=		compiler:c11 dos2unix gmake gnome iconv localbase:ldflags \
 		makeinfo ncurses pkgconfig tar:bz2
 
-INSTALLS_ICONS=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dir-suffix="" \

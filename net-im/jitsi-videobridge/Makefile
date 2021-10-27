@@ -14,8 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
-USE_GITHUB=     yes
-GH_PROJECT=     ${PORTNAME}${PKGNAMESUFFIX}
+USE_GITHUB=	yes
+GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 GH_TAGNAME=	dbddd16
 USE_JAVA=	yes
 
@@ -26,7 +26,7 @@ SUB_FILES+=	pkg-message
 SUB_LIST+=	JAVA=${JAVA}
 ETCDIR=		${PREFIX}/etc/jitsi/videobridge
 
-DEV_UPDATE_MODE=        no
+DEV_UPDATE_MODE=	no
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:

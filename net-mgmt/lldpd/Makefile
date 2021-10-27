@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		libtool
+USES=		cpe libtool
+CPE_VENDOR=	${PORTNAME}_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}

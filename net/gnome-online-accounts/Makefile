@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.40.0
+PORTVERSION=	3.40.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -28,7 +28,6 @@ USES=		compiler:c++11-lib gettext gmake gnome libtool \
 USE_GNOME=	cairo gtk30 introspection:build libxml2 libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-lastfm
 

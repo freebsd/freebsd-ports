@@ -1,9 +1,10 @@
 PORTNAME=	consul-template
-PORTVERSION=	0.27.0
+PORTVERSION=	0.27.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	swills@FreeBSD.org
+# co-maintainer: brd
 COMMENT=	Generic template rendering and notifications with Consul
 
 LICENSE=	MPL20

@@ -11,7 +11,8 @@ COMMENT=	Native PHP syntax highlighting engine
 
 LICENSE=	GPLv2
 
-USES=	php
+USES=		cpe php
+CPE_VENDOR=	qbnz
 USE_GITHUB=	yes
 GH_ACCOUNT=	GeSHi
 GH_PROJECT=	geshi-1.0

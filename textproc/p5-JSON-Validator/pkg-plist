@@ -2,7 +2,6 @@
 %%SITE_PERL%%/JSON/Validator/Error.pm
 %%SITE_PERL%%/JSON/Validator/Formats.pm
 %%SITE_PERL%%/JSON/Validator/Joi.pm
-%%SITE_PERL%%/JSON/Validator/Ref.pm
 %%SITE_PERL%%/JSON/Validator/Schema.pm
 %%SITE_PERL%%/JSON/Validator/Schema/Draft201909.pm
 %%SITE_PERL%%/JSON/Validator/Schema/Draft4.pm
@@ -11,6 +10,7 @@
 %%SITE_PERL%%/JSON/Validator/Schema/OpenAPIv2.pm
 %%SITE_PERL%%/JSON/Validator/Schema/OpenAPIv3.pm
 %%SITE_PERL%%/JSON/Validator/Store.pm
+%%SITE_PERL%%/JSON/Validator/URI.pm
 %%SITE_PERL%%/JSON/Validator/Util.pm
 %%SITE_PERL%%/JSON/Validator/cache/089e74a6d17f64af17a9efd6d0fa0de6
 %%SITE_PERL%%/JSON/Validator/cache/10a5eeb37fcd5d829449028f7ceb0774
@@ -34,7 +34,6 @@
 %%PERL5_MAN3%%/JSON::Validator::Error.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Formats.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Joi.3.gz
-%%PERL5_MAN3%%/JSON::Validator::Ref.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Schema.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Schema::Draft201909.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Schema::Draft4.3.gz
@@ -43,4 +42,5 @@
 %%PERL5_MAN3%%/JSON::Validator::Schema::OpenAPIv2.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Schema::OpenAPIv3.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Store.3.gz
+%%PERL5_MAN3%%/JSON::Validator::URI.3.gz
 %%PERL5_MAN3%%/JSON::Validator::Util.3.gz

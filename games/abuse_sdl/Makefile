@@ -19,7 +19,9 @@ LICENSE_FILE_WTFPL=	${WRKSRC}/COPYING.WTFPL
 LICENSE_NAME_BPRINCE=	Boby Prince permission for Debian to redistribute music/sfx files
 LICENSE_PERMS_BPRINCE=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-USES=		gl localbase:ldflags pathfix sdl
+USES=		cpe gl localbase:ldflags pathfix sdl
+CPE_VENDOR=	abuse
+CPE_PRODUCT=	abuse-sdl
 USE_GL=		gl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes

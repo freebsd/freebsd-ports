@@ -1,5 +1,5 @@
 PORTNAME=	choria-mcorpc-support
-DISTVERSION=	2.25.2
+DISTVERSION=	2.25.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ USES=		gem
 USE_RUBY=	yes
 
 RUN_DEPENDS=	choria>=0.20.1:sysutils/choria \
-		rubygem-nats-pure>=0.6:net/rubygem-nats-pure \
-		rubygem-systemu>=2.6.4:devel/rubygem-systemu
+		rubygem-nats-pure>=0.6<0.8.0:net/rubygem-nats-pure \
+		rubygem-systemu>=2.6.4<3:devel/rubygem-systemu
 
 NO_ARCH=	yes
 

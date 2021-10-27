@@ -1,5 +1,6 @@
 PORTNAME=	obs-ndi
 DISTVERSION=	4.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

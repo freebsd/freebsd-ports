@@ -13,7 +13,7 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	lau
 
-MIX_BUILD_DEPS= databases/elixir-ecto \
+MIX_BUILD_DEPS=	databases/elixir-ecto \
 		devel/elixir-calendar
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 

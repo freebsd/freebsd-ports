@@ -1,3 +1,5 @@
+Drop after FreeBSD 12.2 EOL around 2022-03-01
+
 ../src/pipewire.cpp:16:17: error: redefinition of 'log' as different kind of symbol
 static LogScope log("pipewire");
                 ^

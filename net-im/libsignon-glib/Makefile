@@ -13,7 +13,6 @@ BUILD_DEPENDS=	signond:sysutils/signon-qt5 \
 		vapigen:lang/vala
 RUN_DEPENDS=	signond:sysutils/signon-qt5
 
-
 USES=		gnome libtool meson pathfix pkgconfig python tar:bz2
 USE_GNOME=	introspection pygobject3
 USE_PYTHON=	py3kplist

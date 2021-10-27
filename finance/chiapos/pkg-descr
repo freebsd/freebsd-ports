@@ -1,0 +1,10 @@
+Chia's proof of space is written in C++. Includes a plotter, prover, and
+verifier. It exclusively runs on 64 bit architectures. Read the Proof of
+Space document to learn about what proof of space is and how it works.
+
+Notes:
+i386 is not supported, and would be too slow for practical use if supported.
+
+This port is for the cmake build (binaries).
+
+WWW: https://github.com/Chia-Network/chiapos

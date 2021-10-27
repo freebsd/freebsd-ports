@@ -12,11 +12,12 @@ COMMENT=	Command line tool and library for parsing LHA archives
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf pathfix libtool
+USES=		autoreconf cpe pathfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--program-suffix=sa
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	lhasa_project
 
 PORTDOCS=	ChangeLog README AUTHORS TODO NEWS
 

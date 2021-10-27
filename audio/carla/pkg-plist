@@ -13,7 +13,9 @@ include/carla/CarlaBackend.h
 include/carla/CarlaEngine.hpp
 include/carla/CarlaHost.h
 include/carla/CarlaNative.h
+include/carla/CarlaNativePlugin.h
 include/carla/CarlaPlugin.hpp
+include/carla/CarlaPluginPtr.hpp
 include/carla/CarlaUtils.h
 include/carla/includes/CarlaDefines.h
 include/carla/includes/CarlaMIDI.h
@@ -176,6 +178,7 @@ share/carla/resources/ui_carla_settings.py
 share/carla/resources/ui_carla_settings_driver.py
 share/carla/resources/ui_inputdialog_value.py
 share/carla/resources/ui_midipattern.py
+share/carla/resources/ui_xycontroller.py
 share/carla/resources/widgets
 share/carla/resources/xycontroller-ui
 share/carla/resources_rc.py
@@ -218,10 +221,10 @@ share/icons/hicolor/16x16/apps/carla-control.png
 share/icons/hicolor/16x16/apps/carla.png
 share/icons/hicolor/256x256/apps/carla-control.png
 share/icons/hicolor/256x256/apps/carla.png
-share/icons/hicolor/48x48/apps/carla-control.png
-share/icons/hicolor/48x48/apps/carla.png
 share/icons/hicolor/32x32/apps/carla-control.png
 share/icons/hicolor/32x32/apps/carla.png
+share/icons/hicolor/48x48/apps/carla-control.png
+share/icons/hicolor/48x48/apps/carla.png
 share/icons/hicolor/scalable/apps/carla-control.svg
 share/icons/hicolor/scalable/apps/carla.svg
 share/mime/packages/carla.xml

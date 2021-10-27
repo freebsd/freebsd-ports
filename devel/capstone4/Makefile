@@ -9,7 +9,8 @@ COMMENT=	Multi-platform, multi-architecture disassembly framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	${PORTNAME}-engine
 USE_GITHUB=	yes
 GH_ACCOUNT=	aquynh
 USE_LDCONFIG=	yes

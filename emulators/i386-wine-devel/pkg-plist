@@ -1199,7 +1199,6 @@ lib32/libpcre.so.1
 lib32/libpng16.so.16
 lib32/libtasn1.so.6
 lib32/libunistring.so.2
-%%OSREL11%%lib32/libunwind.so.8
 lib32/libxcb-dri2.so.0
 lib32/libxcb-dri3.so.0
 lib32/libxcb-glx.so.0

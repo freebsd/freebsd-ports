@@ -1,6 +1,5 @@
 PORTNAME=	couchdb3
-DISTVERSION=	3.1.1
-PORTREVISION=	4
+DISTVERSION=	3.2.0
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -11,16 +10,13 @@ COMMENT=	JSON document database with HTTP API and scalable multi-master sync
 LICENSE=	APACHE20 BSD3CLAUSE ISCL WTFPL OFL11
 LICENSE_COMB=	multi
 
-DEPRECATED=	Uses EOL Python 2.7 via lang/spidermonkey60
-EXPIRATION_DATE=2021-06-23
-
 BUILD_DEPENDS=	rebar:devel/rebar \
-		erlang-runtime22>=22.0:lang/erlang-runtime22
+		erlang-runtime${ERLVER}>=${ERLVER}.0:lang/erlang-runtime${ERLVER}
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		libmozjs-60.so:lang/spidermonkey60
-RUN_DEPENDS=	erlang-runtime22>=22.0:lang/erlang-runtime22
+		libmozjs-78.so:lang/spidermonkey78
+RUN_DEPENDS=	erlang-runtime${ERLVER}>=${ERLVER}.0:lang/erlang-runtime${ERLVER}
 
-USES=		compiler:c++14-lang cpe gmake libtool ncurses
+USES=		compiler:c++17-lang cpe gmake libtool ncurses
 USE_RC_SUBR=	${PORTNAME}
 
 CONFLICTS=	couchdb[24]*
@@ -33,7 +29,7 @@ GROUPS=		couchdb
 
 SUB_FILES=	pkg-message
 SUB_LIST=	APPDIR=${APPDIR} \
-		ERL_PATH=${LOCALBASE}/lib/erlang22/bin/erl \
+		ERL_PATH=${LOCALBASE}/lib/erlang${ERLVER}/bin/erl \
 		PORTNAME=${PORTNAME} \
 		RELDIR=${RELDIR} \
 		WWWDIR=${WWWDIR}
@@ -41,19 +37,20 @@ PLIST_SUB=	VERSION=${DISTVERSION}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--skip-deps --user ${USERS} --rebar ${LOCALBASE}/bin/rebar \
-		--spidermonkey-version 60
+		--spidermonkey-version 78
 
 ALL_TARGET=	release
 
-MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang22/bin:${PATH}
+MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang${ERLVER}/bin:${PATH}
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
+APPDIR=		${LOCALBASE}/libexec/${PORTNAME}
 DBDIR?=		/var/db/${PORTNAME}
+ERLVER?=	24
 LOGDIR?=	/var/log/${PORTNAME}
 LOGFILE?=	${LOGDIR}/couch.log
-APPDIR=		${LOCALBASE}/libexec/${PORTNAME}
 RELDIR=		${APPDIR}/releases/${DISTVERSION}
 
 .include <bsd.port.options.mk>
@@ -64,14 +61,15 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_jiffy_c__src_double-conversion_strtod
 
 post-patch:
 	@${REINPLACE_CMD} \
+	    -e 's,$$COUCHDB_USER,${USERS},g' \
+	    -e 's,$$LOG_FILE,${LOGFILE},g' \
 	    -e 's,%%APPDIR%%,${APPDIR},g' \
 	    -e 's,%%DATADIR%%,${DATADIR},g' \
 	    -e 's,%%DBDIR%%,${DBDIR},g' \
+	    -e 's,%%ERLVER%%,${ERLVER},g' \
 	    -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 	    -e 's,%%PORTNAME%%,${PORTNAME},g' \
 	    -e 's,%%WWWDIR%%,${WWWDIR},g' \
-	    -e 's,$$COUCHDB_USER,${USERS},g' \
-	    -e 's,$$LOG_FILE,${LOGFILE},g' \
 	    ${WRKSRC}/configure
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
 .if ${OPSYS} == FreeBSD && ${ARCH} == i386
@@ -92,14 +90,17 @@ pre-install:
 	# prune build artefacts and surplus headers
 	${FIND} -E ${WRKSRC} -type f \
 		-regex '.*\.(a|buildinfo|c|cc|cmd|d|o|orig|h|cpp)' -print -delete
+	@${CP} ${WRKSRC}/src/docs/images/favicon.ico ${WRKSRC}/share/www/
 	# remove runtime dirs and files that were moved to match hier(7)
-	${RM} -rv ${WRKSRC}/rel/couchdb/var \
+	${RM} -rv \
 		${WRKSRC}/rel/couchdb/etc/*.d \
 		${WRKSRC}/rel/couchdb/etc/local.ini \
 		${WRKSRC}/rel/couchdb/etc/vm.args \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch*js \
 		${WRKSRC}/rel/couchdb/releases/*/vm.args \
-		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch*js
-	@${CP} ${WRKSRC}/src/docs/images/favicon.ico ${WRKSRC}/share/www/
+		${WRKSRC}/rel/couchdb/share/docs \
+		${WRKSRC}/rel/couchdb/share/www \
+		${WRKSRC}/rel/couchdb/var
 	(cd ${WRKSRC}/rel/couchdb && ${COPYTREE_SHARE} . ${STAGEDIR}${APPDIR})
 
 post-install:

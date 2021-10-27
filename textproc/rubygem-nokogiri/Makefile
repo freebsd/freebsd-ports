@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config  \
 		rubygem-racc>=1.4<2:devel/rubygem-racc
 
-USES=		gem gnome pkgconfig gettext-runtime
+USES=		cpe gem gnome pkgconfig gettext-runtime
 USE_GNOME=	libxml2 libxslt
 USE_RUBY=	yes
 

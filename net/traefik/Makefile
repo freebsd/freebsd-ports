@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		go:modules tar:xz
+USES=		cpe go:modules tar:xz
 
 USE_RC_SUBR=	traefik
 

@@ -1,6 +1,7 @@
 PORTNAME=	passivedns
 DISTVERSION=	1.2.1-22
 DISTVERSIONSUFFIX=	-gd757713
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	shadowbq@gmail.com
@@ -22,6 +23,12 @@ CONFIGURE_ARGS=	--with-ldns-includes=${LOCALBASE}/include \
 		--with-ldns-libraries=${LOCALBASE}/lib
 
 USE_RC_SUBR=	passivedns
+
+OPTIONS_DEFINE=	JSON
+OPTIONS_DEFAULT=	JSON
+
+JSON_CONFIGURE_ENABLE=	json
+JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/passivedns \

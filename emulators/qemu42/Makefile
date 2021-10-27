@@ -108,7 +108,6 @@ X11_USES=	sdl
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
-INSTALLS_ICONS=		yes
 .endif
 
 PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \

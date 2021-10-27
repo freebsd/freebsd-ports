@@ -1,6 +1,6 @@
 bin/tracker
+etc/bash_completion.d/tracker
 etc/xdg/autostart/tracker-store.desktop
-false/tracker-store.service
 include/tracker-2.0/libtracker-control/tracker-control.h
 include/tracker-2.0/libtracker-control/tracker-miner-manager.h
 include/tracker-2.0/libtracker-miner/tracker-data-provider.h
@@ -173,4 +173,3 @@ share/vala/vapi/tracker-miner-2.0.deps
 share/vala/vapi/tracker-miner-2.0.vapi
 share/vala/vapi/tracker-sparql-2.0.deps
 share/vala/vapi/tracker-sparql-2.0.vapi
-true/tracker

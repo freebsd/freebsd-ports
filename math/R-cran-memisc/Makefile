@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	memisc
-DISTVERSION=	0.99.27.3
+DISTVERSION=	0.99.30.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

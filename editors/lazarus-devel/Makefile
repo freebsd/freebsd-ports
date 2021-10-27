@@ -151,7 +151,6 @@ do-install:
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${EXAMPLESDIR}/{}" \;
 	@${LN} -s ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 
-
 .for RESO in 128 16 256 32 48 64
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
 	${INSTALL_DATA} ${WRKSRC}/images/icons/${PORTNAME}${RESO}x${RESO}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps/${PORTNAME}.png

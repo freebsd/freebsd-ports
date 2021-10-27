@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	itsdangerous
-PORTVERSION=	0.24
+PORTVERSION=	2.0.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,5 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	JSON
-
-JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.0:devel/py-simplejson@${PY_FLAVOR}
 
 .include <bsd.port.mk>

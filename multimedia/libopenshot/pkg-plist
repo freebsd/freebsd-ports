@@ -38,7 +38,7 @@ include/libopenshot/ImageWriter.h
 include/libopenshot/Json.h
 include/libopenshot/KeyFrame.h
 include/libopenshot/MagickUtilities.h
-%%OPENCV%%include/libopenshot/OpenCVUtilities.h
+include/libopenshot/OpenCVUtilities.h
 include/libopenshot/OpenMPUtilities.h
 include/libopenshot/OpenShot.h
 include/libopenshot/OpenShotVersion.h
@@ -102,11 +102,11 @@ include/libopenshot/effects/Wave.h
 include/libopenshot/sort_filter/Hungarian.h
 include/libopenshot/sort_filter/KalmanTracker.h
 lib/libopenshot.so
-lib/libopenshot.so.0.2.6
-lib/libopenshot.so.20
+lib/libopenshot.so.0.2.7
+lib/libopenshot.so.21
 %%OPENCV%%lib/libopenshot_protobuf.so
-%%OPENCV%%lib/libopenshot_protobuf.so.0.2.6
-%%OPENCV%%lib/libopenshot_protobuf.so.20
+%%OPENCV%%lib/libopenshot_protobuf.so.0.2.7
+%%OPENCV%%lib/libopenshot_protobuf.so.21
 %%PYTHON_SITELIBDIR%%/_openshot.so
 %%PYTHON_SITELIBDIR%%/openshot.py
 %%NO_OPENCV%%@dir include/libopenshot/protobuf_messages

@@ -31,6 +31,4 @@ do-test:
 		-L${WRKSRC} -ltrio -Wl,-rpath=${WRKSRC}
 	${WRKSRC}/regression
 
-
-
 .include <bsd.port.mk>

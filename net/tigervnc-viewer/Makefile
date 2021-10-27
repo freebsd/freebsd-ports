@@ -22,7 +22,6 @@ GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 			libgpg-error.so:security/libgpg-error \
 			libgnutls.so:security/gnutls
 
-INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote desktop" \
 				"${PORTNAME}" "vncviewer" "Network;" false
 DESCR=		${.CURDIR}/pkg-descr

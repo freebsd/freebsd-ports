@@ -1,5 +1,5 @@
 PORTNAME=	pdk
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ COMMENT=	CLI for development of Puppet modules
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=    rubygem-bundler>=1.15:sysutils/rubygem-bundler \
+RUN_DEPENDS=	rubygem-bundler>=1.15:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.0.0:devel/rubygem-childprocess \
 		rubygem-concurrent-ruby>=1.1.5:devel/rubygem-concurrent-ruby \
 		rubygem-cri>=2.10.1:devel/rubygem-cri \

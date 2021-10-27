@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.14.4
+PORTVERSION=	2.14.13
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -46,7 +46,6 @@ USE_GNOME=	glib20 gtk30 pygobject3
 USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.typing-booster.gschema.xml
 
 TEST_TARGET=	check

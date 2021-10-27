@@ -1,25 +1,15 @@
---- Makefile.orig	2010-06-11 06:35:30.000000000 -0700
-+++ Makefile	2013-03-25 20:23:46.000000000 -0700
-@@ -34,7 +34,11 @@
- PATH := $(BIN):$(SRC)/bin:$(shell echo $$PATH)
- CP := /bin/cp -fpR
- GZIP := gzip --force --best
-+ifeq ($(TARGET), mingw32)
-+RANLIB := $(TARGET)-ranlib
-+else
- RANLIB := ranlib
-+endif
- 
- # If we're compiling with another version of MLton, then we want to do
- # another round of compilation so that we get a MLton built without
-@@ -401,6 +405,10 @@
- 	cd "$(TLIB)/sml"; for i in */[Dd]oc; do mv "$$i" "$(TDOC)/$$i"; done
- 	cd "$(TLIB)/sml"; for i in */README*; do mv "$$i" "$(TDOC)/$$i"; done
- 
-+remove-docs:
-+	cd "$(TLIB)/sml"; for i in */[Dd]oc; do rm -rf "$$i"; done
-+	cd "$(TLIB)/sml"; for i in */README*; do rm -rf "$$i"; done
-+
- .PHONY: release
- release: version
- 	tar cvzf ../mlton-$(VERSION).tar.gz \
+--- Makefile.orig	2021-08-16 18:18:28 UTC
++++ Makefile
+@@ -387,9 +387,11 @@ install-no-strip:
+ 		-e "s;^LIB_REL_BIN=.*;LIB_REL_BIN=\"$(TLIB_REL_TBIN)\";" \
+ 		< "$(BIN)/$(MLTON)" > "$(TBIN)/$(MLTON)"
+ 	$(CHMOD) a+x "$(TBIN)/$(MLTON)"
+-	$(CP) "$(LIB)/." "$(TLIB)/"
++#	$(CP) "$(LIB)/." "$(TLIB)/"
+ 	$(MKDIR) "$(TMAN)"
+ 	cd "$(SRC)/man" && $(CP) $(MAN_PAGES) "$(TMAN)/"
++	cd "$(LIB)" && $(CP) include mlton-compile \
++		sml static-library targets "$(TLIB)/"
+ ifeq (true, $(GZIP_MAN))
+ 	cd "$(TMAN)" && $(GZIP) --force --best $(MAN_PAGES);
+ endif

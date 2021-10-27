@@ -1,6 +1,6 @@
 PORTNAME=	xd
 DISTVERSION=	0.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/:main
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cargo
 
-USE_GITHUB=	nodefault
-GH_TUPLE=	nix-rust:nix:5d2a8c221af121abe73e313bdfce8ae2f4372a83:nix
 CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
 		aho-corasick-0.7.15 \
@@ -95,7 +93,6 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
-CARGO_USE_GITHUB=	yes
 
 BB_ACCOUNT=	delan
 BB_PROJECT=	${PORTNAME}

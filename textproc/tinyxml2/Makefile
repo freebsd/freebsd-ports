@@ -11,7 +11,7 @@ COMMENT=	Small C++ XML Parser
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:insource compiler:c++11-lang dos2unix pathfix
+USES=		cmake:insource compiler:c++11-lang cpe dos2unix pathfix
 
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ON=	BUILD_SHARED_LIBS
@@ -21,6 +21,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	leethomason
 USE_GITHUB=	yes
+
+CPE_VENDOR=	tinyxml2_project
 
 OPTIONS_DEFINE=	EXAMPLES
 

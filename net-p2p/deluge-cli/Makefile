@@ -28,8 +28,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
 
-USES=		gettext python:3.5+
+USES=		cpe gettext python:3.5+
 USE_PYTHON=	autoplist distutils
+
+CPE_VENDOR=	deluge-torrent
 
 NO_ARCH=	yes
 

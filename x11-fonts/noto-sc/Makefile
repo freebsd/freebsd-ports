@@ -1,11 +1,11 @@
 PORTNAME=	noto
-PORTVERSION=	2.001
+PORTVERSION=	2.002
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/
+MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/v20201206-cjk/
 PKGNAMESUFFIX=	-sc
 DISTFILES=	LICENSE \
 		${NOTO_SC_FONTS}
-DIST_SUBDIR=	Noto
+DIST_SUBDIR=	Noto/CJK/${PORTVERSION}
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org

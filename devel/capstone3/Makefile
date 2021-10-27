@@ -10,7 +10,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 CONFLICTS=	capstone4
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	${PORTNAME}-engine
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	aquynh

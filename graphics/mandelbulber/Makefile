@@ -22,7 +22,6 @@ USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
 		pkgconfig qt:5
 USE_QT=		core widgets network gui multimedia testlib concurrent \
 		qmake_build buildtools_build uitools_build
-INSTALLS_ICONS=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/mandelbulber2/cmake
 

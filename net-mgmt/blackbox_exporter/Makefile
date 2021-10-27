@@ -12,7 +12,8 @@ COMMENT=	Prometheus exporter for endpoints over HTTP(S), DNS, TCP and ICMP
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	prometheus
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	prometheus

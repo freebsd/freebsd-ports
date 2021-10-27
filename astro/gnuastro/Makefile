@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	gnuastro
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	astro
 MASTER_SITES=	GNU
 
@@ -21,7 +20,9 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 USES=		gmake jpeg libtool:build localbase tar:lz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+TEST_WRKSRC=	${WRKSRC}/tests
 
 INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS

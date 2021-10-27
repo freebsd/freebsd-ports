@@ -24,7 +24,6 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection:build intltool \
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.x.apps.gschema.xml
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	data libxapp meson-scripts schemas scripts status-applets \
 		test-scripts
 

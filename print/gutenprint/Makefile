@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.3/${PORTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
-COMMENT=	Gutenprint Printer Drivers
+COMMENT?=	Gutenprint Printer Drivers
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,8 +20,9 @@ CONFIGURE_ARGS=	--disable-static --enable-cups-ppds \
 		--enable-cups-level3-ppds \
 		--disable-translated-cups-ppds
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 gettext gmake libtool pathfix perl5 pkgconfig \
+USES=		compiler:c11 cpe gettext gmake libtool pathfix perl5 pkgconfig \
 		tar:xz
+CPE_VENDOR=	${PORTNAME}_project
 
 OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_SUB=		yes

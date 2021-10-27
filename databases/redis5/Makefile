@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis5
-PORTVERSION=	5.0.13
+PORTVERSION=	5.0.14
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 DISTNAME=	redis-${PORTVERSION}

@@ -11,11 +11,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 
-USES=		pkgconfig ssl
+USES=		cpe pkgconfig ssl
 MAKE_ENV=	THREADLIB="-lpthread"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 PORTDOCS=	ChangeLog README
+CPE_VENDOR=	rtmpdump_project
 
 OPTIONS_DEFINE=	DOCS
 

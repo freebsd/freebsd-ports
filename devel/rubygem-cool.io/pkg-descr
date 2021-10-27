@@ -1,4 +1,4 @@
-Cool.io provides a high performance event framework for Ruby which
-uses the libev C library.
+Cool.io is an event library for Ruby, built on the libev event library which
+provides a cross-platform interface to high performance system calls.
 
-WWW: http://coolio.github.com/
+WWW: https://github.com/tarcieri/cool.io

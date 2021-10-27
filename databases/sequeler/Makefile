@@ -22,7 +22,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Alecaddd
 USE_GNOME=	cairo glib20 gtk30 gtksourceview3 libgda5
 GLIB_SCHEMAS=	com.github.alecaddd.sequeler.gschema.xml
-INSTALLS_ICONS=	yes
 
 # for build-aux/meson_post_install.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}

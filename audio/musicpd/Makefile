@@ -1,5 +1,5 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.22.11
+PORTVERSION=	0.23.1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -11,6 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+		libfmt.so:devel/libfmt \
 		libicudata.so:devel/icu
 
 USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig \
@@ -51,9 +52,9 @@ OPTIONS_MULTI_FILE_FORMAT=	\
 OPTIONS_GROUP=	ACCESS PLAYBACK
 
 OPTIONS_GROUP_ACCESS=	CDPARANOIA CURL LAME MMS NFS PLAYLISTS QOBUZ \
-			SMB SOUNDCLOUD YAJL
+			SMB SOUNDCLOUD UPNP YAJL
 
-OPTIONS_GROUP_PLAYBACK=	AO JACK OPENAL PULSEAUDIO \
+OPTIONS_GROUP_PLAYBACK=	AO JACK OPENAL OPENMPT PIPEWIRE PULSEAUDIO \
 			SHOUTCAST SNDIO
 
 ADPLUG_DESC=	AdPlug support
@@ -62,6 +63,8 @@ GME_DESC=	GME support (video game music files)
 ISO9660_DESC=	Direct support for ISO 9660 images
 PROXYDB_DESC=	Proxy database support via libmpdclient
 LAME_DESC=	Support for MP3 Icecast Streams
+OPENMPT_DESC=	Support for OpenMPT playback
+PIPEWIRE_DESC=	PipeWire support
 PLAYLISTS_DESC=	Enable extra playlist support (wma, RSS)
 QOBUZ_DESC=	Streaming service support: Qobuz
 SIDPLAY_DESC=	Sidplay support (C64 mono and stereo files)
@@ -108,6 +111,8 @@ MUSEPACK_MESON_ENABLED=	mpcdec
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
 NFS_MESON_ENABLED=	nfs
 NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
+OPENMPT_MESON_ENABLED=	openmpt
+OPENMPT_LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
 OPUS_MESON_ENABLED=	opus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
 			libogg.so:audio/libogg
@@ -148,6 +153,8 @@ JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CXXFLAGS=		-Wno-register
 OPENAL_MESON_ENABLED=	openal
 OPENAL_USES=		openal
+PIPEWIRE_MESON_ENABLED=	pipewire
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 PULSEAUDIO_MESON_ENABLED=	pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 SHOUTCAST_MESON_ENABLED=shout
@@ -197,6 +204,8 @@ AVAHI_MESON_ON=		-Dzeroconf=avahi
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 MDNSRESPONDER_MESON_ON=		-Dzeroconf=bonjour
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
+UPNP_MESON_ON=		-Dupnp=npupnp
+UPNP_LIB_DEPENDS=	libnpupnp.so:net/libnpupnp
 YAJL_MESON_ENABLED=	yajl
 YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
 
@@ -206,25 +215,7 @@ MPDGROUP?=	mpd
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
 
-.include <bsd.port.pre.mk>
-
-# Note that since the build system switch to meson, mpd fails to link with
-# GNU ld 2.17 in base. Also, meson does not allow to set the linker via
-# environment variables yet.
-# For gcc-based platforms, gcc and ld from ports are used due to the c++14
-# requirement. For clang, we set the linker explicitly in meson.build.
-.if ${ARCH} == armv6
-#lld may use movt/movw, doesn't work on armv6
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
-MPD_CLANG_LD=	${LOCALBASE}/bin/ld
-.else
-MPD_CLANG_LD=	lld
-.endif
-
 post-patch:
-# Insert selected linker for clang
-	@${REINPLACE_CMD} -e 's|%%MPD_CLANG_LD%%|${MPD_CLANG_LD}|' \
-		${WRKSRC}/meson.build
 # Make musicpd run as ${MPDUSER} by default
 	@${REINPLACE_CMD} -e 's|%%MPDUSER%%|${MPDUSER}|' \
 		${WRKSRC}/doc/mpdconf.example
@@ -233,8 +224,6 @@ post-patch:
 		-e 's#^``mpd#``${PORTNAME}#' \
 		-e 's#:: mpd#:: ${PORTNAME}#' \
 		-e 's#mpd(1)#${PORTNAME}(1)#' \
-		-e 's#/etc/mpd.conf#${PREFIX}/etc/${PORTNAME}.conf#' \
-		-e 's#mpd.conf#${PORTNAME}.conf#' \
 		-e 's#mpd.conf(5)#${PORTNAME}.conf(5)#' \
 		${WRKSRC}/doc/mpd.1.rst ${WRKSRC}/doc/mpd.conf.5.rst
 	@${REINPLACE_CMD} \
@@ -246,15 +235,15 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/mpd \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MMANPAGES}
-	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.conf.5 \
-		${STAGEDIR}${PREFIX}/man/man5
-.endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.post.mk>
+do-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.conf.5 \
+		${STAGEDIR}${PREFIX}/man/man5
+
+.include <bsd.port.mk>

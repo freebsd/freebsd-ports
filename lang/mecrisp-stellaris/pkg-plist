@@ -25,6 +25,7 @@ bin/mecrisp-stellaris
 %%DATADIR%%/date-time-tests.fs
 %%DATADIR%%/date-time.fs
 %%DATADIR%%/defcount.txt
+%%DATADIR%%/dictionary-tools.txt
 %%DATADIR%%/disassembler-m0.txt
 %%DATADIR%%/disassembler-m3.txt
 %%DATADIR%%/dump.txt
@@ -33,7 +34,7 @@ bin/mecrisp-stellaris
 %%DATADIR%%/experimental/bignum.txt
 %%DATADIR%%/experimental/definitioncount.txt
 %%DATADIR%%/experimental/float.txt
-%%DATADIR%%/experimental/forget-stellaris.txt
+%%DATADIR%%/experimental/sv.fs
 %%DATADIR%%/experimental/vocs-0.7.0/README
 %%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-Classes-1.log
 %%DATADIR%%/experimental/vocs-0.7.0/VOC-HOWTO-Classes-2.log
@@ -88,7 +89,7 @@ bin/mecrisp-stellaris
 %%DATADIR%%/fonts/tiny/bdf2forth.pas
 %%DATADIR%%/fonts/tiny/tom-thumb-b.txt
 %%DATADIR%%/fonts/tiny/tom-thumb.bdf
-%%DATADIR%%/forget-stellaris.txt
+%%DATADIR%%/forget.txt
 %%DATADIR%%/graphics-unicode-3x3.txt
 %%DATADIR%%/graphics-unicode-4x6.txt
 %%DATADIR%%/graphics-unicode-8x16.txt

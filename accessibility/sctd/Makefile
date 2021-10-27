@@ -1,6 +1,6 @@
 PORTNAME=	sctd
 DISTVERSION=	0.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	accessibility
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -13,7 +13,6 @@ LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSE
 USES=			cargo xorg
 USE_GITHUB=		yes
 GH_ACCOUNT=		amir
-GH_TUPLE=		amir:spa-rs:fa80d0ce99d675674cf1a7cc9cf2ee2e33f501ea:spa
 USE_XORG=		x11 xrandr
 CARGO_CRATES=	ansi_term-0.11.0 \
 		atty-0.2.14 \
@@ -40,8 +39,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		x11-2.18.2
-CARGO_USE_GITHUB=	yes
+		x11-2.18.2 \
+		spa@git+https://github.com/amir/spa-rs?branch=pub-SolarPos\#fa80d0ce99d675674cf1a7cc9cf2ee2e33f501ea
 
 PLIST_FILES=	bin/sctd
 

@@ -20,7 +20,6 @@ GH_ACCOUNT=	hellosiyan
 GH_PROJECT=	Viewnior
 
 USE_GNOME=	gdkpixbuf2 glib20 gtk20 intlhack intltool
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS NEWS README.md
 

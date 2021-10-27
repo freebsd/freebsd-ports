@@ -1,0 +1,71 @@
+bin/sublime_merge
+share/applications/sublime_merge.desktop
+share/icons/hicolor/128x128/apps/sublime-merge.png
+share/icons/hicolor/16x16/apps/sublime-merge.png
+share/icons/hicolor/256x256/apps/sublime-merge.png
+share/icons/hicolor/32x32/apps/sublime-merge.png
+share/icons/hicolor/48x48/apps/sublime-merge.png
+%%DATADIR%%/Icon/128x128/sublime-merge.png
+%%DATADIR%%/Icon/16x16/sublime-merge.png
+%%DATADIR%%/Icon/256x256/sublime-merge.png
+%%DATADIR%%/Icon/32x32/sublime-merge.png
+%%DATADIR%%/Icon/48x48/sublime-merge.png
+%%DATADIR%%/Packages/ASP.sublime-package
+%%DATADIR%%/Packages/ActionScript.sublime-package
+%%DATADIR%%/Packages/AppleScript.sublime-package
+%%DATADIR%%/Packages/Batch File.sublime-package
+%%DATADIR%%/Packages/C#.sublime-package
+%%DATADIR%%/Packages/C++.sublime-package
+%%DATADIR%%/Packages/CSS.sublime-package
+%%DATADIR%%/Packages/Clojure.sublime-package
+%%DATADIR%%/Packages/Color Scheme - Default.sublime-package
+%%DATADIR%%/Packages/Color Scheme - Legacy.sublime-package
+%%DATADIR%%/Packages/D.sublime-package
+%%DATADIR%%/Packages/Default - Merge.sublime-package
+%%DATADIR%%/Packages/Default.sublime-package
+%%DATADIR%%/Packages/Erlang.sublime-package
+%%DATADIR%%/Packages/Git Formats.sublime-package
+%%DATADIR%%/Packages/Go.sublime-package
+%%DATADIR%%/Packages/Graphviz.sublime-package
+%%DATADIR%%/Packages/Groovy.sublime-package
+%%DATADIR%%/Packages/HTML.sublime-package
+%%DATADIR%%/Packages/Haskell.sublime-package
+%%DATADIR%%/Packages/JSON.sublime-package
+%%DATADIR%%/Packages/Java.sublime-package
+%%DATADIR%%/Packages/JavaScript.sublime-package
+%%DATADIR%%/Packages/LaTeX.sublime-package
+%%DATADIR%%/Packages/Language - English.sublime-package
+%%DATADIR%%/Packages/Lisp.sublime-package
+%%DATADIR%%/Packages/Lua.sublime-package
+%%DATADIR%%/Packages/Makefile.sublime-package
+%%DATADIR%%/Packages/Markdown.sublime-package
+%%DATADIR%%/Packages/Matlab.sublime-package
+%%DATADIR%%/Packages/OCaml.sublime-package
+%%DATADIR%%/Packages/Objective-C.sublime-package
+%%DATADIR%%/Packages/PHP.sublime-package
+%%DATADIR%%/Packages/Pascal.sublime-package
+%%DATADIR%%/Packages/Perl.sublime-package
+%%DATADIR%%/Packages/Python.sublime-package
+%%DATADIR%%/Packages/R.sublime-package
+%%DATADIR%%/Packages/Rails.sublime-package
+%%DATADIR%%/Packages/Regular Expressions.sublime-package
+%%DATADIR%%/Packages/RestructuredText.sublime-package
+%%DATADIR%%/Packages/Ruby.sublime-package
+%%DATADIR%%/Packages/Rust.sublime-package
+%%DATADIR%%/Packages/SQL.sublime-package
+%%DATADIR%%/Packages/Scala.sublime-package
+%%DATADIR%%/Packages/ShellScript.sublime-package
+%%DATADIR%%/Packages/TCL.sublime-package
+%%DATADIR%%/Packages/Text.sublime-package
+%%DATADIR%%/Packages/Textile.sublime-package
+%%DATADIR%%/Packages/Theme - Default.sublime-package
+%%DATADIR%%/Packages/Theme - Merge.sublime-package
+%%DATADIR%%/Packages/XML.sublime-package
+%%DATADIR%%/Packages/YAML.sublime-package
+%%DATADIR%%/changelog.txt
+%%DATADIR%%/crash_reporter
+%%DATADIR%%/git-credential-sublime
+%%DATADIR%%/ssh-askpass-sublime
+@(,,555) %%DATADIR%%/sublime_merge
+%%DATADIR%%/sublime_merge.desktop
+%%DATADIR%%/sublime_merge.desktop.orig

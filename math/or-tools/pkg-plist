@@ -88,14 +88,6 @@ include/ortools/constraint_solver/routing_types.h
 include/ortools/constraint_solver/search_limit.pb.h
 include/ortools/constraint_solver/search_stats.pb.h
 include/ortools/constraint_solver/solver_parameters.pb.h
-include/ortools/data/jobshop_scheduling.pb.h
-include/ortools/data/jobshop_scheduling_parser.h
-include/ortools/data/rcpsp.pb.h
-include/ortools/data/rcpsp_parser.h
-include/ortools/data/set_covering_data.h
-include/ortools/data/set_covering_parser.h
-include/ortools/data/vector_bin_packing.pb.h
-include/ortools/data/vector_bin_packing_parser.h
 include/ortools/flatzinc/checker.h
 include/ortools/flatzinc/cp_model_fz_solver.h
 include/ortools/flatzinc/model.h
@@ -181,6 +173,14 @@ include/ortools/lp_data/sparse.h
 include/ortools/lp_data/sparse_column.h
 include/ortools/lp_data/sparse_row.h
 include/ortools/lp_data/sparse_vector.h
+include/ortools/math_opt/core/indexed_model.h
+include/ortools/math_opt/core/math_opt_proto_utils.h
+include/ortools/math_opt/core/model_summary.h
+include/ortools/math_opt/core/model_update_merge.h
+include/ortools/math_opt/core/solver.h
+include/ortools/math_opt/core/solver_interface.h
+include/ortools/math_opt/core/sparse_collection_matchers.h
+include/ortools/math_opt/core/sparse_vector_view.h
 include/ortools/math_opt/cpp/arrow_operator_proxy.h
 include/ortools/math_opt/cpp/callback.h
 include/ortools/math_opt/cpp/id_map.h
@@ -193,12 +193,7 @@ include/ortools/math_opt/cpp/model_solve_parameters.h
 include/ortools/math_opt/cpp/objective.h
 include/ortools/math_opt/cpp/result.h
 include/ortools/math_opt/cpp/variable_and_expressions.h
-include/ortools/math_opt/indexed_model.h
-include/ortools/math_opt/math_opt_proto_utils.h
-include/ortools/math_opt/model_summary.h
-include/ortools/math_opt/proto_converter.h
-include/ortools/math_opt/solver.h
-include/ortools/math_opt/solver_interface.h
+include/ortools/math_opt/io/proto_converter.h
 include/ortools/math_opt/solvers/cp_sat_solver.h
 include/ortools/math_opt/solvers/glop_solver.h
 include/ortools/math_opt/solvers/gscip_solver.h
@@ -206,7 +201,6 @@ include/ortools/math_opt/solvers/gscip_solver_callback.h
 include/ortools/math_opt/solvers/gurobi_callback.h
 include/ortools/math_opt/solvers/gurobi_solver.h
 include/ortools/math_opt/solvers/message_callback_data.h
-include/ortools/math_opt/sparse_vector_view.h
 include/ortools/math_opt/validators/callback_validator.h
 include/ortools/math_opt/validators/ids_validator.h
 include/ortools/math_opt/validators/model_parameters_validator.h
@@ -216,6 +210,10 @@ include/ortools/math_opt/validators/scalar_validator.h
 include/ortools/math_opt/validators/solution_validator.h
 include/ortools/math_opt/validators/solver_parameters_validator.h
 include/ortools/math_opt/validators/sparse_vector_validator.h
+include/ortools/packing/arc_flow_builder.h
+include/ortools/packing/arc_flow_solver.h
+include/ortools/packing/vector_bin_packing.pb.h
+include/ortools/packing/vector_bin_packing_parser.h
 include/ortools/port/file.h
 include/ortools/port/proto_utils.h
 include/ortools/port/sysinfo.h
@@ -232,6 +230,7 @@ include/ortools/sat/cp_model_checker.h
 include/ortools/sat/cp_model_expand.h
 include/ortools/sat/cp_model_lns.h
 include/ortools/sat/cp_model_loader.h
+include/ortools/sat/cp_model_mapping.h
 include/ortools/sat/cp_model_objective.h
 include/ortools/sat/cp_model_postsolve.h
 include/ortools/sat/cp_model_presolve.h
@@ -244,6 +243,7 @@ include/ortools/sat/cumulative.h
 include/ortools/sat/cumulative_energy.h
 include/ortools/sat/cuts.h
 include/ortools/sat/diffn.h
+include/ortools/sat/diffn_util.h
 include/ortools/sat/disjunctive.h
 include/ortools/sat/drat_checker.h
 include/ortools/sat/drat_proof_handler.h
@@ -255,6 +255,7 @@ include/ortools/sat/integer.h
 include/ortools/sat/integer_expr.h
 include/ortools/sat/integer_search.h
 include/ortools/sat/intervals.h
+include/ortools/sat/lb_tree_search.h
 include/ortools/sat/linear_constraint.h
 include/ortools/sat/linear_constraint_manager.h
 include/ortools/sat/linear_programming_constraint.h
@@ -262,6 +263,7 @@ include/ortools/sat/linear_relaxation.h
 include/ortools/sat/lp_utils.h
 include/ortools/sat/model.h
 include/ortools/sat/optimization.h
+include/ortools/sat/parameters_validation.h
 include/ortools/sat/pb_constraint.h
 include/ortools/sat/precedences.h
 include/ortools/sat/presolve_context.h
@@ -276,6 +278,7 @@ include/ortools/sat/sat_inprocessing.h
 include/ortools/sat/sat_parameters.pb.h
 include/ortools/sat/sat_solver.h
 include/ortools/sat/scheduling_constraints.h
+include/ortools/sat/scheduling_cuts.h
 include/ortools/sat/simplification.h
 include/ortools/sat/subsolver.h
 include/ortools/sat/swig_helper.h
@@ -289,6 +292,10 @@ include/ortools/sat/timetable_edgefinding.h
 include/ortools/sat/util.h
 include/ortools/sat/var_domination.h
 include/ortools/sat/zero_half_cuts.h
+include/ortools/scheduling/jobshop_scheduling.pb.h
+include/ortools/scheduling/jobshop_scheduling_parser.h
+include/ortools/scheduling/rcpsp.pb.h
+include/ortools/scheduling/rcpsp_parser.h
 include/ortools/util/adaptative_parameter_value.h
 include/ortools/util/affine_relation.h
 include/ortools/util/bitset.h
@@ -332,10 +339,10 @@ lib/cmake/ortools/ortoolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ortools/ortoolsTargets.cmake
 %%FLATZINC%%lib/libflatzinc.so
 %%FLATZINC%%lib/libflatzinc.so.9
-%%FLATZINC%%lib/libflatzinc.so.9.0.9999
+%%FLATZINC%%lib/libflatzinc.so.9.1.9999
 lib/libortools.so
 lib/libortools.so.9
-lib/libortools.so.9.0.9999
+lib/libortools.so.9.1.9999
 %%FLATZINC%%share/minizinc/ortools/fzn_all_different_int.mzn
 %%FLATZINC%%share/minizinc/ortools/fzn_circuit.mzn
 %%FLATZINC%%share/minizinc/ortools/fzn_cumulative.mzn

@@ -17,7 +17,6 @@ GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		cmake gnome
 CMAKE_BUILD_TYPE=	#empty
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
 CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"

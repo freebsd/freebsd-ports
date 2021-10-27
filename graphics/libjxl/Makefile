@@ -1,7 +1,6 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	1
+DISTVERSION=	0.6
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,7 +18,8 @@ LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lib localbase:ldflags pkgconfig shared-mime-info
+USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags pkgconfig shared-mime-info
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	barmco:skcms:6437475:skcms/third_party/skcms \
@@ -43,6 +43,8 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_GIF
 
 GIMP_DESC=		GIMP plugin support
+GIMP_USES=		gnome
+GIMP_USE=		GNOME=gtk20
 GIMP_LIB_DEPENDS=	libgegl-0.4.so:graphics/gegl \
 			libgimp-2.0.so:graphics/gimp-app \
 			libbabl-0.1.so:x11/babl

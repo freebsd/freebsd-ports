@@ -35,7 +35,6 @@ USE_GNOME=	cairo glib20 gtk30 gtksourceview4 pango vte3
 GLIB_SCHEMAS=	io.elementary.code.gschema.xml \
 		io.elementary.code.plugins.spell.gschema.xml \
 		io.elementary.code.plugins.terminal.gschema.xml
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 

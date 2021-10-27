@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 LIB_DEPENDS=	libXcm.so:x11/libXcm \
 		libOyranos.so:graphics/oyranos
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     oyranos-cms
+USE_GITHUB=	yes
+GH_ACCOUNT=	oyranos-cms
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USES=		pkgconfig xorg

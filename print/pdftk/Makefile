@@ -2,7 +2,7 @@
 
 PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.3
+DISTVERSION=	3.3.1
 CATEGORIES=	print java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/:bcprov
 DISTFILES=	${_BCPROV_JAR}:bcprov
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3
 USE_ANT=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	pdftk-java
-GL_COMMIT=	8093f78c32f8dd4ab706dbcca85beddea2371dd7
+GL_COMMIT=	6e80f7f64fe989de298f0ad7a107b2539b0038a7
 USE_JAVA=	yes
 ALL_TARGET=	jar
 NO_ARCH=	yes
@@ -31,7 +31,7 @@ PLIST_FILES=	${JAVAJARDIR}/${_BCPROV_JAR:T} \
 		bin/pdftk \
 		share/man/man1/pdftk.1.gz
 
-_BCPROV_JAR=	org/bouncycastle/bcprov-jdk15on/1.64/bcprov-jdk15on-1.64.jar
+_BCPROV_JAR=	org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar
 _CLASSPATH=	${JAVAJARDIR}/${_BCPROV_JAR:T} ${JAVAJARDIR}/commons-lang3.jar \
 		${JAVAJARDIR}/pdftk.jar
 

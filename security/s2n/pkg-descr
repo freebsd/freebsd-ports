@@ -2,4 +2,4 @@ s2n is a C99 implementation of the TLS/SSL protocols that
 is designed to be simple, small, fast, and with security as
 a priority. It is released and licensed under the Apache Software License 2.0.
 
-WWW: https://github.com/awslabs/s2n
+WWW: https://github.com/aws/s2n-tls

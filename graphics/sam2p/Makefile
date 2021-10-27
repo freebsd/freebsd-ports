@@ -20,7 +20,8 @@ RUN_DEPENDS=	zip:archivers/zip \
 #USE_GITHUB=	yes
 GH_ACCOUNT=	pts
 
-USES=		ghostscript:run gmake jpeg:run perl5
+USES=		cpe ghostscript:run gmake jpeg:run perl5
+CPE_VENDOR=	${PORTNAME}_project
 USE_GCC=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes

@@ -1,5 +1,5 @@
 PORTNAME=	pxp-agent
-PORTVERSION=	1.15.14
+PORTVERSION=	1.15.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org

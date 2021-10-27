@@ -17,6 +17,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake gnome tar:bzip2
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

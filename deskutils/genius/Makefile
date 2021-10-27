@@ -24,7 +24,6 @@ RUN_DEPENDS=	rarian-sk-config:textproc/rarian
 USES=		desktop-file-utils gmake gnome libtool pathfix pkgconfig \
 		readline shared-mime-info tar:xz xorg
 USE_GNOME=	cairo gnomeprefix gtksourceview4 intltool vte3
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes

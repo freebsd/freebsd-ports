@@ -15,7 +15,8 @@ BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy
 
-USES=		compiler:c++11-lang gl meson pkgconfig python:3.5+
+USES=		compiler:c++11-lang cpe gl meson pkgconfig python:3.5+
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITLAB=	yes
 USE_GL=		gbm
 GL_SITE=	https://gitlab.freedesktop.org

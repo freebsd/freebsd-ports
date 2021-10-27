@@ -51,4 +51,6 @@ lib/mate-applets/mate-dock-applet/log_it.py
 lib/mate-applets/mate-dock-applet/window_control.in
 lib/mate-applets/mate-dock-applet/window_control.py
 share/dbus-1/services/org.mate.panel.applet.DockAppletFactory.service
+share/locale/es/LC_MESSAGES/mate-dock-applet.mo
+share/locale/fr/LC_MESSAGES/mate-dock-applet.mo
 share/mate-panel/applets/org.mate.panel.DockApplet.mate-panel-applet

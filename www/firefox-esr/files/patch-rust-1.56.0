@@ -1,0 +1,21 @@
+error[E0557]: feature has been removed
+   --> /wrkdirs/usr/ports/www/firefox-esr/work/firefox-78.15.0/third_party/rust/packed_simd/src/lib.rs:202:41
+    |
+202 | #![cfg_attr(use_const_generics, feature(const_generics))]
+    |                                         ^^^^^^^^^^^^^^ feature has been removed
+    |
+    = note: removed in favor of `#![feature(adt_const_params]` and `#![feature(generic_const_exprs)]`
+
+https://github.com/rust-lang/packed_simd/commit/45d5347a0d2187c046a546a477d2a53111cd7713
+
+--- third_party/rust/packed_simd/src/lib.rs.orig	2021-10-21 12:39:34 UTC
++++ third_party/rust/packed_simd/src/lib.rs
+@@ -199,7 +199,7 @@
+ //!   Numeric casts are not very "precise": sometimes lossy, sometimes value
+ //!   preserving, etc.
+ 
+-#![cfg_attr(use_const_generics, feature(const_generics))]
++#![cfg_attr(use_const_generics, feature(adt_const_params))]
+ #![cfg_attr(use_const_generics, allow(incomplete_features, clippy::from_over_into))]
+ #![feature(
+     repr_simd,

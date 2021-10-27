@@ -1,0 +1,13 @@
+libneurosim is a general library that provides interfaces and common utility
+code for neuronal simulators.
+
+Currently it provides the ConnectionGenerator interface.
+
+The ConnectionGenerator API is a standard interface supporting efficient
+generation of network connectivity during model setup in neuronal network
+simulators. It is intended as an abstraction isolating both sides of the API:
+any simulator can use a given connection generator and a given simulator can use
+any library providing the ConnectionGenerator interface. It was initially
+developed to support the use of libcsa from NEST.
+
+WWW: https://github.com/INCF/libneurosim

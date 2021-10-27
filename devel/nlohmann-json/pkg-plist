@@ -21,6 +21,8 @@ include/nlohmann/detail/json_pointer.hpp
 include/nlohmann/detail/json_ref.hpp
 include/nlohmann/detail/macro_scope.hpp
 include/nlohmann/detail/macro_unscope.hpp
+include/nlohmann/detail/meta/call_std/begin.hpp
+include/nlohmann/detail/meta/call_std/end.hpp
 include/nlohmann/detail/meta/cpp_future.hpp
 include/nlohmann/detail/meta/detected.hpp
 include/nlohmann/detail/meta/identity_tag.hpp

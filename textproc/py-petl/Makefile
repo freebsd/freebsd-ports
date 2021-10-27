@@ -15,10 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.5.4:devel/py-setuptools_scm@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		cpe python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	petl_project
 
 OPTIONS_DEFINE=	AVRO DB HDF5 HTTP INTERVAL NUMPY PANDAS REMOTE SMB XLS XLSX XPATH WHOOSH
 AVRO_DESC=	Avro support

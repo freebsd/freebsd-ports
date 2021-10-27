@@ -51,7 +51,6 @@ CONFIGURE_ARGS+=	--disable-ssl
 USES+=		ssl
 .endif
 
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
 	@${MV} ${STAGEDIR}${PREFIX}/etc/irssi.conf \

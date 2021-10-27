@@ -1134,6 +1134,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_010_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_011_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_012_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_013_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_concurrent_shares.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_snapshot/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_snapshot/setup.ksh
@@ -1666,11 +1667,13 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_zstd_bswap.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/l2arc_compressed_arc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/l2arc_compressed_arc_disabled.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/l2arc_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/l2arc_encrypted_no_compressed_arc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/compression/testpool_zstd.tar.gz
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cp_files
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cp_files_001_pos.ksh

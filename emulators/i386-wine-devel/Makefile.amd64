@@ -17,9 +17,11 @@ EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
-USES=		desktop-file-utils tar:txz
+USES=		cpe desktop-file-utils tar:txz
 BUNDLE_LIBS=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+CPE_VENDOR=	winehq
 
 .for osrel in 12 13 14
 .if ${OSREL:C/\..*//} == ${osrel}

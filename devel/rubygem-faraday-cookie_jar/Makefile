@@ -2,6 +2,7 @@
 
 PORTNAME=	faraday-cookie_jar
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Cookie jar middleware for Faraday
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-faraday0>=0.8.0:www/rubygem-faraday0 \
+RUN_DEPENDS=	rubygem-faraday>=0.8.0:www/rubygem-faraday \
 		rubygem-http-cookie>=1.0.0<1.1:www/rubygem-http-cookie
 
 USES=		gem

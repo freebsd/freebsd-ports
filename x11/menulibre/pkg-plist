@@ -49,13 +49,14 @@ share/man/man1/menulibre-menu-validate.1.gz
 share/man/man1/menulibre.1.gz
 share/applications/menulibre.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 share/icons/hicolor/16x16/apps/menulibre.svg
 share/icons/hicolor/24x24/apps/menulibre.svg
 share/icons/hicolor/32x32/apps/menulibre.svg
 share/icons/hicolor/48x48/apps/menulibre.svg
 share/icons/hicolor/64x64/apps/menulibre.svg
 share/icons/hicolor/scalable/apps/menulibre.svg
+share/locale/ar/LC_MESSAGES/menulibre.mo
 share/locale/br/LC_MESSAGES/menulibre.mo
 share/locale/ca/LC_MESSAGES/menulibre.mo
 share/locale/cs/LC_MESSAGES/menulibre.mo
@@ -81,6 +82,7 @@ share/locale/ko/LC_MESSAGES/menulibre.mo
 share/locale/lt/LC_MESSAGES/menulibre.mo
 share/locale/ml/LC_MESSAGES/menulibre.mo
 share/locale/ms/LC_MESSAGES/menulibre.mo
+share/locale/ms@Arab/LC_MESSAGES/menulibre.mo
 share/locale/nb/LC_MESSAGES/menulibre.mo
 share/locale/nl/LC_MESSAGES/menulibre.mo
 share/locale/pl/LC_MESSAGES/menulibre.mo
@@ -98,5 +100,7 @@ share/locale/uk/LC_MESSAGES/menulibre.mo
 share/locale/zh_CN/LC_MESSAGES/menulibre.mo
 share/locale/zh_HK/LC_MESSAGES/menulibre.mo
 share/locale/zh_TW/LC_MESSAGES/menulibre.mo
+%%DATADIR%%/metainfo/menulibre.appdata.xml.in
 %%DATADIR%%/ui/MenulibreWindow.ui
+share/metainfo/menulibre.appdata.xml
 share/pixmaps/menulibre.png

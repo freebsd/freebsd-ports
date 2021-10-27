@@ -11,7 +11,8 @@ COMMENT=	Fork of json-c (JSON implementation in C)
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf cpe libtool pathfix pkgconfig
+CPE_VENDOR=	rsyslog
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes

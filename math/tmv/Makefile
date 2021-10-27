@@ -1,7 +1,7 @@
 PORTNAME=	tmv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.75
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Fast, intuitive linear algebra library for C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/TMV_LICENSE
 
-USES=		compiler:openmp gmake blaslapack:netlib localbase
+USES=		gmake blaslapack:netlib localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmjarvis
 USE_LDCONFIG=	yes
@@ -20,6 +20,12 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

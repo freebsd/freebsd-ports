@@ -26,7 +26,8 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libffi.so:devel/libffi \
 		libpng.so:graphics/png
 
-USES=		gmake gnome iconv jpeg libtool localbase sqlite tar:tgz
+USES=		cpe gmake gnome iconv jpeg libtool localbase sqlite tar:tgz
+CPE_VENDOR=	${PORTNAME}-lang
 USE_GNOME=	cairo pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread \

@@ -16,17 +16,19 @@ COMMENT=	Rack, a Ruby Webserver Interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rack_project
+
+PORTSCOUT=	limit:^1\.6\.
 
 SHEBANG_FILES=	test/cgi/test.ru
 SHEBANG_LANG=	rackup
 rackup_OLD_CMD=	../../bin/rackup
 rackup_CMD=	${LOCALBASE}/bin/rackup
-
-PORTSCOUT=	limit:^1\.6\.
 
 # Avoid CONFLICTS_INSTALL with www/rubygem-rack
 post-install:

@@ -30,7 +30,6 @@ GH_ACCOUNT=	linuxmint
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 introspection pango
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.x.viewer.enums.xml org.x.viewer.gschema.xml
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	JPEG LCMS2 LIBEXIF LIBRSVG2 XMP
 OPTIONS_DEFAULT=	JPEG LCMS2 LIBEXIF LIBRSVG2 XMP

@@ -12,7 +12,9 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		autoreconf libtool pkgconfig ssl
+USES=		autoreconf cpe libtool pkgconfig ssl
+CPE_VENDOR=	opensc_project
+CPE_PRODUCT=	opensc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

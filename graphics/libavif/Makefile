@@ -1,6 +1,6 @@
 PORTNAME=	libavif
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake:testing compiler:c11 jpeg pkgconfig
+USES=		cmake:testing compiler:c11 cpe jpeg pkgconfig
+CPE_VENDOR=	aomedia
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	AOMediaCodec
@@ -39,7 +40,7 @@ GAV1_LIB_DEPENDS=	libgav1.so:multimedia/libgav1
 GAV1_CMAKE_BOOL=	AVIF_CODEC_LIBGAV1
 
 LIBYUV_DESC=		Colorspace conversion via libyuv
-LIBYUV_BUILD_DEPENDS=	libyuv>=0.0.1755:graphics/libyuv
+LIBYUV_BUILD_DEPENDS=	libyuv>=0.0.1774:graphics/libyuv
 LIBYUV_LIB_DEPENDS=	libyuv.so:graphics/libyuv
 
 PIXBUF_USES=		gnome

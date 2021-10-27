@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:print/afm
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libjbig.so:graphics/jbigkit
 
-USES=		fakeroot ghostscript jpeg
+USES=		cpe fakeroot ghostscript jpeg
 
 USE_RC_SUBR=	hylafax
 

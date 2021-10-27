@@ -25,6 +25,6 @@ USE_PYTHON=	autoplist concurrent distutils
 PORTSCOUT=	skipv:0.15,0.17,0.17.1 # incorrect versioning upstream
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/PyWCSTools/*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

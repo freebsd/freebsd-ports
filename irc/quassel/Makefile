@@ -1,8 +1,9 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	quassel
-DISTVERSION=	0.14-rc1
+DISTVERSION=	0.14-rc2
 CATEGORIES=	irc
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
@@ -10,10 +11,12 @@ COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=  ${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib cpe pkgconfig qca qt:5 tar:bzip2
-USE_GITHUB=	yes
+USES=		cmake compiler:c++11-lib cpe pkgconfig qca qt:5 tar:xz
+USE_GITHUB=	nodefault
+#GH_ACCOUNT=	${PORTNAME}
+#GH_PROJECT=	${PORTNAME}
 USE_OPENLDAP=	yes
 USE_QT=		buildtools_build core network qmake_build
 
@@ -72,7 +75,7 @@ PGSQL_USE=		qt=sql-pgsql
 
 SQLITE3_USE=		qt=sql-sqlite3_run
 
-_LIBVERSION=		0.13.90
+_LIBVERSION=		0.13.92
 PLIST_SUB=		LIBVERSION=${_LIBVERSION}
 
 .include <bsd.port.options.mk>

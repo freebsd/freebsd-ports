@@ -1,7 +1,7 @@
 # Created by: Johann Visagie <johann@egenetics.com>
 
 PORTNAME=	biopython
-DISTVERSION=	1.78
+DISTVERSION=	1.79
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

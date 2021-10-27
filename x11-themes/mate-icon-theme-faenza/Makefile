@@ -16,7 +16,6 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gnome tar:xz
 NO_BUILD=	yes
-INSTALLS_ICONS=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons

@@ -15,7 +15,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 USES=		gettext gmake gnome iconv pkgconfig tar:bzip2
 USE_GNOME=	cairo gtk30 intlhack
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rdynamic

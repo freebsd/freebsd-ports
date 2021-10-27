@@ -29,7 +29,6 @@ GL_PROJECT=	Remmina
 GL_COMMIT=	0ef1621b3e16b3168213147a2bfca39da2c2668f
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
-INSTALLS_ICONS=	yes
 
 USE_XORG=	ice sm x11 xext xkbfile
 
@@ -110,8 +109,6 @@ VNC_CMAKE_BOOL=		WITH_LIBVNCSERVER
 WWW_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 			libsoup-2.4.so:devel/libsoup \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3
-			
-			
 
 XDMCP_RUN_DEPENDS=	Xephyr:x11-servers/xephyr
 

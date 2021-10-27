@@ -7,6 +7,6 @@ At the time they chose to distribute the code under a "C News-like" copyright,
 see the file LICENSE for details.
 
 The small size (<30k), lack of dependencies (no ncurses needed!) and the free
-license should make this library interesting to many embedded developers
+license should make this library interesting to many embedded developers.
 
 WWW: https://github.com/troglobit/editline

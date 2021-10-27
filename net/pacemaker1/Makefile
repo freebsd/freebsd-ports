@@ -1,7 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTVERSION=		1.1.24
-PORTREVISION=		1
+PORTREVISION=		2
 PKGNAMESUFFIX=		1
 
 .include "${.CURDIR}/Makefile.common"
@@ -24,8 +24,9 @@ REPLACE_ARGS_GETOPT=	-e 's,getopt,${LOCALBASE}/bin/getopt,'
 
 .include <bsd.port.pre.mk>
 
+# Fix building it with clang 11
 .if ${OSVERSION} >= 1300000
-BROKEN=	"includes <sys/timeb.h> which is deprecated"
+CFLAGS+=	-fcommon
 .endif
 
 .if ${PYTHON_SUFFIX} > 36

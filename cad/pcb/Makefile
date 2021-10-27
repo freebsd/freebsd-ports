@@ -28,7 +28,6 @@ USE_GNOME=	intltool cairo pangox-compat
 USE_XORG=	x11 xrender xinerama
 
 CONFLICTS=	gts-[0-9]*
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
 LDFLAGS+=	-lpthread
@@ -64,9 +63,6 @@ GTK_CONFIGURE_ENV=	WISH=${WISH}
 NONE_DESC=	No GUI support
 NONE_CONFIGURE_ON=	--without-gui
 NONE_CONFIGURE_ENV=	WISH=/usr/bin/true
-
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	Uses x86 specific libc functions and has not been ported
 
 DOCS_INFO=		pcb
 

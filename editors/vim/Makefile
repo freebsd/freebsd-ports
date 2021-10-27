@@ -66,7 +66,6 @@ USE_XORG+=	ice sm x11 xaw xmu xpm xt
 
 .elif ${FLAVOR:U} == gtk2
 GUI=		gtk2
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-xim --enable-fontset
 PLIST_SUB+=	GUI="" DESKTOP=""
 USES+=		desktop-file-utils gnome xorg
@@ -75,7 +74,6 @@ USE_XORG=	ice sm x11 xpm xt
 
 .elif ${FLAVOR:U} == gtk3
 GUI=		gtk3
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-xim --enable-fontset
 PLIST_SUB+=	GUI="" DESKTOP=""
 USES+=		desktop-file-utils gnome xorg

@@ -14,7 +14,6 @@ RUN_DEPENDS+=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 
 USES=		gnome perl5 shebangfix
 USE_PERL5=	run
-INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	${PORTNAME}
 

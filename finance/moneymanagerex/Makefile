@@ -32,7 +32,6 @@ USES=		autoreconf compiler:c++11-lib gettext gmake gnome lua:52 pkgconfig
 GNU_CONFIGURE=	yes
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
-INSTALLS_ICONS=	yes
 USE_CXXSTD=	c++11
 
 CPPFLAGS+=	-I${LOCALBASE}/include \

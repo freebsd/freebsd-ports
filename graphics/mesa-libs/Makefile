@@ -2,7 +2,6 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -38,7 +37,6 @@ MESON_ARGS+=	-Dgallium-drivers="" \
 		-Dgallium-va=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-nine=false \
-		-Dgallium-clover=disabled \
 		-Dosmesa=false \
 		-Dtools="" \
 		-Degl=enabled \

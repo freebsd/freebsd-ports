@@ -8,7 +8,8 @@ COMMENT=	Extract Cell Data From Excel xls files
 
 LICENSE=	BSD2CLAUSE
 
-USES=	compiler:c++11-lang libtool
+USES=	compiler:c++11-lang cpe libtool
+CPE_VENDOR=	${PORTNAME}_project
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

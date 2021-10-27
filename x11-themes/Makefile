@@ -152,6 +152,7 @@
     SUBDIR += sawfish-themes
     SUBDIR += sddm-freebsd-black-theme
     SUBDIR += sierra-gtk-themes
+    SUBDIR += skeuos-gtk-themes
     SUBDIR += slim-freebsd-black-theme
     SUBDIR += slim-freebsd-dark-theme
     SUBDIR += slim-freebsd-themes

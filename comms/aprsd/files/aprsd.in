@@ -27,9 +27,9 @@ pidfile=/var/run/aprsd.pid
 aprsd_pre()
 {
 	if [ ${aprsd_root} != "YES" ]; then
-		echo "Starting aprs server as user ${APRSD_RC_USER}:${APRSD_RC_GROUP}."
-		install -o ${APRSD_RC_USER} -g ${APRSD_RC_GROUP} /dev/null ${pidfile}
-		chown -R ${APRSD_RC_USER}:${APRSD_RC_GROUP} /var/log/aprsd
+		echo "Starting aprs server as user ${aprsd_user}:${aprsd_group}."
+		install -o ${aprsd_user} -g ${aprsd_group} /dev/null ${pidfile}
+		chown -R ${aprsd_user}:${aprsd_group} /var/log/aprsd
 	else   
 		echo "Starting aprs server as root."
 		install -o root -g wheel /dev/null ${pidfile}

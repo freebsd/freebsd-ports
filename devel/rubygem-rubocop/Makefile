@@ -1,5 +1,5 @@
 PORTNAME=	rubocop
-PORTVERSION=	1.21.0
+PORTVERSION=	1.22.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -14,15 +14,17 @@ RUN_DEPENDS=	rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-rainbow>=2.2.2<4.0:devel/rubygem-rainbow \
 		rubygem-regexp_parser>=1.8<3.0:textproc/rubygem-regexp_parser \
 		rubygem-rexml>=0:textproc/rubygem-rexml \
-		rubygem-rubocop-ast>=1.9.1<2.0:devel/rubygem-rubocop-ast \
+		rubygem-rubocop-ast>=1.12.0<2.0:devel/rubygem-rubocop-ast \
 		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
 		rubygem-unicode-display_width>=1.4.0<3.0:devel/rubygem-unicode-display_width
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/rubocop
+
+CPE_VENDOR=	rubocop_project
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+Kerberos authentication backend for Django which allows you to easily
+specify the realm & service. It can protect against rogue KDC responses
+by validating the ticket against the local keytab.
+
+It can do case-sensitive matching between Kerberos and database user names.
+
+It can also accept redirect url to use after login.
+
+WWW: https://github.com/02strich/django-auth-kerberos

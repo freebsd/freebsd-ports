@@ -19,7 +19,6 @@ USES=		compiler:c++11-lang desktop-file-utils gettext gmake \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-update
 USE_GNOME=	cairo gtk20
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	TCL GCONF DOCS EXAMPLES
 TCL_DESC=	Enable support for TCL/TK

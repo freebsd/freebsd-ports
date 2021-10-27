@@ -19,9 +19,9 @@ CONFIGURE_ARGS=	--disable-sherlock265 --disable-dec265
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv7"
-BUILD_DEPENDS+= ${LOCALBASE}/bin/as:devel/binutils
-CONFIGURE_ENV+= CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
-LLD_UNSAFE=     yes
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
+CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
+LLD_UNSAFE=	yes
 .endif
 
 .include <bsd.port.post.mk>

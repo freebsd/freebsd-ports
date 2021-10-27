@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20210113_1:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
-USES=		php:cli,flavors shebangfix
+USES=		cpe php:cli,flavors shebangfix
+CPE_VENDOR=	phacility
 
 SHEBANG_FILES=	resources/timezones/*.php \
 		scripts/*.php \

@@ -1,0 +1,6 @@
+Sublime Merge is a Graphical Git Client from the creators of Sublime Text.
+It is powered by the same performant cross-platform GUI toolkit and syntax
+highlighting engine used in Sublime Text. Sublime Merge wraps around the
+core Git functionality, so when you're using Sublime Merge, you're using Git.
+
+WWW: https://www.sublimemerge.com/

@@ -5,7 +5,7 @@ MASTER_SITES=	LOCAL/kuriyama
 PKGNAMESUFFIX=	-data
 DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ajaxzip2 (Japanese ZIP code utility) ZIP data
 
 BUILD_DEPENDS=	ja-ajaxzip2-core>0:japanese/ajaxzip2-core \

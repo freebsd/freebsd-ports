@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Mailer/plugin.h:mail/deforaos-mailer
 
 USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20
-INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 MAKE_ENV=	MANDIR=${STAGEDIR}${MANPREFIX}/man

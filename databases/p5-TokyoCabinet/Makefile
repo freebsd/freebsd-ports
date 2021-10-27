@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/kuriyama \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	tokyocabinet-perl-${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for TokyoCabinet
 
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet

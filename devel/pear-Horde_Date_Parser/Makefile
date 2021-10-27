@@ -7,10 +7,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Date Parser
 
-USES=		cpe horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Support
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

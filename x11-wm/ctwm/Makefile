@@ -21,5 +21,4 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 # should be, so we have to force this
 CMAKE_ARGS=	-DMANDIR:STRING="${PREFIX}/share/man"
 
-
 .include <bsd.port.mk>

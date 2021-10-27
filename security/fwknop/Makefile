@@ -11,9 +11,9 @@ COMMENT=	SPA implementation for Linux and FreeBSD
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS= wget:ftp/wget
-RUN_DEPENDS=   wget:ftp/wget
-LIB_DEPENDS+=  libassuan.so:security/libassuan
+BUILD_DEPENDS=	wget:ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
+LIB_DEPENDS+=	libassuan.so:security/libassuan
 
 USES=		cpe libtool
 USE_LDCONFIG=	yes

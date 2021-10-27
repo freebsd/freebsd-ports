@@ -1,6 +1,6 @@
---- engine/encoder.h.orig	2007-11-12 17:25:45.000000000 +0100
-+++ engine/encoder.h	2007-11-12 17:25:59.000000000 +0100
-@@ -185,7 +185,7 @@
+--- engine/encoder.h.orig	2005-03-31 01:02:36 UTC
++++ engine/encoder.h
+@@ -148,7 +148,7 @@ class KrEncoder
  														GLASSERT( numRGBA >= numSegment );
  //														GLASSERT( numSegment >= numLine );
  													 }

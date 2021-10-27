@@ -1,0 +1,16 @@
+[
+{
+type: install
+message: <<EOM
+To use gstat-rs by default, do the following:
+For sh:
+# echo alias gstat='/usr/local/sbin/gstat-rs' >> /etc/profile
+For bash:
+# echo alias gstat='/usr/local/sbin/gstat-rs' >> %%PREFIX%%/etc/profile
+For fish:
+# echo alias gstat='/usr/local/sbin/gstat-rs' >> %%PREFIX%%/etc/fish/config.fish
+For zsh:
+# echo alias gstat='/usr/local/sbin/gstat-rs' >> %%PREFIX%%/etc/zshrc
+EOM
+}
+]

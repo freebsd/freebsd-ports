@@ -1,14 +1,15 @@
---- go.sum.orig	2021-08-31 07:42:22 UTC
+--- go.sum.orig	2021-10-22 06:12:32 UTC
 +++ go.sum
-@@ -101,6 +101,7 @@ github.com/CloudyKit/jet/v3 v3.0.0/go.mod h1:HKQPgSJmd
+@@ -100,6 +100,8 @@ github.com/CloudyKit/jet/v3 v3.0.0/go.mod h1:HKQPgSJmd
  github.com/DataDog/datadog-go v4.4.0+incompatible h1:R7WqXWP4fIOAqWJtUKmSfuc7eDsBT58k9AY5WSHVosk=
  github.com/DataDog/datadog-go v4.4.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
  github.com/DataDog/gostackparse v0.5.0/go.mod h1:lTfqcJKqS9KnXQGnyQMCugq3u1FP6UZMfWR0aitKFMM=
++github.com/DataDog/sketches-go v1.0.0 h1:chm5KSXO7kO+ywGWJ0Zs6tdmWU8PBXSbywFVciL6BG4=
 +github.com/DataDog/sketches-go v1.0.0/go.mod h1:O+XkJHWk9w4hDwY2ZUDU31ZC9sNYlYo8DiFsxjYeo1k=
  github.com/FZambia/sentinel v1.0.0 h1:KJ0ryjKTZk5WMp0dXvSdNqp3lFaW1fNFuEYfrkLOYIc=
  github.com/FZambia/sentinel v1.0.0/go.mod h1:ytL1Am/RLlAoAXG6Kj5LNuw/TRRQrv2rt2FT26vP5gI=
- github.com/GoogleCloudPlatform/cloudsql-proxy v1.19.1/go.mod h1:+yYmuKqcBVkgRePGpUhTA9OEg0XsnFE96eZ6nJ2yCQM=
-@@ -369,6 +370,7 @@ github.com/google/go-replayers/grpcreplay v1.0.0/go.mo
+ github.com/GoogleCloudPlatform/cloudsql-proxy v1.22.0/go.mod h1:mAm5O/zik2RFmcpigNjg6nMotDL8ZXJaxKzgGVcSMFA=
+@@ -390,6 +392,7 @@ github.com/google/go-replayers/grpcreplay v1.0.0/go.mo
  github.com/google/go-replayers/httpreplay v0.1.2 h1:HCfx+dQzwN9XbGTHF8qJ+67WN8glL9FTWV5rraCJ/jU=
  github.com/google/go-replayers/httpreplay v0.1.2/go.mod h1:YKZViNhiGgqdBlUbI2MwGpq4pXxNmhJLPHQ7cv2b5no=
  github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
@@ -16,7 +17,7 @@
  github.com/google/martian v2.1.0+incompatible/go.mod h1:9I4somxYTbIHy5NJKHRl3wXiIaQGbYVAs8BPL6v8lEs=
  github.com/google/martian v2.1.1-0.20190517191504-25dcb96d9e51+incompatible h1:xmapqc1AyLoB+ddYT6r04bD9lIjlOqGaREovi0SzFaE=
  github.com/google/martian v2.1.1-0.20190517191504-25dcb96d9e51+incompatible/go.mod h1:9I4somxYTbIHy5NJKHRl3wXiIaQGbYVAs8BPL6v8lEs=
-@@ -1263,6 +1265,8 @@ gopkg.in/DataDog/dd-trace-go.v1 v1.7.0/go.mod h1:DVp8H
+@@ -1327,6 +1330,8 @@ gopkg.in/DataDog/dd-trace-go.v1 v1.7.0/go.mod h1:DVp8H
  gopkg.in/DataDog/dd-trace-go.v1 v1.30.0/go.mod h1:SnKViq44dv/0gjl9RpkP0Y2G3BJSRkp6eYdCSu39iI8=
  gopkg.in/DataDog/dd-trace-go.v1 v1.31.0 h1:ouY+DNlRTckk63TNh468tPWBC21qBZPniVQXQs0iq10=
  gopkg.in/DataDog/dd-trace-go.v1 v1.31.0/go.mod h1:SnKViq44dv/0gjl9RpkP0Y2G3BJSRkp6eYdCSu39iI8=

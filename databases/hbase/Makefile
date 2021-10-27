@@ -4,7 +4,7 @@ PORTNAME=	hbase
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	databases java
-MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTVERSION}/ \
 		http://kev009.com/freebsd/:maven
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
@@ -13,6 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hadoop database, a distributed, scalable, big data store
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Outdated, unsupported by upstream since June 2019 (upstream is at 2.3 and higher)
+EXPIRATION_DATE=2022-03-31
 
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
@@ -40,7 +43,7 @@ USERS=		${HBASE_USER}
 GROUPS=		${HBASE_GROUP}
 
 SUB_FILES=	hbase-env-dist.sh pkg-message
-USE_RC_SUBR=    hbase_master hbase_regionserver
+USE_RC_SUBR=	hbase_master hbase_regionserver
 SUB_LIST=	HBASE_USER="${HBASE_USER}" \
 		JAVA_HOME="${JAVA_HOME}" \
 		HBASE_LOG_DIR="${HBASE_LOGDIR}" \

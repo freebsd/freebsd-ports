@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/hrs
 DISTFILES=	# empty
 .endif
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translation of FreeBSD manual pages
 
 RUN_DEPENDS=	jman:japanese/man

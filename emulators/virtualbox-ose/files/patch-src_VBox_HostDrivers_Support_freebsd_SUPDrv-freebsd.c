@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2021-01-07 15:41:26 UTC
+--- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2021-10-18 17:58:03 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
 @@ -44,8 +44,10 @@
  #include <sys/fcntl.h>
@@ -151,7 +151,7 @@
  }
  
  
-@@ -624,11 +677,25 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
+@@ -624,19 +677,43 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  #endif /* SUPDRV_WITH_MSR_PROBER */
  
  
@@ -168,21 +168,18 @@
 +}
 +
 +
- SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
+ SUPR0DECL(int) SUPR0PrintfV(const char *pszFormat, va_list va)
  {
-     va_list va;
      char szMsg[256];
-     int cch;
 +    IPRT_FREEBSD_SAVE_EFL_AC();
- 
-     va_start(va, pszFormat);
-     cch = RTStrPrintfV(szMsg, sizeof(szMsg), pszFormat, va);
-@@ -636,12 +703,19 @@ SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
++
+     RTStrPrintfV(szMsg, sizeof(szMsg), pszFormat, va);
+     szMsg[sizeof(szMsg) - 1] = '\0';
  
      printf("%s", szMsg);
- 
++
 +    IPRT_FREEBSD_RESTORE_EFL_AC();
-     return cch;
+     return 0;
  }
  
  
@@ -198,4 +195,4 @@
 +#endif
 +    return fFlags;
  }
--
+ 

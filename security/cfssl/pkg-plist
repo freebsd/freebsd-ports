@@ -1,0 +1,9 @@
+%%DATADIR%%/certdb/mysql/dbconf.yml
+%%DATADIR%%/certdb/mysql/migrations/001_CreateCertificates.sql
+%%DATADIR%%/certdb/mysql/migrations/002_AddMetadataToCertificates.sql
+%%DATADIR%%/certdb/pg/dbconf.yml
+%%DATADIR%%/certdb/pg/migrations/001_CreateCertificates.sql
+%%DATADIR%%/certdb/pg/migrations/002_AddMetadataToCertificates.sql
+%%DATADIR%%/certdb/sqlite/dbconf.yml
+%%DATADIR%%/certdb/sqlite/migrations/001_CreateCertificates.sql
+%%DATADIR%%/certdb/sqlite/migrations/002_AddMetadataToCertificates.sql

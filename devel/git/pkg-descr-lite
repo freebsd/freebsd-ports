@@ -3,4 +3,6 @@ handle everything from small to very large projects with speed and efficiency.
 
 This version provides the bare minimum git experience without any bindings.
 
+WARNING: This flavor cannot coexist with cvs, gui, p4 or svn subpackages.
+
 WWW: https://git-scm.com/

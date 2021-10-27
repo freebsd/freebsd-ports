@@ -1,0 +1,20 @@
+--- scripts/build/checkHtmlFileDates.orig	2021-10-15 20:33:38.712582000 -0700
++++ scripts/build/checkHtmlFileDates	2021-10-15 20:37:19.867441000 -0700
+@@ -1,16 +1,3 @@
+ #! /bin/sh
+ 
+-bk version > /dev/null 2>&1 || exit 0
+-
+-for i in `find * -type f -name '*.html' -print | grep -v SCCS/`
+-do
+-    # echo $i
+-    set `bk diffs $i | wc -l`
+-    lines=$1
+-    case "$lines" in
+-     0) ;;
+-     *) echo "Processing <$i>"
+-        ../scripts/build/updateBEDate $i
+-	;;
+-    esac
+-done
++exit 0

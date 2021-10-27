@@ -1,6 +1,6 @@
---- v8/src/d8/d8.cc.orig	2021-07-19 18:47:38 UTC
+--- v8/src/d8/d8.cc.orig	2021-09-24 04:28:22 UTC
 +++ v8/src/d8/d8.cc
-@@ -73,7 +73,7 @@
+@@ -74,7 +74,7 @@
  #include "unicode/locid.h"
  #endif  // V8_INTL_SUPPORT
  
@@ -9,7 +9,7 @@
  #include <sys/mman.h>  // For MultiMappedAllocator.
  #endif
  
-@@ -235,7 +235,7 @@ class MockArrayBufferAllocatiorWithLimit : public Mock
+@@ -236,7 +236,7 @@ class MockArrayBufferAllocatiorWithLimit : public Mock
    std::atomic<size_t> space_left_;
  };
  
@@ -18,7 +18,7 @@
  
  // This is a mock allocator variant that provides a huge virtual allocation
  // backed by a small real allocation that is repeatedly mapped. If you create an
-@@ -328,7 +328,7 @@ class MultiMappedAllocator : public ArrayBufferAllocat
+@@ -329,7 +329,7 @@ class MultiMappedAllocator : public ArrayBufferAllocat
    base::Mutex regions_mutex_;
  };
  
@@ -27,7 +27,7 @@
  
  v8::Platform* g_default_platform;
  std::unique_ptr<v8::Platform> g_platform;
-@@ -4171,7 +4171,7 @@ bool Shell::SetOptions(int argc, char* argv[]) {
+@@ -4404,7 +4404,7 @@ bool Shell::SetOptions(int argc, char* argv[]) {
    options.mock_arraybuffer_allocator = i::FLAG_mock_arraybuffer_allocator;
    options.mock_arraybuffer_allocator_limit =
        i::FLAG_mock_arraybuffer_allocator_limit;
@@ -36,7 +36,7 @@
    options.multi_mapped_mock_allocator = i::FLAG_multi_mapped_mock_allocator;
  #endif
  
-@@ -4808,19 +4808,19 @@ int Shell::Main(int argc, char* argv[]) {
+@@ -5053,19 +5053,19 @@ int Shell::Main(int argc, char* argv[]) {
        memory_limit >= options.mock_arraybuffer_allocator_limit
            ? memory_limit
            : std::numeric_limits<size_t>::max());

@@ -25,7 +25,6 @@ USE_XORG=	x11 xtst
 USE_QT=		buildtools_build linguisttools_build core gui help \
 		network printsupport sql svg webkit widgets \
 		x11extras xml
-INSTALLS_ICONS=	yes
 QMAKE_ARGS=	${PORTNAME}.pro CONFIG+="zim_support"
 
 OPTIONS_DEFINE=	EPWING FFMPEG MULTIMEDIA OPENCC

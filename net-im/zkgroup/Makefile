@@ -1,7 +1,8 @@
 PORTNAME=	zkgroup
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
-PORTREVISION=	3
+DISTVERSION=	0.7.4
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -13,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
-GH_TUPLE=	signalapp:curve25519-dalek:477356e017c7cc2aa168f956786b34690870768f:curvedalek \
-		signalapp:poksho:v0.7.0:poksho
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 USE_LDCONFIG=	yes
@@ -128,8 +127,9 @@ CARGO_CRATES=	aead-0.4.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		zeroize-1.3.0
-CARGO_USE_GITHUB=	yes
+		zeroize-1.3.0 \
+		poksho@git+https://github.com/signalapp/poksho.git\#8bb8c61c18e7bbe93c094ed91be52b9f96c1c5cd \
+		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek.git?branch=lizard2\#477356e017c7cc2aa168f956786b34690870768f
 
 PLIST_FILES=	lib/lib${PORTNAME}.so
 

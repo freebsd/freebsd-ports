@@ -1,8 +1,7 @@
 # Created by: arved
 
 PORTNAME=	qnetwalk
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

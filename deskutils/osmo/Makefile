@@ -25,7 +25,6 @@ USES=		compiler:c++11-lang gettext gmake gnome libarchive pkgconfig \
 		sqlite
 USE_GNOME=	cairo gtk30 libxml2
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

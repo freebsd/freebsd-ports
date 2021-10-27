@@ -16,6 +16,7 @@ include/pinot/CommandLine.h
 include/pinot/CrawlHistory.h
 include/pinot/CurlDownloader.h
 include/pinot/DBusIndex.h
+include/pinot/DBusServerThreads.h
 include/pinot/DaemonState.h
 include/pinot/Document.h
 include/pinot/DocumentInfo.h
@@ -41,6 +42,9 @@ include/pinot/NLS.h
 include/pinot/NeonDownloader.h
 include/pinot/OnDiskHandler.h
 include/pinot/OpenSearchParser.h
+include/pinot/PinotDBus_common.h
+include/pinot/PinotDBus_proxy.h
+include/pinot/PinotDBus_stub.h
 include/pinot/PinotSettings.h
 include/pinot/PluginParsers.h
 include/pinot/PluginWebEngine.h
@@ -51,6 +55,8 @@ include/pinot/SQLDB.h
 include/pinot/SQLiteBase.h
 include/pinot/SearchEngineInterface.h
 include/pinot/SearchPluginProperties.h
+include/pinot/SearchProvider_common.h
+include/pinot/SearchProvider_stub.h
 include/pinot/ServerThreads.h
 include/pinot/SherlockParser.h
 include/pinot/StringManip.h
@@ -99,7 +105,7 @@ man/man1/pinot-search.1.gz
 man/man1/pinot.1.gz
 share/applications/pinot-prefs.desktop
 share/applications/pinot.desktop
-share/dbus-1/services/de.berlios.Pinot.service
+share/dbus-1/services/com.github.fabricecolin.Pinot.service
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog-dijon
@@ -107,6 +113,7 @@ share/dbus-1/services/de.berlios.Pinot.service
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+share/gnome-shell/search-providers/com.github.fabricecolin.Pinot.search-provider.ini
 share/icons/hicolor/16x16/apps/pinot.png
 share/icons/hicolor/22x22/apps/pinot.png
 share/icons/hicolor/24x24/apps/pinot.png
@@ -127,20 +134,14 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 share/locale/zh_CN/LC_MESSAGES/pinot.mo
 share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/AmazonAPI.src
-%%DATADIR%%/engines/Bing.src
-%%DATADIR%%/engines/Clusty.src
-%%DATADIR%%/engines/Freecode.src
-%%DATADIR%%/engines/Google.src
-%%DATADIR%%/engines/KodersDescription.xml
+%%DATADIR%%/engines/Arxiv.src
 %%DATADIR%%/engines/OmegaDescription.xml
-%%DATADIR%%/engines/Topix.src
 %%DATADIR%%/engines/UNData.src
 %%DATADIR%%/engines/Wikipedia.src
-%%DATADIR%%/metase-gtk2.glade
-%%DATADIR%%/metase-gtk2.gladep
+%%DATADIR%%/extract-gtk-builder-translations.sh
+%%DATADIR%%/metase-gtk3.gtkbuilder
 %%DATADIR%%/pinot-cd.sh
 %%DATADIR%%/pinot-check-file.sh
 %%DATADIR%%/pinot-dbus-daemon.xml
 %%DATADIR%%/pinot-enum-index.sh
 %%DATADIR%%/stopwords/.empty_file
-%%DATADIR%%/xapian-powered.png

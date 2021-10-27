@@ -26,7 +26,6 @@ USES=		compiler:c11 gettext gl gnome localbase:ldflags meson \
 USE_GNOME=	gnomedesktop3 gtk30
 USE_XORG=	ice sm x11 xcomposite xtrans
 USE_GL=		egl gl glesv2
-INSTALLS_ICONS=	yes
 MESON_ARGS=	-Dsystemd=false \
 		-Dsystemd_session=disable \
 		-Dsystemd_journal=false \

@@ -1,6 +1,6 @@
---- src/cpp/session/SessionHttpMethods.cpp.orig	2020-01-23 23:30:24 UTC
+--- src/cpp/session/SessionHttpMethods.cpp.orig	2021-09-22 13:58:50 UTC
 +++ src/cpp/session/SessionHttpMethods.cpp
-@@ -397,7 +397,7 @@ std::string clientVersion()
+@@ -437,7 +437,7 @@ std::string clientVersion()
        return std::string();
  
     // clientVersion is the git revision hash
@@ -8,4 +8,4 @@
 +   return RSTUDIO_VERSION;
  }
  
- void waitForMethodInitFunction(const ClientEvent& initEvent)
+ bool protocolDebugEnabled()

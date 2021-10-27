@@ -3,7 +3,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/ghub/ghub-autoloads.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ghub/ghub-graphql.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ghub/ghub-graphql.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/ghub/ghub-pkg.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ghub/ghub.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ghub/ghub.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ghub/glab.el

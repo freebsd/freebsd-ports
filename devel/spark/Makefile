@@ -4,7 +4,7 @@ PORTNAME=	spark
 PORTVERSION=	2.1.1
 PORTREVISION=	2
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven
 PKGNAMEPREFIX=	apache-
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
 RUN_DEPENDS=	bash:shells/bash \
 		yarn:devel/hadoop2
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 SHEBANG_FILES=	bin/sparkR

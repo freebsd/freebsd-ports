@@ -1,6 +1,14 @@
---- shellinabox/service.c.orig
+--- shellinabox/service.c.orig	2016-11-09 19:40:33 UTC
 +++ shellinabox/service.c
-@@ -175,8 +175,7 @@ void initService(struct Service *service, const char *
+@@ -169,14 +169,13 @@ void initService(struct Service *service, const char *
+     }
+ 
+     service->cmdline                        = stringPrintf(NULL,
+-      "ssh -a -e none -i /dev/null -x -oChallengeResponseAuthentication=no "
++      "ssh -a -e none -i /dev/null -x "
+           "-oCheckHostIP=no -oClearAllForwardings=yes -oCompression=no "
+-          "-oControlMaster=no -oGSSAPIAuthentication=no "
++          "-oControlMaster=no "
            "-oHostbasedAuthentication=no -oIdentitiesOnly=yes "
            "-oKbdInteractiveAuthentication=yes -oPasswordAuthentication=yes "
            "-oPreferredAuthentications=keyboard-interactive,password "

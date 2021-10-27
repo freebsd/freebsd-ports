@@ -1,19 +1,55 @@
---- ../CMakeLists.txt.orig	2020-09-24 08:09:24 UTC
+--- ../CMakeLists.txt.orig	2021-10-15 04:21:04 UTC
 +++ ../CMakeLists.txt
-@@ -131,11 +131,11 @@ add_subdirectory(${xgboost_SOURCE_DIR}/src)
+@@ -104,11 +104,11 @@ endif (PLUGIN_RMM AND NOT ((CMAKE_CXX_COMPILER_ID STRE
+ if (PLUGIN_RMM AND NOT (CMAKE_SYSTEM_NAME STREQUAL "Linux"))
+   message(SEND_ERROR "`PLUGIN_RMM` must be used with Linux.")
+ endif (PLUGIN_RMM AND NOT (CMAKE_SYSTEM_NAME STREQUAL "Linux"))
+-if (ENABLE_ALL_WARNINGS)
+-  if ((NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
+-    message(SEND_ERROR "ENABLE_ALL_WARNINGS is only available for Clang and GCC.")
+-  endif ((NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
+-endif (ENABLE_ALL_WARNINGS)
++#if (ENABLE_ALL_WARNINGS)
++#  if ((NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
++#    message(SEND_ERROR "ENABLE_ALL_WARNINGS is only available for Clang and GCC.")
++#  endif ((NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
++#endif (ENABLE_ALL_WARNINGS)
+ if (BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
+   message(SEND_ERROR "Cannot build a static library libxgboost.a when R or JVM packages are enabled.")
+ endif (BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
+@@ -160,7 +160,7 @@ endif (USE_NCCL)
  
  # dmlc-core
  msvc_use_static_runtime()
 -add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
--set_target_properties(dmlc PROPERTIES
--  CXX_STANDARD 14
--  CXX_STANDARD_REQUIRED ON
--  POSITION_INDEPENDENT_CODE ON)
 +#add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
-+#set_target_properties(dmlc PROPERTIES
-+#  CXX_STANDARD 14
-+#  CXX_STANDARD_REQUIRED ON
-+#  POSITION_INDEPENDENT_CODE ON)
+ 
  if (MSVC)
-   target_compile_options(dmlc PRIVATE
-                          -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE)
+   if (TARGET dmlc_unit_tests)
+@@ -177,7 +177,7 @@ endif (RABIT_BUILD_MPI)
+ 
+ # core xgboost
+ add_subdirectory(${xgboost_SOURCE_DIR}/src)
+-target_link_libraries(objxgboost PUBLIC dmlc)
++#target_link_libraries(objxgboost PUBLIC dmlc)
+ 
+ # Exports some R specific definitions and objects
+ if (R_LIB)
+@@ -218,7 +218,7 @@ set_target_properties(runxgboost PROPERTIES OUTPUT_NAM
+ #-- End CLI for xgboost
+ 
+ # Common setup for all targets
+-foreach(target xgboost objxgboost dmlc runxgboost)
++foreach(target xgboost objxgboost runxgboost)
+   xgboost_target_properties(${target})
+   xgboost_target_link_libraries(${target})
+   xgboost_target_defs(${target})
+@@ -269,7 +269,7 @@ install(DIRECTORY ${xgboost_SOURCE_DIR}/include/xgboos
+ #
+ # https://github.com/dmlc/xgboost/issues/6085
+ if (BUILD_STATIC_LIB)
+-  set(INSTALL_TARGETS xgboost runxgboost objxgboost dmlc)
++  set(INSTALL_TARGETS xgboost runxgboost objxgboost)
+ else (BUILD_STATIC_LIB)
+   set(INSTALL_TARGETS xgboost runxgboost)
+ endif (BUILD_STATIC_LIB)

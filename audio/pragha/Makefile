@@ -23,7 +23,6 @@ USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool intlhack
 USE_GSTREAMER1=	yes faad flac libav mpg123 ogg speex
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

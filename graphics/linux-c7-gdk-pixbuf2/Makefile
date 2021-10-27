@@ -8,7 +8,9 @@ CATEGORIES=	graphics linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Graphic library for GTK+ (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	gnome
+CPE_PRODUCT=	gdk-pixbuf
 USE_LDCONFIG=	yes
 USE_LINUX=	jasper jpeg png tiff xorglibs
 USE_LINUX_RPM=	yes

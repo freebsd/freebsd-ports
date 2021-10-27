@@ -1,8 +1,10 @@
 %%SITE_PERL%%/Log/Any.pm
 %%SITE_PERL%%/Log/Any/Adapter.pm
 %%SITE_PERL%%/Log/Any/Adapter/Base.pm
+%%SITE_PERL%%/Log/Any/Adapter/Capture.pm
 %%SITE_PERL%%/Log/Any/Adapter/Development.pod
 %%SITE_PERL%%/Log/Any/Adapter/File.pm
+%%SITE_PERL%%/Log/Any/Adapter/Multiplex.pm
 %%SITE_PERL%%/Log/Any/Adapter/Null.pm
 %%SITE_PERL%%/Log/Any/Adapter/Stderr.pm
 %%SITE_PERL%%/Log/Any/Adapter/Stdout.pm
@@ -17,8 +19,10 @@
 %%PERL5_MAN3%%/Log::Any.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Base.3.gz
+%%PERL5_MAN3%%/Log::Any::Adapter::Capture.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Development.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::File.3.gz
+%%PERL5_MAN3%%/Log::Any::Adapter::Multiplex.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Null.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Stderr.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Stdout.3.gz

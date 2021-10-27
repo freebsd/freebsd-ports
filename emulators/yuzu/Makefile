@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20211001
+PORTVERSION=	s20211025
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -27,18 +27,17 @@ BUILD_DEPENDS=	catch>0:devel/catch \
 		nlohmann-json>0:devel/nlohmann-json \
 		glslangValidator:graphics/glslang
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
-		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd \
 		libopus.so:audio/opus \
 		libavcodec.so:multimedia/ffmpeg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	36d45b4a7
+GH_TAGNAME=	63ed7d9af
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.180:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r5-113-g517e35f8:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r5-127-gcce7e4ee:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:a395963:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r52:inih/externals/inih/inih \

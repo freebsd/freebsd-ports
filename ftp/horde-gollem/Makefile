@@ -11,7 +11,7 @@ COMMENT=	Horde Web-based File Manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe horde php
+USES=		horde php cpe
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -35,7 +35,5 @@ USE_HORDE_RUN=	Horde_Role \
 # Optional but we want it
 USE_HORDE_RUN+=	Horde_Db \
 		Horde_Share
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

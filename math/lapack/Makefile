@@ -20,7 +20,7 @@ DIST_SUBDIR=	lapack-${PORTVERSION}
 MAINTAINER?=	fortran@FreeBSD.org
 COMMENT?=	Linear Algebra PACKage
 
-LICENSE=	BSD3CLAUSE
+LICENSE?=	BSD3CLAUSE
 
 USES=		cmake:testing fortran
 WRKSRC=		${WRKDIR}/lapack-${PORTVERSION}

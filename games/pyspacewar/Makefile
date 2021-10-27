@@ -25,8 +25,6 @@ NO_ARCH=	yes
 
 PORTDOCS=	*.rst
 
-INSTALLS_ICONS=	yes
-
 DESKTOP_ENTRIES="PySpaceWar" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 

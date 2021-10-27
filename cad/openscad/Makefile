@@ -14,7 +14,7 @@ COMMENT=	Programmer's solid 3D CAD modeller #'
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=  cgal>0:math/cgal
+BUILD_DEPENDS=	cgal>0:math/cgal
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \

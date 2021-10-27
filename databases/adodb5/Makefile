@@ -12,7 +12,8 @@ COMMENT=	Database library for PHP
 LICENSE=	BSD3CLAUSE LGPL21+
 LICENSE_COMB=	dual
 
-USES=		php:flavors
+USES=		cpe php:flavors
+CPE_VENDOR=	${PORTNAME}_project
 USE_PHP=	pcre
 
 USE_GITHUB=	yes

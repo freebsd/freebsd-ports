@@ -1,0 +1,7 @@
+GDS3D is an application that can interpret so called IC layouts and render them
+in 3D. The program accepts standard GDSII files as input data. Along with the
+layout file, it requires a so called process definition file which contains the
+3D parameters of the process being used. These files combined allow the program
+to create a 3D representation of an ASIC design.
+
+WWW: https://github.com/trilomix/GDS3D

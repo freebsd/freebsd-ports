@@ -1,7 +1,7 @@
 PORTNAME=	solanum
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,22 +11,16 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cargo gettext gnome meson pkgconfig python:build shebangfix
-USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_GNOME=	gtk40 libadwaita
 USE_GSTREAMER1=	bad good vorbis
-GH_TUPLE=	gtk-rs:gtk3-rs:c58fab4fec1254244f598c4eac7f9310184c5996:gtk3 \
-		gtk-rs:gtk4-rs:64d0e1c1344458a065ccf22dcecf105c55b902ca:gtk4
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Solanum
 GL_COMMIT=	3e69272fb31bf18a7aa74ece9d904d445c458274
-GL_TUPLE=	https://gitlab.freedesktop.org:gstreamer:gstreamer-rs:0e8b95f1d029530ad3f84a3f08a20d8dfd80a089:gstreamer \
-		bilelmoussaoui:libadwaita-rs:b898c11fb6776fc7a9a6b920222fa3173216a80c:libadwaita
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	org.gnome.Solanum.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		anyhow-1.0.35 \
@@ -94,29 +88,11 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		version_check-0.9.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
-CARGO_USE_GITHUB=	yes
-CARGO_USE_GITLAB=	yes
-CARGO_GIT_SUBDIR=	gstreamer:gstreamer-player:gstreamer-player \
-			gstreamer:gstreamer:gstreamer \
-			gtk3:cairo-rs:cairo \
-			gtk3:cairo-sys-rs:cairo/sys \
-			gtk3:gdk-pixbuf-sys:gdk-pixbuf/sys \
-			gtk3:gdk-pixbuf:gdk-pixbuf \
-			gtk3:gio-sys:gio/sys \
-			gtk3:gio:gio \
-			gtk3:glib-sys:glib/sys \
-			gtk3:glib:glib \
-			gtk3:gobject-sys:glib/gobject-sys \
-			gtk3:graphene-sys:graphene/sys \
-			gtk3:graphene:graphene \
-			gtk3:pango-sys:pango/sys \
-			gtk3:pango:pango \
-			gtk4:gdk-sys:gdk4/sys \
-			gtk4:gdk:gdk4 \
-			gtk4:gtk-sys:gtk4/sys \
-			gtk4:gtk:gtk4 \
-			libadwaita:libadwaita:libadwaita
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		gdk4,gdk4-sys,gsk4,gsk4-sys,gtk4,gtk4-macros,gtk4-sys@git+https://github.com/gtk-rs/gtk4-rs\#64d0e1c1344458a065ccf22dcecf105c55b902ca \
+		gstreamer,gstreamer-base,gstreamer-base-sys,gstreamer-player,gstreamer-player-sys,gstreamer-sys,gstreamer-video,gstreamer-video-sys@git+https://gitlab.freedesktop.org/gstreamer/gstreamer-rs\#0e8b95f1d029530ad3f84a3f08a20d8dfd80a089 \
+		cairo-rs,cairo-sys-rs,gdk-pixbuf,gdk-pixbuf-sys,gio,gio-sys,glib,glib-macros,glib-sys,gobject-sys,graphene-rs,graphene-sys,pango,pango-sys@git+https://github.com/gtk-rs/gtk3-rs\#c58fab4fec1254244f598c4eac7f9310184c5996 \
+		libadwaita,libadwaita-sys@git+https://gitlab.gnome.org/bilelmoussaoui/libadwaita-rs\#b898c11fb6776fc7a9a6b920222fa3173216a80c
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no

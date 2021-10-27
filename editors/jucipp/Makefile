@@ -26,7 +26,6 @@ GL_COMMIT=	b3b5182258b25835e7c5f683623ab774d8e34c75
 GL_TUPLE=	cppit:libclangmm:0df7169ddc918d80a95e50f04813be82fff7ce24:libclangmm/lib/libclangmm \
 		eidheim:tiny-process-library:15e4f77f8254e4b093f6be128db50fe4b6bee120:tinyprocesslibrary/lib/tiny-process-library
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
-INSTALLS_ICONS=	yes
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/include \
 		-DCMAKE_LIBRARY_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib

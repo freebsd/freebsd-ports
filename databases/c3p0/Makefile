@@ -10,7 +10,8 @@ COMMENT=	Library for augmenting JDBC drivers with JNDI-bindable DataSources
 LICENSE=	LGPL21 EPL
 LICENSE_COMB=	dual
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
+CPE_VENDOR=	mchange
 USE_JAVA=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

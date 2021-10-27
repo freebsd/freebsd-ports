@@ -1,12 +1,10 @@
 # Created by: Simon Barner <barner@gmx.de>
 
 PORTNAME=	valgrind
-PORTVERSION=	3.17.0.g20210319
-DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	0
+PORTVERSION=	3.18.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://valgrind.org/
+MASTER_SITES=	SOURCEWARE/valgrind
 
 MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
@@ -16,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		cpe pathfix pkgconfig gmake perl5 shebangfix autoreconf
+USES=		cpe pathfix pkgconfig gmake perl5 shebangfix autoreconf tar:bz2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
@@ -24,12 +22,7 @@ SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
 SSP_UNSAFE=	yes
 LIB32_PATH?=	/usr/lib32/libc.so
 
-CONFLICTS=	valgrind-[0-9]*
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	paulfloyd
-GH_PROJECT=	freebsd_valgrind
-GH_TAGNAME=	d333c54
+CONFLICTS=	valgrind-devel-[0-9]*
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 

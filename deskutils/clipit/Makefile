@@ -11,7 +11,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	gtk20 intltool
 

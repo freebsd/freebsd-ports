@@ -12,6 +12,8 @@ COMMENT=	Unix incarnation of the plan9 shell
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history
 

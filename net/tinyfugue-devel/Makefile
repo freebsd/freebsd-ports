@@ -19,7 +19,7 @@ GH_ACCOUNT=	ingwarsw
 
 USES=		ssl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink \
+CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink=no \
 		--exec-prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--mandir=${PREFIX}/man \
@@ -32,6 +32,5 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${STAGEDIR}${PREFIX}/man/man1/tf-development.1
-	${RM} ${STAGEDIR}${PREFIX}/bin/tf
 
 .include <bsd.port.mk>

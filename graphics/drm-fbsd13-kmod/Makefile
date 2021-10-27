@@ -1,7 +1,7 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
 
 PORTNAME=	drm-fbsd13-kmod
-PORTVERSION=	5.4.144.g20210908
+PORTVERSION=	5.4.144.g20211013
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386, aarch64 and powerpc64
+ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386, aarch64, and powerpc64
 
 RUN_DEPENDS=	gpu-firmware-kmod>=g20200914:graphics/gpu-firmware-kmod
 
@@ -26,7 +26,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.4.144
+GH_TAGNAME=	drm_v5.4.144_3
 
 .include <bsd.port.options.mk>
 

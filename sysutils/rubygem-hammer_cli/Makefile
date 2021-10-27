@@ -21,7 +21,8 @@ RUN_DEPENDS=	rubygem-amazing_print>=0:devel/rubygem-amazing_print \
 		rubygem-unicode>=0:devel/rubygem-unicode \
 		rubygem-unicode-display_width>=0:devel/rubygem-unicode-display_width
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	theforeman
 USE_RUBY=	yes
 
 NO_ARCH=	yes

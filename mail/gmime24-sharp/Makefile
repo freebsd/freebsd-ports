@@ -9,6 +9,9 @@ COMMENT=	Mono bindings for gmime
 
 LIB_DEPENDS=	libgmime-2.4.so:mail/gmime24
 
+DEPRECATED=	Use mail/gmime26-sharp
+EXPIRATION_DATE=2021-11-29
+
 MASTERDIR=	${.CURDIR}/../gmime24
 BUILD_WRKSRC=	${WRKSRC}/mono
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

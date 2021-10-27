@@ -30,7 +30,8 @@ BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook
 			gradle5>=5.0:devel/gradle5
 RUN_DEPENDS=		bash:shells/bash
 
-USES=		bison shebangfix
+USES=		bison cpe shebangfix
+CPE_VENDOR=	nsa
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NationalSecurityAgency
@@ -44,7 +45,6 @@ SHEBANG_FILES=	Ghidra/RuntimeScripts/Common/server/jaas_external_program.example
 		Ghidra/RuntimeScripts/Linux/* \
 		Ghidra/RuntimeScripts/Linux/server/* \
 		Ghidra/RuntimeScripts/Linux/support/*
-
 
 # Gradle cache path must be absolute (see https://github.com/gradle/gradle/issues/1338)
 GRADLE_HOME_BASE=	/tmp

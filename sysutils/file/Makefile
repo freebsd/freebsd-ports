@@ -14,7 +14,8 @@ COMMENT=	Utility to determine file type
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool
+USES=		cpe libtool
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

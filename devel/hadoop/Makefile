@@ -4,7 +4,7 @@ PORTNAME=	hadoop
 PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/core/${PORTNAME}-${PORTVERSION} \
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/core/${PORTNAME}-${PORTVERSION}/ \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
@@ -16,6 +16,8 @@ LICENSE=	APACHE20
 
 BROKEN_SSL=	openssl
 BROKEN_SSL_REASON_openssl=	variable has incomplete type 'HMAC_CTX' (aka 'hmac_ctx_st')
+DEPRECATED=	Outdated, unsupported upstream
+EXPIRATION_DATE=2022-03-31
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		gsed:textproc/gsed

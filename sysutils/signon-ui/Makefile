@@ -15,7 +15,6 @@ LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libsignon-qt5.so:sysutils/signon-qt5 \
 		libproxy.so:net/libproxy
 
-
 USES=		compiler:c++11-lang gettext-runtime gl gnome pkgconfig python \
 		qmake qt:5 tar:bz2
 USE_GL=		gl

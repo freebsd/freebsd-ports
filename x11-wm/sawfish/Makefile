@@ -26,7 +26,6 @@ USE_GNOME=	cairo gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
-INSTALLS_ICONS=	yes
 
 INFO=		sawfish
 

@@ -1,5 +1,6 @@
 PORTNAME=	xpra
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -24,6 +25,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL-accelerate>=3.1.0:graphics/py-PyOpenGL-accelerate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=3.1.0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rencode>1:converters/py-rencode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		setxkbmap:x11/setxkbmap \
 		ssh-askpass:security/openssh-askpass \
 		xauth:x11/xauth \
@@ -31,7 +33,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		Xvfb:x11-servers/xorg-vfbserver
 
 USES=		desktop-file-utils gettext-runtime gnome pkgconfig \
-		python:3.6+ shared-mime-info shebangfix xorg
+		python:3.6+ shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
 USE_PYTHON=	cython distutils noflavors
@@ -42,15 +44,10 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 SHEBANG_FILES=	fs/lib/cups/xpraforwarder fs/bin/auth_dialog fs/bin/xdg-open \
 		fs/bin/xpra_udev_product_version fs/bin/gnome-open \
 		fs/bin/gvfs-open
-SHEBANG_LANG=	sh
-sh_OLD_CMD=	/usr/bin/sh
-sh_CMD=		/bin/sh
-MAKE_ENV=	XPRA_USE_PROCESS_POLLING=1
 
 OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER LIBYUV SWSCALE VPX \
 			WEBCAM X264 X265
-OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER LIBYUV SWSCALE VPX \
-			X264 X265
+OPTIONS_DEFAULT=	AVAHI CUPS GSTREAMER
 OPTIONS_SUB=		yes
 
 AVCODEC_DESC=	Enable avcodec2 (FFmpeg) decoder
@@ -66,9 +63,11 @@ X265_DESC=	Enable X265 encoder
 
 AVAHI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}avahi>0:net/py-avahi@${PY_FLAVOR}
 AVAHI_VARS=			XPRA_OPTIONS+=mdns
+AVCODEC_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
 AVCODEC_VARS=			XPRA_OPTIONS+=dec_avcodec2
 CUPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups@${PY_FLAVOR}
 CUPS_VARS=			XPRA_OPTIONS+=printing
+FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
 FFMPEG_VARS=			XPRA_OPTIONS+=enc_ffmpeg
 GSTREAMER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
 GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR} \
@@ -92,7 +91,7 @@ PYDISTUTILS_PKGNAME=	xpra_all
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
 			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 \
 			mdns printing sound vpx webcam
-XPRA_OPTIONS_DISABLED=	netdev service uinput Xdummy Xdummy_wrapper
+XPRA_OPTIONS_DISABLED=	uinput Xdummy Xdummy_wrapper
 
 .include <bsd.port.options.mk>
 
@@ -103,10 +102,6 @@ PYDISTUTILS_ARGS+=	--without-${opt}
 PYDISTUTILS_ARGS+=	--with-${opt}
 .endif
 .endfor
-
-.if ${PORT_OPTIONS:MAVCODEC} || ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
-.endif
 
 .include <bsd.port.pre.mk>
 

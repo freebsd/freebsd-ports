@@ -2,6 +2,7 @@ PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
 CATEGORIES=	java devel
+PORTREVISION=	2
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
 MAINTAINER=	java@FreeBSD.org
@@ -132,6 +133,9 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 			--with-extra-cxxflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}"
 .else
 MAKE_ENV+=	USE_CLANG=true
+.if ${COMPILER_VERSION} >= 130
+CONFIGURE_ARGS+=	--with-extra-cflags="-Wno-unused-but-set-parameter"
+.endif
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
@@ -139,9 +143,6 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .endif
 .if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
 CONFIGURE_ARGS+=	--disable-dtrace
-.endif
-.if ${ARCH} != amd64 && !${ARCH:Mpowerpc64*}
-CONFIGURE_ARGS+=	--enable-aot=no
 .endif
 .if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_cpu_ppc_vm__version__ppc.hpp

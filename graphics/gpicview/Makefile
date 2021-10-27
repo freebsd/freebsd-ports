@@ -14,7 +14,6 @@ USES=		desktop-file-utils gettext-tools gmake gnome jpeg localbase \
 		pkgconfig tar:xz xorg
 USE_GNOME=	gtk20 intltool
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
 

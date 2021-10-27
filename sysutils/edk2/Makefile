@@ -8,13 +8,14 @@ COMMENT=	EDK2 Firmware for ${FLAVOR}
 LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	This port only provides firmware for aarch64 and amd64 machine
+ONLY_FOR_ARCHS_REASON=	only provides firmware for aarch64 and amd64
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
 FLAVORS=	macchiatobin fvp rpi3 rpi4 xen_x64
 FLAVOR?=	macchiatobin
 
-USES=	gmake python:3.7+,build
+USES=	cpe gmake python:3.7+,build
+CPE_VENDOR=	tianocore
 USE_GCC=	yes:build
 
 BUILD_DEPENDS+=	dtc>=1.4.1:sysutils/dtc \

@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--enable-vdr-keys \
 		--disable-nvtvsimple \
 		--disable-rpath
 MAKE_ENV=	V=1
-INSTALLS_ICONS=	yes
 
 LLD_UNSAFE=	yes	# lld disallows preemption of protected visibility syms
 

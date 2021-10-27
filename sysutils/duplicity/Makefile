@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		localbase python shebangfix
+USES=		cpe localbase python shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils noflavors
 USE_LDCONFIG=	yes
 

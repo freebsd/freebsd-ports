@@ -8,7 +8,8 @@ COMMENT=	Static multicast routing tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
+USES=		autoreconf cpe
+CPE_VENDOR=	troglobit
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit

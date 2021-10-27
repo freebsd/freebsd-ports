@@ -1,7 +1,8 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	pinot
-PORTVERSION=	1.10
+PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,10 +16,10 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
 		libfontconfig.so:x11-fonts/fontconfig		\
 		libfreetype.so:print/freetype2			\
 		libexttextcat-2.0.so:textproc/libexttextcat	\
-		libdbus-glib-1.so:devel/dbus-glib		\
 		libdbus-1.so:devel/dbus				\
 		libxml++-2.6.so:textproc/libxml++26		\
 		libboost_thread.so:devel/boost-libs		\
+		libharfbuzz.so:print/harfbuzz			\
 		libnotify.so:devel/libnotify			\
 		libexif.so:graphics/libexif			\
 		libexiv2.so:graphics/exiv2			\
@@ -37,11 +38,12 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
 
-USES=		compiler:c++11-lang autoreconf gettext gnome libarchive \
+USES=		compiler:c++11-lang autoreconf gettext gnome libarchive	\
 		libtool pkgconfig python shebangfix sqlite:3 ssl xorg
 USE_CXXSTD=	c++11
 USE_XORG=	pixman
-USE_GNOME=	atkmm cairo cairomm glibmm gtk20 gtkmm24 libsigc++20 libxml2 pangomm
+USE_GNOME=	atkmm cairo cairomm gdkpixbuf2 glibmm gtk30 gtkmm30	\
+		libsigc++20 libxml2 pangomm
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh
 
@@ -57,34 +59,26 @@ OPTIONS_SUB=	yes
 
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
+CHMLIB_DESC=		Support of Microsoft ITSS/CHM files
 CHMLIB_CONFIGURE_ON=	--enable-chmlib=yes
 CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:misc/chmlib
 
-INSTALLS_ICONS=	yes
-
+INSTALL_TARGET=	install-strip
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
-LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt textcat32_conf.txt
+LM2FIX=		Core/pinot-index.cpp Core/pinot-index.1 Makefile.am	\
+		textcat31_conf.txt aclocal.m4 textcat3_conf.txt	\
+		textcat_conf.txt textcat32_conf.txt
 SHR2FIX=	Core/pinot-search.1
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
-post-extract:
-# remove pre-generated messages catalogs
-	${FIND} ${WRKSRC}/po -name "*.gmo" -delete
-
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} -e \
 		'/<command>/s|pdftotext|${LOCALBASE}/libexec/xpdf/pdftotext|' \
 		${WRKSRC}/Tokenize/filters/external-filters.xml
-
-pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|'	\
 		${LM2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|libtextcat/|libtextcat/LM/|'	\
-		${WRKSRC}/textcat_conf.txt
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'	\
-		${UL2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
 		${SHR2FIX:S|^|${WRKSRC}/|}
 

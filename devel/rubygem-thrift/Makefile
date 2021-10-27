@@ -12,7 +12,8 @@ COMMENT=	Ruby interface to thrift
 LICENSE=	APACHE20
 
 USE_RUBY=	yes
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	apache
 
 # Workaround for stage-qa:
 post-install:

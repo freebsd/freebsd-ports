@@ -31,6 +31,12 @@ PLIST_FILES=	${bin:S,^,bin/,} ${bin:S,^,man/man1/,:S,$,.1.gz,} \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 pre-build:
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CFLAGS}" > ${WRKSRC}/src/conf-cflags

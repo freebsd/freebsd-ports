@@ -34,7 +34,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-gaf

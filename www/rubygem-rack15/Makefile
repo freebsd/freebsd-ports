@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 
 SHEBANG_FILES=	test/cgi/test.ru
 SHEBANG_LANG=	rackup

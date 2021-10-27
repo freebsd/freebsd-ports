@@ -10,6 +10,5 @@ management:
 - Connections - Network, console, and power connections among devices
 - Virtualization - Virtual machines and clusters
 - Data circuits - Long-haul communications circuits and providers
-- Secrets - Encrypted storage of sensitive credentials
 
 WWW: https://github.com/netbox-community/netbox

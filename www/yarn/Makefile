@@ -1,6 +1,6 @@
 PORTNAME=	yarn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.11
+DISTVERSION=	1.22.17
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
@@ -9,6 +9,9 @@ COMMENT=	Package manager for node, alternative to npm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}pkg
 
 CONFLICTS_INSTALL?=	yarn-node14 yarn-node10
 

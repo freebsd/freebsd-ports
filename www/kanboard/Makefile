@@ -10,7 +10,7 @@ COMMENT=	Simple visual task board software
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:flavors
+USES=		cpe php:flavors
 USE_GITHUB=	yes
 USE_PHP=	ctype curl dom gd hash filter iconv json mcrypt mbstring \
 		openssl pdo session simplexml zlib xml

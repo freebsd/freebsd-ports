@@ -22,6 +22,8 @@ USES=		gnome python:3.5+
 USE_GNOME=	cairo
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 # --record output is not complete so supplement autoplist w/ a plist for now
 # https://github.com/Kozea/cairocffi/issues/108
 

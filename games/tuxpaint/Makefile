@@ -1,7 +1,7 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.24
+PORTVERSION=	0.9.26
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick7
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
-		libpaper.so:print/libpaper
+		libpaper.so:print/libpaper \
+		libimagequant.so:graphics/libimagequant
 RUN_DEPENDS=	anytopnm:graphics/netpbm \
 		bash:shells/bash
 

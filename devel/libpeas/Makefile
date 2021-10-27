@@ -27,7 +27,6 @@ PORTSCOUT=	ignore:1
 USES=		cpe gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 intlhack introspection
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 CPE_VENDOR=	gnome
 MESON_ARGS+=	-Dglade_catalog=false
 PLIST=		${.CURDIR}/pkg-plist

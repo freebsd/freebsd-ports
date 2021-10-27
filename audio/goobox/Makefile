@@ -23,7 +23,6 @@ USES=		desktop-file-utils gettext gnome meson pkgconfig \
 USE_GNOME=	glib20 gtk30 intlhack
 USE_XORG=	x11
 USE_GSTREAMER1=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

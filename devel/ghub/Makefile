@@ -1,7 +1,6 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.3
-PORTREVISION=	1
+DISTVERSION=	3.5.4
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -27,10 +26,16 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
+ELISP_FILES=	buck.el buck.elc ghub-autoloads.el ghub-graphql.el \
+		ghub-graphql.elc ghub.el ghub.elc glab.el glab.elc gogs.el \
+		gogs.elc gsexp.el gsexp.elc gtea.el gtea.elc
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/*.el* \
+.for f in ${ELISP_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 do-install-DOCS-on:

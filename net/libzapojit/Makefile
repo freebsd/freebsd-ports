@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
 		libjson-glib-1.0.so:devel/json-glib \
 		librest-0.7.so:devel/librest
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake gnome libtool pathfix pkgconfig tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME=	gnomeprefix intltool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

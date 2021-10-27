@@ -2,7 +2,7 @@ PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.9-49
 DISTVERSIONSUFFIX=	-g74aca40c0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
@@ -20,10 +20,6 @@ USE_XORG=	xcb
 
 MAKE_ENV=	ABST_DATA_DIR=${DATADIR} ABST_PLAYER_HOME_DIR=1
 
-GH_TUPLE=	dabreegster:earcutr:e029a11b66fd27f2ca2fd457dd37c403485ebba1:earcutr \
-		dabreegster:seattle_traffic_signals:c2b33cc7fc4b922c8d25d88a8b07fb824d235b9d:seattle_traffic_signals \
-		easbar:fast_paths:192ae1997f9857791826ac5ed16892b2f692920c:fast_paths \
-		michaelkirk:winit:a87ae2661263ff241e8868cbf3ce65aab205863a:michaelkirk_winit
 CARGO_CRATES=	RustyXML-0.1.1 \
 		aabb-quadtree-0.1.0 \
 		adler32-1.0.4 \
@@ -452,8 +448,11 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		xmlparser-0.13.2 \
 		xmltree-0.10.0 \
 		xmlwriter-0.1.0 \
-		zip-0.5.5
-CARGO_USE_GITHUB=	yes
+		zip-0.5.5 \
+		seattle_traffic_signals@git+https://github.com/dabreegster/seattle_traffic_signals\#c2b33cc7fc4b922c8d25d88a8b07fb824d235b9d \
+		fast_paths@git+https://github.com/easbar/fast_paths\#192ae1997f9857791826ac5ed16892b2f692920c \
+		earcutr@git+https://github.com/dabreegster/earcutr?branch=patch-1\#e029a11b66fd27f2ca2fd457dd37c403485ebba1 \
+		winit@git+https://github.com/michaelkirk/winit?branch=mkirk/fix-stdweb-dpi\#a87ae2661263ff241e8868cbf3ce65aab205863a
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

@@ -47,7 +47,7 @@ CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
 MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses" CFLAGS="${CFLAGS}"
 
-STATIC_MAKE_ENV=     LDFLAGS+=-static
+STATIC_MAKE_ENV=	LDFLAGS+=-static
 
 KSH_PLIST_SUB=		93=""
 KSH93_PLIST_SUB=	93="93"

@@ -20,7 +20,8 @@ BUILD_DEPENDS+=		${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}/sdk/include/pspsdk.h:devel
 			psp-ld:devel/psptoolchain-binutils \
 			${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin/psp-gcc:devel/psptoolchain-gcc-stage1
 
-USES=			gmake makeinfo
+USES=			cpe gmake makeinfo
+CPE_VENDOR=		${PORTNAME}_project
 HAS_CONFIGURE=		yes
 
 # psp-gcc doesn't need -march=... in CFLAGS (e.g. set by CPUTYPE in make.conf); also need -g on psp for some reason

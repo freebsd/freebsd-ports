@@ -8,4 +8,4 @@ lib/cmake/civetweb/civetweb-config.cmake
 lib/cmake/civetweb/civetweb-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/civetweb/civetweb-targets.cmake
 lib/libcivetweb.so
-lib/libcivetweb.so.1.14.0
+lib/libcivetweb.so.%%DISTVERSION%%.0

@@ -28,7 +28,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 desktop-file-utils gettext gnome \
 		localbase:ldflags meson pkgconfig python:3.4+,build tar:xz
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 USE_GNOME=	cairo evolutiondataserver3 gtksourceview3
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

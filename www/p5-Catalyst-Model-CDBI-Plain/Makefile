@@ -5,7 +5,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst plain base class for Class::DBI models
 
 BUILD_DEPENDS=	p5-Class-DBI>0:databases/p5-Class-DBI \

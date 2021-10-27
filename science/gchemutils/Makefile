@@ -31,7 +31,6 @@ USE_GL=		gl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GLIB_SCHEMAS=	org.gnome.gchemutils.crystal.gschema.xml \
 		org.gnome.gchemutils.gschema.xml \

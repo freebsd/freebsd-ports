@@ -9,9 +9,11 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/axel/axel-2.4.tar.gz/a2a76
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Download accelerator
 
-USES=		gmake
+USES=		cpe gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+
+CPE_VENDOR=	axel_project
 
 OPTIONS_DEFINE=	NLS DEBUG
 OPTIONS_SUB=	yes

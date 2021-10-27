@@ -7,6 +7,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Constraint library
 
-USES=	horde
+USES=		horde cpe
 
 .include <bsd.port.mk>

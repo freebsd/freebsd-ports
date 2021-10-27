@@ -1,44 +1,38 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2021-07-19 18:45:10 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2021-09-24 04:26:00 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -126,12 +126,12 @@
- #include "ui/base/ui_base_features.h"
- #endif
- 
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+@@ -131,7 +131,7 @@
  #include "chrome/browser/ui/startup/web_app_protocol_handling_startup_utils.h"
- #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || \
 -    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
 +    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
- #include "chrome/browser/web_applications/components/url_handler_launch_params.h"
- #include "chrome/browser/web_applications/components/url_handler_manager_impl.h"
+ #include "chrome/browser/ui/startup/web_app_url_handling_startup_utils.h"
  #endif
-@@ -471,7 +471,7 @@ bool MaybeLaunchApplication(
+ 
+@@ -470,7 +470,7 @@ bool MaybeLaunchApplication(
+   return false;
  }
  
- #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
- // If |command_line| contains a single URL argument and that URL matches URL
- // handling registration from installed web apps, show app options to user and
- // launch one if accepted.
-@@ -999,7 +999,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
-     }
-   }
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+ bool MaybeLaunchUrlHandlerWebAppFromCmd(
+     const base::CommandLine& command_line,
+     const base::FilePath& cur_dir,
+@@ -1103,7 +1103,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
  
+   if (command_line.HasSwitch(switches::kAppId)) {
+     std::string app_id = command_line.GetSwitchValueASCII(switches::kAppId);
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
-   // Web app Protocol handling.
-   auto startup_callback = base::BindOnce(
-       [](bool process_startup, const base::CommandLine& command_line,
-@@ -1060,7 +1060,7 @@ bool StartupBrowserCreator::StartupLaunchAfterProtocol
+     // If Chrome Apps are deprecated and |app_id| is a Chrome App, display the
+     // deprecation UI instead of launching the app.
+     if (apps::OpenDeprecatedApplicationPrompt(privacy_safe_profile, app_id))
+@@ -1175,7 +1175,7 @@ bool StartupBrowserCreator::StartupLaunchAfterProtocol
+   }
  
    // Web app URL handling.
- #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
-   if (MaybeLaunchUrlHandlerWebApp(command_line, cur_dir,
-                                   std::make_unique<LaunchModeRecorder>())) {
-     return true;
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+   if (MaybeLaunchUrlHandlerWebAppFromCmd(command_line, cur_dir, process_startup,
+                                          last_used_profile,
+                                          last_opened_profiles)) {

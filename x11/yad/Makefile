@@ -19,7 +19,6 @@ USES=		autoreconf gettext gnome gmake pkgconfig
 USE_GNOME=	cairo gtk30 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 CONFIGURE_ARGS+=	--with-rgb=${LOCALBASE}/lib/X11/rgb.txt
 GLIB_SCHEMAS=	yad.gschema.xml

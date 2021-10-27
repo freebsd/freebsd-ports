@@ -5,7 +5,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of TT2 Variable Method Clone for Text::Xslate
 
 LICENSE=	ART10 GPLv1+

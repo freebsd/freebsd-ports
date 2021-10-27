@@ -2,7 +2,7 @@
 
 PORTNAME=	ripgrep
 DISTVERSION=	13.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -15,7 +15,8 @@ LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 
-USES=		cargo
+USES=		cargo cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
@@ -58,7 +59,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		memmap2-0.3.0 \
 		num_cpus-1.13.0 \
 		once_cell-1.7.2 \
-		packed_simd_2-0.3.5 \
+		packed_simd_2-0.3.6 \
 		pcre2-0.2.3 \
 		pcre2-sys-0.2.5 \
 		pkg-config-0.3.19 \

@@ -1,13 +1,13 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	gcc
-PORTVERSION=	10.3.1.s20210917
+PORTVERSION=	10.3.1.s20211008
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
 DISTNAME=	gcc-${DIST_VERSION}
 
-MAINTAINER=	gerald@FreeBSD.org
+MAINTAINER=	toolchain@FreeBSD.org
 COMMENT=	GNU Compiler Collection 10
 
 LICENSE=	GPLv3 GPLv3RLE

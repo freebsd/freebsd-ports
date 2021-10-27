@@ -10,7 +10,8 @@ COMMENT=	Pure Java implementation of SSH2
 
 LICENSE=	BSD3CLAUSE
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	jcraft
 USE_JAVA=	yes
 USE_ANT=	yes
 
