@@ -34,6 +34,7 @@ GH_TUPLE=	\
 		cuelang:cue:v0.3.2:cuelang_cue/vendor/cuelang.org/go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		deepmap:oapi-codegen:v1.3.13:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
+		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		edsrzf:mmap-go:v1.0.0:edsrzf_mmap_go/vendor/github.com/edsrzf/mmap-go \
@@ -68,7 +69,7 @@ GH_TUPLE=	\
 		go-openapi:strfmt:v0.20.1:go_openapi_strfmt/vendor/github.com/go-openapi/strfmt \
 		go-openapi:swag:v0.19.15:go_openapi_swag/vendor/github.com/go-openapi/swag \
 		go-openapi:validate:v0.20.2:go_openapi_validate/vendor/github.com/go-openapi/validate \
-		go-redis:redis:v5.2.9:go_redis_redis/vendor/gopkg.in/redis.v5 \
+		go-redis:redis:v8.11.3:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-sourcemap:sourcemap:v2.1.3:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
 		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
