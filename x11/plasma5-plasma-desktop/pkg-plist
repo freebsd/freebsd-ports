@@ -1827,7 +1827,9 @@ share/locale/hsb/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hsb/LC_MESSAGES/kcmmouse.mo
 share/locale/hsb/LC_MESSAGES/knetattach5.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/hu/LC_MESSAGES/kaccess.mo
