@@ -22,8 +22,10 @@ CC+=		${CPPFLAGS} ${CFLAGS} ${LDFLAGS}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH:Mpowerpc*}
+USE_GCC=	yes
+.elif ${ARCH} == "i386"
 pre-build:
-.if ${ARCH} == "i386"
 	@${ECHO_CMD} "ppro" > ${WRKSRC}/poly1305aes.impl
 .endif
 
