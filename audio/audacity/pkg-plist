@@ -1,9 +1,13 @@
+audacity
 bin/audacity
+lib/audacity/lib-string-utils.so
+lib/audacity/lib-strings.so
+lib/audacity/lib-utility.so
+lib/audacity/lib-uuid.so
+lib/audacity/modules/mod-script-pipe.so
 man/man1/audacity.1.gz
-share/appdata/audacity.appdata.xml
 share/applications/audacity.desktop
 %%DATADIR%%/EQDefaultCurves.xml
-%%DATADIR%%/modules/mod-script-pipe.so
 %%DATADIR%%/nyquist/aud-do-support.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp
@@ -141,6 +145,7 @@ share/icons/hicolor/scalable/apps/audacity.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacity.mo
+share/metainfo/audacity.appdata.xml
 share/mime/packages/audacity.xml
 share/pixmaps/audacity.xpm
 share/pixmaps/audacity16.xpm
