@@ -2,6 +2,7 @@
 
 PORTNAME=	purple-hangouts
 PORTVERSION=	20190607
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://bitbucket.org/EionRobb/${PORTNAME}/get/
 # Commit tag. Must be changed according with PORTVERSION.
@@ -19,6 +20,7 @@ LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 
 USES=		gmake gnome pkgconfig zip
 USE_GNOME=	glib20
+PATCH_STRIP=	-p1 --ignore-whitespace
 
 WRKSRC=		${WRKDIR}/EionRobb-${PORTNAME}-${DISTNAME}
 
