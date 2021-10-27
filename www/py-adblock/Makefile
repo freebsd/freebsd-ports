@@ -99,6 +99,8 @@ CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
+.include <bsd.port.options.mk>
+
 # This is to prevent Mk/Uses/python.mk do-configure target from firing.
 do-configure:
 
@@ -110,6 +112,10 @@ do-build:
 # Due to upstream not supplying a setup.py file or other way to install
 # using pip command for now...
 do-install:
+.if ${ARCH:Mpowerpc64*}
+	@(cd ${INSTALL_WRKSRC}; \
+		${FIND} . -name "*whl" -exec sh -c 'mv {} `echo {} | sed  -E -e "s/powerpc.*/powerpc.whl/"`' \;)
+.endif
 	@(cd ${INSTALL_WRKSRC} ; \
 		${INSTALL_DATA} "target/release/libadblock.so" \
 		"${STAGEDIR}/${PREFIX}/lib" ; \
