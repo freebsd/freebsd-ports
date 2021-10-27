@@ -1,3 +1,3 @@
-ocaml-ssl is a set of OCaml bindings for openssl.
+This package installs a set of OCaml bindings for OpenSSL.
 
-WWW: http://savonet.sourceforge.net/wiki/OCamlLibs
+WWW: https://github.com/savonet/ocaml-ssl
