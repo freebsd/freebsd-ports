@@ -1,6 +1,7 @@
 PORTNAME=	assimp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,9 +9,6 @@ COMMENT=	Library to import various 3D model formats in a uniform manner
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	typedef redefinition with different types, see https://github.com/assimp/assimp/issues/2954
-BROKEN_powerpc=	typedef redefinition with different types, see https://github.com/assimp/assimp/issues/2954
 
 LIB_DEPENDS=	libminizip.so:archivers/minizip
 
