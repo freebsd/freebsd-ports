@@ -7,7 +7,6 @@ bin/cbsd
 @mode
 man/man8/cbsd.8.gz
 libexec/bsdconfig/cbsd
-cbsd/.github/FUNDING.yml
 cbsd/.gitignore
 cbsd/.ssh/config
 cbsd/bin/cbsdsftp
@@ -739,6 +738,7 @@ cbsd/subr/bhyve.subr
 cbsd/subr/bsdconfig.subr
 cbsd/subr/build.subr
 cbsd/subr/carp.subr
+cbsd/subr/cbsdbootstrap.subr
 cbsd/subr/cbsdfile.subr
 cbsd/subr/cbsdinit.subr
 cbsd/subr/dialog.subr
@@ -778,7 +778,6 @@ cbsd/subr/time.subr
 cbsd/subr/tools.subr
 cbsd/subr/TrueOS.subr
 cbsd/subr/universe.subr
-cbsd/subr/upgrade.subr
 cbsd/subr/virtual.subr
 cbsd/subr/virtualbox.subr
 cbsd/subr/vnet.subr
