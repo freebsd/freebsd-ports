@@ -1,4 +1,4 @@
-bin/stonesoup
+bin/%%GAME%%
 %%DATADIR%%/dat/database/el/monflee.txt
 %%DATADIR%%/dat/database/el/rand_all.txt
 %%DATADIR%%/dat/database/FAQ.txt
@@ -22,21 +22,21 @@ bin/stonesoup
 %%DATADIR%%/dat/database/shout.txt
 %%DATADIR%%/dat/database/wpnnoise.txt
 %%DATADIR%%/dat/defaults/autopickup_exceptions.txt
-%%DATADIR%%/dat/defaults/food_colouring.txt
 %%DATADIR%%/dat/defaults/glyph_colours.txt
 %%DATADIR%%/dat/defaults/menu_colours.txt
 %%DATADIR%%/dat/defaults/messages.txt
 %%DATADIR%%/dat/defaults/misc.txt
 %%DATADIR%%/dat/defaults/runrest_messages.txt
 %%DATADIR%%/dat/defaults/standard_colours.txt
+%%DATADIR%%/dat/des/00init.des
 %%DATADIR%%/dat/des/altar/altar.des
 %%DATADIR%%/dat/des/altar/ashenzari_visionary.des
+%%DATADIR%%/dat/des/altar/ecumenical.des
 %%DATADIR%%/dat/des/altar/kiku_cage.des
 %%DATADIR%%/dat/des/altar/lugonu_bribe.des
 %%DATADIR%%/dat/des/altar/nemelex_the_gamble.des
 %%DATADIR%%/dat/des/altar/okawaru_arena.des
 %%DATADIR%%/dat/des/altar/overflow.des
-%%DATADIR%%/dat/des/altar/pakellas_experiments.des
 %%DATADIR%%/dat/des/altar/trog_burn_book.des
 %%DATADIR%%/dat/des/altar/trog_wizard.des
 %%DATADIR%%/dat/des/altar/vehumet_trees.des
@@ -58,6 +58,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/branches/elf.des
 %%DATADIR%%/dat/des/branches/geh.des
 %%DATADIR%%/dat/des/branches/hell.des
+%%DATADIR%%/dat/des/branches/hilbert_zone.des
 %%DATADIR%%/dat/des/branches/lair.des
 %%DATADIR%%/dat/des/branches/orc.des
 %%DATADIR%%/dat/des/branches/pan.des
@@ -65,6 +66,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/branches/slime.des
 %%DATADIR%%/dat/des/branches/snake.des
 %%DATADIR%%/dat/des/branches/spider.des
+%%DATADIR%%/dat/des/branches/spider_jumping.des
 %%DATADIR%%/dat/des/branches/swamp.des
 %%DATADIR%%/dat/des/branches/tar.des
 %%DATADIR%%/dat/des/branches/temple_compat.des
@@ -80,7 +82,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/builder/arena.des
 %%DATADIR%%/dat/des/builder/decor.des
 %%DATADIR%%/dat/des/builder/dummy.des
-%%DATADIR%%/dat/des/builder/food.des
 %%DATADIR%%/dat/des/builder/layout_caves.des
 %%DATADIR%%/dat/des/builder/layout_cc.des
 %%DATADIR%%/dat/des/builder/layout_cellular.des
@@ -165,6 +166,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/variable/polyominoes.des
 %%DATADIR%%/dat/des/variable/the_bubble.des
 %%DATADIR%%/dat/des/variable/the_grid.des
+%%DATADIR%%/dat/des/variable/winding_woodlands.des
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/backgrounds.txt
 %%DATADIR%%/dat/descript/branches.txt
@@ -415,6 +417,7 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/zh/backgrounds.txt
 %%DATADIR%%/dat/descript/zh/branches.txt
 %%DATADIR%%/dat/descript/zh/cards.txt
+%%DATADIR%%/dat/descript/zh/clouds.txt
 %%DATADIR%%/dat/descript/zh/commands.txt
 %%DATADIR%%/dat/descript/zh/features.txt
 %%DATADIR%%/dat/descript/zh/gods.txt
@@ -465,6 +468,7 @@ bin/stonesoup
 %%DATADIR%%/dat/dist_bones/README
 %%DATADIR%%/dat/dlua/debug.lua
 %%DATADIR%%/dat/dlua/dungeon.lua
+%%DATADIR%%/dat/dlua/explorer.lua
 %%DATADIR%%/dat/dlua/fnwrap.lua
 %%DATADIR%%/dat/dlua/gauntlet.lua
 %%DATADIR%%/dat/dlua/ghost.lua
@@ -543,8 +547,8 @@ bin/stonesoup
 %%DATADIR%%/docs/crawl_manual.txt
 %%DATADIR%%/docs/CREDITS.txt
 %%DATADIR%%/docs/develop/android.txt
+%%DATADIR%%/docs/develop/arena.txt
 %%DATADIR%%/docs/develop/background_creation.txt
-%%DATADIR%%/docs/develop/coding_conventions.txt
 %%DATADIR%%/docs/develop/ctags.txt
 %%DATADIR%%/docs/develop/editor_tips.txt
 %%DATADIR%%/docs/develop/gdb_tips.txt
@@ -561,7 +565,7 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/patch_guide.txt
 %%DATADIR%%/docs/develop/save_compatibility.txt
 %%DATADIR%%/docs/develop/spells.txt
-%%DATADIR%%/docs/develop/testing.txt
+%%DATADIR%%/docs/develop/test_plug_and_play_cc.txt
 %%DATADIR%%/docs/develop/tiles_creation.txt
 %%DATADIR%%/docs/develop/translation.txt
 %%DATADIR%%/docs/fight_simulator.txt
@@ -574,6 +578,7 @@ bin/stonesoup
 %%DATADIR%%/docs/license/worley.txt
 %%DATADIR%%/docs/macros_guide.txt
 %%DATADIR%%/docs/options_guide.txt
+%%DATADIR%%/docs/quickstart.md
 %%DATADIR%%/docs/quickstart.txt
 %%DATADIR%%/docs/ssh_guide.txt
 %%DATADIR%%/docs/tiles_help.txt
@@ -604,7 +609,6 @@ bin/stonesoup
 %%LUA%%%%DATADIR%%/dat/clua/delays.lua
 %%LUA%%%%DATADIR%%/dat/clua/kills.lua
 %%LUA%%%%DATADIR%%/dat/clua/stash.lua
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
 %%SDL%%%%DATADIR%%/dat/tiles/feat.png
 %%SDL%%%%DATADIR%%/dat/tiles/floor.png
 %%SDL%%%%DATADIR%%/dat/tiles/gui.png
@@ -614,8 +618,11 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/main.png
 %%SDL%%%%DATADIR%%/dat/tiles/player.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-48x48.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-512x512.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_anon_octopus_wizard.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_arbituhhh_tesu.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_duvessa_dowan.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_gastronok.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_mnoleg.png
@@ -626,18 +633,21 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_kitchen_duty.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_summoner.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_undead_warrior.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_e_m_fields.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_firemage.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_goodgod_tengu_gold.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_jiyva_felid.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_natasha_and_boris.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_rune_and_run_failed_on_dis.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_thunder_fist_nikola.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_nibiki_octopode.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_peileppe_bloax_eye.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_ploomutoo_ijyb.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_pooryurik_knight.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_psiweapon_kiku.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_psiweapon_roxanne.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_sastrei_chei.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_shadyamish_octm.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_entering_the_dungeon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_grabbing_the_orb.png

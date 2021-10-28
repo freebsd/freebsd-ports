@@ -1,22 +1,15 @@
---- Makefile.orig	2019-03-31 00:40:33 UTC
+--- Makefile.orig	2021-08-20 10:45:00 UTC
 +++ Makefile
-@@ -73,7 +73,7 @@
- #    them; you can also ask for a package with convenience libraries instead --
- #    we'll try to provide them somewhere in the near future.
- 
--GAME = crawl
-+GAME = stonesoup
- 
- # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
- # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
-@@ -108,16 +108,12 @@ include Makefile.obj
+@@ -131,7 +131,7 @@ include Makefile.obj
  # Which C++ standard to support
  STDFLAG = -std=c++11
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(EXTERNAL_FLAGS)
- CFWARN := 
- CFWARN_L := -Wall -Wformat-security -Wundef
+ # Build with FORCE_SSE=y to get better seed stability on 32 bit x86 builds. It
+ # is not recommended to do this unless you are building with contrib lua.
+ # On any 64bit  builds where the arch supports it, (at least) sse2 is implied.
+@@ -156,10 +156,6 @@ CFWARN_L += -Wextra \
  
  DEFINES := $(EXTERNAL_DEFINES)
  
@@ -27,7 +20,16 @@
  #
  # The GCC and GXX variables are set later.
  #
-@@ -502,15 +498,6 @@ ifdef USE_ICC
+@@ -503,7 +499,7 @@ endif
+ 
+ # Attempt to use a full compiler name, to make
+ # distcc builds work nicely.
+-LMACH := $(shell gcc -dumpmachine)-
++LMACH := $(shell $(FORCE_CC) -dumpmachine)-
+ ifeq ($(LMACH),-)
+ LMACH :=
+ endif
+@@ -549,15 +545,6 @@ ifdef USE_ICC
  
  # Some very good optimization flags.
    CFOPTIMIZE := -O2 -parallel
@@ -43,16 +45,7 @@
  endif
  
  # Define this to automatically generate code optimized for your machine
-@@ -624,7 +611,7 @@ endif
- 
- ifndef BUILD_SQLITE
-   ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
--    # INCLUDES_L += -isystem $(SQLITE_INCLUDE_DIR)
-+    INCLUDES_L += -isystem $(SQLITE_INCLUDE_DIR)
-     LIBS += $(SQLITE_LIB)
-     ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
-       DEFINES_L += -DANCIENT_SQLITE
-@@ -787,7 +774,7 @@ ifndef NOWIZARD
+@@ -858,7 +845,7 @@ ifndef NOWIZARD
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE

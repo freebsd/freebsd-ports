@@ -1,8 +1,7 @@
 # Created by: Tobias Rehbein <tobias.rehbein@web.de>
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.23.2
-PORTREVISION=	2
+PORTVERSION=	0.27.1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -12,6 +11,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+
+FLAVORS=	console sdl
+FLAVOR?=	${FLAVORS[1]}
+sdl_PKGNAMESUFFIX=	-sdl
 
 USES=		bison compiler:c++11-lib gmake lua:51 perl5 pkgconfig \
 		python:build shebangfix sqlite tar:xz
@@ -26,30 +29,33 @@ SHEBANG_FILES=	util/gen-mi-enum \
 		util/species-gen.py \
 		util/txc
 
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 SAVEDIR=	\~/.stonesoup
 WRKSRC_SUBDIR=	crawl-ref/source
+GAME=${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	pkg-message
-PLIST_SUB=	SAVEDIR="${SAVEDIR}"
+PLIST_SUB=	SAVEDIR="${SAVEDIR}" GAME="${GAME}" SDL=${"${FLAVOR}" == "sdl":?"":"@comment "}
 
 MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
 		DESTDIR=${STAGEDIR} \
 		FORCE_CC=${CC} \
 		FORCE_CXX=${CXX} \
+		GAME=${GAME} \
 		INSTALL_UGRP=root:games \
 		LUA_PACKAGE=lua-5.1 \
 		NO_AUTO_OPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
 		NO_TRY_GOLD=YesPlease \
-		NOSSE=YesPlease \
 		POSIX=YesPlease \
+		PYTHON=${PYTHON_CMD} \
 		SAVEDIR=${SAVEDIR} \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
 		SQLITE_LIB=-lsqlite3 \
 		V=yes
 
-OPTIONS_DEFINE=	SDL SOUND NOWIZARD LUA EXAMPLES
+OPTIONS_DEFINE=	LUA NOWIZARD SOUND
 OPTIONS_DEFAULT=LUA
 OPTIONS_SUB=	yes
 
@@ -57,19 +63,24 @@ SOUND_DESC=	Sound support
 NOWIZARD_DESC=	Disable Wizard mode
 LUA_DESC=	Bindings for LUA user scripts
 
-SDL_CONFLICTS=	${PORTNAME}-[0-9]*
-SDL_USE=	sdl=sdl2,image2,mixer2 gl=gl,glu
-SDL_USES=	gl sdl
+.if ${FLAVOR} == sdl
+USES+=		gl sdl
+USE_SDL=	sdl2 image2 mixer2
+USE_GL=		gl glu
 SDL_USES_OFF=	ncurses
-SDL_MAKE_ARGS=	TILES=y SOUND=y
-SDL_BUILD_DEPENDS=	\
+MAKE_ARGS+=	TILES=y SOUND=y
+BUILD_DEPENDS+=	\
+		advpng:archivers/advancecomp \
 		fc-list:x11-fonts/fontconfig \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-SDL_RUN_DEPENDS=	\
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-SDL_LIB_DEPENDS=libpng.so:graphics/png \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
+		pngcrush:graphics/pngcrush
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+LIB_DEPENDS+=libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
-SDL_CONFLICTS_OFF=	${PORTNAME}-sdl-[0-9]*
+DESKTOP_ENTRIES=	"Dungeon Crawl Stone Soup" "${COMMENT}" "${DATADIR}/dat/tiles/stone_soup_icon-512x512.png" "${GAME}" "Game;" false
+.else
+USES+=		ncurses
+.endif
 
 NOWIZARD_MAKE_ARGS=	NOWIZARD=y
 SOUND_MAKE_ARGS=	SOUND=y
@@ -88,10 +99,6 @@ pre-build:
 
 pre-install:
 	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' -delete
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/settings/init.txt ${STAGEDIR}${EXAMPLESDIR}/sample.crawlrc
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR}/settings/mac
