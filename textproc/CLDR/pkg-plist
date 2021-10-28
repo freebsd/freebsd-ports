@@ -640,6 +640,13 @@
 %%DATADIR%%/common/collation/zh.xml
 %%DATADIR%%/common/collation/zh_Hant.xml
 %%DATADIR%%/common/collation/zu.xml
+%%DATADIR%%/common/dtd/cldrTest.dtd
+%%DATADIR%%/common/dtd/ldml.dtd
+%%DATADIR%%/common/dtd/ldmlBCP47.dtd
+%%DATADIR%%/common/dtd/ldmlICIR.dtd
+%%DATADIR%%/common/dtd/ldmlICU.dtd
+%%DATADIR%%/common/dtd/ldmlOpenOffice.dtd
+%%DATADIR%%/common/dtd/ldmlSupplemental.dtd
 %%DATADIR%%/common/main/af.xml
 %%DATADIR%%/common/main/af_NA.xml
 %%DATADIR%%/common/main/af_ZA.xml

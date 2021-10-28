@@ -27,6 +27,8 @@ DATADIR=	${PREFIX}/share/unicode/cldr
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${STAGEDIR}${DATADIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${SRCFILE} ${EXTRACT_AFTER_ARGS})
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${SRCFILE} ${EXTRACT_AFTER_ARGS} &&	\
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} core.zip ${EXTRACT_AFTER_ARGS} &&	\
+	${RM} core.zip)
 
 .include <bsd.port.mk>
