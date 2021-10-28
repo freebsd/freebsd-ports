@@ -3,9 +3,9 @@
 - Make sure only json-c is detected.
 - Cleanup the BDB discovery code to find more recent versions.
 
---- configure.orig	2021-07-09 08:55:20 UTC
+--- configure.orig	2021-10-11 19:35:49 UTC
 +++ configure
-@@ -15744,27 +15744,9 @@ done
+@@ -15691,27 +15691,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -35,7 +35,7 @@
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -15807,47 +15789,7 @@ $as_echo "no" >&6; } ;;
+@@ -15754,47 +15736,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
  
@@ -84,7 +84,7 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -18722,7 +18664,7 @@ case "$use_libjson" in
+@@ -18669,7 +18611,7 @@ case "$use_libjson" in
  	auto|yes)
  		for d in /usr /usr/local /opt/local
  		do
@@ -93,7 +93,7 @@
  			then
  				if test ${d} != /usr
  				then
-@@ -18730,29 +18672,16 @@ case "$use_libjson" in
+@@ -18677,29 +18619,16 @@ case "$use_libjson" in
  					LIBS="$LIBS -L${d}/lib"
  				fi
  				have_libjson="yes"
@@ -124,7 +124,7 @@
  			have_libjson_c="yes"
  		else
  			as_fn_error $? "$use_libjson/include/json{,-c}/json.h not found." "$LINENO" 5
-@@ -25019,7 +24948,7 @@ $as_echo "" >&6; }
+@@ -24966,7 +24895,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
