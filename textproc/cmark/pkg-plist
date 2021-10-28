@@ -2,8 +2,10 @@ bin/cmark
 include/cmark.h
 include/cmark_export.h
 include/cmark_version.h
-lib/cmake/cmark-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/cmark.cmake
+lib/cmake/cmark/cmark-config-version.cmake
+lib/cmake/cmark/cmark-config.cmake
+lib/cmake/cmark/cmark-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cmark/cmark-targets.cmake
 lib/libcmark.a
 lib/libcmark.so
 lib/libcmark.so.%%VERSION%%
