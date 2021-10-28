@@ -4710,6 +4710,7 @@
     SUBDIR += py-logilab-common
     SUBDIR += py-loguru
     SUBDIR += py-logutils
+    SUBDIR += py-logzero
     SUBDIR += py-louie
     SUBDIR += py-lunardate
     SUBDIR += py-lxml

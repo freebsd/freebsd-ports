@@ -1,0 +1,18 @@
+Robust and effective logging for Python 2 and 3.
+
+- Easy logging to console and/or (rotating) file.
+- Provides a fully configured standard Python logger object.
+- Pretty formatting, including level-specific colors in the console.
+- Windows color output supported by colorama
+- Robust against str/bytes encoding problems, works with all kinds of
+  character encodings and special characters.
+- Multiple loggers can write to the same logfile (also across multiple
+  Python files).
+- Global default logger with logzero.logger and custom loggers with
+  logzero.setup_logger(..).
+- Compatible with Python 2 and 3.
+- All contained in a single file.
+- Licensed under the MIT license.
+- Heavily inspired by the Tornado web framework.
+
+WWW: https://github.com/metachris/logzero
