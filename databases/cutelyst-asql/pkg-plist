@@ -1,4 +1,4 @@
-bin/asql-migration
+bin/asql-migration0-qt5
 include/asql-qt5/ASql/acache.h
 include/asql-qt5/ASql/adatabase.h
 include/asql-qt5/ASql/adriver.h
