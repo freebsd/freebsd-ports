@@ -1,24 +1,25 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 
 PORTNAME=	bulk_extractor
-PORTVERSION=	1.5.5
-PORTREVISION=	10
+DISTVERSION=	2.0.0-beta2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://digitalcorpora.org/downloads/bulk_extractor/
+MASTER_SITES=	https://github.com/simsong/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program that scans a disk image and extracts useful information
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libafflib.so:sysutils/afflib \
 		libboost_system.so:devel/boost-libs \
 		libewf.so:devel/libewf \
 		libexiv2.so:graphics/exiv2 \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
-USES=		autoreconf compiler:c++11-lang gnome iconv:wchar_t localbase \
+USES=		compiler:c++17-lang gnome iconv:wchar_t localbase \
 		sqlite ssl
 USE_GNOME=	libxml2
 
@@ -28,14 +29,6 @@ CXXFLAGS_powerpcspe=	-DBIG_ENDIAN
 CXXFLAGS_powerpc64=	-DBIG_ENDIAN
 CONFIGURE_ARGS=	--enable-exiv2=true
 
-PLIST_FILES=	bin/bulk_extractor bin/plugin_test man/man1/bulk_extractor.1.gz
-
-OPTIONS_DEFINE=	BEVIEWER
-BEVIEWER_DESC=	Build BEViewer (requires Java)
-OPTIONS_DEFAULT=BEVIEWER
-
-BEVIEWER_CONFIGURE_OFF=	--disable-BEViewer
-BEVIEWER_USE=	JAVA=yes
-BEVIEWER_PLIST_FILES=	bin/BEViewer bin/BEViewer.jar
+PLIST_FILES=	bin/bulk_extractor bin/test_be man/man1/bulk_extractor.1.gz
 
 .include <bsd.port.mk>
