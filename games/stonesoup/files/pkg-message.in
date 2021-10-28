@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+The end-user documentation for ``Dungeon Crawl Stone Soup`` can be found
+in-game and in `%%DATADIR%%/docs`.
+
+Happy crawling!
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If the game fails to start after an upgrade try to delete
+the old save games using `rm -rf ~/.stonesoup/saves`.
+
+Happy crawling!
+EOM
+}
+]
