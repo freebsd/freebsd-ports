@@ -10,7 +10,7 @@ COMMENT=	Backport of the standard library module zoneinfo
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python:3.7-3.9
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
