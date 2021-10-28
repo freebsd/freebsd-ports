@@ -1,5 +1,7 @@
 include/olm/inbound_group_session.h
+include/olm/error.h
 include/olm/olm.h
+include/olm/olm_export.h
 include/olm/outbound_group_session.h
 include/olm/pk.h
 include/olm/sas.h
@@ -9,4 +11,5 @@ lib/cmake/Olm/OlmTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Olm/OlmTargets.cmake
 lib/libolm.so
 lib/libolm.so.3
-lib/libolm.so.3.1.4
+lib/libolm.so.3.2.6
+libdata/pkgconfig/olm.pc

@@ -1,6 +1,6 @@
 PORTNAME=	olm
 DISTVERSIONPREFIX=
-DISTVERSION=	3.1.4
+DISTVERSION=	3.2.6
 CATEGORIES=	security
 MASTER_SITES=	https://gitlab.matrix.org/matrix-org/olm/-/archive/${DISTVERSION}/
 
