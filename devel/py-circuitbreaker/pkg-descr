@@ -1,0 +1,7 @@
+This is a Python implementation of the "Circuit Breaker" Pattern.
+(http://martinfowler.com/bliki/CircuitBreaker.html)
+
+Inspired by Michael T. Nygard's highly recommendable book Release It!
+(https://pragprog.com/book/mnee/release-it)
+
+WWW: https://github.com/fabfuel/circuitbreaker
