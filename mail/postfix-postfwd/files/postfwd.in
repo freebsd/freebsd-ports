@@ -23,12 +23,14 @@ load_rc_config $name
 
 : ${postfwd_enable:="NO"}
 : ${postfwd_flags="--shortlog --summary=600 --cache=600 --cache-rbl-timeout=3600 --cleanup-requests=1200 --cleanup-rbls=1800 --cleanup-rates=1200"}
+: ${postfwd_interface="127.0.0.1"}
+: ${postfwd_port="10040"}
 
 pidfile=${postfwd_pidfile:="/var/run/${name}.pid"}
 required_files=${postfwd_config:="%%PREFIX%%/etc/${name}.conf"}
 
 command=%%PREFIX%%/bin/${name}
-command_args="--daemon --file=${required_files} --pidfile=${pidfile} --interface=127.0.0.1 --port=10040 --user=nobody --group=nobody"
+command_args="--daemon --file=${required_files} --pidfile=${pidfile} --interface=${postfwd_interface} --port=${postfwd_port} --user=nobody --group=nobody"
 
 start_precmd="${name}_check"
 status_cmd="${name}_status"
