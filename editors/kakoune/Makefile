@@ -1,5 +1,5 @@
 PORTNAME=	kakoune
-DISTVERSION=	2021.08.28
+DISTVERSION=	2021.10.28
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 

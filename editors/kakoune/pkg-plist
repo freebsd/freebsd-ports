@@ -7,7 +7,8 @@ libexec/kak/kak
 %%DATADIR%%/colors/desertex.kak
 %%DATADIR%%/colors/github.kak
 %%DATADIR%%/colors/greyscale.kak
-%%DATADIR%%/colors/gruvbox.kak
+%%DATADIR%%/colors/gruvbox-dark.kak
+%%DATADIR%%/colors/gruvbox-light.kak
 %%DATADIR%%/colors/kaleidoscope-dark.kak
 %%DATADIR%%/colors/kaleidoscope-light.kak
 %%DATADIR%%/colors/lucius.kak
@@ -63,6 +64,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/dockerfile.kak
 %%DATADIR%%/rc/filetype/elixir.kak
 %%DATADIR%%/rc/filetype/elm.kak
+%%DATADIR%%/rc/filetype/erlang.kak
 %%DATADIR%%/rc/filetype/eruby.kak
 %%DATADIR%%/rc/filetype/etc.kak
 %%DATADIR%%/rc/filetype/exherbo.kak
