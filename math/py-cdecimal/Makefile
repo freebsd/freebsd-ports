@@ -13,7 +13,7 @@ COMMENT=	Fast drop-in replacement for the Decimal module
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python:3.6-3.8
 USE_PYTHON=	distutils autoplist
 
 post-install:
