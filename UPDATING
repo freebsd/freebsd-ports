@@ -57,8 +57,8 @@ you update your ports collection, before attempting any port upgrades.
   # service postgresql stop
   # pkg create postgresql12-server postgresql12-contrib
   # mkdir /tmp/pg-upgrade
-  # tar xf postgresql12-server-12.8.txz -C /tmp/pg-upgrade
-  # tar xf postgresql12-contrib-12.8.txz -C /tmp/pg-upgrade
+  # tar xf postgresql12-server-12.8.pkg -C /tmp/pg-upgrade
+  # tar xf postgresql12-contrib-12.8.pkg -C /tmp/pg-upgrade
   # pkg delete -f databases/postgresql12-server databases/postgresql12-contrib databases/postgresql12-client
 
   Now update PostgreSQL:
