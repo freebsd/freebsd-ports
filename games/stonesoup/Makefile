@@ -2,17 +2,14 @@
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.23.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
-
-NOT_FOR_ARCHS=		armv6
-NOT_FOR_ARCHS_REASON=	missing platform \#define or unsupported compiler
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
@@ -32,7 +29,7 @@ SHEBANG_FILES=	util/gen-mi-enum \
 SAVEDIR=	\~/.stonesoup
 WRKSRC_SUBDIR=	crawl-ref/source
 
-SUB_FILES=	README.FreeBSD
+SUB_FILES=	pkg-message
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
 MAKE_ARGS=	prefix=${PREFIX} \
@@ -52,7 +49,7 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		SQLITE_LIB=-lsqlite3 \
 		V=yes
 
-OPTIONS_DEFINE=	SDL SOUND NOWIZARD LUA DOCS EXAMPLES
+OPTIONS_DEFINE=	SDL SOUND NOWIZARD LUA EXAMPLES
 OPTIONS_DEFAULT=LUA
 OPTIONS_SUB=	yes
 
@@ -91,10 +88,6 @@ pre-build:
 
 pre-install:
 	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' -delete
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

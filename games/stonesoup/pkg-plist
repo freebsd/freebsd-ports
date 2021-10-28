@@ -604,7 +604,6 @@ bin/stonesoup
 %%LUA%%%%DATADIR%%/dat/clua/delays.lua
 %%LUA%%%%DATADIR%%/dat/clua/kills.lua
 %%LUA%%%%DATADIR%%/dat/clua/stash.lua
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
 %%SDL%%%%DATADIR%%/dat/tiles/feat.png
 %%SDL%%%%DATADIR%%/dat/tiles/floor.png
