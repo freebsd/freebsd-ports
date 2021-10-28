@@ -71,7 +71,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  designator (in case there are different versions of
 #				  one port as is the case for Tcl).
 #				  Optional.
-# PKGVERSION	- Always defined as ${PORTVERSION}.
+# PKGVERSION	- Version of package.
 #				  Do not define this in your Makefile.
 # DISTVERSION	- Vendor version of the distribution.
 #				  Default: ${PORTVERSION}
