@@ -1,4 +1,4 @@
-TIMESTAMP = 1634828656
+TIMESTAMP = 1635415558
 SHA256 (rust/crates/aho-corasick-0.7.15.crate) = 7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5
 SIZE (rust/crates/aho-corasick-0.7.15.crate) = 113071
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -165,5 +165,5 @@ SHA256 (rust/crates/wyz-0.2.0.crate) = 85e60b0d1b5f99db2556934e21937020776a5d315
 SIZE (rust/crates/wyz-0.2.0.crate) = 12926
 SHA256 (RedisJSON-jsonpath-14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a_GH0.tar.gz) = 1d3e33b0211b36b9a35ce3a4cd3da8d4109fcceb751131e1dd4e7fc00bb4e347
 SIZE (RedisJSON-jsonpath-14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a_GH0.tar.gz) = 448708
-SHA256 (RedisJSON-RedisJSON-0.0.0.0.2021.10.20.01-f6d450f_GH0.tar.gz) = eb46d86bad1f26939ef11df12733456e9328cf381828fca61a913cfaac14beef
-SIZE (RedisJSON-RedisJSON-0.0.0.0.2021.10.20.01-f6d450f_GH0.tar.gz) = 593735
+SHA256 (RedisJSON-RedisJSON-0.0.0.0.2021.10.27.01-473f09c_GH0.tar.gz) = 3d2caa46e218284234c14bafaa0c49c2c9ba7019df38c63bb55fed86deb17464
+SIZE (RedisJSON-RedisJSON-0.0.0.0.2021.10.27.01-473f09c_GH0.tar.gz) = 594405

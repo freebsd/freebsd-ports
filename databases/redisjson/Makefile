@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisjson
-PORTVERSION=	0.0.0.0.2021.10.20.01
-PORTREVISION=	1
+PORTVERSION=	0.0.0.0.2021.10.27.01
 CATEGORIES=	databases
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,7 +18,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	RedisJSON
 GH_PROJECT=	RedisJSON
-GH_TAGNAME=	f6d450f
+GH_TAGNAME=	473f09c
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
