@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.6-3.9
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
