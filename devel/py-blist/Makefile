@@ -13,7 +13,7 @@ COMMENT=	Drop-in list replacement with better performance for large lists
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python:3.6-3.9
 USE_PYTHON=	autoplist distutils
 
 do-test:
