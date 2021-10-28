@@ -1,0 +1,59 @@
+--- Makefile.orig	2019-06-26 21:12:49 UTC
++++ Makefile
+@@ -25,7 +25,7 @@ ABIVER=  5.1
+ # Change the installation path as needed. This automatically adjusts
+ # the paths in src/luaconf.h, too. Note: PREFIX must be an absolute path!
+ #
+-export PREFIX= /usr/local
++#export PREFIX= /usr/local
+ export MULTILIB= lib
+ ##############################################################################
+ 
+@@ -34,6 +34,7 @@ INSTALL_BIN=   $(DPREFIX)/bin
+ INSTALL_LIB=   $(DPREFIX)/$(MULTILIB)
+ INSTALL_SHARE= $(DPREFIX)/share
+ INSTALL_INC=   $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)
++INSTALL_LIBD=  $(DPREFIX)/libdata
+ 
+ INSTALL_LJLIBD= $(INSTALL_SHARE)/luajit-$(VERSION)
+ INSTALL_JITLIB= $(INSTALL_LJLIBD)/jit
+@@ -41,8 +42,7 @@ INSTALL_LMODD= $(INSTALL_SHARE)/lua
+ INSTALL_LMOD= $(INSTALL_LMODD)/$(ABIVER)
+ INSTALL_CMODD= $(INSTALL_LIB)/lua
+ INSTALL_CMOD= $(INSTALL_CMODD)/$(ABIVER)
+-INSTALL_MAN= $(INSTALL_SHARE)/man/man1
+-INSTALL_PKGCONFIG= $(INSTALL_LIB)/pkgconfig
++INSTALL_PKGCONFIG= $(INSTALL_LIBD)/pkgconfig
+ 
+ INSTALL_TNAME= luajit-$(VERSION)
+ INSTALL_TSYMNAME= luajit
+@@ -63,8 +63,8 @@ INSTALL_T= $(INSTALL_BIN)/$(INSTALL_TNAME)
+ INSTALL_TSYM= $(INSTALL_BIN)/$(INSTALL_TSYMNAME)
+ INSTALL_PC= $(INSTALL_PKGCONFIG)/$(INSTALL_PCNAME)
+ 
+-INSTALL_DIRS= $(INSTALL_BIN) $(INSTALL_LIB) $(INSTALL_INC) $(INSTALL_MAN) \
+-  $(INSTALL_PKGCONFIG) $(INSTALL_JITLIB) $(INSTALL_LMOD) $(INSTALL_CMOD)
++INSTALL_DIRS= $(INSTALL_INC) \
++  $(INSTALL_PKGCONFIG) $(INSTALL_JITLIB)
+ UNINSTALL_DIRS= $(INSTALL_JITLIB) $(INSTALL_LJLIBD) $(INSTALL_INC) \
+   $(INSTALL_LMOD) $(INSTALL_LMODD) $(INSTALL_CMOD) $(INSTALL_CMODD)
+ 
+@@ -121,10 +121,8 @@ install: $(INSTALL_DEP)
+ 	$(RM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
+ 	cd src && test -f $(FILE_SO) && \
+ 	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) && \
+-	  ( $(LDCONFIG) $(INSTALL_LIB) || : ) && \
+ 	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT1) && \
+ 	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT2) || :
+-	cd etc && $(INSTALL_F) $(FILE_MAN) $(INSTALL_MAN)
+ 	cd etc && $(SED_PC) $(FILE_PC) > $(FILE_PC).tmp && \
+ 	  $(INSTALL_F) $(FILE_PC).tmp $(INSTALL_PC) && \
+ 	  $(RM) $(FILE_PC).tmp
+@@ -143,7 +141,6 @@ uninstall:
+ 	for file in $(FILES_INC); do \
+ 	  $(UNINSTALL) $(INSTALL_INC)/$$file; \
+ 	  done
+-	$(LDCONFIG) $(INSTALL_LIB)
+ 	$(RMDIR) $(UNINSTALL_DIRS) || :
+ 	@echo "==== Successfully uninstalled LuaJIT $(VERSION) from $(PREFIX) ===="
+ 
