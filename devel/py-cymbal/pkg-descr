@@ -1,0 +1,10 @@
+Cymbal makes it easy to add functionality missing from libclang Python
+bindings
+
+The Clang libclang python bindings use ctypes to invoke functions
+present in libclang dynamic library. In some cases, only a subset of
+the C functions are available, because the platform or version
+specific Python bindings omit functions. Cymbal simplfies the process
+of dynamically adding those methods to Types and Cursors.
+
+WWW: https://github.com/CadQuery/cymbal
