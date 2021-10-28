@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libming.so:graphics/ming \
 		libpng.so:graphics/png
 
-USES=		autoreconf cpe libtool localbase:ldflags pkgconfig python:3.6+
+USES=		autoreconf cpe libtool localbase:ldflags pkgconfig python:3.6-3.9
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFIGURE_ARGS=	--enable-python
