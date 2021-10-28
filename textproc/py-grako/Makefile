@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 
-USES=		python:3.6+ zip
+USES=		python:3.6-3.9 zip
 USE_PYTHON=	distutils cython autoplist
 
 .include <bsd.port.mk>
