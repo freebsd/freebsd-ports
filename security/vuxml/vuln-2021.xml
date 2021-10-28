@@ -8875,7 +8875,7 @@ raptor_xml_writer_start_element_common.</p>
       </package>
       <package>
 	<name>openssl-devel</name>
-	<range><lt>3.0.0a12</lt></range>
+	<range><lt>3.0.0.a12</lt></range>
       </package>
       <package>
 	<name>FreeBSD</name>
