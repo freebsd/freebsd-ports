@@ -2360,6 +2360,7 @@
     SUBDIR += yanopaste
     SUBDIR += yarn
     SUBDIR += yarn-node14
+    SUBDIR += yarn-node16
     SUBDIR += yarr
     SUBDIR += yaws
     SUBDIR += you-get
