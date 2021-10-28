@@ -444,6 +444,7 @@ include/dovecot/mailbox-list-private.h
 include/dovecot/mailbox-list-subscriptions.h
 include/dovecot/mailbox-list.h
 include/dovecot/mailbox-log.h
+include/dovecot/mailbox-match-plugin.h
 include/dovecot/mailbox-recent-flags.h
 include/dovecot/mailbox-search-result-private.h
 include/dovecot/mailbox-tree.h

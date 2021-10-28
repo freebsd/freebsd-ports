@@ -1,7 +1,7 @@
 # Created by: Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.5.16
+PORTVERSION=	0.5.17
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
