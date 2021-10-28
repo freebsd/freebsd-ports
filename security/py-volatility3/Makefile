@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	volatilityfoundation
 GH_TAGNAME=	94426ad
 
-USES=		python:3.5+
+USES=		python:3.5-3.9
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
