@@ -12,7 +12,7 @@ COMMENT=	Python DBAPI module for FirebirdSQL
 LICENSE=	BSD2CLAUSE
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python:3.6-3.9
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
