@@ -1,6 +1,6 @@
 # Created by: kline
 
-CONFLICTS=	enscript-a4-[0-9]* enscript-letter-[0-9]*
+CONFLICTS=	enscript-a4 enscript-letter
 
 PS=		Letterdj
 

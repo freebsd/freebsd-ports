@@ -13,7 +13,7 @@ COMMENT=	Lynx-like text WWW browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	links-0* links-hacked-[0-9]* links1-[0-9]*
+CONFLICTS=	links-0* links-hacked links1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \

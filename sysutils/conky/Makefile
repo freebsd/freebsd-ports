@@ -24,7 +24,7 @@ CMAKE_ARGS=	-DBUILD_PORT_MONITORS:BOOL=false \
 		-DBUILD_AUDACIOUS:BOOL=false \
 		-DBUILD_DOCS:BOOL=true \
 		-DAPP_SED=${LOCALBASE}/bin/gsed
-CONFLICTS?=	conky-awesome-[0-9]*
+CONFLICTS?=	conky-awesome
 
 SLAVEDIRS=	sysutils/conky-awesome
 PLIST_FILES=	bin/conky man/man1/conky.1.gz

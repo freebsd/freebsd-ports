@@ -12,7 +12,7 @@ DISTNAME=	coova-chilli-${PORTVERSION}
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Access controller for wired & wireless clients
 
-CONFLICTS=	chillispot-[0-9]*
+CONFLICTS=	chillispot
 #if __FreeBSD__ >= 10.0
 #IGNORE=	Does not work correctly, awaiting new release upstream with fixes integrated.
 #endif

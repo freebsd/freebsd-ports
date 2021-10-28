@@ -11,7 +11,7 @@ COMMENT=	Command-line based Direct Connect client
 
 LICENSE=	GPLv2
 
-CONFLICTS=	tthsum-[0-9]*
+CONFLICTS=	tthsum
 
 USES=		gnome iconv readline
 GNU_CONFIGURE=	yes

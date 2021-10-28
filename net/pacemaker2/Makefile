@@ -7,7 +7,7 @@ PKGNAMESUFFIX=		2
 
 CONFIGURE_ARGS+=	--with-noarch-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
-CONFLICTS+=		pacemaker1-[0-9]*
+CONFLICTS+=		pacemaker1
 
 LIB_DEPENDS+=		libffi.so:devel/libffi \
 	libgmp.so:math/gmp \

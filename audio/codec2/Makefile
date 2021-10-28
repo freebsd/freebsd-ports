@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
-CONFLICTS=	libcodec2-[0-9]*
+CONFLICTS=	libcodec2
 USES=		cmake pathfix pkgconfig shebangfix tar:xz
 USE_LDCONFIG=	yes
 

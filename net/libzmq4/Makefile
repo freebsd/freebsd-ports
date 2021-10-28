@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
-CONFLICTS=	zmq-[0-9]* libzmq[^4]-[0-9]*
+CONFLICTS=	zmq libzmq[^4]
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

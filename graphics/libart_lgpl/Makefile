@@ -20,6 +20,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	libart-[0-9]*
+CONFLICTS=	libart
 
 .include <bsd.port.mk>

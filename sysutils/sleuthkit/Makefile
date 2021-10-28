@@ -20,7 +20,7 @@ LICENSE_PERMS_IBM=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \
 		exif:graphics/exif
 
-CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
+CONFLICTS=	ja-ls icat
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_libpq_fe_h=no

@@ -18,6 +18,6 @@ BROKEN_mips64=		fails to compile: unrecognized command line option "-m32"
 
 USES=		uidfix
 
-CONFLICTS=	bin86-[0-9]* dev86-[0-9]*
+CONFLICTS=	bin86 dev86
 
 .include <bsd.port.mk>

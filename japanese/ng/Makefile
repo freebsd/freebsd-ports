@@ -22,7 +22,7 @@ LDFLAGS+=	-lncurses
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-CONFLICTS=	ng-devel-[0-9]*
+CONFLICTS=	ng-devel
 
 PORTDOCS=	${MYPORTDOCS:C/$/.euc-jp/}
 PLIST_FILES=	bin/ng

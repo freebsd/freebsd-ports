@@ -12,7 +12,7 @@ COMMENT=	Small prototype-based programming language (devel version)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS=	io-[0-9]*
+CONFLICTS=	io
 
 USES=		cmake:noninja compiler:c11
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc2	\
 		libepoll-shim.so:devel/libepoll-shim
 RUN_DEPENDS=	bash:shells/bash
 
-CONFLICTS=	mpd-[0-9]* mpich2-[0-9]*
+CONFLICTS=	mpd mpich2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		compiler:c11 libtool perl5 pkgconfig

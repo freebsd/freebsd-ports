@@ -25,7 +25,7 @@ USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize
 
-CONFLICTS=	shaaft-[0-9]*
+CONFLICTS=	shaaft
 
 PLIST_FILES=	bin/Packer \
 		bin/critter \

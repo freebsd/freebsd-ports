@@ -75,13 +75,13 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MCLIENT}
-CONFLICTS=	boxbackup-client-[0-9]* boxbackup-[0-9]*
+CONFLICTS=	boxbackup-client boxbackup
 CLIENT_OR_SERVER=-server
 .elif ! ${PORT_OPTIONS:MSERVER}
-CONFLICTS=	boxbackup-server-[0-9]* boxbackup-[0-9]*
+CONFLICTS=	boxbackup-server boxbackup
 CLIENT_OR_SERVER=-client
 .else
-CONFLICTS=	boxbackup-server-[0-9]* boxbackup-client-[0-9]*
+CONFLICTS=	boxbackup-server boxbackup-client
 .endif
 
 post-patch:

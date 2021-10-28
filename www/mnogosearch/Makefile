@@ -11,7 +11,7 @@ COMMENT=	Full featured SQL-based hypertext search engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	dpsearch-[0-9]* udmsearch-[0-9]* mguesser-[0-9]*
+CONFLICTS=	dpsearch udmsearch mguesser
 
 OPTIONS_DEFINE=	DOCS EXAMPLES THREADS SSL ASIAN SYSLOG
 

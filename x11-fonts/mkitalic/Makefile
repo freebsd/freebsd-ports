@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	Perl script to make BDF font italic
 
-CONFLICTS=	mkbold-mkitalic-[0-9]*
+CONFLICTS=	mkbold-mkitalic
 
 PLIST_FILES=	bin/mkitalic
 EXTRACT_CMD=	${BZCAT}

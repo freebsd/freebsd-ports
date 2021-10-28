@@ -11,7 +11,7 @@ COMMENT=	Utilities for Microchip PIC microcontrollers
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	gplink-[0-9]*
+CONFLICTS=	gplink
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking --disable-html-doc
 USES=		bison:alias gmake tar:bz2

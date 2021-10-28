@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig png dbuslibs sqlite3
 USE_LINUX_RPM=	yes
 
-CONFLICTS=	linux-c6-${PORTNAME}47-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}47
 DATADIR=	${PREFIX}/usr/share/${PORTNAME}4
 
 OPTIONS_DEFINE=	DOCS

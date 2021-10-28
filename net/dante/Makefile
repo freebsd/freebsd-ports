@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc \
 		libsasl2.so:security/cyrus-sasl2
 
-CONFLICTS=	socks5-[0-9]*
+CONFLICTS=	socks5
 
 USES=		libtool localbase
 GNU_CONFIGURE=	yes

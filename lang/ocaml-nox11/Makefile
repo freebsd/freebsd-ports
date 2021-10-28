@@ -8,7 +8,7 @@ COMMENT=	Objective Caml compiler and programming environment (no X11)
 
 MASTERDIR=	${.CURDIR}/../ocaml
 
-CONFLICTS=	metaocaml-[0-9]* ocaml-[0-9]* ocaml-notk-[0-9]*
+CONFLICTS=	metaocaml ocaml ocaml-notk
 
 OPTIONS_EXCLUDE=TK X11
 

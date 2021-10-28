@@ -22,9 +22,9 @@ USES=		autoreconf:build compiler:c11 cpe gettext-runtime gmake gnome \
 
 CPE_VENDOR=	oneidentity
 
-CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
-		syslog-ng[0-9][0-9]-[0-9]* \
-		syslog-ng-devel-[0-9]* eventlog*
+CONFLICTS?=	syslog-ng syslog-ng[0-9] \
+		syslog-ng[0-9][0-9] \
+		syslog-ng-devel eventlog*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes

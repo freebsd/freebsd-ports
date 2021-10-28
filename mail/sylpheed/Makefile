@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 		--prefix=${PREFIX} \
 		--program-transform-name=''
 
-CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
+CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2
 
 OPTIONS_DEFINE=	CA_BUNDLE COMPFACE CURL DOCS GPGME GTKSPELL LDAP \
 		ONIGURUMA SSL HIDE_OSSIG

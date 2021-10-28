@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	archiveopteryx-[0-9]*
+CONFLICTS=	archiveopteryx
 
 USERS=		aox
 GROUPS=		aox

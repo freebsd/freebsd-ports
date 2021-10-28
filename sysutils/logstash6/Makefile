@@ -19,7 +19,7 @@ JAVA_VERSION=	1.8+
 JAVA_RUN=	yes
 USE_RC_SUBR=	logstash
 SHEBANG_FILES=	bin/*
-CONFLICTS=	logstash-[0-9]* logstash5* logstash7*
+CONFLICTS=	logstash logstash5* logstash7*
 
 NO_BUILD=	yes
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \

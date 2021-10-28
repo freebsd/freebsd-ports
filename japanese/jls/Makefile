@@ -13,7 +13,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kazami@angels.vg
 COMMENT=	Japanized ls
 
-CONFLICTS=	sleuthkit-[0-9]*
+CONFLICTS=	sleuthkit
 
 USES=		ncurses uidfix
 PLIST_FILES=	bin/jls \

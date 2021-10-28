@@ -98,7 +98,7 @@ STRIP=
 
 PKGMESSAGE=	${WRKSRC}/README.FreeBSD
 
-CONFLICTS=	dspam-devel-[0-9]*
+CONFLICTS=	dspam-devel
 
 SIGNATURE_LIFE?=	15
 

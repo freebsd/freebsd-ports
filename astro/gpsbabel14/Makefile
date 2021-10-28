@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-expathdr=${LOCALBASE}/include \
 
 PLIST_FILES=	bin/gpsbabel
 
-CONFLICTS=	gpsbabel-[0-9]*
+CONFLICTS=	gpsbabel
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gpsbabel

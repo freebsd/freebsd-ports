@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 
-CONFLICTS=	mplex-[0-9]*
+CONFLICTS=	mplex
 
 USES=		compiler:c++11-lang gmake gnome jpeg libtool localbase pathfix \
 		pkgconfig

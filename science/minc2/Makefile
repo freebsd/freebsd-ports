@@ -37,7 +37,7 @@ CFLAGS+=	-Wno-error=return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFLICTS=	minc-1* zh-tk-[0-9]*
+CONFLICTS=	minc-1* zh-tk
 
 pre-patch:
 	@${RM} ${WRKSRC}/ac_config_aux/*

@@ -20,7 +20,7 @@ RUN_DEPENDS=	arduino-builder:devel/arduino-builder \
 		bash:shells/bash \
 		${JSSC_DEP}
 
-CONFLICTS=	arduino-[0-9]*
+CONFLICTS=	arduino
 
 BUNDLE_GH_ACCOUNT=	arduino-libraries
 BUNDLE_LIBRARIES=	Firmata:2.5.6:firmata \

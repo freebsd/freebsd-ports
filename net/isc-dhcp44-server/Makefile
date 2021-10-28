@@ -45,10 +45,10 @@ BINLEASES_DESC=		Enable support for binary insertion of leases
 CONFLICTS=	isc-dhcp3?-client-[0-9]* isc-dhcp4[123]-client-[0-9]*
 DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
 .elif ${SUBSYS} == relay
-CONFLICTS=	isc-dhcp3?-relay-[0-9]* isc-dhcp4[123]-relay-[0-9]*
+CONFLICTS=	isc-dhcp3?-relay isc-dhcp4[123]-relay
 DHCP_PORTREVISION=	${PORTREVISION_RELAY}
 .else
-CONFLICTS=	isc-dhcp3?-server-[0-9]* isc-dhcp4[123]-server-[0-9]*
+CONFLICTS=	isc-dhcp3?-server isc-dhcp4[123]-server
 DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 MAKE_JOBS_UNSAFE=	yes

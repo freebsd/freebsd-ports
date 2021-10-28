@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libixp.so:devel/libixp
 
-CONFLICTS=	wmii-[0-9]*
+CONFLICTS=	wmii
 
 USES=		pkgconfig python:run shebangfix tar:tbz xorg
 SHEBANG_FILES=	alternative_wmiircs/python/wmiirc

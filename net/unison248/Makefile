@@ -34,7 +34,7 @@ USES=		gmake localbase
 USE_OCAML=	yes
 WRKSRC_SUBDIR=	src
 NO_OCAML_RUNDEPENDS=yes
-CONFLICTS=	unison-devel-[0-9]*
+CONFLICTS=	unison-devel
 MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
 ALL_TARGET=	unison all
 

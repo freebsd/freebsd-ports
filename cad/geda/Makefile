@@ -41,9 +41,9 @@ DATADIR=	${PREFIX}/share/gEDA
 INFO=		geda-scheme
 BINARY_WRAPPERS=	gm4
 
-CONFLICTS=	geda-docs-[0-9]* geda-examples-[0-9]* geda-gattrib-[0-9]* \
-		geda-gschem-[0-9]* geda-netlist-[0-9]* geda-symbols-[0-9]* \
-		geda-symcheck-[0-9]* geda-utils-[0-9]* libgeda-[0-9]*
+CONFLICTS=	geda-docs geda-examples geda-gattrib \
+		geda-gschem geda-netlist geda-symbols \
+		geda-symcheck geda-utils libgeda
 
 PORTSCOUT=	limitw:1,even
 

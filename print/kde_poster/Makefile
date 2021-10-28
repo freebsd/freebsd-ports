@@ -16,7 +16,7 @@ USES=	tar:bzip2
 ALL_TARGET=	poster
 WRKSRC=		${WRKDIR}/${DISTNAME}-20060221
 
-CONFLICTS?=	poster-[0-9]*
+CONFLICTS?=	poster
 
 PLIST_FILES=	bin/poster man/man1/poster.1.gz
 

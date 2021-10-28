@@ -37,7 +37,7 @@ MAKE_ARGS+=	LIBDL=""
 MAKE_ENV+=	ac_cv_func_sbrk=0
 TEST_TARGET=	check
 
-CONFLICTS=	libbfd-[0-9]*
+CONFLICTS=	libbfd
 
 OPTIONS_DEFINE=	NLS RELRO STATIC
 OPTIONS_SUB=	yes

@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-fatal-warnings --with-version=${PORTVERSION} \
 		PACKAGE_STRING="${PORTNAME} ${PORTVERSION}" \
 		PACKAGE_VERSION="${PORTVERSION}"
 
-CONFLICTS=	heartbeat-[0-9]*
+CONFLICTS=	heartbeat
 
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	/bin/sh

@@ -11,7 +11,7 @@ COMMENT=	GNU version of popular pattern matching utility
 
 LICENSE=	GPLv3+
 
-CONFLICTS=	bsd-grep-[0-9]*
+CONFLICTS=	bsd-grep
 
 USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes

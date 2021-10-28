@@ -12,7 +12,7 @@ COMMENT=	To-do list manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	devtodo-[0-9]*
+CONFLICTS=	devtodo
 
 USES=		readline
 

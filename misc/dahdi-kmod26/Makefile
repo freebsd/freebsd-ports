@@ -47,7 +47,7 @@ USE_RC_SUBR=	dahdi
 MAKE_ARGS=	NO_FETCH=yes WITHOUT_HEADERS=yes #ADDITIONAL_DRIVERS="wcb1xxp"
 GROUPS=		dahdi
 
-CONFLICTS=	zaptel-[0-9]* dahdi-kmod-*
+CONFLICTS=	zaptel dahdi-kmod-*
 
 KMODDIR=	${PREFIX}/lib/dahdi
 USES=		kmod uidfix

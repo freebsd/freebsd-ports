@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Next gen Tiny Encryption Algorithm in Perl and Javascript
 
-CONFLICTS=	p5-Crypt-T_e_a-[0-9]*
+CONFLICTS=	p5-Crypt-T_e_a
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	examples/tea_demo.cgi

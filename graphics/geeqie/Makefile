@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-CONFLICTS=	geeqie-devel-[0-9]*
+CONFLICTS=	geeqie-devel
 
 USES=		autoreconf compiler:c++11-lang gettext gmake gnome jpeg \
 		localbase pkgconfig desktop-file-utils tar:xz lua:53 shebangfix

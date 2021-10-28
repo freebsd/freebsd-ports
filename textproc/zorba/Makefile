@@ -33,7 +33,7 @@ RUBY_CMAKE_BOOL=	WITH_RUBY
 JAVA_CMAKE_BOOL=	WITH_JAVA
 
 # Both install include/xqc.h
-CONFLICTS=	xqilla-[0-9]*
+CONFLICTS=	xqilla
 CONFLICTS_BUILD=	bison
 
 USES=		cmake compiler:c++11-lib gnome libedit

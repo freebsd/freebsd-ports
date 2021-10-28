@@ -11,7 +11,7 @@ COMMENT=	ZeroMQ core library (Version 3)
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-CONFLICTS=	zmq-[0-9]* libzmq[^3]-[0-9]*
+CONFLICTS=	zmq libzmq[^3]
 
 USES=		libtool pathfix
 USE_LDCONFIG=	yes

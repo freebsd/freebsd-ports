@@ -21,7 +21,7 @@ SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
 # Fix build with clang11
 CFLAGS+=	-fcommon
 
-CONFLICTS?=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
+CONFLICTS?=	cdrtools cjk-cdrtools cdrtools-devel
 
 PLIST_SUB?=	CDRKIT="" GENISOIMAGE="@comment "
 

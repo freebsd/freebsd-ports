@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 BROKEN_armv6=		fails to compile: ucontext.h: expected parameter declarator
 BROKEN_armv7=		fails to compile: Coro.c:392:2: no member named 'arm_r0' in 'mcontext_t'
 
-CONFLICTS=	io-devel-[0-9]*
+CONFLICTS=	io-devel
 
 USES=		cmake:noninja compiler:c11 ssl
 

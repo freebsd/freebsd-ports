@@ -26,7 +26,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean \
 		TestInt TestString TestDouble TestBase64 TestDateTime
 
-CONFLICTS=	xmlrpc-c-[0-9]*
+CONFLICTS=	xmlrpc-c
 
 OPTIONS_DEFINE=	DOCS
 

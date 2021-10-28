@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 USES=		gmake
 
-CONFLICTS=	daemontools-[0-9]* freedt-[0-9]* serialmail-[0-9]*
+CONFLICTS=	daemontools freedt serialmail
 
 ALL_TARGET=	default
 

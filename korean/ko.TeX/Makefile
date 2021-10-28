@@ -15,7 +15,7 @@ RUN_DEPENDS=	${BASE_MAP}:korean/ko.TeX-fonts-base
 USES=		shebangfix
 SHEBANG_FILES=	util/*.pl
 USE_TEX=	latex
-CONFLICTS=	hlatex-[0-9]*
+CONFLICTS=	hlatex
 
 NO_WRKSUBDIR=	yes
 

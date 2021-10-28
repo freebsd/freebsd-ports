@@ -11,7 +11,7 @@ COMMENT=	Tools and scripts to use with IMAP servers
 
 LICENSE=	ISCL
 
-CONFLICTS=	imaputils-[0-9]*
+CONFLICTS=	imaputils
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

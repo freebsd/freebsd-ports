@@ -11,7 +11,7 @@ COMMENT=	Scheme Underground's implementation of R5RS
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-CONFLICTS=	scsh-[0-9]*
+CONFLICTS=	scsh
 
 ALL_TARGET=	enough
 USES=		cpe gmake tar:tgz

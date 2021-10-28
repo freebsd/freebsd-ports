@@ -23,7 +23,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 
-CONFLICTS=	djbdns-tools-[0-9]*
+CONFLICTS=	djbdns-tools
 
 OPTIONS_DEFINE=	DUMPCACHE IP6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE ADD_USERS
 OPTIONS_DEFAULT=	MAN

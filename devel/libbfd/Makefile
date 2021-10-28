@@ -15,7 +15,7 @@ BROKEN_armv7=		Fails to configure: BFD does not support target armv7-portbld-fre
 BROKEN_mips64=		Fails to configure: BFD does not support target mips64-portbld-freebsd12.0
 BROKEN_riscv64=		Fails to configure: machine riscv64-portbld not recognized
 
-CONFLICTS=	mingw-binutils-[0-9]* binutils-[0-9]*
+CONFLICTS=	mingw-binutils binutils
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 

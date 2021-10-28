@@ -16,7 +16,7 @@ LICENSE_FILE=	${FILESDIR}/COPYING
 USES=		tar:tgz uidfix
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	zebra-[0-9]* quagga-[0-9]*
+CONFLICTS=	zebra quagga
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/bgpctl sbin/bgpd man/man5/bgpd.conf.5.gz \

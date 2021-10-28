@@ -25,7 +25,7 @@ SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
 SSP_UNSAFE=	yes
 LIB32_PATH?=	/usr/lib32/libc.so
 
-CONFLICTS=	valgrind-[0-9]*
+CONFLICTS=	valgrind
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	paulfloyd

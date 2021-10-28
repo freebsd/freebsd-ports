@@ -11,8 +11,8 @@ COMMENT=	Copy files in curses interface
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: logw
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: logw
 
-CONFLICTS=	p5-VCP-[0-9]* \
-		p5-VCP-autrijus-[0-9]*
+CONFLICTS=	p5-VCP \
+		p5-VCP-autrijus
 
 USES=		ncurses
 LDFLAGS+=	-lncurses

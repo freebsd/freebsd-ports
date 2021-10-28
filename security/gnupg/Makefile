@@ -20,7 +20,7 @@ RUN_DEPENDS=	pinentry:security/pinentry
 
 USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite tar:bzip2
 
-CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
+CONFLICTS=	gnupg-2.0.* dirmngr
 CPE_VENDOR=	gnupg
 
 CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2 --enable-symcryptrun

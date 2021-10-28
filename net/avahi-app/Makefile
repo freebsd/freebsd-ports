@@ -46,7 +46,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 INSTALL_TARGET=	install-strip
 
 .if ${AVAHI_SLAVE} == no
-CONFLICTS=	howl-[0-9]*
+CONFLICTS=	howl
 
 DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 .endif

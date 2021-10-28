@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpcap.so.1:net/libpcap
 USES=		gmake libtool pathfix shebangfix ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS=	vde-[0-9]*
+CONFLICTS=	vde
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	src/lib/python/VdePlug.py

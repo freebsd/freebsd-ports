@@ -18,7 +18,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cpe libtool tar:bzip2 ssl
 
-CONFLICTS=	racoon-[0-9]*
+CONFLICTS=	racoon
 INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	racoon
 GNU_CONFIGURE=	yes

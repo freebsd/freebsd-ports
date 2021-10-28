@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--disable-rpath \
 			--with-libiconv-prefix=${ICONV_PREFIX} \
 			--without-bash-malloc
 
-CONFLICTS+=	bash-[0-9]* bash-static-[0-9]*
+CONFLICTS+=	bash bash-static
 
 .include <bsd.port.options.mk>
 

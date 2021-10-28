@@ -86,7 +86,7 @@ SRC_DISTFILES=	libICE-1.0.9-9.el7${SRC_SUFX}:SOURCE \
 		libxshmfence-1.2-1.el7${SRC_SUFX}:SOURCE \
 		xkeyboard-config-2.24-1.el7${SRC_SUFX}:SOURCE
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

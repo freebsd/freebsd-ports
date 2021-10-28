@@ -12,7 +12,7 @@ COMMENT=	Afterstep clock with some language extensions
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS=	asclock-gtk-[0-9]* asclock-xlib-[0-9]*
+CONFLICTS=	asclock-gtk asclock-xlib
 
 USES=		tar:tgz imake xorg
 USE_XORG=	xpm xext x11

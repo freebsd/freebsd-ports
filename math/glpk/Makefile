@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-CONFLICTS=	goblin-[0-9]*
+CONFLICTS=	goblin
 
 USES=		gmake libtool localbase
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ USES=		tar:xz
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-CONFLICTS=	seqan1-[0-9]*
+CONFLICTS=	seqan1
 
 OPTIONS_DEFINE=	DOCS
 

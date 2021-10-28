@@ -18,6 +18,6 @@ USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig png xorglibs sqlite3 qt qt-x11
 USE_LINUX_RPM=	yes
 
-CONFLICTS=	linux-c6-qt47-webkit-[0-9]*
+CONFLICTS=	linux-c6-qt47-webkit
 
 .include <bsd.port.mk>

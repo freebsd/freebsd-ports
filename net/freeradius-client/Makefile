@@ -15,6 +15,6 @@ INSTALL_TARGET=	install-strip
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 
-CONFLICTS=	radiusclient-ng-[0-9]*
+CONFLICTS=	radiusclient-ng
 
 .include <bsd.port.mk>

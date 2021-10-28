@@ -47,7 +47,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 SUB_FILES=	pkg-message
 SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
-CONFLICTS=	squirreloutlook-[0-9]*
+CONFLICTS=	squirreloutlook
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/aspell|g' \

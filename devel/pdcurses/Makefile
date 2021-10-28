@@ -11,7 +11,7 @@ COMMENT=	Curses library implementation for Win32, DOS, OS/2, and X11
 
 LICENSE=	PD
 
-CONFLICTS=	pdcurses-the-[0-9]*
+CONFLICTS=	pdcurses-the
 
 USES=		xorg
 USE_LDCONFIG=	yes

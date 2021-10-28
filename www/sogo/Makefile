@@ -47,7 +47,7 @@ USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 SHEBANG_LANG=		python
 SHEBANG_FILES=		${WRKSRC}/SoObjects/SOGo/gen-saml2-exceptions.py
 
-CONFLICTS?=		sogo[2-4]-activesync-[0-9]* sogo[2-4]-[0-9]*
+CONFLICTS?=		sogo[2-4]-activesync sogo[2-4]
 
 USE_RC_SUBR=		sogod
 

@@ -28,7 +28,7 @@ USE_XORG=	pixman x11
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	com.canonical.NotifyOSD.gschema.xml
 
-CONFLICTS=	xfce4-notification-daemon-[0-9]*
+CONFLICTS=	xfce4-notification-daemon
 
 post-patch:
 	@${REINPLACE_CMD} '/SUBDIRS =/s/tests//' ${WRKSRC}/Makefile.in

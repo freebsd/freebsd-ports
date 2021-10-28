@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Parchive
 
 PORTDOCS=	README
-CONFLICTS=	par2cmdline-tbb-[0-9]*
+CONFLICTS=	par2cmdline-tbb
 
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify man/man1/par2.1.gz
 

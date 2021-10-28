@@ -29,7 +29,7 @@ GH_PROJECT=	seafile
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
-CONFLICTS=	seafile-server-[0-9]*
+CONFLICTS=	seafile-server
 
 SHEBANG_FILES=	*.sh scripts/*.sh app/seaf-cli integration-tests/*.sh
 

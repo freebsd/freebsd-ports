@@ -20,7 +20,7 @@ USES=		localbase:ldflags python:3.5+
 USE_LDCONFIG=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
+CONFLICTS=	rdiff-backup-devel rdiff-backup-1.0*
 
 PORTSCOUT=	limitw:1,even
 

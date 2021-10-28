@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR}
 
-CONFLICTS=	rabbitmq-c-[0-9]*
+CONFLICTS=	rabbitmq-c
 
 USES=		cmake pathfix python ssl
 USE_GITHUB=	yes

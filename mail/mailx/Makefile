@@ -16,7 +16,7 @@ COMMENT=	Mail command with mailx extensions
 
 LICENSE=	BSD4CLAUSE
 
-CONFLICTS=	heirloom-mailx-[0-9]*
+CONFLICTS=	heirloom-mailx
 
 EXTRACT_ONLY=	mail-2.2.8.tar.gz
 WRKSRC=		${WRKDIR}/mail-2.2.8

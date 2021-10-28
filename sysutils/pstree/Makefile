@@ -12,7 +12,7 @@ USES=		alias
 
 NO_WRKSUBDIR=	yes
 
-CONFLICTS=	psmisc-[0-9]*
+CONFLICTS=	psmisc
 
 PLIST_FILES=	bin/pstree man/man1/pstree.1.gz
 

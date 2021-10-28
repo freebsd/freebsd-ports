@@ -12,7 +12,7 @@ LICENSE=	ART20
 
 USES=	tar:bzip2 gmake
 
-CONFLICTS=	waon-[0-9]*
+CONFLICTS=	waon
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	LD=${LD}

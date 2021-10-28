@@ -14,7 +14,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/COPYING
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
-CONFLICTS=	amule-devel-[0-9]*
+CONFLICTS=	amule-devel
 
 USES=		bison compiler:c++11-lang cpe desktop-file-utils gmake \
 		localbase:ldflags perl5 pkgconfig shebangfix tar:xz

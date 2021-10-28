@@ -9,7 +9,7 @@ DISTNAME=	t20-squsq-3.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compressor/decompressor for CP/M "Squeeze" compressed files
 
-CONFLICTS=	squirrel-[0-9]*
+CONFLICTS=	squirrel
 WRKSRC=		${WRKDIR}/t20-squsq
 MAKEFILE=	${FILESDIR}/Makefile
 CFLAGS+=	-Wno-error=return-type

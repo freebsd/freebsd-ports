@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	FFTW3
 OPTIONS_DEFAULT=	FFTW3
 FFTW3_DESC=	Use FFTW3 library for performance
 
-CONFLICTS=	libaacplus-[0-9]*
+CONFLICTS=	libaacplus
 
 PLIST_FILES=	bin/aacplusenc
 MAKE_ARGS+=	INSTDIR=${STAGEDIR}${PREFIX}

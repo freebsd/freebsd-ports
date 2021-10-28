@@ -51,7 +51,7 @@ MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 MAKE_ARGS+=	NOISY_BUILD=yes \
 		ASTDATADIR=${DATADIR}
 
-CONFLICTS=		ossp-uuid-[0-9]*
+CONFLICTS=		ossp-uuid
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk13 asterisk16
 

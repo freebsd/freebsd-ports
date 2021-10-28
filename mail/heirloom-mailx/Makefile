@@ -12,7 +12,7 @@ LICENSE=	BSD4CLAUSE
 
 OPTIONS_DEFINE=	IPV6 DOCS
 
-CONFLICTS=	mailx-[0-9]*
+CONFLICTS=	mailx
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		cpe iconv localbase ssl tar:bzip2

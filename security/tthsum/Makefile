@@ -13,7 +13,7 @@ COMMENT=	Command-line utility for generating and checking TTH message digests
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-CONFLICTS=	microdc2-[0-9]*
+CONFLICTS=	microdc2
 
 USES=		gmake
 

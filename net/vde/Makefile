@@ -11,7 +11,7 @@ COMMENT=	User-mode virtual ethernet infrastructure
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	vde2-[0-9]*
+CONFLICTS=	vde2
 
 MAKE_ARGS=	CC="${CC}"
 USE_LDCONFIG=	yes

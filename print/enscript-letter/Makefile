@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-CONFLICTS?=	enscript-a4-[0-9]* enscript-letterdj-[0-9]*
+CONFLICTS?=	enscript-a4 enscript-letterdj
 
 INFO=		enscript
 CPE_VENDOR=	gnu

@@ -12,7 +12,7 @@ COMMENT=	Create patchset information from CVS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	cvsps-devel-[0-9]*
+CONFLICTS=	cvsps-devel
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

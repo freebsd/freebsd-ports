@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		quvi>=0.2.16.1:multimedia/quvi
 
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
-CONFLICTS=	py*-clive-[0-1]* ljclive-[0-9]*
+CONFLICTS=	py*-clive-[0-1]* ljclive
 
 USES=		perl5
 USE_PERL5=	configure

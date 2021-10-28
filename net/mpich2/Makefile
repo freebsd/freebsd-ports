@@ -56,7 +56,7 @@ LDFLAGS+=	-lpthread -lexecinfo
 MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
 NO_CCACHE=	yes
 
-CONFLICTS=	mpd-[0-9]* mpich-3.*
+CONFLICTS=	mpd mpich-3.*
 
 VERSO=		8.0.1
 VERSOM=		${VERSO:R:R}

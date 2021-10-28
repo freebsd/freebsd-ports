@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GITHUB=	YES
 GH_ACCOUNT=	hyperrealm
 
-CONFLICTS=	wand-libconfig-[0-9]*
+CONFLICTS=	wand-libconfig
 
 INFO=	libconfig
 

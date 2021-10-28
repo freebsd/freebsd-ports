@@ -11,7 +11,7 @@ COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	libshishi.so:security/shishi
 
-CONFLICTS=	heimdal-[0-9]*
+CONFLICTS=	heimdal
 
 USES=		libtool localbase:ldflags pathfix pkgconfig perl5
 USE_PERL5=	build

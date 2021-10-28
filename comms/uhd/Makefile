@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EttusResearch
 GH_TAGNAME=	90ce6062b6b5df2eddeee723777be85108e4e7c7
 
-CONFLICTS=	usrp-[0-9]*
+CONFLICTS=	usrp
 
 BROKEN_FreeBSD_12_aarch64=	fails to configure: Could not find standard set_new_handler function
 BROKEN_FreeBSD_12_armv6=	fails to configure: Could not find standard set_new_handler function

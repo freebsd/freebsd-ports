@@ -67,9 +67,9 @@ PRESTAGE=	${WRKSRC}/prestage
 
 .include <bsd.port.options.mk>
 
-CONFLICTS=	im-[0-9]* \
-		nifticlib-[0-9]* \
-		open-usp-tukubai-[0-9]*
+CONFLICTS=	im \
+		nifticlib \
+		open-usp-tukubai
 
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c

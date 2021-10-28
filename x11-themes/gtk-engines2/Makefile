@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for the GTK+-2.0 toolkit
 
-CONFLICTS=	gtk-smooth-engine-[0-9]* clearlooks-[0-9]*
+CONFLICTS=	gtk-smooth-engine clearlooks
 
 USE_GNOME=	gtk20 intlhack
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:bzip2

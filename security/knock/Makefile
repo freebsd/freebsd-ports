@@ -14,7 +14,7 @@ COMMENT=	Flexible port-knocking server and client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	doorman-[0-9]*
+CONFLICTS=	doorman
 
 GNU_CONFIGURE=	yes
 

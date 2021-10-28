@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 MAKE_ARGS=	examplesdir=${EXAMPLESDIR} \
 		pkgdatadir=${DATADIR}
 
-CONFLICTS=	kyua-atf-compat-[0-9]* kyua-cli-[0-9]* kyua-testers-[0-9]*
+CONFLICTS=	kyua-atf-compat kyua-cli kyua-testers
 
 SUB_FILES=	kyua.conf
 _TESTS_USER=	tests

@@ -12,7 +12,7 @@ COMMENT=	Address to hostname filter
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS=	hf-[0-9]*
+CONFLICTS=	hf
 
 PLIST_FILES=	bin/hf \
 		man/man1/hf.1.gz

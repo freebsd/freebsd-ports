@@ -13,7 +13,7 @@ COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
 LICENSE=	GPLv2
 
-CONFLICTS=	pwcview-[0-9]*
+CONFLICTS=	pwcview
 
 SSP_UNSAFE=	kernel module does not support ssp
 

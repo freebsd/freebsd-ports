@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES \
 
 USES=		perl5
 USE_PERL5=	configure
-CONFLICTS=	p5-Net-SNMP3-[0-9]*
+CONFLICTS=	p5-Net-SNMP3
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 USE_LINUX=	cyrus-sasl2 nspr nss
 USE_LINUX_RPM=	yes
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}24-server/pkg-descr
 
 OPTIONS_DEFINE=	DOCS

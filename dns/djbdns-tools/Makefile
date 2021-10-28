@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolver tools from djbdns package
 
-CONFLICTS=	djbdns-[0-9]*
+CONFLICTS=	djbdns
 
 PROGRAMS=	dnsip dnsipq dnsname dnstxt dnsmx dnsfilter \
 		random-ip dnsqr dnsq dnstrace

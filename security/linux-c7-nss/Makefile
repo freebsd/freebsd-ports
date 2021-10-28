@@ -23,7 +23,7 @@ SRC_DISTFILES=	${DISTNAME}${SRC_SUFX}:SOURCE \
 		${PORTNAME}-softokn-${PORTVERSION}-6.el7_9${SRC_SUFX}:SOURCE \
 		${PORTNAME}-util-${PORTVERSION}-1.el7_9${SRC_SUFX}:SOURCE
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

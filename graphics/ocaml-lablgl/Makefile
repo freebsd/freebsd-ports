@@ -14,7 +14,7 @@ COMMENT=	OpenGL interface for Objective Caml
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS=	ocaml-nox11-[0-9]*
+CONFLICTS=	ocaml-nox11
 
 USES=		gl gmake tk xorg
 USE_XORG=	x11 xext xmu

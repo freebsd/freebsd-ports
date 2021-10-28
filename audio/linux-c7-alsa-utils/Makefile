@@ -14,7 +14,7 @@ USES=		linux:c7
 USE_LINUX=	alsalib alsa-plugins-oss
 USE_LINUX_RPM=	nolib
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS

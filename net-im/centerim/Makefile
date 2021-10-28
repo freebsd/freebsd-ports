@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-yahoo --disable-msn
-CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
+CONFLICTS=	centericq centerim-devel
 
 SHEBANG_FILES=	misc/CenterIMLog2HTML.py misc/cimformathistory misc/cimextracthistory.pl
 SHEBANG_LANG=	gawk

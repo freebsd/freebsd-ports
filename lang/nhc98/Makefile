@@ -27,7 +27,7 @@ DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR} +docs
 DOCS_CONFIGURE_OFF=	-docs
 
 PORTDOCS=	*
-CONFLICTS=	hs-cpphs-[0-9]*
+CONFLICTS=	hs-cpphs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc

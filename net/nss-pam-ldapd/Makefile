@@ -44,7 +44,7 @@ OPTIONS_MULTI_MG1=	PAM NSS
 PAM_DESC=		Build pam_ldap
 NSS_DESC=		Build nss support
 OPTIONS_DEFAULT+=	PAM NSS
-CONFLICTS+=		nss-pam-ldapd-sasl-[0-9]*
+CONFLICTS+=		nss-pam-ldapd-sasl
 .endif
 
 USERS=			nslcd

@@ -51,7 +51,7 @@ CMP_LIB_DESC=	Install compiler libraries
 MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 DOCSDISTNAME=	${DISTNAME:C/([[:digit:]]+)\.([[:digit:]]+)\.([[:digit:]]+)/\1.\2/}
 
-CONFLICTS=	metaocaml-[0-9]*
+CONFLICTS=	metaocaml
 
 .include <bsd.port.options.mk>
 
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=-no-pthread
 PLIST_SUB+=	X11=""
 USES+=		xorg
 USE_XORG=	x11
-CONFLICTS+=	ocaml-nox11-[0-9]*
+CONFLICTS+=	ocaml-nox11
 CONFIGURE_ARGS+=-x11include ${LOCALBASE}/include -x11lib ${LOCALBASE}/lib
 .else
 PLIST_SUB+=	X11="@comment "

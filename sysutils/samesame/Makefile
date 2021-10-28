@@ -12,7 +12,7 @@ COMMENT=	Find duplicate files and optionally link them together
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS=	samefile-[0-9]*
+CONFLICTS=	samefile
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

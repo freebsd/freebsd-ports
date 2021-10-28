@@ -16,7 +16,7 @@ USES=		cpe
 USE_JAVA=	yes
 USE_RC_SUBR=	jenkins
 
-CONFLICTS=	jenkins-lts-[0-9]*
+CONFLICTS=	jenkins-lts
 
 NO_ARCH=	yes
 NO_BUILD=	yes

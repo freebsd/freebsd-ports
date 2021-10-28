@@ -10,7 +10,7 @@ COMMENT=	Call graph generator for C and assembler code
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS=	gnucflow-[0-9]* cflow-[0-9]*
+CONFLICTS=	gnucflow cflow
 
 USES=		gmake
 MAKE_ENV=	MANDIR=${PREFIX}/man

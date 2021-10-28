@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI file previewer for text only devices
 
-CONFLICTS=	ja-dvi2tty-[0-9]*
+CONFLICTS=	ja-dvi2tty
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${STRIP}"
 

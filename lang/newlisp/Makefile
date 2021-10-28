@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-CONFLICTS=	newlisp-devel-[0-9]*
+CONFLICTS=	newlisp-devel
 
 USES=		readline tar:tgz
 OPTIONS_SUB=	yes

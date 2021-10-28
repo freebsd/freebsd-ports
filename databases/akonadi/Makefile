@@ -11,7 +11,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-CONFLICTS=	akonadi-[0-9]* akonadi-kf5-git-[0-9]*
+CONFLICTS=	akonadi akonadi-kf5-git
 
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 \
 		shared-mime-info tar:xz

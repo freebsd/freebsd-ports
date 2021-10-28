@@ -12,8 +12,8 @@ COMMENT=	Popular BSD-licensed implementation of Kerberos 5
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]* \
-		wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
+CONFLICTS=	krb4 krb5 krb5-maint srp \
+		wu-ftpd wu-ftpd+ipv6
 
 USES=		cpe gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
 		pkgconfig readline makeinfo ssl

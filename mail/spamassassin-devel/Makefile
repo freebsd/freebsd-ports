@@ -31,7 +31,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 TEST_DEPENDS+=	${${dep}_RUN_DEPENDS}
 .endfor
 
-CONFLICTS?=	ja-spamassassin-[0-9]* spamassassin-[0-9]*
+CONFLICTS?=	ja-spamassassin spamassassin
 
 CPE_VENDOR=	apache
 

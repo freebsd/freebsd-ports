@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 USE_LINUX=	libtasn1 nettle p11-kit trousers
 USE_LINUX_RPM=	yes
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS

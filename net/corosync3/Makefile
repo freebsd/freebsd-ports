@@ -8,6 +8,6 @@ PKGNAMESUFFIX=		3
 
 LIB_DEPENDS+=		libknet.so:devel/kronosnet
 
-CONFLICTS=		corosync2-[0-9]*
+CONFLICTS=		corosync2
 
 .include <bsd.port.mk>

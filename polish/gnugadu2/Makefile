@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11 xaw ice xscrnsaver
 INSTALL_TARGET=	install-strip
 # there is a header conflict here, that breaks build
-CONFLICTS=	qhacc-[0-9]*
+CONFLICTS=	qhacc
 
 CONFIGURE_ARGS=	--disable-esdtest \
 		--with-external-libgadu \

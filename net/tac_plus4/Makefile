@@ -22,7 +22,7 @@ CPE_VENDOR=	cisco
 USERS=		tacacs
 GROUPS=		tacacs
 
-CONFLICTS=	ru-tac+ia-[0-9]* tac_plus-libradius-[0-9]*
+CONFLICTS=	ru-tac+ia tac_plus-libradius
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS

@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-CONFLICTS=	libaudiofile-[0-9]*
+CONFLICTS=	libaudiofile
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cc" | ${XARGS} ${REINPLACE_CMD} -E \

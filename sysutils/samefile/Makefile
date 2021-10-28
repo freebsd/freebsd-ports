@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.schweikhardt.net/
 MAINTAINER=	schweikh@FreeBSD.org
 COMMENT=	Find files with identical contents
 
-CONFLICTS=	samesame-[0-9]*
+CONFLICTS=	samesame
 
 GNU_CONFIGURE=	yes
 

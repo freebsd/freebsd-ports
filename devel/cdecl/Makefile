@@ -14,7 +14,7 @@ BUILD_DEPENDS=	flex:textproc/flex
 
 USES=		autoreconf bison ncurses readline
 
-CONFLICTS=	cutils-[0-9]*
+CONFLICTS=	cutils
 
 USE_GITHUB=	yes
 

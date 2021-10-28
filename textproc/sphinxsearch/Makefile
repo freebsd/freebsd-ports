@@ -92,8 +92,8 @@ SYSLOG_CONFIGURE_WITH=	syslog
 UNIXODBC_CONFIGURE_WITH=unixodbc
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-CONFLICTS=	sphinxsearch-devel-[0-9]* dpsearch-[0-9]* rdb-[0-9]* \
-		swish++-[0-9]* xaira-[0-9]*
+CONFLICTS=	sphinxsearch-devel dpsearch rdb \
+		swish++ xaira
 
 USERS?=		_sphinx
 GROUPS?=	_sphinx

@@ -12,7 +12,7 @@ COMMENT=	Multi-lingual Unicode text editor with TTF support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
-CONFLICTS=	netatalk-[0-9]*
+CONFLICTS=	netatalk
 
 USES=		gmake xorg
 USE_XORG=	x11

@@ -32,7 +32,7 @@ USES=			gnustep ssl objc
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 
-CONFLICTS?=		sogo[2-4]-activesync-[0-9]* sogo[3-4]-[0-9]*
+CONFLICTS?=		sogo[2-4]-activesync sogo[3-4]
 
 USE_RC_SUBR=		sogod
 

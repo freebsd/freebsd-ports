@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 USES=		cmake:noninja compiler:c11
 
-CONFLICTS=	metis-edf-[0-9]* metis4-4*
+CONFLICTS=	metis-edf metis4-4*
 
 PORTDOCS=	manual.pdf
 

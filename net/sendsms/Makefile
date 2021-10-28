@@ -17,7 +17,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
 
 PLIST_FILES=	bin/sendsms
 
-CONFLICTS=	gnokii-[0-9]* smstools-[0-9]*
+CONFLICTS=	gnokii smstools
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

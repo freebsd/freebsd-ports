@@ -16,6 +16,6 @@ USE_LINUX_RPM=	yes
 
 SRC_DISTFILES=	gcc-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 
 .include <bsd.port.mk>

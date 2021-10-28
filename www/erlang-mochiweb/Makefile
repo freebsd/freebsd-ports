@@ -9,7 +9,7 @@ COMMENT=	Erlang library for building lightweight HTTP servers
 
 LICENSE=	MIT
 
-CONFLICTS=	mochiweb-basho-[0-9]*
+CONFLICTS=	mochiweb-basho
 
 USES=		cpe erlang:rebar
 CPE_VENDOR=	mochiweb_project

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 
 # conflict with py*-json-py because orca uses the json from python itself
 # and py*-json-py shadows this.
-CONFLICTS=	py*-json-py-[0-9]*
+CONFLICTS=	py*-json-py
 PORTSCOUT=	limitw:1,even
 
 NO_ARCH=	yes

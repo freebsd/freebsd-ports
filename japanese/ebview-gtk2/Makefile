@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libeb.so:japanese/eb
 
-CONFLICTS=	ja-ebview-[0-9]*
+CONFLICTS=	ja-ebview
 
 USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	gtk20 pangox-compat

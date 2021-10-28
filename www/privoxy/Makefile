@@ -28,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 # privoxy-devel is the development release available at the Privoxy website.
 # It's not (yet) part of the FreeBSD ports collection.
-CONFLICTS=	privoxy-devel-[0-9]*
+CONFLICTS=	privoxy-devel
 
 SUB_FILES=	pkg-message
 

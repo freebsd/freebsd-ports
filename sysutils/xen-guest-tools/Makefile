@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64 or i386
-CONFLICTS=	xen-tools-[0-9]*
+CONFLICTS=	xen-tools
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libglib-2.0.so:devel/glib20 \

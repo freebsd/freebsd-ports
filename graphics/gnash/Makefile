@@ -27,7 +27,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libdca.so:multimedia/libdca \
 		libgsm.so:audio/gsm
 
-CONFLICTS=	gnash-devel-[0-9]*
+CONFLICTS=	gnash-devel
 
 USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg

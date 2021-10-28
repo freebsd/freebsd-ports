@@ -11,7 +11,7 @@ MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX base fonts
 
 USE_TEX=	dvipsk latex
-CONFLICTS=	hlatex-[0-9]*
+CONFLICTS=	hlatex
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -9,7 +9,7 @@ MASTER_SITES?=	LOCAL/chinsan/fonts
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ming and Kai face of OpenDesktop fonts
 
-CONFLICTS=	zh-fireflyttf-[0-9]*
+CONFLICTS=	zh-fireflyttf
 DIST_SUBDIR=	OpenFonts
 NO_BUILD=	yes
 NO_ARCH=	yes

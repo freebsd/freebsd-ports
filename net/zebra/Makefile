@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 DEPRECATED=	Abandoned upstream, last release in 2005. Consider migrating to net/frr7 or net/bird2
 EXPIRATION_DATE=2021-12-31
 
-CONFLICTS=	openbgpd-[0-9]* quagga-[0-9]* quagga-re-[0-9]* openospfd-[0-9]*
+CONFLICTS=	openbgpd quagga quagga-re openospfd
 
 SUB_FILES=	pkg-message zebractl
 SUB_LIST=	BGPDARGS=${BGPDARGS} \

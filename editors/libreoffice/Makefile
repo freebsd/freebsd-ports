@@ -173,7 +173,7 @@ JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--without-system-jfreereport
 JAVA_CONFIGURE_WITH=	java
 # XXX jni.h from GNU classpath causes ABI conflicts.
-JAVA_CONFLICTS_BUILD=	classpath-[0-9]*
+JAVA_CONFLICTS_BUILD=	classpath
 JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:src \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \

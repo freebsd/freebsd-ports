@@ -11,7 +11,7 @@ COMMENT=	GNU Triangulated Surface Library
 
 LICENSE=	LGPL20
 
-CONFLICTS=	pcb-[0-9]*
+CONFLICTS=	pcb
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

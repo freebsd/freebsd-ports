@@ -47,7 +47,7 @@ GH_TAGNAME=	719a94ab4
 # use these version-specific package names/sources, at
 # which point CONFLICTS can be removed.
 
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}elasticsearch-[0-9]*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}elasticsearch
 
 NO_ARCH=	yes
 

@@ -13,7 +13,7 @@ COMMENT=	Open-source servlet for Git repositories
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/WEB-INF/LICENSE
 
-CONFLICTS=	${PORTNAME}-go-[0-9]*
+CONFLICTS=	${PORTNAME}-go
 
 NO_ARCH=	yes
 NO_BUILD=	yes

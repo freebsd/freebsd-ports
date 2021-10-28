@@ -18,7 +18,7 @@ USE_RC_SUBR=	pgpool
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	pgpool-II-[0-9]*
+CONFLICTS=	pgpool-II
 
 PORTDOCS=	*
 

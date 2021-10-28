@@ -20,7 +20,7 @@ LICENSE=		MIT
 USE_GITHUB=		yes
 GH_TAGNAME=		${HASH}
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[345]-[0-9]* \
+CONFLICTS=		heimdal srp krb5-11[345] \
 			krb5-1.[0-9]*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/

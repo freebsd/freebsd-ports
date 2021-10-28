@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsndfile.so:audio/libsndfile \
 		libsamplerate.so:audio/libsamplerate
 
-CONFLICTS=	pv-[0-9]*
+CONFLICTS=	pv
 
 USES=		gnome ncurses pkgconfig
 USE_GNOME=	gtk20

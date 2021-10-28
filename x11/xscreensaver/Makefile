@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgle.so:graphics/gle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
+CONFLICTS=	xscreensaver-gnome xscreensaver-gnome-hacks
 
 USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 		pkgconfig xorg

@@ -1,6 +1,6 @@
 PKGNAMESUFFIX=		-activesync
 
-CONFLICTS=		sogo[2-4]-[0-9]* sogo[3-4]-activesync-[0-9]*
+CONFLICTS=		sogo[2-4] sogo[3-4]-activesync
 
 OPTIONS_SLAVE=		ACTIVESYNC
 

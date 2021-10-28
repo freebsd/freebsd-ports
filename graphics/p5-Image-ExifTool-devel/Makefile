@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-CONFLICTS=	p5-Image-ExifTool-[0-9]*
+CONFLICTS=	p5-Image-ExifTool
 
 NO_ARCH=	yes
 PORTDOCS=	*

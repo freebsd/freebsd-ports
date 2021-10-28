@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 USES=		tar:bzip2 desktop-file-utils gnome shebangfix
 USE_JAVA=	yes
 
-CONFLICTS=	math/geogebra-i18n-[0-9]*
+CONFLICTS=	math/geogebra-i18n
 
 NO_BUILD=	yes
 NO_ARCH=	yes

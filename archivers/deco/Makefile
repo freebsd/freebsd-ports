@@ -26,7 +26,7 @@ RUN_DEPENDS=	arc:archivers/arc \
 		zoo:archivers/zoo \
 		flac:audio/flac
 
-CONFLICTS=	deco-[0-9]*
+CONFLICTS=	deco
 
 post-patch:
 	@${CP} ${FILESDIR}/extract ${WRKDIR}/${PORTNAME}-archive-1.7/x/"tar\.xz"

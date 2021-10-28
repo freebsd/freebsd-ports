@@ -24,7 +24,7 @@ USE_RC_SUBR=	logstash
 
 SHEBANG_FILES=	bin/*
 
-CONFLICTS=	logstash5-[0-9]* logstash6-[0-9]*
+CONFLICTS=	logstash5 logstash6
 
 NO_BUILD=	yes
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \

@@ -15,7 +15,7 @@ USE_LINUX=	dri fontconfig pixman png xorglibs
 USE_LINUX_RPM=	yes
 CPE_VENDOR=	cairographics
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS

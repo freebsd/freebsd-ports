@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 USES=		bison cpe gmake ncurses readline
 
-CONFLICTS=	bird-[0-9]*
-CONFLICTS+=	bird6-[0-9]*
+CONFLICTS=	bird
+CONFLICTS+=	bird6
 
 CPE_VENDOR=	nic
 

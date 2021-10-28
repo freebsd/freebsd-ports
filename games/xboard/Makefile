@@ -14,7 +14,7 @@ LICENSE?=	GPLv3
 
 LIB_DEPENDS?=	libcairo.so:graphics/cairo
 
-CONFLICTS?=	xboard-devel-[0-9]*
+CONFLICTS?=	xboard-devel
 
 OPTIONS_DEFINE?=	NLS DOCS ZIPPY
 OPTIONS_SINGLE?=	FRONTEND

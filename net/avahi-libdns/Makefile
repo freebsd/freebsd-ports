@@ -18,6 +18,6 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	libdns
 AVAHI_PKGCONFIG=avahi-compat-libdns_sd.pc
 
-CONFLICTS=	mDNSResponder-[0-9]*
+CONFLICTS=	mDNSResponder
 
 .include "${MASTERDIR}/Makefile"

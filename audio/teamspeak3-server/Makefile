@@ -29,7 +29,7 @@ SUB_FILES=	pkg-message
 USERS=	teamspeak
 GROUPS=	teamspeak
 
-CONFLICTS=	teamspeak_server-[0-9]*
+CONFLICTS=	teamspeak_server
 
 PLIST_SUB=	DBDIR=${DBDIR} \
 		ETCDIR=${ETCDIR} \

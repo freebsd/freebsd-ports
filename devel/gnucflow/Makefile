@@ -11,7 +11,7 @@ COMMENT=	Tool to chart control flow within the C program
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	bsdcflow-[0-9]* cflow-[0-9]*
+CONFLICTS=	bsdcflow cflow
 
 USES=		cpe gmake tar:bzip2
 CPE_VENDOR=	gnu

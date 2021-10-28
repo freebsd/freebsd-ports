@@ -27,7 +27,7 @@ USE_GL=		gl glu
 USE_GNOME=	intltool cairo pangox-compat
 USE_XORG=	x11 xrender xinerama
 
-CONFLICTS=	gts-[0-9]*
+CONFLICTS=	gts
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
 LDFLAGS+=	-lpthread

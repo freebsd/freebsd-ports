@@ -17,6 +17,6 @@ RUN_DEPENDS=	p5-MARC-Record>=1.38:textproc/p5-MARC-Record
 USES=		perl5
 USE_PERL5=	configure
 
-CONFLICTS=	p5-Net-Z3950-[0-9]*
+CONFLICTS=	p5-Net-Z3950
 
 .include <bsd.port.mk>

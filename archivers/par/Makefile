@@ -11,7 +11,7 @@ COMMENT=	Archiver for Quake I and II packed data files
 
 LICENSE=	GPLv2
 
-CONFLICTS=	par-[0-9]*
+CONFLICTS=	par
 
 MAKEFILE=	Makefile.Linux
 MAKE_ARGS=	CC="${CC}"

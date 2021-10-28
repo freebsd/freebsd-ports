@@ -12,7 +12,7 @@ COMMENT=	Infrastructure for C Program Analysis and Transformation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	ccured-[0-9]*
+CONFLICTS=	ccured
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 

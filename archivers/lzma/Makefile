@@ -9,7 +9,7 @@ DISTNAME=	lzma${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 
-CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
+CONFLICTS=	lzmautils xz
 
 USES=		7z gmake dos2unix
 NO_WRKSUBDIR=	yes

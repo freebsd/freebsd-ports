@@ -21,7 +21,7 @@ MAKE_ENV=	WITHOUT_WERROR=yes
 
 CFLAGS+=	-fcommon
 
-CONFLICTS=	hangman-[0-9]*
+CONFLICTS=	hangman
 
 INFO=		wump
 INFO_PATH=	share/games

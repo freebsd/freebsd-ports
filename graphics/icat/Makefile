@@ -17,7 +17,7 @@ USES=		dos2unix gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	atextor
 
-CONFLICTS=	sleuthkit-[0-9]*
+CONFLICTS=	sleuthkit
 
 PLIST_FILES=	bin/icat \
 		share/man/man1/icat.1.gz

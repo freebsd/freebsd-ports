@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	pgpool
-CONFLICTS=	pgpool-II-[0-9]*
+CONFLICTS=	pgpool-II
 
 PORTDOCS=	*
 

@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USES=	compiler gmake tar:tgz
 
-CONFLICTS=	onetbb-[0-9]*
+CONFLICTS=	onetbb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oneapi-src

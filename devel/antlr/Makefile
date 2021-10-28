@@ -12,7 +12,7 @@ COMMENT=	ANother Tool for Language Recognition
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS=	pccts-[0-9]*
+CONFLICTS=	pccts
 
 USES=		compiler:c++11-lang gmake
 USE_JAVA=	yes

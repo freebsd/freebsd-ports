@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 USES=		gmake libtool iconv mysql pgsql ssl
 USE_SUBMAKE=	yes
 
-CONFLICTS=	qmail-ldap-[0-9]* digest-[0-9]*
+CONFLICTS=	qmail-ldap digest
 
 PREFIX?=	${LOCALBASE}/emboss
 NO_MTREE=	yes

@@ -38,7 +38,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/${PORTVERSION}
 INFO=		groff
 
-CONFLICTS=	groff-[0-9]* mdocml-[0-9]*
+CONFLICTS=	groff mdocml
 
 TMAC_DISTNAME=	tmac-20030521_2
 TMACFILES=	tmac.orig_me tmac.vgrind \

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libqrencode.so:graphics/libqrencode
 BUILD_DEPENDS=	zip:archivers/zip
 
-CONFLICTS=	pwsafe-[0-9]*
+CONFLICTS=	pwsafe
 
 USES=		gmake pkgconfig xorg
 USE_GITHUB=	yes

@@ -6,7 +6,7 @@ PKGNAMESUFFIX=		1
 
 .include "${.CURDIR}/Makefile.common"
 
-CONFLICTS+=		pacemaker2-[0-9]*
+CONFLICTS+=		pacemaker2
 
 SHEBANG_FILES+=		cts/cts \
 			cts/lxc_autogen.sh.in \

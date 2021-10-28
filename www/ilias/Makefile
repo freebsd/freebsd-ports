@@ -10,7 +10,7 @@ COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ilias6-[0-9]*
+CONFLICTS=	ilias6
 PORTSCOUT=	limit:^5\.
 
 RUN_DEPENDS=	convert:graphics/ImageMagick6 \

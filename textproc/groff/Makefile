@@ -40,7 +40,7 @@ PAPERSIZE=A4
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-CONFLICTS=	ja-groff-[0-9]*
+CONFLICTS=	ja-groff
 
 INFO=	groff
 

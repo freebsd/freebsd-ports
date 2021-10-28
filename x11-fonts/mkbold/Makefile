@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	Perl script to make BDF font bold
 
-CONFLICTS=	mkbold-mkitalic-[0-9]*
+CONFLICTS=	mkbold-mkitalic
 
 PLIST_FILES=	bin/mkbold
 USES=		shebangfix perl5 tar:bzip2

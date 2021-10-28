@@ -9,7 +9,7 @@ MASTER_SITES=	PORTS_JP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple audio file player
 
-CONFLICTS=	sox-[0-9]*
+CONFLICTS=	sox
 
 USES=		uidfix
 MAKE_ARGS=	CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/man/ja/man" BINDIR="${PREFIX}/bin"

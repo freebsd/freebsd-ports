@@ -26,7 +26,7 @@ MAKE_ARGS=	docdir="${DOCSDIR}" exdir="${EXAMPLESDIR}"
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-CONFLICTS=	emboss-[0-9]*
+CONFLICTS=	emboss
 
 CFLAGS+=	-fPIC
 

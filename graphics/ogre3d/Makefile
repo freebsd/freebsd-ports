@@ -17,7 +17,7 @@ BROKEN_FreeBSD_12_powerpc64=	fails to build: /usr/local/bin/ld: /usr/lib/crt1.o:
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2
 
-CONFLICTS=	ogre3d19-[0-9]*
+CONFLICTS=	ogre3d19
 
 USES=		cmake compiler:c++11-lib pkgconfig sdl xorg
 USE_LDCONFIG=	yes

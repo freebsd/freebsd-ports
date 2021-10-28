@@ -54,7 +54,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tnef:converters/tnef \
 		wget:ftp/wget
 
-CONFLICTS=	MailScanner-devel-[0-9]*
+CONFLICTS=	MailScanner-devel
 
 USES=		cpe perl5 shebangfix
 SHEBANG_GLOB=	* usr/lib/MailScanner/init/* usr/lib/MailScanner/wrapper/* \

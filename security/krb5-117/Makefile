@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2022-02-01
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[3-6]-[0-9]* \
+CONFLICTS=		heimdal srp krb5-11[3-6] \
 			krb5-1.[0-9]* krb5-devel-*
 CONFLICTS_BUILD=	boringssl-*
 

@@ -12,7 +12,7 @@ COMMENT=	Statistic analyzer for daemons log files similar to SARG
 
 LICENSE=	GPLv3
 
-CONFLICTS=	free-sa-[0-9]*
+CONFLICTS=	free-sa
 
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}

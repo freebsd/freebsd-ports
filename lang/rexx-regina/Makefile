@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-addon-dir=${PREFIX}/lib/Regina-REXX/addons
 CONFIGURE_ENV=	ac_cv_c_char_unsigned=yes
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	rexx-imc-[0-0]* oorexx-[0-9]*
+CONFLICTS=	rexx-imc-[0-0]* oorexx
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

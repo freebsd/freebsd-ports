@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lang gmake localbase qt:5
 USE_QT=		core qmake_build
 
-CONFLICTS=	gpsbabel14-[0-9]*
+CONFLICTS=	gpsbabel14
 
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes

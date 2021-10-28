@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--enable-pam-config=freebsd \
 		--enable-jpeg --enable-pixman --enable-rfxcodec --enable-painter
 LDFLAGS+=	-lssl
-CONFLICTS=	xrdp-[0-9]*
+CONFLICTS=	xrdp
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
 
 USES=		libtool perl5 gmake tar:bzip2 ssl
-CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
+CONFLICTS=	pserv synce-librapi2
 CONFLICTS_INSTALL=	ports-tools # bin/pcheck
 
 GNU_CONFIGURE=	yes

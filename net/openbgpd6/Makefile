@@ -20,7 +20,7 @@ SUB_FILES=	pkg-message
 USERS=		_bgpd
 GROUPS=		_bgpd
 
-CONFLICTS=	zebra-[0-9]* quagga-[0-9]*
+CONFLICTS=	zebra quagga
 
 OPTIONS_DEFINE=		IPV6LLPEER
 OPTIONS_DEFAULT=	IPV6LLPEER

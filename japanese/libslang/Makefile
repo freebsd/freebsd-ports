@@ -21,7 +21,7 @@ INSTALL_TARGET=	install-elf
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	libslang2-[0-9]* libslang-1.*[^j]*
+CONFLICTS=	libslang2 libslang-1.*[^j]*
 
 DOCSDIR=	${PREFIX}/share/doc/slang
 

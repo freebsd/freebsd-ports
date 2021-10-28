@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpcre.so:devel/pcre
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS?=	ja-awffull-[0-9]*
+CONFLICTS?=	ja-awffull
 
 FONTDEFAULT?=	${LOCALBASE}/share/fonts/bitstream-vera/VeraBd.ttf
 FONTLABEL?=	${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf

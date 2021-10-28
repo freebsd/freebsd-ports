@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-CONFLICTS=	play-[0-9]*
+CONFLICTS=	play
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf cpe libtool localbase:ldflags pkgconfig

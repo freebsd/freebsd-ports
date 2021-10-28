@@ -23,7 +23,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	userquick.pl smbrepair.pl userneu.pl
 
-CONFLICTS=	userneu-devel-[0-9]*
+CONFLICTS=	userneu-devel
 
 SCRIPTS=	userneu.pl userquick.pl smbrepair.pl
 DOCS=		BUGS CHANGES CREDITS REQUIREMENTS TODO \

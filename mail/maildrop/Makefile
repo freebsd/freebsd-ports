@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-maildirquota
 INSTALL_TARGET=	install-strip
 
-CONFLICTS=	courier-0.65* libunicode-[0-9]*
+CONFLICTS=	courier-0.65* libunicode
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 

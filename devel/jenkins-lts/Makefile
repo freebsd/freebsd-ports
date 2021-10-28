@@ -18,7 +18,7 @@ CPE_EDITION=	lts
 USE_JAVA=	yes
 USE_RC_SUBR=	jenkins
 
-CONFLICTS=	jenkins-[0-9]*
+CONFLICTS=	jenkins
 
 NO_ARCH=	yes
 NO_BUILD=	yes

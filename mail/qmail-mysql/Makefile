@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-mysql
 
 COMMENT=	Secure, reliable, and fast MTA for UNIX systems with MySQL support
 
-CONFLICTS=	*qmail-[0-9]* qmail-ldap-[0-9]* qmail-spamcontrol-[0-9]* *qmail-tls-[0-9]*
+CONFLICTS=	*qmail qmail-ldap qmail-spamcontrol *qmail-tls
 
 MYSQL_PATCH_VERSION=	1.1.15
 

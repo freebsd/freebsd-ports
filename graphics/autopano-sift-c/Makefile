@@ -11,7 +11,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libpano13.so:graphics/libpano13
 
-CONFLICTS=	autopano-sift-[0-9]*
+CONFLICTS=	autopano-sift
 
 USE_GNOME=	libxml2
 USES=		cmake gnome jpeg

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		cpe groff libtool
 
-CONFLICTS=	libasr-devel-[0-9]*
+CONFLICTS=	libasr-devel
 
 CPE_VENDOR=	openbsd
 

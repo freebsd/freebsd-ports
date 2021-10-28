@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	GC
 GC_DESC=	Use Boehm-Weiser garbage collection package
 DEBUG_DESC=	Internal SEE library debugging
 
-CONFLICTS=	see-devel-[0-9]*
+CONFLICTS=	see-devel
 
 USES=		libtool pathfix perl5
 USE_LDCONFIG=	yes

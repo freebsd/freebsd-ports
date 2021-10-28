@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS?=	libpangocairo-1.0.so:x11-toolkits/pango
 
-CONFLICTS=	xboard-[0-9]*
+CONFLICTS=	xboard
 
 MASTERDIR=	${.CURDIR}/../xboard
 DISTINFO_FILE=	${.CURDIR}/distinfo

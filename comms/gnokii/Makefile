@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--enable-security
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
 
-CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
+CONFLICTS=	smstools sendsms
 
 FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
 		common/cfgreader.c

@@ -12,7 +12,7 @@ DISTNAME=	Crypt-Tea-${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	The Tiny Encryption Algorithm in Perl and JavaScript
 
-CONFLICTS=	p5-Crypt-Tea_JS-[0-9]*
+CONFLICTS=	p5-Crypt-Tea_JS
 
 USES=		perl5
 USE_PERL5=	configure

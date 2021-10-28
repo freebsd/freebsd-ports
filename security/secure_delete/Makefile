@@ -12,7 +12,7 @@ COMMENT=	Secure data deletion toolkit
 
 LICENSE=	GPLv2 # mentioned in manpages
 
-CONFLICTS=	srm-[0-9]*
+CONFLICTS=	srm
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2 \
 		libfreetype.so:print/freetype2
 
-CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
+CONFLICTS=	ponscripter # doesn't exist yet
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	07th-mod

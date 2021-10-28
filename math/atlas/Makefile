@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:math/lapack:checksum
 USES=		fortran gmake tar:bzip2
 USE_GCC=	yes
 
-CONFLICTS=	cblas-[0-9]*
+CONFLICTS=	cblas
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
 OPTIONS_DEFINE=		DOCS DATA ARCHDEF TSC WALL_TIMER

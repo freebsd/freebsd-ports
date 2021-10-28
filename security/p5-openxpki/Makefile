@@ -93,9 +93,9 @@ _conf_VERSION=	3.12
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki
 
-CONFLICTS=	p5-openxpki-client-[0-9]* p5-openxpki-client-deployment-[0-9]* \
-		p5-openxpki-client-html-mason-[0-9]* \
-		p5-openxpki-client-scep-[0-9]*
+CONFLICTS=	p5-openxpki-client p5-openxpki-client-deployment \
+		p5-openxpki-client-html-mason \
+		p5-openxpki-client-scep
 
 NO_ARCH=	yes
 # stay with stable versions only:

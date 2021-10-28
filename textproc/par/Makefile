@@ -10,7 +10,7 @@ DISTNAME=	Par-${PORTVERSION}
 MAINTAINER=	markm@FreeBSD.org
 COMMENT=	Paragraph reformatter for email
 
-CONFLICTS=	quake-par-[0-9]*
+CONFLICTS=	quake-par
 
 ALL_TARGET=	#
 PLIST_FILES=	bin/par \

@@ -27,7 +27,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 
-CONFLICTS=	dbmail22-[0-9]*
+CONFLICTS=	dbmail22
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE
 OPTIONS_DEFAULT=	SIEVE

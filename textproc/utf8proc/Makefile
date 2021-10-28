@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 MAKE_ARGS=	prefix=${PREFIX}
 
-CONFLICTS=	libutf8proc-[0-9]*
+CONFLICTS=	libutf8proc
 
 PLIST_FILES=	include/utf8proc.h \
 		lib/libutf8proc.a \

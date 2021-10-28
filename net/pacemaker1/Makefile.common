@@ -22,7 +22,7 @@ RUN_DEPENDS=		bash:shells/bash \
 			getopt>=0:misc/getopt \
 			ocf-tester:net-mgmt/resource-agents
 
-CONFLICTS=		heartbeat-[0-9]*
+CONFLICTS=		heartbeat
 
 USERS=			hacluster
 GROUPS=			haclient

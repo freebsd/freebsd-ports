@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.chillispot.info/download/ \
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
-CONFLICTS=	coovachilli-[0-9]*
+CONFLICTS=	coovachilli
 
 USES=		compiler:nestedfct shebangfix
 SHEBANG_FILES=	doc/hotspotlogin.cgi

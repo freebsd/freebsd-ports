@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/bin/anytopnm:graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	ja-latex2html-[0-9]*
+CONFLICTS=	ja-latex2html
 
 USES=		ghostscript perl5
 USE_TEX=	latex dvipsk texhash

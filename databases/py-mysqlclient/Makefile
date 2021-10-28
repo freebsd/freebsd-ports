@@ -15,7 +15,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	*
 
-CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]* py*-MySQLdb
+CONFLICTS=	py*-MySQLdb py*-MySQLdb5[0-9] py*-MySQLdb
 
 OPTIONS_DEFINE=		DOCS
 
