@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.6-3.8
 USE_PYTHON=	distutils autoplist cython
 TEST_TARGET=	check  # test fails
 
