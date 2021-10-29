@@ -1,10 +1,9 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
 
 PORTNAME=	rpm
-PORTVERSION=	4.16.1.3
-PORTREVISION=	1
+PORTVERSION=	4.17.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.16.x/
+MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.17.x/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -22,16 +21,15 @@ RUN_DEPENDS=	bash:shells/bash \
 		gxargs:misc/findutils
 
 USES=		alias bdb sqlite cpe gmake iconv libarchive libtool \
-		lua:52+ pathfix pkgconfig shebangfix tar:bzip2
+		lua:53+ pathfix pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
-SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
+SHEBANG_FILES=	scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pkgconfigdeps.sh \
 		scripts/fontconfig.prov scripts/perl.prov scripts/perl.req  \
-		scripts/pythondistdeps.py scripts/find-lang.sh scripts/ocamldeps.sh \
-		scripts/find-debuginfo.sh
+		scripts/find-lang.sh scripts/ocamldeps.sh
 CONFIGURE_ARGS=	--enable-sqlite=yes\
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \
@@ -60,12 +58,11 @@ OPTIONS_DEFINE=	PYTHON PLUGINS NLS DOCS
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
-PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python
-
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 NLS_LIBS=		-lintl
+
+PYTHON_RUN_DEPENDS=    ${LOCALBASE}/lib/rpm/pythondistdeps.py:archivers/py-python-rpm-packaging
 
 PLUGINS_CONFIGURE_ENABLE=plugins
 PLUGINS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
@@ -74,18 +71,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/ __GLIBC__.*/& || defined(__FreeBSD__)/' \
 		${WRKSRC}/system.h
-	@${REINPLACE_CMD} -e 's/\<xargs\>/gxargs/g' ${WRKSRC}/scripts/brp-python-bytecompile \
+	@${REINPLACE_CMD} -e 's/\<xargs\>/gxargs/g' \
 		${WRKSRC}/scripts/brp-strip-static-archive \
 		${WRKSRC}/scripts/check-buildroot \
 		${WRKSRC}/scripts/check-rpaths \
-		${WRKSRC}/scripts/find-debuginfo.sh \
 		${WRKSRC}/scripts/vpkg-provides.sh
-
-post-install-PYTHON-off:
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rpm/pythondistdeps.py
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} librpm/html ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} librpm/html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
