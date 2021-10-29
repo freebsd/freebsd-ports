@@ -42,4 +42,12 @@ DMAP_DESC=			DMAP (DAAP, DPAP & DACP) support with libdmapsharing
 DMAP_MESON_YES=			enable-dmap
 DMAP_LIB_DEPENDS=		libdmapsharing-3.0.so:net/libdmapsharing
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MTRACKER}
+PLIST_SUB+= TRACKER="@comment "
+.else
+PLIST_SUB+= TRACKER=""
+.endif
+
+.include <bsd.port.post.mk>
