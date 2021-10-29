@@ -1,9 +1,9 @@
---- Makefile.orig	2021-03-15 00:24:39 UTC
+--- Makefile.orig	2021-10-22 20:47:18 UTC
 +++ Makefile
-@@ -1,7 +1,8 @@
--all: yt-dlp doc pypi-files
-+#all: yt-dlp doc pypi-files
-+all: yt-dlp completions
+@@ -1,14 +1,15 @@
+-all: lazy-extractors yt-dlp doc pypi-files
++#all: lazy-extractors yt-dlp doc pypi-files
++all: lazy-extractors yt-dlp
  clean: clean-test clean-dist clean-cache
  completions: completion-bash completion-fish completion-zsh
 -doc: README.md CONTRIBUTING.md issuetemplates supportedsites
@@ -11,7 +11,15 @@
  ot: offlinetest
  tar: yt-dlp.tar.gz
  
-@@ -32,17 +33,23 @@ SHAREDIR ?= $(PREFIX)/share
+ # Keep this list in sync with MANIFEST.in
+ # intended use: when building a source distribution,
+ # make pypi-files && python setup.py sdist
+-pypi-files: AUTHORS Changelog.md LICENSE README.md README.txt supportedsites completions yt-dlp.1 devscripts/* test/*
++#pypi-files: AUTHORS Changelog.md LICENSE README.md README.txt supportedsites completions yt-dlp.1 devscripts/* test/*
+ 
+ .PHONY: all clean install test tar pypi-files completions ot offlinetest codetest supportedsites
+ 
+@@ -35,17 +36,23 @@ SHAREDIR ?= $(PREFIX)/share
  PYTHON ?= /usr/bin/env python3
  
  # set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
@@ -22,25 +30,25 @@
  # set markdown input format to "markdown-smart" for pandoc version 2 and to "markdown" for pandoc prior to version 2
  MARKDOWN = $(shell if [ `pandoc -v | head -n1 | cut -d" " -f2 | head -c1` = "2" ]; then echo markdown-smart; else echo markdown; fi)
  
--install: yt-dlp yt-dlp.1 completions
-+#install: yt-dlp yt-dlp.1 completions
-+install: yt-dlp completions
- 	install -Dm755 yt-dlp $(DESTDIR)$(BINDIR)
--	install -Dm644 yt-dlp.1 $(DESTDIR)$(MANDIR)/man1
+-install: lazy-extractors yt-dlp yt-dlp.1 completions
++install: lazy-extractors yt-dlp completions
+ 	install -Dm755 yt-dlp $(DESTDIR)$(BINDIR)/yt-dlp
+-	install -Dm644 yt-dlp.1 $(DESTDIR)$(MANDIR)/man1/yt-dlp.1
 -	install -Dm644 completions/bash/yt-dlp $(DESTDIR)$(SHAREDIR)/bash-completion/completions/yt-dlp
-+	install -d $(DESTDIR)$(SYSCONFDIR)/bash_completion.d
++#	install -Dm644 yt-dlp.1 $(DESTDIR)$(MANDIR)/man1/yt-dlp.1
 +#	install -Dm644 completions/bash/yt-dlp $(DESTDIR)$(SHAREDIR)/bash-completion/completions/yt-dlp
++	mkdir -p  $(DESTDIR)$(SYSCONFDIR)/bash_completion.d
 +	install -Dm644 completions/bash/yt-dlp $(DESTDIR)$(SYSCONFDIR)/bash_completion.d/yt-dlp
-+	install -d $(DESTDIR)$(SHAREDIR)/zsh/site-functions
++	mkdir -p $(DESTDIR)$(SHAREDIR)/zsh/site-functions
  	install -Dm644 completions/zsh/_yt-dlp $(DESTDIR)$(SHAREDIR)/zsh/site-functions/_yt-dlp
 -	install -Dm644 completions/fish/yt-dlp.fish $(DESTDIR)$(SHAREDIR)/fish/vendor_completions.d/yt-dlp.fish
-+	install -d $(DESTDIR)$(SYSCONFDIR)/fish/completions
-+#	install -Dm644 completions/fish/yt-dlp.fish $(DESTDIR)$(SYSCONFDIR)/fish/vendor_completions.d/yt-dlp.fish
++#	install -Dm644 completions/fish/yt-dlp.fish $(DESTDIR)$(SHAREDIR)/fish/vendor_completions.d/yt-dlp.fish
++	mkdir -p $(DESTDIR)$(SYSCONFDIR)/fish/completions
 +	install -Dm644 completions/fish/yt-dlp.fish $(DESTDIR)$(SYSCONFDIR)/fish/completions/yt-dlp.fish
  
  codetest:
  	flake8 .
-@@ -74,36 +81,37 @@ yt-dlp: yt_dlp/*.py yt_dlp/*/*.py
+@@ -65,37 +72,38 @@ yt-dlp: yt_dlp/*.py yt_dlp/*/*.py
  	done
  	touch -t 200001010101 zip/yt_dlp/*.py zip/yt_dlp/*/*.py
  	mv zip/yt_dlp/__main__.py zip/
@@ -63,18 +71,20 @@
 +#CONTRIBUTING.md: README.md
 +#	$(PYTHON) devscripts/make_contributing.py README.md CONTRIBUTING.md
  
--issuetemplates: devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.md .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.md .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.md .github/ISSUE_TEMPLATE_tmpl/4_bug_report.md .github/ISSUE_TEMPLATE_tmpl/5_feature_request.md yt_dlp/version.py
--	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.md .github/ISSUE_TEMPLATE/1_broken_site.md
--	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.md .github/ISSUE_TEMPLATE/2_site_support_request.md
--	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.md .github/ISSUE_TEMPLATE/3_site_feature_request.md
--	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/4_bug_report.md .github/ISSUE_TEMPLATE/4_bug_report.md
--	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/5_feature_request.md .github/ISSUE_TEMPLATE/5_feature_request.md
-+#issuetemplates: devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.md .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.md .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.md .github/ISSUE_TEMPLATE_tmpl/4_bug_report.md .github/ISSUE_TEMPLATE_tmpl/5_feature_request.md yt_dlp/version.py
-+#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.md .github/ISSUE_TEMPLATE/1_broken_site.md
-+#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.md .github/ISSUE_TEMPLATE/2_site_support_request.md
-+#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.md .github/ISSUE_TEMPLATE/3_site_feature_request.md
-+#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/4_bug_report.md .github/ISSUE_TEMPLATE/4_bug_report.md
-+#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/5_feature_request.md .github/ISSUE_TEMPLATE/5_feature_request.md
+-issuetemplates: devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.yml .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.yml .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.yml .github/ISSUE_TEMPLATE_tmpl/4_bug_report.yml .github/ISSUE_TEMPLATE_tmpl/5_feature_request.yml yt_dlp/version.py
+-	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.yml .github/ISSUE_TEMPLATE/1_broken_site.yml
+-	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.yml .github/ISSUE_TEMPLATE/2_site_support_request.yml
+-	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.yml .github/ISSUE_TEMPLATE/3_site_feature_request.yml
+-	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/4_bug_report.yml .github/ISSUE_TEMPLATE/4_bug_report.yml
+-	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/5_feature_request.yml .github/ISSUE_TEMPLATE/5_feature_request.yml
+-	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/6_question.yml .github/ISSUE_TEMPLATE/6_question.yml
++#issuetemplates: devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.yml .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.yml .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.yml .github/ISSUE_TEMPLATE_tmpl/4_bug_report.yml .github/ISSUE_TEMPLATE_tmpl/5_feature_request.yml yt_dlp/version.py
++#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/1_broken_site.yml .github/ISSUE_TEMPLATE/1_broken_site.yml
++#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/2_site_support_request.yml .github/ISSUE_TEMPLATE/2_site_support_request.yml
++#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/3_site_feature_request.yml .github/ISSUE_TEMPLATE/3_site_feature_request.yml
++#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/4_bug_report.yml .github/ISSUE_TEMPLATE/4_bug_report.yml
++#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/5_feature_request.yml .github/ISSUE_TEMPLATE/5_feature_request.yml
++#	$(PYTHON) devscripts/make_issue_template.py .github/ISSUE_TEMPLATE_tmpl/6_question.yml .github/ISSUE_TEMPLATE/6_question.yml
  
  supportedsites:
  	$(PYTHON) devscripts/make_supportedsites.py supportedsites.md

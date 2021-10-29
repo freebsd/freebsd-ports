@@ -1,6 +1,6 @@
---- yt_dlp/options.py.orig	2021-09-25 00:59:59 UTC
+--- yt_dlp/options.py.orig	2021-10-22 20:47:18 UTC
 +++ yt_dlp/options.py
-@@ -202,10 +202,6 @@ def parseOpts(overrideArguments=None):
+@@ -203,10 +203,6 @@ def parseOpts(overrideArguments=None):
          action='version',
          help='Print program version and exit')
      general.add_option(

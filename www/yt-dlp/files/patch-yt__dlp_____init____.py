@@ -1,6 +1,6 @@
---- yt_dlp/__init__.py.orig	2021-06-01 14:59:03 UTC
+--- yt_dlp/__init__.py.orig	2021-10-22 20:47:18 UTC
 +++ yt_dlp/__init__.py
-@@ -660,17 +660,9 @@ def _real_main(argv=None):
+@@ -756,17 +756,9 @@ def _real_main(argv=None):
          if opts.rm_cachedir:
              ydl.cache.remove()
  
