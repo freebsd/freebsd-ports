@@ -1,7 +1,7 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
 
 PORTNAME=	freebsd-doc-all
-PORTVERSION=	20210918
+PORTVERSION=	20211029
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 
