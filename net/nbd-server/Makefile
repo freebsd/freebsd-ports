@@ -1,7 +1,7 @@
 # Created by: Christian Laursen <xi@borderworlds.dk>
 
 PORTNAME=	nbd
-PORTVERSION=	3.21
+PORTVERSION=	3.22
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -13,7 +13,7 @@ COMMENT=	Server for the Linux network block device (nbd)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gnome pkgconfig
+USES=		bison:wrapper cpe gnome pkgconfig
 CPE_VENDOR=	wouter_verhelst
 USE_GNOME=	glib20
 
