@@ -1,5 +1,5 @@
 PORTNAME=	mattermost-server
-PORTVERSION=	5.38.2
+PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 USES=		go:modules
 
 GO_TARGET=	./cmd/mattermost ./scripts/config_generator
-GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/v5/model.BuildNumber=${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/v6/model.BuildNumber=${PORTVERSION}"
 
 USE_RC_SUBR=	mattermostd
 

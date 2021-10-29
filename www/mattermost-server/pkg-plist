@@ -23,7 +23,6 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/i18n/zh-CN.json
 %%WWWDIR%%/i18n/zh-TW.json
 %%WWWDIR%%/templates/cloud_trial_end_warning.html
-%%WWWDIR%%/templates/cloud_trial_ended_email.html
 %%WWWDIR%%/templates/cloud_upgrade_request_email.html
 %%WWWDIR%%/templates/cloud_welcome_email.html
 %%WWWDIR%%/templates/deactivate_body.html
