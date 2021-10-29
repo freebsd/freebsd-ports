@@ -25,7 +25,6 @@ bin/pclock
 @sample %%ETCDIR%%/NsCDE-Menus.conf.sample
 @sample %%ETCDIR%%/NsCDE-Monitors.conf.sample
 @sample %%ETCDIR%%/NsCDE-Mousebindings.conf.sample
-@sample %%ETCDIR%%/NsCDE-Pager-GlobalPager.conf.sample
 @sample %%ETCDIR%%/NsCDE-Pager-LocalPager.conf.sample
 @sample %%ETCDIR%%/NsCDE-Pager-WspLocPager.conf.sample
 @sample %%ETCDIR%%/NsCDE-Script.conf.sample
@@ -34,7 +33,7 @@ bin/pclock
 @sample %%ETCDIR%%/NsCDE.conf.sample
 @sample %%ETCDIR%%/Subpanels.actions.sample
 @sample %%ETCDIR%%/WSM.conf.sample
-%%ETCDIR%%/xdg/menus/nscde-applications.menu
+@sample %%ETCDIR%%/xdg/menus/nscde-applications.menu.sample
 lib/nscde/XOverrideFontCursor.so
 lib/nscde/progbits/FullPalette.xpm
 lib/nscde/progbits/SplashBG1.xpm
@@ -311,6 +310,7 @@ lib/nscde/scripts/ExecDialog
 lib/nscde/scripts/FilePicker
 lib/nscde/scripts/FontMgr
 lib/nscde/scripts/FpLite
+lib/nscde/scripts/GWMOptions
 lib/nscde/scripts/GeometryMgr
 lib/nscde/scripts/InputForm
 lib/nscde/scripts/KeyboardMgr
@@ -335,6 +335,7 @@ lib/nscde/scripts/WSM-8
 lib/nscde/scripts/WaitNotice
 lib/nscde/scripts/WindowMgr
 lib/nscde/scripts/WsPgMgr
+libexec/nscde/GWM.sh
 libexec/nscde/Notifier.sh
 libexec/nscde/Splash.sh
 libexec/nscde/appfinder
@@ -359,6 +360,7 @@ libexec/nscde/strip_icon_path
 libexec/nscde/style_managers.shlib
 libexec/nscde/subpanel_menuitem_props
 libexec/nscde/themegen.py
+libexec/nscde/xrandr_backer
 sbin/confget.py
 sbin/confset.py
 sbin/fpclock
@@ -379,15 +381,21 @@ share/applications/NsCDE-Editor.desktop
 share/applications/NsCDE-Exec.desktop
 share/applications/NsCDE-FileMgr.desktop
 share/applications/NsCDE-FvwmConsole.desktop
+share/applications/NsCDE-GWM.desktop
+share/applications/NsCDE-MailReader.desktop
 share/applications/NsCDE-NProcMgr.desktop
 share/applications/NsCDE-StyleMgr.desktop
 share/applications/NsCDE-Sysinfo.desktop
+share/applications/NsCDE-TaskMgr.desktop
 share/applications/NsCDE-Terminal.desktop
 share/applications/NsCDE-Volumectrl.desktop
+share/applications/NsCDE-WebBrowser.desktop
 share/applications/NsCDE-WsPgMgr.desktop
 share/applications/WatchErrors.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NsCDE.pdf
 %%PORTDOCS%%%%DOCSDIR%%/NsCDE.txt
+%%PORTDOCS%%%%DOCSDIR%%/help/GWM_Keybindings.help
+%%PORTDOCS%%%%DOCSDIR%%/help/StyleMgr_Keybindings.help
 %%PORTDOCS%%%%DOCSDIR%%/html/AppMenus_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Keymenu_actions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Additional-Software.html
@@ -414,6 +422,7 @@ share/applications/WatchErrors.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-FrontPanel_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Functions_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-GUI-Tools.html
+%%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-GWM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-GeometryMgr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Helper-Dialogs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-IconMan_conf.html
@@ -425,6 +434,7 @@ share/applications/WatchErrors.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Installation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Integration-Custom.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Integration-Gtk-Qt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Integration-Mozilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Integrations.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Keybindings_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-KeyboardMgr.html
@@ -439,7 +449,6 @@ share/applications/WatchErrors.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-NProcMgr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Occupy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-PGM.html
-%%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Pager-GlobalPager_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Pager-LocalPager_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-Pager-WspLocPager_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NsCDE-PaletteDialog.html
@@ -477,6 +486,7 @@ share/applications/WatchErrors.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.colormgr.local
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.nocsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.session-integrations
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doas.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/compton-integration/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/compton-integration/compton.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fvwm3-per-monitor/NsCDE-Backer.conf
@@ -1268,6 +1278,8 @@ share/icons/CDE/Dtjpegi.m_m.bm
 share/icons/CDE/Dtjpegi.t.bm
 share/icons/CDE/Dtjpegi.t.pm
 share/icons/CDE/Dtjpegi.t_m.bm
+share/icons/CDE/Dtkey.l.bm
+share/icons/CDE/Dtkey.l.pm
 share/icons/CDE/Dtkey.m.bm
 share/icons/CDE/Dtkey.m.pm
 share/icons/CDE/Dtkey.m_m.bm
@@ -2005,6 +2017,7 @@ share/icons/NsCDE/SelectedXL.xpm
 share/icons/NsCDE/StyleMgr-Backdrop.xpm
 share/icons/NsCDE/StyleMgr-Beep.xpm
 share/icons/NsCDE/StyleMgr-Color.xpm
+share/icons/NsCDE/StyleMgr-Desks.xpm
 share/icons/NsCDE/StyleMgr-Font.xpm
 share/icons/NsCDE/StyleMgr-Keybd.xpm
 share/icons/NsCDE/StyleMgr-Mouse.xpm
@@ -2519,6 +2532,7 @@ share/icons/freedesktop/theme/NsCDE/16x16/actions/zoom-original.png
 share/icons/freedesktop/theme/NsCDE/16x16/actions/zoom-out.png
 share/icons/freedesktop/theme/NsCDE/16x16/animations/gnome-spinner.png
 share/icons/freedesktop/theme/NsCDE/16x16/animations/process-working.png
+share/icons/freedesktop/theme/NsCDE/16x16/apps/Mail.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/access.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/accessibility-directory.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/accessories-calculator.png
@@ -2550,6 +2564,7 @@ share/icons/freedesktop/theme/NsCDE/16x16/apps/gnome-settings-theme.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/gnome-terminal.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/gnome-window-manager.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/gucharmap.png
+share/icons/freedesktop/theme/NsCDE/16x16/apps/gwm.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/help-browser.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/kcalc.png
 share/icons/freedesktop/theme/NsCDE/16x16/apps/kcharselect.png
@@ -2865,6 +2880,9 @@ share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-octet-stream.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-ogg.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-pdf.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-pgp-encrypted.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-pgp-keys.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-pkix-cerl.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-pkix-cert.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-postscript.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-rss+xml.png
@@ -2937,6 +2955,7 @@ share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-kword.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-lha.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-lzma-compressed.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-lzop.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-m4.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-mono-develop-xib.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-ms-dos-executable.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-mswrite.png
@@ -2945,6 +2964,8 @@ share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-package-list.p
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-pak.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-perl.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-php.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-pkcs7-certificates.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-planner.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-python-bytecode.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-rar.png
@@ -2963,6 +2984,8 @@ share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-trash.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-troff-man.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-tzo.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-vnc.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-x509-ca-cert.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-x509-user-cert.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-xpinstall.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-xz-compressed-tar.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-x-xz-compressed.png
@@ -3843,6 +3866,7 @@ share/icons/freedesktop/theme/NsCDE/22x22/actions/zoom-original.png
 share/icons/freedesktop/theme/NsCDE/22x22/actions/zoom-out.png
 share/icons/freedesktop/theme/NsCDE/22x22/animations/gnome-spinner.png
 share/icons/freedesktop/theme/NsCDE/22x22/animations/process-working.png
+share/icons/freedesktop/theme/NsCDE/22x22/apps/Mail.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/access.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/accessibility-directory.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/accessories-calculator.png
@@ -3874,6 +3898,7 @@ share/icons/freedesktop/theme/NsCDE/22x22/apps/gnome-settings-theme.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/gnome-terminal.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/gnome-window-manager.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/gucharmap.png
+share/icons/freedesktop/theme/NsCDE/22x22/apps/gwm.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/help-browser.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/kcalc.png
 share/icons/freedesktop/theme/NsCDE/22x22/apps/kcharselect.png
@@ -4189,6 +4214,9 @@ share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-octet-stream.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-ogg.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-pdf.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-pgp-encrypted.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-pgp-keys.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-pkix-cerl.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-pkix-cert.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-postscript.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-rss+xml.png
@@ -4262,6 +4290,7 @@ share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-kword.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-lha.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-lzma-compressed.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-lzop.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-m4.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-mono-develop-xib.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-ms-dos-executable.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-mswrite.png
@@ -4270,6 +4299,8 @@ share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-package-list.p
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-pak.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-perl.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-php.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-pkcs7-certificates.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-planner.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-python-bytecode.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-rar.png
@@ -4288,6 +4319,8 @@ share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-trash.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-troff-man.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-tzo.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-vnc.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-x509-ca-cert.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-x509-user-cert.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-xpinstall.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-xz-compressed-tar.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-x-xz-compressed.png
@@ -5165,6 +5198,7 @@ share/icons/freedesktop/theme/NsCDE/24x24/actions/zoom-fit-best.png
 share/icons/freedesktop/theme/NsCDE/24x24/actions/zoom-in.png
 share/icons/freedesktop/theme/NsCDE/24x24/actions/zoom-original.png
 share/icons/freedesktop/theme/NsCDE/24x24/actions/zoom-out.png
+share/icons/freedesktop/theme/NsCDE/24x24/apps/Mail.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/access.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/accessibility-directory.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/accessories-calculator.png
@@ -5196,6 +5230,7 @@ share/icons/freedesktop/theme/NsCDE/24x24/apps/gnome-settings-theme.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/gnome-terminal.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/gnome-window-manager.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/gucharmap.png
+share/icons/freedesktop/theme/NsCDE/24x24/apps/gwm.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/help-browser.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/kcalc.png
 share/icons/freedesktop/theme/NsCDE/24x24/apps/kcharselect.png
@@ -5508,6 +5543,9 @@ share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-octet-stream.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-ogg.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-pdf.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-pgp-encrypted.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-pgp-keys.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-pkix-cerl.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-pkix-cert.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-postscript.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-rss+xml.png
@@ -5581,6 +5619,7 @@ share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-kword.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-lha.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-lzma-compressed.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-lzop.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-m4.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-mono-develop-xib.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-ms-dos-executable.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-mswrite.png
@@ -5589,6 +5628,8 @@ share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-package-list.p
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-pak.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-perl.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-php.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-pkcs7-certificates.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-planner.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-python-bytecode.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-rar.png
@@ -5607,6 +5648,8 @@ share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-trash.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-troff-man.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-tzo.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-vnc.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-x509-ca-cert.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-x509-user-cert.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-xpinstall.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-xz-compressed-tar.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-x-xz-compressed.png
@@ -7185,6 +7228,7 @@ share/icons/freedesktop/theme/NsCDE/32x32/actions/zoom-original.png
 share/icons/freedesktop/theme/NsCDE/32x32/actions/zoom-out.png
 share/icons/freedesktop/theme/NsCDE/32x32/animations/gnome-spinner.png
 share/icons/freedesktop/theme/NsCDE/32x32/animations/process-working.png
+share/icons/freedesktop/theme/NsCDE/32x32/apps/Mail.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/access.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/accessibility-directory.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/accessories-calculator.png
@@ -7216,6 +7260,7 @@ share/icons/freedesktop/theme/NsCDE/32x32/apps/gnome-settings-theme.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/gnome-terminal.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/gnome-window-manager.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/gucharmap.png
+share/icons/freedesktop/theme/NsCDE/32x32/apps/gwm.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/help-browser.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/kcalc.png
 share/icons/freedesktop/theme/NsCDE/32x32/apps/kcharselect.png
@@ -7531,6 +7576,9 @@ share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-octet-stream.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-ogg.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-pdf.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-pgp-encrypted.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-pgp-keys.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-pkix-cerl.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-pkix-cert.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-postscript.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-rss+xml.png
@@ -7604,6 +7652,7 @@ share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-kword.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-lha.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-lzma-compressed.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-lzop.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-m4.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-mono-develop-xib.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-ms-dos-executable.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-mswrite.png
@@ -7612,6 +7661,8 @@ share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-package-list.p
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-pak.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-perl.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-php.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-pkcs7-certificates.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-planner.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-python-bytecode.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-rar.png
@@ -7630,6 +7681,8 @@ share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-trash.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-troff-man.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-tzo.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-vnc.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-x509-ca-cert.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-x509-user-cert.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-xpinstall.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-xz-compressed-tar.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-x-xz-compressed.png
@@ -8503,6 +8556,7 @@ share/icons/freedesktop/theme/NsCDE/48x48/actions/zoom-original.png
 share/icons/freedesktop/theme/NsCDE/48x48/actions/zoom-out.png
 share/icons/freedesktop/theme/NsCDE/48x48/animations/gnome-spinner.png
 share/icons/freedesktop/theme/NsCDE/48x48/animations/process-working.png
+share/icons/freedesktop/theme/NsCDE/48x48/apps/Mail.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/access.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/accessibility-directory.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/accessories-calculator.png
@@ -8534,6 +8588,7 @@ share/icons/freedesktop/theme/NsCDE/48x48/apps/gnome-settings-theme.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/gnome-terminal.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/gnome-window-manager.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/gucharmap.png
+share/icons/freedesktop/theme/NsCDE/48x48/apps/gwm.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/help-browser.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/kcalc.png
 share/icons/freedesktop/theme/NsCDE/48x48/apps/kcharselect.png
@@ -8850,6 +8905,9 @@ share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-octet-stream.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-ogg.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-pdf.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-pgp-encrypted.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-pgp-keys.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-pkix-cerl.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-pkix-cert.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-postscript.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-rss+xml.png
@@ -8924,6 +8982,7 @@ share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-kword.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-lha.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-lzma-compressed.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-lzop.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-m4.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-mono-develop-xib.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-ms-dos-executable.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-mswrite.png
@@ -8932,6 +8991,8 @@ share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-package-list.p
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-pak.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-perl.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-php.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-pkcs12.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-pkcs7-certificates.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-planner.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-python-bytecode.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-rar.png
@@ -8951,6 +9012,8 @@ share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-trash.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-troff-man.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-tzo.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-vnc.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-x509-ca-cert.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-x509-user-cert.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-xpinstall.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-xz-compressed-tar.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-x-xz-compressed.png
@@ -9472,6 +9535,7 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/backdrops/BrickWall.pm
 %%DATADIR%%/backdrops/BrokenIce.pm
 %%DATADIR%%/backdrops/Bubbles.pm
+%%DATADIR%%/backdrops/Buckles.pm
 %%DATADIR%%/backdrops/Burl.pm
 %%DATADIR%%/backdrops/Canvas.pm
 %%DATADIR%%/backdrops/Carpet.pm
@@ -9674,6 +9738,31 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/config_templates/app-defaults/xfig.tmpl
 %%DATADIR%%/config_templates/colormgr.local
 %%DATADIR%%/config_templates/fontmgr.local
+%%DATADIR%%/config_templates/integration/firefox/ff7x_nscdeChrome.css
+%%DATADIR%%/config_templates/integration/firefox/ff7x_nscdeContent.css
+%%DATADIR%%/config_templates/integration/firefox/ff9x_nscdeChrome.css
+%%DATADIR%%/config_templates/integration/firefox/ff9x_nscdeContent.css
+%%DATADIR%%/config_templates/integration/firefox/nscdeColordefs.tmpl
+%%DATADIR%%/config_templates/integration/firefox/nscdeIcons.css
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Bookmarks.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Filepicker.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Find.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/History.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Library.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Panic.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Reload.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/ReloadActive.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/ReloadDisabled.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Sidebar.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/Throbber.gif
+%%DATADIR%%/config_templates/integration/firefox/nsicons/advanced.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/application.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/bookmark-hollow.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/bookmark.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/compose-toolbar.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/folder.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/histfile.png
+%%DATADIR%%/config_templates/integration/firefox/nsicons/mail-toolbar.png
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/gtk-2.0/cdecolors.rc
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/gtk-2.0/gtkrc
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/gtk-2.0/img/SpritesGtk2.py
@@ -10179,6 +10268,75 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/img2/resource.indexed.png
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/img2/resource.indexed.xcf
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/index.theme
+%%DATADIR%%/config_templates/integration/thunderbird/.nscdeChrome.css.swp
+%%DATADIR%%/config_templates/integration/thunderbird/nscdeChrome.css
+%%DATADIR%%/config_templates/integration/thunderbird/nscdeColordefs.tmpl
+%%DATADIR%%/config_templates/integration/thunderbird/nscdeContent.css
+%%DATADIR%%/config_templates/integration/thunderbird/nscdeIcons.css
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Account.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Cal.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/CalDelete.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/CalEdit.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/CalSync.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/ExtractCal.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/ExtractTsk.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Filepicker.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Message.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/NewTask.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Offline-Online.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Prefs.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Throbber-large.gif
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Throbber-large.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Throbber.gif
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Throbber.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/Tsk.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/abcard.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/ablist.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/addrbook.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/addressbook-toolbar-small.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/addressbook-toolbar.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/advanced.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/attachments.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/close.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/compose-toolbar-small.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/compose-toolbar.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/composition.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/display.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/flag.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/folder.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/format-buttons.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/general.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/junk.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/mail-toolbar-small.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/mail-toolbar.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/message.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/news.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/phishing.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/privacy.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/remote-addrbook.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/remote-blocked.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/rss-feed.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/secure-remote-addrbook.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/server-rss.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/server.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-cool.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-cry.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-embarassed.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-foot-in-mouth.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-frown.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-innocent.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-kiss.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-laughing.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-money-mouth.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-sealed.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-smile.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-surprised.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-tongue-out.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-undecided.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-wink.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/smileys/smiley-yell.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/tree/twisty-clsd.png
+%%DATADIR%%/config_templates/integration/thunderbird/nsicons/tree/twisty-open.png
 %%DATADIR%%/defaults/backer/Desk1-Ankh.pm
 %%DATADIR%%/defaults/backer/Desk2-BrickWall.pm
 %%DATADIR%%/defaults/backer/Desk3-Convex.pm
@@ -10221,6 +10379,8 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/desktop-directories/nscde-utility-accessibility.directory
 %%DATADIR%%/fallback/app-catalog/calculator
 %%DATADIR%%/fallback/app-catalog/filemgr
+%%DATADIR%%/fallback/app-catalog/mailreader
+%%DATADIR%%/fallback/app-catalog/taskmgr
 %%DATADIR%%/fallback/app-catalog/terminal
 %%DATADIR%%/fallback/app-catalog/text-editor
 %%DATADIR%%/fallback/app-catalog/volumectrl
@@ -10481,6 +10641,8 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-FilePicker.po
 %%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-FontMgr.mo
 %%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-FontMgr.po
+%%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-GWM.mo
+%%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-GWM.po
 %%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-GeometryMgr.mo
 %%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-GeometryMgr.po
 %%DATADIR%%/locale/hr/LC_MESSAGES/NsCDE-KeyboardMgr.mo

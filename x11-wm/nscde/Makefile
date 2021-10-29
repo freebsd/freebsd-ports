@@ -1,5 +1,5 @@
 PORTNAME=	nscde
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	x11-wm
 
 MAINTAINER=	freebsd@ny-central.org
@@ -19,12 +19,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR
 		fvwm2:x11-wm/fvwm2 \
 		gsed:textproc/gsed \
 		ksh93:shells/ast-ksh \
-		magick:graphics/ImageMagick7 \
 		pyuic5:devel/py-qt5@${PY_FLAVOR} \
 		qt5-style-plugins>=5.0.0:x11-themes/qt5-style-plugins \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		stalonetray:x11/stalonetray \
-		sudo:security/sudo \
 		xdotool:x11/xdotool \
 		xdpyinfo:x11/xdpyinfo \
 		xrdb:x11/xrdb \
@@ -53,18 +51,34 @@ SHEBANG_FILES=	Installer.ksh NsCDE/bin/confget.py NsCDE/bin/confset.py \
 DOCSDIR=	${PREFIX}/share/doc/nscde
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_DEFAULT=	DOCS EXAMPLES
+OPTIONS_DEFAULT=	DOCS EXAMPLES SUDO IMGV6
+OPTIONS_SINGLE=	ROOTAUTH IMGMAG
+OPTIONS_SINGLE_IMGMAG=		IMGV6 IMGV7
+OPTIONS_SINGLE_ROOTAUTH=	SUDO DOAS
+DOAS_DESC=	Use doas to elevate privileges
+IMGMAG_DESC=	ImageMagick release
+IMGV6_DESC=	ImageMagick version 6
+IMGV7_DESC=	ImageMagick version 7
+ROOTAUTH_DESC=	Root authorization
+SUDO_DESC=	Use sudo to elevate privileges
+
+DOAS_RUN_DEPENDS=	doas:security/doas
+IMGV6_RUN_DEPENDS=	convert:graphics/ImageMagick6
+IMGV7_RUN_DEPENDS=	magick:graphics/ImageMagick7
+SUDO_RUN_DEPENDS=	sudo:security/sudo
 
 _NSCDE_HELPERS=	Notifier.sh Splash.sh appfinder backdropmgr colorconv.py \
 		colormgr fontmgr fp_manage_subpanel fpexec fpseticon \
 		generate_app_menus generate_subpanels geticon.py getla1.py \
 		keymenu nscde-acpi nscde_get_logical_screens \
 		nscde_palette_colorgen.py nscde_setup strip_icon_path \
-		style_managers.shlib subpanel_menuitem_props themegen.py
+		style_managers.shlib subpanel_menuitem_props themegen.py \
+		xrandr_backer GWM.sh
 
 _PREFIX_FILES=	NsCDE/bin/fpclock NsCDE/bin/get_fvwm_infostore \
 		NsCDE/bin/getfont NsCDE/bin/mkpagemenu NsCDE/bin/nscde \
 		NsCDE/bin/nscde_colorpicker NsCDE/bin/xdowrapper \
+		NsCDE/config/NsCDE-Functions.conf.sample \
 		NsCDE/config/NsCDE-Main.conf.sample NsCDE/libexec/Splash.sh \
 		NsCDE/libexec/fp_manage_subpanel \
 		NsCDE/libexec/fvwm-modules/FvwmScript NsCDE/libexec/nscde_setup \
@@ -76,7 +90,6 @@ _PREFIX_FILES=	NsCDE/bin/fpclock NsCDE/bin/get_fvwm_infostore \
 		docbook/NsCDE.xml docbook/NsCDE.xsl
 
 _SHAREDOC=	NsCDE/config/FrontPanel.actions \
-		NsCDE/config/NsCDE-Functions.conf \
 		NsCDE/config/NsCDE-Keybindings.conf \
 		NsCDE/config/NsCDE-Menus.conf NsCDE/config/NsCDE-Subpanels.conf \
 		NsCDE/config/Subpanels.actions NsCDE/lib/scripts/BackdropMgr \
@@ -94,9 +107,8 @@ _SHAREDOC=	NsCDE/config/FrontPanel.actions \
 		NsCDE/lib/scripts/WSM NsCDE/lib/scripts/WSM-2 \
 		NsCDE/lib/scripts/WSM-4 NsCDE/lib/scripts/WSM-6 \
 		NsCDE/lib/scripts/WSM-8 NsCDE/lib/scripts/WindowMgr \
-		NsCDE/lib/scripts/WsPgMgr
-
-_SHAREICONS=	NsCDE/config/NsCDE-Functions.conf
+		NsCDE/lib/scripts/WsPgMgr \
+		NsCDE/libexec/GWM.sh
 
 _CURLYICONS=	NsCDE/config/NsCDE-Functions.conf NsCDE/libexec/colormgr \
 		NsCDE/libexec/subpanel_menuitem_props
@@ -124,6 +136,7 @@ _BSHARESLASH=	NsCDE/config/NsCDE-Functions.conf NsCDE/lib/scripts/BackdropMgr \
 		NsCDE/libexec/appfinder NsCDE/libexec/fontmgr \
 		NsCDE/libexec/strip_icon_path \
 		NsCDE/libexec/subpanel_menuitem_props \
+		NsCDE/libexec/GWM.sh \
 		NsCDE/share/config_templates/colormgr.local \
 		NsCDE/share/doc/NsCDE.txt README.localization
 
@@ -182,6 +195,7 @@ _BBINS=		NsCDE/config/FrontPanel.actions \
 		NsCDE/libexec/colormgr NsCDE/libexec/fontmgr \
 		NsCDE/libexec/fp_manage_subpanel NsCDE/libexec/strip_icon_path \
 		NsCDE/libexec/subpanel_menuitem_props \
+		NsCDE/libexec/GWM.sh \
 		NsCDE/share/applications/NsCDE-Exec.desktop \
 		NsCDE/share/applications/NsCDE-FvwmConsole.desktop \
 		NsCDE/share/applications/NsCDE-NProcMgr.desktop \
@@ -202,9 +216,7 @@ _CONFREF=	NsCDE/config/NsCDE-Main.conf
 _CCONFIGS=	NsCDE/libexec/colormgr
 
 _CONFIGS=	NsCDE/lib/scripts/SubpanelMgr \
-		NsCDE/lib/scripts/SubpanelSettings NsCDE/lib/scripts/WSM \
-		NsCDE/lib/scripts/WSM-2 NsCDE/lib/scripts/WSM-4 \
-		NsCDE/lib/scripts/WSM-6 NsCDE/lib/scripts/WSM-8 \
+		NsCDE/lib/scripts/SubpanelSettings \
 		NsCDE/lib/scripts/WindowMgr NsCDE/lib/scripts/WsPgMgr \
 		NsCDE/libexec/fp_manage_subpanel NsCDE/libexec/fpexec \
 		NsCDE/libexec/fpseticon NsCDE/libexec/generate_app_menus \
@@ -217,6 +229,7 @@ _KSHFIX=	NsCDE/bin/fpclock NsCDE/bin/get_fvwm_infostore NsCDE/bin/getdpi \
 		NsCDE/bin/nscde NsCDE/bin/nscde_colorpicker \
 		NsCDE/bin/nscde_fvwmclnt NsCDE/bin/nscde_var_append \
 		NsCDE/bin/xdowrapper NsCDE/libexec/Notifier.sh \
+		NsCDE/libexec/GWM.sh \
 		NsCDE/libexec/Splash.sh NsCDE/libexec/appfinder \
 		NsCDE/libexec/backdropmgr NsCDE/libexec/colormgr \
 		NsCDE/libexec/fontmgr NsCDE/libexec/fp_manage_subpanel \
@@ -238,7 +251,7 @@ post-patch:
 	${CP} ${WRKSRC}/NsCDE/libexec/generate_subpanels ${WRKSRC}/generate_subpanels
 	${REINPLACE_CMD} -e 's@config/@etc/nscde/@g' ${WRKSRC}/generate_subpanels
 	( for SDOC in ${_SHAREDOC}; do ${REINPLACE_CMD} -e 's@$$\[NSCDE_ROOT\]/share/doc/@'${PREFIX}'/share/doc/nscde/@g' ${WRKSRC}/$${SDOC}; done )
-	( for IDOC in ${_SHAREICONS}; do ${REINPLACE_CMD} -e 's@$$\[NSCDE_ROOT\]/share/icons/@'${PREFIX}'/share/icons/@g' ${WRKSRC}/$${IDOC}; done )
+	${REINPLACE_CMD} -e 's@\\/@/@g' ${WRKSRC}/NsCDE/libexec/GWM.sh
 	( for SDOC in ${_SHARESLASH}; do ${REINPLACE_CMD} -e 's@$$\[NSCDE_ROOT\]/share/@'${DATADIR}'/@g' ${WRKSRC}/$${SDOC}; done )
 	( for SDOC in ${_SHARENSLASH}; do ${REINPLACE_CMD} -e 's@$$\[NSCDE_ROOT\]/share@'${DATADIR}'@g' ${WRKSRC}/$${SDOC}; done )
 	( for SCR in ${_LIBEXEC_SCRIPTS}; do ${REINPLACE_CMD} -e 's@$$\[NSCDE_ROOT\]/libexec/@'${PREFIX}'/libexec/nscde/@g' ${WRKSRC}/$${SCR}; done )
@@ -249,6 +262,7 @@ post-patch:
 	( for SDOC in ${_CSHARESLASH}; do ${REINPLACE_CMD} -e 's@$${NSCDE_ROOT}/share/@'${DATADIR}'/@g' ${WRKSRC}/$${SDOC}; done )
 	( for SDOC in ${_BSHARESLASH}; do ${REINPLACE_CMD} -e 's@$$NSCDE_ROOT/share/@'${DATADIR}'/@g' ${WRKSRC}/$${SDOC}; done )
 	${FIND} ${WRKSRC}/NsCDE/config -type f -name '*.conf' -exec ${MV} {} {}.sample \;
+	${FIND} ${WRKSRC}/NsCDE/config -type f -name '*.menu' -exec ${MV} {} {}.sample \;
 	( for BBIN in ${_BBINS}; do ${REINPLACE_CMD} -e 's@$$NSCDE\_ROOT\/bin@'${PREFIX}'/sbin@g' ${WRKSRC}/$${BBIN}; done )
 	( for CFG in ${_CONFIGS}; do ${REINPLACE_CMD} -e 's@$$NSCDE\_ROOT\/config@'${ETCDIR}'@g' ${WRKSRC}/$${CFG}; done )
 	( for SCR in ${_BLIBEXEC_SCRIPTS}; do ${REINPLACE_CMD} -e 's@$$NSCDE\_ROOT\/libexec@'${PREFIX}'/libexec/nscde@g' ${WRKSRC}/$${SCR}; done )
@@ -259,6 +273,12 @@ post-patch:
 	( for KSHB in ${_KSHFIX}; do ${REINPLACE_CMD} -e 's@^#!/usr/bin/env ksh93@#!'${PREFIX}'/bin/ksh93@' ${WRKSRC}/$${KSHB}; done )
 	${FIND} ${WRKSRC}/NsCDE -type f -name '*.bak' -delete
 	( for HLP in ${_PREFIX_FILES}; do ${REINPLACE_CMD} -e 's@$${PREFIX}@'${PREFIX}'@g' ${WRKSRC}/$${HLP}; done )
+	${FIND} ${WRKSRC}/NsCDE -type f -name '*.bak' -delete
+
+post-patch-DOAS-on:
+	${REINPLACE_CMD} -e 's@sudo@doas@g' ${WRKSRC}/NsCDE/lib/scripts/SysActionDialog
+	${REINPLACE_CMD} -e 's@sudo@doas@g' ${WRKSRC}/NsCDE/config/NsCDE-Functions.conf.sample
+	${REINPLACE_CMD} -e 's@$${PREFIX}@'${PREFIX}'@g' ${WRKSRC}/NsCDE/share/doc/examples/doas.conf
 	${FIND} ${WRKSRC}/NsCDE -type f -name '*.bak' -delete
 
 do-build:
@@ -301,6 +321,7 @@ do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/examples/nscde
 	(cd ${WRKSRC}/NsCDE/share/doc/examples && ${COPYTREE_SHARE} . ${STAGEDIR}/${PREFIX}/share/examples/nscde)
 	(cd ${WRKSRC}/NsCDE/share/doc && ${COPYTREE_SHARE} html ${STAGEDIR}/${PREFIX}/share/doc/nscde)
+	(cd ${WRKSRC}/NsCDE/share/doc && ${COPYTREE_SHARE} help ${STAGEDIR}/${PREFIX}/share/doc/nscde)
 	${INSTALL_DATA} ${WRKSRC}/NsCDE/share/doc/NsCDE.* ${STAGEDIR}/${PREFIX}/share/doc/nscde
 
 .include <bsd.port.mk>

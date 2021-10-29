@@ -1,32 +1,24 @@
---- docbook/NsCDE.xml.orig	2021-04-24 03:10:51 UTC
+--- docbook/NsCDE.xml.orig	2021-10-08 08:21:08 UTC
 +++ docbook/NsCDE.xml
-@@ -144,25 +144,26 @@ decade from the mainstream desktop players.
+@@ -144,15 +144,13 @@ decade from the mainstream desktop players.
  </para>
  
  <para>
 -NsCDE is by default rooted in <filename class="directory">/opt/NsCDE</filename> ($NSCDE_ROOT),
 -but it can be relocated with only one variable changed in main
 -wrapper <filename class="directory">bin/nscde</filename> and <filename>NsCDE-Main.conf</filename>.
-+NsCDE is by default rooted in <filename class="directory">${PREFIX}/libexec/nscde</filename>,
-+with several binaries in <filename class="directory">${PREFIX}/sbin</filename> and
-+<filename class="directory">${PREFIX}/bin</filename>.
++NsCDE is by default rooted in <filename class="directory">${PREFIX}/libexec/nscde</filename>.
  </para>
  
  <para>
  It is not using your existing <filename class="directory">$HOME/.fvwm</filename>
--but sets <varname>$FVWM_USERDIR</varname> to <filename class="directory">$HOME/.NsCDE</filename>,
+ but sets <varname>$FVWM_USERDIR</varname> to <filename class="directory">$HOME/.NsCDE</filename>,
 -and uses <filename class="directory">/opt/NsCDE/config</filename> as a sources of configuration.
-+but sets <varname>$FVWM_USERDIR</varname> to <filename class="directory">$HOME/.NsCDE</filename>;
-+unless any configuration data is put in this user-specific directory, data is instead read from
-+<filename class="directory">${PREFIX}/etc/nscde</filename>.
++and uses <filename class="directory">${PREFIX}/etc/nscde</filename> as a sources of configuration.
  </para>
  
  <para>
--Configuration model is a bit complex, but very flexible: configuration options
--are grouped in logical order. Configuration files are names
-+The configuration model is a bit complex, but very flexible: configuration options
-+are grouped in logical order. Configuration files are named
- <filename>NsCDE-&lt;group&gt;.conf</filename>. For example, <filename>NsCDE-Functions.conf</filename>
+@@ -162,7 +160,7 @@ are grouped in logical order. Configuration files are 
  for FVWM functions. Each
  configuration file can have two exclusive sources, and one additional. For
  example, if user doesn't have <filename>$FVWM_USERDIR/NsCDE-Functions.conf</filename>, then
@@ -35,7 +27,7 @@
  <filename>$FVWM_USERDIR/NsCDE-Functions.local</filename> exists, it will be read in addition to
  conf file, from wherever it was read. This is intended as a primary mechanism
  for customization: If user doesn't need to override and change a lot of
-@@ -174,12 +175,12 @@ configuration can be overridden or destroyed and recre
+@@ -174,12 +172,12 @@ configuration can be overridden or destroyed and recre
  One notable addon to this system of configuration is the way FVWM Styles are read.
  In addition to reading <filename>$FVWM_USERDIR/NsCDE-Style.local</filename> "early"
  configuration in <filename>$FVWM_USERDIR/NsCDE-Style.override</filename> will be read from
@@ -50,7 +42,7 @@
  can nullify overrides for that particular applications, this is why this mechanism is provided.
  This file is not created in <varname>$FVWM_USERDIR</varname> by setup procedure or Style
  Managers, but it will be read if created manually.
-@@ -298,7 +299,7 @@ differences are:
+@@ -301,7 +299,7 @@ differences are:
     instead of static icons, because this cannot be done with gui menu actions. See
     <link linkend="FrontPanel_actions">FrontPanel.actions</link> for examples.
     The other way (full control) is by copying <filename>FrontPanel.actions</filename>
@@ -59,7 +51,7 @@
     to <varname>$FVWM_USERDIR</varname>.
  </para></listitem>
  
-@@ -323,7 +324,7 @@ differences are:
+@@ -326,7 +324,7 @@ differences are:
     main application as if icon has been clicked with the 1st mouse button, b) "reset
     this button" which will remove user's customizations for that launcher button from
     the <filename>$FVWM_USERDIR/FrontPanel.actions</filename> and load default from
@@ -68,7 +60,7 @@
     will reset upper subpanel to it's default value (remove definition of the numbered
     subpanel from the <filename>$FVWM_USERDIR/Subpanels.actions</filename>),
     d) "Delete Subpanel" will disable subpanel for above this icon (without resetting
-@@ -605,13 +606,13 @@ necessary, and to enable or disable that particular Su
+@@ -605,13 +603,13 @@ necessary, and to enable or disable that particular Su
  On the first change with <emphasis>Install Icon</emphasis> or <emphasis>Subpanel Settings</emphasis>,
  non-FVWM configuration file <emphasis>Subpanels.actions</emphasis> will be created in the
  <varname>$FVWM_USERDIR</varname>, from where all subpanels changed from default will be read
@@ -85,16 +77,16 @@
  Syntax of the Subpanels.actions is explained in the
  <link linkend="NsCDE-Configuration-Files">Configuration files explained</link> section.
  </para>
-@@ -687,7 +688,7 @@ same function.
+@@ -687,7 +685,7 @@ same function.
    then in 2 or 4 desks/buttons
-   mode a small current page indicator is show on the right side of the button.
+   mode a small current page indicator is shown on the right side of the button.
    In addition to Page Manager Icon southwest of the WSM. Disabled (0) by default.
 -  <filename>WSM.conf</filename> (system wide: <filename>$NSCDE_ROOT/config/WSM.conf</filename>) is
-+  <filename>WSM.conf</filename> (system wide: <filename>${PREFIX}/etc/nscde/WSM.conf</filename>) is
++  <filename>WSM.conf</filename> (system wide: <filename>${PREFIX}/nscde/WSM.conf</filename>) is
    a separate configuration
    file read by WSM, WsPgMgr and such. Not a FVWM configuration file.
  </para></listitem>
-@@ -773,16 +774,12 @@ It supports XPM skins and displays hours, minutes and 
+@@ -773,16 +771,13 @@ It supports XPM skins and displays hours, minutes and 
  suited for window manager docks like FvwmButtons(1). In NsCDE it is applied with
  a skin similar to original one, but slightly bigger and with more clear edges
  and colors. Default can be used from
@@ -107,24 +99,22 @@
 -Pclock C source is provided for user's convenience if it
 -needs to be recompiled on another system or architecture. Source is in
 -<filename class="directory">$NSCDE_ROOT/src/pclock-0.13.1</filename>.
--With NsCDE binary for Linux is provided by
+ With NsCDE binary for Linux is provided by
 -default in <filename class="directory">$NSCDE_ROOT/bin</filename>.
-+pclock is found in <filename class="directory">${PREFIX}/bin</filename>.
++default in <filename class="directory">${PREFIX}/bin</filename>.
  </para>
  </sect2>
  
-@@ -833,8 +830,8 @@ what is going on if FpLite is all red.
- <para>
+@@ -834,7 +829,7 @@ what is going on if FpLite is all red.
  If clicked, it will call a function <function>f_FpLiteClickAction</function> which is by default
  set to safe defaults (<emphasis>[default terminal app]</emphasis> <command>-e top</command>).
--FpLite FvwmScript app uses little portable python script <emphasis>getla1.py</emphasis> from the
+ FpLite FvwmScript app uses little portable python script <emphasis>getla1.py</emphasis> from the
 -<filename class="directory">$NSCDE_ROOT/libexec</filename> to obtain 1-minute load data.
-+FpLite FvwmScript app uses a little portable python script <emphasis>getla1.py</emphasis> from 
 +<filename class="directory">${PREFIX}/libexec/nscde</filename> to obtain 1-minute load data.
  </para>
  <para>
  Key <keysym>F1</keysym> will bring this help text in browser.
-@@ -937,7 +934,7 @@ Key Bindings:
+@@ -942,7 +937,7 @@ Key Bindings:
  <para>
  Part of the Style Managers which can be called from the main Style Manager (7th button on the Front Panel).
  This is the clone of the same-named CDE tool. It loads backdrops from the
@@ -133,7 +123,7 @@
  <filename class="directory">$FVWM_USERDIR/backdrops</filename> (if any). From XPM
  backdrop templates with symbol names (with .pm extension) it will generate
  previews in user's <filename class="directory">$FVWM_USERDIR/tmp</filename> and if
-@@ -978,7 +975,7 @@ more than CDE original:
+@@ -990,7 +985,7 @@ more than CDE original:
   Instead of backdrops, user can opt for a background image. If option "Use
    photo or picture" is selected, list of backdrops will dissapear and image
    backgrounds (so called "wallpapers") of PNG and XPM type will be loaded from
@@ -142,7 +132,7 @@
    <filename class="directory">$FVWM_USERDIR/photos</filename> (if any). Option to
    use one photo for all workspaces exists too. In this mode, backdrop-specific options
    will be hidden until <guilabel>Use photo or picture</guilabel> is not deselected.
-@@ -1047,7 +1044,7 @@ Key Bindings:
+@@ -1059,7 +1054,7 @@ Key Bindings:
  With Backdrop Style Manager, this is probably the most important theme tool in (Ns)CDE. This tool
  applies colors to the widgets, menus, applications and backdrops. As in CDE,
  it reads color information from the palette files in
@@ -151,7 +141,7 @@
  <filename class="directory">$FVWM_USERDIR/palettes</filename>. Palettes are the 16bpp
  color definitions (8 of them). This colors and border bg/fg/sel colors
  calculated from them are the base of the look of pretty much all of the things
-@@ -1078,7 +1075,7 @@ will present editor with controls for Red, Green and B
+@@ -1090,7 +1085,7 @@ will present editor with controls for Red, Green and B
  and Value. On the top left corner are preview squares with names "Old" and "New". When changing
  color with RGB and/or HSV controls, this "New" square button will change it's colorset. Color can
  also be picked with <guibutton>Grab Color</guibutton> button if a small binary "colorpicker" is
@@ -160,7 +150,7 @@
  If action is not <guibutton>Cancel</guibutton> but <guibutton>OK</guibutton>, selected color will
  be modified and new palette with generic name "Custom" created immediately. When finishing theme
  selection in Color Style Manager with modified colors, Color Style Manager will ask for a name
-@@ -1302,10 +1299,10 @@ Monospaced Bold Large
+@@ -1319,10 +1314,10 @@ Monospaced Bold Large
  </para>
  <para>
  This fonts are defined as FVWM <emphasis>infostore</emphasis> variables in the file
@@ -173,7 +163,7 @@
  <filename>$FVWM_USERDIR/fontsets/SomeName.fontset</filename>.
  Further, they are defined as CPP macros in
  <filename>$FVWM_USERDIR/Xdefaults.fontdefs</filename> which is included in
-@@ -1319,7 +1316,7 @@ if some of this widget integrations is not desirable b
+@@ -1336,7 +1331,7 @@ if some of this widget integrations is not desirable b
  <para>
  The Font Style Manager itself consists of fontsets and fonts. Fontsets are
  named complete sets of five groups of three members of fonts defined above.
@@ -182,7 +172,7 @@
  <filename>$FVWM_USERDIR/fontsets</filename>. If font set is selected in
  Font Style Manager, 15 fonts from the set are loaded into preview lists of the application and can be
  immediately applied or further customized by leaving <guilabel>Use Predefined Font Set</guilabel> mode
-@@ -1367,7 +1364,7 @@ to manual font selection for customizations into the n
+@@ -1384,7 +1379,7 @@ to manual font selection for customizations into the n
  </para>
  <para>
  Button <guibutton>Default</guibutton> loads default
@@ -191,7 +181,7 @@
  then be saved as a choice or further customized into the new fontset. Bottom half of the
  Font Style Manager contains preview for all fonts from the one of the three selected size sets.
  </para>
-@@ -1562,8 +1559,8 @@ to save size and position of the non-transient window.
+@@ -1754,8 +1749,8 @@ to save size and position of the non-transient window.
  the same application window on FVWM page where it is not already present that window will cause window
  to be resized to that exact width, height, X position and Y position X11 coordinates as stored in the
  <filename>$FVWM_USERDIR/GeoDB.ini</filename>. This ini-style file is managed by this application, as
@@ -202,7 +192,7 @@
  Resource names on contextual call, as well as geometry parameters. Before applying this settings,
  user has a chance to fine tune this parameters in text fields and confirm (or cancel) the action
  on the end. Using <guibutton>Clear</guibutton> all geometry values, as well as those which may be
-@@ -1784,7 +1781,7 @@ button does this and also quits Subpanel Manager.
+@@ -1976,7 +1971,7 @@ button does this and also quits Subpanel Manager.
  <para>
  Subpanels configuration file <filename>Subpanels.actions</filename>, can be edited by
  hand in <varname>$FVWM_USERDIR</varname> if something needs to be changed on existing
@@ -211,7 +201,7 @@
  must be used to generate FVWM configuration output which must be redirected into
  <filename>$FVWM_USERDIR/NsCDE-Subpanels.conf</filename>.
  </para>
-@@ -1854,11 +1851,11 @@ and hibernation of the system. Of course, <command>reb
+@@ -2046,10 +2041,10 @@ and hibernation of the system. Of course, <command>reb
  <command>sudo(8)</command> entries are configured properly. While System Action Dialog is active,
  root cursor changes to line-crossed cursor which is dismissed after the action is performed or
  dialog action dismissed. Not all of this actions are possible on all systems, but with the
@@ -220,13 +210,11 @@
  pm-utils but with systemd(1) and FreeBSD with acpiconf(8) are supported in this moment.
  
 -In <filename class="directory">$NSCDE_ROOT/share/doc/examples/sudo</filename>, one can find example
--which can be put in <filename class="directory">/etc/sudoers.d</filename> with little changes.
 +In <filename class="directory">${PREFIX}/share/examples/nscde/sudo</filename>, one can find example
-+which can be put in <filename class="directory">${PREFIX}/etc/sudoers.d</filename> with little changes.
+ which can be put in <filename class="directory">/etc/sudoers.d</filename> with little changes.
  <guibutton>Confirm</guibutton> button applies, <guibutton>Dismiss</guibutton> cancels and
  closes the dialog.
- 
-@@ -2463,7 +2460,7 @@ same line is set.
+@@ -2678,7 +2673,7 @@ same line is set.
  </para>
  <para>
  Default backdrops are set from the
@@ -235,42 +223,42 @@
  user does not redefine/set his own with
  <link linkend="NsCDE-BackdropMgr">Backdrop Style Manager</link>. Default
  palette is <emphasis>Broica</emphasis> in 8 colors variant.
-@@ -2478,9 +2475,9 @@ This file is read by FvwmBacker(1) FVWM module. It is 
+@@ -2693,9 +2688,9 @@ This file is read by FvwmBacker(1) FVWM module. It is 
  first change with <link linkend="NsCDE-BackdropMgr">Backdrop Style Manager</link>.
  </para>
  <para>
 -Until then, file <filename>$NSCDE_ROOT/config/NsCDE-Backdrops.conf</filename> is read, which
-+Until then, file <filename>${PREFIX}/etc/NsCDE-Backdrops.conf</filename> is read, which
++Until then, file <filename>${PREFIX}/etc/nscde/NsCDE-Backdrops.conf</filename> is read, which
  itself reads pre-generated and pre-defined backdrops from the
 -<filename class="directory">$NSCDE_ROOT/share/defaults/backer</filename> directory.
 +<filename class="directory">${PREFIX}/share/nscde/defaults/backer</filename> directory.
  </para>
  <para>
  We can conclude that backdrops are source form or template file, and when processed
-@@ -2506,7 +2503,7 @@ and safe defaults, and reads the rest of the configura
+@@ -2732,7 +2727,7 @@ and safe defaults, and reads the rest of the configura
  which are included there. It defines StartFunction which starts
  all additional modules and calls important things during start
  or restart of the Window Manager. System Wide configuration files
 -are located in $NSCDE_ROOT/config, while user local hooks or
-+are located in <filename class="directory">${PREFIX}/etc/nscde</filename>, while user local hooks or
++are located in ${PREFIX}/etc/nscde, while user local hooks or
  user complete overrides are in $FVWM_USERDIR.
  </para>
  </abstract>
-@@ -2595,11 +2592,11 @@ slightly different options:
+@@ -2821,11 +2816,11 @@ slightly different options:
  <![CDATA[
  
     Btn1,__APPLET__,M1,"Swallow (Respawn) \\"pclock\\"
 -   \\"Exec exec $NSCDE_ROOT/bin/fpclock-$(uname -s)_$(uname -m)
-+   \\"Exec exec ${PREFIX}/bin/fpclock-$(uname -s)_$(uname -m)
++   \\"Exec exec ${PREFIX}/bin/fpclock
     -H red -S white --hands-width=4
     --hour-hand-length=15 --minute-hand-length=20
     --second-hand-length=22 -w 
 -   -B $NSCDE_ROOT/share/icons/NsCDE/SDtEarth.l.xpm\\",Exec exec firefox
-+   -B ${PREFIX}/share/icons/NsCDE/SDtEarth.l.xpm\\",Exec exec firefox
++   -B ${PREFIX}/share/nscde/icons/NsCDE/SDtEarth.l.xpm\\",Exec exec firefox
  
     Btn1,,M2,FVWM,Nop
  
-@@ -2640,7 +2637,7 @@ comma separated values (syntax):
+@@ -2866,7 +2861,7 @@ comma separated values (syntax):
  </itemizedlist>
  </para>
  <para>
@@ -279,16 +267,16 @@
  extended by creating and writing <filename>$FVWM_USERDIR/AppMenus.conf</filename> file.
  </para>
  
-@@ -3192,7 +3189,7 @@ mouse focus to free space on the screen.
+@@ -3426,7 +3421,7 @@ after losing mouse focus to free up space on the scree
  </para></listitem>
  
  <listitem><para>
 -  <keysym>XF86AudioLowerVolume</keysym> and <keysym>XF86AudioRaiseVolume</keysym> on Sun type 6 or 7 keyboards will lower and raise sound volume by 1 percent, or by 10 percent if combined with Ctrl modifier. This works by default on systems on which pactl(1) PulseAudio tool is installed. On other systems, f_Mixer function has to be redefined. See <filename>$NSCDE_ROOT/config/NsCDE-Keybindings.conf</filename> for f_Mixer options and interaction.
-+  <keysym>XF86AudioLowerVolume</keysym> and <keysym>XF86AudioRaiseVolume</keysym> on Sun type 6 or 7 keyboards will lower and raise sound volume by 1 percent, or by 10 percent if combined with Ctrl modifier. This works by default on systems on which pactl(1) PulseAudio tool is installed. On other systems, f_Mixer function has to be redefined. See <filename>${PREFIX}/etc/nscde/NsCDE-Keybindings.conf</filename> for f_Mixer options and interaction.
++  <keysym>XF86AudioLowerVolume</keysym> and <keysym>XF86AudioRaiseVolume</keysym> on Sun type 6 or 7 keyboards will lower and raise sound volume by 1 percent, or by 10 percent if combined with Ctrl modifier. This works by default on systems on which pactl(1) PulseAudio tool is installed. On other systems, f_Mixer function has to be redefined. See <filename>${PREFIX}/nscde/NsCDE-Keybindings.conf</filename> for f_Mixer options and interaction.
  </para></listitem>
  
  <listitem><para>
-@@ -3210,7 +3207,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3444,7 +3439,7 @@ Pressend second time just once, it will dismiss Local 
    Occupy Workspace dialog for window moving between the desks.
    </para>
    <para>
@@ -297,7 +285,7 @@
    for automatic description on menus.
  </para></listitem>
  
-@@ -3220,7 +3217,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3454,7 +3449,7 @@ Pressend second time just once, it will dismiss Local 
      Occupy Page dialog for window moving between the desks.
      </para>
      <para>
@@ -306,7 +294,16 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3228,7 +3225,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3465,7 +3460,7 @@ Pressend second time just once, it will dismiss Local 
+    only when multiple monitors are detected by NsCDE and FVWM.
+     </para>
+     <para>
+-    Dynamic: defined in <filename>$NSCDE_ROOT/config/Keymenu.actions</filename>
++    Dynamic: defined in <filename>${PREFIX}/etc/nscde/Keymenu.actions</filename>
+     for automatic description on menus.
+ </para></listitem>
+ 
+@@ -3473,7 +3468,7 @@ Pressend second time just once, it will dismiss Local 
    <keysym>Alt+F1</keysym> regenerates and refreshes the window
      </para>
      <para>
@@ -315,7 +312,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3236,7 +3233,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3481,7 +3476,7 @@ Pressend second time just once, it will dismiss Local 
    <keysym>Meta+F1</keysym> Calls xrefresh(1) command to refresh the X11 display
      </para>
      <para>
@@ -324,7 +321,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3244,7 +3241,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3489,7 +3484,7 @@ Pressend second time just once, it will dismiss Local 
    <keysym>Alt+F2</keysym> iconifies (deiconifies if in icon context)
      </para>
      <para>
@@ -333,7 +330,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3252,7 +3249,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3497,7 +3492,7 @@ Pressend second time just once, it will dismiss Local 
    <keysym>Meta+F2</keysym> "shades" or rolls up the window to titlebar only view
      </para>
      <para>
@@ -342,7 +339,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3263,7 +3260,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3508,7 +3503,7 @@ Pressend second time just once, it will dismiss Local 
    window with FVWM <command>PlaceAgain</command> command
      </para>
      <para>
@@ -351,7 +348,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3272,7 +3269,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3517,7 +3512,7 @@ Pressend second time just once, it will dismiss Local 
    mouse pointer currently resides, together with frame
      </para>
      <para>
@@ -360,7 +357,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3281,7 +3278,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3526,7 +3521,7 @@ Pressend second time just once, it will dismiss Local 
      and enter
      </para>
      <para>
@@ -369,7 +366,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3290,7 +3287,7 @@ Pressend second time just once, it will dismiss Local 
+@@ -3535,7 +3530,7 @@ Pressend second time just once, it will dismiss Local 
  directions and place it again on page
      </para>
      <para>
@@ -378,7 +375,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3299,7 +3296,7 @@ directions and place it again on page
+@@ -3544,7 +3539,7 @@ directions and place it again on page
  directions and place it again on page
      </para>
      <para>
@@ -387,7 +384,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3308,7 +3305,7 @@ directions and place it again on page
+@@ -3553,7 +3548,7 @@ directions and place it again on page
      and enter
      </para>
      <para>
@@ -396,7 +393,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3319,7 +3316,7 @@ directions and place it again on page
+@@ -3564,7 +3559,7 @@ directions and place it again on page
    <keysym>Meta+Shift+F5</keysym> combinations will put window back from sticky state
      </para>
      <para>
@@ -405,7 +402,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3329,7 +3326,7 @@ directions and place it again on page
+@@ -3574,7 +3569,7 @@ directions and place it again on page
    Pressing again the same combination toggles this state back
      </para>
      <para>
@@ -414,7 +411,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3339,7 +3336,7 @@ directions and place it again on page
+@@ -3584,7 +3579,7 @@ directions and place it again on page
    Pressing again the same combination toggles this state back
      </para>
      <para>
@@ -423,7 +420,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3347,7 +3344,7 @@ directions and place it again on page
+@@ -3592,7 +3587,7 @@ directions and place it again on page
    <keysym>Alt+F6</keysym> raises or lowers the window
      </para>
      <para>
@@ -432,7 +429,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3359,7 +3356,7 @@ directions and place it again on page
+@@ -3604,7 +3599,7 @@ directions and place it again on page
    grow and maximized states. This is a cyclic keybinding in a "shrink" direction.
      </para>
      <para>
@@ -441,7 +438,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3377,7 +3374,7 @@ directions and place it again on page
+@@ -3622,7 +3617,7 @@ directions and place it again on page
    stretched and maximized state. This is a cyclic keybinding in a "grow" direction.
      </para>
      <para>
@@ -450,7 +447,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3392,7 +3389,7 @@ directions and place it again on page
+@@ -3637,7 +3632,7 @@ directions and place it again on page
    <keysym>Alt+F9</keysym> is empty
      </para>
      <para>
@@ -459,7 +456,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3406,7 +3403,7 @@ directions and place it again on page
+@@ -3651,7 +3646,7 @@ directions and place it again on page
    <keysym>Alt+F10</keysym> deletes a window (see fvwm(1))
      </para>
      <para>
@@ -468,7 +465,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3414,7 +3411,7 @@ directions and place it again on page
+@@ -3659,7 +3654,7 @@ directions and place it again on page
    <keysym>Meta+F10</keysym> closes a window
      </para>
      <para>
@@ -477,7 +474,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3422,7 +3419,7 @@ directions and place it again on page
+@@ -3667,7 +3662,7 @@ directions and place it again on page
    <keysym>Meta+Alt+F10</keysym> forcefully destroys a window
      </para>
      <para>
@@ -486,7 +483,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3430,7 +3427,7 @@ directions and place it again on page
+@@ -3675,7 +3670,7 @@ directions and place it again on page
    <keysym>Alt+F11</keysym> is empty
      </para>
      <para>
@@ -495,7 +492,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3438,7 +3435,7 @@ directions and place it again on page
+@@ -3683,7 +3678,7 @@ directions and place it again on page
    <keysym>Meta+F11</keysym> is empty
      </para>
      <para>
@@ -504,7 +501,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3447,7 +3444,7 @@ directions and place it again on page
+@@ -3692,7 +3687,7 @@ directions and place it again on page
    variable in the <filename>$FVWM_USERDIR/NsCDE.conf</filename>
      </para>
      <para>
@@ -513,7 +510,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3455,7 +3452,7 @@ directions and place it again on page
+@@ -3700,7 +3695,7 @@ directions and place it again on page
    <keysym>Meta+F12</keysym> invokes default terminal app ($[infostore.terminal])
      </para>
      <para>
@@ -522,7 +519,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3464,7 +3461,7 @@ directions and place it again on page
+@@ -3709,7 +3704,7 @@ directions and place it again on page
    information for a current window in the GeoDB.ini
      </para>
      <para>
@@ -531,7 +528,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3484,7 +3481,7 @@ directions and place it again on page
+@@ -3729,7 +3724,7 @@ directions and place it again on page
   <varname>$HOME</varname> if <filename class="directory">XDG_PICTURES_DIR</filename> is not defined.
      </para>
      <para>
@@ -540,7 +537,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3494,7 +3491,7 @@ directions and place it again on page
+@@ -3739,7 +3734,7 @@ directions and place it again on page
   <varname>$HOME</varname> if <filename class="directory">XDG_PICTURES_DIR</filename> is not defined.
      </para>
      <para>
@@ -549,7 +546,25 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3505,7 +3502,7 @@ directions and place it again on page
+@@ -3748,7 +3743,7 @@ directions and place it again on page
+  Screenshots in PNG format are saved into clipboard for pasting into compatible X11 applications.
+     </para>
+     <para>
+-    Dynamic: defined in <filename>$NSCDE_ROOT/config/Keymenu.actions</filename>
++    Dynamic: defined in <filename>${PREFIX}/etc/nscde/Keymenu.actions</filename>
+     for automatic description on menus.
+ </para></listitem>
+ 
+@@ -3757,7 +3752,7 @@ directions and place it again on page
+  Screenshots in PNG format are saved into clipboard for pasting into compatible X11 applications.
+     </para>
+     <para>
+-    Dynamic: defined in <filename>$NSCDE_ROOT/config/Keymenu.actions</filename>
++    Dynamic: defined in <filename>${PREFIX}/etc/nscde/Keymenu.actions</filename>
+     for automatic description on menus.
+ </para></listitem>
+ 
+@@ -3768,7 +3763,7 @@ directions and place it again on page
      button on the borders of the frame has the same effect
      </para>
      <para>
@@ -558,7 +573,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3517,7 +3514,7 @@ directions and place it again on page
+@@ -3780,7 +3775,7 @@ directions and place it again on page
      itself.
      </para>
      <para>
@@ -567,7 +582,7 @@
      for automatic description on menus.
  </para></listitem>
  
-@@ -3550,7 +3547,7 @@ Front Panel or Subpanels documentation.
+@@ -3813,7 +3808,7 @@ Front Panel or Subpanels documentation.
  <para>
  This file is not FVWM configuration file. It is written
  <link linkend="NsCDE-SubpanelSettings">Subpanel Settings</link>, or
@@ -576,7 +591,7 @@
  command which will generate infostore variables with descriptive keyboard shortcut names which
  are used in NsCDE menus from <filename>NsCDE-Menus.conf</filename> and
  <filename>NsCDE-Functions.conf</filename>, and additionaly, use the whole line after the keyword
-@@ -3573,7 +3570,7 @@ on menus. For example, "F3 A M" configuration for FVWM
+@@ -3836,7 +3831,7 @@ on menus. For example, "F3 A M" configuration for FVWM
  description right of the <guilabel>(De)Shade</guilabel> item on titlebar left button popdown menu.
  </para>
  <para>
@@ -585,17 +600,7 @@
  This script generates FVWM infostore variables used in menus, and executes FVWM "Key" commands
  producing dynamic keybindings which are described in menus.
  </para>
-@@ -3595,7 +3592,8 @@ notices in section about <link linkend="NsCDE-Keybindi
-   This invocation and configuration in <filename>NsCDE-Main.conf</filename>
-   changes everything. It avoids <filename class="directory">~/.fvwm</filename> if user has a plain (normal)
-   FVWM setup, defines and redefines FVWM internal variables and sets
--  <varname>NSCDE_ROOT</varname>, configures some core FVWM options (like <option>DefaultIcon</option>),
-+  <varname>NSCDE_ROOT</varname> (though this variable is obsolete on FreeBSD), 
-+  configures some core FVWM options (like <option>DefaultIcon</option>),
-   defines main FVWM <command>Read</command> command wrapper <function>f_ReadCfg</function>,
-   sets desktop names, reads <filename>NsCDE.conf</filename> depending if user has it, or system-wide one,
-   defines <function>StartFunction</function>, <option>DesktopSize</option>, and
-@@ -3972,7 +3970,7 @@ differ from NsCDE, since FVWM has much more options an
+@@ -4225,7 +4220,7 @@ differ from NsCDE, since FVWM has much more options an
  huge number of tastes. <option>Style</option> '*' options are partially overridden or
  extended in <filename>NsCDE.conf</filename> which can be generated with
  <link linkend="NsCDE-WindowMgr">Window Style Manager</link>
@@ -604,7 +609,7 @@
  to <varname>$FVWM_USERDIR</varname> and edited to suit.
  </para>
  <para>
-@@ -4000,7 +3998,7 @@ This styles can be extended and/or overridden by the u
+@@ -4253,7 +4248,7 @@ This styles can be extended and/or overridden by the u
  <filename>$FVWM_USERDIR/NsCDE-Style.local</filename>, and core style
  for all windows <emphasis>(*)</emphasis> can be overriden by creating
  <filename>$FVWM_USERDIR/NsCDE-Style.override</filename> which extends or
@@ -613,7 +618,7 @@
  prior to applying particular application styles and prior to reading
  <filename>$FVWM_USERDIR/NsCDE-Style.local</filename>.
  </para>
-@@ -4020,7 +4018,7 @@ with a huge set of <option>Style</option> commands.
+@@ -4273,7 +4268,7 @@ with a huge set of <option>Style</option> commands.
  This file is not FVWM configuration file. It is written by the 
  <link linkend="NsCDE-SubpanelMgr">Subpanels Manager</link>, 
  <link linkend="NsCDE-SubpanelSettings">Subpanel Settings</link>, or
@@ -622,7 +627,7 @@
  command which will generate
  <link linkend="NsCDE-Subpanels_conf"><filename>NsCDE-Subpanels.conf</filename></link> file in user's
  <varname>$FVWM_USERDIR</varname>.
-@@ -4066,14 +4064,14 @@ the field values. This values are:
+@@ -4319,14 +4314,14 @@ the field values. This values are:
  <sect2 id="NsCDE-Subpanels_conf">
  <title>NsCDE-Subpanels.conf</title>
  <para>
@@ -639,7 +644,7 @@
  read user's or system <link linkend="Subpanels_actions"><filename>Subpanels.actions</filename></link> for
  every subpanel and if it is defined in user's one, take this one while generating NsCDE-Subpanels.conf.
  In system default, subpanels 2, 5 and 6 are disabled by default, but can be activated with a very quick
-@@ -4099,29 +4097,19 @@ or <varname>$FVWM_USERDIR</varname>.
+@@ -4352,25 +4347,20 @@ or <varname>$FVWM_USERDIR</varname>.
  <sect2 id="NsCDE-System-Tree-Layout">
  <title>System Tree Layout</title>
  <para>
@@ -652,39 +657,43 @@
 -user's <varname>$PATH</varname>.
 +FreeBSD's port of NsCDE places all application files into appropriate directories
 +within
-+<filename class="directory">${PREFIX}</filename>. 
++<filename class="directory">${PREFIX}</filename>.
  </para>
  <para>
 -This are subdirectories of <filename class="directory">/opt/NsCDE</filename> with short
--description what is what, and what is where:
-+Relevant directories are listed below:
++This are subdirectories of <filename class="directory">NsCDE</filename> with short
+ description what is what, and what is where:
  </para>
  
  <itemizedlist>
  
 -<listitem><para><filename class="directory">/opt/NsCDE</filename></para>
--<para>
++<listitem><para><filename class="directory">${PREFIX}/usr/lib/nscde</filename></para>
+ <para>
 -main top directory of NsCDE installation all further
 -descriptions will be written as relative to this directory
--</para></listitem>
--
++main top directory of NsCDE installation
+ </para></listitem>
+ 
  <listitem><para>
--<filename class="directory">bin</filename>
-+<filename class="directory">${PREFIX}/bin</filename>,
-+<filename class="directory">${PREFIX}/sbin</filename>
+@@ -4378,14 +4368,14 @@ descriptions will be written as relative to this direc
  </para>
  <para>
    nscde start wrapper called from <filename>.xsession</filename> or integrated as .desktop
-@@ -4132,7 +4120,7 @@ descriptions will be written as relative to this direc
+-  file in <filename class="directory">/usr/share/xsession</filename> is located here,
++  file in <filename class="directory">${PREFIX}/share/xsession</filename> is located here,
+   as well as some helper
+   scripts of the NsCDE which are suitable for general use. Front Panel
+   <command>pclock</command> is also here. Pclock is the only binary part of the NsCDE
  </para></listitem>
  
  <listitem><para>
 -   config
-+   <filename class="directory">${PREFIX}/etc/nscde</filename>
++   ${PREFIX}/etc/nscde
  </para>
  <para>
    Configuration directory. All .conf files described in documentation
-@@ -4141,7 +4129,7 @@ descriptions will be written as relative to this direc
+@@ -4394,7 +4384,7 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -693,7 +702,7 @@
  </para>
  <para>
    Template X pixmap files used by <link linkend="NsCDE-ColorMgr">Color Style Manager</link> for producing
-@@ -4153,7 +4141,7 @@ descriptions will be written as relative to this direc
+@@ -4406,7 +4396,7 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -702,7 +711,7 @@
  </para>
  <para>
    Python libraries used by <command>themegen.py</command>: part of the integration suite
-@@ -4161,7 +4149,7 @@ descriptions will be written as relative to this direc
+@@ -4414,7 +4404,7 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -711,7 +720,7 @@
  </para>
  <para>
    The rest of the scripts (korn shell and python) are located here. In
-@@ -4171,7 +4159,7 @@ descriptions will be written as relative to this direc
+@@ -4424,7 +4414,7 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -720,7 +729,7 @@
  </para>
  <para>
    Backdrop files. CDE and new, additional. Source for generation of active
-@@ -4183,7 +4171,7 @@ descriptions will be written as relative to this direc
+@@ -4436,7 +4426,7 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -729,7 +738,7 @@
  </para>
  <para>
    Custom cursors which are missing on plain X server installations but
-@@ -4191,7 +4179,7 @@ descriptions will be written as relative to this direc
+@@ -4444,7 +4434,7 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -738,7 +747,7 @@
  </para>
  <para>
    Default generated backdrops for first start (Broica, 8 colors)
-@@ -4199,21 +4187,21 @@ descriptions will be written as relative to this direc
+@@ -4452,21 +4442,21 @@ descriptions will be written as relative to this direc
  </para></listitem>
  
  <listitem><para>
@@ -763,7 +772,7 @@
  </para>
  <para>
  Examples for X display manager and DE integrations, <command>sudo</command> for <command>shutdown
-@@ -4222,21 +4210,21 @@ Examples for X display manager and DE integrations, <c
+@@ -4475,21 +4465,21 @@ Examples for X display manager and DE integrations, <c
  </para></listitem>
  
  <listitem><para>
@@ -788,7 +797,7 @@
  </para>
  <para>
    Custom NsCDE icons of which many are part of FvwmScript programs and
-@@ -4244,7 +4232,7 @@ Examples for X display manager and DE integrations, <c
+@@ -4497,7 +4487,7 @@ Examples for X display manager and DE integrations, <c
  </para></listitem>
  
  <listitem><para>
@@ -797,7 +806,7 @@
  </para>
  <para>
      CDE palettes plus a bunch of new custom palettes. Used by <link linkend="NsCDE-ColorMgr">Color
-@@ -4255,7 +4243,7 @@ Examples for X display manager and DE integrations, <c
+@@ -4508,7 +4498,7 @@ Examples for X display manager and DE integrations, <c
  </para></listitem>
  
  <listitem><para>
@@ -806,7 +815,7 @@
  </para>
  <para>
      A couple of nice free photos collected and resized for various
-@@ -4266,7 +4254,7 @@ Examples for X display manager and DE integrations, <c
+@@ -4519,7 +4509,7 @@ Examples for X display manager and DE integrations, <c
  </para></listitem>
  
  <listitem><para>
@@ -815,7 +824,7 @@
  </para>
  <para>
      X resources for a particular X applications (like <command>XTerm</command>) which
-@@ -4276,10 +4264,10 @@ Examples for X display manager and DE integrations, <c
+@@ -4529,7 +4519,7 @@ Examples for X display manager and DE integrations, <c
  </para></listitem>
  
  <listitem><para>
@@ -823,12 +832,8 @@
 +  <filename class="directory">${PREFIX}/share/nscde/config_templates/integration/gtk2_gtk3_qt</filename>
  </para>
  <para>
--    Part of the CDE theme which are used by <command>libexec/themegen.py</command> and
-+    Part of the CDE theme which are used by <command>${PREFIX}/libexec/nscde/themegen.py</command> and
-     the rest of lib/python/*.py to generate
-     <filename class="directory">$HOME/.themes/NsCDE</filename> with
-     a selected palette and color depth.
-@@ -4296,24 +4284,6 @@ Examples for X display manager and DE integrations, <c
+     Part of the CDE theme which are used by <command>libexec/themegen.py</command> and
+@@ -4549,24 +4539,6 @@ Examples for X display manager and DE integrations, <c
      user's <filename class="directory">$FVWM_USERDIR</filename>.
  </para></listitem>
  
@@ -853,7 +858,7 @@
  </itemizedlist>
  </sect2>
  
-@@ -4373,7 +4343,7 @@ it will not be touched and can co-exist with NsCDE in 
+@@ -4637,7 +4609,7 @@ it will not be touched and can co-exist with NsCDE in 
     NsCDE custom icons. Put here by <link linkend="NsCDE-ColorMgr">Color Style Manager</link> and the rest
     of the tools. Since icons from here are referenced with a relative
     path, whatever is missing here, will be loaded from system's
@@ -862,7 +867,7 @@
  </para></listitem>
  
  <listitem><para>
-@@ -4406,7 +4376,7 @@ it will not be touched and can co-exist with NsCDE in 
+@@ -4670,7 +4642,7 @@ it will not be touched and can co-exist with NsCDE in 
  
  <listitem><para>
    <filename>NsCDE-XYZ.conf</filename> files:
@@ -871,7 +876,7 @@
    If in existence, they will be read instead of system defaults.
    <emphasis>XYZ</emphasis> is here placeholder/example for Style, Functions, Keybindings,
    Init, Menus etc ...
-@@ -4414,7 +4384,7 @@ it will not be touched and can co-exist with NsCDE in 
+@@ -4678,7 +4650,7 @@ it will not be touched and can co-exist with NsCDE in 
  
  <listitem><para>
    <filename>NsCDE-XYZ.local</filename> files:
@@ -880,7 +885,7 @@
    If in existence, they will be read in right after their .conf main
    configurations from system (or local) directory. This is preferred
    way to extend functionality or override something not big enough
-@@ -4425,14 +4395,14 @@ it will not be touched and can co-exist with NsCDE in 
+@@ -4689,14 +4661,14 @@ it will not be touched and can co-exist with NsCDE in 
  </para>
  <para>
    <filename>NsCDE-Style.override</filename> file:
@@ -897,7 +902,7 @@
    for that particular applications, this is why this mechanism is provided.
    This file is not created in <varname>$FVWM_USERDIR</varname> by setup procedure or Style
    Managers, but if created (manually) it will be read and processed.
-@@ -4452,7 +4422,7 @@ it will not be touched and can co-exist with NsCDE in 
+@@ -4716,7 +4688,7 @@ it will not be touched and can co-exist with NsCDE in 
  <listitem><para>
    <filename>WSM.conf</filename>: read/written by Workspace and Page Manager, WSM and
    user's favorite editor. Not an FVWM config file. System default
@@ -906,105 +911,32 @@
  </para></listitem>
  
  <listitem><para>
-@@ -4651,111 +4621,37 @@ any part of the NsCDE. (optional)
- <sect1 id="NsCDE-Installation">
- <title>Installation</title>
- <para>
--There is a script Installer.ksh in NsCDE top level directory when unpacked. When run without
--any arguments, installer script will print usage with explanations and examples. Installing NsCDE
--is relatively simple: if some mandatory dependency is missing (for example FVWM or ksh), installer
--will print that error, as well for some Python3 modules. For optional dependencies, that is,
--programs and components which are not essential it will just print a warning.
--</para>
--<para>
--The main moduses of installation are:
--</para>
--<programlisting>
--<![CDATA[
--  $ su - || sudo -i
--  # umask 0022
--  # cd /tmp
--  # wget https://github.com/NsCDE/NsCDE/archive/NsCDE-<version>.tar.gz
--  # tar xpzf NsCDE-<version>.tar.gz
--  # cd NsCDE-<version>
--  # ./Installer -w -n -i
--]]>
--</programlisting>
-+On FreeBSD, use 
-+<command>pkg install nscde</command>
-+or
- 
--<para>
--For FVWM3 or FVWM2 patched with NsCDE patches from NsCDE-&lt;version&gt;/src
--one can use "-f" mode of installation instead "-w".
- </para>
--
- <programlisting>
- <![CDATA[
--  $ su - || sudo -i
--  # umask 0022
--  # cd /tmp
--  # wget https://github.com/NsCDE/NsCDE/archive/NsCDE-<version>.tar.gz
--  # tar xpzf NsCDE-<version>.tar.gz
--  # cd NsCDE-<version>
--  # ./Installer -f -n -i
-+  $ cd /usr/ports/x11-wm/nscde
-+  # make config
-+  # make install clean
- ]]>
+@@ -4954,23 +4926,10 @@ one can use "-f" mode of installation instead "-w".
  </programlisting>
  
--<para>
+ <para>
 -Both of the examples above will install NsCDE into /opt/NsCDE. However, it is
 -possible to install to some other place. For example, this will install NsCDE
 -in /data/programs/nscde:
--</para>
--
++Both of the examples above will install NsCDE into ${PREFIX}. 
+ </para>
+ 
 -<programlisting>
 -<![CDATA[
 -  # ./Installer -p /data/programs/nscde -f -n -i
 -]]>
 -</programlisting>
 -
--<para>
+ <para>
 -For interactive mode of installation "-n" must be ommited. An asking wizard type
 -of installation will appear.
 -</para>
 -
 -<para>
--For a latest master tree from development page on Github, NsCDE can be fetched with
--git(1) and upgraded with fetching changes in the master or some other branch. An example
--of this would be:
--</para>
--
--<programlisting>
--<![CDATA[
--  # git clone https://github.com/NsCDE/NsCDE.git
--  # cd NsCDE
--  # ./Installer.ksh -w -n -i
--]]>
--</programlisting>
--
--<para>
--Upgrades, either from tarball or from git, once new version is downloaded can be made
--by replacing "-i" option with "-u" option for the installer. Example of upgrade:
--</para>
--
--<programlisting>
--<![CDATA[
--  # git clone https://github.com/NsCDE/NsCDE.git
--  # cd NsCDE
--  # ./Installer.ksh -w -n -u (or ./Installer.ksh -f -n -u)
--]]>
--</programlisting>
--
--<para>
--Similarly, option "-d" is for uninstallation etc ... run
--Installer.ksh without arguments for a full set of options.
--</para>
--
- </sect1>
- <sect1 id="NsCDE-Startup">
+ For a latest master tree from development page on Github, NsCDE can be fetched with
+ git(1) and upgraded with fetching changes in the master or some other branch. An example
+ of this would be:
+@@ -5007,19 +4966,19 @@ Installer.ksh without arguments for a full set of opti
  <title>NsCDE Startup</title>
  <para>
  Session can be started from the <filename>$HOME/.xsession</filename> in last command line
@@ -1018,37 +950,36 @@
 -file <filename>/opt/NsCDE/share/doc/examples/xsession-integration/nscde.desktop</filename>
 +file <filename>${PREFIX}/share/examples/nscde/xsession-integration/nscde.desktop</filename>
  will be put by Installer.ksh during the installation into
--<filename class="directory">/usr/share/xsessions</filename>
-+<filename class="directory">${PREFIX}/share/xsessions</filename>
+ <filename class="directory">/usr/share/xsessions</filename>
  (or in whatever place your system and your X Display Manager reads this files)
  and afterwards NsCDE can be selected from the display manager's menu or similar
  session selector. See the rest of the X Session Manager integration examples in the
 -directory <filename class="directory">/opt/NsCDE/share/doc/examples/</filename>
-+directory <filename class="directory">${PREFIX}/share/examples/nscde</filename>
++directory <filename class="directory">${PREFIX}/share/examples/nscde/</filename>
  for MATE, KDE, LXDE and similar DE integrations and play with this if you like.
  </para>
  </sect1>
-@@ -4764,15 +4660,15 @@ for MATE, KDE, LXDE and similar DE integrations and pl
+@@ -5028,15 +4987,15 @@ for MATE, KDE, LXDE and similar DE integrations and pl
  <title>NsCDE Localization</title>
  <para>
  NsCDE implements localization capabilities provided by FVWM and system C library.
 -Directive <varname>LocalePath</varname> in <filename>$NSCDE_ROOT/config/NsCDE-Main.conf</filename>
 -is set to look at <varname>$[NSCDE_ROOT]/share/locale;NsCDE:$[NSCDE_ROOT]/share/locale;NsCDE-Subpanels:+</varname>.
 +Directive <varname>LocalePath</varname> in <filename>${PREFIX}/etc/nscde/NsCDE-Main.conf</filename>
-+is set to look at <varname>${PREFIX}/share/nscde/locale;NsCDE:NsCDE-Subpanels:+</varname>.
++is set to look at <varname>${PREFIX}/share/locale;NsCDE:${PREFIX}/share/locale;NsCDE-Subpanels:+</varname>.
  In other words, whole NsCDE reads it's localization from "mo" files from
 -<filename class="directory">$[NSCDE_ROOT]/share/locale/$LANG/LC_MESSAGES/NsCDE.mo</filename> except subpanels
-+<filename class="directory">${PREFIX}/share/nscde/locale/$LANG/LC_MESSAGES/NsCDE.mo</filename> except subpanels
++<filename class="directory">${PREFIX}/share/locale/$LANG/LC_MESSAGES/NsCDE.mo</filename> except subpanels
  which have their localization in separate mo files in the same directory.
  </para>
  <para>
  All FvwmScript based applications are reading their own "mo" file from
 -<filename class="directory">$[NSCDE_ROOT]/share/locale/$LANG/LC_MESSAGES/NsCDE.mo</filename> 
-+<filename class="directory">${PREFIX}/share/nscde/locale/$LANG/LC_MESSAGES/NsCDE.mo</filename> 
++<filename class="directory">${PREFIX}/share/locale/$LANG/LC_MESSAGES/NsCDE.mo</filename> 
  which is defined in every program's header with <varname>UseGettext</varname> directive.
  </para>
  <para>
-@@ -4813,7 +4709,7 @@ on the system and found, they will be run too. Stalone
+@@ -5077,7 +5036,7 @@ on the system and found, they will be run too. Stalone
  Style Manager and Font Style Manager when theme or font is changed.
  </para>
  <para>
@@ -1057,7 +988,7 @@
  the terminal which will run automatically and will set up the following:
  </para>
  
-@@ -4943,7 +4839,7 @@ When both windows are on the screen, this menu entries
+@@ -5208,7 +5167,7 @@ When both windows are on the screen, this menu entries
  <para>
  NsCDE is using it's own copies of <filename>Xdefaults</filename> and includes files for X
  resources integration in <varname>$FVWM_USERDIR</varname>. X resources are filled with
@@ -1066,7 +997,7 @@
  part of session assembling. Variable <varname>XAPPLRESDIR</varname> is also adjusted
  to <filename class="directory">$FVWM_USERDIR/app-defaults</filename>.
  There can be problems while using certain X session managers or DE which are
-@@ -4961,7 +4857,7 @@ even better, <filename class="directory">$FVWM_USERDIR
+@@ -5226,7 +5185,7 @@ even better, <filename class="directory">$FVWM_USERDIR
  and reworked for <link linkend="NsCDE-ColorMgr">Color Style Manager</link> integration,
  because if find in that directory,
  and with <emphasis>.tmpl</emphasis> extension, it will be processed in the same way
@@ -1075,7 +1006,7 @@
  and put in <filename class="directory">$FVWM_USERDIR/app-defaults</filename>.
  </para>
  <para>
-@@ -4975,12 +4871,12 @@ X resources integration is turned on by default in
+@@ -5240,12 +5199,12 @@ X resources integration is turned on by default in
  <sect2 id="NsCDE-Integration-Gtk-Qt">
  <title>Gtk2, Gtk3, Qt4 and Qt5</title>
  <para>
@@ -1083,7 +1014,7 @@
 -<filename class="directory">$NSCDE_ROOT/lib/python</filename> and with
 -<filename class="directory">$NSCDE_ROOT/share/config_templates/integration/gtk2_gtk3_qt</filename>
 +<command>${PREFIX}/libexec/nscde/themegen.py</command> with
-+<filename class="directory">${PREFIX}/lib/nscde/python</filename> and with
++<filename class="directory">${PREFIX}/libexec/nscde/lib/python</filename> and with
 +<filename class="directory">${PREFIX}/share/nscde/config_templates/integration/gtk2_gtk3_qt</filename>
  are parts of the optional Gtk2, Gtk3, Qt4 and Qt5 integration suite. When run from the
  <link linkend="NsCDE-ColorMgr">Color Style Manager</link> or manually with the
@@ -1092,7 +1023,61 @@
  with proper options, this will produce <filename class="directory">$HOME/.themes/NsCDE</filename>
  directory with either or both Gtk2 and Gtk3 themes. <filename>$HOME/.gtkrc-2.0</filename> and
  <filename>$HOME/.config/gtk-3.0/settings.ini</filename> will be edited to point to this
-@@ -5014,13 +4910,13 @@ of this resources. Also "skins" for programs like <com
+@@ -5275,7 +5234,7 @@ to generate colorsets also for either or both Firefox 
+ <para>
+ For this to work,
+ appropriate code or the whole <filename>colormgr.local</filename> from
+-<filename>$NSCDE_ROOT/share/config_templates/colormgr.local</filename> must be adapted into
++<filename>${PREFIX}/share/nscde/config_templates/colormgr.local</filename> must be adapted into
+ <filename>$FVWM_USERDIR/libexec/colormgr.local</filename>. Shell variable
+ <varname>FIREFOX_CHROMEDIR</varname> should contain path to the
+ <filename class="directory">~/.mozilla/firefox/__PROFILE__/chrome.</filename>,
+@@ -5286,8 +5245,8 @@ point to chrome directory of user's thunderbird profil
+ directory does not exist, it will be created by the <filename>colormgr.local</filename>. This will make
+ appropriate entiries in <filename>userChrome.css</filename> and <filename>userContent.css</filename> to
+ import <filename>nscdeChrome.css</filename>, <filename>nscdeIcons.css</filename> and
+-<filename>nscdeContent.css</filename> from the <filename class="directory">$NSCDE_ROOT/share/config_templates/integration/firefox</filename>
+-and/or from <filename class="directory">$NSCDE_ROOT/share/config_templates/integration/thunderbird</filename>.
++<filename>nscdeContent.css</filename> from the <filename class="directory">${PREFIX}/share/nscde/config_templates/integration/firefox</filename>
++and/or from <filename class="directory">${PREFIX}/share/nscde/config_templates/integration/thunderbird</filename>.
+ File <filename>nscdeColordefs.css</filename> will be generated in the chrome dir with color mappings to the
+ current NsCDE theme. This wile is also imported in userChrome.css and userContent.css.
+ </para>
+@@ -5317,12 +5276,12 @@ makes a changes:
+ 
+ $ cat /home/user/.thunderbird/Profile_1/chrome/userContent.css 
+ @import url("nscdeColordefs.css");
+-@import url("/opt/NsCDE/share/config_templates/integration/thunderbird/nscdeContent.css");
++@import url("${PREFIX}/share/nscde/config_templates/integration/thunderbird/nscdeContent.css");
+ 
+ $ cat /home/user/.thunderbird/Profile_1/chrome/userChrome.css
+ @import url("nscdeColordefs.css");
+-@import url("/opt/NsCDE/share/config_templates/integration/thunderbird/nscdeChrome.css");
+-@import url("/opt/NsCDE/share/config_templates/integration/thunderbird/nscdeIcons.css");
++@import url("${PREFIX}/share/nscde/config_templates/integration/thunderbird/nscdeChrome.css");
++@import url("${PREFIX}/share/nscde/config_templates/integration/thunderbird/nscdeIcons.css");
+ </programlisting>
+ 
+ </para>
+@@ -5333,14 +5292,14 @@ This is how Firefox chromedir should look:
+ <![CDATA[
+ /home/user/.mozilla/firefox/testtest.default-release/chrome
+ |- nscdeColordefs.css
+-|- nscdeContent.css -> /opt/NsCDE/share/config_templates/integration/firefox/ff9x_nscdeContent.css
++|- nscdeContent.css -> ${PREFIX}/share/nscde/config_templates/integration/firefox/ff9x_nscdeContent.css
+ |- userChrome.css
+ |- userContent.css
+ 
+ $ cat /home/user/.mozilla/firefox/testtest.default-release/chrome/userChrome.css 
+ @import url("nscdeColordefs.css");
+-@import url("/opt/NsCDE/share/config_templates/integration/firefox/ff9x_nscdeChrome.css");
+-@import url("/opt/NsCDE/share/config_templates/integration/firefox/nscdeIcons.css");
++@import url("${PREFIX}/share/nscde/config_templates/integration/firefox/ff9x_nscdeChrome.css");
++@import url("${PREFIX}/share/nscde/config_templates/integration/firefox/nscdeIcons.css");
+ 
+ $ cat /home/user/.mozilla/firefox/testtest.default-release/chrome/userContent.css
+ @import url("nscdeColordefs.css");
+@@ -5370,13 +5329,13 @@ of this resources. Also "skins" for programs like <com
  and <command>Gkrellm</command> can be processed from custom <command>colormgr.local</command>.
  </para>
  <para>
@@ -1109,7 +1094,7 @@
  </para>
  </sect2>
  
-@@ -5086,7 +4982,7 @@ set to look almost as Dtterm, but with richer menu and
+@@ -5442,7 +5401,7 @@ set to look almost as Dtterm, but with richer menu and
  handling, the bad thing is that configuration if not done via GUI or configuration file but is
  stored in binary DCONF registry, and registry editor like <command>dconf-editor</command> or
  or dconf <command>gsettings</command> must be used for non-interactive or CLI editing.
@@ -1118,7 +1103,7 @@
  on how to integrate <command>mate-terminal</command> with a
  <link linkend="NsCDE-ColorMgr">Color Style Manager</link>.
  Second (if not first) best choice is <command>Urxvt</command>, but since it does not have a menu nor a
-@@ -5117,7 +5013,7 @@ NsCDE has a ready drop-in theme called (of course) NsC
+@@ -5473,7 +5432,7 @@ NsCDE has a ready drop-in theme called (of course) NsC
  <filename class="directory">share/config_templates</filename> and it can be put in user's
  <filename class="directory">~/.gkrellm2/themes</filename> and integrated with
  <link linkend="NsCDE-ColorMgr">Color Style Manager</link>
@@ -1127,7 +1112,7 @@
  installed as <filename>$FVWM_USERDIR/libexec/colormgr.local</filename>.
  </para>
  <para>
-@@ -5136,7 +5032,7 @@ powerful GPU, CPU and RAM I have. I turn it on occasio
+@@ -5492,7 +5451,7 @@ powerful GPU, CPU and RAM I have. I turn it on occasio
  amusement of xsnow, xsanta or xeyes type, but when I have serious work to do,
  I simply turn it off in some moment.
  Maybe it can be better if it is configured more conservative than example. See
@@ -1136,27 +1121,21 @@
  a starting point. Syntax of this file is largely compatible for all three above mentioned
  X compositors.
  </para>
-@@ -5382,11 +5278,11 @@ with complete explanations:
+@@ -5744,6 +5703,8 @@ with complete explanations:
  <sect1 id="NsCDE-Patches-FVWM">
  <title>Patches for FVWM</title>
  <para>
--Optional but recommended patches for FVWM 2.6.7 and 2.6.8 are in
--<filename class="directory">/opt/NsCDE/src</filename> directory.
-+Optional but recommended patches for FVWM 2.6.7 and 2.6.8 are 
-+available on GitHub but are not integrated in FreeBSD's port.
++(This FreeBSD port does not include these patches in fvwm and therefore are not
++applicable)
+ Optional but recommended patches for FVWM 2.6.7 and 2.6.8 are in
+ <filename class="directory">/opt/NsCDE/src</filename> directory.
  </para>
- <para>
--This patches will add:
-+These patches will add:
- </para>
- <itemizedlist>
- <listitem><para>
-@@ -5472,7 +5368,7 @@ in layout to old Xinerama support in FVWM2, while seco
- and different parts of different workspaces can be shown on different
- monitors. For NsCDE to work with this, currently there is one workaround in
- the for of external background setter. For more information and instructions, refer
--to the <filename>$NSCDE_ROOT/share/doc/examples/fvwm3-per-monitor/README</filename>.
-+to the <filename>${PREFIX}/share/examples/nscde/fvwm3-per-monitor/README</filename>.
- As in the future more desktop layouts are planned by FVWM3 developers, this
- setting will most probably get it's GUI control usable on FVWM3 in the
- <link linkend="NsCDE-WsPgMgr">Workspaces and Pages Manager</link>. Currently, NsCDE
+@@ -5834,7 +5795,7 @@ in layout to old Xinerama support in FVWM2, while seco
+ workspaces, so different parts of different workspaces can be shown on different
+ monitors. NsCDE implements dynamic finding and displaying, as well as creation of
+ joint backdrops combinations for multiple monitors layout out of the box, so old
+-hack described in <filename>$NSCDE_ROOT/share/doc/examples/fvwm3-per-monitor/README</filename>
++hack described in <filename>${PREFIX}/share/examples/nscde/fvwm3-per-monitor/README</filename>
+ is not needed anymore. As in the future more desktop layouts are planned by FVWM3 developers, this
+ setting has it's GUI control usable on FVWM3 in the
+ <link linkend="NsCDE-WsPgMgr">Workspaces and Pages Style Manager</link>. NsCDE

@@ -1,4 +1,4 @@
---- NsCDE/share/doc/examples/sudo/006_PowerManager.orig	2021-05-01 21:44:54 UTC
+--- NsCDE/share/doc/examples/sudo/006_PowerManager.orig	2021-10-08 08:21:08 UTC
 +++ NsCDE/share/doc/examples/sudo/006_PowerManager
 @@ -8,11 +8,11 @@
  
@@ -9,11 +9,11 @@
 -                         /opt/NsCDE/libexec/nscde-acpi hybrid-suspend, \
 -                         /opt/NsCDE/libexec/nscde-acpi poweroff, \
 -                         /opt/NsCDE/libexec/nscde-acpi reboot
-+Cmnd_Alias NSCDE_ACPI = ${PREFIX}/libexec/nscde-acpi suspend, \
-+                         ${PREFIX}/libexec/nscde-acpi hibernate, \
-+                         ${PREFIX}/libexec/nscde-acpi hybrid-suspend, \
-+                         ${PREFIX}/libexec/nscde-acpi poweroff, \
-+                         ${PREFIX}/libexec/nscde-acpi reboot
++Cmnd_Alias NSCDE_ACPI = ${PREFIX}/libexec/nscde/nscde-acpi suspend, \
++                         ${PREFIX}/libexec/nscde/nscde-acpi hibernate, \
++                         ${PREFIX}/libexec/nscde/nscde-acpi hybrid-suspend, \
++                         ${PREFIX}/libexec/nscde/nscde-acpi poweroff, \
++                         ${PREFIX}/libexec/nscde/nscde-acpi reboot
  
  user1	ALL  = (TOOR)	NOPASSWD: NSCDE_ACPI
  user2	ALL  = (TOOR)	NOPASSWD: NSCDE_ACPI

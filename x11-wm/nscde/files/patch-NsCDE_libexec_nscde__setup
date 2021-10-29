@@ -1,11 +1,5 @@
---- NsCDE/libexec/nscde_setup.orig	2021-04-24 03:10:51 UTC
+--- NsCDE/libexec/nscde_setup.orig	2021-10-08 08:21:08 UTC
 +++ NsCDE/libexec/nscde_setup
-@@ -1,4 +1,4 @@
--#!/usr/bin/env ksh93
-+#!${PREFIX}/bin/ksh93
- 
- #
- # This file is a part of the NsCDE - Not so Common Desktop Environment
 @@ -7,7 +7,7 @@
  #
  
@@ -142,15 +136,14 @@
           locale_setting_default_cursor_theme=$(gettext -s "Setting default cursor theme")
           echo "${HOME}/.icons/default/index.theme ${already_exists}. ${locale_setting_default_cursor_theme}."
 -         $NSCDE_ROOT/bin/confset.py -t ini -c "$HOME/.icons/default/index.theme" -s "Icon Theme" -k Inherits -v dmz-aa
-+         ${PREFIX}/sbin/confset.py -t ini -c "$HOME/.icons/default/index.theme" -s "Icon Theme" -k Inherits -v dmz-aa
++         $PEFIX/sbin/confset.py -t ini -c "$HOME/.icons/default/index.theme" -s "Icon Theme" -k Inherits -v dmz-aa
        fi
     fi
  
-@@ -260,14 +250,14 @@ function setup_nscde
+@@ -244,13 +234,13 @@ function setup_nscde
        if (($VERBOSE == 1)); then
           echo -ne "${HOME}/.gtkrc-2.0 ${already_exists}. "
           gettext -s "Setting NsCDE theme options."
--         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-key-theme-name -v '"Emacs"'
 -         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-theme-name -v '"NsCDE"'
 -         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-font-name -v '"DejaVu Serif Book 10"'
 -         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-application-prefer-dark-theme -v 1
@@ -158,7 +151,6 @@
 -         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-button-images -v 0
 -         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-menu-images -v 0
 -         $NSCDE_ROOT/bin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-cursor-blink -v 0
-+         ${PREFIX}/sbin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-key-theme-name -v '"Emacs"'
 +         ${PREFIX}/sbin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-theme-name -v '"NsCDE"'
 +         ${PREFIX}/sbin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-font-name -v '"DejaVu Serif Book 10"'
 +         ${PREFIX}/sbin/confset.py -t properties -c "$HOME/.gtkrc-2.0" -k gtk-application-prefer-dark-theme -v 1
@@ -169,7 +161,7 @@
        fi
     fi
  
-@@ -284,14 +274,14 @@ function setup_nscde
+@@ -267,14 +257,14 @@ function setup_nscde
        if (($VERBOSE == 1)); then
           echo -ne "${HOME}/.config/gtk-3.0/settings.ini already exists. "
           gettext -s "Setting NsCDE theme options."
@@ -192,7 +184,7 @@
        fi
     fi
  
-@@ -302,7 +292,7 @@ function setup_nscde
+@@ -285,7 +275,7 @@ function setup_nscde
           echo "$locale_generating_default_theme_for_gtk2_gtk3_in $HOME/.themes/NsCDE ..."
        fi
        mkdir -p "$HOME/.themes"
@@ -201,7 +193,7 @@
     else
        if (($VERBOSE == 1)); then
           echo "${HOME}/.themes/NsCDE ${already_exists}."
-@@ -320,7 +310,7 @@ function setup_nscde
+@@ -303,7 +293,7 @@ function setup_nscde
        if (($VERBOSE == 1)); then
           echo -ne "${HOME}/.config/Trolltech.conf ${already_exists}. "
           gettext -s "Setting NsCDE style."
@@ -210,7 +202,7 @@
        fi
     fi
  
-@@ -334,9 +324,9 @@ function setup_nscde
+@@ -317,9 +307,9 @@ function setup_nscde
        if (($VERBOSE == 1)); then
           echo "${HOME}/.config/qt5ct/qt5ct.conf ${already_exists}."
           gettext -s "Setting NsCDE style."
@@ -223,7 +215,7 @@
        fi
     fi
  
-@@ -347,7 +337,7 @@ function setup_nscde
+@@ -330,7 +320,7 @@ function setup_nscde
           echo "$setting_default ${FVWM_USERDIR}/libexec/colormgr.local ..."
        fi
        mkdir -p "${FVWM_USERDIR}/libexec"
@@ -232,7 +224,7 @@
        chmod +x "${FVWM_USERDIR}/libexec/colormgr.local"
     else
        if (($VERBOSE == 1)); then
-@@ -368,7 +358,7 @@ function setup_nscde
+@@ -351,7 +341,7 @@ function setup_nscde
        fi
        if [ "x$ans" == "xy" ]; then
           echo "${locale_enabling}: pageshowrootpager --> 1"
@@ -241,7 +233,7 @@
        elif [ "x$ans" == "xn" ]; then
           echo "${locale_not_enabling} pageshowrootpager --> 0"
        else
-@@ -390,7 +380,7 @@ function setup_nscde
+@@ -380,7 +370,7 @@ function setup_nscde
           echo "$locale_enabled_by_default nscde_use_xscreensaver --> 1"
        elif [ "x$ans" == "xn" ]; then
           echo "$locale_disabling nscde_use_xscreensaver --> 0"
@@ -250,7 +242,7 @@
        else
           gettext -s "Answer not understood."
           echo "$locale_enabled_by_default nscde_use_xscreensaver --> 1"
-@@ -401,7 +391,7 @@ function setup_nscde
+@@ -391,7 +381,7 @@ function setup_nscde
           if (($VERBOSE == 1)); then
              echo "$setting_default ${FVWM_USERDIR}/Stalonetray.conf ..."
           fi
@@ -259,7 +251,7 @@
        else
           if (($VERBOSE == 1)); then
              locale_already_in_place=$(gettext -s "already in place")
-@@ -419,7 +409,7 @@ function setup_nscde
+@@ -409,7 +399,7 @@ function setup_nscde
           echo "$locale_enabled_by_default nscde_use_stalonetray --> 1"
        elif [ "x$ans" == "xn" ]; then
           echo "$locale_disabling nscde_use_stalonetray --> 0"
@@ -268,7 +260,7 @@
        else
           gettext -s "Answer not understood."
           echo "$locale_enabled_by_default nscde_use_stalonetray --> 1"
-@@ -435,7 +425,7 @@ function setup_nscde
+@@ -425,7 +415,7 @@ function setup_nscde
           fi
           if [ "x$ans" == "xy" ]; then
              echo "$locale_enabling nscde_use_xsettingsd --> 1"
@@ -277,7 +269,7 @@
           elif [ "x$ans" == "xn" ]; then
              echo "$locale_not_enabling nscde_use_xsettingsd --> 0"
           else
-@@ -454,8 +444,8 @@ function setup_nscde
+@@ -444,8 +434,8 @@ function setup_nscde
           fi
           if [ "x$ans" == "xy" ]; then
              echo "$locale_enabling nscde_use_dunst --> 1"
@@ -288,7 +280,7 @@
           elif [ "x$ans" == "xn" ]; then
              echo "$locale_not_enabling nscde_use_dunst --> 0"
           else
-@@ -474,7 +464,7 @@ function setup_nscde
+@@ -464,7 +454,7 @@ function setup_nscde
           fi
           if [ "x$ans" == "xy" ]; then
              echo "$locale_enabling nscde_use_rofi --> 1"
@@ -297,7 +289,7 @@
           elif [ "x$ans" == "xn" ]; then
              echo "$locale_not_enabling nscde_use_rofi --> 0"
           else
-@@ -491,14 +481,14 @@ function setup_nscde
+@@ -481,14 +471,14 @@ function setup_nscde
        fi
        if [ "x$ans" == "xy" ]; then
           echo "$locale_enabling desklastpage --> 1"
@@ -314,36 +306,53 @@
 +         ${PREFIX}/sbin/ised -c 's/InfoStoreAdd desklastpage 1/InfoStoreAdd desklastpage 0/g' -f "$FVWM_USERDIR/NsCDE.conf"
        fi
  
-       for filemgr in pcmanfm-qt pcmanfm krusader caja nemo thunar dolphin nautilus
-@@ -518,10 +508,10 @@ function setup_nscde
+       if [ "x$FVWM_IS_FVWM3" == "x1" ]; then
+@@ -500,7 +490,7 @@ function setup_nscde
+          fi
+          if [ "x$ans" == "xy" ]; then
+             echo "${locale_enabling}: fvwm3_default_logging --> 1"
+-            $NSCDE_ROOT/bin/ised -c 's/# InfoStoreAdd fvwm3_default_logging 1/InfoStoreAdd fvwm3_default_logging 1/g' -f "$FVWM_USERDIR/NsCDE.conf"
++            ${PREFIX}/sbin/ised -c 's/# InfoStoreAdd fvwm3_default_logging 1/InfoStoreAdd fvwm3_default_logging 1/g' -f "$FVWM_USERDIR/NsCDE.conf"
+          elif [ "x$ans" == "xn" ]; then
+             echo "${locale_not_enabling} fvwm3_default_logging --> 0"
+          else
+@@ -526,7 +516,7 @@ function setup_nscde
        read ans
        if [ "x$ans" != "x" ]; then
           echo "$locale_setting_filemgr filemgr --> ${ans}"
 -         $NSCDE_ROOT/bin/ised -c "s/InfoStoreAdd filemgr true/InfoStoreAdd filemgr ${ans}/g" -f "$FVWM_USERDIR/NsCDE.conf"
 +         ${PREFIX}/sbin/ised -c "s/InfoStoreAdd filemgr true/InfoStoreAdd filemgr ${ans}/g" -f "$FVWM_USERDIR/NsCDE.conf"
+ 
+          # Insanely retarded xdg utils. No exit status, no error, no listings of desktop files.
+          whence -q xdg-mime
+@@ -544,7 +534,7 @@ function setup_nscde
+ 
        elif [ "x${fmsugestion}" != "x" ]; then
           echo "$locale_setting_proposed_filemgr filemgr --> ${fmsugestion}"
 -         $NSCDE_ROOT/bin/ised -c "s/InfoStoreAdd filemgr true/InfoStoreAdd filemgr ${fmsugestion}/g" -f "$FVWM_USERDIR/NsCDE.conf"
 +         ${PREFIX}/sbin/ised -c "s/InfoStoreAdd filemgr true/InfoStoreAdd filemgr ${fmsugestion}/g" -f "$FVWM_USERDIR/NsCDE.conf"
-       else
-          echo "$locale_skipping_fm_set_later $FVWM_USERDIR/NsCDE.conf."
-       fi
-@@ -544,12 +534,12 @@ function setup_nscde
+ 
+          # Insanely retarded xdg utils. No exit status, no error, no listings of desktop files.
+          whence -q xdg-mime
+@@ -582,7 +572,7 @@ function setup_nscde
        if [ "x$ans" != "x" ]; then
           echo "$locale_setting_editor xeditor --> ${ans}"
           if [ "x$ans" != "gvim" ]; then
 -            $NSCDE_ROOT/bin/ised -c "s/InfoStoreAdd xeditor gvim/InfoStoreAdd xeditor ${ans}/g" -f "$FVWM_USERDIR/NsCDE.conf"
 +            ${PREFIX}/sbin/ised -c "s/InfoStoreAdd xeditor gvim/InfoStoreAdd xeditor ${ans}/g" -f "$FVWM_USERDIR/NsCDE.conf"
-          fi
+ 
+             # Insanely retarded xdg utils. No exit status, no error, no listings of desktop files.
+             txtmimes="application/x-shellscript text/english text/plain text/x-c text/x-c++ text/x-c++hdr text/x-c++src text/x-chdr text/x-csrc text/x-java text/x-makefile text/x-readme text/x-tcl"
+@@ -620,7 +610,7 @@ function setup_nscde
        elif [ "x${xedit_suggest}" != "x" ]; then
           echo "$locale_setting_proposed_editor xeditor --> ${xedit_suggest}"
           if [ "x$ans" != "gvim" ]; then
 -            $NSCDE_ROOT/bin/ised -c "s/InfoStoreAdd filemgr true/InfoStoreAdd xeditor ${xedit_suggest}/g" -f "$FVWM_USERDIR/NsCDE.conf"
 +            ${PREFIX}/sbin/ised -c "s/InfoStoreAdd filemgr true/InfoStoreAdd xeditor ${xedit_suggest}/g" -f "$FVWM_USERDIR/NsCDE.conf"
-          fi
-       else
-          echo "$locale_setting_proposed_editor $FVWM_USERDIR/NsCDE.conf."
-@@ -568,13 +558,13 @@ function setup_nscde
+ 
+             # Insanely retarded xdg utils. No exit status, no error, no listings of desktop files.
+             txtmimes="application/x-shellscript text/english text/plain text/x-c text/x-c++ text/x-c++hdr text/x-c++src text/x-chdr text/x-csrc text/x-java text/x-makefile text/x-readme text/x-tcl"
+@@ -672,13 +662,13 @@ function setup_nscde
        gettext -s "that you want to apply and confirm with OK in Color Style Manager"
        sleep 2
        echo ""
@@ -359,7 +368,7 @@
        gettext -s "other integration options you may want to apply."
        sleep 1
        echo ""
-@@ -583,8 +573,8 @@ function setup_nscde
+@@ -687,8 +677,8 @@ function setup_nscde
     if (($INTERACTIVE == 1)); then
        gettext -s "Press RETURN to finish setup and start Color Style Manager."
        read RET

@@ -1,0 +1,6 @@
+--- NsCDE/share/doc/examples/sudo/README.orig	2021-10-16 23:05:58 UTC
++++ NsCDE/share/doc/examples/sudo/README
+@@ -1,2 +1,2 @@
+ For SysActionDialog to work for certain actions, this sudoers configuration
+-has to be put in /etc/sudoers or as a file in /etc/sudoers.d
++has to be put in /usr/local/etc/sudoers or as a file in /usr/local/etc/sudoers.d

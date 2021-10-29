@@ -1,6 +1,6 @@
---- NsCDE/share/config_templates/NsCDE-Functions.local.orig	2021-05-01 22:22:02 UTC
+--- NsCDE/share/config_templates/NsCDE-Functions.local.orig	2021-10-08 08:21:08 UTC
 +++ NsCDE/share/config_templates/NsCDE-Functions.local
-@@ -66,14 +66,14 @@
+@@ -69,14 +69,14 @@
  # Hook of the f_SysConfigureWindowEvent called from
  # FvwmEvent on configure_window event. See
  # FvwmEvent(1) and f_SysConfigureWindowEvent in
