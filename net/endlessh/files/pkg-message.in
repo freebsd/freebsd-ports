@@ -29,4 +29,5 @@ to take care of log rotation.
 ln -s %%PREFIX%%/etc/endlessh.newsyslog.conf %%PREFIX%%/etc/newsyslog.conf.d/
 
 EOD
+}
 ]
