@@ -1,0 +1,6 @@
+This small library enables acceleration of bulk calls of certain math
+functions on AVX and AVX2 hardware.  Currently supported operations are
+exp, log, sigmoid, and tanh.  The library is designed with extensibility
+in mind.
+
+WWW: https://github.com/yandex/fastops

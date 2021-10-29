@@ -1,0 +1,11 @@
+bin/benchmark
+bin/eval
+bin/fastops_test
+include/avx/ops_avx.h
+include/avx2/ops_avx2.h
+include/core/FastIntrinsics.h
+include/core/SIMDFunctions.h
+include/core/avx_id.h
+include/fastops.h
+include/plain/ops_plain.h
+lib/libfastops.a

@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2020-05-06 07:23:43 UTC
++++ CMakeLists.txt
+@@ -3,9 +3,8 @@ cmake_minimum_required(VERSION 2.6)
+ project(fastops)
+ 
+ include_directories("${PROJECT_SOURCE_DIR}")
+-set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/install)
+ 
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+ 
+ # Specify the C++ 17 language standard for
+ # any version of Microsoft Visual C++ Compiler

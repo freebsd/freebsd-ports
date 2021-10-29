@@ -280,6 +280,7 @@
     SUBDIR += facile
     SUBDIR += faiss
     SUBDIR += fann
+    SUBDIR += fastops
     SUBDIR += fcl
     SUBDIR += fcl05
     SUBDIR += fflas-ffpack
