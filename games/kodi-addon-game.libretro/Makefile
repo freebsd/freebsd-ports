@@ -3,6 +3,7 @@
 PORTNAME=	game.libretro
 PORTVERSION=	2.2.0
 DISTVERSIONSUFFIX=	-Matrix
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
