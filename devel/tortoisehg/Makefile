@@ -1,6 +1,7 @@
 PORTNAME=	tortoisehg
 DISTVERSION=	5.9.2
 CATEGORIES=	devel
+MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	GUI for Mercurial VCS
@@ -15,13 +16,7 @@ RUN_DEPENDS=	${PY_MERCURIAL} \
 
 USES=		pyqt:5 python:3.5+
 USE_PYQT=	core gui network qscintilla2 xml
-USE_PYTHON=	distutils autoplist
-
-USE_GITLAB=	yes
-GL_SITE=	https://foss.heptapod.net
-GL_ACCOUNT=	mercurial/tortoisehg
-GL_PROJECT=	thg
-GL_COMMIT=	dc82f5af7ec5183a52b9eec1e8ba3826c8ced859
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	NAUTILUS NLS
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
@@ -33,12 +28,12 @@ NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
 # Do not conflict with devel/mercurial, which also installs hgext3rd/__init__.py
-EXTRACT_AFTER_ARGS=	--exclude thg-${GL_COMMIT}/hgext3rd/__init__.py
+EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/hgext3rd/__init__.py
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VER} != ${PYTHON_DEFAULT}
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
 
 post-patch-NLS-on:
