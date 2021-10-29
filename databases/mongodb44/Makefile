@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.4.9
+DISTVERSION=	4.4.10
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -62,11 +62,6 @@ SSL_USES=	ssl
 SSL_MAKE_ARGS=	--ssl
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ((${OSREL:R} >= 14 && ${OSVERSION} < 1400033) \
-                        && ${ARCH} == "aarch64")
-BROKEN=        Aarch64 needs LSE atomics which was fixed in https://cgit.freebsd.org/src/commit/?id=efe67f33c322265eb303ec0ab40275100795b22a
-.endif
 
 .if ${ARCH} == aarch64 || ${ARCH} == powerpc64le
 EXTRA_PATCHES=	${FILESDIR}/${ARCH}
