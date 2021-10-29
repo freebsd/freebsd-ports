@@ -1,5 +1,5 @@
-TIMESTAMP = 1633386189
-SHA256 (lighttpd-1.4.60.tar.xz) = 4bb1dd859e541a3131e5be101557d2e1195b4129d3a849a3a6fbd21fe1c946f0
-SIZE (lighttpd-1.4.60.tar.xz) = 1008548
+TIMESTAMP = 1635514716
+SHA256 (lighttpd-1.4.61.tar.xz) = 43f0d63d04a1b7c5b8aab07e0612e44ccad0afc0614bab784c5b019872363432
+SIZE (lighttpd-1.4.61.tar.xz) = 1010624
 SHA256 (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch) = dc9bd6e26755cc2e3ccf6eaf8cc89e5d697f5a876f71318be67b28225368fd4e
 SIZE (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch) = 242037
