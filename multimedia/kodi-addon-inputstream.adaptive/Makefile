@@ -1,5 +1,5 @@
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.6.23
+DISTVERSION=	19.0.0
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
