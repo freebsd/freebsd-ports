@@ -6813,6 +6813,7 @@
     SUBDIR += rubygem-sentry-ruby-core
     SUBDIR += rubygem-sentry-sidekiq
     SUBDIR += rubygem-sequel
+    SUBDIR += rubygem-server_sent_events
     SUBDIR += rubygem-set
     SUBDIR += rubygem-settingslogic
     SUBDIR += rubygem-sexp_processor
