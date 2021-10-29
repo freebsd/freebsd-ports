@@ -1,6 +1,6 @@
 PORTNAME=	libgav1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.3
+DISTVERSION=	0.17.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,11 +10,14 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libabsl_synchronization.so:devel/abseil
 
-USES=		cmake compiler:c++17-lang localbase:ldflags
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	jbeich # mirror
+GH_TUPLE=	google:googletest:release-1.11.0:gtest/third_party/googletest
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF+=	${CMAKE_TESTING_ON}
+CMAKE_TESTING_ON=	LIBGAV1_ENABLE_TESTS
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (abseil deps)
 
 .include <bsd.port.mk>
