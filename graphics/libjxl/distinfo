@@ -1,6 +1,6 @@
-TIMESTAMP = 1633370564
-SHA256 (libjxl-libjxl-v0.6_GH0.tar.gz) = 89584e20c6e537d8d65d286fd6ae48d5d6abb087ca89f3207238d8d7e6ced4dc
-SIZE (libjxl-libjxl-v0.6_GH0.tar.gz) = 16953410
+TIMESTAMP = 1635545136
+SHA256 (libjxl-libjxl-v0.6.1_GH0.tar.gz) = ccbd5a729d730152303be399f033b905e608309d5802d77a61a95faa092592c5
+SIZE (libjxl-libjxl-v0.6.1_GH0.tar.gz) = 16953185
 SHA256 (barmco-skcms-6437475_GH0.tar.gz) = 6818ea7aa053a964d1795d6d1d3c5e2aad5d30dff9817c8e604e324ef643ec01
 SIZE (barmco-skcms-6437475_GH0.tar.gz) = 9200034
 SHA256 (google-highway-0.12.2-4-ge239774_GH0.tar.gz) = 27ae8a40f82874cb30bd62ef8f5567cc27838ee258ed0af47745685a15b23a8e
