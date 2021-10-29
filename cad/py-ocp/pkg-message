@@ -1,4 +1,0 @@
-It is essential for the correct operation of this library for the
-cad/opencascade port to be built with the VIS option disabled. Unfortunately
-the current default is enabled, so if missing symbols are encounted, then
-it will be necessary to rebuild cad/opencascade without the VIS option.
