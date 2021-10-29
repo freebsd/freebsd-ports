@@ -89,6 +89,7 @@
     SUBDIR += py-kosmorrolib
     SUBDIR += py-metar
     SUBDIR += py-metpy
+    SUBDIR += py-pyerfa
     SUBDIR += py-pykep
     SUBDIR += py-pymeeus
     SUBDIR += py-pymetar
