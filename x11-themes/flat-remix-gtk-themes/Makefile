@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	flat-remix-gtk
-PORTVERSION=	20201129
+PORTVERSION=	20211010
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-themes
 
