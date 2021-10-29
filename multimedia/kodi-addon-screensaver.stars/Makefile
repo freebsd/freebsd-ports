@@ -3,7 +3,7 @@
 PORTNAME=	screensaver.stars
 PORTVERSION=	2.4.0
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

@@ -3,7 +3,7 @@
 PORTNAME=	peripheral.joystick
 DISTVERSION=	1.7.1
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
