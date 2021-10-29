@@ -1,5 +1,5 @@
 PORTNAME=	purescript
-PORTVERSION=	0.14.4
+PORTVERSION=	0.14.5
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
