@@ -1100,6 +1100,7 @@ lib/calibre/calibre/gui2/viewer/__init__.py
 lib/calibre/calibre/gui2/viewer/annotations.py
 lib/calibre/calibre/gui2/viewer/bookmarks.py
 lib/calibre/calibre/gui2/viewer/config.py
+lib/calibre/calibre/gui2/viewer/control_sleep.py
 lib/calibre/calibre/gui2/viewer/convert_book.py
 lib/calibre/calibre/gui2/viewer/highlights.py
 lib/calibre/calibre/gui2/viewer/integration.py
