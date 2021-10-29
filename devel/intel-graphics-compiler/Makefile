@@ -1,8 +1,11 @@
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.8744
+DISTVERSION=	1.0.9289
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	99edbf49d7c9.patch:-p1 # clang
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
@@ -25,6 +28,8 @@ USES=		bison cmake compiler:c++17-lang python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-123-g814e728:headers/../SPIRV-Headers \
+		KhronosGroup:SPIRV-Tools:v2021.4:tools/../SPIRV-Tools
 CMAKE_OFF=	INSTALL_SPIRVDLL
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH:PATH="${LOCALBASE}/${FLAVOR}" \
 		-DIGC_OPTION__LLVM_PREFERRED_VERSION:STRING="${FLAVOR:S/llvm//}"

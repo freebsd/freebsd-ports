@@ -256,17 +256,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #define LINUX_RELEASE_MODE
  #endif
  
---- visa/BuildCISAIRImpl.cpp.orig	2020-09-16 10:27:28 UTC
+--- visa/BuildCISAIRImpl.cpp.orig	2021-10-29 09:43:43 UTC
 +++ visa/BuildCISAIRImpl.cpp
-@@ -576,7 +576,6 @@ extern void CISA_delete_buffer(YY_BUFFER_STATE buf);
- 
- int CISA_IR_Builder::ParseVISAText(const std::string& visaHeader, const std::string& visaText, const std::string& visaTextFile)
+@@ -925,7 +925,6 @@ static std::mutex mtx;
+ int CISA_IR_Builder::ParseVISAText(const std::string& visaText, const std::string& visaTextFile)
  {
+     const std::lock_guard<std::mutex> lock(mtx);
 -#if defined(__linux__) || defined(_WIN64) || defined(_WIN32)
      // Direct output of parser to null
  #if defined(_WIN64) || defined(_WIN32)
      CISAout = fopen("nul", "w");
-@@ -627,16 +626,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+@@ -973,16 +972,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
      }
  
      return status;
@@ -283,7 +283,7 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      // Direct output of parser to null
  #if defined(_WIN64) || defined(_WIN32)
      CISAout = fopen("nul", "w");
-@@ -662,10 +656,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+@@ -1008,10 +1002,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
          fclose(CISAout);
      }
      return VISA_SUCCESS;
