@@ -1,6 +1,6 @@
 PORTNAME=	MetaPhysicL
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	1.2.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,12 +9,20 @@ COMMENT=	Metaprogramming, operator-overloaded classes for numerical simulations
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/date_time/posix_time/posix_time.hpp:devel/boost-libs
+
 USES=		autoreconf gmake libtool
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	roystgnr
+GH_TUPLE=	libMesh:autoconf-submodule:a993d79:autoconf_submodule/m4/autoconf-submodule
+
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-static
+
 INSTALL_TARGET=	install-strip
+
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

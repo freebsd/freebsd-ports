@@ -11,6 +11,7 @@ include/metaphysicl/dualexpression.h
 include/metaphysicl/dualnamedarray.h
 include/metaphysicl/dualnumber.h
 include/metaphysicl/dualnumber_decl.h
+include/metaphysicl/dualnumber_forward.h
 include/metaphysicl/dualnumber_surrogate.h
 include/metaphysicl/dualnumber_surrogate_decl.h
 include/metaphysicl/dualnumberarray.h
@@ -36,6 +37,7 @@ include/metaphysicl/dynamicsparsenumbervector_decl.h
 include/metaphysicl/metaphysicl_asserts.h
 include/metaphysicl/metaphysicl_cast.h
 include/metaphysicl/metaphysicl_common.h
+include/metaphysicl/metaphysicl_config.h
 include/metaphysicl/metaphysicl_exceptions.h
 include/metaphysicl/metaphysicl_version.h
 include/metaphysicl/metaprogramming.h
@@ -43,6 +45,8 @@ include/metaphysicl/namedindexarray.h
 include/metaphysicl/nddualnumber.h
 include/metaphysicl/numberarray.h
 include/metaphysicl/numbervector.h
+include/metaphysicl/parallel_dualnumber.h
+include/metaphysicl/parallel_dynamicsparsenumberarray.h
 include/metaphysicl/physics.h
 include/metaphysicl/raw_type.h
 include/metaphysicl/semidynamicsparsenumberarray.h
@@ -54,7 +58,7 @@ include/metaphysicl/sparsenumberutils.h
 include/metaphysicl/sparsenumbervector.h
 include/metaphysicl/testable.h
 lib/libmetaphysicl.so
-lib/libmetaphysicl.so.6
-lib/libmetaphysicl.so.6.0.0
+lib/libmetaphysicl.so.7
+lib/libmetaphysicl.so.7.0.0
 libdata/pkgconfig/metaphysicl.pc
 share/aclocal/metaphysicl.m4
