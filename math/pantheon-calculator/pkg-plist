@@ -1,5 +1,17 @@
 bin/io.elementary.calculator
 share/applications/io.elementary.calculator.desktop
+share/icons/hicolor/128x128/apps/io.elementary.calculator.svg
+share/icons/hicolor/128x128@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/16x16/apps/io.elementary.calculator.svg
+share/icons/hicolor/16x16@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/24x24/apps/io.elementary.calculator.svg
+share/icons/hicolor/24x24@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/32x32/apps/io.elementary.calculator.svg
+share/icons/hicolor/32x32@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/48x48/apps/io.elementary.calculator.svg
+share/icons/hicolor/48x48@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/64x64/apps/io.elementary.calculator.svg
+share/icons/hicolor/64x64@2/apps/io.elementary.calculator.svg
 share/locale/af/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/ak/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/ar/LC_MESSAGES/io.elementary.calculator.mo
