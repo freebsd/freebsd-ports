@@ -1,0 +1,19 @@
+--- templates/CMakeLists.j2.orig	2021-03-03 18:11:14 UTC
++++ templates/CMakeLists.j2
+@@ -17,7 +17,8 @@ endif()
+ 
+ find_package( pybind11 REQUIRED )
+ find_package( OpenCascade REQUIRED COMPONENTS OPENCASCADE )
+ find_package( VTK 9.0 REQUIRED COMPONENTS WrappingPythonCore RenderingCore CommonDataModel CommonExecutionModel)
++find_package(OpenGL REQUIRED COMPONENTS OpenGL )
+ 
+ #clang-cl related workaround
+ if(WIN32)
+@@ -30,6 +31,7 @@ file( GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/*.cpp )
+ add_library( {{ name }} MODULE ${CPP_FILES} )
+ 
+ target_link_libraries( {{ name }} PRIVATE OPENCASCADE pybind11::pybind11 VTK::WrappingPythonCore VTK::RenderingCore VTK::CommonDataModel VTK::CommonExecutionModel)
++target_link_libraries( {{ name }} PRIVATE ${OPENGL_gl_LIBRARY} )
+ set_target_properties( {{ name }}
+                        PROPERTIES
+                        CXX_STANDARD 17

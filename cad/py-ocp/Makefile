@@ -1,42 +1,60 @@
 PORTNAME=	ocp
-DISTVERSION=	7.4-RC2
-PORTREVISION=	3
-CATEGORIES=	cad
-# Direct access to github is needed because the release added an extra archive which
-# we need to build from, rather than the initial release.
-MASTER_SITES=	https://github.com/CadQuery/OCP/releases/download/${DISTVERSION}/
+DISTVERSION=	7.5.2
+CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	OCP_src_Linux
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Python wrapper for OCCT generated using pywrap
 
-BROKEN=		Mismatch between OpenCascase (7.5) and py-ocp (7.4)
-
 LICENSE=	APACHE20
 
-PATCH_DEPENDS=	${LOCALBASE}/include/OpenCASCADE/OpenGl_HaltonSampler.hxx:cad/opencascade
-LIB_DEPENDS=	libTKernel.so:cad/opencascade
-BUILD_DEPENDS=	${LOCALBASE}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind11 \
-		${PYTHON_SITELIBDIR}/pybind11:devel/py-pybind11@${PY_FLAVOR}
+EXTRACT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cadquery-pywrap>0:devel/py-cadquery-pywrap@${PY_FLAVOR}
+LIB_DEPENDS=	libTKernel.so:cad/opencascade \
+		libvtksys-${VTKVER}.so:math/vtk9
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
+		pybind11>0:devel/pybind11 \
+		rapidjson>0:devel/rapidjson \
+		${PYTHON_PKGNAMEPREFIX}path>0:devel/py-path@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lief>0:devel/py-lief@${PY_FLAVOR}
 
-USES=		cmake compiler:c++11-lang gl python:3.6+ zip
+USES=		python:3.6+ cmake gl compiler:c++11-lang
 USE_GL=		gl glu glut
 
-WRKSRC=		${WRKDIR}/OCP_src_Ubuntu-16.04
+USE_GITHUB=	yes
+GH_ACCOUNT=	CadQuery
+GH_PROJECT=	OCP
+GH_TAGNAME=	52c15d8
 
-OCCT=		${LOCALBASE}/include/OpenCASCADE
-OCCT_LOCAL=	${WRKSRC}/OCCT
+VTKVER=         9.0
 
-CMAKE_ARGS=	-DOPENCASCADE_INCLUDE_DIR=${OCCT} \
-		-DPYTHON_EXECUTABLE=${PYTHON_CMD}
+CONFIG_FILE=	${WRKSRC}/ocp.toml
 
-USE_PYTHON=	flavors
+OCCT=           ${LOCALBASE}/include/OpenCASCADE
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/OCP.so
+CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
+		-DOPENCASCADE_INCLUDE_DIR=${OCCT} \
+		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTKVER}/cmake/vtk-${VTKVER}
+CMAKE_SOURCE_PATH=	${WRKSRC}/OCP
+
+PLIST_FILES=    ${PYTHON_SITELIBDIR}/OCP.so
+
+export CONDA_PREFIX=	${LOCALBASE}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|input_folder = "./opencascade"|input_folder = "${OCCT}"|g' ${WRKSRC}/ocp.toml
+
+pre-configure:
+	# Generate the header files.
+	(cd ${WRKSRC} && ${PYTHON_CMD} dump_symbols.py ${LOCALBASE})
+	(cd ${WRKSRC} && CONDA_PREFIX=${LOCALBASE}; \
+	 ${PYTHON_CMD} -m bindgen -n ${MAKE_JOBS_NUMBER} \
+	 --libclang=${LOCALBASE}/llvm90/lib/libclang.so \
+	 --include=${LOCALBASE}/include \
+	 --include=${LOCALBASE}/include/vtk-${VTKVER} \
+	 all ${CONFIG_FILE})
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
-	${INSTALL_LIB} ${BUILD_WRKSRC}/OCP.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/OCP.cpython-${PYTHON_VER:S/.//}.so ${STAGEDIR}${PYTHON_SITELIBDIR}/OCP.so
 
 .include <bsd.port.mk>
