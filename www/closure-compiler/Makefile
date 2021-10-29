@@ -2,7 +2,7 @@
 
 PORTNAME=	closure-compiler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	20210907
+DISTVERSION=	20211006
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/google/javascript/${PORTNAME}/v${DISTVERSION}/
 EXTRACT_SUFX=	.jar
