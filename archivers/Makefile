@@ -185,6 +185,7 @@
     SUBDIR += py-lzstring
     SUBDIR += py-python-lhafile
     SUBDIR += py-python-lzo
+    SUBDIR += py-python-rpm-packaging
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
     SUBDIR += py-rcssmin
