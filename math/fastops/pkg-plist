@@ -1,6 +1,5 @@
-bin/benchmark
-bin/eval
-bin/fastops_test
+bin/fastops_benchmark
+bin/fastops_eval
 include/avx/ops_avx.h
 include/avx2/ops_avx2.h
 include/core/FastIntrinsics.h
