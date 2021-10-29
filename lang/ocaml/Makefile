@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=-x11include ${LOCALBASE}/include -x11lib ${LOCALBASE}/lib
 .else
 PLIST_SUB+=	X11="@comment "
 SFX=		-nox11
-CONFLICTS+=	ocaml-[0-9]*
+CONFLICTS+=	ocaml
 CONFIGURE_ARGS+=-no-graph
 .endif
 
