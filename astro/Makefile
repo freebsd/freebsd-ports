@@ -83,6 +83,7 @@
     SUBDIR += py-astropy
     SUBDIR += py-astropy-helpers
     SUBDIR += py-ephem
+    SUBDIR += py-extension-helpers
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-indiweb
     SUBDIR += py-jplephem
