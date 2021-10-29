@@ -4,10 +4,6 @@ JSON IPC interface. The client swayr offers subcommands, see swayr
 --help, and sends them to the demon which executes them.
 
 Right now, there are these subcommands:
-* next-window focuses the next window in depth-first iteration order of the
-  tree.
-* prev-window focuses the previous window in depth-first iteration order of
-  the tree.
 * switch-window displays all windows in the order urgent first, then
   last-recently-used, focused last and focuses the selected.
 * quit-window displays all windows and quits the selected one.
@@ -20,11 +16,53 @@ Right now, there are these subcommands:
 * quit-workspace-or-window displays all workspaces and their windows and
   allows to quit either the selected workspace (all its windows) or the
   selected window.
+* next-window (all-workspaces|current-workspace) & prev-window
+  (all-workspaces|current-workspace) focus the next/previous window in
+  depth-first iteration order of the tree.  The argument all-workspaces or
+  current-workspace define if all windows of all workspaces or only those of
+  the current workspace are considered.
+* next-tiled-window & prev-tiled-window do the same as next-window &
+  prev-window but switch only between windows contained in a tiled container.
+* next-tabbed-or-stacked-window & prev-tabbed-or-stacked-window do the same
+  as next-window & prev-window but switch only between windows contained in
+  a tabbed or stacked container.
+* next-floating-window & prev-floating-window do the same as next-window
+  & prev-window but switch only between floating windows.
+* next-window-of-same-layout & prev-window-of-same-layout is like
+  next-floating-window / prev-floating-window if the current window is
+  floating, it is like next-tabbed-or-stacked-window /
+  prev-tabbed-or-stacked-window if the current window is in a tabbed, or
+  stacked container, it is like next-tiled-window / prev-tiled-window if
+  the current windows is in a tiled container, and is like next-window /
+  prev-window otherwise.
 * execute-swaymsg-command displays most swaymsg which don't require
-  additional input and executes the selected one. That's handy especially for
+  additional input and executes the selected one.  That's handy especially for
   less often used commands not bound to a key.
 * execute-swayr-command displays all commands above and executes the selected
-  one. (This is useful for accessing swayr commands which are not bound to a
+  one.  (This is useful for accessing swayr commands which are not bound to a
   key.)
+* tile-workspace exclude-floating|include-floating tiles all windows on the
+  current workspace (excluding or including floating ones).  That's done by
+  moving all windows away to some special workspace, setting the current
+  workspace to splith layout, and then moving the windows back.  If the
+  auto_tile feature is used, see the Configuration section below, it'll
+  change from splitting horizontally to vertically during re-insertion.
+* shuffle-tile-workspace exclude-floating|include-floating shuffles & tiles
+  all windows on the current workspace.  The shuffle part means that (a) the
+  windows are shuffled before re-insertion, and (b) a randomly chosen already
+  re-inserted window is focused before re-inserting another window.  So while
+  tile-workspace on a typical horizontally oriented screen and 5 windows will
+  usually result in a layout with one window on the left and all four others
+  tiled vertially on the right, shuffle-tile-workspace in combination with
+  auto_tile usually results in a more balanced layout, i.e., 2 windows tiled
+  vertically on the right and the other 4 tiled vertially on the left.  If you
+  have less than a handful of windows, just repeat shuffle-tile-workspace a
+  few times until happenstance creates the layout you wanted.
+* tab-workspace exclude-floating|include-floating puts all windows of the
+  current workspace into a tabbed container.
+* toggle-tab-shuffle-tile-workspace exclude-floating|include-floating toggles
+  between a tabbed and tiled layout, i.e., it calls shuffle-tile-workspace if
+  it is currently tabbed, and calls shuffle-tile-workspace if it is currently
+  tiled.
 
 WWW: https://sr.ht/~tsdh/swayr/
