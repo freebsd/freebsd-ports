@@ -2,7 +2,7 @@ PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.0.2
 DISTVERSIONSUFFIX=	-release
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +17,7 @@ BROKEN_aarch64=	fails to build: gfortran10: error: unrecognized command-line opt
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblas.so:math/blas \
-		libga.so:devel/ga \
-		libmpich.so:net/mpich
+		libga.so:devel/ga
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
 
 USES=		fortran gmake perl5 shebangfix
@@ -30,7 +29,7 @@ USE_PERL5=	build
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
-MAKE_ENV=	NWCHEM_TOP=${WRKSRC}/.. NWCHEM_MODULES=all NWCHEM_LONG_PATHS=Y NWCHEM_TARGET=LINUX${ARCH_64BIT} USE_MPI=Y USE_INTERNALBLAS=Y EXTERNAL_GA_PATH=${LOCALBASE} \
+MAKE_ENV=	NWCHEM_TOP=${WRKSRC}/.. NWCHEM_MODULES=all NWCHEM_LONG_PATHS=Y NWCHEM_TARGET=LINUX${ARCH_64BIT} USE_INTERNALBLAS=Y EXTERNAL_GA_PATH=${LOCALBASE} \
 		BLAS_SIZE=4 USE_64TO32=y
 
 SUB_FILES=	nwchemrc
@@ -42,7 +41,20 @@ BINARY_ALIAS=	gcc=${CC} gfortran=gfortran${GCC_DEFAULT}
 PLIST_FILES=	bin/nwchem etc/nwchemrc
 
 OPTIONS_DEFINE=		PYTHON
-OPTIONS_DEFAULT=	PYTHON
+OPTIONS_DEFAULT=	PYTHON MPICH # the default should be the same as for the MPI option in math/scalapack and devel/ga
+OPTIONS_RADIO=		MPI
+OPTIONS_RADIO_MPI=	NOMPI MPICH OPENMPI
+
+NOMPI_DESC=		MPI isn't used
+NOMPI_BROKEN=		Fails to build without MPI
+
+MPICH_MAKE_ENV=		USE_MPI=Y
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
+
+OPENMPI_MAKE_ENV=	USE_MPI=Y PATH=${LOCALBASE}/mpi/openmpi/bin:$${PATH} # mpif90 in path determines which MPI library to use, see https://www.nwchem-sw.org/index-php/Compiling_NWChem.html#MPI_variables
+OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_VARS=		CONFLICTS_BUILD=mpich
 
 PYTHON_DESC=		Enable Python syntax in input files
 PYTHON_USES=		python
