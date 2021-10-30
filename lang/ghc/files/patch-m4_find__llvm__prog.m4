@@ -1,6 +1,6 @@
---- aclocal.m4.orig	2020-08-07 16:52:59 UTC
-+++ aclocal.m4
-@@ -2221,7 +2221,7 @@ AC_DEFUN([XCODE_VERSION],[
+--- m4/find_llvm_prog.m4.orig	2021-10-28 20:41:34 UTC
++++ m4/find_llvm_prog.m4
+@@ -1,7 +1,7 @@
  # FIND_LLVM_PROG()
  # --------------------------------
  # Find where the llvm tools are. We have a special function to handle when they
@@ -9,7 +9,7 @@
  # llc).
  #
  # $1 = the variable to set
-@@ -2231,7 +2231,7 @@ AC_DEFUN([XCODE_VERSION],[
+@@ -11,7 +11,7 @@
  #
  AC_DEFUN([FIND_LLVM_PROG],[
      # Test for program with and without version name.
