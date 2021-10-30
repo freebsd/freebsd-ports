@@ -3341,6 +3341,7 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/c_437.nls
 %%DATADIR%%/nls/c_500.nls
 %%DATADIR%%/nls/c_708.nls
+%%DATADIR%%/nls/c_720.nls
 %%DATADIR%%/nls/c_737.nls
 %%DATADIR%%/nls/c_775.nls
 %%DATADIR%%/nls/c_850.nls
