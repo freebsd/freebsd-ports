@@ -1,6 +1,6 @@
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
