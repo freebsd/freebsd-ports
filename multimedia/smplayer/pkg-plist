@@ -12,6 +12,7 @@ share/icons/hicolor/512x512/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
 share/icons/hicolor/scalable/apps/smplayer.svg
 share/man/man1/smplayer.1.gz
+share/metainfo/smplayer.appdata.xml
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
 %%DATADIR%%/shortcuts/euskara.keys

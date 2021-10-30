@@ -8,7 +8,7 @@
  TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
  THEMES_PATH=$(PREFIX)/share/smplayer/themes
  SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
-@@ -18,7 +17,7 @@ LRELEASE=lrelease
+@@ -19,7 +18,7 @@ LRELEASE=lrelease
  
  DEFS=DATA_PATH=\\\"$(DATA_PATH)\\\" \
       TRANSLATION_PATH=\\\"$(TRANSLATION_PATH)\\\" \
@@ -17,12 +17,12 @@
       SHORTCUTS_PATH=\\\"$(SHORTCUTS_PATH)\\\"
  
  all: src/smplayer webserver/simple_web_server
-@@ -43,13 +42,8 @@ install: all
+@@ -44,13 +43,8 @@ install: all
  	install -m 644 src/input.conf $(DESTDIR)$(DATA_PATH)
  	-install -d $(DESTDIR)$(TRANSLATION_PATH)
  	install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)
 -	-install -d $(DESTDIR)$(DOC_PATH)
--	install -m 644 Changelog *.txt $(DESTDIR)$(DOC_PATH)
+-	install -m 644 Release_notes.md *.txt $(DESTDIR)$(DOC_PATH)
  
  	install -m 755 webserver/simple_web_server $(DESTDIR)$(PREFIX)/bin/
 -
