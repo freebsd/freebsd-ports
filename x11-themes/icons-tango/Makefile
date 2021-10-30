@@ -10,11 +10,10 @@ DISTNAME=	tango-icon-theme-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic set of icons for the most common usage
 
-BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-utils \
-		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-utils
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
-USES+=		gettext-tools gmake gnome pathfix pkgconfig
+USES+=		gettext-tools gmake gnome magick:build pathfix pkgconfig
 
 .include <bsd.port.mk>

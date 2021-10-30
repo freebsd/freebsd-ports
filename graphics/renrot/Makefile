@@ -22,7 +22,7 @@ PORTDOCS=	AUTHORS README README.russian ChangeLog NEWS TODO
 OPTIONS_DEFINE=	IMAGEMAGICK DOCS
 IMAGEMAGICK_DESC=	Image::Magick Perl module support
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
+IMAGEMAGICK_USES=	magick:6,run
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

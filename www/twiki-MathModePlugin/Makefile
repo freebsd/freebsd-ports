@@ -8,7 +8,7 @@ MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 
 COMMENT=	Include LaTeX formatted math in your TWiki pages
 
-RUN_DEPENDS=	convert:graphics/ImageMagick6
+USES=		magick:6,run
 
 USE_TEX=	base latex
 

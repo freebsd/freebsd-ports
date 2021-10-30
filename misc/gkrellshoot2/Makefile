@@ -11,10 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen locking and screen capture plugin for GKrellM 2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:sysutils/gkrellm2 \
-		import:graphics/ImageMagick6
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
-USES=		pkgconfig
+USES=		magick:6,run pkgconfig
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}

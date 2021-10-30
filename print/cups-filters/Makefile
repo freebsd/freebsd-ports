@@ -56,11 +56,11 @@ OPTIONS_SUB=			yes
 
 BRAILLE_CONFIGURE_ENABLE=	braille
 BRAILLE_DESC=			Braille embosser support
+BRAILLE_USES=			magick:run
 BRAILLE_BUILD_DEPENDS=		bash:shells/bash
 BRAILLE_LIB_DEPENDS=		liblouis.so:devel/liblouis \
 #				liblouisutdml.so:devel/liblouisutdml
-BRAILLE_RUN_DEPENDS=		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
-				pdftotext:graphics/poppler-utils \
+BRAILLE_RUN_DEPENDS=		pdftotext:graphics/poppler-utils \
 				bash:shells/bash
 
 COLORD_CONFIGURE_ENABLE=	dbus

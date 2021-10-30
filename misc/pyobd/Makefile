@@ -11,10 +11,9 @@ COMMENT=	OBD-II compliant car diagnostic tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR}
 
-USES=		dos2unix gnome python shebangfix
+USES=		dos2unix gnome magick:6,build python shebangfix
 DOS2UNIX_FILES=	${PORTNAME}.desktop
 SHEBANG_FILES=	${PORTNAME}
 USE_WX=		3.0

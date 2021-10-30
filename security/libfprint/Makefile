@@ -12,12 +12,11 @@ COMMENT=	Library for fingerprint reader devices
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6 \
-		libnss3.so:security/nss \
+LIB_DEPENDS=	libnss3.so:security/nss \
 		libnspr4.so:devel/nspr
 
 GNU_CONFIGURE=	yes
-USES=		gnome libtool pathfix pkgconfig tar:xz xorg
+USES=		gnome libtool magick:6 pathfix pkgconfig tar:xz xorg
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_XORG=	pixman

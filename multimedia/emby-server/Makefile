@@ -106,9 +106,11 @@ OPTIONS_DEFAULT=	LAME X11
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
 
-X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
-X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick6-nox11
-X11_USES=		xorg
+SMB_USES=		samba:lib
+SMB_CONFIGURE_ENABLE=	libsmbclient
+
+X11_USES=		xorg magick:6
+X11_USES_OFF=		magick:6,nox11
 X11_USE=		xorg=x11
 
 FFVERSION=	2021_02_27

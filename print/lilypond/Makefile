@@ -12,7 +12,6 @@ COMMENT=	GNU music typesetter
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:shells/bash \
-		convert:graphics/ImageMagick7 \
 		dblatex:textproc/dblatex \
 		fontforge:print/fontforge \
 		help2man:misc/help2man \
@@ -30,7 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejav
 		mftrace:print/mftrace
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
-		perl5 pkgconfig python:3.5+
+		magick:7,build perl5 pkgconfig python:3.5+
 USE_CXXSTD=	c++11
 USE_GNOME=	pango
 USE_PERL5=	build

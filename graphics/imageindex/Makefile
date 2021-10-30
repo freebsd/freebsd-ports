@@ -10,11 +10,10 @@ MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	Digital photo gallery tool
 
-RUN_DEPENDS=	convert:graphics/ImageMagick6 \
-		mplayer:multimedia/mplayer \
+RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		p5-Image-Info>=0:graphics/p5-Image-Info
 
-USES=		jpeg perl5
+USES=		jpeg magick:6,run perl5
 USE_PERL5=	run
 MAKE_ARGS+=	PERLPATH=${PERL} PREFIX=${STAGEDIR}${PREFIX}
 

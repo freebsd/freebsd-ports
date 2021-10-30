@@ -19,9 +19,8 @@ OPTIONS_DEFINE=	RASTER
 OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
 
 RASTER_DESC=	rasterization support
-RASTER_USES=	ghostscript:run
+RASTER_USES=	ghostscript:run magick:6,run
 RASTER_USE=	TEX=latex,dvipsk
-RASTER_RUN_DEPENDS=	convert:graphics/ImageMagick6
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -81,8 +81,7 @@ FREI0R_BUILD_DEPENDS=		frei0r>0:graphics/frei0r
 FREI0R_CONFIGURE_OFF=		--disable-frei0r
 FREI0R_RUN_DEPENDS=		frei0r>0:graphics/frei0r
 GHOSTSCRIPT_USES=		ghostscript:run
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
-				composite:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+IMAGEMAGICK_USES=		magick:run
 JACK_CONFIGURE_OFF=		--disable-jack
 JACK_LIB_DEPENDS=		libjack.so:audio/jack \
 				libjackserver.so:audio/jack

@@ -26,7 +26,6 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-Event-RPC>=0:devel/p5-Event-RPC \
 		p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 		cdrdao:sysutils/cdrdao \
-		convert:graphics/ImageMagick6 \
 		mplayer:multimedia/mplayer \
 		pstree:sysutils/pstree \
 		transcode:multimedia/transcode \
@@ -34,7 +33,7 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		${LOCALBASE}/sbin/fping:net/fping \
 		cdrecord:sysutils/cdrtools
 
-USES=		gettext perl5 shebangfix
+USES=		gettext magick:6,run perl5 shebangfix
 USE_PERL5=	configure patch
 
 SHEBANG_FILES=	bin/dvdrip*

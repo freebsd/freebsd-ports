@@ -5,7 +5,6 @@ CATEGORIES=	audio kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sound editor for KDE
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libFLAC.so:audio/flac \
 		libfftw3.so:math/fftw3 \
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libvorbisenc.so:audio/libvorbis
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
-		localbase:ldflags pkgconfig qt:5 tar:xz
+		localbase:ldflags magick:6,build pkgconfig qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons i18n iconthemes itemviews \
 		jobwidgets kio service solid sonnet textwidgets widgetsaddons \

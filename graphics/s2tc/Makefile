@@ -12,11 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libglvnd>=0:graphics/libglvnd
-TEST_DEPENDS=	convert:graphics/ImageMagick6 \
-		nvcompress:graphics/nvidia-texture-tools \
+TEST_DEPENDS=	nvcompress:graphics/nvidia-texture-tools \
 		wget:ftp/wget
 
-USES=		autoreconf libtool pathfix
+USES=		autoreconf libtool magick:6,test pathfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

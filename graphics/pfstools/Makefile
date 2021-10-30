@@ -55,7 +55,7 @@ OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 			libImath.so:math/Imath
 
 IMAGEMAGICK_CMAKE_BOOL=	WITH_ImageMagick
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
+IMAGEMAGICK_USES=	magick:6
 
 NETPBM_CMAKE_BOOL=	WITH_NetPBM
 NETPBM_LIB_DEPENDS=	libnetpbm.so:graphics/netpbm

@@ -79,8 +79,8 @@ JP_IMPLIES=	MB
 JP_CATEGORIES=	japanese
 JP_VARS=	XLOCKMORE_LANG=ja
 MAGICK_CONFIGURE_WITH=	magick
-MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6 \
-			libpng.so:graphics/png
+MAGICK_USES=		magick:6
+MAGICK_LIB_DEPENDS=	libpng.so:graphics/png
 GTK2_CONFIGURE_WITH=	gtk2
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libpng.so:graphics/png

@@ -30,8 +30,8 @@ IMAGICK_X11_DESC=With X11 support
 
 EXIF_RUN_DEPENDS=	p5-Image-ExifTool>=7.0:graphics/p5-Image-ExifTool
 
-IMAGICK_X11_RUN_DEPENDS=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
-IMAGICK_NOX11_RUN_DEPENDS=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
+IMAGICK_X11_USES=		magick:6,run
+IMAGICK_NOX11_USES=		magick:6,run,nox11
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LIBDIR%%|${PREFIX}/lib/igal2|' ${WRKSRC}/igal2

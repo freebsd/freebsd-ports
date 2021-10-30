@@ -10,9 +10,7 @@ COMMENT=	Vector graphics C++ library
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libMagick++-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
-
-USES=		cmake compiler:c++11-lang localbase
+USES=		cmake compiler:c++11-lang localbase magick
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-koi

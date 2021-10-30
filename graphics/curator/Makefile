@@ -9,12 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static Image Gallery Generator for web or CD-ROM galleries
 
-USES=		python:3.6+
+USES=		magick:6,run python:3.6+
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 PLIST_FILES=	man/man1/curator.1.gz
-
-RUN_DEPENDS=	convert:graphics/ImageMagick6
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/curator.1 ${STAGEDIR}${PREFIX}/man/man1/curator.1

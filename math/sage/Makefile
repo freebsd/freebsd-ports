@@ -149,7 +149,6 @@ BUILD_DEPENDS=	bash:shells/bash		\
 		three.js>0:www/threejs		\
 		yasm:devel/yasm			\
 		gtar:archivers/gtar		\
-		convert:graphics/ImageMagick6	\
 		ffmpeg:multimedia/ffmpeg	\
 		${LOCALBASE}/lib/libBLT.a:x11-toolkits/blt
 LIB_DEPENDS=	libarb.so:math/arb		\
@@ -338,8 +337,8 @@ RUN_DEPENDS=	bash:shells/bash		\
 		pixz:archivers/pixz
 
 USES=		autoreconf blaslapack:openblas compiler:c++11-lib fortran \
-		gettext gmake gnome iconv jpeg libtool localbase ncurses \
-		ninja:build perl5 pkgconfig python:3.7+ readline shebangfix \
+		gettext gmake gnome iconv jpeg libtool localbase magick:6,build \
+		ncurses ninja:build perl5 pkgconfig python:3.7+ readline shebangfix \
 		sqlite tk xorg
 USE_TEX=	latex:build pdftex:build tex:build
 USE_XORG=	x11 xext xscrnsaver

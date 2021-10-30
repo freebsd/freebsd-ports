@@ -96,7 +96,7 @@ WPG_LIB_DEPENDS=	libwpg-0.3.so:graphics/libwpg03
 
 IMAGICK_DESC=		Raster image format library
 IMAGICK6_DESC=		Use ImageMagick6
-IMAGICK6_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
+IMAGICK6_USES=		magick:6
 IMAGICK6_CMAKE_BOOL=	WITH_IMAGE_MAGICK
 GM_DESC=		Use GraphicsMagick
 GM_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick

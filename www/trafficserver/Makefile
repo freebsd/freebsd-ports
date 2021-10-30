@@ -66,9 +66,9 @@ IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
+USES+=		magick:6
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
+USES+=		magick:6,nox11
 .endif
 .endif
 

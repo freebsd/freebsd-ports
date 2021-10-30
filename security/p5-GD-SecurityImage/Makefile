@@ -33,11 +33,9 @@ NO_ARCH=	yes
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	convert:graphics/ImageMagick6
-RUN_DEPENDS+=	convert:graphics/ImageMagick6
+USES+=		magick:6,build,run
 .else
-BUILD_DEPENDS+=	convert:graphics/ImageMagick6-nox11
-RUN_DEPENDS+=	convert:graphics/ImageMagick6-nox11
+USES+=		magick:6,build,run,nox11
 .endif
 .endif
 

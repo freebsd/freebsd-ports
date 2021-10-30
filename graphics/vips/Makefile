@@ -91,9 +91,9 @@ X11_CONFIGURE_WITH=	x
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libMagickCore-7.so:graphics/ImageMagick7
+USES+=		magick:7
 .else
-LIB_DEPENDS+=	libMagickCore-7.so:graphics/ImageMagick7-nox11
+USES+=		magick:7,nox11
 .endif
 .endif
 

@@ -32,7 +32,7 @@ EMF_DESC=		WMF/EMF support via libEMF
 EMF_LIB_DEPENDS=	libEMF.so:graphics/libemf
 EMF_CONFIGURE_ON=	--with-libemf-include=${LOCALBASE}/include/libEMF
 EMF_CONFIGURE_OFF=	--without-emf
-MAGICK_LIB_DEPENDS=	libMagick++-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+MAGICK_USES=		magick
 MAGICK_CONFIGURE_ON=	--with-magick
 MAGICK_CONFIGURE_OFF=	--without-magick
 MING_DESC=		Flash support via Ming

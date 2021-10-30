@@ -10,12 +10,11 @@ COMMENT=	Read an image with Resseract OCR and get output
 
 LICENSE=	GPLv3
 
-MY_DEPENDS=	tesseract>0:graphics/tesseract \
-		ImageMagick6-nox11>0:graphics/ImageMagick6-nox11
+MY_DEPENDS=	tesseract>0:graphics/tesseract
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		perl5
+USES=		magick:6,build,run,nox11 perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes

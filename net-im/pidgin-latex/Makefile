@@ -12,12 +12,11 @@ MAINTAINER=	mainland@apeiron.net
 COMMENT=	Display LaTeX output in your IMs
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
-RUN_DEPENDS=	pidgin:net-im/pidgin \
-		convert:graphics/ImageMagick6
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		gmake gnome pkgconfig tar:bzip2
+USES=		gmake gnome magick:6,run pkgconfig tar:bzip2
 USE_TEX=	latex
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}"

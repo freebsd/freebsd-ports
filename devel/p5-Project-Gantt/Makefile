@@ -11,10 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create Gantt charts to manage project scheduling
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-Date>=0:devel/p5-Class-Date \
-		convert:graphics/ImageMagick6
+RUN_DEPENDS=	p5-Class-Date>=0:devel/p5-Class-Date
 
-USES=		perl5
+USES=		magick:6,run perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/Gantt
 

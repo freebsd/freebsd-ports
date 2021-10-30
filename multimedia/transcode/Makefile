@@ -96,7 +96,7 @@ SDL_USES=			sdl
 SDL_USE=			SDL=sdl
 SDL_CONFIGURE_ENABLE=		sdl
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
+IMAGEMAGICK_USES=		magick:6
 IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
 IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick-prefix=${LOCALBASE}
 

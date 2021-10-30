@@ -14,7 +14,6 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
-		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
 		dunst:sysutils/dunst \
 		font-bh-lucidatypewriter-100dpi>0:x11-fonts/font-bh-lucidatypewriter-100dpi \
 		fvwm2:x11-wm/fvwm2 \
@@ -32,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR
 		xsettingsd:x11/xsettingsd \
 		xterm:x11/xterm
 
-USES=		gettext pkgconfig:build python:3.7+ shebangfix xorg
+USES=		gettext magick:run pkgconfig:build python:3.7+ shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	nscde
 USE_XORG=	x11 xext xpm xrandr

@@ -11,14 +11,13 @@ COMMENT=	Drawing program designed for young children
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick7
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libpaper.so:print/libpaper \
 		libimagequant.so:graphics/libimagequant
 RUN_DEPENDS=	anytopnm:graphics/netpbm \
 		bash:shells/bash
 
-USES=		gettext gmake gnome gperf pkgconfig sdl shebangfix
+USES=		gettext gmake gnome gperf magick:7,build pkgconfig sdl shebangfix
 SHEBANG_FILES=	src/tuxpaint-import.sh
 USE_GNOME=	librsvg2
 USE_SDL=	image mixer sdl ttf pango

@@ -9,11 +9,10 @@ LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
-		convert:graphics/ImageMagick6 \
 		curl:ftp/curl \
 		nitrogen:sysutils/nitrogen
 
-USES=		shebangfix
+USES=		magick:6,run shebangfix
 SHEBANG_FILES=	goesimage
 USE_GITHUB=	yes
 GH_ACCOUNT=	pigmonkey

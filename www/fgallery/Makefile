@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool \
 		exiftran:graphics/exiftran \
-		p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
-		convert:graphics/ImageMagick6
+		p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
+USES=		magick:6,run
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

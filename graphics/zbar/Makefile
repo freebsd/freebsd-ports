@@ -59,7 +59,7 @@ GTK_NONE_CONFIGURE_ON=		--with-gtk=no
 GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagickWand.so:graphics/GraphicsMagick
 GRAPHICSMAGICK_CONFIGURE_WITH=	graphicsmagick
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+IMAGEMAGICK_USES=		magick
 IMAGEMAGICK_CONFIGURE_WITH=	imagemagick
 
 JPEG_USES=			jpeg

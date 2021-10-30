@@ -10,6 +10,29 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20211211:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new USES has been added to depend on ImageMagick.
+
+     USES=magick
+
+  adds a LIB_DEPENDS on graphics/ImageMagick${IMAGEMAGICK_DEFAULT}.
+
+  If a specific version is required, use for example
+
+     USES=magick:6        resp.     USES=magick:7
+
+  If only a build, run or test is required, use for example
+
+     USES=magick:build    resp.     USES=magick:6,build,test
+
+  If a dependency on the nox11 flavor is required, use for example
+
+     USES=magick:nox11    resp.     USES=magick:7,nox11,run,test
+
+  See magick.mk for more details on the available flags.
+
 20211122:
 AUTHOR: bapt@FreeBSD.org
 

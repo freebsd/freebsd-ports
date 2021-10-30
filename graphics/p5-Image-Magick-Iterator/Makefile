@@ -11,10 +11,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sequentially read Image::Magick object from a filehandle
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	ImageMagick6>=0:graphics/ImageMagick6 \
-		p5-Image-PBMlib>=1.05:graphics/p5-Image-PBMlib
+RUN_DEPENDS=	p5-Image-PBMlib>=1.05:graphics/p5-Image-PBMlib
 
-USES=		perl5
+USES=		magick:6,build,run perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes

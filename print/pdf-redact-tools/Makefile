@@ -13,10 +13,9 @@ COMMENT=	Securely redact and strip metadata from PDF files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool \
-		convert:graphics/ImageMagick6
+RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
-USES=		python:3.6+
+USES=		magick:6,run python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

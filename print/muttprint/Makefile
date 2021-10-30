@@ -45,9 +45,9 @@ PRINT_COMMAND=lpr -P$$PRINTER
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	convert:graphics/ImageMagick6
+USES+=		magick:6,run
 .else
-RUN_DEPENDS+=	convert:graphics/ImageMagick6-nox11
+USES+=		magick:6,run,nox11
 .endif
 
 pre-everything::

@@ -15,11 +15,10 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libTogl2.0.so:graphics/togl
 RUN_DEPENDS=	bwidget>0:x11-toolkits/bwidget \
 		obabel:science/openbabel \
-		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
 		ppmtompeg:graphics/netpbm \
 		xwd:x11/xwd
 
-USES=		fortran gl gmake localbase:ldflags tcl tk xorg
+USES=		fortran gl gmake localbase:ldflags magick:run tcl tk xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xmu
 

@@ -9,12 +9,11 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplement file for lookup to use "Random House"
 
-RUN_DEPENDS=	display:graphics/ImageMagick6
 # Your PC does not have an audio card always.
 #		realplay:multimedia/linux-realplayer
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		magick:6,run perl5
 
 PKG_DIR=	${STAGEDIR}${PREFIX}/share/dict/lookup-package
 

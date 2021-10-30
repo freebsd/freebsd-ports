@@ -11,8 +11,9 @@ COMMENT=	Supplement file to use "mypaedia" on lookup
 
 RUN_DEPENDS=	sox:audio/sox \
 		timidity:audio/timidity++ \
-		xanim:multimedia/xanim \
-		display:graphics/ImageMagick6
+		xanim:multimedia/xanim
+
+USES=		magick:6,run
 
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}

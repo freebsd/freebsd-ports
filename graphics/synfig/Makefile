@@ -15,7 +15,6 @@ BUILD_DEPENDS=	etl>=1.2.2:devel/etl \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \
-		libMagickWand-6.so:graphics/ImageMagick6 \
 		libavcodec.so:multimedia/ffmpeg \
 		libboost_program_options.so:devel/boost-libs \
 		libdv.so:multimedia/libdv \
@@ -30,7 +29,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 PORTSCOUT=	limitw:1,even
 
 USES=		autoreconf compiler:c++11-lang gmake gnome iconv jpeg \
-		libtool localbase mlt:6 pathfix pkgconfig
+		libtool localbase magick:6 mlt:6 pathfix pkgconfig
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 USE_GNOME=	cairo glibmm intltool libxml++26 pango

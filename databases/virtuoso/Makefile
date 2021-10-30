@@ -74,7 +74,7 @@ BROKEN_FreeBSD_14=	OpenSSL version 1.1.0 or greater is currently not supported
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
-LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick6
+USES+=		magick:6
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick

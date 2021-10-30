@@ -60,7 +60,7 @@ OPTIONS_DEFAULT=	BDB CURL GMAGICK
 
 DAVIS_CONFIGURE_ON=	--enable-davis
 
-IMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
+IMAGICK_USES=		magick:6
 IMAGICK_CONFIGURE_WITH=	imagemagick
 
 GMAGICK_LIB_DEPENDS=	libGraphicsMagickWand.so:graphics/GraphicsMagick

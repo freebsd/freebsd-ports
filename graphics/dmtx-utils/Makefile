@@ -11,10 +11,9 @@ COMMENT=	Software for reading and writing Data Matrix barcodes
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
-		libMagickWand-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+LIB_DEPENDS=	libdmtx.so:graphics/libdmtx
 
-USES=		autoreconf libtool localbase tar:bzip2 pkgconfig
+USES=		autoreconf libtool localbase magick tar:bzip2 pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmtx

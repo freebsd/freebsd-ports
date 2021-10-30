@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
 OPTIONS_DEFAULT=IMAGEMAGICK
 OPTIONS_SUB=		yes
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
+IMAGEMAGICK_USES=	magick:6,run
 
 .include <bsd.port.options.mk>
 

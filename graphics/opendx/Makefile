@@ -15,12 +15,11 @@ LICENSE_NAME=	IBM PUBLIC LICENSE - Open Visualization Data Explorer VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6	\
-		libtiff.so:graphics/tiff		\
+LIB_DEPENDS=	libtiff.so:graphics/tiff		\
 		libcdf.so:science/cdf
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		bison compiler:c++17-lang gl gmake libtool motif xorg
+USES=		bison compiler:c++17-lang gl gmake libtool magick:6 motif xorg
 USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes

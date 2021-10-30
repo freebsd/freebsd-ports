@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 CONFLICTS=	ilias-5.4.[0-9]*
 
 RUN_DEPENDS=	composer:devel/php-composer \
-		convert:graphics/ImageMagick6 \
 		zip:archivers/zip \
 		${UNZIP_CMD}:archivers/unzip \
 		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
@@ -27,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS
 
-USES=		cpe jpeg php
+USES=		cpe jpeg magick:6,run php
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 USE_PHP=	curl ldap pdo_mysql gd pdf dom pcre session simplexml \

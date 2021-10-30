@@ -15,7 +15,6 @@ BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
-		ImageMagick6>0:graphics/ImageMagick6 \
 		p5-Image-Sane>=0.14:graphics/p5-Image-Sane \
 		p5-Set-IntSpan>=1.10:math/p5-Set-IntSpan \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
@@ -31,7 +30,6 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		cjb2:graphics/djvulibre \
 		scanimage:graphics/sane-backends \
 		unpaper:graphics/unpaper \
-		ImageMagick6>0:graphics/ImageMagick6 \
 		p5-HTML-Parser>0:www/p5-HTML-Parser \
 		p5-Filesys-Df>0.92:sysutils/p5-Filesys-Df \
 		p5-Data-UUID>=1.220:devel/p5-Data-UUID \
@@ -57,7 +55,7 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 
 NO_ARCH=	yes
 
-USES=		desktop-file-utils gettext gmake gnome perl5 tar:xz
+USES=		desktop-file-utils gettext gmake gnome magick:6,build,run perl5 tar:xz
 USE_GNOME=	gtk30 librsvg2
 USE_PERL5=	configure
 

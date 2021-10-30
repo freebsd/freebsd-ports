@@ -13,8 +13,7 @@ COMMENT=	Highly configurable, next generation framework window manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6 \
-		${LUA_REFMODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi@${LUA_FLAVOR}
+BUILD_DEPENDS=	${LUA_REFMODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi@${LUA_FLAVOR}
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi@${LUA_FLAVOR} \
 		bash:shells/bash
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
@@ -29,7 +28,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 CONFLICTS_INSTALL=	awesome3
 
-USES=		cmake compiler:c11 gettext gnome iconv pkgconfig lua \
+USES=		cmake compiler:c11 gettext gnome iconv magick:6,build pkgconfig lua \
 		shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	awesomewm

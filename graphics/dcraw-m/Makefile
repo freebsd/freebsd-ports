@@ -11,14 +11,13 @@ COMMENT=	Modified Decoder for RAW files from digital cameras
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
-		liblcms2.so:graphics/lcms2 \
-		libMagickWand-6.so:graphics/ImageMagick6
+		liblcms2.so:graphics/lcms2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
 GH_TAGNAME=	1392579
 
-USES=		jpeg pkgconfig
+USES=		jpeg magick:6 pkgconfig
 
 CFLAGS+=	-Wall -I${LOCALBASE}/include \
 		`MagickWand-config --cflags --cppflags` \

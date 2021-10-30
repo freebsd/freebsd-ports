@@ -9,9 +9,10 @@ MASTER_SITES=	SF/aa-project/${PORTNAME}/${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for viewing netpbm format on console or X using aalib
 
-RUN_DEPENDS=	anytopnm:graphics/netpbm \
-		convert:graphics/ImageMagick6
+RUN_DEPENDS=	anytopnm:graphics/netpbm
 LIB_DEPENDS=	libaa.so:graphics/aalib
+
+USES=		magick:6,run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 

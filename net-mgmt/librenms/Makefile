@@ -74,10 +74,10 @@ MYSQLD_USES_OFF=	mysql:client
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
-X11_RUN_DEPENDS=	Magick-config:graphics/ImageMagick6 \
-			mtr:net/mtr
-X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick6-nox11 \
-			mtr:net/mtr-nox11
+X11_RUN_DEPENDS=	mtr:net/mtr
+X11_RUN_DEPENDS_OFF=	mtr:net/mtr-nox11
+X11_USES=		magick:6
+X11_USES_OFF=		magick:6,nox11
 
 _ROOT_FILES=		addhost.php adduser.php alerts.php artisan \
 			billing-calculate.php check-services.php composer.json \

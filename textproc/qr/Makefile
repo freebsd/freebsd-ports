@@ -11,10 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 TEST_DEPENDS=	${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf \
 		autom4te:devel/autoconf \
-		convert:graphics/ImageMagick6 \
 		zbarimg:graphics/zbar
 
-USES=		gmake
+USES=		gmake magick:6,test
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	Y2Z

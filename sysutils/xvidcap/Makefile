@@ -19,10 +19,9 @@ LIB_DEPENDS=		libdbus-1.so:devel/dbus			\
 			libdbus-glib-1.so:devel/dbus-glib	\
 			libfontconfig.so:x11-fonts/fontconfig	\
 			libmp3lame.so:audio/lame
-RUN_DEPENDS=		animate:graphics/ImageMagick6	\
-			gimp:graphics/gimp-app
+RUN_DEPENDS=		gimp:graphics/gimp-app
 
-USES=			gettext gmake gnome localbase pkgconfig xorg
+USES=			gettext gmake gnome localbase magick:6,run pkgconfig xorg
 
 USE_GNOME=		cairo gdkpixbuf2 glib20 libglade2 intltool
 USE_XORG=		x11 xext xmu ice xfixes xdamage

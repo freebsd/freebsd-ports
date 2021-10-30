@@ -14,9 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 COMMITHASH=	640f923
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6-nox11
-
-USES=		cmake gnome perl5 pkgconfig
+USES=		cmake gnome magick:6,build,nox11 perl5 pkgconfig
 USE_PERL5=	build
 CMAKE_ARGS=	-DNAME_PREFIX:STRING=sgt-
 

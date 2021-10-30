@@ -18,10 +18,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=	fails to link: collect2: error: ld returned 1 exit status
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
-		fig2dev:print/fig2dev
+BUILD_DEPENDS=	fig2dev:print/fig2dev
 
-USES=		autoreconf:build gmake libtool motif tar:bz2 xorg
+USES=		autoreconf:build gmake libtool magick:build motif tar:bz2 xorg
 USE_GCC=	yes
 USE_TEX=	dvipsk:build latex:build
 USE_XORG=	ice sm x11 xext xt

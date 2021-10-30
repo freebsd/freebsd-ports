@@ -291,8 +291,8 @@ SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
 SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
-SMALL_LIGHT_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
-				libpcre.so:devel/pcre
+SMALL_LIGHT_USES=		magick:6
+SMALL_LIGHT_LIB_DEPENDS=	libpcre.so:devel/pcre
 SMALL_LIGHT_GH_TUPLE=		cubicdaiya:ngx_small_light:v0.9.2:small_light
 SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 

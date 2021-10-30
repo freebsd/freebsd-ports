@@ -15,7 +15,6 @@ BROKEN=		OpenCV4 no longer ships OpencCV-1.0 headers
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libOpenEXR.so:graphics/openexr \
 		libopencv_video.so:graphics/opencv \
-		libMagick++-6.so:graphics/ImageMagick6 \
 		libavcodec.so:multimedia/ffmpeg \
 		libfftw3.so:math/fftw3 \
 		libgimp-2.0.so:graphics/gimp-app \
@@ -27,7 +26,7 @@ BASH_RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USES=		dos2unix gmake gnome localbase pkgconfig xorg
+USES=		dos2unix gmake gnome localbase magick:6 pkgconfig xorg
 USE_GCC=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xrandr

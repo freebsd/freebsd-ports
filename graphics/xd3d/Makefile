@@ -28,7 +28,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-RUN_DEPENDS+=	convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+USES+=		magick:run
 .endif
 .if !defined(WITHOUT_GIFSICLE)
 RUN_DEPENDS+=	gifsicle:graphics/gifsicle

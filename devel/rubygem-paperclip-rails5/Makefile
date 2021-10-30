@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=		IMNOX11
 IMNOX11_DESC=		Depend on ImageMagick without X11 support
 IMX11_DESC=		Depend on ImageMagick with X11 support
 
-IMNOX11_RUN_DEPENDS=	ImageMagick6-nox11>0:graphics/ImageMagick6-nox11
-IMX11_RUN_DEPENDS=	ImageMagick6>0:graphics/ImageMagick6
+IMNOX11_USES=		magick:6,run,nox11
+IMX11_USES=		magick:6,run
 
 .include <bsd.port.mk>

@@ -68,7 +68,7 @@ DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=2.2.1:audio/py-disco
 EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:multimedia/ffmpeg
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
+IMAGEMAGICK_USES=	magick:6,run
 IPFS_RUN_DEPENDS=	ipfs-go:sysutils/ipfs-go
 KODIUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 LASTFM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylast>=0:audio/py-pylast@${PY_FLAVOR}

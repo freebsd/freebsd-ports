@@ -10,13 +10,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
-		convert:graphics/ImageMagick7 \
 		fzf:textproc/fzf \
 		getopt>0:misc/getopt \
 		sxiv:graphics/sxiv \
 		xdotool:x11/xdotool
 
-USES=		shebangfix
+USES=		magick:7,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	sdushantha
 SHEBANG_FILES=	${PORTNAME}

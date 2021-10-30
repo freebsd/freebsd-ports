@@ -597,6 +597,15 @@ proxydeps_suggest_uses() {
 	# lua
 	elif expr ${pkg} : "^lang/lua" > /dev/null; then
 		warn "you need USES+=lua"
+	# magick
+	elif [ ${pkg} = "graphics/ImageMagick6" ] ; then
+		warn "you need USES=magick:6"
+	elif [ ${pkg} = "graphics/ImageMagick6-nox11" ] ; then
+		warn "you need USES=magick:6,nox11"
+	elif [ ${pkg} = "graphics/ImageMagick7" ] ; then
+		warn "you need USES=magick:7"
+	elif [ ${pkg} = "graphics/ImageMagick7-nox11" ] ; then
+		warn "you need USES=magick:7,nox11"
 	# motif
 	elif [ ${pkg} = "x11-toolkits/lesstif" -o ${pkg} = "x11-toolkits/open-motif" ]; then
 		warn "you need USES+=motif"

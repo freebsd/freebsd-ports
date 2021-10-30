@@ -27,15 +27,15 @@ IMAGEMAGICK7_DESC=	Use ImageMagick 7.x (graphics/ImageMagick7*)
 
 .if ${PORT_OPTIONS:MX11}
 .if ${PORT_OPTIONS:MIMAGEMAGICK7}
-LIB_DEPENDS=	libMagickWand-7.so:graphics/ImageMagick7
+USES=		magick:7
 .else
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
+USES=		magick:6
 .endif
 .else
 .if ${PORT_OPTIONS:MIMAGEMAGICK7}
-LIB_DEPENDS=	libMagickWand-7.so:graphics/ImageMagick7-nox11
+USES=		magick:7,nox11
 .else
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6-nox11
+USES=		magick:6,nox11
 .endif
 .endif
 

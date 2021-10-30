@@ -15,11 +15,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
-RUN_DEPENDS=	convert:graphics/ImageMagick6
 
 WRKSRC=		${WRKDIR}/optar_dist
 
-USES=		gmake tar:tgz
+USES=		gmake magick:6,run tar:tgz
 
 PLIST_FILES=	bin/optar bin/unoptar bin/pgm2ps
 

@@ -36,7 +36,7 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 OPTIONS_DEFINE=	DOCS ICONS
 OPTIONS_DEFAULT=ICONS
 
-ICONS_BUILD_DEPENDS=	mogrify:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+ICONS_USES=	magick:build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,clang++,${CXX},' \

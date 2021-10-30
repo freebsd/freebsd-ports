@@ -12,10 +12,9 @@ COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	exif:graphics/exif \
-		identify:graphics/ImageMagick6
+RUN_DEPENDS=	exif:graphics/exif
 
-USES=		python shebangfix
+USES=		magick:6,run python shebangfix
 GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	scripts/remove-duplicates

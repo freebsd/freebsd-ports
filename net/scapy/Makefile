@@ -33,8 +33,8 @@ PYX_DESC=	PostScript and PDF graphs drawing
 QUESO_BASE_DESC=queso OS signatures database
 SOX_DESC=	Support for VoIP
 
-GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:graphics/ImageMagick6 \
-			${LOCALBASE}/bin/dot:graphics/graphviz
+GRAPH_USES=		magick:6,run
+GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/dot:graphics/graphviz
 IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
 NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:security/nmap
 MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:net/wireshark

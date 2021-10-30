@@ -33,7 +33,7 @@ FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 GD_RUN_DEPENDS=		pngtogd:graphics/gd
 GD_USE=			PHP=gd
 GRAPHMAGICK_RUN_DEPENDS=gm:graphics/GraphicsMagick
-IMAGEMAGICK_RUN_DEPENDS=convert:graphics/ImageMagick6
+IMAGEMAGICK_USES=	magick:6,run
 JHEAD_RUN_DEPENDS=	jhead:graphics/jhead
 MYSQL_USE=		PHP=mysqli
 NETPBM_RUN_DEPENDS=	giftopnm:graphics/netpbm

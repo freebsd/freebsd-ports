@@ -10,12 +10,11 @@ COMMENT=	Interactive field-aligned mesh generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 RUN_DEPENDS=	zenity:x11/zenity
 
 USES=		cmake compiler:c++14-lang eigen:3 gl localbase:ldflags \
-		pkgconfig xorg
+		magick:6,build pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjakob
 GH_TUPLE=	wjakob:nanogui:2a61f03:nanogui/ext/nanogui \

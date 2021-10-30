@@ -16,9 +16,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libtiff.so:graphics/tiff \
 		libOpenEXR.so:graphics/openexr \
-		libMagick++-6.so:graphics/ImageMagick6
 
-USES=		compiler:c++11-lang gmake pkgconfig tar:tgz
+USES=		compiler:c++11-lang gmake magick:6 pkgconfig tar:tgz
 NO_WRKSUBDIR=	yes
 
 PROGRAMS=	hdr_adjust hdr_convert hdr_create hdr_denoise hdr_fix_ca \

@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=	MYSQL MAGICK
 MYSQL_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql
 SQLITE_USE=	PHP=sqlite3
-MAGICK_RUN_DEPENDS+=	convert:graphics/ImageMagick7
+MAGICK_USES=	magick:7,run
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${PREFIX}/${SERENDIPITY}

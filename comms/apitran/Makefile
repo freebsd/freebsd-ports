@@ -14,10 +14,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PY_PILLOW} \
-		sox:audio/sox \
-		display:graphics/ImageMagick6
+		sox:audio/sox
 
-USES=		python:3.6+,run shebangfix
+USES=		magick:6,run python:3.6+,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsj56
 GH_TAGNAME=	d209347

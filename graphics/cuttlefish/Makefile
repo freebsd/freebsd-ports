@@ -10,10 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plots diurnal and geographical patterns of supplied data
 
 RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
-		convert:graphics/ImageMagick6 \
 		gifsicle:graphics/gifsicle
 
-USES=		perl5 shebangfix
+USES=		magick:6,run perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
 SHEBANG_FILES=	bin/cuttlefish.pl
