@@ -1,3 +1,60 @@
+  <vuln vid="33557582-3958-11ec-90ba-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.4.0</ge><lt>14.4.1</lt></range>
+	<range><ge>14.3.0</ge><lt>14.3.4</lt></range>
+	<range><ge>0</ge><lt>14.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/10/28/security-release-gitlab-14-4-1-released/">
+	  <p>Stored XSS via ipynb files</p>
+	  <p>Pipeline schedules on imported projects can be set to automatically active after import</p>
+	  <p>Potential Denial of service via Workhorse</p>
+	  <p>Improper Access Control allows Merge Request creator to bypass locked status</p>
+	  <p>Projects API discloses ID and name of private groups</p>
+	  <p>Severity of an incident can be changed by a guest user</p>
+	  <p>System root password accidentally written to log file</p>
+	  <p>Potential DoS via a malformed TIFF image</p>
+	  <p>Bypass of CODEOWNERS Merge Request approval requirement</p>
+	  <p>Change project visibility to a restricted option</p>
+	  <p>Project exports leak external webhook token value</p>
+	  <p>SCIM token is visible after creation</p>
+	  <p>Invited group members, with access inherited from parent group, continue to have project access even after invited subgroup is transfered</p>
+	  <p>Regular expression denial of service issue when cleaning namespace path</p>
+	  <p>Prevent creation of scopeless apps using applications API</p>
+	  <p>Webhook data exposes assignee's private email address</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39906</cvename>
+      <cvename>CVE-2021-39895</cvename>
+      <cvename>CVE-2021-39907</cvename>
+      <cvename>CVE-2021-39904</cvename>
+      <cvename>CVE-2021-39905</cvename>
+      <cvename>CVE-2021-39902</cvename>
+      <cvename>CVE-2021-39913</cvename>
+      <cvename>CVE-2021-39912</cvename>
+      <cvename>CVE-2021-39909</cvename>
+      <cvename>CVE-2021-39903</cvename>
+      <cvename>CVE-2021-39898</cvename>
+      <cvename>CVE-2021-39901</cvename>
+      <cvename>CVE-2021-39897</cvename>
+      <cvename>CVE-2021-39914</cvename>
+      <cvename>CVE-2021-39911</cvename>
+      <url>https://about.gitlab.com/releases/2021/10/28/security-release-gitlab-14-4-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-10-28</discovery>
+      <entry>2021-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="976d7bf9-38ea-11ec-b3b0-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
