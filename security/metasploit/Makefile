@@ -1,8 +1,7 @@
 # Created by: Yonatan <onatan@gmail.com>
 
 PORTNAME=	metasploit
-PORTVERSION=	6.1.6
-PORTREVISION=	1
+DISTVERSION=	6.1.12
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -11,59 +10,60 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nmap:security/nmap \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		nmap:security/nmap \
+		rubygem-actionpack60>=6.0:www/rubygem-actionpack60 \
 		rubygem-activerecord60>=6.0:databases/rubygem-activerecord60 \
 		rubygem-activesupport60>=6.0:devel/rubygem-activesupport60 \
-		rubygem-actionpack60>=6.0:www/rubygem-actionpack60 \
+		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
+		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
+		rubygem-aws-sdk-s3>=0:devel/rubygem-aws-sdk-s3 \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
+		rubygem-bcrypt_pbkdf>=0:security/rubygem-bcrypt_pbkdf \
 		rubygem-bson>=0:devel/rubygem-bson \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
+		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
+		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
+		rubygem-ed25519>=0:security/rubygem-ed25519 \
+		rubygem-em-http-request>=0:www/rubygem-em-http-request \
+		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
+		rubygem-faker>=0:devel/rubygem-faker \
+		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
+		rubygem-filesize>=0:devel/rubygem-filesize \
+		rubygem-hrr_rb_ssh-ed25519>=0:security/rubygem-hrr_rb_ssh-ed25519 \
+		rubygem-http-cookie>=0:www/rubygem-http-cookie \
+		rubygem-irb>=0:devel/rubygem-irb \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
 		rubygem-json>=0:devel/rubygem-json \
 		rubygem-metasm>=0:devel/rubygem-metasm \
 		rubygem-metasploit-aggregator>=0:security/rubygem-metasploit-aggregator \
 		rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
-		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
 		rubygem-metasploit-payloads>=2.0.54:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit_payloads-mettle>=1.0.10:security/rubygem-metasploit_payloads-mettle \
+		rubygem-mqtt>=0:net/rubygem-mqtt \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
+		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
+		rubygem-net-ldap>=0:net/rubygem-net-ldap \
+		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
-		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
+		rubygem-nexpose>=0:security/rubygem-nexpose \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
+		rubygem-octokit>=0:net/rubygem-octokit \
+		rubygem-openssl-ccm>=0:security/rubygem-openssl-ccm \
+		rubygem-openvas-omp>=0:security/rubygem-openvas-omp \
 		rubygem-packetfu>=0:net/rubygem-packetfu \
+		rubygem-patch_finder>=0:devel/rubygem-patch_finder \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
+		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
 		rubygem-pg>=0:databases/rubygem-pg \
+		rubygem-puma>=0:www/rubygem-puma \
 		rubygem-railties60>=6.0:www/rubygem-railties60 \
 		rubygem-recog>=0:security/rubygem-recog \
-		rubygem-openssl-ccm>=0:security/rubygem-openssl-ccm \
-		rubygem-octokit>=0:net/rubygem-octokit \
 		rubygem-redcarpet>=0:textproc/rubygem-redcarpet \
-		rubygem-patch_finder>=0:devel/rubygem-patch_finder \
-		rubygem-puma>=0:www/rubygem-puma \
-		rubygem-thin>=0:www/rubygem-thin \
-		rubygem-sinatra>=0:www/rubygem-sinatra \
-		rubygem-warden>=0:devel/rubygem-warden \
-		rubygem-swagger-blocks>=0:devel/rubygem-swagger-blocks \
-		rubygem-em-http-request>=0:www/rubygem-em-http-request \
-		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
-		rubygem-sshkey>=0:security/rubygem-sshkey \
-		rubygem-windows_error>=0:devel/rubygem-windows_error \
-		rubygem-xmlrpc>=0:net/rubygem-xmlrpc \
-		rubygem-http-cookie>=0:www/rubygem-http-cookie \
-		rubygem-unix-crypt>=0:security/rubygem-unix-crypt \
-		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
-		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
-		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
-		rubygem-mqtt>=0:net/rubygem-mqtt \
-		rubygem-net-ssh>=0:security/rubygem-net-ssh \
-		rubygem-ed25519>=0:security/rubygem-ed25519 \
-		rubygem-bcrypt_pbkdf>=0:security/rubygem-bcrypt_pbkdf \
-		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
-		rubygem-net-ldap>=0:net/rubygem-net-ldap \
-		rubygem-winrm>=0:sysutils/rubygem-winrm \
+		rubygem-reline>=0:devel/rubygem-reline \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
@@ -82,29 +82,32 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-rex-struct2>=0:security/rubygem-rex-struct2 \
 		rubygem-rex-text>=0:security/rubygem-rex-text \
 		rubygem-rex-zip>=0:security/rubygem-rex-zip \
+		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
+		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
+		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip \
+		rubygem-sinatra>=0:www/rubygem-sinatra \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
+		rubygem-sshkey>=0:security/rubygem-sshkey \
+		rubygem-swagger-blocks>=0:devel/rubygem-swagger-blocks \
+		rubygem-thin>=0:www/rubygem-thin \
+		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
-		rubygem-filesize>=0:devel/rubygem-filesize \
-		rubygem-openvas-omp>=0:security/rubygem-openvas-omp \
-		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
-		rubygem-nexpose>=0:security/rubygem-nexpose \
+		rubygem-unix-crypt>=0:security/rubygem-unix-crypt \
+		rubygem-warden>=0:devel/rubygem-warden \
+		rubygem-windows_error>=0:devel/rubygem-windows_error \
+		rubygem-winrm>=0:sysutils/rubygem-winrm \
 		rubygem-xdr>=0:converters/rubygem-xdr \
-		rubygem-faker>=0:devel/rubygem-faker \
-		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
-		rubygem-hrr_rb_ssh-ed25519>=0:security/rubygem-hrr_rb_ssh-ed25519 \
-		rubygem-irb>=0:devel/rubygem-irb \
-		rubygem-reline>=0:devel/rubygem-reline \
-		rubygem-aws-sdk-s3>=0:devel/rubygem-aws-sdk-s3 \
-		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
-		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
-		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
-		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
+		rubygem-xmlrpc>=0:net/rubygem-xmlrpc \
 		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
 USES=		cpe go:run python shebangfix
+CPE_VENDOR=	rapid7
+USE_GITHUB=	yes
+GH_ACCOUNT=	rapid7
+GH_PROJECT=	metasploit-framework
 USE_RUBY=	yes
-SHEBANG_LANG=	go
+
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \
 		data/exploits/CVE-2017-7494/build.sh \
@@ -114,22 +117,19 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2021-3156/nss_u16.py \
 		data/exploits/CVE-2021-3156/userspec_c7.py \
 		data/exploits/CVE-2021-3156/userspec_generic.py \
-		docker/entrypoint.sh \
+		docker/bin/msfconsole docker/bin/msfvenom docker/entrypoint.sh \
 		external/source/exploits/CVE-2020-9850/payload/loader/make.py \
 		external/source/exploits/CVE-2020-9850/payload/sbx/build-threadexec.sh \
 		external/source/exploits/CVE-2020-9850/payload/sbx/build-webkit.sh \
 		external/source/exploits/CVE-2020-9850/payload/sbx/embed.py \
+		external/source/metsvc/test.rb \
+		external/source/msfJavaToolkit/compile.sh \
+		external/source/msfJavaToolkit/testCompilation.rb \
+		external/source/msfJavaToolkit/testKeytool.rb \
 		external/source/shellcode/windows/build.sh \
 		external/source/shellcode/windows/x64/build.py \
 		external/source/shellcode/windows/x86/build.py \
 		external/source/shellcode/windows/x86/src/hash.py \
-		external/source/msfJavaToolkit/compile.sh \
-		external/source/msfJavaToolkit/testKeytool.rb \
-		external/source/msfJavaToolkit/testCompilation.rb \
-		external/source/metsvc/test.rb \
-		docker/bin/msfvenom \
-		docker/bin/msfconsole \
-		modules/auxiliary/example.py \
 		modules/auxiliary/admin/http/cisco_7937g_ssh_privesc.py \
 		modules/auxiliary/admin/http/grafana_auth_bypass.py \
 		modules/auxiliary/admin/teradata/teradata_odbc_sql.py \
@@ -137,6 +137,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		modules/auxiliary/dos/cisco/cisco_7937g_dos_reboot.py \
 		modules/auxiliary/dos/http/slowloris.py \
 		modules/auxiliary/dos/tcp/claymore_dos.py \
+		modules/auxiliary/example.py \
 		modules/auxiliary/gather/get_user_spns.py \
 		modules/auxiliary/gather/mikrotik_winbox_fileread.py \
 		modules/auxiliary/gather/office365userenum.py \
@@ -153,21 +154,15 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		modules/auxiliary/scanner/wproxy/att_open_proxy.py \
 		modules/exploits/example.py \
 		modules/exploits/linux/smtp/haraka.py \
-		tools/dev/import-dev-keys.sh \
+		tools/dev/import-dev-keys.sh tools/dev/sign-dev-keys.sh \
 		tools/dev/update_joomla_components.py \
-		tools/dev/sign-dev-keys.sh \
 		tools/hardware/killerbee_msfrelay.py \
 		tools/modules/aws-aggregator-userdata.sh
+SHEBANG_LANG=	go
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rapid7
-GH_PROJECT=	metasploit-framework
-
-CPE_VENDOR=	rapid7
-
+STRIP=
 NO_ARCH=	yes
 NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
-STRIP=
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
