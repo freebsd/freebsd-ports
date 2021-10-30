@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	granite
-DISTVERSION=	6.1.1
+DISTVERSION=	6.1.2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	contractor:sysutils/contractor \
 USES=		gettext gnome meson pkgconfig python:3.6+,build tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	cairo glib20 gtk30 introspection:build
+USE_GNOME=	cairo glib20 gtk30 gdkpixbuf2 introspection:build
 USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
