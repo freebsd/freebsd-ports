@@ -1,15 +1,15 @@
---- meson.build.orig	2021-06-03 13:56:35 UTC
+--- meson.build.orig	2021-09-29 19:16:29 UTC
 +++ meson.build
-@@ -129,7 +129,7 @@ assert(cc.has_function('XML_ParserCreate', dependencie
+@@ -136,7 +136,7 @@ assert(cc.has_function('XML_ParserCreate', dependencie
  mozjs_dep = dependency('mozjs-78')
  
- dbus_dep = dependency('dbus-1')
--dbus_confdir = dbus_dep.get_pkgconfig_variable('datadir', define_variable: ['datadir', pk_prefix / pk_datadir])   #changed from sysconfdir with respect to commit#8eada3836465838
-+dbus_confdir = dbus_dep.get_pkgconfig_variable('sysconfdir', define_variable: ['sysconfdir', pk_prefix / 'etc'])   #changed from sysconfdir with respect to commit#8eada3836465838
- dbus_policydir = dbus_confdir / 'dbus-1/system.d'
- dbus_system_bus_services_dir = dbus_dep.get_pkgconfig_variable('system_bus_services_dir', define_variable: ['datadir', pk_prefix / pk_datadir])
- 
-@@ -318,15 +318,6 @@ endif
+ dbus_dep = dependency('dbus-1', required: false)
+-dbus_policydir = pk_prefix / pk_datadir / 'dbus-1/system.d'
++dbus_policydir = pk_prefix / pk_sysconfdir / 'dbus-1/system.d'
+ if dbus_dep.found()
+   dbus_system_bus_services_dir = dbus_dep.get_pkgconfig_variable('system_bus_services_dir', define_variable: ['datadir', pk_prefix / pk_datadir])
+ else
+@@ -329,15 +329,6 @@ endif
  configure_file(
    output: 'config.h',
    configuration: config_h,
@@ -19,7 +19,7 @@
 -  'meson_post_install.py',
 -  get_option('bindir'),
 -  pk_pkgdatadir,
--  pk_pkglibdir,
+-  pk_libprivdir,
 -  pk_pkgsysconfdir,
 -  polkitd_user,
  )

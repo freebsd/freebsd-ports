@@ -1,7 +1,7 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 
 PORTNAME=	polkit
-PORTVERSION=	0.119
+PORTVERSION=	0.120
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://www.freedesktop.org/software/polkit/releases/
 
