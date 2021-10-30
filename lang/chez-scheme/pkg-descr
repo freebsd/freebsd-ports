@@ -3,9 +3,9 @@ of that language, with supporting tools and documentation.
 
 As a superset of the language described in the
 [Revised<sup>6</sup> Report on the Algorithmic Language Scheme]
-(http://www.r6rs.org)(R6RS), Chez Scheme supports all standard 
-features of Scheme, including first-class procedures, proper treatment 
-of tail calls, continuations, user-defined records, libraries, 
+(http://www.r6rs.org)(R6RS), Chez Scheme supports all standard
+features of Scheme, including first-class procedures, proper treatment
+of tail calls, continuations, user-defined records, libraries,
 exceptions, and hygienic macro expansion.
 
 Chez Scheme also includes extensive support for interfacing with C
