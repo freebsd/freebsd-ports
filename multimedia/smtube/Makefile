@@ -1,7 +1,7 @@
 # Created by: Pawel Pekala <pawel@FreeBSD.org>
 
 PORTNAME=	smtube
-DISTVERSION=	21.7.0
+DISTVERSION=	21.10.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
