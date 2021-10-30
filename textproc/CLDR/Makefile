@@ -2,6 +2,7 @@
 
 PORTNAME=	CLDR
 PORTVERSION=	40.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://unicode.org/Public/cldr/${PORTVERSION:R}/:src	\
 		http://www.unicode.org/:lic
@@ -27,8 +28,6 @@ DATADIR=	${PREFIX}/share/unicode/cldr
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${STAGEDIR}${DATADIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${SRCFILE} ${EXTRACT_AFTER_ARGS} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} core.zip ${EXTRACT_AFTER_ARGS} &&	\
-	${RM} core.zip)
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${SRCFILE} ${EXTRACT_AFTER_ARGS})
 
 .include <bsd.port.mk>
