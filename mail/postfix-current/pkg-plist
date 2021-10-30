@@ -12,6 +12,14 @@ bin/rmail
 %%PFETC%%/main.cf.default
 @sample %%PFETC%%/main.cf.sample
 @sample %%PFETC%%/master.cf.sample
+@sample %%PFETC%%/access.sample
+@sample %%PFETC%%/aliases.sample
+@sample %%PFETC%%/canonical.sample
+@sample %%PFETC%%/generic.sample
+@sample %%PFETC%%/header_checks.sample
+@sample %%PFETC%%/relocated.sample
+@sample %%PFETC%%/transport.sample
+@sample %%PFETC%%/virtual.sample
 lib/postfix/libpostfix-dns.so
 lib/postfix/libpostfix-global.so
 lib/postfix/libpostfix-master.so
