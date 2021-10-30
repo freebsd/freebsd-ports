@@ -1,9 +1,9 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 
 PORTNAME=	freerdp
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	net comms
-MASTER_SITES=   https://pub.freerdp.com/releases/ \
+MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
 MAINTAINER=	vvd@unislabs.com
