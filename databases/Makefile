@@ -228,7 +228,6 @@
     SUBDIR += mysqldump-secure
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
-    SUBDIR += mysqlsniffer
     SUBDIR += mysqltcl
     SUBDIR += mysqltuner
     SUBDIR += mysqlwsrep56-server
