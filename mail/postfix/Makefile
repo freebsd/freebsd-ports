@@ -2,7 +2,7 @@
 
 PORTNAME=	postfix
 DISTVERSION=	3.6.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -36,7 +36,7 @@ sasl_CONFLICTS_INSTALL=		postfix-[0-9]* postfix-base-[0-9]* \
 COMMENT_ldap=	(with OpenLDAP and Cyrus SASL support)
 COMMENT_sasl=	(with Cyrus SASL support)
 
-USES=		cpe shebangfix
+USES=		cpe shebangfix ssl
 USE_RC_SUBR=	postfix
 USE_SUBMAKE=	yes
 
@@ -290,7 +290,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		)/etc/postfix!\1$$config_directory!g; \
 		s!/etc/postfix!${ETCDIR}!g; s!^(sample_directory =)!\1 \
 		${ETCDIR}!g; \
-		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
+		s!($$config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
 .if ${PORT_OPTIONS:MSASL} && ! ${PORT_OPTIONS:MMYSQL} && exists(${LOCALBASE}/lib/libsasl2.a)
@@ -359,6 +359,9 @@ do-install:
 	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/mailer.conf.postfix ${STAGEDIR}${DATADIR}
+.for SAMPLEFILE in access aliases canonical generic header_checks relocated transport virtual
+	${MV} ${STAGEDIR}${ETCDIR}/${SAMPLEFILE} ${STAGEDIR}${ETCDIR}/${SAMPLEFILE}.sample
+.endfor
 
 # == chop dynamicmaps.cf entries into dedicated .cf files
 # for future sub-packages support
