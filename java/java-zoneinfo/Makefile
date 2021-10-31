@@ -1,7 +1,7 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2021b
+DISTVERSION=	2021e
 CATEGORIES=	java misc
 MASTER_SITES=	LOCAL/glewis/javazi
 PKGNAMEPREFIX=	java-
