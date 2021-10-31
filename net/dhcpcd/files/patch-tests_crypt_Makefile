@@ -1,0 +1,8 @@
+--- tests/crypt/Makefile.orig	2020-12-28 12:59:20 UTC
++++ tests/crypt/Makefile
+@@ -1,4 +1,4 @@
+-TOP?=	../..
++TOP=	../..
+ include ${TOP}/iconfig.mk
+ 
+ PROG=		run-test
