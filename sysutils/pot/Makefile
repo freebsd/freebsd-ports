@@ -1,7 +1,7 @@
 # Created by: Luca Pizzamiglio <pizzamig@FreeBSD.org>
 
 PORTNAME=	pot
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.0
 PORTREVISION=	0
 CATEGORIES=	sysutils
 

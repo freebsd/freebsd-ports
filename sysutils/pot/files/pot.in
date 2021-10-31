@@ -76,6 +76,7 @@ pot_restart()
 pot_status()
 {
 	local _pname _dyn_pot_list
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
 		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ] ||
 		   [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q )" = "YES" ]; then
