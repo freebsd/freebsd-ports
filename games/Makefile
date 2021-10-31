@@ -930,7 +930,6 @@
     SUBDIR += stratagus
     SUBDIR += stuntrally
     SUBDIR += sudsol
-    SUBDIR += super_methane_brothers
     SUBDIR += supertux
     SUBDIR += supertux2
     SUBDIR += supertuxkart

@@ -353,7 +353,6 @@
     SUBDIR += cl-trivial-features-sbcl
     SUBDIR += cl-trivial-gray-streams
     SUBDIR += cl-trivial-gray-streams-sbcl
-    SUBDIR += clanlib
     SUBDIR += clanlib1
     SUBDIR += clazy
     SUBDIR += cld2

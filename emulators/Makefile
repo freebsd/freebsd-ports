@@ -1,8 +1,6 @@
     COMMENT = Emulators for other operating systems
 
     SUBDIR += adamem
-    SUBDIR += advancemame
-    SUBDIR += advancemess
     SUBDIR += almostti
     SUBDIR += anese
     SUBDIR += aqemu
