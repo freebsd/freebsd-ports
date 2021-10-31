@@ -5,7 +5,6 @@ share/aclocal/bison-i18n.m4
 %%DATADIR%%/bison-default.css
 %%DATADIR%%/m4sugar/foreach.m4
 %%DATADIR%%/m4sugar/m4sugar.m4
-%%DATADIR%%/skeletons/README-D.txt
 %%DATADIR%%/skeletons/bison.m4
 %%DATADIR%%/skeletons/c++-skel.m4
 %%DATADIR%%/skeletons/c++.m4
@@ -16,6 +15,7 @@ share/aclocal/bison-i18n.m4
 %%DATADIR%%/skeletons/d.m4
 %%DATADIR%%/skeletons/glr.c
 %%DATADIR%%/skeletons/glr.cc
+%%DATADIR%%/skeletons/glr2.cc
 %%DATADIR%%/skeletons/java-skel.m4
 %%DATADIR%%/skeletons/java.m4
 %%DATADIR%%/skeletons/lalr1.cc
@@ -56,6 +56,9 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/calc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/calc/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/calc/calc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/glr/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/glr/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/glr/c++-types.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/lexcalc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/lexcalc/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/lexcalc/parse.y
@@ -72,9 +75,11 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/reccalc/scan.l
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/rpcalc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/rpcalc/rpcalc.y
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/calc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/calc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/calc/calc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/simple/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/simple/calc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/calc/Calc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/calc/Makefile
