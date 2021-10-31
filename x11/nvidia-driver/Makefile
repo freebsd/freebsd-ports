@@ -14,7 +14,7 @@
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
 PORTNAME?=	nvidia-driver
-DISTVERSION?=	470.74
+DISTVERSION?=	470.82.00
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
