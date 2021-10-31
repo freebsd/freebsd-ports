@@ -1,0 +1,20 @@
+--- doc/openvpn.8.orig	2021-10-05 05:57:01 UTC
++++ doc/openvpn.8
+@@ -358,7 +358,7 @@ lower priority, \fBn\fP less than zero is higher prior
+ .B \-\-persist\-key
+ Don\(aqt re\-read key files across \fBSIGUSR1\fP or \fB\-\-ping\-restart\fP\&.
+ .sp
+-This option can be combined with \fB\-\-user nobody\fP to allow restarts
++This option can be combined with \fB\-\-user openvpn\fP to allow restarts
+ triggered by the \fBSIGUSR1\fP signal. Normally if you drop root
+ privileges in OpenVPN, the daemon cannot be restarted since it will now
+ be unable to re\-read protected key files.
+@@ -577,7 +577,7 @@ useful to protect the system in the event that some ho
+ able to gain control of an OpenVPN session. Though OpenVPN\(aqs security
+ features make this unlikely, it is provided as a second line of defense.
+ .sp
+-By setting \fBuser\fP to \fBnobody\fP or somebody similarly unprivileged,
++By setting \fBuser\fP to \fBopenvpn\fP or somebody similarly unprivileged,
+ the hostile party would be limited in what damage they could cause. Of
+ course once you take away privileges, you cannot return them to an
+ OpenVPN session. This means, for example, that if you want to reset an

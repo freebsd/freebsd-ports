@@ -2,7 +2,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.5.4
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -20,6 +20,9 @@ USE_RC_SUBR=		openvpn
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 			sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/ucn.pl
+
+USERS=			openvpn
+GROUPS=			openvpn
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-strict
@@ -118,6 +121,13 @@ pre-configure:
 	@${ECHO} "### can be reproduced with a released OpenSSL version.        ###"
 	@${ECHO} "### --------------------------------------------------------- ###"
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
+		-e 's/"nobody"( after init)/"openvpn" \1/' \
+		${WRKSRC}/sample/sample-config-files/*.conf \
+		${WRKSRC}/sample/sample-config-files/xinetd-*-config \
+		${WRKSRC}/doc/man-sections/generic-options.rst
 
 post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
