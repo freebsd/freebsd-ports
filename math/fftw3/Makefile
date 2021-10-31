@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=--enable-avx2 --enable-fma
 .    if !empty(MACHINE_CPU:Msse)
 CONFIGURE_ARGS+=--enable-sse2
 .    endif
-.    if !empty(ARCH:Mpowerpc*) && !empty(MACHINE_CPU:Maltivec)
+.    if !empty(ARCH:Mpowerpc64*)
 CONFIGURE_ARGS+=--enable-altivec
 .    endif
 .    if ${ARCH} == "aarch64"
