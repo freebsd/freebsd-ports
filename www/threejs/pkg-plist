@@ -62,7 +62,6 @@
 %%WWWDIR%%/extras/curves/QuadraticBezierCurve.js
 %%WWWDIR%%/extras/curves/QuadraticBezierCurve3.js
 %%WWWDIR%%/extras/curves/SplineCurve.js
-%%WWWDIR%%/extras/objects/ImmediateRenderObject.js
 %%WWWDIR%%/geometries/BoxGeometry.js
 %%WWWDIR%%/geometries/CircleGeometry.js
 %%WWWDIR%%/geometries/ConeGeometry.js
