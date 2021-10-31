@@ -14,6 +14,9 @@ COMMENT=	Cross-platform game SDK
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Older than expired and removed devel/clanlib
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
 		libvorbis.so:audio/libvorbis \

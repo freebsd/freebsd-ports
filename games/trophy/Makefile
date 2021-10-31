@@ -11,6 +11,9 @@ COMMENT=	Single player racing game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired devel/clanlib1
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libclanCore.so:devel/clanlib1
 
 USES=		pkgconfig localbase
