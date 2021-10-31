@@ -1,6 +1,23 @@
---- a/configure
-+++ a/configure
-@@ -349,11 +349,14 @@ test_pkgconfig
+diff -ruN b/configure a/configure
+--- b/configure	2012-05-11 09:37:27.000000000 +0200
++++ a/configure	2021-08-31 08:43:00.871579000 +0200
+@@ -234,6 +234,7 @@
+   xrender
+   xshape
+   opengl
++  glx
+   pthread
+   dlfcn
+   vdpau
+@@ -333,6 +334,7 @@
+   disabled x11     && disable dbus-glib-1 xshm xrender xshape opengl xdpms xinerama vdpau
+   disabled vdr     && disable libextractor libcap libbluray
+   disabled dlfcn   && disable opengl
++  disabled glx     && disable opengl
+   disabled pthread && disable opengl
+   disabled xrender && disable xshape xshm
+ }
+@@ -349,11 +351,14 @@
  [ $debug = yes ] && \
    test_library   X11  do_error     "none.h"         "-lnolib"
  
@@ -20,7 +37,7 @@
  
  if enabled libxine; then
  
-@@ -365,24 +368,40 @@ if enabled libxine; then
+@@ -365,24 +370,41 @@
    fi
    log " $XINEPLUGINDIR"
  
@@ -56,7 +73,8 @@
 +#    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)"
 +    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)"
-+    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++    test_library X11  opengl       "GL/gl.h"                   "-lGL -LGLU"  "glTexCoord2f(0.0,0.0)"  "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++    test_library X11  glx          "GL/glx.h"                  "-lGLX"       "glXQueryVersion(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)"
 +    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library X11  dbus-glib-1  \
