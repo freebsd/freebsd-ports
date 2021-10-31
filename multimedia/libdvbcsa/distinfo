@@ -1,2 +1,5 @@
+TIMESTAMP = 1635643025
 SHA256 (libdvbcsa-1.1.0.tar.gz) = 4db78af5cdb2641dfb1136fe3531960a477c9e3e3b6ba19a2754d046af3f456d
 SIZE (libdvbcsa-1.1.0.tar.gz) = 345487
+SHA256 (0001-altivec-powerpc64.patch) = b9bc236f2d347b83c48a446d5884a5c4d7036bd6cb3c5df3c79263f413d92637
+SIZE (0001-altivec-powerpc64.patch) = 1627
