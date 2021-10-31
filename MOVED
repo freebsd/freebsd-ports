@@ -16587,3 +16587,5 @@ mail/postfix-ldap-sasl|mail/postfix@ldap|2021-10-28|Converted to flavor
 mail/postfix-sasl|mail/postfix@sasl|2021-10-28|Converted to flavor
 mail/postfix-current-sasl|mail/postfix-current@sasl|2021-10-28|Converted to flavor
 databases/mysqlsniffer||2021-10-30|Has expired: Development discontinued upstream, doesn't build on recent FreeBSD
+emulators/advancemenu||2021-10-31|Has expired: Heavily outdated and unmaintained
+emulators/qemu31|emulators/qemu|2021-10-31|Has expired: Use emulators/qemu or emulators/qemu-devel

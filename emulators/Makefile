@@ -2,7 +2,6 @@
 
     SUBDIR += adamem
     SUBDIR += advancemame
-    SUBDIR += advancemenu
     SUBDIR += advancemess
     SUBDIR += almostti
     SUBDIR += anese
@@ -112,7 +111,6 @@
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
     SUBDIR += qemu-utils
-    SUBDIR += qemu31
     SUBDIR += qemu41
     SUBDIR += qemu42
     SUBDIR += qemu50
