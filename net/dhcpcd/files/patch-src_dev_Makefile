@@ -1,8 +1,0 @@
---- src/dev/Makefile.orig	2020-12-28 12:59:20 UTC
-+++ src/dev/Makefile
-@@ -1,4 +1,4 @@
--TOP?=	../../
-+TOP=	../../
- include ${TOP}/Makefile.inc
- include ${TOP}/config.mk
- 

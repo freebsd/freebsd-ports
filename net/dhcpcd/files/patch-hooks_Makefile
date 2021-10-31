@@ -1,8 +1,0 @@
---- hooks/Makefile.orig	2020-12-28 12:59:20 UTC
-+++ hooks/Makefile
-@@ -1,4 +1,4 @@
--TOP?=	../
-+TOP=	../
- include ${TOP}/iconfig.mk
- 
- PROG=		dhcpcd-run-hooks
