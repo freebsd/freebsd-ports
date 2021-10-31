@@ -1,0 +1,20 @@
+Av1an is a cross-platform framework to streamline encoding, providing
+an easy way to start using AV1 / HEVC / H264 / VP9 / VP8 encoding.
+AOM, RAV1E, SVT-AV1, VPX, x265, x264 are supported.
+
+## Main Features
+
+Splitting video by scenes for parallel encoding because AV1 encoders
+are currently not very good at multithreading and encoding is limited
+to a very limited number of threads.
+
+- Vapoursynth script input support.
+- Speed up video encoding.
+- Target Quality mode. Targeting end result reference visual quality.
+  VMAF used as a substructure
+- Resuming encoding without loss of encoded progress.
+- Simple and clean console look.
+- Automatic detection of the number of workers the host can handle.
+- Both video and audio transcoding.
+
+WWW: https://github.com/master-of-zen/Av1an

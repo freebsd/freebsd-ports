@@ -12,6 +12,7 @@
     SUBDIR += atomicparsley
     SUBDIR += audacious
     SUBDIR += audacious-plugins
+    SUBDIR += av1an
     SUBDIR += avidemux
     SUBDIR += avidemux-cli
     SUBDIR += avidemux-plugins
