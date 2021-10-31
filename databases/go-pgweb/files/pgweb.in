@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: NETWORKING
+# KEYWORD:
+#
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
+# %%PORTNAME%%_enable="YES"
+#
+# %%PORTNAME%%_enable (bool):		Set to YES to enable %%PORTNAME%%
+#					Default: NO
+# %%PORTNAME%%_bind (str):		HTTP server host
+#					Default: localhost
+# %%PORTNAME%%_listen (str):	HTTP server listen port
+#					Default: 8081
+# %%PORTNAME%%_user (str):		%%PORTNAME%% daemon user
+#					Default: %%PGWEBUSER%%
+# %%PORTNAME%%_group (str):		%%PORTNAME%% daemon group
+#					Default: %%PGWEBGROUP%%
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar="%%PORTNAME%%_enable"
+load_rc_config $name
+
+: ${%%PORTNAME%%_user:="www"}
+: ${%%PORTNAME%%_group:="www"}
+: ${%%PORTNAME%%_enable:="NO"}
+: ${%%PORTNAME%%_bind:="localhost"}
+: ${%%PORTNAME%%_flags=""}
+: ${%%PORTNAME%%_facility:="daemon"}
+: ${%%PORTNAME%%_priority:="debug"}
+: ${%%PORTNAME%%_listen:="8081"}
+
+procname="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}.pid"
+start_precmd="${name}_precmd"
+command=/usr/sbin/daemon
+command_args="-S -l ${%%PORTNAME%%_facility} -s ${%%PORTNAME%%_priority} -T ${name} -t ${name} -p ${pidfile} \
+	${procname} --bind=${%%PORTNAME%%_bind} --listen=${%%PORTNAME%%_listen} ${%%PORTNAME%%_flags}"
+
+%%PORTNAME%%_precmd()
+{
+	install -o ${%%PORTNAME%%_user} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"
+
