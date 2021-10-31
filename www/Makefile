@@ -2246,6 +2246,7 @@
     SUBDIR += transproxy
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
+    SUBDIR += tusc
     SUBDIR += tusd
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
