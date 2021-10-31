@@ -401,14 +401,6 @@ lib/lean/leanpkg/leanpkg/toml.lean
 lib/lean/library/data/buffer.lean
 lib/lean/library/data/buffer/parser.lean
 lib/lean/library/data/dlist.lean
-lib/lean/library/data/rbmap/default.lean
-lib/lean/library/data/rbtree/basic.lean
-lib/lean/library/data/rbtree/default.lean
-lib/lean/library/data/rbtree/find.lean
-lib/lean/library/data/rbtree/insert.lean
-lib/lean/library/data/rbtree/main.lean
-lib/lean/library/data/rbtree/min_max.lean
-lib/lean/library/data/stream.lean
 lib/lean/library/data/vector.lean
 lib/lean/library/init/algebra/classes.lean
 lib/lean/library/init/algebra/default.lean
@@ -471,10 +463,6 @@ lib/lean/library/init/data/ordering/lemmas.lean
 lib/lean/library/init/data/prod.lean
 lib/lean/library/init/data/punit.lean
 lib/lean/library/init/data/quot.lean
-lib/lean/library/init/data/rbmap/basic.lean
-lib/lean/library/init/data/rbmap/default.lean
-lib/lean/library/init/data/rbtree/basic.lean
-lib/lean/library/init/data/rbtree/default.lean
 lib/lean/library/init/data/repr.lean
 lib/lean/library/init/data/set.lean
 lib/lean/library/init/data/setoid.lean

@@ -1,7 +1,10 @@
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.33.0
+DISTVERSION=	3.35.0
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	aba9d05dd1c725ec0a681aaec4a391554325a51b.patch:-p2 # FreeBSD patches: https://github.com/leanprover-community/lean/pull/643
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Theorem prover
@@ -12,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		cmake compiler:c++11-lang
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover-community
 
