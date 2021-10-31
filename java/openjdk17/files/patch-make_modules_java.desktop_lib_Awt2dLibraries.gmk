@@ -1,14 +1,5 @@
 --- make/modules/java.desktop/lib/Awt2dLibraries.gmk.orig	2021-09-18 15:30:22.109237000 -0700
 +++ make/modules/java.desktop/lib/Awt2dLibraries.gmk	2021-09-18 15:31:02.024314000 -0700
-@@ -435,7 +435,7 @@
- 
- ifeq ($(USE_EXTERNAL_HARFBUZZ), true)
-    LIBFONTMANAGER_EXTRA_SRC =
--   BUILD_LIBFONTMANAGER_FONTLIB += $(LIBHARFBUZZ_LIBS)
-+   BUILD_LIBFONTMANAGER_FONTLIB += $(HARFBUZZ_LIBS)
- else
-    LIBFONTMANAGER_EXTRA_SRC = libharfbuzz
- 
 @@ -530,7 +530,7 @@
      LDFLAGS_unix := -L$(INSTALL_LIBRARIES_HERE), \
      LDFLAGS_aix := -Wl$(COMMA)-berok, \
