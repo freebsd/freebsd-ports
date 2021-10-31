@@ -8,7 +8,7 @@ COMMENT=	Miscellaneous OpenFX Effects plugins
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		gl gmake
 USE_GL=		gl
