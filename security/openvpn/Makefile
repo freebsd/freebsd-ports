@@ -2,7 +2,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.5.4
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -29,6 +29,9 @@ CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 CONFLICTS_INSTALL?=	openvpn-2.[!5].* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
 
 SUB_FILES=		pkg-message openvpn-client
+
+USERS=			openvpn
+GROUPS=			openvpn
 
 PORTDOCS=		*
 PORTEXAMPLES=		*
@@ -99,6 +102,13 @@ _tlslibs=libssl libcrypto
 .if ! ${PORT_OPTIONS:MLZ4} && ! ${PORT_OPTIONS:MLZO}
 CONFIGURE_ARGS+=	--enable-comp-stub
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
+		-e 's/"nobody"( after init)/"openvpn" \1/' \
+		${WRKSRC}/sample/sample-config-files/*.conf \
+		${WRKSRC}/sample/sample-config-files/xinetd-*-config \
+		${WRKSRC}/doc/man-sections/generic-options.rst
 
 pre-configure:
 .ifdef (LOG_OPENVPN)

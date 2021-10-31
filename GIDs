@@ -240,7 +240,7 @@ conduit:*:297:
 # free: 298
 owncast:*:299:
 backuppc:*:300:
-# free: 301
+openvpn:*:301:
 netdata:*:302:
 # free: 303
 # free: 304

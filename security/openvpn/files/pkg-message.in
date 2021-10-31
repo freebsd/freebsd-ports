@@ -1,17 +1,34 @@
 [
 { type: install
   message: <<EOM
-  Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
-  startup. See %%PREFIX%%/etc/rc.d/openvpn for details.
+Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
+startup. See %%PREFIX%%/etc/rc.d/openvpn for details.
 
-  Connect to VPN server as a client with this command to include
-  the client.up/down scripts in the initialization:
-  openvpn-client <spec>.ovpn
+Connect to VPN server as a client with this command to include
+the client.up/down scripts in the initialization:
+openvpn-client <spec>.ovpn
 
-  For compatibility notes when interoperating with older OpenVPN
-  versions, please see <http://openvpn.net/relnotes.html>
+For compatibility notes when interoperating with older OpenVPN
+versions, please see <http://openvpn.net/relnotes.html>
 
-  Note that OpenVPN does not officially support LibreSSL.
+Note that OpenVPN does not officially support LibreSSL.
+
+Note that OpenVPN configures a separate user and group "openvpn",
+which should be used instead of the NFS user "nobody"
+when an unprivileged user account is desired.
+
+You may want to add user openvpn and group openvpn when creating your
+configuration files, the example configuration shows this only as comments.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+Note that OpenVPN now configures a separate user and group "openvpn",
+which should be used instead of the NFS user "nobody"
+when an unprivileged user account is desired.
+
+It is advisable to review existing configuration files and
+to consider adding/changing user openvpn and group openvpn.
 EOM
 }
 ]

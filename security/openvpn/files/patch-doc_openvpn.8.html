@@ -1,0 +1,20 @@
+--- doc/openvpn.8.html.orig	2021-10-05 05:57:01 UTC
++++ doc/openvpn.8.html
+@@ -650,7 +650,7 @@ lower priority, <tt class="docutils literal">n</tt> le
+ <tr><td class="option-group">
+ <kbd><span class="option">--persist-key</span></kbd></td>
+ <td><p class="first">Don't re-read key files across <code>SIGUSR1</code> or <tt class="docutils literal"><span class="pre">--ping-restart</span></tt>.</p>
+-<p>This option can be combined with <tt class="docutils literal"><span class="pre">--user</span> nobody</tt> to allow restarts
++<p>This option can be combined with <tt class="docutils literal"><span class="pre">--user</span> openvpn</tt> to allow restarts
+ triggered by the <code>SIGUSR1</code> signal. Normally if you drop root
+ privileges in OpenVPN, the daemon cannot be restarted since it will now
+ be unable to re-read protected key files.</p>
+@@ -824,7 +824,7 @@ initialization, dropping privileges in the process. Th
+ useful to protect the system in the event that some hostile party was
+ able to gain control of an OpenVPN session. Though OpenVPN's security
+ features make this unlikely, it is provided as a second line of defense.</p>
+-<p class="last">By setting <tt class="docutils literal">user</tt> to <code>nobody</code> or somebody similarly unprivileged,
++<p class="last">By setting <tt class="docutils literal">user</tt> to <code>openvpn</code> or somebody similarly unprivileged,
+ the hostile party would be limited in what damage they could cause. Of
+ course once you take away privileges, you cannot return them to an
+ OpenVPN session. This means, for example, that if you want to reset an

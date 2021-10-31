@@ -245,7 +245,7 @@ conduit:*:297:297::0:0:Conduit daemon:/var/db/conduit:/usr/sbin/nologin
 # free: 298
 owncast:*:299:299::0:0:& daemon:/nonexistent:/usr/sbin/nologin
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
-# free: 301
+openvpn:*:301:301::0:0:OpenVPN pseudo-user:/nonexistent:/usr/sbin/nologin
 netdata:*:302:302::0:0:NetData Daemon:/var/cache/netdata:/usr/sbin/nologin
 # free: 303
 # free: 304
