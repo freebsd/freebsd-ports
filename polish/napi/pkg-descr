@@ -1,0 +1,10 @@
+"napi.sh" is a napiprojekt.pl client written in Bash. The purpose of the project
+was to create simple tool for systems with very limited resources (NAS QNAP
+drives, Synology, OpenWRT routers, Popcorn streamers, etc). It was inspired by
+"pynapi.py" script.
+
+"napi.sh" is distributed together with automatic subtitle format converter
+"subotage.sh" created specially for "napi.sh". "subotage.sh" is written in Bash
+and uses awk for text processing.
+
+WWW: https://gitlab.com/hesperos/napi
