@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	swoole
-PORTVERSION=	4.8.0
+PORTVERSION=	4.8.1
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
