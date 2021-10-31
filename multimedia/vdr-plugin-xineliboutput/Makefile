@@ -14,33 +14,36 @@ COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		does not build: invalid suffix on literal; C++11 requires a space between literal and identifier
-
-LIB_DEPENDS=	libxine.so:multimedia/libxine \
-		libavutil.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libvdpau.so:multimedia/libvdpau
+		libvdpau.so:multimedia/libvdpau \
+		libxine.so:multimedia/libxine
+
+USES=		compiler:c++11-lang gl pkgconfig tar:bzip2 xorg
+USE_GL=		gl glu glut
+USE_XORG=	xrandr xrender
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--add-cflags=-I${VDRDIR} \
+		--cc="${CC}" \
+		--cxx="${CXX}"
 
 PATCH_STRIP=	-p1
-USES=		compiler:c++11-lang gl pkgconfig tar:bzip2 xorg
-USE_XORG=	xrandr xrender
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I${VDRDIR}
-USE_GL=		gl glu glut
-WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
-XINE_PLUGINSDIR=lib/xine/plugins/2.9
 
-PORTDOCS=	README HISTORY
-PORTEXAMPLES=	xine
+WRKSRC=			${WRKDIR}/vdr-${PLUGIN}
+XINE_PLUGINSDIR=	lib/xine/plugins/2.9
 
 PLIST_SUB=	XINE_PLUGINSDIR=${XINE_PLUGINSDIR}
+PORTDOCS=	HISTORY README
+PORTEXAMPLES=	xine
 
-OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR EXAMPLES DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES LIBBLURAY LIBEXTRACTOR NLS
+OPTIONS_SUB=	yes
 
-LIBEXTRACTOR_LIB_DEPENDS=	libextractor.so:textproc/libextractor
-LIBEXTRACTOR_CONFIGURE_ENABLE=	libextractor
 LIBBLURAY_LIB_DEPENDS=		libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
+LIBEXTRACTOR_LIB_DEPENDS=	libextractor.so:textproc/libextractor
+LIBEXTRACTOR_CONFIGURE_ENABLE=	libextractor
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
@@ -57,12 +60,12 @@ post-install: post-install-pluginlocales
 	${INSTALL_DATA} ${WRKSRC}/examples/allowed_hosts.conf \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf.sample
 
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/xine
-	${INSTALL_DATA} ${FILESDIR}/keymap ${STAGEDIR}${EXAMPLESDIR}/xine
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/xine
+	${INSTALL_DATA} ${FILESDIR}/keymap ${STAGEDIR}${EXAMPLESDIR}/xine
 
 .include <bsd.port.mk>
