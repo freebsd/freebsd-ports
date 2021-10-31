@@ -1,6 +1,6 @@
---- Makefile.orig	2021-08-16 21:18:43 UTC
+--- Makefile.orig	2021-10-29 22:46:52 UTC
 +++ Makefile
-@@ -524,16 +524,16 @@ GIT-VERSION-FILE: FORCE
+@@ -517,16 +517,16 @@ GIT-VERSION-FILE: FORCE
  
  prefix = $(HOME)
  bindir = $(prefix)/bin
@@ -22,7 +22,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -558,8 +558,8 @@ DIFF = diff
+@@ -551,8 +551,8 @@ DIFF = diff
  TAR = tar
  FIND = find
  INSTALL = install
@@ -33,7 +33,7 @@
  XGETTEXT = xgettext
  MSGFMT = msgfmt
  CURL_CONFIG = curl-config
-@@ -1477,9 +1477,9 @@ EXTLIBS += -lz
+@@ -1465,9 +1465,9 @@ EXTLIBS += -lz
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -46,7 +46,7 @@
  	else
  		OPENSSL_LINK =
  	endif
-@@ -2376,7 +2376,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
+@@ -2371,7 +2371,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -55,7 +55,7 @@
  	$(QUIET_GEN) \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \
-@@ -2392,7 +2392,7 @@ ifndef NO_PYTHON
+@@ -2387,7 +2387,7 @@ ifndef NO_PYTHON
  $(SCRIPT_PYTHON_GEN): GIT-CFLAGS GIT-PREFIX GIT-PYTHON-VARS
  $(SCRIPT_PYTHON_GEN): % : %.py
  	$(QUIET_GEN) \
@@ -64,3 +64,12 @@
  	    $< >$@+ && \
  	chmod +x $@+ && \
  	mv $@+ $@
+@@ -3015,7 +3015,7 @@ install: all
+ 	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
+ 	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
+ 	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'
+-	$(INSTALL) $(BINDIR_PROGRAMS_NO_X) '$(DESTDIR_SQ)$(bindir_SQ)'
++	if [ $(BINDIR_PROGRAMS_NO_X) ]; then  $(INSTALL) $(BINDIR_PROGRAMS_NO_X) '$(DESTDIR_SQ)$(bindir_SQ)'; fi
+ 
+ ifdef MSVC
+ 	# We DO NOT install the individual foo.o.pdb files because they

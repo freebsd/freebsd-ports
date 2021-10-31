@@ -131,7 +131,6 @@ libexec/git-core/git-quiltimport
 libexec/git-core/git-range-diff
 libexec/git-core/git-read-tree
 libexec/git-core/git-rebase
-libexec/git-core/git-rebase--preserve-merges
 libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-remote
@@ -701,6 +700,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.32.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.33.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.33.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.34.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.34.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
