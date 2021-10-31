@@ -1674,6 +1674,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/shadow.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/shortdoc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/shortdoc.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/shorthands.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/shorthands.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/smie.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/smie.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/subr-x.el.gz
@@ -3586,8 +3588,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/shadowfile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/shell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/shell.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/shorthands.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/shorthands.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/simple.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/simple.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/skeleton.el.gz
