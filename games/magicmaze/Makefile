@@ -13,6 +13,9 @@ LICENSE=	GPLv2+ RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING_GPL.txt
 
+DEPRECATED=	Depends on expired devel/sdl_sge
+EXPIRATION_DATE=2021-12-31
+
 RUN_DEPENDS=	ruby${RUBY_SUFFIX}-sdl>=0:devel/ruby-sdl
 
 USES=		sdl shebangfix

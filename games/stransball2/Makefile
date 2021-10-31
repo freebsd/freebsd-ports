@@ -12,6 +12,9 @@ COMMENT=	Sequel to Transball and Transball 2 THRUST-type games
 LICENSE=	GPLv2
 LICENSE_FILE=	${BUILD_WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/sdl_sge
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libSGE.so:devel/sdl_sge
 
 USES=		dos2unix gmake sdl zip

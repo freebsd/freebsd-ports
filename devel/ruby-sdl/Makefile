@@ -13,6 +13,9 @@ COMMENT=	Ruby extension library to use SDL library
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Depends on expired devel/sdl_sge
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libSGE.so:devel/sdl_sge \
 		libSDLSKK.so:devel/sdlskk \
 		libsmpeg.so:multimedia/smpeg

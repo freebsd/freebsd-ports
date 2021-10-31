@@ -11,6 +11,9 @@ COMMENT=	Game-development extension and library for the ruby language
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Depends on expired devel/sdl_sge
+EXPIRATION_DATE=2021-12-31
+
 RUN_DEPENDS=	rubygem-rake>=0.7.0:devel/rubygem-rake \
 		rubygem-ruby-sdl-ffi>=0.1.0:devel/rubygem-ruby-sdl-ffi
 
