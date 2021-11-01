@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 USES=		perl5 shebangfix
 USE_PERL5=	run
 
-MAKE_ARGS=	MANDIR=${PREFIX}/man/man1 prefix=${PREFIX}
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man1 prefix=${PREFIX}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
