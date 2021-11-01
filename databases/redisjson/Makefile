@@ -113,11 +113,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 
 PLIST_FILES=	lib/librejson.so
 
-do-patch:
-	${REINPLACE_CMD} \
-		's|^\(jsonpath_lib\).*v\([[:digit:]]\.[[:digit:]]\.[[:digit:]]\).*|\1 = \{ path=\"../jsonpath-\2\" \}|g' \
-			${WRKSRC}/Cargo.toml
-
 do-install:
 	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/librejson.so ${STAGEDIR}${PREFIX}/lib
 
