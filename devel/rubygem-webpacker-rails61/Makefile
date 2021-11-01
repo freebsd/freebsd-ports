@@ -1,6 +1,6 @@
 PORTNAME=	webpacker
 PORTVERSION=	5.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-activesupport61>=5.2:devel/rubygem-activesupport61 \
 		rubygem-rack-proxy>=0.6.1:www/rubygem-rack-proxy \
 		rubygem-railties61>=5.2:www/rubygem-railties61 \
 		rubygem-semantic_range>=2.3.0:devel/rubygem-semantic_range \
-		yarn:www/yarn-node16
+		yarn:www/yarn
 
 USES=		gem
 USE_RUBY=	yes
