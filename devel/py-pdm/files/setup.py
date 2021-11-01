@@ -11,7 +11,7 @@ INSTALL_REQUIRE = [
     'atoml>=1.0.3',
     'click>=7',
     'importlib-metadata; python_version < "3.8"',
-    'installer~=0.3.0',
+    'installer>=0.3.0,<0.5',
     'packaging',
     'pdm-pep517>=0.8.3,<0.9',
     'pep517>=0.11.0',
@@ -32,7 +32,7 @@ ENTRY_POINTS = {
 
 setup_kwargs = {
     'name': 'pdm',
-    'version': '1.9.0',
+    'version': '%%PORTVERSION%%',
     'description': 'Python Development Master',
     'long_description': long_description,
     'license': 'MIT',
