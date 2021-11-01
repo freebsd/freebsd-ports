@@ -10,7 +10,7 @@ package_data = \
 {'': ['*']}
 
 setup(name='tomli_w',
-      version='0.4.0',
+      version='%%PORTVERSION%%',
       description="A lil' TOML writer",
       author=None,
       author_email='Taneli Hukkinen <hukkin@users.noreply.github.com>',
