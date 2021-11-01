@@ -10,7 +10,7 @@ package_data = \
 {'': ['*'], 'flit': ['license_templates/*']}
 
 install_requires = \
-['flit_core >=3.4.0', 'requests', 'docutils', 'tomli', 'tomli-w']
+['flit_core >= %%PORTVERSION%%', 'requests', 'docutils', 'tomli', 'tomli-w']
 
 extras_require = \
 {'doc': ['sphinx', 'sphinxcontrib_github_alt', 'pygments-github-lexers'],
@@ -20,7 +20,7 @@ entry_points = \
 {'console_scripts': ['flit = flit:main']}
 
 setup(name='flit',
-      version='3.4.0',
+      version='%%PORTVERSION%%',
       description='A simple packaging tool for simple packages.',
       author=None,
       author_email='Thomas Kluyver <thomas@kluyver.me.uk>',
