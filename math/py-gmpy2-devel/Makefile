@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	aleaxit
 GH_PROJECT=	gmpy
 
-USES=		localbase python:3.7+
+USES=		localbase python:3.7-3.9
 USE_PYTHON=	distutils
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}gmpy2-2.0*
