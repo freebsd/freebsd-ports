@@ -1,3 +1,3 @@
-TIMESTAMP = 1634000442
-SHA256 (facebook-rocksdb-v6.22.1_GH0.tar.gz) = 2df8f34a44eda182e22cf84dee7a14f17f55d305ff79c06fb3cd1e5f8831e00d
-SIZE (facebook-rocksdb-v6.22.1_GH0.tar.gz) = 9129964
+TIMESTAMP = 1635363729
+SHA256 (facebook-rocksdb-v6.25.3_GH0.tar.gz) = ba454cf196281441f205a009e74ca8023cff555cca55869471a59bb29316eb7e
+SIZE (facebook-rocksdb-v6.25.3_GH0.tar.gz) = 9307554

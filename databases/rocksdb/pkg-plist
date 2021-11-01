@@ -73,6 +73,8 @@ include/rocksdb/table_properties.h
 include/rocksdb/thread_status.h
 include/rocksdb/threadpool.h
 include/rocksdb/trace_reader_writer.h
+include/rocksdb/trace_record.h
+include/rocksdb/trace_record_result.h
 include/rocksdb/transaction_log.h
 include/rocksdb/types.h
 include/rocksdb/universal_compaction.h
@@ -80,6 +82,7 @@ include/rocksdb/utilities/backup_engine.h
 include/rocksdb/utilities/backupable_db.h
 include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
+include/rocksdb/utilities/customizable_util.h
 include/rocksdb/utilities/db_ttl.h
 include/rocksdb/utilities/debug.h
 include/rocksdb/utilities/env_librados.h
@@ -96,6 +99,8 @@ include/rocksdb/utilities/optimistic_transaction_db.h
 include/rocksdb/utilities/option_change_migration.h
 include/rocksdb/utilities/options_type.h
 include/rocksdb/utilities/options_util.h
+include/rocksdb/utilities/regex.h
+include/rocksdb/utilities/replayer.h
 include/rocksdb/utilities/sim_cache.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h

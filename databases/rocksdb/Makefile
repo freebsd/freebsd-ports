@@ -1,9 +1,8 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rocksdb
-PORTVERSION=	6.22.1
+PORTVERSION=	6.25.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -70,7 +69,7 @@ PLIST_SUB+=	LITE="" NO_LITE="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-inconsistent-missing-override -Wno-unused-parameter -Wno-unused-variable
+CXXFLAGS+=	-Wno-inconsistent-missing-override -Wno-unused-parameter -Wno-unused-variable -Wno-unused-private-field
 .endif
 
 post-patch:
