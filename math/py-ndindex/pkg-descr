@@ -1,0 +1,18 @@
+ndindex is a library that allows representing and manipulating objects that can
+be valid indices to numpy arrays, i.e., slices, integers, ellipses, None,
+integer and boolean arrays, and tuples thereof. The goals of the library are:
+- Provide a uniform API to manipulate these objects. Unlike the standard index
+  objects themselves like slice, int, and tuple, which do not share any methods
+  in common related to being indices, ndindex classes can all be manipulated
+  uniformly. For example, idx.args always gives the arguments used to construct
+  idx.
+- Give 100% correct semantics as defined by numpy's ndarray. This means that
+  ndindex will not make a transformation on an index object unless it is correct
+  for all possible input array shapes. The only exception to this rule is that
+  ndindex assumes that any given index will not raise IndexError (for instance,
+  from an out of bounds integer index or from too few dimensions). For those
+  operations where the array shape is known, there is a reduce() method to
+  reduce an index to a simpler index that is equivalent for the given shape.
+- Enable useful transformation and manipulation functions on index objects.
+
+WWW: https://github.com/Quansight-Labs/ndindex
