@@ -3,6 +3,7 @@
 PORTNAME=	cjdns
 DISTVERSIONPREFIX=	cjdns-v
 DISTVERSION=	21.1
+PORTREVISION=	1
 CATEGORIES=	net security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,10 +12,9 @@ COMMENT=	Routing engine designed for security, scalability, speed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	node:www/node \
-		bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake python
+USES=		gmake nodejs:build python
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjdelisle
 USE_RC_SUBR=	cjdns

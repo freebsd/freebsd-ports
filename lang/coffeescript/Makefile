@@ -1,5 +1,6 @@
 PORTNAME=	coffeescript
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -8,8 +9,7 @@ COMMENT=	Unfancy JavaScript
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	node:www/node
-
+USES=		nodejs:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jashkenas
 

@@ -1,6 +1,6 @@
 PORTNAME=	sonar-scanner-cli
 DISTVERSION=	4.4.0.2170
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/${PORTNAME}/
 
@@ -10,9 +10,7 @@ COMMENT=	Scanner component of SonarQube
 LICENSE=	LGPL3
 
 # node -> JS analysis
-RUN_DEPENDS=	node:www/node
-
-USES=		cpe zip
+USES=		cpe nodejs:run zip
 CPE_VENDOR=	sonarsource
 CPE_PRODUCT=	sonarqube_scanner
 USE_JAVA=	yes

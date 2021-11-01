@@ -1,6 +1,7 @@
 PORTNAME=	greenbone-security-assistant
 DISTVERSIONPREFIX=	v
 DISTVERSION=	21.4.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/gsa/:yarn_cache
 DISTFILES=	${PORTNAME}-cache${EXTRACT_SUFX}:yarn_cache
@@ -10,8 +11,7 @@ COMMENT=	Libraries module for the GVM solution
 
 LICENSE=	AGPLv3+
 
-BUILD_DEPENDS= node:www/node16 \
-               yarn:www/yarn-node16
+BUILD_DEPENDS=	yarn:www/yarn
 LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 RUN_DEPENDS=	doxygen>0:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}polib>=0:devel/py-polib@${PY_FLAVOR}
 
-USES=		cmake gettext-runtime gnome pkgconfig python
+USES=		cmake gettext-runtime gnome nodejs:build pkgconfig python
 USE_GNOME=	glib20 libxml2
 
 USE_GITHUB=	yes

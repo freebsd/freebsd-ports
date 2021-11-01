@@ -1,7 +1,7 @@
 PORTNAME=	yarn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
@@ -11,25 +11,16 @@ COMMENT=	Package manager for node, alternative to npm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe
+USES?=		nodejs:run
+USES+=		cpe
 CPE_VENDOR=	${PORTNAME}pkg
 
-CONFLICTS_INSTALL?=	yarn-node16 yarn-node14 yarn-node10
+CONFLICTS_INSTALL?=	yarn-node17 yarn-node16 yarn-node14
 
 OPTIONS_DEFINE=	HADOOPCOMPAT
-OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	NODE16 NODE14 NODE
-OPTIONS_DEFAULT=	NODE
 HADOOPCOMPAT_DESC=	hadoop2 compatibility, the yarn script is excluded
-NODE_DESC=	Use www/node as backend
-NODE14_DESC=	Use www/node14 as backend
-NODE16_DESC=	Use www/node16 as backend
 
 OPTIONS_SUB=	yes
-
-NODE_RUN_DEPENDS=	node>=0.8.0:www/node
-NODE14_RUN_DEPENDS=	node14>=14.0.0:www/node14
-NODE16_RUN_DEPENDS=	node16>=16.0.0:www/node16
 
 HADOOPCOMPAT_CONFLICTS_INSTALL_OFF=	hadoop2*
 

@@ -466,6 +466,7 @@
     SUBDIR += npm
     SUBDIR += npm-node14
     SUBDIR += npm-node16
+    SUBDIR += npm-node17
     SUBDIR += nspluginwrapper
     SUBDIR += oauth2-proxy
     SUBDIR += obhttpd
@@ -2366,6 +2367,7 @@
     SUBDIR += yarn
     SUBDIR += yarn-node14
     SUBDIR += yarn-node16
+    SUBDIR += yarn-node17
     SUBDIR += yarr
     SUBDIR += yaws
     SUBDIR += you-get

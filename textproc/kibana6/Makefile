@@ -1,5 +1,6 @@
 PORTNAME=	kibana
 PORTVERSION=	6.8.16
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -14,9 +15,7 @@ LICENSE=	APACHE20
 DEPRECATED=	Uses EOL Python 2.7 via www/node10
 EXPIRATION_DATE=	2021-06-23
 
-RUN_DEPENDS=	node10>=10.15.2:www/node10
-
-USES=		cpe
+USES=		cpe nodejs:run,10
 CPE_VENDOR=	elastic
 USE_RC_SUBR=	${PORTNAME}
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 PKGNAMEPREFIX=	node-
@@ -9,9 +10,7 @@ PKGNAMEPREFIX=	node-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node.js bindings for the Apache Thrift RPC system
 
-RUN_DEPENDS=	node:www/node
-
-USES=		cpe
+USES=		cpe nodejs:run
 CPE_VENDOR=	apache
 
 NO_BUILD=	yes

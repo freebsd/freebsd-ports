@@ -3,7 +3,7 @@
 PORTNAME=	csso
 PORTVERSION=	1.3.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 
@@ -13,7 +13,7 @@ COMMENT=	CSS optimizer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
-RUN_DEPENDS=	node:www/node
+USES=		nodejs:run
 
 GH_ACCOUNT=	css
 

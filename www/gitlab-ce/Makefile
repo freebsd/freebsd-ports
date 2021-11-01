@@ -21,7 +21,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitlab-shell>=13.21.1:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
-	yarn-node16>=1.10.0:www/yarn-node16 \
+	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	rubygem-rails61>=6.1.4.1<6.1.4.2:www/rubygem-rails61 \
