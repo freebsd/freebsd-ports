@@ -68,12 +68,3 @@
  ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
  
  
-@@ -539,7 +549,7 @@ ENDIF(WIN32 OR PODOFO_BUILD_STATIC)
- #
- # Setup directories we will need
- #
--SET(MANDIR "share/man/")
-+SET(MANDIR "man/")
- 
- # Create the config file. It'll be appended to as the subdirs run though
- # then dependency information will be written to it at the end of the
