@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2021-05-26 12:26:11 UTC
+--- build/config/BUILDCONFIG.gn.orig	2021-10-20 15:47:54 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -131,7 +131,7 @@ declare_args() {
    is_official_build = false
