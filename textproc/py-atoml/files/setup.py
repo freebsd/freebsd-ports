@@ -9,7 +9,7 @@ with codecs.open('README.md', encoding="utf-8") as fp:
 
 setup_kwargs = {
     'name': 'atoml',
-    'version': '1.0.3',
+    'version': '%%PORTVERSION%%',
     'description': 'Yet another style preserving TOML library',
     'long_description': long_description,
     'license': 'MIT',
