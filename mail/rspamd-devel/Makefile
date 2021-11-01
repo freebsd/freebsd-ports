@@ -85,7 +85,7 @@ CGP_RUN_DEPENDS+=	\
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH:Mpowerpc64*}
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 USES+=		compiler:gcc-c++11-lib
 .endif
