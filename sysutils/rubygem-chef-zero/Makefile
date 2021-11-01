@@ -1,7 +1,7 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
 
 PORTNAME=	chef-zero
-PORTVERSION=	15.0.9
+PORTVERSION=	15.0.11
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
