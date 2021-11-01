@@ -251,26 +251,18 @@
  struct SndioCapture final : public BackendBase {
      SndioCapture(ALCdevice *device) noexcept : BackendBase{device} { }
      ~SndioCapture() override;
-@@ -301,6 +283,7 @@ struct SndioCapture final : public BackendBase {
- 
-     sio_hdl *mSndHandle{nullptr};
- 
-+    al::vector<struct pollfd> mFds;
-     RingBufferPtr mRing;
- 
-     std::atomic<bool> mKillNow{true};
-@@ -323,40 +306,65 @@ int SndioCapture::recordProc()
+@@ -323,40 +305,65 @@ int SndioCapture::recordProc()
  
      const uint frameSize{mDevice->frameSizeFromFmt()};
  
 +    int nfds_pre{sio_nfds(mSndHandle)};
-+    if (nfds_pre <= 0)
++    if(nfds_pre <= 0)
 +    {
 +        mDevice->handleDisconnect("Incorrect return value from sio_nfds(): %d", nfds_pre);
 +        return 1;
 +    }
 +
-+    mFds.resize(nfds_pre);
++    auto fds = std::make_unique<pollfd[]>(static_cast<uint>(nfds_pre));
 +
      while(!mKillNow.load(std::memory_order_acquire)
          && mDevice->Connected.load(std::memory_order_acquire))
@@ -279,7 +271,7 @@
 -        size_t todo{data.first.len + data.second.len};
 -        if(todo == 0)
 +        /* Wait until there's some samples to read. */
-+        const int nfds{sio_pollfd(mSndHandle, mFds.data(), POLLIN)};
++        const int nfds{sio_pollfd(mSndHandle, fds.get(), POLLIN)};
 +        if(nfds <= 0)
          {
 -            static char junk[4096];
@@ -288,7 +280,7 @@
 +            mDevice->handleDisconnect("Failed to get polling fds: %d", nfds);
 +            break;
 +        }
-+        int pollres{::poll(mFds.data(), static_cast<uint>(nfds), 2000)};
++        int pollres{::poll(fds.get(), static_cast<uint>(nfds), 2000)};
 +        if(pollres < 0)
 +        {
 +            if(errno == EINTR) continue;
@@ -298,7 +290,7 @@
 +        if(pollres == 0)
              continue;
 +
-+        const int revents{sio_revents(mSndHandle, mFds.data())};
++        const int revents{sio_revents(mSndHandle, fds.get())};
 +        if((revents&POLLHUP))
 +        {
 +            mDevice->handleDisconnect("Got POLLHUP from poll events");
@@ -347,7 +339,7 @@
      }
  
      return 0;
-@@ -371,76 +379,80 @@ void SndioCapture::open(const char *name)
+@@ -371,76 +378,80 @@ void SndioCapture::open(const char *name)
          throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
              name};
  
