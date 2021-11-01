@@ -21,9 +21,6 @@ SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 			sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/ucn.pl
 
-USERS=			openvpn
-GROUPS=			openvpn
-
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
@@ -32,6 +29,9 @@ CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 CONFLICTS_INSTALL?=	openvpn-2.[!5].* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
 
 SUB_FILES=		pkg-message openvpn-client
+
+USERS=			openvpn
+GROUPS=			openvpn
 
 PORTDOCS=		*
 PORTEXAMPLES=		*
@@ -103,6 +103,13 @@ _tlslibs=libssl libcrypto
 CONFIGURE_ARGS+=	--enable-comp-stub
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
+		-e 's/"nobody"( after init)/"openvpn" \1/' \
+		${WRKSRC}/sample/sample-config-files/*.conf \
+		${WRKSRC}/sample/sample-config-files/xinetd-*-config \
+		${WRKSRC}/doc/man-sections/generic-options.rst
+
 pre-configure:
 .ifdef (LOG_OPENVPN)
 	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
@@ -121,13 +128,6 @@ pre-configure:
 	@${ECHO} "### can be reproduced with a released OpenSSL version.        ###"
 	@${ECHO} "### --------------------------------------------------------- ###"
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
-		-e 's/"nobody"( after init)/"openvpn" \1/' \
-		${WRKSRC}/sample/sample-config-files/*.conf \
-		${WRKSRC}/sample/sample-config-files/xinetd-*-config \
-		${WRKSRC}/doc/man-sections/generic-options.rst
 
 post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
