@@ -1,0 +1,10 @@
+--- buildtools/third_party/libc++/BUILD.gn.orig	2021-09-19 10:01:13 UTC
++++ buildtools/third_party/libc++/BUILD.gn
+@@ -23,6 +23,7 @@ config("config") {
+     cflags += [
+       "-fPIC",
+       "-std=c++17",
++      "-I%%LOCALBASE%%/include",
+     ]
+   }
+ }

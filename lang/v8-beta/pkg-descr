@@ -1,0 +1,14 @@
+V8 is Google's open source high-performance JavaScript and WebAssembly engine,
+written in C++. It is used in Chrome and in Node.js, among others.
+
+V8 implements ECMAScript and WebAssembly. V8 can run standalone, or can be
+embedded into any C++ application.
+
+V8 compiles and executes JavaScript source code, handles memory allocation for
+objects, and garbage collects objects it no longer needs. V8's stop-the-world,
+generational, accurate garbage collector is one of the keys to V8's performance.
+
+V8's Git repository is located at https://chromium.googlesource.com/v8/v8.git,
+with an official mirror on GitHub: https://github.com/v8/v8.
+
+WWW: https://v8.dev/

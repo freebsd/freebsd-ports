@@ -1,0 +1,9 @@
+--- build/config/freetype/freetype.gni.orig	2019-03-18 08:59:45 UTC
++++ build/config/freetype/freetype.gni
+@@ -10,5 +10,5 @@ declare_args() {
+   # than version 2.7.1 and have color bitmap support compiled in. WARNING:
+   # System FreeType configurations other than as described WILL INTRODUCE TEXT
+   # RENDERING AND SECURITY REGRESSIONS.
+-  use_system_freetype = false
++  use_system_freetype = true
+ }
