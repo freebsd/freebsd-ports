@@ -1,6 +1,6 @@
 PORTNAME=	bandwhich
 DISTVERSION=	0.20.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -103,7 +103,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		libc-0.2.76 \
 		libflate-1.0.2 \
 		libflate_lz77-1.0.0 \
-		linked-hash-map-0.5.2 \
+		linked-hash-map-0.5.4 \
 		lock_api-0.3.4 \
 		log-0.3.9 \
 		log-0.4.8 \
