@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-sse \
-		--disable-vsx \
 		--with-ogg="${LOCALBASE}" \
 		--disable-doxygen-docs \
 		--disable-thorough-tests \
@@ -39,6 +38,10 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:devel/nasm
+.endif
+
+.if ${ARCH} != powerpc64le
+CONFIGURE_ARGS+=--disable-vsx
 .endif
 
 post-install:
