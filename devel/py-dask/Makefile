@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	dask
-PORTVERSION=	2021.7.2
+PORTVERSION=	2021.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,9 +30,9 @@ ARRAY_DESC=	Subset of the NumPy ndarray interface
 DATAFRAME_DESC=	Composed of many smaller Pandas DataFrames
 DIAGNOSTICS_DESC=	Profile and inspect parallel codes
 
-ARRAY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1:math/py-numpy@${PY_FLAVOR} \
-DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1:math/py-numpy@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pandas>=0.25.0,1:math/py-pandas@${PY_FLAVOR}
+ARRAY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18,1:math/py-numpy@${PY_FLAVOR} \
+DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=1.0,1:math/py-pandas@${PY_FLAVOR}
 DIAGNOSTICS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}bokeh>=1.0.0:www/py-bokeh@${PY_FLAVOR}
 
 .include <bsd.port.mk>
