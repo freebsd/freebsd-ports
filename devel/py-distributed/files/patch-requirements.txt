@@ -1,0 +1,9 @@
+--- requirements.txt.orig	2021-10-22 20:26:57 UTC
++++ requirements.txt
+@@ -1,5 +1,5 @@
+ click >= 6.6
+-cloudpickle >= 1.5.0
++cloudpickle >= 1.3.0
+ dask == 2021.10.0
+ jinja2
+ msgpack >= 0.6.0
