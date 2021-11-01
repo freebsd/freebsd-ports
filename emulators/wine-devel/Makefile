@@ -1,8 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	wine
-DISTVERSION=	6.19
-PORTREVISION=	3
+DISTVERSION=	6.20
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -109,7 +108,8 @@ STAGING_DIST=		v${DISTVERSION}.tar.gz
 STAGING_DISTFILES=	${STAGING_DIST}:staging
 STAGING_EXTRACT_DEPENDS=	bash:shells/bash \
 				git:devel/git \
-				autoconf>0:devel/autoconf
+				autoconf>0:devel/autoconf \
+				gawk:lang/gawk
 STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
 
 V4L_CONFIGURE_WITH=	v4l2
@@ -160,6 +160,7 @@ PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 
 post-extract-STAGING-on: fix-shebang
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${STAGING_DIST} --strip-components 1
+	cd ${WRKSRC} && ${PATCH} -p0 < ${PATCHDIR}/extra-gitapply
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 
 pre-build:
