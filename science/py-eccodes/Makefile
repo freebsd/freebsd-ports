@@ -25,6 +25,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 do-test:
 	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs -v
 
