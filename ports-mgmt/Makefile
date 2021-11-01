@@ -11,6 +11,7 @@
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
     SUBDIR += genplist
+    SUBDIR += hs-panopticum
     SUBDIR += jailaudit
     SUBDIR += lsknobs
     SUBDIR += mkreadmes

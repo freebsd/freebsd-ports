@@ -1,0 +1,5 @@
+Panopticum is a tool to perform some operations on FreeBSD ports for every
+OPTIONS combination possible. These operations include generating a list of
+dependencies as well as the packing list.
+
+WWW: https://foss.heptapod.net/bsdutils/panopticum
