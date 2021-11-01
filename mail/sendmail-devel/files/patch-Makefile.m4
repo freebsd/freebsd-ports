@@ -1,9 +1,9 @@
---- sendmail/Makefile.m4.orig	2020-06-08 08:35:03 UTC
+--- sendmail/Makefile.m4.orig	2021-10-27 09:01:40 UTC
 +++ sendmail/Makefile.m4
-@@ -7,14 +7,14 @@ bldPRODUCT_START(`executable', `sendmail')
+@@ -7,14 +7,15 @@ bldPRODUCT_START(`executable', `sendmail')
  define(`bldBIN_TYPE', `G')
  define(`bldINSTALL_DIR', `')
- define(`bldSOURCES', `main.c alias.c arpadate.c bf.c collect.c conf.c control.c convtime.c daemon.c deliver.c domain.c envelope.c err.c headers.c macro.c map.c mci.c milter.c mime.c parseaddr.c queue.c ratectrl.c readcf.c recipient.c sasl.c savemail.c sfsasl.c shmticklib.c sm_resolve.c srvrsmtp.c stab.c stats.c sysexits.c timers.c tlsh.c tls.c trace.c udb.c usersmtp.c util.c version.c ')
+ define(`bldSOURCES', `main.c alias.c arpadate.c bf.c collect.c conf.c control.c convtime.c daemon.c deliver.c domain.c envelope.c err.c headers.c macro.c map.c mci.c milter.c mime.c parseaddr.c queue.c ratectrl.c readcf.c recipient.c sasl.c savemail.c sched.c sfsasl.c shmticklib.c sm_resolve.c srvrsmtp.c stab.c stats.c sysexits.c timers.c tlsh.c tls.c trace.c udb.c usersmtp.c util.c version.c ')
 +APPENDDEF(`bldSOURCES',`blacklist.c ')
  PREPENDDEF(`confENVDEF', `confMAPDEF')
  bldPUSH_SMLIB(`sm')
@@ -14,6 +14,7 @@
 -define(`bldTARGET_INST_DEP', ifdef(`confINST_DEP', `confINST_DEP',
 -`${DESTDIR}/etc/mail/submit.cf ${DESTDIR}${MSPQ}'))dnl
 +define(`bldTARGET_INST_DEP', ifdef(`confINST_DEP', `confINST_DEP'))
++
  define(`bldTARGET_LINKS', ifdef(`confLINKS', `confLINKS',
  `${DESTDIR}${UBINDIR}/newaliases ${DESTDIR}${UBINDIR}/mailq ${DESTDIR}${UBINDIR}/hoststat ${DESTDIR}${UBINDIR}/purgestat')
  )dnl
