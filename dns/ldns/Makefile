@@ -61,7 +61,7 @@ DRILL_INSTALL_TARGET=			install-drill
 EXAMPLES_INSTALL_TARGET=		install-examples
 
 .if defined(BUILD_PYLDNS)
-USES+=		python:3.6+
+USES+=		python:3.6-3.9
 USE_PYTHON=	flavors
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 ALL_TARGET=	pyldns
