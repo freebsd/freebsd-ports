@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure-storage-common
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
