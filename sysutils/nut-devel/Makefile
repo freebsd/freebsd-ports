@@ -13,9 +13,10 @@ COMMENT=	Network UPS Tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	networkupstools
-GH_TAGNAME=	a85ec65c
-NUT_COMMIT_DATE=	2021.10.16
+GH_TAGNAME=	d3a1effb
+NUT_COMMIT_DATE=	2021.11.01
 
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
