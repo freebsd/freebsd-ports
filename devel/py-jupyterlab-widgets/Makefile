@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-packaging>0:devel/py-jupyter-packaging@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyterlab>=3.0.0:devel/py-jupyterlab@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.7-3.9
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_CONFIGUREARGS=	--skip-npm
