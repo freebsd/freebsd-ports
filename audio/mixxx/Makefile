@@ -2,7 +2,7 @@
 
 PORTNAME=	mixxx
 DISTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -47,7 +47,7 @@ USE_QT=		buildtools concurrent core dbus gui linguisttools_build network \
 CONFLICTS=	mixxx22*
 
 CMAKE_ARGS+=	-DINSTALL_USER_UDEV_RULES:BOOL=OFF \
-		-DOPTIMIZE:STRING=native \
+		-DOPTIMIZE:STRING=portable \
 		-DBATTERY:BOOL=OFF \
 		-DFAAD:BOOL=OFF \
 		-DMODPLUG:BOOL=ON \
