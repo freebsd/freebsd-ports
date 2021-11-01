@@ -1,10 +1,11 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 
 PORTNAME=	avro
-PORTVERSION=	1.10.2
-DISTVERSIONPREFIX=	release-
+PORTVERSION=	1.11.0
 CATEGORIES=	devel
+MASTER_SITES=	APACHE/avro/stable/cpp
 PKGNAMESUFFIX=	-cpp
+DISTNAME=	avro-cpp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ library for Apache Avro
@@ -19,14 +20,10 @@ USES=		cmake compiler:c++11-lang cpe
 
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-WRKSRC_SUBDIR=	lang/c++
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CPE_VENDOR=	apache
-
-GH_ACCOUNT=	apache
-USE_GITHUB=	yes
 
 post-install:
 	${LN} -s libavrocpp.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libavrocpp.so.1
