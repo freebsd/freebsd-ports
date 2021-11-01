@@ -13,6 +13,7 @@
     SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += c-blosc
+    SUBDIR += c-blosc2
     SUBDIR += cabextract
     SUBDIR += cmdpack
     SUBDIR += dact

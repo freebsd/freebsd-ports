@@ -1,0 +1,11 @@
+include/blosc2.h
+include/blosc2/blosc2-common.h
+include/blosc2/blosc2-export.h
+include/blosc2/blosc2-stdio.h
+include/blosc2/codecs-registry.h
+include/blosc2/filters-registry.h
+lib/libblosc2.a
+lib/libblosc2.so
+lib/libblosc2.so.2
+lib/libblosc2.so.%%PORTVERSION%%
+libdata/pkgconfig/blosc2.pc

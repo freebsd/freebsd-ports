@@ -1,0 +1,14 @@
+Blosc is a high performance compressor optimized for binary data (i.e. floating
+point numbers, integers and booleans). It has been designed to transmit data to
+the processor cache faster than the traditional, non-compressed, direct memory
+fetch approach via a memcpy() OS call. Blosc main goal is not just to reduce the
+size of large datasets on-disk or in-memory, but also to accelerate memory-bound
+computations.
+
+C-Blosc2 is the new major version of C-Blosc, and tries hard to be backward
+compatible with both the C-Blosc1 API and its in-memory format. However, the
+reverse thing is generally not true; buffers generated with C-Blosc2 are not
+format-compatible with C-Blosc1 (i.e. forward compatibility is not supported).
+
+WWW: https://www.blosc.org/
+WWW: https://github.com/Blosc/c-blosc2
