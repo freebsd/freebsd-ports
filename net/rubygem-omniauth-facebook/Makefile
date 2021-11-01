@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	omniauth-facebook
-PORTVERSION=	8.0.0
+PORTVERSION=	9.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
