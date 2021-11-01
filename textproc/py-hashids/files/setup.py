@@ -7,7 +7,7 @@ extras_require = \
 {'test': ['pytest >=2.1.0']}
 
 setup(name='hashids',
-      version='1.3.1',
+      version='%%PORTVERSION%%',
       description='Implements the hashids algorithm in python. For more information, visit http://hashids.org/',
       author='David Aurelio',
       author_email='dev@david-aurelio.com',
