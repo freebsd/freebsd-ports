@@ -7213,6 +7213,7 @@
     SUBDIR += zeal
     SUBDIR += zfp
     SUBDIR += zls
+    SUBDIR += zmusic
     SUBDIR += zookeeper
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc

@@ -1,0 +1,5 @@
+ZMusic is a library that's used in GZDoom, Raze, and may be used in the newer
+PrBoom+.  This is GZDoom's music library pulled out into standalone form for
+reuse.
+
+WWW: https://github.com/coelckers/ZMusic

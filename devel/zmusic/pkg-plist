@@ -1,0 +1,13 @@
+include/zmusic.h
+lib/cmake/ZMusic/ZMusicConfig.cmake
+lib/cmake/ZMusic/ZMusicConfigVersion.cmake
+lib/cmake/ZMusic/ZMusicFullTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ZMusic/ZMusicFullTargets.cmake
+lib/cmake/ZMusic/ZMusicLiteTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ZMusic/ZMusicLiteTargets.cmake
+lib/libzmusic.so
+lib/libzmusic.so.1
+lib/libzmusic.so.1.1.8
+lib/libzmusiclite.so
+lib/libzmusiclite.so.1
+lib/libzmusiclite.so.1.1.8
