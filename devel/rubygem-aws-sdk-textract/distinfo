@@ -1,3 +1,3 @@
-TIMESTAMP = 1635181645
-SHA256 (rubygem/aws-sdk-textract-1.29.0.gem) = 7fe6e9d377d220696b2310de05e4705ddc2bdd3d2ebbf3e07caf81f9065d5f80
-SIZE (rubygem/aws-sdk-textract-1.29.0.gem) = 34304
+TIMESTAMP = 1635731089
+SHA256 (rubygem/aws-sdk-textract-1.30.0.gem) = 675bd8bc51811676e5b68bc6924fabebeee24e1f5d0333b3de1ab59b2fd4141a
+SIZE (rubygem/aws-sdk-textract-1.30.0.gem) = 35840
