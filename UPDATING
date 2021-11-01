@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211110:
+  AFFECTS: users of www/node*, www/npm*, www/yarn*
+  AUTHOR: mfechner@FreeBSD.org
+
+  The port framework was updated to use a default version for nodejs.
+  The default version is pointing to the latest LTS version which is
+  currently version 16.
+  You can overwrite this by defining in /etc/make.conf, e.g. version 17:
+  DEFAULT_VERSIONS=nodejs=17
+
+  Or if you would like to stick always to the current version use:
+  DEFAULT_VERSIONS=nodejs=current
+
+  If you would like to use yarn or npm together with nodejs version 17,
+  just install the package that is pulling the wanted dependency to nodejs:
+
+  # pkg install yarn-node17
+  # pkg install npm-node17
+
 20211109:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
