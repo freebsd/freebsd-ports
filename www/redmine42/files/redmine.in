@@ -17,7 +17,7 @@
 
 name="redmine"
 rcvar=redmine_enable
-command=%%RUBY_NAME%%
+command=ruby%%RUBY_SUFFIX%%
 
 pidfile="%%WWWDIR%%/tmp/pids/thin.pid"
 

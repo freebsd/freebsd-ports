@@ -12,7 +12,7 @@ COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
+LIB_DEPENDS=	libruby${RUBY_SHLIBVER}.so:${RUBY_PORT}
 
 USES=		compiler:c11 ssl
 USE_RUBY=	yes

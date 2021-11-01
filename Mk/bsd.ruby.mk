@@ -20,7 +20,7 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY			- Set to full path of ruby.  If you set this, the values
 #			  of the following variables are automatically obtained
 #			  from the ruby executable: RUBY_VER, RUBY_VERSION,
-#			  RUBY_NAME, RUBY_ARCH, RUBY_LIBDIR, RUBY_ARCHLIBDIR,
+#			  RUBY_ARCH, RUBY_LIBDIR, RUBY_ARCHLIBDIR,
 #			  RUBY_SITELIBDIR, and RUBY_SITEARCHLIBDIR.
 # RUBY_VER		- Set to the alternative short version of ruby in the
 #			  form of `x.y' (see below for current value).
@@ -66,7 +66,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  (${RUBY_VER:S/.//}).
 # RUBY_WITHOUT_SUFFIX	- Always ${LOCALBASE}/bin/ruby.
 # RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}.
-# RUBY_NAME		- Ruby's name with trailing suffix.
 #
 # RUBY_MODNAME		- Set to the module name (default: ${PORTNAME}).
 #
@@ -120,13 +119,12 @@ RUBY_VERSION!=		${_RUBY_CONFIG} 'puts C["ruby_version"]'
 RUBY_SUFFIX?=		# empty
 
 RUBY_ARCH!=		${_RUBY_CONFIG} 'puts C["target"]'
-RUBY_NAME!=		${_RUBY_CONFIG} 'puts C["ruby_install_name"]'
 
 _RUBY_SYSLIBDIR!=	${_RUBY_CONFIG} 'puts C["libdir"]'
 _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
 _RUBY_VENDORDIR!=	${_RUBY_CONFIG} 'puts C["vendordir"]'
 .else
-RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
+RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 
 .if defined(RUBY_VER)
 # When adding a version, please keep the comment in
@@ -193,7 +191,6 @@ RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:tl}${OSREL:C/\..*//}
 
 RUBY_ARCH?=		${ARCH}-${OPSYS:tl}${OSREL:C/\..*//}
-RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
 _RUBY_SYSLIBDIR?=	${PREFIX}/lib
 _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
@@ -254,8 +251,8 @@ RUBY_SITELIBDIR?=	${_RUBY_SITEDIR}/${RUBY_VER}
 RUBY_SITEARCHLIBDIR?=	${RUBY_SITELIBDIR}/${RUBY_ARCH}
 RUBY_VENDORLIBDIR?=	${_RUBY_VENDORDIR}/${RUBY_VER}
 RUBY_VENDORARCHLIBDIR?=	${RUBY_VENDORLIBDIR}/${RUBY_ARCH}
-RUBY_DOCDIR?=		${PREFIX}/share/doc/${RUBY_NAME}
-RUBY_EXAMPLESDIR?=	${PREFIX}/share/examples/${RUBY_NAME}
+RUBY_DOCDIR?=		${PREFIX}/share/doc/ruby${RUBY_SUFFIX}
+RUBY_EXAMPLESDIR?=	${PREFIX}/share/examples/ruby${RUBY_SUFFIX}
 RUBY_RIDIR?=		${PREFIX}/share/ri/${RUBY_VER}/system
 RUBY_SITERIDIR?=	${PREFIX}/share/ri/${RUBY_VER}/site
 RUBY_MODDOCDIR?=	${RUBY_DOCDIR}/${RUBY_MODNAME}
@@ -281,7 +278,6 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_SHLIBVER="${RUBY_SHLIBVER}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
-			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY26=${RUBY26} \
 			RUBY27=${RUBY27} \

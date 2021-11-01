@@ -181,7 +181,7 @@ post-install-DEBUG-off:
 # bogus to hack.
 #
 .if defined(STRIP) && ${STRIP} == -s
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${RUBY_NAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ruby${RUBY_SUFFIX}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libruby${RUBY_SHLIBVER}.so.${RUBY_SHLIBVER}
 	${FIND} ${STAGEDIR}${RUBY_ARCHLIBDIR} -type f -name '*\.so' -exec ${STRIP_CMD} {} \;
 .endif
