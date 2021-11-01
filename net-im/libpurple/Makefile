@@ -1,7 +1,7 @@
 # Created by: Jim Mock <jim@FreeBSD.org>
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.14.4
+PORTVERSION=	2.14.8
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
