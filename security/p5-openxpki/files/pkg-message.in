@@ -10,9 +10,7 @@
 - Install perl interface for your favorite database,
   e.g. databases/p5-DBD-mysql
 - Install your favorite web server.
-  Choose from two versions of the handler: based on CGI or FastCGI
-  perl core modules.
-  Copy CGI or FastCGI scripts from %%EXAMPLESDIR%%/cgi-bin to the location
+  Copy FastCGI scripts from %%EXAMPLESDIR%%/cgi-bin to the location
   where your web server can use them. Set executable permissions for them.
   Copy htdocs files from %%EXAMPLESDIR%%/htdocs to the location
   where your web server can use them.

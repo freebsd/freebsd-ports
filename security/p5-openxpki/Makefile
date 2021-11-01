@@ -3,6 +3,7 @@
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.14.4
+PORTREVISION=	1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -84,7 +85,7 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.52:databases/p5-DBD-SQLite \
 		p5-Test-Pod>=1.00:devel/p5-Test-Pod \
 		p5-Test-Prereq>=0:devel/p5-Test-Prereq
 
-USES=		gmake perl5 ssl
+USES=		gmake perl5 shebangfix ssl
 USE_GITHUB=	yes
 GH_PROJECT=	openxpki-config:conf
 GH_TAGNAME=	${DISTVERSIONPREFIX}${_conf_VERSION}:conf
@@ -92,10 +93,11 @@ _conf_VERSION=	3.12
 
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki
+SHEBANG_FILES=	bin/*
+SHEBANG_GLOB=	*.fcgi *.pl *.pm *.t*
 
-CONFLICTS=	p5-openxpki-client-[0-9]* p5-openxpki-client-deployment-[0-9]* \
-		p5-openxpki-client-html-mason-[0-9]* \
-		p5-openxpki-client-scep-[0-9]*
+CONFLICTS=	p5-openxpki-client p5-openxpki-client-deployment \
+		p5-openxpki-client-html-mason p5-openxpki-client-scep
 
 NO_ARCH=	yes
 # stay with stable versions only:
