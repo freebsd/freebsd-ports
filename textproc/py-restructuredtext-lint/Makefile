@@ -9,7 +9,7 @@ COMMENT=	reStructuredText linter
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.11<1.0:textproc/py-docutils@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.11,1<1.0,1:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
