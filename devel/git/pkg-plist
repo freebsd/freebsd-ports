@@ -700,6 +700,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.31.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.32.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.33.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.33.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
