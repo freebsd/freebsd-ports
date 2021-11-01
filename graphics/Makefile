@@ -796,6 +796,7 @@
     SUBDIR += povray-meta
     SUBDIR += povray36
     SUBDIR += povray37
+    SUBDIR += povray38
     SUBDIR += ppmcaption
     SUBDIR += ppminfo
     SUBDIR += ppsei
