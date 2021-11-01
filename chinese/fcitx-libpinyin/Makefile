@@ -26,7 +26,9 @@ USES=		cmake gettext gnome pkgconfig tar:xz
 _MODEL_VER=	20161206
 
 OPTIONS_DEFINE=	QT5
-OPTIONS_DEFAULT=QT5
+OPTIONS_DEFAULT_aarch64=	QT5
+OPTIONS_DEFAULT_amd64=	QT5
+OPTIONS_DEFAULT_i386=	QT5
 QT5_DESC=	Enable Qtr for dictmanager
 
 .include <bsd.port.options.mk>
