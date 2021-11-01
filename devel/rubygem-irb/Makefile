@@ -30,7 +30,7 @@ post-install:
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/irb
 .else
-IGNORE=		${PORTNAME} is included in lang/${RUBY_NAME}
+IGNORE=		${PORTNAME} is included in ${RUBY_PORT}
 .endif
 
 .include <bsd.port.post.mk>
