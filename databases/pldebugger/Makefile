@@ -20,6 +20,8 @@ DOCSDIR=	${PREFIX}/share/doc/postgresql/extension
 USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB
 
+PORTSCOUT=	limit:^[0-9]
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:
