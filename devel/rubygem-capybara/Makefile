@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	capybara
-PORTVERSION=	3.35.3
+PORTVERSION=	3.36.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
+		rubygem-matrix>=0:math/rubygem-matrix \
 		rubygem-mini_mime>=0.1.3:mail/rubygem-mini_mime \
 		rubygem-nokogiri>=1.8<2:textproc/rubygem-nokogiri \
 		rubygem-rack>=1.6.0:www/rubygem-rack \
