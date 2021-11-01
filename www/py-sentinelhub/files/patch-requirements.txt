@@ -1,0 +1,11 @@
+--- requirements.txt.orig	2021-10-27 09:30:00 UTC
++++ requirements.txt
+@@ -3,7 +3,7 @@ requests>=2.5.0
+ click
+ numpy
+ tifffile
+-pillow>=8.3.2
++pillow
+ python-dateutil
+ utm
+ shapely
