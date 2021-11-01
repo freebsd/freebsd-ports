@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libfido2
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/libfido2/Releases/
 

@@ -25,6 +25,7 @@ man/man3/eddsa_pk_new.3.gz
 man/man3/eddsa_pk_to_EVP_PKEY.3.gz
 man/man3/es256_pk_free.3.gz
 man/man3/es256_pk_from_EC_KEY.3.gz
+man/man3/es256_pk_from_EVP_PKEY.3.gz
 man/man3/es256_pk_from_ptr.3.gz
 man/man3/es256_pk_new.3.gz
 man/man3/es256_pk_to_EVP_PKEY.3.gz
@@ -117,6 +118,8 @@ man/man3/fido_cbor_info_versions_len.3.gz
 man/man3/fido_cbor_info_versions_ptr.3.gz
 man/man3/fido_cred_aaguid_len.3.gz
 man/man3/fido_cred_aaguid_ptr.3.gz
+man/man3/fido_cred_attstmt_len.3.gz
+man/man3/fido_cred_attstmt_ptr.3.gz
 man/man3/fido_cred_authdata_len.3.gz
 man/man3/fido_cred_authdata_ptr.3.gz
 man/man3/fido_cred_authdata_raw_len.3.gz
@@ -133,11 +136,13 @@ man/man3/fido_cred_id_ptr.3.gz
 man/man3/fido_cred_largeblob_key_len.3.gz
 man/man3/fido_cred_largeblob_key_ptr.3.gz
 man/man3/fido_cred_new.3.gz
+man/man3/fido_cred_pin_minlen.3.gz
 man/man3/fido_cred_prot.3.gz
 man/man3/fido_cred_pubkey_len.3.gz
 man/man3/fido_cred_pubkey_ptr.3.gz
 man/man3/fido_cred_rp_id.3.gz
 man/man3/fido_cred_rp_name.3.gz
+man/man3/fido_cred_set_attstmt.3.gz
 man/man3/fido_cred_set_authdata.3.gz
 man/man3/fido_cred_set_authdata_raw.3.gz
 man/man3/fido_cred_set_blob.3.gz
@@ -146,6 +151,7 @@ man/man3/fido_cred_set_clientdata_hash.3.gz
 man/man3/fido_cred_set_extensions.3.gz
 man/man3/fido_cred_set_fmt.3.gz
 man/man3/fido_cred_set_id.3.gz
+man/man3/fido_cred_set_pin_minlen.3.gz
 man/man3/fido_cred_set_prot.3.gz
 man/man3/fido_cred_set_rk.3.gz
 man/man3/fido_cred_set_rp.3.gz
@@ -226,7 +232,9 @@ man/man3/fido_dev_reset.3.gz
 man/man3/fido_dev_set_io_functions.3.gz
 man/man3/fido_dev_set_pin.3.gz
 man/man3/fido_dev_set_pin_minlen.3.gz
+man/man3/fido_dev_set_pin_minlen_rpid.3.gz
 man/man3/fido_dev_set_sigmask.3.gz
+man/man3/fido_dev_set_timeout.3.gz
 man/man3/fido_dev_supports_cred_prot.3.gz
 man/man3/fido_dev_supports_credman.3.gz
 man/man3/fido_dev_supports_pin.3.gz
@@ -235,6 +243,7 @@ man/man3/fido_dev_toggle_always_uv.3.gz
 man/man3/fido_init.3.gz
 man/man3/fido_strerr.3.gz
 man/man3/rs256_pk_free.3.gz
+man/man3/rs256_pk_from_EVP_PKEY.3.gz
 man/man3/rs256_pk_from_RSA.3.gz
 man/man3/rs256_pk_from_ptr.3.gz
 man/man3/rs256_pk_new.3.gz
@@ -245,6 +254,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_to_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es256_pk_free.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es256_pk_from_EC_KEY.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es256_pk_from_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es256_pk_from_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es256_pk_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es256_pk_to_EVP_PKEY.html
@@ -340,6 +350,8 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_versions_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_aaguid_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_aaguid_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_attstmt_len.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_attstmt_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_raw_len.html
@@ -356,11 +368,13 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_largeblob_key_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_largeblob_key_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_new.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_pin_minlen.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_prot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_pubkey_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_pubkey_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_rp_id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_rp_name.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_attstmt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_authdata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_authdata_raw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_blob.html
@@ -369,6 +383,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_fmt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_id.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_pin_minlen.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_prot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_rk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_rp.html
@@ -449,7 +464,9 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_io_functions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_pin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_pin_minlen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_pin_minlen_rpid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_sigmask.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_timeout.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_cred_prot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_credman.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_pin.html
@@ -458,6 +475,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_init.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_strerr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_free.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_from_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_from_RSA.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_from_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_new.html
