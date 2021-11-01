@@ -25,4 +25,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GH_ACCOUNT=	Blosc
 USE_GITHUB=	yes
 
+do-test:
+	cd ${TEST_WRKSRC} && ctest
+
 .include <bsd.port.mk>
