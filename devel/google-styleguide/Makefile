@@ -1,7 +1,7 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 
 PORTNAME=	styleguide
-PORTVERSION=	20210913
+PORTVERSION=	20211020
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
@@ -18,7 +18,7 @@ USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	9a6a5d3
+GH_TAGNAME=	9806df8
 
 NO_ARCH=	yes
 NO_BUILD=	yes
