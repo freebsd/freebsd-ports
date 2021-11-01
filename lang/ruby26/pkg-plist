@@ -36,9 +36,9 @@ include/ruby-%%RUBY_VER%%/ruby/thread_native.h
 include/ruby-%%RUBY_VER%%/ruby/util.h
 include/ruby-%%RUBY_VER%%/ruby/version.h
 include/ruby-%%RUBY_VER%%/ruby/vm.h
-lib/lib%%RUBY_NAME%%-static.a
-lib/lib%%RUBY_NAME%%.so
-lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
+lib/libruby%%RUBY_SHLIBVER%%-static.a
+lib/libruby%%RUBY_SHLIBVER%%.so
+lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/English.rb
 %%RUBY_LIBDIR%%/abbrev.rb
 %%RUBY_ARCHLIBDIR%%/bigdecimal.so
