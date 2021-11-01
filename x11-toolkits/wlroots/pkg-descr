@@ -27,4 +27,4 @@ development tools - or any subset of these features you like, because all of
 them work independently of one another and freely compose with anything you want
 to implement yourself.
 
-WWW: https://github.com/swaywm/wlroots
+WWW: https://gitlab.freedesktop.org/wlroots/wlroots
