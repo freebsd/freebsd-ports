@@ -1,8 +1,8 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisjson
-DISTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.2
 CATEGORIES=	databases
 
 MAINTAINER=	osa@FreeBSD.org
