@@ -17,7 +17,13 @@ USE_KDE=	coreaddons config configwidgets crash i18n libkexiv2 \
 		ecm_build
 # From stage-qa; these are not checked explicitly, but link
 # transitively though other KDE components (mostly Marble).
-USE_QT+=	dbus declarative location network printsupport webchannel webengine xml
+USE_QT+=	dbus declarative location network printsupport webchannel xml
 USE_KDE+=	auth codecs widgetsaddons
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+USE_QT+=	webengine
+.endif
 
 .include <bsd.port.mk>
