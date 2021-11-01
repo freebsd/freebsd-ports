@@ -1,7 +1,7 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 
 PORTNAME=	avro
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
