@@ -16,7 +16,7 @@ EXTRAS_REQUIRE = {
 
 setup_kwargs = {
     'name': 'pdm-pep517',
-    'version': '0.8.5',
+    'version': '%%PORTVERSION%%',
     'description': 'A PEP 517 backend for PDM that supports PEP 621 metadata',
     'long_description': long_description,
     'license': 'MIT',
