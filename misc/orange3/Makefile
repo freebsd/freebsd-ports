@@ -50,6 +50,14 @@ GH_ACCOUNT=	biolab
 CFLAGS+=	-DQSORT_R_STYLE_BSD=yes
 LDFLAGS+=	-Xlinker -strip-all # strip, stage-qa doesn't catch that it isn't stripped
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+USE_PYQT+=	webengine_run
+.else
+USE_PYQT+=	webkit_run
+.endif
+
 xpost-install:
 	@${REINPLACE_CMD} -e 's|^"${PREFIX}/|| ; s|"$$||' ${_PYTHONPKGLIST} # https://github.com/biolab/orange3/issues/3060
 	@${REINPLACE_CMD} -e 's|import sys|& ; from OpenGL import GL|' ${STAGEDIR}${PREFIX}/bin/orange-canvas # https://github.com/biolab/orange3/issues/3062
