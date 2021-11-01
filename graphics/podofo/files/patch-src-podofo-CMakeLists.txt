@@ -22,3 +22,12 @@
          CLEAN_DIRECT_OUTPUT 1
          OUTPUT_NAME "podofo"
          COMPILE_FLAGS "-DBUILDING_PODOFO"
+@@ -320,7 +320,7 @@ IF(PODOFO_BUILD_SHARED)
+           @ONLY)
+         INSTALL(
+           FILES "${PoDoFo_BINARY_DIR}/libpodofo.pc"
+-          DESTINATION "${LIBDIRNAME}/pkgconfig")
++          DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
+       ELSE(PKG_CONFIG_FOUND)
+         MESSAGE("Pkg-config not found. No pkg-config file will be created.")
+       ENDIF(PKG_CONFIG_FOUND)
