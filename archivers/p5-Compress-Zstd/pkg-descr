@@ -1,0 +1,3 @@
+The Compress::Zstd module provides an interface to the Zstd (de)compressor.
+
+WWW: https://metacpan.org/dist/Compress-Zstd

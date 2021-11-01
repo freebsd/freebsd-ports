@@ -115,6 +115,7 @@
     SUBDIR += p5-Compress-Raw-Lzma
     SUBDIR += p5-Compress-Raw-Zlib
     SUBDIR += p5-Compress-Snappy
+    SUBDIR += p5-Compress-Zstd
     SUBDIR += p5-Gzip-Faster
     SUBDIR += p5-IO-Compress
     SUBDIR += p5-IO-Compress-Brotli
