@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-07-13 10:42:01 UTC
++++ CMakeLists.txt
+@@ -104,6 +104,8 @@ if(CATERVA_SHARED_LIB)
+         target_link_libraries(caterva_shared ${LIBS})
+     endif()
+     set_target_properties(caterva_shared PROPERTIES OUTPUT_NAME caterva)
++    set_target_properties(caterva_shared PROPERTIES SOVERSION %%PORTVERSION%%)
++    set_target_properties(caterva_shared PROPERTIES VERSION 0)
+     install(TARGETS caterva_shared DESTINATION lib)
+ endif()
+ 

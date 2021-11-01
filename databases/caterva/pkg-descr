@@ -1,0 +1,10 @@
+Caterva is a C library for handling multi-dimensional, compressed datasets in an
+easy and convenient manner. It implements a thin metalayer on top of C-Blosc2
+for specifying not only the dimensionality of a dataset, but also the
+dimensionality of the chunks inside the dataset. In addition, Caterva adds
+machinery for retrieving arbitrary multi-dimensional slices (aka hyper-slices)
+out of the multi-dimensional containers in the most efficient way. Hence,
+Caterva brings the convenience of multi-dimensional and compressed containers to
+your application very easily.
+
+WWW: https://github.com/Blosc/caterva

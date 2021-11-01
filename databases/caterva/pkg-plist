@@ -1,0 +1,5 @@
+include/caterva.h
+lib/libcaterva.a
+lib/libcaterva.so
+lib/libcaterva.so.0
+lib/libcaterva.so.%%PORTVERSION%%
