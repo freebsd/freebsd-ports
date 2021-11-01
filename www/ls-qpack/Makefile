@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ls-qpack
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 
 post-patch:
 # Clean up bundled libraries
-	@${RM} -fr ${WRKSRC}/deps/
+	@${RM} -r ${WRKSRC}/deps/
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/encode-int ${STAGEDIR}${PREFIX}/bin/
