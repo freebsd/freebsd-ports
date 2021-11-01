@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	public_suffix_list
-PORTVERSION=	20210929
+PORTVERSION=	20211028
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,7 +20,7 @@ PORTDATA=	public_suffix_list.dat \
 
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
-GH_TAGNAME=	8f416f4
+GH_TAGNAME=	22a461e
 USE_GITHUB=	yes
 
 do-install:
