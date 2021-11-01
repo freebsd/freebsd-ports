@@ -29,7 +29,7 @@ ENTRY_POINTS = {
 
 setup_kwargs = {
     'name': 'marko',
-    'version': '1.1.0',
+    'version': '%%PORTVERSION%%',
     'description': 'A markdown parser with high extensibility.',
     'long_description': long_description,
     'license': 'MIT',
