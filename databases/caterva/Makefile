@@ -27,4 +27,7 @@ USE_GITHUB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/CMakeLists.txt
 
+do-test:
+	cd ${TEST_WRKSRC} && ctest
+
 .include <bsd.port.mk>
