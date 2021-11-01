@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	pigz
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.zlib.net/pigz/ \
 		http://freebsd.unixfreunde.de/sources/
