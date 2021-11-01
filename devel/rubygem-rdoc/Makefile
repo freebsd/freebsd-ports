@@ -31,7 +31,7 @@ post-install:
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/rdoc ${STAGEDIR}${PREFIX}/bin/ri
 .else
-IGNORE=		${PORTNAME} is included in lang/${RUBY_NAME}
+IGNORE=		${PORTNAME} is included in ${RUBY_PORT}
 .endif
 
 .include <bsd.port.post.mk>
