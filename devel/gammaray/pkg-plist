@@ -117,7 +117,7 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_timertop_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_translatorinspector_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_translatorinspector.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_webinspector_plugin.so
-lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_webinspector_ui_plugin.so
+%%WEBENGINE%%lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_webinspector_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_widgetinspector_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_widgetinspector_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_wlcompositorinspector_ui.so
