@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: dnssec_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dnssec_exporter_enable (bool):	Set to NO by default
+#					Set it to YES to enable	prometheus-dnssec-exporter
+# dnssec_exporter_user (string):	Set user to run dnssec_exporter
+#					Default is "%%USERS%%"
+# dnssec_exporter_group (string):	Set group to run prometheus-dnssec-exporter
+#					Default is "%%GROUPS%%"
+# dnssec_exporter_log_file (string):	Set file that prometheus-dnssec-exporter will log to
+#					Default is "/var/log/dnssec_exporter.log"
+# dnssec_exporter_resolvers (string): 	Set resolvers to use (comma separated)
+#					Default is "9.9.9.9:53"
+# dnssec_exporter_timeout (string): 	Set timeout for network operations
+#					Default is 10s
+# dnssec_exporter_bind (string): 	Set address to listen on
+#					Default is localhost:9204
+# dnssec_exporter_args (string):	Set additional command line arguments
+#					Default is ""
+
+. /etc/rc.subr
+
+name=dnssec_exporter
+rcvar=dnssec_exporter_enable
+
+load_rc_config $name
+
+: ${dnssec_exporter_enable:=NO}
+: ${dnssec_exporter_user:=%%USERS%%}
+: ${dnssec_exporter_group:=%%GROUPS%%}
+: ${dnssec_exporter_bind="localhost:9204"}
+: ${dnssec_exporter_resolvers="9.9.9.9:53"}
+: ${dnssec_exporter_timeout="10s"}
+: ${dnssec_exporter_log_file=/var/log/dnssec_exporter.log}
+
+pidfile=/var/run/dnssec_exporter.pid
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/prometheus-dnssec-exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+				-listen-address ${dnssec_exporter_bind} \
+				-resolvers ${dnssec_exporter_resolvers} \
+				-timeout ${dnssec_exporter_timeout} \
+                                ${dnssec_exporter_args} > ${dnssec_exporter_log_file} 2>&1"
+
+start_precmd=dnssec_exporter_startprecmd
+
+dnssec_exporter_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${dnssec_exporter_user} -g ${dnssec_exporter_group} /dev/null ${pidfile};
+        fi
+        if [ ! -f "${dnssec_exporter_log_file}" ]; then
+                install -o ${dnssec_exporter_user} -g ${dnssec_exporter_group} -m 640 /dev/null ${dnssec_exporter_log_file};
+        fi
+}
+
+run_rc_command "$1"
