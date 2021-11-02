@@ -1,13 +1,10 @@
 # Created by: Dennis Herrmann <dhn@FreeBSD.org>
 
 PORTNAME=	i3
-DISTVERSION=	4.19.2
+DISTVERSION=	4.20
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://i3wm.org/downloads/ \
 		http://i3wm.org/downloads/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES+=	d0067077ed9f.patch:-p1 # https://github.com/i3/i3/pull/4264
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Improved dynamic tiling window manager
@@ -32,7 +29,9 @@ RUN_DEPENDS=	p5-AnyEvent-I3>=0:devel/p5-AnyEvent-I3 \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
-USES=		compiler:c11 iconv localbase:ldflags meson perl5 pkgconfig tar:xz xorg
+USES=		compiler:c11 gnome iconv localbase:ldflags meson perl5 \
+		pkgconfig tar:xz xorg
+USE_GNOME=	glib20
 USE_XORG=	xcb
 MESON_ARGS=	-Ddocs=false \
 		-Dmans=false
