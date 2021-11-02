@@ -1,6 +1,5 @@
 PORTNAME=	rpg-cli
-DISTVERSION=	0.6.0
-PORTREVISION=	3
+DISTVERSION=	1.0.0
 CATEGORIES=	games
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -13,14 +12,14 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	facundoolano
 
-CARGO_CRATES=	anyhow-1.0.42 \
+CARGO_CRATES=	anyhow-1.0.43 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bincode-1.3.3 \
-		bitflags-1.2.1 \
+		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		clap-3.0.0-beta.2 \
-		clap_derive-3.0.0-beta.2 \
+		clap-3.0.0-beta.4 \
+		clap_derive-3.0.0-beta.4 \
 		colored-2.0.0 \
 		ctor-0.1.20 \
 		dirs-3.0.2 \
@@ -38,30 +37,32 @@ CARGO_CRATES=	anyhow-1.0.42 \
 		inventory-impl-0.1.10 \
 		itoa-0.4.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.98 \
+		libc-0.2.99 \
 		linked-hash-map-0.5.4 \
 		once_cell-1.8.0 \
-		os_str_bytes-2.4.0 \
+		os_str_bytes-3.1.0 \
 		ppv-lite86-0.2.10 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.27 \
+		proc-macro2-1.0.28 \
 		quote-1.0.9 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		rand_hc-0.3.1 \
-		redox_syscall-0.2.9 \
+		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
 		ryu-1.0.5 \
-		serde-1.0.126 \
-		serde_derive-1.0.126 \
-		serde_json-1.0.64 \
-		serde_yaml-0.8.17 \
+		serde-1.0.127 \
+		serde_derive-1.0.127 \
+		serde_json-1.0.66 \
+		serde_yaml-0.8.18 \
 		strsim-0.10.0 \
-		syn-1.0.73 \
+		strum-0.21.0 \
+		strum_macros-0.21.1 \
+		syn-1.0.75 \
 		termcolor-1.1.2 \
-		textwrap-0.12.1 \
+		textwrap-0.14.2 \
 		typetag-0.1.7 \
 		typetag-impl-0.1.7 \
 		unicode-segmentation-1.8.0 \
