@@ -1,6 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	2.8.a2.20210324
-PORTREVISION=	2
+PORTVERSION=	3.2.a1.20211101
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -10,28 +9,49 @@ COMMENT=	Fast spam filtering system dev version
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libicui18n.so:devel/icu \
-		libsodium.so:security/libsodium
 BUILD_DEPENDS=	ragel:devel/ragel
+LIB_DEPENDS=	libicui18n.so:devel/icu \
+		libpcre.so:devel/pcre \
+		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake cpe gnome perl5 pkgconfig sqlite ssl compiler:c++17-lang
+USES=		cmake compiler:c++17-lang cpe gnome perl5 pkgconfig sqlite ssl
 CPE_VENDOR=	${PORTNAME}_project
+USE_GITHUB=	yes
+GH_TAGNAME=	9eaf2c53c
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
-USE_GNOME=	glib20
+USE_RC_SUBR=	rspamd
+
+CMAKE_ARGS+=	-DBUILD_PORT=yes \
+		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+		-DCONFDIR=${PREFIX}/etc/rspamd \
+		-DDBDIR=/var/db/rspamd \
+		-DDEBUG=ON \
+		-DGIT_ID=${GH_TAGNAME} \
+		-DLIBDIR=${PREFIX}/lib/rspamd \
+		-DLOGDIR=/var/log/rspamd \
+		-DMANDIR=${MANPREFIX}/man \
+		-DRUNDIR=/var/run/rspamd
+
+DEBUG_FLAGS=	-g -O0
 
 CONFLICTS_INSTALL=	rspamd
+
+SUB_FILES=	pkg-message rspamd.newsyslog.conf.sample
 
 USERS=		rspamd
 GROUPS=		rspamd
 
-OPTIONS_DEFINE=			BLAS CGP GPERF LUAJIT
-OPTIONS_DEFINE_amd64=		HYPERSCAN
-OPTIONS_DEFAULT_amd64=		LUAJIT
-OPTIONS_DEFAULT_armv7=		LUAJIT
-OPTIONS_DEFAULT_i386=		LUAJIT
+PLIST_SUB+=	ETCDIR=etc/rspamd \
+		RSPAMDVERSION=${PORTVERSION:C/^([^.]+\.[^.]+).*/\1/}
+
+OPTIONS_DEFINE=	BLAS CGP GPERF LUAJIT
+OPTIONS_DEFINE_amd64=	HYPERSCAN
+OPTIONS_DEFAULT_amd64=	LUAJIT
+OPTIONS_DEFAULT_armv7=	LUAJIT
+OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_powerpc=	LUAJIT
 OPTIONS_DEFAULT_powerpc64=	LUAJIT
 OPTIONS_DEFAULT_powerpc64le=	LUAJIT
@@ -56,9 +76,6 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DDEBUG=ON \
 		-DGIT_ID=${GH_TAGNAME}
-USE_GITHUB=	yes
-GH_TAGNAME=	f66453cf8
-
 DEBUG_FLAGS=	-g -O0
 
 USE_RC_SUBR=	rspamd
