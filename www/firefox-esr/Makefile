@@ -1,8 +1,7 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	78.15.0
-PORTREVISION=	1
+DISTVERSION=	91.3.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -13,11 +12,11 @@ DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
-		nss>=3.56:security/nss \
+BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
+		nss>=3.68:security/nss \
 		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=2.6.6:print/harfbuzz \
+		harfbuzz>=2.8.1:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.37:graphics/png \
 		libvpx>=1.8.2:multimedia/libvpx \
