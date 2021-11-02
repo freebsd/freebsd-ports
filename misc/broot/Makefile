@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.4
-PORTREVISION=	1
+DISTVERSION=	1.7.0
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -95,8 +94,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		itoa-0.4.7 \
 		jobserver-0.1.22 \
 		jpeg-decoder-0.1.22 \
-		lazy-regex-2.2.1 \
-		lazy-regex-proc_macros-2.2.1 \
+		lazy-regex-2.2.2 \
+		lazy-regex-proc_macros-2.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lfs-core-0.4.2 \
@@ -113,7 +112,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		memmap-0.7.0 \
 		memoffset-0.6.4 \
 		minimad-0.7.1 \
-		minimad-0.8.0 \
+		minimad-0.9.0 \
 		miniz_oxide-0.3.7 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.13 \
@@ -144,6 +143,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.28 \
 		proc-status-0.1.1 \
+		quick-xml-0.22.0 \
 		quote-1.0.9 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
@@ -182,8 +182,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		syntect-4.6.0 \
 		tempfile-3.2.0 \
 		termimad-0.10.3 \
-		termimad-0.16.1 \
-		terminal-clipboard-0.2.1 \
+		termimad-0.17.0 \
+		terminal-clipboard-0.3.0 \
 		termux-clipboard-0.1.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.26 \
@@ -211,8 +211,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		x11-clipboard-0.5.2 \
-		xcb-0.9.0 \
+		x11-clipboard-0.5.3 \
+		xcb-0.10.1 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5
 CARGO_FEATURES=	--no-default-features
