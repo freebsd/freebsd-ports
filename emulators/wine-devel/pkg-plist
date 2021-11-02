@@ -1699,7 +1699,7 @@ lib/wine/%%WINEARCH%%-unix/ksecdd.sys.so
 lib/wine/%%WINEARCH%%-unix/ksproxy.ax.so
 lib/wine/%%WINEARCH%%-unix/ksuser.dll.so
 lib/wine/%%WINEARCH%%-unix/ktmw32.dll.so
-%%MPG123%%lib/wine/%%WINEARCH%%-unix/l3codeca.acm.so
+lib/wine/%%WINEARCH%%-unix/l3codeca.acm.so
 lib/wine/%%WINEARCH%%-unix/libaclui.def
 lib/wine/%%WINEARCH%%-unix/libactiveds.def
 lib/wine/%%WINEARCH%%-unix/libadsiid.a
@@ -1973,7 +1973,7 @@ lib/wine/%%WINEARCH%%-unix/mofcomp.exe.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/monodebg.vxd.so
 lib/wine/%%WINEARCH%%-unix/mountmgr.sys.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/mouse.drv16.so
-%%MPG123%%lib/wine/%%WINEARCH%%-unix/mp3dmod.dll.so
+lib/wine/%%WINEARCH%%-unix/mp3dmod.dll.so
 lib/wine/%%WINEARCH%%-unix/mpr.dll.so
 lib/wine/%%WINEARCH%%-unix/mprapi.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/msacm.dll16.so
@@ -2986,7 +2986,7 @@ lib/wine/%%WINEARCH%%-windows/ksecdd.sys
 lib/wine/%%WINEARCH%%-windows/ksproxy.ax
 lib/wine/%%WINEARCH%%-windows/ksuser.dll
 lib/wine/%%WINEARCH%%-windows/ktmw32.dll
-%%MPG123%%lib/wine/%%WINEARCH%%-windows/l3codeca.acm
+lib/wine/%%WINEARCH%%-windows/l3codeca.acm
 lib/wine/%%WINEARCH%%-windows/light.msstyles
 lib/wine/%%WINEARCH%%-windows/loadperf.dll
 lib/wine/%%WINEARCH%%-windows/localspl.dll
@@ -3019,7 +3019,7 @@ lib/wine/%%WINEARCH%%-windows/mofcomp.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/monodebg.vxd
 lib/wine/%%WINEARCH%%-windows/mountmgr.sys
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/mouse.drv16
-%%MPG123%%lib/wine/%%WINEARCH%%-windows/mp3dmod.dll
+lib/wine/%%WINEARCH%%-windows/mp3dmod.dll
 lib/wine/%%WINEARCH%%-windows/mpr.dll
 lib/wine/%%WINEARCH%%-windows/mprapi.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/msacm.dll16
