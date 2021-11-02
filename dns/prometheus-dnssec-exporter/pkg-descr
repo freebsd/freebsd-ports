@@ -1,0 +1,4 @@
+Check for validity and expiration in DNSSEC signatures
+and expose metrics for Prometheus
+
+WWW: https://github.com/chrj/prometheus-dnssec-exporter
