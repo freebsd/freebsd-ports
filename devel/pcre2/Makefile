@@ -10,7 +10,7 @@ COMMENT=	Perl Compatible Regular Expressions library, version 2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		autoreconf cpe libtool pkgconfig tar:bzip2
+USES=		autoreconf cpe libtool pkgconfig
 CPE_VENDOR=	pcre
 
 USE_GITHUB=	yes
