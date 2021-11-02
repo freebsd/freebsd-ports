@@ -1,5 +1,5 @@
 PORTNAME=	neomutt
-PORTVERSION=	20210205
+PORTVERSION=	20211029
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 		urlview:textproc/urlview
 
-USES=		cpe iconv:translit localbase perl5 shebangfix ssl
+USES=		cpe iconv:translit localbase ncurses perl5 shebangfix ssl
 
 USE_GITHUB=	yes
 USE_PERL5=	build
@@ -26,8 +26,7 @@ OPTIONS_DEFINE=	NLS DOCS SASL IDN FLOCK GPGME NOTMUCH
 OPTIONS_DEFAULT=SASL TOKYOCABINET NOTMUCH GPGME LMDB NCURSES GSSAPI_BASE
 OPTIONS_MULTI=	HCACHE
 OPTIONS_MULTI_HCACHE=	BDB GDBM KYOTOCABINET LMDB QDBM TOKYOCABINET
-OPTIONS_SINGLE=	SCREEN GSSAPI
-OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
+OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
 FLOCK_DESC=	Use flock() to lock files
@@ -79,11 +78,6 @@ GPGME_CONFIGURE_ENABLE=	gpgme
 NOTMUCH_LIB_DEPENDS=	libnotmuch.so:mail/notmuch
 NOTMUCH_CONFIGURE_ENABLE=	notmuch
 
-SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE} --with-ui=slang
-SLANG_CONFIGURE_OFF=	--with-ui=ncurses
-SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
-SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
-
 # GSSAPI
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--gss
@@ -91,8 +85,6 @@ GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-gss=${LOCALBASE}
 GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-gss=${LOCALBASE}
-
-NCURSES_USES=	ncurses
 
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
