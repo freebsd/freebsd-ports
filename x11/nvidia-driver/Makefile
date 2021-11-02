@@ -43,15 +43,19 @@ USES+=		tar:xz
 USE_XORG=	x11 xorg-server xext
 USE_LDCONFIG=	yes
 
+EGL_JSON_PATH=		${PREFIX}/share/egl/egl_external_platform.d
 GLVND_JSON_PATH=	${PREFIX}/share/glvnd/egl_vendor.d
-WAYLAND_JSON_PATH=	${PREFIX}/share/egl/egl_external_platform.d
 VKICD_PATH=		${PREFIX}/share/vulkan/icd.d
 VKLAYERS_PATH=		${PREFIX}/share/vulkan/implicit_layer.d
 MAKE_ENV=	DEBUG_FLAGS=${DEBUG_FLAGS} \
 		EGL_GLVND_JSON_PATH=${STAGEDIR}${GLVND_JSON_PATH} \
-		EGL_WAYLAND_JSON_PATH=${STAGEDIR}${WAYLAND_JSON_PATH} \
 		VKICD_PATH=${STAGEDIR}${VKICD_PATH} \
 		VKLAYERS_PATH=${STAGEDIR}${VKLAYERS_PATH}
+.if ${NVVERSION} < 495.02905
+MAKE_ENV+=	EGL_WAYLAND_JSON_PATH=${STAGEDIR}${EGL_JSON_PATH}
+.else
+MAKE_ENV+=	EGL_EXTERNAL_PLATFORM_JSON_PATH=${STAGEDIR}${EGL_JSON_PATH}
+.endif
 SUB_FILES=	pkg-message
 .if !defined(LIBGLDIR)
 SUB_FILES+=	nvidia.conf
@@ -208,7 +212,7 @@ post-patch: .SILENT
 .endif
 .if ${NVVERSION} >= 415.013
 	prefix="${PREFIX}" ; padding=$$(($${#prefix}+3)) ; \
-	gsed ${REINPLACE_ARGS} -E "s,/etc/egl/egl_external_platform\.d.{$$padding},${WAYLAND_JSON_PATH}\x00," \
+	gsed ${REINPLACE_ARGS} -E "s,/etc/egl/egl_external_platform\.d.{$$padding},${EGL_JSON_PATH}\x00," \
 		${WRKSRC}/obj/libEGL_nvidia.so.0
 .endif
 # Finally, process OPTIONS
@@ -291,6 +295,10 @@ post-install: .SILENT
 .endif
 .if ${NVVERSION} < 470.074
 	${REINPLACE_CMD} -e '/libnvidia-vulkan-producer\.so/d' ${TMPPLIST}
+.endif
+.if ${NVVERSION} < 495.02905
+	${REINPLACE_CMD} -e '/libnvidia-egl-gbm\.so/d ; \
+		/15_nvidia_gbm\.json/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 410.057
 # Rename some libraries and install a libmap file to resolve conflict with

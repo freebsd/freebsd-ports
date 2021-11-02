@@ -32,6 +32,8 @@ lib/libXvMCNVIDIA.so.1
 lib/libXvMCNVIDIA_dynamic.so.1
 lib/libnvidia-cfg.so
 lib/libnvidia-cfg.so.1
+@comment lib/libnvidia-egl-gbm.so
+@comment lib/libnvidia-egl-gbm.so.1
 @comment lib/libnvidia-egl-wayland.so
 @comment lib/libnvidia-egl-wayland.so.1
 lib/libnvidia-eglcore.so
@@ -87,6 +89,7 @@ lib32/libnvidia-tls.so.1
 lib32/vdpau/libvdpau_nvidia.so.1
 man/man1/nvidia-smi.1.gz
 @comment share/egl/egl_external_platform.d/10_nvidia_wayland.json
+@comment share/egl/egl_external_platform.d/15_nvidia_gbm.json
 share/glvnd/egl_vendor.d/10_nvidia.json
 share/vulkan/icd.d/nvidia_icd.json
 share/vulkan/implicit_layer.d/nvidia_layers.json
