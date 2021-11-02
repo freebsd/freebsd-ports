@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211101:
+  AFFECTS: users of textproc/redisearch
+  AUTHOR: osa@FreeBSD.org
+
+  The textproc/redisearch port has been updated to the recent stable
+  release - v2.2.  Users wanting to stay on v2.0 can replace
+  textproc/redisearch with textproc/redisearch20 with one of the
+  following commands:
+
+  # pkg install textproc/redisearch20
+    or
+  # portmaster -o textproc/redisearch20 textproc/redisearch
+    or
+  # portupgrade -o textproc/redisearch20 textproc/redisearch
+
+  NOTE: The textproc/redisearch20 brings a new name for the module,
+  i.e. redisearch20.so, so be careful.
+
 20211024:
   AFFECTS: sysutils/beats7
   AUTHOR: otis@FreeBSD.org
