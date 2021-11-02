@@ -86,12 +86,10 @@ GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-gss=${LOCALBASE}
 GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-gss=${LOCALBASE}
 
+DOCS_CONFIGURE_OFF=	--disable-doc
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 			lynx:www/lynx
-# Trick neomutt into building manpages and neomuttrc
-DOCS_VARS_OFF=		BINARY_ALIAS=xsltproc=true \
-			BINARY_ALIAS+=xmlcatalog=true
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
