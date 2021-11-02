@@ -1,7 +1,7 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
 
 PORTNAME=	vim
-PORTVERSION=	8.2.3458
+PORTVERSION=	8.2.3570
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -37,7 +37,7 @@ VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 # Flavors {{{1
 # FLAVORS are used to build various Vim GUIs. The default flavor (`vim') is
 # console-only.
-FLAVORS=	console athena gtk2 gtk3 motif x11 tiny
+FLAVORS=	console athena gtk2 gtk3 motif tiny
 FLAVOR?=	${FLAVORS:[1]}
 # Register conflicts with all other flavors
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
@@ -87,13 +87,6 @@ CONFIGURE_ENV+=	MOTIFHOME=${LOCALBASE}
 PLIST_SUB+=	GUI="" DESKTOP="@comment "
 USES+=		motif xorg
 USE_XORG=	ice sm x11 xmu xt
-
-.elif ${FLAVOR:U} == x11
-GUI=		no
-CONFIGURE_ARGS+=--enable-xim --enable-fontset --with-x
-PLIST_SUB+=	GUI="@comment " DESKTOP="@comment "
-USES+=		xorg
-USE_XORG=	ice sm x11 xt
 .endif
 
 # Options {{{1
