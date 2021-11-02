@@ -21,7 +21,7 @@ PORTSCOUT=	limit:^1\.21\.[0-9]*
 
 USES=		cpe
 
-CPE_VENDOR=	nginx
+CPE_VENDOR=	f5
 CPE_PRODUCT=	nginx
 USE_GITHUB=	nodefault
 
