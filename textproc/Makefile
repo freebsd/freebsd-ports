@@ -1540,6 +1540,7 @@
     SUBDIR += redet
     SUBDIR += redisearch
     SUBDIR += redisearch16
+    SUBDIR += redisearch20
     SUBDIR += redland
     SUBDIR += redland-bindings
     SUBDIR += refdb
