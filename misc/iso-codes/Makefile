@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	iso-codes
-PORTVERSION=	4.2
+PORTVERSION=	4.7
 CATEGORIES=	misc
 
 MAINTAINER=	kwm@FreeBSD.org
@@ -17,7 +17,7 @@ NO_ARCH=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://salsa.debian.org
 GL_ACCOUNT=	iso-codes-team
-GL_COMMIT=	58a4f20f8e6f4d8f9545333f3eae4cfe5678de16
+GL_COMMIT=	59767ed869f3952575f7d0f639a290a4c4b315e5
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
