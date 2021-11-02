@@ -1,10 +1,10 @@
 # Created by: NAKATA Maho <maho@FreeBSD.org>
 
 PORTNAME=	libEMF
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 CATEGORIES=	graphics
 MASTER_SITES=	SF
+DISTNAME=	libemf-${DISTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Enhanced Metafile Library
@@ -19,9 +19,10 @@ USES=		cpe libtool
 CPE_VENDOR=	${PORTNAME:tl}_project
 
 GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
