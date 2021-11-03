@@ -1,8 +1,8 @@
 # Created by: Eduard Martinescu
 
 PORTNAME=	smartmontools
-PORTVERSION=	7.2
-PORTREVISION=	1
+DISTVERSION=	7.2
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
