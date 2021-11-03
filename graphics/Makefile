@@ -152,6 +152,7 @@
     SUBDIR += dspdfviewer
     SUBDIR += dssim
     SUBDIR += duhdraw
+    SUBDIR += dust3d
     SUBDIR += dynamechs
     SUBDIR += ebsynth
     SUBDIR += edje_viewer
