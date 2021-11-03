@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	broom
-DISTVERSION=	0.7.9
+DISTVERSION=	0.7.10
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -19,7 +19,8 @@ CRAN_DEPENDS=	R-cran-backports>0:math/R-cran-backports \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-stringr>0:textproc/R-cran-stringr \
 		R-cran-tibble>=3.0.0:devel/R-cran-tibble \
-		R-cran-tidyr>=1.0.0:devel/R-cran-tidyr
+		R-cran-tidyr>=1.0.0:devel/R-cran-tidyr \
+		R-cran-ggplot2>0:graphics/R-cran-ggplot2
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
