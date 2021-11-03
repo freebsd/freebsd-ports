@@ -1,0 +1,21 @@
+--- meson.build.orig	2021-11-02 09:05:08 UTC
++++ meson.build
+@@ -45,13 +45,13 @@ libm = cc.find_library('m', required: false)
+ 
+ # Don't bother with popt on non-gcc build, because we make heavy use of 
+ # gcc struct initialization extension in our popt code.  (Could be fixed)
+-if cc.get_id() == 'gcc'
++#if cc.get_id() == 'gcc'
+   popt_dep = dependency('popt', required: get_option('popt'))
+   cdata.set10('HAVE_LIBPOPT', popt_dep.found())
+-else
+-  assert(not get_option('popt').enabled(), 'popt requested via options but was not found.')
+-  popt_dep = dependency('', required: false)
+-endif
++#else
++#  assert(not get_option('popt').enabled(), 'popt requested via options but was not found.')
++#  popt_dep = dependency('', required: false)
++#endif
+ 
+ if get_option('yuv-format') == 'YV12'
+   cdata.set10('YUV_420_USE_YV12', true)

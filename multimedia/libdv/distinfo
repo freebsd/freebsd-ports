@@ -1,2 +1,3 @@
-SHA256 (libdv-1.0.0.tar.gz) = a305734033a9c25541a59e8dd1c254409953269ea7c710c39e540bd8853389ba
-SIZE (libdv-1.0.0.tar.gz) = 574565
+TIMESTAMP = 1635841807
+SHA256 (meson-ports-libdv-24218c36bed3b0a3bd5a57d5790ac12ade44e88d_GL0.tar.gz) = 6fb04ac45146f7c4a642c973b2ce70e03a771767997d420f7934c064d3fa7cfd
+SIZE (meson-ports-libdv-24218c36bed3b0a3bd5a57d5790ac12ade44e88d_GL0.tar.gz) = 577788
