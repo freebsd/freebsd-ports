@@ -1,2 +1,2 @@
 # Version to share with ports depending on octave
-OCTAVE_VERSION=	6.3.0
+OCTAVE_VERSION=	6.4.0

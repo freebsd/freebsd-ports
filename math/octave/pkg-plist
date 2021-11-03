@@ -955,6 +955,12 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59937/eval_global_script.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60237/bug-60237.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60237/bug_60237.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/bug-61105.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/nested_test_1.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/nested_test_2.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/nested_test_3.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61191/bug-61191.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61191/subdir/bug_61191.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/bug_59989.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/class-concat/@foo/foo.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/class-concat/class-concat.tst
