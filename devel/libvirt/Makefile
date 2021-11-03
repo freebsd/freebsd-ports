@@ -145,11 +145,6 @@ CONF_FILES=	\
 		virtvboxd.conf \
 		virtxend.conf
 
-post-patch:
-	${REINPLACE_CMD} -e 's|HAVE_BSD_NSS|WITH_BSD_NSS|' \
-		${WRKSRC}/tools/nss/libvirt_nss.c \
-		${WRKSRC}/tools/nss/libvirt_nss.h
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/qemu/networks/autostart
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
