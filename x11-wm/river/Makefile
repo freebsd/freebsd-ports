@@ -20,7 +20,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
-GH_ACCOUNT=	ifreund
+GH_ACCOUNT=	riverwm
 GH_TAGNAME=	8134b81
 GH_TUPLE=	ifreund:zig-pixman:88520f2:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
