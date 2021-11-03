@@ -1,7 +1,7 @@
 # Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
 
 PORTNAME=	django-tables2
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
