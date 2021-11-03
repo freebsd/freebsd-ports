@@ -1,0 +1,11 @@
+--- subprojects/murmur3/meson.build.orig	2018-05-29 19:33:50 UTC
++++ subprojects/murmur3/meson.build
+@@ -4,7 +4,7 @@ version = meson.project_version()
+ 
+ inc = include_directories('./')
+ install_headers('murmur3.h', subdir: 'murmur3')
+-lib = static_library('murmur3', sources: ['murmur3.c'], version: version,
++lib = static_library('murmur3', sources: ['murmur3.c'],
+ include_directories: inc,
+ c_args: ['-Wall', '-ffast-math'],
+ install: true)

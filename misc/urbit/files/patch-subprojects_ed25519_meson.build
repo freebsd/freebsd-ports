@@ -1,0 +1,10 @@
+--- subprojects/ed25519/meson.build.orig	2018-05-29 19:32:12 UTC
++++ subprojects/ed25519/meson.build
+@@ -21,7 +21,6 @@ install_headers('src/ed25519.h', subdir:'ed25519')
+ lib = static_library('ed25519',
+ sources: src,
+ include_directories : include_dirs,
+-version: version,
+ c_args : ['-Wall'],
+ install: true)
+ 
