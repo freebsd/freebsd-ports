@@ -6,6 +6,9 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	28e28e9e5983.patch:-p1 # meson >= 0.60
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 settings daemon
 
