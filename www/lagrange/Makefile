@@ -1,5 +1,5 @@
 PORTNAME=	lagrange
-DISTVERSION=	1.6.5
+DISTVERSION=	1.7.3
 CATEGORIES=	www
 MASTER_SITES=	https://git.skyjake.fi/skyjake/${PORTNAME}/releases/download/v${DISTVERSION}/
 
