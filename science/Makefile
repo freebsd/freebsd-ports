@@ -142,6 +142,7 @@
     SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
+    SUBDIR += linux-zotero
     SUBDIR += luscus
     SUBDIR += madness
     SUBDIR += maeparser
