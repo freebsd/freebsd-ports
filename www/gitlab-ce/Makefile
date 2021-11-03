@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.4.0
-PORTREVISION=	1
+PORTVERSION=	14.4.1
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -202,6 +202,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-webrick>=1.6.1:www/rubygem-webrick \
 	rubygem-prometheus-client-mmap>=0.15.0<0.16.0:devel/rubygem-prometheus-client-mmap \
 	rubygem-warning>=1.2.0<1.3:devel/rubygem-warning \
+	rubygem-license_finder>=6.0<7:devel/rubygem-license_finder \
 	rubygem-octokit>=4.20<5.0:net/rubygem-octokit \
 	rubygem-gitlab-mail_room>=0.0.9<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
@@ -270,7 +271,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	51b27ab58055b65e14e68b19604e4823389adb73
+GL_COMMIT=	1a23d731c9f1149b8be1f16a1d781490df288f18
 
 USERS=	git
 GROUPS=	git

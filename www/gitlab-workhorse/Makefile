@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	14.4.0
+PORTVERSION=	14.4.1
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -23,12 +23,12 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	51b27ab58055b65e14e68b19604e4823389adb73
+GL_COMMIT=	1a23d731c9f1149b8be1f16a1d781490df288f18
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 103dd
+# 104dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -41,6 +41,7 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:datadog-go:v4.4.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.31.1:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
+		DataDog:sketches-go:v1.0.0:datadog_sketches_go/vendor/github.com/DataDog/sketches-go \
 		FZambia:sentinel:v1.0.0:fzambia_sentinel/vendor/github.com/FZambia/sentinel \
 		Microsoft:go-winio:v0.4.19:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
@@ -156,5 +157,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
 
 .include <bsd.port.mk>
-
 

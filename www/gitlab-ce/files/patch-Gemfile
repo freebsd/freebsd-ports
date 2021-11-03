@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-10-21 22:00:37 UTC
+--- Gemfile.orig	2021-10-28 07:49:38 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -17,7 +17,7 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -332,106 +331,10 @@ gem 'snowplow-tracker', '~> 0.6.1'
+@@ -332,106 +331,15 @@ gem 'snowplow-tracker', '~> 0.6.1'
  
  # Metrics
  gem 'method_source', '~> 1.0', require: false
@@ -93,11 +93,11 @@
 -  gem 'simplecov-cobertura', '~> 1.3.1', require: false
 -end
 -
--# Gems required in omnibus-gitlab pipeline
--group :development, :test, :omnibus do
--  gem 'license_finder', '~> 6.0', require: false
--end
--
+ # Gems required in omnibus-gitlab pipeline
+ group :development, :test, :omnibus do
+   gem 'license_finder', '~> 6.0', require: false
+ end
+ 
 -group :test do
 -  gem 'fuubar', '~> 2.2.0'
 -  gem 'rspec-retry', '~> 0.6.1'
@@ -124,7 +124,7 @@
  gem 'octokit', '~> 4.15'
  
  # https://gitlab.com/gitlab-org/gitlab/issues/207207
-@@ -479,7 +382,7 @@ gem 'gitaly', '~> 14.3.0.pre.rc2'
+@@ -479,7 +387,7 @@ gem 'gitaly', '~> 14.3.0.pre.rc2'
  # KAS GRPC protocol definitions
  gem 'kas-grpc', '~> 0.0.2'
  
