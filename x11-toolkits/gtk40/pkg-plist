@@ -382,7 +382,7 @@ lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
 %%NO_CUPS%%lib/gtk-4.0/4.0.0/printbackends/libprintbackend-lpr.so
 lib/libgtk-4.so
 lib/libgtk-4.so.1
-lib/libgtk-4.so.1.400.0
+lib/libgtk-4.so.%%LIBVERSION%%
 %%BROADWAY%%libdata/pkgconfig/gtk4-broadway.pc
 libdata/pkgconfig/gtk4-unix-print.pc
 %%WAYLAND%%libdata/pkgconfig/gtk4-wayland.pc
