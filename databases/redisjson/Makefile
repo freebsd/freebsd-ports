@@ -1,8 +1,8 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisjson
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,6 +19,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	RedisJSON
 GH_PROJECT=	RedisJSON
+GH_TAGNAME=	8d77e35
 
 CARGO_CRATES=	addr2line-0.15.2 \
 		adler-1.0.2 \
