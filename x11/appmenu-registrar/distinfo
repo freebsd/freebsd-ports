@@ -1,3 +1,5 @@
 TIMESTAMP = 1617892721
 SHA256 (vala-panel-project-vala-panel-appmenu-4e362c22ab3a23c98f13fb379c782786ee057cf6_GL0.tar.gz) = 374ee0bd840ae1e78891ca1dd97ea25ebabec929e5eaec8dc16ae8f8e7680b67
 SIZE (vala-panel-project-vala-panel-appmenu-4e362c22ab3a23c98f13fb379c782786ee057cf6_GL0.tar.gz) = 149765
+SHA256 (442bcebcc00e.patch) = c9ffd68b96b6b9790cf37ecf64cb4984848f4d19f9859d881cea18fa3d3c89a2
+SIZE (442bcebcc00e.patch) = 1613

@@ -2,6 +2,9 @@ PORTNAME=	appmenu-registrar
 DISTVERSION=	0.7.6
 CATEGORIES=	x11
 
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	442bcebcc00e.patch:-p1 # meson >= 0.60
+
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Appmenu DBusMenu registrar
 
