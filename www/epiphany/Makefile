@@ -46,7 +46,6 @@ USE_GNOME=	cairo gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Db_lundef=false \
-		-Ddistributor_name="GNOME Web by the FreeBSD GNOME Project" \
 		-Dunit_tests=disabled
 GLIB_SCHEMAS=	org.gnome.Epiphany.enums.xml \
 		org.gnome.epiphany.gschema.xml
