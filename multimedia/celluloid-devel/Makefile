@@ -1,5 +1,5 @@
-DISTVERSION=	0.21-89 # git rev-list --count v0.21..
-DISTVERSIONSUFFIX=	-g8c1c442
+DISTVERSION=	0.21-90 # git rev-list --count v0.21..
+DISTVERSIONSUFFIX=	-gb864497
 PKGNAMESUFFIX=	-devel
 
 MASTERDIR=	${.CURDIR}/../celluloid
