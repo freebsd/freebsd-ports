@@ -1,12 +1,12 @@
 PORTNAME=	clamav
-PORTVERSION=	0.103.3
+PORTVERSION=	0.103.4
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	yasu@FreeBSD.org
-COMMENT=	Command line virus scanner written entirely in C
+COMMENT=	Open-source (GPL) anti-virus engine (LTS Feature Release)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
