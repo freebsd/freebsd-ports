@@ -61,7 +61,6 @@ WEBPLUGIN_DIR=	${PREFIX}/lib/mozilla/plugins/
 WEBPLUGIN_FILES=	libgnome-shell-browser-plugin.so
 
 MESON_ARGS=	-Dnetworkmanager=false \
-		-Dpython=${PYTHON_CMD} \
 		-Dsystemd=false \
 		-Dtests=false
 CPE_VENDOR=	gnome
