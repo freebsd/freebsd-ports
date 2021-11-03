@@ -1,6 +1,6 @@
 PORTNAME=	MetaPhysicL
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		autoreconf gmake libtool
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	roystgnr
+GH_ACCOUNT=	libMesh
 GH_TUPLE=	libMesh:autoconf-submodule:a993d79:autoconf_submodule/m4/autoconf-submodule
 
 GNU_CONFIGURE=	yes

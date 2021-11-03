@@ -13,4 +13,4 @@ double, but which may provide more featureful output:
 * EquationSet, for the automatic assembly of physics equations into
   evaluation codes.
 
-WWW: https://github.com/roystgnr/MetaPhysicL
+WWW: https://github.com/libMesh/MetaPhysicL
