@@ -1,37 +1,33 @@
 # Created by: Ben Woods <woodsb02@FreeBSD.org>
 
 PORTNAME=	kdbxviewer
-PORTVERSION=	0.1
+PORTVERSION=	0.1.9
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ncurses GUI and command-line tool for KeePass2 Database files
+MAINTAINER=	fuz@fuz.su
+COMMENT=	Ncurses UI and command-line tool for KeePass2 Database files
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: trail
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: trail
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgcrypt.so:security/libgcrypt \
 		libstfl.so:devel/stfl
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	max-weller
-
 USES=		ncurses
+USE_GITHUB=	yes
+GH_ACCOUNT=	pepa65
+
+ALL_TARGET=	kdbxviewer
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/kdbxviewer
-ALL_TARGET=
 
 post-patch:
 	${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS} ${LDFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/kdbxviewer ${STAGEDIR}${PREFIX}/bin/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kdbxviewer
 
 .include <bsd.port.mk>
