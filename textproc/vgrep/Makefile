@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.5
 CATEGORIES=	textproc
 
-MAINTAINER=	lcook@x230
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	User-friendly pager for grep
 
 LICENSE=	GPLv2
