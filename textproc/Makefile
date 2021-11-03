@@ -1930,6 +1930,7 @@
     SUBDIR += uz-aspell
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
+    SUBDIR += vgrep
     SUBDIR += wa-aspell
     SUBDIR += wa-hunspell
     SUBDIR += wbxml2
