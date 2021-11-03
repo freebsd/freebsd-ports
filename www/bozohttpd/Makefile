@@ -11,6 +11,8 @@ COMMENT=	Bozotic HTTP server from NetBSD
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_i386=	Doesn't compile, error: comparison of integers of different signs: 'unsigned int' and 'time_t' (aka 'int')
+
 USES=		cpe uidfix tar:bzip2
 CPE_VENDOR=	eterna
 
