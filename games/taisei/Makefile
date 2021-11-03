@@ -27,7 +27,7 @@ USES=		compiler:c11 desktop-file-utils meson pkgconfig \
 SHEBANG_FILES=	scripts/*.py
 MESON_ARGS=	-Dversion_fallback=${PORTVERSION} -Db_lto=false
 MESON_ARGS+=	--wrap-mode=nofallback
-MESON_ARGS+=	-DOPENSSLLIB="${OPENSSLLIB}" -DOPENSSLINC="${OPENSSLINC}"
+MESON_ARGS+=	-DOPENSSLLIB="${OPENSSLLIB}"
 USE_SDL=	sdl2 ttf2 mixer2
 
 PORTDOCS=	*
