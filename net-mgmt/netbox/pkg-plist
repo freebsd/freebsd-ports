@@ -282,6 +282,7 @@
 %%DATADIR%%/extras/management/commands/renaturalize.py
 %%DATADIR%%/extras/management/commands/rqworker.py
 %%DATADIR%%/extras/management/commands/runreport.py
+%%DATADIR%%/extras/management/commands/runscript.py
 %%DATADIR%%/extras/management/commands/webhook_receiver.py
 %%DATADIR%%/extras/migrations/0001_squashed.py
 %%DATADIR%%/extras/migrations/0002_squashed_0059.py
