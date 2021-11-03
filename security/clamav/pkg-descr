@@ -1,8 +1,9 @@
-This the stable version of Clam Antivirus.
-Clam Antivirus is command line virus scanner written entirely in C
-and its database is kept up to date. It also detects polymorphic
-viruses, scans compressed files and supported by AMaViS.
-Optionally you can use the clamav-milter interface to connect
-clamav with sendmail.
+ClamAV is an open-source (GPL) anti-virus engine used in a variety of
+situations, including email and web scanning, and endpoint
+security. It provides many utilities for users, including a flexible
+and scalable multi-threaded daemon, a command-line scanner and an
+advanced tool for automatic database updates.
+
+This is Regular (non-LTS) Feature Release of ClamAV.
 
 WWW: https://www.clamav.net/
