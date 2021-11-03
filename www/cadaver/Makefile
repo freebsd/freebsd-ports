@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		--without-libintl-prefix
 .endif
 
-NEON_VERSION=	31
+NEON_VERSION=	31 32
 
 post-patch:
 	@${REINPLACE_CMD} 's,27 28 29,& ${NEON_VERSION},' ${WRKSRC}/configure
