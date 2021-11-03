@@ -107,6 +107,7 @@
     SUBDIR += linux-c7-cups-libs
     SUBDIR += linux-c7-freetype
     SUBDIR += linux-c7-harfbuzz
+    SUBDIR += linux-jabref
     SUBDIR += lout
     SUBDIR += lprps
     SUBDIR += lyx
