@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.36.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -29,16 +30,7 @@ USES=		compiler:c++11-lang desktop-file-utils gettext gnome meson \
 		pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 vte3
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Dtests=false \
-		-Dpackagekit=false
-
-OPTIONS_DEFINE=	RAW
-OPTIONS_DEFAULT=RAW
-OPTIONS_SUB=	yes
-
-RAW_DESC=	Enable RAW EXIF support
-RAW_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
-RAW_MESON_TRUE=	exiv
+MESON_ARGS=	-Dtests=false
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'share/man/man1'|'man/man1'|g" \
