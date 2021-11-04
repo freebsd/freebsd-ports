@@ -1,7 +1,7 @@
 # Created by: Janos.Mohacsi@bsd.hu
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20201014
+PORTVERSION=	20210227
 CATEGORIES=	www
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 		NETBSD
@@ -10,8 +10,6 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Bozotic HTTP server from NetBSD
 
 LICENSE=	BSD2CLAUSE
-
-BROKEN_i386=	Doesn't compile, error: comparison of integers of different signs: 'unsigned int' and 'time_t' (aka 'int')
 
 USES=		cpe uidfix tar:bzip2
 CPE_VENDOR=	eterna
