@@ -46,8 +46,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
 .endif # ${CHOSEN_COMPILER_TYPE} == clang
 
-CFLAGS_armv6+=	-no-integrated-as
-CFLAGS_armv7+=	-no-integrated-as
+.if ${ARCH:Marmv?}
+BUILD_DEPENDS+=	as:devel/binutils@native
+CFLAGS+=	-no-integrated-as
+.endif
 
 LDFLAGS_i386+=	-Wl,-z,notext
 
