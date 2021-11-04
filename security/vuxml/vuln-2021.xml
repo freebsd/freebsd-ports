@@ -1,3 +1,54 @@
+  <vuln vid="2bf56269-90f8-4a82-b82f-c0e289f2a0dc">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.319</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.303.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-11-04/">
+	  <h1>Description</h1>
+	  <h5>(Critical) SECURITY-2455 / CVE-2021-21685, CVE-2021-21686, CVE-2021-21687, CVE-2021-21688, CVE-2021-21689, CVE-2021-21690, CVE-2021-21691, CVE-2021-21692, CVE-2021-21693, CVE-2021-21694, CVE-2021-21695</h5>
+	  <p>Multiple vulnerabilities allow bypassing path filtering of agent-to-controller access control</p>
+	  <h5>(High) SECURITY-2423 / CVE-2021-21696</h5>
+	  <p>Agent-to-controller access control allowed writing to sensitive directory used by Pipeline: Shared Groovy Libraries Plugin</p>
+	  <h5>(High) SECURITY-2428 / CVE-2021-21697</h5>
+	  <p>Agent-to-controller access control allows reading/writing most content of build directories</p>
+	  <h5>(Medium) SECURITY-2506 / CVE-2021-21698</h5>
+	  <p>Path traversal vulnerability in Subversion Plugin allows reading arbitrary files</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21685</cvename>
+      <cvename>CVE-2021-21686</cvename>
+      <cvename>CVE-2021-21687</cvename>
+      <cvename>CVE-2021-21688</cvename>
+      <cvename>CVE-2021-21689</cvename>
+      <cvename>CVE-2021-21690</cvename>
+      <cvename>CVE-2021-21691</cvename>
+      <cvename>CVE-2021-21692</cvename>
+      <cvename>CVE-2021-21693</cvename>
+      <cvename>CVE-2021-21694</cvename>
+      <cvename>CVE-2021-21695</cvename>
+      <cvename>CVE-2021-21696</cvename>
+      <cvename>CVE-2021-21697</cvename>
+      <cvename>CVE-2021-21698</cvename>
+      <url>https://www.jenkins.io/security/advisory/2021-11-04/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-04</discovery>
+      <entry>2021-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df794e5d-3975-11ec-84e8-0800273f11ea">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
