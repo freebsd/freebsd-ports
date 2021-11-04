@@ -87,6 +87,9 @@ share/metainfo/texstudio.metainfo.xml
 %%DATADIR%%/template_Article_French.json
 %%DATADIR%%/template_Article_French.png
 %%DATADIR%%/template_Article_French.tex
+%%DATADIR%%/template_Article_LuaLaTeX_French.json
+%%DATADIR%%/template_Article_LuaLaTeX_French.png
+%%DATADIR%%/template_Article_LuaLaTeX_French.tex
 %%DATADIR%%/template_Beamer.json
 %%DATADIR%%/template_Beamer.tex
 %%DATADIR%%/template_Book.json
