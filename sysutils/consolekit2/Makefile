@@ -2,6 +2,7 @@
 
 PORTNAME=	consolekit
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
@@ -10,7 +11,6 @@ PATCH_SITES=	https://github.com/unrelentingtech/ConsoleKit2/commit/
 PATCHFILES=	03eaa9779f2c9c7b0acf0521a5547036bdec2245.patch:-p1 \
 		05f26e99539e7a442e57035ed6d64fdd9a50feb9.patch:-p1 \
 		ea4a569100dfa44a0c9d42b1cf7381fd8f88c837.patch:-p1 \
-		18a058576d118dec428d81c7e2e3369d9ec939d0.patch:-p1 \
 		42b8c93b2b7c2a57a74580531c73ab736e95336a.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
