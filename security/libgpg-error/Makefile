@@ -1,7 +1,7 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
 
 PORTNAME=	libgpg-error
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
