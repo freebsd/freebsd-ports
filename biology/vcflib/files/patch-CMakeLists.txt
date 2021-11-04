@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-11-03 15:07:33 UTC
++++ CMakeLists.txt
+@@ -230,7 +230,7 @@ if (NOT BUILD_ONLY_LIB)
+   foreach(BIN ${BINS})
+     add_executable(${BIN} src/${BIN}.cpp)
+     target_include_directories(${BIN} PUBLIC ${TABIXPP_LIBRARIES} ${HTSLIB_INCLUDE_DIRS})
+-    target_link_libraries(${BIN} vcflib tabixpp -DGIT_VERSION=0.9.0 ${TABIXPP_LIBRARIES} ${HTSLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${LIBLZMA_LIBRARIES} ${BZIP2_LIBRARIES})
++    target_link_libraries(${BIN} vcflib tabix -DGIT_VERSION=0.9.0 ${TABIXPP_LIBRARIES} ${HTSLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${LIBLZMA_LIBRARIES} ${BZIP2_LIBRARIES})
+   endforeach(BIN ${BINS})
+   install(TARGETS ${BINS} RUNTIME DESTINATION bin)
+ endif()
