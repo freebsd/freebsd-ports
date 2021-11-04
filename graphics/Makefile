@@ -1038,6 +1038,7 @@
     SUBDIR += simage
     SUBDIR += simpleviewer
     SUBDIR += skanlite
+    SUBDIR += skanpage
     SUBDIR += spectacle
     SUBDIR += spirv-tools
     SUBDIR += springgraph
