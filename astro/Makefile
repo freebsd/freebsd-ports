@@ -1,4 +1,4 @@
-     MakefCOMMENT = Astronomical ports
+    COMMENT = Astronomical ports
 
     SUBDIR += R-cran-maptools
     SUBDIR += accrete
