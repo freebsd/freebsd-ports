@@ -1,5 +1,6 @@
 PORTNAME=	neomutt
 PORTVERSION=	20211029
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -10,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 		urlview:textproc/urlview
+LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
 
 USES=		cpe iconv:translit localbase ncurses perl5 shebangfix ssl
 
@@ -42,6 +44,7 @@ SCREEN_DESC=	Screen options
 CONFIGURE_ARGS=	--with-ssl="${OPENSSLBASE}" \
 		--locales-fix \
 		--fmemopen \
+		--pcre2 \
 		--mandir=${PREFIX}/man \
 		${ICONV_CONFIGURE_ARGS}
 
