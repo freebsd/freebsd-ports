@@ -1,5 +1,5 @@
 PORTNAME=	panopticum
-PORTVERSION=	1.0.0.0
+PORTVERSION=	1.0.1.0
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -12,7 +12,7 @@ USES=		cabal
 USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	bsdutils
-GL_COMMIT=	70b9cbee727bb4b33a2136c17b4cfc194768e1b2
+GL_COMMIT=	3e29a6b2b989855a8e0dd5e93fcda5ba7b748999
 
 USE_CABAL=	ansi-terminal-0.11 \
 		ansi-wl-pprint-0.6.9_2 \
