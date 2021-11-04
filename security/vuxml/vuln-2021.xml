@@ -1,3 +1,32 @@
+  <vuln vid="df794e5d-3975-11ec-84e8-0800273f11ea">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.15.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.15.5:</p>
+	<blockquote cite="https://blog.gitea.io/2021/10/gitea-1.15.5-is-released/">
+	  <ul>
+	    <li>Upgrade Bluemonday to v1.0.16 (#17372) (#17374)</li>
+	    <li>Ensure correct SSH permissions check for private and restricted users (#17370) (#17373)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.15.5</url>
+      <freebsdpr>ports/259548</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-10-21</discovery>
+      <entry>2021-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33557582-3958-11ec-90ba-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
