@@ -16593,3 +16593,4 @@ games/super_methane_brothers||2021-10-31|Removed, depnds on expired devel/clanli
 emulators/advancemess||2021-10-31|Removed, depends on expired emulators/advancemame
 emulators/advancemame||2021-10-31|Has expired: Heavily outdated and unmaintained
 devel/clanlib||2021-10-31|Has expired: Upstream no longer maintained
+astro/boinc-setiathome||2021-11-03|No longer giving out work units
