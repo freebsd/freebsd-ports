@@ -1,8 +1,7 @@
 PORTNAME=	liferea
-DISTVERSION=	1.12.7
-PORTREVISION=	3
+DISTVERSION=	1.14.3
 CATEGORIES=	net gnome
-MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${PORTVERSION:S/.r/-rc/}/
+MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
@@ -11,7 +10,9 @@ WWW=		https://lzone.de/liferea/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libfribidi.so:converters/fribidi \
+		libharfbuzz.so:print/harfbuzz \
+		libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib
@@ -21,18 +22,19 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 USES=		compiler:c++11-lang cpe desktop-file-utils gettext \
 		gmake gnome libtool localbase \
 		pathfix pkgconfig python:3.4+ sqlite tar:bzip2
-USE_GNOME=	cairo dconf:run gtk30 intltool introspection \
+USE_GNOME=	cairo dconf:run gtk30 gdkpixbuf2 intltool introspection \
 		libxslt libxml2
 
+GLIB_SCHEMAS=	net.sf.liferea.gschema.xml
+
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-introspection
 
 # Introspection starts the program, but it may hang or crash-abort
 # without an X server because the Webkit compositor tries to initialize
 # a graphics backend
-MAKE_ENV+= WEBKIT_DISABLE_COMPOSITING_MODE=1
+MAKE_ENV+=	WEBKIT_DISABLE_COMPOSITING_MODE=1
 
-GLIB_SCHEMAS=	net.sf.liferea.gschema.xml
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
