@@ -19,13 +19,17 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblas.so:math/blas \
 		libga.so:devel/ga
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		fortran gmake perl5 shebangfix
-SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_* config/64_to_32
-SHEBANG_GLOB=	*.sh
+USE_PERL5=	build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-USE_PERL5=	build
+
+SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_* config/64_to_32 \
+		../QA/doqmtests.mpi ../QA/runtests.mpi.unix ../QA/round_esp.sh ../QA/sleep_loopqa.sh
+SHEBANG_GLOB=	*.sh
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
