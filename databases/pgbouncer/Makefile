@@ -2,6 +2,7 @@
 
 PORTNAME=	pgbouncer
 PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -12,7 +13,6 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:textproc/gsed
 
 USES=		cpe gmake ssl pkgconfig
 
@@ -42,13 +42,13 @@ PLIST_SUB+=	PGBOUNCER_USER="${USERS}" \
 		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
+SUB_FILES=	pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|= pgbouncer.log|= ${PGBOUNCER_LOGDIR}/pgbouncer.log|g" \
-		-e "s|= pgbouncer.pid|= ${PGBOUNCER_RUNDIR}/pgbouncer.pid|g" \
+	@${REINPLACE_CMD} -e "s|= /etc/pgbouncer/userlist.txt|= ${PREFIX}/etc/pgbouncer.users|g" \
+		-e "s|= /etc/pgbouncer/resolv.conf|= ${PREFIX}/etc/pgbouncer-resolv.conf|g" \
+		-e "s|include /etc/pgbouncer/pgbouncer-other.ini|include ${PREFIX}/etc/pgbouncer-other.ini|g" \
 		${WRKSRC}/etc/pgbouncer.ini
-	@${REINPLACE_CMD} -e "s|sed -n|${LOCALBASE}/bin/gsed -n|g" \
-		${WRKSRC}/lib/find_modules.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbouncer ${STAGEDIR}${PREFIX}/bin/
