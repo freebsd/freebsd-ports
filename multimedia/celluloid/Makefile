@@ -7,6 +7,7 @@ MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple GTK+ frontend for mpv
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libmpv.so:multimedia/mpv
