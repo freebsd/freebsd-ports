@@ -1,7 +1,7 @@
 # Created by: sten@blinkenlights.nl
 
 PORTNAME=	recursor
-DISTVERSION=	4.5.6
+DISTVERSION=	4.5.7
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
