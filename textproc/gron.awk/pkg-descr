@@ -1,0 +1,9 @@
+Make JSON greppable!
+
+gron.awk transforms JSON into discrete assignments to make it easier to grep
+for fields and to see absolute paths of those.
+
+It is reasonably fast with Gawk/Mawk/GoAWK even on large-ish files. Slow with
+BWK on big JSON files (100K+).
+
+WWW: https://github.com/xonixx/gron.awk

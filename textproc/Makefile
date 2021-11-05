@@ -244,6 +244,7 @@
     SUBDIR += greple
     SUBDIR += groff
     SUBDIR += gron
+    SUBDIR += gron.awk
     SUBDIR += groonga
     SUBDIR += gsed
     SUBDIR += gspell
