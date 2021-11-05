@@ -1,0 +1,8 @@
+Format number with metric prefix.
+
+format_metric(14     , {base=>10});               # => "14"
+format_metric(12000  , {base=> 2, precision=>1}); # => "11.7K"
+format_metric(12000  , {base=>10, precision=>1}); # => "11.7Ki"
+format_metric(-0.0017, {base=>10});               # => "1.7m"
+
+WWW: https://metacpan.org/dist/Number-Format-Metric
