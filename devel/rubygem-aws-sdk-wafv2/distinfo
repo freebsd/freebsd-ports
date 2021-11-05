@@ -1,3 +1,3 @@
-TIMESTAMP = 1635181665
-SHA256 (rubygem/aws-sdk-wafv2-1.28.0.gem) = bc6597211a2b7f477494daea8fdf3e1f7364c5d24287e069d102b4f959813afd
-SIZE (rubygem/aws-sdk-wafv2-1.28.0.gem) = 109568
+TIMESTAMP = 1636145466
+SHA256 (rubygem/aws-sdk-wafv2-1.29.0.gem) = 18a2a7ee399ed709886013d76bd3b89055bd7a0850cf71cb261d35f574f046c2
+SIZE (rubygem/aws-sdk-wafv2-1.29.0.gem) = 110080
