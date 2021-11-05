@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Math/BigFloat/Trace.pm
 %%SITE_PERL%%/Math/BigInt/Trace.pm
+%%SITE_PERL%%/Math/BigRat/Trace.pm
 %%SITE_PERL%%/bigint.pm
 %%SITE_PERL%%/bignum.pm
 %%SITE_PERL%%/bigrat.pm
