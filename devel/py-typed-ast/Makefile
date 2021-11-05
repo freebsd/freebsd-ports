@@ -18,6 +18,6 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/typed_ast/*.so
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
