@@ -31,6 +31,7 @@ GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X main.version=${_BUILD_VERSION}"
 
+PORTSCOUT=	skipv:16.09,16.09.1
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
