@@ -108,6 +108,7 @@
     SUBDIR += dillo2
     SUBDIR += dojo
     SUBDIR += dokuwiki
+    SUBDIR += dolibarr13
     SUBDIR += dolibarr
     SUBDIR += domoticz
     SUBDIR += dooble
