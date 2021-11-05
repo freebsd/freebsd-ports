@@ -13,11 +13,14 @@ COMMENT?=	QEMU CPU Emulator - 4.1.X branch
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Use emulators/qemu or emulators/qemu-devel
+EXPIRATION_DATE=2021-12-10
+
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
-LIB_DEPENDS?=	libnettle.so:security/nettle \
+LIB_DEPENDS?= libepoxy.so:graphics/libepoxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libepoxy.so:graphics/libepoxy \
+		libnettle.so:security/nettle \
 		libpcre2-8.so:devel/pcre2
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
@@ -96,7 +99,8 @@ VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
 X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
-X86_TARGETS_USE_OFF=	XORG=pixman,x11
+X86_TARGETS_LIB_DEPENDS_OFF=	libharfbuzz.so:print/harfbuzz
+X86_TARGETS_USE_OFF=	GL=gbm XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
 
 PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
@@ -132,6 +136,12 @@ MAKE_ARGS+=	ARCH=ppc64
 
 .if ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--sparc_cpu=v9
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
+PLIST_SUB+=	IVSHMEM=""
+.else
+PLIST_SUB+=	IVSHMEM="@comment "
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""

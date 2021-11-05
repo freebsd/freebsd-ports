@@ -1,4 +1,6 @@
 bin/elf2dmp
+%%IVSHMEM%%bin/ivshmem-client
+%%IVSHMEM%%bin/ivshmem-server
 bin/qemu-edid
 bin/qemu-ga
 bin/qemu-i386
