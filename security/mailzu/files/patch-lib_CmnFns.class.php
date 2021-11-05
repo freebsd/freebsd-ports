@@ -227,16 +227,21 @@
  	{
  		if( ! is_array( $array ) )
  			return '';
-@@ -441,7 +441,7 @@ class CmnFns {
+@@ -441,8 +441,12 @@ class CmnFns {
  	* @param integer $sizeLimit maximum number of messages per page
  	* @param integer $count total number of messages
  	*/
 -	function genMultiPagesLinks( $page, $sizeLimit, $count) {
 +	public static function genMultiPagesLinks( $page, $sizeLimit, $count) {
  		global $link;
++		global $pager_html;
++		global $size_limit;
++		global $query_string_next;
++		global $query_string_last;
  
  		$total_pages = $count / $sizeLimit;
-@@ -501,7 +501,7 @@ class CmnFns {
+ 
+@@ -501,7 +505,7 @@ class CmnFns {
  	* Generate HTML for search engine
  	* @param $content_type: 'B' (attachment) or 'S' (spam)
  	*/
@@ -321,7 +326,7 @@
  		$return = false;
  		$strings = array('f_string','s_string','t_string','m_string');
  		foreach ($strings as $string) {
-@@ -593,7 +593,7 @@ class CmnFns {
+@@ -593,7 +597,7 @@ class CmnFns {
          * @param array of variables to exclude
  	* @return query string
  	*/
@@ -330,7 +335,7 @@
  		return CmnFns::array_to_query_string( $_GET, $excl_array );
  	}	
  
-@@ -602,7 +602,7 @@ class CmnFns {
+@@ -602,7 +606,7 @@ class CmnFns {
          * @param none
          * @return value
          */
@@ -339,7 +344,7 @@
                  // If there isnt one set, return NULL
                  $result = NULL;
  		if ( isset($_GET[$get_name]) )
-@@ -617,7 +617,7 @@ class CmnFns {
+@@ -617,7 +621,7 @@ class CmnFns {
          * @param none
          * @return value
          */
@@ -348,7 +353,7 @@
                  // If there isnt one set, return NULL
                  $result = (isset($_POST[$get_name])) ? $_POST[$get_name] : NULL;
                  return $result;
-@@ -628,7 +628,7 @@ class CmnFns {
+@@ -628,7 +632,7 @@ class CmnFns {
          * @param none
          * @return value
          */
@@ -357,7 +362,7 @@
                  // If there isnt one set, return NULL
                  $result = (isset($_POST[$get_name])) ? $_POST[$get_name] : NULL;
                  return $result;
-@@ -656,7 +656,7 @@ class CmnFns {
+@@ -656,7 +660,7 @@ class CmnFns {
  	*	INORDER, SESSION, FORM, POST, GET, SERVER
   	* @return value of var
   	*/
@@ -366,7 +371,7 @@
  
  		switch ($search) {
  			
-@@ -699,7 +699,7 @@ class CmnFns {
+@@ -699,7 +703,7 @@ class CmnFns {
  	* Redirect using javascript
  	* @param $location string
  	*/

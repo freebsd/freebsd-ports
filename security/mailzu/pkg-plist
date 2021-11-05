@@ -1,4 +1,4 @@
-@sample %%WWWDIR%%/config/config.php.sample
+@sample(,,644) %%WWWDIR%%/config/config.php.sample
 %%WWWDIR%%/config/constants.php
 %%WWWDIR%%/config/index.html
 %%WWWDIR%%/config/init.php
