@@ -1,6 +1,6 @@
-TIMESTAMP = 1635830663
-SHA256 (chrj-prometheus-dnssec-exporter-g20211102-caa7d89_GH0.tar.gz) = f31bae782197c302777757f28993358aec40922ac7c5f7737886a3739c15891a
-SIZE (chrj-prometheus-dnssec-exporter-g20211102-caa7d89_GH0.tar.gz) = 6359
+TIMESTAMP = 1636094601
+SHA256 (chrj-prometheus-dnssec-exporter-g20181110-caa7d89_GH0.tar.gz) = f31bae782197c302777757f28993358aec40922ac7c5f7737886a3739c15891a
+SIZE (chrj-prometheus-dnssec-exporter-g20181110-caa7d89_GH0.tar.gz) = 6359
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
 SIZE (beorn7-perks-v1.0.1_GH0.tar.gz) = 10867
 SHA256 (cespare-xxhash-v2.1.2_GH0.tar.gz) = 471399cfcf0b1bd188add8d34435b91e7011cedbfe76e29687803a9d74320352
