@@ -18,7 +18,8 @@ USE_PYTHON=	autoplist concurrent distutils
 MAKE_ARGS=	--no-bundle
 
 post-patch:
-	@${RM} -fr ${WRKSRC}/third-party
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/third-party/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
