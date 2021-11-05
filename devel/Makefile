@@ -120,6 +120,7 @@
     SUBDIR += R-cran-waldo
     SUBDIR += R-cran-whisker
     SUBDIR += R-cran-withr
+    SUBDIR += R-cran-usethis
     SUBDIR += R-cran-zeallot
     SUBDIR += RStudio
     SUBDIR += SpecTcl
