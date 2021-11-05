@@ -1550,6 +1550,7 @@
     SUBDIR += py-django-post_office
     SUBDIR += py-django-prometheus
     SUBDIR += py-django-pyscss
+    SUBDIR += py-django-radius
     SUBDIR += py-django-ranged-response
     SUBDIR += py-django-recaptcha
     SUBDIR += py-django-redis

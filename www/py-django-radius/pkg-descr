@@ -1,0 +1,4 @@
+django-radius enables you to authenticate your Django users against one or many
+RADIUS servers easily.
+
+WWW: https://github.com/robgolding/django-radius
