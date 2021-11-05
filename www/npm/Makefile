@@ -19,13 +19,14 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 
-CONFLICTS_INSTALL?=	npm-node14
+CONFLICTS_INSTALL?=	npm-node14 npm-node16
 
 OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	NODE NODE14
+OPTIONS_SINGLE_BACKEND=	NODE NODE14 NODE16
 OPTIONS_DEFAULT=NODE
 NODE_DESC=	Use www/node as backend
 NODE14_DESC=	Use www/node14 as backend
+NODE16_DESC=	Use www/node16 as backend
 
 CPE_VENDOR=	npmjs
 
@@ -34,6 +35,7 @@ SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 
 NODE_RUN_DEPENDS=	node>=0.8.0:www/node
 NODE14_RUN_DEPENDS=	node14>=0.8.0:www/node14
+NODE16_RUN_DEPENDS=	node16>=0.8.0:www/node16
 
 .include <bsd.port.pre.mk>
 
