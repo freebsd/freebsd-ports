@@ -1,3 +1,3 @@
-TIMESTAMP = 1632358174
-SHA256 (gnome/gnome-terminal-3.42.0.tar.xz) = b50e9e5664230e6ca290bcf38812a5b65e0baac66a486ee210894cf675f72e0b
-SIZE (gnome/gnome-terminal-3.42.0.tar.xz) = 1806220
+TIMESTAMP = 1636137656
+SHA256 (gnome/gnome-terminal-3.42.1.tar.xz) = c319b1405501b8c7693e616f48eced41695d2e786148ca5f9e27bc7d98f4aeb1
+SIZE (gnome/gnome-terminal-3.42.1.tar.xz) = 1807056
