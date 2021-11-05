@@ -45,7 +45,7 @@ SSL_USE=	PHP=openssl
 
 post-patch:
 	@${FIND} ${WRKSRC} -type d -empty -delete
-	@${FIND} ${WRKSRC} -type d -name .github | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKSRC} -type d -name .github | ${XARGS} ${RM} -r
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
