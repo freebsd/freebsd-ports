@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.7,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
