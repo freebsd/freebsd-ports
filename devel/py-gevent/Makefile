@@ -32,7 +32,7 @@ MAKE_ENV=	GEVENTSETUP_EMBED_CARES=0 GEVENTSETUP_EMBED_LIBEV=0 GEVENTSETUP_EMBED_
 post-patch:
 	@${RM} ${WRKSRC}/src/gevent/_util_py2.py
 # Clean up bundled libraries
-	@${RM} -fr ${WRKSRC}/deps/
+	@${RM} -r ${WRKSRC}/deps/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
