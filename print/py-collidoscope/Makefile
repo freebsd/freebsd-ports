@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beziers>=0.0.3:graphics/py-beziers@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}glyphtools>=0:print/py-glyphtools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0:print/py-uharfbuzz@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
