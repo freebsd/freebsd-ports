@@ -23,7 +23,7 @@ SUB_FILES=	pkg-deinstall pkg-message
 USE_GITHUB=	yes
 
 post-patch:
-	@${RM} -fr ${WRKSRC}/.github/
+	@${RM} -r ${WRKSRC}/.github/
 	@${MKDIR} ${WRKSRC}/cache/
 	@${FIND} ${WRKSRC} -name '.git*' -delete
 	@${RM} ${WRKSRC}/zp-core/Zenphoto.package
