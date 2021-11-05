@@ -62,6 +62,7 @@ man/man3/rtcGetGeometryFirstHalfEdge.3embree3.gz
 man/man3/rtcGetGeometryNextHalfEdge.3embree3.gz
 man/man3/rtcGetGeometryOppositeHalfEdge.3embree3.gz
 man/man3/rtcGetGeometryPreviousHalfEdge.3embree3.gz
+man/man3/rtcGetGeometryThreadSafe.3embree3.gz
 man/man3/rtcGetGeometryTransform.3embree3.gz
 man/man3/rtcGetGeometryUserData.3embree3.gz
 man/man3/rtcGetSceneBounds.3embree3.gz
@@ -70,7 +71,6 @@ man/man3/rtcGetSceneFlags.3embree3.gz
 man/man3/rtcGetSceneLinearBounds.3embree3.gz
 man/man3/rtcInitIntersectContext.3embree3.gz
 man/man3/rtcInitPointQueryContext.3embree3.gz
-man/man3/rtcInitPointQueryInstanceStack.3embree3.gz
 man/man3/rtcInitQuaternionDecomposition.3embree3.gz
 man/man3/rtcInterpolate.3embree3.gz
 man/man3/rtcInterpolateN.3embree3.gz

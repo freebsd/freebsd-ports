@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	embree
-PORTVERSION=	3.13.1
-PORTREVISION=	1
+PORTVERSION=	3.13.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
