@@ -2,7 +2,7 @@
 
 PORTNAME=	Data-Unixish
 PORTVERSION=	1.572
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-Exporter>=5.57:devel/p5-Exporter \
 		p5-JSON-MaybeXS>0:converters/p5-JSON-MaybeXS \
 		p5-Log-ger>0.027:devel/p5-Log-ger \
 		p5-Module-Load>0:devel/p5-Module-Load \
+		p5-Number-Format-Metric>0:textproc/p5-Number-Format-Metric \
 		p5-Number-Format>0:textproc/p5-Number-Format \
 		p5-Package-Util-Lite>=0.001:devel/p5-Package-Util-Lite \
 		p5-Sort-Sub>0.111:devel/p5-Sort-Sub \
