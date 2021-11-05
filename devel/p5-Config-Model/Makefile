@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.142
+PORTVERSION=	2.144
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +34,7 @@ TEST_DEPENDS=	p5-Config-Model-Tester>=4.002:devel/p5-Config-Model-Tester \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:devel/p5-Test-File-Contents \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
+		p5-Test-Perl-Critic>=0:textproc/p5-Test-Perl-Critic \
 		p5-Test-Pod>=1.00:devel/p5-Test-Pod \
 		p5-Test-Warn>=0.11:devel/p5-Test-Warn \
 		p5-boolean>=0:devel/p5-boolean

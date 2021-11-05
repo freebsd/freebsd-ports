@@ -32,10 +32,12 @@
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
 %%SITE_PERL%%/Config/Model/Role/ComputeFunction.pm
+%%SITE_PERL%%/Config/Model/Role/Constants.pm
 %%SITE_PERL%%/Config/Model/Role/FileHandler.pm
 %%SITE_PERL%%/Config/Model/Role/Grab.pm
 %%SITE_PERL%%/Config/Model/Role/HelpAsText.pm
 %%SITE_PERL%%/Config/Model/Role/NodeLoader.pm
+%%SITE_PERL%%/Config/Model/Role/Utils.pm
 %%SITE_PERL%%/Config/Model/Role/WarpMaster.pm
 %%SITE_PERL%%/Config/Model/SearchElement.pm
 %%SITE_PERL%%/Config/Model/SimpleUI.pm
@@ -104,10 +106,12 @@
 %%PERL5_MAN3%%/Config::Model::ObjTreeScanner.3.gz
 %%PERL5_MAN3%%/Config::Model::Report.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::ComputeFunction.3.gz
+%%PERL5_MAN3%%/Config::Model::Role::Constants.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::FileHandler.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::Grab.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::HelpAsText.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::NodeLoader.3.gz
+%%PERL5_MAN3%%/Config::Model::Role::Utils.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::WarpMaster.3.gz
 %%PERL5_MAN3%%/Config::Model::SearchElement.3.gz
 %%PERL5_MAN3%%/Config::Model::SimpleUI.3.gz
