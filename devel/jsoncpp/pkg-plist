@@ -10,5 +10,5 @@ include/json/version.h
 include/json/writer.h
 lib/libjsoncpp.a
 lib/libjsoncpp.so
-lib/libjsoncpp.so.24
+lib/libjsoncpp.so.25
 libdata/pkgconfig/jsoncpp.pc

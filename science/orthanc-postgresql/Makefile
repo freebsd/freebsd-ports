@@ -2,6 +2,7 @@
 
 PORTNAME=	orthanc-postgresql
 DISTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-postgresql/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \

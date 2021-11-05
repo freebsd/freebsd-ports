@@ -1,6 +1,7 @@
 PORTNAME=	ossim
 DISTVERSIONPREFIX=	OrchidIsland-
 DISTVERSION=	2.11.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org

@@ -1,7 +1,7 @@
 # Created by: Stas Timokhin <stast@bsdportal.ru>
 
 PORTNAME=	eiskaltdcpp
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-daemon
 

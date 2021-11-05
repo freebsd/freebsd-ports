@@ -2,6 +2,7 @@
 
 PORTNAME=	orthanc-mysql
 DISTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-mysql/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
