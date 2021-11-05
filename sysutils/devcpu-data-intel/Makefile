@@ -15,6 +15,10 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+USES=		cpe
+CPE_PART=	o
+CPE_VENDOR=	intel
+CPE_PRODUCT=	microcode
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
