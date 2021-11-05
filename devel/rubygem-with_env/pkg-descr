@@ -1,0 +1,5 @@
+WithEnv is an extremely small helper module for executing code with ENV
+variables. It exists because I got tired of re-writing or copying over
+a #with_env helper method for the 131st time.
+
+WWW: https://github.com/mhs/with_env-rb
