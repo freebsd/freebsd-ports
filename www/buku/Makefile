@@ -36,7 +36,7 @@ FISH_PLIST_FILES=	share/fish/completions/buku.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_buku
 
 post-extract:
-	@${RM} -fr ${WRKSRC}/bukuserver
+	@${RM} -r ${WRKSRC}/bukuserver
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/buku.1 ${STAGEDIR}${PREFIX}/share/man/man1
