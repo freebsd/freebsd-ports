@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	spopt
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geopandas>=0.7:graphics/py-geopandas@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pandas>=1,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PuLP>=0:math/py-PuLP@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.22:science/py-scikit-learn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.11:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.11:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spaghetti>=0:science/py-spaghetti@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
