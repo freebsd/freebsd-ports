@@ -1,8 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	socat
-PORTVERSION=	1.7.4.1
-PORTREVISION=	1
+DISTVERSION=	1.7.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
@@ -14,32 +13,29 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler cpe ssl tar:bzip2
+CPE_VENDOR=	dest-unreach
 USE_RC_SUBR=	socat
 
 GNU_CONFIGURE=	yes
 
-CPE_VENDOR=	dest-unreach
-
 PORTSCOUT=	skipv:2.0.0-b2
 
-PLIST_FILES=	bin/filan bin/procan bin/socat man/man1/socat.1.gz \
-		"@sample etc/socat-instances.conf.sample"
-PORTDOCS=	EXAMPLES README SECURITY FAQ
+PLIST_FILES=	bin/filan \
+		bin/procan \
+		bin/socat \
+		"@sample etc/socat-instances.conf.sample" \
+		man/man1/socat.1.gz
+PORTDOCS=	EXAMPLES FAQ README SECURITY
 
 OPTIONS_DEFINE=	DOCS READLINE
 
-READLINE_CONFIGURE_ENABLE=	readline
 READLINE_USES=			readline
+READLINE_CONFIGURE_ENABLE=	readline
 
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} != base
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.if ${COMPILER_TYPE} == "clang"
-CFLAGS+=	-Wno-unused-comparison
+USES+=		localbase
 .endif
 
 do-install:
