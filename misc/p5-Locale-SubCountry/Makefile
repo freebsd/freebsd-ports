@@ -1,7 +1,7 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 
 PORTNAME=	Locale-SubCountry
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON>=1:converters/p5-JSON
 
-USES=		dos2unix perl5
+USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
