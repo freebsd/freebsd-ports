@@ -1,7 +1,7 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 
 PORTNAME=	Getopt-Long-Descriptive
-PORTVERSION=	0.109
+PORTVERSION=	0.110
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
