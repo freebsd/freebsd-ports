@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	sexp_processor
-PORTVERSION=	4.15.3
+PORTVERSION=	4.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
