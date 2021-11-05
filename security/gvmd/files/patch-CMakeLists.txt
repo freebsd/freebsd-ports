@@ -1,24 +1,33 @@
---- CMakeLists.txt	2020-08-11 10:05:36.000000000 -0500
-+++ CMakeLists.txt	2021-01-04 19:48:05.978938000 -0500
-@@ -132,7 +132,7 @@
- endif (NOT LIBDIR)
+--- CMakeLists.txt	2021-11-03 23:09:27.602060000 -0500
++++ CMakeLists.txt	2021-11-03 23:17:41.187707000 -0500
+@@ -110,7 +110,7 @@
+ endif (SYSCONF_INSTALL_DIR)
  
- if (NOT LOCALSTATEDIR)
--  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
-+  set (LOCALSTATEDIR "/var")
- endif (NOT LOCALSTATEDIR)
+ if (NOT SYSCONFDIR)
+-  set (SYSCONFDIR "/etc")
++  set (SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
+ endif (NOT SYSCONFDIR)
  
- if (NOT DATADIR)
-@@ -183,7 +183,7 @@
+ if (NOT EXEC_PREFIX)
+@@ -181,7 +181,7 @@
  set (GVM_CA_CERTIFICATE      "${GVM_STATE_DIR}/CA/cacert.pem")
  
  if (NOT GVM_RUN_DIR)
--  set (GVM_RUN_DIR      "${LOCALSTATEDIR}/run")
+-  set (GVM_RUN_DIR      "/run/gvm")
 +  set (GVM_RUN_DIR      "${LOCALSTATEDIR}/run/gvm")
  endif (NOT GVM_RUN_DIR)
  
  if (NOT GVM_FEED_LOCK_PATH)
-@@ -240,7 +240,7 @@
+@@ -190,7 +190,7 @@
+ add_definitions (-DGVM_FEED_LOCK_PATH="${GVM_FEED_LOCK_PATH}")
+ 
+ if (NOT OPENVAS_DEFAULT_SOCKET)
+-  set (OPENVAS_DEFAULT_SOCKET "/run/ospd/ospd-openvas.sock")
++  set (OPENVAS_DEFAULT_SOCKET "${LOCALSTATEDIR}/run/ospd/ospd-openvas.sock")
+ endif (NOT OPENVAS_DEFAULT_SOCKET)
+ add_definitions (-DOPENVAS_DEFAULT_SOCKET="${OPENVAS_DEFAULT_SOCKET}")
+ 
+@@ -238,7 +238,7 @@
  configure_file (doc/Doxyfile_xml.in doc/Doxyfile_xml)
  configure_file (doc/example-gvm-manage-certs.conf.in doc/example-gvm-manage-certs.conf @ONLY)
  configure_file (VERSION.in VERSION)
@@ -27,16 +36,16 @@
  configure_file (src/schema_formats/XML/GMP.xml.in src/schema_formats/XML/GMP.xml @ONLY)
  configure_file (tools/greenbone-feed-sync.in tools/greenbone-feed-sync @ONLY)
  configure_file (tools/greenbone-scapdata-sync.in tools/greenbone-scapdata-sync @ONLY)
-@@ -282,7 +282,7 @@
+@@ -280,7 +280,7 @@
  
  ## Configs (e.g. systemd service file)
  
 -add_subdirectory (config)
-+# add_subdirectory (config)
++#add_subdirectory (config)
  
  ## Documentation
  
-@@ -292,10 +292,11 @@
+@@ -290,10 +290,10 @@
  
  install (DIRECTORY DESTINATION ${GVMD_STATE_DIR})
  
@@ -45,7 +54,6 @@
           DESTINATION ${GVM_SYSCONF_DIR})
  
 -install (FILES ${CMAKE_SOURCE_DIR}/src/pwpolicy.conf
-+
 +install (FILES ${CMAKE_SOURCE_DIR}/src/pwpolicy.conf.sample
           DESTINATION ${GVM_SYSCONF_DIR})
  

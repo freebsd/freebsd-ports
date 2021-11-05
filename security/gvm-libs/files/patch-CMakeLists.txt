@@ -1,29 +1,29 @@
---- CMakeLists.txt.orig	2020-08-12 04:56:00.000000000 -0500
-+++ CMakeLists.txt	2021-01-03 17:25:26.973466000 -0500
-@@ -155,7 +155,7 @@
- endif (NOT LIBDIR)
+--- CMakeLists.txt.orig	2021-10-11 09:38:23.000000000 -0500
++++ CMakeLists.txt	2021-11-04 10:31:40.191911000 -0500
+@@ -134,7 +134,7 @@
+ endif (SYSCONF_INSTALL_DIR)
  
- if (NOT LOCALSTATEDIR)
--  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
-+  set (LOCALSTATEDIR "/var")
- endif (NOT LOCALSTATEDIR)
+ if (NOT SYSCONFDIR)
+-  set (SYSCONFDIR "/etc")
++  set (SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
+ endif (NOT SYSCONFDIR)
  
- if (NOT INCLUDEDIR)
-@@ -167,7 +167,7 @@
+ if (NOT EXEC_PREFIX)
+@@ -174,7 +174,7 @@
  endif (NOT DATADIR)
  
- if (NOT GVM_PID_DIR)
--  set (GVM_PID_DIR "${LOCALSTATEDIR}/run")
-+  set (GVM_PID_DIR "${LOCALSTATEDIR}/run/gvm")
- endif (NOT GVM_PID_DIR)
+ if (NOT GVM_RUN_DIR)
+-  set (GVM_RUN_DIR  "/run/gvm")
++  set (GVM_RUN_DIR  "${LOCALSTATEDIR}/run/gvm")
+ endif (NOT GVM_RUN_DIR)
  
- if (NOT GVM_SYSCONF_DIR)
-@@ -176,7 +176,7 @@
+ if (NOT GVM_PID_DIR)
+@@ -187,7 +187,7 @@
  
  
  if (NOT REDIS_SOCKET_PATH)
 -  set (REDIS_SOCKET_PATH "/run/redis/redis.sock")
-+  set (REDIS_SOCKET_PATH "/var/run/redis/redis.sock")
++  set (REDIS_SOCKET_PATH "${LOCALSTATEDIR}/run/redis/redis.sock")
  endif ()
  
  add_definitions (-DREDIS_SOCKET_PATH="${REDIS_SOCKET_PATH}")

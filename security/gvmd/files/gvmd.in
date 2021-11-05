@@ -19,7 +19,7 @@ rcvar=${name}_enable
 load_rc_config $name
 
 : ${gvmd_enable=NO}
-: ${gmvd_flags="--osp-vt-update=/var/run/ospd/ospd.sock --unix-socket=/var/run/gvm/gvmd.sock"}
+: ${gmvd_flags="--osp-vt-update=/var/run/ospd/ospd-openvas.sock --unix-socket=/var/run/gvm/gvmd.sock"}
 
 command="%%PREFIX%%/sbin/gvmd"
 command_args="${gmvd_flags}"

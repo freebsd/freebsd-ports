@@ -1,6 +1,6 @@
 PORTNAME=	greenbone-security-assistant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	21.4.2
+DISTVERSION=	21.4.3
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/gsa/:yarn_cache
 DISTFILES=	${PORTNAME}-cache${EXTRACT_SUFX}:yarn_cache
@@ -10,8 +10,8 @@ COMMENT=	Libraries module for the GVM solution
 
 LICENSE=	AGPLv3+
 
-BUILD_DEPENDS=	node:www/node \
-		yarn:www/yarn
+BUILD_DEPENDS= node:www/node16 \
+               yarn:www/yarn-node16
 LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \

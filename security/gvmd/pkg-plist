@@ -3,7 +3,7 @@ bin/gvm-manage-certs
 @sample etc/gvm/pwpolicy.conf.sample
 lib/libgvm-pg-server.so
 lib/libgvm-pg-server.so.21
-lib/libgvm-pg-server.so.21.4.3
+lib/libgvm-pg-server.so.21.4.4
 sbin/greenbone-certdata-sync
 sbin/greenbone-feed-sync
 sbin/greenbone-scapdata-sync

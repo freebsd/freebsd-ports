@@ -1,24 +1,24 @@
---- CMakeLists.txt	2020-08-11 07:00:25.000000000 -0500
-+++ CMakeLists.txt	2021-01-04 19:19:49.997745000 -0500
-@@ -148,7 +148,7 @@
- endif (NOT LIBDIR)
+--- CMakeLists.txt.orig	2021-10-11 10:37:50.000000000 -0500
++++ CMakeLists.txt	2021-10-27 21:54:45.470593000 -0500
+@@ -113,7 +113,7 @@
+ endif (SYSCONF_INSTALL_DIR)
  
- if (NOT LOCALSTATEDIR)
--  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
-+  set (LOCALSTATEDIR "/var")
- endif (NOT LOCALSTATEDIR)
+ if (NOT SYSCONFDIR)
+-  set (SYSCONFDIR "/etc")
++  set (SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
+ endif (NOT SYSCONFDIR)
  
- if (NOT DATADIR)
-@@ -156,7 +156,7 @@
+ if (NOT EXEC_PREFIX)
+@@ -150,7 +150,7 @@
  endif (NOT DATADIR)
  
  if (NOT OPENVAS_RUN_DIR)
--  set (OPENVAS_RUN_DIR "${LOCALSTATEDIR}/run")
-+  set (OPENVAS_RUN_DIR "${LOCALSTATEDIR}/run/gvm")
+-  set (OPENVAS_RUN_DIR "/run/ospd")
++  set (OPENVAS_RUN_DIR "${LOCALSTATEDIR}/run/ospd")
  endif (NOT OPENVAS_RUN_DIR)
  
- if (NOT OPENVAS_FEED_LOCK_PATH)
-@@ -204,7 +204,7 @@
+ set (OPENVAS_DATA_DIR    "${DATADIR}/openvas")
+@@ -199,7 +199,7 @@
  configure_file (doc/openvas.8.in doc/openvas.8 @ONLY)
  configure_file (VERSION.in VERSION @ONLY)
  configure_file (tools/greenbone-nvt-sync.in tools/greenbone-nvt-sync @ONLY)
@@ -27,7 +27,7 @@
  
  ## Testing
  
-@@ -219,7 +219,7 @@
+@@ -214,7 +214,7 @@
    set (COVERAGE_FLAGS "--coverage")
  endif (ENABLE_COVERAGE)
  
