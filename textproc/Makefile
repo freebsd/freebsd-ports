@@ -1619,6 +1619,7 @@
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-api6
+    SUBDIR += rubygem-elasticsearch-api713
     SUBDIR += rubygem-elasticsearch-dsl
     SUBDIR += rubygem-elasticsearch-model
     SUBDIR += rubygem-elasticsearch-model6
