@@ -16174,6 +16174,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/OsclassInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/OxidInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PPIInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PantheonInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PhiftyInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PhpBBInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PimcoreInstaller.php
