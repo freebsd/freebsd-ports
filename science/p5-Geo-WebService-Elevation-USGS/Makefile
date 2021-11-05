@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	Geo-WebService-Elevation-USGS
-PORTVERSION=	0.119
+PORTVERSION=	0.120
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
