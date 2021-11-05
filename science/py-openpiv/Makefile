@@ -1,5 +1,6 @@
 PORTNAME=	openpiv
-PORTVERSION=	0.23.4
+PORTVERSION=	0.23.8
+DISTVERSIONPREFIX=	v
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,10 +16,12 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>=0.12.0:graphics/py-scikit-image@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist distutils cython cython_run
+USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPIV
 GH_PROJECT=	openpiv-python
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXTRA
 EXTRA_DESC=	Install additional Python packages (for tutorial/examples)
