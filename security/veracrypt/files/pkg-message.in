@@ -8,9 +8,9 @@ Veracrypt was installed
 
 2) Please ensure that the fusefs kmod is loaded prior to use:
 	
-$ kldload fuse
+# kldload fusefs
 
-If you want load fuse.ko on boot time, please add the following to /boot/loader.conf
+If you want load fusefs.ko on boot time, please add the following to /boot/loader.conf
 
 fusefs_load="YES"
 
