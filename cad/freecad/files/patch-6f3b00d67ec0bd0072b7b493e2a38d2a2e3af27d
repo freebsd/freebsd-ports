@@ -1,0 +1,133 @@
+commit 6f3b00d67ec0bd0072b7b493e2a38d2a2e3af27d
+Author: wmayer <wmayer@users.sourceforge.net>
+Date:   Mon Oct 11 00:30:22 2021 +0200
+
+    SMESH: port to OCCT 7.6
+
+diff --git src/3rdParty/salomesmesh/src/NETGENPlugin/NETGENPlugin_Mesher.cpp src/3rdParty/salomesmesh/src/NETGENPlugin/NETGENPlugin_Mesher.cpp
+index cd6f0b2b07..ea83984b97 100644
+--- src/3rdParty/salomesmesh/src/NETGENPlugin/NETGENPlugin_Mesher.cpp
++++ src/3rdParty/salomesmesh/src/NETGENPlugin/NETGENPlugin_Mesher.cpp
+@@ -56,6 +56,7 @@
+ #include <NCollection_Map.hxx>
+ #include <Standard_ErrorHandler.hxx>
+ #include <Standard_ProgramError.hxx>
++#include <Standard_Version.hxx>
+ #include <TColStd_MapOfInteger.hxx>
+ #include <TopExp.hxx>
+ #include <TopExp_Explorer.hxx>
+@@ -700,7 +701,13 @@ double NETGENPlugin_Mesher::GetDefaultMinSize(const TopoDS_Shape& geom,
+       BRep_Tool::Triangulation ( TopoDS::Face( fExp.Current() ), loc);
+     if ( triangulation.IsNull() ) continue;
+     const double fTol = BRep_Tool::Tolerance( TopoDS::Face( fExp.Current() ));
++#if OCC_VERSION_HEX < 0x070600
+     const TColgp_Array1OfPnt&   points = triangulation->Nodes();
++#else
++    auto points = [&triangulation](Standard_Integer index) {
++        return triangulation->Node(index);
++    };
++#endif
+     const Poly_Array1OfTriangle& trias = triangulation->Triangles();
+     for ( int iT = trias.Lower(); iT <= trias.Upper(); ++iT )
+     {
+diff --git src/3rdParty/salomesmesh/src/SMESH/SMESH_MeshAlgos.cpp src/3rdParty/salomesmesh/src/SMESH/SMESH_MeshAlgos.cpp
+index 5a07308310..fbb1b25008 100644
+--- src/3rdParty/salomesmesh/src/SMESH/SMESH_MeshAlgos.cpp
++++ src/3rdParty/salomesmesh/src/SMESH/SMESH_MeshAlgos.cpp
+@@ -38,10 +38,13 @@
+ #include <GC_MakeSegment.hxx>
+ #include <GeomAPI_ExtremaCurveCurve.hxx>
+ #include <Geom_Line.hxx>
+-#include <IntAna_IntConicQuad.hxx>
+-#include <IntAna_Quadric.hxx>
++#include <gp_Cone.hxx>
++#include <gp_Cylinder.hxx>
+ #include <gp_Lin.hxx>
+ #include <gp_Pln.hxx>
++#include <gp_Sphere.hxx>
++#include <IntAna_IntConicQuad.hxx>
++#include <IntAna_Quadric.hxx>
+ 
+ #include <limits>
+ #include <numeric>
+diff --git src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Adaptive1D.cpp src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Adaptive1D.cpp
+index 88970f36b5..7c51601c7b 100644
+--- src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Adaptive1D.cpp
++++ src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Adaptive1D.cpp
+@@ -46,6 +46,7 @@
+ #include <Poly_Array1OfTriangle.hxx>
+ #include <Poly_PolygonOnTriangulation.hxx>
+ #include <Poly_Triangulation.hxx>
++#include <Standard_Version.hxx>
+ #include <TColgp_Array1OfPnt.hxx>
+ #include <TopExp.hxx>
+ #include <TopExp_Explorer.hxx>
+@@ -318,13 +319,26 @@ namespace // internal utils
+     {
+       myFaceTol         = SMESH_MesherHelper::MaxTolerance( face );
+       myTree            = triaTree;
++#if OCC_VERSION_HEX < 0x070600
+       myNodes           = & tr->Nodes();
++#else
++      TColgp_Array1OfPnt* trNodes = new TColgp_Array1OfPnt( 1, tr->NbNodes() );
++      for (Standard_Integer i = myNodes->Lower(); i <= myNodes->Upper(); i++)
++      {
++        trNodes->SetValue(i, tr->Node(i));
++      }
++      myNodes = trNodes;
++      myOwnNodes = true;
++#endif
+       myPolyTrias       = & tr->Triangles();
+       myTriasDeflection = tr->Deflection();
+       if ( !loc.IsIdentity() ) // transform nodes if necessary
+       {
+         TColgp_Array1OfPnt* trsfNodes = new TColgp_Array1OfPnt( myNodes->Lower(), myNodes->Upper() );
+         trsfNodes->Assign( *myNodes );
++#if OCC_VERSION_HEX >= 0x070600
++        delete myNodes; // it's already a copy
++#endif
+         myNodes    = trsfNodes;
+         myOwnNodes = true;
+         const gp_Trsf& trsf = loc;
+diff --git src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Quadrangle_2D.cpp src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Quadrangle_2D.cpp
+index f7ac411d9a..5d5c15c366 100644
+--- src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Quadrangle_2D.cpp
++++ src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_Quadrangle_2D.cpp
+@@ -50,7 +50,7 @@
+ #include <Geom_Surface.hxx>
+ #include <NCollection_DefineArray2.hxx>
+ #include <Precision.hxx>
+-#include <Quantity_Parameter.hxx>
++#include <Standard_Real.hxx>
+ #include <TColStd_SequenceOfInteger.hxx>
+ #include <TColStd_SequenceOfReal.hxx>
+ #include <TColgp_SequenceOfXY.hxx>
+diff --git src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_ViscousLayers.cpp src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_ViscousLayers.cpp
+index 8ee0e26832..e9f4618305 100644
+--- src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_ViscousLayers.cpp
++++ src/3rdParty/salomesmesh/src/StdMeshers/StdMeshers_ViscousLayers.cpp
+@@ -44,7 +44,10 @@
+ #include "SMESH_subMeshEventListener.hxx"
+ #include "StdMeshers_FaceSide.hxx"
+ 
++#include <Standard_Version.hxx>
++#if OCC_VERSION_HEX < 0x070600
+ #include <Adaptor3d_HSurface.hxx>
++#endif
+ #include <BRepAdaptor_Curve2d.hxx>
+ #include <BRepAdaptor_Surface.hxx>
+ #include <BRepLProp_SLProps.hxx>
+@@ -1340,8 +1343,13 @@ namespace VISCOUS_3D
+     //case GeomAbs_SurfaceOfExtrusion:
+     case GeomAbs_OffsetSurface:
+     {
++#if OCC_VERSION_HEX < 0x070600
+       Handle(Adaptor3d_HSurface) base = surface.BasisSurface();
+       return getRovolutionAxis( base->Surface(), axis );
++#else
++      Handle(Adaptor3d_Surface) base = surface.BasisSurface();
++      return getRovolutionAxis( *base, axis );
++#endif
+     }
+     default: return false;
+     }
