@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Dolibarr was installed
+Dolibarr 14 was installed
 
 1) Create a user and a database for dolibarr to store all
    its tables in (or choose an existing database).
