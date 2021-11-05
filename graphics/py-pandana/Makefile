@@ -26,6 +26,6 @@ USE_PYTHON=	autoplist concurrent cython distutils
 CFLAGS+=	-DNO_TR1_MEMORY
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pandana/cyaccess*.so
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
