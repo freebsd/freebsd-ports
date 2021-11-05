@@ -17,7 +17,7 @@ BUILD_DEPENDS=	geos>=3.5:graphics/geos \
 LIB_DEPENDS=	libgeos.so:graphics/geos
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.13,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:
