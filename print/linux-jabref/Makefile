@@ -18,7 +18,7 @@ COMMENT=	BibTeX native bibliographic reference manager (Linux version)
 LICENSE=	BSD2CLAUSE GPLv2 GPLv3
 LICENSE_COMB=	multi
 
-USES=		desktop-file-utils linux
+USES=		cpe desktop-file-utils linux
 USE_LINUX=	gtk3 libglvnd
 
 NO_BUILD=	yes
