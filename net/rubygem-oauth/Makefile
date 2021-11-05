@@ -1,7 +1,7 @@
 # Created by: wenheping <wenheping@gmail.com>
 
 PORTNAME=	oauth
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
