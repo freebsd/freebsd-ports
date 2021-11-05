@@ -40,6 +40,7 @@ share/awk/group.awk
 share/awk/have_mpfr.awk
 share/awk/inplace.awk
 share/awk/intdiv0.awk
+share/awk/isnumeric.awk
 share/awk/join.awk
 share/awk/libintl.awk
 share/awk/noassign.awk
@@ -56,6 +57,7 @@ share/awk/shellquote.awk
 share/awk/strtonum.awk
 share/awk/walkarray.awk
 share/awk/zerofile.awk
+%%NLS%%share/locale/bg/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gawk.mo
@@ -71,6 +73,7 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gawk.mo

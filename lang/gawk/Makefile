@@ -1,7 +1,7 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
 
 PORTNAME=	gawk
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
