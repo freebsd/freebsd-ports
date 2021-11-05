@@ -20,11 +20,12 @@
 
 name=wireguard
 rcvar=wireguard_enable
-extra_commands="reload"
+extra_commands="reload status"
 
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 reload_cmd="${name}_reload"
+status_cmd="${name}_status"
 
 wireguard_start()
 {
@@ -95,6 +96,17 @@ wireguard_reload()
 	for interface in ${wireguard_interfaces}; do
 		%%PREFIX%%/bin/wg syncconf ${interface} ${wireguard_confdir}/${interface}.conf
 	done
+}
+
+wireguard_status()
+{
+	wireguard_status="0"
+
+	for interface in ${wireguard_interfaces}; do
+		%%PREFIX%%/bin/wg show ${interface} || wireguard_status="1"
+	done
+
+	return ${wireguard_status}
 }
 
 load_rc_config $name
