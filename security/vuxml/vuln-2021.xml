@@ -1,3 +1,39 @@
+  <vuln vid="930def19-3e05-11ec-9ba8-002324b2fba8">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/48990">
+	  <p>debug/macho fails out when loading a file that contains a dynamic
+	    symbol table command that indicates a larger number of symbols than
+	    exist in the loaded symbol table.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/48085">
+	  <p>Previously, opening a zip with (*Reader).Open could result in a
+	    panic if the zip contained a file whose name was exclusively made up
+	    of slash characters or ".." path elements. Open could also panic if
+	    passed the empty string directly as an argument.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41771</cvename>
+      <url>https://github.com/golang/go/issues/48990</url>
+      <cvename>CVE-2021-41772</cvename>
+      <url>https://github.com/golang/go/issues/48085</url>
+    </references>
+    <dates>
+      <discovery>2021-11-04</discovery>
+      <entry>2021-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2bf56269-90f8-4a82-b82f-c0e289f2a0dc">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
