@@ -23,7 +23,7 @@ MAKE_ENV=	USE_SHARED_BROTLI=1
 
 post-patch:
 # Clean up bundled libraries
-	@${RM} -fr ${WRKSRC}/libbrotli/
+	@${RM} -r ${WRKSRC}/libbrotli/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
