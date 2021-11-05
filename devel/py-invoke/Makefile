@@ -18,6 +18,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${RM} -fr ${WRKSRC}/invoke/vendor/yaml2
+	@${RM} -r ${WRKSRC}/invoke/vendor/yaml2
 
 .include <bsd.port.mk>
