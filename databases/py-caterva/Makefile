@@ -24,7 +24,7 @@ USE_PYTHON=	autoplist concurrent cython distutils
 
 post-patch:
 # Clean up bundled libraries
-	@${RM} -fr ${WRKSRC}/caterva/caterva/
+	@${RM} -r ${WRKSRC}/caterva/caterva/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
