@@ -1,7 +1,7 @@
 # Created by: Stephon Chen <stephon@gmail.com>
 
 PORTNAME=	Net-SSL-ExpireDate
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
