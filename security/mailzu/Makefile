@@ -2,7 +2,7 @@
 
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MailZu%200.8RC3
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -17,33 +17,37 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
 		${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
 		${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime@${PHP_FLAVOR} \
-		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR} \
-		${PEARDIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode@${PHP_FLAVOR}
+		${PEARDIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode@${PHP_FLAVOR} \
+		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
 
-PEARDIR?=	${LOCALBASE}/share/pear
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-SUB_FILES=	pkg-message
-NO_BUILD=	yes
-NO_ARCH=	yes
-USE_PHP=	sockets
 USES=		php:flavors,web
+USE_PHP=	sockets
 
-OPTIONS_DEFINE=	IMAP LDAP DOCS
-OPTIONS_MULTI=	SQL
-OPTIONS_MULTI_SQL=	MYSQL PGSQL
+NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
+PLIST_SUB=	WWWGRP="${WWWGRP}" \
+		WWWOWN="${WWWOWN}"
+PORTDOCS=	*
+
+OPTIONS_DEFINE=		DOCS IMAP LDAP
 OPTIONS_DEFAULT=	MYSQL
-SQL_DESC=	SQL sotage backend
-MYSQL_DESC=	Use MySQL database storage/auth backend (default)
-PGSQL_DESC=	Use PostgreSQL database/auth storage backend
+OPTIONS_MULTI=		SQL
+OPTIONS_MULTI_SQL=	MYSQL PGSQL
+
 IMAP_DESC=	Use IMAP auth backend
 LDAP_DESC=	Use LDAP auth backend
+MYSQL_DESC=	Use MySQL database storage/auth backend (default)
+PGSQL_DESC=	Use PostgreSQL database/auth storage backend
+SQL_DESC=	SQL sotage backend
 
-MYSQL_USE=	PHP=mysqli
-PGSQL_USE=	PHP=pgsql
 IMAP_USE=	PHP=imap
 LDAP_USE=	PHP=ldap
+MYSQL_USE=	PHP=mysqli
+PGSQL_USE=	PHP=pgsql
 
-PORTDOCS=	*
+PEARDIR?=	${LOCALBASE}/share/pear
 
 post-patch:
 	${INSTALL_DATA} ${FILESDIR}/pl.*.php ${WRKSRC}/lang/
@@ -54,7 +58,6 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" \
 		${STAGEDIR}${WWWDIR} "! -name '*.orig'")
 	(cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${STAGEDIR}${WWWDIR})
-	${CHMOD} 644 ${STAGEDIR}${WWWDIR}/config/config.php.sample
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
