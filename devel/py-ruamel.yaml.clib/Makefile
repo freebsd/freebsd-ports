@@ -17,7 +17,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-	${RM} -fr ${STAGEDIR}${PYTHON_SITELIBDIR}/ruamel
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/ruamel
 	${REINPLACE_CMD} -e '/LICENSE/d; /__init__.py/d' ${_PYTHONPKGLIST}
 
 .include <bsd.port.mk>
