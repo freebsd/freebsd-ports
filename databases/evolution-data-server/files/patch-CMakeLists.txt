@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-06-02 14:29:11 UTC
+--- CMakeLists.txt.orig	2021-11-05 17:23:17 UTC
 +++ CMakeLists.txt
-@@ -503,6 +503,7 @@ endif(WITH_LIBDB)
+@@ -521,6 +521,7 @@ endif(WITH_LIBDB)
  # ******************************
  
  set(CMAKE_REQUIRED_LIBRARIES "-liconv")

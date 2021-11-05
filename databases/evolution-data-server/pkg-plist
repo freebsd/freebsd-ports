@@ -22,6 +22,7 @@ include/evolution-data-server/camel/camel-folder-summary.h
 include/evolution-data-server/camel/camel-folder-thread.h
 include/evolution-data-server/camel/camel-folder.h
 include/evolution-data-server/camel/camel-gpg-context.h
+include/evolution-data-server/camel/camel-hostname-utils.h
 include/evolution-data-server/camel/camel-html-parser.h
 include/evolution-data-server/camel/camel-iconv.h
 include/evolution-data-server/camel/camel-index.h
