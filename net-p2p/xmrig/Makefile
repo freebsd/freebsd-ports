@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	xmrig
-PORTVERSION=	6.15.2
+PORTVERSION=	6.15.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to compile: g++9: error: unrecognized command line option '-maes'; did you mean '-mads'?
-BROKEN_riscv64=		fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/cpuid.h:11:2: error: this header is for x86 only
+BROKEN_riscv64=	fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/cpuid.h:11:2: error: this header is for x86 only
 
 USES=		cmake compiler:c++11-lang ssl
 USE_GITHUB=	yes
