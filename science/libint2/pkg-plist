@@ -18,6 +18,7 @@ include/libint2/boys.h
 include/libint2/boys_cheb7.h
 include/libint2/boys_cheb7_v2.h
 include/libint2/boys_fwd.h
+include/libint2/braket.h
 include/libint2/cartesian.h
 include/libint2/cgshell_ordering.h
 include/libint2/cgshellinfo.h
@@ -26,6 +27,7 @@ include/libint2/chemistry/sto3g_atomic_density.h
 include/libint2/config.h
 include/libint2/cxxapi.h
 include/libint2/deriv_iter.h
+include/libint2/deriv_map.h
 include/libint2/diis.h
 include/libint2/engine.h
 include/libint2/engine.impl.h
@@ -42,6 +44,7 @@ include/libint2/solidharmonics.h
 include/libint2/statics_definition.h
 include/libint2/tenno_cheb.h
 include/libint2/tenno_cheb15.h
+include/libint2/tensor.h
 include/libint2/util/any.h
 include/libint2/util/array_adaptor.h
 include/libint2/util/compressed_pair.h
@@ -61,11 +64,10 @@ include/libint2/util/type_traits.h
 include/libint2/util/vector.h
 include/libint2/util/vector_ppc.h
 include/libint2/util/vector_x86.h
-lib/cmake/libint2/FindLibint2.cmake
+lib/libint2.so
 lib/libint2.so.2
 lib/libint2.so.2.0.3
 %%STATIC%%lib/libint2.a
-lib/libint2.so
 libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/3-21g.g94
 %%DATADIR%%/%%VER%%/basis/6-311g**.g94
@@ -148,3 +150,4 @@ libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/def2-tzvppd.g94
 %%DATADIR%%/%%VER%%/basis/mini.g94
 %%DATADIR%%/%%VER%%/basis/sto-3g.g94
+%%DATADIR%%/%%VER%%/basis/sto-6g.g94
