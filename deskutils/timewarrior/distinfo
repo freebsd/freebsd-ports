@@ -1,5 +1,5 @@
-TIMESTAMP = 1599010542
-SHA256 (GothenburgBitFactory-timewarrior-v1.4.2_GH0.tar.gz) = bedfa22af67fd382ea2d5d470b40079122474ba86482fb11ff06cec98bb1433c
-SIZE (GothenburgBitFactory-timewarrior-v1.4.2_GH0.tar.gz) = 184170
-SHA256 (GothenburgBitFactory-libshared-b8b5796_GH0.tar.gz) = b56a775e5b40f61bf228784b3bbf34ed6f9ba49568257a3a5dd3522a4f8e35eb
-SIZE (GothenburgBitFactory-libshared-b8b5796_GH0.tar.gz) = 148776
+TIMESTAMP = 1636159987
+SHA256 (GothenburgBitFactory-timewarrior-v1.4.3_GH0.tar.gz) = 32613c8b0adb0d54b680d4bca4e91b4f0a1cc541905a684a794161b6ecb872ef
+SIZE (GothenburgBitFactory-timewarrior-v1.4.3_GH0.tar.gz) = 186633
+SHA256 (GothenburgBitFactory-libshared-c1760be_GH0.tar.gz) = def13c1dd413c2ae88d23e6919bd328e768838c3027a4995764e0c25fbd74394
+SIZE (GothenburgBitFactory-libshared-c1760be_GH0.tar.gz) = 159502
