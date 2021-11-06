@@ -23,5 +23,6 @@ EOM
 	maximum_version: "5.72.0",
 	message: <<EOM
 Solid now has the hald backend completely disabled.
+EOM
 }
 ]
