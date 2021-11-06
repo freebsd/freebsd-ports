@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: arti
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# arti_enable (bool):	Set to NO by default.
+#			Set it to YES to enable arti.
+# arti_config (path):	Set to %%PREFIX%%/etc/arti/arti.cf
+#			by default.
+# arti_user (str):      Arti daemon user. Default: %%USER%%
+# arti_pidfile (str):   Arti pid file.  Default: /var/run/arti/arti.pid
+
+
+. /etc/rc.subr
+
+name=arti
+rcvar=arti_enable
+
+load_rc_config $name
+
+: ${arti_enable:="NO"}
+: ${arti_config="%%PREFIX%%/etc/arti/arti.toml"}
+: ${arti_pidfile="/var/run/arti/arti.pid"}
+
+command=/usr/sbin/daemon
+arti=%%PREFIX%%/bin/${name}
+
+command_args="-c -f -o /var/log/arti/arti.log -P $arti_pidfile $arti proxy -c $arti_config"
+
+run_rc_command "$1"
