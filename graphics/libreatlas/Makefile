@@ -11,6 +11,9 @@ COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Abandoned upstream, no new release since 2012
+EXPIRATION_DATE=2021-12-31
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 		libspatialite.so:databases/spatialite \
