@@ -1,5 +1,5 @@
 PORTNAME=	mariadb
-PORTVERSION=	3.1.11
+PORTVERSION=	3.1.14
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirror.layerjet.com/${SITESDIR}/ \
 		http://mirror.switch.ch/mirror/${SITESDIR}/
 PKGNAMESUFFIX=	-connector-odbc
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-ga-src
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-src
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	MariaDB database connector for odbc
@@ -36,7 +36,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib/mariadb
 
 SSL_CMAKE_ON=	-DWITH_OPENSSL=on
 
-PLIST_FILES=	lib/mariadb/libmaodbc.so
+PLIST_FILES=	lib/mariadb/libmaodbc.so \
+		libdata/pkgconfig/libmaodbc.pc
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX} \
