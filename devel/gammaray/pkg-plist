@@ -149,7 +149,7 @@ mkspecs/modules/qt_GammaRayKItemModels.pri
 mkspecs/modules/qt_GammaRayLauncher.pri
 mkspecs/modules/qt_GammaRayLauncherUi.pri
 mkspecs/modules/qt_GammaRayUi.pri
-share/appdata/GammaRay.appdata.xml
+share/metainfo/com.kdab.GammaRay.metainfo.xml
 share/applications/GammaRay.desktop
 share/icons/hicolor/16x16/apps/GammaRay.png
 share/icons/hicolor/16x16@2/apps/GammaRay.png
