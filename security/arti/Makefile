@@ -1,5 +1,6 @@
 PORTNAME=	arti
 DISTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -8,11 +9,17 @@ COMMENT=	Implementation of Tor, in Rust
 LICENSE=	MIT
 
 USES=		cargo ssl sqlite
+USE_RC_SUBR=	arti
+#GROUPS=		_arti
+#USERS=		_arti
+#SUB_LIST=	USER="${USERS}" GROUP="${GROUPS}"
+#PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
 GL_COMMIT=	d272afb3417030b5f6bc3febfe9b0989058d5795
 CARGO_INSTALL=	no
+WITH_FEATURES=	tokio
 CARGO_CRATES=	adler-1.0.2 \
 		aes-0.7.5 \
 		ahash-0.7.6 \
@@ -306,12 +313,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		zstd-safe-3.1.0+zstd.1.4.9 \
 		zstd-sys-1.5.0+zstd.1.4.9
 
-PLIST_FILES=	bin/arti
-
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/arti
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/log/arti ${STAGEDIR}/var/run/arti ${STAGEDIR}/var/db/arti
+	${INSTALL_DATA} ${WRKSRC}/crates/arti/src/arti_defaults.toml ${STAGEDIR}${ETCDIR}/arti.toml.sample
 
 .include <bsd.port.mk>
