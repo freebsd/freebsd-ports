@@ -1,7 +1,6 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -56,8 +55,8 @@ NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	13
 JDK_MINOR_VERSION=	0
-JDK_PATCH_VERSION=	8
-JDK_BUILD_NUMBER=	5
+JDK_PATCH_VERSION=	10
+JDK_BUILD_NUMBER=	1
 BSD_JDK_VERSION=	1
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
@@ -131,12 +130,7 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 .else
 MAKE_ENV+=	USE_CLANG=true
 .if ${COMPILER_VERSION} >= 130
-# PR258954: OpenJDK <= 13 crash due to undefined behavior with clang >= 13
-# See also https://bugs.openjdk.java.net/browse/JDK-8229258
-LLVM_VER=	12
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CC=		${LOCALBASE}/bin/clang${LLVM_VER}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
+CONFIGURE_ARGS+=	--with-extra-cflags="-Wno-unused-but-set-parameter"
 .endif
 .endif
 
