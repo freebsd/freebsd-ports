@@ -83,6 +83,10 @@ LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
+.if ${ARCH} == powerpc64
+CMAKE_ARGS+=		-DENABLE_LTO:BOOL=OFF
+.endif
+
 post-install:
 	@${MKDIR} \
 		${STAGEDIR}/var/log/rspamd \
