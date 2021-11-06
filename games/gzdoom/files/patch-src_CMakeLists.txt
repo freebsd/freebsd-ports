@@ -1,16 +1,23 @@
---- src/CMakeLists.txt.orig	2019-05-04 19:58:35 UTC
+--- src/CMakeLists.txt.orig	2021-11-07 02:36:36 UTC
 +++ src/CMakeLists.txt
-@@ -1457,10 +1457,9 @@ if( ZD_CMAKE_COMPILER_IS_GNUCXX_COMPATIBLE )
- 	# Need to enable intrinsics for these files.
- 	if( SSE_MATTERS )
- 		set_source_files_properties(
--			gl/system/gl_swframebuffer.cpp
--			polyrenderer/poly_all.cpp
--			swrenderer/r_all.cpp
--			x86.cpp
-+			rendering/polyrenderer/poly_all.cpp
-+			rendering/swrenderer/r_all.cpp
-+			utility/x86.cpp
- 			PROPERTIES COMPILE_FLAGS "-msse2 -mmmx" )
- 	endif()
+@@ -1386,14 +1386,12 @@ if( CMAKE_COMPILER_IS_GNUCXX )
  endif()
+ if( ZD_CMAKE_COMPILER_IS_GNUCXX_COMPATIBLE )
+ 	# Need to enable intrinsics for these files.
+-	if( SSE_MATTERS )
+-		set_property( SOURCE
+-			common/rendering/polyrenderer/poly_all.cpp
+-			rendering/swrenderer/r_all.cpp
+-			utility/palette.cpp
+-			utility/x86.cpp
+-			APPEND_STRING PROPERTY COMPILE_FLAGS " -msse2 -mmmx" )
+-	endif()
++	set_property( SOURCE
++		common/rendering/polyrenderer/poly_all.cpp
++		common/utility/palette.cpp
++		common/utility/x86.cpp
++		rendering/swrenderer/r_all.cpp
++		APPEND_STRING PROPERTY COMPILE_FLAGS " ${SSE2_ENABLE}" )
+ endif()
+ 
+ if( APPLE )
