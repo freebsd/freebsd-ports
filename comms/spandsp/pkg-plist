@@ -1,5 +1,6 @@
 include/spandsp.h
 include/spandsp/adsi.h
+include/spandsp/alloc.h
 include/spandsp/arctan2.h
 include/spandsp/async.h
 include/spandsp/at_interpreter.h
@@ -14,6 +15,7 @@ include/spandsp/complex_filters.h
 include/spandsp/complex_vector_float.h
 include/spandsp/crc.h
 include/spandsp/dc_restore.h
+include/spandsp/data_modems.h
 include/spandsp/dds.h
 include/spandsp/dtmf.h
 include/spandsp/echo.h
@@ -84,6 +86,7 @@ include/spandsp/private/awgn.h
 include/spandsp/private/bell_r2_mf.h
 include/spandsp/private/bert.h
 include/spandsp/private/bitstream.h
+include/spandsp/private/data_modems.h
 include/spandsp/private/dtmf.h
 include/spandsp/private/echo.h
 include/spandsp/private/fax.h
@@ -102,6 +105,9 @@ include/spandsp/private/modem_connect_tones.h
 include/spandsp/private/modem_echo.h
 include/spandsp/private/noise.h
 include/spandsp/private/oki_adpcm.h
+include/spandsp/private/playout.h
+include/spandsp/private/plc.h
+include/spandsp/private/power_meter.h
 include/spandsp/private/queue.h
 include/spandsp/private/schedule.h
 include/spandsp/private/sig_tone.h
@@ -120,6 +126,10 @@ include/spandsp/private/t4_rx.h
 include/spandsp/private/t4_t6_decode.h
 include/spandsp/private/t4_t6_encode.h
 include/spandsp/private/t4_tx.h
+include/spandsp/private/t42.h
+include/spandsp/private/t43.h
+include/spandsp/private/t81_t82_arith_coding.h
+include/spandsp/private/t85.h
 include/spandsp/private/time_scale.h
 include/spandsp/private/timezone.h
 include/spandsp/private/tone_detect.h
@@ -143,10 +153,14 @@ include/spandsp/t4_rx.h
 include/spandsp/t4_t6_decode.h
 include/spandsp/t4_t6_encode.h
 include/spandsp/t4_tx.h
+include/spandsp/t42.h
+include/spandsp/t43.h
+include/spandsp/t81_t82_arith_coding.h
+include/spandsp/t85.h
 include/spandsp/timezone.h
 include/spandsp/v18.h
 lib/libspandsp.a
 lib/libspandsp.so
-lib/libspandsp.so.2
-lib/libspandsp.so.2.0.0
+lib/libspandsp.so.3
+lib/libspandsp.so.3.0.0
 libdata/pkgconfig/spandsp.pc

@@ -2,7 +2,7 @@
 
 PORTNAME=	libsupertone
 PORTVERSION=	0.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.soft-switch.org/downloads/unicall/
 

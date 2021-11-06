@@ -1,6 +1,6 @@
---- Makefile.am.orig	2014-09-03 14:15:04.000000000 +0300
-+++ Makefile.am	2014-09-03 14:15:16.000000000 +0300
-@@ -61,7 +61,7 @@ SUBDIRS = src $(MAYBE_DOC) $(MAYBE_TESTD
+--- Makefile.am.orig	2021-08-14 20:26:24 UTC
++++ Makefile.am
+@@ -60,7 +60,7 @@ SUBDIRS = src $(MAYBE_DOC) $(MAYBE_TESTS)
  
  DIST_SUBDIRS = src doc test-data spandsp-sim tests
  

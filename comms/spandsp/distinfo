@@ -1,2 +1,3 @@
-SHA256 (spandsp-0.0.6.tar.gz) = cc053ac67e8ac4bb992f258fd94f275a7872df959f6a87763965feabfdcc9465
-SIZE (spandsp-0.0.6.tar.gz) = 3309837
+TIMESTAMP = 1634216290
+SHA256 (freeswitch-spandsp-3.0.0.g20211014-284fe91_GH0.tar.gz) = 288b12eb058d615c526e85fe0fe339293e5713b3513e7918043e93e52e4efd49
+SIZE (freeswitch-spandsp-3.0.0.g20211014-284fe91_GH0.tar.gz) = 3584374
