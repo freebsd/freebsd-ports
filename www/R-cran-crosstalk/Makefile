@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	crosstalk
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
