@@ -1,0 +1,119 @@
+.\"
+.\" SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+.\"
+.\" Copyright (c) [year] [your name]
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" Note: The date here should be updated whenever a non-trivial
+.\" change is made to the manual page.
+.Dd November, 6 2021
+.Dt ZPOOL-IOSTAT-VIZ 1
+.Os
+.Sh NAME
+.Nm zpool-iostat-viz
+.Nd Display ZFS pool latency histogram
+.Sh SYNOPSIS
+.Nm
+.Op Fl d , -diff
+.Op Fl -by Ar d|m
+.Op Fl f Ar file , Fl -from-file Ar file
+.Op Fl -pt Ar palette , Fl -pal-time Ar palette
+.Op Fl -pc Ar palette , Fl -pal-count Ar palette
+.Op Fl -digits
+.Op Fl -symbols
+.Op Fl -help-colors
+.Op Ar parts ...
+.Sh DESCRIPTION
+The
+.Nm
+command displays ZFS pool latency information in a more intuitive format
+than the
+.Xr zpool 8
+command invoked as
+.Dq zpool -r .
+Latency information is displayed in a matrix with shorter latency times
+at the top, longer times at the bottom, and columns for the selected
+pools or devices the pools consist of.
+.Pp
+.Bl -tag -width "--help-colors"
+.It Fl -by Ar d|m
+Slice data by device
+.Pq Fl -by Ar d
+or by measurement
+.Pq Fl -by Ar m .
+Use the left and right arrow keys on your keyboard to select one of the
+available screens.
+.It Fl d , -diff
+Show histogram for 3 seconds intervals instead of counts cumulated
+over the run-time of the program.
+The sampling period can be adjusted with the up and down arrow keys.
+.It Fl -digits
+Use
+.Dq ".0123456789#"
+as histogram values.
+.It Fl -from-file Ar file
+Read values from a file containing the output of:
+
+.Dl zpool iostat -wvHp
+.It Fl -help-colors
+List the available color palettes for the
+.Fl -pc
+and
+.Fl -pt
+options.
+.It Fl -pt Ar palette , Fl -pal-time Ar palette
+Select a color palette for the display of time buckets.
+.It Fl -pc Ar palette , Fl -pal-count Ar palette
+Select a color palette for the display of bucket populationss.
+.It Fl -symbols
+Use
+.Dq " .:;*#"
+as histogram values.
+.It Ar parts
+Select parts or vdevs to display.
+By default, all devices
+.Pq including cache and ZIL devices ,
+the logical elements the pools consists of
+.Pq mirror, raidz1, ...
+and all pools are displayed.
+.El
+.Sh EXIT STATUS
+The
+.Nm
+program always returns an exit status of 0.
+.Sh EXAMPLES
+The following is an example of a typical usage
+of the
+.Nm
+command:
+.Pp
+.Dl "zpool-iostats-viz -d"
+.Pp
+.Dl "zpool-iostats-viz --by d --symbols tank"
+.Sh SEE ALSO
+.Xr zpool 8
+.Sh AUTHORS
+The
+.Nm
+program was written by
+.An Chad Miller Aq Mt chad@cornsilk.net .

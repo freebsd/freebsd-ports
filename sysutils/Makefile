@@ -1586,6 +1586,7 @@
     SUBDIR += znapzend
     SUBDIR += zogftw
     SUBDIR += zoxide
+    SUBDIR += zpool-iostat-viz
     SUBDIR += zrep
     SUBDIR += zrepl
     SUBDIR += zsd

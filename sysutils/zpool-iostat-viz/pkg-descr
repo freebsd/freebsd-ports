@@ -1,0 +1,8 @@
+This tool displays ZFS pool latency histogram in a way that should
+be more intuitive than the numbers output by "zpool iostat -r".
+
+Letters from "." over "a" to "z" and finally "^" are displayed for
+higher numbers of latencies observed either over the run-time of
+the program or within each 3 second interval.
+
+WWW: https://github.com/chadmiller/zpool-iostat-viz
