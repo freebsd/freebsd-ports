@@ -12,6 +12,9 @@ COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
 LICENSE=	MPL11 GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+DEPRECATED=	Deprecated in favour of graphics/librasterlite2
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libspatialite.so:databases/spatialite \
 		libgeotiff.so:graphics/libgeotiff \
 		libjbig.so:graphics/jbigkit \
