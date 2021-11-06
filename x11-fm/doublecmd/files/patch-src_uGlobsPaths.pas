@@ -13,7 +13,7 @@
    gpPixmapPath : String = '';  // path to pixmaps
    gpHighPath : String = ''; // editor highlighter directory
    gpThumbCacheDir : String = ''; // thumbnails cache directory
-+  gpDocsDir : String = '%%DOCSDIR%%'; // directory for help files
++  gpDocsDir : String = '%%DOCSDIR%%/'; // directory for help files
  
  //Global Configuration Filename
  const
