@@ -7,18 +7,20 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.sandroid.org/GutenMark/wasftp.GutenMark/SoftwareSnapshots/
 DISTNAME=	GutenMark_source_dev-${PORTVERSION}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Attractively formatting Project Gutenberg texts
 
-WRKSRC=		${WRKDIR}/GutenMark-source
+DEPRECATED=	No releases since 2011
+EXPIRATION_DATE=2022-02-28
 
 USES=		compiler:c++11-lib gmake
 USE_CXXSTD=	c++11
 USE_WX=		3.0
 ALL_TARGET=	default
+WRKSRC=		${WRKDIR}/GutenMark-source
 
 PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \
-		%%DATADIR%%/convert.jpg %%DATADIR%%/logo.jpg
+		${DATADIR}/convert.jpg ${DATADIR}/logo.jpg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|g ; \
