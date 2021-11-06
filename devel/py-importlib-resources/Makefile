@@ -1,5 +1,5 @@
 PORTNAME=	importlib-resources
-PORTVERSION=	3.3.0
+PORTVERSION=	5.4.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,8 @@ USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zipp>=0:devel/py-zipp@${PY_FLAVOR}
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zipp>=3.1.0:devel/py-zipp@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
