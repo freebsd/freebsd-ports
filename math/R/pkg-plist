@@ -780,6 +780,8 @@ lib/R/library/mgcv/help/paths.rds
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/R.css
 lib/R/library/mgcv/libs/mgcv.so
+%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/R-mgcv.mo
+%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/de/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/de/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/en@quot/LC_MESSAGES/R-mgcv.mo
@@ -1088,6 +1090,9 @@ lib/R/library/survival/doc/compete.pdf
 lib/R/library/survival/doc/concordance.R
 lib/R/library/survival/doc/concordance.Rnw
 lib/R/library/survival/doc/concordance.pdf
+lib/R/library/survival/doc/discrim.R
+lib/R/library/survival/doc/discrim.Rnw
+lib/R/library/survival/doc/discrim.pdf
 lib/R/library/survival/doc/index.html
 lib/R/library/survival/doc/multi.Rnw
 lib/R/library/survival/doc/multi.pdf

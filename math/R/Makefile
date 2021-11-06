@@ -1,14 +1,9 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 
 PORTNAME=	R
-DISTVERSION=	4.1.1
-PORTREVISION=	3
+DISTVERSION=	4.1.2
 CATEGORIES=	math lang
-MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||} \
-		CRAN/src/contrib/Archive/mgcv:mgcv
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mgcv_1.8-37${EXTRACT_SUFX}:mgcv
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Language for statistical computing and graphics
@@ -144,9 +139,6 @@ USES+=		fortran
 .endif
 
 post-patch:
-	@${CP} ${DISTDIR}/mgcv_1.8-37${EXTRACT_SUFX} ${WRKSRC}/src/library/Recommended/
-	@${RM} ${WRKSRC}/src/library/Recommended/mgcv.tgz ${WRKSRC}/src/library/Recommended/mgcv_1.8-36.tar.gz
-	@${LN} -s ${WRKSRC}/src/library/Recommended/mgcv_1.8-37${EXTRACT_SUFX} ${WRKSRC}/src/library/Recommended/mgcv.tgz
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 		-e "s|%%FULLVER%%|${DISTVERSION}|" \
