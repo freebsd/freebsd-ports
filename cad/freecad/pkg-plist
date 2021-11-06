@@ -1686,4 +1686,6 @@ FreeCAD/share/pixmaps/freecad.xpm
 FreeCAD/share/thumbnailers/FreeCAD.thumbnailer
 bin/FreeCAD
 bin/FreeCADCmd
+@dir FreeCAD
+@dir FreeCAD/share
 @dir FreeCAD/share/Mod/Material/StandardMaterial/Tools
