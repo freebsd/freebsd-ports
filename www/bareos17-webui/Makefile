@@ -10,6 +10,9 @@ COMMENT=	PHP-Frontend to manage Bareos over the web
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Deprecated, no new release since 2020
+EXPIRATION_DATE=2021-12-05
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bareos
 GH_PROJECT=	bareos-webui
