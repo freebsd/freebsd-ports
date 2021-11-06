@@ -1,0 +1,14 @@
+The included check_raid provides LibreNMS JSON app or
+Nagios style check output.
+
+The RAID checking is supported for the following.
+
+- Adaptec arcconf
+- Avago tw_cli
+- GEOM
+-- mirror
+-- graid3
+-- graid
+- ZFS
+
+WWW: https://metacpan.org/dist/Device-RAID-Poller

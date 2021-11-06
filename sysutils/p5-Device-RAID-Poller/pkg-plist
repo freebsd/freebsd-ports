@@ -1,0 +1,17 @@
+bin/check_raid
+%%SITE_PERL%%/Device/RAID/Poller.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/FBSD_gmirror.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/FBSD_graid.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/FBSD_graid3.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/ZFS.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/Linux_mdadm.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/Avago_tw_cli.pm
+%%SITE_PERL%%/Device/RAID/Poller/Backends/Adaptec_arcconf.pm
+%%PERL5_MAN3%%/Device::RAID::Poller.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::FBSD_gmirror.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::FBSD_graid.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::FBSD_graid3.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::ZFS.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::Linux_mdadm.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::Avago_tw_cli.3.gz
+%%PERL5_MAN3%%/Device::RAID::Poller::Backends::Adaptec_arcconf.3.gz
