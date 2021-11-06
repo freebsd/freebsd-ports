@@ -1,5 +1,5 @@
 PORTNAME=	redisdesktopmanager
-PORTVERSION=	2021.7
+PORTVERSION=	2021.8
 CATEGORIES=	databases
 
 MAINTAINER=	swills@FreeBSD.org
@@ -30,12 +30,12 @@ DESKTOP_ENTRIES=	"Redis Desktop Manager" \
 			""
 GH_TUPLE=		uglide:RedisDesktopManager:${PORTVERSION}:DEFAULT/RedisDesktopManager-${PORTVERSION} \
 			benlau:asyncfuture:5ca0304:asyncfuture/3rdparty/qredisclient/3rdparty/asyncfuture \
-			uglide:qredisclient:68621f3:qredisclient/3rdparty/qredisclient \
+			uglide:qredisclient:1808ef8:qredisclient/3rdparty/qredisclient \
 			sijk:qt-unix-signals:d6a1d12:qtunixsignals/3rdparty/qt-unix-signals \
 			uglide:qsshclient:6fa7fb7:qsshclient/3rdparty/qredisclient/3rdparty/qsshclient \
 			uglide:pyotherside:c1a8cc0:pyotherside/3rdparty/pyotherside \
 			redis:hiredis:6850306:hiredis/3rdparty/qredisclient/3rdparty/hiredis \
-			simdjson:simdjson:ea3d4e7c:simdjson/3rdparty/simdjson
+			simdjson:simdjson:3bd8b0b:simdjson/3rdparty/simdjson
 USE_QT=			charts concurrent core declarative gui network \
 			quickcontrols svg widgets buildtools_build qmake_build
 QMAKE_ARGS+=		SYSTEM_LZ4=1 VERSION=${PORTVERSION}
