@@ -28,6 +28,7 @@ lib/libbareosfind.so.%%LIB_VERSION%%
 %%PYTHON%%lib/bareos/plugins/bareos-fd.py.template
 %%PYTHON%%lib/bareos/plugins/bareos_fd_consts.py
 lib/bareos/plugins/bpipe-fd.so
+lib/bareos/plugins/test-plugin-fd.so
 %%CEPHFS%%lib/bareos/plugins/cephfs-fd.so
 %%GFAPI%%lib/bareos/plugins/gfapi-fd.so
 %%PYTHON%%lib/bareos/plugins/python-fd.so
