@@ -1,7 +1,7 @@
 # Created by: Brad Hendrickse <bradh@iafrica.com>
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.92
+PORTVERSION=	1.93
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
