@@ -29,7 +29,7 @@ lib/gnt/irssi.so
 lib/gnt/s.so
 lib/libgnt.so
 lib/libgnt.so.0
-lib/libgnt.so.0.14.2
+lib/libgnt.so.0.14.3
 libdata/pkgconfig/gnt.pc
 share/gtk-doc/html/libgnt/annotation-glossary.html
 share/gtk-doc/html/libgnt/api-2.1.0.html
