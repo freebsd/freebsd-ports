@@ -558,6 +558,7 @@
     SUBDIR += electron12
     SUBDIR += elf
     SUBDIR += elf-dissector
+    SUBDIR += elfcat
     SUBDIR += elfio
     SUBDIR += elfkickers
     SUBDIR += elfsh
