@@ -103,7 +103,9 @@ include/wolfssl/openssl/asn1t.h
 include/wolfssl/openssl/bio.h
 include/wolfssl/openssl/bn.h
 include/wolfssl/openssl/buffer.h
+include/wolfssl/openssl/cmac.h
 include/wolfssl/openssl/cms.h
+include/wolfssl/openssl/compat_types.h
 include/wolfssl/openssl/conf.h
 include/wolfssl/openssl/crypto.h
 include/wolfssl/openssl/des.h
@@ -189,6 +191,7 @@ include/wolfssl/wolfcrypt/hc128.h
 include/wolfssl/wolfcrypt/hmac.h
 include/wolfssl/wolfcrypt/idea.h
 include/wolfssl/wolfcrypt/integer.h
+include/wolfssl/wolfcrypt/kdf.h
 include/wolfssl/wolfcrypt/logging.h
 include/wolfssl/wolfcrypt/md2.h
 include/wolfssl/wolfcrypt/md4.h
@@ -225,8 +228,8 @@ include/wolfssl/wolfcrypt/wolfmath.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.24
-lib/libwolfssl.so.24.5.1
+lib/libwolfssl.so.30
+lib/libwolfssl.so.30.0.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/example/client.c
