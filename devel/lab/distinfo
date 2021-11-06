@@ -1,5 +1,5 @@
-TIMESTAMP = 1614388233
-SHA256 (go/devel_lab/lab-v0.20.0/v0.20.0.mod) = 99430950ae6103df8fbb6f9124343ef6bc0cc1a3e8aa499c167fd8ece034761b
-SIZE (go/devel_lab/lab-v0.20.0/v0.20.0.mod) = 2285
-SHA256 (go/devel_lab/lab-v0.20.0/v0.20.0.zip) = b4d4a9d3355999e0e2a42b29b52cc114ed32e1c083e8cdb5d84d9dd96f7597dd
-SIZE (go/devel_lab/lab-v0.20.0/v0.20.0.zip) = 264137
+TIMESTAMP = 1636161980
+SHA256 (go/devel_lab/lab-v0.23.0/v0.23.0.mod) = 383a8c0f4f3480b961d145b59bc471adf170bb859f88c2d3a0caa24e9497a6a6
+SIZE (go/devel_lab/lab-v0.23.0/v0.23.0.mod) = 2085
+SHA256 (go/devel_lab/lab-v0.23.0/v0.23.0.zip) = d8f6607289d87e331b1ca176f7ff4a8988eae7fd4534cae3a69d4d6f0b822e77
+SIZE (go/devel_lab/lab-v0.23.0/v0.23.0.zip) = 299788
