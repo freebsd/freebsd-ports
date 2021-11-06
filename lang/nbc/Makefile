@@ -7,10 +7,13 @@ CATEGORIES=		lang
 MASTER_SITES=		SF/bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=		rene@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Programming language for the LEGO MINDSTORMS NXT
 
 LICENSE=		MPL11
+
+DEPRECATED=		No releases since 2011, for previous generation LEGO Mindstorms
+EXPIRATION_DATE=	2022-02-28
 
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		nbcunix.mak
