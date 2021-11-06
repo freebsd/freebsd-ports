@@ -13,6 +13,10 @@ COMMENT=	Transparent remote file access tool for Emacs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Not updated in 5 years and now part of Emacs
+EXPIRATION_DATE=	2022-01-01
+BROKEN=		plist issues with gvfs detection
+
 USES=		cpe emacs gmake makeinfo
 
 GNU_CONFIGURE=	yes
