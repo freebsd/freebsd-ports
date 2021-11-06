@@ -268,6 +268,8 @@
 %%WWWDIR%%/public/js/locale/it_IT/LC_MESSAGES/it_IT.po
 %%WWWDIR%%/public/js/locale/nl_BE/LC_MESSAGES/nl_BE.mo
 %%WWWDIR%%/public/js/locale/nl_BE/LC_MESSAGES/nl_BE.po
+%%WWWDIR%%/public/js/locale/pl_PL/LC_MESSAGES/pl_PL.mo
+%%WWWDIR%%/public/js/locale/pl_PL/LC_MESSAGES/pl_PL.po
 %%WWWDIR%%/public/js/locale/pt_BR/LC_MESSAGES/pt_BR.mo
 %%WWWDIR%%/public/js/locale/pt_BR/LC_MESSAGES/pt_BR.po
 %%WWWDIR%%/public/js/locale/ru_RU/LC_MESSAGES/ru_RU.mo
