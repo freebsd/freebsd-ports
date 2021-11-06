@@ -157,6 +157,7 @@ share/locale/da/LC_MESSAGES/purpose_youtube.mo
 share/locale/de/LC_MESSAGES/libpurpose_quick.mo
 share/locale/de/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/de/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/de/LC_MESSAGES/purpose_barcode.mo
 share/locale/de/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/de/LC_MESSAGES/purpose_email.mo
 share/locale/de/LC_MESSAGES/purpose_imgur.mo
@@ -188,6 +189,7 @@ share/locale/el/LC_MESSAGES/purpose_youtube.mo
 share/locale/en_GB/LC_MESSAGES/libpurpose_quick.mo
 share/locale/en_GB/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/en_GB/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/en_GB/LC_MESSAGES/purpose_barcode.mo
 share/locale/en_GB/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/en_GB/LC_MESSAGES/purpose_email.mo
 share/locale/en_GB/LC_MESSAGES/purpose_imgur.mo
@@ -342,6 +344,7 @@ share/locale/id/LC_MESSAGES/purpose_youtube.mo
 share/locale/it/LC_MESSAGES/libpurpose_quick.mo
 share/locale/it/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/it/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/it/LC_MESSAGES/purpose_barcode.mo
 share/locale/it/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/it/LC_MESSAGES/purpose_email.mo
 share/locale/it/LC_MESSAGES/purpose_imgur.mo
@@ -449,6 +452,7 @@ share/locale/nn/LC_MESSAGES/purpose_youtube.mo
 share/locale/pl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pl/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pl/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/pl/LC_MESSAGES/purpose_barcode.mo
 share/locale/pl/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/pl/LC_MESSAGES/purpose_email.mo
 share/locale/pl/LC_MESSAGES/purpose_imgur.mo
@@ -464,6 +468,7 @@ share/locale/pl/LC_MESSAGES/purpose_youtube.mo
 share/locale/pt/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pt/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pt/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/pt/LC_MESSAGES/purpose_barcode.mo
 share/locale/pt/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/pt/LC_MESSAGES/purpose_email.mo
 share/locale/pt/LC_MESSAGES/purpose_imgur.mo

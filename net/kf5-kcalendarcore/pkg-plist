@@ -130,7 +130,6 @@ include/KF5/KCalendarCore/kcalendarcore/vcalformat.h
 include/KF5/KCalendarCore/kcalendarcore/visitor.h
 include/KF5/kcalcore_version.h
 include/KF5/kcalendarcore_version.h
-lib/cmake/KF5CalendarCore/FindLibIcal.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreConfig.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreConfigVersion.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake

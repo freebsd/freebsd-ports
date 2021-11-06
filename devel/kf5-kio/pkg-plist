@@ -652,6 +652,8 @@ share/doc/HTML/ru/kcontrol5/netpref/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/netpref/index.docbook
 share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/proxy/index.docbook
+share/doc/HTML/ru/kcontrol5/smb/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/smb/index.docbook
 share/doc/HTML/ru/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/trash/index.docbook
 share/doc/HTML/ru/kcontrol5/webshortcuts/index.cache.bz2
@@ -863,6 +865,8 @@ share/kservices5/searchproviders/identica_groups.desktop
 share/kservices5/searchproviders/identica_notices.desktop
 share/kservices5/searchproviders/identica_people.desktop
 share/kservices5/searchproviders/imdb.desktop
+share/kservices5/searchproviders/invent.desktop
+share/kservices5/searchproviders/invent_repo.desktop
 share/kservices5/searchproviders/it2en.desktop
 share/kservices5/searchproviders/jamendo.desktop
 share/kservices5/searchproviders/jeeves.desktop

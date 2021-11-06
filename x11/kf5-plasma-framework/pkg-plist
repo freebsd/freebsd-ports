@@ -127,6 +127,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/ButtonShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/FlatButtonBackground.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/IconLabel.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/RaisedButtonBackground.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
@@ -232,6 +233,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/ButtonShadow.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/FlatButtonBackground.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/IconLabel.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/RaisedButtonBackground.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/RoundShadow.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/TextFieldFocus.qml
@@ -599,6 +601,7 @@ share/plasma/desktoptheme/default/widgets/panel-background.svgz
 share/plasma/desktoptheme/default/widgets/picker.svgz
 share/plasma/desktoptheme/default/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/default/widgets/plot-background.svgz
+share/plasma/desktoptheme/default/widgets/radiobutton.svgz
 share/plasma/desktoptheme/default/widgets/scrollbar.svgz
 share/plasma/desktoptheme/default/widgets/scrollwidget.svgz
 share/plasma/desktoptheme/default/widgets/slider.svgz

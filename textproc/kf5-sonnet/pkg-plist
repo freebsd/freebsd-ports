@@ -40,6 +40,9 @@ lib/libKF5SonnetUi.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/designer/sonnetui5widgets.so
 %%QT_MKSPECDIR%%/modules/qt_SonnetCore.pri
 %%QT_MKSPECDIR%%/modules/qt_SonnetUi.pri
+%%QT_QMLDIR%%/org/kde/sonnet/libsonnetquickplugin.so
+%%QT_QMLDIR%%/org/kde/sonnet/plugins.qmltypes
+%%QT_QMLDIR%%/org/kde/sonnet/qmldir
 share/locale/af/LC_MESSAGES/sonnet5_qt.qm
 share/locale/ar/LC_MESSAGES/sonnet5_qt.qm
 share/locale/as/LC_MESSAGES/sonnet5_qt.qm

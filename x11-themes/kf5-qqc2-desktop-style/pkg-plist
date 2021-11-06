@@ -26,6 +26,7 @@ lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/MenuItem.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/MenuSeparator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/Page.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/Pane.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/Popup.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ProgressBar.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/RadioButton.qml
