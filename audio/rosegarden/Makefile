@@ -1,10 +1,10 @@
 # Created by: shanee@augusta.de
 
 PORTNAME=	rosegarden
-PORTVERSION=	20.06
-PORTREVISION=	2
+DISTVERSION=	21.06.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+# MASTER_SITES=	SF
+MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/21.06/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
