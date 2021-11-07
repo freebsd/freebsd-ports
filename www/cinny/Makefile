@@ -1,6 +1,6 @@
 PORTNAME=	cinny
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/ajbura/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -17,5 +17,6 @@ WRKSRC=		${WRKDIR}/dist
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${MV} ${STAGEDIR}${WWWDIR}/config.json ${STAGEDIR}${WWWDIR}/config.json.example
 
 .include <bsd.port.mk>
