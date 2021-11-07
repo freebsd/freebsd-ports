@@ -49,6 +49,12 @@ CONFIGURE_ARGS+=	--program-prefix=eu-
 # Disable debuginfod until option support can be added:
 CONFIGURE_ARGS+=	--disable-debuginfod
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300512 # 2021-07-17
+CFLAGS+=	-DFREEBSD_HAS_MEMPCPY
+.endif
+
 pre-configure:
 	@${CP} -a \
 	    ${LOCALBASE}/share/gnulib/lib/obstack.c \
