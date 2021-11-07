@@ -13,8 +13,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
 
-BROKEN_powerpc64=	fails to compile: ./DistributedMatrixPilutSolver.h:97:20: expected ')' before '->' token
-
 USES=		blaslapack cmake:testing fortran localbase
 USE_LDCONFIG=	yes
 
