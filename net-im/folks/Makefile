@@ -2,6 +2,7 @@
 
 PORTNAME=	folks
 PORTVERSION=	0.15.3
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -37,13 +38,5 @@ PLIST_SUB=	LIBVER=26 LIBVERLONG=26.0.0
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PORTSCOUT=	limitw:1,even
-
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	TRACKER
-OPTIONS_DEFAULT=TRACKER
-TRACKER_DESC=	Tracker backend
-
-TRACKER_MESON_TRUE=	tracker_backend
-TRACKER_LIB_DEPENDS=	libtracker-control-2.0.so:sysutils/tracker
 
 .include <bsd.port.mk>
