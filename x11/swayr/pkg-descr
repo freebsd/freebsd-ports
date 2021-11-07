@@ -37,7 +37,8 @@ Right now, there are these subcommands:
   prev-window otherwise.
 * execute-swaymsg-command displays most swaymsg which don't require
   additional input and executes the selected one.  That's handy especially for
-  less often used commands not bound to a key.
+  less often used commands not bound to a key.  Non-matching input will be
+  executed executed as-is with swaymsg.
 * execute-swayr-command displays all commands above and executes the selected
   one.  (This is useful for accessing swayr commands which are not bound to a
   key.)
@@ -64,5 +65,9 @@ Right now, there are these subcommands:
   between a tabbed and tiled layout, i.e., it calls shuffle-tile-workspace if
   it is currently tabbed, and calls shuffle-tile-workspace if it is currently
   tiled.
+* move-focused-to-workspace moves the currently focused window or container
+  to another workspace selected with the menu program.  Non-matching input of
+  the form #w:<workspace> where the hash and w: shortcut are optional can
+  be used to move it to a new workspace.
 
 WWW: https://sr.ht/~tsdh/swayr/
