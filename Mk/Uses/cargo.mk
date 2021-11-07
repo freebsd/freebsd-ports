@@ -109,7 +109,10 @@ RUSTDOC?=	${LOCALBASE}/bin/rustdoc
 CARGO_TARGET_DIR?=	${WRKDIR}/target
 
 # Default target platform (affects some RUSTFLAGS if passed)
-CARGO_BUILD_TARGET?=	${ARCH:S/amd64/x86_64/:S/i386/i686/}-unknown-${OPSYS:tl}
+CARGO_BUILD_TARGET?=	${_CARGO_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
+
+_CARGO_RUST_ARCH_amd64=		x86_64
+_CARGO_RUST_ARCH_i386=		i686
 
 # Environment for cargo
 #  - CARGO_HOME: local cache of the registry index
