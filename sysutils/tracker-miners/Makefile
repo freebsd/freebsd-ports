@@ -38,9 +38,7 @@ USES=		gettext gnome jpeg localbase:ldflags meson \
 USE_GNOME=	cairo intltool libgsf libxml2
 
 MESON_ARGS=	-Dsystemd_user_services=no \
-		-Dcharset_detenction=icu \
-		-Dunicode_support=icu \
-		-Dstemmer=no
+		-Dcharset_detection=icu \
 #		-Dbattery_detection=hal
 
 OPTIONS_SUB=	yes
