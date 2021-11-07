@@ -1,8 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	opencascade
-PORTVERSION=	7.5.0
-PORTREVISION=	3
+PORTVERSION=	7.6.0
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -19,15 +18,18 @@ BUILD_DEPENDS=	rapidjson>0:devel/rapidjson			\
 		${LOCALBASE}/lib/qt5/bin/moc:devel/qt5-buildtools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libfreetype.so:print/freetype2		\
+		libexpat.so:textproc/expat2		\
+		libpng16.so:graphics/png		\
 		libvtksys-${VTKVER}.so:math/vtk${VTKVER:R}
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
-USES=		alias:10 cmake compiler:c++14-lang dos2unix \
-		gl python qt:5 shebangfix tk tar:tgz xorg
-USE_XORG=	ice sm x11 xext xi xmu xt
+USES=		alias:10 cmake compiler:c++14-lang dos2unix gettext-runtime	\
+		gl gnome localbase python qt:5 shebangfix tk tar:tgz xorg
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xscrnsaver xt
 USE_GL=		egl gl glesv2 glu
+USE_GNOME=	libxml2
 
 DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/*.sh	\
@@ -46,7 +48,7 @@ OPTIONS_DEFAULT=FFMPEG VIS
 OPTIONS_SUB=	yes
 
 REINPLACE_ARGS=	-i ""
-CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-Wl,--allow-shlib-undefined
 CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_INCLUDE=${PREFIX}/include/OpenCASCADE	\
 		-DINSTALL_DIR_LIB=${PREFIX}/lib				\
@@ -75,7 +77,29 @@ PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}	\
 
 FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg		\
+			libtheoraenc.so:multimedia/libtheora	\
+			libunistring.so:devel/libunistring	\
+			libvdpau.so:multimedia/libvdpau		\
+			libxvidcore.so:multimedia/xvid		\
+			libp11-kit.so:security/p11-kit		\
+			libx264.so:multimedia/libx264		\
+			libtasn1.so:security/libtasn1		\
+			libvorbis.so:audio/libvorbis		\
+			libdav1d.so:multimedia/dav1d		\
+			libnettle.so:security/nettle		\
+			libgnutls.so:security/gnutls		\
+			libvpx.so:multimedia/libvpx		\
+			libx265.so:multimedia/x265		\
+			libdrm.so:graphics/libdrm		\
+			libva.so:multimedia/libva		\
+			libaom.so:multimedia/aom		\
+			libmp3lame.so:audio/lame		\
+			libffi.so:devel/libffi			\
+			libidn2.so:dns/libidn2			\
+			libogg.so:audio/libogg			\
+			libopus.so:audio/opus			\
+			libgmp.so:math/gmp
 
 VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON	\
 			-DUSE_FREETYPE:BOOL=ON	\

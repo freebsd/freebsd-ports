@@ -1,14 +1,14 @@
---- src/DrawResources/CheckCommands.tcl.orig	2020-11-03 14:49:56 UTC
+--- src/DrawResources/CheckCommands.tcl.orig	2021-10-30 11:13:45 UTC
 +++ src/DrawResources/CheckCommands.tcl
-@@ -1053,6 +1053,7 @@ help checkplatform {
-     -windows : return 1 if current platform is 'Windows', overwise return 0
-     -linux   : return 1 if current platform is 'Linux', overwise return 0
-     -osx     : return 1 if current platform is 'MacOS X', overwise return 0
-+    -freebsd : return 1 if current platform is 'FreeBSD', overwise return 0
+@@ -1095,6 +1095,7 @@ help checkplatform {
+     -windows : return 1 if current platform is 'Windows', otherwise return 0
+     -linux   : return 1 if current platform is 'Linux', otherwise return 0
+     -osx     : return 1 if current platform is 'MacOS X', otherwise return 0
++    -freebsd : return 1 if current platform is 'FreeBSD', otherwise return 0
  
    Only one option can be used at once.
    If no option is given, procedure will return the name of current platform.
-@@ -1061,9 +1062,11 @@ proc checkplatform {args} {
+@@ -1103,9 +1104,11 @@ proc checkplatform {args} {
      set check_for_windows false
      set check_for_linux false
      set check_for_macosx false
@@ -20,7 +20,7 @@
                   {"-osx" check_for_macosx 0}}
  
      _check_args ${args} ${options} "checkplatform"
-@@ -1072,17 +1075,19 @@ proc checkplatform {args} {
+@@ -1114,17 +1117,19 @@ proc checkplatform {args} {
          set current_platform Windows
      } elseif { $::tcl_platform(os) == "Linux" } {
          set current_platform Linux
@@ -42,7 +42,7 @@
          error "Error: wrong usage of command checkplatform, only single option can be used at once"
      }
  
-@@ -1091,8 +1096,13 @@ proc checkplatform {args} {
+@@ -1133,8 +1138,13 @@ proc checkplatform {args} {
          return 1
      }
  
