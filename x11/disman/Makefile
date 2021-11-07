@@ -32,4 +32,9 @@ X11_USES=		xorg
 X11_USE=		QT=x11extras XORG=xcb
 X11_CMAKE_BOOL_OFF=	${Qt5X11Extras XCB:L:S/^/CMAKE_DISABLE_FIND_PACKAGE_/}
 
+post-patch:
+# Respect PREFIX for hwdata
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/backends/edid.cpp
+
 .include <bsd.port.mk>
