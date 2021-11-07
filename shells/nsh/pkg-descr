@@ -1,0 +1,8 @@
+A command-line shell that focuses on productivity and swiftness featuring:
+- A POSIX compliant interactive shell with some Bash extensions.
+- Tab completions and syntax highlighting.
+- Bash completion support (by internally invoking the genuine Bash).
+- Builtin zero configration features.
+- Written in Rust :crab:
+
+WWW: https://github.com/nuta/nsh

@@ -1,0 +1,125 @@
+PORTNAME=	nsh
+DISTVERSION=	0.4.2
+CATEGORIES=	shells
+MASTER_SITES=	CRATESIO
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
+
+MAINTAINER=	cs@FreeBSD.org
+COMMENT=	Command-line shell like fish, but POSIX compatible
+
+LICENSE=	MIT
+
+USES=		cargo
+CARGO_INSTALL=	yes
+CARGO_CRATES=	addr2line-0.15.2 \
+		adler-1.0.2 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		arrayref-0.3.6 \
+		arrayvec-0.5.2 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.60 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.11 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.5 \
+		byte-tools-0.3.1 \
+		byteorder-1.4.3 \
+		cc-1.0.69 \
+		cfg-if-1.0.0 \
+		clap-2.33.3 \
+		colored-1.9.3 \
+		constant_time_eq-0.1.5 \
+		crossbeam-utils-0.8.5 \
+		crossterm-0.18.2 \
+		crossterm_winapi-0.6.2 \
+		ctor-0.1.20 \
+		diff-0.1.12 \
+		digest-0.8.1 \
+		dirs-1.0.5 \
+		failure-0.1.8 \
+		failure_derive-0.1.8 \
+		fake-simd-0.1.2 \
+		fern-0.6.0 \
+		generic-array-0.12.4 \
+		getrandom-0.1.16 \
+		getrandom-0.2.3 \
+		gimli-0.24.0 \
+		glob-0.3.0 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		instant-0.1.10 \
+		lazy_static-1.4.0 \
+		libc-0.2.98 \
+		lock_api-0.4.4 \
+		log-0.4.14 \
+		maplit-1.0.2 \
+		memchr-2.4.0 \
+		memoffset-0.6.4 \
+		miniz_oxide-0.4.4 \
+		mio-0.7.13 \
+		miow-0.3.7 \
+		nix-0.22.0 \
+		ntapi-0.3.6 \
+		object-0.25.3 \
+		opaque-debug-0.2.3 \
+		output_vt100-0.1.2 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
+		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
+		phf-0.9.0 \
+		phf_generator-0.9.0 \
+		phf_macros-0.9.0 \
+		phf_shared-0.9.0 \
+		ppv-lite86-0.2.10 \
+		pretty_assertions-0.7.2 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.27 \
+		quote-1.0.9 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		redox_syscall-0.1.57 \
+		redox_syscall-0.2.9 \
+		redox_users-0.3.5 \
+		remove_dir_all-0.5.3 \
+		rust-argon2-0.8.3 \
+		rustc-demangle-0.1.20 \
+		scopeguard-1.1.0 \
+		sha-1-0.8.2 \
+		signal-hook-0.1.17 \
+		signal-hook-0.2.3 \
+		signal-hook-registry-1.4.0 \
+		siphasher-0.3.5 \
+		smallvec-1.6.1 \
+		strsim-0.8.0 \
+		structopt-0.3.22 \
+		structopt-derive-0.4.15 \
+		syn-1.0.73 \
+		synstructure-0.12.5 \
+		tempfile-3.2.0 \
+		textwrap-0.11.0 \
+		typenum-1.13.0 \
+		ucd-trie-0.1.3 \
+		unicode-segmentation-1.8.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		vec_map-0.8.2 \
+		version_check-0.9.3 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+PLIST_FILES=	bin/nsh
+
+.include <bsd.port.mk>
