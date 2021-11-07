@@ -35,6 +35,7 @@ USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft \
 		xinerama xrender xxf86vm
 
+CXXFLAGS_powerpc64=	-mvsx
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CPPTEST:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CODEELI:BOOLEAN=no \
