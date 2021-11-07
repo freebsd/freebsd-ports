@@ -1,3 +1,5 @@
+https://gitlab.com/kwinft/kwinft/-/issues/210
+
 In file included from plugins/scenes/opengl/scene_opengl.cpp:30:
 plugins/scenes/opengl/scene_opengl.h:93:10: error: no template named 'unordered_map' in namespace 'std'
     std::unordered_map<uint32_t, OpenGLWindow*> windows;

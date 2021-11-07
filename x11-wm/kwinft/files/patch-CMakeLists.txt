@@ -1,3 +1,5 @@
+https://gitlab.com/kwinft/kwinft/-/issues/209
+
 CMake Error at CMakeLists.txt:816 (add_executable):
   Target "kwin_wayland" links to target "Threads::Threads" but the target was
   not found.  Perhaps a find_package() call is missing for an IMPORTED
