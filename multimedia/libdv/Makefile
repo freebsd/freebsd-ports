@@ -2,7 +2,7 @@
 
 PORTNAME=	libdv
 DISTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,6 +25,6 @@ USE_LDCONFIG=	yes
 
 LDFLAGS_i386=	-Wl,-znotext
 
-MESON_ARGS=	-Dpopt=enabled
+MESON_ARGS=	-Dpopt=enabled -Dtools=enabled
 
 .include <bsd.port.mk>

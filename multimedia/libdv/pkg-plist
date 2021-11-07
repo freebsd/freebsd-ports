@@ -1,3 +1,6 @@
+bin/dubdv
+bin/dvconnect
+bin/encodedv
 include/libdv/dv.h
 include/libdv/dv_config.h
 include/libdv/dv_types.h
@@ -5,3 +8,6 @@ lib/libdv.so
 lib/libdv.so.4
 lib/libdv.so.4.0.3
 libdata/pkgconfig/libdv.pc
+man/man1/dubdv.1.gz
+man/man1/dvconnect.1.gz
+man/man1/encodedv.1.gz
