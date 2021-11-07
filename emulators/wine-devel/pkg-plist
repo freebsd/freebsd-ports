@@ -1000,6 +1000,8 @@ include/wine/windows/windows.media.speechsynthesis.idl
 %%STAGING%%include/wine/windows/windows.networking.connectivity.idl
 %%STAGING%%include/wine/windows/windows.networking.h
 %%STAGING%%include/wine/windows/windows.networking.idl
+include/wine/windows/windows.storage.streams.h
+include/wine/windows/windows.storage.streams.idl
 include/wine/windows/windows.system.h
 include/wine/windows/windows.system.idl
 include/wine/windows/windows.system.userprofile.h
@@ -1414,7 +1416,6 @@ lib/wine/%%WINEARCH%%-unix/bthprops.cpl.so
 lib/wine/%%WINEARCH%%-unix/cabarc.exe.so
 lib/wine/%%WINEARCH%%-unix/cabinet.dll.so
 lib/wine/%%WINEARCH%%-unix/cacls.exe.so
-lib/wine/%%WINEARCH%%-unix/capi2032.dll.so
 lib/wine/%%WINEARCH%%-unix/cards.dll.so
 lib/wine/%%WINEARCH%%-unix/cdosys.dll.so
 lib/wine/%%WINEARCH%%-unix/cfgmgr32.dll.so
@@ -1422,6 +1423,7 @@ lib/wine/%%WINEARCH%%-unix/chcp.com.so
 lib/wine/%%WINEARCH%%-unix/clock.exe.so
 lib/wine/%%WINEARCH%%-unix/clusapi.dll.so
 lib/wine/%%WINEARCH%%-unix/cmd.exe.so
+lib/wine/%%WINEARCH%%-unix/cng.sys.so
 lib/wine/%%WINEARCH%%-unix/combase.dll.so
 lib/wine/%%WINEARCH%%-unix/comcat.dll.so
 lib/wine/%%WINEARCH%%-unix/comctl32.dll.so
@@ -1447,6 +1449,7 @@ lib/wine/%%WINEARCH%%-unix/cryptsp.dll.so
 lib/wine/%%WINEARCH%%-unix/cryptui.dll.so
 lib/wine/%%WINEARCH%%-unix/cscript.exe.so
 lib/wine/%%WINEARCH%%-unix/ctapi32.dll.so
+lib/wine/%%WINEARCH%%-unix/ctapi32.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/ctl3d.dll16.so
 lib/wine/%%WINEARCH%%-unix/ctl3d32.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/ctl3dv2.dll16.so
@@ -1649,7 +1652,6 @@ lib/wine/%%WINEARCH%%-unix/gamingtcui.dll.so
 lib/wine/%%WINEARCH%%-unix/gdi32.dll.so
 lib/wine/%%WINEARCH%%-unix/gdiplus.dll.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/glu32.dll.so
-lib/wine/%%WINEARCH%%-unix/gphoto2.ds.so
 lib/wine/%%WINEARCH%%-unix/gpkcsp.dll.so
 lib/wine/%%WINEARCH%%-unix/hal.dll.so
 lib/wine/%%WINEARCH%%-unix/hh.exe.so
@@ -1714,7 +1716,6 @@ lib/wine/%%WINEARCH%%-unix/libavifil32.def
 lib/wine/%%WINEARCH%%-unix/libavrt.def
 lib/wine/%%WINEARCH%%-unix/libbcrypt.def
 lib/wine/%%WINEARCH%%-unix/libcabinet.def
-lib/wine/%%WINEARCH%%-unix/libcapi2032.def
 lib/wine/%%WINEARCH%%-unix/libcards.def
 lib/wine/%%WINEARCH%%-unix/libcfgmgr32.def
 lib/wine/%%WINEARCH%%-unix/libclusapi.def
@@ -1989,6 +1990,7 @@ lib/wine/%%WINEARCH%%-unix/mscorwks.dll.so
 lib/wine/%%WINEARCH%%-unix/msctf.dll.so
 lib/wine/%%WINEARCH%%-unix/msctfp.dll.so
 lib/wine/%%WINEARCH%%-unix/msdaps.dll.so
+lib/wine/%%WINEARCH%%-unix/msdasql.dll.so
 lib/wine/%%WINEARCH%%-unix/msdelta.dll.so
 lib/wine/%%WINEARCH%%-unix/msdmo.dll.so
 lib/wine/%%WINEARCH%%-unix/msdrm.dll.so
@@ -2165,7 +2167,6 @@ lib/wine/%%WINEARCH%%-unix/rtworkq.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/rundll.exe16.so
 lib/wine/%%WINEARCH%%-unix/rundll32.exe.so
 lib/wine/%%WINEARCH%%-unix/samlib.dll.so
-lib/wine/%%WINEARCH%%-unix/sane.ds.so
 lib/wine/%%WINEARCH%%-unix/sapi.dll.so
 lib/wine/%%WINEARCH%%-unix/sas.dll.so
 lib/wine/%%WINEARCH%%-unix/sc.exe.so
@@ -2308,7 +2309,6 @@ lib/wine/%%WINEARCH%%-unix/windows.media.devices.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.speech.dll.so
 %%STAGING%%lib/wine/%%WINEARCH%%-unix/windows.networking.connectivity.so
 lib/wine/%%WINEARCH%%-unix/windowscodecs.dll.so
-lib/wine/%%WINEARCH%%-unix/windowscodecs.so
 lib/wine/%%WINEARCH%%-unix/windowscodecsext.dll.so
 lib/wine/%%WINEARCH%%-unix/wineboot.exe.so
 lib/wine/%%WINEARCH%%-unix/winebrowser.exe.so
@@ -2348,6 +2348,7 @@ lib/wine/%%WINEARCH%%-unix/winnls32.dll.so
 lib/wine/%%WINEARCH%%-unix/winscard.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/winsock.dll16.so
 lib/wine/%%WINEARCH%%-unix/winspool.drv.so
+lib/wine/%%WINEARCH%%-unix/winspool.so
 lib/wine/%%WINEARCH%%-unix/winsta.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/wintab.dll16.so
 lib/wine/%%WINEARCH%%-unix/wintab32.dll.so
@@ -2704,7 +2705,6 @@ lib/wine/%%WINEARCH%%-windows/bthprops.cpl
 lib/wine/%%WINEARCH%%-windows/cabarc.exe
 lib/wine/%%WINEARCH%%-windows/cabinet.dll
 lib/wine/%%WINEARCH%%-windows/cacls.exe
-lib/wine/%%WINEARCH%%-windows/capi2032.dll
 lib/wine/%%WINEARCH%%-windows/cards.dll
 lib/wine/%%WINEARCH%%-windows/cdosys.dll
 lib/wine/%%WINEARCH%%-windows/cfgmgr32.dll
@@ -2712,6 +2712,7 @@ lib/wine/%%WINEARCH%%-windows/chcp.com
 lib/wine/%%WINEARCH%%-windows/clock.exe
 lib/wine/%%WINEARCH%%-windows/clusapi.dll
 lib/wine/%%WINEARCH%%-windows/cmd.exe
+lib/wine/%%WINEARCH%%-windows/cng.sys
 lib/wine/%%WINEARCH%%-windows/combase.dll
 lib/wine/%%WINEARCH%%-windows/comcat.dll
 lib/wine/%%WINEARCH%%-windows/comctl32.dll
@@ -2936,7 +2937,6 @@ lib/wine/%%WINEARCH%%-windows/gamingtcui.dll
 lib/wine/%%WINEARCH%%-windows/gdi32.dll
 lib/wine/%%WINEARCH%%-windows/gdiplus.dll
 %%X11%%lib/wine/%%WINEARCH%%-windows/glu32.dll
-lib/wine/%%WINEARCH%%-windows/gphoto2.ds
 lib/wine/%%WINEARCH%%-windows/gpkcsp.dll
 lib/wine/%%WINEARCH%%-windows/hal.dll
 lib/wine/%%WINEARCH%%-windows/hh.exe
@@ -3035,6 +3035,7 @@ lib/wine/%%WINEARCH%%-windows/mscorwks.dll
 lib/wine/%%WINEARCH%%-windows/msctf.dll
 lib/wine/%%WINEARCH%%-windows/msctfp.dll
 lib/wine/%%WINEARCH%%-windows/msdaps.dll
+lib/wine/%%WINEARCH%%-windows/msdasql.dll
 lib/wine/%%WINEARCH%%-windows/msdelta.dll
 lib/wine/%%WINEARCH%%-windows/msdmo.dll
 lib/wine/%%WINEARCH%%-windows/msdrm.dll
@@ -3205,7 +3206,6 @@ lib/wine/%%WINEARCH%%-windows/rtworkq.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/rundll.exe16
 lib/wine/%%WINEARCH%%-windows/rundll32.exe
 lib/wine/%%WINEARCH%%-windows/samlib.dll
-lib/wine/%%WINEARCH%%-windows/sane.ds
 lib/wine/%%WINEARCH%%-windows/sapi.dll
 lib/wine/%%WINEARCH%%-windows/sas.dll
 lib/wine/%%WINEARCH%%-windows/sc.exe
