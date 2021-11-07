@@ -60,7 +60,7 @@ GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
 PLIST_SUB=	VERSION=3.0
 
 OPTIONS_SUB=		yes
-OPTIONS_DEFINE=		COMICS DBUS DJVU KEYRING NAUTILUS SPELL XPS
+OPTIONS_DEFINE=		COMICS DBUS DJVU DVI KEYRING NAUTILUS SPELL T1LIB XPS
 OPTIONS_DEFAULT=	COMICS DBUS DJVU KEYRING NAUTILUS SPELL XPS
 
 COMICS_DESC=		Comic book archives support
@@ -73,6 +73,10 @@ DJVU_MESON_ENABLED=	djvu
 DBUS_MESON_TRUE=	dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
+DVI_DESC=		DVI viewer support
+DVI_USE=		TEX=kpathsea,latex
+DVI_MESON_ENABLED=	dvi
+
 KEYRING_DESC=		Keyring support
 KEYRING_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 KEYRING_MESON_ENABLED=	keyring
@@ -84,6 +88,11 @@ NAUTILUS_MESON_TRUE=	nautilus
 SPELL_DESC=		spell checking support
 SPELL_MESON_ENABLED=	gspell
 SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
+
+T1LIB_DESC=		Support TYPE1 fonts to DVI (Enables DVI)
+T1LIB_LIB_DEPENDS=	libt1.so:devel/t1lib
+T1LIB_MESON_ENABLED=	t1lib
+T1LIB_IMPLIES=		DVI
 
 XPS_DESC=		XPS support
 XPS_LIB_DEPENDS=	libgxps.so:graphics/libgxps

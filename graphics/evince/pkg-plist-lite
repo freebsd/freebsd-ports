@@ -2837,6 +2837,7 @@ share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
 %%COMICS%%share/metainfo/evince-comicsdocument.metainfo.xml
 %%DJVU%%share/metainfo/evince-djvudocument.metainfo.xml
+%%DVI%%share/metainfo/evince-dvidocument.metainfo.xml
 share/metainfo/evince-pdfdocument.metainfo.xml
 share/metainfo/evince-psdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
