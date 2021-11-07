@@ -1,8 +1,7 @@
 # Created by: Carlo Strub
 
 PORTNAME=	pijul
-PORTVERSION=	1.0.0.a54
-PORTREVISION=	2
+PORTVERSION=	1.0.0.a55
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -15,20 +14,20 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cargo ssl
 CARGO_INSTALL=	no
-CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
+CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.55 \
 		addr2line-0.16.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
-		aes-0.7.4 \
+		aes-0.7.5 \
 		aho-corasick-0.7.18 \
-		anyhow-1.0.43 \
+		anyhow-1.0.44 \
 		arrayref-0.3.6 \
 		arrayvec-0.7.1 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.61 \
 		base64-0.13.0 \
-		base64ct-1.0.1 \
+		base64ct-1.1.1 \
 		bcrypt-pbkdf-0.6.2 \
 		bincode-1.3.3 \
 		bit-vec-0.6.3 \
@@ -39,29 +38,29 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
 		block-padding-0.2.1 \
 		blowfish-0.8.0 \
 		bs58-0.4.0 \
-		bstr-0.2.16 \
-		bumpalo-3.7.0 \
+		bstr-0.2.17 \
+		bumpalo-3.8.0 \
 		byteorder-1.4.3 \
-		bytes-1.0.1 \
+		bytes-1.1.0 \
 		canonical-path-2.0.2 \
-		cc-1.0.69 \
+		cc-1.0.71 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		cipher-0.3.0 \
-		clap-3.0.0-beta.4 \
-		clap_derive-3.0.0-beta.4 \
+		clap-3.0.0-beta.5 \
+		clap_derive-3.0.0-beta.5 \
 		constant_time_eq-0.1.5 \
-		core-foundation-0.9.1 \
-		core-foundation-sys-0.8.2 \
-		cpufeatures-0.1.5 \
+		core-foundation-0.9.2 \
+		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.1 \
 		crc32fast-1.2.1 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.5 \
 		crypto-mac-0.11.1 \
 		cryptovec-0.6.1 \
-		ctr-0.7.0 \
-		ctrlc-3.2.0 \
+		ctr-0.8.0 \
+		ctrlc-3.2.1 \
 		curve25519-dalek-3.2.0 \
 		data-encoding-2.3.2 \
 		diffs-0.4.1 \
@@ -74,107 +73,106 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
 		ed25519-dalek-1.0.1 \
 		edit-0.1.3 \
 		either-1.6.1 \
-		encoding_rs-0.8.28 \
+		encoding_rs-0.8.29 \
 		env_logger-0.8.4 \
 		errno-0.2.7 \
-		errno-dragonfly-0.1.1 \
+		errno-dragonfly-0.1.2 \
 		filetime-0.2.15 \
-		flate2-1.0.20 \
+		flate2-1.0.22 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		fs2-0.4.3 \
-		futures-0.3.16 \
-		futures-channel-0.3.16 \
-		futures-core-0.3.16 \
-		futures-executor-0.3.16 \
-		futures-io-0.3.16 \
-		futures-macro-0.3.16 \
-		futures-sink-0.3.16 \
-		futures-task-0.3.16 \
-		futures-util-0.3.16 \
-		gcc-0.3.55 \
+		futures-0.3.17 \
+		futures-channel-0.3.17 \
+		futures-core-0.3.17 \
+		futures-executor-0.3.17 \
+		futures-io-0.3.17 \
+		futures-macro-0.3.17 \
+		futures-sink-0.3.17 \
+		futures-task-0.3.17 \
+		futures-util-0.3.17 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		gimli-0.25.0 \
-		git2-0.13.21 \
+		git2-0.13.23 \
 		globset-0.4.8 \
-		h2-0.3.3 \
+		h2-0.3.6 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		hmac-0.11.0 \
-		http-0.2.4 \
+		http-0.2.5 \
 		http-body-0.4.3 \
-		httparse-1.4.1 \
+		httparse-1.5.1 \
 		httpdate-1.0.1 \
 		human-panic-1.0.3 \
 		humantime-2.1.0 \
-		hyper-0.14.11 \
+		hyper-0.14.13 \
 		hyper-tls-0.5.0 \
 		idna-0.2.3 \
 		ignore-0.4.18 \
 		indexmap-1.7.0 \
-		instant-0.1.10 \
+		instant-0.1.12 \
 		ipnet-2.3.1 \
-		itoa-0.4.7 \
+		itoa-0.4.8 \
 		jobserver-0.1.24 \
-		js-sys-0.3.52 \
+		js-sys-0.3.55 \
 		lazy_static-1.4.0 \
-		libc-0.2.99 \
-		libgit2-sys-0.12.22+1.1.0 \
-		libpijul-1.0.0-alpha.48 \
+		libc-0.2.104 \
+		libgit2-sys-0.12.24+1.3.0 \
+		libpijul-1.0.0-alpha.49 \
 		libsodium-sys-0.2.7 \
-		libssh2-sys-0.2.21 \
+		libssh2-sys-0.2.23 \
 		libz-sys-1.1.3 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.4.4 \
+		lock_api-0.4.5 \
 		log-0.4.14 \
 		lru-cache-0.1.2 \
 		matches-0.1.9 \
 		md5-0.7.0 \
-		memchr-2.4.0 \
+		memchr-2.4.1 \
 		memmap-0.7.0 \
 		memoffset-0.6.4 \
 		mime-0.3.16 \
 		miniz_oxide-0.4.4 \
-		mio-0.7.13 \
+		mio-0.7.14 \
 		miow-0.3.7 \
 		native-tls-0.2.8 \
-		nix-0.22.0 \
+		nix-0.23.0 \
 		ntapi-0.3.6 \
-		num-bigint-0.4.0 \
+		num-bigint-0.4.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		object-0.26.0 \
+		object-0.26.2 \
 		once_cell-1.8.0 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.35 \
+		openssl-0.10.36 \
 		openssl-probe-0.1.4 \
-		openssl-sys-0.9.65 \
-		os_str_bytes-3.1.0 \
+		openssl-sys-0.9.67 \
+		os_str_bytes-4.2.0 \
 		os_type-2.3.0 \
 		pager-0.16.0 \
-		parking_lot-0.11.1 \
-		parking_lot_core-0.8.3 \
-		password-hash-0.2.2 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		password-hash-0.2.3 \
 		path-slash-0.1.4 \
 		pbkdf2-0.8.0 \
 		percent-encoding-2.1.0 \
 		pijul-macros-0.4.0 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.19 \
-		ppv-lite86-0.2.10 \
+		pkg-config-0.3.20 \
+		ppv-lite86-0.2.14 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.28 \
-		quote-1.0.9 \
+		proc-macro2-1.0.30 \
+		quote-1.0.10 \
 		rand-0.7.3 \
 		rand-0.8.4 \
 		rand_chacha-0.2.2 \
@@ -188,40 +186,41 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.4 \
+		reqwest-0.11.6 \
+		rlimit-0.6.2 \
 		rpassword-5.0.1 \
-		rustc-demangle-0.1.20 \
+		rustc-demangle-0.1.21 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
-		sanakirja-1.2.10 \
-		sanakirja-core-1.2.12 \
+		sanakirja-1.2.11 \
+		sanakirja-core-1.2.13 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
-		security-framework-2.3.1 \
-		security-framework-sys-2.3.0 \
-		serde-1.0.127 \
+		security-framework-2.4.2 \
+		security-framework-sys-2.4.2 \
+		serde-1.0.130 \
 		serde_bytes-0.11.5 \
-		serde_derive-1.0.127 \
-		serde_json-1.0.66 \
+		serde_derive-1.0.130 \
+		serde_json-1.0.68 \
 		serde_urlencoded-0.7.0 \
-		sha2-0.9.5 \
+		sha2-0.9.8 \
 		signal-hook-registry-1.4.0 \
 		signature-1.3.1 \
-		slab-0.4.4 \
-		smallvec-1.6.1 \
-		socket2-0.4.1 \
+		slab-0.4.5 \
+		smallvec-1.7.0 \
+		socket2-0.4.2 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
-		syn-1.0.74 \
-		synstructure-0.12.5 \
+		syn-1.0.80 \
+		synstructure-0.12.6 \
 		tar-0.4.37 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
 		textwrap-0.14.2 \
-		thiserror-1.0.26 \
-		thiserror-impl-1.0.26 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
 		thread_local-1.1.3 \
 		threadpool-1.8.1 \
 		thrussh-0.33.5 \
@@ -229,44 +228,44 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
 		thrussh-keys-0.21.0 \
 		thrussh-libsodium-0.2.1 \
 		time-0.1.43 \
-		tinyvec-1.3.1 \
+		tinyvec-1.5.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.10.0 \
-		tokio-macros-1.3.0 \
+		tokio-1.12.0 \
+		tokio-macros-1.5.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-stream-0.1.7 \
-		tokio-util-0.6.7 \
+		tokio-util-0.6.8 \
 		toml-0.5.8 \
 		tower-service-0.3.1 \
-		tracing-0.1.26 \
-		tracing-core-0.1.18 \
+		tracing-0.1.29 \
+		tracing-core-0.1.21 \
 		try-lock-0.2.3 \
 		twox-hash-1.6.1 \
-		typenum-1.13.0 \
-		unicode-bidi-0.3.6 \
+		typenum-1.14.0 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.7 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.8 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
 		uuid-0.8.2 \
 		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.75 \
-		wasm-bindgen-backend-0.2.75 \
-		wasm-bindgen-futures-0.4.25 \
-		wasm-bindgen-macro-0.2.75 \
-		wasm-bindgen-macro-support-0.2.75 \
-		wasm-bindgen-shared-0.2.75 \
-		web-sys-0.3.52 \
+		wasm-bindgen-0.2.78 \
+		wasm-bindgen-backend-0.2.78 \
+		wasm-bindgen-futures-0.4.28 \
+		wasm-bindgen-macro-0.2.78 \
+		wasm-bindgen-macro-support-0.2.78 \
+		wasm-bindgen-shared-0.2.78 \
+		web-sys-0.3.55 \
 		which-4.2.2 \
 		whoami-0.9.0 \
-		whoami-1.1.2 \
+		whoami-1.1.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
@@ -275,13 +274,13 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
 		xattr-0.2.2 \
 		yasna-0.4.0 \
 		zeroize-1.3.0 \
-		zeroize_derive-1.1.0 \
+		zeroize_derive-1.2.0 \
 		zstd-seekable-0.1.7
 
 PLIST_FILES=	bin/pijul
 
 post-patch:
-	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-alpha.54/* ${WRKSRC}/
+	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-alpha.55/* ${WRKSRC}/
 
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/pijul ${STAGEDIR}${PREFIX}/bin/pijul
