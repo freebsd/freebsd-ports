@@ -41,6 +41,7 @@ USE_QT=			charts concurrent core declarative gui network \
 QMAKE_ARGS+=		SYSTEM_LZ4=1 VERSION=${PORTVERSION}
 BINARY_ALIAS=		python3-config=${PYTHON_CMD}-config \
 			python3=${PYTHON_CMD}
+CXXFLAGS_powerpc64=	-mpower8-vector
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/share/pixmaps
