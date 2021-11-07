@@ -47,6 +47,10 @@ post-build-DOCS-off:
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 .if ${PORT_OPTIONS:MDOCS} && !${PORT_OPTIONS:MBUILDDOCS}
 MASTER_SITES+=	http://www.grosbein.net/freebsd/distfiles/:docs \
 		LOCAL/eugen:docs
