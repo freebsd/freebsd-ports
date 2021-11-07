@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	12.4.0
+DISTVERSION=	12.7.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.5.66:print/py-reportlab@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110<20201019:textproc/py-pdfminer.six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110<20211013:textproc/py-pdfminer.six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pikepdf>=2.10.0:textproc/py-pikepdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0<2.0:devel/py-pluggy@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
@@ -50,6 +50,16 @@ UNPAPER_DESC=	Deskew and clean up pages before OCR processing
 PNGQUANT_RUN_DEPENDS=	pngquant:graphics/pngquant
 UNPAPER_RUN_DEPENDS=	unpaper:graphics/unpaper
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 30900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
 post-install:
 	# Install shell completion files
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
@@ -62,6 +72,7 @@ do-test:
 	       	-n ${MAKE_JOBS_NUMBER} -k ' \
 		not test_dev_null \
 		and not test_input_file_not_readable \
+		and not test_outputtype_none \
 		and not test_chmod'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
