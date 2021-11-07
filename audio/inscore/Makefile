@@ -25,6 +25,7 @@ GH_TUPLE=	grame-cncm:guidolib:3cf3d88:guidolib/modules/guidolib # this uses some
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 
 CXXFLAGS+=	-I${LOCALBASE}/include/guido -I${LOCALBASE}/include/guidoar
+CXXFLAGS_powerpc64=	-DOSC_HOST_BIG_ENDIAN
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_DEFAULT=	DOCS EXAMPLES
