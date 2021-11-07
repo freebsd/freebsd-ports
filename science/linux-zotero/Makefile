@@ -5,9 +5,9 @@ MASTER_SITES=	https://download.zotero.org/client/release/${DISTVERSION}/ \
 		https://raw.githubusercontent.com/zotero/zotero-standalone-build/${DISTVERSION}/:LICENSE
 PKGNAMEPREFIX=	linux-
 DIST_SUBDIR=	${PORTNAME}
-DISTFILES=	Zotero-${DISTVERSION}_linux-x86_64${EXTRACT_SUFX} \
+DISTFILES=	${_MAIN_DISTFILE} \
 		COPYING:LICENSE
-EXTRACT_ONLY=	Zotero-${DISTVERSION}_linux-x86_64${EXTRACT_SUFX}
+EXTRACT_ONLY=	${_MAIN_DISTFILE}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Reference management for bibliographic data and research materials
@@ -26,6 +26,7 @@ USE_LINUX=	dbusglib gtk3
 SUB_FILES=	zotero-wrapper
 
 _BINARIES=	pdftotext pdfinfo zotero-bin
+_MAIN_DISTFILE=	Zotero-${DISTVERSION}_linux-x86_64${EXTRACT_SUFX}
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/COPYING ${WRKDIR}
@@ -39,7 +40,7 @@ do-install:
 	(cd ${WRKSRC} && ${CHMOD} +x ${_BINARIES})
 # Only strip zotero-bin. Other ${_BINARIES} break strip(1).
 	(cd ${STAGEDIR}${DATADIR} && ${STRIP_CMD} zotero-bin)
-	${MV} ${STAGEDIR}${DATADIR}/zotero.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${MV} ${STAGEDIR}${DATADIR}/zotero.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/zotero-wrapper ${STAGEDIR}${PREFIX}/bin/zotero
 
 .include <bsd.port.mk>
