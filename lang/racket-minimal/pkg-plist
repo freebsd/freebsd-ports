@@ -358,6 +358,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/os.rkt
 %%DATADIR%%/collects/racket/path.rkt
 %%DATADIR%%/collects/racket/performance-hint.rkt
+%%DATADIR%%/collects/racket/phase+space.rkt
 %%DATADIR%%/collects/racket/place.rkt
 %%DATADIR%%/collects/racket/place/dynamic.rkt
 %%DATADIR%%/collects/racket/place/private/async-bi-channel.rkt
@@ -511,6 +512,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/stxparam.rkt
 %%DATADIR%%/collects/racket/surrogate.rkt
 %%DATADIR%%/collects/racket/symbol.rkt
+%%DATADIR%%/collects/racket/syntax-srcloc.rkt
 %%DATADIR%%/collects/racket/syntax.rkt
 %%DATADIR%%/collects/racket/system.rkt
 %%DATADIR%%/collects/racket/tcp.rkt
@@ -1170,6 +1172,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/path_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/path_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/performance-hint_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/performance-hint_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/phase+space_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/phase+space_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/place_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/place_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/port_rkt.dep
@@ -1228,6 +1232,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/surrogate_rkt
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/surrogate_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/symbol_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/symbol_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/syntax-srcloc_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/syntax-srcloc_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/syntax_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/syntax_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/system_rkt.dep
