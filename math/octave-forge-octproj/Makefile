@@ -21,8 +21,6 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 USES+=		compiler:gcc-c++11-lib
 
-CPPFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
-
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-patch:
