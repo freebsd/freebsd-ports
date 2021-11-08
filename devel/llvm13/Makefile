@@ -385,7 +385,7 @@ _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AMDGPU=MCACustomBehaviour
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
-_BE_LIBS_BPF=		AsmParser Disassembler 
+_BE_LIBS_BPF=		AsmParser Disassembler
 _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser Disassembler
 _BE_LIBS_MSP430=	AsmParser Disassembler
@@ -412,7 +412,7 @@ BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
 _CRTLIBDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/share
 _COMPILER_RT_BLACKLISTS=	cfi_ignorelist.txt
-_COMPILER_RT_LIBS_i386= \
+_COMPILER_RT_LIBS_i386=	\
 	libclang_rt.asan-i386.a \
 	libclang_rt.asan-i386.so \
 	libclang_rt.asan-preinit-i386.a \
@@ -432,7 +432,7 @@ _COMPILER_RT_LIBS_i386= \
 .if ${ARCH} == "amd64"
 _COMPILER_RT_BLACKLISTS+=	asan_ignorelist.txt
 _COMPILER_RT_BLACKLISTS+=	msan_ignorelist.txt
-_COMPILER_RT_LIBS= \
+_COMPILER_RT_LIBS=	\
 	libclang_rt.asan-preinit-x86_64.a \
 	libclang_rt.asan-x86_64.a \
 	libclang_rt.asan-x86_64.a.syms \
@@ -490,7 +490,7 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 # Comment out plist entries for unsupported options.
 .for opt in ${_ALL_OPTIONS}
 .if !${OPTIONS_DEFINE:M${opt}}
-PLIST_SUB+=     ${opt}="@comment "
+PLIST_SUB+=	${opt}="@comment "
 .endif
 .endfor
 
