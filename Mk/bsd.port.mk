@@ -63,7 +63,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  In this case, incrementing PORTEPOCH forces the revision.
 #				  Default: 0 (no effect).
 # PKGNAME		- Always defined as
-#				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.
+#				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}.
 #				  Do not define this in your Makefile.
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
 #				  Optional.
