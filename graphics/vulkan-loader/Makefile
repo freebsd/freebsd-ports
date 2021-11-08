@@ -4,9 +4,6 @@ DISTVERSION=	1.2.197
 PORTREVISION=	1
 CATEGORIES=	graphics devel
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b8ee23e4d5ac.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/738
-
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Driver loader for the Vulkan graphics API
 
