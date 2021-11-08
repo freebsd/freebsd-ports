@@ -1,0 +1,8 @@
+--- doc/CMakeLists.txt.orig	2021-11-06 11:24:56.636609000 +0100
++++ doc/CMakeLists.txt	2021-11-06 11:25:10.749968000 +0100
+@@ -13,4 +13,4 @@
+
+ install(FILES
+   ${manpages}
+-  DESTINATION share/man/man1)
++  DESTINATION man/man1)
