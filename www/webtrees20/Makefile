@@ -1,5 +1,5 @@
 PORTNAME=	webtrees
-PORTVERSION=	2.0.16
+PORTVERSION=	2.0.17
 CATEGORIES=	www
 MASTER_SITES=	http://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		https://freebsd.ark-ict.nl/ports/
