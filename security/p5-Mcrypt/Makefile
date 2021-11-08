@@ -1,8 +1,8 @@
 # Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
 
 PORTNAME=	Mcrypt
-PORTVERSION=	2.5.7.0
-PORTREVISION=	3
+DISTVERSION=	2.5.7.0
+PORTREVISION=	4
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JESUS
@@ -16,11 +16,14 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt
 
-CONFIGURE_ENV=	MCRYPT_CPPFLAGS=${CPPFLAGS}
+USES=		localbase:ldflags perl5
 USE_PERL5=	configure
-USES=		perl5
+CONFIGURE_ENV=	MCRYPT_CPPFLAGS=${CPPFLAGS:Q} \
+		MCRYPT_LDFLAGS=${LDFLAGS:Q}
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+post-patch:
+	${REINPLACE_CMD} -e 's, -lltdl,,'\
+		${WRKSRC}/Makefile.PL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Mcrypt/Mcrypt.so
