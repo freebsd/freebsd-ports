@@ -1,19 +1,15 @@
---- configure.orig	2020-12-31 01:55:50 UTC
+--- configure.orig	2021-11-04 15:06:24 UTC
 +++ configure
-@@ -5425,15 +5425,11 @@ fi
- 		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+@@ -5223,8 +5223,12 @@ fi
+ 
+ 		    # The -pthread needs to go in the LDFLAGS, not LIBS
+ 		    LIBS=`echo $LIBS | sed s/-pthread//`
++		    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
+ 		    CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+ 		    LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
++		    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
++		    TCL_LIB_VERSIONS_OK=nodots
  fi
  
--	    case $system in
--	    FreeBSD-3.*)
- 		# Version numbers are dot-stripped by system policy.
- 		TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
- 		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
--		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
- 		TCL_LIB_VERSIONS_OK=nodots
--		;;
--	    esac
  	    ;;
- 	Darwin-*)
- 	    CFLAGS_OPTIMIZE="-Os"

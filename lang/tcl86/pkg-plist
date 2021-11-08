@@ -45,13 +45,14 @@ lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/msgcat-1.6.1.tm
 lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
-lib/tcl%%TCL_VER%%/platform-1.0.15.tm
+lib/tcl%%TCL_VER%%/platform-1.0.18.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
 lib/tcl%%TCL_VER%%/tcltest-2.5.3.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
 lib/tcl%%TCL_VER%%/encoding/big5.enc
+lib/tcl%%TCL_VER%%/encoding/cns11643.enc
 lib/tcl%%TCL_VER%%/encoding/cp1250.enc
 lib/tcl%%TCL_VER%%/encoding/cp1251.enc
 lib/tcl%%TCL_VER%%/encoding/cp1252.enc
@@ -95,6 +96,7 @@ lib/tcl%%TCL_VER%%/encoding/iso2022-kr.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-1.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-10.enc
+lib/tcl%%TCL_VER%%/encoding/iso8859-11.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-13.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-14.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-15.enc
@@ -574,6 +576,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_GetLongFromObj.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetMaster.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetMathFuncInfo.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_GetMemoryInfo.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetModeFromStat.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetModificationTimeFromStat.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetNameOfExecutable.tcl86.3.gz
@@ -668,6 +671,8 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_LoadFile.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_LogCommandInfo.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_Main.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_MainEx.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_MainExW.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_MakeFileChannel.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_MakeSafe.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_MakeTcpClientChannel.tcl86.3.gz
@@ -1630,6 +1635,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Guam
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Honolulu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Johnston
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Kanton
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Kiritimati
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Kosrae
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Kwajalein
