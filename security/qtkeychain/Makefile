@@ -1,6 +1,6 @@
 PORTNAME=	qtkeychain
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.13.1
 CATEGORIES=	security
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -11,19 +11,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig qt:5
 USE_GITHUB=	yes
-USE_QT=		core dbus linguisttools_build buildtools_build qmake_build
+USE_QT=		core dbus buildtools_build qmake_build
 GH_ACCOUNT=	frankosterfeld
 USE_LDCONFIG=	yes
+OPTIONS_SUB=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-CONFLICTS_INSTALL=	qtkeychain-qt[45]
-
-OPTIONS_DEFINE=		LIBSECRET
-OPTIONS_DEFAULT=	LIBSECRET
+OPTIONS_DEFINE=		LIBSECRET NLS
+OPTIONS_DEFAULT=	LIBSECRET NLS
 
 LIBSECRET_DESC=		Enable libsecret backend
-
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	LIBSECRET_SUPPORT
+
+NLS_USE=		qt=linguisttools_build
+NLS_CMAKE_BOOL=		BUILD_TRANSLATIONS
 
 .include <bsd.port.mk>

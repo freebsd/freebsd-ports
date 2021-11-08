@@ -8,8 +8,8 @@ lib/libqt5keychain.so
 lib/libqt5keychain.so.%%VERSION%%
 lib/libqt5keychain.so.1
 %%QT_MKSPECDIR%%/modules/qt_Qt5Keychain.pri
-%%QT_DATADIR%%keychain/translations/qtkeychain_de.qm
-%%QT_DATADIR%%keychain/translations/qtkeychain_fr.qm
-%%QT_DATADIR%%keychain/translations/qtkeychain_ro.qm
-%%QT_DATADIR%%keychain/translations/qtkeychain_ru.qm
-%%QT_DATADIR%%keychain/translations/qtkeychain_zh.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_de.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_fr.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_ro.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_ru.qm
+%%NLS%%%%QT_DATADIR%%keychain/translations/qtkeychain_zh.qm
