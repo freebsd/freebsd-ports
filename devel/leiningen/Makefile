@@ -1,8 +1,8 @@
 PORTNAME=	leiningen
-PORTVERSION=	2.9.6
+PORTVERSION=	2.9.7
 CATEGORIES=	devel lisp java
 MASTER_SITES=	https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone
-DISTFILES=	leiningen-${PORTVERSION}-standalone.zip:standalone
+DISTFILES=	${PORTNAME}-${PORTVERSION}-standalone.jar:standalone
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,7 @@ PLIST_FILES=	bin/lein \
 		etc/bash_completion.d/_lein.bash \
 		share/man/man1/lein.1.gz \
 		share/zsh/site-functions/_lein
-PORTDATA=	leiningen-${PORTVERSION}-standalone.zip
+PORTDATA=	leiningen-${PORTVERSION}-standalone.jar
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|function (.*) \{|\1() {|' \
@@ -29,7 +29,7 @@ post-patch:
 		-e 's|/etc/leinrc|${PREFIX}/etc/leinrc|' \
 		-e 's|\.leinrc|./&|' -e 's|source "|. "|' \
 		-e 's|^if \[\[ (.*) \]\];|if [ \1 ];|' \
-		-e 's|^LEIN_JAR=.*|LEIN_JAR=${DATADIR}/leiningen-${PORTVERSION}-standalone.zip|' \
+		-e 's|^LEIN_JAR=.*|LEIN_JAR=${DATADIR}/leiningen-${PORTVERSION}-standalone.jar|' \
 		${WRKSRC}/bin/lein-pkg
 
 do-install:
@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/lein.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/leiningen-${PORTVERSION}-standalone.zip \
+	${INSTALL_DATA} ${DISTDIR}/leiningen-${PORTVERSION}-standalone.jar \
 		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
