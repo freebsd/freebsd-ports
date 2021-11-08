@@ -2,6 +2,7 @@
 
 PORTNAME=	bash-completion
 PORTVERSION=	2.11
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	shells
 
@@ -28,7 +29,7 @@ SUB_LIST=	RUNFILE=${DATADIR}/bash_completion.sh
 
 GH_ACCOUNT=	scop
 USE_GITHUB=	yes
-GH_TUPLE=	0mp:bash-completion-freebsd:1.1.1:freebsd/freebsd
+GH_TUPLE=	0mp:bash-completion-freebsd:1.2.0:freebsd/freebsd
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
