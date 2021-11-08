@@ -1,11 +1,10 @@
 # Created by: Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 
 PORTNAME=	pari
-DISTVERSION=	2.13.2
+DISTVERSION=	2.13.3
 PORTEPOCH=	2
 CATEGORIES=	math
-MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
-		http://mirrors.rit.edu/zi/
+MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
