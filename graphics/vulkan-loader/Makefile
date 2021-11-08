@@ -38,8 +38,6 @@ XLIB_USE=		XORG=x11,xrandr
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
 
 post-patch:
-# _XOPEN_SOURCE enforces X/Open-compliance but alloca isn't there
-	@${REINPLACE_CMD} '/_XOPEN_SOURCE/d' ${WRKSRC}/loader/CMakeLists.txt
 # Extract (snapshot) version from the port
 	@${REINPLACE_CMD} -e '/find_.*Git/d' \
 		-e '/BRANCH/s/--unknown--/main/' \
