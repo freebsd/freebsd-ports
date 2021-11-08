@@ -229,6 +229,7 @@ include/folly/experimental/BitVectorCoding.h
 include/folly/experimental/Bits.h
 include/folly/experimental/Cleanup.h
 include/folly/experimental/CodingDetail.h
+include/folly/experimental/Coinflip.h
 include/folly/experimental/DynamicParser-inl.h
 include/folly/experimental/DynamicParser.h
 include/folly/experimental/EliasFanoCoding.h
@@ -275,9 +276,9 @@ include/folly/experimental/channels/ChannelCallbackHandle.h
 include/folly/experimental/channels/ConsumeChannel-inl.h
 include/folly/experimental/channels/ConsumeChannel.h
 include/folly/experimental/channels/FanoutChannel-inl.h
+include/folly/experimental/channels/FanoutChannel.h
 include/folly/experimental/channels/FanoutSender-inl.h
 include/folly/experimental/channels/FanoutSender.h
-include/folly/experimental/channels/FanoutChannel.h
 include/folly/experimental/channels/Merge-inl.h
 include/folly/experimental/channels/Merge.h
 include/folly/experimental/channels/MergeChannel-inl.h
@@ -321,9 +322,11 @@ include/folly/experimental/coro/Merge.h
 include/folly/experimental/coro/Multiplex-inl.h
 include/folly/experimental/coro/Multiplex.h
 include/folly/experimental/coro/Mutex.h
+include/folly/experimental/coro/Promise.h
 include/folly/experimental/coro/Result.h
 include/folly/experimental/coro/Retry.h
 include/folly/experimental/coro/RustAdaptors.h
+include/folly/experimental/coro/ScopeExit.h
 include/folly/experimental/coro/SharedLock.h
 include/folly/experimental/coro/SharedMutex.h
 include/folly/experimental/coro/Sleep-inl.h
@@ -562,6 +565,7 @@ include/folly/lang/Align.h
 include/folly/lang/Aligned.h
 include/folly/lang/Assume-inl.h
 include/folly/lang/Assume.h
+include/folly/lang/Badge.h
 include/folly/lang/Bits.h
 include/folly/lang/Byte.h
 include/folly/lang/CArray.h
@@ -697,6 +701,8 @@ include/folly/ssl/detail/OpenSSLSession.h
 include/folly/ssl/detail/OpenSSLThreading.h
 include/folly/stats/BucketedTimeSeries-inl.h
 include/folly/stats/BucketedTimeSeries.h
+include/folly/stats/DigestBuilder-inl.h
+include/folly/stats/DigestBuilder.h
 include/folly/stats/Histogram-inl.h
 include/folly/stats/Histogram.h
 include/folly/stats/MultiLevelTimeSeries-inl.h
@@ -710,8 +716,6 @@ include/folly/stats/TimeseriesHistogram.h
 include/folly/stats/detail/Bucket.h
 include/folly/stats/detail/BufferedStat-inl.h
 include/folly/stats/detail/BufferedStat.h
-include/folly/stats/detail/DigestBuilder-inl.h
-include/folly/stats/detail/DigestBuilder.h
 include/folly/stats/detail/DoubleRadixSort.h
 include/folly/stats/detail/SlidingWindow-inl.h
 include/folly/stats/detail/SlidingWindow.h
@@ -747,6 +751,7 @@ include/folly/synchronization/PicoSpinLock.h
 include/folly/synchronization/RWSpinLock.h
 include/folly/synchronization/Rcu-inl.h
 include/folly/synchronization/Rcu.h
+include/folly/synchronization/RelaxedAtomic.h
 include/folly/synchronization/SanitizeThread.h
 include/folly/synchronization/SaturatingSemaphore.h
 include/folly/synchronization/SmallLocks.h

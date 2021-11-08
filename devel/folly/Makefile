@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.08.30.00
+DISTVERSION=	2021.11.01.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	error: use of undeclared identifier 'DCHECK': https://github.com/facebook/folly/issues/1168
 
+BUILD_DEPENDS=	elfutils>0:devel/elfutils # workaround for missing symbols like DW_UT_compile: https://github.com/facebook/folly/issues/1654
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
