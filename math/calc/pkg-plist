@@ -451,6 +451,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/mfactor.cal
 %%FULL%%%%DATADIR%%/mod.cal
 %%FULL%%%%DATADIR%%/natnumset.cal
+%%FULL%%%%DATADIR%%/palindrome.cal
 %%FULL%%%%DATADIR%%/pell.cal
 %%FULL%%%%DATADIR%%/pi.cal
 %%FULL%%%%DATADIR%%/pix.cal
