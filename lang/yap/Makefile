@@ -47,7 +47,7 @@ post-build-DOCS-off:
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+.if ${ARCH:Mpowerpc*}
 USES+=		compiler:gcc-c++11-lib
 .endif
 
