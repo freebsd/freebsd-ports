@@ -52,6 +52,11 @@ include/fizz/crypto/signature/Signature-inl.h
 include/fizz/crypto/signature/Signature.h
 include/fizz/crypto/test/Mocks.h
 include/fizz/crypto/test/TestUtil.h
+include/fizz/experimental/ktls/AsyncFizzBaseKTLS.h
+include/fizz/experimental/ktls/AsyncKTLSSocket.h
+include/fizz/experimental/ktls/FizzKTLSCallback.h
+include/fizz/experimental/ktls/KTLS.h
+include/fizz/experimental/ktls/LinuxKTLS.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientExtension.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialFactory.h
