@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	scipy
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION}/:doc \
 		CHEESESHOP:source \
@@ -19,13 +19,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pythran>=0:devel/py-pythran
 LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++14-lang cpe fortran python:3.7+ shebangfix
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 FFLAGS+=	-std=legacy
 LDFLAGS+=	-shared
