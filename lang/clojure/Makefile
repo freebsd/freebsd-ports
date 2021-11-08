@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	clojure
-PORTVERSION=	1.10.1.447
+PORTVERSION=	1.10.3.1020
 CATEGORIES=	lang lisp java
 MASTER_SITES=	https://download.clojure.org/install/
 DISTNAME=	clojure-tools-${PORTVERSION}
@@ -23,6 +23,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/clojure-tools
 
 post-patch:
+	@${REINPLACE_CMD} 's,BINDIR,${PREFIX}\/bin,g' \
+		${WRKSRC}/clj
 	@${REINPLACE_CMD} 's,PREFIX,${DATADIR},g' \
 		${WRKSRC}/clojure
 
