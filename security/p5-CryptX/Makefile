@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	CryptX
-PORTVERSION=	0.073
+PORTVERSION=	0.074
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN/Crypt
 PKGNAMEPREFIX=	p5-
