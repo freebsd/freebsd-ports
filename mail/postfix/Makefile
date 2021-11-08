@@ -1,8 +1,8 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	postfix
-DISTVERSION=	3.6.2
-PORTREVISION?=	3
+DISTVERSION=	3.6.3
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -159,7 +159,21 @@ SUB_LIST+=	DAEMONDIR="${DAEMONDIR}" \
 		REQUIRE="${_REQUIRE}"
 SUB_FILES+=	mailer.conf.postfix pkg-install pkg-message
 
-POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" -DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" -DDEF_META_DIR=\\\"${META_DIRECTORY}\\\" -DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" -DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" -DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" -DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" -DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" -DDEF_README_DIR=\\\"${READMEDIR}\\\" -DDEF_HTML_DIR=\\\"${READMEDIR}\\\" -DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" -DDEF_DATA_DIR=\\\"/var/db/postfix\\\" -DDEF_MAIL_OWNER=\\\"postfix\\\" -DDEF_SGID_GROUP=\\\"maildrop\\\" -Wmissing-prototypes -Wformat -Wno-comment
+POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
+			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
+			-DDEF_META_DIR=\\\"${META_DIRECTORY}\\\" \
+			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
+			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
+			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
+			-DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" \
+			-DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" \
+			-DDEF_README_DIR=\\\"${READMEDIR}\\\" \
+			-DDEF_HTML_DIR=\\\"${READMEDIR}\\\" \
+			-DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" \
+			-DDEF_DATA_DIR=\\\"/var/db/postfix\\\" \
+			-DDEF_MAIL_OWNER=\\\"postfix\\\" \
+			-DDEF_SGID_GROUP=\\\"maildrop\\\" \
+			-Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
 _REQUIRE=	LOGIN cleanvar dovecot
@@ -277,19 +291,20 @@ POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=-L${LOCALBASE}/lib -llmdb"
 .endif
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
-REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!; \
-		s!(_directory = )/usr/!\1${PREFIX}/!g; s!^(data_directory = \
-		/var/)lib/!\1db/!g; s!^\#(mynetworks_style = host)!\1!g; \
-		s!^(sendmail_path =)!\1 ${PREFIX}/sbin/sendmail!g; \
-		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g; \
-		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g; s!^(setgid_group \
-		=)!\1 maildrop!g; s!^(manpage_directory =)!\1 \
-		${MANPREFIX}/man!g; s!^((html|readme)_directory =)!\1 \
-		${READMEDIR}!g; \!^\#alias_database = \
-		dbm:/etc/mail/aliases$$!d; s!(:|= \
-		)/etc/postfix!\1$$config_directory!g; \
-		s!/etc/postfix!${ETCDIR}!g; s!^(sample_directory =)!\1 \
-		${ETCDIR}!g; \
+REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!;\
+		s!(_directory = )/usr/!\1${PREFIX}/!g;\
+		s!^(data_directory = /var/)lib/!\1db/!g;\
+		s!^\#(mynetworks_style = host)!\1!g;\
+		s!^(sendmail_path =)!\1 ${PREFIX}/sbin/sendmail!g;\
+		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g;\
+		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
+		s!^(setgid_group =)!\1 maildrop!g;\
+		s!^(manpage_directory =)!\1 ${MANPREFIX}/man!g;\
+		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
+		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
+		s!(:|= )/etc/postfix!\1$$config_directory!g;\
+		s!/etc/postfix!${ETCDIR}!g;\
+		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
 		s!($$config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
