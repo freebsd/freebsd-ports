@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2021-08-06 15:45:04 UTC
++++ CMakeLists.txt
+@@ -1228,6 +1228,10 @@ if(USE_SYSTEM_ZZIP)
+   find_package(ZZIP REQUIRED)
+ endif()
+ 
++if(MIKTEX_FREEBSD)
++  find_package(Inotify REQUIRED)
++endif()
++
+ if(MSVC)
+   set(HAVE_PRAGMA_ONCE TRUE)
+ endif()
