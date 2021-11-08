@@ -1,4 +1,4 @@
---- bolt.gemspec.orig	2021-09-20 22:59:20 UTC
+--- bolt.gemspec.orig	2021-11-08 22:39:08 UTC
 +++ bolt.gemspec
 @@ -26,7 +26,7 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -15,7 +15,7 @@
        s.add_runtime_dependency(%q<r10k>.freeze, ["~> 3.10"])
 -      s.add_runtime_dependency(%q<ruby_smb>.freeze, ["~> 1.0"])
 +      s.add_runtime_dependency(%q<ruby_smb>.freeze, [">= 1.0"])
-       s.add_runtime_dependency(%q<terminal-table>.freeze, ["~> 1.8"])
+       s.add_runtime_dependency(%q<terminal-table>.freeze, ["~> 3.0"])
        s.add_runtime_dependency(%q<winrm>.freeze, ["~> 2.0"])
        s.add_runtime_dependency(%q<winrm-fs>.freeze, ["~> 1.3"])
 @@ -54,7 +54,7 @@ Gem::Specification.new do |s|
@@ -33,7 +33,7 @@
        s.add_dependency(%q<r10k>.freeze, ["~> 3.10"])
 -      s.add_dependency(%q<ruby_smb>.freeze, ["~> 1.0"])
 +      s.add_dependency(%q<ruby_smb>.freeze, [">= 1.0"])
-       s.add_dependency(%q<terminal-table>.freeze, ["~> 1.8"])
+       s.add_dependency(%q<terminal-table>.freeze, ["~> 3.0"])
        s.add_dependency(%q<winrm>.freeze, ["~> 2.0"])
        s.add_dependency(%q<winrm-fs>.freeze, ["~> 1.3"])
 @@ -83,7 +83,7 @@ Gem::Specification.new do |s|
@@ -51,6 +51,6 @@
      s.add_dependency(%q<r10k>.freeze, ["~> 3.10"])
 -    s.add_dependency(%q<ruby_smb>.freeze, ["~> 1.0"])
 +    s.add_dependency(%q<ruby_smb>.freeze, [">= 1.0"])
-     s.add_dependency(%q<terminal-table>.freeze, ["~> 1.8"])
+     s.add_dependency(%q<terminal-table>.freeze, ["~> 3.0"])
      s.add_dependency(%q<winrm>.freeze, ["~> 2.0"])
      s.add_dependency(%q<winrm-fs>.freeze, ["~> 1.3"])
