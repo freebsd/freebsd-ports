@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Mcrypt.3.gz
 %%SITE_ARCH%%/Mcrypt.pm
 %%SITE_ARCH%%/auto/Mcrypt/Mcrypt.so
 %%SITE_ARCH%%/auto/Mcrypt/autosplit.ix
+%%PERL5_MAN3%%/Mcrypt.3.gz
