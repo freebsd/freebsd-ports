@@ -68,8 +68,10 @@ LD_EMULATION=	elf_amd64
 LD_EMULATION=	elf_i386_fbsd
 .elif ${ARCH} == powerpc
 LD_EMULATION=	elf32ppc
-.elif ${ARCH:Mpowerpc64*}
+.elif ${ARCH} == powerpc64
 LD_EMULATION=	elf64ppc
+.elif ${ARCH} == powerpc64le
+LD_EMULATION=	elf64lppc
 .endif
 
 CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
