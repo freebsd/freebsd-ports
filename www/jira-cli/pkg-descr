@@ -1,0 +1,5 @@
+JiraCLI is a command line tool for Jira created with an idea to avoid
+the Jira UI as much as possible. It includes features like navigation,
+issue creation, cloning, linking, ticket transition, and so on.
+
+WWW: https://github.com/ankitpokhrel/jira-cli
