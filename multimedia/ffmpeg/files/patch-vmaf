@@ -1,0 +1,32 @@
+https://github.com/Netflix/vmaf/commit/122089fa3d23
+
+--- doc/filters.texi.orig	2021-10-24 20:47:07 UTC
++++ doc/filters.texi
+@@ -13875,14 +13875,14 @@ The obtained VMAF score is printed through the logging
+ It requires Netflix's vmaf library (libvmaf) as a pre-requisite.
+ After installing the library it can be enabled using:
+ @code{./configure --enable-libvmaf}.
+-If no model path is specified it uses the default model: @code{vmaf_v0.6.1.pkl}.
++If no model path is specified it uses the default model: @code{vmaf_v0.6.1.json}.
+ 
+ The filter has following options:
+ 
+ @table @option
+ @item model_path
+ Set the model path which is to be used for SVM.
+-Default value: @code{"/usr/local/share/model/vmaf_v0.6.1.pkl"}
++Default value: @code{"/usr/local/share/model/vmaf_v0.6.1.json"}
+ 
+ @item log_path
+ Set the file path to be used to store logs.
+--- libavfilter/vf_libvmaf.c.orig	2021-10-24 20:47:07 UTC
++++ libavfilter/vf_libvmaf.c
+@@ -72,7 +72,7 @@ typedef struct LIBVMAFContext {
+ #define FLAGS AV_OPT_FLAG_FILTERING_PARAM|AV_OPT_FLAG_VIDEO_PARAM
+ 
+ static const AVOption libvmaf_options[] = {
+-    {"model_path",  "Set the model to be used for computing vmaf.",                     OFFSET(model_path), AV_OPT_TYPE_STRING, {.str="/usr/local/share/model/vmaf_v0.6.1.pkl"}, 0, 1, FLAGS},
++    {"model_path",  "Set the model to be used for computing vmaf.",                     OFFSET(model_path), AV_OPT_TYPE_STRING, {.str="/usr/local/share/model/vmaf_v0.6.1.json"}, 0, 1, FLAGS},
+     {"log_path",  "Set the file path to be used to store logs.",                        OFFSET(log_path), AV_OPT_TYPE_STRING, {.str=NULL}, 0, 1, FLAGS},
+     {"log_fmt",  "Set the format of the log (csv, json or xml).",                       OFFSET(log_fmt), AV_OPT_TYPE_STRING, {.str=NULL}, 0, 1, FLAGS},
+     {"enable_transform",  "Enables transform for computing vmaf.",                      OFFSET(enable_transform), AV_OPT_TYPE_BOOL, {.i64=0}, 0, 1, FLAGS},

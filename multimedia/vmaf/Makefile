@@ -1,6 +1,7 @@
 PORTNAME=	vmaf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,5 +22,10 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	Netflix
 WRKSRC_SUBDIR=	lib${PORTNAME}
+
+post-install:
+# For legacy API consumers e.g., aom, x265
+	(cd ${WRKSRC:H} && ${COPYTREE_SHARE} "model" \
+		${STAGEDIR}${DATADIR:H} "-name *.json")
 
 .include <bsd.port.mk>
