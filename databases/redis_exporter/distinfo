@@ -1,6 +1,6 @@
-TIMESTAMP = 1634882333
-SHA256 (oliver006-redis_exporter-v1.29.0_GH0.tar.gz) = 11f6b8b5b73b7687eaf095f2999926f6b3f3ef13658a415f211588ded70a0968
-SIZE (oliver006-redis_exporter-v1.29.0_GH0.tar.gz) = 171997
+TIMESTAMP = 1636273744
+SHA256 (oliver006-redis_exporter-v1.30.0_GH0.tar.gz) = 64d2a3ab8d0ea1b63d2cc840b80cc00224c2f4f5cf04abb44649bf144a7c7e20
+SIZE (oliver006-redis_exporter-v1.30.0_GH0.tar.gz) = 172010
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
 SIZE (beorn7-perks-v1.0.1_GH0.tar.gz) = 10867
 SHA256 (cespare-xxhash-v2.1.1_GH0.tar.gz) = 0ee31178d2c5a1249be4e26294a2f428008dc4e1ecbbfbe47f74e41026df1148

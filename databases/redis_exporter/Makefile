@@ -1,7 +1,7 @@
 # Created by: Jev Björsell <ports@ecadlabs.com>
 
 PORTNAME=	redis_exporter
-PORTVERSION=	1.29.0
+PORTVERSION=	1.30.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
