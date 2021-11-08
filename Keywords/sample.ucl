@@ -64,6 +64,8 @@ pre-deinstall-lua: <<EOS
   if pkg.filecmp(sample_file, target_file) == 0 then
     os.remove(target_file)
   else
-    pkg.print_msg("You may need to manually remove " .. target_file .. " if it is no longer needed.")
+    if not pkg.pkg_upgrade then
+      pkg.print_msg("You may need to manually remove " .. target_file .. " if it is no longer needed.")
+    end
   end
 EOS
