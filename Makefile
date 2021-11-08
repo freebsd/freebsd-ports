@@ -67,8 +67,13 @@ PORTSTOP=	yes
 index: 	${INDEXDIR}/${INDEXFILE}
 
 fetchindex: ${INDEXDIR}/${INDEXFILE}.bz2
-	@bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE} && \
-	chmod a+r ${INDEXDIR}/${INDEXFILE} && ${RM} ${INDEXDIR}/${INDEXFILE}.bz2
+	@if bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE}.tmp ; then \
+		chmod a+r ${INDEXDIR}/${INDEXFILE}.tmp; \
+		${MV} ${INDEXDIR}/${INDEXFILE}.tmp ${INDEXDIR}/${INDEXFILE}; \
+		${RM} ${INDEXDIR}/${INDEXFILE}.bz2 \
+	else ; \
+		${RM} ${INDEXDIR}/${INDEXFILE}.tmp ; \
+	fi
 
 ${INDEXDIR}/${INDEXFILE}.bz2: .PHONY
 	${FETCHINDEX} ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
