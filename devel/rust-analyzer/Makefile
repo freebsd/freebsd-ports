@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-11-01
+DISTVERSION=	2021-11-08
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -13,17 +13,17 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 USES=		cargo
 USE_GITHUB=	yes
 
-CARGO_CRATES=	addr2line-0.16.0 \
+CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
 		always-assert-0.1.2 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.44 \
+		anyhow-1.0.45 \
 		anymap-0.12.1 \
 		arbitrary-1.0.2 \
 		arrayvec-0.7.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		backtrace-0.3.62 \
+		backtrace-0.3.63 \
 		bitflags-1.3.2 \
 		camino-1.0.5 \
 		cargo-platform-0.1.2 \
@@ -56,14 +56,14 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		fs_extra-1.2.0 \
 		fsevent-sys-4.0.0 \
 		fst-0.4.7 \
-		gimli-0.25.0 \
+		gimli-0.26.1 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		home-0.5.3 \
 		idna-0.2.3 \
 		indexmap-1.7.0 \
-		inotify-0.9.5 \
+		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
 		itertools-0.10.1 \
@@ -72,13 +72,13 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		kqueue-1.0.4 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
-		libc-0.2.105 \
+		libc-0.2.106 \
 		libloading-0.7.1 \
 		libmimalloc-sys-0.1.22 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
 		lsp-server-0.5.2 \
-		lsp-types-0.91.0 \
+		lsp-types-0.91.1 \
 		matchers-0.0.1 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
@@ -125,11 +125,11 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		semver-1.0.4 \
 		serde-1.0.130 \
 		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde_json-1.0.69 \
 		serde_repr-0.1.7 \
 		sharded-slab-0.1.4 \
 		smallvec-1.7.0 \
-		smol_str-0.1.18 \
+		smol_str-0.1.21 \
 		snap-1.0.5 \
 		syn-1.0.81 \
 		synstructure-0.12.6 \
