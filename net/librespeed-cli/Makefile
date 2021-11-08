@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.9
 CATEGORIES=	net www
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	CLI interface to run librespeed speedtests
 
 LICENSE=	LGPL3

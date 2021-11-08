@@ -726,7 +726,7 @@ reinstall the new ones without using the pkg upgrade facility.
 
 20210317:
   AFFECTS: users of security/strongswan
-  AUTHOR: driesm.michiels@gmail.com
+  AUTHOR: driesm@FreeBSD.org
 
   The stroke starter interface has been deprecated by upstream
   for some time now.  The default interface for controlling the charon

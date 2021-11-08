@@ -6,7 +6,7 @@ DISTVERSION=	1.14.12
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
 LICENSE=	BSD3CLAUSE

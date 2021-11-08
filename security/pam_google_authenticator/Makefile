@@ -5,7 +5,7 @@ PORTVERSION=	1.09
 PORTEPOCH=	1
 CATEGORIES=	security
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	APACHE20

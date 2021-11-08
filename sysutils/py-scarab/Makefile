@@ -4,7 +4,7 @@ DISTVERSION=		0.1.3
 CATEGORIES=		sysutils python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	CLI interface for FreeBSD Bugzilla
 
 LICENSE=	BSD3CLAUSE

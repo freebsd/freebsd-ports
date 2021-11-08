@@ -18,7 +18,7 @@
 # librenms_daemonflags:	Flags passed to daemon(8), overwrite this to use eg syslog 
 # 			Default "-o /var/log/librenms/librenms-service.log"
 #
-# Contributed by: Dries Michiels (driesm.michiels@gmail.com)
+# Contributed by: Dries Michiels (driesm@FreeBSD.org)
 
 . /etc/rc.subr
 

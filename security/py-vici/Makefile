@@ -4,7 +4,7 @@ CATEGORIES=	security net-vpn python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Native Python interface for strongSwan's VICI protocol
 
 LICENSE=	MIT

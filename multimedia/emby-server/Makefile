@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.zip ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Media server to organize, play & stream audio/video to various devices
 
 LICENSE=	UNKNOWN

@@ -4,7 +4,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		https://cflags.cc/roy/dhcpcd/
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	GTK+ / Curses interface to dhcpcd
 
 LICENSE=	BSD2CLAUSE

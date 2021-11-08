@@ -4,7 +4,7 @@ DISTVERSION=	0.3.0
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Open Source Spotify client library
 
 LICENSE=	MIT

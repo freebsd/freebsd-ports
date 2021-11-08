@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	www net
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Lightweight selfhosted speedtest
 
 LICENSE=	LGPL3

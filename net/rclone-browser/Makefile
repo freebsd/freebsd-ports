@@ -2,7 +2,7 @@ PORTNAME=	rclone-browser
 DISTVERSION=	1.8.0
 CATEGORIES=	net
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Simple cross platform GUI for rclone
 
 LICENSE=	MIT

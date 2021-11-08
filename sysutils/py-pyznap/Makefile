@@ -4,7 +4,7 @@ CATEGORIES=		sysutils python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	ZFS snapshot tool written in Python
 
 LICENSE=	GPLv3

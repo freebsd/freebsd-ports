@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.30.0
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	driesm.michiels@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	External netdata collection plugin written in Go
 
 LICENSE=	GPLv3
