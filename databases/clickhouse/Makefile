@@ -11,8 +11,8 @@ COMMENT=	Fast open-source OLAP database management system
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	only supported on amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
@@ -215,6 +215,7 @@ SOVERSION=	${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
+	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/config-processor
