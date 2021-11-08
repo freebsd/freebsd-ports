@@ -64,9 +64,7 @@ PORTSTOP=	yes
 
 .include <bsd.port.subdir.mk>
 
-index:
-	@rm -f ${INDEXDIR}/${INDEXFILE}
-	@cd ${.CURDIR} && ${MAKE} ${INDEXDIR}/${INDEXFILE}
+index: 	${INDEXDIR}/${INDEXFILE}
 
 fetchindex: ${INDEXDIR}/${INDEXFILE}.bz2
 	@bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE} && \
@@ -110,7 +108,7 @@ MAKE_INDEX=	/usr/libexec/make_index /dev/stdin
 MAKE_INDEX=	perl ${.CURDIR}/Tools/make_index
 .endif
 
-${INDEXDIR}/${INDEXFILE}:
+${INDEXDIR}/${INDEXFILE}: .PHONY
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		export LOCALBASE=/nonexistentlocal; \
