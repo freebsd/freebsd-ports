@@ -25,6 +25,13 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GH_ACCOUNT=	Blosc
 USE_GITHUB=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+USES+=		compiler:gcc-c++11-lib
+USE_CSTD=	c11
+.endif
+
 do-test:
 	cd ${TEST_WRKSRC} && ctest
 
