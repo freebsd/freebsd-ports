@@ -148,6 +148,7 @@ include/thrift/lib/cpp2/async/ServerSinkBridge.h
 include/thrift/lib/cpp2/async/ServerStream-inl.h
 include/thrift/lib/cpp2/async/ServerStream.h
 include/thrift/lib/cpp2/async/ServerStreamDetail.h
+include/thrift/lib/cpp2/async/ServerStreamMultiPublisher.h
 include/thrift/lib/cpp2/async/Sink.h
 include/thrift/lib/cpp2/async/SinkBridgeUtil.h
 include/thrift/lib/cpp2/async/StreamCallbacks.h
@@ -208,6 +209,7 @@ include/thrift/lib/cpp2/protocol/JSONProtocol-inl.h
 include/thrift/lib/cpp2/protocol/JSONProtocol.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon-inl.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon.h
+include/thrift/lib/cpp2/protocol/LazyDeserializationFlags.h
 include/thrift/lib/cpp2/protocol/NimbleProtocol-inl.h
 include/thrift/lib/cpp2/protocol/NimbleProtocol.h
 include/thrift/lib/cpp2/protocol/Protocol.h
@@ -372,6 +374,9 @@ include/thrift/lib/cpp2/transport/rocket/test/util/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/util/VersionServicesMock.h
 include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
+include/thrift/lib/cpp2/type/ThriftType.h
+include/thrift/lib/cpp2/type/UniversalType.h
+include/thrift/lib/cpp2/type/detail/ThriftType.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
 include/thrift/lib/cpp2/util/DebugString.h
@@ -398,8 +403,6 @@ include/thrift/lib/py3/serializer.h
 include/thrift/lib/py3/server.h
 include/thrift/lib/py3/ssl.h
 include/thrift/lib/py3/stream.h
-include/thrift/lib/py3/tablebased/PythonTableBased.h
-include/thrift/lib/py3/tablebased/Serializer.h
 include/thrift/lib/py3/test/BinaryTypes.h
 include/thrift/lib/py3/test/client_event_handlers/handler.h
 include/thrift/lib/py3/test/cpp_handler.h
@@ -466,6 +469,16 @@ include/thrift/lib/thrift/gen-cpp2/reflection_types_custom_protocol.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visitation.h
+include/thrift/lib/thrift/gen-cpp2/type_constants.h
+include/thrift/lib/thrift/gen-cpp2/type_data.h
+include/thrift/lib/thrift/gen-cpp2/type_for_each_field.h
+include/thrift/lib/thrift/gen-cpp2/type_metadata.h
+include/thrift/lib/thrift/gen-cpp2/type_types.h
+include/thrift/lib/thrift/gen-cpp2/type_types.tcc
+include/thrift/lib/thrift/gen-cpp2/type_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/type_visit_by_thrift_field_metadata.h
+include/thrift/lib/thrift/gen-cpp2/type_visit_union.h
+include/thrift/lib/thrift/gen-cpp2/type_visitation.h
 lib/cmake/fbthrift/FBThriftConfig.cmake
 lib/cmake/fbthrift/FBThriftTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fbthrift/FBThriftTargets.cmake
@@ -493,5 +506,7 @@ lib/libthriftmetadata.so
 lib/libthriftmetadata.so.1.0.0
 lib/libthriftprotocol.so
 lib/libthriftprotocol.so.1.0.0
+lib/libthrifttype.so
+lib/libthrifttype.so.1.0.0
 lib/libtransport.so
 lib/libtransport.so.1.0.0
