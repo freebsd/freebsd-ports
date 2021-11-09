@@ -2,7 +2,7 @@
 
 PORTNAME=	dhcpcd
 DISTVERSION=	9.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/
 

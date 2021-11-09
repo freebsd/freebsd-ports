@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: dhclient dhcpcd
-# KEYWORD: nojail
+# KEYWORD: nojailvnet
 #
 
 . /etc/rc.subr
