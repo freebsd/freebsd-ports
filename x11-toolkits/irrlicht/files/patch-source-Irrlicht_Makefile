@@ -1,12 +1,13 @@
---- source/Irrlicht/Makefile.orig	2014-10-18 07:47:20 UTC
+--- source/Irrlicht/Makefile.orig	2021-11-08 14:14:39 UTC
 +++ source/Irrlicht/Makefile
-@@ -56,23 +56,20 @@
+@@ -58,23 +58,20 @@ BZIP2OBJ = bzip2/blocksort.o bzip2/huffman.o bzip2/crc
  EXTRAOBJ =
  LINKOBJ = $(IRRMESHOBJ) $(IRROBJ) $(IRRPARTICLEOBJ) $(IRRANIMOBJ) \
  	$(IRRVIDEOOBJ) $(IRRSWRENDEROBJ) $(IRRIOOBJ) $(IRROTHEROBJ) \
 -	$(IRRGUIOBJ) $(ZLIBOBJ) $(JPEGLIBOBJ) $(LIBPNGOBJ) $(LIBAESGM) \
+-	$(BZIP2OBJ) $(EXTRAOBJ)
 +	$(IRRGUIOBJ) $(LIBAESGM) \
- 	$(BZIP2OBJ) $(EXTRAOBJ)
++	$(EXTRAOBJ)
  
  ###############
  #Compiler flags
@@ -26,7 +27,7 @@
  
  sharedlib sharedlib_osx: CXXFLAGS += -fPIC
  sharedlib sharedlib_osx: CFLAGS += -fPIC
-@@ -83,13 +80,13 @@
+@@ -85,13 +82,13 @@ LIBSELECT=64
  endif
  
  #Linux specific options
