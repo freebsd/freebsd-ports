@@ -1,0 +1,4 @@
+#!/bin/sh
+: ${FREEBSD_SYSROOT_CXX:="%%FREEBSD_SYSROOT_CXX%%"}
+: ${FREEBSD_SYSROOT:="%%FREEBSD_SYSROOT%%"}
+exec "${FREEBSD_SYSROOT_CXX}" --sysroot="${FREEBSD_SYSROOT}" --target=%%FREEBSD_SYSROOT_LLVM_TRIPLE%% --stdlib=libc++ -mno-relax "$@"

@@ -1,0 +1,4 @@
+#!/bin/sh
+: ${FREEBSD_SYSROOT_CC:="%%FREEBSD_SYSROOT_CC%%"}
+: ${FREEBSD_SYSROOT:="%%FREEBSD_SYSROOT%%"}
+exec "${FREEBSD_SYSROOT_CC}" --sysroot="${FREEBSD_SYSROOT}" --target=%%FREEBSD_SYSROOT_LLVM_TRIPLE%% -mno-relax "$@"

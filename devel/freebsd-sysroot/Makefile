@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2021-09-14
+DISTVERSION=	a2021-11-09
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/tobik:${FLAVOR} \
 		${_SYSROOT_DIST:@f@https://download.freebsd.org/ftp/$f?dummy=/:${FLAVOR}@}
