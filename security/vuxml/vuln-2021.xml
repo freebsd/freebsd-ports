@@ -502,8 +502,24 @@
 	<range><lt>8.0.27</lt></range>
       </package>
       <package>
+	<name>mysql-connector-java</name>
+	<range><lt>8.0.27</lt></range>
+      </package>
+      <package>
 	<name>mysql80-server</name>
 	<range><lt>8.0.27</lt></range>
+      </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.32</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.22</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.13</lt></range>
       </package>
     </affects>
     <description>
@@ -516,15 +532,75 @@
 	    requiring user credentials.<br/>
 	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
 	    MySQL is 9.8.</p>
+	  <p>Note: MariaDB only vulnerable against CVE-2021-35604</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <url>https://www.oracle.com/security-alerts/cpuoct2021.html</url>
+      <cvename>CVE-2021-22931</cvename>
+      <cvename>CVE-2021-3711</cvename>
+      <cvename>CVE-2021-22926</cvename>
+      <cvename>CVE-2021-36222</cvename>
+      <cvename>CVE-2021-35583</cvename>
+      <cvename>CVE-2021-35610</cvename>
+      <cvename>CVE-2021-35597</cvename>
+      <cvename>CVE-2021-35607</cvename>
+      <cvename>CVE-2021-2481</cvename>
+      <cvename>CVE-2021-35590</cvename>
+      <cvename>CVE-2021-35592</cvename>
+      <cvename>CVE-2021-35593</cvename>
+      <cvename>CVE-2021-35594</cvename>
+      <cvename>CVE-2021-35598</cvename>
+      <cvename>CVE-2021-35621</cvename>
+      <cvename>CVE-2021-2471</cvename>
+      <cvename>CVE-2021-35604</cvename>
+      <cvename>CVE-2021-35612</cvename>
+      <cvename>CVE-2021-35608</cvename>
+      <cvename>CVE-2021-35602</cvename>
+      <cvename>CVE-2021-35577</cvename>
+      <cvename>CVE-2021-2478</cvename>
+      <cvename>CVE-2021-2479</cvename>
+      <cvename>CVE-2021-35537</cvename>
+      <cvename>CVE-2021-35591</cvename>
+      <cvename>CVE-2021-35596</cvename>
+      <cvename>CVE-2021-35648</cvename>
+      <cvename>CVE-2021-35631</cvename>
+      <cvename>CVE-2021-35626</cvename>
+      <cvename>CVE-2021-35627</cvename>
+      <cvename>CVE-2021-35628</cvename>
+      <cvename>CVE-2021-35629</cvename>
+      <cvename>CVE-2021-35575</cvename>
+      <cvename>CVE-2021-35634</cvename>
+      <cvename>CVE-2021-35635</cvename>
+      <cvename>CVE-2021-35636</cvename>
+      <cvename>CVE-2021-35638</cvename>
+      <cvename>CVE-2021-35641</cvename>
+      <cvename>CVE-2021-35642</cvename>
+      <cvename>CVE-2021-35643</cvename>
+      <cvename>CVE-2021-35644</cvename>
+      <cvename>CVE-2021-35645</cvename>
+      <cvename>CVE-2021-35646</cvename>
+      <cvename>CVE-2021-35647</cvename>
+      <cvename>CVE-2021-35630</cvename>
+      <cvename>CVE-2021-35637</cvename>
+      <cvename>CVE-2021-35546</cvename>
+      <cvename>CVE-2021-35622</cvename>
+      <cvename>CVE-2021-35624</cvename>
+      <cvename>CVE-2021-35639</cvename>
+      <cvename>CVE-2021-35632</cvename>
+      <cvename>CVE-2021-35584</cvename>
+      <cvename>CVE-2021-35613</cvename>
+      <cvename>CVE-2021-35640</cvename>
+      <cvename>CVE-2021-35633</cvename>
+      <cvename>CVE-2021-35625</cvename>
+      <cvename>CVE-2021-35623</cvename>
+      <cvename>CVE-2021-35618</cvename>
     </references>
     <dates>
       <discovery>2021-10-16</discovery>
       <entry>2021-10-17</entry>
+      <modified>2021-11-09</modified>
     </dates>
   </vuln>
 
