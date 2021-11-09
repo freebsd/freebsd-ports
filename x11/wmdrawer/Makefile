@@ -7,7 +7,7 @@ CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/ \
 		http://www.sourcefiles.org/Utilities/Desktops/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockapp which provides a drawer to launch applications
 
 LICENSE=	GPLv2+
