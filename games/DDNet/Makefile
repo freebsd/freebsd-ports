@@ -1,5 +1,5 @@
 PORTNAME=	DDNet
-PORTVERSION=	15.5.4
+PORTVERSION=	15.6.2
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 
@@ -25,7 +25,7 @@ OPTIONS_SUB=		yes
 CLIENT_DESC=		Build game client
 CLIENT_CMAKE_BOOL=	CLIENT
 CLIENT_USES=		gettext gl sdl xorg desktop-file-utils
-CLIENT_USE=		GL=gl,glew XORG=x11 SDL=sdl2
+CLIENT_USE=		GL=gl,glew SDL=sdl2
 CLIENT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libwavpack.so:audio/wavpack \
 			libpnglite.so:graphics/pnglite \
