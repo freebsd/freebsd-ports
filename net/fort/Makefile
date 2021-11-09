@@ -1,6 +1,5 @@
 PORTNAME=	fort
-DISTVERSION=	1.5.2
-PORTREVISION=	1
+DISTVERSION=	1.5.3
 CATEGORIES=	net
 
 MAINTAINER=	toni@devboks.com
@@ -25,8 +24,6 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%DISTVERSION%%|${DISTVERSION}|" \
-		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e "s|/tmp/fort|${ETCDIR}|" \
 		${WRKSRC}/examples/config.json
 	@${REINPLACE_CMD} -e "s|/usr/local/ssl|/etc/ssl|" \
