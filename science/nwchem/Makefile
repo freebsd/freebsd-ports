@@ -1,6 +1,6 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.2.20211105
+DISTVERSION=	7.0.2.20211109
 DISTVERSIONSUFFIX=	-release
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
 		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3
@@ -24,16 +24,12 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		fortran gettext-runtime gmake perl5 shebangfix
+USES=		fortran gettext-runtime gmake perl5
 USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	e41592b
-
-SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_* config/64_to_32 \
-		../QA/doqmtests.mpi ../QA/runtests.mpi.unix ../QA/round_esp.sh ../QA/sleep_loopqa.sh
-SHEBANG_GLOB=	*.sh
+GH_TAGNAME=	9fcb2bdb8826fd5790eab199cc25c29ef3e534bf
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
