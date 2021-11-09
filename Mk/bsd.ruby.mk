@@ -47,6 +47,8 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  the form of `x.y.z' (see below for current value).
 # RUBY_VERSION_CODE	- Integer version of RUBY_VERSION in the form of 
 #			  `xyz'.
+# RUBY_DISTVERSION	- DISTVERSION for the standard ruby ports (ruby,
+#			  ruby-gdbm, etc.).
 # RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby,
 #			  ruby-gdbm, etc.).
 # RUBY_PORTREVISION	- PORTREVISION for the standard ruby ports.
@@ -133,7 +135,7 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 #
 # Ruby 2.6
 #
-RUBY_VERSION=		2.6.9
+RUBY_DISTVERSION=	2.6.9
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY26=			""	# PLIST_SUB helpers
@@ -142,7 +144,7 @@ RUBY26=			""	# PLIST_SUB helpers
 #
 # Ruby 2.7
 #
-RUBY_VERSION=		2.7.5
+RUBY_DISTVERSION=	2.7.5
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY27=			""	# PLIST_SUB helpers
@@ -151,10 +153,18 @@ RUBY27=			""	# PLIST_SUB helpers
 #
 # Ruby 3.0
 #
-RUBY_VERSION=		3.0.3
+RUBY_DISTVERSION=	3.0.3
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY30=			""	# PLIST_SUB helpers
+. elif ${RUBY_VER} == 3.1
+#
+# Ruby 3.1
+#
+RUBY_DISTVERSION=	3.1.0-preview1
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY31=			""	# PLIST_SUB helpers
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
@@ -162,9 +172,10 @@ RUBY30=			""	# PLIST_SUB helpers
 #
 # Other versions
 #
-IGNORE=	Only ruby 2.6, 2.7 and 3.0 are supported
+IGNORE=	Only ruby 2.6, 2.7, 3.0 and 3.1 are supported
 _INVALID_RUBY_VER=	1
 . endif
+RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 .endif # defined(RUBY_VER)
 
 .if !defined(_INVALID_RUBY_VER)
@@ -172,6 +183,7 @@ _INVALID_RUBY_VER=	1
 RUBY26?=		"@comment "
 RUBY27?=		"@comment "
 RUBY30?=		"@comment "
+RUBY31?=		"@comment "
 
 .if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
 .if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
@@ -181,7 +193,7 @@ BROKEN=			${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}}
 .endif
 .endif
 
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
@@ -203,9 +215,9 @@ _RUBY_VENDORDIR?=	${_RUBY_SYSLIBDIR}/ruby/vendor_ruby
 
 RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
-RUBY_PORTVERSION?=	${RUBY_VERSION}
+RUBY_PORTVERSION?=	${RUBY_DISTVERSION:tl:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
 MASTER_SITE_SUBDIR_RUBY?=	${RUBY_VER}
-RUBY_DISTNAME?=		ruby-${RUBY_VERSION}
+RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
 
@@ -281,7 +293,8 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY26=${RUBY26} \
 			RUBY27=${RUBY27} \
-			RUBY30=${RUBY30}
+			RUBY30=${RUBY30} \
+			RUBY30=${RUBY31}
 
 .if ${PORT_OPTIONS:MDEBUG}
 RUBY_FLAGS+=	-d

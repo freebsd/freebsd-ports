@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+Some of the standard commands and libraries are provided as separate
+ports for ease of upgrading:
+
+	devel/ruby-gems:		gem - RubyGems package manager
+	devel/rubygem-debug:		debug - Debugging functionality for Ruby
+	devel/rubygem-erb:		erb - Templating system for Ruby
+	devel/rubygem-irb:		irb - Interactive Ruby
+	devel/rubygem-minitest:		minitest - Complete suite of testing facilities
+	devel/rubygem-power_assert:	power_assert - Power Assert for Ruby
+	devel/rubygem-rake:		rake - Ruby Make
+	devel/rubygem-rbs:		rbs - Language for type signatures for Ruby and standard library definitions
+	devel/rubygem-rdoc:		rdoc - Ruby Documentation System
+	devel/rubygem-test-unit:	test-unit - Unit testing framework for Ruby
+	devel/rubygem-typeprof:		typeprof - Type analysis tool for Ruby code
+	ftp/rubygem-net-ftp:		net-ftp - Support for the File Transfer Protocol
+	mail/rubygem-net-imap:		net-imap - Ruby client api for Internet Message Access Protocol
+	mail/rubygem-net-pop:		net-pop - Ruby client library for POP3
+	mail/rubygem-net-smtp:		net-smtp - Simple Mail Transfer Protocol client library for Ruby
+	math/rubygem-matrix:		matrix - Implementation of Matrix and Vector classes
+	math/rubygem-prime:		prime - Prime numbers and factorization library
+	sysutils/rubygem-bundler:	bundler - Tool that manages gem dependencies for ruby applications
+	textproc/rubygem-rexml:		rexml - XML toolkit for Ruby
+	www/rubygem-rss:		rss - Family of libraries that support various formats of XML "feeds"
+
+And some of the standard libraries are provided as separate ports
+since they require extra dependencies:
+
+	databases/rubygem-dbm:	DBM module
+	databases/rubygem-gdbm:	GDBM module
+
+Install them as occasion demands.
+EOM
+}
+]
