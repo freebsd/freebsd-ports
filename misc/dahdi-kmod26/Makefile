@@ -12,10 +12,8 @@ DISTFILES=	${DISTNAME}.tar.bz2\
 		oslec-linux-${OSLEC_VERSION}${EXTRACT_SUFX}\
 		zaphfc-${ZAPHFC_VERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	dgilbert@eicat.ca
 COMMENT=	Digium/Asterisk Hardware Device Interface
-
-BROKEN=		does not compile: use of undeclared identifier 'thread_dtor'
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:misc/dahdi
 
@@ -44,7 +42,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 #PATCH_STRIP=	-p1
 MAKEFILE=	BSDmakefile
 USE_RC_SUBR=	dahdi
-MAKE_ARGS=	NO_FETCH=yes WITHOUT_HEADERS=yes #ADDITIONAL_DRIVERS="wcb1xxp"
+MAKE_ARGS=	NO_FETCH=yes WITHOUT_HEADERS=yes WERROR= #ADDITIONAL_DRIVERS="wcb1xxp"
 GROUPS=		dahdi
 
 CONFLICTS=	zaptel dahdi-kmod-*
