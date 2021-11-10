@@ -1,3 +1,5 @@
 TIMESTAMP = 1632620334
 SHA256 (nwg-piotr-nwg-launchers-v0.6.3_GH0.tar.gz) = 8be219ef7e8aead08b46215c9c545b1bf9d108cefee580ffcf297553dee9dfaf
 SIZE (nwg-piotr-nwg-launchers-v0.6.3_GH0.tar.gz) = 64054
+SHA256 (f123f433ad2d.patch) = 76e1075f52e39cffca934393c5685b222d286879df995ad471740047a8cc04b5
+SIZE (f123f433ad2d.patch) = 1175
