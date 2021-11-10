@@ -3,3 +3,5 @@ SHA256 (AOMediaCodec-libavif-v0.9.3_GH0.tar.gz) = bcd9a1f57f982a9615eb7e2faf8723
 SIZE (AOMediaCodec-libavif-v0.9.3_GH0.tar.gz) = 2000521
 SHA256 (2340cdb5f0c2.patch) = acc0733963b7e1c9f4bb3563b052a15aff6705729ae08a50123f7a0d537396e5
 SIZE (2340cdb5f0c2.patch) = 1714
+SHA256 (dce4c2a5f4bb.patch) = a516cbcce0d93791ed9e5bfa3eb6f21d3e05d2e725852698089f0a138cda2b39
+SIZE (dce4c2a5f4bb.patch) = 1471
