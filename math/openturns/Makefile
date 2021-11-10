@@ -1,7 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17
-PORTREVISION=	4
+DISTVERSION=	1.18
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,32 +12,47 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		flex:textproc/flex \
 		spectra>0:math/spectra
-LIB_DEPENDS=	libbonmin.so:math/bonmin \
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libblas.so:math/blas \
+		libbonmin.so:math/bonmin \
+		libcamd.so:math/suitesparse-camd \
 		libceres.so:math/ceres-solver \
 		libCbc.so:math/cbc \
+		libccolamd.so:math/suitesparse-ccolamd \
 		libCgl.so:math/cgl \
+		libcholmod.so:math/suitesparse-cholmod \
 		libClp.so:math/clp \
 		libcminpack.so:math/cminpack \
+		libcoinasl.so:math/asl \
 		libCoinUtils.so:math/coinutils \
+		libcolamd.so:math/suitesparse-colamd \
+		libcxsparse.so:math/suitesparse-cxsparse \
 		libdlib.so:science/dlib-cpp \
 		libgif.so:graphics/giflib \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
+		libgmp.so:math/gmp \
 		libhdf5_cpp.so:science/hdf5 \
 		libipopt.so:math/ipopt \
+		liblapack.so:math/lapack \
+		libmetis.so:math/metis \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
+		libnauty.so:math/nauty \
 		libnlopt.so:math/nlopt \
-		libopt.so:math/optpp \
 		libOsi.so:math/osi \
 		libpng16.so:graphics/png \
+		libprimesieve.so:math/primesieve \
+		libspqr.so:math/suitesparse-spqr \
+		libsuitesparseconfig.so:math/suitesparse-config \
 		libsz.so:science/szip \
-		libtbb.so:devel/onetbb
+		libtbb.so:devel/onetbb \
+		libunwind.so:devel/libunwind
 
 USES=		bison blaslapack:openblas cmake compiler:c++14-lang eigen:3 gnome jpeg localbase:ldflags pkgconfig sqlite xorg
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
-USE_XORG=	ice sm x11 xext
+USE_XORG=	ice sm x11 xau xcb xdmcp xext
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=${LOCALBASE}/lib/libopenblas.so \
@@ -46,6 +60,8 @@ CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=
 		-DOPENTURNS_DOC_PATH:STRING=share/doc/openturns
 CMAKE_OFF=	USE_DOXYGEN USE_SPHINX
 CMAKE_OFF+=	USE_HMAT # broken with hmat-oss-1.7.1: https://github.com/openturns/openturns/issues/1868
+
+TEST_TARGET=	check # 10 tests are known to fail: https://github.com/openturns/openturns/issues/1919
 
 OPTIONS_DEFINE=		PYTHON EXAMPLES
 OPTIONS_DEFAULT=	PYTHON

@@ -8,7 +8,7 @@ include/openturns/ARMALikelihoodFactory.hxx
 include/openturns/ARMAState.hxx
 include/openturns/AbdoRackwitz.hxx
 include/openturns/AbsoluteExponential.hxx
-include/openturns/AdaptiveDirectionalSampling.hxx
+include/openturns/AdaptiveDirectionalStratification.hxx
 include/openturns/AdaptiveStieltjesAlgorithm.hxx
 include/openturns/AdaptiveStrategy.hxx
 include/openturns/AdaptiveStrategyImplementation.hxx
@@ -148,6 +148,8 @@ include/openturns/DiscreteCompoundDistribution.hxx
 include/openturns/DiscreteDistribution.hxx
 include/openturns/DiscreteMarkovChain.hxx
 include/openturns/DistFunc.hxx
+include/openturns/DistanceToDomainEvaluation.hxx
+include/openturns/DistanceToDomainFunction.hxx
 include/openturns/Distribution.hxx
 include/openturns/DistributionFactory.hxx
 include/openturns/DistributionFactoryImplementation.hxx
@@ -288,7 +290,7 @@ include/openturns/HaarWavelet.hxx
 include/openturns/HaarWaveletFactory.hxx
 include/openturns/HaltonSequence.hxx
 include/openturns/Hamming.hxx
-include/openturns/Hanning.hxx
+include/openturns/Hann.hxx
 include/openturns/HaselgroveSequence.hxx
 include/openturns/HermiteFactory.hxx
 include/openturns/HermitianMatrix.hxx
@@ -856,8 +858,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/AbdoRackwitz_doc.i
 %%PYTHON%%include/openturns/swig/AbsoluteExponential.i
 %%PYTHON%%include/openturns/swig/AbsoluteExponential_doc.i
-%%PYTHON%%include/openturns/swig/AdaptiveDirectionalSampling.i
-%%PYTHON%%include/openturns/swig/AdaptiveDirectionalSampling_doc.i
+%%PYTHON%%include/openturns/swig/AdaptiveDirectionalStratification.i
+%%PYTHON%%include/openturns/swig/AdaptiveDirectionalStratification_doc.i
 %%PYTHON%%include/openturns/swig/AdaptiveStieltjesAlgorithm.i
 %%PYTHON%%include/openturns/swig/AdaptiveStieltjesAlgorithm_doc.i
 %%PYTHON%%include/openturns/swig/AdaptiveStrategy.i
@@ -1126,6 +1128,9 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/DiscreteMarkovChain_doc.i
 %%PYTHON%%include/openturns/swig/DistFunc.i
 %%PYTHON%%include/openturns/swig/DistFunc_doc.i
+%%PYTHON%%include/openturns/swig/DistanceToDomainEvaluation.i
+%%PYTHON%%include/openturns/swig/DistanceToDomainFunction.i
+%%PYTHON%%include/openturns/swig/DistanceToDomainFunction_doc.i
 %%PYTHON%%include/openturns/swig/Distribution.i
 %%PYTHON%%include/openturns/swig/DistributionFactory.i
 %%PYTHON%%include/openturns/swig/DistributionFactoryImplementation.i
@@ -1392,8 +1397,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/HaltonSequence_doc.i
 %%PYTHON%%include/openturns/swig/Hamming.i
 %%PYTHON%%include/openturns/swig/Hamming_doc.i
-%%PYTHON%%include/openturns/swig/Hanning.i
-%%PYTHON%%include/openturns/swig/Hanning_doc.i
+%%PYTHON%%include/openturns/swig/Hann.i
+%%PYTHON%%include/openturns/swig/Hann_doc.i
 %%PYTHON%%include/openturns/swig/HaselgroveSequence.i
 %%PYTHON%%include/openturns/swig/HaselgroveSequence_doc.i
 %%PYTHON%%include/openturns/swig/HermiteFactory.i
@@ -2296,10 +2301,10 @@ lib/cmake/openturns/OpenTURNSConfig.cmake
 lib/cmake/openturns/OpenTURNSConfigVersion.cmake
 lib/cmake/openturns/UseOpenTURNS.cmake
 lib/libOT.so
-lib/libOT.so.0
-lib/libOT.so.0.0.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.17.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.17.dist-info/WHEEL
+lib/libOT.so.0.19
+lib/libOT.so.0.19.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.18.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.18.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_algo.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_analytical.so
@@ -2375,4 +2380,4 @@ lib/libOT.so.0.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/viscous_free_fall.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/viewer.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/weightedexperiment.py
-share/gdb/auto-load/usr/local/lib/libOT.so.0.0.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libOT.so.-gdb.py
