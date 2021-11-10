@@ -1,7 +1,6 @@
 PORTNAME=	tusd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	2
+DISTVERSION=	1.8.0
 CATEGORIES=	www
 
 MAINTAINER=	mm@FreeBSD.org
@@ -16,38 +15,52 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tus
 GH_TUPLE=	\
 		Acconut:lockfile:v1.1.0:acconut_lockfile/vendor/gopkg.in/Acconut/lockfile.v1 \
-		aws:aws-sdk-go:v1.20.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
-		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
+		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
+		Azure:azure-storage-blob-go:v0.14.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
+		aws:aws-sdk-go:v1.41.13:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bmizerany:pat:6226ea591a40:bmizerany_pat/vendor/github.com/bmizerany/pat \
-		census-instrumentation:opencensus-go:v0.21.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-proto:v0.2.1:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		cncf:udpa:5459f2c99403:cncf_udpa_go/vendor/github.com/cncf/udpa \
+		cncf:xds:aa0b78936158:cncf_xds_go/vendor/github.com/cncf/xds \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:mock:v1.3.1:golang_mock/vendor/github.com/golang/mock \
-		golang:net:f4e77d36d62c:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.5:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:ecd444e8653b:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
-		googleapis:gax-go:v2.0.4:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.6.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.40.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		grpc-ecosystem:go-grpc-middleware:v1.1.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
-		grpc:grpc-go:v1.28.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		h2non:gock:v1.0.14:h2non_gock/vendor/gopkg.in/h2non/gock.v1 \
+		envoyproxy:go-control-plane:cf90f659a021:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
+		envoyproxy:protoc-gen-validate:v0.1.0:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
+		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
+		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
+		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:6b3c2da341f1:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:69cdffdb9359:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-genproto:2b146023228c:google_go_genproto/vendor/google.golang.org/genproto \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
+		googleapis:gax-go:v2.1.1:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
+		googleapis:google-api-go-client:v0.60.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:storage/v1.18.2:googleapis_google_cloud_go_storage \
+		googleapis:google-cloud-go:v0.97.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
+		grpc:grpc-go:v1.41.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		h2non:gock:v1.1.2:h2non_gock/vendor/gopkg.in/h2non/gock.v1 \
 		h2non:parth:b4df798d6542:h2non_parth/vendor/github.com/h2non/parth \
-		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:client_golang:v1.11.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.26.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		sethgrid:pester:68a33a018ad0:sethgrid_pester/vendor/github.com/sethgrid/pester \
-		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		vimeo:go-util:v1.2.0:vimeo_go_util/vendor/github.com/vimeo/go-util
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		vimeo:go-util:v1.4.1:vimeo_go_util/vendor/github.com/vimeo/go-util
 
 GO_TARGET=	./cmd/tusd
 
@@ -68,6 +81,10 @@ SUB_LIST=	TUSD_USER=${USERS} \
 		TUSD_UPLOAD_DIR=${TUSD_UPLOAD_DIR}
 
 PLIST_SUB+=	${SUB_LIST}
+
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
+	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
 
 post-install:
 	${MKDIR} ${STAGEDIR}${TUSD_UPLOAD_DIR}
