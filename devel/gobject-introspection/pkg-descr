@@ -6,4 +6,4 @@ verification and documentation generation.
 GObject Introspection contains tools to generate and handle the introspection
 data.
 
-WWW: http://live.gnome.org/GObjectIntrospection
+WWW: https://gi.readthedocs.io/en/latest/
