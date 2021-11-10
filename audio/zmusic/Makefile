@@ -1,6 +1,6 @@
 PORTNAME=	zmusic
 PORTVERSION=	1.1.8
-CATEGORIES=	devel
+CATEGORIES=	audio
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	GZDoom's music system as a standalone library
