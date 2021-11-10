@@ -1,11 +1,11 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	0.17.0
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt file manager
 
 LICENSE=	GPLv2
