@@ -1,16 +1,16 @@
 PORTNAME=	emby-server
-PORTVERSION=	4.6.4.0
-PORTREVISION=	2
+PORTVERSION=	4.6.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
 DISTNAME=	embyserver-netframework_${PORTVERSION}
 DISTFILES=	${DISTNAME}.zip \
-		ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
+		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}.zip ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
+EXTRACT_ONLY=	${DISTNAME}.zip \
+		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libass.so:multimedia/libass \
+		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -66,6 +67,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-gpl \
 		--enable-iconv \
 		--enable-libass \
+		--enable-libdav1d \
 		--enable-libdrm \
 		--enable-libfreetype \
 		--enable-libfribidi \
@@ -98,21 +100,18 @@ WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public
 USERS=		emby
 GROUPS=		emby
 
-OPTIONS_DEFINE=		LAME SMB X11
-OPTIONS_DEFAULT=	LAME SMB X11
+OPTIONS_DEFINE=		LAME X11
+OPTIONS_DEFAULT=	LAME X11
 
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
-
-SMB_USES=		samba:lib
-SMB_CONFIGURE_ENABLE=	libsmbclient
 
 X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick6-nox11
 X11_USES=		xorg
 X11_USE=		xorg=x11
 
-FFVERSION=	2020_05_23
+FFVERSION=	2021_02_27
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system
