@@ -1,3 +1,50 @@
+  <vuln vid="2ccd71bd-426b-11ec-87db-6cc21735f730">
+    <topic>PostgreSQL -- Possible man-in-the-middle attacks</topic>
+    <affects>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.1</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.5</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.9</lt></range>
+      </package>
+      <package>
+	<name>postgresql11-server</name>
+	<range><lt>11.14</lt></range>
+      </package>
+       <package>
+	<name>postgresql10-server</name>
+	<range><lt>10.19</lt></range>
+      </package>
+      <package>
+	<name>postgresql96-server</name>
+	<range><lt>9.6.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL Project reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p> CVE-2021-23214: A man-in-the-middle with the ability to inject data into the TCP connection could stuff some cleartext data into the start of a supposedly encryption-protected database session. This could be abused to send faked SQL commands to the server, although that would only work if the server did not demand any authentication data. (However, a server relying on SSL certificate authentication might well not do so.) </p>
+	  <p> CVE-2021-23222: A man-in-the-middle with the ability to inject data into the TCP connection could stuff some cleartext data into the start of a supposedly encryption-protected database session.  This could probably be abused to inject faked responses to the client's first few queries, although other details of libpq's behavior make that harder than it sounds.  A different line of attack is to exfiltrate the client's password, or other sensitive data that might be sent early in the session.  That has been shown to be possible with a server vulnerable to CVE-2021-23214. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-23214</cvename>
+      <cvename>CVE-2021-23222</cvename>
+    </references>
+    <dates>
+      <discovery>2021-11-08</discovery>
+      <entry>2021-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfea59e0-41ee-11ec-9bac-589cfc007716">
     <topic>puppet -- Silent Configuration Failure</topic>
     <affects>
