@@ -9,7 +9,8 @@ COMMENT=	Qt/C++ library wrapping libwayland
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	wayland-protocols>=1.22:graphics/wayland-protocols
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wayland-protocols>=1.22:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
