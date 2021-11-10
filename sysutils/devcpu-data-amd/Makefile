@@ -1,5 +1,5 @@
 PORTNAME=	data
-PORTVERSION=	20191228
+PORTVERSION=	20211109
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sbruno
 PKGNAMEPREFIX=	devcpu-
@@ -31,5 +31,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/microcode_amd_fam15h.bin ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/microcode_amd_fam16h.bin ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/microcode_amd_fam17h.bin ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/microcode_amd_fam19h.bin ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
