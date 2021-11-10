@@ -1,7 +1,7 @@
 # Created by: Jesper Schmitz Mouridsen
 
 PORTNAME=	lxqt-themes
-PORTVERSION=	0.17.0
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	LXQT
 
