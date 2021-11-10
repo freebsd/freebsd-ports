@@ -1,6 +1,15 @@
---- Makefile.in.orig	2019-05-22 12:46:15 UTC
+--- Makefile.in.orig	2021-10-11 09:30:17 UTC
 +++ Makefile.in
-@@ -2397,16 +2397,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -884,7 +884,7 @@ recollindex_SOURCES = \
+     index/webqueue.cpp \
+     index/webqueue.h
+ 
+-recollindex_LDADD = librecoll.la 
++recollindex_LDADD = librecoll.la $(LIBFAM)
+ recollq_SOURCES = query/recollqmain.cpp
+ recollq_LDADD = librecoll.la
+ xadump_SOURCES = query/xadump.cpp
+@@ -2795,16 +2795,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHON_TRUE@clean-local:: recollpython-clean
  @MAKEPYTHON_TRUE@recollpython: librecoll.la
  @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
@@ -19,7 +28,7 @@
  @MAKEPYTHON_TRUE@         )
  @MAKEPYTHON_TRUE@recollpython-clean:
  @MAKEPYTHON_TRUE@	rm -f python/recoll/*.pyc
-@@ -2422,16 +2418,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2820,16 +2816,12 @@ PicStatic: $(librecoll_la_OBJECTS)
  @MAKEPYTHONCHM_TRUE@clean-local:: rclpychm-clean
  @MAKEPYTHONCHM_TRUE@rclpychm:
  @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \

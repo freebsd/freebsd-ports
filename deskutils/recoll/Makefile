@@ -1,8 +1,7 @@
 # Created by: J.F. Dockes <jean-francois.dockes@wanadoo.fr>
 
 PORTNAME=	recoll
-PORTVERSION=	1.27.3
-PORTREVISION=	17
+PORTVERSION=	1.31.2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
@@ -29,7 +28,7 @@ USE_PYTHON=	py3kplist
 SHEBANG_FILES=	filters/*.py filters/rcl7z filters/rclaudio \
 		filters/rclchm filters/rcldia filters/rclepub \
 		filters/rclepub1 filters/rclics filters/rclimg \
-		filters/rclinfo filters/rclkar filters/rclpython \
+		filters/rclinfo filters/rclkar \
 		filters/rclrar filters/rcltar filters/rclwar \
 		filters/rclzip desktop/hotrecoll.py
 GNU_CONFIGURE=	yes
@@ -72,7 +71,6 @@ X11MON_USES=		fam xorg
 X11MON_USE=		xorg=ice,sm,x11
 X11MON_CONFIGURE_ENABLE=	x11mon
 X11MON_CONFIGURE_WITH=	fam
-X11MON_BROKEN=		does not build: index/rclmonrcv.cpp:(.text+0x1f13): undefined reference to `FAMOpen2'
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -81,9 +79,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|python setup.py|${PYTHON_CMD} setup.py|; s|sudo||' \
-		${WRKSRC}/python/recoll/Makefile
 	@${REINPLACE_CMD} -e \
 		's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
 		${WRKSRC}/Makefile.in
@@ -94,8 +89,11 @@ pre-build-QT5-on:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recoll/*.so \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recollchm/*.so \
-		${STAGEDIR}${PREFIX}/lib/recoll/*.so \
-		${STAGEDIR}${PREFIX}/bin/recoll
+		${STAGEDIR}${PREFIX}/lib/recoll/*.so
+# Remove systemd unit files (useless on FreeBSD)
+	@${RM} ${STAGEDIR}${DATADIR}/examples/recollindex*.service
+
+post-install-CHM-on:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recollchm/*.so
 
 .include <bsd.port.mk>
