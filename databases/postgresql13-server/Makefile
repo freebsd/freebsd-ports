@@ -1,6 +1,6 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 
-DISTVERSION?=	13.4
+DISTVERSION?=	13.5
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
