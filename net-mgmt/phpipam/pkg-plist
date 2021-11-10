@@ -991,6 +991,11 @@
 %%WWWDIR%%/UPDATE
 %%WWWDIR%%/upgrade/.htaccess
 %%WWWDIR%%/upgrade/index.php
+@owner www
+@group www
+@dir %%WWWDIR%%/app/admin/import-export/upload
+@owner
+@group
 @dir %%WWWDIR%%/app/login/captcha
 @dir %%WWWDIR%%/functions/GoogleAuthenticator
 @dir %%WWWDIR%%/functions/php-saml
