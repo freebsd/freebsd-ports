@@ -1,9 +1,9 @@
 bin/sddm
 bin/sddm-greeter
 etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
-etc/pam.d/sddm
-etc/pam.d/sddm-autologin
-etc/pam.d/sddm-greeter
+@sample etc/pam.d/sddm.default etc/pam.d/sddm
+@sample etc/pam.d/sddm-autologin.default etc/pam.d/sddm-autologin
+@sample etc/pam.d/sddm-greeter.default etc/pam.d/sddm-greeter
 %%QT_QMLDIR%%/SddmComponents/Background.qml
 %%QT_QMLDIR%%/SddmComponents/Button.qml
 %%QT_QMLDIR%%/SddmComponents/Clock.qml

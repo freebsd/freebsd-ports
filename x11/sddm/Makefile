@@ -1,7 +1,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -56,5 +56,8 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/xinitrc.desktop ${STAGEDIR}${PREFIX}/share/xsessions
 	${INSTALL_SCRIPT} ${FILESDIR}/xinit-session ${STAGEDIR}${PREFIX}/share/sddm/scripts
 	${REINPLACE_CMD} -e 's#@@LOCALBASE@@#${LOCALBASE}#' ${STAGEDIR}${PREFIX}/share/sddm/scripts/xinit-session
+	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/sddm ${STAGEDIR}${PREFIX}/etc/pam.d/sddm.default
+	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-autologin ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-autologin.default
+	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-greeter ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-greeter.default
 
 .include <bsd.port.mk>
