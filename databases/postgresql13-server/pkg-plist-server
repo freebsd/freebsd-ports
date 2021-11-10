@@ -1453,6 +1453,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Guam
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Honolulu
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Johnston
+%%TZDATA%%%%DATADIR%%/timezone/Pacific/Kanton
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Kiritimati
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Kosrae
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Kwajalein

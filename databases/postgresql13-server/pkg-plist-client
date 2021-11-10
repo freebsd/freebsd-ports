@@ -112,6 +112,7 @@ include/postgresql/server/access/twophase.h
 include/postgresql/server/access/twophase_rmgr.h
 include/postgresql/server/access/valid.h
 include/postgresql/server/access/visibilitymap.h
+include/postgresql/server/access/visibilitymapdefs.h
 include/postgresql/server/access/xact.h
 include/postgresql/server/access/xlog.h
 include/postgresql/server/access/xlog_internal.h

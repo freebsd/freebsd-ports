@@ -880,6 +880,7 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_resetwal-14.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_rewind-14.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_test_fsync-14.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_test_timing-14.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_upgrade-14.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_waldump-14.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/plpgsql-14.mo
@@ -1469,6 +1470,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Guam
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Honolulu
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Johnston
+%%TZDATA%%%%DATADIR%%/timezone/Pacific/Kanton
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Kiritimati
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Kosrae
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Kwajalein
