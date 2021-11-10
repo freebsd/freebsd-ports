@@ -1,0 +1,262 @@
+build started at Wed Nov 10 14:44:00 CST 2021
+port directory: /usr/ports/wip/gffread
+package name: gffread-0.12.7
+building for: FreeBSD 12-2-amd64-default 12.2-RELEASE-p10 FreeBSD 12.2-RELEASE-p10 amd64
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.3.7_1
+Host OSVERSION: 1300139
+Jail OSVERSION: 1202000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202000
+UNAME_v=FreeBSD 12.2-RELEASE-p10
+UNAME_r=12.2-RELEASE-p10
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.7_1
+MASTERMNT=/usr/local/poudriere/data/.m/12-2-amd64-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/12-2-amd64-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=12-2-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/12-2-amd64-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs PKGLATESTREPOSITORY=/tmp/pkgs/Latest
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/wip/gffread/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/gffread/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/wip/gffread/work/.cache  HOME=/wrkdirs/usr/ports/wip/gffread/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/gffread/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/gffread/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/gffread/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/wip/gffread/work/.cache  HOME=/wrkdirs/usr/ports/wip/gffread/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/gffread/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=12.2 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/gffread"  EXAMPLESDIR="share/examples/gffread"  DATADIR="share/gffread"  WWWDIR="www/gffread"  ETCDIR="etc/gffread"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/gffread DOCSDIR=/usr/local/share/doc/gffread EXAMPLESDIR=/usr/local/share/examples/gffread  WWWDIR=/usr/local/www/gffread ETCDIR=/usr/local/etc/gffread
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/make.conf ####
+# Added by auto-admin from /usr/local/sbin/port-poudriere-setup
+USE_LOCAL_MK=yes
+# End auto-admin addition
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  12013
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   gffread-0.12.7 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.3.pkg
+[12-2-amd64-default] Installing pkg-1.17.3...
+[12-2-amd64-default] Extracting pkg-1.17.3: .......... done
+===>   gffread-0.12.7 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of gffread-0.12.7
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License MIT accepted by the user
+===>   gffread-0.12.7 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by gffread-0.12.7 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License MIT accepted by the user
+===>   gffread-0.12.7 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by gffread-0.12.7 for building
+=> SHA256 Checksum OK for gpertea-gffread-v0.12.7_GH0.tar.gz.
+=> SHA256 Checksum OK for gpertea-gclib-v0.12.7_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License MIT accepted by the user
+===>   gffread-0.12.7 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by gffread-0.12.7 for building
+===>  Extracting for gffread-0.12.7
+=> SHA256 Checksum OK for gpertea-gffread-v0.12.7_GH0.tar.gz.
+=> SHA256 Checksum OK for gpertea-gclib-v0.12.7_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for gffread-0.12.7
+===>  Applying FreeBSD patches for gffread-0.12.7 from /usr/ports/wip/gffread/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   gffread-0.12.7 depends on package: gmake>=4.3 - not found
+===>   Installing existing package /packages/All/gmake-4.3_2.pkg
+[12-2-amd64-default] Installing gmake-4.3_2...
+[12-2-amd64-default] `-- Installing gettext-runtime-0.21...
+[12-2-amd64-default] |   `-- Installing indexinfo-0.3.1...
+[12-2-amd64-default] |   `-- Extracting indexinfo-0.3.1: .... done
+[12-2-amd64-default] `-- Extracting gettext-runtime-0.21: .......... done
+[12-2-amd64-default] Extracting gmake-4.3_2: .......... done
+===>   gffread-0.12.7 depends on package: gmake>=4.3 - found
+===>   Returning to build of gffread-0.12.7
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   gffread-0.12.7 depends on package: gmake>=4.3 - found
+===>  Configuring for gffread-0.12.7
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for gffread-0.12.7
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/gffread/work/gffread-0.12.7'
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/GBase.cpp -o gclib/GBase.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/GArgs.cpp -o gclib/GArgs.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/GFaSeqGet.cpp -o gclib/GFaSeqGet.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/gdna.cpp -o gclib/gdna.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/codons.cpp -o gclib/codons.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/gff.cpp -o gclib/gff.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/GStr.cpp -o gclib/GStr.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gclib/GFastaIndex.cpp -o gclib/GFastaIndex.o
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gff_utils.cpp -o gff_utils.o
+gclib/gff.cpp:37:12: warning: unused variable 'CLASSCODE_J_RANK' [-Wunused-const-variable]
+const byte CLASSCODE_J_RANK = 6; // all junctional based overlaps
+           ^
+c++ -Wall -Wextra -std=c++11 -I. -Igclib -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT -fno-strict-aliasing -fno-exceptions -fno-rtti -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c gffread.cpp -o gffread.o
+1 warning generated.
+c++  -fstack-protector-strong  -o gffread gclib/GBase.o gclib/GArgs.o gclib/GFaSeqGet.o gclib/gdna.o gclib/codons.o gclib/gff.o gclib/GStr.o gclib/GFastaIndex.o gff_utils.o gffread.o 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/gffread/work/gffread-0.12.7'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for gffread-0.12.7
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/gffread/work/gffread-0.12.7'
+install -c gffread /wrkdirs/usr/ports/wip/gffread/work/stage/usr/local/bin
+strip /wrkdirs/usr/ports/wip/gffread/work/stage/usr/local/bin/gffread
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/gffread/work/gffread-0.12.7'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for gffread-0.12.7
+install -l rs /tmp/pkgs/gffread-0.12.7.pkg /tmp/pkgs/gffread-0.12.7.txz
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for gffread-0.12.7
+===>  Checking if gffread is already installed
+===>   Registering installation for gffread-0.12.7
+[12-2-amd64-default] Installing gffread-0.12.7...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libc++.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for gffread
+===>   Deinstalling gffread-0.12.7
+Updating database digests format: ..... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	gffread: 0.12.7
+
+Number of packages to be removed: 1
+[12-2-amd64-default] [1/1] Deinstalling gffread-0.12.7...
+[12-2-amd64-default] [1/1] Deleting files for gffread-0.12.7: .... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:00:24] Installing from package
+[12-2-amd64-default] Installing gffread-0.12.7...
+[12-2-amd64-default] Extracting gffread-0.12.7: .... done
+[00:00:24] Cleaning up
+===>  Cleaning for gffread-0.12.7
+[00:00:24] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	gffread: 0.12.7
+
+Number of packages to be removed: 1
+[12-2-amd64-default] [1/1] Deinstalling gffread-0.12.7...
+[12-2-amd64-default] [1/1] Deleting files for gffread-0.12.7: .... done
+build of wip/gffread | gffread-0.12.7 ended at Wed Nov 10 14:44:09 CST 2021
+build time: 00:00:09

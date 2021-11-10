@@ -1,0 +1,4 @@
+GFF/GTF utility providing format conversions, filtering, FASTA sequence
+extraction and more.
+
+WWW: http://ccb.jhu.edu/software/stringtie/gff.shtml#gffread
