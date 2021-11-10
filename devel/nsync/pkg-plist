@@ -13,7 +13,7 @@ include/nsync_time_internal.h
 include/nsync_waiter.h
 lib/libnsync.so
 lib/libnsync.so.1
-lib/libnsync.so.1.20.1
+lib/libnsync.so.1.24.0
 lib/libnsync_cpp.so
 lib/libnsync_cpp.so.1
-lib/libnsync_cpp.so.1.20.1
+lib/libnsync_cpp.so.1.24.0
