@@ -47,5 +47,6 @@ share/applications/lxqt-about.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_th_TH.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_zh_TW.qm
