@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-config
-PORTVERSION=	0.17.1
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 DIST_SUBDIR=	lxqt
