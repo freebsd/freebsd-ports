@@ -9,7 +9,8 @@ COMMENT=	Dynamic tiling Wayland compositor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wayland-protocols>0:graphics/wayland-protocols \
 		wlroots>=0.14.0:x11-toolkits/wlroots \
 		zig>=0.8.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
