@@ -2,7 +2,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}413
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			2
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -22,7 +22,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.13.8
+SAMBA4_VERSION=			4.13.14
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
 CONFIGURE_ENV+=			PTHREAD_LDFLAGS="-lpthread"
 
 USES+=				compiler:c++11-lang iconv localbase:ldflags \
-				perl5 pkgconfig shebangfix ssl waf gettext-runtime
+				perl5 pkgconfig shebangfix waf gettext-runtime
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
 WAF_CMD=			buildtools/bin/waf

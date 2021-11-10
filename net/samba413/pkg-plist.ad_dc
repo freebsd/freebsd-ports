@@ -2,10 +2,10 @@ bin/samba-tool
 sbin/samba_downgrade_db
 sbin/samba
 sbin/samba_dnsupdate
-sbin/samba-gpupdate
 sbin/samba_kcc
 sbin/samba_spnupdate
 sbin/samba_upgradedns
+sbin/samba-gpupdate
 include/samba4/dcerpc_server.h
 lib/samba4/libdcerpc-server.so
 lib/samba4/libdcerpc-server.so.0

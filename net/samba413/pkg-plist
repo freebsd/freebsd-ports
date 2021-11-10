@@ -195,6 +195,7 @@ lib/pam_winbind.so
 %%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libcom_err-samba4.so.0
 %%SAMBA4_LIBDIR%%/private/libcommon-auth-samba4.so
 %%SAMBA4_LIBDIR%%/private/libdbwrap-samba4.so
+%%SAMBA4_LIBDIR%%/private/libdcerpc-pkt-auth-samba4.so
 %%SAMBA4_LIBDIR%%/private/libdcerpc-samba-samba4.so
 %%SAMBA4_LIBDIR%%/private/libdcerpc-samba4.so
 %%SAMBA4_LIBDIR%%/private/libdsdb-module-samba4.so
