@@ -1,16 +1,22 @@
 [
 { type: install
   message: <<EOM
-Some of the standard commands are provided as separate ports for ease
-of upgrading:
+Some of the standard commands and libraries are provided as separate
+ports for ease of upgrading:
 
 	devel/ruby-gems:		gem - RubyGems package manager
 	devel/rubygem-erb:		erb - Templating system for Ruby
 	devel/rubygem-irb:		irb - Interactive Ruby
+	devel/rubygem-minitest:		minitest - Complete suite of testing facilities
+	devel/rubygem-power_assert:	power_assert - Power Assert for Ruby
 	devel/rubygem-rake:		rake - Ruby Make
 	devel/rubygem-rbs:		rbs - Language for type signatures for Ruby and standard library definitions
 	devel/rubygem-rdoc:		rdoc - Ruby Documentation System
+	devel/rubygem-test-unit:	test-unit - Unit testing framework for Ruby
+	devel/rubygem-typeprof:		typeprof - Type analysis tool for Ruby code
 	sysutils/rubygem-bundler:	bundler - Tool that manages gem dependencies for ruby applications
+	textproc/rubygem-rexml:		rexml - XML toolkit for Ruby
+	www/rubygem-rss:		rss - Family of libraries that support various formats of XML "feeds"
 
 And some of the standard libraries are provided as separate ports
 since they require extra dependencies:
