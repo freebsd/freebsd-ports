@@ -41,3 +41,5 @@ share/cmake/qt5xdgiconloader/qt5xdgiconloader-config-version.cmake
 share/cmake/qt5xdgiconloader/qt5xdgiconloader-config.cmake
 share/cmake/qt5xdgiconloader/qt5xdgiconloader-targets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/qt5xdgiconloader/qt5xdgiconloader-targets.cmake
+%%LXQT_SHAREDIR%%/lxqt-qtxdg.conf
+%%LXQT_SHAREDIR%%/qtxdg.conf
