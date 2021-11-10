@@ -2,7 +2,7 @@
 
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.0.5
+DISTVERSION=	3.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsqlite3.so:databases/sqlite3 \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake compiler:c++14-lang cpe desktop-file-utils gettext \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils gettext \
 		gnome libtool python:build pkgconfig shared-mime-info
 
 USE_GITHUB=	yes
@@ -43,14 +43,14 @@ CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_sqlite:STRING=system \
 		-Daudacity_use_wxwidgets:STRING=system \
 		-Daudacity_use_zlib:STRING=system
-CMAKE_ON=	audacity_obey_system_dependencies
+CMAKE_ON=	audacity_use_pa_oss audacity_obey_system_dependencies
 CMAKE_OFF=	audacity_has_networking audacity_has_updates_check \
 		audacity_use_pa_alsa audacity_use_pch
 
 OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LV2 MAD \
 			OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
 			VORBIS VST
-OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LV2 MAD OGG SBSMS \
+OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA LV2 MAD OGG SBSMS \
 			SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_EXCLUDE_i386=	SBSMS
 

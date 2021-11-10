@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2021-10-28 09:14:30 UTC
++++ src/CMakeLists.txt
+@@ -38,7 +38,7 @@ elseif( GIT_FOUND )
+ else()
+    # No Git installed and no version data is available.
+    # Generate an empty file and let AboutDialog do the rest
+-   file( TOUCH "${_PRVDIR}/RevisionIdent.h" )
++   file( WRITE "${_PRVDIR}/RevisionIdent.h" "\n" )
+ endif()
+ 
+ # Handle Audio Units option
