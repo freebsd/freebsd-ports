@@ -3,6 +3,8 @@
 #       python setup.py install
 #
 
+import platform
+
 try:
     import distutils
     from distutils import sysconfig
@@ -19,7 +21,6 @@ lib_dirs = [prefix + "/lib"]
 libs = ["sqlite3"]
 macros = [('MODULE_NAME', '"sqlite3"')]
 sqlite_srcs = [
-'_sqlite/cache.c',
 '_sqlite/connection.c',
 '_sqlite/cursor.c',
 '_sqlite/microprotocols.c',
@@ -28,6 +29,11 @@ sqlite_srcs = [
 '_sqlite/row.c',
 '_sqlite/statement.c',
 '_sqlite/util.c']
+
+major, minor = map(int, platform.python_version_tuple()[:2])
+
+if (major, minor) <= (3, 10):
+    sqlite_srcs.append('_sqlite/cache.c',)
 
 try:
     import ctypes
