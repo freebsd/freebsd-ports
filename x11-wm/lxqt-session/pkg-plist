@@ -28,6 +28,7 @@ share/kdm/sessions/lxqt.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_es_UY.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_es_VE.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_eu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_fr.qm
@@ -70,6 +71,7 @@ share/kdm/sessions/lxqt.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_el.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_es.qm
+%%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_gl.qm
@@ -88,9 +90,11 @@ share/kdm/sessions/lxqt.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ru.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_si.qm
+%%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_sk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_sl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_zh_TW.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_ar.qm
@@ -107,6 +111,7 @@ share/kdm/sessions/lxqt.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_es_UY.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_es_VE.qm
+%%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_eu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_fr.qm
