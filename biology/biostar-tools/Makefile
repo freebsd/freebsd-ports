@@ -1,5 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -63,7 +63,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		kallisto>0:biology/kallisto \
 		bamutil>0:biology/bamutil \
 		${PYTHON_PKGNAMEPREFIX}deepTools>0:biology/py-deeptools@${PY_FLAVOR} \
-		igv>0:biology/igv
+		igv>0:biology/igv \
+		gffread>0:biology/gffread
 
 USES=		metaport python
 
