@@ -1,5 +1,5 @@
 PORTNAME=	go-btfs
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		TRON-US:go-btfs-api:v0.3.0:tron_us_go_btfs_api/vendor/github.com/TRON-US/go-btfs-api \
 		TRON-US:go-btfs-chunker:v0.3.0:tron_us_go_btfs_chunker/vendor/github.com/TRON-US/go-btfs-chunker \
 		TRON-US:go-btfs-cmds:v0.2.13:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
-		TRON-US:go-btfs-config:v0.11.1:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
+		TRON-US:go-btfs-config:v0.11.2:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
 		TRON-US:go-btfs-files:v0.2.0:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
 		TRON-US:go-btfs-pinner:v0.1.1:tron_us_go_btfs_pinner/vendor/github.com/TRON-US/go-btfs-pinner \
 		TRON-US:go-btns:v0.1.1:tron_us_go_btns/vendor/github.com/TRON-US/go-btns \
@@ -183,10 +183,10 @@ GH_TUPLE=	\
 		libp2p:go-libp2p-kbucket:v0.4.7:libp2p_go_libp2p_kbucket/vendor/github.com/libp2p/go-libp2p-kbucket \
 		libp2p:go-libp2p-loggables:v0.1.0:libp2p_go_libp2p_loggables/vendor/github.com/libp2p/go-libp2p-loggables \
 		libp2p:go-libp2p-metrics:v0.1.0:libp2p_go_libp2p_metrics/vendor/github.com/libp2p/go-libp2p-metrics \
-		libp2p:go-libp2p-mplex:v0.2.4:libp2p_go_libp2p_mplex/vendor/github.com/libp2p/go-libp2p-mplex \
+		libp2p:go-libp2p-mplex:v0.3.0:libp2p_go_libp2p_mplex/vendor/github.com/libp2p/go-libp2p-mplex \
 		libp2p:go-libp2p-nat:v0.0.6:libp2p_go_libp2p_nat/vendor/github.com/libp2p/go-libp2p-nat \
 		libp2p:go-libp2p-netutil:v0.1.0:libp2p_go_libp2p_netutil/vendor/github.com/libp2p/go-libp2p-netutil \
-		libp2p:go-libp2p-noise:v0.1.1:libp2p_go_libp2p_noise/vendor/github.com/libp2p/go-libp2p-noise \
+		libp2p:go-libp2p-noise:v0.1.2:libp2p_go_libp2p_noise/vendor/github.com/libp2p/go-libp2p-noise \
 		libp2p:go-libp2p-peer:v0.2.0:libp2p_go_libp2p_peer/vendor/github.com/libp2p/go-libp2p-peer \
 		libp2p:go-libp2p-peerstore:v0.2.6:libp2p_go_libp2p_peerstore/vendor/github.com/libp2p/go-libp2p-peerstore \
 		libp2p:go-libp2p-pnet:v0.2.0:libp2p_go_libp2p_pnet/vendor/github.com/libp2p/go-libp2p-pnet \
@@ -197,12 +197,12 @@ GH_TUPLE=	\
 		libp2p:go-libp2p-routing-helpers:v0.2.3:libp2p_go_libp2p_routing_helpers/vendor/github.com/libp2p/go-libp2p-routing-helpers \
 		libp2p:go-libp2p-secio:v0.2.2:libp2p_go_libp2p_secio/vendor/github.com/libp2p/go-libp2p-secio \
 		libp2p:go-libp2p-swarm:v0.2.8:libp2p_go_libp2p_swarm/vendor/github.com/libp2p/go-libp2p-swarm \
-		libp2p:go-libp2p-testing:v0.2.0:libp2p_go_libp2p_testing/vendor/github.com/libp2p/go-libp2p-testing \
+		libp2p:go-libp2p-testing:v0.3.0:libp2p_go_libp2p_testing/vendor/github.com/libp2p/go-libp2p-testing \
 		libp2p:go-libp2p-tls:v0.1.3:libp2p_go_libp2p_tls/vendor/github.com/libp2p/go-libp2p-tls \
 		libp2p:go-libp2p-transport-upgrader:v0.3.0:libp2p_go_libp2p_transport_upgrader/vendor/github.com/libp2p/go-libp2p-transport-upgrader \
 		libp2p:go-libp2p-yamux:v0.2.8:libp2p_go_libp2p_yamux/vendor/github.com/libp2p/go-libp2p-yamux \
 		libp2p:go-libp2p:v0.11.0:libp2p_go_libp2p/vendor/github.com/libp2p/go-libp2p \
-		libp2p:go-mplex:v0.1.2:libp2p_go_mplex/vendor/github.com/libp2p/go-mplex \
+		libp2p:go-mplex:v0.2.0:libp2p_go_mplex/vendor/github.com/libp2p/go-mplex \
 		libp2p:go-msgio:v0.0.6:libp2p_go_msgio/vendor/github.com/libp2p/go-msgio \
 		libp2p:go-nat:v0.0.5:libp2p_go_nat/vendor/github.com/libp2p/go-nat \
 		libp2p:go-netroute:v0.1.3:libp2p_go_netroute/vendor/github.com/libp2p/go-netroute \
