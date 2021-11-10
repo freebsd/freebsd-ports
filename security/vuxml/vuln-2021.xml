@@ -1,3 +1,71 @@
+  <vuln vid="bfea59e0-41ee-11ec-9bac-589cfc007716">
+    <topic>puppet -- Silent Configuration Failure</topic>
+    <affects>
+      <package>
+	<name>puppet6</name>
+	<range><lt>6.25.1</lt></range>
+      </package>
+      <package>
+	<name>puppet7</name>
+	<range><lt>7.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Puppet reports:</p>
+	<blockquote cite="https://puppet.com/security/cve/cve-2021-27025">
+	  <p>A flaw was discovered in Puppet Agent where the agent may silently ignore Augeas settings or may be vulnerable to a Denial of Service condition prior to the first pluginsync.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-27025</cvename>
+      <url>https://puppet.com/security/cve/cve-2021-27025</url>
+    </references>
+    <dates>
+      <discovery>2021-11-09</discovery>
+      <entry>2021-11-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3bd3c9f8-41ee-11ec-9bac-589cfc007716">
+    <topic>puppet -- Unsafe HTTP Redirect</topic>
+    <affects>
+      <package>
+	<name>puppet6</name>
+	<range><lt>6.25.1</lt></range>
+      </package>
+      <package>
+	<name>puppet7</name>
+	<range><lt>7.12.1</lt></range>
+      </package>
+      <package>
+	<name>puppetserver6</name>
+	<range><lt>6.17.1</lt></range>
+      </package>
+      <package>
+	<name>puppetserver7</name>
+	<range><lt>7.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Puppet reports:</p>
+	<blockquote cite="https://puppet.com/security/cve/cve-2021-27023">
+	  <p>A flaw was discovered in Puppet Agent and Puppet Server that may result in a leak of HTTP credentials when following HTTP redirects to a different host. This is similar to CVE-2018-1000007.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-27023</cvename>
+      <url>https://puppet.com/security/cve/cve-2021-27023</url>
+    </references>
+    <dates>
+      <discovery>2021-11-09</discovery>
+      <entry>2021-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="646923b0-41c7-11ec-a3b2-005056a311d1">
     <topic>samba -- Multiple Vulnerabilities</topic>
     <affects>
