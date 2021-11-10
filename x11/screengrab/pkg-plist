@@ -27,13 +27,17 @@ share/icons/hicolor/32x32/apps/screengrab.png
 %%DATADIR%%/translations/screengrab_ja.qm
 %%DATADIR%%/translations/screengrab_lt.qm
 %%DATADIR%%/translations/screengrab_nb_NO.qm
+%%DATADIR%%/translations/screengrab_nl.qm
+%%DATADIR%%/translations/screengrab_oc.qm
 %%DATADIR%%/translations/screengrab_pl.qm
 %%DATADIR%%/translations/screengrab_pt.qm
 %%DATADIR%%/translations/screengrab_pt_BR.qm
 %%DATADIR%%/translations/screengrab_ru.qm
 %%DATADIR%%/translations/screengrab_si.qm
+%%DATADIR%%/translations/screengrab_sk.qm
 %%DATADIR%%/translations/screengrab_sv.qm
 %%DATADIR%%/translations/screengrab_tr.qm
 %%DATADIR%%/translations/screengrab_uk.qm
+%%DATADIR%%/translations/screengrab_vi.qm
 %%DATADIR%%/translations/screengrab_zh_CN.qm
 %%DATADIR%%/translations/screengrab_zh_TW.qm
