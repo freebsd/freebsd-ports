@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
+DISTVERSION=	2.7.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -43,18 +43,18 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		godbus:dbus:v5.0.5:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		godbus:dbus:v5.0.6:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:4f30a5c0130f:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:6b3c2da341f1:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:b53810dc28af:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:9d821ace8654:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:e0b2ad06fe42:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-github:v39.2.0:google_go_github_v39/vendor/github.com/google/go-github/v39 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		google:gops:v0.3.21:google_gops/vendor/github.com/google/gops \
+		google:gops:v0.3.22:google_gops/vendor/github.com/google/gops \
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
@@ -84,9 +84,9 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		rogpeppe:go-internal:v1.8.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
-		rs:zerolog:v1.25.0:rs_zerolog/vendor/github.com/rs/zerolog \
+		rs:zerolog:v1.26.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
-		shopspring:decimal:v1.3.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
+		shopspring:decimal:v1.3.1:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.4.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
@@ -96,14 +96,15 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		twpayne:go-shell:v0.3.0:twpayne_go_shell/vendor/github.com/twpayne/go-shell \
-		twpayne:go-vfs:v4.0.0:twpayne_go_vfs_v4/vendor/github.com/twpayne/go-vfs/v4 \
+		twpayne:go-pinentry:v0.0.2:twpayne_go_pinentry/vendor/github.com/twpayne/go-pinentry \
+		twpayne:go-shell:v0.3.1:twpayne_go_shell/vendor/github.com/twpayne/go-shell \
+		twpayne:go-vfs:v4.1.0:twpayne_go_vfs_v4/vendor/github.com/twpayne/go-vfs/v4 \
 		twpayne:go-xdg:v6.0.0:twpayne_go_xdg_v6/vendor/github.com/twpayne/go-xdg/v6 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
-		yuin:goldmark:v1.4.1:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.4.2:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.1.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring \
 		DHowett:go-plist:1454fab16a06:go_plist/vendor/howett.net/plist
 
