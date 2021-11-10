@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	pavucontrol-qt
-PORTVERSION=	0.17.0
+PORTVERSION= 	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	LXQT/${PORTNAME}
 
