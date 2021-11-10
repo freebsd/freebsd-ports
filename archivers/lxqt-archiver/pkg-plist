@@ -23,13 +23,17 @@ share/icons/hicolor/scalable/apps/lxqt-archiver.svg
 %%DATADIR%%/translations/lxqt-archiver_ja.qm
 %%DATADIR%%/translations/lxqt-archiver_lt.qm
 %%DATADIR%%/translations/lxqt-archiver_nb_NO.qm
+%%DATADIR%%/translations/lxqt-archiver_nl.qm
+%%DATADIR%%/translations/lxqt-archiver_oc.qm
 %%DATADIR%%/translations/lxqt-archiver_pl.qm
 %%DATADIR%%/translations/lxqt-archiver_pt.qm
 %%DATADIR%%/translations/lxqt-archiver_pt_BR.qm
 %%DATADIR%%/translations/lxqt-archiver_ru.qm
 %%DATADIR%%/translations/lxqt-archiver_si.qm
+%%DATADIR%%/translations/lxqt-archiver_sk.qm
 %%DATADIR%%/translations/lxqt-archiver_sl.qm
 %%DATADIR%%/translations/lxqt-archiver_sv.qm
 %%DATADIR%%/translations/lxqt-archiver_tr.qm
+%%DATADIR%%/translations/lxqt-archiver_uk.qm
 %%DATADIR%%/translations/lxqt-archiver_vi.qm
 %%DATADIR%%/translations/lxqt-archiver_zh_TW.qm
