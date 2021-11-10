@@ -2,6 +2,7 @@
 
 PORTNAME=	gifsicle
 PORTVERSION=	1.93
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -25,7 +26,7 @@ PLIST_FILES=	bin/gifdiff bin/gifsicle \
 		man/man1/gifdiff.1.gz man/man1/gifsicle.1.gz
 
 OPTIONS_DEFINE=		DOCS X11
-OPTIONS_DEFAULT=
+OPTIONS_DEFAULT=	X11
 
 X11_USES=		xorg
 X11_USE=		xorg=x11
