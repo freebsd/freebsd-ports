@@ -33,9 +33,11 @@ share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_pt_BR.qm
 %%DATADIR%%/translations/lximage-qt_ru.qm
 %%DATADIR%%/translations/lximage-qt_si.qm
+%%DATADIR%%/translations/lximage-qt_sk.qm
 %%DATADIR%%/translations/lximage-qt_sl.qm
 %%DATADIR%%/translations/lximage-qt_sv.qm
 %%DATADIR%%/translations/lximage-qt_tr.qm
 %%DATADIR%%/translations/lximage-qt_uk.qm
+%%DATADIR%%/translations/lximage-qt_vi.qm
 %%DATADIR%%/translations/lximage-qt_zh_CN.qm
 %%DATADIR%%/translations/lximage-qt_zh_TW.qm
