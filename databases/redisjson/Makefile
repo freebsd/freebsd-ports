@@ -1,8 +1,8 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisjson
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.3
 CATEGORIES=	databases
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,7 +19,6 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	RedisJSON
 GH_PROJECT=	RedisJSON
-GH_TAGNAME=	8d77e35
 
 CARGO_CRATES=	addr2line-0.15.2 \
 		adler-1.0.2 \
@@ -40,6 +39,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		chrono-0.4.19 \
 		clang-sys-1.2.2 \
 		clap-2.33.3 \
+		either-1.6.1 \
 		enum-primitive-derive-0.1.2 \
 		env_logger-0.8.4 \
 		funty-1.1.0 \
@@ -52,6 +52,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		hex-0.3.2 \
 		humantime-2.1.0 \
 		indexmap-1.7.0 \
+		itertools-0.10.1 \
 		itoa-0.4.8 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
