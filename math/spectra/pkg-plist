@@ -48,3 +48,6 @@ include/Spectra/Util/TypeTraits.h
 include/Spectra/Util/Version.h
 include/Spectra/contrib/LOBPCGSolver.h
 include/Spectra/contrib/PartialSVDSolver.h
+%%DATADIR%%/cmake/Spectra-targets.cmake
+%%DATADIR%%/cmake/spectra-config-version.cmake
+%%DATADIR%%/cmake/spectra-config.cmake
