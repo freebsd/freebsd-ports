@@ -2,4 +2,4 @@ DAHDi (Digium/Asterisk Hardware Device Interface) is the open source
 device interface technology used to control Digium and other telephony
 interface cards.
 
-WWW: http://www.asterisk.org/dahdi/
+WWW: https://svn.digium.com/svn/dahdi/freebsd/
