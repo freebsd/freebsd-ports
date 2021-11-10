@@ -2419,6 +2419,7 @@ share/locale/gu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/gu/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/gu/LC_MESSAGES/soliduiserver5.mo
+share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.manageinputmethod.mo
 share/locale/he/LC_MESSAGES/freespacenotifier.mo
 share/locale/he/LC_MESSAGES/kcm5_icons.mo
 share/locale/he/LC_MESSAGES/kcm_autostart.mo
@@ -2649,6 +2650,7 @@ share/locale/hsb/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
+share/locale/hsb/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/hsb/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/hsb/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/hsb/LC_MESSAGES/plasma_runner_recentdocuments.mo

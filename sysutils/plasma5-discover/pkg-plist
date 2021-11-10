@@ -92,6 +92,9 @@ share/locale/he/LC_MESSAGES/plasma-discover.mo
 share/locale/hi/LC_MESSAGES/kcm_updates.mo
 share/locale/hi/LC_MESSAGES/libdiscover.mo
 share/locale/hi/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/hsb/LC_MESSAGES/libdiscover.mo
+share/locale/hsb/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/hsb/LC_MESSAGES/plasma-discover.mo
 share/locale/hu/LC_MESSAGES/kcm_updates.mo
 share/locale/hu/LC_MESSAGES/libdiscover.mo
 share/locale/hu/LC_MESSAGES/plasma-discover-notifier.mo

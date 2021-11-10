@@ -246,10 +246,14 @@ share/locale/da/LC_MESSAGES/kcmusb.mo
 share/locale/da/LC_MESSAGES/kcmview1394.mo
 share/locale/da/LC_MESSAGES/kinfocenter.mo
 share/locale/de/LC_MESSAGES/kcm_about-distro.mo
+share/locale/de/LC_MESSAGES/kcm_cpu.mo
 share/locale/de/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/de/LC_MESSAGES/kcm_interrupts.mo
 share/locale/de/LC_MESSAGES/kcm_memory.mo
 share/locale/de/LC_MESSAGES/kcm_nic.mo
 share/locale/de/LC_MESSAGES/kcm_pci.mo
+share/locale/de/LC_MESSAGES/kcm_vulkan.mo
+share/locale/de/LC_MESSAGES/kcm_wayland.mo
 share/locale/de/LC_MESSAGES/kcmdevinfo.mo
 share/locale/de/LC_MESSAGES/kcminfo.mo
 share/locale/de/LC_MESSAGES/kcmopengl.mo
