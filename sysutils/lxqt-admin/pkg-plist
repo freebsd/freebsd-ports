@@ -25,6 +25,7 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_lt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_lv.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_nb_NO.qm
@@ -34,6 +35,7 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ru.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_si.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_sk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_vi.qm
@@ -51,6 +53,7 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_el.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_es.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_he.qm
@@ -59,6 +62,7 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_lt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_nb_NO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_nl.qm
@@ -67,6 +71,7 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ru.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_si.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_sk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_vi.qm
