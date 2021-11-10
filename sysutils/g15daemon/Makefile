@@ -9,6 +9,7 @@ COMMENT=	Daemon for Logitech G15 Keyboards
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS+=	libg15.so:sysutils/libg15 \
 		libg15render.so:sysutils/libg15render \
 		libinput.so:x11/libinput
