@@ -1,7 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME=	libXi
-PORTVERSION=	1.7.10
+DISTVERSION=	1.8
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -11,9 +11,10 @@ COMMENT=	X Input extension library
 LICENSE=	MIT
 
 USES=		cpe xorg xorg-cat:lib
-USE_XORG=	x11 xext xfixes xorgproto
-INSTALL_TARGET=	install-strip
 CPE_VENDOR=	x.org
+USE_XORG=	x11 xext xfixes xorgproto
+
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=--disable-docs \
 		--disable-specs \
