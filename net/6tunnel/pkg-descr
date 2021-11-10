@@ -3,4 +3,4 @@ applications and vice versa. It can bind to any of your IPv4 (default) or
 IPv6 addresses and forward all data to IPv4 or IPv6 (default) host.
 It can be used for example as an ipv6-capable IRC proxy.
 
-WWW: http://toxygen.net/6tunnel/
+WWW: https://github.com/wojtekka/6tunnel
