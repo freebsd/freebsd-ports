@@ -1,3 +1,3 @@
-TIMESTAMP = 1633297573
-SHA256 (dovecot-fts-xapian-1.4.13.tar.gz) = a25a5ce4a70f1332408cd006ce1f326031eba5cdd3185ad467314a377af08ed4
-SIZE (dovecot-fts-xapian-1.4.13.tar.gz) = 2318781
+TIMESTAMP = 1636548959
+SHA256 (dovecot-fts-xapian-1.4.14.tar.gz) = 1f46f319f5b1c59f6359d1c1a55a7fa0988bfb3c3e8cdacec792961331ddb780
+SIZE (dovecot-fts-xapian-1.4.14.tar.gz) = 2563251

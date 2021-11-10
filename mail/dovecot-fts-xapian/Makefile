@@ -1,6 +1,5 @@
 PORTNAME=	fts-xapian
-DISTVERSION=	1.4.13
-PORTREVISION=	2
+DISTVERSION=	1.4.14
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/grosjo/fts-xapian/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	dovecot-
@@ -17,6 +16,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 RUN_DEPENDS=	dovecot>=2.3.7:mail/dovecot
 
 USES=		autoreconf compiler:c++11-lang libtool pkgconfig
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
