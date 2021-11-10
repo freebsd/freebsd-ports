@@ -38,7 +38,7 @@ bin/lxqt-backlight_backend
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtsingleapplication.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqttranslator.h
 lib/liblxqt.so
-lib/liblxqt.so.0
+lib/liblxqt.so.1
 lib/liblxqt.so.%%VERSION%%
 libdata/pkgconfig/lxqt.pc
 share/cmake/lxqt/lxqt-config-version.cmake

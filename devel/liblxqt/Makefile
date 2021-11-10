@@ -1,8 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	liblxqt
-PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	LXQT
 
