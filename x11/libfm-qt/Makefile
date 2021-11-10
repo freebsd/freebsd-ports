@@ -1,11 +1,11 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	libfm-qt
-PORTVERSION=	0.17.0
+PORTVERSION=	1.0.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Qt port of libfm
 
 LICENSE=	LGPL21+

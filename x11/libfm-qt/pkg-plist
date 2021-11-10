@@ -97,8 +97,8 @@ include/libfm-qt/utilities.h
 include/libfm-qt/utilities_p.h
 include/libfm-qt/xdndworkaround.h
 lib/libfm-qt.so
-lib/libfm-qt.so.9
-lib/libfm-qt.so.9.0.0
+lib/libfm-qt.so.10
+lib/libfm-qt.so.10.0.0
 libdata/pkgconfig/libfm-qt.pc
 share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake
@@ -127,8 +127,10 @@ share/cmake/fm-qt/fm-qt-targets.cmake
 %%DATADIR%%/translations/libfm-qt_id.qm
 %%DATADIR%%/translations/libfm-qt_it.qm
 %%DATADIR%%/translations/libfm-qt_ja.qm
+%%DATADIR%%/translations/libfm-qt_kk.qm
 %%DATADIR%%/translations/libfm-qt_ko.qm
 %%DATADIR%%/translations/libfm-qt_lt.qm
+%%DATADIR%%/translations/libfm-qt_lv.qm
 %%DATADIR%%/translations/libfm-qt_nb_NO.qm
 %%DATADIR%%/translations/libfm-qt_nl.qm
 %%DATADIR%%/translations/libfm-qt_or.qm
@@ -137,6 +139,7 @@ share/cmake/fm-qt/fm-qt-targets.cmake
 %%DATADIR%%/translations/libfm-qt_pt_BR.qm
 %%DATADIR%%/translations/libfm-qt_ru.qm
 %%DATADIR%%/translations/libfm-qt_si.qm
+%%DATADIR%%/translations/libfm-qt_sk.qm
 %%DATADIR%%/translations/libfm-qt_tr.qm
 %%DATADIR%%/translations/libfm-qt_uk.qm
 %%DATADIR%%/translations/libfm-qt_zh_CN.qm
