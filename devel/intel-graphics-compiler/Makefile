@@ -14,7 +14,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=s20210730:devel/vc-intrinsics@${FLAVOR}
-LIB_DEPENDS=	libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR}
+LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
+		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR}
 
 FLAVORS=	${12 11:L:S/^/llvm/}
 
