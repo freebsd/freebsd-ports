@@ -9,7 +9,7 @@ lib/cmake/qtermwidget5/qtermwidget5-config.cmake
 lib/cmake/qtermwidget5/qtermwidget5-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qtermwidget5/qtermwidget5-targets.cmake
 lib/libqtermwidget5.so
-lib/libqtermwidget5.so.0
+lib/libqtermwidget5.so.1
 lib/libqtermwidget5.so.%%VERSION%%
 libdata/pkgconfig/qtermwidget5.pc
 %%DATADIR%%5/color-schemes/BlackOnLightYellow.colorscheme
@@ -65,11 +65,14 @@ libdata/pkgconfig/qtermwidget5.pc
 %%DATADIR%%5/translations/qtermwidget_ja.qm
 %%DATADIR%%5/translations/qtermwidget_lt.qm
 %%DATADIR%%5/translations/qtermwidget_nb_NO.qm
+%%DATADIR%%5/translations/qtermwidget_nl.qm
 %%DATADIR%%5/translations/qtermwidget_pl.qm
 %%DATADIR%%5/translations/qtermwidget_pt.qm
 %%DATADIR%%5/translations/qtermwidget_pt_BR.qm
 %%DATADIR%%5/translations/qtermwidget_ru.qm
 %%DATADIR%%5/translations/qtermwidget_si.qm
+%%DATADIR%%5/translations/qtermwidget_sk.qm
 %%DATADIR%%5/translations/qtermwidget_tr.qm
+%%DATADIR%%5/translations/qtermwidget_uk.qm
 %%DATADIR%%5/translations/qtermwidget_zh_CN.qm
 %%DATADIR%%5/translations/qtermwidget_zh_TW.qm
