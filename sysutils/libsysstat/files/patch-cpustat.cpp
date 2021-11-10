@@ -1,4 +1,4 @@
---- cpustat.cpp.orig	2021-04-07 06:58:34 UTC
+--- cpustat.cpp.orig	2021-11-05 10:06:40 UTC
 +++ cpustat.cpp
 @@ -22,16 +22,65 @@
  **  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
@@ -59,7 +59,7 @@
 +    size_t len = sizeof(freq);
 +    int i = mSource.mid(3).toInt();
 +    if (sysctl(mib2[i],4,&freq, &len, NULL, 0) < 0) {
-+    	perror("sysctl");
++        perror("sysctl");
 +        return 0;
 +    }
 +    else
@@ -130,7 +130,7 @@
 +                        if ((min == 0) || (res < min))
 +                            min = res;
 +                    }
-+               	}
++                }
 +
 +            }
 +
@@ -140,7 +140,7 @@
      bool ok = false;
  
      uint min = readAllFile(qPrintable(QString::fromLatin1("/sys/devices/system/cpu/%1/cpufreq/scaling_min_freq").arg(source))).toUInt(&ok);
-@@ -56,11 +160,35 @@ void CpuStatPrivate::addSource(const QString &source)
+@@ -56,11 +160,34 @@ void CpuStatPrivate::addSource(const QString &source)
          if (ok)
              mBounds[source] = qMakePair(min, max);
      }
@@ -172,11 +172,10 @@
 +
 +    mBounds[QStringLiteral("cpu")] = qMakePair(min,max);
 +#else
-+
- #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
      const QStringList rows = readAllFile("/proc/stat").split(QLatin1Char('\n'), Qt::SkipEmptyParts);
- #else
-@@ -110,6 +238,7 @@ void CpuStatPrivate::updateSources()
+     for (const QString &row : rows)
+     {
+@@ -98,6 +225,7 @@ void CpuStatPrivate::updateSources()
                  addSource(QString::fromLatin1("cpu%1").arg(number));
          }
      }
@@ -184,7 +183,7 @@
  }
  
  CpuStatPrivate::~CpuStatPrivate() = default;
-@@ -136,6 +265,113 @@ void CpuStatPrivate::recalculateMinMax()
+@@ -124,6 +252,113 @@ void CpuStatPrivate::recalculateMinMax()
  
  void CpuStatPrivate::timeout()
  {
@@ -221,12 +220,12 @@
 +                float sumDelta = static_cast<float>(current.total - mPrevious.total);
 +                if ((mPrevious.total != 0) && ((sumDelta < mIntervalMin) || (sumDelta > mIntervalMax)))
 +                {
-+                    if (mMonitoring == CpuStat::LoadAndFrequency) 
++                    if (mMonitoring == CpuStat::LoadAndFrequency)
 +		            {
 +                        float freqRate = 1.0;
 +                        ulong freq = CurrentFreq(mSource);
-+				
-+                        	if (mSource == QLatin1String("cpu")) {
++
++                        if (mSource == QLatin1String("cpu")) {
 +                                freq=0;
 +                                for (Bounds::ConstIterator I = mBounds.constBegin(); I != mBounds.constEnd(); ++I) {
 +                                    if (I.key() != QStringLiteral("cpu"))
@@ -237,9 +236,9 @@
 +                            }
 +
 +                        if (freq > 0)
-+                       	{
-+                        freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
-+                        emit update(0.0, 0.0, 0.0, 0.0, static_cast<float>(freqRate), freq);
++                        {
++                            freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
++                            emit update(0.0, 0.0, 0.0, 0.0, static_cast<float>(freqRate), freq);
 +                        }
 +                    } else {
 +                        emit update(0.0, 0.0, 0.0, 0.0);
@@ -250,7 +249,7 @@
 +                    {
 +                        float freqRate = 1.0;
 +                        ulong freq = CurrentFreq(mSource);
-+				
++
 +                        if (freq > 0)
 +                        {
 +					        if (mSource == QLatin1String("cpu")) {
@@ -298,16 +297,7 @@
      if ( (mMonitoring == CpuStat::LoadOnly)
        || (mMonitoring == CpuStat::LoadAndFrequency) )
      {
-@@ -246,7 +482,7 @@ void CpuStatPrivate::timeout()
-                     mPrevious = current;
-                 }
-             }
--        }
-+        //}
-     }
-     else
-     {
-@@ -278,6 +514,7 @@ void CpuStatPrivate::timeout()
+@@ -258,6 +493,7 @@ void CpuStatPrivate::timeout()
          }
          emit update(freq);
      }

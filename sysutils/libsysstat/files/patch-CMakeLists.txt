@@ -1,21 +1,23 @@
---- CMakeLists.txt.orig	2019-01-24 21:43:32 UTC
+--- CMakeLists.txt.orig	2021-11-05 10:06:40 UTC
 +++ CMakeLists.txt
-@@ -27,7 +27,14 @@ include(LXQtPreventInSourceBuilds)
+@@ -27,7 +27,15 @@ include(LXQtPreventInSourceBuilds)
  include(LXQtCreatePkgConfigFile)
  include(LXQtCreatePortableHeaders)
  include(LXQtCompilerSettings NO_POLICY_SCOPE)
+-
++if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
 +include(CheckIncludeFiles)
 +include(CheckLibraryExists)
 +check_include_files("sys/socket.h;net/if.h;net/if_mib.h;net/if_types.h" HAVE_IF_H)
 +check_library_exists(kvm kvm_getswapinfo "kvm.h" HAVE_KVM_H)
 +check_library_exists(c sysctlbyname "sys/sysctl.h" HAVE_SYSCTL_H)
- 
 +configure_file(config.h.in config.h)
 +add_definitions("-DHAVE_CONFIG_H=1")
++endif()
  set(CMAKE_AUTOMOC ON)
  set(CMAKE_INCLUDE_CURRENT_DIR ON)
  
-@@ -79,8 +86,11 @@ add_library(${SYSSTAT_LIBRARY_NAME}
+@@ -79,8 +87,11 @@ add_library(${SYSSTAT_LIBRARY_NAME}
          ${SYSSTAT_SRCS}
          ${SYSSTAT_QM_FILES}
  )

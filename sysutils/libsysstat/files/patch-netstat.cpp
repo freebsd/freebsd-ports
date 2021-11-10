@@ -1,4 +1,4 @@
---- netstat.cpp.orig	2021-04-18 21:04:00 UTC
+--- netstat.cpp.orig	2021-11-05 10:06:40 UTC
 +++ netstat.cpp
 @@ -26,8 +26,23 @@
  
@@ -30,9 +30,9 @@
  
 +#ifndef HAVE_SYSCTL_H
  
- #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
      QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
-@@ -58,12 +74,78 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
+ 
+@@ -50,12 +66,79 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
          mSources.append(tokens[0].trimmed());
      }
@@ -108,10 +108,11 @@
 +
 +        }
 +    }
- #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
++#else
      QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
- #else
-@@ -122,6 +204,7 @@ void NetStatPrivate::timeout()
+ 
+ 
+@@ -97,6 +180,7 @@ void NetStatPrivate::timeout()
  
          mPrevious[interfaceName] = current;
      }

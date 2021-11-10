@@ -1,4 +1,4 @@
---- memstat.cpp.orig	2021-04-18 21:03:41 UTC
+--- memstat.cpp.orig	2021-11-05 10:06:40 UTC
 +++ memstat.cpp
 @@ -26,10 +26,58 @@
  
@@ -59,21 +59,23 @@
  MemStatPrivate::MemStatPrivate(MemStat *parent)
      : BaseStatPrivate(parent)
  {
-@@ -50,7 +98,37 @@ void MemStatPrivate::timeout()
+@@ -49,8 +97,39 @@ void MemStatPrivate::timeout()
+     qulonglong memBuffers = 0;
      qulonglong memCached = 0;
      qulonglong swapTotal = 0;
-     qulonglong swapFree = 0;
+-    qulonglong swapFree = 0;
 +#ifdef HAVE_SYSCTL_H
 +    memTotal = MemGetByBytes(QLatin1String("hw.physmem"));
 +    memFree = MemGetByPages(QLatin1String("vm.stats.vm.v_free_count"));
 +    memBuffers = MemGetByBytes(QLatin1String("vfs.bufspace"));
 +    memCached = MemGetByPages(QLatin1String("vm.stats.vm.v_inactive_count"));
+ 
 +#endif
 +#ifdef HAVE_KVM_H
 +    qulonglong swapUsed = 0;
 +    kvm_t *kd;
 +    struct kvm_swap kswap[16]; /* size taken from pstat/pstat.c */
- 
++
 +    kd = kvm_open(NULL, _PATH_DEVNULL, NULL, O_RDONLY, "kvm_open");
 +    if (kd == NULL)
 +        kvm_close(kd);
@@ -94,19 +96,19 @@
 +        kvm_close(kd);
 +#endif
 +#ifndef HAVE_SYSCTL_H
- #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
++    qulonglong swapFree = 0;
      const QStringList rows = readAllFile("/proc/meminfo").split(QLatin1Char('\n'), Qt::SkipEmptyParts);
- #else
-@@ -79,7 +157,7 @@ void MemStatPrivate::timeout()
-         else if(tokens[0] == QLatin1String("SwapFree:"))
+     for (const QString &row : rows)
+     {
+@@ -72,6 +151,7 @@ void MemStatPrivate::timeout()
              swapFree = tokens[1].toULong();
      }
--
+ 
 +#endif
      if (mSource == QLatin1String("memory"))
      {
          if (memTotal)
-@@ -96,8 +174,11 @@ void MemStatPrivate::timeout()
+@@ -88,8 +168,11 @@ void MemStatPrivate::timeout()
      {
          if (swapTotal)
          {
