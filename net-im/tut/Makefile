@@ -1,5 +1,5 @@
 PORTNAME=	tut
-DISTVERSION=	0.0.37
+DISTVERSION=	0.0.38
 CATEGORIES=	net-im
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -21,7 +21,7 @@ GH_TUPLE=	atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clip
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		godbus:dbus:v5.0.6:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:net:4a448f8816b3:golang_net/vendor/golang.org/x/net \
-		golang:sys:a2f17f7b995c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:7861aae1554b:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		gopherjs:gopherjs:f9bde24e5ca2:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
@@ -30,7 +30,7 @@ GH_TUPLE=	atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clip
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		icza:gox:cd40a3f8d324:icza_gox/vendor/github.com/icza/gox \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-mastodon:d39c10ba5e94:mattn_go_mastodon/vendor/github.com/mattn/go-mastodon \
+		mattn:go-mastodon:58c389181352:mattn_go_mastodon/vendor/github.com/mattn/go-mastodon \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		microcosm-cc:bluemonday:v1.0.16:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		nu7hatch:gouuid:179d4d0c4d8d:nu7hatch_gouuid/vendor/github.com/nu7hatch/gouuid \
