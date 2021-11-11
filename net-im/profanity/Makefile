@@ -1,8 +1,8 @@
 PORTNAME=	profanity
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	net-im
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based XMPP client
 
 LICENSE=	GPLv3+
