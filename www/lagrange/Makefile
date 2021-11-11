@@ -1,7 +1,7 @@
 PORTNAME=	lagrange
 DISTVERSION=	1.7.3
 CATEGORIES=	www
-MASTER_SITES=	https://git.skyjake.fi/skyjake/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://git.skyjake.fi/gemini/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Beautiful Gemini Client
