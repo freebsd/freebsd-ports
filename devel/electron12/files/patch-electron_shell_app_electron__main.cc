@@ -1,4 +1,4 @@
---- electron/shell/app/electron_main.cc.orig	2021-04-20 23:32:33 UTC
+--- electron/shell/app/electron_main.cc.orig	2021-10-11 17:12:26 UTC
 +++ electron/shell/app/electron_main.cc
 @@ -32,12 +32,12 @@
  #include "shell/app/electron_main_delegate.h"
@@ -15,7 +15,7 @@
  #include <mach-o/dyld.h>
  #include <unistd.h>
  #include <cstdio>
-@@ -212,7 +212,7 @@ int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, w
+@@ -285,7 +285,7 @@ int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, w
    return content::ContentMain(params);
  }
  
@@ -24,7 +24,7 @@
  
  int main(int argc, char* argv[]) {
    FixStdioStreams();
-@@ -233,7 +233,7 @@ int main(int argc, char* argv[]) {
+@@ -306,7 +306,7 @@ int main(int argc, char* argv[]) {
    return content::ContentMain(params);
  }
  

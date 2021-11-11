@@ -1,6 +1,6 @@
---- electron/shell/browser/electron_browser_main_parts.cc.orig	2021-04-20 23:32:33 UTC
+--- electron/shell/browser/electron_browser_main_parts.cc.orig	2021-10-11 17:12:26 UTC
 +++ electron/shell/browser/electron_browser_main_parts.cc
-@@ -57,7 +57,7 @@
+@@ -56,7 +56,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #include "base/threading/thread_task_runner_handle.h"
-@@ -155,7 +155,7 @@ base::string16 MediaStringProvider(media::MessageId id
+@@ -154,7 +154,7 @@ base::string16 MediaStringProvider(media::MessageId id
    }
  }
  
@@ -18,7 +18,7 @@
  void OverrideLinuxAppDataPath() {
    base::FilePath path;
    if (base::PathService::Get(DIR_APP_DATA, &path))
-@@ -183,7 +183,7 @@ void UpdateDarkThemeSetting() {
+@@ -182,7 +182,7 @@ void UpdateDarkThemeSetting() {
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  class DarkThemeObserver : public ui::NativeThemeObserver {
   public:
    DarkThemeObserver() = default;
-@@ -233,7 +233,7 @@ int ElectronBrowserMainParts::GetExitCode() {
+@@ -230,7 +230,7 @@ int ElectronBrowserMainParts::GetExitCode() {
  
  int ElectronBrowserMainParts::PreEarlyInitialization() {
    field_trial_list_ = std::make_unique<base::FieldTrialList>(nullptr);
@@ -36,7 +36,7 @@
    OverrideLinuxAppDataPath();
  #endif
  
-@@ -290,7 +290,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
+@@ -287,7 +287,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
  #if defined(USE_AURA)
    display::Screen* screen = views::CreateDesktopScreen();
    display::Screen::SetScreenInstance(screen);
@@ -45,7 +45,7 @@
    views::LinuxUI::instance()->UpdateDeviceScaleFactor();
  #endif
  #endif
-@@ -307,7 +307,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
+@@ -304,7 +304,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
    // happen before the ResourceBundle is loaded
    if (locale.empty())
      l10n_util::OverrideLocaleWithCocoaLocale();
@@ -54,7 +54,7 @@
    // l10n_util::GetApplicationLocaleInternal uses g_get_language_names(),
    // which keys off of getenv("LC_ALL").
    // We must set this env first to make ui::ResourceBundle accept the custom
-@@ -330,7 +330,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
+@@ -327,7 +327,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
    ElectronBrowserClient::SetApplicationLocale(app_locale);
    fake_browser_process_->SetApplicationLocale(app_locale);
  
@@ -63,7 +63,7 @@
    // Reset to the original LC_ALL since we should not be changing it.
    if (!locale.empty()) {
      if (lc_all)
-@@ -385,7 +385,7 @@ void ElectronBrowserMainParts::ToolkitInitialized() {
+@@ -382,7 +382,7 @@ void ElectronBrowserMainParts::ToolkitInitialized() {
      ui::GtkUiDelegate::SetInstance(gtk_ui_delegate_.get());
    }
  #endif

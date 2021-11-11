@@ -1,4 +1,4 @@
---- electron/spec-main/api-browser-window-spec.ts.orig	2021-05-07 09:22:40 UTC
+--- electron/spec-main/api-browser-window-spec.ts.orig	2021-10-11 17:12:26 UTC
 +++ electron/spec-main/api-browser-window-spec.ts
 @@ -57,7 +57,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -27,7 +27,7 @@
          it('checks normal bounds when minimized', async () => {
            const bounds = w.getBounds();
            const minimize = emittedOnce(w, 'minimize');
-@@ -1730,7 +1730,7 @@ describe('BrowserWindow module', () => {
+@@ -1737,7 +1737,7 @@ describe('BrowserWindow module', () => {
    describe('BrowserWindow.setOpacity(opacity)', () => {
      afterEach(closeAllWindows);
  
@@ -36,7 +36,7 @@
        it('make window with initial opacity', () => {
          const w = new BrowserWindow({ show: false, opacity: 0.5 });
          expect(w.getOpacity()).to.equal(0.5);
-@@ -1756,7 +1756,7 @@ describe('BrowserWindow module', () => {
+@@ -1763,7 +1763,7 @@ describe('BrowserWindow module', () => {
        });
      });
  
@@ -45,7 +45,7 @@
        it('sets 1 regardless of parameter', () => {
          const w = new BrowserWindow({ show: false });
          w.setOpacity(0);
-@@ -2613,7 +2613,7 @@ describe('BrowserWindow module', () => {
+@@ -2620,7 +2620,7 @@ describe('BrowserWindow module', () => {
          expect(test.version).to.equal(process.version);
          expect(test.versions).to.deep.equal(process.versions);
  
@@ -54,7 +54,7 @@
            expect(test.creationTime).to.be.null('creation time');
            expect(test.systemMemoryInfo).to.be.null('system memory info');
          } else {
-@@ -3206,7 +3206,7 @@ describe('BrowserWindow module', () => {
+@@ -3213,7 +3213,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -63,7 +63,7 @@
      afterEach(closeAllWindows);
      it('emits an event when window is maximized', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -3784,7 +3784,7 @@ describe('BrowserWindow module', () => {
+@@ -3791,7 +3791,7 @@ describe('BrowserWindow module', () => {
      });
    });
  

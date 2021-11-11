@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2021-05-19 20:52:49 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2021-10-11 17:12:26 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
-@@ -145,11 +145,11 @@
+@@ -148,11 +148,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
  #endif
  
@@ -14,7 +14,7 @@
  #include "ui/gfx/font_render_params.h"
  #endif
  
-@@ -388,7 +388,7 @@ base::Optional<base::TimeDelta> GetCursorBlinkInterval
+@@ -391,7 +391,7 @@ base::Optional<base::TimeDelta> GetCursorBlinkInterval
    base::TimeDelta interval;
    if (ui::TextInsertionCaretBlinkPeriod(&interval))
      return interval;
@@ -23,7 +23,7 @@
    if (auto* linux_ui = views::LinuxUI::instance())
      return linux_ui->GetCursorBlinkInterval();
  #elif defined(OS_WIN)
-@@ -801,7 +801,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -804,7 +804,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
@@ -32,7 +32,7 @@
    // Update font settings.
    static const base::NoDestructor<gfx::FontRenderParams> params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -2123,7 +2123,7 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2136,7 +2136,7 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -41,7 +41,7 @@
      // A generic |CrashDumpHungChildProcess()| is not implemented for Linux.
      // Instead we send an explicit IPC to crash on the renderer's IO thread.
      rph->ForceCrash();
-@@ -2689,7 +2689,7 @@ void WebContents::CopyImageAt(int x, int y) {
+@@ -2702,7 +2702,7 @@ void WebContents::CopyImageAt(int x, int y) {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -50,7 +50,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -3472,7 +3472,7 @@ gfx::ImageSkia WebContents::GetDevToolsWindowIcon() {
+@@ -3565,7 +3565,7 @@ gfx::ImageSkia WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  

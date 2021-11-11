@@ -1,12 +1,12 @@
---- electron/script/lib/config.py.orig	2021-04-20 23:32:33 UTC
+--- electron/script/lib/config.py.orig	2021-10-11 17:12:26 UTC
 +++ electron/script/lib/config.py
-@@ -19,6 +19,9 @@ BASE_URL = os.getenv('LIBCHROMIUMCONTENT_MIRROR') or \
- PLATFORM = {
+@@ -20,6 +20,9 @@ PLATFORM = {
    'cygwin': 'win32',
+   'msys': 'win32',
    'darwin': 'darwin',
-+  'freebsd11': 'freebsd',
 +  'freebsd12': 'freebsd',
 +  'freebsd13': 'freebsd',
++  'freebsd14': 'freebsd',
    'linux': 'linux',
    'linux2': 'linux',
    'win32': 'win32',

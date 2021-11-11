@@ -1,6 +1,6 @@
---- electron/spec-main/api-web-contents-spec.ts.orig	2021-01-22 23:55:24 UTC
+--- electron/spec-main/api-web-contents-spec.ts.orig	2021-10-11 17:12:26 UTC
 +++ electron/spec-main/api-web-contents-spec.ts
-@@ -135,7 +135,7 @@ describe('webContents module', () => {
+@@ -153,7 +153,7 @@ describe('webContents module', () => {
        }).to.throw('webContents.print(): Invalid optional callback provided.');
      });
  

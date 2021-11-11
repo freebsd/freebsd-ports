@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2021-04-22 07:51:50 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2021-11-08 08:20:48 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -230,7 +230,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -45,7 +45,7 @@
    int flags = renderer_prefix.empty() ? ChildProcessHost::CHILD_ALLOW_SELF
                                        : ChildProcessHost::CHILD_NORMAL;
  #elif defined(OS_MAC)
-@@ -3181,8 +3181,8 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3184,8 +3184,8 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableInProcessStackTraces,
      sandbox::policy::switches::kDisableSeccompFilterSandbox,
      sandbox::policy::switches::kNoSandbox,

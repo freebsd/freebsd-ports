@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_web_contents.h.orig	2021-05-19 20:52:49 UTC
+--- electron/shell/browser/api/electron_api_web_contents.h.orig	2021-10-11 17:12:26 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.h
-@@ -670,7 +670,7 @@ class WebContents : public gin::Wrappable<WebContents>
+@@ -694,7 +694,7 @@ class WebContents : public gin::Wrappable<WebContents>
  #if defined(TOOLKIT_VIEWS) && !defined(OS_MAC)
    gfx::ImageSkia GetDevToolsWindowIcon() override;
  #endif
