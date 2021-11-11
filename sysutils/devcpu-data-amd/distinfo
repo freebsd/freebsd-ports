@@ -1,3 +1,11 @@
-TIMESTAMP = 1636501751
-SHA256 (amd64-microcode.20211109.tar.xz) = eadfc633bb4390b18f383b96f782c14a5cec0d5712d4b8d525dc6f76f2ae7522
-SIZE (amd64-microcode.20211109.tar.xz) = 49584
+TIMESTAMP = 1636599094
+SHA256 (microcode_amd.bin) = 8a9d9e8b788e31e61cddc03cb1eeab5db99e0f667128943ff0780e6437d2e43e
+SIZE (microcode_amd.bin) = 12684
+SHA256 (microcode_amd_fam15h.bin) = 9d4a668410e72a4bdb86dc23e4261eca04daa83456ada02504115223f356981a
+SIZE (microcode_amd_fam15h.bin) = 7876
+SHA256 (microcode_amd_fam16h.bin) = e02ad653b39c975d6c52674b50f23727bb6706bab7b4e5b391a4ce229e7ff121
+SIZE (microcode_amd_fam16h.bin) = 3510
+SHA256 (microcode_amd_fam17h.bin) = 5288d1ac032abe61441c5626091458803f925304ee45ca18de38a4edd66cddd2
+SIZE (microcode_amd_fam17h.bin) = 6476
+SHA256 (microcode_amd_fam19h.bin) = 8bdf0eba5d9c3e8cc960e1bb39a47caeaca6d59d7fcb265ac5efcae46731823f
+SIZE (microcode_amd_fam19h.bin) = 16804
