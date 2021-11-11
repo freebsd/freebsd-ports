@@ -1,0 +1,17 @@
+include/crypt.h
+lib/libcrypt.a
+lib/libcrypt.so
+lib/libcrypt.so.2
+lib/libcrypt.so.2.0.0
+libdata/pkgconfig/libcrypt.pc
+libdata/pkgconfig/libxcrypt.pc
+man/man3/crypt.3.gz
+man/man3/crypt_checksalt.3.gz
+man/man3/crypt_gensalt.3.gz
+man/man3/crypt_gensalt_ra.3.gz
+man/man3/crypt_gensalt_rn.3.gz
+man/man3/crypt_preferred_method.3.gz
+man/man3/crypt_r.3.gz
+man/man3/crypt_ra.3.gz
+man/man3/crypt_rn.3.gz
+man/man5/crypt.5.gz
