@@ -29,7 +29,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The PostgreSQL Project reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://www.postgresql.org/about/news/postgresql-141-135-129-1114-1019-and-9624-released-2349/">
 	  <p> CVE-2021-23214: A man-in-the-middle with the ability to inject data into the TCP connection could stuff some cleartext data into the start of a supposedly encryption-protected database session. This could be abused to send faked SQL commands to the server, although that would only work if the server did not demand any authentication data. (However, a server relying on SSL certificate authentication might well not do so.) </p>
 	  <p> CVE-2021-23222: A man-in-the-middle with the ability to inject data into the TCP connection could stuff some cleartext data into the start of a supposedly encryption-protected database session.  This could probably be abused to inject faked responses to the client's first few queries, although other details of libpq's behavior make that harder than it sounds.  A different line of attack is to exfiltrate the client's password, or other sensitive data that might be sent early in the session.  That has been shown to be possible with a server vulnerable to CVE-2021-23214. </p>
 	</blockquote>
