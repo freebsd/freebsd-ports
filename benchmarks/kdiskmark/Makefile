@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -35,8 +35,5 @@ KF5AUTH_USE=		KDE=auth,coreaddons
 post-patch:
 	@${REINPLACE_CMD} -e '/--ioengine=/s,libaio,posixaio,' \
 		${WRKSRC}/src/benchmark.cpp
-# XXX: disable pagecache flushing by default to avoid "kf.auth: Tried
-# to start an invalid action: org.jonmagon.kdiskmark.dropcache" error.
-	@${REINPLACE_CMD} -e '908s,true,false,' ${WRKSRC}/src/mainwindow.ui
 
 .include <bsd.port.mk>
