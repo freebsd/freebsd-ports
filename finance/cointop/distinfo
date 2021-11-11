@@ -1,5 +1,5 @@
-TIMESTAMP = 1635886672
-SHA256 (go/finance_cointop/cointop-v1.6.9/v1.6.9.mod) = ce40a401492caa76ce959c314522ccfe9f21d22534bc2813266a72e94da3684f
-SIZE (go/finance_cointop/cointop-v1.6.9/v1.6.9.mod) = 1938
-SHA256 (go/finance_cointop/cointop-v1.6.9/v1.6.9.zip) = fc089c9305f303aa7035d38fc56c6631f0d13a653a7375489ebce762eb075073
-SIZE (go/finance_cointop/cointop-v1.6.9/v1.6.9.zip) = 4412867
+TIMESTAMP = 1636647363
+SHA256 (go/finance_cointop/cointop-v1.6.10/v1.6.10.mod) = ce40a401492caa76ce959c314522ccfe9f21d22534bc2813266a72e94da3684f
+SIZE (go/finance_cointop/cointop-v1.6.10/v1.6.10.mod) = 1938
+SHA256 (go/finance_cointop/cointop-v1.6.10/v1.6.10.zip) = 6c82febe1041a4de6215f1f88e42b4448b97546f5c58172754186a2092115094
+SIZE (go/finance_cointop/cointop-v1.6.10/v1.6.10.zip) = 4417574
