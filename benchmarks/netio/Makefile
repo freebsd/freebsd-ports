@@ -5,7 +5,7 @@ PORTVERSION=	1.33
 CATEGORIES=	benchmarks net
 DISTNAME=	netio133
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network benchmark
 
 USES=		dos2unix gmake

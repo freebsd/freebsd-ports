@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	rel_
 CATEGORIES=	textproc
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ port of the Lucene library
 
 LICENSE=	LGPL3

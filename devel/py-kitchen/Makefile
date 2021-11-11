@@ -3,7 +3,7 @@ PORTVERSION=	1.2.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kitchen contains a cornucopia of useful code
 
 LICENSE=	GPLv2

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bre.klaki.net/programs/colormake/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper to color gmake output
 
 RUN_DEPENDS=	gmake:devel/gmake \

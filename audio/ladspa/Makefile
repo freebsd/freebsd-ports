@@ -6,7 +6,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	ladspa_sdk_${PORTVERSION}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux Audio Developer's Simple Plugin API
 
 LICENSE=	LGPL21

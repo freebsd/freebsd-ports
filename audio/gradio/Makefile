@@ -5,7 +5,7 @@ PORTVERSION=	7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK3 app for finding and listening to internet radio stations
 
 LICENSE=	GPLv3

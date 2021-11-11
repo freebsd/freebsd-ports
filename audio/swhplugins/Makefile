@@ -5,7 +5,7 @@ PORTVERSION=	0.4.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
 LICENSE=	GPLv2

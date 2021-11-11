@@ -2,7 +2,7 @@ PORTNAME=	retext
 DISTVERSION=	7.2.2
 CATEGORIES=	textproc
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Markdown editor
 
 LICENSE=	GPLv2

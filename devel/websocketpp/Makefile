@@ -2,7 +2,7 @@ PORTNAME=	websocketpp
 PORTVERSION=	0.8.2
 CATEGORIES=	devel
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Header-only implementation of the WebSocket protocol
 
 LICENSE=	MIT BSD3CLAUSE ZLIB

@@ -2,7 +2,7 @@ PORTNAME=	libstrophe
 PORTVERSION=	0.11.0
 CATEGORIES=	net-im
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XMPP library
 
 LICENSE=	MIT

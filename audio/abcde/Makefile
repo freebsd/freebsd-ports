@@ -5,7 +5,7 @@ DISTVERSION=	2.9.3
 CATEGORIES=	audio
 MASTER_SITES=	http://abcde.einval.com/download/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 
 LICENSE=	ART10 GPLv2
