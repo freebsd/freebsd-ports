@@ -1,6 +1,5 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	1.70.1
-PORTREVISION=	1
+DISTVERSION=	1.71.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -36,7 +35,6 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		base64-0.10.1 \
 		base64-0.13.0 \
 		bitflags-1.3.2 \
-		bitmaps-2.1.0 \
 		blake2b_simd-0.5.11 \
 		block-buffer-0.7.3 \
 		block-padding-0.1.5 \
@@ -107,16 +105,14 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
-		hostname-0.3.1 \
 		httparse-1.5.1 \
-		httpdate-0.3.2 \
+		httpdate-1.0.1 \
 		id-arena-2.2.1 \
 		idna-0.1.5 \
 		idna-0.2.3 \
 		if_chain-0.1.3 \
 		if_chain-1.0.2 \
 		ignore-0.4.18 \
-		im-14.3.0 \
 		indent_write-2.2.0 \
 		indexmap-1.7.0 \
 		indicatif-0.14.0 \
@@ -139,7 +135,6 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		log-0.4.14 \
 		mac-process-info-0.2.0 \
 		maplit-1.0.2 \
-		match_cfg-0.1.0 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
 		memmap-0.7.0 \
@@ -176,6 +171,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
 		phf_shared-0.8.0 \
+		pin-project-lite-0.2.7 \
 		pkg-config-0.3.20 \
 		plain-0.2.3 \
 		plist-1.2.1 \
@@ -191,15 +187,10 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		quote-0.6.13 \
 		quote-1.0.9 \
 		r2d2-0.8.9 \
-		rand-0.7.3 \
 		rand-0.8.4 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.2.0 \
 		rand_hc-0.3.1 \
-		rand_xoshiro-0.4.0 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.1.57 \
@@ -228,8 +219,9 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		semver-0.9.0 \
 		semver-1.0.4 \
 		semver-parser-0.7.0 \
-		sentry-0.18.1 \
-		sentry-types-0.14.1 \
+		sentry-0.23.0 \
+		sentry-core-0.23.0 \
+		sentry-types-0.23.0 \
 		serde-1.0.130 \
 		serde_derive-1.0.130 \
 		serde_json-1.0.68 \
@@ -242,7 +234,6 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		signal-hook-registry-1.4.0 \
 		similar-1.3.0 \
 		siphasher-0.3.7 \
-		sized-chunks-0.5.3 \
 		smallvec-1.7.0 \
 		socket2-0.4.2 \
 		sourcemap-5.0.0 \
@@ -266,10 +257,10 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		time-0.1.43 \
 		tinyvec-1.5.0 \
 		tinyvec_macros-0.1.0 \
+		tokio-1.13.0 \
 		treeline-0.1.0 \
 		typenum-1.14.0 \
 		ucd-trie-0.1.3 \
-		uname-0.1.1 \
 		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
