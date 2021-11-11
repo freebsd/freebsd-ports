@@ -563,6 +563,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/bin/mkfiles
 %%TESTS%%share/zfs/zfs-tests/bin/mktree
 %%TESTS%%share/zfs/zfs-tests/bin/mmap_exec
+%%TESTS%%share/zfs/zfs-tests/bin/mmap_seek
 %%TESTS%%share/zfs/zfs-tests/bin/mmapwrite
 %%TESTS%%share/zfs/zfs-tests/bin/nvlist_to_lua
 %%TESTS%%share/zfs/zfs-tests/bin/randwritecomp
@@ -820,6 +821,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_decompress.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_decompress_zstd.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_display_block.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_label_checksum.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_object_range_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_object_range_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_objset_id.ksh
@@ -1011,6 +1013,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_property/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_property/zfs_written_property_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/receive-o-x_props_aliases.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/receive-o-x_props_override.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_-e.ksh
@@ -1917,6 +1920,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_libaio_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_read_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_seek_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_write_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/cleanup.ksh
