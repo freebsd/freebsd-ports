@@ -1,5 +1,4 @@
 include/crypt.h
-lib/libcrypt.a
 lib/libcrypt.so
 lib/libcrypt.so.2
 lib/libcrypt.so.2.0.0

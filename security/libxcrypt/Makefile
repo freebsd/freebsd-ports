@@ -1,6 +1,7 @@
 PORTNAME=	libxcrypt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.26
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,5 +17,8 @@ GH_ACCOUNT=	besser82
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
+
+CFLAGS+=	-Wno-gnu-statement-expression
+CONFIGURE_ARGS=	--disable-static
 
 .include <bsd.port.mk>
