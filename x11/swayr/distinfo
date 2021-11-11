@@ -1,6 +1,6 @@
-TIMESTAMP = 1636276520
-SHA256 (swayr-v0.9.0.tar.gz) = 9d4610c26ad9aa531a5dae24d591405d3e55ed39f82b8d7746f2bd967769ecd0
-SIZE (swayr-v0.9.0.tar.gz) = 929032
+TIMESTAMP = 1636624602
+SHA256 (swayr-v0.9.1.tar.gz) = 09d1a1670595c78e6dd3fe93e4b4fe20462ce33ff962539a117bd5ee9b9cb3a4
+SIZE (swayr-v0.9.1.tar.gz) = 929057
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/atty-0.2.14.crate) = d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
