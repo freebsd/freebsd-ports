@@ -1,7 +1,7 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	470.82.00
+PORTVERSION=	470.86
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
