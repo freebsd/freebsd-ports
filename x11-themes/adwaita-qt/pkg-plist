@@ -8,9 +8,9 @@ lib/cmake/AdwaitaQt/AdwaitaQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/AdwaitaQt/AdwaitaQtTargets.cmake
 lib/libadwaitaqt.so
 lib/libadwaitaqt.so.1
-lib/libadwaitaqt.so.1.4.0
+lib/libadwaitaqt.so.1.4.1
 lib/libadwaitaqtpriv.so
 lib/libadwaitaqtpriv.so.1
-lib/libadwaitaqtpriv.so.1.4.0
+lib/libadwaitaqtpriv.so.1.4.1
 %%QT_PLUGINDIR%%/styles/adwaita.so
 libdata/pkgconfig/adwaita-qt.pc
