@@ -2,7 +2,7 @@ PORTNAME=	libmesode
 PORTVERSION=	0.10.1
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Lightweight XMPP library
 
 LICENSE=	MIT
