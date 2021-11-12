@@ -1,4 +1,4 @@
---- test/automation/src/code.ts.orig	2021-03-04 22:21:59 UTC
+--- test/automation/src/code.ts.orig	2021-07-14 21:51:05 UTC
 +++ test/automation/src/code.ts
 @@ -24,7 +24,7 @@ function getDevElectronPath(): string {
  	switch (process.platform) {
@@ -18,7 +18,7 @@
  			const product = require(path.join(root, 'resources', 'app', 'product.json'));
  			return path.join(root, product.applicationName);
  		}
-@@ -145,7 +145,7 @@ export async function spawn(options: SpawnOptions): Pr
+@@ -148,7 +148,7 @@ export async function spawn(options: SpawnOptions): Pr
  		'--driver', handle
  	];
  

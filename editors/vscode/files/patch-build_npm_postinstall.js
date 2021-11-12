@@ -1,4 +1,4 @@
---- build/npm/postinstall.js.orig	2021-02-03 15:33:23 UTC
+--- build/npm/postinstall.js.orig	2021-07-14 21:51:05 UTC
 +++ build/npm/postinstall.js
 @@ -21,8 +21,9 @@ function yarnInstall(location, opts) {
  	const raw = process.env['npm_config_argv'] || '{}';
@@ -16,5 +16,5 @@
  	yarnInstall(watchPath);
  }
  
--cp.execSync('git config pull.rebase true');
+-cp.execSync('git config pull.rebase merges');
 +// cp.execSync('git config pull.rebase true');

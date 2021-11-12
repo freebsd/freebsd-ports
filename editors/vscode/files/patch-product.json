@@ -1,8 +1,8 @@
---- product.json.orig	2021-03-30 12:04:46 UTC
+--- product.json.orig	2021-06-17 12:10:36 UTC
 +++ product.json
-@@ -30,6 +30,17 @@
- 		"ms-vscode.remotehub",
- 		"ms-vscode.remotehub-insiders"
+@@ -31,6 +31,17 @@
+ 		"GitHub.remotehub",
+ 		"GitHub.remotehub-insiders"
  	],
 +	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
 +	"extensionsGallery": {
