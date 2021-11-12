@@ -1,14 +1,5 @@
 --- ruby/Gemfile.orig	2021-10-21 21:58:10 UTC
 +++ ruby/Gemfile
-@@ -7,7 +7,7 @@ gem 'activesupport', '~> 6.1.4.1'
- gem 'rdoc', '~> 6.0'
- gem 'gitlab-gollum-lib', '~> 4.2.7.10.gitlab.1', require: false
- gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.4.gitlab.1', require: false
--gem 'grpc', '~> 1.30.2'
-+gem 'grpc', '~> 1.30'
- gem 'sentry-raven', '~> 3.0', require: false
- gem 'faraday', '~> 1.0'
- gem 'rbtrace', require: false
 @@ -19,15 +19,5 @@ gem 'gitlab-labkit', '~> 0.21.1'
  # This version needs to be in sync with GitLab CE/EE
  gem 'licensee', '~> 9.14.1'
