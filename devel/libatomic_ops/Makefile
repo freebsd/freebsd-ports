@@ -1,7 +1,7 @@
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
 
 PORTNAME=	libatomic_ops
-PORTVERSION=	7.6.10
+PORTVERSION=	7.6.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
