@@ -29,16 +29,16 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	*.html *.jpg
 
 OPTIONS_DEFINE=	DOCS GIMP NLS
-GIMP_DESC=	GIMP plugin support
 OPTIONS_DEFAULT=	GIMP
-
 OPTIONS_SUB=	yes
+
+GIMP_DESC=	GIMP plugin support
 
 GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 GIMP_SUB_FILES=		pkg-message
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 
 post-patch:

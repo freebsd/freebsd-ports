@@ -1,9 +1,9 @@
 [
 { type: install
   message: <<EOM
-To install XSane as a GIMP plug-in, please type:
+To install XSane as a GIMP plug-in, please type the following from a /bin/sh shell:
 
-    ln -sf %%LOCALBASE%%/bin/xsane ~/.gimp-*/plug-ins/xsane
+    cd ~/.config/GIMP && for i in *; { ln -sf %LOCALBASE%%/bin/xsane "$i/plug-ins/xsane"; }
 
 Then run the GIMP, and a new "XSane" menu item should appear in the
 "File -> Create" menu.
