@@ -6,13 +6,10 @@ PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SF/freebsdspamd/spamd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koue@chaosophia.net
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
 LICENSE=	BSD2CLAUSE
-
-DEPRECATED=	No further maintanace on this port, remove if no one steps up until EoL date
-EXPIRATION_DATE=2021-12-30
 
 USES=		ssl
 USE_RC_SUBR?=	obspamd obspamlogd
