@@ -1,0 +1,11 @@
+--- meson.build.orig	2021-09-19 15:58:12 UTC
++++ meson.build
+@@ -13,7 +13,7 @@ srcdir = include_directories('src')
+ # This is apparently bad practice, but it solves our "undefined reference to symbol 'floor@@GLIBC_2.2.5'" build problem
+ cc = meson.get_compiler('c')
+ libm = cc.find_library('m', required : false)
+-oauth = cc.find_library('oauth')
++oauth = cc.find_library('oauth', dirs : '/usr/local/lib', required : true)
+ 
+ min_glib_version = '2.44'
+ 

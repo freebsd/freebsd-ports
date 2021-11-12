@@ -1,0 +1,10 @@
+bin/cawbird
+man/man1/cawbird.1.gz
+share/dbus-1/services/uk.co.ibboard.cawbird.service
+share/icons/hicolor/16x16/apps/uk.co.ibboard.cawbird.png
+share/icons/hicolor/24x24/apps/uk.co.ibboard.cawbird.png
+share/icons/hicolor/32x32/apps/uk.co.ibboard.cawbird.png
+share/icons/hicolor/48x48/apps/uk.co.ibboard.cawbird.png
+share/icons/hicolor/64x64/apps/uk.co.ibboard.cawbird.png
+share/icons/hicolor/96x96/apps/uk.co.ibboard.cawbird.png
+share/icons/hicolor/scalable/apps/uk.co.ibboard.cawbird.svg
