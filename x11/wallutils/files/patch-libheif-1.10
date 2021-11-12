@@ -1,0 +1,16 @@
+Drop after graphics/libheif is updated to 1.12 or later.
+https://github.com/strukturag/libheif/commit/115c96a96a58
+
+vendor/github.com/xyproto/heic/heic.go:269:37: could not determine kind of name for C.heif_suberror_Wrong_tile_image_pixel_depth
+
+--- vendor/github.com/xyproto/heic/heic.go.orig	2021-11-12 12:53:21 UTC
++++ vendor/github.com/xyproto/heic/heic.go
+@@ -266,8 +266,6 @@ const (
+ 
+ 	SuberrorInvalidPixiBox = C.heif_suberror_Invalid_pixi_box
+ 
+-	SuberrorWrongTileImagePixelDepth = C.heif_suberror_Wrong_tile_image_pixel_depth
+-
+ 	// --- Unsupported_feature ---
+ 
+ 	// Image was coded with an unsupported compression method.
