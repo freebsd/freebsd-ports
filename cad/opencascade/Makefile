@@ -58,6 +58,7 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_SAMPLES=${OCCROOT}/samples		\
 		-DINSTALL_DIR_TESTS=${OCCROOT}/tests			\
 		-DINSTALL_TEST_CASES:BOOL=ON				\
+		-DUSE_FREETYPE:BOOL=ON					\
 		-DUSE_TBB:BOOL=OFF					\
 		-DUSE_RAPIDJSON:BOOL=ON					\
 		-DUSE_VTK:BOOL=ON					\
@@ -102,11 +103,9 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg		\
 			libgmp.so:math/gmp
 
 VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON	\
-			-DUSE_FREETYPE:BOOL=ON	\
 			-DUSE_GLES2:BOOL=ON	\
 			-D3RDPARTY_FREETYPE_DIR=${LOCALBASE}
 VIS_CMAKE_OFF=		-DUSE_FREEIMAGE:BOOL=OFF	\
-			-DUSE_FREETYPE:BOOL=OFF		\
 			-DUSE_GLES2:BOOL=OFF
 VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl	\
 			libfreeimageplus.so:graphics/freeimage
