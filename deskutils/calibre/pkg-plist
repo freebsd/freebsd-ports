@@ -288,6 +288,7 @@ lib/calibre/calibre/ebooks/html/input.py
 lib/calibre/calibre/ebooks/html/meta.py
 lib/calibre/calibre/ebooks/html/to_zip.py
 lib/calibre/calibre/ebooks/html_entities.py
+lib/calibre/calibre/ebooks/html_transform_rules.py
 lib/calibre/calibre/ebooks/htmlz/__init__.py
 lib/calibre/calibre/ebooks/htmlz/oeb2html.py
 lib/calibre/calibre/ebooks/hyphenate.py
@@ -749,7 +750,6 @@ lib/calibre/calibre/gui2/convert/txt_input_ui.py
 lib/calibre/calibre/gui2/convert/txt_output.py
 lib/calibre/calibre/gui2/convert/txt_output_ui.py
 lib/calibre/calibre/gui2/convert/txtz_output.py
-lib/calibre/calibre/gui2/convert/xexp_edit_ui.py
 lib/calibre/calibre/gui2/convert/xpath_wizard.py
 lib/calibre/calibre/gui2/convert/xpath_wizard_ui.py
 lib/calibre/calibre/gui2/cover_flow.py
@@ -837,6 +837,7 @@ lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
 lib/calibre/calibre/gui2/font_family_chooser.py
 lib/calibre/calibre/gui2/gestures.py
+lib/calibre/calibre/gui2/html_transform_rules.py
 lib/calibre/calibre/gui2/icon_theme.py
 lib/calibre/calibre/gui2/image_popup.py
 lib/calibre/calibre/gui2/init.py
