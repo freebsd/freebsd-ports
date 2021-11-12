@@ -1,7 +1,7 @@
 # Created by: Andy Fawcett <andy@athame.co.uk>
 
 PORTNAME=	uptimed
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,7 +11,8 @@ COMMENT=	Uptime daemon
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool
+#USES=		autoreconf gmake libtool
+USES=		autoreconf libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny
 USE_LDCONFIG=	yes
