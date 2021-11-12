@@ -1,5 +1,5 @@
 PORTNAME=	s-nail
-PORTVERSION=	14.9.22
+DISTVERSION=	14.9.23
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 
@@ -19,11 +19,6 @@ RUN_DEPENDS=	mime-support>0:misc/mime-support
 
 USES=		compiler:c11 iconv localbase ssl tar:xz
 
-PLIST_FILES=	bin/s-nail \
-		"@sample etc/s-nail.rc.sample" \
-		libexec/s-nail-dotlock \
-		man/man1/s-nail.1.gz
-
 MAKEFILE=	makefile
 MAKE_ENV=	EXTRA_CFLAGS="-DLIBICONV_PLUG" \
 		INCS=-I${LOCALBASE}/include \
@@ -31,8 +26,12 @@ MAKE_ENV=	EXTRA_CFLAGS="-DLIBICONV_PLUG" \
 		VAL_MANDIR=${MANPREFIX}/man \
 		VAL_MIME_TYPES_SYS=${PREFIX}/etc/mime.types \
 		VAL_PREFIX=${PREFIX}
-
 TEST_TARGET=	test
+
+PLIST_FILES=	bin/s-nail \
+		"@sample etc/s-nail.rc.sample" \
+		libexec/s-nail-dotlock \
+		man/man1/s-nail.1.gz
 
 PORTDOCS=	NEWS README
 
