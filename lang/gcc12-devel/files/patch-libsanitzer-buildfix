@@ -1,20 +1,21 @@
-This is a temporary hack to restore bootstrap.
-
 The latest libsanitizer update added specific support for FreeBSD
 which includes <md5.h>. Alas GCC features it's own <md5.h> which
 is picked up, but does not provide everything necessary - boom.
+
+I have adjusted GCC's <md5.h> to accomodate for that and we now only
+need to activate that.
 
 Upstream bug: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=102675
 
 --- UTC
 --- libsanitizer/sanitizer_common/sanitizer_platform_limits_freebsd.cpp
 +++ libsanitizer/sanitizer_common/sanitizer_platform_limits_freebsd.cpp
-@@ -69,7 +69,7 @@
- #include <semaphore.h>
- #include <signal.h>
- #include <stddef.h>
--#include <md5.h>
-+#include "/usr/include/md5.h"
- #include <sha224.h>
- #include <sha256.h>
- #include <sha384.h>
+@@ -15,6 +15,8 @@
+ 
+ #if SANITIZER_FREEBSD
+ 
++#define USE_SYSTEM_MD5
++
+ #include <sys/capsicum.h>
+ #include <sys/consio.h>
+ #include <sys/filio.h>
