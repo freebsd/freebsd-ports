@@ -1,6 +1,6 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.15.1
+DISTVERSION=	7.15.2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -114,7 +114,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		elastic:go-plugins-helpers:bdf17607b79f:elastic_go_plugins_helpers/vendor/github.com/docker/go-plugins-helpers \
 		elastic:go-seccomp-bpf:v1.1.0:elastic_go_seccomp_bpf/vendor/github.com/elastic/go-seccomp-bpf \
 		elastic:go-structform:v0.0.9:elastic_go_structform/vendor/github.com/elastic/go-structform \
-		elastic:go-sysinfo:v1.7.0:elastic_go_sysinfo/vendor/github.com/elastic/go-sysinfo \
+		elastic:go-sysinfo:v1.7.1:elastic_go_sysinfo/vendor/github.com/elastic/go-sysinfo \
 		elastic:go-txfile:v0.0.7:elastic_go_txfile/vendor/github.com/elastic/go-txfile \
 		elastic:go-ucfg:v0.8.3:elastic_go_ucfg/vendor/github.com/elastic/go-ucfg \
 		elastic:go-windows:v1.0.1:elastic_go_windows/vendor/github.com/elastic/go-windows \
