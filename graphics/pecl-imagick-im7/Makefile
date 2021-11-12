@@ -1,4 +1,5 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
+PORTREVISION=	1
 
 PKGNAMESUFFIX=	-im7
 

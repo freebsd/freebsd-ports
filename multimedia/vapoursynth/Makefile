@@ -1,5 +1,6 @@
 PORTNAME=	vapoursynth
 DISTVERSION=	R54
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
