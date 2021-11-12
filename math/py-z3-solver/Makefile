@@ -10,6 +10,7 @@ COMMENT=	Python binding for Z3 Theorem Prover
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE.txt
 
+CFLAGS_armv7=	-fPIC
 CFLAGS_powerpc=	-fPIC
 
 BROKEN_i386=	can't create dynamic relocation R_386_32 against symbol: .L.str in readonly segment; see https://github.com/Z3Prover/z3/issues/2442
