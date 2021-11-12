@@ -1,9 +1,10 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	twofactor_nextcloud_notification
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/nickv-nextcloud/${PORTNAME}/releases/download/v${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
