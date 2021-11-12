@@ -42,6 +42,9 @@ tindex - script used to build INDEXes for supported FreeBSD branches, which
          failure reports on ports@FreeBSD.org
 update-patches - generates updated patches.
 
+update_crates - script used to generate an updated Makefile using make cargo-crates
+                output
+
 ----------------------------------------------------------------------
 
 gnomedepends is a script, which analyses pkg/PLIST and gives an advice as to
