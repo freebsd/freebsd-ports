@@ -40,12 +40,11 @@ fi
 NODE="%%LOCALBASE%%/bin/node"
 
 required_files="${kibana_config}"
-_dpidfile="/var/run/${name}-daemon.pid"
-pidfile="/var/run/${name}.pid"
+pidfile="/var/run/${name}-daemon.pid"
+_kpidfile="/var/run/${name}.pid"
 
-procname="${NODE}"
 command="/usr/sbin/daemon"
-command_args="-f ${kibana_syslog_output_flags} -P ${_dpidfile} -t ${name} \
+command_args="-f ${kibana_syslog_output_flags} -P ${pidfile} -t ${name} \
 	/usr/bin/env BABEL_DISABLE_CACHE=1 NODE_ENV=production ${kibana_env} \
 	${NODE} --no-warnings --max-http-header-size=65536 \
 	%%WWWDIR%%/src/cli/dist serve \
@@ -54,11 +53,11 @@ command_args="-f ${kibana_syslog_output_flags} -P ${_dpidfile} -t ${name} \
 
 kibana_start_precmd()
 {
-	if [ ! -e "${_dpidfile}" ]; then
-		install -m 0600 -o ${kibana_user} -g ${kibana_group} /dev/null ${_dpidfile}
-	fi
 	if [ ! -e "${pidfile}" ]; then
 		install -m 0600 -o ${kibana_user} -g ${kibana_group} /dev/null ${pidfile}
+	fi
+	if [ ! -e "${_kpidfile}" ]; then
+		install -m 0600 -o ${kibana_user} -g ${kibana_group} /dev/null ${_kpidfile}
 	fi
 	if [ ! -f ${kibana_log} ]; then
 		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}
