@@ -32,20 +32,20 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
  }
  
  LinuxEngineImp::LinuxEngineImp(OsSysman *pOsSysman, zes_engine_group_t type, uint32_t engineInstance) : engineGroup(type), engineInstance(engineInstance) {
---- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2021-10-22 17:59:55 UTC
+--- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2021-11-12 16:23:35 UTC
 +++ level_zero/tools/source/sysman/linux/os_sysman_imp.cpp
-@@ -47,9 +47,11 @@ ze_result_t LinuxSysmanImp::init() {
-     auto rootPciPathOfGpuDevice = getPciRootPortDirectoryPath(realRootPath);
-     PlatformMonitoringTech::create(pParentSysmanDeviceImp->deviceHandles, pFsAccess, rootPciPathOfGpuDevice, mapOfSubDeviceIdToPmtObject);
+@@ -36,9 +36,11 @@ ze_result_t LinuxSysmanImp::init() {
+     }
+     DEBUG_BREAK_IF(nullptr == pSysfsAccess);
  
 +#ifdef __linux__
      pPmuInterface = PmuInterface::create(this);
  
      DEBUG_BREAK_IF(nullptr == pPmuInterface);
 +#endif
-     auto loc = realRootPath.find_last_of('/');
-     std::string pciBDF = realRootPath.substr(loc + 1, std::string::npos);
-     pFwUtilInterface = FirmwareUtil::create(pciBDF);
+     pFwUtilInterface = FirmwareUtil::create(pDrm->getPciPath());
+     return createPmtHandles();
+ }
 --- level_zero/tools/source/sysman/linux/os_sysman_imp.h.orig	2021-10-01 16:31:56 UTC
 +++ level_zero/tools/source/sysman/linux/os_sysman_imp.h
 @@ -14,7 +14,9 @@
