@@ -29,6 +29,7 @@ OPTIONS_DEFINE=		TOML
 OPTIONS_DEFAULT=	TOML
 
 TOML_DESC=		Support PEP 517/518 (Keep this enabled to avoid build errors)
+TOML_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli>=1.0.0:textproc/py-tomli@${PY_FLAVOR}
 TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli>=1.0.0:textproc/py-tomli@${PY_FLAVOR}
 
 # Skip integration tests that require a more recent version of py-virtualenv
