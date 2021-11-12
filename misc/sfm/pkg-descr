@@ -1,0 +1,10 @@
+sfm is a simple file manager for Unix-like systems.  It features:
+
+  - pthread(3) to read events, no timers
+  - BSD kqueue(2) notification mechanism
+  - dual panel, bottom statusbar
+  - open files by extension
+  - bookmarks, filters
+  - vim-like key bindings
+
+WWW: https://git.afify.dev/sfm/

@@ -460,6 +460,7 @@
     SUBDIR += seabios
     SUBDIR += sent
     SUBDIR += seq2
+    SUBDIR += sfm
     SUBDIR += shared-mime-info
     SUBDIR += shc
     SUBDIR += shuffle
