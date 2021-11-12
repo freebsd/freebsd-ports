@@ -19,10 +19,19 @@ NEWLIB_TARGET?=	arm-none-eabi
 USES=		cpe gmake makeinfo
 CPE_VENDOR=	${PORTNAME}_project
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --target="${NEWLIB_TARGET}" --disable-newlib-supplied-syscalls
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+		--target="${NEWLIB_TARGET}" \
+		--disable-newlib-supplied-syscalls \
+		--enable-multilib
 
 # Disable installation of .info files and fix includedir reference.
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(install.*:.*)install-info(.*)/\1\2/' ${WRKSRC}/etc/Makefile.in
+
+post-install:
+	@${FIND} ${STAGEDIR} ! -type d | \
+		${SED} 's,${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${NEWLIB_TARGET} -type d -empty | \
+		${SED} 's,${STAGEDIR}${PREFIX}/,, ; s,^,@dir ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
