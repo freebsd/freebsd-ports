@@ -1,12 +1,15 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.2.20211109
+DISTVERSION=	7.0.2.20211110
 DISTVERSIONSUFFIX=	-release
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
-		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3
-DISTFILES=	dftd3.tgz:dft3
+		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3 \
+		https://gitlab.com/libxc/libxc/-/archive/${LIBXC_VERSION}/:libxc
+DISTFILES=	dftd3.tgz:dft3 \
+		libxc-${LIBXC_VERSION}.tar.gz:libxc
 CATEGORIES=	science
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance computational chemistry software
@@ -29,7 +32,7 @@ USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	9fcb2bdb8826fd5790eab199cc25c29ef3e534bf
+GH_TAGNAME=	7b21660b82ebd85ef659f6fba7e1e73433b0bd0a
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
@@ -41,11 +44,14 @@ SUB_FILES=	nwchemrc
 WRKSRC_SUBDIR=	src
 
 BINARY_ALIAS=	gcc=${CC} gfortran=gfortran${GCC_DEFAULT}
+BINARY_ALIAS+=	make=${GMAKE} # only for LIBXC
 
 PLIST_FILES=	bin/nwchem etc/nwchemrc
 
-OPTIONS_DEFINE=		PYTHON
-OPTIONS_DEFAULT=	PYTHON MPICH # the default should be the same as for the MPI option in math/scalapack and devel/ga
+LIBXC_VERSION=	5.1.7 # from src/libext/libxc/build_libxc.sh
+
+OPTIONS_DEFINE=		LIBXC PYTHON
+OPTIONS_DEFAULT=	LIBXC PYTHON MPICH # the default should be the same as for the MPI option in math/scalapack and devel/ga
 OPTIONS_RADIO=		MPI
 OPTIONS_RADIO_MPI=	NOMPI MPICH OPENMPI
 
@@ -60,6 +66,10 @@ OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_VARS=		CONFLICTS_BUILD=mpich
 
+LIBXC_DESC=		Use libxc
+LIBXC_BUILD_DEPENDS=	cmake:devel/cmake
+LIBXC_MAKE_ENV=		USE_LIBXC=Y
+
 PYTHON_DESC=		Enable Python syntax in input files
 PYTHON_USES=		python
 PYTHON_MAKE_ENV=	PYTHONVERSION=${PYTHON_VER} NWCHEM_MODULES="all python"
@@ -68,6 +78,10 @@ post-extract:
 	@${RM} ${WRKSRC}/atomscf/src.orig
 	# symlink the downloaded dftd3.tgz
 	@${LN} -s ${DISTDIR}/${DIST_SUBDIR}/dftd3.tgz ${WRKSRC}/nwpw/nwpwlib/nwpwxc/
+
+post-extract-LIBXC-on:
+	# symlink the downloaded libxc
+	@${LN} -s ${DISTDIR}/${DIST_SUBDIR}/libxc-${LIBXC_VERSION}.tar.gz ${WRKSRC}/libext/libxc/
 
 post-patch:
 	@${REINPLACE_CMD} 's|nwchrc="/etc/nwchemrc"|nwchrc="${PREFIX}/etc/nwchemrc"|' ${WRKSRC}/util/util_nwchemrc.F
