@@ -12,7 +12,6 @@ COMMENT=	Fast and correct build system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to build: java.lang.OutOfMemoryError: Java heap space
 BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
 BROKEN_armv7=		fails to package: cp: bazel: No such file or directory
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io.IOException: Cannot run program /usr/bin/clang
@@ -49,6 +48,10 @@ FINALRC=	2
 EXTRA_PATCHES+=	${FILESDIR}/extra-i386_tools_cpp_BUILD.static.bsd
 .endif
 
+.if ${ARCH} == "aarch64"
+BAZEL_JAVAC_OPTS+=	"-J-Xmx1g -J-Xms128m"
+.endif
+
 pre-patch:
 	@${CP} ${FILESDIR}/extra-patch-absl_base_internal_unscaledcycleclock.cc \
 		${FILESDIR}/extra-patch-bazel_grpc__deps.bzl \
@@ -83,6 +86,7 @@ do-build:
 	EMBED_LABEL='${PORTVERSION}' \
 	PATH=${LOCALBASE}/bin:$$PATH \
 	SOURCE_DATE_EPOCH=$${SOURCE_DATE_EPOCH} \
+	BAZEL_JAVAC_OPTS=${BAZEL_JAVAC_OPTS} \
 	EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
