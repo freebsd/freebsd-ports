@@ -34,8 +34,8 @@ EXTRACT_AFTER_ARGS=	-C${STAGEDIR}${_SYSROOT} --no-same-permissions \
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_MTREE=	yes
-SUB_FILES=	${exists(${FILESDIR}/${FLAVOR}-cc.in):?${FLAVOR}-cc:} \
-		${exists(${FILESDIR}/${FLAVOR}-c++.in):?${FLAVOR}-c++:} c++ cc
+SUB_FILES=	${exists(${FILESDIR}/${FLAVOR}-c++.in):?${FLAVOR}-c++:} \
+		${exists(${FILESDIR}/${FLAVOR}-cc.in):?${FLAVOR}-cc:} c++ cc
 SUB_LIST=	FREEBSD_SYSROOT="${_SYSROOT}" \
 		FREEBSD_SYSROOT_CC="${CC}" \
 		FREEBSD_SYSROOT_CC_ELFV1="$$(${ECHO_CMD} ${LOCALBASE}/bin/powerpc64-unknown-${OPSYS:tl}*[0-9]-gcc9)" \
