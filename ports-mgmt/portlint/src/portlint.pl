@@ -44,12 +44,12 @@ $checkmfiles = 0;
 $contblank = 1;
 $portdir = '.';
 
-@ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/inetd.conf);
+@ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/fstab /etc/inetd.conf /proc);
 
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 8;
+my $micro = 9;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -154,13 +154,14 @@ chdir "$portdir" || die "$portdir: $!";
 
 # get make vars
 my @varlist =  qw(
-	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
-	PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
-	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
-	WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
+	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGBASE
+	PKGNAMEPREFIX PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION
+	DISTVERSIONSUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
+	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
-	USE_GNOME USE_PERL5 USE_QT USE_QT5 INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION
+	USE_GNOME USE_PERL5 USE_QT USE_QT5 INDEXFILE PKGORIGIN
+	CONFLICTS CONFLICTS_BUILD CONFLICTS_INSTALL PKG_VERSION
 	PLIST_FILES PLIST_DIRS PORTDOCS PORTEXAMPLES
 	OPTIONS_DEFINE OPTIONS_RADIO OPTIONS_SINGLE OPTIONS_MULTI
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
@@ -1161,7 +1162,9 @@ sub check_depends_syntax {
 			if ($k eq '') {
 				next;
 			}
-			my @l = split(':', $k);
+			my $tmp_depends = $k;
+			$tmp_depends =~ s/\$\{[^}]+}//g;
+			my @l = split(':', $tmp_depends);
 
 			print "OK: checking dependency value for $j.\n"
 				if ($verbose);
@@ -1378,6 +1381,7 @@ sub checkmakefile {
 	my $docsused = 0;
 	my $optused = 0;
 	my $desktop_entries = '';
+	my $conflicts = "";
 
 	my $masterdir = $makevar{MASTERDIR};
 	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
@@ -2989,14 +2993,31 @@ DIST_SUBDIR EXTRACT_ONLY
 
 	$pkg_version = $makevar{PKG_VERSION};
 
-	if ($makevar{CONFLICTS}) {
+	$conflicts = $makevar{CONFLICTS};
+	if ($makevar{CONFLICTS_BUILD}) {
+		$conflicts .= " " if $conflicts;
+		$conflicts .= $makevar{CONFLICTS_BUILD};
+	}
+	if ($makevar{CONFLICTS_INSTALL}) {
+		$conflicts .= " " if $conflicts;
+		$conflicts .= $makevar{CONFLICTS_INSTALL};
+	}
+	if ($conflicts) {
 		print "OK: checking CONFLICTS.\n" if ($verbose);
-		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
-			`$pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
-			my $selfconflict = !$?;
-			if ($selfconflict) {
-				&perror("FATAL", "", -1, "Package conflicts with itself. ".
-					"You should remove \"$conflict\" from CONFLICTS.");
+		my %seen;
+		foreach my $conflict (split ' ', $conflicts) {
+			if (not $seen{$conflict}) {
+				`$pkg_version -T '$makevar{PKGBASE}' '$conflict' || $pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
+				my $selfconflict = !$?;
+				if ($selfconflict) {
+					&perror("FATAL", "", -1, "Package conflicts with itself. ".
+						"You should remove \"$conflict\" from CONFLICTS.");
+				} elsif ($conflict =~ m/-\[0-9\]\*$/) {
+					&perror("WARN", $file, -1, "CONFLICTS definition \"$conflict\" ".
+						"ends in redundant version pattern. ".
+						"You should remove \"-[0-9]*\" from that pattern.");
+				}
+				$seen{$conflict} = 1;
 			}
 		}
 	}
