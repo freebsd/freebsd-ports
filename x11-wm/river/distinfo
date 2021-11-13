@@ -9,3 +9,5 @@ SHA256 (ifreund-zig-xkbcommon-10cdca6_GH0.tar.gz) = 9fee1bef4d7886977578519a2f59
 SIZE (ifreund-zig-xkbcommon-10cdca6_GH0.tar.gz) = 19027
 SHA256 (swaywm-zig-wlroots-9bb6b03_GH0.tar.gz) = 504f888b75a54f79a7d677ca9d95ffb791369fa9326108e1307dc77c6c7df66e
 SIZE (swaywm-zig-wlroots-9bb6b03_GH0.tar.gz) = 46084
+SHA256 (0cbe2b9fc34f.patch) = 64b283e1033f3d320a411b6ac4994aa953747167b76f59ed8899a517f82378d4
+SIZE (0cbe2b9fc34f.patch) = 985

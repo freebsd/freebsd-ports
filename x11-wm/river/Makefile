@@ -1,7 +1,11 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0cbe2b9fc34f.patch:-p1 # docs: remove reference to /etc/river/init
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor
@@ -59,9 +63,6 @@ post-patch:
 # Respect devel/pkgconf default search
 	@${REINPLACE_CMD} -e '/pkgconfig/s/share/libdata/' \
 		${WRKSRC}/build.zig
-# Respect PREFIX in path references
-	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
-		${WRKSRC}/doc/${PORTNAME}ctl.1.scd
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
