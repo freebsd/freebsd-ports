@@ -1,10 +1,7 @@
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.35.0
+DISTVERSION=	3.35.1
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	aba9d05dd1c725ec0a681aaec4a391554325a51b.patch:-p2 # FreeBSD patches: https://github.com/leanprover-community/lean/pull/643
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Theorem prover
