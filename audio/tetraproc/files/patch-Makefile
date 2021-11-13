@@ -1,0 +1,10 @@
+--- Makefile.orig	2021-11-13 16:08:17 UTC
++++ Makefile
+@@ -25,7 +25,6 @@ SHARED ?= $(PREFIX)/share/tetraproc
+ VERSION = 0.8.6
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+ CXXFLAGS += -O2 -Wall -ffast-math
+-CXXFLAGS += -march=native
+ LDFLAGS += -pthread
+ 
+ 
