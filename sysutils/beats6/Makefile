@@ -9,6 +9,8 @@ COMMENT=	Collect logs locally and send to remote logstash
 
 LICENSE=	APACHE20
 
+BROKEN_aarch64=	fails to build: vendor/golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
+
 USES=		gmake go
 USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
