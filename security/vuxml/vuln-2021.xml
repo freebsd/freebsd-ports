@@ -1,3 +1,41 @@
+  <vuln vid="9d7a2b54-4468-11ec-8532-0d24c37c72c8">
+    <topic>mailman -- 2.1.37 fixes XSS via user options, and moderator offline brute-force vuln against list admin password</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1879/NEWS#L8">
+	  <p>A potential XSS attack via the user options page has been reported by
+	    Harsh Jaiswal.  This is fixed.  CVE-2021-43331 (LP: #1949401).</p>
+	  <p>A potential for for a list moderator to carry out an off-line brute force
+	    attack to obtain the list admin password has been reported by Andre
+	    Protas, Richard Cloke and Andy Nuttall of Apple.  This is fixed.
+	    CVE-2021-43332 (LP: #1949403)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43331</cvename>
+      <cvename>CVE-2021-43332</cvename>
+      <url>https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1879/NEWS#L8</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1949401</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1949403</url>
+    </references>
+    <dates>
+      <discovery>2021-11-01</discovery>
+      <entry>2021-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ccd71bd-426b-11ec-87db-6cc21735f730">
     <topic>PostgreSQL -- Possible man-in-the-middle attacks</topic>
     <affects>
