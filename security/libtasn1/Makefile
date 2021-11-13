@@ -1,7 +1,7 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
 
 PORTNAME=	libtasn1
-PORTVERSION=	4.17.0
+PORTVERSION=	4.18.0
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		GNUPG/gnutls/${PORTNAME}
@@ -24,9 +24,11 @@ OPTIONS_DEFINE=	DOCS
 
 TEST_TARGET=	check
 
-DOCS=		AUTHORS NEWS README.md THANKS doc/TODO \
-		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
+DOCS=		AUTHORS NEWS README.md THANKS doc/TODO
 INFO=		libtasn1
+
+DOCS_CONFIGURE_ENABLE=	gtk-doc
+DOCS_BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
 
 .include <bsd.port.pre.mk>
 
