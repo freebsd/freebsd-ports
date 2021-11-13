@@ -1,26 +1,24 @@
---- CMakeLists.txt.orig	2021-05-13 11:07:31 UTC
+--- CMakeLists.txt.orig	2021-11-13 11:33:58 UTC
 +++ CMakeLists.txt
-@@ -112,23 +112,6 @@ add_executable(headsetcontrol ${SOURCE_FILES})
- target_link_libraries(headsetcontrol m ${HIDAPI_LIBRARIES})
+@@ -118,21 +118,6 @@ target_link_libraries(headsetcontrol m ${HIDAPI_LIBRAR
  
  install(TARGETS headsetcontrol DESTINATION bin)
--
+ 
 -# install udev files on linux
 -if(UNIX AND NOT APPLE)
--    set (program_cmd headsetcontrol)
--    set (program_arg "-u")
--    set (program_output "/etc/udev/rules.d/70-headsets.rules")
--    install( CODE
--	            "
--    execute_process(COMMAND ${program_cmd} ${program_arg}
--      OUTPUT_FILE ${program_output})
--
--    message(STATUS \"Installed udev rules to ${program_output}\")
--	    "
--    )
+-    set(rules_file 70-headsets.rules)
+-    set(udev_rules_dir lib/udev/rules.d/
+-        CACHE PATH "Path to the directory where udev rules should be installed")
+-    add_custom_command(
+-        OUTPUT ${rules_file}
+-        COMMAND headsetcontrol -u > ${rules_file}
+-        DEPENDS headsetcontrol)
+-    add_custom_target(udevrules ALL DEPENDS ${rules_file})
+-    install(
+-        FILES ${CMAKE_CURRENT_BINARY_DIR}/${rules_file}
+-        DESTINATION ${udev_rules_dir})
 -endif()
 -
--
+ 
  # ------------------------------------------------------------------------------
  # Testing
- # ------------------------------------------------------------------------------

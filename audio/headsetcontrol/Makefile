@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	headsetcontrol
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	audio
 
 MAINTAINER=	Alexander88207@protonmail.com
