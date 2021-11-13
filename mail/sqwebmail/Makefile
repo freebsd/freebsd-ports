@@ -1,8 +1,7 @@
 # Created by: Neil Blakey-Milner
 
 PORTNAME=	sqwebmail
-PORTVERSION=	6.0.3
-PORTREVISION=	1
+PORTVERSION=	6.0.6
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 

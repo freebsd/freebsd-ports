@@ -10,7 +10,7 @@ libexec/sqwebmail/sqwebmaild
 libexec/sqwebmaild.rc
 man/man1/maildirmake.sqwebmail.1.gz
 man/man8/deliverquota.sqwebmail.8.gz
-%%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
+%%CACHE%%@preunexec %D/share/sqwebmail/cleancache.pl
 sbin/sharedindexinstall.sqwebmail
 sbin/sharedindexsplit.sqwebmail
 share/sqwebmail/cleancache.pl
