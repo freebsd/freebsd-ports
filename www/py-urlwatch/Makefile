@@ -1,5 +1,5 @@
 PORTNAME=	urlwatch
-DISTVERSION=	2.23
+DISTVERSION=	2.24
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -48,6 +48,6 @@ post-install-DOCS-on:
 		(cd ${WRKSRC}/docs/build && ${COPYTREE_SHARE} text ${STAGEDIR}${DOCSDIR})
 
 do-test:
-		cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
+		cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v
 
 .include <bsd.port.mk>
