@@ -6650,6 +6650,7 @@
     SUBDIR += rubygem-rblineprof
     SUBDIR += rubygem-rbs
     SUBDIR += rubygem-rbtrace
+    SUBDIR += rubygem-rbtree
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-re2
     SUBDIR += rubygem-react-rails
@@ -6776,6 +6777,7 @@
     SUBDIR += rubygem-snowplow-tracker
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-solve
+    SUBDIR += rubygem-sorted_set
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-spring-watcher-listen
     SUBDIR += rubygem-sprockets

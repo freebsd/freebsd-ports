@@ -1,0 +1,5 @@
+A RBTree is a sorted associative collection that is implemented with a 
+Red-Black Tree. It maps keys to values like a Hash, but maintains its elements
+in ascending key order. The interface is the almost identical to that of Hash.
+
+WWW: http://rbtree.rubyforge.org/
