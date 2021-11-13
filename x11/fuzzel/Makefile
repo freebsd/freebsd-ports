@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.6.4
+DISTVERSION=	1.6.5
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	tllist>=1.0.1:devel/tllist \
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland \
 		libfcft.so:x11-fonts/fcft \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 meson pkgconfig xorg
