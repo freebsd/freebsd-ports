@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2021-06-02 10:40:14 UTC
 +++ CMakeLists.txt
+@@ -172,7 +172,7 @@ else()
+     if(APPLE AND CMAKE_C_COMPILER_ID MATCHES "Clang" AND CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "arm64")
+       set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -mcpu=native")
+     else()
+-      set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -march=native")
++      set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
+     endif()
+   endif()
+ 
 @@ -188,21 +188,10 @@ if(BUILD_WASI MATCHES "simple")
  elseif(BUILD_WASI MATCHES "metawasi")
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dd_m3HasMetaWASI")
