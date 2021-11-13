@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-10-28 07:49:38 UTC
+--- Gemfile.orig	2021-11-08 11:58:53 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -17,7 +17,12 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -332,106 +331,15 @@ gem 'snowplow-tracker', '~> 0.6.1'
+@@ -328,110 +327,19 @@ gem 'batch-loader', '~> 2.0.1'
+ gem 'peek', '~> 1.1'
+ 
+ # Snowplow events tracking
+-gem 'snowplow-tracker', '~> 0.6.1'
++gem 'snowplow-tracker', '~> 0.6'
  
  # Metrics
  gem 'method_source', '~> 1.0', require: false
