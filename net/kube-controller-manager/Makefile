@@ -8,6 +8,8 @@ COMMENT=	Kubernetes controller manager daemon
 
 LICENSE=	APACHE20
 
+BROKEN_aarch64=	fails to build: vendor/golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
+
 USES=		cpe go
 CPE_VENDOR=	jenkins
 CPE_PRODUCT=	kubernetes
