@@ -5007,6 +5007,7 @@
     SUBDIR += py-pynest2d
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
+    SUBDIR += py-pyparsing2
     SUBDIR += py-pyperclip
     SUBDIR += py-pyperf
     SUBDIR += py-pyplusplus
