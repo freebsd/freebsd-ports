@@ -11,6 +11,8 @@ COMMENT=		Open-source application container engine
 
 LICENSE=		APACHE20
 
+BROKEN_aarch64=		fails to build: golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
+
 PLIST_FILES=		bin/docker
 
 USE_GITHUB=		yes
