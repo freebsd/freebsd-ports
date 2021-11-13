@@ -1,7 +1,7 @@
 # Created by: n_hibma@qubesoft.com
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.35
+DISTVERSION=	2.1.37
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
