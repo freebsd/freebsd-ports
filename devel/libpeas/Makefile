@@ -37,6 +37,11 @@ OPTIONS_SUB=	yes
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_MESON_TRUE=	gtk_doc
 
+pre-build:
+# XXX DISABLE_MAKE_JOBS build fails on 12.2/13.0 i386
+	${DO_MAKE_BUILD} -C ${BUILD_WRKSRC} \
+		tests/libpeas/plugins/embedded/embedded-resources.h
+
 .if ${LIBPEAS_SLAVE} == python
 USES+=		python:3.6+
 USE_PYTHON=	flavors
