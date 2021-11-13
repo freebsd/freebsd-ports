@@ -1,4 +1,4 @@
---- zpool-iostat-viz.orig	2021-11-06 15:43:57 UTC
+--- zpool-iostat-viz.orig	2021-11-13 22:58:47 UTC
 +++ zpool-iostat-viz
 @@ -19,7 +19,10 @@ import sys
  EMPTY_COLORS = (238, 8)
@@ -12,14 +12,16 @@
  DIFFL_CLOCK_CHARS = "╷╴╵╶"
  
  DIFFL_STAT_MEMORY = 5
-@@ -219,6 +222,15 @@ def render_stats(window, transform, should_show_differ
+@@ -219,10 +222,22 @@ def render_stats(window, transform, should_show_differ
          elif in_key == curses.KEY_DOWN:
              if diffl_stat_interval_index > 0:
                  diffl_stat_interval_index -= 1
 +        elif in_key == ord('d'):
 +            should_show_differential = not should_show_differential
 +        elif in_key == ord('m'):
++            load_time = None
 +            current = 0
++            stats = None
 +            stats_history = []
 +            if transform == stats_as_device_centric:
 +                transform = stats_as_measurement_centric
@@ -27,8 +29,15 @@
 +                transform = stats_as_device_centric
          elif in_key == ord('q') or in_key == ord('x') or in_key == 27:
              return
-         current += len(stats)
-@@ -256,6 +266,8 @@ if __name__ == "__main__":
+-        current += len(stats)
+-        current %= len(stats)
++        if stats:
++            current += len(stats)
++            current %= len(stats)
+ 
+ 
+ def main(window, should_show_differential, pool, filename, views):
+@@ -256,6 +271,8 @@ if __name__ == "__main__":
          arg_parser.add_argument("--pal-count", "--pc", action="store", metavar="P", default="0", help="palette for bucket populations")
          arg_parser.add_argument("parts", metavar="pool/vdev", nargs="*", help="Pools or vdevs to display")
          arg_parser.add_argument("--help-colors", action="store_true", help="see color palettes available")
@@ -37,15 +46,15 @@
  
          parsed_args = vars(arg_parser.parse_args())
  
-@@ -276,6 +288,11 @@ if __name__ == "__main__":
+@@ -275,6 +292,11 @@ if __name__ == "__main__":
+                 if hex(pi)[2:] == parsed_args["pal_time"]: print("  (time)", end="")
                  print()
              sys.exit(0)
- 
++
 +        if parsed_args["digits"]:
 +            DISPLAY_CHARS = DISPLAY_CHARS_DIGITS
 +        if parsed_args["symbols"]:
 +            DISPLAY_CHARS = DISPLAY_CHARS_SYMBOLS
-+
+ 
          curses.wrapper(lambda window: main(window, parsed_args["diff"], parsed_args["parts"], parsed_args["file"], parsed_args["by"] or "m"))
      except subprocess.CalledProcessError as exc:
-         print("I couldn't get your pool information. Make sure you have 'zpool' program and specify your pool correctly.")

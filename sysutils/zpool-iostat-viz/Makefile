@@ -1,5 +1,6 @@
 PORTNAME=	zpool-iostat-viz
 DISTVERSION=	3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	se@FreeBSD.org
