@@ -51,14 +51,14 @@ OPTIONS_DEFINE_amd64=	CHEESE
 OPTIONS_DEFAULT_i386=	CHEESE
 OPTIONS_DEFAULT_amd64=	CHEESE
 
-MANPAGES_MESON_TRUE=	with-manpage
+MANPAGES_MESON_TRUE=	manpage
 MANPAGES_USE=		GNOME=libxslt:build
 MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
 			docbook-xsl-ns>=0:textproc/docbook-xsl-ns \
 			docbook-xsl>=0:textproc/docbook-xsl
 
 CHEESE_DESC=		Cheese webcam support
-CHEESE_MESON_YES=	with-cheese
+CHEESE_MESON_ENABLED=	cheese
 CHEESE_LIB_DEPENDS=	libcheese-gtk.so:multimedia/cheese
 
 .include <bsd.port.mk>
