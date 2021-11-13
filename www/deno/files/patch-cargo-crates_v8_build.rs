@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.32.0/build.rs.orig	2020-07-22 09:53:02 UTC
-+++ cargo-crates/rusty_v8-0.32.0/build.rs
+--- cargo-crates/v8-0.34.0/build.rs.orig	2020-07-22 09:53:02 UTC
++++ cargo-crates/v8-0.34.0/build.rs
 @@ -130,6 +132,10 @@ fn platform() -> &'static str {
    #[cfg(target_os = "macos")]
    {

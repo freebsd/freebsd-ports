@@ -1,4 +1,4 @@
---- cargo-crates/ring-0.16.20/Cargo.toml.orig	2020-12-02 03:20:32.000000000 +0100
+--- cargo-crates/ring-0.16.20/Cargo.toml.orig	2020-12-02 03:20.34.000000000 +0100
 +++ cargo-crates/ring-0.16.20/Cargo.toml	2020-12-09 09:54:26.615745000 +0100
 @@ -64,10 +64,10 @@ wasm32_c = []
  version = "0.3.37"

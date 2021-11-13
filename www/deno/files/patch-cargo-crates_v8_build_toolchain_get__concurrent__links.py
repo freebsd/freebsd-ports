@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.32.0/build/toolchain/get_concurrent_links.py.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/rusty_v8-0.32.0/build/toolchain/get_concurrent_links.py
+--- cargo-crates/v8-0.34.0/build/toolchain/get_concurrent_links.py.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/v8-0.34.0/build/toolchain/get_concurrent_links.py
 @@ -48,6 +48,14 @@ def _GetTotalMemoryInBytes():
        return int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))
      except Exception:

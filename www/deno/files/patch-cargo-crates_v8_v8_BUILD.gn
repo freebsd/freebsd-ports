@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.32.0/v8/BUILD.gn.orig	2021-01-19 00:12:40 UTC
-+++ cargo-crates/rusty_v8-0.32.0/v8/BUILD.gn
+--- cargo-crates/v8-0.34.0/v8/BUILD.gn.orig	2021-01-19 00:12:40 UTC
++++ cargo-crates/v8-0.34.0/v8/BUILD.gn
 @@ -4209,7 +4209,7 @@ v8_component("v8_libbase") {
      }
    }
