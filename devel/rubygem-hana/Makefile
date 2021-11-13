@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	hana
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
