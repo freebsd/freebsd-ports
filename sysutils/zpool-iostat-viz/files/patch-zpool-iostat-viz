@@ -12,13 +12,15 @@
  DIFFL_CLOCK_CHARS = "╷╴╵╶"
  
  DIFFL_STAT_MEMORY = 5
-@@ -219,6 +222,13 @@ def render_stats(window, transform, should_show_differ
+@@ -219,6 +222,15 @@ def render_stats(window, transform, should_show_differ
          elif in_key == curses.KEY_DOWN:
              if diffl_stat_interval_index > 0:
                  diffl_stat_interval_index -= 1
 +        elif in_key == ord('d'):
 +            should_show_differential = not should_show_differential
 +        elif in_key == ord('m'):
++            current = 0
++            stats_history = []
 +            if transform == stats_as_device_centric:
 +                transform = stats_as_measurement_centric
 +            else:
