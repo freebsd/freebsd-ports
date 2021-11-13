@@ -1,8 +1,7 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 
 PORTNAME=	librsvg
-PORTVERSION=	2.52.4
-PORTREVISION=	1
+PORTVERSION=	2.52.5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
