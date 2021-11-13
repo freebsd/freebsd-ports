@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	pgroonga
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
@@ -36,6 +36,8 @@ PLIST_SUB+=	OLDPG=""
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_check.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_crash_safer.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_database.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_wal_applier.so
 
 .include <bsd.port.post.mk>
