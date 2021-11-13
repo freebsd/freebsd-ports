@@ -2,7 +2,7 @@ include/fcft/fcft.h
 include/fcft/stride.h
 lib/libfcft.so
 lib/libfcft.so.3
-lib/libfcft.so.3.4.6
+lib/libfcft.so.3.5.0
 libdata/pkgconfig/fcft.pc
 man/man3/fcft_capabilities.3.gz
 man/man3/fcft_clone.3.gz
@@ -13,6 +13,7 @@ man/man3/fcft_grapheme_rasterize.3.gz
 man/man3/fcft_kerning.3.gz
 man/man3/fcft_log_init.3.gz
 man/man3/fcft_precompose.3.gz
+man/man3/fcft_set_emoji_presentation.3.gz
 man/man3/fcft_set_scaling_filter.3.gz
 man/man3/fcft_size_adjust.3.gz
 man/man3/fcft_text_run_destroy.3.gz

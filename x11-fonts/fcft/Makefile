@@ -1,5 +1,5 @@
 PORTNAME=	fcft
-DISTVERSION=	2.4.6
+DISTVERSION=	2.5.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -19,11 +19,16 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	HARFBUZZ
-OPTIONS_DEFAULT=HARFBUZZ
+OPTIONS_DEFINE=	HARFBUZZ UTF8PROC
+OPTIONS_DEFAULT=HARFBUZZ UTF8PROC
 
-HARFBUZZ_DESC=		HarfBuzz for text shaping
+HARFBUZZ_DESC=		Shaping of individual grapheme clusters via HarfBuzz
 HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-HARFBUZZ_MESON_ENABLED=	text-shaping
+HARFBUZZ_MESON_ENABLED=	grapheme-shaping
+
+UTF8PROC_DESC=		Shaping of whole text runs via libutf8proc
+UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
+UTF8PROC_MESON_ENABLED=	run-shaping
+UTF8PROC_IMPLIES=	HARFBUZZ
 
 .include <bsd.port.mk>
