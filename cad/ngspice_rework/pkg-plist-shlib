@@ -1,9 +1,8 @@
 bin/cmpp
-%%X11%%bin/ngspice
-%%SHLIB%%libdata/pkgconfig/ngspice.pc
-%%SHLIB%%lib/libngspice.so
-%%SHLIB%%lib/libngspice.so.0
-%%SHLIB%%lib/libngspice.so.0.0.0
+libdata/pkgconfig/ngspice.pc
+lib/libngspice.so
+lib/libngspice.so.0
+lib/libngspice.so.0.0.0
 lib/ngspice/analog.cm
 lib/ngspice/digital.cm
 lib/ngspice/spice2poly.cm
@@ -11,7 +10,6 @@ lib/ngspice/table.cm
 lib/ngspice/xtradev.cm
 lib/ngspice/xtraevt.cm
 man/man1/cmpp.1.gz
-%%X11%%man/man1/ngspice.1.gz
 share/ngspice/dlmain.c
 include/ngspice/enhtypes.h
 include/ngspice/evtshared.h

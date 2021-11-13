@@ -2,6 +2,7 @@
 
 PORTNAME=	ngspice_rework
 PORTVERSION=	32
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -18,27 +19,31 @@ BROKEN_aarch64=	Fails to link: missing sbrk
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 FLAVORS=	x11 shlib
-shlib_PKGNAMESUFFIX=	-shlib
+shlib_PKGNAMESUFFIX=		-shlib
 shlib_CONFLICTS_INSTALL=	ngspice_rework-2*
+shlib_PLIST=			${MASTERDIR}/pkg-plist-shlib
 x11_CONFLICTS_INSTALL=		ngspice_rework-shlib-2*
 
 USES=		compiler:c11 gmake libtool ncurses readline autoreconf pkgconfig
 
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--enable-cider --enable-shared --enable-xspice --with-readline=yes
+CONFIGURE_ARGS=	--enable-cider --enable-xspice --with-readline=yes
 
 OPTIONS_DEFINE=	DEBUG
 
 .if ${FLAVOR:U} ==	shlib
-CONFIGURE_ARGS+=	--with-ngshared
-PLIST_SUB+=		SHLIB="" X11="@comment "
+USE_LDCONFIG=		yes
+CONFIGURE_ARGS+=	--with-ngshared --enable-shared
 .else
 USES+=			xorg
 USE_XORG=		ice sm x11 xaw xext xmu xt xft
 CONFIGURE_ARGS+=	--with-x
-PLIST_SUB+=		SHLIB="@comment " X11=""
+RUN_DEPENDS=		ngspice_rework-shlib>0:cad/ngspice_rework@shlib
+PLIST_FILES=		bin/ngspice man/man1/ngspice.1.gz
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && \
+		${RM} -r include lib share && \
+		${RM} bin/cmpp man/man1/cmpp.1
 .endif
 
 DEBUG_CONFIGURE_ENABLE=	debug
