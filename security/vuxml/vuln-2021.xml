@@ -6,6 +6,22 @@
 	<range><lt>2.1.37</lt></range>
       </package>
       <package>
+	<name>mailman-exim4</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-exim4-with-htdig</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-postfix</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-postfix-with-htdig</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
 	<name>mailman-with-htdig</name>
 	<range><lt>2.1.37</lt></range>
       </package>
