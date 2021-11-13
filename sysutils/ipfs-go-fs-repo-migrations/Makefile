@@ -10,6 +10,8 @@ COMMENT=	Migrations for the filesystem repository of ipfs clients
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to build: sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
+
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		go:modules
