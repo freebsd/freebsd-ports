@@ -1,0 +1,97 @@
+% sed -i .orig -e 's|$(docdir)/examples|$(datarootdir)/examples/bison|' Makefile.in
+
+--- Makefile.in.orig	2021-01-23 15:41:15 UTC
++++ Makefile.in
+@@ -3123,11 +3123,11 @@ extexi = $(top_srcdir)/examples/extexi
+ extract = VERSION="$(VERSION)" $(PERL) $(extexi) $(EXTEXIFLAGS) $(doc) --
+ extracted = $(mfcalc_extracted) $(rpcalc_extracted) \
+ 	$(calcxx_extracted) $(simple_extracted)
+-examplesdir = $(docdir)/examples
++examplesdir = $(datarootdir)/examples/bison
+ dist_examples_DATA = examples/README.md
+-cdir = $(docdir)/examples/c
++cdir = $(datarootdir)/examples/bison/c
+ dist_c_DATA = examples/c/README.md
+-bistromathicdir = $(docdir)/examples/c/bistromathic
++bistromathicdir = $(datarootdir)/examples/bison/c/bistromathic
+ @ENABLE_BISTROMATHIC_TRUE@nodist_examples_c_bistromathic_bistromathic_SOURCES = examples/c/bistromathic/parse.y
+ @ENABLE_BISTROMATHIC_TRUE@examples_c_bistromathic_bistromathic_CPPFLAGS = \
+ @ENABLE_BISTROMATHIC_TRUE@    -DBISON_LOCALEDIR='"$(localdir)"'		\
+@@ -3137,14 +3137,14 @@ bistromathicdir = $(docdir)/examples/c/bistromathic
+ @ENABLE_BISTROMATHIC_TRUE@examples_c_bistromathic_bistromathic_CFLAGS = $(TEST_CFLAGS)
+ @ENABLE_BISTROMATHIC_TRUE@examples_c_bistromathic_bistromathic_LDADD = -lm $(LIBREADLINE) $(LIBINTL)
+ dist_bistromathic_DATA = examples/c/bistromathic/parse.y examples/c/bistromathic/Makefile examples/c/bistromathic/README.md
+-calcdir = $(docdir)/examples/c/calc
++calcdir = $(datarootdir)/examples/bison/c/calc
+ nodist_examples_c_calc_calc_SOURCES = examples/c/calc/calc.y
+ 
+ # Don't use gnulib's system headers.
+ examples_c_calc_calc_CPPFLAGS = -I$(top_srcdir)/examples/c/calc -I$(top_builddir)/examples/c/calc
+ examples_c_calc_calc_CFLAGS = $(TEST_CFLAGS)
+ dist_calc_DATA = examples/c/calc/calc.y examples/c/calc/Makefile examples/c/calc/README.md
+-lexcalcdir = $(docdir)/examples/c/lexcalc
++lexcalcdir = $(datarootdir)/examples/bison/c/lexcalc
+ @FLEX_WORKS_TRUE@nodist_examples_c_lexcalc_lexcalc_SOURCES = examples/c/lexcalc/parse.y examples/c/lexcalc/parse.h examples/c/lexcalc/scan.l
+ @FLEX_WORKS_TRUE@examples_c_lexcalc_lexcalc_CPPFLAGS = -I$(top_srcdir)/examples/c/lexcalc -I$(top_builddir)/examples/c/lexcalc
+ dist_lexcalc_DATA = examples/c/lexcalc/parse.y examples/c/lexcalc/scan.l examples/c/lexcalc/Makefile examples/c/lexcalc/README.md
+@@ -3155,17 +3155,17 @@ nodist_examples_c_mfcalc_mfcalc_SOURCES = $(mfcalc_sou
+ examples_c_mfcalc_mfcalc_CPPFLAGS = -I$(top_srcdir)/examples/c/mfcalc -I$(top_builddir)/examples/c/mfcalc
+ examples_c_mfcalc_mfcalc_CFLAGS = $(TEST_CFLAGS)
+ examples_c_mfcalc_mfcalc_LDADD = -lm
+-mfcalcdir = $(docdir)/examples/c/mfcalc
++mfcalcdir = $(datarootdir)/examples/bison/c/mfcalc
+ mfcalc_DATA = $(mfcalc_extracted)
+ dist_mfcalc_DATA = examples/c/mfcalc/Makefile
+-pushcalcdir = $(docdir)/examples/c/pushcalc
++pushcalcdir = $(datarootdir)/examples/bison/c/pushcalc
+ nodist_examples_c_pushcalc_calc_SOURCES = examples/c/pushcalc/calc.y
+ 
+ # Don't use gnulib's system headers.
+ examples_c_pushcalc_calc_CPPFLAGS = -I$(top_srcdir)/examples/c/pushcalc -I$(top_builddir)/examples/c/pushcalc
+ examples_c_pushcalc_calc_CFLAGS = $(TEST_CFLAGS)
+ dist_pushcalc_DATA = examples/c/pushcalc/calc.y examples/c/pushcalc/Makefile examples/c/pushcalc/README.md
+-reccalcdir = $(docdir)/examples/c/reccalc
++reccalcdir = $(datarootdir)/examples/bison/c/reccalc
+ @FLEX_WORKS_TRUE@nodist_examples_c_reccalc_reccalc_SOURCES = examples/c/reccalc/parse.y examples/c/reccalc/scan.h examples/c/reccalc/scan.c
+ @FLEX_WORKS_TRUE@examples_c_reccalc_reccalc_CPPFLAGS = -I$(top_srcdir)/examples/c/reccalc -I$(top_builddir)/examples/c/reccalc
+ 
+@@ -3182,10 +3182,10 @@ nodist_examples_c_rpcalc_rpcalc_SOURCES = $(rpcalc_sou
+ examples_c_rpcalc_rpcalc_CPPFLAGS = -I$(top_builddir)/examples/c/rpcalc
+ examples_c_rpcalc_rpcalc_CFLAGS = $(TEST_CFLAGS)
+ examples_c_rpcalc_rpcalc_LDADD = -lm
+-rpcalcdir = $(docdir)/examples/c/rpcalc
++rpcalcdir = $(datarootdir)/examples/bison/c/rpcalc
+ rpcalc_DATA = $(rpcalc_extracted)
+ dist_rpcalc_DATA = examples/c/rpcalc/Makefile
+-cxxdir = $(docdir)/examples/c++
++cxxdir = $(datarootdir)/examples/bison/c++
+ calcxx_sources_extracted = \
+   examples/c++/calc++/driver.cc					\
+   examples/c++/calc++/driver.hh					\
+@@ -3208,7 +3208,7 @@ calcxx_sources = \
+ @ENABLE_CXX_TRUE@@FLEX_CXX_WORKS_TRUE@nodist_examples_c___calc___calc___SOURCES = $(calcxx_sources)
+ @ENABLE_CXX_TRUE@@FLEX_CXX_WORKS_TRUE@examples_c___calc___calc___CPPFLAGS = -I$(top_srcdir)/examples/c++/calc++ -I$(top_builddir)/examples/c++/calc++
+ @ENABLE_CXX_TRUE@@FLEX_CXX_WORKS_TRUE@examples_c___calc___calc___CXXFLAGS = $(AM_CXXFLAGS) $(FLEX_SCANNER_CXXFLAGS)
+-calcxxdir = $(docdir)/examples/c++/calc++
++calcxxdir = $(datarootdir)/examples/bison/c++/calc++
+ calcxx_DATA = $(calcxx_extracted)
+ dist_calcxx_DATA = examples/c++/calc++/README.md examples/c++/calc++/Makefile
+ cxx_DATA = $(simple_extracted)
+@@ -3223,13 +3223,13 @@ simple_sources = $(simple_extracted)
+ @ENABLE_CXX11_TRUE@examples_c___variant_11_CXXFLAGS = $(CXX11_CXXFLAGS) $(WARN_CXXFLAGS_TEST)
+ @ENABLE_CXX11_TRUE@examples_c___variant_11_CPPFLAGS = -I$(top_builddir)
+ dist_cxx_DATA = examples/c++/README.md examples/c++/Makefile examples/c++/variant.yy examples/c++/variant-11.yy
+-ddir = $(docdir)/examples/d
++ddir = $(datarootdir)/examples/bison/d
+ dist_d_DATA = examples/d/calc.y examples/d/Makefile examples/d/README.md
+-javadir = $(docdir)/examples/java
++javadir = $(datarootdir)/examples/bison/java
+ dist_java_DATA = examples/java/README.md
+-java_calcdir = $(docdir)/examples/java/calc
++java_calcdir = $(datarootdir)/examples/bison/java/calc
+ dist_java_calc_DATA = examples/java/calc/Calc.y examples/java/calc/Makefile
+-java_simpledir = $(docdir)/examples/java/simple
++java_simpledir = $(datarootdir)/examples/bison/java/simple
+ dist_java_simple_DATA = examples/java/simple/Calc.y examples/java/simple/Makefile
+ 
+ # Non-gnulib sources in Bison's internal library.
