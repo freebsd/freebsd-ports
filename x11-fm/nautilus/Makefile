@@ -27,8 +27,8 @@ USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
-MESON_ARGS=	-Denable-packagekit=false \
-		-Denable-selinux=false
+MESON_ARGS=	-Dpackagekit=false \
+		-Dselinux=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 CPE_VENDOR=	gnome
 
