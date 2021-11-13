@@ -64,6 +64,9 @@ post-patch:
 # Respect devel/pkgconf default search
 	@${REINPLACE_CMD} -e '/pkgconfig/s/share/libdata/' \
 		${WRKSRC}/build.zig
+# Respect PREFIX in path references
+	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
+		${WRKSRC}/doc/${PORTNAME}ctl.1.scd
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
