@@ -1,0 +1,5 @@
+bin/snowflake
+bin/snowflake-client
+bin/snowflake-proxy
+%%MANPAGES%%man/man1/snowflake-client.1.gz
+%%MANPAGES%%man/man1/snowflake-proxy.1.gz

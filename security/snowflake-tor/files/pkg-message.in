@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+To enable Snowflake's proxy daemon to start on boot:
+
+  # sysrc snowflake_enable=YES
+
+It will keep its same defaults, and allow the proxy service to run.
+
+To start the service:
+
+  # service snowflake start
+
+Should you wish to change any of the parameters, please refer
+to the snowflake-proxy(1) manpage. Use sysrc(8) to view or modify
+values depending on your needs.
+
+If you opt to use Snowflake's bridge features, adjust your 'torrc' accordingly:
+
+  - Client
+
+  UseBridges 1
+  Bridge snowflake 192.0.2.3:1
+  ClientTransportPlugin snowflake exec %%PREFIX%%/bin/snowflake-client \
+    -front cdn.sstatic.net \
+    -url https://snowflake-broker.torproject.net.global.prod.fastly.net/ \
+    -ice stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.dus.net:3478
+
+Client's options can be checked using `%%PREFIX%%/bin/snowflake-client --help`.
+
+  - Server
+
+  BridgeRelay 1
+  ExtORPort auto
+  ServerTransportListenAddr snowflake 0.0.0.0:443
+  ServerTransportPlugin snowflake exec %%PREFIX%%/bin/snowflake \
+    --acme-email admin@snowflake.example \
+    --acme-hostnames snowflake.example
+
+Server's options can be checked using `%%PREFIX%%/bin/snowflake-client --help`.
+
+As it uses TLS with ACME (Let's Encrypt) by default, an extra socket on port 80
+will be started. In order to disable this behavior, use -disable-tls. The domain
+names given to the --acme-hostnames option should resolve to the IP address of
+the server. You can give more than one, separated by commas.
+EOM
+}
+]
