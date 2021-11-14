@@ -1,6 +1,6 @@
 PORTNAME=	wangle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.11.01.00
+DISTVERSION=	2021.11.08.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,11 +13,16 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfizz.so:security/fizz \
+		libfmt.so:devel/libfmt \
 		libfolly.so:devel/folly \
 		libgflags.so:devel/gflags \
-		libfmt.so:devel/libfmt \
 		libglog.so:devel/glog \
-		libsodium.so:security/libsodium
+		libicui18n.so:devel/icu \
+		liblz4.so:archivers/liblz4 \
+		libunwind.so:devel/libunwind \
+		libsnappy.so:archivers/snappy \
+		libsodium.so:security/libsodium \
+		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang cpe ssl
 USE_GITHUB=	yes

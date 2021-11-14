@@ -70,6 +70,7 @@ include/wangle/client/ssl/SSLSessionCallbacks.h
 include/wangle/client/ssl/SSLSessionPersistentCache-inl.h
 include/wangle/client/ssl/SSLSessionPersistentCache.h
 include/wangle/client/ssl/ThreadSafeSSLSessionCache.h
+include/wangle/ssl/test/MockSSLStats.h
 include/wangle/client/ssl/test/Mocks.h
 include/wangle/client/ssl/test/TestUtil.h
 include/wangle/codec/ByteToMessageDecoder.h
