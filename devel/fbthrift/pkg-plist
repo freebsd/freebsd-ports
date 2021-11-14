@@ -196,6 +196,12 @@ include/thrift/lib/cpp2/gen/module_types_tcc.h
 include/thrift/lib/cpp2/gen/service_cpp.h
 include/thrift/lib/cpp2/gen/service_h.h
 include/thrift/lib/cpp2/gen/service_tcc.h
+include/thrift/lib/cpp2/hash/DeterministicAccumulator-inl.h
+include/thrift/lib/cpp2/hash/DeterministicAccumulator.h
+include/thrift/lib/cpp2/hash/DeterministicHash.h
+include/thrift/lib/cpp2/hash/DeterministicProtocol-inl.h
+include/thrift/lib/cpp2/hash/DeterministicProtocol.h
+include/thrift/lib/cpp2/hash/StdHasher.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
 include/thrift/lib/cpp2/protocol/CompactProtocol-inl.h
@@ -300,6 +306,7 @@ include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/VisitorHelper.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
+include/thrift/lib/cpp2/test/DebugHasher.h
 include/thrift/lib/cpp2/test/IndirectionWrapperTest.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
@@ -374,9 +381,11 @@ include/thrift/lib/cpp2/transport/rocket/test/util/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/util/VersionServicesMock.h
 include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
+include/thrift/lib/cpp2/type/ThriftOp.h
 include/thrift/lib/cpp2/type/ThriftType.h
-include/thrift/lib/cpp2/type/UniversalType.h
-include/thrift/lib/cpp2/type/detail/ThriftType.h
+include/thrift/lib/cpp2/type/Traits.h
+include/thrift/lib/cpp2/type/UniversalName.h
+include/thrift/lib/cpp2/type/detail/Traits.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
 include/thrift/lib/cpp2/util/DebugString.h
