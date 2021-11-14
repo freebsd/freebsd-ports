@@ -20,4 +20,10 @@ CMAKE_TESTING_ON=	GISMO_BUILD_UNITTESTS # one test is known to fail: https://git
 GH_TUPLE=	gismo:gsElasticity:7bfde6d:gsElasticity/extensions/gsElasticity \
 		gismo:gsUnitTest:7c42e58:gsUnitTest/extensions/gsUnitTest
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+CMAKE_ARGS+=	-DTARGET_ARCHITECTURE="cortex-a53"
+.endif
+
+.include <bsd.port.post.mk>
