@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=--verbose \
 		--disable-tests \
 		--without-alsa \
 		--without-capi \
+		--without-coreaudio \
 		--without-dbus \
 		--without-gettext --without-gettextpo \
 		--without-gphoto \
