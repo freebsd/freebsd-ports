@@ -38,8 +38,8 @@
 %%WWWDIR%%/assets/mstile-70x70.png
 @sample %%WWWDIR%%/config.json.example %%WWWDIR%%/config.json
 %%WWWDIR%%/index.html
-%%WWWDIR%%/main.a72029e50e3bd5d498be.bundle.css
-%%WWWDIR%%/main.f7cebdc908f498e40162.bundle.js
-%%WWWDIR%%/main.f7cebdc908f498e40162.bundle.js.LICENSE.txt
+%%WWWDIR%%/main.a4ccf257afd853d27db1.bundle.js
+%%WWWDIR%%/main.a4ccf257afd853d27db1.bundle.js.LICENSE.txt
+%%WWWDIR%%/main.ba161cbc5009cbd4d8d6.bundle.css
 %%WWWDIR%%/olm.wasm
 %%WWWDIR%%/polyfill.a9097dc82278a0bb6197.bundle.js
