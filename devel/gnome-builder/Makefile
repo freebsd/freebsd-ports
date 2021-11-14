@@ -81,12 +81,6 @@ CLANG_MESON_TRUE=	plugin_clang
 CLANG_BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 CLANG_RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
-# jedi plugin with dependancies doesn't work
-MESON_ARGS+=	-Dplugin_jedi=false
-#RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-#		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-#		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi@${PY_FLAVOR}
-
 # 11.1 and older has issues with vala generated code.
 post-patch:
 	${REINPLACE_CMD} -e '/-Werror=return-type/d' \
