@@ -1,7 +1,6 @@
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6
-PORTREVISION=	2
+DISTVERSION=	2.0
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,29 +12,57 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values correspond to other architectures, plus "generic" is broken
 
-HPP_DEPENDS=	cereal>0:devel/cereal
-BUILD_DEPENDS=	${HPP_DEPENDS}
-LIB_DEPENDS=	libflann_cpp.so:math/flann \
+#HPP_DEPENDS=	cereal>0:devel/cereal # external cereal is currently broken, see https://github.com/openMVG/openMVG/issues/1963
+#BUILD_DEPENDS=	${HPP_DEPENDS}
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libblas.so:math/blas \
+		libcamd.so:math/suitesparse-camd \
+		libCbc.so:math/cbc \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libceres.so:math/ceres-solver \
+		libCgl.so:math/cgl \
+		libcholmod.so:math/suitesparse-cholmod \
+		libClp.so:math/clp \
+		libcoinasl.so:math/asl \
+		libCoinUtils.so:math/coinutils \
+		libcolamd.so:math/suitesparse-colamd \
+		libcoinmumps.so:math/ipopt \
+		libcxsparse.so:math/suitesparse-cxsparse \
+		libemon.so:math/lemon \
+		libflann_cpp.so:math/flann \
+		libgflags.so:devel/gflags \
+		libglog.so:devel/glog \
+		libglpk.so:math/glpk \
+		libgmp.so:math/gmp \
+		libjbig.so:graphics/jbigkit \
+		libmetis.so:math/metis \
+		libnauty.so:math/nauty \
 		libopenblas.so:math/openblas \
+		libOsi.so:math/osi \
 		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
+		libspqr.so:math/suitesparse-spqr \
+		libsuitesparseconfig.so:math/suitesparse-config \
+		libtiff.so:graphics/tiff \
+		libunwind.so:devel/libunwind
 LIB_DEPENDS+=	liblz4.so:archivers/liblz4 # workaround for https://github.com/openMVG/openMVG/issues/1798
-RUN_DEPENDS=	${HPP_DEPENDS}
+#RUN_DEPENDS=	${HPP_DEPENDS}
 
 USES=		cmake compiler:c++11-lang eigen:3 jpeg qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	openMVG
 GH_PROJECT=	openMVG
-GH_TUPLE=	openMVG-thirdparty:osi_clp:a25a980:osi/dependencies/osi_clp
+GH_TUPLE=	openMVG-thirdparty:cereal:ac168fe:cereal/dependencies/cereal
 WRKSRC_SUBDIR=	src
 USE_QT=		core gui opengl svg widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
-CONFLICTS_BUILD=	Clp CoinMP # libopenMVG_lemon.so: undefined reference to ClpSimplex::setRowLower(int, double)
-
-CMAKE_ARGS=	-DCEREAL_INCLUDE_DIR_HINTS=${LOCALBASE}/include \
-		-DEIGEN_INCLUDE_DIR_HINTS=${LOCALBASE}/include/eigen3 \
-		-DFLANN_INCLUDE_DIR_HINTS=${LOCALBASE}/include
+CMAKE_ARGS=	-DEIGEN_INCLUDE_DIR_HINTS=${LOCALBASE}/include/eigen3 \
+		-DFLANN_INCLUDE_DIR_HINTS=${LOCALBASE}/include \
+		-DLEMON_INCLUDE_DIR_HINTS=${LOCALBASE}/include \
+		-DOSI_INCLUDE_DIR_HINTS=${LOCALBASE}/include \
+		-DCOINUTILS_INCLUDE_DIR_HINTS=${LOCALBASE}/include \
+		-DCLP_INCLUDE_DIR_HINTS=${LOCALBASE}/include \
+		-DCERES_DIR_HINTS=${LOCALBASE}/include
 CMAKE_ON=	OpenMVG_BUILD_SHARED
 CMAKE_OFF=	OpenMVG_BUILD_TESTS OpenMVG_BUILD_EXAMPLES
 
@@ -62,6 +89,6 @@ MEROM_CMAKE_ON=			-DTARGET_ARCHITECTURE=merom
 NEHALEM_CMAKE_ON=		-DTARGET_ARCHITECTURE=nehalem
 
 post-install:
-	cd ${STAGEDIR}${PREFIX}/include/openMVG_dependencies && ${RMDIR} cereal
+	@${RM} -r ${STAGEDIR}${PREFIX}/include/openMVG_dependencies/osi_clp
 
 .include <bsd.port.mk>

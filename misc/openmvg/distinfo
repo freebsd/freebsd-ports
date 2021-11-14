@@ -1,7 +1,5 @@
-TIMESTAMP = 1610945557
-SHA256 (openMVG-openMVG-v1.6_GH0.tar.gz) = 11b7f632a773f8c06fe7e30caeebc8ac124049cd5dd947eaadc8c7bf0a294d64
-SIZE (openMVG-openMVG-v1.6_GH0.tar.gz) = 14752743
-SHA256 (openMVG-thirdparty-cereal-ac168fe78ac499be0a745bf4a3253a9660572f8d_GH0.tar.gz) = 97e571da6be41eeba060ba257f74bdb329e043c078df7429f2f87ecdfeeb3db3
-SIZE (openMVG-thirdparty-cereal-ac168fe78ac499be0a745bf4a3253a9660572f8d_GH0.tar.gz) = 375037
-SHA256 (openMVG-thirdparty-osi_clp-a25a980_GH0.tar.gz) = 749c742b7eb6d346d34ef02872c7a02bdbef6759bdd48b9542dffb91bf82d0d7
-SIZE (openMVG-thirdparty-osi_clp-a25a980_GH0.tar.gz) = 2575191
+TIMESTAMP = 1636913713
+SHA256 (openMVG-openMVG-v2.0_GH0.tar.gz) = 950da7d6fc370cc99ad29092fd3b46196f782af2f905e475a7262ceb96170618
+SIZE (openMVG-openMVG-v2.0_GH0.tar.gz) = 15129786
+SHA256 (openMVG-thirdparty-cereal-ac168fe_GH0.tar.gz) = 99290309c96f65eca82883224fc19d08271d086328e97a657758deaea1110014
+SIZE (openMVG-thirdparty-cereal-ac168fe_GH0.tar.gz) = 374597

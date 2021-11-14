@@ -1,0 +1,12 @@
+- workaround for https://github.com/openMVG/openMVG/issues/1962
+
+--- software/SfM/CMakeLists.txt.orig	2021-11-14 08:42:39 UTC
++++ software/SfM/CMakeLists.txt
+@@ -200,6 +200,7 @@ target_link_libraries(openMVG_main_ComputeStructureFro
+     openMVG_system
+     openMVG_features
+     openMVG_sfm
++    ceres
+     ${STLPLUS_LIBRARY}
+ )
+ 

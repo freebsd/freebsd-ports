@@ -1,9 +1,0 @@
---- dependencies/osi_clp/Osi/src/Osi/CMakeLists.txt.orig	2018-08-26 19:31:00 UTC
-+++ dependencies/osi_clp/Osi/src/Osi/CMakeLists.txt
-@@ -10,5 +10,5 @@ file(
- 	*.cpp
- )
- 
--ADD_LIBRARY(lib_Osi ${OSI_OSI_HEADER} ${OSI_OSI_CPP})
-+ADD_LIBRARY(lib_Osi SHARED ${OSI_OSI_HEADER} ${OSI_OSI_CPP})
- INSTALL(TARGETS lib_Osi DESTINATION lib EXPORT openMVG-targets)

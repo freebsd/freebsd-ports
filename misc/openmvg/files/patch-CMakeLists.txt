@@ -1,20 +1,6 @@
---- CMakeLists.txt.orig	2020-05-13 05:15:56 UTC
+--- CMakeLists.txt.orig	2021-10-20 20:39:31 UTC
 +++ CMakeLists.txt
-@@ -88,11 +88,13 @@ endif()
- # ==============================================================================
- # Check that submodule have been initialized and updated
- # ==============================================================================
-+if (FALSE)
- if (NOT EXISTS ${PROJECT_SOURCE_DIR}/dependencies/cereal/include)
-   message(FATAL_ERROR
-     "\n submodule(s) are missing, please update your repository:\n"
-     "  > git submodule update -i\n")
- endif()
-+endif()
- 
- # ==============================================================================
- # Additional cmake find modules
-@@ -103,8 +105,8 @@ include(OptimizeForArchitecture)
+@@ -113,8 +115,8 @@ include(OptimizeForArchitecture)
  OptimizeForArchitecture()
  
  if (UNIX AND NOT OpenMVG_BUILD_COVERAGE)
@@ -25,12 +11,3 @@
  endif ()
  
  # ==============================================================================
-@@ -260,7 +262,7 @@ endif()
- # - external by default if CERES_DIR_HINTS or find_package found a valid Ceres
- # - internal if ceres not found (ceres-solver+cxsparse+miniglog)
- # ==============================================================================
--find_package(Ceres QUIET HINTS ${CERES_DIR_HINTS})
-+#find_package(Ceres QUIET HINTS ${CERES_DIR_HINTS}) # external ceres can't work because it requires fortran
- if (NOT Ceres_FOUND)
-   set(OpenMVG_USE_INTERNAL_CERES ON)
-   set(CERES_INCLUDE_DIRS

@@ -1,9 +1,0 @@
---- dependencies/osi_clp/Clp/src/OsiClp/CMakeLists.txt.orig	2018-08-26 19:29:00 UTC
-+++ dependencies/osi_clp/Clp/src/OsiClp/CMakeLists.txt
-@@ -9,5 +9,5 @@ file(
- 	OSI_SRCS
- 	*.cpp
- )
--ADD_LIBRARY(lib_OsiClpSolver ${OSI_HEADERS} ${OSI_SRCS})
-+ADD_LIBRARY(lib_OsiClpSolver SHARED ${OSI_HEADERS} ${OSI_SRCS})
- INSTALL(TARGETS lib_OsiClpSolver DESTINATION lib EXPORT openMVG-targets)
