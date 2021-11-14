@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	readr
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,7 +17,7 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-tibble>0:devel/R-cran-tibble \
-		R-cran-vroom>=1.5.4:textproc/R-cran-vroom \
+		R-cran-vroom>=1.5.6:textproc/R-cran-vroom \
 		R-cran-lifecycle>=0.2.0:devel/R-cran-lifecycle \
 		R-cran-cpp11>0:devel/R-cran-cpp11 \
 		R-cran-tzdb>=0.1.1:devel/R-cran-tzdb
