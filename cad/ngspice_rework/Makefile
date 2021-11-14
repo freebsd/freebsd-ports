@@ -2,7 +2,7 @@
 
 PORTNAME=	ngspice_rework
 PORTVERSION=	32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -38,7 +38,6 @@ CONFIGURE_ARGS+=	--with-ngshared --enable-shared
 USES+=			xorg
 USE_XORG=		ice sm x11 xaw xext xmu xt xft
 CONFIGURE_ARGS+=	--with-x
-RUN_DEPENDS=		ngspice_rework-shlib>0:cad/ngspice_rework@shlib
 PLIST_FILES=		bin/ngspice man/man1/ngspice.1.gz
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
