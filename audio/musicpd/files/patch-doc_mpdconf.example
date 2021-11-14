@@ -1,4 +1,4 @@
---- doc/mpdconf.example.orig	2021-08-24 20:15:22 UTC
+--- doc/mpdconf.example.orig	2021-11-11 09:16:36 UTC
 +++ doc/mpdconf.example
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
@@ -23,23 +23,25 @@
  #
 -#db_file			"~/.mpd/database"
 +db_file			"/var/mpd/.mpd/database"
- #
+ 
  # These settings are the locations for the daemon log files for the daemon.
- # These logs are great for troubleshooting, depending on your log_level
-@@ -34,25 +34,25 @@
- # The special value "syslog" makes MPD use the local syslog daemon. This
- # setting defaults to logging to syslog.
+ #
+@@ -35,7 +35,7 @@
+ # If you use systemd, do not configure a log_file.  With systemd, MPD
+ # defaults to the systemd journal, which is fine.
  #
 -#log_file			"~/.mpd/log"
 +log_file			"/var/mpd/.mpd/log"
- #
+ 
  # This setting sets the location of the file which stores the process ID
  # for use of mpd --kill and some init scripts. This setting is disabled by
- # default and the pid file will not be stored.
+@@ -43,19 +43,19 @@
+ #
+ # If you use systemd, do not configure a pid_file.
  #
 -#pid_file			"~/.mpd/pid"
 +pid_file			"/var/mpd/.mpd/pid"
- #
+ 
  # This setting sets the location of the file which contains information about
  # most variables to get MPD back into the same general shape it was in before
  # it was brought down. This setting is disabled by default and the server
@@ -56,7 +58,7 @@
  #
  ###############################################################################
  
-@@ -64,7 +64,7 @@
+@@ -67,7 +67,7 @@
  # initialization. This setting is disabled by default and MPD is run as the
  # current user.
  #
@@ -65,7 +67,7 @@
  #
  # This setting specifies the group that MPD will run as. If not specified
  # primary group of user specified with "user" setting will be used (if set).
-@@ -82,7 +82,7 @@
+@@ -85,7 +85,7 @@
  #bind_to_address		"any"
  #
  # And for Unix Socket
@@ -74,7 +76,7 @@
  #
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
-@@ -178,8 +178,8 @@
+@@ -181,8 +181,8 @@
  #
  #database {
  #       plugin "simple"
@@ -85,7 +87,7 @@
  #}
  #
  # An example of database config for a sattelite setup
-@@ -224,14 +224,14 @@ input {
+@@ -227,14 +227,14 @@ input {
  #
  # An example of an OSS output:
  #
