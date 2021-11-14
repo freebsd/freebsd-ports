@@ -1,5 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.2.a1.20211101
+PORTVERSION=	3.2.a1.20211113
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 USES=		cmake compiler:c++17-lang cpe gnome perl5 pkgconfig sqlite ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
-GH_TAGNAME=	9eaf2c53c
+GH_TAGNAME=	6e83edb
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
@@ -63,48 +63,31 @@ GPERF_DESC=	Google perf-tools profiling
 HYPERSCAN_DESC=	Use hyperscan optimizations (amd64 only)
 LUAJIT_DESC=	Use LuaJIT instead of standard Lua
 
-SUB_FILES=	pkg-message rspamd.newsyslog.conf.sample
-PLIST_SUB+=	ETCDIR=etc/rspamd \
-		RSPAMDVERSION=${PORTVERSION:C/^([^.]+\.[^.]+).*/\1/}
-CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
-		-DLOGDIR=/var/log/rspamd \
-		-DDBDIR=/var/db/rspamd \
-		-DRUNDIR=/var/run/rspamd \
-		-DMANDIR=${MANPREFIX}/man \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-		-DBUILD_PORT=yes \
-		-DLIBDIR=${PREFIX}/lib/rspamd \
-		-DDEBUG=ON \
-		-DGIT_ID=${GH_TAGNAME}
-DEBUG_FLAGS=	-g -O0
+BLAS_LIB_DEPENDS=	libblis.so:math/blis \
+			liblapack.so:math/lapack
+BLAS_USES=		blaslapack:openblas
+BLAS_CMAKE_ON=		-DENABLE_BLAS=ON
 
-USE_RC_SUBR=	rspamd
+CGP_RUN_DEPENDS+=	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
+			p5-AnyEvent>=0:devel/p5-AnyEvent \
+			p5-EV>=0:devel/p5-EV \
+			p5-JSON-XS>=0:converters/p5-JSON-XS
 
-BLAS_CMAKE_ON=	-DENABLE_BLAS=ON
-BLAS_LIB_DEPENDS=	libblis.so:math/blis liblapack.so:math/lapack
-BLAS_USES=	blaslapack:openblas
-
-GPERF_CMAKE_ON=	-DENABLE_GPERF_TOOLS=ON
 GPERF_LIB_DEPENDS=	libprofiler.so:devel/google-perftools
+GPERF_CMAKE_ON=		-DENABLE_GPERF_TOOLS=ON
 
-HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
+HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 
-LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=	lua:51+
-
-CGP_RUN_DEPENDS+=	\
-	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
-	p5-AnyEvent>=0:devel/p5-AnyEvent \
-	p5-EV>=0:devel/p5-EV \
-	p5-JSON-XS>=0:converters/p5-JSON-XS
+LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc64*}
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-USES+=		compiler:gcc-c++11-lib
+USES+=			compiler:gcc-c++11-lib
 .endif
 
 post-install:
