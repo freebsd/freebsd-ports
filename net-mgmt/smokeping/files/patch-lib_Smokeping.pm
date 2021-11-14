@@ -1,15 +1,6 @@
---- lib/Smokeping.pm.orig	2021-02-01 12:05:21 UTC
-+++ lib/Smokeping.pm
-@@ -1889,7 +1889,7 @@ sub check_alerts {
-                 $gotalert = $match unless $gotalert;
-             my $edgetrigger = $alert->{edgetrigger} eq 'yes';
-             my $what;
--            if ($edgetrigger and $prevmatch != $match) {
-+            if ($edgetrigger and ($prevmatch ? 0 : 1 ) != ($match ? 0 : 1)) {
-                 $what = ($prevmatch == 0 ? "was raised" : "was cleared");
-             }
-             if (not $edgetrigger and $match) {
-@@ -4306,7 +4306,7 @@ sub main (;$) {
+--- /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/lib/Smokeping.pm.orig	2021-11-14 17:22:44.574583000 +0000
++++ /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/lib/Smokeping.pm	2021-11-14 17:26:17.422305000 +0000
+@@ -4631,7 +4631,7 @@
          if(defined $opt{'check'}) { verify_cfg($cfgfile); exit 0; }
          if($opt{reload})  { 
              load_cfg $cfgfile, 'noinit'; # we need just the piddir
@@ -18,7 +9,7 @@
              print "HUP signal sent to the running SmokePing process, exiting.\n";
              exit 0;
          };
-@@ -4315,7 +4315,7 @@ sub main (;$) {
+@@ -4640,7 +4640,7 @@
          if(defined $opt{'static-pages'}) { makestaticpages $cfg, $opt{'static-pages'}; exit 0 };
          if($opt{email})    { enable_dynamic $cfg, $cfg->{Targets},"",""; exit 0 };
      }
@@ -27,7 +18,7 @@
  
      if($opt{logfile})      { initialize_filelog($opt{logfile}) };
  
-@@ -4328,7 +4328,7 @@ sub main (;$) {
+@@ -4653,7 +4653,7 @@
                  initialize_syslog($cfg->{General}{syslogfacility}, 
                                    $cfg->{General}{syslogpriority});
          }
@@ -36,7 +27,7 @@
      }
      do_log "Smokeping version $VERSION successfully launched.";
  
-@@ -4514,7 +4514,7 @@ KID:
+@@ -4839,7 +4839,7 @@
              my $new_conf = Smokeping::Slave::submit_results $slave_cfg,$cfg,$myprobe,$probes;
              if ($new_conf && !$gothup){
                  do_log('server has new config for me ... HUPing the parent');

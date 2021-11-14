@@ -21,7 +21,7 @@ GH_TAGNAME=	glpi090+${FUNV_VER}
 USE_PHP=	fileinfo simplexml
 
 GLPI_VER=	9.5.0
-FUNV_VER=	1.0
+FUNV_VER=	1.5
 NO_BUILD=	yes
 NO_ARCH=	yes
 

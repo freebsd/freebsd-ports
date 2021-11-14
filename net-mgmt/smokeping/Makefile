@@ -1,8 +1,7 @@
 # Created by: Lars Thegler <lars@thegler.dk>
 
 PORTNAME=	smokeping
-PORTVERSION=	2.7.3
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	rodrigo@FreeBSD.org

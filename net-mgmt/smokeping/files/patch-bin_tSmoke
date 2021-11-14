@@ -1,6 +1,6 @@
---- bin/tSmoke.orig	2018-02-02 21:14:55 UTC
-+++ bin/tSmoke
-@@ -53,7 +53,7 @@ use warnings;
+--- /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/bin/tSmoke.orig	2021-11-14 17:17:07.113198000 +0000
++++ /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/bin/tSmoke	2021-11-14 17:18:49.556960000 +0000
+@@ -53,7 +53,7 @@
  # Point the lib variables to your implementation
  
  use lib (split /:/, q{}); # PERL5LIB
@@ -9,11 +9,11 @@
  
  
  use Smokeping;
-@@ -63,7 +63,7 @@ use Pod::Usage;
+@@ -63,7 +63,7 @@
  use RRDs;
  
  # Point to your Smokeping config file
--my $cfgfile = "etc/config.dist";
+-my $cfgfile = (shift @ARGV) || "$FindBin::Bin/../etc/config";
 +my $cfgfile = "/usr/local/etc/smokeping/config";
  
  # global variables
