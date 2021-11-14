@@ -1025,6 +1025,7 @@
     SUBDIR += py-confluent-kafka
     SUBDIR += py-cymruwhois
     SUBDIR += py-dpkt
+    SUBDIR += py-duet
     SUBDIR += py-dugong
     SUBDIR += py-ec2-cli-tools
     SUBDIR += py-errbot
