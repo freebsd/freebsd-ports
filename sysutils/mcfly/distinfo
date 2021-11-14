@@ -133,5 +133,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.crate) = ac3b87c63620426dd9
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.crate) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (cantino-mcfly-v0.5.9_GH0.tar.gz) = 8c272228496f700ac7e286d30dddf8a50f67f729d8a1275d2d655d66c57944b9
-SIZE (cantino-mcfly-v0.5.9_GH0.tar.gz) = 207655
+SHA256 (cantino-mcfly-v0.5.10_GH0.tar.gz) = 57310e2b0c51a293223b6898b247ebad81da032650201fcf2943ec73e6817026
+SIZE (cantino-mcfly-v0.5.10_GH0.tar.gz) = 207639
