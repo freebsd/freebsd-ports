@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.11.01.00
+DISTVERSION=	2021.11.08.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,11 +14,17 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gperf>0:devel/gperf
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
+		libevent.so:devel/libevent \
 		libfizz.so:security/fizz \
 		libfmt.so:devel/libfmt \
+		libfolly.so:devel/folly \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
-		libfolly.so:devel/folly \
+		libicui18n.so:devel/icu \
+		liblz4.so:archivers/liblz4 \
+		libsnappy.so:archivers/snappy \
+		libsodium.so:security/libsodium \
+		libunwind.so:devel/libunwind \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
