@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.11.01.00
+DISTVERSION=	2021.11.08.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
+		libicui18n.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
 		libsnappy.so:archivers/snappy \
 		libsodium.so:security/libsodium \

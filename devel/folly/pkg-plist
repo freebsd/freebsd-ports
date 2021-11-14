@@ -299,6 +299,7 @@ include/folly/experimental/coro/AsyncScope.h
 include/folly/experimental/coro/AsyncStack.h
 include/folly/experimental/coro/Baton.h
 include/folly/experimental/coro/BlockingWait.h
+include/folly/experimental/coro/BoundedQueue.h
 include/folly/experimental/coro/Collect-inl.h
 include/folly/experimental/coro/Collect.h
 include/folly/experimental/coro/Concat-inl.h
