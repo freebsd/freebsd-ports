@@ -278,6 +278,7 @@
     SUBDIR += htmldoc
     SUBDIR += htmlise
     SUBDIR += htmlq
+    SUBDIR += htmltest
     SUBDIR += htmltolatex
     SUBDIR += humanzip
     SUBDIR += hunspell
