@@ -130,6 +130,7 @@ include/openvdb/tree/Tree.h
 include/openvdb/tree/TreeIterator.h
 include/openvdb/tree/ValueAccessor.h
 include/openvdb/util/CpuTimer.h
+include/openvdb/util/ExplicitInstantiation.h
 include/openvdb/util/Formats.h
 include/openvdb/util/MapsUtil.h
 include/openvdb/util/Name.h
@@ -151,6 +152,6 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.8.1
-lib/libopenvdb.so.8.1.0
-%%PYTHON%%%%PYTHON_LIBDIR%%/pyopenvdb.so
+lib/libopenvdb.so.9.0
+lib/libopenvdb.so.9.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyopenvdb.so

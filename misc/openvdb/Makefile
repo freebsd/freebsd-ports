@@ -1,11 +1,7 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.1.0
-PORTREVISION=	6
+DISTVERSION=	9.0.0
 CATEGORIES=	misc
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	e620aa6a472e7e5bebaf2103ed2b4d6442438341.patch:-p1 # backport of change TBB -> OneTBB
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for storage and manipulation of sparse volumetric data
@@ -48,10 +44,9 @@ TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
-post-patch: # extra fix for OneTBB
+xpost-patch: # extra fix for OneTBB
 	@cd ${WRKSRC}/openvdb/openvdb && \
-		${MKDIR} thread && \
-		${MV} util/Threading.h thread/
+		${MKDIR} thread
 
 # DOCS is broken: https://github.com/AcademySoftwareFoundation/openvdb/issues/899
 #DOCS_CMAKE_BOOL=	OPENVDB_BUILD_DOCS

@@ -1,25 +1,16 @@
---- openvdb/openvdb/python/CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
+--- openvdb/openvdb/python/CMakeLists.txt.orig	2021-10-30 02:55:40 UTC
 +++ openvdb/openvdb/python/CMakeLists.txt
-@@ -81,7 +81,7 @@ if(OPENVDB_BUILD_PYTHON_UNITTESTS)
+@@ -88,11 +88,11 @@ if(NOT DEFINED PYOPENVDB_INSTALL_DIRECTORY)
+     list(APPEND OPENVDB_PYTHON_REQUIRED_COMPONENTS Interpreter)
  endif()
  
- if(${CMAKE_VERSION} VERSION_LESS 3.14)
--  find_package(Python QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
-+  find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
-   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
+-find_package(Python QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
++find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
+ OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
  
-   if(USE_NUMPY)
-@@ -90,11 +90,11 @@ if(${CMAKE_VERSION} VERSION_LESS 3.14)
-     list(APPEND OPENVDB_PYTHON_DEPS Python::NumPy)
-   endif()
- else()
--  find_package(Python QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
-+  find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
-   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
- 
-   if(USE_NUMPY)
--    find_package(Python QUIET COMPONENTS NumPy)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS NumPy)
-     if(NOT TARGET Python::NumPy)
-         message(FATAL_ERROR "Could NOT find NumPy (Required is at least version "
-           "\"${MINIMUM_NUMPY_VERSION}\")"
+ if(USE_NUMPY)
+-  find_package(Python QUIET COMPONENTS NumPy)
++  find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET COMPONENTS NumPy)
+   if(NOT TARGET Python::NumPy)
+       message(FATAL_ERROR "Could NOT find NumPy (Required is at least version "
+         "\"${MINIMUM_NUMPY_VERSION}\")"

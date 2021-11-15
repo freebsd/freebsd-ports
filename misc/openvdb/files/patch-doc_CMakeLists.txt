@@ -1,6 +1,6 @@
---- doc/CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
+--- doc/CMakeLists.txt.orig	2021-10-30 02:55:40 UTC
 +++ doc/CMakeLists.txt
-@@ -195,5 +195,5 @@ doxygen_add_docs(doc ${DOXY_FILES}
+@@ -270,5 +270,5 @@ doxygen_add_docs(doc ${DOXY_FILES}
    COMMENT "Generating API documentation with Doxygen")
  
  # Suppress "Installing..." messages for all but one of the hundreds of generated files.

@@ -1,28 +1,22 @@
---- CMakeLists.txt.orig	2021-06-11 21:38:41 UTC
+--- CMakeLists.txt.orig	2021-10-30 02:55:40 UTC
 +++ CMakeLists.txt
-@@ -216,7 +216,7 @@ set(MINIMUM_CXX_STANDARD 14)
+@@ -250,7 +250,7 @@ set(MINIMUM_CXX_STANDARD 14)
+ 
  # @note  Blosc version is currently treated as exception which must be adhered
  # to. The minimum version must be at least 1.5.0. Previous versions are incompatible.
- # Later versions (including 1.5.4), can be buggy on certain platforms.
 -set(MINIMUM_BLOSC_VERSION 1.5.0)
 +set(MINIMUM_BLOSC_VERSION 1.15)
  # @note  ABI always enforced so the correct deprecation messages are available.
  # OPENVDB_USE_DEPRECATED_ABI_<VERSION> should be used to circumvent this
  set(MINIMUM_OPENVDB_ABI_VERSION 6)
-@@ -231,13 +231,13 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+@@ -265,8 +265,8 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
    set(MINIMUM_MSVC_VERSION 19.10)
  
-   set(MINIMUM_BOOST_VERSION 1.61)  # @warning should be 1.66, but H18 ships with 1.61
--  set(MINIMUM_ILMBASE_VERSION 2.2) # @warning should be 2.3, but H18 ships with 2.2
--  set(MINIMUM_OPENEXR_VERSION 2.2) # @warning should be 2.3, but H18 ships with 2.2
-+  set(MINIMUM_ILMBASE_VERSION 3.0) # @warning should be 2.3, but H18 ships with 2.2
-+  set(MINIMUM_OPENEXR_VERSION 3.0) # @warning should be 2.3, but H18 ships with 2.2
+   set(MINIMUM_BOOST_VERSION 1.70)
+-  set(MINIMUM_ILMBASE_VERSION 2.4)
+-  set(MINIMUM_OPENEXR_VERSION 2.4)
++  set(MINIMUM_ILMBASE_VERSION 3.0)
++  set(MINIMUM_OPENEXR_VERSION 3.0)
    set(MINIMUM_ZLIB_VERSION 1.2.7)
-   set(MINIMUM_TBB_VERSION 2018.0)
-   set(MINIMUM_LLVM_VERSION 6.0.0)
- 
--  set(MINIMUM_PYTHON_VERSION 2.7)
-+  set(MINIMUM_PYTHON_VERSION ${FREEBSD_PYTHON_VER})
-   set(MINIMUM_NUMPY_VERSION 1.14.0)
- 
-   set(MINIMUM_GOOGLETEST_VERSION 1.8)
+   set(MINIMUM_TBB_VERSION 2019.0)
+   set(MINIMUM_LLVM_VERSION 7.0.0)
