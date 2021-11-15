@@ -1,0 +1,26 @@
+Extreme performance and stability test for PC hardware: video card,
+power supply, cooling system.  Check your rig in stock and overclocked
+modes with real-life load!  Also includes interactive experience.
+
+The benchmark depicts a Gothic chapel with sorrowful statues stand in
+solemn stillness lit by the trembling light of torches.  Only few rays
+of sun coming through the stained glass windows slide over the biblical
+fresco and ominous creatures carved in cold stone.
+
+The very first GPU benchmark from UNIGINE, the original version was
+released in 2007, the 2.3 update was out in 2010.
+
+Key features:
+
+  - Visuals powered by UNIGINE 1 Engine
+  - Support of DirectX 9, DirectX 10, and OpenGL
+  - Five dynamic lights, HDR rendering
+  - Parallax and ambient occlusion mapping
+  - Volumetric light and fog, particle system
+  - Interactive experience with fly-through mode
+
+The program requires linprocfs(5) and linsysfs(5) to be mounted under
+/compat/linux/{proc,sys} to operate and writable /compat/linux/dev/shm
+directory, which is typically backed by tmpfs(5).
+
+WWW: https://benchmark.unigine.com/sanctuary

@@ -1,0 +1,30 @@
+Extreme performance and stability test for PC hardware: video card,
+power supply, cooling system.  Check your rig in stock and overclocked
+modes with real-life load!  Also includes interactive experience in a
+beautiful, detailed environment.
+
+The benchmark depicts tropical paradise: waves of the infinite ocean
+leisurely rolls over the sun-splashed shores of lagoon islands.  The
+sunset paints straw huts with warm colors while the mild breeze gently
+stirs the coconut palm leaves.  Hovering high in the tranquil sky the
+gulls are watching crabs crawling on the velvety sand among the
+abandoned boats.
+
+Original version was released in 2008, the 1.3 update was out in 2010.
+
+Key features:
+
+  - Visuals powered by UNIGINE 1 Engine
+  - Support of DirectX 9, DirectX 10, DirectX 11, and OpenGL
+  - Dynamic sky with light scattering
+  - Dynamic water with a surf zone and caustics
+  - HDR rendering, real-time ambient occlusion
+  - Up to 2M polygons per frame
+  - Interactive experience with fly-through mode
+  - Stereo 3D modes: Anaglyph, Separate images, 3D Vision, iZ3D
+
+The program requires linprocfs(5) and linsysfs(5) to be mounted under
+/compat/linux/{proc,sys} to operate and writable /compat/linux/dev/shm
+directory, which is typically backed by tmpfs(5).
+
+WWW: https://benchmark.unigine.com/tropics

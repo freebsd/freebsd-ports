@@ -40,6 +40,8 @@
     SUBDIR += libcelero
     SUBDIR += libmicro
     SUBDIR += linux-gputest
+    SUBDIR += linux-unigine-sanctuary
+    SUBDIR += linux-unigine-tropics
     SUBDIR += linux-vdbench
     SUBDIR += lmbench
     SUBDIR += lzbench
