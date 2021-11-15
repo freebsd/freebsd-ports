@@ -74,8 +74,6 @@ lib/gobject-introspection/giscanner/__pycache__/girwriter.cpython-%%PYTHON_SUFFI
 lib/gobject-introspection/giscanner/__pycache__/girwriter.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/gobject-introspection/giscanner/__pycache__/introspectablepass.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/gobject-introspection/giscanner/__pycache__/introspectablepass.cpython-%%PYTHON_SUFFIX%%.pyc
-lib/gobject-introspection/giscanner/__pycache__/libtoolimporter.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-lib/gobject-introspection/giscanner/__pycache__/libtoolimporter.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/gobject-introspection/giscanner/__pycache__/maintransformer.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/gobject-introspection/giscanner/__pycache__/maintransformer.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/gobject-introspection/giscanner/__pycache__/mdextensions.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -179,7 +177,6 @@ lib/gobject-introspection/giscanner/gdumpparser.py
 lib/gobject-introspection/giscanner/girparser.py
 lib/gobject-introspection/giscanner/girwriter.py
 lib/gobject-introspection/giscanner/introspectablepass.py
-lib/gobject-introspection/giscanner/libtoolimporter.py
 lib/gobject-introspection/giscanner/maintransformer.py
 lib/gobject-introspection/giscanner/mdextensions.py
 lib/gobject-introspection/giscanner/message.py
@@ -199,6 +196,7 @@ lib/libgirepository-1.0.so.1.0.0
 libdata/pkgconfig/gobject-introspection-1.0.pc
 libdata/pkgconfig/gobject-introspection-no-export-1.0.pc
 man/man1/g-ir-compiler.1.gz
+man/man1/g-ir-doc-tool.1.gz
 man/man1/g-ir-generate.1.gz
 man/man1/g-ir-scanner.1.gz
 share/aclocal/introspection.m4
