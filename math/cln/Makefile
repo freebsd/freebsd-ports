@@ -18,6 +18,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USES=		compiler:c11 gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
