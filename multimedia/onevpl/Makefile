@@ -31,14 +31,16 @@ PYTHON_BUILD_DEPENDS=	pybind11>0:devel/pybind11
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON_BINDING
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/python/&${PYTHON_VER}/' \
-		${WRKSRC}/preview/python/binding/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/pkgconfig/s,FULL_LIBDIR},PREFIX}/libdata,' \
 		${WRKSRC}/dispatcher/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
 		${WRKSRC}/dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp
 	@${REINPLACE_CMD} -e '/PKG_CONFIG/s,_lib,_prefix/libdata,' \
 		${WRKSRC}/modulefiles/vpl
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} -e '/LIBDIR/s/python/&${PYTHON_VER}/' \
+		${WRKSRC}/preview/python/binding/CMakeLists.txt
 
 post-install:
 	@${FIND} ${STAGEDIR} -name \*.orig -delete
