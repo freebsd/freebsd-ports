@@ -1,13 +1,13 @@
 # Created by: Matthias Petermann <matthias@petermann-it.de>
 
 PORTNAME=	sweethome3d
-PORTVERSION=	6.6
+PORTVERSION=	6.6.2
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Free interior design application
+COMMENT=	Free interior 3D design application
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT
