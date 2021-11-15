@@ -1,12 +1,10 @@
 # Created by: Simon Barner <barner@gmx.de>
 
 PORTNAME=	valgrind
-PORTVERSION=	3.18.0.g20210323
+PORTVERSION=	3.19.0.g20211113
 DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://valgrind.org/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pjfloyd@wanadoo.fr
@@ -30,7 +28,7 @@ CONFLICTS=	valgrind
 USE_GITHUB=	yes
 GH_ACCOUNT=	paulfloyd
 GH_PROJECT=	freebsd_valgrind
-GH_TAGNAME=	bd87bbc
+GH_TAGNAME=	6983bfb
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
