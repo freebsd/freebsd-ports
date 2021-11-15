@@ -92,7 +92,7 @@ EXPIRATION_DATE=2021-06-23
 
 # Force a modern LLVM >= 10
 .if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} > 80
-LLVM_DEFAULT=	10
+LLVM_DEFAULT=	11
 .endif
 
 post-patch:
