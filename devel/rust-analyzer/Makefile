@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-11-08
+DISTVERSION=	2021-11-22
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -30,10 +30,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cargo_metadata-0.14.1 \
 		cc-1.0.71 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.72.0 \
-		chalk-ir-0.72.0 \
-		chalk-recursive-0.72.0 \
-		chalk-solve-0.72.0 \
+		chalk-derive-0.73.0 \
+		chalk-ir-0.73.0 \
+		chalk-recursive-0.73.0 \
+		chalk-solve-0.73.0 \
 		countme-2.0.4 \
 		cov-mark-2.0.0-pre.1 \
 		crc32fast-1.2.1 \
@@ -72,7 +72,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		kqueue-1.0.4 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
-		libc-0.2.106 \
+		libc-0.2.107 \
 		libloading-0.7.1 \
 		libmimalloc-sys-0.1.22 \
 		lock_api-0.4.5 \
@@ -96,7 +96,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		oorandom-11.1.3 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
-		paste-1.0.5 \
+		paste-1.0.6 \
 		percent-encoding-2.1.0 \
 		perf-event-0.4.7 \
 		perf-event-open-sys-1.0.1 \
