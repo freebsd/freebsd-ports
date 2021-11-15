@@ -1,3 +1,29 @@
+  <vuln vid="42a4d82d-4603-11ec-8be6-d4c9ef517024">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.4.12,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2021/11/12/security-updates-1.4.12-and-1.3.17-released">
+	  <p>XSS issue in handling attachment filename extension in mimetype mismatch warning</p>
+	  <p>possible SQL injection via some session variables</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2021/11/12/security-updates-1.4.12-and-1.3.17-released</url>
+    </references>
+    <dates>
+      <discovery>2021-11-12</discovery>
+      <entry>2021-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d7a2b54-4468-11ec-8532-0d24c37c72c8">
     <topic>mailman -- 2.1.37 fixes XSS via user options, and moderator offline brute-force vuln against list admin password</topic>
     <affects>
