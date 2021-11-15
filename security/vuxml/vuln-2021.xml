@@ -1,3 +1,35 @@
+  <vuln vid="6916ea94-4628-11ec-bbe2-0800270512f4">
+    <topic>rubygem-date -- Regular Expression Denial of Service Vunlerability of Date Parsing Methods</topic>
+    <affects>
+      <package>
+	<name>rubygem-date</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stanislav Valkanov reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/11/15/date-parsing-method-regexp-dos-cve-2021-41817/">
+	  <p>
+	    Date's parsing methods including <code>Date.parse</code>
+	    are using Regexps internally, some of which are vulnerable
+	    against regular expression denial of service. Applications
+	    and libraries that apply such methods to untrusted input
+	    may be affected.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41817</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/11/15/date-parsing-method-regexp-dos-cve-2021-41817/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-15</discovery>
+      <entry>2021-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42a4d82d-4603-11ec-8be6-d4c9ef517024">
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
