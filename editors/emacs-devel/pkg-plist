@@ -221,6 +221,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/checked.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/connect-to-url.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/connect-to-url.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/contact.pbm
@@ -2234,8 +2236,11 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/charscript.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/cp51932.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/cp51932.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/emoji-labels.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/emoji-zwj.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/emoji-zwj.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/emoji.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/emoji.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/eucjp-ms.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/eucjp-ms.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/fontset.el.gz
@@ -3992,6 +3997,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/yank-media.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/yank-media.elc
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/site-lisp/subdirs.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
