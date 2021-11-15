@@ -51,7 +51,7 @@ lib/libvpl.so
 lib/libvpl.so.2
 lib/libvpl.so.2.5
 lib/oneVPL/libvpl_wayland.so
-%%PYTHON%%lib/python/pyvpl%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_LIBDIR%%/pyvpl%%PYTHON_EXT_SUFFIX%%.so
 libdata/pkgconfig/vpl.pc
 %%DATADIR%%/env/vars.sh
 %%DATADIR%%/examples/content/cars_128x96.h265

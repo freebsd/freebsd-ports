@@ -31,6 +31,8 @@ PYTHON_BUILD_DEPENDS=	pybind11>0:devel/pybind11
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON_BINDING
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/python/&${PYTHON_VER}/' \
+		${WRKSRC}/preview/python/binding/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/pkgconfig/s,FULL_LIBDIR},PREFIX}/libdata,' \
 		${WRKSRC}/dispatcher/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
