@@ -1,6 +1,5 @@
 PORTNAME=	mpvpaper
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,9 +16,14 @@ USE_GITHUB=	yes
 USE_GL=		egl
 GH_ACCOUNT=	GhostNaN
 PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}-holder
+		bin/${PORTNAME}-holder \
+		share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} 's/pidof/pgrep/' ${WRKSRC}/src/main.c
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
