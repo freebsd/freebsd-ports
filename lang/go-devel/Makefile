@@ -2,7 +2,7 @@
 
 PORTVERSION=	g20211105
 # Always set PORTREVISION and PORTEPOCH explicitly as otherwise they are inherited from lang/go
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	0
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap

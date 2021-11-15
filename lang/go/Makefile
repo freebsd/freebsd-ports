@@ -2,7 +2,7 @@
 
 PORTNAME=	go
 PORTVERSION?=	1.17.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES=	lang
 MASTER_SITES?=	https://golang.org/dl/ \
@@ -84,6 +84,7 @@ do-build:
 		GOARCH=${GOARCH_${ARCH}} \
 		GO386=${GO386} \
 		GOARM=${GOARM_${ARCH}} \
+		CC=${CC} \
 		${SH} make.bash -v
 
 do-install:
