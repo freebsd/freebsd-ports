@@ -1,6 +1,6 @@
-TIMESTAMP = 1635446020
-SHA256 (hashicorp-terraform-v1.0.10_GH0.tar.gz) = 53b85c17258c134987ed67b61be10a9b5186aa1a0f1942a57ed21785186cbcd3
-SIZE (hashicorp-terraform-v1.0.10_GH0.tar.gz) = 2895192
+TIMESTAMP = 1636970972
+SHA256 (hashicorp-terraform-v1.0.11_GH0.tar.gz) = c86040599f81202bb09b9f3fc637fdf4fe95cd9dbd6c3b41b366e2cdc5d908dc
+SIZE (hashicorp-terraform-v1.0.11_GH0.tar.gz) = 2900798
 SHA256 (Azure-azure-sdk-for-go-v52.5.0_GH0.tar.gz) = 3d35e23d20a7ad0784166f0e0bf380796a3b10b7e2fd9fe0b3f513148515f8f4
 SIZE (Azure-azure-sdk-for-go-v52.5.0_GH0.tar.gz) = 34900560
 SHA256 (Azure-go-autorest-446f41b7d65b_GH0.tar.gz) = 883e2603529a907a3da25d5e2389ab6473a80e6d79daf0d9ffc6385494e0da0a
@@ -355,5 +355,5 @@ SHA256 (zclconf-go-cty-debug-b22d67c1ba0b_GH0.tar.gz) = 260692c74e75bfb54ce249b4
 SIZE (zclconf-go-cty-debug-b22d67c1ba0b_GH0.tar.gz) = 7254
 SHA256 (zclconf-go-cty-yaml-v1.0.2_GH0.tar.gz) = 31102eb50cb6159d7dbbc82447477ec27914a6f3f0069af9e4b53116748755e3
 SIZE (zclconf-go-cty-yaml-v1.0.2_GH0.tar.gz) = 59431
-SHA256 (zclconf-go-cty-v1.9.1_GH0.tar.gz) = cab1a91e7239b6ccb1b3a98e8d05164742d885a126cc3a4d09a54c9f0d527c94
-SIZE (zclconf-go-cty-v1.9.1_GH0.tar.gz) = 197531
+SHA256 (zclconf-go-cty-v1.10.0_GH0.tar.gz) = 6e154e5cb159cf669af7e11792fcbbb92430dd835b16e72709bd93d3fc4d0a72
+SIZE (zclconf-go-cty-v1.10.0_GH0.tar.gz) = 199322
