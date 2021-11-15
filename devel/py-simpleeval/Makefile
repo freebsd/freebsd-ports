@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, safe single expression evaluator python library
 
 LICENSE=	MIT
