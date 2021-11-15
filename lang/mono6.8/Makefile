@@ -2,6 +2,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	6.8.0.123
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	6.8
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		zip>=0:archivers/zip
 
 CONFLICTS_BUILD=	brotli
-CONFLICTS_INSTALL=	czmq-3* mono5.10 mono6.8
+CONFLICTS_INSTALL=	czmq-3* mono5.10 mono5.20
 
 USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
 	pathfix perl5 python:3.6+ shebangfix tar:xz
