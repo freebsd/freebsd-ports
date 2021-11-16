@@ -66,8 +66,6 @@ MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 .if ${ARCH} == "i386"
 # PR230239 Fix the build for i386 when WITH_LLD_IS_LD is set
 LDFLAGS+=-Wl,-z,notext
-.elif ${ARCH} == "powerpc"
-USE_GCC=	yes
 .endif
 
 .include "${MASTERDIR}/Makefile.targets"
