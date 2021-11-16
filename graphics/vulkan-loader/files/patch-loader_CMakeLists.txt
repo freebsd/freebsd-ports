@@ -1,26 +1,47 @@
-asm_offset isn't defined on non-x86 architectures e.g., aarch64, powerpc64.
+ld: error: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
+>>> defined in loader/CMakeFiles/vulkan.dir/unknown_ext_chain_gas_aarch64.S.o
+>>> referenced by loader/CMakeFiles/vulkan.dir/unknown_ext_chain_gas_aarch64.S.o:(.text+0x61A8)
 
-CMake Error at loader/CMakeLists.txt:311 (target_compile_definitions):
+-- The ASM compiler identification is Clang
+-- Found assembler: /usr/bin/cc
+CMake Warning at loader/CMakeLists.txt:252 (message):
+  Could not find working amd64 GAS assembler
+
+  The build will fall back on building with C code
+
+  Note that this may be unsafe, as the C code requires tail-call
+  optimizations to remove the stack frame for certain calls.  If the compiler
+  does not do this, then unknown device extensions will suffer from a
+  corrupted stack.
+
+
+CMake Error at loader/CMakeLists.txt:332 (target_compile_definitions):
   Cannot specify compile definitions for target "asm_offset" which is not
   built by this project.
 
---- loader/CMakeLists.txt.orig	2021-11-09 19:40:47 UTC
+--- loader/CMakeLists.txt.orig	2021-11-16 19:22:26 UTC
 +++ loader/CMakeLists.txt
-@@ -230,6 +230,9 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
-         add_custom_command(OUTPUT gen_defines.asm DEPENDS asm_offset COMMAND asm_offset GAS)
-         add_custom_target(loader_asm_gen_files DEPENDS gen_defines.asm)
-         target_compile_definitions(asm_offset PRIVATE _XOPEN_SOURCE=500) # hush compiler warnings for readlink
-+        if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
-+            target_compile_definitions(asm_offset PRIVATE __BSD_VISIBLE=1)
-+        endif()
-     else()
-         message(WARNING "Could not find working x86 GAS assembler\n${ASM_FAILURE_MSG}")
-         set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain.c)
-@@ -308,7 +311,6 @@ else()
+@@ -228,8 +228,11 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
+             try_compile(ASSEMBLER_WORKS ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/asm_test_aarch64.S)
+             if(ASSEMBLER_WORKS)
+                 set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain_gas_aarch64.S)
++                if(CMAKE_C_COMPILER_ID MATCHES "Clang")
++                    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,notext")
++                endif()
+             endif()
+-        elseif(${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64" OR ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86")
++        elseif(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64|amd64" OR ${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86$|i.86")
+             check_include_file("cet.h" HAVE_CET_H)
+             if(HAVE_CET_H)
+                 set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS HAVE_CET_H)
+@@ -329,7 +332,9 @@ else()
      target_compile_definitions(vulkan PRIVATE _GNU_SOURCE)
      if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
          target_compile_definitions(vulkan PRIVATE __BSD_VISIBLE=1)
 -        target_compile_definitions(asm_offset PRIVATE __BSD_VISIBLE=1)
++        if(ASSEMBLER_WORKS)
++            target_compile_definitions(asm_offset PRIVATE __BSD_VISIBLE=1)
++        endif()
      endif()
      if(APPLE)
          find_library(COREFOUNDATION_LIBRARY NAMES CoreFoundation)
