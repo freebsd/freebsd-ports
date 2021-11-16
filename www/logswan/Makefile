@@ -1,7 +1,7 @@
 # Created by: Juraj Lutter <juraj@lutter.sk>
 
 PORTNAME=	logswan
-DISTVERSION=	2.1.10
+DISTVERSION=	2.1.11
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fcambus/logswan/releases/download/${DISTVERSION}/
 
