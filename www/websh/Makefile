@@ -10,6 +10,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
+BROKEN=		does not install: work/websh-3.6.0b5/src/unix/libwebsh86.so.1: No such file or directory
 DEPRECATED=	Abandoned upstream, last release in 2009
 EXPIRATION_DATE=2022-03-31
 
