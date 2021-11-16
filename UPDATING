@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201116:
+  AFFECTS: users of emulators/qemu50
+  AUTHOR: bofh@FreeBSD.org
+
+  emulators/qemu50 has been moved to emulators/qemu5 and updated to 5.2.0 
+  which is the last version from 5.X.X branch. This is done in preparation
+  of updating emulators/qemu into latest 6.X bgranch. If someone wants to
+  stick with 5.X.X branch please use one of the following command:
+
+  # pkg install qemu5
+    or
+  # portmaster -o emulators/qemu50 emulators/qemu5
+
+  This version also introduces a stripped nox11 version which can be
+  installed with:
+  # pkg install qemu5-nox11
+   or
+  # portmaster emulators/qemu5@nox11
+
 20211115:
   AFFECTS: AFFECTS: users of *-emacs2x-* packages
   AUTHOR: jrm@FreeBSD.org
