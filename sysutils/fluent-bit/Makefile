@@ -43,6 +43,7 @@ USE_RC_SUBR=	${PORTNAME}
 .if ${ARCH:Mpowerpc64*}
 CMAKE_ARGS+=	-DFLB_LUAJIT:BOOL=OFF
 .elif ${ARCH} == powerpc
+LDFLAGS+=	-latomic
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c11
