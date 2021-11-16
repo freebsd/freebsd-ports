@@ -1,7 +1,7 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
 
 PORTNAME=	scrot
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
