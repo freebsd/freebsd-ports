@@ -20,8 +20,6 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	MI_INSTALL_TOPLEVEL
 TEST_TARGET=	test
 
-LDFLAGS_powerpc=	-latomic
-
 # ci pipeline creates transient tags
 PORTSCOUT=	ignore:1
 
