@@ -1,3 +1,93 @@
+  <vuln vid="b8c0cbca-472d-11ec-83dc-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>96.0.4664.45</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/11/stable-channel-update-for-desktop.html">
+	  <p>This release contains 25 security fixes, including:</p>
+	  <ul>
+	    <li>[1263620] High CVE-2021-38008: Use after free in media. Reported
+	      by Marcin Towalski of Cisco Talos on 2021-10-26</li>
+	    <li>[1260649] High CVE-2021-38009: Inappropriate implementation in
+	      cache. Reported by Luan Herrera (@lbherrera_) on 2021-10-16</li>
+	    <li>[1240593] High CVE-2021-38006: Use after free in storage
+	      foundation. Reported by Sergei Glazunov of Google Project Zero on
+	      2021-08-17</li>
+	    <li>[1254189] High CVE-2021-38007: Type Confusion in V8. Reported by
+	      Polaris Feng and SGFvamll at Singular Security Lab on
+	      2021-09-29</li>
+	    <li>[1241091] High CVE-2021-38005: Use after free in loader.
+	      Reported by Sergei Glazunov of Google Project Zero on
+	      2021-08-18</li>
+	    <li>[1264477] High CVE-2021-38010: Inappropriate implementation in
+	      service workers. Reported by Sergei Glazunov of Google Project
+	      Zero on 2021-10-28</li>
+	    <li>[1268274] High CVE-2021-38011: Use after free in storage
+	      foundation. Reported by Sergei Glazunov of Google Project Zero on
+	      2021-11-09</li>
+	    <li>[1262791] Medium CVE-2021-38012: Type Confusion in V8. Reported
+	      by Yonghwi Jin (@jinmo123) on 2021-10-24</li>
+	    <li>[1242392] Medium CVE-2021-38013: Heap buffer overflow in
+	      fingerprint recognition. Reported by raven (@raid_akame) on
+	      2021-08-23</li>
+	    <li>[1248567] Medium CVE-2021-38014: Out of bounds write in
+	      Swiftshader. Reported by Atte Kettunen of OUSPG on 2021-09-10</li>
+	    <li>[957553] Medium CVE-2021-38015: Inappropriate implementation in
+	      input. Reported by David Erceg on 2019-04-29</li>
+	    <li>[1244289] Medium CVE-2021-38016: Insufficient policy
+	      enforcement in background fetch. Reported by Maurice Dauer on
+	      2021-08-28</li>
+	    <li>[1256822] Medium CVE-2021-38017: Insufficient policy enforcement
+	      in iframe sandbox. Reported by NDevTK on 2021-10-05</li>
+	    <li>[1197889] Medium CVE-2021-38018: Inappropriate implementation in
+	      navigation. Reported by Alesandro Ortiz on 2021-04-11</li>
+	    <li>[1251179] Medium CVE-2021-38019: Insufficient policy enforcement
+	      in CORS. Reported by Maurice Dauer on 2021-09-20</li>
+	    <li>[1259694] Medium CVE-2021-38020: Insufficient policy enforcement
+	      in contacts picker. Reported by Luan Herrera (@lbherrera_) on
+	      2021-10-13</li>
+	    <li>[1233375] Medium CVE-2021-38021: Inappropriate implementation in
+	      referrer. Reported by Prakash (@1lastBr3ath) and Jun Kokatsu on
+	      2021-07-27</li>
+	    <li>[1248862] Low CVE-2021-38022: Inappropriate implementation in
+	      WebAuthentication. Reported by Michal Kepkowski on 2021-09-13</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-38005</cvename>
+      <cvename>CVE-2021-38006</cvename>
+      <cvename>CVE-2021-38007</cvename>
+      <cvename>CVE-2021-38008</cvename>
+      <cvename>CVE-2021-38009</cvename>
+      <cvename>CVE-2021-38010</cvename>
+      <cvename>CVE-2021-38011</cvename>
+      <cvename>CVE-2021-38012</cvename>
+      <cvename>CVE-2021-38013</cvename>
+      <cvename>CVE-2021-38014</cvename>
+      <cvename>CVE-2021-38015</cvename>
+      <cvename>CVE-2021-38016</cvename>
+      <cvename>CVE-2021-38017</cvename>
+      <cvename>CVE-2021-38018</cvename>
+      <cvename>CVE-2021-38019</cvename>
+      <cvename>CVE-2021-38020</cvename>
+      <cvename>CVE-2021-38021</cvename>
+      <cvename>CVE-2021-38022</cvename>
+      <url>https://chromereleases.googleblog.com/2021/11/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-11-15</discovery>
+      <entry>2021-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6916ea94-4628-11ec-bbe2-0800270512f4">
     <topic>rubygem-date -- Regular Expression Denial of Service Vunlerability of Date Parsing Methods</topic>
     <affects>
