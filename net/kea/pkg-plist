@@ -427,6 +427,15 @@ lib/kea/hooks/libdhcp_run_script.a
 lib/kea/hooks/libdhcp_run_script.so
 lib/kea/hooks/libdhcp_stat_cmds.a
 lib/kea/hooks/libdhcp_stat_cmds.so
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/__pycache__/kea_conn%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/__pycache__/kea_conn%%PYTHON_EXT_SUFFIX%%.pyc
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/__pycache__/kea_connector2%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/__pycache__/kea_connector2%%PYTHON_EXT_SUFFIX%%.pyc
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/__pycache__/kea_connector3%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/__pycache__/kea_connector3%%PYTHON_EXT_SUFFIX%%.pyc
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/kea_conn.py
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/kea_connector2.py
+%%SHELL%%%%PYTHON_SITELIBDIR%%/kea/kea_connector3.py
 lib/libkea-asiodns.a
 lib/libkea-asiodns.so
 lib/libkea-asiodns.so.13
@@ -531,6 +540,7 @@ sbin/kea-dhcp-ddns
 sbin/kea-dhcp4
 sbin/kea-dhcp6
 sbin/kea-lfc
+%%SHELL%%sbin/kea-shell
 sbin/keactrl
 %%DATADIR%%/api/build-report.json
 %%DATADIR%%/api/cache-clear.json
@@ -763,5 +773,7 @@ sbin/keactrl
 %%DATADIR%%/scripts/pgsql/upgrade_6.0_to_6.1.sh
 %%DATADIR%%/scripts/pgsql/upgrade_6.1_to_6.2.sh
 %%DATADIR%%/scripts/pgsql/wipe_data.sh
+%%SHELL%%@dir %%PYTHON_SITELIBDIR%%/kea/__pycache__
+%%SHELL%%@dir %%PYTHON_SITELIBDIR%%/kea
 @dir /var/db/kea
 @dir /var/run/kea
