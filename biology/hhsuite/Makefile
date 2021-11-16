@@ -29,4 +29,10 @@ CMAKE_ON=	HAVE_SSE2
 CMAKE_ON=	HAVE_POWER8
 .endif
 
+.if ${ARCH} == powerpc
+PLIST_SUB+=	OPENMP="@comment "
+.else
+PLIST_SUB+=	OPENMP=""
+.endif
+
 .include <bsd.port.mk>
