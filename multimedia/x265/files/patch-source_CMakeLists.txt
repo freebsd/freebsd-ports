@@ -1,11 +1,23 @@
---- source/CMakeLists.txt.orig	2020-06-06 08:18:40 UTC
+--- source/CMakeLists.txt.orig	2021-10-31 01:46:10 UTC
 +++ source/CMakeLists.txt
-@@ -122,3 +122,4 @@
+@@ -43,7 +43,7 @@ set(X86_ALIASES x86 i386 i686 x86_64 amd64)
+ set(ARM_ALIASES armv6l armv7l aarch64)
+ list(FIND X86_ALIASES "${SYSPROC}" X86MATCH)
+ list(FIND ARM_ALIASES "${SYSPROC}" ARMMATCH)
+-set(POWER_ALIASES ppc64 ppc64le)
++set(POWER_ALIASES powerpc64 powerpc64le ppc64 ppc64le)
+ list(FIND POWER_ALIASES "${SYSPROC}" POWERMATCH)
+ if("${SYSPROC}" STREQUAL "" OR X86MATCH GREATER "-1")
+     set(X86 1)
+@@ -121,6 +121,7 @@ if(UNIX)
+     option(ENABLE_LIBVMAF "Enable VMAF" OFF)
      if(ENABLE_LIBVMAF)
          add_definitions(-DENABLE_LIBVMAF)
 +        include_directories(${VMAF_INCLUDE_DIR})
      endif()
-@@ -592,12 +592,6 @@ if(ENABLE_HDR10_PLUS)
+ endif(UNIX)
+ 
+@@ -592,12 +593,6 @@ if(ENABLE_HDR10_PLUS)
          ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
  endif()
  
@@ -18,7 +30,7 @@
  install(FILES x265.h "${PROJECT_BINARY_DIR}/x265_config.h" DESTINATION include)
  if((WIN32 AND ENABLE_CLI) OR (WIN32 AND ENABLE_SHARED))
      if(MSVC_IDE)
-@@ -649,7 +643,10 @@ if(ENABLE_SHARED)
+@@ -649,7 +644,10 @@ if(ENABLE_SHARED)
      if(EXTRA_LIB)
          target_link_libraries(x265-shared ${EXTRA_LIB})
      endif()

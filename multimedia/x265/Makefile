@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	OPTIMIZED_FLAGS HI8P HI10P HI12P
 OPTIONS_DEFINE_aarch64=	ASM
 OPTIONS_DEFINE_amd64=	ASM SVTHEVC
 OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFINE_powerpc64=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
 
 OPTIONS_MULTI=		PixelWidth
@@ -62,11 +63,14 @@ WRKSRC=		${WRKDIR}/source
 .if ${ARCH} == aarch64 && ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS=	as:devel/binutils
 USE_GCC=	yes
-ASM_PREVENTS=	HI10P HI12P
-ASM_PREVENTS_MSG=	Currently HI10P and HI12P doesn't build with assembly
 .endif
 
-.if ${ARCH} != aarch64 && ${PORT_OPTIONS:MASM}
+.if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MASM}
+CMAKE_ARGS+=	-DCPU_POWER8=ON \
+		-DENABLE_ALTIVEC=ON
+.endif
+
+.if ${ARCH} != aarch64 && ${ARCH} != powerpc64 && ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS=	nasm:devel/nasm
 .endif
 
@@ -90,6 +94,32 @@ CFLAGS:=	${CFLAGS:N-O*} -O0 -g
 .for b in ${OTHER_DEPTHS:C/HI([0-9]+)P/\1/}
 EXTRA_LINK_FLAGS+=-L${WRKSRC:H}/$bbit
 
+.if ${ARCH} == powerpc64
+
+.if $b != 8 || ! ${PORT_OPTIONS:MASM}
+ASSEMBLY=false
+.else
+ASSEMBLY=true
+.endif
+
+.if ${PORT_OPTIONS:MASM}
+POWER8=	true
+.else
+POWER8=	false
+.endif
+
+pre-build::
+	@${ECHO_MSG} "---> Building the $b-bit library ---"
+	${MKDIR} ${WRKSRC:H}/$bbit
+	${CMAKE_BIN} -S ${WRKSRC} -B ${WRKSRC:H}/$bbit \
+		${CMAKE_OTHER_ARGS} ${b:C/1./-DHIGH_BIT_DEPTH:BOOL=true/} \
+		-DMAIN$b:BOOL=true -DENABLE_ALTIVEC=${ASSEMBLY} -DCPU_POWER8=${POWER8} \
+		-DEXPORT_C_API:BOOL=false -DENABLE_CLI=false
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC:H}/$bbit ${MAKE_ARGS}
+	${LN} -f ${WRKSRC:H}/$bbit/libx265.a ${WRKSRC:H}/$bbit/libx265_$bbit.a
+	${ECHO_MSG} "---> Built the $b-bit library ---"
+
+.else
 .if ${ARCH} == i386 && $b != 8 || ! ${PORT_OPTIONS:MASM}
 ASSEMBLY=false
 .else
@@ -106,6 +136,7 @@ pre-build::
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC:H}/$bbit ${MAKE_ARGS}
 	${LN} -f ${WRKSRC:H}/$bbit/libx265.a ${WRKSRC:H}/$bbit/libx265_$bbit.a
 	${ECHO_MSG} "---> Built the $b-bit library ---"
+.endif
 .endfor
 
 .if "${EXTRA_LINK_FLAGS}"
@@ -119,7 +150,12 @@ CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
 .if ${ARCH} == i386 && ${DEFAULT_DEPTH} != "HI8P" || ! ${PORT_OPTIONS:MASM}
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=false
 .else
+.if ${ARCH} != powerpc64
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=true
+.else
+CMAKE_ARGS+=	-DCPU_POWER8=ON \
+		-DENABLE_ALTIVEC=ON
+.endif
 
 do-test:
 	${WRKDIR}/.build/test/TestBench
