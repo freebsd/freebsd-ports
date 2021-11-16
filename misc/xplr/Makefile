@@ -153,6 +153,11 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Cargo.toml
 LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
+.if ${ARCH} == powerpc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Cargo.toml
+LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
