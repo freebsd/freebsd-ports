@@ -9,7 +9,7 @@ DISTFILES=	microcode_amd.bin?id=${_REV} \
 		microcode_amd_fam16h.bin?id=${_REV} \
 		microcode_amd_fam17h.bin?id=${_REV} \
 		microcode_amd_fam19h.bin?id=${_REV}
-DIST_SUBDIR=	${PKGNAME:C/_.*$//}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	AMD CPUs microcode updates
