@@ -1,5 +1,5 @@
 PORTNAME=	wtf
-PORTVERSION=	0.39.0
+PORTVERSION=	0.40.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	go-
@@ -50,7 +50,6 @@ GH_TUPLE=	\
 		creack:pty:v1.1.11:creack_pty/vendor/github.com/creack/pty \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		digitalocean:godo:v1.52.0:digitalocean_godo/vendor/github.com/digitalocean/godo \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		docker:docker-credential-helpers:v0.6.3:docker_docker_credential_helper/vendor/github.com/docker/docker-credential-helpers \
@@ -71,6 +70,8 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:v4.1.0:godbus_dbus/vendor/github.com/godbus/dbus \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang-jwt:jwt:v3.2.1:golang_jwt_jwt_1/vendor/github.com/dgrijalva/jwt-go \
+		golang-jwt:jwt:v3.2.2:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
@@ -78,7 +79,7 @@ GH_TUPLE=	\
 		golang:oauth2:5d25da1a8d43:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:be1d3432aa8f:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:528a39cd75f3:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
@@ -93,11 +94,11 @@ GH_TUPLE=	\
 		googleapis:google-api-go-client:v0.33.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.65.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gophercloud:gophercloud:v0.5.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
-		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
 		gregjones:httpcache:3befbb6ad0cc:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
-		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
-		grpc:grpc-go:v1.31.1:grpc_grpc_go_1 \
+		grpc:grpc-go:v1.29.1:grpc_grpc_go_1/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.31.1:grpc_grpc_go \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-retryablehttp:v0.6.4:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -121,7 +122,7 @@ GH_TUPLE=	\
 		kubernetes:klog:v0.2.0:kubernetes_klog/vendor/k8s.io/klog \
 		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
 		logrusorgru:aurora:94edacc10f9b:logrusorgru_aurora/vendor/github.com/logrusorgru/aurora \
-		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		maruel:panicparse:v1.3.0:maruel_panicparse/vendor/github.com/maruel/panicparse \
 		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -182,7 +183,7 @@ GH_TUPLE=	\
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/ovh/cds/sdk/interpolate
 	@${RLN} ${WRKSRC_ovh_cds_interpolate}/sdk/interpolate ${WRKSRC}/vendor/github.com/ovh/cds/sdk/interpolate
-	@${RLN} ${WRKSRC_grpc_grpc_go_1} ${WRKSRC}/vendor/google.golang.org/grpc
+	@${RLN} ${WRKSRC_grpc_grpc_go} ${WRKSRC}/vendor/google.golang.org/grpc
 
 GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSION}"
 
