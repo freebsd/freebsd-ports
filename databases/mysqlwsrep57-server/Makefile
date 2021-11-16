@@ -1,9 +1,9 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.7.34
+PORTVERSION?=	5.7.35
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.26
+DISTVERSIONSUFFIX?=	-25.27
 CATEGORIES=	databases
 MASTER_SITES+=	SF/boost/boost/1.59.0:boost
 PKGNAMESUFFIX=	57-server
