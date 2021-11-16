@@ -2,4 +2,4 @@ Libwacom is a new library to help implement Wacom tablet settings.
 It is intended to be used by client-programs that need model
 identification.
 
-WWW: http://linuxwacom.sourceforge.net/wiki/index.php/Libwacom
+WWW: https://github.com/linuxwacom/libwacom/wiki
