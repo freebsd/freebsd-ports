@@ -9,7 +9,7 @@ COMMENT=	POrtable Computing Language (POCL)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	only tested on x86
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=10:devel/llvm${LLVM_VERSION} \
@@ -28,6 +28,7 @@ CMAKE_ARGS=	-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config
 		${CMAKE_ARGS_${ARCH}}
 
 CMAKE_ARGS_aarch64=	-DLLC_HOST_CPU=cortex-a53
+CMAKE_ARGS_powerpc64=	-DLLC_HOST_CPU=ppc64
 CMAKE_ARGS_amd64=	-DKERNELLIB_HOST_CPU_VARIANTS="distro"
 
 PLIST_SUB=	CONFIGURE_TARGET=${CONFIGURE_TARGET:S/amd64/x86_64/}
@@ -44,10 +45,16 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_F
 
 .if ${ARCH} == aarch64
 PLIST_SUB+=     AARCH64=""
+PLIST_SUB+=	PPC64="@comment "
 PLIST_SUB+=	X86="@comment "
+.elif ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=     AARCH64="@comment "
+PLIST_SUB+=	PPC64="@comment "
+PLIST_SUB+=	X86=""
 .else
 PLIST_SUB+=     AARCH64="@comment "
-PLIST_SUB+=	X86=""
+PLIST_SUB+=	PPC64=""
+PLIST_SUB+=	X86="@comment "
 .endif
 PLIST_SUB+=	CONFIGURE_TARGET=${CONFIGURE_TARGET:S/amd64/x86_64/}
 

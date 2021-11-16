@@ -30,3 +30,4 @@ libdata/pkgconfig/pocl.pc
 %%X86%%%%DATADIR%%/kernel-%%CONFIGURE_TARGET%%-sse41.bc
 %%X86%%%%DATADIR%%/kernel-%%CONFIGURE_TARGET%%-ssse3.bc
 %%AARCH64%%%%DATADIR%%/kernel-%%CONFIGURE_TARGET%%-cortex-a53.bc
+%%PPC64%%%%DATADIR%%/kernel-%%CONFIGURE_TARGET%%-ppc64.bc
