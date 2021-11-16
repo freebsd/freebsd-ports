@@ -1,8 +1,15 @@
 #!/bin/sh
 #
+# Put the yggdrasil and yggdrasilctl binaries into /usr/local/bin
+# Then copy this script into /etc/rc.d/yggdrasil
+# Finally, run:
+#   1. chmod +x /etc/rc.d/yggdrasil /usr/local/bin/{yggdrasil,yggdrasilctl}
+#   2. echo "yggdrasil_enable=yes" >> /etc/rc.d
+#   3. service yggdrasil start
+#
 # PROVIDE: yggdrasil
 # REQUIRE: networking
-# KEYWORD: shutdown
+# KEYWORD:
 
 . /etc/rc.subr
 
@@ -10,10 +17,11 @@ name="yggdrasil"
 rcvar="yggdrasil_enable"
 
 start_cmd="${name}_start"
+stop_cmd="${name}_stop"
 
 pidfile="/var/run/yggdrasil/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r"
+command_args="-P ${pidfile} -r -f ${yggdrasil_command}"
 
 yggdrasil_start()
 {
@@ -32,7 +40,21 @@ yggdrasil_start()
 
 	logger -s -t yggdrasil "Starting yggdrasil"
 	${command} ${command_args} %%PREFIX%%/bin/yggdrasil -useconffile %%PREFIX%%/etc/yggdrasil.conf \
-		-logto /var/log/yggdrasil.log
+		1>/var/log/yggdrasil.stdout.log \
+		2>/var/log/yggdrasil.stderr.log &
+}
+
+yggdrasil_stop()
+{
+	logger -s -t yggdrasil "Stopping yggdrasil"
+	test -f /var/run/yggdrasil/${name}.pid && kill -TERM $(cat /var/run/yggdrasil/${name}.pid)
+
+	tap_name="$(egrep '^[ \t]+IfName:' %%PREFIX%%/etc/yggdrasil.conf | sed 's/[ \t]*IfName:[ \t]*//')"
+
+	/sbin/ifconfig ${tap_name} >/dev/null 2>&1 && (
+		logger -s -t yggdrasil "Destroying ${tap_name} adapter"
+		/sbin/ifconfig ${tap_name} destroy || logger -s -t yggdrasil "Failed to destroy ${tap_name} adapter"
+	)
 }
 
 load_rc_config $name
