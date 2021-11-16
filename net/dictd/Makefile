@@ -2,6 +2,7 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES+=	net textproc
 MASTER_SITES=	SF/dict/dictd/dictd-${PORTVERSION}
 

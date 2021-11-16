@@ -8,10 +8,7 @@ To invoke dictd on startup, put the following in /etc/rc.conf:
 
     dictd_enable="YES"
 
-The dict client can be found within %%PORTSDIR%%/textproc/dict
-
-Don't forget to install %%PORTSDIR%%/net/dictd-database
-to run a dictd server without pain.
+The dict client can be found within %%PORTSDIR%%/textproc/dict.
 EOM
 }
 ]
