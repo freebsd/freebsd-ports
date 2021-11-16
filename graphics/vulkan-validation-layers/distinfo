@@ -5,3 +5,5 @@ SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-98-g449bc98_GH0.tar.gz
 SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-98-g449bc98_GH0.tar.gz) = 414832
 SHA256 (martinus-robin-hood-hashing-3.11.3_GH0.tar.gz) = dcf2b7fa9ef9dd0c67102d94c28e8df3effbe1845e0ed1f31f4772ca5e857fc4
 SIZE (martinus-robin-hood-hashing-3.11.3_GH0.tar.gz) = 170788
+SHA256 (ccbef81e020e.patch) = b95f1a72e4fe15eec11feb8849ddef8a229ae2310cff47c44a38e2d8d6355849
+SIZE (ccbef81e020e.patch) = 3333
