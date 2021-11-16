@@ -11,6 +11,9 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	No longer maintained upstream, use www/grafana8
+EXPIRATION_DATE=	2021-12-31
+
 USES=		cpe
 
 NO_BUILD=	yes
