@@ -1,7 +1,7 @@
 # Created by: Nicolas Embriz <nbari@tequila.io>
 
 PORTNAME=	galera
-PORTVERSION=	26.4.9
+PORTVERSION=	26.4.10
 DISTVERSIONPREFIX=	release_
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
