@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.2
-PORTREVISION=	1
+DISTVERSION=	3.0.4
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.44 \
+		anyhow-1.0.45 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -43,8 +42,8 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		cc-1.0.69 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
-		clap-3.0.0-beta.4 \
-		clap_derive-3.0.0-beta.4 \
+		clap-3.0.0-beta.5 \
+		clap_derive-3.0.0-beta.5 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
 		criterion-0.3.5 \
@@ -88,7 +87,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		once_cell-1.8.0 \
 		oorandom-11.1.3 \
 		opaque-debug-0.2.3 \
-		os_str_bytes-3.1.0 \
+		os_str_bytes-4.2.0 \
 		parking-2.0.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -117,7 +116,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		serde-1.0.129 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.129 \
-		serde_json-1.0.68 \
+		serde_json-1.0.69 \
 		sha-1-0.8.2 \
 		signal-hook-0.3.9 \
 		signal-hook-registry-1.4.0 \
@@ -131,11 +130,11 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		tinytemplate-1.2.1 \
 		typenum-1.13.0 \
 		ucd-trie-0.1.3 \
+		unicase-2.6.0 \
 		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		value-bag-1.0.0-alpha.7 \
-		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		waker-fn-1.1.0 \
 		walkdir-2.3.2 \
