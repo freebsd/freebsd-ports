@@ -24,7 +24,9 @@ OPTIONS_DEFINE_aarch64=	ASM
 OPTIONS_DEFINE_amd64=	ASM SVTHEVC
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFINE_powerpc64=	ASM
+OPTIONS_DEFINE_powerpc64le=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
+OPTIONS_DEFAULT_powerpc64le=	ASM
 
 OPTIONS_MULTI=		PixelWidth
 OPTIONS_MULTI_PixelWidth=HI8P HI10P HI12P
@@ -65,12 +67,12 @@ BUILD_DEPENDS=	as:devel/binutils
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MASM}
+.if ${ARCH:Mpowerpc64*} && ${PORT_OPTIONS:MASM}
 CMAKE_ARGS+=	-DCPU_POWER8=ON \
 		-DENABLE_ALTIVEC=ON
 .endif
 
-.if ${ARCH} != aarch64 && ${ARCH} != powerpc64 && ${PORT_OPTIONS:MASM}
+.if ${ARCH} != aarch64 && !${ARCH:Mpowerpc64*} && ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS=	nasm:devel/nasm
 .endif
 
@@ -94,7 +96,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O0 -g
 .for b in ${OTHER_DEPTHS:C/HI([0-9]+)P/\1/}
 EXTRA_LINK_FLAGS+=-L${WRKSRC:H}/$bbit
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 
 .if $b != 8 || ! ${PORT_OPTIONS:MASM}
 ASSEMBLY=false
@@ -150,7 +152,7 @@ CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
 .if ${ARCH} == i386 && ${DEFAULT_DEPTH} != "HI8P" || ! ${PORT_OPTIONS:MASM}
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=false
 .else
-.if ${ARCH} != powerpc64
+.if !${ARCH:Mpowerpc64*}
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=true
 .else
 CMAKE_ARGS+=	-DCPU_POWER8=ON \
