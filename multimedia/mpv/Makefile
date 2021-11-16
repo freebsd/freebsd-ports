@@ -3,7 +3,7 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.33.1
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
@@ -22,6 +22,7 @@ PATCHFILES+=	747b1520012e.patch:-p1 # https://github.com/mpv-player/mpv/pull/903
 PATCHFILES+=	968faef86723.patch:-p1 # libplacebo 3.104
 PATCHFILES+=	7c4465cefb27.patch:-p1 # libplacebo 3.104
 PATCHFILES+=	cc4ada655aae.patch:-p1 # https://github.com/mpv-player/mpv/pull/9209
+PATCHFILES+=	b030cfe05f58.patch:-p1 # https://github.com/mpv-player/mpv/pull/9440
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
