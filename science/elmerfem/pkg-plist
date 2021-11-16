@@ -12,9 +12,13 @@ bin/matc
 lib/elmersolver/libamd.a
 lib/elmersolver/libamdf77.a
 lib/elmersolver/libelmersolver.so
+lib/elmersolver/libelmersolver.so.0
 lib/elmersolver/libfhuti.so
+lib/elmersolver/libfhuti.so.0
 lib/elmersolver/libmatc.so
+lib/elmersolver/libmatc.so.0
 lib/elmersolver/libmpi_stubs.so
+lib/elmersolver/libmpi_stubs.so.0
 lib/elmersolver/libumfpack.a
 %%GUI%%share/ElmerGUI/edf-extra/advection-diffusion.xml
 %%GUI%%share/ElmerGUI/edf-extra/divergencesolver.xml
@@ -292,7 +296,9 @@ share/elmersolver/include/pelementmaps.mod
 share/elmersolver/include/porousmaterials.mod
 share/elmersolver/include/radiation.mod
 share/elmersolver/include/radiationfactorglobals.mod
+share/elmersolver/include/saveutils.mod
 share/elmersolver/include/smoothers.mod
+share/elmersolver/include/solidmechanicsutils.mod
 share/elmersolver/include/solverutils.mod
 share/elmersolver/include/sparitercomm.mod
 share/elmersolver/include/spariterglobals.mod
@@ -353,6 +359,7 @@ share/elmersolver/lib/FluxSolver.so
 share/elmersolver/lib/FourierLoss.so
 share/elmersolver/lib/FreeSurfaceReduced.so
 share/elmersolver/lib/FreeSurfaceSolver.so
+share/elmersolver/lib/GmshOutputReader.so
 share/elmersolver/lib/HarmonicSignals.so
 share/elmersolver/lib/HeatSolve.so
 share/elmersolver/lib/HeatSolveVec.so
@@ -369,6 +376,7 @@ share/elmersolver/lib/MagnetoDynamics.so
 share/elmersolver/lib/MagnetoDynamics2D.so
 share/elmersolver/lib/MarchingODESolver.so
 share/elmersolver/lib/Mesh2MeshSolver.so
+share/elmersolver/lib/MeshChecksum.so
 share/elmersolver/lib/MeshSolve.so
 share/elmersolver/lib/ModelMixedPoisson.so
 share/elmersolver/lib/ModelPDE.so
