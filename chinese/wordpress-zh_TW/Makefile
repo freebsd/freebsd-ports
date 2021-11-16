@@ -13,6 +13,8 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN=		fails to fetch (checksum mismatch)
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:web
