@@ -11,6 +11,8 @@ COMMENT=	Tools and API for translation and localization engineering
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build: ImportError: cannot import name 'commaSeparatedList' from 'pyparsing'
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
