@@ -3,6 +3,7 @@ include/assimp/BaseImporter.h
 include/assimp/Bitmap.h
 include/assimp/BlobIOSystem.h
 include/assimp/ByteSwapper.h
+include/assimp/ColladaMetaData.h
 include/assimp/Compiler/poppack1.h
 include/assimp/Compiler/pstdint.h
 include/assimp/Compiler/pushpack1.h
@@ -10,7 +11,6 @@ include/assimp/CreateAnimMesh.h
 include/assimp/DefaultIOStream.h
 include/assimp/DefaultIOSystem.h
 include/assimp/DefaultLogger.hpp
-include/assimp/Defines.h
 include/assimp/Exceptional.h
 include/assimp/Exporter.hpp
 include/assimp/GenericProperty.h
@@ -23,7 +23,6 @@ include/assimp/LineSplitter.h
 include/assimp/LogAux.h
 include/assimp/LogStream.hpp
 include/assimp/Logger.hpp
-include/assimp/Macros.h
 include/assimp/MathFunctions.h
 include/assimp/MemoryIOWrapper.h
 include/assimp/NullLogger.hpp
@@ -34,6 +33,7 @@ include/assimp/RemoveComments.h
 include/assimp/SGSpatialSort.h
 include/assimp/SceneCombiner.h
 include/assimp/SkeletonMeshBuilder.h
+include/assimp/SmallVector.h
 include/assimp/SmoothingGroups.h
 include/assimp/SmoothingGroups.inl
 include/assimp/SpatialSort.h
@@ -46,6 +46,7 @@ include/assimp/Subdivision.h
 include/assimp/TinyFormatter.h
 include/assimp/Vertex.h
 include/assimp/XMLTools.h
+include/assimp/XmlParser.h
 include/assimp/ZipArchiveIOSystem.h
 include/assimp/aabb.h
 include/assimp/ai_assert.h
@@ -56,11 +57,11 @@ include/assimp/cfileio.h
 include/assimp/cimport.h
 include/assimp/color4.h
 include/assimp/color4.inl
+include/assimp/commonMetaData.h
 include/assimp/config.h
 include/assimp/defs.h
 include/assimp/fast_atof.h
 include/assimp/importerdesc.h
-include/assimp/irrXMLWrapper.h
 include/assimp/light.h
 include/assimp/material.h
 include/assimp/material.inl
@@ -83,12 +84,11 @@ include/assimp/vector2.inl
 include/assimp/vector3.h
 include/assimp/vector3.inl
 include/assimp/version.h
-lib/cmake/assimp-%%VER2%%/assimp-config-version.cmake
-lib/cmake/assimp-%%VER2%%/assimp-config.cmake
-lib/cmake/assimp-%%VER2%%/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/assimp-%%VER2%%/assimpTargets.cmake
-lib/libIrrXML.so
+lib/cmake/assimp-5.1/assimpConfig.cmake
+lib/cmake/assimp-5.1/assimpConfigVersion.cmake
+lib/cmake/assimp-5.1/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/assimp-5.1/assimpTargets.cmake
 lib/libassimp.so
 lib/libassimp.so.5
-lib/libassimp.so.5.0.0
+lib/libassimp.so.5.1.0
 libdata/pkgconfig/assimp.pc
