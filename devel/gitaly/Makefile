@@ -3,9 +3,9 @@ DISTVERSION=	14.4.2
 PORTREVISION=	0
 CATEGORIES=	devel
 
-PATCH_SITES=	https://gitlab.com/mfechner/gitaly/-/merge_requests/
+#PATCH_SITES=	https://gitlab.com/mfechner/gitaly/-/merge_requests/
 # Make sure we have grpc files for grpc 1.41.0 available
-PATCHFILES=	2.patch:-p1
+#PATCHFILES=	2.patch:-p1
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab

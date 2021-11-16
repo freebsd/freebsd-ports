@@ -1,4 +1,4 @@
-TIMESTAMP = 1636801531
+TIMESTAMP = 1637063341
 SHA256 (Azure-azure-pipeline-go-v0.2.3_GH0.tar.gz) = 99bd58f4a07dd02d9615e3638b3bb6dbfad80ef678ccdb8e17e3fa2b0fef343e
 SIZE (Azure-azure-pipeline-go-v0.2.3_GH0.tar.gz) = 17102
 SHA256 (Azure-azure-storage-blob-go-v0.13.0_GH0.tar.gz) = 6bf7145210331efa3f0417f6684cf764c22743cf23122048ec136600daebf443
@@ -273,5 +273,3 @@ SHA256 (gitlab-org-gitlab-shell-50da611814d256c77e689977265ec7e07633a4dc_GL0.tar
 SIZE (gitlab-org-gitlab-shell-50da611814d256c77e689977265ec7e07633a4dc_GL0.tar.gz) = 124516
 SHA256 (gitlab-org-labkit-397363e2404ac0276b1959373a1c1c2bc1610d67_GL0.tar.gz) = e48dae8ea183f946189a9ac7e4cbe4bc0fa583e6baafb0074a3463a879565ecb
 SIZE (gitlab-org-labkit-397363e2404ac0276b1959373a1c1c2bc1610d67_GL0.tar.gz) = 171896
-SHA256 (2.patch) = 3143aa6bda5ceb3c252931445ffb69bfca012420609eca2ed856347ed052fcb1
-SIZE (2.patch) = 55587

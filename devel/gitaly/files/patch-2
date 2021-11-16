@@ -1,0 +1,792 @@
+--- ruby/Gemfile.lock.orig	2021-11-08 11:56:42 UTC
++++ ruby/Gemfile.lock
+@@ -75,12 +75,12 @@ GEM
+       redis (> 3.0.0, < 5.0.0)
+     gitlab-markup (1.7.1)
+     google-protobuf (3.17.3)
+-    googleapis-common-protos-types (1.1.0)
++    googleapis-common-protos-types (1.3.0)
+       google-protobuf (~> 3.14)
+-    grpc (1.30.2)
+-      google-protobuf (~> 3.12)
++    grpc (1.41.1)
++      google-protobuf (~> 3.17)
+       googleapis-common-protos-types (~> 1.0)
+-    grpc-tools (1.30.2)
++    grpc-tools (1.38.0)
+     i18n (1.8.10)
+       concurrent-ruby (~> 1.0)
+     ice_nine (0.11.2)
+@@ -225,8 +225,8 @@ DEPENDENCIES
+   gitlab-labkit (~> 0.21.1)
+   gitlab-markup (~> 1.7.1)
+   google-protobuf (~> 3.17.0)
+-  grpc (~> 1.30.2)
+-  grpc-tools (= 1.30.2)
++  grpc (~> 1.41.0)
++  grpc-tools (= 1.38.0)
+   licensee (~> 9.14.1)
+   pry (~> 0.12.2)
+   rbtrace
+@@ -239,4 +239,4 @@ DEPENDENCIES
+   timecop
+ 
+ BUNDLED WITH
+-   2.1.4
++   2.2.15
+--- ruby/proto/gitaly/blob_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/blob_services_pb.rb
+@@ -8,7 +8,7 @@ module Gitaly
+   module BlobService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+@@ -17,29 +17,29 @@ module Gitaly
+       # GetBlob returns the contents of a blob object referenced by its object
+       # ID. We use a stream to return a chunked arbitrarily large binary
+       # response
+-      rpc :GetBlob, Gitaly::GetBlobRequest, stream(Gitaly::GetBlobResponse)
+-      rpc :GetBlobs, Gitaly::GetBlobsRequest, stream(Gitaly::GetBlobsResponse)
++      rpc :GetBlob, ::Gitaly::GetBlobRequest, stream(::Gitaly::GetBlobResponse)
++      rpc :GetBlobs, ::Gitaly::GetBlobsRequest, stream(::Gitaly::GetBlobsResponse)
+       # ListBlobs will list all blobs reachable from a given set of revisions by
+       # doing a graph walk. It is not valid to pass revisions which do not resolve
+       # to an existing object.
+-      rpc :ListBlobs, Gitaly::ListBlobsRequest, stream(Gitaly::ListBlobsResponse)
++      rpc :ListBlobs, ::Gitaly::ListBlobsRequest, stream(::Gitaly::ListBlobsResponse)
+       # ListAllBlobs retrieves all blobs pointers in the repository, including
+       # those not reachable by any reference.
+-      rpc :ListAllBlobs, Gitaly::ListAllBlobsRequest, stream(Gitaly::ListAllBlobsResponse)
++      rpc :ListAllBlobs, ::Gitaly::ListAllBlobsRequest, stream(::Gitaly::ListAllBlobsResponse)
+       # GetLFSPointers retrieves LFS pointers from a given set of object IDs.
+       # This RPC filters all requested objects and only returns those which refer
+       # to a valid LFS pointer.
+-      rpc :GetLFSPointers, Gitaly::GetLFSPointersRequest, stream(Gitaly::GetLFSPointersResponse)
++      rpc :GetLFSPointers, ::Gitaly::GetLFSPointersRequest, stream(::Gitaly::GetLFSPointersResponse)
+       # ListLFSPointers retrieves LFS pointers reachable from a given set of
+       # revisions by doing a graph walk. This includes both normal revisions like
+       # an object ID or branch, but also the pseudo-revisions "--all" and "--not"
+       # as documented in git-rev-parse(1). Revisions which don't directly or
+       # transitively reference any LFS pointers are ignored. It is not valid to
+       # pass revisions which do not resolve to an existing object.
+-      rpc :ListLFSPointers, Gitaly::ListLFSPointersRequest, stream(Gitaly::ListLFSPointersResponse)
++      rpc :ListLFSPointers, ::Gitaly::ListLFSPointersRequest, stream(::Gitaly::ListLFSPointersResponse)
+       # ListAllLFSPointers retrieves all LFS pointers in the repository, including
+       # those not reachable by any reference.
+-      rpc :ListAllLFSPointers, Gitaly::ListAllLFSPointersRequest, stream(Gitaly::ListAllLFSPointersResponse)
++      rpc :ListAllLFSPointers, ::Gitaly::ListAllLFSPointersRequest, stream(::Gitaly::ListAllLFSPointersResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/cleanup_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/cleanup_services_pb.rb
+@@ -8,13 +8,13 @@ module Gitaly
+   module CleanupService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.CleanupService'
+ 
+-      rpc :ApplyBfgObjectMapStream, stream(Gitaly::ApplyBfgObjectMapStreamRequest), stream(Gitaly::ApplyBfgObjectMapStreamResponse)
++      rpc :ApplyBfgObjectMapStream, stream(::Gitaly::ApplyBfgObjectMapStreamRequest), stream(::Gitaly::ApplyBfgObjectMapStreamResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/commit_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/commit_services_pb.rb
+@@ -8,7 +8,7 @@ module Gitaly
+   module CommitService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+@@ -18,32 +18,32 @@ module Gitaly
+       # graph walk. This deprecates ListNewCommits, FindAllCommits, FindCommits
+       # (except Follow is not yet supported) and CommitsBetweenRequest. Any
+       # unknown revisions will cause the RPC to fail.
+-      rpc :ListCommits, Gitaly::ListCommitsRequest, stream(Gitaly::ListCommitsResponse)
++      rpc :ListCommits, ::Gitaly::ListCommitsRequest, stream(::Gitaly::ListCommitsResponse)
+       # ListAllCommits lists all commits present in the repository, including
+       # those not reachable by any reference.
+-      rpc :ListAllCommits, Gitaly::ListAllCommitsRequest, stream(Gitaly::ListAllCommitsResponse)
+-      rpc :CommitIsAncestor, Gitaly::CommitIsAncestorRequest, Gitaly::CommitIsAncestorResponse
+-      rpc :TreeEntry, Gitaly::TreeEntryRequest, stream(Gitaly::TreeEntryResponse)
+-      rpc :CommitsBetween, Gitaly::CommitsBetweenRequest, stream(Gitaly::CommitsBetweenResponse)
+-      rpc :CountCommits, Gitaly::CountCommitsRequest, Gitaly::CountCommitsResponse
+-      rpc :CountDivergingCommits, Gitaly::CountDivergingCommitsRequest, Gitaly::CountDivergingCommitsResponse
+-      rpc :GetTreeEntries, Gitaly::GetTreeEntriesRequest, stream(Gitaly::GetTreeEntriesResponse)
+-      rpc :ListFiles, Gitaly::ListFilesRequest, stream(Gitaly::ListFilesResponse)
+-      rpc :FindCommit, Gitaly::FindCommitRequest, Gitaly::FindCommitResponse
+-      rpc :CommitStats, Gitaly::CommitStatsRequest, Gitaly::CommitStatsResponse
++      rpc :ListAllCommits, ::Gitaly::ListAllCommitsRequest, stream(::Gitaly::ListAllCommitsResponse)
++      rpc :CommitIsAncestor, ::Gitaly::CommitIsAncestorRequest, ::Gitaly::CommitIsAncestorResponse
++      rpc :TreeEntry, ::Gitaly::TreeEntryRequest, stream(::Gitaly::TreeEntryResponse)
++      rpc :CommitsBetween, ::Gitaly::CommitsBetweenRequest, stream(::Gitaly::CommitsBetweenResponse)
++      rpc :CountCommits, ::Gitaly::CountCommitsRequest, ::Gitaly::CountCommitsResponse
++      rpc :CountDivergingCommits, ::Gitaly::CountDivergingCommitsRequest, ::Gitaly::CountDivergingCommitsResponse
++      rpc :GetTreeEntries, ::Gitaly::GetTreeEntriesRequest, stream(::Gitaly::GetTreeEntriesResponse)
++      rpc :ListFiles, ::Gitaly::ListFilesRequest, stream(::Gitaly::ListFilesResponse)
++      rpc :FindCommit, ::Gitaly::FindCommitRequest, ::Gitaly::FindCommitResponse
++      rpc :CommitStats, ::Gitaly::CommitStatsRequest, ::Gitaly::CommitStatsResponse
+       # Use a stream to paginate the result set
+-      rpc :FindAllCommits, Gitaly::FindAllCommitsRequest, stream(Gitaly::FindAllCommitsResponse)
+-      rpc :FindCommits, Gitaly::FindCommitsRequest, stream(Gitaly::FindCommitsResponse)
+-      rpc :CommitLanguages, Gitaly::CommitLanguagesRequest, Gitaly::CommitLanguagesResponse
+-      rpc :RawBlame, Gitaly::RawBlameRequest, stream(Gitaly::RawBlameResponse)
+-      rpc :LastCommitForPath, Gitaly::LastCommitForPathRequest, Gitaly::LastCommitForPathResponse
+-      rpc :ListLastCommitsForTree, Gitaly::ListLastCommitsForTreeRequest, stream(Gitaly::ListLastCommitsForTreeResponse)
+-      rpc :CommitsByMessage, Gitaly::CommitsByMessageRequest, stream(Gitaly::CommitsByMessageResponse)
+-      rpc :ListCommitsByOid, Gitaly::ListCommitsByOidRequest, stream(Gitaly::ListCommitsByOidResponse)
+-      rpc :ListCommitsByRefName, Gitaly::ListCommitsByRefNameRequest, stream(Gitaly::ListCommitsByRefNameResponse)
+-      rpc :FilterShasWithSignatures, stream(Gitaly::FilterShasWithSignaturesRequest), stream(Gitaly::FilterShasWithSignaturesResponse)
+-      rpc :GetCommitSignatures, Gitaly::GetCommitSignaturesRequest, stream(Gitaly::GetCommitSignaturesResponse)
+-      rpc :GetCommitMessages, Gitaly::GetCommitMessagesRequest, stream(Gitaly::GetCommitMessagesResponse)
++      rpc :FindAllCommits, ::Gitaly::FindAllCommitsRequest, stream(::Gitaly::FindAllCommitsResponse)
++      rpc :FindCommits, ::Gitaly::FindCommitsRequest, stream(::Gitaly::FindCommitsResponse)
++      rpc :CommitLanguages, ::Gitaly::CommitLanguagesRequest, ::Gitaly::CommitLanguagesResponse
++      rpc :RawBlame, ::Gitaly::RawBlameRequest, stream(::Gitaly::RawBlameResponse)
++      rpc :LastCommitForPath, ::Gitaly::LastCommitForPathRequest, ::Gitaly::LastCommitForPathResponse
++      rpc :ListLastCommitsForTree, ::Gitaly::ListLastCommitsForTreeRequest, stream(::Gitaly::ListLastCommitsForTreeResponse)
++      rpc :CommitsByMessage, ::Gitaly::CommitsByMessageRequest, stream(::Gitaly::CommitsByMessageResponse)
++      rpc :ListCommitsByOid, ::Gitaly::ListCommitsByOidRequest, stream(::Gitaly::ListCommitsByOidResponse)
++      rpc :ListCommitsByRefName, ::Gitaly::ListCommitsByRefNameRequest, stream(::Gitaly::ListCommitsByRefNameResponse)
++      rpc :FilterShasWithSignatures, stream(::Gitaly::FilterShasWithSignaturesRequest), stream(::Gitaly::FilterShasWithSignaturesResponse)
++      rpc :GetCommitSignatures, ::Gitaly::GetCommitSignaturesRequest, stream(::Gitaly::GetCommitSignaturesResponse)
++      rpc :GetCommitMessages, ::Gitaly::GetCommitMessagesRequest, stream(::Gitaly::GetCommitMessagesResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/conflicts_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/conflicts_services_pb.rb
+@@ -8,17 +8,17 @@ module Gitaly
+   module ConflictsService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.ConflictsService'
+ 
+-      rpc :ListConflictFiles, Gitaly::ListConflictFilesRequest, stream(Gitaly::ListConflictFilesResponse)
++      rpc :ListConflictFiles, ::Gitaly::ListConflictFilesRequest, stream(::Gitaly::ListConflictFilesResponse)
+       # ResolveConflicts tries to resolve a conflicting merge with a set of
+       # user-provided merge resolutions. If resolving the conflict succeeds, the
+       # result will be a new merge commit.
+-      rpc :ResolveConflicts, stream(Gitaly::ResolveConflictsRequest), Gitaly::ResolveConflictsResponse
++      rpc :ResolveConflicts, stream(::Gitaly::ResolveConflictsRequest), ::Gitaly::ResolveConflictsResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/diff_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/diff_services_pb.rb
+@@ -8,21 +8,21 @@ module Gitaly
+   module DiffService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.DiffService'
+ 
+       # Returns stream of CommitDiffResponse with patches chunked over messages
+-      rpc :CommitDiff, Gitaly::CommitDiffRequest, stream(Gitaly::CommitDiffResponse)
++      rpc :CommitDiff, ::Gitaly::CommitDiffRequest, stream(::Gitaly::CommitDiffResponse)
+       # Return a stream so we can divide the response in chunks of deltas
+-      rpc :CommitDelta, Gitaly::CommitDeltaRequest, stream(Gitaly::CommitDeltaResponse)
+-      rpc :RawDiff, Gitaly::RawDiffRequest, stream(Gitaly::RawDiffResponse)
+-      rpc :RawPatch, Gitaly::RawPatchRequest, stream(Gitaly::RawPatchResponse)
+-      rpc :DiffStats, Gitaly::DiffStatsRequest, stream(Gitaly::DiffStatsResponse)
++      rpc :CommitDelta, ::Gitaly::CommitDeltaRequest, stream(::Gitaly::CommitDeltaResponse)
++      rpc :RawDiff, ::Gitaly::RawDiffRequest, stream(::Gitaly::RawDiffResponse)
++      rpc :RawPatch, ::Gitaly::RawPatchRequest, stream(::Gitaly::RawPatchResponse)
++      rpc :DiffStats, ::Gitaly::DiffStatsRequest, stream(::Gitaly::DiffStatsResponse)
+       # Return a list of files changed along with the status of each file
+-      rpc :FindChangedPaths, Gitaly::FindChangedPathsRequest, stream(Gitaly::FindChangedPathsResponse)
++      rpc :FindChangedPaths, ::Gitaly::FindChangedPathsRequest, stream(::Gitaly::FindChangedPathsResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/hook_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/hook_services_pb.rb
+@@ -8,23 +8,23 @@ module Gitaly
+   module HookService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.HookService'
+ 
+-      rpc :PreReceiveHook, stream(Gitaly::PreReceiveHookRequest), stream(Gitaly::PreReceiveHookResponse)
+-      rpc :PostReceiveHook, stream(Gitaly::PostReceiveHookRequest), stream(Gitaly::PostReceiveHookResponse)
+-      rpc :UpdateHook, Gitaly::UpdateHookRequest, stream(Gitaly::UpdateHookResponse)
+-      rpc :ReferenceTransactionHook, stream(Gitaly::ReferenceTransactionHookRequest), stream(Gitaly::ReferenceTransactionHookResponse)
++      rpc :PreReceiveHook, stream(::Gitaly::PreReceiveHookRequest), stream(::Gitaly::PreReceiveHookResponse)
++      rpc :PostReceiveHook, stream(::Gitaly::PostReceiveHookRequest), stream(::Gitaly::PostReceiveHookResponse)
++      rpc :UpdateHook, ::Gitaly::UpdateHookRequest, stream(::Gitaly::UpdateHookResponse)
++      rpc :ReferenceTransactionHook, stream(::Gitaly::ReferenceTransactionHookRequest), stream(::Gitaly::ReferenceTransactionHookResponse)
+       # PackObjectsHook is meant to be called by git-upload-pack via the
+       # uploadpack.packObjectsHook mechanism. It generates a stream of packed
+       # Git objects.
+-      rpc :PackObjectsHook, stream(Gitaly::PackObjectsHookRequest), stream(Gitaly::PackObjectsHookResponse)
++      rpc :PackObjectsHook, stream(::Gitaly::PackObjectsHookRequest), stream(::Gitaly::PackObjectsHookResponse)
+       # PackObjectsHookWithSidechannel is an optimized version of PackObjectsHook that uses
+       # a unix socket side channel.
+-      rpc :PackObjectsHookWithSidechannel, Gitaly::PackObjectsHookWithSidechannelRequest, Gitaly::PackObjectsHookWithSidechannelResponse
++      rpc :PackObjectsHookWithSidechannel, ::Gitaly::PackObjectsHookWithSidechannelRequest, ::Gitaly::PackObjectsHookWithSidechannelResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/internal_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/internal_services_pb.rb
+@@ -10,7 +10,7 @@ module Gitaly
+     # only reachable by Praefect or other Gitalies
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+@@ -18,7 +18,7 @@ module Gitaly
+ 
+       # WalkRepos walks the storage and streams back all known git repos on the
+       # requested storage
+-      rpc :WalkRepos, Gitaly::WalkReposRequest, stream(Gitaly::WalkReposResponse)
++      rpc :WalkRepos, ::Gitaly::WalkReposRequest, stream(::Gitaly::WalkReposResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/namespace_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/namespace_services_pb.rb
+@@ -8,16 +8,16 @@ module Gitaly
+   module NamespaceService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.NamespaceService'
+ 
+-      rpc :AddNamespace, Gitaly::AddNamespaceRequest, Gitaly::AddNamespaceResponse
+-      rpc :RemoveNamespace, Gitaly::RemoveNamespaceRequest, Gitaly::RemoveNamespaceResponse
+-      rpc :RenameNamespace, Gitaly::RenameNamespaceRequest, Gitaly::RenameNamespaceResponse
+-      rpc :NamespaceExists, Gitaly::NamespaceExistsRequest, Gitaly::NamespaceExistsResponse
++      rpc :AddNamespace, ::Gitaly::AddNamespaceRequest, ::Gitaly::AddNamespaceResponse
++      rpc :RemoveNamespace, ::Gitaly::RemoveNamespaceRequest, ::Gitaly::RemoveNamespaceResponse
++      rpc :RenameNamespace, ::Gitaly::RenameNamespaceRequest, ::Gitaly::RenameNamespaceResponse
++      rpc :NamespaceExists, ::Gitaly::NamespaceExistsRequest, ::Gitaly::NamespaceExistsResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/objectpool_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/objectpool_services_pb.rb
+@@ -8,16 +8,16 @@ module Gitaly
+   module ObjectPoolService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.ObjectPoolService'
+ 
+-      rpc :CreateObjectPool, Gitaly::CreateObjectPoolRequest, Gitaly::CreateObjectPoolResponse
+-      rpc :DeleteObjectPool, Gitaly::DeleteObjectPoolRequest, Gitaly::DeleteObjectPoolResponse
++      rpc :CreateObjectPool, ::Gitaly::CreateObjectPoolRequest, ::Gitaly::CreateObjectPoolResponse
++      rpc :DeleteObjectPool, ::Gitaly::DeleteObjectPoolRequest, ::Gitaly::DeleteObjectPoolResponse
+       # Repositories are assumed to be stored on the same disk
+-      rpc :LinkRepositoryToObjectPool, Gitaly::LinkRepositoryToObjectPoolRequest, Gitaly::LinkRepositoryToObjectPoolResponse
++      rpc :LinkRepositoryToObjectPool, ::Gitaly::LinkRepositoryToObjectPoolRequest, ::Gitaly::LinkRepositoryToObjectPoolResponse
+       # UnlinkRepositoryFromObjectPool does not unlink the repository from the
+       # object pool as you'd think, but all it really does is to remove the object
+       # pool's remote pointing to the repository. And even this is a no-op given
+@@ -28,11 +28,11 @@ module Gitaly
+       #
+       # This function is never called by anyone and highly misleading. It's thus
+       # deprecated and will be removed in v14.4.
+-      rpc :UnlinkRepositoryFromObjectPool, Gitaly::UnlinkRepositoryFromObjectPoolRequest, Gitaly::UnlinkRepositoryFromObjectPoolResponse
+-      rpc :ReduplicateRepository, Gitaly::ReduplicateRepositoryRequest, Gitaly::ReduplicateRepositoryResponse
+-      rpc :DisconnectGitAlternates, Gitaly::DisconnectGitAlternatesRequest, Gitaly::DisconnectGitAlternatesResponse
+-      rpc :FetchIntoObjectPool, Gitaly::FetchIntoObjectPoolRequest, Gitaly::FetchIntoObjectPoolResponse
+-      rpc :GetObjectPool, Gitaly::GetObjectPoolRequest, Gitaly::GetObjectPoolResponse
++      rpc :UnlinkRepositoryFromObjectPool, ::Gitaly::UnlinkRepositoryFromObjectPoolRequest, ::Gitaly::UnlinkRepositoryFromObjectPoolResponse
++      rpc :ReduplicateRepository, ::Gitaly::ReduplicateRepositoryRequest, ::Gitaly::ReduplicateRepositoryResponse
++      rpc :DisconnectGitAlternates, ::Gitaly::DisconnectGitAlternatesRequest, ::Gitaly::DisconnectGitAlternatesResponse
++      rpc :FetchIntoObjectPool, ::Gitaly::FetchIntoObjectPoolRequest, ::Gitaly::FetchIntoObjectPoolResponse
++      rpc :GetObjectPool, ::Gitaly::GetObjectPoolRequest, ::Gitaly::GetObjectPoolResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/operations_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/operations_services_pb.rb
+@@ -12,23 +12,23 @@ module Gitaly
+     # '/allowed' endpoint.
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.OperationService'
+ 
+-      rpc :UserCreateBranch, Gitaly::UserCreateBranchRequest, Gitaly::UserCreateBranchResponse
+-      rpc :UserUpdateBranch, Gitaly::UserUpdateBranchRequest, Gitaly::UserUpdateBranchResponse
+-      rpc :UserDeleteBranch, Gitaly::UserDeleteBranchRequest, Gitaly::UserDeleteBranchResponse
++      rpc :UserCreateBranch, ::Gitaly::UserCreateBranchRequest, ::Gitaly::UserCreateBranchResponse
++      rpc :UserUpdateBranch, ::Gitaly::UserUpdateBranchRequest, ::Gitaly::UserUpdateBranchResponse
++      rpc :UserDeleteBranch, ::Gitaly::UserDeleteBranchRequest, ::Gitaly::UserDeleteBranchResponse
+       # UserCreateTag creates a new tag.
+-      rpc :UserCreateTag, Gitaly::UserCreateTagRequest, Gitaly::UserCreateTagResponse
+-      rpc :UserDeleteTag, Gitaly::UserDeleteTagRequest, Gitaly::UserDeleteTagResponse
++      rpc :UserCreateTag, ::Gitaly::UserCreateTagRequest, ::Gitaly::UserCreateTagResponse
++      rpc :UserDeleteTag, ::Gitaly::UserDeleteTagRequest, ::Gitaly::UserDeleteTagResponse
+       # UserMergeRef creates a merge commit and updates target_ref to point to that
+       # new commit. The first parent of the merge commit (the main line) is taken
+       # from first_parent_ref. The second parent is specified by its commit ID in source_sha.
+       # If target_ref already exists it will be overwritten.
+-      rpc :UserMergeToRef, Gitaly::UserMergeToRefRequest, Gitaly::UserMergeToRefResponse
++      rpc :UserMergeToRef, ::Gitaly::UserMergeToRefRequest, ::Gitaly::UserMergeToRefResponse
+       # UserMergeBranch tries to merge the given commit into the target branch.
+       # The merge commit is created with the given user as author/committer and
+       # the given message.
+@@ -38,20 +38,20 @@ module Gitaly
+       # requested merge, which will result in a response with the created merge
+       # commit ID. Only if a second message with `apply = true` is sent will the
+       # merge be applied.
+-      rpc :UserMergeBranch, stream(Gitaly::UserMergeBranchRequest), stream(Gitaly::UserMergeBranchResponse)
++      rpc :UserMergeBranch, stream(::Gitaly::UserMergeBranchRequest), stream(::Gitaly::UserMergeBranchResponse)
+       # UserFFBranch tries to perform a fast-forward merge of the given branch to
+       # the given commit. If the merge is not a fast-forward merge, the request
+       # will fail. The RPC will return an empty response in case updating the
+       # reference fails e.g. because of a race.
+-      rpc :UserFFBranch, Gitaly::UserFFBranchRequest, Gitaly::UserFFBranchResponse
++      rpc :UserFFBranch, ::Gitaly::UserFFBranchRequest, ::Gitaly::UserFFBranchResponse
+       # UserCherryPick tries to perform a cherry-pick of a given commit onto a
+       # branch.
+-      rpc :UserCherryPick, Gitaly::UserCherryPickRequest, Gitaly::UserCherryPickResponse
++      rpc :UserCherryPick, ::Gitaly::UserCherryPickRequest, ::Gitaly::UserCherryPickResponse
+       # UserCommitFiles builds a commit from a stream of actions and updates the target branch to point to it.
+       # UserCommitFilesRequest with a UserCommitFilesRequestHeader must be sent as the first message of the stream.
+       # Following that, a variable number of actions can be sent to build a new commit. Each action consists of
+       # a header followed by content if used by the action.
+-      rpc :UserCommitFiles, stream(Gitaly::UserCommitFilesRequest), Gitaly::UserCommitFilesResponse
++      rpc :UserCommitFiles, stream(::Gitaly::UserCommitFilesRequest), ::Gitaly::UserCommitFilesResponse
+       # UserRebaseConfirmable rebases the given remote branch onto a target
+       # branch. The remote branch may be part of another repository.
+       #
+@@ -60,15 +60,15 @@ module Gitaly
+       # requested rebase, which will result in a response with the created rebase
+       # commit ID. Only if a second message with `apply = true` is sent will the
+       # rebase be applied.
+-      rpc :UserRebaseConfirmable, stream(Gitaly::UserRebaseConfirmableRequest), stream(Gitaly::UserRebaseConfirmableResponse)
++      rpc :UserRebaseConfirmable, stream(::Gitaly::UserRebaseConfirmableRequest), stream(::Gitaly::UserRebaseConfirmableResponse)
+       # UserRevert tries to perform a revert of a given commit onto a branch.
+-      rpc :UserRevert, Gitaly::UserRevertRequest, Gitaly::UserRevertResponse
++      rpc :UserRevert, ::Gitaly::UserRevertRequest, ::Gitaly::UserRevertResponse
+       # UserSquash squashes a range of commits into a single commit.
+-      rpc :UserSquash, Gitaly::UserSquashRequest, Gitaly::UserSquashResponse
++      rpc :UserSquash, ::Gitaly::UserSquashRequest, ::Gitaly::UserSquashResponse
+       # UserApplyPatch applies patches to a given branch.
+-      rpc :UserApplyPatch, stream(Gitaly::UserApplyPatchRequest), Gitaly::UserApplyPatchResponse
++      rpc :UserApplyPatch, stream(::Gitaly::UserApplyPatchRequest), ::Gitaly::UserApplyPatchResponse
+       # UserUpdateSubmodule updates a submodule to point to a new commit.
+-      rpc :UserUpdateSubmodule, Gitaly::UserUpdateSubmoduleRequest, Gitaly::UserUpdateSubmoduleResponse
++      rpc :UserUpdateSubmodule, ::Gitaly::UserUpdateSubmoduleRequest, ::Gitaly::UserUpdateSubmoduleResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/praefect_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/praefect_services_pb.rb
+@@ -8,19 +8,19 @@ module Gitaly
+   module PraefectInfoService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.PraefectInfoService'
+ 
+-      rpc :RepositoryReplicas, Gitaly::RepositoryReplicasRequest, Gitaly::RepositoryReplicasResponse
++      rpc :RepositoryReplicas, ::Gitaly::RepositoryReplicasRequest, ::Gitaly::RepositoryReplicasResponse
+       # DatalossCheck checks for unavailable repositories.
+-      rpc :DatalossCheck, Gitaly::DatalossCheckRequest, Gitaly::DatalossCheckResponse
++      rpc :DatalossCheck, ::Gitaly::DatalossCheckRequest, ::Gitaly::DatalossCheckResponse
+       # SetAuthoritativeStorage sets the authoritative storage for a repository on a given virtual storage.
+       # This causes the current version of the repository on the authoritative storage to be considered the
+       # latest and overwrite any other version on the virtual storage.
+-      rpc :SetAuthoritativeStorage, Gitaly::SetAuthoritativeStorageRequest, Gitaly::SetAuthoritativeStorageResponse
++      rpc :SetAuthoritativeStorage, ::Gitaly::SetAuthoritativeStorageRequest, ::Gitaly::SetAuthoritativeStorageResponse
+       # SetReplicationFactor assigns or unassigns host nodes from the repository to meet the desired replication factor.
+       # SetReplicationFactor returns an error when trying to set a replication factor that exceeds the storage node count
+       # in the virtual storage. An error is also returned when trying to set a replication factor below one. The primary node
+@@ -29,7 +29,7 @@ module Gitaly
+       # This might cause the actual replication factor to be higher than desired if the replication factor is set during an upgrade
+       # from a Praefect node that does not yet know about a new node. As assignments of unconfigured storages are ignored, replication
+       # factor of repositories assigned to a storage node removed from the cluster is effectively decreased.
+-      rpc :SetReplicationFactor, Gitaly::SetReplicationFactorRequest, Gitaly::SetReplicationFactorResponse
++      rpc :SetReplicationFactor, ::Gitaly::SetReplicationFactorRequest, ::Gitaly::SetReplicationFactorResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/ref_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/ref_services_pb.rb
+@@ -8,42 +8,42 @@ module Gitaly
+   module RefService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.RefService'
+ 
+-      rpc :FindDefaultBranchName, Gitaly::FindDefaultBranchNameRequest, Gitaly::FindDefaultBranchNameResponse
+-      rpc :FindAllBranchNames, Gitaly::FindAllBranchNamesRequest, stream(Gitaly::FindAllBranchNamesResponse)
+-      rpc :FindAllTagNames, Gitaly::FindAllTagNamesRequest, stream(Gitaly::FindAllTagNamesResponse)
++      rpc :FindDefaultBranchName, ::Gitaly::FindDefaultBranchNameRequest, ::Gitaly::FindDefaultBranchNameResponse
++      rpc :FindAllBranchNames, ::Gitaly::FindAllBranchNamesRequest, stream(::Gitaly::FindAllBranchNamesResponse)
++      rpc :FindAllTagNames, ::Gitaly::FindAllTagNamesRequest, stream(::Gitaly::FindAllTagNamesResponse)
+       # Return a stream so we can divide the response in chunks of branches
+-      rpc :FindLocalBranches, Gitaly::FindLocalBranchesRequest, stream(Gitaly::FindLocalBranchesResponse)
+-      rpc :FindAllBranches, Gitaly::FindAllBranchesRequest, stream(Gitaly::FindAllBranchesResponse)
++      rpc :FindLocalBranches, ::Gitaly::FindLocalBranchesRequest, stream(::Gitaly::FindLocalBranchesResponse)
++      rpc :FindAllBranches, ::Gitaly::FindAllBranchesRequest, stream(::Gitaly::FindAllBranchesResponse)
+       # Returns a stream of tags repository has.
+-      rpc :FindAllTags, Gitaly::FindAllTagsRequest, stream(Gitaly::FindAllTagsResponse)
+-      rpc :FindTag, Gitaly::FindTagRequest, Gitaly::FindTagResponse
+-      rpc :FindAllRemoteBranches, Gitaly::FindAllRemoteBranchesRequest, stream(Gitaly::FindAllRemoteBranchesResponse)
+-      rpc :RefExists, Gitaly::RefExistsRequest, Gitaly::RefExistsResponse
++      rpc :FindAllTags, ::Gitaly::FindAllTagsRequest, stream(::Gitaly::FindAllTagsResponse)
++      rpc :FindTag, ::Gitaly::FindTagRequest, ::Gitaly::FindTagResponse
++      rpc :FindAllRemoteBranches, ::Gitaly::FindAllRemoteBranchesRequest, stream(::Gitaly::FindAllRemoteBranchesResponse)
++      rpc :RefExists, ::Gitaly::RefExistsRequest, ::Gitaly::RefExistsResponse
+       # FindBranch finds a branch by its unqualified name (like "master") and
+       # returns the commit it currently points to.
+-      rpc :FindBranch, Gitaly::FindBranchRequest, Gitaly::FindBranchResponse
+-      rpc :DeleteRefs, Gitaly::DeleteRefsRequest, Gitaly::DeleteRefsResponse
+-      rpc :ListBranchNamesContainingCommit, Gitaly::ListBranchNamesContainingCommitRequest, stream(Gitaly::ListBranchNamesContainingCommitResponse)
+-      rpc :ListTagNamesContainingCommit, Gitaly::ListTagNamesContainingCommitRequest, stream(Gitaly::ListTagNamesContainingCommitResponse)
++      rpc :FindBranch, ::Gitaly::FindBranchRequest, ::Gitaly::FindBranchResponse
++      rpc :DeleteRefs, ::Gitaly::DeleteRefsRequest, ::Gitaly::DeleteRefsResponse
++      rpc :ListBranchNamesContainingCommit, ::Gitaly::ListBranchNamesContainingCommitRequest, stream(::Gitaly::ListBranchNamesContainingCommitResponse)
++      rpc :ListTagNamesContainingCommit, ::Gitaly::ListTagNamesContainingCommitRequest, stream(::Gitaly::ListTagNamesContainingCommitResponse)
+       # GetTagSignatures returns signatures for annotated tags resolved from a set of revisions. Revisions
+       # which don't resolve to an annotated tag are silently discarded. Revisions which cannot be resolved
+       # result in an error. Tags which are annotated but not signed will return a TagSignature response
+       # which has no signature, but its unsigned contents will still be returned.
+-      rpc :GetTagSignatures, Gitaly::GetTagSignaturesRequest, stream(Gitaly::GetTagSignaturesResponse)
+-      rpc :GetTagMessages, Gitaly::GetTagMessagesRequest, stream(Gitaly::GetTagMessagesResponse)
++      rpc :GetTagSignatures, ::Gitaly::GetTagSignaturesRequest, stream(::Gitaly::GetTagSignaturesResponse)
++      rpc :GetTagMessages, ::Gitaly::GetTagMessagesRequest, stream(::Gitaly::GetTagMessagesResponse)
+       # Returns commits that are only reachable from the ref passed
+-      rpc :ListNewCommits, Gitaly::ListNewCommitsRequest, stream(Gitaly::ListNewCommitsResponse)
+-      rpc :PackRefs, Gitaly::PackRefsRequest, Gitaly::PackRefsResponse
++      rpc :ListNewCommits, ::Gitaly::ListNewCommitsRequest, stream(::Gitaly::ListNewCommitsResponse)
++      rpc :PackRefs, ::Gitaly::PackRefsRequest, ::Gitaly::PackRefsResponse
+       # ListRefs returns a stream of all references in the repository. By default, pseudo-revisions like HEAD
+       # will not be returned by this RPC. Any symbolic references will be resolved to the object ID it is
+       # pointing at.
+-      rpc :ListRefs, Gitaly::ListRefsRequest, stream(Gitaly::ListRefsResponse)
++      rpc :ListRefs, ::Gitaly::ListRefsRequest, stream(::Gitaly::ListRefsResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/remote_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/remote_services_pb.rb
+@@ -8,7 +8,7 @@ module Gitaly
+   module RemoteService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+@@ -19,14 +19,14 @@ module Gitaly
+       # references to the mirror. Created and modified references are updated, removed references are
+       # deleted from the mirror. UpdateRemoteMirror updates all tags. Branches are updated if they match
+       # the patterns specified in the requests.
+-      rpc :UpdateRemoteMirror, stream(Gitaly::UpdateRemoteMirrorRequest), Gitaly::UpdateRemoteMirrorResponse
+-      rpc :FindRemoteRepository, Gitaly::FindRemoteRepositoryRequest, Gitaly::FindRemoteRepositoryResponse
++      rpc :UpdateRemoteMirror, stream(::Gitaly::UpdateRemoteMirrorRequest), ::Gitaly::UpdateRemoteMirrorResponse
++      rpc :FindRemoteRepository, ::Gitaly::FindRemoteRepositoryRequest, ::Gitaly::FindRemoteRepositoryResponse
+       # FindRemoteRootRef tries to find the root reference of a remote
+       # repository. The root reference is the default branch as pointed to by
+       # the remotes HEAD reference. Returns an InvalidArgument error if the
+       # specified remote does not exist and a NotFound error in case no HEAD
+       # branch was found.
+-      rpc :FindRemoteRootRef, Gitaly::FindRemoteRootRefRequest, Gitaly::FindRemoteRootRefResponse
++      rpc :FindRemoteRootRef, ::Gitaly::FindRemoteRootRefRequest, ::Gitaly::FindRemoteRootRefResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/repository-service_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/repository-service_services_pb.rb
+@@ -8,73 +8,73 @@ module Gitaly
+   module RepositoryService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.RepositoryService'
+ 
+-      rpc :RepositoryExists, Gitaly::RepositoryExistsRequest, Gitaly::RepositoryExistsResponse
+-      rpc :RepackIncremental, Gitaly::RepackIncrementalRequest, Gitaly::RepackIncrementalResponse
+-      rpc :RepackFull, Gitaly::RepackFullRequest, Gitaly::RepackFullResponse
+-      rpc :MidxRepack, Gitaly::MidxRepackRequest, Gitaly::MidxRepackResponse
+-      rpc :GarbageCollect, Gitaly::GarbageCollectRequest, Gitaly::GarbageCollectResponse
+-      rpc :WriteCommitGraph, Gitaly::WriteCommitGraphRequest, Gitaly::WriteCommitGraphResponse
+-      rpc :RepositorySize, Gitaly::RepositorySizeRequest, Gitaly::RepositorySizeResponse
+-      rpc :ApplyGitattributes, Gitaly::ApplyGitattributesRequest, Gitaly::ApplyGitattributesResponse
++      rpc :RepositoryExists, ::Gitaly::RepositoryExistsRequest, ::Gitaly::RepositoryExistsResponse
++      rpc :RepackIncremental, ::Gitaly::RepackIncrementalRequest, ::Gitaly::RepackIncrementalResponse
++      rpc :RepackFull, ::Gitaly::RepackFullRequest, ::Gitaly::RepackFullResponse
++      rpc :MidxRepack, ::Gitaly::MidxRepackRequest, ::Gitaly::MidxRepackResponse
++      rpc :GarbageCollect, ::Gitaly::GarbageCollectRequest, ::Gitaly::GarbageCollectResponse
++      rpc :WriteCommitGraph, ::Gitaly::WriteCommitGraphRequest, ::Gitaly::WriteCommitGraphResponse
++      rpc :RepositorySize, ::Gitaly::RepositorySizeRequest, ::Gitaly::RepositorySizeResponse
++      rpc :ApplyGitattributes, ::Gitaly::ApplyGitattributesRequest, ::Gitaly::ApplyGitattributesResponse
+       # FetchRemote fetches references from a remote repository into the local
+       # repository.
+-      rpc :FetchRemote, Gitaly::FetchRemoteRequest, Gitaly::FetchRemoteResponse
+-      rpc :CreateRepository, Gitaly::CreateRepositoryRequest, Gitaly::CreateRepositoryResponse
+-      rpc :GetArchive, Gitaly::GetArchiveRequest, stream(Gitaly::GetArchiveResponse)
+-      rpc :HasLocalBranches, Gitaly::HasLocalBranchesRequest, Gitaly::HasLocalBranchesResponse
++      rpc :FetchRemote, ::Gitaly::FetchRemoteRequest, ::Gitaly::FetchRemoteResponse
++      rpc :CreateRepository, ::Gitaly::CreateRepositoryRequest, ::Gitaly::CreateRepositoryResponse
++      rpc :GetArchive, ::Gitaly::GetArchiveRequest, stream(::Gitaly::GetArchiveResponse)
++      rpc :HasLocalBranches, ::Gitaly::HasLocalBranchesRequest, ::Gitaly::HasLocalBranchesResponse
+       # FetchSourceBranch fetches a branch from a second (potentially remote)
+       # repository into the given repository.
+-      rpc :FetchSourceBranch, Gitaly::FetchSourceBranchRequest, Gitaly::FetchSourceBranchResponse
+-      rpc :Fsck, Gitaly::FsckRequest, Gitaly::FsckResponse
+-      rpc :WriteRef, Gitaly::WriteRefRequest, Gitaly::WriteRefResponse
+-      rpc :FindMergeBase, Gitaly::FindMergeBaseRequest, Gitaly::FindMergeBaseResponse
+-      rpc :CreateFork, Gitaly::CreateForkRequest, Gitaly::CreateForkResponse
+-      rpc :CreateRepositoryFromURL, Gitaly::CreateRepositoryFromURLRequest, Gitaly::CreateRepositoryFromURLResponse
++      rpc :FetchSourceBranch, ::Gitaly::FetchSourceBranchRequest, ::Gitaly::FetchSourceBranchResponse
++      rpc :Fsck, ::Gitaly::FsckRequest, ::Gitaly::FsckResponse
++      rpc :WriteRef, ::Gitaly::WriteRefRequest, ::Gitaly::WriteRefResponse
++      rpc :FindMergeBase, ::Gitaly::FindMergeBaseRequest, ::Gitaly::FindMergeBaseResponse
++      rpc :CreateFork, ::Gitaly::CreateForkRequest, ::Gitaly::CreateForkResponse
++      rpc :CreateRepositoryFromURL, ::Gitaly::CreateRepositoryFromURLRequest, ::Gitaly::CreateRepositoryFromURLResponse
+       # CreateBundle creates a bundle from all refs
+-      rpc :CreateBundle, Gitaly::CreateBundleRequest, stream(Gitaly::CreateBundleResponse)
++      rpc :CreateBundle, ::Gitaly::CreateBundleRequest, stream(::Gitaly::CreateBundleResponse)
+       # CreateBundleFromRefList creates a bundle from a stream of ref patterns.
+       # When the bundle would be empty the FailedPrecondition error code is returned.
+-      rpc :CreateBundleFromRefList, stream(Gitaly::CreateBundleFromRefListRequest), stream(Gitaly::CreateBundleFromRefListResponse)
++      rpc :CreateBundleFromRefList, stream(::Gitaly::CreateBundleFromRefListRequest), stream(::Gitaly::CreateBundleFromRefListResponse)
+       # FetchBundle fetches references from a bundle into the local repository.
+       # Refs will be mirrored to the target repository with the refspec
+       # "+refs/*:refs/*" and refs that do not exist in the bundle will be removed.
+-      rpc :FetchBundle, stream(Gitaly::FetchBundleRequest), Gitaly::FetchBundleResponse
+-      rpc :CreateRepositoryFromBundle, stream(Gitaly::CreateRepositoryFromBundleRequest), Gitaly::CreateRepositoryFromBundleResponse
++      rpc :FetchBundle, stream(::Gitaly::FetchBundleRequest), ::Gitaly::FetchBundleResponse
++      rpc :CreateRepositoryFromBundle, stream(::Gitaly::CreateRepositoryFromBundleRequest), ::Gitaly::CreateRepositoryFromBundleResponse
+       # GetConfig reads the target repository's gitconfig and streams its contents
+       # back. Returns a NotFound error in case no gitconfig was found.
+-      rpc :GetConfig, Gitaly::GetConfigRequest, stream(Gitaly::GetConfigResponse)
+-      rpc :FindLicense, Gitaly::FindLicenseRequest, Gitaly::FindLicenseResponse
+-      rpc :GetInfoAttributes, Gitaly::GetInfoAttributesRequest, stream(Gitaly::GetInfoAttributesResponse)
+-      rpc :CalculateChecksum, Gitaly::CalculateChecksumRequest, Gitaly::CalculateChecksumResponse
+-      rpc :Cleanup, Gitaly::CleanupRequest, Gitaly::CleanupResponse
+-      rpc :GetSnapshot, Gitaly::GetSnapshotRequest, stream(Gitaly::GetSnapshotResponse)
+-      rpc :CreateRepositoryFromSnapshot, Gitaly::CreateRepositoryFromSnapshotRequest, Gitaly::CreateRepositoryFromSnapshotResponse
+-      rpc :GetRawChanges, Gitaly::GetRawChangesRequest, stream(Gitaly::GetRawChangesResponse)
+-      rpc :SearchFilesByContent, Gitaly::SearchFilesByContentRequest, stream(Gitaly::SearchFilesByContentResponse)
+-      rpc :SearchFilesByName, Gitaly::SearchFilesByNameRequest, stream(Gitaly::SearchFilesByNameResponse)
+-      rpc :RestoreCustomHooks, stream(Gitaly::RestoreCustomHooksRequest), Gitaly::RestoreCustomHooksResponse
+-      rpc :BackupCustomHooks, Gitaly::BackupCustomHooksRequest, stream(Gitaly::BackupCustomHooksResponse)
+-      rpc :GetObjectDirectorySize, Gitaly::GetObjectDirectorySizeRequest, Gitaly::GetObjectDirectorySizeResponse
+-      rpc :CloneFromPool, Gitaly::CloneFromPoolRequest, Gitaly::CloneFromPoolResponse
+-      rpc :CloneFromPoolInternal, Gitaly::CloneFromPoolInternalRequest, Gitaly::CloneFromPoolInternalResponse
++      rpc :GetConfig, ::Gitaly::GetConfigRequest, stream(::Gitaly::GetConfigResponse)
++      rpc :FindLicense, ::Gitaly::FindLicenseRequest, ::Gitaly::FindLicenseResponse
++      rpc :GetInfoAttributes, ::Gitaly::GetInfoAttributesRequest, stream(::Gitaly::GetInfoAttributesResponse)
++      rpc :CalculateChecksum, ::Gitaly::CalculateChecksumRequest, ::Gitaly::CalculateChecksumResponse
++      rpc :Cleanup, ::Gitaly::CleanupRequest, ::Gitaly::CleanupResponse
++      rpc :GetSnapshot, ::Gitaly::GetSnapshotRequest, stream(::Gitaly::GetSnapshotResponse)
++      rpc :CreateRepositoryFromSnapshot, ::Gitaly::CreateRepositoryFromSnapshotRequest, ::Gitaly::CreateRepositoryFromSnapshotResponse
++      rpc :GetRawChanges, ::Gitaly::GetRawChangesRequest, stream(::Gitaly::GetRawChangesResponse)
++      rpc :SearchFilesByContent, ::Gitaly::SearchFilesByContentRequest, stream(::Gitaly::SearchFilesByContentResponse)
++      rpc :SearchFilesByName, ::Gitaly::SearchFilesByNameRequest, stream(::Gitaly::SearchFilesByNameResponse)
++      rpc :RestoreCustomHooks, stream(::Gitaly::RestoreCustomHooksRequest), ::Gitaly::RestoreCustomHooksResponse
++      rpc :BackupCustomHooks, ::Gitaly::BackupCustomHooksRequest, stream(::Gitaly::BackupCustomHooksResponse)
++      rpc :GetObjectDirectorySize, ::Gitaly::GetObjectDirectorySizeRequest, ::Gitaly::GetObjectDirectorySizeResponse
++      rpc :CloneFromPool, ::Gitaly::CloneFromPoolRequest, ::Gitaly::CloneFromPoolResponse
++      rpc :CloneFromPoolInternal, ::Gitaly::CloneFromPoolInternalRequest, ::Gitaly::CloneFromPoolInternalResponse
+       # RemoveRepository will move the repository to `+gitaly/tmp/<relative_path>_removed` and
+       # eventually remove it. This ensures that even on networked filesystems the
+       # data is actually removed even if there's someone still handling the data.
+-      rpc :RemoveRepository, Gitaly::RemoveRepositoryRequest, Gitaly::RemoveRepositoryResponse
+-      rpc :RenameRepository, Gitaly::RenameRepositoryRequest, Gitaly::RenameRepositoryResponse
+-      rpc :ReplicateRepository, Gitaly::ReplicateRepositoryRequest, Gitaly::ReplicateRepositoryResponse
+-      rpc :OptimizeRepository, Gitaly::OptimizeRepositoryRequest, Gitaly::OptimizeRepositoryResponse
++      rpc :RemoveRepository, ::Gitaly::RemoveRepositoryRequest, ::Gitaly::RemoveRepositoryResponse
++      rpc :RenameRepository, ::Gitaly::RenameRepositoryRequest, ::Gitaly::RenameRepositoryResponse
++      rpc :ReplicateRepository, ::Gitaly::ReplicateRepositoryRequest, ::Gitaly::ReplicateRepositoryResponse
++      rpc :OptimizeRepository, ::Gitaly::OptimizeRepositoryRequest, ::Gitaly::OptimizeRepositoryResponse
+       # SetFullPath writes the "gitlab.fullpath" configuration into the
+       # repository's gitconfig. This is mainly to help debugging purposes in case
+       # an admin inspects the repository's gitconfig such that he can easily see
+       # what the repository name is.
+-      rpc :SetFullPath, Gitaly::SetFullPathRequest, Gitaly::SetFullPathResponse
++      rpc :SetFullPath, ::Gitaly::SetFullPathRequest, ::Gitaly::SetFullPathResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/server_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/server_services_pb.rb
+@@ -8,14 +8,14 @@ module Gitaly
+   module ServerService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.ServerService'
+ 
+-      rpc :ServerInfo, Gitaly::ServerInfoRequest, Gitaly::ServerInfoResponse
+-      rpc :DiskStatistics, Gitaly::DiskStatisticsRequest, Gitaly::DiskStatisticsResponse
++      rpc :ServerInfo, ::Gitaly::ServerInfoRequest, ::Gitaly::ServerInfoResponse
++      rpc :DiskStatistics, ::Gitaly::DiskStatisticsRequest, ::Gitaly::DiskStatisticsResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/smarthttp_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/smarthttp_services_pb.rb
+@@ -8,7 +8,7 @@ module Gitaly
+   module SmartHTTPService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+@@ -17,17 +17,17 @@ module Gitaly
+       # The response body for GET /info/refs?service=git-upload-pack
+       # Will be invoked when the user executes a `git fetch`, meaning the server
+       # will upload the packs to that user. The user doesn't upload new objects.
+-      rpc :InfoRefsUploadPack, Gitaly::InfoRefsRequest, stream(Gitaly::InfoRefsResponse)
++      rpc :InfoRefsUploadPack, ::Gitaly::InfoRefsRequest, stream(::Gitaly::InfoRefsResponse)
+       # The response body for GET /info/refs?service=git-receive-pack
+       # Will be invoked when the user executes a `git push`, but only advertises
+       # references to the user.
+-      rpc :InfoRefsReceivePack, Gitaly::InfoRefsRequest, stream(Gitaly::InfoRefsResponse)
++      rpc :InfoRefsReceivePack, ::Gitaly::InfoRefsRequest, stream(::Gitaly::InfoRefsResponse)
+       # Request and response body for POST /upload-pack
+-      rpc :PostUploadPack, stream(Gitaly::PostUploadPackRequest), stream(Gitaly::PostUploadPackResponse)
++      rpc :PostUploadPack, stream(::Gitaly::PostUploadPackRequest), stream(::Gitaly::PostUploadPackResponse)
+       # Request and response body for POST /upload-pack using sidechannel protocol
+-      rpc :PostUploadPackWithSidechannel, Gitaly::PostUploadPackWithSidechannelRequest, Gitaly::PostUploadPackWithSidechannelResponse
++      rpc :PostUploadPackWithSidechannel, ::Gitaly::PostUploadPackWithSidechannelRequest, ::Gitaly::PostUploadPackWithSidechannelResponse
+       # Request and response body for POST /receive-pack
+-      rpc :PostReceivePack, stream(Gitaly::PostReceivePackRequest), stream(Gitaly::PostReceivePackResponse)
++      rpc :PostReceivePack, stream(::Gitaly::PostReceivePackRequest), stream(::Gitaly::PostReceivePackResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/ssh_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/ssh_services_pb.rb
+@@ -8,18 +8,18 @@ module Gitaly
+   module SSHService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.SSHService'
+ 
+       # To forward 'git upload-pack' to Gitaly for SSH sessions
+-      rpc :SSHUploadPack, stream(Gitaly::SSHUploadPackRequest), stream(Gitaly::SSHUploadPackResponse)
++      rpc :SSHUploadPack, stream(::Gitaly::SSHUploadPackRequest), stream(::Gitaly::SSHUploadPackResponse)
+       # To forward 'git receive-pack' to Gitaly for SSH sessions
+-      rpc :SSHReceivePack, stream(Gitaly::SSHReceivePackRequest), stream(Gitaly::SSHReceivePackResponse)
++      rpc :SSHReceivePack, stream(::Gitaly::SSHReceivePackRequest), stream(::Gitaly::SSHReceivePackResponse)
+       # To forward 'git upload-archive' to Gitaly for SSH sessions
+-      rpc :SSHUploadArchive, stream(Gitaly::SSHUploadArchiveRequest), stream(Gitaly::SSHUploadArchiveResponse)
++      rpc :SSHUploadArchive, stream(::Gitaly::SSHUploadArchiveRequest), stream(::Gitaly::SSHUploadArchiveResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/transaction_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/transaction_services_pb.rb
+@@ -8,14 +8,14 @@ module Gitaly
+   module RefTransaction
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.RefTransaction'
+ 
+-      rpc :VoteTransaction, Gitaly::VoteTransactionRequest, Gitaly::VoteTransactionResponse
+-      rpc :StopTransaction, Gitaly::StopTransactionRequest, Gitaly::StopTransactionResponse
++      rpc :VoteTransaction, ::Gitaly::VoteTransactionRequest, ::Gitaly::VoteTransactionResponse
++      rpc :StopTransaction, ::Gitaly::StopTransactionRequest, ::Gitaly::StopTransactionResponse
+     end
+ 
+     Stub = Service.rpc_stub_class
+--- ruby/proto/gitaly/wiki_services_pb.rb.orig	2021-11-08 11:56:42 UTC
++++ ruby/proto/gitaly/wiki_services_pb.rb
+@@ -8,18 +8,18 @@ module Gitaly
+   module WikiService
+     class Service
+ 
+-      include GRPC::GenericService
++      include ::GRPC::GenericService
+ 
+       self.marshal_class_method = :encode
+       self.unmarshal_class_method = :decode
+       self.service_name = 'gitaly.WikiService'
+ 
+-      rpc :WikiWritePage, stream(Gitaly::WikiWritePageRequest), Gitaly::WikiWritePageResponse
+-      rpc :WikiUpdatePage, stream(Gitaly::WikiUpdatePageRequest), Gitaly::WikiUpdatePageResponse
++      rpc :WikiWritePage, stream(::Gitaly::WikiWritePageRequest), ::Gitaly::WikiWritePageResponse
++      rpc :WikiUpdatePage, stream(::Gitaly::WikiUpdatePageRequest), ::Gitaly::WikiUpdatePageResponse
+       # WikiFindPage returns a stream because the page's raw_data field may be arbitrarily large.
+-      rpc :WikiFindPage, Gitaly::WikiFindPageRequest, stream(Gitaly::WikiFindPageResponse)
+-      rpc :WikiGetAllPages, Gitaly::WikiGetAllPagesRequest, stream(Gitaly::WikiGetAllPagesResponse)
+-      rpc :WikiListPages, Gitaly::WikiListPagesRequest, stream(Gitaly::WikiListPagesResponse)
++      rpc :WikiFindPage, ::Gitaly::WikiFindPageRequest, stream(::Gitaly::WikiFindPageResponse)
++      rpc :WikiGetAllPages, ::Gitaly::WikiGetAllPagesRequest, stream(::Gitaly::WikiGetAllPagesResponse)
++      rpc :WikiListPages, ::Gitaly::WikiListPagesRequest, stream(::Gitaly::WikiListPagesResponse)
+     end
+ 
+     Stub = Service.rpc_stub_class
