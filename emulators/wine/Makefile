@@ -27,8 +27,7 @@ USE_SDL=	sdl2
 
 CPE_VENDOR=	winehq
 
-CONFLICTS_INSTALL=	wine-devel-[0-9]* \
-			i386-wine-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-devel-[0-9]* i386-wine-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose \

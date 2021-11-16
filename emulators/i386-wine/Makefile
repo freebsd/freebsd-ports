@@ -19,7 +19,7 @@ COMMENT=	32-bit Microsoft Windows compatibility environment for 64-bit FreeBSD
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-CONFLICTS_INSTALL=	wine-[0-9]* wine-devel-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-[0-9]* wine-devel-[0-9]*
 
 USES=		cpe
 CPE_VENDOR=	winehq
