@@ -12,4 +12,4 @@ Twig is a modern template engine for PHP.
              the developer to define its own custom tags and filters, and
              create its own DSL.
 
-WWW: http://twig.sensiolabs.org/
+WWW: https://twig.symfony.com
