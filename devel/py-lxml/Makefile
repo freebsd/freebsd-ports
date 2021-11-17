@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/doc/licenses/BSD.txt
 
 USES=		compiler cpe gnome python:3.6+ uniquefiles:dirs
 USE_GNOME=	libxml2 libxslt
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib
 
@@ -25,7 +25,11 @@ OPTIONS_DEFINE=	DOCS
 
 # needed for test to work
 PYDISTUTILS_BUILD_TARGET=	build_ext
-PYDISTUTILS_BUILDARGS=	--inplace
+PYDISTUTILS_BUILDARGS=		--inplace
+
+# force regeneration of cython files
+post-extract:
+	@${FIND} ${WRKSRC} -name "*.c" -delete
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \

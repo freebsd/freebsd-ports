@@ -7,3 +7,4 @@ lxml is a Python binding for libxml2 and libxslt. Its aim:
   * No manual memory management!
 
 WWW: https://lxml.de/
+WWW: https://github.com/lxml/lxml
