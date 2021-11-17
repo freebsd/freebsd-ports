@@ -23,7 +23,7 @@ LDFLAGS+=	$$(libpng-config --L_opts)
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	IMAGEMAGICK MING PSTOEDIT
-OPTIONS_DEFAULT=IMAGEMAGICK PSTOEDIT
+OPTIONS_DEFAULT=IMAGEMAGICK
 MING_DESC=	Enable swf interface
 PSTOEDIT_DESC=	Convert postscript to other formats
 
@@ -46,4 +46,5 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libautotrace.so
+
 .include <bsd.port.mk>
