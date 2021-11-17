@@ -7186,6 +7186,7 @@
     SUBDIR += xfce4-dev-tools
     SUBDIR += xmake
     SUBDIR += xmltooling
+    SUBDIR += xopcodecalc
     SUBDIR += xorg-macros
     SUBDIR += xparam
     SUBDIR += xsd

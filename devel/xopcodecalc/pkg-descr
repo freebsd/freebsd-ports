@@ -1,0 +1,4 @@
+This small program calculates and displays x86 CPU opcodes in
+graphical, easily readable way.  It is based on Qt libraries.
+
+WWW: https://github.com/horsicq/XOpcodeCalc
