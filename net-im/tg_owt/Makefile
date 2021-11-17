@@ -1,10 +1,10 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
 
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20210915
+PORTVERSION=	0.0.20211021
 CATEGORIES=	net-im
 
-MAINTAINER=	henry.hu.sh@gmail.com
+MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Webrtc library used by telegram-desktop
 
 LICENSE=	BSD3CLAUSE
@@ -26,12 +26,12 @@ USES=		cmake pkgconfig xorg
 USE_XORG=	x11 xcomposite xdamage xrender xrandr
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	575fb17
+GH_TAGNAME=	d578c76
 # libyuv cloned from https://chromium.googlesource.com/libyuv/libyuv
 GH_TUPLE=	webmproject:libvpx:5b63f0f:libvpx/src/third_party/libvpx/source/libvpx \
 		HenryHu:libyuv:ad89006:libyuv/src/third_party/libyuv
 
-CMAKE_OFF=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_SHARED_LIBS TG_OWT_BUILD_AUDIO_BACKENDS
 
 # Disable DCHECKs, otherwise video calls will crash.
 CXXFLAGS+=	-DNDEBUG
