@@ -1,4 +1,5 @@
 bin/xocalc
+share/applications/xocalc.desktop
 share/icons/hicolor/16x16/apps/xocalc.png
 share/icons/hicolor/20x20/apps/xocalc.png
 share/icons/hicolor/24x24/apps/xocalc.png

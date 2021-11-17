@@ -28,6 +28,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	cd ${INSTALL_WRKSRC}/DEBIAN && ${COPYTREE_SHARE} hicolor \
 		${STAGEDIR}${PREFIX}/share/icons
+	${SED} -e 's,#VERSION#,${PORTVERSION},' \
+		${WRKSRC}/DEBIAN/xocalc.desktop \
+		> ${STAGEDIR}${DESKTOPDIR}/xocalc.desktop
 
 .include <bsd.port.mk>
 
