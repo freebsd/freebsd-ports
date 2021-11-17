@@ -13,7 +13,7 @@ COMMENT=	Documentation for the Python programming language
 
 PORTSCOUT=	ignore:1
 
-USES=		python:env tar:bzip2
+USES=		python:3.6-3.10,env tar:bzip2
 
 NO_ARCH=	yes
 NO_BUILD=	yes
