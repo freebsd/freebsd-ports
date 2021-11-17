@@ -1,8 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	pdfarranger
-DISTVERSION=	1.7.1
-PORTREVISION=	2
+DISTVERSION=	1.8.0
 CATEGORIES=	print
 
 MAINTAINER=	Alexander88207@protonmail.com

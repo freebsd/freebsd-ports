@@ -38,6 +38,8 @@ share/icons/hicolor/256x256/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/32x32/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/48x48/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
+share/icons/hicolor/symbolic/apps/com.github.jeromerobert.pdfarranger-symbolic.svg
+share/locale/ca/LC_MESSAGES/pdfarranger.mo
 share/locale/ca@valencia/LC_MESSAGES/pdfarranger.mo
 share/locale/cs/LC_MESSAGES/pdfarranger.mo
 share/locale/de/LC_MESSAGES/pdfarranger.mo
@@ -48,6 +50,7 @@ share/locale/fr/LC_MESSAGES/pdfarranger.mo
 share/locale/hr/LC_MESSAGES/pdfarranger.mo
 share/locale/hu/LC_MESSAGES/pdfarranger.mo
 share/locale/id/LC_MESSAGES/pdfarranger.mo
+share/locale/is/LC_MESSAGES/pdfarranger.mo
 share/locale/it/LC_MESSAGES/pdfarranger.mo
 share/locale/ja/LC_MESSAGES/pdfarranger.mo
 share/locale/nl/LC_MESSAGES/pdfarranger.mo
