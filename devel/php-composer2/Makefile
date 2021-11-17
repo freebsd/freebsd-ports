@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	composer
-DISTVERSION=	2.1.10
+DISTVERSION=	2.1.12
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -29,6 +29,12 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/composer \
 		bin/composer.phar
+
+OPTIONS_DEFINE=		CURL
+OPTIONS_DEFAULT=	CURL
+
+CURL_DESC=	Install the cURL extension for faster downloads
+CURL_USE=	PHP=curl
 
 do-extract:
 	${MKDIR} ${WRKSRC}/
