@@ -2,7 +2,7 @@
 
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.8
+DISTVERSION=	1.13.0
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -20,7 +20,7 @@ RUN_DEPENDS=	git:devel/git \
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
-GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
+GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		FiloSottile:edwards25519:v1.0.0-rc.1:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		blang:semver:v4.0.0:blang_semver_v4/vendor/github.com/blang/semver \
@@ -30,18 +30,18 @@ GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
 		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		fatih:color:v1.12.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:8a1682060722:godbus_dbus/vendor/github.com/godbus/dbus \
 		gokyle:twofactor:v1.0.1:gokyle_twofactor/vendor/github.com/gokyle/twofactor \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:e898025ed96a:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:2bc19b11175f:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:ceb1ce70b4fa:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:63515b42dcdf:golang_sys/vendor/golang.org/x/sys \
-		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
+		golang:sys:0c823b97ae02:golang_sys/vendor/golang.org/x/sys \
+		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v33.0.0:google_go_github_v33/vendor/github.com/google/go-github/v33 \
@@ -55,8 +55,8 @@ GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		martinhoefling:goxkcdpwgen:7dc3d102eca3:martinhoefling_goxkcdpwgen/vendor/github.com/martinhoefling/goxkcdpwgen \
-		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-colorable:v0.1.11:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-ps:v1.0.0:mitchellh_go_ps/vendor/github.com/mitchellh/go-ps \
 		muesli:crunchy:v0.4.0:muesli_crunchy/vendor/github.com/muesli/crunchy \
