@@ -1,3 +1,3 @@
-TIMESTAMP = 1631541633
-SHA256 (syslog-ng-3.34.1.tar.gz) = cece39ec1c68c88d493705e0a528b83d038da384e89d4838393ccc75f62a2d4c
-SIZE (syslog-ng-3.34.1.tar.gz) = 5903489
+TIMESTAMP = 1636989174
+SHA256 (syslog-ng-3.35.1.tar.gz) = 1d0238b06b3e5987c859e5b529ecee738f75bacff04b149398b1fe8cbb121e53
+SIZE (syslog-ng-3.35.1.tar.gz) = 5901321

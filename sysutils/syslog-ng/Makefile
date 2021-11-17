@@ -1,7 +1,7 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.34.1
+DISTVERSION=	3.35.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
