@@ -1,7 +1,6 @@
 PORTNAME=	muse-sequencer
-DISTVERSIONPREFIX=	muse_
-DISTVERSION=	3_1_1
-PORTREVISION=	3
+DISTVERSION=	4.0.0
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +25,9 @@ LIB_DEPENDS=	libinstpatch-1.0.so:audio/libinstpatch libjack.so:audio/jack \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gnome localbase:ldflags qt:5 pkgconfig python shared-mime-info shebangfix
 USE_GITHUB=	yes
+GH_ACCOUNT=	muse-sequencer
 GH_PROJECT=	muse
+GH_TAGNAME=	4.0.0
 SHEBANG_FILES=	share/scripts/* utils/muse-find-unused-wavs utils/muse-song-convert.py
 USE_QT=		core gui svg xml widgets buildtools_build linguisttools_build qmake_build uitools_build
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
@@ -34,10 +35,10 @@ USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_ALSA ENABLE_DSSI
 
-WRKSRC_SUBDIR=	muse3
+WRKSRC_SUBDIR=	src
 
-DATADIR=	${PREFIX}/share/muse-3.1
-DOCSDIR=	${PREFIX}/share/doc/muse-3.1
+DATADIR=	${PREFIX}/share/muse-4.0
+DOCSDIR=	${PREFIX}/share/doc/muse-4.0
 
 OPTIONS_DEFINE=		FLUIDSYNTH DOCS
 OPTIONS_DEFAULT=	FLUIDSYNTH
