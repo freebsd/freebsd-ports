@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.14.13
+PORTVERSION=	2.15.0
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,6 +18,7 @@ RUN_DEPENDS=	CLDR>0:textproc/CLDR	\
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}hunspell>0:textproc/py-hunspell@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}pycountry>0:textproc/py-pycountry@${PY_FLAVOR}	\
 		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD			\
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 TEST_DEPENDS=	${LOCALBASE}/share/hunspell/cs_CZ.dic:textproc/cs-hunspell	\
