@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v
 DISTNAME=	tdesktop-${DISTVERSION}-full
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	henry.hu.sh@gmail.com
+MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Telegram Desktop messaging app
 
 LICENSE=	GPLv3
@@ -61,17 +61,16 @@ CMAKE_ARGS=	-DDESKTOP_APP_SPECIAL_TARGET="" -DTDESKTOP_LAUNCHER_BASENAME="telegr
 		-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-Ddisable_autoupdate=1
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
-		TDESKTOP_DISABLE_REGISTER_CUSTOM_SCHEME TDESKTOP_DISABLE_DESKTOP_FILE_GENERATION \
 		DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
-CMAKE_OFF=	DESKTOP_APP_USE_PACKAGED_RLOTTIE DESKTOP_APP_USE_PACKAGED_VARIANT \
-		DESKTOP_APP_USE_GLIBC_WRAPS TDESKTOP_USE_PACKAGED_TGVOIP \
-		DESKTOP_APP_USE_PACKAGED_FONTS
+CMAKE_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS
 
 # Disable DCHECKs, otherwise video calls will crash.
 CXXFLAGS+=	-DNDEBUG
 
 # see Bugzilla #245452 for details
 NO_CCACHE=	yes
+
+INSTALLS_ICONS=	yes
 
 # Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
@@ -96,9 +95,11 @@ TELEGRAM_API_ID=	601761
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} <= 100
-post-patch:
-	@${REINPLACE_CMD} -e '/-fstack-clash-protection/d' ${WRKSRC}/cmake/options_linux.cmake
+.if ${COMPILER_VERSION} < 120
+LLVM_VER=	12
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CC=		${LOCALBASE}/bin/clang${LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif
 
 .include <bsd.port.post.mk>
