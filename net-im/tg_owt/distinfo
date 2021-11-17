@@ -1,6 +1,6 @@
-TIMESTAMP = 1626645454
-SHA256 (desktop-app-tg_owt-0.0.20210718-91d836d_GH0.tar.gz) = b2fea9bd360b973eee30a2f8c2fdecdae9b29c9f9733d2750d59233d7133bc71
-SIZE (desktop-app-tg_owt-0.0.20210718-91d836d_GH0.tar.gz) = 16259103
+TIMESTAMP = 1634830083
+SHA256 (desktop-app-tg_owt-0.0.20211021-d578c76_GH0.tar.gz) = 6bd6f32979ceba9b6e6338331d16e772d1b194db5bf1993de894f674b39a1345
+SIZE (desktop-app-tg_owt-0.0.20211021-d578c76_GH0.tar.gz) = 16073998
 SHA256 (webmproject-libvpx-5b63f0f_GH0.tar.gz) = 4fdacb6ee107b504cb21b072784c649be9af6b6d73103906a0d9ea5f3000de74
 SIZE (webmproject-libvpx-5b63f0f_GH0.tar.gz) = 5333441
 SHA256 (HenryHu-libyuv-ad89006_GH0.tar.gz) = 96fc87a2c7051d289a9dcf31c4f8100e341dda3b5499e4bf6d82369f5d18416e

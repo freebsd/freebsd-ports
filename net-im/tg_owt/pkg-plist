@@ -324,36 +324,6 @@ include/tg_owt/base/android/task_scheduler/task_runner_android.h
 include/tg_owt/base/android/timezone_utils.h
 include/tg_owt/base/android/unguessable_token_android.h
 include/tg_owt/base/compiler_specific.h
-include/tg_owt/base/third_party/libevent/aix/config.h
-include/tg_owt/base/third_party/libevent/aix/event-config.h
-include/tg_owt/base/third_party/libevent/android/config.h
-include/tg_owt/base/third_party/libevent/android/event-config.h
-include/tg_owt/base/third_party/libevent/compat/sys/_libevent_time.h
-include/tg_owt/base/third_party/libevent/compat/sys/queue.h
-include/tg_owt/base/third_party/libevent/evdns.h
-include/tg_owt/base/third_party/libevent/event-config.h
-include/tg_owt/base/third_party/libevent/event-internal.h
-include/tg_owt/base/third_party/libevent/event.h
-include/tg_owt/base/third_party/libevent/evhttp.h
-include/tg_owt/base/third_party/libevent/evrpc-internal.h
-include/tg_owt/base/third_party/libevent/evrpc.h
-include/tg_owt/base/third_party/libevent/evsignal.h
-include/tg_owt/base/third_party/libevent/evutil.h
-include/tg_owt/base/third_party/libevent/freebsd/config.h
-include/tg_owt/base/third_party/libevent/freebsd/event-config.h
-include/tg_owt/base/third_party/libevent/http-internal.h
-include/tg_owt/base/third_party/libevent/linux/config.h
-include/tg_owt/base/third_party/libevent/linux/event-config.h
-include/tg_owt/base/third_party/libevent/log.h
-include/tg_owt/base/third_party/libevent/mac/config.h
-include/tg_owt/base/third_party/libevent/mac/event-config.h
-include/tg_owt/base/third_party/libevent/min_heap.h
-include/tg_owt/base/third_party/libevent/nacl_nonsfi/config.h
-include/tg_owt/base/third_party/libevent/nacl_nonsfi/event-config.h
-include/tg_owt/base/third_party/libevent/solaris/config.h
-include/tg_owt/base/third_party/libevent/solaris/event-config.h
-include/tg_owt/base/third_party/libevent/strlcpy-internal.h
-include/tg_owt/base/third_party/libevent/test/regress.h
 include/tg_owt/build/build_config.h
 include/tg_owt/call/adaptation/adaptation_constraint.h
 include/tg_owt/call/adaptation/broadcast_resource_listener.h
@@ -3112,8 +3082,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/base/android/junit/src/org/chromium/base/task
 @dir include/tg_owt/base/android/junit/src/org/chromium/base/util
 @dir include/tg_owt/base/android/proguard
-@dir include/tg_owt/base/third_party/libevent/m4
-@dir include/tg_owt/base/third_party/libevent/sample
 @dir include/tg_owt/modules/audio_coding/codecs/g711/test
 @dir include/tg_owt/modules/audio_coding/codecs/g722/test
 @dir include/tg_owt/modules/audio_coding/codecs/ilbc/test
