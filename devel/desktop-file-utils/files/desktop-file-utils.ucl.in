@@ -10,7 +10,7 @@ if st then
 end
 local res = pkg.readdir(mimedir)
 if #res == 0 then
-	os.remove(mimrdir)
+	os.remove(mimedir)
 end
 EOS
 }
