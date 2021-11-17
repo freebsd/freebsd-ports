@@ -1,4 +1,4 @@
---- ruby/Gemfile.orig	2021-10-21 21:58:10 UTC
+--- ruby/Gemfile.orig	2021-11-08 11:56:42 UTC
 +++ ruby/Gemfile
 @@ -19,15 +19,5 @@ gem 'gitlab-labkit', '~> 0.21.1'
  # This version needs to be in sync with GitLab CE/EE

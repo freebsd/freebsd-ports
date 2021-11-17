@@ -5,7 +5,7 @@
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
 -      s.add_runtime_dependency(%q<google-protobuf>.freeze, ["~> 3.12"])
-+      s.add_runtime_dependency(%q<google-protobuf>.freeze, ["~> 3.14.0"])
++      s.add_runtime_dependency(%q<google-protobuf>.freeze, ["~> 3.17.3"])
        s.add_runtime_dependency(%q<googleapis-common-protos-types>.freeze, ["~> 1.0"])
        s.add_development_dependency(%q<bundler>.freeze, [">= 1.9"])
        s.add_development_dependency(%q<facter>.freeze, ["~> 2.4"])

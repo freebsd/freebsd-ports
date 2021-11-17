@@ -225,7 +225,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
 	rubygem-gitaly>=14.3.0.pre.rc2<14.4.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2,1<0.0.3,1:net/rubygem-kas-grpc \
-	rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
+	rubygem-grpc130>=1.30.2<2:net/rubygem-grpc130 \
 	rubygem-google-protobuf317>=3.17.1<3.18:devel/rubygem-google-protobuf317 \
 	rubygem-toml-rb>=2.0.1<3:www/rubygem-toml-rb \
 	rubygem-flipper021>=0.21.0<0.22:devel/rubygem-flipper021 \
