@@ -116,6 +116,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/scripts/pre_dedicated.scr.example
 %%DATADIR%%/scripts/pre_server.scr.example
 %%DATADIR%%/scripts/readme.txt
+share/applications/openttd.desktop
 share/icons/hicolor/16x16/apps/openttd.png
 share/icons/hicolor/32x32/apps/openttd.png
 share/icons/hicolor/48x48/apps/openttd.png

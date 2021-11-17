@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	openttd
-DISTVERSION=	12.0
-PORTREVISION=	1
+DISTVERSION=	12.1
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -22,9 +21,6 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_BINDIR:PATH=bin \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 SUB_FILES=	pkg-message
-
-DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
-		"Game;Simulation;StrategyGame;" false
 
 OPTIONS_DEFINE=	DOCS FLUIDSYNTH SAVE_PASSWORDS SERVER
 SERVER_PREVENTS=	FLUIDSYNTH
