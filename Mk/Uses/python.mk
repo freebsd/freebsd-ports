@@ -515,12 +515,18 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 # - it uses USE_PYTHON=distutils
 #
 
+.if ${PYTHON_REL} >= 31100
+_CYTHON_DEP=	cython-${PYTHON_VER}:lang/cython-devel@${PY_FLAVOR}
+.else
+_CYTHON_DEP=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+.endif
+
 .if defined(_PYTHON_FEATURE_CYTHON)
-BUILD_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+BUILD_DEPENDS+=	${_CYTHON_DEP}
 .endif
 
 .if defined(_PYTHON_FEATURE_CYTHON_RUN)
-RUN_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+RUN_DEPENDS+=	${_CYTHON_DEP}
 .endif
 
 .if defined(_PYTHON_FEATURE_CONCURRENT)

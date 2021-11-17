@@ -1,20 +1,19 @@
-# Created by: Wen Heping <wenhping@gmail.com>
-
 PORTNAME=	cython
-PORTVERSION=	0.29.24
+DISTVERSION=	3.0.0a9
 CATEGORIES=	lang python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Cython-${PORTVERSION}
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Compiler for Writing C Extensions for the Python Language
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c11 python:2.7-3.10
+USES=		compiler:c11 python:2.7+
 USE_PYTHON=	allflavors autoplist concurrent distutils
+USE_GITHUB=	yes
+GH_TAGNAME=	2b1e743
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython -name '*.so' -exec ${STRIP_CMD} {} +
