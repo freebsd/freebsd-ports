@@ -1,7 +1,7 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
 
 PORTNAME=	vagrant
-PORTVERSION=	2.2.18
+PORTVERSION=	2.2.19
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-excon>=0.73<1.0:devel/rubygem-excon \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=1.8,2<2,2:devel/rubygem-i18n \
-		rubygem-listen>=3.5:devel/rubygem-listen \
+		rubygem-listen>=3.6:devel/rubygem-listen \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
 		rubygem-net-scp>=3.0.0:security/rubygem-net-scp \
 		rubygem-net-sftp>=3.0:security/rubygem-net-sftp \

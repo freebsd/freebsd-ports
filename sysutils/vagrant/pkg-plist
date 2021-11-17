@@ -598,6 +598,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/provider_install_virtualbox.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/rdp.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/smb.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/version.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/host.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/scripts/install_virtualbox.sh
