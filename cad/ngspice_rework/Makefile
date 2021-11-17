@@ -1,8 +1,7 @@
 # Created by: AMAKAWA Shuhei <amakawa@jp.FreeBSD.org>
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	32
-PORTREVISION=	2
+PORTVERSION=	35
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -14,15 +13,13 @@ LICENSE=	BSD3CLAUSE BSD4CLAUSE LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_aarch64=	fails to link: missing sbrk
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 FLAVORS=	x11 shlib
 shlib_PKGNAMESUFFIX=		-shlib
-shlib_CONFLICTS_INSTALL=	ngspice_rework-2*
 shlib_PLIST=			${MASTERDIR}/pkg-plist-shlib
-x11_CONFLICTS_INSTALL=		ngspice_rework-shlib-2*
 
 USES=		compiler:c11 gmake libtool ncurses readline autoreconf pkgconfig
 
