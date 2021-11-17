@@ -1377,16 +1377,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .sinclude "${odir}/Mk/bsd.overlay.mk"
 .endfor
 
-.if defined(USE_XORG) && (!defined(USES) || !${USES:Mxorg})
-DEV_WARNING+=		"Using USE_XORG alone is deprecated, please use USES=xorg"
-USES+=	xorg
-.endif
-
-.if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp*} ))
-DEV_WARNING+=		"Using USE_PHP alone is deprecated, please use USES=php"
-USES+=	php
-.endif
-
 .if defined(USE_JAVA)
 .include "${PORTSDIR}/Mk/bsd.java.mk"
 .endif
@@ -1414,26 +1404,6 @@ USES+=	apache:${USE_APACHE:C/2([0-9])/2.\1/g}
 
 .if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
-.endif
-
-.if (defined(USE_GNOME) || defined(INSTALLS_ICONS)) && empty(USES:Mgnome)
-DEV_WARNING+=	"Using USE_GNOME alone is deprecated, please add USES=gnome."
-USES+=	gnome
-.endif
-
-.if defined(USE_MATE) && empty(USES:Mmate)
-DEV_WARNING+=	"Using USE_MATE alone is deprecated, please add USES=mate."
-USES+=	mate
-.endif
-
-.if defined(USE_GL) && (!defined(USES) || !${USES:Mgl})
-DEV_WARNING+=	"Using USE_GL alone is deprecated, please add USES=gl."
-USES+=	gl
-.endif
-
-.if defined(USE_SDL) && (!defined(USES) || !${USES:Msdl})
-DEV_WARNING+=	"Using USE_SDL alone is deprecated, please add USES=sdl."
-USES+=	sdl
 .endif
 
 .if defined(USE_MYSQL)
@@ -1970,11 +1940,6 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .sinclude "${odir}/Mk/bsd.overlay.mk"
 .endfor
 
-.if defined(USE_XORG) && (!defined(USES) || ( defined(USES) && !${USES:Mxorg} ))
-DEV_WARNING+=	"Using USE_XORG alone is deprecated, please use USES=xorg"
-_USES_POST+=	xorg
-.endif
-
 .if defined(USE_GSTREAMER1)
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
@@ -1985,11 +1950,6 @@ _USES_POST+=	xorg
 
 .if defined(USE_OCAML)
 .include "${PORTSDIR}/Mk/bsd.ocaml.mk"
-.endif
-
-.if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp*} ))
-DEV_WARNING+=		"Using USE_PHP alone is deprecated, please use USES=php"
-_USES_POST+=	php
 .endif
 
 .if defined(USE_WX) || defined(USE_WX_NOT)

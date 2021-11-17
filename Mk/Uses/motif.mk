@@ -26,10 +26,7 @@ MOTIFLIB?=	-L${LOCALBASE}/lib -lXm
 MAKE_ENV+=	MOTIFLIB="${MOTIFLIB}"
 
 # We only need to include xorg.mk if we want USE_XORG modules
-# USES+=xorg does not provide any functionality, it just silences an error
-# message about USES=xorg not being set
 .if defined(USE_XORG) && !empty(USE_XORG)
-USES+=		xorg
 .include "${USESDIR}/xorg.mk"
 .endif
 
