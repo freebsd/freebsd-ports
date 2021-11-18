@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-09-01 00:28:55 UTC
+--- configure.ac.orig	2021-11-18 02:08:39 UTC
 +++ configure.ac
-@@ -85,7 +85,6 @@ if test "$debug" = "yes"; then
+@@ -89,7 +89,6 @@ if test "$debug" = "yes"; then
  else
    AC_SUBST( debug, [no] )
    AC_SUBST( cppflag, [] )
@@ -8,7 +8,7 @@
    AC_SUBST( object_path, [Release] )
  fi
  AC_MSG_RESULT($debug)
-@@ -100,7 +99,7 @@ fi
+@@ -104,7 +103,7 @@ fi
  CPPFLAGS="$CPPFLAGS $cppflag"
  
  # For debugging and optimization ... overwrite default because it has both -g and -O2
@@ -17,10 +17,10 @@
  
  # Check compiler and use -Wall if gnu.
  if [test $GXX = "yes" ;] then
-@@ -134,27 +133,27 @@ api="$api -D__UNIX_JACK__"
-   AC_CHECK_LIB(jack, jack_client_open, , AC_MSG_ERROR(JACK support requires the jack library!))])
+@@ -154,27 +153,27 @@ api="$api -D__UNIX_JACK__"
+       AC_CHECK_LIB(pthread, pthread_create, , AC_MSG_ERROR(RtAudio requires the pthread library!))])
+     ;;
  
-   case $host in
 -    *-*-linux*)
 +    *-*-linux*|*-*-freebsd*)
      # Look for ALSA flag

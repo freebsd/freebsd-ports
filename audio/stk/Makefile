@@ -1,8 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	stk
-PORTVERSION=	4.6.1
-PORTREVISION=	2
+PORTVERSION=	4.6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ccrma.stanford.edu/software/stk/release/
 
@@ -16,10 +15,15 @@ LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		autoreconf compiler:c++11-lang dos2unix gmake localbase pkgconfig
 USE_LDCONFIG=	yes
+
+DOS2UNIX_GLOB=	*.cpp *.h
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jack --with-oss
-DOS2UNIX_GLOB=	*.cpp *.h
+
 MAKE_ARGS=	RAWWAVES=${DATADIR}/rawwaves/
+
+LDFLAGS+=	-pthread
 
 post-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} rawwaves ${STAGEDIR}${DATADIR}

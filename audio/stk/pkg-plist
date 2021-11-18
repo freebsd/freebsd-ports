@@ -102,7 +102,7 @@ include/stk/Whistle.h
 include/stk/Wurley.h
 include/stk/WvIn.h
 include/stk/WvOut.h
-lib/libstk-4.6.1.so
+lib/libstk-4.6.2.so
 lib/libstk.so
 %%DATADIR%%/rawwaves/ahh.raw
 %%DATADIR%%/rawwaves/bassdrum.raw
