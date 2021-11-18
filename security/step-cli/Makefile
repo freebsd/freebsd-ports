@@ -1,6 +1,6 @@
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.17.7
+DISTVERSION=	0.18.0
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -88,7 +88,7 @@ GH_TUPLE=	\
 		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:ed5796bab164:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:611d5d643895:golang_sys/vendor/golang.org/x/sys \
 		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
@@ -114,13 +114,11 @@ GH_TUPLE=	\
 		jhump:protoreflect:v1.8.2:jhump_protoreflect/vendor/github.com/jhump/protoreflect \
 		jonboulle:clockwork:v0.2.2:jonboulle_clockwork/vendor/github.com/jonboulle/clockwork \
 		json-iterator:go:v1.1.11:json_iterator_go/vendor/github.com/json-iterator/go \
-		juju:ansiterm:720a0952cc2a:juju_ansiterm/vendor/github.com/juju/ansiterm \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.12.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pty:v1.1.8:kr_pty/vendor/github.com/kr/pty \
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
-		lunixbochs:vtclean:v1.0.0:lunixbochs_vtclean/vendor/github.com/lunixbochs/vtclean \
-		manifoldco:promptui:v0.8.0:manifoldco_promptui/vendor/github.com/manifoldco/promptui \
+		manifoldco:promptui:v0.9.0:manifoldco_promptui/vendor/github.com/manifoldco/promptui \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -154,12 +152,12 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:certificates:v0.17.5:smallstep_certificates/vendor/github.com/smallstep/certificates \
+		smallstep:certificates:v0.18.0:smallstep_certificates/vendor/github.com/smallstep/certificates \
 		smallstep:certinfo:v1.5.2:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
-		smallstep:cli-utils:v0.6.0:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
-		smallstep:crypto:v0.11.0:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:cli-utils:v0.7.0:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
+		smallstep:crypto:v0.13.0:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:linkedca:v0.7.0:smallstep_linkedca/vendor/go.step.sm/linkedca \
-		smallstep:nosql:v0.3.8:smallstep_nosql/vendor/github.com/smallstep/nosql \
+		smallstep:nosql:v0.3.9:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		smallstep:truststore:v0.9.6:smallstep_truststore/vendor/github.com/smallstep/truststore \
 		smallstep:zcrypto:66c2600f6e71:smallstep_zcrypto/vendor/github.com/smallstep/zcrypto \
 		smallstep:zlint:d84eaafe274f:smallstep_zlint/vendor/github.com/smallstep/zlint \
