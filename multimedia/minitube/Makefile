@@ -1,5 +1,5 @@
 PORTNAME=	minitube
-DISTVERSION=	3.9.1
+DISTVERSION=	3.9.2
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +16,8 @@ GH_ACCOUNT=	flaviotordini
 GH_TUPLE=	\
 		flaviotordini:http:68b9cf0:flaviotordini_http/lib/http \
 		flaviotordini:idle:6aa092d:flaviotordini_idle/lib/idle \
-		flaviotordini:js:acf3f87:flaviotordini_js/lib/js \
-		flaviotordini:media:edfcc8c:flaviotordini_media/lib/media \
+		flaviotordini:js:c026465:flaviotordini_js/lib/js \
+		flaviotordini:media:b2f5678:flaviotordini_media/lib/media \
 		flaviotordini:promises:e6e5653:flaviotordini_promises/lib/promises \
 		flaviotordini:updater:17b8f7b:flaviotordini_updater/lib/updater
 
