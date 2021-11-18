@@ -1,7 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -42,7 +41,7 @@ GH_TUPLE=	Arceliar:ironwood:6ad55cae5031:arceliar_ironwood/vendor/github.com/Arc
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		codeclysm:extract:v2.2.0:codeclysm_extract/vendor/github.com/codeclysm/extract \
-		containerd:containerd:v1.5.5:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:containerd:v1.5.7:containerd_containerd/vendor/github.com/containerd/containerd \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		davidlazar:go-crypto:dcfb0a7ac018:davidlazar_go_crypto/vendor/github.com/davidlazar/go-crypto \
 		docker:distribution:v2.7.1:docker_distribution/vendor/github.com/docker/distribution \
@@ -59,13 +58,14 @@ GH_TUPLE=	Arceliar:ironwood:6ad55cae5031:arceliar_ironwood/vendor/github.com/Arc
 		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:6944b10bf410:golang_image/vendor/golang.org/x/image \
 		golang:mobile:34ab1303b554:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
-		golang:net:c6fcb2dbf985:golang_net/vendor/golang.org/x/net \
+		golang:net:4e4d966f7476:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:39ccf1dd6fa6:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
 		golang:text:5c7c50ebbd4f:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.1.2:golang_tools/vendor/golang.org/x/tools \
@@ -148,13 +148,13 @@ GH_TUPLE=	Arceliar:ironwood:6ad55cae5031:arceliar_ironwood/vendor/github.com/Arc
 		marten-seemann:qtls-go1-15:v0.1.5:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
 		marten-seemann:qtls-go1-16:v0.1.4:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
 		marten-seemann:qtls-go1-17:v0.1.0-rc.1:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
-		matrix-org:dugong:8379174dca81:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
+		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:b0d1ba599a6d:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:f9416ac1a723:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:15a64d244aa2:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:naffka:14ff508b58e0:matrix_org_naffka/vendor/github.com/matrix-org/naffka \
-		matrix-org:pinecone:e692df1a5c42:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:pinecone:febf3501584d:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.8:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -196,8 +196,8 @@ GH_TUPLE=	Arceliar:ironwood:6ad55cae5031:arceliar_ironwood/vendor/github.com/Arc
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
-		tidwall:gjson:v1.8.1:tidwall_gjson/vendor/github.com/tidwall/gjson \
-		tidwall:match:v1.0.3:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:gjson:v1.9.3:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.1.1:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.2.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tidwall:sjson:v1.1.7:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
