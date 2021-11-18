@@ -2,8 +2,8 @@ PORTNAME=	lander
 PORTVERSION=	0.6.6
 PORTREVISION=	21
 CATEGORIES=	games
-MASTER_SITES=	http://www.nickg.me.uk/files/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://www.nickg.me.uk/files/ \
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone
@@ -36,9 +36,6 @@ DESKTOP_ENTRIES="Lunar Lander" \
 		false
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-R$$found_dir||g' ${WRKSRC}/configure
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
