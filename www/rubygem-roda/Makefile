@@ -5,7 +5,7 @@ PORTVERSION=	3.47.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Routing tree web toolkit
 
 LICENSE=	MIT
