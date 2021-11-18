@@ -282,6 +282,7 @@ include/thrift/lib/cpp2/security/extensions/ThriftParametersServerExtension.h
 include/thrift/lib/cpp2/security/extensions/Types.h
 include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
 include/thrift/lib/cpp2/server/BaseThriftServer.h
+include/thrift/lib/cpp2/server/ControlServerInterface.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
 include/thrift/lib/cpp2/server/Cpp2Worker.h
@@ -309,6 +310,7 @@ include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/test/DebugHasher.h
 include/thrift/lib/cpp2/test/IndirectionWrapperTest.h
 include/thrift/lib/cpp2/test/Matcher.h
+include/thrift/lib/cpp2/test/Matcher-inl.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
 include/thrift/lib/cpp2/test/ProtoBufStructs-inl.h
 include/thrift/lib/cpp2/test/Structs.h
@@ -385,6 +387,7 @@ include/thrift/lib/cpp2/type/ThriftOp.h
 include/thrift/lib/cpp2/type/ThriftType.h
 include/thrift/lib/cpp2/type/Traits.h
 include/thrift/lib/cpp2/type/UniversalName.h
+include/thrift/lib/cpp2/type/detail/ThriftOp.h
 include/thrift/lib/cpp2/type/detail/Traits.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
