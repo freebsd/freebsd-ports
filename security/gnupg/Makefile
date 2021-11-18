@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Complete and free PGP implementation
 
 LICENSE=	GPLv3 LGPL3

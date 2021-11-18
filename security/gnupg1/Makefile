@@ -5,7 +5,7 @@ CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	The GNU Privacy Guard (minimalist "classic" version)
 
 LICENSE=	GPLv3+
