@@ -1,6 +1,6 @@
-%%NOMINORVERSION%%lib/libwebsh%%TCL_DVER%%.so.1.0
-lib/libwebsh%%TCL_DVER%%.so.1
-lib/libwebsh%%TCL_DVER%%.so
+%%NOMINORVERSION%%lib/libwebsh%%LIBSUF%%.so.1.0
+lib/libwebsh%%LIBSUF%%.so.1
+lib/libwebsh%%LIBSUF%%.so
 lib/websh/pkgIndex.tcl
 lib/websh/htmlhandler.ws3
 lib/websh/otherhandler.ws3
