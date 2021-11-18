@@ -1,0 +1,11 @@
+Don't try run non-existing target during testing
+--- Makefile.am.orig	2021-08-21 17:47:39 UTC
++++ Makefile.am
+@@ -89,7 +89,6 @@ fuzz-coverage: clean clean-lcov
+ 	@echo "You can now view the coverage report with 'xdg-open lcov/index.html'"
+ 
+ check-local:
+-	$(AM_V_at)$(MAKE) -s syntax-check >/dev/null
+ 	$(AM_V_at)$(srcdir)/contrib/check_options $(srcdir)/docs/wget2.md $(builddir)/src/wget2$(EXEEXT)
+ 
+ # ppl often forget to run ldconfig after an install, so let's do it here

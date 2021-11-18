@@ -1,0 +1,12 @@
+Fix openssl library name
+--- configure.ac.orig	2021-09-12 11:12:41 UTC
++++ configure.ac
+@@ -503,7 +502,7 @@ AS_IF([test "$with_ssl" = "openssl" || (test "$with_ss
+     CFLAGS="$OPENSSL_CFLAGS $CFLAGS"
+     AC_DEFINE([WITH_OPENSSL], [1], [Use OpenSSL])
+   ], [
+-    AC_SEARCH_LIBS(SSL_CTX_new, openssl,
++    AC_SEARCH_LIBS(SSL_CTX_new, ssl,
+       [with_openssl=yes; AC_DEFINE([WITH_OPENSSL], [1], [Use OpenSSL])],
+       [AC_MSG_WARN(*** OpenSSL was not found.)
+     ])

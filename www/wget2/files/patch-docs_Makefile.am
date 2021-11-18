@@ -1,0 +1,12 @@
+Don't build the info page which is not installed anyway
+--- docs/Makefile.am.orig	2021-08-21 17:47:39 UTC
++++ docs/Makefile.am
+@@ -49,8 +49,6 @@ $(man1_MANS): wget2.stamp
+ wget2.stamp:
+ 	mkdir -p $(builddir)/man/man1
+ 	PANDOC=$(PANDOC) sh $(builddir)/wget2_md2man.sh $(srcdir)/wget2.md $(builddir)/man/man1/wget2.1
+-	$(PANDOC) -s -f markdown -t texinfo -o $(builddir)/wget2.texi $(srcdir)/wget2.md
+-	$(MAKEINFO) --force -o $(builddir)/wget2.info $(builddir)/wget2.texi
+ 	echo > wget2.stamp
+ 
+ DISTCLEANFILES += wget2.texi wget2.info
