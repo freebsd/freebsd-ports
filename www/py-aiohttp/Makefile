@@ -41,7 +41,10 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}idna_ssl>=1.0:dns/py-idna_ssl@${PY_FLAVOR}
 .endif
 
 pre-configure:
-	@${TOUCH} ${WRKSRC}/aiohttp/*.pyx
+.for file in _frozenlist _helpers _http_parser _http_writer _websocket
+	@${RM} ${WRKSRC}/aiohttp/${file}.c
+	@cd ${WRKSRC} && cython-${PYTHON_VER} -3 -o aiohttp/${file}.c aiohttp/${file}.pyx -I aiohttp
+.endfor
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/aiohttp/*.so
