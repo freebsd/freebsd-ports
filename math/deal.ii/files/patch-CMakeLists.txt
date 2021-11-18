@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-11-18 21:53:45 UTC
++++ CMakeLists.txt
+@@ -77,7 +77,7 @@ IF(EXISTS ${CMAKE_SOURCE_DIR}/doc/CMakeLists.txt)
+ ENDIF()
+ 
+ IF(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
+-  SET(DEAL_II_HAVE_TESTS_DIRECTORY TRUE)
++  SET(DEAL_II_HAVE_TESTS_DIRECTORY ${FREEBSD_ENABLE_TESTS})
+ ENDIF()
+ 
+ #
