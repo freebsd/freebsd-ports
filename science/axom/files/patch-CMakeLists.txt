@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2020-10-08 19:49:25 UTC
+--- CMakeLists.txt.orig	2021-11-03 19:31:10 UTC
 +++ CMakeLists.txt
-@@ -88,7 +88,9 @@ include(cmake/AxomVersion.cmake)
- add_subdirectory(axom)
+@@ -122,7 +122,9 @@ if(AXOM_ENABLE_TOOLS)
+ endif()
  
- add_subdirectory(tools)
+ # Using Axom install examples
 +if (FREEBSD_ENABLE_EXAMPLES)
  add_subdirectory(examples)
 +endif()
  
- if (AXOM_ENABLE_DOCS)
-   if (SPHINX_FOUND)
+ if(AXOM_ENABLE_DOCS)
+     if(SPHINX_FOUND)

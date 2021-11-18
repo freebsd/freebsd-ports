@@ -1,7 +1,6 @@
 PORTNAME=	axom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +19,8 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TUPLE=	LLNL:axom_data:517e53e:axom_data/../data \
-		LLNL:blt:7ec2cb8:blt/cmake/blt \
+GH_TUPLE=	LLNL:axom_data:b3d8e6f:axom_data/../data \
+		LLNL:blt:ddd5a0c:blt/cmake/blt \
 		LLNL:uberenv:a121a45:uberenv/scripts/uberenv
 
 CMAKE_OFF=	AXOM_ENABLE_DOCS AXOM_ENABLE_EXAMPLES AXOM_ENABLE_TESTS FREEBSD_ENABLE_EXAMPLES
