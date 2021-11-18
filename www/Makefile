@@ -292,6 +292,7 @@
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libevhtp
+    SUBDIR += libhsts
     SUBDIR += libhubbub
     SUBDIR += libjwt
     SUBDIR += libmicrohttpd
