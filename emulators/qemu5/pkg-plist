@@ -12,10 +12,10 @@ bin/qemu-storage-daemon
 %%NO_X86_TARGETS%%bin/qemu-system-aarch64
 %%NO_X86_TARGETS%%bin/qemu-system-alpha
 %%NO_X86_TARGETS%%bin/qemu-system-arm
+%%NO_X86_TARGETS%%bin/qemu-system-avr
 %%NO_X86_TARGETS%%bin/qemu-system-cris
 %%NO_X86_TARGETS%%bin/qemu-system-hppa
 bin/qemu-system-i386
-%%NO_X86_TARGETS%%bin/qemu-system-lm32
 %%NO_X86_TARGETS%%bin/qemu-system-m68k
 %%NO_X86_TARGETS%%bin/qemu-system-microblaze
 %%NO_X86_TARGETS%%bin/qemu-system-microblazeel
@@ -37,7 +37,6 @@ bin/qemu-system-rx
 %%NO_X86_TARGETS%%bin/qemu-system-sparc
 %%NO_X86_TARGETS%%bin/qemu-system-sparc64
 %%NO_X86_TARGETS%%bin/qemu-system-tricore
-%%NO_X86_TARGETS%%bin/qemu-system-unicore32
 bin/qemu-system-x86_64
 %%NO_X86_TARGETS%%bin/qemu-system-xtensa
 %%NO_X86_TARGETS%%bin/qemu-system-xtensaeb
@@ -47,6 +46,7 @@ man/man1/qemu-img.1.gz
 man/man7/qemu-block-drivers.7.gz
 man/man7/qemu-cpu-models.7.gz
 man/man7/qemu-ga-ref.7.gz
+man/man8/qemu-pr-helper.8.gz
 man/man7/qemu-qmp-ref.7.gz
 man/man8/qemu-ga.8.gz
 man/man8/qemu-nbd.8.gz
@@ -85,13 +85,14 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/linuxboot.bin
 %%LINUXBOOT_DMA%%%%DATADIR%%/linuxboot_dma.bin
 %%DATADIR%%/multiboot.bin
+%%DATADIR%%/npcm7xx_bootrom.bin
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
-%%DATADIR%%/opensbi-riscv32-sifive_u-fw_jump.bin
-%%DATADIR%%/opensbi-riscv64-sifive_u-fw_jump.bin
-%%DATADIR%%/opensbi-riscv32-virt-fw_jump.bin
-%%DATADIR%%/opensbi-riscv64-virt-fw_jump.bin
+%%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.bin
+%%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.elf
+%%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
+%%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.elf
 %%DATADIR%%/palcode-clipper
 %%DATADIR%%/petalogix-ml605.dtb
 %%DATADIR%%/pxe-e1000.rom
@@ -100,6 +101,7 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/pxe-rtl8139.rom
 %%DATADIR%%/pxe-pcnet.rom
 %%DATADIR%%/pxe-virtio.rom
+%%DATADIR%%/qboot.rom
 %%DATADIR%%/qemu-nsis.bmp
 %%DATADIR%%/qemu_vga.ndrv
 %%DATADIR%%/s390-ccw.img
@@ -173,5 +175,6 @@ share/applications/qemu.desktop
 %%GTK3%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/hu/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/it/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/sv/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/tr/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/zh_CN/LC_MESSAGES/qemu.mo
