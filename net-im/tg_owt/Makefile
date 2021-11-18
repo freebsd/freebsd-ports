@@ -2,6 +2,7 @@
 
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20211021
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	glebius@FreeBSD.org
@@ -10,9 +11,7 @@ COMMENT=	Webrtc library used by telegram-desktop
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
-		pulseaudio>0:audio/pulseaudio \
-		v4l_compat>0:multimedia/v4l_compat \
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libevent.so:devel/libevent \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libvpx.so:multimedia/libvpx
 
 USES=		cmake pkgconfig xorg
-USE_XORG=	x11 xcomposite xdamage xrender xrandr
+USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
 GH_TAGNAME=	d578c76
