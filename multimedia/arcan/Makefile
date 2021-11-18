@@ -1,11 +1,6 @@
 PORTNAME=	arcan
-DISTVERSION=	0.6.0.1
-PORTREVISION=	6
+DISTVERSION=	0.6.1
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	347240c18313.patch:-p2 # https://github.com/letoram/arcan/pull/229
-PATCHFILES+=	bbdb86c8be1b.patch:-p2 # https://github.com/letoram/arcan/pull/230
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display Server, Multimedia Framework, Game Engine
@@ -16,6 +11,7 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC:H}/data/distr/LICENSE.BSD
 LICENSE_FILE_GPLv2+ =	${WRKSRC:H}/data/distr/LICENSE.GPL
 LICENSE_FILE_LGPL21+ =	${WRKSRC:H}/data/distr/LICENSE.LGPL
 
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri

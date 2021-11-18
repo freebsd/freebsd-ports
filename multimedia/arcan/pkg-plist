@@ -32,15 +32,15 @@ lib/libarcan_a12.so
 lib/libarcan_a12.so.0.1
 lib/libarcan_shmif.a
 lib/libarcan_shmif.so
-lib/libarcan_shmif.so.0.13
+lib/libarcan_shmif.so.0.14
 lib/libarcan_shmif_ext.so
-lib/libarcan_shmif_ext.so.0.13
+lib/libarcan_shmif_ext.so.0.14
 lib/libarcan_shmif_intext.so
-lib/libarcan_shmif_intext.so.0.13
+lib/libarcan_shmif_intext.so.0.14
 lib/libarcan_shmif_server.so
-lib/libarcan_shmif_server.so.0.13
+lib/libarcan_shmif_server.so.0.14
 lib/libarcan_tui.so
-lib/libarcan_tui.so.0.13
+lib/libarcan_tui.so.0.14
 libdata/pkgconfig/arcan-shmif-ext.pc
 libdata/pkgconfig/arcan-shmif-srv.pc
 libdata/pkgconfig/arcan-shmif-tui.pc
@@ -144,6 +144,7 @@ man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/image_tracetag.3.gz
 %%MANPAGES%%man/man3/image_transform_cycle.3.gz
 %%MANPAGES%%man/man3/input_capabilities.3.gz
+%%MANPAGES%%man/man3/input_remap_translation.3.gz
 %%MANPAGES%%man/man3/input_samplebase.3.gz
 %%MANPAGES%%man/man3/input_target.3.gz
 %%MANPAGES%%man/man3/inputanalog_filter.3.gz
@@ -170,7 +171,9 @@ man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/move3d_model.3.gz
 %%MANPAGES%%man/man3/move_cursor.3.gz
 %%MANPAGES%%man/man3/move_image.3.gz
+%%MANPAGES%%man/man3/net_discover.3.gz
 %%MANPAGES%%man/man3/net_listen.3.gz
+%%MANPAGES%%man/man3/net_open.3.gz
 %%MANPAGES%%man/man3/new_3dmodel.3.gz
 %%MANPAGES%%man/man3/nudge_cursor.3.gz
 %%MANPAGES%%man/man3/nudge_image.3.gz
@@ -254,6 +257,7 @@ man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/target_flags.3.gz
 %%MANPAGES%%man/man3/target_fonthint.3.gz
 %%MANPAGES%%man/man3/target_framemode.3.gz
+%%MANPAGES%%man/man3/target_geohint.3.gz
 %%MANPAGES%%man/man3/target_graphmode.3.gz
 %%MANPAGES%%man/man3/target_input.3.gz
 %%MANPAGES%%man/man3/target_parent.3.gz
