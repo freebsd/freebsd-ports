@@ -12,12 +12,12 @@ COMMENT=	Set of user-defined functions for the MySQL server
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		mysql
-CFLAGS_aarch64+=-fPIC
-CFLAGS_amd64+=	-fPIC
-CFLAGS_i386+=	-fPIC
-CFLAGS_powerpc+=	-fPIC
-CFLAGS_powerpc64+=	-fPIC
-CFLAGS_powerpc64le+=	-fPIC
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
+CFLAGS_i386=	-fPIC
+CFLAGS_powerpc=	-fPIC
+CFLAGS_powerpc64=	-fPIC
+CFLAGS_powerpc64le=	-fPIC
 
 MODULES=	colwidth confidence_higher confidence_lower correlation \
 		faculty geomean intercept kurtosis longest median noverm \
