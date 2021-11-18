@@ -73,6 +73,11 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
+post-install:
+.if exists(/usr/bin/elfctl)
+	elfctl -e +noaslr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.endif
+
 .include <bsd.port.pre.mk>
 
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
