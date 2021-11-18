@@ -46,6 +46,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-inotify \
 		--without-krb5 \
 		--without-mingw \
+		--without-netapi \
 		--without-opencl \
 		--without-osmesa \
 		--with-oss \
