@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|std::tr1::shared_ptr|std::shared_ptr|g' ${WRKSRC}/src/*.h ${WRKSRC}/src/*.cpp
+	@${REINPLACE_CMD} -e '/tr1\/memory/ d' ${WRKSRC}/src/*.h ${WRKSRC}/src/*.cpp
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
