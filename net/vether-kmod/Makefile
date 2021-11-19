@@ -1,5 +1,5 @@
 PORTNAME=	vether-kmod
-DISTVERSION=	g20190422
+DISTVERSION=	g20211119
 CATEGORIES=	net
 
 MAINTAINER=	henning.matyschok@outlook.com
@@ -13,12 +13,13 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatyschok
 GH_PROJECT=	if_vether
-GH_TAGNAME=	ecc91f865218f2bb85521b285c8f7f81198aa553
+GH_TAGNAME=	8fd5c68a969014fca8cc9e6e90cb686cc2b7685c
+
+WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	${KMODDIR}/if_vether.ko \
 		man/man4/if_vether.4.gz \
 		man/man4/vether.4.gz
-WRKSRC_SUBDIR=	src
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/man/man4
