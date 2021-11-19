@@ -1,0 +1,11 @@
+--- c_src/Makefile.orig	2021-10-01 21:40:32.270930000 +0200
++++ c_src/Makefile	2021-10-01 21:41:13.958044000 +0200
+@@ -86,7 +86,7 @@
+     GCC = $(DEF_CC)
+ endif
+ 
+-IGL_INCLUDE = -I../_deps/eigen -I../_deps/libigl/include
++IGL_INCLUDE = $(shell pkg-config --cflags eigen3) -I../_deps/libigl/include
+ 
+ # libigl only supports 64bits systems
+ ifeq (x"${WORDSIZE}",x"64")

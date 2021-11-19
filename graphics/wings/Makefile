@@ -1,10 +1,8 @@
 # Created by: olgeni@FreeBSD.org
 
 PORTNAME=	wings
-PORTVERSION=	2.2.6.1
-PORTREVISION=	1
+DISTVERSION=	2.2.7p1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -15,24 +13,25 @@ LICENSE_NAME=	Wings 3D License # similar to TclTk license
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		does not build with Erlang 24 (requires erlang-esdl)
-
 BUILD_DEPENDS=	erl:lang/erlang \
-		erlang-esdl>0:devel/erlang-esdl \
 		erlang-cl>0:devel/erlang-cl \
-		erlang-wx>0:lang/erlang-wx
+		erlang-wx>0:lang/erlang-wx \
+		pkg-config:devel/pkgconf
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
-PLIST_SUB=	VERSION="${PORTVERSION}"
+USES=		gl tar:bzip2 eigen:3 gmake
+
+ALL_TARGET=	lang
 MAKE_JOBS_UNSAFE=yes
-USE_GL=		gl glu
 
 SUB_FILES=	${PORTNAME}.sh
 
-USES=		gl tar:bzip2 gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	dgud
+GH_PROJECT=	wings libigl:igl
+GH_TAGNAME=	a41df275e v2.1.0:igl
 
-PORTSCOUT=	limitw:1,even
+USE_GL=		gl glu
 
 DESKTOP_ENTRIES="Wings" \
 		"${COMMENT}" \
@@ -40,6 +39,10 @@ DESKTOP_ENTRIES="Wings" \
 		"${PORTNAME}" \
 		"Graphics;3DGraphics;" \
 		""
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/_deps
+	@${LN} -s ${WRKSRC_igl} ${WRKSRC}/_deps/libigl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,include_lib("wings/,include_lib(",g' \
@@ -54,12 +57,11 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "ebin icons plugins textures shaders patches" \
-		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}
+		${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "src" \
-		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME} "-name *\.erl"
+		${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME} "-name *\.erl"
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "priv" \
-		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME} "-name *\.so"
-	${LN} -sf ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
+		${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME} "-name *\.so"
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.icon ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
