@@ -11,17 +11,12 @@ share/icons/hicolor/scalable/apps/org.librepcb.LibrePCB.svg
 share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-file.svg
 share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-project.svg
 %%DATADIR%%/README.md
-%%DATADIR%%/fontobene/.gitattributes
-%%DATADIR%%/fontobene/.gitignore
 %%DATADIR%%/fontobene/README.md
 %%DATADIR%%/fontobene/newstroke.bene
-%%DATADIR%%/fonts/.gitattributes
-%%DATADIR%%/fonts/.gitignore
 %%DATADIR%%/fonts/LICENSE
 %%DATADIR%%/fonts/NotoSans-Regular.ttf
 %%DATADIR%%/fonts/NotoSansMono-Regular.ttf
 %%DATADIR%%/fonts/README.md
-%%DATADIR%%/i18n/.gitignore
 %%DATADIR%%/library/default_image.png
 %%DATADIR%%/library/gitattributes_template
 %%DATADIR%%/library/gitignore_template

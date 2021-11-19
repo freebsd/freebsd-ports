@@ -1,6 +1,5 @@
 PORTNAME=	librepcb
-DISTVERSION=	0.1.5
-PORTREVISION=	1
+DISTVERSION=	0.1.6
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,30 +8,31 @@ COMMENT=	Schematic and PCB editing software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils gl qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	LibrePCB
 GH_PROJECT=	LibrePCB
 GH_TUPLE=	\
-		LibrePCB:hoedown:dae7992:hoedown/libs/hoedown \
-		LibrePCB:quazip:e13d52b:quazip/libs/quazip \
-		LibrePCB:googletest:2a26840:googletest/libs/googletest \
-		LibrePCB:librepcb-test-data:c1912fd5c2123d5e530da7784381ec8a7fca23ad:LibrePCB_librepcb_test_data/tests/data \
-		LibrePCB:parseagle:e3ef228:parseagle/libs/parseagle \
-		LibrePCB:sexpresso:5020552:sexpresso/libs/sexpresso \
-		fontobene:fontobene-qt5:0f75902:fontobene_lib/libs/fontobene-qt5 \
-		LibrePCB:fontobene-fonts:f197bc5:fontobene_share/share/librepcb/fontobene \
 		LibrePCB:delaunay-triangulation:bd71456:delaunay_triangulation/libs/delaunay-triangulation \
-		LibrePCB:librepcb-fonts:c30f3b9:librepcb_fonts/share/librepcb/fonts \
+		LibrePCB:dxflib:3b09713:dxflib/libs/dxflib \
+		fontobene:fontobene-qt5:9b8c229:fontobene_qt5/libs/fontobene-qt5 \
+		fontobene:fontobene-fonts:f197bc5:fontobene_fonts/share/librepcb/fontobene \
+		LibrePCB:googletest:1e6322a:googletest/libs/googletest \
+		LibrePCB:hoedown:600c3ee:hoedown/libs/hoedown \
+		LibrePCB:muparser:2deb86a:muparser/libs/muparser \
 		LibrePCB:optional:89d6d30:optional/libs/optional \
-		LibrePCB:type_safe:206f0db:type_safe/libs/type_safe \
-		LibrePCB:librepcb-i18n:efc96aa:i18n/i18n \
-		LibrePCB:muparser:28a90191aa80889e29d80d5c0ab842b2bcd1ba95:LibrePCB_muparser/libs/muparser \
-		foonathan:debug_assert:130adcb:debug_assert/libs/type_safe/external/debug_assert
-USE_QT=		concurrent core gui network opengl printsupport sql svg xml widgets buildtools_build testlib_build
+		LibrePCB:parseagle:ce0c8e6:parseagle/libs/parseagle \
+		LibrePCB:quazip:dab1c52:quazip/libs/quazip \
+		LibrePCB:type_safe:c3647fc:type_safe/libs/type_safe \
+		LibrePCB:librepcb-test-data:dc902dc:librepcb_test_data/tests/data \
+		LibrePCB:librepcb-fonts:c30f3b9:fonts/share/librepcb/fonts \
+		LibrePCB:librepcb-i18n:efc96aa:i18n/i18n
+
+USE_QT=		concurrent core gui network opengl printsupport sql svg xml widgets \
+		buildtools_build linguisttools_build testlib_build qmake_build
 USE_GL=		gl
 
-post-install: # installs unnecessary headers: https://github.com/LibrePCB/LibrePCB/issues/781
-	@${RM} -r ${STAGEDIR}${PREFIX}/include/fontobene-qt5
+post-install: # installs unnecessary headers: https://github.com/LibrePCB/LibrePCB/issues/935
+	@${RMDIR} ${STAGEDIR}${DATADIR}/i18n
 
 .include <bsd.port.mk>
