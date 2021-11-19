@@ -5,7 +5,7 @@ PORTVERSION=	6.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	shells
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance zsh plugin manager
 
 LICENSE=	MIT
