@@ -1,7 +1,6 @@
 PORTNAME=	pulseaudio-module-xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	1
+DISTVERSION=	0.6
 CATEGORIES=	audio
 DIST_SUBDIR=	xrdp
 
@@ -23,9 +22,13 @@ GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
 
 PLIST_FILES=	`${PULSE_MODDIR}`/module-xrdp-sink.so \
-		`${PULSE_MODDIR}`/module-xrdp-source.so
+		`${PULSE_MODDIR}`/module-xrdp-source.so \
+		etc/xdg/autostart/pulseaudio-xrdp.desktop \
+		libexec/pulseaudio-module-xrdp/load_pa_modules.sh
 
-CONFIGURE_ARGS=	PULSE_DIR=${WRKDIR}/pulseaudio-`${PULSE_VERSION}`
+
+CONFIGURE_ARGS=	PULSE_DIR=${WRKDIR}/pulseaudio-`${PULSE_VERSION}` \
+		--with-xdgautostart-dir=${PREFIX}/etc/xdg/autostart
 
 PULSE_VERSION=	pkg-config --modversion libpulse
 PULSE_MODDIR=	pkg-config --variable=modlibexecdir libpulse
