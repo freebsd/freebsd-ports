@@ -39,7 +39,7 @@ DRI_DRIVERS+=	R100
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 \
- || ${ARCH:Mpowerpc*}
+ || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
 DRI_DRIVERS+=		R100 R200
 GALLIUM_DRIVERS+=	R300 R600 RADEONSI
 VULKAN_DRIVERS+=	AMD
