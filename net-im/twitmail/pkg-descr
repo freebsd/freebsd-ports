@@ -1,8 +1,0 @@
-twitmail is a curses-based mail-like interface to twitter. It also can be
-used as a command line app for sending and receiving tweets. In both modes
-it remembers the last thing you read and only shows you newer posts (ie, it
-reports nothing when you have no updates to read). It'll collect all the
-new posts as well (up to a configurable limit), to ensure you haven't
-missed anything important.
-
-WWW: http://www.hardakers.net/code/twitmail/

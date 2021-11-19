@@ -181,7 +181,6 @@
     SUBDIR += toxins
     SUBDIR += tut
     SUBDIR += twirssi
-    SUBDIR += twitmail
     SUBDIR += uTox
     SUBDIR += vqcc-gtk
     SUBDIR += xmpp-client
