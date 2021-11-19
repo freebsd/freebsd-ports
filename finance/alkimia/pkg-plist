@@ -32,7 +32,6 @@ libdata/pkgconfig/libalkimia5.pc
 share/knsrcfiles/alkimia-quotes.knsrc
 share/knsrcfiles/kmymoney-quotes.knsrc
 share/knsrcfiles/skrooge-quotes.knsrc
-%%PLASMA%%share/kservices5/plasma-applet-org.wincak.foreigncurrencies2.desktop
 share/locale/ca/LC_MESSAGES/alkimia.mo
 share/locale/ca/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_onlinequote.mo
