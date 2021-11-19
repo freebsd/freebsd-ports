@@ -41,7 +41,7 @@ REDIS_CONFIGURE_WITH=	redis
 REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 
 post-patch:
-	@${REINPLACE_CMD} 's|tclsh |tclsh8.6 |' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|tclsh |tclsh${TCL_VER} |' ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
