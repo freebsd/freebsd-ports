@@ -53,6 +53,7 @@ include/universal/blas/solvers/svd.hpp
 include/universal/blas/vector.hpp
 include/universal/blas/vmath/power.hpp
 include/universal/blas/vmath/trigonometry.hpp
+include/universal/common/exceptions.hpp
 include/universal/common/numeric_limits_utility.hpp
 include/universal/functions/binomial.hpp
 include/universal/functions/ddpoly.hpp
@@ -170,6 +171,8 @@ include/universal/number/cfloat/trace_constants.hpp
 include/universal/number/decimal/decimal.hpp
 include/universal/number/decimal/decimal_impl.hpp
 include/universal/number/decimal/exceptions.hpp
+include/universal/number/decimal/math/sqrt.hpp
+include/universal/number/decimal/mathlib.hpp
 include/universal/number/decimal/numeric_limits.hpp
 include/universal/number/fixpnt/attributes.hpp
 include/universal/number/fixpnt/exceptions.hpp
@@ -262,6 +265,27 @@ include/universal/number/posit/table.hpp
 include/universal/number/posit/trace_constants.hpp
 include/universal/number/posit/twoSum.hpp
 include/universal/number/quire/exceptions.hpp
+include/universal/number/rational/attributes.hpp
+include/universal/number/rational/exceptions.hpp
+include/universal/number/rational/manipulators.hpp
+include/universal/number/rational/math/classify.hpp
+include/universal/number/rational/math/complex.hpp
+include/universal/number/rational/math/error_and_gamma.hpp
+include/universal/number/rational/math/exponent.hpp
+include/universal/number/rational/math/fractional.hpp
+include/universal/number/rational/math/hyperbolic.hpp
+include/universal/number/rational/math/hypot.hpp
+include/universal/number/rational/math/logarithm.hpp
+include/universal/number/rational/math/minmax.hpp
+include/universal/number/rational/math/next.hpp
+include/universal/number/rational/math/pow.hpp
+include/universal/number/rational/math/sqrt.hpp
+include/universal/number/rational/math/trigonometry.hpp
+include/universal/number/rational/math/truncate.hpp
+include/universal/number/rational/mathlib.hpp
+include/universal/number/rational/numeric_limits.hpp
+include/universal/number/rational/rational.hpp
+include/universal/number/rational/rational_impl.hpp
 include/universal/number/shared/infinite_encoding.hpp
 include/universal/number/shared/nan_encoding.hpp
 include/universal/number/shared/specific_value_encoding.hpp
@@ -275,6 +299,7 @@ include/universal/number/skeleton_2params/areal.hpp
 include/universal/number/skeleton_2params/exceptions.hpp
 include/universal/number/skeleton_2params/math_functions.hpp
 include/universal/number/skeleton_2params/numeric_limits.hpp
+include/universal/number/support/decimal.hpp
 include/universal/number/unum/exceptions.hpp
 include/universal/number/unum/manipulators.hpp
 include/universal/number/unum/math_functions.hpp
@@ -286,6 +311,7 @@ include/universal/number/unum2/manipulators.hpp
 include/universal/number/unum2/math_functions.hpp
 include/universal/number/unum2/unum2_impl.hpp
 include/universal/number/valid/attributes.hpp
+include/universal/number/valid/exceptions.hpp
 include/universal/number/valid/manipulators.hpp
 include/universal/number/valid/math_functions.hpp
 include/universal/number/valid/valid.hpp
@@ -300,6 +326,7 @@ include/universal/traits/integral_constant.hpp
 include/universal/traits/metaprogramming.hpp
 include/universal/traits/number_traits.hpp
 include/universal/traits/posit_traits.hpp
+include/universal/traits/rational_traits.hpp
 include/universal/utility/bit_cast.hpp
 include/universal/utility/color_print.hpp
 include/universal/utility/compiler_specialization.hpp
@@ -334,6 +361,7 @@ include/universal/verification/test_status.hpp
 include/universal/verification/test_suite.hpp
 include/universal/verification/test_suite_arithmetic.hpp
 include/universal/verification/test_suite_conversion.hpp
+include/universal/verification/test_suite_exceptions.hpp
 include/universal/verification/test_suite_logic.hpp
 include/universal/verification/test_suite_random.hpp
 %%DATADIR%%/universal-config-version.cmake
