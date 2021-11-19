@@ -1,5 +1,5 @@
 PORTNAME=	fmtconv
-PORTVERSION=	r27
+PORTVERSION=	r28
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
