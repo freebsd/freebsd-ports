@@ -1,7 +1,8 @@
-PORTNAME=	flint2
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.1	# FLINT is known to change its API. When upgrading please check that it does not break its consumers (e.g. math/e-antic)
+PORTNAME=	flint
+DISTVERSION=	2.8.4	# FLINT is known to change its API. When upgrading please check that it does not break its consumers (e.g. math/e-antic)
 CATEGORIES=	math
+MASTER_SITES=	http://www.flintlib.org/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast library for number theory
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libopenblas.so:math/openblas
 
 USES=		cmake compiler:c++11-lang python:build
-USE_GITHUB=	yes
-GH_ACCOUNT=	wbhart
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		NTL

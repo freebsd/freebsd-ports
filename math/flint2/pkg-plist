@@ -139,4 +139,4 @@ include/flint/ulong_extras.h
 include/flint/vector.h
 lib/libflint.so
 lib/libflint.so.16
-lib/libflint.so.16.1.1
+lib/libflint.so.16.1.4
