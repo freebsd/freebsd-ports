@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.9.8
+DISTVERSION=	2.10
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
