@@ -1,0 +1,15 @@
+--- src/z80asm/Makefile.orig	2020-09-24 03:00:09 UTC
++++ src/z80asm/Makefile
+@@ -122,9 +122,9 @@ clean::
+ # install
+ #------------------------------------------------------------------------------
+ install: $(TARGET) z80asm_lib
+-	$(INSTALL) $(TARGET)     $(PREFIX)/bin/$(TARGET)
+-	$(INSTALL) $(TARGET)     $(PREFIX)/bin/z88dk-$(TARGET)
+-	$(INSTALL) asmpp.pl      $(PREFIX)/bin/asmpp.pl
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin/$(TARGET)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin/z88dk-$(TARGET)
++	$(BSD_INSTALL_SCRIPT) asmpp.pl $(PREFIX)/bin/asmpp.pl
+ 	$(MAKE) -C dev/z80asm_lib install PREFIX=$(PREFIX_SHARE)
+ 
+ #------------------------------------------------------------------------------

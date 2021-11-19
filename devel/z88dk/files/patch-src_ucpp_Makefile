@@ -1,0 +1,10 @@
+--- src/ucpp/Makefile.orig	2019-02-21 03:00:16 UTC
++++ src/ucpp/Makefile
+@@ -60,6 +60,6 @@ clean::
+ 
+ #------------------------------------------------------------------------------
+ install: $(PROJ)$(EXESUFFIX)
+-	$(INSTALL) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
+ 
+ -include $(DEPENDS)

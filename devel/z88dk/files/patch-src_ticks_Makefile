@@ -1,0 +1,13 @@
+--- src/ticks/Makefile.orig	2021-01-19 03:00:18 UTC
++++ src/ticks/Makefile
+@@ -29,8 +29,8 @@ z88dk-dis$(EXESUFFIX):	$(DISOBJS)
+ 	$(CC) -o $@ $(CFLAGS) $(DISOBJS)
+ 
+ install: z88dk-ticks$(EXESUFFIX) z88dk-dis$(EXESUFFIX)
+-	$(INSTALL) z88dk-ticks$(EXESUFFIX) $(PREFIX)/bin/z88dk-ticks$(EXESUFFIX)
+-	$(INSTALL) z88dk-dis$(EXESUFFIX) $(PREFIX)/bin/z88dk-dis$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-ticks$(EXESUFFIX) $(PREFIX)/bin/z88dk-ticks$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-dis$(EXESUFFIX) $(PREFIX)/bin/z88dk-dis$(EXESUFFIX)
+ 
+ clean:
+ 	$(RM) z88dk-ticks$(EXESUFFIX) $(OBJS) core

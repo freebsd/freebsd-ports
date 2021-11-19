@@ -7219,6 +7219,7 @@
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
+    SUBDIR += z88dk
     SUBDIR += zanata-cli
     SUBDIR += zanata-platform
     SUBDIR += zapcc

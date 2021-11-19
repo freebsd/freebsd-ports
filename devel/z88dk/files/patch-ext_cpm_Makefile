@@ -1,0 +1,11 @@
+--- ext/cpm/Makefile.orig	2018-08-30 03:00:18 UTC
++++ ext/cpm/Makefile
+@@ -12,7 +12,7 @@ else
+   EXE 		:=
+ endif
+ 
+-CC = gcc
++CC ?= gcc
+ CFLAGS = -g -pipe -Wall -DPOSIX_TTY -DLITTLE_ENDIAN -DMEM_BREAK
+ LDFLAGS = 
+ 

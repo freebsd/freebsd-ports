@@ -1,0 +1,10 @@
+--- src/zobjcopy/Makefile.orig	2020-09-24 03:00:09 UTC
++++ src/zobjcopy/Makefile
+@@ -70,6 +70,6 @@ clean::
+ 
+ #------------------------------------------------------------------------------
+ install: $(PROJ)$(EXESUFFIX)
+-	$(INSTALL) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
+ 
+ -include $(DEPENDS)

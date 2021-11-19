@@ -1,0 +1,10 @@
+--- support/pv1000/Makefile.orig	2019-02-21 03:00:16 UTC
++++ support/pv1000/Makefile
+@@ -59,6 +59,6 @@ clean::
+ 
+ #------------------------------------------------------------------------------
+ install: $(PROJ)$(EXESUFFIX)
+-	$(INSTALL) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
+ 
+ -include $(DEPENDS)
