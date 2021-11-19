@@ -1,3 +1,36 @@
+  <vuln vid="0bf816f6-3cfe-11ec-86cd-dca632b19f10">
+    <topic>advancecomp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>advancecomp</name>
+	<range><lt>2.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joonun Jang reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=889270">
+	  <p>heap buffer overflow running advzip with "-l poc" option</p>
+	  <p>Running 'advzip -l poc' with the attached file raises heap buffer overflow
+	  which may allow a remote attacker to cause unspecified impact including denial-of-service attack.
+	  I expected the program to terminate without segfault, but the program crashes as follow. [...]
+	  </p>
+	</blockquote>
+	<p>and other vulnerabilities.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2018-1056</cvename>
+      <cvename>CVE-2019-8379</cvename>
+      <cvename>CVE-2019-8383</cvename>
+      <cvename>CVE-2019-9210</cvename>
+    </references>
+    <dates>
+      <discovery>2018-07-29</discovery>
+      <entry>2021-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8c0cbca-472d-11ec-83dc-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
