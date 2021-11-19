@@ -2988,6 +2988,7 @@
     SUBDIR += p5-Object-Simple
     SUBDIR += p5-Object-Tiny
     SUBDIR += p5-Object-Tiny-Lvalue
+    SUBDIR += p5-Object-Tiny-RW
     SUBDIR += p5-Olson-Abbreviations
     SUBDIR += p5-Opcodes
     SUBDIR += p5-OrePAN2

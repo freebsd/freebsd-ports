@@ -1,0 +1,6 @@
+This module is a fork of Object::Tiny; the only difference is that it
+also accepts arguments to its accessors to set the value accordingly.
+
+Please see Object::Tiny for all the original ideas.
+
+WWW: https://metacpan.org/dist/Object-Tiny-RW
