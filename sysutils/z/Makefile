@@ -5,7 +5,7 @@ PORTVERSION=	1.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Takes you to your most used directories, based on "frecency"
 
 LICENSE=	WTFPL
