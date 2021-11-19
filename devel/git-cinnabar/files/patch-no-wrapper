@@ -1,81 +1,69 @@
 Disable wrappers as Python version is controlled by FLAVORS
 
---- README.md.orig	2020-11-12 02:19:34 UTC
+--- README.md.orig	2021-11-19 21:23:13 UTC
 +++ README.md
-@@ -53,21 +53,6 @@ Setup:
+@@ -53,17 +53,6 @@ Setup:
  
    If you want to build git along the helper, you can run `make git`.
  
--Experimental support for python 3.x:
--------------------------------------
+-Python:
+--------
 -
--Experimental support for python 3.5 or more can be enabled by one of the
--following:
+-git-cinnabar will use one of `python3`, `python2.7` or `python2`, whichever has
+-mercurial libraries. If none of them does, it will use the first that can be
+-found.
 -
--- set the `GIT_CINNABAR_EXPERIMENTS` environment variable to `python3`.
--- `git config cinnabar.experiments python3`.
+-You may force a specific python through the `GIT_CINNABAR_PYTHON` environment
+-variable.
 -
--It has been tested mainly with python 3.5 and 3.7. Corner cases may not work
--properly.
--
--It is also possible to replace `python3` in either `GIT_CINNABAR_EXPERIMENTS`
--or `cinnabar.experiments` with `python=/path/to/python`.
 -
  Usage:
  ------
  
---- git-cinnabar.orig	2020-11-12 02:19:34 UTC
+--- git-cinnabar.orig	2021-11-19 21:23:13 UTC
 +++ git-cinnabar
-@@ -1,25 +1,4 @@
+@@ -1,21 +1,4 @@
 -#!/bin/sh
 -''':'
--experiments=",${GIT_CINNABAR_EXPERIMENTS-$(git config cinnabar.experiments)},"
--case "$experiments" in
--*,python3,*)
--  PYTHON=python3
--  ;;
--*,python=*,*)
--  PYTHON=${experiments#*,python=}
--  PYTHON=${PYTHON%%,*}
--  ;;
--*)
--  if command -v python2.7 > /dev/null; then
--    PYTHON=python2.7
--  else
--    PYTHON=python2
--  fi
--  ;;
--esac
--exec $PYTHON $0 "$@"
+-py="$GIT_CINNABAR_PYTHON"
+-if test -z "$py"; then
+-  for py in python3 python2.7 python2; do
+-    "$py" -c "from mercurial import hg" >/dev/null 2>&1 && break
+-    py=
+-  done
+-fi
+-if test -z "$py"; then
+-  for py in python3 python2.7 python2; do
+-    command -v "$py" > /dev/null && break
+-    py=python3
+-  done
+-fi
+-exec "$py" "$0" "$@"
 -exit 1
 -'''
 +#!/usr/bin/env python
  
  import os
  import sys
---- git-remote-hg.orig	2020-11-12 02:19:34 UTC
+--- git-remote-hg.orig	2021-11-19 21:23:13 UTC
 +++ git-remote-hg
-@@ -1,25 +1,4 @@
+@@ -1,21 +1,4 @@
 -#!/bin/sh
 -''':'
--experiments=",${GIT_CINNABAR_EXPERIMENTS-$(git config cinnabar.experiments)},"
--case "$experiments" in
--*,python3,*)
--  PYTHON=python3
--  ;;
--*,python=*,*)
--  PYTHON=${experiments#*,python=}
--  PYTHON=${PYTHON%%,*}
--  ;;
--*)
--  if command -v python2.7 > /dev/null; then
--    PYTHON=python2.7
--  else
--    PYTHON=python2
--  fi
--  ;;
--esac
--exec $PYTHON $0 "$@"
+-py="$GIT_CINNABAR_PYTHON"
+-if test -z "$py"; then
+-  for py in python3 python2.7 python2; do
+-    "$py" -c "from mercurial import hg" >/dev/null 2>&1 && break
+-    py=
+-  done
+-fi
+-if test -z "$py"; then
+-  for py in python3 python2.7 python2; do
+-    command -v "$py" > /dev/null && break
+-    py=python3
+-  done
+-fi
+-exec "$py" "$0" "$@"
 -exit 1
 -'''
 +#!/usr/bin/env python

@@ -1,27 +1,66 @@
-https://github.com/glandium/git-cinnabar/commit/ea33ee10ac39
+Revert https://github.com/glandium/git-cinnabar/commit/6ced6a84edc1
+until devel/git tracks 2.34.0 or later
 
---- helper/GIT-VERSION.mk.orig	2021-03-31 21:58:42 UTC
+--- helper/GIT-VERSION.mk.orig	2021-11-19 21:23:13 UTC
 +++ helper/GIT-VERSION.mk
 @@ -1,2 +1,2 @@
--GIT_VERSION ?= v2.32.0
-+GIT_VERSION ?= v2.33.0
+-GIT_VERSION ?= v2.34.0
++GIT_VERSION ?= v2.33.1
  WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
---- helper/csum-file.c.patch.orig	2021-03-31 21:58:42 UTC
-+++ helper/csum-file.c.patch
-@@ -1,8 +1,8 @@
- diff --git a/csum-file.c b/csum-file.c
--index 7510950fa3..19d02e3a63 100644
-+index c951cf8277..1215459b01 100644
- --- a/csum-file.c
- +++ b/csum-file.c
--@@ -86,7 +86,7 @@ int finalize_hashfile(struct hashfile *f, unsigned char *result, unsigned int fl
-+@@ -91,7 +91,7 @@ int finalize_hashfile(struct hashfile *f, unsigned char *result, unsigned int fl
-  	return fd;
+--- helper/cinnabar-fast-import.c.orig	2021-11-19 21:23:13 UTC
++++ helper/cinnabar-fast-import.c
+@@ -522,8 +522,8 @@ static void do_set(struct string_list *args)
+ 	}
+ }
+ 
+-int write_object_file_flags(const void *buf, unsigned long len, const char *type,
+-                            struct object_id *oid, unsigned flags)
++int write_object_file(const void *buf, unsigned long len, const char *type,
++                      struct object_id *oid)
+ {
+ 	struct strbuf data;
+ 	enum object_type t;
+--- helper/hg-connect-http.c.orig	2021-11-19 21:23:13 UTC
++++ helper/hg-connect-http.c
+@@ -408,7 +408,7 @@ struct hg_connection *hg_connect_http(const char *url,
+ 	struct hg_connection *conn = xmalloc(sizeof(*conn));
+ 	struct strbuf caps = STRBUF_INIT;
+ 	struct writer writer;
+-	string_list_init_dup(&conn->capabilities);
++	string_list_init(&conn->capabilities, 1);
+ 
+ 	conn->http.url = xstrdup(url);
+ 	conn->http.initial_request = 1;
+--- helper/hg-connect-stdio.c.orig	2021-11-19 21:23:13 UTC
++++ helper/hg-connect-stdio.c
+@@ -206,7 +206,7 @@ struct hg_connection *hg_connect_stdio(const char *url
+ 	struct strbuf buf = STRBUF_INIT;
+ 	struct hg_connection *conn = xmalloc(sizeof(*conn));
+ 	struct child_process *proc = &conn->stdio.proc;
+-	string_list_init_dup(&conn->capabilities);
++	string_list_init(&conn->capabilities, 1);
+ 
+ 	protocol = parse_connect_url(url, &hostandport, &path);
+ 
+--- helper/object-file.c.patch.orig	2021-11-19 21:23:13 UTC
++++ helper/object-file.c.patch
+@@ -1,13 +1,13 @@
+ diff --git a/object-file.c b/object-file.c
+-index c3d866a287..904149ce90 100644
++index 188de57634..7b06e56727 100644
+ --- a/object-file.c
+ +++ b/object-file.c
+-@@ -1954,7 +1954,7 @@ static int freshen_packed_object(const struct object_id *oid)
++@@ -1868,7 +1868,7 @@ static int freshen_packed_object(const struct object_id *oid)
+  	return 1;
   }
   
-@@ -10,4 +10,4 @@ index 7510950fa3..19d02e3a63 100644
- +void real_hashwrite(struct hashfile *f, const void *buf, unsigned int count)
+--int write_object_file_flags(const void *buf, unsigned long len,
+-+int real_write_object_file_flags(const void *buf, unsigned long len,
+- 			    const char *type, struct object_id *oid,
+- 			    unsigned flags)
++-int write_object_file(const void *buf, unsigned long len, const char *type,
+++int real_write_object_file(const void *buf, unsigned long len, const char *type,
++ 		      struct object_id *oid)
   {
-  	while (count) {
-- 		unsigned left = sizeof(f->buffer) - f->offset;
-+ 		unsigned left = f->buffer_len - f->offset;
++ 	char hdr[MAX_HEADER_LEN];
