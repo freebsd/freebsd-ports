@@ -63,7 +63,7 @@ LIB_DEPENDS+=	libdvdcss.so:multimedia/libdvdcss
 GNU_CONFIGURE=	yes
 MAKE_ENV=	V=1 ACLOCAL=${LOCALBASE}/bin/aclocal
 
-BINARY_ALIAS=	python3=${PYTHON_VERSION} ldconfig=${FALSE}
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 CONFIGURE_ARGS=	--force --enable-x265
 CONFIGURE_TARGET=	build
