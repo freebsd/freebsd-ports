@@ -1,7 +1,7 @@
 # Created by: patrick, trevor
 
 PORTNAME=	lilypond
-DISTVERSION=	2.23.3
+DISTVERSION=	2.23.4
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -12,7 +12,7 @@ COMMENT=	GNU music typesetter
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:shells/bash \
-		convert:graphics/ImageMagick6 \
+		convert:graphics/ImageMagick7 \
 		dblatex:textproc/dblatex \
 		fontforge:print/fontforge \
 		help2man:misc/help2man \

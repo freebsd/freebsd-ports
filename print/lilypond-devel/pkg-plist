@@ -241,7 +241,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_snippets.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_texinfo.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/convertrules.cpython-%%PYTHON_SUFFIX%%.pyc
-%%DATADIR%%/%%DISTVERSION%%/python/__pycache__/fontextract.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/langdefs.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/lilylib.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/midi.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -256,7 +255,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/python/book_snippets.py
 %%DATADIR%%/%%DISTVERSION%%/python/book_texinfo.py
 %%DATADIR%%/%%DISTVERSION%%/python/convertrules.py
-%%DATADIR%%/%%DISTVERSION%%/python/fontextract.py
 %%DATADIR%%/%%DISTVERSION%%/python/langdefs.py
 %%DATADIR%%/%%DISTVERSION%%/python/lilylib.py
 %%DATADIR%%/%%DISTVERSION%%/python/midi.py
@@ -297,6 +295,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-identifiers.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-markup.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-music.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/document-outside-staff-priorities.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-translation.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-type-predicates.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/documentation-generate.scm
@@ -305,15 +304,15 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/file-cache.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/flag-styles.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/font.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-cairo.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-eps.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-null.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-ps.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-scm.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-svg.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/fret-diagrams.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/graphviz.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/guile-debugger.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/harp-pedals.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/hyphenate-internal-words.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/layout-beam.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/layout-slur.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/lily-library.scm
