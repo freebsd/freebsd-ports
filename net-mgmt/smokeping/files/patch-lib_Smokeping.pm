@@ -1,5 +1,5 @@
---- /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/lib/Smokeping.pm.orig	2021-11-14 17:22:44.574583000 +0000
-+++ /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/lib/Smokeping.pm	2021-11-14 17:26:17.422305000 +0000
+--- lib/Smokeping.pm.orig	2021-11-14 17:05:16 UTC
++++ lib/Smokeping.pm
 @@ -4631,7 +4631,7 @@
          if(defined $opt{'check'}) { verify_cfg($cfgfile); exit 0; }
          if($opt{reload})  { 

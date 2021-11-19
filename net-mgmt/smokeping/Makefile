@@ -2,6 +2,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	rodrigo@FreeBSD.org

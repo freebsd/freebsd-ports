@@ -1,5 +1,5 @@
---- /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/bin/smokeping.orig	2021-11-14 17:05:16.825182000 +0000
-+++ /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/bin/smokeping	2021-11-14 17:06:25.201316000 +0000
+--- bin/smokeping.orig	2021-11-14 17:05:16 UTC
++++ bin/smokeping
 @@ -4,13 +4,12 @@
  use strict;
  use warnings;

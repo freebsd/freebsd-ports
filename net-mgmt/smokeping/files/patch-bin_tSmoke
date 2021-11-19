@@ -1,5 +1,5 @@
---- /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/bin/tSmoke.orig	2021-11-14 17:17:07.113198000 +0000
-+++ /wrkdirs/usr/ports/net-mgmt/smokeping/work/SmokePing-2.8.2/bin/tSmoke	2021-11-14 17:18:49.556960000 +0000
+--- bin/tSmoke.orig	2021-11-14 17:05:16 UTC
++++ bin/tSmoke
 @@ -53,7 +53,7 @@
  # Point the lib variables to your implementation
  

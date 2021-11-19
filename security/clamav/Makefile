@@ -27,6 +27,7 @@ TEST_TARGET=	check
 
 CONFLICTS_INSTALL=	clamav-[0-9]*
 
+FETCH_ARGS=	--user-agent=Mozilla/5.0
 SUB_FILES=	pkg-message
 SUB_LIST+=	CHMOD=${CHMOD} \
 		CHOWN=${CHOWN} \
