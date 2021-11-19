@@ -2648,6 +2648,7 @@
     SUBDIR += p5-Iterator-IO
     SUBDIR += p5-Iterator-Misc
     SUBDIR += p5-Iterator-Simple
+    SUBDIR += p5-Iterator-Simple-Lookahead
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-JIRA-REST
     SUBDIR += p5-JQuery
