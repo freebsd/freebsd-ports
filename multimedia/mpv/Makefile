@@ -96,7 +96,7 @@ LIBBLURAY_CONFIGURE_ON=		--enable-libbluray
 LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
 
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
-LUAJIT_USES_OFF=		lua
+LUAJIT_USES_OFF=		lua:51-52
 LUAJIT_CONFIGURE_ON=		--lua=luajit
 LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
 
