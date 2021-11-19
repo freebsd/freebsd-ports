@@ -1522,6 +1522,7 @@
     SUBDIR += luv
     SUBDIR += lwp
     SUBDIR += lxqt-build-tools
+    SUBDIR += lyra
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
     SUBDIR += m17n-inscript2
