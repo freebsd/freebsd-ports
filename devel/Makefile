@@ -1859,6 +1859,7 @@
     SUBDIR += p5-Callback-Frame
     SUBDIR += p5-Canary-Stability
     SUBDIR += p5-Capture-Tiny
+    SUBDIR += p5-Capture-Tiny-Extended
     SUBDIR += p5-Carp
     SUBDIR += p5-Carp-Always
     SUBDIR += p5-Carp-Always-Color
