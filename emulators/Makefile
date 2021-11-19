@@ -44,7 +44,6 @@
     SUBDIR += higan
     SUBDIR += hugo
     SUBDIR += hv_kvp_cmd
-    SUBDIR += i386-wine
     SUBDIR += ines
     SUBDIR += javatari
     SUBDIR += joytran

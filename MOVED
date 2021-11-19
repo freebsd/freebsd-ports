@@ -16599,3 +16599,4 @@ multimedia/celluloid-devel|multimedia/celluloid|2021-11-05|Out of date: use mult
 devel/zmusic|audio/zmusic|2021-11-10|Category change
 emulators/i386-wine-devel||2021-11-16|Removed: obsolete, emulators/wine-devel provides i386 support
 emulators/qemu52|emulators/qemu5|2021-11-16|Has expired
+emulators/i386-wine||2021-11-19|Removed: obsolete, emulators/wine provides i386 support

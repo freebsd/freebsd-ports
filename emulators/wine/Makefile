@@ -27,7 +27,7 @@ USE_SDL=	sdl2
 
 CPE_VENDOR=	winehq
 
-CONFLICTS_INSTALL=	wine-devel-[0-9]* i386-wine-[0-9]*
+CONFLICTS_INSTALL=	wine-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose \
@@ -120,22 +120,16 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libvulkan.so:graphics/vulkan-loader \
 			libvkd3d.so:graphics/vkd3d
 
-# Include this only if it has not been already included by the
-# i386-wine slave port.
-.ifndef WINE_SLAVE_BUILD
 .include <bsd.port.pre.mk>
-.endif
 
 .if ${ARCH} == amd64
 # Wine is composed of three parts:
-#  - wine (aka this port) is the 32-bit component and runs 32-bit programs (on FreeBSD/i386)
-#  - wine64 (aka this part of this port) is the 64-bit component and runs 64-bit programs
-#    (on FreeBSD/amd64)
-#  - wow64 (a subset of emulators/i386-wine-devel) is a part of the 64-bit component that runs
-#    32-bit programs (on FreeBSD/amd64)
-# We also currently have:
-#  - "wine32" (aka emulators/i386-wine-devel) is the 32-bit component and runs 32-bit programs
-#    (on FreeBSD/amd64).  This will be superseded by wow64.
+#  - wine (aka this port on FreeBSD/i386) is the 32-bit component
+#       and runs 32-bit programs.
+#  - wine64 (aka this part of this port on FreeBSD/amd64) is the
+#       64-bit component and runs 64-bit programs.
+#  - wow64 (aka this port built on FreeBSD/i386) is a part of the
+#       64-bit component [wine64] that runs 32-bit programs on FreeBSD/amd64.
 
 # --libdir is required since Wine defaults to "${PREFIX}/lib64" on amd64.
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
@@ -174,6 +168,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 
-.ifndef WINE_SLAVE_BUILD
 .include <bsd.port.post.mk>
-.endif
