@@ -1,6 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.0
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -32,7 +32,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		indexmap-1.7.0 \
 		itoa-0.4.8 \
 		lazy_static-1.4.0 \
-		libc-0.2.105 \
+		libc-0.2.107 \
 		memchr-2.4.1 \
 		os_str_bytes-4.2.0 \
 		ppv-lite86-0.2.15 \
@@ -51,7 +51,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.5 \
 		serde-1.0.130 \
 		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde_json-1.0.71 \
 		strsim-0.10.0 \
 		swayipc-3.0.0-alpha.3 \
 		swayipc-types-1.0.0-alpha.3 \
