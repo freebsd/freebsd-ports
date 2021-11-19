@@ -23,8 +23,7 @@ OPTIONS_DEFINE=	SIMD
 OPTIONS_DEFAULT=SIMD
 
 SIMD_MESON_OFF=	-Denable-mmx=false -Denable-sse=false \
-		-Denable-sse2=false -Denable-sse3=false \
-		-Denable-sse4_1=false -Denable-avx2=false \
-		-Denable-f16c=false
+		-Denable-sse2=false -Denable-sse4_1=false \
+		-Denable-avx2=false -Denable-f16c=false
 
 .include <bsd.port.mk>
