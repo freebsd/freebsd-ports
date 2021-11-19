@@ -16,7 +16,7 @@
  use CGI::Fast;
  
 -my $cfg = (shift @ARGV) || "$FindBin::Bin/../etc/config";
-+My $cfg = (shift @ARGV) || "/usr/local/etc/smokeping/config";
++my $cfg = (shift @ARGV) || "/usr/local/etc/smokeping/config";
  
  
  while (my $q = new CGI::Fast) {
