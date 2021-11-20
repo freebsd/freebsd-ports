@@ -175,6 +175,7 @@
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Ini.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::KernelHelp.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::LaTeX.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::Man.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Pod.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Sgml.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Texinfo.3pm.gz
@@ -344,6 +345,7 @@
 %%SITE_PERL%%/man/ru/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/ru/man3/Locale::Po4a::Xhtml.3pm.gz
 %%SITE_PERL%%/man/ru/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/ru/man7/po4a.7.gz
 %%SITE_PERL%%/man/sr_Cyrl/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/sr_Cyrl/man1/po4a-display-man.1.gz
 %%SITE_PERL%%/man/sr_Cyrl/man1/po4a-display-pod.1.gz
