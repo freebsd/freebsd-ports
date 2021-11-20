@@ -1,0 +1,14 @@
+$OpenBSD: patch-tls-aux_h,v 1.1 2021/07/29 10:44:07 sthen Exp $
+
+Index: tls-aux.h
+--- tls-aux.h.orig
++++ tls-aux.h
+@@ -8,7 +8,7 @@
+ #ifdef SSL_ENABLE
+ #include <openssl/opensslv.h>
+ 
+-# if defined(LIBRESSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER < 0x1010000fL
++# if OPENSSL_VERSION_NUMBER < 0x1010000fL
+ #  undef OSSL110_API
+ # else
+ #  define OSSL110_API 1
