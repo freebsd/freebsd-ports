@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Protocol Buffers for Go with Gadgets
 
 LICENSE=	BSD3CLAUSE
