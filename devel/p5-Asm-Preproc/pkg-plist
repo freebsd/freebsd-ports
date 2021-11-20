@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Asm/Preproc.pm
+%%SITE_PERL%%/Asm/Preproc/Lexer.pm
+%%SITE_PERL%%/Asm/Preproc/Line.pm
+%%SITE_PERL%%/Asm/Preproc/Token.pm
+%%PERL5_MAN3%%/Asm::Preproc.3.gz
+%%PERL5_MAN3%%/Asm::Preproc::Lexer.3.gz
+%%PERL5_MAN3%%/Asm::Preproc::Line.3.gz
+%%PERL5_MAN3%%/Asm::Preproc::Token.3.gz

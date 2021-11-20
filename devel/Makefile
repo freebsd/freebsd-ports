@@ -1778,6 +1778,7 @@
     SUBDIR += p5-Array-Iterator
     SUBDIR += p5-Array-Unique
     SUBDIR += p5-Array-Window
+    SUBDIR += p5-Asm-Preproc
     SUBDIR += p5-Async-Interrupt
     SUBDIR += p5-Async-MergePoint
     SUBDIR += p5-AtExit
