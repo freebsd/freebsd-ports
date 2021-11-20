@@ -1,14 +1,8 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
+DISTVERSION=	3.2
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-# Fix running test/test_espefuse_host.py on FreeBSD
-PATCHFILES=	74c55a8ffce4347a11479b07d50ccca33e0c0b8d.patch:-p1
-# The wheel package is only required when installing from pip
-PATCHFILES+=	4b14df383c179d9b9bea48c269869e434de878fe.patch:-p1
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Utility to communicate with Espressif ESP8266 & ESP32 chips
@@ -33,6 +27,7 @@ NO_ARCH=	yes
 # test/test_espefuse_host.py calls the python command
 # through subprocess Popen(), create an alias for it.
 BINARY_ALIAS=		python=${PYTHON_CMD}
+TEST_ENV=		${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 ESPTOOL_BAUDRATE?=	115200
 ESPTOOL_CHIP?=		esp8266
@@ -46,12 +41,11 @@ do-test:
 		test/test_modules.py; \
 		do ${SETENV} ${TEST_ENV} ${PYTHON_CMD} $${test}; done
 	@cd ${TEST_WRKSRC} && for chip in \
-		esp32 esp32s2 esp32s3beta2 esp32s3beta3 esp32c3; \
+		esp32 esp32s2 esp32s3beta2 esp32s3 esp32c3 esp32h2; \
 		do ${SETENV} ${TEST_ENV} ${PYTHON_CMD} \
 		test/test_espefuse_host.py $${chip}; done
 .if exists(${ESPTOOL_SERIALPORT})
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} \
-		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		${PYTHON_CMD} test/test_esptool.py \
 		${ESPTOOL_SERIALPORT} ${ESPTOOL_CHIP} ${ESPTOOL_BAUDRATE}
 .endif
