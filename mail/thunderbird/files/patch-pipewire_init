@@ -1,0 +1,73 @@
+Chase ABI from multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+
+https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+--- third_party/libwebrtc/webrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc.orig	2021-11-17 19:32:27 UTC
++++ third_party/libwebrtc/webrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc
+@@ -253,7 +253,7 @@ void BaseCapturerPipeWire::InitPortal() {
+ }
+ 
+ void BaseCapturerPipeWire::InitPipeWire() {
+-  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
++  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
+ 
+   pw_main_loop_ = pw_thread_loop_new("pipewire-main-loop", nullptr);
+   pw_context_ = pw_context_new(pw_thread_loop_get_loop(pw_main_loop_), nullptr, 0);
+--- third_party/pipewire/libpipewire/mozpipewire.cpp.orig	2021-11-17 19:33:46 UTC
++++ third_party/pipewire/libpipewire/mozpipewire.cpp
+@@ -58,7 +58,7 @@ struct pw_context * (*pw_context_new_fn)(struct pw_loo
+                                       struct pw_properties *props,
+                                       size_t user_data_size);
+ static int (*pw_core_disconnect_fn)(struct pw_core *core);
+-static void (*pw_init_fn)(int *argc, char **argv[]);
++static void (*pipewire_init_fn)(int *argc, char **argv[]);
+ static void (*pw_stream_add_listener_fn)(struct pw_stream *stream,
+                                       struct spa_hook *listener,
+                                       const struct pw_stream_events *events,
+@@ -93,7 +93,7 @@ bool IsPwLibraryLoaded() {
+           IS_FUNC_LOADED(pw_context_destroy_fn) &&
+           IS_FUNC_LOADED(pw_context_new_fn) &&
+           IS_FUNC_LOADED(pw_core_disconnect_fn) &&
+-          IS_FUNC_LOADED(pw_init_fn) &&
++          IS_FUNC_LOADED(pipewire_init_fn) &&
+           IS_FUNC_LOADED(pw_stream_add_listener_fn) &&
+           IS_FUNC_LOADED(pw_stream_connect_fn) &&
+           IS_FUNC_LOADED(pw_stream_dequeue_buffer_fn) &&
+@@ -127,7 +127,7 @@ bool LoadPWLibrary() {
+     GET_FUNC(pw_context_destroy, pwLib);
+     GET_FUNC(pw_context_new, pwLib);
+     GET_FUNC(pw_core_disconnect, pwLib);
+-    GET_FUNC(pw_init, pwLib);
++    GET_FUNC(pipewire_init, pwLib);
+     GET_FUNC(pw_stream_add_listener, pwLib);
+     GET_FUNC(pw_stream_connect, pwLib);
+     GET_FUNC(pw_stream_dequeue_buffer, pwLib);
+@@ -198,12 +198,12 @@ pw_core_disconnect(struct pw_core *core)
+ }
+ 
+ void
+-pw_init(int *argc, char **argv[])
++pipewire_init(int *argc, char **argv[])
+ {
+   if (!LoadPWLibrary()) {
+     return;
+   }
+-  return pw_init_fn(argc, argv);
++  return pipewire_init_fn(argc, argv);
+ }
+ 
+ void
+--- third_party/pipewire/pipewire/pipewire.h.orig	2021-11-17 19:34:07 UTC
++++ third_party/pipewire/pipewire/pipewire.h
+@@ -114,9 +114,9 @@ extern "C" {
+  * \brief PipeWire initialization and infrastructure functions
+  */
+ void
+-pw_init(int *argc, char **argv[]);
++pipewire_init(int *argc, char **argv[]);
+ 
+-void pw_deinit(void);
++void pipewire_deinit(void);
+ 
+ bool
+ pw_debug_is_category_enabled(const char *name);
