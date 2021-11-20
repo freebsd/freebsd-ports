@@ -5,6 +5,7 @@ include/hexl/eltwise/eltwise-fma-mod.hpp
 include/hexl/eltwise/eltwise-mult-mod.hpp
 include/hexl/eltwise/eltwise-reduce-mod.hpp
 include/hexl/eltwise/eltwise-sub-mod.hpp
+include/hexl/experimental/misc/lr-mat-vec-mult.hpp
 include/hexl/experimental/seal/ckks-multiply.hpp
 include/hexl/experimental/seal/ckks-switch-key.hpp
 include/hexl/hexl.hpp
@@ -21,10 +22,10 @@ include/hexl/util/gcc.hpp
 include/hexl/util/msvc.hpp
 include/hexl/util/types.hpp
 include/hexl/util/util.hpp
-lib/cmake/hexl-1.2.1/HEXLConfig.cmake
-lib/cmake/hexl-1.2.1/HEXLConfigVersion.cmake
-lib/cmake/hexl-1.2.1/HEXLTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/hexl-1.2.1/HEXLTargets.cmake
+lib/cmake/hexl-1.2.3/HEXLConfig.cmake
+lib/cmake/hexl-1.2.3/HEXLConfigVersion.cmake
+lib/cmake/hexl-1.2.3/HEXLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/hexl-1.2.3/HEXLTargets.cmake
 lib/libhexl.so
-lib/libhexl.so.1.2.1
+lib/libhexl.so.1.2.3
 libdata/pkgconfig/hexl.pc
