@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal
 PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/arrowd/xdg-desktop-portal/pull/:freebsd_compat
