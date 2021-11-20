@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--with-abi=elfv2
 . endif
 USE_GCC=	yes
 
-.elif ${ARCH} == powerpc64le
+.elif ${ARCH} == powerpc64le || ${ARCH} == powerpc
 USE_GCC=	yes
 .endif
 
