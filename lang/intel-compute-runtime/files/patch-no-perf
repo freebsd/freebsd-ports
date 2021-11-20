@@ -32,9 +32,9 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
  }
  
  LinuxEngineImp::LinuxEngineImp(OsSysman *pOsSysman, zes_engine_group_t type, uint32_t engineInstance) : engineGroup(type), engineInstance(engineInstance) {
---- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2021-11-12 16:23:35 UTC
+--- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2021-11-20 20:51:51 UTC
 +++ level_zero/tools/source/sysman/linux/os_sysman_imp.cpp
-@@ -36,9 +36,11 @@ ze_result_t LinuxSysmanImp::init() {
+@@ -38,9 +38,11 @@ ze_result_t LinuxSysmanImp::init() {
      }
      DEBUG_BREAK_IF(nullptr == pSysfsAccess);
  
@@ -43,9 +43,9 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
  
      DEBUG_BREAK_IF(nullptr == pPmuInterface);
 +#endif
-     pFwUtilInterface = FirmwareUtil::create(pDrm->getPciPath());
-     return createPmtHandles();
- }
+ 
+     if (pFwUtilInterface == nullptr) {
+         createFwUtilInterface();
 --- level_zero/tools/source/sysman/linux/os_sysman_imp.h.orig	2021-10-01 16:31:56 UTC
 +++ level_zero/tools/source/sysman/linux/os_sysman_imp.h
 @@ -14,7 +14,9 @@
