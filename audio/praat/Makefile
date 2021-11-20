@@ -1,6 +1,6 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.54
+DISTVERSION=		6.2.01
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -27,7 +27,7 @@ DOS2UNIX_FILES=	\
 		sys/Makefile \
 		EEG/Makefile
 
-PLIST_FILES=	bin/praat man/man1/praat.1.gz
+PLIST_FILES=	bin/praat share/man/man1/praat.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' \
@@ -38,6 +38,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/praat ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/praat.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/praat.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
