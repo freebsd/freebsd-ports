@@ -13,9 +13,6 @@ For radeonkms: kld_list="/boot/modules/radeonkms.ko"
 
 Please ensure that all users requiring graphics are members of the
 "video" group.
-
-Older generations are supported by the legacy kms modules (radeonkms / 
-i915kms) in base or by installing graphics/drm-legacy-kmod.
 EOM
 }
 ]
