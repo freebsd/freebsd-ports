@@ -1,8 +1,7 @@
 # Created by: n@nectar.com
 
 PORTNAME=	ding
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTVERSION=	1.9
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 		LOCAL/ehaupt
