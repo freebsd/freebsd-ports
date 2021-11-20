@@ -1,13 +1,12 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	forms
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -23,6 +22,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
