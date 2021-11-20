@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	grpcio
-PORTVERSION=	1.41.1
+PORTVERSION=	1.42.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,15 +11,15 @@ COMMENT=	HTTP/2-based RPC framework
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3:devel/py-protobuf@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six@${PY_FLAVOR}
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
 USES=		compiler:c++11-lib localbase:ldflags python:3.6+ ssl
 USE_PYTHON=	autoplist distutils
-MAKE_ENV+=	GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=true \
-		GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true \
-		GRPC_PYTHON_BUILD_SYSTEM_CARES=true
+MAKE_ENV+=	GRPC_PYTHON_BUILD_SYSTEM_CARES=true \
+		GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=true \
+		GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true
 LDFLAGS+=	-lcares
 
 post-install:
