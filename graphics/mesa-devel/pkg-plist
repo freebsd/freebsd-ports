@@ -4,7 +4,6 @@
 %%NO_COINST%%include/EGL/eglmesaext.h
 %%NO_COINST%%include/GL/internal/dri_interface.h
 %%NO_COINST%%include/gbm.h
-%%i965%%lib/dri%%SUFFIX%%/i965_dri.so
 %%crocus%%lib/dri%%SUFFIX%%/crocus_dri.so
 %%iris%%lib/dri%%SUFFIX%%/iris_dri.so
 %%r600%%lib/dri%%SUFFIX%%/r600_dri.so
