@@ -1848,6 +1848,7 @@
     SUBDIR += p5-CPANPLUS
     SUBDIR += p5-CPANPLUS-Dist-Build
     SUBDIR += p5-CPS
+    SUBDIR += p5-CPU-Z80-Assembler
     SUBDIR += p5-Cache
     SUBDIR += p5-Cache-AgainstFile
     SUBDIR += p5-Cache-Cache
