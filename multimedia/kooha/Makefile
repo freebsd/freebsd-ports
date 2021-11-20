@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Elegantly record your screen (development snapshot)
+COMMENT=	Elegantly record your screen
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
