@@ -7,31 +7,30 @@ DISTNAME=	fetchmail-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Python-based GUI to configure fetchmail
 
-LICENSE=	GPLv2 LGPL21
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 # minimum required version 6.4.2 - not codified, on the assumption
 # that fetchmail port updated at the same time
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		fetchmail>=${PORTVERSION}:mail/fetchmail
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 USES=		python shebangfix tar:xz
 USE_PYTHON=	py3kplist
 
-FILESDIR=	${.CURDIR}/files
-PATCHDIR=	${FILESDIR}
-
-SUB_FILES=	fetchmailconf
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
-PLIST=		${.CURDIR}/pkg-plist
-NO_ARCH=	yes
-
 GNU_CONFIGURE=	yes
-
 ALL_TARGET=	fetchmailconf
 INSTALL_TARGET=	install-data-am install-nodist_binSCRIPTS install-man
+
+FILESDIR=	${.CURDIR}/files
+PATCHDIR=	${FILESDIR}
+NO_ARCH=	yes
+
+SUB_FILES=	fetchmailconf
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
+PLIST=		${.CURDIR}/pkg-plist
 
 post-install:
 # first, run smoke tests - the version check makes sure we have all
