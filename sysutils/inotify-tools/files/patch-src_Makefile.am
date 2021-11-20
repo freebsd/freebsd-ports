@@ -1,11 +1,11 @@
---- src/Makefile.am.orig	2020-11-13 10:52:25 UTC
+--- src/Makefile.am.orig	2021-09-28 08:39:16 UTC
 +++ src/Makefile.am
-@@ -2,7 +2,7 @@ bin_PROGRAMS = inotifywait inotifywatch
- inotifywait_SOURCES = inotifywait.c common.c common.h
- inotifywatch_SOURCES = inotifywatch.c common.c common.h
+@@ -11,7 +11,7 @@ fsnotifywatch_SOURCES = inotifywatch.c common.c common
+ fsnotifywatch_CPPFLAGS = -DENABLE_FANOTIFY
+ endif
  
--AM_CFLAGS = -Wall -Wextra -Wshadow -Wpointer-arith -Werror -std=c99 -I../libinotifytools/src
-+AM_CFLAGS = -Wall -Wextra -Wshadow -Wpointer-arith -Werror -std=c99
+-AM_CFLAGS = -Wall -Wextra -Wshadow -Werror -std=c99 -I../libinotifytools/src
++AM_CFLAGS = -Wall -Wextra -Wshadow -Werror -std=c99
  AM_CPPFLAGS = -I$(top_srcdir)/libinotifytools/src
  LDADD = ../libinotifytools/src/libinotifytools.la
  

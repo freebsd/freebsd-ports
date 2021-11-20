@@ -1,29 +1,24 @@
---- src/inotifywatch.c.orig	2020-01-30 00:04:48 UTC
+--- src/inotifywatch.c.orig	2021-09-28 08:39:16 UTC
 +++ src/inotifywatch.c
-@@ -12,6 +12,9 @@
+@@ -11,6 +11,9 @@
  #include <errno.h>
  #include <fcntl.h>
  #include <getopt.h>
 +#ifdef __FreeBSD__
 +#include <pthread.h>
 +#endif // __FreeBSD__
+ #include <limits.h>
  #include <regex.h>
  #include <signal.h>
- #include <stdbool.h>
-@@ -82,6 +85,10 @@ int main(int argc, char **argv) {
-     char *inc_regex = NULL;
+@@ -96,8 +99,24 @@ int main(int argc, char **argv) {
      char *inc_iregex = NULL;
+     int rc;
  
 +#ifdef __FreeBSD__
 +    sigset_t set, oset;
 +#endif // __FreeBSD__
 +
      signal(SIGINT, handle_impatient_user);
- 
-     // Parse commandline options, aborting if something goes wrong
-@@ -110,10 +117,26 @@ int main(int argc, char **argv) {
-         return EXIT_FAILURE;
-     }
  
 +#ifdef __FreeBSD__
 +    // Block some signals in libinotify's worker thread, so that
@@ -37,9 +32,12 @@
 +    pthread_sigmask(SIG_BLOCK, &set, &oset);
 +#endif // __FreeBSD__
 +
-     if (!inotifytools_initialize()) {
-         warn_inotify_init_error();
-         return EXIT_FAILURE;
+     // Parse commandline options, aborting if something goes wrong
+     if (!parse_opts(&argc, &argv, &events, &timeout, &verbose, &zero, &sort,
+ 		    &recursive, &no_dereference, &fromfile, &exc_regex,
+@@ -130,6 +149,10 @@ int main(int argc, char **argv) {
+ 	    warn_inotify_init_error(fanotify);
+ 	    return EXIT_FAILURE;
      }
 +
 +#ifdef __FreeBSD__

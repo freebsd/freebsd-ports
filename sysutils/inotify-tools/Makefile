@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	inotify-tools # new fork https://github.com/ericcurtin/inotify-tools
-DISTVERSION=	3.20.11.0
+DISTVERSION=	3.21.9.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +14,11 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		autoreconf compiler:c11 gmake libtool localbase
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	STATIC

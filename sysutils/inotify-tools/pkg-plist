@@ -2,6 +2,8 @@ bin/inotifywait
 bin/inotifywatch
 %%STATIC%%bin/inotifywait.static
 %%STATIC%%bin/inotifywatch.static
+include/inotifytools/fanotify-dfid-name.h
+include/inotifytools/fanotify.h
 include/inotifytools/inotify-nosys.h
 include/inotifytools/inotify.h
 include/inotifytools/inotifytools.h
@@ -9,5 +11,7 @@ lib/libinotifytools.a
 lib/libinotifytools.so
 lib/libinotifytools.so.0
 lib/libinotifytools.so.0.4.1
+man/man1/fsnotifywait.1.gz
+man/man1/fsnotifywatch.1.gz
 man/man1/inotifywait.1.gz
 man/man1/inotifywatch.1.gz
