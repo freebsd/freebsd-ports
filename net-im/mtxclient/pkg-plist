@@ -22,6 +22,7 @@ include/mtx/events/messages/audio.hpp
 include/mtx/events/messages/emote.hpp
 include/mtx/events/messages/file.hpp
 include/mtx/events/messages/image.hpp
+include/mtx/events/messages/location.hpp
 include/mtx/events/messages/notice.hpp
 include/mtx/events/messages/text.hpp
 include/mtx/events/messages/video.hpp
@@ -33,6 +34,7 @@ include/mtx/events/power_levels.hpp
 include/mtx/events/presence.hpp
 include/mtx/events/reaction.hpp
 include/mtx/events/redaction.hpp
+include/mtx/events/spaces.hpp
 include/mtx/events/tag.hpp
 include/mtx/events/tombstone.hpp
 include/mtx/events/topic.hpp
@@ -48,6 +50,7 @@ include/mtx/responses.hpp
 include/mtx/responses/common.hpp
 include/mtx/responses/create_room.hpp
 include/mtx/responses/crypto.hpp
+include/mtx/responses/device.hpp
 include/mtx/responses/empty.hpp
 include/mtx/responses/groups.hpp
 include/mtx/responses/login.hpp
@@ -67,11 +70,9 @@ include/mtxclient/crypto/client.hpp
 include/mtxclient/crypto/objects.hpp
 include/mtxclient/crypto/types.hpp
 include/mtxclient/crypto/utils.hpp
-include/mtxclient/http/asio_overrides.hpp
 include/mtxclient/http/client.hpp
 include/mtxclient/http/client_impl.hpp
 include/mtxclient/http/errors.hpp
-include/mtxclient/http/session.hpp
 include/mtxclient/utils.hpp
 lib/cmake/MatrixClient/MatrixClientConfig.cmake
 lib/cmake/MatrixClient/MatrixClientConfigVersion.cmake
