@@ -1,7 +1,7 @@
 # Created by: Bartek Rutkowski <ports@robakdesign.com>
 
 PORTNAME=	click
-PORTVERSION=	7.1.2
+PORTVERSION=	8.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
