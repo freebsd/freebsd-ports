@@ -1790,6 +1790,7 @@
     SUBDIR += p5-B-C
     SUBDIR += p5-B-COW
     SUBDIR += p5-B-Compiling
+    SUBDIR += p5-B-Debug
     SUBDIR += p5-B-Deobfuscate
     SUBDIR += p5-B-Flags
     SUBDIR += p5-B-Generate

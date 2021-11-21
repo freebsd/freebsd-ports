@@ -1,0 +1,23 @@
+Walk Perl syntax tree, printing debug info about ops
+
+Without actually executing a Perl 5 program, you can walk its optree:
+
+    $ cat hello.pl
+    print "Hello world!\n";
+
+    $ perl -MO=Debug hello.pl
+    hello.pl syntax OK
+    LISTOP (0x55d1520414f8)
+    	op_ppaddr	0x55d1520414f8 LISTOP [OP_LEAVE]
+    	op_next		0x0
+    	op_sibling	0x0
+    	op_targ		1
+    	...
+    OP (0x55d1520414c8)
+    	op_ppaddr	0x55d1520414c8     OP [OP_ENTER]
+    	op_next		0x55d152041538    COP [OP_NEXTSTATE]
+    	op_sibling	0x55d152041538    COP [OP_NEXTSTATE]
+    	op_targ		0
+    	...
+
+WWW: https://metacpan.org/release/B-Debug
