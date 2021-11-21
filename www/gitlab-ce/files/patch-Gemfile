@@ -129,12 +129,15 @@
  gem 'octokit', '~> 4.15'
  
  # https://gitlab.com/gitlab-org/gitlab/issues/207207
-@@ -479,7 +387,7 @@ gem 'gitaly', '~> 14.3.0.pre.rc2'
+@@ -479,9 +387,9 @@ gem 'gitaly', '~> 14.3.0.pre.rc2'
  # KAS GRPC protocol definitions
  gem 'kas-grpc', '~> 0.0.2'
  
 -gem 'grpc', '~> 1.30.2'
-+gem 'grpc', '~> 1.30'
++gem 'grpc', '~> 1.42.0.pre1'
  
- gem 'google-protobuf', '~> 3.17.1'
+-gem 'google-protobuf', '~> 3.17.1'
++gem 'google-protobuf', '~> 3.19.0'
+ 
+ gem 'toml-rb', '~> 2.0'
  

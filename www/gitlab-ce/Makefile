@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -176,7 +176,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-gitlab_chronic_duration>=0.10.6.2<0.10.7:devel/rubygem-gitlab_chronic_duration \
 	rubygem-rack-proxy06>=0.6.0<0.7.0:www/rubygem-rack-proxy06 \
 	rubygem-sassc-rails-rails61>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails61 \
-	rubygem-autoprefixer-rails>=10.2.5.1<10.2.6:textproc/rubygem-autoprefixer-rails \
+	rubygem-autoprefixer-rails1025>=10.2.5.1<10.2.6:textproc/rubygem-autoprefixer-rails1025 \
 	rubygem-terser>=1.0.2:textproc/rubygem-terser \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 	rubygem-gemojione>=3.3<4.0:graphics/rubygem-gemojione \
@@ -225,8 +225,8 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
 	rubygem-gitaly>=14.3.0.pre.rc2<14.4.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2,1<0.0.3,1:net/rubygem-kas-grpc \
-	rubygem-grpc130>=1.30.2<2:net/rubygem-grpc130 \
-	rubygem-google-protobuf317>=3.17.1<3.18:devel/rubygem-google-protobuf317 \
+	rubygem-grpc142>=1.30.2<2:net/rubygem-grpc142 \
+	rubygem-google-protobuf>=3.19.0<3.20:devel/rubygem-google-protobuf \
 	rubygem-toml-rb>=2.0.1<3:www/rubygem-toml-rb \
 	rubygem-flipper021>=0.21.0<0.22:devel/rubygem-flipper021 \
 	rubygem-flipper-active_record-rails61>=0.21.0<0.22:databases/rubygem-flipper-active_record-rails61 \

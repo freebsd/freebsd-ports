@@ -1,17 +1,17 @@
 PORTNAME=	gitaly
 DISTVERSION=	14.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-
-#PATCH_SITES=	https://gitlab.com/mfechner/gitaly/-/merge_requests/
-# Make sure we have grpc files for grpc 1.41.0 available
-#PATCHFILES=	2.patch:-p1
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+# Make sure the following patch is included:
+# https://gitlab.com/gitlab-org/gitaly/-/merge_requests/4108
+# it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.32.0:devel/git \
@@ -23,13 +23,13 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc130>=1.30.2<2:net/rubygem-grpc130 \
+		rubygem-grpc142>=1.42.0.pre1<2:net/rubygem-grpc142 \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
 		rubygem-gitlab-labkit>=0.21.1<0.22:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
-		rubygem-google-protobuf317>=3.17.3<3.18:devel/rubygem-google-protobuf317
+		rubygem-google-protobuf>=3.19.0<3.20:devel/rubygem-google-protobuf
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
