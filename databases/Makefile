@@ -799,6 +799,7 @@
     SUBDIR += py-postgresql
     SUBDIR += py-psycogreen
     SUBDIR += py-psycopg
+    SUBDIR += py-psycopg-c
     SUBDIR += py-psycopg2
     SUBDIR += py-psycopg2cffi
     SUBDIR += py-pum
