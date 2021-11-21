@@ -19,4 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mechanize>=0.2.0:www/py-mechanize@${PY_FLAVO
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
