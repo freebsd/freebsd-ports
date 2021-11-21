@@ -2,6 +2,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	91.3.2
+PORTREVISION=	1
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
