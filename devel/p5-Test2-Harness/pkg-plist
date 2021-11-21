@@ -22,6 +22,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Converting.pm
 %%SITE_PERL%%/App/Yath/Option.pm
 %%SITE_PERL%%/App/Yath/Options.pm
+%%SITE_PERL%%/App/Yath/Options/Collector.pm
 %%SITE_PERL%%/App/Yath/Options/Debug.pm
 %%SITE_PERL%%/App/Yath/Options/Display.pm
 %%SITE_PERL%%/App/Yath/Options/Finder.pm
@@ -114,6 +115,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Converting.3.gz
 %%PERL5_MAN3%%/App::Yath::Option.3.gz
 %%PERL5_MAN3%%/App::Yath::Options.3.gz
+%%PERL5_MAN3%%/App::Yath::Options::Collector.3.gz
 %%PERL5_MAN3%%/App::Yath::Options::Debug.3.gz
 %%PERL5_MAN3%%/App::Yath::Options::Display.3.gz
 %%PERL5_MAN3%%/App::Yath::Options::Finder.3.gz
