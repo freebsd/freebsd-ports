@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-logging-v2
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
