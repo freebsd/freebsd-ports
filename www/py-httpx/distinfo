@@ -1,3 +1,3 @@
-TIMESTAMP = 1634391174
-SHA256 (httpx-0.20.0.tar.gz) = 09606d630f070d07f9ff28104fbcea429ea0014c1e89ac90b4d8de8286c40e7b
-SIZE (httpx-0.20.0.tar.gz) = 104549
+TIMESTAMP = 1637073036
+SHA256 (httpx-0.21.0.tar.gz) = 5ae1d9deb30fe074596551b3ab98f94dfd9d7efe3ecd2d08662a5c29f6fba0e4
+SIZE (httpx-0.21.0.tar.gz) = 105075
