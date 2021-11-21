@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cucumber-create-meta
-PORTVERSION=	6.0.2
+PORTVERSION=	6.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
