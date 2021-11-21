@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -53,7 +53,7 @@ LANGUAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycountry>=20.7.3:textproc/py-pyco
 LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}python-Levenshtein>=0.12:devel/py-python-Levenshtein@${PY_FLAVOR}
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.5:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"
-RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.4.7:devel/py-pyparsing@${PY_FLAVOR}
+RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.5:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.2.2:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.10.1:textproc/py-aeidon@${PY_FLAVOR}
