@@ -16,6 +16,7 @@ RUN_DEPENDS=	gm4:devel/m4
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
 MAKE_ARGS=	MAKEINFOFLAGS=--no-split
+NO_ARCH=	yes
 USES+=		makeinfo
 
 INFO=		libtool
