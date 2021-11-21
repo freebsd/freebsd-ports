@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rbs
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 USES=		gem
 USE_RUBY=	yes
-
-NO_ARCH=	yes
 
 PLIST_FILES=	bin/rbs
 
