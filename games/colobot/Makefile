@@ -2,7 +2,7 @@ PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.1.12
 DISTVERSIONSUFFIX=	-alpha
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games education
 MASTER_SITES=	https://colobot.info/files/music/:music
 DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz:music
@@ -13,6 +13,7 @@ COMMENT=	Educational game aiming to teach programming to kids
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/xml:textproc/xmlstarlet
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
@@ -21,32 +22,38 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libphysfs.so:devel/physfs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang gl gettext-runtime \
-		gettext-tools:build localbase:ldflags openal python:build \
-		sdl shebangfix
-USE_SDL=	image2 ttf2
+USES=		cmake compiler:c++11-lang gettext-runtime gettext-tools:build \
+		gl gnome localbase:ldflags openal perl5 python:build sdl \
+		shebangfix
 USE_GL=		gl glew glu
+USE_GNOME=	librsvg2:build
+USE_PERL5=	build
+USE_SDL=	image2 ttf2
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_TUPLE=	colobot:colobot-data:c467bd9:data
 
+CMAKE_ON=	PLATFORM_BSD
 LDFLAGS_i386=	-Wl,-znotext
 SHEBANG_FILES=	data/i18n-tools/scripts/process_translations.py
+
+BINARY_ALIAS=	xmlstarlet=${LOCALBASE}/bin/xml
 
 post-extract:
 	@${MV} ${WRKDIR}/colobot-data-c467bd9/* ${WRKSRC}/data
 	@${MV} ${WRKDIR}/*.ogg ${WRKDIR}/LICENSE.txt ${WRKSRC}/data/music/
-	@${REINPLACE_CMD} 's|$${CMAKE_INSTALL_PREFIX}/games|$${CMAKE_INSTALL_PREFIX}/bin|g' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} 's|PLATFORM_MACOSX|PLATFORM_MACOSX OR PLATFORM_OTHER|g' ${WRKSRC}/src/CMakeLists.txt
 
 post-patch:
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/cmake/FindGLEW.cmake
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/cmake/FindPhysFS.cmake
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/cmake/FindSDL2.cmake
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/cmake/FindSDL2_image.cmake
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/cmake/FindSDL2_ttf.cmake
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/tools/check-levels.sh
+	${REINPLACE_CMD} '/COLOBOT_INSTALL_BIN_DIR/s|games|bin|' \
+		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} 's|PLATFORM_GNU|PLATFORM_GNU OR PLATFORM_BSD|g' \
+		${WRKSRC}/desktop/CMakeLists.txt
+	${REINPLACE_CMD} 's|PLATFORM_MACOSX|PLATFORM_MACOSX OR PLATFORM_BSD|g' \
+		${WRKSRC}/src/CMakeLists.txt
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/cmake/Find*.cmake \
+		${WRKSRC}/tools/check-levels.sh
 	${REINPLACE_CMD} 's|python|${PYTHON_CMD}|' ${WRKSRC}/data/tools/*.sh
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 bin/colobot
 lib/colobot/libCBot.so
+share/applications/colobot.desktop
 share/games/colobot/ai/ant01.txt
 share/games/colobot/ai/ant02.txt
 share/games/colobot/ai/ant03.txt
@@ -3664,10 +3665,19 @@ share/games/colobot/textures/rocb2.png
 share/games/colobot/textures/terra002.png
 share/games/colobot/textures/water12.png
 share/games/colobot/textures/water16.png
+share/icons/hicolor/128x128/apps/colobot.png
+share/icons/hicolor/16x16/apps/colobot.png
+share/icons/hicolor/256x256/apps/colobot.png
+share/icons/hicolor/32x32/apps/colobot.png
+share/icons/hicolor/48x48/apps/colobot.png
+share/icons/hicolor/512x512/apps/colobot.png
+share/icons/hicolor/scalable/apps/colobot.svg
 share/locale/cs/LC_MESSAGES/colobot.mo
 share/locale/de/LC_MESSAGES/colobot.mo
 share/locale/fr/LC_MESSAGES/colobot.mo
 share/locale/pl/LC_MESSAGES/colobot.mo
 share/locale/pt/LC_MESSAGES/colobot.mo
 share/locale/ru/LC_MESSAGES/colobot.mo
+share/man/man6/colobot.6.gz
+share/metainfo/info.colobot.Colobot.appdata.xml
 @dir share/games/colobot/mods
