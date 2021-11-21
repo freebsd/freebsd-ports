@@ -6930,6 +6930,7 @@
     SUBDIR += rubygem-webfinger
     SUBDIR += rubygem-webpacker-rails60
     SUBDIR += rubygem-webpacker-rails61
+    SUBDIR += rubygem-webpacker-rails61-node16
     SUBDIR += rubygem-webpacker4-rails5
     SUBDIR += rubygem-webpacker4-rails50
     SUBDIR += rubygem-webpacker4-rails60
