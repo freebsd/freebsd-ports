@@ -1,0 +1,9 @@
+This is a replacement for the vpnc-script used by OpenConnect or VPNC.
+
+Instead of trying to copy the behavior of standard corporate VPN clients, which
+normally reroute all your network traffic through the VPN, this one tries to
+minimize your contact with an intrusive VPN. This is also known as a
+split-tunnel VPN, since it splits your traffic between the VPN tunnel and your
+normal network interfaces.
+
+WWW: https://github.com/dlenski/vpn-slice
