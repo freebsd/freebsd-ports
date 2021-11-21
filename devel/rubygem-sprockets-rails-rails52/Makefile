@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	sprockets-rails
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
