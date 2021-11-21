@@ -1,7 +1,7 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
 
 PORTNAME=	pycparser
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} tests/all_tests.py
+	cd ${WRKSRC} && ${PYTHON_CMD} tests/all_tests.py
 
 .include <bsd.port.mk>
