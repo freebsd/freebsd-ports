@@ -6210,6 +6210,7 @@
     SUBDIR += rubygem-ddmetrics
     SUBDIR += rubygem-ddplugin
     SUBDIR += rubygem-ddtrace
+    SUBDIR += rubygem-debase-ruby_core_source
     SUBDIR += rubygem-debug
     SUBDIR += rubygem-debug_inspector
     SUBDIR += rubygem-debugger-linecache
