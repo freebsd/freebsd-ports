@@ -6,7 +6,7 @@
 #
 # User defined variables:
 # JPEG_PORT		- jpeg implementation
-#			Valid value: graphics/jpeg-turbo
+#			Valid values: graphics/jpeg-turbo, graphics/mozjpeg
 #			Default value: graphics/jpeg-turbo
 #
 # MAINTAINER: portmgr@FreeBSD.org
