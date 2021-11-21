@@ -18,4 +18,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
