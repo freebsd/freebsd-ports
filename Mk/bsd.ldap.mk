@@ -33,6 +33,7 @@ DEFAULT_OPENLDAP_VER?=	24
 # OpenLDAP client versions currently supported
 OPENLDAP24_LIB=		libldap-2.4.so.2
 OPENLDAP25_LIB=		libldap-2.5.so.0
+OPENLDAP26_LIB=		libldap-2.6.so.0
 
 .if exists(${LOCALBASE}/bin/ldapwhoami)
 _OPENLDAP_VER!=	${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SED} -E 's/.*OpenLDAP: ldapwhoami (2)\.([0-9]).*/\1\2/'

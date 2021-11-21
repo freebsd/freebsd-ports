@@ -1,0 +1,17 @@
+--- libraries/libldap/Makefile.in.orig	2021-07-27 17:44:47 UTC
++++ libraries/libldap/Makefile.in
+@@ -86,13 +86,6 @@ install-local: $(CFFILES) FORCE
+ 	$(LTFINISH) $(DESTDIR)$(libdir)
+ 	-$(MKDIR) $(DESTDIR)$(sysconfdir)
+ 	@for i in $(CFFILES); do \
+-		if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
+-			echo "installing $$i in $(sysconfdir)"; \
+-			echo "$(INSTALL) $(INSTALLFLAGS) -m 644  $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i"; \
+-			$(INSTALL) $(INSTALLFLAGS) -m 644 $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i; \
+-		else \
+-			echo "PRESERVING EXISTING CONFIGURATION FILE $(sysconfdir)/$$i" ; \
+-		fi; \
+-		$(INSTALL) $(INSTALLFLAGS) -m 644 $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i.default; \
++		$(INSTALL) $(INSTALLFLAGS) -m 644 $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i.sample; \
+ 	done
+ 
