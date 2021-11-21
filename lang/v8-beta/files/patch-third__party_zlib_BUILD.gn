@@ -1,6 +1,6 @@
---- third_party/zlib/BUILD.gn.orig	2020-11-16 14:31:04 UTC
+--- third_party/zlib/BUILD.gn.orig	2021-11-15 18:52:29 UTC
 +++ third_party/zlib/BUILD.gn
-@@ -108,6 +108,8 @@ if (use_arm_neon_optimizations) {
+@@ -119,6 +119,8 @@ if (use_arm_neon_optimizations) {
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
