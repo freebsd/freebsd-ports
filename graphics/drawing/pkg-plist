@@ -36,7 +36,6 @@ share/applications/com.github.maoschanz.drawing.desktop
 %%DATADIR%%/drawing/optionsbar_rotate.py
 %%DATADIR%%/drawing/optionsbar_scale.py
 %%DATADIR%%/drawing/optionsbar_selection.py
-%%DATADIR%%/drawing/optionsbar_skew.py
 %%DATADIR%%/drawing/preferences.py
 %%DATADIR%%/drawing/printing_manager.py
 %%DATADIR%%/drawing/properties.py
@@ -60,7 +59,6 @@ share/applications/com.github.maoschanz.drawing.desktop
 %%DATADIR%%/drawing/tool_rotate.py
 %%DATADIR%%/drawing/tool_scale.py
 %%DATADIR%%/drawing/tool_shape.py
-%%DATADIR%%/drawing/tool_skew.py
 %%DATADIR%%/drawing/tool_text.py
 %%DATADIR%%/drawing/utilities.py
 %%DATADIR%%/drawing/utilities_blur.py
@@ -98,6 +96,7 @@ share/icons/hicolor/48x48/apps/com.github.maoschanz.drawing.png
 share/icons/hicolor/512x512/apps/com.github.maoschanz.drawing.png
 share/icons/hicolor/scalable/apps/com.github.maoschanz.drawing-symbolic.svg
 share/icons/hicolor/scalable/apps/com.github.maoschanz.drawing.svg
+share/locale/ca/LC_MESSAGES/drawing.mo
 share/locale/cs/LC_MESSAGES/drawing.mo
 share/locale/da/LC_MESSAGES/drawing.mo
 share/locale/de/LC_MESSAGES/drawing.mo
@@ -113,6 +112,7 @@ share/locale/it/LC_MESSAGES/drawing.mo
 share/locale/ja/LC_MESSAGES/drawing.mo
 share/locale/ko/LC_MESSAGES/drawing.mo
 share/locale/nl/LC_MESSAGES/drawing.mo
+share/locale/oc/LC_MESSAGES/drawing.mo
 share/locale/pl/LC_MESSAGES/drawing.mo
 share/locale/pt_BR/LC_MESSAGES/drawing.mo
 share/locale/ru/LC_MESSAGES/drawing.mo
