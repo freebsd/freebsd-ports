@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Future/IO.pm
+%%SITE_PERL%%/Future/IO/ImplBase.pm
+%%SITE_PERL%%/Test/Future/IO/Impl.pm
+%%PERL5_MAN3%%/Future::IO.3.gz
+%%PERL5_MAN3%%/Future::IO::ImplBase.3.gz
+%%PERL5_MAN3%%/Test::Future::IO::Impl.3.gz

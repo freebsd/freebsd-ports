@@ -1,0 +1,10 @@
+Future::IO provides a few basic methods that behave similarly to the same-named
+core perl functions relating to IO operations, but yield their results
+asynchronously via Future instances.
+
+This is provided primarily as a decoupling mechanism, to allow modules to be
+written that perform IO in an asynchronous manner to depend directly on this,
+while allowing asynchronous event systems to provide an implementation of these
+operations.
+
+WWW: https://metacpan.org/dist/Future-IO
