@@ -3,7 +3,7 @@
 PORTNAME=	unigine-valley
 PORTVERSION=	1.0
 PORTREVISION=	3
-CATEGORIES=	games benchmarks linux
+CATEGORIES=	benchmarks linux
 MASTER_SITES=	https://assets.unigine.com/d/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	Unigine_Valley-${PORTVERSION}

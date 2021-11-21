@@ -569,8 +569,6 @@
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-steam-utils
-    SUBDIR += linux-unigine-heaven
-    SUBDIR += linux-unigine-valley
     SUBDIR += linux-unrealgold
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo

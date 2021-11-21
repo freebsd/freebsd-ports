@@ -16602,3 +16602,5 @@ emulators/i386-wine||2021-11-19|Removed: obsolete, emulators/wine provides i386 
 net-im/twitmail||2021-11-19|Not functional anymore
 sysutils/cfengine315||2021-11-21|Has expired: Expire one year after cfengine 3.17.0 released
 sysutils/cfengine-masterfiles315||2021-11-21|Has expired: Expire one year after cfengine 3.17.0 released
+games/linux-unigine-heaven|benchmarks/linux-unigine-heaven|2021-11-21|Moved to a more appropriate category
+games/linux-unigine-valley|benchmarks/linux-unigine-valley|2021-11-21|Moved to a more appropriate category
