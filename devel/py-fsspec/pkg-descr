@@ -2,4 +2,4 @@ Filesystem Spec is a project to unify various projects and classes to work with
 remote filesystems and file-system-like abstractions using a standard pythonic
 interface.
 
-WWW: https://github.com/intake/filesystem_spec
+WWW: https://github.com/fsspec/filesystem_spec
