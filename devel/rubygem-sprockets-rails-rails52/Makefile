@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	sprockets-rails
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -12,8 +12,8 @@ COMMENT=	Sprockets Rails integration
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack52>=4.0:www/rubygem-actionpack52 \
-		rubygem-activesupport52>=4.0:devel/rubygem-activesupport52 \
+RUN_DEPENDS=	rubygem-actionpack52>=5.2:www/rubygem-actionpack52 \
+		rubygem-activesupport52>=5.2:devel/rubygem-activesupport52 \
 		rubygem-sprockets3>=3.0.0:devel/rubygem-sprockets3
 
 USES=		gem
