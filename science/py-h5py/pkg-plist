@@ -17,7 +17,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/quick.rst
 %%PORTDOCS%%%%DOCSDIR%%/refs.rst
 %%PORTDOCS%%%%DOCSDIR%%/release_guide.rst
-%%PORTDOCS%%%%DOCSDIR%%/rever/rever.log
 %%PORTDOCS%%%%DOCSDIR%%/special.rst
 %%PORTDOCS%%%%DOCSDIR%%/strings.rst
 %%PORTDOCS%%%%DOCSDIR%%/swmr.rst
@@ -40,6 +39,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.3.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.4.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.5.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.6.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/index.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bytesio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/collective_io.py
