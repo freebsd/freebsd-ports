@@ -16,6 +16,7 @@ share/icons/hicolor/scalable/apps/tigervnc.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/fur/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/he/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/id/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/tigervnc.mo
