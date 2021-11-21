@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.118.0
+PORTVERSION=	3.119.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -199,6 +199,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-mgn>=1<2:devel/rubygem-aws-sdk-mgn \
 		rubygem-aws-sdk-migrationhub>=1<2:devel/rubygem-aws-sdk-migrationhub \
 		rubygem-aws-sdk-migrationhubconfig>=1<2:devel/rubygem-aws-sdk-migrationhubconfig \
+		rubygem-aws-sdk-migrationhubstrategyrecommendations>=1<2:devel/rubygem-aws-sdk-migrationhubstrategyrecommendations \
 		rubygem-aws-sdk-mobile>=1<2:devel/rubygem-aws-sdk-mobile \
 		rubygem-aws-sdk-mq>=1<2:devel/rubygem-aws-sdk-mq \
 		rubygem-aws-sdk-mturk>=1<2:devel/rubygem-aws-sdk-mturk \
