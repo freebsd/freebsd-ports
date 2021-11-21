@@ -1,18 +1,21 @@
 # Created by: Bartek Rutkowski robak@FreeBSD.org
 
 PORTNAME=	pyvmomi
-DISTVERSION=	6.5
-PORTREVISION=	1
+DISTVERSION=	7.0.3
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Python SDK for the VMware vSphere API of ESX, ESXi, and vCenter
 
+USE_GITHUB=     yes
+GH_ACCOUNT=     vmware
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	v${PORTVERSION}
+
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>=1.7.3:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils concurrent optsuffix
