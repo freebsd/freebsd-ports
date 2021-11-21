@@ -3,7 +3,7 @@
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
 DISTVERSION=	2.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
