@@ -2,6 +2,7 @@
 
 PORTNAME=	prance
 PORTVERSION=	0.21.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +34,7 @@ ICU_DESC=	Unicode support
 OSV_DESC=	Use py-openapi-spec-validator as backend
 SSV_DESC=	Use py-swagger-spec-validator as backend
 
-CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=7.0<8:devel/py-click@${PY_FLAVOR}
+CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click7>=7.0<8:devel/py-click7@${PY_FLAVOR}
 FLEX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flex>=6.13<7:devel/py-flex@${PY_FLAVOR}
 ICU_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyicu>=2.4<3:devel/py-pyicu@${PY_FLAVOR}
 OSV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.2.1:devel/py-openapi-spec-validator@${PY_FLAVOR}
