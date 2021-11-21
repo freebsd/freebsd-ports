@@ -19,4 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asyncio>=3.0.1:devel/py-asyncio@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
