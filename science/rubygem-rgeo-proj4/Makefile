@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rgeo-proj4
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
