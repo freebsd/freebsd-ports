@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2021-10-20 15:47:54 UTC
+--- build/config/compiler/BUILD.gn.orig	2021-10-20 16:29:11 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -140,7 +140,7 @@ declare_args() {
    #
@@ -18,7 +18,7 @@
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
      if (fatal_linker_warnings && is_apple) {
-@@ -531,7 +531,7 @@ config("compiler") {
+@@ -532,7 +532,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -27,7 +27,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -909,7 +909,7 @@ config("compiler_cpu_abi") {
+@@ -903,7 +903,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -36,7 +36,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1253,7 +1253,7 @@ config("compiler_deterministic") {
+@@ -1247,7 +1247,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -45,7 +45,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1266,7 +1266,7 @@ config("compiler_deterministic") {
+@@ -1260,7 +1260,7 @@ config("compiler_deterministic") {
        # and -fcoverage-compilation-dir=.
        cflags += [ "-ffile-compilation-dir=." ]
      }
@@ -54,7 +54,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1650,7 +1650,7 @@ config("default_warnings") {
+@@ -1644,7 +1644,7 @@ config("default_warnings") {
          cflags += [ "-Wno-null-pointer-subtraction" ]
        }
  
@@ -63,7 +63,7 @@
          # Flags Xcode 9.2 (Clang clang-900.0.39.2) does not recognize.
          cflags += [
            "-Wenum-compare-conditional",
-@@ -1904,7 +1904,7 @@ config("thin_archive") {
+@@ -1898,7 +1898,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -72,7 +72,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2404,7 +2404,7 @@ config("symbols") {
+@@ -2398,7 +2398,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
@@ -81,7 +81,7 @@
      }
  
      if (!is_nacl && is_clang && !is_tsan && !is_asan) {
-@@ -2439,7 +2439,7 @@ config("symbols") {
+@@ -2433,7 +2433,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_apple && !is_nacl && current_cpu != "x86" &&
@@ -90,7 +90,7 @@
        if (is_clang) {
          # This flag enables the GNU-format pubnames and pubtypes sections,
          # which lld needs in order to generate a correct GDB index.
-@@ -2452,7 +2452,7 @@ config("symbols") {
+@@ -2446,7 +2446,7 @@ config("symbols") {
    }
  
    if (is_clang && !is_nacl && !use_xcode_clang) {

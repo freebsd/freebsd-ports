@@ -1,11 +1,12 @@
 # We follow the stable channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.5-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.6-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	9.5.172.21
+PORTVERSION=	9.6.180.12
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
-DISTFILES=	build-${BUILD_REV}.tar.gz \
+DISTFILES=	v8-${PORTVERSION}.tar.gz \
+		build-${BUILD_REV}.tar.gz \
 		buildtools-${BUILDTOOLS_REV}.tar.gz \
 		clang-${CLANG_REV}.tar.gz \
 		common-${COMMON_REV}.tar.gz \
@@ -31,23 +32,24 @@ USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MAKE_ARGS=	-C out/Release
+NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
 SUB_FILES=	v8.pc v8_libbase.pc v8_libplatform.pc
 
-USE_GITHUB=	yes
+#USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8-beta
 
-BUILD_REV=	17d097b0ffdc297f04afb54e9e3abff3f1203f06
-BUILDTOOLS_REV=	7ea3a871db68ae2cbbeaf5433a3192a799ef3c11
-CLANG_REV=	664e4259b150e07f1a1e440459f59fbc68edb82f
-COMMON_REV=	715537d6007ca71837f48bcb04fc3d482aed2507
-GOOGLETEST_REV=	955c7f837efad184ec63e771c42542d37545eaef
-ICU_REV=	ece15d049f2d360721716089372e3749fb89e0f4
-ZLIB_REV=	77c132322fe81a1f5518b326e18c99ebd3281627
+BUILD_REV=	ebad8533842661f66b9b905e0ee9890a32f628d5
+BUILDTOOLS_REV=	a9bc3e283182a586998338a665c7eae17406ec54
+CLANG_REV=	c06edd1f455183fc89e9f8c2cf745db8f564d8ea
+COMMON_REV=	68d816952258c9d817bba656ee2664b35507f01b
+GOOGLETEST_REV=	3b49be074d5c1340eeb447e6a8e78427051e675a
+ICU_REV=	3f443830bd52d3aa5fab3c1aa2b6d0848bb5039d
+ZLIB_REV=	dfa96e81458fb3b39676e45f7e9e000dff789b05
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
