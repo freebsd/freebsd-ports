@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ruby-vips
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
