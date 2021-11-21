@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	bio-shell
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	biology rubygems
 MASTER_SITES=	RG
 
