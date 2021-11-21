@@ -1,0 +1,7 @@
+Caddy is a powerful, enterprise-ready, open source web server with
+automatic HTTPS written in Go.
+
+This command line tool and associated Go package makes it easy to
+make custom builds of the Caddy Web Server.
+
+WWW: https://github.com/caddyserver/xcaddy
