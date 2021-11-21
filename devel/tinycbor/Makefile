@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tinycbor
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 

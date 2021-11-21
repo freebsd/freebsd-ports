@@ -1,8 +1,8 @@
---- Makefile.configure.orig	2018-01-30 22:21:35 UTC
+--- Makefile.configure.orig	2021-09-03 20:08:25 UTC
 +++ Makefile.configure
-@@ -14,7 +14,7 @@ PROGRAM-cjson += \#include <cjson/cJSON.
+@@ -19,7 +19,7 @@ PROGRAM-cjson += \#include <cjson/cJSON.h>\n
  PROGRAM-cjson += int main() { return cJSON_False; }
- CCFLAGS-cjson = -I$(dir $(MAKEFILE))src/cjson
+ CCFLAGS-cjson = -I$(dir $(MAKEFILE))src
  PROGRAM-system-cjson = $(PROGRAM-cjson)
 -CCFLAGS-system-cjson = -lcjson
 +CCFLAGS-system-cjson = -I$(LOCALBASE)/include -L$(LOCALBASE)/lib -lcjson

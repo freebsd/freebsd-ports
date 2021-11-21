@@ -1,11 +1,19 @@
---- Makefile.orig	2018-01-30 22:21:35 UTC
+--- Makefile.orig	2021-09-03 20:08:25 UTC
 +++ Makefile
-@@ -103,7 +103,7 @@ ifneq ($(cjson-pass)$(system-cjson-pass)
+@@ -114,7 +114,7 @@ ifneq ($(cjson-pass)$(system-cjson-pass),)
    JSON2CBOR_SOURCES = tools/json2cbor/json2cbor.c
    INSTALL_TARGETS += $(bindir)/json2cbor
    ifeq ($(system-cjson-pass),1)
 -    LDFLAGS_CJSON = -lcjson
-+    LDFLAGS_CJSON = -L$(LOCALBASE)/lib -lcjson
++    LDFLAGS_CJSON = -I$(LOCALBASE)/include -L$(LOCALBASE)/lib -lcjson
    else
      JSON2CBOR_SOURCES += src/cjson/cJSON.c
      json2cbor_CCFLAGS = -I$(SRCDIR)src/cjson
+@@ -238,7 +238,6 @@ tag: distcheck
+ cflags := $(CPPFLAGS) -I$(SRCDIR)src
+ cflags += -std=gnu99 $(CFLAGS) \
+ 	-Werror=incompatible-pointer-types \
+-	-Werror=implicit-function-declaration \
+ 	-Werror=int-conversion
+ %.o: %.c
+ 	@test -d $(@D) || $(MKDIR) $(@D)
