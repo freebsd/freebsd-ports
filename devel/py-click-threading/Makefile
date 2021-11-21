@@ -1,12 +1,12 @@
 # Created by: Christian Geier <geier@lostpackets.de>
 
 PORTNAME=	click-threading
-PORTVERSION=	0.4.2
+DISTVERSION=	0.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	geier@lostpackets.de
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Multithreaded Click apps made easy
 
 LICENSE=	MIT
