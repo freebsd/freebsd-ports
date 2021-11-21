@@ -1,7 +1,7 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
 
 PORTNAME=	more-itertools
-PORTVERSION=	8.10.0
+PORTVERSION=	8.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
