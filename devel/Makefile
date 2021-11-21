@@ -5854,6 +5854,7 @@
     SUBDIR += rubygem-aws-sdk-mgn
     SUBDIR += rubygem-aws-sdk-migrationhub
     SUBDIR += rubygem-aws-sdk-migrationhubconfig
+    SUBDIR += rubygem-aws-sdk-migrationhubstrategyrecommendations
     SUBDIR += rubygem-aws-sdk-mobile
     SUBDIR += rubygem-aws-sdk-mq
     SUBDIR += rubygem-aws-sdk-mturk
