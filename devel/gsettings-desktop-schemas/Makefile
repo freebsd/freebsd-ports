@@ -17,6 +17,8 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome localbase meson pkgconfig python:3.5+,build tar:xz
 USE_GNOME=	glib20 introspection:build
 
+NO_ARCH=	yes
+
 GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
 		org.gnome.desktop.a11y.gschema.xml \
 		org.gnome.desktop.a11y.keyboard.gschema.xml \
