@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tartiflette
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgraphqlparser.so:devel/libgraphqlparser
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0<2.0.0:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lark-parser>=0.11.3:devel/py-lark-parser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0,1:devel/py-pytz@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lark-parser>=0.12.0:devel/py-lark-parser@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
