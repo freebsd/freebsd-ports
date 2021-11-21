@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}async_timeout>0:devel/py-async_timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}curio>0:devel/py-curio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpcore>=0.13.7<0.14:www/py-httpcore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpcore>=0.13.7:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.20.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-socks>0:net/py-python-socks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=0:devel/py-sniffio@${PY_FLAVOR} \
