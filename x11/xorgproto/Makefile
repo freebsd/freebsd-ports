@@ -9,6 +9,8 @@ LICENSE=	MIT
 
 USES=		xorg-cat:proto
 
+NO_ARCH=	yes
+
 CONFIGURE_ARGS=	--without-fop \
 		--without-xmlto \
 		--without-xsltproc \
