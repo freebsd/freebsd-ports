@@ -19,7 +19,6 @@ USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
-GH_ACCOUNT=	johanmalm
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES X11
