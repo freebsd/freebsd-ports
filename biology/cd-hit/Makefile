@@ -20,7 +20,7 @@ MAKE_FLAGS=	openmp=yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc
+.if ${ARCH} == armv7 || ${ARCH} == powerpc
 USES+=		compiler:gcc-c++11-lib
 .endif
 
