@@ -13,6 +13,10 @@ LICENSE_NAME=	Wings 3D License # similar to TclTk license
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+# c_src/Makefile line 103
+NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS_REASON=	subcomponent libigl does not support 32bit platforms
+
 BUILD_DEPENDS=	erl:lang/erlang \
 		erlang-cl>0:devel/erlang-cl \
 		erlang-wx>0:lang/erlang-wx \
