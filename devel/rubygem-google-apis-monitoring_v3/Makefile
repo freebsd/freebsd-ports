@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-apis-monitoring_v3
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
