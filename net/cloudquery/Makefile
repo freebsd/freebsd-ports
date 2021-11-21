@@ -1,6 +1,6 @@
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.9
+DISTVERSION=	0.15.11
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -25,7 +25,8 @@ GH_TUPLE=	\
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
 		aws:aws-lambda-go:v1.23.0:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
-		cloudquery:cq-provider-sdk:v0.5.0:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
+		aws:aws-sdk-go:v1.42.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		cloudquery:cq-provider-sdk:v0.5.1:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
 		creasty:defaults:v1.5.2:creasty_defaults/vendor/github.com/creasty/defaults \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		doug-martin:goqu:v9.17.0:doug_martin_goqu_v9/vendor/github.com/doug-martin/goqu/v9 \
@@ -43,12 +44,13 @@ GH_TUPLE=	\
 		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang-migrate:migrate:v4.15.0:golang_migrate_migrate_v4/vendor/github.com/golang-migrate/migrate/v4 \
 		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:37e1c6afe023:golang_net/vendor/golang.org/x/net \
+		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:39ccf1dd6fa6:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:c76a74d43a8e:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-github:v35.2.0:google_go_github_v35/vendor/github.com/google/go-github/v35 \
@@ -79,7 +81,9 @@ GH_TUPLE=	\
 		jackc:pgx:v4.13.0:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
 		jackc:puddle:v1.1.4:jackc_puddle/vendor/github.com/jackc/puddle \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
+		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
+		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		lann:builder:47ae307949d0:lann_builder/vendor/github.com/lann/builder \
 		lann:ps:62de8c46ede0:lann_ps/vendor/github.com/lann/ps \
 		lib:pq:v1.10.3:lib_pq/vendor/github.com/lib/pq \
@@ -95,7 +99,8 @@ GH_TUPLE=	\
 		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
 		oklog:run:v1.1.0:oklog_run/vendor/github.com/oklog/run \
-		pelletier:go-toml:v1.7.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
@@ -113,6 +118,9 @@ GH_TUPLE=	\
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		thoas:go-funk:v0.9.1:thoas_go_funk/vendor/github.com/thoas/go-funk \
+		tidwall:gjson:v1.11.0:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.1.1:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:pretty:v1.2.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		vbauerster:mpb:v6.0.3:vbauerster_mpb_v6/vendor/github.com/vbauerster/mpb/v6 \
 		vmihailenco:msgpack:v5.3.4:vmihailenco_msgpack_v5/vendor/github.com/vmihailenco/msgpack/v5 \
