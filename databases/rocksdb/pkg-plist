@@ -77,9 +77,11 @@ include/rocksdb/trace_record.h
 include/rocksdb/trace_record_result.h
 include/rocksdb/transaction_log.h
 include/rocksdb/types.h
+include/rocksdb/unique_id.h
 include/rocksdb/universal_compaction.h
 include/rocksdb/utilities/backup_engine.h
 include/rocksdb/utilities/backupable_db.h
+include/rocksdb/utilities/cache_dump_load.h
 include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
 include/rocksdb/utilities/customizable_util.h

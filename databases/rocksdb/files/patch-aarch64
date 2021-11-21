@@ -12,16 +12,3 @@
  include_directories(${PROJECT_SOURCE_DIR})
  include_directories(${PROJECT_SOURCE_DIR}/include)
  if(WITH_FOLLY_DISTRIBUTED_MUTEX)
---- build_tools/build_detect_platform.orig	2021-06-25 21:15:04 UTC
-+++ build_tools/build_detect_platform
-@@ -599,8 +599,8 @@ EOF
- fi
- 
- # TODO(tec): Fix -Wshorten-64-to-32 errors on FreeBSD and enable the warning.
--# -Wshorten-64-to-32 breaks compilation on FreeBSD i386
--if ! [ "$TARGET_OS" = FreeBSD -a "$TARGET_ARCHITECTURE" = i386 ]; then
-+# -Wshorten-64-to-32 breaks compilation on FreeBSD i386 and aarch64
-+if ! { [ "$TARGET_OS" = FreeBSD ] && [ "$TARGET_ARCHITECTURE" = i386 -o "$TARGET_ARCHITECTURE" = "arm64" ]; }; then
-   # Test whether -Wshorten-64-to-32 is available
-   $CXX $PLATFORM_CXXFLAGS -x c++ - -o /dev/null -Wshorten-64-to-32 2>/dev/null  <<EOF
-     int main() {}
