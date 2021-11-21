@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	when
-PORTVERSION=	1.1.41
+PORTVERSION=	1.1.42
 CATEGORIES=	deskutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
