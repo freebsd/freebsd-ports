@@ -16601,3 +16601,5 @@ emulators/i386-wine-devel||2021-11-16|Removed: obsolete, emulators/wine-devel pr
 emulators/qemu52|emulators/qemu5|2021-11-16|Has expired
 emulators/i386-wine||2021-11-19|Removed: obsolete, emulators/wine provides i386 support
 net-im/twitmail||2021-11-19|Not functional anymore
+sysutils/cfengine315||2021-11-21|Has expired: Expire one year after cfengine 3.17.0 released
+sysutils/cfengine-masterfiles315||2021-11-21|Has expired: Expire one year after cfengine 3.17.0 released
