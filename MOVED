@@ -8178,7 +8178,6 @@ security/easypg||2016-05-22|Has expired: Included into emacs since 2.3
 misc/kdehier4||2016-05-25|Not used since 2014
 devel/maven-ant-tasks||2016-05-27|Use Maven directly
 graphics/py-imaging|graphics/py-pillow|2016-05-28|Has expired: Unmaintained upstream; use graphics/py-pillow
-databases/py-psycopg|databases/py-psycopg2|2016-05-29|Has expired: This port is obsoleted by databases/py-psycopg2
 security/py-clamav|security/py-pyclamd|2016-05-30|Has expired: Not updated since 2008 by upstream and abandoned in favor of pyClamd (security/py-pyclamd)
 graphics/ruby-gdal||2016-05-31|Has expired: disabled by upstream (https://trac.osgeo.org/gdal/changeset/28756)
 net/omcmd||2016-06-01|Has expired: Unfetchable and depends on expired net/isc-dhcp41-server
