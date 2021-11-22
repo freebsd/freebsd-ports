@@ -1,9 +1,7 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	https://gitlab.kitware.com/f3d/f3d/-/archive/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
@@ -11,11 +9,14 @@ COMMENT=	Fast and minimalist 3D viewer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libvtkCommonMisc-9.0.so:math/vtk9
+LIB_DEPENDS=	libvtkCommonMisc-9.1.so:math/vtk9
 
 USES=		cmake compiler:c++11-lang gl tar:bzip2 xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xt
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	f3d-app
 
 PLIST_FILES=	bin/f3d \
 		share/applications/f3d.desktop \
