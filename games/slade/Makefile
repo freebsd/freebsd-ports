@@ -2,7 +2,7 @@
 
 PORTNAME=	slade
 PORTVERSION=	3.1.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,7 +22,7 @@ GH_ACCOUNT=	sirjuddington
 GH_PROJECT=	${PORTNAME:tu}
 
 USES=		cmake compiler:c++14-lang gl pkgconfig
-USE_WX=		3.0+
+USE_WX=		3.0
 USE_GL=		gl glew glu
 
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE:FILEPATH="${WX_CONFIG}" \
