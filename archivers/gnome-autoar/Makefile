@@ -1,8 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-autoar
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.4.1
 CATEGORIES=	archivers
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
