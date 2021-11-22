@@ -123,7 +123,10 @@ ${GIT} -C ${SRCDIR14} pull --rebase -q
 OSVERSION14=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR14}/sys/sys/param.h)
 
 cd ${PORTSDIR}
-rm -f INDEX-12 INDEX-12.bz2 INDEX-13 INDEX-13.bz2 INDEX-14 INDEX-14.bz2
+for ver in 12 13 14; do
+	rm -f INDEX-${ver} INDEX-${ver}.bz2 INDEX-${ver}.xz INDEX-${ver}.zst
+done
+
 OLD_HEAD=$(${GIT} rev-parse HEAD)
 if ! ${GIT} pull --ff-only > git.log 2>&1 ; then
   (echo "Git update failed with conflicts:";
@@ -148,7 +151,9 @@ for branch in 12.x 13.x 14.x; do
     checkfixed ${branch}
 
     bzip2 -kf ${PORTSDIR}/INDEX-${release}
-    mv ${PORTSDIR}/INDEX-${release} ${PORTSDIR}/INDEX-${release}.bz2 ${OUTDIR}
+    zstd -qf --ultra -22 -k ${PORTSDIR}/INDEX-${release}
+    xz -9e -kf ${PORTSDIR}/INDEX-${release}
+    mv ${PORTSDIR}/INDEX-${release} ${PORTSDIR}/INDEX-${release}.bz2 ${PORTSDIR}/INDEX-${release}.zst ${PORTSDIR}/INDEX-${release}.xz ${OUTDIR}
 done
 
 # All indexes built successfully, clear the hook
