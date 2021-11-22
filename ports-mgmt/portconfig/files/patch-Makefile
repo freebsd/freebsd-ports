@@ -1,0 +1,44 @@
+--- Makefile.orig	2021-11-20 16:29:49 UTC
++++ Makefile
+@@ -6,23 +6,22 @@
+ OUTPUT=  portconfig
+ SOURCES= portconfig.c
+ OBJECTS= ${SOURCES:.c=.o}
+-LIBPATH= ${.CURDIR}/bsddialog/lib
+ LIBBSDDIALOG= ${LIBPATH}/libbsddialog.so
+ 
+-CFLAGS= -Wall -I${LIBPATH}
+-LDFLAGS= -Wl,-rpath=${LIBPATH} -L${LIBPATH} -lbsddialog
++CFLAGS+= -Wall
++LDFLAGS+= -L/usr/lib -Wl,-Bstatic -v -Wl,-whole-archive -lbsddialog -Wl,-no-whole-archive -lformw -lncursesw -ltinfow -Wl,-Bdynamic -Wl,--export-dynamic
+ 
+-BINDIR= /usr/local/bin
++BINDIR= ${PREFIX}/bin
+ MAN= ${OUTPUT}.1
+ GZIP= gzip -cn
+-MANDIR= /usr/local/share/man/man1
++MANDIR= ${PREFIX}/share/man/man1
+ 
+ INSTALL= install
+ RM= rm -f
+ 
+ all : ${OUTPUT}
+ 
+-${OUTPUT}: ${LIBBSDDIALOG} ${OBJECTS}
++${OUTPUT}: ${OBJECTS}
+ 	${CC} ${LDFLAGS} ${OBJECTS} -o ${.PREFIX}
+ 
+ ${LIBBSDDIALOG}:
+@@ -36,9 +35,9 @@ ${LIBBSDDIALOG}:
+ 	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+ 
+ install:
+-	${INSTALL} -s -m 555 ${OUTPUT} ${BINDIR}
+-	${GZIP} ${MAN} > ${MAN}.gz
+-	${INSTALL} -m 444 ${MAN}.gz ${MANDIR}
++	${INSTALL} -s -m 555 ${OUTPUT} ${DESTDIR}${BINDIR}
++	#${GZIP} ${MAN} > ${MAN}.gz
++	#${INSTALL} -m 444 ${MAN}.gz ${MANDIR}
+ 
+ unistall:
+ 	${RM} ${BINDIR}/${OUTPUT}

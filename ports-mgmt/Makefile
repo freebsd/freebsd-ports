@@ -40,6 +40,7 @@
     SUBDIR += port-maintenance-tools
     SUBDIR += portal
     SUBDIR += portconf
+    SUBDIR += portconfig
     SUBDIR += portdowngrade
     SUBDIR += portest
     SUBDIR += portfind
