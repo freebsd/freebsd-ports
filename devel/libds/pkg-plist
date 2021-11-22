@@ -2,7 +2,6 @@ include/ds.h
 lib/libds.a
 lib/libds.so
 lib/libds.so.1
-man/man3/libds.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/avltree.html
 %%PORTDOCS%%%%DOCSDIR%%/hashtbl.html
 %%PORTDOCS%%%%DOCSDIR%%/heap.html

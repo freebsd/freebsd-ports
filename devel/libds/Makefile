@@ -1,7 +1,7 @@
 # Created by: Peter Bozarov (kingofgib@users.sourceforge.net)
 
 PORTNAME=	libds
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/libds/libds/libds-${PORTVERSION}
 
@@ -24,7 +24,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libds.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libds.so ${STAGEDIR}${PREFIX}/lib/libds.so.1
 	${LN} -sf libds.so.1 ${STAGEDIR}${PREFIX}/lib/libds.so
-	${INSTALL_MAN} ${WRKSRC}/libds.3 ${STAGEDIR}${MANPREFIX}/man/man3
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
