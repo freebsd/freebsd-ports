@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	libopenmpt
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
@@ -14,9 +14,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang cpe gmake libtool pkgconfig
-USE_LDCONFIG=	yes
-
 CPE_VENDOR=	openmpt
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
