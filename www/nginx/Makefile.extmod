@@ -273,7 +273,7 @@ RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
-RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.2:rtmp
+RTMP_GH_TUPLE=		sergey-dryabzhinsky:nginx-rtmp-module:8e344d7:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
 SET_MISC_IMPLIES=	DEVEL_KIT
