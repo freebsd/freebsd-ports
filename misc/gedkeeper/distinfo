@@ -1,3 +1,5 @@
-TIMESTAMP = 1627494870
-SHA256 (Serg-Norseman-GEDKeeper-v2.18.0_GH0.tar.gz) = 151b366bb26045e735f716c99d826ebd7e6e25353c69ec08661f0ac9803c9cd8
-SIZE (Serg-Norseman-GEDKeeper-v2.18.0_GH0.tar.gz) = 18619958
+TIMESTAMP = 1636309479
+SHA256 (Serg-Norseman-GEDKeeper-v2.19.1_GH0.tar.gz) = 3de8759300e2e2a17ec6829df28a4bb281dc6db21afb62160ccd472423d53792
+SIZE (Serg-Norseman-GEDKeeper-v2.19.1_GH0.tar.gz) = 16229752
+SHA256 (Serg-Norseman-GKCommunicator-cfd6393_GH0.tar.gz) = a10271c07931fd6aed68c7fbc5d8485a6cb9423b33d4a4799d0ac0084eda6020
+SIZE (Serg-Norseman-GKCommunicator-cfd6393_GH0.tar.gz) = 2667938

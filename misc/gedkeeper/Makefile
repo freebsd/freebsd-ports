@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	gedkeeper
-PORTVERSION=	2.18.0
+PORTVERSION=	2.19.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -16,7 +16,9 @@ LIB_DEPENDS=	libgdiplus.so:x11-toolkits/libgdiplus
 USES=		desktop-file-utils mono shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	Serg-Norseman
-GH_PROJECT=	GEDKeeper
+GH_PROJECT=	GEDKeeper GKCommunicator:gkc
+GH_TAGNAME=	cfd6393:gkc
+GH_SUBDIR=	projects/GKCommunicator:gkc
 
 _BUILD_TYPE=	Release
 DATADIR=	${PREFIX}/lib/${PORTNAME}
@@ -31,7 +33,7 @@ do-install:
 		"$$@"\n' > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${INSTALL_WRKSRC} && ${CP} -a *.dll GEDKeeper2.exe \
+	cd ${INSTALL_WRKSRC} && ${CP} -a bin/ \
 		locales plugins samples scripts ${STAGEDIR}${DATADIR}
 	@${RM} ${STAGEDIR}${DATADIR}/scripts/readme.txt
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/deploy/gedkeeper.desktop \
@@ -50,5 +52,3 @@ do-test:
 		projects/GKTests/bin/${_BUILD_TYPE}/GKTests.dll
 
 .include <bsd.port.mk>
-
-PATCH_ARGS+=	-l
