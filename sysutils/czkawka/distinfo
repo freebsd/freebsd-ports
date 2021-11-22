@@ -1,4 +1,4 @@
-TIMESTAMP = 1637406404
+TIMESTAMP = 1637560087
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
@@ -471,5 +471,5 @@ SHA256 (rust/crates/xxhash-rust-0.8.2.crate) = e575e15bedf6e57b5c2d763ffc6c3c760
 SIZE (rust/crates/xxhash-rust-0.8.2.crate) = 16721
 SHA256 (rust/crates/zip-0.5.13.crate) = 93ab48844d61251bb3835145c521d88aa4031d7139e8485990f60ca911fa0815
 SIZE (rust/crates/zip-0.5.13.crate) = 48237
-SHA256 (qarmin-czkawka-3.3.0_GH0.tar.gz) = aad710140fd08bc3ecc1fee8c03a5531a5022ef2f694ffd8f4e0385d74a4213c
-SIZE (qarmin-czkawka-3.3.0_GH0.tar.gz) = 171314
+SHA256 (qarmin-czkawka-3.3.1_GH0.tar.gz) = e9ef38ac52e1bd7fd2de14a0b34f105bb5b338a7374d3c529c1725415b4ebe26
+SIZE (qarmin-czkawka-3.3.1_GH0.tar.gz) = 171361
