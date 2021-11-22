@@ -1,5 +1,5 @@
 PORTNAME=	emby-server
-PORTVERSION=	4.6.6.0
+DISTVERSION=	4.6.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
