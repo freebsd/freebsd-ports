@@ -1,6 +1,6 @@
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.4.8
+DISTVERSION=	${ABIVERSION}.4.9
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/:docs
 DISTFILES=	${PORTNAME}-doc-${DISTVERSION}.tar.gz:docs
@@ -21,7 +21,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_TESTING USE_PANDOC
+CMAKE_ON=	USE_QRCODEGEN
+# we leave USE_POC=on (and BUILD_TESTING=on) so that we can run some basic
+# tests, if not the full notcurses-tester suite.
+CMAKE_OFF=	USE_DOCTEST USE_PANDOC
 
 TEST_TARGET=	test
 
