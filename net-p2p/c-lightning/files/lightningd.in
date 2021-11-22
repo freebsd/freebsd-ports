@@ -52,7 +52,7 @@ command_args="${command_args} ${lightningd_extra_args}"
 
 check_bitcoind_ready()
 {
-    bitcoin-cli \
+    %%LOCALBASE%%/bin/bitcoin-cli \
         -rpcconnect=${bitcoin_addr}${bitcoin_port:+":"}${bitcoin_port} \
         -rpcuser=${bitcoin_user} \
         -stdinrpcpass \

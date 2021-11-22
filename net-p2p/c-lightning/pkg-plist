@@ -10,6 +10,7 @@ libexec/c-lightning/lightning_gossipd
 libexec/c-lightning/lightning_hsmd
 libexec/c-lightning/lightning_onchaind
 libexec/c-lightning/lightning_openingd
+libexec/c-lightning/lightning_websocketd
 libexec/c-lightning/plugins/autoclean
 libexec/c-lightning/plugins/bcli
 libexec/c-lightning/plugins/fetchinvoice
@@ -30,8 +31,10 @@ man/man7/lightning-close.7.gz
 man/man7/lightning-connect.7.gz
 man/man7/lightning-createinvoice.7.gz
 man/man7/lightning-createonion.7.gz
+man/man7/lightning-datastore.7.gz
 man/man7/lightning-decode.7.gz
 man/man7/lightning-decodepay.7.gz
+man/man7/lightning-deldatastore.7.gz
 man/man7/lightning-delexpiredinvoice.7.gz
 man/man7/lightning-delinvoice.7.gz
 man/man7/lightning-delpay.7.gz
@@ -54,6 +57,7 @@ man/man7/lightning-invoice.7.gz
 man/man7/lightning-keysend.7.gz
 man/man7/lightning-listchannels.7.gz
 man/man7/lightning-listconfigs.7.gz
+man/man7/lightning-listdatastore.7.gz
 man/man7/lightning-listforwards.7.gz
 man/man7/lightning-listfunds.7.gz
 man/man7/lightning-listinvoices.7.gz
