@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20211122:
+AUTHOR: bapt@FreeBSD.org
+
+  The default compression for INDEX file as fetch via make fetchindex has
+  switched from .bz2 to .xz (.zst is also available).
+
+  The .bz2 format is still available but is considered deprecated and may
+  be removed in the futur.
+
 20211010:
 AUTHOR: bapt@FreeBSD.org
 
