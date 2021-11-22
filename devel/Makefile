@@ -296,6 +296,7 @@
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
+    SUBDIR += bsddialog
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator

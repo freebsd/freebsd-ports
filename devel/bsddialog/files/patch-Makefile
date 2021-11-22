@@ -1,0 +1,37 @@
+--- Makefile.orig	2021-11-22 01:09:04 UTC
++++ Makefile
+@@ -7,15 +7,15 @@ OUTPUT=  bsddialog
+ SOURCES= bsddialog.c
+ OBJECTS= ${SOURCES:.c=.o}
+ LIBPATH= ${.CURDIR}/lib
+-LIBBSDDIALOG= ${LIBPATH}/libbsddialog.so
++LIBBSDDIALOG= ${LIBPATH}/libbsddialog.a
+ 
+-CFLAGS= -Wall -I${LIBPATH}
+-LDFLAGS= -Wl,-rpath=${LIBPATH} -L${LIBPATH} -lbsddialog
++CFLAGS+= -Wall -I${LIBPATH}
++LDFLAGS+= -L${LIBPATH} -lbsddialog
+ 
+-BINDIR= /usr/local/bin
++BINDIR= ${PREFIX}/bin
+ MAN= ${OUTPUT}.1
+ GZIP= gzip -cn
+-MANDIR= /usr/local/share/man/man1
++MANDIR= ${PREFIX}/share/man/man1
+ 
+ INSTALL= install
+ RM= rm -f
+@@ -36,9 +36,10 @@ ${LIBBSDDIALOG}:
+ 	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+ 
+ install:
+-	${INSTALL} -s -m 555 ${OUTPUT} ${BINDIR}
+-	${GZIP} ${MAN} > ${MAN}.gz
+-	${INSTALL} -m 444 ${MAN}.gz ${MANDIR}
++	${INSTALL} -s -m 555 ${OUTPUT} ${DESTDIR}${BINDIR}
++	${MAKE} -C ${LIBPATH} install
++	#${GZIP} ${MAN} > ${MAN}.gz
++	#${INSTALL} -m 444 ${MAN}.gz ${DESTDIR}${MANDIR}
+ 
+ unistall:
+ 	${RM} ${BINDIR}/${OUTPUT}

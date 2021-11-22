@@ -1,0 +1,4 @@
+Utility (bsddialog(1)) and library (libbsddialog) to build scripts and tools
+with TUI Widgets.
+
+WWW: https://gitlab.com/alfix/bsddialog

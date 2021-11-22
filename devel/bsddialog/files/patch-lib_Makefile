@@ -1,0 +1,60 @@
+--- lib/Makefile.orig	2021-11-22 01:09:04 UTC
++++ lib/Makefile
+@@ -6,6 +6,7 @@
+ VERSION = 0.1
+ LIBRARY = bsddialog
+ LIBRARY_SO = lib${LIBRARY:=.so}
++LIBRARY_A = lib${LIBRARY:=.a}
+ HEADERS = bsddialog.h bsddialog_theme.h
+ SOURCES = barbox.c editorbox.c formbox.c lib_util.c menubox.c textbox.c \
+ 	timebox.c commandbox.c filebox.c infobox.c libbsddialog.c messagebox.c \
+@@ -13,8 +14,8 @@ SOURCES = barbox.c editorbox.c formbox.c lib_util.c me
+ OBJECTS= ${SOURCES:.c=.o}
+ FBSDFLAGS= -O2 -pipe -std=gnu99 -Wno-format-zero-length \
+ 	-fstack-protector-strong -Qunused-arguments
+-CFLAGS = -I/usr/local/include -fPIC -Wall -Wextra ${FBSDFLAGS}
+-LDFLAGS = -fstack-protector-strong -shared -Wl,-x -Wl,--fatal-warnings \
++CFLAGS += -fPIC -Wall -Wextra ${FBSDFLAGS}
++LDFLAGS += -fstack-protector-strong -shared -Wl,-x -Wl,--fatal-warnings \
+ 	-Wl,--warn-shared-textrel -Wl,-soname,${LIBRARY_SO}.${VERSION} 
+ 
+ INSTALL_PREFIX=/usr/local
+@@ -43,11 +44,18 @@ RM= rm -f
+ #all : man ${LIBRARY}
+ all : ${LIBRARY}
+ 
+-${LIBRARY}: ${OBJECTS}
++${LIBRARY}: ${LIBRARY_SO} ${LIBRARY_A}
++
++${LIBRARY_SO}.${VERSION}: ${OBJECTS}
+ 	${CC} ${LDFLAGS} ${.ALLSRC} -o ${LIBRARY_SO}.${VERSION}
+-	# LN for devel
++
++${LIBRARY_SO}: ${LIBRARY_SO}.${VERSION}
+ 	${LN} ${LIBRARY_SO}.${VERSION} ${LIBRARY_SO}
+ 
++${LIBRARY_A}: ${OBJECTS}
++	${AR} cr ${.TARGET} ${OBJECTS}
++	${RANLIB} ${.TARGET}
++
+ .c.o:
+ 	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+ 
+@@ -59,11 +67,12 @@ clean:
+ 
+ 
+ install:
+-	${CP} ${LIBRARY}.h ${INSTALL_PREFIX}/include
+-	${CP} ${LIBRARY_SO}.${VERSION} ${INSTALL_PREFIX}/lib/
+-	${LN} ${INSTALL_PREFIX}/lib/${LIBRARY_SO}.${VERSION} ${INSTALL_PREFIX}/lib/${LIBRARY_SO}
+-	${LDCONFIG} ${INSTALL_PREFIX}/lib
+-	${CP} ${LIBRARY}.3.gz ${INSTALL_PREFIX}/man/man3/
++	${INSTALL} -m 644 ${HEADERS} ${DESTDIR}${INSTALL_PREFIX}/include
++	${INSTALL} -m 644 -s ${LIBRARY_SO}.${VERSION} ${DESTDIR}${INSTALL_PREFIX}/lib/
++	${INSTALL} -l rs ${DESTDIR}${INSTALL_PREFIX}/lib/${LIBRARY_SO}.${VERSION} ${DESTDIR}${INSTALL_PREFIX}/lib/${LIBRARY_SO}
++	${INSTALL} -m 644 ${LIBRARY_A} ${DESTDIR}/${INSTALL_PREFIX}/lib
++	#${LDCONFIG} ${INSTALL_PREFIX}/lib
++	#${CP} ${LIBRARY}.3.gz ${INSTALL_PREFIX}/man/man3/
+ 
+ unistall:
+ 	${RM} ${INSTALL_PREFIX}/include/${LIBRARY}.h
