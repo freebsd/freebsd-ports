@@ -1,5 +1,5 @@
 PORTNAME=	leiningen
-PORTVERSION=	2.9.7
+PORTVERSION=	2.9.8
 CATEGORIES=	devel lisp java
 MASTER_SITES=	https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone
 DISTFILES=	${PORTNAME}-${PORTVERSION}-standalone.jar:standalone
