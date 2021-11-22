@@ -1,5 +1,5 @@
---- common/homedir.c.orig	2021-10-01 12:44:06.000000000 +0000
-+++ common/homedir.c	2021-10-26 08:14:01.320259000 +0000
+--- common/homedir.c.orig	2021-10-01 12:44:06 UTC
++++ common/homedir.c
 @@ -68,7 +68,9 @@
   * text was read.  */
  #if __linux__
@@ -11,7 +11,7 @@
  # define MYPROC_SELF_EXE "/proc/curproc/file"
  #endif
  
-@@ -495,13 +497,13 @@
+@@ -495,13 +497,13 @@ unix_rootdir (int want_sysconfdir)
            if (nread < 0)
              {
                err = gpg_error_from_syserror ();
