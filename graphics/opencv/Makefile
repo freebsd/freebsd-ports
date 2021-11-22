@@ -1,6 +1,6 @@
 PORTNAME=	opencv
 DISTVERSION=	4.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/opencv/opencv/commit/
@@ -114,7 +114,7 @@ TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 
 VTK_DESC=		Include VTK library support (build opencv_viz module)
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-9.0.so:math/vtk9
+VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
 ###
 
 # IMAGE group options (GPHOTO2 JPEG OPENEXR PNG TIFF)

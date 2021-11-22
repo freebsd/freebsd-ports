@@ -3,6 +3,7 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	henrik@gulbra.net
@@ -59,7 +60,7 @@ OCC_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libpython${_PYVERSION}.so:lang/python${PYTHON_SUFFIX} \
 			libtiff.so:graphics/tiff \
 			libTKernel.so:cad/opencascade \
-			libvtksys-9.0.so:math/vtk9
+			libvtksys-9.1.so:math/vtk9
 OCC_USES=		python
 OCC_CMAKE_BOOL=		WITH_OCC
 OCC_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.0

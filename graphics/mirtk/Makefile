@@ -1,7 +1,7 @@
 PORTNAME=	mirtk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-122
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-g38210fa
 CATEGORIES=	graphics
 
@@ -30,7 +30,7 @@ TBB_BROKEN=		Not oneTBB-compatible,see https://github.com/BioMedIA/MIRTK/issues/
 
 VTK_DESC=		Build with the VTK toolkit
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-9.0.so:math/vtk9 \
+VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9 \
 			libexpat.so:textproc/expat2
 
 .include <bsd.port.mk>

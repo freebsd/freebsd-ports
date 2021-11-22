@@ -1,6 +1,5 @@
 PORTNAME=	vtk
-DISTVERSION=	9.0.3
-PORTREVISION=	1
+DISTVERSION=	9.1.0
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 USES=		alias cmake compiler:c++11-lang gl jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
-USE_XORG=	ice x11 xt xext sm
+USE_XORG=	ice x11 xt xext sm xcursor xfixes xrender
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		VTK_INSTALL_NO_DOCUMENTATION VTK_USE_SYSTEM_EXPAT VTK_USE_SYSTEM_TIFF \
@@ -28,6 +27,8 @@ CMAKE_ARGS=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_ARCHIVE_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_QT_DIR=/${QT_LIBDIR_REL}/plugins/designer \
 		-DSTAGEDIR=${STAGEDIR}
+
+CFLAGS+=	-Du_int=unsigned # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259975
 
 VTK_SHORT_VER=	${PORTVERSION:R}
 
@@ -63,7 +64,7 @@ PYTHON_CMAKE_ON=	-DVTK_PYTHON_VERSION=${PYTHON_MAJOR_VER}
 PYTHON_VARS=		SUB_FILES=PKG-INFO SUB_LIST=PORTVERSION=${PORTVERSION}
 
 QT5_USES=		qt:5
-QT5_USE=		QT=core,gui,sql,uiplugin,widgets,x11extras,qmake_build,buildtools_build
+QT5_USE=		QT=core,declarative,gui,network,opengl,sql,uiplugin,widgets,x11extras,qmake_build,buildtools_build
 QT5_CMAKE_ON=		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5 \
 			-DVTK_GROUP_ENABLE_Qt:STRING=YES \
 			-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES
