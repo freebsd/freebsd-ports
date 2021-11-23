@@ -1,8 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	jp2a
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/Talinx/${PORTNAME}/releases/download/v${DISTVERSION}/
 
