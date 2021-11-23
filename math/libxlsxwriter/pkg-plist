@@ -15,6 +15,7 @@ include/xlsxwriter/packager.h
 include/xlsxwriter/relationships.h
 include/xlsxwriter/shared_strings.h
 include/xlsxwriter/styles.h
+include/xlsxwriter/table.h
 include/xlsxwriter/theme.h
 include/xlsxwriter/third_party/emyg_dtoa.h
 include/xlsxwriter/third_party/ioapi.h
@@ -30,5 +31,5 @@ include/xlsxwriter/worksheet.h
 include/xlsxwriter/xmlwriter.h
 lib/libxlsxwriter.a
 lib/libxlsxwriter.so
-lib/libxlsxwriter.so.3
+lib/libxlsxwriter.so.4
 libdata/pkgconfig/xlsxwriter.pc
