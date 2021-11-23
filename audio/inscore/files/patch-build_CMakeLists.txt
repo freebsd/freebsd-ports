@@ -1,13 +1,18 @@
---- build/CMakeLists.txt.orig	2021-10-24 18:32:31 UTC
+--- build/CMakeLists.txt.orig	2021-11-08 06:26:08 UTC
 +++ build/CMakeLists.txt
-@@ -378,8 +378,8 @@ else()
- 	set (INSTALL_BIN 		${CMAKE_INSTALL_PREFIX}/bin)
+@@ -379,12 +379,12 @@ else()
  	set (INSTALL_LIB 		${CMAKE_INSTALL_PREFIX}/lib)
  	set (INSTALL_INC 		${CMAKE_INSTALL_PREFIX}/include/inscore)
--	set (INSTALL_SAMPLES 	${CMAKE_INSTALL_PREFIX}/share/inscore/examples)
--	set (INSTALL_GMN_SAMPLES 	${CMAKE_INSTALL_PREFIX}/share/inscore/GMN-Examples)
-+	set (INSTALL_SAMPLES 	share/examples/inscore)
-+	set (INSTALL_GMN_SAMPLES 	share/examples/inscore)
- 	set (INSTALL_BUNDLES 	${CMAKE_INSTALL_PREFIX}/share/inscore/bundles)
- 	set (INSTALL_TOOLS 		${CMAKE_INSTALL_PREFIX}/share/inscore/tools)
- 	set (INSTALL_INTERFACES 	${CMAKE_INSTALL_PREFIX}/share/inscore)
+ 	set (INSTALL_SHARED 	${CMAKE_INSTALL_PREFIX}/share)
+-	set (INSTALL_SAMPLES 	${INSTALL_SHARED}/inscore/examples)
+-	set (INSTALL_GMN_SAMPLES 	${INSTALL_SHARED}/inscore/GMN-Examples)
++	set (INSTALL_SAMPLES 	${FREEBSD_EXAMPLESDIR})
++	set (INSTALL_GMN_SAMPLES 	${FREEBSD_EXAMPLESDIR}/GMN-Examples)
+ 	set (INSTALL_BUNDLES 	${INSTALL_SHARED}/inscore/bundles)
+ 	set (INSTALL_TOOLS 		${INSTALL_SHARED}/inscore/tools)
+ 	set (INSTALL_INTERFACES ${INSTALL_SHARED}/inscore)
+-	set (INSTALL_DOC 		${INSTALL_SHARED}/inscore/doc)
++	set (INSTALL_DOC 		${FREEBSD_DOCSDIR})
+ endif()
+ set (installtargets 	${viewer} ${ibundle} ${libtarget})
+ 

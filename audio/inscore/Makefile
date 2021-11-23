@@ -1,5 +1,5 @@
 PORTNAME=	inscore
-PORTVERSION=	1.28
+PORTVERSION=	1.31
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,7 @@ GH_TAGNAME=	v${PORTVERSION:S/.//}
 GH_TUPLE=	grame-cncm:guidolib:3cf3d88:guidolib/modules/guidolib # this uses some un-installed parts of the guidolib project, partucularly QGuidoPainter.h
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
+CMAKE_ARGS=	-DFREEBSD_EXAMPLESDIR=${EXAMPLESDIR} -DFREEBSD_DOCSDIR=${DOCSDIR}
 
 CXXFLAGS+=	-I${LOCALBASE}/include/guido -I${LOCALBASE}/include/guidoar
 CXXFLAGS_powerpc64=	-DOSC_HOST_BIG_ENDIAN

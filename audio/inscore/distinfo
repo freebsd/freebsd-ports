@@ -1,5 +1,5 @@
-TIMESTAMP = 1635099044
-SHA256 (grame-cncm-inscore-1.28-v128_GH0.tar.gz) = f280d9057d59b140f8d567f9e8ac0ecdd811e2964475a817eb1a54f15d493d8b
-SIZE (grame-cncm-inscore-1.28-v128_GH0.tar.gz) = 443524698
+TIMESTAMP = 1637648784
+SHA256 (grame-cncm-inscore-1.31-v131_GH0.tar.gz) = 57f8074998c31e01fab3031c26a9a24fbe92adc4ff667a22cc9986b2666db2a3
+SIZE (grame-cncm-inscore-1.31-v131_GH0.tar.gz) = 468225470
 SHA256 (grame-cncm-guidolib-3cf3d88_GH0.tar.gz) = 0ec8a9e60d76230e69de9e0263b04ffe93d4f2fa660856e2666863cd99f6bea4
 SIZE (grame-cncm-guidolib-3cf3d88_GH0.tar.gz) = 42458506
