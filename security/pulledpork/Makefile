@@ -7,7 +7,7 @@ PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	GHL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Script to update snort-2.8+ rules
 
 LICENSE=	GPLv2
