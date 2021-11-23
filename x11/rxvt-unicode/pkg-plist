@@ -28,6 +28,7 @@ bin/urxvtcd
 %%PERL%%lib/urxvt/perl/urxvt-popup
 %%PERL%%lib/urxvt/perl/xim-onthespot
 %%PERL%%lib/urxvt/urxvt.pm
+man/man1/urclock.1.gz
 %%PERL%%man/man1/urxvt-background.1.gz
 %%PERL%%man/man1/urxvt-bell-command.1.gz
 %%PERL%%man/man1/urxvt-block-graphics-to-ascii.1.gz
@@ -54,7 +55,6 @@ bin/urxvtcd
 %%PERL%%man/man1/urxvt-xim-onthespot.1.gz
 man/man1/urxvt.1.gz
 man/man1/urxvtc.1.gz
-man/man1/urxvtcd.1.gz
 man/man1/urxvtd.1.gz
 %%PERL%%man/man3/urxvtperl.3.gz
 man/man7/urxvt.7.gz
