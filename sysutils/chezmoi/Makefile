@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.5
+DISTVERSION=	2.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -20,7 +20,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.2.2:masterminds_sprig_v3/vendor/github.com/Masterminds/sprig/v3 \
 		Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		ProtonMail:go-crypto:87db9fbc61c7:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		ProtonMail:go-crypto:428f8eabeeb3:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
 		alecthomas:chroma:v0.9.4:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
@@ -39,25 +39,27 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.4.2:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
-		go-ini:ini:v1.63.2:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.64.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:v5.0.6:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:b53810dc28af:golang_net/vendor/golang.org/x/net \
+		golang:crypto:ae814b36b871:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:6a13c67c3ce4:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:e0b2ad06fe42:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:dee7805ff2e1:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		google:go-github:v39.2.0:google_go_github_v39/vendor/github.com/google/go-github/v39 \
+		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
+		google:go-github:v40.0.0:google_go_github_v40/vendor/github.com/google/go-github/v40 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:gops:v0.3.22:google_gops/vendor/github.com/google/gops \
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
+		gregjones:httpcache:901d90724c79:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
@@ -78,6 +80,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		muesli:termenv:v0.9.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.9.4:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		peterbourgon:diskv:v2.0.1:peterbourgon_diskv/vendor/github.com/peterbourgon/diskv \
 		pkg:diff:20ebb0f2a09e:pkg_diff/vendor/github.com/pkg/diff \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -104,7 +107,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
-		yuin:goldmark:v1.4.2:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.4.4:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.1.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring \
 		DHowett:go-plist:1454fab16a06:go_plist/vendor/howett.net/plist
 
