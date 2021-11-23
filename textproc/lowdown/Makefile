@@ -1,5 +1,5 @@
 PORTNAME=	lowdown
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
