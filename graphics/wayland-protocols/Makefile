@@ -1,5 +1,5 @@
 PORTNAME=	wayland-protocols
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
@@ -11,9 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	wayland-scanner:graphics/wayland
 
-USES=		autoreconf pkgconfig tar:xz
+USES=		meson pkgconfig tar:xz
+MESON_ARGS=	-Dtests=false
 NO_ARCH=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-noarch-pkgconfigdir='$${prefix}/libdata/pkgconfig'
 
 .include <bsd.port.mk>

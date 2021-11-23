@@ -1,0 +1,14 @@
+devel/pkgconfig removed share/pkgconfig from PKG_DEFAULT_PATH
+via --with-pkg-config-dir override. Similar to lib/pkgconfig.
+
+--- meson.build.orig	2021-11-26 04:47:33 UTC
++++ meson.build
+@@ -91,7 +91,7 @@ pkgconfig_configuration.set('abs_top_srcdir', wayland_
+ pkgconfig_configuration.set('PACKAGE', 'wayland-protocols')
+ pkgconfig_configuration.set('WAYLAND_PROTOCOLS_VERSION', wayland_protocols_version)
+ 
+-pkg_install_dir = join_paths(get_option('datadir'), 'pkgconfig')
++pkg_install_dir = join_paths(get_option('prefix'), 'libdata/pkgconfig')
+ configure_file(
+ 	input: 'wayland-protocols.pc.in',
+ 	output: 'wayland-protocols.pc',
