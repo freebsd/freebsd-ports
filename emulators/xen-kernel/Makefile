@@ -1,6 +1,6 @@
 PORTNAME=	xen
 PORTVERSION=	4.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -27,6 +27,9 @@ PLIST_FILES=	/boot/xen \
 EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-mtrr-remove-stale-function-prototype.patch:-p1 \
 		${PATCHDIR}/0002-x86-mtrr-move-epte_get_entry_emt-to-p2m-ept.c.patch:-p1 \
 		${PATCHDIR}/0003-x86-ept-force-WB-cache-attributes-for-grant-and-fore.patch:-p1
+
+# Fix build with clang 13.0.0
+EXTRA_PATCHES+=	${PATCHDIR}/0001-efi-fix-alignment-of-function-parameters-in-compat-m.patch:-p1
 
 .include <bsd.port.options.mk>
 
