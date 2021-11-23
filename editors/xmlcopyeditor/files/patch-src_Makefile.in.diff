@@ -1,7 +1,8 @@
-+++ src/Makefile.in
-@@ -283,8 +283,8 @@
- # these are the headers for your project
- noinst_HEADERS = $(srcdir)/*.h
+--- src/Makefile.am.orig	2021-11-05 21:58:53 UTC
++++ src/Makefile.am
+@@ -9,8 +9,8 @@ noinst_HEADERS = $(srcdir)/*.h
+ bin_PROGRAMS = xmlcopyeditor
+ bindir = ${prefix}/bin
  xmlcopyeditordir = ${prefix}/share/xmlcopyeditor
 -pixmapdir = /usr/share/pixmaps
 -applicationsdir = /usr/share/applications
@@ -9,4 +10,4 @@
 +applicationsdir = ${prefix}/share/applications
  
  # the application source, library search path, and link libraries
- xmlcopyeditor_SOURCES = aboutdialog.cpp associatedialog.cpp binaryfile.cpp \
+ xmlcopyeditor_SOURCES = aboutdialog.cpp \
