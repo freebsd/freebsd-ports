@@ -1,5 +1,6 @@
 PORTNAME=	haruna
 DISTVERSION=	0.7.3
+PORTREVISION=	1
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 CATEGORIES=	multimedia kde
 
@@ -8,7 +9,7 @@ COMMENT=	KDE video player
 
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 RUN_DEPENDS=	kio-extras>0:devel/kio-extras \
-		youtube-dl:www/youtube_dl
+		yt-dlp:www/yt-dlp
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \

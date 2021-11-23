@@ -2,6 +2,7 @@
 
 PORTNAME=	smtube
 DISTVERSION=	21.10.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
@@ -11,7 +12,7 @@ COMMENT=	SMPlayer YouTube browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
-RUN_DEPENDS=	youtube-dl:www/youtube_dl
+RUN_DEPENDS=	yt-dlp:www/yt-dlp
 
 USES=		gl gmake qt:5 tar:bzip2
 USE_GL=		gl

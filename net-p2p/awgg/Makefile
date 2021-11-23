@@ -1,6 +1,6 @@
 PORTNAME=	awgg
 PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	aria2c:www/aria2 \
 		wget:ftp/wget \
 		curl:ftp/curl \
-		youtube-dl:www/youtube_dl \
+		yt-dlp:www/yt-dlp \
 		axel:ftp/axel
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5

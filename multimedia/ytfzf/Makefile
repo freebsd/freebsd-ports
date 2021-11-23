@@ -1,6 +1,7 @@
 PORTNAME=	ytfzf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -16,7 +17,7 @@ RUN_DEPENDS=	curl:ftp/curl \
 		notify-send:devel/libnotify \
 		shuf:sysutils/shuf \
 		ueberzug:graphics/py-ueberzug@${PY_FLAVOR} \
-		youtube-dl:www/youtube_dl
+		yt-dlp:www/yt-dlp
 
 USES=		python
 USE_GITHUB=	yes

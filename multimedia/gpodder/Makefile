@@ -2,6 +2,7 @@
 
 PORTNAME=	gpodder
 DISTVERSION=	3.10.17
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 
 MAINTAINER=	rm@FreeBSD.org
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}podcastparser>=0.6.0:devel/py-podcastparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen@${PY_FLAVOR} \
-		youtube_dl>0:www/youtube_dl \
+		yt-dlp:www/yt-dlp \
 		${PYTHON_PKGNAMEPREFIX}eyed3>=0:audio/py-eyed3@${PY_FLAVOR}
 
 USES=		gettext gmake gnome python:3.5+ shebangfix
