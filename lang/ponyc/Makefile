@@ -2,7 +2,7 @@ PORTNAME=	ponyc
 DISTVERSION=	0.33.2
 CATEGORIES=	lang
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pony language compiler
 
 LICENSE=	BSD2CLAUSE

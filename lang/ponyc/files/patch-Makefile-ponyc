@@ -1,8 +1,15 @@
 Avoid hardcoding /usr/local/bin/clang70 as fallback linker
 
---- Makefile-ponyc.orig	2019-11-02 05:19:12 UTC
+--- Makefile-ponyc.orig	2020-02-03 03:34:35 UTC
 +++ Makefile-ponyc
-@@ -130,7 +130,7 @@ LINKER_FLAGS = -march=$(arch) -mtune=$(tune) $(LDFLAGS
+@@ -146,13 +146,13 @@ else
+ endif
+ 
+ LIB_EXT ?= a
+-BUILD_FLAGS = -march=$(arch) -mtune=$(tune) -Werror -Wconversion \
++BUILD_FLAGS = -march=$(arch) -mtune=$(tune) -Wconversion \
+   -Wno-sign-conversion -Wextra -Wall
+ LINKER_FLAGS = -march=$(arch) -mtune=$(tune) $(LDFLAGS)
  AR_FLAGS ?= rcs
  ALL_CFLAGS = -std=gnu11 -fexceptions \
    -DPONY_VERSION=\"$(tag)\" -DLLVM_VERSION=\"$(llvm_version)\" \
