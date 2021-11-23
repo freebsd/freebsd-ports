@@ -1,3 +1,45 @@
+  <vuln vid="27aa2253-4c72-11ec-b6b9-e86a64caca56">
+    <topic>py-matrix-synapse -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py36-matrix-synapse</name>
+	<name>py37-matrix-synapse</name>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<name>py310-matrix-synapse</name>
+	<range><lt>1.47.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2021/11/23/synapse-1-47-1-released">
+	    <p>This release patches one high severity issue affecting
+    Synapse installations 1.47.0 and earlier using the media repository.
+    An attacker could cause these Synapses to download a remote file
+    and store it in a directory outside the media repository.</p>
+      <p>Note that:</p>
+    <ul>
+      <li>This only affects homeservers using Synapse's built-in media
+      repository, as opposed to synapse-s3-storage-provider or
+      matrix-media-repo.</li>
+      <li>Attackers cannot control the exact name or destination of the
+      stored file.</li>
+    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/259994</freebsdpr>
+      <cvename>CVE-2021-41281</cvename>
+      <url>https://matrix.org/blog/2021/11/23/synapse-1-47-1-released</url>
+    </references>
+    <dates>
+      <discovery>2021-11-18</discovery>
+      <entry>2021-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bf816f6-3cfe-11ec-86cd-dca632b19f10">
     <topic>advancecomp -- multiple vulnerabilities</topic>
     <affects>
