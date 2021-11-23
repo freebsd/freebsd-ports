@@ -1,5 +1,6 @@
 PORTNAME=	pounce
 DISTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://git.causal.agency/pounce/snapshot/
 
