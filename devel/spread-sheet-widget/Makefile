@@ -1,7 +1,7 @@
 # Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
 
 PORTNAME=	spread-sheet-widget
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	GNU_ALPHA/ssw
 
