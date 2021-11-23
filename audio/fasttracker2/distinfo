@@ -1,5 +1,3 @@
-TIMESTAMP = 1630666288
-SHA256 (8bitbubsy-ft2-clone-v1.47_GH0.tar.gz) = a011c6c13aff8788daa6df5e8c6d44d2e1ce6d470618e41d9ede45c37ce79f5b
-SIZE (8bitbubsy-ft2-clone-v1.47_GH0.tar.gz) = 5234480
-SHA256 (14013d2165f6.patch) = d0a03e33b679a39daf2acd55cf8c91402abc1318779b0fcc42e8318279baa105
-SIZE (14013d2165f6.patch) = 1033
+TIMESTAMP = 1637692221
+SHA256 (8bitbubsy-ft2-clone-v1.48_GH0.tar.gz) = cfc847b04f108303021faa562fb5cc1f2c4e5154dae054bdec0426888dbc195f
+SIZE (8bitbubsy-ft2-clone-v1.48_GH0.tar.gz) = 4879951

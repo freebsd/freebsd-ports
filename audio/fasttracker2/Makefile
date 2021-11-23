@@ -2,12 +2,8 @@
 
 PORTNAME=	fasttracker2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.47
-PORTREVISION=	1
+DISTVERSION=	1.48
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	14013d2165f6.patch:-p1 # https://github.com/8bitbubsy/ft2-clone/issues/21
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fasttracker II clone
