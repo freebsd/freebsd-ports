@@ -77,7 +77,7 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
-.if ${ARCH} != aarch64 && ${ARCH} != amd64
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != powerpc64 && ${ARCH} != powerpc64le
 USES+=		compiler:gcc-c++11-lib
 .endif
 .endif
