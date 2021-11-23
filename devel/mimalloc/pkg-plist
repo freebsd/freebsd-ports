@@ -1,10 +1,10 @@
-cmake/mimalloc-config-version.cmake
-cmake/mimalloc-config.cmake
-cmake/mimalloc-%%CMAKE_BUILD_TYPE%%.cmake
-cmake/mimalloc.cmake
 include/mimalloc-new-delete.h
 include/mimalloc-override.h
 include/mimalloc.h
+lib/cmake/mimalloc/mimalloc-config-version.cmake
+lib/cmake/mimalloc/mimalloc-config.cmake
+lib/cmake/mimalloc/mimalloc-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mimalloc/mimalloc.cmake
 lib/libmimalloc.a
 lib/libmimalloc.so
 lib/libmimalloc.so.2.0
