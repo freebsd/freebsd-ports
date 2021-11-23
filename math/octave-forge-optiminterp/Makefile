@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-optiminterp
-PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTVERSION=	0.3.7
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
