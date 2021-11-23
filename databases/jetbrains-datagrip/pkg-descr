@@ -1,0 +1,12 @@
+DataGrip - A cross-platform IDE for Databases
+
+Native support for PostgreSQL, MySQL, Hive, SQLite, and many more
+Cloud-hosted DBs, enabling you to introspect and modify objects,
+schemas, columns, and rows. Supports parametrized SQL queries, entity
+relationship diagrams using key relations, scripting and version control
+support.
+
+While this is trial software, there are commercial and academic licenses
+available.
+
+WWW: https://www.jetbrains.com/datagrip/

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=DataGrip
+GenericName=DataGrip
+Comment=DataGrip Integrated Development Environment
+Icon=%%DATADIR%%/bin/datagrip.png
+Exec=%%DATADIR%%/bin/datagrip.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+There is a native (faster) file watching support backed by kqueue which is
+enabled by default.  If you encounter problems with watching large
+trees, you can disable it by adding the following property via the menu
+entry Help -> Edit Custom Properties...
+
+      idea.filewatcher.disabled=true
+EOM
+}
+]

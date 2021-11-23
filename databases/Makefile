@@ -122,6 +122,7 @@
     SUBDIR += jasperreports
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g
+    SUBDIR += jetbrains-datagrip
     SUBDIR += jlog
     SUBDIR += jrobin
     SUBDIR += jrrd
