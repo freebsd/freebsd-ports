@@ -1,8 +1,7 @@
 # Created by: José García Juanino <jjuanino@gmail.com>
 
 PORTNAME=	borgbackup
-DISTVERSION=	1.1.16
-PORTREVISION=	1
+DISTVERSION=	1.1.17
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_sc
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libxxhash.so:devel/xxhash
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python:3.5+ ssl
 USE_PYTHON=	autoplist distutils
