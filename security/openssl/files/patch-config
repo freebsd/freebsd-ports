@@ -1,6 +1,6 @@
---- config.orig	2018-01-13 13:57:15 UTC
+--- config.orig	2021-08-24 13:38:47 UTC
 +++ config
-@@ -694,14 +694,8 @@ case "$GUESSOS" in
+@@ -708,14 +708,9 @@ case "$GUESSOS" in
    ia64-*-*bsd*)		OUT="BSD-ia64" ;;
    x86_64-*-dragonfly*)  OUT="BSD-x86_64" ;;
    amd64-*-*bsd*)	OUT="BSD-x86_64" ;;
@@ -12,6 +12,7 @@
 -			    libc=`(ls /usr/lib/libc.so.* /lib/libc.so.* | tail -1) 2>/dev/null`
 -			fi
 -			case "`(file -L $libc) 2>/dev/null`" in
++  arm64-*-*bsd*)	OUT="BSD-aarch64" ;;
 +  *86*-*-*bsd*)	
 +			case "`(file -L /bin/sh) 2>/dev/null`" in
  			*ELF*)	OUT="BSD-x86-elf" ;;
