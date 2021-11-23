@@ -32,7 +32,7 @@ CPE_VENDOR=	openbsd
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
-CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-devel-[0-9]*
+CONFLICTS_INSTALL=	postfix sendmail opensmtpd-devel
 
 USERS=		_smtpd _smtpq
 GROUPS=		_smtpd _smtpq

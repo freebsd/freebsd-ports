@@ -23,10 +23,10 @@ USES=		ghostscript:7,run
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL= \
-		ghostscript[789]-[0-9]* \
-		ghostscript[789]-nox11-[0-9]* \
-		ghostscript9-agpl-[0-9]* \
-		ghostscript9-agpl-nox11-[0-9]*
+		ghostscript[789] \
+		ghostscript[789]-nox11 \
+		ghostscript9-agpl \
+		ghostscript9-agpl-nox11
 
 CMAPDIR?=	${LOCALBASE}/share/fonts/adobe-cmaps
 GS_RESDIR?=	share/ghostscript/Resource

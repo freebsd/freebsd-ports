@@ -11,7 +11,7 @@ COMMENT=	Web log rotation utility that provides datestamp filenames
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	cronolog-devel-[0-9]*
+CONFLICTS_INSTALL=	cronolog-devel
 
 INFO=		cronolog
 GNU_CONFIGURE=	yes

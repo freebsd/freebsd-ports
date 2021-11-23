@@ -11,7 +11,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS_INSTALL=	poudriere-devel-[0-9]*
+CONFLICTS_INSTALL=	poudriere-devel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd

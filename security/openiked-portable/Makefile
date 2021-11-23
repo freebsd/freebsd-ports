@@ -11,7 +11,7 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-CONFLICTS_INSTALL=	openiked-[0-9]*
+CONFLICTS_INSTALL=	openiked
 USES=			cmake ssl
 
 USE_RC_SUBR=	iked

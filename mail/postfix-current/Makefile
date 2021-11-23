@@ -26,19 +26,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS_IPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FLAVORS=			default ldap sasl
-default_CONFLICTS_INSTALL=	postfix-current-base-ldap-* \
-				postfix-current-base-sasl-* \
-				postfix-current-ldap-* postfix-current-sasl-*
+default_CONFLICTS_INSTALL=	postfix-current-base-ldap \
+				postfix-current-base-sasl \
+				postfix-current-ldap postfix-current-sasl
 ldap_PKGNAMESUFFIX=		-current-ldap
-ldap_CONFLICTS_INSTALL=		postfix-current-[0-9]* \
-				postfix-current-base-[0-9] \
-				postfix-current-base-sasl-* \
-				postfix-current-sasl-*
+ldap_CONFLICTS_INSTALL=		postfix-current \
+				postfix-current-base \
+				postfix-current-base-sasl \
+				postfix-current-sasl
 sasl_PKGNAMESUFFIX=		-current-sasl
-sasl_CONFLICTS_INSTALL=		postfix-current-[0-9]* \
-				postfix-current-base-[0-9] \
-				postfix-current-base-ldap-* \
-				postfix-current-ldap-*
+sasl_CONFLICTS_INSTALL=		postfix-current \
+				postfix-current-base \
+				postfix-current-base-ldap \
+				postfix-current-ldap
 
 COMMENT_ldap=	(with OpenLDAP and Cyrus SASL support)
 COMMENT_sasl=	(with Cyrus SASL support)
@@ -51,10 +51,10 @@ SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-CONFLICTS_INSTALL=	courier-0.* opensmtpd-[0-9]* opensmtpd-devel-* \
-			postfix-[0-9]* postfix-base-* postfix-ldap-sasl-* \
-			postfix-sasl-* postfix35-* sendmail-[0-9]* \
-			sendmail-devel-*
+CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
+			postfix postfix-base postfix-ldap-sasl \
+			postfix-sasl postfix35 sendmail \
+			sendmail-devel
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix

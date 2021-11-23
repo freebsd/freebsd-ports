@@ -10,7 +10,7 @@ COMMENT=	Industrial-grade ticketing system written in Perl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	rt42-4.2* rt44-4.4* brlcad-[0-9]*
+CONFLICTS_INSTALL=	rt42-4.2* rt44-4.4* brlcad
 
 NO_ARCH=	yes
 

@@ -10,7 +10,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	git>0:devel/git
 
-CONFLICTS_INSTALL=	svn2git-[0-9]*
+CONFLICTS_INSTALL=	svn2git
 
 NO_ARCH=	yes
 USE_RUBY=	yes

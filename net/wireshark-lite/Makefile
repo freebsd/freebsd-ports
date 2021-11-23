@@ -2,7 +2,7 @@
 
 LITE=		yes
 
-CONFLICTS_INSTALL?=	wireshark-[0-9]* tshark-[0-9]* tshark-lite-[0-9]*
+CONFLICTS_INSTALL?=	wireshark tshark tshark-lite
 
 MASTERDIR=	${.CURDIR}/../wireshark
 COMMENT=	Powerful network analyzer/capture tool (lite package)

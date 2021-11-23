@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 
 PORTSCOUT=	ignore:1	# for newer versions see emulators/wine-mono-devel
 
-CONFLICTS_INSTALL=	wine-mono-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-mono-devel
 
 NO_BUILD=	yes
 PLIST_SUB+=	MONO_VERSION="${DISTVERSION}"

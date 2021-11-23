@@ -18,7 +18,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libFAudio.so:audio/faudio \
-		libxml2.so:textproc/libxml2
+		libxml2.so:textproc/libxml2 \
+		libsysinfo.so:devel/libsysinfo
 
 USES=		bison cpe desktop-file-utils gmake localbase \
 		pkgconfig sdl shebangfix tar:xz
@@ -57,7 +58,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-udev \
 		--without-unwind \
 		--without-usb
-CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
+CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex" CFLAGS="-D_WITH_CPU_SET_T"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine

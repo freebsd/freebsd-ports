@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 USES=		autoreconf:build gmake makeinfo tar:xz
 
-CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
+CONFLICTS_INSTALL=	kBuild-devel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	trociny
 
-CONFLICTS_INSTALL=	harvest-[0-9]*
+CONFLICTS_INSTALL=	harvest
 
 DATADIR=	/var/db/gather
 MAKE_ENV+=	CONFDIR=${PREFIX}/etc/gather DATADIR=${DATADIR}

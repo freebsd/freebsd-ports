@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 USE_GITHUB=	yes
 GH_TAGNAME=	f7712082106bef085515f86ae47e7dbbd2a48b57
 
-CONFLICTS_INSTALL?=	ccache-[0-9]* ccache-static-[0-9]* ccache-memcached-static-[0-9]*
+CONFLICTS_INSTALL?=	ccache ccache-static ccache-memcached-static
 
 GNU_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 BINDIR=		lib/${PORTNAME}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/${BINDIR} --sbindir=${PREFIX}/${BINDIR}
 
-CONFLICTS_INSTALL=	empire-[0-9]*
+CONFLICTS_INSTALL=	empire
 
 USERS=		wolfpack
 GROUPS=		wolfpack

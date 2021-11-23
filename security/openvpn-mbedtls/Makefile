@@ -4,7 +4,7 @@ PKGNAMESUFFIX=		-mbedtls
 
 COMMENT=		Secure IP/Ethernet tunnel daemon, mbedTLS-based build
 
-CONFLICTS_INSTALL=	openvpn-[0-9].* openvpn-beta-[0-9]* openvpn-devel-[0-9]*
+CONFLICTS_INSTALL=	openvpn openvpn-beta openvpn-devel
 
 OPTIONS_EXCLUDE=	OPENSSL PKCS11 X509ALTUSERNAME
 OPTIONS_SLAVE=		MBEDTLS

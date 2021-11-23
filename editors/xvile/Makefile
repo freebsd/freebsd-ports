@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--disable-imake \
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install-doc install-html
 
-CONFLICTS_INSTALL=	vile-[0-9]*
+CONFLICTS_INSTALL=	vile
 
 OPTIONS_DEFINE=		DOCS FILTERS ICONV PERL
 OPTIONS_RADIO=		MENUS

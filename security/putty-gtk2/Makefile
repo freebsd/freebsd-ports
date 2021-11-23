@@ -8,7 +8,7 @@ EXPIRATION_DATE=	2021-12-15
 OPTIONS_SLAVE=		GTK2
 OPTIONS_EXCLUDE=	GTK3
 
-CONFLICTS_INSTALL=	pssh-[0-9]* putty-[0-9]* putty-nogtk-[0-9]*
+CONFLICTS_INSTALL=	pssh putty putty-nogtk
 
 MASTERDIR=		${.CURDIR}/../../security/putty
 

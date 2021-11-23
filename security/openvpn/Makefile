@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
-CONFLICTS_INSTALL?=	openvpn-2.[!5].* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
+CONFLICTS_INSTALL?=	openvpn-2.[!5].* openvpn-devel openvpn-mbedtls
 
 SUB_FILES=		pkg-message openvpn-client
 

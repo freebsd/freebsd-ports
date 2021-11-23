@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-xrm.so:x11/xcb-util-xrm \
 		libxkbcommon.so:x11/libxkbcommon
 
-CONFLICTS_INSTALL=	awesome3-[0-9]*
+CONFLICTS_INSTALL=	awesome3
 
 USES=		cmake compiler:c11 gettext gnome iconv pkgconfig lua \
 		shebangfix xorg

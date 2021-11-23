@@ -93,7 +93,7 @@ LDFLAGS+=	-g
 DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
-CONFLICTS_INSTALL=	ja-mh-[0-9]* pixie-* p5-Dist-Joseki-*
+CONFLICTS_INSTALL=	ja-mh pixie p5-Dist-Joseki
 
 post-install:
 	@${FIND} ${STAGEDIR}${ETCDIR} -type f -exec ${MV} {} {}-dist \;

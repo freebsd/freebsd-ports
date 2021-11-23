@@ -40,12 +40,12 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-[0-9]* \
-			virtualbox-ose-additions-[0-9]* \
-			virtualbox-ose-additions-devel-[0-9]* \
-			virtualbox-ose-devel-[0-9]* \
-			virtualbox-ose-lite-[0-9]* \
-			virtualbox-ose-nox11-[0-9]*
+CONFLICTS_INSTALL=	virtualbox-ose \
+			virtualbox-ose-additions \
+			virtualbox-ose-additions-devel \
+			virtualbox-ose-devel \
+			virtualbox-ose-lite \
+			virtualbox-ose-nox11
 
 PORTSCOUT=	limit:^5\.
 
@@ -67,9 +67,9 @@ X11_VARS=		VBOX_WITH_X11=1
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-[0-9]*
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-[0-9]*
+CONFLICTS_INSTALL+=	virtualbox-ose-additions
 .endif
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers

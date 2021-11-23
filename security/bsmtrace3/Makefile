@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-CONFLICTS_INSTALL=	bsmtrace-[0-9]*
+CONFLICTS_INSTALL=	bsmtrace
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openbsm

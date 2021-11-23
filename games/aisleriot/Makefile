@@ -18,7 +18,7 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libgc-threaded.so:devel/boehm-gc-threaded
 
-CONFLICTS_INSTALL=	sol-[0-9]*
+CONFLICTS_INSTALL=	sol
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext meson gnome pkgconfig \

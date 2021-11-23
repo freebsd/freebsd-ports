@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	gnu
 
-CONFLICTS_INSTALL=	guile1-[0-9]* guile2-[0-9]*
+CONFLICTS_INSTALL=	guile1 guile2
 
 MAKE_JOBS_UNSAFE=	yes
 

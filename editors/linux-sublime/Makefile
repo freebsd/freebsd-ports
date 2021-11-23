@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/"Sublime Text 2"
 NO_BUILD=
 SUB_FILES=	sublime
 
-CONFLICTS_INSTALL=	linux-sublime3-[0-9]*
+CONFLICTS_INSTALL=	linux-sublime3
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

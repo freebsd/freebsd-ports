@@ -16,7 +16,7 @@ LIB_DEPENDS=	libosip2.so:net/libosip2
 USES=		libtool ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	libeXosip2-legacy-[0-9]*
+CONFLICTS_INSTALL=	libeXosip2-legacy
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

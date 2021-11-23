@@ -35,7 +35,7 @@ CFLAGS_i386=	-march=i486
 # force to use -lthr until it's not fixed.
 LDFLAGS+=	-lthr
 
-CONFLICTS_INSTALL=	clamav-[0-9]*
+CONFLICTS_INSTALL=	clamav
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST+=	CHMOD=${CHMOD} \

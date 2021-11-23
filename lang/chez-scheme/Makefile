@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	X11
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	build
-CONFLICTS_INSTALL=	petite-chez-[0-9]*
+CONFLICTS_INSTALL=	petite-chez
 STRIP_FILES=	bin/petite bin/${PORTNAME} bin/${PORTNAME}-script
 CHEZ_LIBDIR=lib/csv${PORTVERSION}
 CFLAGS+=	-I${LOCALBASE}/include

@@ -32,7 +32,7 @@ PLIST_FILES=	lib/zathura/libpdf-mupdf.so \
 		share/applications/org.pwmt.zathura-pdf-mupdf.desktop \
 		share/metainfo/org.pwmt.zathura-pdf-mupdf.metainfo.xml
 
-CONFLICTS_INSTALL=	zathura-pdf-poppler-[0-9]*
+CONFLICTS_INSTALL=	zathura-pdf-poppler
 
 post-patch:
 	${REINPLACE_CMD} "s@\(cc.find_library(.*\))@\1,dirs:'${PREFIX}/lib')@" \

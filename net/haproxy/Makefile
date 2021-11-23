@@ -18,7 +18,7 @@ default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
 lua_PKGNAMESUFFIX=		-lua
 
-CONFLICTS_INSTALL=	haproxy-devel-[0-9]* haproxy17-[0-9]* haproxy18-[0-9]* haproxy19-[0-9]* haproxy20-[0-9]* haproxy21-[0-9]*
+CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21
 
 USES=		compiler:c++11-lang cpe gmake
 USE_RC_SUBR=	haproxy

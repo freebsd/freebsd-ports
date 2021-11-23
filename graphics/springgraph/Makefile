@@ -13,7 +13,7 @@ COMMENT=	Render graph described in a .dot file
 
 RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD
 
-CONFLICTS_INSTALL=signing-party-[0-9]*
+CONFLICTS_INSTALL=signing-party
 
 PLIST_FILES=	bin/springgraph
 EXTRACT_CMD=	${CP}

@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 
 PORTSCOUT=	ignore:1	# for newer versions see emulators/wine-gecko-devel
 
-CONFLICTS_INSTALL=	wine-gecko-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-gecko-devel
 
 NO_BUILD=	yes
 PLIST_SUB+=	GECKO_VERSION="${DISTVERSION}"

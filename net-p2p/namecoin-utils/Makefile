@@ -5,8 +5,8 @@ PKGNAMESUFFIX=	-utils
 COMMENT=	Decentralized, open DNS and more (CLI and Utilities)
 SLAVE_PORT=	yes
 
-CONFLICTS_INSTALL=	namecoin-stable-[0-9]* namecoin-stable-daemon-[0-9]* namecoin-stable-utils-[0-9]* \
-		namecoin-beta-[0-9]* namecoin-beta-daemon-[0-9]* namecoin-beta-utils-[0-9]*
+CONFLICTS_INSTALL=	namecoin-stable namecoin-stable-daemon namecoin-stable-utils \
+		namecoin-beta namecoin-beta-daemon namecoin-beta-utils
 
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS
 OPTIONS_DEFAULT=	HARDENING TESTS

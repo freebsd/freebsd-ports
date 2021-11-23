@@ -26,10 +26,8 @@ LIBTLS_DESC=	Only install libtls (no libcrypto/libssl)
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Install TLS-enabled netcat
 
-CONFLICTS_INSTALL=		libressl-[0-9]* \
-				libretls-[0-9]*
-default_CONFLICTS_INSTALL=	openssl-[0-9]* \
-				openssl-devel-[0-9]*
+CONFLICTS_INSTALL=		libressl libretls
+default_CONFLICTS_INSTALL=	openssl openssl-devel
 
 .if ${FLAVOR:U} == default
 OPTIONS_EXCLUDE=	LIBTLS

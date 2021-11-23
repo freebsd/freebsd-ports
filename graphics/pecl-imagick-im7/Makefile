@@ -10,7 +10,7 @@ LICENSE=	PHP301
 
 MASTERDIR=	${.CURDIR}/../pecl-imagick
 
-CONFLICTS_INSTALL=	${PKGNAMEPREFIX}${PORTNAME}-[0-9]*
+CONFLICTS_INSTALL=	${PKGNAMEPREFIX}${PORTNAME}
 
 X11_LIB_DEPENDS?=	libMagickWand-7.so:graphics/ImageMagick7
 X11_LIB_DEPENDS_OFF?=	libMagickWand-7.so:graphics/ImageMagick7-nox11

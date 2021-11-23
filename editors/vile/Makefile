@@ -25,7 +25,7 @@ CONFIGURE_ENV=	cf_cv_crypt_works=yes
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install-doc install-html
 
-CONFLICTS_INSTALL=	xvile-[0-9]*
+CONFLICTS_INSTALL=	xvile
 
 OPTIONS_DEFINE=		DOCS FILTERS ICONV PERL
 OPTIONS_SUB=		yes

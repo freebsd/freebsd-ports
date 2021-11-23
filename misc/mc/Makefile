@@ -77,8 +77,8 @@ SUBSHELL_SUB_FILES=	pkg-message
 X11_CONFIGURE_WITH=	x
 X11_USES=		xorg
 X11_USE=		xorg=x11,xext
-X11_VARS=		CONFLICTS_INSTALL+="mc-nox11-[0-9]*"
-X11_VARS_OFF=		CONFLICTS_INSTALL+="mc-[0-9]*"
+X11_VARS=		CONFLICTS_INSTALL+="mc-nox11"
+X11_VARS_OFF=		CONFLICTS_INSTALL+="mc"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|clang||' ${WRKSRC}/configure

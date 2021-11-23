@@ -12,7 +12,7 @@ COMMENT=	Data files for Red Eclipse first-person shooter
 USE_GITHUB=	nodefault
 GH_TUPLE=	${DATAFILES:C/.*/red-eclipse:&:${DISTVERSIONPREFIX}${PORTVERSION}:&\/&/}
 
-CONFLICTS_INSTALL=redeclipse-data-[0-9]*
+CONFLICTS_INSTALL=redeclipse-data
 
 DATAFILES=	acerspyro actors appleflap blendbrush caustics crosshairs \
 		decals dziq elyvisions fonts freezurbern john jojo jwin luckystrike \

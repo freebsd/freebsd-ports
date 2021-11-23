@@ -24,14 +24,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS_IPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FLAVORS=			default ldap sasl
-default_CONFLICTS_INSTALL=	postfix-base-ldap-* postfix-base-sasl-* \
-				postfix-ldap-* postfix-sasl-*
+default_CONFLICTS_INSTALL=	postfix-base-ldap postfix-base-sasl \
+				postfix-ldap postfix-sasl
 ldap_PKGNAMESUFFIX=		-ldap
-ldap_CONFLICTS_INSTALL=		postfix-[0-9]* postfix-base-[0-9]* \
-				postfix-base-sasl-* postfix-sasl-*
+ldap_CONFLICTS_INSTALL=		postfix postfix-base \
+				postfix-base-sasl postfix-sasl
 sasl_PKGNAMESUFFIX=		-sasl
-sasl_CONFLICTS_INSTALL=		postfix-[0-9]* postfix-base-[0-9]* \
-				postfix-base-ldap-* postfix-ldap-*
+sasl_CONFLICTS_INSTALL=		postfix postfix-base \
+				postfix-base-ldap postfix-ldap
 
 COMMENT_ldap=	(with OpenLDAP and Cyrus SASL support)
 COMMENT_sasl=	(with Cyrus SASL support)
@@ -44,8 +44,8 @@ SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-CONFLICTS_INSTALL=	courier-0.* opensmtpd-[0-9]* opensmtpd-devel-* \
-			postfix-current-* sendmail-[0-9]* sendmail-devel-*
+CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
+			postfix-current sendmail sendmail-devel
 
 PORTSCOUT=	limit:^3\.6\.
 

@@ -27,7 +27,7 @@ NLS_CONFIGURE_ON=	--with-libiconv-prefix=${LOCALBASE} \
 NLS_CONFIGURE_OFF=	--without-libiconv-prefix \
 			--without-libintl-prefix
 
-CONFLICTS_INSTALL=	yasm-[0-9]*
+CONFLICTS_INSTALL=	yasm
 
 .include <bsd.port.options.mk>
 

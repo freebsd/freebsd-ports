@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
-CONFLICTS_INSTALL=	lynx-2.8* ja-lynx-[0-9]*
+CONFLICTS_INSTALL=	lynx-2.8* ja-lynx
 
 USES=		cpe iconv ncurses shebangfix tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}

@@ -13,7 +13,7 @@ COMMENT=	Tool to minimize the compile time of C/C++ programs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 
-CONFLICTS_INSTALL?=	ccache-static-[0-9]* ccache-memcached-[0-9]* ccache-memcached-static-[0-9]*
+CONFLICTS_INSTALL?=	ccache-static ccache-memcached ccache-memcached-static
 
 GNU_CONFIGURE=	yes
 

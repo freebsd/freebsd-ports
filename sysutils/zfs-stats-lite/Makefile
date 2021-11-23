@@ -10,7 +10,7 @@ COMMENT=	Display human-readable ZFS statistics
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS_INSTALL=	zfs-stats-[0-9]*
+CONFLICTS_INSTALL=	zfs-stats
 
 NO_BUILD=	yes
 NO_ARCH=	yes

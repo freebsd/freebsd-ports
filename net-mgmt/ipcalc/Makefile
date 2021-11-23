@@ -12,7 +12,7 @@ COMMENT=	IP Calculator
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	gnu-ipcalc-[0-9]*
+CONFLICTS_INSTALL=	gnu-ipcalc
 
 PLIST_FILES=	bin/ipcalc
 NO_BUILD=	yes

@@ -27,7 +27,7 @@ USE_LINUX=	xorglibs sdl12
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
-CONFLICTS_INSTALL=	exult-[0-9]* ucc-[0-9]*
+CONFLICTS_INSTALL=	exult ucc
 
 # Patch files.
 PATCH436FILES=	unreal.tournament_436-multilanguage.run:p436 \

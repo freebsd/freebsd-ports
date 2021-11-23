@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 
 INSTALL_TARGET=	install-strip
 
-CONFLICTS_INSTALL=	mDNSResponder_nss-[0-9]*
+CONFLICTS_INSTALL=	mDNSResponder_nss
 
 # TODO: Print a message about the etc directory used for mdns.allow
 # being relative to ${PREFIX}.

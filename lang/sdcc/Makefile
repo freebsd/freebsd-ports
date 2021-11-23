@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/sdas/COPYING3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs
 
-CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
+CONFLICTS_INSTALL=	sdcc sdcc-devel
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++11-lang gmake \
 		readline python shebangfix tar:bzip2

@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openscenegraph
 GH_PROJECT=	OpenSceneGraph
 
-CONFLICTS_INSTALL=osg-[0-9]*
+CONFLICTS_INSTALL=osg
 
 USES=		alias cmake compiler:c++11-lang gl jpeg pkgconfig xorg
 USE_GL=		gl glu

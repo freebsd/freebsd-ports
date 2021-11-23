@@ -17,6 +17,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	p5-Net-Amazon-Route53-[0-9]*
+CONFLICTS_INSTALL=	p5-Net-Amazon-Route53
 
 .include <bsd.port.mk>

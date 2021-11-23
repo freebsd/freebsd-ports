@@ -10,7 +10,7 @@ COMMENT=	Command-line program to query game servers on the net
 
 LICENSE=	ART20
 
-CONFLICTS_INSTALL=	torque-[0-9]*
+CONFLICTS_INSTALL=	torque
 
 USES=		autoreconf gmake
 GNU_CONFIGURE=	yes

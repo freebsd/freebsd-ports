@@ -16,7 +16,7 @@ LICENSE_NAME=	xsel-conrad license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS_INSTALL=	xsel-[0-9]*
+CONFLICTS_INSTALL=	xsel
 
 USES=		autoreconf localbase xorg
 USE_XORG=	x11 xt

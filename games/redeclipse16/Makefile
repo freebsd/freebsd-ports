@@ -13,7 +13,7 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-CONFLICTS_INSTALL=redeclipse-[0-9]*
+CONFLICTS_INSTALL=redeclipse
 
 BROKEN_sparc64=	does not build on sparc64
 

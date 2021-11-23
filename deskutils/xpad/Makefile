@@ -17,7 +17,7 @@ USES=		autoreconf compiler:c++11-lang gmake pkgconfig tar:bzip2 gnome xorg
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 
-CONFLICTS_INSTALL=	xpad3-[0-9]*
+CONFLICTS_INSTALL=	xpad3
 USE_XORG=	x11 sm ice
 USE_GNOME=	gtk30 intltool gtksourceview3 cairo
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include

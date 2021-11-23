@@ -41,8 +41,8 @@ CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DCONFIGURE_GIT_REVISION='\"${GL_COMMIT}\"' -DCONFIGURE_GIT_FLAGS=
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* \
-			openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
+CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta \
+			openvpn-devel openvpn-mbedtls
 
 SUB_FILES=	openvpn-client pkg-message
 

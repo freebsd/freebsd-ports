@@ -25,7 +25,7 @@ RUN_DEPENDS=	gpg:security/gnupg \
 USES=		perl5 python gmake shebangfix
 SHEBANG_FILES=	${SCRIPTS}
 BINARY_ALIAS=	sed=gsed
-CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
+CONFLICTS_INSTALL=sig2dot springgraph
 
 USE_GITLAB=	yes
 GL_SITE=	https://salsa.debian.org/

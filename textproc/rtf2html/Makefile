@@ -11,7 +11,7 @@ COMMENT=	Simple rtf2html converter
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS_INSTALL=	p5-RTF-Parser-[0-9]*
+CONFLICTS_INSTALL=	p5-RTF-Parser
 
 PLIST_FILES=	bin/rtf2html
 

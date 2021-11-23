@@ -18,7 +18,7 @@ MAKE_ENV=	SHARED=1
 USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	polarssl13-[0-9]*
+CONFLICTS_INSTALL=	polarssl13
 
 post-patch:
 	@${RM} ${WRKSRC}/include/mbedtls/*.orig

@@ -16,7 +16,7 @@ USES=		cpe gmake pkgconfig
 MAKEFILE=	Makefile.gtk
 MAKE_ARGS+=	"prefix=${PREFIX}"
 
-CONFLICTS_INSTALL?=	pssh-[0-9]* putty-gtk2-[0-9]* putty-nogtk-[0-9]*
+CONFLICTS_INSTALL?=	pssh putty-gtk2 putty-nogtk
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-GD-Graph>=0:graphics/p5-GD-Graph \
 		p5-NetAddr-IP>=0:net-mgmt/p5-NetAddr-IP
 
-CONFLICTS_INSTALL=	calamaris-[0-9]*
+CONFLICTS_INSTALL=	calamaris
 
 USES=		shebangfix perl5
 NO_BUILD=	yes

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lang libtool makeinfo
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	fswatch-[0-9]*
+CONFLICTS_INSTALL=	fswatch
 GNU_CONFIGURE=	yes
 INFO=	fswatch
 INSTALL_TARGET=	install-strip

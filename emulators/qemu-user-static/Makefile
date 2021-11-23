@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64
-CONFLICTS_INSTALL=	qemu-user-static-devel-[0-9]*
+CONFLICTS_INSTALL=	qemu-user-static-devel
 
 USES=		bison compiler:c11 cpe gmake perl5 pkgconfig python:build
 USE_GITHUB=	yes

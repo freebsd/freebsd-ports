@@ -16,7 +16,7 @@ USES=		cpe
 
 CPE_VENDOR=	apple
 
-CONFLICTS_INSTALL=	nss_mdns-[0-9]*
+CONFLICTS_INSTALL=	nss_mdns
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_nss//}-${PORTVERSION}
 

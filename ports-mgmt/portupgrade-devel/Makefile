@@ -15,7 +15,7 @@ COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS_INSTALL=	portupgrade-[0-9]*
+CONFLICTS_INSTALL=	portupgrade
 
 USES=		uidfix
 

@@ -15,7 +15,7 @@ COMMENT=	Mono .NET implementation for Wine development branch
 LICENSE=	MIT GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-CONFLICTS_INSTALL=	wine-mono-[0-9]*
+CONFLICTS_INSTALL=	wine-mono
 
 NO_BUILD=	yes
 PLIST_SUB+=	MONO_VERSION="${DISTVERSION}"

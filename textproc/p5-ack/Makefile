@@ -24,7 +24,7 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	ja-ack-[0-9]*
+CONFLICTS_INSTALL=	ja-ack
 
 CPE_VENDOR=	beyondgrep
 

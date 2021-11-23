@@ -6,7 +6,7 @@ COMMENT=	Modern and interactive webmail - community edition
 
 LICENSE=	AGPLv3
 
-CONFLICTS_INSTALL=	rainloop-[0-9]*
+CONFLICTS_INSTALL=	rainloop
 
 MASTERDIR=	${.CURDIR}/../rainloop
 PLIST=		${.CURDIR}/pkg-plist

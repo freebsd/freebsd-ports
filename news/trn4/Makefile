@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-test/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 4.0 of the threaded readnews newsreader
 
-CONFLICTS_INSTALL=trn-3.[0-9]* cnews-* s-news-[0-9]*
+CONFLICTS_INSTALL=trn-3.[0-9]* cnews s-news
 
 USES=		ncurses
 

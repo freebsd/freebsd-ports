@@ -20,7 +20,7 @@ USES=	pkgconfig gmake tar:bzip2 xorg gnome
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-CONFLICTS_INSTALL=	xpad-[0-9]*
+CONFLICTS_INSTALL=	xpad
 
 USE_XORG=	x11 sm ice
 USE_GNOME=	gtk20 intltool cairo

@@ -20,7 +20,7 @@ COMMENT?=	Powerful network analyzer/capture tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL?=	wireshark-lite-[0-9]* tshark-[0-9]* tshark-lite-[0-9]*
+CONFLICTS_INSTALL?=	wireshark-lite tshark tshark-lite
 
 DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
