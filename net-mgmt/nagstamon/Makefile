@@ -1,9 +1,8 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	nagstamon
-PORTVERSION=	3.6.0
+PORTVERSION=	3.8.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	ehaupt@FreeBSD.org
