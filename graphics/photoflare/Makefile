@@ -24,7 +24,7 @@ LDFLAGS_gcc=	-fopenmp
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc
+.if ${ARCH} == armv7 || ${ARCH} == powerpc
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++17-lang
