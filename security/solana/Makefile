@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.5
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -85,6 +85,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bytesize-1.0.1 \
 		bzip2-0.3.3 \
 		bzip2-sys-0.1.9+1.0.8 \
+		caps-0.5.3 \
 		cargo_metadata-0.12.0 \
 		cast-0.2.3 \
 		cc-1.0.67 \
@@ -152,6 +153,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-iterator-derive-0.6.0 \
 		enum-ordinalize-3.1.8 \
 		env_logger-0.8.3 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
 		fake-simd-0.1.2 \
@@ -300,7 +303,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ouroboros-0.10.0 \
 		ouroboros_macro-0.10.0 \
 		parity-tokio-ipc-0.9.0 \
-		parity-ws-0.11.0 \
+		parity-ws-0.11.1 \
 		parking_lot-0.9.0 \
 		parking_lot-0.10.2 \
 		parking_lot-0.11.2 \
@@ -372,8 +375,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_xorshift-0.1.1 \
 		rand_xorshift-0.3.0 \
 		raptorq-1.4.2 \
-		rayon-1.5.0 \
-		rayon-core-1.9.0 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		redox_syscall-0.2.10 \
@@ -484,7 +487,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tiny-bip39-0.8.1 \
 		tinyvec-1.1.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.8.1 \
+		tokio-1.8.4 \
 		tokio-codec-0.1.2 \
 		tokio-executor-0.1.10 \
 		tokio-io-0.1.13 \
