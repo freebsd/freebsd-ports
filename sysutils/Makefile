@@ -616,6 +616,7 @@
     SUBDIR += libg15render
     SUBDIR += libgksu
     SUBDIR += libieee1284
+    SUBDIR += libptytty
     SUBDIR += libretto-config
     SUBDIR += libsunacl
     SUBDIR += libsysstat

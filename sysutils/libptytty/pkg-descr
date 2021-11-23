@@ -1,0 +1,16 @@
+Libptytty is a small library that offers pseudo-tty management in an
+OS-independent way. It was created out of frustration over the many differences
+of pty/tty handling in different operating systems for the use inside
+"rxvt-unicode".
+
+In addition to offering mere pty/tty management, it also offers session database
+support (utmp and optional wtmp/lastlog updates for login shells).
+
+It also supports fork'ing after startup and dropping privileges in the calling
+process, so in case the calling process gets compromised by the user starting
+the program there is less to gain, as only the helper process runs with
+privileges (e.g. setuid/setgid), which reduces the area of attack immensely.
+
+Libptytty is written in C++, but it also offers a C-only API.
+
+WWW: http://software.schmorp.de/pkg/libptytty.html

@@ -1,0 +1,5 @@
+include/libptytty.h
+lib/libptytty.so
+lib/libptytty.so.0
+libdata/pkgconfig/libptytty.pc
+man/man3/libptytty.3.gz
