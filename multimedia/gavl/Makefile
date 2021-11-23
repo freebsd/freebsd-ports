@@ -18,6 +18,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen
 INSTALL_TARGET=	install-strip
 
+# Opt-in to sched* functions
+# https://cgit.freebsd.org/src/commit/?id=90fa9705d5cd29cf11c5dc7319299788dec2546a
+CFLAGS+=	-D_WITH_CPU_SET_T
 LIBS+=		-lm
 
 PORTDOCS=	README
