@@ -1,7 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -58,6 +58,9 @@ ALL_TARGET=		tools
 DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
+
+# Fix pv shim build with clang 13.0.0
+EXTRA_PATCHES+=	${PATCHDIR}/0001-efi-fix-alignment-of-function-parameters-in-compat-m.patch:-p1
 
 .include <bsd.port.options.mk>
 
