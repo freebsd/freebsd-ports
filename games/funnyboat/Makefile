@@ -10,12 +10,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-CODE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MEDIA.txt
 
+RUN_DEPENDS=	${PYGAME}
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
-RUN_DEPENDS=	${PYGAME}
-
-USES=		python:run
+USES=		python:3.6-3.9,run  # version range inherited from numpy
 NO_BUILD=	yes
 NO_ARCH=	yes
 
