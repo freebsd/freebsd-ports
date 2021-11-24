@@ -1,8 +1,9 @@
 PORTNAME=	libarchive
-PORTVERSION=	3.5.1
+DISTVERSION=	3.5.2
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	https://libarchive.org/downloads/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		https://libarchive.org/downloads/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
@@ -13,33 +14,28 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	LZ4 LZO ZSTD
-OPTIONS_DEFAULT=LZ4 OPENSSL
+OPTIONS_DEFAULT=LZ4 ZSTD OPENSSL
 
-OPTIONS_RADIO+=	CRYPTO
+OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	OPENSSL MBEDTLS NETTLE
 
 CRYPTO_DESC=	Crypto and hashing support
-LZ4_DESC=	Support lz4 compression via liblz4
-LZO_DESC=	Support lzo compression via liblzo2
-MBEDTLS_DESC=	Crypto support from mbedTLS
-NETTLE_DESC=	Crypto support from Nettle
-OPENSSL_DESC=	Crypto support from OpenSSL
-ZSTD_DESC=	Support zstd compression
+NETTLE_DESC=	Crypto support via Nettle
 
-USES=		cpe iconv libtool localbase:ldflags pathfix
+USES=		cpe iconv libtool localbase:ldflags pathfix tar:xz
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CONFIGURE_ARGS=	--without-xml2
+CONFIGURE_ARGS=	--disable-static --without-xml2
 
 PLIST_FILES=	bin/bsdcat \
 		bin/bsdcpio \
 		bin/bsdtar \
 		include/archive.h \
 		include/archive_entry.h \
-		lib/libarchive.a \
 		lib/libarchive.so \
 		lib/libarchive.so.13 \
 		lib/libarchive.so.1${PORTVERSION} \
@@ -91,16 +87,20 @@ PLIST_FILES=	bin/bsdcat \
 
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
+
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_WITH=	lz4
+
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_CONFIGURE_WITH=	zstd
 
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
+
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_CONFIGURE_OFF=	--without-openssl
+
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_CONFIGURE_WITH=	mbedtls
 
