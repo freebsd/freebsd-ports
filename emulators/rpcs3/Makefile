@@ -1,14 +1,15 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.19-13040 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g59f253ba2
+DISTVERSION=	0.0.19-13053 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g276ee81da
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 
-LICENSE=	APACHE20 GPLv2 MIT ZLIB
+LICENSE=	APACHE20 ISCL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
+LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC_pugixml}/LICENSE.md
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
@@ -31,6 +32,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-125-g01f601a:hidapi/3rdparty/hidapi/hida
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.6.0:glslang/3rdparty/glslang/glslang \
+		kinetiknz:cubeb:cubeb-0.2-1341-gdcc5cb5:cubeb/3rdparty/cubeb/cubeb \
 		wolfSSL:wolfssl:v4.8.1-stable:wolfssl/3rdparty/wolfssl/wolfssl \
 		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
 
@@ -40,14 +42,14 @@ USE_GL=		gl glew
 USE_QT=		qmake_build buildtools_build core concurrent dbus gui multimedia svg widgets
 USE_XORG=	x11
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_CURL USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
+CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
 LDFLAGS+=	-Wl,--as-needed # GLU
 
-OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO VULKAN
-OPTIONS_DEFAULT=EVDEV FAUDIO VULKAN
+OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
+OPTIONS_DEFAULT=EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
 
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
+ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 ALSA_CMAKE_BOOL=	USE_ALSA
 
 EVDEV_DESC=		libevdev-based joystick support
@@ -59,8 +61,14 @@ FAUDIO_DESC=		FAudio audio support
 FAUDIO_LIB_DEPENDS=	libFAudio.so:audio/faudio
 FAUDIO_CMAKE_BOOL=	USE_FAUDIO USE_SYSTEM_FAUDIO
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
+JACK_BUILD_DEPENDS=	jackit>0:audio/jack
+JACK_CMAKE_BOOL=	USE_JACK
+
+PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
+
+SNDIO_BUILD_DEPENDS=	sndio>0:audio/sndio
+SNDIO_CMAKE_BOOL=	USE_SNDIO
 
 VULKAN_DESC=		Vulkan renderer
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
