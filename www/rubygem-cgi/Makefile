@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cgi
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
