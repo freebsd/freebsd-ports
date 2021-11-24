@@ -1,3 +1,47 @@
+  <vuln vid="2c6af5c3-4d36-11ec-a539-0800270512f4">
+    <topic>rubygem-cgi -- buffer overrun in CGI.escape_html</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.5,1</lt></range>
+	<range><ge>3.0.0,1</ge><lt>3.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>ruby27</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.5,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-cgi</name>
+	<range><lt>0.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>chamal reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/11/24/buffer-overrun-in-cgi-escape_html-cve-2021-41816/">
+	  <p>
+	    A security vulnerability that causes buffer overflow when
+	    you pass a very large string (&gt; 700 MB) to
+	    <code>CGI.escape_html</code> on a platform where
+	    <code>long</code> type takes 4 bytes, typically, Windows.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41816</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/11/24/buffer-overrun-in-cgi-escape_html-cve-2021-41816/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-24</discovery>
+      <entry>2021-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27aa2253-4c72-11ec-b6b9-e86a64caca56">
     <topic>py-matrix-synapse -- several vulnerabilities</topic>
     <affects>
