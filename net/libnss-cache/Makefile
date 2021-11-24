@@ -1,7 +1,7 @@
 # Created by: Kevin Bowling <k@kev009.com>
 
 PORTNAME=	libnss-cache
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net
 
