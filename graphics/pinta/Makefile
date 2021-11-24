@@ -1,7 +1,7 @@
 # Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
 
 PORTNAME=	pinta
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/PintaProject/Pinta/releases/download/${PORTVERSION}/
 

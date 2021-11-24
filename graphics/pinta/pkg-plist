@@ -8,7 +8,6 @@ lib/pinta/Pinta.Tools.dll
 lib/pinta/Pinta.exe
 libdata/pkgconfig/pinta.pc
 man/man1/pinta.1.gz
-share/appdata/pinta.appdata.xml
 share/applications/pinta.desktop
 share/icons/hicolor/16x16/apps/pinta.png
 share/icons/hicolor/22x22/apps/pinta.png
