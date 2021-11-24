@@ -48,6 +48,9 @@ case "${daily_status_smart_enable}" in
 			arcmsr*) devflags="-dareca,${device##arcmsr[0-9]*,}"
 				device="/dev/${device%,[0-9]*}"
 				;;
+			mrsas*) devflags="-dmegaraid,${device##mrsas[0-9]*,}"
+				device="/dev/${device%,[0-9]*}"
+				;;
 			/*)	;;
 			*)	device="/dev/${device}"
 			        ;;
