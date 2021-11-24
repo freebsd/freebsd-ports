@@ -1,6 +1,6 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19
+DISTVERSION=	1.20
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
@@ -25,7 +25,9 @@ USE_SDL=	sdl2
 MESON_ARGS=	-Dportable=false \
 		-Dprebuilt_server=${WRKSRC}/${SERVER_FILE}
 
-PLIST_FILES=	bin/scrcpy man/man1/scrcpy.1.gz ${DATADIR}/scrcpy-server
+PLIST_FILES=	bin/scrcpy man/man1/scrcpy.1.gz \
+		share/icons/hicolor/256x256/apps/scrcpy.png \
+		${DATADIR}/scrcpy-server
 PORTDOCS=	FAQ.md README.md
 
 OPTIONS_DEFINE=	DOCS
