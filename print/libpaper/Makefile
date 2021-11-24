@@ -1,20 +1,22 @@
 # Created by: lofi@FreeBSD.org
 
 PORTNAME=	libpaper
-PORTVERSION=	1.1.24.4
+DISTVERSION=	1.1.28
 CATEGORIES=	print
 MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION:C/.([0-9]+)$/+nmu\1/}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library providing routines for paper size management
 
 LICENSE=	GPLv2
 
-USES=		libtool
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.([0-9]+)$/+nmu\1/}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
 INSTALL_TARGET=	install-strip
 
 post-extract:
