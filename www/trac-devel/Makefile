@@ -1,5 +1,5 @@
 PORTNAME=	trac
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
@@ -12,8 +12,6 @@ COMMENT=	Enhanced wiki and issue tracking system for software projects
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		does not build (cannot import name 'soft_unicode' from 'jinja2.utils')
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR}
