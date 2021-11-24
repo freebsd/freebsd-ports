@@ -167,6 +167,24 @@
     <topic>rubygem-date -- Regular Expression Denial of Service Vunlerability of Date Parsing Methods</topic>
     <affects>
       <package>
+	<name>ruby</name>
+	<range><ge>2.6.0,1</ge><lt>2.6.9,1</lt></range>
+	<range><ge>2.7.0,1</ge><lt>2.7.5,1</lt></range>
+	<range><ge>3.0.0,1</ge><lt>3.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>ruby26</name>
+	<range><ge>2.6.0,1</ge><lt>2.6.9,1</lt></range>
+      </package>
+      <package>
+	<name>ruby27</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.5,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.3,1</lt></range>
+      </package>
+      <package>
 	<name>rubygem-date</name>
 	<range><lt>3.2.1</lt></range>
       </package>
@@ -192,6 +210,7 @@
     <dates>
       <discovery>2021-11-15</discovery>
       <entry>2021-11-15</entry>
+      <modified>2021-11-24</modified>
     </dates>
   </vuln>
 
