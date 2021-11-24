@@ -1,11 +1,7 @@
 PORTNAME=	i3
-DISTVERSION=	4.19.1
-PORTREVISION=	1
+DISTVERSION=	4.20.1
 CATEGORIES=	x11-wm
 PKGNAMESUFFIX=	-gaps
-
-PATCH_SITES=	https://github.com/i3/i3/commit/
-PATCHFILES=	a7d873f8ccb117c8e0775fe5bfe5804416b89709.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Fork of i3 tiling window manager with more features, including gaps
