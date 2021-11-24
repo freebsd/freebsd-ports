@@ -119,10 +119,6 @@
 %%LLOADD%%libexec/%%PORTNAME%%/lloadd-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%LLOADD%%libexec/%%PORTNAME%%/lloadd.la
 %%LLOADD%%libexec/%%PORTNAME%%/lloadd.so
-%%MDB%%libexec/openldap/back_mdb-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
-%%MDB%%libexec/openldap/back_mdb-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-%%MDB%%libexec/openldap/back_mdb.la
-%%MDB%%libexec/openldap/back_mdb.so
 %%MEMBEROF%%libexec/openldap/memberof-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%MEMBEROF%%libexec/openldap/memberof-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%MEMBEROF%%libexec/openldap/memberof.la
@@ -161,10 +157,6 @@
 %%REFINT%%libexec/openldap/refint-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%REFINT%%libexec/openldap/refint.la
 %%REFINT%%libexec/openldap/refint.so
-%%RELAY%%libexec/openldap/back_relay-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
-%%RELAY%%libexec/openldap/back_relay-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-%%RELAY%%libexec/openldap/back_relay.la
-%%RELAY%%libexec/openldap/back_relay.so
 %%REMOTEAUTH%%libexec/openldap/remoteauth-%%OPENLDAP_MAJOR%%.so.0
 %%REMOTEAUTH%%libexec/openldap/remoteauth-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%REMOTEAUTH%%libexec/openldap/remoteauth.la
@@ -208,10 +200,6 @@
 %%SSSVLV%%libexec/openldap/sssvlv-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%SSSVLV%%libexec/openldap/sssvlv.la
 %%SSSVLV%%libexec/openldap/sssvlv.so
-%%SYNCPROV%%libexec/openldap/syncprov-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
-%%SYNCPROV%%libexec/openldap/syncprov-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-%%SYNCPROV%%libexec/openldap/syncprov.la
-%%SYNCPROV%%libexec/openldap/syncprov.so
 %%TRACE%%libexec/openldap/trace.la
 %%TRACE%%libexec/openldap/trace.so
 %%TRACE%%libexec/openldap/trace.so.0
