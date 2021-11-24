@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.58.2
-PORTREVISION=	2
+DISTVERSION=	1.62.3
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -22,7 +21,8 @@ COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Uses EOL Python 2.7 via devel/electron12
+BROKEN_FreeBSD_12=	../src/keymapping.h:40:3: error: unknown type name 'pthread_t'
+DEPRECATED=	Uses EOL Python 2.7 via devel/electron13
 EXPIRATION_DATE=2021-06-23
 
 ONLY_FOR_ARCHS=	amd64
@@ -73,7 +73,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	c3f126316369cd610563c75b1b1725e0679adfb3
+SOURCE_COMMIT_HASH=	ccbaa2d27e38e5afa3e5c21c1c7bef4657064247
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -90,7 +90,7 @@ NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 # See ${WRKSRC}/build/package.json for ESBUILD_VER_BUILD
 ESBUILD_VER_BUILD=	0.12.6
 # See ${WRKSRC}/extensions/package.json for ESBUILD_VER_EXTENSIONS
-ESBUILD_VER_EXTENSIONS=	0.11.12
+ESBUILD_VER_EXTENSIONS=	0.11.23
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -108,7 +108,7 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron12
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron13
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
@@ -204,8 +204,8 @@ do-build:
 		${SED} -e 's/ / */' > SHASUMS256.txt
 	# build and package vscode
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-linux-x64-min
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
+	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
+	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
 	# copy marketplace extensions
 	${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-x64/resources/app/extensions
 

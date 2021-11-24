@@ -1,6 +1,6 @@
---- product.json.orig	2021-06-17 12:10:36 UTC
+--- product.json.orig	2021-11-16 15:42:03 UTC
 +++ product.json
-@@ -31,6 +31,17 @@
+@@ -32,6 +32,17 @@
  		"GitHub.remotehub",
  		"GitHub.remotehub-insiders"
  	],
@@ -17,4 +17,4 @@
 +	"tipsAndTricksUrl": "https://go.microsoft.com/fwlink/?linkid=852118",
  	"builtInExtensions": [
  		{
- 			"name": "ms-vscode.node-debug",
+ 			"name": "ms-vscode.references-view",
