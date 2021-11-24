@@ -1,3 +1,59 @@
+  <vuln vid="4548ec97-4d38-11ec-a539-0800270512f4">
+    <topic>rubygem-cgi -- cookie prefix spoofing in CGI::Cookie.parse</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.6.0,1</ge><lt>2.6.9,1</lt></range>
+	<range><ge>2.7.0,1</ge><lt>2.7.5,1</lt></range>
+	<range><ge>3.0.0,1</ge><lt>3.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>ruby26</name>
+	<range><ge>2.6.0,1</ge><lt>2.6.9,1</lt></range>
+      </package>
+      <package>
+	<name>ruby27</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.5,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-cgi</name>
+	<range><lt>0.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ooooooo_q reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/11/24/cookie-prefix-spoofing-in-cgi-cookie-parse-cve-2021-41819/">
+	  <p>
+	    The old versions of <code>CGI::Cookie.parse</code> applied
+	    URL decoding to cookie names. An attacker could exploit
+	    this vulnerability to spoof security prefixes in cookie
+	    names, which may be able to trick a vulnerable
+	    application.
+	  </p>
+	  <p>
+	    By this fix, <code>CGI::Cookie.parse</code> no longer
+	    decodes cookie names. Note that this is an incompatibility
+	    if cookie names that you are using include
+	    non-alphanumeric characters that are URL-encoded.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41819</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/11/24/cookie-prefix-spoofing-in-cgi-cookie-parse-cve-2021-41819/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-24</discovery>
+      <entry>2021-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c6af5c3-4d36-11ec-a539-0800270512f4">
     <topic>rubygem-cgi -- buffer overrun in CGI.escape_html</topic>
     <affects>
