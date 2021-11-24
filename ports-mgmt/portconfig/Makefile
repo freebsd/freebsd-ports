@@ -1,5 +1,6 @@
 PORTNAME=	portconfig
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
