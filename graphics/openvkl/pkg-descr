@@ -1,0 +1,11 @@
+Intel Open Volume Kernel Library (Intel Open VKL) is a collection of
+high-performance volume computation kernels, developed at Intel. The target
+users of Open VKL are graphics application engineers who want to improve the
+performance of their volume rendering applications by leveraging Open VKL's
+performance-optimized kernels, which include volume traversal and sampling
+functionality for a variety of volumetric data formats. The kernels are
+optimized for the latest Intel processors with support for SSE, AVX, AVX2,
+and AVX-512 instructions, and for ARM processors with support for NEON
+instructions.
+
+WWW: https://github.com/openvkl/openvkl

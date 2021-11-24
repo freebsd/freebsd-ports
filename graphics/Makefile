@@ -604,6 +604,7 @@
     SUBDIR += openrm
     SUBDIR += openshadinglanguage
     SUBDIR += opensubdiv
+    SUBDIR += openvkl
     SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += osg
