@@ -8,6 +8,9 @@ MASTER_SITES=	SF
 MAINTAINER=	allan@saddi.com
 COMMENT=	Simple file hash program utilizing SHA-1, SHA-256, SHA-384, SHA-512
 
+DEPRECATED=	Obsolete, we have tools in base
+EXPIRATION_DATE=2022-03-31
+
 GNU_CONFIGURE=	yes
 USES=	gmake
 

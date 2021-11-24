@@ -8,6 +8,9 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Cryptographic file system implemented as a user-space NFS server
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2022-03-31
+
 ALL_TARGET=	cfs
 MAKE_ARGS=	CC="${CC}"
 

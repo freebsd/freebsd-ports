@@ -12,6 +12,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cracks SAMBA or Windows NT passwords
 
+DEPRECATED=	Obsolete, Microsoft LANMAN and NT password hashes are deprecated
+EXPIRATION_DATE=2022-03-31
+
 # Converted from RESTRICTED
 LICENSE=	l0phtcrack
 LICENSE_NAME=	l0phtcrack

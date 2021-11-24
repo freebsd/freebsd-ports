@@ -11,6 +11,9 @@ COMMENT=	Encrypted, secure compressed TCP tunnel
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL2.txt
 
+DEPRECATED=	Abandonware, last release in 2005 and runtime issues reported upstream
+EXPIRATION_DATE=2022-03-31
+
 USES=		cpe perl5 ssl
 USE_PERL5=	build
 

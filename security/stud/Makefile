@@ -10,6 +10,9 @@ COMMENT=	Scalable TLS Unwrapping Daemon
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Abandonware, marked BROKEN on 12+ in 2019
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libev.so:devel/libev
 
 USES=		gmake ssl

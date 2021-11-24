@@ -10,6 +10,9 @@ COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Abandonware, last release in 2001. Please consider using security/sslsplit or security/sslproxy
+EXPIRATION_DATE=2022-03-31
+
 USES=		ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}

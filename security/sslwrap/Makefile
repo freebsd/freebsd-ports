@@ -15,6 +15,9 @@ COMMENT=	Another SSL Wrapper application, which uses SSLEay/OpenSSL
 # making it identical to classic BSD4CLAUSE
 LICENSE=	BSD4CLAUSE
 
+DEPRECATED=	Abandonware, marked BROKEN on 12+ in 2019
+EXPIRATION_DATE=2022-03-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
 USES=		ssl

@@ -10,6 +10,9 @@ COMMENT=	Program to sniff logins and passwords
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release around 2000 and dead upstream. Please consider using net/wireshark
+EXPIRATION_DATE=2022-03-31
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/sniff man/man1/sniff.1.gz

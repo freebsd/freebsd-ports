@@ -13,6 +13,9 @@ COMMENT=	Small alternative SSL implementation
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Abandonware, dead upstream
+EXPIRATION_DATE=2022-03-31
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION:S/./-/g}-open
 
 USES=		cpe gmake tar:tgz

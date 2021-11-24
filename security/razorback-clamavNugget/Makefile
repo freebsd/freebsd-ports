@@ -11,6 +11,9 @@ DIST_SUBDIR=	razorback
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - ClamAV Detection
 
+DEPRECATED=	Abandonware, last release in 2012 and listed as alpha quality by upstream
+EXPIRATION_DATE=2022-03-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

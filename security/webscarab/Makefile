@@ -12,6 +12,9 @@ COMMENT=	Framework for analysing HTTP and HTTPS web application traffic
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Deprecated by upstream in 2014
+EXPIRATION_DATE=2022-03-31
+
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes

@@ -15,6 +15,9 @@ LICENSE_FILE_AMAP=	${WRKSRC}/LICENCE.AMAP
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE.GNU
 LICENSE_PERMS_AMAP=	dist-mirror dist-sell pkg-mirror pkg-sell
 
+DEPRECATED=	Abandoned upstream, no new release for 10+ years. Please consider using security/nmap or security/rustscan
+EXPIRATION_DATE=2022-03-31
+
 USES=		ssl
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

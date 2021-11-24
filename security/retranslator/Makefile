@@ -10,6 +10,9 @@ MASTER_SITES=	http://utils.kaspersky.com/updater/retranslator_5.0.0.7/FreeBSD_6.
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The update utility for Kaspersky applications
 
+DEPRECATED=	Deprecated upstream (EOL)
+EXPIRATION_DATE=2022-03-31
+
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 

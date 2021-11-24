@@ -15,6 +15,9 @@ COMMENT=	Steganographic tool
 
 LICENSE=	BSD4CLAUSE
 
+DEPRECATED=	Abandonware, dead upstream and last release in 2001
+EXPIRATION_DATE=2022-03-31
+
 CONFLICTS_INSTALL=	csound-*
 
 GNU_CONFIGURE=	yes

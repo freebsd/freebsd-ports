@@ -17,6 +17,9 @@ LICENSE_NAME=	tripwire
 LICENSE_TEXT=	Cannot be redistributed for more than the cost of duplication
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+DEPRECATED=	Deprecated, please consider using security/tripwire instead
+EXPIRATION_DATE=2022-03-31
+
 USES=		cpe
 
 NO_PACKAGE=	requires local database to be built

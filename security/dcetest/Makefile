@@ -8,6 +8,9 @@ MASTER_SITES=	PACKETSTORM/UNIX/scanners
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility to dump MSRPC endpoint information from Windows systems
 
+DEPRECATED=	Targets deprecated protocol by Microsoft in favour of .NET
+EXPIRATION_DATE=2022-03-31
+
 USES=	dos2unix
 DOS2UNIX_GLOB=	*.c
 

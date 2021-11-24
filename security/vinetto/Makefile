@@ -13,6 +13,9 @@ COMMENT=	Forensics tool to examine Thumbs.db files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete, targets deprecated Windows operating systems such as XP and 2003 Server
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	${PY_PILLOW}
 
 USES=		python:3.6+

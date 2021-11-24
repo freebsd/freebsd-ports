@@ -9,6 +9,9 @@ MASTER_SITES=	PACKETSTORM/groups/thc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search/extract/write raw data
 
+DEPRECATED=	Abandonware, unsupported upstream
+EXPIRATION_DATE=2022-03-31
+
 SBIN_PROGRAMS=	read_data replace_data search_data write_data
 
 PORTDOCS=	CHANGES README

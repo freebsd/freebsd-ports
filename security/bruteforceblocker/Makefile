@@ -10,6 +10,9 @@ COMMENT=	Checks for SSH bruteforce and blocks given IPs
 
 LICENSE=	NONE
 
+DEPRECATED=	Abandonware, please consider using security/sshguard
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
 		p5-Sys-Hostname-Long>=0:sysutils/p5-Sys-Hostname-Long \
 		p5-libwww>=0:www/p5-libwww \

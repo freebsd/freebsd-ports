@@ -12,6 +12,9 @@ COMMENT=	Remote SMTP server version detector
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release in 2003 and dead upstream. Please consider using security/nmap
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

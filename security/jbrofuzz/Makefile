@@ -9,6 +9,9 @@ DISTNAME=	${PORTNAME}-jar-21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web application fuzzer
 
+DEPRECATED=	Abandonware, no word of it on upstream web site and last release was 10 years ago
+EXPIRATION_DATE=2022-03-31
+
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes

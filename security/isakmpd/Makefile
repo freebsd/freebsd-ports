@@ -14,6 +14,9 @@ COMMENT=	OpenBSD IKE daemon
 BROKEN=		requires IPsec support
 .endif
 
+DEPRECATED=	15+ years old and broken on multiple versions
+EXPIRATION_DATE=2022-03-31
+
 # If keynote is in use, bring the dependency
 .if defined(USE_KEYNOTE)
 BUILD_DEPENDS+=	keynote:security/keynote

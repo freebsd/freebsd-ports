@@ -8,6 +8,9 @@ MASTER_SITES=	PACKETSTORM/UNIX/utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to exploit command execution vulnerabilities in web scripts
 
+DEPRECATED=	Abandonware, last release 15+ years ago and dead upstream
+EXPIRATION_DATE=2022-03-31
+
 USES=		perl5 python ssl
 
 LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto

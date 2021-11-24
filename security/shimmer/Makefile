@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl implementation that hides a valuable port on your server
 
+DEPRECATED=	Abandonware, last release in 2008
+EXPIRATION_DATE=2022-03-31
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

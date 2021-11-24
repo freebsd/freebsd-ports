@@ -12,6 +12,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to configure: Easybindings require a C++ compiler, but none were found.
+DEPRECATED=	Very outdated, current version in tree was released back in 2015 and upstream is still active
+EXPIRATION_DATE=2022-03-31
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libgnutls.so:security/gnutls \

@@ -9,6 +9,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security C code scanner for misuse of format strings
 
+DEPRECATED=	Abandonware, last release in 2000
+EXPIRATION_DATE=2022-03-31
+
 ALL_TARGET=	#empty
 NO_WRKSUBDIR=	yes
 

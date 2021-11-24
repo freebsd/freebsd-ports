@@ -12,6 +12,9 @@ COMMENT=	High Level Firewall Language
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2003
+EXPIRATION_DATE=2022-03-31
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	services.hlfl sample_1.hlfl sample_2.hlfl test.hlfl syntax.txt

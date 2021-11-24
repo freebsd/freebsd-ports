@@ -11,6 +11,10 @@ COMMENT=	Use the OpenPGP web of trust to verify ssh connections
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, dead upstream
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error

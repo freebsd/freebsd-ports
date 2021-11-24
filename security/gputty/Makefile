@@ -11,6 +11,10 @@ COMMENT=	Frontend to the SSH client, using the Gtk+ toolkit
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+DEPRECATED=	Unfetchable, dead upstream
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
 
 PLIST_FILES=	bin/gputty

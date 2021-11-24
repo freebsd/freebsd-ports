@@ -12,6 +12,9 @@ COMMENT=	Library for encapsulating/safekeeping data in encrypted/compressed form
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, upstream dead and last release in 2008
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
 		libmhash.so:security/mhash
 

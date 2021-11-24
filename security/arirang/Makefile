@@ -12,6 +12,9 @@ COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream and last release was back in 2011
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libruby${RUBY_SHLIBVER}.so:${RUBY_PORT}
 
 USES=		compiler:c11 ssl

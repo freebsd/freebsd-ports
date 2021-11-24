@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passwd file cracker (supports distributed nodes)
 
+DEPRECATED=	Abandonware, last release around 2000 and dead upstream
+EXPIRATION_DATE=2022-03-31
+
 PLIST_FILES=	sbin/slurp sbin/slurpie
 PORTDOCS=	README
 

@@ -9,6 +9,9 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Host exploration tool and bannergrabber
 
+DEPRECATED=	Abandonware, last release in 2003. Please consider using security/nmap or security/rustscan
+EXPIRATION_DATE=2022-03-31
+
 USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

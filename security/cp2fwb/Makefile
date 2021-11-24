@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}uilder/${PORTNAME}uilder/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkpoint FW1 to Firewall Builder ruleset converter
 
+DEPRECATED=	Abandonware, used with deprecated software Firewall Builder.
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	p5-XML-Writer>=0:textproc/p5-XML-Writer
 
 PLIST_FILES=	bin/cp2fwbuilder

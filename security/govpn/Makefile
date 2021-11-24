@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	fails to build: golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
 
+DEPRECATED=	Deprecated upstream, reference: http://www.govpn.info/
+EXPIRATION_DATE=2022-03-31
+
 USES=		go:no_targets tar:xz
 MAKEFILE=	BSDmakefile
 MAKE_ENV=	${GO_ENV}

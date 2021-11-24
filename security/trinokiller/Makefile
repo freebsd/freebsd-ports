@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remotely kill trino nodes
 
+DEPRECATED=	Abandonware, dead upstream
+EXPIRATION_DATE=2022-03-31
+
 PLIST_FILES=	sbin/trinokiller
 
 do-extract:

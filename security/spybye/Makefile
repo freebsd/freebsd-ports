@@ -11,6 +11,9 @@ COMMENT=	Web proxy to detect malware
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release in 2008 and no upstream development
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=	CLAMAV

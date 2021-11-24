@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of tools to monitor changes on a network
 
+DEPRECATED=	Abandonware, last release in 2006 and reported broken upstream in 2017 upstream
+EXPIRATION_DATE=2022-03-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -9,6 +9,9 @@ MASTER_SITES=	LOCAL/feld
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple AMaViS statistics generator based on rrdtool
 
+DEPRECATED=	Abandoned, upstream is dead and last release was back in 2005
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool
 
 USES=		perl5 php shebangfix

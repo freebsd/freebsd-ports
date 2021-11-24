@@ -12,6 +12,9 @@ COMMENT=	GTK application to securely store sensitive data
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, upstream dead and last release in 2009
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgringotts.so:security/libgringotts \
 		libfontconfig.so:x11-fonts/fontconfig \

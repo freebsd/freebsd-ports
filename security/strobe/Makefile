@@ -11,6 +11,9 @@ MASTER_SITES=	http://ftp.ussg.iu.edu/security/tools/unix/scanners/strobe/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast scatter/gather TCP port scanner
 
+DEPRECATED=	Abandonware, last release around 2000 and dead upstream. Please consider using security/nmap or security/rustscan
+EXPIRATION_DATE=2022-03-31
+
 WRKSRC=		${WRKDIR}/strobe
 ALL_TARGET=	strobe
 

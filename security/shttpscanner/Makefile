@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple HTTP scanner
 
+DEPRECATED=	Abandonware, last release in 2006
+EXPIRATION_DATE=2022-03-31
+
 USES=		dos2unix
 
 PLIST_FILES=	bin/${PORTNAME} \

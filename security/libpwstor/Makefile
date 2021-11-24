@@ -9,6 +9,9 @@ MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password storage library for C programmers
 
+DEPRECATED=	Abandonware, last release in 2008
+EXPIRATION_DATE=2022-03-31
+
 USES=		ssl tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

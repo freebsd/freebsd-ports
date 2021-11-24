@@ -10,6 +10,10 @@ DISTNAME=	${PORTNAME}-1.04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP proxy that wraps data and control with TLS/SSL
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, last release in 2007 and dead upstream
+EXPIRATION_DATE=2022-03-31
+
 USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}

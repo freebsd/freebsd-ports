@@ -11,6 +11,10 @@ COMMENT=	Mass Cisco Vulnerability Scanner
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, dead upstream
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-Net-SSH2>=0:net/p5-Net-SSH2 \
 		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \

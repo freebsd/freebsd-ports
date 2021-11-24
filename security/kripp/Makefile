@@ -9,6 +9,9 @@ MASTER_SITES=	PACKETSTORM/sniffers \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network password sniffer
 
+DEPRECATED=	Abandonware, upstream returns 404 and last release was back in 2007
+EXPIRATION_DATE=2022-03-31
+
 USES=		perl5 shebangfix
 USE_PERL5=	run
 

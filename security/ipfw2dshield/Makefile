@@ -11,6 +11,9 @@ COMMENT=	DShield client for ipfw logs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, no word of it on upstream web site
+EXPIRATION_DATE=2022-03-31
+
 PORTDOCS=	CHANGES README.html README.txt
 
 OPTIONS_DEFINE=	DOCS
