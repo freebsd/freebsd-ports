@@ -1,0 +1,11 @@
+--- net/dns/BUILD.gn.orig	2021-07-15 19:13:42 UTC
++++ net/dns/BUILD.gn
+@@ -114,7 +114,7 @@ source_set("dns") {
+         "dns_config_service_android.cc",
+         "dns_config_service_android.h",
+       ]
+-    } else if (is_linux) {
++    } else if (is_linux && !is_bsd) {
+       sources += [
+         "dns_config_service_linux.cc",
+         "dns_config_service_linux.h",

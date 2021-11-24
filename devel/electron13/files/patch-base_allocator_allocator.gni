@@ -1,0 +1,11 @@
+--- base/allocator/allocator.gni.orig	2021-07-15 19:13:29 UTC
++++ base/allocator/allocator.gni
+@@ -63,7 +63,7 @@ declare_args() {
+   # not, and redesign or remove the flag accordingly.  We may want to assert a
+   # possible conflict between |use_allocator = "partition"| and
+   # |use_partition_alloc = true| rather than prioritizing use_partition_alloc.
+-  use_partition_alloc = !is_ios  # Never use PartitionAlloc on iOS.
++  use_partition_alloc = !is_ios # Never use PartitionAlloc on iOS.
+ }
+ 
+ if (!use_partition_alloc && use_allocator == "partition") {

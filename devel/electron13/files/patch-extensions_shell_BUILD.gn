@@ -1,0 +1,31 @@
+--- extensions/shell/BUILD.gn.orig	2021-07-15 19:13:40 UTC
++++ extensions/shell/BUILD.gn
+@@ -209,16 +209,24 @@ source_set("app_shell_lib") {
+   }
+ 
+   if (is_linux || is_chromeos_lacros) {
++    if (!is_bsd) {
++      sources += [
++        "app/shell_crash_reporter_client.cc",
++        "app/shell_crash_reporter_client.h",
++      ]
++    }
+     sources += [
+-      "app/shell_crash_reporter_client.cc",
+-      "app/shell_crash_reporter_client.h",
+       "browser/api/file_system/shell_file_system_delegate.cc",
+       "browser/api/file_system/shell_file_system_delegate.h",
+     ]
++    if (!is_bsd) {
++      deps += [
++        "//components/crash/core/app",
++        "//components/crash/core/common",
++      ]
++    }
+     deps += [
+       "//build:branding_buildflags",
+-      "//components/crash/core/app",
+-      "//components/crash/core/common",
+       "//components/upload_list",
+       "//components/version_info:generate_version_info",
+     ]

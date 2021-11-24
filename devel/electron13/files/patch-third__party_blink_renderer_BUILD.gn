@@ -1,0 +1,15 @@
+--- third_party/blink/renderer/BUILD.gn.orig	2021-07-15 19:13:44 UTC
++++ third_party/blink/renderer/BUILD.gn
+@@ -50,6 +50,12 @@ config("inside_blink") {
+       "-Wno-implicit-int-conversion",
+     ]
+ 
++    if (is_bsd) {
++      cflags += [
++        "-Wno-implicit-int-float-conversion",
++      ]
++    }
++
+     if (!is_chromeos_ash ||
+         default_toolchain != "//build/toolchain/cros:target") {
+       cflags += [ "-Wno-enum-float-conversion" ]

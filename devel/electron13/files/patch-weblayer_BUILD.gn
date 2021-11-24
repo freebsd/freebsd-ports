@@ -1,0 +1,17 @@
+--- weblayer/BUILD.gn.orig	2021-07-15 19:14:09 UTC
++++ weblayer/BUILD.gn
+@@ -749,6 +749,14 @@ source_set("weblayer_lib_base") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    deps -= [
++      "//components/crash/content/browser",
++      "//components/crash/core/app",
++      "//components/crash/core/common",
++    ]
++  }
++
+   if (toolkit_views) {
+     deps += [ "//ui/views" ]
+   }

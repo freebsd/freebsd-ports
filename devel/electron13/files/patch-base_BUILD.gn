@@ -1,0 +1,94 @@
+--- base/BUILD.gn.orig	2021-07-15 19:13:29 UTC
++++ base/BUILD.gn
+@@ -963,7 +963,7 @@ component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -974,6 +974,11 @@ component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++    if (is_bsd) {
++      sources += [
++        "profiler/stack_sampler_posix.cc",
++      ]
++    }
+   }
+ 
+   if (is_win) {
+@@ -1377,7 +1382,7 @@ component("base") {
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+   if (!use_sysroot &&
+-      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
++      (is_android || ((is_linux || is_chromeos) && !is_chromecast) && !is_clang) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+@@ -1430,7 +1435,7 @@ component("base") {
+           "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
+         ]
+       }
+-      if (is_chromeos || is_linux) {
++      if ((is_chromeos || is_linux) && !is_bsd) {
+         sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+       }
+       if (is_win) {
+@@ -2064,6 +2069,34 @@ component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_handle_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "system/sys_info_linux.cc"
++    ]
++    sources += [
++      "files/file_path_watcher_freebsd.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "process/memory_stubs.cc",
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++    libs = [
++      "execinfo", # logging.cc
++      "kvm",      # process_metrics_freebsd
++      "util"      # process_metrics_freebsd
++    ]
++  }
++
++
+   # iOS
+   if (is_ios) {
+     sources -= [
+@@ -3273,7 +3306,7 @@ if (build_base_unittests) {
+       }
+     }
+ 
+-    if (is_linux || is_chromeos) {
++    if ((is_linux || is_chromeos) && !is_bsd) {
+       sources += [ "debug/proc_maps_linux_unittest.cc" ]
+     }
+ 
+@@ -3313,7 +3346,7 @@ if (build_base_unittests) {
+         "posix/unix_domain_socket_unittest.cc",
+         "task/thread_pool/task_tracker_posix_unittest.cc",
+       ]
+-      if (!is_nacl && !is_apple) {
++      if (!is_nacl && !is_apple && !is_bsd) {
+         sources += [
+           "cpu_affinity_posix_unittest.cc",
+           "profiler/stack_copier_signal_unittest.cc",

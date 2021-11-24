@@ -1,0 +1,29 @@
+--- media/audio/BUILD.gn.orig	2021-11-13 11:05:57 UTC
++++ media/audio/BUILD.gn
+@@ -242,7 +242,7 @@ source_set("audio") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !use_sndio) {
+     sources += [ "linux/audio_manager_linux.cc" ]
+   }
+ 
+@@ -307,6 +307,17 @@ source_set("audio") {
+     } else {
+       deps += [ ":libpulse_stubs" ]
+     }
++  }
++
++  if (use_sndio) {
++    libs += [ "sndio" ]
++    sources += [
++      "openbsd/audio_manager_openbsd.cc",
++      "sndio/sndio_input.cc",
++      "sndio/sndio_input.h",
++      "sndio/sndio_output.cc",
++      "sndio/sndio_output.h",
++    ]
+   }
+ 
+   if (is_fuchsia) {

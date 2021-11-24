@@ -1,0 +1,50 @@
+--- third_party/skia/src/ports/SkFontHost_FreeType_common.cpp.orig	2021-07-15 19:15:52 UTC
++++ third_party/skia/src/ports/SkFontHost_FreeType_common.cpp
+@@ -665,12 +665,21 @@ void colrv1_draw_paint(SkCanvas* canvas,
+             canvas->drawPaint(paint);
+             break;
+         }
+-        case FT_COLR_PAINTFORMAT_TRANSFORMED: {
++#if FREETYPE_MAJOR == 2 && FREETYPE_MINOR >= 11
++        case FT_COLR_PAINTFORMAT_TRANSFORM: {
++            SkMatrix transform = ToSkMatrix(colrv1_paint.u.transform.affine);
++
++            canvas->concat(transform);
++            break;
++        }
++#else
++	case FT_COLR_PAINTFORMAT_TRANSFORMED: {
+             SkMatrix transform = ToSkMatrix(colrv1_paint.u.transformed.affine);
+ 
+             canvas->concat(transform);
+             break;
+         }
++#endif
+         case FT_COLR_PAINTFORMAT_TRANSLATE: {
+             SkMatrix translate = SkMatrix::Translate(
+                 SkFixedToScalar(colrv1_paint.u.translate.dx),
+@@ -768,6 +777,16 @@ bool colrv1_traverse_paint(SkCanvas* canvas,
+             traverse_result = colrv1_start_glyph(canvas, palette, face, paint.u.colr_glyph.glyphID,
+                                                  FT_COLOR_NO_ROOT_TRANSFORM);
+             break;
++#if FREETYPE_MAJOR == 2 && FREETYPE_MINOR >= 11
++        case FT_COLR_PAINTFORMAT_TRANSFORM:
++            canvas->saveLayer(nullptr, nullptr);
++            // Traverse / draw operation will apply transform.
++            colrv1_draw_paint(canvas, palette, face, paint);
++            traverse_result =
++                    colrv1_traverse_paint(canvas, palette, face, paint.u.transform.paint);
++            canvas->restore();
++            break;
++#else
+         case FT_COLR_PAINTFORMAT_TRANSFORMED:
+             canvas->saveLayer(nullptr, nullptr);
+             // Traverse / draw operation will apply transform.
+@@ -776,6 +795,7 @@ bool colrv1_traverse_paint(SkCanvas* canvas,
+                     colrv1_traverse_paint(canvas, palette, face, paint.u.transformed.paint);
+             canvas->restore();
+             break;
++#endif
+       case FT_COLR_PAINTFORMAT_TRANSLATE:
+             canvas->saveLayer(nullptr, nullptr);
+             // Traverse / draw operation will apply transform.
