@@ -95,11 +95,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:f155346ccc11:storj_common/vendor/storj.io/common \
+		storj:common:14e900b161d9:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.26:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:debb1cbcbbd7:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:a7eae71c382a:storj_private/vendor/storj.io/private \
-		storj:uplink:65bb87992c7c:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:b30e004c1ccb:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
