@@ -22,7 +22,8 @@ OPTIONS_DEFAULT=CPANCOVER HTML_REPORTS POD_COVERAGE
 OPTIONS_SUB=	yes
 
 CPANCOVER_DESC=		Coverage statistics on CPAN modules
-CPANCOVER_RUN_DEPENDS=	p5-Parallel-Iterator>=0:devel/p5-Parallel-Iterator \
+CPANCOVER_RUN_DEPENDS=	p5-B-Debug>=0:devel/p5-B-Debug \
+			p5-Parallel-Iterator>=0:devel/p5-Parallel-Iterator \
 			p5-Template-Toolkit>=2:www/p5-Template-Toolkit
 
 HTML_REPORTS_DESC=	Build HTML reports with p5-HTML-Parser
