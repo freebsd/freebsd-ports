@@ -13,33 +13,39 @@ COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
-		${JAVALIBDIR}/junit.jar:java/junit
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
+		${JAVALIBDIR}/mail.jar:java/javamail
 RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
-OPTIONS_DEFINE=	DOCS ZIPSRC
-OPTIONS_DEFAULT=	ZIPSRC
-OPTIONS_SUB=	yes
-ZIPSRC_DESC=	Install bundled ZIP source files
-CONFLICTS_INSTALL=	bouncycastle-1.4*
-DVERSION=	${PORTVERSION:S/.//}
-NO_ARCH=	yes
-CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
-CPE_VENDOR=	${PORTNAME}
-USE_JAVA=	yes
 USES=		cpe
-JDKMVERSION=	1.5
-JDKNVERSION=	15
+CPE_VENDOR=	${PORTNAME}
+CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
 USE_ANT=	yes
+USE_JAVA=	yes
+
+MAKE_ARGS=	-f \
+		ant/jdk${JDKNVERSION}+.xml
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
-MAKE_ARGS=	-f ant/jdk${JDKNVERSION}+.xml
 ALL_TARGET=	build-provider build zip-src
 
+CONFLICTS_INSTALL=	bouncycastle-1.4*
+
+NO_ARCH=	yes
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=		DOCS ZIPSRC
+OPTIONS_DEFAULT=	ZIPSRC
+OPTIONS_SUB=		yes
+
+ZIPSRC_DESC=	Install bundled ZIP source files
+
+DVERSION=	${PORTVERSION:S/.//}
+JDKMVERSION=	1.5
+JDKNVERSION=	15
 JARS_SRC=	bcmail bcpkix bcprov bcpg
 JARS_DOCS=	${JARS_SRC} bctest bctls
 JARS=		${JARS_DOCS} bcprov-ext
-
-PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
