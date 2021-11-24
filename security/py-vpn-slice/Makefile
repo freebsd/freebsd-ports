@@ -15,4 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=1.16:dns/py-dnspython@${PY_FLAVOR
 USES=		python:3.3+
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
