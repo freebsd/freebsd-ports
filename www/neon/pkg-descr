@@ -16,4 +16,4 @@ interface. Featuring:
 	. WebDAV metadata support: set and remove properties, query
 	  any set of properties (PROPPATCH/PROPFIND).
 
-WWW: http://www.webdav.org/neon/
+WWW: https://notroj.github.io/neon/

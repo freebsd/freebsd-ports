@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2021-09-25 06:06:07 UTC
++++ Makefile.in
+@@ -90,7 +90,7 @@ subdirs:
+ # Uses Tim Waugh's excellent "xmlto" utility, see
+ # http://cyberelk.net/tim/xmlto/.  (The docs target is executed at release
+ # time before generating a .tar.gz)
+-docs: docs-man docs-html
++# docs: docs-man docs-html
+ 
+ docs-man:
+ 	rm -rf doc/man; mkdir -p doc/man
+@@ -149,7 +149,7 @@ install-memleak:
+ 	@echo "ERROR: purposes only; this copy of neon must not be installed."
+ 	@false
+ 
+-install-yes: install-lib install-headers install-config install-docs install-nls
++install-yes: install-lib install-headers install-config install-nls
+ 
+ # libtool does all the necessary magic here
+ install-lib: subdirs
