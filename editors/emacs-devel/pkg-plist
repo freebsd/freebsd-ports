@@ -3641,10 +3641,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/common-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/konsole.el.gz
@@ -3709,6 +3709,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/fill.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/flyspell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/flyspell.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/glyphless-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/glyphless-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/less-css-mode.el.gz
@@ -3727,6 +3729,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/paragraphs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/picture.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/picture.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/pixel-fill.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/pixel-fill.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/po.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/po.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/refbib.el.gz
