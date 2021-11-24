@@ -1,8 +1,7 @@
 # Created by: Daniel Gerzo <danger@FreeBSD.org>
 
 PORTNAME=	uwsgi
-PORTVERSION=	2.0.19.1
-PORTREVISION=	1
+PORTVERSION=	2.0.20
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
@@ -12,7 +11,7 @@ COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe pkgconfig python:3.6-3.9
+USES=		cpe pkgconfig python:3.6-3.10
 USE_PYTHON=	distutils concurrent optsuffix
 USE_RC_SUBR=	uwsgi
 CPE_VENDOR=	unbit
