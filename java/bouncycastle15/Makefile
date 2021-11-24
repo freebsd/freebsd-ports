@@ -11,7 +11,10 @@ DISTNAME=	crypto-${DVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
-LICENSE=	MIT
+# APACHE20 is used by pg/src/main/java/org/bouncycastle/apache/bzip2/*.
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.html
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
 		${JAVALIBDIR}/mail.jar:java/javamail
