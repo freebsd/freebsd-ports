@@ -2,6 +2,7 @@
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.69
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -46,9 +47,10 @@ ZIPSRC_DESC=	Install bundled ZIP source files
 DVERSION=	${PORTVERSION:S/.//}
 JDKMVERSION=	1.5
 JDKNVERSION=	15
-JARS_SRC=	bcmail bcpkix bcprov bcpg
-JARS_DOCS=	${JARS_SRC} bctest bctls
-JARS=		${JARS_DOCS} bcprov-ext
+JARS_SRC=	${JARS:Nbcjmail:Nbcprov-ext:Nbctest:Nbctls:Nbcutil}
+JARS_DOCS=	${JARS:Nbcprov-ext}
+JARS=		bcjmail bcmail bcpg bcpkix bcprov-ext bcprov bctest bctls \
+		bcutil
 
 .include <bsd.port.options.mk>
 

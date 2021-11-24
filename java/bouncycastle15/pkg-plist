@@ -1,3 +1,4 @@
+%%JAVAJARDIR%%/bcjmail.jar
 %%JAVAJARDIR%%/bcmail.jar
 %%JAVAJARDIR%%/bcpg.jar
 %%JAVAJARDIR%%/bcpkix.jar
@@ -5,6 +6,7 @@
 %%JAVAJARDIR%%/bcprov-ext.jar
 %%JAVAJARDIR%%/bctest.jar
 %%JAVAJARDIR%%/bctls.jar
+%%JAVAJARDIR%%/bcutil.jar
 %%ZIPSRC%%%%DATADIR%%/bcmail-src.zip
 %%ZIPSRC%%%%DATADIR%%/bcpg-src.zip
 %%ZIPSRC%%%%DATADIR%%/bcpkix-src.zip
