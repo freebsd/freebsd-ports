@@ -80,6 +80,10 @@ _EMACS_RUN_DEP=		yes
 # Only set FLAVORS when...
 .if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS)
 FLAVORS=	full canna nox devel_full devel_nox
+# Sort the default to be first
+.if defined(EMACS_DEFAULT)
+FLAVORS:=	${EMACS_DEFAULT} ${FLAVORS:N${EMACS_DEFAULT}}
+.endif
 .for flavor in ${EMACS_FLAVORS_EXCLUDE}
 FLAVORS:=	${FLAVORS:N${flavor}}
 .endfor
