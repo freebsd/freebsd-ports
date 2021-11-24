@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	javavmwrapper
-PORTVERSION=	2.7.7
+PORTVERSION=	2.7.8
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
