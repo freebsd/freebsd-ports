@@ -204,14 +204,6 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/drb/unix.rb
 %%RUBY_LIBDIR%%/drb/weakidconv.rb
 %%RUBY_LIBDIR%%/erb.rb
-%%RUBY_LIBDIR%%/exe/bundle
-%%RUBY_LIBDIR%%/exe/bundler
-%%RUBY_LIBDIR%%/exe/irb
-%%RUBY_LIBDIR%%/exe/racc
-%%RUBY_LIBDIR%%/exe/racc2y
-%%RUBY_LIBDIR%%/exe/rdoc
-%%RUBY_LIBDIR%%/exe/ri
-%%RUBY_LIBDIR%%/exe/y2racc
 %%RUBY_LIBDIR%%/expect.rb
 %%RUBY_LIBDIR%%/fiddle.rb
 %%RUBY_LIBDIR%%/fiddle/closure.rb
