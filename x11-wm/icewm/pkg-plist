@@ -64,6 +64,7 @@ man/man5/icewm-winoptions.5.gz
 %%DATADIR%%/icons/app_32x32.xpm
 %%DATADIR%%/icons/bomb_16x16.xpm
 %%DATADIR%%/icons/bomb_32x32.xpm
+%%DATADIR%%/icons/cancel-logout_16x16.xpm
 %%DATADIR%%/icons/communicator-abook_16x16.xpm
 %%DATADIR%%/icons/communicator-abook_32x32.xpm
 %%DATADIR%%/icons/communicator-browser_16x16.xpm

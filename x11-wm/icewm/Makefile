@@ -1,7 +1,7 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 
 PORTNAME=	icewm
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -59,10 +59,6 @@ post-extract:
 	@${LN} -sf ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/${dir}
 	@${LN} -sf ${STARTUP_PIXMAP} ${WRKSRC}/lib/${dir}/start.xpm
 .endfor
-
-post-patch:
-	@${REINPLACE_CMD} -e '/Battery%d/s,snprintf(buf,char buf[20]; &,' \
-		${WRKSRC}/src/aapm.cc
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
