@@ -64,13 +64,6 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}on-${DVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
-.if ${PORT_OPTIONS:MZIPSRC}
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for jar in ${JARS_SRC}
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}on-${DVERSION}/src.zip \
-	      ${STAGEDIR}${DATADIR}/${jar}-src.zip
-.endfor
-.endif
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -79,6 +72,13 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${jar}
 	@cd ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}on-${DVERSION}/docs/ && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${jar}
+.endfor
+
+do-install-ZIPSRC-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+.for jar in ${JARS_SRC}
+	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}on-${DVERSION}/src.zip \
+	      ${STAGEDIR}${DATADIR}/${jar}-src.zip
 .endfor
 
 .include <bsd.port.mk>
