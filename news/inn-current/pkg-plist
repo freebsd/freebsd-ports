@@ -228,6 +228,7 @@ man/man5/incoming.conf.5.gz
 man/man5/inn-radius.conf.5.gz
 man/man5/inn.conf.5.gz
 man/man5/innfeed.conf.5.gz
+man/man5/innreport.conf.5.gz
 man/man5/innwatch.ctl.5.gz
 man/man5/localgroups.5.gz
 man/man5/moderators.5.gz
@@ -303,6 +304,7 @@ man/man8/scanspool.8.gz
 man/man8/send-nntp.8.gz
 man/man8/send-uucp.8.gz
 man/man8/sendinpaths.8.gz
+man/man8/sendxbatches.8.gz
 man/man8/tally.control.8.gz
 man/man8/tdx-util.8.gz
 man/man8/tinyleaf.8.gz
