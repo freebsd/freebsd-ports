@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	maliit-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Core libraries of Maliit and server
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libudev.so:devel/libudev-devd \
 		libwayland-client.so:graphics/wayland \
