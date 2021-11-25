@@ -1251,6 +1251,7 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/OpenCL/m16800-pure.cl
 %%DATADIR%%/OpenCL/m16801-pure.cl
 %%DATADIR%%/OpenCL/m16900-pure.cl
+%%DATADIR%%/OpenCL/m17010-pure.cl
 %%DATADIR%%/OpenCL/m17200_a0-pure.cl
 %%DATADIR%%/OpenCL/m17200_a1-pure.cl
 %%DATADIR%%/OpenCL/m17200_a3-pure.cl
@@ -1533,6 +1534,17 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/OpenCL/m27400-pure.cl
 %%DATADIR%%/OpenCL/m27500-pure.cl
 %%DATADIR%%/OpenCL/m27600-pure.cl
+%%DATADIR%%/OpenCL/m27700-pure.cl
+%%DATADIR%%/OpenCL/m27800_a0-optimized.cl
+%%DATADIR%%/OpenCL/m27800_a1-optimized.cl
+%%DATADIR%%/OpenCL/m27800_a3-optimized.cl
+%%DATADIR%%/OpenCL/m27900_a0-optimized.cl
+%%DATADIR%%/OpenCL/m27900_a1-optimized.cl
+%%DATADIR%%/OpenCL/m27900_a3-optimized.cl
+%%DATADIR%%/OpenCL/m28000_a0-optimized.cl
+%%DATADIR%%/OpenCL/m28000_a1-optimized.cl
+%%DATADIR%%/OpenCL/m28000_a3-optimized.cl
+%%DATADIR%%/OpenCL/m28100-pure.cl
 %%DATADIR%%/OpenCL/markov_be.cl
 %%DATADIR%%/OpenCL/markov_le.cl
 %%DATADIR%%/OpenCL/shared.cl
@@ -1810,6 +1822,7 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/modules/module_16800.so
 %%DATADIR%%/modules/module_16801.so
 %%DATADIR%%/modules/module_16900.so
+%%DATADIR%%/modules/module_17010.so
 %%DATADIR%%/modules/module_17200.so
 %%DATADIR%%/modules/module_17210.so
 %%DATADIR%%/modules/module_17220.so
@@ -1931,4 +1944,9 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/modules/module_27400.so
 %%DATADIR%%/modules/module_27500.so
 %%DATADIR%%/modules/module_27600.so
+%%DATADIR%%/modules/module_27700.so
+%%DATADIR%%/modules/module_27800.so
+%%DATADIR%%/modules/module_27900.so
+%%DATADIR%%/modules/module_28000.so
+%%DATADIR%%/modules/module_28100.so
 %%DATADIR%%/modules/module_99999.so
