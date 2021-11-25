@@ -41,7 +41,7 @@ sccache-start:
 
 sccache-stats:
 	@${ECHO_MSG} "==> sccache statistics"
-	@${SETENV} ${_SCCACHE_ENV} ${SCCACHE_BIN} --show-stats
+	@${SETENV} ${_SCCACHE_ENV} ${SCCACHE_BIN} --show-stats || ${TRUE}
 
 # We let Poudriere clean up the server. Users who build locally
 # can stop the server with `make sccache-stop` manually or wait
