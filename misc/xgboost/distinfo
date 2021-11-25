@@ -1,6 +1,6 @@
-TIMESTAMP = 1634915550
-SHA256 (dmlc-xgboost-v1.5.0_GH0.tar.gz) = 24a78308986b1c2b00fa9c1dc25e7899854ff5fc5337e57a9fc49dad002c7ddd
-SIZE (dmlc-xgboost-v1.5.0_GH0.tar.gz) = 1640493
+TIMESTAMP = 1637868173
+SHA256 (dmlc-xgboost-v1.5.1_GH0.tar.gz) = 65fd0585059e37ebd87c5beae879ab13a57c52b154c2d9ac176811a29a3101df
+SIZE (dmlc-xgboost-v1.5.1_GH0.tar.gz) = 1645496
 SHA256 (NVlabs-cub-af39ee2_GH0.tar.gz) = 3444f1d0af16d3680bf5089c1a91e707769d946580b80f12463860366fb6884b
 SIZE (NVlabs-cub-af39ee2_GH0.tar.gz) = 413215
 SHA256 (rapidsai-gputreeshap-5bba198_GH0.tar.gz) = bad0d98eddff46e298f4c6be71b140ac8573b2d1740f109f3151097c56f18463
