@@ -64,6 +64,7 @@ include/universal/functions/lerp.hpp
 include/universal/functions/loss.hpp
 include/universal/functions/twosum.hpp
 include/universal/hw/alu.hpp
+include/universal/internal/README.md
 include/universal/internal/abstract/triple.hpp
 include/universal/internal/bitblock/README.md
 include/universal/internal/bitblock/bitblock.hpp
@@ -144,6 +145,7 @@ include/universal/number/areal/numeric_limits.hpp
 include/universal/number/areal/table.hpp
 include/universal/number/blocktriple-design.txt
 include/universal/number/cfloat-design.txt
+include/universal/number/cfloat/attributes.hpp
 include/universal/number/cfloat/cfloat.hpp
 include/universal/number/cfloat/cfloat_fwd.hpp
 include/universal/number/cfloat/cfloat_impl.hpp
@@ -211,6 +213,7 @@ include/universal/number/integer/sieves.hpp
 include/universal/number/lns/exceptions.hpp
 include/universal/number/lns/lns.hpp
 include/universal/number/lns/lns_impl.hpp
+include/universal/number/lns/manipulators.hpp
 include/universal/number/lns/math_functions.hpp
 include/universal/number/lns/numeric_limits.hpp
 include/universal/number/posit/ReadMe.txt
@@ -321,6 +324,7 @@ include/universal/sequences/fibonacci.hpp
 include/universal/sequences/tribonacci.hpp
 include/universal/string/strmanip.hpp
 include/universal/traits/README.md
+include/universal/traits/cfloat_traits.hpp
 include/universal/traits/fixpnt_traits.hpp
 include/universal/traits/integral_constant.hpp
 include/universal/traits/metaprogramming.hpp
