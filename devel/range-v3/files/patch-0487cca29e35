@@ -1,0 +1,122 @@
+From 0487cca29e352e8f16bbd91fda38e76e39a0ed28 Mon Sep 17 00:00:00 2001
+From: Louis Dionne <ldionne.2@gmail.com>
+Date: Tue, 15 Jun 2021 14:40:01 -0400
+Subject: [PATCH] Work around broken integration with latest libc++. (#1635)
+
+* Work around broken integration with latest libc++.
+
+In newer versions of libc++, the base template of std::iterator_traits
+provides a member typedef called __primary_template which is an alias
+to the std::iterator_traits specialization itself. This fix works with
+both the old version of libc++ and the new one.
+
+Fixes issue #1633.
+
+* Fix is_std_iterator_traits_specialized_v on MSVC
+
+It used to pretend that std::iterator_traits<T*> is a user-defined
+specialization, which isn't the case. This is due to MSVC's
+iterator_traits<T*> specialization not posing as the base template.
+---
+ include/std/detail/associated_types.hpp | 22 +++++++++++-----
+ test/CMakeLists.txt                     |  1 +
+ test/bug1633.cpp                        | 34 +++++++++++++++++++++++++
+ 3 files changed, 51 insertions(+), 6 deletions(-)
+ create mode 100644 test/bug1633.cpp
+
+diff --git a/include/std/detail/associated_types.hpp b/include/std/detail/associated_types.hpp
+index b642166d4..449a3f91c 100644
+--- include/std/detail/associated_types.hpp
++++ include/std/detail/associated_types.hpp
+@@ -265,11 +265,22 @@ namespace ranges
+         template<typename I>
+         char is_std_iterator_traits_specialized_impl_(void *);
+ #elif defined(_LIBCPP_VERSION)
+-        template<typename I, bool B>
+-        char (
+-            &is_std_iterator_traits_specialized_impl_(std::__iterator_traits<I, B> *))[2];
++        // In older versions of libc++, the base template inherits from std::__iterator_traits<typename, bool>.
++        template<template<typename, bool> class IteratorTraitsBase, typename I, bool B>
++        char (&libcpp_iterator_traits_base_impl(IteratorTraitsBase<I, B> *))[2];
++        template<template<typename, bool> class IteratorTraitsBase, typename I>
++        char libcpp_iterator_traits_base_impl(void *);
++
++        // In newer versions, the base template has only one template parameter and provides the
++        // __primary_template typedef which aliases the iterator_traits specialization.
++        template<template<typename> class, typename I>
++        char (&libcpp_iterator_traits_base_impl(typename std::iterator_traits<I>::__primary_template *))[2];
++        template<template<typename> class, typename I>
++        char libcpp_iterator_traits_base_impl(void *);
++
+         template<typename I>
+-        char is_std_iterator_traits_specialized_impl_(void *);
++        auto is_std_iterator_traits_specialized_impl_(std::iterator_traits<I>* traits)
++            -> decltype(libcpp_iterator_traits_base_impl<std::__iterator_traits, I>(traits));
+ #elif defined(_MSVC_STL_VERSION)
+         template<typename I>
+         char (&is_std_iterator_traits_specialized_impl_(
+@@ -287,14 +298,13 @@ namespace ranges
+         RANGES_INLINE_VAR constexpr bool is_std_iterator_traits_specialized_v =
+             1 == sizeof(is_std_iterator_traits_specialized_impl_<I>(
+                      static_cast<std::iterator_traits<I> *>(nullptr)));
+-
++#endif
+         // The standard iterator_traits<T *> specialization(s) do not count
+         // as user-specialized. This will no longer be necessary in C++20.
+         // This helps with `T volatile*` and `void *`.
+         template<typename T>
+         RANGES_INLINE_VAR constexpr bool is_std_iterator_traits_specialized_v<T *> =
+             false;
+-#endif
+     } // namespace detail
+     /// \endcond
+ } // namespace ranges
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 889f314af..2c2b7c09c 100644
+--- test/CMakeLists.txt
++++ test/CMakeLists.txt
+@@ -19,3 +19,4 @@ rv3_add_test(test.bug474 bug474 bug474.cpp)
+ rv3_add_test(test.bug566 bug566 bug566.cpp)
+ rv3_add_test(test.bug1322 bug1322 bug1322.cpp)
+ rv3_add_test(test.bug1335 bug1335 bug1335.cpp)
++rv3_add_test(test.bug1633 bug1633 bug1633.cpp)
+diff --git a/test/bug1633.cpp b/test/bug1633.cpp
+new file mode 100644
+index 000000000..be52420ad
+--- /dev/null
++++ test/bug1633.cpp
+@@ -0,0 +1,34 @@
++// Range v3 library
++//
++//  Use, modification and distribution is subject to the
++//  Boost Software License, Version 1.0. (See accompanying
++//  file LICENSE_1_0.txt or copy at
++//  http://www.boost.org/LICENSE_1_0.txt)
++//
++// Project home: https://github.com/ericniebler/range-v3
++
++#include <cstddef>
++#include <iterator>
++#include <range/v3/iterator.hpp>
++
++struct X { };
++
++namespace std {
++    template<> struct iterator_traits<X> { };
++}
++
++struct Y {
++    using difference_type = std::ptrdiff_t;
++    using value_type = int;
++    using pointer = int*;
++    using reference = int&;
++    using iterator_category = std::forward_iterator_tag;
++};
++
++static_assert(ranges::detail::is_std_iterator_traits_specialized_v<X>, "");
++static_assert(!ranges::detail::is_std_iterator_traits_specialized_v<Y>, "");
++static_assert(!ranges::detail::is_std_iterator_traits_specialized_v<int*>, "");
++
++int main()
++{
++}
