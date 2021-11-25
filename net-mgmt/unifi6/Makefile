@@ -1,5 +1,5 @@
 PORTNAME=	unifi6
-PORTVERSION=	6.4.54
+PORTVERSION=	6.5.53
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -26,8 +26,6 @@ JAVA_OS=	native
 JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
 USE_RC_SUBR=	unifi
-
-CONFLICTS=	unifi-devel unifi-lts unifi5
 
 EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p
