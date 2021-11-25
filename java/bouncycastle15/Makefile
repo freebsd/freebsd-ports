@@ -2,7 +2,7 @@
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.69
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -30,27 +30,23 @@ USE_JAVA=	yes
 MAKE_ARGS=	-f \
 		ant/jdk${JDKNVERSION}+.xml
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
-ALL_TARGET=	build-provider build zip-src
+ALL_TARGET=	build-provider build
 
 CONFLICTS_INSTALL=	bouncycastle-1.4*
 
 NO_ARCH=	yes
 
-PORTDOCS=	*
-
 OPTIONS_DEFINE=		DOCS ZIPSRC
 OPTIONS_DEFAULT=	ZIPSRC
 OPTIONS_SUB=		yes
 
-ZIPSRC_DESC=	Install bundled ZIP source files
+ZIPSRC_DESC=		Install bundled ZIP source files
+ZIPSRC_ALL_TARGET=	zip-src
 
+ARTIFACTSDIR=	${WRKSRC}/build/artifacts/jdk${JDKMVERSION}
 DVERSION=	${PORTVERSION:S/.//}
 JDKMVERSION=	1.5
 JDKNVERSION=	15
-JARS_SRC=	${JARS:Nbcjmail:Nbcprov-ext:Nbctest:Nbctls:Nbcutil}
-JARS_DOCS=	${JARS:Nbcprov-ext}
-JARS=		bcjmail bcmail bcpg bcpkix bcprov-ext bcprov bctest bctls \
-		bcutil
 
 .include <bsd.port.options.mk>
 
@@ -60,27 +56,38 @@ EXTRA_PATCHES+=	${FILESDIR}/armv6-patch-bc+-build.xml
 .endif
 
 do-install:
-.for jar in ${JARS}
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}on-${DVERSION}.jar \
-	      ${STAGEDIR}${JAVAJARDIR}/${jar}.jar
-.endfor
+	for src in $$(${FIND} ${ARTIFACTSDIR}/jars -name "*-jdk${JDKNVERSION}on-${DVERSION}.jar"); do \
+		dst="$${src##*/}"; \
+		dst="$${dst%%-jdk*}.jar"; \
+		${INSTALL_DATA} "$$src" "${STAGEDIR}/${JAVAJARDIR}/$${dst}"; \
+	done
+# Install the bundlded version of bcprov.jar because we need a signed JAR.
+# See bfca5d2c6e01d757f1f37c141c22645c2835104b for details.
 	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}on-${DVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
-.for jar in ${JARS_DOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${jar}
-	@cd ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}on-${DVERSION}/docs/ && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${jar}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs "${STAGEDIR}${DOCSDIR}")
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tls/docs
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} tls/docs "${STAGEDIR}${DOCSDIR}")
+# Skip the lcrypto documentation since that JAR is not installed.
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	for src in $$(${FIND} ${ARTIFACTSDIR} -type d -name "docs"); do \
+		dst="$${src%%-jdk*}"; \
+		dst="$${dst##*/}"; \
+		case $${dst} in lcrypto) continue;; esac; \
+		(cd $${src} && ${COPYTREE_SHARE} . "${STAGEDIR}${DOCSDIR}/$${dst}"); \
+	done
 
 do-install-ZIPSRC-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for jar in ${JARS_SRC}
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}on-${DVERSION}/src.zip \
-	      ${STAGEDIR}${DATADIR}/${jar}-src.zip
-.endfor
+	for src in $$(${FIND} ${ARTIFACTSDIR} -name "src.zip"); do \
+		dst="$${src%%-jdk*}"; \
+		dst="$${dst##*/}-src.zip"; \
+		${INSTALL_DATA} "$$src" "${STAGEDIR}/${DATADIR}/$${dst}"; \
+	done
 
 .include <bsd.port.mk>
