@@ -1,10 +1,7 @@
 PORTNAME=	dnsjit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	dns net
-
-PATCH_SITES=	https://github.com/DNS-OARC/dnsjit/commit/
-PATCHFILES=	3cdd801153373a316027920e5c650f111777fab4.patch:-p1
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Engine for capturing, parsing and replaying DNS
