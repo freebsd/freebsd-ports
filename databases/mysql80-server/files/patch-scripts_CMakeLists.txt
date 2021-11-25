@@ -1,24 +1,15 @@
---- scripts/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
-+++ scripts/CMakeLists.txt
-@@ -330,7 +330,7 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
-     LIST(REMOVE_DUPLICATES ${target}_LIB_DEPENDS)
-     FOREACH(lib ${${target}_LIB_DEPENDS})
-       # Filter out "general", it is not a library, just CMake hint
--      IF(NOT lib STREQUAL "general" AND NOT ${var}  MATCHES "-l${lib} ")
-+      IF(NOT lib STREQUAL "general" AND NOT ${var}  MATCHES "-l${lib} " AND NOT lib STREQUAL "imported_openssl" AND NOT lib STREQUAL "imported_crypto")
-         IF (lib MATCHES "^\\-l")
-           SET(${var} "${${var}} ${lib} ")
-         ELSEIF (lib MATCHES "^\\-L")
-@@ -340,6 +340,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
-           GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
-           STRING(REGEX REPLACE "^lib" "" lib "${lib}")
-           SET(${var} "${${var}}-l${lib} " )
+--- scripts/CMakeLists.txt.orig	2021-11-04 17:42:29.686664000 +0100
++++ scripts/CMakeLists.txt	2021-11-04 17:57:49.957200000 +0100
+@@ -323,6 +323,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+         GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
+         STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+         SET(${var} "${${var}}-l${lib} " )
 +        ELSEIF(lib STREQUAL "-pthread")
 +          SET(${var} "${${var}}-pthread " )
-         ELSE()
-           SET(${var} "${${var}}-l${lib} " )
-         ENDIF()
-@@ -414,7 +416,7 @@ ELSE()
+       ELSE()
+         SET(${var} "${${var}}-l${lib} " )
+       ENDIF()
+@@ -396,7 +398,7 @@ ELSE()
      ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
      ESCAPE_QUOTES @ONLY)
  
@@ -27,7 +18,7 @@
      MESSAGE(STATUS "INSTALL ${PKGCONFIG_FILE} ${INSTALL_PKGCONFIGDIR}")
      INSTALL(FILES
        ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
-@@ -427,23 +429,28 @@ ELSE()
+@@ -409,23 +411,28 @@ ELSE()
    # mysqld_safe used in mtr even for systemd platforms
    IF(WITH_SYSTEMD)
      SET(BIN_SCRIPTS

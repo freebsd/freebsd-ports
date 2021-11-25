@@ -9,8 +9,6 @@ bin/myisampack
 bin/mysqldumpslow
 bin/mysql_client_test
 bin/mysql_keyring_encryption_test
-bin/mysql_secure_installation
-bin/mysql_ssl_rsa_setup
 bin/mysql_tzinfo_to_sql
 bin/mysql_upgrade
 bin/mysqld_multi

@@ -1,39 +1,46 @@
---- include/CMakeLists.txt.orig	2019-12-09 19:53:17 UTC
+--- include/CMakeLists.txt.orig	2021-09-28 11:46:34 UTC
 +++ include/CMakeLists.txt
-@@ -37,10 +37,173 @@ SET(HEADERS
+@@ -37,10 +37,182 @@ SET(HEADERS
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_version.h
    ${CMAKE_CURRENT_BINARY_DIR}/mysqld_error.h
    field_types.h
++  add_with_saturate.h
 +  base64.h
 +  big_endian.h
 +  c_string_less.h
++  caching_sha2_passwordopt-longopts.h
++  caching_sha2_passwordopt-vars.h
++  compression.h
 +  crypt_genhash_impl.h
 +  decimal.h
 +  depth_first_search.h
 +  dur_prop.h
-+  errmsg.h
 +  ft_global.h
-+  guard.h
 +  heap.h
 +  integer_digits.h
 +  keycache.h
++  keyring_operations_helper.h
 +  lex_string.h
 +  lf.h
 +  little_endian.h
 +  m_ctype.h
 +  m_string.h
++  manifest.h
 +  map_helpers.h
++  mem_root_deque.h
++  memory_debugging.h
 +  mf_wcomp.h
 +  mutex_lock.h
 +  my_aes.h
 +  my_alloc.h
 +  my_atomic.h
 +  my_base.h
++  my_basename.h
 +  my_bit.h
 +  my_bitmap.h
 +  my_byteorder.h
 +  my_check_opt.h
-+  my_command.h
++  my_checksum.h
 +  my_compare.h
 +  my_compiler.h
 +  my_dbug.h
@@ -41,19 +48,21 @@
 +  my_dir.h
 +  my_double2ulonglong.h
 +  my_getopt.h
++  my_getpwnam.h
 +  my_hash_combine.h
++  my_hostname.h
 +  my_icp.h
 +  my_inttypes.h
 +  my_io.h
-+  my_list.h
 +  my_loglevel.h
 +  my_macros.h
-+  my_md5.h
 +  my_md5_size.h
++  my_md5.h
 +  my_murmur3.h
 +  my_pointer_arithmetic.h
 +  my_psi_config.h
 +  my_rapidjson_size_t.h
++  my_rcu_lock.h
 +  my_rdtsc.h
 +  my_rnd.h
 +  my_sharedlib.h
@@ -63,9 +72,9 @@
 +  my_sys.h
 +  my_systime.h
 +  my_table_map.h
-+  my_thread.h
 +  my_thread_local.h
 +  my_thread_os_id.h
++  my_thread.h
 +  my_time.h
 +  my_timer.h
 +  my_tree.h
@@ -75,16 +84,12 @@
 +  myisam.h
 +  myisammrg.h
 +  myisampack.h
-+  mysql.h
-+  mysql.h.pp
-+  mysql_com.h
++  mysql_async.h
 +  mysql_com_server.h
-+  mysql_time.h
-+  mysql_version.h.in
 +  mysys_err.h
-+  nullable.h
 +  password.h
 +  pfs_cond_provider.h
++  pfs_data_lock_provider.h
 +  pfs_error_provider.h
 +  pfs_file_provider.h
 +  pfs_idle_provider.h
@@ -95,8 +100,10 @@
 +  pfs_socket_provider.h
 +  pfs_stage_provider.h
 +  pfs_statement_provider.h
++  pfs_system_provider.h
 +  pfs_table_provider.h
 +  pfs_thread_provider.h
++  pfs_tls_channel_provider.h
 +  pfs_transaction_provider.h
 +  prealloced_array.h
 +  print_version.h
@@ -119,6 +126,8 @@
 +  thr_mutex.h
 +  thr_rwlock.h
 +  typelib.h
++  unhex.h
++  unsafe_string_append.h
 +  varlen_sort.h
 +  violite.h
 +  welcome_copyright_notice.h

@@ -1,8 +1,8 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 
 PORTNAME?=		mysql
-PORTVERSION=		8.0.26
-PORTREVISION?=		1
+PORTVERSION=		8.0.27
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -21,7 +21,7 @@ USES=		bison:build cmake:noninja compiler:c++17-lang cpe \
 
 CPE_VENDOR=	oracle
 
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++17
 USE_PERL5=	run
 
 MY_DBDIR=	/var/db/mysql
@@ -84,7 +84,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_ZLIB=system \
 		-DWITH_ZSTD=system \
 		-DWITH_PROTOBUF=system \
-		-DWITH_SSL=${OPENSSLBASE} \
+		-DWITH_SSL=system \
 		-DBUILD_BUNDLED_ZLIB=0 \
 		-DBUILD_BUNDLED_LZ4=0
 

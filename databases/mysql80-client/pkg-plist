@@ -14,6 +14,25 @@ bin/mysqlshow
 bin/mysqlslap
 bin/perror
 @comment bin/zlib_decompress
+include/mysql/add_with_saturate.h
+include/mysql/caching_sha2_passwordopt-longopts.h
+include/mysql/caching_sha2_passwordopt-vars.h
+include/mysql/compression.h
+include/mysql/keyring_operations_helper.h
+include/mysql/manifest.h
+include/mysql/mem_root_deque.h
+include/mysql/memory_debugging.h
+include/mysql/my_basename.h
+include/mysql/my_checksum.h
+include/mysql/my_getpwnam.h
+include/mysql/my_hostname.h
+include/mysql/my_rcu_lock.h
+include/mysql/mysql_async.h
+include/mysql/pfs_data_lock_provider.h
+include/mysql/pfs_system_provider.h
+include/mysql/pfs_tls_channel_provider.h
+include/mysql/unhex.h
+include/mysql/unsafe_string_append.h
 include/mysql/base64.h
 include/mysql/big_endian.h
 include/mysql/c_string_less.h
@@ -24,7 +43,6 @@ include/mysql/dur_prop.h
 include/mysql/errmsg.h
 include/mysql/field_types.h
 include/mysql/ft_global.h
-include/mysql/guard.h
 include/mysql/heap.h
 include/mysql/integer_digits.h
 include/mysql/keycache.h
@@ -88,7 +106,6 @@ include/mysql/myisam.h
 include/mysql/myisammrg.h
 include/mysql/myisampack.h
 include/mysql/mysql.h
-include/mysql/mysql.h.pp
 include/mysql/mysql/client_authentication.h
 include/mysql/mysql/client_plugin.h
 include/mysql/mysql/client_plugin.h.pp
@@ -139,10 +156,8 @@ include/mysql/mysql_com.h
 include/mysql/mysql_com_server.h
 include/mysql/mysql_time.h
 include/mysql/mysql_version.h
-include/mysql/mysql_version.h.in
 include/mysql/mysqld_error.h
 include/mysql/mysys_err.h
-include/mysql/nullable.h
 include/mysql/password.h
 include/mysql/pfs_cond_provider.h
 include/mysql/pfs_error_provider.h
@@ -189,6 +204,8 @@ lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.21
 %%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
+%%FIDO%%lib/mysql/plugin/authentication_fido_client.so
+lib/mysql/plugin/authentication_oci_client.so
 libdata/pkgconfig/mysqlclient.pc
 man/man1/comp_err.1.gz
 man/man1/lz4_decompress.1.gz
