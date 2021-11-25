@@ -3216,7 +3216,7 @@ The string hashing algorithm has been replaced with a better one, and now also u
     <affects>
       <package>
 	<name>bouncycastle15</name>
-	<range><lt>1.67</lt></range>
+	<range><ge>1.65</ge><lt>1.67</lt></range>
       </package>
     </affects>
     <description>
@@ -3243,10 +3243,14 @@ The string hashing algorithm has been replaced with a better one, and now also u
   </vuln>
 
   <vuln vid="89d5bca6-0150-11ec-bf0c-080027eedc6a">
-    <topic>bouncycastle15 -- EC math vulnerability</topic>
+    <topic>The Bouncy Castle Crypto APIs -- EC math vulnerability</topic>
     <affects>
       <package>
 	<name>bouncycastle15</name>
+	<range><lt>1.66</lt></range>
+      </package>
+      <package>
+	<name>bouncycastle</name>
 	<range><lt>1.66</lt></range>
       </package>
     </affects>

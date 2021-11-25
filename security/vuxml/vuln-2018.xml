@@ -5628,6 +5628,10 @@ a PingInterval period.</p>
     <topic>Several Security Defects in the Bouncy Castle Crypto APIs</topic>
     <affects>
       <package>
+	<name>bouncycastle</name>
+	<range><lt>1.60</lt></range>
+      </package>
+      <package>
 	<name>bouncycastle15</name>
 	<range><lt>1.60</lt></range>
       </package>

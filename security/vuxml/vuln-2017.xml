@@ -51,6 +51,10 @@
     <topic>The Bouncy Castle Crypto APIs: CVE-2017-13098 ("ROBOT")</topic>
     <affects>
       <package>
+	<name>bouncycastle</name>
+	<range><lt>1.59</lt></range>
+      </package>
+      <package>
 	<name>bouncycastle15</name>
 	<range><lt>1.59</lt></range>
       </package>
