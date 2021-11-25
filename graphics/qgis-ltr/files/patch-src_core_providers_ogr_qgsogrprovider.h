@@ -1,6 +1,6 @@
---- src/core/providers/ogr/qgsogrproviderutils.h.orig	2021-11-19 12:08:37 UTC
-+++ src/core/providers/ogr/qgsogrproviderutils.h
-@@ -216,7 +216,7 @@ class CORE_EXPORT QgsOgrProviderUtils
+--- src/core/providers/ogr/qgsogrprovider.h.orig	2021-11-19 12:10:19 UTC
++++ src/core/providers/ogr/qgsogrprovider.h
+@@ -503,7 +503,7 @@ class CORE_EXPORT QgsOgrProviderUtils
      static void release( QgsOgrLayer *&layer );
  
      //! Release a QgsOgrDataset*
