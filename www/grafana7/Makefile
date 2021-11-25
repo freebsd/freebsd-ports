@@ -1,6 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.5.10
+DISTVERSION=	7.5.11
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
 		https://gitea.com/xorm/builder/archive/:builder \
@@ -206,7 +206,7 @@ GH_TUPLE=	\
 		#	::v0.8.2:group_name/vendor/xorm.io/xorm (from gitea.com/xorm/xorm@v0.8.2)
 
 USE_RC_SUBR=	grafana
-TAG=		5fdad5b
+TAG=		6f8c1d9
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
