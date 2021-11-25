@@ -1,8 +1,7 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 
 PORTNAME?=	wireshark
-PORTVERSION=	3.4.9
-PORTREVISION=	1
+PORTVERSION=	3.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -43,7 +42,7 @@ LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd
+    reordercap captype randpktdump udpdump sharkd etwdump
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
