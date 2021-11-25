@@ -4,7 +4,7 @@
  
  gint get_cpu_cores(void)
  {
-+	return 1;
++	return MAX(1, sysconf(_SC_NPROCESSORS_ONLN));
  	FILE *cpuinfo = fopen("/proc/cpuinfo", "rb");
  	char *arg = 0;
  	size_t size = 0;
