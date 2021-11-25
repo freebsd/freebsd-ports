@@ -1,7 +1,7 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 
 PORTNAME=	chicken
-DISTVERSION=	5.2.0
+DISTVERSION=	5.3.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://code.call-cc.org/releases/${DISTVERSION}/
 PKGNAMESUFFIX=	5
@@ -26,7 +26,6 @@ MAKE_ARGS=	C_COMPILER="${CC}" \
 		LIBRARIAN="${AR}" \
 		LINKER_OPTIONS="${LDFLAGS}" \
 		MANDIR=${PREFIX}/man \
-		PLATFORM=bsd \
 		PREFIX=${PREFIX} \
 		PROGRAM_SUFFIX="${PKGNAMESUFFIX}"
 # parallel build not supported
