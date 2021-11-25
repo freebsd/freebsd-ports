@@ -1,0 +1,163 @@
+From 6d395b766fd816cf2e7feea3286a689e635e35f9 Mon Sep 17 00:00:00 2001
+From: Willy Tarreau <w@1wt.eu>
+Date: Wed, 6 Oct 2021 14:48:37 +0200
+Subject: CLEANUP: server: always include the storage for SSL settings
+
+The SSL stuff in struct server takes less than 3% of it and requires
+lots of annoying ifdefs in the code just to take care of the cases
+where the field is absent. Let's get rid of this and stop including
+openssl-compat from server.c to detect NPN and ALPN capabilities.
+
+This reduces the total LoC by another 0.4%.
+
+(cherry picked from commit 80527bcb9d51d8506c8e7ef95de9c30d30722719)
+Signed-off-by: Christopher Faulet <cfaulet@haproxy.com>
+(cherry picked from commit 5279e61cee28b7012619906048edd2c8a9c89059)
+[wt: backported again to fix backport issues around SSL fields. It
+ previously broke due to the absence of 'CLEANUP: servers: do not
+ include openssl-compat' that was backported now]
+Signed-off-by: Willy Tarreau <w@1wt.eu>
+---
+ include/haproxy/server-t.h |  2 --
+ src/server.c               | 21 +++------------------
+ 2 files changed, 3 insertions(+), 20 deletions(-)
+
+diff --git a/include/haproxy/server-t.h b/include/haproxy/server-t.h
+index 32b649bf3..90485f0c4 100644
+--- include/haproxy/server-t.h
++++ include/haproxy/server-t.h
+@@ -336,7 +336,6 @@ struct server {
+ 	unsigned int init_addr_methods;		/* initial address setting, 3-bit per method, ends at 0, enough to store 10 entries */
+ 	enum srv_log_proto log_proto;		/* used proto to emit messages on server lines from ring section */
+ 
+-#ifdef USE_OPENSSL
+ 	char *sni_expr;             /* Temporary variable to store a sample expression for SNI */
+ 	struct {
+ 		void *ctx;
+@@ -367,7 +366,6 @@ struct server {
+ #ifdef USE_QUIC
+ 	struct quic_transport_params quic_params; /* QUIC transport parameters */
+ 	struct eb_root cids;        /* QUIC connections IDs. */
+-#endif
+ #endif
+ 	struct resolv_srvrq *srvrq;		/* Pointer representing the DNS SRV requeest, if any */
+ 	struct list srv_rec_item;		/* to attach server to a srv record item */
+diff --git a/src/server.c b/src/server.c
+index 54637dc9c..ea3271957 100644
+--- src/server.c
++++ src/server.c
+@@ -1943,7 +1943,6 @@ const char *server_parse_maxconn_change_request(struct server *sv,
+ 	return NULL;
+ }
+ 
+-#ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
+ static struct sample_expr *srv_sni_sample_parse_expr(struct server *srv, struct proxy *px,
+                                                      const char *file, int linenum, char **err)
+ {
+@@ -1983,7 +1982,6 @@ static int server_parse_sni_expr(struct server *newsrv, struct proxy *px, char *
+ 
+ 	return 0;
+ }
+-#endif
+ 
+ static void display_parser_err(const char *file, int linenum, char **args, int cur_arg, int err_code, char **err)
+ {
+@@ -2080,14 +2078,11 @@ static void srv_ssl_settings_cpy(struct server *srv, struct server *src)
+ 	if (src->ssl_ctx.methods.max)
+ 		srv->ssl_ctx.methods.max = src->ssl_ctx.methods.max;
+ 
+-#ifdef HAVE_SSL_CTX_SET_CIPHERSUITES
+ 	if (src->ssl_ctx.ciphersuites != NULL)
+ 		srv->ssl_ctx.ciphersuites = strdup(src->ssl_ctx.ciphersuites);
+-#endif
+ 	if (src->sni_expr != NULL)
+ 		srv->sni_expr = strdup(src->sni_expr);
+ 
+-#ifdef TLSEXT_TYPE_application_layer_protocol_negotiation
+ 	if (src->ssl_ctx.alpn_str) {
+ 		srv->ssl_ctx.alpn_str = malloc(src->ssl_ctx.alpn_len);
+ 		if (srv->ssl_ctx.alpn_str) {
+@@ -2096,8 +2091,7 @@ static void srv_ssl_settings_cpy(struct server *srv, struct server *src)
+ 			srv->ssl_ctx.alpn_len = src->ssl_ctx.alpn_len;
+ 		}
+ 	}
+-#endif
+-#ifdef OPENSSL_NPN_NEGOTIATED
++
+ 	if (src->ssl_ctx.npn_str) {
+ 		srv->ssl_ctx.npn_str = malloc(src->ssl_ctx.npn_len);
+ 		if (srv->ssl_ctx.npn_str) {
+@@ -2106,7 +2100,6 @@ static void srv_ssl_settings_cpy(struct server *srv, struct server *src)
+ 			srv->ssl_ctx.npn_len = src->ssl_ctx.npn_len;
+ 		}
+ 	}
+-#endif
+ }
+ #endif
+ 
+@@ -2463,13 +2456,13 @@ static int _srv_parse_tmpl_init(struct server *srv, struct proxy *px)
+ 
+ 		srv_settings_cpy(newsrv, srv, 1);
+ 		srv_prepare_for_resolution(newsrv, srv->hostname);
+-#ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
++
+ 		if (newsrv->sni_expr) {
+ 			newsrv->ssl_ctx.sni = srv_sni_sample_parse_expr(newsrv, px, NULL, 0, NULL);
+ 			if (!newsrv->ssl_ctx.sni)
+ 				goto err;
+ 		}
+-#endif
++
+ 		/* append to list of servers available to receive an hostname */
+ 		if (newsrv->srvrq)
+ 			LIST_APPEND(&newsrv->srvrq->attached_servers, &newsrv->srv_rec_item);
+@@ -2488,9 +2481,7 @@ static int _srv_parse_tmpl_init(struct server *srv, struct proxy *px)
+  err:
+ 	_srv_parse_set_id_from_prefix(srv, srv->tmpl_info.prefix, srv->tmpl_info.nb_low);
+ 	if (newsrv)  {
+-#ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
+ 		release_sample_expr(newsrv->ssl_ctx.sni);
+-#endif
+ 		free_check(&newsrv->agent);
+ 		free_check(&newsrv->check);
+ 		LIST_DELETE(&newsrv->global_list);
+@@ -2748,7 +2739,6 @@ static int _srv_parse_kw(struct server *srv, char **args, int *cur_arg,
+ 	return err_code;
+ }
+ 
+-#ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
+ /* This function is first intended to be used through parse_server to
+  * initialize a new server on startup.
+  */
+@@ -2767,7 +2757,6 @@ static int _srv_parse_sni_expr_init(char **args, int cur_arg,
+ 
+ 	return ret;
+ }
+-#endif
+ 
+ /* Server initializations finalization.
+  * Initialize health check, agent check and SNI expression if enabled.
+@@ -2780,9 +2769,7 @@ static int _srv_parse_finalize(char **args, int cur_arg,
+                                struct server *srv, struct proxy *px,
+                                int parse_flags, char **errmsg)
+ {
+-#ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
+ 	int ret;
+-#endif
+ 
+ 	if (srv->do_check && srv->trackit) {
+ 		memprintf(errmsg, "unable to enable checks and tracking at the same time!");
+@@ -2795,10 +2782,8 @@ static int _srv_parse_finalize(char **args, int cur_arg,
+ 		return ERR_ALERT | ERR_FATAL;
+ 	}
+ 
+-#ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
+ 	if ((ret = _srv_parse_sni_expr_init(args, cur_arg, srv, px, errmsg)) != 0)
+ 		return ret;
+-#endif
+ 
+ 	/* A dynamic server is disabled on startup. It must not be counted as
+ 	 * an active backend entry.
+-- 
+2.28.0
+
