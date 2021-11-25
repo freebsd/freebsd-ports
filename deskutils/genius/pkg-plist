@@ -55,6 +55,7 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/taylor-exp.gel
 %%DATADIR%%/examples/taylor-sin.gel
 %%DATADIR%%/examples/vibrating-drumhead-modes.gel
+%%DATADIR%%/examples/zoom-differentiability.gel
 %%DATADIR%%/gel/calculus/differentiation.gel
 %%DATADIR%%/gel/calculus/fourier.gel
 %%DATADIR%%/gel/calculus/integration.gel
