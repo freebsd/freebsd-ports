@@ -168,6 +168,7 @@ do-configure:
 .endfor
 	@${ECHO_CMD} 'changelog-seen=2' > ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-stage=2' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'doc-stage=2' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'test-stage=2' >> ${WRKSRC}/config.toml

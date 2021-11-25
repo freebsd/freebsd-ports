@@ -96,6 +96,7 @@ do-configure:
 		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 	@${ECHO_CMD} 'changelog-seen=2' > ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'extended=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
