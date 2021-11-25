@@ -6,6 +6,10 @@ CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
 
+PATCH_SITES=	https://gitlab.com/libvirt/libvirt/-/commit/
+PATCHFILES=	c07cf0a68693f183948a332d86c4d86a26a9c551.patch:-p1 \
+		537c8e5e24bac2948faefc44427d1bc1f1b43298.patch:-p1
+
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
 
