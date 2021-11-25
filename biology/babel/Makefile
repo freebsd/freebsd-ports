@@ -10,7 +10,7 @@ MASTER_SITES=	http://smog.com/chem/babel/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts among various molecular file formats
 
-CONFLICTS_INSTALL=	openbabel-*
+CONFLICTS_INSTALL=	openbabel
 
 USES=		tar:Z
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=	GNU_COMPAT
 OPTIONS_SUB=		yes
 GNU_COMPAT_DESC=	Use GNU regex library (recommended)
 
-CONFLICTS=	gnugrep-*
+CONFLICTS=	gnugrep
 
 NLS_MAKE_ENV=	MK_NLS=yes
 NLS_MAKE_ENV_OFF=	MK_NLS=no

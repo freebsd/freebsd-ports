@@ -257,11 +257,11 @@ BUILD_DEPENDS=	gem:devel/ruby-gems \
 
 RUN_DEPENDS=	${MY_DEPENDS}
 
-CONFLICTS_INSTALL=	gitolite-* \
-			gitolite2-* \
-			gogs-* \
-			gitea-* \
-			${PYTHON_PKGNAMEPREFIX}-gitosis-*
+CONFLICTS_INSTALL=	gitolite \
+			gitolite2 \
+			gogs \
+			gitea \
+			${PYTHON_PKGNAMEPREFIX}-gitosis
 
 USES=		go:modules shebangfix
 USE_RUBY=	yes

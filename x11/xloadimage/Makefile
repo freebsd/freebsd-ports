@@ -16,7 +16,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-CONFLICTS_INSTALL=	xli-*
+CONFLICTS_INSTALL=	xli
 
 EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.patch
 IGNORE_PATCHES=	07_SYSPATHFILE.patch 24_libtiff5.patch \

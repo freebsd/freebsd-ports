@@ -35,8 +35,8 @@ GH_TAGNAME=	${HASH}
 # IMPORTANT:	Disabling conflicts, i.e. -DDISABLE_CONFLICTS will result in
 #		arcane build failures due to already installed ksh/ksh93 in
 #		$PATH.
-KSH_CONFLICTS=		pdksh-*
-KSH93_CONFLICTS=	ksh93-2* ast-ksh-*
+KSH_CONFLICTS=		pdksh
+KSH93_CONFLICTS=	ksh2020 ksh93 ast-ksh
 
 OPTIONS_DEFAULT=	KSH93 EXAMPLES
 OPTIONS_DEFINE=		EXAMPLES STATIC

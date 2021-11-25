@@ -23,7 +23,7 @@ USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=puppetboard02-* puppetboard03-*
+CONFLICTS_INSTALL=puppetboard02 puppetboard03
 
 GH_ACCOUNT=	voxpupuli
 PLIST_FILES=	"@sample etc/puppetboard/settings.py.sample"

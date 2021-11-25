@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_TUPLE=	aosp-mirror:platform_system_core:${DISTVERSIONFULL}
 
-CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
+CONFLICTS_INSTALL?=	${PORTNAME}-devel
 
 USES=		compiler:c++17-lang pkgconfig ssl uidfix
 BUILD_WRKSRC=	${WRKSRC}/adb

@@ -11,7 +11,7 @@ COMMENT=	Cross-platform windowing and multimedia library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=${PYTHON_PKGNAMEPREFIX}pyglet-*
+CONFLICTS_INSTALL=${PYTHON_PKGNAMEPREFIX}pyglet
 
 USES=		python:3.5+ zip
 USE_PYTHON=	autoplist distutils

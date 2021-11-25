@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 # Other ports this port cannot coexist with
-CONFLICTS_INSTALL=	fvwm3-*
+CONFLICTS_INSTALL=	fvwm3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk \

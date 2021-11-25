@@ -70,10 +70,10 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 .if !defined(CLIENT_ONLY)
 USES+=		mysql:55
 
-CONFLICTS_INSTALL=	mysql5[0-46-9]-server-* \
-			mysqlwsrep* \
-			mariadb*-server-* \
-			percona*-server-*
+CONFLICTS_INSTALL=	mysql5[0-46-9]-server \
+			mysqlwsrep*-server \
+			mariadb*-server \
+			percona*-server
 
 USE_RC_SUBR=	mysql-server
 

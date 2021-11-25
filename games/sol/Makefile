@@ -16,7 +16,7 @@ LIB_DEPENDS=	libXaw.so:x11-toolkits/libXaw \
 		libshhopt.so:devel/libshhopt \
 		libxalloc.so:devel/libxalloc
 
-CONFLICTS=	gnome-games-*
+CONFLICTS=	gnome-games
 
 USES=		gmake xorg
 USE_XORG=	ice sm x11 xext xmu xpm xt

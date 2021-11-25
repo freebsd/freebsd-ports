@@ -15,7 +15,7 @@ RUN_DEPENDS=	\
 ${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:audio/festlex-poslex \
 ${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:audio/festlex-cmu
 
-CONFLICTS=	festvox-kal8-*
+CONFLICTS=	festvox-kal8
 
 NO_BUILD=	yes
 

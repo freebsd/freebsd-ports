@@ -37,8 +37,8 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-* \
-			virtualbox-ose-kmod-*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel \
+			virtualbox-ose-kmod
 
 PORTSCOUT=	limit:^5\.
 

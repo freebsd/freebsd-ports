@@ -5,9 +5,9 @@ CATEGORIES=	graphics print
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/old/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	3
-CONFLICTS_INSTALL=	xpdf4-* xpdf-*
+CONFLICTS_INSTALL=	xpdf4 xpdf
 .else
-CONFLICTS_INSTALL=	xpdf4-*	xpdf3-*
+CONFLICTS_INSTALL=	xpdf4 xpdf3
 .endif
 
 MAINTAINER=	cy@FreeBSD.org

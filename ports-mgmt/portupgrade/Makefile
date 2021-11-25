@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
-CONFLICTS_INSTALL=	portupgrade-devel-*
+CONFLICTS_INSTALL=	portupgrade-devel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd

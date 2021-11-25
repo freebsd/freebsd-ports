@@ -21,7 +21,7 @@ USES=		cpe php:flavors
 CPE_VENDOR=	getcomposer
 USE_PHP=	ctype filter intl json mbstring openssl phar
 
-CONFLICTS_INSTALL=	php*-composer-*
+CONFLICTS_INSTALL=	php*-composer
 
 NO_ARCH=	yes
 NO_BUILD=	yes

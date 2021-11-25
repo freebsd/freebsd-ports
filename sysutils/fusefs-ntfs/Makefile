@@ -15,9 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-CONFLICTS_BUILD=	bonobo-1.*
-CONFLICTS_INSTALL=	ntfsprogs-*
-
 USES=		fuse pkgconfig iconv libtool localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

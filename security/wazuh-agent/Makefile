@@ -29,7 +29,7 @@ SHEBANG_FILES=	${WRKSRC}/contrib/util.sh \
 		${WRKSRC}/wodles/oscap/oscap.py \
 		${WRKSRC}/active-response/*.sh
 
-CONFLICTS_INSTALL=	ossec-*
+CONFLICTS_INSTALL=	ossec
 
 USERS=		ossec ossecm ossecr
 GROUPS=		ossec

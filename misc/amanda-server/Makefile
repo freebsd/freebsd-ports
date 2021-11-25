@@ -101,7 +101,7 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-server-2.* amanda-server-3.2.* amanda2[56]-server-*
+CONFLICTS=	amanda-server-2.* amanda-server-3.2.* amanda2[56]-server
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:misc/amanda-client
 RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:misc/amanda-client \

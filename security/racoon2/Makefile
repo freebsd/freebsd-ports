@@ -10,7 +10,7 @@ RACOON2_COMMIT_DATE=202000908
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
-CONFLICTS=	racoon2-legacy-*
+CONFLICTS=	racoon2-legacy
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zoulasc

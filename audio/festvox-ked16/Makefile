@@ -17,7 +17,7 @@ ${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:audio/festlex-cmu
 
 WRKSRC=		${WRKDIR}/festival
 
-CONFLICTS=	festvox-ked8-*
+CONFLICTS=	festvox-ked8
 
 NO_BUILD=	yes
 

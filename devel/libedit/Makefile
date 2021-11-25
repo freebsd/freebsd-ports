@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-CONFLICTS_INSTALL=	editline-*
+CONFLICTS_INSTALL=	editline
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/man/man3/history.3 ${STAGEDIR}${PREFIX}/man/man3/el_history.3

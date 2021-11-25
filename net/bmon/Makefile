@@ -12,8 +12,6 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
-CONFLICTS_INSTALL=	bmon-*
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	tgraf
 

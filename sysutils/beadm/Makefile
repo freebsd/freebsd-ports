@@ -15,7 +15,7 @@ GH_ACCOUNT=	vermaden
 NO_BUILD=	YES
 NO_ARCH=	YES
 
-CONFLICTS_INSTALL=	beadm-devel-*
+CONFLICTS_INSTALL=	beadm-devel
 
 PLIST_FILES=	sbin/${PORTNAME} \
 		man/man8/${PORTNAME}.8.gz

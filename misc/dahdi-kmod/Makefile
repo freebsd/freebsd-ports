@@ -42,7 +42,7 @@ USE_RC_SUBR=	dahdi
 MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp" NO_FETCH=yes DEPEND_MP= WERROR=
 GROUPS=		dahdi
 
-CONFLICTS=	zaptel dahdi-kmod26-*
+CONFLICTS=	zaptel dahdi-kmod26
 
 USES=		kmod uidfix
 

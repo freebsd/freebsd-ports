@@ -13,7 +13,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb5-* puppetdb7-*
+CONFLICTS_INSTALL=	puppetdb5 puppetdb7
 USES=		cpe shebangfix
 CPE_VENDOR=	puppet
 SHEBANG_FILES=	ext/bin/puppetdb \

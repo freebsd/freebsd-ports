@@ -10,7 +10,7 @@ DISTNAME?=	fireflysung-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combination of two Arphic Sung fonts
 
-CONFLICTS=	zh-opendesktop-fonts-*
+CONFLICTS=	zh-opendesktop-fonts
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}

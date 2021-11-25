@@ -43,7 +43,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.-release
 
 SHEBANG_FILES=	scripts/fsxs.in
 
-CONFLICTS_BUILD=	xmlrpc-c-*
+CONFLICTS_BUILD=	xmlrpc-c
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \

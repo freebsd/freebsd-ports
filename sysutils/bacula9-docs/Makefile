@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	9-docs
 DISTNAME=	${PORTNAME}-docs-${PORTVERSION}
 
-CONFLICTS=	bacula-* bacula5-* bacula11-*
+CONFLICTS=	bacula bacula11
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula document set

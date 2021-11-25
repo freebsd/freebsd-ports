@@ -17,7 +17,7 @@ RUN_DEPENDS+=	dsssl-docbook-modular>0:textproc/dsssl-docbook-modular \
 		sgmlspl:textproc/p5-SGMLSpm \
 		lynx:www/lynx
 
-CONFLICTS=	docbook2X-*
+CONFLICTS=	docbook2X
 
 USES=		perl5 gmake shebangfix
 USE_PERL5=	run

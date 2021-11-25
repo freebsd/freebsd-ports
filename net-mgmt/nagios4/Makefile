@@ -23,7 +23,7 @@ USE_PERL5=	build
 USE_PHP=	xml filter
 USE_RC_SUBR=	nagios
 
-CONFLICTS=	nagios-[123].* nagios-devel-*
+CONFLICTS=	nagios-[123].* nagios-devel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \

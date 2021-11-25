@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES+=		cpe libtool readline shebangfix ssl
 SHEBANG_FILES=	src/cats/make_catalog_backup.pl.in scripts/baculabackupreport.in
 
-CONFLICTS?=	bacula9-server-* bacula5-server-* bacula-server-*
+CONFLICTS?=	bacula9-server bacula-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 

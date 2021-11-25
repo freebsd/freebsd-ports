@@ -80,11 +80,11 @@ PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 .if !defined(CLIENT_ONLY)
 USES+=		mysql:56
 
-CONFLICTS_INSTALL=	mysql5[0-57-9]-server-* \
-			mysql[0-46-9][0-9]-server-* \
-			mysqlwsrep* \
-			mariadb[0-9][0-9]-server-* \
-			percona[0-9][0-9]-server-*
+CONFLICTS_INSTALL=	mysql5[0-57-9]-server \
+			mysql[0-46-9][0-9]-server \
+			mysqlwsrep*-server \
+			mariadb[0-9][0-9]-server \
+			percona[0-9][0-9]-server
 
 USE_RC_SUBR=	mysql-server
 

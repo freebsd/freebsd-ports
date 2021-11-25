@@ -18,7 +18,7 @@ USE_PYTHON=	autoplist distutils
 GH_ACCOUNT=	ahupp
 
 # both install module as magic.py
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}magic-*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}magic
 
 NO_ARCH=	yes
 

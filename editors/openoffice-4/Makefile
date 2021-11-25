@@ -122,7 +122,7 @@ USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
 
-CONFLICTS_INSTALL=	apache-openoffice-devel-*
+CONFLICTS_INSTALL=	apache-openoffice-devel
 
 AOOVERSION1=	4
 AOOVERSION2=	1

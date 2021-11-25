@@ -16,10 +16,10 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-CONFLICTS_INSTALL=	mysql5[0-57-9]-client-* \
-			mysql[0-46-9][0-9]-client-* \
-			mariadb[0-9][0-9]-client-* \
-			percona[0-9][0-9]-client-*
+CONFLICTS_INSTALL=	mysql5[0-57-9]-client \
+			mysql[0-46-9][0-9]-client \
+			mariadb[0-9][0-9]-client \
+			percona[0-9][0-9]-client
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 

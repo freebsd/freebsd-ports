@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-ping-command="/sbin/ping -n -t %d -c %d %s" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-CONFLICTS_INSTALL=	nagios-plugins-*
+CONFLICTS_INSTALL=	nagios-plugins
 
 OPTIONS_DEFINE=		DBI EXTRAOPTS FPING IPV6 LDAP MYSQL NETSNMP NLS PGSQL \
 			QSTAT RADIUS SSH_PORTABLE

@@ -14,7 +14,7 @@ COMMENT=	Translate text both to and from KennySpeak
 
 LICENSE=	ART10
 
-CONFLICTS=	filters-*
+CONFLICTS=	filters
 
 USES=		perl5 shebangfix
 USE_PERL5=	extract build run

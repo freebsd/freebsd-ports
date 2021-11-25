@@ -87,7 +87,7 @@ GROUPS=		cinder
 
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
-CONFLICTS_INSTALL=	py??-cinder-*
+CONFLICTS_INSTALL=	py??-cinder
 
 CPE_VENDOR=	openstack
 

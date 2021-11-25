@@ -47,7 +47,7 @@ BUILD_DEPENDS=	nasm>0:devel/nasm \
 
 WRKSRC=		${WRKDIR}/makemkv-oss-${PORTVERSION}
 
-CONFLICTS_BUILD=	v4l_compat-*
+CONFLICTS_BUILD=	v4l_compat
 
 SUB_FILES=	update-makemkv-drives
 SUB_LIST=	LINUXBASE=${LINUXBASE}

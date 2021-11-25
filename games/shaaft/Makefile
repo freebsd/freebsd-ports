@@ -12,7 +12,7 @@ COMMENT=	OpenGL 3D falling block game similar to Blockout
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-CONFLICTS=	criticalmass-*
+CONFLICTS=	criticalmass
 
 USES=		gl sdl tar:bzip2
 USE_SDL=	mixer image sdl

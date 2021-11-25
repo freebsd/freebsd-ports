@@ -12,7 +12,7 @@ COMMENT=	Utilities to display images in X11
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-CONFLICTS_INSTALL=	xloadimage-*
+CONFLICTS_INSTALL=	xloadimage
 
 USES=		cpe imake jpeg xorg
 USE_XORG=	xi

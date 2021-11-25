@@ -27,7 +27,7 @@ JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
 USE_RC_SUBR=	unifi
 
-CONFLICTS=	unifi-devel-* unifi-lts-* unifi5-*
+CONFLICTS=	unifi-devel unifi-lts unifi5
 
 EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p

@@ -30,7 +30,7 @@ CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
 		-Wno-unused-value -Wno-unused-variable
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-CONFLICTS_INSTALL=	dnsmasq-devel-*
+CONFLICTS_INSTALL=	dnsmasq-devel
 
 PATCH_STRIP=	-p1
 SUB_FILES=	pkg-message

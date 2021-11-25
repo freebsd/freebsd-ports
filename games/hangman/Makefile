@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.shiftygames.com/hangman/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenge your spelling skills in the old western style
 
-CONFLICTS=	bsdgames-*
+CONFLICTS=	bsdgames
 
 GNU_CONFIGURE=	yes
 USES=		gmake sdl

@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		tar:tgz
 
-CONFLICTS_INSTALL=easy-rsa2-*
+CONFLICTS_INSTALL=easy-rsa2
 
 NO_BUILD=	yes
 NO_ARCH=	yes

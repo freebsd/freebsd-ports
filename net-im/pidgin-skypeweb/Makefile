@@ -26,8 +26,6 @@ USE_LDCONFIG=	yes
 
 DOS2UNIX_FILES=	gpl3.txt theme
 
-CONFLICTS_INSTALL=	pidgin-skype-*
-
 WRKSRC_SUBDIR=	skypeweb
 
 .include <bsd.port.mk>

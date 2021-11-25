@@ -165,7 +165,7 @@ LLDB_VARS=		_USES_PYTHON=python:3.6+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_PORTDOCS=	openmp
-OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
+OPENMP_CONFLICTS_INSTALL=	libiomp5-devel
 OPENMP_USES=		perl5
 OPENMP_USE=		PERL5=build
 STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libtommath.so:math/libtommath \
 		libtomcrypt.so:security/libtomcrypt
 
-CONFLICTS_INSTALL=	firebird25-* firebird30-*
+CONFLICTS_INSTALL=	firebird25 firebird30
 
 USES=		cpe gmake pkgconfig localbase:ldflags libedit tar:xz
 USE_CXXSTD=	c++11

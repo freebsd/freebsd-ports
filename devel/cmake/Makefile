@@ -45,8 +45,6 @@ CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
 CPACK_USES_OFF=		libarchive
 # When CPACK is on, uses base libarchive and won't pass stage-qa
 
-CONFLICTS_INSTALL=	cmake-modules-*
-
 CXXFLAGS+=	-D__BSD_VISIBLE
 
 .include <bsd.port.pre.mk>

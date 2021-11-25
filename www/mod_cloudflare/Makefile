@@ -9,7 +9,7 @@ COMMENT=	Cloudflare fork of mod_remoteip
 
 LICENSE=	APACHE20
 
-CONFLICTS_INSTALL=	${PKGNAMEPREFIX}mod_remoteip-*
+CONFLICTS_INSTALL=	${PKGNAMEPREFIX}mod_remoteip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare

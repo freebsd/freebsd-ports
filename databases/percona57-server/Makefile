@@ -106,10 +106,10 @@ TOKUDB_EXTRA_PATCHES=${PATCHDIR}/extrapatch-tokudb
 
 USES+=mysql:57p
 
-CONFLICTS_INSTALL=	mysql*-server-* \
-			mysqlwsrep* \
-			mariadb*-server-* \
-			percona5[0-68-9]-server-*
+CONFLICTS_INSTALL=	mysql*-server \
+			mysqlwsrep*-server \
+			mariadb*-server \
+			percona5[0-68-9]-server
 
 USE_RC_SUBR=	mysql-server
 

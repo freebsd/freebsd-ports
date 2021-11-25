@@ -16,7 +16,7 @@ LICENSE_NAME=	OpenSSH Licenses
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
+CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel
 
 USES=			alias autoreconf compiler:c11 cpe localbase ncurses \
 			pkgconfig ssl

@@ -8,17 +8,17 @@ MASTERDIR?=	${.CURDIR}
 DISTINFO_FILE?=	${MASTERDIR}/../ossec-hids-local/distinfo
 
 .if ${OSSEC_TYPE} == local
-CONFLICTS_INSTALL=	ossec-hids-client-* \
-			ossec-hids-agent-* \
-			ossec-hids-server-*
+CONFLICTS_INSTALL=	ossec-hids-client \
+			ossec-hids-agent \
+			ossec-hids-server
 .elif ${OSSEC_TYPE} == agent
-CONFLICTS_INSTALL=	ossec-hids-client-* \
-			ossec-hids-local-* \
-			ossec-hids-server-*
+CONFLICTS_INSTALL=	ossec-hids-client \
+			ossec-hids-local \
+			ossec-hids-server
 .elif ${OSSEC_TYPE} == server
-CONFLICTS_INSTALL=	ossec-hids-client-* \
-			ossec-hids-agent-* \
-			ossec-hids-local-*
+CONFLICTS_INSTALL=	ossec-hids-client \
+			ossec-hids-agent \
+			ossec-hids-local
 .endif
 
 .if !defined(MAINTAINER_MODE)

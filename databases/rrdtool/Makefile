@@ -12,7 +12,7 @@ COMMENT=	Round Robin Database Tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	rrdtool12-*
+CONFLICTS=	rrdtool12
 
 CONFIGURE_ARGS=	--disable-tcl
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2

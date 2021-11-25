@@ -19,10 +19,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-CONFLICTS_INSTALL=	mariadb[0-9]*-client-* \
-			mariadb102-server-* \
-			mysql[0-9]*-client-* \
-			percona[0-9]*-client-*
+CONFLICTS_INSTALL=	mariadb[0-9]*-client \
+			mariadb102-server \
+			mysql[0-9]*-client \
+			percona[0-9]*-client
 
 USES=		cmake:insource compiler:c++11-lib iconv:translit ssl
 USE_LDCONFIG=	${PREFIX}/lib/mariadb

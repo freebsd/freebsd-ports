@@ -6,7 +6,7 @@ COMMENT=	Backup archiving recovery open sourced (traymonitor)
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 		libbareos.so:sysutils/bareos-client
 
-CONFLICTS=	bareos17-traymonitor-* bareos18-traymonitor-* bareos19-traymonitor-*
+CONFLICTS=	bareos17-traymonitor bareos18-traymonitor bareos19-traymonitor
 
 USES=		desktop-file-utils gettext-runtime pkgconfig qt:5
 USE_QT=		buildtools_build qmake_build uitools_build gui core

@@ -12,7 +12,7 @@ MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Free interpreter for Chez Scheme system
 
 # Both install bin/scheme-script
-CONFLICTS=	ikarus-*
+CONFLICTS=	ikarus
 
 ONLY_FOR_ARCHS=	i386 amd64
 

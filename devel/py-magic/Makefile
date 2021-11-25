@@ -20,7 +20,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 # both install module as magic.py
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic-*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic
 
 WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
 

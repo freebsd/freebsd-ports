@@ -18,7 +18,7 @@ CPE_PRODUCT=	cfengine
 DEPRECATED=		Expire one year after cfengine 3.18.0 released
 EXPIRATION_DATE=	2022-07-05
 
-CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[013-9]-*
+CONFLICTS=	cfengine-masterfiles3[0-9] cfengine-masterfiles31[013-9]
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	316
 CONFLICTS+=	cfengine-masterfiles-3.*

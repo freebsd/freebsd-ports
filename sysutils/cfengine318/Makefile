@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
-CONFLICTS=	cfengine3[0-9]-* cfengine31[0-79]-*
+CONFLICTS=	cfengine3[0-9] cfengine31[0-79]
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	318
 CONFLICTS+=	cfengine-3.*

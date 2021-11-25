@@ -44,7 +44,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 
-CONFLICTS_INSTALL=	gtkada-*
+CONFLICTS_INSTALL=	gtkada
 
 CONFIGURE_ARGS+=	--with-GL=auto \
 			--with-GL-prefix=${PREFIX} \

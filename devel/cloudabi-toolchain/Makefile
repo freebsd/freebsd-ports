@@ -16,7 +16,7 @@ RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		lld${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		pkgconf:devel/pkgconf
 
-CONFLICTS=	cloudabi-binutils-*
+CONFLICTS=	cloudabi-binutils
 
 CLOUDABI_ARCHS=	aarch64-unknown-cloudabi armv6-unknown-cloudabi-eabihf \
 		armv7-unknown-cloudabi-eabihf i686-unknown-cloudabi \

@@ -15,7 +15,7 @@ LICENSE=	LGPL20+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-CONFLICTS?=	open-motif-*
+CONFLICTS?=	open-motif
 
 USES=		cpe tar:bzip2 libtool xorg
 USE_XORG=	sm ice xt x11 xext xorgproto xrender xft

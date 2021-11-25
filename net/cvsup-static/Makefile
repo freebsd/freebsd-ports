@@ -12,7 +12,7 @@ COMMENT=	File distribution system optimized for CVS
 
 ONLY_FOR_ARCHS=	amd64
 
-CONFLICTS_INSTALL=	modula3-*
+CONFLICTS_INSTALL=	modula3
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 

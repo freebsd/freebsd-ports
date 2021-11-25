@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pdfminer
 USE_PYTHON=	distutils concurrent autoplist
 
-CONFLICTS_INSTALL=	py??-pdfminer-* py??-pdfminer3k-*
+CONFLICTS_INSTALL=	py??-pdfminer py??-pdfminer3k
 NO_ARCH=		yes
 
 do-test:

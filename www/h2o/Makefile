@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	dena
 
-CONFLICTS=	h2o-devel-*
+CONFLICTS=	h2o-devel
 
 SHEBANG_FILES=	share/h2o/start_server
 

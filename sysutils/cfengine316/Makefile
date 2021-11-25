@@ -17,7 +17,7 @@ CPE_VENDOR=	gnu
 DEPRECATED=		Expire one year after cfengine 3.18.0 released
 EXPIRATION_DATE=	2022-07-05
 
-CONFLICTS=	cfengine3[0-9]-* cfengine31[0-57-9]-*
+CONFLICTS=	cfengine3[0-9] cfengine31[0-57-9]
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	316
 CONFLICTS+=	cfengine-3.*

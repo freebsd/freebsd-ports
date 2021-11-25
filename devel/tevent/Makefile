@@ -15,7 +15,7 @@ IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with 
 BUILD_DEPENDS=		talloc>=2.3.1:devel/talloc
 RUN_DEPENDS=		talloc>=2.3.1:devel/talloc
 
-CONFLICTS_INSTALL=	tevent1-*
+CONFLICTS_INSTALL=	tevent1
 
 #FLAVORS=		default nopython
 #nopython_PKGNAMESUFFIX=	-nopython

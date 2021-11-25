@@ -28,7 +28,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.8+
 
-CONFLICTS_INSTALL=	puppetserver5-* puppetserver7-*
+CONFLICTS_INSTALL=	puppetserver7
 
 SHEBANG_FILES=	ext/bin/puppetserver
 

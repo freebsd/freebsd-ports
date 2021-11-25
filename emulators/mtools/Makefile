@@ -11,7 +11,7 @@ COMMENT=	Collection of tools for manipulating MS-DOS files
 
 LICENSE=	GPLv3
 
-CONFLICTS_INSTALL=	multimarkdown-*
+CONFLICTS_INSTALL=	multimarkdown
 
 USES=		gmake makeinfo tar:bzip2
 GNU_CONFIGURE=	yes

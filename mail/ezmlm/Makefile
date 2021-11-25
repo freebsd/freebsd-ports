@@ -23,7 +23,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		qmail:run
 
-CONFLICTS=	ezmlm-idx-*
+CONFLICTS=	ezmlm-idx
 
 ALL_TARGET=	it
 

@@ -12,17 +12,17 @@ BROKEN_riscv64=		fails to compile: rootcheck/os_string.c:186:20: use of undeclar
 USES=		compiler gmake ssl
 
 .if ${OSSEC_TYPE} == local
-CONFLICTS_INSTALL=	ossec-hids-client-* \
-			ossec-hids-agent-* \
-			ossec-hids-server-*
+CONFLICTS_INSTALL=	ossec-hids-client \
+			ossec-hids-agent \
+			ossec-hids-server
 .elif ${OSSEC_TYPE} == agent
-CONFLICTS_INSTALL=	ossec-hids-client-* \
-			ossec-hids-local-* \
-			ossec-hids-server-*
+CONFLICTS_INSTALL=	ossec-hids-client \
+			ossec-hids-local \
+			ossec-hids-server
 .elif ${OSSEC_TYPE} == server
-CONFLICTS_INSTALL=	ossec-hids-client-* \
-			ossec-hids-agent-* \
-			ossec-hids-local-*
+CONFLICTS_INSTALL=	ossec-hids-client \
+			ossec-hids-agent \
+			ossec-hids-local
 .endif
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 libevent.so:devel/libevent

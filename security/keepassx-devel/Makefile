@@ -20,7 +20,7 @@ LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell au
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-CONFLICTS_INSTALL=	keepassx-0.* keepassx2-* keepassxc-*
+CONFLICTS_INSTALL=	keepassx-0.* keepassx2 keepassxc
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gnome qt:5 \
 		shared-mime-info xorg

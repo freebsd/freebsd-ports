@@ -38,9 +38,9 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=			cpe gmake libtool:keepla localbase ssl tar:tgz
 
 .if defined(CLIENT_ONLY)
-CONFLICTS_INSTALL=	${PORTNAME}2[0-46-9]-client-* ${PORTNAME}-client-*
+CONFLICTS_INSTALL=	${PORTNAME}2[0-46-9]-client ${PORTNAME}-client
 .else
-CONFLICTS_INSTALL=	${PORTNAME}2[0-46-9]-server-* ${PORTNAME}-server-*
+CONFLICTS_INSTALL=	${PORTNAME}2[0-46-9]-server ${PORTNAME}-server
 .endif
 
 GNU_CONFIGURE=		yes

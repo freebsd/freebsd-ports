@@ -19,7 +19,7 @@ GH_TUPLE=	aosp-mirror:platform_system_core:${DISTVERSIONFULL} \
 		jbeich:platform_system_extras:${DISTVERSIONFULL}:extras/extras \
 		jbeich:platform_system_tools_mkbootimg:${DISTVERSIONFULL}:mkbootimg/mkbootimg
 
-CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
+CONFLICTS_INSTALL?=	${PORTNAME}-devel
 
 USES=		compiler:c++17-lang pkgconfig ssl uidfix
 BUILD_WRKSRC=	${WRKSRC}/fastboot

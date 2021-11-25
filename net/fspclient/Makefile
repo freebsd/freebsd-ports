@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Ftp-like client for the FSP service
 
-CONFLICTS_INSTALL=	alliance-*
+CONFLICTS_INSTALL=	alliance
 USES=		tar:bzip2 scons
 MAKE_ARGS=	prefix=${PREFIX}
 

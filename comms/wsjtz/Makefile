@@ -6,7 +6,7 @@ MASTER_SITES=	SF/wsjt-z/Source
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Clone of WSJT-X software with additional features
 
-CONFLICTS=	wsjtx-*
+CONFLICTS=	wsjtx
 
 LICENSE=	GPLv3
 

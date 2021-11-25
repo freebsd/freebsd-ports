@@ -20,7 +20,7 @@ USES=		cpe perl5 php
 USE_PERL5=	build
 USE_RC_SUBR=	nagios
 
-CONFLICTS=	nagios-[12].* nagios-devel-* nagios4-*
+CONFLICTS=	nagios-[12].* nagios-devel nagios4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \

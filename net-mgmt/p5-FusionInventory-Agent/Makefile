@@ -37,8 +37,8 @@ TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Test-MockObject>=0:devel/p5-Test-MockObject \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
-CONFLICTS=	p5-FusionInventory-Agent-Task-NetDiscovery-* \
-		p5-FusionInventory-Agent-Task-SNMPQuery-*
+CONFLICTS=	p5-FusionInventory-Agent-Task-NetDiscovery \
+		p5-FusionInventory-Agent-Task-SNMPQuery
 
 OPTIONS_DEFINE=		CUPS DAEMON DMIDECODE DEPLOY NETDISC NETINV PCIUTILS \
 			SSL VMWARE WOL ZLIB

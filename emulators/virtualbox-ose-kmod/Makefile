@@ -36,8 +36,8 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-* \
-			virtualbox-ose-kmod-legacy-*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel \
+			virtualbox-ose-kmod-legacy
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
 OPTIONS_DEFAULT=VIMAGE

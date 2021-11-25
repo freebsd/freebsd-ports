@@ -15,8 +15,8 @@ GH_ACCOUNT=	att
 GH_PROJECT=	ast
 GH_TAGNAME=	ksh2020
 
-KSH_CONFLICTS=		pdksh-*
-KSH93_CONFLICTS=	ksh93-* ast-ksh-*
+KSH_CONFLICTS=		pdksh
+KSH93_CONFLICTS=	ksh93 ksh93-devel ast-ksh
 
 MESON_BUILD_DIR=	build
 

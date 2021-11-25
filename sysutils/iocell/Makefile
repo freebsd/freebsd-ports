@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	uclcmd:devel/uclcmd
 
-CONFLICTS=	iocage-*
+CONFLICTS=	iocage
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bartekrutkowski

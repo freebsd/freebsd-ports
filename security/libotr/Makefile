@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt
 
-CONFLICTS=	libotr3-*
+CONFLICTS=	libotr3
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix cpe

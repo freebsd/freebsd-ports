@@ -15,7 +15,7 @@ LIB_DEPENDS=	libigraph.so:math/igraph
 
 USES=		autoreconf libtool localbase pkgconfig
 
-CONFLICTS_INSTALL=	rw-*
+CONFLICTS_INSTALL=	rw
 
 OPTIONS_DEFINE=	DOCS
 

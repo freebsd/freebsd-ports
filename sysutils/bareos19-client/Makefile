@@ -3,7 +3,7 @@ PKGNAMESUFFIX=	19-client
 
 COMMENT=	Backup archiving recovery open sourced (client)
 
-CONFLICTS=	bareos18-client-* bareos17-client-* bareos-client-*
+CONFLICTS=	bareos18-client bareos17-client bareos-client
 
 WITH_CLIENT_ONLY=yes
 USE_RC_SUBR=	bareos-fd
