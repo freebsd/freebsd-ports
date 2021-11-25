@@ -1,7 +1,7 @@
 # Created by: Maxime Henrion <mux@FreeBSD.org>
 
 PORTNAME=	wtf
-PORTVERSION=	20210618
+PORTVERSION=	20211110
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
