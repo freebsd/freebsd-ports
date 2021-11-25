@@ -1,6 +1,6 @@
 PORTNAME=	git-town
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.5.0
+DISTVERSION=	7.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,6 @@ RUN_DEPENDS=	git:devel/git
 USES=		go:modules
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Originate
 
 GH_TUPLE=	\
 		AlecAivazis:survey:v1.8.8:alecaivazis_survey/vendor/gopkg.in/AlecAivazis/survey.v1 \
