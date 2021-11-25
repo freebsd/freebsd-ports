@@ -12,7 +12,7 @@ USES+=		cmake:insource,noninja cpe
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	TigerVNC
-CONFLICTS=	tightvnc-[0-9]*
+CONFLICTS=	tightvnc
 PLIST_SUB+=	TIGERVNC_COMPONENT=${PORTNAME}${PKGNAMESUFFIX}-
 
 CMAKE_ARGS+=	-G "Unix Makefiles" -DINSTALL_SYSTEMD_UNITS:BOOL=false
