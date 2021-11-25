@@ -1,7 +1,7 @@
 # Created by: Andrej Ebert <andrej@ebert.su>
 
 PORTNAME=	rebulk
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
