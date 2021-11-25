@@ -1,0 +1,8 @@
+Ports overlay for sccache
+
+Sccache is a compiler cache but unlike ccache it comes with Rust
+support. This package provides a standalone version of sccache
+that can work in Poudriere jails with glue for hooking it up to
+the ports framework by simply activating an overlay.
+
+WWW: https://github.com/mozilla/sccache

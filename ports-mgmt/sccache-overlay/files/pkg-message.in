@@ -1,0 +1,40 @@
+[
+{ type: install
+  message: <<EOM
+Local setup
+===========
+
+Add this to /etc/make.conf
+
+SCCACHE_DIR=	${HOME}/.sccache
+OVERLAYS+=	%%DATADIR%%/overlay
+
+Poudriere setup
+===============
+
+This requires a Poudriere version that supports overlays like
+poudriere-devel.
+
+Make the overlay available to Poudriere
+
+$ poudriere ports -c -p sccache -m null -M %%DATADIR%%/overlay
+
+Make sure to enable Poudriere's ccache support. This overlay
+piggybacks on it to have a location to write to. Poudriere mounts
+CCACHE_DIR inside the builder jails and SCCACHE_DIR defaults to
+${CCACHE_DIR}/sccache.
+
+Use it
+
+$ poudriere bulk -O sccache ...
+
+Additional configuration
+========================
+
+For additional configuration options please refer to
+%%DATADIR%%/overlay/Mk/bsd.overlay.mk
+
+The overlay can be disabled at any time by defining NO_SCCACHE.
+EOM
+}
+]
