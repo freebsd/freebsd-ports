@@ -25,6 +25,7 @@ include/oneapi/dnnl/dnnl_config.h
 include/oneapi/dnnl/dnnl_debug.h
 include/oneapi/dnnl/dnnl_ocl.h
 include/oneapi/dnnl/dnnl_ocl.hpp
+include/oneapi/dnnl/dnnl_ocl_types.h
 include/oneapi/dnnl/dnnl_sycl.h
 include/oneapi/dnnl/dnnl_sycl.hpp
 include/oneapi/dnnl/dnnl_sycl_types.h
@@ -43,7 +44,7 @@ lib/cmake/mkldnn/mkldnn-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mkldnn/mkldnn-targets.cmake
 lib/libdnnl.so
 lib/libdnnl.so.2
-lib/libdnnl.so.2.3
+lib/libdnnl.so.2.4
 lib/libmkldnn.so
 lib/libmkldnn.so.2
-lib/libmkldnn.so.2.3
+lib/libmkldnn.so.2.4
