@@ -2,6 +2,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -31,12 +32,14 @@ USE_PERL5=	build
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 
+BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
 		libsnappy.so:archivers/snappy \
-		libcares.so:dns/c-ares
+		libcares.so:dns/c-ares \
+		libzstd.so:archivers/zstd
 
 #CFLAGS+=	-funit-at-a-time
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
