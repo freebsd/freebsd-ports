@@ -1,7 +1,7 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 
 PORTNAME=	mousepad
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	editors xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
