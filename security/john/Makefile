@@ -3,19 +3,17 @@
 PORTNAME=	john
 # NB: starting from the next version, community-enhanced (jumbo) patch
 # should be offered as an option (suggested by Solar Designer himself).
-DISTVERSION=	1.8.0-jumbo-1
-PORTREVISION=	6
+DISTVERSION=	1.9.0-jumbo-1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/j/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
 		http://distro.ibiblio.org/openwall/projects/john/${DISTVERSION:C/-.*//}/
+PATCH_STRIP=	-p2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
-LICENSE=	GPLv2
-
-BROKEN_mips64=	cannot detect CPU architecture
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
@@ -26,42 +24,34 @@ CONFIGURE_ENV=	CFLAGS_EXTRA="-DJOHN_SYSTEMWIDE=1" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 SHEBANG_FILES=	../run/*.pl ../run/*.rb ../run/benchmark-unify ../run/relbench
 WRKSRC_SUBDIR=	src
-
 ALL_TARGET=	default
 
-BINARIES=	calc_stat cprepair genmkvpwd john luks2john mkvcalcproba \
-		raw2dyna SIPdump tgtsnarf uaf2john vncpcap2john wpapcap2john
+BINARIES=	SIPdump bitlocker2john calc_stat cprepair dmg2john \
+		eapmd5tojohn genmkvpwd hccap2john john keepass2john \
+		mkvcalcproba putty2john racf2john raw2dyna tgtsnarf \
+		uaf2john vncpcap2john wpapcap2john
 
-BINLINKS=	base64conv dmg2john gpg2john hccap2john keepass2john \
-		keychain2john keyring2john keystore2john kwallet2john \
-		putty2john pwsafe2john racf2john rar2john \
-		truecrypt_volume2john unafs undrop unique unshadow zip2john
+BINLINKS=	base64conv gpg2john rar2john unafs undrop unique \
+		unshadow zip2john
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS #OPENMP
-#OPENMP_USES=	compiler:openmp
+OPTIONS_DEFINE=	DOCS OPENCL OPENMP
+OPTIONS_DEFAULT=	OPENMP
+OPTIONS_SUB=	yes
 
-post-extract:
-	@${RM} ${WRKSRC}/pfx_fmt_plug.c ${WRKSRC}/rawSHA0_fmt_plug.c \
-		${WRKSRC}/ssh_fmt_plug.c \
+OPENCL_BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
+OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
+OPENCL_CONFIGURE_OFF=	--disable-opencl
+OPENCL_USES=		perl5
+OPENCL_USE=		PERL5=build
+
+OPENMP_CONFIGURE_OFF=	--disable-openmp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h
-# Replace methods and types that were marked deprecated by OpenSSL 0.9.7
-# and removed in OpenSSL 1.1.0 and LibreSSL
-	@${REINPLACE_CMD} -e 's|des_string_to_key|DES_string_to_key|' \
-		${WRKSRC}/KRB4_fmt_plug.c
-	@${REINPLACE_CMD} -e 's|des_set_odd_parity|DES_set_odd_parity|' \
-		${WRKSRC}/KRB4_std_plug.c
-	@${REINPLACE_CMD} -e 's|C_Block|DES_cblock|' \
-		${WRKSRC}/efs_fmt_plug.c \
-		${WRKSRC}/gpg_fmt_plug.c \
-		${WRKSRC}/keychain_fmt_plug.c \
-		${WRKSRC}/mozilla_ng_fmt_plug.c \
-		${WRKSRC}/opencl_gpg_fmt_plug.c \
-		${WRKSRC}/opencl_keychain_fmt_plug.c \
-		${WRKSRC}/ssh_ng_fmt_plug.c
+	@${REINPLACE_CMD} -e '/^host_cpu=/s|$$| ; case $$host_cpu in\
+		amd64) host_cpu=x86_64 ;; esac|' ${WRKSRC}/configure
 
 do-install:
 .for b in ${BINARIES}
@@ -73,13 +63,28 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/extra
 	cd ${WRKSRC}/../run && ${INSTALL_DATA} *.chr *.conf *.lst \
 		${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/../run && ${INSTALL_DATA} *.?? benchmark-unify \
-		dictionary.rfc2865 john.*sh_completion mailer makechr \
-		relbench stats ${STAGEDIR}${DATADIR}/extra
+	cd ${WRKSRC}/../run && ${INSTALL_DATA} *.?? *.lua benchmark-unify \
+		dictionary.rfc2865 fuzz.dic john.*sh_completion mailer \
+		makechr oui.txt relbench stats ${STAGEDIR}${DATADIR}/extra
+	${CP} -a ${WRKSRC}/../run/rules ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/../run && ${CP} -a dns lib ztex \
+		${STAGEDIR}${DATADIR}/extra
+	@${RM} ${STAGEDIR}${DATADIR}/extra/dns/README.txt
+
+do-install-OPENCL-on:
+	${CP} -a ${WRKSRC}/../run/kernels ${STAGEDIR}${DATADIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${RM} ${WRKSRC}/../doc/COPYING
+	${MV} ${WRKSRC}/../doc/extras/* ${WRKSRC}/../*.md ${WRKSRC}/../doc
+	@${RMDIR} ${WRKSRC}/../doc/extras
+	@${RM} ${WRKSRC}/../doc/COPYING ${WRKSRC}/../doc/README
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
+.if defined(PACKAGE_BUILDING) || defined(BATCH)
+.  if ${ARCH} == amd64 || ${ARCH} == i386
+CONFIGURE_ARGS+=	--enable-simd=sse2
+.  endif
+.endif

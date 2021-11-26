@@ -1,0 +1,14 @@
+diff --git a/src/opencl_common.h b/src/opencl_common.h
+index 50428ce976..264825d48b 100644
+--- a/src/opencl_common.h
++++ b/src/opencl_common.h
+@@ -81,6 +81,9 @@
+ 
+ #ifndef CL_DEVICE_TOPOLOGY_AMD
+ #define CL_DEVICE_TOPOLOGY_AMD                      0x4037
++#endif
++
++#ifndef CL_DEVICE_TOPOLOGY_TYPE_PCIE_AMD
+ typedef union {
+ 	struct {
+ 		cl_uint type;
