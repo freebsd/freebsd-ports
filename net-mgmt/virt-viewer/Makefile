@@ -1,7 +1,7 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	virt-viewer
-PORTVERSION=	10.0
+PORTVERSION=	11.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
