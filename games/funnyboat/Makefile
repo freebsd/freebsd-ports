@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYGAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
-USES=		python:3.6-3.9,run  # version range inherited from numpy
+USES=		python:3.7-3.9,run  # version range inherited from numpy
 NO_BUILD=	yes
 NO_ARCH=	yes
 
