@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	igraph
-DISTVERSION=	1.2.8
+DISTVERSION=	1.2.9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
