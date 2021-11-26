@@ -12,6 +12,8 @@ COMMENT=	Tracker for composing music for the C64 SID chip
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_FreeBSD_14=	ld: error: undefined hidden symbol: __start___minfo
+
 BUILD_DEPENDS=	acme:devel/acme \
 		ldc2:lang/ldc
 
