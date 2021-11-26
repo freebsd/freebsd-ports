@@ -313,6 +313,7 @@ APM_ALL_TARGET=		./cmd/trace-agent
 PROCESS_ALL_TARGET=	./cmd/process-agent
 DOGSTATSD_ALL_TARGET=	./cmd/dogstatsd
 GO_TARGET=	${ALL_TARGET}
+NO_CCACHE=		yes
 
 USE_RC_SUBR=	${PORTNAME}
 
