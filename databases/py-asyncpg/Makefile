@@ -14,10 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe pgsql:9.2+ python:3.6+
 CPE_VENDOR=	magic
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	PKG-INFO README.rst
+
+post-extract:
+	@${RM} ${WRKSRC}/asyncpg/pgproto/*.c
+	@${RM} ${WRKSRC}/asyncpg/protocol/*.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/asyncpg/protocol/protocol*.so
