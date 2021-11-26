@@ -57,6 +57,8 @@ include/heyoka/math/sin.hpp
 include/heyoka/math/sinh.hpp
 include/heyoka/math/sqrt.hpp
 include/heyoka/math/square.hpp
+include/heyoka/math/sum.hpp
+include/heyoka/math/sum_sq.hpp
 include/heyoka/math/tan.hpp
 include/heyoka/math/tanh.hpp
 include/heyoka/math/time.hpp
@@ -73,5 +75,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.15
-lib/libheyoka.so.15.0
+lib/libheyoka.so.16
+lib/libheyoka.so.16.0
