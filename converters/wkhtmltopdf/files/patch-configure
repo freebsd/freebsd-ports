@@ -5,7 +5,7 @@
  	# Check gcc's version
  	case "$(${QMAKE_CONF_COMPILER} -dumpversion)" in
 -	    8*|7*|6*|5*|4*|3.4*)
-+	    12*|11*|10*|9*|8*|7*|6*|5*|4*|3.4*)
++	    13*|12*|11*|10*|9*|8*|7*|6*|5*|4*|3.4*)
  		;;
              3.3*)
                  canBuildWebKit="no"
