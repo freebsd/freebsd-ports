@@ -1,7 +1,7 @@
 PORTNAME=	splitter
-PORTVERSION=	r643
+PORTVERSION=	r645
 CATEGORIES=	astro converters java
-MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
+MASTER_SITES=	https://www.mkgmap.org.uk/download/ \
 		https://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	mkgmap-
 
