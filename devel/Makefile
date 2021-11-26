@@ -4670,6 +4670,7 @@
     SUBDIR += py-jsonlines
     SUBDIR += py-jsonnet
     SUBDIR += py-jsonpatch
+    SUBDIR += py-jsonpath-ng
     SUBDIR += py-jsonpath-rw
     SUBDIR += py-jsonpickle
     SUBDIR += py-jsonpointer
