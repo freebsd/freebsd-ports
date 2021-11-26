@@ -1,0 +1,4 @@
+xtensor-blas is an extension to the xtensor library, offering bindings to BLAS
+and LAPACK libraries through cxxblas and cxxlapack from the FLENS project.
+
+WWW: https://github.com/xtensor-stack/xtensor-blas

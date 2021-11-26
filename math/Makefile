@@ -1075,6 +1075,7 @@
     SUBDIR += xplot
     SUBDIR += xspread
     SUBDIR += xtensor
+    SUBDIR += xtensor-blas
     SUBDIR += yacas
     SUBDIR += yices
     SUBDIR += z3
