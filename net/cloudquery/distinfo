@@ -1,6 +1,6 @@
-TIMESTAMP = 1637453717
-SHA256 (cloudquery-cloudquery-v0.15.11_GH0.tar.gz) = 21949ab8a93f3afd9afeb815f45fb7e71424ef095e2d1cbe1b773d73675429aa
-SIZE (cloudquery-cloudquery-v0.15.11_GH0.tar.gz) = 184105
+TIMESTAMP = 1637953429
+SHA256 (cloudquery-cloudquery-v0.16.0_GH0.tar.gz) = 3b24b38ab7cf5ce032d91e8a7ae1c7d73b3e0962dcf536b3229378770ee17567
+SIZE (cloudquery-cloudquery-v0.16.0_GH0.tar.gz) = 190304
 SHA256 (Masterminds-squirrel-v1.5.0_GH0.tar.gz) = 75ffb7555e2cde9fa25622c031b0b72058b5644e6d7eb004238c250957d97c52
 SIZE (Masterminds-squirrel-v1.5.0_GH0.tar.gz) = 30302
 SHA256 (Microsoft-go-winio-v0.5.0_GH0.tar.gz) = 82c90c7289b8885d4ecf8f8739399200f69bf7ff0d6ac9715d9f5b0f29a8f49d
