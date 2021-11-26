@@ -1076,6 +1076,7 @@
     SUBDIR += xspread
     SUBDIR += xtensor
     SUBDIR += xtensor-blas
+    SUBDIR += xtensor-io
     SUBDIR += yacas
     SUBDIR += yices
     SUBDIR += z3
