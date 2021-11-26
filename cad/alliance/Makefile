@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=	fails to link: collect2: error: ld returned 1 exit status
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick7 \
+BUILD_DEPENDS=	convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
 		fig2dev:print/fig2dev
 
 USES=		autoreconf:build gmake libtool motif tar:bz2 xorg
@@ -45,9 +45,9 @@ ALLIANCE_TOP=	${PREFIX}/alliance
 post-patch:
 	@${REINPLACE_CMD} -e '/include <malloc.h>/d' \
 		${WRKSRC}/xgra/src/XSB_parse.c
-	# These Makefiles contain hardcoded references to make(1). Replace them with
-	# gmake(1) to avoid build failures of the documentation.
-	@${REINPLACE_CMD} -e 's/; make/; gmake/' \
+# Recursive make commands should always use the variable MAKE, not the
+# explicit command name `make' (see the GNU make manual, section 5.7.1)
+	@${REINPLACE_CMD} -e 's/; make/; $$(MAKE)/' \
 		${WRKSRC}/documentation/Makefile.am \
 		${WRKSRC}/documentation/alliance-examples/Makefile \
 		${WRKSRC}/documentation/tutorials/Makefile.am
