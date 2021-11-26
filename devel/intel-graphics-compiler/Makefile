@@ -5,6 +5,7 @@ CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	aa7df33aebe0.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/210
 PATCHFILES+=	99edbf49d7c9.patch:-p1 # clang
 
 MAINTAINER=	jbeich@FreeBSD.org
