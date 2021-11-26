@@ -1,0 +1,7 @@
+TIMESTAMP = 1637945430
+SHA256 (write-good-1.0.8.cache.tar.gz) = 925706581f374d4c687d6a0937ef5585a505b97fe54bcf037a5aab42a0dee0b6
+SIZE (write-good-1.0.8.cache.tar.gz) = 8879158
+SHA256 (write-good-1.0.8.modules.tar.gz) = beab42c24078ed500568d94cc6d8c897f83f428328024f577d5b2c9e6a8af365
+SIZE (write-good-1.0.8.modules.tar.gz) = 9226324
+SHA256 (btford-write-good-v1.0.8_GH0.tar.gz) = d4706a6c55f5b4a30453d867d0cc924d59be95b4ded16da0f409d9ec1feee08f
+SIZE (btford-write-good-v1.0.8_GH0.tar.gz) = 47480

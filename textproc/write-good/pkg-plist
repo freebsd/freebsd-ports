@@ -1,0 +1,10 @@
+bin/write-good
+bin/writegood
+libexec/write-good/bin/write-good.js
+libexec/write-good/lib/annotate.js
+libexec/write-good/lib/lexical-illusions.js
+libexec/write-good/lib/starts-with-so.js
+libexec/write-good/lib/there-is.js
+libexec/write-good/package-lock.json
+libexec/write-good/package.json
+libexec/write-good/write-good.js

@@ -1952,6 +1952,7 @@
     SUBDIR += word2x
     SUBDIR += wordnet
     SUBDIR += words
+    SUBDIR += write-good
     SUBDIR += wv
     SUBDIR += wv2
     SUBDIR += xalan-c

@@ -1,0 +1,13 @@
+write-good is a naive linter for English prose. For example,
+it is able to check for the following issues in text:
+
+- passive voice
+- lexical illusions – cases where a word is repeated
+- "so" at the beginning of the sentence
+- "there is" or "there are" at the beginning of the sentence
+- weasel words
+- adverbs that can weaken meaning: really, very, extremely, etc.
+- wordy phrases and unnecessary words
+- common cliches
+
+WWW: https://github.com/btford/write-good
