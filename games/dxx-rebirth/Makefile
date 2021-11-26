@@ -1,5 +1,5 @@
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20211021
+PORTVERSION=	20211125
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
