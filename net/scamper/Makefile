@@ -1,7 +1,7 @@
 PORTNAME=	scamper
-DISTVERSION=	20210324
+DISTVERSION=	20211026
 CATEGORIES=	net
-MASTER_SITES=	https://www.caida.org/tools/measurement/scamper/code/
+MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
 
 MAINTAINER=	mjl@luckie.org.nz
