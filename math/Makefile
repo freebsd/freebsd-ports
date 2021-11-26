@@ -1080,6 +1080,7 @@
     SUBDIR += yacas
     SUBDIR += yices
     SUBDIR += z3
+    SUBDIR += zarray
     SUBDIR += zegrapher
     SUBDIR += zimpl
     SUBDIR += zn_poly
