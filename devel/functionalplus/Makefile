@@ -1,6 +1,6 @@
 PORTNAME=	functionalplus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.16-p0
+DISTVERSION=	0.2.17-p0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ GH_PROJECT=	FunctionalPlus
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: # according to INSTALL.md tests are in a separate sub-project
+do-test: # according to INSTALL.md tests are in a separate sub-project, build of tests fails: https://github.com/Dobiasd/FunctionalPlus/issues/250
 	@${MKDIR} ${BUILD_WRKSRC}/test && cd ${BUILD_WRKSRC}/test && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}/test && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
