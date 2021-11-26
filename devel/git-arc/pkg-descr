@@ -1,0 +1,16 @@
+The git-arc utility creates and manages FreeBSD Phabricator reviews
+based on git commits.  It is a git plugin that provides a wrapper around
+arc.
+
+The arc command has a few limitations that make it awkward for FreeBSD
+development:
+
+- Arcanist uses its own commit log template with a format does not match
+  FreeBSD's template.
+
+- Arcanist presumes a model where all the commits in a development
+  branch are uploaded for review as a single Differential revision.
+  When working on a feature branch with multiple commits, it is usually
+  more efficient to review each commit individually.
+
+git-arc mitigates these limitations.
