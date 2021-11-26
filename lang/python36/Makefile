@@ -128,8 +128,7 @@ PLIST_SUB+=	NO_NIS=""
 post-patch:
 # disable detection of multiarch as it breaks with clang >= 13, which adds a
 # major.minor version number in -print-multiarch output, confusing Python
-	@${REINPLACE_CMD} -e 's|^MULTIARCH=.*|MULTIARCH=|' ${WRKSRC}/configure \
-		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/configure
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
