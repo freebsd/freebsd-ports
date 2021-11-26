@@ -1,0 +1,271 @@
+PORTNAME=	texlab
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.0
+CATEGORIES=	devel
+
+MAINTAINER=	kfv@kfv.io
+COMMENT=	Language Server Protocol for LaTeX
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	latex-lsp
+
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.4.7 \
+		ahash-0.7.4 \
+		aho-corasick-0.7.18 \
+		ansi_term-0.11.0 \
+		any_ascii-0.1.7 \
+		anyhow-1.0.44 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		beef-0.5.0 \
+		bibutils-sys-0.1.1 \
+		bitflags-1.2.1 \
+		bitvec-0.19.5 \
+		buf-min-0.1.1 \
+		byteorder-1.4.3 \
+		bytes-0.5.6 \
+		bytes-1.0.1 \
+		cancellation-0.1.0 \
+		cc-1.0.68 \
+		cervine-0.0.6 \
+		cesu8-1.1.0 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chashmap-2.2.2 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		combine-4.6.0 \
+		console-0.14.1 \
+		convert_case-0.4.0 \
+		crc32fast-1.2.1 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-deque-0.8.0 \
+		crossbeam-epoch-0.9.5 \
+		crossbeam-utils-0.7.2 \
+		crossbeam-utils-0.8.5 \
+		cstree-0.6.1 \
+		derive_more-0.99.16 \
+		dtoa-0.4.8 \
+		either-1.6.1 \
+		encode_unicode-0.3.6 \
+		encoding_rs-0.8.28 \
+		encoding_rs_io-0.1.7 \
+		fern-0.6.0 \
+		filetime-0.2.14 \
+		fixedbitset-0.2.0 \
+		fixedbitset-0.4.0 \
+		flate2-1.0.22 \
+		fnv-1.0.7 \
+		form_urlencoded-1.0.1 \
+		fsevent-sys-4.0.0 \
+		fuchsia-cprng-0.1.1 \
+		funty-1.1.0 \
+		futf-0.1.4 \
+		fuzzy-matcher-0.3.7 \
+		fxhash-0.2.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.3 \
+		gnaw-0.0.2 \
+		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
+		heck-0.3.3 \
+		hermit-abi-0.1.18 \
+		html2md-0.2.13 \
+		html5ever-0.25.1 \
+		idna-0.2.3 \
+		indexmap-1.6.2 \
+		indextree-4.3.1 \
+		indoc-1.0.3 \
+		inotify-0.9.3 \
+		inotify-sys-0.1.5 \
+		insta-1.8.0 \
+		instant-0.1.9 \
+		itertools-0.9.0 \
+		itertools-0.10.1 \
+		itoa-0.4.7 \
+		jni-0.19.0 \
+		jni-sys-0.3.0 \
+		lasso-0.5.1 \
+		lazy-transform-str-0.0.6 \
+		lazy_static-1.4.0 \
+		lexical-sort-0.3.1 \
+		libc-0.2.97 \
+		linked-hash-map-0.5.4 \
+		lock_api-0.4.4 \
+		log-0.4.14 \
+		logos-0.12.0 \
+		logos-derive-0.12.0 \
+		lsp-server-0.5.2 \
+		lsp-types-0.90.0 \
+		mac-0.1.1 \
+		markup5ever-0.10.1 \
+		markup5ever_rcdom-0.1.0 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		memchr-2.4.0 \
+		memoffset-0.6.4 \
+		miniz_oxide-0.4.4 \
+		mio-0.7.13 \
+		miow-0.3.7 \
+		multimap-0.8.3 \
+		new_debug_unreachable-1.0.4 \
+		nom-4.2.3 \
+		nom-6.1.2 \
+		notify-5.0.0-pre.10 \
+		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		once_cell-1.8.0 \
+		oorandom-11.1.3 \
+		owning_ref-0.3.3 \
+		parking_lot-0.4.8 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.2.14 \
+		parking_lot_core-0.8.3 \
+		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		petgraph-0.5.1 \
+		petgraph-0.6.0 \
+		phf-0.8.0 \
+		phf_codegen-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
+		phf_shared-0.8.0 \
+		ppv-lite86-0.2.10 \
+		precomputed-hash-0.1.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.27 \
+		quote-1.0.9 \
+		radium-0.5.3 \
+		rand-0.4.6 \
+		rand-0.7.3 \
+		rand-0.8.4 \
+		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.2.0 \
+		rand_hc-0.3.1 \
+		rand_pcg-0.2.1 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
+		rdrand-0.4.0 \
+		redox_syscall-0.2.9 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		remove_dir_all-0.5.3 \
+		roxmltree-0.13.1 \
+		rustc-hash-1.1.0 \
+		rustc_version-0.3.3 \
+		ryu-1.0.5 \
+		salsa-0.15.2 \
+		salsa-macros-0.15.2 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-0.11.0 \
+		semver-parser-0.10.2 \
+		serde-1.0.130 \
+		serde_derive-1.0.130 \
+		serde_json-1.0.68 \
+		serde_repr-0.1.7 \
+		serde_yaml-0.8.17 \
+		similar-1.3.0 \
+		siphasher-0.3.5 \
+		smallvec-0.6.14 \
+		smallvec-1.6.1 \
+		smartstring-0.2.6 \
+		smol_str-0.1.18 \
+		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
+		string-interner-0.12.2 \
+		string_cache-0.8.1 \
+		string_cache_codegen-0.5.1 \
+		stringreader-0.1.1 \
+		strsim-0.8.0 \
+		structopt-0.3.23 \
+		structopt-derive-0.4.16 \
+		strum-0.19.5 \
+		strum_macros-0.19.4 \
+		syn-1.0.73 \
+		tap-1.0.1 \
+		tempfile-3.2.0 \
+		tendril-0.4.2 \
+		terminal_size-0.1.17 \
+		text-size-1.1.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.25 \
+		thiserror-impl-1.0.25 \
+		thread_local-1.1.3 \
+		threadpool-1.8.1 \
+		time-0.1.44 \
+		tinyvec-1.2.0 \
+		tinyvec_macros-0.1.0 \
+		titlecase-1.1.0 \
+		triomphe-0.1.3 \
+		typed-builder-0.9.1 \
+		ucd-trie-0.1.3 \
+		unic-char-property-0.9.0 \
+		unic-char-range-0.9.0 \
+		unic-common-0.9.0 \
+		unic-segment-0.9.0 \
+		unic-ucd-category-0.9.0 \
+		unic-ucd-segment-0.9.0 \
+		unic-ucd-version-0.9.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		unindent-0.1.7 \
+		url-2.2.2 \
+		utf-8-0.7.6 \
+		utf8-ranges-1.0.4 \
+		uuid-0.8.2 \
+		v_escape-0.13.2 \
+		v_escape_derive-0.8.4 \
+		v_htmlescape-0.10.4 \
+		vec_map-0.8.2 \
+		version_check-0.1.5 \
+		version_check-0.9.3 \
+		walkdir-2.3.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wyz-0.2.0 \
+		xml5ever-0.16.1 \
+		xmlparser-0.13.3 \
+		yaml-rust-0.4.5 \
+		citeproc,citeproc-db,citeproc-io,citeproc-proc,csl@git+https://github.com/cormacrelf/citeproc-rs?rev=5252fbd8d2046a5a7d5cdcee6c6cb39bd0f1a7f3\#5252fbd8d2046a5a7d5cdcee6c6cb39bd0f1a7f3
+
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
+PORTDOCS=	CHANGELOG.md README.md docs/*
+
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	DOCS
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

@@ -1,0 +1,5 @@
+A cross-platform implementation of the Language Server Protocol providing rich
+cross-editing support for the LaTeX typesetting system. The server may be used
+with any editor that implements the Language Server Protocol.
+
+WWW: https://texlab.netlify.app/
