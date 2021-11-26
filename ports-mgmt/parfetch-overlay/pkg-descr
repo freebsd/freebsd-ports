@@ -1,0 +1,12 @@
+Fetch distfiles in parallel and with pipelining
+
+Ports that fetch multiple distfiles from the same host can
+especially benefit from this.
+
+This is a glue application between libcurl and the ports
+framework. It comes with a ports overlay that replaces the
+default do-fetch and checksum targets.
+
+This is an experiment. Use at your own risk.
+
+WWW: https://github.com/t6/parfetch

@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+Local setup
+===========
+
+Add this to /etc/make.conf
+
+OVERLAYS+=	%%DATADIR%%/overlay
+
+It replaces the default do-fetch and checksum targets.
+
+Poudriere setup
+===============
+
+This requires a Poudriere version that supports overlays like
+poudriere-devel.
+
+Make the overlay available to Poudriere
+
+$ poudriere ports -c -p parfetch -m null -M %%DATADIR%%/overlay
+
+Use it
+
+$ poudriere bulk -O parfetch ...
+
+Additional configuration
+========================
+
+For additional configuration options please refer to
+%%DATADIR%%/overlay/Mk/bsd.overlay.mk
+
+The overlay can be disabled at any time by defining
+NO_PARFETCH.
+EOM
+}
+]

@@ -1,0 +1,4 @@
+bin/parfetch
+bin/parfetch-static
+%%DATADIR%%/overlay/Mk/bsd.overlay.mk
+%%DATADIR%%/overlay/bin/parfetch-static
