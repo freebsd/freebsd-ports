@@ -71,6 +71,7 @@ bin/acme
 %%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu nmos6502.txt
 %%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu r65c02.txt
 %%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu w65c02.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c64doubledabble.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c64misc.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ddrv.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macedit.a
