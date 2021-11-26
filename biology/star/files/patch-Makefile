@@ -1,23 +1,61 @@
---- Makefile.orig	2019-10-08 19:10:51 UTC
+--- Makefile.orig	2021-05-05 12:01:50 UTC
 +++ Makefile
-@@ -20,11 +20,16 @@ LDFLAGS_gdb := $(LDFLAGS_shared)
+@@ -11,6 +11,10 @@ CXXFLAGSextra ?=
+ # user may define the compiler
+ CXX ?= g++
  
- COMPTIMEPLACE := -D'COMPILATION_TIME_PLACE="$(shell echo `date` $(HOSTNAME):`pwd`)"'
- 
--CXXFLAGS_common := -pipe -std=c++11 -Wall -Wextra -fopenmp $(COMPTIMEPLACE)
--CXXFLAGS_main := -O3 $(CXXFLAGS_common)
--CXXFLAGS_gdb :=  -O0 -g $(CXXFLAGS_common)
-+# Defaults, overridden by make arguments or environment
-+CXXFLAGS ?= -pipe -O3 -Wall -Wextra
-+CFLAGS ?= -pipe -O3 -Wall -Wextra
- 
--CFLAGS := -O3 -pipe -Wall -Wextra $(CFLAGS)
-+# Unconditionally set essential flags
-+CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE)
-+CXXFLAGS_main += $(CXXFLAGS_common)
++# user may set to '' and sed "htslib/htslib/*.h" to <htslib/*.h>
++# if they don't want the bundled htslib
++HTSLIB ?= htslib
 +
-+# -O or -O2 should work fine with gdb as well
-+CXXFLAGS_gdb :=  -O0 -g $(CXXFLAGS_common)
+ # pre-defined flags
+ LDFLAGS_shared := -pthread -Lhtslib -Bstatic -lhts -Bdynamic -lz
+ LDFLAGS_static := -static -static-libgcc -pthread -Lhtslib -lhts -lz
+@@ -18,7 +22,8 @@ LDFLAGS_Mac :=-pthread -lz htslib/libhts.a
+ LDFLAGS_Mac_static :=-pthread -lz -static-libgcc htslib/libhts.a
+ LDFLAGS_gdb := $(LDFLAGS_shared)
  
+-DATE_FMT = --iso-8601=seconds
++# --iso-8601 is not portable
++DATE_FMT = -Iseconds
+ ifdef SOURCE_DATE_EPOCH
+     BUILD_DATE ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u "$(DATE_FMT)")
+ else
+@@ -30,13 +35,13 @@ BUILD_PLACE ?= $(HOSTNAME):$(shell pwd)
+ COMPTIMEPLACE := -D'COMPILATION_TIME_PLACE="$(BUILD_DATE) $(BUILD_PLACE)"'
+ 
+ # Defaults, can be overridden by make arguments or environment
+-CXXFLAGS ?= -pipe -Wall -Wextra
++CXXFLAGS ?= -pipe -Wall -Wextra -O3
+ CFLAGS ?= -pipe -Wall -Wextra -O3
+ CXXFLAGS_SIMD ?= -mavx2
+ 
+ # Unconditionally set essential flags and optimization options
+ CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE)
+-CXXFLAGS_main := -O3 $(CXXFLAGS_common)
++CXXFLAGS_main := $(CXXFLAGS_common)
+ CXXFLAGS_gdb := -O0 -g3 $(CXXFLAGS_common)
  
  ##########################################################################################################
+@@ -102,7 +107,7 @@ clean:
+ 
+ .PHONY: CLEAN
+ CLEAN: clean
+-	$(MAKE) -C htslib clean
++	$(MAKE) -C $(HTSLIB) clean
+ 
+ 
+ .PHONY: clean_solo
+@@ -119,10 +124,10 @@ ifneq ($(MAKECMDGOALS),CLEAN)
+ ifneq ($(MAKECMDGOALS),clean_solo)
+ ifneq ($(MAKECMDGOALS),STARforMac)
+ ifneq ($(MAKECMDGOALS),STARforMacGDB)
+-Depend.list: $(SOURCES) parametersDefault.xxd htslib
++Depend.list: $(SOURCES) parametersDefault.xxd $(HTSLIB)
+ 	echo $(SOURCES)
+ 	'rm' -f ./Depend.list
+-	$(CXX) $(CXXFLAGS_common) -MM $^ >> Depend.list
++	$(CXX) $(CXXFLAGS) $(CXXFLAGS_common) -MM $^ >> Depend.list
+ include Depend.list
+ endif
+ endif
