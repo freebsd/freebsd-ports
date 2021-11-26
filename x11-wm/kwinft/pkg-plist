@@ -106,6 +106,7 @@ share/dbus-1/interfaces/org.kde.KWin.xml
 share/dbus-1/interfaces/org.kde.kwin.ColorCorrect.xml
 share/dbus-1/interfaces/org.kde.kwin.Compositing.xml
 share/dbus-1/interfaces/org.kde.kwin.Effects.xml
+share/dbus-1/interfaces/org.kde.kwin.VirtualKeyboard.xml
 %%PORTDOCS%%share/doc/HTML/en/kcontrol/desktop/index.cache.bz2
 %%PORTDOCS%%share/doc/HTML/en/kcontrol/desktop/index.docbook
 %%PORTDOCS%%share/doc/HTML/en/kcontrol/kwindecoration/button.png
