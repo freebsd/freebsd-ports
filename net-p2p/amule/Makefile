@@ -2,7 +2,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -20,7 +20,7 @@ CONFLICTS=	amule-devel
 USES=		bison compiler:c++11-lang cpe desktop-file-utils gmake \
 		localbase:ldflags perl5 pkgconfig shebangfix tar:xz
 USE_PERL5=	build
-USE_WX=		2.8
+USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-denoise-level=0
@@ -97,6 +97,12 @@ XAS_CONFIGURE_ON=	--enable-xas
 XAS_USE=	PERL5+=run
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAMULEGUI} || ${PORT_OPTIONS:MMONOLITHIC}
+PLIST_SUB+=	AMULESKIN=""
+.else
+PLIST_SUB+=	AMULESKIN="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/test.*-print-file-name.*`/true/' \
