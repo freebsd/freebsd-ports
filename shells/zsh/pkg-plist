@@ -1,7 +1,5 @@
 @shell bin/zsh
 @shell bin/rzsh
-%%BASE_ZSH%%@shell /bin/zsh
-%%BASE_ZSH%%@shell /bin/rzsh
 bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/cap.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/clone.so
