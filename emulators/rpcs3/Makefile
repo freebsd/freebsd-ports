@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.19-13053 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g276ee81da
+DISTVERSION=	0.0.19-13056 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g38bfefcdf
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
