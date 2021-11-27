@@ -1,5 +1,5 @@
 PORTNAME=	wpebackend-fdo
-DISTVERSION=	1.10.0
+DISTVERSION=	1.12.0
 CATEGORIES=	www
 MASTER_SITES=	https://wpewebkit.org/releases/
 

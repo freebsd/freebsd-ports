@@ -5,10 +5,14 @@ include/wpe-fdo-1.0/wpe/extensions/video-plane-display-dmabuf.h
 include/wpe-fdo-1.0/wpe/fdo-egl.h
 include/wpe-fdo-1.0/wpe/fdo.h
 include/wpe-fdo-1.0/wpe/initialize-egl.h
+include/wpe-fdo-1.0/wpe/unstable/dmabuf-pool-entry.h
+include/wpe-fdo-1.0/wpe/unstable/fdo-dmabuf.h
 include/wpe-fdo-1.0/wpe/unstable/fdo-eglstream.h
 include/wpe-fdo-1.0/wpe/unstable/fdo-shm.h
+include/wpe-fdo-1.0/wpe/unstable/initialize-dmabuf.h
 include/wpe-fdo-1.0/wpe/unstable/initialize-eglstream.h
 include/wpe-fdo-1.0/wpe/unstable/initialize-shm.h
+include/wpe-fdo-1.0/wpe/unstable/view-backend-dmabuf-pool-fdo.h
 include/wpe-fdo-1.0/wpe/unstable/view-backend-exportable-eglstream.h
 include/wpe-fdo-1.0/wpe/version.h
 include/wpe-fdo-1.0/wpe/view-backend-exportable-egl.h
@@ -16,5 +20,5 @@ include/wpe-fdo-1.0/wpe/view-backend-exportable.h
 include/wpe-fdo-1.0/wpe/wpebackend-fdo-version.h
 lib/libWPEBackend-fdo-1.0.so
 lib/libWPEBackend-fdo-1.0.so.1
-lib/libWPEBackend-fdo-1.0.so.1.8.3
+lib/libWPEBackend-fdo-1.0.so.1.8.0
 libdata/pkgconfig/wpebackend-fdo-1.0.pc
