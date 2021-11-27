@@ -2,7 +2,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -11,26 +11,39 @@ COMMENT=	Open-source program to read and manipulate RAW photo images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+BROKEN_powerpc64=	fails to link: libicuuc.so. undefined reference to __cxa_throw_bad_array_new_length
+
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liblcms.so:graphics/lcms \
 		libexiv2.so:graphics/exiv2 \
 		libdbus-1.so:devel/dbus \
 		libfftw3f.so:math/fftw3-float \
-		liblensfun.so:graphics/lensfun \
 		libflickcurl.so:www/flickcurl \
-		libgphoto2.so:graphics/libgphoto2
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgphoto2.so:graphics/libgphoto2 \
+		libharfbuzz.so:print/harfbuzz \
+		liblensfun.so:graphics/lensfun \
+		libpng.so:graphics/png \
+		libraptor2.so:textproc/raptor2 \
+		libtiff.so:graphics/tiff
 
-BROKEN_powerpc64=	fails to link: libicuuc.so. undefined reference to __cxa_throw_bad_array_new_length
-
-USES=		compiler:c++11-lang cpe desktop-file-utils gettext gmake \
-		gnome jpeg libtool localbase pathfix pkgconfig sqlite
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 libxml2 gconf2
+USES=		compiler:c++11-lang desktop-file-utils gmake gnome \
+		jpeg libtool localbase pathfix pkgconfig sqlite xorg
+USE_GNOME=	cairo gconf2 gdkpixbuf2 gtk20 libxml2
 USE_LDCONFIG=	yes
+USE_XORG=	x11
+
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CXXFLAGS+=	-Wno-c++11-narrowing
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkg_modules=/s,libssl,gthread-2.0,' \

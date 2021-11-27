@@ -1,5 +1,5 @@
---- librawstudio/rs-macros.h	2014-02-19 06:34:15.000000000 +0100
-+++ librawstudio/rs-macros.h	2014-02-19 06:34:21.000000000 +0100
+--- librawstudio/rs-macros.h.orig	2011-02-15 17:28:05 UTC
++++ librawstudio/rs-macros.h
 @@ -51,12 +51,12 @@
  #if __GNUC__ >= 3
  #define likely(x) __builtin_expect (!!(x), 1)
@@ -14,3 +14,4 @@
 +// #define align(x)
  #define __deprecated
  #endif
+ 
