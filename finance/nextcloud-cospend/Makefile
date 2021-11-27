@@ -3,7 +3,7 @@
 PORTNAME=	cospend
 PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
-CATEGORIES=	www editors
+CATEGORIES=	finance www editors
 MASTER_SITES=	https://github.com/eneiluj/${PORTNAME}-nc/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
