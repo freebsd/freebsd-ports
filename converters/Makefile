@@ -175,6 +175,7 @@
     SUBDIR += xdeview
     SUBDIR += xml2c
     SUBDIR += yj
+    SUBDIR += yj-bruceadams
     SUBDIR += ytnef
 
 .include <bsd.port.subdir.mk>
