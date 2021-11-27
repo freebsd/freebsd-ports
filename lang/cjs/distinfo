@@ -1,3 +1,5 @@
 TIMESTAMP = 1610463497
 SHA256 (gnome/linuxmint-cjs-4.8.2_GH0.tar.gz) = c3248663e0084dbcee1bf4d1db56966c1321983617dbbec9b1253e50614a3f4e
 SIZE (gnome/linuxmint-cjs-4.8.2_GH0.tar.gz) = 600711
+SHA256 (gnome/61823ced59db.patch) = 9337189561b32e4fdf651ee2231882f8baa60d55bf94990444e79aacf95c729b
+SIZE (gnome/61823ced59db.patch) = 3157
