@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	sclevine
 
+CONFLICTS_INSTALL=	yj-bruceadams
+
 PLIST_FILES=	bin/yj
 
 GH_TUPLE=	go-yaml:yaml:eeeca48fe776:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \

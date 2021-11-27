@@ -68,6 +68,8 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yaml-rust-0.4.5
 
+CONFLICTS_INSTALL=	yj-[0-9]*.[0-9]*
+
 PLIST_FILES=	bin/yj
 
 post-install:
