@@ -94,7 +94,7 @@ WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH} != amd64
 # error: always_inline function '_mm_load_si128' requires target feature
 # 'mmx', but would be inlined into function 'AdaptSSE' that is compiled
 # without support for 'mmx'
