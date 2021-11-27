@@ -1,0 +1,6 @@
+Python bindings for the xtensor C++ multi-dimensional array library.
+
+xtensor is a C++ library for multi-dimensional arrays enabling numpy-style
+broadcasting and lazy computing.
+
+WWW: https://github.com/xtensor-stack/xtensor-python
