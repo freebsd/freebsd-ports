@@ -1,8 +1,7 @@
 # Created by: jrhett@netconsonance.com
 
 PORTNAME=	cfengine
-PORTVERSION=	3.18.0
-PORTREVISION=	1
+PORTVERSION=	3.18.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 
