@@ -2,6 +2,7 @@
 
 PORTNAME=	openttd
 DISTVERSION=	12.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
