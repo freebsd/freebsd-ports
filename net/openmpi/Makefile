@@ -9,8 +9,6 @@ COMMENT=	High Performance Message Passing Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=		fails to compile on sparc64
-
 LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 		libltdl.so:devel/libltdl \
 		libevent.so:devel/libevent \
@@ -37,6 +35,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--program-prefix= \
 			--with-hwloc=external \
 			--with-libltdl \
+			--without-ofi \
 			--enable-mpi-fortran=usempi \
 			--enable-mpi-cxx \
 			--enable-cxx-exceptions \
