@@ -19,9 +19,9 @@ CMake Error at CMakeLists.txt:397 (find_package):
  
          # Some installations don't set SDL2_LIBRARIES
          if("${SDL2_LIBRARIES}" STREQUAL "")
---- src/input_common/sdl/sdl_impl.cpp.orig	2021-09-18 00:25:51 UTC
-+++ src/input_common/sdl/sdl_impl.cpp
-@@ -64,6 +64,7 @@ class SDLJoystick { (public)
+--- src/input_common/drivers/sdl_driver.cpp.orig	2021-11-27 10:52:08 UTC
++++ src/input_common/drivers/sdl_driver.cpp
+@@ -39,6 +39,7 @@ class SDLJoystick { (public)
      }
  
      void EnableMotion() {
@@ -29,38 +29,39 @@ CMake Error at CMakeLists.txt:397 (find_package):
          if (sdl_controller) {
              SDL_GameController* controller = sdl_controller.get();
              if (SDL_GameControllerHasSensor(controller, SDL_SENSOR_ACCEL) && !has_accel) {
-@@ -75,6 +76,7 @@ class SDLJoystick { (public)
+@@ -50,6 +51,7 @@ class SDLJoystick { (public)
                  has_gyro = true;
              }
          }
 +#endif
      }
  
-     void SetButton(int button, bool value) {
-@@ -88,6 +90,7 @@ class SDLJoystick { (public)
-         }
+     bool HasGyro() const {
+@@ -60,6 +62,7 @@ class SDLJoystick { (public)
+         return has_accel;
      }
  
 +#if SDL_VERSION_ATLEAST(2,0,14)
-     void SetMotion(SDL_ControllerSensorEvent event) {
+     bool UpdateMotion(SDL_ControllerSensorEvent event) {
          constexpr float gravity_constant = 9.80665f;
          std::lock_guard lock{mutex};
-@@ -115,6 +118,7 @@ class SDLJoystick { (public)
-         motion.UpdateRotation(time_difference * 1000);
-         motion.UpdateOrientation(time_difference * 1000);
+@@ -87,6 +90,7 @@ class SDLJoystick { (public)
+         motion.delta_timestamp = time_difference * 1000;
+         return true;
      }
 +#endif
  
-     bool GetButton(int button) const {
-         std::lock_guard lock{mutex};
-@@ -429,12 +433,14 @@ void SDLState::HandleGameControllerEvent(const SDL_Eve
+     BasicMotion GetMotion() {
+         return motion;
+@@ -362,6 +366,7 @@ void SDLDriver::HandleGameControllerEvent(const SDL_Ev
          }
          break;
      }
 +#if SDL_VERSION_ATLEAST(2,0,14)
      case SDL_CONTROLLERSENSORUPDATE: {
          if (auto joystick = GetSDLJoystickBySDLID(event.csensor.which)) {
-             joystick->SetMotion(event.csensor);
+             if (joystick->UpdateMotion(event.csensor)) {
+@@ -371,6 +376,7 @@ void SDLDriver::HandleGameControllerEvent(const SDL_Ev
          }
          break;
      }
@@ -68,50 +69,25 @@ CMake Error at CMakeLists.txt:397 (find_package):
      case SDL_JOYDEVICEREMOVED:
          LOG_DEBUG(Input, "Controller removed with Instance_ID {}", event.jdevice.which);
          CloseJoystick(SDL_JoystickFromInstanceID(event.jdevice.which));
-@@ -890,20 +896,26 @@ SDLState::SDLState() {
-     RegisterFactory<MotionDevice>("sdl", motion_factory);
+@@ -392,7 +398,7 @@ SDLDriver::SDLDriver(const std::string& input_engine_)
  
      if (!Settings::values.enable_raw_input) {
-+#if SDL_VERSION_ATLEAST(2,0,14)
          // Disable raw input. When enabled this setting causes SDL to die when a web applet opens
-         SDL_SetHint(SDL_HINT_JOYSTICK_RAWINPUT, "0");
-+#endif
+-        SDL_SetHint(SDL_HINT_JOYSTICK_RAWINPUT, "0");
++        SDL_SetHint("SDL_JOYSTICK_RAWINPUT", "0");
      }
+ 
+     // Prevent SDL from adding undesired axis
+@@ -400,7 +406,7 @@ SDLDriver::SDLDriver(const std::string& input_engine_)
  
      // Enable HIDAPI rumble. This prevents SDL from disabling motion on PS4 and PS5 controllers
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE, "1");
-+#if SDL_VERSION_ATLEAST(2,0,16)
-     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
-+#endif
+-    SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
++    SDL_SetHint("SDL_JOYSTICK_HIDAPI_PS5_RUMBLE", "1");
+     SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS, "1");
  
-+#if SDL_VERSION_ATLEAST(2,0,16)
-     // Tell SDL2 to use the hidapi driver. This will allow joycons to be detected as a
-     // GameController and not a generic one
-     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS, "1");
- 
-     // Turn off Pro controller home led
-     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED, "0");
-+#endif
- 
-     // If the frontend is going to manage the event loop, then we don't start one here
-     start_thread = SDL_WasInit(SDL_INIT_JOYSTICK) == 0;
-@@ -1110,6 +1122,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
-         }
-         break;
-     }
-+#if SDL_VERSION_ATLEAST(2,0,14)
-     case SDL_CONTROLLERSENSORUPDATE: {
-         bool is_motion_shaking = false;
-         constexpr float gyro_threshold = 5.0f;
-@@ -1139,6 +1152,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
-         }
-         break;
-     }
-+#endif
-     }
-     return {};
- }
-@@ -1244,6 +1258,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
+     // Use hidapi driver for joycons. This will allow joycons to be detected as a GameController and
+@@ -670,6 +676,7 @@ ButtonBindings SDLDriver::GetNintendoButtonBinding(
      auto sl_button = SDL_CONTROLLER_BUTTON_LEFTSHOULDER;
      auto sr_button = SDL_CONTROLLER_BUTTON_RIGHTSHOULDER;
  
@@ -119,7 +95,7 @@ CMake Error at CMakeLists.txt:397 (find_package):
      if (joystick->IsJoyconLeft()) {
          sl_button = SDL_CONTROLLER_BUTTON_PADDLE2;
          sr_button = SDL_CONTROLLER_BUTTON_PADDLE4;
-@@ -1252,6 +1267,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
+@@ -678,6 +685,7 @@ ButtonBindings SDLDriver::GetNintendoButtonBinding(
          sl_button = SDL_CONTROLLER_BUTTON_PADDLE3;
          sr_button = SDL_CONTROLLER_BUTTON_PADDLE1;
      }
@@ -127,13 +103,3 @@ CMake Error at CMakeLists.txt:397 (find_package):
  
      return {
          std::pair{Settings::NativeButton::A, SDL_CONTROLLER_BUTTON_A},
-@@ -1552,7 +1568,9 @@ class SDLMotionPoller final : public SDLPoller { (publ
-             [[fallthrough]];
-         case SDL_JOYBUTTONUP:
-         case SDL_JOYHATMOTION:
-+#if SDL_VERSION_ATLEAST(2,0,14)
-         case SDL_CONTROLLERSENSORUPDATE:
-+#endif
-             return {SDLEventToMotionParamPackage(state, event)};
-         }
-         return std::nullopt;
