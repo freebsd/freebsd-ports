@@ -103,7 +103,7 @@ libexec/sonarqube/elasticsearch/modules/transport-netty4/netty-transport-4.1.49.
 libexec/sonarqube/elasticsearch/modules/transport-netty4/plugin-descriptor.properties
 libexec/sonarqube/elasticsearch/modules/transport-netty4/plugin-security.policy
 libexec/sonarqube/elasticsearch/modules/transport-netty4/transport-netty4-client-7.14.1.jar
-libexec/sonarqube/lib/extensions/sonar-config-plugin-1.0.0.32.jar
+libexec/sonarqube/lib/extensions/sonar-config-plugin-1.1.0.185.jar
 libexec/sonarqube/lib/extensions/sonar-csharp-plugin-%%SONARCSHARP_VER%%.jar
 libexec/sonarqube/lib/extensions/sonar-flex-plugin-2.6.2.2641.jar
 libexec/sonarqube/lib/extensions/sonar-go-plugin-1.8.3.2219.jar
