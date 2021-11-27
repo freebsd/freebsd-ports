@@ -1,7 +1,7 @@
 PORTNAME=	rttr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6-16
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-gb3a131c
 CATEGORIES=	devel
 
@@ -13,13 +13,22 @@ COMMENT=	Run Time Type Reflection
 
 LICENSE=	MIT
 
-USES=		cmake compiler:c++11-lang
+BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson \
+		${LOCALBASE}/include/chaiscript/chaiscript.hpp:lang/chaiscript
+
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	rttrorg
 
 CMAKE_OFF=	BUILD_DOCUMENTATION \
-		BUILD_UNIT_TESTS
+		BUILD_UNIT_TESTS \
+		BUILD_EXAMPLES
 
 PORTSCOUT=	limit:^0\.
+
+post-extract:
+	${RM} -r ${WRKSRC}/3rd_party/rapidjson-1.1.0/
+	${RM} -r ${WRKSRC}/3rd_party/chaiscript-devel/
+	${RM} -r ${WRKSRC}/3rd_party/chaiscript-6.1.0/
 
 .include <bsd.port.mk>
