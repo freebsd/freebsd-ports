@@ -1,0 +1,12 @@
+bsoup is an HTTP client/server library for GNOME. It uses GObjects and the glib
+main loop, to integrate well with GNOME applications, and also has a synchronous
+API, for use in threaded applications.
+
+Features include:
+* Both asynchronous (GMainLoop and callback-based) and synchronous APIs
+* Automatically caches connections
+* SSL Support using GnuTLS
+* Proxy support, including authentication and SSL tunneling
+* Client support for Digest and Basic authentication
+* Server support for Digest and Basic authentication
+

@@ -1370,6 +1370,7 @@
     SUBDIR += libsmpp34
     SUBDIR += libsmraw
     SUBDIR += libsoup
+    SUBDIR += libsoup3
     SUBDIR += libspark2012
     SUBDIR += libspice-server
     SUBDIR += libstatgrab
