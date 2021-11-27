@@ -7,7 +7,7 @@ lib/cmake/xtb/xtbTargets.cmake
 lib/libxtb.a
 lib/libxtb.so
 lib/libxtb.so.6
-lib/libxtb.so.6.3.3
+lib/libxtb.so.6.4.1
 %%DATADIR%%/.param_gfnff.xtb
 %%DATADIR%%/param_gfn0-xtb.txt
 %%DATADIR%%/param_gfn1-xtb.txt
