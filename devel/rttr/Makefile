@@ -1,7 +1,7 @@
 PORTNAME=	rttr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6-16
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-gb3a131c
 CATEGORIES=	devel
 
@@ -16,7 +16,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson \
 		${LOCALBASE}/include/chaiscript/chaiscript.hpp:lang/chaiscript
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	rttrorg
 
