@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Additional packages recommended for new users:
+- durden (window manager and desktop environment)
+- xarcan (X11 bridge, similar to Xwayland)
+- aloadimage
+- acfgfs
+- aclip
+- arcan-trayicon
+EOM
+}
+]
