@@ -1,5 +1,6 @@
 PORTNAME=	yj
 DISTVERSION=	1.1.34
+PORTREVISION=	1
 CATEGORIES=	converters textproc
 PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
@@ -68,7 +69,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yaml-rust-0.4.5
 
-CONFLICTS_INSTALL=	yj-[0-9]*.[0-9]*
+CONFLICTS_INSTALL=	yj
 
 PLIST_FILES=	bin/yj
 
