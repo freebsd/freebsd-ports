@@ -1,7 +1,7 @@
 # Created by: Tony Maher
 
 PORTNAME=	xml-security-c
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	security
 MASTER_SITES=	APACHE/santuario/c-library
 PKGNAMEPREFIX=	apache-

@@ -157,5 +157,5 @@ include/xsec/xkms/XKMSValidateResult.hpp
 include/xsec/xkms/XKMSValidityInterval.hpp
 lib/libxml-security-c.so
 lib/libxml-security-c.so.20
-lib/libxml-security-c.so.20.0.3
+lib/libxml-security-c.so.20.0.4
 libdata/pkgconfig/xml-security-c.pc
