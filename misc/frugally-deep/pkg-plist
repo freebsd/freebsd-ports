@@ -37,6 +37,7 @@ include/fdeep/layers/max_pooling_2d_layer.hpp
 include/fdeep/layers/maximum_layer.hpp
 include/fdeep/layers/model_layer.hpp
 include/fdeep/layers/multiply_layer.hpp
+include/fdeep/layers/normalization_layer.hpp
 include/fdeep/layers/permute_layer.hpp
 include/fdeep/layers/pooling_2d_layer.hpp
 include/fdeep/layers/prelu_layer.hpp
