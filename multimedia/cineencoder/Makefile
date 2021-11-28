@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	3.4
+PORTVERSION=	3.5.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -27,12 +27,6 @@ PLIST_FILES=	bin/cine_encoder man/man1/cine-encoder.1.gz \
 PORTDOCS=	ABOUT AUTHORS
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,Q_OS_LINUX,Q_OS_${OPSYS:tu},' \
-		${WRKSRC}/app/mainwindow.cpp
-	@${REINPLACE_CMD} -e '/windowTitle/,+1s,Form,Cine Encoder 2021,' \
-		${WRKSRC}/app/mainwindow.ui
 
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS} \
