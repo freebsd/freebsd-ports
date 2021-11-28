@@ -1,16 +1,16 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xed
-PORTVERSION=	3.0.2
+PORTVERSION=	3.2.0
 CATEGORIES=	editors gnome
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful graphical text editor
 
 LICENSE=	GPLv2+
 
-PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
+PORTSCOUT=	limit:^[0-9.]+$$	# ignore non-numeric tags
 
 BUILD_DEPENDS=	intltool-merge:textproc/intltool \
 		itstool:textproc/itstool
@@ -20,8 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.desktop.interface.gsc
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
 		yelp:x11/yelp
 
-USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
-		pkgconfig python:3.6+,run xorg
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
+		meson pkgconfig python:3.6+,run xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview4 \

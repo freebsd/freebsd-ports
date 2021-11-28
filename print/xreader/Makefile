@@ -1,17 +1,16 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xreader
-PORTVERSION=	3.0.2
-PORTREVISION=	5
+PORTVERSION=	3.2.0
 CATEGORIES=	print gnome
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multi-format document reader
 
 LICENSE=	GPLv2+
 
-PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
+PORTSCOUT=	limit:^[0-9.]+$$	# ignore non-numeric tags
 
 BUILD_DEPENDS=	intltool-merge:textproc/intltool \
 		itstool:textproc/itstool
