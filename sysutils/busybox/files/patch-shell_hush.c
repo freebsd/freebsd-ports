@@ -1,6 +1,6 @@
---- shell/hush.c.orig	2021-01-01 13:30:58 UTC
+--- shell/hush.c.orig	2021-08-15 18:44:35 UTC
 +++ shell/hush.c
-@@ -348,7 +348,7 @@
+@@ -346,7 +346,7 @@
  #if !(defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) \
  	|| defined(__APPLE__) \
      )
@@ -9,8 +9,8 @@
  #endif
  #include <glob.h>
  /* #include <dmalloc.h> */
-@@ -2091,6 +2091,18 @@ static void hush_exit(int exitcode)
- #endif
+@@ -2211,6 +2211,18 @@ static int check_and_run_traps(void)
+ 	return last_sig;
  }
  
 +#if defined(__FreeBSD__) && __FreeBSD_version < 1202000
@@ -26,5 +26,5 @@
 +}
 +#endif
  
- //TODO: return a mask of ALL handled sigs?
- static int check_and_run_traps(void)
+ static const char *get_cwd(int force)
+ {

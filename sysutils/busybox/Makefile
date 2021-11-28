@@ -1,8 +1,7 @@
 # Created by: luigi@FreeBSD.org
 
 PORTNAME=	busybox
-PORTVERSION=	1.32.1
-PORTREVISION=	1
+PORTVERSION=	1.34.1
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
