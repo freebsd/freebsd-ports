@@ -15,6 +15,15 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 0
+@@ -55,7 +57,7 @@ ifneq (,$(findstring Darwin,$(shell uname)))
+ 	MACOS = 1
+ endif
+ 
+-EXTRA_FLAGS += -DPOPCNT_CAPABILITY -std=c++11
++EXTRA_FLAGS += -std=c++11
+ INC += -I. -I third_party 
+ 
+ MM_DEF = 
 @@ -152,31 +154,9 @@ HISAT2_REPEAT_CPPS_MAIN = $(REPEAT_CPPS) $(BUILD_CPPS)
  SEARCH_FRAGMENTS = $(wildcard search_*_phase*.c)
  VERSION = $(shell cat VERSION)
