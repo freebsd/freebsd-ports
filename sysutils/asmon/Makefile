@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	AFTERSTEP/apps/asmon
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swallowable applet monitors the CPU usage, memory, and swap, etc
 
 LICENSE=	GPLv2
@@ -17,11 +17,15 @@ BROKEN_FreeBSD_14=	fails to compile: read_mem.c: invalid use of undefined type '
 BROKEN_mips=		fails to compile: asmon.c: storage size of 'sum' isn't known
 BROKEN_mips64=		fails to compile: asmon.c: storage size of 'sum' isn't known
 
-BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
-CFLAGS+=	-I${LOCALBASE}/include
+DEPRECATED=	Fails to build on modern FreeBSD
+EXPIRATION_DATE=	2021-12-27
+
 USES=		gmake xorg
 USE_CSTD=	gnu89
 USE_XORG=	xpm x11
+
+BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
+CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	asmon
 MAKE_ARGS+=	LIBDIR="-L${LOCALBASE}/lib" \
 		SOLARIS_LIBS=-lkvm
