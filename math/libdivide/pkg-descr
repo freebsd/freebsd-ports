@@ -1,0 +1,11 @@
+libdivide allows you to replace expensive integer divides with comparatively
+cheap multiplication and bitshifts. Compilers usually do this, but only when the
+divisor is known at compile time. libdivide allows you to take advantage of it
+at runtime. The result is that integer division can become faster - a lot
+faster.
+
+Furthermore, libdivide allows you to divide SIMD vectors by runtime constants,
+which is especially nice because SIMD typically lacks integer division.
+
+WWW: https://libdivide.com/
+WWW: https://github.com/ridiculousfish/libdivide/

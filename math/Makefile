@@ -398,6 +398,7 @@
     SUBDIR += libRmath
     SUBDIR += libbraiding
     SUBDIR += libccd
+    SUBDIR += libdivide
     SUBDIR += libflame
     SUBDIR += libhomfly
     SUBDIR += libmesh
