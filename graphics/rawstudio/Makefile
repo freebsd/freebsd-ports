@@ -11,8 +11,6 @@ COMMENT=	Open-source program to read and manipulate RAW photo images
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to link: libicuuc.so. undefined reference to __cxa_throw_bad_array_new_length
-
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liblcms.so:graphics/lcms \
