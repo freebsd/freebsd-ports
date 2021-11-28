@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.1
+DISTVERSION=	1.16.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
-V8_VERS=	0.34.0
+V8_VERS=	0.35.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -104,8 +104,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-encoding-2.3.2 \
 		data-url-0.1.0 \
 		deno_ast-0.5.0 \
-		deno_doc-0.20.0 \
-		deno_graph-0.11.1 \
+		deno_doc-0.21.0 \
+		deno_graph-0.12.0 \
 		deno_lint-0.19.0 \
 		der-0.4.4 \
 		derive_more-0.99.16 \
@@ -116,8 +116,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.47.1 \
 		dprint-plugin-json-0.13.2 \
-		dprint-plugin-markdown-0.11.2 \
-		dprint-plugin-typescript-0.59.1 \
+		dprint-plugin-markdown-0.11.3 \
+		dprint-plugin-typescript-0.59.2 \
 		dprint-swc-ecma-ast-view-0.42.0 \
 		ecdsa-0.12.4 \
 		either-1.6.1 \
@@ -437,7 +437,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-0.8.2 \
-		v8-0.34.0 \
+		v8-0.35.0 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
