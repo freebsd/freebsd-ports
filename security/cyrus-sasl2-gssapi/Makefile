@@ -1,5 +1,5 @@
 PKGNAMESUFFIX=	-gssapi
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	SASL GSSAPI authentication plugin
 
