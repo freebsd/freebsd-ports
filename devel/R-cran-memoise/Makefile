@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	memoise
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
