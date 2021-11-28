@@ -1,6 +1,6 @@
-TIMESTAMP = 1627998387
-SHA256 (rs-curlie-v1.6.2_GH0.tar.gz) = 4cf14accb5e027fc5ecc5804679a4b52f9aae076b4bdbe33a5c002fc84e0f437
-SIZE (rs-curlie-v1.6.2_GH0.tar.gz) = 2090660
+TIMESTAMP = 1638112768
+SHA256 (rs-curlie-v1.6.7_GH0.tar.gz) = 25a0ea35be6ff9dd88551c992a0f7ea565ce2fae8213c674bd28a7cc512493d9
+SIZE (rs-curlie-v1.6.7_GH0.tar.gz) = 2090853
 SHA256 (golang-crypto-159ae71589f3_GH0.tar.gz) = bbe6802310719e9ae8df6b78126dc16784427ee3afded408c6a747c988b37a6a
 SIZE (golang-crypto-159ae71589f3_GH0.tar.gz) = 1608065
 SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
