@@ -1,0 +1,7 @@
+bin/primecount
+include/primecount.h
+include/primecount.hpp
+lib/libprimecount.so
+lib/libprimecount.so.7
+lib/libprimecount.so.7.1
+man/man1/primecount.1.gz

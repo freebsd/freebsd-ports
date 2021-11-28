@@ -1,0 +1,5 @@
+primecount is a command-line program and C/C++ library that counts the primes
+below an integer x <= 1031 using highly optimized implementations of the
+combinatorial prime counting algorithms.
+
+WWW: https://github.com/kimwalisch/primecount
