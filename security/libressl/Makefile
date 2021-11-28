@@ -1,7 +1,7 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
 
 PORTNAME=	libressl
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -25,9 +25,10 @@ LIBTLS_DESC=	Only install libtls (no libcrypto/libssl)
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Install TLS-enabled netcat
 
-CONFLICTS_INSTALL=		libressl-devel-libtls
+CONFLICTS_INSTALL=		libressl-devel
 libtls_CONFLICTS_INSTALL=	libretls
-default_CONFLICTS_INSTALL=	openssl openssl-devel
+default_CONFLICTS_INSTALL=	openssl \
+				openssl-devel
 
 .if ${FLAVOR:U} == default
 OPTIONS_EXCLUDE=	LIBTLS
@@ -58,7 +59,7 @@ post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
 
 post-stage-MAN3-on:
-	(cd ${STAGEDIR}${MANPREFIX}; find man/man3 -not -type d | \
+	(cd ${STAGEDIR}${MANPREFIX}; ${FIND} man/man3 -not -type d | \
 		${SED} 's/$$/.gz/' >> ${TMPPLIST})
 
 .include <bsd.port.mk>
