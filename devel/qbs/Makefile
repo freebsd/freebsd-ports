@@ -1,6 +1,6 @@
 PORTNAME=	qbs
 DISTVERSIONPREFIX=	src-
-DISTVERSION=	1.19.2
+DISTVERSION=	1.20.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/Qt/qbs
@@ -47,6 +47,10 @@ pre-configure:
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${MKDIR} ${CONFIGURE_WRKSRC}
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+
+# Workaround strip(1) problems
+post-stage:
+	-${RM} ${STAGEDIR}${LOCALBASE}/libexec/qbs/ecp.*
 
 # The file in question is not used on FreeBSD. To silence stage-qa, remove it from stage-dir.
 post-install:

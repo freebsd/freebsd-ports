@@ -43,7 +43,7 @@ include/qbs/use_installed_corelib.pri
 lib/libqbscore.prl
 lib/libqbscore.so
 lib/libqbscore.so.1
-lib/libqbscore.so.1.19
+lib/libqbscore.so.1.20
 lib/libqbscore.so.%%SHLIB_VERSION%%
 lib/qbs/plugins/libclangcompilationdbgenerator.so
 lib/qbs/plugins/libiarewgenerator.so
@@ -54,7 +54,7 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 lib/qbs/plugins/libvisualstudiogenerator.so
 libexec/qbs/dmgbuild
 libexec/qbs/qbs_processlauncher
-man/man1/qbs.1.gz
+share/man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/attributions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/building-applications.html
 %%PORTDOCS%%%%DOCSDIR%%/html/building-qbs.html
@@ -584,6 +584,8 @@ man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/Probes/ClangClBinaryProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/ClangClProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/ConanfileProbe.qbs
+%%DATADIR%%/imports/qbs/Probes/CosmicProbe.qbs
+%%DATADIR%%/imports/qbs/Probes/DmcProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/FrameworkProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/GccBinaryProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/GccProbe.qbs
@@ -691,8 +693,12 @@ man/man1/qbs.1.gz
 %%DATADIR%%/modules/cpp/MingwBaseModule.qbs
 %%DATADIR%%/modules/cpp/UnixGCC.qbs
 %%DATADIR%%/modules/cpp/android-gcc.qbs
+%%DATADIR%%/modules/cpp/cosmic.js
+%%DATADIR%%/modules/cpp/cosmic.qbs
 %%DATADIR%%/modules/cpp/cpp.js
 %%DATADIR%%/modules/cpp/darwin.js
+%%DATADIR%%/modules/cpp/dmc.js
+%%DATADIR%%/modules/cpp/dmc.qbs
 %%DATADIR%%/modules/cpp/freebsd-gcc.qbs
 %%DATADIR%%/modules/cpp/freebsd.js
 %%DATADIR%%/modules/cpp/gcc.js
