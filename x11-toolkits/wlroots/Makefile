@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/swaywm/${GL_PROJECT}/commit/
@@ -77,6 +77,7 @@ VULKAN_PATCHFILES+=	e3d16970433f.patch:-p1 # https://gitlab.freedesktop.org/wlro
 VULKAN_PATCHFILES+=	79f10d929b72.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2771
 VULKAN_PATCHFILES+=	1a16e8fc56a9.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2771
 VULKAN_PATCHFILES+=	dd039c56d93a.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2771
+VULKAN_PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
