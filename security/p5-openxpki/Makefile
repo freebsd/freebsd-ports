@@ -2,8 +2,7 @@
 
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.14.4
-PORTREVISION=	1
+DISTVERSION=	3.16.0
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Config-GitLike>=0:devel/p5-Config-GitLike \
 		p5-Config-Merge>=1:devel/p5-Config-Merge \
 		p5-Config-Std>=0:devel/p5-Config-Std \
-		p5-Connector>=1.32:devel/p5-Connector \
+		p5-Connector>=1.43:devel/p5-Connector \
 		p5-Crypt-Argon2>=0.007:security/p5-Crypt-Argon2 \
 		p5-Crypt-CBC>=2.29:security/p5-Crypt-CBC \
 		p5-Crypt-JWT>=0.032:security/p5-Crypt-JWT \
@@ -89,15 +88,12 @@ USES=		gmake perl5 shebangfix ssl
 USE_GITHUB=	yes
 GH_PROJECT=	openxpki-config:conf
 GH_TAGNAME=	${DISTVERSIONPREFIX}${_conf_VERSION}:conf
-_conf_VERSION=	3.12
+_conf_VERSION=	3.16
 
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki
 SHEBANG_FILES=	bin/*
 SHEBANG_GLOB=	*.fcgi *.pl *.pm *.t*
-
-CONFLICTS=	p5-openxpki-client p5-openxpki-client-deployment \
-		p5-openxpki-client-html-mason p5-openxpki-client-scep
 
 NO_ARCH=	yes
 # stay with stable versions only:
