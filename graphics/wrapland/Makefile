@@ -1,7 +1,11 @@
 PORTNAME=	wrapland
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	0.523.0
+PORTREVISION=	1
 CATEGORIES=	graphics
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	c83f317a5338.patch:-p1 # https://gitlab.com/kwinft/wrapland/-/merge_requests/108
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt/C++ library wrapping libwayland
