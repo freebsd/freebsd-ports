@@ -1,7 +1,7 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
 
 # Run update.sh to update to the latest nightly
-PORTVERSION=	1.58.0.${NIGHTLY_DATE:C,-,,g}
+PORTVERSION=	1.59.0.${NIGHTLY_DATE:C,-,,g}
 # Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust
 PORTREVISION=	0
 PKGNAMESUFFIX=	-nightly
@@ -16,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-NIGHTLY_DATE=		2021-11-23
+NIGHTLY_DATE=		2021-11-28
 BOOTSTRAPS_DATE=	2021-10-22
 RUST_BOOTSTRAP_VERSION=	beta
 
