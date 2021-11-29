@@ -1,17 +1,16 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xviewer
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	graphics gnome
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fast and functional image viewer
 
 LICENSE=	GPLv2+
 
-PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
+PORTSCOUT=	limit:^[0-9.]+$$	# ignore non-numeric tags
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/gtk-doc.m4:textproc/gtk-doc \
 		intltool-update:textproc/intltool \
