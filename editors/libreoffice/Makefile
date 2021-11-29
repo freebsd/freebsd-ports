@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -139,7 +139,7 @@ COINMP_LIB_DEPENDS=	libCoinMP.so:math/coinmp
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
-DOCS_CONFIGURE_WITH=	help
+DOCS_CONFIGURE_ON=	--with-help=html
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
 GNOME_IMPLIES=	GTK3
