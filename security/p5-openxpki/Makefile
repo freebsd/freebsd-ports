@@ -12,8 +12,7 @@ COMMENT=	Perl based trustcenter for PKI: universal server building block
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	bash:shells/bash \
+MY_DEPENDS=	bash:shells/bash \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Cache-LRU>=0:devel/p5-Cache-LRU \
 		p5-CGI-Fast>=2.10:www/p5-CGI-Fast \
@@ -79,6 +78,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-XML-Filter-XInclude>=0:textproc/p5-XML-Filter-XInclude \
 		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer \
 		p5-XML-Validator-Schema>=0:textproc/p5-XML-Validator-Schema
+BUILD_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=1.52:databases/p5-DBD-SQLite \
 		p5-Test-Pod-Coverage>=1.00:devel/p5-Test-Pod-Coverage \
 		p5-Test-Pod>=1.00:devel/p5-Test-Pod \
@@ -130,8 +131,6 @@ post-patch:
 	)
 	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/openxpki/session
 	@${MKDIR} ${STAGEDIR}/var/log/openxpki
@@ -146,4 +145,4 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/../.. && ${COPYTREE_SHARE} config ${STAGEDIR}${EXAMPLESDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "htdocs cgi-bin" ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

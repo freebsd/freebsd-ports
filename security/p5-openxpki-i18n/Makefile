@@ -13,7 +13,7 @@ COMMENT=	Perl based trustcenter software for PKI: i18n tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
-### We can not go without NLS. Internationalization is needed even for English
+# We cannot go without NLS. Internationalization is needed even for English.
 USES=		gettext-runtime gettext-tools gmake perl5
 
 USE_GITHUB=	yes
