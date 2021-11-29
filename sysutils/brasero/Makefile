@@ -1,8 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
 PORTNAME=	brasero
-PORTVERSION=	3.12.2
-PORTREVISION=	1
+PORTVERSION=	3.12.3
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
