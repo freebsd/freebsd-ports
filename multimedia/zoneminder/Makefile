@@ -7,8 +7,6 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
-
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
