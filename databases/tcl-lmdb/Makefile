@@ -1,7 +1,7 @@
 # Created by: gahr
 
 PORTNAME=	tcl-lmdb
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
