@@ -4,6 +4,7 @@ PORTNAME=	cheesecutter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9-beta-3-25
 DISTVERSIONSUFFIX=	-gdbe9a9d
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,8 +12,6 @@ COMMENT=	Tracker for composing music for the C64 SID chip
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-BROKEN_FreeBSD_14=	ld: error: undefined hidden symbol: __start___minfo
 
 BUILD_DEPENDS=	acme:devel/acme \
 		ldc2:lang/ldc
@@ -37,4 +36,10 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${f}.fr.1 ${STAGEDIR}${MANPREFIX}/share/man/fr/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 1400042)
+MAKE_ARGS=	DLDFLAGS=-L=-Wl,-z,nostart-stop-gc
+.endif
+
+.include <bsd.port.post.mk>

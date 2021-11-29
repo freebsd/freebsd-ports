@@ -8,7 +8,24 @@
  LIBS=-L-ldl -L-lstdc++
  COMFLAGS=-O2
  VERSION=$(shell cat Version)
-@@ -38,10 +40,10 @@ c64: $(C64OBJS)
+@@ -19,7 +21,7 @@ include Makefile.objects.mk
+ all: ct2util ccutter
+ 
+ ccutter:$(C64OBJS) $(OBJS) $(CXX_OBJS)
+-	$(DC) $(COMFLAGS) -of=$@ $(OBJS) $(CXX_OBJS) $(LIBS)
++	$(DC) $(COMFLAGS) $(DLDFLAGS) -of=$@ $(OBJS) $(CXX_OBJS) $(LIBS)
+ 
+ 
+ .cpp.o : $(CXX_SRCS)
+@@ -31,17 +33,17 @@ ccutter:$(C64OBJS) $(OBJS) $(CXX_OBJS)
+ ct: $(C64OBJS) $(CTOBJS)
+ 
+ ct2util: $(C64OBJS) $(UTILOBJS)
+-	$(DC) $(COMFLAGS) -of=$@ $(UTILOBJS)
++	$(DC) $(COMFLAGS) $(DLDFLAGS) -of=$@ $(UTILOBJS)
+ 
+ c64: $(C64OBJS)
+ 
  install: all
  	strip ccutter$(EXE)
  	strip ct2util$(EXE)
