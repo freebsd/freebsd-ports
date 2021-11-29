@@ -1,4 +1,4 @@
-TIMESTAMP = 1637667021
+TIMESTAMP = 1638202798
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
 SIZE (rust/crates/addr2line-0.17.0.crate) = 32260
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -305,5 +305,5 @@ SHA256 (rust/crates/xshell-0.1.17.crate) = eaad2035244c56da05573d4d7fda5f903c60a
 SIZE (rust/crates/xshell-0.1.17.crate) = 21019
 SHA256 (rust/crates/xshell-macros-0.1.17.crate) = 4916a4a3cad759e499a3620523bf9545cc162d7a06163727dde97ce9aaa4cf39
 SIZE (rust/crates/xshell-macros-0.1.17.crate) = 2682
-SHA256 (rust-analyzer-rust-analyzer-2021-11-22_GH0.tar.gz) = 6eadbf82c80fcaaa0b499aec4213a91604ea39e9115cc2e6e3efb4c10691fd81
-SIZE (rust-analyzer-rust-analyzer-2021-11-22_GH0.tar.gz) = 2164284
+SHA256 (rust-analyzer-rust-analyzer-2021-11-29_GH0.tar.gz) = 9c2e241ea0219d584aa055fdfaaf9c19155ed31e796c80392b16eeb4fe1edd3a
+SIZE (rust-analyzer-rust-analyzer-2021-11-29_GH0.tar.gz) = 2176576
