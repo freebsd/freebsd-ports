@@ -1,8 +1,7 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	94.0.2
-PORTREVISION=	3
+DISTVERSION=	95.0
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -13,7 +12,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.71:security/nss \
+		nss>=3.72:security/nss \
 		icu>=69.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.9.1:print/harfbuzz \
@@ -25,12 +24,18 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		autoconf-2.13:devel/autoconf213 \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
-		zip:archivers/zip
+		zip:archivers/zip \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \
+		${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/clang/${LLVM_DEFAULT}.0.0/lib/wasi/libclang_rt.builtins-wasm32.a:devel/wasi-compiler-rt${LLVM_DEFAULT}
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
 USE_MOZILLA=	-sqlite
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
+# work around bindgen not finding ICU, e.g.
+# dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
+CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 
 USES=		tar:xz
 
@@ -38,7 +43,8 @@ FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/${MOZILLA}-snap/${MOZILLA}.desktop
 MOZ_OPTIONS=	--enable-application=browser \
-		--enable-official-branding
+		--enable-official-branding \
+		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
