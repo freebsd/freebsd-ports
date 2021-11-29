@@ -181,12 +181,15 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/CFLAGS.rst
 %%DATADIR%%/Help/envvar/CMAKE_APPLE_SILICON_PROCESSOR.rst
 %%DATADIR%%/Help/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst
+%%DATADIR%%/Help/envvar/CMAKE_BUILD_TYPE.rst
+%%DATADIR%%/Help/envvar/CMAKE_CONFIGURATION_TYPES.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIG_TYPE.rst
 %%DATADIR%%/Help/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.rst
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR.rst
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR_INSTANCE.rst
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR_PLATFORM.rst
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR_TOOLSET.rst
+%%DATADIR%%/Help/envvar/CMAKE_INSTALL_MODE.rst
 %%DATADIR%%/Help/envvar/CMAKE_LANG_COMPILER_LAUNCHER.rst
 %%DATADIR%%/Help/envvar/CMAKE_LANG_LINKER_LAUNCHER.rst
 %%DATADIR%%/Help/envvar/CMAKE_MSVCIDE_RUN_PATH.rst
@@ -682,6 +685,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/policy/CMP0124.rst
 %%DATADIR%%/Help/policy/CMP0125.rst
 %%DATADIR%%/Help/policy/CMP0126.rst
+%%DATADIR%%/Help/policy/CMP0127.rst
+%%DATADIR%%/Help/policy/CMP0128.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -829,6 +834,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_test/DEPENDS.rst
 %%DATADIR%%/Help/prop_test/DISABLED.rst
 %%DATADIR%%/Help/prop_test/ENVIRONMENT.rst
+%%DATADIR%%/Help/prop_test/ENVIRONMENT_MODIFICATION.rst
 %%DATADIR%%/Help/prop_test/FAIL_REGULAR_EXPRESSION.rst
 %%DATADIR%%/Help/prop_test/FIXTURES_CLEANUP.rst
 %%DATADIR%%/Help/prop_test/FIXTURES_REQUIRED.rst
@@ -951,6 +957,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/FRAMEWORK.rst
 %%DATADIR%%/Help/prop_tgt/FRAMEWORK_MULTI_CONFIG_POSTFIX_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/FRAMEWORK_VERSION.rst
+%%DATADIR%%/Help/prop_tgt/Fortran_BUILDING_INSTRINSIC_MODULES.rst
 %%DATADIR%%/Help/prop_tgt/Fortran_FORMAT.rst
 %%DATADIR%%/Help/prop_tgt/Fortran_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/Fortran_PREPROCESS.rst
@@ -960,6 +967,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/GNUtoMS.rst
 %%DATADIR%%/Help/prop_tgt/HAS_CXX.rst
 %%DATADIR%%/Help/prop_tgt/HIP_ARCHITECTURES.rst
+%%DATADIR%%/Help/prop_tgt/HIP_EXTENSIONS.rst
+%%DATADIR%%/Help/prop_tgt/HIP_STANDARD.rst
+%%DATADIR%%/Help/prop_tgt/HIP_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.rst
@@ -1020,8 +1030,11 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/LANG_COMPILER_LAUNCHER.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CPPCHECK.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CPPLINT.rst
+%%DATADIR%%/Help/prop_tgt/LANG_EXTENSIONS.rst
 %%DATADIR%%/Help/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.rst
 %%DATADIR%%/Help/prop_tgt/LANG_LINKER_LAUNCHER.rst
+%%DATADIR%%/Help/prop_tgt/LANG_STANDARD.rst
+%%DATADIR%%/Help/prop_tgt/LANG_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/LANG_VISIBILITY_PRESET.rst
 %%DATADIR%%/Help/prop_tgt/LIBRARY_OUTPUT_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/LIBRARY_OUTPUT_DIRECTORY_CONFIG.rst
@@ -1204,6 +1217,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/release/3.2.rst
 %%DATADIR%%/Help/release/3.20.rst
 %%DATADIR%%/Help/release/3.21.rst
+%%DATADIR%%/Help/release/3.22.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1413,6 +1427,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTORCC_TARGET_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_ARCHITECTURES.rst
+%%DATADIR%%/Help/variable/CMAKE_HIP_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_HIP_STANDARD.rst
+%%DATADIR%%/Help/variable/CMAKE_HIP_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_HOME_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_APPLE.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SOLARIS.rst
@@ -1463,6 +1480,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_AR.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_ARCHITECTURE_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_EXTERNAL_TOOLCHAIN.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_FRONTEND_VARIANT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_LAUNCHER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_LOADED.rst
@@ -1477,6 +1495,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_SHARED_LIBRARY.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_SHARED_MODULE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_STATIC_LIBRARY.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_EXTENSIONS_DEFAULT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_CONFIG_INIT.rst
@@ -1505,14 +1525,18 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FILE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_SUFFIX.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINK_WHAT_YOU_USE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_OUTPUT_EXTENSION.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_PLATFORM_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_SIMULATE_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_SIMULATE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_SIZEOF_DATA_PTR.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_SOURCE_FILE_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_DEFAULT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_LIBRARIES.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_VISIBILITY_PRESET.rst
 %%DATADIR%%/Help/variable/CMAKE_LIBRARY_ARCHITECTURE.rst
 %%DATADIR%%/Help/variable/CMAKE_LIBRARY_ARCHITECTURE_REGEX.rst
@@ -1530,6 +1554,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LINK_SEARCH_END_STATIC.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_SEARCH_START_STATIC.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_WHAT_YOU_USE.rst
+%%DATADIR%%/Help/variable/CMAKE_LINK_WHAT_YOU_USE_CHECK.rst
 %%DATADIR%%/Help/variable/CMAKE_MACOSX_BUNDLE.rst
 %%DATADIR%%/Help/variable/CMAKE_MACOSX_RPATH.rst
 %%DATADIR%%/Help/variable/CMAKE_MAJOR_VERSION.rst
@@ -1594,6 +1619,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_VERSION_PATCH.rst
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_VERSION_TWEAK.rst
 %%DATADIR%%/Help/variable/CMAKE_RANLIB.rst
+%%DATADIR%%/Help/variable/CMAKE_REQUIRE_FIND_PACKAGE_PackageName.rst
 %%DATADIR%%/Help/variable/CMAKE_ROOT.rst
 %%DATADIR%%/Help/variable/CMAKE_RULE_MESSAGES.rst
 %%DATADIR%%/Help/variable/CMAKE_RUNTIME_OUTPUT_DIRECTORY.rst
@@ -1641,6 +1667,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_Swift_LANGUAGE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_Swift_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_Swift_NUM_THREADS.rst
+%%DATADIR%%/Help/variable/CMAKE_TLS_CAINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_TLS_VERIFY.rst
 %%DATADIR%%/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
@@ -1678,6 +1705,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_VS_SDK_LIBRARY_WINRT_DIRECTORIES.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_SDK_REFERENCE_DIRECTORIES.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_SDK_SOURCE_DIRECTORIES.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_IDENTIFIER.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_TARGETS_VERSION.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_WINRT_BY_DEFAULT.rst
@@ -1925,6 +1955,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeForceCompiler.cmake
 %%DATADIR%%/Modules/CMakeFortranCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeFortranCompilerABI.F
+%%DATADIR%%/Modules/CMakeFortranCompilerABI.F90
 %%DATADIR%%/Modules/CMakeFortranCompilerId.F.in
 %%DATADIR%%/Modules/CMakeFortranInformation.cmake
 %%DATADIR%%/Modules/CMakeGenericSystem.cmake
@@ -2498,6 +2529,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Internal/CheckSourceCompiles.cmake
 %%DATADIR%%/Modules/Internal/CheckSourceRuns.cmake
 %%DATADIR%%/Modules/Internal/FeatureTesting.cmake
+%%DATADIR%%/Modules/Internal/OSRelease/010-TryOldCentOS.cmake
+%%DATADIR%%/Modules/Internal/OSRelease/020-TryDebianVersion.cmake
 %%DATADIR%%/Modules/KDE3Macros.cmake
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
 %%DATADIR%%/Modules/MacOSXFrameworkInfo.plist.in
