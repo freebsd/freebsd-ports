@@ -1,7 +1,7 @@
 # Created by: James Hunt <james.hunt@ubuntu.com>
 
 PORTNAME=	procenv
-DISTVERSION=	0.58
+DISTVERSION=	0.60
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
