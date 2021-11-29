@@ -3,6 +3,9 @@ DISTVERSION=	0.2.0
 CATEGORIES=	accessibility
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
+PATCH_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/commit/
+PATCHFILES+=	601dfc87ff6e.patch:-p1 # https://lists.sr.ht/~kennylevinsen/wlsunset-devel/patches/26904
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Day/night gamma adjustments for Wayland
 

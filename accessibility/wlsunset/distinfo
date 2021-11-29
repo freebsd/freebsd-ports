@@ -1,3 +1,5 @@
 TIMESTAMP = 1619384190
 SHA256 (wlsunset-0.2.0.tar.gz) = 88bce695722a09d79545f14d404cc0659f7176bb08d5db5f4f23228b6ba8bb03
 SIZE (wlsunset-0.2.0.tar.gz) = 12605
+SHA256 (601dfc87ff6e.patch) = 2d058d5badc307a89a909b73e8bd7cf454549f6c88c805f23b409aa9c4ec40b4
+SIZE (601dfc87ff6e.patch) = 1289
