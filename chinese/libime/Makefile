@@ -1,7 +1,7 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	libime
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.9
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
 DISTFILES=	${OPENGRAM_LM_TAR}:opengram_lm \
@@ -9,7 +9,7 @@ DISTFILES=	${OPENGRAM_LM_TAR}:opengram_lm \
 		${TABLE_DICT_TAR}:table_dict
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Library to support generic input method implementation
 
 LICENSE=	LGPL21
@@ -34,7 +34,7 @@ MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
 # These must follow data/CMakeLists.txt
 OPENGRAM_LM_TAR=	lm_sc.3gm.arpa-20140820.tar.bz2
-OPENGRAM_DICT_TAR=	dict.utf8-20200715.tar.xz
+OPENGRAM_DICT_TAR=	dict.utf8-20211021.tar.xz
 TABLE_DICT_TAR=		table.tar.gz
 
 post-extract:
