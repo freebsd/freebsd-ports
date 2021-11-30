@@ -1,7 +1,7 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	rime-data-full
-PORTVERSION=	g20201223
+PORTVERSION=	g20211129
 CATEGORIES=	chinese textproc
 
 COMMENT=	Rime data files full set
