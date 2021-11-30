@@ -12,7 +12,7 @@ PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	jade_1.2.1-35.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
