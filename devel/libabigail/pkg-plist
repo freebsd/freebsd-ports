@@ -17,7 +17,6 @@ include/libabigail/abg-ini.h
 include/libabigail/abg-interned-str.h
 include/libabigail/abg-ir.h
 include/libabigail/abg-libxml-utils.h
-include/libabigail/abg-libzip-utils.h
 include/libabigail/abg-reader.h
 include/libabigail/abg-regex.h
 include/libabigail/abg-reporter.h

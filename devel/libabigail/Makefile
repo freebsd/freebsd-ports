@@ -1,13 +1,13 @@
 PORTNAME=	libabigail
-DISTVERSION=	1.8.2
+DISTVERSION=	2.0
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	ABI Generic Analysis and Instrumentation Library
 
-LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING-LGPLV3
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libdw.so:devel/elfutils
