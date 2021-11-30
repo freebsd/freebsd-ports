@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.3
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
 LIB_DEPENDS=	libosp.so:textproc/opensp
