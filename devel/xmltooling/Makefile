@@ -1,7 +1,7 @@
 # Created by: Janos Mohacsi
 
 PORTNAME=	xmltooling
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	devel security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 
