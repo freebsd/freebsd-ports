@@ -1,6 +1,4 @@
 TIMESTAMP = 1638220359
-SHA256 (llvm-project-12.0.1.src.tar.xz) = 129cb25cd13677aad951ce5c2deb0fe4afc1e9d98950f53b51bdcfb5a73afa0e
-SIZE (llvm-project-12.0.1.src.tar.xz) = 90910004
 SHA256 (RPCS3-rpcs3-v0.0.19-13060-g270c2e58a_GH0.tar.gz) = 4a4c0159533c85f069c36e09b54173bf2dae4ec1a7dd82b2951aeddff09eff81
 SIZE (RPCS3-rpcs3-v0.0.19-13060-g270c2e58a_GH0.tar.gz) = 8163098
 SHA256 (RPCS3-hidapi-hidapi-0.8.0-rc1-125-g01f601a_GH0.tar.gz) = d6aecf7a9e4d6f4935f1da5fd29cb8011f76567c8e5b571b7410e2fa6942bf37
@@ -27,3 +25,5 @@ SHA256 (wolfSSL-wolfssl-v4.8.1-stable_GH0.tar.gz) = 50db45f348f47e00c93dd244c241
 SIZE (wolfSSL-wolfssl-v4.8.1-stable_GH0.tar.gz) = 10467737
 SHA256 (zeux-pugixml-v1.11.4_GH0.tar.gz) = 017139251c122dbff400a507cddc4cb74120a431a50c6c524f30edcc5b331ade
 SIZE (zeux-pugixml-v1.11.4_GH0.tar.gz) = 566750
+SHA256 (llvm-llvm-project-llvmorg-13.0.1-rc1_GH0.tar.gz) = c9411f1882eaf0c190fd5b412deb0bd7dba61a48df243d3408298cc6f53b6921
+SIZE (llvm-llvm-project-llvmorg-13.0.1-rc1_GH0.tar.gz) = 147284646
