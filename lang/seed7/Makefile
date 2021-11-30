@@ -24,7 +24,7 @@ USES=		mysql:client ncurses pgsql sqlite tar:tgz xorg
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_XORG=	x11
+USE_XORG=	x11 xrender
 WANT_PGSQL=	client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
