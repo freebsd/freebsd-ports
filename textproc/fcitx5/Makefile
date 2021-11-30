@@ -1,15 +1,14 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	fcitx5
-DISTVERSION=	5.0.4
-PORTREVISION=	2
+DISTVERSION=	5.0.10
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict
 DISTFILES=	${SPELL_EN_DICT_TAR}:dict
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	New implementation of the Fcitx IME framework
 
 LICENSE=	LGPL21+

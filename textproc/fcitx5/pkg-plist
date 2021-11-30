@@ -43,6 +43,7 @@ include/Fcitx5/Core/fcitx/userinterface.h
 include/Fcitx5/Core/fcitx/userinterfacemanager.h
 include/Fcitx5/Module/fcitx-module/clipboard/clipboard_public.h
 include/Fcitx5/Module/fcitx-module/dbus/dbus_public.h
+include/Fcitx5/Module/fcitx-module/emoji/emoji_public.h
 include/Fcitx5/Module/fcitx-module/notificationitem/notificationitem_public.h
 include/Fcitx5/Module/fcitx-module/notifications/notifications_public.h
 include/Fcitx5/Module/fcitx-module/quickphrase/quickphrase_public.h
@@ -83,6 +84,7 @@ include/Fcitx5/Utils/fcitx-utils/macros.h
 include/Fcitx5/Utils/fcitx-utils/metastring.h
 include/Fcitx5/Utils/fcitx-utils/misc.h
 include/Fcitx5/Utils/fcitx-utils/rect.h
+include/Fcitx5/Utils/fcitx-utils/semver.h
 include/Fcitx5/Utils/fcitx-utils/signals.h
 include/Fcitx5/Utils/fcitx-utils/signals_details.h
 include/Fcitx5/Utils/fcitx-utils/standardpath.h
@@ -108,6 +110,8 @@ lib/cmake/Fcitx5ModuleClipboard/Fcitx5ModuleClipboardConfig.cmake
 lib/cmake/Fcitx5ModuleClipboard/Fcitx5ModuleClipboardConfigVersion.cmake
 lib/cmake/Fcitx5ModuleDBus/Fcitx5ModuleDBusConfig.cmake
 lib/cmake/Fcitx5ModuleDBus/Fcitx5ModuleDBusConfigVersion.cmake
+lib/cmake/Fcitx5ModuleEmoji/Fcitx5ModuleEmojiConfig.cmake
+lib/cmake/Fcitx5ModuleEmoji/Fcitx5ModuleEmojiConfigVersion.cmake
 lib/cmake/Fcitx5ModuleNotificationItem/Fcitx5ModuleNotificationItemConfig.cmake
 lib/cmake/Fcitx5ModuleNotificationItem/Fcitx5ModuleNotificationItemConfigVersion.cmake
 lib/cmake/Fcitx5ModuleNotifications/Fcitx5ModuleNotificationsConfig.cmake
