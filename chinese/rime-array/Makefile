@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	rime-array
-DISTVERSION=	g20200902
+DISTVERSION=	g20210824
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Array input schema support
 
 LICENSE=	GPLv3
@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	cc6f15985090b7c1d57b963874d97e1338474e70
+GH_TAGNAME=	d10f2f8b2aec7c7e736ace01e8a399e5ae5e7c3a
 
 NO_ARCH=	yes
 
