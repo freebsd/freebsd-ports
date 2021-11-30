@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	fcitx5-lua
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.5
 CATEGORIES=	textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Lua support for Fcitx5
 
 LICENSE=	LGPL21+
