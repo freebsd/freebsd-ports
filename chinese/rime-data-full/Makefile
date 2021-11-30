@@ -4,6 +4,7 @@ PORTNAME=	rime-data-full
 PORTVERSION=	g20211129
 CATEGORIES=	chinese textproc
 
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime data files full set
 
 LICENSE=	GPLv3 LGPL3 APACHE20
