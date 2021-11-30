@@ -8,7 +8,7 @@ lib/girepository-1.0/FcitxG-1.0.typelib
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx5.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-fcitx5.so
 lib/libFcitx5GClient.so
-lib/libFcitx5GClient.so.1
+lib/libFcitx5GClient.so.2
 lib/libFcitx5GClient.so.%%VER%%
 libdata/pkgconfig/Fcitx5GClient.pc
 share/gir-1.0/FcitxG-1.0.gir
