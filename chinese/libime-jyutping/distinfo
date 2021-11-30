@@ -1,7 +1,7 @@
-TIMESTAMP = 1610441224
+TIMESTAMP = 1637881928
 SHA256 (libime-jyutping/jyutping-dict-20180104.tar.xz) = e3a5b13edb8efa2f764245a3232f99ba7e7670e22b8cbe666a4fffa84b35f35b
 SIZE (libime-jyutping/jyutping-dict-20180104.tar.xz) = 1987632
 SHA256 (libime-jyutping/jyutping-model-20180103.tar.xz) = 4f07229e2080f0ee30ce51b016409f260af82a58dd406a01ea5981b59ca87071
 SIZE (libime-jyutping/jyutping-model-20180103.tar.xz) = 11006680
-SHA256 (libime-jyutping/fcitx-libime-jyutping-1.0.2_GH0.tar.gz) = 4ff3793fbb1412e51885f68f8fad0d2ad9367dcd0ef0d4fdf8aec0bab963b3c9
-SIZE (libime-jyutping/fcitx-libime-jyutping-1.0.2_GH0.tar.gz) = 45884
+SHA256 (libime-jyutping/fcitx-libime-jyutping-1.0.3_GH0.tar.gz) = f3499dd8f343f96be0774c7fa17cfdc208553bfd0c905e532c44c8b7430aa9dc
+SIZE (libime-jyutping/fcitx-libime-jyutping-1.0.3_GH0.tar.gz) = 45582
