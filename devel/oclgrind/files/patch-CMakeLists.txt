@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-01-22 12:14:21 UTC
+--- CMakeLists.txt.orig	2021-10-18 02:36:25 UTC
 +++ CMakeLists.txt
-@@ -151,7 +151,7 @@ endif()
+@@ -191,7 +191,7 @@ endif()
  # Check for library directory suffixes
  set(_LIBDIR_SUFFIX "")
  get_property(USING_LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
@@ -9,3 +9,12 @@
    set(_LIBDIR_SUFFIX "64")
  endif()
  set(LIBDIR_SUFFIX "${_LIBDIR_SUFFIX}"
+@@ -251,7 +251,7 @@ add_library(oclgrind ${CORE_LIB_TYPE}
+   src/plugins/Uninitialized.cpp)
+ target_link_libraries(oclgrind
+   PRIVATE ${CORE_EXTRA_LIBS} ${CLANG_LIBS}
+-  PUBLIC ${LLVM_LIBS})
++  PUBLIC ${LLVM_LIBS} pthread)
+ 
+ if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+   target_link_libraries(oclgrind PRIVATE Version)

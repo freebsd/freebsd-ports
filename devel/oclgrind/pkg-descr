@@ -2,11 +2,11 @@ Oclgrind
 
 SPIR interpreter and virtual OpenCL device simulator
 
-Oclgrind implements a virtual OpenCL device simulator, including an OpenCL 
-runtime with ICD support. The goal is to provide a platform for creating tools 
-to aid OpenCL development. In particular, this project currently implements 
-utilities for debugging memory access errors, detecting data-races and barrier 
-divergence, collecting instruction histograms, and for interactive OpenCL 
+Oclgrind implements a virtual OpenCL device simulator, including an OpenCL
+runtime with ICD support. The goal is to provide a platform for creating tools
+to aid OpenCL development. In particular, this project currently implements
+utilities for debugging memory access errors, detecting data-races and barrier
+divergence, collecting instruction histograms, and for interactive OpenCL
 kernel debugging. The simulator is built on an interpreter for LLVM IR.
 
 WWW: https://github.com/jrprice/Oclgrind
