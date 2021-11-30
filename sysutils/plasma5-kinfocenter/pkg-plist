@@ -587,10 +587,14 @@ share/locale/kn/LC_MESSAGES/kcmusb.mo
 share/locale/kn/LC_MESSAGES/kcmview1394.mo
 share/locale/kn/LC_MESSAGES/kinfocenter.mo
 share/locale/ko/LC_MESSAGES/kcm_about-distro.mo
+share/locale/ko/LC_MESSAGES/kcm_cpu.mo
 share/locale/ko/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/ko/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ko/LC_MESSAGES/kcm_memory.mo
 share/locale/ko/LC_MESSAGES/kcm_nic.mo
 share/locale/ko/LC_MESSAGES/kcm_pci.mo
+share/locale/ko/LC_MESSAGES/kcm_vulkan.mo
+share/locale/ko/LC_MESSAGES/kcm_wayland.mo
 share/locale/ko/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ko/LC_MESSAGES/kcminfo.mo
 share/locale/ko/LC_MESSAGES/kcmopengl.mo

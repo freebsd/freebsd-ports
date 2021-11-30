@@ -3581,6 +3581,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasmaactivitymanager.mo
+share/plasma/desktoptheme/default/icons/touchpad.svg
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ApplicationsPage.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/BasePage.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/DropAreaGridView.qml
@@ -3595,6 +3596,9 @@ share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/NormalPage.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/PlacesPage.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/VerticalStackView.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/qmldir
+share/plasma/plasmoids/touchpad/contents/ui/touchpad.qml
+share/plasma/plasmoids/touchpad/metadata.desktop
+share/plasma/plasmoids/touchpad/metadata.json
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js
 share/qlogging-categories5/kcm_kded.categories

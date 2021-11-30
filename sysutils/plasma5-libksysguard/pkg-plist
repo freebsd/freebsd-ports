@@ -399,6 +399,7 @@ share/locale/kn/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ko/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/ko/LC_MESSAGES/ksgrd.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo

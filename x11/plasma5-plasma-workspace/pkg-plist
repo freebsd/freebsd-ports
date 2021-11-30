@@ -2648,8 +2648,14 @@ share/locale/hsb/LC_MESSAGES/libkicker.mo
 share/locale/hsb/LC_MESSAGES/libkworkspace.mo
 share/locale/hsb/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.calendar.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.clipboard.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.digitalclock.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.lock_logout.mo
+share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.notifications.mo
 share/locale/hsb/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/hsb/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/hsb/LC_MESSAGES/plasma_runner_powerdevil.mo

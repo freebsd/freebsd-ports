@@ -937,6 +937,7 @@ share/locale/hu/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/hu/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/hu/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/hu/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/hu/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/hu/LC_MESSAGES/kcmkwincommon.mo
 share/locale/hu/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/hu/LC_MESSAGES/kcmkwinscreenedges.mo
