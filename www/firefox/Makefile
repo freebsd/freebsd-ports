@@ -27,7 +27,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		zip:archivers/zip \
 		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
 		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \
-		${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/clang/${LLVM_DEFAULT}.0.0/lib/wasi/libclang_rt.builtins-wasm32.a:devel/wasi-compiler-rt${LLVM_DEFAULT}
+		${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/clang/${LLVM_VERSION}/lib/wasi/libclang_rt.builtins-wasm32.a:devel/wasi-compiler-rt${LLVM_DEFAULT}
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr

@@ -102,6 +102,7 @@ MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}"
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5) unless LTO is enabled
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
 LLVM_DEFAULT=	12 # chase bundled LLVM in lang/rust for LTO
+LLVM_VERSION=	12.0.1 # keep in sync with devel/wasi-compiler-rt${LLVM_DEFAULT}
 .endif
 # Require newer Clang than what's in base system unless user opted out
 . if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
