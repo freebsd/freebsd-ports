@@ -4,7 +4,7 @@ PORTNAME=	mediawiki
 PORTVERSION=	1.37.0
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
-PKGNAMESUFFIX=	136${PHP_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	137${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Wiki engine used by Wikipedia
