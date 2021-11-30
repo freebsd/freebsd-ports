@@ -235,6 +235,7 @@
     SUBDIR += gnugrep
     SUBDIR += go-md2man
     SUBDIR += go-yq
+    SUBDIR += gojq
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += google-translate-cli
