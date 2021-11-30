@@ -6,6 +6,8 @@ lib/libFcitx5Migrator.so.5
 lib/libFcitx5Migrator.so.%%VER%%
 %%QT_PLUGINDIR%%/kcms/kcm_fcitx5.so
 share/applications/kbd-layout-viewer5.desktop
+share/applications/org.fcitx.fcitx5-config-qt.desktop
+share/applications/org.fcitx.fcitx5-migrator.desktop
 share/kpackage/kcms/org.fcitx.fcitx5.kcm/contents/ui/AddIMPage.qml
 share/kpackage/kcms/org.fcitx.fcitx5.kcm/contents/ui/AddonPage.qml
 share/kpackage/kcms/org.fcitx.fcitx5.kcm/contents/ui/BoolOption.qml
@@ -34,6 +36,7 @@ share/locale/da/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/da/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/de/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/de/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
+share/locale/es/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/he/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/he/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/ja/LC_MESSAGES/fcitx5-configtool.mo
