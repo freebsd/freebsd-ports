@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	pkgcache
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -35,6 +35,6 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-fs>0:sysutils/R-cran-fs
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
