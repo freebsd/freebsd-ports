@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	rime-combo-pinyin
-DISTVERSION=	g20210131
+DISTVERSION=	g20211108
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Combo Pinyin schema support
 
 LICENSE=	GPLv3
@@ -24,7 +24,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	a84065a86b272c76215215bd6f03c506b6e7097c
+GH_TAGNAME=	c9d8aca2fbc50ccab419d54cb9aaded362c1029d
 
 NO_ARCH=	yes
 
