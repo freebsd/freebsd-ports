@@ -1,38 +1,25 @@
 #!/bin/sh
-# Requires: pkg install portfmt
+# Requires: pkg install portfmt yq
 # Run in lang/rust
 set -eu
 
-get_commit() {
-	awk '
-$1 == "[pkg.rustc]" { pkg_rustc = 1 }
-pkg_rustc && $1 == "git_commit_hash" {
-	print substr($3, 2, 10)
-	exit
-}'
-}
-
 fetch -qo /tmp/channel-rust-stable.toml https://dev-static.rust-lang.org/dist/channel-rust-stable.toml
-version=$(</tmp/channel-rust-stable.toml awk '
-$1 == "[pkg.rustc]" { pkg_rustc = 1 }
-pkg_rustc && $1 == "version" {
-	print substr($3, 2, length($3) - 1)
-	exit
-}')
-new_commit=$(</tmp/channel-rust-stable.toml get_commit)
+version=$(</tmp/channel-rust-stable.toml tomlq -r '.pkg.rustc.version | split(" ")[0]')
+new_commit=$(</tmp/channel-rust-stable.toml tomlq -r '.pkg.rustc.git_commit_hash')
 rm /tmp/channel-rust-stable.toml
 
-fetch -qo - https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/stage0.txt | awk '
-$1 == "date:" { date = $2 }
-$1 == "rustc:" { rustc = $2 }
-END { printf("BOOTSTRAPS_DATE=%s\nRUST_BOOTSTRAP_VERSION=%s\n", date, rustc) }' | portedit merge -i .
+fetch -qo - https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/stage0.json | jq -r '
+	"BOOTSTRAPS_DATE=\(.compiler.date)",
+	"RUST_BOOTSTRAP_VERSION=\(.compiler.version)"
+' | portedit merge -i .
 
 sed -i '' -E -e "s,(\\$\\{RUST_DEFAULT\\}>=).*(:lang/\\$\\{RUST_DEFAULT\\}),\\1${version}\\2," \
 	../../Mk/Uses/cargo.mk ../../Mk/bsd.gecko.mk
 
 portedit set-version -i "${version}" .
-make makesum
 portedit set-version -i "${version}" ../rust-bootstrap
+
+make makesum
 make -C ../rust-bootstrap makesum
 
 echo "lang/rust: Update to ${version}
