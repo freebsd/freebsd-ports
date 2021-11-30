@@ -1,3 +1,3 @@
-TIMESTAMP = 1636232966
-SHA256 (elasticsearch-curator-5.8.4.tar.gz) = 806232378d5ef91733b889595fb9d88d923e906cf8d8e8801a4e556c7ed3d32a
-SIZE (elasticsearch-curator-5.8.4.tar.gz) = 235817
+TIMESTAMP = 1638286828
+SHA256 (elastic-curator-v5.8.4_GH0.tar.gz) = 20f785033e020b6563f201ed8635cef6239c99903520e023f7f6a9d4222f92d5
+SIZE (elastic-curator-v5.8.4_GH0.tar.gz) = 240852
