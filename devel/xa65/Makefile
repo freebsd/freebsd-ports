@@ -1,7 +1,7 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
 
 PORTNAME=	xa65
-PORTVERSION=	2.3.11
+PORTVERSION=	2.3.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 DISTNAME=	xa-${PORTVERSION}
