@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	rime-terra-pinyin
-DISTVERSION=	g20210201
+DISTVERSION=	g20210805
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Terra Pinyin schema support
 
 LICENSE=	LGPL3
@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	ce7b9249612f575d2f43d51fcacd31d1b4e0ef1b
+GH_TAGNAME=	aefaf372b25febbf4d5f9443bd284d3dd6876085
 
 NO_ARCH=	yes
 
