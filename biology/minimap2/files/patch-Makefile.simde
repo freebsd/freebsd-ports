@@ -1,0 +1,82 @@
+--- Makefile.simde.orig	2021-11-18 22:11:48 UTC
++++ Makefile.simde
+@@ -1,13 +1,26 @@
+-CFLAGS=		-g -Wall -O2 -Wc++-compat #-Wextra
+-CPPFLAGS=	-DHAVE_KALLOC -DUSE_SIMDE -DSIMDE_ENABLE_NATIVE_ALIASES
+-INCLUDES=	-Ilib/simde
+-OBJS=		kthread.o kalloc.o misc.o bseq.o sketch.o sdust.o options.o index.o lchain.o align.o hit.o map.o format.o pe.o seed.o esterr.o splitidx.o \
+-			ksw2_extz2_simde.o ksw2_extd2_simde.o ksw2_exts2_simde.o ksw2_ll_simde.o
++
++# Makefile patches rejected by upstream
++
++CFLAGS?=	-g -Wall -O2
++CFLAGS+=	-Wc++-compat -DUSE_SIMDE -DSIMDE_ENABLE_NATIVE_ALIASES -D__SSE2__
++CPPFLAGS?=	-DHAVE_KALLOC
++OBJS=		kthread.o kalloc.o misc.o bseq.o sketch.o sdust.o options.o \
++		index.o lchain.o align.o hit.o map.o format.o pe.o seed.o \
++		esterr.o splitidx.o ksw2_extz2_simde.o ksw2_extd2_simde.o \
++		ksw2_exts2_simde.o ksw2_ll_simde.o
+ PROG=		minimap2
+ PROG_EXTRA=	sdust minimap2-lite
+ LIBS=		-lm -lz -lpthread
+ 
++PREFIX?=	/usr/local
++MAN1DIR?=	${PREFIX}/man/man1
++DATADIR?=	${PREFIX}/share/minimap2
+ 
++MKDIR?=		mkdir
++CP?=		cp	
++INSTALL?=	install
++STRIP?=		strip
++
+ ifneq ($(arm_neon),) # if arm_neon is defined
+ ifeq ($(aarch64),)   #if aarch64 is not defined
+ 	CFLAGS+=-D_FILE_OFFSET_BITS=64 -mfpu=neon -fsigned-char
+@@ -26,7 +39,7 @@ ifneq ($(tsan),)
+ 	LIBS+=-fsanitize=thread
+ endif
+ 
+-.PHONY:all extra clean depend
++.PHONY:all extra install install-strip clean depend
+ .SUFFIXES:.c .o
+ 
+ .c.o:
+@@ -49,18 +62,34 @@ sdust:sdust.c kalloc.o kalloc.h kdq.h kvec.h kseq.h ke
+ 		$(CC) -D_SDUST_MAIN $(CFLAGS) $< kalloc.o -o $@ -lz
+ 
+ ksw2_ll_simde.o:ksw2_ll_sse.c ksw2.h kalloc.h
+-		$(CC) -c $(CFLAGS) -msse2 $(CPPFLAGS) $(INCLUDES) $< -o $@
++		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
+ 
+ ksw2_extz2_simde.o:ksw2_extz2_sse.c ksw2.h kalloc.h
+-		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
++		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
+ 
+ ksw2_extd2_simde.o:ksw2_extd2_sse.c ksw2.h kalloc.h
+-		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
++		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
+ 
+ ksw2_exts2_simde.o:ksw2_exts2_sse.c ksw2.h kalloc.h
+-		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
++		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
+ 
+ # other non-file targets
++
++
++install: all
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${MKDIR} -p ${DESTDIR}${MAN1DIR}
++	${MKDIR} -p ${DESTDIR}${DATADIR}
++	${INSTALL} -c minimap2 ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c minimap2-lite ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c sdust ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c minimap2.1 ${DESTDIR}${MAN1DIR}
++	${CP} -R test ${DESTDIR}${DATADIR}
++
++install-strip: install
++	${STRIP} ${DESTDIR}${PREFIX}/bin/minimap2
++	${STRIP} ${DESTDIR}${PREFIX}/bin/minimap2-lite
++	${STRIP} ${DESTDIR}${PREFIX}/bin/sdust
+ 
+ clean:
+ 		rm -fr gmon.out *.o a.out $(PROG) $(PROG_EXTRA) *~ *.a *.dSYM build dist mappy*.so mappy.c python/mappy.c mappy.egg*
