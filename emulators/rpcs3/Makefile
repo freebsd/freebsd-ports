@@ -82,7 +82,12 @@ post-patch:
 
 post-install:
 .if exists(/usr/bin/elfctl)
+. if 0
 	elfctl -e +noaslr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+. else
+# FreeBSD 12.2 lacks https://cgit.freebsd.org/src/commit/?id=f56d7f838f5b
+	elfctl -e +aslr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+. endif
 .endif
 
 .include <bsd.port.pre.mk>
