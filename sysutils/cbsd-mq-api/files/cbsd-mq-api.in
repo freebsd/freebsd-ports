@@ -20,6 +20,8 @@ cbsd_mq_api_config=${cbsd_mq_api_config-"%%PREFIX%%/etc/cbsd-mq-api.json"}
 required_files="${cbsd_mq_api_config}"
 
 cbsd_mq_api_args=${cbsd_mq_api_args-"-config ${cbsd_mq_api_config}"}
+# ACL flags sample:
+#cbsd_mq_api_flags="-listen 127.0.0.1:65531 -allowlist %%PREFIX%%/etc/cbsd-mq-api.allow"
 cbsd_mq_api_flags=${cbsd_mq_api_flags="-listen 127.0.0.1:65531"}
 
 load_rc_config ${name}
