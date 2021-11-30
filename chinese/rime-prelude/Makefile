@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	rime-prelude
-DISTVERSION=	g20210208
+DISTVERSION=	g20211023
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Essential files for building up your Rime configuration
 
 LICENSE=	LGPL3
@@ -15,7 +15,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	bc9ec4cad9fcaf3e300be9bbf2313104e75b5f25
+GH_TAGNAME=	4001edf96791bbb5663573ba79ba4b1e9c0b8626
 
 NO_BUILD=	yes
 NO_ARCH=	yes
