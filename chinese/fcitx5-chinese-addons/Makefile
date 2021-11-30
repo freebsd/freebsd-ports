@@ -1,15 +1,14 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	fcitx5-chinese-addons
-DISTVERSION=	5.0.3
-PORTREVISION=	1
+DISTVERSION=	5.0.8
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:py_stroke,py_table
 DISTFILES=	${PY_STROKE_TAR}:py_stroke \
 		${PY_TABLE_TAR}:py_table
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Pinyin and table input method support for Fcitx5
 
 LICENSE=	LGPL21+
