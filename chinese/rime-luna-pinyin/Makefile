@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	rime-luna-pinyin
-DISTVERSION=	g20210303
+DISTVERSION=	g20210805
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Luna Pinyin schema support
 
 LICENSE=	LGPL3
@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	c7c380d4da10d1aba538d084016147bd5e1997fa
+GH_TAGNAME=	6e677427764b542313858eaed22c2951d8ec22fe
 
 NO_ARCH=	yes
 
