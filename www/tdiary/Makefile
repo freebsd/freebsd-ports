@@ -1,7 +1,7 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
 
 PORTNAME=	tdiary
-PORTVERSION=	5.1.7
+DISTVERSION=	5.2.0
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -52,7 +52,7 @@ HTML=		${DOCFILES:S/$/.html/}
 MD=		${DOCFILES:S/$/.md/}
 
 #TDIARY_LANG	ja:Japanese en:English
-.if !defined(TDIARY_LANG) || ( defined(TDIARY_LANG) && ${TDIARY_LANG} != ja )
+.if !defined(TDIARY_LANG) || (defined(TDIARY_LANG) && ${TDIARY_LANG} != ja)
 TDIARY_LANG=	en
 .endif
 

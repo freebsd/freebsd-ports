@@ -1900,7 +1900,6 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/views/header.rhtml
 %%WWWDIR%%/views/latest.rhtml
 %%WWWDIR%%/views/mail.rtxt
-%%WWWDIR%%/views/mail.rtxt.en
 %%WWWDIR%%/views/month.rhtml
 %%WWWDIR%%/views/plugin_error.rhtml
 %%WWWDIR%%/views/preview.rhtml
