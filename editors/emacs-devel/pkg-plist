@@ -2325,6 +2325,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/jsonrpc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/kermit.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/kermit.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/keymap.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/keymap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/kmacro.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/kmacro.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/burmese.el.gz
@@ -3639,6 +3641,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/common-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.el.gz
@@ -4085,6 +4089,18 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gnutls.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gtkutil.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gtkutil.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haiku.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haiku_io.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haiku_support.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikufns.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikufont.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikugui.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikuimage.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikumenu.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikuselect.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikuselect.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikuterm.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/haikuterm.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/hbfont.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/image.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/indent.c
