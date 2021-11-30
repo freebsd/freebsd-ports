@@ -156,7 +156,7 @@ openssh_checks()
       fi
 	fi
 
-	run_rc_command keygen
+	openssh_keygen
 	openssh_configtest
 }
 
