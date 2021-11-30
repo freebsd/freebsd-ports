@@ -16605,3 +16605,5 @@ sysutils/cfengine-masterfiles315||2021-11-21|Has expired: Expire one year after 
 games/linux-unigine-heaven|benchmarks/linux-unigine-heaven|2021-11-21|Moved to a more appropriate category
 games/linux-unigine-valley|benchmarks/linux-unigine-valley|2021-11-21|Moved to a more appropriate category
 devel/electron12|devel/electron13|2021-11-24|VSCode update requires a newer major version
+mail/gmime24-sharp||2021-11-30|Has expired: Use mail/gmime26 or mail/gmime30
+mail/gmime24||2021-11-30|Has expired: Use mail/gmime26 or mail/gmime30

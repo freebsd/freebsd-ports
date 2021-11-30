@@ -135,8 +135,6 @@
     SUBDIR += getmail6
     SUBDIR += gmime2
     SUBDIR += gmime2-sharp
-    SUBDIR += gmime24
-    SUBDIR += gmime24-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
     SUBDIR += gmime30
