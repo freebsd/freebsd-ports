@@ -94,6 +94,7 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/image_rawdisk.sh
 %%DATADIR%%/image_tar.sh
 %%DATADIR%%/image_usb.sh
+%%DATADIR%%/image_zfs.sh
 %%DATADIR%%/image_zsnapshot.sh
 %%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
