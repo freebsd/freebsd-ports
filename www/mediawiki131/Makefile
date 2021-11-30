@@ -11,7 +11,7 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki13[5-6]
+CONFLICTS=	mediawiki13[5-7]
 
 DEPRECATED=	Upstream EOL
 EXPIRATION_DATE=2021-12-31
