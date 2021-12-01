@@ -14,10 +14,13 @@ Note (1):
 - ESPECIALLY RELEVANT FOR USERS OF THE BINARY PACKAGE -
 The FreeBSD binary package is built for use with Sendmail, and it will
 not work properly with alternative MTAs such as Exim or Postfix.
-  In order for Mailman to work with an alternative mailer,
-the port must be installed from source, with proper options configured,
-or from a package built in poudriere (which is a separate port in
-ports-mgmt) with adapted options. (poudriere options -cn mail/mailman)
+  In order for Mailman to work with an alternative mailer, please use
+mailman-exim4 or mailman-postfix instead, or
+mailman-exim4-with-htdig or mailman-postfix-with-htdig.
+  For use with other mailers (Courier, OpenSMTPd), the port must be installed
+from source, with proper options configured, or from a package built in
+poudriere (which is a separate port in ports-mgmt) with adapted options.
+(poudriere options -cn mail/mailman)
 
 - FOR USERS OF A PORT BUILT FROM SOURCE -
 If you use an alternate MTA (meaning "not Sendmail"), you MUST
