@@ -1,6 +1,7 @@
 PORTNAME=	bwa
 PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	biology
 
 PATCH_SITES=	https://github.com/lh3/bwa/commit/
@@ -11,16 +12,12 @@ COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
 
-# From 0.7.9a: Recheck for 0.7.17.
-BROKEN_aarch64=		fails to compile: invalid conversion between vector type and integer type
-BROKEN_armv6=		fails to compile: invalid conversion between vector type and integer type
-BROKEN_armv7=		fails to compile: invalid conversion between vector type and integer type
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
-BROKEN_powerpc64=	fails to compile: ksw.c: emmintrin.h: No such file or directory
-BROKEN_riscv64=		fails to compile: invalid conversion between vector type and integer type
 
-USES=		gmake perl5 shebangfix tar:bzip2
+BUILD_DEPENDS=	simde>0:devel/simde
+
+USES=		gmake localbase perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
 USE_PERL5=	run
 
