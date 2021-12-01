@@ -1,0 +1,23 @@
+wvkbd project aims to deliver a minimal but practically usable
+implementation of a wlroots on-screen keyboard in legible C. This will
+only be a keyboard, not a feedback buzzer, led blinker, or anything
+that requires more than what's needed to input text quickly. The end
+product should be a static codebase that can be patched to add new
+features.
+
+Features:
+- Typing, modifier locking, layout switching
+- Positive visual feedback on key presses
+- Custom layouts and underlying keymaps
+- On-the-fly layout and keymap switching
+- Custom color schemes
+- Proper font drawing
+- Intuitive layouts
+- International layouts (cyrillic, arabic)
+- Support for 'Copy' keys which are not on the keymap
+- Emoji support
+- Compose key for character variants (e.g. diacritics)
+- Show/hide keyboard on signals (SIGUSR1 = hide, SIGUSR2 = show)
+- Automatic portrait/landscape detection and subsequent layout switching
+
+WWW: https://github.com/jjsullivan5196/wvkbd
