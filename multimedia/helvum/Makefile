@@ -1,5 +1,5 @@
 PORTNAME=	helvum
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -20,8 +20,9 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gtk40
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	ryuukyu
-GL_COMMIT=	958fa1523034d7fe9f8f3b858cbdc3dfd93edc3e
-SHEBANG_FILES=	build-aux/meson_post_install.py
+GL_COMMIT=	c1ec56e115b4992969514c5c5d0950ae4170913a
+SHEBANG_FILES=	build-aux/cargo.sh build-aux/meson_post_install.py
+bash_CMD=	${SH}
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME}
 
