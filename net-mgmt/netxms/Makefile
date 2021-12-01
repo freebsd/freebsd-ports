@@ -3,9 +3,9 @@
 PORTNAME=	netxms
 PORTVERSION=	2.2.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.netxms.org/download/releases/2.2/${PORTVERSION}/
+MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/${PORTVERSION}/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring system
 
 LICENSE=	GPLv2 LGPL21
