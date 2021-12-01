@@ -1354,6 +1354,7 @@
     SUBDIR += yubikey-manager-qt
     SUBDIR += yubikey-personalization-gui
     SUBDIR += yubioath-desktop
+    SUBDIR += zaproxy
     SUBDIR += zebedee
     SUBDIR += zeek
     SUBDIR += zeronet
