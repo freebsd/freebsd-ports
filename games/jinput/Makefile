@@ -8,9 +8,6 @@ COMMENT=	Java Game Controller API
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_armv6=	fails to compile
-BROKEN_armv7=	fails to compile
-
 BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 		mvn:devel/maven
 RUN_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils
