@@ -1,5 +1,5 @@
 PORTNAME=	jimtcl
-PORTVERSION=	0.80
+PORTVERSION=	0.81
 CATEGORIES=	lang tcl
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -29,6 +29,8 @@ PORTDOCS=		*
 TEST_TARGET=		test
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jimsh
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/jimsh \
+		${STAGEDIR}${PREFIX}/lib/libjim.so.${PORTVERSION}
 
 .include <bsd.port.mk>

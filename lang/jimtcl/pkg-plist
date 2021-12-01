@@ -1,5 +1,6 @@
 bin/build-jim-ext
 bin/jimsh
+bin/jimdb
 include/jim-config.h
 include/jim-eventloop.h
 include/jim-signal.h
