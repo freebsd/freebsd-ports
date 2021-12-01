@@ -1,3 +1,51 @@
+  <vuln vid="0d6efbe3-52d9-11ec-9472-e3667ed6088e">
+	  <topic>mailman &lt; 2.1.38 -- CSRF vulnerability of list mod or member against list admin page</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.38</lt></range>
+      </package>
+      <package>
+	<name>mailman-exim4</name>
+	<range><lt>2.1.38</lt></range>
+      </package>
+      <package>
+	<name>mailman-exim4-with-htdig</name>
+	<range><lt>2.1.38</lt></range>
+      </package>
+      <package>
+	<name>mailman-postfix</name>
+	<range><lt>2.1.38</lt></range>
+      </package>
+      <package>
+	<name>mailman-postfix-with-htdig</name>
+	<range><lt>2.1.38</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.38</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://bugs.launchpad.net/mailman/+bug/1952384">
+	  <p>A list moderator or list member can potentially carry out a CSRF attack
+	    by getting a list admin to visit a crafted web page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44227</cvename>
+      <url>https://bugs.launchpad.net/mailman/+bug/1952384</url>
+      <url>https://www.mail-archive.com/mailman-users@python.org/msg73979.html</url>
+    </references>
+    <dates>
+      <discovery>2021-11-25</discovery>
+      <entry>2021-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4548ec97-4d38-11ec-a539-0800270512f4">
     <topic>rubygem-cgi -- cookie prefix spoofing in CGI::Cookie.parse</topic>
     <affects>
