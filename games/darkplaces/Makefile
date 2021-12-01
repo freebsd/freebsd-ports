@@ -1,34 +1,31 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	darkplaces
-PORTVERSION=	20140513
-PORTREVISION=	5
+DISTVERSION=	20180412beta1
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/twilight/darkplaces/files/
-DISTNAME=	${PORTNAME}engine${PORTVERSION}
+DISTNAME=	${PORTNAME}engine${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake engine modification
+
+LICENSE=	GPLv2+
 
 # Loads libraries at run-time, thus RUN_DEPENDS.
 RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:audio/libvorbis
 
-USES=		compiler:c11 gmake jpeg xorg zip:infozip
-USE_XORG=	xxf86dga xpm
-MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}" DP_LINK_JPEG=dlopen
+USES=		compiler:c11 gmake jpeg zip
+MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKEFILE=	makefile
 ALL_TARGET=	#
 
 OPTIONS_DEFINE=	DOCS SDL1
-OPTIONS_DEFINE_i386=	SSE
-OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_MULTI=	MODULE
 MODULE_DESC=	Components
 OPTIONS_MULTI_MODULE=	GLX SDL SERVER
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULE}
-OPTIONS_DEFAULT_amd64=	SSE
 OPTIONS_SUB=	yes
 
 GLX_DESC=	Build GLX client
@@ -36,8 +33,10 @@ SDL_DESC=	Build SDL client
 SDL1_DESC=	Use SDL v1.2 instead of v2.0
 SERVER_DESC=	Build dedicated server
 
-.include "${.CURDIR}/../quake-data/Makefile.include"
+GLX_USE=	XORG=x11,xext,xpm,xxf86vm
+SDL_USE=	XORG=x11
 
+.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDL}
@@ -67,30 +66,16 @@ USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 . else
 USE_SDL=	sdl2
-ALL_TARGET+=	sdl2-release
+ALL_TARGET+=	sdl-release
 . endif
 EXE_TARGETS+=	${PORTNAME}-sdl
 DESKTOP_ENTRIES+="Darkplaces (SDL client)" "Quake engine modification (SDL)" \
 		darkplaces darkplaces-sdl "Game;Shooter;" false
 .endif
 
-.if ! ${PORT_OPTIONS:MSSE}
-CFLAGS+=	-DNO_SSE=1
-.endif
-
 post-extract:
-	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${WRKDIR}/${PORTNAME}enginesource${PORTVERSION}.zip \
-		-d ${WRKDIR}
-
-post-patch:
-	@${REINPLACE_CMD} 's,/usr/X11R6,${LOCALBASE},g' \
-		${WRKSRC}/makefile \
-		${WRKSRC}/makefile.inc \
-		${WRKSRC}/BSDmakefile
-.if ! ${PORT_OPTIONS:MSSE}
-	@${REINPLACE_CMD} '/^CFLAGS_SSE/ d' ${WRKSRC}/makefile.inc
-.endif
+	@${UNZIP_NATIVE_CMD} ${EXTRACT_BEFORE_ARGS} -d ${WRKDIR} \
+		${WRKDIR}/${PORTNAME}enginesource${DISTVERSION}.zip
 
 do-install:
 	${INSTALL_PROGRAM} ${EXE_TARGETS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin

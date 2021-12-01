@@ -1,0 +1,20 @@
+--- makefile.orig	2016-07-18 03:23:15 UTC
++++ makefile
+@@ -31,7 +31,7 @@ ifeq ($(DP_MAKE_TARGET), mingw)
+ 	DP_SSE:=1
+ else
+ 	DP_MACHINE:=$(shell uname -m)
+-	ifeq ($(DP_MACHINE),x86_64)
++	ifeq ($(DP_MACHINE),amd64)
+ 		DP_SSE:=1
+ 	else
+ 	ifeq ($(DP_MACHINE),i686)
+@@ -64,7 +64,7 @@ endif
+ ifeq ($(DP_MACHINE),x86_64)
+ 	UNIX_X11LIBPATH:=/usr/X11R6/lib64
+ else
+-	UNIX_X11LIBPATH:=/usr/X11R6/lib
++	UNIX_X11LIBPATH:=$(LOCALBASE)/lib
+ endif
+ 
+ # default targets
