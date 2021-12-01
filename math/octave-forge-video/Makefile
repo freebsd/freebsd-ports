@@ -1,7 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-video
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
