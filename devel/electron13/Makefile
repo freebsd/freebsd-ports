@@ -1,6 +1,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
@@ -89,7 +90,7 @@ WRKSRC_SUBDIR=	src
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
 		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}
 
-OPTIONS_DEFINE=		CUPS DEBUG DIST DRIVER KERBEROS
+OPTIONS_DEFINE=		CUPS DEBUG DIST DRIVER KERBEROS LTO
 OPTIONS_DEFAULT=	CUPS DRIVER KERBEROS ALSA
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
@@ -111,6 +112,9 @@ DIST_IMPLIES=		DRIVER
 DRIVER_ALL_TARGET=	chromedriver
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
 KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
+LTO_VARS=		GN_ARGS+=use_thin_lto=true \
+			GN_ARGS+=thin_lto_enable_optimizations=true
+LTO_VARS_OFF=		GN_ARGS+=use_thin_lto=false
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true
 PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
