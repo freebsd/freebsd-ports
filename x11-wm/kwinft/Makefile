@@ -1,21 +1,9 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.23.0
-PORTREVISION=	1
+DISTVERSION=	5.23.1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	4d47897f7cc5.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/134
-PATCHFILES+=	ac7b3268dbc3.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/134
-PATCHFILES+=	afb07b244c28.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/141
-PATCHFILES+=	0b5a9ab86b18.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/147
-PATCHFILES+=	76fb8d21c0c2.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/147
-PATCHFILES+=	818283739045.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/147
-PATCHFILES+=	c772e2405044.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/147
-PATCHFILES+=	8b49dacb98d3.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/149
-PATCHFILES+=	140d7d209185.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/151
-PATCHFILES+=	9aa21acfd9fa.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/151
-PATCHFILES+=	ee7f9980ba98.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/151
 PATCHFILES+=	0499e4cd8162.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/issues/209
 PATCHFILES+=	e80b91d5bc45.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/issues/210
 
@@ -55,7 +43,7 @@ USE_QT=		qmake_build buildtools_build core dbus declarative gui \
 		multimedia_run quickcontrols2_run widgets x11extras
 USE_XORG=	x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
-GL_COMMIT=	13be8a5795369b6744a5b4a1cb80dc781144cab8
+GL_COMMIT=	0f52a582b9126f223ad36ddff108824f094073d1
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, epoll-shim, glib, intl, Qt5*, KF5*
 
