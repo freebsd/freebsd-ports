@@ -9,7 +9,7 @@ COMMENT=	Multiple View Geometry (MVG) library
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values correspond to other architectures, plus "generic" is broken
 
 #HPP_DEPENDS=	cereal>0:devel/cereal # external cereal is currently broken, see https://github.com/openMVG/openMVG/issues/1963
