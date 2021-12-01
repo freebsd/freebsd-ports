@@ -249,15 +249,19 @@ GCC_EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CPPFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-system-boost --with-system-vigra
-BUILD_DEPENDS+=		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
-			${LOCALBASE}/bin/vigra-config:graphics/vigra
+CONFIGURE_ARGS+=	--with-system-boost
+BUILD_DEPENDS+=		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+. if ${COMPILER_VERSION} < 130
+CONFIGURE_ARGS+=	--with-system-vigra
+BUILD_DEPENDS+=		${LOCALBASE}/bin/vigra-config:graphics/vigra
+. endif
 .endif
 
 # These extra distfiles are needed to use the bundled versions of
 # boost and vigra for compatiblity with gcc.  Also include them
 # for the makesum target so they are included in distinfo
-.if ${CHOSEN_COMPILER_TYPE} == gcc || make(makesum) || make(distclean)
+.if ${CHOSEN_COMPILER_TYPE} == gcc || ${COMPILER_VERSION} >= 130 || \
+	make(makesum) || make(distclean)
 DISTFILES+=		${GCC_EXTRA_DISTFILES:C/.*/&:sf/g}
 .endif
 
@@ -369,7 +373,7 @@ do-extract-SDK-on:
 
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
-.if ${CHOSEN_COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc || ${COMPILER_VERSION} >= 130
 .  for f in ${GCC_EXTRA_DISTFILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
 .  endfor
