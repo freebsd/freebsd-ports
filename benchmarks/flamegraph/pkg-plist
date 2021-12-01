@@ -6,6 +6,7 @@ bin/pkgsplit-perf.pl
 bin/range-perf.pl
 bin/stackcollapse-aix.pl
 bin/stackcollapse-bpftrace.pl
+bin/stackcollapse-chrome-tracing.py
 bin/stackcollapse-elfutils.pl
 bin/stackcollapse-gdb.pl
 bin/stackcollapse-go.pl
@@ -13,10 +14,13 @@ bin/stackcollapse-instruments.pl
 bin/stackcollapse-java-exceptions.pl
 bin/stackcollapse-jstack.pl
 bin/stackcollapse-ljp.awk
+bin/stackcollapse-perf-sched.awk
 bin/stackcollapse-perf.pl
 bin/stackcollapse-pmc.pl
 bin/stackcollapse-recursive.pl
+bin/stackcollapse-sample.awk
 bin/stackcollapse-stap.pl
 bin/stackcollapse-vsprof.pl
 bin/stackcollapse-vtune.pl
+bin/stackcollapse-xdebug.php
 bin/stackcollapse.pl
