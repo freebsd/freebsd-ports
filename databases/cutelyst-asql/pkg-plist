@@ -2,7 +2,9 @@ bin/asql-migration0-qt5
 include/asql-qt5/ASql/acache.h
 include/asql-qt5/ASql/adatabase.h
 include/asql-qt5/ASql/adriver.h
+include/asql-qt5/ASql/adriverfactory.h
 include/asql-qt5/ASql/amigrations.h
+include/asql-qt5/ASql/apg.h
 include/asql-qt5/ASql/apool.h
 include/asql-qt5/ASql/apreparedquery.h
 include/asql-qt5/ASql/aqsqlexports.h
@@ -15,4 +17,7 @@ lib/cmake/ASqlQt5/ASqlQt5ConfigVersion.cmake
 lib/libASqlQt5.so
 lib/libASqlQt5.so.0
 lib/libASqlQt5.so.%%SOVER%%
+lib/libASqlQt5Pg.so
+lib/libASqlQt5Pg.so.0
+lib/libASqlQt5Pg.so.%%SOVER%%
 libdata/pkgconfig/ASqlQt5.pc
