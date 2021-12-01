@@ -1,11 +1,7 @@
 PORTNAME=	wrapland
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	0.523.0
-PORTREVISION=	1
+DISTVERSION=	0.523.1
 CATEGORIES=	graphics
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	c83f317a5338.patch:-p1 # https://gitlab.com/kwinft/wrapland/-/merge_requests/108
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt/C++ library wrapping libwayland
@@ -25,7 +21,7 @@ USE_KDE=	ecm_build
 USE_LDCONFIG=	yes
 USE_QT=		qmake_build buildtools_build concurrent core gui
 GL_ACCOUNT=	kwinft
-GL_COMMIT=	d075e49bf723419f7cce0f2fdd4379990bbea26b
+GL_COMMIT=	6a083c7bc9b37c5f756155e258b1fff4d24cea2a
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOXYGEN
