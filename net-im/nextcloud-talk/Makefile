@@ -1,13 +1,13 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	talk
-PORTVERSION=	12.1.2
+PORTVERSION=	13.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im www
 MASTER_SITES=	https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	spreed-${DISTVERSION}
+DISTNAME=	spreed-${DISTVERSIONPREFIX}${DISTVERSION}
 DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -16,7 +16,7 @@ COMMENT=	Online meeting app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=23:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe php:flavors
 CPE_VENDOR=	nextcloud
