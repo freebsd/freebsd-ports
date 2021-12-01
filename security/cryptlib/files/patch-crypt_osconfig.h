@@ -4,10 +4,10 @@
  	  #define L_ENDIAN
  	#else
  	  #define B_ENDIAN
+ 	#endif	/* Usually big-endian but may be little-endian */
 +	#ifdef __LP64__
 +	  #undef SIXTY_FOUR_BIT
 +	  #define SIXTY_FOUR_BIT_LONG
 +	#endif
- 	#endif	/* Usually big-endian but may be little-endian */
  	#define BN_LLONG
  	#define DES_RISC1
