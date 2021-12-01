@@ -15,7 +15,7 @@ PATCHFILES=	\
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility and library for computing and checking of file hashes
 
-LICENSE=	MIT
+LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 HAS_CONFIGURE=	yes
