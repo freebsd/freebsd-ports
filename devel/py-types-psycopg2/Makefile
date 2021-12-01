@@ -1,5 +1,5 @@
 PORTNAME=	types-psycopg2
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,6 +8,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Typing stubs for psycopg2
 
 LICENSE=	APACHE20
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
