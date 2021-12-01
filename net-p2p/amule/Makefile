@@ -2,7 +2,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	2.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -14,8 +14,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/COPYING
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
-
-CONFLICTS=	amule-devel
 
 USES=		bison compiler:c++11-lang cpe desktop-file-utils gmake \
 		localbase:ldflags perl5 pkgconfig shebangfix tar:xz
@@ -32,6 +30,8 @@ CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 LDFLAGS+=	-lpthread
 
 SHEBANG_FILES=	src/utils/scripts/*.pl src/utils/xas/*.pl src/libs/ec/*.pl
+
+CONFLICTS_INSTALL=	amule-devel
 
 OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI BOOST CAS DEBUG \
 	DOCS ED2K FILEVIEW MMAP MONOLITHIC NLS UPNP WEBSERVER WXCAS XAS
@@ -52,7 +52,7 @@ OPTIONS_DEFAULT=ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS ED2K \
 
 OPTIONS_SUB=	yes
 
-DEBUG_CONFIGURE_ON=	--enable-debug
+DEBUG_CONFIGURE_OFF=	--disable-debug
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
