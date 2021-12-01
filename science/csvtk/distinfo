@@ -1,5 +1,5 @@
-TIMESTAMP = 1624051618
-SHA256 (go/science_csvtk/csvtk-v0.23.0/v0.23.0.mod) = 7c31a467710c872fa06c3cfce632c6f193b30caefe1d2503115485f9c8e626d2
-SIZE (go/science_csvtk/csvtk-v0.23.0/v0.23.0.mod) = 956
-SHA256 (go/science_csvtk/csvtk-v0.23.0/v0.23.0.zip) = bbaba0de0d95c1f8144dea5927abbfff6e6bdfba87d8c11d2cfefdde4cf9da76
-SIZE (go/science_csvtk/csvtk-v0.23.0/v0.23.0.zip) = 1718316
+TIMESTAMP = 1638316724
+SHA256 (go/science_csvtk/csvtk-v0.24.0/v0.24.0.mod) = 0bcdae5a51fe2e15a16514c53b28cb17f8e868668ed739f7f5bc032646e94ad5
+SIZE (go/science_csvtk/csvtk-v0.24.0/v0.24.0.mod) = 2331
+SHA256 (go/science_csvtk/csvtk-v0.24.0/v0.24.0.zip) = d2d0392ae8a18f3f57bc5ee5272c9f1fdc21650dc5a9592001d666daaf0b208c
+SIZE (go/science_csvtk/csvtk-v0.24.0/v0.24.0.zip) = 1737871
