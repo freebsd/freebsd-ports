@@ -14,6 +14,7 @@ LLVM_COMMANDS=	\
 		llvm-cov \
 		llvm-cvtres \
 		llvm-cxxmap \
+		llvm-debuginfod-find \
 		llvm-diff \
 		llvm-dis \
 		llvm-dlltool \
@@ -55,6 +56,7 @@ LLVM_COMMANDS=	\
 		llvm-symbolizer \
 		llvm-tapi-diff \
 		llvm-tblgen \
+		llvm-tli-checker \
 		llvm-undname \
 		llvm-windres \
 		llvm-xray \
@@ -113,8 +115,6 @@ LIT_COMMANDS=	\
 LLD_COMMANDS=	\
 		ld.lld \
 		ld64.lld \
-		ld64.lld.darwinnew \
-		ld64.lld.darwinold \
 		lld \
 		lld-link \
 		wasm-ld
@@ -130,6 +130,7 @@ MLIR_COMMANDS=	\
 		mlir-cpu-runner \
 		mlir-lsp-server \
 		mlir-opt \
+		mlir-pdll \
 		mlir-reduce \
 		mlir-tblgen \
 		mlir-translate

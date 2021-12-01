@@ -221,6 +221,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-strip.1 \
 		llvm-symbolizer.1 \
 		llvm-tblgen.1 \
+		llvm-tli-checker.1 \
 		mlir-tblgen.1 \
 		opt.1 \
 		tblgen.1
@@ -253,7 +254,7 @@ EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EX
 
 FLANG_PATTERN=	${FLANG_COMMANDS:S/^/bin./:tW:C/  */|/g}|flang|libFIR|libFortran
 
-MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR
+MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR|obj.MLIRCAP
 
 .include <bsd.port.options.mk>
 
@@ -399,6 +400,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.stats_client-x86_64.a \
 	libclang_rt.tsan-x86_64.a \
 	libclang_rt.tsan-x86_64.a.syms \
+	libclang_rt.tsan-x86_64.so \
 	libclang_rt.tsan_cxx-x86_64.a \
 	libclang_rt.tsan_cxx-x86_64.a.syms \
 	libclang_rt.ubsan_minimal-x86_64.a \
