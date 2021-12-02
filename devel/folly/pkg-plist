@@ -521,7 +521,6 @@ include/folly/io/async/EventBaseBackendBase.h
 include/folly/io/async/EventBaseLocal.h
 include/folly/io/async/EventBaseManager.h
 include/folly/io/async/EventBaseThread.h
-include/folly/io/async/EventFDWrapper.h
 include/folly/io/async/EventHandler.h
 include/folly/io/async/EventUtil.h
 include/folly/io/async/HHWheelTimer-fwd.h
