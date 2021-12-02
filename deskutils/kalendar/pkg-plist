@@ -1,6 +1,10 @@
 bin/kalendar
+bin/kalendarac
+etc/xdg/autostart/org.kde.kalendarac.desktop
 share/applications/org.kde.kalendar.desktop
+share/dbus-1/services/org.kde.kalendarac.service
 share/icons/hicolor/scalable/apps/org.kde.kalendar.svg
+share/knotifications5/kalendarac.notifyrc
 share/locale/ca/LC_MESSAGES/kalendar.mo
 share/locale/ca@valencia/LC_MESSAGES/kalendar.mo
 share/locale/cs/LC_MESSAGES/kalendar.mo
@@ -22,3 +26,4 @@ share/locale/sv/LC_MESSAGES/kalendar.mo
 share/locale/uk/LC_MESSAGES/kalendar.mo
 share/locale/zh_CN/LC_MESSAGES/kalendar.mo
 share/metainfo/org.kde.kalendar.appdata.xml
+share/qlogging-categories5/kalendar.categories
