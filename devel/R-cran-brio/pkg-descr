@@ -2,4 +2,4 @@ Functions to handle basic input output, these functions always read and write
 UTF-8 (8-bit Unicode Transformation Format) files and provide more explicit
 control over line endings.
 
-WWW: https://github.com/r-lib/brio
+WWW: https://brio.r-lib.org
