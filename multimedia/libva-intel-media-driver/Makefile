@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	libva-intel-
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a65683be3d3a.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	9783808c766f.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	625d1d38a029.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	525dab01c1a2.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	d84559d09c47.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	2b730b48a7aa.patch:-p1 # https://github.com/intel/media-driver/pull/819
