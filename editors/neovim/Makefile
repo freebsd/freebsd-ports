@@ -52,7 +52,7 @@ PYNVIM_DESC=	Enable support for plugins written in python
 
 LUAJIT_CMAKE_OFF=	-DPREFER_LUA:BOOL="ON"
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUAJIT_USES=		lua:build
+LUAJIT_USES=		lua:52,build
 LUAJIT_USES_OFF=	lua:52
 NLS_CMAKE_BOOL=		ENABLE_LIBINTL
 NLS_USES=		gettext
