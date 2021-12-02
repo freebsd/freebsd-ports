@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	pkgbuild
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-desc>0:devel/R-cran-desc \
 		R-cran-prettyunits>0:devel/R-cran-prettyunits \
 		R-cran-rprojroot>0:devel/R-cran-rprojroot \
-		R-cran-withr>=2.1.2:devel/R-cran-withr
+		R-cran-withr>=2.3.0:devel/R-cran-withr
 TEST_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp
 
 USES=		cran:auto-plist
