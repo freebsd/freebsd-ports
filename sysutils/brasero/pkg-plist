@@ -42,6 +42,8 @@ lib/brasero3/plugins/libbrasero-dvdcss.so
 lib/brasero3/plugins/libbrasero-dvdrwformat.so
 lib/brasero3/plugins/libbrasero-genisoimage.so
 lib/brasero3/plugins/libbrasero-growisofs.so
+%%LIBBURNIA%%lib/brasero3/plugins/libbrasero-libburn.so
+%%LIBBURNIA%%lib/brasero3/plugins/libbrasero-libisofs.so
 lib/brasero3/plugins/libbrasero-local-track.so
 lib/brasero3/plugins/libbrasero-mkisofs.so
 lib/brasero3/plugins/libbrasero-normalize.so
@@ -62,12 +64,12 @@ lib/libbrasero-media3.so.1.2.7
 lib/libbrasero-utils3.so
 lib/libbrasero-utils3.so.1
 lib/libbrasero-utils3.so.1.2.7
-lib/nautilus/extensions-3.0/libnautilus-brasero-extension.so
+%%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-brasero-extension.so
 libdata/pkgconfig/libbrasero-burn3.pc
 libdata/pkgconfig/libbrasero-media3.pc
 man/man1/brasero.1.gz
 share/GConf/gsettings/brasero.convert
-share/applications/brasero-nautilus.desktop
+%%NAUTILUS%%share/applications/brasero-nautilus.desktop
 share/applications/brasero.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/insert-pause.png
 %%DATADIR%%/icons/hicolor/16x16/actions/iso-image-burn.png

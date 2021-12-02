@@ -18,7 +18,8 @@ RUN_DEPENDS=	growisofs:sysutils/dvd+rw-tools \
 
 USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:xz xorg
-USE_GNOME=	gnomeprefix gtk30 intlhack libxml2
+USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intlhack \
+		introspection:build libxml2
 GNU_CONFIGURE=	yes
 USE_XORG=	sm ice
 USE_LDCONFIG=	yes
@@ -34,10 +35,13 @@ GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NAUTILUS LIBBURNIA
 OPTIONS_DEFAULT=NAUTILUS
+
 NAUTILUS_DESC=	Build nautilus extension
 LIBBURNIA_DESC=	Build libburnia plug-ins
+
 NAUTILUS_USE=	GNOME=nautilus3
 NAUTILUS_CONFIGURE_ENABLE=	nautilus
+
 LIBBURNIA_LIB_DEPENDS=	libburn.so:devel/libburn \
 			libisofs.so:devel/libisofs
 LIBBURNIA_CONFIGURE_ENABLE=	libburnia
