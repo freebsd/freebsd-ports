@@ -1,0 +1,13 @@
+--- app/meson.build.orig	2021-12-02 04:47:49 UTC
++++ app/meson.build
+@@ -44,8 +44,8 @@ src = [
+ 
+ conf = configuration_data()
+ 
+-conf.set('_POSIX_C_SOURCE', '200809L')
+-conf.set('_XOPEN_SOURCE', '700')
++# conf.set('_POSIX_C_SOURCE', '200809L')
++# conf.set('_XOPEN_SOURCE', '700')
+ conf.set('_GNU_SOURCE', true)
+ 
+ if host_machine.system() == 'windows'
