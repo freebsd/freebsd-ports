@@ -1,7 +1,7 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 
 PORTNAME=	icewm
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -59,6 +59,10 @@ post-extract:
 	@${LN} -sf ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/${dir}
 	@${LN} -sf ${STARTUP_PIXMAP} ${WRKSRC}/lib/${dir}/start.xpm
 .endfor
+
+post-patch:
+	@${REINPLACE_CMD} -e '/#include <unistd/ { x; s,^,#include\
+		<sys/wait.h>,; G; }' ${WRKSRC}/src/akeyboard.cc
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
