@@ -45,6 +45,7 @@ share/gir-1.0/Grl-0.3.gir
 share/gir-1.0/GrlNet-0.3.gir
 share/gir-1.0/GrlPls-0.3.gir
 share/locale/as/LC_MESSAGES/grilo.mo
+share/locale/be/LC_MESSAGES/grilo.mo
 share/locale/bg/LC_MESSAGES/grilo.mo
 share/locale/bs/LC_MESSAGES/grilo.mo
 share/locale/ca/LC_MESSAGES/grilo.mo
