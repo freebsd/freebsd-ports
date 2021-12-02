@@ -30,7 +30,7 @@ include/tesseract/version.h
 %%TOOLS%%lib/libpango_training.so
 lib/libtesseract.so
 lib/libtesseract.so.5.0.0
-lib/libunicharset_training.so
+%%TOOLS%%lib/libunicharset_training.so
 lib/cmake/tesseract/TesseractConfig.cmake
 lib/cmake/tesseract/TesseractConfigVersion.cmake
 lib/cmake/tesseract/TesseractTargets-%%CMAKE_BUILD_TYPE%%.cmake
