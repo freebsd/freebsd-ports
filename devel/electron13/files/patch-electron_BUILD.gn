@@ -1,6 +1,6 @@
---- electron/BUILD.gn.orig	2021-11-16 19:10:11 UTC
+--- electron/BUILD.gn.orig	2021-12-01 00:24:58 UTC
 +++ electron/BUILD.gn
-@@ -405,7 +405,7 @@ source_set("electron_lib") {
+@@ -411,7 +411,7 @@ source_set("electron_lib") {
      defines += [ "GDK_DISABLE_DEPRECATION_WARNINGS" ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/browser",
-@@ -440,7 +440,7 @@ source_set("electron_lib") {
+@@ -446,7 +446,7 @@ source_set("electron_lib") {
      ]
    }
  
@@ -18,7 +18,7 @@
      deps += [ "//components/crash/content/browser" ]
    }
  
-@@ -498,6 +498,12 @@ source_set("electron_lib") {
+@@ -504,6 +504,12 @@ source_set("electron_lib") {
        cflags_objcc = [ "-fobjc-weak" ]
      }
    }
@@ -31,7 +31,7 @@
    if (is_linux) {
      libs = [ "xshmfence" ]
      deps += [
-@@ -1118,7 +1124,7 @@ if (is_mac) {
+@@ -1124,7 +1130,7 @@ if (is_mac) {
        ":electron_app_manifest",
        ":electron_lib",
        ":packed_resources",
@@ -40,7 +40,7 @@
        "//content:sandbox_helper_win",
        "//electron/buildflags",
        "//ui/strings",
-@@ -1344,7 +1350,7 @@ dist_zip("electron_dist_zip") {
+@@ -1350,7 +1356,7 @@ dist_zip("electron_dist_zip") {
      ":electron_version",
      ":licenses",
    ]
