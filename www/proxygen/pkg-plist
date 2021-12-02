@@ -190,6 +190,7 @@ include/proxygen/lib/stats/PeriodicStats.h
 include/proxygen/lib/stats/PeriodicStatsDataBase.h
 include/proxygen/lib/stats/ResourceData.h
 include/proxygen/lib/stats/ResourceStats.h
+include/proxygen/lib/transport/H3DatagramAsyncSocket.h
 include/proxygen/lib/transport/PersistentFizzPskCache.h
 include/proxygen/lib/transport/PersistentQuicPskCache.h
 include/proxygen/lib/utils/AcceptorAddress.h
