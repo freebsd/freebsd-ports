@@ -61,7 +61,7 @@
 +	$(MAKE) -C src/ucpp PREFIX=$(DESTDIR)$(PREFIX) install
 +	$(MAKE) -C src/cpp PREFIX=$(DESTDIR)$(PREFIX) install
 +	$(MAKE) -C src/sccz80 PREFIX=$(DESTDIR)$(PREFIX) install
-+	$(MAKE) -C src/z80asm  PREFIX=$(DESTDIR)$(PREFIX) PREFIX_SHARE=$(DESTDIR)$(prefix_share) install
++	$(MAKE) -C src/z80asm PREFIX=$(DESTDIR)$(PREFIX) PREFIX_SHARE=$(DESTDIR)$(prefix_share) install
 +	$(MAKE) -C src/zcc PREFIX=$(DESTDIR)$(PREFIX) install
 +	$(MAKE) -C src/zpragma PREFIX=$(DESTDIR)$(PREFIX) install
 +	$(MAKE) -C src/zx7 PREFIX=$(DESTDIR)$(PREFIX) install
@@ -76,8 +76,8 @@
 +	if [ -f bin/zsdcc$(EXESUFFIX) ]; then cp bin/zsdcc$(EXESUFFIX) $(DESTDIR)$(PREFIX)/bin/; fi
 +	# XXX: perform installation in the port's Makefile (bogus permissions,
 +	# huge and useless(?) _DEVELOPMENT collection)
-+	#cp -r lib $(DESTDIR)$(prefix_share)/
 +	#cp -r include $(DESTDIR)$(prefix_share)/
++	#cp -r lib $(DESTDIR)$(prefix_share)/
 +	#cp -r libsrc $(DESTDIR)$(prefix_share)/
 +	#cp -r src/m4 $(DESTDIR)$(prefix_share)/src/
  

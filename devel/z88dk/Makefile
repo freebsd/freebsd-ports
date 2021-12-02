@@ -2,6 +2,7 @@
 
 PORTNAME=	z88dk
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -31,9 +32,10 @@ TEST_DEPENDS=	dos2unix:converters/unix2dos \
 		p5-Test-HexDifferences>=0:devel/p5-Test-HexDifferences \
 		p5-Text-Table>=0:textproc/p5-Text-Table
 
-USES=		gmake gnome shebangfix tar:tgz
+USES=		gmake gnome perl5 shebangfix tar:tgz
 USE_GNOME=	libxml2
-MAKE_ENV=	ZCCCFG=${WRKSRC}/lib/config
+USE_PERL5=	run
+MAKE_ENV=	ZCCCFG=${WRKSRC}/lib/config Q=	# force verbose build
 SHEBANG_FILES=	src/z80asm/asmpp.pl
 TEST_TARGET=	testsuite test
 WRKSRC=		${WRKDIR}/${PORTNAME}
