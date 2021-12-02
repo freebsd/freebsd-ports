@@ -1,3 +1,36 @@
+  <vuln vid="47695a9c-5377-11ec-8be6-d4c9ef517024">
+    <topic>NSS -- Memory corruption</topic>
+    <affects>
+      <package>
+	<name>nss</name>
+	<range><lt>3.73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/">
+	  <p>Memory corruption in NSS via DER-encoded DSA and RSA-PSS signatures (Critical)</p>
+	  <p>NSS (Network Security Services) versions prior to 3.73 or 3.68.1 ESR
+	    are vulnerable to a heap overflow when handling DER-encoded DSA or
+	    RSA-PSS signatures. Applications using NSS for handling signatures
+	    encoded within CMS, S/MIME, PKCS #7, or PKCS #12 are likely to be
+	    impacted. Applications using NSS for certificate validation or other
+	    TLS, X.509, OCSP or CRL functionality may be impacted, depending on
+	    how they configure NSS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43527</cvename>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-01</discovery>
+      <entry>2021-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d6efbe3-52d9-11ec-9472-e3667ed6088e">
 	  <topic>mailman &lt; 2.1.38 -- CSRF vulnerability of list mod or member against list admin page</topic>
     <affects>
