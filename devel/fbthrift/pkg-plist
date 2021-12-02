@@ -108,6 +108,7 @@ include/thrift/lib/cpp2/IndirectionWrapper.h
 include/thrift/lib/cpp2/PluggableFunction.h
 include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
+include/thrift/lib/cpp2/ThriftOp.h
 include/thrift/lib/cpp2/TypeClass.h
 include/thrift/lib/cpp2/async/AsyncClient.h
 include/thrift/lib/cpp2/async/AsyncProcessor.h
@@ -383,10 +384,14 @@ include/thrift/lib/cpp2/transport/rocket/test/util/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/util/VersionServicesMock.h
 include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
+include/thrift/lib/cpp2/type/AnyType.h
+include/thrift/lib/cpp2/type/Name.h
 include/thrift/lib/cpp2/type/ThriftOp.h
 include/thrift/lib/cpp2/type/ThriftType.h
 include/thrift/lib/cpp2/type/Traits.h
 include/thrift/lib/cpp2/type/UniversalName.h
+include/thrift/lib/cpp2/type/detail/AnyType.h
+include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/ThriftOp.h
 include/thrift/lib/cpp2/type/detail/Traits.h
 include/thrift/lib/cpp2/util/BucketedRate.h
