@@ -1,4 +1,4 @@
 A cross-platform interface to file system operations, built on top of the
 'libuv' C library.
 
-WWW: http://fs.r-lib.org
+WWW: https://fs.r-lib.org
