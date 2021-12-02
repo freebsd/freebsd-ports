@@ -15,7 +15,6 @@ GH_ACCOUNT=	nelhage
 
 MAKE_ARGS=	BASHCOMPDIR=${PREFIX}/share/bash-completion/completions \
 		MANDIR=${MANPREFIX}/man
-CFLAGS+=	-Wno-unused-but-set-variable
 USES=		gmake
 
 ONLY_FOR_ARCHS=	i386 amd64
