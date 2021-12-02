@@ -1,7 +1,7 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
 
 PORTNAME=	parso
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
