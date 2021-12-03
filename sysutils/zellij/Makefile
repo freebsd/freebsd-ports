@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
+DISTVERSION=	0.21.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -138,6 +138,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
+		lev_distance-0.1.0 \
 		libc-0.2.106 \
 		libloading-0.6.7 \
 		libssh2-sys-0.2.23 \
@@ -242,6 +243,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		structopt-derive-0.4.18 \
 		strum-0.20.0 \
 		strum_macros-0.20.1 \
+		suggestion-0.1.0 \
 		syn-1.0.81 \
 		target-lexicon-0.11.2 \
 		tempfile-3.2.0 \
