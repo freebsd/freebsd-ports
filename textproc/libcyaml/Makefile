@@ -1,6 +1,6 @@
 PORTNAME=	libcyaml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,15 +11,18 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USES=		compiler:c11 gmake localbase:ldflags
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tlsa
-USE_LDCONFIG=	yes
+
+TEST_TARGET=	test
 
 PLIST_FILES=	include/cyaml/cyaml.h \
 		lib/libcyaml.a \
 		lib/libcyaml.so \
 		lib/libcyaml.so.1 \
-		lib/libcyaml.so.1.2.1 \
+		lib/libcyaml.so.1.3.0 \
 		libdata/pkgconfig/libcyaml.pc
 
 post-stage:
