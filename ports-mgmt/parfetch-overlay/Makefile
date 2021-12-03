@@ -1,7 +1,7 @@
 PORTNAME=	parfetch
-DISTVERSION=	a20211126
+DISTVERSION=	0.1.0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://github.com/t6/parfetch/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/t6/parfetch/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-overlay
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent
 
-USES=		ninja pkgconfig tar:lz
+USES=		ninja pkgconfig ssl tar:lz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	AR="${AR}" \
 		CC="${CC}" \
