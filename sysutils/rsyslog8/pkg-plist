@@ -1,3 +1,5 @@
+@dir etc/rsyslog.d
+@sample etc/rsyslog.conf.sample
 lib/rsyslog/fmhash.so
 lib/rsyslog/fmhttp.so
 lib/rsyslog/im3195.so

@@ -1,5 +1,6 @@
 PORTNAME=	rsyslog
 PORTVERSION=	8.2110.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -151,6 +152,10 @@ post-patch:
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
 	@${REINPLACE_CMD} -e 's,/lib/rsyslog,${PREFIX}/lib/rsyslog,' ${WRKSRC}/tools/syslogd.c
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rsyslog.d
+	${INSTALL_DATA} ${FILESDIR}/rsyslog.conf ${STAGEDIR}${PREFIX}/etc/rsyslog.conf.sample
 
 post-install-DOCS-on:
 .for SQL in ${PORTDOCS:M*.sql}

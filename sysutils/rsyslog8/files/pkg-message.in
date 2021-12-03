@@ -1,24 +1,19 @@
 [
 { type: install
   message: <<EOM
-To start using rsyslogd(8), stop syslogd(8) if it's running and
+To start using rsyslogd(8), stop syslogd(8) if it is running and
 add the following lines to rc.conf(5):
 
   syslogd_enable="NO"
   rsyslogd_enable="YES"
 
-It's recommended to copy syslog.conf(5) to
-%%PREFIX%%/etc/rsyslog.conf and edit it there. Otherwise add
-this:
+For best results, create a new configuration file
+%%PREFIX%%/etc/rsyslog.conf rather than trying to re-use the original
+/etc/syslog.conf -- the configuration file syntax has diverged over
+time, and it's no longer anywhere near compatible.
 
-  rsyslogd_config="/etc/syslog.conf"
-
-Add the following (3) lines to the beginning of the config file, for
-basic functionality:
-
-  module(load="immark")   # provides --MARK-- message capability
-  module(load="imuxsock") # provides support for local system logging
-  module(load="imklog")   # kernel logging
+The port will install an example configuration file which should
+provide the same logging setup as the default /etc/syslog.conf
 
 newsyslog(8) has the path of syslogd's pid file hardcoded. To
 make it work seamlessly with rsyslog, add this:
