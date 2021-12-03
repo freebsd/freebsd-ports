@@ -1,8 +1,8 @@
-TIMESTAMP = 1636089536
+TIMESTAMP = 1638491392
 SHA256 (go-freebsd-arm64-go1.14.tar.xz) = f8b0cf0d323e581c9e3e0d5c217847a3e0294fcc92dbac92a5b02cea9d97ad8d
 SIZE (go-freebsd-arm64-go1.14.tar.xz) = 34944548
-SHA256 (golang-go-g20211105-f58c78a5771570667b26e8c74faa017bd4c2c448_GH0.tar.gz) = 1c563b98cecff131051903916cf6b15f93627b0da38b0e4ecba22a628d885a8b
-SIZE (golang-go-g20211105-f58c78a5771570667b26e8c74faa017bd4c2c448_GH0.tar.gz) = 22160794
+SHA256 (golang-go-g20211202-0f2d0d0694c8680909252ca45dbffbcaff8e430a_GH0.tar.gz) = e66356ac40c01323b03d5db1aaf23f221fa15d955f6c9d0584b902c0d4eac90e
+SIZE (golang-go-g20211202-0f2d0d0694c8680909252ca45dbffbcaff8e430a_GH0.tar.gz) = 22159349
 SHA256 (go-freebsd-amd64-go1.14.tar.xz) = 3b259247fb228258a4f31e283e9aa23cafd590eabce334666a9e9b2ffe47c19b
 SIZE (go-freebsd-amd64-go1.14.tar.xz) = 35927980
 SHA256 (go-freebsd-arm6-go1.14.tar.xz) = 5846b4bbc6881c6c04daffbdb647d53a5b002a0e177271ecfcabef734b209614
