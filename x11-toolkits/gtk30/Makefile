@@ -4,6 +4,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.24.30
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -12,6 +13,9 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
+
+EXTRA_PATCHES=	${FILESDIR}/0001-Check-if-size-changed-before-hiding-a-surface.patch:-p1 \
+		${FILESDIR}/0001-Ignore-wl_output-globals-not-bound-by-us.patch:-p1
 
 LICENSE=	LGPL20
 
