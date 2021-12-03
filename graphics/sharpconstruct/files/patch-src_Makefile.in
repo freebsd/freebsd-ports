@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2021-12-02 18:50:44 UTC
++++ src/Makefile.in
+@@ -172,7 +172,7 @@ sharedstatedir = ${prefix}/com
+ sysconfdir = ${prefix}/etc
+ target_alias = 
+ INCLUDES = -I../include
+-AM_CXXFLAGS = -Wall -msse $(libglademm_CFLAGS) $(gtkglextmm_CFLAGS) $(X_CFLAGS) $(BINRELOC_CFLAGS)
++AM_CXXFLAGS = -Wall $(libglademm_CFLAGS) $(gtkglextmm_CFLAGS) $(X_CFLAGS) $(BINRELOC_CFLAGS)
+ LDADD = $(libglademm_LIBS) $(gtkglextmm_LIBS) -lGL -lGLU $(X_LIBS)
+ sharpconstruct_SOURCES = \
+ 	ArcBall.cc \
