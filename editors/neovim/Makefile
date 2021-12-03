@@ -63,6 +63,9 @@ PYNVIM_USES=		python:run
 
 .if ${ARCH:Mpowerpc64*}
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
+
+.if ${ARCH} == powerpc64
 USES+=		compiler:gcc-c++11-lib
 .endif
 
