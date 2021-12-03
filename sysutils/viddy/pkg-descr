@@ -1,0 +1,8 @@
+Modern watch command. It can run a command periodically,
+displaying the result, highlighting diffs in output. It
+also has a time machine mode which allows rewinding output
+over time like video, moving backwards and forwards in time.
+viddy also allows for searching text, has vim like keymaps,
+as well as the ability to suspend and restart execution.
+
+WWW: https://github.com/sachaos/viddy
