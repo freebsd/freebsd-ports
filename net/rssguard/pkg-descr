@@ -3,4 +3,8 @@ developed using Qt framework which supports online feed synchronization
 with various services, e.g. Bazqux, Feedly, FreshRSS, Gmail, Google Reader,
 Inoreader, Nextcloud News, Reedah, Tiny Tiny RSS.
 
+In contrast with many other RSS readers, heavy WebKit/WebEngine dependency
+is optional for RSS Guard: when built without it, simple text component is
+used and some features will be disabled.
+
 WWW: https://github.com/martinrotter/rssguard
