@@ -28,5 +28,6 @@ include/cpp-pcp-client/util/thread.hpp
 include/cpp-pcp-client/validator/schema.hpp
 include/cpp-pcp-client/validator/validator.hpp
 include/cpp-pcp-client/valijson/rapidjson_adapter.hpp
+include/cpp-pcp-client/ws_config.hpp
 lib/liblibcpp-pcp-client.so
 lib/liblibcpp-pcp-client.so.%%PORTVERSION%%
