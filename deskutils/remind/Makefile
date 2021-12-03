@@ -1,7 +1,7 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
 
 PORTNAME=	remind
-DISTVERSION=	03.03.09
+DISTVERSION=	03.03.10
 CATEGORIES=	deskutils
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
 
@@ -51,10 +51,8 @@ TCLTK_PLIST_FILES=	bin/tkremind \
 			man/man1/tkremind.1.gz
 
 REM2HTML_USES=	perl5
-REM2HTML_BUILD_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any \
-			p5-Getopt-Long>0:devel/p5-Getopt-Long
-REM2HTML_RUN_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any \
-			p5-Getopt-Long>0:devel/p5-Getopt-Long
+REM2HTML_BUILD_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any
+REM2HTML_RUN_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any
 REM2HTML_PLIST_FILES=	bin/rem2html
 
 # hard wired customisation variables
