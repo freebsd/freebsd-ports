@@ -186,6 +186,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		xml-rs-0.8.3 \
 		yaml-rust-0.4.5
+RUSTFLAGS+=	--cap-lints=warn
 PLIST_FILES=	bin/${PORTNAME}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} # xcb requires python3
