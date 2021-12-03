@@ -41,24 +41,8 @@
  .SUFFIXES:.c .o
  
  .c.o:
-@@ -49,18 +62,34 @@ sdust:sdust.c kalloc.o kalloc.h kdq.h kvec.h kseq.h ke
- 		$(CC) -D_SDUST_MAIN $(CFLAGS) $< kalloc.o -o $@ -lz
- 
- ksw2_ll_simde.o:ksw2_ll_sse.c ksw2.h kalloc.h
--		$(CC) -c $(CFLAGS) -msse2 $(CPPFLAGS) $(INCLUDES) $< -o $@
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
- 
- ksw2_extz2_simde.o:ksw2_extz2_sse.c ksw2.h kalloc.h
--		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
- 
- ksw2_extd2_simde.o:ksw2_extd2_sse.c ksw2.h kalloc.h
--		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
- 
- ksw2_exts2_simde.o:ksw2_exts2_sse.c ksw2.h kalloc.h
--		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
+@@ -61,6 +74,22 @@ ksw2_exts2_simde.o:ksw2_exts2_sse.c ksw2.h kalloc.h
+ 		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
  
  # other non-file targets
 +
