@@ -1,6 +1,6 @@
 PORTNAME=	fineftp-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.13
+DISTVERSION=	1.1.0
 CATEGORIES=	ftp
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,5 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	continental
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-Dasio_INCLUDE_DIR=${LOCALBASE}/include
 
 .include <bsd.port.mk>

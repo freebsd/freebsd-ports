@@ -1,3 +1,5 @@
+include/fineftp/fineftp_export.h
+include/fineftp/fineftp_version.h
 include/fineftp/permissions.h
 include/fineftp/server.h
 lib/cmake/fineftp/fineftpConfig.cmake
@@ -5,4 +7,4 @@ lib/cmake/fineftp/fineftpTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fineftp/fineftpTargets.cmake
 lib/libfineftp-server.so
 lib/libfineftp-server.so.1
-lib/libfineftp-server.so.1.0.11
+lib/libfineftp-server.so.1.1.0
