@@ -323,3 +323,4 @@ lib/libbotan-2.so.%%SOABIVER%%
 lib/libbotan-2.so.%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/botan2.py
 libdata/pkgconfig/botan-2.pc
+%%MANPAGES%%share/man/man1/botan.1.gz
