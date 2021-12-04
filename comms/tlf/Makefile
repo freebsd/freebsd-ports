@@ -5,6 +5,11 @@ PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	comms hamradio
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	851321c0979c.patch:-p1 # https://github.com/Tlf/tlf/pull/268
+PATCHFILES+=	3c48ad1c95c8.patch:-p1 # https://github.com/Tlf/tlf/pull/268
+PATCHFILES+=	4302ec05ed9f.patch:-p1 # https://github.com/Tlf/tlf/pull/268
+
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
