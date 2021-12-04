@@ -1,6 +1,7 @@
 bin/virsh
 bin/virt-admin
 bin/virt-host-validate
+bin/virt-pki-query-dn
 bin/virt-pki-validate
 bin/virt-ssh-helper
 %%QEMU%%bin/virt-qemu-run

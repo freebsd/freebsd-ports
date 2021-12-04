@@ -1,14 +1,10 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	libvirt
-PORTVERSION=	7.9.0
+PORTVERSION=	7.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
-
-PATCH_SITES=	https://gitlab.com/libvirt/libvirt/-/commit/
-PATCHFILES=	c07cf0a68693f183948a332d86c4d86a26a9c551.patch:-p1 \
-		537c8e5e24bac2948faefc44427d1bc1f1b43298.patch:-p1
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
@@ -108,7 +104,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.7009.0
+SHLIB_VER=	0.7010.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
