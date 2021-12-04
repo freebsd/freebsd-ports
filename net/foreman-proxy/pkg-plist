@@ -12,11 +12,7 @@
 @sample %%ETCDIR%%/settings.d/httpboot.yml.sample
 @sample %%ETCDIR%%/settings.d/logs.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet.yml.sample
-@sample %%ETCDIR%%/settings.d/puppet_proxy_customrun.yml.sample
-@sample %%ETCDIR%%/settings.d/puppet_proxy_mcollective.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet_proxy_puppet_api.yml.sample
-@sample %%ETCDIR%%/settings.d/puppet_proxy_salt.yml.sample
-@sample %%ETCDIR%%/settings.d/puppet_proxy_ssh.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca_hostname_whitelisting.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca_http_api.yml.sample
@@ -24,6 +20,7 @@
 @sample %%ETCDIR%%/settings.d/puppetca_token_whitelisting.yml.sample
 @sample %%ETCDIR%%/settings.d/realm.yml.sample
 @sample %%ETCDIR%%/settings.d/realm_freeipa.yml.sample
+@sample %%ETCDIR%%/settings.d/registration.yml.sample
 @sample %%ETCDIR%%/settings.d/templates.yml.sample
 @sample %%ETCDIR%%/settings.d/tftp.yml.sample
 @sample %%ETCDIR%%/settings.yml.sample
@@ -86,7 +83,6 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/provider_factory.rb
 %%DATADIR%%/lib/proxy/request.rb
 %%DATADIR%%/lib/proxy/request_id_middleware.rb
-%%DATADIR%%/lib/proxy/sd_notify.rb
 %%DATADIR%%/lib/proxy/settings.rb
 %%DATADIR%%/lib/proxy/settings/global.rb
 %%DATADIR%%/lib/proxy/settings/plugin.rb
@@ -105,6 +101,9 @@ sbin/smart-proxy
 %%DATADIR%%/modules/bmc/bmc_plugin.rb
 %%DATADIR%%/modules/bmc/http_config.ru
 %%DATADIR%%/modules/bmc/ipmi.rb
+%%DATADIR%%/modules/bmc/redfish.rb
+%%DATADIR%%/modules/bmc/redfish/dell.rb
+%%DATADIR%%/modules/bmc/redfish/hpe.rb
 %%DATADIR%%/modules/bmc/shell.rb
 %%DATADIR%%/modules/bmc/ssh.rb
 %%DATADIR%%/modules/dhcp/configuration_loader.rb
@@ -191,29 +190,12 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppet_proxy_common/environments_retriever_base.rb
 %%DATADIR%%/modules/puppet_proxy_common/errors.rb
 %%DATADIR%%/modules/puppet_proxy_common/puppet_class.rb
-%%DATADIR%%/modules/puppet_proxy_common/runner.rb
-%%DATADIR%%/modules/puppet_proxy_customrun/customrun_main.rb
-%%DATADIR%%/modules/puppet_proxy_customrun/plugin_configuration.rb
-%%DATADIR%%/modules/puppet_proxy_customrun/puppet_proxy_customrun.rb
-%%DATADIR%%/modules/puppet_proxy_customrun/puppet_proxy_customrun_plugin.rb
-%%DATADIR%%/modules/puppet_proxy_mcollective/mcollective_main.rb
-%%DATADIR%%/modules/puppet_proxy_mcollective/plugin_configuration.rb
-%%DATADIR%%/modules/puppet_proxy_mcollective/puppet_proxy_mcollective.rb
-%%DATADIR%%/modules/puppet_proxy_mcollective/puppet_proxy_mcollective_plugin.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/plugin_configuration.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/puppet_proxy_puppet_api.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/puppet_proxy_puppet_api_plugin.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/v3_api_request.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/v3_environment_classes_api_classes_retriever.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/v3_environments_retriever.rb
-%%DATADIR%%/modules/puppet_proxy_salt/plugin_configuration.rb
-%%DATADIR%%/modules/puppet_proxy_salt/puppet_proxy_salt.rb
-%%DATADIR%%/modules/puppet_proxy_salt/puppet_proxy_salt_plugin.rb
-%%DATADIR%%/modules/puppet_proxy_salt/salt_main.rb
-%%DATADIR%%/modules/puppet_proxy_ssh/plugin_configuration.rb
-%%DATADIR%%/modules/puppet_proxy_ssh/puppet_proxy_ssh.rb
-%%DATADIR%%/modules/puppet_proxy_ssh/puppet_proxy_ssh_main.rb
-%%DATADIR%%/modules/puppet_proxy_ssh/puppet_proxy_ssh_plugin.rb
 %%DATADIR%%/modules/puppetca/dependency_injection.rb
 %%DATADIR%%/modules/puppetca/http_config.ru
 %%DATADIR%%/modules/puppetca/plugin_configuration.rb
@@ -250,6 +232,11 @@ sbin/smart-proxy
 %%DATADIR%%/modules/realm_freeipa/provider.rb
 %%DATADIR%%/modules/realm_freeipa/realm_freeipa.rb
 %%DATADIR%%/modules/realm_freeipa/realm_freeipa_plugin.rb
+%%DATADIR%%/modules/registration/http_config.ru
+%%DATADIR%%/modules/registration/proxy_request.rb
+%%DATADIR%%/modules/registration/registration.rb
+%%DATADIR%%/modules/registration/registration_api.rb
+%%DATADIR%%/modules/registration/registration_plugin.rb
 %%DATADIR%%/modules/root/http_config.ru
 %%DATADIR%%/modules/root/root.rb
 %%DATADIR%%/modules/root/root_api.rb

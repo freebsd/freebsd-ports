@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.5
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -18,13 +18,14 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-rack>=2.0:www/rubygem-rack \
 		rubygem-rb-kqueue>=0.2.2:devel/rubygem-rb-kqueue \
 		rubygem-rsec>=0.4.3:devel/rubygem-rsec \
+		rubygem-sd_notify>=0.1.1:devel/rubygem-sd_notify \
 		rubygem-sinatra>=2.0:www/rubygem-sinatra \
 		wget:ftp/wget
 
 USES=		shebangfix tar:bzip2
 
 OPTIONS_DEFINE=	BMC PUPPET6
-BMC_DESC=	Depend on rubyipmi for BMC support
+BMC_DESC=	Depend on rubyipmi and redfish_client for BMC support
 PUPPET6_DESC=	Depend on Puppet 6
 
 NO_ARCH=	yes
@@ -50,7 +51,8 @@ PLIST_SUB=	${SUB_LIST} MKDIR="${MKDIR}"
 
 SHEBANG_FILES=	extra/foreman-debug-proxy
 
-BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi
+BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi \
+			rubygem-redfish_client>=0.5.1:sysutils/rubygem-redfish_client
 PUPPET6_RUN_DEPENDS=	puppet:sysutils/puppet6 \
 			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 
@@ -89,11 +91,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
 .for cfg in bmc dhcp_isc dhcp_libvirt dhcp_native_ms dhcp dns_dnscmd \
 	dns_libvirt dns_nsupdate_gss dns_nsupdate dns facts httpboot \
-	logs puppet_proxy_customrun puppet_proxy_mcollective \
-	puppet_proxy_puppet_api puppet_proxy_salt puppet_proxy_ssh puppet \
+	logs puppet_proxy_puppet_api puppet \
 	puppetca_hostname_whitelisting puppetca_http_api \
 	puppetca_puppet_cert puppetca_token_whitelisting \
-	puppetca realm_freeipa realm templates tftp
+	puppetca realm_freeipa realm registration templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor
