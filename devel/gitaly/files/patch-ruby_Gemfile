@@ -1,6 +1,6 @@
---- ruby/Gemfile.orig   2021-11-08 12:56:42.000000000 +0100
-+++ ruby/Gemfile        2021-11-20 11:54:40.948647000 +0100
-@@ -7,7 +7,7 @@
+--- ruby/Gemfile.orig	2021-11-19 08:14:34 UTC
++++ ruby/Gemfile
+@@ -7,7 +7,7 @@ gem 'activesupport', '~> 6.1.4.1'
  gem 'rdoc', '~> 6.0'
  gem 'gitlab-gollum-lib', '~> 4.2.7.10.gitlab.1', require: false
  gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.4.gitlab.1', require: false
@@ -9,13 +9,13 @@
  gem 'sentry-raven', '~> 3.0', require: false
  gem 'faraday', '~> 1.0'
  gem 'rbtrace', require: false
-@@ -19,15 +19,5 @@
+@@ -19,15 +19,5 @@ gem 'gitlab-labkit', '~> 0.21.1'
  # This version needs to be in sync with GitLab CE/EE
  gem 'licensee', '~> 9.14.1'
-
+ 
 -gem 'google-protobuf', '~> 3.17.0'
 +gem 'google-protobuf', '~> 3.19.0'
-
+ 
 -group :development, :test do
 -  gem 'rubocop', '~> 0.69', require: false
 -  gem 'rspec', require: false
