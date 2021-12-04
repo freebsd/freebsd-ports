@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.4.2
-PORTREVISION=	2
+PORTVERSION=	14.5.1
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,24 +17,24 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=2.16.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=14.4.0:net/gitlab-agent \
-	gitlab-pages>=1.46.0:www/gitlab-pages \
-	gitlab-shell>=13.21.1:devel/gitlab-shell \
+	gitlab-pages>=1.48.0:www/gitlab-pages \
+	gitlab-shell>=13.22.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	rubygem-rails61>=6.1.4.1<6.1.4.2:www/rubygem-rails61 \
-	rubygem-bootsnap14>=1.4.6<2.0:devel/rubygem-bootsnap14 \
+	rubygem-bootsnap>=1.9.1<1.10:devel/rubygem-bootsnap \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
 	rubygem-default_value_for>=3.4.0<3.5.0:devel/rubygem-default_value_for \
 	rubygem-pg>=1.2.3<2:databases/rubygem-pg \
-	rubygem-rugged>=1.1<2:devel/rubygem-rugged \
+	rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 	rubygem-grape-path-helpers>=1.7.0<1.8:devel/rubygem-grape-path-helpers \
 	rubygem-faraday>=1.0<2:www/rubygem-faraday \
 	rubygem-marginalia>=1.10.0<1.11:databases/rubygem-marginalia \
-	rubygem-declarative_policy>=1.0.0<1.1:security/rubygem-declarative_policy \
+	rubygem-declarative_policy>=1.1.0<1.2:security/rubygem-declarative_policy \
 	rubygem-devise47-rails61>=4.7.2<4.8:devel/rubygem-devise47-rails61 \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper>=5.5.0.rc2<5.6:security/rubygem-doorkeeper \
@@ -46,6 +46,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-omniauth-azure-activedirectory-v2>=1.0<2:net/rubygem-omniauth-azure-activedirectory-v2 \
 	rubygem-omniauth-azure-oauth2>=0.0.9<0.1.0:net/rubygem-omniauth-azure-oauth2 \
 	rubygem-omniauth-cas3>=1.1.4<1.2.0:security/rubygem-omniauth-cas3 \
+	rubygem-omniauth-dingtalk-oauth2>=1.0<2:security/rubygem-omniauth-dingtalk-oauth2 \
 	rubygem-omniauth-facebook4>=4.0.0<4.1.0:net/rubygem-omniauth-facebook4 \
 	rubygem-omniauth-github>=1.4.0<2.0:net/rubygem-omniauth-github \
 	rubygem-omniauth-gitlab>=1.0.2<1.1.0:security/rubygem-omniauth-gitlab \
@@ -138,6 +139,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-rack-timeout>=0.5.1<0.6:www/rubygem-rack-timeout \
 	rubygem-puma>=5.3.1<5.4:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0.3.1:www/rubygem-puma_worker_killer \
+	rubygem-sd_notify>=0.1.0<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=7.0<8.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=6.2.2<6.3:devel/rubygem-sidekiq \
@@ -179,7 +181,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-autoprefixer-rails1025>=10.2.5.1<10.2.6:textproc/rubygem-autoprefixer-rails1025 \
 	rubygem-terser>=1.0.2:textproc/rubygem-terser \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
-	rubygem-gemojione>=3.3<4.0:graphics/rubygem-gemojione \
+	rubygem-tanuki_emoji>=0.5<1:graphics/rubygem-tanuki_emoji \
 	rubygem-gon-rails61>=6.4.0<6.5:www/rubygem-gon-rails61 \
 	rubygem-request_store>=1.5<2.0:devel/rubygem-request_store \
 	rubygem-base32>=0.3.0<0.4.0:converters/rubygem-base32 \
@@ -223,7 +225,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
-	rubygem-gitaly>=14.3.0.pre.rc2<14.4.0:net/rubygem-gitaly \
+	rubygem-gitaly>=14.4.0.pre.rc43<14.5.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2,1<0.0.3,1:net/rubygem-kas-grpc \
 	rubygem-grpc142>=1.30.2<2:net/rubygem-grpc142 \
 	rubygem-google-protobuf>=3.19.0<3.20:devel/rubygem-google-protobuf \
@@ -250,7 +252,8 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-yajl-ruby>=1.4.1<1.5:devel/rubygem-yajl-ruby \
 	rubygem-webauthn>=2.3<3:security/rubygem-webauthn \
 	rubygem-ipaddress>=0.8.3<0.9:net/rubygem-ipaddress \
-	rubygem-parslet1>=1.8<2:textproc/rubygem-parslet1
+	rubygem-parslet1>=1.8<2:textproc/rubygem-parslet1 \
+	rubygem-ipynbdiff>=0.3.7<0.3.8:devel/rubygem-ipynbdiff
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -271,7 +274,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	1ce86e92f81869fc38ece6ae212b5ea9d5ffd405
+GL_COMMIT=	9d9ee598bc514eaee681b40cdff4d12a3a8f412a
 
 USERS=	git
 GROUPS=	git

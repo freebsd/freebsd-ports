@@ -1,6 +1,6 @@
---- bin/background_jobs.orig	2021-10-27 21:39:44 UTC
+--- bin/background_jobs.orig	2021-12-01 10:42:56 UTC
 +++ bin/background_jobs
-@@ -56,7 +56,7 @@ start_sidekiq()
+@@ -58,7 +58,7 @@ start_sidekiq()
      processes_args+=("${sidekiq_queues}")
    done
  
@@ -8,4 +8,4 @@
 +  ${cmd} bin/sidekiq-cluster "${processes_args[@]}" -P $sidekiq_pidfile -e $RAILS_ENV "$@" 2>&1 >> $sidekiq_logfile
  }
  
- action="$1"
+ cleanup()
