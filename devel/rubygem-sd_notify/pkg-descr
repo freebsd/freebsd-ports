@@ -1,0 +1,3 @@
+Notify systemd about various service status changes of Ruby programs
+
+WWW: https://github.com/agis/ruby-sdnotify

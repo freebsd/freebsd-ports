@@ -1,0 +1,6 @@
+This is a simple diff tool that cleans up jupyter notebooks, transforming each
+notebook into a readable markdown file, keeping the output of cells, and
+running the diff after. Markdowns are generated using an opinionated Jupyter
+to Markdown conversion. This means that the entire file is readable on the diff.
+
+WWW: https://gitlab.com/gitlab-org/incubation-engineering/mlops/rb-ipynbdiff
