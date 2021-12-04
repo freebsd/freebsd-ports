@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	gnome-shell-extension-dashtopanel
-PORTVERSION=	v43
+PORTVERSION=	v45
 CATEGORIES=	deskutils
 
 MAINTAINER=	Alexander88207@protonmail.com
