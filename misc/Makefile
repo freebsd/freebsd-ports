@@ -133,6 +133,7 @@
     SUBDIR += frugally-deep
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
+    SUBDIR += g810-led
     SUBDIR += gedkeeper
     SUBDIR += geekcode
     SUBDIR += getopt
