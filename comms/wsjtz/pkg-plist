@@ -9,8 +9,8 @@ bin/jt9
 bin/jt9code
 bin/message_aggregator
 bin/msk144code
-bin/qra64code
-bin/qra64sim
+bin/q65code
+bin/q65sim
 bin/rigctl-wsjtx
 bin/rigctld-wsjtx
 bin/udp_daemon
@@ -40,5 +40,6 @@ share/applications/message_aggregator.desktop
 share/applications/wsjtx.desktop
 share/pixmaps/wsjtx_icon.png
 %%DATADIR%%/JPLEPH
+%%DATADIR%%/USState.db
 %%DATADIR%%/cty.dat
 %%DATADIR%%/cty.dat_copyright.txt

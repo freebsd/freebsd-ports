@@ -1,5 +1,5 @@
 PORTNAME=	wsjtz
-DISTVERSION=	2.3.0-mod-0.81
+DISTVERSION=	2.5.0-1.10
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt-z/Source
 
@@ -21,7 +21,8 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libxslt.so:textproc/libxslt \
 		libhamlib.so:comms/hamlib \
-		libreadline.so:devel/readline
+		libreadline.so:devel/readline \
+		libportaudio.so:audio/portaudio
 
 USES=		cmake compiler:c++11-lib fortran gl \
 		makeinfo pkgconfig qt:5 zip
@@ -52,8 +53,8 @@ FFLAGS+=	-fallow-argument-mismatch
 .endif
 
 post-install:
-.for f in fcal fmeasure fmtave ft8code jt4code jt65code jt9 jt9code \
-	message_aggregator msk144code qra64code qra64sim udp_daemon wsjtx wsprd
+.for f in fcal fmeasure fmtave fst4sim ft8code jt4code jt65code jt9 jt9code \
+	message_aggregator msk144code q65code q65sim udp_daemon wsjtx wsprd
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
