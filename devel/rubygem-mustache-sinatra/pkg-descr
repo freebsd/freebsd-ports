@@ -1,0 +1,9 @@
+Mustache implementation for modern C++ (requires C++11).
+
+Features:
+* Header only
+* Zero dependencies
+* Templated string type for compatibility with any STL-like string
+  (std::string, std::wstring, etc)
+
+WWW: https://github.com/kainjow/Mustache
