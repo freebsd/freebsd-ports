@@ -9,7 +9,7 @@ I386_ROOT="${WINE_i386_ROOT:-$HOME/.i386-wine-pkg}"
 if [ ! -f "$I386_ROOT/$PREFIX/bin/wine" ]
 then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
-  printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine mesa-dri"
+  printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine-devel mesa-dri"
   exit 1
 fi
 
