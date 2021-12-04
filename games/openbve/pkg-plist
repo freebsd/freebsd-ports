@@ -491,6 +491,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Cursors/nm.png
 %%DATADIR%%/Data/Cursors/nr.png
 %%DATADIR%%/Data/Cursors/ny.png
+%%DATADIR%%/Data/Cursors/scroll.png
 %%DATADIR%%/Data/Flags/AT.png
 %%DATADIR%%/Data/Flags/BE.png
 %%DATADIR%%/Data/Flags/BR.png
@@ -520,7 +521,22 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Flags/UA.png
 %%DATADIR%%/Data/Flags/US.png
 %%DATADIR%%/Data/Flags/unknown.png
+%%DATADIR%%/Data/Formats/CSScriptLibrary.dll
+%%DATADIR%%/Data/Formats/CSScriptLibrary.xml
 %%DATADIR%%/Data/Formats/Formats.Msts.dll
+%%DATADIR%%/Data/Formats/OpenBveApi.dll
+%%DATADIR%%/Data/Formats/OpenBveApi.dll.config
+%%DATADIR%%/Data/Formats/OpenBveApi.xml
+%%DATADIR%%/Data/Formats/SharpCompress.dll
+%%DATADIR%%/Data/Formats/System.Buffers.dll
+%%DATADIR%%/Data/Formats/System.Buffers.xml
+%%DATADIR%%/Data/Formats/System.Memory.dll
+%%DATADIR%%/Data/Formats/System.Memory.xml
+%%DATADIR%%/Data/Formats/System.Numerics.Vectors.dll
+%%DATADIR%%/Data/Formats/System.Numerics.Vectors.xml
+%%DATADIR%%/Data/Formats/System.ValueTuple.dll
+%%DATADIR%%/Data/Formats/System.ValueTuple.xml
+%%DATADIR%%/Data/Formats/Ude.NetStandard.dll
 %%DATADIR%%/Data/In-game/Default/ats_center_left_back.png
 %%DATADIR%%/Data/In-game/Default/ats_center_left_overlay.png
 %%DATADIR%%/Data/In-game/Default/ats_center_middle_back.png
@@ -650,6 +666,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/loading.png
 %%DATADIR%%/Data/Menu/logo.png
 %%DATADIR%%/Data/Menu/package.png
+%%DATADIR%%/Data/Menu/please_select.png
 %%DATADIR%%/Data/Menu/raildriver.png
 %%DATADIR%%/Data/Menu/raildriver2.png
 %%DATADIR%%/Data/Menu/route_error.png
@@ -657,6 +674,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/train_error.png
 %%DATADIR%%/Data/Menu/train_unknown.png
 %%DATADIR%%/Data/Menu/xbox.png
+%%DATADIR%%/Data/Menu/zuki.png
 %%DATADIR%%/Data/Plugins/Object.Animated.dll
 %%DATADIR%%/Data/Plugins/Object.Animated.dll.config
 %%DATADIR%%/Data/Plugins/Object.Animated.pdb
@@ -703,6 +721,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/RouteViewer/background.png
 %%DATADIR%%/Data/RouteViewer/brightness.png
 %%DATADIR%%/Data/RouteViewer/buffer.png
+%%DATADIR%%/Data/RouteViewer/lighting.png
 %%DATADIR%%/Data/RouteViewer/limit.png
 %%DATADIR%%/Data/RouteViewer/runsound.png
 %%DATADIR%%/Data/RouteViewer/section.png
@@ -712,9 +731,13 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/RouteViewer/stop.png
 %%DATADIR%%/Data/RouteViewer/switchsound.png
 %%DATADIR%%/Data/RouteViewer/transponder.png
+%%DATADIR%%/Data/RouteViewer/weather.png
 %%DATADIR%%/Data/Shaders/default.frag
 %%DATADIR%%/Data/Shaders/default.vert
 %%DATADIR%%/Data/Shaders/picking.frag
+%%DATADIR%%/Data/Shaders/rectangle.frag
+%%DATADIR%%/Data/Shaders/rectangle.vert
+%%DATADIR%%/Data/Shaders/text.vert
 %%DATADIR%%/Data/TrainEditor2/change.png
 %%DATADIR%%/Data/TrainEditor2/cleanup.png
 %%DATADIR%%/Data/TrainEditor2/copy.png
@@ -771,6 +794,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/ObjectViewer.exe
 %%DATADIR%%/ObjectViewer.exe.config
 %%DATADIR%%/OpenBve-32.exe
+%%DATADIR%%/OpenBve-32.exe.config
 %%DATADIR%%/OpenBve.XML
 %%DATADIR%%/OpenBve.exe
 %%DATADIR%%/OpenBve.exe.config
@@ -796,6 +820,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/RouteManager2.dll.config
 %%DATADIR%%/RouteManager2.pdb
 %%DATADIR%%/RouteViewer-32.exe
+%%DATADIR%%/RouteViewer-32.exe.config
 %%DATADIR%%/RouteViewer.exe
 %%DATADIR%%/RouteViewer.exe.config
 %%DATADIR%%/SharpCompress.dll
