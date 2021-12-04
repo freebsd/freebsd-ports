@@ -2,7 +2,7 @@
 
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-
-DISTVERSION=		2.0.6-2
+DISTVERSION=		2.0.6-3
 PORTEPOCH=		1
 
 MAINTAINER=	hselasky@FreeBSD.org
