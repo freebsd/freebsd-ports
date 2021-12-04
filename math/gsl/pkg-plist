@@ -269,8 +269,8 @@ include/gsl/gsl_wavelet2d.h
 include/gsl/test_source.c
 lib/libgsl.a
 lib/libgsl.so
-lib/libgsl.so.25
-lib/libgsl.so.25.1.0
+lib/libgsl.so.27
+lib/libgsl.so.27.0.0
 lib/libgslcblas.a
 lib/libgslcblas.so
 lib/libgslcblas.so.0
