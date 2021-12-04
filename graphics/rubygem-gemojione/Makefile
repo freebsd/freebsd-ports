@@ -1,5 +1,5 @@
 PORTNAME=	gemojione
-PORTVERSION=	3.3.0
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
