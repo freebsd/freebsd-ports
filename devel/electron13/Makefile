@@ -1,6 +1,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
@@ -41,6 +42,7 @@ LIB_DEPENDS=		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 			libpng.so:graphics/png \
 			libwebp.so:graphics/webp \
 			libavcodec.so:multimedia/ffmpeg \
+			libva.so:multimedia/libva \
 			libopenh264.so:multimedia/openh264 \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz \
