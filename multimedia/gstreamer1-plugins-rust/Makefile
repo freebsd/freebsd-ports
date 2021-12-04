@@ -11,8 +11,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 
-BROKEN_aarch64=	fails to build: device_name: [0i8; 64usize], expected `u8`, found `i8`
-
 BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 
 USES=		cargo gnome meson pkgconfig ssl
@@ -402,6 +400,7 @@ CARGO_TEST=	no
 
 OPTIONS_DEFINE=	CSOUND DAV1D PANGO SODIUM
 OPTIONS_DEFAULT=CSOUND DAV1D PANGO SODIUM
+OPTIONS_EXCLUDE_aarch64=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
 OPTIONS_SUB=	yes
 
 CSOUND_DESC=		Audio filtering via Csound
