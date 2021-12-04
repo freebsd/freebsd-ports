@@ -1,5 +1,5 @@
 PORTNAME=	scikit-image
-PORTVERSION=	0.18.2
+PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,23 +10,26 @@ COMMENT=	Image processing in Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pythran>0:devel/py-pythran@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}imageio>0:graphics/py-imageio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tifffile>0:graphics/py-tifffile@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=1.8:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}imageio>=2.4.1:graphics/py-imageio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tifffile>=2019.7.26:graphics/py-tifffile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.4.1:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.2:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyWavelets>=1.1.1:math/py-PyWavelets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.2.1:devel/py-cloudpickle@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.7+
+USES=		compiler:c++11-lang python:3.7+ shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils cython cython_run
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
 PYDISTUTILS_BUILDARGS+=		saveopts
+SHEBANG_FILES=	skimage/scripts/skivi
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/skimage -name "*.so" -exec ${STRIP_CMD} {} \;
