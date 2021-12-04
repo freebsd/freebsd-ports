@@ -1,7 +1,8 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	nordic-theme
-DISTVERSION=	2.0.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.0
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -54,7 +55,7 @@ do-install-KDE-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/Kvantum
 	(cd ${WRKSRC}/kde/kvantum && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/Kvantum)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/plasma/look-and-feel/Nordic
-	(cd ${WRKSRC}/kde/look-and-feel && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/plasma/look-and-feel/Nordic)
+	(cd ${WRKSRC}/kde/plasma/look-and-feel && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/plasma/look-and-feel/)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/sddm/themes/Nordic
 	(cd ${WRKSRC}/kde/sddm/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/sddm/themes/Nordic)
 .include <bsd.port.mk>
