@@ -51,6 +51,17 @@ bin/yosys-smtbmc
 %%DATADIR%%/efinix/cells_sim.v
 %%DATADIR%%/efinix/gbuf_map.v
 %%DATADIR%%/gate2lut.v
+%%DATADIR%%/gatemate/arith_map.v
+%%DATADIR%%/gatemate/brams.txt
+%%DATADIR%%/gatemate/brams_init_20.vh
+%%DATADIR%%/gatemate/brams_init_40.vh
+%%DATADIR%%/gatemate/brams_map.v
+%%DATADIR%%/gatemate/cells_bb.v
+%%DATADIR%%/gatemate/cells_sim.v
+%%DATADIR%%/gatemate/lut_map.v
+%%DATADIR%%/gatemate/mul_map.v
+%%DATADIR%%/gatemate/mux_map.v
+%%DATADIR%%/gatemate/reg_map.v
 %%DATADIR%%/gowin/arith_map.v
 %%DATADIR%%/gowin/bram_init_16.vh
 %%DATADIR%%/gowin/brams.txt
