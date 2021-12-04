@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	13.21.1
+PORTVERSION=	13.22.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ USES=		gmake go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	593961bae309e92e9bff550d0231092f44813b06
+GL_COMMIT=	65b8ec55bebd0aea64ac52b9878bafcc2ad992d3
 
 USERS=		git
 GROUPS=		git
