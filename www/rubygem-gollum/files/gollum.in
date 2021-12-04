@@ -9,19 +9,19 @@
 # to enable this service:
 #
 # gollum_enable (bool):    Set to NO by default.
-#                                Set it to YES to enable.
+#                          Set it to YES to enable.
 #
 # gollum_path              Set it to the location where 
-#                                your git repo is located.
+#                          your git repo is located.
 #
 # gollum_user              User to run command as 
-#                                  Default is root
+#                          Default is root
 #
 # gollum_ip                Set the IP address gollum listens on
-#                                  Default is "0.0.0.0"
+#                          Default is "0.0.0.0"
 #
 # gollum_port              Set the IP address gollum listens on
-#                                  Default is "80"
+#                          Default is "80"
 
 . /etc/rc.subr
 
@@ -43,7 +43,7 @@ load_rc_config $name
 
 pidfile=/var/run/${name}.pid
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f gollum --host ${gollum_ip} --port ${gollum_port} --live-preview ${gollum_path}"
+command_args="-P ${pidfile} -r -f gollum --host ${gollum_ip} --port ${gollum_port} ${gollum_path}"
 
 load_rc_config $name
 run_rc_command "$1"
