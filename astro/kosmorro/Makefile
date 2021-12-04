@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	kosmorro
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 
