@@ -34,6 +34,7 @@ lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-diagnostics
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-plugins
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-queues
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-streams
+lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-tanzu
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-upgrade
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmqctl
 lib/rabbitmq_server-%%VERSION%%/plugins/README
@@ -1368,6 +1369,7 @@ lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-plugins
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-queues
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-server
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-streams
+lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-tanzu
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-upgrade
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmqctl
 man/man5/rabbitmq-env.conf.5.gz
