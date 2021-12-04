@@ -19,6 +19,7 @@ bin/lrs2lrf
 bin/markdown-calibre
 bin/web2disk
 lib/calibre/calibre/__init__.py
+lib/calibre/calibre/build_forms.py
 lib/calibre/calibre/constants.py
 lib/calibre/calibre/customize/__init__.py
 lib/calibre/calibre/customize/builtins.py
@@ -778,7 +779,6 @@ lib/calibre/calibre/gui2/dialogs/choose_library.py
 lib/calibre/calibre/gui2/dialogs/choose_library_ui.py
 lib/calibre/calibre/gui2/dialogs/choose_plugin_toolbars.py
 lib/calibre/calibre/gui2/dialogs/comments_dialog.py
-lib/calibre/calibre/gui2/dialogs/comments_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location_ui.py
@@ -835,6 +835,7 @@ lib/calibre/calibre/gui2/dnd.py
 lib/calibre/calibre/gui2/ebook_download.py
 lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
+lib/calibre/calibre/gui2/flow_toolbar.py
 lib/calibre/calibre/gui2/font_family_chooser.py
 lib/calibre/calibre/gui2/gestures.py
 lib/calibre/calibre/gui2/html_transform_rules.py
@@ -1007,7 +1008,6 @@ lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
 lib/calibre/calibre/gui2/store/stores/swiatebookow_plugin.py
 lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/whsmith_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
 lib/calibre/calibre/gui2/store/stores/wolnelektury_plugin.py
 lib/calibre/calibre/gui2/store/stores/xinxii_plugin.py
@@ -1432,7 +1432,6 @@ lib/calibre/qt/core_name_map.py
 lib/calibre/qt/loader.py
 lib/calibre/qt/webengine.py
 lib/calibre/qt/webengine_name_map.py
-lib/calibre/sgmllib.py
 lib/calibre/templite/__init__.py
 lib/calibre/tinycss/__init__.py
 lib/calibre/tinycss/color3.py
