@@ -3,7 +3,7 @@
 # Also update devel/libgit2, devel/libgit2-glib, devel/rubygem-rugged
 
 PORTNAME=	pygit2
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${MY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}cached-property>=0:devel/py-cached-property@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.8+
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	LIBGIT2=${LOCALBASE}
 PYDISTUTILS_TEST_TARGET?=	test
