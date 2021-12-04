@@ -47,7 +47,7 @@ fi
 
 command=%%PREFIX%%/sbin/lighttpd
 stop_postcmd=stop_postcmd
-#restart_precmd="lighttpd_checkconfig"
+restart_precmd="lighttpd_checkconfig"
 graceful_precmd="lighttpd_checkconfig"
 graceful_cmd="lighttpd_graceful"
 gracefulstop_cmd="lighttpd_gracefulstop"
