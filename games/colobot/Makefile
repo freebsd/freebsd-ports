@@ -1,10 +1,10 @@
 PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-
-DISTVERSION=	0.1.12
+DISTVERSION=	0.2.0
 DISTVERSIONSUFFIX=	-alpha
-PORTREVISION=	8
 CATEGORIES=	games education
 MASTER_SITES=	https://colobot.info/files/music/:music
+# music files are identical, keep old distfile for now
 DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz:music
 
 MAINTAINER=	makc@FreeBSD.org
@@ -32,25 +32,22 @@ USE_SDL=	image2 ttf2
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_TUPLE=	colobot:colobot-data:c467bd9:data
+GH_TUPLE=	colobot:colobot-data:0ac8197:data
 
-CMAKE_ON=	PLATFORM_BSD
 LDFLAGS_i386=	-Wl,-znotext
 SHEBANG_FILES=	data/i18n-tools/scripts/process_translations.py
 
 BINARY_ALIAS=	xmlstarlet=${LOCALBASE}/bin/xml
 
 post-extract:
-	@${MV} ${WRKDIR}/colobot-data-c467bd9/* ${WRKSRC}/data
+	@${MV} ${WRKDIR}/colobot-data-0ac8197/* ${WRKSRC}/data
 	@${MV} ${WRKDIR}/*.ogg ${WRKDIR}/LICENSE.txt ${WRKSRC}/data/music/
 
 post-patch:
 	${REINPLACE_CMD} '/COLOBOT_INSTALL_BIN_DIR/s|games|bin|' \
 		${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} 's|PLATFORM_GNU|PLATFORM_GNU OR PLATFORM_BSD|g' \
+	${REINPLACE_CMD} 's|PLATFORM_GNU|PLATFORM_GNU OR PLATFORM_FREEBSD|g' \
 		${WRKSRC}/desktop/CMakeLists.txt
-	${REINPLACE_CMD} 's|PLATFORM_MACOSX|PLATFORM_MACOSX OR PLATFORM_BSD|g' \
-		${WRKSRC}/src/CMakeLists.txt
 	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/cmake/Find*.cmake \
 		${WRKSRC}/tools/check-levels.sh
