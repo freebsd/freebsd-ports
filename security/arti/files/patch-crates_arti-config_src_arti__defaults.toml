@@ -1,0 +1,11 @@
+--- crates/arti-config/src/arti_defaults.toml.orig	2021-12-03 21:22:37 UTC
++++ crates/arti-config/src/arti_defaults.toml
+@@ -40,7 +40,7 @@ trace_filter = "debug"
+ #
+ # The state directory is not yet used.
+ [storage]
+-cache_dir = "${ARTI_CACHE}"
++cache_dir = "/var/db/arti"
+ state_dir = "${ARTI_LOCAL_DATA}"
+ 
+ # Replacement values for consensus parameters.  This is an advanced option
