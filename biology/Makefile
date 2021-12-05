@@ -78,6 +78,7 @@
     SUBDIR += kallisto
     SUBDIR += lamarc
     SUBDIR += libbigwig
+    SUBDIR += libgff
     SUBDIR += libgtextutils
     SUBDIR += libneurosim
     SUBDIR += libnuml
