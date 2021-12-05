@@ -1,7 +1,7 @@
 # Created by: frankch@waru.life.nthu.edu.tw
 
 PORTNAME=	seaview
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
@@ -37,9 +37,6 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		's|^\(CC\) |#\1 | ; s|-ldl || ; \
 		s|^\(CXX\) |#\1 |' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -E \
-		'/firstplotblock|javarun|\*progname/s,^,extern ,' \
-		${WRKSRC}/csrc/phylip.h ${WRKSRC}/csrc/protpars.c
 	${ECHO_CMD} 'boolean javarun;' >> ${WRKSRC}/csrc/phylip.c
 
 do-install:
