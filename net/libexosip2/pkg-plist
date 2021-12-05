@@ -1,5 +1,6 @@
 bin/sip_monitor
 bin/sip_reg
+bin/sip_storm
 include/eXosip2/eX_call.h
 include/eXosip2/eX_message.h
 include/eXosip2/eX_options.h
@@ -11,4 +12,4 @@ include/eXosip2/eXosip.h
 lib/libeXosip2.a
 lib/libeXosip2.so
 lib/libeXosip2.so.%%SHLIB_VER%%
-lib/libeXosip2.so.%%SHLIB_VER%%.0.1
+lib/libeXosip2.so.%%SHLIB_VER%%.0.0
