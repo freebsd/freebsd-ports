@@ -1,6 +1,7 @@
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.64
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
