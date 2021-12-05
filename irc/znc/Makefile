@@ -7,6 +7,10 @@ CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
 
+# Fix build with libressl
+PATCH_SITES=	https://github.com/znc/znc/commit/
+PATCHFILES=	dcb5f3df82fcfec48aab356252067dc897fb98cf.patch:-p1
+
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Advanced IRC bouncer
 
