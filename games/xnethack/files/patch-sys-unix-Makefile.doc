@@ -6,7 +6,7 @@
  
 -GAME	= nethack
 -MANDIR	= /usr/man/man6
-+GAME	= xnethack%%HACKEXT%%
++GAME	= xnethack
 +MANDIR	= ${PREFIX}/man/man6
  MANEXT	= 6
  
@@ -30,10 +30,10 @@
 -	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
 -	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
 -	-$(MDMANCREATE) $(MANDIR)/makedefs.$(MANEXT)
-+	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)/$(GAME)%%HACKEXT%%.$(MANEXT)
-+	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)/recover%%HACKEXT%%.$(MANEXT)
-+	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)/dlb%%HACKEXT%%.$(MANEXT)
-+	-$(MDMANCREATE) ${DESTDIR}$(MANDIR)/makedefs%%HACKEXT%%.$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)/$(GAME).$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)/recover.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)/dlb.$(MANEXT)
++	-$(MDMANCREATE) ${DESTDIR}$(MANDIR)/makedefs.$(MANEXT)
  
  # manual creation for distribution
  DISTRIB = Guidebook.txt nethack.txt recover.txt \

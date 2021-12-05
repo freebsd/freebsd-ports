@@ -1,4 +1,3 @@
-%%HACKLINK%%bin/xnethack
 @mode 555
 bin/%%HACKNAME%%
 @owner games

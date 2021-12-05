@@ -5,7 +5,7 @@
  # make NetHack
  #PREFIX	 = /usr
 -GAME     = xnethack
-+GAME     = xnethack%%HACKEXT%%
++GAME     = xnethack
  # GAME     = nethack.prg
  #GAMEUID  = games
 -#GAMEGRP  = bin
