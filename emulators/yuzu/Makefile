@@ -1,11 +1,15 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20211203
+PORTVERSION=	s20211218
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	6904f055db88.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6598 mainline-merge
 PATCHFILES+=	e919bea9c84e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7346 mainline-merge
+PATCHFILES+=	16e5fc080281.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7497 mainline-merge
+PATCHFILES+=	57909b727b2e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7497 mainline-merge
+PATCHFILES+=	1a9576fdffd5.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7602
+PATCHFILES+=	e57b13ad948e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7602
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -34,7 +38,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	a2fb5a13b
+GH_TAGNAME=	8e33cf1c2
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.180:Vulkan_Headers/externals/Vulkan-Headers \
@@ -48,16 +52,17 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		kinetiknz:cubeb:cubeb-0.2-1345-g773f16b:cubeb/externals/cubeb \
 		yhirose:cpp-httplib:v0.9.0-5-g9648f95:cpp_httplib/externals/cpp-httplib
 
-USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl ssl
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig sdl ssl
 USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
 USE_SDL=	sdl2
-CMAKE_ON=	Boost_USE_STATIC_LIBS LIBVA_FOUND
+CMAKE_ON=	Boost_USE_STATIC_LIBS
+CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_OFF=	YUZU_USE_EXTERNAL_SDL2 ENABLE_GNUTLS ENABLE_MBEDTLS
 LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO VULKAN
-OPTIONS_DEFAULT=PULSEAUDIO JACK SNDIO VULKAN
+OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO VAAPI VULKAN
+OPTIONS_DEFAULT=PULSEAUDIO JACK SNDIO VAAPI VULKAN
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
@@ -86,6 +91,8 @@ QT5_PLIST_FILES=bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 		share/mime/packages/${PORTNAME}.xml
 
+VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
+
 VULKAN_DESC=		Vulkan renderer
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
@@ -101,5 +108,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
+
+post-patch-VAAPI-off:
+	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
