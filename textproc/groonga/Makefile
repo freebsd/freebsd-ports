@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-PORTVERSION=	11.0.9
+PORTVERSION=	11.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
