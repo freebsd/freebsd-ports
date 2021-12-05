@@ -1,5 +1,5 @@
 PORTNAME=	fheroes2
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -24,6 +24,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	LICENSE \
 		README.txt \
 		changelog.txt \
-		demo/download_demo_version.sh
+		demo/download_demo_version.sh \
+		homm2/extract_homm2_resources.sh
 
 .include <bsd.port.mk>
