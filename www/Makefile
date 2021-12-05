@@ -41,7 +41,6 @@
     SUBDIR += bacula-web
     SUBDIR += baikal
     SUBDIR += bareos-webui
-    SUBDIR += bareos17-webui
     SUBDIR += bareos18-webui
     SUBDIR += bareos19-webui
     SUBDIR += beehive
