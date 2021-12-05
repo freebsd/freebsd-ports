@@ -1,5 +1,5 @@
 PORTNAME=	beid
-PORTVERSION=	5.0.8
+PORTVERSION=	5.0.28
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -44,8 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/pinentry,${LOCALBASE}/bin/pinentry,' \
 		-e 's,/proc/%d/exe,/proc/%d/file,' \
 		${WRKSRC}/cardcomm/pkcs11/src/dialogs/dialogspinentry/dlgs_pinentry.cpp
-	@${REINPLACE_CMD} -e '/^MODUTIL=/s,/usr/bin,${LOCALBASE}/bin,' \
-		-e '/^CERTUTIL=/s,/usr/bin,${LOCALBASE}/bin,' \
+	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' \
 		-e '/^LIBS=/s,=.*,=${PREFIX}/lib,' \
 		${WRKSRC}/plugins_tools/chrome_pkcs11/beid-update-nssdb
 	@${REINPLACE_CMD} '/^Exec=/s,/usr/bin,${PREFIX}/bin,' \
