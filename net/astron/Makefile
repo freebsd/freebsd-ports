@@ -9,6 +9,7 @@ COMMENT=	Server Technology for Realtime Object Networking
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libyaml-cpp.so:devel/yaml-cpp
 
