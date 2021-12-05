@@ -1,7 +1,7 @@
 # Created by: Christian Laursen <xi@borderworlds.dk>
 
 PORTNAME=	nbd
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
