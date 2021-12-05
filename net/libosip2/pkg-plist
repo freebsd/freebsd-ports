@@ -44,9 +44,9 @@ include/osipparser2/sdp_message.h
 lib/libosip2.a
 lib/libosip2.so
 lib/libosip2.so.%%ABIVER%%
-lib/libosip2.so.%%ABIVER%%.0.1
+lib/libosip2.so.%%ABIVER%%.0.0
 lib/libosipparser2.a
 lib/libosipparser2.so
 lib/libosipparser2.so.%%ABIVER%%
-lib/libosipparser2.so.%%ABIVER%%.0.1
+lib/libosipparser2.so.%%ABIVER%%.0.0
 libdata/pkgconfig/libosip2.pc
