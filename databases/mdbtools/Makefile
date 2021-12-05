@@ -3,6 +3,7 @@
 PORTNAME=	mdbtools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -13,8 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion \
 		flex:textproc/flex \
 		gawk:lang/gawk
-LIB_DEPENDS=	libodbcinst.so:databases/unixODBC \
-		libpcre.so:devel/pcre
+LIB_DEPENDS=	libodbcinst.so:databases/unixODBC
 RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
 
 USES=		autoreconf bison gnome iconv:wchar_t libtool pathfix \
