@@ -33,6 +33,7 @@ do
 done
 export LD_32_LIBRARY_PATH_RPATH=y
 export LD_32_LIBMAP="
+libgcc_s.so.1 /usr/lib32/libgcc_s.so.1
 $LOCALBASE/lib/libvulkan_intel.so  $I386_ROOT/$LOCALBASE/lib/libvulkan_intel.so
 $LOCALBASE/lib/libvulkan_radeon.so $I386_ROOT/$LOCALBASE/lib/libvulkan_radeon.so
 $LD_32_LIBMAP"
