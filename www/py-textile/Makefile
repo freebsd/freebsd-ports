@@ -1,7 +1,7 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 
 PORTNAME=	textile
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	www textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
