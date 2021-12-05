@@ -6,11 +6,14 @@ It comes with a web based dashboard that cannot be build
 into a package but will require the user to install it himself.
 
 To install the dashboard, please execute:
-    sudo pkg install npm-node14
+    as root execute:
     cd ${LOCALBASE}/share/ceph/mgr/dashboard/frontend
-    sudo -u ceph npm ci
-    sudo chown -R ceph:ceph .
-    sudo chown -R ceph:ceph /var/lib/ceph
+    pkg install rpm2cpio
+    fetch http://download.ceph.com/rpm-nautilus/el8/noarch/ceph-mgr-dashboard-14.2.22-0.el8.noarch.rpm
+    rpm2cpio ${DISTDIR}/ceph-mgr-dashboard-${DISTVERSION}-0.el7.noarch.rpm | \
+        ( cd ${WRKDIR}/dashboard; cpio -divm )
+    chown -R ceph:ceph .
+    chown -R ceph:ceph /var/lib/ceph
 
 EOM
 }

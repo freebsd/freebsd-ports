@@ -2,8 +2,7 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.2.21
-PORTREVISION=	3
+DISTVERSION=	14.2.22
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -39,7 +38,6 @@ LIB_DEPENDS=	\
 	libtcmalloc.so:devel/google-perftools \
 	librabbitmq.so:net/rabbitmq-c \
 	libfmt.so:devel/libfmt
-#	libleveldb.so:databases/leveldb \
 RUN_DEPENDS=	\
 	bash:shells/bash \
 	flock:sysutils/flock \
@@ -59,10 +57,11 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}cherrypy>=0:www/py-cherrypy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}pecan>=0:www/py-pecan@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR}
+	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++17-lang cpe dos2unix fuse gettext-runtime gmake ncurses \
-		pkgconfig python:3.7+ readline shebangfix ssl
+		pkgconfig python:3.8-3.9 readline shebangfix ssl
 CPE_VENDOR=	linuxfoundation
 USE_PYTHON=	cython py3kplist
 USE_OPENLDAP=	yes
@@ -86,7 +85,7 @@ GH_TUPLE+=	ceph:lua:1fce39c:lua/src/lua
 GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
 GH_TUPLE+=	ceph:rocksdb:4c736f1:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
-GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
+GH_TUPLE+=	facebook:zstd:b706286:zstd/src/zstd
 GH_TUPLE+=	ceph:spawn:5f4742f:spawn/src/spawn
 
 OPTIONS_DEFINE=	TESTS
@@ -104,11 +103,9 @@ SHEBANG_FILES=	src/rbdmap src/ceph-post-file.in src/rbd-replay-many \
 		src/tools/ceph-monstore-update-crush.sh src/mount.fuse.ceph \
 		src/ceph-create-keys
 
-TESTS_DESC=	Build test/debug tools (Broken with Clang)
+TESTS_DESC=	Build test/debug tools
 TESTS_CMAKE_ON=	-DWITH_TESTS:BOOL=ON
 TESTS_CMAKE_OFF=-DWITH_TESTS:BOOL=OFF
-
-USE_CXXSTD=	gnu++17
 
 USE_RC_SUBR=	ceph
 USE_LDCONFIG=	yes

@@ -54,6 +54,8 @@ bin/rbd-replay
 bin/rbd-replay-many
 bin/rbdmap
 bin/rgw-orphan-list
+bin/rgw-gap-list
+bin/rgw-gap-list-comparator
 etc/bash_completion.d/ceph
 etc/bash_completion.d/rados
 etc/bash_completion.d/radosgw-admin
@@ -162,6 +164,7 @@ lib/librgw_admin_user.so.1.0.0
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/deactivate.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/listing.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/main.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/migrate%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/prepare.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/trigger.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/__pycache__/zap.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -172,6 +175,7 @@ lib/librgw_admin_user.so.1.0.0
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/deactivate.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/listing.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/main.py
+%%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/migrate.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/prepare.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/trigger.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/devices/lvm/zap.py
@@ -233,6 +237,7 @@ lib/librgw_admin_user.so.1.0.0
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_create.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_deactivate.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_listing.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_migrate%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_prepare.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_trigger.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/__pycache__/test_zap.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -242,6 +247,7 @@ lib/librgw_admin_user.so.1.0.0
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_create.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_deactivate.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_listing.py
+%%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_migrate.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_prepare.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_trigger.py
 %%PYTHON_SITELIBDIR%%/ceph_volume/tests/devices/lvm/test_zap.py
@@ -1018,6 +1024,8 @@ sbin/mount.fuse.ceph
 %%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-bucket.service.ts
 %%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-daemon.service.spec.ts
 %%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-daemon.service.ts
+%%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-site.service.spec.ts
+%%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-site.service.ts
 %%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-user.service.spec.ts
 %%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/rgw-user.service.ts
 %%DATADIR%%/mgr/dashboard/frontend/src/app/shared/api/role.service.spec.ts
@@ -1381,6 +1389,7 @@ sbin/mount.fuse.ceph
 %%DATADIR%%/mgr/dashboard/tests/test_plugin_debug.py
 %%DATADIR%%/mgr/dashboard/tests/test_pool.py
 %%DATADIR%%/mgr/dashboard/tests/test_prometheus.py
+%%DATADIR%%/mgr/dashboard/tests/test_rbd.py
 %%DATADIR%%/mgr/dashboard/tests/test_rbd_mirroring.py
 %%DATADIR%%/mgr/dashboard/tests/test_rbd_service.py
 %%DATADIR%%/mgr/dashboard/tests/test_rest_client.py
