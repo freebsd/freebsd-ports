@@ -273,6 +273,7 @@
     SUBDIR += openmvg
     SUBDIR += opennn
     SUBDIR += openr2
+    SUBDIR += opensubdiv
     SUBDIR += openvdb
     SUBDIR += orange3
     SUBDIR += orion
