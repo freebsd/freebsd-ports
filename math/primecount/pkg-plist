@@ -3,5 +3,6 @@ include/primecount.h
 include/primecount.hpp
 lib/libprimecount.so
 lib/libprimecount.so.7
-lib/libprimecount.so.7.1
+lib/libprimecount.so.7.2
+libdata/pkgconfig/primecount.pc
 man/man1/primecount.1.gz
