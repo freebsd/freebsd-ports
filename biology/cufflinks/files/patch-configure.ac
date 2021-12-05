@@ -1,6 +1,15 @@
---- configure.ac.orig	2019-05-29 06:53:24 UTC
+--- configure.ac.orig	2019-07-06 16:28:01 UTC
 +++ configure.ac
-@@ -77,9 +77,10 @@ case "${host_cpu}-${host_os}" in
+@@ -14,7 +14,7 @@ AC_DEFINE(SVN_REVISION, "svnversion", [SVN Revision])
+ AC_CONFIG_SRCDIR([config.h.in])
+ AC_CONFIG_HEADERS([config.h])
+ AC_CONFIG_AUX_DIR([build-aux])
+-AM_INIT_AUTOMAKE
++AM_INIT_AUTOMAKE([-Wall tar-pax foreign])
+ 
+ #AM_PATH_CPPUNIT(1.10.2)
+ 
+@@ -78,9 +78,10 @@ case "${host_cpu}-${host_os}" in
  	AC_COMPILE_IFELSE([AC_LANG_PROGRAM], [ext_CFLAGS="-arch x86_64"], []);;
    *)
      AC_MSG_CHECKING([if gcc accepts -m64])
@@ -14,3 +23,11 @@
  esac
  
  AC_ARG_ENABLE(vectorize,    [  --enable-vectorize        Enable GCC auto-vectorization],
+@@ -120,7 +121,6 @@ LDFLAGS="${ext_LDFLAGS} ${user_LDFLAGS}"
+ AC_CHECK_MEMBERS([struct sysinfo.totalram], [], [], [#include <sys/sysinfo.h>])
+ AC_CHECK_DECLS([sysctl, CTL_HW, HW_PHYSMEM], [], [], [#include <sys/sysctl.h>])
+ 
+-AM_INIT_AUTOMAKE([-Wall tar-pax foreign])
+ 
+ AC_CONFIG_FILES([Makefile				 
+ 				 src/Makefile])

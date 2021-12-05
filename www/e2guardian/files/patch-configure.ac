@@ -1,6 +1,14 @@
---- configure.ac.orig	2018-08-21 08:17:02 UTC
+--- configure.ac.orig	2020-01-27 08:24:39 UTC
 +++ configure.ac
-@@ -617,7 +617,6 @@ else
+@@ -6,7 +6,6 @@ AC_DEFINE([FD_SETSIZE_OVERIDE],[""],[Define to allow D
+ 
+ AC_PREREQ(2.57)
+ AC_INIT(e2guardian, 5.3.4)
+-AM_INIT_AUTOMAKE
+ AC_CONFIG_HEADERS([dgconfig.h])
+ AC_CONFIG_MACRO_DIR([m4])
+ AM_INIT_AUTOMAKE([subdir-objects])
+@@ -617,7 +616,6 @@ else
  	AC_MSG_RESULT(yes)
  	dnsauth=true
  	DNSAUTHSUPPORT=""

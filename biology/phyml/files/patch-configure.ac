@@ -1,0 +1,10 @@
+--- configure.ac.orig	2020-07-09 11:49:16 UTC
++++ configure.ac
+@@ -10,7 +10,6 @@ AC_CONFIG_HEADERS([config.h])
+ AC_DEFINE([UNIX],[1],[Unix tag on])
+ AC_DEFINE([DEBUG],[1],[Debug tag on])
+ 
+-AM_INIT_AUTOMAKE
+ AC_CANONICAL_HOST
+ 
+ AC_PROG_CC([gcc])
