@@ -518,6 +518,7 @@
     SUBDIR += urh
     SUBDIR += usbids
     SUBDIR += usbrh-libusb
+    SUBDIR += usd
     SUBDIR += utftools
     SUBDIR += utouch-kmod
     SUBDIR += valentina
