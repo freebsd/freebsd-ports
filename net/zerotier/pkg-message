@@ -28,7 +28,7 @@ as required, see documentation at https://www.zerotier.com/manual.shtml
 If your system boots from DHCP (such as a laptop), there is a new rc.conf
 flag that will require that system startup will wait until the zerotier
 network is established before proceeding. Note that this flag *does not*
-work for systems confgured with statically assigned IP addresses, and
+work for systems configured with statically assigned IP addresses, and
 these will hang indefinitely due to an irreducible loop in rc(8) startup
 files. This flag is disabled by default.
 EOM
