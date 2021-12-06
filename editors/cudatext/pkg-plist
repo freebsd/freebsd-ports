@@ -764,8 +764,10 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/atsynedit-sel.gif
 %%DATADIR%%/readme/wiki/atsynedit_tree.png
 %%DATADIR%%/readme/wiki/controls_autosizes.png
+%%DATADIR%%/readme/wiki/cudatext-breadcrumbs.png
 %%DATADIR%%/readme/wiki/cudatext-charmap.png
 %%DATADIR%%/readme/wiki/cudatext-click-link.png
+%%DATADIR%%/readme/wiki/cudatext-color-text.png
 %%DATADIR%%/readme/wiki/cudatext-color-underline.png
 %%DATADIR%%/readme/wiki/cudatext-column-sel-cjk.png
 %%DATADIR%%/readme/wiki/cudatext-column-sel-weird.png
@@ -775,6 +777,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-complete-pics.png
 %%DATADIR%%/readme/wiki/cudatext-console.png
 %%DATADIR%%/readme/wiki/cudatext-editing-context-menu.png
+%%DATADIR%%/readme/wiki/cudatext-embedded-editor.png
 %%DATADIR%%/readme/wiki/cudatext-find-dlg.png
 %%DATADIR%%/readme/wiki/cudatext-find-markers.png
 %%DATADIR%%/readme/wiki/cudatext-fold-comments.png
@@ -783,9 +786,13 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-insert-pics.png
 %%DATADIR%%/readme/wiki/cudatext-lexer-editor-dlg.png
 %%DATADIR%%/readme/wiki/cudatext-lexer-library.png
-%%DATADIR%%/readme/wiki/cudatext-line-states.png
+%%DATADIR%%/readme/wiki/cudatext-line-states_.png
+%%DATADIR%%/readme/wiki/cudatext-lsp-hover_.png
+%%DATADIR%%/readme/wiki/cudatext-lsp-refs.png
 %%DATADIR%%/readme/wiki/cudatext-markers-html.png
-%%DATADIR%%/readme/wiki/cudatext-micromap.png
+%%DATADIR%%/readme/wiki/cudatext-menu-colorsetup.png
+%%DATADIR%%/readme/wiki/cudatext-micromap-on-scrollbar.png
+%%DATADIR%%/readme/wiki/cudatext-micromap_.png
 %%DATADIR%%/readme/wiki/cudatext-minimap.png
 %%DATADIR%%/readme/wiki/cudatext-runner-thread.gif
 %%DATADIR%%/readme/wiki/cudatext-snippets-add-vscode.png
@@ -801,6 +808,9 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-tabs-path-suffix.png
 %%DATADIR%%/readme/wiki/cudatext-tabs-red-marker.png
 %%DATADIR%%/readme/wiki/cudatext-toolbar.png
+%%DATADIR%%/readme/wiki/cudatext-tools-and-projects-config.png
+%%DATADIR%%/readme/wiki/cudatext-tools-and-projects.png
+%%DATADIR%%/readme/wiki/cudatext-tools-mainlexertool.png
 %%DATADIR%%/readme/wiki/cudatext-tools-menuitem.png
 %%DATADIR%%/readme/wiki/cudatext-tools-props.png
 %%DATADIR%%/readme/wiki/cudatext-tree-css-colors.png
