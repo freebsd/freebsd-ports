@@ -1489,6 +1489,8 @@ share/locale/zu/LC_MESSAGES/xviewer.mo
 %%DATADIR%%/icons/hicolor/32x32/actions/xviewer-plugin.png
 %%DATADIR%%/icons/hicolor/48x48/actions/slideshow-play.png
 %%DATADIR%%/icons/hicolor/scalable/actions/slideshow-play.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/view-fit-height-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/view-fit-width-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/xviewer-image-gallery.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/xviewer-plugin.svg
 %%DATADIR%%/pixmaps/thumbnail-frame.png
