@@ -5,4 +5,12 @@ You may want to increase default i2pd bandwidth limit by adding
 setting "bandwidth" parameter to "X" in %%ETCDIR%%/i2pd.conf
 EOM
 }
+{ type: upgrade
+  message: <<EOM
+Some defaults in the sample config file have been changed to respect hier(7).
+It is advised to take a look at i2pd.conf.sample and reflect the better defaults
+in your i2pd.conf manually. Dont forget to move the config files from the old
+to the new location after changing the location in i2pd.conf.
+EOM
+}
 ]

@@ -7,26 +7,42 @@
 #
 # Add the following line to /etc/rc.conf to enable i2pd:
 #
-# i2pd_enable="YES"
+# i2pd_enable:		Set to NO by default.
+#			Set it to YES to enable i2pd.
+# i2pd_certsdir:	The directory where the default certificaties are stores.
+# 			Default: %%CERTSDIR%%
+# i2pd_config:		The config file used to run the daemon.
+#			Default: %%ETCDIR%%/i2pd.conf
+# i2pd_datadir:		The datadir used to run the daemon.
+#			Default: %%WRITEDATADIR%%
+# i2pd_group:		The group account used to run the daemon.
+#			Default: %%GROUP%%
+# i2pd_user:		The user account used to run the daemon.
+#			Default: %%USER%%
 #
 
 . /etc/rc.subr
 
+desc="i2pd startup script"
 name="i2pd"
-rcvar=i2pd_enable
+rcvar="i2pd_enable"
 
 load_rc_config ${name}
 
 : ${i2pd_enable="NO"}
-: ${i2pd_user="%%USER%%"}
-: ${i2pd_group="%%GROUP%%"}
-: ${i2pd_datadir="/var/db/${name}"}
+: ${i2pd_certsdir="%%CERTSDIR%%"}
 : ${i2pd_config="%%ETCDIR%%/i2pd.conf"}
+: ${i2pd_datadir="%%WRITEDATADIR%%"}
+: ${i2pd_group="%%GROUP%%"}
+: ${i2pd_user="%%USER%%"}
 
-required_dirs=${i2pd_datadir}
-pidfile=/var/run/i2pd/i2pd.pid
+required_dirs="${i2pd_datadir}"
+
 command="%%PREFIX%%/bin/${name}"
-command_args="--conf ${i2pd_config} --service --datadir ${i2pd_datadir} --daemon"
+pidfile=/var/run/i2pd/i2pd.pid
+
+command_args="--certsdir ${i2pd_certsdir} --conf ${i2pd_config} --daemon --datadir ${i2pd_datadir} --service"
+
 extra_commands="reload"
 reload_cmd="pkill -2 -F ${pidfile} -x i2pd"
 

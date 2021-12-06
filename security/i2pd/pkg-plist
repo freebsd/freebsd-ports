@@ -1,7 +1,10 @@
 bin/i2pd
-etc/newsyslog.conf.d/i2pd.conf
+@sample %%ETCDIR%%/i2pd.conf.sample
+@sample %%ETCDIR%%/tunnels.conf.sample
+@sample etc/newsyslog.conf.d/i2pd.conf.sample
 lib/libi2pd.a
 lib/libi2pdclient.a
+lib/libi2pdlang.a
 man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/family/gostcoin.crt
 %%DATADIR%%/certificates/family/i2p-dev.crt
@@ -15,10 +18,11 @@ man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/reseed/hottuna_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/igor_at_novg.net.crt
 %%DATADIR%%/certificates/reseed/lazygravy_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/orignal_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/rambler_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/reseed_at_diva.exchange.crt
-%%DATADIR%%/certificates/router/orignal_at_mail.i2p.crt
-@sample %%ETCDIR%%/i2pd.conf.sample
-@dir(%%USER%%,%%GROUP%%,755) /var/run/i2pd
-@dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd
+@dir %%ETCDIR%%/tunnels.d
 @dir(%%USER%%,%%GROUP%%,755) /var/db/i2pd
+@dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd
+@dir(%%USER%%,%%GROUP%%,755) /var/run/i2pd
