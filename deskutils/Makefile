@@ -245,6 +245,7 @@
     SUBDIR += thinkingrock
     SUBDIR += timewarrior
     SUBDIR += todo
+    SUBDIR += todour
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline
