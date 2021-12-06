@@ -1,7 +1,7 @@
 # Created by: Jacques Vidrine <nectar@FreeBSD.org>
 
 PORTNAME=	stella
-PORTVERSION=	6.5.3
+PORTVERSION=	6.6
 CATEGORIES=	emulators
 
 MAINTAINER=	acm@FreeBSD.org
