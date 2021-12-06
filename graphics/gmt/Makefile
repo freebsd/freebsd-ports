@@ -1,6 +1,5 @@
 PORTNAME=	gmt
-DISTVERSION=	6.1.1
-PORTREVISION=	2
+DISTVERSION=	6.3.0
 CATEGORIES=	graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -11,7 +10,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf \
 		libcurl.so:ftp/curl \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libfftw3f_threads.so:math/fftw3-float \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos
@@ -40,6 +39,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DCOPY_GSHHG=off \
 		-DGMT_DATADIR=share/${PORTNAME} \
 		-DGMT_DOCDIR=share/doc/${PORTNAME} \
-		-DGMT_MANDIR=share/doc/${PORTNAME}/man
+		-DGMT_MANDIR=share/doc/${PORTNAME}/man \
+		-DGMT_EXCLUDE_PCRE=True
 
 .include <bsd.port.mk>
