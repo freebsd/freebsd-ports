@@ -812,6 +812,7 @@
     SUBDIR += generate
     SUBDIR += gengetopt
     SUBDIR += genie
+    SUBDIR += getoptions
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack

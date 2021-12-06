@@ -1,0 +1,8 @@
+An elegant option parser for shell scripts (full support for all POSIX shells)
+
+getoptions is a new option parser and generator written in POSIX-compliant shell
+script and released in august 2020. It is for those who want to support the
+POSIX / GNU style option syntax in your shell scripts. Most easy, simple, fast,
+small, extensible and portable. No more any loops and templates needed!
+
+WWW: https://github.com/ko1nksm/getoptions/
