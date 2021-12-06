@@ -1,5 +1,5 @@
---- qsstv/config/directoriesconfig.cpp.orig	2019-04-11 14:58:19 UTC
-+++ qsstv/config/directoriesconfig.cpp
+--- config/directoriesconfig.cpp.orig   2020-06-11 15:15:15 UTC
++++ config/directoriesconfig.cpp
 @@ -64,7 +64,11 @@ void directoriesConfig::readSettings()
    txStockImagesPath=qSettings.value("txStockImagesPath",QString(getenv("HOME"))+"/qsstv/tx_stock/").toString();
    templatesPath=qSettings.value("templatesPath",QString(getenv("HOME"))+"/qsstv/templates/").toString();

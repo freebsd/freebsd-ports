@@ -1,5 +1,5 @@
---- qsstv/drmrx/demodulator.cpp.orig	2019-02-26 18:17:40 UTC
-+++ qsstv/drmrx/demodulator.cpp
+--- drmrx/demodulator.cpp.orig	2019-02-26 18:17:40 UTC
++++ drmrx/demodulator.cpp
 @@ -947,7 +947,7 @@ bool demodulator::channelEstimation()
            temp2 += actual_pilots[2 * j] * next_pilots[2 * j + 1] -actual_pilots[2 * j + 1] * next_pilots[2 * j];
  

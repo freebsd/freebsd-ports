@@ -1,5 +1,5 @@
---- qsstv/videocapt/cameradialog.cpp.orig	2019-04-19 07:07:41 UTC
-+++ qsstv/videocapt/cameradialog.cpp
+--- videocapt/cameradialog.cpp.orig	2019-04-19 07:07:41 UTC
++++ videocapt/cameradialog.cpp
 @@ -220,7 +220,8 @@ void cameraDialog::getCameraInfo(QString
        formats=getFormatList(fd);
        if(ok)

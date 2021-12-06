@@ -1,6 +1,6 @@
---- qsstv/documentation/manual/manual.txt.orig	2019-04-18 20:56:53 UTC
-+++ qsstv/documentation/manual/manual.txt
-@@ -317,7 +317,7 @@ The following tabs are available
+--- documentation/manual/manual.txt.orig	2021-08-03 16:19:15 UTC
++++ documentation/manual/manual.txt
+@@ -410,7 +410,7 @@ The following tabs are available
  - Templates: directory where the template files are stored
  - Audio Records: directory for audio files (where you save/read recorded audio files)
  - Save TX images in TX SSTV or TX DRM directory: if selected the TX image will be saved

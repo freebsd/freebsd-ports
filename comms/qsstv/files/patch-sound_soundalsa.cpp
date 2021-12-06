@@ -1,5 +1,5 @@
---- qsstv/sound/soundalsa.cpp.orig	2019-04-18 09:34:09 UTC
-+++ qsstv/sound/soundalsa.cpp
+--- sound/soundalsa.cpp.orig	2019-04-18 09:34:09 UTC
++++ sound/soundalsa.cpp
 @@ -64,6 +64,8 @@ void soundAlsa::prepareCapture()
  {
    int err;

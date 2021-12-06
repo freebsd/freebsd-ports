@@ -1,5 +1,5 @@
---- qsstv/utils/color.cpp.orig	2017-11-16 17:14:48 UTC
-+++ qsstv/utils/color.cpp
+--- utils/color.cpp.orig	2017-11-16 17:14:48 UTC
++++ utils/color.cpp
 @@ -41,7 +41,7 @@
  #include <math.h>
  #include <assert.h>

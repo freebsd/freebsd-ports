@@ -1,5 +1,5 @@
---- qsstv/rig/rigcontrol.cpp.orig	2019-04-19 04:54:51 UTC
-+++ qsstv/rig/rigcontrol.cpp
+--- rig/rigcontrol.cpp.orig	2019-04-19 04:54:51 UTC
++++ rig/rigcontrol.cpp
 @@ -377,7 +377,7 @@ void rigControl::activatePTT(bool b)
        if (catParams.pttSerialPort.isEmpty()) return;
        if(serialP==0)
