@@ -1,7 +1,7 @@
 # Created by: Dima Sivachenko <dima@Chg.RU>
 
 PORTNAME=	fltk
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://www.fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
