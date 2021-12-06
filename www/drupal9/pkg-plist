@@ -65,6 +65,7 @@
 %%WWWDIR%%/core/assets/vendor/backbone/backbone.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/CHANGES.md
 %%WWWDIR%%/core/assets/vendor/ckeditor/LICENSE.md
+%%WWWDIR%%/core/assets/vendor/ckeditor/SECURITY.md
 %%WWWDIR%%/core/assets/vendor/ckeditor/build-config.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/ckeditor.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/lang/_translationstatus.txt
