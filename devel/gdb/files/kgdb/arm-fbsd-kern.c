@@ -201,7 +201,7 @@ arm_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 
 void _initialize_arm_kgdb_tdep ();
 void
-_initialize_arm_kgdb_tdep  ()
+_initialize_arm_kgdb_tdep ()
 {
   gdbarch_register_osabi_sniffer(bfd_arch_arm,
 				 bfd_target_elf_flavour,

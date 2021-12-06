@@ -189,7 +189,7 @@ aarch64_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 
 void _initialize_aarch64_kgdb_tdep ();
 void
-_initialize_aarch64_kgdb_tdep  ()
+_initialize_aarch64_kgdb_tdep ()
 {
   gdbarch_register_osabi_sniffer(bfd_arch_aarch64,
 				 bfd_target_elf_flavour,
