@@ -1,14 +1,18 @@
+@group www
+@owner www
+@dir(,,744) %%WWWDIR%%/application/assets/protected
+@dir(,,744) %%WWWDIR%%/application/views/cache
 %%WWWDIR%%/.codeclimate.yml
 %%WWWDIR%%/.csslintrc
 %%WWWDIR%%/.eslintignore
 %%WWWDIR%%/.eslintrc.yml
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/bug_report.md
+%%WWWDIR%%/.github/workflows/build.yml
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/.readthedocs.yaml
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
-%%WWWDIR%%/bwc
-%%WWWDIR%%/composer.json
-%%WWWDIR%%/composer.lock
 %%WWWDIR%%/application/assets/css/default.css
 %%WWWDIR%%/application/assets/images/bacula-web-logo.png
 %%WWWDIR%%/application/assets/js/default.js
@@ -76,6 +80,7 @@
 %%WWWDIR%%/application/views/templates/jobs.tpl
 %%WWWDIR%%/application/views/templates/layouts/default.tpl
 %%WWWDIR%%/application/views/templates/login.tpl
+%%WWWDIR%%/application/views/templates/pagination.tpl
 %%WWWDIR%%/application/views/templates/pools.tpl
 %%WWWDIR%%/application/views/templates/settings.tpl
 %%WWWDIR%%/application/views/templates/test.tpl
@@ -84,6 +89,9 @@
 %%WWWDIR%%/application/views/test.view.php
 %%WWWDIR%%/application/views/usersettings.view.php
 %%WWWDIR%%/application/views/volumes.view.php
+%%WWWDIR%%/bwc
+%%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/console.php
 %%WWWDIR%%/core/app/cerrorhandler.class.php
 %%WWWDIR%%/core/app/cmodel.class.php
@@ -93,6 +101,7 @@
 %%WWWDIR%%/core/bweb.class.php
 %%WWWDIR%%/core/const.inc.php
 %%WWWDIR%%/core/db/cdb.class.php
+%%WWWDIR%%/core/db/cdbpagination.class.php
 %%WWWDIR%%/core/db/cdbquery.class.php
 %%WWWDIR%%/core/db/cdbresult.class.php
 %%WWWDIR%%/core/db/cdbutils.class.php
@@ -104,20 +113,20 @@
 %%WWWDIR%%/core/utils/datetimeutil.class.php
 %%WWWDIR%%/core/utils/file.class.php
 %%WWWDIR%%/core/utils/htmlhelper.class.php
-%%WWWDIR%%/docs/Changelog
+%%WWWDIR%%/docs/CHANGELOG.md
+%%WWWDIR%%/docs/requirements.txt
 %%WWWDIR%%/docs/source/01_about/about.rst
 %%WWWDIR%%/docs/source/01_about/features.rst
 %%WWWDIR%%/docs/source/01_about/index.rst
 %%WWWDIR%%/docs/source/01_about/license.rst
 %%WWWDIR%%/docs/source/01_about/release.rst
+%%WWWDIR%%/docs/source/02_install/apache-installation.rst
 %%WWWDIR%%/docs/source/02_install/configure.rst
-%%WWWDIR%%/docs/source/02_install/configwebserver.rst
 %%WWWDIR%%/docs/source/02_install/finalize.rst
 %%WWWDIR%%/docs/source/02_install/index.rst
-%%WWWDIR%%/docs/source/02_install/install.rst
 %%WWWDIR%%/docs/source/02_install/installarchive.rst
 %%WWWDIR%%/docs/source/02_install/installcomposer.rst
-%%WWWDIR%%/docs/source/02_install/installnginx.rst
+%%WWWDIR%%/docs/source/02_install/nginx-installation.rst
 %%WWWDIR%%/docs/source/02_install/overview.rst
 %%WWWDIR%%/docs/source/02_install/requirements.rst
 %%WWWDIR%%/docs/source/02_install/test.rst
@@ -146,13 +155,8 @@
 %%WWWDIR%%/docs/source/_static/bacula-web-user-settings.jpg
 %%WWWDIR%%/docs/source/_static/bacula-web-users.jpg
 %%WWWDIR%%/docs/source/_static/bacula-web-volumes.jpg
-%%WWWDIR%%/docs/source/_static/js/custom.js
 %%WWWDIR%%/docs/source/conf.py
 %%WWWDIR%%/docs/source/index.rst
 %%WWWDIR%%/index.php
-@owner www
-@group www
-@dir(,,744) %%WWWDIR%%/application/assets/protected
-@dir(,,744) %%WWWDIR%%/application/views/cache
+%%WWWDIR%%/sonar-project.properties
 @sample %%WWWDIR%%/application/config/config.php.sample
-

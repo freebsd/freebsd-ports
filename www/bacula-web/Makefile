@@ -2,12 +2,12 @@
 
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.4.3
+DISTVERSION=	8.5.1
 PORTREVISION=	0
 CATEGORIES=	www sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	mfechner@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 
 LICENSE=	GPLv2+
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
 
 USES=		php:web,flavors
-USE_PHP=	dom gd gettext session simplexml tokenizer xml xmlwriter
+USE_PHP=	dom gd gettext posix session simplexml tokenizer xml xmlwriter
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
