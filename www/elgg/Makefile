@@ -1,7 +1,7 @@
 # Created by: Wen heping <wenheping@gmail.com>
 
 PORTNAME=	elgg
-PORTVERSION=	3.3.21
+PORTVERSION=	3.3.23
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
