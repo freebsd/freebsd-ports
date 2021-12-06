@@ -1,5 +1,6 @@
 PORTNAME=	free42
 DISTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
@@ -11,12 +12,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz xorg
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 USE_XORG=	x11 xmu
-DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h gtk/IntelRDFPMathLib20U1/LIBRARY/src/bid_functions.h common/bid_functions.h gtk/IntelRDFPMathLib20U1/TESTS/test_bid_functions.h
+DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h \
+		gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h \
+		gtk/IntelRDFPMathLib20U1/LIBRARY/src/bid_functions.h \
+		common/bid_functions.h \
+		gtk/IntelRDFPMathLib20U1/TESTS/test_bid_functions.h
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing -Wno-constant-conversion # to accommodate some code breaking with clang-50
@@ -30,7 +36,7 @@ PLIST_FILES+=	bin/${PORTNAME}${v}
 .endfor
 
 post-extract:
-	@cd ${BUILD_WRKSRC} && tar xvfz ../inteldecimal/IntelRDFPMathLib20U1.tar.gz
+	@cd ${BUILD_WRKSRC} && tar xfz ../inteldecimal/IntelRDFPMathLib20U1.tar.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(free42dirname)|("${DATADIR}/skins")|' \
