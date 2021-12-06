@@ -1,6 +1,5 @@
 PORTNAME=	wezterm
-DISTVERSION=	20211204-082213-a66c61ee9
-PORTREVISION=	1
+DISTVERSION=	20211205-192649-672c1cc1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -48,7 +47,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.50 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.51 \
 		approx-0.3.2 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
@@ -95,7 +95,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cfg-if-1.0.0 \
 		cgl-0.3.2 \
 		chrono-0.4.19 \
-		clap-2.33.3 \
+		clap-2.34.0 \
 		clipboard-0.5.0 \
 		clipboard-win-2.2.0 \
 		cloudabi-0.0.3 \
@@ -114,7 +114,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		core-graphics-types-0.1.1 \
 		core-text-19.2.0 \
 		cpufeatures-0.2.1 \
-		crc32fast-1.2.2 \
+		crc32fast-1.3.0 \
 		crossbeam-0.8.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.1 \
@@ -193,7 +193,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		gl_generator-0.14.0 \
 		globset-0.4.8 \
 		globwalk-0.8.1 \
-		gloo-timers-0.2.1 \
+		gloo-timers-0.2.2 \
 		guillotiere-0.6.2 \
 		hashbrown-0.5.0 \
 		hashbrown-0.11.2 \
@@ -225,7 +225,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
-		libc-0.2.108 \
+		libc-0.2.109 \
 		libloading-0.6.7 \
 		libloading-0.7.2 \
 		libssh-rs-0.1.1 \
@@ -249,7 +249,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		memmap-0.7.0 \
 		memmap2-0.2.3 \
 		memmem-0.1.1 \
-		memoffset-0.6.4 \
+		memoffset-0.6.5 \
 		metrics-0.17.0 \
 		metrics-macros-0.4.0 \
 		minimal-lexical-0.2.1 \
@@ -287,7 +287,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		once_cell-1.8.0 \
 		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
-		open-2.0.1 \
+		open-2.0.2 \
 		openssl-0.10.38 \
 		openssl-probe-0.1.4 \
 		openssl-src-300.0.2+3.0.0 \
@@ -331,7 +331,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.32 \
+		proc-macro2-1.0.33 \
 		pulldown-cmark-0.8.0 \
 		pure-rust-locales-0.5.6 \
 		quick-error-1.2.3 \
