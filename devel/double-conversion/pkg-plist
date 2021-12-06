@@ -15,4 +15,4 @@ lib/cmake/double-conversion/double-conversionTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/double-conversion/double-conversionTargets.cmake
 lib/libdouble-conversion.so
 lib/libdouble-conversion.so.3
-lib/libdouble-conversion.so.3.1.5
+lib/libdouble-conversion.so.3.1.6

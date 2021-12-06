@@ -2,8 +2,7 @@
 
 PORTNAME=	double-conversion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.5-19
-DISTVERSIONSUFFIX=	-gf4cb238
+DISTVERSION=	3.1.6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake:testing
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_LDCONFIG=	yes
