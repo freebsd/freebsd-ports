@@ -1,9 +1,8 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	toxic
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
