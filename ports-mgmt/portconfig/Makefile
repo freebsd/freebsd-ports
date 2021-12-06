@@ -1,6 +1,5 @@
 PORTNAME=	portconfig
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -10,7 +9,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	0292159f4e2431a2f7c1cebe13e28de34d0c8932
+GL_COMMIT=	222ee8a8f6a790fe6a9c72f7b615e47ecdb56399
 
 USES=		localbase:ldflags
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbsddialog.a:devel/bsddialog
