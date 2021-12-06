@@ -1,7 +1,7 @@
 # Created by: Shaun Amott <shaun@FreeBSD.org>
 
 PORTNAME=	editorconfig
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	editors python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
