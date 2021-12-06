@@ -20,6 +20,8 @@ lib/far2l/Plugins/incsrch/plug/incsrch.far-plug-wide
 lib/far2l/Plugins/inside/plug/inside.far-plug-mb
 lib/far2l/Plugins/multiarc/plug/multiarc.far-plug-mb
 lib/far2l/Plugins/tmppanel/plug/tmppanel.far-plug-wide
+%%WXGTK%%lib/far2l/far2l_gui.so
+%%X11%%lib/far2l/far2l_ttyx.broker
 share/applications/far2l.desktop
 %%DATADIR%%/FarCze.lng
 %%DATADIR%%/FarEng.hlf
