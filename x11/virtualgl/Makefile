@@ -7,7 +7,7 @@ CATEGORIES=	x11 graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	VirtualGL-${PORTVERSION}
 
-MAINTAINER=	davidjx8p@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirects commands from an OpenGL app to another X server
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
