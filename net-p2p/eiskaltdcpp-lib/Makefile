@@ -7,7 +7,7 @@ PORTREVISION?=	20
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX?=	-lib
 
-MAINTAINER?=	fjoe@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	EiskaltDC++ shared library and header files
 
 LICENSE=	GPLv3+

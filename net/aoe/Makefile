@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.son.org/download/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
 
 BROKEN_aarch64=		fails to compile: redefinition of frame

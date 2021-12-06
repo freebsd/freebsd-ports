@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Multi-User Compilation System (for use with distcc)
 
 BROKEN_armv6=		fails to compile: passing char * to parameter of incompatible type __builtin_va_list

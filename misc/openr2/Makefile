@@ -4,7 +4,7 @@ PORTNAME=	openr2
 PORTVERSION=	1.3.3
 CATEGORIES=	misc
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MFC/R2 call setup library
 
 LICENSE=	LGPL21+

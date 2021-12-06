@@ -6,7 +6,7 @@ CATEGORIES=	news mail
 MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots/${_SNAPDATE}
 DISTNAME=	gpsrc-115-${SNAPDATE}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GoldEd+ (FTN message editor)
 
 LICENSE=	GPLv2 LGPL20

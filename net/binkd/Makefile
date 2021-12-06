@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
 
 USE_RC_SUBR=	binkd

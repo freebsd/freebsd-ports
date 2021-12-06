@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	PGSQL/pgadmin/pgadmin3/v${PORTVERSION}/src
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
 
 LICENSE=	PostgreSQL

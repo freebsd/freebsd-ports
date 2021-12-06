@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.95
 CATEGORIES=	archivers
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate Packer for eXecutables
 
 LICENSE=	GPLv2+

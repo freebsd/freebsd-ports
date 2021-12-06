@@ -8,7 +8,7 @@ MASTER_SITES=	SF/fuse${PORTNAME}/fuse${PORTNAME}/FUSEPod%20v${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	fusepod-${PORTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for iPod
 
 LIB_DEPENDS=	libgpod.so:audio/libgpod\

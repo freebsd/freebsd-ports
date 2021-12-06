@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.robobunny.com/projects/asciiquarium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aquarium/sea animation in ASCII art
 
 LICENSE=	GPLv2

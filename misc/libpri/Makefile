@@ -5,7 +5,7 @@ PORTVERSION=	1.6.0
 CATEGORIES=	misc
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of the Primary Rate ISDN specification
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration library
 
 LIB_DEPENDS=	libnet.so:net/libnet

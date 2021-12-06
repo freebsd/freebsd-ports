@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.soft-switch.org/downloads/unicall/
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for supervisory tone generation and detection
 
 LICENSE=	LGPL21

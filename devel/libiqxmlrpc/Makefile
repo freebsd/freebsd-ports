@@ -6,7 +6,7 @@ PORTREVISION=	13
 CATEGORIES=	devel net
 MASTER_SITES=	SF
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 
 LICENSE=	BSD2CLAUSE
