@@ -1,51 +1,46 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 
 PORTNAME=	qemu
-PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTVERSION=	6.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
 
 MAINTAINER?=	bofh@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-LIB_DEPENDS?=	libnettle.so:security/nettle \
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
+		bash:shells/bash
+LIB_DEPENDS?=	libepoxy.so:graphics/libepoxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libepoxy.so:graphics/libepoxy \
+		libnettle.so:security/nettle \
 		libpcre2-8.so:devel/pcre2 \
-		libzstd.so:archivers/zstd \
-		libfdt.so:sysutils/dtc
-
-PATCHFILES+=	55765822804f.patch:-p1
-PATCHFILES+=	aa4d30f6618d.patch:-p1
+		libzstd.so:archivers/zstd
+#		libfdt.so:sysutils/dtc
 
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
-USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
+USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t ninja perl5 \
 		pkgconfig python:build tar:xz xorg
-USE_XORG=	pixman
 USE_GNOME=	cairo glib20 libxml2
+USE_PERL5=	build
+USE_PYTHON=	distutils noflavors
+USE_XORG=	pixman
 .endif
 
-USE_PERL5=	build
-
-PORTSCOUT=	limit:^5\.0\.
-
 HAS_CONFIGURE=	yes
-MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
-OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
-		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
-		STATIC_LINK DOCS ISCSI CAPSTONE DEBUG
 OPTIONS_SINGLE=	NCURSES
 OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
+OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL VDE \
+		CDROM_DMA USBREDIR X86_TARGETS STATIC_LINK DOCS ISCSI CAPSTONE DEBUG
+OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL NCURSES_DEFAULT VDE
+OPTIONS_SUB=	yes
+CAPSTONE_DESC=		Disassembly framework support
 CDROM_DMA_DESC=		IDE CDROM DMA
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 ISCSI_DESC=		libiscsi dependency (iSCSI client for emulated drives)
@@ -53,7 +48,6 @@ JPEG_DESC=		jpeg dependency (vnc lossy compression)
 NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
-PCAP_DESC=		pcap dependency (networking with bpf)
 PNG_DESC=		png dependency (vnc compression)
 SAMBA_DESC=		samba dependency (for -smb)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -61,18 +55,13 @@ STATIC_LINK_DESC=	Statically link the executables
 USBREDIR_DESC=		usb device network redirection (experimental!)
 VDE_DESC=		vde dependency (for vde networking)
 X86_TARGETS_DESC=	Build only x86 system targets
-CAPSTONE_DESC=		Disassembly framework support
-OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES_DEFAULT VDE
-OPTIONS_SUB=	yes
 CAPSTONE_CONFIGURE_ON=	--enable-capstone=system --extra-cflags=-I${LOCALBASE}/include/capstone
 CAPSTONE_CONFIGURE_OFF=	--disable-capstone
 CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 DEBUG_CONFIGURE_ON=	--enable-debug
-DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
-			sphinx-build:textproc/py-sphinx
-DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
+DOCS_CONFIGURE_ENABLE=	docs
 DOCS_USES=		makeinfo
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -88,16 +77,13 @@ NCURSES_DEFAULT_USES=	ncurses
 NCURSES_BASE_USES=	ncurses:base
 NCURSES_PORT_USES=	ncurses:port
 OPENGL_CONFIGURE_OFF=	--disable-opengl
-OPENGL_USE=	GL=gl
+OPENGL_USE=	GL=gbm,gl
 OPENGL_USES=	gl
-PCAP_CONFIGURE_ON=	--enable-pcap
-PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch-qapi_net.json ${FILESDIR}/pcap-patch-net_net.c \
-			${FILESDIR}/pcap-patch-net_clients.h
 PNG_CONFIGURE_OFF=	--disable-vnc-png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 SAMBA_CONFIGURE_ON=	--smbd=${LOCALBASE}/sbin/smbd
-SAMBA_USES=		samba:run # smbd
 SASL_CONFIGURE_OFF=	--disable-vnc-sasl
+SAMBA_USES=		samba:run # smbd
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK3 X11
@@ -116,16 +102,14 @@ X86_TARGETS_USES_OFF=	xorg
 X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softmmu x86_64-bsd-user'
 .endif
 
-PORTDOCS?=	docs index.html interop/.buildinfo interop/* qemu-ga-ref.html qemu-ga-ref.txt \
-	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/* system/.buildinfo \
-		system/* tools/.buildinfo tools/* user/.buildinfo user/*
+PORTDOCS?=	.buildinfo _static/* about/* devel/* docs genindex.html \
+		index.html interop/* objects.inv search.html searchindex.js \
+		specs/* system/* tools/* user/*
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CFLAGS_amd64=	-fPIC
-CFLAGS_powerpc=	-D_CALL_SYSV
-CONFIGURE_ARGS?=--localstatedir=/var \
-		--extra-ldflags=-L${LOCALBASE}/lib --disable-libssh \
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
+		--extra-ldflags=-L\"${LOCALBASE}/lib\" \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--python=${PYTHON_CMD} \
@@ -142,6 +126,7 @@ MAKE_ARGS+=	ARCH=x86_64
 .endif
 
 .if ${ARCH} == "powerpc"
+CFLAGS+=	-D_CALL_SYSV
 MAKE_ARGS+=	ARCH=ppc
 USE_GCC=	yes
 .endif
@@ -154,23 +139,16 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
-PLIST_SUB+=	IVSHMEM=""
-.else
-PLIST_SUB+=	IVSHMEM="@comment "
-.endif
-
 PLIST_SUB+=	LINUXBOOT_DMA=""
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
-# XXX need to disable usb host code on head while it's not ported to the
-# new usb stack yet
-post-configure:
-	@${REINPLACE_CMD} -E \
-		-e "s|^(HOST_USB=)bsd|\1stub|" \
-		${WRKSRC}/config-host.mak
+do-build:
+	cd ${WRKSRC} && ${GMAKE}
+
+do-install:
+	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .if !target(post-install)
 post-install:

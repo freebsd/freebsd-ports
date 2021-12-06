@@ -13,7 +13,4 @@ cross-debugging.
 
 As QEMU requires no host kernel patches to run, it is very safe and easy to use.
 
-See also the preconfigured system images on http://oszoo.org/
-Many live cd isos also work.
-
 WWW: http://wiki.qemu.org/Main_Page
