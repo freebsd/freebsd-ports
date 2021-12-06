@@ -371,6 +371,8 @@ include/wine/windows/docobj.h
 include/wine/windows/docobj.idl
 include/wine/windows/docobjectservice.h
 include/wine/windows/docobjectservice.idl
+include/wine/windows/documenttarget.h
+include/wine/windows/documenttarget.idl
 include/wine/windows/downloadmgr.h
 include/wine/windows/downloadmgr.idl
 include/wine/windows/dpaddr.h
@@ -451,6 +453,7 @@ include/wine/windows/exdispid.h
 include/wine/windows/exposeenums2managed.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
+include/wine/windows/featurestagingapi.h
 include/wine/windows/fileapi.h
 include/wine/windows/filter.h
 include/wine/windows/filter.idl
@@ -579,6 +582,8 @@ include/wine/windows/mediaobj.idl
 include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
 include/wine/windows/mfapi.h
+include/wine/windows/mfd3d12.h
+include/wine/windows/mfd3d12.idl
 include/wine/windows/mferror.h
 include/wine/windows/mfidl.h
 include/wine/windows/mfidl.idl
@@ -990,6 +995,8 @@ include/wine/windows/windows.globalization.idl
 include/wine/windows/windows.h
 include/wine/windows/windows.media.devices.h
 include/wine/windows/windows.media.devices.idl
+include/wine/windows/windows.media.h
+include/wine/windows/windows.media.idl
 include/wine/windows/windows.media.speechsynthesis.h
 include/wine/windows/windows.media.speechsynthesis.idl
 %%STAGING%%include/wine/windows/windows.networking.connectivity.h
@@ -1151,6 +1158,7 @@ lib/wine/%%WINEARCH%%-unix/advpack.dll.so
 lib/wine/%%WINEARCH%%-unix/amsi.dll.so
 lib/wine/%%WINEARCH%%-unix/amstream.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-appmodel-identity-l1-1-0.dll.so
+lib/wine/%%WINEARCH%%-unix/api-ms-win-appmodel-runtime-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-appmodel-runtime-l1-1-1.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-appmodel-runtime-l1-1-2.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-apiquery-l1-1-0.dll.so
@@ -1924,7 +1932,7 @@ lib/wine/%%WINEARCH%%-unix/libwldap32.a
 lib/wine/%%WINEARCH%%-unix/libwmcodecdspuuid.a
 lib/wine/%%WINEARCH%%-unix/libwmvcore.a
 lib/wine/%%WINEARCH%%-unix/libwnaspi32.a
-lib/wine/%%WINEARCH%%-unix/libwow64.a
+%%WINE64%%lib/wine/%%WINEARCH%%-unix/libwow64.a
 lib/wine/%%WINEARCH%%-unix/libws2_32.a
 lib/wine/%%WINEARCH%%-unix/libwsdapi.a
 lib/wine/%%WINEARCH%%-unix/libwsnmp32.a
@@ -1966,6 +1974,7 @@ lib/wine/%%WINEARCH%%-unix/mmdevapi.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/mmsystem.dll16.so
 lib/wine/%%WINEARCH%%-unix/mofcomp.exe.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/monodebg.vxd.so
+lib/wine/%%WINEARCH%%-unix/mountmgr.so
 lib/wine/%%WINEARCH%%-unix/mountmgr.sys.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/mouse.drv16.so
 lib/wine/%%WINEARCH%%-unix/mp3dmod.dll.so
@@ -2442,6 +2451,7 @@ lib/wine/%%WINEARCH%%-windows/advpack.dll
 lib/wine/%%WINEARCH%%-windows/amsi.dll
 lib/wine/%%WINEARCH%%-windows/amstream.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-appmodel-identity-l1-1-0.dll
+lib/wine/%%WINEARCH%%-windows/api-ms-win-appmodel-runtime-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-appmodel-runtime-l1-1-1.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-appmodel-runtime-l1-1-2.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-apiquery-l1-1-0.dll
