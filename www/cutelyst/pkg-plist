@@ -180,10 +180,10 @@ libdata/pkgconfig/Cutelyst3Qt5UtilsPagination.pc
 libdata/pkgconfig/Cutelyst3Qt5UtilsSql.pc
 libdata/pkgconfig/Cutelyst3Qt5UtilsValidator.pc
 libdata/pkgconfig/Cutelyst3Qt5ViewJSON.pc
-man/man1/cutelyst-wsgi2.1.gz
-man/man1/cutelyst2.1.gz
-man/man5/Cutelyst3Qt5CSRFProtection.5.gz
-man/man5/Cutelyst3Qt5Session.5.gz
+share/man/man1/cutelyst3-qt5.1.gz
+share/man/man1/cutelystd3-qt5.1.gz
+share/man/man5/Cutelyst3Qt5CSRFProtection.5.gz
+share/man/man5/Cutelyst3Qt5Session.5.gz
 %%DATADIR%%3/translations/cutelystcmd.de.qm
 %%DATADIR%%3/translations/cutelystcore.de.qm
 %%DATADIR%%3/translations/cutelystwsgi.de.qm
@@ -200,7 +200,6 @@ man/man5/Cutelyst3Qt5Session.5.gz
 %%DATADIR%%3/translations/plugin_view_cutelee.en.qm
 %%DATADIR%%3/translations/plugin_view_grantlee.de.qm
 %%DATADIR%%3/translations/plugin_view_grantlee.en.qm
-
 %%GRANTLEE%%include/cutelyst3-qt5/Cutelyst/Plugins/View/Grantlee/grantleeview.h
 %%GRANTLEE%%lib/cutelyst3-qt5-plugins/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_cutelyst.so
 %%GRANTLEE%%lib/libCutelyst3Qt5ViewGrantlee.so
