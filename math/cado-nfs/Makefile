@@ -40,4 +40,8 @@ PLIST_SUB=	LINGEN_PZ=""
 PLIST_SUB=	LINGEN_PZ="@comment "
 .endif
 
+.if ${ARCH} == "i386"
+CXXFLAGS+=	-msse2 # workaround for error: always_inline function '_mm_setzero_si128' requires target feature 'sse2', but would be inlined into function 'gf2x_mul4' that is compiled without support for 'sse2'
+.endif
+
 .include <bsd.port.mk>
