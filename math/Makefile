@@ -264,7 +264,6 @@
     SUBDIR += eclib
     SUBDIR += ecos
     SUBDIR += edenmath
-    SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
     SUBDIR += elemental

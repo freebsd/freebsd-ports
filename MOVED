@@ -16611,3 +16611,4 @@ sysutils/bareos17-client|sysutils/bareos18-client|2021-12-05|Has expired: Deprec
 sysutils/bareos17-client-static||2021-12-05|Has expired: Deprecated, no new release since 2020
 sysutils/bareos17-server|sysutils/bareos18-server|2021-12-05|Has expired: Deprecated, no new release since 2020
 www/bareos17-webui|www/bareos18-webui|2021-12-05|Has expired: Deprecated, no new release since 2020
+math/eigen2||2021-12-07|Has expired: No longer available upstream, no consumers in ports
