@@ -906,6 +906,7 @@
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
     SUBDIR += googletest
+    SUBDIR += gopls
     SUBDIR += goprotobuf
     SUBDIR += goredo
     SUBDIR += goreleaser
