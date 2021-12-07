@@ -11,13 +11,13 @@ Qt UI with Jack audio backend:
 
 $ cp files/example.dsp .
 $ faust2jaqt example.dsp
-$ ./example
+$ ./example # this assumes that Jack audio server is up and running
 
 It will create the window with sliders and a button that you would
 need to press.
 
-In order to compile programs for some audio backends (like Jack,
-PortAudio) and UI frontends (like Qt), you need to first install them.
+In order to compile programs for some audio backend (like Jack,
+PortAudio) and UI frontend (like Qt), you need to first install them.
 
 EOM
 }
