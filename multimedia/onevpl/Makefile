@@ -1,6 +1,6 @@
 PORTNAME=	oneVPL
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.6.0
+DISTVERSION=	2022.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,9 +16,10 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libva.so:multimedia/libva
 
-USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	x11 xcb
 GH_ACCOUNT=	oneapi-src
 CMAKE_TESTING_ON=	BUILD_TESTS
 

@@ -19,7 +19,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
             if (libInfo->libNameFull.find(MSDK_LIB_NAME) != std::string::npos) {
                                           ^
 
---- api/vpl/mfxdefs.h.orig	2021-09-13 22:51:02 UTC
+--- api/vpl/mfxdefs.h.orig	2021-12-07 00:05:44 UTC
 +++ api/vpl/mfxdefs.h
 @@ -64,7 +64,7 @@ extern "C"
      #define MFX_PACK_BEGIN_STRUCT_W_PTR()    MFX_PACK_BEGIN_X(8)
@@ -39,7 +39,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
         #define MFX_DEPRECATED __attribute__((deprecated))
         #if defined(__cplusplus)
           #define MFX_DEPRECATED_ENUM_FIELD_INSIDE(arg) arg __attribute__((deprecated))
---- dispatcher/vpl/mfx_dispatcher_vpl.h.orig	2021-09-13 22:51:02 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl.h.orig	2021-12-07 00:05:44 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl.h
 @@ -47,7 +47,7 @@ typedef char CHAR_TYPE;
          // Windows x64
@@ -50,9 +50,9 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // Linux x64
      #define MSDK_LIB_NAME "libmfxhw64."
  #endif
---- dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp.orig	2021-09-13 22:51:02 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp.orig	2021-12-07 00:05:44 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp
-@@ -400,7 +400,9 @@ mfxU32 LoaderCtxVPL::GetSearchPathsSystemDefault(std::
+@@ -401,7 +401,9 @@ mfxU32 LoaderCtxVPL::GetSearchPathsSystemDefault(std::
  #ifdef __linux__
      // Add the standard path for libmfx1 install in Ubuntu
      searchDirs.push_back("/usr/lib/x86_64-linux-gnu");
@@ -62,7 +62,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // Add other default paths
      searchDirs.push_back("/lib");
      searchDirs.push_back("/usr/lib");
-@@ -1057,7 +1059,7 @@ mfxStatus LoaderCtxVPL::QueryLibraryCaps() {
+@@ -1069,7 +1071,7 @@ mfxStatus LoaderCtxVPL::QueryLibraryCaps() {
                  // update number of valid MSDK adapters
                  numImplMSDK++;
  
@@ -71,7 +71,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
                  // currently only one adapter on Linux (avoid multiple copies)
                  break;
  #endif
---- dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp.orig	2021-09-13 22:51:02 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp.orig	2021-12-07 00:05:44 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp
 @@ -18,7 +18,7 @@
          #define LIB_ONEVPL L"libmfx64-gen.dll"
@@ -82,7 +82,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // Linux x64
      #define LIB_ONEVPL "libmfx-gen.so.1.2"
      #define LIB_MSDK   "libmfxhw64.so.1"
---- dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp.orig	2021-09-13 22:51:02 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp.orig	2021-12-07 00:05:44 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp
 @@ -10,7 +10,7 @@
      #include "vpl/mfx_dispatcher_vpl_win.h"
@@ -111,7 +111,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // require pthreads to be linked in for MSDK RT to load
      pthread_key_t pkey;
      if (pthread_key_create(&pkey, NULL) == 0) {
---- examples/coreAPI/legacy-decode/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/coreAPI/legacy-decode/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/coreAPI/legacy-decode/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -122,7 +122,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- examples/coreAPI/legacy-encode/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/coreAPI/legacy-encode/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/coreAPI/legacy-encode/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -133,7 +133,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- examples/coreAPI/legacy-vpp/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/coreAPI/legacy-vpp/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/coreAPI/legacy-vpp/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -144,7 +144,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- examples/hello/hello-createsession/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/hello/hello-createsession/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/hello/hello-createsession/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -155,7 +155,18 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- examples/hello/hello-decvpp/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/hello/hello-decode/src/util.h.orig	2021-12-07 00:05:44 UTC
++++ examples/hello/hello-decode/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/hello/hello-decvpp/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/hello/hello-decvpp/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -166,7 +177,18 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- examples/hello/hello-transcode/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/hello/hello-encode/src/util.h.orig	2021-12-07 00:05:44 UTC
++++ examples/hello/hello-encode/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/hello/hello-transcode/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/hello/hello-transcode/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -177,7 +199,18 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
  #endif
  
---- examples/interop/advanced-decvpp-infer/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/hello/hello-vpp/src/util.h.orig	2021-12-07 00:05:44 UTC
++++ examples/hello/hello-vpp/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/interop/advanced-decvpp-infer/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/interop/advanced-decvpp-infer/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -188,7 +221,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- examples/interop/hello-decode-infer/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/interop/hello-decode-infer/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/interop/hello-decode-infer/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -199,7 +232,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
  #endif
  
---- examples/interop/legacy-decode-infer/src/util.h.orig	2021-09-13 22:51:02 UTC
+--- examples/interop/legacy-decode-infer/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/interop/legacy-decode-infer/src/util.h
 @@ -30,7 +30,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -210,7 +243,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <fcntl.h>
      #include <unistd.h>
  #endif
---- preview/cplusplus/examples/hello-decode-cpp/src/util.hpp.orig	2021-09-13 22:51:02 UTC
+--- preview/cplusplus/examples/hello-decode-cpp/src/util.hpp.orig	2021-12-07 00:05:44 UTC
 +++ preview/cplusplus/examples/hello-decode-cpp/src/util.hpp
 @@ -21,7 +21,7 @@
      #include "vpl/mfxdispatcher.h"
@@ -230,7 +263,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #ifdef LIBVA_SUPPORT
          #include "va/va.h"
          #include "va/va_drm.h"
---- preview/cplusplus/examples/hello-encode-cpp/src/util.hpp.orig	2021-09-13 22:51:02 UTC
+--- preview/cplusplus/examples/hello-encode-cpp/src/util.hpp.orig	2021-12-07 00:05:44 UTC
 +++ preview/cplusplus/examples/hello-encode-cpp/src/util.hpp
 @@ -21,7 +21,7 @@
      #include "vpl/mfxdispatcher.h"
@@ -250,7 +283,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #ifdef LIBVA_SUPPORT
          #include "va/va.h"
          #include "va/va_drm.h"
---- preview/python/binding/vpl_python.hpp.orig	2021-09-13 22:51:02 UTC
+--- preview/python/binding/vpl_python.hpp.orig	2021-12-07 00:05:44 UTC
 +++ preview/python/binding/vpl_python.hpp
 @@ -15,6 +15,6 @@
  
@@ -260,7 +293,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
 +#ifdef __unix__
      #define strncpy_s(dst, size, src, cnt) strncpy((dst), (src), cnt) // NOLINT
  #endif
---- tools/cli/decvpp_tool/util.hpp.orig	2021-09-13 22:51:02 UTC
+--- tools/cli/decvpp_tool/util.hpp.orig	2021-12-07 00:05:44 UTC
 +++ tools/cli/decvpp_tool/util.hpp
 @@ -31,7 +31,7 @@ enum {
      #include "vpl/mfxdispatcher.h"
@@ -298,23 +331,58 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #ifdef LIBVA_SUPPORT
      vaTerminate((VADisplay)accelHandle);
      close(fd);
---- tools/legacy/sample_encode/src/sample_encode.cpp.orig	2021-09-13 22:51:02 UTC
-+++ tools/legacy/sample_encode/src/sample_encode.cpp
-@@ -53,7 +53,7 @@ void PrintHelp(msdk_char* strAppName, const msdk_char*
+--- tools/legacy/sample_common/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_common/CMakeLists.txt
+@@ -63,7 +63,7 @@ find_package(VPL REQUIRED)
+ target_link_libraries(sample_common PUBLIC VPL::dispatcher
+                                            media_sdk_compatibility_headers)
  
-     msdk_printf(MSDK_STRING("   If codecid is jpeg, -q option is mandatory.)\n"));
-     msdk_printf(MSDK_STRING("Options: \n"));
--#if __linux__
-+#if __unix__
-     msdk_printf(MSDK_STRING("   [-device /path/to/device] - set graphics device for processing\n"));
-     msdk_printf(
-         MSDK_STRING("                                 For example: '-device /dev/dri/card0'\n"));
-@@ -532,7 +532,7 @@ mfxStatus ParseInputString(msdk_char* strInput[], mfxU
-                 return MFX_ERR_UNSUPPORTED;
-             }
-         }
--#if __linux__
-+#if __unix__
-         else if (0 == msdk_strcmp(strInput[i], MSDK_STRING("-device"))) {
-             if (!pParams->strDevicePath.empty()) {
-                 msdk_printf(MSDK_STRING("error: you can specify only one device\n"));
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   target_compile_definitions(sample_common PUBLIC LINUX64)
+ 
+   find_package(PkgConfig REQUIRED)
+--- tools/legacy/sample_decode/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_decode/CMakeLists.txt
+@@ -11,7 +11,7 @@ if(POLICY CMP0074)
+   cmake_policy(SET CMP0074 OLD)
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   if(NOT
+      (PKG_LIBVA_FOUND
+       AND PKG_LIBVA_DRM_FOUND
+--- tools/legacy/sample_encode/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_encode/CMakeLists.txt
+@@ -11,7 +11,7 @@ if(POLICY CMP0074)
+   cmake_policy(SET CMP0074 OLD)
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   if(NOT (PKG_LIBVA_FOUND AND PKG_LIBVA_DRM_FOUND))
+     message("Skipping sample_encode build.")
+     return()
+--- tools/legacy/sample_multi_transcode/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_multi_transcode/CMakeLists.txt
+@@ -11,7 +11,7 @@ endif()
+ 
+ find_package(VPL REQUIRED)
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   if(NOT
+      (PKG_LIBVA_FOUND
+       AND PKG_LIBVA_DRM_FOUND
+--- tools/legacy/sample_vpp/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_vpp/CMakeLists.txt
+@@ -25,7 +25,7 @@ if(POLICY CMP0074)
+   cmake_policy(SET CMP0074 OLD)
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   if(NOT (PKG_LIBVA_FOUND AND PKG_LIBVA_DRM_FOUND))
+     message("Skipping sample_vpp build.")
+     return()
