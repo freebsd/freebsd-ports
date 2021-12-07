@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Install one of lang/erlang or lang/erlang-runtime24 or any
+later Erlang/OTP release of your choice, to work with Gleam.
+EOM
+}
+]

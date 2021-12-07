@@ -1,7 +1,6 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
-PORTREVISION=	2
+DISTVERSION=	0.18.0
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
@@ -9,8 +8,6 @@ COMMENT=	ML-flavoured type-safe language using Erlang's BEAM runtime
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/compiler-core/LICENCE
-
-RUN_DEPENDS=	rebar3:devel/rebar3
 
 USES=		cargo ssl
 USE_GITHUB=	yes
