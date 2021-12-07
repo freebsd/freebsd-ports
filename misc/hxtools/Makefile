@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	hxtools
-PORTVERSION=	20210928
+PORTVERSION=	20211204
 CATEGORIES=	misc
 MASTER_SITES=	http://inai.de/files/hxtools/
 
