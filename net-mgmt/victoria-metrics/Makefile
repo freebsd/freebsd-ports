@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME?=	victoria-metrics
-PORTVERSION=	1.69.0		# don't forget to update BUILDINFO_TAG
+PORTVERSION=	1.70.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake go:modules,no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=${DISTVERSIONPREFIX}${DISTVERSION} \
-		GOOS=${OPSYS:tl} BUILDINFO_TAG=69e655b \
+		GOOS=${OPSYS:tl} BUILDINFO_TAG=7f2f26b \
 		DATEINFO_TAG=${_GET_DATE:sh}
 ALL_TARGET=	${PORTNAME}-pure
 

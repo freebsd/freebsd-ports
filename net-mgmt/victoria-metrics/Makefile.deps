@@ -1,20 +1,20 @@
 # Generated with `make gomod-vendor'
 GH_TUPLE=	\
-		VictoriaMetrics:fastcache:v1.7.0:victoriametrics_fastcache/vendor/github.com/VictoriaMetrics/fastcache \
+		VictoriaMetrics:fastcache:v1.8.0:victoriametrics_fastcache/vendor/github.com/VictoriaMetrics/fastcache \
 		VictoriaMetrics:fasthttp:v1.1.0:victoriametrics_fasthttp/vendor/github.com/VictoriaMetrics/fasthttp \
 		VictoriaMetrics:metrics:v1.18.1:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
-		VictoriaMetrics:metricsql:v0.30.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
+		VictoriaMetrics:metricsql:v0.31.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		aws:aws-sdk-go:v1.41.19:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.42.17:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-instrumentation:opencensus-proto:v0.3.0:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cespare:xxhash:v2.1.2:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
 		cheggaaa:pb:v3.0.8:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		cncf:udpa:04548b0d99d4:cncf_udpa_go/vendor/github.com/cncf/udpa \
-		cncf:xds:cb28da3451f1:cncf_xds_go/vendor/github.com/cncf/xds \
+		cncf:xds:a8f946100490:cncf_xds_go/vendor/github.com/cncf/xds \
 		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
-		envoyproxy:go-control-plane:v0.10.0:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
+		envoyproxy:go-control-plane:v0.10.1:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
 		envoyproxy:protoc-gen-validate:v0.6.2:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
 		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		go-kit:kit:v0.12.0:go_kit_kit/vendor/github.com/go-kit/kit \
@@ -23,16 +23,16 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:b53810dc28af:golang_net/vendor/golang.org/x/net \
+		golang:net:0a0e4e1bb54c:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:e0b2ad06fe42:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:fe61309f8881:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:4c6863e31247:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:f09f9a12af12:google_go_genproto/vendor/google.golang.org/genproto \
 		googleapis:gax-go:v2.1.1:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.60.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:storage/v1.18.2:googleapis_google_cloud_go_storage \
@@ -41,7 +41,7 @@ GH_TUPLE=	\
 		influxdata:influxdb:v1.9.5:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		klauspost:compress:v1.13.6:klauspost_compress/vendor/github.com/klauspost/compress \
-		mattn:go-colorable:v0.1.11:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.12:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \

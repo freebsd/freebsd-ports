@@ -8,6 +8,10 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmagent.md
 %%PORTDOCS%%%%DOCSDIR%%/vmagent.png
 %%PORTDOCS%%%%DOCSDIR%%/vmalert.md
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_cluster.png
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_ha.png
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_multicluster.png
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_single.png
 %%PORTDOCS%%%%DOCSDIR%%/vmauth.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackup.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager.md

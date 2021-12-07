@@ -36,6 +36,8 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator-grafana1.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator-grafana2.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-multiple-retention-scheme.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-multiple-retention-setup.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-vmagent-grafana-dash.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-vmagent-values.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmsingle-grafana-dashboards.png
