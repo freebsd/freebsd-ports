@@ -1,0 +1,30 @@
+In file included from warzone2100-4.0.1/lib/ivis_opengl/gfx_api_vk.cpp:42:
+lib/ivis_opengl/gfx_api_vk.h:123:9: error: redefinition of 'hash<vk::DescriptorBufferInfo>'
+        struct hash<vk::DescriptorBufferInfo>
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/vulkan/vulkan_structs.hpp:20333:13: note: previous definition is here
+struct std::hash<VULKAN_HPP_NAMESPACE::DescriptorBufferInfo>
+            ^
+
+--- lib/ivis_opengl/gfx_api_vk.h.orig	2021-04-18 18:28:41 UTC
++++ lib/ivis_opengl/gfx_api_vk.h
+@@ -118,19 +118,6 @@ inline void hash_combine(std::size_t& seed, const T& v
+ #endif
+ 	hash_combine(seed, rest...);
+ }
+-namespace std {
+-	template <>
+-	struct hash<vk::DescriptorBufferInfo>
+-	{
+-		std::size_t operator()(const vk::DescriptorBufferInfo& k) const
+-		{
+-			std::size_t h = 0;
+-			hash_combine(h, static_cast<VkBuffer>(k.buffer), k.offset, k.range);
+-			return h;
+-		}
+-	};
+-}
+-
+ struct BlockBufferAllocator
+ {
+ 	BlockBufferAllocator(VmaAllocator allocator, uint32_t minimumBlockSize, const vk::BufferUsageFlags& usageFlags, const VmaAllocationCreateInfo& allocInfo, bool autoMap = false);
