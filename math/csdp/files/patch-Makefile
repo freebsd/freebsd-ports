@@ -1,3 +1,5 @@
+- replacement of -ansi with -std=c99 is to work around https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=260136
+
 --- Makefile.orig	2017-07-25 18:44:57 UTC
 +++ Makefile
 @@ -11,11 +11,11 @@
@@ -5,7 +7,7 @@
  # CFLAGS settings for 64 bit Linux/unix systems.
  #
 -export CFLAGS=-m64 -march=native -mtune=native -Ofast -fopenmp -ansi -Wall -DBIT64 -DUSEOPENMP -DSETNUMTHREADS -DUSESIGTERM -DUSEGETTIME -I../include
-+CFLAGS=$(FREEBSD_CFLAGS) -fopenmp -ansi -Wall -DBIT64 -DUSEOPENMP -DSETNUMTHREADS -DUSESIGTERM -DUSEGETTIME -I../include
++CFLAGS=$(FREEBSD_CFLAGS) -fopenmp -std=c99 -Wall -DBIT64 -DUSEOPENMP -DSETNUMTHREADS -DUSESIGTERM -DUSEGETTIME -I../include
  #
  # LIBS settings for 64 bit Linux/unix systems.
  #
