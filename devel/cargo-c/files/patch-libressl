@@ -1,0 +1,13 @@
+https://github.com/sfackler/rust-openssl/commit/c6e3c17f9275
+https://github.com/sfackler/rust-openssl/commit/7768e0638078
+
+--- cargo-crates/openssl-sys-0.9.67/build/main.rs.orig	1973-11-29 21:33:09 UTC
++++ cargo-crates/openssl-sys-0.9.67/build/main.rs
+@@ -238,6 +238,7 @@ See rust-openssl README for more information:
+             (3, 3, 1) => ('3', '3', '1'),
+             (3, 3, _) => ('3', '3', 'x'),
+             (3, 4, 0) => ('3', '4', '0'),
++            (3, 4, _) => ('3', '4', 'x'),
+             _ => version_error(),
+         };
+ 
