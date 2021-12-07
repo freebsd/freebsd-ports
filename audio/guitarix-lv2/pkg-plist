@@ -851,6 +851,7 @@ share/gx_head/sounds/greathall.wav
 %%NLS%%share/locale/it/LC_MESSAGES/guitarix.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/guitarix.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/guitarix.mo
+share/metainfo/org.guitarix.guitarix.metainfo.xml
 share/pixmaps/gx_bypass.png
 share/pixmaps/gx_head.png
 share/pixmaps/gx_log_grey.png
