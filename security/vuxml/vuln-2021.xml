@@ -1,3 +1,89 @@
+  <vuln vid="18ac074c-579f-11ec-aac7-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>96.0.4664.93</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/12/stable-channel-update-for-desktop.html">
+	  <p>This release contains 22 security fixes, including:</p>
+	  <ul>
+	    <li>[1267661] High CVE-2021-4052: Use after free in web apps.
+	      Reported by Wei Yuan of MoyunSec VLab on 2021-11-07</li>
+	    <li>[1267791] High CVE-2021-4053: Use after free in UI. Reported by
+	      Rox on 2021-11-08</li>
+	    <li>[1265806] High CVE-2021-4079: Out of bounds write in WebRTC.
+	      Reported by Brendon Tiszka on 2021-11-01</li>
+	    <li>[1239760] High CVE-2021-4054: Incorrect security UI in autofill.
+	      Reported by Alesandro Ortiz on 2021-08-13</li>
+	    <li>[1268738] High CVE-2021-4078: Type confusion in V8. Reported by
+	      Nan Wang (@eternalsakura13) and Guang Gong of 360 Alpha Lab on
+	      2021-11-09</li>
+	    <li>[1266510] High CVE-2021-4055: Heap buffer overflow in
+	      extensions. Reported by Chen Rong on 2021-11-03</li>
+	    <li>[1260939] High CVE-2021-4056: Type Confusion in loader. Reported
+	      by @__R0ng of 360 Alpha Lab on 2021-10-18</li>
+	    <li>[1262183] High CVE-2021-4057: Use after free in file API.
+	      Reported by Sergei Glazunov of Google Project Zero on
+	      2021-10-21</li>
+	    <li>[1267496] High CVE-2021-4058: Heap buffer overflow in ANGLE.
+	      Reported by Abraruddin Khan and Omair on 2021-11-06</li>
+	    <li>[1270990] High CVE-2021-4059: Insufficient data validation in
+	      loader. Reported by Luan Herrera (@lbherrera_) on 2021-11-17</li>
+	    <li>[1271456] High CVE-2021-4061: Type Confusion in V8. Reported by
+	      Paolo Severini on 2021-11-18</li>
+	    <li>[1272403] High CVE-2021-4062: Heap buffer overflow in BFCache.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-11-22</li>
+	    <li>[1273176] High CVE-2021-4063: Use after free in developer tools.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability
+	      Research on 2021-11-23</li>
+	    <li>[1273197] High CVE-2021-4064: Use after free in screen capture.
+	      Reported by @ginggilBesel on 2021-11-23</li>
+	    <li>[1273674] High CVE-2021-4065: Use after free in autofill.
+	      Reported by 5n1p3r0010 on 2021-11-25</li>
+	    <li>[1274499] High CVE-2021-4066: Integer underflow in ANGLE.
+	      Reported by Jaehun Jeong(@n3sk) of Theori on 2021-11-29</li>
+	    <li>[1274641] High CVE-2021-4067: Use after free in window manager.
+	      Reported by @ginggilBesel on 2021-11-29</li>
+	    <li>[1265197] Low CVE-2021-4068: Insufficient validation of
+	      untrusted input in new tab page. Reported by NDevTK on
+	      2021-10-31</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-4052</cvename>
+      <cvename>CVE-2021-4053</cvename>
+      <cvename>CVE-2021-4054</cvename>
+      <cvename>CVE-2021-4055</cvename>
+      <cvename>CVE-2021-4056</cvename>
+      <cvename>CVE-2021-4057</cvename>
+      <cvename>CVE-2021-4058</cvename>
+      <cvename>CVE-2021-4059</cvename>
+      <cvename>CVE-2021-4061</cvename>
+      <cvename>CVE-2021-4062</cvename>
+      <cvename>CVE-2021-4063</cvename>
+      <cvename>CVE-2021-4064</cvename>
+      <cvename>CVE-2021-4065</cvename>
+      <cvename>CVE-2021-4066</cvename>
+      <cvename>CVE-2021-4067</cvename>
+      <cvename>CVE-2021-4068</cvename>
+      <cvename>CVE-2021-4078</cvename>
+      <cvename>CVE-2021-4079</cvename>
+      <url>https://chromereleases.googleblog.com/2021/12/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-06</discovery>
+      <entry>2021-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b299417a-5725-11ec-a587-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
