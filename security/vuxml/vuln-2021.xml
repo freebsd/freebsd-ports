@@ -1,3 +1,67 @@
+  <vuln vid="b299417a-5725-11ec-a587-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.5.0</ge><lt>14.5.2</lt></range>
+	<range><ge>14.4.0</ge><lt>14.4.4</lt></range>
+	<range><ge>0</ge><lt>14.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/12/06/security-release-gitlab-14-5-2-released/">
+	  <p>Group members with developer role can escalate their privilege to maintainer on projects that they import</p>
+	  <p>When user registration is limited, external users that aren't developers shouldn't have access to the CI Lint API</p>
+	  <p>Collision in access memoization leads to potential elevated privileges on groups and projects</p>
+	  <p>Project access token names are returned for unauthenticated requesters</p>
+	  <p>Sensitive info disclosure in logs</p>
+	  <p>Disclosure of a user's custom project and group templates</p>
+	  <p>ReDoS in Maven package version</p>
+	  <p>Potential denial of service via the Diff feature</p>
+	  <p>Regular Expression Denial of Service via user comments</p>
+	  <p>Service desk email accessible by any project member</p>
+	  <p>Regular Expression Denial of Service via quick actions</p>
+	  <p>IDOR in "external status check" API leaks data about any status check on the instance</p>
+	  <p>Default branch name visible in public projects restricting access to the source code repository</p>
+	  <p>Deploy token allows access to disabled project Wiki</p>
+	  <p>Regular Expression Denial of Service via deploy Slash commands</p>
+	  <p>Users can reply to Vulnerability Report discussions despite Only Project Members settings</p>
+	  <p>Unauthorised deletion of protected branches</p>
+	  <p>Author can approve Merge Request after having access revoked</p>
+	  <p>HTML Injection via Swagger UI</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39944</cvename>
+      <cvename>CVE-2021-39935</cvename>
+      <cvename>CVE-2021-39937</cvename>
+      <cvename>CVE-2021-39915</cvename>
+      <cvename>CVE-2021-39919</cvename>
+      <cvename>CVE-2021-39930</cvename>
+      <cvename>CVE-2021-39940</cvename>
+      <cvename>CVE-2021-39932</cvename>
+      <cvename>CVE-2021-39933</cvename>
+      <cvename>CVE-2021-39934</cvename>
+      <cvename>CVE-2021-39917</cvename>
+      <cvename>CVE-2021-39916</cvename>
+      <cvename>CVE-2021-39941</cvename>
+      <cvename>CVE-2021-39936</cvename>
+      <cvename>CVE-2021-39938</cvename>
+      <cvename>CVE-2021-39918</cvename>
+      <cvename>CVE-2021-39931</cvename>
+      <cvename>CVE-2021-39945</cvename>
+      <cvename>CVE-2021-39910</cvename>
+      <url>https://about.gitlab.com/releases/2021/12/06/security-release-gitlab-14-5-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-06</discovery>
+      <entry>2021-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47695a9c-5377-11ec-8be6-d4c9ef517024">
     <topic>NSS -- Memory corruption</topic>
     <affects>
