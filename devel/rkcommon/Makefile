@@ -18,12 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ospray
 
 CMAKE_OFF=	BUILD_TESTING
+CXXFLAGS_i386=	-msse2 # workaround for error: '_mm_setcsr' needs target feature sse
 CMAKE_TESTING_ON=	BUILD_TESTING
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "i386"
-CXXFLAGS+=	-msse2 # workaround for error: '_mm_setcsr' needs target feature sse
-.endif
 
 .include <bsd.port.mk>
