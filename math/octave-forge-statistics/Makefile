@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-statistics
-PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTVERSION=	1.4.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
