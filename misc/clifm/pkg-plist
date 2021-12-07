@@ -36,6 +36,7 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/dragondrop.sh
 %%DATADIR%%/plugins/finder.sh
 %%DATADIR%%/plugins/fzfdesel.sh
+%%DATADIR%%/plugins/fzfdirhist.sh
 %%DATADIR%%/plugins/fzfhist.sh
 %%DATADIR%%/plugins/fzfnav.sh
 %%DATADIR%%/plugins/fzfsel.sh
