@@ -1,6 +1,6 @@
 PORTNAME=	yq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.2
+DISTVERSION=	2.13.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	jq:textproc/jq \
 		${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8.1:devel/py-argcomplete@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyaml>=3.11:textproc/py-pyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyaml>=5.3.1:textproc/py-pyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.0:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.11.0:devel/py-xmltodict@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
