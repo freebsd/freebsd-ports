@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	irlba
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
