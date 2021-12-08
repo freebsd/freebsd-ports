@@ -1,7 +1,7 @@
 # Created by: Simon Dick <simond@irrelevant.org>
 
 PORTNAME=	worker
-PORTVERSION=	4.9.0
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
