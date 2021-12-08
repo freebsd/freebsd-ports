@@ -1,0 +1,93 @@
+#!/bin/sh
+
+# PROVIDE: soft-serve
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# soft_serve_enable (bool):	Set to NO by default.
+#				Set it to YES to enable soft_serve.
+#
+#
+# soft_serve_user (user):	User to run as. Set to %%GITUSER%% by default.
+# soft_serve_port (port):	TCP port to listen on.
+#                               Set to %%DEFAULTPORT%% by default.
+# soft_serve_host (IP):	        IP address to listen on.
+#                               Set to %%DEFAULTHOST%% by default.
+# soft_serve_key_path (path):	Path to host key.
+#                               Set to ~%%GITUSER%%/%%DEFAULTKEY%% by default.
+# soft_serve_repo_path (path):	Path to repositories root.
+#                               Set to ~%%GITUSER%%/%%DEFAULTREPO%% by default.
+# soft_serve_initial_admin_key (ssh public key): SSH public key for initial
+#                                                access to repositories (required)
+
+. /etc/rc.subr
+
+name="soft_serve"
+rcvar="soft_serve_enable"
+
+load_rc_config $name
+
+: ${soft_serve_user:="%%GITUSER%%"}
+: ${soft_serve_enable:="NO"}
+: ${soft_serve_port:=%%DEFAULTPORT%%}
+: ${soft_serve_host:="%%DEFAULTHOST%%"}
+: ${soft_serve_key_path:="%%DEFAULTKEY%%"}
+: ${soft_serve_repo_path:="%%DEFAULTREPO%%"}
+: ${soft_serve_initial_admin_key:=""}
+
+command="%%PREFIX%%/bin/soft-serve"
+procname="%%PREFIX%%/bin/soft-serve"
+githome="$(%%PW%% user show -n ${soft_serve_user} | %%CUT%% -d: -f9)"
+
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+soft_serve_start() {
+        if [ -z "${soft_serve_initial_admin_key}" ]; then
+	  echo Error: Please set soft_serve_initial_admin_key to a SSH public key
+	  echo which will initially have access to repositories.
+	  exit 1
+	fi
+
+	# Generate host key, if user has opted to use the default key
+	if [ "${soft_serve_key_path}" = "%%DEFAULTKEY%%" ]; then
+	  soft_serve_key_path=${githome}/${soft_serve_key_path}
+	  if ! [ -f $soft_serve_key_path ]; then
+	    echo Generating SSH Host Key...
+	    _soft_serve_ssh_dir=$(%%DIRNAME%% $soft_serve_key_path)
+	    if ! [ -d $_soft_serve_ssh_dir  ]; then
+	      %%MKDIR%% -m 700 $_soft_serve_ssh_dir
+	      %%CHOWN%% $soft_serve_user $_soft_serve_ssh_dir
+	    fi
+	    /usr/bin/ssh-keygen -t ed25519 -N "" -f $soft_serve_key_path
+	    %%CHOWN%% $soft_serve_user $soft_serve_key_path $soft_serve_key_path.pub
+	  fi
+	fi
+
+	if [ "${soft_serve_repo_path}" = "%%DEFAULTREPO%%" ]; then
+	  soft_serve_repo_path=${githome}/${soft_serve_repo_path}
+	  if ! [ -d $(%%DIRNAME%% $soft_serve_repo_path) ]; then
+	    echo Creating repositories directory...
+	    %%MKDIR%% $soft_serve_repo_path
+	    %%CHOWN%% $soft_serve_user $soft_serve_repo_path
+	  fi
+	fi
+
+	/usr/sbin/daemon -f \
+		-u ${soft_serve_user} -p ${pidfile} \
+		%%SETENV%% -i \
+		"SOFT_SERVE_PORT=${soft_serve_port}" \
+		"SOFT_SERVE_HOST=${soft_serve_host}" \
+		"SOFT_SERVE_KEY_PATH=${soft_serve_key_path}" \
+		"SOFT_SERVE_REPO_PATH=${soft_serve_repo_path}" \
+		"SOFT_SERVE_INITIAL_ADMIN_KEY=${soft_serve_initial_admin_key}" \
+		"PATH=%%LOCALBASE%%/bin:${PATH}" \
+		"USER=${soft_serve_user}" \
+		$command
+}
+
+run_rc_command "$1"

@@ -7030,6 +7030,7 @@
     SUBDIR += soapui
     SUBDIR += sobjectizer
     SUBDIR += socket_wrapper
+    SUBDIR += soft-serve
     SUBDIR += sol2
     SUBDIR += sonar-scanner-cli
     SUBDIR += sonarqube-ant-task

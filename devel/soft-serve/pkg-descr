@@ -1,0 +1,13 @@
+A tasty, self-hosted Git server for the command line.
+
+Features:
+
+ o Configure with git
+ o Create repos on demand with git push
+ o Browse repos with an SSH-accessible TUI
+ o Easy access control
+    - Allow/disallow anonymous access
+    - Add collaborators with SSH public keys
+    - Repos can be public or private
+
+WWW: https://github.com/charmbracelet/soft-serve
