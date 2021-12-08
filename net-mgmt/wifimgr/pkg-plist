@@ -3,6 +3,7 @@ bin/wifimgr
 man/man8/wifimgr.8.gz
 %%DATADIR%%/icons/eye.png
 %%DATADIR%%/icons/freebsd-surf.png
+%%DATADIR%%/icons/icon.png
 %%DATADIR%%/icons/on-off.png
 %%DATADIR%%/icons/padlock-open.png
 %%DATADIR%%/icons/padlock-rsn.png
@@ -19,13 +20,6 @@ man/man8/wifimgr.8.gz
 %%DATADIR%%/icons/wifimgr-grey.png
 %%DATADIR%%/icons/wifimgr24green.png
 share/applications/wifimgr.desktop
-share/icons/hicolor/16x16/apps/wifimgr.png
-share/icons/hicolor/22x22/apps/wifimgr.png
-share/icons/hicolor/24x24/apps/wifimgr.png
-share/icons/hicolor/32x32/apps/wifimgr.png
-share/icons/hicolor/48x48/apps/wifimgr.png
-share/icons/hicolor/64x64/apps/wifimgr.png
-share/icons/hicolor/scalable/apps/wifimgr.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wifimgr.mo

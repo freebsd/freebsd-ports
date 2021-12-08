@@ -5,4 +5,4 @@ configuration file, and supports WEP and WPA-PSK security.
 wifimgr was designed for users of the XFce4 window manager but will work
 in any environment with GTK+ libraries installed.
 
-WWW: http://opal.com/freebsd/ports/net-mgmt/wifimgr
+WWW: https://opal.com/src/wifimgr/

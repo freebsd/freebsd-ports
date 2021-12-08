@@ -1,10 +1,9 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.17
+PORTVERSION=	1.19
 CATEGORIES=	net-mgmt sysutils
-MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
-		LOCAL/ehaupt
+MASTER_SITES=	https://opal.com/src/wifimgr/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		desktop-file-utils gnome pkgconfig tar:bzip2 xorg
+USES=		desktop-file-utils gnome pkgconfig tar:xz xorg
 USE_GNOME=	cairo
 USE_XORG=	x11
 
