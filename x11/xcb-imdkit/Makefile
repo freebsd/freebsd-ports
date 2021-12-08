@@ -1,7 +1,7 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	xcb-imdkit
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	x11 textproc
 
 MAINTAINER=	khng300@gmail.com
