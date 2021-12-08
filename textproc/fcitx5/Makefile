@@ -1,7 +1,7 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	fcitx5
-DISTVERSION=	5.0.10
+DISTVERSION=	5.0.11
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict
 DISTFILES=	${SPELL_EN_DICT_TAR}:dict
@@ -40,11 +40,12 @@ SUB_FILES=	pkg-message
 
 X11_USES=	xorg
 X11_USE=	xorg=xcb,xkbfile
+X11_BUILD_DEPENDS=	xcb-imdkit>=1.0.3:x11/xcb-imdkit
 X11_LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 			libxcb-keysyms.so:x11/xcb-util-keysyms \
 			libxcb-ewmh.so:x11/xcb-util-wm \
-			libxcb-icccm.so:x11/xcb-util-wm \
-			libxcb-imdkit.so:x11/xcb-imdkit
+			libxcb-icccm.so:x11/xcb-util-wm
+X11_RUN_DEPENDS=	xcb-imdkit>=1.0.3:x11/xcb-imdkit
 
 WAYLAND_BUILD_DEPENDS=	wayland-scanner:graphics/wayland \
 			wayland-protocols>=0:graphics/wayland-protocols
