@@ -1,7 +1,7 @@
 # Created by: Jacob Atzen <jatzen@gmail.com>
 
 PORTNAME=	passenger
-PORTVERSION=	6.0.11
+PORTVERSION=	6.0.12
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
