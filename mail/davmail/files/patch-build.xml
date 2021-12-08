@@ -1,6 +1,6 @@
---- build.xml.orig	2016-04-09 15:14:49 UTC
+--- build.xml.orig	2021-11-06 18:00:46 UTC
 +++ build.xml
-@@ -61,7 +61,7 @@
+@@ -88,7 +88,7 @@
      </target>
  
      <target name="defaultrelease" unless="is.svn">
@@ -8,4 +8,12 @@
 +	<property name="release" value="${version}-${revision}"/>
      </target>
  
-     <target name="init" depends="check-encoding, check-java6, svnrelease, defaultrelease">
+     <target name="init" depends="check-encoding, check-java8, svnrelease, gitsvnrelease, defaultrelease">
+@@ -412,7 +412,6 @@
+                 <exclude name="lib/hamcrest-core-*.jar"/>
+             </fileset>
+         </zip>
+-        <antcall target="download-jre"/>
+         <zip file="dist/davmail-${release-name}-windows-standalone.zip">
+             <fileset dir="dist">
+                 <include name="jre/**"/>

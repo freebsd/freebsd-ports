@@ -1,7 +1,7 @@
 # Created by: John Prather
 
 PORTNAME=	davmail
-PORTVERSION=	5.5.1
+PORTVERSION=	6.0.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -18,8 +18,8 @@ NO_ARCH=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 ALL_TARGET=	release
-# 5.4.0
-REVISION=	3299
+# 6.0.0
+REVISION=	3375
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
@@ -34,10 +34,12 @@ SUB_FILES=	davmail.sh pkg-message
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#exec=\".*/davmail\"#exec=\"${PREFIX}/bin/davmail\"#' \
-		-e 's#icon=\".*/davmail.png\"#icon=\"${DATADIR}/davmail.png\"#' \
+	@${REINPLACE_CMD} -e 's#prefix=\"usr#prefix=\"${PREFIX}#' \
 		${WRKSRC}/build.xml
 
+# Azul JRE FX has been disabled by removing the target:
+# <antcall target="download-jre"/>
+# in files/patch-build.xml patch.
 do-install:
 	@cd ${WRKSRC}/dist && ${FIND} . -type d \
 		-exec ${MKDIR} ${STAGEDIR}${DATADIR}/\{} \;
