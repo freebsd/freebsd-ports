@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xviewer
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	graphics gnome
 DIST_SUBDIR=	gnome
 
