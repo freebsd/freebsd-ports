@@ -136,7 +136,7 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.2.2-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.2.3-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 %%DATADIR%%/rules/app-layer-events.rules
@@ -146,9 +146,11 @@ man/man1/suricata.1.gz
 %%DATADIR%%/rules/dns-events.rules
 %%DATADIR%%/rules/files.rules
 %%DATADIR%%/rules/http-events.rules
+%%DATADIR%%/rules/http2-events.rules
 %%DATADIR%%/rules/ipsec-events.rules
 %%DATADIR%%/rules/kerberos-events.rules
 %%DATADIR%%/rules/modbus-events.rules
+%%DATADIR%%/rules/mqtt-events.rules
 %%DATADIR%%/rules/nfs-events.rules
 %%DATADIR%%/rules/ntp-events.rules
 %%DATADIR%%/rules/smb-events.rules
