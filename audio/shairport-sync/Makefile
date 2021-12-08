@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	shairport-sync
-DISTVERSION=	3.3.8
+DISTVERSION=	3.3.9
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
