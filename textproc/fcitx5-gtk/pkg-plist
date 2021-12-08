@@ -12,3 +12,7 @@ lib/libFcitx5GClient.so.2
 lib/libFcitx5GClient.so.%%VER%%
 libdata/pkgconfig/Fcitx5GClient.pc
 share/gir-1.0/FcitxG-1.0.gir
+@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

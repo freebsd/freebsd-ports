@@ -1,7 +1,7 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	fcitx5-gtk
-DISTVERSION=	5.0.9
+DISTVERSION=	5.0.10
 CATEGORIES=	textproc
 
 MAINTAINER=	khng@FreeBSD.org
