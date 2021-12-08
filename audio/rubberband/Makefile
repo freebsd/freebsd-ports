@@ -1,7 +1,7 @@
 # Created by: mathias.picker@gmx.de
 
 PORTNAME=	rubberband
-DISTVERSION=	1.9.2
+DISTVERSION=	2.0.0
 CATEGORIES=	audio
 MASTER_SITES=	https://breakfastquay.com/files/releases/
 
