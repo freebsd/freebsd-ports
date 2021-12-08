@@ -275,6 +275,7 @@ include/thrift/lib/cpp2/reflection/reflection.h
 include/thrift/lib/cpp2/reflection/serializer.h
 include/thrift/lib/cpp2/reflection/testing.h
 include/thrift/lib/cpp2/reflection/variant.h
+include/thrift/lib/cpp2/security/AsyncStopTLS.h
 include/thrift/lib/cpp2/security/FizzPeeker.h
 include/thrift/lib/cpp2/security/SSLUtil.h
 include/thrift/lib/cpp2/security/extensions/ThriftParametersClientExtension.h
@@ -385,11 +386,13 @@ include/thrift/lib/cpp2/transport/rocket/test/util/VersionServicesMock.h
 include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
 include/thrift/lib/cpp2/type/AnyType.h
+include/thrift/lib/cpp2/type/AnyValue.h
 include/thrift/lib/cpp2/type/Name.h
 include/thrift/lib/cpp2/type/ThriftOp.h
 include/thrift/lib/cpp2/type/ThriftType.h
 include/thrift/lib/cpp2/type/Traits.h
 include/thrift/lib/cpp2/type/UniversalName.h
+include/thrift/lib/cpp2/type/detail/AnyData.h
 include/thrift/lib/cpp2/type/detail/AnyType.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/ThriftOp.h
