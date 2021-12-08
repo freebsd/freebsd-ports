@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	clamtk
-PORTVERSION=	6.13
+PORTVERSION=	6.14
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
