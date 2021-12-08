@@ -1,5 +1,5 @@
 PORTNAME=	nscde
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	x11-wm
 
 MAINTAINER=	freebsd@ny-central.org
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
 		dunst:sysutils/dunst \
 		font-bh-lucidatypewriter-100dpi>0:x11-fonts/font-bh-lucidatypewriter-100dpi \
 		fvwm2:x11-wm/fvwm2 \
@@ -51,34 +52,33 @@ SHEBANG_FILES=	Installer.ksh NsCDE/bin/confget.py NsCDE/bin/confset.py \
 DOCSDIR=	${PREFIX}/share/doc/nscde
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_DEFAULT=	DOCS EXAMPLES SUDO IMGV6
-OPTIONS_SINGLE=	ROOTAUTH IMGMAG
-OPTIONS_SINGLE_IMGMAG=		IMGV6 IMGV7
+OPTIONS_DEFAULT=	DOCS EXAMPLES SUDO KSH2020
+OPTIONS_SINGLE=	ROOTAUTH IMGMAG KSHOPT
+OPTIONS_SINGLE_KSHOPT=		ASTKSH KSH2020
 OPTIONS_SINGLE_ROOTAUTH=	SUDO DOAS
+ASTKSH_DESC=	AT&T KSH93
 DOAS_DESC=	Use doas to elevate privileges
-IMGMAG_DESC=	ImageMagick release
-IMGV6_DESC=	ImageMagick version 6
-IMGV7_DESC=	ImageMagick version 7
+KSH2020_DESC=	Updated AT&T KSH93 (arm64 compatible)
+KSHOPT_DESC=	KSH version
 ROOTAUTH_DESC=	Root authorization
 SUDO_DESC=	Use sudo to elevate privileges
 
+ASTKSH_RUN_DEPENDS=	ksh93:shells/ast-ksh93
 DOAS_RUN_DEPENDS=	doas:security/doas
-IMGV6_RUN_DEPENDS=	convert:graphics/ImageMagick6
-IMGV7_RUN_DEPENDS=	magick:graphics/ImageMagick7
+KSH2020_RUN_DEPENDS=	ksh93:shells/ksh2020
 SUDO_RUN_DEPENDS=	sudo:security/sudo
 
-_NSCDE_HELPERS=	Notifier.sh Splash.sh appfinder backdropmgr colorconv.py \
+_NSCDE_HELPERS=	GWM.sh Notifier.sh Splash.sh appfinder backdropmgr colorconv.py \
 		colormgr fontmgr fp_manage_subpanel fpexec fpseticon \
 		generate_app_menus generate_subpanels geticon.py getla1.py \
 		keymenu nscde-acpi nscde_get_logical_screens \
 		nscde_palette_colorgen.py nscde_setup strip_icon_path \
 		style_managers.shlib subpanel_menuitem_props themegen.py \
-		xrandr_backer GWM.sh
+		xrandr_backer
 
-_PREFIX_FILES=	NsCDE/bin/fpclock NsCDE/bin/get_fvwm_infostore \
+_PREFIX_FILES=	NsCDE/bin/get_fvwm_infostore \
 		NsCDE/bin/getfont NsCDE/bin/mkpagemenu NsCDE/bin/nscde \
 		NsCDE/bin/nscde_colorpicker NsCDE/bin/xdowrapper \
-		NsCDE/config/NsCDE-Functions.conf.sample \
 		NsCDE/config/NsCDE-Main.conf.sample NsCDE/libexec/Splash.sh \
 		NsCDE/libexec/fp_manage_subpanel \
 		NsCDE/libexec/fvwm-modules/FvwmScript NsCDE/libexec/nscde_setup \
@@ -96,7 +96,8 @@ _SHAREDOC=	NsCDE/config/FrontPanel.actions \
 		NsCDE/lib/scripts/BeepMgr NsCDE/lib/scripts/CheckMailApplet \
 		NsCDE/lib/scripts/ColorMgr NsCDE/lib/scripts/ExecDialog \
 		NsCDE/lib/scripts/FontMgr NsCDE/lib/scripts/FpLite \
-		NsCDE/lib/scripts/GeometryMgr NsCDE/lib/scripts/KeyboardMgr \
+		NsCDE/lib/scripts/GeometryMgr NsCDE/libexec/GWM.sh \
+		NsCDE/lib/scripts/GWMOptions NsCDE/lib/scripts/KeyboardMgr \
 		NsCDE/lib/scripts/ModifyColor NsCDE/lib/scripts/MonthDayApplet \
 		NsCDE/lib/scripts/NColorsDialog NsCDE/lib/scripts/NProcMgr \
 		NsCDE/lib/scripts/Occupy NsCDE/lib/scripts/PaletteDialog \
@@ -107,8 +108,7 @@ _SHAREDOC=	NsCDE/config/FrontPanel.actions \
 		NsCDE/lib/scripts/WSM NsCDE/lib/scripts/WSM-2 \
 		NsCDE/lib/scripts/WSM-4 NsCDE/lib/scripts/WSM-6 \
 		NsCDE/lib/scripts/WSM-8 NsCDE/lib/scripts/WindowMgr \
-		NsCDE/lib/scripts/WsPgMgr \
-		NsCDE/libexec/GWM.sh
+		NsCDE/lib/scripts/WsPgMgr
 
 _CURLYICONS=	NsCDE/config/NsCDE-Functions.conf NsCDE/libexec/colormgr \
 		NsCDE/libexec/subpanel_menuitem_props
@@ -122,6 +122,7 @@ _BSHARESLASH=	NsCDE/config/NsCDE-Functions.conf NsCDE/lib/scripts/BackdropMgr \
 		NsCDE/lib/scripts/BeepMgr NsCDE/lib/scripts/ColorMgr \
 		NsCDE/lib/scripts/ExecDialog NsCDE/lib/scripts/FilePicker \
 		NsCDE/lib/scripts/FontMgr NsCDE/lib/scripts/GeometryMgr \
+		NsCDE/libexec/GWM.sh NsCDE/lib/scripts/GWMOptions \
 		NsCDE/lib/scripts/InputForm NsCDE/lib/scripts/KeyboardMgr \
 		NsCDE/lib/scripts/ModifyColor NsCDE/lib/scripts/NColorsDialog \
 		NsCDE/lib/scripts/NProcMgr NsCDE/lib/scripts/Occupy \
@@ -136,13 +137,14 @@ _BSHARESLASH=	NsCDE/config/NsCDE-Functions.conf NsCDE/lib/scripts/BackdropMgr \
 		NsCDE/libexec/appfinder NsCDE/libexec/fontmgr \
 		NsCDE/libexec/strip_icon_path \
 		NsCDE/libexec/subpanel_menuitem_props \
-		NsCDE/libexec/GWM.sh \
 		NsCDE/share/config_templates/colormgr.local \
-		NsCDE/share/doc/NsCDE.txt README.localization
+		NsCDE/share/doc/NsCDE.txt README.localization \
+		NsCDE/bin/fpclock
 
 _CSHARESLASH=	NsCDE/libexec/colormgr NsCDE/libexec/fontmgr \
 		NsCDE/libexec/style_managers.shlib \
-		NsCDE/libexec/subpanel_menuitem_props
+		NsCDE/libexec/subpanel_menuitem_props \
+		NsCDE/bin/fpclock NsCDE/share/config_templates/colormgr.local
 
 _SHARENSLASH=	NsCDE/config/NsCDE-Main.conf
 
@@ -150,7 +152,8 @@ _LIBEXEC_SCRIPTS=	NsCDE/config/NsCDE-Functions.conf \
 			NsCDE/config/NsCDE-Main.conf \
 			NsCDE/config/NsCDE-Menus.conf \
 			NsCDE/lib/scripts/ColorMgr \
-			NsCDE/lib/scripts/ModifyColor
+			NsCDE/lib/scripts/ModifyColor \
+			NsCDE/bin/fpclock
 
 _BLIBEXEC_SCRIPTS=	NsCDE/lib/scripts/BackdropMgr \
 			NsCDE/lib/scripts/ColorMgr NsCDE/lib/scripts/FontMgr \
@@ -163,7 +166,8 @@ _BLIBEXEC_SCRIPTS=	NsCDE/lib/scripts/BackdropMgr \
 			NsCDE/libexec/colormgr \
 			NsCDE/libexec/subpanel_menuitem_props \
 			NsCDE/share/config_templates/colormgr.local \
-			NsCDE/share/doc/NsCDE.txt
+			NsCDE/share/doc/NsCDE.txt \
+			NsCDE/bin/fpclock
 
 _CLIBEXEC_SCRIPTS=	NsCDE/libexec/backdropmgr NsCDE/libexec/colormgr
 
@@ -203,7 +207,8 @@ _BBINS=		NsCDE/config/FrontPanel.actions \
 		NsCDE/share/applications/NsCDE-Sysinfo.desktop \
 		NsCDE/share/applications/NsCDE-WsPgMgr.desktop \
 		NsCDE/share/applications/WatchErrors.desktop \
-		NsCDE/share/doc/NsCDE.txt
+		NsCDE/share/doc/NsCDE.txt NsCDE/lib/scripts/GWMOptions \
+		NsCDE/share/applications/NsCDE-GWM.desktop
 
 _SBINS=		NsCDE/config/NsCDE-FrontPanel.conf \
 		NsCDE/config/NsCDE-Functions.conf NsCDE/config/NsCDE-Main.conf \
@@ -273,7 +278,11 @@ post-patch:
 	( for KSHB in ${_KSHFIX}; do ${REINPLACE_CMD} -e 's@^#!/usr/bin/env ksh93@#!'${PREFIX}'/bin/ksh93@' ${WRKSRC}/$${KSHB}; done )
 	${FIND} ${WRKSRC}/NsCDE -type f -name '*.bak' -delete
 	( for HLP in ${_PREFIX_FILES}; do ${REINPLACE_CMD} -e 's@$${PREFIX}@'${PREFIX}'@g' ${WRKSRC}/$${HLP}; done )
+	${REINPLACE_CMD} -e 's@$$NSCDE\_ROOT@${PREFIX}@g' ${WRKSRC}/NsCDE/bin/fpclock
+	${REINPLACE_CMD} -e 's@-$${NSCDE_OS}\_$${MARCH}@@g' ${WRKSRC}/NsCDE/bin/fpclock
 	${FIND} ${WRKSRC}/NsCDE -type f -name '*.bak' -delete
+	${MV} ${WRKSRC}/NsCDE/share/config_templates/colormgr.local ${WRKSRC}/NsCDE/share/doc/examples/colormgr.local.sample
+	${REINPLACE_CMD} -e 's@export NSCDE\_VERSION=\"1.3\"@export NSCDE_VERSION=\"'${DISTVERSION}'\"@g' ${WRKSRC}/NsCDE/bin/nscde
 
 post-patch-DOAS-on:
 	${REINPLACE_CMD} -e 's@sudo@doas@g' ${WRKSRC}/NsCDE/lib/scripts/SysActionDialog

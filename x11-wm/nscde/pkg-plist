@@ -27,6 +27,7 @@ bin/pclock
 @sample %%ETCDIR%%/NsCDE-Mousebindings.conf.sample
 @sample %%ETCDIR%%/NsCDE-Pager-LocalPager.conf.sample
 @sample %%ETCDIR%%/NsCDE-Pager-WspLocPager.conf.sample
+@sample %%ETCDIR%%/NsCDE-Sandbox.conf.sample
 @sample %%ETCDIR%%/NsCDE-Script.conf.sample
 @sample %%ETCDIR%%/NsCDE-Style.conf.sample
 @sample %%ETCDIR%%/NsCDE-Subpanels.conf.sample
@@ -486,9 +487,10 @@ share/applications/WatchErrors.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.colormgr.local
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.nocsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.session-integrations
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doas.conf
+@sample %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colormgr.local.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/compton-integration/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/compton-integration/compton.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doas.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fvwm3-per-monitor/NsCDE-Backer.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fvwm3-per-monitor/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fvwm3-per-monitor/nitrowrapper
@@ -2890,6 +2892,7 @@ share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-rtf.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-sxw.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-vnd-google-earth-kml.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-vnd.android.package-archive.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-vnd.debian.binary-package.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-vnd.ms-excel.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.png
@@ -3245,6 +3248,7 @@ share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-preview.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-python.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-python3.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-readme.png
+share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-rpm-spec.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-script.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-xml.png
 share/icons/freedesktop/theme/NsCDE/16x16/mimetypes/text-x-xslfo.png
@@ -4224,6 +4228,7 @@ share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-rtf.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-sxw.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-vnd-google-earth-kml.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-vnd.android.package-archive.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-vnd.debian.binary-package.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-vnd.ms-excel.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.png
@@ -4580,6 +4585,7 @@ share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-preview.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-python.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-python3.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-readme.png
+share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-rpm-spec.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-script.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-xml.png
 share/icons/freedesktop/theme/NsCDE/22x22/mimetypes/text-x-xslfo.png
@@ -5553,6 +5559,7 @@ share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-rtf.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-sxw.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-vnd-google-earth-kml.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-vnd.android.package-archive.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-vnd.debian.binary-package.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-vnd.ms-excel.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.png
@@ -5909,6 +5916,7 @@ share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-preview.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-python.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-python3.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-readme.png
+share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-rpm-spec.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-script.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-xml.png
 share/icons/freedesktop/theme/NsCDE/24x24/mimetypes/text-x-xslfo.png
@@ -7586,6 +7594,7 @@ share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-rtf.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-sxw.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-vnd-google-earth-kml.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-vnd.android.package-archive.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-vnd.debian.binary-package.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-vnd.ms-excel.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.png
@@ -7942,6 +7951,7 @@ share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-preview.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-python.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-python3.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-readme.png
+share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-rpm-spec.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-script.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-xml.png
 share/icons/freedesktop/theme/NsCDE/32x32/mimetypes/text-x-xslfo.png
@@ -8915,6 +8925,7 @@ share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-rtf.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-sxw.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-vnd-google-earth-kml.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-vnd.android.package-archive.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-vnd.debian.binary-package.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-vnd.ms-excel.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.png
@@ -9276,6 +9287,7 @@ share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-preview.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-python.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-python3.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-readme.png
+share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-rpm-spec.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-script.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-xml.png
 share/icons/freedesktop/theme/NsCDE/48x48/mimetypes/text-x-xslfo.png
@@ -9587,7 +9599,7 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/backdrops/India.pm
 %%DATADIR%%/backdrops/InlayColor.pm
 %%DATADIR%%/backdrops/InlayPlain.pm
-%%DATADIR%%/backdrops/Irix.pm
+%%DATADIR%%/backdrops/Iris.pm
 %%DATADIR%%/backdrops/Ironworks.pm
 %%DATADIR%%/backdrops/Jungle.pm
 %%DATADIR%%/backdrops/Jute.pm
@@ -9654,6 +9666,7 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/backdrops/SmallSquares.pm
 %%DATADIR%%/backdrops/Smoke.pm
 %%DATADIR%%/backdrops/SnakeLeather.pm
+%%DATADIR%%/backdrops/Solyaris.pm
 %%DATADIR%%/backdrops/Southwest.pm
 %%DATADIR%%/backdrops/Space.pm
 %%DATADIR%%/backdrops/Spiral.pm
@@ -9666,7 +9679,6 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/backdrops/Stix.pm
 %%DATADIR%%/backdrops/Stream.pm
 %%DATADIR%%/backdrops/Structure.pm
-%%DATADIR%%/backdrops/Sun.pm
 %%DATADIR%%/backdrops/Swirl.pm
 %%DATADIR%%/backdrops/Tartan.pm
 %%DATADIR%%/backdrops/Thorns.pm
@@ -9736,7 +9748,6 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/config_templates/app-defaults/Xpdf.tmpl
 %%DATADIR%%/config_templates/app-defaults/Xvidtune.tmpl
 %%DATADIR%%/config_templates/app-defaults/xfig.tmpl
-%%DATADIR%%/config_templates/colormgr.local
 %%DATADIR%%/config_templates/fontmgr.local
 %%DATADIR%%/config_templates/integration/firefox/ff7x_nscdeChrome.css
 %%DATADIR%%/config_templates/integration/firefox/ff7x_nscdeContent.css
@@ -10268,7 +10279,6 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/img2/resource.indexed.png
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/img2/resource.indexed.xcf
 %%DATADIR%%/config_templates/integration/gtk2_gtk3_qt/index.theme
-%%DATADIR%%/config_templates/integration/thunderbird/.nscdeChrome.css.swp
 %%DATADIR%%/config_templates/integration/thunderbird/nscdeChrome.css
 %%DATADIR%%/config_templates/integration/thunderbird/nscdeColordefs.tmpl
 %%DATADIR%%/config_templates/integration/thunderbird/nscdeContent.css
@@ -10711,7 +10721,7 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/palettes/Grass.dp
 %%DATADIR%%/palettes/GrayScale.dp
 %%DATADIR%%/palettes/GreenShades.dp
-%%DATADIR%%/palettes/Irix.dp
+%%DATADIR%%/palettes/Iris.dp
 %%DATADIR%%/palettes/Kamari.dp
 %%DATADIR%%/palettes/LateSummer.dp
 %%DATADIR%%/palettes/Lilac.dp
@@ -10740,7 +10750,7 @@ share/icons/freedesktop/theme/NsCDE/index.theme
 %%DATADIR%%/palettes/SeaFoam.dp
 %%DATADIR%%/palettes/SkyRed.dp
 %%DATADIR%%/palettes/SoftBlue.dp
-%%DATADIR%%/palettes/Solaris.dp
+%%DATADIR%%/palettes/Solyaris.dp
 %%DATADIR%%/palettes/Sotto.dp
 %%DATADIR%%/palettes/SouthWest.dp
 %%DATADIR%%/palettes/Summer.dp

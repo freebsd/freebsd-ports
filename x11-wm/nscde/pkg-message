@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 NsCDE runs a setup script when started the first time. To
 ensure the best experience, it is recommended to install
 a few additional ports, i.e.:
@@ -14,4 +17,6 @@ While NsCDE will generally run fine without those ports,
 there will be keyboard shortcuts and links in your initial
 setup, which will not work without them or without further
 configuration work on your end.
-
+EOM
+}
+]
