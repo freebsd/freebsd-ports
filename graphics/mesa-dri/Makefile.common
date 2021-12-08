@@ -12,7 +12,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	21.1.8
+MESABASEVERSION=	21.3.4
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -24,6 +24,9 @@ MASTER_SITES=	https://mesa.freedesktop.org/archive/ \
 DISTFILES=	mesa-${MESADISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	x11@FreeBSD.org
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
@@ -85,7 +88,7 @@ PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
-LLVM_DEFAULT=	12
+LLVM_DEFAULT=	13
 BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 .if ${COMPONENT} != libs
 RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
