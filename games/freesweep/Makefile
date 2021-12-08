@@ -1,40 +1,35 @@
 # Created by: Andrey Zakhvatov
 
 PORTNAME=	freesweep
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
-MAINTAINER=	rwestlun@gmail.com
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Minesweeper-style game for text-mode terminals
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: CharSet
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: CharSet
-
+USES=		gmake ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwestlund
 
-USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \
-		--with-scoresdir=${DATADIR} \
-		--disable-debug-log
+		--with-scoresdir=/var/games
+
 ALL_TARGET=	${PORTNAME}
+MAKE_ARGS=	VERSION='"${PORTVERSION}"'
 
 PORTDOCS=	README.md
-PLIST_FILES=	"@(,games,2555) bin/${PORTNAME}" man/man6/${PORTNAME}.6.gz \
-		%%DATADIR%%/sweeprc "@(,games,0664) %%DATADIR%%/sweeptimes"
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/freesweep ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${TOUCH} ${STAGEDIR}${DATADIR}/sweeptimes
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}/var/games
+	${TOUCH} ${STAGEDIR}/var/games/sweeptimes.sample
 	${INSTALL_DATA} ${WRKSRC}/sweeprc ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/freesweep.6 ${STAGEDIR}${PREFIX}/man/man6
 

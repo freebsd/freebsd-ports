@@ -1,5 +1,5 @@
---- config.h.in.orig	Wed Nov 12 04:24:48 2003
-+++ config.h.in	Wed Nov 12 04:25:07 2003
+--- config.h.in.orig	2016-02-14 22:00:30 UTC
++++ config.h.in
 @@ -25,7 +25,7 @@
  #undef SCORESDIR
  
