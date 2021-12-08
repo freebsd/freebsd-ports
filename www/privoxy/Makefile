@@ -1,7 +1,7 @@
 # Created by: John von Essen
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.32
+PORTVERSION=	3.0.33
 CATEGORIES=	www
 MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${PORTVERSION}%20(stable)/ \
 		SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29

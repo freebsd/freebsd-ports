@@ -23,7 +23,7 @@ etc/privoxy/templates/default
 etc/privoxy/templates/edit-actions-add-url-form
 etc/privoxy/templates/edit-actions-for-url
 etc/privoxy/templates/edit-actions-for-url-filter
-etc/privoxy/templates/edit-actions-for-url-string-filter
+etc/privoxy/templates/edit-actions-for-url-string-action
 etc/privoxy/templates/edit-actions-list
 etc/privoxy/templates/edit-actions-list-button
 etc/privoxy/templates/edit-actions-list-section
@@ -45,6 +45,7 @@ etc/privoxy/templates/toggle
 etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
 etc/privoxy/templates/url-info-osd.xml
+etc/privoxy/templates/wpad.dat
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/actions-file.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/appendix.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/config.html
