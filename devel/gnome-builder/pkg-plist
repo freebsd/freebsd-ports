@@ -296,7 +296,7 @@ include/gnome-builder/gstyle/gstyle-types.h
 include/gnome-builder/gstyle/gstyle-utils.h
 include/gnome-builder/gstyle/gstyle-xyz.h
 lib/gnome-builder/girepository-1.0/Ide-%%BUILDER_VERSION%%.0.typelib
-lib/gnome-builder/pkgconfig/gnome-builder-%%BUILDER_VERSION%%.2.pc
+lib/gnome-builder/pkgconfig/gnome-builder-%%BUILDER_VERSION%%.3.pc
 lib/gnome-builder/plugins/cargo.plugin
 lib/gnome-builder/plugins/cargo_plugin.py
 lib/gnome-builder/plugins/copyright.plugin
