@@ -1,8 +1,8 @@
-%%QT5%%bin/mglconv
-%%QT5%%bin/mglview
-%%QT5%%bin/udav
+%%FLTK%%bin/mglconv
+%%FLTK_OR_QT5%%bin/mglview
 %%FLTK%%bin/mgllab
 bin/mgltask
+%%QT5%%bin/udav
 include/mgl2/Fl_MathGL.h
 include/mgl2/abstract.h
 include/mgl2/addon.h
@@ -50,10 +50,10 @@ include/mgl2/volume.h
 include/mgl2/wnd.h
 include/mgl2/wnd_cf.h
 lib/cgi-bin/mgl.cgi
-lib/cmake/mathgl/MathGL2Config.cmake
-lib/cmake/mathgl/MathGL2ConfigVersion.cmake
-lib/cmake/mathgl/MathGLTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/mathgl/MathGLTargets.cmake
+lib/cmake/mathgl2/MathGL2Config.cmake
+lib/cmake/mathgl2/MathGL2ConfigVersion.cmake
+lib/cmake/mathgl2/MathGLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mathgl2/MathGLTargets.cmake
 lib/cmake/mathgl2/mathgl2-config.cmake
 lib/libmgl2-glut.so
 lib/libmgl2-glut.so.%%SHLIB_VER%%
@@ -65,8 +65,8 @@ lib/libmgl2-glut.so.%%SHLIB_VER%%
 %%FLTK%%lib/libmgl2-fltk.so.%%SHLIB_VER%%
 %%MPI%%lib/libmgl2-mpi.so
 %%MPI%%lib/libmgl2-mpi.so.%%SHLIB_VER%%
-%%FLTK%%lib/libmgl2-wnd.so
-%%FLTK%%lib/libmgl2-wnd.so.%%SHLIB_VER%%
+%%FLTK_AND_QT5%%lib/libmgl2-wnd.so
+%%FLTK_AND_QT5%%lib/libmgl2-wnd.so.%%SHLIB_VER%%
 lib/libmgl2.so
 lib/libmgl2.so.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_mathgl.so

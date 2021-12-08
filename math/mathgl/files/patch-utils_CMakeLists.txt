@@ -1,15 +1,24 @@
---- utils/CMakeLists.txt.orig	2019-08-22 06:18:05 UTC
+--- utils/CMakeLists.txt.orig	2021-12-08 05:59:57 UTC
 +++ utils/CMakeLists.txt
-@@ -13,7 +13,7 @@ set(link_type -static)
- else(MSVC)
- set(link_type)
+@@ -7,7 +7,7 @@ set(link_type)
  endif(MSVC)
+ 
+ add_executable(mgltask mgltask.cpp)
+-target_link_libraries(mgltask mgl${link_type} ${getopt_lib-static})
++target_link_libraries(mgltask mgl${link_type} ${getopt_lib})
+ install(
+ 	TARGETS mgltask
+ 	EXPORT MathGLTargets
+@@ -15,7 +15,7 @@ install(
+ )
+ 
+ add_executable(mglconv mglconv.cpp)
 -target_link_libraries(mglconv mgl${link_type} ${getopt_lib-static})
 +target_link_libraries(mglconv mgl${link_type} ${getopt_lib})
  install(
  	TARGETS mglconv
  	EXPORT MathGLTargets
-@@ -21,7 +21,7 @@ install(
+@@ -23,7 +23,7 @@ install(
  )
  
  add_executable(mgl.cgi mglcgi.cpp)
@@ -18,7 +27,7 @@
  install(
  	TARGETS mgl.cgi
  	EXPORT MathGLTargets
-@@ -34,7 +34,7 @@ mgl_po_src(mglconv.cpp mglview.cpp mglcgi.cpp)
+@@ -36,7 +36,7 @@ mgl_po_src(mglconv.cpp mglview.cpp mglcgi.cpp mgltask.
  if(MGL_HAVE_FLTK)
  	add_definitions(-DUSE_FLTK)
  	add_executable(mglview mglview.cpp)
@@ -27,7 +36,7 @@
  	install(
  		TARGETS mglview
  		EXPORT MathGLTargets
-@@ -46,10 +46,10 @@ else(MGL_HAVE_FLTK)
+@@ -48,10 +48,10 @@ else(MGL_HAVE_FLTK)
  		add_executable(mglview mglview.cpp)
  		if(enable-qt5)
  			include(../scripts/qt5.cmake)

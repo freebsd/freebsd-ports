@@ -1,6 +1,6 @@
---- examples/CMakeLists.txt.orig	2018-03-22 07:29:50 UTC
+--- examples/CMakeLists.txt.orig	2021-12-08 05:59:56 UTC
 +++ examples/CMakeLists.txt
-@@ -3,7 +3,7 @@ file(COPY ${CMAKE_SOURCE_DIR}/examples/E
+@@ -4,7 +4,7 @@ file(COPY ${CMAKE_SOURCE_DIR}/examples/Equirectangular
  file(COPY ${CMAKE_SOURCE_DIR}/examples/samples.cpp DESTINATION ${CMAKE_BINARY_DIR}/examples)
  file(COPY ${CMAKE_SOURCE_DIR}/examples/wnd_samples.cpp DESTINATION ${CMAKE_BINARY_DIR}/examples)
  add_executable(mgl_example wnd_samples.cpp full_test.cpp samples.cpp)
