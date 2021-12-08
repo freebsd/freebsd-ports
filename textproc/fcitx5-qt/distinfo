@@ -1,3 +1,5 @@
-TIMESTAMP = 1637876559
-SHA256 (fcitx-fcitx5-qt-5.0.7_GH0.tar.gz) = 4df59feeee60d792f4ef1d8c1ea392fe24b623a2f5b8dc0bfa0a57343ac6101d
-SIZE (fcitx-fcitx5-qt-5.0.7_GH0.tar.gz) = 125327
+TIMESTAMP = 1638997683
+SHA256 (fcitx-fcitx5-qt-5.0.8_GH0.tar.gz) = 6a5141d25e39ec7843b69cf4dac6b16b1301a9db42b9ad140a9d002c5c6a0bf8
+SIZE (fcitx-fcitx5-qt-5.0.8_GH0.tar.gz) = 127492
+SHA256 (f7f983e1e709.patch) = fdde230d40bf4d4593ee2fcfe9eabe99bfe48c00cba65a7126e814a71beebdcb
+SIZE (f7f983e1e709.patch) = 1280
