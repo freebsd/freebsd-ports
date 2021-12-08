@@ -1588,6 +1588,7 @@
     SUBDIR += py-django22
     SUBDIR += py-django31
     SUBDIR += py-django32
+    SUBDIR += py-django40
     SUBDIR += py-django_compressor
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangoql
