@@ -9,7 +9,6 @@ bin/leftwm-worker
 %%THEMES%%%%DATADIR%%/themes/README.md
 %%THEMES%%%%DATADIR%%/themes/basic_eww/README.md
 %%THEMES%%%%DATADIR%%/themes/basic_eww/background.jpg
-%%THEMES%%%%DATADIR%%/themes/basic_eww/change_to_tag
 %%THEMES%%%%DATADIR%%/themes/basic_eww/down
 %%THEMES%%%%DATADIR%%/themes/basic_eww/down.jpg
 %%THEMES%%%%DATADIR%%/themes/basic_eww/eww-bar/eww-bar.png
