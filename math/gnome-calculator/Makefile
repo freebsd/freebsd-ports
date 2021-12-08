@@ -1,7 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-calculator
-PORTVERSION=	41.0
+PORTVERSION=	41.1
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
