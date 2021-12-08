@@ -385,6 +385,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/XML.lcf
 %%DATADIR%%/data/lexlib/YAML.cuda-lexmap
 %%DATADIR%%/data/lexlib/YAML.lcf
+%%DATADIR%%/data/lexlib/aliases.ini
 %%DATADIR%%/data/lexlib/reStructuredText.cuda-lexmap
 %%DATADIR%%/data/lexlib/reStructuredText.lcf
 %%DATADIR%%/data/lexliblite/JSON.cuda-litelexer
@@ -778,6 +779,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-console.png
 %%DATADIR%%/readme/wiki/cudatext-editing-context-menu.png
 %%DATADIR%%/readme/wiki/cudatext-embedded-editor.png
+%%DATADIR%%/readme/wiki/cudatext-fenced-blocks.png
 %%DATADIR%%/readme/wiki/cudatext-find-dlg.png
 %%DATADIR%%/readme/wiki/cudatext-find-markers.png
 %%DATADIR%%/readme/wiki/cudatext-fold-comments.png
@@ -817,6 +819,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-viewer-asking.png
 %%DATADIR%%/readme/wiki/cudatext-viewer-hex.png
 %%DATADIR%%/readme/wiki/cudatext-viewer-modes.png
+%%DATADIR%%/readme/wiki/cudatext-zip-install-prompt.png
 %%DATADIR%%/readme/wiki/cudatext.png
 %%DATADIR%%/readme/wiki/cudatext.wiki
 %%DATADIR%%/readme/wiki/cudatext_all_icons.png
