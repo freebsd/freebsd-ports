@@ -3,4 +3,4 @@ A tool for measuring evdev event rate
 
 Reported average is for the last 64 samples, or as many as we have so far.
 
-WWW: https://gitlab.com/iankelling/evhz
+WWW: https://git.sr.ht/~iank/evhz

@@ -1,7 +1,7 @@
 PORTNAME=	evhz
-DISTVERSION=	g20170201
-PORTREVISION=	1
+DISTVERSION=	g20210920
 CATEGORIES=	sysutils
+MASTER_SITES=	https://git.sr.ht/~iank/${PORTNAME}/archive/${SR_HT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Tool for measuring evdev event rate (mouse polling rate)
@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USES=		compiler localbase
-USE_GITLAB=	yes
 
-GL_ACCOUNT=	iankelling
-GL_COMMIT=	3b656489b70838afaeb33359cb0086e2a184c81f
+SR_HT_COMMIT=	35b7526e0655522bbdf92f6384f4e9dff74f38a0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${SR_HT_COMMIT}
 
 PLIST_FILES=	bin/${PORTNAME}
 
