@@ -70,6 +70,7 @@ include/snort/framework/mpse.h
 include/snort/framework/mpse_batch.h
 include/snort/framework/packet_constraints.h
 include/snort/framework/parameter.h
+include/snort/framework/policy_selector.h
 include/snort/framework/range.h
 include/snort/framework/so_rule.h
 include/snort/framework/value.h
