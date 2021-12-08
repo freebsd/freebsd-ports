@@ -2,11 +2,11 @@
 
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.2
 CATEGORIES=	net devel
 MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
-MAINTAINER=	iblis@hs.ntnu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for lightweight websocket clients and servers
 
 LICENSE=	MIT
@@ -78,5 +78,12 @@ LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CMAKE_BOOL=	LWS_WITH_LIBUV
 
 BUILDINFO=	${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R}
+
+.include <bsd.port.options.mk>
+
+# Allow usage of LibreSSL via OPENSSL option
+.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT} == libressl
+CMAKE_ARGS+=            -DLWS_OPENSSL_LIBRARIES='${OPENSSLLIB}/libtls.so;${OPENSSLLIB}/libssl.so;${OPENSSLLIB}/libcrypto.so' -DLWS_OPENSSL_INCLUDE_DIRS=${OPENSSLINC}/ssl
+.endif
 
 .include <bsd.port.mk>
