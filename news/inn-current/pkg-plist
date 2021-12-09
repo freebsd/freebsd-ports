@@ -21,9 +21,6 @@ bin/control/ihave.pl
 bin/control/newgroup.pl
 bin/control/rmgroup.pl
 bin/control/sendme.pl
-bin/control/sendsys.pl
-bin/control/senduuname.pl
-bin/control/version.pl
 bin/controlbatch
 bin/controlchan
 bin/convdate
@@ -34,7 +31,6 @@ bin/expire
 bin/expireover
 bin/expirerm
 bin/fastrm
-bin/filechan
 bin/filter/INN.py
 bin/filter/filter_innd.pl
 bin/filter/filter_innd.py
@@ -100,7 +96,6 @@ bin/sendinpaths
 bin/sendxbatches
 bin/shlock
 bin/shrinkfile
-bin/signcontrol
 bin/simpleftp
 bin/sm
 bin/tally.control
@@ -264,7 +259,6 @@ man/man8/domain.8.gz
 man/man8/expire.8.gz
 man/man8/expireover.8.gz
 man/man8/expirerm.8.gz
-man/man8/filechan.8.gz
 man/man8/ident.8.gz
 man/man8/imapfeed.8.gz
 man/man8/innbind.8.gz
