@@ -1,0 +1,6 @@
+Intel OSPRay Studio is an open source and interactive visualization and ray
+tracing application that leverages Intel OSPRay as its core rendering engine.
+It can be used to load complex scenes requiring high fidelity rendering or very
+large scenes requiring supercomputing resources.
+
+WWW: https://www.ospray.org/ospray_studio/
