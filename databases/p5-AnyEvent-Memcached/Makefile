@@ -1,8 +1,7 @@
 # Created by: Anes Mukhametov <anes@anes.su>
 
 PORTNAME=	AnyEvent-Memcached
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.08
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

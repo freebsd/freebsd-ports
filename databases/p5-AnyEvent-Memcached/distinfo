@@ -1,2 +1,3 @@
-SHA256 (AnyEvent-Memcached-0.05.tar.gz) = 78e5a1e3bf935e1720795eb3254ec7768c52f3d6e8a6b4a74d1c3260405b47a7
-SIZE (AnyEvent-Memcached-0.05.tar.gz) = 40120
+TIMESTAMP = 1634733721
+SHA256 (AnyEvent-Memcached-0.08.tar.gz) = 04da12bd31211538af20237a7abd8d474413d314b099c3400c13da64762e6236
+SIZE (AnyEvent-Memcached-0.08.tar.gz) = 43747
