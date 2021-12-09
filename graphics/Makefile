@@ -610,6 +610,7 @@
     SUBDIR += osg
     SUBDIR += osg34
     SUBDIR += osgearth
+    SUBDIR += ospray
     SUBDIR += ossim
     SUBDIR += oyranos
     SUBDIR += p5-Acme-Steganography-Image-Png
