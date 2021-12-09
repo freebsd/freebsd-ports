@@ -1,56 +1,28 @@
-# Upstreamed for next release
-# PR#19234
-# PR#18578
---- configure.ac.orig	2020-03-15 16:11:23.394519000 -0400
-+++ configure.ac	2020-03-16 14:50:08.458816000 -0400
-@@ -2299,108 +2299,100 @@
+--- configure.ac.orig	2020-05-11 11:05:34.000000000 -0700
++++ configure.ac	2021-12-09 11:17:20.499137000 -0800
+@@ -2279,7 +2279,8 @@
+ 	dnl *** won't always indicate the interface sched_affinity has.  ***
+ 	dnl ****************************************************************
+ 	AC_MSG_CHECKING(for sched_setaffinity from glibc < 2.3.4)
+-	AC_TRY_COMPILE([#include <sched.h>], [
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
+             int mask = 1; 
+             sched_setaffinity(0, &mask);
+ 	], [
+@@ -2290,8 +2291,9 @@
  		# We have the new, three-parameter version
  		AC_MSG_RESULT(no)
  	])
- 
- 	dnl ******************************************************************
- 	dnl *** Check for large file support                               ***
- 	dnl *** (If we were using autoconf 2.50 we'd use AC_SYS_LARGEFILE) ***
- 	dnl ******************************************************************
- 	
- 	# Check that off_t can represent 2**63 - 1 correctly, working around
- 	# potential compiler bugs.  Defines LARGE_FILE_SUPPORT, adds $1 to
- 	# CPPFLAGS and sets $large_offt to yes if the test succeeds
- 	large_offt=no
- 	AC_DEFUN([LARGE_FILES], [
- 		large_CPPFLAGS=$CPPFLAGS
- 		CPPFLAGS="$CPPFLAGS $1"
- 		AC_TRY_COMPILE([
- 			#include <sys/types.h>
- 			#include <limits.h>
- 		], [
- 			/* Lifted this compile time assert method from: http://www.jaggersoft.com/pubs/CVu11_3.html */
- 			#define COMPILE_TIME_ASSERT(pred) \
- 				switch(0){case 0:case pred:;}
- 			COMPILE_TIME_ASSERT(sizeof(off_t) * CHAR_BIT == 64);
- 		], [
- 			AC_MSG_RESULT(ok)
- 			AC_DEFINE(HAVE_LARGE_FILE_SUPPORT, 1, [Have large file support])
- 			large_CPPFLAGS="$large_CPPFLAGS $1"
- 			large_offt=yes
- 		], [
- 			AC_MSG_RESULT(no)
- 		])
- 		CPPFLAGS=$large_CPPFLAGS
- 	])
- 
- 	AC_MSG_CHECKING(if off_t is 64 bits wide)
- 	LARGE_FILES("")
- 	if test $large_offt = no; then
- 		AC_MSG_CHECKING(if _FILE_OFFSET_BITS=64 gives 64 bit off_t)
- 		LARGE_FILES("-D_FILE_OFFSET_BITS=64")
- 	fi
- 	if test $large_offt = no; then
- 		AC_MSG_WARN([No 64 bit file size support available])
- 	fi
- 	
- 	dnl *****************************
- 	dnl *** Checks for libsocket  ***
+-	AC_TRY_COMPILE([#include <sched.h>], [
+-	     CPU_COUNT((void *) 0);
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
++	     CPU_COUNT((cpuset_t *) 0);
+ 	], [
+ 		AC_MSG_RESULT(yes)
+ 		AC_DEFINE(GLIBC_HAS_CPU_COUNT, 1, [GLIBC has CPU_COUNT macro in sched.h])
+@@ -2346,14 +2348,6 @@
  	dnl *****************************
  	AC_CHECK_LIB(socket, socket, LIBS="$LIBS -lsocket")
  
@@ -65,101 +37,7 @@
  	dnl *******************************
  	dnl *** Checks for MSG_NOSIGNAL ***
  	dnl *******************************
- 	AC_MSG_CHECKING(for MSG_NOSIGNAL)
- 	AC_TRY_COMPILE([#include <sys/socket.h>], [
- 		int f = MSG_NOSIGNAL;
- 	], [
- 		# Yes, we have it...
- 		AC_MSG_RESULT(yes)
- 		AC_DEFINE(HAVE_MSG_NOSIGNAL, 1, [Have MSG_NOSIGNAL])
- 	], [
- 		# We'll have to use signals
- 		AC_MSG_RESULT(no)
- 	])
- 
- 	dnl *****************************
- 	dnl *** Checks for IPPROTO_IP ***
- 	dnl *****************************
- 	AC_MSG_CHECKING(for IPPROTO_IP)
- 	AC_TRY_COMPILE([#include <netinet/in.h>], [
- 		int level = IPPROTO_IP;
- 	], [
- 		# Yes, we have it...
- 		AC_MSG_RESULT(yes)
- 		AC_DEFINE(HAVE_IPPROTO_IP, 1, [Have IPPROTO_IP])
- 	], [
- 		# We'll have to use getprotobyname
- 		AC_MSG_RESULT(no)
- 	])
- 
- 	dnl *******************************
- 	dnl *** Checks for IPPROTO_IPV6 ***
- 	dnl *******************************
- 	AC_MSG_CHECKING(for IPPROTO_IPV6)
- 	AC_TRY_COMPILE([#include <netinet/in.h>], [
- 		int level = IPPROTO_IPV6;
- 	], [
- 		# Yes, we have it...
- 		AC_MSG_RESULT(yes)
- 		AC_DEFINE(HAVE_IPPROTO_IPV6, 1, [Have IPPROTO_IPV6])
- 	], [
- 		# We'll have to use getprotobyname
- 		AC_MSG_RESULT(no)
- 	])
- 
- 	dnl ******************************
- 	dnl *** Checks for IPPROTO_TCP ***
- 	dnl ******************************
- 	AC_MSG_CHECKING(for IPPROTO_TCP)
- 	AC_TRY_COMPILE([#include <netinet/in.h>], [
-@@ -3572,100 +3564,131 @@
- 	# HAVE_MACH_TIMEBASE_INFO check already done above
- 	# HAVE_FUTIMES check already done above
- 	# HAVE_FUTIMENS check already done above
- 
- 	ORIG_CFLAGS="$CFLAGS"
- 	CFLAGS="$CFLAGS -Werror=sign-conversion"
- 
- 	AC_MSG_CHECKING(for bind with unsigned addrlen)
- 	AC_TRY_LINK([
- 		#include <sys/socket.h>
- 	], [
- 		int fd;
- 		struct sockaddr* addr;
- 		socklen_t addrLen;
- 		bind(fd, addr, addrLen);
- 	],[
- 		AC_MSG_RESULT(yes)
- 		AC_DEFINE(BIND_ADDRLEN_UNSIGNED, 1, [bind with unsigned addrlen])
- 	], [
- 		AC_MSG_RESULT(no)
- 	])
- 
- 	AC_MSG_CHECKING(for struct ipv6_mreq with unsigned ipv6mr_interface)
- 	AC_TRY_LINK([
- 		#include <netinet/in.h>
- 		#include <netinet/tcp.h>
- 	], [
- 		struct ipv6_mreq opt;
- 		unsigned int index = 0;
- 		opt.ipv6mr_interface = index;
- 	],[
- 		AC_MSG_RESULT(yes)
- 		AC_DEFINE(IPV6MR_INTERFACE_UNSIGNED, 1, [struct ipv6_mreq with unsigned ipv6mr_interface])
- 	], [
- 		AC_MSG_RESULT(no)
- 	])
- 
- 	AC_MSG_CHECKING(for inotify_rm_watch with unsigned wd)
- 	AC_TRY_LINK([
- 		#include <sys/inotify.h>
- 	], [
- 		intptr_t fd;
- 		uint32_t wd;
- 		int result = inotify_rm_watch(fd, wd);
- 	],[
- 		AC_MSG_RESULT(yes)
- 		AC_DEFINE(INOTIFY_RM_WATCH_WD_UNSIGNED, 1, [inotify_rm_watch with unsigned wd])
+@@ -3619,6 +3613,37 @@
  	], [
  		AC_MSG_RESULT(no)
  	])
@@ -197,101 +75,7 @@
  
  	CFLAGS="$ORIG_CFLAGS"
  
- 	AC_MSG_CHECKING(for shm_open that works well enough with mmap)
- 	if test "x$ac_cv_func_shm_open" = "xno" -o "x$ac_cv_func_shm_open_working_with_mmap" = "xno" ; then
- 		AC_MSG_RESULT(no)
- 	elif test "x$cross_compiling" = "xyes"; then
- 		AC_MSG_RESULT(cross compiling, assuming yes)
- 		AC_DEFINE(HAVE_SHM_OPEN_THAT_WORKS_WELL_ENOUGH_WITH_MMAP, 1, [shm_open that works well enough with mmap])
- 	else
- 		AC_TRY_RUN([
- 			#include <sys/mman.h>
- 			#include <fcntl.h>
- 			#include <unistd.h>
- 
- 			int main ()
- 			{
- 			#ifdef __PASE__
- 				/* IBM i doesn't implement this and returns SIGILL */
- 				return -1;
- 			#endif
- 				int fd = shm_open("/mono_configure_shm_open", O_CREAT | O_RDWR, 0777);
- 				if (fd == -1)
- 					return -1;
- 
- 				shm_unlink("/mono_configure_shm_open");
- 
- 				// NOTE: PROT_EXEC and MAP_PRIVATE don't work well with shm_open
- 				//       on at least the current version of Mac OS X
- 
- 				if (mmap(NULL, 1, PROT_EXEC, MAP_PRIVATE, fd, 0) == MAP_FAILED)
- 					return -1;
- 
- 				return 0;
- 			}
- 		],[
- 			AC_MSG_RESULT(yes)
- 			AC_DEFINE(HAVE_SHM_OPEN_THAT_WORKS_WELL_ENOUGH_WITH_MMAP, 1, [shm_open that works well enough with mmap])
- 		], [
- 			AC_MSG_RESULT(no)
- 		])
- 	fi
- 
- 	AC_MSG_CHECKING(for getpriority with int who)
- 	AC_TRY_LINK([
- 		#include <sys/resource.h>
- 	], [
- 		int which;
- 		int who;
- 		int result = getpriority(which, who);
-@@ -4418,107 +4441,121 @@
- 			BTLS_PLATFORM=x86_64
- 			boehm_supported=false
- 			;;
- 		  openbsd*|freebsd*|kfreebsd-gnu*)
- 			AOT_SUPPORTED="yes"
- 			BTLS_SUPPORTED=yes
- 			BTLS_PLATFORM=x86_64
- 			;;
- 		  mingw*|cygwin*)
- 			BTLS_SUPPORTED=no
- 			BTLS_PLATFORM=x86_64
- 			;;
- 		esac
- 		;;
- 	sparc*-*-*)
- 		if test "x$ac_cv_sizeof_void_p" = "x8"; then
- 		   TARGET=SPARC64
- 		else
- 			TARGET=SPARC
- 		fi
- 		arch_target=sparc;
- 		ACCESS_UNALIGNED="no"
- 		case $host_os in
- 		  linux*) ;;
- 		  *)
- 			LIBC="libc.so"
- 			INTL="libintl.so"
- 		esac
- 		if test x"$GCC" = xyes; then
- 			# We don't support v8 cpus
- 			CFLAGS="$CFLAGS -Wno-cast-align -mcpu=v9"
- 		fi
- 		if test x"$AR" = xfalse; then
- 			AC_MSG_ERROR([The required utility 'ar' is not found in your PATH. Usually it can be found in /usr/ccs/bin.])
- 		fi
- 		;;
- 	*-mingw*|*-*-cygwin*)
- 		# When this is enabled, it leads to very strange crashes at runtime (gcc-3.4.4)
- 		have_visibility_hidden=no
- 		INTL="intl"
- 		case "$host" in
- 			x86_64*mingw*)
- 				# Old Boehm fails to compile for x86_64-mingw.
- 				# It is trivial to fix, but just silently drop it.
- 				boehm_supported=false
- 				;;
- 		esac
+@@ -4465,13 +4490,27 @@
  		;;
  	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
          powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | \
@@ -323,101 +107,7 @@
  		else
  			TARGET=POWERPC;
  			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
- 		fi
- 		arch_target=ppc;
- 		case $host_os in
- 		  aix*|os400*)
- 			BTLS_SUPPORTED=yes
- 			BTLS_PLATFORM=powerpc
- 			;;
- 		  linux*)
- 			BTLS_SUPPORTED=yes
- 			BTLS_PLATFORM=powerpc
- 			;;
- 		esac
- 		;;
- 	armv7k-*-darwin*)
- 		TARGET=ARM;
- 		TARGET_SYS=WATCHOS
- 		arch_target=arm;
- 		arm_fpu=VFP_HARD
- 		ACCESS_UNALIGNED="no"
- 		CPPFLAGS="$CPPFLAGS -D__ARM_EABI__"
- 		;;
- 
- 	arm*-darwin*)
- 		TARGET=ARM;
- 		arch_target=arm;
- 		ACCESS_UNALIGNED="no"
- 		CPPFLAGS="$CPPFLAGS -D__ARM_EABI__"
- 		;;
- 	arm*-linux*)
- 		TARGET=ARM;
- 		arch_target=arm;
- 		ACCESS_UNALIGNED="no"
- 		AOT_SUPPORTED="yes"
- 		CPPFLAGS="$CPPFLAGS -D__ARM_EABI__"
- 		BTLS_SUPPORTED=yes
- 		BTLS_PLATFORM=arm
- 		AC_CHECK_HEADER(stdalign.h,[],[BTLS_SUPPORTED=no])
- 		case "$target" in
- 		arm*-linux*-gnueabi)
- 			BTLS_PLATFORM=armsoft
- 			;;
- 		esac
- 		;;
- 	arm*-netbsd*-eabi*)
- 		TARGET=ARM;
- 		arch_target=arm;
- 		ACCESS_UNALIGNED="no"
-@@ -6441,103 +6478,103 @@
- 	MONO_NATIVE_CC=$CC
- 	MONO_NATIVE_CXX=$CXX
- 	MONO_NATIVE_CCASFLAGS=$CCASFLAGS
- 	# The system.native code uses _WASM_ to check for wasm
- 	MONO_NATIVE_CPPFLAGS="$CPPFLAGS -D_WASM_"
- 	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
- 	MONO_NATIVE_CFLAGS=$CFLAGS
- 	MONO_NATIVE_LDFLAGS=$LDFLAGS
- 
- 	mono_native=yes
- 	mono_native_compat=no
- 	MONO_NATIVE_PLATFORM=linux
- 
- 	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_LINUX"
- elif case $host_os in aix*|os400*) true;; *) false;; esac; then
- 	mono_native_text="AIX"
- 	MONO_NATIVE_CC=$CC
- 	MONO_NATIVE_CXX=$CXX
- 	MONO_NATIVE_CCASFLAGS=$CCASFLAGS
- 	MONO_NATIVE_CPPFLAGS=$CPPFLAGS
- 	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
- 	MONO_NATIVE_CFLAGS=$CFLAGS
- 	dnl nosymbolic- is a hack in case -G for linking is used, as -G seems
- 	dnl to change the way unresolved symbols work on library load in an
- 	dnl incompatible manner. (as references to runtime functions are
- 	dnl resolved later) Default params otherwise are that, so seems OK.
- 	dnl Likewise, we don't seem to need to cover the entire runtime with
- 	dnl it either, on both AIX and PASE. -brtl from -G does seem to spew
- 	dnl Big Scary TOC Warnings (tm) from the linker, but it doesn't seem
- 	dnl problematic with gcc's -mminimal-toc.
- 	dnl ----
- 	dnl flock in AIX exists in libbsd (not the same as freedesktop.org
- 	dnl libbsd) which Mono.Native needs.
- 	dnl Because of the way that the library is built by default, unresolved
- 	dnl references are kept and resolved at runtime. Often, the dependency
- 	dnl chain means libbsd is loaded anyways, but not necessarily. It's
- 	dnl better to explicitly link it, even though it has it shadows libc's
- 	dnl ioctl with its own. (As for the other unresolved imports, those
- 	dnl should be provided by the Mono runtime loaded.)
- 	MONO_NATIVE_LDFLAGS="$LDFLAGS -lbsd -Wl,-bnosymbolic-"
- 
- 	mono_native=yes
- 	mono_native_compat=no
- 	MONO_NATIVE_PLATFORM=aix
- 
- 	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_AIX"
- elif case $host_os in freebsd*) true;; *) false;; esac; then
+@@ -6488,9 +6527,9 @@
  	mono_native_text="FreeBSD"
  	MONO_NATIVE_CC=$CC
  	MONO_NATIVE_CXX=$CXX
@@ -429,50 +119,3 @@
  	MONO_NATIVE_LDFLAGS=$LDFLAGS
  
  	mono_native=yes
- 	mono_native_compat=no
- 	MONO_NATIVE_PLATFORM=freebsd
- 	AC_MSG_CHECKING([Mono.Native support])
- 	AC_MSG_RESULT(freebsd)
- 
- 	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_FREEBSD"
- elif case $host_os in netbsd*) true;; *) false;; esac; then
- 	mono_native_text="NetBSD"
- 	MONO_NATIVE_CC=$CC
- 	MONO_NATIVE_CXX=$CXX
- 	MONO_NATIVE_CPPFLAGS=$CPPFLAGS
- 	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
- 	MONO_NATIVE_CFLAGS=$CFLAGS
- 	MONO_NATIVE_LDFLAGS=$LDFLAGS
- 
- 	mono_native=yes
- 	mono_native_compat=no
- 	MONO_NATIVE_PLATFORM=netbsd
- 	AC_MSG_CHECKING([Mono.Native support])
- 	AC_MSG_RESULT(netbsd)
- 
- 	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_NETBSD"
- elif case $host_os in haiku*) true;; *) false;; esac; then
- 	mono_native_text="Haiku"
- 	MONO_NATIVE_CC=$CC
- 	MONO_NATIVE_CXX=$CXX
- 	MONO_NATIVE_CPPFLAGS=$CPPFLAGS
- 	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
- 	MONO_NATIVE_CFLAGS=$CFLAGS
- 	MONO_NATIVE_LDFLAGS=$LDFLAGS
- 
- 	mono_native=yes
- 	mono_native_compat=no
- 	MONO_NATIVE_PLATFORM=haiku
- 	AC_MSG_CHECKING([Mono.Native support])
- 	AC_MSG_RESULT(haiku)
- 
- 	MONO_NATIVE_PLATFORM_TYPE="MONO_NATIVE_PLATFORM_TYPE_HAIKU"
- elif test x$platform_android = xyes; then
- 	mono_native_text="Android"
- 	MONO_NATIVE_CC=$CC
- 	MONO_NATIVE_CXX=$CXX
- 	MONO_NATIVE_CPPFLAGS=$CPPFLAGS
- 	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
- 	MONO_NATIVE_CFLAGS=$CFLAGS
- 	MONO_NATIVE_LDFLAGS=$LDFLAGS
- 	MONO_NATIVE_LIBADD="../mini/$LIBMONO_LA"
