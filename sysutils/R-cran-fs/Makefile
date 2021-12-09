@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	fs
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
