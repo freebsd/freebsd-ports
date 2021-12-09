@@ -67,6 +67,7 @@
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-influenceR
     SUBDIR += R-cran-inline
+    SUBDIR += R-cran-intervals
     SUBDIR += R-cran-ipred
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-isoband
