@@ -1,6 +1,6 @@
---- external/CMakeLists.txt.orig	2018-10-12 11:58:33.398503000 +0200
-+++ external/CMakeLists.txt	2018-10-12 12:01:52.063061000 +0200
-@@ -31,25 +31,28 @@
+--- external/CMakeLists.txt.orig	2021-12-09 16:37:10.161405000 +0100
++++ external/CMakeLists.txt	2021-12-09 16:36:54.211336000 +0100
+@@ -31,27 +31,30 @@
  
  # This is broken up into two parts: first we check for miniupnp, compile it if we can't
  # find it, and thereafter we check for libunbound, and compile it if we can't find it.
@@ -11,8 +11,10 @@
  find_package(Miniupnpc REQUIRED)
  
 -message(STATUS "Using in-tree miniupnpc")
+-set(UPNPC_NO_INSTALL TRUE CACHE BOOL "Disable miniupnp installation" FORCE)
 -add_subdirectory(miniupnp/miniupnpc)
 -set_property(TARGET libminiupnpc-static PROPERTY FOLDER "external")
+-set_property(TARGET libminiupnpc-static PROPERTY POSITION_INDEPENDENT_CODE ON)
 -if(MSVC)
 -  set_property(TARGET libminiupnpc-static APPEND_STRING PROPERTY COMPILE_FLAGS " -wd4244 -wd4267")
 -elseif(NOT MSVC)
@@ -23,8 +25,10 @@
 -endif()
 +if(NOT MINIUPNPC_FOUND OR STATIC)
 +  message(STATUS "Using in-tree miniupnpc")
++  set(UPNPC_NO_INSTALL TRUE CACHE BOOL "Disable miniupnp installation" FORCE)
 +  add_subdirectory(miniupnp/miniupnpc)
 +  set_property(TARGET libminiupnpc-static PROPERTY FOLDER "external")
++  set_property(TARGET libminiupnpc-static PROPERTY POSITION_INDEPENDENT_CODE ON)
 +  if(MSVC)
 +    set_property(TARGET libminiupnpc-static APPEND_STRING PROPERTY COMPILE_FLAGS " -wd4244 -wd4267")
 +  elseif(NOT MSVC)
