@@ -1,5 +1,5 @@
-TIMESTAMP = 1620926548
-SHA256 (go/www_amfora/amfora-v1.8.0/v1.8.0.mod) = 49b34fe33204fa0dd44367edfb8b653372a5bb492a6457137e3d33cab60967d5
-SIZE (go/www_amfora/amfora-v1.8.0/v1.8.0.mod) = 1354
-SHA256 (go/www_amfora/amfora-v1.8.0/v1.8.0.zip) = 75afa56dc92b9745796f3d07cbab0d88ad482f43ae992a924a10ba8ba70d4d8f
-SIZE (go/www_amfora/amfora-v1.8.0/v1.8.0.zip) = 2357969
+TIMESTAMP = 1639071910
+SHA256 (go/www_amfora/amfora-v1.9.1/v1.9.1.mod) = 29117dea2f1459cec179cf38a07abb60dc03eea2c011cc65f93ffacce113c6c0
+SIZE (go/www_amfora/amfora-v1.9.1/v1.9.1.mod) = 1163
+SHA256 (go/www_amfora/amfora-v1.9.1/v1.9.1.zip) = 4d8f1aecf533c6dc2c4248da6c18ca6983224f1f807202bc1cb63f930258c869
+SIZE (go/www_amfora/amfora-v1.9.1/v1.9.1.zip) = 2375658
