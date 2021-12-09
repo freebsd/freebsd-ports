@@ -1,0 +1,27 @@
+--- Makefile.orig	2021-12-09 21:36:29 UTC
++++ Makefile
+@@ -27,13 +27,6 @@ QMAKE_COMMAND := qmake
+ UNAME := $(shell uname)
+ UNAME_M := $(shell uname -m)
+ # Homebrew on macOS does not link Qt5 into the system path.
+-ifeq ($(UNAME),Darwin)
+-	ifeq ($(UNAME_M),arm64)
+-		HOMEBREW_PATH=export PATH="$(PATH):/opt/homebrew/opt/qt5/bin";
+-	else
+-		HOMEBREW_PATH=export PATH="$(PATH):/usr/local/opt/qt/bin";
+-	endif
+-endif
+ 
+ kristall: build/kristall
+ 	cp build/kristall $@
+@@ -41,8 +34,8 @@ kristall: build/kristall
+ .PHONY: build/kristall
+ build/kristall: src/*
+ 	mkdir -p build
+-	cd build; $(HOMEBREW_PATH) $(QMAKE_COMMAND) "CONFIG+=$(QMAKE_CONFIG)" ../src/kristall.pro && $(MAKE)
+-	cd doc; ./gen-man.sh
++	(cd build && $(HOMEBREW_PATH) $(QMAKE_COMMAND) "CONFIG+=$(QMAKE_CONFIG)" ../src/kristall.pro && $(MAKE))
++	(cd doc && ./gen-man.sh)
+ 
+ install: kristall
+ 	# Prepare directories
