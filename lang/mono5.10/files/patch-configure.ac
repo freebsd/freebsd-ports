@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-08-24 17:19:14.000000000 +0200
-+++ configure.ac	2021-10-17 17:15:00.295997000 +0200
-@@ -201,6 +201,12 @@ case "$host" in
+--- configure.ac.orig	2018-08-24 08:19:14.000000000 -0700
++++ configure.ac	2021-12-09 10:35:50.670421000 -0800
+@@ -201,6 +201,12 @@
  		libdl=
  		libgc_threads=pthreads
  		use_sigposix=yes
@@ -13,7 +13,29 @@
  		has_dtrace=yes
  		with_sgen_default_concurrent=yes
  		;;
-@@ -3298,6 +3304,8 @@ case "$host" in
+@@ -1668,7 +1674,8 @@
+ 	dnl *** won't always indicate the interface sched_affinity has.  ***
+ 	dnl ****************************************************************
+ 	AC_MSG_CHECKING(for sched_setaffinity from glibc < 2.3.4)
+-	AC_TRY_COMPILE([#include <sched.h>], [
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
+             int mask = 1; 
+             sched_setaffinity(0, &mask);
+ 			return 0;
+@@ -1680,8 +1687,9 @@
+ 		# We have the new, three-parameter version
+ 		AC_MSG_RESULT(no)
+ 	])
+-	AC_TRY_COMPILE([#include <sched.h>], [
+-	     CPU_COUNT((void *) 0);
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
++	     CPU_COUNT((cpuset_t *) 0);
+ 	], [
+ 		AC_MSG_RESULT(yes)
+ 		AC_DEFINE(GLIBC_HAS_CPU_COUNT, 1, [GLIBC has CPU_COUNT macro in sched.h])
+@@ -3298,6 +3306,8 @@
  			BTLS_PLATFORM=i386
  			;;
  		  openbsd*|freebsd*|kfreebsd-gnu*)
@@ -22,7 +44,7 @@
  		        ;;
  		esac
  		;;
-@@ -3322,6 +3330,8 @@ case "$host" in
+@@ -3322,6 +3332,8 @@
  			boehm_supported=false
  			;;
  		  openbsd*|freebsd*|kfreebsd-gnu*)
@@ -31,7 +53,7 @@
  			;;
  		  mingw*)
  			;;
-@@ -3355,11 +3365,10 @@ case "$host" in
+@@ -3355,11 +3367,10 @@
  		INTL="intl"
  		;;
  	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
@@ -44,7 +66,7 @@
  		else
  			TARGET=POWERPC;
  			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
-@@ -4425,6 +4434,7 @@ if test "x$enable_btls" = "xyes"; then
+@@ -4425,6 +4436,7 @@
  		;;
  	aarch64)
  		btls_arch=aarch64
