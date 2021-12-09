@@ -1,8 +1,7 @@
 # Created by: Anes Mukhametov <anes@anes.su>
 
 PORTNAME=	CPAN-Site
-PORTVERSION=	1.11
-PORTREVISION=	3
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
