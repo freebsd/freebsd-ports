@@ -1,7 +1,7 @@
 # Created by: Alex Hayward <xelah@xelah.com>
 
 PORTNAME=	pngquant
-PORTVERSION=	2.13.1
+PORTVERSION=	2.17.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://pngquant.org/
