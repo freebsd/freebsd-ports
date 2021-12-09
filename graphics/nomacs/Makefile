@@ -1,7 +1,7 @@
 PORTNAME=	nomacs
 PORTVERSION=	3.16
 DISTVERSIONSUFFIX=	.224
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/nomacs/nomacs/commit/
