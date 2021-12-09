@@ -1,0 +1,8 @@
+Spell checking common document formats including latex, markdown, manual pages,
+and description files. Includes utilities to automate checking of documentation
+and vignettes as a unit test during 'R CMD check'. Both British and American
+English are supported out of the box and other languages can be added. In
+addition, packages may define a 'wordlist' to allow custom terminology without
+having to abuse punctuation.
+
+WWW: https://docs.ropensci.org/spelling/
