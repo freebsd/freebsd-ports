@@ -4,7 +4,7 @@ DISTVERSION=	0.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Ray tracing based rendering engine for high-fidelity visualization
+COMMENT=	Application to showcase OSPRay's rendering capabilities
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
