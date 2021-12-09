@@ -1,5 +1,5 @@
---- configure.ac.orig	2021-01-07 15:31:48 UTC
-+++ configure.ac
+--- configure.ac.orig	2019-07-16 11:21:42.000000000 -0700
++++ configure.ac	2021-12-09 10:42:53.117495000 -0800
 @@ -203,6 +203,12 @@
  		libdl=
  		libgc_threads=pthreads
@@ -13,7 +13,29 @@
  		has_dtrace=yes
  		with_sgen_default_concurrent=yes
  		;;
-@@ -4001,13 +4007,10 @@
+@@ -1947,7 +1953,8 @@
+ 	dnl *** won't always indicate the interface sched_affinity has.  ***
+ 	dnl ****************************************************************
+ 	AC_MSG_CHECKING(for sched_setaffinity from glibc < 2.3.4)
+-	AC_TRY_COMPILE([#include <sched.h>], [
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
+             int mask = 1; 
+             sched_setaffinity(0, &mask);
+ 	], [
+@@ -1958,8 +1965,9 @@
+ 		# We have the new, three-parameter version
+ 		AC_MSG_RESULT(no)
+ 	])
+-	AC_TRY_COMPILE([#include <sched.h>], [
+-	     CPU_COUNT((void *) 0);
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
++	     CPU_COUNT((cpuset_t *) 0);
+ 	], [
+ 		AC_MSG_RESULT(yes)
+ 		AC_DEFINE(GLIBC_HAS_CPU_COUNT, 1, [GLIBC has CPU_COUNT macro in sched.h])
+@@ -4001,13 +4009,10 @@
  		;;
  	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
          powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | \
@@ -28,7 +50,7 @@
  		else
  			TARGET=POWERPC;
  			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
-@@ -4022,6 +4025,10 @@
+@@ -4022,6 +4027,10 @@
  			dnl we may hardcode 64-bit names at times, but we don't do 32-bit AIX, so
  			LIBC="libc.a(shr_64.o)"
  			INTL="libintl.a(libintl.so.8)"
