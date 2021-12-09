@@ -2,12 +2,14 @@
 
 PORTNAME=	fnt
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Missing font manager for UNIX
 
-LICENSE=	GPLv3
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
 		chafa:graphics/chafa \
