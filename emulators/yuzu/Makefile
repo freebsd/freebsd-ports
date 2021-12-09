@@ -44,7 +44,7 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		fmtlib:fmt:8.0.0:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
-		kinetiknz:cubeb:cubeb-0.2-1341-gdcc5cb5:cubeb/externals/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1345-g773f16b:cubeb/externals/cubeb \
 		yhirose:cpp-httplib:v0.9.0-5-g9648f95:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl ssl

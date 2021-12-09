@@ -31,7 +31,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-125-g01f601a:hidapi/3rdparty/hidapi/hida
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.7.1:glslang/3rdparty/glslang/glslang \
-		kinetiknz:cubeb:cubeb-0.2-1341-gdcc5cb5:cubeb/3rdparty/cubeb/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1345-g773f16b:cubeb/3rdparty/cubeb/cubeb \
 		wolfSSL:wolfssl:v4.8.1-stable:wolfssl/3rdparty/wolfssl/wolfssl \
 		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
 
