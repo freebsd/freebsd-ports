@@ -9,21 +9,16 @@
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -66,10 +66,10 @@ SQLDIR = $(PRIVDIR)/sql
+@@ -66,7 +66,7 @@ SQLDIR = $(PRIVDIR)/sql
  LUADIR = $(PRIVDIR)/lua
  
  # /var/lib/ejabberd/
 -SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
 +SPOOLDIR = $(DESTDIR)@localstatedir@/spool/ejabberd
  
--# /var/lock/ejabberdctl
--CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
-+# /var/run/ejabberdctl
-+CTLLOCKDIR = $(DESTDIR)@localstatedir@/run/ejabberdctl
- 
- # /var/lib/ejabberd/.erlang.cookie
- COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -191,7 +191,7 @@ DEPIX:=$(words $(subst /, ,$(DEPSDIR)))
+ # /var/log/ejabberd/
+ LOGDIR = $(DESTDIR)@localstatedir@/log/ejabberd
+@@ -185,7 +185,7 @@
  LIBIX:=$(shell expr "$(DEPIX)" + 2)
  
  ELIXIR_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 5,1000,$(1))
@@ -32,7 +27,7 @@
  MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)
  TO_DEST_SINGLE=$(if $(subst X$(DEPSBASE)X,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(if $(subst XlibX,,X$(word $(LIBIX),$(1))X),$(call DEPS_TO_DEST,$(wordlist $(DEPIX),1000,$(1))),$(call ELIXIR_TO_DEST,$(wordlist $(DEPIX),1000,$(1)))))
  TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))
-@@ -264,9 +264,7 @@ install: copy-files
+@@ -266,9 +266,7 @@ install: copy-files
  	#
  	# Configuration files
  	$(INSTALL) -d -m 750 $(G_USER) $(ETCDIR)
@@ -43,7 +38,7 @@
  	$(SED) -e "s*{{rootdir}}*@prefix@*g" \
  		-e "s*{{installuser}}*@INSTALLUSER@*g" \
  		-e "s*{{bindir}}*@bindir@*g" \
-@@ -275,16 +273,15 @@ install: copy-files
+@@ -277,16 +275,15 @@ install: copy-files
  		-e "s*{{localstatedir}}*@localstatedir@*g" \
  		-e "s*{{docdir}}*@docdir@*g" \
  		-e "s*{{erl}}*@ERL@*g" \
@@ -64,7 +59,7 @@
  	# Elixir binaries
  	[ -d $(BINDIR) ] || $(INSTALL) -d -m 755 $(BINDIR)
  	[ -f $(DEPSDIR)/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) $(DEPSDIR)/elixir/bin/iex $(BINDIR)/iex || true
-@@ -319,12 +316,14 @@ install: copy-files
+@@ -316,12 +313,14 @@ install: copy-files
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation

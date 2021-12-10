@@ -125,6 +125,8 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_client_state.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_client_state_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_configure.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_conversejs.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_conversejs_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_disco.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_disco_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_delegation.beam
@@ -423,6 +425,10 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_app.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_base.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_base64.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_base64url.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_crypto_compat.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_block_encryptor.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_chacha20_poly1305.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_chacha20_poly1305_crypto.beam
@@ -448,6 +454,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_aes.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_aes_kw.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_base64url.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_bench.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_chacha20.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_chacha20_poly1305.beam
@@ -456,6 +463,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_curve448.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_ed25519.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_ed448.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_hchacha20.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_math.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_pkcs1.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_pkcs5.beam
@@ -465,18 +473,25 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_x25519.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_x448.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_xchacha20.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_xchacha20_poly1305.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_aes_kw.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_c20p_kw.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_ecdh_1pu.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_dir.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_ecdh_es.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_pbes2.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_rsa.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_xc20p_kw.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_enc.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_enc_aes.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_enc_chacha20_poly1305.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_enc_c20p.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_enc_xc20p.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_zip.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwk.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwk_der.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwk_kty.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwk_kty_ec.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwk_kty_oct.beam
@@ -511,7 +526,11 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_sha3_libdecaf.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_sha3_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_sup.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305_crypto.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose.hrl
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_base.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_compat.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_jwe.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_jwk.hrl
@@ -610,6 +629,7 @@
 %%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql.beam
 %%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql_app.beam
 %%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql_proto.beam
+%%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql_sasl.beam
 %%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql_socket.beam
 %%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql_sup.beam
 %%PGSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pgsql-%%P1_PGSQL_VER%%/ebin/pgsql_util.beam
@@ -747,6 +767,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0280.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0297.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0313.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0317.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0328.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0333.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0334.beam
@@ -877,5 +898,4 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%man/man5/%%PORTNAME%%.yml.5.gz
 @dir /var/log/%%PORTNAME%%
-@dir /var/run/%%PORTNAME%%ctl
 @dir /var/spool/%%PORTNAME%%
