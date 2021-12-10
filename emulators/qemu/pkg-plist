@@ -1,4 +1,4 @@
-bin/elf2dmp
+%%CURL%%bin/elf2dmp
 bin/qemu-edid
 bin/qemu-ga
 bin/qemu-i386

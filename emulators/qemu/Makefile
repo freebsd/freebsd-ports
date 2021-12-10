@@ -2,6 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -11,16 +12,16 @@ COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 		bash:shells/bash
 LIB_DEPENDS?=	libepoxy.so:graphics/libepoxy \
+		libfdt.so:sysutils/dtc \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libnettle.so:security/nettle \
 		libpcre2-8.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
-#		libfdt.so:sysutils/dtc
 
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
@@ -108,11 +109,11 @@ PORTDOCS?=	.buildinfo _static/* about/* devel/* docs genindex.html \
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
-		--extra-ldflags=-L\"${LOCALBASE}/lib\" \
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L/usr/lib \
+		--extra-ldflags=-L${LOCALBASE}/lib \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
-		--python=${PYTHON_CMD} \
+		--python=${PYTHON_CMD} --enable-fdt=system \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .include <bsd.port.options.mk>

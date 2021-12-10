@@ -1,6 +1,6 @@
---- configure.orig	2021-09-27 14:03:42 UTC
+--- configure.orig	2021-08-24 17:35:40 UTC
 +++ configure
-@@ -1635,7 +1635,7 @@ if test "$mingw32" = "yes" ; then
+@@ -1640,7 +1640,7 @@ if test "$mingw32" = "yes" ; then
  else
      bindir="${bindir:-$prefix/bin}"
  fi
@@ -9,7 +9,7 @@
  datadir="${datadir:-$prefix/share}"
  docdir="${docdir:-$prefix/share/doc}"
  sysconfdir="${sysconfdir:-$prefix/etc}"
-@@ -4607,6 +4607,9 @@ echo "CONFIG_TLS_PRIORITY=\"$tls_priority\"" >> $confi
+@@ -4612,6 +4612,9 @@ echo "CONFIG_TLS_PRIORITY=\"$tls_priority\"" >> $confi
  # if this macro is set.
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak
