@@ -1,5 +1,5 @@
 PORTNAME=	guitarix
-DISTVERSION=	0.43.0
+DISTVERSION=	0.43.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 PKGNAMESUFFIX=	-lv2
@@ -63,9 +63,5 @@ post-install:
 	# strip, see https://sourceforge.net/p/guitarix/bugs/60/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/guitarix
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
-	# workaround for https://github.com/brummer10/guitarix/issues/98
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo && \
-	 ${MV} ${STAGEDIR}/usr/share/metainfo/org.guitarix.guitarix.metainfo.xml ${STAGEDIR}${PREFIX}/share/metainfo && \
-	 ${RMDIR} ${STAGEDIR}/usr/share/metainfo ${STAGEDIR}/usr/share
 
 .include <bsd.port.mk>
