@@ -659,6 +659,7 @@
     SUBDIR += postgis25
     SUBDIR += postgis30
     SUBDIR += postgis31
+    SUBDIR += postgis32
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
