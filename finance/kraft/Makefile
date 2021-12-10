@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.97
 CATEGORIES=	finance kde
 
+PATCH_SITES=	https://github.com/dragotin/kraft/commit/
+PATCHFILES=	14906b37cd58136b8f16592e6f62ac147c3e2e71.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Manage invoices and documents for small companies
 
