@@ -52,7 +52,7 @@ fi
 startup_dir=`/usr/bin/dirname "$0"`
 startup_exe=`/usr/bin/basename "$0" .sh`
 
-if [ -z "$LOGFILE" ] ; then
+if [ -n "$LOGFILE" ] ; then
 	{
 		echo "Starting KDE Plasma Wayland from PID $$"
 		echo "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR"
@@ -60,7 +60,7 @@ if [ -z "$LOGFILE" ] ; then
 		echo "startup=$startup_dir/$startup_exe"
 	} > $LOGFILE
 
-	exec $scaffolding $startup_dir/$startup_exe 2>&1 | tee -a $LOG
+	exec $scaffolding $startup_dir/$startup_exe 2>&1 | tee -a $LOGFILE
 else
 	exec $scaffolding $startup_dir/$startup_exe
 fi
