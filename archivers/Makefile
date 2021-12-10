@@ -1,5 +1,6 @@
     COMMENT = Archivers
 
+    SUBDIR += 7-zip
     SUBDIR += 9e
     SUBDIR += R-cran-zip
     SUBDIR += advancecomp

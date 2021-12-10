@@ -1,0 +1,20 @@
+--- CPP/7zip/7zip_gcc.mak.orig	2021-12-10 11:04:08 UTC
++++ CPP/7zip/7zip_gcc.mak
+@@ -22,7 +22,7 @@ CFLAGS_BASE_LIST = -c
+ # CFLAGS_BASE_LIST = -S
+ CFLAGS_BASE = -O2 $(CFLAGS_BASE_LIST) $(CFLAGS_WARN_WALL) $(CFLAGS_WARN) \
+  -DNDEBUG -D_REENTRANT -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
+- -fPIC
++ -fPIC $(LOCAL_FLAGS)
+ 
+ # -D_7ZIP_AFFINITY_DISABLE
+ 
+@@ -111,7 +111,7 @@ MY_MKDIR=mkdir -p
+ 
+ # LOCAL_LIBS=-lpthread
+ # LOCAL_LIBS_DLL=$(LOCAL_LIBS) -ldl
+-LIB2 = -lpthread -ldl
++LIB2 = $(LOCAL_LIBS) -lpthread
+ 
+ 
+ 
