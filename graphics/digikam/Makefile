@@ -4,6 +4,9 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
 
+PATCH_SITES=	https://invent.kde.org/graphics/digikam/-/commit/
+PATCHFILES=	95a8ece964681fc6823e968541da2da2da06b3dd.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE digital photo management application
 
