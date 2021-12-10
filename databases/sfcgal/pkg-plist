@@ -104,7 +104,7 @@ include/SFCGAL/numeric.h
 include/SFCGAL/triangulate/triangulate2DZ.h
 include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
-lib/libSFCGAL.so
-lib/libSFCGAL.so.%%SHL1%%
-lib/libSFCGAL.so.%%SHL3%%
+lib/libSFCGAL%%DEBUG_SUFFIX%%.so
+lib/libSFCGAL%%DEBUG_SUFFIX%%.so.%%SHL1%%
+lib/libSFCGAL%%DEBUG_SUFFIX%%.so.%%SHL3%%
 libdata/pkgconfig/sfcgal.pc
