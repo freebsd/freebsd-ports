@@ -1,6 +1,6 @@
---- mimedefang-filter.5.in.orig	2014-05-21 13:51:21 UTC
+--- mimedefang-filter.5.in.orig	2017-09-07 17:46:57 UTC
 +++ mimedefang-filter.5.in
-@@ -622,7 +622,7 @@ and entity_contains_virus_sophie unless 
+@@ -634,7 +634,7 @@ and entity_contains_virus_sophie unless a socket is pr
  routine.
  
  .TP
