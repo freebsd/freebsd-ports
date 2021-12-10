@@ -153,6 +153,7 @@ I18N_CONFIGURE_WITH=	lang=ALL
 I18N_DISTFILES=		${PORTNAME}-dictionaries-${LOVERSION}${EXTRACT_SUFX} \
 			${PORTNAME}-translations-${LOVERSION}${EXTRACT_SUFX}
 I18N_EXTRACT_ONLY=	${I18N_DISTFILES}
+I18N_USES=	gettext-tools
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
 			${JAVAJARDIR}/commons-codec.jar:java/apache-commons-codec \
