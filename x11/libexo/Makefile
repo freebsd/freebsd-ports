@@ -1,7 +1,7 @@
 # Created by: Matt Lancereau
 
 PORTNAME=	libexo
-PORTVERSION=	4.16.2
+PORTVERSION=	4.16.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	exo-${DISTVERSIONFULL}
@@ -16,13 +16,14 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 BUILD_DEPENDS=	p5-URI>=1.70:net/p5-URI
 RUN_DEPENDS=	p5-URI>=1.70:net/p5-URI
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
-		libtool pathfix perl5 pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo glib20 gtk30 intltool
+USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
+		perl5 pkgconfig tar:bzip2 xfce xorg
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
