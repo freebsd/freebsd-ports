@@ -1,5 +1,6 @@
 PORTNAME=	kreversi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		solid widgetsaddons windowsystem xmlgui \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 OPTIONS_DEFINE=	DOCS
 

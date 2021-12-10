@@ -1,5 +1,6 @@
 PORTNAME=	libkdegames
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,8 +16,8 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		itemviews jobwidgets kdeclarative kdelibs4support kio newstuff \
 		package service textwidgets widgetsaddons xmlgui \
 		ecm_build
-USE_QT=		core dbus declarative gui network svg testlib widgets xml \
-		buildtools_build qmake_build
+USE_QT=		core dbus declarative gui network svg widgets xml \
+		buildtools_build qmake_build testlib_build
 USE_LDCONFIG=	yes
 
 SHLIB_VER=	7.0.0

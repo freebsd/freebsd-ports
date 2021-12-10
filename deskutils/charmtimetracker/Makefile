@@ -1,6 +1,6 @@
 PORTNAME=	charmtimetracker
 DISTVERSION=	1.12.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -24,8 +24,8 @@ GH_PROJECT=	Charm
 
 USE_QT=		core dbus gui \
 		network printsupport script sql sql-sqlite3 \
-		testlib widgets xml \
-		buildtools_build qmake_build
+		widgets xml \
+		buildtools_build qmake_build testlib_build
 USE_XORG=	ice x11 xcb xext xscrnsaver
 
 .include <bsd.port.mk>

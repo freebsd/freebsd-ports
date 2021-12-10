@@ -1,5 +1,6 @@
 PORTNAME=	libkdepim
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,10 +16,10 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		kio service wallet widgetsaddons \
 		ecm_build
 # pim components
-USE_KDE+=	akonadi akonadicontacts akonadisearch contacts  ldap mime
-USE_QT=		concurrent core dbus designer gui network testlib uiplugin uitools \
+USE_KDE+=	akonadi akonadicontacts akonadisearch contacts ldap mime
+USE_QT=		concurrent core dbus designer gui network uiplugin uitools \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 USE_LDCONFIG=	yes
 
