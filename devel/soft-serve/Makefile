@@ -1,6 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -21,7 +21,7 @@ GH_TUPLE=	Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Micros
 		anmitsu:go-shlex:38f4b401e2be:anmitsu_go_shlex/vendor/github.com/anmitsu/go-shlex \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		charmbracelet:bubbles:v0.9.0:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
-		charmbracelet:bubbletea:v0.19.0:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
+		charmbracelet:bubbletea:v0.19.1:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:glamour:v0.3.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:keygen:v0.1.2:charmbracelet_keygen/vendor/github.com/charmbracelet/keygen \
 		charmbracelet:lipgloss:v0.4.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
@@ -63,6 +63,7 @@ GH_TUPLE=	Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Micros
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
 		yuin:goldmark:v1.3.3:yuin_goldmark/vendor/github.com/yuin/goldmark
 
+GO_TARGET=	./cmd/soft
 USE_RC_SUBR=	soft-serve
 SUB_LIST+=	CHOWN="${CHOWN}" \
 		CUT="${CUT}" \
@@ -81,6 +82,7 @@ PLIST_FILES=	${DOCSDIR_REL}/README.md \
 		bin/${PORTNAME}
 
 post-install:
+		${MV} ${STAGEDIR}${PREFIX}/bin/soft ${STAGEDIR}${PREFIX}/bin/soft-serve
 		${MKDIR} ${STAGEDIR}${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
