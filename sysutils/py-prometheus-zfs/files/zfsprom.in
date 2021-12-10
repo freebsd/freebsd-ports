@@ -21,6 +21,8 @@ rcvar="zfsprom_enable"
 
 load_rc_config "${name}"
 
+: "${zfsprom_enable:=NO}"
+
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/sbin/zfsprom.py"
 command_interpreter="%%PYTHON_CMD%%"
