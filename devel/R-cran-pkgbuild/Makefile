@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	pkgbuild
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
