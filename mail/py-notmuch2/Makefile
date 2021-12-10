@@ -1,6 +1,6 @@
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	0
 
 COMMENT=	Pythonic bindings for the notmuch mail database using CFFI
 

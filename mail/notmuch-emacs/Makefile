@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX:S/^$/-emacs/}
 COMMENT=	Emacs major-mode for the Notmuch email search and tagging application
