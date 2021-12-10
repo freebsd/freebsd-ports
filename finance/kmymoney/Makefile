@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 PATCH_SITES=	https://invent.kde.org/office/kmymoney/-/commit/
 PATCHFILES+=	a9722f40ec94bd7fdda078e393807dc1e78bbec3.diff:-p1 # Python 3.8 compat
+PATCHFILES+=	a06d2fe154f755c3af1e7f261cd631929b9da998.diff:-p1 # akonadi 21.12
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE personal finance manager
