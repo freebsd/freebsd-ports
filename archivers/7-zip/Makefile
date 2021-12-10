@@ -1,5 +1,6 @@
 PORTNAME=	7-zip
 DISTVERSION=	21.06
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
@@ -7,9 +8,19 @@ DISTNAME=	7z${DISTVERSION:S/.//}-src
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Console version of the 7-Zip file archiver
 
+LICENSE=	BSD3CLAUSE LGPL21+ UNRAR
+LICENSE_COMB=	multi
+LICENSE_NAME_UNRAR=	unRAR license
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/DOC/License.txt
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/DOC/copying.txt
+LICENSE_FILE_UNRAR=	${WRKSRC}/DOC/unRarLicense.txt
+LICENSE_PERMS_UNRAR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
-USES=		7z dos2unix gmake localbase
+USES=		7z cpe dos2unix gmake localbase
+
+CPE_VENDOR=	7-zip
 
 MAKEFILE=	../../cmpl_clang.mak
 MAKE_ARGS=	LOCAL_FLAGS="${CFLAGS}" \
@@ -22,8 +33,8 @@ DOS2UNIX_FILES=	CPP/7zip/7zip_gcc.mak \
 		CPP/Windows/SystemInfo.cpp
 
 PLIST_FILES=	bin/7zz
-PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt lzma.txt readme.txt \
-		src-history.txt
+PORTDOCS=	7zC.txt 7zFormat.txt License.txt Methods.txt \
+		lzma.txt readme.txt src-history.txt
 
 OPTIONS_DEFINE=	DOCS
 
