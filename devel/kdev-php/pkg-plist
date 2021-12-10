@@ -47,6 +47,7 @@ share/locale/it/LC_MESSAGES/kdevphp.mo
 share/locale/ja/LC_MESSAGES/kdevphp.mo
 share/locale/kk/LC_MESSAGES/kdevphp.mo
 share/locale/ko/LC_MESSAGES/kdevphp.mo
+share/locale/lt/LC_MESSAGES/kdevphp.mo
 share/locale/mr/LC_MESSAGES/kdevphp.mo
 share/locale/nb/LC_MESSAGES/kdevphp.mo
 share/locale/nds/LC_MESSAGES/kdevphp.mo
@@ -60,7 +61,6 @@ share/locale/ru/LC_MESSAGES/kdevphp.mo
 share/locale/sk/LC_MESSAGES/kdevphp.mo
 share/locale/sl/LC_MESSAGES/kdevphp.mo
 share/locale/sv/LC_MESSAGES/kdevphp.mo
-share/locale/th/LC_MESSAGES/kdevphp.mo
 share/locale/tr/LC_MESSAGES/kdevphp.mo
 share/locale/ug/LC_MESSAGES/kdevphp.mo
 share/locale/uk/LC_MESSAGES/kdevphp.mo

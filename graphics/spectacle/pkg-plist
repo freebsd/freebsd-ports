@@ -1,5 +1,6 @@
 bin/spectacle
 lib/kconf_update_bin/spectacle-migrate-shortcuts
+lib/kconf_update_bin/spectacle-migrate-rememberregion
 lib/systemd/user/app-org.kde.spectacle.service
 man/ca/man1/spectacle.1.gz
 man/de/man1/spectacle.1.gz
@@ -20,6 +21,7 @@ share/icons/hicolor/scalable/apps/spectacle.svgz
 share/kconf_update/50-clipboard_settings_change.py
 share/kconf_update/spectacle_clipboard.upd
 share/kconf_update/spectacle_newConfig.upd
+share/kconf_update/spectacle_rememberregion.upd
 share/kconf_update/spectacle_shortcuts.upd
 share/kglobalaccel/org.kde.spectacle.desktop
 share/knotifications5/spectacle.notifyrc

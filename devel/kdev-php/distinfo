@@ -1,3 +1,3 @@
-TIMESTAMP = 1612356021
-SHA256 (KDE/kdevelop/kdev-php-5.6.2.tar.xz) = f1083daec2b8c752de1a0441d0f9f72274b1e2d29c723005ed78dcf8ba717e0c
-SIZE (KDE/kdevelop/kdev-php-5.6.2.tar.xz) = 1063520
+TIMESTAMP = 1638570860
+SHA256 (KDE/release-service/21.12.0/kdev-php-21.12.0.tar.xz) = ff94674413f4f1eec4c631675e413bc733565934eb65e44998fbc2b6ba09410b
+SIZE (KDE/release-service/21.12.0/kdev-php-21.12.0.tar.xz) = 1080196

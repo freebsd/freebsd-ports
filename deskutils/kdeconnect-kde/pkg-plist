@@ -359,10 +359,20 @@ share/locale/he/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/he/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/he/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-app.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/hu/LC_MESSAGES/kdeconnect-core.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-interfaces.mo
 share/locale/hu/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/hu/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/hu/LC_MESSAGES/kdeconnect-kio.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-nautilus-extension.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-sms.mo
+share/locale/hu/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/ia/LC_MESSAGES/kdeconnect-app.mo
 share/locale/ia/LC_MESSAGES/kdeconnect-cli.mo
@@ -701,6 +711,7 @@ share/locale/zh_TW/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/metainfo/org.kde.kdeconnect.appdata.xml
 share/metainfo/org.kde.kdeconnect.kcm.appdata.xml
 share/nautilus-python/extensions/kdeconnect-share.py
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Battery.qml
@@ -715,5 +726,6 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Sftp.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Share.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.desktop
+share/plasma/plasmoids/org.kde.kdeconnect/metadata.json
 share/qlogging-categories5/kdeconnect-kde.categories
 share/zsh/site-functions/_kdeconnect

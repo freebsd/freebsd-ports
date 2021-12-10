@@ -1,4 +1,5 @@
 bin/krfb
+bin/krfb-virtualmonitor
 lib/libkrfbprivate.so.5
 lib/libkrfbprivate.so.5.0
 %%QT_PLUGINDIR%%/krfb/events/krfb_events_x11.so
@@ -13,6 +14,7 @@ share/kservicetypes5/krfb-events.desktop
 share/locale/ar/LC_MESSAGES/krfb.mo
 share/locale/be/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
+share/applications/org.kde.krfb.virtualmonitor.desktop
 share/locale/bs/LC_MESSAGES/krfb.mo
 share/locale/ca/LC_MESSAGES/krfb.mo
 share/locale/ca@valencia/LC_MESSAGES/krfb.mo

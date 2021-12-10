@@ -1,14 +1,11 @@
 PORTNAME=	kdev-php
-DISTVERSION=	5.6.2
-CATEGORIES=	devel kde
-MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
-DIST_SUBDIR=	KDE/kdevelop
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP support for KDevelop
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt
 LIB_DEPENDS=	libKDevPlatformInterfaces.so:devel/kdevelop
@@ -21,8 +18,9 @@ USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	34
-PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} PRIVATE_VER=${DISTVERSION:R}
+PLATFORM_VER=	35
+PRIVATE_VER=	5.7
+PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} PRIVATE_VER=${PRIVATE_VER}
 
 # Does not build with jobs.
 MAKE_JOBS_UNSAFE=	yes

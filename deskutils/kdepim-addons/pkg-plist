@@ -29,6 +29,8 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libshorturlpluginprivate.so.5
 lib/libkmailconfirmbeforedeleting.so.5
 lib/libkmailconfirmbeforedeleting.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libscamconfiguresettings.so.5
+lib/libscamconfiguresettings.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/emailaddressselectionldapdialogplugin.so
 %%QT_PLUGINDIR%%/importwizard/evolutionv1importerplugin.so
 %%QT_PLUGINDIR%%/importwizard/evolutionv2importerplugin.so
@@ -61,6 +63,7 @@ lib/libkmailconfirmbeforedeleting.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kmail/plugineditorgrammar/kmail_languagetoolplugin.so
 %%QT_PLUGINDIR%%/kmail/plugineditorinit/kmail_externalcomposereditorplugin.so
 %%QT_PLUGINDIR%%/korg_datenums.so
+%%QT_PLUGINDIR%%/korg_lunarphases.so
 %%QT_PLUGINDIR%%/korg_picoftheday.so
 %%QT_PLUGINDIR%%/korg_thisdayinhistory.so
 %%QT_PLUGINDIR%%/libksieve/emaillineeditplugin.so
@@ -79,6 +82,7 @@ lib/libkmailconfirmbeforedeleting.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
 %%QT_PLUGINDIR%%/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
 %%QT_PLUGINDIR%%/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
+%%QT_PLUGINDIR%%/messageviewer/configuresettings/messageviewer_scamconfiguresettingsplugin.so
 %%QT_PLUGINDIR%%/messageviewer/grantlee/5.0/kitinerary_grantlee_extension.so
 %%QT_PLUGINDIR%%/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
 %%QT_PLUGINDIR%%/messageviewer/headerstyle/messageviewer_fancyheaderstyleplugin.so
@@ -102,9 +106,14 @@ lib/libkmailconfirmbeforedeleting.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/PimCalendars/qmldir
+share/icons/hicolor/scalable/status/moon-phase-first-quarter.svg
+share/icons/hicolor/scalable/status/moon-phase-full.svg
+share/icons/hicolor/scalable/status/moon-phase-last-quarter.svg
+share/icons/hicolor/scalable/status/moon-phase-new.svg
 share/kconf_update/languagetool_kmail.upd
 share/kconf_update/webengineurlinterceptoradblock.upd
 share/kservices5/korganizer/datenums.desktop
+share/kservices5/korganizer/lunarphases.desktop
 share/kservices5/korganizer/picoftheday.desktop
 share/kservices5/korganizer/thisdayinhistory.desktop
 share/locale/ar/LC_MESSAGES/cryptopageplugin.mo
@@ -130,6 +139,12 @@ share/locale/ar/LC_MESSAGES/messageviewerplugins.mo
 share/locale/ar/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ar/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ar/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/az/LC_MESSAGES/cryptopageplugin.mo
+share/locale/az/LC_MESSAGES/importwizard_plugins.mo
+share/locale/az/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/az/LC_MESSAGES/kmail_plugins.mo
+share/locale/az/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/az/LC_MESSAGES/pimeventsplugin.mo
 share/locale/be/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/be/LC_MESSAGES/korganizer_plugins.mo
 share/locale/be/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
@@ -254,6 +269,7 @@ share/locale/de/LC_MESSAGES/customtoolsplugin.mo
 share/locale/de/LC_MESSAGES/importwizard_plugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/de/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorgrammar_plugins.mo
@@ -888,10 +904,12 @@ share/locale/sv/LC_MESSAGES/messageviewerplugins.mo
 share/locale/sv/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sv/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sv/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/ta/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ta/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ta/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/ta/LC_MESSAGES/pimeventsplugin.mo
 share/locale/tg/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/tg/LC_MESSAGES/korganizer_plugins.mo
 share/locale/tg/LC_MESSAGES/messageviewer_text_calendar_plugin.mo

@@ -24,10 +24,10 @@ share/kconf_update/kleopatra.upd
 %%DATADIR%%/pics/kleopatra_splashscreen.svgz
 %%DATADIR%%/pics/kleopatra_wizard.png
 %%DATADIR%%/pics/kleopatra_wizard.svgz
-share/kservices5/ServiceMenus/kleopatra_decryptverifyfiles.desktop
-share/kservices5/ServiceMenus/kleopatra_decryptverifyfolders.desktop
-share/kservices5/ServiceMenus/kleopatra_signencryptfiles.desktop
-share/kservices5/ServiceMenus/kleopatra_signencryptfolders.desktop
+share/kio/servicemenus/kleopatra_decryptverifyfiles.desktop
+share/kio/servicemenus/kleopatra_decryptverifyfolders.desktop
+share/kio/servicemenus/kleopatra_signencryptfiles.desktop
+share/kio/servicemenus/kleopatra_signencryptfolders.desktop
 share/kservices5/kleopatra_config_gnupgsystem.desktop
 share/kwatchgnupg/pics/kwatchgnupg.png
 share/kwatchgnupg/pics/kwatchgnupg2.png

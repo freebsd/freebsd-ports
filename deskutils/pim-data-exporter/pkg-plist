@@ -4,9 +4,8 @@ lib/libpimdataexporterprivate.so.5
 lib/libpimdataexporterprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.pimdataexporter.desktop
 share/config.kcfg/pimdataexporterglobalconfig.kcfg
-share/kconf_update/pimsettingexporter-15.08-kickoff.sh
-share/kconf_update/pimsettingexporter.upd
 share/locale/ar/LC_MESSAGES/pimdataexporter.mo
+share/locale/az/LC_MESSAGES/pimdataexporter.mo
 share/locale/bs/LC_MESSAGES/pimdataexporter.mo
 share/locale/ca/LC_MESSAGES/pimdataexporter.mo
 share/locale/ca@valencia/LC_MESSAGES/pimdataexporter.mo

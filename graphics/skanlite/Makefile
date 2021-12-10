@@ -6,7 +6,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple image scanning application
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/src/COPYING
 
 LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		libpng.so:graphics/png

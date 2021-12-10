@@ -1,3 +1,3 @@
-TIMESTAMP = 1636032642
-SHA256 (KDE/release-service/21.08.3/akonadi-search-21.08.3.tar.xz) = a0d263e49296fa1f558fa350003cdd458724f93024082ad96ac97f1048686ebb
-SIZE (KDE/release-service/21.08.3/akonadi-search-21.08.3.tar.xz) = 97344
+TIMESTAMP = 1638570825
+SHA256 (KDE/release-service/21.12.0/akonadi-search-21.12.0.tar.xz) = 3305dea1b1c1844fd15dc2cc3a631264beb9b00106e62ddfbecd260c41feca1d
+SIZE (KDE/release-service/21.12.0/akonadi-search-21.12.0.tar.xz) = 97712

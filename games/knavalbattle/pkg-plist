@@ -6,7 +6,6 @@ share/icons/hicolor/22x22/apps/knavalbattle.png
 share/icons/hicolor/32x32/apps/knavalbattle.png
 share/icons/hicolor/48x48/apps/knavalbattle.png
 share/icons/hicolor/64x64/apps/knavalbattle.png
-share/kconf_update/knavalbattle.upd
 %%DATADIR%%/pictures/default.desktop
 %%DATADIR%%/pictures/default_theme.svgz
 %%DATADIR%%/sounds/ship-player-shoot-water.ogg

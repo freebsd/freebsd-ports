@@ -1,5 +1,6 @@
 bin/kate
 bin/kwrite
+%%QT_PLUGINDIR%%/ktexteditor/compilerexplorer.so
 %%QT_PLUGINDIR%%/ktexteditor/externaltoolsplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katebacktracebrowserplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katebuildplugin.so
@@ -20,6 +21,7 @@ bin/kwrite
 %%QT_PLUGINDIR%%/ktexteditor/katexmlcheckplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katexmltoolsplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/ktexteditorpreviewplugin.so
+%%QT_PLUGINDIR%%/ktexteditor/latexcompletionplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/lspclientplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/tabswitcherplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/textfilterplugin.so

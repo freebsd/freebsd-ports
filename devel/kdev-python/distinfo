@@ -1,3 +1,3 @@
-TIMESTAMP = 1612356018
-SHA256 (KDE/kdevelop/kdev-python-5.6.2.tar.xz) = 20f9b771b961262ded986a4f32b8d259ad9f7bc48bb29eac0a5d5853be1d917f
-SIZE (KDE/kdevelop/kdev-python-5.6.2.tar.xz) = 1072212
+TIMESTAMP = 1638570852
+SHA256 (KDE/release-service/21.12.0/kdev-python-21.12.0.tar.xz) = 9dddb76e6d7bb61605839217609cc864b95e8f4524c4f2499f5911c9d76ece0a
+SIZE (KDE/release-service/21.12.0/kdev-python-21.12.0.tar.xz) = 1090020

@@ -1,7 +1,6 @@
 PORTNAME=	zanshin
-DISTVERSION=	0.5.71
-CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Daily organizer for KDE

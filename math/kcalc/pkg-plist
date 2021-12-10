@@ -1,7 +1,6 @@
 bin/kcalc
 share/applications/org.kde.kcalc.desktop
 share/config.kcfg/kcalc.kcfg
-%%DATADIR%%/scienceconstants.xml
 share/kconf_update/kcalcrc.upd
 share/locale/ar/LC_MESSAGES/kcalc.mo
 share/locale/az/LC_MESSAGES/kcalc.mo

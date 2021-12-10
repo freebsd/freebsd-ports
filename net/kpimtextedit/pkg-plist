@@ -72,6 +72,7 @@ lib/libKF5PimTextEdit.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KPIMTextEdit.pri
 %%QT_PLUGINDIR%%/designer/kpimtexteditwidgets.so
 share/locale/ar/LC_MESSAGES/libkpimtextedit.mo
+share/locale/az/LC_MESSAGES/libkpimtextedit.mo
 share/locale/bs/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ca/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpimtextedit.mo

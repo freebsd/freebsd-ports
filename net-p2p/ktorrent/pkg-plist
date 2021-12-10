@@ -12,7 +12,6 @@ lib/libktcore.so.16.0.0
 %%QT_PLUGINDIR%%/ktorrent/ktorrent_mediaplayer.so
 %%QT_PLUGINDIR%%/ktorrent/ktorrent_scanfolder.so
 %%QT_PLUGINDIR%%/ktorrent/ktorrent_scanforlostfiles.so
-%%QT_PLUGINDIR%%/ktorrent/ktorrent_scripting.so
 %%WEBENGINE%%%%QT_PLUGINDIR%%/ktorrent/ktorrent_search.so
 %%WORKSPACE%%%%QT_PLUGINDIR%%/ktorrent/ktorrent_shutdown.so
 %%QT_PLUGINDIR%%/ktorrent/ktorrent_stats.so
@@ -99,17 +98,6 @@ share/knotifications5/ktorrent.notifyrc
 %%WEBENGINE%%%%DATADIR%%/opensearch/duckduckgo.com/opensearch.xml
 %%WEBENGINE%%%%DATADIR%%/opensearch/torrentproject.se/favicon.ico
 %%WEBENGINE%%%%DATADIR%%/opensearch/torrentproject.se/opensearch.xml
-%%DATADIR%%/scripts/auto_remove/auto_remove.desktop
-%%DATADIR%%/scripts/auto_remove/auto_remove.py
-%%DATADIR%%/scripts/auto_remove/auto_remove.ui
-%%DATADIR%%/scripts/auto_resume/auto_resume.desktop
-%%DATADIR%%/scripts/auto_resume/auto_resume.py
-%%DATADIR%%/scripts/auto_resume/auto_resume.ui
-%%DATADIR%%/scripts/email_notifications/email_notifications.desktop
-%%DATADIR%%/scripts/email_notifications/email_notifications.py
-%%DATADIR%%/scripts/email_notifications/emailconfig.ui
-%%DATADIR%%/scripts/tracker_groups/tracker_groups.desktop
-%%DATADIR%%/scripts/tracker_groups/tracker_groups.py
 %%WEBENGINE%%%%DATADIR%%/search/home/body-background.jpg
 %%WEBENGINE%%%%DATADIR%%/search/home/box-bottom-left.png
 %%WEBENGINE%%%%DATADIR%%/search/home/box-bottom-middle.png
@@ -128,7 +116,6 @@ share/kxmlgui5/ktorrent/ktorrent_bwschedulerui.rc
 share/kxmlgui5/ktorrent/ktorrent_downloadorderui.rc
 share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
-share/kxmlgui5/ktorrent/ktorrent_scriptingui.rc
 %%WEBENGINE%%share/kxmlgui5/ktorrent/ktorrent_searchui.rc
 %%WORKSPACE%%share/kxmlgui5/ktorrent/ktorrent_shutdownui.rc
 %%WEBENGINE%%share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc

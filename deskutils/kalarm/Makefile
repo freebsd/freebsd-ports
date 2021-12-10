@@ -29,8 +29,6 @@ USE_QT=		concurrent core dbus gui network phonon4 printsupport widgets \
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	src/kconf_update/kalarm*.pl
-
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
 OPTIONS_DEFINE=	DOCS

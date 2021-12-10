@@ -60,9 +60,6 @@ share/icons/hicolor/scalable/apps/kaddressbook.svg
 %%DATADIR%%/viewertemplates/default/contactgroup_embedded.html
 %%DATADIR%%/viewertemplates/default/contactgroup_memberrow.html
 %%DATADIR%%/viewertemplates/default/theme.desktop
-share/kconf_update/kaddressbook-15.08-kickoff.sh
-share/kconf_update/kaddressbook.upd
-share/kontact/ksettingsdialog/kaddressbook.setdlg
 share/kservices5/kaddressbook_config_plugins.desktop
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo

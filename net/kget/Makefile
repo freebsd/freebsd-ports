@@ -29,7 +29,6 @@ USE_QT=		concurrent core dbus gui network printsupport sql widgets xml \
 		buildtools_build qmake_build testlib_build
 
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	conf/*.pl
 
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CONFIGURE_ENV=	XDG_CONFIG_HOME=/dev/null

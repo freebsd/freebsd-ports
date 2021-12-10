@@ -37,8 +37,6 @@ share/icons/hicolor/128x128/apps/kontact-import-wizard.png
 share/icons/hicolor/256x256/apps/kontact-import-wizard.png
 share/icons/hicolor/64x64/apps/kontact-import-wizard.png
 share/importwizard/pics/step1.png
-share/kconf_update/importwizard-15.08-kickoff.sh
-share/kconf_update/importwizard.upd
 share/locale/ar/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/az/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/bs/LC_MESSAGES/akonadiimportwizard.mo

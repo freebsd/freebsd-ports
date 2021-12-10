@@ -24,13 +24,6 @@ share/icons/hicolor/64x64/apps/kalarm.png
 %%DATADIR%%/icons/oxygen/22x22/actions/kalarm.png
 %%DATADIR%%/icons/oxygen/22x22/actions/new-audio-alarm.png
 %%DATADIR%%/icons/oxygen/22x22/actions/new-command-alarm.png
-share/kconf_update/kalarm-1.2.1-general.pl
-share/kconf_update/kalarm-1.9.5-defaults.pl
-share/kconf_update/kalarm-15.08-kickoff.sh
-share/kconf_update/kalarm-2.0.2-general.pl
-share/kconf_update/kalarm-2.1.5-general.pl
-share/kconf_update/kalarm-version.pl
-share/kconf_update/kalarm.upd
 share/knotifications5/kalarm.notifyrc
 share/kxmlgui5/kalarm/kalarmui.rc
 share/locale/ar/LC_MESSAGES/kalarm.mo

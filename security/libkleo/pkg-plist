@@ -1,5 +1,6 @@
 etc/xdg/libkleopatrarc
 include/KF5/Libkleo/Algorithm
+include/KF5/Libkleo/Assuan
 include/KF5/Libkleo/ChecksumDefinition
 include/KF5/Libkleo/Classify
 include/KF5/Libkleo/Compat
@@ -41,11 +42,14 @@ include/KF5/Libkleo/NewKeyApprovalDialog
 include/KF5/Libkleo/OidMap
 include/KF5/Libkleo/Predicates
 include/KF5/Libkleo/ProgressDialog
+include/KF5/Libkleo/SCDaemon
 include/KF5/Libkleo/Stl_Util
+include/KF5/Libkleo/StringUtils
 include/KF5/Libkleo/SubkeyListModel
 include/KF5/Libkleo/Test
 include/KF5/Libkleo/UserIDListModel
 include/KF5/libkleo/algorithm.h
+include/KF5/libkleo/assuan.h
 include/KF5/libkleo/checksumdefinition.h
 include/KF5/libkleo/classify.h
 include/KF5/libkleo/compat.h
@@ -88,7 +92,9 @@ include/KF5/libkleo/newkeyapprovaldialog.h
 include/KF5/libkleo/oidmap.h
 include/KF5/libkleo/predicates.h
 include/KF5/libkleo/progressdialog.h
+include/KF5/libkleo/scdaemon.h
 include/KF5/libkleo/stl_util.h
+include/KF5/libkleo/stringutils.h
 include/KF5/libkleo/subkeylistmodel.h
 include/KF5/libkleo/test.h
 include/KF5/libkleo/useridlistmodel.h

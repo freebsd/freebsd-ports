@@ -79,8 +79,6 @@ share/icons/hicolor/scalable/apps/quickview.svgz
 share/kconf_update/korganizer-15.08-kickoff.sh
 share/kconf_update/korganizer.upd
 share/knsrcfiles/korganizer.knsrc
-share/kontact/ksettingsdialog/korganizer.setdlg
-share/kontact/ksettingsdialog/specialdates.setdlg
 share/kservices5/kcmapptsummary.desktop
 share/kservices5/kcmsdsummary.desktop
 share/kservices5/kcmtodosummary.desktop

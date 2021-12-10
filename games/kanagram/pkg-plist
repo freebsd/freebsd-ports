@@ -1,5 +1,4 @@
 bin/kanagram
-etc/xdg/kanagram.knsrc
 share/applications/org.kde.kanagram.desktop
 share/config.kcfg/kanagram.kcfg
 share/icons/hicolor/128x128/apps/kanagram.png
@@ -10,6 +9,7 @@ share/icons/hicolor/48x48/apps/kanagram.png
 share/icons/hicolor/64x64/apps/kanagram.png
 share/icons/hicolor/80x80/apps/kanagram-harmattan.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
+share/knsrcfiles/kanagram.knsrc
 %%DATADIR%%/ui/Blackboard.qml
 %%DATADIR%%/ui/LetterButton.qml
 %%DATADIR%%/ui/icons/1player.png

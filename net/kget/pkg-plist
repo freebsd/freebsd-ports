@@ -29,9 +29,6 @@ share/icons/hicolor/22x22/apps/kget.png
 share/icons/hicolor/32x32/apps/kget.png
 share/icons/hicolor/48x48/apps/kget.png
 share/icons/hicolor/64x64/apps/kget.png
-share/kconf_update/kget.upd
-share/kconf_update/kget_limitdownloads.pl
-share/kconf_update/kget_sensitive.pl
 %%DATADIR%%/pics/kget_splash.png
 share/khtml/kpartplugins/kget_plug_in.desktop
 share/khtml/kpartplugins/kget_plug_in.rc

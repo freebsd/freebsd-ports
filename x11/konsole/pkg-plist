@@ -1,10 +1,11 @@
 bin/konsole
 bin/konsoleprofile
 share/qlogging-categories5/konsole.categories
+lib/libkonsoleapp.so.1
 lib/libkonsoleapp.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkonsoleapp.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
+lib/libkonsoleprivate.so.1
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
+%%QT_PLUGINDIR%%/konsoleplugins/konsole_sshmanagerplugin.so
 %%QT_PLUGINDIR%%/konsolepart.so
 share/applications/org.kde.konsole.desktop
 share/khotkeys/konsole.khotkeys

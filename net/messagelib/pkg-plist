@@ -17,6 +17,7 @@ include/KF5/MessageComposer/ContentJobBase
 include/KF5/MessageComposer/ConvertSnippetVariableMenu
 include/KF5/MessageComposer/ConvertSnippetVariablesJob
 include/KF5/MessageComposer/ConvertSnippetVariablesUtil
+include/KF5/MessageComposer/DraftStatus
 include/KF5/MessageComposer/EncryptJob
 include/KF5/MessageComposer/FollowUpReminderSelectDateDialog
 include/KF5/MessageComposer/FollowupReminder
@@ -168,6 +169,8 @@ include/KF5/MessageViewer/RemoteContentMenu
 include/KF5/MessageViewer/RichHeaderStrategy
 include/KF5/MessageViewer/ScamCheckShortUrl
 include/KF5/MessageViewer/ScamCheckShortUrlManager
+include/KF5/MessageViewer/ScamDetectionInfo
+include/KF5/MessageViewer/ScamDetectionWhiteListSettingsManager
 include/KF5/MessageViewer/ScamExpandUrlJob
 include/KF5/MessageViewer/SpamHeaderAnalyzer
 include/KF5/MessageViewer/Stl_Util
@@ -254,6 +257,7 @@ include/KF5/messagecomposer/contentjobbase.h
 include/KF5/messagecomposer/convertsnippetvariablemenu.h
 include/KF5/messagecomposer/convertsnippetvariablesjob.h
 include/KF5/messagecomposer/convertsnippetvariablesutil.h
+include/KF5/messagecomposer/draftstatus.h
 include/KF5/messagecomposer/encryptjob.h
 include/KF5/messagecomposer/followupreminder.h
 include/KF5/messagecomposer/followupremindercreatejob.h
@@ -419,6 +423,8 @@ include/KF5/messageviewer/remotecontentmenu.h
 include/KF5/messageviewer/richheaderstrategy.h
 include/KF5/messageviewer/scamcheckshorturl.h
 include/KF5/messageviewer/scamcheckshorturlmanager.h
+include/KF5/messageviewer/scamdetectioninfo.h
+include/KF5/messageviewer/scamdetectionwhitelistsettingsmanager.h
 include/KF5/messageviewer/scamexpandurljob.h
 include/KF5/messageviewer/spamheaderanalyzer.h
 include/KF5/messageviewer/stl_util.h
@@ -556,7 +562,6 @@ lib/libKF5WebEngineViewer.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
-share/kconf_update/messageviewer.upd
 share/knotifications5/messageviewer.notifyrc
 share/knsrcfiles/messageviewer_header_themes.knsrc
 share/libmessageviewer/pics/enterprise_bottom.png

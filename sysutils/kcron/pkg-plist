@@ -1,5 +1,7 @@
-share/qlogging-categories5/kcron.categories
 %%QT_PLUGINDIR%%/kcm_cron.so
+lib/libexec/kauth/kcron_helper
+share/dbus-1/system-services/local.kcron.crontab.service
+share/dbus-1/system.d/local.kcron.crontab.conf
 share/kservices5/kcm_cron.desktop
 share/locale/ar/LC_MESSAGES/kcron.mo
 share/locale/be/LC_MESSAGES/kcron.mo
@@ -61,3 +63,5 @@ share/locale/wa/LC_MESSAGES/kcron.mo
 share/locale/zh_CN/LC_MESSAGES/kcron.mo
 share/locale/zh_TW/LC_MESSAGES/kcron.mo
 share/metainfo/org.kde.kcron.metainfo.xml
+share/polkit-1/actions/local.kcron.crontab.policy
+share/qlogging-categories5/kcron.categories

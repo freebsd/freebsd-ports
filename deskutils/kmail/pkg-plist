@@ -79,10 +79,6 @@ share/icons/hicolor/8x8/emblems/gpg-key-trust-level-2.svg
 share/icons/hicolor/8x8/emblems/gpg-key-trust-level-3.svg
 share/icons/hicolor/8x8/emblems/gpg-key-trust-level-4.svg
 share/icons/hicolor/scalable/apps/kmail.svg
-share/kconf_update/kmail-15.08-kickoff.sh
-share/kconf_update/kmail.upd
-share/kconf_update/kmail2.sh
-share/kconf_update/kmail2.upd
 share/kmail2/pics/pgp-keys.png
 share/knotifications5/akonadi_archivemail_agent.notifyrc
 share/knotifications5/akonadi_followupreminder_agent.notifyrc
@@ -90,8 +86,6 @@ share/knotifications5/akonadi_mailfilter_agent.notifyrc
 share/knotifications5/akonadi_mailmerge_agent.notifyrc
 share/knotifications5/akonadi_sendlater_agent.notifyrc
 share/knotifications5/kmail2.notifyrc
-share/kontact/ksettingsdialog/kmail.setdlg
-share/kontact/ksettingsdialog/summary.setdlg
 share/kservices5/kcmkmailsummary.desktop
 share/kservices5/kcmkontactsummary.desktop
 share/kservices5/kmail_config_accounts.desktop
@@ -108,7 +102,15 @@ share/locale/ar/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ar/LC_MESSAGES/kmail.mo
+share/locale/az/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/az/LC_MESSAGES/akonadi_followupreminder_agent.mo
+share/locale/az/LC_MESSAGES/akonadi_mailfilter_agent.mo
+share/locale/az/LC_MESSAGES/akonadi_mailmerge_agent.mo
+share/locale/az/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/az/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/az/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/az/LC_MESSAGES/kmail.mo
+share/locale/az/LC_MESSAGES/ktnef.mo
 share/locale/be/LC_MESSAGES/kmail.mo
 share/locale/bg/LC_MESSAGES/kmail.mo
 share/locale/bs/LC_MESSAGES/akonadi_archivemail_agent.mo

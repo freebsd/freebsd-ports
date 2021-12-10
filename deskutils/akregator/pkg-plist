@@ -31,10 +31,7 @@ share/icons/hicolor/32x32/apps/akregator.png
 share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/64x64/apps/akregator.png
 share/icons/hicolor/scalable/apps/akregator.svg
-share/kconf_update/akregator-15.08-kickoff.sh
-share/kconf_update/akregator.upd
 share/knotifications5/akregator.notifyrc
-share/kontact/ksettingsdialog/akregator.setdlg
 share/kservices5/akregator_config_advanced.desktop
 share/kservices5/akregator_config_appearance.desktop
 share/kservices5/akregator_config_archive.desktop

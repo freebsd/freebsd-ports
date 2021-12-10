@@ -17,6 +17,8 @@ USE_QT=		core dbus gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
+CMAKE_ON=	WITH_VNC
+
 OPTIONS_DEFINE=	FREERDP DOCS
 OPTIONS_DEFAULT=	FREERDP
 OPTIONS_SUB=	yes

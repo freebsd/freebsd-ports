@@ -1,6 +1,7 @@
 bin/marble
 bin/marble-qt
 include/astro/astr2lib.h
+include/astro/astro_version.h
 include/astro/astrolib.h
 include/astro/astrolib_export.h
 include/astro/attlib.h
@@ -20,6 +21,7 @@ include/marble/AutoNavigation.h
 include/marble/BillboardGraphicsItem.h
 include/marble/BookmarkManager.h
 include/marble/CelestialSortFilterProxyModel.h
+include/marble/marble_version.h
 include/marble/ClipPainter.h
 include/marble/CurrentLocationWidget.h
 include/marble/DialogConfigurationInterface.h
@@ -176,12 +178,12 @@ lib/cmake/Marble/MarbleConfigVersion.cmake
 lib/cmake/Marble/MarbleTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Marble/MarbleTargets.cmake
 lib/libastro.so
-lib/libastro.so.0.17.20
 lib/libastro.so.1
+lib/libastro.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libmarbledeclarative.so
 lib/libmarblewidget-qt5.so
-lib/libmarblewidget-qt5.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libmarblewidget-qt5.so.28
+lib/libmarblewidget-qt5.so.%%KDE_APPLICATIONS_VERSION%%
 lib/marble/plugins/AnnotatePlugin.so
 lib/marble/plugins/AprsPlugin.so
 lib/marble/plugins/AtmospherePlugin.so

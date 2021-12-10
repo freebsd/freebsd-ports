@@ -1,3 +1,3 @@
-TIMESTAMP = 1636032586
-SHA256 (KDE/release-service/21.08.3/libkexiv2-21.08.3.tar.xz) = 166126f6d42a390afebc8f75b719e0b64fccacab299d52a991d083fbeb68a895
-SIZE (KDE/release-service/21.08.3/libkexiv2-21.08.3.tar.xz) = 59404
+TIMESTAMP = 1638570950
+SHA256 (KDE/release-service/21.12.0/libkexiv2-21.12.0.tar.xz) = 9064a900dbad287dbdf2b6dd6b1202695f9409706040b43c5cad3f77490afed6
+SIZE (KDE/release-service/21.12.0/libkexiv2-21.12.0.tar.xz) = 59564

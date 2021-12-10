@@ -1,3 +1,3 @@
-TIMESTAMP = 1636032477
-SHA256 (KDE/release-service/21.08.3/ktp-auth-handler-21.08.3.tar.xz) = 82b58a5bba9c420859604d0aa1ca1ba6a8d37ed40173eaa140dc107c39f309fd
-SIZE (KDE/release-service/21.08.3/ktp-auth-handler-21.08.3.tar.xz) = 47808
+TIMESTAMP = 1638571015
+SHA256 (KDE/release-service/21.12.0/ktp-auth-handler-21.12.0.tar.xz) = a15e1f9c7d0b64295b35301d41fdeabc715b73ea8773784ec36df4e929e67454
+SIZE (KDE/release-service/21.12.0/ktp-auth-handler-21.12.0.tar.xz) = 47820
