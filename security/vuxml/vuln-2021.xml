@@ -1,3 +1,43 @@
+  <vuln vid="720505fe-593f-11ec-9ba8-002324b2fba8">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+  <blockquote cite="https://github.com/golang/go/issues/50058">
+	  <p>net/http: limit growth of header canonicalization cache. An
+	    attacker can cause unbounded memory growth in a Go server accepting
+	    HTTP/2 requests.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/50057">
+	  <p>syscall: don’t close fd 0 on ForkExec error. When a Go program
+	    running on a Unix system is out of file descriptors and calls
+	    syscall.ForkExec (including indirectly by using the os/exec
+	    package), syscall.ForkExec can close file descriptor 0 as it fails.
+	    If this happens (or can be provoked) repeatedly, it can result in
+	    misdirected I/O such as writing network traffic intended for one
+	    connection to a different connection, or content intended for one
+	    file to a different one.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44716</cvename>
+      <url>https://github.com/golang/go/issues/50058</url>
+      <cvename>CVE-2021-44717</cvename>
+      <url>https://github.com/golang/go/issues/50057</url>
+    </references>
+    <dates>
+      <discovery>2021-12-08</discovery>
+      <entry>2021-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18ac074c-579f-11ec-aac7-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
