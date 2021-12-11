@@ -67,5 +67,5 @@
 -  exec java ${JMEM} ${JAVAGC} ${JAVADEBUG} -jar "${BASEDIR}/@zapJar@" "${ARGS[@]}"
 -fi
 \ No newline at end of file
-+  %%JAVA_HOME%%/bin/java ${JMEM} ${JAVAGC} ${JAVADEBUG} -jar "zap-2.11.0.jar" "${ARGS}"
++  %%JAVA_HOME%%/bin/java ${JMEM} ${JAVAGC} ${JAVADEBUG} -jar "zap-%%VERSION%%.jar" "${ARGS}"
 +fi

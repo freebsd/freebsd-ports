@@ -1,6 +1,6 @@
 PORTNAME=	zaproxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.11.1
 CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -56,7 +56,8 @@ post-extract: # need a separate extract step because the cache is in /tmp, and n
 post-patch:
 	@${ECHO} "" > ${WRKSRC}/zap/src/main/add-ons.txt
 	@${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
-		-e 's|%%JAVA_HOME%%|${JAVA_HOME}|g' ${WRKSRC}/zap/src/main/dist/zap.sh
+		-e 's|%%JAVA_HOME%%|${JAVA_HOME}|g' \
+		-e 's|%%VERSION%%|${DISTVERSION}|g' ${WRKSRC}/zap/src/main/dist/zap.sh
 .endif
 
 do-build:
@@ -66,7 +67,7 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zap/build/distFiles/zap.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	cd ${WRKSRC}/zap/build/distFiles/ && ${COPYTREE_SHARE} "db lang lib license plugin README scripts xml zap-2.11.0.jar" ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	cd ${WRKSRC}/zap/build/distFiles/ && ${COPYTREE_SHARE} "db lang lib license plugin README scripts xml zap-${DISTVERSION}.jar" ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 	cd ${WRKDIR}/mainAddOns && ${COPYTREE_SHARE} ./ ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/plugin
 	${INSTALL_DATA} ${WRKSRC}/zap/src/main/resources/resource/zap64x64.png ${STAGEDIR}${PREFIX}/share/pixmaps/zaproxy.png
 
