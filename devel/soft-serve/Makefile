@@ -1,6 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -80,6 +80,13 @@ USERS=		git
 GROUPS=		git
 PLIST_FILES=	${DOCSDIR_REL}/README.md \
 		bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+# Patch for 32-bit platforms
+.if ${ARCH} == i386 || ${ARCH} == armv7 || ${ARCH} == armv6
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-vendor_github.com_charmbracelet_bubbletea_cancelreader__bsd.go
+.endif
 
 post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/soft ${STAGEDIR}${PREFIX}/bin/soft-serve
