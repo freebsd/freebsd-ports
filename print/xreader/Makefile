@@ -2,6 +2,7 @@
 
 PORTNAME=	xreader
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	print gnome
 DIST_SUBDIR=	gnome
 

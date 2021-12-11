@@ -1,7 +1,7 @@
 # Created by: marcus@FreeBSD.org
 
 PORTNAME=	poppler
-DISTVERSION=	21.11.0
+DISTVERSION=	21.12.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cmake:insource compiler:c++11-lang cpe gnome jpeg libtool \
+USES=		cmake:insource compiler:c++17-lang cpe gnome jpeg libtool \
 		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	cairo libxml2
@@ -47,7 +47,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=115
+PLIST_SUB+=	SHLIB_VER=116
 
 OPTIONS_DEFINE=		CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG

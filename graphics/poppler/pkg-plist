@@ -11,6 +11,8 @@ include/poppler/Catalog.h
 include/poppler/CertificateInfo.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
+include/poppler/FDPDFDocBuilder.h
+include/poppler/FILECacheLoader.h
 %%CURL%%include/poppler/CurlCachedFile.h
 %%CURL%%include/poppler/CurlPDFDocBuilder.h
 include/poppler/DateInfo.h
@@ -62,8 +64,6 @@ include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
-include/poppler/StdinCachedFile.h
-include/poppler/StdinPDFDocBuilder.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/StructElement.h

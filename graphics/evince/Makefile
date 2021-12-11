@@ -2,6 +2,7 @@
 
 PORTNAME=	evince
 DISTVERSION=	41.3
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
