@@ -2,18 +2,6 @@
 { type: install
   message: <<EOM
 
-Note to former bitwarden_rs user to update from bitwarden_rs to vaulwarden : 
-
-Stop and disable bitwarden_rs service 
-
-Copy %%PREFIX%%/etc/rc.conf.d/bitwarden_rs to %%PREFIX%%/etc/rc.conf.d/vaultwarden
-
-Copy %%PREFIX%%/www/bitwarden_rs/data to %%PREFIX%%/www/vaultwarden/data
-
-Enable and start vaultwarden service
-
----------------------------------------------------------------------------------------
- 
 Setup vaultwarden environment:
 
 Copy %%PREFIX%%/etc/rc.conf.d/vaultwarden.sample to  %%PREFIX%%/etc/rc.conf.d/vaultwarden
