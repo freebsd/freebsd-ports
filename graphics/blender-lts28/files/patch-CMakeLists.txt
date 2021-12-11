@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-07-31 13:12:04 UTC
+--- CMakeLists.txt.orig	2021-02-23 09:13:59 UTC
 +++ CMakeLists.txt
-@@ -647,11 +647,6 @@ if(NOT WITH_PYTHON)
+@@ -613,11 +613,6 @@ if(NOT WITH_PYTHON)
    set(WITH_DRACO OFF)
  endif()
  
@@ -11,4 +11,13 @@
 -
  # enable boost for cycles, audaspace or i18n
  # otherwise if the user disabled
- if(NOT WITH_BOOST)
+ 
+@@ -1552,7 +1547,7 @@ elseif(
+   CMAKE_C_COMPILER_ID MATCHES "Intel"
+ )
+   # TODO(sergey): Do we want c++11 or gnu-c++11 here?
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
++  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+ else()
+   message(FATAL_ERROR "Unknown compiler ${CMAKE_C_COMPILER_ID}, can't enable C++11 build")
+ endif()
