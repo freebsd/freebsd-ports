@@ -39,17 +39,17 @@ bin/qemu-system-x86_64
 %%NO_X86_TARGETS%%bin/qemu-system-xtensaeb
 bin/qemu-x86_64
 include/qemu-plugin.h
-man/man1/qemu.1.gz
-man/man1/qemu-img.1.gz
-man/man7/qemu-block-drivers.7.gz
-man/man7/qemu-cpu-models.7.gz
-man/man8/qemu-ga.8.gz
-man/man7/qemu-ga-ref.7.gz
-man/man8/qemu-nbd.8.gz
-man/man8/qemu-pr-helper.8.gz
-man/man7/qemu-qmp-ref.7.gz
-man/man1/qemu-storage-daemon.1.gz
-man/man7/qemu-storage-daemon-qmp-ref.7.gz
+%%PORTDOCS%%man/man1/qemu.1.gz
+%%PORTDOCS%%man/man1/qemu-img.1.gz
+%%PORTDOCS%%man/man7/qemu-block-drivers.7.gz
+%%PORTDOCS%%man/man7/qemu-cpu-models.7.gz
+%%PORTDOCS%%man/man8/qemu-ga.8.gz
+%%PORTDOCS%%man/man7/qemu-ga-ref.7.gz
+%%PORTDOCS%%man/man8/qemu-nbd.8.gz
+%%PORTDOCS%%man/man8/qemu-pr-helper.8.gz
+%%PORTDOCS%%man/man7/qemu-qmp-ref.7.gz
+%%PORTDOCS%%man/man1/qemu-storage-daemon.1.gz
+%%PORTDOCS%%man/man7/qemu-storage-daemon-qmp-ref.7.gz
 @sample etc/qemu-ifup.sample
 @sample etc/qemu-ifdown.sample
 %%DATADIR%%/QEMU,tcx.bin

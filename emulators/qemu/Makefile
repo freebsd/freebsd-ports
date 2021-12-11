@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -12,9 +12,7 @@ COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
-		bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libepoxy.so:graphics/libepoxy \
 		libfdt.so:sysutils/dtc \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -22,6 +20,12 @@ LIB_DEPENDS?=	libepoxy.so:graphics/libepoxy \
 		libnettle.so:security/nettle \
 		libpcre2-8.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
+
+FLAVORS=	default nox11
+default_CONFLICTS_INSTALL=	qemu5* qemu42 qemu-devel
+nox11_PKGNAMESUFFIX=		-nox11
+nox11_CONFLICTS_INSTALL=	qemu5* qemu42 qemu-devel
+nox11_COMMENT=				(without X11)
 
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
@@ -40,6 +44,9 @@ OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL VDE \
 		CDROM_DMA USBREDIR X86_TARGETS STATIC_LINK DOCS ISCSI CAPSTONE DEBUG
 OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL NCURSES_DEFAULT VDE
+.if ${FLAVOR:U} == nox11
+OPTIONS_EXCLUDE:=	GTK3 X11
+.endif
 OPTIONS_SUB=	yes
 CAPSTONE_DESC=		Disassembly framework support
 CDROM_DMA_DESC=		IDE CDROM DMA
@@ -62,8 +69,9 @@ CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 DEBUG_CONFIGURE_ON=	--enable-debug
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_CONFIGURE_ENABLE=	docs
-DOCS_USES=		makeinfo
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
