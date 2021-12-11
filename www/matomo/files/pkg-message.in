@@ -8,10 +8,10 @@
    restart the server:
 
    ### Add the AcceptPathInfo directive only for Apache 2.4.30 or later.
-   Alias /matomo %%WWWDIR%%/
+   Alias /matomo %%WWWDIR%%
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
-      AllowOverride None
+      AllowOverride All
       Options Indexes FollowSymLinks
       # Apache 2.4 no longer accepts "Order" or "Allow from ..."
       Require all granted
@@ -25,6 +25,31 @@
 For more information, see the INSTALL DOCUMENTATION:
 
   https://matomo.org/docs/installation/
+EOM
+}
+{
+  type: upgrade
+  message: <<EOM
+Console upgrade recommended on medium and hight traffic sites:
+
+1) Disable Matomo Tracking
+    In config/config.ini.php, add the following
+    [Tracker]
+    record_statistics = 0
+        
+2) Disable the Matomo User Interface and APIs
+    In config/config.ini.php, add the following
+    [General]
+    maintenance_mode = 1
+
+3) Run the update 
+
+    php %%WWWDIR%%/matomo/console core:update
+
+4) Remove the previously added config.ini parameters
+
+5) Visit the Admin > Diagnostics > System check report and review the report and follow any recommended actions
+
 EOM
 }
 ]
