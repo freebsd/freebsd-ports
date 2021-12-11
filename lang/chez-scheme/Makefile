@@ -2,13 +2,13 @@
 
 PORTNAME=	chez-scheme
 PORTVERSION=	9.5.4
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/:boot \
 		LOCAL/ashish:boot
 DISTFILES=	${PORTNAME}-boot-ta6fb-${PORTVERSION}.tar.xz:boot \
-		${PORTNAME}-boot-i3fb-${PORTVERSION}.tar.xz:boot
+		${PORTNAME}-boot-ti3fb-${PORTVERSION}.tar.xz:boot
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Chez Scheme system
@@ -56,8 +56,8 @@ X11_USE=	XORG=x11
 CONFIGURE_ARGS+=	--threads --64 -m=ta6fb
 CHEZ_ARCH=	ta6fb
 .elif (${ARCH} == "i386")
-CONFIGURE_ARGS+=	--threads --32 -m=i3fb
-CHEZ_ARCH=	i3fb
+CONFIGURE_ARGS+=	--threads --32 -m=ti3fb
+CHEZ_ARCH=	ti3fb
 .endif
 
 post-patch:

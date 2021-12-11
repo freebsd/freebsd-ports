@@ -1,8 +1,8 @@
-TIMESTAMP = 1639194989
+TIMESTAMP = 1639213374
 SHA256 (chez-scheme-boot-ta6fb-9.5.4.tar.xz) = 19591d406ce08a5f2a0fd009dc632f051cd82172b29b43cb6627d49459957f48
 SIZE (chez-scheme-boot-ta6fb-9.5.4.tar.xz) = 2119488
-SHA256 (chez-scheme-boot-i3fb-9.5.4.tar.xz) = ac0597c838f7d3f5b33abd06915012244b8ea7877d8c2b69cb39edcf2144a059
-SIZE (chez-scheme-boot-i3fb-9.5.4.tar.xz) = 2044932
+SHA256 (chez-scheme-boot-ti3fb-9.5.4.tar.xz) = 66bdc4bb891608872c051c0e0879ef3a9922558e2e02d0ea6309074f42fb0e9f
+SIZE (chez-scheme-boot-ti3fb-9.5.4.tar.xz) = 2065600
 SHA256 (cisco-ChezScheme-v9.5.4_GH0.tar.gz) = 258a4b5284bb13ac6e8b56acf89a7ab9e8726a90cc57ea1cd71c5da442323840
 SIZE (cisco-ChezScheme-v9.5.4_GH0.tar.gz) = 30670176
 SHA256 (nanopass-nanopass-framework-scheme-v1.9.1_GH0.tar.gz) = 92afa571484e58bb0f4baa3e13f7239a116bfb3b5d4585e3c4c7b28fdbdc93c4
