@@ -8,6 +8,9 @@ MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 PKGNAMESUFFIX=	-devel
 
+PATCH_SITES=	https://github.com/openssl/openssl/commit/
+PATCHFILES=	f5485b97b6c9977c0d39c7669b9f97a879312447.patch:-p1
+
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
 
@@ -132,13 +135,23 @@ ZLIB_CONFIGURE_ON=	zlib-dynamic
 
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+CONFIGURE_ARGS+=	BSD-ppc
+.elif ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	BSD-ppc64
+.elif ${ARCH} == powerpc64le
+CONFIGURE_ARGS+=	BSD-ppc64le
+.endif
+
 .include <bsd.port.pre.mk>
 .if ${PREFIX} == /usr
 IGNORE=	the OpenSSL port can not be installed over the base version
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000 && !${PORT_OPTIONS:MCRYPTODEV}
-CONFIGURE_ARGS+=        no-devcryptoeng
+CONFIGURE_ARGS+=	no-devcryptoeng
 .endif
 
 OPENSSLDIR?=	${PREFIX}/openssl
