@@ -8,7 +8,7 @@ MASTER_SITES=		GCC
 PKGNAMEPREFIX=		psptoolchain-
 PKGNAMESUFFIX?=		-stage1
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 LICENSE=		GPLv3

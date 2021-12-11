@@ -8,7 +8,7 @@ MASTER_SITES=	GNU \
 		SOURCEWARE/${PORTNAME}/releases
 PKGNAMEPREFIX=	psptoolchain-
 
-MAINTAINER=	tphilipp@potion-studios.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PlayStation Portable development toolchain ${PORTNAME}
 
 LICENSE=	GPLv3 LGPL3

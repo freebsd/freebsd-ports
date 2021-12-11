@@ -5,7 +5,7 @@ PORTVERSION=		20111215
 PORTREVISION=		3
 CATEGORIES=		devel
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain meta port
 
 RUN_DEPENDS=		psp-gdb:devel/psptoolchain-gdb \

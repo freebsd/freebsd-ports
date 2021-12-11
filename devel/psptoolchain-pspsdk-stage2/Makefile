@@ -4,7 +4,7 @@ PORTREVISION=		2
 
 PKGNAMESUFFIX=		-stage2
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 BUILD_DEPENDS=		psp-cpp:devel/psptoolchain-gcc-stage2 \

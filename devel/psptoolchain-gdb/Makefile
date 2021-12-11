@@ -7,7 +7,7 @@ CATEGORIES=		devel
 MASTER_SITES=		GNU
 PKGNAMEPREFIX=		psptoolchain-
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:devel/psptoolchain-pspsdk-stage2
