@@ -14,6 +14,7 @@ include/assimp/DefaultLogger.hpp
 include/assimp/Exceptional.h
 include/assimp/Exporter.hpp
 include/assimp/GenericProperty.h
+include/assimp/GltfMaterial.h
 include/assimp/Hash.h
 include/assimp/IOStream.hpp
 include/assimp/IOStreamBuffer.h
@@ -90,5 +91,5 @@ lib/cmake/assimp-5.1/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/assimp-5.1/assimpTargets.cmake
 lib/libassimp.so
 lib/libassimp.so.5
-lib/libassimp.so.5.1.0
+lib/libassimp.so.5.1.3
 libdata/pkgconfig/assimp.pc
