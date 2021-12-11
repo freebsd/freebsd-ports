@@ -1,11 +1,12 @@
---- app/app.pro.orig	2021-08-24 08:46:31 UTC
+--- app/app.pro.orig	2021-12-08 11:38:42 UTC
 +++ app/app.pro
-@@ -154,15 +154,12 @@ FORMS += \
+@@ -171,16 +171,12 @@ contains(DEFINES, MPRIS_ENABLE) {
  
  # Libraries
  INCLUDEPATH += \
 -  ../libs/taglib/taglib-1.12/taglib \
 -  ../libs/taglib/taglib-1.12/taglib/toolkit \
+-  ../libs/taglib/taglib-1.12/taglib/mpeg/id3v2 \
 -  ../libs/yaml-cpp/yaml-cpp-0.7.0/include \
 +  ${LOCALBASE}/include/taglib \
    ../libs/qtwaitingspinner \
@@ -18,7 +19,7 @@
    -L../libs/qtwaitingspinner -lqtwaitingspinner \
    -L../libs/qhotkey -lqhotkey
  
-@@ -185,5 +182,5 @@ RESOURCES += \
+@@ -191,5 +187,5 @@ RESOURCES += \
    ../resources.qrc
  
  # make install
