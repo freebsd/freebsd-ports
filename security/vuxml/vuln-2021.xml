@@ -1,3 +1,35 @@
+  <vuln vid="942fff11-5ac4-11ec-89ea-c85b76ce9b5a">
+    <topic>p7zip -- usage of uninitialized memory</topic>
+    <affects>
+      <package>
+	<name>p7zip</name>
+	<range><lt>18.05</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2018-10115">
+      <p>
+       Incorrect initialization logic of RAR decoder objects in
+       7-Zip 18.03 and before can lead to usage of
+       uninitialized memory, allowing remote attackers to cause
+       a denial of service (segmentation fault) or execute
+       arbitrary code via a crafted RAR archive.
+      </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2018-10115</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2018-10115</url>
+    </references>
+    <dates>
+      <discovery>2018-05-02</discovery>
+      <entry>2021-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3fadd7e4-f8fb-45a0-a218-8fd6423c338f">
       <topic>graylog -- include log4j patches</topic>
     <affects>
