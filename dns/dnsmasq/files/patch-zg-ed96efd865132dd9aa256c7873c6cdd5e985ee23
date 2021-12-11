@@ -1,0 +1,95 @@
+From ed96efd865132dd9aa256c7873c6cdd5e985ee23 Mon Sep 17 00:00:00 2001
+From: Simon Kelley <simon@thekelleys.org.uk>
+Date: Wed, 1 Dec 2021 16:34:41 +0000
+Subject: [PATCH] Fix confusion with log-IDs and DNS retries.
+
+The IDs logged when --log-queries=extra is in effect
+can be wrong in three cases.
+
+1) When query is retried in response to a a SERVFAIL or REFUSED
+answer from upstream. In this case the ID of an unrelated query will
+appear in the answer log lines.
+
+2) When the same query arrives from two clients. The query is
+sent upstream once, as designed, and the result returned to both clients,
+as designed, but the reply to the first client gets the log-ID of the
+second query in error.
+
+3) When a query arrives, is sent upstream, and the reply comes back,
+but the transaction is blocked awaiting a DNSSEC query needed to validate
+the reply. If the client retries the query in this state, the blocking
+DNSSEC query will be resent, as designed, but that send will be logged with
+the ID of the original, currently blocked, query.
+
+Thanks to  Dominik Derigs for his analysis of this problem.
+---
+ src/forward.c | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/src/forward.c b/src/forward.c
+index 5c0173c..163da09 100644
+--- a/src/forward.c
++++ b/src/forward.c
+@@ -215,7 +215,11 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+ 	  break;
+       
+       if (src)
+-	old_src = 1;
++	{
++	  old_src = 1;
++	  /* If a query is retried, use the log_id for the retry when logging the answer. */
++	  src->log_id = daemon->log_id;
++	}
+       else
+ 	{
+ 	  /* Existing query, but from new source, just add this 
+@@ -286,6 +290,7 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+ 	goto reply;
+       /* table full - flags == 0, return REFUSED */
+       
++      forward->frec_src.log_id = daemon->log_id;
+       forward->frec_src.source = *udpaddr;
+       forward->frec_src.orig_id = ntohs(header->id);
+       forward->frec_src.dest = *dst_addr;
+@@ -329,7 +334,6 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+     }
+   else
+     {
+-      /* retry on existing query, from original source. Send to all available servers  */
+ #ifdef HAVE_DNSSEC
+       /* If we've already got an answer to this query, but we're awaiting keys for validation,
+ 	 there's no point retrying the query, retry the key query instead...... */
+@@ -340,7 +344,10 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+ 	  
+ 	  while (forward->blocking_query)
+ 	    forward = forward->blocking_query;
+-	   
++
++	  /* log_id should match previous DNSSEC query. */
++	  daemon->log_display_id = forward->frec_src.log_id;
++	  
+ 	  blockdata_retrieve(forward->stash, forward->stash_len, (void *)header);
+ 	  plen = forward->stash_len;
+ 	  /* get query for logging. */
+@@ -383,7 +390,7 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+ 		     Note that we can get here EITHER because a client retried,
+ 		     or an upstream server returned REFUSED. The above only
+ 		     applied in the later case. For client retries,
+-		     keep tyring the last server.. */
++		     keep trying the last server.. */
+ 		  if (++start == last)
+ 		    {
+ 		      if (old_reply)
+@@ -402,9 +409,6 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+       forward->flags |= FREC_TEST_PKTSZ;
+     }
+ 
+-  /* If a query is retried, use the log_id for the retry when logging the answer. */
+-  forward->frec_src.log_id = daemon->log_id;
+-
+   /* We may be resending a DNSSEC query here, for which the below processing is not necessary. */
+   if (!is_dnssec)
+     {
+-- 
+2.20.1
+

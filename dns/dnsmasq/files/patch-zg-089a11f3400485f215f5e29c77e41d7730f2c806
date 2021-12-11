@@ -1,0 +1,36 @@
+From 089a11f3400485f215f5e29c77e41d7730f2c806 Mon Sep 17 00:00:00 2001
+From: DL6ER <dl6er@dl6er.de>
+Date: Tue, 5 Oct 2021 10:15:21 +0200
+Subject: [PATCH] --local should behave as --server, not as --address according
+ to the man page
+
+Signed-off-by: DL6ER <dl6er@dl6er.de>
+---
+ src/option.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/option.c b/src/option.c
+index 5307f01..dc1efd3 100644
+--- a/src/option.c
++++ b/src/option.c
+@@ -2758,7 +2758,7 @@ static int one_opt(int option, char *arg, char *errstr, char *gen_err, int comma
+ 	
+ 	if (!arg || !*arg)
+ 	  flags = SERV_LITERAL_ADDRESS;
+-	else if (option != 'S')
++	else if (option == 'A')
+ 	  {
+ 	    /* # as literal address means return zero address for 4 and 6 */
+ 	    if (strcmp(arg, "#") == 0)
+@@ -2790,7 +2790,7 @@ static int one_opt(int option, char *arg, char *errstr, char *gen_err, int comma
+ 		  flags &= ~SERV_FOR_NODOTS;
+ 
+ 		/* address=/#/ matches the same as without domain */
+-		if (option != 'S' && domain[0] == '#' && domain[1] == 0)
++		if (option == 'A' && domain[0] == '#' && domain[1] == 0)
+ 		  domain[0] = 0;
+ 	      }
+ 	    
+-- 
+2.20.1
+
