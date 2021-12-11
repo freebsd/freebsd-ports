@@ -586,7 +586,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/images/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/images/wizard.png
 %%PORTDOCS%%%%DOCSDIR%%-6/index.html
-%%PORTDOCS%%%%DOCSDIR%%-6/%%WWWDIR%%Object.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/ImageMagickObject.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Blob.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Cache.fig
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Cache.png
@@ -627,6 +627,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/thumbnail-anatomy-plain.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/thumbnail-sample-framed.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/thumbnail-sample-plain.jpg
+%%PORTDOCS%%%%DOCSDIR%%-6/www/advanced-linux-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/advanced-unix-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/advanced-windows-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/animate.html
