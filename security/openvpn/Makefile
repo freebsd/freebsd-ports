@@ -44,7 +44,7 @@ OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
 ASYNC_PUSH_DESC=	Enable async-push support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 LZO_DESC=		LZO compression support (incompatible with LibreSSL)
-MBEDTLS_DESC=		LICENSE BROKEN - SSL/TLS via mbedTLS (lacks TLS v1.3)
+MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
@@ -95,7 +95,6 @@ CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
 
 .if ${PORT_OPTIONS:MMBEDTLS}
 BROKEN_FreeBSD_14=      OpenVPN-mbedTLS fails on FreeBSD 14
-BROKEN=		License under clarification, OpenVPN is GPLv2-only and mbedTLS under Apache License 2.0, which are incompatible
 _tlslibs=libmbedtls libmbedx509 libmbedcrypto
 .else
 # OpenSSL
@@ -122,8 +121,9 @@ pre-everything::
 
 .if !empty(PORT_OPTIONS:MMBEDTLS)
 pre-everything::
-	@${ECHO_CMD} >&2 "License under clarification, OpenVPN is GPLv2-only and mbedTLS under Apache License 2.0, which are incompatible."
-	@${SHELL} -c 'exit 1'
+	@${ECHO_CMD} >&2 "====================================================="
+	@${ECHO_CMD} >&2 "Note that the mbedTLS option will go away 2022-03-31."
+	@${ECHO_CMD} >&2 "====================================================="
 .endif
 
 post-patch:
