@@ -6,8 +6,10 @@ CATEGORIES=	security devel
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SSL/TLS and cryptography library
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/apache-2.0.txt
+LICENSE=	APACHE20 GPLv2+
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/apache-2.0.txt
+LICENSE_FILE_GPLv2=	${WRKSRC}/gpl-2.0.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ARMmbed
