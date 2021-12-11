@@ -40,6 +40,7 @@ share/doc/HTML/ca/kstars/calc-sidereal.png
 share/doc/HTML/ca/kstars/calculator.docbook
 share/doc/HTML/ca/kstars/catalog_details.png
 share/doc/HTML/ca/kstars/cequator.docbook
+share/doc/HTML/ca/kstars/color_editor.png
 share/doc/HTML/ca/kstars/color_indices.png
 share/doc/HTML/ca/kstars/colorandtemp.docbook
 share/doc/HTML/ca/kstars/colors_page.png
@@ -965,6 +966,7 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/classic.colors
 %%DATADIR%%/clines.dat
 %%DATADIR%%/cnames.dat
+%%DATADIR%%/cometels.json.gz
 %%DATADIR%%/comets.dat
 %%DATADIR%%/defaultflag.gif
 %%DATADIR%%/earth.B0.vsop
