@@ -1,3 +1,35 @@
+  <vuln vid="3fadd7e4-f8fb-45a0-a218-8fd6423c338f">
+      <topic>graylog -- include log4j patches</topic>
+    <affects>
+      <package>
+	<name>graylog</name>
+	<range><lt>4.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Software Foundation repos:</p>
+	<blockquote cite="https://logging.apache.org/log4j/2.x/security.html">
+      <p>Apache Log4j2 JNDI features do not protect against attacker
+       controlled LDAP and other JNDI related endpoints. An attacker
+       who can control log messages or paramters can execute arbitrary
+       code from attacker-controller LDAP servers when message lookup
+       substitution is enabled.
+      </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44228</cvename>
+      <url>https://github.com/Graylog2/graylog2-server/commit/d3e441f1126f0dc292e986879039a87c59375b2a</url>
+      <url>https://logging.apache.org/log4j/2.x/security.html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-10</discovery>
+      <entry>2021-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="720505fe-593f-11ec-9ba8-002324b2fba8">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
