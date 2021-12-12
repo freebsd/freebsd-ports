@@ -1,5 +1,5 @@
 PORTNAME=	snapraid
-DISTVERSION=	11.6
+DISTVERSION=	12.0
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	https://github.com/amadvance/snapraid/releases/download/v${DISTVERSION}/
 
