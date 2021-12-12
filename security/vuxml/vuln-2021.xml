@@ -1,3 +1,147 @@
+  <vuln vid="e33880ed-5802-11ec-8398-6c3be5272acd">
+    <topic>Grafana -- Path Traversal</topic>
+    <affects>
+      <package>
+	<name>grafana8</name>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.0.7</lt></range>
+	<range><ge>8.1.0</ge><lt>8.1.8</lt></range>
+	<range><ge>8.2.0</ge><lt>8.2.7</lt></range>
+	<range><ge>8.3.0</ge><lt>8.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2021/12/07/grafana-8.3.1-8.2.7-8.1.8-and-8.0.7-released-with-high-severity-security-fix/">
+	  <p>Grafana is vulnerable to directory traversal, allowing access to local files. We have confirmed this for versions v8.0.0-beta1 to v8.3.0. Thanks to our defense-in-depth approach, at no time has <a href="https://grafana.com/cloud/?pg=blog">Grafana Cloud</a> been vulnerable.</p>
+	  <p><strong>The vulnerable URL path is:</strong> &lt;grafana_host_url&gt;<em>/public/plugins/&lt;“plugin-id”&gt;</em> where <em>&lt;“plugin-id”&gt;</em> is the plugin ID for any installed plugin.</p>
+	  <p>Every Grafana instance comes with pre-installed plugins like the Prometheus plugin or MySQL plugin so the following URLs are vulnerable for every instance:</p>
+	  <ul>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/alertlist/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/annolist/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/barchart/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/bargauge/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/candlestick/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/cloudwatch/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/dashlist/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/elasticsearch/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/gauge/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/geomap/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/gettingstarted/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/grafana-azure-monitor-datasource/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/graph/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/heatmap/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/histogram/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/influxdb/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/jaeger/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/logs/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/loki/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/mssql/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/mysql/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/news/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/nodeGraph/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/opentsdb</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/piechart/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/pluginlist/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/postgres/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/prometheus/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/stackdriver/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/stat/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/state-timeline/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/status-history/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/table/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/table-old/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/tempo/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/testdata/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/text/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/timeseries/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/welcome/</li>
+	    <li>&lt;grafana_host_url&gt;/public/plugins/zipkin/</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43798</cvename>
+      <url>https://grafana.com/blog/2021/12/07/grafana-8.3.1-8.2.7-8.1.8-and-8.0.7-released-with-high-severity-security-fix/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-03</discovery>
+      <entry>2021-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="99bff2bd-4852-11ec-a828-6c3be5272acd">
+    <topic>Grafana -- Incorrect Access Control</topic>
+    <affects>
+      <package>
+	<name>grafana8</name>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2021/11/15/grafana-8.2.4-released-with-security-fixes/">
+	  <p>When the fine-grained access control beta feature is enabled and there is more than one organization in the Grafana instance, Grafana 8.0 introduced a mechanism which allowed users with the Organization Admin role to list, add, remove, and update users’ roles in other organizations in which they are not an admin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41244</cvename>
+      <url>https://grafana.com/blog/2021/11/15/grafana-8.2.4-released-with-security-fixes/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-02</discovery>
+      <entry>2021-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b478274-47a0-11ec-bd24-6c3be5272acd">
+    <topic>Grafana -- XSS</topic>
+    <affects>
+      <package>
+	<name>grafana8</name>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2021/11/03/grafana-8.2.3-released-with-medium-severity-security-fix-cve-2021-41174-grafana-xss/">
+	  <p>If an attacker is able to convince a victim to visit a URL referencing a vulnerable page, arbitrary JavaScript content may be executed within the context of the victim’s browser.</p>
+	  <p>The user visiting the malicious link must be unauthenticated, and the link must be for a page that contains the login button in the menu bar.</p>
+	  <p>There are two ways an unauthenticated user can open a page in Grafana that contains the login button:</p>
+	  <ul>
+	    <li>Anonymous authentication is enabled. This means all pages in Grafana would be open for the attack.</li>
+	    <li>The link is to an unauthenticated page. The following pages are vulnerable:
+	      <ul>
+		<li><code>/dashboard-solo/snapshot/*</code></li>
+		<li><code>/dashboard/snapshot/*</code></li>
+		<li><code>/invite/:code</code></li>
+	      </ul>
+	    </li>
+	  </ul>
+	  <p>The url has to be crafted to exploit AngularJS rendering and contain the interpolation binding for AngularJS expressions. AngularJS uses double curly braces for interpolation binding: <code>{{ }}</code></p>
+	  <p>An example of an expression would be: <code>{{constructor.constructor(‘alert(1)’)()}}</code>. This can be included in the link URL like this:</p>
+	  <p><a href="https://play.grafana.org/dashboard/snapshot/%7B%7Bconstructor.constructor('alert(1)')()%7D%7D?orgId=1">https://play.grafana.org/dashboard/snapshot/%7B%7Bconstructor.constructor('alert(1)')()%7D%7D?orgId=1</a></p>
+	  <p>When the user follows the link and the page renders, the login button will contain the original link with a query parameter to force a redirect to the login page. The URL is not validated, and the AngularJS rendering engine will execute the JavaScript expression contained in the URL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41174</cvename>
+      <url>https://grafana.com/blog/2021/11/03/grafana-8.2.3-released-with-medium-severity-security-fix-cve-2021-41174-grafana-xss/</url>
+    </references>
+    <dates>
+      <discovery>2021-10-21</discovery>
+      <entry>2021-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="942fff11-5ac4-11ec-89ea-c85b76ce9b5a">
     <topic>p7zip -- usage of uninitialized memory</topic>
     <affects>
