@@ -1,5 +1,5 @@
---- inv.c	Fri Jan  1 03:08:33 1999
-+++ /home/andy/tmp/wrk/inv.c	Fri May 14 20:28:52 1999
+--- inv.c.orig	2021-11-11 18:12:35.355855000 -0500
++++ inv.c	2021-11-11 18:13:11.096005000 -0500
 @@ -8,7 +8,11 @@
  # ifdef AMIGA
  #  include <curses210.h>
@@ -12,4 +12,14 @@
 +#  endif
  # endif
  #endif
+ 
+@@ -840,8 +844,7 @@
+       use_pack_item(response - 'a',slot);
+     }
+   }
+-  if ( optionp(TOPINV) )
+-    display_possessions();
++  display_possessions();
+   return slot;
+ }
  
