@@ -1,3 +1,5 @@
-TIMESTAMP = 1638570914
+TIMESTAMP = 1639312899
 SHA256 (KDE/release-service/21.12.0/kdepim-runtime-21.12.0.tar.xz) = 2a0c0caa75aa0aef2f790b044a49d84ff5de22de6e07a4ffe45b990a2947b7d6
 SIZE (KDE/release-service/21.12.0/kdepim-runtime-21.12.0.tar.xz) = 1807008
+SHA256 (KDE/release-service/21.12.0/f14fabcefb45790175e209ef8ae394def4a805e9.patch) = 0731e305a0acb90a0617d6e5c053fd5850fc9860e57a68b77e45096abd2e1a38
+SIZE (KDE/release-service/21.12.0/f14fabcefb45790175e209ef8ae394def4a805e9.patch) = 5468
