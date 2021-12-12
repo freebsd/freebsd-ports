@@ -43,11 +43,11 @@ OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
 ASYNC_PUSH_DESC=	Enable async-push support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-LZO_DESC=		LZO compression support (incompatible with LibreSSL)
+LZO_DESC=		LZO compression (incompatible with LibreSSL)
 MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
-TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
+TUNNELBLICK_DESC=	XOR scrambling patch - DEPRECATED!
 UNITTESTS_DESC=		Enable unit tests
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 
@@ -119,11 +119,11 @@ pre-everything::
 	@${SHELL} -c 'exit 1'
 .endif
 
-.if !empty(PORT_OPTIONS:MMBEDTLS)
+.if !empty(PORT_OPTIONS:MMBEDTLS) || !empty(PORT_OPTIONS:MTUNNELBLICK)
 pre-everything::
-	@${ECHO_CMD} >&2 "====================================================="
-	@${ECHO_CMD} >&2 "Note that the mbedTLS option will go away 2022-03-31."
-	@${ECHO_CMD} >&2 "====================================================="
+	@${ECHO_CMD} >&2 "======================================================================"
+	@${ECHO_CMD} >&2 "Note that the mbedTLS and Tunnelblick options will go away 2022-03-31."
+	@${ECHO_CMD} >&2 "======================================================================"
 .endif
 
 post-patch:
