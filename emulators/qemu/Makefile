@@ -14,13 +14,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
 .if ${FLAVOR:U} != tools
-LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
-		libfdt.so:sysutils/dtc \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libnettle.so:security/nettle \
-		libpcre2-8.so:devel/pcre2 \
+LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
 		libzstd.so:archivers/zstd
+.endif
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
 .endif
 
 FLAVORS=	default nox11 tools
@@ -38,12 +36,12 @@ tools_PLIST=	${.CURDIR}/pkg-plist-tools
 USES=	cpe gmake gnome ninja perl5 pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 USE_PERL5=	build
-.if (empty(FLAVOR) || ${FLAVOR:U} == nox11) && (${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
-ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
-USES+=		bison compiler:c11 iconv:wchar_t xorg
-USE_GNOME=	cairo libxml2
-USE_PYTHON=	distutils noflavors
-USE_XORG=	pixman
+.if ${FLAVOR:U} != tools
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64 powerpc64le
+USES+=		iconv:wchar_t
+.endif
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+USE_GNOME+=	cairo
 .endif
 
 HAS_CONFIGURE=	yes
@@ -121,7 +119,7 @@ VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
 X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
-.if (empty(FLAVOR) || ${FLAVOR:U} == nox11) && (${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
+.if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11) && (${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
 X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softmmu x86_64-bsd-user'
@@ -144,12 +142,10 @@ CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L/usr/lib \
 CONFIGURE_ARGS+=--enable-netmap --enable-fdt=system
 .endif
 .if ${FLAVOR:U} == tools
-CONFIGURE_ARGS+=--disable-netmap --disable-system \
-			--disable-user --disable-guest-agent \
-			--disable-nettle --disable-gcrypt \
-			--disable-curses --disable-vnc \
-			--disable-virtfs --disable-brlapi \
-			--disable-fdt --disable-rdma \
+CONFIGURE_ARGS+=--disable-netmap --disable-system --disable-user  \
+			--disable-nettle --disable-gcrypt --disable-curses \
+			--disable-vnc --disable-virtfs --disable-brlapi \
+			--disable-fdt --disable-rdma --disable-guest-agent \
 			--disable-cap-ng --disable-attr \
 			--disable-vhost-net --disable-spice \
 			--disable-rbd --disable-libnfs \
@@ -163,7 +159,7 @@ CONFIGURE_ARGS+=--disable-netmap --disable-system \
 
 .include <bsd.port.options.mk>
 
-.if (empty(FLAVOR) || ${FLAVOR:U} == nox11) && (${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
+.if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11) && (${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	ARCH=x86_64
 .endif
