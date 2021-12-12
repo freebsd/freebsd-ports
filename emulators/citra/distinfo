@@ -1,6 +1,6 @@
-TIMESTAMP = 1635775211
-SHA256 (citra-emu-citra-s20211101-5a7d80172_GH0.tar.gz) = a931b4c99316ca9c60231e651c5b4473a40315759426cc10bbddf45b964a58c8
-SIZE (citra-emu-citra-s20211101-5a7d80172_GH0.tar.gz) = 5326255
+TIMESTAMP = 1639320789
+SHA256 (citra-emu-citra-s20211212-28039d39a_GH0.tar.gz) = 6930d3496c9b46f687ed0f3ae4914da947c81c54805607213f55682683e843d3
+SIZE (citra-emu-citra-s20211212-28039d39a_GH0.tar.gz) = 5327058
 SHA256 (citra-emu-ext-boost-36603a1_GH0.tar.gz) = a1885cf0f7b1c790f8a83e963fec591bad1232e6b824e64d8db136920ec1b67d
 SIZE (citra-emu-ext-boost-36603a1_GH0.tar.gz) = 2351603
 SHA256 (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = f3fc8c9d4991b05ca1e1c8f5907ecd3ffd9724a8dccf328087b4784cda5c7db3
