@@ -401,8 +401,9 @@ CARGO_TEST=	no
 OPTIONS_DEFINE=	CSOUND DAV1D PANGO SODIUM
 OPTIONS_DEFAULT=CSOUND DAV1D PANGO SODIUM
 OPTIONS_EXCLUDE_aarch64=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
-OPTIONS_EXCLUDE_powerpc64le=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
-OPTIONS_EXCLUDE_powerpc64=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
+OPTIONS_EXCLUDE_powerpc64le=	CSOUND
+OPTIONS_EXCLUDE_powerpc64=	CSOUND
+OPTIONS_EXCLUDE_powerpc=	CSOUND DAV1D
 OPTIONS_SUB=	yes
 
 CSOUND_DESC=		Audio filtering via Csound
