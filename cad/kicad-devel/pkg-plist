@@ -20,6 +20,7 @@ bin/pl_editor
 lib/kicad/plugins/3d/libs3d_plugin_idf.so
 lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
+lib/libkicad2step_lib.a
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 %%PYTHON_SITELIBDIR%%/_pcbnew.so
@@ -104,11 +105,9 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/complex_hierarchy/fp-lib-table
 %%DATADIR%%/demos/complex_hierarchy/sym-lib-table
 %%DATADIR%%/demos/custom_pads_test/custom_pads_schlib.kicad_sym
-%%DATADIR%%/demos/custom_pads_test/custom_pads_schlib.lib
 %%DATADIR%%/demos/custom_pads_test/custom_pads_test.kicad_pcb
 %%DATADIR%%/demos/custom_pads_test/custom_pads_test.kicad_pro
 %%DATADIR%%/demos/custom_pads_test/custom_pads_test.kicad_sch
-%%DATADIR%%/demos/custom_pads_test/custom_pads_test.lib
 %%DATADIR%%/demos/custom_pads_test/sym-lib-table
 %%DATADIR%%/demos/ecc83/3d_shapes/ecc83.wrl
 %%DATADIR%%/demos/ecc83/ecc83-pp.kicad_pcb
@@ -297,12 +296,14 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/plugins/netlist_form_cadstar.xsl
 %%DATADIR%%/plugins/netlist_form_pads-pcb.asc.xsl
 %%DATADIR%%/resources/images.tar.gz
+%%DATADIR%%/schemas/pcm.v1.schema.json
 %%DATADIR%%/scripting/kicad_pyshell/__init__.py
 %%DATADIR%%/scripting/kicad_pyshell/kicad_pyeditor.py
 %%DATADIR%%/scripting/plugins/FPC_wizard.py
 %%DATADIR%%/scripting/plugins/FootprintWizardBase.py
 %%DATADIR%%/scripting/plugins/PadArray.py
 %%DATADIR%%/scripting/plugins/__init__.py
+%%DATADIR%%/scripting/plugins/arc_test.py
 %%DATADIR%%/scripting/plugins/bga_wizard.py
 %%DATADIR%%/scripting/plugins/circular_pad_array_wizard.py
 %%DATADIR%%/scripting/plugins/kicad_qrcode.py
