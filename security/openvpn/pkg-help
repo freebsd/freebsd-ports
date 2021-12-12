@@ -1,3 +1,5 @@
+DEPRECATED FEATURE - TO BE REMOVED END OF 2022-03-31 LATEST
+
 Note that "Tunnelblick" is a controversial option.
 It is included for compatibility, not enabled by default,
 and should only be used with due consideration, and it should not
@@ -8,3 +10,18 @@ option, neither to the --help output, nor the manual page.
 
 Please see this website for a more detailed discussion:
 https://tunnelblick.net/cOpenvpn_xorpatch.html
+
+The essence is that there are alternatives proposed that can avoid
+this patch:
+
+The OpenVPN developers "do not encourage people building their own
+versions of OpenVPN changing the wire-protocol like this, without the
+patch being through a proper patch review and having evaluated possible
+security risks related to such a change.
+  And we especially discourage using such an approach when there exists
+a far better solution, used by the TOR community. It is called obfsproxy
+and can be used together with OpenVPN without needing any re-compilation
+of OpenVPN."
+
+https://community.openvpn.net/openvpn/wiki/TrafficObfuscation
+https://2019.www.torproject.org/docs/pluggable-transports
