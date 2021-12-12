@@ -1,7 +1,7 @@
 # Created by: jmz
 
 PORTNAME=	calc
-PORTVERSION=	2.14.0.10
+PORTVERSION=	2.14.0.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -30,8 +30,12 @@ HELP_DESC=	Install calc help files
 
 # We use Makefile.freebsd because Makefile.local is in .gitignore
 post-extract:
-	${SED} -e 's|%%CC%%|${CC}|; s|%%CFLAGS%%|${CFLAGS}|' \
+	${SED} -e 's|%%CC%%|${CC}|; s|%%CFLAGS%%|${CFLAGS}|; s|%%GMAKE%%|${MAKE_CMD}|' \
 		${FILESDIR}/Makefile.freebsd > ${WRKSRC}/Makefile.local
+# The upstream Makefiles are a mess. Bash is hardcoded in many files, and only
+# some of the Makefiles allow overrides. Plus, they error out if sed .bkp files exist.
+	${FIND} ${WRKSRC} -name 'Makefile*' \
+		| ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/bin/bash|${SH}|'
 
 post-install:
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/calc lib/lib*.so
