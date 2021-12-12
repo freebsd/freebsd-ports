@@ -2,11 +2,12 @@
 
 PORTNAME=	omega
 PORTVERSION=	0.90.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.alcyone.com/binaries/omega/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r7st.guru@gmail.com
 COMMENT=	Complex rogue-style game of dungeon exploration
 
 USES=		gmake ncurses
