@@ -3,6 +3,9 @@ PKGNAMESUFFIX=	-utils
 MAINTAINER=	ken@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
+DEPRECATED?=	Use emulators/qemu@tools
+EXPIRATION_DATE?=2022-01-09
+
 HAS_CONFIGURE=	yes
 USES=		compiler:c11 cpe gettext-runtime gmake gnome perl5 pkgconfig \
 		python:build tar:xz
