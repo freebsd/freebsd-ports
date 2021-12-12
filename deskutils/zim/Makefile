@@ -1,7 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 
 PORTNAME=	zim
-DISTVERSION=	0.74.2
+DISTVERSION=	0.74.3
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
