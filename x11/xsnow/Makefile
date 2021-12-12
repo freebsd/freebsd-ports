@@ -1,7 +1,7 @@
 # Created by: jmz
 
 PORTNAME=	xsnow
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.6
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -17,6 +17,7 @@ USE_XORG=	x11 xpm xt xorgproto
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz \
 		share/applications/xsnow.desktop \
+		share/metainfo/xsnow.appdata.xml \
 		share/pixmaps/xsnow.svg
 
 post-patch:
