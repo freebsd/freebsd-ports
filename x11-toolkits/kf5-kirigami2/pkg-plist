@@ -38,6 +38,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/CardsListView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/CheckableListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ContextDrawer.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/Dialog.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/FlexColumn.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/FormLayout.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/GlobalDrawer.qml
@@ -49,6 +50,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/LinkButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListItemDragHandle.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListSectionHeader.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/MenuDialog.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/NavigationTabBar.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/NavigationTabButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlayDrawer.qml
@@ -58,6 +60,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/PageRow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PasswordField.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PlaceholderMessage.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/PromptDialog.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/RouterWindow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ScrollablePage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/SearchField.qml
@@ -172,6 +175,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr@latin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sv/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ta/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/tg/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/tr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/uk/LC_MESSAGES/libkirigami2plugin_qt.qm

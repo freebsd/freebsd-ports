@@ -1,3 +1,7 @@
-TIMESTAMP = 1636215875
-SHA256 (KDE/frameworks/5.88.0/breeze-icons-5.88.0.tar.xz) = 99659ef3775a537fa51b0a9e942bbe1b7a5a6f9d911adf2ca2d3e9638f0884b4
-SIZE (KDE/frameworks/5.88.0/breeze-icons-5.88.0.tar.xz) = 2128308
+TIMESTAMP = 1639374112
+SHA256 (KDE/frameworks/5.89.0/breeze-icons-5.89.0.tar.xz) = dc71d34a121ca799428849d28eadd1277d4ea0732a66fbafc205aa3bd8e7828a
+SIZE (KDE/frameworks/5.89.0/breeze-icons-5.89.0.tar.xz) = 2142816
+SHA256 (KDE/frameworks/5.89.0/05f11af435edc57650d0221ed8a74ecfb997e576.patch) = f79ff093104ff6e963c3e263f46bfe9289b69b04f19de3dbbc2c7ec8147ca4f8
+SIZE (KDE/frameworks/5.89.0/05f11af435edc57650d0221ed8a74ecfb997e576.patch) = 5390
+SHA256 (KDE/frameworks/5.89.0/08bf45db9b883b4201ac3cbb666821472f17ad97.patch) = 6f073154db9fbc352a4895d1dfb449a04ae730de87e35ece27c14c66aedd1257
+SIZE (KDE/frameworks/5.89.0/08bf45db9b883b4201ac3cbb666821472f17ad97.patch) = 1874

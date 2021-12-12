@@ -375,6 +375,7 @@ share/locale/ja/LC_MESSAGES/purpose_youtube.mo
 share/locale/ko/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ko/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ko/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/ko/LC_MESSAGES/purpose_barcode.mo
 share/locale/ko/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/ko/LC_MESSAGES/purpose_email.mo
 share/locale/ko/LC_MESSAGES/purpose_imgur.mo

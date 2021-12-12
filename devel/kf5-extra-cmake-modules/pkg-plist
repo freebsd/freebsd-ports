@@ -55,7 +55,11 @@ share/ECM/kde-modules/KDEFrameworkCompilerLegacySettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEGitCommitHooks.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
+share/ECM/kde-modules/KDEInstallDirs5.cmake
+share/ECM/kde-modules/KDEInstallDirs6.cmake
+share/ECM/kde-modules/KDEInstallDirsCommon.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
+share/ECM/kde-modules/KDESetupPrefixScript.cmake
 share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/kde-modules/clang-format.cmake
 share/ECM/kde-modules/kde-git-commit-hooks/clang-format.sh
@@ -101,6 +105,7 @@ share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
 share/ECM/modules/ECMWinResolveSymlinks.cmake
+share/ECM/modules/QtVersionOption.cmake
 share/ECM/modules/check-outbound-license.py
 share/ECM/modules/ecm_uninstall.cmake.in
 share/ECM/test-modules/test_execute_and_compare.cmake

@@ -5,6 +5,7 @@ include/KF5/KCMUtils/KCModuleLoader
 include/KF5/KCMUtils/KCModuleProxy
 include/KF5/KCMUtils/KCMultiDialog
 include/KF5/KCMUtils/KPluginSelector
+include/KF5/KCMUtils/KPluginWidget
 include/KF5/KCMUtils/kcmodulecontainer.h
 include/KF5/KCMUtils/kcmoduledata.h
 include/KF5/KCMUtils/kcmoduleinfo.h
@@ -13,6 +14,7 @@ include/KF5/KCMUtils/kcmoduleproxy.h
 include/KF5/KCMUtils/kcmultidialog.h
 include/KF5/KCMUtils/kcmutils_export.h
 include/KF5/KCMUtils/kpluginselector.h
+include/KF5/KCMUtils/kpluginwidget.h
 include/KF5/KCMUtils/ksettings/Dialog
 include/KF5/KCMUtils/ksettings/Dispatcher
 include/KF5/KCMUtils/ksettings/PluginPage
