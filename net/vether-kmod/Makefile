@@ -1,5 +1,5 @@
 PORTNAME=	vether-kmod
-DISTVERSION=	g20211119
+DISTVERSION=	g20211211
 CATEGORIES=	net
 
 MAINTAINER=	henning.matyschok@outlook.com
@@ -13,7 +13,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatyschok
 GH_PROJECT=	if_vether
-GH_TAGNAME=	8fd5c68a969014fca8cc9e6e90cb686cc2b7685c
+GH_TAGNAME=	88a162a6e32118edb829944dbfa7af9679a2137a
 
 WRKSRC_SUBDIR=	src
 
