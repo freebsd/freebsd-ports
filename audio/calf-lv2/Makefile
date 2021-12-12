@@ -1,10 +1,9 @@
 # Created by: <trasz@FreeBSD.org>
 
 PORTNAME=	calf
-DISTVERSION=	0.90.3
-PORTREVISION=	5
+DISTVERSION=	0.90.3.20210427
 CATEGORIES=	audio
-MASTER_SITES=	http://calf-studio-gear.org/files/
+#MASTER_SITES=	http://calf-studio-gear.org/files/
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,25 +12,29 @@ COMMENT=	Set of LV2 plugins
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN=		toolchain writes the shared library that SEGVs on load: Invalid permissions for mapped object: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=260364
-
 BUILD_DEPENDS=	lv2>=1.14.0_1:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libjack.so:audio/jack \
 		libexpat.so:textproc/expat2
 
 USES=		autoreconf compiler:c++11-lang gmake gnome libtool localbase pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_CXXSTD=	c++11
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lv2 --disable-static
-USE_GNOME=	cairo gtk20
-USE_CXXSTD=	c++11
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-USE_GCC=	yes # workaround for https://github.com/calf-studio-gear/calf/issues/227, and then https://github.com/calf-studio-gear/calf/issues/156
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	calf-studio-gear
+GH_TAGNAME=	648f05e85287cf08af198bdd9e52baba95b502ec # this revision has clang compilation issues fixed
 
 INSTALLS_ICONS=	yes
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		DOCS LASH
 OPTIONS_DEFAULT=	LASH
@@ -57,6 +60,6 @@ CXXFLAGS+=	-finline-limit=80 -finline-functions -finline-functions-called-once
 post-install: # fix absolute symbolic link to be relative
 	@${RM} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so
 	@${RLN} ${STAGEDIR}${PREFIX}/lib/calf/libcalf.so ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so # https://github.com/calf-studio-gear/calf/issues/235
+	@${RLN} ${STAGEDIR}${PREFIX}/lib/calf/libcalflv2gui.so ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so
 
 .include <bsd.port.post.mk>

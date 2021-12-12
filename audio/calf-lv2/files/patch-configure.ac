@@ -1,7 +1,7 @@
---- configure.ac.orig	2015-03-29 13:15:36 UTC
+--- configure.ac.orig	2021-04-27 13:20:32 UTC
 +++ configure.ac
 @@ -5,7 +5,7 @@ AC_PREREQ(2.63)
- AC_INIT([calf],[0.0.60],[wdev@foltman.com])
+ AC_INIT([calf],[0.90.3],[wdev@foltman.com])
  AC_CONFIG_SRCDIR([config.h.in])
  AC_CONFIG_HEADER([config.h])
 -LT_INIT([dlopen])
@@ -9,12 +9,3 @@
  LT_LANG([C++])
  
  AM_INIT_AUTOMAKE(1.8)
-@@ -153,7 +153,7 @@ if test "$set_enable_debug" = "yes"; the
-   CXXFLAGS="$CXXFLAGS -O0 -g -Wall"
- else
-   # TODO: remove -finline options if clang is used
--  CXXFLAGS="$CXXFLAGS -O3 -finline-functions -finline-functions-called-once -Wall"
-+  CXXFLAGS="$CXXFLAGS -Wall"
- fi
- 
- if test "$set_enable_sse" = "yes"; then

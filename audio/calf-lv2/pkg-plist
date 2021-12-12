@@ -1,5 +1,6 @@
 bin/calfjackhost
 lib/calf/libcalf.so
+lib/calf/libcalflv2gui.so
 lib/lv2/calf.lv2/Analyzer.ttl
 lib/lv2/calf.lv2/BassEnhancer.ttl
 lib/lv2/calf.lv2/CompensationDelay.ttl
