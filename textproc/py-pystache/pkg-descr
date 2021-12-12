@@ -2,4 +2,4 @@ Pystache is a Python implementation of Mustache.
 Inspired by ctemplate and et, Mustache is a framework-agnostic
 way to render logic-free views.
 
-WWW: https://github.com/defunkt/pystache
+WWW: https://github.com/sarnold/pystache
