@@ -1,10 +1,10 @@
 PORTNAME=	epson-inkjet-printer-escpr2
-DISTVERSION=	1.1.42
+DISTVERSION=	1.1.44
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/07/72/9d995c5ca77e67662b6c78f9c71145a20a13af14/:i386 \
-		https://download3.ebz.epson.net/dsc/f/03/00/13/07/72/f13c18f6f1ac9a89bedf3093f5dd47406ab1efe0/:amd64 \
-		https://download3.ebz.epson.net/dsc/f/03/00/13/07/72/df79cc238a167b9526f70cc123459c6bbe1edbad/:SOURCE
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/27/79/8210690337e96fc4364114efba31e0d6708556df/:i386 \
+		https://download3.ebz.epson.net/dsc/f/03/00/13/27/79/b34fb3d14e6da63494b2528f39748b146276146c/:amd64 \
+		https://download3.ebz.epson.net/dsc/f/03/00/13/27/79/3e6d56a8ef3ffa0f3ffb201eed684e051ccdf55b/:SOURCE
 EXTRACT_SUFX=	.rpm
 DISTFILES_amd64=	${DISTNAME}.x86_64${EXTRACT_SUFX}:amd64
 DISTFILES_i386=	${DISTNAME}.i486${EXTRACT_SUFX}:i386
@@ -29,6 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters \
 		cupsfilter:print/cups
 
 USES=		linux
+USE_LDCONFIG=	yes
 USE_LINUX=	cups-libs
 SRC_DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}:SOURCE
 NO_BUILD=	yes

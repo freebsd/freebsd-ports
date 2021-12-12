@@ -59,8 +59,11 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M530F_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M5610FT_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M630T_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M634T_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M670FT_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M674FT_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M752T_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M754T_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M873T_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EW-M973A3T_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L11160_Series-epson-inkjet-printer-escpr2.ppd.gz
@@ -173,6 +176,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C878RB-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C878R_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C879RB-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C879RBAM-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C879R_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-M5298_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-M5299_Series-epson-inkjet-printer-escpr2.ppd.gz
