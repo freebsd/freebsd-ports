@@ -1,7 +1,7 @@
 # Created by: ada@bsd.org
 
 PORTNAME=	freeciv
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
