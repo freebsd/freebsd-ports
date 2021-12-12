@@ -55,6 +55,7 @@ sbin/cluster-get-sync-file
 sbin/cluster-highest-uid
 sbin/cluster-init-node
 sbin/cluster-ipmi-power-on
+sbin/cluster-ipmi-remote-access
 sbin/cluster-krb-auth-setup
 sbin/cluster-localbase
 sbin/cluster-lock-local-pw
@@ -71,6 +72,7 @@ sbin/cluster-power-waster
 sbin/cluster-recreate-user
 sbin/cluster-remove-from-group
 sbin/cluster-remove-from-known-hosts
+sbin/cluster-remove-node
 sbin/cluster-remove-user
 sbin/cluster-restore-user
 sbin/cluster-run
