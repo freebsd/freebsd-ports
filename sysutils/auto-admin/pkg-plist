@@ -27,6 +27,7 @@ sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
 sbin/auto-cuda-install
+sbin/auto-cups-setup
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
 sbin/auto-detect-laptops
@@ -58,7 +59,6 @@ sbin/auto-harden
 sbin/auto-hex-to-octet
 sbin/auto-hyperthreading-toggle
 sbin/auto-idrac-config
-sbin/auto-idrac-passwd
 sbin/auto-insert-line
 sbin/auto-install-base-components
 sbin/auto-install-infiniband-modules
@@ -68,6 +68,7 @@ sbin/auto-install-packages
 sbin/auto-install-pkgsrc-tree
 sbin/auto-ipfw-gateway-setup
 sbin/auto-ipmi-install
+sbin/auto-ipmi-passwd
 sbin/auto-ipmi-remote-access
 sbin/auto-ipmi-remote-power
 sbin/auto-ipmi-remote-status
@@ -121,6 +122,7 @@ sbin/auto-root-check
 sbin/auto-secure-directory
 sbin/auto-security-manager
 sbin/auto-service-enabled
+sbin/auto-services-manager
 sbin/auto-set-conf-var
 sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
@@ -138,12 +140,16 @@ sbin/auto-unlock-local-pw
 sbin/auto-unlock-user
 sbin/auto-unsupported-os
 sbin/auto-unsupported-release
+sbin/auto-update-devfs-conf
+sbin/auto-update-devfs-rules
 sbin/auto-update-infiniband-modules
 sbin/auto-update-pkgsrc
 sbin/auto-update-system
 sbin/auto-user-admin
 sbin/auto-useradd
 sbin/auto-using-pkgsrc
+sbin/auto-web-self-sign
+sbin/auto-web-setup
 sbin/auto-wifi-failover
 sbin/auto-write-cache-toggle
 sbin/auto-xdm-toggle
