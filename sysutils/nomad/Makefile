@@ -1,6 +1,6 @@
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.6
+DISTVERSION=	1.2.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -23,6 +23,7 @@ USE_RC_SUBR=	nomad
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 GH_SUBDIR=	src/github.com/hashicorp/nomad
+
 GH_TUPLE=	\
 		Azure:azure-sdk-for-go:v44.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
@@ -38,7 +39,6 @@ GH_TUPLE=	\
 		DataDog:datadog-go:v3.2.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		LK4D4:joincontext:1724345da6d5:lk4d4_joincontext/vendor/github.com/LK4D4/joincontext \
 		Microsoft:hcsshim:v0.8.9:microsoft_hcsshim/vendor/github.com/Microsoft/hcsshim \
-		NVIDIA:gpu-monitoring-tools:86f2a9fac6c5:nvidia_gpu_monitoring_tools/vendor/github.com/NVIDIA/gpu-monitoring-tools \
 		NYTimes:gziphandler:v1.0.0:nytimes_gziphandler/vendor/github.com/NYTimes/gziphandler \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
@@ -74,7 +74,7 @@ GH_TUPLE=	\
 		coreos:go-systemd:v22.1.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		cyphar:filepath-securejoin:7efe413b52e1:cyphar_filepath_securejoin/vendor/github.com/cyphar/filepath-securejoin \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		denverdino:aliyungo:d3308649c661:denverdino_aliyungo/vendor/github.com/denverdino/aliyungo \
+		denverdino:aliyungo:a747050bb1ba:denverdino_aliyungo/vendor/github.com/denverdino/aliyungo \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		digitalocean:godo:v1.10.0:digitalocean_godo/vendor/github.com/digitalocean/godo \
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
@@ -107,18 +107,18 @@ GH_TUPLE=	\
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:7f63de1d35b0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:c13cbed26979:golang_exp/vendor/golang.org/x/exp \
-		golang:lint:414d861bb4ac:golang_lint/vendor/golang.org/x/lint \
-		golang:mod:v0.2.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
+		golang:lint:16217165b5de:golang_lint/vendor/golang.org/x/lint \
+		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
+		golang:net:a5a99cb37ef4:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
+		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
+		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:00dd8d7831e7:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:cb1345f3a375:golang_tools/vendor/golang.org/x/tools \
-		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:tools:v0.1.5:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
@@ -145,15 +145,15 @@ GH_TUPLE=	\
 		hashicorp:go-cleanhttp:v0.5.2:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-connlimit:v0.3.0:hashicorp_go_connlimit/vendor/github.com/hashicorp/go-connlimit \
 		hashicorp:go-cty-funcs:2721b1e36840:hashicorp_go_cty_funcs/vendor/github.com/hashicorp/go-cty-funcs \
-		hashicorp:go-discover:c4b85f6ed31f:hashicorp_go_discover/vendor/github.com/hashicorp/go-discover \
+		hashicorp:go-discover:c573d69da192:hashicorp_go_discover/vendor/github.com/hashicorp/go-discover \
 		hashicorp:go-envparse:310ca1881b22:hashicorp_go_envparse/vendor/github.com/hashicorp/go-envparse \
 		hashicorp:go-getter:v1.5.4:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
-		hashicorp:go-hclog:v0.14.1:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
+		hashicorp:go-hclog:v1.0.0:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-immutable-radix:v1.3.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
 		hashicorp:go-memdb:v1.3.2:hashicorp_go_memdb/vendor/github.com/hashicorp/go-memdb \
 		hashicorp:go-msgpack:v1.1.5:hashicorp_go_msgpack/vendor/github.com/hashicorp/go-msgpack \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		hashicorp:go-plugin:v1.4.0:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
+		hashicorp:go-plugin:v1.4.3:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
 		hashicorp:go-retryablehttp:v0.6.7:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:go-rootcerts:v1.0.2:hashicorp_go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
 		hashicorp:go-safetemp:v1.0.0:hashicorp_go_safetemp/vendor/github.com/hashicorp/go-safetemp \
@@ -237,11 +237,12 @@ GH_TUPLE=	\
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		syndtr:gocapability:42c35b437635:syndtr_gocapability/vendor/github.com/syndtr/gocapability \
-		tencentcloud:tencentcloud-sdk-go:v1.0.83:tencentcloud_tencentcloud_sdk_go/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
+		tencentcloud:tencentcloud-sdk-go:v1.0.162:tencentcloud_tencentcloud_sdk_go/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
 		tj:go-spin:v1.1.0:tj_go_spin/vendor/github.com/tj/go-spin \
 		tklauser:go-sysconf:v0.3.6:tklauser_go_sysconf/vendor/github.com/tklauser/go-sysconf \
 		tklauser:numcpus:v0.2.2:tklauser_numcpus/vendor/github.com/tklauser/numcpus \
 		tv42:httpunix:b75d8614f926:tv42_httpunix/vendor/github.com/tv42/httpunix \
+		uber-go:goleak:v1.1.12:uber_go_goleak/vendor/go.uber.org/goleak \
 		ulikunitz:xz:v0.5.8:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		vishvananda:netlink:v1.1.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:0a2b9b5464df:vishvananda_netns/vendor/github.com/vishvananda/netns \
