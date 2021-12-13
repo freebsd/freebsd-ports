@@ -1,12 +1,50 @@
+  <vuln vid="93a1c9a7-5bef-11ec-a47a-001517a2e1a4">
+    <topic>openhab -- log4j remote code injection</topic>
+    <affects>
+      <package>
+        <name>openhab2</name>
+	<name>openhab</name>
+        <range><le>2.5.12</le></range>
+	<range><lt>3.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Openhab reports:</p>
+	<blockquote cite="https://github.com/openhab/openhab-distro/security/advisories/GHSA-j99j-qp89-pcfq">
+	  <p>Any openHAB instance that is publicly available or which consumes untrusted content from remote servers is potentially a target of this attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44228</cvename>
+      <url>https://github.com/openhab/openhab-distro/security/advisories/GHSA-j99j-qp89-pcfq</url>
+      <url>https://github.com/ops4j/org.ops4j.pax.logging/security/advisories/GHSA-xxfh-x98p-j8fr</url>
+      <url>https://github.com/advisories/GHSA-jfh8-c2jp-5v3q</url>
+    </references>
+    <dates>
+      <discovery>2021-12-10</discovery>
+      <entry>2021-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66cf7c43-5be3-11ec-a587-001b217b3468">
     <topic>Solr -- Apache Log4J</topic>
     <affects>
       <package>
 	<name>apache-solr</name>
 	<range><lt>8.11.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Solr reports:</p>
 	<blockquote cite="https://solr.apache.org/security.html">
 	  <p>Apache Solr affected by Apache Log4J</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
       <url>https://solr.apache.org/security.html</url>
     </references>
     <dates>
