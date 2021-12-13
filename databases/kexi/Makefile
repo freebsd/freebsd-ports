@@ -1,6 +1,6 @@
 PORTNAME=		kexi
 DISTVERSION=		3.2.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		databases kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
@@ -21,7 +21,7 @@ USE_KDE=		auth bookmarks codecs completion config \
 			solid sonnet texteditor textwidgets widgetsaddons \
 			xmlgui breeze-icons_build
 USE_QT=			concurrent core dbus declarative gui network printsupport webkit widgets xml \
-			buildtools_build qmake_build
+			buildtools_build qmake_build testlib_build
 
 CONFLICTS_INSTALL=	calligra-2*
 
