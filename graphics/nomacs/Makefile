@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libquazip1-qt5.so:archivers/quazip
 
-USES=		cmake compiler:c++11-lang desktop-file-utils \
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils \
 		dos2unix pkgconfig qt:5
 USE_QT=		concurrent core gui network printsupport svg widgets \
 		buildtools_build linguisttools_build qmake_build
