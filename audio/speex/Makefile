@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CPE_VENDOR=	xiph
 
 .include <bsd.port.mk>
