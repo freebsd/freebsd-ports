@@ -16,7 +16,7 @@ lib/libtdclient.a
 lib/libtdcore.a
 lib/libtddb.a
 lib/libtdjson.so
-lib/libtdjson.so.1.7.8
+lib/libtdjson.so.1.7.10
 lib/libtdjson_private.a
 lib/libtdjson_static.a
 lib/libtdnet.a
