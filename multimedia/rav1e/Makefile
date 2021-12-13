@@ -1,7 +1,7 @@
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION?=	1
+DISTVERSION=	0.5.1
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,22 +18,21 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
 PLIST_FILES?=	bin/${PORTNAME}
 
-CARGO_CRATES=	addr2line-0.16.0 \
+CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
 		aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.44 \
+		anyhow-1.0.51 \
 		aom-sys-0.3.0 \
 		arbitrary-0.4.7 \
-		arg_enum_proc_macro-0.3.1 \
+		arg_enum_proc_macro-0.3.2 \
 		arrayvec-0.7.2 \
 		assert_cmd-2.0.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		av-metrics-0.7.2 \
-		backtrace-0.3.62 \
+		backtrace-0.3.63 \
 		bindgen-0.58.1 \
 		bitflags-1.3.2 \
 		bitstream-io-1.2.0 \
@@ -42,17 +41,17 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		bytemuck-1.7.2 \
 		byteorder-1.4.3 \
 		cast-0.2.7 \
-		cc-1.0.71 \
+		cc-1.0.72 \
 		cexpr-0.4.0 \
 		cfg-expr-0.7.4 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clang-sys-1.2.2 \
-		clap-2.33.3 \
+		clang-sys-1.3.0 \
+		clap-2.34.0 \
 		cmake-0.1.46 \
 		color_quant-1.1.0 \
 		console-0.14.1 \
-		crc32fast-1.2.1 \
+		crc32fast-1.3.0 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
 		crossbeam-0.8.1 \
@@ -74,7 +73,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		env_logger-0.8.4 \
 		fern-0.6.0 \
 		getrandom-0.2.3 \
-		gimli-0.25.0 \
+		gimli-0.26.1 \
 		glob-0.3.0 \
 		half-1.8.2 \
 		heck-0.3.3 \
@@ -83,22 +82,22 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		image-0.23.14 \
 		interpolate_name-0.2.3 \
 		itertools-0.8.2 \
-		itertools-0.10.1 \
+		itertools-0.10.3 \
 		itoa-0.4.8 \
 		jobserver-0.1.24 \
 		js-sys-0.3.55 \
 		lab-0.11.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.106 \
+		libc-0.2.112 \
 		libfuzzer-sys-0.3.5 \
-		libloading-0.7.1 \
+		libloading-0.7.2 \
 		log-0.4.14 \
 		memchr-2.4.1 \
-		memoffset-0.6.4 \
+		memoffset-0.6.5 \
 		miniz_oxide-0.3.7 \
 		miniz_oxide-0.4.4 \
-		nasm-rs-0.2.1 \
+		nasm-rs-0.2.2 \
 		nom-5.1.2 \
 		noop_proc_macro-0.3.0 \
 		num-derive-0.3.3 \
@@ -110,19 +109,19 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		object-0.27.1 \
 		oorandom-11.1.3 \
 		output_vt100-0.1.2 \
-		paste-1.0.5 \
+		paste-1.0.6 \
 		peeking_take_while-0.1.2 \
-		pkg-config-0.3.22 \
+		pkg-config-0.3.24 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
 		png-0.16.8 \
 		ppv-lite86-0.2.15 \
-		predicates-2.0.3 \
+		predicates-2.1.0 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.4 \
 		pretty_assertions-0.7.2 \
-		proc-macro2-1.0.32 \
+		proc-macro2-1.0.33 \
 		quote-1.0.10 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
@@ -140,24 +139,24 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		ryu-1.0.5 \
+		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scan_fmt-0.2.6 \
 		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		serde-1.0.130 \
+		serde-1.0.131 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde_derive-1.0.131 \
+		serde_json-1.0.72 \
 		shlex-1.1.0 \
-		signal-hook-0.3.10 \
+		signal-hook-0.3.12 \
 		signal-hook-registry-1.4.0 \
 		simd_helpers-0.1.0 \
 		smallvec-1.7.0 \
 		strsim-0.8.0 \
 		strum-0.21.0 \
 		strum_macros-0.21.1 \
-		syn-1.0.81 \
+		syn-1.0.82 \
 		system-deps-3.1.2 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
