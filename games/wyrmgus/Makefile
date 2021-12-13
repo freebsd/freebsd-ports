@@ -1,7 +1,7 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
 
 PORTNAME=	wyrmgus
-PORTVERSION=	5.2.4
+PORTVERSION=	5.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games devel
 
