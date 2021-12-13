@@ -1,6 +1,6 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.23.1
+DISTVERSION=	5.23.2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -43,7 +43,7 @@ USE_QT=		qmake_build buildtools_build core dbus declarative gui \
 		multimedia_run quickcontrols2_run widgets x11extras
 USE_XORG=	x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
-GL_COMMIT=	0f52a582b9126f223ad36ddff108824f094073d1
+GL_COMMIT=	611fe6a008c0fed3bff8004f56d240161190540b
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, epoll-shim, glib, intl, Qt5*, KF5*
 
