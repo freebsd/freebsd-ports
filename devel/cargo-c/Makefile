@@ -1,7 +1,6 @@
 PORTNAME=	cargo-c
-DISTVERSION=	0.9.5
-DISTVERSIONSUFFIX=	+cargo-0.57
-PORTREVISION=	2
+DISTVERSION=	0.9.6
+DISTVERSIONSUFFIX=	+cargo-0.58
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -26,8 +25,8 @@ PLIST_FILES=	bin/cargo-capi \
 
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
-		anyhow-1.0.44 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.51 \
 		arrayvec-0.5.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
@@ -35,23 +34,23 @@ CARGO_CRATES=	adler-1.0.2 \
 		bitmaps-2.1.0 \
 		bstr-0.2.17 \
 		bytesize-1.1.0 \
-		cargo-0.57.0 \
+		cargo-0.58.0 \
 		cargo-platform-0.1.2 \
 		cargo-util-0.1.1 \
 		cbindgen-0.20.0 \
-		cc-1.0.71 \
+		cc-1.0.72 \
 		cfg-if-1.0.0 \
-		clap-2.33.3 \
+		clap-2.34.0 \
 		commoncrypto-0.2.0 \
 		commoncrypto-sys-0.2.0 \
 		core-foundation-0.9.2 \
 		core-foundation-sys-0.8.3 \
 		crates-io-0.33.0 \
-		crc32fast-1.2.1 \
+		crc32fast-1.3.0 \
 		crossbeam-utils-0.8.5 \
 		crypto-hash-0.3.4 \
-		curl-0.4.39 \
-		curl-sys-0.4.49+curl-7.79.1 \
+		curl-0.4.41 \
+		curl-sys-0.4.51+curl-7.80.0 \
 		either-1.6.1 \
 		env_logger-0.9.0 \
 		filetime-0.2.15 \
@@ -62,7 +61,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		form_urlencoded-1.0.1 \
 		fwdansi-1.1.0 \
 		getrandom-0.2.3 \
-		git2-0.13.23 \
+		git2-0.13.25 \
 		git2-curl-0.14.1 \
 		glob-0.3.0 \
 		globset-0.4.8 \
@@ -77,13 +76,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		ignore-0.4.18 \
 		im-rc-15.0.0 \
 		indexmap-1.7.0 \
-		itertools-0.10.1 \
+		itertools-0.10.3 \
 		itoa-0.4.8 \
 		jobserver-0.1.24 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.104 \
-		libgit2-sys-0.12.24+1.3.0 \
+		libc-0.2.111 \
+		libgit2-sys-0.12.26+1.3.0 \
 		libnghttp2-sys-0.1.7+1.45.0 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.3 \
@@ -95,16 +94,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		num_cpus-1.13.0 \
 		once_cell-1.8.0 \
 		opener-0.5.0 \
-		openssl-0.10.36 \
+		openssl-0.10.38 \
 		openssl-probe-0.1.4 \
 		openssl-src-111.16.0+1.1.1l \
-		openssl-sys-0.9.67 \
+		openssl-sys-0.9.72 \
+		os_info-3.0.8 \
 		percent-encoding-2.1.0 \
-		pkg-config-0.3.20 \
-		ppv-lite86-0.2.14 \
+		pkg-config-0.3.24 \
+		ppv-lite86-0.2.15 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.30 \
+		proc-macro2-1.0.33 \
 		quote-1.0.10 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
@@ -119,14 +119,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		remove_dir_all-0.5.3 \
 		rustc-workspace-hack-1.0.0 \
 		rustfix-0.6.0 \
-		ryu-1.0.5 \
+		ryu-1.0.9 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
 		semver-1.0.4 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
+		serde-1.0.131 \
+		serde_derive-1.0.131 \
 		serde_ignored-0.1.2 \
-		serde_json-1.0.68 \
+		serde_json-1.0.72 \
 		shell-escape-0.1.5 \
 		sized-chunks-0.6.5 \
 		socket2-0.4.2 \
@@ -134,13 +134,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		strsim-0.8.0 \
 		structopt-0.3.25 \
 		structopt-derive-0.4.18 \
-		syn-1.0.80 \
+		syn-1.0.82 \
 		tar-0.4.37 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
 		thread_local-1.1.3 \
-		tinyvec-1.5.0 \
+		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		typenum-1.14.0 \
