@@ -1,7 +1,7 @@
 # Created by: n_hibma@qubesoft.com
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.38
+DISTVERSION=	2.1.39
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
