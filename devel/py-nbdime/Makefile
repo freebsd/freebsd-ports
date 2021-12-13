@@ -22,8 +22,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.7+ cpe
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	jupyter
 
 NO_ARCH=	yes
 
