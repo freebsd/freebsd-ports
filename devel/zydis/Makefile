@@ -12,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	see definitions in include/Zycore/Defines.h
 
-USES=		cmake localbase:ldflags
+USES=		cmake cpe localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	zyantific
 GH_TUPLE=	zyantific:zycore-c:273e26a:zydis/dependencies/zycore
+CPE_VENDOR=	zyantific
 
 .include <bsd.port.mk>
