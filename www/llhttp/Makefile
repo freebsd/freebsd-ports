@@ -11,7 +11,7 @@ COMMENT=	Port of http_parser to llparse
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
-USES=		cmake
+USES=		cmake cpe
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
