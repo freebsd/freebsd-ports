@@ -2,9 +2,9 @@
     <topic>openhab -- log4j remote code injection</topic>
     <affects>
       <package>
-        <name>openhab2</name>
+	<name>openhab2</name>
 	<name>openhab</name>
-        <range><le>2.5.12</le></range>
+	<range><le>2.5.12</le></range>
 	<range><lt>3.1.1</lt></range>
       </package>
     </affects>
@@ -41,7 +41,7 @@
 	<p>Solr reports:</p>
 	<blockquote cite="https://solr.apache.org/security.html">
 	  <p>Apache Solr affected by Apache Log4J</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
