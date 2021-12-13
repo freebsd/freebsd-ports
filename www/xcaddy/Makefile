@@ -10,8 +10,7 @@ COMMENT=	Command line tool to make custom builds of the Caddy Web Server
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
-CPE_VENDOR=	caddyserver
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	caddyserver
