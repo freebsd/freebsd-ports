@@ -9,10 +9,11 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang localbase:ldflags pkgconfig ssl xorg
+USES=		cmake compiler:c++14-lang cpe localbase:ldflags pkgconfig ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	debauchee
 USE_XORG=	ice sm x11 xext xi xinerama xrandr xtst
+CPE_VENDOR=	barrier_project
 
 CMAKE_ARGS=	-DBARRIER_BUILD_DATE=00000000
 
