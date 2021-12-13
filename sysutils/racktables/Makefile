@@ -16,10 +16,11 @@ RACKHOME?=	www/racktables
 
 PORTEXAMPLES=	cleanup_ldap_cache.php init-sample-racks.sql syncdomain.php
 
-USES=		shebangfix php:web perl5 python:run
+USES=		cpe shebangfix php:web perl5 python:run
 NO_ARCH=	yes
 USE_PERL5=	run
 SHEBANG_FILES=	gateways/*
+CPE_VENDOR=	racktables_project
 
 USE_PHP=	bcmath gd json mbstring mysqli pdo_mysql session
 SUB_FILES=	pkg-message
