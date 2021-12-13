@@ -1,3 +1,20 @@
+  <vuln vid="66cf7c43-5be3-11ec-a587-001b217b3468">
+    <topic>Solr -- Apache Log4J</topic>
+    <affects>
+      <package>
+	<name>apache-solr</name>
+	<range><lt>8.11.0</lt></range>
+	<p>Solr reports:</p>
+	<blockquote cite="https://solr.apache.org/security.html">
+	  <p>Apache Solr affected by Apache Log4J</p>
+      <url>https://solr.apache.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-10</discovery>
+      <entry>2021-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b1ac5a3-5bd4-11ec-8602-589cfc007716">
     <topic>OpenSearch -- Log4Shell</topic>
     <affects>
