@@ -7,7 +7,7 @@ a few additional ports, i.e.:
 
   * audio/pavucontrol - for audio/volume control
   * www/firefox - or any other browser to access help
-  * x11/xcalc - as destination for a pre-set up caclulator link
+  * x11/xcalc - as destination for a pre-set up calculator link
   * editors/nedit - as text editor
   * x11/arandr - for multi screen configuration
   * x11/xscreensaver - as lock screen
