@@ -1,3 +1,29 @@
+  <vuln vid="4b1ac5a3-5bd4-11ec-8602-589cfc007716">
+    <topic>OpenSearch -- Log4Shell</topic>
+    <affects>
+      <package>
+	<name>opensearch</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSearch reports:</p>
+	<blockquote cite="https://opensearch.org/blog/releases/2021/12/update-to-1-2-1/">
+	  <p>A <a href="https://www.lunasec.io/docs/blog/log4j-zero-day/">recently published</a> security issue (<a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228">CVE-2021-44228</a>) affects several versions of the broadly-used <a href="https://logging.apache.org/log4j/2.x/">Apache Log4j</a> library. Some software in the OpenSearch project includes versions of Log4j referenced in this CVE. While, at time of writing, the team has not found a reproduceable example in OpenSearch of remote code execution (RCE) described in this issue, its severity is such that all users should take mitigation measures. As recommended by the advisory, the team has released OpenSearch 1.2.1, which updates Log4j to version 2.15.0. For those who cannot upgrade to 1.2.1, the <a href="https://logging.apache.org/log4j/2.x/">Log4j website outlines additional measures to mitigate the issue</a>. This patch release also addresses <a href="https://alas.aws.amazon.com/AL2/ALAS-2021-1722.html">CVE-2021-4352</a> in the OpenSearch Docker distributions..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44228</cvename>
+      <url>https://opensearch.org/blog/releases/2021/12/update-to-1-2-1/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-11</discovery>
+      <entry>2021-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e33880ed-5802-11ec-8398-6c3be5272acd">
     <topic>Grafana -- Path Traversal</topic>
     <affects>
