@@ -20,8 +20,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.1.1:devel/py-cloudpickle@${PY
 		${PYTHON_PKGNAMEPREFIX}toolz>=0.8.2:devel/py-toolz@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.7+ cpe
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	anaconda
 
 NO_ARCH=	yes
 
