@@ -1,3 +1,38 @@
+  <vuln vid="0dcf68fa-5c31-11ec-875e-901b0e9408dc">
+    <topic>Matrix clients -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cinny</name>
+	<range><lt>1.6.0</lt></range>
+      </package>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2021/12/13/disclosure-buffer-overflow-in-libolm-and-matrix-js-sdk">
+	  <p>Today we are releasing security updates to libolm, matrix-js-sdk,
+	  and several clients including Element Web / Desktop. Users are
+	  encouraged to upgrade as soon as possible.</p>
+	  <p>These releases mitigate a buffer overflow in olm_session_describe,
+	  a libolm debugging function used by matrix-js-sdk in its end-to-end
+	  encryption (E2EE) implementation. If you rely on matrix-js-sdk for
+	  E2EE, you are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://matrix.org/blog/2021/12/13/disclosure-buffer-overflow-in-libolm-and-matrix-js-sdk</url>
+    </references>
+    <dates>
+      <discovery>2021-12-03</discovery>
+      <entry>2021-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93a1c9a7-5bef-11ec-a47a-001517a2e1a4">
     <topic>openhab -- log4j remote code injection</topic>
     <affects>
