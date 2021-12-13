@@ -20,6 +20,7 @@ include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_funcs.hpp
 include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_handles.hpp
+include/vulkan/vulkan_hash.hpp
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
