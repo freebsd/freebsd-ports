@@ -87,7 +87,7 @@ libexec/openhab/runtime/system/javax/annotation/javax.annotation-api/1.3/javax.a
 libexec/openhab/runtime/system/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar
 libexec/openhab/runtime/system/javax/mail/mail/1.4.7/mail-1.4.7.jar
 libexec/openhab/runtime/system/javax/measure/unit-api/2.1.2/unit-api-2.1.2.jar
-libexec/openhab/runtime/system/javax/servlet/javax.servlet-api/%%PORTVERSION%%/javax.servlet-api-%%PORTVERSION%%.jar
+libexec/openhab/runtime/system/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
 libexec/openhab/runtime/system/net/java/dev/jna/jna-platform/5.8.0/jna-platform-5.8.0.jar
 libexec/openhab/runtime/system/net/java/dev/jna/jna/5.8.0/jna-5.8.0.jar
 libexec/openhab/runtime/system/org/apache/aries/component-dsl/org.apache.aries.component-dsl.component-dsl/1.2.2/org.apache.aries.component-dsl.component-dsl-1.2.2.jar
