@@ -33,7 +33,7 @@
     <affects>
       <package>
 	<name>apache-solr</name>
-	<range><lt>8.11.0</lt></range>
+	<range><lt>8.11.1</lt></range>
       </package>
     </affects>
     <description>
@@ -50,6 +50,7 @@
     <dates>
       <discovery>2021-12-10</discovery>
       <entry>2021-12-13</entry>
+      <modified>2021-12-13</modified>
     </dates>
   </vuln>
 
