@@ -1,7 +1,7 @@
 # Created by: Matthias Petermann <matthias@petermann-it.de>
 
 PORTNAME=	sweethome3d
-PORTVERSION=	6.6.2
+PORTVERSION=	6.6.4
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
