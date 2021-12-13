@@ -1,3 +1,5 @@
 TIMESTAMP = 1618939913
 SHA256 (warzone2100-4.0.1/warzone2100_src.tar.xz) = 337622d5f813bbc1f9a3b4fee0874fcc074806781cfa9c25a252534ddd240ab9
 SIZE (warzone2100-4.0.1/warzone2100_src.tar.xz) = 337713608
+SHA256 (warzone2100-4.0.1/5e6fdab3feac.patch) = 579ffd85c09ffca615a9c90cb07d1021d7dc58fe12dffed8c7e5602cdaa8ca7d
+SIZE (warzone2100-4.0.1/5e6fdab3feac.patch) = 1737

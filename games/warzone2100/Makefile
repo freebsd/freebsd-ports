@@ -6,6 +6,9 @@ MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_src
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	5e6fdab3feac.patch:-p1 # https://github.com/Warzone2100/warzone2100/pull/2479
+
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
