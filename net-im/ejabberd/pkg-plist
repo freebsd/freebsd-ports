@@ -856,7 +856,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/img/vcss.png
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/js/admin.js
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/js/muc.js
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/lua/redis_sm.lua
+%%REDIS%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/lua/redis_sm.lua
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ca.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/cs.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/de.msg
