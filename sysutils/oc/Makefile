@@ -11,8 +11,6 @@ COMMENT=	OpenShift Command Line
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
 
-BROKEN=		does not fetch (checksum mismatch)
-
 ONLY_FOR_ARCHS=	amd64
 
 USES=		go:modules
