@@ -15,6 +15,6 @@
  
 -if dep_vulkan.found()
 +if true
-   datadir = get_option('datadir')
-   if not datadir.startswith('/')
-     datadir = get_option('prefix') / datadir
+   datadir = get_option('vulkan_datadir')
+   if datadir == ''
+     datadir = get_option('datadir')

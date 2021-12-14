@@ -1,5 +1,7 @@
-TIMESTAMP = 1597596860
-SHA256 (flightlessmango-MangoHud-v0.5.1_GH0.tar.gz) = 3e91d4fc7369d46763894c13f3315133871dd02705072981770c3cf58e8081c6
-SIZE (flightlessmango-MangoHud-v0.5.1_GH0.tar.gz) = 15042595
-SHA256 (cec98369ae34d910476b78f98adece96016ab603.diff) = 5af8817cc62bbf441c7a7b735f391bb648e7d90668e7a3746c1b91199698b1d6
-SIZE (cec98369ae34d910476b78f98adece96016ab603.diff) = 551
+TIMESTAMP = 1625725439
+SHA256 (imgui-1.81-1-wrap.zip) = 6d00b442690b6a5c5d8f898311daafbce16d370cf64f53294c3b8c5c661e435f
+SIZE (imgui-1.81-1-wrap.zip) = 1850
+SHA256 (flightlessmango-MangoHud-v0.6.5_GH0.tar.gz) = 5e5490407a64275e04dae7b3068cbfcbb522f02c632c872a212b95025a316f72
+SIZE (flightlessmango-MangoHud-v0.6.5_GH0.tar.gz) = 14828281
+SHA256 (ocornut-imgui-v1.81_GH0.tar.gz) = f7c619e03a06c0f25e8f47262dbc32d61fd033d2c91796812bf0f8c94fca78fb
+SIZE (ocornut-imgui-v1.81_GH0.tar.gz) = 1413443

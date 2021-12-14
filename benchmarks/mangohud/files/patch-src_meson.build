@@ -13,11 +13,11 @@
      dep_dl,
      dep_rt,
      dep_pthread,
--    dep_vulkan],
-+    dep_inotify],
+-    dep_vulkan,
++    dep_inotify,
+     windows_deps],
    include_directories : [inc_common],
    link_args : link_args,
-   install_dir : libdir_mangohud,
 @@ -187,7 +187,7 @@ configure_file(input : '../bin/mangohud.in',
  if get_option('include_doc')
    install_data(

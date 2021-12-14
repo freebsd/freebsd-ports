@@ -1,12 +1,11 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	mangohud
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	cec98369ae34d910476b78f98adece96016ab603.diff:-p1
+MASTER_SITES=	https://wrapdb.mesonbuild.com/v1/projects/imgui/1.81/1/get_zip?dummy=/:igw
+DISTFILES=	imgui-1.81-1-wrap.zip:igw
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Vulkan/OpenGL overlay for CPU/GPU monitoring
@@ -21,10 +20,14 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		compiler:c++14-lang meson pkgconfig python:build xorg
 USE_GITHUB=	yes
-GH_ACCOUNT=	flightlessmango
-GH_PROJECT=	MangoHud
+GH_ACCOUNT=	flightlessmango ocornut:ig
+GH_PROJECT=	MangoHud imgui:ig
+GH_TAGNAME=	v1.81:ig
+GH_SUBDIR=	subprojects/imgui-1.81:ig
 USE_XORG=	x11
 MESON_ARGS=	-Duse_system_vulkan=enabled -Dwith_xnvctrl=disabled
+
+CPPFLAGS+=	-DPROCDIR=\\\"${LINUXBASE}/proc\\\"
 
 PLIST_FILES=	bin/mangohud lib/mangohud/libMangoHud.so \
 		lib/mangohud/libMangoHud_dlsym.so man/man1/mangohud.1.gz \
@@ -38,15 +41,13 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_MESON_OFF=	-Dwith_dbus=disabled
 
 post-patch:
-	@${REINPLACE_CMD} -e '/version : /s,0\.4\.0,${PORTVERSION}, ; \
+	@${REINPLACE_CMD} -e 's,cygwin,${OPSYS:tl}, ; \
 		/^prog_python = /s,3,${PYTHON_VER},' ${WRKSRC}/meson.build
-	@${REINPLACE_CMD} -e '1s,usr/bin/env ba,bin/,' \
-		${WRKSRC}/bin/mangohud.in
 	@${REINPLACE_CMD} -e 's,/usr/share/doc,${PREFIX}/share/examples,' \
 		${WRKSRC}/data/mangohud.1
-	@${REINPLACE_CMD} -e '/#include <sys\/sysinfo\.h>/d' \
-		${WRKSRC}/src/overlay_params.cpp
 	@${REINPLACE_CMD} -e 's,libdl\.so,ld-elf.so,' \
 		${WRKSRC}/src/real_dlsym.cpp
+	@${REINPLACE_CMD} -e 's,def __gnu_linux__,ndef _WIN32,' \
+		${WRKSRC}/src/logging.cpp
 
 .include <bsd.port.mk>
