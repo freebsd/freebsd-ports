@@ -10,6 +10,8 @@ COMMENT=	3D physics-based puzzle game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		not build with Bullet3.
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libIrrlicht.so:x11-toolkits/irrlicht \
 		libvorbis.so:audio/libvorbis \

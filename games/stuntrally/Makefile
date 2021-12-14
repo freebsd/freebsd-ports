@@ -9,6 +9,8 @@ COMMENT=	3D racing game based on VDrift and OGRE with track editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=		not build with Bullet3.
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USE_GITHUB=	yes
