@@ -1,6 +1,5 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.9.5
-PORTREVISION=	1
+DISTVERSION=	3.10
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -8,6 +7,7 @@ PATCHFILES+=	ec8e547be135.patch:-p1 # https://github.com/Plagman/gamescope/pull/
 PATCHFILES+=	ea415ae28442.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	7c188b24afaa.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
+PATCHFILES+=	392c5be67571.patch:-p1 # https://github.com/Plagman/gamescope/pull/330
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Micro-compositor from SteamOS
