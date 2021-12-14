@@ -1,3 +1,47 @@
+  <vuln vid="fb9ba490-5cc4-11ec-aac7-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>96.0.4664.110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/12/stable-channel-update-for-desktop_13.html">
+	  <p>This release contains 5 security fixes, including:</p>
+	  <ul>
+	    <li>[1263457] Critical CVE-2021-4098: Insufficient data validation
+	      in Mojo. Reported by Sergei Glazunov of Google Project Zero on
+	      2021-10-26</li>
+	    <li>[1270658] High CVE-2021-4099: Use after free in Swiftshader.
+	      Reported by Aki Helin of Solita on 2021-11-16</li>
+	    <li>[1272068] High CVE-2021-4100: Object lifecycle issue in ANGLE.
+	      Reported by Aki Helin of Solita on 2021-11-19</li>
+	    <li>[1262080] High CVE-2021-4101: Heap buffer overflow in
+	      Swiftshader. Reported by Abraruddin Khan and Omair on
+	      2021-10-21</li>
+	    <li>[1278387] High CVE-2021-4102: Use after free in V8. Reported by
+	      Anonymous on 2021-12-09</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-4098</cvename>
+      <cvename>CVE-2021-4099</cvename>
+      <cvename>CVE-2021-4100</cvename>
+      <cvename>CVE-2021-4101</cvename>
+      <cvename>CVE-2021-4102</cvename>
+      <url>https://chromereleases.googleblog.com/2021/12/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-13</discovery>
+      <entry>2021-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0dcf68fa-5c31-11ec-875e-901b0e9408dc">
     <topic>Matrix clients -- several vulnerabilities</topic>
     <affects>
