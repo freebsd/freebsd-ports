@@ -1,7 +1,7 @@
 # Created by: Sergey Matveychuk <sem@FreeBSD.org>
 
 PORTNAME=	unbound
-DISTVERSION=	1.13.2
+DISTVERSION=	1.14.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
