@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# $FreeBSD
+#
 
 # PROVIDE: bastillion
 # REQUIRE: NETWORKING SERVERS
@@ -40,5 +43,8 @@ else
 fi
 
 export JAVA_HOME
+LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+export LOG4J_FORMAT_MSG_NO_LOOKUPS
+
 
 run_rc_command "$1"

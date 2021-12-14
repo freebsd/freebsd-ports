@@ -1,9 +1,11 @@
+# $FreeBSD: head/security/bastillion/Makefile 513677 2019-10-03 17:22:17Z glewis $
+
 PORTNAME=		bastillion
 DISTVERSIONPREFIX=	jetty-v
 DISTVERSION=		3.10_00
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-upgrade-3.08.00.jar
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		security www java
 MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 
