@@ -31,7 +31,6 @@ GH_ACCOUNT=	babluboy
 USE_GNOME=	gdkpixbuf2 glib20 gtk30 libxml2 pango
 
 GLIB_SCHEMAS=	com.github.babluboy.bookworm.gschema.xml
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	data/scripts/com.github.babluboy.bookworm.search.sh \
 		data/scripts/mobi_lib/mobi_dict.py \
 		data/scripts/mobi_lib/mobi_html.py \

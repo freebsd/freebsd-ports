@@ -71,8 +71,6 @@ CXXFLAGS+=	-DNDEBUG
 # see Bugzilla #245452 for details
 NO_CCACHE=	yes
 
-INSTALLS_ICONS=	yes
-
 # Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
 # If both of them are not installed, then voice calls do not work, but other functionalities still work.

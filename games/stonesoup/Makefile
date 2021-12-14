@@ -67,7 +67,6 @@ LUA_DESC=	Bindings for LUA user scripts
 USES+=		gl sdl
 USE_SDL=	sdl2 image2 mixer2
 USE_GL=		gl glu
-SDL_USES_OFF=	ncurses
 MAKE_ARGS+=	TILES=y SOUND=y
 BUILD_DEPENDS+=	\
 		advpng:archivers/advancecomp \

@@ -74,7 +74,6 @@ CPE_PRODUCT=	chrome
 DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
 USE_GL=		gbm gl
 USE_GNOME=	atk dconf gdkpixbuf2 glib20 gtk30 libxml2 libxslt
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xcursor xext xdamage xfixes xi \

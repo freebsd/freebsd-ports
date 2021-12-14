@@ -8,7 +8,7 @@ MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	QEMU CPU Emulator
+COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT}
 
 LICENSE=	GPLv2
 

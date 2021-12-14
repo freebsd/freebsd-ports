@@ -32,8 +32,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	calf-studio-gear
 GH_TAGNAME=	648f05e85287cf08af198bdd9e52baba95b502ec # this revision has clang compilation issues fixed
 
-INSTALLS_ICONS=	yes
-
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		DOCS LASH

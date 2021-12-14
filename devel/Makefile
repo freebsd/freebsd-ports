@@ -289,6 +289,7 @@
     SUBDIR += brz
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
+    SUBDIR += bsddialog
     SUBDIR += bsdowl
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
@@ -298,7 +299,6 @@
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
-    SUBDIR += bsddialog
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator
