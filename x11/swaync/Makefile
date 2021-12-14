@@ -1,5 +1,5 @@
 PORTNAME=	swaync
-PORTVERSION=	s20211203
+PORTVERSION=	s20211214
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
-GH_TAGNAME=	75894f5
+GH_TAGNAME=	f0c3918
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-client \
 		"@sample etc/xdg/${PORTNAME}/config.json.sample" \
