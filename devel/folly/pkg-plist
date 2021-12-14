@@ -342,7 +342,6 @@ include/folly/experimental/coro/Transform-inl.h
 include/folly/experimental/coro/Transform.h
 include/folly/experimental/coro/UnboundedQueue.h
 include/folly/experimental/coro/ViaIfAsync.h
-include/folly/experimental/coro/Wait.h
 include/folly/experimental/coro/WithAsyncStack.h
 include/folly/experimental/coro/WithCancellation.h
 include/folly/experimental/coro/detail/Barrier.h
@@ -362,10 +361,16 @@ include/folly/experimental/exception_tracer/ExceptionCounterLib.h
 include/folly/experimental/exception_tracer/ExceptionTracer.h
 include/folly/experimental/exception_tracer/ExceptionTracerLib.h
 include/folly/experimental/exception_tracer/SmartExceptionTracer.h
+include/folly/experimental/exception_tracer/SmartExceptionTracerSingleton.h
 include/folly/experimental/exception_tracer/StackTrace.h
 include/folly/experimental/flat_combining/FlatCombining.h
+include/folly/experimental/io/AsyncBase.h
+include/folly/experimental/io/AsyncIO.h
 include/folly/experimental/io/FsUtil.h
+include/folly/experimental/io/IoUring.h
+include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/HugePages.h
+include/folly/experimental/io/SimpleAsyncIO.h
 include/folly/experimental/observer/Observable-inl.h
 include/folly/experimental/observer/Observable.h
 include/folly/experimental/observer/Observer-inl.h
