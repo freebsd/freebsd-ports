@@ -21,6 +21,9 @@ include/reflex/traits.h
 include/reflex/unicode.h
 include/reflex/utf8.h
 lib/libreflex.a
-lib/libreflexmin.a
+lib/libreflex.so
+lib/cmake/reflex/ReflexConfig.cmake
+lib/cmake/reflex/ReflexTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/reflex/ReflexTargets.cmake
 %%DATADIR%%/lex.vim
 man/man1/reflex.1.gz
