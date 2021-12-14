@@ -1,6 +1,5 @@
 PORTNAME=	ad2vcf
-DISTVERSION=	0.1.3-31
-DISTVERSIONSUFFIX=	-g2073297
+DISTVERSION=	0.1.4
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,6 +13,7 @@ LIB_DEPENDS=	libbiolibc.so:biology/biolibc libxtend.so:devel/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
+MAKE_ENV+=	VERSION=${PORTVERSION}
 PLIST_FILES=	bin/ad2vcf man/man1/ad2vcf.1.gz
 
 pre-build:
