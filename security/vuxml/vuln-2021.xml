@@ -1,3 +1,28 @@
+  <vuln vid="515df85a-5cd7-11ec-a16d-001517a2e1a4">
+    <topic>bastillion -- log4j vulnerability</topic>
+    <affects>
+      <package>
+	<name>bastillion</name>
+	<range><lt>3.10.00_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FreeBSD port maintainer reports:</p>
+	<blockquote>
+	  <p>Bastillion uses log4j.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44228</cvename>
+    </references>
+    <dates>
+      <discovery>2021-12-10</discovery>
+      <entry>2021-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb9ba490-5cc4-11ec-aac7-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
