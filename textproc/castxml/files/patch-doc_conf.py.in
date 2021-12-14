@@ -1,0 +1,11 @@
+--- doc/conf.py.in.orig	2018-11-15 20:05:42 UTC
++++ doc/conf.py.in
+@@ -52,7 +52,7 @@ for fpath in castxml_manuals:
+                               name, desc, [], int(sec)))
+         else:
+             sys.stderr.write("ERROR: No castxml-manual-description in '%s'\n" % fpath)
+-    except Exception, e:
++    except Exception as e:
+         sys.stderr.write("ERROR: %s\n" % str(e))
+ man_show_urls = False
+ 

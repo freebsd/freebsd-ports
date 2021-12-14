@@ -10,6 +10,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Sphinix should be < 4.0 for now: https://github.com/dzhu/rstfmt/issues/12
+BROKEN=	Doesn't work with Sphinx 4 or greater
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.2:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}black>=19.10b0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=2.4.0,1<4.0,1:textproc/py-sphinx@${PY_FLAVOR}

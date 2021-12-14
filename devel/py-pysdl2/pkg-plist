@@ -52,7 +52,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/underscore-1.12.0.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore-1.13.1.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/copying.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
