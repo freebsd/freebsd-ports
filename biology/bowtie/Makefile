@@ -1,7 +1,6 @@
 PORTNAME=		bowtie
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.1.2
-PORTREVISION=		9
+DISTVERSION=		1.3.1
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,20 +8,25 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10
 
-# May also work on other 64-bit platforms, but untested
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-# FIXME: bowtie-align intermittently dumps core when compiled with clang
-# GCC 4.2 does not provide good performance
-USES=		gmake perl5 python:run shebangfix
-USE_GCC=	yes
+# c++11-lib is just for GCC 4.2-based systems
+# Remove it when support officially ends
+USES=		compiler:c++11-lib gmake perl5 python:run shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	scripts/*.pl bowtie bowtie-build bowtie-inspect
+SHEBANG_FILES=	scripts/*.pl bowtie bowtie-build scripts/bowtie-hbb.sh \
+		bowtie-inspect
 GH_ACCOUNT=	BenLangmead
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*} || ${ARCH:Maarch64}
+MAKE_ENV=	POPCNT_CAPABILITY=0
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
