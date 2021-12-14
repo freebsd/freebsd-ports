@@ -3,7 +3,6 @@ include/libecpint/angular.hpp
 include/libecpint/api.hpp
 include/libecpint/bessel.hpp
 include/libecpint/config.hpp
-include/libecpint/config.hpp.in
 include/libecpint/ecp.hpp
 include/libecpint/ecpint.hpp
 include/libecpint/gaussquad.hpp
