@@ -1,5 +1,5 @@
---- GNUmakefile.orig	2021-05-09 00:11:57 UTC
-+++ GNUmakefile
+--- GNUmakefile.orig	2021-10-13 09:17:02.000000000 -0700
++++ GNUmakefile	2021-10-21 14:35:08.340353000 -0700
 @@ -13,7 +13,7 @@
  # in README and source code (see src/options.h) if you do.
  #
@@ -9,24 +9,29 @@
  
  # install sandbox
  DESTDIR ?=
-@@ -53,7 +53,7 @@ define uname2sosuffix
+@@ -54,7 +54,7 @@
      *) echo so;;
    esac
  endef
 -SO_SUFFIX  := $(shell $(uname2sosuffix))
-+SO_SUFFIX  := so.0.10.1
++SO_SUFFIX  := so.0.11.2
  HEADERS    := mdbx.h mdbx.h++
  LIBRARIES  := libmdbx.a libmdbx.$(SO_SUFFIX)
  TOOLS      := mdbx_stat mdbx_copy mdbx_dump mdbx_load mdbx_chk mdbx_drop
-@@ -194,11 +194,11 @@ mdbx_%:	mdbx_%.c libmdbx.a
+@@ -209,16 +209,11 @@
  
  install: $(LIBRARIES) $(TOOLS) $(HEADERS)
  	@echo '  INSTALLING...'
--	$(INSTALL) -D -p $(EXE_INSTALL_FLAGS) -t $(DESTDIR)$(prefix)/bin$(suffix) $(TOOLS) && \
--	$(INSTALL) -D -p $(EXE_INSTALL_FLAGS) -t $(DESTDIR)$(prefix)/lib$(suffix) $(filter-out libmdbx.a,$(LIBRARIES)) && \
--	$(INSTALL) -D -p -t $(DESTDIR)$(prefix)/lib$(suffix) libmdbx.a && \
--	$(INSTALL) -D -p -m 444 -t $(DESTDIR)$(prefix)/include $(HEADERS) && \
--	$(INSTALL) -D -p -m 444 -t $(DESTDIR)$(mandir)/man1 $(addprefix $(MAN_SRCDIR), $(MANPAGES))
+-	$(QUIET)mkdir -p $(DESTDIR)$(prefix)/bin$(suffix) && \
+-		$(INSTALL) -p $(EXE_INSTALL_FLAGS) $(TOOLS) $(DESTDIR)$(prefix)/bin$(suffix)/ && \
+-	mkdir -p $(DESTDIR)$(prefix)/lib$(suffix)/ && \
+-		$(INSTALL) -p $(EXE_INSTALL_FLAGS) $(filter-out libmdbx.a,$(LIBRARIES)) $(DESTDIR)$(prefix)/lib$(suffix)/ && \
+-	mkdir -p $(DESTDIR)$(prefix)/lib$(suffix)/ && \
+-		$(INSTALL) -p libmdbx.a $(DESTDIR)$(prefix)/lib$(suffix)/ && \
+-	mkdir -p $(DESTDIR)$(prefix)/include/ && \
+-		$(INSTALL) -p -m 444 $(HEADERS) $(DESTDIR)$(prefix)/include/ && \
+-	mkdir -p $(DESTDIR)$(mandir)/man1/ && \
+-		$(INSTALL) -p -m 444 $(addprefix $(MAN_SRCDIR), $(MANPAGES)) $(DESTDIR)$(mandir)/man1/
 +	install -p -s $(TOOLS) $(DESTDIR)$(prefix)/bin$(suffix) && \
 +	install -p -s $(filter-out libmdbx.a,$(LIBRARIES)) $(DESTDIR)$(prefix)/lib$(suffix) && \
 +	install -p libmdbx.a $(DESTDIR)$(prefix)/lib$(suffix) && \
