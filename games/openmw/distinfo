@@ -1,3 +1,5 @@
-TIMESTAMP = 1591668250
-SHA256 (OpenMW-openmw-openmw-0.46.0_GH0.tar.gz) = 07a35a8f15f67f5aa7210c2a307a6db5660a9b61fe34983c35b172c8671afd58
-SIZE (OpenMW-openmw-openmw-0.46.0_GH0.tar.gz) = 5155004
+TIMESTAMP = 1639405346
+SHA256 (OpenMW-openmw-openmw-0.47.0_GH0.tar.gz) = bd7f77e1527c2180e9b0dfcbe401d6fb48f24dbb37701dac7747697873d6edb4
+SIZE (OpenMW-openmw-openmw-0.47.0_GH0.tar.gz) = 5156857
+SHA256 (recastnavigation-recastnavigation-e75adf86f91eb3082220085e42dda62679f9a3ea_GH0.tar.gz) = c647e307d6cc62ba00bfd888e82da83844bf1e72f2c98bed2f1d95bac229b950
+SIZE (recastnavigation-recastnavigation-e75adf86f91eb3082220085e42dda62679f9a3ea_GH0.tar.gz) = 1542425

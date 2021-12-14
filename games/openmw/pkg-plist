@@ -7,10 +7,10 @@ bin/openmw-essimporter
 bin/openmw-iniimporter
 bin/openmw-launcher
 bin/openmw-wizard
+%%ETCDIR%%/defaults-cs.bin
+%%ETCDIR%%/defaults.bin
 %%ETCDIR%%/gamecontrollerdb.txt
-%%ETCDIR%%/openmw-cs.cfg
 %%ETCDIR%%/openmw.cfg
-%%ETCDIR%%/settings-default.cfg
 %%ETCDIR%%/version
 share/applications/org.openmw.cs.desktop
 share/applications/org.openmw.launcher.desktop
@@ -102,7 +102,15 @@ share/metainfo/openmw.appdata.xml
 %%DATADIR%%/resources/mygui/openmw_wait_dialog_progressbar.layout
 %%DATADIR%%/resources/mygui/openmw_windows.skin.xml
 %%DATADIR%%/resources/mygui/skins.xml
+%%DATADIR%%/resources/shaders/alpha.glsl
+%%DATADIR%%/resources/shaders/groundcover_fragment.glsl
+%%DATADIR%%/resources/shaders/groundcover_vertex.glsl
+%%DATADIR%%/resources/shaders/lighting_util.glsl
 %%DATADIR%%/resources/shaders/lighting.glsl
+%%DATADIR%%/resources/shaders/nv_default_fragment.glsl
+%%DATADIR%%/resources/shaders/nv_default_vertex.glsl
+%%DATADIR%%/resources/shaders/nv_nolighting_fragment.glsl
+%%DATADIR%%/resources/shaders/nv_nolighting_vertex.glsl
 %%DATADIR%%/resources/shaders/objects_fragment.glsl
 %%DATADIR%%/resources/shaders/objects_vertex.glsl
 %%DATADIR%%/resources/shaders/parallax.glsl
@@ -114,6 +122,7 @@ share/metainfo/openmw.appdata.xml
 %%DATADIR%%/resources/shaders/shadows_vertex.glsl
 %%DATADIR%%/resources/shaders/terrain_fragment.glsl
 %%DATADIR%%/resources/shaders/terrain_vertex.glsl
+%%DATADIR%%/resources/shaders/vertexcolors.glsl
 %%DATADIR%%/resources/shaders/water_fragment.glsl
 %%DATADIR%%/resources/shaders/water_nm.png
 %%DATADIR%%/resources/shaders/water_vertex.glsl
