@@ -1,6 +1,5 @@
 PORTNAME=	couchdb3
-DISTVERSION=	3.2.0
-PORTREVISION=	1
+DISTVERSION=	3.2.1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -13,8 +12,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	rebar:devel/rebar \
 		erlang-runtime${ERLVER}>=${ERLVER}.0:lang/erlang-runtime${ERLVER}
-LIB_DEPENDS=	libicudata.so:devel/icu \
-		libmozjs-78.so:lang/spidermonkey78
+LIB_DEPENDS=	libmozjs-78.so:lang/spidermonkey78
 RUN_DEPENDS=	erlang-runtime${ERLVER}>=${ERLVER}.0:lang/erlang-runtime${ERLVER}
 
 USES=		compiler:c++17-lang cpe gmake libtool ncurses
