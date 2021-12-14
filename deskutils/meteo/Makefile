@@ -1,5 +1,5 @@
 PORTNAME=	meteo
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -13,7 +13,6 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
-		libgeocode-glib.so:net/geocode-glib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
@@ -21,7 +20,7 @@ USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
-GL_COMMIT=	2c90bd8ab6d07c8c72e61efc03f90aa4d809e8e0
+GL_COMMIT=	6bd48892ec86d7208cb4ad1dd8baf74ba72df68f
 
 USE_GNOME=	gtk30
 

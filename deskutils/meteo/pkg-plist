@@ -18,6 +18,21 @@ share/icons/hicolor/48x48@2/apps/com.gitlab.bitseater.meteo.svg
 share/icons/hicolor/64x64/apps/com.gitlab.bitseater.meteo.svg
 share/icons/hicolor/64x64@2/apps/com.gitlab.bitseater.meteo.svg
 share/icons/hicolor/scalable/apps/com.gitlab.bitseater.meteo.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-barometer-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-cloud-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-humidity-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-full-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-last-quarter-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-new-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-quarter-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-waning-crescent-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-waning-gibbous-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-waxing-crescent-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-moon-waxing-gibbous-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-sunrise-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-sunset-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-thermometer-symbolic.svg
+share/icons/hicolor/scalable/status/com.gitlab.bitseater.meteo-wind-symbolic.svg
 share/locale/ca/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/de/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/en/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
@@ -32,4 +47,5 @@ share/locale/pt_BR/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/pt_PT/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/ru/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/sr/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
+share/locale/uk/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/metainfo/com.gitlab.bitseater.meteo.appdata.xml
