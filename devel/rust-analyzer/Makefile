@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-12-06
+DISTVERSION=	2021-12-13
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -34,7 +34,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		chalk-ir-0.74.0 \
 		chalk-recursive-0.74.0 \
 		chalk-solve-0.74.0 \
-		countme-2.0.4 \
 		countme-3.0.0 \
 		cov-mark-2.0.0-pre.1 \
 		crc32fast-1.3.0 \
@@ -67,20 +66,20 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
-		itertools-0.10.1 \
+		itertools-0.10.3 \
 		itoa-0.4.8 \
 		jod-thread-0.1.2 \
 		kqueue-1.0.4 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
-		libc-0.2.108 \
+		libc-0.2.111 \
 		libloading-0.7.2 \
 		libmimalloc-sys-0.1.23 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
 		lsp-server-0.5.2 \
 		lsp-types-0.91.1 \
-		matchers-0.0.1 \
+		matchers-0.1.0 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
 		memmap2-0.5.0 \
@@ -104,9 +103,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		perf-event-open-sys-1.0.1 \
 		petgraph-0.5.1 \
 		pin-project-lite-0.2.7 \
-		proc-macro2-1.0.32 \
+		proc-macro2-1.0.33 \
 		pulldown-cmark-0.8.0 \
-		pulldown-cmark-to-cmark-7.1.0 \
+		pulldown-cmark-to-cmark-7.1.1 \
 		quote-1.0.10 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
@@ -114,19 +113,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		regex-1.5.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
-		rowan-0.14.1 \
+		rowan-0.15.1 \
 		rustc-ap-rustc_lexer-725.0.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		ryu-1.0.6 \
+		ryu-1.0.8 \
 		salsa-0.17.0-pre.2 \
 		salsa-macros-0.17.0-pre.2 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
+		serde-1.0.131 \
+		serde_derive-1.0.131 \
 		serde_json-1.0.72 \
 		serde_repr-0.1.7 \
 		sharded-slab-0.1.4 \
@@ -147,8 +146,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		tracing-attributes-0.1.18 \
 		tracing-core-0.1.21 \
 		tracing-log-0.1.2 \
-		tracing-subscriber-0.2.25 \
-		tracing-tree-0.1.11 \
+		tracing-subscriber-0.3.3 \
+		tracing-tree-0.2.0 \
 		ungrammar-1.14.9 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.7 \
