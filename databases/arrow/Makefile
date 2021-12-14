@@ -1,6 +1,5 @@
 PORTNAME=	arrow
-DISTVERSION=	4.0.1
-PORTREVISION=	4
+DISTVERSION=	6.0.1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -87,7 +86,8 @@ GANDIVA_CMAKE_BOOL=		ARROW_GANDIVA
 GANDIVA_BUILD_DEPENDS=		${LOCALBASE}/bin/clang12:devel/llvm12 # explicitly requires llvm-12
 GANDIVA_LIB_DEPENDS=		libgrpc.so:devel/grpc \
 				libprotobuf.so:devel/protobuf \
-				libre2.so:devel/re2
+				libre2.so:devel/re2 \
+				libutf8proc.so:textproc/utf8proc
 
 HDFS_DESC=			Arrow HDFS bridge
 HDFS_CMAKE_BOOL=		ARROW_HDFS
@@ -126,7 +126,14 @@ ORC_BROKEN=			fatal error: 'orc/OrcFile.hh' file not found: https://issues.apach
 
 PLASMA_DESC=			Plasma object store
 PLASMA_CMAKE_BOOL=		ARROW_PLASMA
-PLASMA_LIB_DEPENDS=		libgflags.so:devel/gflags
+PLASMA_LIB_DEPENDS=		libaws-c-auth.so:security/aws-c-auth \
+				libaws-c-compression.so:devel/aws-c-compression \
+				libaws-c-http.so:devel/aws-c-http \
+				libaws-c-mqtt.so:devel/aws-c-mqtt \
+				libaws-c-s3.so:devel/aws-c-s3 \
+				libaws-c-sdkutils.so:devel/aws-c-sdkutils \
+				libaws-crt-cpp.so:devel/aws-crt-cpp \
+				libgflags.so:devel/gflags
 
 BUILD_UTILITIES_DESC=		build Arrow commandline utilities
 BUILD_UTILITIES_CMAKE_BOOL=	ARROW_BUILD_UTILITIES

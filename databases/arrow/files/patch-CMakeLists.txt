@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-04-21 16:14:36 UTC
+--- CMakeLists.txt.orig	2021-11-10 02:07:56 UTC
 +++ CMakeLists.txt
-@@ -98,7 +98,7 @@ set(ARROW_BINARY_DIR ${PROJECT_BINARY_DIR})
+@@ -100,7 +100,7 @@ set(ARROW_BINARY_DIR ${PROJECT_BINARY_DIR})
  
  include(CMakePackageConfigHelpers)
  include(CMakeParseArguments)
@@ -9,18 +9,16 @@
  include(FindPackageHandleStandardArgs)
  
  include(GNUInstallDirs)
-@@ -910,10 +910,10 @@ if(ARROW_BUILD_EXAMPLES)
+@@ -943,9 +943,9 @@ if(ARROW_BUILD_EXAMPLES)
    add_subdirectory(examples/arrow)
  endif()
  
 -install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE.txt
 -              ${CMAKE_CURRENT_SOURCE_DIR}/../NOTICE.txt
--              ${CMAKE_CURRENT_SOURCE_DIR}/README.md
--        DESTINATION "${ARROW_DOC_DIR}")
+-              ${CMAKE_CURRENT_SOURCE_DIR}/README.md DESTINATION "${ARROW_DOC_DIR}")
 +#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE.txt
 +#              ${CMAKE_CURRENT_SOURCE_DIR}/../NOTICE.txt
-+#              ${CMAKE_CURRENT_SOURCE_DIR}/README.md
-+#        DESTINATION "${ARROW_DOC_DIR}")
++#              ${CMAKE_CURRENT_SOURCE_DIR}/README.md DESTINATION "${ARROW_DOC_DIR}")
  
  #
  # Validate and print out Arrow configuration options
