@@ -1,7 +1,7 @@
 # Created by: jmz
 
 PORTNAME=	xsnow
-PORTVERSION=	3.3.6
+PORTVERSION=	3.4.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 gmake gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2
-USE_XORG=	x11 xpm xt xorgproto
+USE_XORG=	x11 xext xpm xt xorgproto
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz \
 		share/applications/xsnow.desktop \
