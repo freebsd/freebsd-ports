@@ -27,15 +27,15 @@ IMAGEMAGICK7_DESC=	Use ImageMagick 7.x (graphics/ImageMagick7*)
 
 .if ${PORT_OPTIONS:MX11}
 .if ${PORT_OPTIONS:MIMAGEMAGICK7}
-USES=		magick:7
+USES+=		magick:7
 .else
-USES=		magick:6
+USES+=		magick:6
 .endif
 .else
 .if ${PORT_OPTIONS:MIMAGEMAGICK7}
-USES=		magick:7,nox11
+USES+=		magick:7,nox11
 .else
-USES=		magick:6,nox11
+USES+=		magick:6,nox11
 .endif
 .endif
 
