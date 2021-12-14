@@ -1,6 +1,6 @@
 # Created by: Ben Kaduk <kaduk@mit.edu>
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-libss
 
@@ -22,7 +22,12 @@ FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 
 pre-build:
-	(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
+	(cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} compile_et )
+	(cd ${WRKSRC}/lib/ss && _ET_DIR_OVERRIDE=../et ../et/compile_et ss_err.et && \
 	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)
+
+do-test:
+	(cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} all check )
+	(cd ${WRKSRC}/lib/ss && ${DO_MAKE_BUILD} check )
 
 .include "${MASTERDIR}/Makefile"
