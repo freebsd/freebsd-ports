@@ -959,6 +959,7 @@
     SUBDIR += reactphysics3d
     SUBDIR += reallyslick
     SUBDIR += realsr-ncnn-vulkan
+    SUBDIR += recastnavigation
     SUBDIR += recoverjpeg
     SUBDIR += renrot
     SUBDIR += repng2jpeg

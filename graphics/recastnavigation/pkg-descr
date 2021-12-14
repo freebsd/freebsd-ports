@@ -1,0 +1,7 @@
+Recast is state of the art navigation mesh construction toolset for games.
+
+It is automatic, which means that you can throw any level geometry at it and you will get robust mesh out
+It is fast which means swift turnaround times for level designers
+It is open source so it comes with full source and you can customize it to your heart's content.
+
+WWW: https://github.com/recastnavigation/recastnavigation/
