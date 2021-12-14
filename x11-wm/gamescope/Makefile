@@ -1,5 +1,5 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.10
+DISTVERSION=	3.10.1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -7,7 +7,6 @@ PATCHFILES+=	ec8e547be135.patch:-p1 # https://github.com/Plagman/gamescope/pull/
 PATCHFILES+=	ea415ae28442.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	7c188b24afaa.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
-PATCHFILES+=	9553362865bb.patch:-p1 # https://github.com/Plagman/gamescope/pull/330
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Micro-compositor from SteamOS
@@ -34,7 +33,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
 GH_TUPLE=	nothings:stb:af1a5bc:stb/subprojects/stb
-GL_TUPLE=	https://gitlab.freedesktop.org:emersion:libliftoff:b7a6958bcacdedf6e451d8821c807299943ef150:libliftoff/subprojects/libliftoff
+GL_TUPLE=	https://gitlab.freedesktop.org:emersion:libliftoff:2e1dd93b60224e77f6a49ad8fb36d184e3a9a3bc:libliftoff/subprojects/libliftoff
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	PIPEWIRE
