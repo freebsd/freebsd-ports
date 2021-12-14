@@ -1,6 +1,6 @@
 PORTNAME=	signald
 DISTVERSION=	0.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im java
 MASTER_SITES=	https://plugins.gradle.org/m2/gradle/plugin/de/fuerstenau/BuildConfigPlugin/1.1.8/:buildconfig \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:jackann \
@@ -19,8 +19,8 @@ MASTER_SITES=	https://plugins.gradle.org/m2/gradle/plugin/de/fuerstenau/BuildCon
 		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/logging-interceptor/4.9.1/:okhttp_interceptor \
 		https://repo.maven.apache.org/maven2/com/squareup/okio/2.6.0/:okjvm \
 		https://repo.maven.apache.org/maven2/info/picocli/picocli/4.5.2/:picocli \
-		https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.15.0/:log4j_api \
-		https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.15.0/:log4j_core \
+		https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.16.0/:log4j_api \
+		https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.16.0/:log4j_core \
 		https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/1.66/:bcprov \
 		https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/7.5.3/:flyway \
 		https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/:jetann \
@@ -45,8 +45,8 @@ DISTFILES=	BuildConfigPlugin-1.1.8.jar:buildconfig \
 		kotlin-stdlib-common-1.3.71.jar:jetkotstdcommon \
 		libphonenumber-8.12.17.jar:libphone \
 		logging-interceptor-4.9.1.jar:okhttp_interceptor \
-		log4j-api-2.15.0.jar:log4j_api \
-		log4j-core-2.15.0.jar:log4j_core \
+		log4j-api-2.16.0.jar:log4j_api \
+		log4j-core-2.16.0.jar:log4j_core \
 		okhttp-4.9.1.jar:okhttp \
 		okio-2.6.0.jar:okjvm \
 		picocli-4.5.2.jar:picocli \
