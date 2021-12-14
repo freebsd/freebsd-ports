@@ -1,0 +1,12 @@
+--- examples/CMakeLists.txt.orig	2021-05-07 18:04:02 UTC
++++ examples/CMakeLists.txt
+@@ -1,8 +1,5 @@
+-SUBDIRS( HelloWorld BasicDemo)
++#SUBDIRS( HelloWorld BasicDemo)
+ IF(BUILD_BULLET3)
+ 	SUBDIRS( ExampleBrowser RobotSimulator SharedMemory ThirdPartyLibs/Gwen ThirdPartyLibs/BussIK ThirdPartyLibs/clsocket OpenGLWindow TwoJoint )
+ ENDIF()
+ 
+-IF(BUILD_PYBULLET)
+-	SUBDIRS(pybullet)
+-ENDIF(BUILD_PYBULLET)
