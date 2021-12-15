@@ -1,4 +1,5 @@
 PORTNAME=	openmw
+PORTREVISION=	1
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.47.0
 CATEGORIES=	games
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libboost_thread.so:devel/boost-libs \
 		libMyGUIEngine.so:x11-toolkits/mygui \
-		libBulletCollision.so:devel/bullet \
+		libBulletCollision.so:devel/bullet@double \
 		libosg.so:graphics/osg \
 		libRecast.so:graphics/recastnavigation \
 		libunshield.so:archivers/unshield \
