@@ -8,4 +8,4 @@
 +ETC = "%%PREFIX%%/etc"
  USR_LIB_EXEC = "usr/lib"
  LIB = "lib"
- if os.uname()[0] == 'FreeBSD':
+ if os.uname()[0] in ['FreeBSD', 'DragonFly']:

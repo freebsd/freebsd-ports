@@ -1,5 +1,5 @@
 PORTNAME=	cloud-init
-DISTVERSION=	21.2
+DISTVERSION=	21.4
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,8 +20,9 @@ RUN_DEPENDS=	sudo>0:security/sudo \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>0:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jsonschema3>0:devel/py-jsonschema3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix
 USE_GITHUB=	yes
@@ -39,6 +40,7 @@ NO_ARCH=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cloudinit/settings.py
+	@cd ${WRKSRC} && ${RM} config/cloud.cfg.d/99_freebsd.cfg.orig
 
 post-build:
 	@cd ${WRKSRC} && ${MV} config/cloud.cfg.d/05_logging.cfg config/cloud.cfg.d/05_logging.cfg.sample
