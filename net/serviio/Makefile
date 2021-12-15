@@ -1,8 +1,8 @@
 # Created by: Mikhail Teterin <mi@aldan.algebra.com>
 
 PORTNAME=	serviio
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2.1
+PORTREVISION=	0
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	https://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
-.for f in application-profiles profiles log4j
+.for f in application-profiles profiles log4j2
 	${INSTALL_DATA} ${WRKSRC}/config/$f.xml \
 		${STAGEDIR}${ETCDIR}/$f.xml.sample
 .endfor
