@@ -22,14 +22,14 @@ private to phoc package for now.
 +if not meson.is_subproject()
  install_headers(conf_h, ver_h, subdir: 'wlr')
 +endif
---- subprojects/wlroots/meson.build.orig	2021-08-20 08:28:34 UTC
+--- subprojects/wlroots/meson.build.orig	2021-09-12 16:57:08 UTC
 +++ subprojects/wlroots/meson.build
-@@ -161,7 +161,7 @@ lib_wlr = library(
+@@ -147,7 +147,7 @@ lib_wlr = library(
  	soversion: soversion,
  	dependencies: wlr_deps,
  	include_directories: [wlr_inc, proto_inc],
 -	install: true,
 +	install: not meson.is_subproject(),
- 	link_args : symbols_flag,
+ 	link_args: symbols_flag,
  	link_depends: symbols_file,
  )

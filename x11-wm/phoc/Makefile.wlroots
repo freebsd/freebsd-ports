@@ -1,14 +1,15 @@
 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
-BUILD_DEPENDS:=	${BUILD_DEPENDS:N*wlroots*}
+BUILD_DEPENDS:=	${BUILD_DEPENDS:N*wlroots*} \
+		xwayland-devel>0:x11-servers/xwayland-devel
 LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
 		libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm \
 		libseat.so:sysutils/seatd \
 		libxcb-errors.so:x11/xcb-util-errors \
+		libxcb-render-util.so:x11/xcb-util-renderutil \
 		libxcb-icccm.so:x11/xcb-util-wm
 RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
 USE_GL+=	gbm egl
-USE_XORG+=	x11
-GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:5413b1ec61c6e3390929db595c0ec92f92ea2594:wlroots/subprojects/wlroots
+GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:2fce64d30d378d7009a5770b2472231a0e535ada:wlroots/subprojects/wlroots
 MESON_ARGS+=	-Dwlroots:default_library=static
 PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
