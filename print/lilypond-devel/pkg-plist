@@ -296,6 +296,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-markup.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-music.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-outside-staff-priorities.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/document-paper-sizes.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-translation.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-type-predicates.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/documentation-generate.scm
@@ -305,7 +306,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/flag-styles.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/font.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-cairo.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-eps.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-ps.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/framework-svg.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/fret-diagrams.scm
@@ -338,6 +338,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/safe-lily.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/safe-utility-defs.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/scheme-engravers.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/scheme-performers.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/script.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/skyline.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/song-util.scm
