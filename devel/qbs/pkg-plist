@@ -43,7 +43,7 @@ include/qbs/use_installed_corelib.pri
 lib/libqbscore.prl
 lib/libqbscore.so
 lib/libqbscore.so.1
-lib/libqbscore.so.1.20
+lib/libqbscore.so.1.21
 lib/libqbscore.so.%%SHLIB_VERSION%%
 lib/qbs/plugins/libclangcompilationdbgenerator.so
 lib/qbs/plugins/libiarewgenerator.so
@@ -141,6 +141,7 @@ share/man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qbs.qhp.sha1
 %%PORTDOCS%%%%DOCSDIR%%/html/qbsconvenienceitems-qmlmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qbslanguageitems-qmlmodule.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qbsmoduleproviders-qmlmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qbsmodules-qmlmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qbsprobes-qmlmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-appleapplicationdiskimage-members.html
@@ -215,6 +216,10 @@ share/man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-scanner.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-subproject-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-subproject.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmoduleproviders-qbspkgconfig-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmoduleproviders-qbspkgconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmoduleproviders-qt-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmoduleproviders-qt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-android-ndk-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-android-ndk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-android-sdk-members.html
@@ -558,6 +563,8 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/examples/install-bundle/main.cpp
 %%DATADIR%%/examples/install-bundle/white.iconset/icon_16x16.png
 %%DATADIR%%/examples/install-bundle/white.iconset/icon_16x16@2x.png
+%%DATADIR%%/examples/pkgconfig-provider/main.c
+%%DATADIR%%/examples/pkgconfig-provider/pkgconfig-provider.qbs
 %%DATADIR%%/examples/protobuf/addressbook_cpp/README.md
 %%DATADIR%%/examples/protobuf/addressbook_cpp/addressbook_cpp.qbs
 %%DATADIR%%/examples/protobuf/addressbook_cpp/main.cpp
@@ -658,6 +665,7 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/module-providers/Qt/templates/scxml.qbs
 %%DATADIR%%/module-providers/__fallback/fallback.qbs
 %%DATADIR%%/module-providers/__fallback/provider.qbs
+%%DATADIR%%/module-providers/qbspkgconfig.qbs
 %%DATADIR%%/modules/Android/android-utils.js
 %%DATADIR%%/modules/Android/ndk/ndk.qbs
 %%DATADIR%%/modules/Android/ndk/utils.js
