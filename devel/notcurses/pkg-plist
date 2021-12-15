@@ -87,6 +87,7 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%man/man3/notcurses_multiselector.3.gz
 %%MANPAGES%%man/man3/notcurses_output.3.gz
 %%MANPAGES%%man/man3/notcurses_palette.3.gz
+%%MANPAGES%%man/man3/notcurses_pile.3.gz
 %%MANPAGES%%man/man3/notcurses_plane.3.gz
 %%MANPAGES%%man/man3/notcurses_plot.3.gz
 %%MANPAGES%%man/man3/notcurses_progbar.3.gz
@@ -108,6 +109,7 @@ libdata/pkgconfig/notcurses.pc
 %%PORTDOCS%%%%DOCSDIR%%/TERMINALS.md
 %%PORTDOCS%%%%DOCSDIR%%/USAGE.md
 %%DATADIR%%/PurpleDrank.jpg
+%%DATADIR%%/Windows10Logo.png
 %%DATADIR%%/aidsrobots.jpeg
 %%DATADIR%%/atma.png
 %%DATADIR%%/changes.jpg
@@ -167,15 +169,15 @@ libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/covid19.jpg
 %%DATADIR%%/dsscaw-purp.png
 %%DATADIR%%/eagles.png
-%%DATADIR%%/fm6.mkv
+%%DATADIR%%/fm6.mov
 %%DATADIR%%/fonts.jpg
-%%DATADIR%%/greatscott.jpg
+%%DATADIR%%/freebsd.png
 %%DATADIR%%/lamepatents.jpg
 %%DATADIR%%/megaman2.bmp
 %%DATADIR%%/natasha-blur.png
 %%DATADIR%%/normal.png
 %%DATADIR%%/notcurses.png
-%%DATADIR%%/notcursesIII.mkv
+%%DATADIR%%/notcursesIII.mov
 %%DATADIR%%/onedot.png
 %%DATADIR%%/samoa.avi
 %%DATADIR%%/spaceship.png

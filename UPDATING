@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20211220:
+  AFFECTS: users of devel/notcurses
+  AUTHOR: nickblack@linux.com
+
+  Notcurses 3 introduces a new SONAME and significant API/ABI changes.
+  Dependent applications must be recompiled at a minimum. A complete
+  guide to updating for the new API is available under "Porting API2
+  Applications to API3" at
+  https://github.com/dankamongmen/notcurses/releases/tag/v3.0.0
+
+20211220:
   AFFECTS: users of net-im/openfire
   AUTHOR: nikita@druba.su
 

@@ -1,6 +1,6 @@
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.4.9
+DISTVERSION=	${ABIVERSION}.0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/:docs
 DISTFILES=	${PORTNAME}-doc-${DISTVERSION}.tar.gz:docs
@@ -12,6 +12,7 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libdeflate.so:archivers/libdeflate \
 		libqrcodegen.so:graphics/qr-code-generator \
 		libunistring.so:devel/libunistring
 
@@ -35,7 +36,7 @@ OPTIONS_DEFINE=		DOCS MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
-ABIVERSION=	2
+ABIVERSION=	3
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|install(FILES $${MARKDOWN} DESTINATION $${CMAKE_INSTALL_DOCDIR})|#install(FILES $${MARKDOWN} DESTINATION $${CMAKE_INSTALL_DOCDIR})|' \
