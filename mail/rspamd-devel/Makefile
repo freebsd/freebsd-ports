@@ -1,5 +1,6 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.2.a1.20211113
+PORTVERSION=	3.2.a1.20211214
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -11,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	ragel:devel/ragel
 LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
 USES=		cmake compiler:c++17-lang cpe gnome perl5 pkgconfig sqlite ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
-GH_TAGNAME=	6e83edb
+GH_TAGNAME=	93430bb
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
