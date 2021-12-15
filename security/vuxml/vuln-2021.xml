@@ -1,3 +1,47 @@
+  <vuln vid="897e1962-5d5a-11ec-a3ed-040e3c3cf7e7">
+    <topic>Privoxy -- Multiple vulnerabilities (memory leak, XSS)</topic>
+    <affects>
+      <package>
+	<name>dropbear</name>
+	<range><lt>3.0.33</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Privoxy reports:</p>
+	<blockquote cite="https://lists.privoxy.org/pipermail/privoxy-announce/2021-December/000009.html">
+	<p>cgi_error_no_template(): Encode the template name to prevent
+	    XSS (cross-site scripting) when Privoxy is configured to servce
+	    the user-manual itself.</p>
+	<p>Commit 0e668e9409c. OVE-20211102-0001. CVE-2021-44543.
+	    Reported by: Artem Ivanov</p>
+	<p>get_url_spec_param(): Free memory of compiled pattern spec
+	    before bailing.
+	    Reported by Joshua Rogers (Opera) who also provided the fix.
+	    Commit 652b4b7cb0. OVE-20211201-0003. CVE-2021-44540.</p>
+	<p>process_encrypted_request_headers(): Free header memory when
+	    failing to get the request destination.
+	    Reported by Joshua Rogers (Opera) who also provided the fix.
+	    Commit 0509c58045. OVE-20211201-0002. CVE-2021-44541.</p>
+	<p>send_http_request(): Prevent memory leaks when handling errors
+	    Reported by Joshua Rogers (Opera) who also provided the fix.
+	    Commit c48d1d6d08. OVE-20211201-0001. CVE-2021-44542.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44540</cvename>
+      <cvename>CVE-2021-44541</cvename>
+      <cvename>CVE-2021-44542</cvename>
+      <cvename>CVE-2021-44543</cvename>
+      <url>https://lists.privoxy.org/pipermail/privoxy-announce/2021-December/000009.html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-09</discovery>
+      <entry>2021-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0132ca5b-5d11-11ec-8be6-d4c9ef517024">
     <topic>OpenSSL -- Certificate validation issue</topic>
     <affects>
