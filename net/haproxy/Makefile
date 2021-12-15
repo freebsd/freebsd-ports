@@ -53,6 +53,12 @@ LUA_MAKE_ARGS=		USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NA
 OPTIONS_DEFAULT+=	LUA
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+MAKE_ARGS+=	USE_LIBATOMIC=
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
