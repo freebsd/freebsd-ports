@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +24,7 @@ USE_GNOME=	gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	0563907a884f4edb9f0a84dcefb52dccc3407c10
+GL_COMMIT=	d5fc37eb6aad998013c066febc9a794ad77a27ac
 SHEBANG_FILES=	build-aux/post_install.py
 CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}
