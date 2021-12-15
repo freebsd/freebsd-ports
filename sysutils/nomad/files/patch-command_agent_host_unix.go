@@ -1,6 +1,6 @@
---- command/agent/host/unix.go.orig	2020-07-08 22:29:33 UTC
+--- command/agent/host/unix.go.orig	2021-11-24 18:54:06 UTC
 +++ command/agent/host/unix.go
-@@ -64,5 +64,5 @@ func (d *df) total() uint64 {
+@@ -65,5 +65,5 @@ func (d *df) total() uint64 {
  }
  
  func (d *df) available() uint64 {
