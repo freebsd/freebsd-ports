@@ -14,12 +14,13 @@ LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
 		libpng.so:graphics/png \
 		libenet.so:net/enet \
 		libcurl.so:ftp/curl
+BUILD_DEPENDS=	convert:graphics/ImageMagick6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Enigma-Game
 GH_PROJECT=	Enigma
 
-USES=		autoreconf:build gettext gmake iconv localbase magick:6,build pkgconfig sdl
+USES=		autoreconf:build gettext gmake iconv localbase pkgconfig sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl2 image2 mixer2 ttf2
 CONFIGURE_ARGS=	--with-system-enet

@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	bundles non-portable AngelScript
 
+BUILD_DEPENDS=	convert:graphics/ImageMagick6 # for building icons
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopusfile.so:audio/opusfile
 
@@ -22,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
 
 USES=		cmake:insource compiler:c++11-lib desktop-file-utils dos2unix \
-		gl gnome magick:6,build openal sdl xorg
+		gl gnome openal sdl xorg
 CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \
 		-DOPENSPADES_INSTALL_MAN="man/man6" \
 		-DOPENSPADES_INSTALL_BINARY="bin" \
