@@ -1,5 +1,5 @@
 PORTNAME=	cavezofphear
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -8,13 +8,16 @@ COMMENT=	Boulder Dash / Digger-like game for consoles/terminals
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	help2man:misc/help2man
+
 USES=		cmake ncurses
 USE_GITHUB=	true
 GH_ACCOUNT=	AMDmi3
 CMAKE_ON=	SYSTEMWIDE
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=share/man
 
 DATADIR=	${PREFIX}/share/phear
-PLIST_FILES=	bin/phear
+PLIST_FILES=	bin/phear share/man/man6/phear.6.gz
 PORTDOCS=	ChangeLog.md README.md TODO
 PORTDATA=	*
 
