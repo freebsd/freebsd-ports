@@ -1,3 +1,28 @@
+  <vuln vid="1ea05bb8-5d74-11ec-bb1e-001517a2e1a4">
+    <topic>serviio -- affected by log4j vulnerability</topic>
+    <affects>
+      <package>
+	<name>serviio</name>
+	<range><lt>2.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Serviio reports:</p>
+	<blockquote cite="https://serviio.org/news/124-version-2-2-1-released">
+	  <p>Serviio is affectred by the log4j vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44228</cvename>
+    </references>
+    <dates>
+      <discovery>2021-12-13</discovery>
+      <entry>2021-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="897e1962-5d5a-11ec-a3ed-040e3c3cf7e7">
     <topic>Privoxy -- Multiple vulnerabilities (memory leak, XSS)</topic>
     <affects>
