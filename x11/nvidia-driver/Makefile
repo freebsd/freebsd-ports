@@ -168,6 +168,12 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^#include/s:lock\.h:mutex.h:' \
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
 .endif
+# After src df38ada2931f, `sys/module.h' must be included after `sys/param.h'
+.if ${OSVERSION} >= 1400042 && ${NVVERSION} >= 358.009
+	@${REINPLACE_CMD} -e '/^#include <sys\/module/ { x; \
+		s:^:#include <sys/param.h>:; G; }; 14d' \
+		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
+.endif
 # Disable installation of Linux libraries (provided by the corresponding
 # `x11/linux-nvidia-libs' port or its slaves)
 	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& 0/' \
