@@ -21,7 +21,7 @@
     enabled[OVERLAY_PARAM_ENABLED_cpu_temp] = cpuStats.GetCpuFile()
                             && enabled[OVERLAY_PARAM_ENABLED_cpu_temp];
     enabled[OVERLAY_PARAM_ENABLED_cpu_power] = cpuStats.InitCpuPowerData()
-@@ -600,21 +600,24 @@ void init_gpu_stats(uint32_t& vendorID, overlay_params
+@@ -600,21 +600,21 @@ void init_gpu_stats(uint32_t& vendorID, overlay_params
  }
  
  void init_system_info(){
@@ -31,26 +31,30 @@
           unsetenv("LD_PRELOAD");
  
 -      ram =  exec("cat /proc/meminfo | grep 'MemTotal' | awk '{print $2}'");
-+      ram = exec("grep MemTotal " PROCDIR "/meminfo | awk '{print $2}'");
-       trim(ram);
+-      trim(ram);
 -      cpu =  exec("cat /proc/cpuinfo | grep 'model name' | tail -n1 | sed 's/^.*: //' | sed 's/([^)]*)/()/g' | tr -d '(/)'");
-+      cpu = exec("grep 'model name' " PROCDIR "/cpuinfo | tail -n1 | sed 's/^.*: //' | sed 's/([^)]*)/()/g' | tr -d '(/)'");
-       trim(cpu);
-       kernel = exec("uname -r");
-       trim(kernel);
-       os = exec("cat /etc/*-release | grep 'PRETTY_NAME' | cut -d '=' -f 2-");
-       os.erase(remove(os.begin(), os.end(), '\"' ), os.end());
-       trim(os);
+-      trim(cpu);
+-      kernel = exec("uname -r");
+-      trim(kernel);
+-      os = exec("cat /etc/*-release | grep 'PRETTY_NAME' | cut -d '=' -f 2-");
+-      os.erase(remove(os.begin(), os.end(), '\"' ), os.end());
+-      trim(os);
 -      cpusched = read_line("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
++      ram = to_string(sysconf(_SC_PHYS_PAGES) * sysconf(_SC_PAGESIZE)
++            / 1024 / 1024) + " MB";
++      cpu = read_sysctl<string>("hw.model");
++      kernel = to_string(read_sysctl<int>("kern.osreldate"));
++      os = read_sysctl<string>("kern.ostype") + " " +
++           read_sysctl<string>("kern.osrelease");
 +      gpu = exec("pciconf -lv | grep -A2 ^vgapci0 | tail -1 | cut -d\\' -f2");
 +      trim(gpu);
 +      driver = exec("glxinfo -B | grep 'OpenGL version' | sed 's/^.*: //'");
 +      trim(driver);
-+      cpusched = exec("sysctl -b kern.sched.name");
++      cpusched = read_sysctl<string>("kern.sched.name");
  
        const char* mangohud_recursion = getenv("MANGOHUD_RECURSION");
        if (!mangohud_recursion) {
-@@ -669,6 +672,8 @@ void init_system_info(){
+@@ -669,6 +669,8 @@ void init_system_info(){
        else {
             wineVersion = "";
        }
@@ -59,7 +63,7 @@
        // check for gamemode and vkbasalt
        stringstream ss;
        string line;
-@@ -686,6 +691,7 @@ void init_system_info(){
+@@ -686,6 +688,7 @@ void init_system_info(){
           if (HUDElements.gamemode_bol && HUDElements.vkbasalt_bol)
              break;
        }
@@ -67,7 +71,7 @@
  
        if (ld_preload)
           setenv("LD_PRELOAD", ld_preload, 1);
-@@ -697,7 +703,6 @@ void init_system_info(){
+@@ -697,7 +700,6 @@ void init_system_info(){
                  << "Gpu:" << gpu << "\n"
                  << "Driver:" << driver << "\n"
                  << "CPU Scheduler:" << cpusched << std::endl;

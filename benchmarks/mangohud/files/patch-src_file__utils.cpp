@@ -1,7 +1,44 @@
 --- src/file_utils.cpp.orig	2021-07-08 06:23:59 UTC
 +++ src/file_utils.cpp
-@@ -109,7 +109,7 @@ std::string read_symlink(const char * link)
+@@ -2,6 +2,7 @@
+ #include "string_utils.h"
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/sysctl.h>
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <limits.h>
+@@ -107,9 +108,36 @@ std::string read_symlink(const char * link)
+     return std::string(result, (count > 0) ? count : 0);
+ }
  
++template <>
++int read_sysctl(const char* name)
++{
++    int value;
++    size_t len = sizeof(value);
++
++    if (sysctlbyname(name, &value, &len, NULL, 0) == 0)
++        return value;
++    else return -1;
++}
++
++template <>
++std::string read_sysctl(const char* name)
++{
++    size_t len;
++
++    // How large buffer do we need?
++    if (sysctlbyname(name, NULL, &len, NULL, 0) != 0)
++        return "";
++
++    char value[len];
++    // Now read the actual value into it.
++    if (sysctlbyname(name, value, &len, NULL, 0) == 0)
++        return value;
++    else return "";
++}
++
  std::string get_exe_path()
  {
 -    return read_symlink("/proc/self/exe");
@@ -9,7 +46,7 @@
  }
  
  std::string get_wine_exe_name(bool keep_ext)
-@@ -119,14 +119,14 @@ std::string get_wine_exe_name(bool keep_ext)
+@@ -119,14 +147,14 @@ std::string get_wine_exe_name(bool keep_ext)
          return std::string();
      }
  
