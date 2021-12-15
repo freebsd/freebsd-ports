@@ -70,7 +70,6 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-geos=${LOCALBASE}/bin/geos-config \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
 		--with-pthread=yes \
-		--with-openmp \
 		--prefix=${LOCALBASE} \
 		--exec-prefix=${LOCALBASE}
 
@@ -138,6 +137,10 @@ USE_GCC=	yes
 PLIST_SUB+=	NOTONI386="@comment "
 .else
 PLIST_SUB+=	NOTONI386=""
+.endif
+
+.if ${ARCH} != powerpc
+CONFIGURE_ARGS+=	--with-openmp
 .endif
 
 .if !defined (GRASS_INST_DIR)
