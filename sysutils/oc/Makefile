@@ -22,7 +22,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 PLIST_FILES=	bin/oc
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	openshift
+GH_ACCOUNT=	jhixson74
 GH_SUBDIR=	src/github.com/openshift/oc
 
 GIT_COMMIT=	ddd7170fca667fef6397f5f27f7a5a41d7769b75
