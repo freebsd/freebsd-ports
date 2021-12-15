@@ -1,5 +1,5 @@
 PORTNAME=	pythran
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,10 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-extract:
+	${RM} ${WRKSRC}/third_party/xsimd/config/*.rej
+	${RM} ${WRKSRC}/third_party/xsimd/*.rej
+	${RM} ${WRKSRC}/third_party/xsimd/math/.xsimd_gamma.hpp.swp
 
 .include <bsd.port.mk>
