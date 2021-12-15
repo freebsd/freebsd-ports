@@ -2,11 +2,11 @@
 
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.0
+DISTVERSION=	1.32.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} b531c8c60c24ff5e4cf6a85289d77159d0e39b68.patch:dashboard
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} 91757292561eba170fe363b1f1023583216ca26f.patch:dashboard
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -86,7 +86,7 @@ NETDATA_PERST=	/var/db/${PORTNAME}
 
 .if ! ${PORT_OPTIONS:MCLOUD}
 post-patch:
-	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/b531c8c60c24ff5e4cf6a85289d77159d0e39b68.patch
+	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/91757292561eba170fe363b1f1023583216ca26f.patch
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
 	    ${PATCH_WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
