@@ -1,17 +1,43 @@
---- CMakeLists.txt.orig	2019-08-13 16:57:51 UTC
+--- CMakeLists.txt.orig	2021-12-14 18:54:00 UTC
 +++ CMakeLists.txt
-@@ -63,11 +63,11 @@ OPTION(ENABLE_SQLITE "Build SQLite3 backend for Wt::Db
- OPTION(ENABLE_POSTGRES "Build PostgreSQL backend for Wt::Dbo" ON)
- OPTION(ENABLE_FIREBIRD "Build FirebirdSQL backend for Wt::Dbo" ON)
- OPTION(ENABLE_MYSQL "Build mariadb/mysql backend for Wt::Dbo" ON)
+@@ -25,27 +25,27 @@ ENDIF(NOT SHARED_LIBS)
+ #
+ # Various things that must be configured by the user or packager ...
+ #
+-OPTION(BUILD_EXAMPLES "Build examples" ON)
++OPTION(BUILD_EXAMPLES "Build examples" OFF) # OFF is a more convenient default for FreeBSD options
+ OPTION(INSTALL_DOCUMENTATION "Install documentation (tutorials and reference)" OFF)
+ OPTION(INSTALL_EXAMPLES "Install examples (binaries and source)" OFF)
+-OPTION(INSTALL_RESOURCES "Install resources directory" ON)
++OPTION(INSTALL_RESOURCES "Install resources directory" OFF) # OFF is a more convenient default for FreeBSD options
+ OPTION(ENABLE_SSL "Enable cryptography functions, using OpenSSL" ON)
+-OPTION(ENABLE_HARU "Enable Haru Free PDF Library, which is used to provide support for painting to PDF (WPdfImage)" ON)
+-OPTION(ENABLE_PANGO "Enable Pango Library, which is used for improved font support (WPdfImage and WRasterImage)" ON)
++OPTION(ENABLE_HARU "Enable Haru Free PDF Library, which is used to provide support for painting to PDF (WPdfImage)" OFF) # OFF is a more convenient default for FreeBSD options
++OPTION(ENABLE_PANGO "Enable Pango Library, which is used for improved font support (WPdfImage and WRasterImage)" OFF) # OFF is a more convenient default for FreeBSD options
+ OPTION(ENABLE_EXT "Build Wt Ext library with JavaScript-only widgets (http://extjs.com/) DEPRECATED" OFF)
+-OPTION(ENABLE_SQLITE "Build SQLite3 backend for Wt::Dbo" ON)
+-OPTION(ENABLE_POSTGRES "Build PostgreSQL backend for Wt::Dbo" ON)
+-OPTION(ENABLE_FIREBIRD "Build FirebirdSQL backend for Wt::Dbo" ON)
+-OPTION(ENABLE_MYSQL "Build mariadb/mysql backend for Wt::Dbo" ON)
 -OPTION(ENABLE_MSSQLSERVER "Build Microsoft SQL Server backend for Wt::Dbo" ON)
 -OPTION(ENABLE_QT4 "Build Qt4 interworking library (libwtwithqt)" ON)
++OPTION(ENABLE_SQLITE "Build SQLite3 backend for Wt::Dbo" OFF) # OFF is a more convenient default for FreeBSD options
++OPTION(ENABLE_POSTGRES "Build PostgreSQL backend for Wt::Dbo" OFF) # OFF is a more convenient default for FreeBSD options
++OPTION(ENABLE_FIREBIRD "Build FirebirdSQL backend for Wt::Dbo" OFF) # OFF is a more convenient default for FreeBSD options
++OPTION(ENABLE_MYSQL "Build mariadb/mysql backend for Wt::Dbo" OFF) # OFF is a more convenient default for FreeBSD options
 +OPTION(ENABLE_MSSQLSERVER "Build Microsoft SQL Server backend for Wt::Dbo" OFF) # Microsoft Windows only option
 +OPTION(ENABLE_QT4 "Build Qt4 interworking library (libwtwithqt)" OFF) # QT4 is no longer available in FreeBSD Ports
  OPTION(ENABLE_QT5 "Build Qt5 interworking library (libwtwithqt5)" ON)
- OPTION(ENABLE_LIBWTTEST "Build Wt::Test" ON)
+ OPTION(ENABLE_SAML "Build built-in SAML service provider for Wt::Auth" OFF)
+-OPTION(ENABLE_LIBWTTEST "Build Wt::Test" ON)
 -OPTION(ENABLE_LIBWTDBO "Build Wt::Dbo" ON)
++OPTION(ENABLE_LIBWTTEST "Build Wt::Test" OFF) # OFF is a more convenient default for FreeBSD options
 +OPTION(ENABLE_LIBWTDBO "Build Wt::Dbo" OFF) # OFF is a more convenient default for FreeBSD options
  OPTION(WT_NO_STD_LOCALE "Build Wt to run on a system without std::locale support" OFF)
  OPTION(WT_NO_STD_WSTRING "Build Wt to run on a system without std::wstring support" OFF)
- OPTION(ENABLE_OPENGL "Build Wt with support for server-side opengl rendering" ON)
+-OPTION(ENABLE_OPENGL "Build Wt with support for server-side opengl rendering" ON)
++OPTION(ENABLE_OPENGL "Build Wt with support for server-side opengl rendering" OFF) # OFF is a more convenient default for FreeBSD options
+ OPTION(ENABLE_UNWIND "Build Wt with stacktrace support using libunwind" OFF)
+ 
+ IF(NOT CMAKE_CXX_STANDARD)
