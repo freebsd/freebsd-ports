@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	vcd
-DISTVERSION=	1.4-8
+DISTVERSION=	1.4-9
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
