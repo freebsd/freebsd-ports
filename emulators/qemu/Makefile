@@ -1,8 +1,7 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 
 PORTNAME=	qemu
-PORTVERSION=	6.1.0
-PORTREVISION=	3
+PORTVERSION=	6.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -135,7 +134,7 @@ CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L/usr/lib \
 		--extra-ldflags=-L${LOCALBASE}/lib \
 		--prefix=${PREFIX} --cc=${CC} --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
-		--python=${PYTHON_CMD} \
+		--python=${PYTHON_CMD} --mandir=${PREFIX}/man \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .if ${FLAVOR:U} != tools

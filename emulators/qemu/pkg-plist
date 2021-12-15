@@ -119,6 +119,7 @@ include/qemu-plugin.h
 %%DATADIR%%/linuxboot.bin
 %%LINUXBOOT_DMA%%%%DATADIR%%/linuxboot_dma.bin
 %%DATADIR%%/multiboot.bin
+%%DATADIR%%/multiboot_dma.bin
 %%DATADIR%%/npcm7xx_bootrom.bin
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
