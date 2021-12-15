@@ -792,6 +792,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/chattr/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/default.cfg
+%%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/edonr_test
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/filetest_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/filetest_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/run_edonr_test.ksh
@@ -926,6 +927,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_diff/zfs_diff_changes.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_diff/zfs_diff_cliargs.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_diff/zfs_diff_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_diff/zfs_diff_mangle.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_diff/zfs_diff_timestamp.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_diff/zfs_diff_types.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_get/cleanup.ksh
@@ -1203,6 +1205,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/zfs_wait.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/zfs_wait_deleteq.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zhack/zhack_label_checksum.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool/zpool_001_neg.ksh
@@ -1982,6 +1985,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pam/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pam/pam_basic.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pam/pam_nounmount.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/pam/pam_short_password.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pam/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pam/utilities.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pool_checkpoint/checkpoint_after_rewind.ksh
