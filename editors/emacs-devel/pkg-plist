@@ -2950,6 +2950,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/crisp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
@@ -3607,6 +3609,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/soundex.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/speedbar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/speedbar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/sqlite-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/sqlite-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/sqlite.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/sqlite.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/startup.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/startup.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/strokes.el.gz
@@ -4158,6 +4164,7 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sound.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sqlite.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/syntax.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/syntax.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sysdep.c
