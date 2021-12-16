@@ -11,8 +11,9 @@ COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
-ONLY_FOR_ARCHS_REASON=	untested on any other arch
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS_REASON=	untested on any other architecture
+
 # PEFS works on -current but out of tree KLDs get incorrectly compiled without INVARIANTS
 BROKEN_FreeBSD_14=	crashes on mount due to INVARIANTS
 
