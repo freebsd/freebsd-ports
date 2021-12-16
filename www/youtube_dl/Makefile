@@ -1,5 +1,5 @@
 PORTNAME=	youtube_dl
-DISTVERSION=	2021.06.06
+DISTVERSION=	2021.12.17
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/ytdl-org/youtube-dl/releases/download/${DISTVERSION}/ \
 		https://yt-dl.org/downloads/${DISTVERSION}/
