@@ -1,5 +1,5 @@
---- /var/ports/root/net/serviio/work/serviio-2.2.1/config/log4j2.xml.orig	2021-12-14 19:08:41.946554000 +0100
-+++ /var/ports/root/net/serviio/work/serviio-2.2.1/config/log4j2.xml	2021-12-14 19:09:19.554143000 +0100
+--- config/log4j2.xml.orig	2021-12-14 19:08:41.946554000 +0100
++++ config/log4j2.xml	2021-12-14 19:09:19.554143000 +0100
 @@ -9,7 +9,7 @@
  <Configuration>
  
