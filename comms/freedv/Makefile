@@ -9,6 +9,8 @@ COMMENT=	Narrow band digital voice
 
 LICENSE=	LGPL21
 
+BROKEN=		Needs update due to Hamlib changes
+
 LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libportaudio.so:audio/portaudio \
 		libhamlib.so:comms/hamlib \
