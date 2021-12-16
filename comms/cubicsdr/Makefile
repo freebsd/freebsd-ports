@@ -9,6 +9,8 @@ COMMENT=	SDR receiver using liquidsdr
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Needs update due to Hamlib changes
+
 RUN_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr \
