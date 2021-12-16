@@ -1,8 +1,8 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	apache-solr
-PORTVERSION=	8.11.0
-PORTREVISION=	1
+PORTVERSION=	8.11.1
+PORTREVISION=	0
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
