@@ -16,6 +16,7 @@ MASTER_SITES=	https://unit.nginx.org/download/:unit \
 	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-server/${JETTY_VERSION}/:server \
 	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/${JETTY_VERSION}/:jutil
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
+PORTREVISION=	1
 DISTFILES=	unit-${UNIT_VERSION}.tar.gz:unit \
 	classgraph-${CLASSGRAPH_VERSION}.jar:classgraph \
 	ecj-${ECJ_VERSION}.jar:ecj \
@@ -82,15 +83,21 @@ post-extract:
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	${CONFIGURE_CMD} java --module=${UNIT_MODNAME} \
+	${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} java \
+		--module=${UNIT_MODNAME} \
 		--local-repo=${DISTDIR} \
 		--jars=${JAVAJARDIR}
 
 do-build:
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}
+	cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+			${MAKEFILE} ${MAKE_ARGS} ${UNIT_MODNAME}
 
 do-install:
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}-install DESTDIR=${STAGEDIR}
+	cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+			${MAKEFILE} ${MAKE_ARGS} \
+			${UNIT_MODNAME}-install DESTDIR=${STAGEDIR}
 
 # Overwrite the target in the ${MASTERDIR}/Makefile
 post-install:

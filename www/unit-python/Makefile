@@ -1,6 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
+PORTREVISION=	1
 
 UNIT_MODNAME=	python${PYTHON_SUFFIX}
 
@@ -19,11 +20,14 @@ MASTERDIR=	${.CURDIR}/../unit
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	${CONFIGURE_CMD} python --module=${UNIT_MODNAME} \
-			--config=${PYTHON_CMD}-config
+	${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} python \
+		--module=${UNIT_MODNAME} \
+		--config=${PYTHON_CMD}-config
 
 do-build:
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}
+	cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+			${MAKEFILE} ${MAKE_ARGS} ${UNIT_MODNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/

@@ -1,6 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+PORTREVISION=	1
 
 UNIT_MODNAME=	php${PHP_VER}
 
@@ -18,11 +19,14 @@ MASTERDIR=	${.CURDIR}/../unit
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	${CONFIGURE_CMD} php --lib-path=${LOCALBASE}/lib \
-			--module=${UNIT_MODNAME}
+	${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} php \
+		--lib-path=${LOCALBASE}/lib \
+		--module=${UNIT_MODNAME}
 
 do-build:
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}
+	cd ${CONFIGURE_WRKSRC} && \
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${UNIT_MODNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
