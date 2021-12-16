@@ -1,7 +1,7 @@
 # Created by: clive
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	3.009
+PORTVERSION=	3.010
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
