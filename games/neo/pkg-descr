@@ -1,0 +1,8 @@
+Simulates the digital rain from "The Matrix".
+cmatrix clone with 32-bit color and Unicode support.
+
+neo recreates the digital rain effect from "The Matrix".
+Streams of random characters will endlessly scroll
+down your terminal screen.
+
+WWW: https://github.com/st3w/neo

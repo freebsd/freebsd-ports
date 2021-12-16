@@ -638,6 +638,7 @@
     SUBDIR += nazghul
     SUBDIR += nbsdgames
     SUBDIR += nehquake
+    SUBDIR += neo
     SUBDIR += neo-cowsay
     SUBDIR += nethack32
     SUBDIR += nethack33
