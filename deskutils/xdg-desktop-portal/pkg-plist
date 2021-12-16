@@ -38,6 +38,7 @@ share/dbus-1/interfaces/org.freedesktop.portal.MemoryMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.NetworkMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Notification.xml
 share/dbus-1/interfaces/org.freedesktop.portal.OpenURI.xml
+share/dbus-1/interfaces/org.freedesktop.portal.PowerProfileMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Print.xml
 share/dbus-1/interfaces/org.freedesktop.portal.ProxyResolver.xml
 share/dbus-1/interfaces/org.freedesktop.portal.RemoteDesktop.xml
@@ -59,11 +60,13 @@ share/locale/en_GB/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/es/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/fr/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/gl/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/hi/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/hr/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/hu/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/id/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/it/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/lt/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/nl/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/pl/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/pt_BR/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/ru/LC_MESSAGES/xdg-desktop-portal.mo

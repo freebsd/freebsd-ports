@@ -1,10 +1,9 @@
 PORTNAME=	xdg-desktop-portal
-PORTVERSION=	1.8.1
-PORTREVISION=	3
+PORTVERSION=	1.10.1
 CATEGORIES=	deskutils
 
-PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/arrowd/xdg-desktop-portal/pull/:freebsd_compat
-PATCHFILES=	1.patch:-p1:freebsd_compat
+PATCH_SITES=	https://arrowd.name/:freebsd_compat
+PATCHFILES=	552.patch:-p1:freebsd_compat
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Portal frontend service for Flatpak
