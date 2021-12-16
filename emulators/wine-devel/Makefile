@@ -42,6 +42,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-dbus \
 		--without-gettext --without-gettextpo \
 		--without-gphoto \
+		--without-gssapi \
 		--without-gstreamer \
 		--without-hal \
 		--without-inotify \
