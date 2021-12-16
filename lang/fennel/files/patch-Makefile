@@ -1,11 +1,11 @@
---- Makefile.orig	2021-08-20 14:24:55 UTC
+--- Makefile.orig	2021-12-21 14:46:27 UTC
 +++ Makefile
-@@ -57,7 +57,7 @@ LUA_INCLUDE_DIR ?= $(LUA_DIR)/src
+@@ -61,7 +61,7 @@ lint:
  
- PATH_ARGS=FENNEL_PATH=src/?.fnl FENNEL_MACRO_PATH=src/?.fnl
+ ## Binaries
  
--fennel-bin: src/launcher.fnl fennel $(STATIC_LUA_LIB)
-+fennel-bin: src/launcher.fnl fennel
- 	$(PATH_ARGS) ./fennel --no-compiler-sandbox --compile-binary \
- 		$< $@ $(STATIC_LUA_LIB) $(LUA_INCLUDE_DIR)
- 
+-LUA_VERSION=5.4.3
++LUA_VERSION ?= 5.4.3
+ LUA_DIR ?= $(PWD)/lua-$(LUA_VERSION)
+ NATIVE_LUA_LIB ?= $(LUA_DIR)/src/liblua-native.a
+ LUA_INCLUDE_DIR ?= $(LUA_DIR)/src

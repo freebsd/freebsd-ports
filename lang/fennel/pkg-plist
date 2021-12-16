@@ -1,4 +1,3 @@
 bin/fennel
-lib/fennel.lua
-lib/fennelview.lua
+%%LUA_MODSHAREDIR%%/fennel.lua
 man/man1/fennel.1.gz
