@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	fastimage
-PORTVERSION=	2.2.5
+DISTVERSION=	2.2.6
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
