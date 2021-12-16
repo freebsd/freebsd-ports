@@ -1,0 +1,21 @@
+A simple CLI utility for importing or exporting dashboard JSON definitions
+using the Grafana HTTP API.
+
+This may be useful for:
+
+- Backing up your dashboards that already exist within your Grafana instance,
+  e.g., if you are migrating from the internal sqlite database to MySQL.
+- Updating dashboard files for your Infrastructure-as-Code, for use with
+  Grafana dashboard provisioning.
+- Making tweaks to dashboard JSON files directly and updating Grafana with one
+  command.
+
+Notable features:
+
+- Mirrors the folder structure between a local set of dashboards and Grafana,
+  creating folders where necessary.
+- Ensures links to dashboards folders in a dashlist Panel are consistent with
+  the Folder IDs - useful for deploying one set of dashboards across mulitple
+  Grafana instances, e.g., for dev, test, prod environments.
+
+WWW: https://github.com/Beam-Connectivity/grafana-dashboard-manager
