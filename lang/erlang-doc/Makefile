@@ -1,7 +1,7 @@
 # Created by: ruslan@shevchenko.kiev.ua
 
 PORTNAME=	erlang
-PORTVERSION=	24.1
+PORTVERSION=	24.2
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg \
 		http://erlang.stacken.kth.se/download/:erlangorg \
