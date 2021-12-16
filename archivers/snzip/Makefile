@@ -1,15 +1,13 @@
 PORTNAME=	snzip
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	archivers
+DISTVERSIONPREFIX= v
 
-MAINTAINER=	mizhka@gmail.com
+MAINTAINER=	mizhka@freebsd.org
 COMMENT=	Compression/decompression tool based on snappy library
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to link: undefined symbol: typeinfo for snappy::Source
 
 LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
@@ -22,7 +20,10 @@ GH_ACCOUNT=	kubo
 CONFIGURE_ARGS=	--with-snappy=${LOCALBASE}
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/snzip
+PLIST_FILES=	bin/snunzip \
+                bin/snzcat \
+                bin/snzip
+
 PORTDOCS=	*
 
 .include <bsd.port.mk>
