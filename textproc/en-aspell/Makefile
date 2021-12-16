@@ -1,7 +1,7 @@
 # Created by: Serge Gagnon <ser_gagnon@sympatico.ca>
 
 PORTNAME=	${DICT}-aspell
-SPELLVERSION=	6-en-2018.04.16-0
+SPELLVERSION=	6-en-2020.12.07-0
 CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
