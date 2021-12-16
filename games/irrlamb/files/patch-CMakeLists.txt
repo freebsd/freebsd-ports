@@ -1,0 +1,69 @@
+--- CMakeLists.txt.orig	2019-05-11 14:28:25 UTC
++++ CMakeLists.txt
+@@ -1,19 +1,14 @@
+ cmake_minimum_required(VERSION 2.8)
+ 
+-# set default build type
+-if(NOT CMAKE_BUILD_TYPE)
+-	set(CMAKE_BUILD_TYPE Release)
+-endif()
+-
+ # define constants
+ add_definitions(-DGAME_VERSION="1.0.1")
+-add_definitions(-D_IRR_STATIC_LIB_)
+-add_definitions(-DdIDEDOUBLE)
+-add_definitions(-DCCD_IDEDOUBLE)
+-add_definitions(-DdTRIMESH_ENABLED)
+-add_definitions(-DdTRIMESH_OPCODE)
+-add_definitions(-DdLIBCCD_ENABLED)
+-add_definitions(-DdLIBCCD_CYL_CYL)
++#add_definitions(-D_IRR_STATIC_LIB_)
++#add_definitions(-DdIDEDOUBLE)
++#add_definitions(-DCCD_IDEDOUBLE)
++#add_definitions(-DdTRIMESH_ENABLED)
++#add_definitions(-DdTRIMESH_OPCODE)
++#add_definitions(-DdLIBCCD_ENABLED)
++#add_definitions(-DdLIBCCD_CYL_CYL)
+ 
+ # projects
+ project(irrlamb)
+@@ -44,6 +39,14 @@ include_directories(${X11_Xrandr_INCLUDE_PATH})
+ include_directories(${X11_X11_INCLUDE_PATH})
+ include_directories(${X11_xf86vmode_INCLUDE_PATH})
+ 
++# unbundled libs
++include_directories($ENV{LOCALBASE}/include)
++set(EXTRA_LIBS ${EXTRA_LIBS} $ENV{LOCALBASE}/lib/libtinyxml2.so)
++set(EXTRA_LIBS ${EXTRA_LIBS} $ENV{LOCALBASE}/lib/libIrrlicht.so)
++include_directories($ENV{LOCALBASE}/include/irrlicht)
++set(EXTRA_LIBS ${EXTRA_LIBS} $ENV{LOCALBASE}/lib/liblua-5.3.so)
++set(EXTRA_LIBS ${EXTRA_LIBS} $ENV{LOCALBASE}/lib/libode.so)
++
+ # pandora devices
+ if(PANDORA)
+ 	add_definitions("-DPANDORA")
+@@ -115,15 +118,15 @@ if(WIN32)
+ else()
+ 
+ 	# linux installation
+-	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/fonts DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/levels DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/meshes DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/scripts DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/shaders DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/sounds DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/textures DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ui DESTINATION share/games/${CMAKE_PROJECT_NAME})
++	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/fonts DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/levels DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/meshes DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/scripts DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/shaders DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/sounds DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/textures DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ui DESTINATION share/${CMAKE_PROJECT_NAME})
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/irrlamb.png DESTINATION share/pixmaps)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/irrlamb.desktop DESTINATION share/applications)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/CHANGELOG DESTINATION share/doc/${CMAKE_PROJECT_NAME})

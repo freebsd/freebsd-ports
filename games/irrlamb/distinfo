@@ -1,2 +1,5 @@
-SHA256 (jazztickets-irrlamb-v0.2.1_GH0.tar.gz) = 17b402e3a5cd203fa88c22c9d266ec7fe4f147781b0fc35470c859d945e323e3
-SIZE (jazztickets-irrlamb-v0.2.1_GH0.tar.gz) = 13500336
+TIMESTAMP = 1639566542
+SHA256 (jazztickets-irrlamb-v1.0.1_GH0.tar.gz) = 29edba47d41fc8536bb2c993918439587492499bffa3f9ad1d5f419ccfd720e0
+SIZE (jazztickets-irrlamb-v1.0.1_GH0.tar.gz) = 37821308
+SHA256 (jazztickets-cmake-6e3586a_GH0.tar.gz) = 2f25931465584c783c1d357a9c544a46cea2d23a147ccb5519ace726723f101f
+SIZE (jazztickets-cmake-6e3586a_GH0.tar.gz) = 10818
