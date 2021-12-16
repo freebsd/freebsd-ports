@@ -1,20 +1,21 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	mail
-DISTVERSION=	1.11.1
+DISTVERSION=	1.11.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	nextcloud/${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Mail app for Nextcloud
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 
