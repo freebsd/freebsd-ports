@@ -4,16 +4,32 @@
 
 crowdsec-firewall-bouncer is installed.
 
-You need to edit the config file %%ETCDIR%%/crowdsec-firewall-bouncer.yaml, your pf
-config and enable rc via sysrc.
+The bouncer should register itself but you may want to check the
+configuration file, which is now in %%ETCDIR%%/crowdsec-firewall-bouncer.yaml
+(for consistency with the other platforms).
 
-Add the following in pf.conf to create the tables
+In previous versions, the configuration was in /usr/local/etc/crowdsec-firewall-bouncer, you may need
+to check if you made any changes there.
 
+If it's the first time, you need to edit your Packet Filter configuration.
+Add the following in /etc/pf.conf to create the tables:
+
+----------
 # create crowdsec ipv4 table
 table <crowdsec-blacklists> persist
 
 # create crowdsec ipv6 table
 table <crowdsec6-blacklists> persist
+
+block drop in quick from <crowdsec-blacklists> to any
+block drop in quick from <crowdsec6-blacklists> to any
+----------
+
+To apply the file:
+
+# pfctl -f /etc/pf.conf
+
+Then activate the bouncer via sysrc:
 
 # sysrc crowdsec_firewall_enable="YES"
 EOM
