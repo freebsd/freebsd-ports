@@ -9,7 +9,7 @@ COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4+ cpe gettext python:3.6+
+USES=		apache:2.4+ cpe gettext python:3.6-3.9
 USE_PYTHON=	flavors
 
 CPE_VENDOR=	modwsgi
