@@ -1,25 +1,26 @@
---- src/definition.cpp.orig	2020-12-01 19:59:57 UTC
+--- src/definition.cpp.orig	2021-08-17 14:04:29 UTC
 +++ src/definition.cpp
-@@ -22,6 +22,7 @@
+@@ -5,6 +5,7 @@
+ #include <string>
  
  #include <ctype.h>
- #include <qregexp.h>
 +#include <sys/types.h>
  #include "md5.h"
  #include <stdio.h>
  #include <stdlib.h>
-@@ -446,13 +447,11 @@ void DefinitionImpl::writeDocAnchorsToTagFile(FTextStr
+@@ -416,13 +417,11 @@ void DefinitionImpl::writeDocAnchorsToTagFile(TextStre
  
  bool DefinitionImpl::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
  {
 -  uchar md5_sig[16];
-   QCString sigStr(33);
+-  char sigStr[33];
++  QCString sigStr(33);
    // to avoid mismatches due to differences in indenting, we first remove
    // double whitespaces...
    QCString docStr = doc.simplifyWhiteSpace();
 -  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.rawData(),33);
+-  MD5SigToString(md5_sig,sigStr);
 +  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.rawData());
    //printf("%s:_docsAlreadyAdded doc='%s' sig='%s' docSigs='%s'\n",
-   //    name().data(),doc.data(),sigStr.data(),sigList.data());
+   //    qPrint(name()),qPrint(doc),qPrint(sigStr),qPrint(sigList));
    if (sigList.find(sigStr)==-1) // new docs, add signature to prevent re-adding it

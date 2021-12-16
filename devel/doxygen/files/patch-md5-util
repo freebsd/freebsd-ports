@@ -1,21 +1,22 @@
---- src/util.cpp.orig	2020-12-26 14:29:40 UTC
+--- src/util.cpp.orig	2021-08-18 18:55:03 UTC
 +++ src/util.cpp
-@@ -25,6 +25,7 @@
- #include <mutex>
- #include <unordered_set>
+@@ -30,6 +30,7 @@
+ #include <cinttypes>
+ #include <sstream>
  
 +#include <sys/types.h>
  #include "md5.h"
  
- #include <qregexp.h>
-@@ -3812,24 +3813,18 @@ QCString convertNameToFile(const char *name,bool allow
+ #include "regex.h"
+@@ -3638,24 +3639,18 @@ QCString convertNameToFile(const QCString &name,bool a
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
 -      uchar md5_sig[16];
-       QCString sigStr(33);
+-      char sigStr[33];
 -      MD5Buffer((const unsigned char *)result.data(),resultLen,md5_sig);
--      MD5SigToString(md5_sig,sigStr.rawData(),33);
+-      MD5SigToString(md5_sig,sigStr);
++      QCString sigStr(33);
 +      MD5Data((const unsigned char *)result.data(),resultLen,sigStr.rawData());
        result=result.left(128-32)+sigStr;
      }
@@ -35,5 +36,17 @@
 -    result.prepend(QCString().sprintf("d%x/d%02x/",l1Dir,l2Dir));
 +    result.prepend(QCString().sprintf("d%c/d%c%c/",md5[29],md5[30],md5[31]));
    }
-   //printf("*** convertNameToFile(%s)->%s\n",name,result.data());
+   //printf("*** convertNameToFile(%s)->%s\n",qPrint(name),qPrint(result));
    return result;
+@@ -7251,6 +7246,11 @@ QCString selectBlock(const QCString& s,const QCString 
+ QCString removeEmptyLines(const QCString &s)
+ {
+   BufStr out(s.length()+1);
++  if (s.length()==0)
++  {
++    out.addChar('\0');
++    return out.data();
++  }
+   const char *p=s.data();
+   if (p)
+   {

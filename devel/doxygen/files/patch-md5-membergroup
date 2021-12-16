@@ -1,4 +1,4 @@
---- src/membergroup.cpp.orig	2020-11-28 16:00:56 UTC
+--- src/membergroup.cpp.orig	2021-08-02 18:54:15 UTC
 +++ src/membergroup.cpp
 @@ -27,6 +27,7 @@
  #include "doxygen.h"
@@ -7,18 +7,19 @@
 +#include <sys/types.h>
  #include "md5.h"
  
- MemberGroup::MemberGroup(const Definition *container,int id,const char *hdr,const char *d,const char *docFile,int docLine)
-@@ -319,12 +320,10 @@ void MemberGroup::setInGroup(bool b)
+ MemberGroup::MemberGroup(const Definition *container,int id,const QCString &hdr,
+@@ -257,12 +258,10 @@ int MemberGroup::numDocEnumValues() const
  
  QCString MemberGroup::anchor() const
  {
 -  uchar md5_sig[16];
-   QCString sigStr(33);
+-  char sigStr[33];
++  QCString sigStr(33);
    QCString locHeader = grpHeader;
    if (locHeader.isEmpty()) locHeader="[NOHEADER]";
 -  MD5Buffer((const unsigned char *)locHeader.data(),locHeader.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.rawData(),33);
+-  MD5SigToString(md5_sig,sigStr);
 +  MD5Data((const unsigned char *)locHeader.data(),locHeader.length(),sigStr.rawData());
-   return "amgrp"+sigStr;
+   return QCString("amgrp")+sigStr;
  }
  

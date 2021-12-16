@@ -1,11 +1,13 @@
---- vhdlparser/CMakeLists.txt.orig	2020-11-17 19:19:24 UTC
+--- vhdlparser/CMakeLists.txt.orig	2021-05-12 18:46:54 UTC
 +++ vhdlparser/CMakeLists.txt
-@@ -36,7 +36,7 @@ add_custom_command(
- )
+@@ -37,8 +37,8 @@ add_custom_command(
  set_source_files_properties(${GENERATED_SRC}/VhdlParser_adj.cc PROPERTIES GENERATED 1)
  
--include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/qtools ${PROJECT_SOURCE_DIR}/vhdlparser ${GENERATED_SRC})
-+include_directories(BEFORE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/qtools ${CMAKE_SOURCE_DIR}/vhdlparser ${GENERATED_SRC})
+ include_directories(
+-	${PROJECT_SOURCE_DIR}/src
+-	${PROJECT_SOURCE_DIR}/vhdlparser
++	BEFORE ${CMAKE_SOURCE_DIR}/src
++	${CMAKE_SOURCE_DIR}/vhdlparser
+ 	${GENERATED_SRC})
  add_library(vhdlparser STATIC
  CharStream.cc
- ParseException.cc

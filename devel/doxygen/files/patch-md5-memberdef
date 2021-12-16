@@ -1,22 +1,23 @@
---- src/memberdef.cpp.orig	2020-12-26 19:49:45 UTC
+--- src/memberdef.cpp.orig	2021-08-18 13:55:35 UTC
 +++ src/memberdef.cpp
 @@ -17,6 +17,7 @@
- #include <qglobal.h>
- #include <qregexp.h>
+ #include <stdio.h>
  #include <assert.h>
+ #include <mutex>
 +#include <sys/types.h>
+ 
  #include "md5.h"
  #include "memberdef.h"
- #include "membername.h"
-@@ -4198,10 +4199,8 @@ void MemberDefImpl::setAnchor()
+@@ -4139,10 +4140,8 @@ void MemberDefImpl::setAnchor()
    }
  
    // convert to md5 hash
 -  uchar md5_sig[16];
-   QCString sigStr(33);
+-  char sigStr[33];
 -  MD5Buffer((const unsigned char *)memAnchor.data(),memAnchor.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.rawData(),33);
+-  MD5SigToString(md5_sig,sigStr);
++  QCString sigStr(33);
 +  MD5Data((const unsigned char *)memAnchor.data(),memAnchor.length(),sigStr.rawData());
-   m_impl->anc = "a"+sigStr;
+   m_impl->anc = QCString("a")+sigStr;
  }
  

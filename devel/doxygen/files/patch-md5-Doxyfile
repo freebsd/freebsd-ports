@@ -1,10 +1,12 @@
---- Doxyfile.orig	2019-07-30 13:23:30 UTC
+--- Doxyfile.orig	2021-07-30 18:31:20 UTC
 +++ Doxyfile
-@@ -276,7 +276,6 @@ MACRO_EXPANSION        = YES
+@@ -274,8 +274,7 @@ ENABLE_PREPROCESSING   = YES
+ MACRO_EXPANSION        = YES
  EXPAND_ONLY_PREDEF     = YES
  SEARCH_INCLUDES        = YES
- INCLUDE_PATH           = qtools \
--                         libmd5 \
-                          liblodepng \
+-INCLUDE_PATH           = libmd5 \
+-                         liblodepng \
++INCLUDE_PATH           = liblodepng \
                           libmscgen
  INCLUDE_FILE_PATTERNS  =
+ PREDEFINED             =

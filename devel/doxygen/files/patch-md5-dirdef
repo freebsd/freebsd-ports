@@ -1,4 +1,4 @@
---- src/dirdef.cpp.orig	2020-11-27 20:27:34 UTC
+--- src/dirdef.cpp.orig	2021-08-17 17:10:43 UTC
 +++ src/dirdef.cpp
 @@ -11,11 +11,13 @@
   * Documents produced by Doxygen are derivative works derived from the
@@ -14,14 +14,15 @@
  #include "md5.h"
  #include "filename.h"
  #include "doxygen.h"
-@@ -180,10 +182,8 @@ void DirDefImpl::sort()
+@@ -178,10 +180,8 @@ void DirDefImpl::sort()
  static QCString encodeDirName(const QCString &anchor)
  {
    // convert to md5 hash
 -  uchar md5_sig[16];
-   QCString sigStr(33);
+-  char sigStr[33];
 -  MD5Buffer((const unsigned char *)anchor.data(),anchor.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.rawData(),33);
+-  MD5SigToString(md5_sig,sigStr);
++  QCString sigStr(33);
 +  MD5Data((const unsigned char *)anchor.data(),anchor.length(),sigStr.rawData());
    return sigStr;
  
