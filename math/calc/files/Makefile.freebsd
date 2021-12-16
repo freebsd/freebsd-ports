@@ -9,7 +9,6 @@ CFLAGS:=	%%CFLAGS%% ${ICFLAGS} ${CCOPT}
 INCDIR:=	${LOCALBASE}/include
 LCC:=		%%CC%%
 LIBDIR:=	${PREFIX}/lib
-MAKE:= 	 	%%GMAKE%%
 MANDIR:=	${PREFIX}/man/man1
 SCRIPTDIR:=	${PREFIX}/libexec/cscript
 T:=		${DESTDIR}
