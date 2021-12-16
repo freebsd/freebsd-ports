@@ -112,7 +112,7 @@ GH_TUPLE=	\
 		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zeebo:admission:v3.0.3:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
 		zeebo:assert:v1.3.0:zeebo_assert/vendor/github.com/zeebo/assert \
-		zeebo:clingy:00a909f86ea9:zeebo_clingy/vendor/github.com/zeebo/clingy \
+		zeebo:clingy:0d02f56b01b4:zeebo_clingy/vendor/github.com/zeebo/clingy \
 		zeebo:errs:v1.2.2:zeebo_errs/vendor/github.com/zeebo/errs \
 		zeebo:errs:v2.0.3:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
