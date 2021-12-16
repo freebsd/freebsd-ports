@@ -1,6 +1,6 @@
 PORTNAME=	cppunit
 PORTVERSION=	1.14.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	https://dev-www.libreoffice.org/src/
 
@@ -16,11 +16,11 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 DOXYGEN_CONFIGURE_ENABLE=	dot doxygen html-docs
 DOXYGEN_CONFIGURE_ON=	--htmldir="${DOCSDIR}/html"
 
+USES=		libtool pathfix compiler:c++11-lang
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 OPTIONS_SUB=	yes
 USE_LDCONFIG=	yes
-USES=		libtool pathfix compiler:c++11-lang
 
 SUB_FILES=	cppunit-config
 SUB_LIST+=	DISTVERSION=${DISTVERSION}
