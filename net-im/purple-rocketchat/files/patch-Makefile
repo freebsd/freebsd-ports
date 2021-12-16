@@ -1,0 +1,13 @@
+--- Makefile.orig	2021-12-16 07:18:46 UTC
++++ Makefile
+@@ -8,8 +8,8 @@ WIN32_CC ?= $(WIN32_DEV_TOP)/mingw-4.7.2/bin/gcc
+ 
+ PKG_CONFIG ?= pkg-config
+ 
+-REVISION_ID = $(shell hg id -i)
+-REVISION_NUMBER = $(shell hg id -n)
++REVISION_ID = 
++REVISION_NUMBER = 
+ DATE_FMT = %Y.%m.%d
+ ifdef SOURCE_DATE_EPOCH
+     BUILD_DATE ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+$(DATE_FMT)"  2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+$(DATE_FMT)" 2>/dev/null || date -u "+$(DATE_FMT)")
