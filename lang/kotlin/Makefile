@@ -1,6 +1,6 @@
 PORTNAME=	kotlin
-PORTVERSION=	1.6.0
-CATEGORIES=	lang
+PORTVERSION=	1.6.10
+CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/JetBrains/kotlin/releases/download/v${PORTVERSION}/
 DISTNAME=	kotlin-compiler-${PORTVERSION}
 
@@ -14,10 +14,11 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=	zip
 
-WRKSRC=	${WRKDIR}/kotlinc
-
 USE_JAVA=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
+
+WRKSRC=	${WRKDIR}/kotlinc
 
 KOTLIN_BIN=	kapt \
 		kotlin \
