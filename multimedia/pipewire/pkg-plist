@@ -17,6 +17,7 @@ bin/pw-play
 bin/pw-profiler
 bin/pw-record
 bin/pw-reserve
+bin/pw-top
 %%MEDIASESSION%%bin/spa-acp-tool
 bin/spa-inspect
 bin/spa-json-dump
@@ -164,7 +165,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.340.0
+lib/libpipewire-0.3.so.0.342.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -180,6 +181,7 @@ lib/pipewire-0.3/libpipewire-module-protocol-native.so
 lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 lib/pipewire-0.3/libpipewire-module-protocol-simple.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-pulse-tunnel.so
+%%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-raop-discover.so
 lib/pipewire-0.3/libpipewire-module-rtkit.so
 lib/pipewire-0.3/libpipewire-module-session-manager.so
 lib/pipewire-0.3/libpipewire-module-spa-device-factory.so

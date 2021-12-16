@@ -1,6 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.40
-PORTREVISION=	1
+DISTVERSION=	0.3.42
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
