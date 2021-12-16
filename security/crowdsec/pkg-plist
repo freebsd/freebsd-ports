@@ -1,12 +1,18 @@
-@sample %%ETCDIR%%/config.yaml.sample
+@mode 0755
 bin/crowdsec
+bin/cscli
 bin/crowdsec-cli
-%%ETCDIR%%/acquis.yaml
-%%ETCDIR%%/crowdsec.service
-%%ETCDIR%%/crowdsec_pull
-%%ETCDIR%%/dev.yaml
-%%ETCDIR%%/local_api_credentials.yaml
-%%ETCDIR%%/online_api_credentials.yaml
+@mode 0600
+@sample %%ETCDIR%%/local_api_credentials.yaml.sample
+@sample %%ETCDIR%%/online_api_credentials.yaml.sample
+@mode 0644
+@sample %%ETCDIR%%/acquis.yaml.sample
+@sample %%ETCDIR%%/config.yaml.sample
+@sample %%ETCDIR%%/profiles.yaml.sample
+@sample %%ETCDIR%%/simulation.yaml.sample
+@sample %%ETCDIR%%/notifications/http/http.yaml.sample
+@sample %%ETCDIR%%/notifications/slack/slack.yaml.sample
+@sample %%ETCDIR%%/notifications/splunk/splunk.yaml.sample
 %%ETCDIR%%/patterns/aws
 %%ETCDIR%%/patterns/bacula
 %%ETCDIR%%/patterns/bro
@@ -31,6 +37,10 @@ bin/crowdsec-cli
 %%ETCDIR%%/patterns/smb
 %%ETCDIR%%/patterns/ssh
 %%ETCDIR%%/patterns/tcpdump
-%%ETCDIR%%/profiles.yaml
-%%ETCDIR%%/simulation.yaml
-%%ETCDIR%%/user.yaml
+@mode 0755
+lib/crowdsec/plugins/notification-http
+lib/crowdsec/plugins/notification-slack
+lib/crowdsec/plugins/notification-splunk
+@dir %%ETCDIR%%/hub
+@dir /var/db/crowdsec/data
+@dir /var/db/crowdsec

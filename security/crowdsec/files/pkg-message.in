@@ -4,10 +4,17 @@
 
 crowdsec is installed.
 
-You need to edit the agent config file %%ETCDIR%%/crowdsec.yaml and
-enable rc via sysrc.
+You need to check/edit the following files in %%ETCDIR%% as described in https://doc.crowdsec.net/docs/configuration/crowdsec_configuration
+
+ - config.yaml: main configuration
+ - acquis.yaml: where to find logs to parse (this port does not include automatic discovery of the running services)
+ - profiles.yaml: remediation policies (ban, duration, etc)
+
+Then you can enable the daemon via sysrc and run it.
 
 # sysrc crowdsec_enable="YES"
+crowdsec_enable: NO -> YES
+# service crowdsec start
 EOM
 }
 ]
