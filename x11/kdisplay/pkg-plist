@@ -18,6 +18,7 @@ share/kpackage/kcms/kcm_kdisplay/contents/ui/main.qml
 share/kpackage/kcms/kcm_kdisplay/metadata.desktop
 share/kpackage/kcms/kcm_kdisplay/metadata.json
 share/kservices5/kcm_kdisplay.desktop
+share/kservices5/plasma-applet-org.kwinft.kdisplay.desktop
 share/locale/de/LC_MESSAGES/kcm_kdisplay.mo
 share/locale/de/LC_MESSAGES/kdisplay-plasma.mo
 share/locale/el/LC_MESSAGES/kcm_kdisplay.mo
