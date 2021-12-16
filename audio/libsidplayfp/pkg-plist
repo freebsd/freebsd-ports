@@ -727,7 +727,7 @@ libdata/pkgconfig/libstilview.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_0e48fb69e5401a3349ffe4873975a483.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_3c71aff7e2eddc25a0761bf93886799c.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_3e348699c763759caa90d9724d3765d1.html
-%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_000006_000007.html
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_000005_000006.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_49e56c817e5e54854c35e136979f97ca.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_59e66d0e64985b7d78fdc4644c64c4c0.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_72b54144977f20270a1b83a5c0f43219.html
@@ -1070,9 +1070,6 @@ libdata/pkgconfig/libstilview.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/inherit_graph_81.map
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/inherit_graph_81.md5
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/inherit_graph_81.png
-%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/inherit_graph_82.map
-%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/inherit_graph_82.md5
-%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/inherit_graph_82.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/iniParser_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/interrupt_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
@@ -1093,6 +1090,7 @@ libdata/pkgconfig/libstilview.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/opcodes_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/open.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/p00_8h_source.html
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/pla_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/player_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/pot_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/prg_8h_source.html
@@ -1106,6 +1104,7 @@ libdata/pkgconfig/libstilview.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/romCheck_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sidbuilder_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sidcxx11_8h_source.html
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sidcxx14_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/siddefs-fp_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sidemu_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sidendian_8h_source.html

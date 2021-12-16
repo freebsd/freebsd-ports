@@ -1,4 +1,5 @@
 PORTNAME=	libsidplayfp
+PORTVERSION=	1
 DISTVERSION=	2.3.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
