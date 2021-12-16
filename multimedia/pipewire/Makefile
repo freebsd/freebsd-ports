@@ -65,6 +65,14 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D pipewire-v4l2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1400000
+PLIST_SUB+=	FREEBSD14="@comment "
+.else
+PLIST_SUB+=	FREEBSD14=""
+.endif
+
 post-extract:
 	${LN} -s ${WRKDIR}/media-session-${MEDIA_SESSION_VERSION} ${WRKSRC}/subprojects/media-session
 
@@ -76,4 +84,4 @@ post-patch-MEDIASESSION-on:
 	@${REINPLACE_CMD} '/manager_args/ s/@sm_comment@//g' \
 		${WRKSRC}/src/daemon/pipewire.conf.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

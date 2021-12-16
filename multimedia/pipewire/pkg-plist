@@ -17,7 +17,7 @@ bin/pw-play
 bin/pw-profiler
 bin/pw-record
 bin/pw-reserve
-bin/pw-top
+%%FREEBSD14%%bin/pw-top
 %%MEDIASESSION%%bin/spa-acp-tool
 bin/spa-inspect
 bin/spa-json-dump
