@@ -10,7 +10,7 @@ COMMENT=	Alignment program for mapping next-generation sequencing reads
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	64-bit code, some assembly language
 
 BUILD_DEPENDS=	simde>0:devel/simde
