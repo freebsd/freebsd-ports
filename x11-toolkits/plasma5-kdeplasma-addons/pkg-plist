@@ -78,6 +78,9 @@ share/kservices5/kwin/kwin4_window_switcher_thumbnails.desktop
 share/kservices5/plasma-runner-character_config.desktop
 share/kservices5/plasma-runner-dictionary_config.desktop
 share/kservices5/plasma-runner-spellchecker_config.desktop
+share/kservices5/plasma-wallpaper-org.kde.haenau.desktop
+share/kservices5/plasma-wallpaper-org.kde.hunyango.desktop
+share/kservices5/plasma-wallpaper-org.kde.potd.desktop
 share/kwin/desktoptabbox/previews/contents/ui/main.qml
 share/kwin/desktoptabbox/previews/metadata.desktop
 share/kwin/tabbox/big_icons/contents/ui/IconTabBox.qml

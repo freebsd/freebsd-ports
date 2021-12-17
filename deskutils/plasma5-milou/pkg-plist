@@ -7,6 +7,7 @@ lib/libmilou.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/milou/globals.js
 %%QT_QMLDIR%%/org/kde/milou/libmilouqmlplugin.so
 %%QT_QMLDIR%%/org/kde/milou/qmldir
+share/kservices5/plasma-applet-org.kde.milou.desktop
 share/locale/ast/LC_MESSAGES/milou.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/ca/LC_MESSAGES/milou.mo

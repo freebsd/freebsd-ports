@@ -49,6 +49,8 @@ share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/fakecontrols/
 share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.plasma.themeexplorer/metadata.desktop
 share/kpackage/genericqml/org.kde.plasma.themeexplorer/metadata.json
+share/kservices5/plasma-package-org.kde.plasma.cuttlefish.desktop
+share/kservices5/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
 share/locale/ar/LC_MESSAGES/cuttlefish.mo
 share/locale/ar/LC_MESSAGES/cuttlefish_editorplugin.mo
 share/locale/ar/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo

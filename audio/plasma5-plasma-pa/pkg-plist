@@ -41,6 +41,7 @@ share/kpackage/kcms/kcm_pulseaudio/contents/ui/main.qml
 share/kpackage/kcms/kcm_pulseaudio/metadata.desktop
 share/kpackage/kcms/kcm_pulseaudio/metadata.json
 share/kservices5/kcm_pulseaudio.desktop
+share/kservices5/plasma-applet-org.kde.plasma.volume.desktop
 share/locale/ar/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ast/LC_MESSAGES/kcm_pulseaudio.mo
