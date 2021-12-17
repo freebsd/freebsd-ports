@@ -1,8 +1,7 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
 
 PORTNAME=	links
-DISTVERSION=	2.20.2
-PORTREVISION=	1
+PORTVERSION=	2.25
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -19,13 +18,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
 		--without-gpm --without-fb --without-windows
 
-USES=		cpe localbase:ldflags ssl gettext-runtime
+USES=		cpe localbase:ldflags ssl tar:bz2
 
 CPE_VENDOR=	twibright
 
 PLIST_FILES=	bin/links man/man1/links.1.gz
 
-OPTIONS_DEFINE=	BROTLI CIPHERSTRING DIRECTFB IPV6 NLS SVG SVGALIB THREADS TRANS \
+OPTIONS_DEFINE=	BROTLI CIPHERSTRING DIRECTFB IPV6 SVG SVGALIB THREADS TRANS \
 		UTF8 X11
 OPTIONS_DEFAULT=	UTF8 X11
 
@@ -40,9 +39,6 @@ DIRECTFB_LIB_DEPENDS=	libdirectfb.so:devel/directfb
 DIRECTFB_CONFIGURE_WITH=directfb
 
 IPV6_CONFIGURE_WITH=	ipv6
-
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	gettext-runtime
 
 SVG_CONFIGURE_WITH=	librsvg
 SVG_USES=		gnome
@@ -75,7 +71,7 @@ CIPHERSTRING?=	HIGH:!SSLv2:!aNULL:!eNULL:@STRENGTH
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
-USES+=		jpeg
+USES+=		jpeg pkgconfig
 CONFIGURE_ARGS+=	--enable-graphics
 .else
 .if ${PORT_OPTIONS:MSVG}
@@ -86,7 +82,7 @@ CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 
 .if ${PORT_OPTIONS:MX11}
 DESKTOP_ENTRIES="links" \
-		"Lynx-like text WWW browser" \
+		"${COMMENT}" \
 		"${PREFIX}/share/pixmaps/links.xpm" \
 		"links -g" \
 		"Network;WebBrowser;" \
@@ -95,8 +91,6 @@ DESKTOP_ENTRIES="links" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/os_dep.h
-	@${REINPLACE_CMD} -e "/LIBS=/{s/-lpthread/-pthread/;s/-ldl//;}" \
-		${WRKSRC}/configure
 .if ${PORT_OPTIONS:MCIPHERSTRING}
 	@${REINPLACE_CMD} -e '/SSL_CTX_set_options/ \
 	s/;/; SSL_CTX_set_cipher_list(ctx, "${CIPHERSTRING}");/' \
