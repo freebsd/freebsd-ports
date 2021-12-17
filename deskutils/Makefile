@@ -171,6 +171,7 @@
     SUBDIR += mencal
     SUBDIR += menumaker
     SUBDIR += meteo
+    SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += myitcrm
