@@ -1,7 +1,7 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
 
 PORTNAME=	pms-devel
-PORTVERSION=	0.0.20200702
+PORTVERSION=	0.0.20211015
 CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ambientsound
 GH_PROJECT=	pms
-GH_TAGNAME=	cae1f02
+GH_TAGNAME=	c94e3c6
 
 GH_TUPLE=	\
 		RoaringBitmap:roaring:v0.4.16:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
