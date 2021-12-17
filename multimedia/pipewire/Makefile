@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
-PORTREVISION=	1
 DISTVERSION=	0.3.42
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 
 USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
-		pkgconfig python:3.6+,build readline
+		ncurses pkgconfig python:3.6+,build readline
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -66,12 +66,10 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D pipewire-v4l2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1400035
-USES+=		ncurses
-.else
-USES+=		ncurses:port
+# Fake pkg-config support before https://cgit.freebsd.org/src/commit/?id=396851c20aeb
+# but only if devel/ncurses isn't installed
+.if !exists(/usr/libdata/pkgconfig/ncursesw.pc)
+CONFIGURE_ENV+=	${ncurses_ARGS:Mbase:C/.+/PKG_CONFIG_PATH="${FILESDIR}"/}
 .endif
 
 post-extract:
