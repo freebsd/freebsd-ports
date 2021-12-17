@@ -11,6 +11,7 @@ share/applications/org.kde.PrintQueue.desktop
 share/applications/org.kde.kde-add-printer.desktop
 share/knotifications5/printmanager.notifyrc
 share/kservices5/kcm_printer_manager.desktop
+share/kservices5/plasma-applet-org.kde.plasma.printmanager.desktop
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ar/LC_MESSAGES/print-manager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo

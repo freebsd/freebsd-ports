@@ -274,6 +274,8 @@ share/kservices5/marble_thumbnail_gpx.desktop
 share/kservices5/marble_thumbnail_kml.desktop
 share/kservices5/marble_thumbnail_kmz.desktop
 share/kservices5/marble_thumbnail_osm.desktop
+share/kservices5/plasma-applet-org.kde.plasma.worldclock.desktop
+share/kservices5/plasma-wallpaper-org.kde.plasma.worldmap.desktop
 share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
 share/locale/ar/LC_MESSAGES/marble.mo
