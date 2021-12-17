@@ -19,7 +19,7 @@ BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		evdev-proto>0:devel/evdev-proto \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
-		wlroots>=0.14.0.1<0.16.0:x11-toolkits/wlroots
+		wlroots>=0.15.0<0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libdrm.so:graphics/libdrm \
 		libvulkan.so:graphics/vulkan-loader \
