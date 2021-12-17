@@ -1,7 +1,7 @@
 # Created by: Kirill Ponomarev <krion@FreeBSD.org>
 
 PORTNAME=	pop
-PORTVERSION=	20.0
+PORTVERSION=	20.1.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,7 +21,7 @@ USES=		python:3.6+ shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	saltstack/pop
-GL_COMMIT=	3079ce16ed0d6dcc14c6c909c9cd7e6604540df6
+GL_COMMIT=	58d846bdd196b71348910aea77cd0139f70c4f12
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
