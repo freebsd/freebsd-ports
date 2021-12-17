@@ -1,7 +1,6 @@
 %%COMPLETIONS%%etc/bash_completion.d/gh
 %%COMPLETIONS%%share/fish/vendor_completions.d/gh.fish
 %%COMPLETIONS%%share/zsh/site-functions/_gh
-%%MANPAGES%%man/man1/gh-actions.1.gz
 %%MANPAGES%%man/man1/gh-alias-delete.1.gz
 %%MANPAGES%%man/man1/gh-alias-list.1.gz
 %%MANPAGES%%man/man1/gh-alias-set.1.gz
@@ -10,6 +9,7 @@
 %%MANPAGES%%man/man1/gh-auth-login.1.gz
 %%MANPAGES%%man/man1/gh-auth-logout.1.gz
 %%MANPAGES%%man/man1/gh-auth-refresh.1.gz
+%%MANPAGES%%man/man1/gh-auth-setup-git.1.gz
 %%MANPAGES%%man/man1/gh-auth-status.1.gz
 %%MANPAGES%%man/man1/gh-auth.1.gz
 %%MANPAGES%%man/man1/gh-browse.1.gz
@@ -27,6 +27,7 @@
 %%MANPAGES%%man/man1/gh-codespace.1.gz
 %%MANPAGES%%man/man1/gh-completion.1.gz
 %%MANPAGES%%man/man1/gh-config-get.1.gz
+%%MANPAGES%%man/man1/gh-config-list.1.gz
 %%MANPAGES%%man/man1/gh-config-set.1.gz
 %%MANPAGES%%man/man1/gh-config.1.gz
 %%MANPAGES%%man/man1/gh-extension-create.1.gz
@@ -84,6 +85,7 @@
 %%MANPAGES%%man/man1/gh-repo-delete.1.gz
 %%MANPAGES%%man/man1/gh-repo-fork.1.gz
 %%MANPAGES%%man/man1/gh-repo-list.1.gz
+%%MANPAGES%%man/man1/gh-repo-rename.1.gz
 %%MANPAGES%%man/man1/gh-repo-sync.1.gz
 %%MANPAGES%%man/man1/gh-repo-view.1.gz
 %%MANPAGES%%man/man1/gh-repo.1.gz
