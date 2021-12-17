@@ -131,7 +131,10 @@ share/icons/hicolor/scalable/apps/latte-dock.svg
 share/knotifications5/lattedock.notifyrc
 share/knsrcfiles/latte-indicators.knsrc
 share/knsrcfiles/latte-layouts.knsrc
+share/kservices5/plasma-applet-org.kde.latte.containment.desktop
+share/kservices5/plasma-applet-org.kde.latte.plasmoid.desktop
 share/kservices5/plasma-containmentactions-lattecontextmenu.desktop
+share/kservices5/plasma-shell-org.kde.latte.shell.desktop
 share/kservicetypes5/latte-indicator.desktop
 share/latte/indicators/default/metadata.desktop
 share/latte/indicators/default/package/config/config.qml
@@ -237,6 +240,10 @@ share/locale/gl/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/gl/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
+share/locale/hsb/LC_MESSAGES/latte-dock.mo
+share/locale/hsb/LC_MESSAGES/latte_indicator_org.kde.latte.default.mo
+share/locale/hsb/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
+share/locale/hsb/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
 share/locale/ia/LC_MESSAGES/latte-dock.mo
 share/locale/ia/LC_MESSAGES/latte_indicator_org.kde.latte.default.mo
 share/locale/ia/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
