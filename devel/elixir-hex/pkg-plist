@@ -25,6 +25,9 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.VerifyHostname.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Mix.TaskDescription.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Mix.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Netrc.Cache.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Netrc.Parser.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Netrc.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.OptionParser.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Parallel.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Registry.Server.beam
@@ -73,6 +76,7 @@ lib/elixir/lib/hex/ebin/mix_hex_erl_tar.beam
 lib/elixir/lib/hex/ebin/mix_hex_filename.beam
 lib/elixir/lib/hex/ebin/mix_hex_http.beam
 lib/elixir/lib/hex/ebin/mix_hex_http_httpc.beam
+lib/elixir/lib/hex/ebin/mix_hex_licenses.beam
 lib/elixir/lib/hex/ebin/mix_hex_pb_names.beam
 lib/elixir/lib/hex/ebin/mix_hex_pb_package.beam
 lib/elixir/lib/hex/ebin/mix_hex_pb_signed.beam
@@ -108,6 +112,9 @@ lib/elixir/lib/hex/lib/hex/http/certs.ex
 lib/elixir/lib/hex/lib/hex/http/ssl.ex
 lib/elixir/lib/hex/lib/hex/http/verify_hostname.ex
 lib/elixir/lib/hex/lib/hex/mix.ex
+lib/elixir/lib/hex/lib/hex/netrc.ex
+lib/elixir/lib/hex/lib/hex/netrc/cache.ex
+lib/elixir/lib/hex/lib/hex/netrc/parser.ex
 lib/elixir/lib/hex/lib/hex/option_parser.ex
 lib/elixir/lib/hex/lib/hex/parallel.ex
 lib/elixir/lib/hex/lib/hex/registry.ex
