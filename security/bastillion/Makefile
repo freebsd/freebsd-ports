@@ -2,10 +2,10 @@
 
 PORTNAME=		bastillion
 DISTVERSIONPREFIX=	jetty-v
-DISTVERSION=		3.10_00
+DISTVERSION=		3.11_01
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-upgrade-3.08.00.jar
-PORTREVISION=		1
+PORTREVISION=		0
 CATEGORIES=		security www java
 MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 
