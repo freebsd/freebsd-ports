@@ -1,14 +1,15 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	contacts
-DISTVERSION=	4.0.6
+DISTVERSION=	4.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	nextcloud/${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	nextcloud
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Contacts app for Nextcloud
