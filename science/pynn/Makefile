@@ -1,7 +1,7 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
 
 PORTNAME=	pynn
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
