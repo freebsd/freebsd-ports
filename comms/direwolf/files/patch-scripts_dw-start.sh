@@ -1,6 +1,12 @@
---- dw-start.sh.orig	2018-10-08 14:15:21 UTC
-+++ dw-start.sh
-@@ -120,14 +120,14 @@ function GUI {
+--- scripts/dw-start.sh.orig	2021-12-17 15:56:10 UTC
++++ scripts/dw-start.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/bash
++#!%%PREFIX%%/bin/bash
+ 
+ # Why not simply "#!/bin/bash" ?
+ 
+@@ -133,14 +133,14 @@ function GUI {
     # Auto adjust the startup for your particular environment:  gnome-terminal, xterm, etc.
     #
  
@@ -21,15 +27,3 @@
        SUCCESS=1
       else
        echo "Did not find an X terminal emulator.  Reverting to CLI mode"
-@@ -142,9 +142,9 @@ function GUI {
- # -----------------------------------------------------------
- 
- # When running from cron, we have a very minimal environment
--# including PATH=/usr/bin:/bin.
-+# including PATH=%%PREFIX%%/bin:/bin.
- #
--export PATH=/usr/local/bin:$PATH
-+export PATH=%%PREFIX%%/bin:$PATH
- 
- #Log the start of the script run and re-run
- date >> $LOGFILE
