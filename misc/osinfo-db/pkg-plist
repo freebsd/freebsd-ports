@@ -74,6 +74,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.15.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -118,6 +119,12 @@ share/osinfo/os/asianux.com/asianux-7.2.xml
 share/osinfo/os/asianux.com/asianux-7.3.xml
 share/osinfo/os/asianux.com/asianux-8.0.xml
 share/osinfo/os/asianux.com/asianux-unknown.xml
+share/osinfo/os/cclinux.org/circle-8-unknown.xml
+share/osinfo/os/cclinux.org/circle-8.4.xml
+share/osinfo/os/cclinux.org/circle-8.5.xml
+share/osinfo/os/cclinux.org/circle-9-unknown.xml
+share/osinfo/os/cclinux.org/circle-9.0.xml
+share/osinfo/os/cclinux.org/circle-unknown.xml
 share/osinfo/os/centos.org/centos-5.0.xml
 share/osinfo/os/centos.org/centos-5.1.xml
 share/osinfo/os/centos.org/centos-5.10.xml
@@ -250,6 +257,7 @@ share/osinfo/os/endlessos.com/eos-3.6.xml
 share/osinfo/os/endlessos.com/eos-3.7.xml
 share/osinfo/os/endlessos.com/eos-3.8.xml
 share/osinfo/os/endlessos.com/eos-3.9.xml
+share/osinfo/os/endlessos.com/eos-4.0.xml
 share/osinfo/os/fedoraproject.org/coreos-next.xml
 share/osinfo/os/fedoraproject.org/coreos-stable.xml
 share/osinfo/os/fedoraproject.org/coreos-testing.xml
@@ -281,6 +289,7 @@ share/osinfo/os/fedoraproject.org/fedora-31.xml
 share/osinfo/os/fedoraproject.org/fedora-32.xml
 share/osinfo/os/fedoraproject.org/fedora-33.xml
 share/osinfo/os/fedoraproject.org/fedora-34.xml
+share/osinfo/os/fedoraproject.org/fedora-35.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -296,6 +305,7 @@ share/osinfo/os/fedoraproject.org/silverblue-31.xml
 share/osinfo/os/fedoraproject.org/silverblue-32.xml
 share/osinfo/os/fedoraproject.org/silverblue-33.xml
 share/osinfo/os/fedoraproject.org/silverblue-34.xml
+share/osinfo/os/fedoraproject.org/silverblue-35.xml
 share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -312,6 +322,7 @@ share/osinfo/os/freebsd.org/freebsd-11.4.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
 share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-12.2.xml
+share/osinfo/os/freebsd.org/freebsd-12.3.xml
 share/osinfo/os/freebsd.org/freebsd-13.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
@@ -358,6 +369,7 @@ share/osinfo/os/freebsd.org/freebsd-9.1.xml
 share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
 share/osinfo/os/freedos.org/freedos-1.2.xml
+share/osinfo/os/freenix.net/freenix-14.2.xml
 share/osinfo/os/gentoo.org/gentoo-rolling.xml
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
@@ -365,6 +377,9 @@ share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.12.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.14.xml
 share/osinfo/os/guix.gnu.org/guix-1.1.xml
+share/osinfo/os/guix.gnu.org/guix-1.3.xml
+share/osinfo/os/guix.gnu.org/guix-hurd-latest.xml
+share/osinfo/os/guix.gnu.org/guix-latest.xml
 share/osinfo/os/haiku-os.org/haiku-nightly.xml
 share/osinfo/os/haiku-os.org/haiku-r1alpha1.xml
 share/osinfo/os/haiku-os.org/haiku-r1alpha2.xml
@@ -373,6 +388,7 @@ share/osinfo/os/haiku-os.org/haiku-r1alpha4.1.xml
 share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
 share/osinfo/os/haiku-os.org/haiku-r1beta2.xml
 share/osinfo/os/haiku-os.org/haiku-r1beta3.xml
+share/osinfo/os/hyperbola.info/hyperbola-03.xml
 share/osinfo/os/libosinfo.org/linux-2016.xml
 share/osinfo/os/libosinfo.org/linux-2018.xml
 share/osinfo/os/libosinfo.org/linux-2020.xml
@@ -455,6 +471,7 @@ share/osinfo/os/microsoft.com/winnt-3.1.xml
 share/osinfo/os/microsoft.com/winnt-3.5.xml
 share/osinfo/os/microsoft.com/winnt-3.51.xml
 share/osinfo/os/microsoft.com/winnt-4.0.xml
+share/osinfo/os/miraclelinux.com/miraclelinux-8.4.xml
 share/osinfo/os/netbsd.org/netbsd-0.8.xml
 share/osinfo/os/netbsd.org/netbsd-0.9.xml
 share/osinfo/os/netbsd.org/netbsd-1.0.xml
@@ -574,9 +591,13 @@ share/osinfo/os/oracle.com/ol-7.5.xml
 share/osinfo/os/oracle.com/ol-7.6.xml
 share/osinfo/os/oracle.com/ol-7.7.xml
 share/osinfo/os/oracle.com/ol-7.8.xml
+share/osinfo/os/oracle.com/ol-7.9.xml
 share/osinfo/os/oracle.com/ol-8.0.xml
 share/osinfo/os/oracle.com/ol-8.1.xml
 share/osinfo/os/oracle.com/ol-8.2.xml
+share/osinfo/os/oracle.com/ol-8.3.xml
+share/osinfo/os/oracle.com/ol-8.4.xml
+share/osinfo/os/oracle.com/ol-8.5.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/pureos-8.xml
 share/osinfo/os/redhat.com/rhel-2.1.1.xml
@@ -680,6 +701,7 @@ share/osinfo/os/redhat.com/rhl-9.xml
 share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-8.4.xml
 share/osinfo/os/rockylinux.org/rocky-8.5.xml
+share/osinfo/os/rockylinux.org/rocky-8.6.xml
 share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-9.0.xml
 share/osinfo/os/rockylinux.org/rocky-unknown.xml
@@ -773,6 +795,7 @@ share/osinfo/os/system76.com/popos-19.04.xml
 share/osinfo/os/system76.com/popos-19.10.xml
 share/osinfo/os/system76.com/popos-20.04.xml
 share/osinfo/os/system76.com/popos-20.10.xml
+share/osinfo/os/trisquel.info/trisquel-9.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
@@ -796,6 +819,7 @@ share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-20.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
+share/osinfo/os/ubuntu.com/ubuntu-21.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
