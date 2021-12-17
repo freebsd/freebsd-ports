@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.4
+DISTVERSION=	1.17.0
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -36,28 +36,28 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		abort_on_panic-2.0.0 \
 		adler-1.0.2 \
 		aes-0.7.5 \
-		ahash-0.4.7 \
-		ahash-0.7.4 \
+		ahash-0.7.6 \
 		aho-corasick-0.7.18 \
 		alloc-no-stdlib-2.0.3 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.44 \
+		anyhow-1.0.51 \
 		arrayvec-0.5.2 \
-		arrayvec-0.7.1 \
+		arrayvec-0.7.2 \
 		ash-0.33.3+1.2.191 \
-		ast_node-0.7.3 \
+		ast_node-0.7.4 \
 		async-compression-0.3.8 \
 		async-stream-0.3.2 \
 		async-stream-impl-0.3.2 \
-		async-trait-0.1.51 \
+		async-trait-0.1.52 \
 		atty-0.2.14 \
-		auto_impl-0.4.1 \
+		auto_impl-0.5.0 \
 		autocfg-0.1.7 \
 		autocfg-1.0.1 \
 		base64-0.11.0 \
 		base64-0.13.0 \
+		base64ct-1.1.1 \
 		bencher-0.1.5 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
@@ -69,56 +69,58 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		brotli-3.3.2 \
 		brotli-decompressor-2.3.2 \
 		build_const-0.2.2 \
-		bumpalo-3.7.1 \
+		bumpalo-3.8.0 \
 		byteorder-1.4.3 \
 		bytes-1.1.0 \
-		cc-1.0.71 \
+		cache_control-0.2.0 \
+		cc-1.0.72 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.19 \
 		cipher-0.3.0 \
 		clap-2.33.3 \
-		clipboard-win-4.2.1 \
+		clipboard-win-4.2.2 \
 		cloudabi-0.1.0 \
 		codespan-reporting-0.11.1 \
-		const-oid-0.6.1 \
+		const-oid-0.6.2 \
 		convert_case-0.4.0 \
 		copyless-0.1.5 \
-		core-foundation-0.9.1 \
-		core-foundation-sys-0.8.2 \
+		core-foundation-0.9.2 \
+		core-foundation-sys-0.8.3 \
 		core-graphics-types-0.1.1 \
 		cpufeatures-0.2.1 \
 		crc-1.8.1 \
-		crc32fast-1.2.1 \
+		crc32fast-1.3.0 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-utils-0.8.5 \
-		crypto-bigint-0.2.10 \
+		crypto-bigint-0.2.11 \
 		crypto-mac-0.11.1 \
 		ctor-0.1.20 \
+		cty-0.2.2 \
 		d3d12-0.4.1 \
 		darling-0.10.2 \
 		darling_core-0.10.2 \
 		darling_macro-0.10.2 \
 		dashmap-4.0.2 \
 		data-encoding-2.3.2 \
-		data-url-0.1.0 \
-		deno_ast-0.5.0 \
-		deno_doc-0.21.0 \
-		deno_graph-0.12.0 \
-		deno_lint-0.19.0 \
-		der-0.4.4 \
-		derive_more-0.99.16 \
+		data-url-0.1.1 \
+		deno_ast-0.7.0 \
+		deno_doc-0.23.0 \
+		deno_graph-0.14.2 \
+		deno_lint-0.20.1 \
+		der-0.4.5 \
+		derive_more-0.99.17 \
 		diff-0.1.12 \
 		digest-0.9.0 \
-		dissimilar-1.0.3 \
+		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.47.1 \
 		dprint-plugin-json-0.13.2 \
 		dprint-plugin-markdown-0.11.3 \
-		dprint-plugin-typescript-0.59.2 \
-		dprint-swc-ecma-ast-view-0.42.0 \
+		dprint-plugin-typescript-0.60.0 \
+		dprint-swc-ecma-ast-view-0.45.0 \
 		dyn-clone-1.0.4 \
 		ecdsa-0.12.4 \
 		either-1.6.1 \
@@ -133,7 +135,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.7.1 \
-		fd-lock-3.0.0 \
+		fd-lock-3.0.2 \
 		ff-0.10.1 \
 		filetime-0.2.15 \
 		fixedbitset-0.2.0 \
@@ -148,15 +150,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fs3-0.5.0 \
 		fsevent-sys-4.0.0 \
 		fslock-0.1.8 \
-		futures-0.3.17 \
-		futures-channel-0.3.17 \
-		futures-core-0.3.17 \
-		futures-executor-0.3.17 \
-		futures-io-0.3.17 \
-		futures-macro-0.3.17 \
-		futures-sink-0.3.17 \
-		futures-task-0.3.17 \
-		futures-util-0.3.17 \
+		futures-0.3.18 \
+		futures-channel-0.3.18 \
+		futures-core-0.3.18 \
+		futures-executor-0.3.18 \
+		futures-io-0.3.18 \
+		futures-macro-0.3.18 \
+		futures-sink-0.3.18 \
+		futures-task-0.3.18 \
+		futures-util-0.3.18 \
 		fwdansi-1.1.0 \
 		fxhash-0.2.1 \
 		generic-array-0.14.4 \
@@ -165,34 +167,32 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		glow-0.11.0 \
 		gpu-alloc-0.5.2 \
 		gpu-alloc-types-0.2.0 \
-		gpu-descriptor-0.2.1 \
+		gpu-descriptor-0.2.2 \
 		gpu-descriptor-types-0.1.1 \
 		group-0.10.0 \
-		h2-0.3.6 \
-		hashbrown-0.9.1 \
+		h2-0.3.9 \
 		hashbrown-0.11.2 \
 		hashlink-0.7.0 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		hmac-0.11.0 \
 		hostname-0.3.1 \
-		http-0.2.5 \
-		http-body-0.4.3 \
+		http-0.2.4 \
+		http-body-0.4.4 \
 		httparse-1.5.1 \
-		httpdate-1.0.1 \
+		httpdate-1.0.2 \
 		humantime-2.1.0 \
-		hyper-0.14.13 \
-		hyper-rustls-0.22.1 \
+		hyper-0.14.16 \
+		hyper-rustls-0.23.0 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		if_chain-1.0.2 \
-		import_map-0.3.3 \
-		indexmap-1.6.2 \
-		inotify-0.9.5 \
+		import_map-0.4.0 \
+		indexmap-1.7.0 \
+		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		inplace_it-0.3.3 \
-		input_buffer-0.4.0 \
-		instant-0.1.11 \
+		instant-0.1.12 \
 		ipconfig-0.2.2 \
 		ipnet-2.3.1 \
 		is-macro-0.1.9 \
@@ -209,30 +209,30 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libc-0.2.106 \
 		libffi-2.0.0 \
 		libffi-sys-1.3.0 \
-		libloading-0.7.1 \
+		libloading-0.7.2 \
 		libm-0.2.1 \
 		libsqlite3-sys-0.22.2 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
 		lru-cache-0.1.2 \
-		lsp-types-0.89.2 \
-		lspower-1.1.0 \
+		lsp-types-0.91.1 \
+		lspower-1.4.0 \
 		lspower-macros-0.2.1 \
 		malloc_buf-0.0.6 \
 		match_cfg-0.1.0 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
-		memoffset-0.6.4 \
+		memoffset-0.6.5 \
 		metal-0.23.1 \
 		mime-0.3.16 \
 		miniz_oxide-0.4.4 \
-		mio-0.7.13 \
+		mio-0.7.14 \
 		miow-0.3.7 \
 		naga-0.6.3 \
 		new_debug_unreachable-1.0.4 \
 		nibble_vec-0.1.0 \
-		nix-0.22.2 \
+		nix-0.22.1 \
 		notify-5.0.0-pre.12 \
 		ntapi-0.3.6 \
 		num-bigint-0.2.6 \
@@ -253,6 +253,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		p384-0.8.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.0 \
+		pem-rfc7468-0.2.4 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		petgraph-0.5.1 \
@@ -267,18 +268,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-utils-0.1.0 \
 		pkcs1-0.2.4 \
 		pkcs8-0.7.6 \
-		pkg-config-0.3.20 \
+		pkg-config-0.3.23 \
 		pmutil-0.5.3 \
-		ppv-lite86-0.2.10 \
+		ppv-lite86-0.2.15 \
 		precomputed-hash-0.1.1 \
 		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
-		proc-macro-nested-0.1.7 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.29 \
-		profiling-1.0.3 \
+		proc-macro2-1.0.33 \
+		profiling-1.0.4 \
 		pty-0.2.2 \
 		pulldown-cmark-0.8.0 \
 		quick-error-1.2.3 \
@@ -296,53 +296,55 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_hc-0.3.1 \
 		rand_pcg-0.2.1 \
 		range-alloc-0.1.2 \
-		raw-window-handle-0.3.3 \
+		raw-window-handle-0.3.4 \
+		raw-window-handle-0.4.2 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.2.10 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
-		relative-path-1.5.0 \
+		relative-path-1.6.0 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-0.7.1 \
-		reqwest-0.11.5 \
+		reqwest-0.11.7 \
 		resolv-conf-0.7.0 \
-		retain_mut-0.1.4 \
+		retain_mut-0.1.5 \
 		ring-0.16.20 \
-		ron-0.6.5 \
+		ron-0.6.6 \
 		rsa-0.5.0 \
-		rusqlite-0.25.3 \
+		rusqlite-0.25.4 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.2.3 \
-		rustc_version-0.3.3 \
-		rustls-0.19.1 \
-		rustls-native-certs-0.5.0 \
+		rustc_version-0.4.0 \
+		rustls-0.20.2 \
+		rustls-native-certs-0.6.1 \
+		rustls-pemfile-0.2.1 \
 		rustyline-9.0.0 \
 		rustyline-derive-0.5.0 \
-		ryu-1.0.5 \
+		ryu-1.0.6 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		sct-0.6.1 \
+		sct-0.7.0 \
 		security-framework-2.3.1 \
 		security-framework-sys-2.4.2 \
 		semver-0.9.0 \
-		semver-0.11.0 \
+		semver-1.0.4 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
 		serde-1.0.130 \
 		serde_bytes-0.11.5 \
 		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde_json-1.0.72 \
 		serde_repr-0.1.7 \
 		serde_urlencoded-0.7.0 \
 		sha-1-0.9.8 \
 		sha2-0.9.8 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.0 \
-		signature-1.3.1 \
+		signature-1.3.2 \
 		siphasher-0.3.7 \
-		slab-0.4.4 \
+		slab-0.4.5 \
 		slotmap-1.0.6 \
 		smallvec-1.7.0 \
 		socket2-0.3.19 \
@@ -361,49 +363,51 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.9.3 \
 		subtle-2.4.1 \
 		swc_atoms-0.2.9 \
-		swc_bundler-0.75.0 \
-		swc_common-0.14.1 \
-		swc_ecma_ast-0.55.0 \
-		swc_ecma_codegen-0.77.0 \
+		swc_bundler-0.89.0 \
+		swc_common-0.15.0 \
+		swc_ecma_ast-0.59.1 \
+		swc_ecma_codegen-0.83.1 \
 		swc_ecma_codegen_macros-0.6.0 \
-		swc_ecma_dep_graph-0.44.0 \
-		swc_ecma_loader-0.22.0 \
-		swc_ecma_parser-0.75.2 \
-		swc_ecma_transforms-0.88.0 \
-		swc_ecma_transforms_base-0.40.0 \
-		swc_ecma_transforms_classes-0.26.0 \
-		swc_ecma_transforms_macros-0.2.3 \
-		swc_ecma_transforms_optimization-0.58.1 \
-		swc_ecma_transforms_proposal-0.51.0 \
-		swc_ecma_transforms_react-0.53.0 \
-		swc_ecma_transforms_typescript-0.54.0 \
-		swc_ecma_utils-0.48.0 \
-		swc_ecma_visit-0.41.0 \
-		swc_ecmascript-0.80.0 \
+		swc_ecma_dep_graph-0.50.1 \
+		swc_ecma_loader-0.25.0 \
+		swc_ecma_parser-0.81.0 \
+		swc_ecma_transforms-0.101.0 \
+		swc_ecma_transforms_base-0.48.1 \
+		swc_ecma_transforms_classes-0.34.0 \
+		swc_ecma_transforms_macros-0.3.0 \
+		swc_ecma_transforms_optimization-0.71.0 \
+		swc_ecma_transforms_proposal-0.63.0 \
+		swc_ecma_transforms_react-0.65.1 \
+		swc_ecma_transforms_typescript-0.67.2 \
+		swc_ecma_utils-0.55.1 \
+		swc_ecma_visit-0.45.0 \
+		swc_ecmascript-0.95.0 \
 		swc_eq_ignore_macros-0.1.0 \
+		swc_fast_graph-0.2.0 \
+		swc_graph_analyzer-0.2.0 \
 		swc_macros_common-0.3.3 \
-		swc_visit-0.2.6 \
-		swc_visit_macros-0.2.3 \
+		swc_visit-0.3.0 \
+		swc_visit_macros-0.3.0 \
 		syn-0.15.44 \
 		syn-1.0.65 \
 		synstructure-0.12.6 \
-		sys-info-0.9.0 \
+		sys-info-0.9.1 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		text-size-1.1.0 \
-		text_lines-0.3.0 \
+		text_lines-0.4.1 \
 		textwrap-0.11.0 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		time-0.1.44 \
-		tinyvec-1.5.0 \
+		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.12.0 \
-		tokio-macros-1.4.1 \
-		tokio-rustls-0.22.0 \
-		tokio-stream-0.1.7 \
-		tokio-tungstenite-0.14.0 \
-		tokio-util-0.6.8 \
+		tokio-1.14.0 \
+		tokio-macros-1.6.0 \
+		tokio-rustls-0.23.1 \
+		tokio-stream-0.1.8 \
+		tokio-tungstenite-0.16.1 \
+		tokio-util-0.6.9 \
 		toml-0.5.8 \
 		tower-service-0.3.1 \
 		tracing-0.1.29 \
@@ -414,7 +418,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		trust-dns-resolver-0.20.3 \
 		trust-dns-server-0.20.3 \
 		try-lock-0.2.3 \
-		tungstenite-0.13.0 \
+		tungstenite-0.16.0 \
 		twoway-0.2.2 \
 		typed-arena-2.0.1 \
 		typenum-1.14.0 \
@@ -454,7 +458,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasm-bindgen-shared-0.2.72 \
 		web-sys-0.3.49 \
 		webpki-0.21.4 \
+		webpki-0.22.0 \
 		webpki-roots-0.21.1 \
+		webpki-roots-0.22.1 \
 		wgpu-core-0.10.4 \
 		wgpu-hal-0.10.7 \
 		wgpu-types-0.10.0 \
@@ -466,11 +472,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.28.0 \
+		windows_aarch64_msvc-0.28.0 \
+		windows_i686_gnu-0.28.0 \
+		windows_i686_msvc-0.28.0 \
+		windows_x86_64_gnu-0.28.0 \
+		windows_x86_64_msvc-0.28.0 \
 		winreg-0.6.2 \
 		winreg-0.7.0 \
-		winres-0.1.12 \
-		zeroize-1.4.2 \
-		zeroize_derive-1.2.0
+		winres-0.1.11 \
+		zeroize-1.4.3 \
+		zeroize_derive-1.2.2
 
 post-patch:
 	${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
