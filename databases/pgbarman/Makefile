@@ -1,26 +1,27 @@
 # Created by: Matthew Seaman
 
-PORTNAME=	barman
-DISTVERSION=	2.12
-CATEGORIES=	databases
-MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
-PKGNAMEPREFIX=	pg
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} manual.pdf
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PORTNAME=		barman
+DISTVERSIONPREFIX=	release/
+DISTVERSION=		2.17
+CATEGORIES=		databases
+PKGNAMEPREFIX=		pg
+PKGNAMESUFFIX=		${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Backup and recovery manager for PostgreSQL
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rsync:net/rsync						\
-		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:devel/py-argh@${PY_FLAVOR} \
+RUN_DEPENDS=	rsync:net/rsync									\
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.4.2:databases/py-psycopg2@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${PY_FLAVOR}
 
-USES=		pgsql python:3.6+
-USE_PYTHON=	autoplist distutils concurrent optsuffix
+USES=		pgsql python:3.7+
+USE_PYTHON=	autoplist distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	EnterpriseDB
 
 WANT_PGSQL=	client
 NO_ARCH=	yes
@@ -28,9 +29,13 @@ NO_ARCH=	yes
 USERS=		barman
 GROUPS=		barman
 
-PORTDOCS=	manual.pdf
+OPTIONS_DEFINE=		DOCS
 
-OPTIONS_DEFINE=	DOCS
+DOCS_DESC=	Install PDF manual
+DOCS_VARS=	PORTDOCS=barman-${DISTVERSION}-manual.pdf \
+		MASTER_SITES+=https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/release%2F${DISTVERSION}/:docs \
+		DISTFILES+=barman-${DISTVERSION}-manual.pdf:docs \
+		EXTRACT_ONLY=${DISTNAME}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +45,7 @@ PGUSER=		pgsql
 PGUSER=		postgres
 .endif
 
-post-extract:
+post-extract-DOCS-on:
 	${CP} ${DISTDIR}/${PORTDOCS} ${WRKDIR}/
 
 post-patch:
