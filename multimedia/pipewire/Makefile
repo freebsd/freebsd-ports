@@ -1,4 +1,5 @@
 PORTNAME=	pipewire
+PORTREVISION=	1
 DISTVERSION=	0.3.42
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
@@ -65,12 +66,12 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D pipewire-v4l2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1400000
-PLIST_SUB+=	FREEBSD14="@comment "
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1400035
+USES+=		ncurses:base
 .else
-PLIST_SUB+=	FREEBSD14=""
+USES+=		ncurses:port
 .endif
 
 post-extract:
@@ -84,4 +85,4 @@ post-patch-MEDIASESSION-on:
 	@${REINPLACE_CMD} '/manager_args/ s/@sm_comment@//g' \
 		${WRKSRC}/src/daemon/pipewire.conf.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
