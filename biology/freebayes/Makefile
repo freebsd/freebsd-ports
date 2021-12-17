@@ -10,7 +10,6 @@ LICENSE=	MIT
 
 # These should be rechecked: Same error resolved on aarch64 in 1.3.5 update.
 BROKEN_armv6=		fails to compile: invalid conversion between vector type and integer type
-BROKEN_riscv64=		fails to compile: invalid conversion between vector type and integer type
 
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so:biology/tabixpp
