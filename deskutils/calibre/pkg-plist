@@ -1465,6 +1465,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/catalog/stylesheet.css
 %%DATADIR%%/catalog/template.xhtml
 %%DATADIR%%/changelog.json
+%%DATADIR%%/common-english-words.txt
 %%DATADIR%%/content-server/calibre.png
 %%DATADIR%%/content-server/empty.html
 %%DATADIR%%/content-server/index-generated.html
