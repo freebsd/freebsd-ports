@@ -1,7 +1,7 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 
 PORTNAME=	gqrx
-PORTVERSION=	2.14.6
+PORTVERSION=	2.15
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -35,7 +35,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 USES=		cmake compiler:c++11-lang gl pkgconfig qt:5
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	csete
+GH_ACCOUNT=	gqrx-sdr
 USE_GL=		gl
 USE_QT=		core gui network svg widgets
 
