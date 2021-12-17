@@ -1,5 +1,6 @@
 PORTNAME=	plasma-pass
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 MASTER_SITES=	KDE/stable/${PORTNAME}
 CATEGORIES=	sysutils kde
 
