@@ -1,5 +1,5 @@
 PORTNAME=	zabbix54
-DISTVERSION=	5.4.7
+DISTVERSION=	5.4.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
