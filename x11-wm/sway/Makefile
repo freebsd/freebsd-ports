@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,7 +23,7 @@ PATCHFILES+=	94680d1aa044.patch:-p1 # wlroots 0.15
 PATCHFILES+=	0c210a5e68ea.patch:-p1 # wlroots 0.15
 PATCHFILES+=	3e2f3f5d67b8.patch:-p1 # wlroots 0.15
 PATCHFILES+=	729e18bff5ff.patch:-p1 # wlroots 0.15
-PATCHFILES+=	d475eb2d8089.patch:-p1 # wlroots 0.15
+PATCHFILES+=	95dd7b6715c6.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
