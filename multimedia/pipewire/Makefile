@@ -69,7 +69,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1400035
-USES+=		ncurses:base
+USES+=		ncurses
 .else
 USES+=		ncurses:port
 .endif
