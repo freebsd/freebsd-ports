@@ -32,7 +32,7 @@ BASU_PATCH_SITES=	https://github.com/DankBSD/${PORTNAME}/commit/:ck2
 BASU_PATCHFILES=	51a9b3c2c0e8.patch:-p1:ck2 5a8acd56cd61.patch:-p1:ck2
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_USES=		localbase # https://github.com/emersion/basu/issues/36
-BASU_MESON_ENABLED=	libseat-consolekit2
+BASU_MESON_ON=		-Dlibseat-consolekit2=enabled
 .if make(makesum)
 .MAKEFLAGS:		WITH+=BASU
 .endif
