@@ -1,7 +1,7 @@
 # Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 
 PORTNAME=	ilias
-PORTVERSION=	5.4.21
+PORTVERSION=	5.4.25
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www education
 
