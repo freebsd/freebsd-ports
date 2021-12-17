@@ -32,6 +32,9 @@ include/KF5/KConfigGui/kconfigloader.h
 include/KF5/KConfigGui/kconfigskeleton.h
 include/KF5/KConfigGui/kstandardshortcut.h
 include/KF5/KConfigGui/kwindowconfig.h
+include/KF5/KConfigQml/KConfigPropertyMap
+include/KF5/KConfigQml/kconfigpropertymap.h
+include/KF5/KConfigQml/kconfigqml_export.h
 include/KF5/kconfig_version.h
 lib/cmake/KF5Config/KF5ConfigCompilerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Config/KF5ConfigCompilerTargets.cmake
@@ -46,6 +49,9 @@ lib/libKF5ConfigCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5ConfigGui.so
 lib/libKF5ConfigGui.so.5
 lib/libKF5ConfigGui.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5ConfigQml.so
+lib/libKF5ConfigQml.so.5
+lib/libKF5ConfigQml.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kf5/kconf_update
 lib/libexec/kf5/kconfig_compiler_kf5
 %%QT_MKSPECDIR%%/modules/qt_KConfigCore.pri
