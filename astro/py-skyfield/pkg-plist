@@ -143,6 +143,7 @@
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/astropy.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/bibliography.rst
+%%PYTHON_SITELIBDIR%%/skyfield/documentation/coordinates.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/design.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/earth-satellites.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/elements.rst
