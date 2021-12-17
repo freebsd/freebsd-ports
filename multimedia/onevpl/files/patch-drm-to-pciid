@@ -7,9 +7,9 @@ Device creation failed: -1313558101.
 Failed to set value 'qsv=auto' for option 'init_hw_device': Unknown error occurred
 Error parsing global options: Unknown error occurred
 
---- dispatcher/linux/device_ids.h.orig	2021-09-13 22:51:02 UTC
+--- dispatcher/linux/device_ids.h.orig	2021-12-17 04:19:18 UTC
 +++ dispatcher/linux/device_ids.h
-@@ -420,7 +420,62 @@ static inline eMFXHWType get_platform(unsigned int dev
+@@ -377,7 +377,62 @@ static inline eMFXHWType get_platform(unsigned int dev
      return MFX_HW_UNKNOWN;
  }
  
@@ -72,11 +72,11 @@ Error parsing global options: Unknown error occurred
      const char *dir            = "/sys/class/drm";
      const char *device_id_file = "/device/device";
      const char *vendor_id_file = "/device/vendor";
-@@ -456,6 +511,7 @@ static mfxStatus get_devices(std::vector<Device> &allD
+@@ -413,6 +468,7 @@ static mfxStatus get_devices(std::vector<Device> &allD
  
          allDevices.emplace_back(device);
      }
 +#endif
  
-     // sort by device_id
+     // sort by platform, unknown will appear at beginning
      std::sort(allDevices.begin(), allDevices.end(), [](const Device &a, const Device &b) {
