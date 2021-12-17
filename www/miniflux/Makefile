@@ -1,5 +1,5 @@
 PORTNAME=	miniflux
-DISTVERSION=	2.0.33
+DISTVERSION=	2.0.34
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
@@ -14,8 +14,8 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_PROJECT=	v2
-GH_TUPLE=	PuerkitoBio:goquery:v1.7.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
-		andybalholm:cascadia:v1.2.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
+GH_TUPLE=	PuerkitoBio:goquery:v1.8.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
+		andybalholm:cascadia:v1.3.1:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		coreos:go-oidc:v2.2.1:coreos_go_oidc/vendor/github.com/coreos/go-oidc \
@@ -24,13 +24,13 @@ GH_TUPLE=	PuerkitoBio:goquery:v1.7.1:puerkitobio_goquery/vendor/github.com/Puerk
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:721e228c7686:golang_gddo/vendor/github.com/golang/gddo \
-		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
+		golang:net:12bc252f5db8:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
-		lib:pq:v1.10.3:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.10.4:lib_pq/vendor/github.com/lib/pq \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mitchellh:go-server-timing:feb680ab92c2:mitchellh_go_server_timing/vendor/github.com/mitchellh/go-server-timing \
 		mvdan:xurls:v2.3.0:mvdan_xurls/vendor/mvdan.cc/xurls/v2 \
