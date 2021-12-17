@@ -1,5 +1,5 @@
 PORTNAME=	libretro-snes9x
-PORTVERSION=	0.20210129
+PORTVERSION=	0.20211024
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
