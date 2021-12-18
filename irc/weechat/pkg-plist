@@ -80,13 +80,6 @@ libdata/pkgconfig/weechat.pc
 %%DOCS%%%%DOCSDIR%%/weechat_scripting.ja.html
 %%DOCS%%%%DOCSDIR%%/weechat_scripting.pl.html
 %%DOCS%%%%DOCSDIR%%/weechat_scripting.sr.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.de.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.en.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.fr.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.ja.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.it.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.pl.html
-%%DOCS%%%%DOCSDIR%%/weechat_tester.sr.html
 %%DOCS%%%%DOCSDIR%%/weechat_user.de.html
 %%DOCS%%%%DOCSDIR%%/weechat_user.en.html
 %%DOCS%%%%DOCSDIR%%/weechat_user.fr.html
