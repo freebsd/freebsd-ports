@@ -48,6 +48,7 @@ man/man1/samtools-phase.1.gz
 man/man1/samtools-quickcheck.1.gz
 man/man1/samtools-reheader.1.gz
 man/man1/samtools-rmdup.1.gz
+man/man1/samtools-samples.1.gz
 man/man1/samtools-sort.1.gz
 man/man1/samtools-split.1.gz
 man/man1/samtools-stats.1.gz
