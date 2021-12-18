@@ -1,3 +1,5 @@
+%%QT_BINDIR%%/qmltime
+%%DEBUG%%%%QT_BINDIR%%/qmltime.debug
 %%QT_INCDIR%%/QtPacketProtocol/%%FULLVER%%/QtPacketProtocol/private/qpacket_p.h
 %%QT_INCDIR%%/QtPacketProtocol/%%FULLVER%%/QtPacketProtocol/private/qpacketprotocol_p.h
 %%QT_INCDIR%%/QtPacketProtocol/%%FULLVER%%/QtPacketProtocol/private/qversionedpacket_p.h

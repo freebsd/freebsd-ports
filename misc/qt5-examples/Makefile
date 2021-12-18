@@ -1,7 +1,7 @@
 # Created by: Marie Loise Nolden <loise@kde.org>
 
 PORTNAME=	examples
-DISTVERSION=	${QT5_VERSION}
+PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
 CATEGORIES=	misc
 MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/single
 PKGNAMEPREFIX=	qt5-

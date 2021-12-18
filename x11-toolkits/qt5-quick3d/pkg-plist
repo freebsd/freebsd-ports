@@ -305,6 +305,7 @@
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/images/effect.png
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/images/effect16.png
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/images/effect@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Effects/designer/source/effect_default_shader.frag
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/source/effect_template.qml
 %%QT_QMLDIR%%/QtQuick3D/Effects/libqtquick3deffectplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick3D/Effects/libqtquick3deffectplugin.so.debug
@@ -372,6 +373,8 @@
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/images/custommaterial16.png
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/images/custommaterial@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/materiallib.metainfo
+%%QT_QMLDIR%%/QtQuick3D/Materials/designer/source/custom_material_default_shader.frag
+%%QT_QMLDIR%%/QtQuick3D/Materials/designer/source/custom_material_default_shader.vert
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/source/custommaterial_template.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/libqtquick3dmaterialplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick3D/Materials/libqtquick3dmaterialplugin.so.debug

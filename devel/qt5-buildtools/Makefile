@@ -1,6 +1,5 @@
 PORTNAME=	buildtools
-DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
+PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -8,6 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt build tools
 
 USES=		compiler:c++11-lang libtool perl5 qmake:no_env qt-dist:5,base
+USE_PERL5=	extract
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb
 QT_BINARIES=	yes

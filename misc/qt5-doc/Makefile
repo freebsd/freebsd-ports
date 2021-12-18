@@ -8,7 +8,7 @@
 QT5_VERSION=	5.12.2
 
 PORTNAME=	doc
-DISTVERSION=	${QT5_VERSION}
+PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
 CATEGORIES=	misc
 MASTER_SITES=	QT/online/qtsdkrepository/linux_x64/desktop/qt5_${QT5_VERSION:S/.//g}_src_doc_examples/qt.qt5.${QT5_VERSION:S/.//g}.doc/
 PKGNAMEPREFIX=	qt5-
