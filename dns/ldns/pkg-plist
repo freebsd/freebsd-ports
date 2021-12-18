@@ -60,7 +60,7 @@ include/ldns/zone.h
 lib/libldns.a
 lib/libldns.so
 lib/libldns.so.3
-lib/libldns.so.3.0.0
+lib/libldns.so.3.2.0
 libdata/pkgconfig/libldns.pc
 %%DRILL%%man/man1/drill.1.gz
 %%EXAMPLES%%man/man1/ldns-chaos.1.gz

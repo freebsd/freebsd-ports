@@ -1,8 +1,7 @@
 # Created by: Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
 
 PORTNAME=	ldns
-PORTVERSION=	1.7.1
-PORTREVISION=	2
+DISTVERSION=	1.8.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -35,7 +34,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 HTMLDOCS=		doc/html/*
 
 OPTIONS_DEFINE+=	DANETAUSAGE GOST RRTYPEAMTRELAY RRTYPEAVC RRTYPENINFO \
-			RRTYPERKEY RRTYPETA
+			RRTYPERKEY RRTYPETA RRTYPESVCBHTTPS
 
 DANETAUSAGE_DESC=	Enable ta usage, requires openssl >= 1.1.0
 GOST_DESC=		GOST signatures enabled, requires openssl >= 1.0.0
@@ -44,6 +43,7 @@ RRTYPERKEY_DESC=	Enable draft RR type rkey.
 RRTYPETA_DESC=		Enable draft RR type ta.
 RRTYPEAVC_DESC=		Enable draft RR type avc.
 RRTYPEAMTRELAY_DESC=	Enable draft RR type amtrelay.
+RRTYPESVCBHTTPS_DESC= 	Enable SVCB and HTTPS draft RR types.
 
 OPTIONS_SUB=	yes
 
@@ -55,13 +55,14 @@ RRTYPERKEY_CONFIGURE_ENABLE=		rrtype-rkey
 RRTYPETA_CONFIGURE_ENABLE=		rrtype-ta
 RRTYPEAVC_CONFIGURE_ENABLE=		rrtype-avc
 RRTYPEAMTRELAY_CONFIGURE_ENABLE=	rrtype-amtrelay
+RRTYPESVCBHTTPS_CONFIGURE_ENABLE=	rrtype-svcb-https
 EXAMPLES_CONFIGURE_WITH=		examples
 DRILL_CONFIGURE_WITH=			drill
 DRILL_INSTALL_TARGET=			install-drill
 EXAMPLES_INSTALL_TARGET=		install-examples
 
 .if defined(BUILD_PYLDNS)
-USES+=		python:3.6-3.9
+USES+=		python:3.6+
 USE_PYTHON=	flavors
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 ALL_TARGET=	pyldns
@@ -91,7 +92,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS+=		libldns.so:dns/ldns
 
 post-patch:
-	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
+	${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DNS/LDNS/LDNS.so
