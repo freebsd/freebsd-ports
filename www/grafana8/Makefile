@@ -1,6 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2.7
+DISTVERSION=	8.3.3
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public
 PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]).*/\1/1}
@@ -21,7 +21,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		d2cccfe
+TAG=		dc57bcd
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
@@ -34,7 +34,7 @@ SUB_LIST=	GRAFANA_USER=${GRAFANA_USER} \
 		GRAFANA_LOGDIR=${GRAFANA_LOGDIR} \
 		GRAFANA_PLUGINDIR=${GRAFANA_PLUGINDIR} \
 		GRAFANA_PROVISIONINGDIR=${GRAFANA_PROVISIONINGDIR} \
-		GRAFANA_BUILDHASH=766de06cfa1d0a077de4
+		GRAFANA_BUILDHASH=6839ffb2aed352838f3a
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
@@ -67,7 +67,7 @@ pre-build:
 	${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} build \
 		-o wire ./vendor/github.com/google/wire/cmd/wire/main.go; \
 	${ECHO_MSG} "===>  Generating wire_gen.go"; \
-	${SETENV} ${GO_ENV} ./wire gen -tags "oss" ./pkg/server )
+	${SETENV} XDG_CACHE_HOME=${WRKDIR}/.cache ${GO_ENV} ./wire gen -tags "oss" ./pkg/server ./pkg/cmd/grafana-cli/runner )
 
 post-install:
 	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}
