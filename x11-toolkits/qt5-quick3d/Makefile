@@ -1,6 +1,6 @@
 PORTNAME=	quick3d
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -11,6 +11,7 @@ USES=		compiler:c++11-lang qmake qt-dist:5
 USE_QT=		core declarative gui network opengl \
 		buildtools_build
 
+QMAKE_CONFIGURE_ARGS=	--quick3d-assimp=qt
 QT_BINARIES=	yes
 
 .include <bsd.port.mk>
