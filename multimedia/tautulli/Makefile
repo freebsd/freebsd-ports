@@ -2,7 +2,7 @@
 
 PORTNAME=	tautulli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.7
+DISTVERSION=	2.8.0
 CATEGORIES=	multimedia python
 
 MAINTAINER=	christer.edwards@gmail.com
