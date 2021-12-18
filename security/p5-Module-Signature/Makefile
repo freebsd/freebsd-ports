@@ -1,7 +1,7 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
 
 PORTNAME=	Module-Signature
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
