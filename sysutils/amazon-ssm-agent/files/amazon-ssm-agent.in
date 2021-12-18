@@ -17,6 +17,7 @@ rcvar=amazon_ssm_agent_enable
 load_rc_config $name
 
 : ${amazon_ssm_agent_enable="NO"}
+: ${amazon_ssm_agent_env="PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/home/ssm-user/bin"}
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
