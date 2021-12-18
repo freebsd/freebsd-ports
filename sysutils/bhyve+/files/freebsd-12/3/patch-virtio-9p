@@ -1,0 +1,31 @@
+--- usr.sbin/bhyve/bhyve.8.orig	2021-12-17 02:14:53.986085000 +0100
++++ usr.sbin/bhyve/bhyve.8	2021-12-17 02:21:03.716235000 +0100
+@@ -299,6 +299,8 @@
+ Virtio block storage interface.
+ .It Cm virtio-scsi
+ Virtio SCSI interface.
++.It Cm virtio-9p
++Virtio 9p (VirtFS) interface.
+ .It Cm virtio-rnd
+ Virtio RNG interface.
+ .It Cm virtio-console
+@@ -404,6 +406,19 @@
+ .It Cm iid= Ns Ar IID
+ Initiator ID to use when sending requests to specified CTL port.
+ The default value is 0.
++.El
++.Pp
++9P devices:
++.Bl -tag -width 10n
++.It Pa sharename=/path/to/share[,9p-device-options]
++.El
++.Pp
++The
++.Ar 9p-device-options
++are:
++.Bl -tag -width 10n
++.It Li ro
++Expose the share in read-only mode.
+ .El
+ .Pp
+ TTY device backends:

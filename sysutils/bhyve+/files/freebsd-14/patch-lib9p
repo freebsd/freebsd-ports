@@ -1,12 +1,12 @@
---- share/mk/src.libnames.mk.orig	2021-09-04 10:14:17.407288000 +0200
-+++ share/mk/src.libnames.mk	2021-09-04 10:15:27.832153000 +0200
-@@ -245,6 +245,9 @@
+--- share/mk/src.libnames.mk.orig	2021-12-17 02:31:11.492798000 +0100
++++ share/mk/src.libnames.mk	2021-12-17 02:36:30.736989000 +0100
+@@ -261,6 +261,9 @@
  # 2nd+ order consumers.  Auto-generating this would be better.
  _DP_80211=	sbuf bsdxml
  _DP_9p=		sbuf
 +.if ${MK_CASPER} != "no"
-+_DP_9p+=       casper cap_pwd cap_grp
++_DP_9p+=	casper cap_pwd cap_grp
 +.endif
- _DP_archive=	z bz2 lzma bsdxml zstd
- _DP_zstd=	pthread
- .if ${MK_BLACKLIST} != "no"
+ # XXX: Not bootstrapped so uses host version on non-FreeBSD, so don't use a
+ # FreeBSD-specific dependency list
+ .if ${.MAKE.OS} == "FreeBSD" || !defined(BOOTSTRAPPING)
