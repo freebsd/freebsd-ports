@@ -295,6 +295,74 @@
     </dates>
   </vuln>
 
+  <vuln vid="c2a7de31-5b42-11ec-8398-6c3be5272acd">
+    <topic>Grafana -- Directory Traversal</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GitHub Security Labs reports:</p>
+	<blockquote cite="https://github.com/grafana/grafana/security/advisories/GHSA-7533-c8qv-jm9m">
+	  <p>A vulnerability through which authenticated users could read out fully lowercase or fully uppercase <code>.md</code> files through directory traversal. Doing our own follow-up investigation we found a related vulnerability through which authenticated users could read out arbitrary <code>.csv</code> files through directory traversal. Thanks to our defense-in-depth approach, at no time has <a href="https://grafana.com/cloud">Grafana Cloud</a> been vulnerable.</p>
+	  <p><strong>The vulnerable URL path is:</strong> <code>/api/ds/query</code></p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43815</cvename>
+      <url>https://grafana.com/blog/2021/12/10/grafana-8.3.2-and-7.5.12-released-with-moderate-severity-security-fix/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-09</discovery>
+      <entry>2021-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a994ff7d-5b3f-11ec-8398-6c3be5272acd">
+    <topic>Grafana -- Directory Traversal</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>5.0.0</ge><lt>7.5.12</lt></range>
+	<range><ge>8.0.0</ge><lt>8.3.2</lt></range>
+      </package>
+      <package>
+	<name>grafana6</name>
+	<range><ge>6.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0.0</ge><lt>7.5.12</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GitHub Security Labs reports:</p>
+	<blockquote cite="https://github.com/grafana/grafana/security/advisories/GHSA-c3q8-26ph-9g2q">
+	  <p>A vulnerability through which authenticated users could read out fully lowercase or fully uppercase <code>.md</code> files through directory traversal. Doing our own follow-up investigation we found a related vulnerability through which authenticated users could read out arbitrary <code>.csv</code> files through directory traversal. Thanks to our defense-in-depth approach, at no time has <a href="https://grafana.com/cloud">Grafana Cloud</a> been vulnerable.</p>
+	  <p><strong>The vulnerable URL path is:</strong> <code>/api/plugins/.*/markdown/.*</code> for <code>.md</code> files</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43813</cvename>
+      <url>https://grafana.com/blog/2021/12/10/grafana-8.3.2-and-7.5.12-released-with-moderate-severity-security-fix/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-09</discovery>
+      <entry>2021-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e33880ed-5802-11ec-8398-6c3be5272acd">
     <topic>Grafana -- Path Traversal</topic>
     <affects>
