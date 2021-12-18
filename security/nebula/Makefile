@@ -1,6 +1,6 @@
 PORTNAME=	nebula
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.2
 CATEGORIES=	security
 MASTER_SITES=	https://git.zx2c4.com/wintun-go/snapshot/:wintungo
 DISTFILES=	wintun-go-${GO_WINTUN_REV}.tar.xz:wintungo
@@ -26,8 +26,8 @@ GH_TUPLE=	\
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:4a448f8816b3:golang_net/vendor/golang.org/x/net \
+		golang:crypto:5770296d904e:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:7861aae1554b:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
@@ -49,10 +49,12 @@ GH_TUPLE=	\
 		songgao:water:2b4b6d7c09d8:songgao_water/vendor/github.com/songgao/water \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		vishvananda:netlink:v1.1.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
-		vishvananda:netns:50045581ed74:vishvananda_netns/vendor/github.com/vishvananda/netns
+		vishvananda:netns:50045581ed74:vishvananda_netns/vendor/github.com/vishvananda/netns \
+		wireguard:wireguard-windows:v0.5.1:wireguard_wireguard_windows/vendor/golang.zx2c4.com/wireguard/windows
 
 GO_WINTUN_REV=	415007cec224
 GO_TARGET=	./cmd/nebula ./cmd/nebula-cert
+GO_BUILDFLAGS=	-ldflags "-X main.Build=${PORTVERSION}"
 USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	bin/nebula \
 		bin/nebula-cert \
