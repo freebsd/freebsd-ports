@@ -26,7 +26,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 DESCR=		${.CURDIR:H:H}/devel/qt5/pkg-descr
-DISTINFO_FILE=	${.CURDIR:H:H}/devel/qt5/distinfo
 
 do-install:
 	${MKDIR} ${STAGEDIR}${QT_DOCDIR} && \

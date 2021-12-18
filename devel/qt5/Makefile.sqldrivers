@@ -1,12 +1,13 @@
 PORTNAME?=	${DB:tl}
-DISTVERSION?=	${QT5_VERSION}
+PORTVERSION?=	${QT5_VERSION}${QT5_KDE_PATCH}
 CATEGORIES?=	databases
 PKGNAMEPREFIX?=	qt5-sqldrivers-
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT?=	Qt ${DB_DESC} database plugin
 
-USES+=		compiler:c++11-lang qmake:no_env qt-dist:5,base
+USES+=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
+USE_PERL5+=	extract
 USE_QT+=	core sql qmake_build buildtools_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=-no-gui -no-xcb
