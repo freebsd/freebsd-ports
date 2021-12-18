@@ -1,8 +1,7 @@
-innotop connects to a MySQL database server and retrieves
-information from it, then displays it in a manner similar
-to the UNIX top program.
+innotop is a MySQL and InnoDB transaction/status monitor, like 'top' for MySQL.
 
-It runs on most Unix systems which have Perl, DBI, and
-Term::ReadKey installed.
+It displays queries, InnoDB transactions, lock waits, deadlocks, foreign key
+errors, open tables, replication status, buffer information, row operations,
+logs, I/O operations, load graph, and more.
 
-WWW: http://code.google.com/p/innotop/
+WWW: https://github.com/innotop/innotop
