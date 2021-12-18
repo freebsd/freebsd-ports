@@ -223,6 +223,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/generic/Generic_MediaServer_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_MediaWiki_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_MetadataEdit_Plugin.so
+%%QT_PLUGINDIR%%/digikam/generic/Generic_MjpegStream_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_OneDrive_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Panorama_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Pinterest_Plugin.so

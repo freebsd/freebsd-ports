@@ -1,5 +1,3 @@
-TIMESTAMP = 1639155793
-SHA256 (KDE/digikam/7.3.0/digikam-7.3.0.tar.xz) = 95aea93be1cfd39bb52333b82b3e57bf68080c7d1319d754d167a20f6dbe4551
-SIZE (KDE/digikam/7.3.0/digikam-7.3.0.tar.xz) = 256985340
-SHA256 (KDE/digikam/7.3.0/95a8ece964681fc6823e968541da2da2da06b3dd.patch) = 282fa18271008cd076857f71611a7285fac64d06e2f24b39dec97752289f32e7
-SIZE (KDE/digikam/7.3.0/95a8ece964681fc6823e968541da2da2da06b3dd.patch) = 933
+TIMESTAMP = 1639773837
+SHA256 (KDE/digikam/7.4.0/digiKam-7.4.0.tar.xz) = d08ab66da732bb449bc10106ec11dd9defa5b3562ded3741b041dbbaa715504a
+SIZE (KDE/digikam/7.4.0/digiKam-7.4.0.tar.xz) = 339575096

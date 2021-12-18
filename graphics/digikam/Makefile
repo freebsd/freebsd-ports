@@ -1,11 +1,10 @@
 PORTNAME=	digikam
-DISTVERSION=	7.3.0
+DISTVERSION=	7.4.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
-
-PATCH_SITES=	https://invent.kde.org/graphics/digikam/-/commit/
-PATCHFILES=	95a8ece964681fc6823e968541da2da2da06b3dd.patch:-p1
+# One bit changed in the naming convention ..
+DISTFILES=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE digital photo management application
