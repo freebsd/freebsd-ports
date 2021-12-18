@@ -1,7 +1,7 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
 
 PORTNAME=	bcftools
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
