@@ -49,6 +49,7 @@ GIST_CONFIGURE_ENABLE=		gist qt
 GIST_USES=			gl qt:5
 GIST_USE=			gl=gl qt=core,gui,printsupport,widgets,qmake_build,buildtools_build
 GIST_IMPLIES=			SHARED # because Qt must be built in a special way: error: "You must build your code with position independent code if Qt was built with -reduce-relocations"
+GIST_MAKE_ARGS=			FREEBSD_LDFLAGS=-L${LOCALBASE}/lib
 
 PEAKHEAP_DESC=			Peak heap size tracking
 PEAKHEAP_CONFIGURE_ENABLE=	peakheap
