@@ -8,6 +8,7 @@ include/dyncall_macros.h
 include/dyncall_signature.h
 include/dyncall_types.h
 include/dyncall_value.h
+include/dyncall_version.h
 include/dynload.h
 lib/libdyncall_s.a
 lib/libdyncallback_s.a
