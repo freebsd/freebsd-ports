@@ -1,4 +1,4 @@
---- mmc_cmds.c.orig	2018-12-26 19:54:04 UTC
+--- mmc_cmds.c.orig	2021-12-18 19:59:21 UTC
 +++ mmc_cmds.c
 @@ -28,7 +28,12 @@
  #include <errno.h>
@@ -33,7 +33,7 @@
  	if (res) {
  		fprintf(stderr, "Error getting device size, errno: %d\n",
  			errno);
-@@ -1530,13 +1546,18 @@ int do_read_extcsd(int nargs, char **arg
+@@ -1605,13 +1621,18 @@ int do_read_extcsd(int nargs, char **argv)
  	/* A441/A43: reserved	[197] [195] [193] [190] [188]
  	 * [186] [184] [182] [180] [176] */
  
@@ -53,12 +53,30 @@
  	if (reg & 0x20) printf(" HS200 Single Data Rate eMMC @200MHz 1.2VI/O\n");
  	if (reg & 0x10) printf(" HS200 Single Data Rate eMMC @200MHz 1.8VI/O\n");
  	if (reg & 0x08) printf(" HS Dual Data Rate eMMC @52MHz 1.2VI/O\n");
-@@ -1883,7 +1904,7 @@ static int do_rpmb_op(int fd,
- 	u_int16_t rpmb_type;
- 	struct mmc_ioc_multi_cmd *mioc;
- 	struct mmc_ioc_cmd *ioc;
--	struct rpmb_frame frame_status = {0};
-+	struct rpmb_frame frame_status = {{0}};
+@@ -1881,8 +1902,10 @@ int do_read_extcsd(int nargs, char **argv)
+ 		       (ext_csd[EXT_CSD_CMDQ_DEPTH] & 0x1f) + 1);
+ 		printf("Command Enabled [CMDQ_MODE_EN]: 0x%02x\n",
+ 		       ext_csd[EXT_CSD_CMDQ_MODE_EN]);
++#if defined(__linux__)
+ 		printf("Note: CMDQ_MODE_EN may not indicate the runtime CMDQ ON or OFF.\n"
+ 		       "Please check sysfs node '/sys/devices/.../mmc_host/mmcX/mmcX:XXXX/cmdq_en'\n");
++#endif
+ 	}
+ out_free:
+ 	return ret;
+@@ -2515,6 +2538,7 @@ int do_cache_dis(int nargs, char **argv)
+ 	return do_cache_ctrl(0, nargs, argv);
+ }
  
- 	if (!frame_in || !frame_out || !out_cnt)
- 		return -EINVAL;
++#if defined(__linux__)
+ static int erase(int dev_fd, __u32 argin, __u32 start, __u32 end)
+ {
+ 	int ret = 0;
+@@ -2657,6 +2681,7 @@ out:
+ 	close(dev_fd);
+ 	return ret;
+ }
++#endif
+ 
+ 
+ int do_ffu(int nargs, char **argv)

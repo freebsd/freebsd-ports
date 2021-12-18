@@ -1,4 +1,4 @@
---- mmc.h.orig	2018-02-26 22:10:51 UTC
+--- mmc.h.orig	2021-12-18 19:59:21 UTC
 +++ mmc.h
 @@ -17,10 +17,26 @@
   * those modifications are Copyright (c) 2016 SanDisk Corp.
