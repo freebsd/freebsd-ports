@@ -1,7 +1,7 @@
 # Created by: Steve Polyack <spolyack@collaborativefusion.com>
 
 PORTNAME=	phpmustache
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -28,10 +28,5 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mustache.php ${STAGEDIR}${DATADIR}
-
-do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/test/fixtures/examples && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
