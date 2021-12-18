@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=--verbose \
 		--without-gphoto \
 		--without-gssapi \
 		--without-gstreamer \
-		--without-hal \
 		--without-inotify \
 		--without-krb5 \
 		--without-mingw \
@@ -55,7 +54,6 @@ CONFIGURE_ARGS+=--verbose \
 		--with-pcap \
 		--with-pthread \
 		--without-pulse \
-		--without-quicktime \
 		--without-sane \
 		--with-sdl \
 		--without-udev \
