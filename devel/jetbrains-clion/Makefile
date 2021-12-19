@@ -1,7 +1,7 @@
 PORTNAME=	clion
-PORTVERSION=	2021.2.3
+PORTVERSION=	2021.3
 CATEGORIES=	devel java
-MASTER_SITES=	https://download-cf.jetbrains.com/cpp/
+MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	CLion-${PORTVERSION}
 DIST_SUBDIR=	jetbrains
@@ -41,11 +41,14 @@ do-install:
 		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/bin/gdb/linux \
 		${WRKSRC}/bin/lldb/linux \
+		${WRKSRC}/bin/ninja \
+		${WRKSRC}/bin/repair \
 		${WRKSRC}/jbr \
 		${WRKSRC}/jre64 \
 		${WRKSRC}/lib/pty4j-native \
-		${WRKSRC}/plugins/cwm-plugin/quiche-native \
-		${WRKSRC}/plugins/performanceTesting/bin
+		${WRKSRC}/plugins/cwm-plugin \
+		${WRKSRC}/plugins/performanceTesting \
+		${WRKSRC}/plugins/remote-dev-server
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
 		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
