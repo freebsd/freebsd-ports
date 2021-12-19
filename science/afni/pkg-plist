@@ -232,6 +232,7 @@ bin/3ddelay
 bin/3ddot
 bin/3ddot_beta
 bin/3dedge3
+bin/3dedgedog
 bin/3dfim+
 bin/3dfractionize
 bin/3dhistog
@@ -680,7 +681,7 @@ include/afni/rcmat.h
 include/afni/tagset.h
 include/afni/thd_atlas.h
 include/afni/thd_compress.h
-include/afni/thd_depth.h
+include/afni/thd_edge_dog.h
 include/afni/thd_euler_dist.h
 include/afni/thd_iochan.h
 include/afni/thd_maker.h

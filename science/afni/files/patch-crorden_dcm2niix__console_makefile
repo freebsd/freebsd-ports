@@ -1,26 +1,22 @@
---- crorden/dcm2niix_console/makefile.orig	2021-11-08 00:47:00 UTC
+--- crorden/dcm2niix_console/makefile.orig	2021-12-19 17:24:45 UTC
 +++ crorden/dcm2niix_console/makefile
-@@ -1,8 +1,8 @@
+@@ -1,5 +1,5 @@
  # Regular use
 -CFLAGS=-s -O3
-+CXXFLAGS?=-s -O3
++CXXFLAGS=-s -O3
  
  # Debugging
--#CFLAGS=-g
-+#CXXFLAGS=-g
- 
- #Leak tests:
- # https://clang.llvm.org/docs/AddressSanitizer.html
-@@ -21,7 +21,7 @@ ifneq ($(OS),Windows_NT)
-  	ifeq "$(OS)" "Darwin"
+ #CFLAGS=-g
+@@ -22,7 +22,7 @@ ifneq ($(OS),Windows_NT)
  		#CFLAGS=-dead_strip -O3
- 		#CFLAGS= -O3
--		CFLAGS=-O3 -sectcreate __TEXT __info_plist Info.plist
-+		CXXFLAGS=-O3 -sectcreate __TEXT __info_plist Info.plist
+ 	   # ponder -sectcreate later [rickr]
+ 		# CFLAGS=-O3 -sectcreate __TEXT __info_plist Info.plist
+-		CFLAGS= -O3
++		CXXFLAGS= -O3
  		#Apple notarization requires a Info.plist
  		# For .app bundles, the Info.plist is a separate file, for executables it is appended as a section
  		#you can check that the Info.plist section has been inserted with either of these commands
-@@ -31,4 +31,4 @@ ifneq ($(OS),Windows_NT)
+@@ -32,4 +32,4 @@ ifneq ($(OS),Windows_NT)
  	endif
  endif
  all:
