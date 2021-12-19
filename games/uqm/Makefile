@@ -1,103 +1,117 @@
-# Created by: benlutz@datacomm.ch
-
 PORTNAME=	uqm
-PORTVERSION=	0.7.0
-PORTREVISION=	5
+DISTVERSION=	0.8.0
 CATEGORIES=	games
-MASTER_SITES=	SF/sc2/UQM/${PORTVERSION:R}
-DISTFILES=	${DISTNAME}-source.tgz ${PORTNAME}-${DATAVERSION}-content.uqm
-EXTRACT_ONLY=	${DISTNAME}-source.tgz
+MASTER_SITES=	SF/sc2/UQM/${DISTVERSION:R}
+DISTFILES=	${DISTNAME}-src.tgz ${DISTNAME}-content.uqm
+EXTRACT_ONLY=	${DISTNAME}-src.tgz
 
 MAINTAINER=	mail@maxlor.com
-COMMENT=	Port of the original Star Control 2 for 3DO consoles
+COMMENT=	Space exploration game The Ur-Quan Masters
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+ CC-BY-NC-SA-2.5
+LICENSE_COMB=	multi
+LICENSE_DISTFILES_GPLv2+ =	${DISTNAME}-src.tgz
+LICENSE_DISTFILES_CC-BY-NC-SA-2.5=	${DISTNAME}-content.uqm
 
-LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-		libmikmod.so:audio/libmikmod \
-		libpth.so:devel/pth
+LIB_DEPENDS=	libSDL2.so:devel/sdl20 \
+		libpng.so:graphics/png
 
 USES=		gmake pkgconfig sdl
-USE_SDL=	image sdl
-DATAVERSION=	0.7.0
+USE_SDL=	sdl2
 
-OPTIONS_DEFINE=	VOICE MUSIC OPENAL DOCS
-MUSIC_DESC=	3DO music add-on (18 MiB)
-VOICE_DESC=	Speech add-on (109 MiB)
-OPTIONS_GROUP=	SOUNDTRACK_REMIXES
-REMIX_PACKS=	1 2 3 4
-OPTIONS_GROUP_SOUNDTRACK_REMIXES=	REMIX1 REMIX2 REMIX3 REMIX4
-REMIX1_DESC=	"Super Meelee!"                  (47 MiB)
-REMIX2_DESC=	"Neutral Aliens, Don't Shoot!"   (57 MiB)
-REMIX3_DESC=	"Ur-Quan Hierarchy"              (38 MiB)
-REMIX4_DESC=	"The New Alliance of Free Stars" (82 MiB)
-
+OPTIONS_DEFINE=	DOCS MUSIC OPENAL VOICE
+DOCS_DESC=	Install game manual
+MUSIC_DESC=	3DO music package (19 MiB)
+OPENAL_DESC=	Positional sound through OpenAL (experimental)
+VOICE_DESC=	3DO speech package (110 MiB)
+OPTIONS_GROUP=	REMIXES
+OPTIONS_GROUP_REMIXES=	REMIX1 REMIX2 REMIX3 REMIX4
+REMIXES_DESC=	Soundtrack Remixes
+REMIX1_DESC=	"Super Meelee!"                  (48 MiB)
+REMIX2_DESC=	"Neutral Aliens, Don't Shoot!"   (58 MiB)
+REMIX3_DESC=	"Ur-Quan Hierarchy"              (39 MiB)
+REMIX4_DESC=	"The New Alliance of Free Stars" (84 MiB)
 OPTIONS_SUB=	yes
 
-VOICE_DISTFILES=	${PORTNAME}-${DATAVERSION}-voice.uqm
-MUSIC_DISTFILES=	${PORTNAME}-${DATAVERSION}-3domusic.uqm
+VOICE_DISTFILES=	${DISTNAME}-voice.uqm
+MUSIC_DISTFILES=	${DISTNAME}-3domusic.uqm
 OPENAL_USES=	openal:al
 
 .include <bsd.port.options.mk>
 
-.for i in ${REMIX_PACKS}
-.	if ${PORT_OPTIONS:MREMIX${i}}
-MASTER_SITES+=	SF/sc2/UQM%20Remix%20Packs/UQM%20Remix%20Pack%20${i}:remixpack${i}
-DISTFILES+=	${PORTNAME}-remix-disc${i}.uqm:remixpack${i}
-.	endif
-.endfor
+# libvorbis is not required for a minimal installations, only for addons
+.if ${PORT_OPTIONS:MMUSIC}${PORT_OPTIONS:MVOICE}${PORT_OPTIONS:MREMIX1}${PORT_OPTIONS:MREMIX2}${PORT_OPTIONS:MREMIX3}${PORT_OPTIONS:MREMIX4}
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
+.endif
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/content/addons ${WRKSRC}/content/packages
-	@${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-content.uqm ${WRKSRC}/content/packages/
+.if ${PORT_OPTIONS:MDOCS}
+LICENSE+=	CC-BY-2.0
+LICENSE_DISTFILES_CC-BY-2.0=	${DISTNAME}-src.tgz
+.endif
+.if ${PORT_OPTIONS:MMUSIC}
+LICENSE_DISTFILES_CC-BY-NC-SA-2.5+=	${DISTNAME}-3domusic.uqm
+.endif
 .if ${PORT_OPTIONS:MVOICE}
-	@${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-voice.uqm ${WRKSRC}/content/addons/
+LICENSE_DISTFILES_CC-BY-NC-SA-2.5+=	${DISTNAME}-voice.uqm
 .endif
-.if	${PORT_OPTIONS:MMUSIC}
-	@${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-3domusic.uqm ${WRKSRC}/content/addons/
-.endif
-.for i in ${REMIX_PACKS}
-.	if ${PORT_OPTIONS:MREMIX${i}}
-	@${CP} ${DISTDIR}/${PORTNAME}-remix-disc${i}.uqm ${WRKSRC}/content/addons/
+.for i in 1 2 3
+.	if ${PORT_OPTIONS:MREMIX${i}}	# portlint warning here is false positive
+MASTER_SITES+=	SF/sc2/UQM%20Remix%20Packs/UQM%20Remix%20Pack%20${i}:remix${i}
+DISTFILES+=	${PORTNAME}-remix-disc${i}.uqm:remix${i}
+LICENSE_DISTFILES_CC-BY-NC-SA-2.5+=	${PORTNAME}-remix-disc${i}.uqm
 .	endif
 .endfor
+.if ${PORT_OPTIONS:MREMIX4}
+MASTER_SITES+=	SF/sc2/UQM%20Remix%20Packs/UQM%20Remix%20Pack%204:remix4
+DISTFILES+=	${PORTNAME}-remix-disc4-1.uqm:remix4
+LICENSE_DISTFILES_CC-BY-NC-SA-2.5+=	${PORTNAME}-remix-disc4-1.uqm
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -Ee \
+		's|^(SYSTEM_BUILD_LDFLAGS)=""|\1="-L${LOCALBASE}/lib"|; s|^(PROG_gcc_FILE)="gcc"|\1="${CC}"|; s|\(gcc --version\)|(${CC} --version)|' \
+		${WRKSRC}/build/unix/config_proginfo_build
+	@${REINPLACE_CMD} -Ee 's|/usr/X11R6/|${LOCALBASE}/|g; s|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/build/unix/config_proginfo_host
+	@${REINPLACE_CMD} -Ee 's|%PREFIX%|${PREFIX}|g' ${WRKSRC}/config.state
+.if ${PORT_OPTIONS:MOPENAL}
+	@${REINPLACE_CMD} -Ee "s|(CHOICE_sound_VALUE)='mixsdl'|\1='openal'|g" ${WRKSRC}/config.state
+.endif
+.if ${LIB_DEPENDS:Mlibvorbis*}
+	@${REINPLACE_CMD} -Ee "s|(CHOICE_ovcodec_VALUE)='none'|\1='standard'|g" ${WRKSRC}/config.state
+.endif
 
 do-configure:
-	@${ECHO_CMD} CHOICE_debug_VALUE=\'nodebug\' >  ${WRKSRC}/config.state
-	@${ECHO_CMD} CHOICE_graphics_VALUE=\'opengl\' >> ${WRKSRC}/config.state
-.if ${PORT_OPTIONS:MOPENAL}
-	@${ECHO_CMD} CHOICE_sound_VALUE=\'openal\' >> ${WRKSRC}/config.state
-.else
-	@${ECHO_CMD} CHOICE_sound_VALUE=\'mixsdl\' >> ${WRKSRC}/config.state
-.endif
-	@${ECHO_CMD} CHOICE_mikmod_VALUE=\'external\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} CHOICE_ovcodec_VALUE=\'standard\' >> ${WRKSRC}/config.state
-.if	${PORT_OPTIONS:MINET6}
-	@${ECHO_CMD} CHOICE_netplay_VALUE=\'full\' >> ${WRKSRC}/config.state
-.else
-	@${ECHO_CMD} CHOICE_netplay_VALUE=\'ipv4\' >> ${WRKSRC}/config.state
-.endif
-	@${ECHO_CMD} CHOICE_joystick_VALUE=\'enabled\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} CHOICE_ioformat_VALUE=\'stdio_zip\' >> ${WRKSRC}/config.state
-.if ${ARCH} == "i386"
-	@${ECHO_CMD} CHOICE_accel_VALUE=\'asm\' >> ${WRKSRC}/config.state
-.else
-	@${ECHO_CMD} CHOICE_accel_VALUE=\'plainc\' >> ${WRKSRC}/config.state
-.endif
-	@${ECHO_CMD} CHOICE_threadlib_VALUE=\'sdl\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} INPUT_install_prefix_VALUE=\'${PREFIX}\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} INPUT_install_bindir_VALUE=\''$$prefix/bin'\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} INPUT_install_libdir_VALUE=\''$$prefix/lib'\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} INPUT_install_sharedir_VALUE=\''$$prefix/share'\' >> ${WRKSRC}/config.state
-	@(cd ${WRKSRC} && ${SETENV} LOCALBASE=${LOCALBASE} PREFIX=${PREFIX} ./build.sh uqm config)
+	@(cd ${WRKSRC} && ${SETENV} LDFLAGS=-lm ./build.sh uqm reprocess_config)
 
 do-build:
-	@(cd ${WRKSRC} && ./build.sh uqm)
+	@(cd ${WRKSRC} && ./build.sh uqm ${_MAKE_JOBS})
 
 do-install:
-	@(cd ${WRKSRC} && ${SETENV} STAGEDIR="${STAGEDIR}" ./build.sh uqm install)
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/uqm/uqm
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/uqm ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}/content/packages
+	${MKDIR} ${STAGEDIR}${DATADIR}/content/addons
+	${INSTALL_DATA} ${WRKSRC}/content/version ${STAGEDIR}${DATADIR}/content
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}-content.uqm ${STAGEDIR}${DATADIR}/content/packages
+.if ${PORT_OPTIONS:MMUSIC}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}-3domusic.uqm ${STAGEDIR}${DATADIR}/content/addons
+.endif
+.if ${PORT_OPTIONS:MVOICE}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}-voice.uqm ${STAGEDIR}${DATADIR}/content/addons
+.endif
+.if ${PORT_OPTIONS:MREMIX1}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-remix-disc1.uqm ${STAGEDIR}${DATADIR}/content/addons
+.endif
+.if ${PORT_OPTIONS:MREMIX2}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-remix-disc2.uqm ${STAGEDIR}${DATADIR}/content/addons
+.endif
+.if ${PORT_OPTIONS:MREMIX3}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-remix-disc3.uqm ${STAGEDIR}${DATADIR}/content/addons
+.endif
+.if ${PORT_OPTIONS:MREMIX4}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-remix-disc4-1.uqm ${STAGEDIR}${DATADIR}/content/addons
+.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/users/manual.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/users/uqm.6 ${STAGEDIR}${PREFIX}/man/man6
 
 .include <bsd.port.mk>

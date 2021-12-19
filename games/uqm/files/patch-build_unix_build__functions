@@ -1,0 +1,10 @@
+--- build/unix/build_functions.orig	2020-12-27 04:34:23 UTC
++++ build/unix/build_functions
+@@ -65,6 +65,7 @@ build_reconfig() {
+ 		echo "*** Warning: file 'config.state' not found - using defaults."
+ 	fi
+ 
++	set_system
+ 	prepare_build_system
+ 	config_requirements
+ 	prepare_host_system

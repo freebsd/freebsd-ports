@@ -1,0 +1,17 @@
+--- config.state.orig	2021-04-23 17:15:09 UTC
++++ config.state
+@@ -0,0 +1,14 @@
++CHOICE_debug_VALUE='nodebug'
++CHOICE_graphics_VALUE='sdl2'
++CHOICE_sound_VALUE='mixsdl'
++CHOICE_mikmod_VALUE='internal'
++CHOICE_ovcodec_VALUE='none'
++CHOICE_netplay_VALUE='full'
++CHOICE_joystick_VALUE='enabled'
++CHOICE_ioformat_VALUE='stdio_zip'
++CHOICE_accel_VALUE='asm'
++CHOICE_threadlib_VALUE='sdl'
++INPUT_install_prefix_VALUE='%PREFIX%'
++INPUT_install_bindir_VALUE='$prefix/bin'
++INPUT_install_libdir_VALUE='$prefix/lib'
++INPUT_install_sharedir_VALUE='$prefix/share'
