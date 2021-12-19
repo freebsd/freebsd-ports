@@ -1,4 +1,4 @@
-%%PYTHON_SITELIBDIR%%/_ldns.so.3.0.0
+%%PYTHON_SITELIBDIR%%/_ldns.so.3.2.0
 %%PYTHON_SITELIBDIR%%/_ldns.so.3
 %%PYTHON_SITELIBDIR%%/ldns.py
 %%PYTHON_SITELIBDIR%%/_ldns.so
