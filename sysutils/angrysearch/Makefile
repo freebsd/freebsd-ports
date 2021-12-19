@@ -1,8 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
-PORTNAME=	angrysearch
-PORTVERSION=	1.0.2 # untagged, but specified in the setup.py
-PORTREVISION=	5
+PORTNAME=	${GH_PROJECT:tl}
+PORTVERSION=	1.0.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -16,7 +16,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USE_GITHUB=	yes
 GH_ACCOUNT=	DoTheEvo
 GH_PROJECT=	ANGRYsearch
-GH_TAGNAME=	6f8fccc
 
 USES=		python pyqt:5
 USE_PYTHON=	autoplist distutils noflavors
