@@ -1,15 +1,21 @@
---- filebeat/filebeat.reference.yml.orig	2021-10-07 17:20:31 UTC
+--- filebeat/filebeat.reference.yml.orig	2021-12-17 15:54:41 UTC
 +++ filebeat/filebeat.reference.yml
-@@ -1025,7 +1025,7 @@ filebeat.inputs:
+@@ -1022,12 +1022,12 @@ filebeat.inputs:
+ #filebeat.config:
+   #inputs:
+     #enabled: false
+-    #path: inputs.d/*.yml
++    #path: filebeat.inputs.d/*.yml
+     #reload.enabled: true
      #reload.period: 10s
    #modules:
-     #enabled: false
+     #enabled: true
 -    #path: modules.d/*.yml
 +    #path: filebeat.modules.d/*.yml
      #reload.enabled: true
      #reload.period: 10s
  
-@@ -2070,7 +2070,7 @@ output.elasticsearch:
+@@ -2072,7 +2072,7 @@ output.elasticsearch:
  
  # The directory from where to read the dashboards. The default is the `kibana`
  # folder in the home path.

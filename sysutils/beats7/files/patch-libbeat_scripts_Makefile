@@ -1,4 +1,4 @@
---- libbeat/scripts/Makefile.orig	2021-07-04 13:47:10 UTC
+--- libbeat/scripts/Makefile.orig	2021-12-17 15:54:41 UTC
 +++ libbeat/scripts/Makefile
 @@ -42,7 +42,7 @@ GOFILES = $(shell find . -type f -name '*.go' 2>/dev/n
  GOFILES_NOVENDOR = $(shell find . -type f -name '*.go' -not -path "*/vendor/*" 2>/dev/null)
@@ -9,16 +9,7 @@
  ES_HOST?=elasticsearch
  ES_PORT?=9200
  ES_USER?=beats
-@@ -136,7 +136,7 @@ ${BEAT_NAME}.test: $(GOFILES_ALL)
- .PHONY: crosscompile
- crosscompile: ## @build Cross-compile beat for the OS'es specified in GOX_OS variable. The binaries are placed in the build/bin directory.
- crosscompile: $(GOFILES)
--ifneq ($(shell [[ $(BEAT_NAME) == journalbeat ]] && echo true ),true)
-+ifneq ($(shell [[ $(BEAT_NAME) = journalbeat ]] && echo true ),true)
- 	go ${INSTALL_CMD} github.com/mitchellh/gox
- 	mkdir -p ${BUILD_DIR}/bin
- 	gox -output="${BUILD_DIR}/bin/{{.Dir}}-{{.OS}}-{{.Arch}}" -os="$(strip $(GOX_OS))" -osarch="$(strip $(GOX_OSARCH))" ${GOX_FLAGS}
-@@ -348,12 +348,12 @@ ifndef EXCLUDE_COMMON_UPDATE_TARGET
+@@ -346,12 +346,12 @@ ifndef EXCLUDE_COMMON_UPDATE_TARGET
  update: python-env fields collect config ## @build Update expects the most recent version of libbeat in the GOPATH
  	@echo "Updating generated files for ${BEAT_NAME}"
  

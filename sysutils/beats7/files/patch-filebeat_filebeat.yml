@@ -1,6 +1,6 @@
---- filebeat/filebeat.yml.orig	2021-10-07 17:20:31 UTC
+--- filebeat/filebeat.yml.orig	2021-12-17 15:54:41 UTC
 +++ filebeat/filebeat.yml
-@@ -95,7 +95,7 @@ filebeat.inputs:
+@@ -51,7 +51,7 @@ filebeat.inputs:
  
  filebeat.config.modules:
    # Glob pattern for configuration loading
@@ -9,7 +9,7 @@
  
    # Set to true to enable config reloading
    reload.enabled: false
-@@ -138,6 +138,10 @@ setup.template.settings:
+@@ -94,6 +94,10 @@ setup.template.settings:
  # website.
  #setup.dashboards.url:
  
@@ -20,7 +20,7 @@
  # =================================== Kibana ===================================
  
  # Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-@@ -205,8 +209,8 @@ processors:
+@@ -161,8 +165,8 @@ processors:
    - add_host_metadata:
        when.not.contains.tags: forwarded
    - add_cloud_metadata: ~
