@@ -1,9 +1,9 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
 
 PORTNAME=	webstorm
-PORTVERSION=	2021.2.3
+PORTVERSION=	2021.3
 CATEGORIES=	devel java
-MASTER_SITES=	https://download-cf.jetbrains.com/webstorm/
+MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	WebStorm-${PORTVERSION}
 DIST_SUBDIR=	jetbrains
@@ -33,7 +33,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/WebStorm-212.5457.55
+WRKSRC=		${WRKDIR}/WebStorm-213.5744.224
 
 do-install:
 # Linux/Windows/OS X only so remove them
@@ -41,11 +41,14 @@ do-install:
 		${WRKSRC}/bin/fsnotifier \
 		${WRKSRC}/bin/fsnotifier-arm \
 		${WRKSRC}/bin/fsnotifier64 \
+		${WRKSRC}/bin/remote-dev-server.sh \
+		${WRKSRC}/bin/repair \
 		${WRKSRC}/jbr \
 		${WRKSRC}/jre64 \
 		${WRKSRC}/lib/pty4j-native \
-		${WRKSRC}/plugins/cwm-plugin/quiche-native \
-		${WRKSRC}/plugins/performanceTesting/bin \
+		${WRKSRC}/plugins/cwm-plugin \
+		${WRKSRC}/plugins/performanceTesting \
+		${WRKSRC}/plugins/remote-dev-server \
 		${WRKSRC}/plugins/webp/lib/libwebp
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
