@@ -953,6 +953,7 @@
     SUBDIR += thegrind
     SUBDIR += tileworld
     SUBDIR += tkmoo
+    SUBDIR += tmatrix
     SUBDIR += tomatoes
     SUBDIR += tome4
     SUBDIR += tome4-beta
