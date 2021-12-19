@@ -7,6 +7,6 @@ Features:
 - Mouse and trackpad settings
 - Keyboard layout settings
 - Switch Wallpaper (selected wallpaper will be located at .cache/wallpaper)
-- Configure Sway Notification Center
+- Configure Sway Notification Center (package: swaync)
 
 WWW: https://github.com/ErikReider/SwaySettings
