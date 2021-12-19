@@ -205,7 +205,7 @@ lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.21
 %%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
 %%FIDO%%lib/mysql/plugin/authentication_fido_client.so
-lib/mysql/plugin/authentication_oci_client.so
+%%FIDO%%lib/mysql/plugin/authentication_oci_client.so
 libdata/pkgconfig/mysqlclient.pc
 man/man1/comp_err.1.gz
 man/man1/lz4_decompress.1.gz
