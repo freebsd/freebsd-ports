@@ -250,7 +250,7 @@
  		global $conf;
  
  		$fields_array = array("f" => translate('From'), 
-@@ -514,11 +514,11 @@ class CmnFns {
+@@ -514,11 +518,11 @@ class CmnFns {
  
  		?>	
  		<table border=0 width="100%">
@@ -265,7 +265,7 @@
  			$i = 1;
  			$array_size = count($fields_array);
  			foreach ($fields_array as $k => $name) {
-@@ -543,34 +543,34 @@ class CmnFns {
+@@ -543,34 +547,34 @@ class CmnFns {
  				$i ++;
  			}
  		?>
@@ -317,7 +317,7 @@
  
  	}
  
-@@ -579,7 +579,7 @@ class CmnFns {
+@@ -579,7 +583,7 @@ class CmnFns {
          * @param none
          * @return value boolean
          */

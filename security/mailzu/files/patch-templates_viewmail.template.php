@@ -27,7 +27,18 @@
  }
  
  /**
-@@ -116,17 +116,17 @@ function MsgDisplayOptions($mail_id, $recip_email) {
+@@ -81,7 +81,9 @@ function MsgPrintHeader($struct,$hdr_list) {
+ function MsgPrintHeaderFull($struct,$hdr_list) {
+        
+         foreach ($hdr_list as $hdr) {
+-          $header_value = $struct->headers[strtolower($hdr)];
++          if ( isset($struct->headers[strtolower($hdr)] ) ) {
++              $header_value = $struct->headers[strtolower($hdr)];
++          }
+ 	  if (!$header_value) continue;
+           if (is_array($header_value)) {
+             $value_array = $header_value;
+@@ -116,17 +118,17 @@ function MsgDisplayOptions($mail_id, $recip_email) {
  <table class="stdFont" width="100%">
    <tr>
      <td align="left">
@@ -49,7 +60,7 @@
  }
  
  /**
-@@ -138,14 +138,14 @@ function MsgOriginalOptions() {
+@@ -138,14 +140,14 @@ function MsgOriginalOptions() {
    <table width="100%">
     <tr>
      <td class="stdFont" align="right">
