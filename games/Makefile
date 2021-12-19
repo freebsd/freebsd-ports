@@ -149,6 +149,7 @@
     SUBDIR += chroma
     SUBDIR += chromium-bsu
     SUBDIR += circuslinux
+    SUBDIR += cmatrix
     SUBDIR += cockatrice
     SUBDIR += coffeebreak
     SUBDIR += colobot

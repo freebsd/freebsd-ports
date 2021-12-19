@@ -3,7 +3,7 @@
 PORTNAME=	cmatrix
 PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
-CATEGORIES=	misc
+CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Show a scrolling 'Matrix' like screen
