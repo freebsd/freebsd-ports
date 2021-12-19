@@ -1,8 +1,7 @@
 # Created by: gurkan@phys.ethz.ch
 
 PORTNAME=	duncan
-PORTVERSION=	0.3
-PORTREVISION=	3
+PORTVERSION=	0.4
 CATEGORIES=	textproc gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/
 DISTNAME=	Duncan-${PORTVERSION}
