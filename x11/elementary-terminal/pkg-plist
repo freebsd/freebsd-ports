@@ -1,8 +1,6 @@
 bin/io.elementary.terminal
 share/applications/io.elementary.terminal.desktop
 share/applications/open-pantheon-terminal-here.desktop
-share/fish/vendor_conf.d/pantheon_terminal_process_completion_notifications.fish
-share/io.elementary.terminal/enable-zsh-completion-notifications
 share/locale/aa/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/ab/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/ae/LC_MESSAGES/io.elementary.terminal.mo

@@ -1,5 +1,5 @@
 PORTNAME=	terminal
-DISTVERSION=	6.0.0
+DISTVERSION=	6.0.1
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
@@ -13,13 +13,12 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgranite.so:x11-toolkits/granite \
 		libhandy-1.so:x11-toolkits/libhandy \
-		libpcre2-posix.so:devel/pcre2 \
-		libvte-2.91.so:x11-toolkits/vte3
+		libpcre2-posix.so:devel/pcre2
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 vte3
 GLIB_SCHEMAS=	io.elementary.terminal.gschema.xml
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- data/io.elementary.terminal.gschema.xml.orig	2021-07-15 21:30:31 UTC
++++ data/io.elementary.terminal.gschema.xml
+@@ -155,7 +155,7 @@
+       <description>Defines the encoding to be used by the terminal.</description>
+     </key>
+     <key name="font" type="s">
+-      <default>""</default>
++      <default>"Monospace Regular 12"</default>
+       <summary>The default font of the terminal.</summary>
+       <description>The default font of the terminal. use [Font Name] [Property] [Size]. eg. Droid Sans Mono 12.</description>
+     </key>
