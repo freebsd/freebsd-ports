@@ -1,0 +1,19 @@
+--- src/matlab/SConscript.orig	2021-09-17 15:33:57 UTC
++++ src/matlab/SConscript
+@@ -42,13 +42,13 @@ elif localenv['OS'] == 'Darwin':
+ 
+ elif os.name == 'posix':
+     linklibs = list(env['cantera_libs'])
+-    linklibs += ['mx', 'mex', 'mat'] + env['LIBM']
++    linklibs += ['octave', 'octinterp'] + env['LIBM']
+ 
+     if localenv['OS_BITS'] == 64:
+-        matlab_libs = pjoin(localenv['matlab_path'], 'bin', 'glnxa64')
++        matlab_libs = pjoin(localenv['matlab_path'], 'lib', 'octave', '6.4.0')
+         mexSuffix = '.mexa64'
+     else:
+-        matlab_libs = pjoin(localenv['matlab_path'], 'bin', 'glnx86')
++        matlab_libs = pjoin(localenv['matlab_path'], 'lib', 'octave', '6.4.0')
+         mexSuffix = '.mexglx'
+ 
+     linkflags.extend(['-Wl,--no-undefined',

@@ -1,4 +1,4 @@
---- SConstruct.orig	2021-09-20 01:35:42 UTC
+--- SConstruct.orig	2021-12-18 00:39:36 UTC
 +++ SConstruct
 @@ -312,7 +312,7 @@ elif 'icc' in env.subst('$CC'):
      defaults.warningFlags = '-Wcheck'
@@ -33,3 +33,13 @@
  
  # Print values of all build options:
  print("Configuration variables read from 'cantera.conf' and command line:")
+@@ -1440,8 +1441,7 @@ if env['matlab_toolbox'] == 'y':
+               'SUNDIALS libraries and skip building the Matlab toolbox.')
+         sys.exit(1)
+ 
+-    if not (os.path.isdir(matPath) and
+-            os.path.isdir(pjoin(matPath, 'extern'))):
++    if not (os.path.isdir(matPath)):
+         print("""ERROR: Path set for 'matlab_path' is not correct.""")
+         print("""ERROR: Path was: '%s'""" % matPath)
+         sys.exit(1)
