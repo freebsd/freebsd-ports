@@ -3,3 +3,5 @@ SHA256 (fcitx5/en_dict-20121020.tar.gz) = c44a5d7847925eea9e4d2d04748d442cd28dd9
 SIZE (fcitx5/en_dict-20121020.tar.gz) = 630491
 SHA256 (fcitx5/fcitx-fcitx5-5.0.11_GH0.tar.gz) = 14208907f9d43e2d06257d28edf825380acd7288e6d4275138781c8cbe4d395d
 SIZE (fcitx5/fcitx-fcitx5-5.0.11_GH0.tar.gz) = 1953703
+SHA256 (fcitx5/0b46063c0e9f.patch) = 51fb37b55923f84f32449109c03cbb9a7cd36552966e5efb41b4cb5290d16590
+SIZE (fcitx5/0b46063c0e9f.patch) = 1335

@@ -2,11 +2,15 @@
 
 PORTNAME=	fcitx5
 DISTVERSION=	5.0.11
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict
 DISTFILES=	${SPELL_EN_DICT_TAR}:dict
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0b46063c0e9f.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	New implementation of the Fcitx IME framework
