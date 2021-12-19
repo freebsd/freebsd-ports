@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Alien/GSL.pm
+%%SITE_ARCH%%/Alien/GSL/Install/Files.pm
+%%SITE_ARCH%%/auto/Alien/GSL/GSL.txt
+%%SITE_ARCH%%/auto/share/dist/Alien-GSL/_alien/alien.json
+%%SITE_ARCH%%/auto/share/dist/Alien-GSL/_alien/alienfile
+%%PERL5_MAN3%%/Alien::GSL.3.gz

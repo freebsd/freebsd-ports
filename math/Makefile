@@ -592,6 +592,7 @@
     SUBDIR += osi-conic
     SUBDIR += osiipopt
     SUBDIR += osqp
+    SUBDIR += p5-Alien-GSL
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
     SUBDIR += p5-AI-NeuralNet-BackProp
