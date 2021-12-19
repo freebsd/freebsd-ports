@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211220:
+  AFFECTS: users of net-im/openfire
+  AUTHOR: nikita@druba.su
+
+  The port options have been renamed to be more readable.
+  When not using the default options, they have to be regenerated.
+
+  # cd /usr/ports/net-im/openfire
+  # make config
+
 20211213:
   AFFECTS: users of emulators/qemu-utils
   AUTHOR: bofh@FreeBSD.org

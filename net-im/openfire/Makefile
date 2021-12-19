@@ -1,12 +1,12 @@
 # Created by: Nikolay Pavlov <qpadla@gmail.com>
 
 PORTNAME=	openfire
-PORTVERSION=	4.6.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.6.5
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/archive/refs/tags/ \
-		LOCAL/pi:maven
-DISTFILES=	v${PORTVERSION}.tar.gz
+
+MASTER_SITES=	LOCAL/driesm:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
@@ -16,39 +16,42 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	mvn:devel/maven
 
-OPTIONS_DEFINE=	DOCS TEST
-OPTIONS_SINGLE=	MAVEN
-OPTIONS_SINGLE_MAVEN=	LOCAL_M2 ONLINE_M2
-MAVEN_DESC=	Source of Maven build plugins
-LOCAL_M2_DESC=	Use prefetch plugins from FreeBSD repository
-ONLINE_M2_DESC=	Download last plugins during build process (into ~/.m2)
-OPTIONS_DEFAULT=	LOCAL_M2
-LOCAL_M2_DISTFILES=	FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
-
 USES=		cpe
+CPE_VENDOR=	igniterealtime
+USE_GITHUB=	YES
+GH_ACCOUNT=	igniterealtime
+GH_PROJECT=	Openfire
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
-NO_ARCH=	yes
-CPE_VENDOR=	igniterealtime
 
 USE_RC_SUBR=	${PORTNAME}
+NO_ARCH=	yes
 SUB_FILES+=	pkg-message
 
-WRKSRC=		${WRKDIR}/Openfire-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/distribution/target/distribution-base/
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 VARLOG=		/var/log/${PORTNAME}
 VARDB=		/var/db/${PORTNAME}
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
-PLIST_SUB+=	VARLOG=${VARLOG} \
-		VARDB=${VARDB}
+PLIST_SUB+=	VARDB=${VARDB} \
+		VARLOG=${VARLOG}
+
+OPTIONS_DEFINE=		DOCS TEST
+OPTIONS_DEFAULT=	MAVEN_LOCAL
+OPTIONS_SINGLE=		MAVEN
+OPTIONS_SINGLE_MAVEN=	MAVEN_LOCAL MAVEN_ONLINE
+
+MAVEN_DESC=		Source of Maven build plugins
+MAVEN_LOCAL_DESC=	Use prefetch plugins from FreeBSD repository
+MAVEN_ONLINE_DESC=	Download last plugins during build process and store them into ~/.m2
+
+MAVEN_LOCAL_DISTFILES=	FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 
 MVN=		mvn
 MVN_TARGET=	package
-##
+
 .include <bsd.port.options.mk>
-##
 
 .if ${PORT_OPTIONS:MTEST}
 MVN_OPTS=	-DskipTests=false
@@ -56,11 +59,11 @@ MVN_OPTS=	-DskipTests=false
 MVN_OPTS=	-DskipTests=true
 .endif
 
-.if ${PORT_OPTIONS:MLOCAL_M2}
+.if ${PORT_OPTIONS:MMAVEN_LOCAL}
 MVN_OPTS+=	-o -Dmaven.repo.local=${WRKDIR}/m2
 .endif
 
-.if ${PORT_OPTIONS:MONLINE_M2}
+.if ${PORT_OPTIONS:MMAVEN_ONLINE}
 MVN_OPTS+=	-U
 .endif
 

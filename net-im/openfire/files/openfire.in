@@ -40,7 +40,8 @@ pidfile=/var/run/${name}.pid
 required_files="%%ETCDIR%%/openfire.xml"
 java_options=" 	-server -jar ${openfire_javargs} \
 		-Dopenfire.lib.dir=${openfire_libdir} \
-		-DopenfireHome=${openfire_home}"
+		-DopenfireHome=${openfire_home} \
+		-Dlog4j.configurationFile=${openfire_libdir}/log4j2.xml"
 
 java_command="	%%LOCALBASE%%/bin/java ${java_options} \
 		%%DATADIR%%/lib/startup.jar"
