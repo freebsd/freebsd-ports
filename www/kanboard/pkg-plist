@@ -671,6 +671,7 @@
 %%WWWDIR%%/app/Template/auth/index.php
 %%WWWDIR%%/app/Template/avatar_file/show.php
 %%WWWDIR%%/app/Template/board/table_column.php
+%%WWWDIR%%/app/Template/board/table_column_first.php
 %%WWWDIR%%/app/Template/board/table_container.php
 %%WWWDIR%%/app/Template/board/table_swimlane.php
 %%WWWDIR%%/app/Template/board/table_tasks.php
@@ -1588,6 +1589,7 @@
 %%WWWDIR%%/vendor/christian-riesen/otp/src/Otp/Otp.php
 %%WWWDIR%%/vendor/christian-riesen/otp/src/Otp/OtpInterface.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/LICENSE
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_files.php
@@ -1596,6 +1598,8 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installed.php
+%%WWWDIR%%/vendor/composer/platform_check.php
 %%WWWDIR%%/vendor/eluceo/ical/LICENSE
 %%WWWDIR%%/vendor/eluceo/ical/src/Component.php
 %%WWWDIR%%/vendor/eluceo/ical/src/Component/Alarm.php
@@ -1645,7 +1649,6 @@
 %%WWWDIR%%/vendor/gregwar/captcha/src/Gregwar/Captcha/PhraseBuilder.php
 %%WWWDIR%%/vendor/gregwar/captcha/src/Gregwar/Captcha/PhraseBuilderInterface.php
 %%WWWDIR%%/vendor/pimple/pimple/.php_cs.dist
-%%WWWDIR%%/vendor/pimple/pimple/.travis.yml
 %%WWWDIR%%/vendor/pimple/pimple/CHANGELOG
 %%WWWDIR%%/vendor/pimple/pimple/LICENSE
 %%WWWDIR%%/vendor/pimple/pimple/README.rst
@@ -1668,12 +1671,6 @@
 %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Psr11/ContainerTest.php
 %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Psr11/ServiceLocatorTest.php
 %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/ServiceIteratorTest.php
-%%WWWDIR%%/vendor/psr/cache/CHANGELOG.md
-%%WWWDIR%%/vendor/psr/cache/LICENSE.txt
-%%WWWDIR%%/vendor/psr/cache/src/CacheException.php
-%%WWWDIR%%/vendor/psr/cache/src/CacheItemInterface.php
-%%WWWDIR%%/vendor/psr/cache/src/CacheItemPoolInterface.php
-%%WWWDIR%%/vendor/psr/cache/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/psr/container/LICENSE
 %%WWWDIR%%/vendor/psr/container/src/ContainerExceptionInterface.php
 %%WWWDIR%%/vendor/psr/container/src/ContainerInterface.php
@@ -2208,7 +2205,6 @@
 %%WWWDIR%%/vendor/symfony/contracts/EventDispatcher/LICENSE
 %%WWWDIR%%/vendor/symfony/contracts/HttpClient/ChunkInterface.php
 %%WWWDIR%%/vendor/symfony/contracts/HttpClient/Exception/ClientExceptionInterface.php
-%%WWWDIR%%/vendor/symfony/contracts/HttpClient/Exception/DecodingExceptionInterface.php
 %%WWWDIR%%/vendor/symfony/contracts/HttpClient/Exception/ExceptionInterface.php
 %%WWWDIR%%/vendor/symfony/contracts/HttpClient/Exception/HttpExceptionInterface.php
 %%WWWDIR%%/vendor/symfony/contracts/HttpClient/Exception/RedirectionExceptionInterface.php
