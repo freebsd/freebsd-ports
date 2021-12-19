@@ -1,7 +1,7 @@
 # Created by: Daniel Solsona <daniel@ish.com.au>, Guido Falsi <madpilot@FreeBSD.org>
 
 PORTNAME=	logstash
-PORTVERSION=	7.15.2
+PORTVERSION=	7.16.2
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
