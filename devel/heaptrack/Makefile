@@ -1,14 +1,13 @@
 PORTNAME=	heaptrack
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0-43
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	devel kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Heap memory profiler
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libunwind.so:devel/libunwind \
@@ -22,7 +21,5 @@ USE_KDE=	auth auth codecs completion config config \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
-
-KDE_INVENT=	1c2d406387dc59e7ebba727fd42a647f2f38bba4 sdk
 
 .include <bsd.port.mk>
