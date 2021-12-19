@@ -1,6 +1,6 @@
---- inc/GSLBuilder.pm.orig	2020-06-12 22:07:37 UTC
+--- inc/GSLBuilder.pm.orig	2021-07-26 16:28:55 UTC
 +++ inc/GSLBuilder.pm
-@@ -279,7 +279,7 @@ sub link_c {
+@@ -280,7 +280,7 @@ sub link_c {
        }
      }
  
@@ -9,7 +9,7 @@
      my @shrp      = $self->split_like_shell($cf->{shrpenv});
      my @ld        = $self->split_like_shell($cf->{ld} || $Config{cc});
  
-@@ -311,7 +311,7 @@ sub compile_c {
+@@ -312,7 +312,7 @@ sub compile_c {
  
    $cf->{installarchlib} = $Config{archlib};
  
