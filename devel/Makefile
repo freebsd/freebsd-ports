@@ -4535,6 +4535,7 @@
     SUBDIR += py-freezegun
     SUBDIR += py-frictionless
     SUBDIR += py-frozendict
+    SUBDIR += py-frozenlist
     SUBDIR += py-fs
     SUBDIR += py-fs2
     SUBDIR += py-fsspec

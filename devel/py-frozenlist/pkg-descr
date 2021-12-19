@@ -1,0 +1,6 @@
+The list is mutable until FrozenList.freeze() is called, after which
+list modifications raise RuntimeError. A FrozenList instance is
+hashable, but only when frozen. Attempts to hash a non-frozen instance
+will result in a RuntimeError exception.
+
+WWW: https://github.com/aio-libs/frozenlist
