@@ -1,6 +1,5 @@
 PORTNAME=	gimmik
-DISTVERSION=	2.1
-PORTREVISION=	2
+DISTVERSION=	2.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +14,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python:3.3+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
