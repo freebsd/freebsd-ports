@@ -1,8 +1,11 @@
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/commit/
+PATCHFILES+=	c7306a6325df.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple image viewer
