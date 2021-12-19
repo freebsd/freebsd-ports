@@ -1,6 +1,5 @@
 bin/alignGFA
 bin/bogart
-bin/bogus
 bin/canu
 bin/canu-time
 bin/canu.defaults
@@ -32,6 +31,7 @@ bin/ovStoreIndexer
 bin/ovStoreSorter
 bin/ovStoreStats
 bin/overlapAlign
+bin/overlapCheck
 bin/overlapConvert
 bin/overlapImport
 bin/overlapInCore
@@ -59,6 +59,7 @@ lib/libcanu.a
 %%SITE_PERL%%/canu/Grid_Cloud.pm
 %%SITE_PERL%%/canu/Grid_DNANexus.pm
 %%SITE_PERL%%/canu/Grid_LSF.pm
+%%SITE_PERL%%/canu/Grid_Local.pm
 %%SITE_PERL%%/canu/Grid_PBSTorque.pm
 %%SITE_PERL%%/canu/Grid_SGE.pm
 %%SITE_PERL%%/canu/Grid_Slurm.pm

@@ -1,9 +1,8 @@
 PORTNAME=		canu
-DISTVERSION=		2.1
-PORTREVISION=		1
-CATEGORIES=		biology java perl5
+DISTVERSION=		2.2
+CATEGORIES=		wip biology java perl5
 # Github auto-generated tarballs lack submodules
-MASTER_SITES=		https://github.com/marbl/canu/releases/download/v2.1/
+MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
@@ -11,14 +10,13 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
-BROKEN_powerpc64=	fails to build: utgcns/libboost/boost/smart_ptr/detail/sp_counted_impl.hpp:81:5: error: 'get_deleter' declared as a 'virtual' field
-NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
-NOT_FOR_ARCHS_REASON=	__int128 is not supported on this target
+NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake localbase perl5
+USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
@@ -28,6 +26,17 @@ WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
+
+.include <bsd.port.pre.mk>
+
+# Parasail should be unbundled, but that would be a project because it's
+# currently woven into the canu code
+post-extract:
+.if ${ARCH} == "aarch64"
+	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
+	${CP} ${FILESDIR}/cpuid_ppc.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} \
@@ -54,4 +63,4 @@ do-install:
 	(cd ${WRKSRC}/build && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
