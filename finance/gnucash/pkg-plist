@@ -58,6 +58,7 @@ include/gnucash/gnc-accounting-period.h
 include/gnucash/gnc-addr-quickfill.h
 include/gnucash/gnc-amount-edit.h
 include/gnucash/gnc-aqbanking-templates.h
+include/gnucash/gnc-autoclear.h
 include/gnucash/gnc-basic-gobject.h
 include/gnucash/gnc-budget.h
 include/gnucash/gnc-cell-renderer-date.h
@@ -1067,7 +1068,6 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/icons/hicolor/24x24/actions/gnc-split-trans.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gnc-sx-new.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gnc-transfer.png
-%%DATADIR%%/migratable-prefs.xml
 %%DATADIR%%/pixmaps/gnucash-icon-48x48.bmp
 %%DATADIR%%/pixmaps/gnucash-icon.ico
 %%DATADIR%%/pixmaps/gnucash_splash.png
@@ -1079,6 +1079,7 @@ share/metainfo/gnucash.appdata.xml
 %%PYTHON%%%%DATADIR%%/python/pycons/setup.py
 %%PYTHON%%%%DATADIR%%/python/pycons/shell.py
 %%PYTHON%%%%DATADIR%%/python/pycons/simple_plot.py
+%%DATADIR%%/pref_transformations.xml
 %%DATADIR%%/tip_of_the_day.list
 %%DATADIR%%/ui/gnc-main-window-ui.xml
 %%DATADIR%%/ui/gnc-plugin-bi-import-ui.xml
