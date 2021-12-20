@@ -14,7 +14,7 @@ or
    session.
 
 You can also run Dynare using one command:
-$ octave -c 'dynare {example}.mod {args}'
+$ octave --eval 'dynare {example}.mod {args}'
 
 EOM
 }
