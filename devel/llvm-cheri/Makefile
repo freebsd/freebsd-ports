@@ -78,7 +78,7 @@ DOCS_PORTDOCS=		llvm
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld linker
 LLD_PORTDOCS=		lld
-LLDB_DESC=		Install lldb, the LLVM debugger (ignore on 9.x)
+LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 
 LLVM_TARGETS?=		AArch64;ARM;Mips;PowerPC;RISCV;X86
@@ -88,68 +88,7 @@ PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 		LLVM_RELEASE=${LLVM_RELEASE} \
 		LLVM_SUFFIX=${LLVM_SUFFIX}
 
-COMMANDS=	bugpoint \
-		c-index-test \
-		dsymutil \
-		llc \
-		lli \
-		llvm-addr2line \
-		llvm-ar \
-		llvm-as \
-		llvm-bcanalyzer \
-		llvm-cat \
-		llvm-cfi-verify \
-		llvm-config \
-		llvm-cov \
-		llvm-cvtres \
-		llvm-cxxmap \
-		llvm-cxxdump \
-		llvm-diff \
-		llvm-dis \
-		llvm-dlltool \
-		llvm-dwarfdump \
-		llvm-dwp \
-		llvm-exegesis \
-		llvm-extract \
-		llvm-gsymutil \
-		llvm-ifs \
-		llvm-install-name-tool \
-		llvm-jitlink \
-		llvm-lib \
-		llvm-link \
-		llvm-lipo \
-		llvm-lto \
-		llvm-lto2 \
-		llvm-mc \
-		llvm-mca \
-		llvm-ml \
-		llvm-modextract \
-		llvm-mt \
-		llvm-nm \
-		llvm-objcopy \
-		llvm-objdump \
-		llvm-opt-report \
-		llvm-pdbutil \
-		llvm-profdata \
-		llvm-ranlib \
-		llvm-rc \
-		llvm-readelf \
-		llvm-readobj \
-		llvm-reduce \
-		llvm-rtdyld \
-		llvm-size \
-		llvm-split \
-		llvm-stress \
-		llvm-strings \
-		llvm-symbolizer \
-		llvm-tblgen \
-		llvm-undname \
-		llvm-xray \
-		opt \
-		sancov \
-		sanstats \
-		verify-uselistorder \
-		yaml2obj
+COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 STRIP_LIBS=	BugpointPasses.so \
@@ -164,21 +103,9 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${
 
 .if ${PORT_OPTIONS:MCLANG}
 LLVM_ENABLE_PROJECTS+=	clang
-COMMANDS+=	clang \
-		clang++ \
-		clang-check \
-		clang-cpp \
-		clang-extdef-mapping \
-		clang-format \
-		clang-offload-bundler \
-		clang-offload-wrapper \
-		clang-refactor \
-		clang-rename \
-		clang-scan-deps \
-		diagtool \
-		scan-build \
-		scan-view
+COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	clang.1 \
+		clang-tblgen.1 \
 		diagtool.1 \
 		scan-build.1
 #DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
@@ -188,22 +115,17 @@ USES+=		gnome
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
 _USES_PYTHON=	python:3.6+
-LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
 LLVM_ENABLE_PROJECTS+=	lld
-COMMANDS+=	ld.lld \
-		ld64.lld \
-		wasm-ld
+COMMANDS+=	${LLD_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
 LLVM_ENABLE_PROJECTS+=	lldb
-COMMANDS+=	argdumper \
-		lldb \
-		lldb-mi \
-		lldb-server
+COMMANDS+=	${LLDB_COMMANDS}
+MAN1SRCS+=	lldb-tblgen.1
 _USES_PYTHON=	python:3.6+
 .endif
 
@@ -222,7 +144,6 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-ar.1 \
 		llvm-as.1 \
 		llvm-bcanalyzer.1 \
-		llvm-build.1 \
 		llvm-config.1 \
 		llvm-cov.1 \
 		llvm-cxxfilt.1 \
@@ -232,7 +153,9 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-dwarfdump.1 \
 		llvm-exegesis.1 \
 		llvm-extract.1 \
+		llvm-install-name-tool.1 \
 		llvm-lib.1 \
+		llvm-libtool-darwin.1 \
 		llvm-link.1 \
 		llvm-lipo.1 \
 		llvm-locstats.1 \
@@ -240,8 +163,10 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-nm.1 \
 		llvm-objcopy.1 \
 		llvm-objdump.1 \
+		llvm-otool.1 \
 		llvm-pdbutil.1 \
 		llvm-profdata.1 \
+		llvm-profgen.1 \
 		llvm-ranlib.1 \
 		llvm-readelf.1 \
 		llvm-readobj.1 \
@@ -250,10 +175,12 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-strings.1 \
 		llvm-strip.1 \
 		llvm-symbolizer.1 \
+		llvm-tblgen.1 \
 		opt.1 \
 		tblgen.1
 
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/Makefile.COMMANDS"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
@@ -275,6 +202,8 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${command}${COMMAND_SUFFIX}
 .endfor
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github/workflows
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github
 
 post-install-DOCS-on:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc ${STAGEDIR}${DOCSDIR}
@@ -290,6 +219,10 @@ post-install-DOCS-on:
 #	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1 \
 #	    ${STAGEDIR}${MANPREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
 #.endif
+.if !${PORT_OPTIONS:MLLDB}
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lldb-tblgen.1
+.endif
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/mlir-tblgen.1
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 

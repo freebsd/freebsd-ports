@@ -1,0 +1,105 @@
+LLVM_COMMANDS=	\
+		bugpoint \
+		dsymutil \
+		llc \
+		lli \
+		llvm-addr2line \
+		llvm-ar \
+		llvm-as \
+		llvm-bcanalyzer \
+		llvm-bitcode-strip \
+		llvm-cat \
+		llvm-cfi-verify \
+		llvm-config \
+		llvm-cov \
+		llvm-cvtres \
+		llvm-cxxmap \
+		llvm-diff \
+		llvm-dis \
+		llvm-dlltool \
+		llvm-dwarfdump \
+		llvm-dwp \
+		llvm-exegesis \
+		llvm-extract \
+		llvm-gsymutil \
+		llvm-ifs \
+		llvm-install-name-tool \
+		llvm-jitlink \
+		llvm-libtool-darwin \
+		llvm-link \
+		llvm-lipo \
+		llvm-mc \
+		llvm-mca \
+		llvm-ml \
+		llvm-modextract \
+		llvm-mt \
+		llvm-nm \
+		llvm-objcopy \
+		llvm-objdump \
+		llvm-opt-report \
+		llvm-otool \
+		llvm-pdbutil \
+		llvm-profdata \
+		llvm-profgen \
+		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
+		llvm-readobj \
+		llvm-reduce \
+		llvm-rtdyld \
+		llvm-sim \
+		llvm-size \
+		llvm-split \
+		llvm-stress \
+		llvm-strings \
+		llvm-strip \
+		llvm-symbolizer \
+		llvm-tapi-diff \
+		llvm-tblgen \
+		llvm-undname \
+		llvm-windres \
+		llvm-xray \
+		opt \
+		sancov \
+		split-file
+
+CLANG_COMMANDS=	\
+		analyze-build \
+		c-index-test \
+		clang \
+		clang++ \
+		clang-check \
+		clang-cpp \
+		clang-extdef-mapping \
+		clang-format \
+		clang-offload-bundler \
+		clang-offload-wrapper \
+		clang-rename \
+		clang-scan-deps \
+		diagtool \
+		hmaptool \
+		intercept-build \
+		scan-build \
+		scan-build-py \
+		scan-view
+
+LIT_COMMANDS=	\
+		FileCheck \
+		lit \
+		llvm-lit
+
+LLD_COMMANDS=	\
+		ld.lld \
+		ld64.lld \
+		ld64.lld.darwinnew \
+		ld64.lld.darwinold \
+		lld \
+		lld-link \
+		wasm-ld
+
+LLDB_COMMANDS=	\
+		lldb \
+		lldb-argdumper \
+		lldb-instr \
+		lldb-server \
+		lldb-vscode
