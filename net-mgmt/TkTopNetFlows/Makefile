@@ -2,18 +2,20 @@
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GUI tool for NetFlow data visualisation
+
+# LICENSE - zero indication within source, need to contact author
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libTktable2.10.so:x11-toolkits/tktable
 RUN_DEPENDS=	flowdumper:net-mgmt/p5-Cflow
 
-USES=		perl5 shebangfix tk:85
+USES=		perl5 shebangfix tk:86
 SHEBANG_FILES=	flow_Server.pl view_definitions.pl.example
 NO_BUILD=	yes
 NO_ARCH=	yes
