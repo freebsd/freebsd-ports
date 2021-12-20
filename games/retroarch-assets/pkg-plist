@@ -44,21 +44,16 @@ share/libretro/assets/glui/key-hover.png
 share/libretro/assets/glui/key.png
 share/libretro/assets/glui/load_content.png
 share/libretro/assets/glui/load_state.png
-share/libretro/assets/glui/main_tab_active.png
 share/libretro/assets/glui/main_tab_passive.png
 share/libretro/assets/glui/menu_check.png
 share/libretro/assets/glui/music.png
 share/libretro/assets/glui/netplay.png
-share/libretro/assets/glui/off.png
-share/libretro/assets/glui/on.png
 share/libretro/assets/glui/parent_directory.png
 share/libretro/assets/glui/playlist.png
-share/libretro/assets/glui/playlists_tab_active.png
 share/libretro/assets/glui/playlists_tab_passive.png
 share/libretro/assets/glui/pointer.png
 share/libretro/assets/glui/quickmenu.png
 share/libretro/assets/glui/quit.png
-share/libretro/assets/glui/refresh.png
 share/libretro/assets/glui/remove.png
 share/libretro/assets/glui/rename.png
 share/libretro/assets/glui/restart.png
@@ -69,7 +64,6 @@ share/libretro/assets/glui/save_state.png
 share/libretro/assets/glui/scan.png
 share/libretro/assets/glui/search.png
 share/libretro/assets/glui/settings.png
-share/libretro/assets/glui/settings_tab_active.png
 share/libretro/assets/glui/settings_tab_passive.png
 share/libretro/assets/glui/shaders.png
 share/libretro/assets/glui/start_core.png
@@ -114,15 +108,27 @@ share/libretro/assets/nxrgui/splash/Snes9x.png
 share/libretro/assets/nxrgui/splash/mGBA.png
 share/libretro/assets/ozone/README.md
 share/libretro/assets/ozone/bold.ttf
+share/libretro/assets/ozone/png/boysenberry/check.png
+share/libretro/assets/ozone/png/boysenberry/cursor_noborder.png
+share/libretro/assets/ozone/png/boysenberry/cursor_static.png
+share/libretro/assets/ozone/png/boysenberry/switch.png
 share/libretro/assets/ozone/png/cursor_border.png
 share/libretro/assets/ozone/png/dark/check.png
 share/libretro/assets/ozone/png/dark/cursor_noborder.png
 share/libretro/assets/ozone/png/dark/cursor_static.png
 share/libretro/assets/ozone/png/dark/switch.png
+share/libretro/assets/ozone/png/dracula/check.png
+share/libretro/assets/ozone/png/dracula/cursor_noborder.png
+share/libretro/assets/ozone/png/dracula/cursor_static.png
+share/libretro/assets/ozone/png/dracula/switch.png
 share/libretro/assets/ozone/png/gruvbox_dark/check.png
 share/libretro/assets/ozone/png/gruvbox_dark/cursor_noborder.png
 share/libretro/assets/ozone/png/gruvbox_dark/cursor_static.png
 share/libretro/assets/ozone/png/gruvbox_dark/switch.png
+share/libretro/assets/ozone/png/hacking_the_kernel/check.png
+share/libretro/assets/ozone/png/hacking_the_kernel/cursor_noborder.png
+share/libretro/assets/ozone/png/hacking_the_kernel/cursor_static.png
+share/libretro/assets/ozone/png/hacking_the_kernel/switch.png
 share/libretro/assets/ozone/png/icons/2048-content.png
 share/libretro/assets/ozone/png/icons/2048.png
 share/libretro/assets/ozone/png/icons/Amstrad - CPC-content.png
@@ -157,6 +163,8 @@ share/libretro/assets/ozone/png/icons/Benesse - Pocket Challenge V2-content.png
 share/libretro/assets/ozone/png/icons/Benesse - Pocket Challenge V2.png
 share/libretro/assets/ozone/png/icons/CHIP-8-content.png
 share/libretro/assets/ozone/png/icons/CHIP-8.png
+share/libretro/assets/ozone/png/icons/Cannonball-content.png
+share/libretro/assets/ozone/png/icons/Cannonball.png
 share/libretro/assets/ozone/png/icons/Capcom - CP System I-content.png
 share/libretro/assets/ozone/png/icons/Capcom - CP System I.png
 share/libretro/assets/ozone/png/icons/Capcom - CP System II-content.png
@@ -179,6 +187,8 @@ share/libretro/assets/ozone/png/icons/Commodore - 64-content.png
 share/libretro/assets/ozone/png/icons/Commodore - 64.png
 share/libretro/assets/ozone/png/icons/Commodore - Amiga-content.png
 share/libretro/assets/ozone/png/icons/Commodore - Amiga.png
+share/libretro/assets/ozone/png/icons/Commodore - CD32-content.png
+share/libretro/assets/ozone/png/icons/Commodore - CD32.png
 share/libretro/assets/ozone/png/icons/Commodore - Plus-4-content.png
 share/libretro/assets/ozone/png/icons/Commodore - Plus-4.png
 share/libretro/assets/ozone/png/icons/Commodore - VIC-20-content.png
@@ -203,6 +213,8 @@ share/libretro/assets/ozone/png/icons/FFmpeg-content.png
 share/libretro/assets/ozone/png/icons/FFmpeg.png
 share/libretro/assets/ozone/png/icons/Fairchild - Channel F-content.png
 share/libretro/assets/ozone/png/icons/Fairchild - Channel F.png
+share/libretro/assets/ozone/png/icons/Flashback-content.png
+share/libretro/assets/ozone/png/icons/Flashback.png
 share/libretro/assets/ozone/png/icons/Funtech - Super Acan-content.png
 share/libretro/assets/ozone/png/icons/Funtech - Super Acan.png
 share/libretro/assets/ozone/png/icons/GCE - Vectrex-content.png
@@ -242,12 +254,12 @@ share/libretro/assets/ozone/png/icons/Microsoft - MSX-content.png
 share/libretro/assets/ozone/png/icons/Microsoft - MSX.png
 share/libretro/assets/ozone/png/icons/Microsoft - MSX2-content.png
 share/libretro/assets/ozone/png/icons/Microsoft - MSX2.png
-share/libretro/assets/ozone/png/icons/Microsoft - XBOX 360-content.png
-share/libretro/assets/ozone/png/icons/Microsoft - XBOX 360.png
-share/libretro/assets/ozone/png/icons/Microsoft - XBOX One-content.png
-share/libretro/assets/ozone/png/icons/Microsoft - XBOX One.png
-share/libretro/assets/ozone/png/icons/Microsoft - XBOX-content.png
-share/libretro/assets/ozone/png/icons/Microsoft - XBOX.png
+share/libretro/assets/ozone/png/icons/Microsoft - Xbox 360-content.png
+share/libretro/assets/ozone/png/icons/Microsoft - Xbox 360.png
+share/libretro/assets/ozone/png/icons/Microsoft - Xbox One-content.png
+share/libretro/assets/ozone/png/icons/Microsoft - Xbox One.png
+share/libretro/assets/ozone/png/icons/Microsoft - Xbox-content.png
+share/libretro/assets/ozone/png/icons/Microsoft - Xbox.png
 share/libretro/assets/ozone/png/icons/Minecraft-content.png
 share/libretro/assets/ozone/png/icons/Minecraft.png
 share/libretro/assets/ozone/png/icons/MrBoom-content.png
@@ -280,6 +292,8 @@ share/libretro/assets/ozone/png/icons/Nintendo - New Nintendo 3DS-content.png
 share/libretro/assets/ozone/png/icons/Nintendo - New Nintendo 3DS.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 3DS (DLC)-content.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 3DS (DLC).png
+share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 3DS (Digital)-content.png
+share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 3DS (Digital).png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 3DS-content.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 3DS.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo 64-content.png
@@ -290,6 +304,8 @@ share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DS (Download Play)-con
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DS (Download Play).png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DS-content.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DS.png
+share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DSi (DLC)-content.png
+share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DSi (DLC).png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DSi-content.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo DSi.png
 share/libretro/assets/ozone/png/icons/Nintendo - Nintendo Entertainment System-content.png
@@ -314,12 +330,12 @@ share/libretro/assets/ozone/png/icons/Nintendo - e-Reader-content.png
 share/libretro/assets/ozone/png/icons/Nintendo - e-Reader.png
 share/libretro/assets/ozone/png/icons/Philips - Videopac+-content.png
 share/libretro/assets/ozone/png/icons/Philips - Videopac+.png
+share/libretro/assets/ozone/png/icons/Quake II-content.png
+share/libretro/assets/ozone/png/icons/Quake II.png
+share/libretro/assets/ozone/png/icons/Quake III-content.png
+share/libretro/assets/ozone/png/icons/Quake III.png
 share/libretro/assets/ozone/png/icons/Quake-content.png
 share/libretro/assets/ozone/png/icons/Quake.png
-share/libretro/assets/ozone/png/icons/Quake2-content.png
-share/libretro/assets/ozone/png/icons/Quake2.png
-share/libretro/assets/ozone/png/icons/Quake3-content.png
-share/libretro/assets/ozone/png/icons/Quake3.png
 share/libretro/assets/ozone/png/icons/RCA - Studio II-content.png
 share/libretro/assets/ozone/png/icons/RCA - Studio II.png
 share/libretro/assets/ozone/png/icons/RPG Maker-content.png
@@ -364,10 +380,22 @@ share/libretro/assets/ozone/png/icons/Sinclair - ZX Spectrum-content.png
 share/libretro/assets/ozone/png/icons/Sinclair - ZX Spectrum.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation 2-content.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation 2.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation 3 (DLC)-content.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation 3 (DLC).png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation 3-content.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation 3.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation 4-content.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation 4.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (DLC)-content.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (DLC).png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (PSN)-content.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (PSN).png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (PSX2PSP)-content.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (PSX2PSP).png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (UMD Music)-content.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (UMD Music).png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (UMD Video)-content.png
+share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable (UMD Video).png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable-content.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation Portable.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation Vita-content.png
@@ -376,6 +404,8 @@ share/libretro/assets/ozone/png/icons/Sony - PlayStation-content.png
 share/libretro/assets/ozone/png/icons/Sony - PlayStation.png
 share/libretro/assets/ozone/png/icons/Spectravideo - SV-content.png
 share/libretro/assets/ozone/png/icons/Spectravideo - SV.png
+share/libretro/assets/ozone/png/icons/TIC-80-content.png
+share/libretro/assets/ozone/png/icons/TIC-80.png
 share/libretro/assets/ozone/png/icons/The 3DO Company - 3DO-content.png
 share/libretro/assets/ozone/png/icons/The 3DO Company - 3DO.png
 share/libretro/assets/ozone/png/icons/Thomson - MOTO-content.png
@@ -403,6 +433,7 @@ share/libretro/assets/ozone/png/icons/battery-80.png
 share/libretro/assets/ozone/png/icons/battery-charging.png
 share/libretro/assets/ozone/png/icons/battery-full.png
 share/libretro/assets/ozone/png/icons/bg.png
+share/libretro/assets/ozone/png/icons/bluetooth.png
 share/libretro/assets/ozone/png/icons/clock.png
 share/libretro/assets/ozone/png/icons/close.png
 share/libretro/assets/ozone/png/icons/core-cheat-options.png
@@ -508,6 +539,7 @@ share/libretro/assets/ozone/png/icons/netplay - rooms.png
 share/libretro/assets/ozone/png/icons/netplay.png
 share/libretro/assets/ozone/png/icons/off.png
 share/libretro/assets/ozone/png/icons/on.png
+share/libretro/assets/ozone/png/icons/on_alt.png
 share/libretro/assets/ozone/png/icons/pointer.png
 share/libretro/assets/ozone/png/icons/reload.png
 share/libretro/assets/ozone/png/icons/rename.png
@@ -523,7 +555,6 @@ share/libretro/assets/ozone/png/icons/undo.png
 share/libretro/assets/ozone/png/icons/wifi.png
 share/libretro/assets/ozone/png/icons/zip.png
 share/libretro/assets/ozone/png/light/check.png
-share/libretro/assets/ozone/png/light/cursor_border.png
 share/libretro/assets/ozone/png/light/cursor_noborder.png
 share/libretro/assets/ozone/png/light/cursor_static.png
 share/libretro/assets/ozone/png/light/switch.png
@@ -541,49 +572,129 @@ share/libretro/assets/ozone/png/sidebar/netplay.png
 share/libretro/assets/ozone/png/sidebar/retroarch.png
 share/libretro/assets/ozone/png/sidebar/settings.png
 share/libretro/assets/ozone/png/sidebar/video.png
+share/libretro/assets/ozone/png/twilight_zone/check.png
+share/libretro/assets/ozone/png/twilight_zone/cursor_noborder.png
+share/libretro/assets/ozone/png/twilight_zone/cursor_static.png
+share/libretro/assets/ozone/png/twilight_zone/switch.png
 share/libretro/assets/ozone/regular.ttf
+share/libretro/assets/pkg/chinese-fallback-font.ttf
+share/libretro/assets/pkg/chinese-fallback-font.txt
+share/libretro/assets/pkg/fallback-font.ttf
+share/libretro/assets/pkg/fallback-font.txt
+share/libretro/assets/pkg/korean-fallback-font.ttf
+share/libretro/assets/pkg/korean-fallback-font.txt
 share/libretro/assets/pkg/osd-font.ttf
 share/libretro/assets/pkg/wiiu/2048.png
+share/libretro/assets/pkg/wiiu/81.png
+share/libretro/assets/pkg/wiiu/atari800.png
+share/libretro/assets/pkg/wiiu/beetle_cygne.png
+share/libretro/assets/pkg/wiiu/beetle_pce_fast.png
+share/libretro/assets/pkg/wiiu/beetle_psx.png
+share/libretro/assets/pkg/wiiu/beetle_psx_hw.png
+share/libretro/assets/pkg/wiiu/beetle_vb.png
+share/libretro/assets/pkg/wiiu/bk.png
 share/libretro/assets/pkg/wiiu/bluemsx.png
+share/libretro/assets/pkg/wiiu/cannonball.png
+share/libretro/assets/pkg/wiiu/cap32.png
+share/libretro/assets/pkg/wiiu/crocods.png
 share/libretro/assets/pkg/wiiu/dosbox.png
+share/libretro/assets/pkg/wiiu/dosbox_pure.png
+share/libretro/assets/pkg/wiiu/dosbox_svn.png
+share/libretro/assets/pkg/wiiu/duckstation.png
+share/libretro/assets/pkg/wiiu/ecwolf.png
 share/libretro/assets/pkg/wiiu/fbalpha.png
 share/libretro/assets/pkg/wiiu/fbalpha2012.png
 share/libretro/assets/pkg/wiiu/fbalpha2012_cps1.png
 share/libretro/assets/pkg/wiiu/fbalpha2012_cps2.png
+share/libretro/assets/pkg/wiiu/fbalpha2012_cps3.png
 share/libretro/assets/pkg/wiiu/fbalpha2012_neogeo.png
+share/libretro/assets/pkg/wiiu/fbneo.png
 share/libretro/assets/pkg/wiiu/fceumm.png
+share/libretro/assets/pkg/wiiu/fixgb.png
+share/libretro/assets/pkg/wiiu/fixnes.png
 share/libretro/assets/pkg/wiiu/fmsx.png
+share/libretro/assets/pkg/wiiu/freechaf.png
+share/libretro/assets/pkg/wiiu/freeintv.png
+share/libretro/assets/pkg/wiiu/frodo.png
 share/libretro/assets/pkg/wiiu/fuse.png
 share/libretro/assets/pkg/wiiu/gambatte.png
+share/libretro/assets/pkg/wiiu/gearboy.png
+share/libretro/assets/pkg/wiiu/gearsystem.png
 share/libretro/assets/pkg/wiiu/genesis_plus_gx.png
+share/libretro/assets/pkg/wiiu/genesis_plus_gx_wide.png
+share/libretro/assets/pkg/wiiu/gme.png
 share/libretro/assets/pkg/wiiu/gpsp.png
 share/libretro/assets/pkg/wiiu/gw.png
 share/libretro/assets/pkg/wiiu/handy.png
+share/libretro/assets/pkg/wiiu/hatari.png
+share/libretro/assets/pkg/wiiu/lowres_nx.png
+share/libretro/assets/pkg/wiiu/lutro.png
 share/libretro/assets/pkg/wiiu/mame2000.png
 share/libretro/assets/pkg/wiiu/mame2003.png
+share/libretro/assets/pkg/wiiu/mame2003_midway.png
+share/libretro/assets/pkg/wiiu/mame2003_plus.png
+share/libretro/assets/pkg/wiiu/mame2009.png
+share/libretro/assets/pkg/wiiu/mednafen_lynx.png
 share/libretro/assets/pkg/wiiu/mednafen_ngp.png
 share/libretro/assets/pkg/wiiu/mednafen_pce_fast.png
+share/libretro/assets/pkg/wiiu/mednafen_supergrafx.png
 share/libretro/assets/pkg/wiiu/mednafen_vb.png
 share/libretro/assets/pkg/wiiu/mednafen_wswan.png
 share/libretro/assets/pkg/wiiu/mgba.png
+share/libretro/assets/pkg/wiiu/mrboom.png
+share/libretro/assets/pkg/wiiu/mu.png
+share/libretro/assets/pkg/wiiu/nekop2.png
+share/libretro/assets/pkg/wiiu/nekop2k.png
+share/libretro/assets/pkg/wiiu/neocd.png
 share/libretro/assets/pkg/wiiu/nestopia.png
 share/libretro/assets/pkg/wiiu/nxengine.png
 share/libretro/assets/pkg/wiiu/o2em.png
 share/libretro/assets/pkg/wiiu/pcsx_rearmed.png
 share/libretro/assets/pkg/wiiu/picodrive.png
+share/libretro/assets/pkg/wiiu/pocketcdg.png
 share/libretro/assets/pkg/wiiu/pokemini.png
+share/libretro/assets/pkg/wiiu/potator.png
+share/libretro/assets/pkg/wiiu/prboom.png
 share/libretro/assets/pkg/wiiu/prosystem.png
-share/libretro/assets/pkg/wiiu/quake1.png
-share/libretro/assets/pkg/wiiu/quake2.png
-share/libretro/assets/pkg/wiiu/quake3.png
+share/libretro/assets/pkg/wiiu/puae.png
+share/libretro/assets/pkg/wiiu/quasi88.png
 share/libretro/assets/pkg/wiiu/quicknes.png
+share/libretro/assets/pkg/wiiu/reminiscence.png
+share/libretro/assets/pkg/wiiu/retroarch.png
+share/libretro/assets/pkg/wiiu/sameboy.png
+share/libretro/assets/pkg/wiiu/scummvm.png
+share/libretro/assets/pkg/wiiu/sms_plus_gx.png
+share/libretro/assets/pkg/wiiu/snes9x.png
 share/libretro/assets/pkg/wiiu/snes9x2002.png
 share/libretro/assets/pkg/wiiu/snes9x2005.png
 share/libretro/assets/pkg/wiiu/snes9x2005_plus.png
 share/libretro/assets/pkg/wiiu/snes9x2010.png
+share/libretro/assets/pkg/wiiu/squirreljme.png
 share/libretro/assets/pkg/wiiu/stella.png
+share/libretro/assets/pkg/wiiu/stella2014.png
+share/libretro/assets/pkg/wiiu/supafaust.png
+share/libretro/assets/pkg/wiiu/swanstation.png
+share/libretro/assets/pkg/wiiu/tgbdual.png
+share/libretro/assets/pkg/wiiu/theodore.png
+share/libretro/assets/pkg/wiiu/tyrquake.png
+share/libretro/assets/pkg/wiiu/uzem.png
 share/libretro/assets/pkg/wiiu/vba_next.png
 share/libretro/assets/pkg/wiiu/vecx.png
+share/libretro/assets/pkg/wiiu/vice_x128.png
+share/libretro/assets/pkg/wiiu/vice_x64.png
+share/libretro/assets/pkg/wiiu/vice_x64sc.png
+share/libretro/assets/pkg/wiiu/vice_xcbm2.png
+share/libretro/assets/pkg/wiiu/vice_xcbm5x0.png
+share/libretro/assets/pkg/wiiu/vice_xpet.png
+share/libretro/assets/pkg/wiiu/vice_xplus4.png
+share/libretro/assets/pkg/wiiu/vice_xscpu64.png
+share/libretro/assets/pkg/wiiu/vice_xvic.png
+share/libretro/assets/pkg/wiiu/vitaquake2.png
+share/libretro/assets/pkg/wiiu/vitaquake3.png
+share/libretro/assets/pkg/wiiu/x1.png
+share/libretro/assets/pkg/wiiu/x64sdl.png
+share/libretro/assets/pkg/wiiu/x_millennium.png
+share/libretro/assets/pkg/wiiu/xrick.png
 share/libretro/assets/rgui/Blue.cfg
 share/libretro/assets/rgui/Fires.cfg
 share/libretro/assets/rgui/Fractal Spiral.cfg
@@ -592,6 +703,11 @@ share/libretro/assets/rgui/GB - Pocket.cfg
 share/libretro/assets/rgui/Game and Watch.cfg
 share/libretro/assets/rgui/Leaves.cfg
 share/libretro/assets/rgui/Lines.cfg
+share/libretro/assets/rgui/MageBoy Color 2.cfg
+share/libretro/assets/rgui/MageBoy Color 3.cfg
+share/libretro/assets/rgui/MageBoy Color 4.cfg
+share/libretro/assets/rgui/MageBoy Color 5.cfg
+share/libretro/assets/rgui/MageBoy Color.cfg
 share/libretro/assets/rgui/Mermaid Opal.cfg
 share/libretro/assets/rgui/Mystery Blocks.cfg
 share/libretro/assets/rgui/Night Sky.cfg
@@ -607,6 +723,14 @@ share/libretro/assets/rgui/VT1 - Green.cfg
 share/libretro/assets/rgui/VT2 - Amber.cfg
 share/libretro/assets/rgui/VT2 - Blue.cfg
 share/libretro/assets/rgui/VT2 - Green.cfg
+share/libretro/assets/rgui/font/bitmap10x10_chn.bin
+share/libretro/assets/rgui/font/bitmap10x10_chn.txt
+share/libretro/assets/rgui/font/bitmap10x10_eng.bin
+share/libretro/assets/rgui/font/bitmap10x10_jpn.bin
+share/libretro/assets/rgui/font/bitmap10x10_jpn.txt
+share/libretro/assets/rgui/font/bitmap10x10_kor.bin
+share/libretro/assets/rgui/font/bitmap10x10_kor.txt
+share/libretro/assets/rgui/font/bitmap10x10_rus.bin
 share/libretro/assets/rgui/wallpaper/c1902.png
 share/libretro/assets/rgui/wallpaper/c1902.txt
 share/libretro/assets/rgui/wallpaper/c1902_16_10.png
@@ -647,6 +771,27 @@ share/libretro/assets/rgui/wallpaper/leaves.png
 share/libretro/assets/rgui/wallpaper/leaves.txt
 share/libretro/assets/rgui/wallpaper/leaves_16_10.png
 share/libretro/assets/rgui/wallpaper/leaves_16_9.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-2.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-2_16_10.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-2_16_9.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-2_5_3.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-3.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-3_16_10.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-3_16_9.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-3_5_3.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-4.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-4_16_10.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-4_16_9.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-4_5_3.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-5.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-5_16_10.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-5_16_9.png
+share/libretro/assets/rgui/wallpaper/mageboy_color-5_5_3.png
+share/libretro/assets/rgui/wallpaper/mageboy_color.png
+share/libretro/assets/rgui/wallpaper/mageboy_color.txt
+share/libretro/assets/rgui/wallpaper/mageboy_color_16_10.png
+share/libretro/assets/rgui/wallpaper/mageboy_color_16_9.png
+share/libretro/assets/rgui/wallpaper/mageboy_color_5_3.png
 share/libretro/assets/rgui/wallpaper/mermaid_opal.png
 share/libretro/assets/rgui/wallpaper/mermaid_opal.txt
 share/libretro/assets/rgui/wallpaper/mermaid_opal_16_10.png
@@ -689,6 +834,7 @@ share/libretro/assets/sounds/launch.ogg
 share/libretro/assets/sounds/notice.ogg
 share/libretro/assets/sounds/notice_back.ogg
 share/libretro/assets/sounds/ok.ogg
+share/libretro/assets/sounds/unlock.ogg
 share/libretro/assets/sounds/up.ogg
 share/libretro/assets/switch/menu_retroarch/RetroArch.png
 share/libretro/assets/switch/menu_retroarch/RetroArch_Splash.png
@@ -701,6 +847,7 @@ share/libretro/assets/switch/menu_retroarch/retronx_menu_bg_blank.png
 share/libretro/assets/switch/nxrgui.ttf
 share/libretro/assets/switch/retroarch.jpg
 share/libretro/assets/switch/retroarch_hbmenu.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Arcade.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Atari - 2600.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Atari - 7800.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Atari - Jaguar.png
@@ -709,32 +856,73 @@ share/libretro/assets/wallpapers/bichromatic pads/1440x900/Bandai - WonderSwan C
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Bandai - WonderSwan.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Coleco - ColecoVision.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/DOOM.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Favorites.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/GCE - Vectrex.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/History.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/MAME.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/MENU .png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Magnavox - Odyssey2.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Microsoft - Xbox.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/NEC - PC Engine - TurboGrafx 16.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/NEC - PC Engine SuperGrafx.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/NEC - PC-FX.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Famicom.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Family Computer Disk System.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Game Boy Advance.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Game Boy Color.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Game Boy.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Gamecube.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Nintendo 64.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Nintendo DS.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Nintendo Entertainment System.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Super Famicom.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Super Nintendo Entertainment System.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Nintendo - Virtual Boy.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Quake.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/SNK - Neo Geo Pocket Color.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/SNK - Neo Geo Pocket.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/SNK - NeoGeo Pocket Color.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/SNK - NeoGeo Pocket.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - 32X.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - Dreamcast.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - Game Gear.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - Master System - Mark III.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - Mega Drive - Genesis.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - Mega-CD - Sega CD.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - SG-1000.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sega - Saturn.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sony - PlayStation 2.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sony - PlayStation Portable.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sony - PlayStation.png
+share/libretro/assets/wallpapers/bichromatic pads/1440x900/Sony - Playstation 2.png
 share/libretro/assets/wallpapers/bichromatic pads/1440x900/The 3DO Company - 3DO.png
+share/libretro/assets/wallpapers/blurred-consoles/Atari - 2600.png
+share/libretro/assets/wallpapers/blurred-consoles/Atari - 7800.png
+share/libretro/assets/wallpapers/blurred-consoles/Atari - Jaguar.png
+share/libretro/assets/wallpapers/blurred-consoles/Atari - Lynx.png
+share/libretro/assets/wallpapers/blurred-consoles/GCE - Vectrex.png
+share/libretro/assets/wallpapers/blurred-consoles/Magnavox - Odyssey2.png
+share/libretro/assets/wallpapers/blurred-consoles/NEC - PC Engine - TurboGrafx 16.png
+share/libretro/assets/wallpapers/blurred-consoles/NEC - PC Engine SuperGrafx.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Family Computer Disk System.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Game Boy Advance.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Game Boy Color.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Game Boy.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Gamecube.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Nintendo 64.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Nintendo DS.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Nintendo Entertainment System.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Super Famicom.png
+share/libretro/assets/wallpapers/blurred-consoles/Nintendo - Super Nintendo Entertainment System.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - 32X.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - Dreamcast.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - Game Gear.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - Master System - Mark III.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - Mega Drive - Genesis.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - Mega-CD - Sega CD.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - SG-1000.png
+share/libretro/assets/wallpapers/blurred-consoles/Sega - Saturn.png
+share/libretro/assets/wallpapers/blurred-consoles/Sony - PlayStation.png
 share/libretro/assets/wallpapers/emulationstation blured/1280x720/Amstrad - CPC.png
 share/libretro/assets/wallpapers/emulationstation blured/1280x720/Apple - Apple II.png
 share/libretro/assets/wallpapers/emulationstation blured/1280x720/Apple - Macintosh.png
@@ -818,12 +1006,6 @@ share/libretro/assets/wallpapers/posterized consoles/1440x900/Sinclair - ZX Spec
 share/libretro/assets/wallpapers/posterized consoles/1440x900/Sony - PlayStation Portable.png
 share/libretro/assets/wallpapers/posterized consoles/1440x900/Sony - PlayStation.png
 share/libretro/assets/xmb/NPMApng2PMApng.py
-share/libretro/assets/xmb/automatic/Quake-content.png
-share/libretro/assets/xmb/automatic/Quake.png
-share/libretro/assets/xmb/automatic/Quake2-content.png
-share/libretro/assets/xmb/automatic/Quake2.png
-share/libretro/assets/xmb/automatic/Quake3-content.png
-share/libretro/assets/xmb/automatic/Quake3.png
 share/libretro/assets/xmb/automatic/README.md
 share/libretro/assets/xmb/automatic/font.ttf
 share/libretro/assets/xmb/automatic/png/2048-content.png
@@ -833,6 +1015,7 @@ share/libretro/assets/xmb/automatic/png/APF - MP1000.png
 share/libretro/assets/xmb/automatic/png/Amazon - Fire TV (2nd Gen).png
 share/libretro/assets/xmb/automatic/png/Amazon - Fire TV (3rd Gen).png
 share/libretro/assets/xmb/automatic/png/Amazon - Fire TV Cube.png
+share/libretro/assets/xmb/automatic/png/Amazon - Fire TV-content.png
 share/libretro/assets/xmb/automatic/png/Amazon - Fire TV.png
 share/libretro/assets/xmb/automatic/png/Amstrad - CPC-content.png
 share/libretro/assets/xmb/automatic/png/Amstrad - CPC.png
@@ -859,14 +1042,17 @@ share/libretro/assets/xmb/automatic/png/Atari - Jaguar.png
 share/libretro/assets/xmb/automatic/png/Atari - Lynx PAG0201.png
 share/libretro/assets/xmb/automatic/png/Atari - Lynx-content.png
 share/libretro/assets/xmb/automatic/png/Atari - Lynx.png
-share/libretro/assets/xmb/automatic/png/Atari - Pong C-100.png
 share/libretro/assets/xmb/automatic/png/Atari - Pong C-140.png
 share/libretro/assets/xmb/automatic/png/Atari - Pong C-200.png
+share/libretro/assets/xmb/automatic/png/Atari - Pong-content.png
+share/libretro/assets/xmb/automatic/png/Atari - Pong.png
 share/libretro/assets/xmb/automatic/png/Atari - ST-content.png
 share/libretro/assets/xmb/automatic/png/Atari - ST.png
+share/libretro/assets/xmb/automatic/png/Atari - VCS-content.png
 share/libretro/assets/xmb/automatic/png/Atari - VCS.png
 share/libretro/assets/xmb/automatic/png/Atari - XEGS-content.png
 share/libretro/assets/xmb/automatic/png/Atari - XEGS.png
+share/libretro/assets/xmb/automatic/png/BBC - Bridge Companion-content.png
 share/libretro/assets/xmb/automatic/png/Bally - Astrocade-content.png
 share/libretro/assets/xmb/automatic/png/Bally - Astrocade.png
 share/libretro/assets/xmb/automatic/png/Bandai - Pippin-content.png
@@ -882,6 +1068,8 @@ share/libretro/assets/xmb/automatic/png/Bandai - WonderSwan-content.png
 share/libretro/assets/xmb/automatic/png/Bandai - WonderSwan.png
 share/libretro/assets/xmb/automatic/png/Benesse - Pocket Challenge V2-content.png
 share/libretro/assets/xmb/automatic/png/Benesse - Pocket Challenge V2.png
+share/libretro/assets/xmb/automatic/png/Benesse - Pocket Challenge W-content.png
+share/libretro/assets/xmb/automatic/png/Benesse - Pocket Challenge W.png
 share/libretro/assets/xmb/automatic/png/Bit Corporation - Gamate-content.png
 share/libretro/assets/xmb/automatic/png/Bit Corporation - Gamate.png
 share/libretro/assets/xmb/automatic/png/CHIP-8-content.png
@@ -915,16 +1103,20 @@ share/libretro/assets/xmb/automatic/png/Coleco - Telstar 6045.png
 share/libretro/assets/xmb/automatic/png/Coleco - Telstar 6065.png
 share/libretro/assets/xmb/automatic/png/Coleco - Telstar 6071.png
 share/libretro/assets/xmb/automatic/png/Coleco - Telstar 6135.png
+share/libretro/assets/xmb/automatic/png/Commodore - 64 (PP)-content.png
+share/libretro/assets/xmb/automatic/png/Commodore - 64 (PP).png
+share/libretro/assets/xmb/automatic/png/Commodore - 64 (Tapes)-content.png
+share/libretro/assets/xmb/automatic/png/Commodore - 64 (Tapes).png
 share/libretro/assets/xmb/automatic/png/Commodore - 64 64C.png
 share/libretro/assets/xmb/automatic/png/Commodore - 64 Games System.png
 share/libretro/assets/xmb/automatic/png/Commodore - 64-content.png
 share/libretro/assets/xmb/automatic/png/Commodore - 64.png
-share/libretro/assets/xmb/automatic/png/Commodore - Amiga CD32-content.png
-share/libretro/assets/xmb/automatic/png/Commodore - Amiga CD32.png
 share/libretro/assets/xmb/automatic/png/Commodore - Amiga CDTV-content.png
 share/libretro/assets/xmb/automatic/png/Commodore - Amiga CDTV.png
 share/libretro/assets/xmb/automatic/png/Commodore - Amiga-content.png
 share/libretro/assets/xmb/automatic/png/Commodore - Amiga.png
+share/libretro/assets/xmb/automatic/png/Commodore - CD32-content.png
+share/libretro/assets/xmb/automatic/png/Commodore - CD32.png
 share/libretro/assets/xmb/automatic/png/Commodore - Plus-4-content.png
 share/libretro/assets/xmb/automatic/png/Commodore - Plus-4.png
 share/libretro/assets/xmb/automatic/png/Commodore - VIC-20-content.png
@@ -949,6 +1141,7 @@ share/libretro/assets/xmb/automatic/png/Epoch - Game Pocket Computer-content.png
 share/libretro/assets/xmb/automatic/png/Epoch - Game Pocket Computer.png
 share/libretro/assets/xmb/automatic/png/Epoch - Super Cassette Vision-content.png
 share/libretro/assets/xmb/automatic/png/Epoch - Super Cassette Vision.png
+share/libretro/assets/xmb/automatic/png/Epoch - TV Tennis Electrotennis-content.png
 share/libretro/assets/xmb/automatic/png/Epoch - TV Tennis Electrotennis.png
 share/libretro/assets/xmb/automatic/png/FBNeo - Arcade Games-content.png
 share/libretro/assets/xmb/automatic/png/FBNeo - Arcade Games.png
@@ -961,26 +1154,41 @@ share/libretro/assets/xmb/automatic/png/Flashback-content.png
 share/libretro/assets/xmb/automatic/png/Flashback.png
 share/libretro/assets/xmb/automatic/png/Fujitsu - FM Towns Marty-content.png
 share/libretro/assets/xmb/automatic/png/Fujitsu - FM Towns Marty.png
+share/libretro/assets/xmb/automatic/png/Fukutake Publishing - StudyBox-content.png
+share/libretro/assets/xmb/automatic/png/Fukutake Publishing - StudyBox.png
 share/libretro/assets/xmb/automatic/png/Funtech - Super Acan-content.png
 share/libretro/assets/xmb/automatic/png/Funtech - Super Acan.png
 share/libretro/assets/xmb/automatic/png/GCE - Vectrex-content.png
 share/libretro/assets/xmb/automatic/png/GCE - Vectrex.png
+share/libretro/assets/xmb/automatic/png/Gakken - Compact Vision TV Boy-content.png
+share/libretro/assets/xmb/automatic/png/Gakken - Compact Vision TV Boy.png
 share/libretro/assets/xmb/automatic/png/Game Park - GP32-content.png
 share/libretro/assets/xmb/automatic/png/Game Park - GP32.png
 share/libretro/assets/xmb/automatic/png/Game-content.png
 share/libretro/assets/xmb/automatic/png/Game.png
+share/libretro/assets/xmb/automatic/png/Google - Nexus Player-content.png
 share/libretro/assets/xmb/automatic/png/Google - Nexus Player.png
+share/libretro/assets/xmb/automatic/png/Google - Stadia-content.png
 share/libretro/assets/xmb/automatic/png/Google - Stadia.png
 share/libretro/assets/xmb/automatic/png/Handheld Electronic Game-content.png
 share/libretro/assets/xmb/automatic/png/Handheld Electronic Game.png
 share/libretro/assets/xmb/automatic/png/Hartung - Game Master-content.png
 share/libretro/assets/xmb/automatic/png/Hartung - Game Master.png
+share/libretro/assets/xmb/automatic/png/Intellivision - Amico-content.png
 share/libretro/assets/xmb/automatic/png/Intellivision - Amico.png
 share/libretro/assets/xmb/automatic/png/Interton - VC 4000-content.png
 share/libretro/assets/xmb/automatic/png/Interton - VC 4000.png
+share/libretro/assets/xmb/automatic/png/Interton - Video 2000-content.png
+share/libretro/assets/xmb/automatic/png/Interton - Video 2000.png
+share/libretro/assets/xmb/automatic/png/Konami - Picno-content.png
+share/libretro/assets/xmb/automatic/png/Konami - Picno.png
+share/libretro/assets/xmb/automatic/png/LeapFrog - LeapPad-content.png
+share/libretro/assets/xmb/automatic/png/LeapFrog - LeapPad.png
 share/libretro/assets/xmb/automatic/png/LeapFrog - Leapster Learning Game System 1.png
 share/libretro/assets/xmb/automatic/png/LeapFrog - Leapster Learning Game System-content.png
 share/libretro/assets/xmb/automatic/png/LeapFrog - Leapster Learning Game System.png
+share/libretro/assets/xmb/automatic/png/LeapFrog - My First LeapPad-content.png
+share/libretro/assets/xmb/automatic/png/LeapFrog - My First LeapPad.png
 share/libretro/assets/xmb/automatic/png/Libretro - Pad.png
 share/libretro/assets/xmb/automatic/png/Lutro-content.png
 share/libretro/assets/xmb/automatic/png/Lutro.png
@@ -1023,20 +1231,24 @@ share/libretro/assets/xmb/automatic/png/Microsoft - MSX-content.png
 share/libretro/assets/xmb/automatic/png/Microsoft - MSX.png
 share/libretro/assets/xmb/automatic/png/Microsoft - MSX2-content.png
 share/libretro/assets/xmb/automatic/png/Microsoft - MSX2.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360 E T.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360 E.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360 S T.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360 S.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360 T.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360-content.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX 360.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX One S T.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX One S.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX One X K.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX One-content.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX One.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX-content.png
-share/libretro/assets/xmb/automatic/png/Microsoft - XBOX.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 (Digital)-content.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 (Digital).png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 E T.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 E.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 S T.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 S.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360 T.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360-content.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox 360.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox One S T.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox One S.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox One X K.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox One-content.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox One.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox Series X-content.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox Series X.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox-content.png
+share/libretro/assets/xmb/automatic/png/Microsoft - Xbox.png
 share/libretro/assets/xmb/automatic/png/Milton Bradley - Microvision-content.png
 share/libretro/assets/xmb/automatic/png/Milton Bradley - Microvision.png
 share/libretro/assets/xmb/automatic/png/Minecraft-content.png
@@ -1101,18 +1313,21 @@ share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 3DS CTR-001.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 3DS FTR-001.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 3DS-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 3DS.png
-share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 64 iQue (Ch).png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 64-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 64.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 64DD-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo 64DD.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS (Download Play)-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS (Download Play).png
+share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS Decrypted-content.png
+share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS Decrypted.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS NTR-001.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DS.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi (DLC)-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi (DLC).png
+share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi Decrypted-content.png
+share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi Decrypted.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi TWL-001.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi-content.png
 share/libretro/assets/xmb/automatic/png/Nintendo - Nintendo DSi.png
@@ -1170,6 +1385,10 @@ share/libretro/assets/xmb/automatic/png/Philips - CDi.png
 share/libretro/assets/xmb/automatic/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/automatic/png/Philips - Videopac+.png
 share/libretro/assets/xmb/automatic/png/PlayJam - Game Stick.png
+share/libretro/assets/xmb/automatic/png/Quake II-content.png
+share/libretro/assets/xmb/automatic/png/Quake II.png
+share/libretro/assets/xmb/automatic/png/Quake III-content.png
+share/libretro/assets/xmb/automatic/png/Quake III.png
 share/libretro/assets/xmb/automatic/png/Quake-content.png
 share/libretro/assets/xmb/automatic/png/Quake.png
 share/libretro/assets/xmb/automatic/png/RCA - Studio II-content.png
@@ -1179,7 +1398,6 @@ share/libretro/assets/xmb/automatic/png/RPG Maker.png
 share/libretro/assets/xmb/automatic/png/Rick Dangerous-content.png
 share/libretro/assets/xmb/automatic/png/Rick Dangerous.png
 share/libretro/assets/xmb/automatic/png/SNK - Neo Geo CD Tray.png
-share/libretro/assets/xmb/automatic/png/SNK - Neo Geo CD-content copy 2.png
 share/libretro/assets/xmb/automatic/png/SNK - Neo Geo CD-content.png
 share/libretro/assets/xmb/automatic/png/SNK - Neo Geo CD.png
 share/libretro/assets/xmb/automatic/png/SNK - Neo Geo CDZ.png
@@ -1310,7 +1528,7 @@ share/libretro/assets/xmb/automatic/png/The 3DO Company - 3DO IMP-21J.png
 share/libretro/assets/xmb/automatic/png/The 3DO Company - 3DO-content.png
 share/libretro/assets/xmb/automatic/png/The 3DO Company - 3DO.png
 share/libretro/assets/xmb/automatic/png/Thomson - MOTO Cartridge.png
-share/libretro/assets/xmb/automatic/png/Thomson - MOTO TO8D.png
+share/libretro/assets/xmb/automatic/png/Thomson - MOTO TO8.png
 share/libretro/assets/xmb/automatic/png/Thomson - MOTO-content.png
 share/libretro/assets/xmb/automatic/png/Thomson - MOTO.png
 share/libretro/assets/xmb/automatic/png/Tiger - Game.com-content.png
@@ -1350,6 +1568,7 @@ share/libretro/assets/xmb/automatic/png/battery-80.png
 share/libretro/assets/xmb/automatic/png/battery-charging.png
 share/libretro/assets/xmb/automatic/png/battery-full.png
 share/libretro/assets/xmb/automatic/png/bg.png
+share/libretro/assets/xmb/automatic/png/bluetooth.png
 share/libretro/assets/xmb/automatic/png/clock.png
 share/libretro/assets/xmb/automatic/png/close.png
 share/libretro/assets/xmb/automatic/png/core-cheat-options.png
@@ -1369,6 +1588,8 @@ share/libretro/assets/xmb/automatic/png/favorites.png
 share/libretro/assets/xmb/automatic/png/file.png
 share/libretro/assets/xmb/automatic/png/folder.png
 share/libretro/assets/xmb/automatic/png/history.png
+share/libretro/assets/xmb/automatic/png/iQue - iQue-content.png
+share/libretro/assets/xmb/automatic/png/iQue - iQue.png
 share/libretro/assets/xmb/automatic/png/image.png
 share/libretro/assets/xmb/automatic/png/images.png
 share/libretro/assets/xmb/automatic/png/input_ADC.png
@@ -1500,6 +1721,8 @@ share/libretro/assets/xmb/dot-art/png/Benesse - Pocket Challenge V2-content.png
 share/libretro/assets/xmb/dot-art/png/Benesse - Pocket Challenge V2.png
 share/libretro/assets/xmb/dot-art/png/CHIP-8-content.png
 share/libretro/assets/xmb/dot-art/png/CHIP-8.png
+share/libretro/assets/xmb/dot-art/png/Cannonball-content.png
+share/libretro/assets/xmb/dot-art/png/Cannonball.png
 share/libretro/assets/xmb/dot-art/png/Capcom - CP System I-content.png
 share/libretro/assets/xmb/dot-art/png/Capcom - CP System I.png
 share/libretro/assets/xmb/dot-art/png/Capcom - CP System II-content.png
@@ -1522,12 +1745,12 @@ share/libretro/assets/xmb/dot-art/png/Commodore - 64-content.png
 share/libretro/assets/xmb/dot-art/png/Commodore - 64.png
 share/libretro/assets/xmb/dot-art/png/Commodore - Amiga-content.png
 share/libretro/assets/xmb/dot-art/png/Commodore - Amiga.png
+share/libretro/assets/xmb/dot-art/png/Commodore - CD32-content.png
+share/libretro/assets/xmb/dot-art/png/Commodore - CD32.png
 share/libretro/assets/xmb/dot-art/png/Commodore - Plus-4-content.png
 share/libretro/assets/xmb/dot-art/png/Commodore - Plus-4.png
 share/libretro/assets/xmb/dot-art/png/Commodore - VIC-20-content.png
 share/libretro/assets/xmb/dot-art/png/Commodore - VIC-20.png
-share/libretro/assets/xmb/dot-art/png/Commodore Amiga Cd32-content.png
-share/libretro/assets/xmb/dot-art/png/Commodore Amiga Cd32.png
 share/libretro/assets/xmb/dot-art/png/DOOM-content.png
 share/libretro/assets/xmb/dot-art/png/DOOM.png
 share/libretro/assets/xmb/dot-art/png/DOS-content.png
@@ -1542,14 +1765,18 @@ share/libretro/assets/xmb/dot-art/png/Entex - Adventure Vision-content.png
 share/libretro/assets/xmb/dot-art/png/Entex - Adventure Vision.png
 share/libretro/assets/xmb/dot-art/png/Epoch - Super Cassette Vision-content.png
 share/libretro/assets/xmb/dot-art/png/Epoch - Super Cassette Vision.png
-share/libretro/assets/xmb/dot-art/png/FB Alpha 2012 - Arcade Games-content.png
-share/libretro/assets/xmb/dot-art/png/FB Alpha 2012 - Arcade Games.png
+share/libretro/assets/xmb/dot-art/png/FB Alpha - Arcade Games-content.png
+share/libretro/assets/xmb/dot-art/png/FB Alpha - Arcade Games.png
 share/libretro/assets/xmb/dot-art/png/FBNeo - Arcade Games-content.png
 share/libretro/assets/xmb/dot-art/png/FBNeo - Arcade Games.png
+share/libretro/assets/xmb/dot-art/png/FBNeo 2012 - Arcade Games-content.png
+share/libretro/assets/xmb/dot-art/png/FBNeo 2012 - Arcade Games.png
 share/libretro/assets/xmb/dot-art/png/FFmpeg-content.png
 share/libretro/assets/xmb/dot-art/png/FFmpeg.png
 share/libretro/assets/xmb/dot-art/png/Fairchild - Channel F-content.png
 share/libretro/assets/xmb/dot-art/png/Fairchild - Channel F.png
+share/libretro/assets/xmb/dot-art/png/Flashback-content.png
+share/libretro/assets/xmb/dot-art/png/Flashback.png
 share/libretro/assets/xmb/dot-art/png/Funtech - Super Acan-content.png
 share/libretro/assets/xmb/dot-art/png/Funtech - Super Acan.png
 share/libretro/assets/xmb/dot-art/png/GCE - Vectrex-content.png
@@ -1573,6 +1800,8 @@ share/libretro/assets/xmb/dot-art/png/MAME 2003-content.png
 share/libretro/assets/xmb/dot-art/png/MAME 2003.png
 share/libretro/assets/xmb/dot-art/png/MAME 2010-content.png
 share/libretro/assets/xmb/dot-art/png/MAME 2010.png
+share/libretro/assets/xmb/dot-art/png/MAME 2014-content.png
+share/libretro/assets/xmb/dot-art/png/MAME 2014.png
 share/libretro/assets/xmb/dot-art/png/MAME 2015-content.png
 share/libretro/assets/xmb/dot-art/png/MAME 2015.png
 share/libretro/assets/xmb/dot-art/png/MAME 2016-content.png
@@ -1633,6 +1862,8 @@ share/libretro/assets/xmb/dot-art/png/Nintendo - New Nintendo 3DS-content.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - New Nintendo 3DS.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 3DS (DLC)-content.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 3DS (DLC).png
+share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 3DS (Digital)-content.png
+share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 3DS (Digital).png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 3DS-content.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 3DS.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo 64-content.png
@@ -1643,6 +1874,8 @@ share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DS (Download Play)-con
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DS (Download Play).png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DS-content.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DS.png
+share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DSi (DLC)-content.png
+share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DSi (DLC).png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DSi-content.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo DSi.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - Nintendo Entertainment System-content.png
@@ -1669,11 +1902,12 @@ share/libretro/assets/xmb/dot-art/png/Nintendo - e-Reader-content.png
 share/libretro/assets/xmb/dot-art/png/Nintendo - e-Reader.png
 share/libretro/assets/xmb/dot-art/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/dot-art/png/Philips - Videopac+.png
+share/libretro/assets/xmb/dot-art/png/Quake II-content.png
+share/libretro/assets/xmb/dot-art/png/Quake II.png
+share/libretro/assets/xmb/dot-art/png/Quake III-content.png
+share/libretro/assets/xmb/dot-art/png/Quake III.png
 share/libretro/assets/xmb/dot-art/png/Quake-content.png
 share/libretro/assets/xmb/dot-art/png/Quake.png
-share/libretro/assets/xmb/dot-art/png/Quake1.png
-share/libretro/assets/xmb/dot-art/png/Quake2.png
-share/libretro/assets/xmb/dot-art/png/Quake3.png
 share/libretro/assets/xmb/dot-art/png/RCA - Studio II-content.png
 share/libretro/assets/xmb/dot-art/png/RCA - Studio II.png
 share/libretro/assets/xmb/dot-art/png/RPG Maker-content.png
@@ -1718,10 +1952,22 @@ share/libretro/assets/xmb/dot-art/png/Sinclair - ZX Spectrum-content.png
 share/libretro/assets/xmb/dot-art/png/Sinclair - ZX Spectrum.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 2-content.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 2.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 3 (DLC)-content.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 3 (DLC).png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 3-content.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 3.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 4-content.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation 4.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (DLC)-content.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (DLC).png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (PSN)-content.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (PSN).png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (PSX2PSP)-content.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (PSX2PSP).png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (UMD Music)-content.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (UMD Music).png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (UMD Video)-content.png
+share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable (UMD Video).png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable-content.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Portable.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation Vita-content.png
@@ -1730,6 +1976,8 @@ share/libretro/assets/xmb/dot-art/png/Sony - PlayStation-content.png
 share/libretro/assets/xmb/dot-art/png/Sony - PlayStation.png
 share/libretro/assets/xmb/dot-art/png/Spectravideo - SV-content.png
 share/libretro/assets/xmb/dot-art/png/Spectravideo - SV.png
+share/libretro/assets/xmb/dot-art/png/TIC-80-content.png
+share/libretro/assets/xmb/dot-art/png/TIC-80.png
 share/libretro/assets/xmb/dot-art/png/The 3DO Company - 3DO-content.png
 share/libretro/assets/xmb/dot-art/png/The 3DO Company - 3DO.png
 share/libretro/assets/xmb/dot-art/png/Thomson - MOTO-content.png
@@ -1757,6 +2005,7 @@ share/libretro/assets/xmb/dot-art/png/battery-80.png
 share/libretro/assets/xmb/dot-art/png/battery-charging.png
 share/libretro/assets/xmb/dot-art/png/battery-full.png
 share/libretro/assets/xmb/dot-art/png/bg.png
+share/libretro/assets/xmb/dot-art/png/bluetooth.png
 share/libretro/assets/xmb/dot-art/png/clock.png
 share/libretro/assets/xmb/dot-art/png/close.png
 share/libretro/assets/xmb/dot-art/png/core-cheat-options.png
@@ -1774,6 +2023,7 @@ share/libretro/assets/xmb/dot-art/png/df_Quake1.png
 share/libretro/assets/xmb/dot-art/png/df_Quake2.png
 share/libretro/assets/xmb/dot-art/png/df_Quake3.png
 share/libretro/assets/xmb/dot-art/png/dialog-slice.png
+share/libretro/assets/xmb/dot-art/png/disc.png
 share/libretro/assets/xmb/dot-art/png/favorites-content.png
 share/libretro/assets/xmb/dot-art/png/favorites.png
 share/libretro/assets/xmb/dot-art/png/file.png
@@ -1858,6 +2108,7 @@ share/libretro/assets/xmb/dot-art/png/musics.png
 share/libretro/assets/xmb/dot-art/png/netplay.png
 share/libretro/assets/xmb/dot-art/png/off.png
 share/libretro/assets/xmb/dot-art/png/on.png
+share/libretro/assets/xmb/dot-art/png/on_alt.png
 share/libretro/assets/xmb/dot-art/png/pointer.png
 share/libretro/assets/xmb/dot-art/png/reload.png
 share/libretro/assets/xmb/dot-art/png/rename.png
@@ -1956,12 +2207,12 @@ share/libretro/assets/xmb/flatui/png/Nintendo - Virtual Boy.png
 share/libretro/assets/xmb/flatui/png/Nintendo - Wii-content - copia.png
 share/libretro/assets/xmb/flatui/png/Nintendo - Wii-content.png
 share/libretro/assets/xmb/flatui/png/Nintendo - Wii.png
+share/libretro/assets/xmb/flatui/png/Quake II-content.png
+share/libretro/assets/xmb/flatui/png/Quake II.png
+share/libretro/assets/xmb/flatui/png/Quake III-content.png
+share/libretro/assets/xmb/flatui/png/Quake III.png
 share/libretro/assets/xmb/flatui/png/Quake1-content.png
 share/libretro/assets/xmb/flatui/png/Quake1.png
-share/libretro/assets/xmb/flatui/png/Quake2-content.png
-share/libretro/assets/xmb/flatui/png/Quake2.png
-share/libretro/assets/xmb/flatui/png/Quake3-content.png
-share/libretro/assets/xmb/flatui/png/Quake3.png
 share/libretro/assets/xmb/flatui/png/Rick Dangerous-content.png
 share/libretro/assets/xmb/flatui/png/Rick Dangerous.png
 share/libretro/assets/xmb/flatui/png/SNK - Neo Geo Pocket Color-content.png
@@ -1997,6 +2248,7 @@ share/libretro/assets/xmb/flatui/png/battery-80.png
 share/libretro/assets/xmb/flatui/png/battery-charging.png
 share/libretro/assets/xmb/flatui/png/battery-full.png
 share/libretro/assets/xmb/flatui/png/bg.png
+share/libretro/assets/xmb/flatui/png/bluetooth.png
 share/libretro/assets/xmb/flatui/png/clock.png
 share/libretro/assets/xmb/flatui/png/close.png
 share/libretro/assets/xmb/flatui/png/core-cheat-options.png
@@ -2169,6 +2421,8 @@ share/libretro/assets/xmb/monochrome/png/Commodore - 64-content.png
 share/libretro/assets/xmb/monochrome/png/Commodore - 64.png
 share/libretro/assets/xmb/monochrome/png/Commodore - Amiga-content.png
 share/libretro/assets/xmb/monochrome/png/Commodore - Amiga.png
+share/libretro/assets/xmb/monochrome/png/Commodore - CD32-content.png
+share/libretro/assets/xmb/monochrome/png/Commodore - CD32.png
 share/libretro/assets/xmb/monochrome/png/Commodore - Plus-4-content.png
 share/libretro/assets/xmb/monochrome/png/Commodore - Plus-4.png
 share/libretro/assets/xmb/monochrome/png/Commodore - VIC-20-content.png
@@ -2234,12 +2488,12 @@ share/libretro/assets/xmb/monochrome/png/Microsoft - MSX-content.png
 share/libretro/assets/xmb/monochrome/png/Microsoft - MSX.png
 share/libretro/assets/xmb/monochrome/png/Microsoft - MSX2-content.png
 share/libretro/assets/xmb/monochrome/png/Microsoft - MSX2.png
-share/libretro/assets/xmb/monochrome/png/Microsoft - XBOX 360-content.png
-share/libretro/assets/xmb/monochrome/png/Microsoft - XBOX 360.png
-share/libretro/assets/xmb/monochrome/png/Microsoft - XBOX One-content.png
-share/libretro/assets/xmb/monochrome/png/Microsoft - XBOX One.png
-share/libretro/assets/xmb/monochrome/png/Microsoft - XBOX-content.png
-share/libretro/assets/xmb/monochrome/png/Microsoft - XBOX.png
+share/libretro/assets/xmb/monochrome/png/Microsoft - Xbox 360-content.png
+share/libretro/assets/xmb/monochrome/png/Microsoft - Xbox 360.png
+share/libretro/assets/xmb/monochrome/png/Microsoft - Xbox One-content.png
+share/libretro/assets/xmb/monochrome/png/Microsoft - Xbox One.png
+share/libretro/assets/xmb/monochrome/png/Microsoft - Xbox-content.png
+share/libretro/assets/xmb/monochrome/png/Microsoft - Xbox.png
 share/libretro/assets/xmb/monochrome/png/Minecraft-content.png
 share/libretro/assets/xmb/monochrome/png/Minecraft.png
 share/libretro/assets/xmb/monochrome/png/MrBoom-content.png
@@ -2312,12 +2566,12 @@ share/libretro/assets/xmb/monochrome/png/Nintendo - e-Reader-content.png
 share/libretro/assets/xmb/monochrome/png/Nintendo - e-Reader.png
 share/libretro/assets/xmb/monochrome/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/monochrome/png/Philips - Videopac+.png
+share/libretro/assets/xmb/monochrome/png/Quake II-content.png
+share/libretro/assets/xmb/monochrome/png/Quake II.png
+share/libretro/assets/xmb/monochrome/png/Quake III-content.png
+share/libretro/assets/xmb/monochrome/png/Quake III.png
 share/libretro/assets/xmb/monochrome/png/Quake-content.png
 share/libretro/assets/xmb/monochrome/png/Quake.png
-share/libretro/assets/xmb/monochrome/png/Quake2-content.png
-share/libretro/assets/xmb/monochrome/png/Quake2.png
-share/libretro/assets/xmb/monochrome/png/Quake3-content.png
-share/libretro/assets/xmb/monochrome/png/Quake3.png
 share/libretro/assets/xmb/monochrome/png/RCA - Studio II-content.png
 share/libretro/assets/xmb/monochrome/png/RCA - Studio II.png
 share/libretro/assets/xmb/monochrome/png/RPG Maker-content.png
@@ -2415,6 +2669,7 @@ share/libretro/assets/xmb/monochrome/png/battery-80.png
 share/libretro/assets/xmb/monochrome/png/battery-charging.png
 share/libretro/assets/xmb/monochrome/png/battery-full.png
 share/libretro/assets/xmb/monochrome/png/bg.png
+share/libretro/assets/xmb/monochrome/png/bluetooth.png
 share/libretro/assets/xmb/monochrome/png/clock.png
 share/libretro/assets/xmb/monochrome/png/close.png
 share/libretro/assets/xmb/monochrome/png/core-cheat-options.png
@@ -2533,8 +2788,13 @@ share/libretro/assets/xmb/neoactive/README.md
 share/libretro/assets/xmb/neoactive/font.ttf
 share/libretro/assets/xmb/neoactive/png/2048-content.png
 share/libretro/assets/xmb/neoactive/png/2048.png
+share/libretro/assets/xmb/neoactive/png/APF - MP1000-content.png
+share/libretro/assets/xmb/neoactive/png/APF - MP1000.png
+share/libretro/assets/xmb/neoactive/png/Amazon - Fire TV-content.png
+share/libretro/assets/xmb/neoactive/png/Amazon - Fire TV.png
 share/libretro/assets/xmb/neoactive/png/Amstrad - CPC-content.png
 share/libretro/assets/xmb/neoactive/png/Amstrad - CPC.png
+share/libretro/assets/xmb/neoactive/png/Amstrad - GX4000.png
 share/libretro/assets/xmb/neoactive/png/Atari - 2600-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - 2600.png
 share/libretro/assets/xmb/neoactive/png/Atari - 5200-content.png
@@ -2542,24 +2802,42 @@ share/libretro/assets/xmb/neoactive/png/Atari - 5200.png
 share/libretro/assets/xmb/neoactive/png/Atari - 7800 (E).png
 share/libretro/assets/xmb/neoactive/png/Atari - 7800-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - 7800.png
+share/libretro/assets/xmb/neoactive/png/Atari - 800-content.png
+share/libretro/assets/xmb/neoactive/png/Atari - 800.png
 share/libretro/assets/xmb/neoactive/png/Atari - Jaguar CD-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - Jaguar CD.png
 share/libretro/assets/xmb/neoactive/png/Atari - Jaguar-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - Jaguar.png
 share/libretro/assets/xmb/neoactive/png/Atari - Lynx-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - Lynx.png
+share/libretro/assets/xmb/neoactive/png/Atari - Pong-content.png
+share/libretro/assets/xmb/neoactive/png/Atari - Pong.png
 share/libretro/assets/xmb/neoactive/png/Atari - ST-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - ST.png
+share/libretro/assets/xmb/neoactive/png/Atari - VCS-content.png
+share/libretro/assets/xmb/neoactive/png/Atari - VCS.png
 share/libretro/assets/xmb/neoactive/png/Atari - XEGS-content.png
 share/libretro/assets/xmb/neoactive/png/Atari - XEGS.png
+share/libretro/assets/xmb/neoactive/png/BBC - Bridge Companion-content.png
+share/libretro/assets/xmb/neoactive/png/BBC - Bridge Companion.png
 share/libretro/assets/xmb/neoactive/png/Bally - Astrocade-content.png
 share/libretro/assets/xmb/neoactive/png/Bally - Astrocade.png
+share/libretro/assets/xmb/neoactive/png/Bandai - Pippin-content.png
+share/libretro/assets/xmb/neoactive/png/Bandai - Pippin.png
+share/libretro/assets/xmb/neoactive/png/Bandai - Playdia-content.png
+share/libretro/assets/xmb/neoactive/png/Bandai - Playdia.png
+share/libretro/assets/xmb/neoactive/png/Bandai - Super Vision 8000-content.png
+share/libretro/assets/xmb/neoactive/png/Bandai - Super Vision 8000.png
 share/libretro/assets/xmb/neoactive/png/Bandai - WonderSwan Color-content.png
 share/libretro/assets/xmb/neoactive/png/Bandai - WonderSwan Color.png
 share/libretro/assets/xmb/neoactive/png/Bandai - WonderSwan-content.png
 share/libretro/assets/xmb/neoactive/png/Bandai - WonderSwan.png
 share/libretro/assets/xmb/neoactive/png/Benesse - Pocket Challenge V2-content.png
 share/libretro/assets/xmb/neoactive/png/Benesse - Pocket Challenge V2.png
+share/libretro/assets/xmb/neoactive/png/Benesse - Pocket Challenge W-content.png
+share/libretro/assets/xmb/neoactive/png/Benesse - Pocket Challenge W.png
+share/libretro/assets/xmb/neoactive/png/Bit Corporation - Gamate-content.png
+share/libretro/assets/xmb/neoactive/png/Bit Corporation - Gamate.png
 share/libretro/assets/xmb/neoactive/png/CHIP-8-content.png
 share/libretro/assets/xmb/neoactive/png/CHIP-8.png
 share/libretro/assets/xmb/neoactive/png/Cannonball-content.png
@@ -2582,10 +2860,15 @@ share/libretro/assets/xmb/neoactive/png/Coleco - ColecoVision ADAM-content.png
 share/libretro/assets/xmb/neoactive/png/Coleco - ColecoVision ADAM.png
 share/libretro/assets/xmb/neoactive/png/Coleco - ColecoVision-content.png
 share/libretro/assets/xmb/neoactive/png/Coleco - ColecoVision.png
+share/libretro/assets/xmb/neoactive/png/Commodore - 64 (PP)-content.png
+share/libretro/assets/xmb/neoactive/png/Commodore - 64 (PP).png
+share/libretro/assets/xmb/neoactive/png/Commodore - 64 (Tapes).png
 share/libretro/assets/xmb/neoactive/png/Commodore - 64-content.png
 share/libretro/assets/xmb/neoactive/png/Commodore - 64.png
 share/libretro/assets/xmb/neoactive/png/Commodore - Amiga-content.png
 share/libretro/assets/xmb/neoactive/png/Commodore - Amiga.png
+share/libretro/assets/xmb/neoactive/png/Commodore - CD32-content.png
+share/libretro/assets/xmb/neoactive/png/Commodore - CD32.png
 share/libretro/assets/xmb/neoactive/png/Commodore - Plus-4-content.png
 share/libretro/assets/xmb/neoactive/png/Commodore - Plus-4.png
 share/libretro/assets/xmb/neoactive/png/Commodore - VIC-20-content.png
@@ -2602,8 +2885,15 @@ share/libretro/assets/xmb/neoactive/png/Emerson - Arcadia 2001-content.png
 share/libretro/assets/xmb/neoactive/png/Emerson - Arcadia 2001.png
 share/libretro/assets/xmb/neoactive/png/Entex - Adventure Vision-content.png
 share/libretro/assets/xmb/neoactive/png/Entex - Adventure Vision.png
+share/libretro/assets/xmb/neoactive/png/Entex - Select-A-Game-content.png
+share/libretro/assets/xmb/neoactive/png/Entex - Select-A-Game.png
+share/libretro/assets/xmb/neoactive/png/Epoch - Cassette Vision-content.png
+share/libretro/assets/xmb/neoactive/png/Epoch - Cassette Vision.png
+share/libretro/assets/xmb/neoactive/png/Epoch - Game Pocket Computer.png
 share/libretro/assets/xmb/neoactive/png/Epoch - Super Cassette Vision-content.png
 share/libretro/assets/xmb/neoactive/png/Epoch - Super Cassette Vision.png
+share/libretro/assets/xmb/neoactive/png/Epoch - TV Tennis Electrotennis-content.png
+share/libretro/assets/xmb/neoactive/png/Epoch - TV Tennis Electrotennis.png
 share/libretro/assets/xmb/neoactive/png/FBNeo - Arcade Games-content.png
 share/libretro/assets/xmb/neoactive/png/FBNeo - Arcade Games.png
 share/libretro/assets/xmb/neoactive/png/FFmpeg-content.png
@@ -2612,21 +2902,43 @@ share/libretro/assets/xmb/neoactive/png/Fairchild - Channel F-content.png
 share/libretro/assets/xmb/neoactive/png/Fairchild - Channel F.png
 share/libretro/assets/xmb/neoactive/png/Flashback-content.png
 share/libretro/assets/xmb/neoactive/png/Flashback.png
+share/libretro/assets/xmb/neoactive/png/Fujitsu - FM Towns Marty-content.png
+share/libretro/assets/xmb/neoactive/png/Fujitsu - FM Towns Marty.png
+share/libretro/assets/xmb/neoactive/png/Fukutake Publishing - StudyBox-content.png
+share/libretro/assets/xmb/neoactive/png/Fukutake Publishing - StudyBox.png
 share/libretro/assets/xmb/neoactive/png/Funtech - Super Acan-content.png
 share/libretro/assets/xmb/neoactive/png/Funtech - Super Acan.png
 share/libretro/assets/xmb/neoactive/png/GCE - Vectrex (E).png
 share/libretro/assets/xmb/neoactive/png/GCE - Vectrex-content.png
 share/libretro/assets/xmb/neoactive/png/GCE - Vectrex.png
+share/libretro/assets/xmb/neoactive/png/Gakken - Compact Vision TV Boy-content.png
+share/libretro/assets/xmb/neoactive/png/Gakken - Compact Vision TV Boy.png
 share/libretro/assets/xmb/neoactive/png/Game Park - GP32-content.png
 share/libretro/assets/xmb/neoactive/png/Game Park - GP32.png
 share/libretro/assets/xmb/neoactive/png/Game-content.png
 share/libretro/assets/xmb/neoactive/png/Game.png
+share/libretro/assets/xmb/neoactive/png/Google - Nexus Player-content.png
+share/libretro/assets/xmb/neoactive/png/Google - Nexus Player.png
+share/libretro/assets/xmb/neoactive/png/Google - Stadia-content.png
+share/libretro/assets/xmb/neoactive/png/Google - Stadia.png
 share/libretro/assets/xmb/neoactive/png/Handheld Electronic Game-content.png
 share/libretro/assets/xmb/neoactive/png/Handheld Electronic Game.png
 share/libretro/assets/xmb/neoactive/png/Hartung - Game Master-content.png
 share/libretro/assets/xmb/neoactive/png/Hartung - Game Master.png
+share/libretro/assets/xmb/neoactive/png/Intellivision - Amico-content.png
+share/libretro/assets/xmb/neoactive/png/Intellivision - Amico.png
+share/libretro/assets/xmb/neoactive/png/Interton - VC 4000-content.png
+share/libretro/assets/xmb/neoactive/png/Interton - VC 4000.png
+share/libretro/assets/xmb/neoactive/png/Interton - Video 2000-content.png
+share/libretro/assets/xmb/neoactive/png/Interton - Video 2000.png
+share/libretro/assets/xmb/neoactive/png/Konami - Picno-content.png
+share/libretro/assets/xmb/neoactive/png/Konami - Picno.png
+share/libretro/assets/xmb/neoactive/png/LeapFrog - LeapPad-content.png
+share/libretro/assets/xmb/neoactive/png/LeapFrog - LeapPad.png
 share/libretro/assets/xmb/neoactive/png/LeapFrog - Leapster Learning Game System-content.png
 share/libretro/assets/xmb/neoactive/png/LeapFrog - Leapster Learning Game System.png
+share/libretro/assets/xmb/neoactive/png/LeapFrog - My First LeapPad-content.png
+share/libretro/assets/xmb/neoactive/png/LeapFrog - My First LeapPad.png
 share/libretro/assets/xmb/neoactive/png/Libretro - Pad.png
 share/libretro/assets/xmb/neoactive/png/Lutro-content.png
 share/libretro/assets/xmb/neoactive/png/Lutro.png
@@ -2644,18 +2956,26 @@ share/libretro/assets/xmb/neoactive/png/MAME 2016-content.png
 share/libretro/assets/xmb/neoactive/png/MAME 2016.png
 share/libretro/assets/xmb/neoactive/png/MAME-content.png
 share/libretro/assets/xmb/neoactive/png/MAME.png
+share/libretro/assets/xmb/neoactive/png/Magnavox - Odyssey-content.png
+share/libretro/assets/xmb/neoactive/png/Magnavox - Odyssey.png
 share/libretro/assets/xmb/neoactive/png/Magnavox - Odyssey2-content.png
 share/libretro/assets/xmb/neoactive/png/Magnavox - Odyssey2.png
+share/libretro/assets/xmb/neoactive/png/Mattel - HyperScan-content.png
+share/libretro/assets/xmb/neoactive/png/Mattel - HyperScan.png
 share/libretro/assets/xmb/neoactive/png/Mattel - Intellivision-content.png
 share/libretro/assets/xmb/neoactive/png/Mattel - Intellivision.png
 share/libretro/assets/xmb/neoactive/png/Microsoft - MSX-content.png
 share/libretro/assets/xmb/neoactive/png/Microsoft - MSX.png
 share/libretro/assets/xmb/neoactive/png/Microsoft - MSX2-content.png
 share/libretro/assets/xmb/neoactive/png/Microsoft - MSX2.png
-share/libretro/assets/xmb/neoactive/png/Microsoft - XBOX 360-content.png
-share/libretro/assets/xmb/neoactive/png/Microsoft - XBOX 360.png
-share/libretro/assets/xmb/neoactive/png/Microsoft - XBOX One-content.png
-share/libretro/assets/xmb/neoactive/png/Microsoft - XBOX One.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox 360 (Digital)-content.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox 360 (Digital).png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox 360-content.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox 360.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox One-content.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox One.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox Series X-content.png
+share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox Series X.png
 share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox-content.png
 share/libretro/assets/xmb/neoactive/png/Microsoft - Xbox.png
 share/libretro/assets/xmb/neoactive/png/Minecraft-content.png
@@ -2677,6 +2997,8 @@ share/libretro/assets/xmb/neoactive/png/NEC - PC-FX-content.png
 share/libretro/assets/xmb/neoactive/png/NEC - PC-FX.png
 share/libretro/assets/xmb/neoactive/png/Neo Geo-content.png
 share/libretro/assets/xmb/neoactive/png/Neo Geo.png
+share/libretro/assets/xmb/neoactive/png/Nichibutsu - My Vision-content.png
+share/libretro/assets/xmb/neoactive/png/Nichibutsu - My Vision.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Family Computer Disk System-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Family Computer Disk System.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Game Boy Advance-content.png
@@ -2697,10 +3019,14 @@ share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo 64-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo 64.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo 64DD-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo 64DD.png
+share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DS Decrypted-content.png
+share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DS Decrypted.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DS-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DS.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DSi (DLC)-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DSi (DLC).png
+share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DSi Decrypted-content.png
+share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DSi Decrypted.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DSi-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo DSi.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Nintendo Entertainment System (J).png
@@ -2728,10 +3054,12 @@ share/libretro/assets/xmb/neoactive/png/Nintendo - Wii-content.png
 share/libretro/assets/xmb/neoactive/png/Nintendo - Wii.png
 share/libretro/assets/xmb/neoactive/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/neoactive/png/Philips - Videopac+.png
-share/libretro/assets/xmb/neoactive/png/Quake 2-content.png
-share/libretro/assets/xmb/neoactive/png/Quake 2.png
-share/libretro/assets/xmb/neoactive/png/Quake 3-content.png
-share/libretro/assets/xmb/neoactive/png/Quake 3.png
+share/libretro/assets/xmb/neoactive/png/Pioneer - Laseractive-content.png
+share/libretro/assets/xmb/neoactive/png/Pioneer - Laseractive.png
+share/libretro/assets/xmb/neoactive/png/Quake II-content.png
+share/libretro/assets/xmb/neoactive/png/Quake II.png
+share/libretro/assets/xmb/neoactive/png/Quake III-content.png
+share/libretro/assets/xmb/neoactive/png/Quake III.png
 share/libretro/assets/xmb/neoactive/png/Quake-content.png
 share/libretro/assets/xmb/neoactive/png/Quake.png
 share/libretro/assets/xmb/neoactive/png/RCA - Studio II-content.png
@@ -2752,6 +3080,8 @@ share/libretro/assets/xmb/neoactive/png/ScummVM-content.png
 share/libretro/assets/xmb/neoactive/png/ScummVM.png
 share/libretro/assets/xmb/neoactive/png/Sega - 32X-content.png
 share/libretro/assets/xmb/neoactive/png/Sega - 32X.png
+share/libretro/assets/xmb/neoactive/png/Sega - Beena-content.png
+share/libretro/assets/xmb/neoactive/png/Sega - Beena.png
 share/libretro/assets/xmb/neoactive/png/Sega - Dreamcast-content (J).png
 share/libretro/assets/xmb/neoactive/png/Sega - Dreamcast-content.png
 share/libretro/assets/xmb/neoactive/png/Sega - Dreamcast.png
@@ -2806,8 +3136,14 @@ share/libretro/assets/xmb/neoactive/png/Tiger - Game.com-content.png
 share/libretro/assets/xmb/neoactive/png/Tiger - Game.com.png
 share/libretro/assets/xmb/neoactive/png/Tomb Raider-content.png
 share/libretro/assets/xmb/neoactive/png/Tomb Raider.png
+share/libretro/assets/xmb/neoactive/png/Tomy - Tutor-content.png
+share/libretro/assets/xmb/neoactive/png/Tomy - Tutor.png
 share/libretro/assets/xmb/neoactive/png/Uzebox-content.png
 share/libretro/assets/xmb/neoactive/png/Uzebox.png
+share/libretro/assets/xmb/neoactive/png/VM Labs - Nuon-content.png
+share/libretro/assets/xmb/neoactive/png/VM Labs - Nuon.png
+share/libretro/assets/xmb/neoactive/png/VTech - 3D Gamate-content.png
+share/libretro/assets/xmb/neoactive/png/VTech - 3D Gamate.png
 share/libretro/assets/xmb/neoactive/png/VTech - CreatiVision-content.png
 share/libretro/assets/xmb/neoactive/png/VTech - CreatiVision.png
 share/libretro/assets/xmb/neoactive/png/VTech - V.Smile-content.png
@@ -2827,6 +3163,7 @@ share/libretro/assets/xmb/neoactive/png/battery-full.png
 share/libretro/assets/xmb/neoactive/png/bg.png
 share/libretro/assets/xmb/neoactive/png/bg_triangles.png
 share/libretro/assets/xmb/neoactive/png/bg_waves.png
+share/libretro/assets/xmb/neoactive/png/bluetooth.png
 share/libretro/assets/xmb/neoactive/png/clock.png
 share/libretro/assets/xmb/neoactive/png/close.png
 share/libretro/assets/xmb/neoactive/png/core-cheat-options.png
@@ -2846,6 +3183,8 @@ share/libretro/assets/xmb/neoactive/png/favorites.png
 share/libretro/assets/xmb/neoactive/png/file.png
 share/libretro/assets/xmb/neoactive/png/folder.png
 share/libretro/assets/xmb/neoactive/png/history.png
+share/libretro/assets/xmb/neoactive/png/iQue - iQue-content.png
+share/libretro/assets/xmb/neoactive/png/iQue - iQue.png
 share/libretro/assets/xmb/neoactive/png/image.png
 share/libretro/assets/xmb/neoactive/png/images.png
 share/libretro/assets/xmb/neoactive/png/input_ADC.png
@@ -3029,12 +3368,12 @@ share/libretro/assets/xmb/pixel/png/Nintendo - Super Nintendo Entertainment Syst
 share/libretro/assets/xmb/pixel/png/Nintendo - Virtual Boy-content.png
 share/libretro/assets/xmb/pixel/png/Nintendo - Virtual Boy.png
 share/libretro/assets/xmb/pixel/png/Nintendo - Wii-content.png
+share/libretro/assets/xmb/pixel/png/Quake II-content.png
+share/libretro/assets/xmb/pixel/png/Quake II.png
+share/libretro/assets/xmb/pixel/png/Quake III-content.png
+share/libretro/assets/xmb/pixel/png/Quake III.png
 share/libretro/assets/xmb/pixel/png/Quake-content.png
 share/libretro/assets/xmb/pixel/png/Quake.png
-share/libretro/assets/xmb/pixel/png/Quake2-content.png
-share/libretro/assets/xmb/pixel/png/Quake2.png
-share/libretro/assets/xmb/pixel/png/Quake3-content.png
-share/libretro/assets/xmb/pixel/png/Quake3.png
 share/libretro/assets/xmb/pixel/png/SNK - Neo Geo Pocket Color-content.png
 share/libretro/assets/xmb/pixel/png/SNK - Neo Geo Pocket Color.png
 share/libretro/assets/xmb/pixel/png/SNK - Neo Geo Pocket-content.png
@@ -3122,6 +3461,8 @@ share/libretro/assets/xmb/retroactive/png/2048-content.png
 share/libretro/assets/xmb/retroactive/png/2048.png
 share/libretro/assets/xmb/retroactive/png/APF - MP1000-content.png
 share/libretro/assets/xmb/retroactive/png/APF - MP1000.png
+share/libretro/assets/xmb/retroactive/png/Amazon - Fire TV-content.png
+share/libretro/assets/xmb/retroactive/png/Amazon - Fire TV.png
 share/libretro/assets/xmb/retroactive/png/Amstrad - CPC-content.png
 share/libretro/assets/xmb/retroactive/png/Amstrad - CPC.png
 share/libretro/assets/xmb/retroactive/png/Amstrad - GX4000-content.png
@@ -3142,16 +3483,22 @@ share/libretro/assets/xmb/retroactive/png/Atari - Jaguar-content.png
 share/libretro/assets/xmb/retroactive/png/Atari - Jaguar.png
 share/libretro/assets/xmb/retroactive/png/Atari - Lynx-content.png
 share/libretro/assets/xmb/retroactive/png/Atari - Lynx.png
+share/libretro/assets/xmb/retroactive/png/Atari - Pong-content.png
 share/libretro/assets/xmb/retroactive/png/Atari - Pong.png
 share/libretro/assets/xmb/retroactive/png/Atari - ST-content.png
 share/libretro/assets/xmb/retroactive/png/Atari - ST.png
+share/libretro/assets/xmb/retroactive/png/Atari - VCS-content.png
 share/libretro/assets/xmb/retroactive/png/Atari - VCS.png
 share/libretro/assets/xmb/retroactive/png/Atari - XEGS-content.png
 share/libretro/assets/xmb/retroactive/png/Atari - XEGS.png
+share/libretro/assets/xmb/retroactive/png/BBC - Bridge Companion-content.png
+share/libretro/assets/xmb/retroactive/png/BBC - Bridge Companion.png
 share/libretro/assets/xmb/retroactive/png/Bally - Astrocade-content.png
 share/libretro/assets/xmb/retroactive/png/Bally - Astrocade.png
 share/libretro/assets/xmb/retroactive/png/Bandai - Pippin-content.png
 share/libretro/assets/xmb/retroactive/png/Bandai - Pippin.png
+share/libretro/assets/xmb/retroactive/png/Bandai - Playdia-content.png
+share/libretro/assets/xmb/retroactive/png/Bandai - Playdia.png
 share/libretro/assets/xmb/retroactive/png/Bandai - Super Vision 8000-content.png
 share/libretro/assets/xmb/retroactive/png/Bandai - Super Vision 8000.png
 share/libretro/assets/xmb/retroactive/png/Bandai - WonderSwan Color-content.png
@@ -3160,6 +3507,8 @@ share/libretro/assets/xmb/retroactive/png/Bandai - WonderSwan-content.png
 share/libretro/assets/xmb/retroactive/png/Bandai - WonderSwan.png
 share/libretro/assets/xmb/retroactive/png/Benesse - Pocket Challenge V2-content.png
 share/libretro/assets/xmb/retroactive/png/Benesse - Pocket Challenge V2.png
+share/libretro/assets/xmb/retroactive/png/Benesse - Pocket Challenge W-content.png
+share/libretro/assets/xmb/retroactive/png/Benesse - Pocket Challenge W.png
 share/libretro/assets/xmb/retroactive/png/Bit Corporation - Gamate-content.png
 share/libretro/assets/xmb/retroactive/png/Bit Corporation - Gamate.png
 share/libretro/assets/xmb/retroactive/png/CHIP-8-content.png
@@ -3190,10 +3539,16 @@ share/libretro/assets/xmb/retroactive/png/Coleco - ColecoVision ADAM-content.png
 share/libretro/assets/xmb/retroactive/png/Coleco - ColecoVision ADAM.png
 share/libretro/assets/xmb/retroactive/png/Coleco - ColecoVision-content.png
 share/libretro/assets/xmb/retroactive/png/Coleco - ColecoVision.png
+share/libretro/assets/xmb/retroactive/png/Commodore - 64 (PP)-content.png
+share/libretro/assets/xmb/retroactive/png/Commodore - 64 (PP).png
+share/libretro/assets/xmb/retroactive/png/Commodore - 64 (Tapes)-content.png
+share/libretro/assets/xmb/retroactive/png/Commodore - 64 (Tapes).png
 share/libretro/assets/xmb/retroactive/png/Commodore - 64-content.png
 share/libretro/assets/xmb/retroactive/png/Commodore - 64.png
 share/libretro/assets/xmb/retroactive/png/Commodore - Amiga-content.png
 share/libretro/assets/xmb/retroactive/png/Commodore - Amiga.png
+share/libretro/assets/xmb/retroactive/png/Commodore - CD32-content.png
+share/libretro/assets/xmb/retroactive/png/Commodore - CD32.png
 share/libretro/assets/xmb/retroactive/png/Commodore - Plus-4-content.png
 share/libretro/assets/xmb/retroactive/png/Commodore - Plus-4.png
 share/libretro/assets/xmb/retroactive/png/Commodore - VIC-20-content.png
@@ -3213,10 +3568,12 @@ share/libretro/assets/xmb/retroactive/png/Entex - Adventure Vision.png
 share/libretro/assets/xmb/retroactive/png/Entex - Select-A-Game-content.png
 share/libretro/assets/xmb/retroactive/png/Entex - Select-A-Game.png
 share/libretro/assets/xmb/retroactive/png/Epoch - Cassette Vision-content.png
+share/libretro/assets/xmb/retroactive/png/Epoch - Cassette Vision.png
 share/libretro/assets/xmb/retroactive/png/Epoch - Game Pocket Computer-content.png
 share/libretro/assets/xmb/retroactive/png/Epoch - Game Pocket Computer.png
 share/libretro/assets/xmb/retroactive/png/Epoch - Super Cassette Vision-content.png
 share/libretro/assets/xmb/retroactive/png/Epoch - Super Cassette Vision.png
+share/libretro/assets/xmb/retroactive/png/Epoch - TV Tennis Electrotennis-content.png
 share/libretro/assets/xmb/retroactive/png/Epoch - TV Tennis Electrotennis.png
 share/libretro/assets/xmb/retroactive/png/FBNeo - Arcade Games-content.png
 share/libretro/assets/xmb/retroactive/png/FBNeo - Arcade Games.png
@@ -3226,24 +3583,45 @@ share/libretro/assets/xmb/retroactive/png/Fairchild - Channel F-content.png
 share/libretro/assets/xmb/retroactive/png/Fairchild - Channel F.png
 share/libretro/assets/xmb/retroactive/png/Flashback-content.png
 share/libretro/assets/xmb/retroactive/png/Flashback.png
+share/libretro/assets/xmb/retroactive/png/Fujitsu - FM Towns Marty-content.png
+share/libretro/assets/xmb/retroactive/png/Fujitsu - FM Towns Marty.png
+share/libretro/assets/xmb/retroactive/png/Fukutake Publishing - StudyBox-content.png
+share/libretro/assets/xmb/retroactive/png/Fukutake Publishing - StudyBox.png
 share/libretro/assets/xmb/retroactive/png/Funtech - Super Acan-content.png
 share/libretro/assets/xmb/retroactive/png/Funtech - Super Acan.png
 share/libretro/assets/xmb/retroactive/png/GCE - Vectrex (E).png
 share/libretro/assets/xmb/retroactive/png/GCE - Vectrex-content.png
 share/libretro/assets/xmb/retroactive/png/GCE - Vectrex.png
+share/libretro/assets/xmb/retroactive/png/Gakken - Compact Vision TV Boy-content.png
+share/libretro/assets/xmb/retroactive/png/Gakken - Compact Vision TV Boy.png
 share/libretro/assets/xmb/retroactive/png/Game Park - GP32-content.png
 share/libretro/assets/xmb/retroactive/png/Game Park - GP32.png
 share/libretro/assets/xmb/retroactive/png/Game-content.png
 share/libretro/assets/xmb/retroactive/png/Game.png
+share/libretro/assets/xmb/retroactive/png/Google - Nexus Player-content.png
+share/libretro/assets/xmb/retroactive/png/Google - Nexus Player.png
 share/libretro/assets/xmb/retroactive/png/Google - Stadia.png
 share/libretro/assets/xmb/retroactive/png/Handheld Electronic Game-content.png
 share/libretro/assets/xmb/retroactive/png/Handheld Electronic Game.png
 share/libretro/assets/xmb/retroactive/png/Hartung - Game Master-content.png
 share/libretro/assets/xmb/retroactive/png/Hartung - Game Master.png
+share/libretro/assets/xmb/retroactive/png/Intellivision - Amico-content.png
+share/libretro/assets/xmb/retroactive/png/Intellivision - Amico.png
 share/libretro/assets/xmb/retroactive/png/Interton - VC 4000-content.png
+share/libretro/assets/xmb/retroactive/png/Interton - VC 4000.png
+share/libretro/assets/xmb/retroactive/png/Interton - Video 2000-content.png
+share/libretro/assets/xmb/retroactive/png/Interton - Video 2000.png
+share/libretro/assets/xmb/retroactive/png/Konami - Picno-content.png
+share/libretro/assets/xmb/retroactive/png/Konami - Picno.png
+share/libretro/assets/xmb/retroactive/png/LeapFrog - LeapPad-content.png
+share/libretro/assets/xmb/retroactive/png/LeapFrog - LeapPad.png
 share/libretro/assets/xmb/retroactive/png/LeapFrog - Leapster Learning Game System-content.png
 share/libretro/assets/xmb/retroactive/png/LeapFrog - Leapster Learning Game System.png
+share/libretro/assets/xmb/retroactive/png/LeapFrog - My First LeapPad-content.png
+share/libretro/assets/xmb/retroactive/png/LeapFrog - My First LeapPad.png
 share/libretro/assets/xmb/retroactive/png/Libretro - Pad.png
+share/libretro/assets/xmb/retroactive/png/Lutro-content.png
+share/libretro/assets/xmb/retroactive/png/Lutro.png
 share/libretro/assets/xmb/retroactive/png/MAME 2000-content.png
 share/libretro/assets/xmb/retroactive/png/MAME 2000.png
 share/libretro/assets/xmb/retroactive/png/MAME 2003-Plus-content.png
@@ -3262,18 +3640,24 @@ share/libretro/assets/xmb/retroactive/png/Magnavox - Odyssey-content.png
 share/libretro/assets/xmb/retroactive/png/Magnavox - Odyssey.png
 share/libretro/assets/xmb/retroactive/png/Magnavox - Odyssey2-content.png
 share/libretro/assets/xmb/retroactive/png/Magnavox - Odyssey2.png
+share/libretro/assets/xmb/retroactive/png/Mattel - HyperScan-content.png
+share/libretro/assets/xmb/retroactive/png/Mattel - HyperScan.png
 share/libretro/assets/xmb/retroactive/png/Mattel - Intellivision-content.png
 share/libretro/assets/xmb/retroactive/png/Mattel - Intellivision.png
 share/libretro/assets/xmb/retroactive/png/Microsoft - MSX-content.png
 share/libretro/assets/xmb/retroactive/png/Microsoft - MSX.png
 share/libretro/assets/xmb/retroactive/png/Microsoft - MSX2-content.png
 share/libretro/assets/xmb/retroactive/png/Microsoft - MSX2.png
-share/libretro/assets/xmb/retroactive/png/Microsoft - XBOX 360-content.png
-share/libretro/assets/xmb/retroactive/png/Microsoft - XBOX 360.png
-share/libretro/assets/xmb/retroactive/png/Microsoft - XBOX One-content.png
-share/libretro/assets/xmb/retroactive/png/Microsoft - XBOX One.png
-share/libretro/assets/xmb/retroactive/png/Microsoft - XBOX-content.png
-share/libretro/assets/xmb/retroactive/png/Microsoft - XBOX.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox 360 (Digital)-content.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox 360 (Digital).png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox 360-content.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox 360.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox One-content.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox One.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox Series X-content.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox Series X.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox-content.png
+share/libretro/assets/xmb/retroactive/png/Microsoft - Xbox.png
 share/libretro/assets/xmb/retroactive/png/Milton Bradley - Microvision-content.png
 share/libretro/assets/xmb/retroactive/png/Milton Bradley - Microvision.png
 share/libretro/assets/xmb/retroactive/png/Minecraft-content.png
@@ -3297,6 +3681,8 @@ share/libretro/assets/xmb/retroactive/png/NEC - PC-FX-content.png
 share/libretro/assets/xmb/retroactive/png/NEC - PC-FX.png
 share/libretro/assets/xmb/retroactive/png/Neo Geo-content.png
 share/libretro/assets/xmb/retroactive/png/Neo Geo.png
+share/libretro/assets/xmb/retroactive/png/Nichibutsu - My Vision-content.png
+share/libretro/assets/xmb/retroactive/png/Nichibutsu - My Vision.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Family Computer Disk System-content.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Family Computer Disk System.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Game Boy Advance (e-Cards)-content.png
@@ -3325,10 +3711,14 @@ share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo 64DD-content.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo 64DD.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DS (Download Play)-content.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DS (Download Play).png
+share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DS Decrypted-content.png
+share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DS Decrypted.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DS-content.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DS.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DSi (DLC)-content.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DSi (DLC).png
+share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DSi Decrypted-content.png
+share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DSi Decrypted.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DSi-content.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo DSi.png
 share/libretro/assets/xmb/retroactive/png/Nintendo - Nintendo Entertainment System (J).png
@@ -3365,12 +3755,14 @@ share/libretro/assets/xmb/retroactive/png/Nokia - N-Gage-content.png
 share/libretro/assets/xmb/retroactive/png/Nokia - N-Gage.png
 share/libretro/assets/xmb/retroactive/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/retroactive/png/Philips - Videopac+.png
+share/libretro/assets/xmb/retroactive/png/Pioneer - Laseractive-content.png
+share/libretro/assets/xmb/retroactive/png/Pioneer - Laseractive.png
+share/libretro/assets/xmb/retroactive/png/Quake II-content.png
+share/libretro/assets/xmb/retroactive/png/Quake II.png
+share/libretro/assets/xmb/retroactive/png/Quake III-content.png
+share/libretro/assets/xmb/retroactive/png/Quake III.png
 share/libretro/assets/xmb/retroactive/png/Quake-content.png
 share/libretro/assets/xmb/retroactive/png/Quake.png
-share/libretro/assets/xmb/retroactive/png/Quake2-content.png
-share/libretro/assets/xmb/retroactive/png/Quake2.png
-share/libretro/assets/xmb/retroactive/png/Quake3-content.png
-share/libretro/assets/xmb/retroactive/png/Quake3.png
 share/libretro/assets/xmb/retroactive/png/RCA - Studio II-content.png
 share/libretro/assets/xmb/retroactive/png/RCA - Studio II.png
 share/libretro/assets/xmb/retroactive/png/RPG Maker-content.png
@@ -3392,6 +3784,8 @@ share/libretro/assets/xmb/retroactive/png/Sega - 32X (E).png
 share/libretro/assets/xmb/retroactive/png/Sega - 32X (J).png
 share/libretro/assets/xmb/retroactive/png/Sega - 32X-content.png
 share/libretro/assets/xmb/retroactive/png/Sega - 32X.png
+share/libretro/assets/xmb/retroactive/png/Sega - Beena-content.png
+share/libretro/assets/xmb/retroactive/png/Sega - Beena.png
 share/libretro/assets/xmb/retroactive/png/Sega - Dreamcast-content (E).png
 share/libretro/assets/xmb/retroactive/png/Sega - Dreamcast-content (J).png
 share/libretro/assets/xmb/retroactive/png/Sega - Dreamcast-content (U).png
@@ -3469,9 +3863,15 @@ share/libretro/assets/xmb/retroactive/png/Tiger Telematics - Gizmondo-content.pn
 share/libretro/assets/xmb/retroactive/png/Tiger Telematics - Gizmondo.png
 share/libretro/assets/xmb/retroactive/png/Tomb Raider-content.png
 share/libretro/assets/xmb/retroactive/png/Tomb Raider.png
+share/libretro/assets/xmb/retroactive/png/Tomy - Tutor-content.png
+share/libretro/assets/xmb/retroactive/png/Tomy - Tutor.png
 share/libretro/assets/xmb/retroactive/png/Umtech - VideoBrain-content.png
 share/libretro/assets/xmb/retroactive/png/Uzebox-content.png
 share/libretro/assets/xmb/retroactive/png/Uzebox.png
+share/libretro/assets/xmb/retroactive/png/VM Labs - Nuon-content.png
+share/libretro/assets/xmb/retroactive/png/VM Labs - Nuon.png
+share/libretro/assets/xmb/retroactive/png/VTech - 3D Gamate-content.png
+share/libretro/assets/xmb/retroactive/png/VTech - 3D Gamate.png
 share/libretro/assets/xmb/retroactive/png/VTech - CreatiVision-content.png
 share/libretro/assets/xmb/retroactive/png/VTech - CreatiVision.png
 share/libretro/assets/xmb/retroactive/png/VTech - Socrates-content.png
@@ -3493,6 +3893,7 @@ share/libretro/assets/xmb/retroactive/png/battery-full.png
 share/libretro/assets/xmb/retroactive/png/bg.png
 share/libretro/assets/xmb/retroactive/png/bg_triangles.png
 share/libretro/assets/xmb/retroactive/png/bg_waves.png
+share/libretro/assets/xmb/retroactive/png/bluetooth.png
 share/libretro/assets/xmb/retroactive/png/clock.png
 share/libretro/assets/xmb/retroactive/png/close.png
 share/libretro/assets/xmb/retroactive/png/core-cheat-options.png
@@ -3512,6 +3913,8 @@ share/libretro/assets/xmb/retroactive/png/favorites.png
 share/libretro/assets/xmb/retroactive/png/file.png
 share/libretro/assets/xmb/retroactive/png/folder.png
 share/libretro/assets/xmb/retroactive/png/history.png
+share/libretro/assets/xmb/retroactive/png/iQue - iQue-content.png
+share/libretro/assets/xmb/retroactive/png/iQue - iQue.png
 share/libretro/assets/xmb/retroactive/png/image.png
 share/libretro/assets/xmb/retroactive/png/images.png
 share/libretro/assets/xmb/retroactive/png/input_ADC.png
@@ -3588,12 +3991,6 @@ share/libretro/assets/xmb/retroactive/png/movie.png
 share/libretro/assets/xmb/retroactive/png/movies.png
 share/libretro/assets/xmb/retroactive/png/music.png
 share/libretro/assets/xmb/retroactive/png/musics.png
-share/libretro/assets/xmb/retroactive/png/netplay - LAN Room-locked.png
-share/libretro/assets/xmb/retroactive/png/netplay - LAN Room.png
-share/libretro/assets/xmb/retroactive/png/netplay - iRoom-locked.png
-share/libretro/assets/xmb/retroactive/png/netplay - iRoom.png
-share/libretro/assets/xmb/retroactive/png/netplay - rooms-locked.png
-share/libretro/assets/xmb/retroactive/png/netplay - rooms.png
 share/libretro/assets/xmb/retroactive/png/netplay.png
 share/libretro/assets/xmb/retroactive/png/off.png
 share/libretro/assets/xmb/retroactive/png/on.png
@@ -3766,13 +4163,13 @@ share/libretro/assets/xmb/retrosystem/png/Microsoft - MSX-content.png
 share/libretro/assets/xmb/retrosystem/png/Microsoft - MSX.png
 share/libretro/assets/xmb/retrosystem/png/Microsoft - MSX2-content.png
 share/libretro/assets/xmb/retrosystem/png/Microsoft - MSX2.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX 360 W.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX 360-content.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX 360.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX One-content.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX One.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX-content.png
-share/libretro/assets/xmb/retrosystem/png/Microsoft - XBOX.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox 360 W.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox 360-content.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox 360.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox One-content.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox One.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox-content.png
+share/libretro/assets/xmb/retrosystem/png/Microsoft - Xbox.png
 share/libretro/assets/xmb/retrosystem/png/Minecraft-content.png
 share/libretro/assets/xmb/retrosystem/png/Minecraft.png
 share/libretro/assets/xmb/retrosystem/png/MrBoom-content.png
@@ -3851,12 +4248,12 @@ share/libretro/assets/xmb/retrosystem/png/Nintendo - Wii-content.png
 share/libretro/assets/xmb/retrosystem/png/Nintendo - Wii.png
 share/libretro/assets/xmb/retrosystem/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/retrosystem/png/Philips - Videopac+.png
+share/libretro/assets/xmb/retrosystem/png/Quake II-content.png
+share/libretro/assets/xmb/retrosystem/png/Quake II.png
+share/libretro/assets/xmb/retrosystem/png/Quake III-content.png
+share/libretro/assets/xmb/retrosystem/png/Quake III.png
 share/libretro/assets/xmb/retrosystem/png/Quake-content.png
 share/libretro/assets/xmb/retrosystem/png/Quake.png
-share/libretro/assets/xmb/retrosystem/png/Quake2-content.png
-share/libretro/assets/xmb/retrosystem/png/Quake2.png
-share/libretro/assets/xmb/retrosystem/png/Quake3-content.png
-share/libretro/assets/xmb/retrosystem/png/Quake3.png
 share/libretro/assets/xmb/retrosystem/png/RCA - Studio II-content.png
 share/libretro/assets/xmb/retrosystem/png/RCA - Studio II.png
 share/libretro/assets/xmb/retrosystem/png/RPG Maker-content.png
@@ -3955,6 +4352,7 @@ share/libretro/assets/xmb/retrosystem/png/battery-80.png
 share/libretro/assets/xmb/retrosystem/png/battery-charging.png
 share/libretro/assets/xmb/retrosystem/png/battery-full.png
 share/libretro/assets/xmb/retrosystem/png/bg.png
+share/libretro/assets/xmb/retrosystem/png/bluetooth.png
 share/libretro/assets/xmb/retrosystem/png/clock.png
 share/libretro/assets/xmb/retrosystem/png/close.png
 share/libretro/assets/xmb/retrosystem/png/core-cheat-options.png
@@ -4069,6 +4467,7 @@ share/libretro/assets/xmb/retrosystem/png/wifi.png
 share/libretro/assets/xmb/retrosystem/png/zip.png
 share/libretro/assets/xmb/systematic/README.md
 share/libretro/assets/xmb/systematic/font.ttf
+share/libretro/assets/xmb/systematic/png/1292 Advanced Programable Video System.png
 share/libretro/assets/xmb/systematic/png/2048-content.png
 share/libretro/assets/xmb/systematic/png/2048.png
 share/libretro/assets/xmb/systematic/png/APF - MP1000-content.png
@@ -4076,6 +4475,7 @@ share/libretro/assets/xmb/systematic/png/APF - MP1000.png
 share/libretro/assets/xmb/systematic/png/Amazon - Fire TV (2nd Gen).png
 share/libretro/assets/xmb/systematic/png/Amazon - Fire TV (3rd Gen).png
 share/libretro/assets/xmb/systematic/png/Amazon - Fire TV Cube.png
+share/libretro/assets/xmb/systematic/png/Amazon - Fire TV-content.png
 share/libretro/assets/xmb/systematic/png/Amazon - Fire TV.png
 share/libretro/assets/xmb/systematic/png/Amstrad - CPC-content.png
 share/libretro/assets/xmb/systematic/png/Amstrad - CPC.png
@@ -4106,14 +4506,20 @@ share/libretro/assets/xmb/systematic/png/Atari - Lynx PAG0201.png
 share/libretro/assets/xmb/systematic/png/Atari - Lynx-content.png
 share/libretro/assets/xmb/systematic/png/Atari - Lynx.png
 share/libretro/assets/xmb/systematic/png/Atari - Pong 25796.png
-share/libretro/assets/xmb/systematic/png/Atari - Pong C-100.png
 share/libretro/assets/xmb/systematic/png/Atari - Pong C-140.png
 share/libretro/assets/xmb/systematic/png/Atari - Pong C-200.png
+share/libretro/assets/xmb/systematic/png/Atari - Pong-content.png
+share/libretro/assets/xmb/systematic/png/Atari - Pong.png
 share/libretro/assets/xmb/systematic/png/Atari - ST-content.png
 share/libretro/assets/xmb/systematic/png/Atari - ST.png
+share/libretro/assets/xmb/systematic/png/Atari - VCS K.png
+share/libretro/assets/xmb/systematic/png/Atari - VCS O.png
+share/libretro/assets/xmb/systematic/png/Atari - VCS-content.png
 share/libretro/assets/xmb/systematic/png/Atari - VCS.png
 share/libretro/assets/xmb/systematic/png/Atari - XEGS-content.png
 share/libretro/assets/xmb/systematic/png/Atari - XEGS.png
+share/libretro/assets/xmb/systematic/png/BBC - Bridge Companion-content.png
+share/libretro/assets/xmb/systematic/png/BBC - Bridge Companion.png
 share/libretro/assets/xmb/systematic/png/Bally - Astrocade-content.png
 share/libretro/assets/xmb/systematic/png/Bally - Astrocade.png
 share/libretro/assets/xmb/systematic/png/Bandai - Pippin K.png
@@ -4123,6 +4529,8 @@ share/libretro/assets/xmb/systematic/png/Bandai - Playdia-content.png
 share/libretro/assets/xmb/systematic/png/Bandai - Playdia.png
 share/libretro/assets/xmb/systematic/png/Bandai - Super Vision 8000-content.png
 share/libretro/assets/xmb/systematic/png/Bandai - Super Vision 8000.png
+share/libretro/assets/xmb/systematic/png/Bandai - Terebikko-content.png
+share/libretro/assets/xmb/systematic/png/Bandai - Terebikko.png
 share/libretro/assets/xmb/systematic/png/Bandai - WonderSwan Color SCT-001 R.png
 share/libretro/assets/xmb/systematic/png/Bandai - WonderSwan Color WSC-001 B.png
 share/libretro/assets/xmb/systematic/png/Bandai - WonderSwan Color WSC-001 K.png
@@ -4134,12 +4542,15 @@ share/libretro/assets/xmb/systematic/png/Bandai - WonderSwan-content.png
 share/libretro/assets/xmb/systematic/png/Bandai - WonderSwan.png
 share/libretro/assets/xmb/systematic/png/Benesse - Pocket Challenge V2-content.png
 share/libretro/assets/xmb/systematic/png/Benesse - Pocket Challenge V2.png
+share/libretro/assets/xmb/systematic/png/Benesse - Pocket Challenge W-content.png
+share/libretro/assets/xmb/systematic/png/Benesse - Pocket Challenge W.png
 share/libretro/assets/xmb/systematic/png/Bit Corporation - Gamate-content.png
 share/libretro/assets/xmb/systematic/png/Bit Corporation - Gamate.png
 share/libretro/assets/xmb/systematic/png/CHIP-8-content.png
 share/libretro/assets/xmb/systematic/png/CHIP-8.png
 share/libretro/assets/xmb/systematic/png/Cannonball-content.png
 share/libretro/assets/xmb/systematic/png/Cannonball.png
+share/libretro/assets/xmb/systematic/png/Capcom - CP System I Changer.png
 share/libretro/assets/xmb/systematic/png/Capcom - CP System I-content.png
 share/libretro/assets/xmb/systematic/png/Capcom - CP System I.png
 share/libretro/assets/xmb/systematic/png/Capcom - CP System II (J).png
@@ -4173,20 +4584,26 @@ share/libretro/assets/xmb/systematic/png/Coleco - Telstar 6045.png
 share/libretro/assets/xmb/systematic/png/Coleco - Telstar 6065.png
 share/libretro/assets/xmb/systematic/png/Coleco - Telstar 6071.png
 share/libretro/assets/xmb/systematic/png/Coleco - Telstar 6135.png
+share/libretro/assets/xmb/systematic/png/Commodore - 64 (PP)-content.png
+share/libretro/assets/xmb/systematic/png/Commodore - 64 (PP).png
+share/libretro/assets/xmb/systematic/png/Commodore - 64 (Tapes)-content.png
+share/libretro/assets/xmb/systematic/png/Commodore - 64 (Tapes).png
 share/libretro/assets/xmb/systematic/png/Commodore - 64 64C.png
 share/libretro/assets/xmb/systematic/png/Commodore - 64 Games System.png
 share/libretro/assets/xmb/systematic/png/Commodore - 64-content.png
 share/libretro/assets/xmb/systematic/png/Commodore - 64.png
-share/libretro/assets/xmb/systematic/png/Commodore - Amiga CD32-content.png
-share/libretro/assets/xmb/systematic/png/Commodore - Amiga CD32.png
 share/libretro/assets/xmb/systematic/png/Commodore - Amiga CDTV-content.png
 share/libretro/assets/xmb/systematic/png/Commodore - Amiga CDTV.png
 share/libretro/assets/xmb/systematic/png/Commodore - Amiga-content.png
 share/libretro/assets/xmb/systematic/png/Commodore - Amiga.png
+share/libretro/assets/xmb/systematic/png/Commodore - CD32-content.png
+share/libretro/assets/xmb/systematic/png/Commodore - CD32.png
 share/libretro/assets/xmb/systematic/png/Commodore - Plus-4-content.png
 share/libretro/assets/xmb/systematic/png/Commodore - Plus-4.png
 share/libretro/assets/xmb/systematic/png/Commodore - VIC-20-content.png
 share/libretro/assets/xmb/systematic/png/Commodore - VIC-20.png
+share/libretro/assets/xmb/systematic/png/Connor - VideoSmarts-content.png
+share/libretro/assets/xmb/systematic/png/Connor - VideoSmarts.png
 share/libretro/assets/xmb/systematic/png/DOOM-content.png
 share/libretro/assets/xmb/systematic/png/DOOM.png
 share/libretro/assets/xmb/systematic/png/DOS-content.png
@@ -4201,15 +4618,15 @@ share/libretro/assets/xmb/systematic/png/Entex - Adventure Vision-content.png
 share/libretro/assets/xmb/systematic/png/Entex - Adventure Vision.png
 share/libretro/assets/xmb/systematic/png/Entex - Select-A-Game-content.png
 share/libretro/assets/xmb/systematic/png/Entex - Select-A-Game.png
+share/libretro/assets/xmb/systematic/png/Epoch - Cassette Vision Jr.png
 share/libretro/assets/xmb/systematic/png/Epoch - Cassette Vision-content.png
 share/libretro/assets/xmb/systematic/png/Epoch - Cassette Vision.png
 share/libretro/assets/xmb/systematic/png/Epoch - Game Pocket Computer-content.png
 share/libretro/assets/xmb/systematic/png/Epoch - Game Pocket Computer.png
 share/libretro/assets/xmb/systematic/png/Epoch - Super Cassette Vision-content.png
 share/libretro/assets/xmb/systematic/png/Epoch - Super Cassette Vision.png
+share/libretro/assets/xmb/systematic/png/Epoch - TV Tennis Electrotennis-content.png
 share/libretro/assets/xmb/systematic/png/Epoch - TV Tennis Electrotennis.png
-share/libretro/assets/xmb/systematic/png/FB Alpha - Arcade Games-content.png
-share/libretro/assets/xmb/systematic/png/FB Alpha - Arcade Games.png
 share/libretro/assets/xmb/systematic/png/FBNeo - Arcade Games-content.png
 share/libretro/assets/xmb/systematic/png/FBNeo - Arcade Games.png
 share/libretro/assets/xmb/systematic/png/FFmpeg-content.png
@@ -4222,14 +4639,20 @@ share/libretro/assets/xmb/systematic/png/Flashback.png
 share/libretro/assets/xmb/systematic/png/Fujitsu - FM Towns Marty 2.png
 share/libretro/assets/xmb/systematic/png/Fujitsu - FM Towns Marty-content.png
 share/libretro/assets/xmb/systematic/png/Fujitsu - FM Towns Marty.png
+share/libretro/assets/xmb/systematic/png/Fukutake Publishing - StudyBox HVC-101.png
+share/libretro/assets/xmb/systematic/png/Fukutake Publishing - StudyBox-content.png
+share/libretro/assets/xmb/systematic/png/Fukutake Publishing - StudyBox.png
 share/libretro/assets/xmb/systematic/png/Funtech - Super Acan-content.png
 share/libretro/assets/xmb/systematic/png/Funtech - Super Acan.png
 share/libretro/assets/xmb/systematic/png/GCE - Vectrex-content.png
 share/libretro/assets/xmb/systematic/png/GCE - Vectrex.png
+share/libretro/assets/xmb/systematic/png/Gakken - Compact Vision TV Boy-content.png
+share/libretro/assets/xmb/systematic/png/Gakken - Compact Vision TV Boy.png
 share/libretro/assets/xmb/systematic/png/Game Park - GP32-content.png
 share/libretro/assets/xmb/systematic/png/Game Park - GP32.png
 share/libretro/assets/xmb/systematic/png/Game-content.png
 share/libretro/assets/xmb/systematic/png/Game.png
+share/libretro/assets/xmb/systematic/png/Google - Nexus Player-content.png
 share/libretro/assets/xmb/systematic/png/Google - Nexus Player.png
 share/libretro/assets/xmb/systematic/png/Google - Stadia G.png
 share/libretro/assets/xmb/systematic/png/Google - Stadia W.png
@@ -4264,26 +4687,34 @@ share/libretro/assets/xmb/systematic/png/Handheld Electronic Game - GW TL-28.png
 share/libretro/assets/xmb/systematic/png/Handheld Electronic Game - M 2937.png
 share/libretro/assets/xmb/systematic/png/Handheld Electronic Game - M 2938.png
 share/libretro/assets/xmb/systematic/png/Handheld Electronic Game - M 5409.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game CN-07.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game FL-02.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game IP-05.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game LN-08.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game MH-06.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game MT-03.png
-share/libretro/assets/xmb/systematic/png/Handheld Electronic Game RC-04.png
 share/libretro/assets/xmb/systematic/png/Handheld Electronic Game-content.png
 share/libretro/assets/xmb/systematic/png/Handheld Electronic Game.png
 share/libretro/assets/xmb/systematic/png/Hartung - Game Master-content.png
 share/libretro/assets/xmb/systematic/png/Hartung - Game Master.png
+share/libretro/assets/xmb/systematic/png/Intellivision - Amico H.png
+share/libretro/assets/xmb/systematic/png/Intellivision - Amico K.png
+share/libretro/assets/xmb/systematic/png/Intellivision - Amico Q.png
+share/libretro/assets/xmb/systematic/png/Intellivision - Amico R.png
+share/libretro/assets/xmb/systematic/png/Intellivision - Amico-content (SD).png
+share/libretro/assets/xmb/systematic/png/Intellivision - Amico-content.png
 share/libretro/assets/xmb/systematic/png/Intellivision - Amico.png
 share/libretro/assets/xmb/systematic/png/Interton - VC 4000-content.png
 share/libretro/assets/xmb/systematic/png/Interton - VC 4000.png
+share/libretro/assets/xmb/systematic/png/Interton - Video 2000-content.png
+share/libretro/assets/xmb/systematic/png/Interton - Video 2000.png
+share/libretro/assets/xmb/systematic/png/Konami - Picno-content.png
+share/libretro/assets/xmb/systematic/png/Konami - Picno.png
+share/libretro/assets/xmb/systematic/png/LJN - Video Art.png
+share/libretro/assets/xmb/systematic/png/LeapFrog - LeapPad-content.png
+share/libretro/assets/xmb/systematic/png/LeapFrog - LeapPad.png
 share/libretro/assets/xmb/systematic/png/LeapFrog - Leapster Learning Game System 1 GS.png
 share/libretro/assets/xmb/systematic/png/LeapFrog - Leapster Learning Game System 1 PQ.png
 share/libretro/assets/xmb/systematic/png/LeapFrog - Leapster Learning Game System 2 K.png
 share/libretro/assets/xmb/systematic/png/LeapFrog - Leapster Learning Game System 2 PQ.png
 share/libretro/assets/xmb/systematic/png/LeapFrog - Leapster Learning Game System-content.png
 share/libretro/assets/xmb/systematic/png/LeapFrog - Leapster Learning Game System.png
+share/libretro/assets/xmb/systematic/png/LeapFrog - My First LeapPad-content.png
+share/libretro/assets/xmb/systematic/png/LeapFrog - My First LeapPad.png
 share/libretro/assets/xmb/systematic/png/Libretro - Pad.png
 share/libretro/assets/xmb/systematic/png/Lutro-content.png
 share/libretro/assets/xmb/systematic/png/Lutro.png
@@ -4324,32 +4755,41 @@ share/libretro/assets/xmb/systematic/png/Mattel - Intellivision 58-100.png
 share/libretro/assets/xmb/systematic/png/Mattel - Intellivision 5872.png
 share/libretro/assets/xmb/systematic/png/Mattel - Intellivision-content.png
 share/libretro/assets/xmb/systematic/png/Mattel - Intellivision.png
+share/libretro/assets/xmb/systematic/png/Microsoft - MSX CPC-50.png
 share/libretro/assets/xmb/systematic/png/Microsoft - MSX-content.png
 share/libretro/assets/xmb/systematic/png/Microsoft - MSX.png
 share/libretro/assets/xmb/systematic/png/Microsoft - MSX2-content.png
 share/libretro/assets/xmb/systematic/png/Microsoft - MSX2.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 E K.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 E KT.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 K.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 KT.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 S K.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 S KT.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 S W.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 S WT.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360 WT.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360-content.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX 360.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX G.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX O.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX One S W.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX One S WT.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX One X K.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX One-content.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX One.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX S.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX W.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX-content.png
-share/libretro/assets/xmb/systematic/png/Microsoft - XBOX.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 (Digital)-content.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 (Digital).png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 E K.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 E KT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 K.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 KT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 S K.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 S KT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 S W.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 S WT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360 WT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360-content.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox 360.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox G.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox O.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox One S W.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox One S WT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox One X K.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox One-content.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox One.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox S.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox Series S K.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox Series S W.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox Series S WT.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox Series X W.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox Series X-content.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox Series X.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox W.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox-content.png
+share/libretro/assets/xmb/systematic/png/Microsoft - Xbox.png
 share/libretro/assets/xmb/systematic/png/Milton Bradley - Microvision Alt.png
 share/libretro/assets/xmb/systematic/png/Milton Bradley - Microvision-content.png
 share/libretro/assets/xmb/systematic/png/Milton Bradley - Microvision.png
@@ -4382,6 +4822,8 @@ share/libretro/assets/xmb/systematic/png/NEC - PC-FX-content.png
 share/libretro/assets/xmb/systematic/png/NEC - PC-FX.png
 share/libretro/assets/xmb/systematic/png/Neo Geo-content.png
 share/libretro/assets/xmb/systematic/png/Neo Geo.png
+share/libretro/assets/xmb/systematic/png/Nichibutsu - My Vision-content.png
+share/libretro/assets/xmb/systematic/png/Nichibutsu - My Vision.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Color TV-Game CTG-15S.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Color TV-Game CTG-15V.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Color TV-Game CTG-6S.png
@@ -4491,7 +4933,6 @@ share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64 NUS-001 K.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64 NUS-001 O.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64 NUS-001 P.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64 NUS-001 Q.png
-share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64 iQue (Ch).png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64-content.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo 64DD-content.png
@@ -4525,8 +4966,6 @@ share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo Entertainment Syste
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo Entertainment System-content (J).png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo Entertainment System-content.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo Entertainment System.png
-share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo Wii (DLC)-content.png
-share/libretro/assets/xmb/systematic/png/Nintendo - Nintendo Wii (DLC).png
 share/libretro/assets/xmb/systematic/png/Nintendo - Pokemon Mini MIN-001 G.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Pokemon Mini MIN-001 Q.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Pokemon Mini-content.png
@@ -4552,6 +4991,7 @@ share/libretro/assets/xmb/systematic/png/Nintendo - Super Nintendo Entertainment
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 B.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 BK.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 BR.png
+share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 K.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 KB.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 KR.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 R.png
@@ -4561,6 +5001,7 @@ share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001 Y.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-001.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-007 BR.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-007 K.png
+share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-007 KT.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-007 R.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-007 Y.png
 share/libretro/assets/xmb/systematic/png/Nintendo - Switch HAC-007.png
@@ -4596,17 +5037,22 @@ share/libretro/assets/xmb/systematic/png/Nokia - N-Gage-content.png
 share/libretro/assets/xmb/systematic/png/Nokia - N-Gage.png
 share/libretro/assets/xmb/systematic/png/Nvidia - Shield TV.png
 share/libretro/assets/xmb/systematic/png/Ouya - Ouya.png
+share/libretro/assets/xmb/systematic/png/PC-50X - Palladium Tele Cassetten Game 825-530.png
+share/libretro/assets/xmb/systematic/png/PC-50X - Palladium Tele Cassetten Game 825-581.png
+share/libretro/assets/xmb/systematic/png/PC-50X - SHG Black Point FS-1003.png
 share/libretro/assets/xmb/systematic/png/Philips - CDi-content.png
 share/libretro/assets/xmb/systematic/png/Philips - CDi.png
 share/libretro/assets/xmb/systematic/png/Philips - Videopac+-content.png
 share/libretro/assets/xmb/systematic/png/Philips - Videopac+.png
+share/libretro/assets/xmb/systematic/png/Pioneer - LaserActive.png
+share/libretro/assets/xmb/systematic/png/Pioneer - Laseractive-content.png
 share/libretro/assets/xmb/systematic/png/PlayJam - Game Stick.png
+share/libretro/assets/xmb/systematic/png/Quake II-content.png
+share/libretro/assets/xmb/systematic/png/Quake II.png
+share/libretro/assets/xmb/systematic/png/Quake III-content.png
+share/libretro/assets/xmb/systematic/png/Quake III.png
 share/libretro/assets/xmb/systematic/png/Quake-content.png
 share/libretro/assets/xmb/systematic/png/Quake.png
-share/libretro/assets/xmb/systematic/png/Quake2-content.png
-share/libretro/assets/xmb/systematic/png/Quake2.png
-share/libretro/assets/xmb/systematic/png/Quake3-content.png
-share/libretro/assets/xmb/systematic/png/Quake3.png
 share/libretro/assets/xmb/systematic/png/RCA - Studio II-content.png
 share/libretro/assets/xmb/systematic/png/RCA - Studio II.png
 share/libretro/assets/xmb/systematic/png/RPG Maker-content.png
@@ -4641,6 +5087,8 @@ share/libretro/assets/xmb/systematic/png/Sega - 32X MK-1631-84000 (E).png
 share/libretro/assets/xmb/systematic/png/Sega - 32X Neptune (U).png
 share/libretro/assets/xmb/systematic/png/Sega - 32X-content.png
 share/libretro/assets/xmb/systematic/png/Sega - 32X.png
+share/libretro/assets/xmb/systematic/png/Sega - Beena-content.png
+share/libretro/assets/xmb/systematic/png/Sega - Beena.png
 share/libretro/assets/xmb/systematic/png/Sega - Dreamcast B.png
 share/libretro/assets/xmb/systematic/png/Sega - Dreamcast H.png
 share/libretro/assets/xmb/systematic/png/Sega - Dreamcast K.png
@@ -4700,6 +5148,8 @@ share/libretro/assets/xmb/systematic/png/Sega - Saturn MK-80000A (U).png
 share/libretro/assets/xmb/systematic/png/Sega - Saturn Pluto (U).png
 share/libretro/assets/xmb/systematic/png/Sega - Saturn-content.png
 share/libretro/assets/xmb/systematic/png/Sega - Saturn.png
+share/libretro/assets/xmb/systematic/png/Sega - Video Driver-content.png
+share/libretro/assets/xmb/systematic/png/Sega - Video Driver.png
 share/libretro/assets/xmb/systematic/png/Sharp - X68000 K.png
 share/libretro/assets/xmb/systematic/png/Sharp - X68000 KT.png
 share/libretro/assets/xmb/systematic/png/Sharp - X68000 ST.png
@@ -4727,12 +5177,7 @@ share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 (Downloadable)-con
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 (Downloadable).png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 (PSN)-content.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 (PSN).png
-share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 CECH-2000 K.png
-share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 CECH-2000 KT.png
-share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 CECH-4000 KT.png
-share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3 CECHA00 KT.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3-content.png
-share/libretro/assets/xmb/systematic/png/Sony - PlayStation 3.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4 CUH-1000 KT.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4 CUH-1000 S.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4 CUH-1000 ST.png
@@ -4746,6 +5191,10 @@ share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4 CUH-7000 K.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4 CUH-7000 KT.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4-content.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation 4.png
+share/libretro/assets/xmb/systematic/png/Sony - PlayStation 5 T.png
+share/libretro/assets/xmb/systematic/png/Sony - PlayStation 5 WT.png
+share/libretro/assets/xmb/systematic/png/Sony - PlayStation 5-content.png
+share/libretro/assets/xmb/systematic/png/Sony - PlayStation 5.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation DTL-H1000.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation DTL-H1200.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation DTL-H3000.png
@@ -4784,12 +5233,21 @@ share/libretro/assets/xmb/systematic/png/Sony - PlayStation Vita-content.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation Vita.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation-content.png
 share/libretro/assets/xmb/systematic/png/Sony - PlayStation.png
+share/libretro/assets/xmb/systematic/png/Sony - Playstation 3 CECH-2000 K.png
+share/libretro/assets/xmb/systematic/png/Sony - Playstation 3 CECH-2000 KT.png
 share/libretro/assets/xmb/systematic/png/Sony - Playstation 3 CECH-4000 K.png
+share/libretro/assets/xmb/systematic/png/Sony - Playstation 3 CECH-4000 KT.png
+share/libretro/assets/xmb/systematic/png/Sony - Playstation 3 CECHA00 KT.png
+share/libretro/assets/xmb/systematic/png/Sony - Playstation 3.png
 share/libretro/assets/xmb/systematic/png/Spectravideo - SV 328.png
 share/libretro/assets/xmb/systematic/png/Spectravideo - SV-content.png
 share/libretro/assets/xmb/systematic/png/Spectravideo - SV.png
 share/libretro/assets/xmb/systematic/png/TIC-80-content.png
 share/libretro/assets/xmb/systematic/png/TIC-80.png
+share/libretro/assets/xmb/systematic/png/Takara - Video Challenger-content.png
+share/libretro/assets/xmb/systematic/png/Takara - Video Challenger.png
+share/libretro/assets/xmb/systematic/png/Tandy - Video Information System-content.png
+share/libretro/assets/xmb/systematic/png/Tandy - Video Information System.png
 share/libretro/assets/xmb/systematic/png/Tapwave - Zodiac-content.png
 share/libretro/assets/xmb/systematic/png/Tapwave - Zodiac.png
 share/libretro/assets/xmb/systematic/png/The 3DO Company - 3DO FZ-10.png
@@ -4801,19 +5259,27 @@ share/libretro/assets/xmb/systematic/png/The 3DO Company - 3DO.png
 share/libretro/assets/xmb/systematic/png/Thomson - MOTO Cartridge.png
 share/libretro/assets/xmb/systematic/png/Thomson - MOTO TO8.png
 share/libretro/assets/xmb/systematic/png/Thomson - MOTO TO8D.png
-share/libretro/assets/xmb/systematic/png/Thomson - MOTO Tape.png
 share/libretro/assets/xmb/systematic/png/Thomson - MOTO-content.png
 share/libretro/assets/xmb/systematic/png/Thomson - MOTO.png
+share/libretro/assets/xmb/systematic/png/Tiger - Game.com Pocket Pro.png
 share/libretro/assets/xmb/systematic/png/Tiger - Game.com-content.png
 share/libretro/assets/xmb/systematic/png/Tiger - Game.com.png
 share/libretro/assets/xmb/systematic/png/Tiger Telematics - Gizmondo-content.png
 share/libretro/assets/xmb/systematic/png/Tiger Telematics - Gizmondo.png
 share/libretro/assets/xmb/systematic/png/Tomb Raider-content.png
 share/libretro/assets/xmb/systematic/png/Tomb Raider.png
+share/libretro/assets/xmb/systematic/png/Tomy - Tutor-content.png
+share/libretro/assets/xmb/systematic/png/Tomy - Tutor.png
 share/libretro/assets/xmb/systematic/png/Umtech - VideoBrain-content.png
 share/libretro/assets/xmb/systematic/png/Umtech - VideoBrain.png
+share/libretro/assets/xmb/systematic/png/Unisonic - Champion 2711-content.png
+share/libretro/assets/xmb/systematic/png/Unisonic - Champion 2711.png
 share/libretro/assets/xmb/systematic/png/Uzebox-content.png
 share/libretro/assets/xmb/systematic/png/Uzebox.png
+share/libretro/assets/xmb/systematic/png/VM Labs - Nuon-content.png
+share/libretro/assets/xmb/systematic/png/VM Labs - Nuon.png
+share/libretro/assets/xmb/systematic/png/VTech - 3D Gamate-content.png
+share/libretro/assets/xmb/systematic/png/VTech - 3D Gamate.png
 share/libretro/assets/xmb/systematic/png/VTech - CreatiVision-content.png
 share/libretro/assets/xmb/systematic/png/VTech - CreatiVision.png
 share/libretro/assets/xmb/systematic/png/VTech - Socrates Alt.png
@@ -4825,9 +5291,13 @@ share/libretro/assets/xmb/systematic/png/VTech - V.Smile P.png
 share/libretro/assets/xmb/systematic/png/VTech - V.Smile-content.png
 share/libretro/assets/xmb/systematic/png/VTech - V.Smile.png
 share/libretro/assets/xmb/systematic/png/Valve - Steam Link.png
+share/libretro/assets/xmb/systematic/png/View-Master - Interactive Vision-content.png
+share/libretro/assets/xmb/systematic/png/View-Master - Interactive Vision.png
 share/libretro/assets/xmb/systematic/png/Watara - Supervision Original.png
 share/libretro/assets/xmb/systematic/png/Watara - Supervision-content.png
 share/libretro/assets/xmb/systematic/png/Watara - Supervision.png
+share/libretro/assets/xmb/systematic/png/Worlds of Wonder - Action Max-content.png
+share/libretro/assets/xmb/systematic/png/Worlds of Wonder - Action Max.png
 share/libretro/assets/xmb/systematic/png/ZAPiT - Game Wave-content.png
 share/libretro/assets/xmb/systematic/png/ZAPiT - Game Wave.png
 share/libretro/assets/xmb/systematic/png/Zeebo - Zeebo.png
@@ -4842,6 +5312,7 @@ share/libretro/assets/xmb/systematic/png/battery-80.png
 share/libretro/assets/xmb/systematic/png/battery-charging.png
 share/libretro/assets/xmb/systematic/png/battery-full.png
 share/libretro/assets/xmb/systematic/png/bg.png
+share/libretro/assets/xmb/systematic/png/bluetooth.png
 share/libretro/assets/xmb/systematic/png/clock.png
 share/libretro/assets/xmb/systematic/png/close.png
 share/libretro/assets/xmb/systematic/png/core-cheat-options.png
@@ -4861,6 +5332,8 @@ share/libretro/assets/xmb/systematic/png/favorites.png
 share/libretro/assets/xmb/systematic/png/file.png
 share/libretro/assets/xmb/systematic/png/folder.png
 share/libretro/assets/xmb/systematic/png/history.png
+share/libretro/assets/xmb/systematic/png/iQue - iQue-content.png
+share/libretro/assets/xmb/systematic/png/iQue - iQue.png
 share/libretro/assets/xmb/systematic/png/image.png
 share/libretro/assets/xmb/systematic/png/images.png
 share/libretro/assets/xmb/systematic/png/input_ADC.png

@@ -1,5 +1,5 @@
 PORTNAME=	retroarch-assets
-DISTVERSION=	g20200317
+DISTVERSION=	g20210802
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
@@ -10,6 +10,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	e09cbd5a0c7c324cccc96c5804a5e03e5cb9b26c
+GH_TAGNAME=	5f1b2caf7f635be055d03b0d23b146783a44aa6c
 
 .include <bsd.port.mk>
