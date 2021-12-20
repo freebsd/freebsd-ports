@@ -4627,6 +4627,7 @@
     SUBDIR += py-iniparse
     SUBDIR += py-installer
     SUBDIR += py-intbitset
+    SUBDIR += py-intelhex
     SUBDIR += py-intervals
     SUBDIR += py-intervaltree
     SUBDIR += py-invoke

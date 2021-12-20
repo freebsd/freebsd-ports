@@ -1,0 +1,7 @@
+The intelhex Python library is developed to read, write, create from
+scratch and manipulate data from Intel HEX file format.  The distribution
+package also includes several convenience Python scripts, including
+"classic" hex2bin and bin2hex converters and more, those based on the
+library itself.
+
+WWW: https://github.com/python-intelhex/intelhex
