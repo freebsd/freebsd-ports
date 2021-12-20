@@ -1,8 +1,7 @@
 # Created by: Alex Pesternikov <apesternikov@page2rss.com>
 
 PORTNAME=	cog
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
