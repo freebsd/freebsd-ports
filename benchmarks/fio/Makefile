@@ -1,7 +1,7 @@
 # Created by: luigi@FreeBSD.org
 
 PORTNAME=	fio
-PORTVERSION=	3.28
+PORTVERSION=	3.29
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
