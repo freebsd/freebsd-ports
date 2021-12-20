@@ -1,18 +1,18 @@
 #!/bin/sh
 
-# script to run PHPlist from commandline. You may need to edit this to make it work
-# with your shell environment. The following should work for Bash on Fedora Linux
+# script to run phpList from commandline. You may need to edit this to make it work
+# with your shell environment. The following should work for Bash on Linux
 # but this may vary strongly in other situations. You will need to dig into the
 # code to make sure it works for you.
 
 # in commandline mode, access is restricted to users who are listed in the config file
 # check README.commandline for more info
+#
+# when you set this file up, and place it in your PATH, you can do eg
+#  $ phplist -pprocessqueue
+# to run the queue
 
-# identify the config file for your installation
-CONFIG=%%WWWDIR%%/lists/config/config.php
-export CONFIG
-
-# alternatively you can use -c <path to config file> on the commandline
-
-# run the PHPlist index file with all parameters passed to this script
-exec %%LOCALBASE%%/bin/php %%WWWDIR%%/lists/admin/index.php $*
+# run the phpList index file with all parameters passed to this script
+# make sure the php binary is "cli"
+# 
+%%LOCALBASE%%/bin/php %%WWWDIR%%/lists/admin/index.php -c %%WWWDIR%%/lists/config/config.php $*
