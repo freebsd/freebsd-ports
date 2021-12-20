@@ -1,30 +1,29 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
 
 PORTNAME=	wargus
-PORTVERSION=	2.4.2
+PORTVERSION=	3.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
+COMMENT=	Warcraft 2 mod for the Stratagus game engine
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	stratagus:games/stratagus \
-		ffmpeg2theora:multimedia/ffmpeg2theora \
-		cdparanoia:audio/cdparanoia
+		cdparanoia:audio/cdparanoia \
+		ffmpeg:multimedia/ffmpeg
 BUILD_DEPENDS=	stratagus:games/stratagus
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wargus
 
-USES=		cmake compiler:c++11-lang gnome pkgconfig xorg
+USES=		cmake compiler:c++11-lang pkgconfig
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DSHAREDIR:STRING="${DATADIR_REL}"
-USE_XORG=	x11
-USE_GNOME=	gtk20
+CMAKE_OFF=	WITH_STORMLIB  # not in ports
 SUB_FILES=	pkg-message
 
 PORTDATA=	*
@@ -33,10 +32,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/doc/*.6 ${STAGEDIR}${MAN6PREFIX}/share/man/man6/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${WRKSRC}/doc/changelog \
+		${WRKSRC}/doc/pud-specs.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

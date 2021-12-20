@@ -1,13 +1,13 @@
-Wargus is a Warcraft 2 mod that allows you to play Warcraft 2 with the
-Stratagus engine, as opposed to playing it with the original Warcraft 2
-one.
+Wargus is a Warcraft 2 Mod that allows you to play Warcraft 2 with the
+Stratagus engine. The mod is very similar to the original Warcraft 2, with
+enhancements towards Starcraft and other more modern real time strategy
+games.
 
-You will need a legal copy of Warcraft 2 (original DOS version required,
-won't work with the Battle.net Edition) since Wargus doesn't come with
-any graphics or sounds itself.
+* Wargus is supported on multiple systems
+* Can be played high resolution, supports OpenGL including Shaders
+* Local or Internet multiplayer
+* Extensive game configuration using Lua
+* Extensive game configuration from the command line
 
-Since Wargus uses a different engine, not all things will work the same
-as they did in the original game. If you want an absolutely unchanged
-Warcraft 2 experience, you will still have to play the original.
-
-WWW: http://wargus.sourceforge.net/
+WWW: https://stratagus.com/
+WWW: https://github.com/Wargus/wargus

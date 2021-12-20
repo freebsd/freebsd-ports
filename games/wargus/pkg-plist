@@ -1,10 +1,8 @@
-bin/aleonas_tales
 bin/pudconvert
 bin/wargus
 bin/wartool
-man/man6/pudconvert.6.gz
-man/man6/wargus.6.gz
-man/man6/wartool.6.gz
-share/applications/aleonas_tales.desktop
+share/man/man6/pudconvert.6.gz
+share/man/man6/wargus.6.gz
+share/man/man6/wartool.6.gz
 share/applications/wargus.desktop
 share/pixmaps/wargus.png

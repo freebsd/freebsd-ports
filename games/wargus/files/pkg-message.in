@@ -1,32 +1,20 @@
 [
 { type: install
   message: <<EOM
-The Wargus tool has been installed to "%%PREFIX%%/bin/wartool".
+Wartool has been installed to "%%PREFIX%%/bin/wartool".
+Wargus has been installed to "%%PREFIX%%/bin/wargus"
 
-You can now use this tool to extract Warcraft 2 data for use with the
-Stratagus engine from the following CDs:
+Either can be used to extract Warcraft 2 data for use with the
+Stratagus engine from the following sources:
 
-* US Expansion (both MAC/DOS)
-* US Original (both MAC/DOS)
-* UK/Australian Original
-* UK/Australian Expansion
-* German Original
-* German Expansion
-* Spanish Original
+* Original Warcraft 2 DOS REZDAT.WAR
+* Battle.Net Edition INSTALL.MPQ/INSTALL.EXE
+* GoG installation exe
 
-If you have one of the above CDs mounted on /mnt, 'su' to root, and try
-executing:
+Manual for wargus:	man 6 wargus
+Manual for wartool:	man 6 wartool
 
-# wartool /mnt %%DATADIR%%
-
-or
-
-# wartool /mnt/data %%DATADIR%%
-
-After your Warcraft 2 data has been successfully extracted, run 'wargus' as
-the user you intend to play the game with.
-
-For more information, please visit: http://wargus.sourceforge.net/
+For more information, please visit: https://stratagus.com/
 EOM
 }
 ]
