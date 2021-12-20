@@ -1,7 +1,3 @@
-TIMESTAMP = 1633451473
-SHA256 (google-or-tools-v9.1_GH0.tar.gz) = b51ca3b08f768de5a0c1029f7127264640e50d9c7b83383a175109ef213bd307
-SIZE (google-or-tools-v9.1_GH0.tar.gz) = 245524168
-SHA256 (c68ae78b1d78406dc4379afcacbfb156492c80c0.patch) = c073b783b1923da1f63f5f4f089aac20213b7e8bdb8ef0ccfa94ba4f6190b87b
-SIZE (c68ae78b1d78406dc4379afcacbfb156492c80c0.patch) = 680
-SHA256 (3bbe33d9776c8f200a3296344e7df7bdf91188fe.patch) = 1b4e3d25d019877e5622acbf69367e0e615c88f45bb336c20fffedf74786be50
-SIZE (3bbe33d9776c8f200a3296344e7df7bdf91188fe.patch) = 2778
+TIMESTAMP = 1639979871
+SHA256 (google-or-tools-v9.2_GH0.tar.gz) = 5337935ea1fa010bb62cf0fc8bedd6de07dda77bff3db7a0f6a36c84c7bd58db
+SIZE (google-or-tools-v9.2_GH0.tar.gz) = 246278500

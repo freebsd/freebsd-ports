@@ -1,6 +1,6 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1
+DISTVERSION=	9.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,13 +24,15 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libglog.so:devel/glog \
 		libprotobuf.so:devel/protobuf
 
-USES=		blaslapack cmake compiler:c++17-lang pkgconfig
+USES=		blaslapack cmake:testing compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_PYTHON BUILD_DEPS INSTALL_BUILD_DEPS BUILD_EXAMPLES BUILD_SAMPLES
 CMAKE_ON=	BUILD_CXX
+CMAKE_TESTING_ON=	BUILD_EXAMPLES BUILD_CXX_EXAMPLES
+
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
 
 OPTIONS_DEFINE=		FLATZINC SCIP

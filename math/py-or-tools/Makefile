@@ -1,12 +1,8 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1
+DISTVERSION=	9.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	c68ae78b1d78406dc4379afcacbfb156492c80c0.patch:-p1 # fixes https://github.com/google/or-tools/issues/2526
-PATCHFILES+=	3bbe33d9776c8f200a3296344e7df7bdf91188fe.patch:-p1 # fixes https://github.com/google/or-tools/issues/2814
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Google's Operations Research tools (Python binding)
@@ -16,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
 BROKEN_i386=	SWIG wrapped code invalid in 32 bit architecture, regenerate code using -DSWIGWORDSIZE32 # see https://github.com/google/or-tools/issues/2130
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>0:devel/py-absl-py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mypy-protobuf>0:devel/py-mypy-protobuf@${PY_FLAVOR} \
+PY_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}absl-py>0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
 		protoc-gen-mypy:devel/py-mypy-protobuf@${PY_FLAVOR} \

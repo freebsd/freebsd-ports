@@ -13,6 +13,7 @@ include/ortools/base/adjustable_priority_queue.h
 include/ortools/base/base_export.h
 include/ortools/base/basictypes.h
 include/ortools/base/bitmap.h
+include/ortools/base/case.h
 include/ortools/base/cleanup.h
 include/ortools/base/commandlineflags.h
 include/ortools/base/container_logging.h
@@ -39,7 +40,6 @@ include/ortools/base/protobuf_util.h
 include/ortools/base/protoutil.h
 include/ortools/base/ptr_util.h
 include/ortools/base/python-swig.h
-include/ortools/base/random.h
 include/ortools/base/raw_logging.h
 include/ortools/base/recordio.h
 include/ortools/base/small_map.h
@@ -159,6 +159,7 @@ include/ortools/linear_solver/scip_proto_solver.h
 include/ortools/lp_data/lp_data.h
 include/ortools/lp_data/lp_data_utils.h
 include/ortools/lp_data/lp_decomposer.h
+include/ortools/lp_data/lp_parser.h
 include/ortools/lp_data/lp_print_utils.h
 include/ortools/lp_data/lp_types.h
 include/ortools/lp_data/lp_utils.h
@@ -337,12 +338,12 @@ lib/cmake/ortools/ortoolsConfig.cmake
 lib/cmake/ortools/ortoolsConfigVersion.cmake
 lib/cmake/ortools/ortoolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ortools/ortoolsTargets.cmake
-%%FLATZINC%%lib/libflatzinc.so
-%%FLATZINC%%lib/libflatzinc.so.9
-%%FLATZINC%%lib/libflatzinc.so.9.1.9999
+lib/libflatzinc.so
+lib/libflatzinc.so.9
+lib/libflatzinc.so.9.2.9999
 lib/libortools.so
 lib/libortools.so.9
-lib/libortools.so.9.1.9999
+lib/libortools.so.9.2.9999
 %%FLATZINC%%share/minizinc/ortools/fzn_all_different_int.mzn
 %%FLATZINC%%share/minizinc/ortools/fzn_circuit.mzn
 %%FLATZINC%%share/minizinc/ortools/fzn_cumulative.mzn
