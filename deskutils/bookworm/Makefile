@@ -25,7 +25,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		unzip:archivers/unzip
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig \
-		python:build,run shebangfix sqlite
+		python shebangfix sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	babluboy
 USE_GNOME=	gdkpixbuf2 glib20 gtk30 libxml2 pango
@@ -57,6 +57,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	cd ${WRKSRC}/${MESON_BUILD_DIR} && ninja test
+	cd ${WRKSRC}/${MESON_BUILD_DIR} && ${LOCALBASE}/bin/ninja test
 
 .include <bsd.port.mk>
