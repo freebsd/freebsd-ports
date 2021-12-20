@@ -3,7 +3,7 @@ bin/cue2toc
 bin/toc2cddb
 bin/toc2cue
 %%TOC2MP3%%bin/toc2mp3
-@unexec if [ -f %D/etc/cdrdao.conf ]; then echo "If permanently deleting this package, %D/etc/cdrdao.conf must be removed manually."; fi
+@postunexec if [ -f %D/etc/cdrdao.conf ]; then echo "If permanently deleting this package, %D/etc/cdrdao.conf must be removed manually."; fi
 man/man1/cdrdao.1.gz
 man/man1/cue2toc.1.gz
 man/man1/toc2cddb.1.gz

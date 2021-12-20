@@ -10,7 +10,7 @@
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=
-@@ -57,14 +58,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGE
+@@ -57,14 +58,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGET_BASE).so
  
  FLOAT_OPTIONS=	
  
@@ -23,8 +23,10 @@
 +DYNLD=		$(CCCOM)
 +RANLIB=		ranlib
  ARFLAGS=	cr
- LORDER=		lorder
- TSORT=		tsort
+-LORDER=		lorder
+-TSORT=		tsort
++LORDER=		echo
++TSORT=		cat
  
  RMDEP=		:
 -MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M

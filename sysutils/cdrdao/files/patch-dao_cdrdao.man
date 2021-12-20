@@ -1,24 +1,35 @@
 --- dao/cdrdao.man.orig	2018-05-16 10:46:39 UTC
 +++ dao/cdrdao.man
-@@ -798,13 +798,9 @@ following locations. The files will be r
+@@ -798,15 +798,11 @@ following locations. The files will be read on startup
  .I cdrdao
  in that order:
  
 -1. /etc/cdrdao.conf
--
--2. /etc/defaults/cdrdao
--
--3. /etc/default/cdrdao
 +1. %%PREFIX%%/etc/cdrdao.conf
  
--4. $HOME/.cdrdao
+-2. /etc/defaults/cdrdao
 +2. $HOME/.cdrdao
  
+-3. /etc/default/cdrdao
  
+-4. $HOME/.cdrdao
+-
+-
  Command line options will overwrite the loaded settings.
-@@ -886,4 +882,4 @@ resources may not be released. Use ipcs(
+ The settings file contains name - value pairs separated by a
+ colon. String values must be enclosed by ". The file is
+@@ -876,7 +872,7 @@ Directory where temporary WAV files will be created fr
+ .LP
+ .SH BUGS
+ If the program is terminated during the write/simulation process used IPC
+-resources may not be released. Use ipcs(8) and ipcrm(8) to delete them.
++resources may not be released. Use ipcs(1) and ipcrm(1) to delete them.
+ .SH AUTHOR
+ .ft CW
+ .nf
+@@ -886,4 +882,4 @@ resources may not be released. Use ipcs(8) and ipcrm(8
  .ft R
  .fi
  .SH SEE ALSO
 -.BR gcdmaster "(1), "cdrecord "(1), "cdda2wav "(1), "cdparanoia "(1), " sox "(1), "ipcs "(8), " ipcrm (8) 
-+.BR gcdmaster "(1), "cdrecord "(1), "cdda2wav "(1), "cdparanoia "(1), " sox "(1), "ipcs "(1), " ipcrm (1) 
++.BR "cdrecord "(1), "cdda2wav "(1), "cdparanoia "(1), " sox "(1), "ipcs "(1), " ipcrm (1)
