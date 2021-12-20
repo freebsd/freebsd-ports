@@ -28,6 +28,8 @@ SUB_LIST=	prefix="${PREFIX}" \
 		description="${COMMENT}" \
 		version="${PORTVERSION}"
 
+PLIST=	${WRKDIR}/.PLIST.more
+
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 		dot:graphics/graphviz
@@ -54,6 +56,14 @@ post-patch:
 post-build-DOCS-on:
 	cd ${WRKSRC}; \
 		${MAKE_CMD} doxygen
+
+pre-install:
+	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
+.if ${PORT_OPTIONS:MDOCS}
+	cd ${WRKSRC}/html && \
+		${FIND} . -type f | \
+		${SED} 's|^\.|%%PORTDOCS%%%%DOCSDIR%%|' >>${PLIST}
+.endif
 
 do-install:
 	cd ${WRKSRC}; \
