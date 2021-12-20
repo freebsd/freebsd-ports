@@ -1,5 +1,5 @@
 PORTNAME=	libosmium
-PORTVERSION=	2.17.1
+PORTVERSION=	2.17.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro geography devel
 
