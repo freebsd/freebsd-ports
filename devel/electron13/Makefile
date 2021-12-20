@@ -1,7 +1,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
@@ -16,8 +16,6 @@ COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
-
-BROKEN_i386=	LLVM ERROR: out of memory
 
 FETCH_DEPENDS=		yarn-node14>0:www/yarn-node14
 EXTRACT_DEPENDS=	yarn-node14>0:www/yarn-node14
@@ -107,8 +105,15 @@ ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_VARS=		GN_ARGS+=use_cups=true
 CUPS_VARS_OFF=		GN_ARGS+=use_cups=false
-DEBUG_VARS=		BUILDTYPE=Testing
-DEBUG_VARS_OFF=		BUILDTYPE=Release
+DEBUG_VARS=		BUILDTYPE=Debug \
+			GN_FILE=testing.gn \
+			GN_ARGS+=is_debug=true \
+			GN_BOOTSTRAP_FLAGS+=--debug
+DEBUG_VARS_OFF=		BUILDTYPE=Release \
+			GN_FILE=release.gn \
+			GN_ARGS+=blink_symbol_level=0 \
+			GN_ARGS+=is_debug=false \
+			GN_ARGS+=symbol_level=0
 DIST_IMPLIES=		DRIVER
 DRIVER_ALL_TARGET=	chromedriver
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
@@ -241,8 +246,8 @@ do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./out/Release/gn gen out/${BUILDTYPE} \
-		--args='import("//electron/build/args/${BUILDTYPE:tl}.gn") ${GN_ARGS}'
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./out/${BUILDTYPE}/gn gen out/${BUILDTYPE} \
+		--args='import("//electron/build/args/${GN_FILE}") ${GN_ARGS}'
 # Setup nodejs dependency
 	${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
