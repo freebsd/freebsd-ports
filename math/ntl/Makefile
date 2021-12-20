@@ -1,8 +1,7 @@
 # Created by: bauerm
 
 PORTNAME=	ntl
-PORTVERSION=	11.4.3
-PORTREVISION=	1
+PORTVERSION=	11.5.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 

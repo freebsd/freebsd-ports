@@ -1,5 +1,6 @@
 PORTNAME=	barvinok
 DISTVERSION=	0.41.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://barvinok.gforge.inria.fr/
 
