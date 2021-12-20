@@ -1,0 +1,24 @@
+https://github.com/cmus/cmus/issues/1133
+
+--- configure.orig	2021-01-22 19:34:38 UTC
++++ configure
+@@ -289,7 +289,7 @@ check_vorbis()
+ 
+ check_libsystemd()
+ {
+-	pkg_config LIBSYSTEMD "libsystemd" || pkg_config LIBSYSTEMD "libelogind >= 239.3"
++	pkg_config LIBSYSTEMD "libsystemd" || pkg_config LIBSYSTEMD "libelogind >= 239.3" || pkg_config LIBSYSTEMD "basu"
+ 	return $?
+ }
+ 
+--- mpris.c.orig	2021-01-22 19:34:38 UTC
++++ mpris.c
+@@ -15,7 +15,7 @@
+  * along with this program; if not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ 
+ #include "mpris.h"
+ #include "ui_curses.h"
