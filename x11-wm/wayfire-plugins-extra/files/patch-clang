@@ -1,0 +1,21 @@
+https://github.com/damianatorrpm/wayfire-plugin_dbus_interface/issues/47
+
+In file included from ../subprojects/dbus/dbus_interface.cpp:45:
+../subprojects/dbus/dbus_interface_backend.cpp:1131:34: error: 'core' cannot be captured because it does not have automatic storage duration
+            idle_call->run_once([core, idle_call] ()
+                                 ^
+../subprojects/dbus/dbus_interface_backend.cpp:59:24: note: 'core' declared here
+wf::compositor_core_t& core = wf::get_core();
+                       ^
+
+--- subprojects/dbus/dbus_interface_backend.cpp.orig	2020-12-25 14:04:08 UTC
++++ subprojects/dbus/dbus_interface_backend.cpp
+@@ -1128,7 +1128,7 @@ handle_method_call (GDBusConnection* connection,
+             }
+ 
+             wf::wl_idle_call* idle_call = new wf::wl_idle_call;
+-            idle_call->run_once([core, idle_call] ()
++            idle_call->run_once([idle_call] ()
+             {
+                 core.set_cursor("crosshair");
+                 delete idle_call;

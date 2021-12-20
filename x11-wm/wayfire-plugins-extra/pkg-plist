@@ -1,8 +1,10 @@
+%%DBUS%%bin/wf-prop
 lib/wayfire/libannotate.so
 lib/wayfire/libautorotate-iio.so
 lib/wayfire/libbackground-view.so
 lib/wayfire/libbench.so
 lib/wayfire/libcrosshair.so
+%%DBUS%%lib/wayfire/libdbus_interface.so
 lib/wayfire/libfollow-focus.so
 lib/wayfire/libforce-fullscreen.so
 lib/wayfire/libglib-main-loop.so
@@ -11,6 +13,7 @@ lib/wayfire/libkeycolor.so
 lib/wayfire/libmag.so
 lib/wayfire/libshowrepaint.so
 lib/wayfire/libwater.so
+%%LIBRSVG2%%lib/wayfire/libwindecor.so
 lib/wayfire/libwinzoom.so
 lib/wayfire/libworkspace-names.so
 share/wayfire/metadata/annotate.xml
@@ -18,6 +21,7 @@ share/wayfire/metadata/autorotate-iio.xml
 share/wayfire/metadata/background-view.xml
 share/wayfire/metadata/bench.xml
 share/wayfire/metadata/crosshair.xml
+%%DBUS%%share/wayfire/metadata/dbus_interface.xml
 share/wayfire/metadata/follow-focus.xml
 share/wayfire/metadata/force-fullscreen.xml
 share/wayfire/metadata/join-views.xml
@@ -25,5 +29,6 @@ share/wayfire/metadata/keycolor.xml
 share/wayfire/metadata/mag.xml
 share/wayfire/metadata/showrepaint.xml
 share/wayfire/metadata/water.xml
+%%LIBRSVG2%%share/wayfire/metadata/windecor.xml
 share/wayfire/metadata/window-zoom.xml
 share/wayfire/metadata/workspace-names.xml

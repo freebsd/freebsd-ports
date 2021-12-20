@@ -1,0 +1,64 @@
+https://github.com/damianatorrpm/wayfire-plugin_dbus_interface/commit/c7cc8e11e7f8
+
+In file included from ../subprojects/dbus/dbus_interface.cpp:12:
+In file included from /usr/local/include/glib-2.0/gio/gio.h:26:
+In file included from /usr/local/include/glib-2.0/gio/giotypes.h:28:
+In file included from /usr/local/include/glib-2.0/gio/gioenums.h:28:
+In file included from /usr/local/include/glib-2.0/glib-object.h:22:
+In file included from /usr/local/include/glib-2.0/gobject/gbinding.h:28:
+In file included from /usr/local/include/glib-2.0/glib.h:32:
+In file included from /usr/local/include/glib-2.0/glib/gasyncqueue.h:32:
+In file included from /usr/local/include/glib-2.0/glib/gthread.h:32:
+In file included from /usr/local/include/glib-2.0/glib/gatomic.h:28:
+In file included from /usr/local/include/glib-2.0/glib/glib-typeof.h:39:
+In file included from /usr/include/c++/v1/type_traits:420:
+/usr/include/c++/v1/cstddef:56:1: error: templates must have C++ linkage
+template <class _Tp> struct __libcpp_is_integral                     { enum { value = 0 }; };
+^~~~~~~~~~~~~~~~~~~~
+../subprojects/dbus/dbus_interface.cpp:10:1: note: extern "C" language linkage specification begins here
+extern "C"
+^
+
+--- subprojects/dbus/dbus_interface.cpp.orig	2020-12-25 14:04:08 UTC
++++ subprojects/dbus/dbus_interface.cpp
+@@ -9,11 +9,11 @@
+ 
+ extern "C"
+ {
+-#include <gio/gio.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ };
+ 
++#include <gio/gio.h>
+ #include <iostream>
+ #include <string>
+ #include <charconv>
+--- subprojects/dbus/dbus_interface_backend.cpp.orig	2020-12-25 14:04:08 UTC
++++ subprojects/dbus/dbus_interface_backend.cpp
+@@ -16,11 +16,11 @@ extern "C"
+ // #include <xwayland/xwm.h>
+ #undef static
+ #undef class
+-#include <gio/gio.h>
+ #include <sys/socket.h>
+ #include <wlr/types/wlr_idle.h>
+ };
+ 
++#include <gio/gio.h>
+ #include <ctime>
+ #include <iostream>
+ #include <set>
+--- subprojects/dbus/wf-prop.cpp.orig	2020-12-25 14:04:08 UTC
++++ subprojects/dbus/wf-prop.cpp
+@@ -6,10 +6,7 @@
+ #define DBUS_ID "org.wayland.compositor"
+ #define DBUS_PATH "/org/wayland/compositor"
+ 
+-extern "C" {
+ #include <gio/gio.h>
+-};
+-
+ #include <giomm/application.h>
+ #include <giomm/dbusconnection.h>
+ #include <giomm/dbusproxy.h>
