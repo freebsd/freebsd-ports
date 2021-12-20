@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20211218
+PORTVERSION=	s20211220
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	8e33cf1c2
+GH_TAGNAME=	ee6d40d41
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.180:Vulkan_Headers/externals/Vulkan-Headers \
