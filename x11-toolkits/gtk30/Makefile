@@ -3,8 +3,7 @@
 # adwaita-icon-theme, gnome-themes-standard and mate-themes
 
 PORTNAME=	gtk
-PORTVERSION=	3.24.30
-PORTREVISION=	1
+PORTVERSION=	3.24.31
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -13,9 +12,6 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
-
-EXTRA_PATCHES=	${FILESDIR}/0001-Check-if-size-changed-before-hiding-a-surface.patch:-p1 \
-		${FILESDIR}/0001-Ignore-wl_output-globals-not-bound-by-us.patch:-p1
 
 LICENSE=	LGPL20
 
@@ -41,7 +37,7 @@ CONFIGURE_ARGS=	--enable-introspection
 CPPFLAGS+=	-fno-omit-frame-pointer
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	0.2404.26
+LIBVERSION=	0.2404.27
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
@@ -77,8 +73,7 @@ WAYLAND_CONFIGURE_ENABLE=	wayland-backend
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
-WAYLAND_RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-			wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 WAYLAND_USES=		gl
 WAYLAND_USE=		GL=egl
 
