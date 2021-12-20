@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++11
 
 OPTIONS_DEFINE=		DOCS TOC2MP3 MP3OGG
-
 OPTIONS_DEFAULT=	MP3OGG
 MP3OGG_DESC=		Build with MP3/Ogg support (for sysutils/gcdmaster)
 TOC2MP3_DESC=		Build with toc2mp3 (requires audio/lame)
@@ -42,7 +41,6 @@ USES+=			pkgconfig
 LIB_DEPENDS+=		libao.so:audio/libao \
 			libmad.so:audio/libmad \
 			libvorbis.so:audio/libvorbis
-
 CONFIGURE_ENV+=		AO_CFLAGS=-I${LOCALBASE}/include \
 			AO_LIBS="-L${LOCALBASE}/lib -lao" \
 			MAD_CFLAGS=-I${LOCALBASE}/include \
