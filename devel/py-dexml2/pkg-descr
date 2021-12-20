@@ -1,0 +1,6 @@
+The dexml module takes the obvious mapping between XML tags and
+Python objects and lets you capture that as cleanly as possible.
+Loosely inspired by Django's ORM, you write simple class definitions
+to define the expected structure of your XML document.
+
+WWW: http://www.rfk.id.au/software/
