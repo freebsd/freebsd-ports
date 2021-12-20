@@ -4448,7 +4448,6 @@
     SUBDIR += py-deprecated
     SUBDIR += py-deprecation
     SUBDIR += py-devtools
-    SUBDIR += py-dexml
     SUBDIR += py-dexml2
     SUBDIR += py-diazo
     SUBDIR += py-dill

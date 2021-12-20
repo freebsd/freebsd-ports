@@ -16615,3 +16615,4 @@ math/eigen2||2021-12-07|Has expired: No longer available upstream, no consumers 
 emulators/qemu41||2021-12-10|Has expired: Use emulators/qemu or emulators/qemu-devel
 security/putty-gtk2||2021-12-15|Has expired: putty-gtk2 is being phased out
 games/xnethack-nox11|games/xnethack@nox11|2021-12-05|Turned into flavor
+devel/py-dexml||2021-12-20|Has expired: Use devel/py-dexml2
