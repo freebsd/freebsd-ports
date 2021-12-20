@@ -1,5 +1,3 @@
-TIMESTAMP = 1582496242
-SHA256 (xorg/driver/rayddteam-xf86-video-scfb-0.0.5_GH0.tar.gz) = 58b330f4dff599cb7252dd4235a4a3d8c6e66c8d589cab4107b30236792a3c42
-SIZE (xorg/driver/rayddteam-xf86-video-scfb-0.0.5_GH0.tar.gz) = 345835
-SHA256 (xorg/driver/080491f.patch) = 539ed63428ef711825919b4d82fb8ca43e7bba3ed32582e599894ca22790d743
-SIZE (xorg/driver/080491f.patch) = 2016
+TIMESTAMP = 1639875166
+SHA256 (xorg/driver/rayddteam-xf86-video-scfb-0.0.7_GH0.tar.gz) = 0b9774e73c6993be84def21d27addcca5c3b88f7172d39008bc6ce5dec6768f0
+SIZE (xorg/driver/rayddteam-xf86-video-scfb-0.0.7_GH0.tar.gz) = 346238
