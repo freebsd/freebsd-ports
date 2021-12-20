@@ -666,6 +666,7 @@ include/wine/windows/msxmldid.h
 include/wine/windows/mtxdm.h
 include/wine/windows/mulres.idl
 include/wine/windows/multimon.h
+include/wine/windows/namespaceapi.h
 include/wine/windows/natupnp.h
 include/wine/windows/natupnp.idl
 include/wine/windows/nb30.h
@@ -753,6 +754,7 @@ include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
 include/wine/windows/prntvpt.h
+include/wine/windows/processthreadsapi.h
 include/wine/windows/profinfo.h
 include/wine/windows/proofofpossessioncookieinfo.h
 include/wine/windows/proofofpossessioncookieinfo.idl
@@ -1117,6 +1119,10 @@ include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/xmllite.h
 include/wine/windows/xmllite.idl
+include/wine/windows/xpsobjectmodel.h
+include/wine/windows/xpsobjectmodel.idl
+include/wine/windows/xpsobjectmodel_1.h
+include/wine/windows/xpsobjectmodel_1.idl
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/csq.h
