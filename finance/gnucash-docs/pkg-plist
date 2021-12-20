@@ -1046,6 +1046,7 @@ share/gnome/help/gnucash-help/C/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/C/Help_legal.xml
 share/gnome/help/gnucash-help/C/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/C/Help_txf-categories.xml
+share/gnome/help/gnucash-help/C/ch_Finance-Quote.xml
 share/gnome/help/gnucash-help/C/figures/Help_AccountReg_Screen.png
 share/gnome/help/gnucash-help/C/figures/Help_AccountTree_Screen.png
 share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Accounts.png
@@ -1111,6 +1112,7 @@ share/gnome/help/gnucash-help/de/Help_legal.xml
 share/gnome/help/gnucash-help/de/Help_para-assist-intro.xml
 share/gnome/help/gnucash-help/de/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/de/Help_txf-categories.xml
+share/gnome/help/gnucash-help/de/ch_Finance-Quote.xml
 share/gnome/help/gnucash-help/de/figures/AccountTreeCreate.png
 share/gnome/help/gnucash-help/de/figures/AccountTree_Export_CSV.png
 share/gnome/help/gnucash-help/de/figures/AccountTree_Export_dbms.png
