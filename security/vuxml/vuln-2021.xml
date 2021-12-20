@@ -1,3 +1,40 @@
+  <vuln vid="ca982e2d-61a9-11ec-8be6-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>moderate: Possible NULL dereference or SSRF in forward proxy
+	    configurations in Apache HTTP Server 2.4.51 and earlier (CVE-2021-44224)
+	    <br/>A crafted URI sent to httpd configured as a forward proxy
+	    (ProxyRequests on) can cause a crash (NULL pointer dereference) or, for
+	    configurations mixing forward and reverse proxy declarations, can allow
+	    for requests to be directed to a declared Unix Domain Socket endpoint
+	    (Server Side Request Forgery).</p>
+	  <p>high: Possible buffer overflow when parsing multipart content in
+	    mod_lua of Apache HTTP Server 2.4.51 and earlier (CVE-2021-44790)<br/>A
+	    carefully crafted request body can cause a buffer overflow in the
+	    mod_lua multipart parser (r:parsebody() called from Lua scripts).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44224</cvename>
+      <cvename>CVE-2021-44790</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-20</discovery>
+      <entry>2021-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ea05bb8-5d74-11ec-bb1e-001517a2e1a4">
     <topic>serviio -- affected by log4j vulnerability</topic>
     <affects>
