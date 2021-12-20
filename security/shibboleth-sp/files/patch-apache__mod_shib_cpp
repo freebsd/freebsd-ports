@@ -1,0 +1,26 @@
+From: Scott Cantor <cantor.2@osu.edu>
+Date: Tue, 30 Nov 2021 17:38:09 +0000 (-0500)
+Subject: SSPCPP-948 - mod_shib warning about Apache 1.3 in log
+X-Git-Url: https://git.shibboleth.net/view/?p=cpp-sp.git;a=commitdiff_plain;h=7b5c7aced15c0be5404bcba0bcec4c586323fba9
+
+SSPCPP-948 - mod_shib warning about Apache 1.3 in log
+
+https://shibboleth.atlassian.net/browse/SSPCPP-948
+---
+
+diff --git a/apache/mod_shib.cpp b/apache/mod_shib.cpp
+index 6b1dc676..1a1f2543 100644
+--- apache/mod_shib.cpp
++++ apache/mod_shib.cpp
+@@ -1983,10 +1983,10 @@ extern "C" void shib_child_init(apr_pool_t* p, server_rec* s)
+     // Initialize runtime components.
+ 
+     ap_log_error(APLOG_MARK, APLOG_INFO|APLOG_NOERRNO, SH_AP_R(s), "child_init: mod_shib initializing in pid (%d)", (int)getpid());
+-    ap_log_error(APLOG_MARK, APLOG_WARNING|APLOG_NOERRNO, SH_AP_R(s), "DEPRECATED: Apache 1.3 module, please upgrade to Apache 2.4+");
+ 
+     // 2.x versions have already initialized the libraries.
+ #ifdef SHIB_APACHE_13
++    ap_log_error(APLOG_MARK, APLOG_WARNING|APLOG_NOERRNO, SH_AP_R(s), "DEPRECATED: Apache 1.3 module, please upgrade to Apache 2.4+");
+     if (g_Config) {
+         ap_log_error(APLOG_MARK, APLOG_ERR|APLOG_NOERRNO, SH_AP_R(s), "child_init: mod_shib already initialized, exiting");
+         exit(1);
