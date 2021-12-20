@@ -14,8 +14,6 @@ COMMENT=	Fast and extensive C++ GUI toolkit (development version)
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc=		missing __sync_bool_compare_and_swap_8()
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
