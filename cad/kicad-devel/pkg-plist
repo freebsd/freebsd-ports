@@ -20,7 +20,6 @@ bin/pl_editor
 lib/kicad/plugins/3d/libs3d_plugin_idf.so
 lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
-lib/libkicad2step_lib.a
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 %%PYTHON_SITELIBDIR%%/_pcbnew.so
@@ -144,7 +143,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/interf_u/sym-lib-table
 %%DATADIR%%/demos/interf_u/tux.bmp
 %%DATADIR%%/demos/interf_u/tux.kicad_mod
-%%DATADIR%%/demos/interf_u/tux.lib
+%%DATADIR%%/demos/interf_u/tux.kicad_sym
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/fp-lib-table
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/in_out_conn.kicad_sch
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-coldfire_schlib.kicad_sym
@@ -291,6 +290,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/plugins/bom_txt_sorted_by_ref.py
 %%DATADIR%%/plugins/bom_with_title_block_2_csv.xsl
 %%DATADIR%%/plugins/kicad_netlist_reader.py
+%%DATADIR%%/plugins/kicad_utils.py
 %%DATADIR%%/plugins/netlist_form_OrcadPcb2.xsl
 %%DATADIR%%/plugins/netlist_form_cadstar-RINF.xsl
 %%DATADIR%%/plugins/netlist_form_cadstar.xsl
