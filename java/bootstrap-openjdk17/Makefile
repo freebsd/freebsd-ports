@@ -11,7 +11,7 @@ COMMENT=	Java Development Kit 17
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 USES=		tar:xz
 
@@ -28,7 +28,7 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 PLIST_SUB+=	NOT_PPC64="@comment "
 .else
 PLIST_SUB+=	NOT_PPC64=""
