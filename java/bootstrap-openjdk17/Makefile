@@ -1,7 +1,8 @@
 PORTNAME=	openjdk17
 PORTVERSION=	17.0.1.12.1
 CATEGORIES=	java devel
-MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk17
+MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk17 \
+		LOCAL/pkubaj/bootstrap-openjdk17
 PKGNAMEPREFIX=	bootstrap-
 DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
@@ -10,7 +11,7 @@ COMMENT=	Java Development Kit 17
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 
 USES=		tar:xz
 
@@ -24,6 +25,14 @@ JDK_ARCH=	${ARCH:C/armv.*/arm/}${JDK_ARCH_SUFFIX_${ARCH}}
 JDK_ARCH_SUFFIX_powerpc64=	-${PPC_ABI:tl}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+PLIST_SUB+=	NOT_PPC64="@comment "
+.else
+PLIST_SUB+=	NOT_PPC64=""
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
