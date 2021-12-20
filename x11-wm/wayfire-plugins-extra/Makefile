@@ -44,4 +44,9 @@ LIBRSVG2_USES=		xorg
 LIBRSVG2_USE=		GNOME=librsvg2 XORG=pixman
 LIBRSVG2_MESON_TRUE=	enable_windecor
 
+post-patch:
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/subprojects/windecor/deco-theme.cpp
+
 .include <bsd.port.mk>
