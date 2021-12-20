@@ -1,4 +1,8 @@
+%%WWWDIR%%/7429a63c09f79a1760b0.ttf
+%%WWWDIR%%/75371f53f06181df75f1.ttf
+%%WWWDIR%%/8be2d1487420548b3b8d.ttf
 %%WWWDIR%%/_redirects
+%%WWWDIR%%/a8d6ac03c7b96b7acb62.ttf
 %%WWWDIR%%/assets/android-chrome-144x144.png
 %%WWWDIR%%/assets/android-chrome-192x192.png
 %%WWWDIR%%/assets/android-chrome-256x256.png
@@ -36,10 +40,11 @@
 %%WWWDIR%%/assets/mstile-310x150.png
 %%WWWDIR%%/assets/mstile-310x310.png
 %%WWWDIR%%/assets/mstile-70x70.png
+%%WWWDIR%%/b4c30855aff392d7e8dc.ttf
 @sample %%WWWDIR%%/config.json.example %%WWWDIR%%/config.json
 %%WWWDIR%%/index.html
-%%WWWDIR%%/main.cdc88e4d50c0e2a98e4d.bundle.js
-%%WWWDIR%%/main.cdc88e4d50c0e2a98e4d.bundle.js.LICENSE.txt
-%%WWWDIR%%/main.fe7382b361d608f3e42d.bundle.css
+%%WWWDIR%%/main.9213b7a6571a24253228.bundle.css
+%%WWWDIR%%/main.946f61bde136a335f4fa.bundle.js
+%%WWWDIR%%/main.946f61bde136a335f4fa.bundle.js.LICENSE.txt
 %%WWWDIR%%/olm.wasm
 %%WWWDIR%%/polyfill.a9097dc82278a0bb6197.bundle.js
