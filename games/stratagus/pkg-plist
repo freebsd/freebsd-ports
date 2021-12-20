@@ -1,9 +1,7 @@
 bin/png2stratagus
-bin/metaserver
 bin/stratagus
 @comment include/stratagus-game-installer.nsi
 include/stratagus-game-launcher.h
 include/stratagus-gameutils.h
 include/stratagus-tinyfiledialogs.h
-@comment include/stratagus-maemo-extract.h
-man/man6/stratagus.6.gz
+share/man/man6/stratagus.6.gz

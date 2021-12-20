@@ -1,16 +1,15 @@
 [
 { type: install
   message: <<EOM
-NOTE: This is only the engine. If you wish to play a game that uses the
-Stratagus engine, you must manually download the Stratagus game data.
+NOTE: This is the engine only. If you would like to play a game that uses the
+Stratagus engine, you must install supporting games of the engine.
 
-You can use the 'games/wargus' port to extract data from a legal copy of
-Warcraft 2 (original DOS version required, won't work with the battle.net
-edition).
+wartool, available in 'games/wargus' allows the user to extract game data
+from legitimate copies of Warcraft 2, for use by Stratagus.
 
-For more information, please take a look at the following URL:
+For more information, visit the following URL:
 
-http://stratagus.sourceforge.net/games.shtml
+https://stratagus.com/
 
 Enjoy!
 EOM
