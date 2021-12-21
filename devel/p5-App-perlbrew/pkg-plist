@@ -1,4 +1,5 @@
 bin/perlbrew
+%%SITE_PERL%%/App/Perlbrew/HTTP.pm
 %%SITE_PERL%%/App/Perlbrew/Path.pm
 %%SITE_PERL%%/App/Perlbrew/Path/Installation.pm
 %%SITE_PERL%%/App/Perlbrew/Path/Installations.pm
@@ -6,6 +7,7 @@ bin/perlbrew
 %%SITE_PERL%%/App/Perlbrew/Util.pm
 %%SITE_PERL%%/App/perlbrew.pm
 %%PERL5_MAN1%%/perlbrew.1.gz
+%%PERL5_MAN3%%/App::Perlbrew::HTTP.3.gz
 %%PERL5_MAN3%%/App::Perlbrew::Path.3.gz
 %%PERL5_MAN3%%/App::Perlbrew::Path::Installation.3.gz
 %%PERL5_MAN3%%/App::Perlbrew::Path::Installations.3.gz
