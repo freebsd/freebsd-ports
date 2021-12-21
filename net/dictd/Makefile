@@ -1,8 +1,7 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	dictd
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.13.1
 CATEGORIES+=	net textproc
 MASTER_SITES=	SF/dict/dictd/dictd-${PORTVERSION}
 
