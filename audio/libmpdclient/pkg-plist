@@ -1,5 +1,7 @@
+include/mpd/albumart.h
 include/mpd/async.h
 include/mpd/audio_format.h
+include/mpd/binary.h
 include/mpd/capabilities.h
 include/mpd/client.h
 include/mpd/compiler.h
@@ -22,8 +24,10 @@ include/mpd/partition.h
 include/mpd/password.h
 include/mpd/player.h
 include/mpd/playlist.h
+include/mpd/position.h
 include/mpd/protocol.h
 include/mpd/queue.h
+include/mpd/readpicture.h
 include/mpd/recv.h
 include/mpd/replay_gain.h
 include/mpd/response.h
@@ -39,7 +43,7 @@ include/mpd/tag.h
 include/mpd/version.h
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.19
+lib/libmpdclient.so.2.20
 libdata/pkgconfig/libmpdclient.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
