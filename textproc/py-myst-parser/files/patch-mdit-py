@@ -1,0 +1,85 @@
+Obtained from:	https://github.com/executablebooks/MyST-Parser/commit/43d5c66831cb2578bc034f9d6217d659ddc46847
+
+--- myst_parser/docutils_.py.orig	2021-08-27 01:35:33 UTC
++++ myst_parser/docutils_.py
+@@ -8,7 +8,6 @@ from typing import Tuple
+ from docutils import nodes
+ from docutils.parsers.rst import Parser as RstParser
+ from markdown_it.token import Token
+-from markdown_it.utils import AttrDict
+ 
+ from myst_parser.main import MdParserConfig, default_parser
+ 
+@@ -47,7 +46,7 @@ class Parser(RstParser):
+         config = MdParserConfig(renderer="docutils")
+         parser = default_parser(config)
+         parser.options["document"] = document
+-        env = AttrDict()
++        env: dict = {}
+         tokens = parser.parse(inputstring, env)
+         if not tokens or tokens[0].type != "front_matter":
+             # we always add front matter, so that we can merge it with global keys,
+--- myst_parser/docutils_renderer.py.orig	2021-08-27 01:35:33 UTC
++++ myst_parser/docutils_renderer.py
+@@ -782,11 +782,13 @@ class DocutilsRenderer(RendererProtocol):
+ 
+     def render_math_inline(self, token: SyntaxTreeNode) -> None:
+         content = token.content
+-        if token.markup == "$$":
+-            # available when dmath_double_inline is True
+-            node = nodes.math_block(content, content, nowrap=False, number=None)
+-        else:
+-            node = nodes.math(content, content)
++        node = nodes.math(content, content)
++        self.add_line_and_source_path(node, token)
++        self.current_node.append(node)
++
++    def render_math_inline_double(self, token: SyntaxTreeNode) -> None:
++        content = token.content
++        node = nodes.math_block(content, content, nowrap=False, number=None)
+         self.add_line_and_source_path(node, token)
+         self.current_node.append(node)
+ 
+--- myst_parser/sphinx_parser.py.orig	2021-08-27 01:35:33 UTC
++++ myst_parser/sphinx_parser.py
+@@ -6,7 +6,6 @@ from docutils import nodes
+ from docutils.core import publish_doctree
+ from docutils.parsers.rst import Parser as RstParser
+ from markdown_it.token import Token
+-from markdown_it.utils import AttrDict
+ from sphinx.application import Sphinx
+ from sphinx.io import SphinxStandaloneReader
+ from sphinx.parsers import Parser as SphinxParser
+@@ -52,7 +51,7 @@ class MystParser(SphinxParser):
+         config = document.settings.env.myst_config
+         parser = default_parser(config)
+         parser.options["document"] = document
+-        env = AttrDict()
++        env: dict = {}
+         tokens = parser.parse(inputstring, env)
+         if not tokens or tokens[0].type != "front_matter":
+             # we always add front matter, so that we can merge it with global keys,
+--- myst_parser/sphinx_renderer.py.orig	2021-08-27 01:35:33 UTC
++++ myst_parser/sphinx_renderer.py
+@@ -122,7 +122,7 @@ class SphinxRenderer(DocutilsRenderer):
+             self.doc_env.myst_anchors = True  # type: ignore[attr-defined]
+         section["myst-anchor"] = doc_slug
+ 
+-    def render_math_block_eqno(self, token: SyntaxTreeNode) -> None:
++    def render_math_block_label(self, token: SyntaxTreeNode) -> None:
+         """Render math with referencable labels, e.g. ``$a=1$ (label)``."""
+         label = token.info
+         content = token.content
+--- setup.cfg.orig	2021-08-27 01:35:37 UTC
++++ setup.cfg
+@@ -39,8 +39,8 @@ packages = find:
+ install_requires = 
+ 	docutils>=0.15,<0.18
+ 	jinja2  # required for substitutions, but let sphinx choose version
+-	markdown-it-py>=1.0.0,<2.0.0
+-	mdit-py-plugins~=0.2.8
++	markdown-it-py>=1.0.0,<3.0.0
++	mdit-py-plugins~=0.3.0
+ 	pyyaml
+ 	sphinx>=3.1,<5
+ python_requires = >=3.6
