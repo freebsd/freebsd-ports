@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-03-04 09:39:18 UTC
++++ Makefile.in
+@@ -92,7 +92,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ # add "-DMSPACK_NO_DEFAULT_SYSTEM" to remove default mspack_system
+-@GCC_TRUE@am__append_1 = -Wall -Wextra -Wno-unused-parameter -Wno-unused-result
++@GCC_TRUE@am__append_1 = -Wall -Wextra -Wno-unused-parameter
+ noinst_PROGRAMS = examples/cabd_memory$(EXEEXT) \
+ 	examples/cabrip$(EXEEXT) examples/chmextract$(EXEEXT) \
+ 	examples/msexpand$(EXEEXT) examples/multifh$(EXEEXT) \
