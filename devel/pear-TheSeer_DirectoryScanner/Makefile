@@ -1,7 +1,7 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
 
 PORTNAME=	DirectoryScanner
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}TheSeer_
 
@@ -11,23 +11,21 @@ COMMENT=	Recursive directory scanner and filter
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:flavors pear:env
-USE_GITHUB=	yes
-GH_ACCOUNT=	theseer
-
+USES=		pear:env
 USE_PHP=	fileinfo
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 PEAR_CHANNEL=	theseer
 PEAR_CHANNEL_VER=	>=20120501
 
-NO_BUILD=	yes
+PLIST_FILES=	share/PHP/DirectoryScanner/directoryscanner.php
 
-PHP_DIR=	share/PHP
-
-PLIST_FILES=	${PHP_DIR}/${PORTNAME}/directoryscanner.php
+USE_GITHUB=	yes
+GH_ACCOUNT=	theseer
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/directoryscanner.php \
-		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/PHP/DirectoryScanner
+	${INSTALL_SCRIPT} ${WRKSRC}/src/directoryscanner.php ${STAGEDIR}${PREFIX}/share/PHP/DirectoryScanner
 
 .include <bsd.port.mk>
