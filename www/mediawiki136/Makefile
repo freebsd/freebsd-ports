@@ -1,7 +1,7 @@
 # Created by: Gerrit Beine <tux@pinguru.net>
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.36.2
+PORTVERSION=	1.36.3
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	136${PHP_PKGNAMESUFFIX}
