@@ -105,6 +105,8 @@ post-install:
 	${LN} -sf ../../${GEM_LIB_DIR}/buildout/apache2/mod_passenger.so ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_passenger.so
 	@${ECHO} "${APACHEMODDIR}/mod_passenger.so" >> ${TMPPLIST}
 .endif
+	@${RM} ${STAGEDIR}${PREFIX}/bin/passenger-install-apache2-module \
+		${STAGEDIR}${PREFIX}/bin/passenger-install-nginx-module
 	@${RM} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/bin/passenger-install-apache2-module \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/bin/passenger-install-nginx-module
 
