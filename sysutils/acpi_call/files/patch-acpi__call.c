@@ -1,5 +1,17 @@
 --- acpi_call.c.orig	2011-11-07 05:35:10 UTC
 +++ acpi_call.c
+@@ -29,10 +29,10 @@
+  */
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/module.h>
+ #include <sys/systm.h>
+ #include <sys/errno.h>
+-#include <sys/param.h>
+ #include <sys/kernel.h>
+ #if __FreeBSD__ >= 8
+ #	include <contrib/dev/acpica/include/acpi.h>
 @@ -45,18 +45,97 @@
  
  void acpi_call_fixup_pointers(ACPI_OBJECT *p, UINT8 *orig);
