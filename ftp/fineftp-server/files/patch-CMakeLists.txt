@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2021-12-21 18:39:18 UTC
++++ CMakeLists.txt
+@@ -24,4 +24,4 @@ if (_cmp)
+ endif()
+ 
+ add_subdirectory(fineftp-server)
+-add_subdirectory(example)
++#add_subdirectory(example)
