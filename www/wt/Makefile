@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USES=		cmake compiler:c++14-lang cpe pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	emweb
+CPE_VENDOR=	emweb
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
