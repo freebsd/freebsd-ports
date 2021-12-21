@@ -138,6 +138,15 @@ man/man5/icewm-winoptions.5.gz
 %%DATADIR%%/icons/suspend_32x32.xpm
 %%DATADIR%%/icons/themes_16x16.xpm
 %%DATADIR%%/icons/themes_32x32.xpm
+%%DATADIR%%/icons/tilebottom_48x48.png
+%%DATADIR%%/icons/tilebottomleft_48x48.png
+%%DATADIR%%/icons/tilebottomright_48x48.png
+%%DATADIR%%/icons/tilecenter_48x48.png
+%%DATADIR%%/icons/tileleft_48x48.png
+%%DATADIR%%/icons/tileright_48x48.png
+%%DATADIR%%/icons/tiletop_48x48.png
+%%DATADIR%%/icons/tiletopleft_48x48.png
+%%DATADIR%%/icons/tiletopright_48x48.png
 %%DATADIR%%/icons/vim_16x16.xpm
 %%DATADIR%%/icons/vim_32x32.xpm
 %%DATADIR%%/icons/vim_48x48.xpm
