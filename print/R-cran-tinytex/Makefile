@@ -1,5 +1,5 @@
 PORTNAME=	tinytex
-DISTVERSION=	0.35
+DISTVERSION=	0.36
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -8,7 +8,7 @@ COMMENT=	Helper functions to maintain LaTeX distribution
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-xfun>=0.23:misc/R-cran-xfun
+CRAN_DEPENDS=	R-cran-xfun>=0.29:misc/R-cran-xfun
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
