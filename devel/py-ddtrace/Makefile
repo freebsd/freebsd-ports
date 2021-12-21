@@ -1,13 +1,13 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ddtrace
-PORTVERSION=	0.55.4
+PORTVERSION=	0.56.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Datadog tracing code
+COMMENT=	Datadog APM client library
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
