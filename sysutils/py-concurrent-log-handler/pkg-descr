@@ -1,0 +1,11 @@
+This package provides an additional log handler for Python's standard logging
+package (PEP 282). This handler will write log events to a log file which is
+rotated when the log file reaches a certain size.  Multiple processes can
+safely write to the same log file concurrently. Rotated logs can be gzipped
+if desired. Both Windows and POSIX systems are supported.  An optional threaded
+queue logging handler is provided to perform logging in the background.
+
+This is a fork of Lowell Alleman's ConcurrentLogHandler 0.9.1 which fixes
+a hanging/deadlocking problem.
+
+WWW: https://pypi.org/project/concurrent-log-handler/
