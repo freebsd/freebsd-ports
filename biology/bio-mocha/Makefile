@@ -1,17 +1,18 @@
 PORTNAME=	bio-mocha
 DISTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 DISTFILES+=	${PORTNAME}_${DISTVERSION}-20211015.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	bcftools plugin for mosaic chromosomal alteration analysis
+COMMENT=	Bcftools plugin for mosaic chromosomal alteration analysis
 
 LICENSE=	MIT
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 BUILD_DEPENDS=	bash:shells/bash
-RUN_DEPENDS=	bcftools==${PORTVERSION}:biology/bcftools
+RUN_DEPENDS=	bcftools>=${PORTVERSION}:biology/bcftools
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 USE_GITHUB=	yes
@@ -19,6 +20,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
+GH_TAGNAME=	1.14
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
