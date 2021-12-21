@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	MCE-Shared
-PORTVERSION=	1.873
+PORTVERSION=	1.874
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARIOROY
@@ -17,7 +17,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-FDPass>=1.1:devel/p5-IO-FDPass \
-		p5-MCE>=1.868:devel/p5-MCE
+		p5-MCE>=1.874:devel/p5-MCE
 
 USES=		perl5
 USE_PERL5=	configure
