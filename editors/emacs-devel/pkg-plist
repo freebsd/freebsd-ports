@@ -779,6 +779,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/README
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/test-invalid.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/test-valid.xml
+%%PGTK%%%%DATADIR%%/%%EMACS_VER%%/etc/org.gnu.emacs.defaults.gschema.valid
+%%DATADIR%%/%%EMACS_VER%%/etc/org.gnu.emacs.defaults.gschema.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtContentTemplate.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtStyles.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/README
@@ -1585,8 +1587,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/edebug.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-base.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-base.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-compat.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-core.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-core.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-custom.el.gz
@@ -1646,6 +1646,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/map-ynp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/map.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/map.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/multisession.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/multisession.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.el.gz
@@ -2023,6 +2025,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-registry.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-rfc1843.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-rfc1843.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-rmail.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-rmail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-salt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-salt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-score.el.gz
@@ -3665,6 +3669,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/ns-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/pc-win.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/pc-win.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/pgtk-win.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/pgtk-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/rxvt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/rxvt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/screen.el.gz
@@ -4149,6 +4155,14 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsxwidget.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pdumper.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pdumper.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkfns.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkgui.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkim.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkmenu.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkselect.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkselect.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkterm.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pgtkterm.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/print.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.h
@@ -4249,6 +4263,7 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.h
 include/emacs-module.h
+%%PGTK%%share/glib-2.0/schemas/org.gnu.emacs.defaults.gschema.xml
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/24x24/apps/emacs.png
