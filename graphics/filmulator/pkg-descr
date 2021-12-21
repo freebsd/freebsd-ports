@@ -1,0 +1,11 @@
+Filmulator is a raw photo editing application with library management
+focusing on:
+
+  - Simplicity over flexibility
+  - Ease of learning
+  - Streamlined workflow
+
+Filmulator accepts raw files from cameras and simulates the development
+of film as if exposed to the same light as the camera's sensor.
+
+WWW: https://filmulator.org/
