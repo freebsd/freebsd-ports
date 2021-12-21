@@ -7,6 +7,4 @@
 %%ETCDIR%%/notification.toml.sample
 %%ETCDIR%%/replication.toml.sample
 %%ETCDIR%%/security.toml.sample
-@mode 0755
-sbin/weed
-@mode
+bin/weed

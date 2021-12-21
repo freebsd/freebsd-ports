@@ -59,7 +59,7 @@ else
 fi
 
 pidfile=/var/run/seaweedfs.pid
-procname="%%PREFIX%%/sbin/weed"
+procname="%%PREFIX%%/bin/weed"
 command="/usr/sbin/daemon"
 command_args="-f -t ${name} ${seaweedfs_syslog_flags} -p ${pidfile} ${procname} ${seaweedfs_options}"
 

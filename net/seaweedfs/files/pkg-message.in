@@ -6,7 +6,7 @@ SeaweedFS presents a simple interface behind a complex distributed system.
 For a single node "demo setup" you can just run:
 
 $ mkdir /tmp/weeds
-$ %%PREFIX%%/sbin/weed -logtostderr server -dir /tmp/weeds -s3
+$ %%PREFIX%%/bin/weed -logtostderr server -dir /tmp/weeds -s3
 
 For a more typical setup, you should have either 1 or 3 masters, and
 multiple filers, with replication enabled.
