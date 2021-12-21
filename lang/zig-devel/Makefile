@@ -58,4 +58,10 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/doc/${f} ${STAGEDIR}${DOCSDIR}/std/
 .endfor
 
+do-test:
+	(cd ${WRKSRC} && ${_ZIG_BIN} build test-behavior \
+		--cache-dir ${WRKDIR}/cache \
+		--global-cache-dir ${WRKDIR}/cache \
+		--zig-lib-dir ${WRKSRC}/lib)
+
 .include <bsd.port.mk>
