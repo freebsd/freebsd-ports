@@ -13,6 +13,7 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
 USES=		autoreconf charsetfix cpe iconv libtool:build localbase pkgconfig tar:lz
 CPE_VENDOR=	gnu
+CPE_PRODUCT=	wget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lzip  # not in ports yet
 INSTALL_TARGET=	install-strip
