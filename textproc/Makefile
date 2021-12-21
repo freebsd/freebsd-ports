@@ -332,6 +332,7 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += json-yaml
+    SUBDIR += json2yaml
     SUBDIR += jtc
     SUBDIR += kdiff3
     SUBDIR += kepubify
