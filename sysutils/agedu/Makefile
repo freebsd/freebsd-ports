@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	agedu
-PORTVERSION=	20200705.2a7d4a2
+PORTVERSION=	20211129.8cd63c5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/agedu/ \
 		LOCAL/sunpoet
@@ -12,7 +12,10 @@ COMMENT=	Unix utility for tracking down wasted disk space
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-GNU_CONFIGURE=	yes
+USES=		cmake
+
+CMAKE_OFF=	BUILD_MANPAGE
+CMAKE_ON=	AGEDU_IPV4 AGEDU_IPV6
 
 PLIST_FILES=	bin/agedu \
 		man/man1/agedu.1.gz
