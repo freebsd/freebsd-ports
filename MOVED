@@ -16700,6 +16700,5 @@ www/rubygem-haml4|www/rubygem-haml|2021-12-21|Remove obsoleted port. Use www/rub
 www/rubygem-rack15|www/rubygem-rack|2021-12-21|Remove obsoleted port. Use www/rubygem-rack instead
 www/rubygem-rack20|www/rubygem-rack|2021-12-21|Remove obsoleted port. Use www/rubygem-rack instead
 www/rubygem-redis-rack1|www/rubygem-redis-rack|2021-12-21|Remove obsoleted port. Use www/rubygem-redis-rack instead
-x11-toolkits/rubygem-gtk2|x11-toolkits/rubygem-gtk3|2021-12-21|Remove obsoleted port. Use x11-toolkits/rubygem-gtk3 instead
 x11-toolkits/rubygem-gtksourceview2|x11-toolkits/rubygem-gtksourceview3|2021-12-21|Remove obsoleted port. Use x11-toolkits/rubygem-gtksourceview3 instead
 x11-toolkits/rubygem-vte|x11-toolkits/rubygem-vte3|2021-12-21|Remove obsoleted port. Use x11-toolkits/rubygem-vte3 instead
