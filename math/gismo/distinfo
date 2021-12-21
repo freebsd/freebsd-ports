@@ -1,7 +1,11 @@
-TIMESTAMP = 1628817047
-SHA256 (gismo-gismo-v0.8.4-849-g8b36bfe5_GH0.tar.gz) = a5db6ef29024f0d4d34228228c1d84d72e21b546a37da9a0f14700c69d2ba9aa
-SIZE (gismo-gismo-v0.8.4-849-g8b36bfe5_GH0.tar.gz) = 4945758
-SHA256 (gismo-gsElasticity-7bfde6d_GH0.tar.gz) = 1f9e76b148670dad8ee5c7960218cf6f1d4ffc730ca20755ef0c66980bb3276f
-SIZE (gismo-gsElasticity-7bfde6d_GH0.tar.gz) = 280973
+TIMESTAMP = 1640112553
+SHA256 (gismo-gismo-v21.12.0_GH0.tar.gz) = 4001b4c49661ca8b71baf915e773341e115d154077bef218433a3c1d72ee4f0c
+SIZE (gismo-gismo-v21.12.0_GH0.tar.gz) = 4957758
+SHA256 (gismo-gsElasticity-a94347d_GH0.tar.gz) = 4f8f88347fda4c31e7d366ab79ed19681d8cd4cdfc50947b7be8084e93aca169
+SIZE (gismo-gsElasticity-a94347d_GH0.tar.gz) = 281441
+SHA256 (gismo-gsKLShell-5247352_GH0.tar.gz) = 7b7f6764f21c28b276ec1b62fb4e66c3ae763c996bf473200ae4b0345024350f
+SIZE (gismo-gsKLShell-5247352_GH0.tar.gz) = 77777
+SHA256 (gismo-gsStructuralAnalysis-f18c4b7_GH0.tar.gz) = 6d0027cd3f9aadb55a7ad01293df31c33f6ee500cc3f9a8eb90d6d87f0d239e6
+SIZE (gismo-gsStructuralAnalysis-f18c4b7_GH0.tar.gz) = 616060
 SHA256 (gismo-gsUnitTest-7c42e58_GH0.tar.gz) = 67318cc0b685ad2d17199a78c916aa19ac306f3ce4e1679d01f398f117cf12ca
 SIZE (gismo-gsUnitTest-7c42e58_GH0.tar.gz) = 22779

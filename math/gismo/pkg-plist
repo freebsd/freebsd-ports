@@ -12,6 +12,7 @@ bin/fileIo_example
 bin/fitting_example
 bin/geometry_example
 bin/gsInterpolateMap
+bin/gsMakeMultiPatch
 bin/gsPatchFromBoundary
 bin/gsView
 bin/heatEquation_example
@@ -587,8 +588,8 @@ lib/gismo/gsConfig.cmake
 lib/gismo/gsDebugExtra.cmake
 lib/libgismo.a
 lib/libgismo.so
-lib/libgismo.so.20
-lib/libgismo.so.20.12.0
+lib/libgismo.so.21
+lib/libgismo.so.21.12.0
 %%DATADIR%%data/bspbasis/tpBSpline2_01.xml
 %%DATADIR%%data/bspbasis/tpBSpline2_02.xml
 %%DATADIR%%data/curves3d/bspline3d_curve_01.xml
