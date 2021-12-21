@@ -1,11 +1,9 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	bx-python
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.11-6
-DISTVERSIONSUFFIX=	-gbd714e3 # 0.8.11 has a plist problem that bd714e3 doesn't have
+DISTVERSION=	0.8.13
 CATEGORIES=	biology python
-#MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,9 +18,6 @@ RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		compiler python:3.6+
 USE_PYTHON=	autoplist cython distutils
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	bxlab
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bx -name "*.so" | ${XARGS} ${STRIP_CMD}
