@@ -6637,6 +6637,7 @@
     SUBDIR += rubygem-pp
     SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-prettyprint
+    SUBDIR += rubygem-profile
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-prometheus-client-mmap
     SUBDIR += rubygem-protected_attributes

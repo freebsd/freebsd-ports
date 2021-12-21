@@ -1,0 +1,10 @@
+Profile provides a way to Profile your Ruby application.
+
+Profiling your program is a way of determining which methods are called and how
+long each method takes to complete. This way you can detect which methods are
+possible bottlenecks.
+
+Profiling your program will slow down your execution time considerably, so
+activate it only when you need it. Don't confuse benchmarking with profiling.
+
+WWW: https://github.com/ruby/profile
