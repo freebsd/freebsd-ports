@@ -1,3 +1,31 @@
+  <vuln vid="1135e939-62b4-11ec-b8e2-1c1b0d9ea7e6">
+    <topic>opengrok -- Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise OpenGrok.</topic>
+    <affects>
+      <package>
+	<name>opengrok</name>
+	<range><le>1.6.7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bobby Rauch of Accenture reports:</p>
+	<blockquote cite="https://medium.com/@bobbyrsec/oracle-opengrok-rce-cve-2021-2322-a284e5621bfe">
+	  <p>I ended up finding OpenGrok, and after careful testing, discovered that OpenGrok insecurely deserializes XML input, which can lead to Remote Code Execution. This vulnerability was found in all versions of OpenGrok &lt;1.6.8 and was reported to Oracle. The vulnerability has now been patched in OpenGrok 1.6.9, and has been issued a CVE. (https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2322)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-2322</cvename>
+      <url>https://www.oracle.com/security-alerts/oracle-open-source-cves-outside-other-oracle-public-documents.html</url>
+      <url>https://www.oracle.com/security-alerts/oracle-open-source-cves-outside-other-oracle-public-documents.html</url>
+      <url>https://github.com/oracle/opengrok/pull/3528</url>
+    </references>
+    <dates>
+      <discovery>2021-04-07</discovery>
+      <entry>2021-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a50bb48-625f-11ec-a1fb-080027cb2f6f">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
