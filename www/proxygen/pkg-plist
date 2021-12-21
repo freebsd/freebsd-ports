@@ -141,6 +141,7 @@ include/proxygen/lib/http/session/HTTPErrorPage.h
 include/proxygen/lib/http/session/HTTPEvent.h
 include/proxygen/lib/http/session/HTTPSession.h
 include/proxygen/lib/http/session/HTTPSessionAcceptor.h
+include/proxygen/lib/http/session/HTTPSessionActivityTracker.h
 include/proxygen/lib/http/session/HTTPSessionBase.h
 include/proxygen/lib/http/session/HTTPSessionController.h
 include/proxygen/lib/http/session/HTTPSessionStats.h
