@@ -9,6 +9,10 @@ COMMENT=	Yet another Matrix client for the web
 
 LICENSE=	MIT
 
+USES=		cpe
+
+CPE_VENDOR=	cinny_project
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
