@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	llhttp
-PORTVERSION=	6.0.5
+PORTVERSION=	6.0.6
 DISTVERSIONPREFIX=	 release/v
 CATEGORIES=	www
 
