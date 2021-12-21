@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ddtrace
-PORTVERSION=	0.54.0
+PORTVERSION=	0.54.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
