@@ -84,6 +84,7 @@ include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
 include/snort/helpers/base64_encoder.h
 include/snort/helpers/boyer_moore_search.h
+include/snort/helpers/buffer_data.h
 include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
 include/snort/helpers/scratch_allocator.h
@@ -197,6 +198,7 @@ include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
+include/snort/pub_sub/ssh_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
 include/snort/service_inspectors/ssl/ssl_flow_data.h
