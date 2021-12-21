@@ -1,7 +1,0 @@
-Bundler is a tool that manages gem dependencies for your ruby application. It
-takes a gem manifest file and is able to fetch, download, and install the gems
-and all child dependencies specified in this manifest. It can manage any update
-to the gem manifest file and update the bundled gems accordingly. It also
-letsyou run any ruby code in context of the bundled gem environment.
-
-WWW: https://bundler.io/
