@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You installed Cantera: Chemical kinetics, thermodynamics,
+and transport tool suite
+
+Since you enabled the Octave support, an additional step
+is now required in order to use it:
+
+Add the line 'addpath %%PREFIX%%/lib/cantera/matlab/toolbox'
+to ~/.octaverc
+
+EOM
+}
+]

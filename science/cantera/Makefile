@@ -50,6 +50,7 @@ OCTAVE_DESC=		Octave support
 OCTAVE_MAKE_ARGS=	matlab_toolbox=y matlab_path=${LOCALBASE}
 OCTAVE_CXXFLAGS=	-I${LOCALBASE}/include/octave-6.4.0/octave
 OCTAVE_LIB_DEPENDS=	liboctave.so:math/octave
+OCTAVE_SUB_FILES=	pkg-message-octave
 
 PYTHON_USES=		python:3.6+
 PYTHON_USE=		PYTHON=cython
