@@ -1,13 +1,13 @@
---- test/Makefile.orig	2021-10-15 11:13:16 UTC
+--- test/Makefile.orig	2021-12-12 00:26:22 UTC
 +++ test/Makefile
 @@ -1,5 +1,5 @@
- #CXX = clang++
--CXXFLAGS = -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion #-fsanitize=address
-+CXXFLAGS += -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion #-fsanitize=address
+ CXX = clang++
+-CXXFLAGS = -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
++CXXFLAGS += -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
  
- OPENSSL_DIR = /usr/local/opt/openssl@1.1
- OPENSSL_SUPPORT = -DCPPHTTPLIB_OPENSSL_SUPPORT -I$(OPENSSL_DIR)/include -L$(OPENSSL_DIR)/lib -lssl -lcrypto
-@@ -26,15 +26,15 @@ proxy : test_proxy
+ PREFIX = /usr/local
+ #PREFIX = $(shell brew --prefix)
+@@ -30,15 +30,15 @@ proxy : test_proxy
  	./test_proxy
  
  test : test.cc include_httplib.cc ../httplib.h Makefile cert.pem
