@@ -1,5 +1,0 @@
-Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules using
-values from the Can I Use. This gem provides Ruby and Ruby on Rails integration
-with this JavaScript tool.
-
-WWW: https://github.com/ai/autoprefixer-rails
