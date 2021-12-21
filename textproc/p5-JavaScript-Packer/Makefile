@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	JavaScript-Packer
-PORTVERSION=	2.07
+PORTVERSION=	2.08
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
