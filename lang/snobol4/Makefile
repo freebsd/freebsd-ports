@@ -1,7 +1,7 @@
 # Created by: Wes Peters <wes@softweyr.com>
 
 PORTNAME=	snobol4
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.snobol4.org/snobol/
 
@@ -46,8 +46,5 @@ DOCS_CONFIGURE_WITH=	docs
 
 FFI_LIB_DEPENDS=	libffi.so:devel/libffi
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
-post-patch:
-	@${REINPLACE_CMD} 's/CFLAGS /CFLAGS $$CPPFLAGS /' ${WRKSRC}/config/check
 
 .include <bsd.port.mk>
