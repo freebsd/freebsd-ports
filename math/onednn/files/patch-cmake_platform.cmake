@@ -1,6 +1,6 @@
---- cmake/platform.cmake.orig	2021-06-29 20:12:52 UTC
+--- cmake/platform.cmake.orig	2021-12-07 19:00:25 UTC
 +++ cmake/platform.cmake
-@@ -171,7 +171,7 @@ elseif(UNIX OR MINGW)
+@@ -175,7 +175,7 @@ elseif(UNIX OR MINGW)
                   set(DEF_ARCH_OPT_FLAGS "-O3")
               endif()
               # For native compilation tune for the host processor
@@ -9,7 +9,7 @@
                   append(DEF_ARCH_OPT_FLAGS "-mcpu=native")
               endif()
          elseif(DNNL_TARGET_ARCH STREQUAL "PPC64")
-@@ -179,7 +179,7 @@ elseif(UNIX OR MINGW)
+@@ -183,7 +183,7 @@ elseif(UNIX OR MINGW)
                   set(DEF_ARCH_OPT_FLAGS "-O3")
               endif()
               # For native compilation tune for the host processor
@@ -18,7 +18,7 @@
                   append(DEF_ARCH_OPT_FLAGS "-mcpu=native")
               endif()
          elseif(DNNL_TARGET_ARCH STREQUAL "S390X")
-@@ -187,10 +187,10 @@ elseif(UNIX OR MINGW)
+@@ -191,10 +191,10 @@ elseif(UNIX OR MINGW)
                   set(DEF_ARCH_OPT_FLAGS "-O3")
               endif()
               # For native compilation tune for the host processor
@@ -31,21 +31,30 @@
               set(DEF_ARCH_OPT_FLAGS "-msse4.1")
          endif()
          # Clang cannot vectorize some loops with #pragma omp simd and gets
-@@ -262,7 +262,7 @@ elseif(UNIX OR MINGW)
-                  set(DEF_ARCH_OPT_FLAGS "-O3")
-              endif()
-              # For native compilation tune for the host processor
--             if (CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
-+             if (FALSE AND CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
-                  append(DEF_ARCH_OPT_FLAGS "-mcpu=native")
-              endif()
+@@ -272,7 +272,7 @@ elseif(UNIX OR MINGW)
+                 set(DEF_ARCH_OPT_FLAGS "-O3")
+             endif()
+             # For native compilation tune for the host processor
+-            if (CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
++            if (FALSE AND CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
+                 append(DEF_ARCH_OPT_FLAGS "-mcpu=native")
+             endif()
          elseif(DNNL_TARGET_ARCH STREQUAL "PPC64")
-@@ -271,7 +271,7 @@ elseif(UNIX OR MINGW)
-              endif()
-              # In GCC, -ftree-vectorize is turned on under -O3 since 2007.
-              # For native compilation tune for the host processor
--             if (CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
-+             if (FALSE AND CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
-                  append(DEF_ARCH_OPT_FLAGS "-mcpu=native")
-              endif()
+@@ -281,7 +281,7 @@ elseif(UNIX OR MINGW)
+             endif()
+             # In GCC, -ftree-vectorize is turned on under -O3 since 2007.
+             # For native compilation tune for the host processor
+-            if (CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
++            if (FALSE AND CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
+                 append(DEF_ARCH_OPT_FLAGS "-mcpu=native")
+             endif()
          elseif(DNNL_TARGET_ARCH STREQUAL "S390X")
+@@ -290,7 +290,7 @@ elseif(UNIX OR MINGW)
+             endif()
+             # In GCC, -ftree-vectorize is turned on under -O3 since 2007.
+             # For native compilation tune for the host processor
+-            if (CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
++            if (FALSE AND CMAKE_SYSTEM_PROCESSOR STREQUAL CMAKE_HOST_SYSTEM_PROCESSOR)
+                 append(DEF_ARCH_OPT_FLAGS "-march=native")
+             endif()
+         elseif(DNNL_TARGET_ARCH STREQUAL "RV64")
