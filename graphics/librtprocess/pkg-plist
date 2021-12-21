@@ -1,0 +1,8 @@
+include/rtprocess/librtprocess.h
+lib/cmake/rtprocess/rtprocess-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/rtprocess/rtprocess-config-version.cmake
+lib/cmake/rtprocess/rtprocess-config.cmake
+lib/librtprocess.so
+lib/librtprocess.so.0
+lib/librtprocess.so.0.0.1
+libdata/pkgconfig/rtprocess.pc

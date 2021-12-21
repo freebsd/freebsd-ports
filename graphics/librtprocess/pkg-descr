@@ -1,0 +1,8 @@
+This project aims to make some of RawTherapee's highly optimized raw
+processing routines readily available for other photo editing software.
+
+The goal is to move certain source files from RawTherapee into this
+library.  Thus, any changes to the source can be done here and will be
+used by the projects which use librtprocess.
+
+WWW: https://github.com/CarVac/librtprocess
