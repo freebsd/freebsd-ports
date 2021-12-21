@@ -1,7 +1,7 @@
 # Created by: Andrey Zonov <andrey@zonov.org>
 
 PORTNAME=	msgpack
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
