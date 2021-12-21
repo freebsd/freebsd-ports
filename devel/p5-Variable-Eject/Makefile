@@ -1,8 +1,7 @@
 # Created by: Anes Mukhametov <anes@anes.su>
 
 PORTNAME=	Variable-Eject
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
