@@ -1,0 +1,14 @@
+--- Makefile.in~	2021-07-08 13:37:21.000000000 +0200
++++ Makefile.in	2021-12-21 10:13:14.973574000 +0100
+@@ -367,7 +367,10 @@
+ # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the
+ # default multilib, so we have to take CFLAGS into account as well,
+ # since it will be passed the multilib flags.
+-MULTIOSDIR = `$(CC) $(CFLAGS) -print-multi-os-directory`
++#
++# XXX Clang does not support -print-multi-os-directory
++MULTIOSDIR = .
++#MULTIOSDIR = `$(CC) $(CFLAGS) -print-multi-os-directory`
+ install_to_libdir: all
+ 	if test -n "${target_header_dir}"; then \
+ 		${mkinstalldirs} $(DESTDIR)$(libdir)/$(MULTIOSDIR); \
