@@ -11,8 +11,7 @@ COMMENT=	OS independent and secure pseudo-tty management
 
 LICENSE=	GPLv2
 
-USES=		cmake cpe
-CPE_VENDOR=	marc_lehmann
+USES=		cmake
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
