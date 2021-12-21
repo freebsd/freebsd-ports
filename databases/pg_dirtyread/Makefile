@@ -1,7 +1,7 @@
 # Created by: Jov <amutu@amutu.com>
 
 PORTNAME=	pg_dirtyread
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
 
