@@ -22,4 +22,7 @@ GH_TAGNAME=	cee6b85
 CMAKE_OFF=	INSTALL_DBUS_SERVICE
 PLIST_FILES=	bin/${PORTNAME}
 
+post-patch:
+	@${REINPLACE_CMD} '/systemd/d' ${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
