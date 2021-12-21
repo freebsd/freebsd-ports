@@ -592,7 +592,6 @@
     SUBDIR += osi-conic
     SUBDIR += osiipopt
     SUBDIR += osqp
-    SUBDIR += p5-Alien-GSL
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
     SUBDIR += p5-AI-NeuralNet-BackProp
@@ -600,6 +599,7 @@
     SUBDIR += p5-Algorithm-Combinatorics
     SUBDIR += p5-Algorithm-CurveFit
     SUBDIR += p5-Algorithm-Munkres
+    SUBDIR += p5-Alien-GSL
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
     SUBDIR += p5-Bit-Vector-Minimal

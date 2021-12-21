@@ -830,8 +830,8 @@
     SUBDIR += gindent
     SUBDIR += gio-sharp
     SUBDIR += git
-    SUBDIR += git-arc
     SUBDIR += git-absorb
+    SUBDIR += git-arc
     SUBDIR += git-bug
     SUBDIR += git-cinnabar
     SUBDIR += git-codereview
