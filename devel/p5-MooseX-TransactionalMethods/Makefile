@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=1.21:devel/p5-Moose \
-		p5-Sub-Name>=0:devel/p5-Sub-Name \
+		p5-Sub-Name>=0,1:devel/p5-Sub-Name \
 		p5-aliased>=0:devel/p5-aliased
 
 USES=		perl5
