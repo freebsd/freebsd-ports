@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-kinesis
-PORTVERSION=	1.37.0
+PORTVERSION=	1.38.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
