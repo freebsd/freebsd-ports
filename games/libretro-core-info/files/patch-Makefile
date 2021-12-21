@@ -1,8 +1,0 @@
---- Makefile.orig	2018-04-07 14:38:02 UTC
-+++ Makefile
-@@ -1,4 +1,4 @@
--PREFIX := /usr
-+PREFIX ?= /usr
- INSTALLDIR := $(PREFIX)/share/libretro/info
-
- all:

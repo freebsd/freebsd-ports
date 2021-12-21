@@ -23,6 +23,7 @@ share/libretro/info/bsnes_mercury_performance_libretro.info
 share/libretro/info/cannonball_libretro.info
 share/libretro/info/cap32_libretro.info
 share/libretro/info/chailove_libretro.info
+share/libretro/info/citra2018_libretro.info
 share/libretro/info/citra_canary_libretro.info
 share/libretro/info/citra_libretro.info
 share/libretro/info/craft_libretro.info
@@ -32,10 +33,12 @@ share/libretro/info/daphne_libretro.info
 share/libretro/info/desmume2015_libretro.info
 share/libretro/info/desmume_libretro.info
 share/libretro/info/dinothawr_libretro.info
+share/libretro/info/directxbox_libretro.info
 share/libretro/info/dolphin_launcher_libretro.info
 share/libretro/info/dolphin_libretro.info
 share/libretro/info/dosbox_core_libretro.info
 share/libretro/info/dosbox_libretro.info
+share/libretro/info/dosbox_pure_libretro.info
 share/libretro/info/dosbox_svn_ce_libretro.info
 share/libretro/info/dosbox_svn_libretro.info
 share/libretro/info/duckstation_libretro.info
@@ -68,7 +71,9 @@ share/libretro/info/gambatte_libretro.info
 share/libretro/info/gearboy_libretro.info
 share/libretro/info/gearsystem_libretro.info
 share/libretro/info/genesis_plus_gx_libretro.info
+share/libretro/info/genesis_plus_gx_wide_libretro.info
 share/libretro/info/gme_libretro.info
+share/libretro/info/gong_libretro.info
 share/libretro/info/gpsp_libretro.info
 share/libretro/info/gw_libretro.info
 share/libretro/info/handy_libretro.info
@@ -79,6 +84,7 @@ share/libretro/info/higan_sfc_libretro.info
 share/libretro/info/imageviewer_libretro.info
 share/libretro/info/ishiiruka_libretro.info
 share/libretro/info/kronos_libretro.info
+share/libretro/info/lowresnx_libretro.info
 share/libretro/info/lutro_libretro.info
 share/libretro/info/mame2000_libretro.info
 share/libretro/info/mame2003_libretro.info
@@ -89,6 +95,7 @@ share/libretro/info/mame2010_libretro.info
 share/libretro/info/mame2015_libretro.info
 share/libretro/info/mame2016_libretro.info
 share/libretro/info/mame_libretro.info
+share/libretro/info/mamearcade_libretro.info
 share/libretro/info/mednafen_gba_libretro.info
 share/libretro/info/mednafen_lynx_libretro.info
 share/libretro/info/mednafen_ngp_libretro.info
@@ -109,6 +116,7 @@ share/libretro/info/mesen_libretro.info
 share/libretro/info/mess2015_libretro.info
 share/libretro/info/meteor_libretro.info
 share/libretro/info/mgba_libretro.info
+share/libretro/info/moonlight_libretro.info
 share/libretro/info/mpv_libretro.info
 share/libretro/info/mrboom_libretro.info
 share/libretro/info/mu_libretro.info
@@ -131,6 +139,7 @@ share/libretro/info/parallel_n64_libretro.info
 share/libretro/info/pascal_pong_libretro.info
 share/libretro/info/pcem_libretro.info
 share/libretro/info/pcsx1_libretro.info
+share/libretro/info/pcsx2_libretro.info
 share/libretro/info/pcsx_rearmed_interpreter_libretro.info
 share/libretro/info/pcsx_rearmed_libretro.info
 share/libretro/info/pcsx_rearmed_libretro_neon.info
@@ -138,6 +147,7 @@ share/libretro/info/picodrive_libretro.info
 share/libretro/info/play_libretro.info
 share/libretro/info/pocketcdg_libretro.info
 share/libretro/info/pokemini_libretro.info
+share/libretro/info/potator_libretro.info
 share/libretro/info/ppsspp_libretro.info
 share/libretro/info/prboom_libretro.info
 share/libretro/info/prosystem_libretro.info
@@ -149,9 +159,11 @@ share/libretro/info/race_libretro.info
 share/libretro/info/redbook_libretro.info
 share/libretro/info/reminiscence_libretro.info
 share/libretro/info/remotejoy_libretro.info
+share/libretro/info/retro8_libretro.info
 share/libretro/info/retrodream_libretro.info
 share/libretro/info/rustation_libretro.info
 share/libretro/info/sameboy_libretro.info
+share/libretro/info/sameduck_libretro.info
 share/libretro/info/scummvm_libretro.info
 share/libretro/info/simcp_libretro.info
 share/libretro/info/smsplus_libretro.info
@@ -164,6 +176,7 @@ share/libretro/info/squirreljme_libretro.info
 share/libretro/info/stella2014_libretro.info
 share/libretro/info/stella_libretro.info
 share/libretro/info/stonesoup_libretro.info
+share/libretro/info/swanstation_libretro.info
 share/libretro/info/tempgba_libretro.info
 share/libretro/info/test_libretro.info
 share/libretro/info/test_netplay_libretro.info

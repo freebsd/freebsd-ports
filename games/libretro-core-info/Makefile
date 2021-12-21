@@ -1,6 +1,6 @@
 PORTNAME=	libretro-core-info
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.7
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
