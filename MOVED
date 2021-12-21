@@ -16490,7 +16490,6 @@ sysutils/cfengine-masterfiles311|sysutils/cfengine-masterfiles317|2021-09-30|Has
 mail/postfix35|mail/postfix|2021-09-30|Has expired: It is only here until FreeBSD 11 is EoL (Postfix >= 3.6 requires OpenSSL >= 1.1.x)
 graphics/drm-fbsd11.2-kmod||2021-09-30|Removed, only useful on EOL FreeBSD 11.4
 devel/qca-legacy|devel/qca|2021-09-30|Removed, only useful on EOL FreeBSD 11.4
-www/py-pyjwt|www/py-pyjwt1|2021-10-02|Renamed to prepare for the addition of v2.x to the tree
 lang/erlang-runtime20|lang/erlang-runtime22|2021-10-04|Has expired: no longer supported upstream, use lang/erlang >=22
 lang/erlang-riak|lang/erlang-runtime22|2021-10-04|Has expired: no longer supported upstream, use lang/erlang >=22
 sysutils/stanchion||2021-10-04|Has expired: dependencies no longer supported upstream
