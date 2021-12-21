@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	selenium-webdriver
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
