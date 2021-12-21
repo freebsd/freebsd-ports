@@ -6303,6 +6303,7 @@
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fattr
+    SUBDIR += rubygem-fcntl
     SUBDIR += rubygem-ffi
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-libarchive
