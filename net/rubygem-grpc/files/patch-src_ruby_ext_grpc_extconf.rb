@@ -1,8 +1,8 @@
---- src/ruby/ext/grpc/extconf.rb.orig	2021-04-24 13:33:17 UTC
+--- src/ruby/ext/grpc/extconf.rb.orig	2021-12-04 03:53:02 UTC
 +++ src/ruby/ext/grpc/extconf.rb
-@@ -42,9 +42,9 @@ if RUBY_PLATFORM =~ /darwin/
+@@ -45,9 +45,9 @@ if darwin && !cross_compiling
    ENV['ARFLAGS'] = '-o'
-  end
+ end
  
 -ENV['EMBED_OPENSSL'] = 'true'
 -ENV['EMBED_ZLIB'] = 'true'
@@ -12,8 +12,8 @@
 +ENV['EMBED_CARES'] = 'false'
  
  ENV['ARCH_FLAGS'] = RbConfig::CONFIG['ARCH_FLAG']
- if RUBY_PLATFORM =~ /darwin/
-@@ -61,22 +61,23 @@ output_dir = File.expand_path(RbConfig::CONFIG['topdir
+ if darwin && !cross_compiling
+@@ -66,22 +66,23 @@ output_dir = File.expand_path(RbConfig::CONFIG['topdir
  grpc_lib_dir = File.join(output_dir, 'libs', grpc_config)
  ENV['BUILDDIR'] = output_dir
  
@@ -38,14 +38,14 @@
 +#$CFLAGS << ' -I' + File.join(grpc_root, 'include')
  
  ext_export_file = File.join(grpc_root, 'src', 'ruby', 'ext', 'grpc', 'ext-export')
--$LDFLAGS << ' -Wl,--version-script="' + ext_export_file + '.gcc"' if RUBY_PLATFORM =~ /linux/
--$LDFLAGS << ' -Wl,-exported_symbols_list,"' + ext_export_file + '.clang"' if RUBY_PLATFORM =~ /darwin/
-+#$LDFLAGS << ' -Wl,--version-script="' + ext_export_file + '.gcc"' if RUBY_PLATFORM =~ /linux/
-+#$LDFLAGS << ' -Wl,-exported_symbols_list,"' + ext_export_file + '.clang"' if RUBY_PLATFORM =~ /darwin/
-+$LDFLAGS << ' -lgrpc' unless windows
+-$LDFLAGS << ' -Wl,--version-script="' + ext_export_file + '.gcc"' if linux
+-$LDFLAGS << ' -Wl,-exported_symbols_list,"' + ext_export_file + '.clang"' if darwin
++#$LDFLAGS << ' -Wl,--version-script="' + ext_export_file + '.gcc"' if linux
++#$LDFLAGS << ' -Wl,-exported_symbols_list,"' + ext_export_file + '.clang"' if darwin
  
 -$LDFLAGS << ' ' + File.join(grpc_lib_dir, 'libgrpc.a') unless windows
 +#$LDFLAGS << ' ' + File.join(grpc_lib_dir, 'libgrpc.a') unless windows
++$LDFLAGS << ' -lgrpc' unless windows
  if grpc_config == 'gcov'
    $CFLAGS << ' -O0 -fprofile-arcs -ftest-coverage'
    $LDFLAGS << ' -fprofile-arcs -ftest-coverage -rdynamic'
