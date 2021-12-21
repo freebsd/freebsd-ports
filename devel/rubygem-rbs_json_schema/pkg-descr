@@ -1,0 +1,4 @@
+rbs_json_schema is a RBS type definition generator from JSON Schema. It loads
+JSON files and writes RBS type definitioins.
+
+WWW: https://github.com/ruby/rbs_json_schema
