@@ -1,9 +1,9 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
-PORTNAME=	homura
-DISTVERSION=	5.6
+PORTNAME=	suyimazu
+DISTVERSION=	5.7
 CATEGORIES=	games
-MASTER_SITES=	https://codeberg.org/Alexander88207/Homura/archive/
+MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/
 DISTNAME=	${DISTVERSION}
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Wine only runs on x86 architecture
 
-RUN_DEPENDS=	7z:archivers/p7zip \
+RUN_DEPENDS=	7zz:archivers/7-zip \
 		bash:shells/bash \
-		glxinfo:graphics/mesa-demos \
+		glxinfo:graphics/glx-utils \
 		vulkaninfo:graphics/vulkan-tools \
 		wine-proton>0:emulators/wine-proton \
 		winetricks:emulators/winetricks \
@@ -28,12 +28,12 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/Homura \
-		share/Homura/Data/Framework
+PLIST_FILES=	bin/Suyimazu \
+		share/Suyimazu/Data/Framework
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/Homura/Data
-	${INSTALL_SCRIPT} ${WRKSRC}/Homura ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/Data/Framework ${STAGEDIR}${PREFIX}/share/Homura/Data
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/Suyimazu/Data
+	${INSTALL_SCRIPT} ${WRKSRC}/Suyimazu ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Data/Framework ${STAGEDIR}${PREFIX}/share/Suyimazu/Data
 
 .include <bsd.port.mk>

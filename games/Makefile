@@ -380,7 +380,6 @@
     SUBDIR += hitori
     SUBDIR += hllib
     SUBDIR += holotz-castle
-    SUBDIR += homura
     SUBDIR += hoverboard-sdl
     SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
@@ -933,6 +932,7 @@
     SUBDIR += supertux
     SUBDIR += supertux2
     SUBDIR += supertuxkart
+    SUBDIR += suyimazu
     SUBDIR += swell-foop
     SUBDIR += sxsame
     SUBDIR += tads
