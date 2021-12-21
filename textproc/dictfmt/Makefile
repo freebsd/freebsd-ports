@@ -1,7 +1,7 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/dict/dictd/dictd-${PORTVERSION}
 DISTNAME=	dictd-${PORTVERSION}
