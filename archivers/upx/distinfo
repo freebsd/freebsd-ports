@@ -1,5 +1,5 @@
-TIMESTAMP = 1544570151
-SHA256 (upx-upx-v3.95_GH0.tar.gz) = fdb79c8238360115770e9c13bdaeb48da6fb09c813b0a461c5f9faee176d6fb9
-SIZE (upx-upx-v3.95_GH0.tar.gz) = 1663470
-SHA256 (upx-upx-lzma-sdk-v3.95_GH0.tar.gz) = 4932ed7b79cf47aa91fe737c068f74553e17033161c7e7e532e4b967f02f1557
-SIZE (upx-upx-lzma-sdk-v3.95_GH0.tar.gz) = 109697
+TIMESTAMP = 1638556458
+SHA256 (upx-upx-v3.96_GH0.tar.gz) = 6882b4ea89c7a0ed74b86d3c0f1d07814b492eaf649b43ab8b4dfefa9e2d7387
+SIZE (upx-upx-v3.96_GH0.tar.gz) = 1676172
+SHA256 (upx-upx-lzma-sdk-v3.96_GH0.tar.gz) = e465670abe0900a0995f7e6166bff86caed06b253f6ff02d6490df6263aecc67
+SIZE (upx-upx-lzma-sdk-v3.96_GH0.tar.gz) = 109692
