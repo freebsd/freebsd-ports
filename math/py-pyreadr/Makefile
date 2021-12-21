@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pyreadr
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Read/write R RData and Rds files into/from pandas data frames
 LICENSE=	AGPLv3+
 
 LIB_DEPENDS=	librdata.so:math/librdata
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.24.0:math/py-pandas@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.2.0,1:math/py-pandas@${PY_FLAVOR}
 
 USES=		localbase python
 USE_PYTHON=	autoplist concurrent cython distutils

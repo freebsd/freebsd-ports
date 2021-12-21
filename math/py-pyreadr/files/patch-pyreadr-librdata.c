@@ -1,4 +1,4 @@
---- pyreadr/librdata.c.orig	2021-06-07 07:39:42 UTC
+--- pyreadr/librdata.c.orig	2021-12-02 16:19:42 UTC
 +++ pyreadr/librdata.c
 @@ -4,8 +4,6 @@
  {
@@ -13,17 +13,17 @@
          "name": "pyreadr.librdata",
          "sources": [
              "pyreadr/librdata.pyx",
--            "pyreadr/libs/librdata/src/CKHashTable.c",
+-            "pyreadr/libs/librdata/src/rdata_write.c",
 -            "pyreadr/libs/librdata/src/rdata_bits.c",
--            "pyreadr/libs/librdata/src/rdata_error.c",
--            "pyreadr/libs/librdata/src/rdata_io_unistd.c",
--            "pyreadr/libs/librdata/src/rdata_parser.c",
 -            "pyreadr/libs/librdata/src/rdata_read.c",
--            "pyreadr/libs/librdata/src/rdata_write.c"
+-            "pyreadr/libs/librdata/src/rdata_parser.c",
+-            "pyreadr/libs/librdata/src/CKHashTable.c",
+-            "pyreadr/libs/librdata/src/rdata_error.c",
+-            "pyreadr/libs/librdata/src/rdata_io_unistd.c"
          ]
      },
      "module_name": "pyreadr.librdata"
-@@ -645,8 +636,8 @@ static CYTHON_INLINE float __PYX_NAN() {
+@@ -655,8 +646,8 @@ static CYTHON_INLINE float __PYX_NAN() {
  #include <time.h>
  #include <stdint.h>
  #include <sys/types.h>
