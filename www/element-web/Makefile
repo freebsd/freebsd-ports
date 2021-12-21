@@ -10,6 +10,10 @@ COMMENT=	Glossy Matrix collaboration client for the web
 
 LICENSE=	APACHE20
 
+USES=		cpe
+
+CPE_VENDOR=	matrix
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
