@@ -1,3 +1,5 @@
 Protocol Buffers for Go with Gadgets
 
-WWW: https://github.com/gogo/protobuf/
+gogoprotobuf is a fork of golang/protobuf with extra code generation features.
+
+WWW: https://github.com/gogo/protobuf
