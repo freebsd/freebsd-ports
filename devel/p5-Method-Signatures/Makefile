@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Any-Moose>=0.11:devel/p5-Any-Moose \
 		p5-Lexical-SealRequireHints>=0.008:devel/p5-Lexical-SealRequireHints \
 		p5-Mouse>=0.64:devel/p5-Mouse \
 		p5-PPI>=1.203:textproc/p5-PPI \
-		p5-Sub-Name>=0.03:devel/p5-Sub-Name
+		p5-Sub-Name>=0.03,1:devel/p5-Sub-Name
 TEST_DEPENDS=	p5-Test-Exception>=0.29:devel/p5-Test-Exception \
 		p5-Test-Warn>=0.10:devel/p5-Test-Warn
 
