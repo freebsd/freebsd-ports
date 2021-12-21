@@ -1,3 +1,43 @@
+  <vuln vid="650734b2-7665-4170-9a0a-eeced5e10a5e">
+    <topic>graylog -- remote code execution in log4j from user-controlled log input</topic>
+    <affects>
+      <package>
+    <name>graylog</name>
+    <range><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Apache Software Foundation reports:</p>
+    <blockquote cite="https://logging.apache.org/log4j/2.x/security.html">
+      <p>It was found that the fix to address CVE-2021-44228 in Apache
+       Log4j 2.15.0 was incomplete in certain non-default
+       configurations. This could allows attackers with control over
+       Thread Context Map (MDC) input data when the logging
+       configuration uses a non-default Pattern Layout with either a
+       Context Lookup (for example, $${ctx:loginId}) or a Thread
+       Context Map pattern (%X, %mdc, or %MDC) to craft malicious input
+       data using a JNDI Lookup pattern resulting in a denial of
+       service (DOS) attack. Log4j 2.15.0 makes a best-effort attempt
+       to restrict JNDI LDAP lookups to localhost by default. Log4j
+       2.16.0 fixes this issue by removing support for message lookup
+       patterns and disabling JNDI functionality by default.
+      </p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45046</cvename>
+      <url>https://github.com/Graylog2/graylog2-server/commit/d3e441f</url>
+      <url>https://github.com/Graylog2/graylog2-server/commit/dd24b85</url>
+      <url>https://logging.apache.org/log4j/2.x/security.html</url>
+    </references>
+    <dates>
+      <discovery>2021-11-14</discovery>
+      <entry>2021-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca982e2d-61a9-11ec-8be6-d4c9ef517024">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
