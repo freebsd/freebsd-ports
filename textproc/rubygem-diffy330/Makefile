@@ -17,4 +17,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
