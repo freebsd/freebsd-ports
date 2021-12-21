@@ -8458,7 +8458,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Date/Error/cdesc-Error.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/_httpdate-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/_iso8601-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Date/_jisx0%%RUBY_SUFFIX%%1-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Date/_jisx0301-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/_parse-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/_rfc2822-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/_rfc3339-c.ri
@@ -8496,8 +8496,8 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Date/italy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/jd-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/jd-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Date/jisx0%%RUBY_SUFFIX%%1-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Date/jisx0%%RUBY_SUFFIX%%1-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Date/jisx0301-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Date/jisx0301-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/json_create-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/julian%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Date/julian-i.ri
@@ -8582,8 +8582,8 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/DateTime/iso8601-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/DateTime/iso8601-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/DateTime/jd-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/DateTime/jisx0%%RUBY_SUFFIX%%1-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/DateTime/jisx0%%RUBY_SUFFIX%%1-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/DateTime/jisx0301-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/DateTime/jisx0301-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/DateTime/json_create-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/DateTime/min-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/DateTime/minute-i.ri
