@@ -20,9 +20,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/sass bin/sass-convert bin/scss
 
-# bin/sass bin/sass-convert bin/scss
-CONFLICTS_INSTALL=	rubygem-sass34
-
 SHEBANG_FILES=	extra/sass-spec-ref.sh
 
 .include <bsd.port.mk>
