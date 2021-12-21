@@ -1,5 +1,0 @@
-With ActsAsTaggableOn, you can tag a single model on several contexts,
-such as skills, interests, and awards.  It also provides other
-advanced functionality.
-
-WWW: https://github.com/mbleigh/acts-as-taggable-on
