@@ -3,4 +3,4 @@ This module provides a wrapper around various text markup languages.
 Available by default are Markdown, reStructuredText and Textile, but you can
 easily add your own markups.
 
-WWW: https://pypi.org/project/Markups/
+WWW: https://github.com/retext-project/pymarkups
