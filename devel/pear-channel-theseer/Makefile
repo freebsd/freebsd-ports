@@ -8,6 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
+NO_ARCH=	yes
+
 PEAR_CHANNEL_HOST=	pear.netpirates.net
 
 .include "${.CURDIR}/../../devel/pear/bsd.pear.channel.mk"
