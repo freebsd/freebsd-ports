@@ -1,3 +1,53 @@
+  <vuln vid="0a50bb48-625f-11ec-a1fb-080027cb2f6f">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.5</lt></range>
+      </package>
+      <package>
+	<name>mediawiki136</name>
+	<range><lt>1.36.3</lt></range>
+      </package>
+      <package>
+	<name>mediawiki137</name>
+	<range><lt>1.37.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/QEN3EK4JXAVJMJ5GF3GYOAKNJPEKFQYA/">
+	  <p>(T292763. CVE-2021-44854) REST API incorrectly publicly caches
+	    autocomplete search results from private wikis.</p>
+	  <p>(T271037, CVE-2021-44856) Title blocked in AbuseFilter can be created via
+	    Special:ChangeContentModel.</p>
+	  <p>(T297322, CVE-2021-44857) Unauthorized users can use action=mcrundo to
+	    replace the content of arbitrary pages.</p>
+	  <p> (T297322, CVE-2021-44858) Unauthorized users can view contents of private
+	    wikis using various actions.</p>
+	  <p>(T297574, CVE-2021-45038) Unauthorized users can access private wiki
+	    contents using rollback action</p>
+	  <p>(T293589, CVE-2021-44855) Blind Stored XSS in VisualEditor media dialog.</p>
+	  <p>(T294686) Special:Nuke doesn't actually delete pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44854</cvename>
+      <cvename>CVE-2021-44856</cvename>
+      <cvename>CVE-2021-44857</cvename>
+      <cvename>CVE-2021-44858</cvename>
+      <cvename>CVE-2021-45038</cvename>
+      <cvename>CVE-2021-44855</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/QEN3EK4JXAVJMJ5GF3GYOAKNJPEKFQYA/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-01</discovery>
+      <entry>2021-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="650734b2-7665-4170-9a0a-eeced5e10a5e">
     <topic>graylog -- remote code execution in log4j from user-controlled log input</topic>
     <affects>
