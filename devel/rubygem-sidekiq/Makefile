@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	sidekiq
-PORTVERSION=	6.2.2
+PORTVERSION=	6.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
