@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-elasticsearchservice
-PORTVERSION=	1.58.0
+PORTVERSION=	1.59.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
