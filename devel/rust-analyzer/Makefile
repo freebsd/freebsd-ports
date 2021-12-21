@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-12-13
+DISTVERSION=	2021-12-20
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -30,10 +30,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cargo_metadata-0.14.1 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.74.0 \
-		chalk-ir-0.74.0 \
-		chalk-recursive-0.74.0 \
-		chalk-solve-0.74.0 \
+		chalk-derive-0.75.0 \
+		chalk-ir-0.75.0 \
+		chalk-recursive-0.75.0 \
+		chalk-solve-0.75.0 \
 		countme-3.0.0 \
 		cov-mark-2.0.0-pre.1 \
 		crc32fast-1.3.0 \
@@ -67,12 +67,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
 		itertools-0.10.3 \
-		itoa-0.4.8 \
+		itoa-1.0.1 \
 		jod-thread-0.1.2 \
 		kqueue-1.0.4 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
-		libc-0.2.111 \
+		libc-0.2.112 \
 		libloading-0.7.2 \
 		libmimalloc-sys-0.1.23 \
 		lock_api-0.4.5 \
@@ -93,7 +93,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ntapi-0.3.6 \
 		num_cpus-1.13.0 \
 		object-0.27.1 \
-		once_cell-1.8.0 \
+		object-0.28.1 \
+		once_cell-1.9.0 \
 		oorandom-11.1.3 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
@@ -103,7 +104,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		perf-event-open-sys-1.0.1 \
 		petgraph-0.5.1 \
 		pin-project-lite-0.2.7 \
-		proc-macro2-1.0.33 \
+		proc-macro2-1.0.34 \
 		pulldown-cmark-0.8.0 \
 		pulldown-cmark-to-cmark-7.1.1 \
 		quote-1.0.10 \
@@ -113,20 +114,20 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		regex-1.5.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
-		rowan-0.15.1 \
+		rowan-0.15.2 \
 		rustc-ap-rustc_lexer-725.0.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		ryu-1.0.8 \
+		ryu-1.0.9 \
 		salsa-0.17.0-pre.2 \
 		salsa-macros-0.17.0-pre.2 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		serde-1.0.131 \
-		serde_derive-1.0.131 \
-		serde_json-1.0.72 \
+		serde-1.0.132 \
+		serde_derive-1.0.132 \
+		serde_json-1.0.73 \
 		serde_repr-0.1.7 \
 		sharded-slab-0.1.4 \
 		smallvec-1.7.0 \
