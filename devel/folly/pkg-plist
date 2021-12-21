@@ -285,6 +285,7 @@ include/folly/experimental/channels/MergeChannel-inl.h
 include/folly/experimental/channels/MergeChannel.h
 include/folly/experimental/channels/Producer-inl.h
 include/folly/experimental/channels/Producer.h
+include/folly/experimental/channels/RateLimiter.h
 include/folly/experimental/channels/Transform-inl.h
 include/folly/experimental/channels/Transform.h
 include/folly/experimental/channels/detail/AtomicQueue.h
@@ -582,6 +583,7 @@ include/folly/lang/Exception.h
 include/folly/lang/Extern.h
 include/folly/lang/Keep.h
 include/folly/lang/Launder.h
+include/folly/lang/New.h
 include/folly/lang/Ordering.h
 include/folly/lang/Pretty.h
 include/folly/lang/PropagateConst.h
