@@ -1,9 +1,0 @@
-Haml is a markup language that's used to cleanly and simply describe the HTML
-of any web document without the use of inline code. Haml functions as a
-replacement for inline page templating systems such as PHP, ASP, and ERB, the
-templating language used in most Ruby on Rails applications.
-However, Haml avoids the need for explicitly coding HTML into the template,
-because it itself is a description of the HTML, with some code to generate
-dynamic content.
-
-WWW: https://haml.info/
