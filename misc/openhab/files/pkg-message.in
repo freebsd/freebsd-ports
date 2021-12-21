@@ -29,6 +29,33 @@ If you upgrade from a pevious version, make a backup of
 	/var/db/openhab
 and read about the breaking changes in the release notes at
 	https://github.com/openhab/openhab-distro/releases/
+
+You may have to update the files in
+	/var/db/openhab/userdata/etc/
+from
+	%%DATADIR%%/etc/
+by hand.
+
+In case you see issues in the logfile or outdated info in the webinterface,
+you may want to remove the cache and restart:
+	rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi
 EOM
 }
+{ type: upgrade
+  message: <<EOM
+If you upgrade from a pevious version, make a backup of
+	/var/db/openhab
+and read about the breaking changes in the release notes at
+	https://github.com/openhab/openhab-distro/releases/
+
+You may have to update the files in
+	/var/db/openhab/userdata/etc/
+from
+	%%DATADIR%%/etc/
+by hand.
+
+In case you see issues in the logfile or outdated info in the webinterface,
+you may want to remove the cache and restart:
+        rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi
+EOM
 ]
