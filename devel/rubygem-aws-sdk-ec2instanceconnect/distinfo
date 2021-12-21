@@ -1,3 +1,3 @@
-TIMESTAMP = 1636145270
-SHA256 (rubygem/aws-sdk-ec2instanceconnect-1.19.0.gem) = 634bd8947b9e0482936f230d4d044bbfdfc542c61a79b137829bdbe6dcec39d4
-SIZE (rubygem/aws-sdk-ec2instanceconnect-1.19.0.gem) = 18432
+TIMESTAMP = 1638556832
+SHA256 (rubygem/aws-sdk-ec2instanceconnect-1.20.0.gem) = b64950e4d945349281a71d11f267daba8ef6c3e187d4db4fb68003c2f1aea810
+SIZE (rubygem/aws-sdk-ec2instanceconnect-1.20.0.gem) = 18432
