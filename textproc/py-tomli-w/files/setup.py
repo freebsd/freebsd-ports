@@ -17,5 +17,5 @@ setup(name='tomli_w',
       url=None,
       packages=packages,
       package_data=package_data,
-      python_requires='>=3.6',
+      python_requires='>=3.7',
      )
