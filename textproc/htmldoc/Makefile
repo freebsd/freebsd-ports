@@ -1,7 +1,7 @@
 # Created by: Glenn Trewitt <glenn@trewitt.org>
 
 PORTNAME=	htmldoc
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
