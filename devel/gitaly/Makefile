@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.5.2
+DISTVERSION=	14.6.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -18,7 +18,7 @@ MY_DEPENDS=	git>=2.33.0:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
 		rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
-		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
+		rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport61>=6.1.4.1<6.1.4.2:devel/rubygem-activesupport61 \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
-		gitlab-shell>=9.3.0:devel/gitlab-shell
+		gitlab-shell>=13.22.1:devel/gitlab-shell
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		cpe gmake go:modules,no_targets pkgconfig
@@ -49,12 +49,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	5d5df6138d9bc6b93503ee529a5b099ea8e5e839
+GL_COMMIT=	b7ed739365ce6c15aad81faaf6367151d701ce85
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 138dd
+# 137dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -230,4 +230,5 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
+
 
