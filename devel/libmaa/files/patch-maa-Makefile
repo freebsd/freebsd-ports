@@ -1,0 +1,11 @@
+--- maa/Makefile.orig	2020-04-10 22:07:59 UTC
++++ maa/Makefile
+@@ -41,7 +41,7 @@ _manpages: ${MAN}
+ 
+ SHLIB_MAJOR       =	${MAA_MAJOR}
+ SHLIB_MINOR       =	${MAA_MINOR}
+-#SHLIB_TEENY       =	${MAA_TEENY}
++SHLIB_TEENY       =	${MAA_TEENY}
+ 
+ EXPORT_SYMBOLS    =	export.sym
+ 
