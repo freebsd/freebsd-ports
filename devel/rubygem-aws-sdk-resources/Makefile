@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.119.0
+PORTVERSION=	3.120.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-apigatewaymanagementapi>=1<2:devel/rubygem-aws-sdk-apigatewaymanagementapi \
 		rubygem-aws-sdk-apigatewayv2>=1<2:devel/rubygem-aws-sdk-apigatewayv2 \
 		rubygem-aws-sdk-appconfig>=1<2:devel/rubygem-aws-sdk-appconfig \
+		rubygem-aws-sdk-appconfigdata>=1<2:devel/rubygem-aws-sdk-appconfigdata \
 		rubygem-aws-sdk-appflow>=1<2:devel/rubygem-aws-sdk-appflow \
 		rubygem-aws-sdk-appintegrationsservice>=1<2:devel/rubygem-aws-sdk-appintegrationsservice \
 		rubygem-aws-sdk-applicationautoscaling>=1<2:devel/rubygem-aws-sdk-applicationautoscaling \
@@ -93,6 +94,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-directoryservice>=1<2:devel/rubygem-aws-sdk-directoryservice \
 		rubygem-aws-sdk-dlm>=1<2:devel/rubygem-aws-sdk-dlm \
 		rubygem-aws-sdk-docdb>=1<2:devel/rubygem-aws-sdk-docdb \
+		rubygem-aws-sdk-drs>=1<2:devel/rubygem-aws-sdk-drs \
 		rubygem-aws-sdk-dynamodb>=1<2:devel/rubygem-aws-sdk-dynamodb \
 		rubygem-aws-sdk-dynamodbstreams>=1<2:devel/rubygem-aws-sdk-dynamodbstreams \
 		rubygem-aws-sdk-ebs>=1<2:devel/rubygem-aws-sdk-ebs \
