@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 from setuptools import setup
 
@@ -13,12 +12,12 @@ INSTALL_REQUIRE = [
     'importlib-metadata; python_version < "3.8"',
     'installer>=0.3.0,<0.5',
     'packaging',
-    'pdm-pep517>=0.8.3,<0.9',
+    'pdm-pep517>=0.9,<0.10',
     'pep517>=0.11.0',
     'pip>=20.1',
     'python-dotenv~=0.15',
     'pythonfinder',
-    'resolvelib>=0.7.0,<0.8.0',
+    'resolvelib>=0.8,<0.9',
     'shellingham<2.0.0,>=1.3.2',
     'tomli>=1.1.0,<2.0.0',
     'typing-extensions; python_version < "3.8"',

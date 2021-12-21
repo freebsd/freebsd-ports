@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pdm
-PORTVERSION=	1.10.3
+PORTVERSION=	1.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +17,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.3.0<0.5:devel/py-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdm-pep517>=0.8.3<0.9:devel/py-pdm-pep517@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdm-pep517>=0.9<0.10:devel/py-pdm-pep517@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pep517>=0.11.0:devel/py-pep517@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=20.1:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.15<1:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pythonfinder>=0:devel/py-pythonfinder@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}resolvelib07>=0.7.0<0.8.0:devel/py-resolvelib07@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}resolvelib>=0.8<0.9:devel/py-resolvelib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.3.2<2.0.0:devel/py-shellingham@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0<2.0.0:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.36.2<1.0.0:devel/py-wheel@${PY_FLAVOR}
