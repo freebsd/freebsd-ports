@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 
 PORTNAME=	weather
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		LOCAL/sunpoet
