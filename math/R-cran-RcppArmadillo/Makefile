@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	RcppArmadillo
-PORTVERSION=	0.10.7.3.0
+PORTVERSION=	0.10.7.5.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
