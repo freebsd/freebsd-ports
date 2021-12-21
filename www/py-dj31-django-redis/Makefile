@@ -1,5 +1,5 @@
 PORTNAME=	django-redis
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 CATEGORIES=	www databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj31-
@@ -14,7 +14,7 @@ DEPRECATED=	Extended support of Django 3.1 ends December 2021, upgrade to the Dj
 EXPIRATION_DATE=	2021-12-31
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=2.2:www/py-django31@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis>=3.0.0:databases/py-redis@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}redis>=3<4:databases/py-redis@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR}
