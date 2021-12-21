@@ -1,12 +1,10 @@
 # Created by: Frank DENIS
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.49
-PORTREVISION=	1
+PORTVERSION=	1.0.50
 CATEGORIES=	ftp
 MASTER_SITES=	https://github.com/jedisct1/pure-ftpd/releases/download/${PORTVERSION}/ \
-		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
-		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/
+		https://download.pureftpd.org/pub/pure-ftpd/releases/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, easy to set up, fast, and secure FTP server
