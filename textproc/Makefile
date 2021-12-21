@@ -1347,7 +1347,6 @@
     SUBDIR += py-mako
     SUBDIR += py-markdown
     SUBDIR += py-markdown-it-py
-    SUBDIR += py-markdown-math
     SUBDIR += py-markdown2
     SUBDIR += py-marko
     SUBDIR += py-markuppy
@@ -1425,6 +1424,7 @@
     SUBDIR += py-python-gettext
     SUBDIR += py-python-lsp-jsonrpc
     SUBDIR += py-python-lsp-server
+    SUBDIR += py-python-markdown-math
     SUBDIR += py-python-slugify
     SUBDIR += py-python-xmp-toolkit
     SUBDIR += py-pytidylib

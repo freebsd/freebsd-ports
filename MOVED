@@ -16617,3 +16617,4 @@ games/xnethack-nox11|games/xnethack@nox11|2021-12-05|Turned into flavor
 devel/py-dexml||2021-12-20|Has expired: Use devel/py-dexml2
 misc/cmatrix|games/cmatrix|2021-12-20|Move to a more appropriate category
 games/homura|games/suyimazu|2021-12-21|Project renamed
+textproc/py-markdown-math|textproc/py-python-markdown-math|2021-12-21|Rename to match upstream naming
