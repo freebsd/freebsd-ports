@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.5.2
-PORTREVISION=	1
+PORTVERSION=	14.6.0
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=2.16.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-elasticsearch-indexer>=2.17.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=14.4.0:net/gitlab-agent \
-	gitlab-pages>=1.48.0:www/gitlab-pages \
+	gitlab-pages>=1.49.0:www/gitlab-pages \
 	gitlab-shell>=13.22.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
@@ -114,7 +114,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
 	rubygem-html-pipeline>=2.13.2<2.14:textproc/rubygem-html-pipeline \
 	rubygem-deckar01-task_list=2.3.1:www/rubygem-deckar01-task_list \
-	rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
+	rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0<1.8.0:textproc/rubygem-github-markup17 \
 	rubygem-commonmarker>=0.23.2<0.24:textproc/rubygem-commonmarker \
 	rubygem-kramdown>=2.3.1<2.4:textproc/rubygem-kramdown \
@@ -137,12 +137,12 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-diff_match_patch>=0.1.0<0.2.0:textproc/rubygem-diff_match_patch \
 	rubygem-rack>=2.2.3<2.3,3:www/rubygem-rack \
 	rubygem-rack-timeout>=0.5.1<0.6:www/rubygem-rack-timeout \
-	rubygem-puma>=5.3.1<5.4:www/rubygem-puma \
+	rubygem-puma>=5.5.2<5.6:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0.3.1:www/rubygem-puma_worker_killer \
 	rubygem-sd_notify>=0.1.0<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord \
-	rubygem-acts-as-taggable-on>=7.0<8.0:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq62>=6.2.2<6.3:devel/rubygem-sidekiq62 \
+	rubygem-acts-as-taggable-on>=8.1<8.2:www/rubygem-acts-as-taggable-on \
+	rubygem-sidekiq>=6.3<6.4:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron>=1.0<2.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.8.1<1.9.0:databases/rubygem-redis-namespace \
 	rubygem-gitlab-sidekiq-fetcher>=0.8.0<0.9:devel/rubygem-gitlab-sidekiq-fetcher \
@@ -204,7 +204,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-webrick>=1.6.1:www/rubygem-webrick \
 	rubygem-prometheus-client-mmap>=0.15.0<0.16.0:devel/rubygem-prometheus-client-mmap \
 	rubygem-warning>=1.2.0<1.3:devel/rubygem-warning \
-	rubygem-license_finder>=6.0<7:devel/rubygem-license_finder \
+	rubygem-gitlab-license_finder>=6.14.2.1<7:devel/rubygem-gitlab-license_finder \
 	rubygem-octokit>=4.20<5.0:net/rubygem-octokit \
 	rubygem-gitlab-mail_room>=0.0.9<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
@@ -218,12 +218,12 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-oauth2>=1.4.7<2.0:net/rubygem-oauth2 \
 	rubygem-health_check>=3.0<4:devel/rubygem-health_check \
 	rubygem-vmstat>=2.3.0<2.4.0:sysutils/rubygem-vmstat \
-	rubygem-sys-filesystem>=1.1.9<1.2.0:sysutils/rubygem-sys-filesystem \
+	rubygem-sys-filesystem>=1.4.3<1.5:sysutils/rubygem-sys-filesystem \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
 	rubygem-net-ssh>=6.0<7,2:security/rubygem-net-ssh \
 	rubygem-sshkey>=2.0<3.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
-	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
+	rubygem-bcrypt_pbkdf>=1.1<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
 	rubygem-gitaly>=14.4.0.pre.rc43<14.5.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2,1<0.0.3,1:net/rubygem-kas-grpc \
@@ -234,7 +234,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-flipper-active_record-rails61>=0.21.0<0.22:databases/rubygem-flipper-active_record-rails61 \
 	rubygem-flipper-active_support_cache_store-rails61>=0.21.0<0.22:devel/rubygem-flipper-active_support_cache_store-rails61 \
 	rubygem-unleash>=3.2.2<3.3:devel/rubygem-unleash \
-	rubygem-gitlab-experiment>=0.6.4<0.7:devel/rubygem-gitlab-experiment \
+	rubygem-gitlab-experiment>=0.6.5<0.7:devel/rubygem-gitlab-experiment \
 	rubygem-lograge-rails61>=0.11.2<1.0:www/rubygem-lograge-rails61 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
@@ -253,7 +253,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-webauthn>=2.3<3:security/rubygem-webauthn \
 	rubygem-ipaddress>=0.8.3<0.9:net/rubygem-ipaddress \
 	rubygem-parslet1>=1.8<2:textproc/rubygem-parslet1 \
-	rubygem-ipynbdiff>=0.3.7<0.3.8:devel/rubygem-ipynbdiff
+	rubygem-ipynbdiff>=0.3.8<0.3.9:devel/rubygem-ipynbdiff
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -274,7 +274,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	76ceea558aae5013c4e16b3b2f97363608765c21
+GL_COMMIT=	3bc07a0be9ce3b8f736890a0513283f04796b37e
 
 USERS=	git
 GROUPS=	git
@@ -364,6 +364,7 @@ post-install:
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/public" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/public/assets" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/public/uploads" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/knapsack/gcs" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/qa/specs/features/api/2_plan" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/qa/specs/features/api/4_verify" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir ${WWWDIR_REL}/qa/qa/specs/features/api/5_package" >> ${TMPPLIST}
