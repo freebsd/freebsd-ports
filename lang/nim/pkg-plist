@@ -510,7 +510,6 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/estp.rst
 %%PORTDOCS%%%%DOCSDIR%%/filelist.txt
 %%PORTDOCS%%%%DOCSDIR%%/filters.rst
-%%PORTDOCS%%%%DOCSDIR%%/gc.rst
 %%PORTDOCS%%%%DOCSDIR%%/grammar.txt
 %%PORTDOCS%%%%DOCSDIR%%/hcr.rst
 %%PORTDOCS%%%%DOCSDIR%%/html/algorithm.html
@@ -703,7 +702,6 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/exitprocs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fenv.html
 %%PORTDOCS%%%%DOCSDIR%%/html/filters.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/genasts.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gitutils.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globs.html
@@ -759,6 +757,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/mersenne.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mimetypes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/miscdollars.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/monotimes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mysql.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nativesockets.html
@@ -805,6 +804,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/rationals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rdstdin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/re.html
+%%PORTDOCS%%%%DOCSDIR%%/html/refc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/registry.html
 %%PORTDOCS%%%%DOCSDIR%%/html/reservedmem.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rlocks.html
@@ -889,6 +889,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/manual/var_t_return.rst
 %%PORTDOCS%%%%DOCSDIR%%/manual_experimental.rst
 %%PORTDOCS%%%%DOCSDIR%%/manual_experimental_strictnotnil.rst
+%%PORTDOCS%%%%DOCSDIR%%/mm.rst
 %%PORTDOCS%%%%DOCSDIR%%/mytest.cfg
 %%PORTDOCS%%%%DOCSDIR%%/nep1.rst
 %%PORTDOCS%%%%DOCSDIR%%/nimc.rst
@@ -903,6 +904,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/packaging.rst
 %%PORTDOCS%%%%DOCSDIR%%/pegdocs.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/refc.rst
 %%PORTDOCS%%%%DOCSDIR%%/regexprs.txt
 %%PORTDOCS%%%%DOCSDIR%%/rstcommon.rst
 %%PORTDOCS%%%%DOCSDIR%%/sets_fragment.txt
