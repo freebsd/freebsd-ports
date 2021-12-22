@@ -3,7 +3,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -18,7 +18,7 @@ USE_RC_SUBR=	zrepl
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w\
-		-X ${GO_MODULE}/version.${PORTNAME}Version=${DISTVERSION}"
+		-X ${GO_MODULE}/version.${PORTNAME}Version=${DISTVERSIONFULL}"
 
 SUB_FILES=	pkg-message
 
