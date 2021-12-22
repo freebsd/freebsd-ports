@@ -24,6 +24,6 @@ lib/cmake/sdbus-c++/sdbus-c++-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sdbus-c++/sdbus-c++-targets.cmake
 lib/libsdbus-c++.so
 lib/libsdbus-c++.so.1
-lib/libsdbus-c++.so.1.0.0
+lib/libsdbus-c++.so.1.1.0
 libdata/pkgconfig/sdbus-c++-tools.pc
 libdata/pkgconfig/sdbus-c++.pc
