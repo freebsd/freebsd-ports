@@ -2,7 +2,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	6.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PATCH_SITES=	https://github.com/phusion/passenger/commit/
@@ -89,8 +89,7 @@ post-build:
 .if ${FLAVOR} == nginx
 	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
 .endif
-	${FIND} ${WRKSRC} -name '*.o' -delete
-	${FIND} ${WRKSRC} -name '*.bak' -delete
+	${FIND} ${WRKSRC} -name '*.o' -o -name '*.bak' -o -name '*.orig' | ${XARGS} ${RM}
 
 post-install:
 	( cd ${WRKSRC} && \
