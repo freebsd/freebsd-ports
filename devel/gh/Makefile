@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -19,7 +19,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
 		alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
-		briandowns:spinner:v1.13.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
+		briandowns:spinner:v1.18.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		charmbracelet:glamour:v0.3.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		cli:browser:v1.1.0:cli_browser/vendor/github.com/cli/browser \
 		cli:crypto:6be313f59b03:cli_crypto/vendor/golang.org/x/crypto \
@@ -31,23 +31,26 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
-		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		gabriel-vasile:mimetype:v1.4.0:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:fe61309f8881:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:97ca703d548d:golang_sys/vendor/golang.org/x/sys \
 		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
+		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		henvic:httpretty:v0.0.6:henvic_httpretty/vendor/github.com/henvic/httpretty \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		itchyny:gojq:v0.12.6:itchyny_gojq/vendor/github.com/itchyny/gojq \
 		itchyny:timefmt-go:v0.1.3:itchyny_timefmt_go/vendor/github.com/itchyny/timefmt-go \
+		joho:godotenv:v1.4.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.12:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -66,7 +69,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		shurcooL:githubv4:d292edc3691b:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:graphql:18c5c3165e3a:shurcool_graphql/vendor/github.com/shurcooL/graphql \
 		sourcegraph:jsonrpc2:v0.1.0:sourcegraph_jsonrpc2/vendor/github.com/sourcegraph/jsonrpc2 \
-		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.3.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
@@ -103,12 +106,8 @@ do-build-MANPAGES-on:
 		./cmd/gen-docs --man-page --doc-path docs/man 2>/dev/null)
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-
 	${INSTALL_DATA} ${WRKSRC}/bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/fish \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
 	${INSTALL_DATA} ${WRKSRC}/zsh \
