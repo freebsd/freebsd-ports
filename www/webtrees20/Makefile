@@ -1,7 +1,7 @@
 PORTNAME=	webtrees
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.19
 CATEGORIES=	www
-MASTER_SITES=	http://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		https://freebsd.ark-ict.nl/ports/
 PKGNAMESUFFIX=	20
 
