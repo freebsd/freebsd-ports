@@ -1,22 +1,20 @@
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	21.4.3
-PORTREVISION=	1
+DISTVERSION=	22.1.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	3dd1e4e27b5d.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	e5ec4a59db29.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	1915e449aa7e.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	9b6b795ee0a1.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	4acc8c8f871c.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	e9ff848336f6.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	520dcffa2cb6.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	54e6627346a4.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	57bc24a4a61c.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	690e692143a0.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	42ffd7983a32.patch:-p1 # gmmlib 22.0
+PATCHFILES+=	4a6e36a98c0b.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	533e7ae79ff7.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	c0ecf4c2c725.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	37833db579ab.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	428eab9583eb.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	615ae63a9ca6.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	774ab04fbce1.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	762a39a7da08.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	e1d499bc31b5.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	721cc37f1b56.patch:-p1 # https://github.com/intel/media-driver/pull/819
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
