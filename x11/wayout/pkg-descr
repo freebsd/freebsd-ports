@@ -1,0 +1,15 @@
+Wayout takes text from standard input and outputs it to a desktop-widget
+on Wayland desktops. Periodic updates are supported; e.g. newline-separated
+input or any other delimiter of choice. We call this a feed. The desktop
+widget can be shown either on top (OSD-like functionality) or below other
+windows.
+
+A Wayland compositor must implement the Layer-Shell and XDG-Output for wayout
+to work.
+
+Features:
+- Allow updating from standard input at a regular interval; custom delimiters
+- Configurable colours/border/position/fonts
+- Supports the pango markup language for text markup/colours.
+
+WWW: https://git.sr.ht/~proycon/wayout

@@ -382,6 +382,7 @@
     SUBDIR += wapanel
     SUBDIR += waybar
     SUBDIR += wayland-logout
+    SUBDIR += wayout
     SUBDIR += wbar
     SUBDIR += wcm
     SUBDIR += wdisplays
