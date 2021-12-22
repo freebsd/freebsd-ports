@@ -1,6 +1,6 @@
 PORTNAME=	rundeck
-DISTVERSION=	3.4.8
-DISTVERSIONSUFFIX=	20211214
+DISTVERSION=	3.4.9
+DISTVERSIONSUFFIX=	20211221
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/${DISTNAME}.war/artifacts/${DISTNAME}.war/download?/
 PKGNAMESUFFIX=	3
