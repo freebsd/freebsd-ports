@@ -580,7 +580,7 @@ include/cantera/zerodim.h
 %%OCTAVE%%lib/cantera/matlab/toolbox/canteraVersion.m
 %%OCTAVE%%lib/cantera/matlab/toolbox/ck2cti.m
 %%OCTAVE%%lib/cantera/matlab/toolbox/cleanup.m
-%%OCTAVE%%lib/cantera/matlab/toolbox/ctmethods.mexa64
+%%OCTAVE%%lib/cantera/matlab/toolbox/ctmethods.mex
 %%OCTAVE%%lib/cantera/matlab/toolbox/ctpath.m
 %%OCTAVE%%lib/cantera/matlab/toolbox/faradayconstant.m
 %%OCTAVE%%lib/cantera/matlab/toolbox/gasconstant.m

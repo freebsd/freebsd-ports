@@ -1,7 +1,7 @@
 PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1-611
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-gc4d6ecc15
 CATEGORIES=	science # chemistry physics
 
@@ -72,5 +72,10 @@ do-install:
 
 do-install-PYTHON-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_VER:S/.//}.so
+
+post-install-OCTAVE-on: # adjust .mex file name
+	@${MV} \
+		${STAGEDIR}${PREFIX}/lib/cantera/matlab/toolbox/ctmethods.mexa64 \
+		${STAGEDIR}${PREFIX}/lib/cantera/matlab/toolbox/ctmethods.mex
 
 .include <bsd.port.mk>
