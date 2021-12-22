@@ -1,0 +1,11 @@
+include/aribb24/aribb24.h
+include/aribb24/bits.h
+include/aribb24/decoder.h
+include/aribb24/parser.h
+lib/libaribb24.a
+lib/libaribb24.so
+lib/libaribb24.so.0
+lib/libaribb24.so.0.0.0
+libdata/pkgconfig/aribb24.pc
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README.md

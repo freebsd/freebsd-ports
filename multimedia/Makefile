@@ -8,6 +8,7 @@
     SUBDIR += aom
     SUBDIR += aravis
     SUBDIR += arcan
+    SUBDIR += aribb24
     SUBDIR += assimp
     SUBDIR += atomicparsley
     SUBDIR += audacious
