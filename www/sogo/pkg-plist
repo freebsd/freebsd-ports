@@ -737,7 +737,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.3
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.4
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
@@ -1856,6 +1856,8 @@ GNUstep/Local/Library/SOGo/WebServerResources/img/certificate.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/felt-transp.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/ic_person_grey_24px.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/inverse.png
+GNUstep/Local/Library/SOGo/WebServerResources/img/mark_email_read.svg
+GNUstep/Local/Library/SOGo/WebServerResources/img/mark_email_unread.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-compact.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-full.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-logo.png
