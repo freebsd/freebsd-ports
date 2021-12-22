@@ -1,7 +1,7 @@
 # Created by: Hung-Yi Chen <gaod@hychen.org>
 
 PORTNAME=	sshpass
-PORTVERSION=	1.06
+PORTVERSION=	1.09
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/sshpass/${PORTVERSION}
 
