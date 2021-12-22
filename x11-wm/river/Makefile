@@ -1,13 +1,7 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	2
+DISTVERSION=	0.1.1
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0cbe2b9fc34f.patch:-p1 # docs: remove reference to /etc/river/init
-PATCHFILES+=	2e22741bc78b.patch:-p1 # wlroots 0.15
-PATCHFILES+=	c9d9b5cdb197.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor
@@ -30,9 +24,9 @@ USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	riverwm
 GH_TUPLE=	ifreund:zig-pixman:88520f2:zig_pixman/deps/zig-pixman \
-		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
+		ifreund:zig-wayland:38b5de8:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:10cdca6:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:a813d6c:zig_wlroots/deps/zig-wlroots
+		swaywm:zig-wlroots:0bb3207:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
