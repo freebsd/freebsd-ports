@@ -1,9 +1,10 @@
 PORTNAME=	libfixposix
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@shiori.com.br
 COMMENT=	Replacement for inconsistent parts of POSIX
 
 LICENSE=	BSL
