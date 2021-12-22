@@ -1,7 +1,7 @@
 # Created by: Yi-Huan Chan <yhchan@csie.nctu.edu.tw>
 
 PORTNAME=	fudge
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
