@@ -3,7 +3,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,10 +12,13 @@ COMMENT=	ZFS dataset replication tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:modules
+USES=		go:modules
 USE_RC_SUBR=	zrepl
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "\
+		-s -w\
+		-X ${GO_MODULE}/version.${PORTNAME}Version=${DISTVERSION}"
 
 SUB_FILES=	pkg-message
 
@@ -23,7 +26,7 @@ OPTIONS_DEFINE=		EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.5,1:textproc/py-sphinx@${PY_FLAVOR}
-MANPAGES_USES=		python:build,3.6+
+MANPAGES_USES=		gmake python:build,3.6+
 MANPAGES_PLIST_FILES=	man/man1/zrepl.1.gz
 
 .include <bsd.port.options.mk>
