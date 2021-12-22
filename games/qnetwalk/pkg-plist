@@ -1,4 +1,6 @@
 bin/qnetwalk
 man/man6/qnetwalk.6.gz
 share/applications/qnetwalk.desktop
+share/icons/hicolor/16x16/apps/qnetwalk.png
+share/metainfo/qnetwalk.metainfo.xml
 share/pixmaps/qnetwalk.xpm
