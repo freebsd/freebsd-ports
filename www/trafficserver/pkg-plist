@@ -91,6 +91,7 @@ include/tscpp/api/Url.h
 include/tscpp/api/noncopyable.h
 include/tscpp/api/utils.h
 include/tscpp/util/IntrusiveDList.h
+include/tscpp/util/LocalBuffer.h
 include/tscpp/util/PostScript.h
 include/tscpp/util/TextView.h
 lib/libtscore.so
@@ -116,11 +117,11 @@ lib/plugin_testing_calls.so
 lib/plugin_v1.so
 lib/plugin_v2.so
 libdata/pkgconfig/trafficserver.pc
-%%IMAGEMAGICK%%libexec/trafficserver/WebpTransform.so
 libexec/trafficserver/access_control.so
 libexec/trafficserver/acme.so
 libexec/trafficserver/authproxy.so
 libexec/trafficserver/background_fetch.so
+libexec/trafficserver/cache_fill.so
 libexec/trafficserver/cache_promote.so
 libexec/trafficserver/cache_range_requests.so
 libexec/trafficserver/cachekey.so
@@ -140,6 +141,7 @@ libexec/trafficserver/geoip_acl.so
 libexec/trafficserver/header_freq.so
 libexec/trafficserver/header_rewrite.so
 libexec/trafficserver/hook-trace.so
+libexec/trafficserver/icap.so
 libexec/trafficserver/inliner.so
 libexec/trafficserver/ja3_fingerprint.so
 libexec/trafficserver/libloader.so
@@ -150,6 +152,7 @@ libexec/trafficserver/money_trace.so
 libexec/trafficserver/mp4.so
 libexec/trafficserver/multiplexer.so
 libexec/trafficserver/prefetch.so
+libexec/trafficserver/rate_limit.so
 libexec/trafficserver/redo_cache_lookup.so
 libexec/trafficserver/regex_remap.so
 libexec/trafficserver/regex_revalidate.so
@@ -169,6 +172,7 @@ libexec/trafficserver/traffic_dump.so
 libexec/trafficserver/tslua.so
 libexec/trafficserver/tsmemcache.so
 libexec/trafficserver/url_sig.so
+%%IMAGEMAGICK%%libexec/trafficserver/webp_transform.so
 libexec/trafficserver/xdebug.so
 lib/perl5/%%ARCH%%-freebsd-thread-multi/auto/Apache/TS/.packlist
 lib/perl5/%%ARCH%%-freebsd-thread-multi/perllocal.pod

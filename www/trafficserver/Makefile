@@ -1,7 +1,7 @@
 # Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 
 PORTNAME=	trafficserver
-PORTVERSION=	9.0.1
+PORTVERSION=	9.1.1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -55,7 +55,6 @@ PLIST_SUB+=	ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
 WCCP_DESC=	Enable WCCPv2 protocol
 WCCP_CONFIGURE_ENABLE=	wccp
-WCCP_USE=	GCC=yes
 
 MEMCACHED_DESC=		Enable memcache & memcached_remap plugin
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
