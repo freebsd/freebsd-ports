@@ -1,6 +1,6 @@
 - .git/ is missing in archive, so use version from environment
 
---- build/gen.py.orig	2021-12-18 16:25:54 UTC
+--- build/gen.py.orig	2021-12-21 20:25:21 UTC
 +++ build/gen.py
 @@ -213,25 +213,16 @@ def main(argv):
  
@@ -30,3 +30,12 @@
  
    # Only write/touch this file if the commit position has changed.
    old_contents = ''
+@@ -274,7 +265,7 @@ def WriteGenericNinja(path, static_libraries, executab
+       'msys': 'build_linux.ninja.template',
+       'darwin': 'build_mac.ninja.template',
+       'linux': 'build_linux.ninja.template',
+-      'freebsd': 'build_linux.ninja.template',
++      'freebsd': 'build_openbsd.ninja.template',
+       'aix': 'build_aix.ninja.template',
+       'openbsd': 'build_openbsd.ninja.template',
+       'haiku': 'build_haiku.ninja.template',
