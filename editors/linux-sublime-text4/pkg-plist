@@ -27,6 +27,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/ActionScript.sublime-package
 %%DATADIR%%/Packages/AppleScript.sublime-package
 %%DATADIR%%/Packages/Batch File.sublime-package
+%%DATADIR%%/Packages/Binary.sublime-package
 %%DATADIR%%/Packages/C#.sublime-package
 %%DATADIR%%/Packages/C++.sublime-package
 %%DATADIR%%/Packages/CSS.sublime-package
