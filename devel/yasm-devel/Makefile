@@ -14,6 +14,9 @@ COMMENT=	Complete rewrite of the NASM assembler (Development Snapshot)
 LICENSE=	ART10 BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
+DEPRECATED=	No need to keep the -devel version due to upstream inactivity
+EXPIRATION_DATE=	2021-12-31
+
 OPTIONS_DEFINE=	DEBUG NLS
 
 GNU_CONFIGURE=		yes
