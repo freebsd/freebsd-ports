@@ -2,8 +2,7 @@
 
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.3
-PORTREVISION=	2
+DISTVERSION=	1.17.4
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,9 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libqrencode.so:graphics/libqrencode \
 		libsodium.so:security/libsodium \
 		libsqlcipher.so:databases/sqlcipher \
+		libtox_extension_messages.so:net-im/tox_extension_messages \
 		libtoxcore.so:net-im/tox \
+		libtoxext.so:net-im/toxext \
 		libvpx.so:multimedia/libvpx
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig qt:5
