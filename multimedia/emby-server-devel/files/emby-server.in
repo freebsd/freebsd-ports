@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%RC_NAME%%_enable:	Set to yes to enable the %%PORTNAME%% service.
+#			Default: no
+# %%RC_NAME%%_user:	The user account used to run the %%PORTNAME%% daemon.
+#			This is optional, however do not specifically set this to an
+#			empty string as this will cause the daemon to run as root.
+#			Default: %%USER%%
+# %%RC_NAME%%_group:	The group account used to run the %%PORTNAME%% daemon.
+#			This is optional, however do not specifically set this to an
+#			empty string as this will cause the daemon to run with group wheel.
+#			Default: %%GROUP%%
+# %%RC_NAME%%_data_dir: Directory where %%PORTNAME%% configuration
+#			data is stored.
+#			Default: /var/db/%%PORTNAME%%
+# %%RC_NAME%%_ffdetect: Path of the ffdetect binary.
+#			Default: %%PREFIX%%/lib/emby-server/bin/ffdetect
+# %%RC_NAME%%_ffmpeg:	Path of the ffmpeg binary.
+#			Default: %%PREFIX%%/lib/emby-server/bin/ffmpeg
+# %%RC_NAME%%_ffprobe:	Path of the ffprobe binary.
+#			Default: %%PREFIX%%/lib/emby-server/bin/ffprobe
+# %%RC_NAME%%_pid: 	Path of the pid file.
+#			Default: /var/run/%%PORTNAME%%.pid
+
+. /etc/rc.subr
+name=%%RC_NAME%%
+rcvar=${name}_enable
+load_rc_config ${name}
+
+: ${%%RC_NAME%%_enable:="no"}
+: ${%%RC_NAME%%_user:="%%USER%%"}
+: ${%%RC_NAME%%_group:="%%GROUP%%"}
+: ${%%RC_NAME%%_data_dir:="/var/db/%%PORTNAME%%"}
+: ${%%RC_NAME%%_ffdetect:="%%PREFIX%%/lib/emby-server/bin/ffdetect"}
+: ${%%RC_NAME%%_ffmpeg:="%%PREFIX%%/lib/emby-server/bin/ffmpeg"}
+: ${%%RC_NAME%%_ffprobe:="%%PREFIX%%/lib/emby-server/bin/ffprobe"}
+: ${%%RC_NAME%%_pid:="/var/run/%%PORTNAME%%.pid"}
+
+pidfile="${%%RC_NAME%%_pid}"
+procname="%%LOCALBASE%%/bin/mono"
+command="/usr/sbin/daemon"
+command_args="-f -p ${%%RC_NAME%%_pid} ${procname} %%PREFIX%%/lib/emby-server/system/EmbyServer.exe \
+	-os freebsd \
+	-ffdetect ${%%RC_NAME%%_ffdetect} \
+	-ffmpeg ${%%RC_NAME%%_ffmpeg} \
+	-ffprobe ${%%RC_NAME%%_ffprobe} \
+	-programdata ${%%RC_NAME%%_data_dir}"
+
+start_precmd=%%RC_NAME%%_precmd
+%%RC_NAME%%_precmd()
+{
+	[ -f ${%%RC_NAME%%_pid} ] || install -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- /dev/null ${%%RC_NAME%%_pid}
+	[ -d ${%%RC_NAME%%_data_dir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- ${%%RC_NAME%%_data_dir}
+}
+
+stop_postcmd=%%RC_NAME%%_postcmd
+%%RC_NAME%%_postcmd()
+{
+	rm -f ${%%RC_NAME%%_pid}
+}
+
+run_rc_command "$1"

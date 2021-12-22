@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+To automatically start Emby Server at boot time:
+# sysrc emby_server_enable="YES"
+
+To then manually start Emby Server without rebooting:
+# service emby-server start
+
+Once started, visit the following webpage to configure:
+http://localhost:8096/
+EOM
+}
+]

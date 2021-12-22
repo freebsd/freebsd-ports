@@ -1,15 +1,15 @@
 PORTNAME=	emby-server
-DISTVERSION=	4.6.7.0
-PORTREVISION=	1
+DISTVERSION=	4.7.0.23
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	embyserver-netframework_${PORTVERSION}
 DISTFILES=	${DISTNAME}.zip \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 EXTRACT_ONLY=	${DISTNAME}.zip \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
@@ -27,6 +27,7 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libass.so:multimedia/libass \
+		libchromaprint.so:audio/chromaprint \
 		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -38,6 +39,7 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libopus.so:audio/opus \
 		libpng.so:graphics/png \
 		libraw.so:graphics/libraw \
+		libtesseract.so:graphics/tesseract \
 		libtheora.so:multimedia/libtheora \
 		libva.so:multimedia/libva \
 		libvorbis.so:audio/libvorbis \
@@ -64,6 +66,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-v4l2-m2m \
 		--disable-vdpau \
 		--disable-xlib \
+		--enable-chromaprint \
 		--enable-fontconfig \
 		--enable-gnutls \
 		--enable-gpl \
@@ -76,6 +79,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-libfribidi \
 		--enable-libmfx \
 		--enable-libopus \
+		--enable-libtesseract \
 		--enable-libtheora \
 		--enable-libvorbis \
 		--enable-libvpx \
@@ -90,7 +94,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 MAKE_ENV=	V=1
 
-CONFLICTS_INSTALL=	emby-server-devel
+CONFLICTS_INSTALL=	emby-server
 
 NOPRECIOUSMAKEVARS=	yes
 SUB_FILES=	ImageMagickSharp.dll.config \
