@@ -6,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-gtk
 
-MAINTAINER=	root@cooltrainer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System (SNES) Emulator
 
 # Commercial users must seek permission from copyright holders.

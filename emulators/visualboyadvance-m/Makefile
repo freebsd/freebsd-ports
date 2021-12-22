@@ -5,7 +5,7 @@ PORTVERSION=	2.0.0b2
 PORTREVISION=	11
 CATEGORIES=	emulators
 
-MAINTAINER=	root@cooltrainer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game Boy Advance emulator with GTK frontend
 
 LICENSE=	GPLv2+

@@ -7,7 +7,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://lacklustre.net/projects/ems-flasher/ \
 		https://cooltrainer.org/freebsd-ports/ems-flasher/
 
-MAINTAINER=	root@cooltrainer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to flash ROM images to the EMS USB 64mb flash cart
 
 LICENSE=	MIT

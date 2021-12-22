@@ -4,7 +4,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME:tl}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	root@cooltrainer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multipurpose video game ROM image and backup utility
 
 LICENSE=	GPLv2+

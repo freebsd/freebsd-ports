@@ -5,7 +5,7 @@ DISTVERSION=	6.0.0
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
-MAINTAINER=	root@cooltrainer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elementary icon set
 
 LICENSE=	GPLv3
