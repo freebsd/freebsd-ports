@@ -90,6 +90,7 @@ include/python%%XYDOT%%%%ABI%%/internal/pycore_fileutils.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_floatobject.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_format.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_frame.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_function.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_gc.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_getopt.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_gil.h
@@ -884,7 +885,9 @@ lib/python%%XYDOT%%/concurrent/futures/process.py
 lib/python%%XYDOT%%/concurrent/futures/thread.py
 lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/Makefile
 lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/Setup
+lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/Setup.bootstrap
 lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/Setup.local
+lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/Setup.stdlib
 lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/config.c
 lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/config.c.in
 lib/python%%XYDOT%%/config-%%XYDOT%%%%ABI%%/install-sh
@@ -2937,9 +2940,9 @@ lib/python%%XYDOT%%/lib-dynload/xxlimited.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.alpha.2.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.alpha.3.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.alpha.2.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.alpha.3.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
@@ -4191,6 +4194,9 @@ lib/python%%XYDOT%%/test/__pycache__/test_getopt.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_getpass.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_getpass.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_getpass.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_getpath.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_getpath.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_getpath.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_gettext.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_gettext.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_gettext.cpython-%%XY%%.pyc
@@ -5897,6 +5903,7 @@ lib/python%%XYDOT%%/test/test_genexps.py
 lib/python%%XYDOT%%/test/test_getargs2.py
 lib/python%%XYDOT%%/test/test_getopt.py
 lib/python%%XYDOT%%/test/test_getpass.py
+lib/python%%XYDOT%%/test/test_getpath.py
 lib/python%%XYDOT%%/test/test_gettext.py
 lib/python%%XYDOT%%/test/test_glob.py
 lib/python%%XYDOT%%/test/test_global.py
