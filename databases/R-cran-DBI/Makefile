@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	DBI
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
