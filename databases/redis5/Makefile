@@ -2,6 +2,7 @@
 
 PORTNAME=	redis5
 PORTVERSION=	5.0.14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 DISTNAME=	redis-${PORTVERSION}
@@ -11,6 +12,9 @@ COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	EOLed upstream
+EXPIRATION_DATE=2022-03-31
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
