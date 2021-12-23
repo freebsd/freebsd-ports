@@ -2,7 +2,7 @@ River is a dynamic tiling Wayland compositor with flexible runtime
 configuration.
 
 Note: river is currently early in development. Expect breaking changes
-and missing features. If you run into a bug don't hesitate to open an
-issue upstream.
+and missing features. Bugs should however be rare at this point, if
+you run into one don't hesitate to open an issue upstream.
 
 WWW: https://github.com/riverwm/river
