@@ -2,6 +2,7 @@
 %%DATADIR%%/CONTRIBUTING.md
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/README.md
+%%DATADIR%%/SECURITY.md
 %%DATADIR%%/custom/example.zsh
 %%DATADIR%%/custom/plugins/example/example.plugin.zsh
 %%DATADIR%%/custom/themes/example.zsh-theme
@@ -227,7 +228,7 @@
 %%DATADIR%%/plugins/fossil/README.md
 %%DATADIR%%/plugins/fossil/fossil.plugin.zsh
 %%DATADIR%%/plugins/frontend-search/README.md
-%%DATADIR%%/plugins/frontend-search/_frontend-search.sh
+%%DATADIR%%/plugins/frontend-search/_frontend
 %%DATADIR%%/plugins/frontend-search/frontend-search.plugin.zsh
 %%DATADIR%%/plugins/fzf/README.md
 %%DATADIR%%/plugins/fzf/fzf.plugin.zsh
@@ -339,6 +340,8 @@
 %%DATADIR%%/plugins/ipfs/_ipfs
 %%DATADIR%%/plugins/isodate/README.md
 %%DATADIR%%/plugins/isodate/isodate.plugin.zsh
+%%DATADIR%%/plugins/istioctl/README.md
+%%DATADIR%%/plugins/istioctl/istioctl.plugin.zsh
 %%DATADIR%%/plugins/iterm2/README.md
 %%DATADIR%%/plugins/iterm2/iterm2.plugin.zsh
 %%DATADIR%%/plugins/jake-node/README.md
@@ -366,6 +369,8 @@
 %%DATADIR%%/plugins/keychain/keychain.plugin.zsh
 %%DATADIR%%/plugins/kitchen/README.md
 %%DATADIR%%/plugins/kitchen/_kitchen
+%%DATADIR%%/plugins/kn/README.md
+%%DATADIR%%/plugins/kn/kn.plugin.zsh
 %%DATADIR%%/plugins/knife/README.md
 %%DATADIR%%/plugins/knife/_knife
 %%DATADIR%%/plugins/knife_ssh/README.md
@@ -400,6 +405,11 @@
 %%DATADIR%%/plugins/lol/lol.plugin.zsh
 %%DATADIR%%/plugins/lxd/README.md
 %%DATADIR%%/plugins/lxd/lxd.plugin.zsh
+%%DATADIR%%/plugins/macos/README.md
+%%DATADIR%%/plugins/macos/_security
+%%DATADIR%%/plugins/macos/macos.plugin.zsh
+%%DATADIR%%/plugins/macos/music
+%%DATADIR%%/plugins/macos/spotify
 %%DATADIR%%/plugins/macports/README.md
 %%DATADIR%%/plugins/macports/_port
 %%DATADIR%%/plugins/macports/macports.plugin.zsh
@@ -454,11 +464,10 @@
 %%DATADIR%%/plugins/oc/oc.plugin.zsh
 %%DATADIR%%/plugins/octozen/README.md
 %%DATADIR%%/plugins/octozen/octozen.plugin.zsh
+%%DATADIR%%/plugins/operator-sdk/README.md
+%%DATADIR%%/plugins/operator-sdk/operator-sdk.plugin.zsh
 %%DATADIR%%/plugins/osx/README.md
-%%DATADIR%%/plugins/osx/_security
-%%DATADIR%%/plugins/osx/music
 %%DATADIR%%/plugins/osx/osx.plugin.zsh
-%%DATADIR%%/plugins/osx/spotify
 %%DATADIR%%/plugins/otp/README.md
 %%DATADIR%%/plugins/otp/otp.plugin.zsh
 %%DATADIR%%/plugins/pass/README.md
@@ -680,6 +689,8 @@
 %%DATADIR%%/plugins/virtualenv/virtualenv.plugin.zsh
 %%DATADIR%%/plugins/virtualenvwrapper/README.md
 %%DATADIR%%/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
+%%DATADIR%%/plugins/volta/README.md
+%%DATADIR%%/plugins/volta/_volta
 %%DATADIR%%/plugins/vscode/README.md
 %%DATADIR%%/plugins/vscode/vscode.plugin.zsh
 %%DATADIR%%/plugins/vundle/README.md

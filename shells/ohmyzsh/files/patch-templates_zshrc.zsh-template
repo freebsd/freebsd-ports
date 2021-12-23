@@ -1,6 +1,4 @@
-Correct installation path
-Disable auto update bits
---- templates/zshrc.zsh-template.orig	2020-07-06 15:31:40 UTC
+--- templates/zshrc.zsh-template.orig	2021-12-23 00:38:08 UTC
 +++ templates/zshrc.zsh-template
 @@ -2,7 +2,7 @@
  # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -11,19 +9,18 @@ Disable auto update bits
  
  # Set name of the theme to load --- if set to "random", it will
  # load a random theme each time oh-my-zsh is loaded, in which case,
-@@ -22,15 +22,6 @@ ZSH_THEME="robbyrussell"
+@@ -22,14 +22,6 @@ ZSH_THEME="robbyrussell"
  # Uncomment the following line to use hyphen-insensitive completion.
  # Case-sensitive completion must be off. _ and - will be interchangeable.
  # HYPHEN_INSENSITIVE="true"
 -
--# Uncomment the following line to disable bi-weekly auto-update checks.
--# DISABLE_AUTO_UPDATE="true"
--
--# Uncomment the following line to automatically update without prompting.
--# DISABLE_UPDATE_PROMPT="true"
+-# Uncomment one of the following lines to change the auto-update behavior
+-# zstyle ':omz:update' mode disabled  # disable automatic updates
+-# zstyle ':omz:update' mode auto      # update automatically without asking
+-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 -
 -# Uncomment the following line to change how often to auto-update (in days).
--# export UPDATE_ZSH_DAYS=13
+-# zstyle ':omz:update' frequency 13
  
  # Uncomment the following line if pasting URLs and other text is messed up.
  # DISABLE_MAGIC_FUNCTIONS="true"

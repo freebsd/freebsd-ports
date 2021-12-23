@@ -1,7 +1,7 @@
 # Created by: Serhii (Sergey) Kozlov <skozlov@FreeBSD.org>
 
 PORTNAME=	ohmyzsh
-PORTVERSION=	20210930
+PORTVERSION=	20211221
 CATEGORIES=	shells
 
 MAINTAINER=	skozlov@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	zsh:shells/zsh
 
 USE_GITHUB=	yes
-GH_TAGNAME=	3c209b00d69499db93fb6aac5c79a6179ff6b855
+GH_TAGNAME=	6babcbd8841335a3c25ec960ff57ab9a139c9073
 
 NO_ARCH=	yes
 NO_BUILD=	yes
