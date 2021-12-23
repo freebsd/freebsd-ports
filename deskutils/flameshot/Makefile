@@ -1,9 +1,8 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
 
 PORTNAME=	flameshot
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
