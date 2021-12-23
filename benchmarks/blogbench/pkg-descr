@@ -5,4 +5,4 @@ It stresses the filesystem with multiple threads performing random reads,
 writes and rewrites in order to get a realistic idea of the scalability
 and the concurrency a system can handle.
 
-WWW: http://blogbench.pureftpd.org/project/blogbench
+WWW: https://github.com/jedisct1/Blogbench
