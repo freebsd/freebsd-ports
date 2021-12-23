@@ -1,7 +1,7 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
 
 PORTNAME=	saga
-PORTVERSION=	8.0.1
+PORTVERSION=	8.1.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libhdf5.so:science/hdf5 \
 		libhpdf.so:print/libharu \
 		libjasper.so:graphics/jasper \
-		liblas12.so:devel/liblas12 \
 		libodbc.so:databases/unixODBC \
 		libopencv_core.so:graphics/opencv \
 		libpdal_base.so:math/pdal \

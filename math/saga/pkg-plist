@@ -76,7 +76,6 @@ lib/saga/libio_grid_image.so
 lib/saga/libio_pdal.so
 lib/saga/libio_shapes.so
 lib/saga/libio_shapes_dxf.so
-lib/saga/libio_shapes_las.so
 lib/saga/libio_table.so
 lib/saga/libio_virtual.so
 lib/saga/libio_webservices.so
