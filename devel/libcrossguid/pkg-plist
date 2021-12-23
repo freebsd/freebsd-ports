@@ -1,0 +1,9 @@
+include/guid.hpp
+lib/cmake/crossguid/crossguid-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/crossguid/crossguid-config.cmake
+lib/libcrossguid.so
+lib/libcrossguid.so.0
+lib/libcrossguid.so.0.2.3
+libdata/pkgconfig/crossguid.pc
+share/crossguid/LICENSE
+share/crossguid/README.md

@@ -1,2 +1,5 @@
-SHA256 (graeme-hill-crossguid-20150803-8f399e8_GH0.tar.gz) = 929397adfe57b945c5153e09f1e0bc1763300e2b30578ec7ed6facc2821d7f6f
-SIZE (graeme-hill-crossguid-20150803-8f399e8_GH0.tar.gz) = 46576
+TIMESTAMP = 1639380917
+SHA256 (graeme-hill-crossguid-v0.2.2-52-gca1bf4b_GH0.tar.gz) = 731eab92a5b916eb1195208eac448155e209f9634436c0e877cb32cadd71bdc3
+SIZE (graeme-hill-crossguid-v0.2.2-52-gca1bf4b_GH0.tar.gz) = 141678
+SHA256 (23a8c007a668413c2e8cbd00984d223ed5ecfe05.patch) = 4ac3983dee2df81397b8d835563b4fcbf2c24877ff33630b07f78b73eac5effa
+SIZE (23a8c007a668413c2e8cbd00984d223ed5ecfe05.patch) = 1780
