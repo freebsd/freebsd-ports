@@ -1,7 +1,7 @@
 # Created by: Otacilio de Araujo Ramos Neto <otacilio.neto@bsd.com.br>
 
 PORTNAME=	Verilog-Perl
-PORTVERSION=	3.418
+PORTVERSION=	3.478
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

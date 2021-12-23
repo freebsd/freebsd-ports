@@ -17,13 +17,13 @@ bin/vsplitmodule
 %%SITE_ARCH%%/Verilog/Netlist/Module.pm
 %%SITE_ARCH%%/Verilog/Netlist/Net.pm
 %%SITE_ARCH%%/Verilog/Netlist/Pin.pm
+%%SITE_ARCH%%/Verilog/Netlist/PinSelection.pm
 %%SITE_ARCH%%/Verilog/Netlist/Port.pm
 %%SITE_ARCH%%/Verilog/Netlist/Subclass.pm
 %%SITE_ARCH%%/Verilog/Parser.pm
 %%SITE_ARCH%%/Verilog/Preproc.pm
 %%SITE_ARCH%%/Verilog/SigParser.pm
 %%SITE_ARCH%%/Verilog/Std.pm
-%%SITE_ARCH%%/Verilog/Verilog-Perl.pod
 %%SITE_ARCH%%/auto/Verilog/Parser/Parser.so
 %%SITE_ARCH%%/auto/Verilog/Preproc/Preproc.so
 %%PERL5_MAN1%%/vhier.1.gz
@@ -44,10 +44,10 @@ bin/vsplitmodule
 %%PERL5_MAN3%%/Verilog::Netlist::Module.3.gz
 %%PERL5_MAN3%%/Verilog::Netlist::Net.3.gz
 %%PERL5_MAN3%%/Verilog::Netlist::Pin.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::PinSelection.3.gz
 %%PERL5_MAN3%%/Verilog::Netlist::Port.3.gz
 %%PERL5_MAN3%%/Verilog::Netlist::Subclass.3.gz
 %%PERL5_MAN3%%/Verilog::Parser.3.gz
 %%PERL5_MAN3%%/Verilog::Preproc.3.gz
 %%PERL5_MAN3%%/Verilog::SigParser.3.gz
 %%PERL5_MAN3%%/Verilog::Std.3.gz
-%%PERL5_MAN3%%/Verilog::Verilog-Perl.3.gz
