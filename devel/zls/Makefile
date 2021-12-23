@@ -1,9 +1,6 @@
 PORTNAME=	zls
-DISTVERSION=	0.2.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	dc94a5e317d1.patch:-p1 # https://github.com/zigtools/zls/pull/437
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Zig LSP implementation + Zig Language Server
