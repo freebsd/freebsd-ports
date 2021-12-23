@@ -1,5 +1,5 @@
 PORTNAME=	vmpk
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.6
 CATEGORIES=	audio
 MASTER_SITES=	https://phoenixnap.dl.sourceforge.net/project/vmpk/vmpk/${PORTVERSION}/
 
