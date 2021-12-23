@@ -13,7 +13,7 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
 lib/libgnome-desktop-3.so
 lib/libgnome-desktop-3.so.19
-lib/libgnome-desktop-3.so.19.1.7
+lib/libgnome-desktop-3.so.19.1.8
 libdata/pkgconfig/gnome-desktop-3.0.pc
 libexec/gnome-desktop-debug/gnome-rr-debug
 libexec/gnome-desktop-debug/test-desktop-thumbnail
