@@ -1,3 +1,5 @@
 TIMESTAMP = 1583687032
 SHA256 (dvorka-mindforger-1.52.0_GH0.tar.gz) = d0fc9469e932a27f93b13acb6b708e2cfac37858083e0572a4c39b01b8202773
 SIZE (dvorka-mindforger-1.52.0_GH0.tar.gz) = 1775600
+SHA256 (dvorka-cmark-f06d944_GH0.tar.gz) = 7793cd6f1904a7674f9830985ded7c096e8edfdfd2f21c7127213ffffa56fe6d
+SIZE (dvorka-cmark-f06d944_GH0.tar.gz) = 279633

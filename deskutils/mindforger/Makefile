@@ -10,12 +10,27 @@ COMMENT=	Thinking notebook and markdown editor
 LICENSE=	GPLv2+
 
 USES=		qmake qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	dvorka
 USE_QT=		buildtools_build core declarative gui location network \
 		printsupport webchannel webengine widgets
+USE_GITHUB=	yes
+GH_ACCOUNT=	dvorka
+GH_PROJECT=	cmark:cm
+GH_TAGNAME=	f06d944:cm
+GH_SUBDIR=	deps/cmark-gfm:cm
 
-QMAKE_ARGS=	CONFIG+="mfwebengine mfnocxx mfnomd2html"
+QMAKE_ARGS=	CONFIG+="mfnocxx mfwebengine"
+
+OPTIONS_DEFINE=	CMARK
+OPTIONS_DEFAULT=	CMARK
+CMARK_DESC=	CommonMark support (Markdown -> HTML rendering)
+
+CMARK_BUILD_DEPENDS=	cmake:devel/cmake
+CMARK_QMAKE_OFF=	CONFIG+="mfnomd2html"
+
+pre-build-CMARK-on:
+	@cd ${WRKSRC_cm} && cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+		-DCMARK_TESTS:BOOL=OFF -DCMARK_SHARED:BOOL=OFF \
+		-B build && cmake --build build
 
 post-patch:
 	@${REINPLACE_CMD} -e '/_WIN32/s,_APPLE,_${OPSYS},' \
