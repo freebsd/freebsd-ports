@@ -1,5 +1,5 @@
 PORTNAME=	conan
-DISTVERSION=	1.41.0
+DISTVERSION=	1.43.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
@@ -23,7 +23,7 @@ PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pluginbase>=0.5:devel/py-pluginbase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0,<3.0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt1>=1.4.0,<2.0.0:www/py-pyjwt1@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.8.1,<3.0.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.25,<3.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0,<=1.16.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.6,1<1.27,1:net/py-urllib3@${PY_FLAVOR} \
