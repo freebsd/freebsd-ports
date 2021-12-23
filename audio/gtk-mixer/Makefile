@@ -1,5 +1,5 @@
 PORTNAME=	gtk-mixer
-PORTVERSION=	1.0.0
+DISTVERSION=	1.0.2
 CATEGORIES=	audio
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -12,14 +12,9 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_GITHUB=	yes
 GH_ACCOUNT=	rozhuk-im
 
-PLIST_FILES=	bin/gtk-mixer \
-		share/pixmaps/gtk-mixer.png
+PLIST_FILES=	bin/gtk-mixer
 
-DESKTOP_ENTRIES="GTK-Mixer" "${COMMENT}" "${PORTNAME}" \
+DESKTOP_ENTRIES="GTK-Mixer" "${COMMENT}" "multimedia-volume-control" \
 		"${PORTNAME}" "GTK;AudioVideo;Audio;Mixer;" true
-
-post-install:
-	${LN} -sf gvolwheel/audio-volume-high.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
