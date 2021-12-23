@@ -22,6 +22,7 @@
     SUBDIR += dolphin-emu
     SUBDIR += dosbox
     SUBDIR += dosbox-staging
+    SUBDIR += dps8m
     SUBDIR += dynamips-community
     SUBDIR += edumips64
     SUBDIR += elliott-803
