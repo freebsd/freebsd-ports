@@ -2,10 +2,8 @@ bin/solana
 bin/solana-accounts-bench
 bin/solana-accounts-cluster-bench
 bin/solana-banking-bench
-bin/solana-bench-exchange
 bin/solana-bench-streamer
 bin/solana-bench-tps
-bin/solana-csv-to-validator-infos
 bin/solana-dos
 bin/solana-faucet
 bin/solana-genesis
@@ -21,11 +19,13 @@ bin/solana-log-analyzer
 bin/solana-merkle-root-bench
 bin/solana-net-shaper
 bin/solana-poh-bench
+bin/solana-replica-node
 bin/solana-stake-accounts
 bin/solana-store-tool
 bin/solana-sys-tuner
 bin/solana-test-validator
 bin/solana-tokens
+bin/solana-transaction-dos
 bin/solana-upload-perf
 bin/solana-validator
 bin/solana-watchtower
