@@ -90,7 +90,6 @@ bin/rnews.libexec/gunbatch
 bin/scanlogs
 bin/scanspool
 bin/send-ihave
-bin/send-nntp
 bin/send-uucp
 bin/sendinpaths
 bin/sendxbatches
@@ -295,7 +294,7 @@ man/man8/radius.8.gz
 man/man8/rc.news.8.gz
 man/man8/scanlogs.8.gz
 man/man8/scanspool.8.gz
-man/man8/send-nntp.8.gz
+man/man8/send-ihave.8.gz
 man/man8/send-uucp.8.gz
 man/man8/sendinpaths.8.gz
 man/man8/sendxbatches.8.gz
