@@ -3,6 +3,7 @@
 PORTNAME=	zynaddsubfx
 DISTVERSION=	3.0.6-rc5
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Realtime software synthesizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libmxml.so:textproc/mxml \
 		liblo.so:audio/liblo
 
