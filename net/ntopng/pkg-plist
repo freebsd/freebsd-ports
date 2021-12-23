@@ -2984,6 +2984,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/plugins/alerts/network/remote_connection/manifest.lua
 %%DATADIR%%/scripts/plugins/alerts/network/snmp_topology_change/checks/snmp_device/lldp_topology_changed.lua
 %%DATADIR%%/scripts/plugins/alerts/network/snmp_topology_change/manifest.lua
+%%DATADIR%%/scripts/plugins/alerts/network/threshold_cross/checks/interface/throughput.lua
 %%DATADIR%%/scripts/plugins/alerts/network/threshold_cross/checks/network/egress.lua
 %%DATADIR%%/scripts/plugins/alerts/network/threshold_cross/checks/network/ingress.lua
 %%DATADIR%%/scripts/plugins/alerts/network/threshold_cross/checks/network/inner.lua
