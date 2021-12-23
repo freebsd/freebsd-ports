@@ -1,5 +1,5 @@
 PORTNAME=	php74
-DISTVERSION=	7.4.26
+DISTVERSION=	7.4.27
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -43,21 +43,41 @@ OPTIONS_EXCLUDE_armv7=		DTRACE
 # Bug 197128:  No ASM code for MIPS/MIPS64, disable FPM
 OPTIONS_EXCLUDE_mips=		DTRACE FPM
 OPTIONS_EXCLUDE_mips64=		DTRACE FPM
-OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}                  
-OPTIONS_EXCLUDE_powerpc64_11=	DTRACE     
+OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
+OPTIONS_EXCLUDE_powerpc64_11=	DTRACE
 OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
 OPTIONS_EXCLUDE_riscv64=	DTRACE
 OPTIONS_EXCLUDE_sparc64=	DTRACE
 OPTIONS_SUB=	yes
 
-CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
-FPM_DESC=	Build FPM version
+CLI_DESC=	Build CLI version
 EMBED_DESC=	Build embedded library
-PHPDBG_DESC=	Interactive PHP debugger
-MYSQLND_DESC=	Build with MySQL Native Driver
+FPM_DESC=	Build FPM version
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
+MYSQLND_DESC=	Build with MySQL Native Driver
+PHPDBG_DESC=	Interactive PHP debugger
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
+
+CGI_CONFIGURE_OFF=--disable-cgi
+CGI_VARS=	PHP_SAPI+=cgi
+CLI_CONFIGURE_OFF=--disable-cli
+CLI_VARS=	PHP_SAPI+=cli
+DEBUG_CONFIGURE_ON=--enable-debug
+DTRACE_CONFIGURE_ON=--enable-dtrace
+EMBED_CONFIGURE_ON=--enable-embed
+EMBED_VARS=	PHP_SAPI+=embed
+FPM_CONFIGURE_ON=--enable-fpm \
+		--with-fpm-user=${WWWOWN} \
+		--with-fpm-group=${WWWGRP}
+FPM_VARS=	PHP_SAPI+=fpm USE_RC_SUBR+=php-fpm
+IPV6_CONFIGURE_OFF=--disable-ipv6
+LINKTHR_LIBS=		-lpthread
+MYSQLND_CONFIGURE_ON=--enable-mysqlnd
+PHPDBG_CONFIGURE_ON=--enable-phpdbg
+PHPDBG_VARS=	PHP_SAPI+=phpdbg
+ZTS_CONFIGURE_ENV=	pthreads_working="yes"
+ZTS_CONFIGURE_ON=--enable-maintainer-zts
 
 CONFLICTS=	php73 php80
 
@@ -67,30 +87,6 @@ DESTDIRNAME=	INSTALL_ROOT
 
 .if ${ARCH} == riscv64
 CONFIGURE_ARGS+=--without-pcre-jit
-.endif
-
-.if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--enable-mysqlnd
-.endif
-
-.if ${PORT_OPTIONS:MCLI}
-PHP_SAPI+=	cli
-.else
-CONFIGURE_ARGS+=--disable-cli
-.endif
-
-.if ${PORT_OPTIONS:MCGI}
-PHP_SAPI+=	cgi
-.else
-CONFIGURE_ARGS+=--disable-cgi
-.endif
-
-.if ${PORT_OPTIONS:MFPM}
-PHP_SAPI+=	fpm
-USE_RC_SUBR+=	php-fpm
-CONFIGURE_ARGS+=--enable-fpm \
-		--with-fpm-user=${WWWOWN} \
-		--with-fpm-group=${WWWGRP}
 .endif
 
 .if defined(PKGNAMEPREFIX)
@@ -108,17 +104,8 @@ SHORTMODNAME=	php7
 WARNING=	"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
 .endif
 
-.if ${PORT_OPTIONS:MEMBED}
-PHP_SAPI+=	embed
-CONFIGURE_ARGS+=--enable-embed
-.endif
-
-.if ${PORT_OPTIONS:MPHPDBG}
-PHP_SAPI+=	phpdbg
-CONFIGURE_ARGS+=--enable-phpdbg
-.if ${PORT_OPTIONS:MDEBUG}
+.if ${PORT_OPTIONS:MPHPDBG} && ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-phpdbg-debug
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MCLI} || ${PORT_OPTIONS:MEMBED}
@@ -130,37 +117,13 @@ PLIST_SUB+=	SAPI_INC="@comment "
 CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \
 		lt_cv_path_SED="sed"
 
-.if ${PORT_OPTIONS:MLINKTHR}
-LIBS+=		-lpthread
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MZTS}
-CONFIGURE_ARGS+=--enable-maintainer-zts
-CONFIGURE_ENV+=	pthreads_working="yes"
-.endif
-
-.if ${PORT_OPTIONS:MDTRACE}
-CONFIGURE_ARGS+=--enable-dtrace
-PLIST_SUB+=	DTRACE=""
-.else
-PLIST_SUB+=	DTRACE="@comment "
-.endif
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
-.if ${PORT_OPTIONS:MFPM}
+
+post-patch-FPM-on:
 	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \
 		${WRKSRC}/sapi/fpm/php-fpm.conf.in
-.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} MAKE=${MAKE_CMD} ./buildconf --force)
