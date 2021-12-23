@@ -1,5 +1,5 @@
-TIMESTAMP = 1639726206
-SHA256 (bastillion-jetty-v3.11_01.tar.gz) = 7ffec5373b6698ebedfa1228b6f0caea482e313cb2bdb9758b5607765c4626b9
-SIZE (bastillion-jetty-v3.11_01.tar.gz) = 19785024
+TIMESTAMP = 1640073876
+SHA256 (bastillion-jetty-v3.12_00.tar.gz) = 312084367414a18ab9febb3d2e338a8cce2849dfb9e28709831febf2f30e0bb0
+SIZE (bastillion-jetty-v3.12_00.tar.gz) = 20364656
 SHA256 (bastillion-upgrade-3.08.00.jar) = 8d18adc90d258b9a9de5e5865c9f632c563d0557ad9458b9f1082ede15ed074b
 SIZE (bastillion-upgrade-3.08.00.jar) = 3557485

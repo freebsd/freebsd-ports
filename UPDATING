@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211223:
+  AFFECTS: users of security/bastillion
+  AUTHOR: netchild@FreeBSD.org
+
+  This update contains an incompatible DB change. Either recreate your
+  DB (rm /usr/local/jetty_bastillion/bastillion/WEB-INF/classes/keydb/bastillion.*
+  and restart) by hand, or export the old DB while the old version is
+  installed and import the data into a new DB. See
+    https://github.com/bastillion-io/Bastillion/issues/405
+  for details.
+
 20211220:
   AFFECTS: users of devel/notcurses
   AUTHOR: nickblack@linux.com
