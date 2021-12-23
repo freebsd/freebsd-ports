@@ -1,0 +1,5 @@
+TIMESTAMP = 1640257856
+SHA256 (gnome/simple-scan-40.7.tar.xz) = 7c551852cb5af7d34aa989f8ad5ede3cbe31828cf8dd5aec2b2b6fdcd1ac3d53
+SIZE (gnome/simple-scan-40.7.tar.xz) = 1480288
+SHA256 (gnome/da6626debe00.patch) = 8dbba91603ce89396b5173604d6bf9d4c3d05b2a7f3861f03ed7ec8d39413d42
+SIZE (gnome/da6626debe00.patch) = 1416

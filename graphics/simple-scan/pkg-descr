@@ -1,0 +1,5 @@
+Document Scanner is a document scanning application for GNOME. It
+allows you to capture images using image scanners (e.g. flatbed
+scanners) that have suitable SANE drivers installed.
+
+WWW: https://gitlab.gnome.org/GNOME/simple-scan
