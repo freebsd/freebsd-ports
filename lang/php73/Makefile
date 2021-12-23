@@ -11,7 +11,7 @@ COMMENT=	PHP Scripting Language
 LICENSE=	PHP301
 
 DEPRECATED=	Upstream active support expired on 2021-12-06
-EXPIRATION_DATE=	2021-01-25
+EXPIRATION_DATE=	2022-01-25
 
 USES+=		tar:xz cpe gnome
 CPE_PRODUCT=	php
