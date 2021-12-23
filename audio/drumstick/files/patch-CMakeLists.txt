@@ -1,17 +1,6 @@
---- CMakeLists.txt.orig	2021-06-28 15:28:22 UTC
+--- CMakeLists.txt.orig	2021-12-10 10:36:02 UTC
 +++ CMakeLists.txt
-@@ -111,8 +111,8 @@ else()
- 	message(FATAL_ERROR "Program pkg-config not found")
- endif()
- 
--if(${CMAKE_SYSTEM} MATCHES "Linux")
--    pkg_check_modules(ALSA REQUIRED IMPORTED_TARGET alsa>=1.0.0)
-+if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
-+    #pkg_check_modules(ALSA REQUIRED IMPORTED_TARGET alsa>=1.0.0)
-     if(ALSA_FOUND)
-         message(STATUS "Found ALSA version = ${ALSA_VERSION}")
-     endif()
-@@ -179,7 +179,7 @@ endif()
+@@ -251,7 +251,7 @@ endif()
  
  if(UNIX AND NOT APPLE)
      if (BUILD_DOCS)
@@ -20,7 +9,7 @@
          if(DOXYGEN_FOUND)
              string(REPLACE ";" " " DOXYGEN_INCLUDE_DIRS "${Qt${QT_VERSION_MAJOR}Core_INCLUDE_DIRS}")
              configure_file("${CMAKE_SOURCE_DIR}/Doxyfile.in"
-@@ -192,9 +192,9 @@ if(UNIX AND NOT APPLE)
+@@ -264,9 +264,9 @@ if(UNIX AND NOT APPLE)
      endif()
      configure_file(drumstick.spec.in drumstick.spec IMMEDIATE @ONLY)
      if(ALSA_FOUND AND PKG_CONFIG_FOUND)

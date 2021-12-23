@@ -36,13 +36,13 @@ lib/drumstick2/libdrumstick-rt-oss-in.so
 lib/drumstick2/libdrumstick-rt-oss-out.so
 lib/libdrumstick-file.so
 lib/libdrumstick-file.so.2
-lib/libdrumstick-file.so.2.4.0
+lib/libdrumstick-file.so.2.5.0
 lib/libdrumstick-rt.so
 lib/libdrumstick-rt.so.2
-lib/libdrumstick-rt.so.2.4.0
+lib/libdrumstick-rt.so.2.5.0
 lib/libdrumstick-widgets.so
 lib/libdrumstick-widgets.so.2
-lib/libdrumstick-widgets.so.2.4.0
+lib/libdrumstick-widgets.so.2.5.0
 %%QT_PLUGINDIR%%/designer/libdrumstick-vpiano-plugin.so
 libdata/pkgconfig/drumstick-file.pc
 libdata/pkgconfig/drumstick-rt.pc
