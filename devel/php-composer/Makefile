@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	composer
-DISTVERSION=	1.10.22
+DISTVERSION=	1.10.24
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -13,6 +13,8 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Dependency Manager for PHP
 
 LICENSE=	MIT
+
+DEPRECATED=	packagist.org is dropping API v1 support, please use newer 2.x version
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
