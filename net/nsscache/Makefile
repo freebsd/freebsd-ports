@@ -1,7 +1,7 @@
 # Created by: Kevin Bowling <kbowling@freebsd.org>
 
 PORTNAME=	nsscache
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
