@@ -1,7 +1,9 @@
-TIMESTAMP = 1621514118
-SHA256 (apache-incubator-mxnet-1.8.0_GH0.tar.gz) = 976e0193622378b9174d6ff95b8d1e5369e66945c5345a13c642748b51eb9758
-SIZE (apache-incubator-mxnet-1.8.0_GH0.tar.gz) = 23246903
-SHA256 (apache-incubator-tvm-9bd2c7b_GH0.tar.gz) = 1e9a69d8ac686b526a0d66241e017b8e9b9ee4f2e687b32f437527926d929d7f
-SIZE (apache-incubator-tvm-9bd2c7b_GH0.tar.gz) = 2852339
+TIMESTAMP = 1639937058
+SHA256 (apache-incubator-mxnet-1.9.0_GH0.tar.gz) = e97ca4d9398a79a9270acc67679c34309a0e4e170718e5aca2929e1832e1b557
+SIZE (apache-incubator-mxnet-1.9.0_GH0.tar.gz) = 23379190
+SHA256 (apache-tvm-efdac94_GH0.tar.gz) = 753338c7eca85e1a7e7a02f3acf40ec13a046b9581dafc94c77c3ad986204983
+SIZE (apache-tvm-efdac94_GH0.tar.gz) = 3889616
 SHA256 (dmlc-dlpack-3efc489_GH0.tar.gz) = e8a3fc92d24eab985a73539b7478da84ebc12cfb33f654d915671748fd3d7d98
 SIZE (dmlc-dlpack-3efc489_GH0.tar.gz) = 39598
+SHA256 (oneapi-src-oneDNN-f40443c_GH0.tar.gz) = a1c62ae792773ebc0fb581d0953e88bb7d6d4297682d79b7a7fa4ca79a2cfe19
+SIZE (oneapi-src-oneDNN-f40443c_GH0.tar.gz) = 9700567

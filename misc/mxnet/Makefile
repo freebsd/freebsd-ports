@@ -1,5 +1,5 @@
 PORTNAME=	mxnet
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -7,8 +7,7 @@ COMMENT=	Apache MXNet: Ultra-scalable deep learning framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	googletest>0:devel/googletest \
-		${LOCALBASE}/include/dnnl.h:math/onednn
+BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
@@ -17,8 +16,9 @@ USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 GH_PROJECT=	incubator-mxnet
-GH_TUPLE=	apache:incubator-tvm:9bd2c7b:tvm/3rdparty/tvm \
-		dmlc:dlpack:3efc489:dlpack/3rdparty/dlpack
+GH_TUPLE=	apache:tvm:efdac94:tvm/3rdparty/tvm \
+		dmlc:dlpack:3efc489:dlpack/3rdparty/dlpack \
+		oneapi-src:oneDNN:f40443c:onednn/3rdparty/mkldnn # same as BUILD_DEPENDS=${LOCALBASE}/include/dnnl.h:math/onednn
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	USE_CUDA USE_CUDNN USE_MKLDNN USE_NCCL ENABLE_CUDA_RTC \
@@ -45,7 +45,7 @@ OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
 CMAKE_OFF+=	USE_SSE
 .endif
 
-post-patch:
+xpost-patch:
 	@${RM} ${WRKSRC}/include/mkldnn/*
 .for h in dnnl.h dnnl.hpp mkldnn.h mkldnn.hpp mkldnn_dnnl_mangling.h mkldnn_types.h mkldnn_version.h
 	@${LN} -s ${LOCALBASE}/include/${h} ${WRKSRC}/include/mkldnn/${h}

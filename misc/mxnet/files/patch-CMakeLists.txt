@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2021-01-16 20:50:48 UTC
+--- CMakeLists.txt.orig	2021-11-04 20:30:01 UTC
 +++ CMakeLists.txt
-@@ -479,6 +479,7 @@ if(USE_JEMALLOC)
+@@ -7,7 +7,7 @@ if(CMAKE_CROSSCOMPILING)
+ endif()
+ 
+ project(mxnet C CXX)
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 14) # workaround for https://github.com/apache/incubator-mxnet/issues/20784
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS ON)
+ 
+@@ -511,6 +511,7 @@ if(USE_JEMALLOC)
    endif()
  endif()
  
@@ -8,7 +17,7 @@
  include(CTest)
  set(GTEST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/googletest/googletest")
  set(GTEST_INCLUDE_DIR ${GTEST_ROOT}/include)
-@@ -489,6 +490,7 @@ set(GTEST_LIBRARY gtest)
+@@ -521,6 +522,7 @@ set(GTEST_LIBRARY gtest)
  
  add_subdirectory(${GTEST_ROOT})
  find_package(GTest REQUIRED)
@@ -16,7 +25,7 @@
  
  # cudnn detection
  if(USE_CUDNN)
-@@ -898,7 +900,7 @@ install(TARGETS ${MXNET_INSTALL_TARGETS}
+@@ -974,7 +976,7 @@ install(TARGETS ${MXNET_INSTALL_TARGETS}
    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
  )
  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
@@ -25,10 +34,10 @@
  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/mshadow/mshadow/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mshadow)
  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/mxnet/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mxnet)
  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/tvm/nnvm/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-@@ -943,7 +945,9 @@ endif()
- if(BUILD_CPP_EXAMPLES)
-   add_subdirectory(example/image-classification/predict-cpp)
+@@ -1020,7 +1022,9 @@ if(USE_CPP_PACKAGE)
+   endif()
  endif()
+ 
 +if(ENABLE_TESTING)
  add_subdirectory(tests)
 +endif()
