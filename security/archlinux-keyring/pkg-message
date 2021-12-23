@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  message: <<EOM
+To populate/update the keyring, run:
+
+  # pacman-key --populate archlinux
+  # pacman-key --updatedb
+EOM
+}
+]

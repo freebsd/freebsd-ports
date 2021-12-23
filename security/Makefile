@@ -29,6 +29,7 @@
     SUBDIR += apache-xml-security-c
     SUBDIR += apg
     SUBDIR += apkid
+    SUBDIR += archlinux-keyring
     SUBDIR += arirang
     SUBDIR += arpCounterattack
     SUBDIR += arti
