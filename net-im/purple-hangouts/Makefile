@@ -1,12 +1,6 @@
-# Created by: José García Juanino <jjuanino@gmail.com>
-
 PORTNAME=	purple-hangouts
-PORTVERSION=	20190607
-PORTREVISION=	1
+PORTVERSION=	20210630
 CATEGORIES=	net-im
-MASTER_SITES=	https://bitbucket.org/EionRobb/${PORTNAME}/get/
-# Commit tag. Must be changed according with PORTVERSION.
-DISTNAME=	3f7d89bf9ce2
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Hangouts plugin for libpurple
@@ -18,15 +12,11 @@ LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libjson-glib-1.0.so:devel/json-glib \
 		libprotobuf-c.so:devel/protobuf-c
 
-USES=		gmake gnome pkgconfig zip
+USES=		gmake gnome pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	EionRobb
+GH_TAGNAME=	55b9f01 # Change accordingly with PORTVERSION
 USE_GNOME=	glib20
-PATCH_STRIP=	-p1 --ignore-whitespace
-
-WRKSRC=		${WRKDIR}/EionRobb-${PORTNAME}-${DISTNAME}
-
-OPTIONS_DEFINE=	NLS
-
-NLS_USES=	gettext
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/purple-2/libhangouts.so \
