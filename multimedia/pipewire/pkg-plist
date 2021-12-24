@@ -182,6 +182,7 @@ lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 lib/pipewire-0.3/libpipewire-module-protocol-simple.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-pulse-tunnel.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-raop-discover.so
+lib/pipewire-0.3/libpipewire-module-raop-sink.so
 lib/pipewire-0.3/libpipewire-module-rtkit.so
 lib/pipewire-0.3/libpipewire-module-session-manager.so
 lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
