@@ -1,5 +1,5 @@
 PORTNAME=	gmic
-DISTVERSION=	2.9.9
+DISTVERSION=	3.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

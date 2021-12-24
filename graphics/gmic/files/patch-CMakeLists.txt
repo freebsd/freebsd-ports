@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2020-06-15 06:22:09 UTC
+--- CMakeLists.txt.orig	2021-12-09 09:25:45 UTC
 +++ CMakeLists.txt
-@@ -100,7 +100,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_use_vt100 -Dgmi
+@@ -100,7 +100,7 @@ list(APPEND GMIC_CXX_COMPILE_FLAGS -Dgmic_build -Dcimg
  if(APPLE)
-    set(COMPILE_FLAGS "${COMPILE_FLAGS} -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive")
+     list(APPEND GMIC_CXX_COMPILE_FLAGS -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive)
  else()
--  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fno-ipa-sra -fpermissive")
-+  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fpermissive")
+-    list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=narrowing -fno-ipa-sra -fpermissive)
++    list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=narrowing -fpermissive)
  endif()
  
  if(NOT "${PRERELEASE_TAG}" STREQUAL "")
