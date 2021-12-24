@@ -1,7 +1,7 @@
 # Created by: Dmitry Kazarov <d.y.kazarov@mail.ru>
 
 PORTNAME=	qpdf
-DISTVERSION=	10.3.2
+DISTVERSION=	10.5.0
 CATEGORIES=	print
 MASTER_SITES=	SF
 
