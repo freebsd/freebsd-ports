@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	liblouis
-PORTVERSION=	3.19.0
+PORTVERSION=	3.20.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 

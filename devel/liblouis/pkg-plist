@@ -50,7 +50,6 @@
 %%DATADIR%%/tables/cs-chardefs.cti
 %%DATADIR%%/tables/cs-comp8.utb
 %%DATADIR%%/tables/cs-g1.ctb
-%%DATADIR%%/tables/cs-letterDef8Dots.uti
 %%DATADIR%%/tables/cs.tbl
 %%DATADIR%%/tables/cs-translation.cti
 %%DATADIR%%/tables/cy-cy-g1.utb
@@ -209,6 +208,7 @@
 %%DATADIR%%/tables/it-it-comp8.utb
 %%DATADIR%%/tables/it.tbl
 %%DATADIR%%/tables/iu-ca-g1.ctb
+%%DATADIR%%/tables/ja-kantenji.utb
 %%DATADIR%%/tables/ka-in-g1.utb
 %%DATADIR%%/tables/kannada.cti
 %%DATADIR%%/tables/kha.tbl
@@ -233,6 +233,7 @@
 %%DATADIR%%/tables/ks-in-g1.utb
 %%DATADIR%%/tables/latinLetterDef6Dots.uti
 %%DATADIR%%/tables/latinLetterDef8Dots.uti
+%%DATADIR%%/tables/latinUppercaseComp6.uti
 %%DATADIR%%/tables/litdigits6DotsPlusDot6.uti
 %%DATADIR%%/tables/litdigits6Dots.uti
 %%DATADIR%%/tables/loweredDigits6Dots.uti
@@ -268,12 +269,9 @@
 %%DATADIR%%/tables/nemethdefs.cti
 %%DATADIR%%/tables/ne.tbl
 %%DATADIR%%/tables/nl-BE.dis
-%%DATADIR%%/tables/nl-BE-g0.utb
-%%DATADIR%%/tables/nl_BE.tbl
 %%DATADIR%%/tables/nl-NL-g0.utb
 %%DATADIR%%/tables/nl-chardefs.uti
 %%DATADIR%%/tables/nl-comp8.utb
-%%DATADIR%%/tables/nl-g0.uti
 %%DATADIR%%/tables/nl.tbl
 %%DATADIR%%/tables/no-no-8dot-fallback-6dot-g0.utb
 %%DATADIR%%/tables/no-no-8dot.utb
@@ -308,13 +306,12 @@
 %%DATADIR%%/tables/pu-in-g1.utb
 %%DATADIR%%/tables/ro.ctb
 %%DATADIR%%/tables/ro.tbl
-%%DATADIR%%/tables/ru-chardefs.cti
+%%DATADIR%%/tables/ru-brf.dis
 %%DATADIR%%/tables/ru-compbrl.ctb
 %%DATADIR%%/tables/ru.ctb
 %%DATADIR%%/tables/ru-letters.dis
 %%DATADIR%%/tables/ru-litbrl.ctb
 %%DATADIR%%/tables/ru-litbrl-detailed.utb
-%%DATADIR%%/tables/ru-ru.dis
 %%DATADIR%%/tables/ru-ru-g1.ctb
 %%DATADIR%%/tables/ru-unicode.dis
 %%DATADIR%%/tables/sa-in-g1.utb
@@ -421,7 +418,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.7
+lib/liblouis.so.20.0.8
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
