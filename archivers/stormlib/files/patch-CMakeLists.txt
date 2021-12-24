@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2020-11-21 03:27:09 UTC
++++ CMakeLists.txt
+@@ -293,7 +293,12 @@ else()
+ 
+     option(WITH_LIBTOMCRYPT "Use system LibTomCrypt library" OFF)
+     if(WITH_LIBTOMCRYPT)
+-        set(LINK_LIBS ${LINK_LIBS} tomcrypt)
++        include(FindPkgConfig)
++        pkg_check_modules(PC_LIBTOMCRYPT libtomcrypt REQUIRED)
++        find_path(LIBTOMCRYPT_INCLUDE_DIR NAMES tomcrypt.h HINTS ${PC_LIBTOMCRYPT_INCLUDE_DIRS} REQUIRED)
++        find_library(LIBTOMCRYPT_LIBRARY NAMES tomcrypt HINTS ${PC_LIBTOMCRYPT_LIBRARY_DIRS} REQUIRED)
++        set(LINK_LIBS ${LINK_LIBS} ${LIBTOMCRYPT_LIBRARY})
++        include_directories(${LIBTOMCRYPT_INCLUDE_DIR})
+     else()
+         set(SRC_ADDITIONAL_FILES ${TOMCRYPT_FILES} ${TOMMATH_FILES})
+     endif()

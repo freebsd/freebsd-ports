@@ -1,0 +1,9 @@
+StormLib is a pack of C++ modules, which provide the user means to modify MPQ
+archives
+
+MPQ (MoPaQ) is an archive format developed by Blizzard Entertainment, purposed
+for storing data files, images, sounds, music and videos for their games. The
+name MoPaQ comes from the author of the format, Mike O'Brien (Mike O'brien
+PaCK).
+
+WWW: http://www.zezula.net/en/mpq/main.html

@@ -222,6 +222,7 @@
     SUBDIR += snzip
     SUBDIR += squsq
     SUBDIR += star
+    SUBDIR += stormlib
     SUBDIR += streamvbyte
     SUBDIR += stuffit
     SUBDIR += szip
