@@ -1,0 +1,5 @@
+Sirula (simple Rust launcher) is an app launcher for Wayland.
+Currently, the only feature is launching apps from .desktop files.
+Feel free to submit pull requests for any feature you like.
+
+WWW: https://github.com/DorianRudolph/sirula

@@ -330,6 +330,7 @@
     SUBDIR += showmethekey
     SUBDIR += simdock
     SUBDIR += simplestroke
+    SUBDIR += sirula
     SUBDIR += slick-greeter
     SUBDIR += slim
     SUBDIR += slock
