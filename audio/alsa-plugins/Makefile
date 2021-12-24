@@ -2,7 +2,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 MASTER_SITES=	GH
@@ -19,6 +19,7 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		alias autoreconf libtool:keepla localbase pkgconfig tar:bzip2
+USE_LDCONFIG=	${PREFIX}/lib/alsa-lib
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	RM="${RM}"
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
