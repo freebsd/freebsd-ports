@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	fastest_pkg
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Script to find the fastest pkg mirror
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
-		curl:ftp/curl
+		${PYTHON_PKGNAMEPREFIX}pycurl>0:ftp/py-pycurl@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
