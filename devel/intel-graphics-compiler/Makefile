@@ -1,6 +1,6 @@
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.9636
+DISTVERSION=	1.0.9933
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -18,7 +18,8 @@ ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=s20210730:devel/vc-intrinsics@${FLAVOR}
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
-		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR}
+		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR} \
+		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
 FLAVORS=	${12 11:L:S/^/llvm/}
 
@@ -30,7 +31,6 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-123-g814e728:headers/../SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2021.4:tools/../SPIRV-Tools
-CMAKE_OFF=	INSTALL_SPIRVDLL
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH:PATH="${LOCALBASE}/${FLAVOR}" \
 		-DIGC_OPTION__LLVM_PREFERRED_VERSION:STRING="${FLAVOR:S/llvm//}"
 CFLAGS+=	-Wno-macro-redefined # __fastcall
@@ -48,5 +48,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/"-Werror"//; /-Werror/d' \
 		-e 's/"-g"//' \
 		${WRKSRC}/IGC/CMakeLists.txt
+# Search LLVMSPIRVLib.pc where devel/spirv-llvm-translator installs
+	@${REINPLACE_CMD} -e '/pkgconfig/s,$${_libdir},&/../libdata,' \
+		${WRKSRC}/IGC/cmake/modules/FindSPIRVLLVMTranslator.cmake
 
 .include <bsd.port.mk>
