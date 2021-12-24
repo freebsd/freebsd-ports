@@ -1,11 +1,11 @@
-TIMESTAMP = 1631278125
-SHA256 (elves-elvish-v0.16.3_GH0.tar.gz) = ea9d594070cff58ed9caedf4619ee195bfce179f79b9a8d5e7a635ce5cbba551
-SIZE (elves-elvish-v0.16.3_GH0.tar.gz) = 663170
+TIMESTAMP = 1639928091
+SHA256 (elves-elvish-v0.17.0_GH0.tar.gz) = 0e255849723129d8c4dc24f67656e651b4e4b7566bc16009109ba76099681fa1
+SIZE (elves-elvish-v0.17.0_GH0.tar.gz) = 673347
 SHA256 (creack-pty-v1.1.15_GH0.tar.gz) = 5bd33391b7b104ffe3c8b58f2dde4a96a6765336cee7048e39788a55600b5141
 SIZE (creack-pty-v1.1.15_GH0.tar.gz) = 9940
 SHA256 (etcd-io-bbolt-v1.3.6_GH0.tar.gz) = a2e524f7f32c44fa0765de192ac0789c585010cadd2c2ddcf9518e858a96ec1f
 SIZE (etcd-io-bbolt-v1.3.6_GH0.tar.gz) = 98025
 SHA256 (golang-sys-528a39cd75f3_GH0.tar.gz) = 7db2d5679f8593ba23592a38d92c9e07f1faf9baa49f5dc06bc01c57af70d1ab
 SIZE (golang-sys-528a39cd75f3_GH0.tar.gz) = 1211428
-SHA256 (mattn-go-isatty-v0.0.14_GH0.tar.gz) = e6460325edf600297cf2ef68834938fb1c5b8d5f234b3b24ec7c0a29a2d70b39
-SIZE (mattn-go-isatty-v0.0.14_GH0.tar.gz) = 4710
+SHA256 (mattn-go-isatty-v0.0.13_GH0.tar.gz) = d25318d3c4e174e1ffb5d90c9d3e6887cc050f76e403b7b3d6163f4338fac952
+SIZE (mattn-go-isatty-v0.0.13_GH0.tar.gz) = 4440
