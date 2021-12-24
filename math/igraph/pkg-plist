@@ -25,9 +25,12 @@ include/igraph/igraph_eigen.h
 include/igraph/igraph_embedding.h
 include/igraph/igraph_epidemics.h
 include/igraph/igraph_error.h
+include/igraph/igraph_eulerian.h
+include/igraph/igraph_export.h
 include/igraph/igraph_flow.h
 include/igraph/igraph_foreign.h
 include/igraph/igraph_games.h
+include/igraph/igraph_graphicality.h
 include/igraph/igraph_graphlets.h
 include/igraph/igraph_heap.h
 include/igraph/igraph_heap_pmt.h
@@ -75,7 +78,10 @@ include/igraph/igraph_vector_ptr.h
 include/igraph/igraph_vector_type.h
 include/igraph/igraph_version.h
 include/igraph/igraph_visitor.h
-lib/libigraph.a
+lib/cmake/igraph/igraph-config-version.cmake
+lib/cmake/igraph/igraph-config.cmake
+lib/cmake/igraph/igraph-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/igraph/igraph-targets.cmake
 lib/libigraph.so
 lib/libigraph.so.0
 lib/libigraph.so.0.0.0
