@@ -86,9 +86,11 @@ LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
+CMAKE_ARGS+=		-DENABLE_LTO:BOOL=OFF
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-USES+=			compiler:gcc-c++11-lib
+.elif ${ARCH} == powerpc64le
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
 post-install:
