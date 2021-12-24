@@ -1,0 +1,15 @@
+Drop after audio/pulseaudio is updated to 15.0 or later.
+
+meson.build:40:0: ERROR: Invalid version of dependency, need 'libpulse' ['>= 15.0'] found '14.2'.
+
+--- meson.build.orig	2021-12-24 12:44:40 UTC
++++ meson.build
+@@ -49,7 +49,7 @@ executable(
+     include_directories('include')
+   ],
+   dependencies: [
+-    dependency('libpulse', version: '>= 15.0'),
++    dependency('libpulse', version: '>= 14.0'),
+     wayland_protos,
+     wayland_client,
+     client_protos,

@@ -1,0 +1,7 @@
+Prevents swayidle from sleeping while any application is outputting or
+receiving audio. Should work with all Wayland desktops that support
+the zwp_idle_inhibit_manager_v1 protocol but only tested in Sway.
+
+This only works for PulseAudio / PipeWire Pulse.
+
+WWW: https://github.com/ErikReider/SwayAudioIdleInhibit

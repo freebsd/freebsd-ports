@@ -346,6 +346,7 @@
     SUBDIR += sterm
     SUBDIR += stjerm
     SUBDIR += swarp
+    SUBDIR += sway-audio-idle-inhibit
     SUBDIR += swaybg
     SUBDIR += swayidle
     SUBDIR += swaylock
