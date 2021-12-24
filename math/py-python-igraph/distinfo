@@ -1,3 +1,3 @@
-TIMESTAMP = 1609586406
-SHA256 (python-igraph-0.8.3.tar.gz) = e1f27622eddeb2bd5fdcbadb41ef048e884790bb050f9627c086dc609d0f1236
-SIZE (python-igraph-0.8.3.tar.gz) = 4059460
+TIMESTAMP = 1640363550
+SHA256 (python-igraph-0.9.8.tar.gz) = 85ace50475c3881414af086e6517f5b89fe3462edac5ec5cf8d266ab77d71eb4
+SIZE (python-igraph-0.9.8.tar.gz) = 9484
