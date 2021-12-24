@@ -1,8 +1,7 @@
 # Created by: Romain Tartière <romain@blogreen.org>
 
 PORTNAME=	paprefs
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
