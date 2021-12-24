@@ -19,6 +19,8 @@ USE_SDL=	sdl2 image2 ttf2 mixer2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PORTSCOUT=	skipv:0.5
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
