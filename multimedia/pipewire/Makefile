@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.42
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -11,6 +11,7 @@ COMMENT=	Server and user space API to deal with multimedia pipelines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus \
 		libinotify.so:devel/libinotify \

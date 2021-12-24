@@ -196,6 +196,7 @@ lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/libspa-control.so
 lib/spa-0.2/support/libspa-dbus.so
 lib/spa-0.2/support/libspa-support.so
+lib/spa-0.2/v4l2/libspa-v4l2.so
 lib/spa-0.2/videoconvert/libspa-videoconvert.so
 lib/spa-0.2/videotestsrc/libspa-videotestsrc.so
 lib/spa-0.2/volume/libspa-volume.so
