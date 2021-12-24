@@ -1,6 +1,6 @@
 PORTNAME=	premake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0-alpha15
+DISTVERSION=	5.0.0-alpha16
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/premake/premake-core/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	5
@@ -22,7 +22,7 @@ MAKE_ARGS=	CC="${CC}" \
 		CXX="${CXX}"
 ALL_TARGET=	bsd
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 
 PLIST_FILES=	bin/premake5
 
