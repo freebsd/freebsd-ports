@@ -26,6 +26,7 @@ CBLAS_DESC=	build the CBLAS compatibility layer
 OPTIONS_DEFAULT=	PARA CBLAS
 OPTIONS_SUB=		yes
 
+CFLAGS_riscv64=	-mno-relax
 HAS_CONFIGURE=	yes
 
 TEST_TARGET=	test
