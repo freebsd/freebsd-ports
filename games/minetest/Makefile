@@ -21,6 +21,8 @@ CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 
 LDFLAGS_i386=	-Wl,-znotext
 
+PORTSCOUT=	skipv:5.4.2-android
+
 PORTDATA=	*
 PORTDOCS=	*
 
