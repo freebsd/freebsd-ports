@@ -1,7 +1,7 @@
 # Created by: Hung-Yi Chen <gaod@hychen.org>
 
 PORTNAME=	babeld
-PORTVERSION=	1.8.5
+PORTVERSION=	1.10
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
 
