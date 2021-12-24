@@ -30,6 +30,12 @@ DESKTOP_ENTRIES="Dust3D" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == riscv64
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-thirdparty_instant-meshes_instant-meshes-dust3d_ext_tbb_src_tbb_tools__api_ittnotify__config.h
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/PLATFORM =/s,Linux,${OPSYS},' \
 		${WRKSRC}/${PORTNAME}.pro
