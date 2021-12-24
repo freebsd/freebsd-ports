@@ -1,5 +1,5 @@
-TIMESTAMP = 1638831908
-SHA256 (go/textproc_kepubify/kepubify-v4.0.2/v4.0.2.mod) = a6e37253a57a963b4c749cb19ecb4daeb0e2f33ce3b0f237ffaac2d737090b8a
-SIZE (go/textproc_kepubify/kepubify-v4.0.2/v4.0.2.mod) = 626
-SHA256 (go/textproc_kepubify/kepubify-v4.0.2/v4.0.2.zip) = f6377803f33b610a1e845c9d7a17ca5499f07d453e7eb10d2d2771fea940d369
-SIZE (go/textproc_kepubify/kepubify-v4.0.2/v4.0.2.zip) = 59470
+TIMESTAMP = 1640306877
+SHA256 (go/textproc_kepubify/kepubify-v4.0.3/v4.0.3.mod) = 83de70851e0b63e05d9bd814c5f4cf0262ff8aca8515508d3461ab400132d21a
+SIZE (go/textproc_kepubify/kepubify-v4.0.3/v4.0.3.mod) = 626
+SHA256 (go/textproc_kepubify/kepubify-v4.0.3/v4.0.3.zip) = f0873e6c2685623412826c0bdcabd64c3035921f748f9f866d52fa6ea4250579
+SIZE (go/textproc_kepubify/kepubify-v4.0.3/v4.0.3.zip) = 59478
