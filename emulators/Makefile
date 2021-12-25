@@ -10,6 +10,7 @@
     SUBDIR += bochs
     SUBDIR += bsvc
     SUBDIR += cannonball
+    SUBDIR += catapult
     SUBDIR += cemu
     SUBDIR += cingb
     SUBDIR += citra
