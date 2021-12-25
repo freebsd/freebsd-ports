@@ -1,7 +1,6 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3_4_3
-PORTREVISION=	5
+DISTVERSION=	3_4_4
 CATEGORIES?=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -23,13 +22,14 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	NO_CUDA NO_DX NO_OMP
 
 OPTIONS_DEFINE=		DOCS EXAMPLES OPENCL PTEX TBB TEST TUTORIALS
-#OPTIONS_DEFAULT=	TBB -- off until onetbb support is available
+OPTIONS_DEFAULT=	TBB
 OPTIONS_SUB=		yes
 
 DOCS_CMAKE_BOOL_OFF=	NO_DOC
 DOCS_BUILD_DEPENDS=	rst2html.py:textproc/py-docutils \
 			doxygen>=1.8.4:devel/doxygen
 DOCS_USES=		python:build
+DOCS_PORTDOCS=		*
 
 EXAMPLES_CMAKE_BOOL_OFF=	NO_EXAMPLES
 EXAMPLES_USES=		xorg
@@ -37,7 +37,6 @@ EXAMPLES_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw
 
 OPENCL_CMAKE_BOOL_OFF=	NO_OPENCL
-
 OPENCL_CFLAGS=		-pthread
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl
 OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
@@ -50,8 +49,7 @@ PTEX_LIB_DEPENDS=	libPtex.so:graphics/ptex
 
 TBB_DESC=		Intel threading building blocks
 TBB_CMAKE_BOOL_OFF=	NO_TBB
-TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
-TBB_BROKEN=		not available until transition to onetbb is complete
+TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS NO_GL_TESTS
 TEST_LIB_DEPENDS=	libglfw.so:graphics/glfw
