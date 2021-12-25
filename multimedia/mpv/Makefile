@@ -11,6 +11,8 @@ DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	b030cfe05f58.patch:-p1 # https://github.com/mpv-player/mpv/pull/9440
+PATCHFILES+=	edf0039d7621.patch:-p1 # https://github.com/mpv-player/mpv/pull/9298
+PATCHFILES+=	5319731526fb.patch:-p1 # https://github.com/mpv-player/mpv/pull/9298
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -51,7 +53,7 @@ OPTIONS_DEFAULT=	ARCHIVE DVDNAV LUA MANPAGES OPENGL UCHARDET \
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L
 OPTIONS_GROUP_VO=	CACA OPENGL SIXEL VAAPI VDPAU VULKAN WAYLAND X11
-OPTIONS_GROUP_AO=	ALSA JACK OPENAL PULSEAUDIO SDL
+OPTIONS_GROUP_AO=	ALSA JACK OPENAL PULSEAUDIO SDL SNDIO
 OPTIONS_RADIO=		YOUTUBE
 OPTIONS_RADIO_YOUTUBE=	YTDL YTDLP
 OPTIONS_SINGLE=		LUA
@@ -134,6 +136,10 @@ SDL_CONFIGURE_ON=		--enable-sdl2
 
 SIXEL_LIB_DEPENDS=		libsixel.so:graphics/libsixel
 SIXEL_CONFIGURE_OFF=		--disable-sixel
+
+SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
+SNDIO_CONFIGURE_ON=		--enable-sndio
+SNDIO_CONFIGURE_OFF=		--disable-sndio
 
 TEST_CONFIGURE_ON=		--enable-tests
 
