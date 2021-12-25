@@ -1,5 +1,5 @@
 PORTNAME=	rdoc
-PORTVERSION=	6.3.3
+PORTVERSION=	6.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.rdoc
+
+RUN_DEPENDS=	rubygem-psych>=4.0.0:textproc/rubygem-psych
 
 USES=		cpe gem
 USE_RUBY=	yes
