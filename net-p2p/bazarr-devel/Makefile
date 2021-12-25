@@ -1,6 +1,6 @@
 PORTNAME=	bazarr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1-beta.6
+DISTVERSION=	1.0.2-beta.11
 CATEGORIES=	net-p2p python
 MASTER_SITES=	https://github.com/morpheus65535/bazarr/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
