@@ -8,5 +8,7 @@ man/man1/setup.1.gz
 man/man5/epm.list.5.gz
 man/man5/setup.types.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/epm-book.epub
 %%PORTDOCS%%%%DOCSDIR%%/epm-book.html
+%%PORTDOCS%%%%DOCSDIR%%/epm-book.pdf
