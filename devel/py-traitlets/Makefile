@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	traitlets
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
