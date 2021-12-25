@@ -1,0 +1,8 @@
+Tool, language, and decoders for inspecting binary data.
+
+In most cases fq works the same way as jq but instead of reading JSON it
+reads binary data.  The result is a JSON-compatible structures where each
+value has a bit range, symbolic interpretations, and knows how to present
+itself in a useful way.
+
+WWW: https://github.com/wader/fq
