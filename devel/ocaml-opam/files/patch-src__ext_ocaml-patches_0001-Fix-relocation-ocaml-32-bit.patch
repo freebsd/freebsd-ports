@@ -1,0 +1,45 @@
+--- src_ext/ocaml-patches/0001-Fix-relocation-ocaml-32-bit.patch.orig	2021-12-25 16:24:31 UTC
++++ src_ext/ocaml-patches/0001-Fix-relocation-ocaml-32-bit.patch
+@@ -0,0 +1,42 @@
++diff --git a/configure b/configure
++index b1e287aed..4754e8ab2 100755
++--- a/configure
+++++ b/configure
++@@ -14120,6 +14120,17 @@ case $arch in #(
++ esac ;;
++ esac
++ 
+++# Disable DT_TEXTREL warnings on Linux i386
+++# See https://github.com/ocaml/ocaml/issues/9800
+++
+++case "$system" in #(
+++  linux_elf|bsd_elf) :
+++    mksharedlib="$mksharedlib -Wl,-z,notext"
+++    mkmaindll="$mkmaindll -Wl,-z,notext" ;; #(
+++  *) :
+++     ;;
+++esac
+++
++ # Assembler
++ 
++ if test -n "$host_alias"; then :
++diff --git a/configure.ac b/configure.ac
++index 656ffe20c..1c9694805 100644
++--- a/configure.ac
+++++ b/configure.ac
++@@ -1070,6 +1070,15 @@ AS_CASE([$arch],
++        [common_cflags="-no-pie $common_cflags"],
++     [])])
++ 
+++# Disable DT_TEXTREL warnings on Linux i386
+++# See https://github.com/ocaml/ocaml/issues/9800
+++
+++AS_CASE(["$system"],
+++  [linux_elf|bsd_elf],
+++    [mksharedlib="$mksharedlib -Wl,-z,notext"
+++    mkmaindll="$mkmaindll -Wl,-z,notext"],
+++  [])
+++
++ # Assembler
++ 
++ AS_IF([test -n "$host_alias"], [toolpref="${host_alias}-"], [toolpref=""])

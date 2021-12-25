@@ -23,6 +23,8 @@ man/man1/opam-install.1.gz
 man/man1/opam-installer.1.gz
 man/man1/opam-list.1.gz
 man/man1/opam-lint.1.gz
+man/man1/opam-lock.1.gz
+man/man1/opam-option.1.gz
 man/man1/opam-pin.1.gz
 man/man1/opam-reinstall.1.gz
 man/man1/opam-remove.1.gz
