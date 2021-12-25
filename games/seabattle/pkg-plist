@@ -1,5 +1,6 @@
 bin/seabattle
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/readme.historical
 %%DATADIR%%/hit1.au
 %%DATADIR%%/hit2.au
 %%DATADIR%%/miss1.au
