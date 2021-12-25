@@ -1,3 +1,5 @@
-TIMESTAMP = 1640340937
+TIMESTAMP = 1640420967
 SHA256 (ehaupt-fastest_pkg-v0.2.0_GH0.tar.gz) = b2ea3ea47eb9c58d82186542aaa73f65998d1254f8851a242a3f1f457ba8b6db
 SIZE (ehaupt-fastest_pkg-v0.2.0_GH0.tar.gz) = 5708
+SHA256 (0a736009a0c98d3277e6cfe93cc36a5bc6f6cd40.patch) = 2dd4c5301a3729bef2ab557df2bd61d8245fc683e3c4107a32804ee76da1d2ab
+SIZE (0a736009a0c98d3277e6cfe93cc36a5bc6f6cd40.patch) = 894
