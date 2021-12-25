@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2018-12-23 19:11:31 UTC
+--- CMakeLists.txt.orig	2021-12-22 23:01:57 UTC
 +++ CMakeLists.txt
-@@ -880,7 +880,8 @@ else(WIN32 AND NOT UNIX)
+@@ -1108,7 +1108,8 @@ else(WIN32 AND NOT UNIX)
+       configure_file(${CMAKE_CURRENT_SOURCE_DIR}/supertux2.desktop.in "supertux2.desktop")
+       install(FILES ${CMAKE_BINARY_DIR}/supertux2.desktop DESTINATION "share/applications")
+       set(APPS "\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${INSTALL_SUBDIR_BIN}/supertux2")
+-      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.png ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.xpm DESTINATION "share/pixmaps/")
++      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.png DESTINATION "share/pixmaps/" RENAME supertux2.png)
++      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.xpm DESTINATION "share/pixmaps/" RENAME supertux2.xpm)
+     endif(UBUNTU_TOUCH)
  
-     set(APPS "\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${INSTALL_SUBDIR_BIN}/supertux2")
- 
--    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.png ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.xpm DESTINATION "share/pixmaps/")
-+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.png DESTINATION "share/pixmaps/" RENAME supertux2.png)
-+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.xpm DESTINATION "share/pixmaps/" RENAME supertux2.xpm)
      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/supertux2.svg DESTINATION "share/icons/hicolor/scalable/apps")
- 
-   endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND DISABLE_CPACK_BUNDLING)
