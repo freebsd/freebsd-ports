@@ -1,43 +1,49 @@
 # Created by: Rod Person <rodperson@rodperson.com>
 
 PORTNAME=	fotoxx
-PORTVERSION=	15.05
+PORTVERSION=	21.60
 CATEGORIES=	graphics
-MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
-		http://fossies.org/linux/misc/legacy/ \
-		http://www.kornelix.com/uploads/1/3/0/3/13035936/
+MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Application to organize and edit image collections
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libtiff.so:graphics/tiff
+LIB_DEPENDS=	libchamplain-gtk-0.12.so:graphics/libchamplain \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		liblcms2.so:graphics/lcms2 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		exiftool:graphics/p5-Image-ExifTool \
 		ufraw-batch:graphics/ufraw
 
-USES=		desktop-file-utils gmake gnome pkgconfig
-USE_GNOME=	gtk30
+USES=		desktop-file-utils gmake gnome jpeg pkgconfig
+USE_GNOME=	cairo glib20 gdkpixbuf2 gtk30
 ALL_TARGET=	fotoxx
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*
 PORTDATA=	*
 PLIST_FILES=	bin/fotoxx \
-		man/man1/fotoxx.1.gz \
-		share/appdata/fotoxx.appdata.xml \
+		share/man/man1/fotoxx.1.gz \
 		share/applications/fotoxx.desktop
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-ggdb|| ; \
-		 s|-rdynamic|-Wl,-export-dynamic| ; \
-		 s|share/man|man| ; \
-		 s|-lpthread|-lexecinfo|' ${WRKSRC}/Makefile
+		's,= thread,= cartoon::thread,' ${WRKSRC}/f.effects.cc
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/fotoxx|${DATADIR}|' ${WRKSRC}/desktop
+		'/#include <sys\/prctl\.h>/d' ${WRKSRC}/f.meta.cc
+	@${REINPLACE_CMD} -e \
+		's,pidof,pgrep -d\\\\ ,' ${WRKSRC}/fotoxx.cc
+	@${REINPLACE_CMD} -e \
+		'/#include/s,wait\.h,sys/&,' ${WRKSRC}/fotoxx.h
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/fotoxx|${DATADIR}|' ${WRKSRC}/fotoxx.desktop
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fotoxx

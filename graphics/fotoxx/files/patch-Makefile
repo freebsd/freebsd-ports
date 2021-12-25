@@ -1,0 +1,45 @@
+--- Makefile.orig	2021-10-17 20:02:26 UTC
++++ Makefile
+@@ -1,40 +1,12 @@
+ #  fotoxx Makefile
+-#
+-#  export CXX=g++          gnu compiler
+-#  export CXX=clang++      clang compiler
+-#  export DEBUG=x          debug build with address checking
+ 
+-ifeq ($(CXX), clang++)     #  CLANG
+-   ifdef DEBUG
+-      CXXFLAGS += -Wall -g -O0 -fsanitize=address -Wno-stringop-truncation
+-      LDFLAGS += -fsanitize=address
+-   else
+-      CXXFLAGS += -Wall -g -O2
+-   endif
+-else                       #  GCC
+-   ifdef DEBUG
+-      CXXFLAGS += -Wall -g -rdynamic -O0 -fsanitize=address -Wno-format-truncation -Wno-stringop-truncation
+-      LDFLAGS += -fsanitize=address
+-   else
+-      CXXFLAGS += -Wall -g -rdynamic -O2 -Wno-format-truncation -Wno-stringop-truncation
+-   endif
+-endif
+-
+ PKG_CONFIG ?= pkg-config
+ 
+ CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c                \
+-   `$(PKG_CONFIG) --cflags gtk+-3.0`               \
+-   -I/usr/include/clutter-1.0/                     \
+-   -I/usr/include/clutter-gtk-1.0/                 \
+-   -I/usr/include/champlain-gtk-0.12/              \
+-   -I/usr/include/champlain-0.12/                  \
+-   -I/usr/include/libchamplain-gtk-0.12/           \
+-   -I/usr/include/libchamplain-0.12/               \
+-   -I/usr/include/cogl/                            \
+-   -I/usr/include/json-glib-1.0/                   \
++   `$(PKG_CONFIG) pkgconf --cflags champlain-gtk-0.12`
+ 
+ LIBS = `$(PKG_CONFIG) --libs gtk+-3.0`                                              \
+-         -lrt -lpthread -llcms2 -ltiff -lpng -ljpeg                                 \
++         -lrt -lexecinfo -llcms2 -ltiff -lpng -ljpeg                                 \
+          -lclutter-1.0 -lclutter-gtk-1.0 -lchamplain-0.12 -lchamplain-gtk-0.12
+ 
+ ALLFILES = fotoxx.o f.widgets.o f.file.o f.gallery.o f.albums.o f.area.o f.meta.o            \
