@@ -1,0 +1,6 @@
+This program is a structured note-taking application based on GTK v3.
+Write notes in instantly-formatted Markdown, organise them in a tree
+of folders that can be instantly navigated from within the program,
+and add hand-drawn notes by mouse, touchscreen, or digitizer.
+
+WWW: https://github.com/blackhole89/notekit

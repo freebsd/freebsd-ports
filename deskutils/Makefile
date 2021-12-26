@@ -179,6 +179,7 @@
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note
+    SUBDIR += notekit
     SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
