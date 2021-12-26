@@ -6,7 +6,7 @@ CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Wayland composite "server"
+COMMENT=	Core Wayland window system code and protocol
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
