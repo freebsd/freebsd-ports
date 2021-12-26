@@ -1,8 +1,12 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	6fece0e44feef43dcb879f3c2e6a2d84a26d518f.patch:-p1 # https://github.com/pyscf/pyscf/pull/1145: Update to libcint v5.0
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for quantum chemistry

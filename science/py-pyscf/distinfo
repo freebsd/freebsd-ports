@@ -1,3 +1,5 @@
-TIMESTAMP = 1637098413
+TIMESTAMP = 1640549794
 SHA256 (pyscf-pyscf-v2.0.1_GH0.tar.gz) = 6a152860787351aae52dc1ef2399bd9564fa314dca070312cfc0f2c3fc7412cf
 SIZE (pyscf-pyscf-v2.0.1_GH0.tar.gz) = 9641485
+SHA256 (6fece0e44feef43dcb879f3c2e6a2d84a26d518f.patch) = d3195bae8a3d1bcf25fa474762a9f2dc163a936840ef1ed9406c78b04e1f6efc
+SIZE (6fece0e44feef43dcb879f3c2e6a2d84a26d518f.patch) = 6038
