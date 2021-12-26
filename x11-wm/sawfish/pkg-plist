@@ -179,8 +179,6 @@ share/ksmserver/windowmanagers/sawfish.desktop
 %%DATADIR%%/lisp/poweroff.jlc
 %%DATADIR%%/lisp/prompt.jl
 %%DATADIR%%/lisp/prompt.jlc
-%%DATADIR%%/lisp/razor-int.jl
-%%DATADIR%%/lisp/razor-int.jlc
 %%DATADIR%%/lisp/rects.jl
 %%DATADIR%%/lisp/rects.jlc
 %%DATADIR%%/lisp/sawfish/cfg/apply.jl
@@ -358,8 +356,6 @@ share/ksmserver/windowmanagers/sawfish.desktop
 %%DATADIR%%/lisp/sawfish/wm/integration/lxde.jlc
 %%DATADIR%%/lisp/sawfish/wm/integration/mate.jl
 %%DATADIR%%/lisp/sawfish/wm/integration/mate.jlc
-%%DATADIR%%/lisp/sawfish/wm/integration/razor.jl
-%%DATADIR%%/lisp/sawfish/wm/integration/razor.jlc
 %%DATADIR%%/lisp/sawfish/wm/integration/xfce.jl
 %%DATADIR%%/lisp/sawfish/wm/integration/xfce.jlc
 %%DATADIR%%/lisp/sawfish/wm/keymaps.jl
