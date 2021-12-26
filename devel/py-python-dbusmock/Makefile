@@ -1,5 +1,5 @@
 PORTNAME=	python-dbusmock
-PORTVERSION=	0.24.1
+PORTVERSION=	0.25.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ USES=		gnome python
 USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 NO_ARCH=	yes
 
 do-test:
