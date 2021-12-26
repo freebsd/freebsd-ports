@@ -1,7 +1,7 @@
 # Created by: David Barksdale <amatus@gnu.org>
 
 PORTNAME=	libmicrohttpd
-DISTVERSION=	0.9.73
+DISTVERSION=	0.9.74
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -11,7 +11,7 @@ COMMENT=	C library for embedding HTTP server functionality
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool pathfix
+USES=		cpe libtool localbase pathfix
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnu
 
@@ -28,7 +28,6 @@ TESTCURL_DESC=		Use curl when running unit tests
 
 GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgnutls.so:security/gnutls
-GNUTLS_USES=		localbase
 GNUTLS_CONFIGURE_ENABLE=https
 
 TESTCURL_LIB_DEPENDS=	libcurl.so:ftp/curl
