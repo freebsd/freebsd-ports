@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	0.21.2
+PORTVERSION=	0.21.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
@@ -25,7 +25,7 @@ PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
-			TEXTURES TELESCOPE
+			TELESCOPE TEST TEXTURES
 OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS TELESCOPE
 OPTIONS_SUB=		yes
 
@@ -58,6 +58,9 @@ SCRIPTS_CMAKE_OFF=	-DENABLE_SCRIPTING:BOOL=OFF
 TELESCOPE_USE=		QT=serialport
 TELESCOPE_CMAKE_OFF=	-DUSE_PLUGIN_TELESCOPECONTROL:BOOL=OFF
 
+TEST_USE=		QT=testlib_build
+TEST_CMAKE_ON=		-DENABLE_TESTING:BOOL=ON
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMORE_STARS}
@@ -72,6 +75,10 @@ DISTFILES+=	stars_4_1v0_2.cat:stars4 stars_5_2v0_1.cat:stars5 \
 post-extract-DOCS-on:
 	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
 		${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/ADD_PLUGIN(OnlineQueries/s,1,0,' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR}/skycultures/greek_almagest/almstars
@@ -95,5 +102,8 @@ post-install-TEXTURES-on:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+do-test-TEST-on:
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 
 .include <bsd.port.mk>
