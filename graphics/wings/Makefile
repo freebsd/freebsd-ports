@@ -1,7 +1,7 @@
 # Created by: olgeni@FreeBSD.org
 
 PORTNAME=	wings
-DISTVERSION=	2.2.7p1
+DISTVERSION=	2.2.7p2
 CATEGORIES=	graphics
 DIST_SUBDIR=	erlang
 
@@ -33,7 +33,7 @@ SUB_FILES=	${PORTNAME}.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	dgud
 GH_PROJECT=	wings libigl:igl
-GH_TAGNAME=	a41df275e v2.1.0:igl
+GH_TAGNAME=	8d019ebe48 v2.1.0:igl
 
 USE_GL=		gl glu
 
