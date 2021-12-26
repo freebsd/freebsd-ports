@@ -1,12 +1,9 @@
 # Created by: Pedro Giffuni <giffunip@asme.org>
 
 PORTNAME=	gmsh
-DISTVERSION=	4.6.0
-PORTREVISION=	2
+DISTVERSION=	4.9.2
 CATEGORIES=	cad
-MASTER_SITES=	LOCAL/wen \
-		LOCAL/zeising \
-		http://gmsh.info/src/
+MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DIST_SUBDIR=	gmsh
 
@@ -27,10 +24,13 @@ RUN_DEPENDS=	getdp:science/getdp
 
 USES=		blaslapack compiler:c++11-lang cmake fortran gl jpeg tar:tgz \
 		xorg
+
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
+
+LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	CGNS DOCS MED OCC SHARED STATIC
 OPTIONS_DEFAULT=	CGNS MED OCC
