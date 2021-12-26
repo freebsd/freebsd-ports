@@ -1,6 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	4.3
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -37,7 +36,7 @@ USES=		desktop-file-utils gettext-runtime gnome pkgconfig \
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
 USE_PYTHON=	cython distutils noflavors
-USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xtst
+USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xres xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
@@ -45,9 +44,11 @@ SHEBANG_FILES=	fs/lib/cups/xpraforwarder fs/bin/auth_dialog fs/bin/xdg-open \
 		fs/bin/xpra_udev_product_version fs/bin/gnome-open \
 		fs/bin/gvfs-open
 
-OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER LIBYUV SWSCALE VPX \
-			WEBCAM X264 X265
-OPTIONS_DEFAULT=	AVAHI CUPS GSTREAMER
+OPTIONS_DEFINE=		AVAHI AVCODEC CUPS DOCS FFMPEG GSTREAMER LIBYUV SWSCALE \
+			WEBCAM X265
+OPTIONS_DEFAULT=	AVAHI CUPS GSTREAMER X264
+OPTIONS_RADIO=		CODEC
+OPTIONS_RADIO_CODEC=	VPX X264
 OPTIONS_SUB=		yes
 
 AVCODEC_DESC=	Enable avcodec2 (FFmpeg) decoder
