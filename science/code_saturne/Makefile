@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	code_saturne
-PORTVERSION=	7.0.2
+PORTVERSION=	7.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
@@ -42,10 +42,11 @@ BINARY_ALIAS=	python=${PYTHON_CMD} \
 		pyrcc5=pyrcc5-${PYTHON_VER} \
 		pyuic5=pyuic5-${PYTHON_VER}
 
-OPTIONS_DEFINE=		DOCS EXAMPLES BATCH BLAS MPICH PETSC SCOTCH
-OPTIONS_DEFAULT=	BATCH BLAS METIS MPICH PETSC SCOTCH
+OPTIONS_DEFINE=		DOCS EXAMPLES BATCH BLAS HYPRE MPICH MUMPS PETSC SCOTCH
+OPTIONS_DEFAULT=	BATCH BLAS HYPRE METIS MPICH MUMPS PETSC SCOTCH
 OPTIONS_RADIO=		METIS
 OPTIONS_RADIO_METIS=	METIS PARMETIS
+OPTIONS_SUB=		yes
 BLAS_DESC=		Support of BLAS
 BLAS_USES=		blaslapack
 BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-type=BLAS	\
@@ -54,6 +55,10 @@ BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-type=BLAS	\
 BLAS_LIB_DEPENDS=	libcblas.so:math/cblas
 BATCH_DESC=		Use Torque to submit batches
 BATCH_RUN_DEPENDS=	pbs-config:sysutils/torque
+HYPRE_DESC=		Support of HYPRE
+HYPRE_BUILD_DEPENDS=	hypre>0:science/hypre
+HYPRE_RUN_DEPENDS=	hypre>0:science/hypre
+HYPRE_CONFIGURE_ON=	--with-hypre="${LOCALBASE}"
 MPICH_USES=		mpi
 MPICH_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 MPICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
@@ -61,11 +66,10 @@ MPICH_CONFIGURE_WITH=	mpi
 METIS_DESC=		Support of METIS
 METIS_LIB_DEPENDS=	libmetis.so:math/metis
 METIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include"
-# MUMPS in port is not compatible ATM
-#MUMPS_DESC=		Support of MUMPS
-#MUMPS_LIB_DEPENDS=	libsmumps.so:math/mumps
-#MUMPS_CONFIGURE_ON=	--with-mumps="${LOCALBASE}"
-#MUMPS_CONFIGURE_ENV=	MUMPS_LIBS="-lmpiseq -llapack"
+MUMPS_DESC=		Support of MUMPS
+MUMPS_LIB_DEPENDS=	libsmumps.so:math/mumps
+MUMPS_CONFIGURE_ON=	--with-mumps="${LOCALBASE}"
+MUMPS_CONFIGURE_ENV=	MUMPS_LIBS="-lmpiseq -llapack"
 PARMETIS_DESC=		Support of ParMETIS
 PARMETIS_LIB_DEPENDS=	libparmetis.so:math/parmetis
 PARMETIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include/parmetis"	\
