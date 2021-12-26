@@ -1,3 +1,5 @@
+https://hg.mozilla.org/mozilla-central/rev/f7e2cf808d30
+
 ld: warning: undefined symbol: wl_proxy_marshal_flags
 >>> referenced by Unified_cpp_gfx_gl0.cpp
 >>>               objdir/gfx/gl/Unified_cpp_gfx_gl0.o:(mozilla::gl::DeleteWaylandGLSurface(void*))
@@ -7,19 +9,18 @@ ld: warning: undefined symbol: wl_proxy_marshal_flags
 >>>               objdir/gfx/layers/Unified_cpp_gfx_layers1.o:(mozilla::layers::NativeLayerRootWayland::CommitToScreen(mozilla::detail::BaseAutoLock<mozilla::Mutex&> const&))
 >>> referenced 84 more times
 
---- widget/gtk/mozwayland/mozwayland.c.orig	2021-09-27 22:47:59 UTC
+diff --git widget/gtk/mozwayland/mozwayland.c widget/gtk/mozwayland/mozwayland.c
+index 7a448e6321e2..1a86468b4f3d 100644
+--- widget/gtk/mozwayland/mozwayland.c
 +++ widget/gtk/mozwayland/mozwayland.c
-@@ -40,6 +40,13 @@ MOZ_EXPORT void wl_event_queue_destroy(struct wl_event
+@@ -200,3 +200,10 @@ MOZ_EXPORT int wl_list_empty(const struct wl_list* list) { return -1; }
  
- MOZ_EXPORT void wl_proxy_marshal(struct wl_proxy* p, uint32_t opcode, ...) {}
- 
+ MOZ_EXPORT void wl_list_insert_list(struct wl_list* list,
+                                     struct wl_list* other) {}
++
 +MOZ_EXPORT struct wl_proxy* wl_proxy_marshal_flags(
 +    struct wl_proxy* proxy, uint32_t opcode,
 +    const struct wl_interface* interface, uint32_t version, uint32_t flags,
 +    ...) {
 +  return NULL;
 +}
-+
- MOZ_EXPORT void wl_proxy_marshal_array(struct wl_proxy* p, uint32_t opcode,
-                                        union wl_argument* args) {}
- 
