@@ -1,16 +1,17 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rehex
-PORTVERSION=	0.3.92
+PORTVERSION=	0.4.0
 CATEGORIES=	editors
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hex editor for reverse engineering
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
-		libjansson.so:devel/jansson
+		libjansson.so:devel/jansson \
+		libunistring.so:devel/libunistring
 
 USES=		compiler:c++11-lang gmake gnome lua:53 pkgconfig
 USE_WX=		3.0+
