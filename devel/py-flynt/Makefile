@@ -1,7 +1,7 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
 
 PORTNAME=	flynt
-PORTVERSION=	0.61
+PORTVERSION=	0.69
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
