@@ -28,6 +28,8 @@ console_cmd="${name}_console"
 status_cmd="${name}_status"
 kill_cmd="${name}_kill"
 
+export JAVA_VERSION=17
+
 is_running()
 {
 	pgrep -qu mcserver java
