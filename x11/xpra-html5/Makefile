@@ -1,5 +1,5 @@
 PORTNAME=	xpra-html5
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	brotli:archivers/brotli
 USES=		python:3.6+,build
 
 OPTIONS_DEFINE=		MINIFY
+OPTIONS_DEFAULT=	MINIFY
 
 MINIFY_DESC=		Minify JavaScript source files
 MINIFY_BUILD_DEPENDS=	yuicompressor:www/yuicompressor
