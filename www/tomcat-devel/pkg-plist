@@ -53,6 +53,7 @@
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tomcat-websocket.jar
 %%T%%/lib/websocket-api.jar
+%%T%%/lib/websocket-client-api.jar
 @dir %%T%%/endorsed
 @postunexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually
 @owner %%WWWOWN%%
