@@ -34,7 +34,6 @@ USE_GL=		gbm gl
 USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GH_ACCOUNT=	freedesktop
 GH_PROJECT=	xorg-xserver
-GH_TUPLE=	freedesktop:xorg-xorgproto:xorgproto-2021.4.99.2:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
@@ -65,14 +64,5 @@ OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=		EGLStream support for glamor on Xwayland
 NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
-
-.ifdef GH_TUPLE
-post-install:
-# https://github.com/mesonbuild/meson/issues/2550
-	@${RM} -r ${STAGEDIR}${PREFIX}/include/GL
-	@${RM} -r ${STAGEDIR}${PREFIX}/include/X11
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc/xorgproto
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
-.endif
 
 .include <bsd.port.mk>
