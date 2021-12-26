@@ -1,7 +1,9 @@
 bin/AusweisApp2
-share/ausweisapp2/AusweisApp2/AusweisApp2.rcc
-share/ausweisapp2/AusweisApp2/config.json
-share/ausweisapp2/AusweisApp2/npa.svg
-share/ausweisapp2/AusweisApp2/translations/ausweisapp2_de.qm
+man/man1/AusweisApp2.1.gz
 share/applications/com.governikus.ausweisapp2.desktop
+%%DATADIR%%/AusweisApp2/AusweisApp2.rcc
+%%DATADIR%%/AusweisApp2/config.json
+%%DATADIR%%/AusweisApp2/translations/ausweisapp2_de.qm
+share/icons/hicolor/96x96/apps/AusweisApp2.png
+share/icons/hicolor/scalable/apps/AusweisApp2.svg
 share/metainfo/com.governikus.ausweisapp2.metainfo.xml
