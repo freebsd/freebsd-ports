@@ -1,6 +1,6 @@
---- tool/rbinstall.rb.orig	2021-11-09 07:21:54 UTC
+--- tool/rbinstall.rb.orig	2021-12-25 12:23:14 UTC
 +++ tool/rbinstall.rb
-@@ -910,186 +910,6 @@ end
+@@ -923,188 +923,6 @@ end
  
  # :startdoc:
  
@@ -61,7 +61,9 @@
 -    spec = load_gemspec(src)
 -    file_collector = RbInstall::Specs::FileCollector.new(src)
 -    files = file_collector.collect
--    next if files.empty?
+-    if file_collector.skip_install?(files)
+-      next
+-    end
 -    spec.files = files
 -    spec
 -  }
@@ -165,7 +167,7 @@
 -    gems.each do |gem|
 -      package = Gem::Package.new(gem)
 -      inst = RbInstall::GemInstaller.new(package, options)
--      inst.spec.extension_dir = with_destdir(inst.spec.extension_dir)
+-      inst.spec.extension_dir = "#{extensions_dir}/#{inst.spec.full_name}"
 -      begin
 -        Gem::DefaultUserInteraction.use_ui(silent) {inst.install}
 -      rescue Gem::InstallError
