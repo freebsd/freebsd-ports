@@ -1,7 +1,7 @@
 PORTNAME=	greenbone-security-assistant
 DISTVERSIONPREFIX=	v
 DISTVERSION=	21.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/gsa/:yarn_cache
 DISTFILES=	${PORTNAME}-cache${EXTRACT_SUFX}:yarn_cache
