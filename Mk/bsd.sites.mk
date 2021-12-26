@@ -970,9 +970,12 @@ MASTER_SITE_PGSQL+= \
 	https://ftp.postgresql.org/pub/%SUBDIR%/
 .endif
 
+# Currently MyraCloud is blocking fetch. Hence add php Github distributions
+# untill it is fixed.
 .if !defined(IGNORE_MASTER_SITE_PHP)
 MASTER_SITE_PHP+= \
-	https://www.php.net/%SUBDIR%/
+	https://www.php.net/distributions/ \
+	https://raw.githubusercontent.com/php/web-php-distributions/master/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
