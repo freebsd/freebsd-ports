@@ -241,9 +241,6 @@ share/locale/xh/LC_MESSAGES/pidgin.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin.mo
 share/locale/zh_HK/LC_MESSAGES/pidgin.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin.mo
-share/purple/ca-certs/CAcert_Class3.pem
-share/purple/ca-certs/CAcert_Root.pem
-share/purple/ca-certs/mozilla.pem
 share/sounds/purple/alert.wav
 share/sounds/purple/login.wav
 share/sounds/purple/logout.wav
