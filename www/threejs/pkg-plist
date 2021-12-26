@@ -336,6 +336,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLRenderLists.js
 %%WWWDIR%%/renderers/webgl/WebGLRenderStates.js
 %%WWWDIR%%/renderers/webgl/WebGLShader.js
+%%WWWDIR%%/renderers/webgl/WebGLShaderCache.js
 %%WWWDIR%%/renderers/webgl/WebGLShadowMap.js
 %%WWWDIR%%/renderers/webgl/WebGLState.js
 %%WWWDIR%%/renderers/webgl/WebGLTextures.js
@@ -353,6 +354,7 @@
 %%WWWDIR%%/textures/DataTexture2DArray.js
 %%WWWDIR%%/textures/DataTexture3D.js
 %%WWWDIR%%/textures/DepthTexture.js
+%%WWWDIR%%/textures/FramebufferTexture.js
 %%WWWDIR%%/textures/Texture.js
 %%WWWDIR%%/textures/VideoTexture.js
 %%WWWDIR%%/utils.js
