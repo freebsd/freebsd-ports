@@ -1,5 +1,6 @@
 PORTNAME=	klayout
 PORTVERSION=	0.27.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -18,13 +19,14 @@ GH_ACCOUNT=	KLayout
 USE_GL=		gl
 USE_RUBY=	yes
 USE_QT=		core buildtools designer gui multimedia network printsupport \
-		qmake sql svg testlib widgets xml xmlpatterns
+		qmake sql svg testlib uitools widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-fPIC -I${LOCALBASE}/include/qt5 \
 		${QT5MODULES:S,^,-I${LOCALBASE}/include/qt5/Qt,}
 LDFLAGS+=	${LIBS} ${QT5MODULES:S,^,-lQt5,} \
 		-L${LOCALBASE}/lib/qt5 -lpthread
+LDFLAGS+=	-L${BUILD_WRKSRC} # workaround for the error: unable to find library -lklayout_lib: https://github.com/KLayout/klayout/issues/955
 QT5MODULES=	Core Designer Gui Multimedia MultimediaWidgets \
 		Network PrintSupport Sql Svg Test Widgets Xml XmlPatterns
 MAKE_ENV=	INSTALLROOT=${STAGEDIR} \
