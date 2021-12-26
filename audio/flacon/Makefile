@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	flacon
-PORTVERSION=	8.1.0
+PORTVERSION=	8.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -21,6 +21,7 @@ USE_QT=		buildtools_build concurrent_build qmake_build testlib_build \
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=YES
 
 do-test:
-	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
+	@cd ${TEST_WRKSRC} && LC_ALL=C.UTF-8 ctest -C ${CMAKE_BUILD_TYPE} \
+		${_MAKE_JOBS}
 
 .include <bsd.port.mk>
