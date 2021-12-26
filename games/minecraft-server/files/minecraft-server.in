@@ -5,5 +5,6 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
+export JAVA_VERSION=17
 cd %%PREFIX%%/minecraft-server
-su -m mcserver -c "java $(cat %%PREFIX%%/etc/minecraft-server/java-args.txt) -jar server.jar nogui"
+su -m mcserver -c "%%LOCALBASE%%/bin/java $(cat %%PREFIX%%/etc/minecraft-server/java-args.txt) -jar server.jar nogui"
