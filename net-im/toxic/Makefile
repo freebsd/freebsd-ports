@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	toxic
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
