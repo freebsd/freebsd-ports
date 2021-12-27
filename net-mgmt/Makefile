@@ -3,6 +3,7 @@
     SUBDIR += 2ping
     SUBDIR += TkTopNetFlows
     SUBDIR += adcli
+    SUBDIR += adguard-exporter
     SUBDIR += aggregate
     SUBDIR += aircrack-ng
     SUBDIR += alertmanager
