@@ -2,13 +2,15 @@
 
 PORTNAME=	openssl
 DISTVERSION=	3.0.1
+PORTREVISIO=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/openssl/openssl/commit/
-PATCHFILES=	f5485b97b6c9977c0d39c7669b9f97a879312447.patch:-p1
+PATCHFILES=	f5485b97b6c9977c0d39c7669b9f97a879312447.patch:-p1 \
+		c2d1ad0e048dd3bfa60e6aa0b5ee343cc6d97a15.patch:-p1
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
@@ -136,12 +138,12 @@ SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc
-CONFIGURE_ARGS+=	BSD-ppc
-.elif ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	BSD-ppc64
 .elif ${ARCH} == powerpc64le
 CONFIGURE_ARGS+=	BSD-ppc64le
+.elif ${ARCH} == riscv64
+CONFIGURE_ARGS+=	BSD-riscv64
 .endif
 
 .include <bsd.port.pre.mk>
