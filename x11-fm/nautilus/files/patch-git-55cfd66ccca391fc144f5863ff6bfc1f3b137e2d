@@ -1,0 +1,41 @@
+diff --git meson.build meson.build
+index 927216636a21bfc0a4de3336e084c4d0084b6624..4626fa0bb7f69f84a3ba79f13bd869b641bad428 100644
+--- meson.build
++++ meson.build
+@@ -122,8 +122,10 @@ gnome_desktop = dependency('gnome-desktop-3.0', version: '>= 3.0.0')
+ gtk = dependency('gtk+-3.0', version: '>= 3.22.27')
+ libhandy = dependency('libhandy-1', version: '>= 1.1.90')
+ libportal = []
++libportal_gtk3 = []
+ if get_option('libportal')
+-  libportal = dependency('libportal', version: '>= 0.3')
++  libportal = dependency('libportal', version: '>= 0.5')
++  libportal_gtk3 = dependency('libportal-gtk3', version: '>= 0.5')
+ endif
+ selinux = []
+ if get_option('selinux')
+diff --git src/meson.build src/meson.build
+index 682d6f3a3cd0899985ddd7a8b2a9479e5f1a5d79..d7fb76d53d5f3e6e28931734a7c55bf5443c06f7 100644
+--- src/meson.build
++++ src/meson.build
+@@ -285,6 +285,7 @@ nautilus_deps = [
+   libgd_dep,
+   libhandy,
+   libportal,
++  libportal_gtk3,
+   nautilus_extension,
+   selinux,
+   tracker_sparql,
+diff --git src/nautilus-files-view.c src/nautilus-files-view.c
+index dfb7fb26c0c8d2c55d76c1d4fc3a2b39fbec817b..a24005a110c40c9a1dd4954aa2d6beccd9b17182 100644
+--- src/nautilus-files-view.c
++++ src/nautilus-files-view.c
+@@ -93,7 +93,7 @@
+ 
+ #ifdef HAVE_LIBPORTAL
+ #include <libportal/portal.h>
+-#include <libportal/portal-gtk3.h>
++#include <libportal-gtk3/portal-gtk3.h>
+ #endif
+ 
+ /* Minimum starting update inverval */
