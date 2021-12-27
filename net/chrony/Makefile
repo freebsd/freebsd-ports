@@ -1,11 +1,12 @@
 # Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
 
 PORTNAME=	chrony
-DISTVERSION=	4.1
+DISTVERSION=	4.2
 CATEGORIES=	net
 MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
 		LOCAL/mandree
 
+# overridden in net/chrony-lite
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	System clock synchronization client and server
 
