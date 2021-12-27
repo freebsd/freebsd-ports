@@ -121,6 +121,7 @@
     SUBDIR += stepcode
     SUBDIR += stm32flash
     SUBDIR += sumo
+    SUBDIR += surelog
     SUBDIR += sweethome3d
     SUBDIR += tkgate
     SUBDIR += tochnog

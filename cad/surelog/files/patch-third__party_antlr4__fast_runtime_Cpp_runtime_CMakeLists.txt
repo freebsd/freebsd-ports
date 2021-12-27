@@ -1,0 +1,61 @@
+- workaround for https://github.com/chipsalliance/Surelog/issues/2349
+- ... replace bundled utfcpp with the external build-time dependency
+
+--- third_party/antlr4_fast/runtime/Cpp/runtime/CMakeLists.txt.orig	2021-12-27 08:04:15 UTC
++++ third_party/antlr4_fast/runtime/Cpp/runtime/CMakeLists.txt
+@@ -1,6 +1,7 @@
+ 
+ include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
+ 
++if (FALSE)
+ set(THIRDPARTY_DIR ${CMAKE_BINARY_DIR}/runtime/thirdparty)
+ set(UTFCPP_DIR ${THIRDPARTY_DIR}/utfcpp)
+ ExternalProject_Add(
+@@ -12,8 +13,8 @@ ExternalProject_Add(
+   CMAKE_ARGS            -DCMAKE_INSTALL_PREFIX=${UTFCPP_DIR}/install -Dgtest_force_shared_crt=ON -DUTF8_TESTS=OFF
+   TEST_AFTER_INSTALL    0
+   STEP_TARGETS          build)
++endif()
+ 
+-
+ include_directories(
+   ${PROJECT_SOURCE_DIR}/runtime/src
+   ${PROJECT_SOURCE_DIR}/runtime/src/atn
+@@ -23,8 +24,8 @@ include_directories(
+   ${PROJECT_SOURCE_DIR}/runtime/src/tree
+   ${PROJECT_SOURCE_DIR}/runtime/src/tree/pattern
+   ${PROJECT_SOURCE_DIR}/runtime/src/tree/xpath
+-  ${UTFCPP_DIR}/install/include/utf8cpp
+-  ${UTFCPP_DIR}/install/include/utf8cpp/utf8
++  #${UTFCPP_DIR}/install/include/utf8cpp
++  #${UTFCPP_DIR}/install/include/utf8cpp/utf8
+ )
+ 
+ 
+@@ -50,8 +51,8 @@ add_custom_target(make_lib_output_dir ALL
+     COMMAND ${CMAKE_COMMAND} -E make_directory ${LIB_OUTPUT_DIR}
+     )
+ 
+-add_dependencies(antlr4_shared make_lib_output_dir utfcpp)
+-add_dependencies(antlr4_static make_lib_output_dir utfcpp)
++add_dependencies(antlr4_shared make_lib_output_dir)
++add_dependencies(antlr4_static make_lib_output_dir)
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+   target_link_libraries(antlr4_shared ${UUID_LIBRARIES})
+@@ -131,6 +132,7 @@ install(DIRECTORY "${PROJECT_SOURCE_DIR}/runtime/src/"
+         FILES_MATCHING PATTERN "*.h"
+         )
+ 
++if (FALSE)
+ install(FILES "${UTFCPP_DIR}/source/utf8.h"
+         DESTINATION "include/antlr4-runtime")
+ install(DIRECTORY "${UTFCPP_DIR}/source/utf8"
+@@ -138,6 +140,6 @@ install(DIRECTORY "${UTFCPP_DIR}/source/utf8"
+         COMPONENT dev
+         FILES_MATCHING PATTERN "*.h"
+         )
+-
++endif()
+ 
+ 
