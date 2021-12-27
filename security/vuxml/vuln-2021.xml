@@ -1,3 +1,55 @@
+  <vuln vid="d1be3d73-6737-11ec-9eea-589cfc007716">
+    <topic>OpenSearch -- Log4Shell</topic>
+    <affects>
+      <package>
+	<name>opensearch</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSearch reports:</p>
+	<blockquote cite="https://opensearch.org/blog/releases/2021/12/update-1-2-3/">
+	  <p>CVE-2021-45105 for Log4j was issued after the release of OpenSearch 1.2.2. This CVE advises upgrading to Log4j 2.17.0. While there has been no observed reproduction of the issue described in CVE-2021-45105 in OpenSearch, we have released OpenSearch 1.2.3 which updates Log4j to version 2.17.0.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45105</cvename>
+      <url>https://opensearch.org/blog/releases/2021/12/update-1-2-3/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-16</discovery>
+      <entry>2021-12-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b0f49cb9-6736-11ec-9eea-589cfc007716">
+    <topic>OpenSearch -- Log4Shell</topic>
+    <affects>
+      <package>
+	<name>opensearch</name>
+	<range><lt>1.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSearch reports:</p>
+	<blockquote cite="https://opensearch.org/blog/releases/2021/12/update-1-2-2/">
+	  <p>CVE-2021-45046 was issued shortly following the release of OpenSearch 1.2.1. This new CVE advises upgrading from Log4j 2.15.0 (used in OpenSearch 1.2.1) to Log4j 2.16.0. Out of an abundance of caution, the team is releasing OpenSearch 1.2.2 which includes Log4j 2.16.0. While there has been no observed reproduction of the issue described in CVE-2021-45046, Log4j 2.16.0 takes much more extensive JNDI mitigation measures.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45046</cvename>
+      <url>https://opensearch.org/blog/releases/2021/12/update-1-2-2/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-14</discovery>
+      <entry>2021-12-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1135e939-62b4-11ec-b8e2-1c1b0d9ea7e6">
     <topic>opengrok -- Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise OpenGrok.</topic>
     <affects>
