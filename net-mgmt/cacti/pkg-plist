@@ -38,6 +38,7 @@
 %%CACTIDIR%%/cli/analyze_database.php
 %%CACTIDIR%%/cli/apply_automation_rules.php
 %%CACTIDIR%%/cli/audit_database.php
+%%CACTIDIR%%/cli/batchgapfix.php
 %%CACTIDIR%%/cli/convert_tables.php
 %%CACTIDIR%%/cli/copy_user.php
 %%CACTIDIR%%/cli/fix_mediumint.php
@@ -3900,6 +3901,7 @@
 %%CACTIDIR%%/install/upgrades/1_2_14.php
 %%CACTIDIR%%/install/upgrades/1_2_15.php
 %%CACTIDIR%%/install/upgrades/1_2_17.php
+%%CACTIDIR%%/install/upgrades/1_2_19.php
 %%CACTIDIR%%/install/upgrades/1_2_2.php
 %%CACTIDIR%%/install/upgrades/1_2_3.php
 %%CACTIDIR%%/install/upgrades/1_2_5.php
