@@ -229,6 +229,9 @@ include/d/gtkd-3/gio/ListStore.d
 include/d/gtkd-3/gio/LoadableIconIF.d
 include/d/gtkd-3/gio/LoadableIconT.d
 include/d/gtkd-3/gio/MemoryInputStream.d
+include/d/gtkd-3/gio/MemoryMonitorIF.d
+include/d/gtkd-3/gio/MemoryMonitorT.d
+include/d/gtkd-3/gio/NativeSocketAddress.d
 include/d/gtkd-3/gio/MemoryOutputStream.d
 include/d/gtkd-3/gio/Menu.d
 include/d/gtkd-3/gio/MenuAttributeIter.d

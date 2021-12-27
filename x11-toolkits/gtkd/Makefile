@@ -1,5 +1,5 @@
 PORTNAME=	gtkd
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://gtkd.org/Downloads/sources/
 DISTNAME=	GtkD-${PORTVERSION}
@@ -19,7 +19,7 @@ MAKEFILE=	GNUmakefile
 SSP_UNSAFE=	ldc2 does not support -fstack-protector-strong
 
 post-patch:
-	${REINPLACE_CMD} -e 's:\$$(libdir)/pkgconfig:$$(prefix)/libdata/pkgconfig:' \
+	${REINPLACE_CMD} -e 's:\$$(libdir)/pkgconfig:libdata/pkgconfig:' \
 		${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
