@@ -14,8 +14,10 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Client.pm
 %%SITE_PERL%%/Net/Amazon/S3/Client/Bucket.pm
 %%SITE_PERL%%/Net/Amazon/S3/Client/Object.pm
+%%SITE_PERL%%/Net/Amazon/S3/Client/Object/Range.pm
 %%SITE_PERL%%/Net/Amazon/S3/Constants.pm
 %%SITE_PERL%%/Net/Amazon/S3/Constraint/ACL/Canned.pm
+%%SITE_PERL%%/Net/Amazon/S3/Constraint/Etag.pm
 %%SITE_PERL%%/Net/Amazon/S3/Error/Handler.pm
 %%SITE_PERL%%/Net/Amazon/S3/Error/Handler/Confess.pm
 %%SITE_PERL%%/Net/Amazon/S3/Error/Handler/Legacy.pm
@@ -183,8 +185,10 @@ bin/s3cl
 %%PERL5_MAN3%%/Net::Amazon::S3::Client.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Client::Bucket.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Client::Object.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Client::Object::Range.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Constants.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Constraint::ACL::Canned.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Constraint::Etag.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Error::Handler.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Error::Handler::Confess.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Error::Handler::Legacy.3.gz
