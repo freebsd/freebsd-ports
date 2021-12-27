@@ -1,10 +1,6 @@
 PORTNAME=	tilix
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	x11
-
-PATCH_DIST_STRIP=-p1
-PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/gnunn1/tilix/pull/
-PATCHFILES=	1733.diff
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Tiling terminal emulator using GTK+ 3
@@ -12,15 +8,20 @@ COMMENT=	Tiling terminal emulator using GTK+ 3
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ldc2:lang/ldc \
+BUILD_DEPENDS=	cmake:devel/cmake \
 		po4a-translate:textproc/po4a \
 		${LOCALBASE}/libdata/pkgconfig/vted-3.pc:x11-toolkits/gtkd
+LIB_DEPENDS=	libdruntime-ldc-shared.so:lang/ldc \
+		libharfbuzz.so:print/harfbuzz \
+		libsecret-1.so:security/libsecret \
+		libunwind.so:devel/libunwind
 
-USES=		autoreconf gettext gmake gnome pkgconfig
+USES=		gettext gnome meson pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnunn1
-GNU_CONFIGURE=	yes
-USE_GNOME=	vte3
+USE_GNOME=	cairo gdkpixbuf2 librsvg2 vte3
+USE_XORG=	x11
 GLIB_SCHEMAS=	com.gexperts.Tilix.gschema.xml
+SHEBANG_FILES=	data/scripts/tilix_int.sh
 
 .include <bsd.port.mk>
