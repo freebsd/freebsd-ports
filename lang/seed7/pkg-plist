@@ -1,5 +1,7 @@
 bin/s7
 bin/s7c
+%%DATADIR%%/seed7.vim
+%%DATADIR%%/sd7.vim
 lib/seed7/bin/s7_comp.a
 lib/seed7/bin/s7_con.a
 lib/seed7/bin/s7_data.a
@@ -138,6 +140,7 @@ lib/seed7/lib/huffman.s7i
 lib/seed7/lib/ico.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
+lib/seed7/lib/imagefile.s7i
 lib/seed7/lib/inflate.s7i
 lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i

@@ -1,7 +1,7 @@
 # Created by: gahr
 
 PORTNAME=	seed7
-DISTVERSION=	05_20211114
+DISTVERSION=	05_20211225
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
@@ -67,6 +67,10 @@ do-install:
 	cd ${WRKSRC}/../lib/comp && ${COPYTREE_SHARE} '*.s7i' ${STAGEDIR}${SEED7_LIBRARY}/comp
 #	install static libraries
 	${INSTALL} -d ${STAGEDIR}${S7_LIB_DIR}
+#	install vim syntax files
+	${INSTALL} -d ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/seed7.vim ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/sd7.vim ${STAGEDIR}${DATADIR}
 .for s7_lib in ${S7_LIBS}
 	${INSTALL_DATA} ${WRKSRC}/../bin/${s7_lib} ${STAGEDIR}${S7_LIB_DIR}
 .endfor
