@@ -3,9 +3,6 @@ DISTVERSION=	4.5.3
 PORTREVISION=	5
 CATEGORIES=	graphics
 
-PATCH_SITES=	https://github.com/opencv/opencv/commit/
-PATCHFILES=	998406d20e93aa36b26fd56506f3ea8a82b43c24.patch:-p1
-
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
 
