@@ -56,7 +56,6 @@
 %%SITE_PERL%%/Text/MicroMason/HasParams.pm
 %%SITE_PERL%%/Text/MicroMason/LineNumbers.pm
 %%SITE_PERL%%/Text/MicroMason/PLP.pm
-%%SITE_PERL%%/Text/MicroMason/ParseInfo.pm
 %%SITE_PERL%%/Text/MicroMason/PassVariables.pm
 %%SITE_PERL%%/Text/MicroMason/PostProcess.pm
 %%SITE_PERL%%/Text/MicroMason/QuickTemplate.pm
