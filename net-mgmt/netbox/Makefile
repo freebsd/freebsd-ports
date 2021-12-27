@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.9<3.3:www/py-django32@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj32-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj32-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-mptt>=0.13.4<0.14:www/py-dj32-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-prometheus>=2.1.0<2.2:www/py-dj32-django-prometheus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj32-django-redis>=5.0.0<5.1:www/py-dj32-django-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj32-django-redis>=5.0.0<5.2:www/py-dj32-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-rq>=2.4.1<2.6:devel/py-dj32-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-tables2>=2.4.1<2.5:www/py-dj32-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-taggit>=1.5.1<2:www/py-dj32-django-taggit@${PY_FLAVOR} \
