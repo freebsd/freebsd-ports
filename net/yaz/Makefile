@@ -1,8 +1,7 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
 
 PORTNAME=	yaz
-DISTVERSION=	5.31.0
-PORTREVISION=	1
+DISTVERSION=	5.31.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
