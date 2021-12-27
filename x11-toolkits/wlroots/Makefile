@@ -6,7 +6,8 @@ CATEGORIES=	x11-toolkits
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
 PATCHFILES+=	7c0e2a271a4c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCHFILES+=	55a8d225cf8c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
-PATCHFILES+=	347b32642fb6.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
+PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
