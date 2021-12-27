@@ -1,3 +1,40 @@
+  <vuln vid="ed8a4215-675c-11ec-8dd4-a0f3c100ae18">
+    <topic>Pillow -- Regular Expression Denial of Service (ReDoS)</topic>
+    <affects>
+      <package>
+	<name>py38-pillow</name>
+	<range><ge>5.2.0</ge><lt>8.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GitHub Advisory Database reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-98vv-pw6r-q6q4">
+	  <p>Uncontrolled Resource Consumption in pillow.</p>
+	  <p>The package pillow from 0 and before 8.3.2 are vulnerable to Regular
+	     Expression Denial of Service (ReDoS) via the getrgb function.</p>
+	  <p>References:</p>
+	  <ul>
+	    <li>https://nvd.nist.gov/vuln/detail/CVE-2021-23437</li>
+	    <li>https://github.com/python-pillow/Pillow/commit/9e08eb8f78fdfd2f476e1b20b7cf38683754866b</li>
+	    <li>https://pillow.readthedocs.io/en/stable/releasenotes/8.3.2.html</li>
+	    <li>https://snyk.io/vuln/SNYK-PYTHON-PILLOW-1319443</li>
+	    <li>https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RNSG6VFXTAROGF7ACYLMAZNQV4EJ6I2C/</li>
+	    <li>https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VKRCL7KKAKOXCVD7M6WC5OKFGL4L3SJT/</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-23437</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-23437</url>
+    </references>
+    <dates>
+      <discovery>2021-09-02</discovery>
+      <entry>2021-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1be3d73-6737-11ec-9eea-589cfc007716">
     <topic>OpenSearch -- Log4Shell</topic>
     <affects>
