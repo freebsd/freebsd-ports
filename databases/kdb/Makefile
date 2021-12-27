@@ -5,6 +5,9 @@ CATEGORIES=		databases kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
 
+PATCH_SITES=		https://invent.kde.org/libraries/kdb/-/commit/
+PATCHFILES=		b36d74f13a1421437a725fb74502c993c359392a.diff:-p1
+
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Database connectivity and creation framework
 
