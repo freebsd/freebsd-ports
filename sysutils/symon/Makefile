@@ -1,9 +1,9 @@
 # Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 
 PORTNAME=	symon
-PORTVERSION=	2.87
+PORTVERSION=	2.88
 CATEGORIES=	sysutils
-MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
+MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs
 
 MAINTAINER=	uqs@FreeBSD.org
@@ -50,7 +50,7 @@ PLIST_SUB+=	SYMUX="@comment "
 .endif
 SUBDIR+=	client
 
-MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}" \
+MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}" LORDER=echo TSORT=cat \
 		SYSCONFDIR="${PREFIX}/etc" PREFIX="${STAGEDIR}/${PREFIX}"
 
 .include <bsd.port.pre.mk>
