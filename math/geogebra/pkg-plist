@@ -21,4 +21,5 @@ share/icons/hicolor/scalable/apps/geogebra.svg
 %%DATADIR%%/geogebra/jogl.all-natives-linux-amd64.jar
 %%DATADIR%%/geogebra/jogl.all-natives-linux-i586.jar
 %%DATADIR%%/geogebra/jogl.all.jar
+share/mime/packages/geogebra-mime.xml
 @dir share/mime/packages
