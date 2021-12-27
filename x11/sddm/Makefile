@@ -4,6 +4,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	7
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/sddm/sddm/commit/
+PATCHFILES=	e93bf95c54ad8c2a1604f8d7be05339164b19308.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QML based login manager
 
