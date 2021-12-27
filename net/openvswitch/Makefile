@@ -1,7 +1,7 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 
 PORTNAME=	openvswitch
-DISTVERSION=	2.16.1
+DISTVERSION=	2.16.2
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
