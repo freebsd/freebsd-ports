@@ -59,7 +59,6 @@
     SUBDIR += asfsm
     SUBDIR += asmctl
     SUBDIR += asmem
-    SUBDIR += asmon
     SUBDIR += asusoled
     SUBDIR += atf-fvp
     SUBDIR += atf-master
