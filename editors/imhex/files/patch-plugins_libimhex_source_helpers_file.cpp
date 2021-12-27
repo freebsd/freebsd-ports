@@ -1,4 +1,4 @@
---- plugins/libimhex/source/helpers/file.cpp.orig	2021-09-30 10:52:12 UTC
+--- plugins/libimhex/source/helpers/file.cpp.orig	2021-11-28 20:34:17 UTC
 +++ plugins/libimhex/source/helpers/file.cpp
 @@ -5,12 +5,12 @@ namespace hex {
  
@@ -10,7 +10,7 @@
 -            this->m_file = fopen64(path.c_str(), "r+b");
 +            this->m_file = fopen(path.c_str(), "r+b");
  
-         if (mode == File::Mode::Create || this->m_file == nullptr)
+         if (mode == File::Mode::Create || (mode == File::Mode::Write && this->m_file == nullptr))
 -            this->m_file = fopen64(path.c_str(), "w+b");
 +            this->m_file = fopen(path.c_str(), "w+b");
      }
@@ -25,7 +25,7 @@
      }
  
      void File::close() {
-@@ -81,10 +81,10 @@ namespace hex {
+@@ -85,10 +85,10 @@ namespace hex {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,7 +40,7 @@
  
          return size;
      }
-@@ -92,7 +92,7 @@ namespace hex {
+@@ -96,7 +96,7 @@ namespace hex {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  

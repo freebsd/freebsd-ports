@@ -1,3 +1,5 @@
 bin/imhex
 lib/libimhex.so
+share/applications/imhex.desktop
 %%DATADIR%%/plugins/builtin.hexplug
+share/pixmaps/imhex.png

@@ -1,6 +1,6 @@
---- source/window/window.cpp.orig	2021-09-30 10:52:12 UTC
+--- source/window/window.cpp.orig	2021-11-28 20:34:17 UTC
 +++ source/window/window.cpp
-@@ -248,7 +248,6 @@ namespace hex {
+@@ -252,7 +252,6 @@ namespace hex {
          std::signal(SIGSEGV, signalHandler);
          std::signal(SIGINT,  signalHandler);
          std::signal(SIGILL,  signalHandler);

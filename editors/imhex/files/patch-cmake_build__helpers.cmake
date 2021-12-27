@@ -1,20 +1,30 @@
---- cmake/build_helpers.cmake.orig	2021-09-30 10:52:12 UTC
+--- cmake/build_helpers.cmake.orig	2021-12-26 13:48:48 UTC
 +++ cmake/build_helpers.cmake
-@@ -37,7 +37,7 @@ macro(findLibraries)
-     # Find packages
-     find_package(PkgConfig REQUIRED)
- 
--    find_package(mbedTLS 2.26.0 REQUIRED)
-+    find_library(mbedTLS mbedtls REQUIRED)
- 
-     pkg_search_module(CAPSTONE 4.0.2 REQUIRED capstone)
- 
-@@ -48,6 +48,8 @@ macro(findLibraries)
-         message(STATUS ${PYTHON_VERSION_MAJOR_MINOR})
-         message(FATAL_ERROR "No valid version of Python 3 was found.")
+@@ -68,10 +68,10 @@ macro(detectOS)
+         set(MAGIC_INSTALL_LOCATION "magic")
+     elseif(UNIX AND NOT APPLE)
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DOS_LINUX")
+-        set(CMAKE_INSTALL_BINDIR "usr/bin")
+-        set(CMAKE_INSTALL_LIBDIR "usr/lib")
+-        set(PLUGINS_INSTALL_LOCATION "usr/share/imhex/plugins")
+-        set(MAGIC_INSTALL_LOCATION "usr/share/imhex/magic")
++        set(CMAKE_INSTALL_BINDIR "bin")
++        set(CMAKE_INSTALL_LIBDIR "lib")
++        set(PLUGINS_INSTALL_LOCATION "share/imhex/plugins")
++        set(MAGIC_INSTALL_LOCATION "share/imhex/magic")
+     else()
+         message(FATAL_ERROR "Unknown / unsupported system!")
      endif()
-+
-+    find_package(CURL REQUIRED)
+@@ -208,10 +208,8 @@ macro(createPackage)
+         endforeach()
+         ]])
+     elseif(UNIX AND NOT APPLE)
+-        configure_file(${CMAKE_SOURCE_DIR}/dist/DEBIAN/control.in ${CMAKE_BINARY_DIR}/DEBIAN/control)
+-        install(FILES ${CMAKE_BINARY_DIR}/DEBIAN/control DESTINATION ${CMAKE_INSTALL_PREFIX}/DEBIAN)
+-        install(FILES ${CMAKE_SOURCE_DIR}/dist/imhex.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/usr/share/applications)
+-        install(FILES ${CMAKE_SOURCE_DIR}/res/icon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/usr/share/pixmaps RENAME imhex.png)
++        install(FILES ${CMAKE_SOURCE_DIR}/dist/imhex.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++        install(FILES ${CMAKE_SOURCE_DIR}/res/icon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps RENAME imhex.png)
+     endif()
  
-     string(REPLACE "." ";" PYTHON_VERSION_MAJOR_MINOR ${Python_VERSION})
- 
+     if (CREATE_BUNDLE)

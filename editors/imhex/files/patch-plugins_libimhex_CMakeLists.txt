@@ -1,8 +1,0 @@
---- plugins/libimhex/CMakeLists.txt.orig	2021-09-30 10:52:12 UTC
-+++ plugins/libimhex/CMakeLists.txt
-@@ -111,4 +111,4 @@ if (APPLE)
-     target_link_libraries(libimhex PUBLIC ${FOUNDATION})
- endif ()
- 
--target_link_libraries(libimhex PUBLIC imgui nfd magic capstone LLVMDemangle microtar ${NLOHMANN_JSON_LIBRARIES} ${YARA_LIBRARIES} ${LIBCURL_LIBRARIES} ${MBEDTLS_LIBRARIES} ${FMT_LIBRARIES} ${Python_LIBRARIES})
-+target_link_libraries(libimhex PUBLIC imgui nfd magic capstone LLVMDemangle microtar ${NLOHMANN_JSON_LIBRARIES} ${YARA_LIBRARIES} ${LIBCURL_LIBRARIES} mbedtls mbedcrypto mbedx509 ${FMT_LIBRARIES} ${Python_LIBRARIES})

@@ -1,9 +1,9 @@
-TIMESTAMP = 1633780013
+TIMESTAMP = 1640528524
 SHA256 (imhex/xdg.hpp) = 2e08ce74adb71ff9b9aa9e1c999733fccd4b00967b9cf0c0e51dbf049392a9ec
 SIZE (imhex/xdg.hpp) = 7674
-SHA256 (imhex/WerWolv-ImHex-v1.10.1_GH0.tar.gz) = 02339938409d304c5e3075de4fb9dac2e047cf02a6aaf3925661d9d4662852c8
-SIZE (imhex/WerWolv-ImHex-v1.10.1_GH0.tar.gz) = 8523483
-SHA256 (imhex/btzy-nativefiledialog-extended-800e880_GH0.tar.gz) = aa2d90478c512e8ff98a2e42adc1a775ec8424b192369cec8d671d055d54d6ea
-SIZE (imhex/btzy-nativefiledialog-extended-800e880_GH0.tar.gz) = 400335
+SHA256 (imhex/WerWolv-ImHex-v1.12.1_GH0.tar.gz) = 139679a7d7b5ad22dc2e54bc238b95f757cd468c69da94d10a43504d589851f1
+SIZE (imhex/WerWolv-ImHex-v1.12.1_GH0.tar.gz) = 8785197
+SHA256 (imhex/btzy-nativefiledialog-extended-322d1bc_GH0.tar.gz) = 1950e8870068b64f862da0dcaebabaeae9a8d0edacae80ec2208a2df9c1e360f
+SIZE (imhex/btzy-nativefiledialog-extended-322d1bc_GH0.tar.gz) = 400379
 SHA256 (imhex/fmtlib-fmt-d141cdb_GH0.tar.gz) = 06dc2fa0236b1b334b93f7e272cbb29554b05a19fd0a9b52039976e8b5dcd725
 SIZE (imhex/fmtlib-fmt-d141cdb_GH0.tar.gz) = 805703
