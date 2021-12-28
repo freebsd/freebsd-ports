@@ -1,0 +1,7 @@
+Database abstraction library written in C.
+
+Simple and easy to use database access library. Works with SQLite 3,
+MariaDB and PostgreSQL databases. Uses a JSON-based language with
+jansson to execute simple queries based on one table.
+
+WWW: https://github.com/babelouest/hoel

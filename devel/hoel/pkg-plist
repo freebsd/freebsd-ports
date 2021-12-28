@@ -1,0 +1,6 @@
+include/hoel-cfg.h
+include/hoel.h
+lib/libhoel.so
+lib/libhoel.so.1.4
+lib/libhoel.so.1.4.14
+libdata/pkgconfig/libhoel.pc
