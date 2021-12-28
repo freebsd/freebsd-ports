@@ -196,6 +196,7 @@
     SUBDIR += glassfish
     SUBDIR += glassfish4
     SUBDIR += glpi
+    SUBDIR += glewlwyd
     SUBDIR += gnome-user-share
     SUBDIR += go-www
     SUBDIR += gobuffalo

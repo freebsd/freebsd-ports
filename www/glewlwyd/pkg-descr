@@ -1,0 +1,20 @@
+Single-Sign-On (SSO) server with multiple factor authentication.
+
+Authentication processes supported:
+
+* OAuth2
+* OpenID Connect
+* Allows users to authenticate via multiple factors:
+
+Password
+* One-time password (TOTP/HOTP)
+* Webauthn (Yubikey, Android devices)
+* One-time password sent via e-mail
+* TLS Certificate
+* Users and clients can be stored and managed from various backends:
+
+Database
+* LDAP service
+* HTTP Backend service providing Basic Authentication
+
+WWW: https://github.com/babelouest/glewlwyd

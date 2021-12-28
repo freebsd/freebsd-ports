@@ -1,0 +1,38 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: glewlwyd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable glewlwyd:
+# glewlwyd_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable glewlwyd
+# glewlwyd_configfile (str):    Defaults to %%PREFIX%%/etc/glewlwyd/glewlwyd.conf
+#
+
+
+. /etc/rc.subr
+
+name="glewlwyd"
+rcvar=glewlwyd_enable
+
+load_rc_config $name
+
+: ${glewlwyd_enable:=NO}
+: ${glewlwyd_configfile:=%%PREFIX%%/etc/glewlwyd/glewlwyd.conf}
+
+required_files="${glewlwyd_configfile}"
+
+glewlwyd_user="glewlwyd"
+glewlwyd_command="%%PREFIX%%/sbin/glewlwyd"
+glewlwyd_options="--config=${glewlwyd_configfile}"
+pidfile="/var/run/${name}/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${glewlwyd_command} ${glewlwyd_options}"
+
+echo $command $command_args
+
+run_rc_command "$1"

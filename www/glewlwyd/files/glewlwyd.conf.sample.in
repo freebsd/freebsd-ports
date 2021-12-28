@@ -1,0 +1,156 @@
+#
+#
+# Glewlwyd SSO Authorization Server
+#
+# Copyright 2016-2019 Nicolas Mora <mail@babelouest.org>
+# Gnu Public License V3 <http://fsf.org/>
+#
+#
+
+# port to open for remote commands
+port=4593
+
+# bind to IPV4 address
+#bind_address="127.0.0.1"
+
+# external url to access to this instance
+external_url="http://localhost:4593"
+
+# login url relative to external url
+login_url="login.html"
+
+# api prefix
+api_prefix="api"
+
+# path to static files for /webapp url
+static_files_path="/usr/local/www/glewlwyd"
+
+# access-control-allow-origin value
+allow_origin="*"
+
+# log mode (console, syslog, journald, file)
+log_mode="file"
+
+# log level: NONE, ERROR, WARNING, INFO, DEBUG
+log_level="DEBUG"
+
+# output to log file (required if log_mode is file)
+log_file="/var/log/glewlwyd.log"
+
+# cookie domain
+cookie_domain=""
+
+# cookie_secure, this options SHOULD be set to 1, set this to 0 to test glewlwyd on insecure connection http instead of https
+cookie_secure=0
+
+# session expiration, default is 4 weeks
+session_expiration=2419200
+
+# session key
+session_key="GLEWLWYD2_SESSION_ID"
+
+# admin scope name
+admin_scope="g_admin"
+
+# profile scope name
+profile_scope="g_profile"
+
+# user_module path
+user_module_path="/usr/local/lib/glewlwyd/user"
+
+# client_module path
+client_module_path="/usr/local/lib/glewlwyd/client"
+
+# user_auth_scheme_module path
+user_auth_scheme_module_path="/usr/local/lib/glewlwyd/scheme"
+
+# plugin_module path
+plugin_module_path="/usr/local/lib/glewlwyd/plugin"
+
+# TLS/SSL configuration values
+use_secure_connection=false
+secure_connection_key_file="/etc/ssl/certs/cert.key"
+secure_connection_pem_file="/etc/ssl/certs/cert.pem"
+secure_connection_ca_file="/etc/ssl/certs/ca.crt"
+
+# Algorithms available are SHA1, SHA256, SHA512, MD5, default is SHA256
+hash_algorithm = "SHA512"
+
+# MariaDB/Mysql database connection
+#database =
+#{
+#  type     = "mariadb"
+#  host     = "localhost"
+#  user     = "glewlwyd"
+#  password = "glewlwyd"
+#  dbname   = "glewlwyd"
+#  port     = 0
+#}
+
+# SQLite database connection
+database =
+{
+  type = "sqlite3"
+  path = "/var/cache/glewlwyd/glewlwyd.db"
+};
+
+# PostgreSQL database connection
+#database =
+#{
+#  type = "postgre"
+#  conninfo = "dbname = glewlwyd"
+#}
+
+# mime types for webapp files
+static_files_mime_types =
+(
+  {
+    extension = ".html"
+    mime_type = "text/html"
+  },
+  {
+    extension = ".css"
+    mime_type = "text/css"
+  },
+  {
+    extension = ".js"
+    mime_type = "application/javascript"
+  },
+  {
+    extension = ".json"
+    mime_type = "application/json"
+  },
+  {
+    extension = ".png"
+    mime_type = "image/png"
+  },
+  {
+    extension = ".jpg"
+    mime_type = "image/jpeg"
+  },
+  {
+    extension = ".jpeg"
+    mime_type = "image/jpeg"
+  },
+  {
+    extension = ".ttf"
+    mime_type = "font/ttf"
+  },
+  {
+    extension = ".woff"
+    mime_type = "font/woff"
+  },
+  {
+    extension = ".woff2"
+    mime_type = "font/woff2"
+  },
+  {
+    extension = ".map"
+    mime_type = "application/octet-stream"
+  },
+  {
+    extension = ".ico"
+    mime_type = "image/x-icon"
+  }
+)
+
