@@ -1,0 +1,7 @@
+bin/uwsc
+include/ulfius-cfg.h
+include/ulfius.h
+lib/libulfius.so
+lib/libulfius.so.2.7
+lib/libulfius.so.2.7.3
+libdata/pkgconfig/libulfius.pc

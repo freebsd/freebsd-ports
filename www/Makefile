@@ -2291,6 +2291,7 @@
     SUBDIR += typo3-9
     SUBDIR += uchiwa
     SUBDIR += ufdbguard
+    SUBDIR += ulfius
     SUBDIR += unit
     SUBDIR += unit-java
     SUBDIR += unit-perl

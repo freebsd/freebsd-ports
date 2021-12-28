@@ -1,0 +1,12 @@
+HTTP Framework for REST Applications in C.
+
+Based on GNU Libmicrohttpd for the backend web server, Jansson for the json
+manipulation library, and Libcurl for the http/smtp client API.
+
+Used to facilitate creation of web applications in C programs with a small
+memory footprint, as in embedded systems applications.
+
+You can create webservices in HTTP or HTTPS mode, stream data, or implement
+server websockets.
+
+WWW: https://github.com/babelouest/ulfius
