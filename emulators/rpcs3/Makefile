@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.19-13136 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g900d7df40
+DISTVERSION=	0.0.19-13137 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gcb2748ae0
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-125-g01f601a:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:1c0ca194dc50:llvm/llvm \
 		Cyan4973:xxHash:v0.8.1:xxHash/3rdparty/xxHash \
-		asmjit:asmjit:723f585:asmjit/3rdparty/asmjit/asmjit \
+		asmjit:asmjit:eae7197:asmjit/3rdparty/asmjit/asmjit \
 		google:flatbuffers:v2.0.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
