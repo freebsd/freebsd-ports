@@ -7220,6 +7220,7 @@
     SUBDIR += yaml2argdata
     SUBDIR += yasm
     SUBDIR += yasm-devel
+    SUBDIR += yder
     SUBDIR += youcompleteme
     SUBDIR += yuck
     SUBDIR += z80-asm
