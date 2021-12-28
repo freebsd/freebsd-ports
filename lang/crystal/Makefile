@@ -1,5 +1,5 @@
 PORTNAME=		crystal
-DISTVERSION=		1.1.1
+DISTVERSION=		1.2.2
 CATEGORIES=		lang
 MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
@@ -17,8 +17,8 @@ ONLY_FOR_ARCHS_REASON=		requires prebuilt bootstrap compiler
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libevent.so:devel/libevent \
 		libpcre.so:devel/pcre \
-		libLLVM-${LLVM_VERSION:C/^([6-9])0/\1/:S/-devel/12/}.so:devel/llvm${LLVM_VERSION}
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
+		libLLVM-${LLVM_VERSION:C/^([6-9])0/\1/:S/-devel/14/}.so:devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${BOOTSTRAP_LLVM_VERSION} \
 		git:devel/git
 RUN_DEPENDS=	pkg-config:devel/pkgconf
 
@@ -27,8 +27,9 @@ USES=		compiler gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 
-LLVM_VERSION=	10
-BOOTSTRAP_PATH=	crystal-${BOOTSTRAP_VER}-freebsd12-${ARCH}-llvm10
+LLVM_VERSION?=	10
+BOOTSTRAP_LLVM_VERSION=	10
+BOOTSTRAP_PATH=	crystal-${BOOTSTRAP_VER}-freebsd12-${ARCH}-llvm${BOOTSTRAP_LLVM_VERSION}
 BOOTSTRAP_VER?=	1.1.1
 
 MAKE_ARGS=	SHELL=sh \
