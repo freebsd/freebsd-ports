@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+In order to start pgpool you need some more configuration:
+
+# sysrc -f /etc/rc.conf pgpool_enable="YES"
+# sysrc -f /etc/rc.conf pgpool_user="root"
+
+Please consider the usage of another user. The user is
+required to have read/write access to /var/run/pgpool.
+
+Using the root user is - as always - an security issue.
+EOM
+}
+]
