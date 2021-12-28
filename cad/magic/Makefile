@@ -5,7 +5,7 @@ DISTVERSION=	8.3.245
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
 
 LICENSE=	MIT
