@@ -1,7 +1,7 @@
-A modern, feature-rich and highly tunable PHP client 
+A modern, feature-rich and highly tunable PHP client
 library for Apache Cassandra and DataStax Enterprise.
 
-Using exclusively Cassandra's binary protocol and 
+Using exclusively Cassandra's binary protocol and
 Cassandra Query Language v3.
 
 WWW: https://pecl.php.net/package/cassandra
