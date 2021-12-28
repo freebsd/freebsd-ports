@@ -1,5 +1,5 @@
 PORTNAME=	php80
-DISTVERSION=	8.0.13
+DISTVERSION=	8.0.14
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP
@@ -13,7 +13,6 @@ LICENSE=	PHP301
 
 USES+=		compiler:c11 tar:xz cpe gnome pkgconfig
 CPE_PRODUCT=	php
-NO_OPTIONS_SORT=yes
 
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
@@ -26,12 +25,14 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 		--with-libxml \
 		--with-password-argon2=${LOCALBASE} \
 		--program-prefix=""
-CPPFLAGS=	-I${LOCALBASE}/include
 USES+=		autoreconf:build
 USE_GNOME=	libxml2
 
+CPPFLAGS=	-I${LOCALBASE}/include
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
+
+CONFLICTS=	php73 php74
 
 OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MYSQLND MYSQL80 LINKTHR ZTS
 OPTIONS_DEFAULT=CLI CGI FPM EMBED MYSQLND LINKTHR DTRACE
@@ -49,26 +50,44 @@ OPTIONS_EXCLUDE_powerpc64_11=	DTRACE
 OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
 OPTIONS_EXCLUDE_riscv64=	DTRACE
 OPTIONS_EXCLUDE_sparc64=	DTRACE
+NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 
-CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
-FPM_DESC=	Build FPM version
+CLI_DESC=	Build CLI version
 EMBED_DESC=	Build embedded library
-PHPDBG_DESC=	Interactive PHP debugger
-MYSQLND_DESC=	Build with MySQL Native Driver
-MYSQL80_DESC=	Build with MySQL caching password mechanism
+FPM_DESC=	Build FPM version
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
+MYSQL80_DESC=	Build with MySQL caching password mechanism
+MYSQLND_DESC=	Build with MySQL Native Driver
+PHPDBG_DESC=	Interactive PHP debugger
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
+CGI_CONFIGURE_OFF=--disable-cgi
+CGI_VARS=	PHP_SAPI+=cgi
+CLI_CONFIGURE_OFF=--disable-cli
+CLI_VARS=	PHP_SAPI+=cli
+DEBUG_CONFIGURE_ON=--enable-debug
+DTRACE_CONFIGURE_ON=--enable-dtrace
+EMBED_CONFIGURE_ON=--enable-embed
+EMBED_VARS=	PHP_SAPI+=embed
+FPM_CONFIGURE_ON=--enable-fpm \
+		--with-fpm-user=${WWWOWN} \
+		--with-fpm-group=${WWWGRP}
+FPM_VARS=	PHP_SAPI+=fpm USE_RC_SUBR+=php-fpm
+IPV6_CONFIGURE_OFF=--disable-ipv6
+LINKTHR_LIBS=		-lpthread
+MYSQL80_USES=		ssl
 MYSQL80_CONFIGURE_ON=	--with-openssl
 MYSQL80_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 				OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 				PHP_OPENSSL=no
 MYSQL80_LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
-MYSQL80_USES=		ssl
-
-CONFLICTS=	php73 php74
+MYSQLND_CONFIGURE_ON=--enable-mysqlnd
+PHPDBG_CONFIGURE_ON=--enable-phpdbg
+PHPDBG_VARS=	PHP_SAPI+=phpdbg
+ZTS_CONFIGURE_ON=--enable-zts
+ZTS_CONFIGURE_ENV=	pthreads_working="yes"
 
 DESTDIRNAME=	INSTALL_ROOT
 
@@ -76,30 +95,6 @@ DESTDIRNAME=	INSTALL_ROOT
 
 .if ${ARCH} == riscv64
 CONFIGURE_ARGS+=--without-pcre-jit
-.endif
-
-.if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--enable-mysqlnd
-.endif
-
-.if ${PORT_OPTIONS:MCLI}
-PHP_SAPI+=	cli
-.else
-CONFIGURE_ARGS+=--disable-cli
-.endif
-
-.if ${PORT_OPTIONS:MCGI}
-PHP_SAPI+=	cgi
-.else
-CONFIGURE_ARGS+=--disable-cgi
-.endif
-
-.if ${PORT_OPTIONS:MFPM}
-PHP_SAPI+=	fpm
-USE_RC_SUBR+=	php-fpm
-CONFIGURE_ARGS+=--enable-fpm \
-		--with-fpm-user=${WWWOWN} \
-		--with-fpm-group=${WWWGRP}
 .endif
 
 .if defined(PKGNAMEPREFIX)
@@ -117,17 +112,8 @@ SHORTMODNAME=	php
 WARNING=	"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
 .endif
 
-.if ${PORT_OPTIONS:MEMBED}
-PHP_SAPI+=	embed
-CONFIGURE_ARGS+=--enable-embed
-.endif
-
-.if ${PORT_OPTIONS:MPHPDBG}
-PHP_SAPI+=	phpdbg
-CONFIGURE_ARGS+=--enable-phpdbg
-.if ${PORT_OPTIONS:MDEBUG}
+.if ${PORT_OPTIONS:MPHPDBG} && ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-phpdbg-debug
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MCLI} || ${PORT_OPTIONS:MEMBED}
@@ -138,30 +124,6 @@ PLIST_SUB+=	SAPI_INC="@comment "
 
 CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \
 		lt_cv_path_SED="sed"
-
-.if ${PORT_OPTIONS:MLINKTHR}
-LIBS+=		-lpthread
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MZTS}
-CONFIGURE_ARGS+=--enable-zts
-CONFIGURE_ENV+=	pthreads_working="yes"
-.endif
-
-.if ${PORT_OPTIONS:MDTRACE}
-CONFIGURE_ARGS+=--enable-dtrace
-PLIST_SUB+=	DTRACE=""
-.else
-PLIST_SUB+=	DTRACE="@comment "
-.endif
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
 
 .if ${PORT_OPTIONS:MMYSQL80}
 WARNING=	"PHP is now built with MySQL 8.0 support which has caching password mechanism. \
@@ -174,10 +136,10 @@ WARNING=	"PHP is now built with MySQL 8.0 support which has caching password mec
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
-.if ${PORT_OPTIONS:MFPM}
+
+post-patch-FPM-on:
 	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \
 		${WRKSRC}/sapi/fpm/php-fpm.conf.in
-.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} MAKE=${MAKE_CMD} ./buildconf --force)
