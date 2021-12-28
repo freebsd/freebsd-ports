@@ -1,7 +1,6 @@
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.77.1
-PORTREVISION=	2
+DISTVERSION=	0.78.0
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -10,7 +9,8 @@ COMMENT=	DOS/x86 emulator based on DOSBox
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libopusfile.so:audio/opusfile \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libslirp.so:net/libslirp
 
 USES=		compiler:c++14-lang gl meson pkgconfig sdl
 

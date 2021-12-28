@@ -4,6 +4,14 @@ share/applications/dosbox-staging.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%DATADIR%%/translations/de.lng
+%%DATADIR%%/translations/en.lng
+%%DATADIR%%/translations/es.lng
+%%DATADIR%%/translations/fr.lng
+%%DATADIR%%/translations/it.lng
+%%DATADIR%%/translations/pl.cp437.lng
+%%DATADIR%%/translations/pl.lng
+%%DATADIR%%/translations/ru.lng
 share/icons/hicolor/16x16/apps/dosbox-staging.png
 share/icons/hicolor/22x22/apps/dosbox-staging.png
 share/icons/hicolor/24x24/apps/dosbox-staging.png

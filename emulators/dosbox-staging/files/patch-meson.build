@@ -1,15 +1,15 @@
---- meson.build.orig	2021-07-17 10:53:48 UTC
+--- meson.build.orig	2021-12-25 12:42:08 UTC
 +++ meson.build
-@@ -340,7 +340,7 @@ subdir('tests')
- # dosbox executable
- #
- version_file = vcs_tag(input : 'src/version.cpp.in', output : 'version.cpp')
--executable('dosbox', ['src/main.cpp', 'src/dosbox.cpp', version_file],
-+executable('dosbox-staging', ['src/main.cpp', 'src/dosbox.cpp', version_file],
-            dependencies : [atomic_dep, threads_dep, sdl2_dep] + internal_deps,
-            include_directories : incdir,
-            install : true)
-@@ -352,7 +352,7 @@ data_dir     = get_option('datadir')
+@@ -421,7 +421,7 @@ if host_machine.system() == 'windows'
+   dosbox_sources += res_file
+ endif
+ 
+-executable('dosbox', dosbox_sources,
++executable('dosbox-staging', dosbox_sources,
+            dependencies : [atomic_dep,
+                            stdcppfs_dep,
+                            sdl2_dep,
+@@ -454,7 +454,7 @@ data_dir     = get_option('datadir')
  licenses_dir = data_dir / 'licenses' / 'dosbox-staging'
  doc_dir      = data_dir / 'doc' / 'dosbox-staging'
  
