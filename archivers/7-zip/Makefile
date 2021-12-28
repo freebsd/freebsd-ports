@@ -1,6 +1,5 @@
 PORTNAME=	7-zip
-DISTVERSION=	21.06
-PORTREVISION=	1
+DISTVERSION=	21.07
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
@@ -28,7 +27,8 @@ MAKE_ARGS=	LOCAL_FLAGS="${CFLAGS}" \
 
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/Alone2
-DOS2UNIX_FILES=	CPP/7zip/7zip_gcc.mak \
+DOS2UNIX_FILES=	C/CpuArch.c \
+		CPP/7zip/7zip_gcc.mak \
 		CPP/7zip/var_gcc.mak \
 		CPP/Windows/SystemInfo.cpp
 
