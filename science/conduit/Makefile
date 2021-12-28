@@ -1,7 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	2
+DISTVERSION=	0.8.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +19,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TUPLE=	LLNL:blt:86a7d6b5ee93d8b7b3233a3e54a4f06f8d8308d3:LLNL_blt/blt \
-		LLNL:uberenv:b4ac7a1609a63565c3580cc0380c7d7ac56cb776:LLNL_uberenv/scripts/uberenv
+GH_TUPLE=	LLNL:blt:86a7d6b:blt/blt \
+		Alpine-DAV:spack_configs:16abefa:spack_configs/../scripts/uberenv_configs/spack_configs \
+		LLNL:uberenv:105e384:LLNL_uberenv/../scripts/uberenv
 
 WRKSRC_SUBDIR=	src
 
