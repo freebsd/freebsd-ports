@@ -6,7 +6,7 @@ PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://www.aelius.com/primateplunge/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Primate Plunge is an arcade game
 
 LICENSE=	UDEVGAME
