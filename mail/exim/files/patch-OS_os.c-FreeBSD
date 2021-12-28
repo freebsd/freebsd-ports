@@ -1,0 +1,15 @@
+--- OS/os.c-FreeBSD.orig	2021-10-11 17:03:56.119681000 +0200
++++ OS/os.c-FreeBSD	2021-10-11 17:04:27.802597000 +0200
+@@ -16,10 +16,11 @@
+ ssize_t
+ os_sendfile(int out, int in, off_t * offp, size_t cnt)
+ {
+-off_t loff = *offp, written;
++off_t loff = offp ? *offp : 0;
++off_t written;
+
+ if (sendfile(in, out, loff, cnt, NULL, &written, 0) < 0) return (ssize_t)-1;
+-*offp = loff + written;
++if (offp) *offp = loff + written;
+ return (ssize_t)written;
+ }

@@ -1,0 +1,616 @@
+From 1843f70b733127fcba3321d9d69359e05905f8cc Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sat, 16 Oct 2021 00:12:16 +0100
+Subject: [PATCH] Avoid calling gettimeofday(), select() per char for cmdline
+ message submission.  Bug 2819
+
+Broken-by: 3c55eef240
+---
+ doc/ChangeLog          |  4 ++
+ src/exim.c                 |  7 ++-
+ src/filtertest.c           | 16 +++----
+ src/functions.h            |  4 ++
+ src/globals.c              | 21 +++++----
+ src/globals.h              |  3 ++
+ src/receive.c              | 78 ++++++++++++++++++++++------------
+ src/smtp_in.c              | 24 ++++++++++-
+ src/tls-gnu.c              |  9 ++++
+ src/tls-openssl.c          |  8 ++++
+ src/transports/autoreply.c | 13 +++---
+ 11 files changed, 133 insertions(+), 54 deletions(-)
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -1,9 +1,13 @@
+ This document describes *changes* to previous versions, that might
+ affect Exim's operation, with an unchanged configuration file.  For new
+ options, and new features, see the NewStuff file next to this ChangeLog.
+ 
++JH/05 Bug 2819: speed up command-line messages being read in.  Previously a
++      time check was being done for every character; replace that with one
++      per buffer.
++
+ 
+ Exim version 4.95
+ -----------------
+ 
+ JH/01 Bug 1329: Fix format of Maildir-format filenames to match other mail-
+--- a/src/exim.c
++++ b/src/exim.c
+@@ -5382,11 +5382,11 @@
+ 
+ if (smtp_input)
+   {
+   if (!f.is_inetd) set_process_info("accepting a local %sSMTP message from <%s>",
+     smtp_batched_input? "batched " : "",
+-    (sender_address!= NULL)? sender_address : originator_login);
++    sender_address ? sender_address : originator_login);
+   }
+ else
+   {
+   int old_pool = store_pool;
+   store_pool = POOL_PERM;
+@@ -5432,11 +5432,12 @@
+     mac_smtp_fflush();
+     exim_exit(EXIT_SUCCESS);
+     }
+   }
+ 
+-/* Otherwise, set up the input size limit here. */
++/* Otherwise, set up the input size limit here and set no stdin stdio buffer
++(we handle buferring so as to have visibility of fill level). */
+ 
+ else
+   {
+   thismessage_size_limit = expand_string_integer(message_size_limit, TRUE);
+   if (expand_string_message)
+@@ -5444,10 +5445,12 @@
+       log_write(0, LOG_MAIN|LOG_PANIC_DIE, "failed to expand "
+         "message_size_limit: %s", expand_string_message);
+     else
+       log_write(0, LOG_MAIN|LOG_PANIC_DIE, "invalid value for "
+         "message_size_limit: %s", expand_string_message);
++
++  setvbuf(stdin, NULL, _IONBF, 0);
+   }
+ 
+ /* Loop for several messages when reading SMTP input. If we fork any child
+ processes, we don't want to wait for them unless synchronous delivery is
+ requested, so set SIGCHLD to SIG_IGN in that case. This is not necessarily the
+--- a/src/filtertest.c
++++ b/src/filtertest.c
+@@ -43,15 +43,15 @@
+ s = message_body_end;
+ body_len = 0;
+ body_linecount = 0;
+ header_size = message_size;
+ 
+-if (!dot_ended && !feof(stdin))
++if (!dot_ended && !stdin_feof())
+   {
+   if (!f.dot_ends)
+     {
+-    while ((ch = getc(stdin)) != EOF)
++    while ((ch = stdin_getc(GETC_BUFFER_UNLIMITED)) != EOF)
+       {
+       if (ch == 0) body_zerocount++;
+       if (ch == '\n') body_linecount++;
+       if (body_len < message_body_visible) message_body[body_len++] = ch;
+       *s++ = ch;
+@@ -60,11 +60,11 @@
+       }
+     }
+   else
+     {
+     int ch_state = 1;
+-    while ((ch = getc(stdin)) != EOF)
++    while ((ch = stdin_getc(GETC_BUFFER_UNLIMITED)) != EOF)
+       {
+       if (ch == 0) body_zerocount++;
+       switch (ch_state)
+         {
+         case 0:                         /* Normal state */
+@@ -97,10 +97,11 @@
+       }
+     READ_END: ;
+     }
+   if (s == message_body_end || s[-1] != '\n') body_linecount++;
+   }
++debug_printf("%s %d\n", __FUNCTION__, __LINE__);
+ 
+ message_body[body_len] = 0;
+ message_body_size = message_size - header_size;
+ 
+ /* body_len stops at message_body_visible; it if got there, we may have
+@@ -248,11 +249,11 @@
+   }
+ 
+ /* For a filter, set up the message_body variables and the message size if this
+ is the first time this function has been called. */
+ 
+-if (message_body == NULL) read_message_body(dot_ended);
++if (!message_body) read_message_body(dot_ended);
+ 
+ /* Now pass the filter file to the function that interprets it. Because
+ filter_test is not FILTER_NONE, the interpreter will output comments about what
+ it is doing. No need to clean up store. Indeed, we must not, because we may be
+ testing a system filter that is going to be followed by a user filter test. */
+@@ -267,14 +268,13 @@
+   f.enable_dollar_recipients = FALSE;
+   f.system_filtering = FALSE;
+   }
+ else
+   {
+-  yield = (filter_type == FILTER_SIEVE)?
+-    sieve_interpret(filebuf, RDO_REWRITE, NULL, NULL, NULL, NULL, &generated, &error)
+-    :
+-    filter_interpret(filebuf, RDO_REWRITE, &generated, &error);
++  yield = filter_type == FILTER_SIEVE
++    ? sieve_interpret(filebuf, RDO_REWRITE, NULL, NULL, NULL, NULL, &generated, &error)
++    : filter_interpret(filebuf, RDO_REWRITE, &generated, &error);
+   }
+ 
+ return yield != FF_ERROR;
+ }
+ 
+--- a/src/functions.h
++++ b/src/functions.h
+@@ -66,10 +66,11 @@
+ extern uschar *tls_field_from_dn(uschar *, const uschar *);
+ extern void    tls_free_cert(void **);
+ extern int     tls_getc(unsigned);
+ extern uschar *tls_getbuf(unsigned *);
+ extern void    tls_get_cache(unsigned);
++extern BOOL    tls_hasc(void);
+ extern BOOL    tls_import_cert(const uschar *, void **);
+ extern BOOL    tls_is_name_for_cert(const uschar *, void *);
+ # ifdef USE_OPENSSL
+ extern BOOL    tls_openssl_options_parse(uschar *, long *);
+ # endif
+@@ -148,10 +149,11 @@
+ extern uschar *b64encode(const uschar *, int);
+ extern uschar *b64encode_taint(const uschar *, int, BOOL);
+ extern int     b64decode(const uschar *, uschar **);
+ extern int     bdat_getc(unsigned);
+ extern uschar *bdat_getbuf(unsigned *);
++extern BOOL    bdat_hasc(void);
+ extern int     bdat_ungetc(int);
+ extern void    bdat_flush_data(void);
+ 
+ extern void    bits_clear(unsigned int *, size_t, int *);
+ extern void    bits_set(unsigned int *, size_t, int *);
+@@ -492,10 +494,11 @@
+                  uschar **, uschar *);
+ extern BOOL    smtp_get_port(uschar *, address_item *, int *, uschar *);
+ extern int     smtp_getc(unsigned);
+ extern uschar *smtp_getbuf(unsigned *);
+ extern void    smtp_get_cache(unsigned);
++extern BOOL    smtp_hasc(void);
+ extern int     smtp_handle_acl_fail(int, int, uschar *, uschar *);
+ extern void    smtp_log_no_mail(void);
+ extern void    smtp_message_code(uschar **, int *, uschar **, uschar **, BOOL);
+ extern void    smtp_proxy_tls(void *, uschar *, size_t, int *, int) NORETURN;
+ extern BOOL    smtp_read_response(void *, uschar *, int, int, int);
+@@ -521,10 +524,11 @@
+ extern uschar *spool_sender_from_msgid(const uschar *);
+ extern int     spool_write_header(uschar *, int, uschar **);
+ extern int     stdin_getc(unsigned);
+ extern int     stdin_feof(void);
+ extern int     stdin_ferror(void);
++extern BOOL    stdin_hasc(void);
+ extern int     stdin_ungetc(int);
+ 
+ extern void    store_exit(void);
+ extern void    store_init(void);
+ extern void    store_writeprotect(int);
+--- a/src/globals.c
++++ b/src/globals.c
+@@ -169,20 +169,23 @@
+ /* Input-reading functions for messages, so we can use special ones for
+ incoming TCP/IP. The defaults use stdin. We never need these for any
+ stand-alone tests. */
+ 
+ #if !defined(STAND_ALONE) && !defined(MACRO_PREDEF)
+-int (*lwr_receive_getc)(unsigned) = stdin_getc;
++int	(*lwr_receive_getc)(unsigned)	= stdin_getc;
+ uschar * (*lwr_receive_getbuf)(unsigned *) = NULL;
+-int (*lwr_receive_ungetc)(int) = stdin_ungetc;
+-int (*receive_getc)(unsigned)  = stdin_getc;
+-uschar * (*receive_getbuf)(unsigned *)  = NULL;
+-void (*receive_get_cache)(unsigned)    = NULL;
+-int (*receive_ungetc)(int)     = stdin_ungetc;
+-int (*receive_feof)(void)      = stdin_feof;
+-int (*receive_ferror)(void)    = stdin_ferror;
+-BOOL (*receive_smtp_buffered)(void) = NULL;   /* Only used for SMTP */
++int	(*lwr_receive_ungetc)(int)	= stdin_ungetc;
++BOOL	(*lwr_receive_hasc)(void)	= stdin_hasc;
++
++int	(*receive_getc)(unsigned) 	= stdin_getc;
++uschar * (*receive_getbuf)(unsigned *) 	= NULL;
++void	(*receive_get_cache)(unsigned)	= NULL;
++BOOL	(*receive_hasc)(void)		= stdin_hasc;
++int	(*receive_ungetc)(int)    	= stdin_ungetc;
++int	(*receive_feof)(void)     	= stdin_feof;
++int	(*receive_ferror)(void)   	= stdin_ferror;
++BOOL	(*receive_smtp_buffered)(void)	= NULL;   /* Only used for SMTP */
+ #endif
+ 
+ 
+ /* List of per-address expansion variables for clearing and saving/restoring
+ when verifying one address while routing/verifying another. We have to have
+--- a/src/globals.h
++++ b/src/globals.h
+@@ -159,13 +159,16 @@
+ /* Input-reading functions for messages, so we can use special ones for
+ incoming TCP/IP. */
+ 
+ extern int (*lwr_receive_getc)(unsigned);
+ extern uschar * (*lwr_receive_getbuf)(unsigned *);
++extern BOOL (*lwr_receive_hasc)(void);
+ extern int (*lwr_receive_ungetc)(int);
++
+ extern int (*receive_getc)(unsigned);
+ extern uschar * (*receive_getbuf)(unsigned *);
++extern BOOL (*receive_hasc)(void);
+ extern void (*receive_get_cache)(unsigned);
+ extern int (*receive_ungetc)(int);
+ extern int (*receive_feof)(void);
+ extern int (*receive_ferror)(void);
+ extern BOOL (*receive_smtp_buffered)(void);
+--- a/src/receive.c
++++ b/src/receive.c
+@@ -42,46 +42,75 @@
+ /* These are the default functions that are set up in the variables such as
+ receive_getc initially. They just call the standard functions, passing stdin as
+ the file. (When SMTP input is occurring, different functions are used by
+ changing the pointer variables.) */
+ 
++uschar stdin_buf[4096];
++uschar * stdin_inptr = stdin_buf;
++uschar * stdin_inend = stdin_buf;
++
++static BOOL
++stdin_refill(void)
++{
++size_t rc = fread(stdin_buf, 1, sizeof(stdin_buf), stdin);
++if (rc <= 0)
++  {
++  if (had_data_timeout)
++    {
++    fprintf(stderr, "exim: timed out while reading - message abandoned\n");
++    log_write(L_lost_incoming_connection,
++	      LOG_MAIN, "timed out while reading local message");
++    receive_bomb_out(US"data-timeout", NULL);   /* Does not return */
++    }
++  if (had_data_sigint)
++    {
++    if (filter_test == FTEST_NONE)
++      {
++      fprintf(stderr, "\nexim: %s received - message abandoned\n",
++	had_data_sigint == SIGTERM ? "SIGTERM" : "SIGINT");
++      log_write(0, LOG_MAIN, "%s received while reading local message",
++	had_data_sigint == SIGTERM ? "SIGTERM" : "SIGINT");
++      }
++    receive_bomb_out(US"signal-exit", NULL);    /* Does not return */
++    }
++  return FALSE;
++  }
++stdin_inend = stdin_buf + rc;
++stdin_inptr = stdin_buf;
++return TRUE;
++}
++
+ int
+ stdin_getc(unsigned lim)
+ {
+-int c = getc(stdin);
++if (stdin_inptr >= stdin_inend)
++  if (!stdin_refill())
++      return EOF;
++return *stdin_inptr++;
++}
+ 
+-if (had_data_timeout)
+-  {
+-  fprintf(stderr, "exim: timed out while reading - message abandoned\n");
+-  log_write(L_lost_incoming_connection,
+-            LOG_MAIN, "timed out while reading local message");
+-  receive_bomb_out(US"data-timeout", NULL);   /* Does not return */
+-  }
+-if (had_data_sigint)
+-  {
+-  if (filter_test == FTEST_NONE)
+-    {
+-    fprintf(stderr, "\nexim: %s received - message abandoned\n",
+-      had_data_sigint == SIGTERM ? "SIGTERM" : "SIGINT");
+-    log_write(0, LOG_MAIN, "%s received while reading local message",
+-      had_data_sigint == SIGTERM ? "SIGTERM" : "SIGINT");
+-    }
+-  receive_bomb_out(US"signal-exit", NULL);    /* Does not return */
+-  }
+-return c;
++
++BOOL
++stdin_hasc(void)
++{
++return stdin_inptr < stdin_inend;
+ }
+ 
+ int
+ stdin_ungetc(int c)
+ {
+-return ungetc(c, stdin);
++if (stdin_inptr <= stdin_buf)
++  log_write(0, LOG_MAIN|LOG_PANIC_DIE, "buffer underflow in stdin_ungetc");
++
++*--stdin_inptr = c;
++return c;
+ }
+ 
+ int
+ stdin_feof(void)
+ {
+-return feof(stdin);
++return stdin_hasc() ? FALSE : feof(stdin);
+ }
+ 
+ int
+ stdin_ferror(void)
+ {
+@@ -586,11 +615,11 @@
+ the file copy. */
+ 
+ static void
+ log_close_chk(void)
+ {
+-if (!receive_timeout)
++if (!receive_timeout && !receive_hasc())
+   {
+   struct timeval t;
+   timesince(&t, &received_time);
+   if (t.tv_sec > 30*60)
+     mainlog_close();
+@@ -652,15 +681,10 @@
+ 
+ if (!f.dot_ends)
+   {
+   int last_ch = '\n';
+ 
+-/*XXX we do a gettimeofday before checking for every received char,
+-which is hardly clever.  The function-indirection doesn't help, but
+-an additional function to check for nonempty read buffer would help.
+-See stdin_getc() / smtp_getc() / tls_getc() / bdat_getc(). */
+-
+   for ( ;
+        log_close_chk(), (ch = (receive_getc)(GETC_BUFFER_UNLIMITED)) != EOF;
+        last_ch = ch)
+     {
+     if (ch == 0) body_zerocount++;
+--- a/src/smtp_in.c
++++ b/src/smtp_in.c
+@@ -561,10 +561,16 @@
+   if (!smtp_refill(lim))
+     return EOF;
+ return *smtp_inptr++;
+ }
+ 
++BOOL
++smtp_hasc(void)
++{
++return smtp_inptr < smtp_inend;
++}
++
+ uschar *
+ smtp_getbuf(unsigned * len)
+ {
+ unsigned size;
+ uschar * buf;
+@@ -743,10 +749,18 @@
+       }
+     }
+   }
+ }
+ 
++BOOL
++bdat_hasc(void)
++{
++if (chunking_data_left > 0)
++  return lwr_receive_hasc();
++return TRUE;
++}
++
+ uschar *
+ bdat_getbuf(unsigned * len)
+ {
+ uschar * buf;
+ 
+@@ -782,40 +796,44 @@
+ bdat_push_receive_functions(void)
+ {
+ /* push the current receive_* function on the "stack", and
+ replace them by bdat_getc(), which in turn will use the lwr_receive_*
+ functions to do the dirty work. */
+-if (lwr_receive_getc == NULL)
++if (!lwr_receive_getc)
+   {
+   lwr_receive_getc = receive_getc;
+   lwr_receive_getbuf = receive_getbuf;
++  lwr_receive_hasc = receive_hasc;
+   lwr_receive_ungetc = receive_ungetc;
+   }
+ else
+   {
+   DEBUG(D_receive) debug_printf("chunking double-push receive functions\n");
+   }
+ 
+ receive_getc = bdat_getc;
+ receive_getbuf = bdat_getbuf;
++receive_hasc = bdat_hasc;
+ receive_ungetc = bdat_ungetc;
+ }
+ 
+ static inline void
+ bdat_pop_receive_functions(void)
+ {
+-if (lwr_receive_getc == NULL)
++if (!lwr_receive_getc)
+   {
+   DEBUG(D_receive) debug_printf("chunking double-pop receive functions\n");
+   return;
+   }
+ receive_getc = lwr_receive_getc;
+ receive_getbuf = lwr_receive_getbuf;
++receive_hasc = lwr_receive_hasc;
+ receive_ungetc = lwr_receive_ungetc;
+ 
+ lwr_receive_getc = NULL;
+ lwr_receive_getbuf = NULL;
++lwr_receive_hasc = NULL;
+ lwr_receive_ungetc = NULL;
+ }
+ 
+ /*************************************************
+ *          SMTP version of ungetc()              *
+@@ -2574,16 +2592,18 @@
+ smtp_inbuffer[IN_BUFFER_SIZE-1] = '\0';
+ 
+ receive_getc = smtp_getc;
+ receive_getbuf = smtp_getbuf;
+ receive_get_cache = smtp_get_cache;
++receive_hasc = smtp_hasc;
+ receive_ungetc = smtp_ungetc;
+ receive_feof = smtp_feof;
+ receive_ferror = smtp_ferror;
+ receive_smtp_buffered = smtp_buffered;
+ lwr_receive_getc = NULL;
+ lwr_receive_getbuf = NULL;
++lwr_receive_hasc = NULL;
+ lwr_receive_ungetc = NULL;
+ smtp_inptr = smtp_inend = smtp_inbuffer;
+ smtp_had_eof = smtp_had_error = 0;
+ 
+ /* Set up the message size limit; this may be host-specific */
+--- a/src/tls-gnu.c
++++ b/src/tls-gnu.c
+@@ -3136,10 +3136,11 @@
+ state->xfer_buffer = store_malloc(ssl_xfer_buffer_size);
+ 
+ receive_getc = tls_getc;
+ receive_getbuf = tls_getbuf;
+ receive_get_cache = tls_get_cache;
++receive_hasc = tls_hasc;
+ receive_ungetc = tls_ungetc;
+ receive_feof = tls_feof;
+ receive_ferror = tls_ferror;
+ receive_smtp_buffered = tls_smtp_buffered;
+ 
+@@ -3738,10 +3739,11 @@
+ if (!ct_ctx)	/* server */
+   {
+   receive_getc =	smtp_getc;
+   receive_getbuf =	smtp_getbuf;
+   receive_get_cache =	smtp_get_cache;
++  receive_hasc =	smtp_hasc;
+   receive_ungetc =	smtp_ungetc;
+   receive_feof =	smtp_feof;
+   receive_ferror =	smtp_ferror;
+   receive_smtp_buffered = smtp_buffered;
+   }
+@@ -3852,10 +3854,17 @@
+ /* Something in the buffer; return next uschar */
+ 
+ return state->xfer_buffer[state->xfer_buffer_lwm++];
+ }
+ 
++BOOL
++tls_hasc(void)
++{
++exim_gnutls_state_st * state = &state_server;
++return state->xfer_buffer_lwm < state->xfer_buffer_hwm;
++}
++
+ uschar *
+ tls_getbuf(unsigned * len)
+ {
+ exim_gnutls_state_st * state = &state_server;
+ unsigned size;
+--- a/src/tls-openssl.c
++++ b/src/tls-openssl.c
+@@ -3348,10 +3348,11 @@
+ ssl_xfer_eof = ssl_xfer_error = FALSE;
+ 
+ receive_getc = tls_getc;
+ receive_getbuf = tls_getbuf;
+ receive_get_cache = tls_get_cache;
++receive_hasc = tls_hasc;
+ receive_ungetc = tls_ungetc;
+ receive_feof = tls_feof;
+ receive_ferror = tls_ferror;
+ receive_smtp_buffered = tls_smtp_buffered;
+ 
+@@ -4124,10 +4125,16 @@
+ /* Something in the buffer; return next uschar */
+ 
+ return ssl_xfer_buffer[ssl_xfer_buffer_lwm++];
+ }
+ 
++BOOL
++tls_hasc(void)
++{
++return ssl_xfer_buffer_lwm < ssl_xfer_buffer_hwm;
++}
++
+ uschar *
+ tls_getbuf(unsigned * len)
+ {
+ unsigned size;
+ uschar * buf;
+@@ -4413,10 +4420,11 @@
+ #endif
+ 
+   receive_getc =	smtp_getc;
+   receive_getbuf =	smtp_getbuf;
+   receive_get_cache =	smtp_get_cache;
++  receive_hasc =	smtp_hasc;
+   receive_ungetc =	smtp_ungetc;
+   receive_feof =	smtp_feof;
+   receive_ferror =	smtp_ferror;
+   receive_smtp_buffered = smtp_buffered;
+   tls_in.active.tls_ctx = NULL;
+--- a/src/transports/autoreply.c
++++ b/src/transports/autoreply.c
+@@ -644,10 +644,11 @@
+   if (text[Ustrlen(text)-1] != '\n') fprintf(fp, "\n");
+   }
+ 
+ if (ff)
+   {
++debug_printf("%s %d: ff\n", __FUNCTION__, __LINE__);
+   while (Ufgets(big_buffer, big_buffer_size, ff) != NULL)
+     {
+     if (file_expand)
+       {
+       uschar *s = expand_string(big_buffer);
+@@ -667,16 +668,16 @@
+ /* Copy the original message if required, observing the return size
+ limit if we are returning the body. */
+ 
+ if (return_message)
+   {
+-  uschar *rubric = (tblock->headers_only)?
+-    US"------ This is a copy of the message's header lines.\n"
+-    : (tblock->body_only)?
+-    US"------ This is a copy of the body of the message, without the headers.\n"
+-    :
+-    US"------ This is a copy of the message, including all the headers.\n";
++debug_printf("%s %d: ret msg\n", __FUNCTION__, __LINE__);
++  uschar *rubric = tblock->headers_only
++    ? US"------ This is a copy of the message's header lines.\n"
++    : tblock->body_only
++    ? US"------ This is a copy of the body of the message, without the headers.\n"
++    : US"------ This is a copy of the message, including all the headers.\n";
+   transport_ctx tctx = {
+     .u = {.fd = fileno(fp)},
+     .tblock = tblock,
+     .addr = addr,
+     .check_string = NULL,

@@ -1,0 +1,140 @@
+From d73b9f478a2a5b299634acee4e05ff8ea25375a2 Mon Sep 17 00:00:00 2001
+From: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+Date: Sun, 28 Nov 2021 17:26:40 +0000
+Subject: [PATCH] Fix basic memory use for SPARC.  Bug 2838
+
+---
+ doc/ChangeLog |  5 +++++
+ src/store.c       | 34 +++++++++++++++++++---------------
+ src/store.h       |  2 +-
+ 3 files changed, 25 insertions(+), 16 deletions(-)
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -14,6 +14,11 @@
+       are not useable for FD_SET() [and hence select()] and overwrite the stack.
+       Assorted crashes happen.
+ 
++JH/12 Bug 2838: Fix for i32lp64 hard-align platforms. Found for SPARC Linux,
++      though only once PCRE2 was introduced: the memory accounting used under
++      debug offset allocations by an int, giving a hard trap in early startup.
++      Change to using a size_t.  Debug and fix by John Paul Adrian Glaubitz.
++
+ 
+ Exim version 4.95
+ -----------------
+--- a/src/store.c
++++ b/src/store.c
+@@ -190,11 +190,11 @@
+ [POOL_TAINT_MESSAGE] =	US"tainted",
+ };
+ #endif
+ 
+ 
+-static void * internal_store_malloc(int, const char *, int);
++static void * internal_store_malloc(size_t, const char *, int);
+ static void   internal_store_free(void *, const char *, int linenumber);
+ 
+ /******************************************************************************/
+ /* Initialisation, for things fragile with parameter channges when using
+ static initialisers. */
+@@ -859,30 +859,33 @@
+ 
+ Returns:      pointer to gotten store (panic on failure)
+ */
+ 
+ static void *
+-internal_store_malloc(int size, const char *func, int line)
++internal_store_malloc(size_t size, const char *func, int line)
+ {
+ void * yield;
+ 
+-if (size < 0 || size >= INT_MAX/2)
++/* Check specifically for a possibly result of conversion from
++a negative int, to the (unsigned, wider) size_t */
++
++if (size >= INT_MAX/2)
+   log_write(0, LOG_MAIN|LOG_PANIC_DIE,
+-            "bad memory allocation requested (%d bytes) at %s %d",
+-            size, func, line);
++            "bad memory allocation requested (%lld bytes) at %s %d",
++            (unsigned long long)size, func, line);
+ 
+-size += sizeof(int);	/* space to store the size, used under debug */
++size += sizeof(size_t);	/* space to store the size, used under debug */
+ if (size < 16) size = 16;
+ 
+-if (!(yield = malloc((size_t)size)))
++if (!(yield = malloc(size)))
+   log_write(0, LOG_MAIN|LOG_PANIC_DIE, "failed to malloc %d bytes of memory: "
+     "called from line %d in %s", size, line, func);
+ 
+ #ifndef COMPILE_UTILITY
+-DEBUG(D_any) *(int *)yield = size;
++DEBUG(D_any) *(size_t *)yield = size;
+ #endif
+-yield = US yield + sizeof(int);
++yield = US yield + sizeof(size_t);
+ 
+ if ((nonpool_malloc += size) > max_nonpool_malloc)
+   max_nonpool_malloc = nonpool_malloc;
+ 
+ /* Cut out the debugging stuff for utilities, but stop picky compilers from
+@@ -891,20 +894,20 @@
+ #ifndef COMPILE_UTILITY
+ /* If running in test harness, spend time making sure all the new store
+ is not filled with zeros so as to catch problems. */
+ 
+ if (f.running_in_test_harness)
+-  memset(yield, 0xF0, (size_t)size - sizeof(int));
+-DEBUG(D_memory) debug_printf("--Malloc %6p %5d bytes\t%-20s %4d\tpool %5d  nonpool %5d\n",
++  memset(yield, 0xF0, size - sizeof(size_t));
++DEBUG(D_memory) debug_printf("--Malloc %6p %5lld bytes\t%-20s %4d\tpool %5d  nonpool %5d\n",
+   yield, size, func, line, pool_malloc, nonpool_malloc);
+ #endif  /* COMPILE_UTILITY */
+ 
+ return yield;
+ }
+ 
+ void *
+-store_malloc_3(int size, const char *func, int linenumber)
++store_malloc_3(size_t size, const char *func, int linenumber)
+ {
+ if (n_nonpool_blocks++ > max_nonpool_blocks)
+   max_nonpool_blocks = n_nonpool_blocks;
+ return internal_store_malloc(size, func, linenumber);
+ }
+@@ -925,14 +928,15 @@
+ */
+ 
+ static void
+ internal_store_free(void * block, const char * func, int linenumber)
+ {
+-uschar * p = US block - sizeof(int);
++uschar * p = US block - sizeof(size_t);
+ #ifndef COMPILE_UTILITY
+-DEBUG(D_any) nonpool_malloc -= *(int *)p;
+-DEBUG(D_memory) debug_printf("----Free %6p %5d bytes\t%-20s %4d\n", block, *(int *)p, func, linenumber);
++DEBUG(D_any) nonpool_malloc -= *(size_t *)p;
++DEBUG(D_memory) debug_printf("----Free %6p %5lld bytes\t%-20s %4d\n",
++		    block, (unsigned long long) *(size_t *)p, func, linenumber);
+ #endif
+ free(p);
+ }
+ 
+ void
+--- a/src/store.h
++++ b/src/store.h
+@@ -63,11 +63,11 @@
+ typedef void ** rmark;
+ 
+ extern BOOL    store_extend_3(void *, BOOL, int, int, const char *, int);
+ extern void    store_free_3(void *, const char *, int);
+ /* store_get_3 & store_get_perm_3 are in local_scan.h */
+-extern void   *store_malloc_3(int, const char *, int)		ALLOC ALLOC_SIZE(1) WARN_UNUSED_RESULT;
++extern void   *store_malloc_3(size_t, const char *, int)		ALLOC ALLOC_SIZE(1) WARN_UNUSED_RESULT;
+ extern rmark   store_mark_3(const char *, int);
+ extern void   *store_newblock_3(void *, BOOL, int, int, const char *, int);
+ extern void    store_release_above_3(void *, const char *, int);
+ extern rmark   store_reset_3(rmark, const char *, int);
+ 

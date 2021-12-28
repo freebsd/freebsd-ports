@@ -2,7 +2,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -65,32 +65,11 @@ SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
 SQLITE_LIB_DEPENDS=	libicudata.so:devel/icu
 SQLITE_USES=	pkgconfig sqlite
 
-TAINTWARN_PATCHES_PREFIX=	${FILESDIR}/debian/75
-TAINTWARN_EXTRA_PATCHES= \
-		${TAINTWARN_PATCHES_PREFIX}_01-Introduce-main-config-option-allow_insecure_tainted_.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_02-search.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_03-dbstuff.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_04-acl.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_05-parse.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_06-rda.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_07-appendfile.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_08-autoreply.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_09-pipe.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_10-deliver.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_11-directory.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_12-expand.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_13-lf_sqlperform.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_14-rf_get_transport.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_15-deliver.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_16-smtp_out.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_17-smtp.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_18-update-doc.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_20-Set-mainlog_name-and-rejectlog_name-unconditionally.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_21-tidy-log.c.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_22-Silence-compiler.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_23-Do-not-close-the-main-_log-if-we-do-not-see-a-chance.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_24-Silence-the-compiler.patch:-p1 \
-		${TAINTWARN_PATCHES_PREFIX}_26-Disable-taintchecks-for-mkdir-this-isn-t-part-of-4.9.patch:-p1
+DEBIAN_PATCHES_PREFIX=	${FILESDIR}/debian/75
+EXTRA_PATCHES= \
+		${DEBIAN_PATCHES_PREFIX}_30-Avoid-calling-gettimeofday-select-per-char-for-cmdli.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_38-Convert-all-uses-of-select-to-poll.-Bug-2831.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_40-Fix-basic-memory-use-for-SPARC.-Bug-2838.patch:-p1
 
 .include <bsd.port.options.mk>
 
@@ -131,7 +110,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 .endif
 
-EXIM_VERSION=	4.94.2
+EXIM_VERSION=	4.95
 SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'|${SORT} -h`

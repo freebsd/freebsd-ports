@@ -1,0 +1,931 @@
+From dd19ce4f24eec64177cdcfcf294b8efbb631a24b Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Wed, 17 Nov 2021 17:19:54 +0000
+Subject: [PATCH] select() -> poll().  Bug 2831
+
+---
+ doc/ChangeLog     |   8 +++
+ src/daemon.c          | 126 +++++++++++++++++++-------------------
+ src/deliver.c         |  54 ++++++++--------
+ src/exim.c            |   9 +--
+ src/expand.c          |   6 +-
+ src/functions.h       |   7 +++
+ src/ip.c              |  12 +---
+ src/malware.c         |   6 +-
+ src/receive.c         |  15 +----
+ src/smtp_in.c         |  18 +-----
+ src/spam.c            |  42 ++++---------
+ src/transport.c       |   4 +-
+ src/transports/smtp.c |  37 ++++-------
+ 13 files changed, 142 insertions(+), 202 deletions(-)
+
+diff --git a/doc/ChangeLog b/doc/ChangeLog
+index 7f6814d5e..58996c3f8 100644
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -40,6 +40,14 @@ JH/09 Fix macro-definition during "-be" expansion testing.  The move to
+       write-protected store for macros had not accounted for these runtime
+       additions; fix by removing this protection for "-be" mode.
+ 
++JH/10 Convert all uses of select() to poll().  FreeBSD 12.2 was found to be
++      handing out large-numbered file descriptors, violating the usual Unix
++      assumption (and required by Posix) that the lowest possible number will be
++      allocated by the kernel when a new one is needed.  In the daemon, and any
++      child procesees, values higher than 1024 (being bigger than FD_SETSIZE)
++      are not useable for FD_SET() [and hence select()] and overwrite the stack.
++      Assorted crashes happen.
++
+ 
+ Exim version 4.95
+ -----------------
+diff --git a/src/daemon.c b/src/daemon.c
+index 0b8d5d595..a248a4f40 100644
+--- a/src/daemon.c
++++ b/src/daemon.c
+@@ -87,7 +87,7 @@ sigchld_seen = TRUE;
+ }
+ 
+ 
+-/* SIGTERM handler.  Try to get the damon pif file removed
++/* SIGTERM handler.  Try to get the damon pid file removed
+ before exiting. */
+ 
+ static void
+@@ -141,7 +141,7 @@ Uunlink(s);
+ 
+ static void
+ close_daemon_sockets(int daemon_notifier_fd,
+-  int * listen_sockets, int listen_socket_count)
++  struct pollfd * fd_polls, int listen_socket_count)
+ {
+ if (daemon_notifier_fd >= 0)
+   {
+@@ -152,7 +152,7 @@ if (daemon_notifier_fd >= 0)
+ #endif
+   }
+ 
+-for (int i = 0; i < listen_socket_count; i++) (void) close(listen_sockets[i]);
++for (int i = 0; i < listen_socket_count; i++) (void) close(fd_polls[i].fd);
+ }
+ 
+ 
+@@ -167,7 +167,7 @@ is required so that they can be closed in the sub-process. Take care not to
+ leak store in this process - reset the stacking pool at the end.
+ 
+ Arguments:
+-  listen_sockets        sockets which are listening for incoming calls
++  fd_polls        sockets which are listening for incoming calls
+   listen_socket_count   count of listening sockets
+   accept_socket         socket of the current accepted call
+   accepted              socket information about the current call
+@@ -176,7 +176,7 @@ Returns:            nothing
+ */
+ 
+ static void
+-handle_smtp_call(int *listen_sockets, int listen_socket_count,
++handle_smtp_call(struct pollfd *fd_polls, int listen_socket_count,
+   int accept_socket, struct sockaddr *accepted)
+ {
+ pid_t pid;
+@@ -459,7 +459,7 @@ if (pid == 0)
+   extensive comment before the reception loop in exim.c for a fuller
+   explanation of this logic. */
+ 
+-  close_daemon_sockets(daemon_notifier_fd, listen_sockets, listen_socket_count);
++  close_daemon_sockets(daemon_notifier_fd, fd_polls, listen_socket_count);
+ 
+   /* Set FD_CLOEXEC on the SMTP socket. We don't want any rogue child processes
+   to be able to communicate with them, under any circumstances. */
+@@ -1305,13 +1305,6 @@ return FALSE;
+ 
+ 
+ 
+-static void
+-add_listener_socket(int fd, fd_set * fds, int * fd_max)
+-{
+-FD_SET(fd, fds);
+-if (fd > *fd_max) *fd_max = fd;
+-}
+-
+ /*************************************************
+ *              Exim Daemon Mainline              *
+ *************************************************/
+@@ -1339,9 +1332,8 @@ void
+ daemon_go(void)
+ {
+ struct passwd * pw;
+-int * listen_sockets = NULL;
+-int listen_socket_count = 0, listen_fd_max = 0;
+-fd_set select_listen;
++struct pollfd * fd_polls, * tls_watch_poll = NULL, * dnotify_poll = NULL;
++int listen_socket_count = 0, poll_fd_count;
+ ip_address_item * addresses = NULL;
+ time_t last_connection_time = (time_t)0;
+ int local_queue_run_max = atoi(CS expand_string(queue_run_max));
+@@ -1353,17 +1345,21 @@ debugging lines get the pid added. */
+ 
+ DEBUG(D_any|D_v) debug_selector |= D_pid;
+ 
+-FD_ZERO(&select_listen);
++/* Allocate enough pollstructs for inetd mode plus the ancillary sockets;
++also used when there are no listen sockets. */
++
++fd_polls = store_get(sizeof(struct pollfd) * 3, FALSE);
++
+ if (f.inetd_wait_mode)
+   {
+   listen_socket_count = 1;
+-  listen_sockets = store_get(sizeof(int), FALSE);
+   (void) close(3);
+   if (dup2(0, 3) == -1)
+     log_write(0, LOG_MAIN|LOG_PANIC_DIE,
+         "failed to dup inetd socket safely away: %s", strerror(errno));
+ 
+-  listen_sockets[0] = 3;
++  fd_polls[0].fd = 3;
++  fd_polls[0].events = POLLIN;
+   (void) close(0);
+   (void) close(1);
+   (void) close(2);
+@@ -1390,9 +1386,6 @@ if (f.inetd_wait_mode)
+     if (setsockopt(3, IPPROTO_TCP, TCP_NODELAY, US &on, sizeof(on)))
+       log_write(0, LOG_MAIN|LOG_PANIC_DIE, "failed to set socket NODELAY: %s",
+ 	strerror(errno));
+-
+-  FD_SET(3, &select_listen);
+-  listen_fd_max = 3;
+   }
+ 
+ 
+@@ -1686,11 +1679,16 @@ if (f.daemon_listen && !f.inetd_wait_mode)
+         }
+     }
+ 
+-  /* Get a vector to remember all the sockets in */
++  /* Get a vector to remember all the sockets in.
++  Two extra elements for the ancillary sockets */
+ 
+   for (ipa = addresses; ipa; ipa = ipa->next)
+     listen_socket_count++;
+-  listen_sockets = store_get(sizeof(int) * listen_socket_count, FALSE);
++  fd_polls = store_get(sizeof(struct pollfd) * (listen_socket_count + 2),
++			    FALSE);
++  for (struct pollfd * p = fd_polls; p < fd_polls + listen_socket_count + 2;
++       p++)
++    { p->fd = -1; p->events = POLLIN; }
+ 
+   } /* daemon_listen but not inetd_wait_mode */
+ 
+@@ -1795,7 +1793,7 @@ if (f.daemon_listen && !f.inetd_wait_mode)
+       wildcard = ipa->address[0] == 0;
+       }
+ 
+-    if ((listen_sockets[sk] = fd = ip_socket(SOCK_STREAM, af)) < 0)
++    if ((fd_polls[sk].fd = fd = ip_socket(SOCK_STREAM, af)) < 0)
+       {
+       if (check_special_case(0, addresses, ipa, FALSE))
+         {
+@@ -1804,7 +1802,7 @@ if (f.daemon_listen && !f.inetd_wait_mode)
+         goto SKIP_SOCKET;
+         }
+       log_write(0, LOG_PANIC_DIE, "IPv%c socket creation failed: %s",
+-        (af == AF_INET6)? '6' : '4', strerror(errno));
++        af == AF_INET6 ? '6' : '4', strerror(errno));
+       }
+ 
+     /* If this is an IPv6 wildcard socket, set IPV6_V6ONLY if that option is
+@@ -1903,8 +1901,7 @@ if (f.daemon_listen && !f.inetd_wait_mode)
+ 	f.tcp_fastopen_ok = FALSE;
+ 	}
+ #endif
+-
+-      add_listener_socket(fd, &select_listen, &listen_fd_max);
++      fd_polls[sk].fd = fd;
+       continue;
+       }
+ 
+@@ -2187,14 +2184,21 @@ tls_daemon_init();
+ 
+ /* Add ancillary sockets to the set for select */
+ 
++poll_fd_count = listen_socket_count;
+ #ifndef DISABLE_TLS
+ if (tls_watch_fd >= 0)
+-  add_listener_socket(tls_watch_fd, &select_listen, &listen_fd_max);
++  {
++  tls_watch_poll = &fd_polls[poll_fd_count++];
++  tls_watch_poll->fd = tls_watch_fd;
++  tls_watch_poll->events = POLLIN;
++  }
+ #endif
+ if (daemon_notifier_fd >= 0)
+-  add_listener_socket(daemon_notifier_fd, &select_listen, &listen_fd_max);
+-
+-listen_fd_max++;
++  {
++  dnotify_poll = &fd_polls[poll_fd_count++];
++  dnotify_poll->fd = daemon_notifier_fd;
++  dnotify_poll->events = POLLIN;
++  }
+ 
+ /* Close the log so it can be renamed and moved. In the few cases below where
+ this long-running process writes to the log (always exceptional conditions), it
+@@ -2293,7 +2297,7 @@ for (;;)
+           /* Close any open listening sockets in the child */
+ 
+ 	  close_daemon_sockets(daemon_notifier_fd,
+-	    listen_sockets, listen_socket_count);
++	    fd_polls, listen_socket_count);
+ 
+           /* Reset SIGHUP and SIGCHLD in the child in both cases. */
+ 
+@@ -2421,9 +2425,8 @@ for (;;)
+ 
+   if (f.daemon_listen)
+     {
+-    int check_lsk = 0, lcount;
++    int lcount;
+     BOOL select_failed = FALSE;
+-    fd_set fds = select_listen;
+ 
+     DEBUG(D_any) debug_printf("Listening...\n");
+ 
+@@ -2440,8 +2443,7 @@ for (;;)
+       errno = EINTR;
+       }
+     else
+-      lcount = select(listen_fd_max, (SELECT_ARG2_TYPE *)&fds,
+-        NULL, NULL, NULL);
++      lcount = poll(fd_polls, poll_fd_count, -1);
+ 
+     if (lcount < 0)
+       {
+@@ -2461,15 +2463,15 @@ for (;;)
+       handle_ending_processes();
+ 
+ #ifndef DISABLE_TLS
++      {
++      int old_tfd;
+       /* Create or rotate any required keys; handle (delayed) filewatch event */
+-      for (int old_tfd = tls_daemon_tick(); old_tfd >= 0; )
+-	{
+-	FD_CLR(old_tfd, &select_listen);
+-	if (old_tfd == listen_fd_max - 1) listen_fd_max = old_tfd;
+-	if (tls_watch_fd >= 0)
+-	  add_listener_socket(tls_watch_fd, &select_listen, &listen_fd_max);
+-	break;
+-	}
++
++      if ((old_tfd = tls_daemon_tick()) >= 0)
++	for (struct pollfd * p = &fd_polls[listen_socket_count];
++	     p < fd_polls + poll_fd_count; p++)
++	  if (p->fd == old_tfd) { p->fd = tls_watch_fd ; break; }
++      }
+ #endif
+       errno = select_errno;
+       }
+@@ -2490,22 +2492,23 @@ for (;;)
+       if (!select_failed)
+ 	{
+ #if !defined(DISABLE_TLS) && (defined(EXIM_HAVE_INOTIFY) || defined(EXIM_HAVE_KEVENT))
+-	if (tls_watch_fd >= 0 && FD_ISSET(tls_watch_fd, &fds))
++	if (tls_watch_poll && tls_watch_poll->revents & POLLIN)
+ 	  {
++	  tls_watch_poll->revents = 0;
+           tls_watch_trigger_time = time(NULL);	/* Set up delayed event */
+ 	  tls_watch_discard_event(tls_watch_fd);
+ 	  break;	/* to top of daemon loop */
+ 	  }
+ #endif
+-	if (daemon_notifier_fd >= 0 && FD_ISSET(daemon_notifier_fd, &fds))
++	if (dnotify_poll && dnotify_poll->revents & POLLIN)
+ 	  {
++	  dnotify_poll->revents = 0;
+ 	  sigalrm_seen = daemon_notification();
+ 	  break;	/* to top of daemon loop */
+ 	  }
+-	while (check_lsk < listen_socket_count)
+-	  {
+-	  int lfd = listen_sockets[check_lsk++];
+-          if (FD_ISSET(lfd, &fds))
++	for (struct pollfd * p = fd_polls; p < fd_polls + listen_socket_count;
++	     p++)
++	  if (p->revents & POLLIN)
+             {
+ 	    EXIM_SOCKLEN_T alen = sizeof(accepted);
+ #ifdef TCP_INFO
+@@ -2516,23 +2519,23 @@ for (;;)
+ 
+ 	    smtp_listen_backlog = 0;
+ 	    if (  smtp_backlog_monitor > 0
+-	       && getsockopt(lfd, IPPROTO_TCP, TCP_INFO, &ti, &tlen) == 0)
++	       && getsockopt(p->fd, IPPROTO_TCP, TCP_INFO, &ti, &tlen) == 0)
+ 	      {
+ # ifdef EXIM_HAVE_TCPI_UNACKED
+ 	      DEBUG(D_interface) debug_printf("listen fd %d queue max %u curr %u\n",
+-		      lfd, ti.tcpi_sacked, ti.tcpi_unacked);
++		      p->fd, ti.tcpi_sacked, ti.tcpi_unacked);
+ 	      smtp_listen_backlog = ti.tcpi_unacked;
+ # elif defined(__FreeBSD__)	/* This does not work. Investigate kernel sourcecode. */
+ 	      DEBUG(D_interface) debug_printf("listen fd %d queue max %u curr %u\n",
+-		      lfd, ti.__tcpi_sacked, ti.__tcpi_unacked);
++		      p->fd, ti.__tcpi_sacked, ti.__tcpi_unacked);
+ 	      smtp_listen_backlog = ti.__tcpi_unacked;
+ # endif
+ 	      }
+ #endif
+-            accept_socket = accept(lfd, (struct sockaddr *)&accepted, &alen);
++	    p->revents = 0;
++            accept_socket = accept(p->fd, (struct sockaddr *)&accepted, &alen);
+             break;
+             }
+-	  }
+ 	}
+ 
+       /* If select or accept has failed and this was not caused by an
+@@ -2591,7 +2594,7 @@ for (;;)
+ #endif
+         if (inetd_wait_timeout)
+           last_connection_time = time(NULL);
+-        handle_smtp_call(listen_sockets, listen_socket_count, accept_socket,
++        handle_smtp_call(fd_polls, listen_socket_count, accept_socket,
+           (struct sockaddr *)&accepted);
+         }
+       }
+@@ -2606,10 +2609,8 @@ for (;;)
+ 
+   else
+     {
+-    struct timeval tv;
+-    tv.tv_sec = queue_interval;
+-    tv.tv_usec = 0;
+-    select(0, NULL, NULL, NULL, &tv);
++    struct pollfd p;
++    poll(&p, 0, queue_interval * 1000);
+     handle_ending_processes();
+     }
+ 
+@@ -2634,8 +2635,7 @@ for (;;)
+     {
+     log_write(0, LOG_MAIN, "pid %d: SIGHUP received: re-exec daemon",
+       getpid());
+-    close_daemon_sockets(daemon_notifier_fd,
+-      listen_sockets, listen_socket_count);
++    close_daemon_sockets(daemon_notifier_fd, fd_polls, listen_socket_count);
+     ALARM_CLR(0);
+     signal(SIGHUP, SIG_IGN);
+     sighup_argv[0] = exim_path;
+diff --git a/src/deliver.c b/src/deliver.c
+index 4594c4a1d..8aad811c6 100644
+--- a/src/deliver.c
++++ b/src/deliver.c
+@@ -74,6 +74,7 @@ static BOOL update_spool;
+ static BOOL remove_journal;
+ static int  parcount = 0;
+ static pardata *parlist = NULL;
++static struct pollfd *parpoll;
+ static int  return_count;
+ static uschar *frozen_info = US"";
+ static uschar *used_return_path = NULL;
+@@ -3306,7 +3307,7 @@ BOOL done = p->done;
+ 
+ /* Loop through all items, reading from the pipe when necessary. The pipe
+ used to be non-blocking. But I do not see a reason for using non-blocking I/O
+-here, as the preceding select() tells us, if data is available for reading.
++here, as the preceding poll() tells us, if data is available for reading.
+ 
+ A read() on a "selected" handle should never block, but(!) it may return
+ less data then we expected. (The buffer size we pass to read() shouldn't be
+@@ -3840,7 +3841,7 @@ static address_item *
+ par_wait(void)
+ {
+ int poffset, status;
+-address_item *addr, *addrlist;
++address_item * addr, * addrlist;
+ pid_t pid;
+ 
+ set_process_info("delivering %s: waiting for a remote delivery subprocess "
+@@ -3850,18 +3851,18 @@ set_process_info("delivering %s: waiting for a remote delivery subprocess "
+ existence - in which case give an error return. We cannot proceed just by
+ waiting for a completion, because a subprocess may have filled up its pipe, and
+ be waiting for it to be emptied. Therefore, if no processes have finished, we
+-wait for one of the pipes to acquire some data by calling select(), with a
++wait for one of the pipes to acquire some data by calling poll(), with a
+ timeout just in case.
+ 
+ The simple approach is just to iterate after reading data from a ready pipe.
+ This leads to non-ideal behaviour when the subprocess has written its final Z
+ item, closed the pipe, and is in the process of exiting (the common case). A
+-call to waitpid() yields nothing completed, but select() shows the pipe ready -
++call to waitpid() yields nothing completed, but poll() shows the pipe ready -
+ reading it yields EOF, so you end up with busy-waiting until the subprocess has
+ actually finished.
+ 
+ To avoid this, if all the data that is needed has been read from a subprocess
+-after select(), an explicit wait() for it is done. We know that all it is doing
++after poll(), an explicit wait() for it is done. We know that all it is doing
+ is writing to the pipe and then exiting, so the wait should not be long.
+ 
+ The non-blocking waitpid() is to some extent just insurance; if we could
+@@ -3881,9 +3882,7 @@ for (;;)   /* Normally we do not repeat this loop */
+   {
+   while ((pid = waitpid(-1, &status, WNOHANG)) <= 0)
+     {
+-    struct timeval tv;
+-    fd_set select_pipes;
+-    int maxpipe, readycount;
++    int readycount;
+ 
+     /* A return value of -1 can mean several things. If errno != ECHILD, it
+     either means invalid options (which we discount), or that this process was
+@@ -3907,7 +3906,7 @@ for (;;)   /* Normally we do not repeat this loop */
+     subprocesses are still in existence. If kill() gives an OK return, we know
+     it must be for one of our processes - it can't be for a re-use of the pid,
+     because if our process had finished, waitpid() would have found it. If any
+-    of our subprocesses are in existence, we proceed to use select() as if
++    of our subprocesses are in existence, we proceed to use poll() as if
+     waitpid() had returned zero. I think this is safe. */
+ 
+     if (pid < 0)
+@@ -3931,7 +3930,7 @@ for (;;)   /* Normally we do not repeat this loop */
+       if (poffset >= remote_max_parallel)
+         {
+         DEBUG(D_deliver) debug_printf("*** no delivery children found\n");
+-        return NULL;   /* This is the error return */
++	return NULL;	/* This is the error return */
+         }
+       }
+ 
+@@ -3940,28 +3939,23 @@ for (;;)   /* Normally we do not repeat this loop */
+     subprocess, but there are no completed subprocesses. See if any pipes are
+     ready with any data for reading. */
+ 
+-    DEBUG(D_deliver) debug_printf("selecting on subprocess pipes\n");
++    DEBUG(D_deliver) debug_printf("polling subprocess pipes\n");
+ 
+-    maxpipe = 0;
+-    FD_ZERO(&select_pipes);
+     for (poffset = 0; poffset < remote_max_parallel; poffset++)
+       if (parlist[poffset].pid != 0)
+-        {
+-        int fd = parlist[poffset].fd;
+-        FD_SET(fd, &select_pipes);
+-        if (fd > maxpipe) maxpipe = fd;
+-        }
++	{
++	parpoll[poffset].fd = parlist[poffset].fd;
++	parpoll[poffset].events = POLLIN;
++	}
++      else
++	parpoll[poffset].fd = -1;
+ 
+     /* Stick in a 60-second timeout, just in case. */
+ 
+-    tv.tv_sec = 60;
+-    tv.tv_usec = 0;
+-
+-    readycount = select(maxpipe + 1, (SELECT_ARG2_TYPE *)&select_pipes,
+-         NULL, NULL, &tv);
++    readycount = poll(parpoll, remote_max_parallel, 60 * 1000);
+ 
+     /* Scan through the pipes and read any that are ready; use the count
+-    returned by select() to stop when there are no more. Select() can return
++    returned by poll() to stop when there are no more. Select() can return
+     with no processes (e.g. if interrupted). This shouldn't matter.
+ 
+     If par_read_pipe() returns TRUE, it means that either the terminating Z was
+@@ -3978,7 +3972,7 @@ for (;;)   /* Normally we do not repeat this loop */
+          poffset++)
+       {
+       if (  (pid = parlist[poffset].pid) != 0
+-         && FD_ISSET(parlist[poffset].fd, &select_pipes)
++	 && parpoll[poffset].revents
+ 	 )
+         {
+         readycount--;
+@@ -4016,7 +4010,7 @@ for (;;)   /* Normally we do not repeat this loop */
+     "transport process list", pid);
+   }  /* End of the "for" loop */
+ 
+-/* Come here when all the data was completely read after a select(), and
++/* Come here when all the data was completely read after a poll(), and
+ the process in pid has been wait()ed for. */
+ 
+ PROCESS_DONE:
+@@ -4051,7 +4045,7 @@ if ((status & 0xffff) != 0)
+     "%s %d",
+     addrlist->transport->driver_name,
+     status,
+-    (msb == 0)? "terminated by signal" : "exit code",
++    msb == 0 ? "terminated by signal" : "exit code",
+     code);
+ 
+   if (msb != 0 || (code != SIGTERM && code != SIGKILL && code != SIGQUIT))
+@@ -4069,7 +4063,8 @@ if ((status & 0xffff) != 0)
+ /* Else complete reading the pipe to get the result of the delivery, if all
+ the data has not yet been obtained. */
+ 
+-else if (!parlist[poffset].done) (void)par_read_pipe(poffset, TRUE);
++else if (!parlist[poffset].done)
++  (void) par_read_pipe(poffset, TRUE);
+ 
+ /* Put the data count and return path into globals, mark the data slot unused,
+ decrement the count of subprocesses, and return the address chain. */
+@@ -4218,6 +4213,7 @@ if (!parlist)
+   parlist = store_get(remote_max_parallel * sizeof(pardata), FALSE);
+   for (poffset = 0; poffset < remote_max_parallel; poffset++)
+     parlist[poffset].pid = 0;
++  parpoll = store_get(remote_max_parallel * sizeof(struct pollfd), FALSE);
+   }
+ 
+ /* Now loop for each remote delivery */
+@@ -4613,7 +4609,7 @@ nonmatch domains
+     that it can use either of them, though it prefers O_NONBLOCK, which
+     distinguishes between EOF and no-more-data. */
+ 
+-/* The data appears in a timely manner and we already did a select on
++/* The data appears in a timely manner and we already did a poll on
+ all pipes, so I do not see a reason to use non-blocking IO here
+ 
+ #ifdef O_NONBLOCK
+diff --git a/src/exim.c b/src/exim.c
+index 133761de9..42db457c0 100644
+--- a/src/exim.c
++++ b/src/exim.c
+@@ -5735,13 +5735,8 @@ for (BOOL more = TRUE; more; )
+     the file copy. */
+ 
+     if (!receive_timeout)
+-      {
+-      struct timeval t = { .tv_sec = 30*60, .tv_usec = 0 };	/* 30 minutes */
+-      fd_set r;
+-
+-      FD_ZERO(&r); FD_SET(0, &r);
+-      if (select(1, &r, NULL, NULL, &t) == 0) mainlog_close();
+-      }
++      if (poll_one_fd(0, POLLIN, 30*60*1000) == 0)	/* 30 minutes */
++	mainlog_close();
+ 
+     /* Read the data for the message. If filter_test is not FTEST_NONE, this
+     will just read the headers for the message, and not write anything onto the
+diff --git a/src/expand.c b/src/expand.c
+index 59554840e..bfae2a3c0 100644
+--- a/src/expand.c
++++ b/src/expand.c
+@@ -1760,8 +1760,6 @@ const uschar * where;
+ #ifndef EXIM_HAVE_ABSTRACT_UNIX_SOCKETS
+ uschar * sname;
+ #endif
+-fd_set fds;
+-struct timeval tv;
+ 
+ if ((fd = socket(AF_UNIX, SOCK_DGRAM, 0)) < 0)
+   {
+@@ -1805,9 +1803,7 @@ if (connect(fd, (const struct sockaddr *)&sa_un, len) < 0)
+ buf[0] = NOTIFY_QUEUE_SIZE_REQ;
+ if (send(fd, buf, 1, 0) < 0) { where = US"send"; goto bad; }
+ 
+-FD_ZERO(&fds); FD_SET(fd, &fds);
+-tv.tv_sec = 2; tv.tv_usec = 0;
+-if (select(fd + 1, (SELECT_ARG2_TYPE *)&fds, NULL, NULL, &tv) != 1)
++if (poll_one_fd(fd, POLLIN, 2 * 1000) != 1)
+   {
+   DEBUG(D_expand) debug_printf("no daemon response; using local evaluation\n");
+   len = snprintf(CS buf, sizeof(buf), "%u", queue_count_cached());
+diff --git a/src/functions.h b/src/functions.h
+index 3dd890a00..0cf80dfbb 100644
+--- a/src/functions.h
++++ b/src/functions.h
+@@ -1255,6 +1255,13 @@ child_open(uschar **argv, uschar **envp, int newumask, int *infdptr,
+   outfdptr, make_leader, purpose);
+ }
+ 
++static inline int
++poll_one_fd(int fd, short pollbits, int tmo_millisec)
++{
++struct pollfd p = {.fd = fd, .events = pollbits};
++return poll(&p, 1, tmo_millisec);
++}
++
+ # endif	/* !COMPILE_UTILITY */
+ 
+ /******************************************************************************/
+diff --git a/src/ip.c b/src/ip.c
+index d83d6f910..aa42343fb 100644
+--- a/src/ip.c
++++ b/src/ip.c
+@@ -589,9 +589,7 @@ Returns:      TRUE => ready for i/o
+ BOOL
+ fd_ready(int fd, time_t timelimit)
+ {
+-fd_set select_inset;
+-int time_left = timelimit - time(NULL);
+-int rc;
++int rc, time_left = timelimit - time(NULL);
+ 
+ if (time_left <= 0)
+   {
+@@ -602,12 +600,8 @@ if (time_left <= 0)
+ 
+ do
+   {
+-  struct timeval tv = { .tv_sec = time_left, .tv_usec = 0 };
+-  FD_ZERO (&select_inset);
+-  FD_SET (fd, &select_inset);
+-
+   /*DEBUG(D_transport) debug_printf("waiting for data on fd\n");*/
+-  rc = select(fd + 1, (SELECT_ARG2_TYPE *)&select_inset, NULL, NULL, &tv);
++  rc = poll_one_fd(fd, POLLIN, time_left * 1000);
+ 
+   /* If some interrupt arrived, just retry. We presume this to be rare,
+   but it can happen (e.g. the SIGUSR1 signal sent by exiwhat causes
+@@ -636,7 +630,7 @@ do
+   /* Checking the FD_ISSET is not enough, if we're interrupted, the
+   select_inset may still contain the 'input'. */
+   }
+-while (rc < 0 || !FD_ISSET(fd, &select_inset));
++while (rc < 0);
+ return TRUE;
+ }
+ 
+diff --git a/src/malware.c b/src/malware.c
+index 10a390dfa..d9ab3b9dd 100644
+--- a/src/malware.c
++++ b/src/malware.c
+@@ -277,11 +277,7 @@ int fd = ip_connectedsocket(SOCK_STREAM, hostname, port, port, 5,
+ /* Under some fault conditions, FreeBSD 12.2 seen to send a (non-TFO) SYN
+ and, getting no response, wait for a long time.  Impose a 5s max. */
+ if (fd >= 0)
+-  {
+-  struct timeval tv = {.tv_sec = 5};
+-  fd_set fds;
+-  FD_ZERO(&fds); FD_SET(fd, &fds); (void) select(fd+1, NULL, &fds, NULL, &tv);
+-  }
++  (void) poll_one_fd(fd, POLLOUT, 5 * 1000);
+ #endif
+ return fd;
+ }
+diff --git a/src/receive.c b/src/receive.c
+index fab0f00c4..3adcbbd88 100644
+--- a/src/receive.c
++++ b/src/receive.c
+@@ -624,12 +624,8 @@ if (!receive_timeout && !receive_hasc())
+   if (t.tv_sec > 30*60)
+     mainlog_close();
+   else
+-    {
+-    fd_set r;
+-    FD_ZERO(&r); FD_SET(0, &r);
+-    t.tv_sec = 30*60 - t.tv_sec; t.tv_usec = 0;
+-    if (select(1, &r, NULL, NULL, &t) == 0) mainlog_close();
+-    }
++    if (poll_one_fd(0, POLLIN, (30*60 - t.tv_sec) * 1000) == 0)
++      mainlog_close();
+   }
+ }
+ 
+@@ -4234,12 +4230,7 @@ response, but the chance of this happening should be small. */
+ if (smtp_input && sender_host_address && !f.sender_host_notsocket &&
+     !receive_smtp_buffered())
+   {
+-  struct timeval tv = {.tv_sec = 0, .tv_usec = 0};
+-  fd_set select_check;
+-  FD_ZERO(&select_check);
+-  FD_SET(fileno(smtp_in), &select_check);
+-
+-  if (select(fileno(smtp_in) + 1, &select_check, NULL, NULL, &tv) != 0)
++  if (poll_one_fd(fileno(smtp_in), POLLIN, 0) != 0)
+     {
+     int c = (receive_getc)(GETC_BUFFER_UNLIMITED);
+     if (c != EOF) (receive_ungetc)(c); else
+diff --git a/src/smtp_in.c b/src/smtp_in.c
+index 824178e4d..7cb966f24 100644
+--- a/src/smtp_in.c
++++ b/src/smtp_in.c
+@@ -346,8 +346,6 @@ static BOOL
+ wouldblock_reading(void)
+ {
+ int fd, rc;
+-fd_set fds;
+-struct timeval tzero = {.tv_sec = 0, .tv_usec = 0};
+ 
+ #ifndef DISABLE_TLS
+ if (tls_in.active.sock >= 0)
+@@ -358,9 +356,7 @@ if (smtp_inptr < smtp_inend)
+   return FALSE;
+ 
+ fd = fileno(smtp_in);
+-FD_ZERO(&fds);
+-FD_SET(fd, &fds);
+-rc = select(fd + 1, (SELECT_ARG2_TYPE *)&fds, NULL, NULL, &tzero);
++rc = poll_one_fd(fd, POLLIN, 0);
+ 
+ if (rc <= 0) return TRUE;     /* Not ready to read */
+ rc = smtp_getc(GETC_BUFFER_UNLIMITED);
+@@ -3942,16 +3938,8 @@ log_write(L_smtp_connection, LOG_MAIN, "%s closed by QUIT",
+ /* Pause, hoping client will FIN first so that they get the TIME_WAIT.
+ The socket should become readble (though with no data) */
+ 
+-  {
+-  int fd = fileno(smtp_in);
+-  fd_set fds;
+-  struct timeval t_limit = {.tv_sec = 0, .tv_usec = 200*1000};
+-
+-  FD_ZERO(&fds);
+-  FD_SET(fd, &fds);
+-  (void) select(fd + 1, (SELECT_ARG2_TYPE *)&fds, NULL, NULL, &t_limit);
+-  }
+-#endif	/*!DAEMON_CLOSE_NOWAIT*/
++(void) poll_one_fd(fileno(smtp_in), POLLIN, 200);
++#endif	/*!SERVERSIDE_CLOSE_NOWAIT*/
+ }
+ 
+ 
+diff --git a/src/spam.c b/src/spam.c
+index 470e5fae7..e3316ed96 100644
+--- a/src/spam.c
++++ b/src/spam.c
+@@ -194,12 +194,6 @@ uschar *p,*q;
+ int override = 0;
+ time_t start;
+ size_t read, wrote;
+-#ifndef NO_POLL_H
+-struct pollfd pollfd;
+-#else                               /* Patch posted by Erik ? for OS X */
+-struct timeval select_tv;         /* and applied by PH */
+-fd_set select_fd;
+-#endif
+ uschar *spamd_address_work;
+ spamd_address_container * sd;
+ 
+@@ -395,19 +389,19 @@ if (wrote == -1)
+   }
+ 
+ /* now send the file */
+-/* spamd sometimes accepts connections but doesn't read data off
+- * the connection.  We make the file descriptor non-blocking so
+- * that the write will only write sufficient data without blocking
+- * and we poll the descriptor to make sure that we can write without
+- * blocking.  Short writes are gracefully handled and if the whole
+- * transaction takes too long it is aborted.
+- * Note: poll() is not supported in OSX 10.2 and is reported to be
+- *       broken in more recent versions (up to 10.4).
++/* spamd sometimes accepts connections but doesn't read data off the connection.
++We make the file descriptor non-blocking so that the write will only write
++sufficient data without blocking and we poll the descriptor to make sure that we
++can write without blocking.  Short writes are gracefully handled and if the
++whole transaction takes too long it is aborted.
++
++Note: poll() is not supported in OSX 10.2 and is reported to be broken in more
++      recent versions (up to 10.4). Workaround using select() removed 2021/11 (jgh).
+  */
+-#ifndef NO_POLL_H
+-pollfd.fd = spamd_cctx.sock;
+-pollfd.events = POLLOUT;
++#ifdef NO_POLL_H
++# error Need poll(2) support
+ #endif
++
+ (void)fcntl(spamd_cctx.sock, F_SETFL, O_NONBLOCK);
+ do
+   {
+@@ -416,19 +410,7 @@ do
+     {
+     offset = 0;
+ again:
+-#ifndef NO_POLL_H
+-    result = poll(&pollfd, 1, 1000);
+-
+-/* Patch posted by Erik ? for OS X and applied by PH */
+-#else
+-    select_tv.tv_sec = 1;
+-    select_tv.tv_usec = 0;
+-    FD_ZERO(&select_fd);
+-    FD_SET(spamd_cctx.sock, &select_fd);
+-    result = select(spamd_cctx.sock+1, NULL, &select_fd, NULL, &select_tv);
+-#endif
+-/* End Erik's patch */
+-
++    result = poll_one_fd(spamd_cctx.sock, POLLOUT, 1000);
+     if (result == -1 && errno == EINTR)
+       goto again;
+     else if (result < 1)
+diff --git a/src/transport.c b/src/transport.c
+index 8c74030f0..ef523657e 100644
+--- a/src/transport.c
++++ b/src/transport.c
+@@ -253,7 +253,6 @@ for (int i = 0; i < 100; i++)
+ 
+   for(;;)
+     {
+-    fd_set fds;
+     /* This code makes use of alarm() in order to implement the timeout. This
+     isn't a very tidy way of doing things. Using non-blocking I/O with select()
+     provides a neater approach. However, I don't know how to do this when TLS is
+@@ -281,8 +280,7 @@ for (int i = 0; i < 100; i++)
+     if (rc >= 0 || errno != ENOTCONN || connretry <= 0)
+       break;
+ 
+-    FD_ZERO(&fds); FD_SET(fd, &fds);
+-    select(fd+1, NULL, &fds, NULL, NULL);	/* could set timout? */
++    poll_one_fd(fd, POLLOUT, -1);		/* could set timeout? retval check? */
+     connretry--;
+     }
+ 
+diff --git a/src/transports/smtp.c b/src/transports/smtp.c
+index d321bd69e..c64bb7010 100644
+--- a/src/transports/smtp.c
++++ b/src/transports/smtp.c
+@@ -3550,8 +3550,8 @@ void
+ smtp_proxy_tls(void * ct_ctx, uschar * buf, size_t bsize, int * pfd,
+   int timeout)
+ {
+-fd_set rfds, efds;
+-int max_fd = MAX(pfd[0], tls_out.active.sock) + 1;
++struct pollfd p[2] = {{.fd = tls_out.active.sock, .events = POLLIN},
++		      {.fd = pfd[0], .events = POLLIN}};
+ int rc, i;
+ BOOL send_tls_shutdown = TRUE;
+ 
+@@ -3560,23 +3560,16 @@ if ((rc = exim_fork(US"tls-proxy")))
+   _exit(rc < 0 ? EXIT_FAILURE : EXIT_SUCCESS);
+ 
+ set_process_info("proxying TLS connection for continued transport");
+-FD_ZERO(&rfds);
+-FD_SET(tls_out.active.sock, &rfds);
+-FD_SET(pfd[0], &rfds);
+ 
+-for (int fd_bits = 3; fd_bits; )
++do
+   {
+   time_t time_left = timeout;
+   time_t time_start = time(NULL);
+ 
+   /* wait for data */
+-  efds = rfds;
+   do
+     {
+-    struct timeval tv = { time_left, 0 };
+-
+-    rc = select(max_fd,
+-      (SELECT_ARG2_TYPE *)&rfds, NULL, (SELECT_ARG2_TYPE *)&efds, &tv);
++    rc = poll(p, 2, time_left * 1000);
+ 
+     if (rc < 0 && errno == EINTR)
+       if ((time_left -= time(NULL) - time_start) > 0) continue;
+@@ -3589,23 +3582,22 @@ for (int fd_bits = 3; fd_bits; )
+ 
+     /* For errors where not readable, bomb out */
+ 
+-    if (FD_ISSET(tls_out.active.sock, &efds) || FD_ISSET(pfd[0], &efds))
++    if (p[0].revents & POLLERR || p[1].revents & POLLERR)
+       {
+       DEBUG(D_transport) debug_printf("select: exceptional cond on %s fd\n",
+-	FD_ISSET(pfd[0], &efds) ? "proxy" : "tls");
+-      if (!(FD_ISSET(tls_out.active.sock, &rfds) || FD_ISSET(pfd[0], &rfds)))
++	p[0].revents & POLLERR ? "tls" : "proxy");
++      if (!(p[0].revents & POLLIN || p[1].events & POLLIN))
+ 	goto done;
+       DEBUG(D_transport) debug_printf("- but also readable; no exit yet\n");
+       }
+     }
+-  while (rc < 0 || !(FD_ISSET(tls_out.active.sock, &rfds) || FD_ISSET(pfd[0], &rfds)));
++  while (rc < 0 || !(p[0].revents & POLLIN || p[1].revents & POLLIN));
+ 
+   /* handle inbound data */
+-  if (FD_ISSET(tls_out.active.sock, &rfds))
++  if (p[0].revents & POLLIN)
+     if ((rc = tls_read(ct_ctx, buf, bsize)) <= 0)	/* Expect -1 for EOF; */
+     {				    /* that reaps the TLS Close Notify record */
+-      fd_bits &= ~1;
+-      FD_CLR(tls_out.active.sock, &rfds);
++      p[0].fd = -1;
+       shutdown(pfd[0], SHUT_WR);
+       timeout = 5;
+       }
+@@ -3616,11 +3608,10 @@ for (int fd_bits = 3; fd_bits; )
+   /* Handle outbound data.  We cannot combine payload and the TLS-close
+   due to the limitations of the (pipe) channel feeding us.  Maybe use a unix-domain
+   socket? */
+-  if (FD_ISSET(pfd[0], &rfds))
++  if (p[1].revents & POLLIN)
+     if ((rc = read(pfd[0], buf, bsize)) <= 0)
+       {
+-      fd_bits &= ~2;
+-      FD_CLR(pfd[0], &rfds);
++      p[1].fd = -1;
+ 
+ # ifdef EXIM_TCP_CORK  /* Use _CORK to get TLS Close Notify in FIN segment */
+       (void) setsockopt(tls_out.active.sock, IPPROTO_TCP, EXIM_TCP_CORK, US &on, sizeof(on));
+@@ -3633,10 +3624,8 @@ for (int fd_bits = 3; fd_bits; )
+       for (int nbytes = 0; rc - nbytes > 0; nbytes += i)
+ 	if ((i = tls_write(ct_ctx, buf + nbytes, rc - nbytes, FALSE)) < 0)
+ 	  goto done;
+-
+-  if (fd_bits & 1) FD_SET(tls_out.active.sock, &rfds);
+-  if (fd_bits & 2) FD_SET(pfd[0], &rfds);
+   }
++while (p[0].fd >= 0 || p[1].fd >= 0);
+ 
+ done:
+   if (send_tls_shutdown) tls_close(ct_ctx, TLS_SHUTDOWN_NOWAIT);
