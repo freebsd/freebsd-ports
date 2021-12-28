@@ -1,0 +1,14 @@
+Orcania is a potluck with different functions for different purposes that can
+be shared among C programs.
+
+Here is a list of all modules:
+
+* string functions
+* split string and string array functions
+* _pointer_list structure
+* Memory functions
+* Base64 encode and decode functions
+
+More documentation at https://babelouest.github.io/orcania/
+
+WWW: https://github.com/babelouest/orcania

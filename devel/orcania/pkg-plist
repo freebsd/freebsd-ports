@@ -1,0 +1,8 @@
+bin/base64url
+include/orcania-cfg.h
+include/orcania.h
+lib/liborcania.so
+lib/liborcania.so.2.2
+lib/liborcania.so.2.2.1
+libdata/pkgconfig/liborcania.pc
+man/man1/base64url.1.gz

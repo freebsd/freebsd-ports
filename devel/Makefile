@@ -1683,6 +1683,7 @@
     SUBDIR += openocd
     SUBDIR += openwince-include
     SUBDIR += orc
+    SUBDIR += orcania
     SUBDIR += osc
     SUBDIR += ossp-al
     SUBDIR += ossp-cfg
