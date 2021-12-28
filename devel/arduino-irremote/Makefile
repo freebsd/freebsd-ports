@@ -1,7 +1,8 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
 
 PORTNAME=	arduino-irremote
-PORTVERSION=	2.8.1
+PORTVERSION=	3.5.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	leres@FreeBSD.org
