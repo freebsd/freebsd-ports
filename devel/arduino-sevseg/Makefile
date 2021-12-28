@@ -1,7 +1,7 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
 
 PORTNAME=	arduino-sevseg
-PORTVERSION=	3.5.0
+PORTVERSION=	3.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
