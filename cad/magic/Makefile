@@ -1,8 +1,7 @@
 # Created by: swallace
 
 PORTNAME=	magic
-DISTVERSION=	8.3.145
-PORTREVISION=	1
+DISTVERSION=	8.3.245
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
