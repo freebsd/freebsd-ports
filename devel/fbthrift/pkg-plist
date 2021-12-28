@@ -200,8 +200,6 @@ include/thrift/lib/cpp2/gen/service_tcc.h
 include/thrift/lib/cpp2/hash/DeterministicAccumulator-inl.h
 include/thrift/lib/cpp2/hash/DeterministicAccumulator.h
 include/thrift/lib/cpp2/hash/DeterministicHash.h
-include/thrift/lib/cpp2/hash/DeterministicProtocol-inl.h
-include/thrift/lib/cpp2/hash/DeterministicProtocol.h
 include/thrift/lib/cpp2/hash/StdHasher.h
 include/thrift/lib/cpp2/op/Clear.h
 include/thrift/lib/cpp2/op/Compare.h
@@ -210,6 +208,7 @@ include/thrift/lib/cpp2/op/Testing.h
 include/thrift/lib/cpp2/op/detail/Clear.h
 include/thrift/lib/cpp2/op/detail/Compare.h
 include/thrift/lib/cpp2/op/detail/Hash.h
+include/thrift/lib/cpp2/op/detail/HashProtocol.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
 include/thrift/lib/cpp2/protocol/CompactProtocol-inl.h
