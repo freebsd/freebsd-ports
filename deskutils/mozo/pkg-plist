@@ -48,6 +48,7 @@ share/icons/hicolor/48x48/apps/mozo.png
 %%NLS%%share/locale/en_AU/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/mozo.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/es_AR/LC_MESSAGES/mozo.mo
