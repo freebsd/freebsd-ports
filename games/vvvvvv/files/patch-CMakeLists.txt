@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-12-22 13:20:25 UTC
++++ CMakeLists.txt
+@@ -181,7 +181,7 @@ if(APPLE)
+ endif()
+ set(PNG_SRC ../third_party/lodepng/lodepng.c)
+ 
+-if(NOT OFFICIAL_BUILD)
++if(FALSE)
+ 	# Add interim commit hash and its date to the build
+ 
+ 	# find_package sets GIT_FOUND and GIT_EXECUTABLE
