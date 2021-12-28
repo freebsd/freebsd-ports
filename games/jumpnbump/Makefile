@@ -4,9 +4,6 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gitlab.com/LibreGames/jumpnbump/repository/${PORTVERSION}/archive.tar.bz2?dummy=/
 
-PATCH_SITES=	https://gitlab.com/LibreGames/jumpnbump/-/commit/
-PATCHFILES=	b72b70a4233776bdaa6a683c89af2becefd53bd6.patch:-p1
-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play cute bunnies jumping on each other's heads #'
 
