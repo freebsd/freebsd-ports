@@ -1,3 +1,28 @@
+  <vuln vid="ede832bf-6576-11ec-a636-000c29061ce6">
+    <topic>OpenDMARC - Remote denial of service</topic>
+    <affects>
+      <package>
+	<name>opendmarc</name>
+	<range><ge>1.4.1</ge><lt>1.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenDMARC 1.4.1 and 1.4.1.1 will dereference a NULL pointer when
+	encountering a multi-value From: header field. A remote attacker can
+	send a specially crafted message resulting in a denial of service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-34555</cvename>
+      <url>https://github.com/trusteddomainproject/OpenDMARC/issues/179</url>
+    </references>
+    <dates>
+      <discovery>2021-06-09</discovery>
+      <entry>2021-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="937aa1d6-685e-11ec-a636-000c29061ce6">
     <topic>OpenDMARC - Multiple vulnerabilities</topic>
     <affects>
