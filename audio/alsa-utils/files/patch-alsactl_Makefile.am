@@ -1,8 +1,0 @@
---- alsactl/Makefile.am.orig	2020-02-19 12:02:10 UTC
-+++ alsactl/Makefile.am
-@@ -66,4 +66,4 @@ CLEANFILES = \
- 	90-alsa-restore.rules
- 
- %.7: %.xml
--	xmlto man $?
-+	$(xmlto) man $?

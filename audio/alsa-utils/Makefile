@@ -2,14 +2,10 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.2.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GH
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	alsa-project
-GH_PROJECT=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility utilities
@@ -24,27 +20,32 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 
 USES=		autoreconf gettext-tools gmake libtool localbase ncurses shebangfix \
 		tar:bzip2 pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	alsa-project
+GH_PROJECT=	${PORTNAME}
+SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-udev-rules-dir="\$${prefix}/lib/udev"
-SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
 CFLAGS+=	-Dlseek64=lseek -DSCHED_IDLE=SCHED_OTHER \
 		-I${LOCALBASE}/include/libepoll-shim
+CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
 LDFLAGS+=	-linotify -lepoll-shim
 
-OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		BAT MANPAGES NLS SAMPLERATE
 OPTIONS_DEFAULT=	BAT MANPAGES
+OPTIONS_SUB=		yes
 
 BAT_DESC=		Basic Audio Tester support
 BAT_LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 			libfftw3f.so:math/fftw3-float
 BAT_CONFIGURE_ENABLE=	bat
 
-MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto
-MANPAGES_CONFIGURE_ENV=		ac_cv_prog_xmlto=minixmlto
+MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto \
+				rst2man:textproc/py-docutils
 MANPAGES_CONFIGURE_ENABLE=	xmlto
+MANPAGES_BINARY_ALIAS=		xmlto=minixmlto
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
