@@ -451,6 +451,7 @@
     SUBDIR += php73-imap
     SUBDIR += php74-imap
     SUBDIR += php80-imap
+    SUBDIR += php81-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer6
