@@ -1,3 +1,31 @@
+  <vuln vid="a4ff3673-d742-4b83-8c2b-3ddafe732034">
+    <topic>minio -- User privilege escalation</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>2021.12.27.07.23.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>minio developers report:</p>
+	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-j6jc-jqqc-p6cx">
+	  <p>AddUser() API endpoint was exposed to a legacy behavior. i.e it accepts a "policy" field</p>
+	  <p>This API is mainly used to create a user or update a user's password.</p>
+	  <p>However, a malicious client can hand-craft an HTTP API call that allows for updating Policy for a user and gaining higher privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43858</cvename>
+      <url>https://github.com/minio/minio/security/advisories/GHSA-j6jc-jqqc-p6cx</url>
+    </references>
+    <dates>
+      <discovery>2021-12-27</discovery>
+      <entry>2021-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed8a4215-675c-11ec-8dd4-a0f3c100ae18">
     <topic>Pillow -- Regular Expression Denial of Service (ReDoS)</topic>
     <affects>
