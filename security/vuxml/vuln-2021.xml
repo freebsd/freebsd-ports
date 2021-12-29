@@ -1,3 +1,50 @@
+  <vuln vid="937aa1d6-685e-11ec-a636-000c29061ce6">
+    <topic>OpenDMARC - Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opendmarc</name>
+	<range><lt>1.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenDMARC releases prior to 1.4.1 are susceptible to the following
+	vulnerabilities:</p>
+	<ul>
+	  <li>(CVE-2019-16378) OpenDMARC through 1.3.2 and 1.4.x through
+	    1.4.0-Beta1 is prone to a signature-bypass vulnerability with
+	    multiple From: addresses, which might affect applications that
+	    consider a domain name to be relevant to the origin of an e-mail
+	    message.</li>
+	  <li>(CVE-2019-20790) OpenDMARC through 1.3.2 and 1.4.x, when used
+	    with pypolicyd-spf 2.0.2, allows attacks that bypass SPF and DMARC
+	    authentication in situations where the HELO field is inconsistent
+	    with the MAIL FROM field.</li>
+	  <li>(CVE-2020-12272) OpenDMARC through 1.3.2 and 1.4.x allows
+	    attacks that inject authentication results to provide false
+	    information about the domain that originated an e-mail
+	    message.</li>
+	  <li>(CVE-2020-12460) OpenDMARC through 1.3.2 and 1.4.x through
+	    1.4.0-Beta1 has improper null termination in the function
+	    opendmarc_xml_parse that can result in a one-byte heap overflow in
+	    opendmarc_xml when parsing a specially crafted DMARC aggregate
+	    report. This can cause remote memory corruption.</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-16378</cvename>
+      <cvename>CVE-2019-20790</cvename>
+      <cvename>CVE-2020-12272</cvename>
+      <cvename>CVE-2020-12460</cvename>
+      <url>https://github.com/trusteddomainproject/OpenDMARC/blob/rel-opendmarc-1-4-1-1/RELEASE_NOTES</url>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4ff3673-d742-4b83-8c2b-3ddafe732034">
     <topic>minio -- User privilege escalation</topic>
     <affects>
