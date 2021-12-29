@@ -1,7 +1,7 @@
 PORTNAME=	lepton-eda
-PORTVERSION=	1.9.16
+PORTVERSION=	1.9.17
 CATEGORIES=	cad
-MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20210731/
+MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20211219/
 
 MAINTAINER=	graahnul.grom@gmail.com
 COMMENT=	Lepton Electronic Design Automation
@@ -15,12 +15,24 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libstroke.so:devel/libstroke \
 		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra \
-		libharfbuzz.so:print/harfbuzz
+		libharfbuzz.so:print/harfbuzz \
+		libffi.so:devel/libffi \
+		libunistring.so:devel/libunistring \
+		libgmp.so:math/gmp \
+		libltdl.so:devel/libltdl \
+		libfribidi.so:converters/fribidi \
+		libpcre.so:devel/pcre \
+		libgraphite2.so:graphics/graphite2 \
+		libexpat.so:textproc/expat2 \
+		libGLdispatch.so:graphics/libglvnd
 
 USES=		desktop-file-utils gettext-tools gnome \
 		groff:build libtool localbase makeinfo pathfix perl5 \
-		pkgconfig shared-mime-info shebangfix
-USE_GNOME=	cairo gtk20
+		pkgconfig shared-mime-info shebangfix iconv:wchar_t xorg
+USE_XORG=	xrender xinerama xi xrandr xcursor xext x11 \
+		xcomposite xdamage xfixes pixman xcb xau xdmcp
+USE_GNOME=	cairo gtk20 gdkpixbuf2
+USE_GL=	egl gl
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	utils/pcb_backannotate/lepton-pcb_backannotate \
