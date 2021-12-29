@@ -1,5 +1,6 @@
 PORTNAME=	openzfs
 PORTVERSION=	2021121500
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,9 +12,15 @@ LICENSE=	CDDL
 BROKEN_aarch64=	invokes x86 assembler
 BROKEN_riscv64=	fails to compile: btree_test.c:462:49: result of comparison of constant -1 with expression of type 'char' is always true
 
+BUILD_DEPENDS=	ksh93:shells/ksh93
 RUN_DEPENDS=	openzfs-kmod>=0:sysutils/openzfs-kmod
 
 USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:3.3+,build shebangfix
+SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
+SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
+		cmd/arcstat/arcstat.in \
+		cmd/dbufstat/dbufstat.in \
+		cmd/arc_summary/arc_summary*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-config="user"
@@ -45,7 +52,16 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sysctl>0:devel/py-sysctl@${PY_FLAVOR}
 .else
 CONFIGURE_ARGS+=	--without-python
+PYTHON_NO_DEPENDS=yes
 .endif
+
+post-extract:
+	# Change certain shebangs into something that shebang fix understands
+	cd ${WRKSRC} && sed -i '' '1s:@PYTHON_SHEBANG@:python3:' \
+		tests/test-runner/bin/zts-report.py.in \
+		tests/test-runner/bin/test-runner.py.in \
+		cmd/arcstat/arcstat.in \
+		cmd/dbufstat/dbufstat.in
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

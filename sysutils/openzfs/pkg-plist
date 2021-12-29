@@ -448,6 +448,7 @@ man/man8/zfs-userspace.8.gz
 man/man8/zfs-wait.8.gz
 man/man8/zfs.8.gz
 man/man8/zfs_ids_to_path.8.gz
+man/man8/zgenhostid.8.gz
 man/man8/zinject.8.gz
 man/man8/zpool-add.8.gz
 man/man8/zpool-attach.8.gz
