@@ -1,6 +1,5 @@
 bin/gegl
 bin/gegl-imgcmp
-include/gegl-%%GEGL_VER%%/ctx.h
 include/gegl-%%GEGL_VER%%/gegl-apply.h
 include/gegl-%%GEGL_VER%%/gegl-audio-fragment.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-backend.h
