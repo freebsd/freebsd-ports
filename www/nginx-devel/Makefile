@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME?=	nginx
-PORTVERSION=	1.21.4
-PORTREVISION=	1
+PORTVERSION=	1.21.5
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -154,7 +153,7 @@ HTTP_PERL_VARS=			DSO_BASEMODS+=http_perl_module
 HTTP_RANDOM_INDEX_CONFIGURE_ON=	--with-http_random_index_module
 HTTP_REALIP_CONFIGURE_ON=	--with-http_realip_module
 HTTP_REWRITE_LIB_DEPENDS=	libpcre.so:devel/pcre
-HTTP_REWRITE_CONFIGURE_ON=	--with-pcre
+HTTP_REWRITE_CONFIGURE_ON=	--with-pcre --without-pcre2
 HTTP_REWRITE_CONFIGURE_OFF=	--without-http_rewrite_module
 HTTP_SECURE_LINK_CONFIGURE_ON=	--with-http_secure_link_module
 HTTP_SLICE_CONFIGURE_ON=	--with-http_slice_module
@@ -307,7 +306,9 @@ pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
 do-configure-NJS-on:
-	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} )
+	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --no-pcre2 \
+		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} njs \
+		&& ${MV} build/njs ${WRKSRC_njs} )
 
 .if !target(do-install)
 do-install:
@@ -344,7 +345,7 @@ do-install-NAXSI-on:
 	${STAGEDIR}${ETCDIR}
 
 do-install-NJS-on:
-	${INSTALL_PROGRAM} ${WRKSRC_njs}/build/njs ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC_njs}/njs ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 .if !target(post-install)
