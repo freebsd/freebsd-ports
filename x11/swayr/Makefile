@@ -1,7 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -22,8 +21,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		clap-3.0.0-rc.5 \
-		clap_derive-3.0.0-rc.5 \
+		clap-3.0.0-rc.9 \
+		clap_derive-3.0.0-rc.9 \
 		directories-4.0.1 \
 		dirs-sys-0.3.6 \
 		getrandom-0.2.3 \
@@ -39,8 +38,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ppv-lite86-0.2.15 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.34 \
-		quote-1.0.10 \
+		proc-macro2-1.0.36 \
+		quote-1.0.14 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
@@ -50,13 +49,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		ryu-1.0.9 \
-		serde-1.0.131 \
-		serde_derive-1.0.131 \
+		serde-1.0.132 \
+		serde_derive-1.0.132 \
 		serde_json-1.0.73 \
 		strsim-0.10.0 \
-		swayipc-3.0.0-alpha.3 \
-		swayipc-types-1.0.0-alpha.3 \
-		syn-1.0.82 \
+		swayipc-3.0.0 \
+		swayipc-types-1.0.0 \
+		syn-1.0.84 \
 		termcolor-1.1.2 \
 		textwrap-0.14.2 \
 		thiserror-1.0.30 \
@@ -64,7 +63,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		toml-0.5.8 \
 		unicode-segmentation-1.8.0 \
 		unicode-xid-0.2.2 \
-		version_check-0.9.3 \
+		version_check-0.9.4 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
