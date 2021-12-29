@@ -1,56 +1,20 @@
---- CMakeLists.txt.orig	2021-07-17 05:26:07 UTC
+--- CMakeLists.txt.orig	2021-12-24 20:26:54 UTC
 +++ CMakeLists.txt
-@@ -814,15 +814,7 @@ endif()
- 
- # Stratagus needs to have char by default signed
- # No idea how to tell this to other compilers
--if(CMAKE_COMPILER_IS_GNUCXX)
--	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char -Werror")
--endif()
--if(CMAKE_COMPILER_IS_GNUC)
--	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsigned-char")
--endif()
--if(WIN32 AND MSVC)
--	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
--endif()
-+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char")
- 
- if(CMAKE_BUILD_TYPE STREQUAL "Profile")
-         find_package(coz-profiler)
-@@ -1195,22 +1187,20 @@ endif()
+@@ -1238,7 +1238,6 @@ endif()
  install(TARGETS stratagus DESTINATION ${GAMEDIR})
  install(TARGETS png2stratagus DESTINATION ${BINDIR})
  
 -if(ENABLE_DOC AND DOXYGEN_FOUND)
--	install(FILES doc/stratagus.6 DESTINATION ${MANDIR})
--	install(FILES
--		doc/development.html
--		doc/faq.html
--		doc/gpl.html
--		doc/guichan-copyright.txt
--		doc/changelog.html
--		doc/index.html
--		doc/install.html
--		doc/media.html
--		doc/README-SDL.txt
--		DESTINATION share/doc/stratagus
--	)
+ 	install(FILES doc/stratagus.6 DESTINATION ${MANDIR})
+ 	install(FILES
+ 		doc/development.html
+@@ -1252,8 +1251,7 @@ if(ENABLE_DOC AND DOXYGEN_FOUND)
+ 		doc/README-SDL.txt
+ 		DESTINATION share/doc/stratagus
+ 	)
 -	install(DIRECTORY doc/graphics doc/scripts ${CMAKE_CURRENT_BINARY_DIR}/doxygen DESTINATION ${DOCDIR})
 -endif(ENABLE_DOC AND DOXYGEN_FOUND)
-+install(FILES doc/stratagus.6 DESTINATION ${MANDIR})
-+install(FILES
-+	doc/development.html
-+	doc/faq.html
-+	doc/gpl.html
-+	doc/guichan-copyright.txt
-+	doc/changelog.html
-+	doc/index.html
-+	doc/install.html
-+	doc/media.html
-+	doc/README-SDL.txt
-+	DESTINATION share/doc/stratagus
-+)
-+install(DIRECTORY doc/graphics doc/scripts DESTINATION ${DOCDIR})
++	install(DIRECTORY doc/graphics doc/scripts DESTINATION ${DOCDIR})
  
  if(ENABLE_DEV)
  	install(FILES ${gameheaders_HDRS} DESTINATION ${STRATAGUS_HEADERS})
