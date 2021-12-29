@@ -12,12 +12,13 @@ COMMENT=	Implementation of Julia, a language for technical computing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 
 MY_DEPENDS=	7z:archivers/p7zip
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
-		cmake:devel/cmake ${MY_DEPENDS}
+		cmake:devel/cmake \
+		${MY_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
@@ -31,7 +32,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopenlibm.so:math/openlibm
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=	gmake compiler:c++14-lang fortran python perl5 \
+USES=		gmake compiler:c++14-lang fortran python perl5 \
 		shebangfix blaslapack:openblas
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
@@ -40,13 +41,13 @@ CFLAGS+=	-fpic
 
 SHEBANG_GLOB=	*.sh
 
-WRKSRC=	${WRKDIR}/julia-${DISTVERSION}
-MANDIRS+=	${PREFIX}/share/man/man1
+WRKSRC=		${WRKDIR}/julia-${DISTVERSION}
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install
 TEST_TARGET=	test
 
+PORTDOCS=	html
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 CXXFLAGS+=	-std=c++14
@@ -73,32 +74,31 @@ MAKE_ARGS+=	NO_GIT=1 \
 		USE_SYSTEM_CSL=1 \
 		USE_SYSTEM_LIBUNWIND=1
 
-OPTIONS_DEFINE=	DEBUG DOCS NATIVE GPL_LIBS
+OPTIONS_DEFINE=		DEBUG DOCS NATIVE GPL_LIBS
 OPTIONS_DEFAULT=	DOCS GPL_LIBS
-OPTIONS_SUB=	yes
-DEBUG_MAKE_ARGS+=	FORCE_ASSERTIONS=1 \
+OPTIONS_SUB=		yes
+
+DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
 			ALL_TARGET=all \
 			BUNDLE_DEBUG_LIBS=1
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
-PORTDOCS=	html
-DOCS_VARS=	INSTALL_TARGET+=install-docs
+DOCS_VARS=		INSTALL_TARGET+=install-docs
 
-GPL_LIBS_DESC=	Build with GPL lib: SUITESPARSE
-GPL_LIBS_LIB_DEPENDS=		libspqr.so:math/suitesparse-spqr \
-		libumfpack.so:math/suitesparse-umfpack
+GPL_LIBS_DESC=		Build with GPL library suitesparse
+GPL_LIBS_LIB_DEPENDS=	libspqr.so:math/suitesparse-spqr \
+			libumfpack.so:math/suitesparse-umfpack
 GPL_LIBS_MAKE_ARGS=	USE_SYSTEM_LIBSUITESPARSE=1 \
-						USE_GPL_LIBS=1
+			USE_GPL_LIBS=1
 
 NATIVE_DESC=		Build with native CPU JIT tuning
-NATIVE_MAKE_ARGS+=	MARCH=native
+NATIVE_MAKE_ARGS=	MARCH=native
 
 post-patch:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
 	# unset ARCH for auto-detection
 	# Julia build script uses the name x86_86/x86, which are different from ports framework
 	echo "ARCH=" >> ${WRKSRC}/Make.user
-	echo "LIBBLAS= -lopenblas -L${LOCALBASE}/lib" >> ${WRKSRC}/Make.user
+	echo "LIBBLAS=-lopenblas -L${LOCALBASE}/lib" >> ${WRKSRC}/Make.user
 	echo "LIBBLASNAME=libopenblas" >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACK= $$(LIBBLAS)' >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACKNAME= $$(LIBBLASNAME)' >> ${WRKSRC}/Make.user
@@ -111,8 +111,6 @@ post-configure:
 	) || ( \
 		echo "USE_BLAS64=0" >> ${WRKSRC}/Make.user \
 	)
-do-install-DOCS-off:
-	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
 
 post-install:
 	# clean up for Pkg3.jl
@@ -122,6 +120,11 @@ post-install:
 .for dir in Statistics SuiteSparse ArgTools Pkg Downloads LibCURL NetworkOptions Tar
 	${RM} -fr ${STAGEDIR}${PREFIX}/share/julia/stdlib/v${PORTVERSION:R}/${dir}/.github/
 .endfor
+
+post-install-DOCS-off:
+	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
+
+post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
 .for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libz.so* libLLVM* sys.so
