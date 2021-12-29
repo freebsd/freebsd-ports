@@ -15920,7 +15920,6 @@ graphics/sk1libs||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstrea
 graphics/uniconvertor||2021-01-02|Has expired: Uses deprecated version of python
 games/dangerdeep||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/dangerdeep-data||2021-01-02|Removed, useless without games/dangerdeep
-lang/julia||2021-01-02|Removed, useless without any consumers
 lang/julia10||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 lang/spidermonkey24||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 mail/getmail||2021-01-02|Has expired: Uses deprecated version of python

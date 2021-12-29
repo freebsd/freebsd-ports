@@ -143,6 +143,7 @@
     SUBDIR += jimtcl
     SUBDIR += jpm
     SUBDIR += jruby
+    SUBDIR += julia
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += kf5-kross
