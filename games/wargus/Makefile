@@ -1,7 +1,7 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
 
 PORTNAME=	wargus
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
