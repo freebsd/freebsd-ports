@@ -1,5 +1,6 @@
 PORTNAME=	librist
 DISTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

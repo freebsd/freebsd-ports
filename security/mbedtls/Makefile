@@ -1,26 +1,24 @@
 PORTNAME=	mbedtls
-PORTVERSION=	2.16.12
+PORTVERSION=	2.28.0
 DISTVERSIONPREFIX=${PORTNAME}-
 CATEGORIES=	security devel
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SSL/TLS and cryptography library
 
-LICENSE=	APACHE20 GPLv2+
-LICENSE_COMB=	dual
-LICENSE_FILE_APACHE20=	${WRKSRC}/apache-2.0.txt
-LICENSE_FILE_GPLv2+ =	${WRKSRC}/gpl-2.0.txt
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake python:test shebangfix
+SHEBANG_FILES=	scripts/*.py tests/scripts/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ARMmbed
 
 ALL_TARGET=	no_test
 TEST_TARGET=	test
-MAKE_ENV=	SHARED=1
-USES=		gmake tar:tgz
+MAKE_ENV=	PYTHON=${PYTHON_CMD} SHARED=1
 USE_LDCONFIG=	yes
-
-CONFLICTS_INSTALL=	polarssl13
 
 post-patch:
 	@${RM} ${WRKSRC}/include/mbedtls/*.orig
@@ -31,8 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} 's/-fpic//' ${WRKSRC}/library/Makefile
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/bin -type f -not -name \
-		mbedtls_udp_proxy_wrapper.sh -exec ${STRIP_CMD} {} +
+	${FIND} ${STAGEDIR}${PREFIX}/bin -type f -not -name \*.sh \
+		-exec ${STRIP_CMD} {} +
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

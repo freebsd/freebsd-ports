@@ -1,5 +1,6 @@
 PORTNAME=	sayaka
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	sue@iwmt.org
