@@ -2,13 +2,13 @@
 # Port uses concurrent, which creates nose2-X.Y-X.Y
 # duplicate suffix
 
---- setup.py.orig	2019-04-02 15:52:32 UTC
+--- setup.py.orig	2021-12-28 13:51:49 UTC
 +++ setup.py
-@@ -41,7 +41,6 @@ setup(
+@@ -38,7 +38,6 @@ setup(
      entry_points={
          "console_scripts": [
              "nose2 = nose2:discover",
--            "nose2-%s.%s = nose2:discover" % (py_version.major, py_version.minor),
+-            "nose2-%s = nose2:discover" % PY_VERSION,
          ]
      },
      test_suite="unittest.collector",
