@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	unleash
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
