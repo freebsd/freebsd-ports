@@ -248,7 +248,7 @@ NJS_GH_TUPLE=		nginx:njs:0.7.1:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 NJS_USES=		libedit
 
-OPENTRACING_GH_TUPLE=		opentracing-contrib:nginx-opentracing:842d21f:opentracing
+OPENTRACING_GH_TUPLE=		opentracing-contrib:nginx-opentracing:4984aab:opentracing
 OPENTRACING_LIB_DEPENDS=	libopentracing.so:devel/libopentracing
 OPENTRACING_VARS=		DSO_EXTMODS+=opentracing OPENTRACING_SUBDIR=/opentracing
 OPENTRACING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-opentracing-opentracing-config
