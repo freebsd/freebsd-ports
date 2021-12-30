@@ -169,7 +169,7 @@ HTTP_RESPONSE_VARS=		DSO_EXTDIRS+=ngx_http_response-0.3
 
 HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
 
-HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:b8a71ea:subs_filter
+HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:c6f825f:subs_filter
 HTTP_SUBS_FILTER_VARS=		DSO_EXTMODS+=subs_filter
 
 HTTP_TARANTOOL_LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck \
