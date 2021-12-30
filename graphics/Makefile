@@ -115,6 +115,7 @@
     SUBDIR += curator
     SUBDIR += cuttlefish
     SUBDIR += darktable
+    SUBDIR += darktable38
     SUBDIR += dataplot
     SUBDIR += dbow2
     SUBDIR += dc20pack
