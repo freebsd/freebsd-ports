@@ -1,12 +1,12 @@
---- Cargo.toml.orig	2021-09-14 11:26:55 UTC
+--- Cargo.toml.orig	2021-11-05 20:28:24 UTC
 +++ Cargo.toml
-@@ -69,8 +69,7 @@ rta = []
+@@ -71,8 +71,7 @@ aspa = []
  multi-user = [ "basic-cookies", "jmespatch/sync", "regex", "oso", "openidconnect", "rpassword", "scrypt", "unicode-normalization", "urlparse" ]
  ui-tests = []
  extra-debug = [ "rpki/extra-debug" ]
 -static-openssl = [ "openssl/vendored" ]
--all-except-ui-tests = [ "multi-user", "rta", "static-openssl" ]
-+all-except-ui-tests = [ "multi-user", "rta"]
+-all-except-ui-tests = [ "multi-user", "rta", "static-openssl", "aspa" ]
++all-except-ui-tests = [ "multi-user", "rta", "aspa" ]
+ hsm = []
  
  # Make sure that Krill crashes on panics, rather than losing threads and
- # limping on in a bad state.
