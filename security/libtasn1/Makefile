@@ -13,7 +13,7 @@ LICENSE=	LGPL21+ GPLv3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool pathfix pkgconfig compiler
+USES=		cpe libtool pathfix pkgconfig
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -30,15 +30,8 @@ INFO=		libtasn1
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 DOCS_BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
 
-.include <bsd.port.pre.mk>
-
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=252548
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 100
-CFLAGS:=		${CFLAGS:C/-O[2-9]/-O1/g}
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
