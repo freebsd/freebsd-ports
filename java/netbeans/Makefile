@@ -1,7 +1,7 @@
 # Created by: olgeni@FreeBSD.org
 
 PORTNAME=	netbeans
-DISTVERSION=	12.3
+DISTVERSION=	12.6
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/netbeans/netbeans/${PORTVERSION}/
 DISTNAME=	netbeans-${DISTVERSION}-bin
@@ -17,7 +17,7 @@ USES=		cpe shebangfix zip
 CPE_VENDOR=	apache
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	11+
 NO_BUILD=	yes
 
 SHEBANG_FILES=	extide/ant/bin/antRun.pl \
@@ -28,7 +28,7 @@ SHEBANG_FILES=	extide/ant/bin/antRun.pl \
 perl_OLD_CMD=	/usr/bin/perl
 perl_CMD=	${LOCALBASE}/bin/perl
 python_OLD_CMD=	/usr/bin/python
-python_CMD=	${LOCALBASE}/bin/python2.7
+python_CMD=	${LOCALBASE}/bin/python${PYTHON_DEFAULT}
 
 WRKSRC=		${WRKDIR}/netbeans
 DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
@@ -38,7 +38,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 DESKTOP_ENTRIES="Apache NetBeans" \
 		"Apache NetBeans IDE (incubating)" \
 		${DATADIR}/nb/netbeans.png \
-		${PORTNAME}-${PORTVERSION} \
+		${PORTNAME} \
 		"Development;" \
 		false
 
@@ -49,7 +49,8 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
-	cd ${STAGEDIR}${PREFIX} && ${LN} -sf ${DATADIR}/bin/netbeans bin/${PORTNAME}-${PORTVERSION}
+	cd ${STAGEDIR}${PREFIX} && ${LN} -sf ../${PORTNAME}-${PORTVERSION}/bin/netbeans bin/${PORTNAME}
+	cd ${STAGEDIR}${PREFIX} && ${LN} -sf ../${PORTNAME}-${PORTVERSION}/bin/netbeans bin/${PORTNAME}-${PORTVERSION}
 	${RM} -rf ${STAGEDIR}${DATADIR}/profiler/lib/deployed/jdk16/linux-arm*
 
 .include <bsd.port.mk>
