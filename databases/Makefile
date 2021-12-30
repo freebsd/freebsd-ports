@@ -775,6 +775,7 @@
     SUBDIR += py-cassandra-driver
     SUBDIR += py-caterva
     SUBDIR += py-couchdb
+    SUBDIR += py-databases
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-fakeredis
