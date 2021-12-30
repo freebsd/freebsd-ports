@@ -2,27 +2,29 @@
 
 # PROVIDE: consul_template
 # REQUIRE: NETWORKING SERVERS DAEMON
-# KEYWORD: shtudown
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# consul_template_enable (bool):        Set to NO by default.
-#                                          Set it to YES to enable consul-template.
-# consul_template_user (user):          Set user to run consul-template.
-#                                          Default is "root".
-# consul_template_group (group):        Set group to run consul-template.
-#                                          Default is "wheel".
-# consul_template_env (string):         Set environment variables used with consul-template.
-#                                          Default is "".
-# consul_template_args (string):        Set flags used with consul-template.
-#                                          Default is "".
-# consul_template_syslog_output_enable (string): Set to YES to enable syslog output
-#						Default is "NO". See daemon(8).
-# consul_template_syslog_output_priority (str):	Set syslog priority if syslog enabled.
-#						Default is "info". See daemon(8).
-# consul_template_syslog_output_facility (str):	Set syslog facility if syslog enabled.
-#						Default is "daemon". See daemon(8).
+# consul_template_enable (bool):			Set to NO by default.
+#							Set it to YES to enable consul-template.
+# consul_template_user (user):				Set user to run consul-template.
+#							Default is "root".
+# consul_template_group (group):			Set group to run consul-template.
+#							Default is "wheel".
+# consul_template_env (string):				Set environment variables used with consul-template.
+#							Default is "".
+# consul_template_args (string):			Set flags used with consul-template.
+#							Default is "".
+# consul_template_syslog_output_enable (string):	Set to YES to enable syslog output
+#							Default is "NO". See daemon(8).
+# consul_template_syslog_output_tag (str):		Set syslog tag if syslog enabled.
+#							Default is "consul-template". See daemon(8).
+# consul_template_syslog_output_priority (str):		Set syslog priority if syslog enabled.
+#							Default is "info". See daemon(8).
+# consul_template_syslog_output_facility (str):		Set syslog facility if syslog enabled.
+#							Default is "daemon". See daemon(8).
 
 . /etc/rc.subr
 
@@ -34,12 +36,16 @@ load_rc_config $name
 : ${consul_template_enable:="NO"}
 : ${consul_template_user:="root"}
 : ${consul_template_group:="wheel"}
-: ${consul_template_env:=""}
-: ${consul_template_args:=""}
 : ${consul_template_syslog_output_enable:="NO"}
 
+start_precmd="consul_template_start_precmd"
+
 if checkyesno consul_template_syslog_output_enable; then
-	consul_template_syslog_output_flags="-T ${name}"
+	if [ -n "${consul_template_syslog_output_tag}" ]; then
+		consul_template_syslog_output_flags="-T ${consul_template_syslog_output_tag}"
+	else
+		consul_template_syslog_output_flags="-T ${name}"
+	fi
 	if [ -n "${consul_template_syslog_output_priority}" ]; then
 		consul_template_syslog_output_flags="${consul_template_syslog_output_flags} -s ${consul_template_syslog_output_priority}"
 	fi
@@ -49,19 +55,17 @@ if checkyesno consul_template_syslog_output_enable; then
 	fi
 fi
 
-pidfile=/var/run/consul-template.pid
+pidfile="/var/run/consul-template.pid"
 procname="%%PREFIX%%/bin/consul-template"
 command="/usr/sbin/daemon"
 command_args="-f -t ${name} ${consul_template_syslog_output_flags} -p ${pidfile} /usr/bin/env ${consul_template_env} ${procname} -config=%%PREFIX%%/etc/consul-template.d ${consul_template_args}"
 sig_stop="INT"
 
-start_precmd=consul_template_startprecmd
-
-consul_template_startprecmd()
+consul_template_start_precmd()
 {
-    if [ ! -e ${pidfile} ]; then
-        install -o ${consul_template_user} -g ${consul_template_group} /dev/null ${pidfile}
-    fi
+	if [ ! -e ${pidfile} ]; then
+		install -m 0600 -o ${consul_template_user} -g ${consul_template_group} /dev/null "${pidfile}"
+	fi
 }
 
 run_rc_command "$1"

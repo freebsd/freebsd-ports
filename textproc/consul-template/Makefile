@@ -1,5 +1,5 @@
 PORTNAME=	consul-template
-PORTVERSION=	0.27.1
+PORTVERSION=	0.27.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -18,10 +18,10 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT/src/g
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:7f63de1d35b0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:0a1ea396d57c:golang_net/vendor/golang.org/x/net \
+		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
 		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:fdedc70b468f:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		hashicorp:consul:v0.4.1:hashicorp_consul_sdk/vendor/github.com/hashicorp/consul/sdk \
@@ -58,12 +58,12 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT/src/g
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify
 
+USE_RC_SUBR=	consul-template
+
 GO_BUILDFLAGS=	-ldflags='\
 		-s -w -X github.com/hashicorp/consul-template/version.Name=${PORTNAME} \
 		-X github.com/hashicorp/consul-template/version.GitCommit=release'
 PLIST_FILES=	bin/consul-template
-
-USE_RC_SUBR=	consul-template
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault/api
