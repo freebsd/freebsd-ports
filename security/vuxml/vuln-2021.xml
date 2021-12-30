@@ -1,3 +1,38 @@
+  <vuln vid="c1b2b492-6999-11ec-a50c-001cc0382b2f">
+    <topic>Mbed TLS -- Potential double-free after an out of memory error</topic>
+    <affects>
+      <package>
+	<name>mbedtls</name>
+	<range><lt>2.16.12</lt></range>
+	<range><ge>2.17.0</ge><lt>2.28.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Manuel Pégourié-Gonnard reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2021-12">
+	  <p>If mbedtls_ssl_set_session() or mbedtls_ssl_get_session() were to
+	    fail with MBEDTLS_ERR_SSL_ALLOC_FAILED (in an out of memory
+	    condition), then calling mbedtls_ssl_session_free() and
+	    mbedtls_ssl_free() in the usual manner would cause an internal
+	    session buffer to be freed twice, due to two structures both having
+	    valid pointers to it after a call to ssl_session_copy().</p>
+	  <p>An attacker could potentially trigger the out of memory condition,
+	    and therefore use this bug to create memory corruption, which could
+	    then be further exploited or targetted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44732</cvename>
+      <url>https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2021-12</url>
+    </references>
+    <dates>
+      <discovery>2021-12-14</discovery>
+      <entry>2021-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ede832bf-6576-11ec-a636-000c29061ce6">
     <topic>OpenDMARC - Remote denial of service</topic>
     <affects>
