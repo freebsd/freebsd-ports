@@ -1,28 +1,31 @@
 @sample etc/wifibox/bhyve.conf.sample
+@sample etc/wifibox/core.conf.sample
 @sample etc/wifibox/interfaces.conf.sample
 @sample etc/wifibox/udhcpd.conf.sample
 @sample etc/wifibox/wpa_supplicant.conf.sample
 @sample etc/devd/wifibox.conf.sample
 etc/rc.d/wifibox
+man/man5/wifibox-alpine.5.gz
+man/man5/wifibox-guest.5.gz
 man/man8/wifibox.8.gz
 sbin/wifibox
 share/wifibox/device.map
 share/wifibox/grub.cfg
 share/wifibox/disk.img
-@preunexec /usr/bin/find /var/log/wifibox -type f -delete
+@preexec /usr/bin/touch /var/log/wifibox.log
+@preunexec /bin/rm -f /var/log/wifibox.log
 @preunexec /usr/bin/find /var/run/wifibox -type f -delete
 @preunexec /usr/bin/find /var/run/wifibox -type l -exec /bin/rm -f {} \;
-@dir /var/log/wifibox
 @dir /var/run/wifibox/appliance/cache
 @dir /var/run/wifibox/appliance/empty
 @dir /var/run/wifibox/appliance/lib/apk
-@dir /var/run/wifibox/appliance/lib/chrony
+@dir(squid,quagga,) /var/run/wifibox/appliance/lib/chrony
 @dir /var/run/wifibox/appliance/lib/iptables
 @dir /var/run/wifibox/appliance/lib/misc
 @dir /var/run/wifibox/appliance/lib/udhcpd
 @dir /var/run/wifibox/appliance/lib
 @dir /var/run/wifibox/appliance/local
-@dir /var/run/wifibox/appliance/log/chrony
+@dir(squid,quagga,) /var/run/wifibox/appliance/log/chrony
 @dir /var/run/wifibox/appliance/log
 @dir /var/run/wifibox/appliance/mail
 @dir /var/run/wifibox/appliance/opt
