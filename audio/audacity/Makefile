@@ -2,7 +2,7 @@
 
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.1.2
+DISTVERSION=	3.1.3
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	conan:sysutils/conan
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libexpat.so:textproc/expat2 \
 		libmp3lame.so:audio/lame \
+		libopus.so:audio/opus \
 		libportaudio.so:audio/portaudio \
 		libportmidi.so:audio/portmidi \
 		libsndfile.so:audio/libsndfile \
