@@ -19,6 +19,7 @@ bin/mbedtls_generic_sum
 bin/mbedtls_hello
 bin/mbedtls_key_app
 bin/mbedtls_key_app_writer
+bin/mbedtls_load_roots
 bin/mbedtls_mini_client
 bin/mbedtls_mpi_demo
 bin/mbedtls_pem2der
