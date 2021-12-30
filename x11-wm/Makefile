@@ -24,6 +24,7 @@
     SUBDIR += cwm
     SUBDIR += devilspie
     SUBDIR += durden
+    SUBDIR += dwl
     SUBDIR += dwm
     SUBDIR += e16
     SUBDIR += e16-docs

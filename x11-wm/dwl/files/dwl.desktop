@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=dwl
+Exec=dwl
+TryExec=dwl
+Icon=
+Type=Application
+DesktopNames=wlroots
