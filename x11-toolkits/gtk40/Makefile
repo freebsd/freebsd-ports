@@ -1,5 +1,5 @@
 PORTNAME=	gtk
-PORTVERSION=	4.4.1
+PORTVERSION=	4.6.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -14,6 +14,8 @@ PORTSCOUT=	limit:1,even
 
 BUILD_DEPENDS=	sassc>0:textproc/sassc
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -22,8 +24,8 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme
 
-USES=		compiler:c11 cpe gettext gnome localbase meson ninja \
-		pathfix perl5 python:3.7+ pkgconfig tar:xz
+USES=		compiler:c11 cpe gettext gnome jpeg localbase meson \
+		ninja pathfix perl5 python:3.7+ pkgconfig tar:xz
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -33,7 +35,7 @@ LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LIBVERSION=	1.400.1
+LIBVERSION=	1.600.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \

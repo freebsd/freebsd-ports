@@ -36,6 +36,7 @@ include/gtk-4.0/gdk/gdkdrag.h
 include/gtk-4.0/gdk/gdkdragsurface.h
 include/gtk-4.0/gdk/gdkdrawcontext.h
 include/gtk-4.0/gdk/gdkdrop.h
+include/gtk-4.0/gdk/gdkenums.h
 include/gtk-4.0/gdk/gdkenumtypes.h
 include/gtk-4.0/gdk/gdkevents.h
 include/gtk-4.0/gdk/gdkframeclock.h
@@ -88,7 +89,6 @@ include/gtk-4.0/gdk/gdkvulkancontext.h
 %%X11%%include/gtk-4.0/gdk/x11/gdkx11utils.h
 %%BROADWAY%%include/gtk-4.0/gsk/broadway/gskbroadwayrenderer.h
 include/gtk-4.0/gsk/gl/gskglrenderer.h
-include/gtk-4.0/gsk/gl/gsknglrenderer.h
 include/gtk-4.0/gsk/gsk-autocleanup.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
@@ -328,6 +328,7 @@ include/gtk-4.0/gtk/gtkstringsorter.h
 include/gtk-4.0/gtk/gtkstylecontext.h
 include/gtk-4.0/gtk/gtkstyleprovider.h
 include/gtk-4.0/gtk/gtkswitch.h
+include/gtk-4.0/gtk/gtksymbolicpaintable.h
 include/gtk-4.0/gtk/gtktestatcontext.h
 include/gtk-4.0/gtk/gtktestutils.h
 include/gtk-4.0/gtk/gtktext.h
