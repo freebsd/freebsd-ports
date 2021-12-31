@@ -1,7 +1,7 @@
 # Created by: Matthew Seaman
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.2.6.2
+PORTVERSION=	1.2.6.3
 CATEGORIES=	net www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
