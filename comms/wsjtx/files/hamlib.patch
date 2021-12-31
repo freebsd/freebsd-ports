@@ -1,28 +1,62 @@
---- hamlib/configure.ac.orig	2019-02-24 18:41:47.000000000 -0500
-+++ hamlib/configure.ac	2019-04-15 12:40:39.767084000 -0400
-@@ -270,7 +270,7 @@
+--- hamlib/configure.ac.orig	2021-11-03 20:39:16.000000000 -0400
++++ hamlib/configure.ac	2021-12-28 12:12:44.629890000 -0500
+@@ -269,7 +269,7 @@
  dnl The host_os variable is set by the AC_CANONICAL_HOST macro above.
  AS_CASE(["$host_os"],
      [freebsd*], [
--        AM_CPPFLAGS="-I/usr/local/include ${AM_CPPFLAGS}"
-+        AM_CPPFLAGS="${AM_CPPFLAGS} -I/usr/local/include"
-         AM_LDFLAGS="${AM_LDFLAGS} -L/usr/local/lib"
-         AC_SUBST([AM_LDFLAGS])],
+-	AM_CPPFLAGS="-I/usr/local/include ${AM_CPPFLAGS}"
++	AM_CPPFLAGS="${AM_CPPFLAGS} -I/usr/local/include"
+ 	AM_LDFLAGS="${AM_LDFLAGS} -L/usr/local/lib"
+ 	AC_SUBST([AM_LDFLAGS])],
  
 @@ -317,6 +317,7 @@
- 
  AC_MSG_RESULT([$cf_with_libusb])
+ AM_CONDITIONAL([HAVE_LIBUSB], [test x"${cf_with_libusb}" = "xyes"])
  
 +LIBUSB_LIBS="-lusb"
  LIBUSB=""
  AC_ARG_VAR([LIBUSB_CFLAGS], [C compiler flags for libusb, overriding configure defaults])
  AC_ARG_VAR([LIBUSB_LIBS], [linker flags for libusb, overriding configure check (useful for specifying static libusb-1.0.a (see INSTALL))])
---- hamlib/hamlib.pc.in.orig	2019-04-15 13:06:46.078042000 -0400
-+++ hamlib/hamlib.pc.in	2019-04-15 13:06:59.695694000 -0400
-@@ -9,5 +9,5 @@
+--- hamlib/hamlib.pc.in.orig	2021-11-03 20:39:16.000000000 -0400
++++ hamlib/hamlib.pc.in	2021-12-28 12:19:09.120541000 -0500
+@@ -7,7 +7,6 @@
+ Description: Library to control radio and rotator equipment.
+ URL: @PACKAGE_URL@
  Version: @PACKAGE_VERSION@
- Requires.private: @LIBUSB@
+-Requires.private: @LIBUSB@
  Cflags: -I${includedir} @PTHREAD_CFLAGS@
 -Libs: -L${libdir} -lhamlib
+-Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@
 +Libs: -L${libdir} ${libdir}/libhamlib.a
- Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@
++Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ -lusb
+--- hamlib/tests/rigtestlibusb.c.orig	2021-11-03 20:39:16.000000000 -0400
++++ hamlib/tests/rigtestlibusb.c	2021-12-28 12:12:44.630778000 -0500
+@@ -115,7 +115,10 @@
+     printf("      wSpeedSupported:       %u\n", ss_usb_cap->wSpeedSupported);
+     printf("      bFunctionalitySupport: %u\n", ss_usb_cap->bFunctionalitySupport);
+     printf("      bU1devExitLat:         %u\n", ss_usb_cap->bU1DevExitLat);
+-    printf("      bU2devExitLat:         %u\n", ss_usb_cap->bU2DevExitLat);
++/*
++ * does not exist on FreeBSD libusb.h yet
++ *    printf("      bU2devExitLat:         %u\n", ss_usb_cap->bU2DevExitLat);
++ */
+ }
+ 
+ static void print_bos(libusb_device_handle *handle)
+@@ -133,6 +136,7 @@
+ 
+     printf("  Binary Object Store (BOS):\n");
+     printf("    wTotalLength:            %u\n", bos->wTotalLength);
++#if 0
+     printf("    bNumDeviceCaps:          %u\n", bos->bNumDeviceCaps);
+ 
+     for (i = 0; i < bos->bNumDeviceCaps; i++)
+@@ -170,7 +174,7 @@
+             libusb_free_ss_usb_device_capability_descriptor(ss_dev_cap);
+         }
+     }
+-
++#endif
+     libusb_free_bos_descriptor(bos);
+ }
+ 

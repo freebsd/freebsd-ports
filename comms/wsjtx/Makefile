@@ -1,6 +1,5 @@
 PORTNAME=	wsjtx
-DISTVERSION=	2.1.2
-PORTREVISION=	3
+DISTVERSION=	2.5.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -13,21 +12,21 @@ BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		autoconf>=2.69:devel/autoconf \
 		automake>=1.16.1:devel/automake \
 		a2x:textproc/asciidoc \
+		git:devel/git \
 		libtool:devel/libtool \
 		${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
+		libboost_log_setup.so:devel/boost-libs \
 		libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++11-lib fortran gl \
-		makeinfo pkgconfig qt:5 tar:tgz
+USES=	cmake:noninja compiler:c++11-lang fortran gl libedit \
+		makeinfo pkgconfig qt:5 readline tar:tgz
 USE_GL=		glu
 USE_QT=		core gui network widgets \
 		multimedia concurrent printsupport serialport sql sql-sqlite3 \
-		buildtools_build linguisttools_build qmake_build
+		buildtools_build linguisttools_build qmake_build testlib
 
-CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
-		-DLOCALBASE::STRING="${LOCALBASE}"
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=   --debug-output --trace
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
@@ -40,6 +39,23 @@ _PATCHES=	wsjtx.patch hamlib.patch
 # workaround for More actual than formal arguments in procedure call at (1)
 FFLAGS+=	-fallow-argument-mismatch
 .endif
+
+_HAMLIB_PATCHES=	configure.ac hamlib.pc.in tests/rigtestlibusb.c
+make-hamlib-patch:
+	${MV} ${FILESDIR}/hamlib.patch ${FILESDIR}/hamlib.patch.old
+. for f in ${_HAMLIB_PATCHES}
+	(cd ${WRKDIR}/.build/hamlib-prefix/src;diff -u hamlib/$f.orig hamlib/$f >> ${FILESDIR}/hamlib.patch || true)
+. endfor
+
+_WSJTX_PATCHES=	CMakeLists.txt Radio.cpp widgets/FrequencyLineEdit.cpp \
+		widgets/FrequencyDeltaLineEdit.cpp \
+		CMake/Modules/FindUsb.cmake \
+		CMake/Modules/FindHamlib.cmake
+make-wsjtx-patch:
+	${MV} ${FILESDIR}/wsjtx.patch ${FILESDIR}/wsjtx.patch.old
+. for f in ${_WSJTX_PATCHES}
+	(cd ${WRKDIR}/.build/wsjtx-prefix/src;diff -u wsjtx/$f.orig wsjtx/$f >> ${FILESDIR}/wsjtx.patch || true)
+. endfor
 
 post-patch:
 .  for _patch in ${_PATCHES}
@@ -60,8 +76,10 @@ do-install:
 	(cd ${CONFIGURE_WRKSRC};${MAKE} -f Makefile DESTDIR=${STAGEDIR} install)
 
 post-install:
-.for f in fcal fmeasure fmtave ft8code jt4code jt65code jt9 jt9code \
-	message_aggregator msk144code qra64code qra64sim udp_daemon wsjtx wsprd
+.for f in fcal fmeasure fmtave fst4sim ft8code jt4code jt65code jt9 jt9code \
+	message_aggregator msk144code rigctld-wsjtx rigctlcom-wsjtx \
+	rigctl-wsjtx udp_daemon q65code q65sim \
+	wsjtx wsjtx_app_version wsprd
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 

@@ -1,88 +1,172 @@
---- wsjtx/CMakeLists.txt.orig	2019-11-26 09:22:32.000000000 -0500
-+++ wsjtx/CMakeLists.txt	2020-01-03 11:52:01.553241000 -0500
-@@ -1,5 +1,4 @@
- cmake_minimum_required (VERSION 2.8.10 FATAL_ERROR)
--
- if (APPLE)
-   #
-   # The following variables define the portability and compatability attributes of the Mac OS X build
-@@ -136,7 +135,13 @@
-   set (is_debug_build 1)
+--- wsjtx/CMakeLists.txt.orig	2021-11-03 19:53:01.000000000 -0400
++++ wsjtx/CMakeLists.txt	2021-12-31 07:53:05.900792000 -0500
+@@ -41,7 +41,7 @@
  endif ()
  
-+if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+  set (FREEBSD TRUE)
-+  link_directories("/usr/lib" "${LOCALBASE}/lib")
-+  include_directories("/usr/include" "${LOCALBASE}/include")
-+endif()
+ if (POLICY CMP0075)
+-  cmake_policy (SET CMP0075 NEW) # honour CMAKE_REQUIRED_LIBRARIES in config checks
++  cmake_policy (SET CMP0075 NEW) # honour CMAKE_REQUIRED_LIBRARIES in config che,cks
+ endif ()
  
-+
- #
- # Options & features
- #
-@@ -859,8 +864,20 @@
- #
+ project (wsjtx
+@@ -867,7 +867,7 @@
  # OpenMP
  #
--find_package (OpenMP)
-+#    OpenMP_C_FLAGS - flags to add to the C compiler for OpenMP support
-+#    OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
-+#    OpenMP_Fortran_FLAGS - flags to add to the Fortran compiler for OpenMP support
-+#    OPENMP_FOUND - true if openmp is detected
- 
-+if (FREEBSD)
-+  set (OpenMP_C_FLAGS "-openmp")
-+  set (OpenMP_CXX_FLAGS "-openmp")
-+  set (OpenMP_Fortran_FLAGS "-openmp")
-+  set (OPENMP_FOUND TRUE)
-+else()
-+  find_package (OpenMP)
-+endif()
-+
+ find_package (OpenMP)
+-
++set (OpenMP_C_FLAGS "-fopenmp")
  #
  # fftw3 single precision library
  #
-@@ -1325,6 +1342,13 @@
- target_link_libraries (record_time_signal wsjt_cxx wsjt_qtmm wsjt_qt)
+@@ -884,7 +884,7 @@
+ check_type_size (CACHE_ALL HAMLIB_OLD_CACHING)
+ check_symbol_exists (rig_set_cache_timeout_ms "hamlib/rig.h" HAVE_HAMLIB_CACHING)
  
- endif(WSJT_BUILD_UTILS)
-+
-+if(FREEBSD)
-+   set (extraLIBS "ltdl" "usb")
-+ else()
-+   set (extraLIBS "")
-+endif()
-+  
+-find_package (Usb REQUIRED)
++#find_package (Usb REQUIRED)
  
- # build the main application
- add_executable (wsjtx MACOSX_BUNDLE
---- wsjtx/qt_helpers.hpp.orig	2020-04-04 19:19:54.667679000 +0200
-+++ wsjtx/qt_helpers.hpp	2020-04-04 19:20:37.899375000 +0200
-@@ -78,6 +78,7 @@
-   }
- };
+ #
+ # Qt5 setup
+@@ -914,7 +914,7 @@
+ #
+ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
  
-+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
- namespace std
+-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -fexceptions -frtti")
++set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -fexceptions -frtti")
+ 
+ if (NOT APPLE)
+   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-pragmas")
+@@ -1160,7 +1160,7 @@
+ target_link_libraries (encode77 wsjt_fort wsjt_cxx)
+ 
+ add_executable (wsprsim ${wsprsim_CSRCS})
+-target_link_libraries (wsprsim ${LIBM_LIBRARIES})
++target_link_libraries (wsprsim "-lm")
+ 
+ add_executable (jt4code lib/jt4code.f90)
+ target_link_libraries (jt4code wsjt_fort wsjt_cxx)
+--- wsjtx/Radio.cpp.orig	2021-11-03 19:53:01.000000000 -0400
++++ wsjtx/Radio.cpp	2021-12-31 07:48:03.411318000 -0500
+@@ -54,7 +54,8 @@
+     value *= std::pow (10., scale);
+     if (ok)
+       {
+-        if (value < 0. || value > std::numeric_limits<Frequency>::max ())
++#define MAXDOUBLEFREQUENCY 18446744073709551616.0
++        if (value < 0. || value > MAXDOUBLEFREQUENCY)
+           {
+             value = 0.;
+             *ok = false;
+@@ -92,7 +93,7 @@
+     if (ok)
+       {
+         if (value < -std::numeric_limits<Frequency>::max ()
+-            || value > std::numeric_limits<Frequency>::max ())
++            || value > MAXDOUBLEFREQUENCY)
+           {
+             value = 0.;
+             *ok = false;
+--- wsjtx/widgets/FrequencyLineEdit.cpp.orig	2021-11-03 19:53:01.000000000 -0400
++++ wsjtx/widgets/FrequencyLineEdit.cpp	2021-12-31 07:48:03.411740000 -0500
+@@ -39,7 +39,8 @@
+ FrequencyLineEdit::FrequencyLineEdit (QWidget * parent)
+   : QLineEdit (parent)
  {
-   // std::hash<> specialization for QString based on the dbj2
-@@ -97,6 +98,7 @@
-     }
-   };
+-  setValidator (new MHzValidator {0., std::numeric_limits<Radio::Frequency>::max () / 10.e6, this});
++#define MAXDOUBLEFREQUENCY 18446744073709551616.0
++  setValidator (new MHzValidator {0., MAXDOUBLEFREQUENCY / 10.e6, this});
  }
-+#endif
  
- // Register some useful Qt types with QMetaType
- Q_DECLARE_METATYPE (QHostAddress);
-
---- wsjtx/lib/wsprd/jelinek.h.orig	2020-08-23 10:47:23.539369000 -0400
-+++ wsjtx/lib/wsprd/jelinek.h	2020-08-23 10:40:31.539503000 -0400
-@@ -10,7 +10,7 @@
-     unsigned int jpointer;
- };
+ auto FrequencyLineEdit::frequency () const -> Frequency
+--- wsjtx/widgets/FrequencyDeltaLineEdit.cpp.orig	2021-11-03 19:53:01.000000000 -0400
++++ wsjtx/widgets/FrequencyDeltaLineEdit.cpp	2021-12-31 07:48:03.412129000 -0500
+@@ -39,8 +39,8 @@
+ FrequencyDeltaLineEdit::FrequencyDeltaLineEdit (QWidget * parent)
+   : QLineEdit (parent)
+ {
+-  setValidator (new MHzValidator {-std::numeric_limits<FrequencyDelta>::max () / 10.e6,
+-        std::numeric_limits<FrequencyDelta>::max () / 10.e6, this});
++  setValidator (new MHzValidator {(-(std::numeric_limits<FrequencyDelta>::max ())&-0xF) / 10.e6,
++		  (std::numeric_limits<FrequencyDelta>::max ()&~0xF) / 10.e6, this});
+ }
  
--struct snode *stack;
-+static struct snode *stack;
+ auto FrequencyDeltaLineEdit::frequency_delta () const -> FrequencyDelta
+--- wsjtx/CMake/Modules/FindUsb.cmake.orig	2021-11-03 19:53:01.000000000 -0400
++++ wsjtx/CMake/Modules/FindUsb.cmake	2021-12-31 07:48:03.412537000 -0500
+@@ -13,25 +13,35 @@
+ #  Usb::Usb	- The libusb library
+ #
  
- int jelinek(unsigned int *metric,
-             unsigned int *cycles,
++if ( CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" )
++   message ( Status "FreeBSD libusb is built in")
++   set (Usb_FOUND True)
++   set(Usb_LIBRARY "usb")
++   set(Usb_INCLUDE_DIR "/usr/include")
++   set(Usb_LIBRARIES "")
++   add_library (Usb "usb")
++else()
+ include (LibFindMacros)
+ 
+-if (WIN32)
+-  # Use path suffixes on MS Windows as we probably shouldn't
+-  # trust the PATH envvar. PATH will still be searched to find the
+-  # library as last resort.
+-  if (CMAKE_SIZEOF_VOID_P MATCHES "8")
+-    set (_library_options PATH_SUFFIXES MinGW64/dll MinGW64/static)
+-  else ()
+-    set (_library_options PATH_SUFFIXES MinGW32/dll MinGW32/static)
+-  endif ()
+-endif ()
+-libfind_pkg_detect (Usb usb-1.0
+-  FIND_PATH libusb.h PATH_SUFFIXES libusb-1.0
+-  FIND_LIBRARY usb-1.0 ${_library_options}
+-  )
++   if (WIN32)
++      # Use path suffixes on MS Windows as we probably shouldn't
++      # trust the PATH envvar. PATH will still be searched to find the
++      # library as last resort.
++      if (CMAKE_SIZEOF_VOID_P MATCHES "8")
++       set (_library_options PATH_SUFFIXES MinGW64/dll MinGW64/static)
++      else ()
++        set (_library_options PATH_SUFFIXES MinGW32/dll MinGW32/static)
++      endif ()
++   endif ()
+ 
+-libfind_process (Usb)
++   libfind_pkg_detect (Usb usb-1.0
++     FIND_PATH libusb.h PATH_SUFFIXES libusb-1.0
++     FIND_LIBRARY usb-1.0 ${_library_options}
++     )
+ 
++   libfind_process (Usb)
++endif()
++
+ if (Usb_FOUND AND NOT TARGET Usb::Usb)
+   add_library (Usb::Usb UNKNOWN IMPORTED)
+   set_target_properties (Usb::Usb PROPERTIES
+@@ -40,10 +50,12 @@
+     INTERFACE_INCLUDE_DIRECTORIES "${Usb_INCLUDE_DIRS}"
+     INTERFACE_LINK_LIBRARIES "${Usb_LIBRARIES}"
+     )
+-endif ()
++endif()
+ 
++if ( NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" )
+ mark_as_advanced (
+   Usb_INCLUDE_DIR
+   Usb_LIBRARY
+   Usb_LIBRARIES
+   )
++endif()
+--- wsjtx/CMake/Modules/FindHamlib.cmake.orig	2021-11-03 19:53:01.000000000 -0400
++++ wsjtx/CMake/Modules/FindHamlib.cmake	2021-12-31 07:48:03.412916000 -0500
+@@ -18,7 +18,9 @@
+   FIND_LIBRARY hamlib
+   )
+ 
++if ( NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" )
+ libfind_package (Hamlib Usb)
++endif()
+ 
+ libfind_process (Hamlib)
+ 
