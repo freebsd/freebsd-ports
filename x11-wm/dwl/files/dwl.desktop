@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=dwl
+Comment=dwm for Wayland
 Exec=dwl
-TryExec=dwl
-Icon=
 Type=Application
 DesktopNames=wlroots
