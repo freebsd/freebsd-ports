@@ -2,6 +2,10 @@ PORTNAME=	yuzu
 PORTVERSION=	s20211228
 PORTREVISION?=	0
 CATEGORIES=	emulators
+MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb \
+		LOCAL/jbeich:gamedb
+DISTFILES=	${PORTNAME}/compatibility_list.json:gamedb
+EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	6904f055db88.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6598 mainline-merge
@@ -106,6 +110,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
+
+post-configure:
+	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
+		${BUILD_WRKSRC}/dist/compatibility_list/
 
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
