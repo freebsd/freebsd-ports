@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-io
-PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTVERSION=	2.6.4
 PORTEPOCH=	1
 CATEGORIES=	math
 
