@@ -1,7 +1,6 @@
 bin/phplist
 %%WWWDIR%%/index.html
 %%WWWDIR%%/lists/.htaccess
-%%WWWDIR%%/lists/admin/.gitignore
 %%WWWDIR%%/lists/admin/.htaccess
 %%WWWDIR%%/lists/admin/.minceconf
 %%WWWDIR%%/lists/admin/about.php
@@ -419,7 +418,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/inc/interfacelib.php
 %%WWWDIR%%/lists/admin/inc/magic_quotes.php
 %%WWWDIR%%/lists/admin/inc/maillib.php
-%%WWWDIR%%/lists/admin/inc/netlib.php
 %%WWWDIR%%/lists/admin/inc/php_compat.php
 %%WWWDIR%%/lists/admin/inc/random_compat/byte_safe_strings.php
 %%WWWDIR%%/lists/admin/inc/random_compat/cast_to_int.php
@@ -919,7 +917,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/init.php
 %%WWWDIR%%/lists/admin/initialise.php
 %%WWWDIR%%/lists/admin/initlanguages.php
-%%WWWDIR%%/lists/admin/js/jquery-3.3.1.min.js
+%%WWWDIR%%/lists/admin/js/jquery-3.6.0.min.js
 %%WWWDIR%%/lists/admin/js/jquery.cycle2.min.js
 %%WWWDIR%%/lists/admin/js/jquery.tools.scrollable.js
 %%WWWDIR%%/lists/admin/js/phplistapp.js
@@ -1809,6 +1807,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/Pager.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/PageURL.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/phpinfo.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/polyfill.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/Populator.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/session.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/StringStream.php
@@ -2075,7 +2074,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/templates.php
 %%WWWDIR%%/lists/admin/tests.php
 %%WWWDIR%%/lists/admin/uclicks.php
-%%WWWDIR%%/lists/admin/ui/.gitignore
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/.gitignore
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/.travis.yml
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/body_trackers.php
@@ -2555,6 +2553,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/.travis.yml
 %%WWWDIR%%/lists/base/bin/console
 %%WWWDIR%%/lists/base/CHANGELOG.md
+%%WWWDIR%%/lists/base/composer.json
 %%WWWDIR%%/lists/base/config/.gitkeep
 %%WWWDIR%%/lists/base/config/bundles.yml
 %%WWWDIR%%/lists/base/config/config_modules.yml
@@ -2580,7 +2579,6 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/composer/autoload_static.php
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/composer.json
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/LICENSE
-%%WWWDIR%%/lists/base/vendor/composer/ca-bundle/phpstan.neon.dist
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/README.md
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/res/cacert.pem
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/src/CaBundle.php
@@ -12616,7 +12614,7 @@ bin/phplist
 %%WWWDIR%%/lists/images/unsubscribe.png
 %%WWWDIR%%/lists/index.html
 %%WWWDIR%%/lists/index.php
-%%WWWDIR%%/lists/js/jquery-3.3.1.min.js
+%%WWWDIR%%/lists/js/jquery-3.6.0.min.js
 %%WWWDIR%%/lists/js/jslib.js
 %%WWWDIR%%/lists/js/phplist-subscribe-0.2.min.js
 %%WWWDIR%%/lists/js/phplist-subscribe-0.2.src.js

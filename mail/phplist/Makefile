@@ -1,8 +1,7 @@
 # Created by: Nick Hilliard <nick@foobar.org>
 
 PORTNAME=	phplist
-DISTVERSION=	3.6.3
-PORTREVISION=	2
+DISTVERSION=	3.6.6
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
