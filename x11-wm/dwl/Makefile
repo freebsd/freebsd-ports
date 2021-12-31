@@ -20,7 +20,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		gmake pkgconfig
+USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	djpohly
 PLIST_FILES=	bin/${PORTNAME} \
