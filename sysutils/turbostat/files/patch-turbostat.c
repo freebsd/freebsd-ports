@@ -1,6 +1,6 @@
 --- turbostat.c.orig	2020-11-13 21:55:04 UTC
 +++ turbostat.c
-@@ -41,7 +41,31 @@
+@@ -41,7 +41,34 @@
  #include <sched.h>
  #include <time.h>
  #include <cpuid.h>
@@ -16,6 +16,8 @@
 +#include <libutil.h>
 +#include <limits.h>
 +
++#ifndef CPU_ALLOC
++#define CPUSET_2ADDR
 +#define cpu_set_t cpuset_t
 +
 +#define CPU_ALLOC(_ign)			({(cpuset_t*)malloc(sizeof(cpuset_t));})
@@ -25,6 +27,7 @@
 +#define CPU_SET_S(cpu, _ign, set)	CPU_SET(cpu, set)
 +#define CPU_ZERO_S(_ign, set)		CPU_ZERO(set)
 +#define sched_setaffinity(_x, _y, set)	cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID, -1, sizeof(cpuset_t), set)
++#endif /* !CPU_ALLOC */
 +
 +#else
  #include <linux/capability.h>
@@ -99,7 +102,7 @@
  
  /*
   * Each string in this array is compared in --show and --hide cmdline.
-@@ -2239,6 +2288,177 @@ int parse_int_file(const char *fmt, ...)
+@@ -2239,6 +2288,181 @@ int parse_int_file(const char *fmt, ...)
  	return value;
  }
  
@@ -189,7 +192,11 @@
 +		CPU_ZERO(packages.sets);
 +
 +		for (int i = 0; i < cores.len; i++)
++#ifdef CPUSET_2ADDR
 +			CPU_OR(packages.sets, cores.sets + i);
++#else
++			CPU_OR(packages.sets, packages.sets, cores.sets + i);
++#endif
 +		packages.len++;
 +	}
 +
