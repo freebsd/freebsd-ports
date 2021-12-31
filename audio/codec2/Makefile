@@ -1,8 +1,7 @@
 PORTNAME=	codec2
-DISTVERSION=	0.8.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.0.1
 CATEGORIES=	audio hamradio
-MASTER_SITES=	https://hobbes1069.fedorapeople.org/freetel/codec2/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Low bit rate codec
@@ -12,9 +11,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
-CONFLICTS=	libcodec2
-USES=		cmake pathfix pkgconfig shebangfix tar:xz
+USES=		cmake pathfix pkgconfig python:3.6+ shebangfix tar:xz
+
+GH_ACCOUNT=	drowe67
+GH_PROJECT=	codec2
+
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	EXAMPLES TEST
 OPTIONS_SUB=	yes
@@ -24,24 +27,25 @@ TEST_CMAKE_ON=		-DUNITTEST=ON
 TEST_SRCFILES=	cohpsk_ch cohpsk_demod cohpsk_get_test_bits cohpsk_mod\
 		cohpsk_put_test_bits fdmdv_channel freedv_rx freedv_tx\
 		generate_codebook
-TEST_UNITTESTFILES=	c2validate create_interleaver de extract fdmdv_mem\
-			genlsp genres polar2rect\
-			pre raw2h scalarlsptest speexnoisesup t16_8\
-			t16_8_short tcohpsk test_cohpsk_ch tfdmdv tfifo\
-			tnlp tprede vq_train_jvm\
-			vqtrain
+TEST_UNITTESTFILES=	compare_ints fdmdv_mem ofdm_mem ofdm_stack \
+					t16_8 t16_8_short tcohpsk tdeframer tesno_est \
+					test_phi0 tfdmdv tfifo tfmfsk tfreedv_2400A_rawdata \
+					tfreedv_2400B_rawdata tfreedv_800XA_rawdata \
+					tfreedv_data_channel tfsk tfsk_llr thash tnewamp1 \
+					tofdm tofdm_acq tqam16 tst_codec2_fft_init tvq_mbest
 
-SHEBANG_FILES=	${WRKSRC}/octave/fsk_horus_stream.m\
-		${WRKSRC}/script/menu.sh
-SHEBANG_LANG=		octave
+SHEBANG_FILES=	${WRKSRC}/script/gen_phi0 \
+				${WRKSRC}/script/phi0_plot.py \
+				${WRKSRC}/script/build_cml.sh \
+				${WRKSRC}/script/subsetvq.sh \
+				${WRKSRC}/script/train_700c_quant.sh \
+				${WRKSRC}/script/ofdm_stack_use.py \
+				${WRKSRC}/script/train_sub_quant.sh
 
 TEST_RUN_DEPENDS=	octave:math/octave
 TEST_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 
 PORTEXAMPLES=	*
-
-pre-patch-TEST-on:
-	${REINPLACE_CMD} 's|%ld|%u|' ${WRKSRC}/unittest/fdmdv_mem.c
 
 post-install-TEST-on:
 .for a in ${TEST_SRCFILES}
