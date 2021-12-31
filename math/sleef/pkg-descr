@@ -4,4 +4,4 @@ In this library, functions for evaluating some elementary functions are
 implemented. It provides a vectorized libm alternativ. The library also
 includes DFT subroutines.
 
-WWW: https://github.com/shibara/sleef
+WWW: https://sleef.org
