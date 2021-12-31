@@ -40,7 +40,6 @@
     SUBDIR += intellij
     SUBDIR += intellij-fsnotifier
     SUBDIR += intellij-pty4j
-    SUBDIR += intellij-rubymine
     SUBDIR += intellij-ultimate
     SUBDIR += jad
     SUBDIR += jai

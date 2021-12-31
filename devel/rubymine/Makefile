@@ -2,7 +2,7 @@
 
 PORTNAME=	rubymine
 PORTVERSION=	2021.3.1
-CATEGORIES=	java devel
+CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
 PKGNAMEPREFIX=	intellij-
@@ -29,7 +29,7 @@ NO_BUILD=	yes
 
 WRKDIST=	${WRKDIR}/RubyMine-${PORTVERSION}
 
-.include "${.CURDIR}/../intellij/common.mk"
+.include "${.CURDIR}/../../java/intellij/common.mk"
 
 PLIST_SUB+=	DATADIR=${DATADIR}
 SUB_FILES+=	rubymine rubymine.desktop pkg-message
