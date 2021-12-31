@@ -18,7 +18,7 @@ include/timbl/TimblExperiment.h
 include/timbl/Types.h
 include/timbl/neighborSet.h
 lib/libtimbl.so
-lib/libtimbl.so.4
-lib/libtimbl.so.4.0.1
+lib/libtimbl.so.6
+lib/libtimbl.so.6.0.0
 libdata/pkgconfig/timbl.pc
 man/man1/timbl.1.gz
