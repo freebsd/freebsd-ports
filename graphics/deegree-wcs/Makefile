@@ -13,6 +13,9 @@ COMMENT=	Deegree Web Coverage Service(WCS)
 
 LICENSE=	LGPL21+
 
+DEPRECATED=	Depends on expired www/tomcat7
+EXPIRATION_DATE=2022-03-31
+
 USES=		zip
 USE_JAVA=	yes
 

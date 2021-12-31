@@ -13,6 +13,9 @@ COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/jspwiki/LICENSE
 
+DEPRECATED=	Depends on expired www/tomcat7
+EXPIRATION_DATE=2022-03-31
+
 USES=		cpe zip
 USE_JAVA=	yes
 NO_BUILD=	yes

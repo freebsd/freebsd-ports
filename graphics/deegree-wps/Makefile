@@ -11,6 +11,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deegree Web Processing Service(WPS)
 
+DEPRECATED=	Depends on expired www/tomcat7
+EXPIRATION_DATE=2022-03-31
+
 USES=		zip
 USE_JAVA=	yes
 

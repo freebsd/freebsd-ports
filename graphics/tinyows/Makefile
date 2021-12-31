@@ -9,6 +9,9 @@ MASTER_SITES=	https://download.osgeo.org/mapserver/
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	High Performance WFS-T server
 
+DEPRECATED=	Depends on expired databases/postgis25
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		liblwgeom.so:databases/postgis25
 

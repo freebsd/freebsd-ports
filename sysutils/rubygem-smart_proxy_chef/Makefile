@@ -11,6 +11,9 @@ COMMENT=	Chef Plug-In for Foreman\'s Smart Proxy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired sysutils/rubygem-chef-api
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		rubygem-chef-api>=0:sysutils/rubygem-chef-api
 

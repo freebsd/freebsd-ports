@@ -12,6 +12,9 @@ COMMENT=	Java barcode generator
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired www/tomcat7
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom
 
 USE_JAVA=	yes

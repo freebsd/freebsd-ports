@@ -14,6 +14,9 @@ LICENSE_NAME=	Educational Community License version 2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on expired www/tomcat7
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:www/tomcat7
 
 IGNORE=		does not work correctly
