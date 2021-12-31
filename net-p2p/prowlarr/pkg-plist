@@ -199,6 +199,7 @@
 %%DATADIR%%/Microsoft.IdentityModel.Tokens.dll
 %%DATADIR%%/Microsoft.JSInterop.dll
 %%DATADIR%%/Microsoft.Net.Http.Headers.dll
+%%DATADIR%%/Microsoft.OpenApi.dll
 %%DATADIR%%/Microsoft.VisualBasic.Core.dll
 %%DATADIR%%/Microsoft.VisualBasic.dll
 %%DATADIR%%/Microsoft.Win32.Primitives.dll
@@ -476,6 +477,8 @@
 %%DATADIR%%/Sentry.dll
 %%DATADIR%%/ServiceInstall
 %%DATADIR%%/ServiceUninstall
+%%DATADIR%%/Swashbuckle.AspNetCore.Swagger.dll
+%%DATADIR%%/Swashbuckle.AspNetCore.SwaggerGen.dll
 %%DATADIR%%/System.AppContext.dll
 %%DATADIR%%/System.Buffers.dll
 %%DATADIR%%/System.Collections.Concurrent.dll
