@@ -1,8 +1,0 @@
-obfsclient is a C++11 Tor-managed pluggable transport client
-implementation of the following protocols:
-
-obfs2 - The Twobfuscator
-obfs3 - The Threebfuscator
-ScrambleSuit - Experimental
-
-WWW: https://github.com/yawning/obfsclient

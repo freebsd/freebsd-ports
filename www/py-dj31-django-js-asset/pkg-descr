@@ -1,4 +1,0 @@
-Insert script tags with additional attributes (such as "id" and "data" for
-CSP-compatible data injection) for the django.forms.Media package.
-
-WWW: https://github.com/matthiask/django-js-asset

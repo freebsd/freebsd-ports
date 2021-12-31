@@ -242,7 +242,6 @@
     SUBDIR += mlt6-qt5
     SUBDIR += mlt7
     SUBDIR += mlt7-qt5
-    SUBDIR += mmsclient
     SUBDIR += mmsrip
     SUBDIR += motion
     SUBDIR += mp3cd

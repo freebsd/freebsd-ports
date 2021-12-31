@@ -17,7 +17,6 @@
     SUBDIR += dino
     SUBDIR += echat
     SUBDIR += ejabberd
-    SUBDIR += ekiga
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks

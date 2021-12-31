@@ -204,7 +204,6 @@
     SUBDIR += nhc98
     SUBDIR += nickle
     SUBDIR += nim
-    SUBDIR += nml
     SUBDIR += nqc
     SUBDIR += nwcc
     SUBDIR += nx

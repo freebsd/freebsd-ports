@@ -358,7 +358,6 @@
     SUBDIR += cl-trivial-features-sbcl
     SUBDIR += cl-trivial-gray-streams
     SUBDIR += cl-trivial-gray-streams-sbcl
-    SUBDIR += clanlib1
     SUBDIR += clazy
     SUBDIR += cld2
     SUBDIR += clewn
@@ -614,7 +613,6 @@
     SUBDIR += envsubst
     SUBDIR += epl.el
     SUBDIR += epm
-    SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-backoff
     SUBDIR += erlang-bbmustache
@@ -1265,7 +1263,6 @@
     SUBDIR += libgudev
     SUBDIR += libgusb
     SUBDIR += libgutenfetch
-    SUBDIR += libhash
     SUBDIR += libhoard
     SUBDIR += libhtp
     SUBDIR += libhyve-remote
@@ -4469,7 +4466,6 @@
     SUBDIR += py-dirspec
     SUBDIR += py-distlib
     SUBDIR += py-distributed
-    SUBDIR += py-dj31-django-rq
     SUBDIR += py-dj32-django-rq
     SUBDIR += py-dj32-graphene-django
     SUBDIR += py-django-rq
@@ -5627,7 +5623,6 @@
     SUBDIR += ruby-build
     SUBDIR += ruby-gems
     SUBDIR += ruby-rbprof
-    SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
     SUBDIR += ruby-subversion
     SUBDIR += rubygem-CFPropertyList
@@ -6734,13 +6729,11 @@
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-progressbar
-    SUBDIR += rubygem-ruby-sdl-ffi
     SUBDIR += rubygem-ruby-statistics
     SUBDIR += rubygem-ruby2_keywords
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_dep
     SUBDIR += rubygem-ruby_parser
-    SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubygems-mirror
     SUBDIR += rubygem-rubygems-tasks
     SUBDIR += rubygem-rubygems-test
@@ -6982,7 +6975,6 @@
     SUBDIR += sdl2pp
     SUBDIR += sdl_console
     SUBDIR += sdl_gnat
-    SUBDIR += sdl_sge
     SUBDIR += sdlmm
     SUBDIR += sdlskk
     SUBDIR += sdts++
@@ -7231,7 +7223,6 @@
     SUBDIR += yaml-cpp03
     SUBDIR += yaml2argdata
     SUBDIR += yasm
-    SUBDIR += yasm-devel
     SUBDIR += yder
     SUBDIR += youcompleteme
     SUBDIR += yuck

@@ -1,4 +1,0 @@
-Utilities for implementing Modified Preorder Tree Traversal with your Django
-Models and working with trees of Model instances.
-
-WWW: https://github.com/django-mptt/django-mptt

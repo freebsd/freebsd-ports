@@ -1,9 +1,0 @@
-bin/mpiologo
-bin/mpiosh
-etc/mpio/mpioshrc
-include/mpio/defs.h
-include/mpio/mpio.h
-lib/libmpio.a
-lib/libmpio.so
-lib/libmpio.so.1
-lib/libmpio.so.1.0.0

@@ -1,4 +1,0 @@
-Unifi-poller collects your UniFi controller data and reports it to
-an InfluxDB instance, or export it for Prometheus collection.
-
-WWW: https://github.com/unifi-poller/unifi-poller

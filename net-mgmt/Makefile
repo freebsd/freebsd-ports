@@ -214,7 +214,6 @@
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += p0f
-    SUBDIR += p0f2
     SUBDIR += p5-AnyEvent-SNMP
     SUBDIR += p5-BigIP-iControl
     SUBDIR += p5-Cflow
@@ -381,7 +380,6 @@
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
-    SUBDIR += unifi-poller
     SUBDIR += unifi6
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer

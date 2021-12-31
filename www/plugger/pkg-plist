@@ -1,6 +1,0 @@
-bin/plugger-5.1.5
-bin/plugger-controller
-bin/plugger-oohelper
-@sample etc/pluggerrc-5.1.5.sample
-man/man7/plugger.7.gz
-%%WEBPLUGIN_DIR%%/npplugger.so

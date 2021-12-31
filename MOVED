@@ -16702,3 +16702,59 @@ x11-toolkits/rubygem-vte|x11-toolkits/rubygem-vte3|2021-12-21|Remove obsoleted p
 sysutils/asmon||2021-12-27|Has expired: Fails to build on modern FreeBSD
 java/intellij-rubymine|devel/rubymine|2021-12-31|Use better name and category
 lang/python36||2021-12-31|Has expired: Upgrade to a newer Python version. 3.6 is in maintenance status and gets security fixes only. End-of-Life: 2021-12-23. See https://devguide.python.org/
+devel/sdl_sge||2021-12-31|Has expired: Upstream no longer maintained
+net/appkonference||2021-12-31|Has expired: Outdated, depends on unsupported version of net/asterisk
+dns/bind911|dns/bind916|2021-12-31|Has expired: End of life, please migrate to a newer version of BIND9
+net/zebra||2021-12-31|Has expired: Abandoned upstream, last release in 2005. Consider migrating to net/frr7 or net/bird2
+audio/osalp||2021-12-31|Has expired: Abandoned upstream, listed as beta and no new release since 2008
+games/stransball2||2021-12-31|Has expired: Depends on expired devel/sdl_sge
+devel/rubygem-ruby-sdl-ffi||2021-12-31|Has expired: Depends on expired devel/sdl_sge
+devel/rubygem-rubygame||2021-12-31|Has expired: Depends on expired devel/sdl_sge
+devel/ruby-sdl||2021-12-31|Has expired: Depends on expired devel/sdl_sge
+games/magicmaze||2021-12-31|Has expired: Depends on expired devel/sdl_sge
+games/trophy||2021-12-31|Has expired: Depends on expired devel/clanlib1
+devel/clanlib1||2021-12-31|Has expired: Older than expired and removed devel/clanlib
+www/py-django31||2021-12-31|Has expired: Upgrade to Django 3.2+. Mainstream support ended (April 6, 2021). Extended support ends December 2021. See https://www.djangoproject.com/download/
+www/py-dj31-django-prometheus||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+databases/postgis24||2021-12-31|Has expired: Deprecated in favour of databases/postgis3x
+net-im/ekiga||2021-12-31|Has expired: Last release in 2013, not actively maintained
+sysutils/sample||2021-12-31|Has expired: abandoned upstream, incompatible with newer kernels
+www/mediawiki131||2021-12-31|Has expired: Upstream EOL
+www/py-dj31-django-mptt||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+net/py-flask-xml-rpc||2021-12-31|Has expired: No longer maintained upstream
+audio/libaacplus||2021-12-31|Has expired: Abandoned upstream, no new release since 2011
+security/obfsclient||2021-12-31|Has expired: https://github.com/Yawning/obfsclient/issues/37
+devel/eric6||2021-12-31|Has expired: Uses EOL Python 2.7 via www/py-qt5-webengine
+www/grafana||2021-12-31|Has expired: No longer maintained upstream, use www/grafana8
+www/py-dj31-django-auth-ldap||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-django-filter||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-drf-yasg||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-django-js-asset||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-django-timezone-field||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-django-tables2||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-django-taggit||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+graphics/librasterlite|graphics/librasterlite2|2021-12-31|Has expired: Deprecated in favour of graphics/librasterlite2
+www/py-dj31-django-cacheops||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+net-mgmt/p0f2|net-mgmt/p0f|2021-12-31|Has expired: newer version available in net-mgmt/p0f
+devel/libhash||2021-12-31|Has expired: Abandoned upstream
+www/py-dj31-django-debug-toolbar||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj31-django-cors-headers||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+audio/flake||2021-12-31|Has expired: Abandoned upstream, no new release since 2007
+audio/ifp-line||2021-12-31|Has expired: Abandoned upstream, no new release since 2005
+audio/libnjb||2021-12-31|Has expired: Abandoned upstream, no new release since 2011
+audio/lpac||2021-12-31|Has expired: Abandoned upstream in 2003
+multimedia/mmsclient||2021-12-31|Has expired: Abandoned upstream, Microsoft deprecated MMS in 2003
+www/plugger||2021-12-31|Has expired: Uses incompatible plugin interface NPAPI
+audio/mpiosh||2021-12-31|Has expired: Abandoned upstream, no new release since 2004
+audio/rplay||2021-12-31|Has expired: Abandoned upstream, no new releases since 1999
+audio/celt||2021-12-31|Has expired: Deprecated and considered obsolete by upstream in 2016 in favour of (lib)opus
+security/nacl|security/libsodium|2021-12-31|Has expired: Unmaintained by upstream, use libsodium instead
+net-mgmt/unifi-poller||2021-12-31|Has expired: Now called unpoller by upstream
+lang/nml||2021-12-31|Has expired: Abandoned upstream, last release 2004-04-19
+audio/mp32ogg||2021-12-31|Has expired: Abandoned upstream and unfetchable from upstream
+net/libstorj|net/storj|2021-12-31|Has expired: Deprecated in favour of net/storj due to v3 rearchitecture
+devel/yasm-devel|devel/yasm|2021-12-31|Has expired: No need to keep the -devel version due to upstream inactivity
+www/py-dj31-django-redis||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+devel/py-dj31-django-rq||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+graphics/libreatlas||2021-12-31|Has expired: Abandoned upstream, no new release since 2012
+www/py-dj31-djangorestframework||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/

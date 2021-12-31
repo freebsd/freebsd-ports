@@ -590,7 +590,6 @@
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
-    SUBDIR += magicmaze
     SUBDIR += mahjong
     SUBDIR += maitretarot
     SUBDIR += manaplus
@@ -925,7 +924,6 @@
     SUBDIR += stockfish
     SUBDIR += stonesoup
     SUBDIR += stormbaancoureur
-    SUBDIR += stransball2
     SUBDIR += stratagus
     SUBDIR += stuntrally
     SUBDIR += sudsol
@@ -974,7 +972,6 @@
     SUBDIR += trimines
     SUBDIR += triplane
     SUBDIR += trojka
-    SUBDIR += trophy
     SUBDIR += tsito
     SUBDIR += tt
     SUBDIR += ttt
