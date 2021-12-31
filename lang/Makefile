@@ -290,7 +290,6 @@
     SUBDIR += python3
     SUBDIR += python310
     SUBDIR += python311
-    SUBDIR += python36
     SUBDIR += python37
     SUBDIR += python38
     SUBDIR += python39

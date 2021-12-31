@@ -16701,3 +16701,4 @@ x11-toolkits/rubygem-gtksourceview2|x11-toolkits/rubygem-gtksourceview3|2021-12-
 x11-toolkits/rubygem-vte|x11-toolkits/rubygem-vte3|2021-12-21|Remove obsoleted port. Use x11-toolkits/rubygem-vte3 instead
 sysutils/asmon||2021-12-27|Has expired: Fails to build on modern FreeBSD
 java/intellij-rubymine|devel/rubymine|2021-12-31|Use better name and category
+lang/python36||2021-12-31|Has expired: Upgrade to a newer Python version. 3.6 is in maintenance status and gets security fixes only. End-of-Life: 2021-12-23. See https://devguide.python.org/
