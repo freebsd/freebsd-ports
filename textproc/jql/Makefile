@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.4
-PORTREVISION=	1
+DISTVERSION=	3.0.6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.45 \
+		anyhow-1.0.51 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -24,7 +23,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		async-io-1.6.0 \
 		async-lock-2.4.0 \
 		async-mutex-1.4.0 \
-		async-process-1.2.0 \
+		async-process-1.3.0 \
 		async-std-1.10.0 \
 		async-task-4.0.3 \
 		atomic-waker-1.0.0 \
@@ -33,18 +32,17 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		bitflags-1.3.2 \
 		block-buffer-0.7.3 \
 		block-padding-0.1.5 \
-		blocking-1.0.2 \
-		bstr-0.2.16 \
-		bumpalo-3.7.0 \
+		blocking-1.1.0 \
+		bstr-0.2.17 \
+		bumpalo-3.8.0 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
 		cache-padded-1.1.1 \
 		cast-0.2.7 \
-		cc-1.0.69 \
+		cc-1.0.72 \
 		cfg-if-1.0.0 \
-		clap-2.33.3 \
-		clap-3.0.0-beta.5 \
-		clap_derive-3.0.0-beta.5 \
+		clap-2.34.0 \
+		clap-3.0.0-rc.7 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
 		criterion-0.3.5 \
@@ -55,40 +53,40 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		crossbeam-utils-0.8.5 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
-		ctor-0.1.20 \
+		ctor-0.1.21 \
 		digest-0.8.1 \
 		either-1.6.1 \
 		event-listener-2.5.1 \
 		fake-simd-0.1.2 \
 		fastrand-1.5.0 \
-		futures-channel-0.3.16 \
-		futures-core-0.3.16 \
-		futures-io-0.3.16 \
+		futures-channel-0.3.18 \
+		futures-core-0.3.18 \
+		futures-io-0.3.18 \
 		futures-lite-1.12.0 \
 		generic-array-0.12.4 \
-		gloo-timers-0.2.1 \
-		half-1.7.1 \
+		gloo-timers-0.2.2 \
+		half-1.8.2 \
 		hashbrown-0.11.2 \
-		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		indexmap-1.7.0 \
-		instant-0.1.10 \
-		itertools-0.10.1 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
 		itoa-0.4.8 \
-		js-sys-0.3.53 \
+		itoa-1.0.1 \
+		js-sys-0.3.55 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.100 \
+		libc-0.2.109 \
 		log-0.4.14 \
 		maplit-1.0.2 \
 		memchr-2.4.1 \
-		memoffset-0.6.4 \
+		memoffset-0.6.5 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
 		once_cell-1.8.0 \
 		oorandom-11.1.3 \
 		opaque-debug-0.2.3 \
-		os_str_bytes-4.2.0 \
+		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -99,53 +97,49 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
-		polling-2.1.0 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.28 \
-		quote-1.0.9 \
+		polling-2.2.0 \
+		proc-macro2-1.0.33 \
+		quote-1.0.10 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		regex-1.5.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		rustc_version-0.4.0 \
-		ryu-1.0.5 \
+		ryu-1.0.7 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		serde-1.0.129 \
+		serde-1.0.131 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.129 \
-		serde_json-1.0.69 \
+		serde_derive-1.0.131 \
+		serde_json-1.0.73 \
 		sha-1-0.8.2 \
-		signal-hook-0.3.9 \
+		signal-hook-0.3.12 \
 		signal-hook-registry-1.4.0 \
-		slab-0.4.4 \
-		socket2-0.4.1 \
+		slab-0.4.5 \
+		socket2-0.4.2 \
 		strsim-0.10.0 \
-		syn-1.0.75 \
+		syn-1.0.82 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
 		textwrap-0.14.2 \
 		tinytemplate-1.2.1 \
-		typenum-1.13.0 \
+		typenum-1.14.0 \
 		ucd-trie-0.1.3 \
-		unicase-2.6.0 \
-		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.8 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
-		value-bag-1.0.0-alpha.7 \
+		value-bag-1.0.0-alpha.8 \
 		version_check-0.9.3 \
 		waker-fn-1.1.0 \
 		walkdir-2.3.2 \
-		wasm-bindgen-0.2.76 \
-		wasm-bindgen-backend-0.2.76 \
-		wasm-bindgen-futures-0.4.26 \
-		wasm-bindgen-macro-0.2.76 \
-		wasm-bindgen-macro-support-0.2.76 \
-		wasm-bindgen-shared-0.2.76 \
-		web-sys-0.3.53 \
+		wasm-bindgen-0.2.78 \
+		wasm-bindgen-backend-0.2.78 \
+		wasm-bindgen-futures-0.4.28 \
+		wasm-bindgen-macro-0.2.78 \
+		wasm-bindgen-macro-support-0.2.78 \
+		wasm-bindgen-shared-0.2.78 \
+		web-sys-0.3.55 \
 		wepoll-ffi-0.1.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
