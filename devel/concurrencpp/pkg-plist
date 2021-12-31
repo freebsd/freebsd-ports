@@ -13,7 +13,9 @@ include/concurrencpp/executors/worker_thread_executor.h
 include/concurrencpp/forward_declarations.h
 include/concurrencpp/platform_defs.h
 include/concurrencpp/results/constants.h
+include/concurrencpp/results/generator.h
 include/concurrencpp/results/impl/consumer_context.h
+include/concurrencpp/results/impl/generator_state.h
 include/concurrencpp/results/impl/lazy_result_state.h
 include/concurrencpp/results/impl/producer_context.h
 include/concurrencpp/results/impl/result_state.h
@@ -34,6 +36,7 @@ include/concurrencpp/runtime/constants.h
 include/concurrencpp/runtime/runtime.h
 include/concurrencpp/task.h
 include/concurrencpp/threads/binary_semaphore.h
+include/concurrencpp/threads/cache_line.h
 include/concurrencpp/threads/thread.h
 include/concurrencpp/timers/constants.h
 include/concurrencpp/timers/timer.h
