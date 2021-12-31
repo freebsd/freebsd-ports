@@ -304,6 +304,12 @@ The NetBox 3.0 release contains major changes, so at least items 1.), 2.) and
    be found in the following directory:
 
    %%EXAMPLESDIR%%/850.netbox-housekeeping.sample
+
+   Please run following commands to enable the new script:
+
+   # cp %%EXAMPLESDIR%%/850-netbox-housekeeping.sample %%LOCALBASE%%/etc/periodic/daily/850-netbox-housekeeping
+   # chmod 555 %%LOCALBASE%%/etc/periodic/daily/850-netbox-housekeeping
+   # sysrc -f /etc/periodic.conf daily_netbox_housekeeping_enable="YES"
 EOD
 }
 ]
