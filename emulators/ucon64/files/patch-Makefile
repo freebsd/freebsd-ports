@@ -1,16 +1,13 @@
-Remove some hardcoded optimization/warnings flags.  This will become obsolete
-with the next release.
+Remove hardcoded optimization flags.
 
---- Makefile.orig	2020-12-26 22:51:37 UTC
+--- Makefile.orig	2021-12-17 09:54:12 UTC
 +++ Makefile
-@@ -9,8 +9,8 @@ endif
- 
- CC=gcc
+@@ -11,7 +11,7 @@ endif
  CFLAGS0:=$(CFLAGS)
--CFLAGS+=-I. -Wall -W -Wno-implicit-fallthrough -Wno-format-truncation \
---Wno-stringop-overflow -O3 -fsigned-char
-+CFLAGS+=-I. -Wall -W -Wno-implicit-fallthrough \
-+-fsigned-char
- # Enable -Wstringop-overflow[=type] when it is no longer a broken, partial
- # implementation with false positives for trivial cases.
- LDFLAGS0:=$(LDFLAGS)
+ include config.mak
+ 
+-CFLAGS+=-I. -Wall -W -Wno-implicit-fallthrough -O3 -fsigned-char
++CFLAGS+=-I. -Wall -W -Wno-implicit-fallthrough -fsigned-char
+ ifneq ($(findstring clang,$(CC)),clang)
+ CFLAGS+=-Wno-format-truncation -Wno-stringop-overflow
+ endif

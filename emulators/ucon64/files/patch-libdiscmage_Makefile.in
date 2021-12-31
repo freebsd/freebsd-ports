@@ -1,14 +1,13 @@
-Remove some hardcoded optimization/warnings flags.  This will become obsolete
-with the next release.
+Remove hardcoded optimization flags.
 
---- libdiscmage/Makefile.in.orig	2020-12-26 22:53:30 UTC
+--- libdiscmage/Makefile.in.orig	2021-12-17 09:58:17 UTC
 +++ libdiscmage/Makefile.in
-@@ -22,7 +22,7 @@ INSTALL_DATA=@INSTALL_DATA@
- 
+@@ -23,7 +23,7 @@ INSTALL_DATA=@INSTALL_DATA@
+ ifeq ($(CC),cc)
  CC=@CC@
- CFLAGS0:=$(CFLAGS) -I. -Wall -W -Wno-implicit-fallthrough \
---Wno-format-truncation -Wno-stringop-overflow -O3 @DEFS@
-+@DEFS@
- CFLAGS=$(CFLAGS0) -DDLL
- ifdef DLOPEN
- CFLAGS+=-DDLOPEN
+ endif
+-CFLAGS0:=$(CFLAGS) -I. -Wall -W -Wno-implicit-fallthrough -O3 @DEFS@
++CFLAGS0:=$(CFLAGS) -I. -Wall -W -Wno-implicit-fallthrough @DEFS@
+ ifneq ($(findstring clang,$(CC)),clang)
+ CFLAGS0+=-Wno-format-truncation -Wno-stringop-overflow
+ endif

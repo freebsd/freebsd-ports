@@ -1,21 +1,19 @@
 PORTNAME=	ucon64
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME:tl}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Multipurpose video game ROM image and backup utility
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../license.html # only available as HTML file
 
-USES=		gmake
+USES=		compiler gmake
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-
-MAKE_ARGS=	CC="${CC}"
 
 WRKSRC_SUBDIR=	src
 
@@ -42,6 +40,13 @@ PARALLEL_CONFIGURE_ENABLE=	parallel
 USB_CONFIGURE_WITH=		libusb
 ZLIB_CONFIGURE_WITH=		zlib
 
+.include <bsd.port.pre.mk>
+
+# GCC is assumed if "CC=cc" is set thus set CC accordingly if clang is used.
+.if ${COMPILER_TYPE} == clang && !defined(USE_GCC)
+CONFIGURE_ENV+=	CC=clang
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ucon64.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ucon64_misc.c
@@ -54,4 +59,4 @@ do-install-DISCMAGE-on:
 	${INSTALL_LIB} ${WRKSRC}/libdiscmage/discmage.so \
 		${STAGEDIR}${PREFIX}/lib/libdiscmage.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
