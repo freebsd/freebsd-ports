@@ -1777,6 +1777,7 @@
     SUBDIR += py-sentinelhub
     SUBDIR += py-slimit
     SUBDIR += py-slumber
+    SUBDIR += py-social-auth-app-django
     SUBDIR += py-sockjs-tornado
     SUBDIR += py-soupsieve
     SUBDIR += py-splinter

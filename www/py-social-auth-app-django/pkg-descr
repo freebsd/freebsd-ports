@@ -1,0 +1,8 @@
+Python Social Auth is an easy to setup social authentication/registration
+mechanism with support for several frameworks and auth providers.
+
+This is the Django component of the python-social-auth ecosystem, it implements
+the needed functionality to integrate social-auth-core in a Django based
+project.
+
+WWW: https://github.com/python-social-auth/social-app-django
