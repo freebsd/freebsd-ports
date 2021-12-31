@@ -16760,3 +16760,4 @@ graphics/libreatlas||2021-12-31|Has expired: Abandoned upstream, no new release 
 www/py-dj31-djangorestframework||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
 devel/es-eric6||2021-12-31|Slave of expired devel/eric6
 german/eric6||2021-12-31|Slave of expired devel/eric6
+russian/eric6||2021-12-31|Slave of expired devel/eric6
