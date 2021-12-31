@@ -1,0 +1,22 @@
+Don't install bundled robin-map in dynarmic bundled in yuzu
+
+===> Checking for items in STAGEDIR missing from pkg-plist
+Error: Orphaned: include/tsl/robin_growth_policy.h
+Error: Orphaned: include/tsl/robin_hash.h
+Error: Orphaned: include/tsl/robin_map.h
+Error: Orphaned: include/tsl/robin_set.h
+Error: Orphaned: share/cmake/tsl-robin-map/tsl-robin-mapConfig.cmake
+Error: Orphaned: share/cmake/tsl-robin-map/tsl-robin-mapConfigVersion.cmake
+Error: Orphaned: share/cmake/tsl-robin-map/tsl-robin-mapTargets.cmake
+
+--- externals/dynarmic/externals/CMakeLists.txt.orig	2021-12-23 11:38:58 UTC
++++ externals/dynarmic/externals/CMakeLists.txt
+@@ -24,7 +24,7 @@ target_include_directories(mp INTERFACE $<BUILD_INTERF
+ # robin-map
+ 
+ if (NOT TARGET tsl::robin_map)
+-    add_subdirectory(robin-map)
++    add_subdirectory(robin-map EXCLUDE_FROM_ALL)
+ endif()
+ 
+ # vixl
