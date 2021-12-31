@@ -1,5 +1,6 @@
 PORTNAME=	xpra
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -115,6 +116,8 @@ post-patch:
 	    ${WRKSRC}/xpra/platform/pycups_printing.py
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/sbin|' \
 	    ${WRKSRC}/fs/etc/xpra/conf.d/16_printing.conf.in
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+	    ${WRKSRC}/xpra/server/server_util.py
 
 post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/xorg.conf \
