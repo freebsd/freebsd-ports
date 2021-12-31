@@ -44,7 +44,7 @@ Console upgrade recommended on medium and hight traffic sites:
 
 3) Run the update 
 
-    php %%WWWDIR%%/matomo/console core:update
+    php %%WWWDIR%%/console core:update
 
 4) Remove the previously added config.ini parameters
 
