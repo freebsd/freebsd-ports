@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20211228
+PORTVERSION=	s20211231
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb \
@@ -40,11 +40,11 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	279c7bcc1
+GH_TAGNAME=	eb7d36165
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.202:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r5-127-gcce7e4ee:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r5-129-g28714ee7:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:a395963:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r52:inih/externals/inih/inih \
