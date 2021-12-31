@@ -1,3 +1,29 @@
+  <vuln vid="47197b47-6a1a-11ec-8be6-d4c9ef517024">
+    <topic>Roundcube -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.5.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="://roundcube.net/news/2021/12/30/update-1.5.2-released">
+	  <p>Cross-site scripting (XSS) via HTML messages with malicious CSS
+	    content</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2021/12/30/update-1.5.2-released</url>
+    </references>
+    <dates>
+      <discovery>2021-12-30</discovery>
+      <entry>2021-12-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1b2b492-6999-11ec-a50c-001cc0382b2f">
     <topic>Mbed TLS -- Potential double-free after an out of memory error</topic>
     <affects>
