@@ -111,12 +111,12 @@ post-patch:
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
 
-post-configure:
-	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
-		${BUILD_WRKSRC}/dist/compatibility_list/
-
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
 		${WRKSRC}/CMakeLists.txt
+
+post-configure:
+	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
+		${BUILD_WRKSRC}/dist/compatibility_list/
 
 .include <bsd.port.mk>
