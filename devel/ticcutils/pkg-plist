@@ -10,8 +10,8 @@ include/ticcutils/SocketBasics.h
 include/ticcutils/StringOps.h
 include/ticcutils/Tar.h
 include/ticcutils/Timer.h
-include/ticcutils/TreeHash.h
-include/ticcutils/Trie.h
+include/ticcutils/UniHash.h
+include/ticcutils/UniTrie.h
 include/ticcutils/Unicode.h
 include/ticcutils/UnitTest.h
 include/ticcutils/Version.h
