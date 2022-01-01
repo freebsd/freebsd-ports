@@ -1,0 +1,13 @@
+The ormar package is an async mini ORM for Python, with support for Postgres,
+MySQL, and SQLite.
+
+The main benefit of using ormar are:
+* getting an async ORM that can be used with async frameworks (fastapi,
+  starlette etc.)
+* getting just one model to maintain - you don't have to maintain pydantic and
+  other orm model (sqlalchemy, peewee, gino etc.)
+
+The goal was to create a simple ORM that can be used directly (as request and
+response models) with fastapi that bases it's data validation on pydantic.
+
+WWW: https://github.com/collerek/ormar
