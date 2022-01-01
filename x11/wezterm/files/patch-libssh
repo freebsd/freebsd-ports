@@ -1,0 +1,19 @@
+Unbundle strndup() on all Unix-like systems
+
+--- ../libssh-rs-7d884fa4e506b7273304e6c4452f928ca7a28198/libssh-rs-sys/build.rs.orig	2021-12-16 04:55:11 UTC
++++ ../libssh-rs-7d884fa4e506b7273304e6c4452f928ca7a28198/libssh-rs-sys/build.rs
+@@ -87,13 +87,11 @@ fn main() {
+         cfg.define("HAVE_TERMIOS_H", Some("1"));
+         cfg.define("HAVE_UNISTD_H", Some("1"));
+         cfg.define("HAVE_VSNPRINTF", Some("1"));
++        cfg.define("HAVE_STRNDUP", Some("1"));
+ 
+         if !target.contains("darwin") {
+             cfg.define("HAVE_POLL", Some("1"));
+         }
+-    }
+-    if target.contains("linux") {
+-        cfg.define("HAVE_STRNDUP", Some("1"));
+     }
+     if target.contains("darwin") {
+         cfg.define("HAVE_NTOHLL", Some("1"));
