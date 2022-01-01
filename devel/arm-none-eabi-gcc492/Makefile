@@ -6,7 +6,7 @@ MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	arm-none-eabi-
 PKGNAMESUFFIX=	492
 
-MAINTAINER=	ian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
 
 LICENSE=	GPLv3 GPLv3RLE
