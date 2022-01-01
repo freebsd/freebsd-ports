@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-01-01 21:16:17 UTC
++++ CMakeLists.txt
+@@ -45,7 +45,7 @@ set(GENDIR ${CMAKE_CURRENT_BINARY_DIR}/generated)
+ 
+ # Python
+ if (SURELOG_WITH_PYTHON)
+-  find_package(Python3 3.3 REQUIRED COMPONENTS Interpreter Development)
++  find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} EXACT REQUIRED COMPONENTS Interpreter Development)
+   find_package(SWIG 3.0 REQUIRED)
+   message(STATUS "Python3_LIBRARIES = ${Python3_LIBRARIES}")
+   message(STATUS "Python3_EXECUTABLE = ${Python3_EXECUTABLE}")

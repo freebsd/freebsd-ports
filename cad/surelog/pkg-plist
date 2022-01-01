@@ -76,6 +76,7 @@ include/uhdm/RTTI.h
 include/uhdm/Serializer.h
 include/uhdm/SymbolFactory.h
 include/uhdm/VpiListener.h
+include/uhdm/VpiListenerTracer.h
 include/uhdm/actual_group.h
 include/uhdm/alias_stmt.h
 include/uhdm/always.h
@@ -108,6 +109,7 @@ include/uhdm/checker_inst.h
 include/uhdm/checker_inst_port.h
 include/uhdm/checker_port.h
 include/uhdm/class_defn.h
+include/uhdm/class_hierarchy.txt
 include/uhdm/class_obj.h
 include/uhdm/class_typespec.h
 include/uhdm/class_var.h
@@ -351,6 +353,7 @@ lib/libcapnp.so
 lib/libcapnp.so.0.8.0
 lib/libkj.so
 lib/libkj.so.0.8.0
+lib/libuhdm.so
 lib/surelog/libantlr4-runtime.a
 lib/surelog/libflatbuffers.a
 lib/surelog/libsurelog.a
@@ -358,7 +361,6 @@ lib/surelog/pkg/work/ovm_pkg.sv.slpa
 lib/surelog/pkg/work/ovm_pkg.sv.slpp
 lib/surelog/pkg/work/uvm_pkg.sv.slpa
 lib/surelog/pkg/work/uvm_pkg.sv.slpp
-lib/surelog/sv/builtin.sv
 lib/uhdm/UHDM.capnp
-lib/uhdm/libuhdm.a
 @dir lib/surelog/python
+@dir lib/surelog/sv
