@@ -1,7 +1,7 @@
 # Created by: Wen heping <wenheping@gmail.com>
 
 PORTNAME=	Jmol
-DISTVERSION=	14.32.6
+DISTVERSION=	14.32.7
 CATEGORIES=	science java
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}-full${EXTRACT_SUFX}
@@ -24,8 +24,6 @@ SUB_LIST=	JAVA=${JAVA}
 
 EXES=		${PORTNAME:tl} ${PORTNAME:tl}data
 JARS=		${PORTNAME}.jar Jvxl.jar ${PORTNAME}Data.jar # ${PORTNAME}Lib.jar
-# uses sun.audio which got removed with openjdk9 https://bugs.openjdk.java.net/browse/JDK-8050465, https://sourceforge.net/p/jmol/bugs/622/
-JAVA_VERSION=	8
 
 PLIST_FILES=	${EXES:S/^/bin\//} \
 		${JARS:S/^/${JAVAJARDIR}\//}
