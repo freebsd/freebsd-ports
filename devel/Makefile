@@ -4266,6 +4266,7 @@
     SUBDIR += py-azure-mgmt-servicebus
     SUBDIR += py-azure-mgmt-servicefabric
     SUBDIR += py-azure-mgmt-servicefabricmanagedclusters
+    SUBDIR += py-azure-mgmt-servicelinker
     SUBDIR += py-azure-mgmt-signalr
     SUBDIR += py-azure-mgmt-sql
     SUBDIR += py-azure-mgmt-sqlvirtualmachine
