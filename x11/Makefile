@@ -389,6 +389,7 @@
     SUBDIR += wezterm
     SUBDIR += wf-shell
     SUBDIR += wl-clipboard
+    SUBDIR += wl-mirror
     SUBDIR += wlogout
     SUBDIR += wlr-randr
     SUBDIR += wlrctl
