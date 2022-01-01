@@ -17,7 +17,7 @@ multiplexer written by @wez and implemented in Rust.
 - Configuration via a file with hot reloading
 - Multiple Windows (Hotkey: Super-N)
 - Splits/Panes
-- Tabs (Hotkey: Super-T, next/prev: Super-[ and Super-], go-to: Super-[1-9])
+- Tabs (Hotkey: Super-T, next/prev: Super-Shift-[ and Super-Shift-], go-to: Super-[1-9])
 - SSH client with native tabs
 - Connect to serial ports for embedded/Arduino work
 - Connect to a local multiplexer server over unix domain sockets
