@@ -1,4 +1,0 @@
-TRAMP stands for `Transparent Remote (file) Access, Multiple Protocol'.
-This package provides remote file editing, similar to ange-ftp and EFS.
-
-WWW: http://www.gnu.org/software/tramp/

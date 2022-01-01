@@ -16761,3 +16761,6 @@ www/py-dj31-djangorestframework||2021-12-31|Has expired: Extended support of Dja
 devel/es-eric6||2021-12-31|Slave of expired devel/eric6
 german/eric6||2021-12-31|Slave of expired devel/eric6
 russian/eric6||2021-12-31|Slave of expired devel/eric6
+astro/google-earth||2022-01-01|Has expired: Needs newer version to connect to server
+net/tramp||2022-01-01|Has expired: Not updated in 5 years and now part of Emacs
+archivers/p7zip-codec-rar||2022-01-01|Has expired: Unmaintained for years and has known vulnerabilities
