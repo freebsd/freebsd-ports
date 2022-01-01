@@ -16704,7 +16704,6 @@ java/intellij-rubymine|devel/rubymine|2021-12-31|Use better name and category
 lang/python36||2021-12-31|Has expired: Upgrade to a newer Python version. 3.6 is in maintenance status and gets security fixes only. End-of-Life: 2021-12-23. See https://devguide.python.org/
 devel/sdl_sge||2021-12-31|Has expired: Upstream no longer maintained
 net/appkonference||2021-12-31|Has expired: Outdated, depends on unsupported version of net/asterisk
-dns/bind911|dns/bind916|2021-12-31|Has expired: End of life, please migrate to a newer version of BIND9
 net/zebra||2021-12-31|Has expired: Abandoned upstream, last release in 2005. Consider migrating to net/frr7 or net/bird2
 audio/osalp||2021-12-31|Has expired: Abandoned upstream, listed as beta and no new release since 2008
 games/stransball2||2021-12-31|Has expired: Depends on expired devel/sdl_sge
