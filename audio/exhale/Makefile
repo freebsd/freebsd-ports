@@ -1,5 +1,5 @@
 PORTNAME=	exhale
-DISTVERSION=	1.1.8
+DISTVERSION=	1.1.9
 CATEGORIES=	audio
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	ecodis
-GL_COMMIT=	7688ab502ecbd1203bde1e605676f7440cd9fd5e
+GL_COMMIT=	00423757b1f266f9164eff35e69b6e7d4d967f41
 
 USE_LDCONFIG=	yes
 
