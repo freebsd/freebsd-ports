@@ -613,6 +613,7 @@
     SUBDIR += envsubst
     SUBDIR += epl.el
     SUBDIR += epm
+    SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-backoff
     SUBDIR += erlang-bbmustache
@@ -652,6 +653,7 @@
     SUBDIR += erlang-ssl_verify_fun
     SUBDIR += erlang-syslog
     SUBDIR += erlang-unicode_util_compat
+    SUBDIR += es-eric6
     SUBDIR += esbuild
     SUBDIR += estd
     SUBDIR += etcd
