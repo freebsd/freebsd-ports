@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	jplephem
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
