@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -17,7 +17,7 @@ USE_QT=		buildtools_build qmake_build core gui widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq
 GH_PROJECT=	XOpcodeCalc XOptions:xo
-GH_TAGNAME=	01bba2a:xo
+GH_TAGNAME=	05201c2:xo
 GH_SUBDIR=	XOptions:xo
 
 post-extract:
@@ -26,10 +26,10 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/release/xocalc \
 		${STAGEDIR}${PREFIX}/bin
-	cd ${INSTALL_WRKSRC}/DEBIAN && ${COPYTREE_SHARE} hicolor \
+	cd ${INSTALL_WRKSRC}/LINUX && ${COPYTREE_SHARE} hicolor \
 		${STAGEDIR}${PREFIX}/share/icons
 	${SED} -e 's,#VERSION#,${PORTVERSION},' \
-		${WRKSRC}/DEBIAN/xocalc.desktop \
+		${WRKSRC}/LINUX/xocalc.desktop \
 		> ${STAGEDIR}${DESKTOPDIR}/xocalc.desktop
 
 .include <bsd.port.mk>
