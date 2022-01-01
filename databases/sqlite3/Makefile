@@ -5,7 +5,7 @@ DISTVERSION=	3.35.5
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/${%Y:L:gmtime}/ https://www2.sqlite.org/${%Y:L:gmtime}/ https://www3.sqlite.org/${%Y:L:gmtime}/
+MASTER_SITES=	https://www.sqlite.org/2021/ https://www2.sqlite.org/2021/ https://www3.sqlite.org/2021/
 DISTNAME=	sqlite-src-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
