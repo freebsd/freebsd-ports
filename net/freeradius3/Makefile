@@ -3,9 +3,9 @@
 PORTNAME=	freeradius
 DISTVERSION=	3.0.25
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
-		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
-		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
+MASTER_SITES=	https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${DISTVERSION:S/./_/g}/ \
+		https://freeradius.org/ftp/pub/radius/%SUBDIR%/ \
+		ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ZI
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	3
