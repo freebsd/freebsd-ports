@@ -1,0 +1,15 @@
+wl-mirror attempts to provide a solution to sway's lack of output
+mirroring by mirroring an output onto a client surface.
+
+Features:
+- Mirror an output onto a resizable window
+- Mirror an output onto another output by fullscreening the window
+- Reacts to changes in output scale
+- Preserves aspect ratio
+- Corrects for flipped or rotated outputs
+- Supports custom flips or rotations
+- Supports mirroring custom regions of outputs
+- Supports receiving additional options on stdin for changing the mirrored
+  screen or region on the fly (works best when used with pipectl)
+
+WWW: https://github.com/Ferdi265/wl-mirror
