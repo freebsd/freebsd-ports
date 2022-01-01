@@ -1,7 +1,3 @@
-ld: error: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
->>> defined in loader/CMakeFiles/vulkan.dir/unknown_ext_chain_gas_aarch64.S.o
->>> referenced by loader/CMakeFiles/vulkan.dir/unknown_ext_chain_gas_aarch64.S.o:(.text+0x61A8)
-
 -- The ASM compiler identification is Clang
 -- Found assembler: /usr/bin/cc
 CMake Warning at loader/CMakeLists.txt:252 (message):
@@ -19,22 +15,18 @@ CMake Error at loader/CMakeLists.txt:332 (target_compile_definitions):
   Cannot specify compile definitions for target "asm_offset" which is not
   built by this project.
 
---- loader/CMakeLists.txt.orig	2021-11-16 19:22:26 UTC
+--- loader/CMakeLists.txt.orig	2021-12-20 16:46:42 UTC
 +++ loader/CMakeLists.txt
-@@ -228,8 +228,11 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
-             try_compile(ASSEMBLER_WORKS ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/asm_test_aarch64.S)
+@@ -229,7 +229,7 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
              if(ASSEMBLER_WORKS)
                  set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain_gas_aarch64.S)
-+                if(CMAKE_C_COMPILER_ID MATCHES "Clang")
-+                    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,notext")
-+                endif()
              endif()
 -        elseif(${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64" OR ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86")
 +        elseif(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64|amd64" OR ${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86$|i.86")
              check_include_file("cet.h" HAVE_CET_H)
              if(HAVE_CET_H)
                  set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS HAVE_CET_H)
-@@ -329,7 +332,9 @@ else()
+@@ -330,7 +330,9 @@ else()
      target_compile_definitions(vulkan PRIVATE _GNU_SOURCE)
      if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
          target_compile_definitions(vulkan PRIVATE __BSD_VISIBLE=1)
