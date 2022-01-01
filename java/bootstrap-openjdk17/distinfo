@@ -1,8 +1,10 @@
-TIMESTAMP = 1640000063
+TIMESTAMP = 1641023254
 SHA256 (bootstrap-openjdk17-aarch64-17.0.1.12.1.tar.xz) = a1bf65078fbd9bc0826df4e3979ebd4d882b52fc04303b460a9d0d090f68e7a3
 SIZE (bootstrap-openjdk17-aarch64-17.0.1.12.1.tar.xz) = 108306712
 SHA256 (bootstrap-openjdk17-amd64-17.0.1.12.1.tar.xz) = 1c8469678ab77e61d78f05ff1e317a46a3208af086eb6dff822d487513adcaea
 SIZE (bootstrap-openjdk17-amd64-17.0.1.12.1.tar.xz) = 109958368
+SHA256 (bootstrap-openjdk17-i386-17.0.1.12.1.tar.xz) = dd9843939bcccb5772f4485a4553264e81dfb39a42f794de50200bd352f773c3
+SIZE (bootstrap-openjdk17-i386-17.0.1.12.1.tar.xz) = 104910036
 SHA256 (bootstrap-openjdk17-powerpc64-elfv2-17.0.1.12.1.tar.xz) = 083e22f78add71a6f6c96a8aa87aa147e790f56a39beba8b33f70166256e920f
 SIZE (bootstrap-openjdk17-powerpc64-elfv2-17.0.1.12.1.tar.xz) = 104895520
 SHA256 (bootstrap-openjdk17-powerpc64le-17.0.1.12.1.tar.xz) = f9677056f6b2fc2c0f1a33a1b75b4cbc592eb8d3b39ab9fed4b22e5f7b468e1f
