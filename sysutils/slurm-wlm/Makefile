@@ -77,7 +77,8 @@ RRD_CONFIGURE_WITH=	rrdtool
 # --docdir is non-functional
 # CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 # FreeBSD Infiniband support is still experimental
-CONFIGURE_ARGS=	--without-ofed
+# slurmrestd does not build on FreeBSD
+CONFIGURE_ARGS=	--without-ofed --disable-slurmrestd
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -fcommon
