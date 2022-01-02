@@ -1,6 +1,6 @@
 PORTNAME=	replxx
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.0.3
+DISTVERSION=	0.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	meka@tilda.center
@@ -14,5 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AmokHuginnsson
 CMAKE_ON=	BUILD_SHARED_LIBS
 USE_LDCONFIG=	yes
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

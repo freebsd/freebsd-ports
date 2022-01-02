@@ -1,7 +1,7 @@
 include/replxx.h
 include/replxx.hxx
 lib/libreplxx.so
-lib/libreplxx.so.0.0.3
+lib/libreplxx.so.%%VERSION%%
 share/cmake/replxx/replxx-config-version.cmake
 share/cmake/replxx/replxx-config.cmake
 share/cmake/replxx/replxx-targets-%%CMAKE_BUILD_TYPE%%.cmake
