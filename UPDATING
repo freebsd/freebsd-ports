@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220102:
+  AFFECTS: users of sysutils/py-azure-cli
+  AUTHOR: dbaio@FreeBSD.org
+
+  When upgrading to Azure CLI v2.31.0, you will need to re-authenticate on
+  Azure services.
+
+    $ az login --use-device-code
+
+  Starting in version 2.30.0, Azure CLI uses MSAL as the underlying
+  authentication library. MSAL uses AAD v2.0 authentication flow to provide more
+  functionality and increases security for token cache.
+  More info: https://docs.microsoft.com/en-us/cli/azure/msal-based-azure-cli
+
 20211223:
   AFFECTS: users of security/bastillion
   AUTHOR: netchild@FreeBSD.org

@@ -23,4 +23,19 @@ authorization code displayed in your terminal.
 EOM
 	type: install
 }
+{
+  type: upgrade
+  maximum_version: "2.31.0"
+  message: <<EOM
+When upgrading to Azure CLI v2.31.0, you will need to re-authenticate on Azure
+services.
+
+  $ az login --use-device-code
+
+Starting in version 2.30.0, Azure CLI uses MSAL as the underlying
+authentication library. MSAL uses AAD v2.0 authentication flow to provide more
+functionality and increases security for token cache.
+More info: https://docs.microsoft.com/en-us/cli/azure/msal-based-azure-cli
+EOM
+}
 ]
