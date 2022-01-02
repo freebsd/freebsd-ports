@@ -11,12 +11,14 @@ lib/cmake/Td/TdConfigVersion.cmake
 lib/cmake/Td/TdTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Td/TdTargets.cmake
 lib/libtdactor.a
-lib/libtdapi.a
-lib/libtdclient.a
+lib/libtdapi.so
+lib/libtdapi.so.1.8.0
+lib/libtdclient.so
+lib/libtdclient.so.1.8.0
 lib/libtdcore.a
 lib/libtddb.a
 lib/libtdjson.so
-lib/libtdjson.so.1.7.10
+lib/libtdjson.so.1.8.0
 lib/libtdjson_private.a
 lib/libtdjson_static.a
 lib/libtdnet.a
