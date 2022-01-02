@@ -1,10 +1,11 @@
---- configure.ac.orig	2020-07-09 11:49:16 UTC
+--- configure.ac.orig	2022-01-02 16:39:46 UTC
 +++ configure.ac
-@@ -10,7 +10,6 @@ AC_CONFIG_HEADERS([config.h])
- AC_DEFINE([UNIX],[1],[Unix tag on])
- AC_DEFINE([DEBUG],[1],[Debug tag on])
+@@ -67,7 +67,7 @@ dnl AC_PROG_LIBTOOL
  
--AM_INIT_AUTOMAKE
- AC_CANONICAL_HOST
  
- AC_PROG_CC([gcc])
+ dnl DEFAULT_C_FLAG="-fno-inline-functions -fno-inline-functions-called-once -fno-optimize-sibling-calls -O2 -fno-omit-frame-pointer -g ${VECTOR_FLAG}"
+-DEFAULT_C_FLAG="-std=c99 -O3 -fomit-frame-pointer -funroll-loops -Wall -Winline -finline ${VECTOR_FLAG}"
++DEFAULT_C_FLAG="-std=c99 -O3 -fomit-frame-pointer -funroll-loops -msse3 -Wall -Winline -finline ${VECTOR_FLAG}"
+ dnl DEFAULT_C_FLAG="-O2 ${VECTOR_FLAG}"
+ dnl DEFAULT_C_FLAG="${VECTOR_FLAG}"
+ dnl DEFAULT_C_FLAG="-pthread  -O3 -g -ffunction-sections -fdata-sections"
