@@ -2,6 +2,7 @@ bin/libotf-config
 bin/otfdump
 bin/otflist
 bin/otftobdf
+%%X11%%bin/otfview
 include/otf.h
 lib/libotf.a
 lib/libotf.la
