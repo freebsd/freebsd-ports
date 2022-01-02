@@ -11,6 +11,9 @@ DISTNAME=	pipsec-19991014
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Simple IPSEC tunnel tool from Pierre Beyssac
 
+DEPRECATED=	Abandonware, current release is from 1999 and uses insecure encryption algorithms
+EXPIRATION_DATE=2022-01-15
+
 USES+=		ssl
 
 USE_RC_SUBR=	pipsecd
