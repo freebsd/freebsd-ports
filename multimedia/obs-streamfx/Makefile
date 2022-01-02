@@ -2,6 +2,9 @@ PORTNAME=	obs-streamfx
 DISTVERSION=	0.9.3
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/Xaymar/obs-StreamFX/commit/
+PATCHFILES=	612c2f52139ba7255abf133edf8008b2c6ece41a.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Modern effects
 
