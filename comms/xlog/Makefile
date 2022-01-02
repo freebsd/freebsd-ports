@@ -1,7 +1,7 @@
 # Created by: Patrick Gardella <patrick@FreeBSD.org>
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.22
+DISTVERSION=	2.0.24
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -19,11 +19,9 @@ USES=		compiler:c11 gnome pkgconfig shared-mime-info
 
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--enable-mime-update
 CONFIGURE_ENV+=	ac_cv_c_compiler_gnu=no
-MAKE_ARGS=	PREFIX=${PREFIX}
-
-LIBS+=		-lm
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
