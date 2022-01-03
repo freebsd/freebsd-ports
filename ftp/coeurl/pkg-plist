@@ -1,7 +1,8 @@
 include/coeurl/client.hpp
+include/coeurl/errors.hpp
 include/coeurl/headers.hpp
 include/coeurl/request.hpp
 lib/libcoeurl.so
 lib/libcoeurl.so.0
-lib/libcoeurl.so.0.1.0
+lib/libcoeurl.so.0.1.1
 libdata/pkgconfig/coeurl.pc

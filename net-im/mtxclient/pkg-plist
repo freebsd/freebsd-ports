@@ -2,6 +2,7 @@ include/mtx.hpp
 include/mtx/common.hpp
 include/mtx/errors.hpp
 include/mtx/events.hpp
+include/mtx/events/account_data/direct.hpp
 include/mtx/events/account_data/fully_read.hpp
 include/mtx/events/aliases.hpp
 include/mtx/events/avatar.hpp
@@ -55,6 +56,7 @@ include/mtx/responses/empty.hpp
 include/mtx/responses/groups.hpp
 include/mtx/responses/login.hpp
 include/mtx/responses/media.hpp
+include/mtx/responses/members.hpp
 include/mtx/responses/messages.hpp
 include/mtx/responses/notifications.hpp
 include/mtx/responses/profile.hpp

@@ -1,6 +1,6 @@
 PORTNAME=	coeurl
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	ftp www
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -20,6 +20,6 @@ USES=		compiler:c++17-lang pkgconfig \
 USE_GITLAB=	yes
 GL_SITE=	https://nheko.im/
 GL_ACCOUNT=	nheko-reborn
-GL_COMMIT=	a08f619adaa1ccd34eb6315d6578eddae0d1cc9b
+GL_COMMIT=	fa108b25a92b0e037723debc4388a300e737dc2d
 
 .include <bsd.port.mk>
