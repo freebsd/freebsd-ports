@@ -12,12 +12,13 @@ COMMENT=	Command line editor library
 
 LICENSE=	BSD2CLAUSE
 
-USES=		libtool localbase ncurses pathfix
+USES=		cpe libtool localbase ncurses pathfix
 EDITVERSION=	3.1
 EDITDATE=	20210216
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	libedit_project
 
 CONFLICTS_INSTALL=	editline
 
