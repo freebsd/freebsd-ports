@@ -3083,6 +3083,7 @@ etc/zm.conf
 %%SITE_PERL%%/ZoneMinder/Control/onvif.pm
 %%SITE_PERL%%/ZoneMinder/Database.pm
 %%SITE_PERL%%/ZoneMinder/Event.pm
+%%SITE_PERL%%/ZoneMinder/Event_Summary.pm
 %%SITE_PERL%%/ZoneMinder/Filter.pm
 %%SITE_PERL%%/ZoneMinder/Frame.pm
 %%SITE_PERL%%/ZoneMinder/General.pm
@@ -6151,6 +6152,7 @@ etc/zm.conf
 %%PERL5_MAN3%%/ZoneMinder::Control::mjpgStreamer.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Database.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Event.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Event_Summary.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Filter.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Frame.3.gz
 %%PERL5_MAN3%%/ZoneMinder::General.3.gz
@@ -6368,6 +6370,8 @@ share/applications/zoneminder.desktop
 %%DATADIR%%/db/zm_update-1.35.7.sql
 %%DATADIR%%/db/zm_update-1.35.8.sql
 %%DATADIR%%/db/zm_update-1.35.9.sql
+%%DATADIR%%/db/zm_update-1.36.6.sql
+%%DATADIR%%/db/zm_update-1.36.9.sql
 %%DATADIR%%/fonts/default.zmfnt
 %%DATADIR%%/icons/16x16/icon.xpm
 %%WWWDIR%%/ajax/add_monitors.php

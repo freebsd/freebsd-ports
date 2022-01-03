@@ -1,5 +1,5 @@
 PORTNAME=	zoneminder
-DISTVERSION=	1.36.5
+DISTVERSION=	1.36.12
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 
 USES=		cmake:insource,noninja cpe jpeg mysql perl5 php shebangfix ssl
 USE_GITHUB=	yes
-GH_TUPLE=	FriendsOfCake:crud:0bd63fb:crud/web/api/app/Plugin/Crud \
+GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
 		ZoneMinder:RtspServer:cd7fd49:rtsp_server/dep/RtspServer
 USE_RC_SUBR=	zoneminder
