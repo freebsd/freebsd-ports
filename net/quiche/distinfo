@@ -1,4 +1,4 @@
-TIMESTAMP = 1631206398
+TIMESTAMP = 1640942834
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -193,7 +193,7 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (rust/crates/ws2_32-sys-0.2.1.crate) = d59cefebd0c892fa2dd6de581e937301d8552cb44489cdff035c6187cb63fa5e
 SIZE (rust/crates/ws2_32-sys-0.2.1.crate) = 4697
-SHA256 (cloudflare-quiche-0.9.0_GH0.tar.gz) = 74d2b7e5c79d8d94f051d5291549bdc46a98919cc4d34734fa58702d769d8099
-SIZE (cloudflare-quiche-0.9.0_GH0.tar.gz) = 587257
-SHA256 (google-boringssl-067cfd92f_GH0.tar.gz) = c1de2c821929452a054e2c084da30a27168679bf4201d5fd94c1543bf523f5c7
-SIZE (google-boringssl-067cfd92f_GH0.tar.gz) = 43809292
+SHA256 (cloudflare-quiche-0.10.0_GH0.tar.gz) = 097c6f9d43e93a130cc56aab053b1acd878b6463d91686486ddfe234e84c340b
+SIZE (cloudflare-quiche-0.10.0_GH0.tar.gz) = 591056
+SHA256 (google-boringssl-f1c75347d_GH0.tar.gz) = fc0bb68685e8e5fe25c4170dec90796d290b754529baae19e03cbc73365eb08a
+SIZE (google-boringssl-f1c75347d_GH0.tar.gz) = 43373250

@@ -1,6 +1,5 @@
 PORTNAME=	quiche
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.10.0
 CATEGORIES=	net
 
 MAINTAINER=	junho.choi@gmail.com
@@ -13,7 +12,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
 GH_TAGNAME=	${PORTVERSION}
-GH_TUPLE=	google:boringssl:067cfd92f:boringssl/deps/boringssl
+GH_TUPLE=	google:boringssl:f1c75347d:boringssl/deps/boringssl
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
@@ -133,6 +132,10 @@ QLOG_VARS=	CARGO_FEATURES+=qlog
 LIBQUICHE_CARGOTOML=	${WRKSRC}/Cargo.toml
 QUICHEAPPS_CARGOLOCK=	${WRKSRC}/tools/apps/Cargo.lock
 QUICHEAPPS_CARGOTOML=	${WRKSRC}/tools/apps/Cargo.toml
+
+post-patch:
+	@${GREP} -FRl -- '-D_XOPEN_SOURCE=700' ${WRKSRC}/deps/boringssl | \
+		${XARGS} ${REINPLACE_CMD} -e 's,-D_XOPEN_SOURCE=700,,'
 
 # build libquiche and apps
 do-build:
