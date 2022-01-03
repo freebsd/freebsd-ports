@@ -3,8 +3,8 @@ man/man1/Mapper.1.gz
 share/applications/Mapper.desktop
 %%DOCSDIR%%/3rd-party/qtsingleapplication.txt
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/3rd-party/potrace-1.6.txt
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.2 Manual.qch
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.2 Manual.qhc
+%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.5 Manual.qch
+%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.5 Manual.qhc
 %%DOCSDIR%%/common-licenses/GPL-3.txt
 %%DOCSDIR%%/licensing.html
 share/icons/hicolor/128x128/apps/Mapper.png
@@ -68,6 +68,7 @@ share/mime/packages/openorienteering-mapper.xml
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_es.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_fi.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_fr.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_he.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_hr.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_hu.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_id.qm
@@ -96,7 +97,9 @@ share/mime/packages/openorienteering-mapper.xml
 %%NLS%%%%DATADIR%%/translations/map_symbols_nb.qm
 %%NLS%%%%DATADIR%%/translations/map_symbols_ru.qm
 %%NLS%%%%DATADIR%%/translations/map_symbols_sv.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_tr.qm
 %%NLS%%%%DATADIR%%/translations/map_symbols_uk.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_zh_CN.qm
 %%NLS%%%%DATADIR%%/translations/qt_eo.qm
 %%NLS%%%%DATADIR%%/translations/qt_et.qm
 %%NLS%%%%DATADIR%%/translations/qt_id.qm

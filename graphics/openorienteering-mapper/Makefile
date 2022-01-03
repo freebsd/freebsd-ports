@@ -1,8 +1,7 @@
 # Created by: Nikolay Korotkiy <sikmir@gmail.com>
 
 PORTNAME=	openorienteering-mapper
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
 
@@ -11,6 +10,9 @@ COMMENT=	Map drawing program from OpenOrienteering
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+PATCH_SITES=	https://github.com/OpenOrienteering/mapper/commit/
+PATCHFILES=	69977dfd4cbb8608aafa8ca8b5388d4983f5430a.patch:-p1
 
 LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libproj.so:graphics/proj

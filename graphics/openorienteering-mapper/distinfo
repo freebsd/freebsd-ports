@@ -1,3 +1,5 @@
-TIMESTAMP = 1586012779
-SHA256 (OpenOrienteering-mapper-v0.9.2_GH0.tar.gz) = 1a797c3db4ee795585cd324b50b0a37fc9e545233f02cc28660e6f9790e49a51
-SIZE (OpenOrienteering-mapper-v0.9.2_GH0.tar.gz) = 11503101
+TIMESTAMP = 1636910244
+SHA256 (OpenOrienteering-mapper-v0.9.5_GH0.tar.gz) = 619152ca01a370875c15e1930918ce961284ccbf5d2371c147d50caf5e5c2f00
+SIZE (OpenOrienteering-mapper-v0.9.5_GH0.tar.gz) = 11991430
+SHA256 (69977dfd4cbb8608aafa8ca8b5388d4983f5430a.patch) = abc1315ef04364c2051d622163287a3a35b629136ca7ad8568ad630cb471571a
+SIZE (69977dfd4cbb8608aafa8ca8b5388d4983f5430a.patch) = 1919
