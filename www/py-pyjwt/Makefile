@@ -13,9 +13,11 @@ COMMENT=	JSON Web Token implementation in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python:3.6+ cpe
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	pyjwt_project
 
 .include <bsd.port.mk>
