@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	thefuck
-DISTVERSION=	3.31
+DISTVERSION=	3.32
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
