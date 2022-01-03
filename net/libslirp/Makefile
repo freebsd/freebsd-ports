@@ -8,9 +8,11 @@ COMMENT=	General purpose TCP-IP emulator library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		gnome meson pkgconfig tar:bz2
+USES=		cpe gnome meson pkgconfig tar:bz2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	libslirp_project
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
