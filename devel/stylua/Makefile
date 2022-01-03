@@ -1,7 +1,6 @@
 PORTNAME=	stylua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
-PORTREVISION=	2
+DISTVERSION=	0.11.3
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnnyMorganz
-
+GH_PROJECT=	StyLua
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.44 \
@@ -41,8 +40,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
 		fnv-1.0.7 \
-		full_moon-0.13.1 \
-		full_moon_derive-0.8.0 \
+		full_moon-0.14.0 \
+		full_moon_derive-0.9.0 \
 		globset-0.4.8 \
 		half-1.7.1 \
 		hashbrown-0.11.2 \
@@ -128,8 +127,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yaml-rust-0.4.5
 CARGO_FEATURES=	--no-default-features
-
-WRKSRC=		${WRKDIR}/StyLua-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
