@@ -1,9 +1,7 @@
-# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-
 PORTNAME=	godot
-DISTVERSION=	3.2.3
+DISTVERSION=	3.4.2
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION?=	4
+PORTREVISION?=	0
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -24,7 +22,7 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xmessage:x11/xmessage
 
 USES=		compiler:c++14-lang cpe gl pkgconfig scons xorg
-USE_XORG=	x11 xcursor xi xinerama xrandr xrender
+USE_XORG=	x11 xcursor xext xi xinerama xrandr xrender
 USE_GL=		gl glew glu
 
 CPE_VENDOR=	godotengine
@@ -42,7 +40,7 @@ CXXFLAGS_i386_gcc=	-march=i586
 
 # option MONO doesn't build (needs 5.12+) so for now leave it out as an option
 OPTIONS_DEFINE=		EXAMPLES TOOLS UDEV
-OPTIONS_DEFAULT=	ALSA
+OPTIONS_DEFAULT=	ALSA UDEV
 # Moved to devel/godot-tools
 OPTIONS_EXCLUDE?=	EXAMPLES TOOLS
 OPTIONS_GROUP=		AUDIO
@@ -52,8 +50,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# master at 10/7 tagged for 3.2
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:8d9d58f112d8:DEMOS
+# tagged 6/11/21 for 3.4
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:585455e67ca3:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 # mono support doesn't build at present
 MONO_BUILD_DEPENDS=	msbuild:devel/msbuild
@@ -73,6 +71,7 @@ TOOLS_DESKTOP_ENTRIES=	"Godot" "${COMMENT}" "${GODOTFILE}" \
 TOOLS_PLIST_FILES=	share/pixmaps/${GODOTFILE}.png \
 			share/pixmaps/${GODOTFILE}.svg
 UDEV_DESC=		Libudev support (Joystick)
+UDEV_BUILD_DEPENDS=	${PREFIX}/include/linux/input.h:devel/evdev-proto
 UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
 UDEV_MAKE_ARGS=		udev=True
 UDEV_MAKE_ARGS_OFF=	udev=False
