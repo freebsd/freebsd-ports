@@ -1,7 +1,7 @@
 # Created by: Carlos Eduardo G. Carvalho <cartola@openit.com.br>
 
 PORTNAME=	hugin
-PORTVERSION=	2020.0.0
+DISTVERSION=	2021.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -30,6 +30,8 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
 USE_GL=		gl glew glu glut
 USE_WX=		3.0+
 USE_XORG=	x11
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}.0
 
 SHEBANG_FILES=	src/hugin_script_interface/hpi.py \
 		src/hugin_script_interface/plugins/*.py \

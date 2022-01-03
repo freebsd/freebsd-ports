@@ -80,6 +80,7 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/data/default.setting
 %%DATADIR%%/data/duallens.assistant
 %%DATADIR%%/data/expressions.ini
+%%DATADIR%%/data/focus_stack.executor
 %%DATADIR%%/data/fused_layers.executor
 %%DATADIR%%/data/hdr_pano.executor
 %%DATADIR%%/data/hugin_exiftool_copy.arg
@@ -562,7 +563,6 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/xrc/pref_dialog.xrc
 %%DATADIR%%/xrc/preview_frame.xrc
 %%DATADIR%%/xrc/reset_dialog.xrc
-share/icons/gnome/48x48/mimetypes/application-x-ptoptimizer-script.png
 share/icons/hicolor/128x128/apps/hugin.png
 share/icons/hicolor/128x128/apps/ptbatcher.png
 share/icons/hicolor/16x16/apps/hugin.png
@@ -573,6 +573,7 @@ share/icons/hicolor/32x32/apps/hugin.png
 share/icons/hicolor/32x32/apps/ptbatcher.png
 share/icons/hicolor/48x48/apps/hugin.png
 share/icons/hicolor/48x48/apps/ptbatcher.png
+share/icons/hicolor/48x48/mimetypes/application-x-ptoptimizer-script.png
 share/icons/hicolor/scalable/apps/hugin.svg
 share/icons/hicolor/scalable/apps/ptbatcher.svg
 share/locale/ca_ES/LC_MESSAGES/hugin.mo
