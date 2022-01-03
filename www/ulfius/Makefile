@@ -9,7 +9,9 @@ COMMENT=	Web Framework to build REST APIs, Webservices in C
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake cpe
+
+CPE_VENDOR=	ulfius_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
