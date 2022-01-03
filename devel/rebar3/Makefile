@@ -1,5 +1,5 @@
 PORTNAME=	rebar3
-PORTVERSION=	3.17.0
+PORTVERSION=	3.18.0
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -32,15 +32,15 @@ BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
 # from rebar.config
-REBAR_DEPS=	bbmustache-1.10.0 \
-		certifi-2.6.1 \
+REBAR_DEPS=	bbmustache-1.12.2 \
+		certifi-2.8.0 \
 		cf-0.3.1 \
 		cth_readable-1.5.1 \
 		erlware_commons-1.5.0 \
 		eunit_formatters-0.5.0 \
 		getopt-1.0.1 \
-		providers-1.8.1 \
-		relx-4.5.0 \
+		providers-1.9.0 \
+		relx-4.6.0 \
 		ssl_verify_fun-1.1.6
 
 .for _dep in ${REBAR_DEPS}
