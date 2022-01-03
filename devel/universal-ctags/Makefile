@@ -1,7 +1,7 @@
 # Created by: Derek Schrock <dereks@lifeofadishwasher.com>
 
 PORTNAME=	universal-ctags
-PORTVERSION=	p5.9.20211128.0
+PORTVERSION=	p5.9.20220102.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com

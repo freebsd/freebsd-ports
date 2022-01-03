@@ -6,6 +6,7 @@ bin/uoptscript
 %%MANPAGES%%man/man5/utags.5.gz
 %%MANPAGES%%man/man7/uctags-client-tools.7.gz
 %%MANPAGES%%man/man7/uctags-faq.7.gz
+%%MANPAGES%%man/man7/uctags-lang-gdscript.7.gz
 %%MANPAGES%%man/man7/uctags-incompatibilities.7.gz
 %%MANPAGES%%man/man7/uctags-lang-iPythonCell.7.gz
 %%MANPAGES%%man/man7/uctags-lang-inko.7.gz
