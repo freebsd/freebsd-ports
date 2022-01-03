@@ -14,9 +14,10 @@ LICENSE_PERMS_LIBPWQUALITY=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accep
 
 LIB_DEPENDS=	libcrack.so:security/cracklib
 
-USES=		gmake libtool localbase pathfix tar:bz2
+USES=		cpe gmake libtool localbase pathfix tar:bz2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CPE_VENDOR=	libpwquality_project
 CONFIGURE_ARGS+=--disable-pam
 INSTALL_TARGET=	install-strip
 
