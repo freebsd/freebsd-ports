@@ -1,5 +1,5 @@
 PORTNAME=	kliff
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ USE_PYTHON=	distutils autoplist
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
 
-do-test: # tests fail with ImportErrors, complete list is unclearm, see https://github.com/mjwen/kliff/issues/11
+do-test: # tests fail with ImportErrors, complete list is unclear, see https://github.com/mjwen/kliff/issues/11
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} test
 
