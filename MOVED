@@ -16759,3 +16759,4 @@ www/py-dj31-djangorestframework||2021-12-31|Has expired: Extended support of Dja
 astro/google-earth||2022-01-01|Has expired: Needs newer version to connect to server
 net/tramp||2022-01-01|Has expired: Not updated in 5 years and now part of Emacs
 archivers/p7zip-codec-rar||2022-01-01|Has expired: Unmaintained for years and has known vulnerabilities
+textproc/askgit|textproc/mergestat|2022-01-03|Project renamed

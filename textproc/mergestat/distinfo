@@ -1,6 +1,6 @@
-TIMESTAMP = 1631282768
-SHA256 (askgitdev-askgit-v0.4.6_GH0.tar.gz) = e1298736cd4c6f92b7cdaf752044d2baaa212b160d653409096ed14ba0104d63
-SIZE (askgitdev-askgit-v0.4.6_GH0.tar.gz) = 2723045
+TIMESTAMP = 1641242433
+SHA256 (mergestat-mergestat-v0.4.6_GH0.tar.gz) = 2ea9db9704e7366c10d5ce9186326aa68a34b5cd01807c52c1ffcacfe09e79c4
+SIZE (mergestat-mergestat-v0.4.6_GH0.tar.gz) = 2723068
 SHA256 (BurntSushi-toml-v0.4.1_GH0.tar.gz) = 280ad65e56f4a23dec30da7ccfd696d9d939a449af8b8be349c8fc487a117a85
 SIZE (BurntSushi-toml-v0.4.1_GH0.tar.gz) = 80986
 SHA256 (DATA-DOG-go-sqlmock-v1.5.0_GH0.tar.gz) = b78616fddfcc76892aecb5344968d7f3843128b70eba6c4752f092dc992c3b98

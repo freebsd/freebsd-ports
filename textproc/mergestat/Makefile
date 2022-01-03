@@ -1,4 +1,4 @@
-PORTNAME=	askgit
+PORTNAME=	mergestat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.6
 PORTREVISION=	1
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	sqlite3>=3.0.0:databases/sqlite3
 
 USES=		go:modules pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}dev
 GH_TUPLE=	BurntSushi:toml:v0.4.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		Microsoft:go-winio:v0.5.0:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
