@@ -1,6 +1,26 @@
 --- adns/internal.h.orig	2002-01-02 10:44:52 UTC
 +++ adns/internal.h
-@@ -567,7 +567,7 @@ typedef enum {
+@@ -151,15 +151,17 @@ typedef struct allocnode {
+   struct allocnode *next, *back;
+ } allocnode;
+ 
+-union maxalign {
++typedef union maxalign {
+   byte d[1];
+   struct in_addr ia;
+   long l;
+   void *p;
+   void (*fp)(void);
+   union maxalign *up;
+-} data;
++} data_t;
+ 
++extern data_t data;
++
+ typedef struct {
+   void *ext;
+   void (*callback)(adns_query parent, adns_query child);
+@@ -567,7 +569,7 @@ typedef enum {
  } parsedomain_flags;
  
  adns_status adns__parse_domain(adns_state ads, int serv, adns_query qu,

@@ -2,7 +2,7 @@
 
 PORTNAME=	larbin
 PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -11,9 +11,6 @@ COMMENT=	HTTP crawler with an easy interface
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: data
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: data
 
 BUILD_DEPENDS=	bash:shells/bash \
 		makedepend:devel/makedepend
