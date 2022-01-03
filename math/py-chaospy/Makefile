@@ -1,5 +1,5 @@
 PORTNAME=	chaospy
-DISTVERSION=	4.3.3
+DISTVERSION=	4.3.4
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,8 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+
+do-test: # tests fail: https://github.com/jonathf/chaospy/issues/366
+	@cd ${WRKSRC} && pytest --doctest-modules chaospy/
 
 .include <bsd.port.mk>
