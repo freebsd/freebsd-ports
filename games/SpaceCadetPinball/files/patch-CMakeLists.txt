@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-10-10 14:13:43 UTC
+--- CMakeLists.txt.orig	2021-12-29 06:46:09 UTC
 +++ CMakeLists.txt
 @@ -24,8 +24,10 @@ set(SDL2_BUILDING_LIBRARY ON)
  
@@ -12,19 +12,28 @@
  get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
  foreach(dir ${dirs})
    message(STATUS "Include dir='${dir}'")
-@@ -197,6 +199,8 @@ target_precompile_headers(SpaceCadetPinball
- )
+@@ -201,6 +203,8 @@ endif()
  
  target_link_libraries(SpaceCadetPinball ${SDL2_LIBRARY} ${SDL2_MIXER_LIBRARY})
-+
-+install(TARGETS SpaceCadetPinball DESTINATION bin)
  
++install(TARGETS SpaceCadetPinball DESTINATION bin)
++
  # On Windows, copy DLL to output
  if(WIN32)
-@@ -213,4 +217,4 @@ if(WIN32)
+     list(GET SDL2_LIBRARY -1 SDL2_DLL_PATH)
+@@ -216,15 +220,4 @@ if(WIN32)
          COMMAND ${CMAKE_COMMAND} -E copy_if_different "${SDL2_DLL_PATH}/SDL2.dll" $<TARGET_FILE_DIR:SpaceCadetPinball>
          COMMAND ${CMAKE_COMMAND} -E copy_if_different "${SDL2_MIXER_DLL_PATH}/SDL2_mixer.dll" $<TARGET_FILE_DIR:SpaceCadetPinball>
          )
 -endif()
-\ No newline at end of file
-+endif()
+-
+-if(UNIX AND NOT APPLE)
+-	include(GNUInstallDirs)
+-	install(TARGETS "${PROJECT_NAME}" RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+-	install(FILES "/Platform/Linux/${PROJECT_NAME}.desktop" DESTINATION "share/applications")
+-	install(FILES "/Platform/Linux/${PROJECT_NAME}.metainfo.xml" DESTINATION "share/metainfo")
+-	foreach(S 16 32 48 128 192)
+-		install(FILES "${PROJECT_NAME}/Icon_${S}x${S}.png" DESTINATION
+-			"share/icons/hicolor/${S}x${S}/apps" RENAME "${PROJECT_NAME}.png")
+-	endforeach(S)
+ endif()
