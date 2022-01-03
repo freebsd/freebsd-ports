@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.20 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-13138-g61d985263
+DISTVERSION=	0.0.20-13145 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g0d4543ca2
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,8 +22,8 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-125-g01f601a:hidapi/3rdparty/hidapi/hidapi \
-		RPCS3:llvm-mirror:1c0ca194dc50:llvm/llvm \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.0-2-gc47734c:hidapi/3rdparty/hidapi/hidapi \
+		RPCS3:llvm-mirror:509d31ad8967:llvm/llvm \
 		Cyan4973:xxHash:v0.8.1:xxHash/3rdparty/xxHash \
 		asmjit:asmjit:eae7197:asmjit/3rdparty/asmjit/asmjit \
 		google:flatbuffers:v2.0.0:flatbuffers/3rdparty/flatbuffers \
