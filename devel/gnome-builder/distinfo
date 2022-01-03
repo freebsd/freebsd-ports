@@ -1,3 +1,5 @@
 TIMESTAMP = 1638993844
 SHA256 (gnome/gnome-builder-41.3.tar.xz) = e2250fc8e9e9f2002c452e5950d82685734d3c4480b35167ab508ac8702509e1
 SIZE (gnome/gnome-builder-41.3.tar.xz) = 12712096
+SHA256 (gnome/b3bfa0df53a3.patch) = 77cf7c95cd39febe66bc3cc04c4e886a910c02445d3f01558db8b16dc502deea
+SIZE (gnome/b3bfa0df53a3.patch) = 3887

@@ -1,8 +1,12 @@
 PORTNAME=	gnome-builder
 PORTVERSION=	41.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	b3bfa0df53a3.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/486
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IDE for writing software for GNOME
