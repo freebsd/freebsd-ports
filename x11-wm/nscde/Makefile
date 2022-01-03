@@ -1,5 +1,6 @@
 PORTNAME=	nscde
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	freebsd@ny-central.org
@@ -14,6 +15,7 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
 		dunst:sysutils/dunst \
 		font-bh-lucidatypewriter-100dpi>0:x11-fonts/font-bh-lucidatypewriter-100dpi \
 		fvwm2:x11-wm/fvwm2 \
@@ -151,8 +153,7 @@ _LIBEXEC_SCRIPTS=	NsCDE/config/NsCDE-Functions.conf \
 			NsCDE/config/NsCDE-Main.conf \
 			NsCDE/config/NsCDE-Menus.conf \
 			NsCDE/lib/scripts/ColorMgr \
-			NsCDE/lib/scripts/ModifyColor \
-			NsCDE/bin/fpclock
+			NsCDE/lib/scripts/ModifyColor
 
 _BLIBEXEC_SCRIPTS=	NsCDE/lib/scripts/BackdropMgr \
 			NsCDE/lib/scripts/ColorMgr NsCDE/lib/scripts/FontMgr \
@@ -323,6 +324,8 @@ do-install:
 	(cd ${WRKSRC}/NsCDE/lib && ${COPYTREE_SHARE} . ${STAGEDIR}/${PREFIX}/lib/nscde)
 	NSCDE_ROOT="${STAGEDIR}/${PREFIX}" HAS_WINDOWNAME=1 SYSMODE=1 ${WRKSRC}/generate_subpanels > ${STAGEDIR}/${ETCDIR}/NsCDE-Subpanels.conf.sample
 	${FIND} ${STAGEDIR}/${ETCDIR} -type f -name '*.actions' -exec ${MV} {} {}.sample \;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/xsessions
+	${CP} ${WRKSRC}/NsCDE/share/doc/examples/xsession-integration/nscde.desktop ${STAGEDIR}/${PREFIX}/share/xsessions/nscde.desktop
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/doc/nscde

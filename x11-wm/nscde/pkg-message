@@ -17,6 +17,11 @@ While NsCDE will generally run fine without those ports,
 there will be keyboard shortcuts and links in your initial
 setup, which will not work without them or without further
 configuration work on your end.
+
+NsCDE comes with a default xsessions configuration that is
+managed by and integrated with fvwm; for further details on 
+how to integrate NsCDE xsessions with other session managers, 
+refer to the examples in /usr/local/share/examples/nscde/.
 EOM
 }
 ]

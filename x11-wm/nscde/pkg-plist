@@ -393,6 +393,7 @@ share/applications/NsCDE-Volumectrl.desktop
 share/applications/NsCDE-WebBrowser.desktop
 share/applications/NsCDE-WsPgMgr.desktop
 share/applications/WatchErrors.desktop
+share/xsessions/nscde.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NsCDE.pdf
 %%PORTDOCS%%%%DOCSDIR%%/NsCDE.txt
 %%PORTDOCS%%%%DOCSDIR%%/help/GWM_Keybindings.help
