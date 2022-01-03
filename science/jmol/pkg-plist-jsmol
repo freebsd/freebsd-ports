@@ -587,6 +587,7 @@
 %%WWWDIR%%/j2s/J/jvxl/readers/XplorReader.js
 %%WWWDIR%%/j2s/J/jvxl/readers/XsfReader.js
 %%WWWDIR%%/j2s/J/modelkit/Constraint.js
+%%WWWDIR%%/j2s/J/modelkit/ModelKit.js
 %%WWWDIR%%/j2s/J/modelkit/ModelKitPopup.js
 %%WWWDIR%%/j2s/J/modelkit/ModelKitPopupResourceBundle.js
 %%WWWDIR%%/j2s/J/modelkit/images/atoms.png
