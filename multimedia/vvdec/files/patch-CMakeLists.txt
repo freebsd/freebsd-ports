@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2021-03-12 15:55:41 UTC
+--- CMakeLists.txt.orig	2021-12-17 13:50:15 UTC
 +++ CMakeLists.txt
-@@ -12,7 +12,7 @@ endif()
- # project name
- project( vvdec VERSION 1.0.0.0 )
+@@ -17,7 +17,7 @@ if( PROJECT_VERSION_RC)
+     set( PROJECT_VERSION "${PROJECT_VERSION}-rc${PROJECT_VERSION_RC}" )
+ endif()
  
--set( VVDEC_ENABLE_X86_SIMD TRUE )
-+set( VVDEC_ENABLE_X86_SIMD ${FREEBSD_VVDEC_ENABLE_X86_SIMD} )
- set( VVDEC_ENABLE_ARM_SIMD FALSE )
+-set( VVDEC_ENABLE_X86_SIMD TRUE  CACHE BOOL "enable x86 intrinsics" )
++set( VVDEC_ENABLE_X86_SIMD ${FREEBSD_VVDEC_ENABLE_X86_SIMD}  CACHE BOOL "enable x86 intrinsics" )
+ set( VVDEC_ENABLE_ARM_SIMD FALSE CACHE BOOL "enable arm intrinsics" )
  
  if( APPLE )
-@@ -37,7 +37,7 @@ endif()
+@@ -42,7 +42,7 @@ endif()
  # enable sse4.1 build for all source files for gcc and clang
  if( VVDEC_ENABLE_X86_SIMD )
    if( UNIX OR MINGW )

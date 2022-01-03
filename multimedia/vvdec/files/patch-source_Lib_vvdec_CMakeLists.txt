@@ -1,9 +1,9 @@
---- source/Lib/vvdec/CMakeLists.txt.orig	2021-03-12 15:55:41 UTC
+--- source/Lib/vvdec/CMakeLists.txt.orig	2021-12-17 13:50:15 UTC
 +++ source/Lib/vvdec/CMakeLists.txt
-@@ -79,10 +79,11 @@ if( VVDEC_ENABLE_X86_SIMD )
-     set_property( SOURCE ${AVX_SRC_FILES}   APPEND PROPERTY COMPILE_FLAGS "/arch:AVX" )
-     set_property( SOURCE ${AVX2_SRC_FILES}  APPEND PROPERTY COMPILE_FLAGS "/arch:AVX2" )
-   elseif( UNIX OR MINGW )
+@@ -88,10 +88,11 @@ if( VVDEC_ENABLE_X86_SIMD )
+     if( NOT VVDEC_TARGET_WASM )
+       set_property( SOURCE ${X86_SRC_FILES} APPEND PROPERTY COMPILE_FLAGS "-mxsave" )
+     endif()
 -    set_property( SOURCE ${SSE41_SRC_FILES} APPEND PROPERTY COMPILE_FLAGS "-msse4.1" )
 -    set_property( SOURCE ${SSE42_SRC_FILES} APPEND PROPERTY COMPILE_FLAGS "-msse4.2" )
 -    set_property( SOURCE ${AVX_SRC_FILES}   APPEND PROPERTY COMPILE_FLAGS "-mavx" )
