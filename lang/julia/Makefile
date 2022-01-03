@@ -32,8 +32,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopenlibm.so:math/openlibm
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		gmake compiler:c++14-lang fortran python perl5 \
+USES=		gmake compiler:c++14-lang cpe fortran python perl5 \
 		shebangfix blaslapack:openblas
+
+CPE_VENDOR=	julialang
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
 USE_LDCONFIG=	yes
