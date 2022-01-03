@@ -13,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-rack>=1.1.3:www/rubygem-rack
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	discourse
 
 SHEBANG_FILES=	examples/chat/docker_container/update_chat
 
