@@ -15,7 +15,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libgmp.so:math/gmp \
 		libopenblas.so:math/openblas
 
-USES=		bison cmake gnome libtool pathfix
+USES=		bison cmake cpe gnome libtool pathfix
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
