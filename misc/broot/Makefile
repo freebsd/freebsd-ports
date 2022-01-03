@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
-PORTREVISION=	2
+DISTVERSION=	1.8.1
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -21,32 +20,33 @@ GH_ACCOUNT=	canop
 CARGO_CRATES=	adler-1.0.2 \
 		adler32-1.2.0 \
 		ahash-0.4.7 \
-		ahash-0.7.4 \
+		ahash-0.7.6 \
 		aho-corasick-0.7.18 \
 		ansi_colours-1.0.4 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.42 \
-		argh-0.1.5 \
-		argh_derive-0.1.5 \
-		argh_shared-0.1.5 \
+		anyhow-1.0.45 \
+		argh-0.1.6 \
+		argh_derive-0.1.6 \
+		argh_shared-0.1.6 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
 		bet-1.0.0 \
 		bincode-1.3.3 \
-		bitflags-1.2.1 \
-		bstr-0.2.16 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
 		bytemuck-1.7.2 \
 		byteorder-1.4.3 \
-		cc-1.0.69 \
+		cc-1.0.72 \
 		cfg-if-1.0.0 \
-		char_reader-0.1.0 \
+		char_reader-0.1.1 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
 		cli-log-0.1.0 \
 		cli-log-2.0.0 \
-		clipboard-win-4.2.1 \
+		clipboard-win-4.2.2 \
 		color_quant-1.1.0 \
+		coolor-0.3.1 \
 		crc32fast-1.2.1 \
 		crossbeam-0.8.1 \
 		crossbeam-channel-0.5.1 \
@@ -55,9 +55,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.19.0 \
-		crossterm-0.21.0 \
+		crossterm-0.22.1 \
 		crossterm_winapi-0.7.0 \
-		crossterm_winapi-0.8.0 \
+		crossterm_winapi-0.9.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		csv2svg-0.1.5 \
@@ -73,12 +73,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		file-size-1.0.3 \
-		flate2-1.0.20 \
+		flate2-1.0.22 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		getrandom-0.2.3 \
-		gif-0.11.2 \
-		git2-0.13.20 \
+		gif-0.11.3 \
+		git2-0.13.24 \
 		glassbench-0.3.0 \
 		glob-0.3.0 \
 		hashbrown-0.9.1 \
@@ -90,33 +90,33 @@ CARGO_CRATES=	adler-1.0.2 \
 		idna-0.2.3 \
 		image-0.23.14 \
 		indexmap-1.7.0 \
-		instant-0.1.10 \
+		instant-0.1.12 \
 		is_executable-1.0.1 \
-		itoa-0.4.7 \
-		jobserver-0.1.22 \
+		itoa-0.4.8 \
+		jobserver-0.1.24 \
 		jpeg-decoder-0.1.22 \
 		lazy-regex-2.2.2 \
 		lazy-regex-proc_macros-2.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lfs-core-0.4.2 \
-		libc-0.2.98 \
-		libgit2-sys-0.12.21+1.1.0 \
+		libc-0.2.107 \
+		libgit2-sys-0.12.25+1.3.0 \
 		libsqlite3-sys-0.20.1 \
 		libz-sys-1.1.3 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.4.4 \
+		lock_api-0.4.5 \
 		log-0.4.14 \
-		matches-0.1.8 \
-		memchr-2.4.0 \
+		matches-0.1.9 \
+		memchr-2.4.1 \
 		memmap-0.7.0 \
 		memoffset-0.6.4 \
 		minimad-0.7.1 \
 		minimad-0.9.0 \
 		miniz_oxide-0.3.7 \
 		miniz_oxide-0.4.4 \
-		mio-0.7.13 \
+		mio-0.7.14 \
 		miow-0.3.7 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
@@ -125,34 +125,34 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
 		once_cell-1.8.0 \
-		onig-6.2.0 \
-		onig_sys-69.7.0 \
+		onig-6.3.1 \
+		onig_sys-69.7.1 \
 		open-1.7.1 \
-		open-2.0.0 \
-		parking_lot-0.11.1 \
-		parking_lot_core-0.8.3 \
-		pathdiff-0.2.0 \
+		open-2.0.1 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		pathdiff-0.2.1 \
 		percent-encoding-2.1.0 \
 		phf-0.9.0 \
-		phf_generator-0.9.0 \
+		phf_generator-0.9.1 \
 		phf_macros-0.9.0 \
 		phf_shared-0.9.0 \
-		pkg-config-0.3.19 \
-		plist-1.2.0 \
+		pkg-config-0.3.22 \
+		plist-1.3.1 \
 		png-0.16.8 \
-		ppv-lite86-0.2.10 \
+		ppv-lite86-0.2.15 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.28 \
+		proc-macro2-1.0.32 \
 		proc-status-0.1.1 \
 		quick-xml-0.22.0 \
-		quote-1.0.9 \
+		quote-1.0.10 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		rand_hc-0.3.1 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.2.9 \
+		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
 		regex-1.5.4 \
 		regex-automata-0.1.10 \
@@ -165,40 +165,41 @@ CARGO_CRATES=	adler-1.0.2 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
 		secular-1.0.1 \
-		serde-1.0.127 \
-		serde_derive-1.0.127 \
-		serde_json-1.0.66 \
+		serde-1.0.130 \
+		serde_derive-1.0.130 \
+		serde_json-1.0.71 \
 		signal-hook-0.1.17 \
-		signal-hook-0.3.9 \
+		signal-hook-0.3.10 \
 		signal-hook-mio-0.2.1 \
 		signal-hook-registry-1.4.0 \
-		siphasher-0.3.6 \
-		smallvec-1.6.1 \
+		siphasher-0.3.7 \
+		smallvec-1.7.0 \
 		splitty-0.1.0 \
 		str-buf-1.0.5 \
 		strict-0.1.4 \
 		strsim-0.8.0 \
 		svg-0.8.2 \
-		syn-1.0.74 \
+		syn-1.0.81 \
 		syntect-4.6.0 \
 		tempfile-3.2.0 \
 		termimad-0.10.3 \
-		termimad-0.17.0 \
-		terminal-clipboard-0.3.0 \
+		termimad-0.20.0 \
+		terminal-clipboard-0.3.1 \
 		termux-clipboard-0.1.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.26 \
-		thiserror-impl-1.0.26 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
 		tiff-0.6.1 \
 		time-0.1.43 \
-		tinyvec-1.3.1 \
+		time-0.3.5 \
+		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		umask-1.0.0 \
-		unicode-bidi-0.3.5 \
+		unicode-bidi-0.3.7 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.8 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
 		users-0.11.0 \
