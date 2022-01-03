@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	direvent
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -13,6 +13,7 @@ LICENSE=	GPLv3+
 USES=		gmake
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
+TEST_WRKSRC=	${WRKSRC}/tests
 
 INFO=		${PORTNAME}
 
