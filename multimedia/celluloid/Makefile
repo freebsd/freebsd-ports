@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.22
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f49bdcdcee55.patch:-p1 # https://github.com/celluloid-player/celluloid/pull/733
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple GTK+ frontend for mpv
 
