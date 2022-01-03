@@ -1,5 +1,5 @@
 PORTNAME=	cheat
-DISTVERSION=	4.2.2
+DISTVERSION=	4.2.3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,9 +19,9 @@ GH_TUPLE=	\
 		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:9f9df34309c0:go_yaml_yaml/vendor/gopkg.in/yaml.v1 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
-		golang:sys:aa57babbf139:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
-		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff
