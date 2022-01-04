@@ -66,4 +66,4 @@ share/iconv/windows-1255.cct
 share/iconv/windows-1256.cct
 share/iconv/windows-1257.cct
 share/iconv/windows-1258.cct
-@unexec sed '/^# BEGIN iconv-extra$/,/^# END iconv-extra$/d' %B/charset.aliases > %B/charset.aliases.new && mv -f %B/charset.aliases.new %B/charset.aliases
+@preunexec sed '/^# BEGIN iconv-extra$/,/^# END iconv-extra$/d' %B/charset.aliases > %B/charset.aliases.new && mv -f %B/charset.aliases.new %B/charset.aliases
