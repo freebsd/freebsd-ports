@@ -7,11 +7,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWaylandPointerData_v3_22_0
  {
    GdkWindow *focus;
-@@ -121,6 +121,10 @@ int gdk_wayland_pointer_data_priv_get_version_id() {
+@@ -121,6 +121,11 @@ int gdk_wayland_pointer_data_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -19,6 +19,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -29,11 +30,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWaylandPointerFrameData_v3_22_0
  {
    GdkEvent *event;
-@@ -111,6 +111,10 @@ int gdk_wayland_pointer_frame_data_priv_get_version_id
+@@ -111,6 +111,11 @@ int gdk_wayland_pointer_frame_data_priv_get_version_id
        case 24024:
        case 24025:
        case 24026:
@@ -41,6 +42,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -51,11 +53,11 @@ Regenerate according to gtk-priv/README.md
  // +   struct gtk_primary_selection_device *gtk_primary_data_device;
  // +   struct zwp_primary_selection_device_v1 *zwp_primary_data_device_v1;
 -// Valid for GTK v3.24.24 - v3.24.27 (unreleased)
-+// Valid for GTK v3.24.24 - v3.24.31 (unreleased)
++// Valid for GTK v3.24.24 - v3.24.32 (unreleased)
  struct _GdkWaylandSeat_v3_24_24
  {
    GdkSeat parent_instance;
-@@ -336,6 +336,10 @@ int gdk_wayland_seat_priv_get_version_id() {
+@@ -336,6 +336,11 @@ int gdk_wayland_seat_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -63,6 +65,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -73,11 +76,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWaylandTabletData_v3_22_0
  {
    struct zwp_tablet_v2 *wp_tablet;
-@@ -119,6 +119,10 @@ int gdk_wayland_tablet_data_priv_get_version_id() {
+@@ -119,6 +119,11 @@ int gdk_wayland_tablet_data_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -85,6 +88,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -95,11 +99,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWaylandTouchData_v3_22_0
  {
    uint32_t id;
-@@ -110,6 +110,10 @@ int gdk_wayland_touch_data_priv_get_version_id() {
+@@ -110,6 +110,11 @@ int gdk_wayland_touch_data_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -107,6 +111,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -117,11 +122,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWindowImplClass_v3_22_0
  {
    GObjectClass parent_class;
-@@ -196,6 +196,10 @@ int gdk_window_impl_class_priv_get_version_id() {
+@@ -196,6 +196,11 @@ int gdk_window_impl_class_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -129,6 +134,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -139,11 +145,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWindowImpl_v3_22_0
  {
    GObject parent;
-@@ -105,6 +105,10 @@ int gdk_window_impl_priv_get_version_id() {
+@@ -105,6 +105,11 @@ int gdk_window_impl_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -151,6 +157,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -161,11 +168,11 @@ Regenerate according to gtk-priv/README.md
  
  // Version ID 0
 -// Valid for GTK v3.22.0 - v3.24.27 (unreleased)
-+// Valid for GTK v3.22.0 - v3.24.31 (unreleased)
++// Valid for GTK v3.22.0 - v3.24.32 (unreleased)
  struct _GdkWindowImplWaylandClass_v3_22_0
  {
    struct _GdkWindowImplClass_v3_22_0 parent_class;
-@@ -105,6 +105,10 @@ int gdk_window_impl_wayland_class_priv_get_version_id(
+@@ -105,6 +105,11 @@ int gdk_window_impl_wayland_class_priv_get_version_id(
        case 24024:
        case 24025:
        case 24026:
@@ -173,6 +180,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -183,11 +191,11 @@ Regenerate according to gtk-priv/README.md
  // +   struct wl_callback *surface_callback;
  // +   GHashTable *frame_callback_surfaces;
 -// Valid for GTK v3.24.25 - v3.24.27 (unreleased)
-+// Valid for GTK v3.24.25 - v3.24.31 (unreleased)
++// Valid for GTK v3.24.25 - v3.24.32 (unreleased)
  struct _GdkWindowImplWayland_v3_24_25
  {
    struct _GdkWindowImpl_v3_22_0 parent_instance;
-@@ -1156,6 +1156,10 @@ int gdk_window_impl_wayland_priv_get_version_id() {
+@@ -1156,6 +1156,11 @@ int gdk_window_impl_wayland_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -195,6 +203,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
@@ -205,11 +214,11 @@ Regenerate according to gtk-priv/README.md
  // +   guint synthesized_crossing_event_id;
  // -   guint synthesize_crossing_event_queued : 1;
 -// Valid for GTK v3.24.11 - v3.24.27 (unreleased)
-+// Valid for GTK v3.24.11 - v3.24.31 (unreleased)
++// Valid for GTK v3.24.11 - v3.24.32 (unreleased)
  struct _GdkWindow_v3_24_11
  {
    GObject parent_instance;
-@@ -360,6 +360,10 @@ int gdk_window_priv_get_version_id() {
+@@ -360,6 +360,11 @@ int gdk_window_priv_get_version_id() {
        case 24024:
        case 24025:
        case 24026:
@@ -217,6 +226,7 @@ Regenerate according to gtk-priv/README.md
 +      case 24028:
 +      case 24029:
 +      case 24030:
++      case 24031:
          break;
    
        default:
