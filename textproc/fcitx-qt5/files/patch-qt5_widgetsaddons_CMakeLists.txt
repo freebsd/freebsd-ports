@@ -1,5 +1,5 @@
---- widgetsaddons/CMakeLists.txt.orig	2016-07-26 08:42:38 UTC
-+++ widgetsaddons/CMakeLists.txt
+--- qt5/widgetsaddons/CMakeLists.txt.orig	2016-07-26 08:42:38 UTC
++++ qt5/widgetsaddons/CMakeLists.txt
 @@ -59,7 +59,7 @@ set_target_properties(FcitxQt5WidgetsAdd
                        AUTOMOC TRUE
                        SOVERSION 1

@@ -1,5 +1,5 @@
 PORTNAME=	fcitx-qt5
-DISTVERSION=	1.2.6
+DISTVERSION=	1.2.7
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
