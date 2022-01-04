@@ -13,8 +13,8 @@ COMMENT=	Clang wrapper to compile OpenCL C kernels to SPIR-V modules
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libLLVM-${DISTVERSION:R:R}.so:devel/${FLAVOR} \
-		libLLVMSPIRVLib.so.${DISTVERSION:R:R}:devel/spirv-llvm-translator@${FLAVOR}
+LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
+		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
 FLAVORS=	${13 12 11:L:S/^/llvm/}
 
