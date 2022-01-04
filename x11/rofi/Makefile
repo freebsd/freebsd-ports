@@ -1,5 +1,5 @@
 PORTNAME=	rofi
-DISTVERSION?=	1.6.1
+DISTVERSION?=	1.7.2
 PORTREVISION?=	0
 CATEGORIES=	x11
 
@@ -10,6 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libstartup-notification-1.so:x11/startup-notification \
+		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util \
@@ -21,8 +22,8 @@ USE_GITHUB=	yes # required by rofi-wayland
 USE_GNOME=	cairo gdkpixbuf2 librsvg2 pango
 USE_XORG=	xcb
 GH_ACCOUNT?=	davatorium
-GH_TUPLE=	sardemff7:libgwater:e6faf48:libgwater/subprojects/libgwater \
-		sardemff7:libnkutils:6164bac:libnkutils/subprojects/libnkutils
+GH_TUPLE=	sardemff7:libgwater:1db5b4b:libgwater/subprojects/libgwater \
+		sardemff7:libnkutils:d08fa89:libnkutils/subprojects/libnkutils
 SHEBANG_FILES=	script/get_git_rev.sh \
 		script/rofi-sensible-terminal
 bash_CMD=	/bin/sh
