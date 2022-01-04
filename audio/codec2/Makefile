@@ -1,6 +1,6 @@
 PORTNAME=	codec2
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.3
 CATEGORIES=	audio hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	drowe67
 GH_PROJECT=	codec2
 
 USE_LDCONFIG=	yes
-USE_GITHUB=	yes
+USE_GITHUB=		yes
 
 OPTIONS_DEFINE=	EXAMPLES TEST
 OPTIONS_SUB=	yes
@@ -34,16 +34,21 @@ TEST_UNITTESTFILES=	compare_ints fdmdv_mem ofdm_mem ofdm_stack \
 					tfreedv_data_channel tfsk tfsk_llr thash tnewamp1 \
 					tofdm tofdm_acq tqam16 tst_codec2_fft_init tvq_mbest
 
-SHEBANG_FILES=	${WRKSRC}/script/gen_phi0 \
+SHEBANG_FILES=	${WRKSRC}/script/separate_all.sh \
+				${WRKSRC}/demo/freedv_700d_rx.py \
+				${WRKSRC}/script/gen_phi0 \
 				${WRKSRC}/script/phi0_plot.py \
-				${WRKSRC}/script/build_cml.sh \
 				${WRKSRC}/script/subsetvq.sh \
 				${WRKSRC}/script/train_700c_quant.sh \
 				${WRKSRC}/script/ofdm_stack_use.py \
-				${WRKSRC}/script/train_sub_quant.sh
+				${WRKSRC}/script/train_sub_quant.sh \
+				${WRKSRC}/unittest/*.sh \
+				${WRKSRC}/octave/fsk_demod_BER_test.py \
+				${WRKSRC}/octave/fskdemodgui.py \
+				${WRKSRC}/octave/plot_fsk_demod_stats.py
 
-TEST_RUN_DEPENDS=	octave:math/octave
-TEST_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
+#TEST_RUN_DEPENDS=	octave:math/octave
+#TEST_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 
 PORTEXAMPLES=	*
 
