@@ -168,6 +168,7 @@
     SUBDIR += mpqc
     SUBDIR += msms
     SUBDIR += mstore
+    SUBDIR += multicharge
     SUBDIR += multiwfn
     SUBDIR += namd
     SUBDIR += nest
