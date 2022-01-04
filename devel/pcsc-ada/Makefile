@@ -1,8 +1,7 @@
 # Created by: John Marino <marino@FreeBSD.org>
 
 PORTNAME=	pcsc-ada
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.7.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libpcscada-${PORTVERSION}
@@ -12,27 +11,29 @@ COMMENT=	Ada binding to PC/SC middleware (Smart card interface)
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	gprbuild>0:devel/gprbuild \
+		rubygem-asciidoctor>0:textproc/rubygem-asciidoctor
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		ada tar:bzip2
 ALL_TARGET=	all
 GPRLINK=	"-L${LOCALBASE}/lib", "-lpcsclite"
-MAKE_ARGS+=	NUM_CPUS=${MAKE_JOBS_NUMBER} \
-		LIBRARY_KIND=static
-PORTEXAMPLES=	src bin
+MAKE_ARGS+=	LIBRARY_KIND=static \
+		NUM_CPUS=${MAKE_JOBS_NUMBER}
+PORTEXAMPLES=	bin src
 
-OPTIONS_DEFINE=	UNIT_TEST INTF_TEST DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES INTF_TEST UNIT_TEST
 OPTIONS_SUB=	yes
 UNIT_TEST_DESC=	Run unit test suite before installation
 INTF_TEST_DESC=	Run interface tests against installed smart card after build
-NO_OPTIONS_SORT=yes
+NO_OPTIONS_SORT=	yes
 
-DOCS_USES=		gmake
+DOCS_USES=	gmake
 
-DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-			source-highlight:textproc/source-highlight
-UNIT_TEST_BUILD_DEPENDS=${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
-INTF_TEST_BUILD_DEPENDS=${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
+DOCS_BUILD_DEPENDS=		asciidoc:textproc/asciidoc \
+				source-highlight:textproc/source-highlight
+UNIT_TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
+INTF_TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 
 DOCS_ALL_TARGET=	doc
 EXAMPLES_ALL_TARGET=	examples
