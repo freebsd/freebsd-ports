@@ -1,10 +1,9 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	venice
-DISTVERSION=	0.751beta
-PORTREVISION=	1
+DISTVERSION=	0.752beta
 CATEGORIES=	finance java
-MASTER_SITES=	SF/mov/${PORTNAME}/0.751%20beta/ \
+MASTER_SITES=	SF/mov/${PORTNAME}/0.752%20beta/ \
 		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons

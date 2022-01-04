@@ -1,4 +1,5 @@
-SHA256 (java/venice-0.751beta.tar.gz) = 47005ab8dd013f24828f969f086a7249876f50c10445c4229431f721a26379d0
-SIZE (java/venice-0.751beta.tar.gz) = 4187889
+TIMESTAMP = 1641324603
+SHA256 (java/venice-0.752beta.tar.gz) = 7e173c7ee16c2640ebeee15f8ab59b821a2c2be70d71fd415eb45b71a2535268
+SIZE (java/venice-0.752beta.tar.gz) = 4221728
 SHA256 (java/venice_icons.tar.gz) = 88d377528717a6a1a98a705f3e46fd0f818dd5f3aa3ad25122361127ee9b9858
 SIZE (java/venice_icons.tar.gz) = 92672
