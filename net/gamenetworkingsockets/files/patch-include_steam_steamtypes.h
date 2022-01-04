@@ -5,7 +5,7 @@
  #endif
  
 -#if defined(__x86_64__) || defined(_WIN64) || defined(__aarch64__) || defined(__s390x__)
-+#if defined(__x86_64__) || defined(_WIN64) || defined(__aarch64__) || defined(__s390x__) || defined(__powerpc64__)
++#if defined(__x86_64__) || defined(_WIN64) || defined(__aarch64__) || defined(__s390x__) || defined(__powerpc64__) || defined(__riscv)
  #define X64BITS
  #endif
  
