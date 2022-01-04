@@ -8,7 +8,7 @@ COMMENT=	Zig LSP implementation + Zig Language Server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig-devel>=0.9.0:lang/zig-devel
+BUILD_DEPENDS=	zig>=0.9.0:lang/zig
 RUN_DEPENDS=	zig:lang/zig
 
 USE_GITHUB=	yes
