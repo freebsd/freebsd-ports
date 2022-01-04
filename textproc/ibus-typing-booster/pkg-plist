@@ -298,7 +298,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/emoji-test.txt
 %%DATADIR%%/data/emoji-variation-sequences.txt
 %%DATADIR%%/data/emoji-zwj-sequences.txt
-%%DATADIR%%/data/emojione.json
+%%DATADIR%%/data/emoji.json
 %%DATADIR%%/data/fi_FI.dic
 %%DATADIR%%/engine/__pycache__/emoji_picker.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/emoji_picker.cpython-%%PYTHON_SUFFIX%%.pyc
