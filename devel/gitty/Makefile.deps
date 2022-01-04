@@ -11,10 +11,16 @@ GH_TUPLE=	\
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:83a5a9bb288b:golang_crypto/vendor/golang.org/x/crypto \
+		golang:freetype:e2365dfdc4a0:golang_freetype/vendor/github.com/golang/freetype \
+		golang:image:e162460cd6b5:golang_image/vendor/golang.org/x/image \
 		golang:net:6b1517762897:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:2bc19b11175f:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:71e4cd670f79:golang_sys/vendor/golang.org/x/sys \
+		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
+		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
+		hashicorp:go-retryablehttp:v0.6.8:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
@@ -22,12 +28,18 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		muesli:clusters:2700303c1762:muesli_clusters/vendor/github.com/muesli/clusters \
+		muesli:gamut:daa621f1be71:muesli_gamut/vendor/github.com/muesli/gamut \
+		muesli:kmeans:v0.2.1:muesli_kmeans/vendor/github.com/muesli/kmeans \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:termenv:v0.9.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
-		shurcooL:githubv4:83ba7b4c9228:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
+		shurcooL:githubv4:5800b9de5b8b:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:graphql:18c5c3165e3a:shurcool_graphql/vendor/github.com/shurcooL/graphql \
 		skratchdot:open-golang:eef842397966:skratchdot_open_golang/vendor/github.com/skratchdot/open-golang \
-		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent
+		wcharczuk:go-chart:v2.1.0:wcharczuk_go_chart_v2/vendor/github.com/wcharczuk/go-chart/v2 \
+		xanzy:go-gitlab:v0.52.2:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
+		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
+		xrash:smetrics:89a2a8a1fb0b:xrash_smetrics/vendor/github.com/xrash/smetrics
