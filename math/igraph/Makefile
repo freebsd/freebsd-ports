@@ -27,4 +27,9 @@ BINARY_ALIAS=	git=false
 pre-configure:
 	@${ECHO} ${PORTVERSION} > ${WRKSRC}/IGRAPH_VERSION
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300523
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-etc_cmake_compilers.cmake
+.endif
+
+.include <bsd.port.post.mk>
