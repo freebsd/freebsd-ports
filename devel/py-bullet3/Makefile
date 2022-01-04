@@ -19,6 +19,8 @@ USE_GL=		gl glew
 USE_GITHUB=	yes
 GH_ACCOUNT=	bulletphysics
 
+CFLAGS_powerpc64=	-mvsx
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pybullet*.so
 
