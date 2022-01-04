@@ -1,3 +1,5 @@
 TIMESTAMP = 1636137212
 SHA256 (gnome/gnome-shell-41.1.tar.xz) = 5f742456dfe00605c0f090a3728ca62797bc49e50af852bbd7285da1a0517ff6
 SIZE (gnome/gnome-shell-41.1.tar.xz) = 1897144
+SHA256 (gnome/65450a836ee9.patch) = 9ccd84e3996568cdfd76d23e00954665898848da84b91f1936d5aee723b18ead
+SIZE (gnome/65450a836ee9.patch) = 3112
