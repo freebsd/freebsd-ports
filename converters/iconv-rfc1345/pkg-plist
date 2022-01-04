@@ -106,4 +106,4 @@ share/iconv/iso-ir-99.cct
 share/iconv/iso646-dk.cct
 share/iconv/iso646-kr.cct
 share/iconv/macintosh.cct
-@unexec sed '/^# BEGIN iconv-rfc1345$/,/^# END iconv-rfc1345$/d' %B/charset.aliases > %B/charset.aliases.new && mv -f %B/charset.aliases.new %B/charset.aliases
+@preunexec sed '/^# BEGIN iconv-rfc1345$/,/^# END iconv-rfc1345$/d' %B/charset.aliases > %B/charset.aliases.new && mv -f %B/charset.aliases.new %B/charset.aliases
