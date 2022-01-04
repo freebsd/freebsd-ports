@@ -1,7 +1,7 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	edgar
-DISTVERSION=	1.34
+DISTVERSION=	1.35
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/riksweeney/edgar/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	legend-of-

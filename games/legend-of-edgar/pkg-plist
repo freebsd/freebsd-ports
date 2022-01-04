@@ -42,6 +42,7 @@ share/icons/hicolor/64x64/apps/edgar.png
 %%NLS%%share/locale/ja/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/jv/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/edgar.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/edgar.mo
