@@ -1,11 +1,14 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.35.5
-PORTREVISION=	4
+DISTVERSION=	3.37.1
+#PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/2021/ https://www2.sqlite.org/2021/ https://www3.sqlite.org/2021/
+MASTER_SITES=	https://www.sqlite.org/${YEAR}/ https://www2.sqlite.org/${YEAR}/ https://www3.sqlite.org/${YEAR}/
+.if defined(TEA)
+PKGNAMEPREFIX=	tcl-
+.endif
 DISTNAME=	sqlite-src-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
@@ -16,15 +19,20 @@ COMMENT+=	(ICU flavor)
 .if ${FLAVOR:U} == tcl
 COMMENT+=	(TCL flavor)
 .endif
+.if defined(TEA)
+COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
+.endif
 
 LICENSE=	PD
 
+.if !defined(TEA)
 FLAVORS=	default icu tcl
 FLAVOR?=	${FLAVORS:[1]}
 icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
 icu_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-tcl
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
 tcl_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-icu
+.endif
 
 USES=	libtool pathfix zip
 USE_LDCONFIG=	yes
@@ -32,6 +40,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
+.if defined(TEA)
+INSTALL_TARGET=	tcl_install
+.endif
 TEST_TARGET=	test
 
 # The default numeric file permissions for newly created database files under unix.
@@ -44,13 +55,26 @@ CPPFLAGS+=	-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
 SUB_FILES=	example.tcl
 SUB_LIST=	TCLSH_CMD="${TCLSH}"
 
-PLIST_SUB=	TCLVER=tcl${TCL_VER} TCLSUF=tcl${TCL_VER:S/.//g}
+.if defined(TEA)
+USES+=	sqlite
+DESCR=	${MASTERDIR}/pkg-descr-tea
+SUB_LIST+=	TEA="" NO_TEA="@comment "
+PLIST_SUB+=	TEA="" NO_TEA="@comment "
+.else
+SUB_LIST+=	TEA="@comment " NO_TEA=""
+PLIST_SUB+=	TEA="@comment " NO_TEA=""
+.endif
+
+PLIST_SUB+=	TCLVER=tcl${TCL_VER} TCLSUF=tcl${TCL_VER:S/.//g}
 
 # Compilation Options For SQLite https://www.sqlite.org/compile.html
-OPTIONS_DEFINE=		ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXAMPLES EXTENSION FTS3_TOKEN \
+OPTIONS_DEFINE=		EXAMPLES STRIP TCL THREADS
+.if !defined(TEA)
+OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			FTS4 FTS5 LIKENOTBLOB MEMMAN METADATA NORMALIZE NULL_TRIM RBU SECURE_DELETE \
-			SORT_REF STATIC STMT STRIP TCL THREADS TRUSTED_SCHEMA UNKNOWN_SQL UNLOCK_NOTIFY \
+			SORT_REF STATIC STMT TRUSTED_SCHEMA UNKNOWN_SQL UNLOCK_NOTIFY \
 			UPDATE_LIMIT URI URI_AUTHORITY
+.endif
 OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 JSON1 LIBEDIT METADATA \
 			RTREE SECURE_DELETE STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
@@ -60,21 +84,27 @@ OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 JSON1 LIBEDIT 
 # JSON1 used by net-im/py-matrix-synapse
 # DBPAGE used by audio/audacity (since 3.0.0)
 #
+.if !defined(TEA)
 OPTIONS_GROUP=		OPT_EXT OPT_FUNC RTREEG UNICODE
+.endif
 OPTIONS_GROUP_OPT_EXT=	JSON1 SESSION
-OPTIONS_GROUP_OPT_FUNC=	OFFSET SER1 SOUNDEX
+OPTIONS_GROUP_OPT_FUNC=	OFFSET SOUNDEX
 OPTIONS_GROUP_RTREEG=	GEOPOLY RTREE RTREE_INT
 OPTIONS_GROUP_UNICODE=	ICU UNICODE61
+.if !defined(TEA)
 OPTIONS_RADIO=		STAT RL
+.endif
 OPTIONS_RADIO_RL=	LIBEDIT READLINE
 OPTIONS_RADIO_STAT=	STAT3 STAT4
+.if !defined(TEA)
 OPTIONS_SINGLE=		RAMT
+.endif
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
 .if ${FLAVOR:U} == icu
 OPTIONS_EXCLUDE=	UNICODE61
 OPTIONS_SLAVE=		ICU
 .endif
-.if ${FLAVOR:U} == tcl
+.if ${FLAVOR:U} == tcl || defined(TEA)
 OPTIONS_SLAVE=		TCL
 .endif
 OPTIONS_SUB=		yes
@@ -105,7 +135,6 @@ RTREEG_DESC=		Index type for range queries # https://www.sqlite.org/rtree.html
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 SECURE_DELETE_DESC=	Overwrite deleted information with zeros
-SER1_DESC=		Enable the sqlite3_[de]serialize() interface # https://www.sqlite.org/compile.html#enable_deserialize
 SESSION_DESC=		Enable the session extension # https://www.sqlite.org/sessionintro.html
 SORT_REF_DESC=		To use references in the sorter # https://www.sqlite.org/compile.html#enable_sorter_references
 SOUNDEX_DESC=		Enable the soundex() SQL function
@@ -159,7 +188,6 @@ READLINE_CONFIGURE_ENABLE=	readline
 RTREE_CONFIGURE_ENABLE=	rtree
 RTREE_INT_CPPFLAGS=	-DSQLITE_RTREE_INT_ONLY=1
 SECURE_DELETE_CPPFLAGS=	-DSQLITE_SECURE_DELETE=1
-SER1_CPPFLAGS=	-DSQLITE_ENABLE_DESERIALIZE=1
 SESSION_CONFIGURE_ENABLE=	session
 SORT_REF_CPPFLAGS=	-DSQLITE_ENABLE_SORTER_REFERENCES=1
 SOUNDEX_CPPFLAGS=	-DSQLITE_SOUNDEX=1
@@ -186,6 +214,9 @@ URI_CPPFLAGS=	-DSQLITE_USE_URI=1
 URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 
 .include <bsd.port.options.mk>
+
+# YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
+YEAR=	2021
 
 # Platform Configuration
 # -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]
@@ -221,12 +252,18 @@ post-configure:
 	@${ECHO_MSG} "===> LIBS=${LIBS}"
 
 post-install:
+.if !defined(TEA)
 	${INSTALL_MAN} ${WRKSRC}/sqlite3.1 ${STAGEDIR}${PREFIX}/man/man1
 	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
+.else
+	${RM} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.0.8.6 ${STAGEDIR}${PREFIX}/lib/libsqlite3.a
+.endif
 
 post-install-STRIP-on:
+.if !defined(TEA)
 	${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
+.endif
 .if ${PORT_OPTIONS:MTCL}
 	${STRIP_CMD} "${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/${PORTNAME}/libtcl${PORTNAME}.so"
 .endif
