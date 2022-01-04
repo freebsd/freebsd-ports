@@ -1,6 +1,6 @@
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3
+DISTVERSION=	4.4
 CATEGORIES=	misc shells
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -8,6 +8,8 @@ COMMENT=	Missing terminal file browser for X
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	gsed:textproc/gsed
 
 USES=		compiler:c11 gmake localbase ncurses readline
 USE_GITHUB=	yes
