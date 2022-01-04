@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-03-31 01:03:42 UTC
+--- CMakeLists.txt.orig	2022-01-03 16:23:41 UTC
 +++ CMakeLists.txt
 @@ -17,10 +17,16 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
    set(add_link_deps Threads::Threads)
@@ -10,9 +10,9 @@
 +if (FREEBSD_BUILD_LINT)
  add_subdirectory(lint)
 +endif()
- 
 +if (FREEBSD_BUILD_TESTS)
  add_subdirectory(test)
+ 
  enable_testing()
 +endif()
  
