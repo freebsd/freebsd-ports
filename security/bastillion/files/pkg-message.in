@@ -18,11 +18,11 @@ EOT
 }
 {
   type: upgrade
-  maximum_version: "3.08.00"
+  maximum_version: "3.12.02"
   message: <<EOT
-The datastore of bastillion needs to be upgraded (if you do not see users / can not login
-as someone else than admin, you forgot to upgrade it):
-    java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-3.08.00.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+The datastore of bastillion needs to be upgraded (if you do not see users / can not login,
+you forgot to upgrade it):
+    java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-4.00.00.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
 EOT
 }
 {
