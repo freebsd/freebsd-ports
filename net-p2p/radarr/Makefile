@@ -1,8 +1,8 @@
 PORTNAME=	radarr
-PORTVERSION=	4.0.2.5836
+PORTVERSION=	4.0.4.5922
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Radarr.develop.${PORTVERSION}.freebsd-core-x64
+DISTNAME=	Radarr.master.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Movie Library Manager for Usenet and BitTorrent users
@@ -28,7 +28,7 @@ SUB_FILES=	${PORTNAME} package_info pkg-message
 SUB_LIST=	DATADIR=${DATADIR} \
 		GROUPS=${GROUPS} \
 		MAINTAINER=${MAINTAINER} \
-		PKGNAME=${PKGNAME} \
+		PKGVERSION=${PKGVERSION} \
 		PORTNAME=${PORTNAME} \
 		USERS=${USERS}
 
@@ -38,6 +38,9 @@ GROUPS=		${PORTNAME}
 WRKSRC=		${WRKDIR}/Radarr
 
 .include <bsd.port.options.mk>
+
+post-extract:
+	${RM} -rf ${WRKSRC}/Radarr.Update
 
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}/bin/
