@@ -4,7 +4,6 @@ PORTNAME=	jmf
 PORTVERSION=	2.1.1e
 PORTREVISION=	3
 CATEGORIES=	java multimedia
-MASTER_SITES=	#http://java.sun.com/products/java-media/jmf/2.1.1/download.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,7 +31,7 @@ PORTDOCS=	*
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	because of licensing restrictions, you must fetch the source\
 distribution manually.\
-Please access: http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-client-419417.html \
+Please access https://www.oracle.com/java/technologies/java-archive-downloads-java-client-downloads.html \
 with a web browser and follow the "Java Media Framework (JMF) ${PORTVERSION}" link.\
 Select download format: cross-platform format.  Please place this file in\
 ${DISTDIR}
