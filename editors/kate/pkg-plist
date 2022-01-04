@@ -23,6 +23,7 @@ bin/kwrite
 %%QT_PLUGINDIR%%/ktexteditor/ktexteditorpreviewplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/latexcompletionplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/lspclientplugin.so
+%%QT_PLUGINDIR%%/ktexteditor/rainbowparens.so
 %%QT_PLUGINDIR%%/ktexteditor/tabswitcherplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/textfilterplugin.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_katesessions.so
@@ -575,9 +576,12 @@ share/locale/hu/LC_MESSAGES/kate.mo
 share/locale/hu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/hu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/hu/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/hu/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/hu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/hu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/hu/LC_MESSAGES/katefiletree.mo
 share/locale/hu/LC_MESSAGES/kategdbplugin.mo
+share/locale/hu/LC_MESSAGES/kategitblameplugin.mo
 share/locale/hu/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/hu/LC_MESSAGES/kateproject.mo
 share/locale/hu/LC_MESSAGES/katesearch.mo
@@ -585,8 +589,11 @@ share/locale/hu/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/hu/LC_MESSAGES/katesql.mo
 share/locale/hu/LC_MESSAGES/katesymbolviewer.mo
 share/locale/hu/LC_MESSAGES/katetextfilter.mo
+share/locale/hu/LC_MESSAGES/katexmlcheck.mo
 share/locale/hu/LC_MESSAGES/katexmltools.mo
+share/locale/hu/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/hu/LC_MESSAGES/kwrite.mo
+share/locale/hu/LC_MESSAGES/lspclient.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/hu/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ia/LC_MESSAGES/kate-ctags-plugin.mo

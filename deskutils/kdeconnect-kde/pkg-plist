@@ -56,7 +56,7 @@ share/applications/org.kde.kdeconnect.app.desktop
 share/applications/org.kde.kdeconnect.daemon.desktop
 share/applications/org.kde.kdeconnect.handler.desktop
 share/applications/org.kde.kdeconnect.nonplasma.desktop
-share/applications/org.kde.kdeconnect.settings.desktop
+share/applications/org.kde.kdeconnect-settings.desktop
 share/applications/org.kde.kdeconnect.sms.desktop
 share/applications/org.kde.kdeconnect_open.desktop
 share/contractor/kdeconnect.contract
