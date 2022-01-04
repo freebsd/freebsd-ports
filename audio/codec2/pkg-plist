@@ -70,7 +70,6 @@ libdata/pkgconfig/codec2.pc
 %%EXAMPLES%%%%DATADIR%%/octave/channel_lib.m
 %%EXAMPLES%%%%DATADIR%%/octave/closed_quant_slope.m
 %%EXAMPLES%%%%DATADIR%%/octave/cma.m
-%%EXAMPLES%%%%DATADIR%%/octave/cml.patch
 %%EXAMPLES%%%%DATADIR%%/octave/codec2_demo.m
 %%EXAMPLES%%%%DATADIR%%/octave/cohpsk_ch_fading.m
 %%EXAMPLES%%%%DATADIR%%/octave/cohpsk_demod_plot.m
@@ -238,7 +237,6 @@ libdata/pkgconfig/codec2.pc
 %%EXAMPLES%%%%DATADIR%%/raw/ve9qrp.raw
 %%EXAMPLES%%%%DATADIR%%/raw/ve9qrp_10s.raw
 %%EXAMPLES%%%%DATADIR%%/raw/vk5qi.raw
-%%EXAMPLES%%%%DATADIR%%/script/build_cml.sh
 %%EXAMPLES%%%%DATADIR%%/script/gen_phi0
 %%EXAMPLES%%%%DATADIR%%/script/ofdm_stack_use.py
 %%EXAMPLES%%%%DATADIR%%/script/phi0_plot.py
