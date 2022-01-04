@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	5d68dae3c878.patch:-p1 # https://gitlab.gnome.org/World/Authenticator/-/merge_requests/211
+PATCHFILES+=	76e7c31709a2.patch:-p1 # https://gitlab.gnome.org/World/Authenticator/-/merge_requests/215
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Generate Two-Factor Codes
