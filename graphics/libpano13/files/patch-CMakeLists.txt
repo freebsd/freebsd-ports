@@ -1,15 +1,6 @@
---- CMakeLists.txt.orig	2021-09-12 22:30:36 UTC
+--- CMakeLists.txt.orig	2021-12-06 23:34:35 UTC
 +++ CMakeLists.txt
-@@ -116,7 +116,7 @@ FIND_PACKAGE(PNG REQUIRED)
- INCLUDE_DIRECTORIES(${ZLIB_INCLUDE_DIR})
- INCLUDE_DIRECTORIES(${PNG_INCLUDE_DIR})
- 
--set(_common_libs ${TIFF_LIBRARIES} ${ZLIB_LIBRARIES} ${JPEG_LIBRARIES} ${PNG_LIBRARIES})
-+set(_common_libs ${TIFF_LIBRARIES} ${ZLIB_LIBRARIES} ${JPEG_LIBRARIES} ${PNG_LIBRARIES} m)
- 
- #
- # Check build type and set options accordingly
-@@ -314,7 +314,7 @@ INSTALL(
+@@ -333,7 +333,7 @@ INSTALL(
  	AUTHORS
  	COPYING
  	README
@@ -18,7 +9,7 @@
    COMPONENT headers
          )
  INSTALL(
-@@ -323,7 +323,7 @@ INSTALL(
+@@ -342,7 +342,7 @@ INSTALL(
          doc/PTblender.readme
          doc/PTmender.readme
          doc/stitch.txt
@@ -27,10 +18,3 @@
    COMPONENT doc
          )
  
-@@ -488,6 +488,3 @@ if(CPACK_BINARY_RPM)
- endif()
- 
- include(CPack)
--
--enable_testing()
--add_subdirectory(tests)

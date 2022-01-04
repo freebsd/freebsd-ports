@@ -20,7 +20,7 @@ include/pano13/pteditor.h
 include/pano13/ptutils.h
 include/pano13/queryfeature.h
 include/pano13/version.h
-%%STATIC%%lib/libpano13.a
+lib/libpano13.a
 lib/libpano13.so
 lib/libpano13.so.3
 lib/libpano13.so.3.0.0
