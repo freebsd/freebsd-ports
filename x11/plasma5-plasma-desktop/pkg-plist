@@ -562,6 +562,8 @@ share/doc/HTML/ru/kcontrol/splashscreen/get-new-theme.png
 share/doc/HTML/ru/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/ru/kcontrol/splashscreen/index.docbook
 share/doc/HTML/ru/kcontrol/splashscreen/splash-main.png
+share/doc/HTML/ru/kcontrol/workspaceoptions/index.cache.bz2
+share/doc/HTML/ru/kcontrol/workspaceoptions/index.docbook
 share/doc/HTML/ru/knetattach/index.cache.bz2
 share/doc/HTML/ru/knetattach/index.docbook
 share/doc/HTML/ru/plasma-desktop/index.cache.bz2
@@ -1101,6 +1103,7 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_keys.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_landingpage.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_search.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_smserver.mo
