@@ -19,6 +19,7 @@
 %%WWWDIR%%/results/OpenSans-Semibold.ttf
 %%WWWDIR%%/results/idObfuscation.php
 %%WWWDIR%%/results/index.php
+%%WWWDIR%%/results/json.php
 %%WWWDIR%%/results/stats.php
 %%WWWDIR%%/results/telemetry.php
 %%WWWDIR%%/results/telemetry_db.php
