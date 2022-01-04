@@ -5,6 +5,7 @@ bin/nctetris
 bin/notcurses-demo
 bin/notcurses-info
 bin/notcurses-input
+bin/tfman
 include/ncpp/Cell.hh
 include/ncpp/CellStyle.hh
 include/ncpp/Direct.hh
@@ -56,12 +57,16 @@ lib/libnotcurses-core.a
 lib/libnotcurses-core.so
 lib/libnotcurses-core.so.%%ABI_VER%%
 lib/libnotcurses-core.so.%%REL_VER%%
+lib/libnotcurses-ffi.so
+lib/libnotcurses-ffi.so.%%ABI_VER%%
+lib/libnotcurses-ffi.so.%%REL_VER%%
 lib/libnotcurses.a
 lib/libnotcurses.so
 lib/libnotcurses.so.%%ABI_VER%%
 lib/libnotcurses.so.%%REL_VER%%
 libdata/pkgconfig/notcurses++.pc
 libdata/pkgconfig/notcurses-core.pc
+libdata/pkgconfig/notcurses-ffi.pc
 libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%man/man1/ncls.1.gz
 %%MANPAGES%%man/man1/ncneofetch.1.gz
