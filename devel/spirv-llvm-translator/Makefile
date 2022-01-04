@@ -13,7 +13,7 @@ COMMENT=	Bi-directional translation between SPIR-V and LLVM IR
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-LIB_DEPENDS=	libLLVM-${DISTVERSION:R:R}.so:devel/${FLAVOR}
+LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR}
 
 FLAVORS=	${13 12 11:L:S/^/llvm/}
 
