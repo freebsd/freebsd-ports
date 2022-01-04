@@ -19,7 +19,6 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 USES=		cmake gnome
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-CFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pramsey

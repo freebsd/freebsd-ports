@@ -1,4 +1,3 @@
-bin/las2ght
 include/ght.h
 include/ght_core.h
 lib/libght.a
