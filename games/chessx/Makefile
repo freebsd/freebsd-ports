@@ -1,7 +1,7 @@
 PORTNAME=	chessx
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/beta
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 5 chess database application
