@@ -63,6 +63,7 @@
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dftbplus
+    SUBDIR += dftd4
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += drawxtl
