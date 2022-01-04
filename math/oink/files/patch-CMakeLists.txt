@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2021-12-26 00:23:48 UTC
++++ CMakeLists.txt
+@@ -46,7 +46,6 @@ add_library(oink::oink ALIAS oink)
+ set_target_properties(oink PROPERTIES VERSION ${oink_VERSION} SOVERSION ${oink_VERSION_MAJOR})
+ target_compile_features(oink PUBLIC c_std_11 cxx_std_11)
+ target_compile_options(oink PRIVATE -Wall -Wextra)
+-target_compile_options(oink PRIVATE "$<$<CONFIG:Release,RelWithDebInfo>:-march=native>")
+ target_include_directories(oink
+   PRIVATE
+     ${CMAKE_CURRENT_LIST_DIR}/src
