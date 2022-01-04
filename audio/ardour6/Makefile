@@ -1,10 +1,10 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	ardour6
-PORTVERSION=	6.8.0
-PORTREVISION=	1
+PORTVERSION=	6.9.0
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/nc/mirror/ \
+		https://community.ardour.org/srctar/ \
 		https://misc.neelc.org/mirror/
 # The original master side points to the latest release only:
 # MASTER_SITES=	https://community.ardour.org/srctar/
@@ -32,11 +32,13 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libjack.so:audio/jack \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libboost_date_time.so:devel/boost-libs \
 		libvamp-hostsdk.so:audio/vamp-plugin-sdk \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libtag.so:audio/taglib \
+		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libcurl.so:ftp/curl \
 		libogg.so:audio/libogg \
@@ -48,12 +50,9 @@ USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
 		libarchive pkgconfig python:3.7,build readline tar:bzip2 \
 		waf xorg
 USE_CXXSTD=	c++11
-USE_XORG=	x11
 USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 pango
 USE_LDCONFIG=	yes
-BINARY_ALIAS+=	gas=${CC}
-
-PLIST_SUB=	ARDOURVERSION=${PORTVERSION}
+USE_XORG=	x11
 
 CONFIGURE_ARGS=	--optimize --ptformat --freedesktop --no-phone-home \
 		--with-backends=jack,dummy --internal-shared-libs --no-vst3 \
@@ -63,6 +62,10 @@ CONFIGURE_ARGS_amd64=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_6
 CONFIGURE_ARGS_i386=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-target=i686
 
 LDFLAGS_powerpc=	-Wl,-z,notext
+
+BINARY_ALIAS+=	gas=${CC}
+
+PLIST_SUB=	ARDOURVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/obj\.use            = '\''libsmf libpbd'\''/obj\.use            = '\''libsmf_internal libpbd'\''/g' ${WRKSRC}/libs/evoral/wscript
@@ -107,5 +110,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/ardour-${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/hardour-${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/luasession
+	@${LN} -sf ffmpeg ${STAGEDIR}${PREFIX}/bin/ffmpeg_harvid
+	@${LN} -sf ffprobe ${STAGEDIR}${PREFIX}/bin/ffprobe_harvid
 
 .include <bsd.port.mk>

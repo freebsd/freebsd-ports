@@ -5,6 +5,8 @@ bin/ardour6-fix_bbtppq
 bin/ardour6-lua
 bin/ardour6-new_empty_session
 bin/ardour6-new_session
+bin/ffmpeg_harvid
+bin/ffprobe_harvid
 %%ETCDIR%%/ardour.keys
 %%ETCDIR%%/ardour.menus
 %%ETCDIR%%/clearlooks.ardoursans.rc
@@ -262,6 +264,9 @@ share/applications/ardour6.desktop
 %%DATADIR%%/mcp/nucleus.device
 %%DATADIR%%/mcp/qcon+qex.device
 %%DATADIR%%/mcp/qcon.device
+%%DATADIR%%/mcp/qcon_g2+g2ex.device
+%%DATADIR%%/mcp/qcon_g2.device
+%%DATADIR%%/mcp/qcon_g2ex+g2.device
 %%DATADIR%%/mcp/qex+qcon.device
 %%DATADIR%%/mcp/ruco.device
 %%DATADIR%%/mcp/user.profile
