@@ -6,6 +6,9 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	1abd59271455.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-session/-/merge_requests/80
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the GNOME 3 desktop
 
