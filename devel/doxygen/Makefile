@@ -1,7 +1,7 @@
 # Created by: Joep Grooten <joep@di.nl>
 
 PORTNAME=	doxygen
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
