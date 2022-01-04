@@ -1,7 +1,7 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
 
 PORTNAME=	remind
-DISTVERSION=	03.03.10
+DISTVERSION=	03.03.11
 CATEGORIES=	deskutils
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
 
@@ -32,6 +32,7 @@ LANGUAGE_DESC=	User interface language
 REM2HTML_DESC=	Build and install rem2html (requires Perl)
 
 # do not sort these -- correspond to enumeration in source code
+LANG.US=	ENGLISH
 LANG.DE=	GERMAN
 LANG.NL=	DUTCH
 LANG.FI=	FINNISH
@@ -49,7 +50,6 @@ TCLTK_USES=	tk
 TCLTK_RUN_DEPENDS=	dtplite:devel/tcllib
 TCLTK_PLIST_FILES=	bin/tkremind \
 			man/man1/tkremind.1.gz
-
 REM2HTML_USES=	perl5
 REM2HTML_BUILD_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any
 REM2HTML_RUN_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any
@@ -64,11 +64,7 @@ LON_MIN?=	39
 LON_SEC?=	0
 LOCATION?=	Ottawa
 
-.include <bsd.port.options.mk>
-
-.if "${PORT_OPTIONS:MLANG_*}" != "" && "${PORT_OPTIONS:MLANG_*}" != LANG_US
 CFLAGS+=	-DLANG=${${PORT_OPTIONS:MLANG_*:S/_/./}}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
