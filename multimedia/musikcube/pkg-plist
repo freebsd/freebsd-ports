@@ -48,6 +48,7 @@ include/musikcube/musikcore/sdk/constants.h
 %%DATADIR%%/libmusikcore.so
 %%DATADIR%%/locales/de_DE.json
 %%DATADIR%%/locales/en_US.json
+%%DATADIR%%/locales/es_ES.json
 %%DATADIR%%/locales/fr_FR.json
 %%DATADIR%%/locales/it_IT.json
 %%DATADIR%%/locales/ja_JP.json
