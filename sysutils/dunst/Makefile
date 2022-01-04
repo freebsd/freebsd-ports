@@ -2,7 +2,7 @@
 
 PORTNAME=	dunst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.7.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
-LIB_DEPENDS=	libdbus-1.so:devel/dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		gmake gnome perl5 pkgconfig xorg
 
@@ -42,7 +43,6 @@ WAYLAND_MAKE_ENV_OFF=	WAYLAND=0
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' \
 		-e 's,/etc,${PREFIX}&,g' \
-		${WRKSRC}/config.h \
 		${WRKSRC}/docs/dunst.?.pod \
 		${WRKSRC}/dunstrc \
 		${WRKSRC}/src/settings.c
@@ -61,6 +61,7 @@ pre-install:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dunst
+	${MV} ${STAGEDIR}/${ETCDIR}/dunstrc ${STAGEDIR}/${ETCDIR}/dunstrc.sample
 
 post-install-DUNSTIFY-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/dunstify ${STAGEDIR}${PREFIX}/bin
