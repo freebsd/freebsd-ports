@@ -1,7 +1,7 @@
 bin/pmd
 %%DATADIR%%/animal-sniffer-annotations-1.14.jar
-%%DATADIR%%/ant-1.10.11.jar
-%%DATADIR%%/ant-launcher-1.10.11.jar
+%%DATADIR%%/ant-1.10.12.jar
+%%DATADIR%%/ant-launcher-1.10.12.jar
 %%DATADIR%%/antlr-2.7.7.jar
 %%DATADIR%%/antlr-runtime-3.5.2.jar
 %%DATADIR%%/antlr4-runtime-4.7.2.jar
