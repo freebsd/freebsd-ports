@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220104:
+  AFFECTS: users of security/bastillion
+  AUTHOR: netchild@FreeBSD.org
+
+  The datastore of bastillion needs to be upgraded (if you do not see users / can not login,
+  you forgot to upgrade it):
+    java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-4.00.00.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+
+
 20220102:
   AFFECTS: users of sysutils/py-azure-cli
   AUTHOR: dbaio@FreeBSD.org
@@ -18,17 +27,6 @@ you update your ports collection, before attempting any port upgrades.
   authentication library. MSAL uses AAD v2.0 authentication flow to provide more
   functionality and increases security for token cache.
   More info: https://docs.microsoft.com/en-us/cli/azure/msal-based-azure-cli
-
-20211223:
-  AFFECTS: users of security/bastillion
-  AUTHOR: netchild@FreeBSD.org
-
-  This update contains an incompatible DB change. Either recreate your
-  DB (rm /usr/local/jetty_bastillion/bastillion/WEB-INF/classes/keydb/bastillion.*
-  and restart) by hand, or export the old DB while the old version is
-  installed and import the data into a new DB. See
-    https://github.com/bastillion-io/Bastillion/issues/405
-  for details.
 
 20211220:
   AFFECTS: users of devel/notcurses
