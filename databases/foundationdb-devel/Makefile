@@ -1,5 +1,5 @@
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20210529
+DISTVERSION=	7.0.0.a.20211125
 CATEGORIES=	databases
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
@@ -26,7 +26,7 @@ USES=		cmake compiler:c++17-lang mono:build python:build shebangfix \
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	foundationdb
-GH_TAGNAME=	d35da1a
+GH_TAGNAME=	09fedc4
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 

@@ -1,3 +1,3 @@
-TIMESTAMP = 1622455872
-SHA256 (apple-foundationdb-7.0.0.a.20210529-d35da1a_GH0.tar.gz) = a5cf720028a3d9e3b615c0343f0b2b0637824bff59e80fa809eba32f2b2428d5
-SIZE (apple-foundationdb-7.0.0.a.20210529-d35da1a_GH0.tar.gz) = 9855962
+TIMESTAMP = 1638100203
+SHA256 (apple-foundationdb-7.0.0.a.20211125-09fedc4_GH0.tar.gz) = 645e7913a13a8e9a2bd08dea6521a4437ab1a305feb48d26d3d2fa19852c2a9c
+SIZE (apple-foundationdb-7.0.0.a.20211125-09fedc4_GH0.tar.gz) = 11293576

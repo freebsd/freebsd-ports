@@ -1,5 +1,5 @@
 PORTNAME=	foundationdb
-DISTVERSION=	6.3.13
+DISTVERSION=	6.3.22
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		git:devel/git
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
