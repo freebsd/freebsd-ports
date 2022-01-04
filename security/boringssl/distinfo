@@ -1,3 +1,11 @@
-TIMESTAMP = 1588184752
-SHA256 (google-boringssl-0.0.0.0.2020.04.29.01-6a71840_GH0.tar.gz) = 2d4c0c64b59ca1346b7e9f4ab3ace7e62a8e7b98b6a778b16016e23d5b94e859
-SIZE (google-boringssl-0.0.0.0.2020.04.29.01-6a71840_GH0.tar.gz) = 26708723
+TIMESTAMP = 1641280446
+SHA256 (google-boringssl-0.0.0.0.2021.12.21.01-9bcc12d_GH0.tar.gz) = 529e77f24d8a1e5286ab9cd1fc649e8ffe484d7d149c4889650067bc2537f274
+SIZE (google-boringssl-0.0.0.0.2021.12.21.01-9bcc12d_GH0.tar.gz) = 30725757
+SHA256 (golang-crypto-c07d793c2f9a_GH0.tar.gz) = bd1e0856c43287c6ebd20d59e2b4f2ffa91c5cc275dbb02bb2cfc822e6dc18a4
+SIZE (golang-crypto-c07d793c2f9a_GH0.tar.gz) = 1732023
+SHA256 (golang-net-04defd469f4e_GH0.tar.gz) = 6009a6f0989341df975799276ff1c49af650d4a4ed3fd6db3501b91eb601810d
+SIZE (golang-net-04defd469f4e_GH0.tar.gz) = 1252122
+SHA256 (golang-sys-04245dca01da_GH0.tar.gz) = b90ec2bae1f7e395eb368638a6627199efdc28fa9c592a72aac0ae32351fd5d7
+SIZE (golang-sys-04245dca01da_GH0.tar.gz) = 1231301
+SHA256 (golang-term-7de9c90e9dd1_GH0.tar.gz) = 73603eaab2ab2bfe05061d64ad09f8ed7469de6964a672398f7bf82cffb4b1da
+SIZE (golang-term-7de9c90e9dd1_GH0.tar.gz) = 15239
