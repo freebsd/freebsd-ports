@@ -1,5 +1,5 @@
-TIMESTAMP = 1610802060
-SHA256 (go/devel_packr/packr-v2.8.1/v2.8.1.mod) = 781a1a29aa589592bd6da19020c2105747f8726f5a68bcad0e74c54916444ea4
-SIZE (go/devel_packr/packr-v2.8.1/v2.8.1.mod) = 593
-SHA256 (go/devel_packr/packr-v2.8.1/v2.8.1.zip) = 75fd46fd40d732d1aa5516e87dd5aec7cdf6889d0553252effc34c1e28f6b17e
-SIZE (go/devel_packr/packr-v2.8.1/v2.8.1.zip) = 82459
+TIMESTAMP = 1641305691
+SHA256 (go/devel_packr/packr-v2.8.3/v2.8.3.mod) = c7c210b14b66da4770be8553f3ad32e9cf7ecf5c7698d5e2088cfdd09f49d277
+SIZE (go/devel_packr/packr-v2.8.3/v2.8.3.mod) = 494
+SHA256 (go/devel_packr/packr-v2.8.3/v2.8.3.zip) = 8bd0111c8c4435c55b970ed1f9eb7248f0919f2c3a43d37655e56eff22e38d62
+SIZE (go/devel_packr/packr-v2.8.3/v2.8.3.zip) = 96034
