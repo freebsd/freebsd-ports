@@ -1,7 +1,6 @@
 PORTNAME=	gnuradio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.1.0
-PORTREVISION=	8
+DISTVERSION=	3.8.4.0
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -24,7 +23,6 @@ BUILD_DEPENDS=	volk>0:devel/volk \
 		aconnect:audio/alsa-utils \
 		cheetah:devel/py-cheetah3@${PY_FLAVOR} \
 		cppzmq>0:net/cppzmq \
-		guile:lang/guile \
 		minixmlto:textproc/minixmlto \
 		sdl-config:devel/sdl12 \
 		swig:devel/swig \
@@ -79,9 +77,6 @@ LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft\
 		vocoder wavelet
 
 OPTIONS_DEFINE=		DOCS UHD TESTING DOXYGEN
-# Unfortunately building docs on i386 fails
-##OPTIONS_EXCLUDE_${i386}=	DOXYGEN
-# Yay. building docs is broken on 10 and HEAD too so turn them all off
 OPTIONS_EXCLUDE=	DOXYGEN
 OPTIONS_SUB=		yes
 UHD_DESC=	Include UHD support from Ettus
