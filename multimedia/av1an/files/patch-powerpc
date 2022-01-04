@@ -1,0 +1,20 @@
+--- cargo-crates/crossbeam-epoch-0.9.5/no_atomic.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/crossbeam-epoch-0.9.5/no_atomic.rs
+@@ -30,6 +30,7 @@ const NO_ATOMIC_64: &[&str] = &[
+     "mipsel-unknown-none",
+     "mipsisa32r6-unknown-linux-gnu",
+     "mipsisa32r6el-unknown-linux-gnu",
++    "powerpc-unknown-freebsd",
+     "powerpc-unknown-linux-gnu",
+     "powerpc-unknown-linux-gnuspe",
+     "powerpc-unknown-linux-musl",
+--- cargo-crates/crossbeam-utils-0.8.5/no_atomic.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/crossbeam-utils-0.8.5/no_atomic.rs
+@@ -30,6 +30,7 @@ const NO_ATOMIC_64: &[&str] = &[
+     "mipsel-unknown-none",
+     "mipsisa32r6-unknown-linux-gnu",
+     "mipsisa32r6el-unknown-linux-gnu",
++    "powerpc-unknown-freebsd",
+     "powerpc-unknown-linux-gnu",
+     "powerpc-unknown-linux-gnuspe",
+     "powerpc-unknown-linux-musl",
