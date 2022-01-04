@@ -1,3 +1,3 @@
-TIMESTAMP = 1636212240
-SHA256 (apple-foundationdb-6.3.22_GH0.tar.gz) = 8f42ace92c1ec49ba2707f67fcf3c62d1b76f23231962e52e4d946e69c07bb50
-SIZE (apple-foundationdb-6.3.22_GH0.tar.gz) = 10645856
+TIMESTAMP = 1640764452
+SHA256 (apple-foundationdb-7.0.0_GH0.tar.gz) = 9a5ef672e32b6976b04a20c013b28c4aeeb7d35456afdefbc552707d52bc31ca
+SIZE (apple-foundationdb-7.0.0_GH0.tar.gz) = 10875992
