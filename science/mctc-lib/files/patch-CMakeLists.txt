@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2022-01-04 19:28:19 UTC
++++ CMakeLists.txt
+@@ -91,5 +91,7 @@ install(
+ )
+ 
+ # add the testsuite
++if (BUILD_TESTING)
+ enable_testing()
+ add_subdirectory("test")
++endif()

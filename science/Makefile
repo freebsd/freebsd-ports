@@ -150,6 +150,7 @@
     SUBDIR += mbdyn
     SUBDIR += mcstas
     SUBDIR += mcstas-comps
+    SUBDIR += mctc-lib
     SUBDIR += mcxtrace
     SUBDIR += mcxtrace-comps
     SUBDIR += mdynamix
