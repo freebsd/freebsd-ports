@@ -18,7 +18,11 @@ USES=		autoreconf compiler:c++11-lang gmake pkgconfig shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh
-SHEBANG_FILES=	src/maketools/makecmd src/maketools/xxd
+SHEBANG_FILES=	src/maketools/makecmd \
+		src/maketools/xxd \
+		regtest/scripts/check \
+		regtest/scripts/run \
+		regtest/scripts/what
 
 USE_GITHUB=	yes
 GH_PROJECT=	plumed2
@@ -26,13 +30,14 @@ GH_PROJECT=	plumed2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-python
 
-TEST_TARGET=	test # https://github.com/plumed/plumed2/issues/781
+TEST_TARGET=	check # the 'installcheck' target checks installed version
+# 27 tests are known to fail: https://github.com/plumed/plumed2/issues/782
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#! /bin/bash|#! ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/lib/Makefile
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/plumed/obj
-	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/plumed lib/plumed/plumed-runtime lib/libplumed.so  lib/libplumedKernel.so
+	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/plumed lib/plumed/plumed-runtime lib/libplumed.so lib/libplumedKernel.so
 
 .include <bsd.port.mk>
