@@ -20,8 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 USE_LDCONFIG=	yes
 
-CFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
-
 QMAKE_ARGS=	SYSTEM_QUAZIP=1
 USE_QT=		buildtools_build \
 		concurrent core gui imageformats network printsupport svg \
