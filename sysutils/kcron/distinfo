@@ -1,3 +1,3 @@
-TIMESTAMP = 1638570875
-SHA256 (KDE/release-service/21.12.0/kcron-21.12.0.tar.xz) = 2ada43d13cb2f27cdf84415c607af1a138928214a3f113a9eb598f559563b2c8
-SIZE (KDE/release-service/21.12.0/kcron-21.12.0.tar.xz) = 915460
+TIMESTAMP = 1641292255
+SHA256 (KDE/release-service/21.12.1/kcron-21.12.1.tar.xz) = 87293e56f90714a99a22656f3cdcd058b6cba3f61457d2973d8d8845eae6bc24
+SIZE (KDE/release-service/21.12.1/kcron-21.12.1.tar.xz) = 915504

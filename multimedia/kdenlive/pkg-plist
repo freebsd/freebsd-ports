@@ -111,6 +111,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/aecho.xml
 %%DATADIR%%/effects/agate.xml
 %%DATADIR%%/effects/audiobalance.xml
+%%DATADIR%%/effects/audiolevelgraph.xml
 %%DATADIR%%/effects/audiomap.xml
 %%DATADIR%%/effects/audiopan.xml
 %%DATADIR%%/effects/audiospectrum.xml

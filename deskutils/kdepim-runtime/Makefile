@@ -3,9 +3,6 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
-PATCH_SITES=	https://invent.kde.org/pim/kdepim-runtime/-/commit/
-PATCHFILES=	f14fabcefb45790175e209ef8ae394def4a805e9.patch:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM tools and services
 

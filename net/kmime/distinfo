@@ -1,3 +1,3 @@
-TIMESTAMP = 1638570826
-SHA256 (KDE/release-service/21.12.0/kmime-21.12.0.tar.xz) = 75bb5cc9da5fbaa2be4797e372cff47fb426cbeab9581ccdde48a92285f2d858
-SIZE (KDE/release-service/21.12.0/kmime-21.12.0.tar.xz) = 155356
+TIMESTAMP = 1641292365
+SHA256 (KDE/release-service/21.12.1/kmime-21.12.1.tar.xz) = c1f4c06c61f6b4ddde7395b1cfb1f2411a32638e09c6f0a58c6557a7dffe4120
+SIZE (KDE/release-service/21.12.1/kmime-21.12.1.tar.xz) = 155328
