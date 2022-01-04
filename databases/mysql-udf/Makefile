@@ -18,6 +18,7 @@ CFLAGS_i386=	-fPIC
 CFLAGS_powerpc=	-fPIC
 CFLAGS_powerpc64=	-fPIC
 CFLAGS_powerpc64le=	-fPIC
+CFLAGS_riscv64=	-fPIC
 
 MODULES=	colwidth confidence_higher confidence_lower correlation \
 		faculty geomean intercept kurtosis longest median noverm \
