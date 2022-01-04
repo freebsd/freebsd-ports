@@ -1,7 +1,6 @@
 PORTNAME=	helix
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	editors
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -21,9 +20,17 @@ GH_TUPLE=	\
 		tree-sitter:tree-sitter-c-sharp:53a65a9:tree_sitter_c_sharp/helix-syntax/languages/tree-sitter-c-sharp \
 		tree-sitter:tree-sitter-c:f05e279:tree_sitter_c/helix-syntax/languages/tree-sitter-c \
 		tree-sitter:tree-sitter-cpp:c612124:tree_sitter_cpp/helix-syntax/languages/tree-sitter-cpp \
+		stsewd:tree-sitter-comment:5dd3c62:tree_sitter_comment/helix-syntax/languages/tree-sitter-comment \
 		uyha:tree-sitter-cmake:f6616f1:tree_sitter_cmake/helix-syntax/languages/tree-sitter-cmake \
 		tree-sitter:tree-sitter-css:94e1023:tree_sitter_css/helix-syntax/languages/tree-sitter-css \
+		UserNobody14:tree-sitter-dart:6a25376:tree_sitter_dart/helix-syntax/languages/tree-sitter-dart \
+		camdencheek:tree-sitter-dockerfile:7af32bc:tree_sitter_dockerfile/helix-syntax/languages/tree-sitter-dockerfile \
 		elixir-lang:tree-sitter-elixir:f5d7bda:tree_sitter_elixir/helix-syntax/languages/tree-sitter-elixir \
+		ram02z:tree-sitter-fish:04e54ab:tree_sitter_fish/helix-syntax/languages/tree-sitter-fish \
+		the-mikedavis:tree-sitter-git-commit:066e395:tree_sitter_git_commit/helix-syntax/languages/tree-sitter-git-commit \
+		the-mikedavis:tree-sitter-git-diff:c12e6ec:tree_sitter_git_diff/helix-syntax/languages/tree-sitter-git-diff \
+		the-mikedavis:tree-sitter-git-rebase:332dc52:tree_sitter_git_rebase/helix-syntax/languages/tree-sitter-git-rebase \
+		theHamsta:tree-sitter-glsl:88408ff:tree_sitter_glsl/helix-syntax/languages/tree-sitter-glsl \
 		tree-sitter:tree-sitter-go:2a83dfd:tree_sitter_go/helix-syntax/languages/tree-sitter-go \
 		tree-sitter:tree-sitter-haskell:237f4eb:tree_sitter_haskell/helix-syntax/languages/tree-sitter-haskell \
 		tree-sitter:tree-sitter-html:d93af48:tree_sitter_html/helix-syntax/languages/tree-sitter-html \
@@ -33,9 +40,12 @@ GH_TUPLE=	\
 		tree-sitter:tree-sitter-julia:12ea597:tree_sitter_julia/helix-syntax/languages/tree-sitter-julia \
 		latex-lsp:tree-sitter-latex:7f72066:tree_sitter_latex/helix-syntax/languages/tree-sitter-latex \
 		cbarrete:tree-sitter-ledger:0cdeb0e:cbarrete/helix-syntax/languages/tree-sitter-ledger \
+		benwilliamgraham:tree-sitter-llvm:3b21392:tree_sitter_llvm/helix-syntax/languages/tree-sitter-llvm \
 		nvim-treesitter:tree-sitter-lua:6f5d401:tree_sitter_lua/helix-syntax/languages/tree-sitter-lua \
+		MDeiml:tree-sitter-markdown:ad8c329:tree_sitter_markdown/helix-syntax/languages/tree-sitter-markdown \
 		cstrahan:tree-sitter-nix:50f38ce:tree_sitter_nix/helix-syntax/languages/tree-sitter-nix \
 		tree-sitter:tree-sitter-ocaml:23d419b:tree_sitter_ocaml/helix-syntax/languages/tree-sitter-ocaml \
+		ganezdragon:tree-sitter-perl:0ac2c6d:tree_sitter_perl/helix-syntax/languages/tree-sitter-perl \
 		tree-sitter:tree-sitter-php:0d63eaf:tree_sitter_php/helix-syntax/languages/tree-sitter-php \
 		yusdacra:tree-sitter-protobuf:19c211a:tree_sitter_protobuf/helix-syntax/languages/tree-sitter-protobuf \
 		tree-sitter:tree-sitter-python:d6210ce:tree_sitter_python/helix-syntax/languages/tree-sitter-python \
@@ -44,34 +54,37 @@ GH_TUPLE=	\
 		tree-sitter:tree-sitter-scala:fb23ed9:tree_sitter_scala/helix-syntax/languages/tree-sitter-scala \
 		Himujjal:tree-sitter-svelte:349a598:tree_sitter_svelte/helix-syntax/languages/tree-sitter-svelte \
 		tree-sitter:tree-sitter-swift:a22fa5e:tree_sitter_swift/helix-syntax/languages/tree-sitter-swift \
+		Flakebi:tree-sitter-tablegen:568dd8a:tree_sitter_tablegen/helix-syntax/languages/tree-sitter-tablegen \
 		tree-sitter:tree-sitter-tsq:b665659:tree_sitter_tsq/helix-syntax/languages/tree-sitter-tsq \
 		tree-sitter:tree-sitter-typescript:3e897ea:tree_sitter_typescript/helix-syntax/languages/tree-sitter-typescript \
 		ikatyang:tree-sitter-vue:91fe275:tree_sitter_vue/helix-syntax/languages/tree-sitter-vue \
+		szebniok:tree-sitter-wgsl:f00ff52:tree_sitter_wgsl/helix-syntax/languages/tree-sitter-wgsl \
 		ikatyang:tree-sitter-yaml:0e36bed:tree_sitter_yaml/helix-syntax/languages/tree-sitter-yaml \
 		maxxnino:tree-sitter-zig:1f27fd1:tree_sitter_zig/helix-syntax/languages/tree-sitter-zig
 CARGO_CARGOTOML=	${WRKSRC}/helix-term/Cargo.toml
 CARGO_INSTALL_PATH=	./helix-term
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.44 \
-		arc-swap-1.4.0 \
+		anyhow-1.0.52 \
+		arc-swap-1.5.0 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		bytecount-0.6.2 \
 		bytes-1.1.0 \
 		cassowary-0.3.0 \
-		cc-1.0.71 \
+		cc-1.0.72 \
 		cfg-if-1.0.0 \
-		chardetng-0.1.15 \
+		chardetng-0.1.17 \
 		chrono-0.4.19 \
 		clipboard-win-4.2.2 \
+		content_inspector-0.2.4 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.22.1 \
 		crossterm_winapi-0.9.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		either-1.6.1 \
-		encoding_rs-0.8.29 \
+		encoding_rs-0.8.30 \
 		encoding_rs_io-0.1.7 \
 		error-code-2.3.0 \
 		etcetera-0.3.2 \
@@ -79,10 +92,10 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		futf-0.1.4 \
-		futures-core-0.3.17 \
-		futures-executor-0.3.17 \
-		futures-task-0.3.17 \
-		futures-util-0.3.17 \
+		futures-core-0.3.19 \
+		futures-executor-0.3.19 \
+		futures-task-0.3.19 \
+		futures-util-0.3.19 \
 		fuzzy-matcher-0.3.7 \
 		getrandom-0.2.3 \
 		globset-0.4.8 \
@@ -93,14 +106,14 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		idna-0.2.3 \
 		ignore-0.4.18 \
 		instant-0.1.12 \
-		itoa-0.4.8 \
+		itoa-1.0.1 \
 		jsonrpc-core-18.0.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.104 \
-		libloading-0.7.1 \
+		libloading-0.7.2 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
-		lsp-types-0.90.1 \
+		lsp-types-0.91.1 \
 		mac-0.1.1 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
@@ -111,8 +124,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		once_cell-1.8.0 \
+		num_cpus-1.13.1 \
+		once_cell-1.9.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
 		percent-encoding-2.1.0 \
@@ -133,11 +146,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde-1.0.132 \
+		serde_derive-1.0.132 \
+		serde_json-1.0.73 \
 		serde_repr-0.1.7 \
-		signal-hook-0.3.10 \
+		signal-hook-0.3.13 \
 		signal-hook-mio-0.2.1 \
 		signal-hook-registry-1.4.0 \
 		signal-hook-tokio-0.3.0 \
@@ -154,11 +167,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		threadpool-1.8.1 \
 		tinyvec-1.5.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.12.0 \
-		tokio-macros-1.5.0 \
-		tokio-stream-0.1.7 \
+		tokio-1.15.0 \
+		tokio-macros-1.7.0 \
+		tokio-stream-0.1.8 \
 		toml-0.5.8 \
-		tree-sitter-0.20.0 \
+		tree-sitter-0.20.1 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.7 \
 		unicode-general-category-0.4.0 \
@@ -183,5 +196,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} runtime ${STAGEDIR}${DATADIR}
+	${FIND} ${STAGEDIR}${DATADIR}/runtime -type f -name '*.so' -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>
