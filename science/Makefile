@@ -166,6 +166,7 @@
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += msms
+    SUBDIR += mstore
     SUBDIR += multiwfn
     SUBDIR += namd
     SUBDIR += nest
