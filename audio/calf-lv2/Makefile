@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \
 		libexpat.so:textproc/expat2
 
-USES=		autoreconf compiler:c++11-lang gmake gnome libtool localbase pkgconfig
+USES=		autoreconf gmake gnome libtool localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
@@ -48,6 +48,14 @@ LASH_CONFIGURE_WITH=	lash
 SSE_CONFIGURE_ENABLE=	sse
 
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang 
+.endif
 
 .include <bsd.port.pre.mk>
 
