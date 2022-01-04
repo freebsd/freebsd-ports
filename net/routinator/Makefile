@@ -1,8 +1,9 @@
 PORTNAME=	routinator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	4
+DISTVERSION=	0.10.2
 CATEGORIES=	net
+MASTER_SITES=	${ROUTINATOR_UI_URL}/v${ROUTINATOR_UI_VERSION}/:0
+DISTFILES+=	routinator-ui-build.tar.gz:0
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	RPKI signed route collector and validator
@@ -22,8 +23,6 @@ CPE_VENDOR=	nlnetlabs
 
 USE_RC_SUBR=	routinator
 
-# PORTDOCS=	openxapi krill.conf
-
 SUB_FILES=	pkg-message
 SUB_LIST+=	GROUPS=${GROUPS} \
 		USERS=${USERS}
@@ -31,13 +30,15 @@ SUB_LIST+=	GROUPS=${GROUPS} \
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
+ROUTINATOR_UI_VERSION=	0.3.4
+ROUTINATOR_UI_URL=	https://github.com/NLnetLabs/routinator-ui/releases/download/
+
 OPTIONS_SUB=	yes
 
 CARGO_CRATES=	addr2line-0.15.2 \
 		adler-1.0.2 \
 		ansi_term-0.11.0 \
 		arc-swap-1.3.0 \
-		async-compression-0.3.8 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.60 \
@@ -61,6 +62,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		encoding_rs-0.8.28 \
 		error-chain-0.12.4 \
 		fern-0.6.0 \
+		filetime-0.2.14 \
 		flate2-1.0.20 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -133,6 +135,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.4 \
 		ring-0.16.20 \
+		routinator-ui-0.3.4 \
 		rpki-0.12.2 \
 		rustc-demangle-0.1.20 \
 		rustc_version-0.4.0 \
@@ -155,6 +158,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		strsim-0.8.0 \
 		syn-1.0.74 \
 		syslog-5.0.0 \
+		tar-0.4.35 \
 		tempfile-3.2.0 \
 		term_size-0.3.2 \
 		textwrap-0.11.0 \
@@ -199,7 +203,13 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.7.0
+		winreg-0.7.0 \
+		xattr-0.2.2
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s|DISTDIR|${DISTDIR}|" \
+			${WRKSRC}/cargo-crates/routinator-ui-${ROUTINATOR_UI_VERSION}/build.rs
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/routinator
