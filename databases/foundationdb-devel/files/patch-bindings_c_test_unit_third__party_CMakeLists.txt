@@ -1,4 +1,4 @@
---- bindings/c/test/unit/third_party/CMakeLists.txt.orig	2021-01-04 00:07:51 UTC
+--- bindings/c/test/unit/third_party/CMakeLists.txt.orig	2021-12-07 03:03:34 UTC
 +++ bindings/c/test/unit/third_party/CMakeLists.txt
 @@ -1,18 +1 @@
 -# Download doctest repo.

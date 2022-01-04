@@ -1,11 +1,17 @@
---- CMakeLists.txt.orig	2021-11-25 00:33:05 UTC
+--- CMakeLists.txt.orig	2021-12-29 09:04:08 UTC
 +++ CMakeLists.txt
-@@ -171,7 +171,9 @@ else()
+@@ -172,9 +172,13 @@ else()
+   add_subdirectory(fdbservice)
  endif()
  add_subdirectory(fdbbackup)
+-add_subdirectory(contrib)
++if(WITH_CONTRIB)
++  add_subdirectory(contrib)
++endif()
  add_subdirectory(tests)
+-add_subdirectory(flowbench EXCLUDE_FROM_ALL)
 +if(WITH_FLOWBENCH)
- add_subdirectory(flowbench EXCLUDE_FROM_ALL)
++  add_subdirectory(flowbench EXCLUDE_FROM_ALL)
 +endif()
  if(WITH_PYTHON AND WITH_C_BINDING)
    add_subdirectory(bindings)

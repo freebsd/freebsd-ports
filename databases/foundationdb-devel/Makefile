@@ -1,5 +1,5 @@
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20211125
+DISTVERSION=	7.0.0
 CATEGORIES=	databases
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
@@ -26,14 +26,15 @@ USES=		cmake compiler:c++17-lang mono:build python:build shebangfix \
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	foundationdb
-GH_TAGNAME=	09fedc4
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
 SHEBANG_FILES=	bindings/c/generate_asm.py
 
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLLIB}
-CMAKE_OFF=	DISABLE_TLS USE_DTRACE USE_JEMALLOC
+CMAKE_OFF=	DISABLE_TLS USE_DTRACE USE_JEMALLOC WITH_CONTRIB WITH_FLOWBENCH
+
+MAKE_ENV=	MONO_REGISTRY_PATH=/tmp/registry
 
 USERS=		foundationdb
 GROUPS=		foundationdb
@@ -53,17 +54,15 @@ post-patch:
 do-install:
 # commands on first line, dev tools on next two
 .for f in fdbbackup fdbcli fdbmonitor fdbserver \
-	    actor_flamegraph fdb_c_performance_test fdb_c_ryw_benchmark \
-	    fdb_c_txn_size_test fdb_flow_tester fdbconvert fdbdecode mako tutorial
+	actor_flamegraph fdb_flow_tester fdbconvert fdbdecode tutorial
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-# confirm with upstream if these are actually needed
 .for s in backup_agent dr_agent fastrestore_agent fdbr fdbrestore
 	${RLN} ${STAGEDIR}${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin/${s}
 .endfor
 # exposed libraries - confirm with upstream
-.for l in libfdb_c.so libfdb_flow.a libfdb_sqlite.a libfdbclient.a \
-	    libfdbrpc.a libflow.a
+.for l in libfdb_c.so libfdb_flow.a libfdb_sqlite.a libfdbclient.a libfdbrpc.a \
+	libflow.a
 	${STRIP_CMD} ${WRKDIR}/.build/lib/${l}
 	${INSTALL_DATA} ${WRKDIR}/.build/lib/${l} ${STAGEDIR}/${PREFIX}/lib/
 .endfor
