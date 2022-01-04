@@ -1,6 +1,6 @@
 PORTNAME=	plumed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
+DISTVERSION=	2.8b
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,19 +11,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BROKEN_i386=	undefined reference to `__atomic_load'
 
-BUILD_DEPENDS=	bash:shells/bash \
-		xxd:editors/vim
+BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf compiler:c++11-lang gmake pkgconfig shebangfix
-SHEBANG_GLOB=	*.sh
-SHEBANG_FILES=	src/maketools/makecmd
-GNU_CONFIGURE=	yes
-USE_GITHUB=	yes
-GH_PROJECT=	plumed2
 USE_LDCONFIG=	yes
 
+SHEBANG_GLOB=	*.sh
+SHEBANG_FILES=	src/maketools/makecmd src/maketools/xxd
+
+USE_GITHUB=	yes
+GH_PROJECT=	plumed2
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-python
+
+TEST_TARGET=	test # https://github.com/plumed/plumed2/issues/781
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#! /bin/bash|#! ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/lib/Makefile
