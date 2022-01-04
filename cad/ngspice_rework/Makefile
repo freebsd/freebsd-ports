@@ -1,7 +1,7 @@
 # Created by: AMAKAWA Shuhei <amakawa@jp.FreeBSD.org>
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	35
+PORTVERSION=	36
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
