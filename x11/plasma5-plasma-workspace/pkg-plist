@@ -1334,6 +1334,7 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.digitalclock.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.icon.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.lock_logout.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.manageinputmethod.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.mediacontroller.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.notifications.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.panelspacer.mo
@@ -1608,6 +1609,7 @@ share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.digitalclock.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.icon.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.lock_logout.mo
+share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.manageinputmethod.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.mediacontroller.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.notifications.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.panelspacer.mo
@@ -2448,7 +2450,6 @@ share/locale/gu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/gu/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/gu/LC_MESSAGES/soliduiserver5.mo
-share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.manageinputmethod.mo
 share/locale/he/LC_MESSAGES/freespacenotifier.mo
 share/locale/he/LC_MESSAGES/kcm5_icons.mo
 share/locale/he/LC_MESSAGES/kcm_autostart.mo
@@ -2659,6 +2660,7 @@ share/locale/hr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/hr/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/hr/LC_MESSAGES/soliduiserver5.mo
+share/locale/hsb/LC_MESSAGES/freespacenotifier.mo
 share/locale/hsb/LC_MESSAGES/kcm5_icons.mo
 share/locale/hsb/LC_MESSAGES/kcm_autostart.mo
 share/locale/hsb/LC_MESSAGES/kcm_colors.mo
