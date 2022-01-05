@@ -2,13 +2,16 @@
 
 PORTNAME=	luajit
 DISTVERSION=	2.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	https://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Lua
+
+OPTIONS_DEFINE=	PTHREAD
+OPTIONS_DESC=	with pthread support
 
 LICENSE=	MIT PD
 LICENSE_COMB=	multi
@@ -31,6 +34,10 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 
 .if ${ARCH:Mpowerpc*} || ${ARCH:Mmips*} || ${ARCH:Msparc*}
 USE_GCC=yes
+.endif
+
+.if ${PORT_OPTIONS:MPTHREAD}
+LDFLAGS+=	-lm -pthread
 .endif
 
 post-install:
