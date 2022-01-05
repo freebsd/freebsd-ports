@@ -1,5 +1,6 @@
 PORTNAME=	zls
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,6 +19,7 @@ GH_TUPLE=	ziglibs:known-folders:0.7.0-15-g9db1b99:known_folders/src/known-folder
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Drelease-fast} \
+		-Dcpu=${CPUTYPE:Ubaseline} \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
