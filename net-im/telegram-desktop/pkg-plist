@@ -7,4 +7,4 @@ share/icons/hicolor/32x32/apps/telegram.png
 share/icons/hicolor/48x48/apps/telegram.png
 share/icons/hicolor/512x512/apps/telegram.png
 share/icons/hicolor/64x64/apps/telegram.png
-share/metainfo/telegramdesktop.appdata.xml
+share/metainfo/telegramdesktop.metainfo.xml
