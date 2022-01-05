@@ -1,0 +1,15 @@
+--- test/Makefile.orig	2022-01-05 18:18:41 UTC
++++ test/Makefile
+@@ -139,10 +139,10 @@ endif
+ all: $(TEST_APP) $(XVALID_APP) $(FUZZ_APP)
+ 
+ $(TEST_APP): $(OBJECTS)
+-	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
++	$(CC) $(LDFLAGS) $^ $(LDLIBS) -Wl,-rpath,. -o $@
+ 
+ $(XVALID_APP): $(XVALID_OBJECTS)
+-	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
++	$(CC) $(LDFLAGS) $^ $(LDLIBS) -Wl,-rpath,. -o $@
+ 
+ $(FUZZ_APP): $(FUZZ_SOURCES)
+ ifneq (, $(shell which clang))
