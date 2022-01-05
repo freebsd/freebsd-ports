@@ -1,6 +1,5 @@
 PORTNAME=	av1an
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -8,6 +7,8 @@ COMMENT=	Command-line encoding framework with per scene quality
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BROKEN_i386=	https://github.com/GuillaumeGomez/sysinfo/issues/668
 
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 		${BUILD_DEPENDS_${ARCH}}
@@ -21,92 +22,96 @@ GH_ACCOUNT=	master-of-zen
 GH_PROJECT=	Av1an
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	addr2line-0.16.0 \
+CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
+		affinity-0.1.2 \
 		aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.44 \
+		anyhow-1.0.52 \
 		arbitrary-0.4.7 \
-		arg_enum_proc_macro-0.3.1 \
-		arrayvec-0.5.2 \
+		arg_enum_proc_macro-0.3.2 \
 		arrayvec-0.7.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		av-bitstream-0.1.2 \
 		av-data-0.3.0 \
 		av-format-0.3.1 \
-		av-ivf-0.2.2 \
+		av-ivf-0.2.3 \
 		av-scenechange-0.7.2 \
-		backtrace-0.3.62 \
+		backtrace-0.3.63 \
 		bindgen-0.54.0 \
 		bitflags-1.3.2 \
 		bitstream-io-1.2.0 \
-		bitvec-0.19.5 \
-		bumpalo-3.8.0 \
+		bumpalo-3.9.0 \
 		byte-slice-cast-1.2.0 \
 		bytes-1.1.0 \
-		cc-1.0.71 \
+		cc-1.0.72 \
 		cexpr-0.4.0 \
 		cfg-expr-0.7.4 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clang-sys-0.29.3 \
-		clap-2.33.3 \
+		clap-3.0.5 \
+		clap_derive-3.0.5 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.3 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.5 \
-		ctrlc-3.2.1 \
-		dashmap-4.0.2 \
+		dashmap-5.0.0 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
 		enum-iterator-0.7.0 \
 		enum-iterator-derive-0.7.0 \
 		err-derive-0.2.4 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
 		ffmpeg-next-4.4.0 \
 		ffmpeg-sys-next-4.4.0 \
-		flexi_logger-0.19.5 \
+		flexi_logger-0.22.1 \
 		form_urlencoded-1.0.1 \
-		funty-1.1.0 \
 		getrandom-0.2.3 \
-		getset-0.1.1 \
-		gimli-0.25.0 \
-		git2-0.13.23 \
+		getset-0.1.2 \
+		gimli-0.26.1 \
+		git2-0.13.25 \
 		glob-0.3.0 \
+		hashbrown-0.11.2 \
 		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		idna-0.2.3 \
-		indicatif-0.17.0-beta.1 \
+		indexmap-1.7.0 \
+		indicatif-0.17.0-rc.1 \
+		instant-0.1.12 \
 		interpolate_name-0.2.3 \
-		itertools-0.10.1 \
+		itertools-0.10.3 \
 		itoa-0.4.8 \
+		itoa-1.0.1 \
 		jobserver-0.1.24 \
 		js-sys-0.3.55 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		lexical-core-0.7.6 \
-		libc-0.2.106 \
+		libc-0.2.112 \
 		libfuzzer-sys-0.3.5 \
-		libgit2-sys-0.12.24+1.3.0 \
+		libgit2-sys-0.12.26+1.3.0 \
 		libloading-0.5.2 \
 		libz-sys-1.1.3 \
+		lock_api-0.4.5 \
 		log-0.4.14 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
-		memoffset-0.6.4 \
+		memoffset-0.6.5 \
+		minimal-lexical-0.2.1 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.14 \
 		miow-0.3.7 \
-		nasm-rs-0.2.1 \
-		nix-0.23.0 \
+		nasm-rs-0.2.2 \
 		nom-5.1.2 \
-		nom-6.1.2 \
+		nom-7.1.0 \
 		noop_proc_macro-0.3.0 \
 		ntapi-0.3.6 \
 		num-bigint-0.3.3 \
@@ -114,32 +119,35 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		num-integer-0.1.44 \
 		num-rational-0.3.2 \
 		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
+		num_cpus-1.13.1 \
 		number_prefix-0.4.0 \
 		object-0.27.1 \
-		once_cell-1.8.0 \
-		paste-1.0.5 \
+		once_cell-1.9.0 \
+		os_str_bytes-6.0.0 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		paste-1.0.6 \
 		path_abs-0.5.1 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-2.1.0 \
-		pin-project-lite-0.2.7 \
-		pkg-config-0.3.22 \
+		pin-project-lite-0.2.8 \
+		pkg-config-0.3.24 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
-		ppv-lite86-0.2.15 \
+		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.32 \
-		quote-1.0.10 \
-		radium-0.5.3 \
+		proc-macro2-1.0.36 \
+		quote-1.0.14 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		rand_hc-0.3.1 \
-		rav1e-0.5.0 \
+		rav1e-0.5.1 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
+		redox_syscall-0.2.10 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		rust_hawktracer-0.7.0 \
@@ -148,45 +156,43 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustversion-1.0.5 \
-		ryu-1.0.5 \
+		rustversion-1.0.6 \
+		ryu-1.0.9 \
 		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde-1.0.133 \
+		serde_derive-1.0.133 \
+		serde_json-1.0.74 \
 		shlex-0.1.1 \
 		shlex-1.1.0 \
 		signal-hook-registry-1.4.0 \
 		simd_helpers-0.1.0 \
+		simdutf8-0.1.3 \
 		smallvec-1.7.0 \
 		smawk-0.3.1 \
 		splines-4.0.3 \
-		static_assertions-1.1.0 \
 		std_prelude-0.2.12 \
 		stfu8-0.2.4 \
-		strsim-0.8.0 \
 		strsim-0.10.0 \
-		structopt-0.3.25 \
-		structopt-derive-0.4.18 \
 		strum-0.21.0 \
-		strum-0.22.0 \
+		strum-0.23.0 \
 		strum_macros-0.21.1 \
-		strum_macros-0.22.0 \
-		syn-1.0.81 \
+		strum_macros-0.23.1 \
+		syn-1.0.84 \
 		synstructure-0.12.6 \
-		sysinfo-0.20.5 \
+		sysinfo-0.22.4 \
 		system-deps-3.1.2 \
-		tap-1.0.1 \
+		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
-		textwrap-0.11.0 \
 		textwrap-0.14.2 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		time-0.1.44 \
-		tinyvec-1.5.0 \
+		time-0.3.5 \
+		time-macros-0.2.3 \
+		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.13.0 \
+		tokio-1.15.0 \
 		toml-0.5.8 \
 		unicode-bidi-0.3.7 \
 		unicode-linebreak-0.1.2 \
@@ -199,11 +205,10 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		vapoursynth-0.3.0 \
 		vapoursynth-sys-0.3.0 \
 		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
 		vergen-3.2.0 \
-		vergen-5.1.16 \
+		vergen-6.0.0 \
 		version-compare-0.0.11 \
-		version_check-0.9.3 \
+		version_check-0.9.4 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.78 \
 		wasm-bindgen-backend-0.2.78 \
@@ -214,8 +219,8 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		which-4.2.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wyz-0.2.0 \
 		y4m-0.7.0
 
 post-patch:
