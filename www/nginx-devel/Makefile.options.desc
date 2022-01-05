@@ -22,6 +22,7 @@ GSSAPI_DESC=			GSSAPI implementation (imply HTTP_AUTH_KRB5)
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTPGRP_DESC=			Modules that require HTTP module
 HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
+HTTPV3_DESC=			Enable HTTP/3 protocol support (BoringSSL req.)
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
 HTTP_ADDITION_DESC=		Enable http_addition module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
