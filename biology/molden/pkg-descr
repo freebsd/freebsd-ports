@@ -1,14 +1,24 @@
-Visualizing the results of molecular orbital calculations
- 1) MO program:  gaussian, gamess, mopac, etc.
- 2) display molecule in 3D:  geo-opt, single-point, nomal mode (animation)
- 3) density:  contour plot or 3D view for electron density and MO coefficient
-Everything what you want about MO calculation can be seen.
+Molden is a package for displaying Molecular Density from the Ab Initio packages
+GAMESS-UK, GAMESS-US and GAUSSIAN and the Semi-Empirical packages Mopac/Ampac,
+it also supports a number of other programs via the Molden Format. Molden reads
+all the required information from the GAMESS / GAUSSIAN outputfile. Molden is
+capable of displaying Molecular Orbitals, the electron density and the Molecular
+minus Atomic density. Either the spherically averaged atomic density or the
+oriented ground state atomic density can be subtracted for a number of standard
+basis sets. Molden supports contour plots, 3-d grid plots with hidden lines and
+a combination of both. It can write a variety of graphics instructions;
+postscript, XWindows, VRML, povray, OpenGL, tekronix4014, hpgl, hp2392 and
+Figure. Both Xwindows and OpenGL versions of Molden are also capable of
+importing and displaying of chemx, PDB, and a variety of mopac/ampac files and
+lots of other formats. Molden also can animate reaction paths and molecular
+vibrations. It can calculate and display the true or Multipole Derived
+Electrostatic Potential and atomic charges can be fitted to the Electrostatic
+Potential calculated on a Connolly surface. Molden also features an stand alone
+forcefield program ambfor, which can optimise geometries with the combined Amber
+(protein) and GAFF (small molecules) force fields. Atom typing can be done
+automatically and interactively from within Molden, as well as firing
+optimisation jobs. Molden has a powerful Z-matrix editor which give full control
+over the geometry and allows you to build molecules from scratch, including
+polypeptides.
 
-By the distribution policy of the author;
- * Only the latest version is supplied.
- * Users must get the `distfiles' from the original site.
- * Do not re-distribute the source and the executable.
- * Using a not-so-latest version is prohibited, because
-   the author may only respond about the latest version.
-
-WWW: http://www.cmbi.ru.nl/molden/
+WWW: http://cheminf.cmbi.ru.nl/molden/
