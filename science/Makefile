@@ -81,6 +81,7 @@
     SUBDIR += fasthenry
     SUBDIR += fastjet
     SUBDIR += fisicalab
+    SUBDIR += fleur
     SUBDIR += frontistr
     SUBDIR += fsom
     SUBDIR += fvcom
