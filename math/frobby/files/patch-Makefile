@@ -1,6 +1,6 @@
---- Makefile.orig	2020-06-16 11:03:34 UTC
+--- Makefile.orig	2021-02-23 21:29:06 UTC
 +++ Makefile
-@@ -86,7 +86,6 @@ endif
+@@ -99,7 +99,6 @@ endif
  MATCH=false
  ifeq ($(MODE), release)
    outdir = bin/release/
@@ -8,7 +8,7 @@
    MATCH=true
  endif
  ifeq ($(MODE), debug)
-@@ -98,13 +97,13 @@ ifeq ($(MODE), debug)
+@@ -111,13 +110,13 @@ ifeq ($(MODE), debug)
  endif
  ifeq ($(MODE), shared)
    outdir = bin/shared/
@@ -24,12 +24,3 @@
    ldflags += -pg
    MATCH=true
    benchArgs = _profile $(FROBBYARGS)
-@@ -212,7 +211,7 @@ library: bin/$(library)
- bin/$(library): $(objs) | bin/
- 	rm -f bin/$(library)
- ifeq ($(MODE), shared)
--	$(CXX) -shared -o bin/$(library) $(ldflags) \
-+	$(CXX) -shared -Wl,-soname,$(library) -o bin/$(library) $(ldflags) \
- 	  $(patsubst $(outdir)main.o,,$(objs))
- else
- 	ar crs bin/$(library) $(patsubst $(outdir)main.o,,$(objs))
