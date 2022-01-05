@@ -1,0 +1,104 @@
+  <vuln vid="9eeccbf3-6e26-11ec-bb10-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>97.0.4692.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/01/stable-channel-update-for-desktop.html">
+	  <p>This release contains 37 security fixes, including:</p>
+	  <ul>
+	    <li>[$TBD][1275020] Critical CVE-2022-0096: Use after free in
+	      Storage. Reported by Yangkang (@dnpushme) of 360 ATA on
+	      2021-11-30</li>
+	    <li>[1117173] High CVE-2022-0097: Inappropriate implementation in
+	      DevTools. Reported by David Erceg on 2020-08-17</li>
+	    <li>[1273609] High CVE-2022-0098: Use after free in Screen Capture.
+	      Reported by @ginggilBesel on 2021-11-24</li>
+	    <li>[1245629] High CVE-2022-0099: Use after free in Sign-in.
+	      Reported by Rox on 2021-09-01</li>
+	    <li>[1238209] High CVE-2022-0100: Heap buffer overflow in Media
+	      streams API. Reported by Cassidy Kim of Amber Security Lab, OPPO
+	      Mobile Telecommunications Corp. Ltd. on 2021-08-10</li>
+	    <li>[1249426] High CVE-2022-0101: Heap buffer overflow in Bookmarks.
+	      Reported by raven (@raid_akame) on 2021-09-14</li>
+	    <li>[1260129] High CVE-2022-0102: Type Confusion in V8 . Reported by
+	      Brendon Tiszka on 2021-10-14</li>
+	    <li>[1272266] High CVE-2022-0103: Use after free in SwiftShader.
+	      Reported by Abraruddin Khan and Omair on 2021-11-21</li>
+	    <li>[1273661] High CVE-2022-0104: Heap buffer overflow in ANGLE.
+	      Reported by Abraruddin Khan and Omair on 2021-11-25</li>
+	    <li>[1274376] High CVE-2022-0105: Use after free in PDF. Reported by
+	      Cassidy Kim of Amber Security Lab, OPPO Mobile Telecommunications
+	      Corp. Ltd. on 2021-11-28</li>
+	    <li>[1278960] High CVE-2022-0106: Use after free in Autofill.
+	      Reported by Khalil Zhani on 2021-12-10</li>
+	    <li>[1248438] Medium CVE-2022-0107: Use after free in File Manager
+	      API. Reported by raven (@raid_akame) on 2021-09-10</li>
+	    <li>[1248444] Medium CVE-2022-0108: Inappropriate implementation in
+	      Navigation. Reported by Luan Herrera (@lbherrera_) on
+	      2021-09-10</li>
+	    <li>[1261689] Medium CVE-2022-0109: Inappropriate implementation in
+	      Autofill. Reported by Young Min Kim (@ylemkimon), CompSec Lab at
+	      Seoul National University on 2021-10-20</li>
+	    <li>[1237310] Medium CVE-2022-0110: Incorrect security UI in
+	      Autofill. Reported by Alesandro Ortiz on 2021-08-06</li>
+	    <li>[1241188] Medium CVE-2022-0111: Inappropriate implementation in
+	      Navigation. Reported by garygreen on 2021-08-18</li>
+	    <li>[1255713] Medium CVE-2022-0112: Incorrect security UI in Browser
+	      UI. Reported by Thomas Orlita on 2021-10-04</li>
+	    <li>[1039885] Medium CVE-2022-0113: Inappropriate implementation in
+	      Blink. Reported by Luan Herrera (@lbherrera_) on 2020-01-07</li>
+	    <li>[1267627] Medium CVE-2022-0114: Out of bounds memory access in
+	      Web Serial. Reported by Looben Yang on 2021-11-06</li>
+	    <li>[1268903] Medium CVE-2022-0115: Uninitialized Use in File API.
+	      Reported by Mark Brand of Google Project Zero on 2021-11-10</li>
+	    <li>[1272250] Medium CVE-2022-0116: Inappropriate implementation in
+	      Compositing. Reported by Irvan Kurniawan (sourc7) on
+	      2021-11-20</li>
+	    <li>[1115847] Low CVE-2022-0117: Policy bypass in Service Workers.
+	      Reported by Dongsung Kim (@kid1ng) on 2020-08-13</li>
+	    <li>[1238631] Low CVE-2022-0118: Inappropriate implementation in
+	      WebShare. Reported by Alesandro Ortiz on 2021-08-11</li>
+	    <li>[1262953] Low CVE-2022-0120: Inappropriate implementation in
+	      Passwords. Reported by CHAKRAVARTHI (Ruler96) on 2021-10-25</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0096</cvename>
+      <cvename>CVE-2022-0097</cvename>
+      <cvename>CVE-2022-0098</cvename>
+      <cvename>CVE-2022-0099</cvename>
+      <cvename>CVE-2022-0100</cvename>
+      <cvename>CVE-2022-0101</cvename>
+      <cvename>CVE-2022-0102</cvename>
+      <cvename>CVE-2022-0103</cvename>
+      <cvename>CVE-2022-0104</cvename>
+      <cvename>CVE-2022-0105</cvename>
+      <cvename>CVE-2022-0106</cvename>
+      <cvename>CVE-2022-0107</cvename>
+      <cvename>CVE-2022-0108</cvename>
+      <cvename>CVE-2022-0109</cvename>
+      <cvename>CVE-2022-0110</cvename>
+      <cvename>CVE-2022-0111</cvename>
+      <cvename>CVE-2022-0112</cvename>
+      <cvename>CVE-2022-0113</cvename>
+      <cvename>CVE-2022-0114</cvename>
+      <cvename>CVE-2022-0115</cvename>
+      <cvename>CVE-2022-0116</cvename>
+      <cvename>CVE-2022-0117</cvename>
+      <cvename>CVE-2022-0118</cvename>
+      <cvename>CVE-2022-0120</cvename>
+      <url>https://chromereleases.googleblog.com/2022/01/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-01-04</discovery>
+      <entry>2022-01-05</entry>
+    </dates>
+  </vuln>

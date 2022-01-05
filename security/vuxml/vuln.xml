@@ -19,9 +19,10 @@
 <!ENTITY vuln-2019 SYSTEM "vuln-2019.xml">
 <!ENTITY vuln-2020 SYSTEM "vuln-2020.xml">
 <!ENTITY vuln-2021 SYSTEM "vuln-2021.xml">
+<!ENTITY vuln-2022 SYSTEM "vuln-2022.xml">
 ]>
 <!--
-Copyright 2003-2021 Jacques Vidrine and contributors
+Copyright 2003-2022 Jacques Vidrine and contributors
 
 Redistribution and use in source (VuXML) and 'compiled' forms (SGML,
 HTML, PDF, PostScript, RTF and so forth) with or without modification,
@@ -77,6 +78,7 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+&vuln-2022;
 &vuln-2021;
 &vuln-2020;
 &vuln-2019;
