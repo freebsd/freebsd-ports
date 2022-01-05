@@ -1,6 +1,6 @@
 PORTNAME=	boringssl
 PORTVERSION=	0.0.0.0.2021.12.21.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +10,12 @@ LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:insource cpe go:no_targets localbase perl5
+
+CONFLICTS_INSTALL=	security/libressl \
+			security/libressl-devel \
+			security/openssl \
+			security/openssl-devel \
+			security/openssl-quictls
 
 CPE_VENDOR=	google
 
