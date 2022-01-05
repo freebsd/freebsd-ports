@@ -1,9 +1,9 @@
 PORTNAME=	sofia-sip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.4
+DISTVERSION=	1.13.6
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jailbird@fdf.net
 COMMENT=	Open-source SIP User-Agent library
 
 LICENSE=	LGPL21

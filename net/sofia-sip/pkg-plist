@@ -124,7 +124,7 @@ lib/libsofia-sip-ua-glib.so.3.0.0
 lib/libsofia-sip-ua.a
 lib/libsofia-sip-ua.so
 lib/libsofia-sip-ua.so.0
-lib/libsofia-sip-ua.so.0.4.0
+lib/libsofia-sip-ua.so.0.6.0
 libdata/pkgconfig/sofia-sip-ua-glib.pc
 libdata/pkgconfig/sofia-sip-ua.pc
 %%DATADIR%%/msg_parser.awk
