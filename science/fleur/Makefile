@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 
-USES=		cmake:noninja fortran gnome localbase:ldflags shebanfgix tar:tgz
+USES=		cmake:noninja fortran gnome localbase:ldflags shebangfix tar:tgz
 USE_GNOME=	libxml2
 
 USE_GITLAB=	yes
