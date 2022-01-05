@@ -17,7 +17,7 @@ GH_TUPLE=	ziglibs:known-folders:0.7.0-15-g9db1b99:known_folders/src/known-folder
 		ziglibs:zinput:0.1.0-19-g5e0d781:zinput/src/zinput
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
-		${WITH_DEBUG:U-Drelease-fast=true} \
+		${WITH_DEBUG:D:U-Drelease-fast} \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
