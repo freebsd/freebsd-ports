@@ -29,7 +29,7 @@ GH_TUPLE=	ifreund:zig-pixman:d381567:zig_pixman/deps/zig-pixman \
 		swaywm:zig-wlroots:417c103:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
-		${WITH_DEBUG:U-Drelease-fast=true} \
+		${WITH_DEBUG:D:U-Drelease-fast} \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
