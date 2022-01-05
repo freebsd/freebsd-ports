@@ -1,6 +1,6 @@
 PORTNAME=	boringssl
 PORTVERSION=	0.0.0.0.2021.12.21.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,6 +33,7 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's,-D_XOPEN_SOURCE=700,,'
 	@${GREP} -FRl '${GO_EXECUTABLE} run ' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -r -e 's,([$][{]GO_EXECUTABLE[}] run),\1 ${GO_BUILDFLAGS},'
+	@${FIND} ${WRKSRC}/include -name '*.bak' -delete
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/bssl ${STAGEDIR}${PREFIX}/bin/
