@@ -1,7 +1,7 @@
 # Created by: Ben Hutchinson <benhutch@xfiles.org.uk>
 
 PORTNAME=	epic4
-PORTVERSION=	2.10.9
+PORTVERSION=	2.10.10
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.cc.uoc.gr/mirrors/irc/epic/EPIC4-PRODUCTION/
