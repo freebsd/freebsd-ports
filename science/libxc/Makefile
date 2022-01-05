@@ -1,7 +1,7 @@
 # Created by: Johannes Dieterich <dieterich@ogolem.org>
 
 PORTNAME=	libxc
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.7
 CATEGORIES=	science
 MASTER_SITES=	https://www.tddft.org/programs/${PORTNAME}/down/${DISTVERSION}/
 

@@ -2,6 +2,7 @@ bin/xc-info
 bin/xc-threshold
 include/libxc.bib
 include/xc.h
+include/xc_f03_lib_m.mod
 include/xc_f90_lib_m.mod
 include/xc_funcs.h
 include/xc_funcs_removed.h
@@ -9,10 +10,13 @@ include/xc_funcs_worker.h
 include/xc_version.h
 lib/libxc.so
 lib/libxc.so.9
-lib/libxc.so.9.0.0
+lib/libxc.so.9.1.7
+lib/libxcf03.so
+lib/libxcf03.so.9
+lib/libxcf03.so.9.1.7
 lib/libxcf90.so
 lib/libxcf90.so.9
-lib/libxcf90.so.9.0.0
+lib/libxcf90.so.9.1.7
 libdata/pkgconfig/libxc.pc
 libdata/pkgconfig/libxcf03.pc
 libdata/pkgconfig/libxcf90.pc
