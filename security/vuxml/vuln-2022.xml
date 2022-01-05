@@ -1,3 +1,39 @@
+  <vuln vid="9c990e67-6e30-11ec-82db-b42e991fc52e">
+    <topic>routinator -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>routinator</name>
+	<range><lt>0.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>nlnetlabs reports:</p>
+	<blockquote cite="https://nlnetlabs.nl/projects/rpki/security-advisories/">
+	  <p>Release 0.10.2 contains fixes for the following issues:</p>
+	  <ul>
+	    <li>Medium CVE-2021-43172: Infinite length chain of RRDP
+	      repositories. Credit: Koen van Hove. Date: 2021-11-09</li>
+	    <li>Medium CVE-2021-43173: Hanging RRDP request.
+	      Credit: Koen van Hove. Date: 2021-11-09</li>
+	    <li>Medium	CVE-2021-43174: gzip transfer encoding caused
+	      out-of-memory crash. Credit Koen van Hove. Date: 2021-11-09</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43172</cvename>
+      <cvename>CVE-2021-43173</cvename>
+      <cvename>CVE-2021-43174</cvename>
+      <url>https://nlnetlabs.nl/projects/rpki/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-09</discovery>
+      <entry>2022-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9eeccbf3-6e26-11ec-bb10-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
