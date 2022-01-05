@@ -91,5 +91,5 @@ lib/cmake/assimp-5.1/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/assimp-5.1/assimpTargets.cmake
 lib/libassimp.so
 lib/libassimp.so.5
-lib/libassimp.so.5.1.3
+lib/libassimp.so.5.1.4
 libdata/pkgconfig/assimp.pc
