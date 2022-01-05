@@ -1,7 +1,7 @@
 # Created by: Arun Sharma <arun@sharma-home.net>
 
 PORTNAME=	onetbb
-PORTVERSION=	2021.4.0
+PORTVERSION=	2021.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
