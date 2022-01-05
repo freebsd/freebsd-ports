@@ -18,6 +18,15 @@ GH_ACCOUNT=	David-Haim
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le && ${OSVERSION} < 1300523
+BUILD_DEPENDS=	llvm13>0:devel/llvm13
+CPP=		${LOCALBASE}/bin/clang-cpp13
+CC=		${LOCALBASE}/bin/clang13
+CXX=		${LOCALBASE}/bin/clang++13
+.endif
+
 do-test: # same as recommended in https://github.com/David-Haim/concurrencpp#building-installing-and-testing
 	@cd ${WRKSRC} && \
 		${CMAKE_BIN} -S test -B build/test && \
