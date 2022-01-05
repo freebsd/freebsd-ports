@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cartopy
-PORTVERSION=	0.19.0
-DISTVERSIONSUFFIX=	.post1
+PORTVERSION=	0.20.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	geos>=3.3.3:graphics/geos \
 LIB_DEPENDS=	libgeos.so:graphics/geos \
 		libproj.so:graphics/proj
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.13.3,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproj>=0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyshp>=2:devel/py-pyshp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>=1.5.6:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${PY_FLAVOR}
@@ -28,14 +28,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.13.3,1:math/py-numpy@${PY_FLAVOR} \
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils
 
-CPPFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H
-
-OPTIONS_DEFINE=	EPSG OWS PLOTTING
-EPSG_DESC=	EPSG database support
+OPTIONS_DEFINE=	OWS PLOTTING
 OWS_DESC=	OGC Web Service support
 PLOTTING_DESC=	Plotting support
 
-EPSG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyepsg>=0.4.0:graphics/py-pyepsg@${PY_FLAVOR}
 OWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OWSLib>=0.8.11:graphics/py-OWSLib@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pillow>=1.7.8:graphics/py-pillow@${PY_FLAVOR}
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=1.10.0:graphics/py-gdal@${PY_FLAVOR} \
