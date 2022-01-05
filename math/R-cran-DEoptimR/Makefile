@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	DEoptimR
-DISTVERSION=	1.0-9
+DISTVERSION=	1.0-10
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
