@@ -1,9 +1,8 @@
 # Created by: lightside <lightside@gmx.com>
 
 PORTNAME=	wxlauncher
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
