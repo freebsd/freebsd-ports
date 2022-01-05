@@ -1,10 +1,10 @@
 # Created by: Joe Horn <joehorn@gmail.com>
 
 PORTNAME=	wordpress
-PORTVERSION=	5.8
+DISTVERSION=	5.8.2
 DISTVERSIONSUFFIX=	-zh_TW
 CATEGORIES=	chinese www
-MASTER_SITES=	http://tw.wordpress.org/
+MASTER_SITES=	https://tw.wordpress.org/
 PKGNAMESUFFIX=	-zh_TW
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -13,24 +13,21 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN=		fails to fetch (checksum mismatch)
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USES=		php:web
-USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+
+USES=		cpe php:web
+.if ${DISTVERSION:N*.*.*}
+CPE_VERSION=	${DISTVERSION}.0
+.endif
+USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
+WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-PLIST=		${WRKDIR}/pkg-plist
-WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
-
-PORTDOCS=	readme.html
-
-OPTIONS_DEFINE=	DOCS
-
 SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST=		${WRKDIR}/pkg-plist
+PORTDOCS=	readme.html
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
@@ -49,7 +46,7 @@ pre-install:
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/
+	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
 	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w {} \;
 

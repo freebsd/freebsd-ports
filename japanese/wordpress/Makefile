@@ -1,38 +1,34 @@
 # Created by: Takefu
 
 PORTNAME=	wordpress
-DISTVERSION=	5.8
+DISTVERSION=	5.8.2
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
-MASTER_SITES=	http://ja.wordpress.org/
+MASTER_SITES=	https://ja.wordpress.org/
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
-
-BROKEN=		fails to fetch (checksum mismatch)
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ru-wordpress-[0-9].*
-
-NO_ARCH=	yes
-NO_BUILD=	yes
-USES=		cpe php:web
-USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CPE_LANG=	ja
+USES=		cpe php:web
 .if ${DISTVERSION:N*.*.*}
 CPE_VERSION=	${DISTVERSION}.0
 .endif
-
+CPE_LANG=	ja
+USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
+CONFLICTS_INSTALL=	^wordpress-[0-9].* fr-wordpress-[0-9].* \
+			de-wordpress-[0-9].* ru-wordpress-[0-9].*
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
-
 OPTIONS_DEFINE=	DOCS
 
 pre-everything::

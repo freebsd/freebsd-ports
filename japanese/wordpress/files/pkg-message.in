@@ -9,8 +9,8 @@ EOM
 { type: upgrade
   maximum_version: 3
   message: <<EOM
-If you are upgrading from 1.x or 2.x to 3.x, please run
-http://your.site/wordpress/wp-admin/upgrade.php to upgrade to WordPress 3.x
+If you are upgrading from 1.x or 2.x to 3.x to 4.x, please run
+http://your.site/wordpress/wp-admin/upgrade.php to upgrade to WordPress 4.x
 EOM
 }
 ]

@@ -1,33 +1,31 @@
 # Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
 
 PORTNAME=	wordpress
-DISTVERSION=	5.8
+DISTVERSION=	5.8.2
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://wordpress.org/
+MASTER_SITES=	https://wordpress.org/
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	de-wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].*
-
-NO_ARCH=	yes
-NO_BUILD=	yes
-USES=		php:web cpe
-USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		cpe php:web
 .if ${DISTVERSION:N*.*.*}
 CPE_VERSION=	${DISTVERSION}.0
 .endif
-
+USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
+CONFLICTS_INSTALL=	de-wordpress-[0-9].* fr-wordpress-[0-9].* \
+			ja-wordpress-[0-9].* ru-wordpress-[0-9].*
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
-
 OPTIONS_DEFINE=	DOCS
 
 pre-everything::
@@ -50,6 +48,8 @@ do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
 	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w {} \;
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
