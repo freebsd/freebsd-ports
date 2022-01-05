@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	quassel
-DISTVERSION=	0.14-rc2
+DISTVERSION=	0.14.0
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSION}/
 
@@ -75,7 +75,7 @@ PGSQL_USE=		qt=sql-pgsql
 
 SQLITE3_USE=		qt=sql-sqlite3_run
 
-_LIBVERSION=		0.13.92
+_LIBVERSION=		0.14.0
 PLIST_SUB=		LIBVERSION=${_LIBVERSION}
 
 .include <bsd.port.options.mk>
