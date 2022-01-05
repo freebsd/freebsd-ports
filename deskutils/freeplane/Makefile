@@ -2,6 +2,7 @@
 
 PORTNAME=	freeplane
 DISTVERSION=	1.9.12
+PORTREVISION=	1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/archive/${PORTVERSION}
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
@@ -12,8 +13,10 @@ COMMENT=	Free mind mapping and knowledge management software
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cpe zip
+RUN_DEPENDS=	bash:shells/bash
 
+USES=		cpe zip shebangfix
+SHEBANG_FILES=	${WRKSRC}/freeplane.sh
 USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -23,10 +26,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! ( -name freeplane\.sh* -or -name license\.txt -or -name *\.bat -or -name *\.exe )"
-# Install freeplane.sh with the right permission, link to it to bin/
-# and let it resolve the path to DATADIR automatically.
-	${INSTALL_SCRIPT} ${WRKSRC}/freeplane.sh ${STAGEDIR}${DATADIR}
-	${RLN} ${STAGEDIR}${DATADIR}/freeplane.sh ${STAGEDIR}${PREFIX}/bin/freeplane
+		"! ( -name license\.txt -or -name *\.bat -or -name *\.exe )"
+# Install freeplane.sh with the right permission
+	${SED} -e 's|%%DATADIR%%|${DATADIR}|' < ${FILESDIR}/freeplane.in > \
+		${WRKSRC}/freeplane
+	${INSTALL_SCRIPT} ${WRKSRC}/freeplane ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
