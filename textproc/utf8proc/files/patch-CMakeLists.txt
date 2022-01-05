@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-12-17 21:31:08 UTC
++++ CMakeLists.txt
+@@ -62,7 +62,7 @@ if (UTF8PROC_INSTALL)
+     RUNTIME DESTINATION "${CMAKE_INSTALL_FULL_BINDIR}"
+   )
+   configure_file(libutf8proc.pc.cmakein libutf8proc.pc @ONLY)
+-  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libutf8proc.pc" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig")
++  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libutf8proc.pc" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}data/pkgconfig")
+ endif()
+ 
+ if(UTF8PROC_ENABLE_TESTING)

@@ -2,8 +2,7 @@
 
 PORTNAME=	utf8proc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
-PORTREVISION=	1
+DISTVERSION=	2.7.0
 CATEGORIES=	textproc devel
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -12,28 +11,22 @@ COMMENT=	UTF-8 processing library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		gmake
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaStrings
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	prefix=${PREFIX}
-
-CONFLICTS=	libutf8proc
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_FILES=	include/utf8proc.h \
-		lib/libutf8proc.a \
 		lib/libutf8proc.so \
 		lib/libutf8proc.so.2 \
-		lib/libutf8proc.so.2.4.1 \
+		lib/libutf8proc.so.2.5.0 \
 		libdata/pkgconfig/libutf8proc.pc
 PORTDOCS=	NEWS.md README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libutf8proc.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
