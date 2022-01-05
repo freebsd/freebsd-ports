@@ -1,5 +1,5 @@
 PORTNAME=	qmmp
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 	SF/qmmp-dev/${PORTNAME}/${PORTVERSION:R}/
