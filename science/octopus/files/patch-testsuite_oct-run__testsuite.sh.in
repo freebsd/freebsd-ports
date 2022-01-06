@@ -1,0 +1,13 @@
+- backport of https://gitlab.com/octopus-code/octopus/-/merge_requests/1598
+
+--- testsuite/oct-run_testsuite.sh.in.orig	2022-01-06 16:59:24 UTC
++++ testsuite/oct-run_testsuite.sh.in
+@@ -141,7 +141,7 @@ function checkqueue {
+                 break;
+             fi
+         done
+-        sleep 0.1s;
++        sleep 0.1;
+     done
+ 
+     logfile=`basename $test_name .test`.log

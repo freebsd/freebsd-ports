@@ -42,7 +42,7 @@ LDFLAGS+=	-lsymspg
 FCFLAGS+=	-I${LOCALBASE}/include -ffree-line-length-none
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check-short # tests fail: https://gitlab.com/octopus-code/octopus/-/issues/536
+TEST_TARGET=	check-short # some tests fail
 
 OPTIONS_DEFINE=			OPENMP
 OPTIONS_DEFAULT=		OPENMP
