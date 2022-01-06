@@ -1,5 +1,5 @@
 PORTNAME=	swaync
-PORTVERSION=	s20211228
+PORTVERSION=	s20220106
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,11 +18,13 @@ USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
-GH_TAGNAME=	c1eb052
+GH_TAGNAME=	c345804
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-client \
+		lib/systemd/user/${PORTNAME}.service \
 		share/bash-completion/completions/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME}-client \
+		share/dbus-1/services/org.erikreider.swaync.service \
 		share/fish/vendor_completions.d/${PORTNAME}-client.fish \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME} \
