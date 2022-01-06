@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -262,6 +262,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
 		--without-myspell-dicts
+#		--with-helppack-integration=no \
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		FLEX=${LOCALBASE}/bin/flex \
