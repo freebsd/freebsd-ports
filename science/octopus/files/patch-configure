@@ -1,9 +1,9 @@
---- configure.orig	2019-01-19 22:21:03 UTC
+--- configure.orig	2021-11-25 13:43:40 UTC
 +++ configure
-@@ -900,7 +900,7 @@ CPP
- FC
- FCFLAGS
- FCCPP'
+@@ -955,7 +955,7 @@ FCFLAGS
+ FCCPP
+ LT_SYS_LIBRARY_PATH
+ CXXCPP'
 -ac_subdirs_all='external_libs/spglib-1.9.9'
 +ac_subdirs_all=''
  

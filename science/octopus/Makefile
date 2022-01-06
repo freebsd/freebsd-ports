@@ -1,6 +1,5 @@
 PORTNAME=	octopus
-DISTVERSION=	10.5
-PORTREVISION=	1
+DISTVERSION=	11.3
 CATEGORIES=	science
 MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
@@ -16,8 +15,10 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgd.so:graphics/gd \
+		libgmp.so:math/gmp \
 		libgsl.so:math/gsl \
 		liblapack.so:math/lapack \
+		libmpfr.so:math/mpfr \
 		libnlopt.so:math/nlopt \
 		libpng.so:graphics/png \
 		libsymspg.so:science/spglib \
@@ -27,14 +28,21 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libxc.so:science/libxc \
 		libyaml.so:textproc/libyaml
 
-USES=		compiler:c++11-lang fortran gmake jpeg localbase:ldflags perl5 python shebangfix
+USES=		compiler:c++11-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
+USE_CXXSTD=	c++11
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	src/fdep/fortran_dependencies.pl testsuite/performance/create_combinations.py
+
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=	${PREFIX}/bin/bash
-USE_CXXSTD=	c++11
+CONFIGURE_ARGS=	--enable-shared --disable-static
 
 LDFLAGS+=	-lsymspg
 FCFLAGS+=	-I${LOCALBASE}/include -ffree-line-length-none
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check-short # tests fail: https://gitlab.com/octopus-code/octopus/-/issues/536
 
 OPTIONS_DEFINE=			OPENMP
 OPTIONS_DEFAULT=		OPENMP

@@ -1,14 +1,14 @@
---- src/Makefile.in.orig	2020-10-13 04:32:13 UTC
+--- src/Makefile.in.orig	2021-11-25 13:43:43 UTC
 +++ src/Makefile.in
-@@ -269,7 +269,6 @@ oct_casida_spectrum_OBJECTS = $(am_oct_casida_spectrum
+@@ -192,7 +192,6 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
- @COMPILE_OPENCL_TRUE@am__DEPENDENCIES_2 = $(top_builddir)/external_libs/fortrancl/libfortrancl.a
- am__DEPENDENCIES_3 = $(top_builddir)/external_libs/qshep/libqshep.a \
--	$(top_builddir)/external_libs/spglib-1.9.9/src/libsymspg.a \
- 	$(top_builddir)/external_libs/bpdn/libbpdn.a \
- 	$(top_builddir)/external_libs/dftd3/libdftd3.a \
+ @COMPILE_OPENCL_TRUE@am__DEPENDENCIES_2 = $(top_builddir)/external_libs/fortrancl/libfortrancl.la
+ am__DEPENDENCIES_3 = $(top_builddir)/external_libs/qshep/libqshep.la \
+-	$(top_builddir)/external_libs/spglib-1.9.9/src/libsymspg.la \
+ 	$(top_builddir)/external_libs/bpdn/libbpdn.la \
+ 	$(top_builddir)/external_libs/dftd3/libdftd3.la \
  	$(am__DEPENDENCIES_2) $(am__append_3) $(am__append_5)
-@@ -852,7 +851,6 @@ top_srcdir = @top_srcdir@
+@@ -847,7 +846,6 @@ top_srcdir = @top_srcdir@
  # we should not have libyaml here if we used an external one...
  FCFLAGS_MODS = @F90_MODULE_FLAG@$(top_builddir)/external_libs/bpdn \
  	@F90_MODULE_FLAG@$(top_builddir)/external_libs/dftd3 \
@@ -16,19 +16,19 @@
  	@FCFLAGS_LIBXC@ @FCFLAGS_PSPIO@ @FCFLAGS_PSOLVER@ \
  	@FCFLAGS_ISF@ @FCFLAGS_FUTILE@ @FCFLAGS_FFTW@ @FCFLAGS_PFFT@ \
  	@FCFLAGS_PNFFT@ @FCFLAGS_NETCDF@ @FCFLAGS_ETSF_IO@ \
-@@ -861,7 +859,6 @@ FCFLAGS_MODS = @F90_MODULE_FLAG@$(top_builddir)/extern
- 	$(am__append_2)
+@@ -856,7 +854,6 @@ FCFLAGS_MODS = @F90_MODULE_FLAG@$(top_builddir)/extern
+ 	@FCFLAGS_DFTBPLUS@ $(am__append_2)
  AM_CPPFLAGS = -I$(top_srcdir)/src/include \
  	-I$(top_builddir)/src/include \
 -	-I$(top_srcdir)/external_libs/spglib-1.9.9/src \
  	-I$(top_srcdir)/liboct_parser $(GSL_CFLAGS) $(GD_CFLAGS) \
  	@METIS_CFLAGS@ @PARMETIS_CFLAGS@ @CFLAGS_NFFT@ @CFLAGS_FFTW@ \
- 	@CFLAGS_CUDA@ -DSHARE_DIR='"$(pkgdatadir)"' $(am__append_4)
-@@ -881,7 +878,6 @@ core_LIBS = \
+ 	@CFLAGS_CUDA@ @CGAL_CPPFLAGS@ -DSHARE_DIR='"$(pkgdatadir)"' \
+@@ -877,7 +874,6 @@ core_LIBS = \
  	@GSL_LIBS@ @LIBS_LIBXC@ @FCEXTRALIBS@
  
- external_LIBS = $(top_builddir)/external_libs/qshep/libqshep.a \
--	$(top_builddir)/external_libs/spglib-1.9.9/src/libsymspg.a \
- 	$(top_builddir)/external_libs/bpdn/libbpdn.a \
- 	$(top_builddir)/external_libs/dftd3/libdftd3.a $(am__append_1) \
- 	$(am__append_3) $(am__append_5)
+ external_LIBS = $(top_builddir)/external_libs/qshep/libqshep.la \
+-	$(top_builddir)/external_libs/spglib-1.9.9/src/libsymspg.la \
+ 	$(top_builddir)/external_libs/bpdn/libbpdn.la \
+ 	$(top_builddir)/external_libs/dftd3/libdftd3.la \
+ 	$(am__append_1) $(am__append_3) $(am__append_5)
