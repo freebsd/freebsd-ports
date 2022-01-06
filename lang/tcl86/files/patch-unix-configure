@@ -1,15 +1,13 @@
---- unix/configure.orig	2021-11-04 15:04:06.000000000 +0000
-+++ unix/configure	2021-11-05 08:32:29.535316000 +0000
-@@ -7327,8 +7327,12 @@
+--- unix/configure.orig	2021-11-04 15:04:06 UTC
++++ unix/configure
+@@ -7323,6 +7323,10 @@ fi
+ 
+ 	    case $system in
+ 	    DragonFly-*|FreeBSD-*)
++		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
++		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
++		TCL_LIB_VERSIONS_OK=nodots
+ 		if test "${TCL_THREADS}" = "1"; then
  
  		    # The -pthread needs to go in the LDFLAGS, not LIBS
- 		    LIBS=`echo $LIBS | sed s/-pthread//`
-+		    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
- 		    CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
- 		    LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
-+		    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
-+		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
-+		    TCL_LIB_VERSIONS_OK=nodots
- fi
- 
- 	    ;;
