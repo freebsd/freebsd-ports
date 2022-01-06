@@ -2,7 +2,7 @@ PORTNAME=	cpr
 PORTVERSION=	1.7.0
 CATEGORIES=	www
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curl for people, a simple wrapper around libcurl
 
 LICENSE=	MIT
