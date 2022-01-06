@@ -1,5 +1,5 @@
 PORTNAME=	libhdhomerun
-PORTVERSION=	20200907
+PORTVERSION=	20211212
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.silicondust.com/hdhomerun/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
