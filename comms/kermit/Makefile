@@ -1,7 +1,7 @@
 # Created by: Paul Traina <pst@FreeBSD.org>
 
 PORTNAME=	kermit
-PORTVERSION=	9.0.305.04
+PORTVERSION=	9.0.305.06
 CATEGORIES=	comms ftp net
 MASTER_SITES=	http://www.kermitproject.org/ftp/kermit/test/tar/ \
 		ftp://ftp.kermitproject.org/kermit/test/tar/
