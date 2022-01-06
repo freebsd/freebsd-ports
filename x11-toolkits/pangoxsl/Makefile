@@ -12,6 +12,9 @@ COMMENT=	Implements Pango library with a PDF backend for PDF output
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware and not used by any port
+EXPIRATION_DATE=2022-03-20
+
 USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	pango
 USE_LDCONFIG=	yes
