@@ -1,6 +1,6 @@
-TIMESTAMP = 1639102816
-SHA256 (go1.17.5.src.tar.gz) = 3defb9a09bed042403195e872dcbc8c6fae1485963332279668ec52e80a95a2d
-SIZE (go1.17.5.src.tar.gz) = 22186577
+TIMESTAMP = 1641503777
+SHA256 (go1.17.6.src.tar.gz) = 4dc1bbf3ff61f0c1ff2b19355e6d88151a70126268a47c761477686ef94748c8
+SIZE (go1.17.6.src.tar.gz) = 22191372
 SHA256 (go-freebsd-arm64-go1.14.tar.xz) = f8b0cf0d323e581c9e3e0d5c217847a3e0294fcc92dbac92a5b02cea9d97ad8d
 SIZE (go-freebsd-arm64-go1.14.tar.xz) = 34944548
 SHA256 (go-freebsd-amd64-go1.14.tar.xz) = 3b259247fb228258a4f31e283e9aa23cafd590eabce334666a9e9b2ffe47c19b
