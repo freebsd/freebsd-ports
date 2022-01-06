@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	groupfolders
-PORTVERSION=	11.1.1
+PORTVERSION=	11.1.2
 CATEGORIES=	www
 DISTVERSIONPREFIX=	v
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
