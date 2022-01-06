@@ -15,10 +15,7 @@ bin/node_exporter
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/dashboards/dashboards.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/dashboards/node.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/dashboards/use.libsonnet
-%%PORTDOCS%%%%DOCSDIR%%/node-mixin/go.mod
-%%PORTDOCS%%%%DOCSDIR%%/node-mixin/go.sum
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/jsonnetfile.json
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/mixin.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/rules.jsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/rules/rules.libsonnet
-%%PORTDOCS%%%%DOCSDIR%%/node-mixin/tools.go

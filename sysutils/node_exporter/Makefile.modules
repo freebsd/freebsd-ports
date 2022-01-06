@@ -7,8 +7,8 @@ GH_TUPLE=	\
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		coreos:go-systemd:d3cd4ed1dbcf:coreos_go_systemd/vendor/github.com/coreos/go-systemd \
 		ema:qdisc:62d0308e3e00:ema_qdisc/vendor/github.com/ema/qdisc \
-		go-kit:log:v0.1.0:go_kit_log/vendor/github.com/go-kit/log \
-		go-logfmt:logfmt:v0.5.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
+		go-kit:log:v0.2.0:go_kit_log/vendor/github.com/go-kit/log \
+		go-logfmt:logfmt:v0.5.1:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:271e53dc4968:godbus_dbus/vendor/github.com/godbus/dbus \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
@@ -17,15 +17,16 @@ GH_TUPLE=	\
 		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:dee7805ff2e1:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
-		hodgesds:perf-utils:v0.2.5:hodgesds_perf_utils/vendor/github.com/hodgesds/perf-utils \
+		hashicorp:go-envparse:d9cfd743a15e:hashicorp_go_envparse/vendor/github.com/hashicorp/go-envparse \
+		hodgesds:perf-utils:v0.4.0:hodgesds_perf_utils/vendor/github.com/hodgesds/perf-utils \
 		illumos:go-kstat:173c9b0a9973:illumos_go_kstat/vendor/github.com/illumos/go-kstat \
 		josharian:native:b6b71def0850:josharian_native/vendor/github.com/josharian/native \
 		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
-		jsimonetti:rtnetlink:2bfdf1dbdbd6:jsimonetti_rtnetlink/vendor/github.com/jsimonetti/rtnetlink \
-		lufia:iostat:v1.1.0:lufia_iostat/vendor/github.com/lufia/iostat \
+		jsimonetti:rtnetlink:93da33804786:jsimonetti_rtnetlink/vendor/github.com/jsimonetti/rtnetlink \
+		lufia:iostat:v1.2.0:lufia_iostat/vendor/github.com/lufia/iostat \
 		mattn:go-xmlrpc:v0.0.3:mattn_go_xmlrpc/vendor/github.com/mattn/go-xmlrpc \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mdlayher:genetlink:v1.0.0:mdlayher_genetlink/vendor/github.com/mdlayher/genetlink \
@@ -36,11 +37,11 @@ GH_TUPLE=	\
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		prometheus:client_golang:v1.11.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.29.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:exporter-toolkit:v0.6.0:prometheus_exporter_toolkit/vendor/github.com/prometheus/exporter-toolkit \
-		prometheus:procfs:v0.7.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:common:v0.32.1:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:exporter-toolkit:v0.7.0:prometheus_exporter_toolkit/vendor/github.com/prometheus/exporter-toolkit \
+		prometheus:procfs:1a7a2bd3279f:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.26.0-rc.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		safchain:ethtool:874930cb3ce0:safchain_ethtool/vendor/github.com/safchain/ethtool \
+		safchain:ethtool:v0.1.0:safchain_ethtool/vendor/github.com/safchain/ethtool \
 		siebenmann:go-kstat:173c9b0a9973:siebenmann_go_kstat \
 		soundcloud:go-runit:06ad41a06c4a:soundcloud_go_runit/vendor/github.com/soundcloud/go-runit \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
