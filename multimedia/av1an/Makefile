@@ -8,8 +8,6 @@ COMMENT=	Command-line encoding framework with per scene quality
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_i386=	https://github.com/GuillaumeGomez/sysinfo/issues/668
-
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 		${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
