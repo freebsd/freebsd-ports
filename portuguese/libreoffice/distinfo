@@ -1,5 +1,5 @@
-TIMESTAMP = 1639122929
-SHA256 (libreoffice/i18n/LibreOffice_7.2.4_Linux_x86-64_deb_langpack_pt.tar.gz) = 1177cc78915bc576f11776ab742320f7934fdbf5b25732d4339aa00427876e17
-SIZE (libreoffice/i18n/LibreOffice_7.2.4_Linux_x86-64_deb_langpack_pt.tar.gz) = 1982159
-SHA256 (libreoffice/i18n/LibreOffice_7.2.4_Linux_x86-64_deb_helppack_pt.tar.gz) = 21639bd8ad0a98d4fa098de7295e6a5a961ba290b7129ee8b4775b47a3462d9d
-SIZE (libreoffice/i18n/LibreOffice_7.2.4_Linux_x86-64_deb_helppack_pt.tar.gz) = 3011847
+TIMESTAMP = 1641474200
+SHA256 (libreoffice/i18n/LibreOffice_7.2.5_Linux_x86-64_deb_langpack_pt.tar.gz) = 35898602bf0940bcf07f6bc3742e2bbafb978a2b01ba633de4478d6d55200626
+SIZE (libreoffice/i18n/LibreOffice_7.2.5_Linux_x86-64_deb_langpack_pt.tar.gz) = 1981838
+SHA256 (libreoffice/i18n/LibreOffice_7.2.5_Linux_x86-64_deb_helppack_pt.tar.gz) = 397acc5f278772c7de34f2e6a23ca2367d41a2ca77ab34e642e01cdb8d9e980c
+SIZE (libreoffice/i18n/LibreOffice_7.2.5_Linux_x86-64_deb_helppack_pt.tar.gz) = 3019153
