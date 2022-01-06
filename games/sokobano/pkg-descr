@@ -1,0 +1,11 @@
+An entertaining implementation of the old Japanese game Sokoban featuring
+nice 3D graphics and intuitive controls.  Written in Java (requires Java
+version 6 or above).  Features include:
+
+  - 3D graphics, skins, and workers
+  - Several level sets of increasing difficulty
+  - Resume and replay mode
+  - Intuitive mouse and keyboard control
+  - Background audio and sounds
+
+WWW: http://sokobano.sourceforge.net/

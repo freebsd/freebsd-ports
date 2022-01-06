@@ -903,6 +903,7 @@
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += sokoban
+    SUBDIR += sokobano
     SUBDIR += sol
     SUBDIR += solarconquest
     SUBDIR += solarus

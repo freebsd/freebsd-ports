@@ -1,0 +1,25 @@
+#!/bin/sh
+
+XML_HEADER='<?xml version="1.0" encoding="UTF-8"?>'
+PLAYERS_XML="$HOME/.config/sokobano/player/players.xml"
+
+if [ ! -f "$PLAYERS_XML" ]
+then
+	mkdir -p "$(dirname "$PLAYERS_XML")"
+	echo "$XML_HEADER" > "$PLAYERS_XML"
+	echo '<players></players>' >> "$PLAYERS_XML"
+	for n in $(jot 9 0); do
+		echo "$XML_HEADER" \
+		> "$HOME/.config/sokobano/$n-highScores.xml"
+		echo '<levelSetHighScore></levelSetHighScore>' \
+		>> "$HOME/.config/sokobano/$n-highScores.xml"
+	done
+fi
+
+JAVA="%%LOCALBASE%%/bin/java"
+SOKOBANO_JAR="%%JAVALIBDIR%%/%%JARNAME%%"
+
+cd "%%DATADIR%%" || exit 1
+
+exec "${JAVA}" -Xmx128m -Djava.library.path="%%LOCALBASE%%/lib/lwjgl" \
+	-jar "${SOKOBANO_JAR}" "$@"
