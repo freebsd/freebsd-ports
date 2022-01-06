@@ -1,7 +1,7 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
 
 PORTNAME=	crossfire-client
-PORTVERSION=	1.75.1
+PORTVERSION=	1.75.2
 CATEGORIES=	games
 MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION}
 
@@ -19,6 +19,6 @@ USE_GNOME=	gtk20
 USE_PERL5=	build
 USE_SDL=	sdl image mixer
 
-CMAKE_ARGS=	-DLUA=OFF -DMETASERVER2=ON -DOPENGL=OFF -DSDL=ON -DSOUND=ON
+CMAKE_ARGS=	-DLUA=OFF -DMETASERVER2=ON -DSOUND=ON
 
 .include <bsd.port.mk>
