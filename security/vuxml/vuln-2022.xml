@@ -1,3 +1,47 @@
+  <vuln vid="d3e023fb-6e88-11ec-b948-080027240888">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py37-django22</name>
+	<name>py38-django22</name>
+	<name>py39-django22</name>
+	<range><lt>2.2.26</lt></range>
+      </package>
+      <package>
+	<name>py37-django32</name>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<range><lt>3.2.11</lt></range>
+      </package>
+      <package>
+	<name>py37-django40</name>
+	<name>py38-django40</name>
+	<name>py39-django40</name>
+	<range><lt>4.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django Release  reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2022/jan/04/security-releases/">
+	  <p>CVE-2021-45115: Denial-of-service possibility in UserAttributeSimilarityValidator.</p>
+	  <p>CVE-2021-45116: Potential information disclosure in dictsort template filter.</p>
+	  <p>CVE-2021-45452: Potential directory-traversal via Storage.save().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45115</cvename>
+      <cvename>CVE-2021-45116</cvename>
+      <cvename>CVE-2021-45452</cvename>
+      <url>https://www.djangoproject.com/weblog/2022/jan/04/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-20</discovery>
+      <entry>2022-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c990e67-6e30-11ec-82db-b42e991fc52e">
     <topic>routinator -- multiple vulnerabilities</topic>
     <affects>
