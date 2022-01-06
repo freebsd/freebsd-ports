@@ -1,6 +1,6 @@
-%%LOADERGUI%%bin/pgsql2shp
+bin/pgsql2shp
 %%RASTER%%bin/raster2pgsql
-%%LOADERGUI%%bin/shp2pgsql
+bin/shp2pgsql
 %%LOADERGUI%%bin/shp2pgsql-gui
 %%ADDRSTD%%lib/postgresql/address_standardizer-3.so
 lib/postgresql/postgis-3.so
