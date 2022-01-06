@@ -3,7 +3,7 @@ bin/snapserver
 etc/snapserver.conf
 %%CLIENT%%man/man1/snapclient.1.gz
 man/man1/snapserver.1.gz
-share/pixmaps/snapcast.svg
+%%CLIENT%%share/pixmaps/snapcast.svg
 share/snapserver/index.html
 share/snapserver/snapweb/3rd-party/libflac.js
 share/snapserver/snapweb/config.js
