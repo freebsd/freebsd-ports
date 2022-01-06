@@ -1,4 +1,4 @@
-lib/postgresql/libpgrouting-3.2.so
+lib/postgresql/libpgrouting-3.3.so
 share/postgresql/extension/pgrouting--2.6.0--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--2.6.1--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--2.6.2--%%DISTVERSION%%.sql
@@ -9,9 +9,14 @@ share/postgresql/extension/pgrouting--3.0.2--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.0.3--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.0.4--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.0.5--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.0.6--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.1.0--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.1.1--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.1.2--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.1.3--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.1.4--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.2.0--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.2.1--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.2.2--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting.control
