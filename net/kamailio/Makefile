@@ -1,7 +1,7 @@
 # Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
 
 PORTNAME=	kamailio
-PORTVERSION=	5.4.5
+PORTVERSION=	5.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -42,35 +42,54 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USERS=		${KAMAILIO_USER}
 GROUPS=		${KAMAILIO_GROUP}
 
-OPTIONS_DEFINE=			DATABASE DIALPLAN DOCS KEMIX PERL PRESENCE \
-				RADIUS SCTP TLS WEBSOCKET
-OPTIONS_DEFAULT=		MYSQL PRESENCE RADIUS TLS
+OPTIONS_DEFINE=			DATABASE DIALPLAN DOCS EVAPI JWT KAFKA LWSC \
+				MQTT PERL PRESENCE RADIUS SCTP SECSIPID TLS WEBSOCKET
+OPTIONS_DEFAULT=		MYSQL PRESENCE RADIUS SQLITE TLS
 OPTIONS_GROUP=			DATABASE_DRIVERS KEMI_LANGS
-OPTIONS_GROUP_DATABASE_DRIVERS=	MYSQL PGSQL UNIXODBC
+OPTIONS_GROUP_DATABASE_DRIVERS=	MYSQL PGSQL SQLITE UNIXODBC
 OPTIONS_GROUP_KEMI_LANGS=	LUAJIT PYTHON3
 OPTIONS_SUB=			YES
 
 DATABASE_DESC=		Database support
 DATABASE_DRIVERS_DESC=	Database drivers
 DIALPLAN_DESC=		String translations based on rules
-KEMIX_DESC=		Core KEMI Functions
+EVAPI_DESC=		Network event broadcast API
+JWT_DESC=		JSON Web Token generation and validation
+KAFKA_DESC=		Produces and sends messages to a Kafka server
 KEMI_LANGS_DESC=	Kamailio Embedded Interface Interpreters
 LUAJIT_DESC=		Execute embedded Lua scripts
+LWSC_DESC=		Websocket client connector using libwebsockets
+MQTT_DESC=		MQTT connector for bi-directional publish-subscribe communication
 PRESENCE_DESC=		Presence support
 PYTHON3_DESC=		Execute embedded Python3 scripts
 SCTP_DESC=		SCTP support
-WEBSOCKET_DESC=		Websocket support
+SECSIPID_DESC=		Secure SIP/Telephony Identity (STIR/SHAKEN) extensions
+WEBSOCKET_DESC=		WebSocket transport layer
 
-DATABASE_VARS=		EXTRA_GROUPS+=db
+DATABASE_VARS=	EXTRA_GROUPS+=db
+
 DIALPLAN_LIB_DEPENDS=	libpcre.so:devel/pcre
 DIALPLAN_VARS=		EXTRA_MODULES+=dialplan
 
-KEMIX_VARS=	EXTRA_MODULES+=kemix
+EVAPI_LIB_DEPENDS=	libev.so:devel/libev
+EVAPI_VARS=		EXTRA_MODULES+=evapi
 
-LUAJIT_IMPLIES=		KEMIX
+JWT_LIB_DEPENDS=	libjwt.so:www/libjwt
+JWT_VARS=		EXTRA_MODULES+=jwt
+
+KAFKA_LIB_DEPENDS=	librdkafka.so:net/librdkafka
+KAFKA_VARS=		EXTRA_MODULES+=kafka
+
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_MAKE_ARGS=	LUAJIT=yes
 LUAJIT_VARS=		EXTRA_MODULES+=app_lua
+
+LWSC_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
+LWSC_VARS=		EXTRA_MODULES+=lwsc
+
+MQTT_LIB_DEPENDS=	libev.so:devel/libev \
+			libmosquitto.so:net/mosquitto
+MQTT_VARS=		EXTRA_MODULES+=mqtt
 
 MYSQL_IMPLIES=	DATABASE
 MYSQL_USES=	mysql
@@ -88,7 +107,6 @@ PGSQL_VARS=	EXTRA_GROUPS+=postgres
 
 PRESENCE_VARS=	EXTRA_GROUPS+=presence
 
-PYTHON3_IMPLIES=	KEMIX
 PYTHON3_USES=		gettext-runtime
 PYTHON3_MAKE_ARGS=	PYTHON3=${PYTHON_CMD}
 PYTHON3_VARS=		EXTRA_MODULES+=app_python3
@@ -97,6 +115,12 @@ RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 RADIUS_VARS=		EXTRA_GROUPS+=radius
 
 SCTP_VARS=	EXTRA_MODULES+=sctp
+
+SECSIPID_VARS=	EXTRA_MODULES+=secsipid
+
+SQLITE_IMPLIES=	DATABASE
+SQLITE_USES=	sqlite
+SQLITE_VARS=	EXTRA_MODULES+=db_sqlite
 
 TLS_USES=	ssl
 TLS_VARS=	EXTRA_MODULES+=tls
@@ -112,6 +136,8 @@ WEBSOCKET_VARS=		EXTRA_MODULES+=websocket
 
 DEFAULT_GROUPS=	standard
 
+CFG_ARGS+=	run_target="${KAMAILIO_RUNDIR}"
+
 .if !empty (EXTRA_GROUPS)
 CFG_ARGS+=	group_include="${DEFAULT_GROUPS} ${EXTRA_GROUPS}"
 .else
@@ -121,10 +147,6 @@ CFG_ARGS+=	group_include="${DEFAULT_GROUPS}"
 .if !empty (EXTRA_MODULES)
 CFG_ARGS+=	include_modules="${EXTRA_MODULES}"
 .endif
-
-post-patch:
-	${REINPLACE_CMD} '565s|run_target = $$(run_prefix)/$$(run_dir)|run_target = ${KAMAILIO_RUNDIR}|' \
-		${WRKSRC}/src/Makefile.defs
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's|install-doc install-man|install-man|' \

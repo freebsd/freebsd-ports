@@ -1,7 +1,7 @@
---- src/core/ip_addr.h.orig	2018-08-22 09:38:42 UTC
+--- src/core/ip_addr.h.orig	2021-05-05 13:55:35 UTC
 +++ src/core/ip_addr.h
-@@ -49,6 +49,10 @@ enum sip_protos { PROTO_NONE, PROTO_UDP, PROTO_TCP, PR
- enum comp_methods { COMP_NONE, COMP_SIGCOMP, COMP_SERGZ };
+@@ -51,6 +51,10 @@ typedef enum sip_protos { PROTO_NONE, PROTO_UDP, PROTO
+ typedef enum comp_methods { COMP_NONE, COMP_SIGCOMP, COMP_SERGZ } comp_methods_t;
  #endif
  
 +#ifndef INADDR_LOOPBACK
