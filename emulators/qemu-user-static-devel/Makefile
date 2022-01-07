@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	6.0.91
+PORTVERSION=	6.2.50
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20 \
 USES=		bison compiler:c11 cpe gmake ninja:build perl5 pkgconfig python:build
 
 USE_GITHUB=	yes
-GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:38bb64abdce3606c823ea8f9d1c7e7176fdf20c9 \
+GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:17caa65cff5 \
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 
 HAS_CONFIGURE=	yes
@@ -51,9 +51,9 @@ TEST_TARGET=	check
 
 .include <bsd.port.pre.mk>
 
-QEMU_TARGETS=		i386-bsd-user arm-bsd-user mips-bsd-user mipsel-bsd-user ppc-bsd-user
-.if ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
-QEMU_TARGETS+=		x86_64-bsd-user riscv64-bsd-user mips64-bsd-user ppc64-bsd-user aarch64-bsd-user
+QEMU_TARGETS=		i386-bsd-user arm-bsd-user ppc-bsd-user
+.if ${ARCH} == "amd64" || ${ARCH} == "powerpc64" || ${ARCH} == "aarch64"
+QEMU_TARGETS+=		x86_64-bsd-user riscv64-bsd-user ppc64-bsd-user aarch64-bsd-user
 PLIST_SUB+=	64BIT=""
 .else
 PLIST_SUB+=	64BIT="@comment "
