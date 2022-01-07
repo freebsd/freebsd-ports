@@ -13,11 +13,9 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libpqxx.so:databases/postgresql-libpqxx
 
-USES=		cmake compiler:c++17-lang pgsql
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgRouting
-
-WANT_PGSQL=	client
 
 OPTIONS_DEFINE=	DOCS
 
