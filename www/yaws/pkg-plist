@@ -75,7 +75,6 @@ lib/erlang/lib/yaws-%%VERSION%%/include/yaws_soap.hrl
 lib/erlang/lib/yaws-%%VERSION%%/priv/envelope.xsd
 lib/erlang/lib/yaws-%%VERSION%%/priv/epam
 lib/erlang/lib/yaws-%%VERSION%%/priv/lib/setuid_drv.so
-lib/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
 lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 lib/erlang/lib/yaws-%%VERSION%%/priv/soap-envelope.xsd
 lib/erlang/lib/yaws-%%VERSION%%/priv/soap.xsd
