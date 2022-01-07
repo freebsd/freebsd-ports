@@ -234,9 +234,6 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/win-statistics.html
 %%DATADIR%%/help/win-trendtime.html
 %%DATADIR%%/help/win-vehiclecost.html
-%%DATADIR%%/icons/hicolor/16x16/status/flt-exclude.png
-%%DATADIR%%/icons/hicolor/16x16/status/flt-inactive.png
-%%DATADIR%%/icons/hicolor/16x16/status/flt-include.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-auto.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-budget.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-cleared.png
@@ -304,8 +301,10 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-view-line.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-view-list.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-view-pie.png
+%%DATADIR%%/icons/hicolor/24x24/actions/hb-view-progress.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-view-refresh.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-view-stack.png
+%%DATADIR%%/icons/hicolor/24x24/actions/hb-view-stack100.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-backup.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-columns.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-euro.png
