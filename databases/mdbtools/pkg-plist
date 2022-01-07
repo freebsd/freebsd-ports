@@ -57,4 +57,3 @@ share/bash-completion/completions/mdb-ver
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.md
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/TODO.md
