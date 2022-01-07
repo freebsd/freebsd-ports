@@ -1,6 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.1
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -118,6 +118,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.14 \
 		miow-0.3.7 \
+		nix-0.22.0 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
 		num-iter-0.1.42 \
@@ -216,6 +217,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		x11-clipboard-0.5.3 \
 		xcb-0.10.1 \
 		xml-rs-0.8.4 \
+		xterm-query-0.1.0 \
 		yaml-rust-0.4.5
 CARGO_FEATURES=	--no-default-features
 
