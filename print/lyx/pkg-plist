@@ -487,6 +487,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/fonts/cmmi10.ttf
 %%DATADIR%%/fonts/cmr10.ttf
 %%DATADIR%%/fonts/cmsy10.ttf
+%%DATADIR%%/fonts/dsrom10.ttf
 %%DATADIR%%/fonts/esint10.ttf
 %%DATADIR%%/fonts/eufm10.ttf
 %%DATADIR%%/fonts/msam10.ttf
@@ -2196,6 +2197,8 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/amsdefs.inc
 %%DATADIR%%/layouts/apa.layout
 %%DATADIR%%/layouts/apa6.layout
+%%DATADIR%%/layouts/apa7.layout
+%%DATADIR%%/layouts/apax.inc
 %%DATADIR%%/layouts/arab-article.layout
 %%DATADIR%%/layouts/article-beamer.layout
 %%DATADIR%%/layouts/article.layout
@@ -2310,6 +2313,8 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/report.layout
 %%DATADIR%%/layouts/revtex.layout
 %%DATADIR%%/layouts/revtex4-1.layout
+%%DATADIR%%/layouts/revtex4-2.layout
+%%DATADIR%%/layouts/revtex4-x.inc
 %%DATADIR%%/layouts/revtex4.layout
 %%DATADIR%%/layouts/rsphrase.module
 %%DATADIR%%/layouts/sciposter.layout
