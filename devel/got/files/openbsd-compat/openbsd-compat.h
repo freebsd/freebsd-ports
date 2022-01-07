@@ -22,9 +22,6 @@ void	*recallocarray(void *, size_t, size_t, size_t);
  */
 int	getdtablecount(void);
 
-/* void -> int */
-#define closefrom(fd)			(closefrom(fd), 0)
-
 #define pledge(promises, execpromises)	0
 #define unveil(path, permissions)	0
 
