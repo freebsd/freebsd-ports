@@ -5111,8 +5111,8 @@
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dbusmock
-    SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-decouple
+    SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-dtrace
     SUBDIR += py-python-easyconfig
     SUBDIR += py-python-editor
@@ -7206,6 +7206,7 @@
     SUBDIR += xopcodecalc
     SUBDIR += xorg-macros
     SUBDIR += xparam
+    SUBDIR += xpeviewer
     SUBDIR += xsd
     SUBDIR += xsimd
     SUBDIR += xtensa-esp32-elf
