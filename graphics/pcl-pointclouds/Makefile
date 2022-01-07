@@ -24,9 +24,20 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpcap.so:net/libpcap \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++14-lang eigen:3 jpeg localbase:ldflags python xorg
+USES=		cmake:testing compiler:c++14-lang eigen:3 jpeg localbase:ldflags python xorg
 USE_XORG=	x11 xext xt ice sm
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	google:gtest
+GH_PROJECT=	googletest:gtest
+GH_TAGNAME=	release-1.11.0:gtest
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # workaround, otherwise USE_GITHUB=nodefault doesn't work #'
+
+CMAKE_TESTING_ON=	BUILD_global_tests # 6 tests are known to fail: https://github.com/PointCloudLibrary/pcl/issues/5127
+CMAKE_TESTING_TARGET=	tests
+CMAKE_ARGS=		-DGTEST_SRC_DIR=${WRKSRC_gtest}/googletest -DGTEST_INCLUDE_DIR=${WRKSRC_gtest}/googletest/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
