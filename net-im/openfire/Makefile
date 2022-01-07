@@ -2,11 +2,10 @@
 
 PORTNAME=	openfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.5
+DISTVERSION=	4.6.6
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-
-MASTER_SITES=	LOCAL/driesm:maven
+MASTER_SITES=	LOCAL/fernape:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
