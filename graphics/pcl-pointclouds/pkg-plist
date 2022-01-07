@@ -379,6 +379,7 @@ include/pcl-%%SHL2%%/pcl/io/ply_io.h
 include/pcl-%%SHL2%%/pcl/io/point_cloud_image_extractors.h
 include/pcl-%%SHL2%%/pcl/io/robot_eye_grabber.h
 include/pcl-%%SHL2%%/pcl/io/tar.h
+include/pcl-%%SHL2%%/pcl/io/tim_grabber.h
 include/pcl-%%SHL2%%/pcl/io/vlp_grabber.h
 include/pcl-%%SHL2%%/pcl/io/vtk_io.h
 include/pcl-%%SHL2%%/pcl/kdtree/impl/io.hpp
@@ -970,6 +971,7 @@ libdata/pkgconfig/pcl_tracking-%%SHL2%%.pc
 %%DATADIR%%/Modules/FindEnsenso.cmake
 %%DATADIR%%/Modules/FindFLANN.cmake
 %%DATADIR%%/Modules/FindGLEW.cmake
+%%DATADIR%%/Modules/FindOpenMP.cmake
 %%DATADIR%%/Modules/FindOpenNI.cmake
 %%DATADIR%%/Modules/FindOpenNI2.cmake
 %%DATADIR%%/Modules/FindPcap.cmake
