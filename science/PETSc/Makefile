@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	PETSc
-PORTVERSION=	3.14.1
+DISTVERSION=	3.16.3
 CATEGORIES=	science devel
 MASTER_SITES=	https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
