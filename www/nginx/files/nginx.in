@@ -150,7 +150,7 @@ nginx_prestart()
 	fi
 }
 
-+nginx_prestop()
+nginx_prestop()
 {
 	sig_stop="${nginx_sig_stop:-TERM}"
 }
