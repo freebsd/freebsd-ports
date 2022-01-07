@@ -1,13 +1,13 @@
 - Because some systems have version lower than required minZlibVersion=1.2.11
 
---- src/CMakeLists.txt.orig	2021-02-01 07:32:36 UTC
+--- src/CMakeLists.txt.orig	2022-01-06 18:41:17 UTC
 +++ src/CMakeLists.txt
-@@ -34,7 +34,7 @@ endif()
+@@ -42,7 +42,7 @@ endif()
  set_property(CACHE LibtorrentRasterbar_DIR PROPERTY TYPE PATH)
  find_package(Boost ${minBoostVersion} REQUIRED)
  find_package(OpenSSL ${minOpenSSLVersion} REQUIRED)
 -find_package(ZLIB ${minZlibVersion} REQUIRED)
 +find_package(ZLIB REQUIRED)
- find_package(Qt5 ${minQtVersion} REQUIRED COMPONENTS Core Network Xml LinguistTools)
- if (DBUS)
-     find_package(Qt5 ${minQtVersion} REQUIRED COMPONENTS DBus)
+ if (QT6)
+     find_package(Qt6 ${minQt6Version} REQUIRED COMPONENTS Core Network Sql Xml LinguistTools)
+     if (DBUS)
