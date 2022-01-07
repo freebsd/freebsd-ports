@@ -2579,6 +2579,7 @@
 %%WWWDIR%%/sql/mysql/migrations/143.sql
 %%WWWDIR%%/sql/mysql/migrations/144.sql
 %%WWWDIR%%/sql/mysql/migrations/145.sql
+%%WWWDIR%%/sql/mysql/migrations/146.sql
 %%WWWDIR%%/sql/pgsql/schema.sql
 %%WWWDIR%%/sql/pgsql/migrations/3.sql
 %%WWWDIR%%/sql/pgsql/migrations/4.sql
@@ -2723,6 +2724,7 @@
 %%WWWDIR%%/sql/pgsql/migrations/143.sql
 %%WWWDIR%%/sql/pgsql/migrations/144.sql
 %%WWWDIR%%/sql/pgsql/migrations/145.sql
+%%WWWDIR%%/sql/pgsql/migrations/146.sql
 %%WWWDIR%%/templates.local/index.html
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
