@@ -1,8 +1,7 @@
 # Created by: ijliao@FreeBSD.org
 
 PORTNAME=	tables
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ COMMENT=	Hierarchical database for Python
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}numexpr>=1.4.1:math/py-numexpr@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numexpr>=1.4.1:math/py-numexpr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		liblzo2.so:archivers/lzo2 \
 		libucl.so:archivers/ucl
@@ -23,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 CONFLICTS_BUILD=	zstd # conflicting version of zstd is bundled
 
-USES=		fortran python:3.6+
+USES=		fortran localbase python:3.6+ localbase
 USE_PYTHON=	autoplist concurrent distutils cython
 
 PORTEXAMPLES=	*
@@ -38,9 +38,6 @@ AVX2_DESC=	Enable Haswell New Instructions (AVX2) support
 # will trigger a SIGILL (Illegal instruction)
 # See also: https://github.com/PyTables/PyTables/issues/841
 AVX2_VARS_OFF=	MAKE_ENV+=DISABLE_AVX2=yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/setup.py
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tables/*.so
