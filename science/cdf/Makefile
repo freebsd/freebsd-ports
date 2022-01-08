@@ -1,11 +1,9 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	cdf3
-PORTVERSION=	3.3.0
-PORTREVISION=	13
+PORTVERSION=	3.8.0
 CATEGORIES=	science
-MASTER_SITES=	LOCAL/thierry/${PORTNAME} \
-		ftp://cdaweb.gsfc.nasa.gov/pub/cdf/dist/cdf${VER}/unix/
+MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf38_0/
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +19,7 @@ BROKEN_aarch64=		fails to compile: error: use of undeclared identifier FP1ZEROsi
 BROKEN_armv6=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
 BROKEN_armv7=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
 
-USES=		fortran ncurses
+USES=		fortran ncurses gmake
 USE_LDCONFIG=	yes
 MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
 		FORTRAN=yes FC_freebsd=${F77}
@@ -39,6 +37,8 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+MAKE_ARGS+=	OS=freebsd ENV=gnu all
+
 post-patch:
 .for def in ${DEFS}
 	@${REINPLACE_CMD} -e 's|<path>|${PREFIX}|' \
@@ -46,13 +46,11 @@ post-patch:
 .endfor
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/lib/libcdf.so \
-		${STAGEDIR}${PREFIX}/lib/libcdf.so.0
-	${LN} -sf libcdf.so.0 ${STAGEDIR}${PREFIX}/lib/libcdf.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 	${SED} -i '' 's,${STAGEDIR},,g' ${STAGEDIR}${PREFIX}/bin/definitions.?
+	${RM} -f ${STAGEDIR}${PREFIX}/CDFLeapSeconds.txt
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ bin/cdfedit
 bin/cdfexport
 bin/cdfinquire
 bin/cdfirsdump
+bin/cdfleapsecondsinfo
 bin/cdfmerge
 bin/cdfstats
 bin/cdfvalidate
@@ -37,10 +38,12 @@ lib/cdf/help/cdfinq.olh
 lib/cdf/help/cdfinqj.olh
 lib/cdf/help/cdfirsdump.olh
 lib/cdf/help/cdfirsdumpj.olh
+lib/cdf/help/cdfleaptableinfo.olh
+lib/cdf/help/cdfleaptableinfoj.olh
 lib/cdf/help/cdfmerge.olh
 lib/cdf/help/cdfmergej.olh
-lib/cdf/help/cdfstatj.olh
 lib/cdf/help/cdfstats.olh
+lib/cdf/help/cdfstatsj.olh
 lib/cdf/help/cdfxp.ilh
 lib/cdf/help/cdfvalidate.olh
 lib/cdf/help/cdfvalidatej.olh
@@ -48,12 +51,13 @@ lib/cdf/help/skt2cdf.olh
 lib/cdf/help/skt2cdfj.olh
 lib/libcdf.a
 lib/libcdf.so
-lib/libcdf.so.0
+lib/libcdf.3.8.0.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateAttributes.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateCDF.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateVariables.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacsst2.cdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacsst2.skt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cdf.inc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/d103a2x.cdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.c
@@ -62,6 +66,8 @@ lib/libcdf.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.f
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/geocpi0.cdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/geocpi0.skt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geocpi1.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geocpi2.cdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ij01r39.cdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/read_example1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfia10x.cdf

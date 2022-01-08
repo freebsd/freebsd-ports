@@ -1,6 +1,6 @@
---- src/include/cdflib.h.orig	2009-05-12 12:37:37 UTC
+--- src/include/cdflib.h.orig	2019-10-16 16:22:18 UTC
 +++ src/include/cdflib.h
-@@ -375,8 +375,7 @@
+@@ -401,8 +401,7 @@
  #elif defined(unix) && !defined(AIX) && !defined(Mach) && !defined(hpux) || \
      defined(__MINGW32__)
  #  if (defined(linux) && !defined(__ICC)) || defined(__CYGWIN__) || \

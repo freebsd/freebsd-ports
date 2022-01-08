@@ -1,24 +1,44 @@
---- Makefile.orig	2009-05-13 14:17:26 UTC
+--- Makefile.orig	2020-12-09 21:33:32 UTC
 +++ Makefile
-@@ -601,14 +601,14 @@ RANLIB_freebsd=yes
+@@ -47,7 +47,7 @@
+ 
+ .SILENT:
+ 
+-SHELL=/bin/bash
++SHELL=${LOCALBASE}/bin/bash
+ NULL=true
+ PART=all
+ TARGET=
+@@ -102,6 +102,9 @@ else
+     MAKE=make
+   endif
+ endif
++ifeq ("$(OS)","freebsd")
++  MAKE=gmake
++endif
+ RANLIB=ranlib
+ 
+ WHICHOS=$(shell uname)
+@@ -747,15 +750,15 @@ RANLIB_freebsd=yes
  FC_freebsd=f77
  
  CURSES_freebsd_gnu=yes
 -CC_freebsd_gnu=gcc
 -LD_freebsd_gnu=gcc
 -LDOPTIONS_freebsd_gnu=-shared
-+CC_freebsd_gnu=$(CC)
-+LD_freebsd_gnu=$(CC)
++CC_freebsd_gnu=${CC}
++LD_freebsd_gnu=${CC}
 +LDOPTIONS_freebsd_gnu=-shared -Wl,-soname,libcdf.so.0
  PIC_freebsd_gnu=-fPIC
 -COPTIONS_freebsd_gnu=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DMALLOC_CHECK_=0
++COPTIONS_freebsd_gnu=${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DMALLOC_CHECK_=0
+ COPTIONSZlib_freebsd_gnu=-DHAVE_STDARG_H -DHAVE_UNISTD_H
 -COPTIONSld_freebsd_gnu=
 -FOPTIONS_freebsd_gnu=
 -FOPTIONSld_freebsd_gnu=
-+COPTIONS_freebsd_gnu=$(CFLAGS) -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DMALLOC_CHECK_=0
-+COPTIONSld_freebsd_gnu=$(LDFLAGS)
-+FOPTIONS_freebsd_gnu=$(FFLAGS)
-+FOPTIONSld_freebsd_gnu=$(LDFLAGS)
++COPTIONSld_freebsd_gnu=${LDFLAGS}
++FOPTIONS_freebsd_gnu=${FFLAGS}
++FOPTIONSld_freebsd_gnu=${LDFLAGS}
  CURSESLIB_freebsd_gnu=-lncurses
  SYSLIBSexe_freebsd_gnu=-lm -lc
  SYSLIBSshr_freebsd_gnu=-lm -lc
