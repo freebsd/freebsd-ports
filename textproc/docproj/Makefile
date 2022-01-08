@@ -1,5 +1,5 @@
 PORTNAME=	docproj
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -9,14 +9,16 @@ RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		hugo:www/gohugo \
 		rougify:textproc/rubygem-rouge \
 
-USES=		metaport python:3.6+,run
+USES=		metaport
 
-OPTIONS_DEFINE=	GIT IGOR PDF TRANSLATOR
+OPTIONS_DEFINE=	EPUB GIT IGOR PDF TRANSLATOR
 OPTIONS_DEFAULT=	GIT IGOR PDF TRANSLATOR
 
+EPUB_DESC=	EPUB document support
 IGOR_DESC=		Igor automated proofreader for documentation
 TRANSLATOR_DESC=	Tools for translators
 
+EPUB_RUN_DEPENDS=	asciidoctor-epub3:textproc/rubygem-asciidoctor-epub3
 GIT_RUN_DEPENDS=	git:devel/git
 IGOR_RUN_DEPENDS=	igor:textproc/igor
 PDF_RUN_DEPENDS=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
