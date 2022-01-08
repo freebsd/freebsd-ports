@@ -2,6 +2,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES+=	www
 
 MAINTAINER?=	nobutaka@FreeBSD.org
@@ -53,7 +54,7 @@ OPTIONS_SUB=	yes
 INLINE_IMAGE_USES=	gnome xorg
 INLINE_IMAGE_USE=	xorg=x11 gnome=gtk20,gdkpixbuf2
 INLINE_IMAGE_CONFIGURE_ON=	--with-imagelib=gtk2 --enable-image=fb,x11
-INLINE_IMAGE_CONFIGURE_OFF=	--enable-image=no
+INLINE_IMAGE_CONFIGURE_OFF=	--enable-image=fb
 
 JAPANESE_CONFIGURE_ON=	--enable-japanese=U --with-migemo=yes
 
