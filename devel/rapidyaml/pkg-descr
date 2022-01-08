@@ -1,0 +1,13 @@
+Rapid YAML or ryml, for short. ryml is a C++ library to parse and emit YAML,
+and do it fast.
+
+ryml parses both read-only and in-situ source buffers; the resulting data nodes
+hold only views to sub-ranges of the source buffer. No string copies or
+duplications are done, and no virtual functions are used. The data tree is a
+flat index-based structure stored in a single array. Serialization happens only
+at your direct request, after parsing / before emitting. Internally, the data
+tree representation stores only strings and has no knowledge of types, but of
+course, every node can have a YAML type tag. ryml makes it easy and fast to
+read and modify the data tree.
+
+WWW: https://github.com/biojppm/rapidyaml

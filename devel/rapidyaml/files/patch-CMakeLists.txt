@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2021-12-28 17:18:42 UTC
++++ CMakeLists.txt
+@@ -17,9 +17,6 @@ option(RYML_DBG "Enable (very verbose) ryml debug prin
+ 
+ #-------------------------------------------------------
+ 
+-c4_require_subproject(c4core INCORPORATE
+-    SUBDIRECTORY ${RYML_EXT_DIR}/c4core)
+-
+ c4_add_library(ryml
+     SOURCES
+         ryml.hpp
+@@ -47,14 +44,15 @@ c4_add_library(ryml
+         c4/yml/tree.cpp
+         c4/yml/writer.hpp
+         c4/yml/yml.hpp
+-        ryml.natvis
+     SOURCE_ROOT ${RYML_SRC_DIR}
+     INC_DIRS
+         $<BUILD_INTERFACE:${RYML_SRC_DIR}>
+         $<INSTALL_INTERFACE:include>
+-    LIBS c4core
+-    INCORPORATE c4core
+     )
++
++include_directories(/usr/local/include)
++target_link_libraries(ryml c4core)
++
+ 
+ if(NOT RYML_DEFAULT_CALLBACKS)
+     target_compile_definitions(ryml PRIVATE RYML_NO_DEFAULT_CALLBACKS)
