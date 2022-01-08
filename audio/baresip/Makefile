@@ -63,9 +63,9 @@ $o_DESC=	${o:C,^(.).*,\1,}${o:C,^.,,:tl} module
 
 .include "${.CURDIR}/Makefile.depends"
 
-# Port calls it GST, standard OPTION is GSTREAMER
-.if ${PORT_OPTIONS:MGSTREAMER}
-PORT_OPTIONS+=	GST
+# Port used to call it GST, if it's set in make.conf let's not annoy people
+.if ${PORT_OPTIONS:MGST}
+PORT_OPTIONS+=	GSTREAMER
 .endif
 
 # Port calls it PULSE, standard OPTION is PULSEAUDIO
