@@ -26,6 +26,7 @@ include/KF5/KNewStuff3/KNSCore/QuestionManager
 include/KF5/KNewStuff3/KNSCore/Security
 include/KF5/KNewStuff3/KNSCore/TagsFilterChecker
 include/KF5/KNewStuff3/KNSCore/XmlLoader
+include/KF5/KNewStuff3/KNSWidgets/Action
 include/KF5/KNewStuff3/kns3/button.h
 include/KF5/KNewStuff3/kns3/downloaddialog.h
 include/KF5/KNewStuff3/kns3/downloadmanager.h
@@ -56,6 +57,8 @@ include/KF5/KNewStuff3/knscore/questionmanager.h
 include/KF5/KNewStuff3/knscore/security.h
 include/KF5/KNewStuff3/knscore/tagsfilterchecker.h
 include/KF5/KNewStuff3/knscore/xmlloader.h
+include/KF5/KNewStuff3/knswidgets/action.h
+include/KF5/KNewStuff3/knswidgets/knewstuffwidgets_export.h
 include/KF5/knewstuff_version.h
 include/KF5/knewstuffcore_version.h
 include/KF5/knewstuffquick_version.h
@@ -75,6 +78,9 @@ lib/libKF5NewStuff.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5NewStuffCore.so
 lib/libKF5NewStuffCore.so.5
 lib/libKF5NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5NewStuffWidgets.so
+lib/libKF5NewStuffWidgets.so.5
+lib/libKF5NewStuffWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KNewStuff.pri
 %%QT_MKSPECDIR%%/modules/qt_KNewStuffCore.pri
 %%QT_QMLDIR%%/org/kde/newstuff/libnewstuffqmlplugin.so

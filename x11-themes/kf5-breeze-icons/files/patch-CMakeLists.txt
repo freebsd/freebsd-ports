@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2021-04-03 09:27:50 UTC
+--- CMakeLists.txt.orig	2022-01-01 17:39:49 UTC
 +++ CMakeLists.txt
 @@ -26,13 +26,13 @@ include(GtkUpdateIconCache)
- set(REQUIRED_QT_VERSION 5.14.0)
+ set(REQUIRED_QT_VERSION 5.15.2)
  
  # Find Python 3
 -find_package (Python 3 COMPONENTS Interpreter)

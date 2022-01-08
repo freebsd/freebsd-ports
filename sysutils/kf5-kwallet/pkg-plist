@@ -16,9 +16,10 @@ lib/libkwalletbackend5.so.5
 lib/libkwalletbackend5.so.%%KDE_FRAMEWORKS_VERSION%%
 man/man1/kwallet-query.1.gz
 %%QT_MKSPECDIR%%/modules/qt_KWallet.pri
+share/applications/org.kde.kwalletd5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KWallet.xml
 share/dbus-1/services/org.kde.kwalletd5.service
-share/knotifications5/kwalletd.notifyrc
+share/knotifications5/kwalletd5.notifyrc
 share/kservices5/kwalletd5.desktop
 share/locale/ar/LC_MESSAGES/kwallet-query.mo
 share/locale/ar/LC_MESSAGES/kwalletd5.mo

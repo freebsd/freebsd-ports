@@ -2,10 +2,6 @@ PORTNAME=	breeze-icons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-themes kde kde-frameworks
 
-PATCH_SITES=	https://invent.kde.org/frameworks/breeze-icons/-/commit/
-PATCHFILES=	05f11af435edc57650d0221ed8a74ecfb997e576.patch:-p1 \
-		08bf45db9b883b4201ac3cbb666821472f17ad97.patch:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Breeze icon theme for KDE
 
