@@ -22,7 +22,7 @@ EXTRACT_SUBDIR=	\$$WINDIR/Fonts
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		7z:p7zip fonts
+USES=		7z:7-zip fonts
 
 FONTTYPE?=	otf
 FONTFORMAT?=	OpenType

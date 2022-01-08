@@ -28,7 +28,7 @@ NWNVER=		1.61
 NWNREV=		0
 NWN_DIAMOND=	yes
 
-USES=		7z:p7zip zip
+USES=		7z:7-zip zip
 
 PLIST_SUB+=	DIAMOND="" ORIGINAL="@comment "
 .else
@@ -45,7 +45,7 @@ WRKSRC=		${WRKDIR}/nwn
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 .if defined(NWN_DIAMOND)
-	${LOCALBASE}/bin/${P7ZIP_CMD} e -y -x'r!*.dll' -x'r!*.exe'\
+	${LOCALBASE}/bin/${7-ZIP_CMD} e -y -x'r!*.dll' -x'r!*.exe'\
 		-o${WRKSRC}/Kingmaker ${CDROM_MOUNT}/KingmakerSetup.exe
 .for zipfile in Data_Shared.zip Data_linux.zip data/XP1.zip data/XP2.zip
 	(cd ${STAGEDIR}${DATADIR} && ${UNZIP_NATIVE_CMD}\
