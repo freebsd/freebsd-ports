@@ -1,7 +1,7 @@
 # Created by: Jeremy Shaffner <jeremy@external.org>
 
 PORTNAME=	prips
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/files/sys/prips/
 
