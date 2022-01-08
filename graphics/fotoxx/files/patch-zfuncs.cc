@@ -93,15 +93,6 @@
     elapsed = time2.tv_sec - time1.tv_sec;
     elapsed += 0.000000001 * (time2.tv_nsec - time1.tv_nsec);
     time1 = time2;
-@@ -1432,7 +1468,7 @@ void zloop(double dsecs)
- //    ...  protected code           //  only one thread at a time can be in here
- //  spinlock(0);
- 
--pthread_mutex_t   spinmutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;            //  21.44
-+pthread_mutex_t   spinmutex = PTHREAD_MUTEX_INITIALIZER;
- 
- void spinlock(int lock)
- {
 @@ -1649,6 +1685,10 @@ int main_thread()                                     
     return 0;
  }

@@ -1,7 +1,7 @@
 # Created by: Rod Person <rodperson@rodperson.com>
 
 PORTNAME=	fotoxx
-PORTVERSION=	21.60
+PORTVERSION=	22.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
