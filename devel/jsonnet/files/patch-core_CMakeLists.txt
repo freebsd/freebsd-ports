@@ -1,0 +1,11 @@
+--- core/CMakeLists.txt.orig	2022-01-06 06:59:54 UTC
++++ core/CMakeLists.txt
+@@ -30,7 +30,7 @@ set(LIBJSONNET_SOURCE
+ 
+ add_library(libjsonnet SHARED ${LIBJSONNET_HEADERS} ${LIBJSONNET_SOURCE})
+ add_dependencies(libjsonnet md5 stdlib)
+-target_link_libraries(libjsonnet md5 nlohmann_json::nlohmann_json ryml)
++target_link_libraries(libjsonnet md5 nlohmann_json::nlohmann_json ryml c4core)
+ 
+ file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/../include/libjsonnet.h JSONNET_VERSION_DEF
+      REGEX "[#]define[ \t]+LIB_JSONNET_VERSION[ \t]+")

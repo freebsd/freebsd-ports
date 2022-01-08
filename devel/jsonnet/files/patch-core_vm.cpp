@@ -1,4 +1,4 @@
---- core/vm.cpp.orig	2021-06-20 03:31:11 UTC
+--- core/vm.cpp.orig	2021-12-21 17:55:49 UTC
 +++ core/vm.cpp
 @@ -23,7 +23,7 @@ limitations under the License.
  
@@ -8,4 +8,4 @@
 +#include "nlohmann/json.hpp"
  #include "md5.h"
  #include "parser.h"
- #include "state.h"
+ #include "ryml_std.hpp" // include this before any other ryml header
