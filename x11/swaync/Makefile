@@ -19,18 +19,6 @@ USE_GNOME=	gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
 GH_TAGNAME=	c345804
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}-client \
-		lib/systemd/user/${PORTNAME}.service \
-		share/bash-completion/completions/${PORTNAME} \
-		share/bash-completion/completions/${PORTNAME}-client \
-		share/dbus-1/services/org.erikreider.swaync.service \
-		share/fish/vendor_completions.d/${PORTNAME}-client.fish \
-		share/fish/vendor_completions.d/${PORTNAME}.fish \
-		share/zsh/site-functions/_${PORTNAME} \
-		share/zsh/site-functions/_${PORTNAME}-client \
-		"@sample etc/xdg/${PORTNAME}/config.json.sample" \
-		"@sample etc/xdg/${PORTNAME}/style.css.sample"
 
 post-patch:
 # Let @sample handle default files under etc/
