@@ -1,6 +1,6 @@
 PORTNAME=	binwalk
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	devttys0
 USE_PYTHON=	autoplist distutils optsuffix concurrent
 
-RUN_DEPENDS=	7z:archivers/p7zip \
+RUN_DEPENDS=	7zz:archivers/7-zip \
 		cabextract:archivers/cabextract
 
 .include <bsd.port.mk>
