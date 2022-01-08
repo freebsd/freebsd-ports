@@ -62,7 +62,7 @@ load_rc_config $name
 
 if [ -n "$2" ]; then
     profile="$2"
-    if [ "x${milteropendkim_profiles}" != "x" ]; then
+    if [ -n "${milteropendkim_profiles}" ]; then
 	pidfile="${_piddir}/${profile}.pid"
 	eval milteropendkim_enable="\${milteropendkim_${profile}_enable:-${milteropendkim_enable}}"
 	eval milteropendkim_socket="\${milteropendkim_${profile}_socket:-}"
@@ -82,25 +82,25 @@ if [ -n "$2" ]; then
 	else
 	    milteropendkim_cfgfile=""
 	fi
-	if [ "x${milteropendkim_socket}" != "x" ];then
+	if [ -n "${milteropendkim_socket}" ];then
 	    _socket_prefix="-p"
 	fi
-	if [ "x${milteropendkim_uid}" != "x" ];then
+	if [ -n "${milteropendkim_uid}" ];then
 	    _uid_prefix="-u"
-	    if [ "x${milteropendkim_gid}" != "x" ];then
+	    if [ -n "${milteropendkim_gid}" ];then
 		milteropendkim_uid=${milteropendkim_uid}:${milteropendkim_gid}
 	    fi
 	fi
-	if [ "x${milteropendkim_domain}" != "x" ];then
+	if [ -n "${milteropendkim_domain}" ];then
 	    milteropendkim_domain="-d ${milteropendkim_domain}"
 	fi
-	if [ "x${milteropendkim_key}" != "x" ];then
+	if [ -n "${milteropendkim_key}" ];then
 	    milteropendkim_key="-k ${milteropendkim_key}"
 	fi
-	if [ "x${milteropendkim_selector}" != "x" ];then
+	if [ -n "${milteropendkim_selector}" ];then
 	    milteropendkim_selector="-s ${milteropendkim_selector}"
 	fi
-	if [ "x${milteropendkim_alg}" != "x" ];then
+	if [ -n "${milteropendkim_alg}" ];then
 	    milteropendkim_alg="-S ${milteropendkim_alg}"
 	fi
 	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
@@ -108,13 +108,13 @@ if [ -n "$2" ]; then
 	echo "$0: extra argument ignored"
     fi
 else
-    if [ "x${milteropendkim_profiles}" != "x" -a "x$1" != "x" ]; then
-	if [ "x$1" != "xrestart" ]; then
+    if [ -n "${milteropendkim_profiles}" ] && [ -n "$1" ]; then
+	if [ "$1" != "restart" ]; then
 	    for profile in ${milteropendkim_profiles}; do
 		echo "===> milteropendkim profile: ${profile}"
 		%%PREFIX%%/etc/rc.d/milter-opendkim $1 ${profile}
 		retcode="$?"
-		if [ "0${retcode}" -ne 0 ]; then
+		if [ "${retcode}" -ne 0 ]; then
 		    failed="${profile} (${retcode}) ${failed:-}"
 		else
 		    success="${profile} ${success:-}"
@@ -130,25 +130,25 @@ else
 	else
 	    milteropendkim_cfgfile=""
 	fi
-	if [ "x${milteropendkim_socket}" != "x" ];then
+	if [ -n "${milteropendkim_socket}" ];then
 	    _socket_prefix="-p"
 	fi
-	if [ "x${milteropendkim_uid}" != "x" ];then
+	if [ -n "${milteropendkim_uid}" ];then
 	    _uid_prefix="-u"
-	    if [ "x${milteropendkim_gid}" != "x" ];then
+	    if [ -n "${milteropendkim_gid}" ];then
 		milteropendkim_uid=${milteropendkim_uid}:${milteropendkim_gid}
 	    fi
 	fi
-	if [ "x${milteropendkim_domain}" != "x" ];then
+	if [ -n "${milteropendkim_domain}" ];then
 	    milteropendkim_domain="-d ${milteropendkim_domain}"
 	fi
-	if [ "x${milteropendkim_key}" != "x" ];then
+	if [ -n "${milteropendkim_key}" ];then
 	    milteropendkim_key="-k ${milteropendkim_key}"
 	fi
-	if [ "x${milteropendkim_selector}" != "x" ];then
+	if [ -n "${milteropendkim_selector}" ];then
 	    milteropendkim_selector="-s ${milteropendkim_selector}"
 	fi
-	if [ "x${milteropendkim_alg}" != "x" ];then
+	if [ -n "${milteropendkim_alg}" ];then
 	    milteropendkim_alg="-S ${milteropendkim_alg}"
 	fi
 	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
@@ -157,10 +157,10 @@ fi
 
 dkim_prepcmd ()
 {
-    if [ -S ${milteropendkim_socket##local:} ] ; then
-        rm -f ${milteropendkim_socket##local:}
-    elif [ -S ${milteropendkim_socket##unix:} ] ; then
-        rm -f ${milteropendkim_socket##unix:}
+    if [ -S "${milteropendkim_socket##local:}" ] ; then
+        rm -f "${milteropendkim_socket##local:}"
+    elif [ -S "${milteropendkim_socket##unix:}" ] ; then
+        rm -f "${milteropendkim_socket##unix:}"
     fi
     if [ ! -d ${_piddir} ] ; then
 	mkdir -p ${_piddir}
@@ -176,12 +176,12 @@ dkim_prepcmd ()
 
 dkim_start_postcmd ()
 {
-    if [ "x${milteropendkim_socket}" != "x" ] ; then
+    if [ -n "${milteropendkim_socket}" ] ; then
 	# postcmd is executed too fast and socket is not created before checking...
 	sleep 1
-	if [ -S ${milteropendkim_socket##local:} ] ; then
+	if [ -S "${milteropendkim_socket##local:}" ] ; then
 	    chmod ${milteropendkim_socket_perms} ${milteropendkim_socket##local:}
-	elif [ -S ${milteropendkim_socket##unix:} ] ; then
+	elif [ -S "${milteropendkim_socket##unix:}" ] ; then
 	    chmod ${milteropendkim_socket_perms} ${milteropendkim_socket##unix:}
 	fi
     fi
@@ -189,11 +189,11 @@ dkim_start_postcmd ()
 
 dkim_postcmd()
 {
-    if [ "x${milteropendkim_socket}" != "x" ] ; then
-	if [ -S ${milteropendkim_socket##local:} ] ; then
-	    rm -f ${milteropendkim_socket##local:}
-	elif [ -S ${milteropendkim_socket##unix:} ] ; then
-	    rm -f ${milteropendkim_socket##unix:}
+    if [ -n "${milteropendkim_socket}" ] ; then
+	if [ -S "${milteropendkim_socket##local:}" ] ; then
+	    rm -f "${milteropendkim_socket##local:}"
+	elif [ -S "${milteropendkim_socket##unix:}" ] ; then
+	    rm -f "${milteropendkim_socket##unix:}"
 	fi
     fi
     # just if the directory is empty
