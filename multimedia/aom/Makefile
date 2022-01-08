@@ -22,8 +22,13 @@ GH_ACCOUNT=	jbeich # mirror
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	ENABLE_DOCS ENABLE_TESTS
 
-OPTIONS_DEFINE=	VMAF
+OPTIONS_DEFINE=	JXL VMAF
 OPTIONS_DEFAULT=VMAF
+
+JXL_DESC=		Encoding tuning for Butteraugli
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_USES=		pkgconfig
+JXL_CMAKE_ON=		-DCONFIG_TUNE_BUTTERAUGLI:STRING=1
 
 VMAF_DESC=		Encoding tuning for VMAF
 VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
