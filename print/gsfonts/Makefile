@@ -10,7 +10,7 @@ DISTFILES=	ghostscript-fonts-std-${PORTVERSION}${EXTRACT_SUFX}:std \
 		gnu-gs-fonts-other-6.0${EXTRACT_SUFX}:other
 DIST_SUBDIR=	ghostscript
 
-MAINTAINER=	doceng@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard Fonts for Ghostscript
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ MASTER_SITES=	http://downloads.ghostscript.com/public/ \
 PKGNAMESUFFIX=	9-x11
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	doceng@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter, X11 support
 
 LICENSE=	GPLv3
