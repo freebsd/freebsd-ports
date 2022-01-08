@@ -3,6 +3,7 @@
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.49.2
+PORTREVISION=	1
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -41,7 +42,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.3:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=3.1:devel/py-ijson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt1>=1.7.0:www/py-pyjwt1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=1.7.0:www/py-pyjwt@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_FLAVOR} \

@@ -1,6 +1,6 @@
 PORTNAME=	python-arango
 DISTVERSION=	7.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Python driver for ArangoDB
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt1>0:www/py-pyjwt1@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>0:www/py-requests-toolbelt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \

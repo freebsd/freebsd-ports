@@ -3,6 +3,7 @@
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.2.22
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -52,7 +53,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}protobuf>=0:devel/py-protobuf@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}pyjwt1>=0:www/py-pyjwt1@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}werkzeug>=0:www/py-werkzeug@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}cherrypy>=0:www/py-cherrypy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}pecan>=0:www/py-pecan@${PY_FLAVOR} \
