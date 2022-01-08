@@ -1,5 +1,5 @@
 PORTNAME=	Horde_SessionHandler
-PORTVERSION=	2.2.9
+PORTVERSION=	2.3.0
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
