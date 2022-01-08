@@ -1,7 +1,7 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -16,6 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
 
+BUILD_DEPENDS=	highway>0:devel/highway
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
 TEST_DEPENDS=	googletest>0:devel/googletest
 
@@ -24,7 +25,6 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	barmco:skcms:6437475:skcms/third_party/skcms \
-		google:highway:0.12.2-4-ge239774:highway/third_party/highway \
 		lvandeve:lodepng:48e5364:lodepng/third_party/lodepng \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
