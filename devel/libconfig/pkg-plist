@@ -5,10 +5,10 @@ lib/cmake/libconfig/libconfigConfig.cmake
 lib/libconfig++.a
 lib/libconfig++.so
 lib/libconfig++.so.11
-lib/libconfig++.so.11.0.2
+lib/libconfig++.so.11.1.0
 lib/libconfig.a
 lib/libconfig.so
 lib/libconfig.so.11
-lib/libconfig.so.11.0.2
+lib/libconfig.so.11.1.0
 libdata/pkgconfig/libconfig++.pc
 libdata/pkgconfig/libconfig.pc
