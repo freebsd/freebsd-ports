@@ -1,7 +1,7 @@
-PORTNAME=	vsearch
+PORTNAME=		vsearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.17.1
-CATEGORIES=	biology
+DISTVERSION=		2.19.0
+CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Versatile open-source tool for metagenomics
@@ -10,7 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	explicitly enumerated by upstream developers
+ONLY_FOR_ARCHS_REASON=	Explicitly enumerated by upstream developers
 
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
