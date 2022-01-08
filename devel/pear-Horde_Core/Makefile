@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	Horde_Core
-DISTVERSION=	2.31.14
+DISTVERSION=	2.31.16
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
