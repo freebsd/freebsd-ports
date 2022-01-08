@@ -1,8 +1,7 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0-59
-DISTVERSIONSUFFIX=	-g1eb183e7
-PORTREVISION=	1
+DISTVERSION=	3.3.0-86
+DISTVERSIONSUFFIX=	-ga5f6705b
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -28,8 +27,6 @@ MAKE_ENV+=	docdir=${DOCSDIR} \
 		lispdir=${PREFIX}/${_ELISPDIR} \
 		LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/ghub" \
 		VERSION=${PORTVERSION}
-# Parallel build fails if Emacs is built with native compilation enabled
-MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	magit-emacs*
 
@@ -52,7 +49,7 @@ _ELISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/RelNotes/3.1.0.org \
+	${INSTALL_DATA} ${WRKSRC}/docs/RelNotes/3.4.0.org \
 		${STAGEDIR}${DOCSDIR}/ReleaseNote
 
 .include <bsd.port.mk>
