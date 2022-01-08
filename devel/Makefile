@@ -960,6 +960,7 @@
     SUBDIR += hgsvn
     SUBDIR += hhdate
     SUBDIR += highlighterkit
+    SUBDIR += highway
     SUBDIR += hoel
     SUBDIR += horde-content
     SUBDIR += horde-timeobjects
