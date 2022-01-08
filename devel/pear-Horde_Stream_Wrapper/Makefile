@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	Horde_Stream_Wrapper
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.5
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
