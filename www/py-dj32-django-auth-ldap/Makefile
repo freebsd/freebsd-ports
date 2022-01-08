@@ -1,5 +1,5 @@
 PORTNAME=	django-auth-ldap
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	www security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj32-
@@ -10,6 +10,7 @@ COMMENT=	LDAP integration for django.contrib.auth
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap>=3.1:net/py-ldap@${PY_FLAVOR}
 
@@ -25,13 +26,9 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
 
-.include <bsd.port.pre.mk>
-
-# Set a locale to avoid build/configure errors.  The UTF-8 mode is enabled by
-# default when the locale is C since Python 3.7.
-.if ${PYTHON_REL} < 30700
-USE_LOCALE=	en_US.UTF-8
-.endif
+# Workaround to make the port still buildable with "distutils"
+post-extract:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -39,4 +36,4 @@ post-install-DOCS-on:
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 			"! -name .buildinfo -and ! -name objects.inv")
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
