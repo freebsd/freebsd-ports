@@ -19,6 +19,8 @@ GH_PROJECT=	cmake:cmake debugbreak:debugbreak fast_float:fast_float
 GH_SUBDIR=	cmake:cmake src/c4/ext/debugbreak:debugbreak src/c4/ext/fast_float:fast_float
 GH_TAGNAME=	9416f29:cmake 5dcbe41:debugbreak 052975d:fast_float
 
+USE_LDCONFIG=	yes
+
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
