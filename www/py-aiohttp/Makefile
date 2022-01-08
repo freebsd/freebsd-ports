@@ -34,12 +34,6 @@ USES=		cpe python:3.6+
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}idna_ssl>=1.0:dns/py-idna_ssl@${PY_FLAVOR}
-.endif
-
 pre-configure:
 .for file in _frozenlist _helpers _http_parser _http_writer _websocket
 	@${RM} ${WRKSRC}/aiohttp/${file}.c
@@ -52,4 +46,4 @@ post-install:
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

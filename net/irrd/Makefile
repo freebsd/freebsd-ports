@@ -56,12 +56,6 @@ SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}" \
 		USERS=${USERS} \
 		GROUPS=${GROUPS}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0.6:devel/py-dataclasses@${PY_FLAVOR}
-.endif
-
 post-install:
 	${INSTALL_DATA} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/conf/default_config.yaml \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}.yaml.sample
@@ -69,4 +63,4 @@ post-install:
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} pytest ${PORTNAME})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

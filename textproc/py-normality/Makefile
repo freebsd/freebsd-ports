@@ -26,14 +26,7 @@ OPTIONS_DEFAULT=	ICU
 
 ICU_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyicu>=1.9.3:devel/py-pyicu@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-# Set a locale to avoid build/configure errors.  The UTF-8 mode is enabled by
-# default when the locale is C since Python 3.7.
-.if ${PYTHON_REL} < 30700
-USE_LOCALE=	en_US.UTF-8
-.endif
-
 do-test:
 	@cd ${WRKSRC} && ${SET_ENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

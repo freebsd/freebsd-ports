@@ -26,10 +26,4 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioice>=0.7.5:devel/py-aioice@${PY_FLAVOR} \
 USES=		localbase python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0:devel/py-dataclasses@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,13 +25,6 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FL
 			${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
 
-.include <bsd.port.pre.mk>
-# Set a locale to avoid build/configure errors.  The UTF-8 mode is enabled by
-# default when the locale is C since Python 3.7.
-.if ${PYTHON_REL} < 30700
-USE_LOCALE=	en_US.UTF-8
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/build/sphinx/html && \
@@ -41,4 +34,4 @@ post-install-DOCS-on:
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

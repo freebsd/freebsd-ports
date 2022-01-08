@@ -41,10 +41,4 @@ SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosqlite>0:databases/py-aiosqlite@${
 # do-test:
 # 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} TEST_DATABASE_URLS="sqlite:///testsuite" ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}aiocontextvars>=0:devel/py-aiocontextvars@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
