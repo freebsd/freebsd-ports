@@ -87,6 +87,7 @@
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Man.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Po.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Pod.3pm.gz
+%%SITE_PERL%%/man/de/man3/Locale::Po4a::RubyDoc.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Sgml.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::TeX.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Texinfo.3pm.gz
@@ -95,6 +96,7 @@
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Xhtml.3pm.gz
 %%SITE_PERL%%/man/de/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/de/man3/Locale::Po4a::Yaml.3pm.gz
 %%SITE_PERL%%/man/de/man7/po4a.7.gz
 %%SITE_PERL%%/man/eo/man1/po4a-display-man.1.gz
 %%SITE_PERL%%/man/eo/man1/po4a-display-pod.1.gz
@@ -176,10 +178,18 @@
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::KernelHelp.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::LaTeX.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Man.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::Po.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Pod.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::RubyDoc.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Sgml.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::TeX.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Texinfo.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::Text.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::TransTractor.3pm.gz
 %%SITE_PERL%%/man/it/man3/Locale::Po4a::Wml.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::Xhtml.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/it/man3/Locale::Po4a::Yaml.3pm.gz
 %%SITE_PERL%%/man/it/man7/po4a.7.gz
 %%SITE_PERL%%/man/ja/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/ja/man1/po4a-normalize.1p.gz
@@ -204,7 +214,6 @@
 %%SITE_PERL%%/man/ja/man3/Locale::Po4a::TransTractor.3pm.gz
 %%SITE_PERL%%/man/ja/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/ja/man3/Locale::Po4a::Xhtml.3pm.gz
-%%SITE_PERL%%/man/ja/man3/Locale::Po4a::Xml.3pm.gz
 %%SITE_PERL%%/man/man7/po4a.7.gz
 %%SITE_PERL%%/man/nl/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/nl/man1/po4a-display-man.1.gz
@@ -228,6 +237,7 @@
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Man.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Po.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Pod.3pm.gz
+%%SITE_PERL%%/man/nl/man3/Locale::Po4a::RubyDoc.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Sgml.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::TeX.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Texinfo.3pm.gz
@@ -236,6 +246,7 @@
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Xhtml.3pm.gz
 %%SITE_PERL%%/man/nl/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/nl/man3/Locale::Po4a::Yaml.3pm.gz
 %%SITE_PERL%%/man/nl/man7/po4a.7.gz
 %%SITE_PERL%%/man/pl/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/pl/man1/po4a-normalize.1p.gz
@@ -313,6 +324,7 @@
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Man.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Po.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Pod.3pm.gz
+%%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::RubyDoc.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Sgml.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::TeX.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Texinfo.3pm.gz
@@ -321,6 +333,7 @@
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Xhtml.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/pt_BR/man3/Locale::Po4a::Yaml.3pm.gz
 %%SITE_PERL%%/man/pt_BR/man7/po4a.7.gz
 %%SITE_PERL%%/man/ru/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/ru/man1/po4a-display-man.1.gz
@@ -368,6 +381,7 @@
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Man.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Po.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Pod.3pm.gz
+%%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::RubyDoc.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Sgml.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::TeX.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Texinfo.3pm.gz
@@ -376,6 +390,7 @@
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Xhtml.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/sr_Cyrl/man3/Locale::Po4a::Yaml.3pm.gz
 %%SITE_PERL%%/man/sr_Cyrl/man7/po4a.7.gz
 %%SITE_PERL%%/man/uk/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/uk/man1/po4a-display-man.1.gz
@@ -399,6 +414,7 @@
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Man.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Po.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Pod.3pm.gz
+%%SITE_PERL%%/man/uk/man3/Locale::Po4a::RubyDoc.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Sgml.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::TeX.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Texinfo.3pm.gz
@@ -407,6 +423,7 @@
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Wml.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Xhtml.3pm.gz
 %%SITE_PERL%%/man/uk/man3/Locale::Po4a::Xml.3pm.gz
+%%SITE_PERL%%/man/uk/man3/Locale::Po4a::Yaml.3pm.gz
 %%SITE_PERL%%/man/uk/man7/po4a.7.gz
 %%SITE_PERL%%/man/zh_CHS/man1/msguntypot.1p.gz
 %%SITE_PERL%%/man/zh_CHS/man1/po4a-display-man.1.gz
