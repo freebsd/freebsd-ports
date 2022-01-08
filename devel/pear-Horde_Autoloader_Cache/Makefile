@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	Horde_Autoloader_Cache
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
