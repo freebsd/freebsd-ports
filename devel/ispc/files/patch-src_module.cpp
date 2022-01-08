@@ -18,3 +18,17 @@
      Opts.setSPIRVAllowUnknownIntrinsics({"llvm.genx"});
  #else
      llvm::cl::opt<bool> SPIRVAllowUnknownIntrinsics(
+@@ -1314,7 +1314,12 @@ bool Module::writeObjectFileOrAssembly(llvm::TargetMachine *targetMachine, llvm::Module *module, OutputType outputType,
+     llvm::CodeGenFileType fileType = (outputType == Object) ? llvm::CGFT_ObjectFile : llvm::CGFT_AssemblyFile;
+     bool binary = (fileType == llvm::CGFT_ObjectFile);
+
+-    llvm::sys::fs::OpenFlags flags = binary ? llvm::sys::fs::F_None : llvm::sys::fs::F_Text;
++    llvm::sys::fs::OpenFlags flags = binary ?
++#if ISPC_LLVM_VERSION >= ISPC_LLVM_13_0
++                                              llvm::sys::fs::OF_None : llvm::sys::fs::OF_Text;
++#else
++                                              llvm::sys::fs::F_None  : llvm::sys::fs::F_Text;
++#endif
+
+     std::error_code error;
+

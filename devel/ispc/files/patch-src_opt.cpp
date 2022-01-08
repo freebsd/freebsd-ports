@@ -62,3 +62,18 @@ ISPC devs insist on using dump() functions which LLVM devs consider a debug func
      return true;
  }
  
+@@ -4687,7 +4687,13 @@ void DebugPassFile::run(llvm::Module &module, bool init)
+     std::error_code EC;
+     char fname[100];
+     snprintf(fname, sizeof(fname), "%s_%d_%s.ll", init ? "init" : "ir", pnum, sanitize(std::string(pname)).c_str());
+-    llvm::raw_fd_ostream OS(fname, EC, llvm::sys::fs::F_None);
++    llvm::raw_fd_ostream OS(fname, EC,
++#if ISPC_LLVM_VERSION >= ISPC_LLVM_13_0
++                                       llvm::sys::fs::OF_None
++#else
++                                       llvm::sys::fs::F_None
++#endif
++    );
+     Assert(!EC && "IR dump file creation failed!");
+     module.print(OS, 0);
+ }
