@@ -1,6 +1,5 @@
 PORTNAME=	Horde_Memcache
-DISTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.1.2
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
