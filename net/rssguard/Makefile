@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rssguard
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.1
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -28,11 +28,6 @@ WEBENGINE_QMAKE_OFF=	USE_WEBENGINE=false
 post-patch:
 	@${GREP} -Rl --null Q_OS_LINUX ${WRKSRC}/src | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's,Q_OS_LINUX,Q_OS_UNIX,'
-# Avoid potential linking errors when previous version of the port
-# is installed.
-	@${REINPLACE_CMD} -e '/^unix: LIBS/ { s,-L,, ; \
-		s, -lrssguard,librssguard.so, ; }' \
-		${WRKSRC}/src/rssguard/rssguard.pro
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so
