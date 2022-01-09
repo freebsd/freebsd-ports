@@ -1,7 +1,6 @@
 PORTNAME=	hidapi
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.11.2
 CATEGORIES=	comms
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,10 +14,10 @@ USES=		autoreconf gettext-tools iconv:wchar_t libtool localbase \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libusb
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
