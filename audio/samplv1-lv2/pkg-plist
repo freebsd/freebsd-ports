@@ -5,10 +5,10 @@ lib/lv2/samplv1.lv2/samplv1.ttl
 lib/lv2/samplv1.lv2/samplv1_ui.ttl
 man/fr/man1/samplv1.1.gz
 man/man1/samplv1.1.gz
-share/applications/samplv1.desktop
+share/applications/org.rncbc.samplv1.desktop
 share/icons/hicolor/32x32/apps/samplv1.png
 share/icons/hicolor/32x32/mimetypes/application-x-samplv1-preset.png
 share/icons/hicolor/scalable/apps/samplv1.svg
 share/icons/hicolor/scalable/mimetypes/application-x-samplv1-preset.svg
-share/metainfo/samplv1.appdata.xml
+share/metainfo/org.rncbc.samplv1.xml
 share/mime/packages/samplv1.xml
