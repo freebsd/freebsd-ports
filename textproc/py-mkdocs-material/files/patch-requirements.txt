@@ -1,0 +1,11 @@
+Relax requirements for textproc/py-pygments
+
+--- requirements.txt.orig	2022-01-09 17:57:41 UTC
++++ requirements.txt
+@@ -23,5 +23,5 @@ jinja2>=2.11.1
+ markdown>=3.2
+ mkdocs>=1.2.3
+ mkdocs-material-extensions>=1.0
+-pygments>=2.10
++pygments
+ pymdown-extensions>=9.0
