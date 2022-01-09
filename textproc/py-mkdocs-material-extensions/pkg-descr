@@ -1,0 +1,13 @@
+MkDocs Material provides numerous icons from Material, FontAwesome, and
+Octicons, but it does so by inlining the SVG icons into the source.  Currently
+there is no easy way access these icons and arbitrarily insert them into
+Markdown content.  Users must include the icon fonts themselves and do it with
+HTML.
+
+This module allows you to use PyMdown Extensions' Emoji extension to enable
+easy insertion of MkDocs Material's SVG assets using simple :emoji-syntax:.
+
+This is done by creating our own emoji index and emoji generator.  The custom
+index provides a modified version of the Emoji extensions Twemoji index.
+
+WWW: https://github.com/facelessuser/mkdocs-material-extensions
