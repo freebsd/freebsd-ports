@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	unfoo
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	unace:archivers/unace \
 		unrar:archivers/unrar \
-		7z:archivers/p7zip
+		7zz:archivers/7-zip
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	vitaminmoo
+GH_ACCOUNT=	jlec
 
 NO_BUILD=	yes
 NO_ARCH=	yes

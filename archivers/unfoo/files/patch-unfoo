@@ -1,0 +1,17 @@
+--- unfoo.orig	2014-07-17 08:18:00 UTC
++++ unfoo
+@@ -239,11 +239,11 @@ for i in "$@"; do
+         # Packed with 7zip, thanks Komoto
+         *.7z)
+             echo -n"$IAM: Unpacking 7zip archive $ITIS..."
+-            if [ $(7z l -slt "$i" | grep Path | grep -v "$i" | cut -d' ' -f3 | need_subdir) == 1 ]; then
++            if [ $(7zz l -slt "$i" | grep Path | grep -v "$i" | cut -d' ' -f3 | need_subdir) == 1 ]; then
+                 dirname=$(basename "$i" .7z)
+-                7z x -o"$dirname" "$i"
++                7zz x -o"$dirname" "$i"
+             else
+-                7z x "$i"
++                7zz x "$i"
+             fi
+             check_success
+             ;;
