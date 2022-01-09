@@ -1,26 +1,29 @@
 PORTNAME=	LAStools
-DISTVERSION=	g20181019
-PORTREVISION=	1
+DISTVERSION=	2.0.0
 CATEGORIES=	misc
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient tools for LiDAR processing
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		compiler:c++11-lang gmake
-USE_GITHUB=	yes
-GH_TAGNAME=	8ff2694
+USES=		cmake zip
 
-BINARY_ALIAS=	make=gmake g++=${CXX}
-
-PLIST_FILES=	${EXECUTABLES:S/^/bin\//}
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 EXECUTABLES=	lasindex las2txt las2las txt2las lasdiff lasinfo laszip lasmerge lasprecision
 
-do-install:
+post-configure: # workaround for https://github.com/LAStools/LAStools/issues/108
+	@${REINPLACE_CMD} -e '/laslib-config.cmake/,1d' ${BUILD_WRKSRC}/LASlib/src/cmake_install.cmake
+
+post-install: # install executables, workaround for https://github.com/LAStools/LAStools/issues/120
 .for e in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${e} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/${e}64 ${STAGEDIR}${PREFIX}/bin
+	${MV} ${STAGEDIR}${PREFIX}/bin/${e}64 ${STAGEDIR}${PREFIX}/bin/${e}
 .endfor
 
 .include <bsd.port.mk>
