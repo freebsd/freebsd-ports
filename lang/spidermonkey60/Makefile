@@ -56,7 +56,7 @@ CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
 
 .if ${ARCH} == i386
 # ld: error: undefined symbol: __atomic_load
-USE_GCC=	9+
+USE_GCC=	yes
 .endif
 
 post-install:
