@@ -1,31 +1,28 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
 
 PORTNAME=	guacamole-client
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	www java
-MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
-		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
-DISTFILES=	repository-${DISTVERSION}${EXTRACT_SUFX}:repo
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	guacamole/${DISTVERSIONFULL}/binary
+DISTFILES=	guacamole-${DISTVERSIONFULL}.war \
+		guacamole-auth-duo-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-header-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-jdbc-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-json-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-ldap-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-quickconnect-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-sso-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-totp-${DISTVERSIONFULL}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	HTML5 Clientless Remote Desktop
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
-
-USES=		tar:xz
-USE_JAVA=	yes
-JAVA_VERSION=	1.8+
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	apache
-
-MVN=		mvn
-MVN_ARGS=	package -Duser.home=${WRKDIR}
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
@@ -42,31 +39,23 @@ TOMCAT_VARS=		TOMCAT_VER=9.0
 
 SERVER_RUN_DEPENDS=	guacd:net/guacamole-server
 
-AUTH_EXTENSION=	cas duo header ldap openid quickconnect saml totp
-
-post-patch:
-		@${REINPLACE_CMD} 's|/etc/guacamole|${ETCDIR}| ; \
-			s|"/etc"|"${ETCDIR:S|/${PORTNAME}||}"|' \
-			${WRKSRC}/guacamole-ext/src/main/java/org/apache/guacamole/environment/LocalEnvironment.java
-
-do-build:
-		cd ${WRKSRC} && ${MVN} ${MVN_ARGS}
+do-extract:
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${DATADIR}
 		@${MKDIR} ${STAGEDIR}${ETCDIR}
+		@${MKDIR} ${STAGEDIR}/etc
 
-		${INSTALL_DATA} ${WRKSRC}/guacamole/target/guacamole-${DISTVERSIONFULL}.war \
+		${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:M*.war} \
 			${STAGEDIR}${DATADIR}/guacamole.war
-.for i in ${AUTH_EXTENSION}
-		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-$i/target/guacamole-auth-$i-*.tar.gz \
-			${STAGEDIR}/${DATADIR}/guacamole-auth-$i.tar.gz
+.for i in ${DISTFILES:N*.war}
+		${INSTALL_DATA} ${_DISTDIR}/${i}${DISTVERSIONFULL}${EXTRACT_SUFX} \
+			${STAGEDIR}/${DATADIR}/${i:S|-$||}${EXTRACT_SUFX}
 .endfor
-		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/guacamole-auth-jdbc-${DISTVERSIONFULL}.tar.gz \
-			${STAGEDIR}/${DATADIR}/guacamole-auth-jdbc.tar.gz
 		${INSTALL_DATA} ${FILESDIR}/user-mapping.xml.sample ${STAGEDIR}${ETCDIR}/
 		${INSTALL_DATA} ${FILESDIR}/logback.xml.sample ${STAGEDIR}${ETCDIR}/
 		${INSTALL_DATA} ${FILESDIR}/guacamole.properties.sample ${STAGEDIR}${ETCDIR}/
+		${RLN} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/etc/guacamole
 
 do-install-TOMCAT-on:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/apache-tomcat-${TOMCAT_VER}/webapps

@@ -6,7 +6,7 @@ For a quick Guacamole setup and test:
 	cp %%ETCDIR%%/user-mapping.xml.sample \
 	%%ETCDIR%%/user-mapping.xml
 
-	Once tomcat8 and guacd are running
+	Once tomcat and guacd are running
 	http://localhost:8080/guacamole
 
 For upgrading guacamole, this is a reminder to upgrade

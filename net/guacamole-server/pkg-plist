@@ -65,8 +65,8 @@ include/guacamole/wol.h
 %%VNC%%lib/libguac-client-vnc.so.0.0.0
 lib/libguac.a
 lib/libguac.so
-lib/libguac.so.19
-lib/libguac.so.19.0.0
+lib/libguac.so.20
+lib/libguac.so.20.0.0
 %%GUACENC%%man/man1/guacenc.1.gz
 %%GUACLOG%%man/man1/guaclog.1.gz
 man/man5/guacd.conf.5.gz
