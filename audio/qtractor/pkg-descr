@@ -1,0 +1,7 @@
+Qtractor is an Audio/MIDI multi-track sequencer application written in C++ with
+the Qt framework. Target platform is Linux, where the Jack Audio Connection Kit
+(JACK) for audio, and the Advanced Linux Sound Architecture (ALSA) for MIDI, are
+the main infrastructures to evolve as a fairly-featured Linux desktop audio
+workstation GUI, specially dedicated to the personal home-studio.
+
+WWW: https://qtractor.org/

@@ -676,6 +676,7 @@
     SUBDIR += qmidinet
     SUBDIR += qsampler
     SUBDIR += qsynth
+    SUBDIR += qtractor
     SUBDIR += quimup
     SUBDIR += qxgedit
     SUBDIR += raul
