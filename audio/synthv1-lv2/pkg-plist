@@ -5,10 +5,10 @@ lib/lv2/synthv1.lv2/synthv1.ttl
 lib/lv2/synthv1.lv2/synthv1_ui.ttl
 man/fr/man1/synthv1.1.gz
 man/man1/synthv1.1.gz
-share/applications/synthv1.desktop
+share/applications/org.rncbc.synthv1.desktop
 share/icons/hicolor/32x32/apps/synthv1.png
 share/icons/hicolor/32x32/mimetypes/application-x-synthv1-preset.png
 share/icons/hicolor/scalable/apps/synthv1.svg
 share/icons/hicolor/scalable/mimetypes/application-x-synthv1-preset.svg
-share/metainfo/synthv1.appdata.xml
+share/metainfo/org.rncbc.synthv1.xml
 share/mime/packages/synthv1.xml
