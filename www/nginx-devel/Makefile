@@ -2,7 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.21.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -172,8 +172,7 @@ HTTPV2_IMPLIES=			HTTP_SSL
 HTTPV2_CONFIGURE_ON=		--with-http_v2_module
 HTTPV3_BUILD_DEPENDS=		${LOCALBASE}/bin/bssl:security/boringssl
 HTTPV3_RUN_DEPENDS=		${LOCALBASE}/bin/bssl:security/boringssl
-HTTPV3_CONFIGURE_ON=		--with-ld-opt="-L ${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib" \
-				--with-http_ssl_module \
+HTTPV3_CONFIGURE_ON=		--with-http_ssl_module \
 				--build=nginx-quic \
 				--with-stream_quic_module \
 				--with-http_v3_module
