@@ -1,5 +1,3 @@
-TIMESTAMP = 1622782411
-SHA256 (aloistr-swisseph-v2.10.1_GH0.tar.gz) = 229d82564cc3479e8f0577aa35bc22738a3493cbf2a9397b163485d2b764639e
-SIZE (aloistr-swisseph-v2.10.1_GH0.tar.gz) = 504397
-SHA256 (aloistr-swisseph_doc-v2,10,1_GH0.tar.gz) = f5a0d6f0a20b0a5246d770f7540c962cb8044a99d6844e074836fe7227b5b5df
-SIZE (aloistr-swisseph_doc-v2,10,1_GH0.tar.gz) = 5515179
+TIMESTAMP = 1641716888
+SHA256 (aloistr-swisseph-v2.10.02_GH0.tar.gz) = 6eb2c061a31b4ec9356ccc7a76ad3d2ff88a9c67882eafd5c6b03700de646e2e
+SIZE (aloistr-swisseph-v2.10.02_GH0.tar.gz) = 536980

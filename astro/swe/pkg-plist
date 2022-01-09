@@ -11,10 +11,3 @@ include/swe/swephexp.h
 include/swe/swephlib.h
 include/swe/swevents.h
 lib/libswe.a
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/agpl-3.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/swephprg.docx
-%%PORTDOCS%%%%DOCSDIR%%/swisseph.docx
-%%PORTDOCS%%%%DOCSDIR%%/swephprg.pdf
-%%PORTDOCS%%%%DOCSDIR%%/swisseph.pdf
