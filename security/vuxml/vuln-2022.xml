@@ -1,3 +1,44 @@
+  <vuln vid="b927b654-7146-11ec-ad4b-5404a68ad561">
+    <topic>uriparser -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>uriparser</name>
+	<range><lt>0.9.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Upstream project reports:</p>
+	<blockquote cite="https://github.com/uriparser/uriparser/blob/uriparser-0.9.6/ChangeLog">
+	  <p>Fix a bug affecting both uriNormalizeSyntax* and uriMakeOwner*
+	     functions where the text range in .hostText would not be duped using
+	     malloc but remain unchanged (and hence "not owned") for URIs with
+	     an IPv4 or IPv6 address hostname; depending on how an application
+	     uses uriparser, this could lead the application into a use-after-free
+	     situation.
+	     As the second half, fix uriFreeUriMembers* functions that would not
+	     free .hostText memory for URIs with an IPv4 or IPv6 address host;
+	     also, calling uriFreeUriMembers* multiple times on a URI of this
+	     very nature would result in trying to free pointers to stack
+	     (rather than heap) memory.
+	     Fix functions uriNormalizeSyntax* for out-of-memory situations
+	     (i.e. malloc returning NULL) for URIs containing empty segments
+	     (any of user info, host text, query, or fragment) where previously
+	     pointers to stack (rather than heap) memory were freed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-46141</cvename>
+      <cvename>CVE-2021-46142</cvename>
+      <url>https://github.com/uriparser/uriparser/blob/uriparser-0.9.6/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2022-01-06</discovery>
+      <entry>2022-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3e023fb-6e88-11ec-b948-080027240888">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
