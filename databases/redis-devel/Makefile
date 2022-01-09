@@ -5,7 +5,7 @@ PORTVERSION=	7.0.0.20211201
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
