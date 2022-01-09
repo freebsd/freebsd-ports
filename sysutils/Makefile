@@ -1061,6 +1061,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess
+    SUBDIR += py-puremagic
     SUBDIR += py-py-cpuinfo
     SUBDIR += py-python-consul
     SUBDIR += py-python-consul2
