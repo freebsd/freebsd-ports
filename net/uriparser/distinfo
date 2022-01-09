@@ -1,7 +1,7 @@
-TIMESTAMP = 1616332822
-SHA256 (uriparser-0.9.5.tar.xz) = 9af8f87ed762ebac333fd42b6c38b62d217be8ba290d050f40aef43b9267651e
-SIZE (uriparser-0.9.5.tar.xz) = 169220
-SHA256 (uriparser-0.9.5-doc.zip) = eae0766ef2548c7d041c00c6898f9e114f6cb88c9fb02d02a9825734f29a814f
-SIZE (uriparser-0.9.5-doc.zip) = 260868
-SHA256 (uriparser-0.9.5.qch) = 3b38380996a346301359a15ae75887d68234828cef8f717f688223c5c7016cad
-SIZE (uriparser-0.9.5.qch) = 303104
+TIMESTAMP = 1641726141
+SHA256 (uriparser-0.9.6.tar.xz) = a288a06668528c19e85e38c508335938e1de6fdd4b8f2072401b4533fcebf644
+SIZE (uriparser-0.9.6.tar.xz) = 171260
+SHA256 (uriparser-0.9.6-doc.zip) = 7827f3ca9cbf90eda3e02113f8dabeee7cf641ba9008e0eab5bc518d08762d1f
+SIZE (uriparser-0.9.6-doc.zip) = 256914
+SHA256 (uriparser-0.9.6.qch) = 54e97138b973a93953b85fb91331bb596ca5931715e9bf5b088c8c9d6b91b38d
+SIZE (uriparser-0.9.6.qch) = 303104
