@@ -5,10 +5,10 @@ lib/lv2/drumkv1.lv2/drumkv1_ui.ttl
 lib/lv2/drumkv1.lv2/manifest.ttl
 man/fr/man1/drumkv1.1.gz
 man/man1/drumkv1.1.gz
-share/applications/drumkv1.desktop
+share/applications/org.rncbc.drumkv1.desktop
 share/icons/hicolor/32x32/apps/drumkv1.png
 share/icons/hicolor/32x32/mimetypes/application-x-drumkv1-preset.png
 share/icons/hicolor/scalable/apps/drumkv1.svg
 share/icons/hicolor/scalable/mimetypes/application-x-drumkv1-preset.svg
-share/metainfo/drumkv1.appdata.xml
+share/metainfo/org.rncbc.drumkv1.xml
 share/mime/packages/drumkv1.xml

@@ -1,6 +1,5 @@
 PORTNAME=	drumkv1
-DISTVERSION=	0.9.23
-PORTREVISION=	1
+DISTVERSION=	0.9.24
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-lv2
@@ -9,7 +8,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Old-school drum-kit sampler: LV2 plugin and Jack app
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
