@@ -82,7 +82,7 @@ OPTIONS_SUB=		yes
 UHD_DESC=	Include UHD support from Ettus
 TESTING_DESC=	Include testing support
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} PORTMAINVER=${PORTVERSION:C|^([1-9]+)\.([0-9]+)\.([0-9]+).*|\1.\2.\3|}
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.2,1:textproc/py-sphinx@${PY_FLAVOR} \
