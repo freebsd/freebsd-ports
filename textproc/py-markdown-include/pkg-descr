@@ -1,0 +1,8 @@
+This is an extension to Python-Markdown which provides an "include"
+function, similar to that found in LaTeX (and also the C pre-processor and
+Fortran).
+
+It was originally written for a FORD (= FORtran Documenter) Fortran
+auto-documentation generator.
+
+WWW: https://github.com/cmacmackin/markdown-include
