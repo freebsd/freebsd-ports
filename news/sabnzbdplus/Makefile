@@ -1,5 +1,5 @@
 PORTNAME=	sabnzbdplus
-DISTVERSION=	3.3.0
+DISTVERSION=	3.4.2
 PORTEPOCH=	1
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>=0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}portend>=0:net/py-portend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sabyenc3>=0:news/py-sabyenc3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}guessit>0:multimedia/py-guessit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}puremagic>0:sysutils/py-puremagic@${PY_FLAVOR} \
 		par2repair:archivers/par2cmdline \
 		unrar:archivers/unrar
 
@@ -49,7 +51,7 @@ DBUS_DESC=	DBUS support for system power management
 NOTIFY2_DESC=	Notify2 support
 PYGOBJECT_DESC=	PyGObject support for system tray icon (requires cairo)
 
-7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
+7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 NOTIFY2_IMPLIES=	DBUS
 NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
