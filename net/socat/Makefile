@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	socat
-DISTVERSION=	1.7.4.2
+DISTVERSION=	1.7.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
