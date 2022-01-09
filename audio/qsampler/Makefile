@@ -2,14 +2,14 @@
 
 PORTNAME=	qsampler
 DISTVERSIONPREFIX=	qsampler_
-DISTVERSION=	0_9_4
+DISTVERSION=	0_9_5
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt-based front end to LinuxSampler
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgig.so:audio/libgig \
 		liblscp.so:audio/liblscp
