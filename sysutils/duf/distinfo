@@ -1,5 +1,5 @@
-TIMESTAMP = 1620924741
-SHA256 (go/sysutils_duf/duf-v0.6.2/v0.6.2.mod) = 71dff0ea848cdcde9cd847cd72711a4d4d3d02910cce4626f8125038c0ea58b3
-SIZE (go/sysutils_duf/duf-v0.6.2/v0.6.2.mod) = 273
-SHA256 (go/sysutils_duf/duf-v0.6.2/v0.6.2.zip) = fda9e9dd99ecf3fe4386c9892a62f3193577cf0a80df8aa6a0ba87d3b2745526
-SIZE (go/sysutils_duf/duf-v0.6.2/v0.6.2.zip) = 141050
+TIMESTAMP = 1641754660
+SHA256 (go/sysutils_duf/duf-v0.7.0/v0.7.0.mod) = a4ec24db25096a098b454d05004dd002b5e00610e7b02e7f0243501105d184f0
+SIZE (go/sysutils_duf/duf-v0.7.0/v0.7.0.mod) = 398
+SHA256 (go/sysutils_duf/duf-v0.7.0/v0.7.0.zip) = cb20fb6ca80feac473a053cb2872ba549ac4a327628f890548e7b165e27c6684
+SIZE (go/sysutils_duf/duf-v0.7.0/v0.7.0.zip) = 143351
