@@ -15,7 +15,6 @@ include/reactphysics3d/collision/TriangleMesh.h
 include/reactphysics3d/collision/TriangleVertexArray.h
 include/reactphysics3d/collision/broadphase/DynamicAABBTree.h
 include/reactphysics3d/collision/narrowphase/CapsuleVsCapsuleAlgorithm.h
-include/reactphysics3d/collision/narrowphase/CapsuleVsCapsuleNarrowPhaseInfoBatch.h
 include/reactphysics3d/collision/narrowphase/CapsuleVsConvexPolyhedronAlgorithm.h
 include/reactphysics3d/collision/narrowphase/CollisionDispatch.h
 include/reactphysics3d/collision/narrowphase/ConvexPolyhedronVsConvexPolyhedronAlgorithm.h
@@ -26,10 +25,8 @@ include/reactphysics3d/collision/narrowphase/NarrowPhaseInfoBatch.h
 include/reactphysics3d/collision/narrowphase/NarrowPhaseInput.h
 include/reactphysics3d/collision/narrowphase/SAT/SATAlgorithm.h
 include/reactphysics3d/collision/narrowphase/SphereVsCapsuleAlgorithm.h
-include/reactphysics3d/collision/narrowphase/SphereVsCapsuleNarrowPhaseInfoBatch.h
 include/reactphysics3d/collision/narrowphase/SphereVsConvexPolyhedronAlgorithm.h
 include/reactphysics3d/collision/narrowphase/SphereVsSphereAlgorithm.h
-include/reactphysics3d/collision/narrowphase/SphereVsSphereNarrowPhaseInfoBatch.h
 include/reactphysics3d/collision/shapes/AABB.h
 include/reactphysics3d/collision/shapes/BoxShape.h
 include/reactphysics3d/collision/shapes/CapsuleShape.h
@@ -59,9 +56,9 @@ include/reactphysics3d/constraint/FixedJoint.h
 include/reactphysics3d/constraint/HingeJoint.h
 include/reactphysics3d/constraint/Joint.h
 include/reactphysics3d/constraint/SliderJoint.h
+include/reactphysics3d/containers/Array.h
 include/reactphysics3d/containers/Deque.h
 include/reactphysics3d/containers/LinkedList.h
-include/reactphysics3d/containers/List.h
 include/reactphysics3d/containers/Map.h
 include/reactphysics3d/containers/Pair.h
 include/reactphysics3d/containers/Set.h
@@ -77,7 +74,6 @@ include/reactphysics3d/engine/Material.h
 include/reactphysics3d/engine/OverlappingPairs.h
 include/reactphysics3d/engine/PhysicsCommon.h
 include/reactphysics3d/engine/PhysicsWorld.h
-include/reactphysics3d/engine/Timer.h
 include/reactphysics3d/mathematics/Matrix2x2.h
 include/reactphysics3d/mathematics/Matrix3x3.h
 include/reactphysics3d/mathematics/Quaternion.h
@@ -86,6 +82,7 @@ include/reactphysics3d/mathematics/Transform.h
 include/reactphysics3d/mathematics/Vector2.h
 include/reactphysics3d/mathematics/Vector3.h
 include/reactphysics3d/mathematics/mathematics.h
+include/reactphysics3d/mathematics/mathematics_common.h
 include/reactphysics3d/mathematics/mathematics_functions.h
 include/reactphysics3d/memory/DefaultAllocator.h
 include/reactphysics3d/memory/HeapAllocator.h
@@ -111,5 +108,5 @@ lib/cmake/ReactPhysics3D/ReactPhysics3DConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ReactPhysics3D/ReactPhysics3DConfig.cmake
 lib/cmake/ReactPhysics3D/ReactPhysics3DConfigVersion.cmake
 lib/libreactphysics3d.so
-lib/libreactphysics3d.so.0.8
-lib/libreactphysics3d.so.0.8.0
+lib/libreactphysics3d.so.0.9
+lib/libreactphysics3d.so.0.9.0

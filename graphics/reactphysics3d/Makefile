@@ -1,6 +1,6 @@
 PORTNAME=	reactphysics3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +10,11 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++11-lang
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanielChappuis
-USE_LDCONFIG=	yes
+
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 do-test:
