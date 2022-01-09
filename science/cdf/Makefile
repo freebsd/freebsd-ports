@@ -19,7 +19,10 @@ BROKEN_aarch64=		fails to compile: error: use of undeclared identifier FP1ZEROsi
 BROKEN_armv6=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
 BROKEN_armv7=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
 
+BUILD_DEPENDS=	bash:shells/bash
+
 USES=		fortran ncurses gmake
+
 USE_LDCONFIG=	yes
 MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
 		FORTRAN=yes FC_freebsd=${F77}
