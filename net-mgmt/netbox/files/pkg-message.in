@@ -312,4 +312,14 @@ The NetBox 3.0 release contains major changes, so at least items 1.), 2.) and
    # sysrc -f /etc/periodic.conf daily_netbox_housekeeping_enable="YES"
 EOD
 }
+{ type: upgrade
+  maximum_version: 3.0.12_1
+  message: <<EOD
+Please run the following command to make the online help available that was
+previously missing:
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% manage.py collectstatic --no-input
+EOD
+}
 ]

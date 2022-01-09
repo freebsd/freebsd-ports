@@ -1,6 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.12
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -22,6 +23,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj32-django-tables2
 # - www/py-dj32-djangorestframework (in conjunction with www/py-dj32-drf-yasg)
 #
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-include>=0.6.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=7.3.6<9:textproc/py-mkdocs-material@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.9<3.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-cors-headers>=3.10.0<4:www/py-dj32-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-debug-toolbar>=3.2.2<4:www/py-dj32-django-debug-toolbar@${PY_FLAVOR} \
@@ -41,7 +44,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.9<3.3:www/py-django32@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.1<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.4<3.5:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.8.0<1:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0<9:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.9.1<3:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.1<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.1.0<3.2:textproc/py-tablib@${PY_FLAVOR} \
@@ -55,10 +58,12 @@ GH_ACCOUNT=	netbox-community
 
 SUB_FILES=	850.netbox-housekeeping.sample netbox_rq.sample netboxrc.sample pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PYTHON_CMD=${PYTHON_CMD} PYTHON_VER=${PYTHON_VER} WWWOWN=${WWWOWN}
-NO_BUILD=	yes
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-build:
+	cd ${WRKSRC} && ${PYTHON_CMD} -m mkdocs build
 
 do-install:
 	cd ${WRKSRC}/netbox ; \
