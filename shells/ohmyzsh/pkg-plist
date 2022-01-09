@@ -32,6 +32,7 @@
 %%DATADIR%%/plugins/ag/_ag
 %%DATADIR%%/plugins/alias-finder/README.md
 %%DATADIR%%/plugins/alias-finder/alias-finder.plugin.zsh
+%%DATADIR%%/plugins/aliases/.gitignore
 %%DATADIR%%/plugins/aliases/README.md
 %%DATADIR%%/plugins/aliases/aliases.plugin.zsh
 %%DATADIR%%/plugins/aliases/cheatsheet.py
@@ -39,6 +40,7 @@
 %%DATADIR%%/plugins/ansible/README.md
 %%DATADIR%%/plugins/ansible/ansible.plugin.zsh
 %%DATADIR%%/plugins/ant/README.md
+%%DATADIR%%/plugins/ant/_ant
 %%DATADIR%%/plugins/ant/ant.plugin.zsh
 %%DATADIR%%/plugins/apache2-macports/README.md
 %%DATADIR%%/plugins/apache2-macports/apache2-macports.plugin.zsh
@@ -182,6 +184,7 @@
 %%DATADIR%%/plugins/emacs/emacs.plugin.zsh
 %%DATADIR%%/plugins/emacs/emacsclient.sh
 %%DATADIR%%/plugins/ember-cli/README.md
+%%DATADIR%%/plugins/ember-cli/_ember-cli
 %%DATADIR%%/plugins/ember-cli/ember-cli.plugin.zsh
 %%DATADIR%%/plugins/emoji-clock/README.md
 %%DATADIR%%/plugins/emoji-clock/emoji-clock.plugin.zsh
@@ -189,7 +192,8 @@
 %%DATADIR%%/plugins/emoji/emoji-char-definitions.zsh
 %%DATADIR%%/plugins/emoji/emoji-data.txt
 %%DATADIR%%/plugins/emoji/emoji.plugin.zsh
-%%DATADIR%%/plugins/emoji/update_emoji.pl
+%%DATADIR%%/plugins/emoji/gemoji_db.json
+%%DATADIR%%/plugins/emoji/update_emoji.py
 %%DATADIR%%/plugins/emotty/README.md
 %%DATADIR%%/plugins/emotty/emotty.plugin.zsh
 %%DATADIR%%/plugins/emotty/emotty_emoji_set.zsh
@@ -226,6 +230,7 @@
 %%DATADIR%%/plugins/forklift/README.md
 %%DATADIR%%/plugins/forklift/forklift.plugin.zsh
 %%DATADIR%%/plugins/fossil/README.md
+%%DATADIR%%/plugins/fossil/_fossil
 %%DATADIR%%/plugins/fossil/fossil.plugin.zsh
 %%DATADIR%%/plugins/frontend-search/README.md
 %%DATADIR%%/plugins/frontend-search/_frontend
@@ -263,6 +268,7 @@
 %%DATADIR%%/plugins/git-flow-avh/README.md
 %%DATADIR%%/plugins/git-flow-avh/git-flow-avh.plugin.zsh
 %%DATADIR%%/plugins/git-flow/README.md
+%%DATADIR%%/plugins/git-flow/_git-flow
 %%DATADIR%%/plugins/git-flow/git-flow.plugin.zsh
 %%DATADIR%%/plugins/git-hubflow/README.md
 %%DATADIR%%/plugins/git-hubflow/git-hubflow.plugin.zsh
@@ -292,6 +298,7 @@
 %%DATADIR%%/plugins/gnu-utils/README.md
 %%DATADIR%%/plugins/gnu-utils/gnu-utils.plugin.zsh
 %%DATADIR%%/plugins/golang/README.md
+%%DATADIR%%/plugins/golang/_golang
 %%DATADIR%%/plugins/golang/golang.plugin.zsh
 %%DATADIR%%/plugins/golang/templates/package.txt
 %%DATADIR%%/plugins/golang/templates/search.txt
@@ -403,6 +410,8 @@
 %%DATADIR%%/plugins/lighthouse/lighthouse.plugin.zsh
 %%DATADIR%%/plugins/lol/README.md
 %%DATADIR%%/plugins/lol/lol.plugin.zsh
+%%DATADIR%%/plugins/lpass/README.md
+%%DATADIR%%/plugins/lpass/_lpass
 %%DATADIR%%/plugins/lxd/README.md
 %%DATADIR%%/plugins/lxd/lxd.plugin.zsh
 %%DATADIR%%/plugins/macos/README.md
@@ -446,7 +455,7 @@
 %%DATADIR%%/plugins/nanoc/_nanoc
 %%DATADIR%%/plugins/nanoc/nanoc.plugin.zsh
 %%DATADIR%%/plugins/ng/README.md
-%%DATADIR%%/plugins/ng/ng.plugin.zsh
+%%DATADIR%%/plugins/ng/_ng
 %%DATADIR%%/plugins/nmap/README.md
 %%DATADIR%%/plugins/nmap/nmap.plugin.zsh
 %%DATADIR%%/plugins/node/README.md
@@ -531,6 +540,8 @@
 %%DATADIR%%/plugins/rbenv/rbenv.plugin.zsh
 %%DATADIR%%/plugins/rbfu/README.md
 %%DATADIR%%/plugins/rbfu/rbfu.plugin.zsh
+%%DATADIR%%/plugins/rbw/README.md
+%%DATADIR%%/plugins/rbw/rbw.plugin.zsh
 %%DATADIR%%/plugins/react-native/README.md
 %%DATADIR%%/plugins/react-native/_react-native
 %%DATADIR%%/plugins/react-native/react-native.plugin.zsh
@@ -550,7 +561,8 @@
 %%DATADIR%%/plugins/ruby/README.md
 %%DATADIR%%/plugins/ruby/ruby.plugin.zsh
 %%DATADIR%%/plugins/rust/README.md
-%%DATADIR%%/plugins/rust/_rust
+%%DATADIR%%/plugins/rust/_rustc
+%%DATADIR%%/plugins/rust/rust.plugin.zsh
 %%DATADIR%%/plugins/rustup/README.md
 %%DATADIR%%/plugins/rustup/rustup.plugin.zsh
 %%DATADIR%%/plugins/rvm/README.md
@@ -690,7 +702,7 @@
 %%DATADIR%%/plugins/virtualenvwrapper/README.md
 %%DATADIR%%/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 %%DATADIR%%/plugins/volta/README.md
-%%DATADIR%%/plugins/volta/_volta
+%%DATADIR%%/plugins/volta/volta.plugin.zsh
 %%DATADIR%%/plugins/vscode/README.md
 %%DATADIR%%/plugins/vscode/vscode.plugin.zsh
 %%DATADIR%%/plugins/vundle/README.md
@@ -734,7 +746,6 @@
 %%DATADIR%%/plugins/zoxide/zoxide.plugin.zsh
 %%DATADIR%%/plugins/zsh-interactive-cd/README.md
 %%DATADIR%%/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
-%%DATADIR%%/plugins/zsh-navigation-tools/.config/znt/README.txt
 %%DATADIR%%/plugins/zsh-navigation-tools/.config/znt/n-aliases.conf
 %%DATADIR%%/plugins/zsh-navigation-tools/.config/znt/n-cd.conf
 %%DATADIR%%/plugins/zsh-navigation-tools/.config/znt/n-env.conf
@@ -749,6 +760,11 @@
 %%DATADIR%%/plugins/zsh-navigation-tools/NEWS
 %%DATADIR%%/plugins/zsh-navigation-tools/README.md
 %%DATADIR%%/plugins/zsh-navigation-tools/_n-kill
+%%DATADIR%%/plugins/zsh-navigation-tools/doc/generate_single_file
+%%DATADIR%%/plugins/zsh-navigation-tools/doc/img/n-history2.png
+%%DATADIR%%/plugins/zsh-navigation-tools/doc/install.sh
+%%DATADIR%%/plugins/zsh-navigation-tools/doc/n-preview
+%%DATADIR%%/plugins/zsh-navigation-tools/doc/znt-tmux.zsh
 %%DATADIR%%/plugins/zsh-navigation-tools/n-aliases
 %%DATADIR%%/plugins/zsh-navigation-tools/n-cd
 %%DATADIR%%/plugins/zsh-navigation-tools/n-env
@@ -764,7 +780,6 @@
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-cd-widget
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-history-widget
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-kill-widget
-%%DATADIR%%/plugins/zsh-navigation-tools/znt-tmux.zsh
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-usetty-wrapper
 %%DATADIR%%/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
 %%DATADIR%%/plugins/zsh_reload/README.md
