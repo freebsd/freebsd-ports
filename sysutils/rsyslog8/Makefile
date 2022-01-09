@@ -1,5 +1,6 @@
 PORTNAME=	rsyslog
 PORTVERSION=	8.2112.0
+PRTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -142,6 +143,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=	--enable-imdiag --enable-imfile --enable-impstats \
 			--enable-mail --enable-omprog --enable-omstdout \
 			--enable-omuxsock --enable-rfc3195 --disable-testbench \
+			--enable-pmciscoios \
 			ac_cv_func_inotify_init=no ac_cv_header_sys_inotify_h=no
 
 post-patch:
