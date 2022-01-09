@@ -1,5 +1,5 @@
 PORTNAME=	sway
-DISTVERSION=	1.7-rc1
+DISTVERSION=	1.7-rc2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
