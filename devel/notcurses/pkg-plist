@@ -76,6 +76,7 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%man/man1/notcurses-info.1.gz
 %%MANPAGES%%man/man1/notcurses-input.1.gz
 %%MANPAGES%%man/man1/notcurses-tester.1.gz
+%%MANPAGES%%man/man1/tfman.1.gz
 %%MANPAGES%%man/man3/notcurses.3.gz
 %%MANPAGES%%man/man3/notcurses_capabilities.3.gz
 %%MANPAGES%%man/man3/notcurses_cell.3.gz
