@@ -20,6 +20,8 @@ LICENSE=	GPLv2
 
 USES=		compiler:c++11-lang
 
+CONFLICTS_INSTALL=	mnogosearch # bin/indexer
+
 BUILD_DEPENDS=	gsed:textproc/gsed
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way

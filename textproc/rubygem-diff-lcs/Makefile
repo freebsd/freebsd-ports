@@ -19,6 +19,8 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	p5-HTML-Diff # bin/htmldiff
+
 PLIST_FILES=	bin/htmldiff bin/ldiff
 
 SHEBANG_FILES=	bin/htmldiff bin/ldiff

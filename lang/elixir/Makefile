@@ -21,6 +21,8 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
+CONFLICTS=	elixir-devel # bin/elixir bin/elixirc bin/iex
+
 USE_LOCALE=	en_US.UTF-8
 ALL_TARGET=	# empty
 

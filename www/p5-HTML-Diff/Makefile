@@ -16,4 +16,6 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	rubygem-diff-lcs # bin/htmldiff
+
 .include <bsd.port.mk>

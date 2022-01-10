@@ -22,9 +22,7 @@ GH_TUPLE=	cfengine:core:${CFENGINE_HASH} \
 		cfengine:libntech:${LIBNTECH_HASH}:libntech/libntech
 CPE_VENDOR=	gnu
 
-CONFLICTS=	cfengine-2* cfengine3[0-9]-* cfengine31[02-9]-* cfengine-3.*
-
-CONFLICTS=	cfengine-[12-9]*
+CONFLICTS=	cfengine cfengine3[0-9] cfengine3[0-9][0-9]
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 

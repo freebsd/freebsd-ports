@@ -14,6 +14,8 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	py*-python-dotenv # bin/dotenv
+
 PLIST_FILES=	bin/dotenv
 
 .include <bsd.port.mk>

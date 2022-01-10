@@ -21,6 +21,8 @@ GNUPLOT_DESC=	Support for plotting graphs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 
+CONFLICTS_INSTALL=	py*-Fiona
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fio ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/fio_generate_plots ${STAGEDIR}${PREFIX}/bin

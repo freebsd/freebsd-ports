@@ -26,4 +26,6 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	cpan-upload
+
 .include <bsd.port.mk>

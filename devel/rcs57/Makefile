@@ -9,7 +9,7 @@ COMMENT=	Version control system (as was in FreeBSD prior to removal)
 
 LICENSE=	GPLv2
 
-CONFLICTS=	rcs-5.[89]*
+CONFLICTS=	rcs
 
 OPTIONS_DEFINE=	FREEBSD
 OPTIONS_DEFAULT=	FREEBSD

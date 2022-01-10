@@ -29,6 +29,8 @@ SHEBANG_FILES=	dist/src/compile.pl \
 USE_PERL5=	configure
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	isc-cron mcron # bin/crontab
+
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql

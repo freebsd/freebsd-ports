@@ -20,6 +20,8 @@ USE_PERL5=	run
 USE_RC_SUBR=	apache24 htcacheclean
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	py*-circuits # bin/htpasswd
+
 CPE_VENDOR=	apache
 CPE_PRODUCT=	http_server
 

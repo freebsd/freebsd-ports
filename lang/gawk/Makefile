@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 
+CONFLICTS_INSTALL=	ja-gawk # bin/gawk
+
 OPTIONS_DEFINE=		NLS MPFR
 OPTIONS_SUB=		yes
 NLS_USES=		gettext

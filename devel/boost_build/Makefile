@@ -19,6 +19,8 @@ GH_ACCOUNT=	boostorg
 GH_PROJECT=	build
 GH_TAGNAME=	29baa79
 
+CONFLICTS_INSTALL=	b2
+
 SHEBANG_GLOB=	*.py
 
 SUB_FILES=	pkg-message

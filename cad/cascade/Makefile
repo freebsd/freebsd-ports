@@ -14,6 +14,8 @@ PORTDOCS=	ex1.gif index.html
 PORTEXAMPLES=	README.examples ex1.cas ex1.gif ex1.out cascade-mode.el
 PLIST_FILES=	bin/cascade man/man1/cascade.1.gz
 
+CONFLICTS_INSTALL=	cascade-compiler
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:

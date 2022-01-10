@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe zip
 USE_JAVA=	yes
+
+CONFLICTS_INSTALL=	gradle gradle62
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	gradle

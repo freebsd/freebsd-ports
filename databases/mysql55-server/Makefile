@@ -70,7 +70,7 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 .if !defined(CLIENT_ONLY)
 USES+=		mysql:55
 
-CONFLICTS_INSTALL=	mysql5[0-46-9]-server \
+CONFLICTS_INSTALL=	mysql*-server \
 			mysqlwsrep*-server \
 			mariadb*-server \
 			percona*-server
@@ -96,7 +96,7 @@ post-patch:
 post-install:
 	# Empty directory, but check-plist complains
 	@${RMDIR} ${STAGEDIR}${PREFIX}/info || ${TRUE}
-	
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7

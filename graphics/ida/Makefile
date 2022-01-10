@@ -22,6 +22,8 @@ MAKE_ARGS=	verbose=yes
 
 LDFLAGS+=	${ICONV_LIB}
 
+CONFLICTS_INSTALL=	exiftran
+
 PORTDOCS=	README TODO INSTALL
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida \
 		man/man1/exiftran.1.gz man/man1/ida.1.gz \

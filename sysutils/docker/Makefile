@@ -20,6 +20,8 @@ GH_PROJECT=		docker-ce
 
 USES=	cpe go
 
+CONFLICTS_INSTALL=	docker-tray # bin/docker
+
 GO_PKGNAME=	github.com/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cli/cmd/docker
 

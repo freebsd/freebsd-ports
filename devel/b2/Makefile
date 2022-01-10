@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0.8.0:devel/py-arrow@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 
+CONFLICTS_INSTALL=	boost_build
+
 NO_ARCH=	yes
 
 USE_GITHUB=	yes

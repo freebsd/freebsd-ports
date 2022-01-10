@@ -15,6 +15,8 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_CommandLine>=1.1.10:devel/pear-Console
 USES=		pear
 USE_PHP=	mbstring posix
 
+CONFLICTS_INSTALL=	php*-pear-Crypt_GPG # bin/crypt-gpg-pinentry
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

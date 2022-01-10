@@ -7,7 +7,7 @@ MAINTAINER=	mandree@FreeBSD.org
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
-CONFLICTS_INSTALL=	bogofilter bogofilter-kc bogofilter-sqlite *bogofilter-tc
+CONFLICTS_INSTALL=	bogofilter bogofilter-kc bogofilter-sqlite
 
 CONFIGURE_ARGS=	--with-database=lmdb
 BF_CPPFLAGS=	-I${LOCALBASE}/include

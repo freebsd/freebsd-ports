@@ -12,7 +12,7 @@ COMMENT=	Joe's Own Editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	joe-2.*
+CONFLICTS=	jupp
 
 USES=		gmake iconv localbase ncurses
 GNU_CONFIGURE=	yes

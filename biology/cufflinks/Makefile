@@ -26,6 +26,8 @@ GH_ACCOUNT=	cole-trapnell-lab
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 CFLAGS+=	-I${LOCALBASE}/include/eigen3 # https://github.com/cole-trapnell-lab/cufflinks/issues/113
 
+CONFLICTS_INSTALL=	gffread
+
 PLIST_FILES=	bin/compress_gtf \
 		bin/cuffcompare \
 		bin/cuffdiff \

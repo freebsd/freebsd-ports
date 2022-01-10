@@ -12,6 +12,8 @@ COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+CONFLICTS_INSTALL=	fasm-fpga SASM # bin/fasm
+
 ONLY_FOR_ARCHS=	amd64 i386
 IA32_BINARY_PORT=	yes
 

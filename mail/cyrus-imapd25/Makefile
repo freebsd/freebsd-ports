@@ -18,8 +18,7 @@ BROKEN_riscv64=		fails to build: lib/imapopts.c: Error 1
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
-CONFLICTS_INSTALL=	cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].* \
-			cyrus-imapd3*
+CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3? cyrus-imapd3?-http
 
 USES=		cpe libtool perl5 ssl
 USE_RC_SUBR=	imapd

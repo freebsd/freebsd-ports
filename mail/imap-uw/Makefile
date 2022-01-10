@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libc-client4.so.9:mail/cclient
 
-CONFLICTS_INSTALL=	panda-imap-20*
+CONFLICTS_INSTALL=	panda-imap # bin/dmail
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message

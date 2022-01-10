@@ -16,6 +16,8 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	akosela
 
+CONFLICTS_INSTALL=	clearsilver csound # bin/cs
+
 PLIST_FILES=	bin/cs man/man1/cs.1.gz
 
 GO_TARGET=	./cs

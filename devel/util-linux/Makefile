@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--disable-nls --disable-ipcrm --disable-ipcs \
 
 INSTALL_TARGET=	install-strip
 
-#CONFLICTS_INSTALL=	cal getopt flock hardlink # non-default options conflicts
+CONFLICTS_INSTALL=	heirloom-doctools
 
 OPTIONS_DEFINE=		CAL FLOCK GETOPT HARDLINK UUID
 OPTIONS_SUB=		yes

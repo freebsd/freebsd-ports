@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		zip>=0:archivers/zip
 
 CONFLICTS_BUILD=	brotli
-CONFLICTS_INSTALL=	czmq-3* mono5.10 mono5.20
+CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
 USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
 	pathfix perl5 python:3.6+ shebangfix tar:xz

@@ -14,6 +14,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xim --enable-big5
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS_INSTALL=	aterm
+
 PLIST_FILES=	"@(,,4711) bin/aterm" \
 		man/man1/aterm.1.gz
 

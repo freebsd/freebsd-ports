@@ -18,7 +18,7 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
 
-CONFLICTS_INSTALL=	cyrus-imapd-2.* cyrus-imapd2*
+CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3? cyrus-imapd3?-http
 
 USES=		compiler:c11 cpe gmake libtool perl5 pkgconfig ssl
 USE_RC_SUBR=	imapd

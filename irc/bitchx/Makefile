@@ -20,6 +20,8 @@ CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
 
+CONFLICTS_INSTALL=	zh-bitchx
+
 OPTIONS_SUB=	yes
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}

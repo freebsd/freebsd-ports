@@ -23,6 +23,8 @@ USE_PERL5=	modbuild
 CFLAGS_amd64=	-fPIC
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	btparse # bin/bibparse
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbtparse.so

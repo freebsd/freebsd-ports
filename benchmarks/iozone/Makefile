@@ -19,6 +19,8 @@ MAKE_ARGS=	${MAKE_ENV}
 ALL_TARGET=	freebsd
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS_INSTALL=	iozone21
+
 PLIST_FILES=	bin/iozone man/man1/iozone.1.gz
 
 OPTIONS_DEFINE=	SSH THREADS

@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_ssl_OPENSSL_init_ssl=yes
 
+CONFLICTS_INSTALL=	capnproto080
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 

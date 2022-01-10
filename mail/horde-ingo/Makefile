@@ -30,4 +30,6 @@ USE_HORDE_RUN=	Horde_Role \
 RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:net/pear-Net_Sieve@${PHP_FLAVOR} \
 		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
 
+CONFLICTS_INSTALL=	php*-horde-ingo
+
 .include <bsd.port.mk>

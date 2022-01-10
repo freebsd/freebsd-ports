@@ -31,7 +31,7 @@ PORTDOCS=	00.READ.ME.1ST CHANGES.JP COMMANDS.JP FAQ.JP FEATURES.JP \
 		INSTALL.JP OPTIONS.JP READ-ME.JP TODO.JP
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
-CONFLICTS=	nmh
+CONFLICTS=	ali mmh nmh p5-Dist-Joseki # bin/ali bin/anno bin/burst bin/comp bin/dist bin/folder bin/folders bin/forw bin/inc
 
 OPTIONS_DEFINE=	DOCS
 

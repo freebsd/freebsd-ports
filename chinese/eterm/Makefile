@@ -14,6 +14,8 @@ CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset=big5
 
+CONFLICTS_INSTALL=	eterm ja-eterm
+
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 

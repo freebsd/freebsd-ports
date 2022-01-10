@@ -49,7 +49,7 @@ UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 PORTDOCS=	*
 
-CONFLICTS=	freetds-1.*
+INSTALL=	freetds
 
 PORTSCOUT=	limit:^\d+\.\d+\.\d{3}$
 

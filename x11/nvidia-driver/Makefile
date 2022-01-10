@@ -125,6 +125,7 @@ PLIST_SUB+=	LIBGLDIR=${LIBGLDIR} LIBGLMAP="@comment "
 PLIST_SUB+=	LIBGLDIR="@comment " LIBGLMAP=""
 .endif
 
+CONFLICTS_INSTALL+=	nvidia-driver nvidia-driver-*
 .if ${PORTNAME} != nvidia-secondary-driver
 CONFLICTS_INSTALL+=	nvidia-secondary-driver
 .endif

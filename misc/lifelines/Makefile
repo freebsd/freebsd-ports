@@ -16,6 +16,8 @@ USES=		autoreconf bison gmake iconv ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC="bison -y"
 
+CONFLICTS_INSTALL=	atheme-services # bin/dbverify
+
 MAKE_JOBS_UNSAFE=yes
 
 # Lifelines always installs documenatation.  This is contrary to the FreeBSD

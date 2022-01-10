@@ -11,7 +11,7 @@ COMMENT=	Simple news server for hosts with one or two users
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
-CONFLICTS=	leafnode-[1-9]* nntp
+CONFLICTS=	cnews nntp trn4 # bin/inews sbin/nntpd
 
 CONFIGURE_ARGS+= \
 		--with-confdir=${PREFIX}/etc/s-news \

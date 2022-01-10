@@ -15,6 +15,8 @@ BUILD_DEPENDS=	help2man:misc/help2man
 USES=		tar:xz
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	py*-dateutils
+
 INFO=		dateutils
 
 OPTIONS_DEFINE=	DOCS

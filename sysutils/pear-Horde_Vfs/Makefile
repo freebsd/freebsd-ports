@@ -18,4 +18,6 @@ USES=	horde
 FTP_USES=	php
 FTP_USE=	PHP=ftp
 
+CONFLICTS_INSTALL=	php*-pear-Horde_Vfs # bin/horde-vfs
+
 .include <bsd.port.mk>

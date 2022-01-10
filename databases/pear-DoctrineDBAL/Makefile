@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PEARDIR}/Doctrine/Common/Version.php:databases/pear-DoctrineCommon@${PHP_FLAVOR} \
 		${PEARDIR}/Symfony/Component/Console/Application.php:devel/pear-Symfony_Component_Console@${PHP_FLAVOR}
 
+CONFLICTS_INSTALL=	php*-pear-doctrine-DoctrineDBAL
+
 OPTIONS_DEFINE=	DBLIB MYSQL ODBC PGSQL SQLITE
 OPTIONS_DEFAULT=MYSQL
 

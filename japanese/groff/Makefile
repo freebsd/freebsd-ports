@@ -38,7 +38,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/${PORTVERSION}
 INFO=		groff
 
-CONFLICTS=	groff mdocml
+CONFLICTS=	groff heirloom-doctools # bin/groff bin/hpftodit bin/indxbib
 
 TMAC_DISTNAME=	tmac-20030521_2
 TMACFILES=	tmac.orig_me tmac.vgrind \

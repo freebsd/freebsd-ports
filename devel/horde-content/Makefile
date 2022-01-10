@@ -18,4 +18,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Rdo \
 		Horde_Util
 
+CONFLICTS_INSTALL=	php*-horde-content
+
 .include <bsd.port.mk>

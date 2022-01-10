@@ -15,6 +15,8 @@ USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CFLAGS="${CFLAGS}"
 WRKSRC_SUBDIR=	src
 
+CONFLICTS_INSTALL=	py*-jsondiff # bin/jdiff
+
 PLIST_FILES=	bin/jdiff bin/jptch
 PORTDOCS=	readme.txt readme.htm
 

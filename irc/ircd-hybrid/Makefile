@@ -18,6 +18,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
+CONFLICTS_INSTALL=	ircd-ratbox ircd-ratbox-devel
+
 USERS=		ircd
 GROUPS=		${USERS}
 

@@ -17,6 +17,8 @@ GH_PROJECT=	cli
 
 USES=		go
 
+CONFLICTS_INSTALL=	lbl-cf # bin/cf
+
 GO_BUILDFLAGS=	-ldflags="-X code.cloudfoundry.org/cli/version.binaryVersion=${PORTVERSION}"
 GO_PKGNAME=	code.cloudfoundry.org/cli
 GO_TARGET=	:cf

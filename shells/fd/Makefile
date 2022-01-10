@@ -15,6 +15,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		PREFIX="\$$(DESTDIR)${PREFIX}" \
 		CONFDIR="\$$(DESTDIR)${PREFIX}/etc" \
 
+CONFLICTS_INSTALL=	fd-find # bin/fd
+
 DOCS_EN=	FAQ.eng \
 		LICENSES.eng \
 		README.eng \

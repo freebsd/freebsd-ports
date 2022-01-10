@@ -15,6 +15,9 @@ GH_PROJECT=	beanshell
 
 USE_JAVA=	8
 USE_ANT=	yes
+
+COMFLICTS_INSTALL=	schilyutils # bin/bsh
+
 ALL_TARGET=	jarall
 
 SUB_FILES=	${PORTNAME}.sh

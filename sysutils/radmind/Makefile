@@ -20,6 +20,8 @@ USE_RC_SUBR=	radmind
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-radminddir=${RADMIND_BASE_DIR}
 
+CONFLICTS_INSTALL=	schilyutils # bin/fsdiff
+
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES+=	pkg-install pkg-message

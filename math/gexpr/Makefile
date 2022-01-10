@@ -11,6 +11,8 @@ COMMENT=	Shell calculator
 
 LICENSE=	GPLv2
 
+CONFLICTS_INSTALL=	coreutils # bin/gexpr
+
 PLIST_FILES=	bin/gexpr man/man1/gexpr.1.gz
 
 post-patch:

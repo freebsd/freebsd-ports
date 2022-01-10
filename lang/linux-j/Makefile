@@ -20,6 +20,8 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 USES=		linux
 USE_JAVA=	yes
 
+CONFLICTS_INSTALL=	docbook-utils # bin/jw
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_WRKSUBDIR=	yes

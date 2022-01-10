@@ -23,6 +23,8 @@ GH_ACCOUNT=	icinga
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	icingaweb2-php* # bin/icingacli
+
 SUB_FILES=	pkg-message
 SUB_LIST=	ETCDIR=${ETCDIR} \
 		EXAMPLESDIR=${EXAMPLESDIR} \

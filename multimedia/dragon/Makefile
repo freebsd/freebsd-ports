@@ -17,6 +17,8 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
 		buildtools_build qmake_build
 
+CONFLICTS_INSTALL=	dragon # bin/dragon
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

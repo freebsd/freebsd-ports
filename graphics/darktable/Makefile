@@ -46,6 +46,8 @@ USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	ice sm x11 xext xrandr
 
+CONFLICTS_INSTALL=	darktable38
+
 SHEBANG_FILES=	tools/*.sh
 
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1 \

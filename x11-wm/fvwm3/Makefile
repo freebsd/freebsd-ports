@@ -19,7 +19,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 USES=		compiler:c11 cpe pkgconfig python:3.7+ readline xorg
 USE_XORG=	ice sm x11 xext xft xrandr xrender xt
 
-CONFLICTS_INSTALL=	fvwm-2.*
+CONFLICTS_INSTALL=	fvwm
 
 CPE_VENDOR=	fvwm
 CPE_PRODUCT=	fvwm

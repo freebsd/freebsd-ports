@@ -18,6 +18,8 @@ RUN_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 USES=		zip
 USE_JAVA=	yes
 
+CONFLICTS_INSTALL=	zenity # bin/gdialog
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	gdialog

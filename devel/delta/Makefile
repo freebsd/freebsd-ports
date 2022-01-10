@@ -15,6 +15,8 @@ USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	delta multidelta
 
+CONFLICTS_INSTALL=	git-delta
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/delta ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/multidelta ${STAGEDIR}${PREFIX}/bin

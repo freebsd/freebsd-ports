@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--enable-fhs-paths \
 
 CPE_PRODUCT=	atheme
 
+CONFLICTS_INSTALL=	lifelines
+
 USERS=		ircservices
 GROUPS=		ircservices
 

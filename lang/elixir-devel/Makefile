@@ -23,7 +23,7 @@ GH_ACCOUNT=	elixir-lang
 USE_LOCALE=	en_US.UTF-8
 ALL_TARGET=	# empty
 
-CONFLICTS=	elixir
+CONFLICTS=	elixir # bin/elixir bin/elixirc bin/iex
 
 REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes

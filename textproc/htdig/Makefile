@@ -31,6 +31,8 @@ INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
 
+CONFLICTS_INSTALL=	htdump mifluz # bin/htdb_dump bin/htdb_load bin/htdb_stat bin/htdump
+
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_DEFAULT=	APACHE
 

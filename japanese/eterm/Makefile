@@ -17,6 +17,8 @@ CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset=kanji
 
+CONFLICTS_INSTALL=	eterm zh-eterm # bin/Eterm
+
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 

@@ -17,6 +17,8 @@ LIB_DEPENDS=	libexif.so:graphics/libexif
 USES=		jpeg uidfix xorg
 USE_XORG=	pixman
 
+CONFLICTS_INSTALL=	ida
+
 MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man
 PLIST_FILES=	bin/exiftran bin/thumbnail.cgi \
 		man/man1/exiftran.1.gz

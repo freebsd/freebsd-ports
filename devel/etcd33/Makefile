@@ -73,8 +73,7 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 GO_PKGNAME=	github.com/coreos/etcd
 GO_TARGET=	. ./etcdctl
 
-CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd32-* \
-			coreos-etcd34-* coreos-etcdctl-0.*
+CONFLICTS_INSTALL=	coreos-etcd[0-9][0-9]
 
 PLIST_FILES=	bin/etcd \
 		bin/etcdctl

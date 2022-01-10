@@ -20,4 +20,6 @@ CONFIGURE_ARGS+=	--without-python
 
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	graphviz # bin/cluster
+
 .include <bsd.port.mk>

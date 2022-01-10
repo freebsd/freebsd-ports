@@ -18,6 +18,8 @@ PLIST_FILES=	bin/cf \
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	cf # bin/cf
+
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/cf
 

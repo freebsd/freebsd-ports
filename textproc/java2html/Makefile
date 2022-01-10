@@ -12,6 +12,9 @@ COMMENT=	Java sources to HTML converter
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	source-highlight # bin/java2html
+
 PORTDOCS=	AUTHORS NEWS README
 PLIST_FILES=	bin/java2html man/man1/java2html.1.gz
 

@@ -13,4 +13,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
 USE_PHP=	json
 
+CONFLICTS_INSTALL=	php*-pear-horde-Horde_Prefs
+
 .include <bsd.port.mk>

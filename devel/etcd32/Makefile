@@ -19,8 +19,7 @@ GH_ACCOUNT=	coreos
 GO_PKGNAME=	github.com/coreos/etcd
 GO_TARGET=	./cmd/etcd ./cmd/etcdctl
 
-CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd33-* \
-			coreos-etcd34-* coreos-etcdctl-0.*
+CONFLICTS_INSTALL=	coreos-etcd[0-9][0-9]
 
 PLIST_FILES=	bin/etcd \
 		bin/etcdctl

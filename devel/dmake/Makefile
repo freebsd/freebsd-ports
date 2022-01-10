@@ -20,6 +20,8 @@ GH_ACCOUNT=	jimjag
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 
+CONFLICTS_INSTALL=	sunpromake
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/dmake.tf ${STAGEDIR}${PREFIX}/man/man1/dmake.1
 

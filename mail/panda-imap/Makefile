@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
 GH_TAGNAME=	7905901
 
-CONFLICTS_INSTALL=	imap-uw-20* courier-0.65.*
+CONFLICTS_INSTALL=	imap-uw # bin/dmail
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message

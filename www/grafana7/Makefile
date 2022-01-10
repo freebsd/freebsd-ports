@@ -24,6 +24,8 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		cpe go:modules
 
+CONFLICTS_INSTALL=	grafana* # bin/grafana-cli bin/grafana-server
+
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \

@@ -11,6 +11,8 @@ LICENSE_NAME=	License of hextools
 LICENSE_FILE=	${WRKDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+CONFLICTS_INSTALL=	z80pack # bin/bin2hex
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/hex2bin bin/bin2hex man/man1/bin2hex.1.gz man/man1/hex2bin.1.gz

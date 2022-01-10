@@ -18,6 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jjwhitney
 GH_PROJECT=	BDelta
 
+CONFLICTS_INSTALL=	bpatch # bin/bpatch
+
 PLIST_FILES=	bin/bdelta bin/bpatch lib/libbdelta.so
 PORTDOCS=	README
 

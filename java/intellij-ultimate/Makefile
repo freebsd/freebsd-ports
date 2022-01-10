@@ -27,7 +27,7 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py \
 		plugins/spy-js/server/proxy-nix.sh \
 		plugins/spy-js/server/proxy-osx.sh
 
-CONFLICTS=	intellij-20*
+CONFLICTS=	idea intellij
 
 NO_ARCH=	yes
 NO_ARCH_IGNORE=	libjansi.so

@@ -27,6 +27,8 @@ GH_PROJECT=	foundationdb
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
+CONFLICTS_INSTALL=	foundationdb-devel
+
 SHEBANG_FILES=	bindings/c/generate_asm.py
 
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLLIB}

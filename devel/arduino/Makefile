@@ -30,6 +30,8 @@ JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 JAVA_RUN=	yes
 
+CONFLICTS_INSTALL=	arduino18
+
 NO_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/arduino/lib
 

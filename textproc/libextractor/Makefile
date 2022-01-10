@@ -22,6 +22,8 @@ CPE_VENDOR=	gnu
 USE_GNOME=	gtk20 gdkpixbuf2
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	csound outguess # bin/extract
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk-version=2 \
 		--with-ltdl=${LOCALBASE}

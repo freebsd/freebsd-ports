@@ -29,7 +29,7 @@ CONFIG_INFO_DESC=	Add the ares_config_info patch
 HIDE_SYMBOLS_DESC=	Hide internal library symbols
 OPTIMIZED_CFLAGS_DESC=	Build with compiler optimizations
 
-CONFLICTS=		ares-1.*
+CONFLICTS=		py*-ripe.atlas.tools
 
 MAKE_JOBS_UNSAFE=	yes
 

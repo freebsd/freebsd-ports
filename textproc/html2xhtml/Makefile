@@ -9,6 +9,8 @@ COMMENT=	Convert HTML to XHTML
 GNU_CONFIGURE=	yes
 USES=		iconv
 
+CONFLICTS_INSTALL=	p5-HTML-HTML5-Parser p5-XML-Driver-HTML # bin/html2xhtml
+
 PLIST_FILES=	bin/dtdquery \
 		bin/html2xhtml \
 		man/man1/html2xhtml.1.gz

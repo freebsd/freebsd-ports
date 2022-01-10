@@ -42,7 +42,7 @@ TEST_ENV=	PYTHON_VERSION=${PYTHON_VER} \
 		TEST_FLAGS=-vv
 TEST_TARGET=	tests
 
-CONFLICTS=	py*-ansible-core
+CONFLICTS=	py*-ansible-core py*-ansible2
 
 NO_ARCH=	yes
 

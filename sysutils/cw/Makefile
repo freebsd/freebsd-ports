@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		shebangfix
 
+CONFLICTS_INSTALL=	unixcw # bin/cw
+
 SHEBANG_FILES=	def/*
 SHEBANG_LANG=	cw
 cw_OLD_CMD=	/cw

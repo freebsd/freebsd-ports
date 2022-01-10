@@ -19,7 +19,7 @@ SETUID_DESC=	Install cdrecord, cdda2wav, and readcd as setuid root
 SETUID_PLIST_SUB=	SUID="@(root,,4711) "
 SETUID_PLIST_SUB_OFF=	SUID="@(,,755) "
 
-CONFLICTS_INSTALL=	cdrkit-* cdrtools-devel cdrtools-rscsi-devel
+CONFLICTS_INSTALL=	cdrkit
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	cdda2wav \

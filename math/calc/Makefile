@@ -15,6 +15,8 @@ USES=		gmake tar:bzip2 readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	lcn2
 
+CONFLICTS_INSTALL=	schilyutils # bin/calc
+
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
 

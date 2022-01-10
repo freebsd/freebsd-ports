@@ -7,7 +7,7 @@ USES+=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	man2html/man2html cstyle/cstyle.pl
 
-CONFLICTS_INSTALL=	bsh
+CONFLICTS_INSTALL=	bosh-cli bsh calc clusterit deforaos-browser heirloom-sh latte-integrale p5-Math-SigFigs radmind # bin/bosh bin/bsh bin/calc bin/copy bin/count bin/fsdiff bin/jsh
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	bsh \

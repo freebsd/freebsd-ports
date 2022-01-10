@@ -22,6 +22,8 @@ CONFIGURE_ARGS=	--program-prefix=g	\
 		--program-transform-name=s/stat/nustat/
 CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
 
+CONFLICTS_INSTALL=	gdu geneweb gexpr rubygem-god # bin/gdu bin/gexpr bin/god bin/gwc
+
 INFO=		coreutils
 
 OPTIONS_DEFINE=	GMP NLS

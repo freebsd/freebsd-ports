@@ -15,4 +15,6 @@ USE_LDCONFIG=	yes
 USES=		perl5 libtool pathfix
 USE_PERL5=	build
 
+CONFLICTS_INSTALL=	p5-Text-BibTeX # bin/bibparse
+
 .include <bsd.port.mk>

@@ -40,7 +40,7 @@ LDFLAGS+=		-g
 DEBUG_FLAGS+=		-O0 -Wall -Wextra -g
 .endif
 
-CONFLICTS=		ja-mh nmh p5-Dist-Joseki
+CONFLICTS=		ali ja-mh nmh p5-Dist-Joseki
 
 post-install:
 	@${FIND} ${STAGEDIR}${ETCDIR} -type f -exec ${MV} {} {}.sample \;

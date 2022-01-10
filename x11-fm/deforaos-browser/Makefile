@@ -31,6 +31,8 @@ USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 
+
+CONFLICTS_INSTALL=	schilyutils silo # bin/browser bin/copy
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh

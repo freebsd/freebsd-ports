@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gettext localbase sdl tar:bzip2
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	chroma-syntax-highlighter
+
 PORTDOCS=	*
 PORTDATA=	*
 

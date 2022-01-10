@@ -10,6 +10,8 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
+CONFLICTS_INSTALL=	json2yaml # bin/json2yaml
+
 USE_CABAL=	aeson-1.4.7.1_1 \
 		attoparsec-0.13.2.4 \
 		base-compat-0.11.1 \

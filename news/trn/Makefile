@@ -11,7 +11,7 @@ COMMENT=	Threaded Read News newsreader
 
 RUN_DEPENDS=	munpack:converters/mpack
 
-CONFLICTS_INSTALL=trn-4.[0-9]*
+CONFLICTS_INSTALL=	s-news trn4
 
 USES=		ncurses
 WRKSRC=		${WRKDIR}/trn-3.6

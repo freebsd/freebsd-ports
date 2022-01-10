@@ -20,6 +20,8 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 NO_BUILD=	yes
 USES=		ghostscript:run magick:6,run perl5
 
+CONFLICTS_INSTALL=	p5-DocSet # bin/html2ps
+
 SUB_FILES=	html2psrc
 
 PLIST_FILES=	bin/html2ps \

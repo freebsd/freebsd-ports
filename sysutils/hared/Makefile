@@ -23,7 +23,7 @@ GH_TUPLE=	go-gcfg:gcfg:f02745a:gcfg/vendor/gopkg.in/gcfg.v1 \
 
 GO_TARGET=	./daemon:${PORTNAME}
 
-CONFLICTS_INSTALL=	py-${PORTNAME}
+CONFLICTS_INSTALL=	py*-${PORTNAME} # bin/hared
 
 OPTIONS_DEFINE=	DOCS
 

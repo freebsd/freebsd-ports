@@ -9,6 +9,8 @@ COMMENT?=	Wrapper script for GNU autoconf
 
 LICENSE=	BSD2CLAUSE
 
+CONFLICTS_INSTALL=	autoscan
+
 WRKSRC=		${WRKDIR}
 NO_ARCH=	yes
 NO_BUILD=	YES

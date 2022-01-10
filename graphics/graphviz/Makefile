@@ -34,6 +34,9 @@ CFLAGS_armv7=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
 		-fno-builtin-sincosf -fno-builtin-sinf -fno-builtin-cosf \
 		-fno-builtin-sincosl -fno-builtin-sinl -fno-builtin-cosl
 MAKE_ENV=	EXPR_COMPAT=yes
+
+CONFLICTS_INSTALL=	ghmm
+
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

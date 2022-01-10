@@ -18,6 +18,8 @@ USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	align width
 USE_PERL5=	run
 
+CONFLICTS_INSTALL=	fasta # bin/align
+
 PLIST_FILES=	bin/align bin/width
 
 do-install:

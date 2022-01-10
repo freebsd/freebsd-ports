@@ -28,6 +28,8 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fcommon
 
+CONFLICTS_INSTALL=	gnupg # bin/dirmngr bin/dirmngr-client
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

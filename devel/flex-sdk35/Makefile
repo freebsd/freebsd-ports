@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
 
-CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk-4.*
+CONFLICTS=	flex-sdk
 USES=		zip
 USE_JAVA=	yes
 SUB_FILES=	${SCRIPTS:C/\$/.sh/g}

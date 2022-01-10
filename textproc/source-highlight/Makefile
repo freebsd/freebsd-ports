@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--with-bash-completion
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	java2html # bin/java2html
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	*

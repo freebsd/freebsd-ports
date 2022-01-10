@@ -6,9 +6,7 @@ PKGNAMESUFFIX=	-lts
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system, long-time-support version
 
-CONFLICTS_INSTALL=	subversion-1.[0-9].[0-9]* \
-			subversion-1.1[0-9].[0-9]* \
-			subversion1[0-9]-1.[0-9].[0-9]*
+CONFLICTS_INSTALL=	subversion
 
 USE_RC_SUBR=	svnserve
 

@@ -13,7 +13,7 @@ COMMENT?=	Graphics library for fast creation of images
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	bazaar-1.*
+CONFLICTS_INSTALL=	libgd ??-libgd mummer # bin/bdftogd bin/gd2copypal bin/gd2togif bin/gd2topng bin/gdcmpgif bin/gdlib-config bin/gdparttopng bin/gdtopng bin/giftogd2
 
 USES=		cpe tar:xz pkgconfig pathfix libtool:keepla shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd

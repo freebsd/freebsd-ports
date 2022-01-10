@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_RUBY=	yes
 USES=		gem
 
+CONFLICTS_INSTALL=	coreutils # bin/god
+
 PLIST_FILES=	bin/god
 
 .include <bsd.port.mk>

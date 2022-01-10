@@ -14,6 +14,8 @@ RUN_DEPENDS=	rubygem-i18n>=1.6,2<2,2:devel/rubygem-i18n
 USES=		gem
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	py*-Faker
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/faker

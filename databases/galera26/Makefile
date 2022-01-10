@@ -39,6 +39,8 @@ CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	garb.sh
 
+CONFLICTS_INSTALL=      galera
+
 PLIST_FILES=	bin/garbd \
 		lib/libgalera.so \
 		lib/libgalera_smm.so

@@ -32,6 +32,9 @@ CONFIGURE_ARGS+=	--with-optimization \
 		--with-helpurl="${DOCSDIR}/index.html"
 CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 -D__FREEBSD__
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFLICTS_INSTALL=	ocaml-dune
+
 ALL_TARGET=	dune
 
 OPTIONS_DEFINE=	DOCS

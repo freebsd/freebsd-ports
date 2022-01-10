@@ -37,4 +37,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_View \
 		Horde_Vfs
 
+CONFLICTS_INSTALL=	php*-horde-ansel # bin/AnselPublish.scpt bin/ansel bin/ansel-convert-sql-shares-to-sqlng bin/ansel-exif-to-tags bin/ansel-garbage-collection
+
 .include <bsd.port.mk>

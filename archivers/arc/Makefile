@@ -10,7 +10,7 @@ COMMENT=	Create & extract files from DOS .ARC files
 
 LICENSE=	GPLv2
 
-CONFLICTS=	php5-arcanist
+CONFLICTS_INSTALL= arcanist-php73 arcanist-php74 arcanist-php80
 
 OPTIONS_DEFINE=	DOCS
 

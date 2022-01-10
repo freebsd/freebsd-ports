@@ -16,6 +16,8 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ogham
 
+CONFLICTS_INSTALL=	py*-datadog
+
 CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
 		ansi_term-0.11.0 \

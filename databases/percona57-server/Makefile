@@ -109,7 +109,7 @@ USES+=mysql:57p
 CONFLICTS_INSTALL=	mysql*-server \
 			mysqlwsrep*-server \
 			mariadb*-server \
-			percona5[0-68-9]-server
+			percona*-server
 
 USE_RC_SUBR=	mysql-server
 

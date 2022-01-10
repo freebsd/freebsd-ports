@@ -24,6 +24,8 @@ CXXFLAGS_clang=	-Wno-c++11-narrowing
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	htdig # bin/htdb_dump bin/htdb_load bin/htdb_stat
+
 SUB_FILES=	pkg-message
 
 INFO=		mifluz

@@ -22,6 +22,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=	tar:Z
 
+CONFLICTS_INSTALL=	 rubygem-amatch # bin/agrep
+
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/agrep man/man1/agrep.1.gz

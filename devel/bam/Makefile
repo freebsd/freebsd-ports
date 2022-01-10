@@ -12,6 +12,8 @@ LICENSE=	ZLIB
 
 USES=		compiler tar:bzip2
 
+CONFLICTS_INSTALL=	bamutil
+
 PLIST_FILES=	bin/bam
 
 .include <bsd.port.pre.mk>

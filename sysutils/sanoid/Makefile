@@ -24,6 +24,8 @@ GH_ACCOUNT=	jimsalterjrs
 USE_PERL5=	run
 SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
 
+CONFLICTS_INSTALL=	sanoid-devel # bin/findoid
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=		deforaos-browser # bin/browser
+
 OPTIONS_DEFINE=			FORTRAN HDF5 PYTHON
 OPTIONS_DEFAULT=		HDF5
 OPTIONS_SUB=			yes

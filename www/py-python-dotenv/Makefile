@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+CONFLICTS_INSTALL=	rubygem-dotenv # bin/dotenv
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	CLI

@@ -51,6 +51,8 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xrandr
 
+CONFLICTS_INSTALL=	darktable
+
 SHEBANG_FILES=	tools/*.sh
 
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1 \

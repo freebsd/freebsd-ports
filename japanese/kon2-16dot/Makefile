@@ -25,6 +25,8 @@ SUB_LIST=	KON16FONT=${KON16FONT} \
 USES=		cpe
 CPE_VENDOR=	ishikawa_mutsumi
 
+CONFLICTS_INSTALL=	ja-kon2-*dot # bin/fld
+
 OPTIONS_DEFINE=	DOCS
 
 # XXX Static libraries with PIE are currently unsupported.

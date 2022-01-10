@@ -23,6 +23,9 @@ GH_PROJECT=	BrogueCE
 .if ${FLAVOR} == x11
 USES+=		sdl
 USE_SDL=	image2 sdl2
+CONFLICTS_INSTALL=	brogue-nox11
+.else
+CONFLICTS_INSTALL=	brogue
 .endif
 
 MAKE_ARGS=	DATADIR=${DATADIR} \

@@ -17,4 +17,6 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	p5-SGML-DTDParse # bin/dtddiff bin/dtddiff2html bin/dtdflatten bin/dtdformat bin/dtdparse
+
 .include <bsd.port.mk>

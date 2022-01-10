@@ -14,6 +14,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-apache --disable-perl --disable-ruby \
 		--disable-java --disable-csharp --disable-python
 
+CONFLICTS_INSTALL=	csound go-cs # bin/cs
+
 post-patch:
 	@# Remove CFLAGS when building the python module, pydistfile is used
 	@# and will do the right thing.

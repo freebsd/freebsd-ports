@@ -50,4 +50,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Vfs \
 		Horde_View
 
+CONFLICTS_INSTALL=	php*-horde-imp
+
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ USES=		bdb ssl
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	mailutils # bin/dotlock
+
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 

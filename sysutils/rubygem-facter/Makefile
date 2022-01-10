@@ -19,6 +19,8 @@ USES=		cpe gem
 CPE_VENDOR=	puppet
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	facter # bin/facter
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/facter ${GEMS_DIR}/facter

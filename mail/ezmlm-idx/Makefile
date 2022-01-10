@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		groff qmail:run
 
-CONFLICTS=	ezmlm-0.*
+CONFLICTS=	ezmlm # bin/ezmlm-list bin/ezmlm-make bin/ezmlm-manage bin/ezmlm-reject bin/ezmlm-return bin/ezmlm-send bin/ezmlm-sub bin/ezmlm-unsub bin/ezmlm-warn bin/ezmlm-weed
 
 SUB_FILES=	pkg-message
 

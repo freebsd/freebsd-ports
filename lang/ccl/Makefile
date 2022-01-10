@@ -24,6 +24,8 @@ EXCLUDE=	cocoa-ide lisp-kernel scripts fx86cl fx86cl.image
 
 USE_ASDF=	yes
 
+CONFLICTS_INSTALL=	cclive # bin/ccl
+
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
 BUILD_DEPENDS+=	as:devel/binutils

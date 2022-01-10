@@ -13,6 +13,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	coin-or-disco mono mono[0-9]* # bin/disco
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/disco bin/disco.fp

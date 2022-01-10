@@ -13,6 +13,8 @@ LIB_DEPENDS=	libreadline.so:devel/readline
 
 USES=		compiler:c11
 
+CONFLICTS_INSTALL=	cpmtools
+
 MAKEFILE=	Makefile_freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin \
 		DESTDIR="${STAGEDIR}" \

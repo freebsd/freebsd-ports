@@ -15,6 +15,8 @@ CONFLICTS_INSTALL=	rubygem-bosh_cli
 
 USES=		go tar:xz
 
+CONFLICTS_INSTALL=	schilyutils # bin/bosh
+
 GO_PKGNAME=	github.com/cloudfoundry/bosh-cli
 
 PLIST_FILES=	bin/bosh

@@ -15,6 +15,8 @@ USE_PYTHON=	allflavors autoplist concurrent distutils
 USE_GITHUB=	yes
 GH_TAGNAME=	2b1e743
 
+CONFLICTS_INSTALL=	py*-cython # bin/cygdb bin/cygdb-3.8 bin/cython bin/cython-3.8 bin/cythonize bin/cythonize-3.8
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython -name '*.so' -exec ${STRIP_CMD} {} +
 

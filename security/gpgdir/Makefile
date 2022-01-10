@@ -21,6 +21,8 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	gpgdir
 
+CONFLICTS_INSTALL=	signing-party # bin/gpgdir
+
 PLIST_FILES=	bin/gpgdir man/man1/gpgdir.1.gz
 
 do-install:

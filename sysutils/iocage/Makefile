@@ -37,7 +37,7 @@ USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS=	py*-iocage
+CONFLICTS=	py*-iocage py*-iocage-devel
 NO_ARCH=	yes
 
 PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \

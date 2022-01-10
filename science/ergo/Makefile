@@ -19,6 +19,8 @@ SHEBANG_FILES=	test/check_eigenvectors.sh test/compare_homo_lumo.sh
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	ergo-irc-server # bin/ergo
+
 TEST_TARGET=	check
 
 OPTIONS_DEFINE_amd64=	SSE

@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-sqlite
 MAINTAINER=	mandree@FreeBSD.org
 
 USES=		sqlite
-CONFLICTS_INSTALL=	bogofilter bogofilter-lmdb bogofilter-kc bogofilter-tc
+CONFLICTS_INSTALL=	bogofilter bogofilter-lmdb bogofilter-kc
 
 CONFIGURE_ARGS=	--with-database=sqlite
 BF_CPPFLAGS=	-I${LOCALBASE}/include

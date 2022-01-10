@@ -34,6 +34,8 @@ SHEBANG_FILES=	data/hxtools_bashrc.bash data/hxtools_profile.bash \
 USE_PERL5=	run
 USE_XORG=	xcb
 
+CONFLICTS_INSTALL=	grx psptoolchain-pspsdk-stage2 # bin/bin2c
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:

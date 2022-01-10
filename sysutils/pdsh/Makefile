@@ -17,6 +17,9 @@ USES=		autoreconf gmake libtool:keepla perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	chaos
 USE_PERL5=	run
+
+CONFLICTS_INSTALL=	clusterit # bin/dshbak
+
 SHEBANG_FILES=	scripts/dshbak
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

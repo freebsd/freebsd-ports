@@ -39,7 +39,7 @@ TEST_ARGS=	VERSION=${DISTVERSION} \
 TEST_ENV=	PYTHON_VERSION=${PYTHON_VER}
 TEST_TARGET=	tests
 
-CONFLICTS=	py*-ansible-base
+CONFLICTS=	py*-ansible-base py*-ansible2
 
 NO_ARCH=	yes
 

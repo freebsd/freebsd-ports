@@ -21,6 +21,8 @@ USE_PERL5=	run
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	bibutils sowing # bin/bib2html bin/bib2xml
+
 post-patch:
 .for i in bib2html bib2sql bib2xml
 	@${SED} -e \

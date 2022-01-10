@@ -39,6 +39,8 @@ GO_BUILDFLAGS=		-ldflags='-X main.BuildVersion=${DISTVERSION}'
 
 USE_RC_SUBR=		${PORTNAME}
 
+CONFLICTS_INSTALL=	carbonapi # bin/carbonzipper
+
 USERS=			carbon
 GROUPS=			carbon
 

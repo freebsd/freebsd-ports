@@ -19,7 +19,7 @@ USES=		python:3.5+
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	html2text py*-html2text2018
+CONFLICTS_INSTALL=	html2text py*-html2text2018 # bin/html2text
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest --cov=html2text

@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	barrier heirloom-sh pdsh schilyutils # bin/barrier bin/dshbak bin/jsh
+
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes
 

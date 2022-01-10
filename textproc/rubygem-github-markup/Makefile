@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gem shebangfix
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	rubygem-github-markup*
+
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
 

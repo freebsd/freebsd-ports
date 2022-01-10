@@ -28,6 +28,8 @@ SHEBANG_FILES=	bin/cowrie
 USE_GITHUB=	yes
 USE_PYTHON=	distutils noflavors autoplist
 
+CONFLICTS_INSTALL=	py*-asciinema # bin/asciinema
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

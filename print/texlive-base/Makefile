@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=--with-system-$L \
 MAKE_ENV=	CONFIG_SITE=${CONFIG_SITE}
 INSTALL_TARGET=	install-strip
 
-CONFLICTS_INSTALL=	ps2eps texlive-texmf-201[234]*
+CONFLICTS_INSTALL=	detex dvi2tty ps2eps texlive-texmf
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 INFO=	dvipng tlbuild
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"

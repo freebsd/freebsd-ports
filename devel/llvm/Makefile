@@ -25,6 +25,8 @@ LIT_DESC=	The lit and FileCheck test tools
 LLD_DESC=	The LLVM linker
 LLDB_DESC=	The LLVM debugger
 
+CONFLICTS_INSTALL=	cling zapcc
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

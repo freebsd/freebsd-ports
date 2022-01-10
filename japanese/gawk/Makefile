@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS_INSTALL=	gawk # bin/gawk
+
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 OPTIONS_DEFINE=	DOCS

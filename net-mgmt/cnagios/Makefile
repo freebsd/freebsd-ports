@@ -23,6 +23,8 @@ nagios4_RUN_DEPENDS=	nagios4>=4.0:net-mgmt/nagios4
 USE_GITHUB=	yes
 GH_ACCOUNT=	dannywarren
 
+CONFLICTS_INSTALL=	cnagios-nagios* # bin/cnagios
+
 NAGIOSDIR?=	/var/spool/nagios
 ETCDIR=		${PREFIX}/etc/nagios
 GNU_CONFIGURE=	YES

@@ -5,9 +5,7 @@ PORTREVISION=	0
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[0-9].[0-9]* \
-			subversion-1.1[0-1].[0-9]* \
-			subversion1[0-9]-1.[0-9].[0-9]*
+CONFLICTS_INSTALL=	subversion-lts
 
 USE_RC_SUBR=	svnserve
 

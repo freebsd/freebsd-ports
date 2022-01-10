@@ -22,6 +22,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils 
 
+CONFLICTS_INSTALL=	py*-alembic
+
 NO_ARCH=	yes
 PORTSCOUT=	limit:^1\.4\.
 

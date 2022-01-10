@@ -18,8 +18,8 @@ RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-JSON-XS>=2.30:converters/p5-JSON-XS \
 		quvi>=0.2.16.1:multimedia/quvi
 
-# deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
-CONFLICTS=	py*-clive-[0-1]* ljclive
+# deskutils/ljclive (same executable/manpage/distfile name)
+CONFLICTS=	ljclive # bin/clive
 
 USES=		perl5
 USE_PERL5=	configure

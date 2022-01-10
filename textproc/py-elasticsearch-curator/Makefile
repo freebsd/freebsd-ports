@@ -28,6 +28,8 @@ GH_ACCOUNT=	elastic
 GH_PROJECT=	curator
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS_INSTALL=	curator # bin/curator
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

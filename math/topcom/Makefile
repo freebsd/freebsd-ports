@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/cdd/
 LDFLAGS+=	-lgmp -lgmpxx -lcddgmp
 
+CONFLICTS_INSTALL=	p5-Set-CrossProduct # bin/cross
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=		SOPLEX # SOPLEX shouldn't be made default because SoPlex's license prevents packaging.

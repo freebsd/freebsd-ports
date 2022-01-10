@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line IDEA encryption and decryption utility
 
+CONFLICTS_INSTALL=	intellij intellij-ultimate # bin/idea
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS

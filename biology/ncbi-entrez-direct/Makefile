@@ -20,6 +20,8 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
 
+CONFLICTS_INSTALL=	ebook-tools
+
 # Dependency versions:
 #	make clean extract
 # 	cd ${WRKSRC}/cmd

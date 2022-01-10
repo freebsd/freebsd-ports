@@ -15,4 +15,6 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		pear shebangfix
 SHEBANG_FILES=	scripts/gen_php_doc.sh
 
+CONFLICTS_INSTALL=	php*-pear-Var_Dump
+
 .include <bsd.port.mk>

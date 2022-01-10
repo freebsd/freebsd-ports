@@ -44,6 +44,8 @@ CONFIGURE_ARGS=	--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--disable-libstdcxx \
 		--disable-multilib
 
+CONFLICTS_INSTALL=	arm-none-eabi-gcc
+
 PLIST=	${.CURDIR}/pkg-plist
 
 # U-Boot requires libgcc, crossbuild and install it along with the compiler.

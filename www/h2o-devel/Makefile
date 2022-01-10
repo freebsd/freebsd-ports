@@ -25,7 +25,7 @@ USE_PERL5=	run
 USE_LDCONFIG=	yes
 GH_TAGNAME=	96bf0ef
 
-CONFLICTS=	h2o-2*
+CONFLICTS=	h2o
 
 SHEBANG_FILES=	share/h2o/start_server
 

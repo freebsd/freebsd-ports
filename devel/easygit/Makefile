@@ -22,6 +22,8 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/eg bin/easygit
 
+CONFLICTS_INSTALL=	go-tools
+
 do-extract:
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
 

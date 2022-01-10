@@ -12,4 +12,6 @@ LICENSE=	LGPL3
 USES=		pear
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	php*-pear-HTML_Template_PHPLIB
+
 .include <bsd.port.mk>

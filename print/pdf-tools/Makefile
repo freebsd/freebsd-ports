@@ -24,6 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vedang
 USE_GNOME=	cairo glib20
 
+CONFLICTS_INSTALL=	pdf-tools pdf-tools-emacs_* # bin/epdfinfo
+
 EMACS_FLAVORS_EXCLUDE=	devel_nox nox
 
 do-build:

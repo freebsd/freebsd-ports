@@ -18,6 +18,8 @@ COMMENT=	Hex editor that doesn't load the whole file at once
 # you will with bpatch.  Nice to know it may still have a life.
 LICENSE=	CC0-1.0
 
+CONFLICTS_INSTALL=	bdelta
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/bpatch \
 		man/man1/bpatch.1.gz

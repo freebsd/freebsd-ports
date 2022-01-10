@@ -138,7 +138,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		xml-rs-0.8.3 \
 		yaml-rust-0.4.5
 
-CONFLICTS_INSTALL=	devel/delta
+CONFLICTS_INSTALL=	delta
 PLIST_FILES=		bin/delta
 
 OPTIONS_DEFINE=		BASH

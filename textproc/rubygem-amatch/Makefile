@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-mize>=0:devel/rubygem-mize \
 USES=		gem
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	agrep # bin/agrep
+
 PLIST_FILES=	bin/agrep bin/dupfind
 
 .include <bsd.port.mk>

@@ -9,6 +9,8 @@ COMMENT=	Multi-platform, multi-architecture disassembly framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+CONFLICTS=	capstone
+
 USES=		cpe gmake
 CPE_VENDOR=	${PORTNAME}-engine
 USE_GITHUB=	yes

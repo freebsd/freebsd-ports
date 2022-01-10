@@ -16,6 +16,9 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	interchange isc-cron # bin/crontab
+
 TEST_TARGET=	check
 
 INFO=		mcron

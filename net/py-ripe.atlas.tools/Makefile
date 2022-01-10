@@ -24,4 +24,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	c-ares # bin/adig
+
 .include <bsd.port.mk>

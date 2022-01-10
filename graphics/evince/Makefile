@@ -51,9 +51,11 @@ OPTIONS_EXCLUDE=	DBUS NAUTILUS
 PLIST=			${.CURDIR}/pkg-plist-lite
 PKGNAMESUFFIX=		-lite
 COMMENT+=		without GNOME dependencies
+CONFLICTS_INSTALL=	evince
 .else
 USE_GNOME+=		introspection:build
 MESON_ARGS+=		-Dintrospection=true
+CONFLICTS_INSTALL=	evince-lite
 .endif
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-CONFLICTS_INSTALL=	mono5.10 mono6.8
+CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
 OPTIONS_DEFINE=		MONOLITE NLS X11 HEAPVIZ
 OPTIONS_DEFAULT=	MONOLITE X11

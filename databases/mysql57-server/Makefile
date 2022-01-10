@@ -87,11 +87,10 @@ OPTIONS_SUB=		YES
 .if !defined(CLIENT_ONLY)
 USES+=		mysql:57
 
-CONFLICTS_INSTALL=	mysql5[0-68-9]-server \
-			mysql[0-46-9][0-9]-server \
+CONFLICTS_INSTALL=	mysql*-server \
 			mysqlwsrep*-server \
-			mariadb[0-9][0-9]-server \
-			percona[0-9][0-9]-server
+			mariadb*-server \
+			percona*-server
 
 USE_RC_SUBR=	mysql-server
 

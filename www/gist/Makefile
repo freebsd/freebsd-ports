@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-CONFLICTS=	p5-App-gist
+CONFLICTS=	p5-App-gist py*-python-gist yorick # bin/gist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	defunkt

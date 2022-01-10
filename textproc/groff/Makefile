@@ -40,7 +40,7 @@ PAPERSIZE=A4
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-CONFLICTS=	ja-groff
+CONFLICTS=	heirloom-doctools ja-groff
 
 INFO=	groff
 

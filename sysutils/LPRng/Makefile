@@ -38,7 +38,7 @@ CFLAGS+=	-fcommon
 
 SUB_FILES=	pkg-message
 
-CONFLICTS=	cups-base-1.[2-9]*
+CONFLICTS=	cups
 
 OPTIONS_DEFINE=		LIBWRAP NLS
 OPTIONS_DEFAULT=	LIBWRAP

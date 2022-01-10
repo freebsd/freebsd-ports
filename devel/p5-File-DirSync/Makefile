@@ -13,4 +13,6 @@ COMMENT=	Perl5 module for synchronizing two directories rapidly
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	py*-dirsync
+
 .include <bsd.port.mk>

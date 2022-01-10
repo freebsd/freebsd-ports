@@ -28,6 +28,8 @@ BDB4_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
 MYSQL_RUN_DEPENDS=	rubygem-dbd-mysql>=0:databases/rubygem-dbd-mysql
 PGSQL_RUN_DEPENDS=	rubygem-dbd-pg>=0:databases/rubygem-dbd-pg
 
+CONFLICTS_INSTALL=	rubygem-bio-shell
+
 post-patch:
 	${RUBY} -i -pe 'gsub(%r"(/etc/bioinformatics/)") { "${PREFIX}" + $$1 }' \
 		${WRKSRC}/doc/Tutorial.rd \

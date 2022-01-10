@@ -19,4 +19,6 @@ USE_PYTHON=	distutils concurrent noflavors autoplist
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	fasm SASM
+
 .include <bsd.port.mk>

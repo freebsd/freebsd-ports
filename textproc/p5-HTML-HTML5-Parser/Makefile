@@ -23,4 +23,6 @@ RUN_DEPENDS=	p5-HTML-HTML5-Entities>=0.002:textproc/p5-HTML-HTML5-Entities \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	html2xhtml p5-XML-Driver-HTML # bin/html2xhtml
+
 .include <bsd.port.mk>

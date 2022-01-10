@@ -14,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../../deskutils/plan
 PLIST=	${WRKDIR}/PLIST
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
+CONFLICTS_INSTALL=	plan # bin/Killpland
+
 PORTDOCS=	plan_calEUC.ps
 
 OPTIONS_DEFINE=	DOCS

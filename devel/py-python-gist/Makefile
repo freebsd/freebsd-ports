@@ -20,6 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS_INSTALL=	gist p5-App-gist py*-python-gist yorick
+
 NO_ARCH=	yes
 
 do-test: # tests are currently broken and undergoing redesign, see https://github.com/jdowner/gist/issues/100#issuecomment-817039193

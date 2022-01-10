@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew \
 		--with-etcdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew/etc
 
+CONFLICTS_INSTALL=	mew-emacs_* mew-devel mew-devel-emacs_* # bin/cmew bin/incm
+
 # target name for make build and install
 ALL_TARGET=	all info
 INSTALL_TARGET=	install

@@ -21,8 +21,7 @@ OPTIONS_DEFAULT=	GSL UNICODE
 GSL_DESC=		Link with system-wide GSL dynamically (recommended)
 UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 
-CONFLICTS_INSTALL?=	bogofilter-sqlite bogofilter-tc bogofilter-lmdb \
-			bogofilter-kc
+CONFLICTS_INSTALL?=	bogofilter-sqlite bogofilter-lmdb bogofilter-kc
 
 USES+=		cpe perl5 shebangfix tar:xz
 SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \

@@ -31,6 +31,8 @@ TEST_DEPENDS=	\
 	p5-Test-TCP>0:devel/p5-Test-TCP \
 	p5-Test-Output>=0:devel/p5-Test-Output
 
+CONFLICTS_INSTALL=	dancer # bin/dancer
+
 OPTIONS_DEFINE=	YAML
 OPTIONS_DEFAULT=	YAML
 

@@ -19,6 +19,8 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
 
+CONFLICTS_INSTALL=	py*-cachecontrol # bin/doesitcache
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py ${WRKSRC}/CacheControl.egg-info/requires.txt
 

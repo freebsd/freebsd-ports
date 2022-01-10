@@ -17,4 +17,6 @@ RUN_DEPENDS=	p5-XML-TreeBuilder>=0:textproc/p5-XML-TreeBuilder \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	html2xhtml p5-HTML-HTML5-Parser # bin/html2xhtml
+
 .include <bsd.port.mk>

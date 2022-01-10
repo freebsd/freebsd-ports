@@ -13,6 +13,9 @@ BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_riscv64=	Fails to link: missing sbrk
 
 USES=		tar:bzip2
+
+CONFLICTS_INSTALL=	clusterit schilyutils # bin/jsh
+
 MAKEFILE=	makefile
 PLIST_FILES=	"@shell bin/jsh" \
 		man/man1/jsh.1.gz

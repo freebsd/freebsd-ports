@@ -25,6 +25,8 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	hxtools psptoolchain-pspsdk-stage2
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 MAKE_ARGS=	infodir=${PREFIX}/${INFO_PATH}
 

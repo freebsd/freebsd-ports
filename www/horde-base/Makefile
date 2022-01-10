@@ -19,6 +19,8 @@ WEATHER_DESC=	Support weather forecast display
 USES=	horde cpe php
 USE_PHP=	filter gettext hash
 
+CONFLICTS_INSTALL=	php*-horde
+
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		Horde_Alarm \

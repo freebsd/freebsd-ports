@@ -20,7 +20,7 @@ USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	html2text py*-html2text
+CONFLICTS_INSTALL=	html2text py*-html2text # bin/html2text
 
 do-test:
 	@cd ${WRKSRC} && coverage run --source=html2text setup.py test -v

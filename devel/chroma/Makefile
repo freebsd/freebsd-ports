@@ -25,6 +25,9 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		sergi:go-diff:v1.0.0:sergi_go_diff/vendor/github.com/sergi/go-diff
+
+CONFLICTS_INSTALL=	chroma
+
 GO_TARGET=	./cmd/chroma
 
 PLIST_FILES=	bin/${PORTNAME}

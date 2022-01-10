@@ -87,7 +87,7 @@ EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 PORTDOCS=	*
 
 # XXX: Add -devel
-CONFLICTS=	bind911 bind912 bind913 bind914 bind916
+CONFLICTS=	bind9[0-9][0-9]
 .endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes

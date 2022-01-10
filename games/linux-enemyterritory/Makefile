@@ -25,6 +25,8 @@ USE_LINUX=	dri xorglibs
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 PATCH_260B_DIR=	Enemy Territory 2.60b
 
+CONFLICTS_INSTALL=	eternalterminal
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

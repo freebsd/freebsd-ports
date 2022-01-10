@@ -13,7 +13,7 @@ COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
 LICENSE=	PD BSD3CLAUSE
 LICENSE_COMB=	multi
 
-CONFLICTS=	amule
+CONFLICTS=	amule amule-devel # bin/ed2k
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	/dev/null

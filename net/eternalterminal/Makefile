@@ -20,6 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MisterTea
 GH_PROJECT=	EternalTerminal
 
+CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
+
 PLIST_FILES=	bin/et \
 		bin/etserver \
 		bin/etterminal \

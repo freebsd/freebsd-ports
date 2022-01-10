@@ -19,6 +19,8 @@ USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	dinotrace dinotrace-emacs_*
+
 INFO=		dinotrace
 PLIST_FILES=	bin/dinotrace
 

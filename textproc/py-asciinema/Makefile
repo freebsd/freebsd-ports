@@ -14,4 +14,6 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 USES=		python:3.3+
 USE_PYTHON=	distutils autoplist
 
+CONFLICTS_INSTALL=	cowrie # bin/asciinema
+
 .include <bsd.port.mk>

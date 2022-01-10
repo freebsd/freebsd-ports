@@ -16,6 +16,8 @@ USE_PHP=	mbstring pcntl phar posix sysvmsg
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+CONFLICTS_INSTALL=	php*-aphpunit
+
 PLIST_FILES=	bin/aphpunit
 
 # Download isn't compressed or aggregated, it's just the single file

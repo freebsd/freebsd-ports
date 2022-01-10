@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/lib/ocf
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	crm114 # bin/crm
+
 SHEBANG_FILES=	bin/crm hb_report/hb_report.in \
 		scripts/*/*.py \
 		test/cib-tests.sh \

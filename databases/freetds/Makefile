@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--with-tdsver=${TDS_VER} --sysconfdir=${ETCDIR} \
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+CONFLICTS=	freetds-devel
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS MARS

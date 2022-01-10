@@ -12,7 +12,7 @@ COMMENT=	Portable version of Joe's Own Editor from MirBSD
 
 LICENSE=	GPLv1
 
-CONFLICTS=	joe-[24]*
+CONFLICTS=	joe
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes

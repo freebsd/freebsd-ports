@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	funtoo
 
+CONFLICTS_INSTALL=	py*-pycoin # bin/keychain
+
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes

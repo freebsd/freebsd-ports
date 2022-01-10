@@ -14,4 +14,6 @@ WRKSRC=		${WRKDIR}/cpm
 
 CFLAGS+=	-Wno-return-type
 
+CONFLICTS_INSTALL=	yaze-ag
+
 .include <bsd.port.mk>

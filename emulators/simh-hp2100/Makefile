@@ -24,7 +24,7 @@ USES=		gmake dos2unix zip
 
 NO_WRKSUBDIR=	yes
 
-CONFLICTS_INSTALL=	simh-3.[789]*
+CONFLICTS_INSTALL=	simh
 DOS2UNIX_GLOB=	*.c *.h *.txt *.mak makefile
 
 SUB_FILES=	hp2100.1

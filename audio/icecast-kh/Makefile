@@ -23,7 +23,7 @@ GH_PROJECT=	icecast-kh
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	icecast
 
-CONFLICTS_INSTALL=	icecast icecast2
+CONFLICTS_INSTALL=	icecast
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}

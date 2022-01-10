@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 
 USES=		cpe shebangfix tar:xz uidfix
 
-CONFLICTS_INSTALL?=	cvs+ipv6-[12]* cvs-devel-[12]*
+CONFLICTS_INSTALL?=	cvs-devel cvs+ipv6
 
 OPTIONS_DEFINE=	INFO IPV6 KERBEROS EXAMPLES
 OPTIONS_DEFAULT=INFO KERBEROS

@@ -8,6 +8,8 @@ PLIST=	${.CURDIR}/pkg-plist
 DISTINFO_FILE=	${.CURDIR}/distinfo
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
 
+CONFLICTS_INSTALL=	arm-none-eabi-gcc492
+
 OPTIONS_SINGLE=	ML
 OPTIONS_SINGLE_ML=	ML_NONE ML_DEFAULT ML_CORTEXA ML_CORTEXRM
 OPTIONS_DEFAULT=	ML_NONE

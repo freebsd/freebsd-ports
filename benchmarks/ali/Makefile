@@ -38,6 +38,8 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:goleak:v1.1.12:uber_go_goleak/vendor/go.uber.org/goleak
 
+CONFLICTS_INSTALL=	ja-mh mmh nmh
+
 PLIST_FILES=	bin/ali
 
 .include <bsd.port.mk>

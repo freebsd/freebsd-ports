@@ -37,6 +37,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CFLAGS+=	-DVERSION='\"${PORTVERSION}-${CRM114RELEASENAME}\"'
 CFLAGS+=	-DNO_LOGL
 
+CONFLICTS_INSTALL=	crmsh # bin/crm
+
 INSTALL_TARGET=	install_binary_only
 
 CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \

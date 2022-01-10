@@ -20,6 +20,8 @@ USE_PERL5=	build run
 
 CMAKE_ARGS=	-DLCB_NO_TESTS=1
 
+CONFLICTS_INSTALL=      coin-or-cbc
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH} == riscv64

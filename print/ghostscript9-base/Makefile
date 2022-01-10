@@ -25,12 +25,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:print/gsfonts
 
-CONFLICTS_INSTALL= \
-		gambc \
-		ghostscript[789] \
-		ghostscript[789]-nox11 \
-		ghostscript9-agpl \
-		ghostscript9-agpl-nox11
+CONFLICTS_INSTALL=      ghostscript*-base # CHECK
 
 USES=		autoreconf cpe gmake jpeg pkgconfig:build tar:bzip2
 USE_LDCONFIG=	yes

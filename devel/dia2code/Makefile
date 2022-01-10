@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	dia2code+
+
 PLIST_FILES=	bin/dia2code \
 		man/man1/dia2code.1.gz
 

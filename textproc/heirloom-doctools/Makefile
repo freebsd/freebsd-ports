@@ -11,6 +11,9 @@ LICENSE=	CDDL
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	n-t-roff
+
+CONFLICTS_INSTALL=	grap groff ja-groff util-linux # bin/col bin/eqn bin/grap bin/indxbib
+
 ALL_TARGET=	#empty
 MAKE_ARGS+=	INSTALL="${INSTALL}" \
 		BINDIR=${BINDIR} \

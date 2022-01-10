@@ -39,6 +39,8 @@ GH_PROJECT=	DisCO
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	disco mono mono[0-9]*
+
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

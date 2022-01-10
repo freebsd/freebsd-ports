@@ -15,4 +15,6 @@ RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
 USES=		pear
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	generate julius php*-pear-Text_Highlighter # bin/generate
+
 .include <bsd.port.mk>

@@ -43,8 +43,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-thumbnailer \
 		--without-matedesktop \
 		--disable-previewer
+CONFLICTS_INSTALL=	atril
 .else
 USE_MATE+=	desktop
+CONFLICTS_INSTALL=	atril-lite
 .endif
 
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml

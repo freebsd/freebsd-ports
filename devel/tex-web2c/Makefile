@@ -50,6 +50,8 @@ CONFIGURE_ARGS+=--with-system-$L \
 CFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	cweb
+
 INFO=	web2c
 
 pre-configure:

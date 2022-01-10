@@ -11,6 +11,8 @@ USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
 
+CONFLICTS_INSTALL=	linux-nvidia-libs linux-nvidia-libs-*
+
 LIB_DISTNAMES=	libglvnd-${DISTVERSIONFULL} \
 		libglvnd-egl-${DISTVERSIONFULL} \
 		libglvnd-gles-${DISTVERSIONFULL} \

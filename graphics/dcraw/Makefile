@@ -19,6 +19,8 @@ USES=		cpe jpeg localbase tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include/jasper
 LIBS+=		-ljasper -ljpeg -llcms2 -lm
 
+CONFLICTS_INSTALL=	ufraw
+
 PLIST_FILES=	bin/dcraw \
 		share/man/man1/dcraw.1.gz
 

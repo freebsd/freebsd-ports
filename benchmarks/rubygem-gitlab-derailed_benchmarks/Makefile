@@ -22,6 +22,8 @@ RUN_DEPENDS=	rubygem-benchmark-ips>=2.0.0:benchmarks/rubygem-benchmark-ips \
 USES=		gem
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	rubygem-derailed_benchmarks
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/derailed

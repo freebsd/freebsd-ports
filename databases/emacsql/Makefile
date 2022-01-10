@@ -20,6 +20,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	skeeto
 
 MAKE_ENV+=	LOAD_PATH="-L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}"
+
+CONFLICTS_INSTALL=	 emacsql emacsql-emacs_*
+
 ALL_TARGET=	binary compile
 TEST_TARGET=	check
 

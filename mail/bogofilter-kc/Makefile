@@ -7,7 +7,7 @@ MAINTAINER=	mandree@FreeBSD.org
 
 LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
-CONFLICTS_INSTALL=	bogofilter bogofilter-lmdb bogofilter-sqlite bogofilter-tc
+CONFLICTS_INSTALL=	bogofilter bogofilter-lmdb bogofilter-sqlite
 
 CONFIGURE_ARGS=	--with-database=kyotocabinet
 BF_CPPFLAGS=	-I${LOCALBASE}/include

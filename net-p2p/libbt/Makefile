@@ -17,6 +17,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		gmake localbase ssl
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	btcheck # bin/btcheck
+
 DOCS=		docs/protocol.txt docs/protocol-ext.txt \
 		CHANGELOG CREDITS README
 

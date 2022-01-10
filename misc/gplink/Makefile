@@ -20,6 +20,8 @@ MAKE_ARGS=	CC="${CC}" \
 LDFLAGS+=	-lusb
 WRKSRC_SUBDIR=	src
 
+CONFLICTS_INSTALL=	gputils # bin/gplink
+
 PLIST_FILES=	bin/gplink
 
 do-install:

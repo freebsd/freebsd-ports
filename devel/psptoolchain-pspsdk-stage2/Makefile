@@ -23,6 +23,8 @@ SSP_UNSAFE=	yes
 CFLAGS+=	-fno-stack-protector
 LDFLAGS+=	-fno-stack-protector
 
+CONFLICTS_INSTALL=	grx hxtools
+
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../psptoolchain-pspsdk-stage1
 

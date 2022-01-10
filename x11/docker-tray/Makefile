@@ -17,6 +17,8 @@ USES=		gmake gnome pkgconfig xorg
 USE_XORG=	x11
 USE_GNOME=	glib20
 
+CONFLICTS_INSTALL=	docker # bin/docker
+
 PLIST_FILES=	bin/docker
 
 post-patch:

@@ -16,6 +16,8 @@ LICENSE_COMB=	multi
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
+CONFLICTS_INSTALL=	editorconfig-core-c
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

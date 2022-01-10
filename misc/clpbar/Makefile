@@ -13,6 +13,8 @@ WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
 
+CONFLICTS_INSTALL=	bar # bin/bar
+
 PLIST_FILES=	bin/bar \
 		man/man1/bar.1.gz
 

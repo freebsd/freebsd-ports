@@ -15,6 +15,8 @@ RUN_DEPENDS=	ppmtogif:graphics/netpbm
 USES=		emacs
 USE_TEX=	latex
 
+CONFLICTS_INSTALL=	 Hyperlatex Hyperlatex-emacs_*
+
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
 HYPERLATEX_DIR=	${PREFIX}/share/hyperlatex
 

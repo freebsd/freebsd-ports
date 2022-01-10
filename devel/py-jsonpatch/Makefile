@@ -14,6 +14,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${PY_FLAV
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+CONFLICTS_INSTALL=	py*-jsondiff # bin/jsondiff
+
 NO_ARCH=	yes
 
 do-test: build

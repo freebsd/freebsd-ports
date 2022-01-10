@@ -12,7 +12,7 @@ COMMENT=	Advanced, stable IRC daemon, used widely on EFnet
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ircd-ratbox-devel charybdis
+CONFLICTS=	ircd-hybrid ircd-ratbox-devel
 
 USES=		cpe libtool sqlite tar:bzip2
 CPE_VENDOR=	ratbox

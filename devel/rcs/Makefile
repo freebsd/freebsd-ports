@@ -11,6 +11,8 @@ LICENSE=	GPLv3
 USES=		groff makeinfo tar:xz
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	rcs57
+
 INFO=	rcs
 
 .include <bsd.port.mk>

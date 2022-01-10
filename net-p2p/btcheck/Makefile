@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	libbt # bin/btcheck
+
 PLIST_FILES=	bin/btcheck man/man1/btcheck.1.gz
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

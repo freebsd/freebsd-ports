@@ -25,6 +25,8 @@ GH_TAGNAME=	45d0898
 USE_PERL5=	run
 SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
 
+CONFLICTS_INSTALL=	sanoid # bin/findoid
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

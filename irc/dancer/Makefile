@@ -17,6 +17,8 @@ LDFLAGS+=	-lm
 CPP=		#
 USE_CSTD=	gnu89
 
+CONFLICTS_INSTALL=	p5-Dancer
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

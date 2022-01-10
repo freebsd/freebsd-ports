@@ -16,6 +16,8 @@ MAKE_ARGS=	CWEBINPUTS="${DATADIR}" \
 		LINKFLAGS="" \
 		CC="${CC}"
 
+CONFLICTS_INSTALL=	tex-web2c
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

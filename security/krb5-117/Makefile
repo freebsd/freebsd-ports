@@ -19,8 +19,7 @@ EXPIRATION_DATE=	2022-02-01
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal srp krb5-11[3-6] \
-			krb5-1.[0-9]* krb5-devel
+CONFLICTS=		heimdal krb5 krb5-*
 CONFLICTS_BUILD=	boringssl
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/

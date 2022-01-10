@@ -11,6 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		uidfix
 
+CONFLICTS_INSTALL=	p5-App-GitGot
+
 # Insert #include "openbsd-compat.h" into each source file,
 # after the <...> includes and before the "..." ones.
 n=		${.newline}

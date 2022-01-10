@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS_INSTALL=	py*-fabric # bin/fab
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

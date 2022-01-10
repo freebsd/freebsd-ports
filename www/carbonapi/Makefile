@@ -21,6 +21,8 @@ GO_BUILDFLAGS=	-v \
 		${CARBON_ARGS} \
 		-ldflags="-X main.BuildVersion=${DISTVERSION}"
 
+CONFLICTS_INSTALL=	carbonzipper # bin/carbonzipper
+
 USERS=		carbon
 GROUPS=		carbon
 

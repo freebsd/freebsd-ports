@@ -37,7 +37,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
-CONFLICTS=	zh-scim-fcitx-3.* fcitx5
+CONFLICTS=	zh-scim-fcitx
 
 USE_GNOME=	pango intltool libxml2 introspection
 USE_KDE=	ecm

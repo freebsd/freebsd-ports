@@ -75,7 +75,7 @@ LIBWRAP_CONFIGURE_ENABLE=tcp-wrappers
 
 SHEBANG_GLOB=	afpstats
 
-CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit
+CONFLICTS=	jday yudit # bin/dbd man/man1/uniconv.1.gz
 
 .include <bsd.port.pre.mk>
 

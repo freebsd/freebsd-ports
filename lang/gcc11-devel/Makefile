@@ -28,7 +28,7 @@ USES=		compiler:c++11-lang cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
 
-CONFLICTS=	gcc11-11.*
+CONFLICTS=	gcc11
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}

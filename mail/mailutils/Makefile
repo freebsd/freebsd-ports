@@ -23,6 +23,8 @@ USE_RC_SUBR=	comsatd imap4d pop3d
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
+CONFLICTS_INSTALL=	avenger elm # bin/dotlock bin/frm
+
 PLIST_SUB+=	LIBVERSION=8.0.0 LIBSUFX=8 VERSION=${PORTVERSION}
 
 INFO=		${PORTNAME}

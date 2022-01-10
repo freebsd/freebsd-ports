@@ -16,6 +16,8 @@ LICENSE_NAME=	fasta
 LICENSE_TEXT=	May not be sold or incorporated into a commercial product
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+CONFLICTS_INSTALL=	align
+
 WRKSRC=		${WRKDIR}/fasta
 SUB_FILES=	pkg-message
 

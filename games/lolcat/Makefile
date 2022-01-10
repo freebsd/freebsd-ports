@@ -17,7 +17,7 @@ GH_ACCOUNT=	jaseg
 
 CFLAGS+=	-lm
 
-CONFLICTS_INSTALL=	rubygem-lolcat
+CONFLICTS_INSTALL=	filters
 
 PLIST_FILES=	bin/censor bin/lolcat
 

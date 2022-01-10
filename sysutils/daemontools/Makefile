@@ -14,7 +14,7 @@ COMMENT=	Service monitoring and logging utilities by djb
 
 LICENSE=	PD
 
-CONFLICTS=	freedt serialmail
+CONFLICTS=	daemontools-encore freedt serialmail
 
 OPTIONS_DEFINE=	MAN SIGQ12 TESTS
 OPTIONS_SUB=	yes

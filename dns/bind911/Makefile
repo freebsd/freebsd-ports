@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind912 bind913 bind914 bind916 bind9-devel
+CONFLICTS=	bind9[0-9][0-9] bind9-devel
 
 SUB_FILES=	pkg-message named.conf
 USE_RC_SUBR=	named
@@ -102,7 +102,7 @@ TCP_FASTOPEN_DESC=	RFC 7413 support
 TUNING_LARGE_DESC=	Tune named for large systems (**READ HELP**)
 
 ACCFDNS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-interfacemgr.c
-	
+
 DLZ_BDB_CONFIGURE_ON=	--with-dlz-bdb=yes
 DLZ_BDB_USES=		bdb
 

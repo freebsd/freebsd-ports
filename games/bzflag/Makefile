@@ -22,6 +22,7 @@ USES+=		gl sdl xorg
 USE_GL=		gl glu glew
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xxf86vm sm ice xcb xshmfence xdamage xfixes
+CONFLICTS_INSTALL=	bzflag-server
 .endif
 
 CPPFLAGS+=	-I ${LOCALBASE}/include

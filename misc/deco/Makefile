@@ -15,4 +15,6 @@ USES=		ncurses tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
+CONFIGURE_INSTALL=	deco # bin/deco
+
 .include <bsd.port.mk>

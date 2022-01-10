@@ -14,6 +14,8 @@ USES=		gmake tar:tgz
 MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \
 		MANDIR=${STAGEDIR}${PREFIX}/man
 
+CONFLICTS_INSTALL=	julius php*-pear-Text_Highlighter
+
 PLIST_FILES=	bin/generate bin/rgenerate man/man1/generate.1.gz
 
 post-patch:

@@ -18,6 +18,9 @@ RUN_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
 		urlview:textproc/urlview
 
 USES=		perl5
+
+CONFLICTS_INSTALL=	cfssl # bin/goose
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 POD2MAN?=	pod2man
 

@@ -21,6 +21,8 @@ GH_TUPLE=	statgen:libStatGen:v${DISTVERSION}:statgen/libStatGen
 MAKE_ENV=	LIB_PATH_GENERAL=${WRKSRC}/libStatGen
 MAKE_ENV+=	INSTALLDIR=${STAGEDIR}${PREFIX}/bin
 
+CONFLICTS_INSTALL=	bam
+
 PLIST_FILES=	bin/bam
 
 .include <bsd.port.mk>

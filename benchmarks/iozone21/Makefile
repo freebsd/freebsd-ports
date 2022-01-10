@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O (older version)
 
-CONFLICTS=	iozone-3.*
+CONFLICTS_INSTALL=	iozone
 
 PLIST_FILES=	bin/iozone \
 		man/man1/iozone.1.gz

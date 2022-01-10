@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/Copying
 
 USES=		cpe gmake
 
+CONFLICTS_INSTALL=	bib2html # bin/bib2xml
+
 HAS_CONFIGURE=	yes
 TEST_TARGET=	test
 

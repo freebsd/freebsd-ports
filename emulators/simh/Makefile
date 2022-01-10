@@ -24,6 +24,8 @@ CFLAGS+=	-Wno-format-extra-args -Wno-comment
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
 
+CONFLICTS_INSTALL=	simh-hp2100
+
 SUB_FILES=	pkg-message simh.1
 
 READMES=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt

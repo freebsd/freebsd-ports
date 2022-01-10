@@ -14,4 +14,6 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 PLIST_FILES=	bin/cpuid
 ONLY_FOR_ARCHS=	i386 amd64
 
+CONFLICTS_INSTALL=	gmap # bin/cpuid
+
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	Collection of filters, including B1FF, and the Swedish Chef
 
 LICENSE=	GPLv2
 
-CONFLICTS=	talkfilters jive chef kenny
+CONFLICTS=	chef kenny lolcat talkfilters
 
 USES=		gmake perl5 shebangfix
 MAKE_JOBS_UNSAFE=	yes

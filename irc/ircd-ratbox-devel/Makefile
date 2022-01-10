@@ -13,7 +13,7 @@ COMMENT=	Advanced, stable IRC daemon, used widely on EFnet ('testing' release)
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ircd-ratbox charybdis
+CONFLICTS=	ircd-hybrid ircd-ratbox
 
 USES=		libtool perl5 sqlite tar:bzip2
 USE_RC_SUBR=	ircd-ratbox

@@ -16,6 +16,9 @@ USE_PERL5=	test
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" \
 		PREFIX="${PREFIX}"
+
+CONFLICTS_INSTALL=	fq # bin/fq
+
 TEST_TARGET=	check
 
 post-install:

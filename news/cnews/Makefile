@@ -39,6 +39,8 @@ USES=		tar:Z
 USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
 
+CONFLICTS_INSTALL=	s-news trn4 # bin/inews
+
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

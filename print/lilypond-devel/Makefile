@@ -43,6 +43,8 @@ CONFIGURE_ENV+=		ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 			HOME=${WRKDIR} \
 			YACC=${YACC}
 
+CONFLICTS_INSTALL=	lilypond
+
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all
 

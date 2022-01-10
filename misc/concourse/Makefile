@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		cpe go:modules
 USE_GITHUB=	yes
 
+CONFLICTS_INSTALL=	concourse-fly fly # bin/fly
+
 CPE_VENDOR=	pivotal_software
 
 GH_TUPLE=	\

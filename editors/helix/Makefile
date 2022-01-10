@@ -11,6 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 
+CONFLICTS_INSTALL=	shx
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	helix-editor
 GH_TUPLE=	\

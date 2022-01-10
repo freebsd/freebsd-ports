@@ -39,6 +39,8 @@ JAVA_RUN=	yes
 
 USE_RC_SUBR=	keycloak
 
+CONFLICTS_INSTALL=	keycloak keycloak-mysql keycloak-postgresql # bin/kcadm bin/kcreg
+
 USER=		www
 GROUP=		www
 

@@ -36,6 +36,8 @@ USES=		cmake compiler:c++11-lib compiler:c11 gnome libedit ncurses \
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 
+CONFLICTS_INSTALL=	llvm zapcc # # bin/bugpoint bin/c-index-test bin/clang bin/clang++ bin/clang-5.0 bin/clang-check bin/clang-cl bin/clang-cpp bin/clang-format bin/clang-import-test bin/clang-offload-bundler bin/clang-rename bin/git-clang-format
+
 SHEBANG_FILES=	tools/clang/tools/clang-format/clang-format-diff.py \
 		tools/clang/tools/clang-format/git-clang-format \
 		tools/clang/tools/scan-view/bin/scan-view

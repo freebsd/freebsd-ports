@@ -28,7 +28,7 @@ USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
 
-CONFLICTS=	gcc10-10.*
+CONFLICTS=	gcc10
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}

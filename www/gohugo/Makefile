@@ -126,6 +126,8 @@ GH_TUPLE=	\
 		yuin:goldmark:v1.4.4:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		sanity-io:litter:v1.5.1:sanity_io_litter/vendor/github.com/sanity-io/litter
 
+CONFLICTS_INSTALL=	hugo # bin/hugo
+
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
 	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage

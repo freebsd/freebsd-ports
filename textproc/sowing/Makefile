@@ -16,6 +16,9 @@ USES=		ghostscript gmake perl5
 USE_TEX=	latex dvipsk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
+
+CONFLICTS_INSTALL=	bib2html # bin/bib2html
+
 ALL_TARGET=	all-redirect
 
 MAKE_JOBS_UNSAFE=	yes

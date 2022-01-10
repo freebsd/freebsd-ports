@@ -22,6 +22,8 @@ GH_TAGNAME=	810687f
 
 NO_BUILD=	yes
 
+CONFLICTS_INSTALL=	p5-Devel-NYTProf
+
 SHEBANG_FILES=	*.php *.pl *.py *.sh
 
 SOURCE_FILES=	aix-perf.pl \

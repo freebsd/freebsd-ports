@@ -7,6 +7,8 @@ MASTER_SITES=	LOCAL/kuriyama
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New flavor of asclock
 
+CONFLICTS_INSTALL=	asclock
+
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/asclock-xlib

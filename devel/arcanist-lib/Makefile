@@ -49,7 +49,7 @@ ENCODINGS_USE=	PHP=mbstring
 
 RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>0:devel/arcanist-lib@${PHP_FLAVOR}
 
-CONFLICTS=	arc
+CONFLICTS=	arc arcanist-php??
 
 PLIST_FILES=	bin/arc
 

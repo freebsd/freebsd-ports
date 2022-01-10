@@ -25,4 +25,6 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	glib # bin/gio
+
 .include <bsd.port.mk>

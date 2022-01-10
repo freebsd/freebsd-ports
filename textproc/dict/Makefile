@@ -16,6 +16,8 @@ LIB_DEPENDS=	libmaa.so:devel/libmaa
 
 USES=		bison gmake libtool:build localbase
 
+CONFLICTS_INSTALL=	irstlm # bin/dict
+
 ALL_TARGET=	dict
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install.dict

@@ -29,6 +29,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 USES=		cpe gem
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	rubygem-jekyll3
+
 NO_ARCH=	yes
 
 CPE_VENDOR=	jekyllrb

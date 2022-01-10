@@ -31,7 +31,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/idea-IC-202.7660.26
 
 SUB_FILES=	idea idea.desktop pkg-message
-CONFLICTS=	intellij-ultimate
+CONFLICTS=	idea intellij-ultimate
 
 do-install:
 # Linux/Windows/OS X only so remove them

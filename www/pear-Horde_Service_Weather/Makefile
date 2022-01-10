@@ -16,4 +16,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Translation \
 		Horde_Url
 
+CONFLICTS_INSTALL=	php*-pear-horde-Horde_Service_Weather # bin/horde-service-weather-metar-database
+
 .include <bsd.port.mk>

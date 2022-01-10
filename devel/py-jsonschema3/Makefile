@@ -23,6 +23,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	py*-jsonschema # bin/jsonschema
+
 PORTSCOUT=	limit:^3\.
 
 .include <bsd.port.pre.mk>

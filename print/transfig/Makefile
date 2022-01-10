@@ -17,6 +17,8 @@ USES=		alias ghostscript:run imake xorg
 CFLAGS+=	-Wno-return-type
 USE_XORG=	xpm
 
+CONFLICTS_INSTALL=	fig2dev # bin/fig2dev bin/fig2ps2tex
+
 MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
 		INSTPGMFLAGS="${STRIP}" \
 		INSTBINFLAGS="-m ${BINMODE}" \

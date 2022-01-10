@@ -21,6 +21,8 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	flamegraph
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/NYTProf/NYTProf.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/Devel/auto/Devel/NYTProf/NYTProf.so

@@ -18,7 +18,7 @@ HAS_CONFIGURE=	yes
 PORTDOCS=	CHANGES CREDITS KNOWN_BUGS README TODO
 PLIST_FILES=	bin/html2text man/man1/html2text.1.gz man/man5/html2textrc.5.gz
 
-CONFLICTS=	py*-html2text
+CONFLICTS=	py*-html2text py*-html2text2018 # bin/html2text
 
 PORTSCOUT=	skipb:0 skipv:1.3.2
 

@@ -16,6 +16,8 @@ RUN_DEPENDS=	gls:sysutils/coreutils
 GNU_CONFIGURE=	yes
 USES=		readline charsetfix
 
+CONFLICTS_INSTALL=	imv # bin/imv
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

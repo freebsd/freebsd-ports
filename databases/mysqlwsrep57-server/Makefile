@@ -85,9 +85,8 @@ PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 		MY_TMPDIR=${MY_TMPDIR}
 
 CONFLICTS_INSTALL=	mariadb*-server \
-			mysql[0-9]*-server \
-			mysqlwsrep56*-server \
-			mysqlwsrep[1-489]*-server \
+			mysql*-server \
+			mysqlwsrep*-server \
 			percona*-server
 
 USE_RC_SUBR=	mysql-server

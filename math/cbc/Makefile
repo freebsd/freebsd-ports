@@ -32,6 +32,8 @@ GH_PROJECT=	Cbc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-nauty-lib="-L${LOCALBASE}/lib -lnauty" --with-nauty-incdir=${LOCALBASE}/include/nauty
 
+CONFLICTS_INSTALL=	libcouchbase # bin/cbc
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 

@@ -20,6 +20,8 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	ruby??-bio
+
 PLIST_FILES=	bin/bioruby
 
 .include <bsd.port.mk>

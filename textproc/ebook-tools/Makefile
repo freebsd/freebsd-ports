@@ -17,4 +17,6 @@ USES=		cmake gnome
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
+CONFLICTS_INSTALL=	ncbi-entrez-direct # bin/einfo
+
 .include <bsd.port.mk>

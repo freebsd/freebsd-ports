@@ -16,6 +16,8 @@ USE_PHP=	tokenizer phar hash
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+CONFLICTS_INSTALL=	php*-aphpbreakdown
+
 PLIST_FILES=	bin/aphpbreakdown
 
 # Download isn't compressed or aggregated, it's just the single file

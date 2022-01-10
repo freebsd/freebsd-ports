@@ -27,6 +27,8 @@ ALL_TARGET=	${BINSTUFF} getmail
 MAKE_JOBS_UNSAFE=	yes
 INFO=		jed
 
+CONFLICTS_INSTALL=	jed # bin/jed
+
 JED_ROOT=	${DATADIR}
 BINSTUFF=	jed rgrep
 

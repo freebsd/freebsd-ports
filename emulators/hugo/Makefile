@@ -61,4 +61,6 @@ CONFIGURE_ENV+=	ac_cv_lib_SDL_mixer_main=no \
 		ac_cv_lib_vorbisfile_main=no
 .endif
 
+CONFLICTS_INSTSLL=	gohugo
+
 .include <bsd.port.mk>

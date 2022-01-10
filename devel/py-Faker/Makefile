@@ -21,6 +21,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 
+CONFLICTS_INSTALL=	rubygem-faker
+
 NO_ARCH=	yes
 
 do-test:

@@ -15,6 +15,8 @@ LICENSE=	MIT
 USES=		php:flavors
 USE_PHP=	curl iconv json openssl pcntl phar posix zlib
 
+CONFLICTS_INSTALL=	php*-deployer
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

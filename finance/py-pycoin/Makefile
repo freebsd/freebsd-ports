@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utilities for Bitcoin and altcoin addresses/transaction manipulation
 
+CONFLICTS_INSTALL=	block keychain
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

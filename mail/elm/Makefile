@@ -19,6 +19,8 @@ BUILD_DEPENDS=	ispell:textproc/aspell-ispell
 
 CFLAGS+=	-D_SIZE_T
 
+CONFLICTS_INSTALL=	hs-elm mailutils # bin/elm bin/frm
+
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}
 USES=		gettext ncurses
 HAS_CONFIGURE=		yes

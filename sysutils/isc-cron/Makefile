@@ -13,6 +13,8 @@ COMMENT=	ISC Cron, former Vixie Cron
 
 LICENSE=	ISCL
 
+CONFLICTS_INSTALL=	interchange mcron # bin/crontab
+
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/cron \

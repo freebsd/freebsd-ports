@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}4
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	??-libgd libgd
+
 SHEBANG_FILES=	scripts/*.pl
 perl_OLD_CMD=	__PERL_PATH
 _SHEBANG_REINPLACE_ARGS+=	-e "s|__BIN_DIR|${PREFIX}/bin|g;s|__AUX_BIN_DIR|${PREFIX}/libexec/mummer|g;s|__SCRIPT_DIR|${PREFIX}/libexec/mummer|g"

@@ -39,6 +39,8 @@ TEST_DEPENDS=	p5-Test-Class>=0:devel/p5-Test-Class \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	got
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

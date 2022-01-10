@@ -20,4 +20,6 @@ MYSQLI_USE=	PHP=mysqli
 PDO_USES=	php
 PDO_USE=	PHP=pdo
 
+CONFLICTS_INSTALL=	php*-pear-horde-Horde_Db
+
 .include <bsd.port.mk>

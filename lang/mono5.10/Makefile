@@ -23,7 +23,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 RUN_DEPENDS=	${PY_PILLOW} \
 		ca_root_nss>=0:security/ca_root_nss
 
-CONFLICTS_INSTALL=	czmq-3* mono5.20 mono6.8
+CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
 OPTIONS_DEFINE=		MONOLITE NLS X11
 OPTIONS_DEFAULT=	MONOLITE X11

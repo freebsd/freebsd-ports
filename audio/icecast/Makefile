@@ -31,6 +31,8 @@ USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	icecast
 
+CONFLICTS_INSTALL=	icecast-kh
+
 SUB_FILES=	pkg-message
 
 CPE_VENDOR=	xiph

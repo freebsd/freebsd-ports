@@ -16,6 +16,8 @@ USES=		gl gmake jpeg ncurses xorg zip
 USE_GL=		glut
 USE_XORG=	x11 xext xmu xt xi sm ice
 
+CONFLICTS_INSTALL=	coffeescript
+
 # Need to pass `-l', but PATCH_ARGS+= won't work because of PATCH_ARGS?=
 # in bsd.port.mk
 PATCH_ARGS=	-N -s -E ${PATCH_STRIP} -l

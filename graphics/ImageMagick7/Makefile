@@ -37,7 +37,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl	\
 TESTS_DEPENDS=	gsfonts>=0:print/gsfonts
 
 # bin/Magick++-config
-CONFLICTS_INSTALL=	ImageMagick ImageMagick-nox11 ImageMagick6 ImageMagick6-nox11
+CONFLICTS_INSTALL=	ImageMagick6 ImageMagick6-nox11
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \
@@ -176,9 +176,8 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 X11_CONFIGURE_WITH=	x
 X11_USES=		xorg
 X11_USE=		xorg=ice,sm,x11,xext,xt
-X11_VARS=		CONFLICTS_INSTALL+="ImageMagick7-nox11-* \
-			CONFLICTS+=display
-X11_VARS_OFF=		CONFLICTS_INSTALL+="ImageMagick7-*" \
+X11_VARS=		CONFLICTS_INSTALL+="ImageMagick7-nox11"
+X11_VARS_OFF=		CONFLICTS_INSTALL+="ImageMagick7" \
 			PKGNAMESUFFIX=7-nox11
 
 .include <bsd.port.options.mk>

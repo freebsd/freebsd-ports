@@ -18,6 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elm
 GH_PROJECT=	compiler
 
+CONFLICTS_INSTALL=	elm # bin/elm (from mail/elm)
+
 USE_CABAL=	ansi-terminal-0.8.2 \
 		ansi-wl-pprint-0.6.8.2_2 \
 		asn1-encoding-0.9.6_1 \

@@ -22,6 +22,8 @@ USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}
 
+CONFLICTS_INSTALL=	ccl # bin/clive
+
 PLIST_FILES=	bin/ccl \
 		bin/cclive \
 		man/man1/cclive.1.gz

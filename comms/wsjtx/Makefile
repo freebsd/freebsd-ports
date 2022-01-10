@@ -27,6 +27,8 @@ USE_QT=		core gui network widgets \
 		multimedia concurrent printsupport serialport sql sql-sqlite3 \
 		buildtools_build linguisttools_build qmake_build testlib
 
+CONFLICTS_INSTALL=	wsjtz
+
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=   --debug-output --trace
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"

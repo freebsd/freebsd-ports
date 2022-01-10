@@ -19,6 +19,8 @@ MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 USE_GITHUB=	yes
 GH_ACCOUNT=	dhmunro
 
+COFNLICTS_INSTALL=	gist p5-App-gist py*-python-gist # bin/gist
+
 INFO=		yorick
 PORTDOCS=	FILE_FORMATS README drat.doc graph.doc hex.doc \
 		library.doc math.doc refs.pdf refs.tex std.doc \

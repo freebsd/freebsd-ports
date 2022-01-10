@@ -17,6 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ufolib2>=0:print/py-ufolib2@${PY_FLAVOR}
 USES=		python:3.7+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
+CONFLICTS_INSTALL=	py*-fonttools3 # bin/fonttools
+
 MAKE_ENV=	FONTTOOLS_MANPATH="man"
 NO_ARCH=	yes
 

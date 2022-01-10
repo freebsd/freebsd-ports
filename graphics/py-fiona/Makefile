@@ -21,6 +21,8 @@ LIB_DEPENDS+=	libgdal.so:graphics/gdal
 USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	autoplist distutils cython
 
+CONFLICTS_INSTALL=	fio
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME:tl} -name *.so -exec ${STRIP_CMD} {} +
 

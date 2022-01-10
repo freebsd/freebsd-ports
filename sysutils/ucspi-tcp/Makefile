@@ -12,6 +12,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for building TCP client-server applications
 
+CONFLICTS_INSTALL=	freedt # bin/argv0
+
 OPTIONS_DEFINE=	RSS_DIFF RBL2SMTPD IPV6 SSL LIMITS
 
 RSS_DIFF_DESC=	Patch rblsmtpd for qmail users

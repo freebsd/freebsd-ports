@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 USES=		emacs python shebangfix
 USE_GITHUB=	yes
 
+CONFLICTS_INSTALL=	cask cask-emacs_*
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

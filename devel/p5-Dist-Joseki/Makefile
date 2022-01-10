@@ -26,6 +26,8 @@ RUN_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	ja-mh mmh nmh
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL= netatalk3
+
 PLIST_FILES=	bin/dbd bin/j2d bin/jday \
 		include/jday.h lib/libjday.a \
 		lib/libjday.so lib/libjday.so.2 \

@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
+CONFLICTS_INSTALL=	easygit p5-Devel-Cover rubygem-bundler
+
 GO_MODULE=	golang.org/x/tools
 GO_TARGET=	./cmd/auth/authtest \
 		./cmd/auth/cookieauth \

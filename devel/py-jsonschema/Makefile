@@ -23,6 +23,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+CONFLICTS_INSTALL=	py*-jsonschema3 # bin/jsonschema
+
 NO_ARCH=	yes
 
 do-test:

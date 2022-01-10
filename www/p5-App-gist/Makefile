@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Pithub>=0:devel/p5-Pithub \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
-CONFLICTS=	gist
+CONFLICTS=	gist py*-python-gist yorick # bin/gist
 
 USES=		perl5
 USE_PERL5=	configure

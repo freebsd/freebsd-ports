@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-debug --with-dll --without-static \
 		--without-vdb
 
+CONFLICTS_INSTALL=	ncbi-blast+
+
 post-install:
 	# strip
 	@${FIND} ${STAGEDIR}${PREFIX}/bin -type f | ${GREP} -v -E '\.(sh|py|pl)$$' | ${XARGS} ${STRIP_CMD}

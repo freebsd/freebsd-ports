@@ -16,6 +16,9 @@ RUN_DEPENDS=	rubygem-deep_merge>=1.0.1:devel/rubygem-deep_merge \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+CONFLICTS_INSTALL=	zh-hc # bin/hc
+
 PLIST_FILES=	bin/hc man/man1/hc.1.gz \
 		bin/ppdb man/man1/ppdb.1.gz \
 		bin/hieracles

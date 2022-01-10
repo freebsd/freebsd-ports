@@ -13,7 +13,7 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 
-CONFLICTS=	gtkada-1.2.* zenity-2.*
+CONFLICTS=	gdialog # bin/gdialog
 
 USES=		gettext gmake gnome localbase pathfix pkgconfig \
 		perl5 tar:xz xorg

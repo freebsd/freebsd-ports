@@ -14,6 +14,8 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ergochat
 
+CONFLICTS_INSTALL=	ergo
+
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}

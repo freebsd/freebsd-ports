@@ -28,7 +28,7 @@ GH_ACCOUNT=	latte-int
 GH_PROJECT=	latte
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	latte
+CONFLICTS_INSTALL=	latte p5-Math-SigFigs schilyutils # bin/count
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

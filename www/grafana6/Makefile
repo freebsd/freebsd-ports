@@ -25,6 +25,8 @@ GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
 GO_BUILDFLAGS=	-ldflags="-w -X main.version=${PORTVERSION} -X main.commit=${TAG}"
 
+CONFLICTS_INSTALL=	grafana* # bin/grafana-cli bin/grafana-server
+
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
 

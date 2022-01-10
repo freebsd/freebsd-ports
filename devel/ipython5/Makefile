@@ -27,6 +27,8 @@ USES=		cpe python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
 
+CONFLICTS_INSTALL=	py*-ipython
+
 NO_ARCH=	yes
 
 PORTEXAMPLES=	*

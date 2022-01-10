@@ -15,6 +15,8 @@ GH_ACCOUNT=	Dman95
 USE_GL=		gl
 USE_QT=		core gui network widgets buildtools_build
 
+CONFLICTS_INSTALL=	fasm fasm-fpga
+
 DATADIR=	${PREFIX}/share/sasm
 DOCSDIR=	${PREFIX}/share/doc/sasm
 

@@ -45,6 +45,8 @@ FREEBSD_RELEASE=	uname -r | cut -d - -f 1
 CFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 CXXFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 
+CONFLICTS_INSTALL=	kget
+
 BINARY_ALIAS=	gcc=${CC} g++=${CXX}
 
 # for port developers, building with these options may fail

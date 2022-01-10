@@ -24,7 +24,7 @@ USES=		cpe python:3.6+
 CPE_VENDOR=	fabfile
 USE_PYTHON=	distutils concurrent autoplist
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fabric1
+CONFLICTS_INSTALL=	py*-fabric3 # bin/fab
 
 NO_ARCH=	yes
 
