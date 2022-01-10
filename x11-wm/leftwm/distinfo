@@ -1,4 +1,4 @@
-TIMESTAMP = 1641072040
+TIMESTAMP = 1641786991
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -259,5 +259,5 @@ SHA256 (rust/crates/x11-dl-2.19.1.crate) = ea26926b4ce81a6f5d9d0f3a0bc401e5a37c6
 SIZE (rust/crates/x11-dl-2.19.1.crate) = 64664
 SHA256 (rust/crates/xdg-2.4.0.crate) = 3a23fe958c70412687039c86f578938b4a0bb50ec788e96bce4d6ab00ddd5803
 SIZE (rust/crates/xdg-2.4.0.crate) = 14035
-SHA256 (leftwm-leftwm-0.2.11-14-gacf2407-acf2407bc48286ff5388a3d301b5adef59150d52_GH0.tar.gz) = 48c602825e3461dd10c079fbdcc4e5a067bc1fa63edf14e1decec1253d049b7e
-SIZE (leftwm-leftwm-0.2.11-14-gacf2407-acf2407bc48286ff5388a3d301b5adef59150d52_GH0.tar.gz) = 8552235
+SHA256 (leftwm-leftwm-0.2.11-19-g97de790-97de79064ba1132f0b1110909b4e8bbaffb48f5c_GH0.tar.gz) = 2e8ab9517110cdf786d2830cec17e6b9df41e4f9b1d21d45edcec47f2b79ffc0
+SIZE (leftwm-leftwm-0.2.11-19-g97de790-97de79064ba1132f0b1110909b4e8bbaffb48f5c_GH0.tar.gz) = 8552369
