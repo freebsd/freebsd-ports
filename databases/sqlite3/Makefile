@@ -1,8 +1,7 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.37.1
-#PORTREVISION=	0
+DISTVERSION=	3.37.2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${YEAR}/ https://www2.sqlite.org/${YEAR}/ https://www3.sqlite.org/${YEAR}/
@@ -216,7 +215,7 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 .include <bsd.port.options.mk>
 
 # YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-YEAR=	2021
+YEAR=	2022
 
 # Platform Configuration
 # -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]
@@ -242,7 +241,7 @@ CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 # EXTRACT_DEPENDS=p5-Digest-SHA3:security/p5-Digest-SHA3; USES=perl5; USE_PERL5=extract;
 # @${PERL} -MDigest::SHA3 -le 'print Digest::SHA3->new(sha_256_hex)->add(<>)->hexdigest' < ${DISTDIR}/${ALLFILES}
 pre-extract:
-	@${WHICH} sha3sum > /dev/null && ${ECHO_MSG} -n "=> " && sha3sum -a 256 --tag ${DISTDIR}/${ALLFILES} || ${TRUE}
+	@${WHICH} sha3sum > /dev/null && for entry in ${ALLFILES}; do ${ECHO_MSG} -n "=> "; sha3sum -a 256 --tag "${DISTDIR}/$${entry}"; done || ${TRUE}
 
 post-configure:
 	@${ECHO_MSG} "===> CONFIGURE_ARGS=${CONFIGURE_ARGS}"
@@ -253,11 +252,11 @@ post-configure:
 
 post-install:
 .if !defined(TEA)
-	${INSTALL_MAN} ${WRKSRC}/sqlite3.1 ${STAGEDIR}${PREFIX}/man/man1
-	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
+	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/man/man1"
+	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
 .else
-	${RM} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.0.8.6 ${STAGEDIR}${PREFIX}/lib/libsqlite3.a
+	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0.8.6" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
 .endif
 
 post-install-STRIP-on:
@@ -269,11 +268,11 @@ post-install-STRIP-on:
 .endif
 
 post-install-TCL-on:
-	${INSTALL_PROGRAM} ${WRKSRC}/sqlite3_analyzer ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/autoconf/tea/doc/${PORTNAME}.n ${STAGEDIR}${PREFIX}/man/mann/${PORTNAME}.tcl${TCL_VER:S/.//g}.n
+	${INSTALL_PROGRAM} "${WRKSRC}/${PORTNAME}_analyzer" "${STAGEDIR}${PREFIX}/bin"
+	${INSTALL_MAN} "${WRKSRC}/autoconf/tea/doc/${PORTNAME}.n" "${STAGEDIR}${PREFIX}/man/mann/${PORTNAME}.tcl${TCL_VER:S/.//g}.n"
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${WRKSRC}/contrib/sqlitecon.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} "${STAGEDIR}${EXAMPLESDIR}"
+	${INSTALL_SCRIPT} "${WRKDIR}/${SUB_FILES}" "${WRKSRC}/contrib/sqlitecon.tcl" "${STAGEDIR}${EXAMPLESDIR}"
 .endif
 
 pre-test:
