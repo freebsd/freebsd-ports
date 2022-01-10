@@ -5,14 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220110:
+  AFFECTS: users of security/bastillion
+  AUTHOR: netchild@FreeBSD.org
+
+  If you already performed the actions of the next entry, the following
+  action in this entry needs to be performed regardless.
+  If you did not already perform the actions of the next entry, only
+  the action of this entry needs to be performed.
+
+  The datastore of bastillion needs to be upgraded (if you do not see
+  users / can not login, you forgot to upgrade it):
+    java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-4.00.01.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+
 20220104:
   AFFECTS: users of security/bastillion
   AUTHOR: netchild@FreeBSD.org
 
-  The datastore of bastillion needs to be upgraded (if you do not see users / can not login,
-  you forgot to upgrade it):
+  The datastore of bastillion needs to be upgraded (if you do not see
+  users / can not login, you forgot to upgrade it):
     java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-4.00.00.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
-
 
 20220102:
   AFFECTS: users of sysutils/py-azure-cli
