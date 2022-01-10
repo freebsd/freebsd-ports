@@ -1,0 +1,11 @@
+Ripes is a graphical processor simulator and assembly code editor built
+for the RISC-V instruction set architecture, suitable for teaching how
+assembly level code is executed on various microarchitectures.
+
+Ripes may be used to explore concepts such as how machine code is executed
+on a variety of microarchitectures (RV32IMC/RV64IMC based), how different
+cache designs influence performance, how C and assembly code is compiled
+and assembled to executable machine code, and how a processor interacts
+with memory-mapped I/O.
+
+WWW: https://github.com/mortbopet/ripes

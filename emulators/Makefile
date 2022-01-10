@@ -111,6 +111,7 @@
     SUBDIR += qemu5
     SUBDIR += qmc2
     SUBDIR += quasi88
+    SUBDIR += ripes
     SUBDIR += riscv-isa-sim
     SUBDIR += rpcs3
     SUBDIR += rtc
