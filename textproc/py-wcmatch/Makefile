@@ -1,5 +1,6 @@
 PORTNAME=	wcmatch
 PORTVERSION=	8.3
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ COMMENT=	Wildcard/glob file name matcher
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bracex>=2.1.1:textproc/py-bracex@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bracex>=2.1.1:textproc/py-bracex@${PY_FLAVOR}
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
