@@ -57,7 +57,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		blakesmith:ar:8bd4349a67f2:blakesmith_ar/vendor/github.com/blakesmith/ar \
 		bsm:sarama-cluster:7e67d87a6b3f:bsm_sarama_cluster/vendor/github.com/bsm/sarama-cluster \
 		cavaliercoder:badio:ce5280129e9e:cavaliercoder_badio/vendor/github.com/cavaliercoder/badio \
-		cavaliercoder:go-rpm:7a9c54e3d83e:cavaliercoder_go_rpm/vendor/github.com/cavaliercoder/go-rpm \
+		cavaliergopher:rpm:7a9c54e3d83e:cavaliergopher_go_rpm/vendor/github.com/cavaliergopher/rpm \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
