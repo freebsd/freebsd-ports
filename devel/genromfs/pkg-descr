@@ -1,0 +1,8 @@
+The mkfs equivalent for romfs filesystem. Port created for NuttX RTOS.
+ROM FileSystem (ROMFS), read only filesystem, mainly for initial RAM
+disks of installation disks.  Using this filesystem, you get a very
+similar feature, and even the possibility of a small kernel, with a
+file system which doesn't take up useful memory from the router
+functions in the basement of your office.
+
+WWW: https://github.com/chexum/genromfs
