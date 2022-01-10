@@ -2,6 +2,7 @@
 
 PORTNAME=	proj
 PORTVERSION=	8.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
@@ -22,7 +23,6 @@ USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DATA
-OPTIONS_DEFAULT=		DATA
 OPTIONS_SUB=		yes
 
 DATA_DISTFILES=	proj-data-1.8${EXTRACT_SUFX}

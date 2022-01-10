@@ -6,7 +6,7 @@ should either be fetched dynamically at runtime (disabled by default, cf
 https://proj.org/usage/network.html) or be fetched locally depending on your
 work area needs, using the projsync command. 
 
-DATA option allows you to download all the data, but it requires more than 400mb!
+DATA option allows you to download all the data, but it requires more than 1.1Gb!
 This option is disabled by default.
 
 It is better to use the projsync command.
