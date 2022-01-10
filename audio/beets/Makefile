@@ -1,12 +1,11 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	beets
-PORTVERSION=	1.4.9
-PORTREVISION=	4
+DISTVERSION=	1.5.0
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	stiginge@pvv.org
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Media library management system for obsessive-compulsive music geeks
 
 LICENSE=	MIT
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confuse>=1.0.0:devel/py-confuse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jellyfish>=0:devel/py-jellyfish@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mediafile>=0:devel/py-mediafile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}munkres>=0:math/py-munkres@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}musicbrainzngs>=0.4:audio/py-musicbrainzngs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.33:audio/py-mutagen@${PY_FLAVOR} \
@@ -68,7 +68,7 @@ DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=2.2.1:audio/py-disco
 EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:multimedia/ffmpeg
-IMAGEMAGICK_USES=	magick:6,run
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
 IPFS_RUN_DEPENDS=	ipfs-go:sysutils/ipfs-go
 KODIUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 LASTFM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylast>=0:audio/py-pylast@${PY_FLAVOR}
