@@ -1,0 +1,32 @@
+https://github.com/NetBSD/pkgsrc-wip/blob/87d6597e0a2b/libjxl/patches/patch-plugins_gimp_CMakeLists.txt
+
+* adapt to make gimp plugin a separate package
+
+--- CMakeLists.txt.orig	2021-10-29 18:48:36 UTC
++++ CMakeLists.txt
+@@ -2,9 +2,12 @@
+ #
+ # Use of this source code is governed by a BSD-style
+ # license that can be found in the LICENSE file.
++cmake_minimum_required(VERSION 3.10)
++project(gimp-jxl LANGUAGES C CXX)
+ 
+ find_package(PkgConfig)
+ pkg_check_modules(Gimp IMPORTED_TARGET gimp-2.0>=2.10 gimpui-2.0>=2.10)
++pkg_check_modules(JXL IMPORTED_TARGET libjxl libjxl_threads)
+ 
+ if (NOT Gimp_FOUND)
+   message(WARNING "Gimp development libraries not found, the Gimp plugin will not be built")
+@@ -19,10 +22,10 @@ add_executable(file-jxl WIN32
+   file-jxl-save.cc
+   file-jxl-save.h
+   file-jxl.cc)
+-target_link_libraries(file-jxl jxl jxl_threads PkgConfig::Gimp)
++target_link_libraries(file-jxl PkgConfig::JXL PkgConfig::Gimp)
+ 
+ target_include_directories(file-jxl PUBLIC
+-    ${PROJECT_SOURCE_DIR})  # for plugins/gimp absolute paths.
++    ${PROJECT_SOURCE_DIR}/../..)  # for plugins/gimp absolute paths.
+ 
+ pkg_get_variable(GIMP_LIB_DIR gimp-2.0 gimplibdir)
+ install(TARGETS file-jxl RUNTIME DESTINATION "${GIMP_LIB_DIR}/plug-ins/file-jxl/")

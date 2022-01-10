@@ -1,0 +1,8 @@
+[
+{ type: upgrade
+  maximum_version: "0.6.1_4"
+  message: <<EOD
+If you use GIMP to read/write .jxl files install gimp-jxl-plugin after upgrade.
+EOD
+}
+]

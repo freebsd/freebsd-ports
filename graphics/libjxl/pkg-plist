@@ -29,7 +29,6 @@ lib/libjxl_threads.so.0.6
 lib/libjxl_threads.so.0.6.1
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_threads.pc
-%%GIMP%%libexec/gimp/2.2/plug-ins/file-jxl/file-jxl
 %%MANPAGES%%share/man/man1/cjxl.1.gz
 %%MANPAGES%%share/man/man1/djxl.1.gz
 share/mime/packages/image-jxl.xml
