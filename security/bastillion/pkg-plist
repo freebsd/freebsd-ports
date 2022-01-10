@@ -85,13 +85,13 @@ jetty_bastillion/bastillion/WEB-INF/lib/commons-logging-1.2.jar
 jetty_bastillion/bastillion/WEB-INF/lib/commons-pool2-2.10.0.jar
 jetty_bastillion/bastillion/WEB-INF/lib/core-3.4.1.jar
 jetty_bastillion/bastillion/WEB-INF/lib/gson-2.8.9.jar
-jetty_bastillion/bastillion/WEB-INF/lib/h2-2.0.204.jar
+jetty_bastillion/bastillion/WEB-INF/lib/h2-2.0.206.jar
 jetty_bastillion/bastillion/WEB-INF/lib/javassist-3.20.0-GA.jar
 jetty_bastillion/bastillion/WEB-INF/lib/jsch-0.1.72.jar
-jetty_bastillion/bastillion/WEB-INF/lib/lmvc-1.09.00.jar
-jetty_bastillion/bastillion/WEB-INF/lib/log4j-api-2.17.0.jar
-jetty_bastillion/bastillion/WEB-INF/lib/log4j-core-2.17.0.jar
-jetty_bastillion/bastillion/WEB-INF/lib/log4j-slf4j-impl-2.17.0.jar
+jetty_bastillion/bastillion/WEB-INF/lib/lmvc-1.09.01.jar
+jetty_bastillion/bastillion/WEB-INF/lib/log4j-api-2.17.1.jar
+jetty_bastillion/bastillion/WEB-INF/lib/log4j-core-2.17.1.jar
+jetty_bastillion/bastillion/WEB-INF/lib/log4j-slf4j-impl-2.17.1.jar
 jetty_bastillion/bastillion/WEB-INF/lib/ognl-3.1.26.jar
 jetty_bastillion/bastillion/WEB-INF/lib/slf4j-api-1.7.32.jar
 jetty_bastillion/bastillion/WEB-INF/lib/thymeleaf-3.0.14.RELEASE.jar
@@ -440,7 +440,7 @@ jetty_bastillion/modules/webapp.mod
 jetty_bastillion/modules/websocket.mod
 jetty_bastillion/notice.html
 jetty_bastillion/start.jar
-jetty_bastillion/upgrade/bastillion-upgrade-4.00.00.jar
+jetty_bastillion/upgrade/bastillion-upgrade-4.00.01.jar
 @dir(www,www,755) jetty_bastillion/bastillion/WEB-INF/classes
 @dir(www,www,755) %%WWWDIR%%
 @dir(www,www,755) %%WWWDIR%%/work

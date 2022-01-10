@@ -18,23 +18,11 @@ EOT
 }
 {
   type: upgrade
-  maximum_version: "3.12.02"
+  minimum_version: "3.10.00"
   message: <<EOT
 The datastore of bastillion needs to be upgraded (if you do not see users / can not login,
 you forgot to upgrade it):
-    java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-4.00.00.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
-EOT
-}
-{
-  type: upgrade
-  maximum_version: "3.12.00"
-  message: <<EOT
-The update to 3.12.00 contains an incompatible DB change. Either recreate your
-DB (rm %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/keydb/bastillion.*
-and restart) by hand, or export the old DB while the old version is
-installed and import the data into a new DB. See
-  https://github.com/bastillion-io/Bastillion/issues/405
-for details.
+    java -jar %%PREFIX%%/jetty_bastillion/upgrade/bastillion-upgrade-4.00.01.jar %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
 EOT
 }
 ]
