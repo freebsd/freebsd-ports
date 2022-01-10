@@ -1,8 +1,7 @@
 # Created by: Jason Evans <jasone@FreeBSD.org>
 
 PORTNAME=	zile
-PORTVERSION=	2.4.14
-PORTREVISION=	8
+PORTVERSION=	2.6.2
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -12,11 +11,13 @@ COMMENT=	Small emacs-like text editor
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgc.so:devel/boehm-gc \
-		libgnuregex.so.6:devel/libgnuregex
+		libgnuregex.so.6:devel/libgnuregex \
+		libgee-0.8.so:devel/libgee
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:misc/help2man
 
 USES=		gmake ncurses perl5 pkgconfig compiler:c++11-lang
 USE_PERL5=	build
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-regex
 
