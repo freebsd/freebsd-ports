@@ -80,5 +80,6 @@ include/LASlib/laszip_common_v3.hpp
 include/LASlib/laszip_decompress_selective_v3.hpp
 include/LASlib/mydefs.hpp
 lib/LASlib/libLASlib.so
+lib/cmake/LASlib/laslib-config.cmake
 lib/cmake/LASlib/laslib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LASlib/laslib-targets.cmake

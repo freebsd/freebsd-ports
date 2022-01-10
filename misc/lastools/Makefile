@@ -1,5 +1,6 @@
 PORTNAME=	LAStools
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -11,14 +12,16 @@ COMMENT=	Efficient tools for LiDAR processing
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cmake zip
+USES=		cmake:insource zip
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+CONFLICTS_INSTALL=	liblas
+
 EXECUTABLES=	lasindex las2txt las2las txt2las lasdiff lasinfo laszip lasmerge lasprecision
 
-post-configure: # workaround for https://github.com/LAStools/LAStools/issues/108
-	@${REINPLACE_CMD} -e '/laslib-config.cmake/,1d' ${BUILD_WRKSRC}/LASlib/src/cmake_install.cmake
+pre-install:
+	${MV} ${WRKSRC}/LASlib/src/LASlib-config.cmake ${WRKSRC}/LASlib/src/laslib-config.cmake
 
 post-install: # install executables, workaround for https://github.com/LAStools/LAStools/issues/120
 .for e in ${EXECUTABLES}
