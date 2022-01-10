@@ -2,4 +2,4 @@ EternalTerminal is a remote shell that automatically reconnects without
 interrupting the session. It uses ssh under-the-hood for handshake and
 encryption. Connection is via TCP unlike UDP based remote shells such as mosh.
 
-WWW: https://mistertea.github.io/EternalTerminal/
+WWW: https://eternalterminal.dev/
