@@ -43,6 +43,7 @@ lib/ocp/loadstm.so
 lib/ocp/loadult.so
 lib/ocp/medialib.so
 lib/ocp/playay.so
+lib/ocp/playcda.so
 %%FLAC%%lib/ocp/playflac.so
 lib/ocp/playgmd.so
 lib/ocp/playhvl.so
@@ -67,7 +68,6 @@ lib/ocp/playym.so
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fileselector.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mdz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/player.html
 %%PORTDOCS%%%%DOCSDIR%%/html/specialdrive.html
 %%PORTDOCS%%%%DOCSDIR%%/html/starting.html

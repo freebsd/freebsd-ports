@@ -1,8 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 
 PORTNAME=	ocp
-PORTVERSION=	0.2.90
-PORTREVISION=	1
+PORTVERSION=	0.2.91
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/mywave82/opencubicplayer/releases/download/v${PORTVERSION}/
@@ -16,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	xa65:devel/xa65
-LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
+		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
