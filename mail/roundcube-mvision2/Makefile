@@ -15,7 +15,7 @@ COMMENT=	Theme for RoundCube Web Mail
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.2:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=80
+IGNORE_WITH_PHP=80 81
 NO_BUILD=	yes
 NO_ARCH=	yes
 
