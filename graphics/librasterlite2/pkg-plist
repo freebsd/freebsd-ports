@@ -1,7 +1,9 @@
+bin/rl2sniff
 bin/rl2tool
 bin/wmslite
 include/rasterlite2/rasterlite2.h
 include/rasterlite2/rl2graphics.h
+include/rasterlite2/rl2mapconfig.h
 include/rasterlite2/rl2svg.h
 include/rasterlite2/rl2tiff.h
 include/rasterlite2/rl2wms.h
