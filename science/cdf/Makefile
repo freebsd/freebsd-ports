@@ -15,10 +15,6 @@ LICENSE_NAME=	NASA/Goddard Space Flight Center
 LICENSE_FILE=	${WRKSRC}/CDF_copyright.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_aarch64=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
-BROKEN_armv6=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
-BROKEN_armv7=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
-
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		fortran ncurses gmake
@@ -41,6 +37,7 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 MAKE_ARGS+=	OS=freebsd ENV=gnu all
+TEST_TARGET=	test
 
 post-patch:
 .for def in ${DEFS}
