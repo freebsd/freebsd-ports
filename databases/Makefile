@@ -108,6 +108,7 @@
     SUBDIR += gom
     SUBDIR += gqlplus
     SUBDIR += grass7
+    SUBDIR += grass8
     SUBDIR += hashtypes
     SUBDIR += hbase
     SUBDIR += hiredis
