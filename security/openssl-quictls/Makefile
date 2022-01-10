@@ -11,7 +11,7 @@ COMMENT=	QUIC capable fork of OpenSSL
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	libressl libressl-devel openssl openssl-devel
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl-devel
 
 BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
 

@@ -14,7 +14,7 @@ COMMENT=	TLSv1.3 capable SSL and crypto library
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	libressl libressl-devel openssl-devel openssl-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl-devel openssl-quictls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
