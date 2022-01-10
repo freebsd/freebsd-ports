@@ -16759,5 +16759,5 @@ astro/google-earth||2022-01-01|Has expired: Needs newer version to connect to se
 net/tramp||2022-01-01|Has expired: Not updated in 5 years and now part of Emacs
 archivers/p7zip-codec-rar||2022-01-01|Has expired: Unmaintained for years and has known vulnerabilities
 textproc/askgit|textproc/mergestat|2022-01-03|Project renamed
-emulators/qemu-utils||2022-01-10|Has expired: Use emulators/qemu or emulators/qemu-devel
+emulators/qemu-utils|emulators/qemu@tools|2022-01-10|Has expired: Use emulators/qemu@tools
 emulators/qemu42||2022-01-10|Has expired: Use emulators/qemu or emulators/qemu-devel
