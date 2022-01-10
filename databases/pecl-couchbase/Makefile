@@ -16,6 +16,6 @@ LIB_DEPENDS=	libcouchbase.so:databases/libcouchbase
 USES=		php:pecl
 USE_PHP=	json:build
 
-IGNORE_WITH_PHP=80
+IGNORE_WITH_PHP=80 81
 
 .include <bsd.port.mk>

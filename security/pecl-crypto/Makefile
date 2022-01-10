@@ -11,9 +11,9 @@ COMMENT=	Objective wrapper for OpenSSL Crypto Library
 LICENSE=	PHP301
 
 USES=		compiler:c++11-lang php:pecl
+IGNORE_WITH_PHP=	80 81
 CONFIGURE_ARGS=	--with-crypto
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-IGNORE_WITH_PHP=	80
 
 .include <bsd.port.mk>

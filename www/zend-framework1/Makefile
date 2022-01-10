@@ -13,29 +13,29 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=	74
-
-NO_ARCH=	yes
-NO_BUILD=	yes
-USE_PHP=	spl
 USES=		gettext php:web
+USE_PHP=	spl
+IGNORE_WITH_PHP=	74 81
 
 CONFLICTS=	ZendFramework-2.*
 
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
+
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP
 OPTIONS_DEFAULT=REQPHP
 
-MYSQL_DESC=	Enable MySQL PDO support
-MYSQLI_DESC=	Enable MySQLi support
 DBLIB_DESC=	Enable DBLIB PDO support
-PGSQL_DESC=	Enable PostgreSQL PDO support
+MYSQLI_DESC=	Enable MySQLi support
+MYSQL_DESC=	Enable MySQL PDO support
 ODBC_DESC=	Enable ODBC PDO support
-SQLITE_DESC=	Enable SQLite v3 PDO support
-REQPHP_DESC=	Install required PHP dependencies
 OPTPHP_DESC=	Install optional PHP dependencies
+PGSQL_DESC=	Enable PostgreSQL PDO support
+REQPHP_DESC=	Install required PHP dependencies
+SQLITE_DESC=	Enable SQLite v3 PDO support
 
 .include <bsd.port.pre.mk>
 

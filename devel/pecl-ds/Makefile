@@ -12,5 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		localbase php:pecl
 USE_PHP=	json:build
+IGNORE_WITH_PHP=	81
 
 .include <bsd.port.mk>

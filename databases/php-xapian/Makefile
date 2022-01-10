@@ -18,6 +18,7 @@ BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 USES=		compiler:c++11-lang libtool php:build,flavors tar:xz
+IGNORE_WITH_PHP=80 81
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
@@ -35,7 +36,6 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--without-tcl
 CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 GNU_CONFIGURE=	yes
-IGNORE_WITH_PHP=80
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 
