@@ -1,0 +1,8 @@
+Handles low-level interfacing for files' tags. Wraps Mutagen to.
+
+MediaFile is a simple interface to the metadata tags for many audio file
+formats. It wraps Mutagen, a high-quality library for low-level tag
+manipulation, with a high-level, format-independent interface for a common
+set of tags.
+
+WWW: https://github.com/beetbox/mediafile
