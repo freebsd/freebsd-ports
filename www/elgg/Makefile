@@ -10,9 +10,10 @@ COMMENT=	Blogging and social networking platform
 
 LICENSE=	GPLv2
 
+USES=		cpe gettext shebangfix zip php
 USE_PHP=	curl dom filter gd hash intl json mbstring pdo_mysql \
 		session simplexml soap sqlite3 xml xmlrpc
-USES=		cpe gettext shebangfix zip php
+IGNORE_WITH_PHP=	81
 
 SHEBANG_FILES=	vendor/elgg/elgg/.scripts/validate_commit_msg.php
 

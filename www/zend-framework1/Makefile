@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gettext php:web
 USE_PHP=	spl
-IGNORE_WITH_PHP=	74 81
+IGNORE_WITH_PHP=	74 80 81
 
 CONFLICTS=	ZendFramework-2.*
 

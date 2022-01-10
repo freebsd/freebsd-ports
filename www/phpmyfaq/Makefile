@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		cpe php:web
 USE_PHP=	filter json mysqli pcre pdf session xml xmlrpc xmlwriter zlib
+IGNORE_WITH_PHP=	80 81
 FAQ_DIR=	attachments data images inc pdf xml
 NO_BUILD=	YES
 NO_ARCH=	YES

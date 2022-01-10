@@ -7,7 +7,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web based GroupWare system
 
 USES=		php:mod tar:bzip2
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	80 81
 
 NO_BUILD=	yes
 NO_ARCH=	yes

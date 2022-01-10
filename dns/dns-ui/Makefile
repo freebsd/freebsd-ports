@@ -11,6 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pgsql php:mod,cli
+IGNORE_WITH_PHP=	80
 
 SUB_FILES=	pkg-message
 

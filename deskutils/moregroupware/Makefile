@@ -18,7 +18,7 @@ USE_PHP=	curl \
 		pcre \
 		session \
 		xml
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	80 81
 
 SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}

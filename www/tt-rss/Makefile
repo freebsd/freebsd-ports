@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 USES=		gettext-tools php:cli,web shebangfix
 USE_PHP=	ctype dom exif fileinfo filter hash iconv intl json mbstring \
 		openssl pcntl pdo posix session tokenizer xml xmlrpc zip
+IGNORE_WITH_PHP=	81
 USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php

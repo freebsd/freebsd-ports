@@ -27,6 +27,7 @@ GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS
 
 USES=		cpe jpeg magick:6,run php
+IGNORE_WITH_PHP=	80 81
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 USE_PHP=	curl ldap pdo_mysql gd pdf dom pcre session simplexml \

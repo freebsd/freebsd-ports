@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpHash.so:multimedia/pHash
 
 USES=		compiler:c++11-lang php:ext
-# Does not build for PHP 8.0
-IGNORE_WITH_PHP=	80
+# Does not build for PHP 8.0 and later
+IGNORE_WITH_PHP=	80 81
 
 WRKSRC_SUBDIR=	bindings/php
 
