@@ -1,4 +1,4 @@
---- imageformats/pngencoder.cpp.orig	2021-10-05 12:35:03 UTC
+--- imageformats/pngencoder.cpp.orig	2021-02-01 18:41:51 UTC
 +++ imageformats/pngencoder.cpp
 @@ -17,11 +17,17 @@ along with this program.  If not, see <http://www.gnu.
  */
@@ -7,7 +7,7 @@
 +#ifdef __FreeBSD__
 +#include <png.h>
 +#else
- #include <libpng16/png.h>
+ #include <libpng/png.h>
 +#endif
  #include <stdexcept>
  #include <vector>

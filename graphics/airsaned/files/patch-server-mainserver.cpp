@@ -1,6 +1,6 @@
---- server/server.cpp.orig	2021-10-05 17:07:11 UTC
-+++ server/server.cpp
-@@ -103,11 +103,11 @@ Server::Server(int argc, char** argv)
+--- server/mainserver.cpp.orig	2021-02-01 18:41:51 UTC
++++ server/mainserver.cpp
+@@ -83,11 +83,11 @@ MainServer::MainServer(int argc, char** argv)
        "ignore SANE network scanners",
        localonly },
      { "options-file",
@@ -13,4 +13,4 @@
 +      "%%PREFIX%%/etc/airsane/ignore.conf",
        "location of device ignore list",
        ignorelist },
-     { "debug", "false", "log debug information to stderr", debug },
+     { "random-uuids",
