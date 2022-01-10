@@ -46,6 +46,7 @@ SHEBANG_FILES=	resources/timezones/*.php \
 
 USE_PHP=	ctype curl fileinfo filter hash iconv mbstring mysqli openssl \
 		pcntl posix zip
+IGNORE_WITH_PHP=81
 
 OPTIONS_DEFINE=	GD OPCACHE
 OPTIONS_DEFAULT=GD OPCACHE
