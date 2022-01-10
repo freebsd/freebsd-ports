@@ -1,6 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.8
-PORTREVISION=	1
+DISTVERSION=	0.9.9
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libspdlog.so:devel/spdlog \
 		libwayland-client.so:graphics/wayland \
 		libxkbregistry.so:x11/libxkbcommon
+TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
@@ -60,6 +60,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
 			man/man5/${PORTNAME}-disk.5.gz \
 			man/man5/${PORTNAME}-idle-inhibitor.5.gz \
+			man/man5/${PORTNAME}-inhibitor.5.gz \
 			man/man5/${PORTNAME}-keyboard-state.5.gz \
 			man/man5/${PORTNAME}-memory.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
@@ -75,6 +76,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-temperature.5.gz \
 			man/man5/${PORTNAME}-tray.5.gz \
 			man/man5/${PORTNAME}-wlr-taskbar.5.gz \
+			man/man5/${PORTNAME}-wlr-workspaces.5.gz \
 			man/man5/${PORTNAME}.5.gz \
 			${NULL}
 
@@ -99,5 +101,12 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
