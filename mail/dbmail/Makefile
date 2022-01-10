@@ -1,7 +1,7 @@
 # Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 
 PORTNAME=	dbmail
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -12,53 +12,51 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
-		libzdb.so:databases/libzdb \
-		libmhash.so:security/mhash \
-		libevent.so:devel/libevent
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-		xmlto:textproc/xmlto \
-		docbook-sgml>0:textproc/docbook-sgml
+		docbook-sgml>0:textproc/docbook-sgml \
+		xmlto:textproc/xmlto
+LIB_DEPENDS=	libevent.so:devel/libevent \
+		libgmime-2.6.so:mail/gmime26 \
+		libmhash.so:security/mhash \
+		libzdb.so:databases/libzdb
 
-USES=		autoreconf gmake gnome libtool localbase pkgconfig \
-		shebangfix ssl
+USES=		autoreconf gmake gnome libtool localbase pkgconfig shebangfix \
+		ssl
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 
-CONFLICTS=	dbmail22
-
-OPTIONS_DEFINE=	DOCS LDAP SIEVE
-OPTIONS_DEFAULT=	SIEVE
-OPTIONS_SUB=	yes
-SIEVE_DESC=	Sieve mail sorting language support
-
-INSTALL_TARGET=	install-strip
-GNU_CONFIGURE=	yes
-
 SHEBANG_FILES=	man/fixsp.pl
 
-CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --enable-manpages
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--enable-manpages \
+			--sysconfdir=${LOCALBASE}/etc \
+			--with-zdb=${LOCALBASE}
 
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
+INSTALL_TARGET=	install-strip
+
+PLIST_SUB+=	DBMAIL_GROUP="${DBMAIL_GROUP}" \
+		DBMAIL_USER="${DBMAIL_USER}" \
+		PIDDIR="${PIDDIR}"
+
+OPTIONS_DEFINE=		DOCS LDAP SIEVE
+OPTIONS_DEFAULT=	SIEVE
+OPTIONS_SUB=		yes
+SIEVE_DESC=		Sieve mail sorting language support
 
 DOCS=		AUTHORS CHANGELOG.md INSTALL README THANKS UPGRADING
 
-SIEVE_CONFIGURE_WITH=	sieve
-SIEVE_LIB_DEPENDS=	libsieve.so:mail/libsieve
-
-LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
 LDAP_USES=		gettext-runtime
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+SIEVE_LIB_DEPENDS=	libsieve.so:mail/libsieve
+SIEVE_CONFIGURE_WITH=	sieve
 
 DBMAIL_USER?=	mailnull
 DBMAIL_GROUP?=	mail
 PIDDIR?=	/var/run/dbmail
-
-PLIST_SUB+=	DBMAIL_USER="${DBMAIL_USER}" \
-		DBMAIL_GROUP="${DBMAIL_GROUP}" \
-		PIDDIR="${PIDDIR}"
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf.sample
