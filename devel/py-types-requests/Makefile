@@ -1,5 +1,5 @@
 PORTNAME=	types-requests
-PORTVERSION=	2.26.3
+PORTVERSION=	2.27.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,6 +8,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Typing stubs for requests
 
 LICENSE=	APACHE20
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}types-urllib3>=0:devel/py-types-urllib3@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
