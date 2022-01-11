@@ -1,5 +1,5 @@
 PORTNAME=	onscripter
-PORTVERSION=	20200722
+PORTVERSION=	20220110
 CATEGORIES=	games
 MASTER_SITES=	http://onscripter.osdn.jp/
 
