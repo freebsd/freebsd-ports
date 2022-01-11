@@ -114,7 +114,6 @@ PLIST_FILES=
 PLIST_SUB_SED_EXCLUDE_VAL=	lib "3.0.0"
 
 CLANG_DESC=	Build clang
-CLANG_CONFLICTS_INSTALL=	clang-devel
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp \
 			-DCLANG_LINK_LLVM_DYLIB=ON
 CLANG_PORTDOCS=		clang
@@ -165,7 +164,6 @@ LLDB_VARS=		_USES_PYTHON=python:3.6+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_PORTDOCS=	openmp
-OPENMP_CONFLICTS_INSTALL=	libiomp5-devel
 OPENMP_USES=		perl5
 OPENMP_USE=		PERL5=build
 STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)
@@ -541,6 +539,7 @@ build-plist:
 	    ${GREP} -v '[/-]lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
+	    -e 's|${PYTHON_EXT_SUFFIX:C/\./\\./g}|%%PYTHON_EXT_SUFFIX%%|' \
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \

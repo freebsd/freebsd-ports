@@ -126,7 +126,7 @@ bin/split-file-devel
 %%LIT%%bin/llvm-lit-devel
 %%LIT%%llvm-devel/bin/llvm-lit
 %%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
-%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/_lldb.cpython-38.so
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/_lldb%%PYTHON_EXT_SUFFIX%%.so
 %%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/embedded_interpreter.py
 %%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/Logger.py
 %%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/__init__.py
