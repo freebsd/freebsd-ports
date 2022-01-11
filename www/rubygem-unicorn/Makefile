@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	unicorn
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,8 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-kgio>=2.6<3:devel/rubygem-kgio \
 		rubygem-raindrops>=0.7<1:www/rubygem-raindrops
 
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/unicorn bin/unicorn_rails
 
