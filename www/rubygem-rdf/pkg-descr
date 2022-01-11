@@ -1,22 +1,24 @@
-RDF.rb is a pure-Ruby library for working with Resource Description
-Framework (RDF) data.
+RDF.rb is a pure-Ruby library for working with Resource Description Framework
+(RDF) data.
 
 Features:
-* 100% pure Ruby with minimal dependencies and no bloat.
-* Fully compatible with RDF 1.1 specifications.
-* 100% free and unencumbered public domain software.
-* Provides a clean, well-designed RDF object model and related APIs.
-* Supports parsing and serializing N-Triples and N-Quads out of the box, with
+- 100% pure Ruby with minimal dependencies and no bloat.
+- Fully compatible with RDF 1.1 specifications.
+- 100% free and unencumbered public domain software.
+- Provides a clean, well-designed RDF object model and related APIs.
+- Supports parsing and serializing N-Triples and N-Quads out of the box, with
   more serialization format support available through add-on extensions.
-* Includes in-memory graph and repository implementations, with more storage
+- Includes in-memory graph and repository implementations, with more storage
   adapter support available through add-on extensions.
-* Implements basic graph pattern (BGP) query evaluation.
-* Plays nice with others: entirely contained in the RDF module, and does not
+- Implements basic graph pattern (BGP) query evaluation.
+- Plays nice with others: entirely contained in the RDF module, and does not
   modify any of Ruby's core classes or standard library.
-* Based entirely on Ruby's autoloading, meaning that you can generally make use
+- Based entirely on Ruby's autoloading, meaning that you can generally make use
   of any one part of the library without needing to load up the rest.
-* Compatible with Ruby Ruby 2.x, Rubinius and JRuby 1.7+ (in Ruby 2.0 mode).
-* Performs auto-detection of input to select appropriate Reader class if one can
-  not be determined from file characteristics.
+- Compatible with Ruby Ruby >= 2.4, Rubinius and JRuby 9.0+.
+- Performs auto-detection of input to select appropriate Reader class if one
+  cannot be determined from file characteristics.
+- Provisional support for RDF*.
 
 WWW: https://ruby-rdf.github.io/rdf/
+WWW: https://github.com/ruby-rdf/rdf
