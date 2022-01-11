@@ -5742,6 +5742,7 @@
     SUBDIR += rubygem-aws-sdk-cloudtrail
     SUBDIR += rubygem-aws-sdk-cloudwatch
     SUBDIR += rubygem-aws-sdk-cloudwatchevents
+    SUBDIR += rubygem-aws-sdk-cloudwatchevidently
     SUBDIR += rubygem-aws-sdk-cloudwatchlogs
     SUBDIR += rubygem-aws-sdk-codeartifact
     SUBDIR += rubygem-aws-sdk-codebuild
