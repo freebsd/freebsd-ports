@@ -2137,6 +2137,7 @@
     SUBDIR += rubygem-toml-rb
     SUBDIR += rubygem-totoridipjp
     SUBDIR += rubygem-tumblr_client
+    SUBDIR += rubygem-turbo-rails
     SUBDIR += rubygem-turbolinks
     SUBDIR += rubygem-turbolinks-source
     SUBDIR += rubygem-typhoeus
