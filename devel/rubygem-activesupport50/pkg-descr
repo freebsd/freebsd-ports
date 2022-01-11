@@ -4,4 +4,4 @@ reside in this package so they can be loaded as needed in Ruby projects outside
 of Rails.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/activesupport
+WWW: https://github.com/rails/rails/tree/main/activesupport
