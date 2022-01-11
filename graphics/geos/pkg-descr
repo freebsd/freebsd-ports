@@ -4,4 +4,5 @@ includes all the OpenGIS Simple Features for SQL spatial predicate functions and
 spatial operators, as well as specific JTS enhanced functions. GEOS provides
 spatial functionality to many other projects and products.
 
-WWW: https://trac.osgeo.org/geos
+WWW: https://libgeos.org/
+WWW: https://github.com/libgeos/geos
