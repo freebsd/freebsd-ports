@@ -2,7 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.21.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -72,7 +72,7 @@ OPTIONS_GROUP_HTTPGRP=	GOOGLE_PERFTOOLS HTTP HTTP_ADDITION HTTP_AUTH_REQ \
 	HTTP_CACHE HTTP_DAV HTTP_DEGRADATION HTTP_FLV HTTP_GUNZIP_FILTER \
 	HTTP_GZIP_STATIC HTTP_IMAGE_FILTER HTTP_MP4 HTTP_PERL \
 	HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK HTTP_SLICE HTTP_SSL \
-	HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV3
+	HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV3 HTTPV3_BORING HTTPV3_QTLS
 
 OPTIONS_GROUP_MAILGRP=	MAIL MAIL_IMAP MAIL_POP3 MAIL_SMTP MAIL_SSL
 
@@ -170,13 +170,17 @@ HTTP_XSLT_USE=			GNOME=libxml2,libxslt
 HTTP_XSLT_VARS=			DSO_BASEMODS+=http_xslt_module
 HTTPV2_IMPLIES=			HTTP_SSL
 HTTPV2_CONFIGURE_ON=		--with-http_v2_module
-HTTPV3_BUILD_DEPENDS=		${LOCALBASE}/bin/bssl:security/boringssl
-HTTPV3_RUN_DEPENDS=		${LOCALBASE}/bin/bssl:security/boringssl
-HTTPV3_CONFIGURE_ON=		--with-http_ssl_module \
-				--build=nginx-quic \
+HTTPV3_CONFIGURE_ON=		--build=nginx-quic \
 				--with-stream_quic_module \
 				--with-http_v3_module
 HTTPV3_EXTRA_PATCHES=		${PATCHDIR}/extra-patch-httpv3:-p1
+HTTPV3_BORING_BUILD_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
+HTTPV3_BORING_RUN_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
+HTTPV3_BORING_IMPLIES=		HTTPV3
+HTTPV3_BORING_PREVENTS=		HTTPV3_QTLS
+HTTPV3_QTLS_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
+HTTPV3_QTLS_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
+HTTPV3_QTLS_IMPLIES=		HTTPV3
 MAIL_VARS=			DSO_BASEMODS+=mail
 MAIL_IMAP_CONFIGURE_OFF=	--without-mail_imap_module
 MAIL_POP3_CONFIGURE_OFF=	--without-mail_pop3_module
@@ -231,6 +235,12 @@ CFLAGS+=	-DNDEBUG
 
 .if empty(PORT_OPTIONS:MPCRE_ONE) && empty(PORT_OPTIONS:MPCRE_TWO)
 IGNORE=		required at least PCRE_ONE or PCRE_TWO \
+		to be defined. Please do 'make config' again
+.endif
+
+.if ${PORT_OPTIONS:MHTTPV3} && \
+    (empty(PORT_OPTIONS:MHTTPV3_BORING) && empty(PORT_OPTIONS:MHTTPV3_QTLS))
+IGNORE=		required HTTPV3_BORING or HTTPV3_QTLS \
 		to be defined. Please do 'make config' again
 .endif
 
