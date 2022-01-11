@@ -16764,3 +16764,4 @@ emulators/qemu42||2022-01-10|Has expired: Use emulators/qemu or emulators/qemu-d
 devel/py-click6|devel/py-click|2022-01-11|Remove obsoleted port. Use devel/py-click instead
 devel/py-contextvars||2022-01-11|Remove obsoleted port. It is included in Python 3.7+
 devel/py-future-annotations||2022-01-11|Remove obsoleted port. It is included in Python 3.7+
+devel/rubygem-aws-sdk-v1|devel/rubygem-aws-sdk|2022-01-11|Remove obsoleted port. Use devel/rubygem-aws-sdk instead
