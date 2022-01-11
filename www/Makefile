@@ -195,8 +195,8 @@
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish
     SUBDIR += glassfish4
-    SUBDIR += glpi
     SUBDIR += glewlwyd
+    SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += go-www
     SUBDIR += gobuffalo
@@ -1382,10 +1382,10 @@
     SUBDIR += php74-session
     SUBDIR += php74-tidy
     SUBDIR += php80-opcache
-    SUBDIR += php81-opcache
     SUBDIR += php80-session
-    SUBDIR += php81-session
     SUBDIR += php80-tidy
+    SUBDIR += php81-opcache
+    SUBDIR += php81-session
     SUBDIR += php81-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3

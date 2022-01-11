@@ -263,8 +263,8 @@
     SUBDIR += php74
     SUBDIR += php74-extensions
     SUBDIR += php80
-    SUBDIR += php81
     SUBDIR += php80-extensions
+    SUBDIR += php81
     SUBDIR += php81-extensions
     SUBDIR += picoc
     SUBDIR += plexil
