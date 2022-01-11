@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	9.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -67,6 +67,7 @@ OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFINE_powerpc=	GOLD
 OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
 OPTIONS_DEFINE_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFINE_riscv64=	COMPILER_RT
 OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD CLANG EXTRAS LIT LLD LLD_LINK LLDB PYCLANG
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
@@ -75,6 +76,7 @@ OPTIONS_DEFAULT_powerpc64=	${PPC_ABI:tu:MELFV2} ${OPTIONS_DEFAULT_powerpc64_${OS
 OPTIONS_DEFAULT_powerpc64_13=	GOLD
 OPTIONS_DEFAULT_powerpc64_14=	GOLD
 OPTIONS_DEFAULT_powerpc64le=	ELFV2 GOLD OPENMP
+OPTIONS_DEFAULT_riscv64=	COMPILER_RT
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
@@ -310,7 +312,7 @@ _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
-_BE_LIBS_BPF=		AsmParser Disassembler 
+_BE_LIBS_BPF=		AsmParser Disassembler
 _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser Disassembler
 _BE_LIBS_MSP430=	AsmParser Disassembler
@@ -332,8 +334,8 @@ BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
 
 _CRTLIBDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_DIR}/share
-_COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
 .if ${ARCH} == "amd64"
+_COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
 _COMPILER_RT_BLACKLISTS+=	msan_blacklist.txt
 _COMPILER_RT_LIBS= \
@@ -374,8 +376,8 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.xray-fdr-x86_64.a \
 	libclang_rt.xray-profiling-x86_64.a \
 	libclang_rt.xray-x86_64.a
-.endif
-.if ${ARCH} == "i386"
+.elif ${ARCH} == "i386"
+_COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
 _COMPILER_RT_LIBS+= \
 	libclang_rt.asan-i386.a \
@@ -394,6 +396,9 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone-i386.a \
 	libclang_rt.ubsan_standalone-i386.so \
 	libclang_rt.ubsan_standalone_cxx-i386.a
+.elif ${ARCH} == "riscv64"
+_COMPILER_RT_LIBS= \
+	libclang_rt.builtins-riscv64.a
 .endif
 
 .if ${ARCH} == "armv6"
