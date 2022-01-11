@@ -7,4 +7,4 @@ attachments) are automatically stored using Active Storage and associated with
 the included RichText model.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/actiontext
+WWW: https://github.com/rails/rails/tree/main/actiontext
