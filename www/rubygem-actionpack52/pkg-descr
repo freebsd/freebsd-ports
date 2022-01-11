@@ -20,4 +20,4 @@ However, these modules are designed to function on their own and can be used
 outside of Rails.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/actionpack
+WWW: https://github.com/rails/rails/tree/main/actionpack
