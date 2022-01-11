@@ -26,6 +26,8 @@ INSTALL_TARGET=	install-strip
 .if ${SLAVE_PORT} == no
 USES+=		python:build
 
+NO_ARCH=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
