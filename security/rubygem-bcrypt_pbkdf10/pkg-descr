@@ -1,3 +1,0 @@
-This gem implements bcrypt_pdkfd (a variant of PBKDF2 with bcrypt-based PRF)
-
-WWW: https://github.com/net-ssh/bcrypt_pbkdf-ruby
