@@ -1,4 +1,4 @@
-HTML::Selector::XPath is a utility function to compile CSS2
-selector to the equivalent XPath expression.
+HTML::Selector::XPath is a utility function to compile full set of CSS2 and
+partial CSS3 selectors to the equivalent XPath expression.
 
 WWW: https://metacpan.org/release/HTML-Selector-XPath
