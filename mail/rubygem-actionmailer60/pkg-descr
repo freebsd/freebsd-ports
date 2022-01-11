@@ -12,4 +12,4 @@ as allowing a blog to accept new posts from an email (which could even have been
 sent from a phone).
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/actionmailer
+WWW: https://github.com/rails/rails/tree/main/actionmailer
