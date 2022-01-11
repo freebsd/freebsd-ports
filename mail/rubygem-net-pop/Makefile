@@ -2,6 +2,7 @@
 
 PORTNAME=	net-pop
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,8 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-net-protocol>=0:net/rubygem-net-protocol \
+RUN_DEPENDS=	rubygem-digest>=0:security/rubygem-digest \
+		rubygem-net-protocol>=0:net/rubygem-net-protocol \
 		rubygem-timeout>=0:devel/rubygem-timeout
 
 USES=		gem
