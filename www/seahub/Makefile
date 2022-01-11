@@ -2,7 +2,6 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -30,14 +29,18 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt1>=0:www/py-pyjwt1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysaml26>=6.5.1:security/py-pysaml26@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR}
 
 USES=		gettext-tools:build python:3.6+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-SHEBANG_FILES=	*.sh tests/*.sh *.template *.py tools/*.py seahub/*.py
+SHEBANG_FILES=	*.sh tests/*.sh *.template *.py tools/*.py seahub/*.py \
+		scripts/*.sh scripts/upgrade/*.sh *.sh scripts/build/*.py \
+		scripts/*.py scripts/upgrade/*.py
 
 NO_ARCH=	yes
 
@@ -71,18 +74,30 @@ post-patch:
 	${REINPLACE_CMD} -e 's|##FIX_SITEPACKAGEDIR##|${PREFIX}/${SITEPACKAGEDIR}|' ${WRKSRC}/*.template
 	${REINPLACE_CMD} -e 's|##PYTHON_VERSION##|${PYTHON_VERSION}|g' ${WRKSRC}/*.template
 	${REINPLACE_CMD} -e 's|##FIX_LOCALBASE##|${LOCALBASE}|' ${WRKSRC}/*.template
-	${FIND} ${WRKSRC} -name "*.bak" -exec ${RM} {} \;
-	${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} {} \;
 	(cd ${WRKSRC}; (for file in run-seahub.sh.template \
 		send_user_notifications.sh.template setenv.sh.template; do \
 		${CP} $$file $${file%%.template}; \
 		done))
+	${REINPLACE_CMD} -E 's/stat.+\$$/stat -f %Su $$/' ${WRKSRC}/scripts/seafile.sh
+	${REINPLACE_CMD} 's/%%SEAFILE_USER%%/${USERS:[1]}/ ; s/%%SEAFILE_GROUP%%/${GROUPS:[1]}/' \
+			${WRKSRC}/scripts/setup-seafile.sh ${WRKSRC}/scripts/setup-seafile-mysql.py
+# Fix python hardcodings
+	${REINPLACE_CMD} 's/python3\.[0-9]/${PYTHON_VERSION}/g; s/python3 /${PYTHON_VERSION} / ; \
+			s/PYTHON=python3/PYTHON=${PYTHON_VERSION}/ ; s|/python3/|/${PYTHON_VERSION}/|g' \
+		${WRKSRC}/scripts/*.sh \
+		${WRKSRC}/scripts/setup-seafile-mysql.py \
+		${WRKSRC}/scripts/upgrade/upgrade_[7-9].[0-9]_[7-9].[0-9].sh
+	${REINPLACE_CMD} 's/python/${PYTHON_VERSION}/' \
+		${WRKSRC}/scripts/upgrade/regenerate_secret_key.sh
+	${FIND} ${WRKSRC} -name "*.bak" -exec ${RM} {} \;
+	${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} {} \;
 	${RM} ${WRKSRC}/.gitignore
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/runtime/ \
 		${STAGEDIR}${PREFIX}/${SEAHUBDIR} ${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR} \
-		${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR}/custom
+		${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR}/custom \
+		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SEAHUBDIR} \
 	"! -name Makefile ! -name seahub.conf ! -name avatars \
 	! -name default-non-register.jpg ! -name default.png ! -name groups")
@@ -90,6 +105,11 @@ do-install:
 		 ${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR})
 	${LN} -fs ../../../seahub-data/avatars \
 		${STAGEDIR}${PREFIX}/${SEAHUBDIR}/media/avatars
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][yh] ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upgrade/*.[ps][yh] \
+		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade
+	(cd ${WRKSRC}/scripts && \
+		${COPYTREE_SHARE} "upgrade/sql" ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER})
 
 .include "${.CURDIR}/../../net-mgmt/seafile-server/Makefile.include"
 

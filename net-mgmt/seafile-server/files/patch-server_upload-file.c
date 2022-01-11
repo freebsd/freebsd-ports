@@ -1,6 +1,6 @@
---- server/upload-file.c.orig	2019-12-23 10:30:49 UTC
+--- server/upload-file.c.orig	2021-12-09 05:24:45 UTC
 +++ server/upload-file.c
-@@ -2306,7 +2306,7 @@ out:
+@@ -2234,7 +2234,7 @@ out:
          /* Set keepalive to 0. This will cause evhtp to close the
           * connection after sending the reply.
           */
@@ -9,7 +9,7 @@
  
          fsm->state = RECV_ERROR;
      }
-@@ -2607,8 +2607,8 @@ upload_headers_cb (evhtp_request_t *req, evhtp_headers
+@@ -2545,8 +2545,8 @@ upload_headers_cb (evhtp_request_t *req, evhtp_headers
      }
  
      /* Set up per-request hooks, so that we can read file data piece by piece. */
@@ -20,16 +20,16 @@
      /* Set arg for upload_cb or update_cb. */
      req->cbarg = fsm;
  
-@@ -2623,7 +2623,7 @@ err:
+@@ -2561,7 +2561,7 @@ err:
      /* Set keepalive to 0. This will cause evhtp to close the
       * connection after sending the reply.
       */
 -    req->keepalive = 0;
-+    evhtp_request_set_keepalive(req, 0);
-     send_error_reply (req, EVHTP_RES_BADREQ, err_msg);
++	  evhtp_request_set_keepalive(req, 0);
+     send_error_reply (req, error_code, err_msg);
  
      g_free (repo_id);
-@@ -2724,32 +2724,32 @@ upload_file_init (evhtp_t *htp, const char *http_temp_
+@@ -2662,32 +2662,32 @@ upload_file_init (evhtp_t *htp, const char *http_temp_
      g_free (cluster_shared_dir);
  
      cb = evhtp_set_regex_cb (htp, "^/upload-api/.*", upload_api_cb, NULL);
