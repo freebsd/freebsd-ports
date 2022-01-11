@@ -27,10 +27,4 @@ KERBEROS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.5.0:security/py-gssapi@${
 			${PYTHON_PKGNAMEPREFIX}krb5>=0:security/py-krb5@${PY_FLAVOR}
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0:devel/py-dataclasses@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
