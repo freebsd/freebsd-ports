@@ -15,9 +15,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Compress-Raw-Lzma>=${PORTVERSION}:archivers/p5-Compress-Raw-Lzma \
 		p5-IO-Compress>=${PORTVERSION}:archivers/p5-IO-Compress
-TEST_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \
-		p5-Test-Pod>=1:devel/p5-Test-Pod \
-		p7zip>=0:archivers/p7zip
+TEST_DEPENDS=	7zz:archivers/7-zip \
+		p5-IO-String>=0:devel/p5-IO-String \
+		p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
