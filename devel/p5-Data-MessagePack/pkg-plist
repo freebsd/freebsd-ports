@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/Data::MessagePack.3.gz
-%%PERL5_MAN3%%/Data::MessagePack::PP.3.gz
-%%PERL5_MAN3%%/Data::MessagePack::Unpacker.3.gz
-%%SITE_ARCH%%/auto/Data/MessagePack/MessagePack.so
 %%SITE_ARCH%%/Data/MessagePack.pm
 %%SITE_ARCH%%/Data/MessagePack/Boolean.pm
 %%SITE_ARCH%%/Data/MessagePack/PP.pm
 %%SITE_ARCH%%/Data/MessagePack/Unpacker.pod
+%%SITE_ARCH%%/auto/Data/MessagePack/MessagePack.so
+%%PERL5_MAN3%%/Data::MessagePack.3.gz
+%%PERL5_MAN3%%/Data::MessagePack::PP.3.gz
+%%PERL5_MAN3%%/Data::MessagePack::Unpacker.3.gz
