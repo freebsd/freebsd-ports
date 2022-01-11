@@ -1,5 +1,4 @@
 jsonlines is a Python library to simplify working with jsonlines and ndjson
 data.
 
-WWW: https://pypi.org/project/jsonlines/
 WWW: https://github.com/wbolster/jsonlines
