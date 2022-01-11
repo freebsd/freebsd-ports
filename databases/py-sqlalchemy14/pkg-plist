@@ -134,6 +134,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/core/events.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/core/exceptions.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/core/expression_api.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/core/foundation.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/core/functions.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/core/future.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/core/index.rst
@@ -299,6 +300,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/core/events.html
 %%PORTDOCS%%%%DOCSDIR%%/core/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/core/expression_api.html
+%%PORTDOCS%%%%DOCSDIR%%/core/foundation.html
 %%PORTDOCS%%%%DOCSDIR%%/core/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/core/future.html
 %%PORTDOCS%%%%DOCSDIR%%/core/index.html
