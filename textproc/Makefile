@@ -1785,6 +1785,7 @@
     SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-terminal-table
     SUBDIR += rubygem-terser
+    SUBDIR += rubygem-terser11
     SUBDIR += rubygem-text
     SUBDIR += rubygem-tidy_ffi
     SUBDIR += rubygem-toml
