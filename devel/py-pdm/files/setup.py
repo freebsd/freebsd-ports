@@ -6,22 +6,22 @@ import codecs
 with codecs.open('README.md', encoding="utf-8") as fp:
     long_description = fp.read()
 INSTALL_REQUIRE = [
-    'appdirs',
-    'atoml>=1.0.3',
+    'blinker',
     'click>=7',
     'importlib-metadata; python_version < "3.8"',
     'installer>=0.3.0,<0.5',
     'packaging',
     'pdm-pep517>=0.9,<0.10',
     'pep517>=0.11.0',
-    'pip>=20.1',
-    'python-dotenv~=0.15',
+    'platformdirs',
+    'python-dotenv>=0.15',
     'pythonfinder',
     'resolvelib>=0.8,<0.9',
-    'shellingham<2.0.0,>=1.3.2',
-    'tomli>=1.1.0,<2.0.0',
+    'shellingham>=1.3.2',
+    'tomli>=1.1.0',
+    'tomlkit>=0.8.0,<1',
     'typing-extensions; python_version < "3.8"',
-    'wheel<1.0.0,>=0.36.2',
+    'wheel>=0.36.2',
 ]
 ENTRY_POINTS = {
     'console_scripts': [
@@ -55,6 +55,7 @@ setup_kwargs = {
         'pdm.installers',
         'pdm.models',
         'pdm.models.in_process',
+        'pdm.pep582',
         'pdm.project',
         'pdm.resolver',
     ],
