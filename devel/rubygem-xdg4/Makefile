@@ -19,6 +19,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+# xdg 5.0.0+ requires ruby 3.0+
 PORTSCOUT=	limit:^4\.
 
 .include <bsd.port.mk>
