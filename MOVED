@@ -16765,3 +16765,4 @@ devel/py-click6|devel/py-click|2022-01-11|Remove obsoleted port. Use devel/py-cl
 devel/py-contextvars||2022-01-11|Remove obsoleted port. It is included in Python 3.7+
 devel/py-future-annotations||2022-01-11|Remove obsoleted port. It is included in Python 3.7+
 devel/rubygem-aws-sdk-v1|devel/rubygem-aws-sdk|2022-01-11|Remove obsoleted port. Use devel/rubygem-aws-sdk instead
+devel/rubygem-sidekiq62|devel/rubygem-sidekiq|2022-01-11|Remove obsoleted port. Use devel/rubygem-sidekiq instead
