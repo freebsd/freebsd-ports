@@ -11,4 +11,4 @@ columns. Although these mappings can be defined explicitly, it's recommended to
 follow naming conventions, especially when getting started with the library.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/activerecord
+WWW: https://github.com/rails/rails/tree/main/activerecord
