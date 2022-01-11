@@ -2127,6 +2127,7 @@
     SUBDIR += rubygem-sinatra1
     SUBDIR += rubygem-smashing
     SUBDIR += rubygem-socksify
+    SUBDIR += rubygem-stimulus-rails
     SUBDIR += rubygem-swd
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin
