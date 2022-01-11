@@ -2129,6 +2129,7 @@
     SUBDIR += rubygem-socksify
     SUBDIR += rubygem-stimulus-rails
     SUBDIR += rubygem-swd
+    SUBDIR += rubygem-tailwindcss-rails
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom

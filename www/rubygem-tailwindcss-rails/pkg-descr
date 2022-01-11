@@ -1,0 +1,9 @@
+Tailwind CSS is a utility-first CSS framework packed with classes like flex,
+pt-4, text-center and rotate-90 that can be composed to build any design,
+directly in your markup.
+
+This gem gives access to the standard Tailwind CSS framework configured for dark
+mode, forms, aspect-ratio, typography, and the Inter font via the asset pipeline
+using Sprockets (and soon Propshaft).
+
+WWW: https://github.com/rails/tailwindcss-rails
