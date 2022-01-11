@@ -4,4 +4,4 @@ Railties is responsible for gluing all frameworks together. Overall, it:
 - and provides the Rails generators core.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/railties
+WWW: https://github.com/rails/rails/tree/main/railties
