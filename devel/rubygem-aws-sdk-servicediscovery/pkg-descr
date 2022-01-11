@@ -1,4 +1,4 @@
 Official AWS Ruby gem for AWS Cloud Map (ServiceDiscovery).
 
 WWW: https://github.com/aws/aws-sdk-ruby
-WWW: https://github.com/aws/aws-sdk-ruby/tree/master/gems/aws-sdk-servicediscovery
+WWW: https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-servicediscovery
