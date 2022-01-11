@@ -16,4 +16,4 @@ backend becomes more of an operational concern, then. And you'll be able to
 switch between them without having to rewrite your jobs.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/activejob
+WWW: https://github.com/rails/rails/tree/main/activejob
