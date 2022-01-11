@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.3.5:devel/py-curtsies@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -33,10 +33,6 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0:devel/py-dataclasses@${PY_FLAVOR}
-.endif
 
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.cached-property>=0:devel/py-backports.cached-property@${PY_FLAVOR}
