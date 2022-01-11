@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.6.3:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		gettext python:3.6+ shebangfix
+USES=		gettext python:3.7+ shebangfix
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
