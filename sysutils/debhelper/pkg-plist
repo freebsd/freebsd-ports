@@ -80,6 +80,7 @@ bin/postinst-systemd-restartnostart
 bin/postinst-systemd-start
 bin/postinst-systemd-user-dont-enable
 bin/postinst-systemd-user-enable
+bin/postinst-systemd-user-restart
 bin/postinst-sysusers
 bin/postinst-ucf
 bin/postinst-usrlocal
@@ -96,6 +97,7 @@ bin/postrm-sgmlcatalog
 bin/postrm-systemd
 bin/postrm-systemd-reload-only
 bin/postrm-systemd-user
+bin/postrm-systemd-user-reload-only
 bin/postrm-ucf
 bin/postrm-xfonts
 bin/preinst-emacsen
@@ -105,6 +107,7 @@ bin/prerm-init
 bin/prerm-init-norestart
 bin/prerm-systemd
 bin/prerm-systemd-restart
+bin/prerm-systemd-user-stop
 bin/prerm-usrlocal
 bin/prerm-wm
 %%SITE_PERL%%/DH/AddonAPI.pm
