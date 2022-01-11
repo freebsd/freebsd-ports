@@ -572,6 +572,7 @@
     SUBDIR += rss2email3
     SUBDIR += rubygem-actionmailbox60
     SUBDIR += rubygem-actionmailbox61
+    SUBDIR += rubygem-actionmailbox70
     SUBDIR += rubygem-actionmailer4
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-actionmailer50
