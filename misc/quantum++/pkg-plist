@@ -27,6 +27,7 @@ include/qpp/operations.hpp
 include/qpp/qasm/qasm.hpp
 include/qpp/qasmtools/ast/ast.hpp
 include/qpp/qasmtools/ast/base.hpp
+include/qpp/qasmtools/ast/cloneable.hpp
 include/qpp/qasmtools/ast/decl.hpp
 include/qpp/qasmtools/ast/expr.hpp
 include/qpp/qasmtools/ast/program.hpp
