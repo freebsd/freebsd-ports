@@ -5995,6 +5995,7 @@
     SUBDIR += rubygem-aws-sdk-workmail
     SUBDIR += rubygem-aws-sdk-workmailmessageflow
     SUBDIR += rubygem-aws-sdk-workspaces
+    SUBDIR += rubygem-aws-sdk-workspacesweb
     SUBDIR += rubygem-aws-sdk-xray
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
