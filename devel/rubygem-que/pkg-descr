@@ -1,0 +1,17 @@
+Que is a high-performance job queue that improves the reliability of your
+application by protecting your jobs with the same ACID guarantees as the rest of
+your data.
+
+Que is a queue for Ruby and PostgreSQL that manages jobs using advisory locks,
+which gives it several advantages over other RDBMS-backed queues:
+- Concurrency - Workers don't block each other when trying to lock jobs, as
+  often occurs with "SELECT FOR UPDATE"-style locking. This allows for very high
+  throughput with a large number of workers.
+- Efficiency - Locks are held in memory, so locking a job doesn't incur a disk
+  write. These first two points are what limit performance with other queues.
+  Under heavy load, Que's bottleneck is CPU, not I/O.
+- Safety - If a Ruby process dies, the jobs it's working won't be lost, or left
+  in a locked or ambiguous state - they immediately become available for any
+  other worker to pick up.
+
+WWW: https://github.com/que-rb/que

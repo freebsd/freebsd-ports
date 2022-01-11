@@ -6652,6 +6652,7 @@
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-puppet-resource_api
     SUBDIR += rubygem-pygments.rb
+    SUBDIR += rubygem-que
     SUBDIR += rubygem-r18n-core
     SUBDIR += rubygem-r18n-desktop
     SUBDIR += rubygem-r18n-rails
