@@ -1,3 +1,3 @@
-TIMESTAMP = 1621699737
-SHA256 (tomlkit-0.7.2.tar.gz) = d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754
-SIZE (tomlkit-0.7.2.tar.gz) = 159643
+TIMESTAMP = 1641046012
+SHA256 (tomlkit-0.8.0.tar.gz) = 29e84a855712dfe0e88a48f6d05c21118dbafb283bb2eed614d46f80deb8e9a1
+SIZE (tomlkit-0.8.0.tar.gz) = 179067
