@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ds
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		localbase php:pecl
 USE_PHP=	json:build
-IGNORE_WITH_PHP=	81
 
 .include <bsd.port.mk>
