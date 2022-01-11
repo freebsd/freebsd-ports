@@ -1,12 +1,10 @@
 # Created by: Ron van Daal
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.36
-PORTREVISION=	1
+PORTVERSION=	1.3.37
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF \
-		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/${PORTVERSION:R}/
+MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick

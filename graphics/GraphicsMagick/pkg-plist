@@ -95,15 +95,15 @@ lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.so
 lib/libGraphicsMagick++.so.12
-lib/libGraphicsMagick++.so.12.5.0
+lib/libGraphicsMagick++.so.12.5.1
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.22.0
+lib/libGraphicsMagick.so.3.23.0
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
-lib/libGraphicsMagickWand.so.2.9.5
+lib/libGraphicsMagickWand.so.2.9.6
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
@@ -136,6 +136,7 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2017
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2018
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2019
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2020
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2001.html
@@ -157,6 +158,7 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2017.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2018.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2019.html
+%%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2020.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changes.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html
