@@ -1,4 +1,4 @@
 Official AWS Ruby gem for Amazon Sagemaker Edge Manager.
 
 WWW: https://github.com/aws/aws-sdk-ruby
-WWW: https://github.com/aws/aws-sdk-ruby/tree/master/gems/aws-sdk-sagemakeredgemanager
+WWW: https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-sagemakeredgemanager
