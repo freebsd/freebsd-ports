@@ -16,7 +16,7 @@ USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	aristocratos
 
-SHEBANG_FILES=	${WRKSRC}/bpytop.py
+SHEBANG_FILES=	bpytop.py
 
 NO_ARCH=	yes
 
