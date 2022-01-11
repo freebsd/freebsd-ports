@@ -1082,6 +1082,7 @@
     SUBDIR += rubygem-devise-two-factor-rails60
     SUBDIR += rubygem-devise-two-factor-rails61
     SUBDIR += rubygem-devise_pam_authenticatable2
+    SUBDIR += rubygem-digest
     SUBDIR += rubygem-digest-crc
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-doorkeeper-openid_connect
