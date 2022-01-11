@@ -12,4 +12,4 @@ several dedicated mailboxes, which are capable of interacting directly with the
 rest of your domain model.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/actionmailbox
+WWW: https://github.com/rails/rails/tree/main/actionmailbox
