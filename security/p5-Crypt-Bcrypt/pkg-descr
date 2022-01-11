@@ -1,0 +1,6 @@
+This module provides a modern and user-friendly implementation of
+the bcrypt password hash.
+
+Note that in bcrypt passwords may only contain 72 characters.
+
+WWW: https://metacpan.org/module/Crypt::Bcrypt
