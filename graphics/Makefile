@@ -82,6 +82,7 @@
     SUBDIR += bmp2html
     SUBDIR += bonzomatic
     SUBDIR += box
+    SUBDIR += brunsli
     SUBDIR += bsd-plotutils
     SUBDIR += c-a-i-r
     SUBDIR += cadubi

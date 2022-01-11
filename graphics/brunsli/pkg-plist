@@ -1,0 +1,11 @@
+include/brunsli/brunsli_decode.h
+include/brunsli/brunsli_encode.h
+include/brunsli/decode.h
+include/brunsli/encode.h
+include/brunsli/jpeg_data.h
+include/brunsli/jpeg_data_reader.h
+include/brunsli/jpeg_data_writer.h
+include/brunsli/status.h
+include/brunsli/types.h
+lib/libbrunslidec-c.so
+lib/libbrunslienc-c.so
