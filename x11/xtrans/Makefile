@@ -12,5 +12,6 @@ LICENSE=	MIT
 USES=		xorg-cat:lib
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
