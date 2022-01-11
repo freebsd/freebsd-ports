@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	mime-types
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.1
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
