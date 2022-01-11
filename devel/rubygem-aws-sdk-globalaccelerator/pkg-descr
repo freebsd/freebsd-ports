@@ -1,4 +1,4 @@
 Official AWS Ruby gem for AWS Global Accelerator.
 
 WWW: https://github.com/aws/aws-sdk-ruby
-WWW: https://github.com/aws/aws-sdk-ruby/tree/master/gems/aws-sdk-globalaccelerator
+WWW: https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-globalaccelerator
