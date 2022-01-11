@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.1:devel/py-setuptools_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.functools>=1.20:devel/py-jaraco.functools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0,1:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
