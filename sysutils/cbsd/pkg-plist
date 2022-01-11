@@ -188,6 +188,7 @@ cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-21.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-13-STABLE.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-14.0-LATEST.conf
+cbsd/etc/defaults/vm-freebsd-MidnightBSD-x64-2.1.2.conf
 cbsd/etc/defaults/vm-freebsd-OPNsense-21-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-x64-12.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-12.conf
@@ -211,6 +212,7 @@ cbsd/etc/defaults/vm-linux-Debian-x86-9-minimal.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-15.conf
 cbsd/etc/defaults/vm-linux-Kali-2021-amd64.conf
+cbsd/etc/defaults/vm-linux-Mint-20.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-7.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-8.conf
 cbsd/etc/defaults/vm-linux-Parrot-security-4-x64.conf
@@ -322,6 +324,7 @@ cbsd/misc/elf_tables
 cbsd/misc/fmagic
 cbsd/misc/ipv6range
 cbsd/misc/mtree
+cbsd/misc/next-ng-port
 cbsd/misc/next-vale-port
 cbsd/misc/nics-list
 cbsd/misc/pwcrypt
@@ -828,6 +831,7 @@ cbsd/subr/time.subr
 cbsd/subr/tools.subr
 cbsd/subr/universe.subr
 cbsd/subr/up.subr
+cbsd/subr/vale.subr
 cbsd/subr/virtual.subr
 cbsd/subr/virtualbox.subr
 cbsd/subr/vnet.subr
@@ -937,6 +941,7 @@ cbsd/tools/freectr
 cbsd/tools/freejname
 cbsd/tools/fwcounters
 cbsd/tools/geli
+cbsd/tools/get-next-ng-port
 cbsd/tools/get-next-nic
 cbsd/tools/get-next-tcp-port
 cbsd/tools/get-next-vale-port
@@ -1151,6 +1156,7 @@ cbsd/upgrade/pre-patch-13.0.16.0
 cbsd/upgrade/pre-patch-13.0.19.0
 cbsd/upgrade/pre-patch-13.0.19.1
 cbsd/upgrade/pre-patch-13.0.2.0
+cbsd/upgrade/pre-patch-13.0.21.0
 cbsd/upgrade/pre-patch-13.0.3.0
 cbsd/upgrade/pre-patch-13.0.3.1
 cbsd/upgrade/pre-patch-13.0.4.0
