@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	elasticsearch-xpack
-PORTVERSION=	7.15.0
+PORTVERSION=	7.16.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
