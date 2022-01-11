@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	mechanize
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
