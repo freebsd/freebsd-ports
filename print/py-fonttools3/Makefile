@@ -16,10 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python:3.7+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS_INSTALL=	py*-fonttools # bin/fonttools
-
 MAKE_ENV=	FONTTOOLS_MANPATH="man"
 NO_ARCH=	yes
+
+# bin/fonttools
+CONFLICTS_INSTALL=	py*-fonttools
 
 # fonttools 4.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^3\.
