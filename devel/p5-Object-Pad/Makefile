@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Object-Pad
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-XS-Parse-Keyword>=0.19:devel/p5-XS-Parse-Keyword \
-		p5-XS-Parse-Sublike>=0.13:devel/p5-XS-Parse-Sublike
+		p5-XS-Parse-Sublike>=0.15:devel/p5-XS-Parse-Sublike
 TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Refcount>=0:devel/p5-Test-Refcount
