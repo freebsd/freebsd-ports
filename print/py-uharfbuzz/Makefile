@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	uharfbuzz
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,11 @@ USES=		compiler:c++11-lang python:3.6+ zip
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-patch:
-	@${RM} -r ${WRKSRC}/harfbuzz/
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py ${WRKSRC}/src/uharfbuzz/_harfbuzz.cpp
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/harfbuzz/
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
