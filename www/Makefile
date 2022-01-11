@@ -1968,6 +1968,7 @@
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jruby-rack
+    SUBDIR += rubygem-jsbundling-rails
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-jwt
