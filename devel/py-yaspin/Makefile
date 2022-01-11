@@ -20,13 +20,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0.8<0.9:devel/py-dataclasses@${PY_FLAVOR}
-.endif
-
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
