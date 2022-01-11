@@ -4371,7 +4371,6 @@
     SUBDIR += py-click-log
     SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
-    SUBDIR += py-click6
     SUBDIR += py-click7
     SUBDIR += py-cliff
     SUBDIR += py-cligj
