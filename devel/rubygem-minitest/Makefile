@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	minitest
-PORTVERSION=	5.14.4
+PORTVERSION=	5.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
