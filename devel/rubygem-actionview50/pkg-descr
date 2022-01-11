@@ -4,4 +4,4 @@ Template formats that Action View handles are ERB (embedded Ruby, typically used
 to inline short Ruby snippets inside HTML), and XML Builder.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/actionview
+WWW: https://github.com/rails/rails/tree/main/actionview
