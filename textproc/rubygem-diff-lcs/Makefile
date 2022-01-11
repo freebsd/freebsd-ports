@@ -1,7 +1,7 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 
 PORTNAME=	diff-lcs
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -19,9 +19,9 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	p5-HTML-Diff # bin/htmldiff
-
 PLIST_FILES=	bin/htmldiff bin/ldiff
+
+CONFLICTS_INSTALL=	p5-HTML-Diff # bin/htmldiff
 
 SHEBANG_FILES=	bin/htmldiff bin/ldiff
 ruby_OLD_CMD=	ruby
