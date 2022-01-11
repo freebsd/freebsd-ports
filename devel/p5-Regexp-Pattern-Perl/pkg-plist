@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Regexp/Pattern/Perl.pm
 %%SITE_PERL%%/Regexp/Pattern/Perl/Dist.pm
 %%SITE_PERL%%/Regexp/Pattern/Perl/Module.pm
+%%SITE_PERL%%/Regexp/Pattern/Perl/Release.pm
 %%PERL5_MAN3%%/Regexp::Pattern::Perl.3.gz
 %%PERL5_MAN3%%/Regexp::Pattern::Perl::Dist.3.gz
 %%PERL5_MAN3%%/Regexp::Pattern::Perl::Module.3.gz
+%%PERL5_MAN3%%/Regexp::Pattern::Perl::Release.3.gz
