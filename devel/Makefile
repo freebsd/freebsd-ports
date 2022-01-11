@@ -4560,7 +4560,6 @@
     SUBDIR += py-furl
     SUBDIR += py-fusepy
     SUBDIR += py-future
-    SUBDIR += py-future-annotations
     SUBDIR += py-futurist
     SUBDIR += py-fuzzywuzzy
     SUBDIR += py-fypp
