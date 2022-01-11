@@ -1,7 +1,7 @@
 # Created by: ports@c0decafe.net
 
 PORTNAME=	App-perlbrew
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
