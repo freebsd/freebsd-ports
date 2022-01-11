@@ -1,4 +1,4 @@
 Official AWS Ruby gem for Amazon Redshift.
 
 WWW: https://github.com/aws/aws-sdk-ruby
-WWW: https://github.com/aws/aws-sdk-ruby/tree/master/gems/aws-sdk-redshift
+WWW: https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-redshift
