@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	datadog
-PORTVERSION=	0.42.0
+PORTVERSION=	0.43.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.6.0:www/py-requests@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS_INSTALL=	dog
-
 NO_ARCH=	yes
+
+# bin/dog
+CONFLICTS_INSTALL=	dog
 
 .include <bsd.port.mk>
