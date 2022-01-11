@@ -13,7 +13,6 @@ LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		localbase php:pecl
 
-#IGNORE_WITH_PHP=73 74
 PHP_MODNAME=	sodium
 
 .include <bsd.port.mk>
