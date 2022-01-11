@@ -1,8 +1,7 @@
 PORTNAME=	gnucflow
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
-MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/cflow/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	GNU/cflow/
 DISTNAME=	cflow-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
