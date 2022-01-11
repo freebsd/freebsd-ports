@@ -7,4 +7,4 @@ Active Model provides a default module that implements the basic API required to
 integrate with Action Pack out of the box: ActiveModel::Model.
 
 WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/master/activemodel
+WWW: https://github.com/rails/rails/tree/main/activemodel
