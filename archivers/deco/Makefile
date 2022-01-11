@@ -28,8 +28,6 @@ RUN_DEPENDS=	arc:archivers/arc \
 		zoo:archivers/zoo \
 		flac:audio/flac
 
-CONFLICTS=	deco-misc # bin/deco
-
 DARCHIVE_VER=	1.7
 DARCHIVE=	deco-archive-${DARCHIVE_VER}
 
