@@ -5,4 +5,4 @@ Cisco's EIGRP, but uses a variant of ETX
 link cost estimation rather than a simple
 hop-count metric.
 
-WWW: http://www.pps.jussieu.fr/~jch/software/babel/
+WWW: https://www.irif.fr/~jch/software/babel/
