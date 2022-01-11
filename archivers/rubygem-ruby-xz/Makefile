@@ -1,5 +1,5 @@
 PORTNAME=	ruby-xz
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
