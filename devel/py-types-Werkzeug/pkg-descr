@@ -1,5 +1,5 @@
-This is an auto-generated PEP 561 type stub package for Werkzeug
-package. It can be used by type-checking tools like mypy, PyCharm,
-pytype etc. to check code that uses Werkzeug.
+This is a PEP 561 type stub package for the `Werkzeug` package.
+It can be used by type-checking tools like mypy, PyCharm, pytype
+etc. to check code that uses `Werkzeug`.
 
 WWW: https://pypi.org/project/types-Werkzeug/

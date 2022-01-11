@@ -1,5 +1,5 @@
-This is an auto-generated PEP 561 type stub package for MarkupSafe
-package. It can be used by type-checking tools like mypy, PyCharm,
-pytype etc. to check code that uses MarkupSafe.
+This is a PEP 561 type stub package for the `MarkupSafe` package.
+It can be used by type-checking tools like mypy, PyCharm, pytype
+etc. to check code that uses `MarkupSafe`.
 
 WWW: https://pypi.org/project/types-MarkupSafe/

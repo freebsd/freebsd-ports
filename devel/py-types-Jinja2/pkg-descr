@@ -1,5 +1,5 @@
-This is an auto-generated PEP 561 type stub package for Jinja2
-package. It can be used by type-checking tools like mypy, PyCharm,
-pytype etc. to check code that uses Jinja2.
+This is a PEP 561 type stub package for the `Jinja2` package.
+It can be used by type-checking tools like mypy, PyCharm, pytype
+etc. to check code that uses `Jinja2`.
 
 WWW: https://pypi.org/project/types-Jinja2/

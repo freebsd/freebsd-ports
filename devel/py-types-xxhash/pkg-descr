@@ -1,5 +1,5 @@
-This is an auto-generated PEP 561 type stub package for xxhash
-package. It can be used by type-checking tools like mypy, PyCharm,
-pytype etc. to check code that uses xxhash.
+This is a PEP 561 type stub package for the `xxhash` package.
+It can be used by type-checking tools like mypy, PyCharm, pytype
+etc. to check code that uses `xxhash`.
 
 WWW: https://pypi.org/project/types-xxhash/
