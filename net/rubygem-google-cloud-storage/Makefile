@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-storage
-PORTVERSION=	1.34.1
+PORTVERSION=	1.35.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Official library for Google Cloud Storage
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=2.5<3:www/rubygem-addressable \
+RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-digest-crc>=0.4<1:security/rubygem-digest-crc \
 		rubygem-google-apis-iamcredentials_v1>=0.1<1:devel/rubygem-google-apis-iamcredentials_v1 \
 		rubygem-google-apis-storage_v1>=0.1<1:devel/rubygem-google-apis-storage_v1 \
