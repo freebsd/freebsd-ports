@@ -1,0 +1,5 @@
+This is a PEP 561 type stub package for the `urllib3` package.
+It can be used by type-checking tools like mypy, PyCharm, pytype
+etc. to check code that uses `urllib3`.
+
+WWW: https://pypi.org/project/types-urllib3/
