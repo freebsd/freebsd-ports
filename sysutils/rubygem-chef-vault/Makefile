@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	chef-vault
-PORTVERSION=	4.1.4
+PORTVERSION=	4.1.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
