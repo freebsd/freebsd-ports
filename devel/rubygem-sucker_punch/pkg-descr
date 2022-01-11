@@ -1,0 +1,21 @@
+Sucker Punch is a single-process Ruby asynchronous processing library. This
+reduces costs of hosting on a service like Heroku along with the memory
+footprint of having to maintain additional jobs if hosting on a dedicated
+server. All queues can run within a single application (eg. Rails, Sinatra,
+etc.) process.
+
+Sucker Punch is perfect for asynchronous processes like emailing, data
+crunching, or social platform manipulation. No reason to hold up a user when you
+can do these things in the background within the same process as your web
+application.
+
+Sucker Punch is built on top of concurrent-ruby. Each job is setup as a pool,
+which equates to its own queue with individual workers working against the jobs.
+Unlike most other background processing libraries, Sucker Punch's jobs are
+stored in memory. The benefit to this is there is no additional infrastructure
+requirement (ie. database, redis, etc.). However, if the web processes are
+restarted with jobs remaining in the queue, they will be lost. For this reason,
+Sucker Punch is generally recommended for jobs that are fast and non-mission
+critical (ie. logs, emails, etc.).
+
+WWW: https://github.com/brandonhilkert/sucker_punch
