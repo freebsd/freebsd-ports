@@ -1,7 +1,7 @@
 # Created by: John Chen <johnpupu@gmail.com>
 
 PORTNAME=	yar
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
