@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	mime-types-data
-PORTVERSION=	3.2021.0901
+PORTVERSION=	3.2021.1115
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
