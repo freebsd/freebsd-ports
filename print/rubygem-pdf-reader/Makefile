@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	pdf-reader
-PORTVERSION=	2.5.0
+PORTVERSION=	2.8.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
