@@ -1,7 +1,7 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
 
 PORTNAME=	chef
-PORTVERSION=	16.16.13
+PORTVERSION=	16.17.18
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-chef-utils>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils \
 		rubygem-chef-vault>=0:sysutils/rubygem-chef-vault \
 		rubygem-chef-zero>=14.0.11:sysutils/rubygem-chef-zero \
-		rubygem-diff-lcs>=1.2.4<1.5.0:textproc/rubygem-diff-lcs \
+		rubygem-diff-lcs>=1.2.4<1.6.0:textproc/rubygem-diff-lcs \
 		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
 		rubygem-ffi>=1.9.25:devel/rubygem-ffi \
@@ -64,8 +64,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/spec/data/apt/chef-integration-test*/debian/rules
 
 post-install:
-#	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man1/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-#	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man8/*.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+#	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1/
+#	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man8/*.8 ${STAGEDIR}${PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/var/chef
 
 .include <bsd.port.mk>
