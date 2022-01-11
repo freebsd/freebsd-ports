@@ -2,4 +2,4 @@ Official AWS Ruby gem for Amazon Kinesis Video Streams Media (Kinesis Video
 Media).
 
 WWW: https://github.com/aws/aws-sdk-ruby
-WWW: https://github.com/aws/aws-sdk-ruby/tree/master/gems/aws-sdk-kinesisvideomedia
+WWW: https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-kinesisvideomedia
