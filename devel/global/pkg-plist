@@ -31,6 +31,7 @@ share/gtags/LICENSE
 share/gtags/NEWS
 share/gtags/PLUGIN_HOWTO
 share/gtags/PLUGIN_HOWTO.pygments
+share/gtags/PLUGIN_HOWTO.reference
 share/gtags/README
 share/gtags/README.PATCHES
 share/gtags/SERVERSIDE_HOWTO
@@ -96,5 +97,6 @@ share/gtags/script/less-global
 share/gtags/script/maps2conf.pl
 share/gtags/script/pygments_parser.py
 share/gtags/style.css
+share/gtags/uctags-scheme.c-diff
 share/gtags/vim74-gtags-cscope.patch
 @dir /var/gtags
