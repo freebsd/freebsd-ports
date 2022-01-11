@@ -27,7 +27,6 @@ extra_commands="reload"
 : ${babeld_enable="NO"}
 : ${babeld_config="/usr/local/etc/babeld.conf"}
 
-command_args="-D -I /var/run/${name}.pid $babeld_config"
+command_args="-D -I /var/run/${name}.pid -c $babeld_config"
 
 run_rc_command "$1"
-
