@@ -1764,6 +1764,7 @@
     SUBDIR += rubygem-sass-rails-rails52
     SUBDIR += rubygem-sass-rails-rails60
     SUBDIR += rubygem-sass-rails-rails61
+    SUBDIR += rubygem-sass-rails-rails70
     SUBDIR += rubygem-sassc
     SUBDIR += rubygem-sassc-rails-rails4
     SUBDIR += rubygem-sassc-rails-rails5
