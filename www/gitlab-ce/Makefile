@@ -24,7 +24,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
-	rubygem-rails61>=6.1.4.1<6.1.4.2:www/rubygem-rails61 \
+	rubygem-rails61>=6.1.4.1<6.1.5:www/rubygem-rails61 \
 	rubygem-bootsnap>=1.9.1<1.10:devel/rubygem-bootsnap \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
