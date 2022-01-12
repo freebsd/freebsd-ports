@@ -17,7 +17,7 @@ FLAVOR?=	${FLAVORS:[1]}
 
 default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
-lua_PKGNAMESUFFIX=		-lua
+lua_PKGNAMESUFFIX=		24-lua
 
 CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21
 
