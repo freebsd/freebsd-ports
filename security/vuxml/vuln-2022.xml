@@ -65,6 +65,55 @@
     </dates>
   </vuln>
 
+  <vuln vid="43f84437-73ab-11ec-a587-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.6.0</ge><lt>14.6.2</lt></range>
+	<range><ge>14.5.0</ge><lt>14.5.3</lt></range>
+	<range><ge>7.7</ge><lt>14.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/01/11/security-release-gitlab-14-6-2-released/">
+	  <p>Arbitrary file read via group import feature</p>
+	  <p>Stored XSS in notes</p>
+	  <p>Lack of state parameter on GitHub import project OAuth</p>
+	  <p>Vulnerability related fields are available to unauthorized users on GraphQL API</p>
+	  <p>Deleting packages may cause table locks</p>
+	  <p>IP restriction bypass via GraphQL</p>
+	  <p>Repository content spoofing using Git replacement references</p>
+	  <p>Users can import members from projects that they are not a maintainer on through API</p>
+	  <p>Possibility to direct user to malicious site through Slack integration</p>
+	  <p>Bypassing file size limits to the NPM package repository</p>
+	  <p>User with expired password can still access sensitive information</p>
+	  <p>Incorrect port validation allows access to services on ports 80 and 443 if GitLab is configured to run on another port</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39946</cvename>
+      <cvename>CVE-2022-0154</cvename>
+      <cvename>CVE-2022-0152</cvename>
+      <cvename>CVE-2022-0151</cvename>
+      <cvename>CVE-2022-0172</cvename>
+      <cvename>CVE-2022-0090</cvename>
+      <cvename>CVE-2022-0125</cvename>
+      <cvename>CVE-2022-0124</cvename>
+      <cvename>CVE-2021-39942</cvename>
+      <cvename>CVE-2022-0093</cvename>
+      <cvename>CVE-2021-39927</cvename>
+      <url>https://about.gitlab.com/releases/2022/01/11/security-release-gitlab-14-6-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-01-11</discovery>
+      <entry>2022-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b927b654-7146-11ec-ad4b-5404a68ad561">
     <topic>uriparser -- Multiple vulnerabilities</topic>
     <affects>
