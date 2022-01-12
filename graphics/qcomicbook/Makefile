@@ -21,7 +21,7 @@ USE_QT=		core gui printsupport widgets x11extras\
 OPTIONS_DEFINE=	7ZIP ACE RAR
 
 7ZIP_DESC=	7-Zip (.cb7) comic book archives support
-7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
+7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 
 ACE_DESC=	ACE (.cba) comic book archives support
 ACE_RUN_DEPENDS=	unace:archivers/unace
