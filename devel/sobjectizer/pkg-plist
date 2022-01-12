@@ -26,6 +26,7 @@ include/so_5/details/rollback_on_exception.hpp
 include/so_5/details/safe_cv_wait_for.hpp
 include/so_5/details/suppress_exceptions.hpp
 include/so_5/details/sync_helpers.hpp
+include/so_5/disp/abstract_work_thread.hpp
 include/so_5/disp/active_group/pub.hpp
 include/so_5/disp/active_obj/pub.hpp
 include/so_5/disp/adv_thread_pool/impl/disp.hpp
@@ -41,12 +42,14 @@ include/so_5/disp/prio_one_thread/quoted_round_robin/quotes.hpp
 include/so_5/disp/prio_one_thread/reuse/work_thread.hpp
 include/so_5/disp/prio_one_thread/strictly_ordered/impl/demand_queue.hpp
 include/so_5/disp/prio_one_thread/strictly_ordered/pub.hpp
+include/so_5/disp/reuse/actual_work_thread_factory_to_use.hpp
 include/so_5/disp/reuse/data_source_prefix_helpers.hpp
 include/so_5/disp/reuse/make_actual_dispatcher.hpp
 include/so_5/disp/reuse/mpmc_ptr_queue.hpp
 include/so_5/disp/reuse/thread_pool_stats.hpp
 include/so_5/disp/reuse/work_thread/work_thread.hpp
 include/so_5/disp/reuse/work_thread_activity_tracking.hpp
+include/so_5/disp/reuse/work_thread_factory_params.hpp
 include/so_5/disp/thread_pool/impl/common_implementation.hpp
 include/so_5/disp/thread_pool/impl/disp.hpp
 include/so_5/disp/thread_pool/pub.hpp
@@ -60,6 +63,7 @@ include/so_5/event_exception_logger.hpp
 include/so_5/event_queue.hpp
 include/so_5/event_queue_hook.hpp
 include/so_5/exception.hpp
+include/so_5/exception_control_flags.hpp
 include/so_5/execution_demand.hpp
 include/so_5/experimental/testing.hpp
 include/so_5/experimental/testing/v1/all.hpp
@@ -138,5 +142,5 @@ lib/cmake/sobjectizer/sobjectizer-config-version.cmake
 lib/cmake/sobjectizer/sobjectizer-config.cmake
 lib/cmake/sobjectizer/sobjectizer-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sobjectizer/sobjectizer-targets.cmake
-lib/libso.5.7.2.5.so
-lib/libso_s.5.7.2.5.a
+lib/libso.5.7.3.so
+lib/libso_s.5.7.3.a

@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	sobjectizer
-PORTVERSION=	5.7.2.5
+PORTVERSION=	5.7.3
 DISTVERSIONPREFIX=	v.
 CATEGORIES=	devel
 
