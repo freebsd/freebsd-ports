@@ -2,7 +2,7 @@
 
 PORTNAME=	qnapi
 PORTVERSION=	0.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	polish multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	qt-maybe>0:devel/qt-maybe \
 		libmaia>0:net/libmaia
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 		libzen.so:multimedia/libzen
-RUN_DEPENDS=	7z:archivers/p7zip
+RUN_DEPENDS=	7zz:archivers/7-zip
 
 USE_GITHUB=	yes
 
@@ -26,8 +26,10 @@ USE_QT=		buildtools_build core gui network widgets xml
 CXXFLAGS+=	-I${LOCALBASE}/include/maia
 
 post-patch:
-	@${REINPLACE_CMD} 's|/usr|${PREFIX}|; s|share/man|man|' \
+	${REINPLACE_CMD} 's|/usr|${PREFIX}|' \
 		${WRKSRC}/qnapi.pro
+	${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' \
+		${WRKSRC}/libqnapi/src/config/configreader.cpp
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qnapi

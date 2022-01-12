@@ -1,7 +1,4 @@
 bin/qnapi
-man/it/man1/qnapi.1.gz
-man/man1/qnapi.1.gz
-man/pl/man1/qnapi.1.gz
 share/applications/qnapi-download.desktop
 share/applications/qnapi-scan.desktop
 share/applications/qnapi.desktop
@@ -11,3 +8,6 @@ share/icons/hicolor/16x16/apps/qnapi.png
 share/icons/hicolor/32x32/apps/qnapi.png
 share/icons/hicolor/48x48/apps/qnapi.png
 share/icons/hicolor/512x512/apps/qnapi.png
+share/man/it/man1/qnapi.1.gz
+share/man/man1/qnapi.1.gz
+share/man/pl/man1/qnapi.1.gz
