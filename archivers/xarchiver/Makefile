@@ -2,6 +2,7 @@
 
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.4.16
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS=	7zr:archivers/p7zip \
+RUN_DEPENDS=	7zz:archivers/7-zip \
 		gtar:archivers/gtar \
 		gzip:archivers/gzip \
 		${LOCALBASE}/bin/unzip:archivers/unzip \
