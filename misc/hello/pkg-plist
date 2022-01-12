@@ -1,5 +1,6 @@
 bin/hello
 man/man1/hello.1.gz
+%%NLS%%share/locale/ast/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/da/LC_MESSAGES/hello.mo
@@ -36,6 +37,7 @@ man/man1/hello.1.gz
 %%NLS%%share/locale/sl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/th/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/hello.mo

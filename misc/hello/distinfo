@@ -1,2 +1,3 @@
-SHA256 (hello-2.10.tar.gz) = 31e066137a962676e89f69d1b65382de95a7ef7d914b8cb956f41ea72e0f516b
-SIZE (hello-2.10.tar.gz) = 725946
+TIMESTAMP = 1642003091
+SHA256 (hello-2.11.tar.gz) = 8c9ce0572d3c44ed0670eb1cde980584e038b6f62c25fdfde8ef128de15004bd
+SIZE (hello-2.11.tar.gz) = 1018256

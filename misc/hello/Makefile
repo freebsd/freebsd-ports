@@ -1,8 +1,7 @@
 # Created by: shipley@dis.org
 
 PORTNAME=	hello
-PORTVERSION=	2.10
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -21,9 +20,7 @@ INFO=		hello
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 
-NLS_USES=		gettext
+NLS_USES=		gettext localbase
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CPPFLAGS=		-I${LOCALBASE}/include
-NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
