@@ -2,6 +2,7 @@
 
 PORTNAME=	bcftools
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	dakota
 DISTVERSION=	6.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 

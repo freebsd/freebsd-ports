@@ -2,7 +2,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	21.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://ccrma.stanford.edu/software/snd/ \
 		SF

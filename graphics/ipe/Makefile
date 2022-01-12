@@ -3,7 +3,7 @@
 PORTNAME=	ipe
 PORTVERSION=	7.2.23
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
 
