@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20220109
+PORTVERSION=	s20220111
 PORTREVISION?=	0
 CATEGORIES=	emulators
 .if make(makesum)
@@ -32,18 +32,18 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and dynarmic backend
 BROKEN_aarch64=	https://github.com/yuzu-emu/yuzu/issues/5290
 
-BUILD_DEPENDS=	catch>0:devel/catch \
-		boost-libs>0:devel/boost-libs \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		nlohmann-json>0:devel/nlohmann-json \
 		glslangValidator:graphics/glslang
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libopus.so:audio/opus \
 		libavcodec.so:multimedia/ffmpeg
+TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	b3308830b
+GH_TAGNAME=	eb7197eb4
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.202:Vulkan_Headers/externals/Vulkan-Headers \
@@ -63,6 +63,8 @@ USE_SDL=	sdl2
 CMAKE_ON=	Boost_USE_STATIC_LIBS
 CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_OFF=	YUZU_USE_BUNDLED_OPUS YUZU_USE_EXTERNAL_SDL2 ENABLE_GNUTLS ENABLE_MBEDTLS
+CMAKE_OFF+=	${CMAKE_TESTING_ON}
+CMAKE_TESTING_ON=	YUZU_TESTS
 LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 

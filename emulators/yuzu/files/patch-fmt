@@ -47,12 +47,12 @@ microinstruction.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR6Opcod
 microinstruction.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR4TypeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE[_ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR4TypeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE]+0x10f): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
 collect2: error: ld returned 1 exit status
 
---- CMakeLists.txt.orig	2022-01-10 02:29:59 UTC
+--- CMakeLists.txt.orig	2022-01-12 04:58:16 UTC
 +++ CMakeLists.txt
-@@ -169,7 +169,6 @@ macro(yuzu_find_packages)
+@@ -170,7 +170,6 @@ macro(yuzu_find_packages)
+     # Capitalization matters here. We need the naming to match the generated paths from Conan
      set(REQUIRED_LIBS
      #    Cmake Pkg Prefix  Version     Conan Pkg
-         "Catch2            2.13.7      catch2/2.13.7"
 -        "fmt               8.0.1       fmt/8.1.1"
          "lz4               1.8         lz4/1.9.2"
          "nlohmann_json     3.8         nlohmann_json/3.8.0"
