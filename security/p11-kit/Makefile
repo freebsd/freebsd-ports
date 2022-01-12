@@ -5,6 +5,9 @@ DISTVERSION=	0.24.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/p11-glue/${PORTNAME}/commit/
+PATCHFILES+=	9f01a8a45ba9.patch:-p1 # https://github.com/p11-glue/p11-kit/pull/407
+
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumerating of PKCS\#11 modules
 
