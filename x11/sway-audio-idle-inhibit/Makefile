@@ -1,6 +1,10 @@
 PORTNAME=	sway-audio-idle-inhibit
-PORTVERSION=	s20211224
+DISTVERSIONPREFIX=	v
+PORTVERSION=	0.1
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	dc40cedac608.patch:-p1 # https://github.com/ErikReider/SwayAudioIdleInhibit/pull/6
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Disable swayidle during audio playback/recording
@@ -16,7 +20,7 @@ USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayAudioIdleInhibit
-GH_TAGNAME=	4a68078
+GH_TAGNAME=	76dfdfb
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
