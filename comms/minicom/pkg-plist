@@ -22,8 +22,10 @@ man/man1/xminicom.1.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
