@@ -1,9 +1,8 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.719
+DISTVERSION=	3.0.721
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://unix4lyfe.org/darkstat/
 
 MAINTAINER=	emikulic@gmail.com
 COMMENT=	Network statistics gatherer and reporter
@@ -11,13 +10,18 @@ COMMENT=	Network statistics gatherer and reporter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-USES=		tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		autoreconf
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	emikulic
+GH_PROJECT=	darkstat
 USE_RC_SUBR=	darkstat
 
+GNU_CONFIGURE=	yes
+
+PLIST_FILES=	man/man8/darkstat.8.gz \
+		sbin/darkstat
 PORTDOCS=	AUTHORS INSTALL README
-PLIST_FILES=	sbin/darkstat man/man8/darkstat.8.gz
 
 OPTIONS_DEFINE=	DOCS
 
