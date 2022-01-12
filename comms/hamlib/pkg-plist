@@ -22,12 +22,12 @@ lib/libhamlib++.a
 lib/libhamlib++.la
 lib/libhamlib++.so
 lib/libhamlib++.so.4
-lib/libhamlib++.so.4.0.3
+lib/libhamlib++.so.4.0.4
 lib/libhamlib.a
 lib/libhamlib.la
 lib/libhamlib.so
 lib/libhamlib.so.4
-lib/libhamlib.so.4.0.3
+lib/libhamlib.so.4.0.4
 %%SITE_ARCH%%/Hamlib.pm
 %%SITE_ARCH%%/auto/Hamlib/Hamlib.so
 %%SITE_ARCH%%/perltest.pl
@@ -35,7 +35,9 @@ lib/libhamlib.so.4.0.3
 %%PYTHON_SITELIBDIR%%/_Hamlib.a
 %%PYTHON_SITELIBDIR%%/_Hamlib.la
 %%PYTHON_SITELIBDIR%%/_Hamlib.so
-lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl-4.3.so
+%%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_EXT_SUFFIX%%.pyc
+lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl-%%VER%%.so
 lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.a
 lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.la
 lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.so

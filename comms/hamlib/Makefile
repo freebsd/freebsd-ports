@@ -1,8 +1,7 @@
 # Created by: Sebastian Yepes <esn@x123.info>
 
 PORTNAME=	hamlib
-PORTVERSION=	4.3.1
-PORTREVISION=	1
+PORTVERSION=	4.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -16,14 +15,12 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf gnome libtool:keepla localbase:ldflags pathfix perl5 pkgconfig python \
 		readline shebangfix tcl
-USE_PYTHON=	py3kplist
-USE_PERL5=	build run
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+USE_PERL5=	build run
+USE_PYTHON=	py3kplist
 
 # $TCL_INCLUDE_SPEC
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 SHEBANG_FILES=	bindings/perltest.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl-binding \
@@ -31,9 +28,10 @@ CONFIGURE_ARGS=	--with-perl-binding \
 		--with-libusb \
 		--with-python-binding
 CONFIGURE_ENV=	LIBUSB_LIBS="-lusb"
-PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 INSTALL_TARGET=	install-strip
-
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
