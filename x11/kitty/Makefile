@@ -1,7 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
-PORTREVISION=	1
+DISTVERSION=	0.24.1
 CATEGORIES=	x11
 
 MAINTAINER=	alexis.praga@free.fr
@@ -22,6 +21,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libharfbuzz.so:print/harfbuzz \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
+		librsync.so:net/librsync \
 		libwayland-client.so:graphics/wayland \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
@@ -49,7 +49,9 @@ _STRIP_TARGETS=	lib/kitty/kitty/fast_data_types.so lib/kitty/kitty/glfw-x11.so \
 		lib/kitty/kittens/diff/diff_speedup.so \
 		lib/kitty/kittens/unicode_input/unicode_names.so \
 		lib/kitty/kitty/glfw-wayland.so \
-		lib/kitty/kittens/choose/subseq_matcher.so bin/kitty
+		lib/kitty/kittens/choose/subseq_matcher.so bin/kitty \
+		lib/kitty/kittens/transfer/rsync.so
+
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
 .include <bsd.port.options.mk>
@@ -58,9 +60,10 @@ _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 MAKE_ENV+=	KITTY_NO_LTO=1
 .endif
 
+# For librsync, we need to set header and library path
 do-build:
 	(cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py linux-package --update-check-interval 0)
+	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py linux-package --update-check-interval 0 --extra-include-dirs ${LOCALBASE}/include/ --extra-library-dirs ${LOCALBASE}/lib)
 	${FIND} ${INSTALL_WRKSRC} -name __pycache__ -type d -exec ${RM} -r -- {} +
 
 do-install:

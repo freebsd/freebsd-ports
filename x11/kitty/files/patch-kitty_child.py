@@ -4,7 +4,7 @@
              return list(filter(None, f.read().decode('utf-8').split('\0')))
  
      def cwd_of_process(pid: int) -> str:
--        ans = '/proc/{}/cwd'.format(pid)
+-        ans = f'/proc/{pid}/cwd'
 +        ans = subprocess.run(["pwdx", pid], capture_output=True).stdout.split()[1].decode("utf-8")
          return os.path.realpath(ans)
  
