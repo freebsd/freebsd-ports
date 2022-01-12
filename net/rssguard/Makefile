@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rssguard
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -33,5 +33,3 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so
 
 .include <bsd.port.mk>
-
-PATCH_ARGS+=	-l
