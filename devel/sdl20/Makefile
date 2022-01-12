@@ -1,5 +1,6 @@
 PORTNAME=	sdl2
 DISTVERSION=	2.0.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -15,13 +16,9 @@ USES=		gmake iconv libtool localbase:ldflags pathfix pkgconfig
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--disable-arts \
-			--enable-diskaudio \
-			--enable-dummyaudio \
-			--enable-video-dummy \
-			--disable-dbus \
-			--disable-esd --disable-esd-shared \
-			--disable-rpath
+CONFIGURE_ARGS=	--disable-arts \
+		--disable-esd \
+		--disable-rpath
 .if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
 .else
@@ -50,7 +47,8 @@ CONFIGURE_ARGS+=	--disable-sse3
 
 MAKE_ENV=	V=1
 
-OPTIONS_DEFINE=		ASM HIDAPI PTHREADS SAMPLERATE UDEV
+OPTIONS_DEFINE=		ASM DBUS FCITX IBUS HIDAPI PTHREADS SAMPLERATE	\
+			UDEV
 OPTIONS_GROUP=		AUDIO VIDEO SUBSYSTEM
 OPTIONS_GROUP_AUDIO=	ALSA JACK NAS OSS PIPEWIRE PULSEAUDIO SNDIO
 OPTIONS_GROUP_VIDEO=	KMSDRM OPENGL OPENGLES1 OPENGLES2 VULKAN 	\
@@ -97,6 +95,8 @@ OPENGLES2_DESC=		OpenGL ES 2.x rendering support
 VULKAN_DESC=		Vulkan rendering support
 WAYLAND_DESC=		Wayland display support
 X11_DESC=		X11 display support
+IBUS_DESC=		IBus support
+FCITX_DESC=		fcitx support
 
 ALTIVEC_CONFIGURE_ENABLE=	altivec
 ALSA_CONFIGURE_ENABLE=		alsa alsa-shared
@@ -180,6 +180,14 @@ X11_CONFIGURE_ENABLE=		video-x11 x11-shared \
 X11_USES=			xorg
 X11_USE=			XORG=xcursor,xext,xinerama,xi,xfixes,xrandr,xscrnsaver,xxf86vm
 X11_IMPLIES=			SDL_VIDEO
+DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
+DBUS_CONFIGURE_ENABLE=		dbus
+FCITX_LIB_DEPENDS=		libfcitx-config.so:chinese/fcitx
+FCITX_CONFIGURE_ENABLE=		fcitx
+FCITX_IMPLIES=			DBUS
+IBUS_LIB_DEPENDS=		libibus-1.0.so:textproc/ibus
+IBUS_CONFIGURE_ENABLE=		ibus
+IBUS_IMPLIES=			DBUS
 
 .include <bsd.port.options.mk>
 
