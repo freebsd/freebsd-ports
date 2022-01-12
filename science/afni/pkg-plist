@@ -72,6 +72,7 @@ bin/3dDFT
 bin/3dDTeig
 bin/3dDTtoDWI
 bin/3dDTtoNoisyDWI
+bin/3dDiff
 bin/3dDWItoDT
 bin/3dDWUncert
 bin/3dDeconvolve
