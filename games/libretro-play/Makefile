@@ -1,8 +1,7 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	play
-PORTVERSION=	0.38.0.20210320
-PORTREVISION=	3
+PORTVERSION=	0.48
 CATEGORIES=	games
 PKGNAMEPREFIX=	libretro-
 
@@ -24,20 +23,23 @@ USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpd002 \
 		jpd002:codegen \
+		jpd002:libchdr \
 		jpd002:framework \
 		jpd002:dependencies \
 		gulrak:ghc_filesystem
 GH_PROJECT=	Play- \
 		Play--CodeGen:codegen \
+		libchdr:libchdr \
 		Play--Framework:framework \
 		Play-Dependencies:dependencies \
 		filesystem:ghc_filesystem
-GH_TAGNAME=	3cd0a367b5e24c061a6310c68c9fa7f6b531ebd4 \
-		10068b1fd39efa88fbfb2fe14e820eae552fb2a1:codegen \
-		65baebea9ca9e7ce0631e71c8ede33f4e3d25a15:framework \
-		e3e6669ecd40598b4e4adc1bc9297c6967f4c929:dependencies \
-		3605e869150032ffdd9eae3db93e12f8711a0c82:ghc_filesystem
+GH_TAGNAME=	448bac159733c6799a451ac75a18ce04aff5e223:codegen \
+		532a3f60f75eec3454ff4e52cad8862afc40e65f:libchdr \
+		faa4c23a2e96ba42b6ff1438bf33f111295c55cf:framework \
+		636810ead6f1a3c8ee8006a3b9a698a81a0efbf6:dependencies \
+		2a8b380f8d4e77b389c42a194ab9c70d8e3a0f1e:ghc_filesystem
 GH_SUBDIR=	deps/CodeGen:codegen \
+		deps/libchdr:libchdr \
 		deps/Framework:framework \
 		deps/Dependencies:dependencies \
 		deps/Dependencies/ghc_filesystem:ghc_filesystem
@@ -52,7 +54,8 @@ CMAKE_OFF=	BUILD_AOT_CACHE \
 		USE_AOT_CACHE \
 		ENABLE_AMAZON_S3
 CMAKE_ARGS=	-DGIT_TAG=${GH_TAGNAME_DEFAULT} \
-		-DGIT_DESCRIBE_RESULT=0
+		-DGIT_DESCRIBE_RESULT=0 \
+		-DOpenGL_GL_PREFERENCE="GLVND"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|execute_process(COMMAND git.*||g' \

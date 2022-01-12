@@ -1,13 +1,16 @@
 --- deps/Dependencies/ghc_filesystem/CMakeLists.txt.orig	2020-03-30 22:01:31 UTC
 +++ deps/Dependencies/ghc_filesystem/CMakeLists.txt
-@@ -14,8 +14,8 @@ cmake_dependent_option(GHC_FILESYSTEM_WITH_INSTALL
-     "CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR" OFF)
+@@ -22,13 +22,6 @@
+     set(GHC_FILESYSTEM_TEST_COMPILE_FEATURES ${CMAKE_CXX_COMPILE_FEATURES})
+ endif()
  
- if(NOT DEFINED CMAKE_CXX_STANDARD)
+-if(NOT DEFINED CMAKE_CXX_STANDARD)
 -    set(CMAKE_CXX_STANDARD 11)
 -    set(CMAKE_CXX_STANDARD_REQUIRED ON)
-+    
-+    
-     set(CMAKE_CXX_EXTENSIONS OFF)
- endif()
+-    if(NOT CYGWIN)
+-        set(CMAKE_CXX_EXTENSIONS OFF)
+-    endif()
+-endif()
  if(CMAKE_CXX_STANDARD LESS 11)
+     message(FATAL_ERROR "CMAKE_CXX_STANDARD is less than 11, ghc::filesystem only works with C++11 and above.")
+ endif()
