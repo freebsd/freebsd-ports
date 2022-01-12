@@ -16,7 +16,9 @@ bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette/Exception/Response.pm
 %%SITE_PERL%%/Firefox/Marionette/Exception/StaleElement.pm
 %%SITE_PERL%%/Firefox/Marionette/Extension/HarExportTrigger.pm
+%%SITE_PERL%%/Firefox/Marionette/Image.pm
 %%SITE_PERL%%/Firefox/Marionette/Keys.pm
+%%SITE_PERL%%/Firefox/Marionette/Link.pm
 %%SITE_PERL%%/Firefox/Marionette/Login.pm
 %%SITE_PERL%%/Firefox/Marionette/Profile.pm
 %%SITE_PERL%%/Firefox/Marionette/Proxy.pm
@@ -44,7 +46,9 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN3%%/Firefox::Marionette::Exception::Response.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Exception::StaleElement.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Extension::HarExportTrigger.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Image.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Keys.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Link.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Login.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Profile.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Proxy.3.gz
