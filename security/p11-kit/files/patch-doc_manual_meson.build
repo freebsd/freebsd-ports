@@ -1,0 +1,13 @@
+https://github.com/p11-glue/p11-kit/issues/406
+
+--- doc/manual/meson.build.orig	2021-05-25 07:15:23 UTC
++++ doc/manual/meson.build
+@@ -70,7 +70,7 @@ if get_option('gtk_doc')
+               main_xml: 'p11-kit-docs.xml',
+               namespace: 'p11_kit',
+               src_dir: 'p11-kit',
+-              dependencies: libffi_deps + dlopen_deps + xml_deps,
++              dependencies: libffi_deps + dlopen_deps,
+               scan_args: [
+                 '--ignore-headers=' + ' '.join(ignore_headers),
+                 '--rebuild-types',
