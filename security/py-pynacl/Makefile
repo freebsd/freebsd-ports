@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	pynacl
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +31,7 @@ BUNDLED_NACL_MAKE_ENV_OFF=	SODIUM_INSTALL=system
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nacl/_sodium*.so
 
-do-test:
+do-test: # tests fail: https://github.com/pyca/pynacl/issues/747
 	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs tests
 
 .include <bsd.port.mk>
