@@ -1,9 +1,9 @@
 # Created by: Hugo Saro <hugo@barafranca.com>
 
 PORTNAME=	haproxy
-DISTVERSION=	2.4.12
+DISTVERSION=	2.5.1
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.4/src/
+MASTER_SITES=	http://www.haproxy.org/download/2.5/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
@@ -14,35 +14,43 @@ LICENSE_COMB=	multi
 FLAVORS=	default lua
 FLAVOR?=	${FLAVORS:[1]}
 
+USES=		compiler:c++11-lang cpe gmake
+USE_RC_SUBR=	haproxy
+
 default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
 lua_PKGNAMESUFFIX=		-lua
 
-CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21
-
-USES=		compiler:c++11-lang cpe gmake
-USE_RC_SUBR=	haproxy
+CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21 haproxy22 haproxy23 haproxy24
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
 		USE_ZLIB=1 USE_CPU_AFFINITY=1 USE_ACCEPT4=1 \
 		CC="${CC}" DEBUG_CFLAGS="" CPU_CFLAGS="${CFLAGS}" \
 		${MAKE_ARGS_${ARCH}}
+
 MAKE_ARGS_i386=	USE_LIBATOMIC=
+MAKE_ARGS_powerpc=	USE_LIBATOMIC=
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL DEVICEATLAS PROMEX
 OPTIONS_RADIO=		PCRE
-OPTIONS_RADIO_PCRE=	DPCRE SPCRE
-DPCRE_DESC=		Link dynamically
-SPCRE_DESC=		Link statically
+OPTIONS_RADIO_PCRE=	DPCRE DPCRE2 SPCRE SPCRE2
+DPCRE_DESC=		Link pcre(1) dynamically
+DPCRE2_DESC=		Link pcre2 dynamically
+SPCRE_DESC=		Link pcre(1) statically
+SPCRE2_DESC=		Link pcre2 statically
 DEVICEATLAS_DESC=	DeviceAtlas Device Detection support
 PROMEX_DESC=		Enable Prometheus exporter
-OPTIONS_DEFAULT=	SPCRE OPENSSL
+OPTIONS_DEFAULT=	DPCRE2 OPENSSL
 
 DPCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 DPCRE_MAKE_ARGS=	USE_PCRE=1 USE_PCRE_JIT=1
-SPCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+DPCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+DPCRE2_MAKE_ARGS=	USE_PCRE2=1 USE_PCRE2_JIT=1
+SPCRE_LIB_DEPENDS=	libpcre.a:devel/pcre
 SPCRE_MAKE_ARGS=	USE_PCRE=1 USE_STATIC_PCRE=1 USE_PCRE_JIT=1
+SPCRE2_LIB_DEPENDS=	libpcre2-8.a:devel/pcre2
+SPCRE2_MAKE_ARGS=	USE_PCRE2=1 USE_STATIC_PCRE2=1 USE_PCRE2_JIT=1
 DEVICEATLAS_LIB_DEPENDS=	libda.so:net/deviceatlas-enterprise-c
 DEVICEATLAS_MAKE_ARGS=		USE_DEVICEATLAS=1 DEVICEATLAS_LIB=${LOCALBASE}/lib DEVICEATLAS_INC=${LOCALBASE}/include
 PROMEX_MAKE_ARGS=	USE_PROMEX=1
@@ -55,18 +63,6 @@ LUA_MAKE_ARGS=		USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NA
 OPTIONS_DEFAULT+=	LUA
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-MAKE_ARGS+=	USE_LIBATOMIC=
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-MAKE_ARGS+=	USE_REGPARM=1
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/admin/halog/halog ${STAGEDIR}${PREFIX}/sbin/
@@ -76,4 +72,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
