@@ -1,6 +1,6 @@
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	22.1.0
+DISTVERSION=	22.1.1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
