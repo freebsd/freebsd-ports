@@ -1,9 +1,8 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	visualization.shadertoy
-PORTVERSION=	2.3.0
+PORTVERSION=	19.1.2
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
