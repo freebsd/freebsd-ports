@@ -7,6 +7,9 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	effb1e09dee2.patch:-p1 # https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/305
+
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
@@ -35,5 +38,8 @@ post-stage:
 		"${STAGEDIR}${PREFIX}/lib/${PORTNAME}"
 	@${PYTHON_CMD} -O -m compileall -d ${PREFIX}/lib/${PORTNAME} \
 		"${STAGEDIR}${PREFIX}/lib/${PORTNAME}"
+
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/lib/gobject-introspection/giscanner/doctemplates/*/meson.build*
 
 .include <bsd.port.mk>
