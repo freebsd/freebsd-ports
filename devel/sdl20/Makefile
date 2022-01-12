@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-sse3
 
 MAKE_ENV=	V=1
 
-OPTIONS_DEFINE=		ALSA ASM HIDAPI JACK NAS OSS PIPEWARE PTHREADS	\
+OPTIONS_DEFINE=		ALSA ASM HIDAPI JACK NAS OSS PIPEWIRE PTHREADS	\
 			PULSEAUDIO SAMPLERATE SDL_ATOMIC SDL_AUDIO	\
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC	\
 			SDL_JOYSTICK SDL_LOADSO SDL_POWER SDL_RENDER	\
@@ -74,7 +74,7 @@ HIDAPI_DESC=		Use HIDAPI for low level joystick drivers
 JACK_DESC=		Audio output via the JackD sound server
 NAS_DESC=		Audio output via the Network Audio System
 OSS_DESC=		Audio output via the Open Sound System
-PIPEWARE_DESC=		Audio output via the Pipewire sound server
+PIPEWIRE_DESC=		Audio output via the Pipewire sound server
 PTHREADS_DESC=		Use POSIX threads for multi-threading
 PULSEAUDIO_DESC=	Audio output via the PulseAudio sound server
 SAMPLERATE_DESC=	Audio rate conversion via libsamplerate
@@ -115,9 +115,9 @@ NAS_LIB_DEPENDS=		libaudio.so:audio/nas
 NAS_IMPLIES=			SDL_AUDIO
 OSS_CONFIGURE_ENABLE=		oss
 OSS_IMPLIES=			SDL_AUDIO
-PIPEWARE_CONFIGURE_ENABLE=	pipewire pipewire-shared
-PIPEWARE_LIB_DEPENDS=		libpipewire-0.3.so:multimedia/pipewire
-PIPEWARE_IMPLIES=		SDL_AUDIO
+PIPEWIRE_CONFIGURE_ENABLE=	pipewire pipewire-shared
+PIPEWIRE_LIB_DEPENDS=		libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_IMPLIES=		SDL_AUDIO
 PTHREADS_CONFIGURE_ENABLE=	pthreads pthread-sem
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio pulseaudio-shared
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
