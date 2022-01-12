@@ -1,10 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	far2l
-# Upstream tags (pre-)releases very rarely and irregularly, so keep using
-# the g${DATE} format even for tagged releases to avoid bumping PORTEPOCH
-# in case we'd have to use raw commit hashes again in the future.
-PORTVERSION=	g20211204 # don't forget to update unknown -> git hash below
+PORTVERSION=	2.4.0
+DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,7 +20,6 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elfmz
-GH_TAGNAME=	v2021-12-04_alpha
 
 USES=		cmake compiler:c++11-lang libarchive pkgconfig shebangfix ssl
 SHEBANG_FILES=	far2l/bootstrap/view.sh
@@ -50,8 +47,6 @@ X11_USES=	xorg
 X11_USE=	XORG=ice,sm,x11,xext
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-unknown,-git-48654cc,' \
-		${WRKSRC}/far2l/bootstrap/scripts/vbuild.sh
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
 
