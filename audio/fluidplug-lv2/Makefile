@@ -10,7 +10,7 @@ COMMENT=	SoundFonts as LV2 plugins via FluidSynth
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	7z:archivers/p7zip \
+BUILD_DEPENDS=	7zz:archivers/7-zip \
 		lv2>0:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
@@ -31,7 +31,8 @@ SSE_MAKE_ARGS=	PORT_SIMD_FLAGS="-mtune=generic -msse -msse2 -mfpmath=sse"
 post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|PREFIX  = /usr|PREFIX ?= /usr| ; \
-		s|wget .*\/\(.*\) \&\& \\|${LN} -s ${DISTDIR}/\1 . \&\& \\|' \
+		s|wget .*\/\(.*\) \&\& \\|${LN} -s ${DISTDIR}/\1 . \&\& \\| ; \
+		s|7z x |7zz x -bd |' \
 		${WRKSRC}/Makefile
 
 post-install:
