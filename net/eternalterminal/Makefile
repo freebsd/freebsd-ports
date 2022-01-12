@@ -1,6 +1,6 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
-DISTVERSION=	6.1.9
+DISTVERSION=	6.1.10
 CATEGORIES=	net
 
 MAINTAINER=	willtisdale@gmail.com
