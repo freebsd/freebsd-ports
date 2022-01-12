@@ -1,8 +1,7 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 
 PORTNAME=	jfsw
-PORTVERSION=	20210130
-PORTREVISION=	3
+PORTVERSION=	20211225
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -32,10 +31,10 @@ GH_ACCOUNT=	jonof
 GH_PROJECT=	jfbuild:build jfaudiolib:audio jfmact:mact
 # See GH listing to get current (tested) submodule hashes:
 # https://github.com/jonof/jfsw
-GH_TAGNAME=	c434002 \
-		ed8c505:build \
-		0b82be9:audio \
-		1149eb1:mact
+GH_TAGNAME=	426fc18 \
+		ab02edc:build \
+		0e94055:audio \
+		14340ff:mact
 GH_SUBDIR=	jfbuild:build jfaudiolib:audio jfmact:mact
 
 MAKE_ENV+=	DATADIR="${DATADIR}"
