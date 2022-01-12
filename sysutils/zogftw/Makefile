@@ -1,10 +1,10 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
 
 PORTNAME=	zogftw
-PORTVERSION=	0.0.2015.11.21
+PORTVERSION=	0.0.2022.01.11
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.fabiankeil.de/sourcecode/zogftw/
-DISTNAME=	${PORTNAME}-2015-11-21-0a21288
+DISTNAME=	${PORTNAME}-2022-01-11-e290c82
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Creates redundant backups on encrypted ZFS pools
