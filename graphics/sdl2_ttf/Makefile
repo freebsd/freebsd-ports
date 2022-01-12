@@ -1,5 +1,5 @@
 PORTNAME=	sdl2_ttf
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.18
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL2_ttf-${PORTVERSION}
@@ -17,9 +17,15 @@ USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-harfbuzz-builtin --disable-freetype-builtin
 
-OPTIONS_DEFINE=	OPENGL
+OPTIONS_DEFINE=	HARFBUZZ OPENGL
+OPTIONS_DEFAULT=HARFBUZZ
 OPTIONS_SUB=	yes
+
+HARFBUZZ_DESC=	Enable HarfBuzz support
+HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+HARFBUZZ_CONFIGURE_ENABLE=	harfbuzz
 
 OPENGL_DESC=	Build sdl2-glfont demo program
 OPENGL_USES=	gl
