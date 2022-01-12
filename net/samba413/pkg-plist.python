@@ -268,6 +268,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/simple_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/spn_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/test_ccache.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/test_idmap_nss.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/test_ldap.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/test_min_domain_uid.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/test_rpc.py
