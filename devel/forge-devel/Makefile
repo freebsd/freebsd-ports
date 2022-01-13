@@ -34,6 +34,8 @@ GH_ACCOUNT=	magit
 
 MAKE_ENV+=	INSTALL_INFO=install-info \
 		LOAD_PATH="${_LOAD_PATH}"
+# Parallel build fails if Emacs is built with native compilation enabled
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	lisp info
 
 CONFLICTS=	forge-emacs*
