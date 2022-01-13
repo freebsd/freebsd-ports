@@ -39,6 +39,7 @@ include/folly/FileUtil.h
 include/folly/Fingerprint.h
 include/folly/FixedString.h
 include/folly/FollyMemcpy.h
+include/folly/FollyMemset.h
 include/folly/Format-inl.h
 include/folly/Format.h
 include/folly/FormatArg.h
