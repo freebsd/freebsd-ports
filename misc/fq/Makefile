@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	fq
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 

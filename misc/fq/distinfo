@@ -1,6 +1,6 @@
-TIMESTAMP = 1640017267
-SHA256 (wader-fq-v0.0.2_GH0.tar.gz) = 1bb7b968ba4ffe6f0dc8b080a2051719caebb96c244606468aecb2786640937b
-SIZE (wader-fq-v0.0.2_GH0.tar.gz) = 1299179
+TIMESTAMP = 1641459467
+SHA256 (wader-fq-v0.0.3_GH0.tar.gz) = b47663e0dc417dbeee178c4814a3221ff9d13eb6394530da0c96e1cb7bc00499
+SIZE (wader-fq-v0.0.3_GH0.tar.gz) = 1900520
 SHA256 (golang-sys-fe61309f8881_GH0.tar.gz) = 246a4b2f59ab8d7b4434b15d973e7d86ccb65c3dd3e616e4784d4ab9b50c9898
 SIZE (golang-sys-fe61309f8881_GH0.tar.gz) = 1253640
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
