@@ -1035,6 +1035,7 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
+    SUBDIR += symphytum
     SUBDIR += tarantool
     SUBDIR += tarantool-c
     SUBDIR += tcl-Mysql
