@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-01-13 02:13:14 UTC
++++ CMakeLists.txt
+@@ -1006,7 +1006,7 @@ include(CTest)
+ #-------------------------------------------------------------------
+ # Verify Python3 available
+ #-------------------------------------------------------------------
+-find_package(Python3)
++find_package(Python3 ${FREEBSD_PYTHON_VER} EXACT)
+ if(NOT Python3_FOUND)
+   message(FATAL_ERROR "Could not find required python3")
+ endif(NOT Python3_FOUND)
