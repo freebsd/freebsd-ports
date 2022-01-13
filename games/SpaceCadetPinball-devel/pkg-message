@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Note: The Space Cadet Pinball game resources are not included with this
+port. In order to obtain them, you will need a copy of Microsoft Windows
+between Windows NT 4.0 or 98 and Windows XP, or Full Tilt! Pinball, and
+copy the game resources into a folder where you will execute the
+SpaceCadetPinball binary from the command line.
+
+The resources are not included as they are copyrighted.
+EOM
+}
+]

@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2022-01-12 14:26:31 UTC
++++ CMakeLists.txt
+@@ -24,8 +24,10 @@ set(SDL2_BUILDING_LIBRARY ON)
+ 
+ find_package(SDL2 REQUIRED)
+ FIND_PACKAGE(SDL2_mixer REQUIRED)
++find_package(X11 REQUIRED)
++link_libraries(${X11_LIBRARIES})
+ 
+-include_directories(${SDL2_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIR})
++include_directories(${SDL2_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIR} ${X11_INCLUDE_DIR})
+ get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+ foreach(dir ${dirs})
+   message(STATUS "Include dir='${dir}'")
+@@ -200,6 +202,8 @@ if(${CMAKE_VERSION} VERSION_GREATER "3.16.0" OR ${CMAK
+ endif()
+ 
+ target_link_libraries(SpaceCadetPinball ${SDL2_LIBRARY} ${SDL2_MIXER_LIBRARY})
++
++install(TARGETS SpaceCadetPinball DESTINATION bin)
+ 
+ # On Windows, copy DLL to output
+ if(WIN32)
