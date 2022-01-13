@@ -3,7 +3,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.16.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,12 +54,14 @@ GENX_PLIST_FILES=	include/ispcrt/ispcrt.h \
 			lib/libispcrt.so.${PORTVERSION} \
 			lib/libispcrt_static.a
 
-.include <bsd.port.options.mk>
-.if ${LLVM_DEFAULT:M[7891]0} || ${LLVM_DEFAULT:M1[12]} # max(LLVM_DEFAULT,13)
-LLVM_VERSION=	13
-.else
-LLVM_VERSION=	${LLVM_DEFAULT}
-.endif
+#.include <bsd.port.options.mk>
+#.if ${LLVM_DEFAULT:M[7891]0} || ${LLVM_DEFAULT:M1[12]} # max(LLVM_DEFAULT,13)
+#LLVM_VERSION=	13
+#.else
+#LLVM_VERSION=	${LLVM_DEFAULT}
+#.endif
+
+LLVM_VERSION=	11 # 13 fails on some systems with: Assertion failed: (PointeeType && "Must specify element type"), function Create
 
 do-test: # some tests fail: https://github.com/ispc/ispc/issues/1868
 	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py
