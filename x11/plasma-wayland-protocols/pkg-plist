@@ -9,6 +9,7 @@ lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
 %%DATADIR%%/idle.xml
 %%DATADIR%%/kde-output-device-v2.xml
 %%DATADIR%%/kde-output-management-v2.xml
+%%DATADIR%%/kde-primary-output-v1.xml
 %%DATADIR%%/keystate.xml
 %%DATADIR%%/output-management.xml
 %%DATADIR%%/outputdevice.xml
