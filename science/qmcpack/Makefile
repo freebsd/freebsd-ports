@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	undefined reference to `__atomic_load'
 
-BUILD_DEPENDS=	catch>0:devel/catch
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \
 		libhdf5.so:science/hdf5 \
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip
 
-USES=		cmake:testing compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig python:build shebangfix
+USES=		cmake:testing compiler:c++17-lang fortran gnome localbase:ldflags pkgconfig python:build shebangfix
 USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
@@ -31,8 +30,6 @@ SHEBANG_FILES=	${NEXUS_PLIST_FILES:C/^/nexus\//}
 CMAKE_OFF=	BUILD_UNIT_TESTS
 CMAKE_ARGS=	-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_TESTING_ON=	BUILD_UNIT_TESTS # at least 3 testcases are known to fail
-
-CXXFLAGS+=	-I${LOCALBASE}/include/catch2
 
 PROGS=		convert4qmc convertpw4qmc qmc-check-affinity qmc-extract-eshdf-kvectors qmc-get-supercell qmcfinitesize qmcpack qmcpack.settings
 PLIST_FILES=	${PROGS:C/^/bin\//}
