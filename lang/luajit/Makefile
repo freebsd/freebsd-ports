@@ -11,7 +11,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Lua
 
 OPTIONS_DEFINE=	PTHREAD
-OPTIONS_DESC=	with pthread support
+PTHREAD_DESC=	with pthread support
 
 LICENSE=	MIT PD
 LICENSE_COMB=	multi
