@@ -1,9 +1,8 @@
 PORTNAME=	bio-mocha
-DISTVERSION=	1.13
-PORTREVISION=	1
+DISTVERSION=	1.14
 CATEGORIES=	biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
-DISTFILES+=	${PORTNAME}_${DISTVERSION}-20211015.tar.gz
+DISTFILES+=	${PORTNAME}_${DISTVERSION}-20220112.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bcftools plugin for mosaic chromosomal alteration analysis
