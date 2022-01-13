@@ -72,5 +72,7 @@ man/man1/ocp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/starting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/support.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wap.html
+%%XORG%%share/pixmaps/opencubicplayer.xpm
+%%XORG%%share/pixmaps/opencubicplayer_mini.xpm
 %%DATADIR%%/data/ocp.hlp
 %%DATADIR%%/etc/ocp.ini
