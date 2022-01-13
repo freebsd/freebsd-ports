@@ -31,9 +31,8 @@ include/coin/CglTwomir.hpp
 include/coin/CglZeroHalf.hpp
 lib/libCgl.so
 lib/libCgl.so.1
-lib/libCgl.so.1.10.3
+lib/libCgl.so.1.10.4
 libdata/pkgconfig/cgl.pc
 share/coin/doc/Cgl/AUTHORS
 share/coin/doc/Cgl/LICENSE
-share/coin/doc/Cgl/README
 share/coin/doc/Cgl/cgl_addlibs.txt

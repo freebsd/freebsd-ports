@@ -1,7 +1,6 @@
 PORTNAME=	cgl
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	0.60.3
-PORTREVISION=	2
+DISTVERSION=	0.60.4
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -27,6 +26,8 @@ GH_ACCOUNT=	coin-or
 GH_PROJECT=	Cgl
 
 GNU_CONFIGURE=	yes
+
+TEST_TARGET=	test
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libCgl.so.*
