@@ -1,7 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	wine
-DISTVERSION=	7.0-rc4
+DISTVERSION=	7.0-rc5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -146,7 +146,9 @@ PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 
 post-extract-STAGING-on: fix-shebang
-	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${STAGING_DIST} --strip-components 1
+	@${LN} -s ${WRKDIR}/${PORTNAME}-staging-${DISTVERSION}/patches ${WRKSRC}/patches
+
+post-patch-STAGING-on:
 	cd ${WRKSRC} && ${PATCH} -p0 < ${PATCHDIR}/extra-gitapply
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 
