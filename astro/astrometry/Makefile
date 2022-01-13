@@ -27,6 +27,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>0:astro/py-astropy@${PY_FLAVOR} \
 
 USES=		gmake jpeg localbase pkgconfig python shebangfix
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	afni p5-Text-RecordParser # bin/imstat bin/tabmerge
+
 SHEBANG_FILES=	bin/* sdss/*.py solver/*.py util/[!c]*.py
 
 MAKE_ARGS=	NETPBM_INC="-I${LOCALBASE}/include/netpbm" \

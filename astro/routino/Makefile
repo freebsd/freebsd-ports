@@ -14,6 +14,8 @@ OPTIONS_DEFINE=	DOCS
 USES=		compiler gmake perl5 tar:tgz
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	jabberd # bin/router
+
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -17,4 +17,6 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	jack-smf-utils # bin/smfsh
+
 .include <bsd.port.mk>

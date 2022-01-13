@@ -24,6 +24,8 @@ USE_LOCALE=	en_US.UTF-8
 USE_PYQT=	core_run dbus_run gui_run network_run widgets_run sip
 USE_PYTHON=	autoplist distutils noflavors
 
+CONFLICTS_INSTALL=	picard-tools py*-python-picard # bin/picard
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-release-${DISTVERSION}
 
 OPTIONS_DEFINE=		ACOUSTID PLAYER PLUGINS

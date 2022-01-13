@@ -21,6 +21,8 @@ GH_PROJECT=	${PORTNAME}.lv2
 
 MAKE_ARGS=	LV2VERSION=${DISTVERSION}
 
+CONFLICTS_INSTALL=	x42-plugins-lv2 # lib/lv2/phaserotate.lv2/phaserotate.so
+
 PLIST_FILES=	lib/lv2/phaserotate.lv2/manifest.ttl \
 		lib/lv2/phaserotate.lv2/phaserotate.so \
 		lib/lv2/phaserotate.lv2/phaserotate.ttl

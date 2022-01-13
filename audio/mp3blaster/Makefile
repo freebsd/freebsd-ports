@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake localbase:ldflags ncurses
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	p5-MP3-Tag-Utils splay # bin/mp3tag bin/splay
+
 OPTIONS_DEFINE=	DOCS LIRC NAS SDL SIDPLAY VORBIS
 OPTIONS_DEFAULT=	SIDPLAY VORBIS
 SIDPLAY_DESC=	Sidplayer support

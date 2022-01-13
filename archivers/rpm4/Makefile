@@ -49,6 +49,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/nss \
 		-L${BDB_LIB_DIR} -L${LUA_LIBDIR}
 
+CONFLICTS_INSTALL=	rpm2cpio # bin/rpm2cpio
+
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		OPSYS=${OPSYS:tl}
 

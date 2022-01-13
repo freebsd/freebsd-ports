@@ -16,6 +16,8 @@ USES=		cpe zip gettext php:flavors mysql
 USE_PHP=	pdo pdo_mysql hash session json intl simplexml curl dom xml
 IGNORE_WITH_PHP=73 80
 
+CONFLICTS_INSTALL=	ampache-php* # etc/periodic/daily/500.ampache-cron man/man1/ampache.1.gz
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SUB_FILES=	500.ampache-cron

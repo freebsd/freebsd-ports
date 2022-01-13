@@ -14,6 +14,8 @@ WRKSRC=		${WRKDIR}/t20-squsq
 MAKEFILE=	${FILESDIR}/Makefile
 CFLAGS+=	-Wno-error=return-type
 
+CONFLICTS_INSTALL=	sequoia squirrel # bin/sq
+
 PLIST_FILES=	bin/sq bin/usq
 PORTDOCS=	readme
 

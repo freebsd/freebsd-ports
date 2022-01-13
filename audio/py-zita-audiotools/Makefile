@@ -15,6 +15,8 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 USES=		localbase python:3.6+ tar:bz2
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fmoo-audiotools
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/audiotools/*.so
 

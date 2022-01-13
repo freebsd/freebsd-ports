@@ -14,6 +14,6 @@ COMMENT=	Read, change, and write different tags of MP3 audio files
 USES=		perl5
 USE_PERL5=	configure
 
-CONFLICTS=	p5-MP3-Tag-0.*
+CONFLICTS=	p5-MP3-Tag # lib/perl5/site_perl/MP3/Tag.pm
 
 .include <bsd.port.mk>

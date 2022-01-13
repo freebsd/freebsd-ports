@@ -22,6 +22,8 @@ SUB_FILES=	pkg-message
 
 CFLAGS+=	-D_WANT_SEMUN
 
+CONFLICTS_INSTALL=	py*-cclib # bin/cda
+
 LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH:S/aarch64/arm64/:C/armv.*/arm/:C/powerpc64.*/powerpc/:C/riscv64.*/riscv/}
 
 pre-patch:

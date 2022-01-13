@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-MP3-Tag>=1.13:audio/p5-MP3-Tag \
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	mp3blaster mp3rename # bin/mp3rename bin/mp3tag
+
 SHEBANG_FILES=	bin/mp3rename bin/mp3show bin/mp3tag
 
 .include <bsd.port.mk>

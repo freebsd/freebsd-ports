@@ -16,6 +16,8 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	mp3blaster # bin/splay
+
 PLIST_FILES=	bin/splay man/man1/splay.1.gz
 
 # XXX: pthread library can be used, but sound quality is buggy(?)

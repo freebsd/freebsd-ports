@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	foo2zjs # bin/msexpand
+
 PLIST_FILES=	bin/mscompress bin/msexpand \
 		share/man/man1/mscompress.1.gz \
 		share/man/man1/msexpand.1.gz

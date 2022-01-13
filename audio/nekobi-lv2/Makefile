@@ -27,6 +27,8 @@ USE_XORG=	x11
 CFLAGS+=	-I${FILESDIR}
 CFLAGS+=	-Wno-c++11-narrowing # clang prints errors: https://github.com/DISTRHO/Nekobi/issues/7
 
+CONFLICTS_INSTALL=	dpf-plugins-lv2 # bin/Nekobi
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc

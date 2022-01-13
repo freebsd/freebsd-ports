@@ -11,7 +11,7 @@ COMMENT=	MIDI to PCM software synthesizer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	timidity++-2.*
+CONFLICTS_INSTALL=	timidity++
 
 USES=		alias ncurses
 INSTALL_TARGET=	install.all

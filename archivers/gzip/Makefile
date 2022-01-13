@@ -13,6 +13,8 @@ LICENSE=	GPLv3+
 USES=		cpe charsetfix makeinfo tar:xz
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	zutils # bin/zcat bin/zcmp bin/zdiff bin/zgrep
+
 INFO=		gzip
 CPE_VENDOR=	gnu
 

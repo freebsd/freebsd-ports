@@ -19,4 +19,6 @@ USES=		gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
+CONFLICTS_INSTALL=	libsmf # bin/smfsh
+
 .include <bsd.port.mk>

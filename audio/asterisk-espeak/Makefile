@@ -28,6 +28,8 @@ asterisk18_RUN_DEPENDS=		asterisk:net/asterisk18
 USES=		compiler:c11 gmake localbase
 INSTALL_TARGET=	install samples
 
+CONFLICTS_INSTALL=	asterisk*-espeak # etc/asterisk/espeak.conf.sample
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	zaf
 GH_PROJECT=	Asterisk-eSpeak

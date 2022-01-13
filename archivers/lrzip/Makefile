@@ -23,6 +23,8 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 CPE_VENDOR=	lrzip_project
 
+CONFLICTS_INSTALL=	lrzsz # bin/lrz man/man1/lrz.1.gz
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblrzip.so.0.0.0
 

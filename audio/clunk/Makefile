@@ -14,6 +14,8 @@ USES=		cmake sdl tar:bzip2
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	btanks # lib/libclunk.so
+
 OPTIONS_DEFINE=	SSE
 OPTIONS_DEFAULT_amd64=SSE
 SSE_CMAKE_ON=	-DWITH_SSE:BOOL=TRUE

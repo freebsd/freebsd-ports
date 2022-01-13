@@ -38,6 +38,8 @@ SHEBANG_FILES=	stepseq.lv2/gridgen.sh
 
 CXXFLAGS+=	-std=c++98
 
+CONFLICTS_INSTALL=	phaserotate-lv2 # lib/lv2/phaserotate.lv2/phaserotate.so
+
 OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_i386=	SSE
 OPTIONS_DEFAULT_amd64=	SSE

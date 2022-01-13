@@ -13,6 +13,9 @@ COMMENT=	Library to work with RAR archives
 WRKSRC=		${WRKDIR}/unrar
 
 USES=		gmake
+
+CONFLICTS_INSTALL=	libunrar6 # lib/libunrar.so
+
 MAKEFILE=	makefile.unix
 ALL_TARGET=	lib
 USE_LDCONFIG=	yes

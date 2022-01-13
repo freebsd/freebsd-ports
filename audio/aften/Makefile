@@ -10,6 +10,8 @@ COMMENT=	ATSC A/52 audio encoder
 
 USES=		tar:bzip2 cmake
 
+CONFLICTS_INSTALL=	wavbreaker # bin/wavinfo
+
 OPTIONS_DEFINE=		SHARED_LIB CXX_BINDINGS DOUBLE
 OPTIONS_DEFAULT=
 

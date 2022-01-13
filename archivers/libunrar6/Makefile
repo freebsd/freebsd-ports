@@ -15,6 +15,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		compiler:c++11-lang gmake
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	libunrar # lib/libunrar.so
+
 ALL_TARGET=	lib
 MAKEFILE=	makefile
 MAKE_ARGS=	AR="${AR}" \

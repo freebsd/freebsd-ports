@@ -23,4 +23,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		compiler:c11 python:3.8+
 USE_PYTHON=	autoplist cython distutils
 
+CONFLICTS_INSTALL=	p5-Data-ShowTable # bin/showtable
+
 .include <bsd.port.mk>

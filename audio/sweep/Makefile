@@ -33,6 +33,8 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-ogg-includes=${LOCALBASE}/include/ogg
 CONFIGURE_ENV=	LIBS="`pkg-config --libs gmodule-2.0`"
 
+CONFIGURE_INSTALL=	libsweep-lidar # include/sweep/sweep.h
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^ac_enable_alsa=yes|ac_enable_alsa=no|g ; \
 		s|$${datadir}|$${datarootdir}|g' ${WRKSRC}/configure

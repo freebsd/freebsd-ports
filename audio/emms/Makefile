@@ -17,6 +17,8 @@ BUILD_DEPENDS=	texi2dvi:print/texinfo
 
 USES=		emacs gmake
 
+CONFLICTS_INSTALL=	emms emms-emacs_* # share/emacs/site-lisp/emms/emms-auto.el
+
 INFO=		emms
 NO_ARCH=	yes
 

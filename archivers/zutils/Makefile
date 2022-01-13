@@ -12,6 +12,9 @@ LICENSE=	GPLv2
 
 USES=		cpe tar:lz
 GNU_CONFIGURE=	yes
+
+CONFIGURE_INSTALL=	gzip openzfs # bin/zcat bin/zcmp bin/zdiff bin/zgrep man/man1/ztest.1.gz
+
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	nongnu
 

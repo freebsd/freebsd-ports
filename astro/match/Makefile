@@ -11,7 +11,8 @@ COMMENT=	Program for matching star lists
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	avenger
 GNU_CONFIGURE=	yes
+
+CONFLICTS=	avenger schilyutils # bin/match man/man1/match.1.gz
 
 .include <bsd.port.mk>
