@@ -1,3 +1,32 @@
+  <vuln vid="79b65dc5-749f-11ec-8be6-d4c9ef517024">
+    <topic>WordPress -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>5.8.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The WordPress project reports:</p>
+	<blockquote cite="https://wordpress.org/news/2022/01/wordpress-5-8-3-security-release/">
+	  <ul><li>Issue with stored XSS through post slugs</li>
+	    <li>Issue with Object injection in some multisite installations</li>
+	    <li>SQL injection vulnerability in WP_Query</li>
+	    <li>SQL injection vulnerability in WP_Meta_Query</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2022/01/wordpress-5-8-3-security-release/</url>
+    </references>
+    <dates>
+      <discovery>2022-01-06</discovery>
+      <entry>2022-01-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a6106c6-73e5-11ec-8fa2-0800270512f4">
     <topic>clamav -- invalid pointer read that may cause a crash</topic>
     <affects>
