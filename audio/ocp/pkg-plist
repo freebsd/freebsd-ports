@@ -1,7 +1,6 @@
 bin/ocp
 bin/ocp-curses
 %%SDL%%bin/ocp-sdl2
-%%XORG%%bin/ocp-x11
 lib/ocp/autoload/10-devi.so
 lib/ocp/autoload/10-hardware.so
 lib/ocp/autoload/10-mchasm.so
@@ -56,6 +55,7 @@ lib/ocp/playtimidity.so
 lib/ocp/playwav.so
 lib/ocp/playxm.so
 lib/ocp/playym.so
+man/man1/ocp.1.gz
 %%DESKTOP%%share/applications/cubic.org-opencubicplayer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -63,7 +63,6 @@ lib/ocp/playym.so
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/KEYBOARD_REMAPS
 %%PORTDOCS%%%%DOCSDIR%%/SUID
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/html/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fileselector.html
@@ -73,7 +72,5 @@ lib/ocp/playym.so
 %%PORTDOCS%%%%DOCSDIR%%/html/starting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/support.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wap.html
-%%XORG%%share/icons/hicolor/16x16/apps/opencubicplayer.xpm
-%%XORG%%share/icons/hicolor/48x48/apps/opencubicplayer.xpm
 %%DATADIR%%/data/ocp.hlp
 %%DATADIR%%/etc/ocp.ini
