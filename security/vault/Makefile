@@ -14,7 +14,7 @@ CPE_VENDOR=	hashicorp
 
 USE_GITHUB=	yes
 GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
-		swills:vaultui:${VAULTUITAG}:vaultui \
+		grembo:vaultui:${VAULTUITAG}:vaultui \
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-sdk-for-go:v51.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
