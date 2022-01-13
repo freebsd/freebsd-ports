@@ -1,5 +1,5 @@
 PORTNAME=	nuklear
-PORTVERSION=	4.09.1
+DISTVERSION=	4.9.5
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
