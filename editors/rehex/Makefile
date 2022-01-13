@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rehex
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	editors
 
 MAINTAINER=	ports@FreeBSD.org
