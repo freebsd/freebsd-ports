@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	jwt-cli
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTVERSION=	5.0.1
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -16,25 +15,28 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mike-engel
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.12.3 \
 		base64-0.13.0 \
 		bitflags-1.3.2 \
-		bumpalo-3.8.0 \
+		bumpalo-3.9.1 \
 		bunt-0.2.6 \
 		bunt-macros-0.2.5 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-2.33.3 \
+		clap-3.0.7 \
+		clap_derive-3.0.6 \
+		hashbrown-0.11.2 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		itoa-0.4.8 \
+		indexmap-1.8.0 \
+		itoa-1.0.1 \
 		js-sys-0.3.55 \
 		jsonwebtoken-7.2.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.107 \
+		libc-0.2.112 \
 		litrs-0.2.3 \
 		log-0.4.14 \
 		memchr-2.4.1 \
@@ -45,29 +47,31 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		num-iter-0.1.42 \
 		num-rational-0.2.4 \
 		num-traits-0.2.14 \
-		once_cell-1.8.0 \
+		once_cell-1.9.0 \
+		os_str_bytes-6.0.0 \
 		parse_duration-2.1.1 \
 		pem-0.8.3 \
-		proc-macro2-1.0.32 \
-		quote-1.0.10 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.36 \
+		quote-1.0.14 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		ring-0.16.20 \
-		ryu-1.0.5 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.70 \
+		ryu-1.0.9 \
+		serde-1.0.133 \
+		serde_derive-1.0.133 \
+		serde_json-1.0.74 \
 		simple_asn1-0.4.1 \
 		spin-0.5.2 \
-		strsim-0.8.0 \
-		syn-1.0.81 \
+		strsim-0.10.0 \
+		syn-1.0.85 \
 		termcolor-1.1.2 \
-		textwrap-0.11.0 \
+		textwrap-0.14.2 \
 		time-0.1.44 \
-		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		untrusted-0.7.1 \
-		vec_map-0.8.2 \
+		version_check-0.9.4 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.78 \
 		wasm-bindgen-backend-0.2.78 \
