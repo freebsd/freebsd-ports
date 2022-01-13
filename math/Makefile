@@ -887,6 +887,7 @@
     SUBDIR += py-plastex
     SUBDIR += py-point-annotator
     SUBDIR += py-pplpy
+    SUBDIR += py-primecountpy
     SUBDIR += py-primme
     SUBDIR += py-pyFFTW
     SUBDIR += py-pybloom

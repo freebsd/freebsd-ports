@@ -1,0 +1,4 @@
+This is a Cython interface to the C++ library primecount.
+
+WWW: https://github.com/dimpase/primecountpy
+WWW: https://pypi.org/project/primecountpy/

@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/primecountpy/__init__.py
+%%PYTHON_SITELIBDIR%%/primecountpy/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/primecountpy/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/primecountpy/defs.pxd
+%%PYTHON_SITELIBDIR%%/primecountpy/primecount%%PYTHON_EXT_SUFFIX%%.so
