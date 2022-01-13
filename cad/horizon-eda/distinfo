@@ -1,5 +1,3 @@
-TIMESTAMP = 1637022213
-SHA256 (horizon-eda-horizon-v2.1.0_GH0.tar.gz) = 2ba7a64ef0d8f22ad12e6a5a9c108f865eeb468f954f51ee5fbc03e6a847549a
-SIZE (horizon-eda-horizon-v2.1.0_GH0.tar.gz) = 3140793
-SHA256 (0d801d4807cbed405998688b361bf0543207f1b1.patch) = 64c0200aaf39e967d26d41634fea17db32f779449cd0a05197446e1a973b4d1f
-SIZE (0d801d4807cbed405998688b361bf0543207f1b1.patch) = 2501
+TIMESTAMP = 1642101212
+SHA256 (horizon-eda-horizon-v2.2.0_GH0.tar.gz) = 6c04f2fe8a9e1ee148cd1aaf9d418eec2ebce1bdda1741c7a54fb53c95798f91
+SIZE (horizon-eda-horizon-v2.2.0_GH0.tar.gz) = 3211560
