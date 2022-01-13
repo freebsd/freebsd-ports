@@ -7,4 +7,4 @@ lib/cmake/fineftp/fineftpTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fineftp/fineftpTargets.cmake
 lib/libfineftp-server.so
 lib/libfineftp-server.so.1
-lib/libfineftp-server.so.1.2.0
+lib/libfineftp-server.so.1.3.0
