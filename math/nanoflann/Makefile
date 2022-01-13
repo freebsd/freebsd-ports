@@ -1,6 +1,6 @@
 PORTNAME=	nanoflann
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
+DISTVERSION=	1.4.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,19 +13,19 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	jlblancoc
 
-CMAKE_OFF=	BUILD_EXAMPLES BUILD_TESTS
+CMAKE_OFF=	NANOFLANN_BUILD_EXAMPLES NANOFLANN_BUILD_TESTS
 
 NO_ARCH=	yes
 
 PLIST_FILES=	include/nanoflann.hpp \
-		lib/cmake/nanoflann/nanoflannConfig.cmake \
-		lib/cmake/nanoflann/nanoflannConfigVersion.cmake \
-		lib/cmake/nanoflann/nanoflannTargets.cmake \
+		${DATADIR}/cmake/nanoflannConfig.cmake \
+		${DATADIR}/cmake/nanoflannConfigVersion.cmake \
+		${DATADIR}/cmake/nanoflannTargets.cmake \
 		libdata/pkgconfig/nanoflann.pc
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DNANOFLANN_BUILD_TESTS=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
