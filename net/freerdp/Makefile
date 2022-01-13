@@ -1,14 +1,10 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 
 PORTNAME=	freerdp
-DISTVERSION=	2.4.1
-PORTREVISION=	1
+DISTVERSION=	2.5.0
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	bfbef39759b9641a4fab8b75b9243c48cb0789ac.patch:-p1 # Fix build for upcoming LibreSSL version
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
