@@ -51,14 +51,54 @@ load_rc_config $name
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-: ${milteropendkim_enable="NO"}
-: ${milteropendkim_uid="mailnull"}
-: ${milteropendkim_gid="mailnull"}
-: ${milteropendkim_cfgfile="%%PREFIX%%/etc/mail/opendkim.conf"}
-: ${milteropendkim_socket_perms="0755"}
+: ${milteropendkim_enable:="NO"}
+: ${milteropendkim_uid:="mailnull"}
+: ${milteropendkim_gid:="mailnull"}
+: ${milteropendkim_cfgfile:="%%PREFIX%%/etc/mail/opendkim.conf"}
+: ${milteropendkim_socket_perms:="0755"}
 
 # Options other than above can be set with $milteropendkim_flags.
 # see dkim-milter documentation for detail.
+
+extra_commands="reload"
+start_precmd="dkim_prepcmd"
+start_postcmd="dkim_start_postcmd"
+stop_postcmd="dkim_cleansockets"
+command="%%PREFIX%%/sbin/opendkim"
+sig_reload="USR1"
+
+dkim_cleansockets()
+{
+    rm -f "${milteropendkim_socket##local:}" "${milteropendkim_socket##unix:}"
+}
+
+dkim_get_pidfile()
+{
+	if get_pidfile_from_conf PidFile ${milteropendkim_cfgfile#-x }; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="/var/run/milteropendkim/${profile:-pid}"
+	fi
+}
+
+dkim_prepcmd()
+{
+    dkim_cleansockets
+    dkim_get_pidfile
+    install -d -o ${milteropendkim_uid%:*} -g $milteropendkim_gid \
+    	-m ${milteropendkim_socket_perms} ${pidfile%/*}
+}
+
+dkim_start_postcmd()
+{
+    if [ -n "${milteropendkim_socket}" ] ; then
+	# postcmd is executed too fast and socket is not created before checking...
+	sleep 1
+	chmod -f ${milteropendkim_socket_perms} \
+	    ${milteropendkim_socket##local:} \
+	    ${milteropendkim_socket##unix:}
+    fi
+}
 
 if [ -n "$2" ]; then
     profile="$2"
@@ -67,7 +107,7 @@ if [ -n "$2" ]; then
 	eval milteropendkim_enable="\${milteropendkim_${profile}_enable:-${milteropendkim_enable}}"
 	eval milteropendkim_socket="\${milteropendkim_${profile}_socket:-}"
 	eval milteropendkim_socket_perms="\${milteropendkim_${profile}_socket_perms:-}"
-	if [ "x${milteropendkim_socket}" = "x" ];then
+	if [ -z "${milteropendkim_socket}" ];then
 	    echo "You must define a socket (milteropendkim_${profile}_socket)"
 	    exit 1
 	fi
@@ -103,6 +143,7 @@ if [ -n "$2" ]; then
 	if [ -n "${milteropendkim_alg}" ];then
 	    milteropendkim_alg="-S ${milteropendkim_alg}"
 	fi
+	dkim_get_pidfile
 	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
     else
 	echo "$0: extra argument ignored"
@@ -154,50 +195,5 @@ else
 	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
     fi
 fi
-
-dkim_prepcmd ()
-{
-    if [ -S "${milteropendkim_socket##local:}" ] ; then
-        rm -f "${milteropendkim_socket##local:}"
-    elif [ -S "${milteropendkim_socket##unix:}" ] ; then
-        rm -f "${milteropendkim_socket##unix:}"
-    fi
-    if [ ! -d ${_piddir} ] ; then
-	mkdir -p ${_piddir}
-    fi
-    if [ -n "${milteropendkim_uid}" ] ; then
-	chown ${milteropendkim_uid} ${_piddir}
-    fi
-    if [ -n "${milteropendkim_gid}" ] ; then
-       chgrp ${milteropendkim_gid} ${_piddir}
-    fi
-    chmod ${milteropendkim_socket_perms} ${_piddir}
-}
-
-dkim_start_postcmd ()
-{
-    if [ -n "${milteropendkim_socket}" ] ; then
-	# postcmd is executed too fast and socket is not created before checking...
-	sleep 1
-	if [ -S "${milteropendkim_socket##local:}" ] ; then
-	    chmod ${milteropendkim_socket_perms} ${milteropendkim_socket##local:}
-	elif [ -S "${milteropendkim_socket##unix:}" ] ; then
-	    chmod ${milteropendkim_socket_perms} ${milteropendkim_socket##unix:}
-	fi
-    fi
-}
-
-dkim_postcmd()
-{
-    if [ -n "${milteropendkim_socket}" ] ; then
-	if [ -S "${milteropendkim_socket##local:}" ] ; then
-	    rm -f "${milteropendkim_socket##local:}"
-	elif [ -S "${milteropendkim_socket##unix:}" ] ; then
-	    rm -f "${milteropendkim_socket##unix:}"
-	fi
-    fi
-    # just if the directory is empty
-    rmdir ${_piddir} > /dev/null 2>&1
-}
 
 run_rc_command "$1"
