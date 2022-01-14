@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	rfc3986
-PORTVERSION=	1.5.0
+PORTVERSION=	2.0.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sigmavirus24
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
