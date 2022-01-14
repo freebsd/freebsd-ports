@@ -3,6 +3,7 @@
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
+    SUBDIR += R-cran-pingr
     SUBDIR += R-cran-twitteR
     SUBDIR += Sockets
     SUBDIR += activemq

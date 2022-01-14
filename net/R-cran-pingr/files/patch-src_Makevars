@@ -1,0 +1,5 @@
+--- src/Makevars.orig	2022-01-14 10:24:39 UTC
++++ src/Makevars
+@@ -1 +1 @@
+-PKG_LIBS = -lresolv
++PKG_LIBS =
