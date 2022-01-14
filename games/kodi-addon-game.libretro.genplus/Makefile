@@ -1,43 +1,41 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	game.libretro.genplus
-PORTVERSION=	1.7.4.15
+PORTVERSION=	1.7.4.31
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sega - MS/GG/MD/CD (Genesis Plus GX)
 
-LICENSE=	GPGX
-LICENSE_NAME=	GPGX
-LICENSE_FILE=	${WRKSRC}/depends/common/genplus/LICENSE.txt
-LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml
-RUN_DEPENDS=	kodi-addon-game.libretro>=0:games/kodi-addon-game.libretro
+LIBRETRO_PORT=	libretro-genesis_plus_gx
 
-USES=		cmake:noninja gmake kodi
+RUN_DEPENDS=	kodi-addon-game.libretro>=0:games/kodi-addon-game.libretro \
+		${LIBRETRO_PORT}>=0:games/${LIBRETRO_PORT}
+
+NO_ARCH=	yes
+
+USES=		kodi
 USE_GITHUB=	yes
-GH_ACCOUNT=	kodi-game \
-		libretro:genplus
-GH_PROJECT=	Genesis-Plus-GX:genplus
-# Keep in sync with: depends/common/genplus/genplus.txt
-GH_TAGNAME=	0164eb9730c0803674a54a3694633a56f4801661:genplus
+GH_ACCOUNT=	kodi-game
 
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
-		-DBUILD_SHARED_LIBS=1 \
-		-DADDONS_TO_BUILD=${PORTNAME} \
-		-DGENPLUS_LIB=depends/common/genplus/genesis_plus_gx_libretro.so
+do-build:
+	@${MKDIR} ${WRKSRC}/lib
+	@LIBRARY_FILENAME_FULL=`${MAKE} -C ../${LIBRETRO_PORT} -V PLIST_FILES | ${SED} 's| .*||g'` && \
+	LIBRARY_FILENAME=`basename "$${LIBRARY_FILENAME_FULL}"` && \
+	${LN} -sf "${LOCALBASE}/$${LIBRARY_FILENAME_FULL}" ${WRKSRC}/lib/ && \
+	${REINPLACE_CMD} -e 's|@PLATFORM@|freebsd|g' \
+		-e "s|@LIBRARY_FILENAME@|$${LIBRARY_FILENAME}|g" \
+		${WRKSRC}/${PORTNAME}/addon.xml.in
+	@${MV} ${WRKSRC}/${PORTNAME}/addon.xml.in ${WRKSRC}/${PORTNAME}/addon.xml
+	@${RM} -f ${WRKSRC}/${PORTNAME}/addon.xml.in.bak
 
-post-extract:
-	@${MV} ${WRKSRC_genplus}/* ${WRKSRC}/depends/common/genplus/
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|find_library(GENPLUS_LIB.*|add_subdirectory(depends/common/genplus)|g' \
-		${WRKSRC}/CMakeLists.txt
-
-post-install:
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/libretro
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/kodi/addons/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/share/kodi/addons
+	@(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} * ${STAGEDIR}${PREFIX}/lib/kodi/addons/${PORTNAME})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/share/kodi/addons)
 
 .include <bsd.port.mk>
