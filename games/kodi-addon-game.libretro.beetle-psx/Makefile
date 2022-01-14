@@ -1,9 +1,8 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	game.libretro.beetle-psx
-PORTVERSION=	0.9.44.22
+PORTVERSION=	0.9.44.36
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
