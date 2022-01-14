@@ -1,6 +1,6 @@
---- Makefile.orig	2020-11-10 03:29:50 UTC
+--- Makefile.orig	2022-01-12 05:24:28 UTC
 +++ Makefile
-@@ -48,7 +48,7 @@ cc-option = $(shell if $(CC) $(1) -c -x c /dev/null -o
+@@ -54,7 +54,7 @@ cc-option = $(shell if $(CC) $(1) -c -x c /dev/null -o
  	      1>&2 2>/dev/null; then echo $(1); fi)
  
  override CFLAGS :=							\
@@ -9,12 +9,18 @@
  	$(call cc-option,-Wpedantic)					\
  	$(call cc-option,-Wdeclaration-after-statement)			\
  	$(call cc-option,-Wmissing-prototypes)				\
-@@ -305,9 +305,9 @@ all:$(DEFAULT_TARGETS)
- install:all
- 	install -d $(DESTDIR)$(LIBDIR) $(DESTDIR)$(INCDIR) $(DESTDIR)$(BINDIR)
+@@ -331,7 +331,7 @@ install:all $(PKGCONFBASE)
+ 		$(DESTDIR)$(BINDIR)
  	install -m644 $(STATIC_LIB) $(DESTDIR)$(LIBDIR)
--	install -m755 $(SHARED_LIB) $(DESTDIR)$(LIBDIR)
-+	install -s -m755 $(SHARED_LIB) $(DESTDIR)$(LIBDIR)
+ 	if [ -z "$(DISABLE_SHARED)" ]; then				\
+-		install -m755 $(SHARED_LIB) $(DESTDIR)$(LIBDIR);	\
++		install -s -m755 $(SHARED_LIB) $(DESTDIR)$(LIBDIR);	\
+ 	fi
+ 	sed -e "s|@PREFIX@|$(PREFIX)|"					\
+ 	    -e "s|@LIBDIR@|$(LIBDIR)|"					\
+@@ -340,7 +340,7 @@ install:all $(PKGCONFBASE)
+ 	    $(PKGCONFBASE) > $(DESTDIR)$(LIBDIR)/pkgconfig/libdeflate.pc
+ 	chmod 644 $(DESTDIR)$(LIBDIR)/pkgconfig/libdeflate.pc
  	install -m644 libdeflate.h $(DESTDIR)$(INCDIR)
 -	install -m755 gzip$(PROG_SUFFIX) \
 +	install -s -m755 gzip$(PROG_SUFFIX) \

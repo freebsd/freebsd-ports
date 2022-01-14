@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	libdeflate
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -21,6 +21,7 @@ TEST_TARGET=	check
 
 PLIST_FILES=	bin/libdeflate-gunzip bin/libdeflate-gzip \
 		include/libdeflate.h \
+		libdata/pkgconfig/libdeflate.pc \
 		lib/libdeflate.a lib/libdeflate.so lib/libdeflate.so.0
 PORTDOCS=	NEWS.md README.md
 
