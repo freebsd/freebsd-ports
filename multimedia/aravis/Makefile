@@ -1,8 +1,7 @@
 # Created by: Rozhuk Ivan rozhuk.im@gmail.com
 
 PORTNAME=		aravis
-DISTVERSIONPREFIX=	ARAVIS_
-DISTVERSION=		0_5_12
+DISTVERSION=		0.8.20
 CATEGORIES=		multimedia
 
 MAINTAINER=		rozhuk.im@gmail.com
@@ -11,31 +10,26 @@ COMMENT=		Camera control and image acquisition viewer
 LICENSE=		LGPL21+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	${PORTNAME}*
-
-LIB_DEPENDS+=		libaravis-0.6.so:devel/libaravis \
+LIB_DEPENDS=		libaravis-0.8.so:devel/libaravis \
 			libnotify.so:devel/libnotify
 
-USES=			autoreconf gettext gmake gnome libtool pkgconfig
+USES=			gettext gnome meson pkgconfig
 USE_GNOME=		cairo glib20 intltool gtk30
 USE_GSTREAMER1=		yes
-GNU_CONFIGURE=		yes
-# USE_LDCONFIG=		yes
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject
 
-CONFIGURE_ARGS=		--enable-packet-socket=no --enable-viewer=yes	\
-			--enable-gst-plugin=no --enable-gst-0.10-plugin=no \
-			--enable-gtk-doc=no --enable-cpp-test=no \
-			--enable-usb=no --enable-zlib-pc=yes
-MAKE_ARGS=		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+MESON_ARGS=		-Dpacket-socket=disabled -Dviewer=enabled	\
+			-Ddocumentation=disabled -Dintrospection=disabled \
+			-Dgst-plugin=disabled -Dtests=false -Dusb=disabled
 
-pre-configure:
-	${ECHO_CMD} "EXTRA_DIST =" >> ${WRKSRC}/gtk-doc.make
-	@${REINPLACE_CMD} -e 's|GTK_DOC_CHECK(\[1.14\],\[--flavour no-tmpl\])||' \
-		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|^arv_viewer_LDADD.*=.*|arv_viewer_LDADD = $${ARAVIS_VIEWER_LIBS} -laravis-0.6|' \
-		${WRKSRC}/viewer/Makefile.am
+post-patch:
+	@${REINPLACE_CMD} -e "s|subdir ('src')|aravis_dependencies += dependency ('aravis-0.8', version: '>=0.8', required: true)|g" \
+		-e 's|meson.override_dependency.*||g' \
+		${WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e "s|.*aravis_library.*||g" \
+		-e "s|library_inc|include_directories('../src')|g" \
+		${WRKSRC}/viewer/meson.build
 
 .include <bsd.port.mk>
