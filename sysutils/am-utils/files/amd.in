@@ -7,6 +7,8 @@
 # BEFORE: DAEMON
 # KEYWORD: nojail shutdown
 
+amd_enable=${nut_enable:-"NO"}
+
 . /etc/rc.subr
 
 name="amd"
