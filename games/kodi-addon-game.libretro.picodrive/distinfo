@@ -1,6 +1,6 @@
-TIMESTAMP = 1611234477
-SHA256 (kodi-game-game.libretro.picodrive-1.97.0.19-Matrix_GH0.tar.gz) = 6685fc276a54affad89c8cbc8f980114bd750153a19e82f6f810ab47456801aa
-SIZE (kodi-game-game.libretro.picodrive-1.97.0.19-Matrix_GH0.tar.gz) = 791215
+TIMESTAMP = 1641912990
+SHA256 (kodi-game-game.libretro.picodrive-1.98.0.26-Matrix_GH0.tar.gz) = d427d69ac7814613643d42a6e5d9790ce937479785abd45d980d5dedf1e9856f
+SIZE (kodi-game-game.libretro.picodrive-1.98.0.26-Matrix_GH0.tar.gz) = 817411
 SHA256 (libretro-picodrive-046371ad2a3842d938cc74db5a615764ca2ff4ac_GH0.tar.gz) = 101155a1a0da985a2d8a7c62967a3ee110825b68703a2519ba906d2eba7fe994
 SIZE (libretro-picodrive-046371ad2a3842d938cc74db5a615764ca2ff4ac_GH0.tar.gz) = 1573265
 SHA256 (notaz-libpicofe-76e45c3489a0c32d91744413c198f685b553f6c0_GH0.tar.gz) = a0a1c7e65f88b8fb17f0c3139a947c3677fcab848b90e24ee1cd0c6ae5ffe8c2
