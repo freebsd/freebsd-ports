@@ -1,9 +1,8 @@
 # Created by: Rozhuk Ivan 2018 <rozhuk.im@gmail.com>
 
 PORTNAME=	peripheral.joystick
-DISTVERSION=	1.7.1
+DISTVERSION=	19.0.1
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
