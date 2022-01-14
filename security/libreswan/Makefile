@@ -1,5 +1,5 @@
 PORTNAME=	libreswan
-DISTVERSION=	4.5
+DISTVERSION=	4.6
 CATEGORIES=	security
 MASTER_SITES=	https://download.libreswan.org/
 

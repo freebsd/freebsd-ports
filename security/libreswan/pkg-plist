@@ -8,6 +8,7 @@ etc/ipsec.d/policies/private
 etc/ipsec.d/policies/private-or-clear
 etc/ipsec.secrets
 etc/logrotate.d/libreswan
+etc/rc.d/pluto
 libexec/ipsec/_import_crl
 libexec/ipsec/_plutorun
 libexec/ipsec/_realsetup
@@ -43,6 +44,7 @@ libexec/ipsec/whack
 sbin/ipsec
 %%PORTDOCS%%%%DOCSDIR%%/ipsec.conf-sample
 %%PORTDOCS%%%%DOCSDIR%%/ipsec.secrets-sample
+share/examples/rc.d/pluto
 share/man/man5/ipsec.conf.5.gz
 share/man/man5/ipsec.secrets.5.gz
 share/man/man8/ipsec.8.gz
