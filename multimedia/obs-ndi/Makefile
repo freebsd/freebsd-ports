@@ -1,6 +1,6 @@
 PORTNAME=	obs-ndi
 DISTVERSION=	4.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
+RUN_DEPENDS=	${LOCALBASE}/lib/libndi.so:multimedia/libndi
 
 USES=		cmake compiler:c++11-lang localbase:ldflags qt:5
 USE_GITHUB=	yes
