@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220111:
+AUTHOR: se@FreeBSD.org
+
+  The CPU_AND, CPU_ANDNOT, CPU_OR, and CPU_XOR macros in 14-CURRENT
+  and 13-STABLE after this date have been made compatible with GLIBC
+  conventions. Specifically, they now take 3 arguments instead of 2.
+  Ports can check whether the CPU_ALLOC macro is defined and then
+  use the 3 parameter form, e.g.:
+
+    #ifdef CPU_ALLOC
+	CPU_AND(dst, dst, src);
+    #else
+	CPU_AND(dst, src);
+    #endif
+
 20211211:
 AUTHOR: tcberner@FreeBSD.org
 
