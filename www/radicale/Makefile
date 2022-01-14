@@ -1,8 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	radicale
-PORTVERSION=	3.0.6
-PORTREVISION=	2
+PORTVERSION=	3.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}waitress>=0:www/py-waitress@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ shebangfix
+USES=		cpe python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 USERS=		radicale
 GROUPS=		radicale
