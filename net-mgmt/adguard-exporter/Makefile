@@ -1,17 +1,18 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
 
 PORTNAME=		adguard-exporter
-PORTVERSION=		1.14
 DISTVERSIONPREFIX=	v
+DISTVERSION=		1.14
 CATEGORIES=		net-mgmt
+
 MAINTAINER=		christer.edwards@gmail.com
 COMMENT=		Prometheus metrics exporter for AdGuard Home DNS
 
 LICENSE=		MIT
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 USES=			go
 USE_GITHUB=		yes
-USE_RC_SUBR=		adguard_exporter
 
 GH_ACCOUNT=		ebrianne
 GH_TUPLE=		beorn7:perks:4c0e845:perks/vendor/github.com/beorn7/perks \
@@ -27,6 +28,7 @@ GH_TUPLE=		beorn7:perks:4c0e845:perks/vendor/github.com/beorn7/perks \
 			prometheus:common:49fee29:common/vendor/github.com/prometheus/common \
 			prometheus:procfs:a1dba9c:procfs/vendor/github.com/prometheus/procfs
 
+USE_RC_SUBR=		adguard_exporter
 
 GO_PKGNAME=		github.com/${GH_ACCOUNT}/${PORTNAME}
 
