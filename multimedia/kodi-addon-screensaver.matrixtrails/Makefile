@@ -1,9 +1,8 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	screensaver.matrixtrails
-PORTVERSION=	2.6.0
+PORTVERSION=	19.0.1
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
