@@ -1,9 +1,8 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	game.libretro.pcsx-rearmed
-PORTVERSION=	22.0.0.19
+PORTVERSION=	22.0.0.39
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
