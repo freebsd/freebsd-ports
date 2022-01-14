@@ -1,9 +1,8 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	game.libretro
-PORTVERSION=	2.2.0
+PORTVERSION=	19.0.0
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
