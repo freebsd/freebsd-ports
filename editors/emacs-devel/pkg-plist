@@ -2463,6 +2463,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/cyrillic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/czech.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/czech.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/emoji.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/emoji.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/ethiopic.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/ethiopic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/georgian.el.gz
