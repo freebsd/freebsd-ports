@@ -3,6 +3,7 @@ include/faiss/Clustering.h
 include/faiss/IVFlib.h
 include/faiss/Index.h
 include/faiss/Index2Layer.h
+include/faiss/IndexAdditiveQuantizer.h
 include/faiss/IndexBinary.h
 include/faiss/IndexBinaryFlat.h
 include/faiss/IndexBinaryFromFloat.h
@@ -10,8 +11,10 @@ include/faiss/IndexBinaryHNSW.h
 include/faiss/IndexBinaryHash.h
 include/faiss/IndexBinaryIVF.h
 include/faiss/IndexFlat.h
+include/faiss/IndexFlatCodes.h
 include/faiss/IndexHNSW.h
 include/faiss/IndexIVF.h
+include/faiss/IndexIVFAdditiveQuantizer.h
 include/faiss/IndexIVFFlat.h
 include/faiss/IndexIVFPQ.h
 include/faiss/IndexIVFPQFastScan.h
@@ -51,6 +54,7 @@ include/faiss/impl/ThreadedIndex-inl.h
 include/faiss/impl/ThreadedIndex.h
 include/faiss/impl/io.h
 include/faiss/impl/io_macros.h
+include/faiss/impl/kmeans1d.h
 include/faiss/impl/lattice_Zn.h
 include/faiss/impl/platform_macros.h
 include/faiss/impl/pq4_fast_scan.h
@@ -66,6 +70,7 @@ include/faiss/utils/AlignedTable.h
 include/faiss/utils/Heap.h
 include/faiss/utils/WorkerThread.h
 include/faiss/utils/distances.h
+include/faiss/utils/extra_distances-inl.h
 include/faiss/utils/extra_distances.h
 include/faiss/utils/hamming-inl.h
 include/faiss/utils/hamming.h
