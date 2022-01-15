@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # PROVIDE: crowdsec_firewall
-# REQUIRE: LOGIN DAEMON NETWORKING
+# REQUIRE: LOGIN DAEMON NETWORKING crowdsec
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -41,6 +41,15 @@ crowdsec_firewall_precmd() {
             fi
         fi
     fi
+
+    # needs real tabs
+    cat <<-EOT | /sbin/pfctl -f /dev/fd/0
+	table <crowdsec-blacklists> persist
+	table <crowdsec6-blacklists> persist
+	block drop in quick from <crowdsec-blacklists> to any
+	block drop in quick from <crowdsec6-blacklists> to any
+	EOT
+
 }
 
 crowdsec_firewall_start() {

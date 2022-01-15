@@ -1,5 +1,5 @@
 PORTNAME=	crowdsec
-PORTVERSION=	1.2.1	# NOTE: change BUILD_VERSION and BUILD_TAG as well
+PORTVERSION=	1.2.3	# NOTE: change BUILD_VERSION and BUILD_TAG as well
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -18,9 +18,8 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	crowdsec
+GH_TAGNAME=	v1.2.3-freebsd
 #GH_TAGNAME is automatically set from DISTVERSION
-
-USE_RC_SUBR=	crowdsec
 
 USE_RC_SUBR=	crowdsec
 
@@ -29,8 +28,8 @@ SUB_FILES=	pkg-message \
 
 # BUILD_VERSION=$(git describe --tags $(git rev-list --tags --max-count=1))
 # BUILD_TAG=$(git rev-parse HEAD)
-MAKE_ENV=	BUILD_VERSION="v1.2.1" \
-		BUILD_TAG="dd03d073558e380c283afe66942f537c3da647ff"
+MAKE_ENV=	BUILD_VERSION="v1.2.3" \
+		BUILD_TAG="fc4be1e0ffc5888f2824358464cb2426cd4472e1"
 
 PLUGIN_DIR=	${PREFIX}/lib/crowdsec/plugins
 STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
@@ -62,6 +61,7 @@ do-install:
 	${LN} -s cscli ${STAGE_BIN}/crowdsec-cli
 
 	@${MKDIR} ${STAGE_PLUGINS}
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/email/notification-email ${STAGE_PLUGINS}/
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/http/notification-http ${STAGE_PLUGINS}/
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/slack/notification-slack ${STAGE_PLUGINS}/
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/splunk/notification-splunk ${STAGE_PLUGINS}/
@@ -92,6 +92,10 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications
 
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/email
+	@${MV} ${WRKSRC}/plugins/notifications/email/email.yaml \
+		${STAGEDIR}${ETCDIR}/notifications/email/email.yaml.sample
+
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${MV} ${WRKSRC}/plugins/notifications/http/http.yaml \
 		${STAGEDIR}${ETCDIR}/notifications/http/http.yaml.sample
@@ -118,5 +122,12 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/hub
 	@${MKDIR} ${STAGEDIR}/var/db/crowdsec/data
+
+	#
+	# Log rotation
+	#
+
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/crowdsec.conf-newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/crowdsec.conf.sample
 
 .include <bsd.port.mk>

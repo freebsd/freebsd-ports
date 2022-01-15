@@ -43,12 +43,12 @@ crowdsec_precmd() {
     }
 
     HUB_DIR=$(Config ConfigPaths.HubDir)
-    if ! ls -1qA "$HUB_DIR/*" >/dev/null 2>&1; then
+    if ! ls -1qA "$HUB_DIR"/* >/dev/null 2>&1; then
         echo "Fetching hub inventory"
         cs_cli hub update || :
     fi
 
-    if [ -z "$(cs_cli machines list -o raw)" ]; then
+    if [ "$(cs_cli machines list -o json)" = "[]" ]; then
         echo "Registering LAPI"
         cs_cli machines add --auto || :
     fi
@@ -59,12 +59,13 @@ crowdsec_precmd() {
         cs_cli capi register || :
     fi
 
-    cs_cli collections inspect crowdsecurity/linux >/dev/null || cs_cli collections install crowdsecurity/linux || :
+    # This would work but takes 30secs to timeout while reading the metrics, because crowdsec is not running yet.
+    #    cs_cli collections inspect crowdsecurity/freebsd 2>/dev/null | grep ^installed | grep -q true || \
+    #        cs_cli collections install crowdsecurity/freebsd || :
 
-    DATA_DIR=$(Config ConfigPaths.DataDir)
-    if [ ! -f "${DATA_DIR}/GeoLite2-City.mmdb" ]; then
-        echo "Installing GeoIP enricher"
-        cs_cli parsers install crowdsecurity/geoip-enrich || :
+    # So we just check for the file
+    if [ ! -e "${CONFIG_DIR}/collections/freebsd.yaml" ]; then
+        cs_cli collections install crowdsecurity/freebsd || :
     fi
 }
 
