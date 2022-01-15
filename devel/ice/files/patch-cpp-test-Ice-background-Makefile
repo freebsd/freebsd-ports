@@ -1,0 +1,10 @@
+--- cpp/test/Ice/background/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Ice/background/Makefile
+@@ -47,6 +47,7 @@ include $(top_srcdir)/config/Make.rules
+ 
+ CPPFLAGS	:= -I. -I../../include -I../../../src $(CPPFLAGS) $(NO_DEPRECATED_FLAGS)
+ LINKWITH	:= $(BZIP2_RPATH_LINK) -lIce -lIceUtil
++LDFLAGS		:= $(LDFLAGS) -Wl,-E
+ 
+ $(CLIENT): $(COBJS)
+ 	rm -f $@

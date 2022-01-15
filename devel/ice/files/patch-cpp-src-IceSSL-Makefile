@@ -1,7 +1,7 @@
---- cpp/src/IceSSL/Makefile.orig	2015-09-14 22:49:55.236652991 +0000
-+++ cpp/src/IceSSL/Makefile	2015-09-14 22:50:11.419995991 +0000
-@@ -55,7 +55,7 @@
- CPPFLAGS		:= -I.. $(CPPFLAGS) -DICE_SSL_API_EXPORTS $(OPENSSL_FLAGS)
+--- cpp/src/IceSSL/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/src/IceSSL/Makefile
+@@ -55,7 +55,7 @@ include $(top_srcdir)/config/Make.rules
+ CPPFLAGS	:= -I.. $(CPPFLAGS) -DICE_SSL_API_EXPORTS $(OPENSSL_FLAGS)
  SLICE2CPPFLAGS	:= --ice --include-dir IceSSL --dll-export ICE_SSL_API $(SLICE2CPPFLAGS)
  
 -LINKWITH	:= $(BZIP2_RPATH_LINK) -lIce -lIceUtil $(SSL_OS_LIBS) $(CXXLIBS)

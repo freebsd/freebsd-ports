@@ -1,6 +1,6 @@
---- python/modules/IcePy/Types.h.orig	2015-01-18 15:25:04.917707935 +0100
-+++ python/modules/IcePy/Types.h	2015-01-18 15:24:54.689631935 +0100
-@@ -69,6 +69,50 @@
+--- python/modules/IcePy/Types.h.orig	2019-08-12 19:54:18 UTC
++++ python/modules/IcePy/Types.h
+@@ -71,6 +71,50 @@ struct PrintObjectHistory
      std::map<PyObject*, int> objects;
  };
  
@@ -51,7 +51,7 @@
  //
  // The delayed nature of class unmarshaling in the Ice protocol requires us to
  // handle unmarshaling using a callback strategy. An instance of UnmarshalCallback
-@@ -127,7 +171,7 @@
+@@ -129,7 +173,7 @@ class TypeInfo : public UnmarshalCallback (public)
      virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
                             const Ice::StringSeq* = 0) = 0;
  
@@ -60,7 +60,7 @@
  };
  typedef IceUtil::Handle<TypeInfo> TypeInfoPtr;
  
-@@ -164,7 +208,7 @@
+@@ -166,7 +210,7 @@ class PrimitiveInfo : public TypeInfo (public)
      virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
                             const Ice::StringSeq* = 0);
  
@@ -69,7 +69,34 @@
  
      const Kind kind;
  };
-@@ -193,7 +237,7 @@
+@@ -195,7 +239,7 @@ class EnumInfo : public TypeInfo (public)
+     virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
+                            const Ice::StringSeq* = 0);
+ 
+-    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
++    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
+ 
+     virtual void destroy();
+ 
+@@ -247,7 +291,7 @@ class StructInfo : public TypeInfo (public)
+     virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
+                            const Ice::StringSeq* = 0);
+ 
+-    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
++    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
+ 
+     virtual void destroy();
+ 
+@@ -288,7 +332,7 @@ class SequenceInfo : public TypeInfo (public)
+     virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
+                            const Ice::StringSeq* = 0);
+ 
+-    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
++    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
+ 
+     virtual void destroy();
+ 
+@@ -348,7 +392,7 @@ class CustomInfo : public TypeInfo (public)
      virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
                             const Ice::StringSeq* = 0);
  
@@ -77,35 +104,8 @@
 +    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
  
      const std::string id;
-     const PyObjectHandle pythonType;
-@@ -240,7 +284,7 @@
-     virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
-                            const Ice::StringSeq* = 0);
- 
--    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
-+    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
- 
-     virtual void destroy();
- 
-@@ -278,7 +322,7 @@
-     virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
-                            const Ice::StringSeq* = 0);
- 
--    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
-+    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
- 
-     virtual void destroy();
- 
-@@ -338,7 +382,7 @@
-     virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
-                            const Ice::StringSeq* = 0);
- 
--    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
-+    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
- 
-     virtual void destroy();
- 
-@@ -371,7 +415,7 @@
+     PyObject* pythonType; // Borrowed reference - the enclosing Python module owns the reference.
+@@ -379,7 +423,7 @@ class DictionaryInfo : public TypeInfo (public)
                             const Ice::StringSeq* = 0);
      virtual void unmarshaled(PyObject*, PyObject*, void*);
  
@@ -114,7 +114,7 @@
  
      virtual void destroy();
  
-@@ -420,11 +464,11 @@
+@@ -428,11 +472,11 @@ class ClassInfo : public TypeInfo (public)
      virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
                             const Ice::StringSeq* = 0);
  
@@ -128,16 +128,16 @@
  
      const std::string id;
      const Ice::Int compactId;
-@@ -462,7 +506,7 @@
+@@ -470,7 +514,7 @@ class ProxyInfo : public TypeInfo (public)
      virtual void unmarshal(const Ice::InputStreamPtr&, const UnmarshalCallbackPtr&, PyObject*, void*, bool,
                             const Ice::StringSeq* = 0);
  
 -    virtual void print(PyObject*, IceUtilInternal::Output&, PrintObjectHistory*);
 +    virtual void print(PyObject*, PrintHelper&, PrintObjectHistory*);
  
-     virtual void destroy();
- 
-@@ -482,8 +526,8 @@
+     const std::string id;
+     PyObject* pythonType; // Borrowed reference - the enclosing Python module owns the reference.
+@@ -488,8 +532,8 @@ class ExceptionInfo : public IceUtil::Shared (public)
      void marshal(PyObject*, const Ice::OutputStreamPtr&, ObjectMap*);
      PyObject* unmarshal(const Ice::InputStreamPtr&);
  

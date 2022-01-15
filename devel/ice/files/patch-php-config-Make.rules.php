@@ -1,6 +1,6 @@
---- php/config/Make.rules.php.orig	2017-09-13 13:20:00.000000000 +0200
-+++ php/config/Make.rules.php	2017-09-13 13:20:00.000000000 +0200
-@@ -81,13 +81,8 @@ ifeq ($(findstring /php/test/,$(abspath $(MAKEFILE_LIST))),)
+--- php/config/Make.rules.php.orig	2019-08-12 19:54:18 UTC
++++ php/config/Make.rules.php
+@@ -81,13 +81,8 @@ ifeq ($(findstring /php/test/,$(abspath $(MAKEFILE_LIS
          $(error $(PHP_CONFIG) not found review your PHP installation and ensure $(PHP_CONFIG) is in your PATH)
      endif
  

@@ -1,6 +1,6 @@
---- cpp/test/IceSSL/configuration/AllTests.cpp.orig	2016-10-05 16:59:08.000000000 +0200
-+++ cpp/test/IceSSL/configuration/AllTests.cpp	2016-10-12 01:57:47.897380902 +0200
-@@ -27,7 +27,7 @@
+--- cpp/test/IceSSL/configuration/AllTests.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceSSL/configuration/AllTests.cpp
+@@ -27,7 +27,7 @@ using namespace Ice;
  //
  // With OpenSSL 1.1.0 we need to set SECLEVEL=0 to allow ADH ciphers
  //
@@ -9,7 +9,7 @@
  const string anonCiphers = "ADH:@SECLEVEL=0";
  #  else
  const string anonCiphers = "ADH";
-@@ -2048,7 +2048,7 @@
+@@ -2060,7 +2060,7 @@ allTests(const CommunicatorPtr& communicator, const st
      //
      // No DSA support in Secure Transport / AIX 7.1 / SChannel
      //
@@ -18,7 +18,7 @@
      {
          //
          // DSA PEM keys are not supported with SChannel. Since Windows 10
-@@ -3215,9 +3215,7 @@
+@@ -3231,9 +3231,7 @@ allTests(const CommunicatorPtr& communicator, const st
  #endif
      }
  

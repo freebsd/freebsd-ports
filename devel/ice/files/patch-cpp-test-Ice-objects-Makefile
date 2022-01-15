@@ -1,6 +1,6 @@
---- cpp/test/Ice/objects/Makefile.orig	2016-10-05 16:59:08.000000000 +0200
-+++ cpp/test/Ice/objects/Makefile	2016-10-11 23:05:25.082085910 +0200
-@@ -12,7 +12,7 @@
+--- cpp/test/Ice/objects/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Ice/objects/Makefile
+@@ -12,7 +12,7 @@ top_srcdir	= ../../..
  CLIENT		= $(call mktestname,client)
  SERVER		= $(call mktestname,server)
  COLLOCATED	= $(call mktestname,collocated)
@@ -9,7 +9,7 @@
  
  TARGETS		= $(CLIENT) $(SERVER) $(COLLOCATED) $(TESTLIBNAME)
  
-@@ -47,11 +47,11 @@
+@@ -47,11 +47,11 @@ LDFLAGS		:= -L. $(LDFLAGS)
  
  $(TESTLIBNAME): $(SLICE_OBJS)
  	rm -f $@	

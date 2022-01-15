@@ -1,6 +1,6 @@
---- php/lib/Makefile.orig	2013-06-02 12:11:06.451195440 +0000
-+++ php/lib/Makefile	2013-06-02 12:16:29.249191742 +0000
-@@ -167,7 +167,8 @@
+--- php/lib/Makefile.orig	2019-08-12 19:54:18 UTC
++++ php/lib/Makefile
+@@ -164,7 +164,8 @@ install:: $(ALL_SRCS)
  	@echo "Installing generated code"
  	@for i in $(MODULES) ; \
  	do \

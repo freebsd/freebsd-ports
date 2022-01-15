@@ -1,6 +1,6 @@
---- cpp/test/IceGrid/deployer/AllTests.cpp.orig	2016-10-05 16:59:08.000000000 +0200
-+++ cpp/test/IceGrid/deployer/AllTests.cpp	2016-10-11 23:09:05.053078910 +0200
-@@ -126,21 +126,21 @@
+--- cpp/test/IceGrid/deployer/AllTests.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/deployer/AllTests.cpp
+@@ -126,21 +126,21 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
          //
          // Test with empty file.
          //
@@ -26,7 +26,7 @@
          test(it->read(1024, lines) && lines.empty());
          test(it->read(1024, lines) && lines.empty());
          it->destroy();
-@@ -156,29 +156,29 @@
+@@ -156,29 +156,29 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
          //
          // Test with log file with one line with no EOL on last line.
          //
@@ -61,7 +61,7 @@
          test(it->read(1024, lines) && lines.size() == 1);
          test(lines[0] == "one line file with no EOL on last line");
          test(it->read(1024, lines) && lines.empty());
-@@ -195,37 +195,37 @@
+@@ -195,37 +195,37 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
          //
          // Test with log file with one line with EOL on last line.
          //
@@ -105,7 +105,7 @@
          test(it->read(1024, lines) && lines.size() == 2);
          test(lines[0] == "one line file with EOL on last line");
          test(lines[1].empty());
-@@ -242,14 +242,14 @@
+@@ -242,14 +242,14 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
          //
          // Test with log file with multiple lines
          //
@@ -122,7 +122,7 @@
          test(it->read(1024, lines) && lines.size() == 4);
          test(lines[0] == "line 1");
          test(lines[1] == "line 2");
-@@ -258,25 +258,25 @@
+@@ -258,25 +258,25 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
          test(it->read(1024, lines) && lines.empty());
          it->destroy();
  
@@ -152,7 +152,7 @@
          test(it->read(1024, lines) && lines.size() == 4);
          test(lines[0] == "line 1");
          test(lines[1] == "line 2");
-@@ -292,11 +292,11 @@
+@@ -292,11 +292,11 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
  
      try
      {
@@ -166,7 +166,7 @@
          test(it->read(1024, lines) && lines.empty());
  
          os << "started a line" << flush;
-@@ -347,18 +347,18 @@
+@@ -347,18 +347,18 @@ logTests(const Ice::CommunicatorPtr& comm, const Admin
  
          it->destroy();
  

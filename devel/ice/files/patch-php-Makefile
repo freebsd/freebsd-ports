@@ -1,7 +1,7 @@
---- php/Makefile.orig	2013-10-04 15:48:15.000000000 +0000
-+++ php/Makefile	2013-12-01 21:19:31.863489109 +0000
-@@ -14,7 +14,7 @@
- SUBDIRS		= src lib demo test
+--- php/Makefile.orig	2019-08-12 19:54:18 UTC
++++ php/Makefile
+@@ -23,7 +23,7 @@ endif
+ 
  INSTALL_SUBDIRS = $(install_phpdir) $(install_libdir)
  
 -install:: install-common

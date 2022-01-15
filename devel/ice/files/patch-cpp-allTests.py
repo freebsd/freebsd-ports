@@ -1,6 +1,6 @@
---- cpp/allTests.py.orig	2015-06-23 15:30:20.000000000 +0000
-+++ cpp/allTests.py	2015-06-27 22:16:43.703450842 +0000
-@@ -66,7 +66,7 @@
+--- cpp/allTests.py.orig	2019-08-12 19:54:18 UTC
++++ cpp/allTests.py
+@@ -68,7 +68,7 @@ tests = [
      ("Ice/servantLocator", ["core"]),
      ("Ice/interceptor", ["core"]),
      ("Ice/stringConverter", ["core"]),
@@ -9,7 +9,7 @@
      ("Ice/defaultServant", ["core"]),
      ("Ice/defaultValue", ["core"]),
      ("Ice/invoke", ["core"]),
-@@ -90,11 +90,11 @@
+@@ -92,11 +92,11 @@ tests = [
      ("IceStorm/federation2", ["service", "novc100", "nomingw"]),
      ("IceStorm/stress", ["service", "stress", "novc100", "nomingw"]), # Too slow with appverifier.
      ("IceStorm/rep1", ["service", "novc100", "nomingw"]),
@@ -23,7 +23,7 @@
      ("IceGrid/simple", ["service", "novc100", "nomingw"]),
      ("IceGrid/fileLock", ["service", "novc100", "nomingw"]),
      ("IceGrid/deployer", ["service", "novc100", "nomingw"]),
-@@ -123,8 +123,8 @@
+@@ -125,8 +125,8 @@ tests = [
  #
  if TestUtil.isWin32() or os.getuid() == 0:
      tests += [

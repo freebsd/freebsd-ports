@@ -1,6 +1,6 @@
---- config/Make.common.rules.orig	2016-10-05 16:59:08.000000000 +0200
-+++ config/Make.common.rules	2016-10-11 22:39:50.774367911 +0200
-@@ -19,7 +19,8 @@
+--- config/Make.common.rules.orig	2019-08-12 19:54:18 UTC
++++ config/Make.common.rules
+@@ -19,7 +19,8 @@ VERSION         = 3.6.5
  SHORT_VERSION   = 3.6
  SOVERSION	= 36
  
@@ -10,15 +10,11 @@
  INSTALL_PROGRAM	= ${INSTALL}
  INSTALL_LIBRARY	= ${INSTALL}
  INSTALL_DATA	= ${INSTALL}
-@@ -53,13 +54,13 @@
+@@ -53,14 +54,14 @@ endif
  #
  # usr_dir_install means we want to install with a /usr style layout.
  #
 -ifeq ($(prefix), /usr)
--    usr_dir_install = 1
--endif
--
--ifeq ($(prefix), /usr/local)
 -    usr_dir_install = 1
 -endif
 +#ifeq ($(prefix), /usr)
@@ -29,9 +25,14 @@
 +#    usr_dir_install = 1
 +#endif
  
+-ifeq ($(prefix), /usr/local)
+-    usr_dir_install = 1
+-endif
+-
  #
  # A /usr style layout can be forced by setting USR_DIR_INSTALL=yes.
-@@ -507,12 +508,12 @@
+ #
+@@ -507,12 +508,12 @@ install-common::
  		fi ; \
  	fi
  

@@ -1,6 +1,6 @@
---- cpp/test/IceGrid/deployer/Makefile.orig	2015-07-04 13:29:31.867378996 +0200
-+++ cpp/test/IceGrid/deployer/Makefile	2015-07-04 13:29:39.896414996 +0200
-@@ -53,5 +53,5 @@
+--- cpp/test/IceGrid/deployer/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/deployer/Makefile
+@@ -53,5 +53,5 @@ $(SVCFILENAME): $(SERVICE_OBJS)
  	$(call mkshlib,$@,$(SVCSONAME),$(SERVICE_OBJS), $(DB_RPATH_LINK) -lFreeze $(LINKWITH))
  
  clean::

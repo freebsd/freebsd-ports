@@ -1,6 +1,6 @@
---- cpp/test/IceGrid/distribution/AllTests.cpp.orig	2015-07-04 13:40:02.746382995 +0200
-+++ cpp/test/IceGrid/distribution/AllTests.cpp	2015-07-04 13:40:20.588960995 +0200
-@@ -123,7 +123,7 @@
+--- cpp/test/IceGrid/distribution/AllTests.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/distribution/AllTests.cpp
+@@ -123,7 +123,7 @@ allTests(const Ice::CommunicatorPtr& communicator)
      {
          ApplicationUpdateDescriptor update;
          update.name = "Test";
@@ -9,7 +9,7 @@
          admin->updateApplication(update);
          
          admin->startServer("Test.IcePatch2");
-@@ -212,7 +212,7 @@
+@@ -212,7 +212,7 @@ allTests(const Ice::CommunicatorPtr& communicator)
          ApplicationDescriptor app = admin->getApplicationInfo("Test").descriptor;
          admin->removeApplication("Test");
          

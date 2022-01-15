@@ -1,6 +1,6 @@
---- cpp.orig/test/Ice/info/AllTests.cpp	2015-01-23 12:42:09.819774063 +0000
-+++ cpp/test/Ice/info/AllTests.cpp	2015-01-23 12:42:59.341774435 +0000
-@@ -157,7 +157,7 @@
+--- cpp/test/Ice/info/AllTests.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Ice/info/AllTests.cpp
+@@ -170,7 +170,7 @@ allTests(const Ice::CommunicatorPtr& communicator)
          test(info->adapterName.empty());
          test(info->localPort > 0);
          test(info->remotePort == 12010);
@@ -9,7 +9,7 @@
          {
              test(info->remoteAddress == defaultHost);
              test(info->localAddress == defaultHost);
-@@ -182,7 +182,7 @@
+@@ -234,7 +234,7 @@ allTests(const Ice::CommunicatorPtr& communicator)
          test(info->adapterName.empty());
          test(info->localPort > 0);
          test(info->remotePort == 12010);

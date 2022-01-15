@@ -1,6 +1,6 @@
---- cpp/test/IceGrid/session/run.py.orig	2015-07-03 19:05:11.680636978 +0200
-+++ cpp/test/IceGrid/session/run.py	2015-07-03 19:18:59.590608978 +0200
-@@ -20,11 +20,14 @@
+--- cpp/test/IceGrid/session/run.py.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/session/run.py
+@@ -20,11 +20,14 @@ if len(path) == 0:
  sys.path.append(os.path.join(path[0], "scripts"))
  import TestUtil, IceGridAdmin
  

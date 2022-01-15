@@ -1,6 +1,6 @@
---- cpp.orig/test/Glacier2/ssl/Server.cpp	2011-06-15 21:43:59.000000000 +0200
-+++ cpp/test/Glacier2/ssl/Server.cpp	2012-03-04 20:14:53.000000000 +0100
-@@ -31,9 +31,15 @@
+--- cpp/test/Glacier2/ssl/Server.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Glacier2/ssl/Server.cpp
+@@ -31,9 +31,15 @@ void testContext(bool ssl, const Ice::Context& context
          test(ctx["_con.type"] == "ssl");
          test(ctx["_con.localPort"] == "12348");
      }
@@ -18,7 +18,7 @@
  }
  
  }
-@@ -133,8 +139,11 @@
+@@ -125,8 +131,11 @@ class SSLSessionManagerI : public Glacier2::SSLSession
      {
          testContext(true, current.ctx);
  

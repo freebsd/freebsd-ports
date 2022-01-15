@@ -1,6 +1,6 @@
---- cpp.orig/src/Ice/ProxyFactory.cpp	2011-06-15 21:43:59.000000000 +0200
-+++ cpp/src/Ice/ProxyFactory.cpp	2012-03-04 20:14:53.000000000 +0100
-@@ -229,6 +229,7 @@
+--- cpp/src/Ice/ProxyFactory.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/src/Ice/ProxyFactory.cpp
+@@ -242,6 +242,7 @@ IceInternal::ProxyFactory::checkRetryAfterException(co
      } 
      else if(cnt > static_cast<int>(_retryIntervals.size()))
      {

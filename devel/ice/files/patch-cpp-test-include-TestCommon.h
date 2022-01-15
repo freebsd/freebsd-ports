@@ -1,7 +1,7 @@
---- cpp.orig/test/include/TestCommon.h	2011-06-15 21:43:59.000000000 +0200
-+++ cpp/test/include/TestCommon.h	2012-03-04 20:14:53.000000000 +0100
-@@ -17,6 +17,22 @@
- #include <stdlib.h>
+--- cpp/test/include/TestCommon.h.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/include/TestCommon.h
+@@ -18,6 +18,22 @@
+ #   include <Ice/LocalException.h>
  #endif
  
 +#if defined(__FreeBSD__)
@@ -21,5 +21,5 @@
 +#endif
 +
  void
- inline testFailed(const char* expr, const char* file, unsigned int line)
+ inline print(const std::string& msg)
  {

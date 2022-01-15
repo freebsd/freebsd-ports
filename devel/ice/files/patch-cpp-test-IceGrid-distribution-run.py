@@ -1,6 +1,6 @@
---- cpp/test/IceGrid/distribution/run.py.orig	2015-07-04 13:42:32.436390995 +0200
-+++ cpp/test/IceGrid/distribution/run.py	2015-07-04 13:42:42.506606995 +0200
-@@ -25,7 +25,7 @@
+--- cpp/test/IceGrid/distribution/run.py.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/distribution/run.py
+@@ -25,7 +25,7 @@ def icepatch2Calc(datadir, dirname):
      commandProc = TestUtil.spawn('"%s" "%s"' % (icePatch2Calc, os.path.join(datadir, dirname)))
      commandProc.waitTestSuccess()
  

@@ -1,5 +1,5 @@
---- python/config/Make.rules.orig	2016-04-05 22:33:01.425700968 +0200
-+++ python/config/Make.rules	2016-04-05 22:29:23.200712968 +0200
+--- python/config/Make.rules.orig	2019-08-12 19:54:18 UTC
++++ python/config/Make.rules
 @@ -11,7 +11,8 @@
  # Select an installation base directory. The directory will be created
  # if it does not exist.
@@ -10,7 +10,7 @@
  
  #
  # The "root directory" for runpath embedded in executables. Can be set
-@@ -50,7 +51,7 @@
+@@ -50,7 +51,7 @@ embedded_runpath 	?= yes
  # version used for building the Ice extension, then set PYTHON to
  # the specific to the location of the python interpreter.
  #
@@ -19,7 +19,7 @@
  
  PYTHON_VERSION      ?= python$(shell $(PYTHON) -c "import sys; import distutils.sysconfig as ds; sys.stdout.write(ds.get_python_version())")
  
-@@ -105,16 +106,16 @@
+@@ -105,16 +106,16 @@ endif
  
  libdir                  = $(top_srcdir)/python
  
@@ -43,7 +43,7 @@
  
  ifeq ($(UNAME),SunOS)
      ifeq ($(LP64),yes)
-@@ -123,14 +124,10 @@
+@@ -123,15 +124,11 @@ ifeq ($(UNAME),SunOS)
      endif
  endif
  
@@ -54,15 +54,16 @@
 -    ICE_LIB_DIR = -L$(ice_dir)/$(libsubdir)
 -    ICE_FLAGS	= -I$(ice_dir)/include
 -endif
--ICE_LIBS = $(ICE_LIB_DIR) -lIceSSL -lIce -lSlice -lIceUtil
-+
+-ICE_LIBS = $(ICE_LIB_DIR) -lIceLocatorDiscovery -lIceDiscovery -lIceSSL -lIce -lSlice -lIceUtil
+ 
 +ICE_LIB_DIR	= -L%%LOCALBASE%%/$(libsubdir)
 +ICE_FLAGS	= -I%%LOCALBASE%%/include
-+ICE_LIBS	= $(ICE_LIB_DIR) -lIceSSL -lIce -lSlice -lIceUtil %%ICONV_LIB%%
- 
++ICE_LIBS	= $(ICE_LIB_DIR) -lIceLocatorDiscovery -lIceDiscovery -lIceSSL -lIce -lSlice -lIceUtil %%ICONV_LIB%%
++
  CPPFLAGS		=
  ICECPPFLAGS		= -I$(slicedir)
-@@ -139,10 +136,7 @@
+ SLICE2PYFLAGS	= $(ICECPPFLAGS)
+@@ -143,10 +140,7 @@ endif
  
  ifdef ice_src_dist
      SLICE2PY    = $(PYTHON) $(top_srcdir)/config/s2py.py
@@ -74,7 +75,7 @@
  else
      ifeq ($(UNAME),Darwin)
          SLICE2PY = /usr/local/bin/slice2py
-@@ -167,7 +161,7 @@
+@@ -177,7 +171,7 @@ EVERYTHING	= all depend clean install
  
  all:: $(SRCS)
  

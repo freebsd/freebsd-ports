@@ -1,6 +1,6 @@
---- cpp/src/IceGrid/RegistryI.cpp.orig	2015-07-03 17:43:25.231459982 +0200
-+++ cpp/src/IceGrid/RegistryI.cpp	2015-07-03 17:46:57.991198982 +0200
-@@ -48,6 +48,13 @@
+--- cpp/src/IceGrid/RegistryI.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/src/IceGrid/RegistryI.cpp
+@@ -46,6 +46,13 @@ using namespace std;
  using namespace Ice;
  using namespace IceGrid;
  
@@ -14,7 +14,7 @@
  namespace
  {
  
-@@ -159,6 +166,7 @@
+@@ -157,6 +164,7 @@ RegistryI::RegistryI(const CommunicatorPtr& communicat
  
  RegistryI::~RegistryI()
  {

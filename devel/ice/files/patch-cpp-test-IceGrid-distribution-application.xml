@@ -1,5 +1,5 @@
---- cpp/test/IceGrid/distribution/application.xml.orig	2015-07-04 13:40:31.916391995 +0200
-+++ cpp/test/IceGrid/distribution/application.xml	2015-07-04 13:40:54.916616995 +0200
+--- cpp/test/IceGrid/distribution/application.xml.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/distribution/application.xml
 @@ -1,7 +1,7 @@
  <icegrid>
  

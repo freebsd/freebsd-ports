@@ -1,6 +1,6 @@
---- scripts/IceGridAdmin.py.orig	2015-07-04 12:59:57.542262997 +0200
-+++ scripts/IceGridAdmin.py	2015-07-04 13:02:16.496576997 +0200
-@@ -222,11 +222,14 @@
+--- scripts/IceGridAdmin.py.orig	2019-08-12 19:54:18 UTC
++++ scripts/IceGridAdmin.py
+@@ -222,11 +222,14 @@ def killNodeServers():
  def iceGridTest(application, additionalOptions = "", applicationOptions = ""):
  
      testdir = os.getcwd()

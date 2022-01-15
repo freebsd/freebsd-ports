@@ -1,6 +1,6 @@
---- cpp/test/Slice/headers/run.py.orig	2015-06-27 12:14:37.106940921 +0000
-+++ cpp/test/Slice/headers/run.py	2015-06-27 12:20:37.900915579 +0000
-@@ -20,6 +20,9 @@
+--- cpp/test/Slice/headers/run.py.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Slice/headers/run.py
+@@ -20,6 +20,9 @@ if len(path) == 0:
  sys.path.append(os.path.join(path[0], "scripts"))
  import TestUtil
  
@@ -10,7 +10,7 @@
  def clean():
      for f in ["iceslices",
                "linktoslices",
-@@ -28,7 +31,7 @@
+@@ -28,7 +31,7 @@ def clean():
                os.path.join("slices", "dir1", "linktoa3.ice")]:
          if os.path.exists(f):
              os.unlink(f)
@@ -19,7 +19,7 @@
  
  clean()
  os.symlink("slices", "linktoslices")
-@@ -43,7 +46,7 @@
+@@ -44,7 +47,7 @@ slicedir = TestUtil.getSliceDir()
  os.symlink(slicedir, "iceslices")
  
  def runTest(cmd):
@@ -28,7 +28,7 @@
      f = open("b.h")
      if not re.search('#include <dir1\/a1\.h>\n'
                       '#include <linktodir1\/a2\.h>\n'
-@@ -71,9 +74,9 @@
+@@ -72,9 +75,9 @@ if os.path.exists("SLICES"):
  #
  # Slice files are symlinks, include dir is a regular directory
  #
@@ -41,7 +41,7 @@
  
  f = open("project1/git/services.settings.slices/A.ice", "w")
  f.write("// dumy file")
-@@ -82,7 +85,7 @@
+@@ -83,7 +86,7 @@ f = open("project1/git/services.settings.slices/B.ice"
  f.write("#include <services/settings/slices/A.ice>")
  f.close()
  
@@ -50,7 +50,7 @@
  f = open("project1/B.h")
  
  if not re.search(re.escape('#include <services/settings/slices/A.h>'), f.read()):
-@@ -94,16 +97,16 @@
+@@ -95,16 +98,16 @@ clean()
  #
  # Slice file is regular file, include dir is a symlink to a second symlink
  #
@@ -72,7 +72,7 @@
  f = open("project1/A.h")
  if not re.search(re.escape('#include <Ice/Identity.h>'), f.read()):
      print("failed!")
-@@ -114,16 +117,16 @@
+@@ -115,16 +118,16 @@ clean()
  #
  # Typical Ice install with symlink Ice-x.y -> Ice-x.y.z
  #

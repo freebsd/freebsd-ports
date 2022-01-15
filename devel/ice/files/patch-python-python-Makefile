@@ -1,6 +1,6 @@
---- python/python/Makefile.orig	2010-07-11 13:05:38.000000000 +1000
-+++ python/python/Makefile	2012-09-11 00:09:09.000000000 +2000
-@@ -118,10 +118,11 @@
+--- python/python/Makefile.orig	2019-08-12 19:54:18 UTC
++++ python/python/Makefile
+@@ -146,10 +146,11 @@ IceStorm_%_ice.py: $(slicedir)/IceStorm/%.ice $(SLICEP
  
  install:: $(ALL_SRCS)
  	@echo "Installing generated code"
@@ -13,4 +13,4 @@
 +	    $(INSTALL_DATA) $$i/*.py* $(DESTDIR)$(install_pythondir)/$$i ; \
  	done
  
- depend::  $(ICE_SLICE) $(GLACIER2_SLICE) $(ICEBOX_SLICE) $(ICEGRID_SLICE) $(ICEPATCH2_SLICE) $(ICESTORM_SLICE)
+ clean::

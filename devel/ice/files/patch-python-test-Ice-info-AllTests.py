@@ -1,5 +1,5 @@
---- python/test/Ice/info/AllTests.py.orig	2015-06-27 10:55:33.131456669 +0000
-+++ python/test/Ice/info/AllTests.py	2015-06-27 10:52:58.191276825 +0000
+--- python/test/Ice/info/AllTests.py.orig	2019-08-12 19:54:18 UTC
++++ python/test/Ice/info/AllTests.py
 @@ -7,12 +7,31 @@
  #
  # **********************************************************************
@@ -33,7 +33,7 @@
  def allTests(communicator):
      sys.stdout.write("testing proxy endpoint information... ")
      sys.stdout.flush()
-@@ -74,12 +93,12 @@
+@@ -74,12 +93,12 @@ def allTests(communicator):
      ipEndpoint = endpoints[0].getInfo()
      test(ipEndpoint.type() == Ice.TCPEndpointType or ipEndpoint.type() == 2 or ipEndpoint.type() == 4 or
           ipEndpoint.type() == 5)
@@ -48,7 +48,7 @@
      test(udpEndpoint.datagram())
      test(udpEndpoint.port > 0)
  
-@@ -115,7 +134,7 @@
+@@ -115,7 +134,7 @@ def allTests(communicator):
      ipinfo = base.ice_getConnection().getEndpoint().getInfo()
      test(ipinfo.port == 12010)
      test(not ipinfo.compress)
@@ -57,7 +57,7 @@
  
      ctx = testIntf.getEndpointInfoAsContext()
      test(ctx["host"] == ipinfo.host)
-@@ -125,7 +144,7 @@
+@@ -125,7 +144,7 @@ def allTests(communicator):
  
      udp = base.ice_datagram().ice_getConnection().getEndpoint().getInfo()
      test(udp.port == 12010)
@@ -66,7 +66,7 @@
  
      print("ok")
  
-@@ -140,8 +159,8 @@
+@@ -140,8 +159,8 @@ def allTests(communicator):
      test(len(info.adapterName) == 0)
      test(info.remotePort == 12010)
      if defaultHost == '127.0.0.1':

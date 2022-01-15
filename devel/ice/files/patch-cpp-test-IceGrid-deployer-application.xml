@@ -1,7 +1,7 @@
---- cpp/test/IceGrid/deployer/application.xml.orig	2015-07-04 13:28:10.449020996 +0200
-+++ cpp/test/IceGrid/deployer/application.xml	2015-07-04 13:28:22.486946996 +0200
+--- cpp/test/IceGrid/deployer/application.xml.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/deployer/application.xml
 @@ -178,10 +178,10 @@
-   	  <object identity="${server}" type="::Test"/>
+           <object identity="${server}" type="::TestLog"/>
          </adapter>
  
 -        <log path="${test.dir}/log1.txt"/>

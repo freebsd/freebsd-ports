@@ -1,6 +1,6 @@
---- cpp/config/Make.rules.orig	2015-06-23 15:30:20.000000000 +0000
-+++ cpp/config/Make.rules	2015-09-14 21:31:28.253993994 +0000
-@@ -203,11 +201,11 @@
+--- cpp/config/Make.rules.orig	2019-08-12 19:54:18 UTC
++++ cpp/config/Make.rules
+@@ -201,11 +201,11 @@ ifeq ($(DEFAULT_MUTEX_PROTOCOL), PrioInherit)
      ICEUTIL_FLAGS     	= -DICE_PRIO_INHERIT
  endif
  
@@ -15,7 +15,7 @@
  
  ifeq ($(SSL_OS_LIBS),)
  	SSL_OS_LIBS = $(OPENSSL_LIBS)
-@@ -240,7 +240,9 @@
+@@ -238,7 +238,9 @@ else
  	    DB_FLAGS          = -I/usr/local/include/db53
  	    DB_LIBS           = -L/usr/local/$(libsubdir)/db53 -ldb_cxx
  	else

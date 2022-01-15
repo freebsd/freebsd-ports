@@ -1,6 +1,6 @@
---- cpp/test/Ice/metrics/AllTests.cpp.orig	2015-06-23 15:30:20.000000000 +0000
-+++ cpp/test/Ice/metrics/AllTests.cpp	2015-06-27 19:16:18.877197646 +0000
-@@ -639,9 +639,12 @@
+--- cpp/test/Ice/metrics/AllTests.cpp.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Ice/metrics/AllTests.cpp
+@@ -639,9 +639,12 @@ allTests(const Ice::CommunicatorPtr& communicator, con
          testAttribute(clientMetrics, clientProps, update, "Connection", "incoming", "false");
          testAttribute(clientMetrics, clientProps, update, "Connection", "adapterName", "");
          testAttribute(clientMetrics, clientProps, update, "Connection", "connectionId", "Con1");
@@ -15,7 +15,7 @@
          testAttribute(clientMetrics, clientProps, update, "Connection", "remotePort", "12010");
          testAttribute(clientMetrics, clientProps, update, "Connection", "mcastHost", "");
          testAttribute(clientMetrics, clientProps, update, "Connection", "mcastPort", "");
-@@ -726,7 +729,7 @@
+@@ -726,7 +729,7 @@ allTests(const Ice::CommunicatorPtr& communicator, con
          bool dnsException = false;
          try
          {
@@ -24,7 +24,7 @@
              test(false);
          }
          catch(const Ice::DNSException&)
-@@ -739,7 +742,7 @@
+@@ -739,7 +742,7 @@ allTests(const Ice::CommunicatorPtr& communicator, con
          }
          test(clientMetrics->getMetricsView("View", timestamp)["EndpointLookup"].size() == 2);
          m1 = clientMetrics->getMetricsView("View", timestamp)["EndpointLookup"][1];
@@ -33,7 +33,7 @@
               (!dnsException || m1->failures == 2));
          if(dnsException)
          {
-@@ -871,9 +874,12 @@
+@@ -871,9 +874,12 @@ allTests(const Ice::CommunicatorPtr& communicator, con
          testAttribute(serverMetrics, serverProps, update, "Dispatch", "incoming", "true", op);
          testAttribute(serverMetrics, serverProps, update, "Dispatch", "adapterName", "TestAdapter", op);
          testAttribute(serverMetrics, serverProps, update, "Dispatch", "connectionId", "", op);

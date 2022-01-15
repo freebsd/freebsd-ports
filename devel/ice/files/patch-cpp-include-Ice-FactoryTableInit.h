@@ -1,6 +1,6 @@
---- cpp/include/Ice/FactoryTableInit.h.orig	2015-06-23 15:30:20.000000000 +0000
-+++ cpp/include/Ice/FactoryTableInit.h	2015-06-27 14:51:48.188288621 +0000
-@@ -48,6 +55,9 @@
+--- cpp/include/Ice/FactoryTableInit.h.orig	2019-08-12 19:54:18 UTC
++++ cpp/include/Ice/FactoryTableInit.h
+@@ -48,6 +48,9 @@ class DefaultUserExceptionFactoryInit (public)
      
      DefaultUserExceptionFactoryInit(const char* typeId) :
          _typeId(typeId)
@@ -10,7 +10,7 @@
      {
          factoryTable->addExceptionFactory(_typeId, new DefaultUserExceptionFactory<E>(_typeId));
      }
-@@ -55,10 +65,16 @@
+@@ -55,10 +58,16 @@ class DefaultUserExceptionFactoryInit (public)
      ~DefaultUserExceptionFactoryInit()
      {
          factoryTable->removeExceptionFactory(_typeId);
@@ -27,19 +27,17 @@
  };
  
  template<class O>
-@@ -67,7 +83,10 @@
- public:
+@@ -68,6 +77,9 @@ class DefaultObjectFactoryInit (public)
      
      DefaultObjectFactoryInit(const char* typeId) :
--        _typeId(typeId)
-+        _typeId(typeId)
+         _typeId(typeId)
 +#if defined(ICE_BROKEN_ATEXIT)
 +        , _ftableInit(new IceInternal::FactoryTableInit)
 +#endif
      {
          factoryTable->addObjectFactory(_typeId, new DefaultObjectFactory<O>(_typeId));
      }
-@@ -75,11 +94,16 @@
+@@ -75,11 +87,16 @@ class DefaultObjectFactoryInit (public)
      ~DefaultObjectFactoryInit()
      {
          factoryTable->removeObjectFactory(_typeId);

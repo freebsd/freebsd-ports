@@ -1,6 +1,6 @@
---- cpp/Makefile.orig	2015-06-23 15:30:20.000000000 +0000
-+++ cpp/Makefile	2015-06-27 09:35:22.892599446 +0000
-@@ -13,8 +13,8 @@
+--- cpp/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/Makefile
+@@ -13,8 +13,8 @@ include $(top_srcdir)/config/Make.rules
  
  SUBDIRS		= config src include
  
@@ -10,4 +10,4 @@
 +	SUBDIRS		:= $(SUBDIRS) test
  endif
  
- INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir)$(cpp11libdirsuffix) $(install_includedir) \
+ ifeq ($(NOTEST),yes)

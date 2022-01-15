@@ -1,6 +1,6 @@
---- cpp/test/Slice/unicodePaths/run.py.orig	2016-10-05 16:59:08.000000000 +0200
-+++ cpp/test/Slice/unicodePaths/run.py	2016-10-12 12:01:29.065901876 +0200
-@@ -26,7 +26,7 @@
+--- cpp/test/Slice/unicodePaths/run.py.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Slice/unicodePaths/run.py
+@@ -26,7 +26,7 @@ def test(b):
          print("failed!")
          sys.exit(1)
  

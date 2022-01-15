@@ -1,3 +1,5 @@
-TIMESTAMP = 1505206779
-SHA256 (zeroc-ice-ice-v3.6.4_GH0.tar.gz) = 4f5cc5e09586eab7de7745bbdc5fbf383c59f8fdc561264d4010bba19afdde2a
-SIZE (zeroc-ice-ice-v3.6.4_GH0.tar.gz) = 5523841
+TIMESTAMP = 1642268179
+SHA256 (zeroc-ice-ice-v3.6.5_GH0.tar.gz) = 5c308c24c9721dd614d28cf5a5fa9ac19736f7a8ab894f9fd05fe5b9ac0be4fe
+SIZE (zeroc-ice-ice-v3.6.5_GH0.tar.gz) = 5505499
+SHA256 (zeroc-ice-ice-v3.7.6_GH0.tar.gz) = 75b18697c0c74f363bd0b85943f15638736e859c26778337cbfe72d31f5cfb47
+SIZE (zeroc-ice-ice-v3.7.6_GH0.tar.gz) = 10652936

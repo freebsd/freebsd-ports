@@ -1,6 +1,6 @@
---- scripts/TestUtil.py.orig	2016-10-05 16:59:08.000000000 +0200
-+++ scripts/TestUtil.py	2016-10-11 23:30:25.933993909 +0200
-@@ -145,6 +145,25 @@
+--- scripts/TestUtil.py.orig	2019-08-12 19:54:18 UTC
++++ scripts/TestUtil.py
+@@ -145,6 +145,25 @@ def isSles():
  def iceUseOpenSSL():
      return any(sys.platform.startswith(p) for p in ["linux", "freebsd"])
  
@@ -26,7 +26,7 @@
  def getCppCompiler():
      compiler = ""
      if os.environ.get("CPP_COMPILER", "") != "":
-@@ -340,7 +359,7 @@
+@@ -340,7 +359,7 @@ else:
          print("uname failed:\n" + p.stdout.read().strip())
          sys.exit(1)
      line = p.stdout.readline().decode('UTF-8').strip()
@@ -35,7 +35,7 @@
          x64 = True
      elif line == "armv7l":
          armv7l = True
-@@ -879,7 +898,7 @@
+@@ -879,7 +898,7 @@ def hashPasswords(filePath, entries):
        os.remove(filePath)
      passwords = open(filePath, "a")
  
@@ -44,8 +44,8 @@
                             os.path.abspath(os.path.join(os.path.dirname(__file__), "icehashpassword.py")))
  
      #
-@@ -2013,7 +2032,7 @@
-         addLdPath(getCppLibDir(lang), env)
+@@ -2018,7 +2037,7 @@ def getTestEnv(lang, testdir):
+             addLdPath(getCppLibDir(lang), env)
      elif isAIX():
          addLdPath(getCppLibDir(lang), env)
 -    elif lang in ["python", "ruby", "php", "js", "objective-c"]:
@@ -53,18 +53,18 @@
          # C++ binaries use rpath $ORIGIN or similar to find the Ice libraries
          addLdPath(getCppLibDir(lang), env)
  
-@@ -2366,6 +2385,14 @@
-                 print("%s*** test not supported under Yocto%s" % (prefix, suffix))
-                 continue
+@@ -2369,6 +2388,14 @@ def runTests(start, expanded, num = 0, script = False)
  
+             if isYocto() and "noyocto" in config:
+                 print("%s*** test not supported under Yocto%s" % (prefix, suffix))
++                continue
++
 +            if isFreeBSD() and "nofreebsd" in config:
 +                print("%s*** test not supported under FreeBSD%s" % (prefix, suffix))
 +                continue
 +
 +            if isFreeBSDJail() and "nofreebsdjail" in config:
 +                print("%s*** test not supported within a FreeBSD Jail%s" % (prefix, suffix))
-+                continue
-+
-             if not isWin32() and "win32only" in config:
-                 print("%s*** test only supported under Win32%s" % (prefix, suffix))
                  continue
+ 
+             if not isWin32() and "win32only" in config:
