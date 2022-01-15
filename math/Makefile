@@ -827,6 +827,7 @@
     SUBDIR += py-deap
     SUBDIR += py-ducc0
     SUBDIR += py-ecos
+    SUBDIR += py-faiss
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw
     SUBDIR += py-flax
