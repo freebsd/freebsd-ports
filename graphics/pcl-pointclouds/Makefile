@@ -1,10 +1,19 @@
 PORTNAME=	pcl
 DISTVERSION=	1.12.1
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
 DISTNAME=	source
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${DISTVERSION}
+
+# backport of patches fixing tests
+PATCH_SITES=	https://github.com/PointCloudLibrary/pcl/commit/
+PATCHFILES=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
+		614e19d96bd8415dbfb52d86df0f3774a9f462fe.patch:-p1 \
+		09c76582b5ff0f2b942609f5c85744f1ce96e332.patch:-p1 \
+		5be6766fbb8f5e9b2fe97a077dd5be53e5fc6983.patch:-p1 \
+		09ea81f995f00b9565037b0fafe121eccfe4cf57.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
@@ -46,7 +55,7 @@ PLIST_SUB=	SHL3=${DISTVERSION} SHL2=${DISTVERSION:R}
 DATADIR=	${PREFIX}/share/${PORTNAME}-${DISTVERSION:R}  # match the directory where the project installs .cmake files
 
 OPTIONS_DEFINE=		OPENGL PNG QHULL QT5 VTK
-OPTIONS_DEFAULT=	PNG QHULL
+OPTIONS_DEFAULT=	PNG # QHULL is disabled due to conflicts qhull8 vs. qhull
 OPTIONS_SUB=		yes
 
 OPENGL_CMAKE_BOOL=	WITH_OPENGL # it finds OpenGL, but no binaries are linked with it: https://github.com/PointCloudLibrary/pcl/issues/2641
