@@ -6,6 +6,7 @@ share/ART/dcpprofiles/CANON EOS 250D.dcp
 share/ART/dcpprofiles/CANON EOS 5D MARK IV.dcp
 share/ART/dcpprofiles/CANON EOS 6D.dcp
 share/ART/dcpprofiles/CANON EOS 800D.dcp
+share/ART/dcpprofiles/CANON EOS 90D.dcp
 share/ART/dcpprofiles/CANON EOS M50.dcp
 share/ART/dcpprofiles/CANON EOS M6 MARK II.dcp
 share/ART/dcpprofiles/CANON EOS R.dcp
@@ -101,6 +102,7 @@ share/ART/dcpprofiles/Olympus E-1.dcp
 share/ART/dcpprofiles/Olympus E-520.dcp
 share/ART/dcpprofiles/Olympus E-P2.dcp
 share/ART/dcpprofiles/Olympus XZ-1.dcp
+share/ART/dcpprofiles/PANASONIC DC-S5.dcp
 share/ART/dcpprofiles/PANASONIC DMC-LX100.dcp
 share/ART/dcpprofiles/PENTAX K-5 II.dcp
 share/ART/dcpprofiles/PENTAX K-5.dcp
@@ -130,6 +132,7 @@ share/ART/dcpprofiles/SONY ILCE-6000.dcp
 share/ART/dcpprofiles/SONY ILCE-6400.dcp
 share/ART/dcpprofiles/SONY ILCE-6500.dcp
 share/ART/dcpprofiles/SONY ILCE-6600.dcp
+share/ART/dcpprofiles/SONY ILCE-7.dcp
 share/ART/dcpprofiles/SONY ILCE-7C.dcp
 share/ART/dcpprofiles/SONY ILCE-7M2.dcp
 share/ART/dcpprofiles/SONY ILCE-7M3.dcp
@@ -575,6 +578,7 @@ share/ART/languages/Catala
 share/ART/languages/Espanol
 share/ART/languages/Francais
 share/ART/languages/Japanese
+share/ART/languages/Korean
 share/ART/languages/LICENSE
 share/ART/languages/Nederlands
 share/ART/languages/Portugues (Brasil)
@@ -591,18 +595,18 @@ share/ART/rt.json
 share/ART/sounds/BatchComplete.wav
 share/ART/sounds/Empty.wav
 share/ART/sounds/ProcessComplete.wav
-share/ART/themes/RawTherapee-GTK3-20_.css
-share/ART/themes/RawTherapee-GTK3-_19.css
-share/ART/themes/TooWaBlue - Bright-GTK3-20_.css
-share/ART/themes/TooWaBlue - Dark-GTK3-20_.css
-share/ART/themes/TooWaBlue-GTK3-20_.css
-share/ART/themes/TooWaBlue-GTK3-_19.css
-share/ART/themes/TooWaGrey - Average Surround-GTK3-20_.css
-share/ART/themes/TooWaGrey - Bright-GTK3-20_.css
-share/ART/themes/TooWaGrey - Dark-GTK3-20_.css
-share/ART/themes/TooWaGrey-GTK3-20_.css
-share/ART/themes/_ART-GTK3-20_.css
-share/ART/themes/_ART-GTK3-_19.css
+share/ART/themes/Default-GTK3-_19.css
+share/ART/themes/RawTherapee-GTK3-20_-DEPRECATED.css
+share/ART/themes/RawTherapee-GTK3-_19-DEPRECATED.css
+share/ART/themes/TooWaBlue - Bright-GTK3-20_-DEPRECATED.css
+share/ART/themes/TooWaBlue - Dark-GTK3-20_-DEPRECATED.css
+share/ART/themes/TooWaBlue-GTK3-20_-DEPRECATED.css
+share/ART/themes/TooWaBlue-GTK3-_19-DEPRECATED.css
+share/ART/themes/TooWaGrey - Average Surround-GTK3-20_-DEPRECATED.css
+share/ART/themes/TooWaGrey - Bright-GTK3-20_-DEPRECATED.css
+share/ART/themes/TooWaGrey - Dark-GTK3-20_-DEPRECATED.css
+share/ART/themes/TooWaGrey-GTK3-20_-DEPRECATED.css
+share/ART/themes/_ART.css
 share/ART/themes/images/svg/twb/checkbox-checked-disabled.svg
 share/ART/themes/images/svg/twb/checkbox-checked.svg
 share/ART/themes/images/svg/twb/checkbox-inconsistent-disabled.svg
@@ -627,7 +631,6 @@ share/ART/themes/images/twb/radio-inconsistent-disabled.png
 share/ART/themes/images/twb/radio-inconsistent.png
 share/ART/themes/images/twb/radio-unchecked-disabled.png
 share/ART/themes/images/twb/radio-unchecked.png
-share/ART/themes/size.css
 share/ART/themes/system.iconset
 share/ART/wbpresets.json
 share/applications/ART.desktop
