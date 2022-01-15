@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.20-13177 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gd6aa834b5
+DISTVERSION=	0.0.20-13185 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g5b980b99a0
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
@@ -25,7 +25,7 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.0-2-gc47734c:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:509d31ad8967:llvm/llvm \
 		Cyan4973:xxHash:v0.8.1:xxHash/3rdparty/xxHash \
-		asmjit:asmjit:eae7197:asmjit/3rdparty/asmjit/asmjit \
+		asmjit:asmjit:fc2a5d8:asmjit/3rdparty/asmjit/asmjit \
 		google:flatbuffers:v2.0.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
