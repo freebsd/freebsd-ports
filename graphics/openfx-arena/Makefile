@@ -9,6 +9,8 @@ COMMENT=	Extra OpenFX plugins for Natron
 
 LICENSE=	GPLv2
 
+BROKEN=		Doesn't compile, ./OpenFX/Support/include/ofxsCore.h:193:26: error: expected unqualified-id
+
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
