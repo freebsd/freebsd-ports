@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -17,17 +17,17 @@ USE_QT=		buildtools_build linguisttools_build qmake_build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq
 GH_PROJECT=	XELFViewer ${GH_SUBDIR}
-GH_TAGNAME=	1ae8d31:c ed0fba7:fd 65ef8ae:fw 0fbdbfb:f 0378c3d:sa \
-		a0980b6:sc d5f5ce4:xa a9da5dd:xc 76405a6:xcf fa28140:xdex \
-		c540d31:xd 10bc917:xdw 1a54d75:xdv 83db895:xew c4c41b8:xhw \
-		c711a41:xhv 1f3f4c3:xmmw e0d2b0d:xo b0ffc17:xq 5d9d990:xs \
-		1d23cca:xst 9fcacfa:s
+GH_TAGNAME=	5ff8c2c:c 0fad74c:fd 80329f2:fw 2bda2e8:f 2188ddd:sa \
+		d78cf3a:ss df102be:xa aeb101e:xc 10936bc:xcf 34be4c1:xdex \
+		8375c3c:xd bfca683:xdw b8ed8c8:xdv 06d570a:xew 69bcc36:xfi \
+		b4d997b:xhw cb63607:xhv 00c267a:xmmw f271427:xo 2076a94:xq \
+		277f96b:xs 0d79ace:xst 8c45c23:s
 GH_SUBDIR=	Controls:c FormatDialogs:fd FormatWidgets:fw Formats:f \
-		SpecAbstract:sa StaticScan:sc XArchive:xa XCapstone:xc \
+		SpecAbstract:sa StaticScan:ss XArchive:xa XCapstone:xc \
 		XCppfilt:xcf XDEX:xdex XDemangle:xd XDemangleWidget:xdw \
-		XDisasmView:xdv XEntropyWidget:xew XHashWidget:xhw \
-		XHexView:xhv XMemoryMapWidget:xmmw XOptions:xo XQwt:xq \
-		XShortcuts:xs XStyles:xst signatures:s
+		XDisasmView:xdv XEntropyWidget:xew XFileInfo:xfi \
+		XHashWidget:xhw XHexView:xhv XMemoryMapWidget:xmmw \
+		XOptions:xo XQwt:xq XShortcuts:xs XStyles:xst signatures:s
 
 post-extract:
 	@${CHMOD} +x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -39,10 +39,10 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
-	cd ${INSTALL_WRKSRC}/DEBIAN && ${COPYTREE_SHARE} hicolor \
+	cd ${INSTALL_WRKSRC}/LINUX && ${COPYTREE_SHARE} hicolor \
 		${STAGEDIR}${PREFIX}/share/icons
 	${SED} -e 's,#VERSION#,${PORTVERSION},' \
-		${WRKSRC}/DEBIAN/${PORTNAME}.desktop > \
+		${WRKSRC}/LINUX/${PORTNAME}.desktop > \
 		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 	cd ${WRKSRC_xst} && ${COPYTREE_SHARE} qss ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lang

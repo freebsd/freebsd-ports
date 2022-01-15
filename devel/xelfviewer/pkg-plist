@@ -17,8 +17,10 @@ share/icons/hicolor/256x256/apps/xelfviewer.png
 %%DATADIR%%/lang/xelfviewer_ko.qm
 %%DATADIR%%/lang/xelfviewer_pl.qm
 %%DATADIR%%/lang/xelfviewer_pt_BR.qm
+%%DATADIR%%/lang/xelfviewer_pt_PT.qm
 %%DATADIR%%/lang/xelfviewer_ru.qm
 %%DATADIR%%/lang/xelfviewer_tr.qm
+%%DATADIR%%/lang/xelfviewer_uk.qm
 %%DATADIR%%/lang/xelfviewer_vi.qm
 %%DATADIR%%/lang/xelfviewer_zh.qm
 %%DATADIR%%/lang/xelfviewer_zh_TW.qm
