@@ -1,5 +1,5 @@
 PORTNAME=	srain
-DISTVERSION=	1.1.0
+DISTVERSION=	1.3.1
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -12,19 +12,28 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		compiler:c11 gettext-tools gmake gnome pkgconfig ssl
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig ssl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	DOCS
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		SrainApp
-GNU_CONFIGURE=		yes
-MAKE_FLAGS+=		MAKE_PROGRAM=${MAKE_CMD}
-CONFIGURE_ARGS+=	--disable-debug
-ALL_TARGET=		default
+
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_MESON_ON=		-Ddoc_builders=html,man
+DOCS_MESON_OFF=		-Ddoc_builders=
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+LDFLAGS+=	-lcrypto
 
 post-patch:
-	${REINPLACE_CMD} -e '/^MAKE =/s/make/${MAKE_CMD}/' \
-		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e "/dependency('openssl'),/d" \
+		${WRKSRC}/src/meson.build
+.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME} \
@@ -32,4 +41,4 @@ pre-install:
 		${STAGEDIR}${PREFIX}/share/metainfo \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
