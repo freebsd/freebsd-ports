@@ -23,6 +23,9 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expired devel/maven3
+EXPIRATION_DATE=2022-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \
 		cmake:devel/cmake \
 		${LOCALBASE}/protobuf25/bin/protoc:devel/protobuf25
