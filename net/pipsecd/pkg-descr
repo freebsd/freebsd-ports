@@ -1,4 +1,0 @@
-This simple program lets you build a IPSec tunnel using
-the tun device.
-
-You need to have the openSSL library for it.

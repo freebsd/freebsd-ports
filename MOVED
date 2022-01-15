@@ -16768,3 +16768,6 @@ devel/rubygem-aws-sdk-v1|devel/rubygem-aws-sdk|2022-01-11|Remove obsoleted port.
 devel/rubygem-sidekiq62|devel/rubygem-sidekiq|2022-01-11|Remove obsoleted port. Use devel/rubygem-sidekiq instead
 security/rubygem-bcrypt_pbkdf10|security/rubygem-bcrypt_pbkdf|2022-01-11|Remove obsoleted port. Use security/rubygem-bcrypt_pbkdf instead
 math/gotoblas|math/openblas|2022-01-15|Remove obsoleted port. Use math/openblas instead
+net/pipsecd||2022-01-15|Has expired: Abandonware, current release is from 1999 and uses insecure encryption algorithms
+devel/maven31|devel/maven|2022-01-15|Has expired: Outdated, unsupported upstream
+devel/wasi-compiler-rt12||2022-01-15|Has expired: this ports exists solely for building Firefox 95+ in 2021Q4

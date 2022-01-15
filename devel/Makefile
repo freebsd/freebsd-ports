@@ -1550,7 +1550,6 @@
     SUBDIR += maven
     SUBDIR += maven-wrapper
     SUBDIR += maven3
-    SUBDIR += maven31
     SUBDIR += maven33
     SUBDIR += mcpp
     SUBDIR += mdb
@@ -7200,7 +7199,6 @@
     SUBDIR += wand-libconfig
     SUBDIR += wandio
     SUBDIR += wasi-compiler-rt11
-    SUBDIR += wasi-compiler-rt12
     SUBDIR += wasi-compiler-rt13
     SUBDIR += wasi-libc
     SUBDIR += wasi-libcxx
