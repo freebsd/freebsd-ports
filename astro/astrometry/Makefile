@@ -1,8 +1,7 @@
 # Created by: Sébastien Santoro <dereckson@gmail.com>
 
 PORTNAME=	astrometry
-PORTVERSION=	0.85
-PORTREVISION=	3
+PORTVERSION=	0.88
 CATEGORIES=	astro
 MASTER_SITES=	http://astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -10,7 +9,7 @@ DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Astronomic calibration service
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3+
 
 BROKEN_armv6=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 BROKEN_armv7=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'

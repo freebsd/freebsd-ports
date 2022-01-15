@@ -172,6 +172,7 @@ include/astrometry/tycho2-fits.h
 include/astrometry/tycho2.h
 include/astrometry/ucac3.h
 include/astrometry/ucac4.h
+include/astrometry/ucac5.h
 include/astrometry/uniformize-catalog.h
 include/astrometry/unpermute-quads.h
 include/astrometry/unpermute-stars.h
