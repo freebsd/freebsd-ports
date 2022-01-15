@@ -1,5 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.1
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -24,7 +24,6 @@ CARGO_CRATES=	ahash-0.4.7 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
 		async-io-1.6.0 \
-		attohttpc-0.18.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
@@ -43,14 +42,14 @@ CARGO_CRATES=	ahash-0.4.7 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-2.34.0 \
-		combine-4.6.1 \
+		clap-3.0.7 \
+		clap_complete-3.0.3 \
+		clap_derive-3.0.0 \
+		combine-4.6.3 \
 		concurrent-queue-1.2.2 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.7.0 \
-		core-foundation-0.9.1 \
 		core-foundation-sys-0.7.0 \
-		core-foundation-sys-0.8.2 \
 		cpufeatures-0.2.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.1 \
@@ -72,9 +71,6 @@ CARGO_CRATES=	ahash-0.4.7 \
 		fake-simd-0.1.2 \
 		fastrand-1.5.0 \
 		float-cmp-0.9.0 \
-		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		fragile-1.0.0 \
 		futures-0.3.17 \
@@ -97,13 +93,11 @@ CARGO_CRATES=	ahash-0.4.7 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
-		http-0.2.4 \
 		idna-0.2.3 \
-		indexmap-1.7.0 \
+		indexmap-1.8.0 \
 		instant-0.1.10 \
 		is_debug-1.0.1 \
 		itertools-0.10.1 \
-		itoa-0.4.8 \
 		itoa-1.0.1 \
 		jobserver-0.1.24 \
 		kstring-1.0.5 \
@@ -121,15 +115,14 @@ CARGO_CRATES=	ahash-0.4.7 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
 		memoffset-0.6.4 \
-		minimal-lexical-0.1.3 \
+		minimal-lexical-0.2.1 \
 		mockall-0.11.0 \
 		mockall_derive-0.11.0 \
-		native-tls-0.2.8 \
 		nb-connect-1.2.0 \
 		nix-0.17.0 \
 		nix-0.21.0 \
 		nix-0.23.1 \
-		nom-7.0.0 \
+		nom-7.1.0 \
 		normalize-line-endings-0.3.0 \
 		notify-rust-4.5.5 \
 		num-integer-0.1.44 \
@@ -141,12 +134,9 @@ CARGO_CRATES=	ahash-0.4.7 \
 		once_cell-1.9.0 \
 		opaque-debug-0.2.3 \
 		open-2.0.2 \
-		openssl-0.10.36 \
-		openssl-probe-0.1.4 \
-		openssl-src-111.16.0+1.1.1l \
-		openssl-sys-0.9.66 \
 		ordered-multimap-0.3.1 \
-		os_info-3.0.8 \
+		os_info-3.0.9 \
+		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
 		path-slash-0.1.4 \
 		pathdiff-0.2.0 \
@@ -165,10 +155,12 @@ CARGO_CRATES=	ahash-0.4.7 \
 		predicates-tree-1.0.3 \
 		proc-macro-crate-0.1.5 \
 		proc-macro-crate-1.1.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.29 \
-		process_control-3.1.0 \
+		process_control-3.2.0 \
 		quick-xml-0.22.0 \
 		quote-1.0.9 \
 		rand-0.8.4 \
@@ -187,17 +179,13 @@ CARGO_CRATES=	ahash-0.4.7 \
 		rust-argon2-0.8.3 \
 		rust-ini-0.17.0 \
 		ryu-1.0.5 \
-		schannel-0.1.19 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		security-framework-2.3.1 \
-		security-framework-sys-2.4.2 \
 		semver-1.0.4 \
-		serde-1.0.132 \
-		serde_derive-1.0.132 \
-		serde_json-1.0.73 \
+		serde-1.0.133 \
+		serde_derive-1.0.133 \
+		serde_json-1.0.74 \
 		serde_repr-0.1.7 \
-		serde_urlencoded-0.7.0 \
 		sha-1-0.8.2 \
 		sha-1-0.10.0 \
 		shadow-rs-0.8.1 \
@@ -207,25 +195,26 @@ CARGO_CRATES=	ahash-0.4.7 \
 		starship-battery-0.7.9 \
 		starship_module_config_derive-0.2.1 \
 		static_assertions-1.1.0 \
-		strsim-0.8.0 \
 		strsim-0.10.0 \
 		strum-0.22.0 \
 		strum_macros-0.22.0 \
 		syn-1.0.76 \
 		sys-info-0.9.1 \
 		tempfile-3.2.0 \
+		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
-		textwrap-0.11.0 \
+		textwrap-0.14.2 \
 		thiserror-1.0.29 \
 		thiserror-impl-1.0.29 \
 		time-0.1.44 \
 		tinyvec-1.4.0 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
-		toml_edit-0.12.0 \
+		toml_edit-0.13.0 \
 		treeline-0.1.0 \
 		typenum-1.14.0 \
 		ucd-trie-0.1.3 \
+		unicase-2.6.0 \
 		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
@@ -236,24 +225,29 @@ CARGO_CRATES=	ahash-0.4.7 \
 		urlencoding-2.1.0 \
 		utf8-width-0.1.5 \
 		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
 		version_check-0.9.3 \
-		versions-3.0.3 \
+		versions-4.0.0 \
 		void-1.0.2 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wepoll-ffi-0.1.2 \
 		which-4.2.2 \
-		wildmatch-2.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.24.0 \
+		windows-sys-0.29.0 \
+		windows_aarch64_msvc-0.29.0 \
 		windows_i686_gnu-0.24.0 \
+		windows_i686_gnu-0.29.0 \
 		windows_i686_msvc-0.24.0 \
+		windows_i686_msvc-0.29.0 \
 		windows_x86_64_gnu-0.24.0 \
+		windows_x86_64_gnu-0.29.0 \
 		windows_x86_64_msvc-0.24.0 \
+		windows_x86_64_msvc-0.29.0 \
 		winrt-notification-0.5.0 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5 \
