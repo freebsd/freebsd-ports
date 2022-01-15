@@ -1,7 +1,7 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 
 PORTNAME=	kibana
-PORTVERSION=	7.16.2
+PORTVERSION=	7.16.3
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \

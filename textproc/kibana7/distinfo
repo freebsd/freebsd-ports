@@ -1,6 +1,6 @@
-TIMESTAMP = 1639935312
-SHA256 (kibana-7.16.2-darwin-x86_64.tar.gz) = e809e8b3cb6ed242fe63d41da1861f8c29f04f4c83b19cd5f20856b761e6ef56
-SIZE (kibana-7.16.2-darwin-x86_64.tar.gz) = 277276060
+TIMESTAMP = 1642266291
+SHA256 (kibana-7.16.3-darwin-x86_64.tar.gz) = 0edd4e06a021438c3531875955cabf2aba5bab49e5161f5cda087181e5d11625
+SIZE (kibana-7.16.3-darwin-x86_64.tar.gz) = 277412954
 SHA256 (nodejs-nan-v2.15.0_GH0.tar.gz) = 13bb12054ae30464f2e4d0f54ef9ee107f8c53069c27bce275d52fa83384ba1a
 SIZE (nodejs-nan-v2.15.0_GH0.tar.gz) = 179277
 SHA256 (uhop-node-re2-1.17.1_GH0.tar.gz) = 10de4a0586acc84a7e9d2a5a3b9630093123105c071919f42e2eedec4bf265b0
