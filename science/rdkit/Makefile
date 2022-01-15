@@ -1,7 +1,6 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2021_03_5
-PORTREVISION=	1
+DISTVERSION=	2021_09_4
 CATEGORIES=	science
 MASTER_SITES=	https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
 DISTFILES=	Comic_Neue.zip:font

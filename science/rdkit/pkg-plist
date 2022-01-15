@@ -625,6 +625,7 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/fmcs/fmcs
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/fmcs/fmcs.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/inchi.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/nbtests/github4823.ipynb
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdAbbreviations.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdCIPLabeler.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdChemReactions.so
@@ -930,7 +931,6 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/sping/util/HTMLPiddler.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/sping/util/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/sping/utils.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/12h.gif
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/cactvs.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/chemdraw.py
@@ -941,9 +941,6 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/listutils.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/retest.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/spiral.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/test1.gif
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/test2.gif
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/utils/test3.gif
 %%DATADIR%%/Contrib/AtomAtomSimilarity/AtomAtomPathSimilarity.py
 %%DATADIR%%/Contrib/CMakeLists.txt
 %%DATADIR%%/Contrib/CalcLigRMSD/CalcLigRMSD.py
@@ -1005,6 +1002,15 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%DATADIR%%/Contrib/Fastcluster/testdata/cdk2.sdf
 %%DATADIR%%/Contrib/Fastcluster/testdata/converted.smi
 %%DATADIR%%/Contrib/Fastcluster/testdata/sdf2smi.py
+%%DATADIR%%/Contrib/FreeWilson/README.md
+%%DATADIR%%/Contrib/FreeWilson/data/CHEMBL2321810.smi
+%%DATADIR%%/Contrib/FreeWilson/data/CHEMBL2321810_act.csv
+%%DATADIR%%/Contrib/FreeWilson/data/CHEMBL2321810_scaffold.mol
+%%DATADIR%%/Contrib/FreeWilson/freewilson.py
+%%DATADIR%%/Contrib/FreeWilson/pytest.ini
+%%DATADIR%%/Contrib/FreeWilson/requirements.txt
+%%DATADIR%%/Contrib/FreeWilson/setup.py
+%%DATADIR%%/Contrib/FreeWilson/test/test_freewilson.py
 %%DATADIR%%/Contrib/Glare/README.txt
 %%DATADIR%%/Contrib/Glare/glare.py
 %%DATADIR%%/Contrib/IFG/README
@@ -1111,11 +1117,6 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%DATADIR%%/Data/FragmentDescriptors.csv
 %%DATADIR%%/Data/FunctionalGroups.txt
 %%DATADIR%%/Data/Functional_Group_Hierarchy.txt
-%%DATADIR%%/Data/MolStandardize/acid_base_pairs.txt
-%%DATADIR%%/Data/MolStandardize/acid_base_pairs2.txt
-%%DATADIR%%/Data/MolStandardize/fragmentPatterns.txt
-%%DATADIR%%/Data/MolStandardize/normalizations.txt
-%%DATADIR%%/Data/MolStandardize/tautomerTransforms.in
 %%DATADIR%%/Data/NCI/first_200.props.sdf
 %%DATADIR%%/Data/NCI/first_200.tpsa.csv
 %%DATADIR%%/Data/NCI/first_5K.smi
