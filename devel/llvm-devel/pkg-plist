@@ -479,6 +479,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/llvmlibc/ImplementationInNamespaceCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/llvmlibc/RestrictSystemLibcHeadersCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/DefinitionsInHeadersCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/misc/MisleadingBidirectional.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/MisleadingIdentifier.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/MisplacedConstCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/NewDeleteOverloadsCheck.h
@@ -1455,6 +1456,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Semantics/tools.h
 %%FLANG%%llvm-devel/include/flang/Semantics/type.h
 %%FLANG%%llvm-devel/include/flang/Semantics/unparse-with-symbols.h
+%%FLANG%%llvm-devel/include/flang/Tools/CLOptions.inc
 %%FLANG%%llvm-devel/include/flang/Version.inc
 %%FLANG%%llvm-devel/include/flang/__fortran_builtins.f18.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_builtins.mod
@@ -1474,6 +1476,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/omp_lib.mod
 %%LLD%%llvm-devel/include/lld/Common/Args.h
 %%LLD%%llvm-devel/include/lld/Common/Arrays.h
+%%LLD%%llvm-devel/include/lld/Common/CommonLinkerContext.h
 %%LLD%%llvm-devel/include/lld/Common/DWARF.h
 %%LLD%%llvm-devel/include/lld/Common/Driver.h
 %%LLD%%llvm-devel/include/lld/Common/ErrorHandler.h
@@ -1960,6 +1963,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Utility/Flags.h
 %%LLDB%%llvm-devel/include/lldb/Utility/GDBRemote.h
 %%LLDB%%llvm-devel/include/lldb/Utility/IOObject.h
+%%LLDB%%llvm-devel/include/lldb/Utility/Instrumentation.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Iterable.h
 %%LLDB%%llvm-devel/include/lldb/Utility/LLDBAssert.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Listener.h
@@ -1973,7 +1977,6 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Utility/RegisterValue.h
 %%LLDB%%llvm-devel/include/lldb/Utility/RegularExpression.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Reproducer.h
-%%LLDB%%llvm-devel/include/lldb/Utility/ReproducerInstrumentation.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ReproducerProvider.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Scalar.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SelectHelper.h
@@ -2195,6 +2198,7 @@ llvm-devel/include/llvm/Analysis/InlineModelFeatureMaps.h
 llvm-devel/include/llvm/Analysis/InlineOrder.h
 llvm-devel/include/llvm/Analysis/InlineSizeEstimatorAnalysis.h
 llvm-devel/include/llvm/Analysis/InstCount.h
+llvm-devel/include/llvm/Analysis/InstSimplifyFolder.h
 llvm-devel/include/llvm/Analysis/InstructionPrecedenceTracking.h
 llvm-devel/include/llvm/Analysis/InstructionSimplify.h
 llvm-devel/include/llvm/Analysis/Interval.h
@@ -2845,6 +2849,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectLinkingLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/OrcABISupport.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/AllocationActions.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/ExecutorAddress.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/OrcError.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/OrcRTBridge.h
@@ -3301,6 +3306,7 @@ llvm-devel/include/llvm/Support/Debug.h
 llvm-devel/include/llvm/Support/DebugCounter.h
 llvm-devel/include/llvm/Support/Discriminator.h
 llvm-devel/include/llvm/Support/DivisionByConstantInfo.h
+llvm-devel/include/llvm/Support/Duration.h
 llvm-devel/include/llvm/Support/DynamicLibrary.h
 llvm-devel/include/llvm/Support/ELFAttributeParser.h
 llvm-devel/include/llvm/Support/ELFAttributes.h
@@ -3735,6 +3741,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir-c/Dialect/GPU.h
 %%MLIR%%llvm-devel/include/mlir-c/Dialect/LLVM.h
 %%MLIR%%llvm-devel/include/mlir-c/Dialect/Linalg.h
+%%MLIR%%llvm-devel/include/mlir-c/Dialect/PDL.h
+%%MLIR%%llvm-devel/include/mlir-c/Dialect/Quant.h
 %%MLIR%%llvm-devel/include/mlir-c/Dialect/SCF.h
 %%MLIR%%llvm-devel/include/mlir-c/Dialect/Shape.h
 %%MLIR%%llvm-devel/include/mlir-c/Dialect/SparseTensor.h
@@ -3748,8 +3756,6 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir-c/Registration.h
 %%MLIR%%llvm-devel/include/mlir-c/Support.h
 %%MLIR%%llvm-devel/include/mlir-c/Transforms.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/AffineAnalysis.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/AffineStructures.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/AliasAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/AliasAnalysis/LocalAliasAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/BufferViewFlowAnalysis.h
@@ -3757,18 +3763,14 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataFlowAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataLayoutAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Liveness.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/LoopAnalysis.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/NestedMatcher.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/NumberOfExecutions.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Fraction.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/IntegerPolyhedron.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/LinearTransform.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Matrix.h
+%%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/PresburgerSet.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Simplex.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Utils.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/PresburgerSet.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/SliceAnalysis.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/Attributes.td
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/PybindAdaptors.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/AffineExpr.h
@@ -3859,6 +3861,11 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/AMX/AMXTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/AMX/AMXTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/AMX/Transforms.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Affine/Analysis/AffineAnalysis.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Affine/Analysis/AffineStructures.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Affine/Analysis/LoopAnalysis.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Affine/Analysis/NestedMatcher.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Affine/Analysis/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Affine/IR/AffineMemoryOpInterfaces.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Affine/IR/AffineMemoryOpInterfaces.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Affine/IR/AffineMemoryOpInterfaces.h.inc
@@ -3930,8 +3937,13 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/AllocationOpInterface.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/AllocationOpInterface.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/AllocationOpInterface.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizableOpInterface.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizableOpInterface.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizableOpInterface.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizableOpInterface.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/Bufferization.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationBase.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOps.td
@@ -3940,6 +3952,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOpsTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOpsTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/Bufferize.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/OneShotAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/Passes.td
@@ -3983,6 +3996,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOps.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOpsAttributes.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOpsAttributes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOpsDialect.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/GPUOpsEnums.cpp.inc
@@ -4029,6 +4044,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOps.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOpsAttributes.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOpsAttributes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOpsDialect.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/NVVMOpsEnums.cpp.inc
@@ -4051,15 +4068,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/Analysis/DependenceAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/AffineInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/ArithInterfaceImpl.h
-%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/BufferizableOpInterface.cpp.inc
-%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/BufferizableOpInterface.h
-%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/BufferizableOpInterface.h.inc
-%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/BufferizableOpInterface.td
-%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/BufferizationInterfaceImpl.h
-%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/ComprehensiveBufferize.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/LinalgInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/ModuleBufferization.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/SCFInterfaceImpl.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/StdInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/TensorInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/ComprehensiveBufferize/VectorInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/IR/Linalg.h
@@ -4120,6 +4132,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOps.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsAttributes.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsAttributes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsDialect.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsEnums.cpp.inc
@@ -4129,6 +4143,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOps.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsAttributes.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsAttributes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsDialect.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsEnums.cpp.inc
@@ -4321,6 +4337,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Transforms/Passes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Utils/CoversionUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Utils/QuantUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Utils/ShapeUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Traits.h
@@ -4401,8 +4418,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/IR/Dominance.h
 %%MLIR%%llvm-devel/include/mlir/IR/EnumAttr.td
 %%MLIR%%llvm-devel/include/mlir/IR/FunctionImplementation.h
-%%MLIR%%llvm-devel/include/mlir/IR/FunctionSupport.h
-%%MLIR%%llvm-devel/include/mlir/IR/Identifier.h
+%%MLIR%%llvm-devel/include/mlir/IR/FunctionInterfaces.h
+%%MLIR%%llvm-devel/include/mlir/IR/FunctionInterfaces.td
+%%MLIR%%llvm-devel/include/mlir/IR/FunctionOpInterfaces.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/IR/FunctionOpInterfaces.h.inc
 %%MLIR%%llvm-devel/include/mlir/IR/ImplicitLocOpBuilder.h
 %%MLIR%%llvm-devel/include/mlir/IR/IntegerSet.h
 %%MLIR%%llvm-devel/include/mlir/IR/Location.h
@@ -5023,6 +5042,7 @@ llvm-devel/lib/libLLVM.so
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMX86Desc.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMX86Disassembler.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMX86Info.a
+%%STATIC_LIBS%%llvm-devel/lib/libLLVMX86TargetMCA.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMXCoreCodeGen.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMXCoreDesc.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMXCoreDisassembler.a
@@ -5037,6 +5057,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMXToLLVMIRTranslation.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMXTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAffine.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAffineAnalysis.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAffineBufferizableOpInterfaceImpl.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAffineToStandard.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAffineTransforms.a
@@ -5070,6 +5091,8 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPIInterfaces.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPILLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPILinalg.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPIPDL.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPIQuant.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPIRegistration.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPISCF.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPIShape.a
@@ -5082,7 +5105,6 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplex.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplexToLLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplexToStandard.a
-%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComprehensiveBufferize.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRControlFlowInterfaces.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCopyOpInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRDLTI.a
@@ -5117,7 +5139,6 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLinalgToStandard.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLinalgTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLinalgUtils.a
-%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLoopAnalysis.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLoopLikeInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLspServerLib.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMath.a
@@ -5132,6 +5153,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMemRefTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMemRefUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMlirOptMain.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRModuleBufferization.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRNVVMIR.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRNVVMToLLVMIRTranslation.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIROpenACC.a
@@ -5189,6 +5211,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRStandardOpsTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRStandardToLLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRStandardToSPIRV.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRStdBufferizableOpInterfaceImpl.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSupport.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSupportIndentedOstream.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTableGen.a
@@ -5378,6 +5401,8 @@ llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%git
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPILLVM/LLVM.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPILinalg/Linalg.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPILinalg/LinalgPasses.cpp.o
+%%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIPDL/PDL.cpp.o
+%%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIQuant/Quant.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIRegistration/Registration.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPISCF/SCF.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIShape/Shape.cpp.o
