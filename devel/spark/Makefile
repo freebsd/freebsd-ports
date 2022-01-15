@@ -16,6 +16,9 @@ COMMENT=	Fast big data processing engine
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expired devel/maven33
+EXPIRATION_DATE=2022-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
 		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		bash:shells/bash
