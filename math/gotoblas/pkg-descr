@@ -1,6 +1,0 @@
-GotoBLAS2 is a fast implementation of Basic Linear Algebra
-Subprograms. It supports various architectures and is optimized
-for many cores, including Intel Nehalem and Atom, Via Nano,
-SiCortex, AMD Shanghai and Istanbul.
-
-WWW: http://www.tacc.utexas.edu/tacc-projects/

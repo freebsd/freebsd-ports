@@ -16767,3 +16767,4 @@ devel/py-future-annotations||2022-01-11|Remove obsoleted port. It is included in
 devel/rubygem-aws-sdk-v1|devel/rubygem-aws-sdk|2022-01-11|Remove obsoleted port. Use devel/rubygem-aws-sdk instead
 devel/rubygem-sidekiq62|devel/rubygem-sidekiq|2022-01-11|Remove obsoleted port. Use devel/rubygem-sidekiq instead
 security/rubygem-bcrypt_pbkdf10|security/rubygem-bcrypt_pbkdf|2022-01-11|Remove obsoleted port. Use security/rubygem-bcrypt_pbkdf instead
+math/gotoblas|math/openblas|2022-01-15|Remove obsoleted port. Use math/openblas instead
