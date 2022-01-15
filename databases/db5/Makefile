@@ -78,10 +78,11 @@ CONFIGURE_ARGS+=	--with-mutex=POSIX/pthreads
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/^DOCLIST/{s/csharp//;}' ${WRKSRC}/../dist/Makefile.in
-	${REINPLACE_CMD} -Ee 's/[[:<:]]atomic_init[[:>:]]/db_atomic_init/g' ${WRKSRC}/../src/mp/mp* ${WRKSRC}/../src/mutex/mut_*
+	${REINPLACE_CMD} -i '' -e '/^DOCLIST/{s/csharp//;}' ${WRKSRC}/../dist/Makefile.in
+	${REINPLACE_CMD} -i '' -Ee 's/[[:<:]]atomic_init[[:>:]]/db_atomic_init/g' ${WRKSRC}/../src/mp/mp* ${WRKSRC}/../src/mutex/mut_*
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/db5/db_*
 .for i in ${DBLIBS}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib
