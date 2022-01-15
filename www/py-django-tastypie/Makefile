@@ -1,7 +1,7 @@
 # Created by: William Grzybowski <william88@gmail.com>
 
 PORTNAME=	django-tastypie
-PORTVERSION=	0.14.3
+PORTVERSION=	0.14.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
