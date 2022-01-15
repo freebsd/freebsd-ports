@@ -1,11 +1,12 @@
 PORTNAME=	swayidle
-DISTVERSION=	1.7
+DISTVERSION=	1.7.1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4cc31289ee81.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
-PATCHFILES+=	efb226483782.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
-PATCHFILES+=	88bc257f72f6.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
+PATCHFILES+=	28950f787813.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
+PATCHFILES+=	ff7569ad1129.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
+PATCHFILES+=	f2f7e4d0a7c8.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
+PATCHFILES+=	e81d40fca753.patch:-p1 # https://github.com/swaywm/swayidle/pull/115
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Idle management daemon for Wayland
