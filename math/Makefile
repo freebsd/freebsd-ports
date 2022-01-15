@@ -339,7 +339,6 @@
     SUBDIR += gnuplot
     SUBDIR += gnuplot-lite
     SUBDIR += gnuplot-tex-extras
-    SUBDIR += gotoblas
     SUBDIR += gp2c
     SUBDIR += grace
     SUBDIR += graphthing
@@ -580,6 +579,7 @@
     SUBDIR += oink
     SUBDIR += oleo
     SUBDIR += onednn
+    SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
     SUBDIR += openmesh
