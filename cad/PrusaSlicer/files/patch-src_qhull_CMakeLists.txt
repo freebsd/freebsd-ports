@@ -1,0 +1,29 @@
+--- src/qhull/CMakeLists.txt.orig	2021-11-19 21:23:46.166100000 -0500
++++ src/qhull/CMakeLists.txt	2021-11-19 21:27:12.170235000 -0500
+@@ -14,19 +14,8 @@
+ 
+ add_library(qhull INTERFACE)
+ 
+-if(Qhull_FOUND)
++#force use of bundled qhull#else(Qhull_FOUND)
+ 
+-message(STATUS "Using qhull from system.")
+-if(SLIC3R_STATIC)
+-    slic3r_remap_configs("Qhull::qhullcpp;Qhull::qhullstatic_r" RelWithDebInfo Release)
+-    target_link_libraries(qhull INTERFACE Qhull::qhullcpp Qhull::qhullstatic_r)
+-else()
+-    slic3r_remap_configs("Qhull::qhullcpp;Qhull::qhull_r" RelWithDebInfo Release)
+-    target_link_libraries(qhull INTERFACE Qhull::qhullcpp Qhull::qhull_r)
+-endif()
+-
+-else(Qhull_FOUND)
+-
+ project(qhull)
+ cmake_minimum_required(VERSION 2.6)
+ 
+@@ -144,4 +133,4 @@
+ target_include_directories(${qhull_STATIC} BEFORE PUBLIC ${LIBDIR}/qhull/src)
+ target_link_libraries(qhull INTERFACE ${qhull_STATIC})
+ 
+-endif()
++#force use of bundled qhull##endif()
