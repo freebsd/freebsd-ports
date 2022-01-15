@@ -13,6 +13,9 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Fails to work with current active PHP versions
+EXPIRATION_DATE=	2022-01-24
+
 USES=		gettext php:web
 USE_PHP=	spl
 IGNORE_WITH_PHP=	74 80 81
