@@ -1,7 +1,7 @@
 # Created by: Andrew Lewis <freeghb@gmail.com>
 
 PORTNAME=	prosody
-PORTVERSION=	0.11.11
+PORTVERSION=	0.11.12
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
