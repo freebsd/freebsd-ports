@@ -1,6 +1,5 @@
 PORTNAME=	dftbplus
-DISTVERSION=	19.1
-PORTREVISION=	1
+DISTVERSION=	21.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,54 +12,70 @@ BROKEN_${arch}=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic 
 .endfor
 
 LIB_DEPENDS=	libblas.so:math/blas \
-		liblapack.so:math/lapack
+		liblapack.so:math/lapack \
+		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:gcc-c++11-lib fortran gmake python shebangfix
+USES=		cmake compiler:gcc-c++11-lib fortran python:build shebangfix
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	tools/dptools/bin/* tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
-		external/fypp/bin/fypp utils/test/testlist_to_fypp test/prog/dftb+/bin/tagdiff
+		external/fypp/bin/fypp utils/test/testlist_to_fypp \
+		test/app/phonons/bin/tagdiff test/app/dftb+/bin/tagdiff test/app/dftb+/bin/tagdiff
 SHEBANG_GLOB=	*.py
+
 USE_GITHUB=	yes
-GH_TUPLE=	dftbplus:mpifx:099ff75:mpifx/external/mpifx/origin \
-		dftbplus:scalapackfx:86cd6e4:scalapackfx/external/scalapackfx/origin \
+GH_TUPLE=	\
+		aradi:fytest:94e05ac:aradi_fytest/external/fytest/origin \
+		awvwgk:simple-dftd3:c2f03fe:awvwgk_simple_dftd3/external/s-dftd3/origin \
+		awvwgk:tblite:dfc761d:awvwgk_tblite/external/tblite/origin \
+		dftbplus:mpifx:8200a5e:mpifx/external/mpifx/origin \
+		dftbplus:scalapackfx:0d5750d:scalapackfx/external/scalapackfx/origin \
 		dftbplus:dftd3-lib:00504a9:dftd3/external/dftd3/origin \
-		dftbplus:testparams:1601609:testparams/external/slakos/origin
-MAKEFILE=	makefile
-TEST_TARGET=	test
+		dftbplus:testparams:1601609:testparams/external/slakos/origin \
+		dftd4:dftd4:1189af7:dftd4_dftd4/external/dftd4/origin \
+		grimme-lab:mctc-lib:a2f70b0:grimme_lab_mctc_lib/external/mctc-lib/origin \
+		grimme-lab:mstore:974fb59:grimme_lab_mstore/external/mstore/origin \
+		grimme-lab:multicharge:dde0d67:grimme_lab_multicharge/external/multicharge/origin \
+		libmbd:libmbd:95c95b5:libmbd_libmbd/external/mbd/origin \
+		libnegf:libnegf:c8ed2ca:libnegf_libnegf/external/libnegf/origin \
+		rk-lindsey:chimes_calculator:98e3653:rk_lindsey_chimes_calculator/external/chimes/origin \
+		toml-f:toml-f:f066ec6:toml_f_toml_f/external/toml-f/origin
 
-FFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-llapack -lblas -lgfortran -lm
+TEST_TARGET=	test # some tests are known to fail: https://github.com/dftbplus/dftbplus/issues/932
 
-MAKE_ARGS=	PYTHON=${PYTHON_CMD} FC=${FC} FXX=${FC} LN=${CC} \
-		INSTALLDIR=${STAGEDIR}${PREFIX} FREEBSD_PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS} --root=${STAGEDIR}"
+CMAKE_ON=	BLAS_DETECTION BUILD_SHARED_LIBS WITH_API ENABLE_DYNAMIC_LOADING
+CMAKE_ARGS=	-DLAPACK_LIBRARY=lapack -DSCALAPACK_LIBRARY=scalapack
 
-BINARY_ALIAS=		python=${PYTHON_CMD}
+BINARY_ALIAS=		python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=		DFTD3 MPI SOCKETS ARPACK
-OPTIONS_DEFAULT=	DFTD3 MPI SOCKETS
+OPTIONS_DEFINE=		ARPACK CHIMES DFTD3 MPI PYTHON SOCKETS
+OPTIONS_DEFAULT=	CHIMES DFTD3 MPI SOCKETS # PYTHON
+OPTIONS_SUB=		yes
+
+ARPACK_DESC=		Build with ARPACK for large eigenvalue problems
+ARPACK_CMAKE_BOOL=	WITH_ARPACK
+ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng
+ARPACK_PREVENTS=	MPI # ARPACK is only used in a single-core application
+
+CHIMES_DESC=		Build with ChIMES
+CHIMES_CMAKE_BOOL=	WITH_CHIMES
 
 DFTD3_DESC=		Build with libdft3
-DFTD3_MAKE_ARGS=	WITH_DFTD3=1
-DFTD3_MAKE_ARGS_OFF=	WITH_DFTD3=0
+DFTD3_CMAKE_BOOL=	WITH_SDFTD3
 
-MPI_MAKE_ARGS=		WITH_MPI=1
-MPI_MAKE_ARGS_OFF=	WITH_MPI=0
+MPI_CMAKE_BOOL=		WITH_MPI
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich \
 			libscalapack.so:math/scalapack
 MPI_LDFLAGS=		${LOCALBASE}/lib/libmpich.so ${LOCALBASE}/lib/libmpifort.so ${LOCALBASE}/lib/libmpi.so
 
+PYTHON_USES=		python
+PYTHON_CMAKE_BOOL=	WITH_PYTHON
+PYTHON_BROKEN=		fails to install into stage directory: https://github.com/dftbplus/dftbplus/issues/931
+
 SOCKETS_DESC=		Build with sockets library
-SOCKETS_MAKE_ARGS=	WITH_SOCKETS=1
-SOCKETS_MAKE_ARGS_OFF=	WITH_SOCKETS=0
+SOCKETS_CMAKE_BOOL=	WITH_SOCKETS
 SOCKETS_BINARY_ALIAS=	gcc=${CC}
-
-ARPACK_DESC=		Build with ARPACK for large eigenvalue problems
-ARPACK_MAKE_ARGS=	WITH_ARPACK=1
-ARPACK_MAKE_ARGS_OFF=	WITH_ARPACK=0
-ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng
-ARPACK_PREVENTS=	MPI # ARPACK is only used in a single-core application
-
-MAKE_JOBS_UNSAFE=	yes # race conditions when some options are ON
 
 .include <bsd.port.pre.mk>
 
@@ -69,12 +84,5 @@ MAKE_JOBS_UNSAFE=	yes # race conditions when some options are ON
 # in theory, this should set FCFLAGS, but the port does not conform
 FFLAGS+=	-fallow-argument-mismatch
 .endif
-
-post-extract:
-	@${RM} ${WRKSRC}/external/scalapackfx/origin/test/psyr_result.dat.orig
-	@cd ${WRKSRC} && ${CP} sys/make.x86_64-linux-gnu make.arch
-
-post-install:
-	@cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} dftb+ modes waveplot
 
 .include <bsd.port.post.mk>
