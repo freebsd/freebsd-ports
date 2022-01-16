@@ -1,0 +1,43 @@
+--- core/CMakeLists.txt	2020-12-16 02:46:16.000000000 -0500
++++ core/CMakeLists.txt	2020-12-26 21:28:44.141734000 -0500
+@@ -256,7 +256,9 @@
+   set(PSCMD "ps -ax -o pid,command")
+   include_directories(/usr/local/include)
+   link_directories(/usr/local/lib)
+-  link_libraries(intl)
++  IF(nls)
++    link_libraries(intl)
++  ENDIF()
+ endif()
+ 
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+@@ -323,8 +325,11 @@
+   add_definitions("-D_FILE_OFFSET_BITS=64")
+ endif()
+ 
+-include(FindIntl)
+ 
++IF(nls)
++  INCLUDE(FindIntl)
++ENDIF()
++
+ if(developer)
+   add_definitions("-DDEVELOPER=1")
+ endif()
+@@ -347,7 +352,7 @@
+ if(NOT client-only)
+   # droplet does not build on solaris because of sys/cdefs.h: No such file or
+   # directory
+-  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
++  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS|FreeBSD")
+     if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/droplet/CMakeLists.txt)
+       message(
+         FATAL_ERROR
+@@ -771,7 +776,6 @@
+ 
+ add_subdirectory(scripts)
+ add_subdirectory(manpages)
+-add_subdirectory(platforms)
+ add_subdirectory(src)
+ 
+ include(BareosLocalBuildDefinitions OPTIONAL

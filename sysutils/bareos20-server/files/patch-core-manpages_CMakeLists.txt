@@ -1,0 +1,14 @@
+--- core/manpages/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
++++ core/manpages/CMakeLists.txt	2020-01-31 15:33:19.205416000 -0500
+@@ -17,9 +17,11 @@
+ #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ #   02110-1301, USA.
+ 
++if(client-only)
+ set(MAN1 bconsole.1)
+ 
+ set(MAN8 bareos-fd.8 bareos.8)
++endif()
+ 
+ if(NOT client-only)
+   set(MAN1-server
