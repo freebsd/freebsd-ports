@@ -1,8 +1,8 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	20.0.3
+DISTVERSION=	20.0.4
 CATEGORIES?=	www sysutils
-PKGNAMESUFFIX=	-webui
+PKGNAMESUFFIX=	20-webui
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	PHP-Frontend to manage Bareos over the web

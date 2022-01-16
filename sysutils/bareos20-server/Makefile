@@ -1,10 +1,10 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	20.0.3
+DISTVERSION=	20.0.4
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	20-server
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
@@ -12,7 +12,7 @@ COMMENT?=	Backup archiving recovery open sourced (server)
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bareos19-server bareos18-server bareos17-server
+CONFLICTS?=	bareos19-server bareos18-server bareos-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
@@ -43,7 +43,7 @@ MTX_DESC=		Install mtx for control of autochanger devices
 NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
-.if ${PKGNAMESUFFIX} == "-server"
+.if ${PKGNAMESUFFIX} == "20-server"
 OPTIONS_GROUP=	BACKENDS
 OPTIONS_GROUP_BACKENDS=	CEPHFS GFAPI RADOS
 OPTIONS_DEFINE=		MTX PYTHON LMDB NDMP NLS SCSICRYPTO
@@ -71,14 +71,14 @@ OPENSSL_CMAKE_OFF=	-Dopenssl=OFF
 SCSICRYPTO_CMAKE_ON=	-Dscsi-crypto=ON
 SCSICRYPTO_CMAKE_OFF=	-Dscsi-crypto=OFF
 
-.if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
+.if ${PKGNAMESUFFIX} == "20-client" || ${PKGNAMESUFFIX} == "20-server"  #Till end of the file
 PYTHON_USES=		python
 PYTHON_CMAKE_ON=	-Dpython=ON
 PYTHON_CMAKE_OFF=	-Dpython=OFF
 PYTHON_PLUGIN=		yes
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbareos.so:sysutils/bareos-client
+LIB_DEPENDS+=	libbareos.so:sysutils/bareos20-client
 USE_RC_SUBR?=	bareos-dir bareos-sd
 .endif
 
@@ -207,7 +207,7 @@ MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
 	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
-.if ${PKGNAMESUFFIX} == "-server"
+.if ${PKGNAMESUFFIX} == "20-server"
 	@${REINPLACE_CMD}  '45d' ${WRKSRC}/core/src/CMakeLists.txt
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif

@@ -1,15 +1,15 @@
 PORTNAME=	bareos
-PKGNAMESUFFIX=	-client
+PKGNAMESUFFIX=	20-client
 
 COMMENT=	Backup archiving recovery open sourced (client)
 
-CONFLICTS=	bareos19-client bareos18-client bareos17-client
+CONFLICTS=	bareos19-client bareos18-client bareos-client
 
 WITH_CLIENT_ONLY=yes
 USE_RC_SUBR=	bareos-fd
 
 PLIST=		${PKGDIR}/pkg-plist.client
-MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
+MASTERDIR=	${.CURDIR}/../../sysutils/bareos20-server
 
 OPTIONS_GROUP=	PLUGINS
 OPTIONS_GROUP_PLUGINS=	CEPHFS GFAPI RADOS
