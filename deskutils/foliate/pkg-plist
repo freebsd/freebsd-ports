@@ -55,6 +55,7 @@ share/locale/fr/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/id/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/ie/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/it/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/ko/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/nb/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/nl/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/nn/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
@@ -64,4 +65,4 @@ share/locale/sv/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/uk/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/zh_CN/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/zh_TW/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
-share/metainfo/com.github.johnfactotum.Foliate.appdata.xml
+share/metainfo/com.github.johnfactotum.Foliate.metainfo.xml
