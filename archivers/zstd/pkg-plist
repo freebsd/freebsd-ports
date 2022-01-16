@@ -11,7 +11,7 @@ include/zstd_errors.h
 lib/libzstd.a
 lib/libzstd.so
 lib/libzstd.so.1
-lib/libzstd.so.%%PORTVERSION%%
+lib/libzstd.so.%%DISTVERSION%%
 libdata/pkgconfig/libzstd.pc
 man/man1/unzstd.1.gz
 man/man1/zstd.1.gz
