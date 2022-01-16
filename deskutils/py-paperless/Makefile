@@ -1,6 +1,6 @@
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,15 +14,15 @@ COMMENT=	Index and archive scanned paper documents
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=0.7.1:devel/py-dateparser@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=1.1.0:devel/py-dateparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=2.4.0:www/py-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-crispy-forms>=1.7.2:www/py-django-crispy-forms@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-extensions>=2.1.6:www/py-django-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-filter>=2.0.0:www/py-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangoql>=0.12.4:www/py-djangoql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangoql>=0.17.0:www/py-djangoql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.9.0:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fuzzywuzzy>=0.15.1:devel/py-fuzzywuzzy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.7:textproc/py-langdetect@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.9:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdftotext>=2.1.1:textproc/py-pdftotext@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyocr>=0.5.3:graphics/py-pyocr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.10.1:www/py-python-dotenv@${PY_FLAVOR} \
@@ -101,6 +101,7 @@ do-install:
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/src && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/paperless
+	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.orig' -delete
 	@${RLN} ${STAGEDIR}${PYTHON_SITELIBDIR}/paperless/manage.py \
 		${STAGEDIR}${PREFIX}/bin/paperless
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
