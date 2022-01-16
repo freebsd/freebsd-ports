@@ -43,7 +43,7 @@ influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
 start_precmd="influxd_precmd"
-start_cmd="influxd_startcmd_%%INFLUXD_LOGCMD%%"        
+start_cmd="influxd_startcmd_%%INFLUXD_LOGCMD%%"
 
 influxd_precmd()
 {
@@ -52,16 +52,16 @@ influxd_precmd()
 
 influxd_startcmd_daemon()                      
 {   
-    echo "Starting ${name}."                   
-    /usr/sbin/daemon -c -p ${influxd_pidfile} -S -s ${influxd_priority} -l ${influxd_facility} \
-        -u ${influxd_user} ${procname} ${influxd_options}
+    echo "Starting ${name}."
+    /usr/sbin/daemon -c -p ${influxd_pidfile} -S -s ${influxd_priority} -l ${influxd_facility} -T ${name} \
+	-u ${influxd_user} ${procname} ${influxd_options}
 }                                              
 
-influxd_startcmd_logger()                      
+influxd_startcmd_logger()
 {   
-    echo "Starting ${name}."                   
+    echo "Starting ${name}."
     /usr/sbin/daemon -c -p ${influxd_pidfile} -u ${influxd_user} /bin/sh -c "${procname} ${influxd_options} 2>&1 \
         | /usr/bin/logger -t ${name} -p ${influxd_facility}.${influxd_priority}"
-}                                              
+}
 
 run_rc_command "$1"

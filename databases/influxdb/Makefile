@@ -1,6 +1,7 @@
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.10
+PORTREVISION=	1
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
