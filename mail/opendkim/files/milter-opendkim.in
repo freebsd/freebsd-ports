@@ -69,7 +69,11 @@ sig_reload="USR1"
 
 dkim_cleansockets()
 {
-    rm -f "${milteropendkim_socket##local:}" "${milteropendkim_socket##unix:}"
+    case ${milteropendkim_socket%:*} in
+    local|unix)
+	rm -f "${milteropendkim_socket#*:}"
+	;;
+    esac
 }
 
 dkim_get_pidfile()
@@ -85,19 +89,25 @@ dkim_prepcmd()
 {
     dkim_cleansockets
     dkim_get_pidfile
-    install -d -o ${milteropendkim_uid%:*} -g $milteropendkim_gid \
-    	-m ${milteropendkim_socket_perms} ${pidfile%/*}
+    case ${milteropendkim_socket%:*} in
+    local|unix)
+	socketfile=${milteropendkim_socket#*:}
+	install -d -o ${milteropendkim_uid%:*} -g $milteropendkim_gid \
+	    -m ${milteropendkim_socket_perms} \
+	       ${pidfile%/*} ${socketfile%/*}
+	;;
+    esac
 }
 
 dkim_start_postcmd()
 {
-    if [ -n "${milteropendkim_socket}" ] ; then
+    case ${milteropendkim_socket%:*} in
+    local|unix)
 	# postcmd is executed too fast and socket is not created before checking...
 	sleep 1
-	chmod -f ${milteropendkim_socket_perms} \
-	    ${milteropendkim_socket##local:} \
-	    ${milteropendkim_socket##unix:}
-    fi
+	chmod -f ${milteropendkim_socket_perms} ${milteropendkim_socket#*:}
+	;;
+    esac
 }
 
 if [ -n "$2" ]; then
