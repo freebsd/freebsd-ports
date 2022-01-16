@@ -11,13 +11,14 @@ include/libplacebo/log.h
 %%OPENGL%%include/libplacebo/opengl.h
 include/libplacebo/renderer.h
 include/libplacebo/shaders.h
-include/libplacebo/shaders/av1.h
 include/libplacebo/shaders/colorspace.h
 include/libplacebo/shaders/custom.h
+include/libplacebo/shaders/film_grain.h
 %%LCMS2%%include/libplacebo/shaders/icc.h
 include/libplacebo/shaders/lut.h
 include/libplacebo/shaders/sampling.h
 include/libplacebo/swapchain.h
+include/libplacebo/tone_mapping.h
 include/libplacebo/utils/dav1d.h
 include/libplacebo/utils/dav1d_internal.h
 include/libplacebo/utils/frame_queue.h
@@ -26,5 +27,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 %%VULKAN%%include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.157
+lib/libplacebo.so.192
 libdata/pkgconfig/libplacebo.pc

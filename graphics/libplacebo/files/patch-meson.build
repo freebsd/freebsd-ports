@@ -1,0 +1,37 @@
+../src/colorspace.c:545:5: error: implicit declaration of function 'static_assert' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    pl_static_assert(sizeof(*pa) == sizeof(*orig));
+    ^
+../src/pl_assert.h:37:32: note: expanded from macro 'pl_static_assert'
+#define pl_static_assert(expr) static_assert(expr, #expr)
+                               ^
+../src/dummy.c:35:26: error: use of undeclared identifier 'max_align_t'
+    struct pl_gpu *gpu = pl_zalloc_obj(NULL, gpu, struct priv);
+                         ^
+../src/pl_alloc.h:96:41: note: expanded from macro 'pl_zalloc_obj'
+    (__typeof__(ptr)) pl_zalloc(parent, PL_ALIGN_MEM(sizeof(*(ptr))) + sizeof(priv))
+                                        ^
+../src/pl_alloc.h:87:24: note: expanded from macro 'PL_ALIGN_MEM'
+    (((size) + alignof(max_align_t) - 1) & ~(alignof(max_align_t) - 1))
+                       ^
+../src/dummy.c:35:26: warning: '_Alignof' applied to an expression is a GNU extension [-Wgnu-alignof-expression]
+../src/pl_alloc.h:96:41: note: expanded from macro 'pl_zalloc_obj'
+    (__typeof__(ptr)) pl_zalloc(parent, PL_ALIGN_MEM(sizeof(*(ptr))) + sizeof(priv))
+                                        ^
+../src/pl_alloc.h:87:16: note: expanded from macro 'PL_ALIGN_MEM'
+    (((size) + alignof(max_align_t) - 1) & ~(alignof(max_align_t) - 1))
+               ^
+/usr/include/stdalign.h:46:19: note: expanded from macro 'alignof'
+#define alignof                 _Alignof
+                                ^
+
+--- meson.build.orig	2022-01-16 12:36:07 UTC
++++ meson.build
+@@ -71,7 +71,7 @@ cc = meson.get_compiler('c')
+ cxx = meson.get_compiler('cpp')
+ 
+ c_opts = [
+-  '-D_ISOC99_SOURCE', '-D_ISOC11_SOURCE', '-D_GNU_SOURCE', '-D_XOPEN_SOURCE=700',
++  '-D_ISOC99_SOURCE', '-D_ISOC11_SOURCE', '-D_GNU_SOURCE',
+   '-U__STRICT_ANSI__', '-fvisibility=hidden', '-Wmissing-prototypes',
+ 
+   # Warnings to ignore
