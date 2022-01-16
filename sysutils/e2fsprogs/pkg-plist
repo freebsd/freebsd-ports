@@ -4,6 +4,7 @@ bin/chattr
 bin/e2fsprogs-compile_et
 %%FUSEFS%%bin/fuse2fs
 bin/lsattr
+bin/mk_cmds
 etc/mke2fs.conf.dist
 include/e2fsprogs/com_err.h
 include/e2fsprogs/e2p/e2p.h
@@ -19,6 +20,9 @@ include/e2fsprogs/ext2fs/ext3_extents.h
 include/e2fsprogs/ext2fs/hashmap.h
 include/e2fsprogs/ext2fs/qcow2.h
 include/e2fsprogs/ext2fs/tdb.h
+include/e2fsprogs/ss/ss.h
+include/e2fsprogs/ss/ss_err.h
+lib/e2fsprogs/libcom_err.a
 lib/e2fsprogs/libcom_err.so
 lib/e2fsprogs/libcom_err.so.2
 lib/e2fsprogs/libcom_err.so.2.1
@@ -30,13 +34,20 @@ lib/e2fsprogs/libext2fs.a
 lib/e2fsprogs/libext2fs.so
 lib/e2fsprogs/libext2fs.so.2
 lib/e2fsprogs/libext2fs.so.2.4
+lib/e2fsprogs/libss.so.2.0
+lib/e2fsprogs/libss.so
+lib/e2fsprogs/libss.a
+lib/e2fsprogs/libss.so.2
 libdata/pkgconfig/com_err.pc
 libdata/pkgconfig/e2p.pc
 libdata/pkgconfig/ext2fs.pc
+libdata/pkgconfig/ss.pc
 man/man1/chattr.1.gz
 man/man1/e2fsprogs-compile_et.1.gz
 %%FUSEFS%%man/man1/fuse2fs.1.gz
 man/man1/lsattr.1.gz
+man/man1/mk_cmds.1.gz
+man/man3/com_err.3.gz
 man/man5/e2fsck.conf.5.gz
 man/man5/mke2fs.conf.5.gz
 man/man5/ext2.5.gz
@@ -112,3 +123,5 @@ sbin/tune2fs
 %%NLS%%share/locale/uk/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
+share/ss/ct_c.awk
+share/ss/ct_c.sed

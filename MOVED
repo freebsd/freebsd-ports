@@ -16760,3 +16760,4 @@ astro/google-earth||2022-01-01|Has expired: Needs newer version to connect to se
 net/tramp||2022-01-01|Has expired: Not updated in 5 years and now part of Emacs
 archivers/p7zip-codec-rar||2022-01-01|Has expired: Unmaintained for years and has known vulnerabilities
 emulators/yuzu-qt5|emulators/yuzu|2022-01-20|Merged as QT5 port option
+devel/e2fsprogs-libss||2022-01-27|Folded back into sysutils/e2fsprogs, which was the sole user

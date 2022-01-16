@@ -546,7 +546,6 @@
     SUBDIR += dxa65
     SUBDIR += dyncall
     SUBDIR += e00compr
-    SUBDIR += e2fsprogs-libss
     SUBDIR += eastl
     SUBDIR += easyexif
     SUBDIR += easygit
