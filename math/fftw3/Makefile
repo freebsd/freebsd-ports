@@ -1,8 +1,7 @@
 # Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 
 PORTNAME=	fftw3
-DISTVERSION=	3.3.9
-PORTREVISION?=	1
+DISTVERSION=	3.3.10
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -40,6 +39,8 @@ INSTALL_TARGET=	install-cmakeDATA install-pkgconfigDATA install-libLTLIBRARIES i
 
 OPTIONS_DEFINE=		G77_WRAPPERS OPENMP OPENMPI OPTIMIZED_CFLAGS SIMD
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS SIMD
+OPTIONS_DEFAULT_aarch64=	OPENMP
+OPTIONS_DEFAULT_amd64=		OPENMP
 .if ${FFTW3_FLAVOR} == "quad"
 OPTIONS_EXCLUDE+=	OPENMPI
 .endif
