@@ -1,9 +1,10 @@
 PORTNAME=	vault
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	swills@FreeBSD.org
+# co-maintainer: brd
 COMMENT=	Tool for securely accessing secrets
 
 LICENSE=	MPL20
@@ -14,7 +15,7 @@ CPE_VENDOR=	hashicorp
 
 USE_GITHUB=	yes
 GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
-		grembo:vaultui:${VAULTUITAG}:vaultui \
+		swills:vaultui:${VAULTUITAG}:vaultui \
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-sdk-for-go:v51.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
