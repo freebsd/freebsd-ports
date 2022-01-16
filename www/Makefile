@@ -43,6 +43,7 @@
     SUBDIR += bareos-webui
     SUBDIR += bareos18-webui
     SUBDIR += bareos19-webui
+    SUBDIR += bareos20-webui
     SUBDIR += beehive
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
