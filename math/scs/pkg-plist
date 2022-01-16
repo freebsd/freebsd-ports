@@ -8,6 +8,8 @@ include/scs/normalize.h
 include/scs/rw.h
 include/scs/scs.h
 include/scs/scs_blas.h
+include/scs/scs_types.h
+include/scs/scs_work.h
 include/scs/util.h
 lib/libscsdir.a
 lib/libscsdir.so
