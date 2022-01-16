@@ -42,7 +42,7 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
 %%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Rados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
+@comment @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample
@@ -78,14 +78,10 @@ lib/bareos/scripts/bareos-ctl-sd
 lib/bareos/scripts/bareos-explorer
 lib/bareos/scripts/bareos-glusterfind-wrapper
 lib/bareos/scripts/create_bareos_database
-%%MYSQL%%lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
-%%MYSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
-%%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
-%%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.10_11.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.11_12.sql
@@ -96,6 +92,7 @@ lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2002_2003.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2003_2004.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2004_2171.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2171_2192.sql
+lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2192_2210.sql
 %%PGSQL%%lib/bareos/scripts/ddl/updates/%%DBTYPE%%.bee.1017_2004.sql
 lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
@@ -110,23 +107,23 @@ lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
 lib/libbareoscats.so
-lib/libbareoscats.so.20
+lib/libbareoscats.so.21
 lib/libbareoscats.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
-%%NDMP%%lib/libbareosndmp.so.20
+%%NDMP%%lib/libbareosndmp.so.21
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
+lib/libbareossd.so.21
+lib/libbareossd.so.%%LIB_VERSION%%
 lib/libbareossql.so
-lib/libbareossql.so.20
+lib/libbareossql.so.21
 lib/libbareossql.so.%%LIB_VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd%%PYTHON_EXT_SUFFIX%%.so
 man/man1/bareos-tray-monitor.1.gz
 man/man1/bregex.1.gz
-man/man1/bsmtp.1.gz
 man/man1/bwild.1.gz
 man/man8/bareos-dbcheck.8.gz
-man/man8/bareos-dbcopy.8.gz
 man/man8/bareos-dir.8.gz
 man/man8/bareos-sd.8.gz
 man/man8/bcopy.8.gz
@@ -136,9 +133,7 @@ man/man8/bpluginfo.8.gz
 man/man8/bscan.8.gz
 man/man8/bscrypto.8.gz
 man/man8/btape.8.gz
-man/man8/btraceback.8.gz
 sbin/bareos-dbcheck
-sbin/bareos-dbcopy
 sbin/bareos-dir
 sbin/bareos-sd
 sbin/bcopy

@@ -1,7 +1,7 @@
---- core/CMakeLists.txt	2020-12-16 02:46:16.000000000 -0500
-+++ core/CMakeLists.txt	2020-12-26 21:28:44.141734000 -0500
-@@ -256,7 +256,9 @@
-   set(PSCMD "ps -ax -o pid,command")
+--- core/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
++++ core/CMakeLists.txt	2021-12-21 20:45:08.474921000 -0500
+@@ -283,7 +283,9 @@
+   set(HAVE_FREEBSD_OS 1)
    include_directories(/usr/local/include)
    link_directories(/usr/local/lib)
 -  link_libraries(intl)
@@ -11,29 +11,27 @@
  endif()
  
  if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-@@ -323,8 +325,11 @@
+@@ -347,7 +349,9 @@
    add_definitions("-D_FILE_OFFSET_BITS=64")
  endif()
  
 -include(FindIntl)
- 
 +IF(nls)
-+  INCLUDE(FindIntl)
++  include(FindIntl)
 +ENDIF()
-+
+ 
  if(developer)
    add_definitions("-DDEVELOPER=1")
- endif()
-@@ -347,7 +352,7 @@
- if(NOT client-only)
+@@ -365,7 +369,7 @@
+ include(BareosFindStaticCodeAnalysisTools)
+ 
+ if(NOT client-only
+-   AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS"
++   AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS|FreeBSD"
+    AND CMAKE_SIZEOF_VOID_P EQUAL 8
+ )
    # droplet does not build on solaris because of sys/cdefs.h: No such file or
-   # directory
--  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
-+  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS|FreeBSD")
-     if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/droplet/CMakeLists.txt)
-       message(
-         FATAL_ERROR
-@@ -771,7 +776,6 @@
+@@ -779,7 +783,6 @@
  
  add_subdirectory(scripts)
  add_subdirectory(manpages)

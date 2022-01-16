@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	20.0.3
+DISTVERSION=	21.0.0
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -12,7 +12,7 @@ COMMENT?=	Backup archiving recovery open sourced (server)
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bareos19-server bareos18-server bareos17-server
+CONFLICTS?=	bareos20-server bareos19-server bareos18-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
@@ -48,7 +48,7 @@ OPTIONS_GROUP=	BACKENDS
 OPTIONS_GROUP_BACKENDS=	CEPHFS GFAPI RADOS
 OPTIONS_DEFINE=		MTX PYTHON LMDB NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	LMDB PGSQL SCSICRYPTO
-OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
+OPTIONS_SINGLE_DATABASE=	PGSQL
 OPTIONS_SINGLE+=		DATABASE
 BACKENDS_DESC=		Storage backends
 DATABASE_DESC=		Database support
@@ -170,10 +170,6 @@ CMAKE_ARGS+=	-Dbuild-dird=ON \
 		-Dbuild_client_only=OFF
 # Server default database
 
-MYSQL_CMAKE_ON=		-Dmysql=ON
-MYSQL_USES=	mysql
-SQLITE3_CMAKE_ON=	-Dsqlite3=ON
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 PGSQL_CMAKE_ON=		-Dpostgresql=ON
 PGSQL_USES=	pgsql
 
@@ -206,7 +202,7 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '120,123d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
 	@${REINPLACE_CMD}  '45d' ${WRKSRC}/core/src/CMakeLists.txt
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
@@ -232,7 +228,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample
 	${CHMOD} o+x ${STAGEDIR}${PREFIX}/bin/bsmtp
 	${MV} ${STAGEDIR}${ETCDIR}/mtx-changer.conf ${STAGEDIR}${ETCDIR}/mtx-changer.conf.sample
-	${MV} ${STAGEDIR}${ETCDIR}/bareos-regress.conf ${STAGEDIR}${ETCDIR}//bareos-regress.conf.sample
+#	${MV} ${STAGEDIR}${ETCDIR}/bareos-regress.conf ${STAGEDIR}${ETCDIR}//bareos-regress.conf.sample
 .endif
 	@${MKDIR} ${STAGEDIR}/var/run/bareos
 .endif

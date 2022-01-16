@@ -1,14 +1,16 @@
---- core/manpages/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
-+++ core/manpages/CMakeLists.txt	2020-01-31 15:33:19.205416000 -0500
-@@ -17,9 +17,11 @@
- #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+--- core/manpages/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
++++ core/manpages/CMakeLists.txt	2021-12-22 00:19:52.189513000 -0500
+@@ -18,9 +18,11 @@
  #   02110-1301, USA.
+ message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
  
+-set(MAN1 bconsole.1 bsmtp.1)
 +if(client-only)
- set(MAN1 bconsole.1)
++  set(MAN1 bconsole.1 bsmtp.1)
  
- set(MAN8 bareos-fd.8 bareos.8)
+-set(MAN8 bareos-fd.8 bareos.8 btraceback.8)
++  set(MAN8 bareos-fd.8 bareos.8 btraceback.8)
 +endif()
  
  if(NOT client-only)
-   set(MAN1-server
+   set(MAN1-server bareos-tray-monitor.1 bwild.1 bregex.1)

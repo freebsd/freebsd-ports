@@ -1,8 +1,8 @@
---- core/scripts/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
-+++ core/scripts/CMakeLists.txt	2020-01-31 15:37:16.832224000 -0500
-@@ -17,33 +17,35 @@
- #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+--- core/scripts/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
++++ core/scripts/CMakeLists.txt	2021-12-22 00:23:34.270541000 -0500
+@@ -18,34 +18,36 @@
  #   02110-1301, USA.
+ message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
  
 -install(
 -  FILES bareos btraceback
@@ -11,12 +11,12 @@
 -  DESTINATION "${sbindir}"
 -)
 +if(client-only)
-+   install(
-+     FILES bareos btraceback
-+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
-+                 WORLD_READ WORLD_EXECUTE
-+     DESTINATION "${sbindir}"
-+   )
++  install(
++    FILES bareos btraceback
++    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                WORLD_READ WORLD_EXECUTE
++    DESTINATION "${sbindir}"
++  )
  
 -install(
 -  FILES bareos-ctl-fd
@@ -25,35 +25,40 @@
 -  DESTINATION "${scriptdir}"
 -  COMPONENT filedaemon
 -)
-+   install(
-+     FILES bareos-ctl-fd
-+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
-+                 WORLD_READ WORLD_EXECUTE
-+     DESTINATION "${scriptdir}"
-+     COMPONENT filedaemon
-+   )
++  install(
++    FILES bareos-ctl-fd
++    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                WORLD_READ WORLD_EXECUTE
++    DESTINATION "${scriptdir}"
++    COMPONENT filedaemon
++  )
  
 -install(
--  FILES bareos btraceback.gdb btraceback.dbx btraceback.mdb bareos-config
--        bareos-config-lib.sh bareos-ctl-funcs
+-  FILES bareos bareos-config
 -  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
 -              WORLD_READ WORLD_EXECUTE
 -  DESTINATION "${scriptdir}"
 -)
-+   install(
-+     FILES bareos btraceback.gdb btraceback.dbx btraceback.mdb bareos-config
-+           bareos-config-lib.sh bareos-ctl-funcs
-+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
-+                 WORLD_READ WORLD_EXECUTE
-+     DESTINATION "${scriptdir}"
-+   )
++  install(
++    FILES bareos bareos-config
++    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                WORLD_READ WORLD_EXECUTE
++    DESTINATION "${scriptdir}"
++  )
+ 
+-install(
+-  FILES bareos-config-lib.sh bareos-ctl-funcs btraceback.gdb btraceback.dbx
+-        btraceback.mdb
+-  PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+-  DESTINATION "${scriptdir}"
+-)
++  install(
++    FILES bareos-config-lib.sh bareos-ctl-funcs btraceback.gdb btraceback.dbx
++          btraceback.mdb
++    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
++    DESTINATION "${scriptdir}"
++  )
 +endif()
  
  if(NOT client-only)
    install(
-     FILES mtx-changer disk-changer bareos-explorer bareos-glusterfind-wrapper
--          bareos-ctl-dir bareos-ctl-sd bareos-ctl-funcs
-+          bareos-ctl-dir bareos-ctl-sd
-     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
-                 WORLD_READ WORLD_EXECUTE
-     DESTINATION "${scriptdir}"

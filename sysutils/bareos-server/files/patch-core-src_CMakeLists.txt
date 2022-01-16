@@ -1,5 +1,5 @@
---- core/src/CMakeLists.txt	2020-12-16 02:46:16.000000000 -0500
-+++ core/src/CMakeLists.txt	2020-12-27 00:51:12.356192000 -0500
+--- core/src/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
++++ core/src/CMakeLists.txt	2022-01-15 09:38:46.009798000 -0500
 @@ -18,7 +18,9 @@
  #   02110-1301, USA.
  message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
@@ -11,15 +11,20 @@
  
  if(NOT client-only)
    add_subdirectory(tools)
-@@ -43,14 +45,18 @@
-   add_subdirectory(tests)
+@@ -47,17 +49,21 @@
+   add_subdirectory(benchmarks)
  endif()
  
--add_subdirectory(console)
+-if(ENABLE_BCONSOLE)
+-  add_subdirectory(console)
+-endif()
++if(client-only)
++  if(ENABLE_BCONSOLE)
++    add_subdirectory(console)
++  endif()
+ 
 -if(${HAVE_LMDB})
 -  add_subdirectory(lmdb)
-+if(client-only)
-+  add_subdirectory(console)
 +  if(${HAVE_LMDB})
 +    add_subdirectory(lmdb)
 +  endif()
