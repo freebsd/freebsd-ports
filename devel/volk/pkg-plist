@@ -37,6 +37,7 @@ include/volk/volk_32f_binary_slicer_32i.h
 include/volk/volk_32f_binary_slicer_8i.h
 include/volk/volk_32f_convert_64f.h
 include/volk/volk_32f_cos_32f.h
+include/volk/volk_32f_exp_32f.h
 include/volk/volk_32f_expfast_32f.h
 include/volk/volk_32f_index_max_16u.h
 include/volk/volk_32f_index_max_32u.h
@@ -44,6 +45,7 @@ include/volk/volk_32f_invsqrt_32f.h
 include/volk/volk_32f_log2_32f.h
 include/volk/volk_32f_null_32f.h
 include/volk/volk_32f_s32f_32f_fm_detect_32f.h
+include/volk/volk_32f_s32f_add_32f.h
 include/volk/volk_32f_s32f_calc_spectral_noise_floor_32f.h
 include/volk/volk_32f_s32f_convert_16i.h
 include/volk/volk_32f_s32f_convert_32i.h
@@ -75,6 +77,7 @@ include/volk/volk_32f_x3_sum_of_poly_32f.h
 include/volk/volk_32fc_32f_add_32fc.h
 include/volk/volk_32fc_32f_dot_prod_32fc.h
 include/volk/volk_32fc_32f_multiply_32fc.h
+include/volk/volk_32fc_accumulator_s32fc.h
 include/volk/volk_32fc_conjugate_32fc.h
 include/volk/volk_32fc_convert_16ic.h
 include/volk/volk_32fc_deinterleave_32f_x2.h
@@ -90,6 +93,7 @@ include/volk/volk_32fc_s32f_atan2_32f.h
 include/volk/volk_32fc_s32f_deinterleave_real_16i.h
 include/volk/volk_32fc_s32f_magnitude_16i.h
 include/volk/volk_32fc_s32f_power_32fc.h
+include/volk/volk_32fc_s32f_power_spectral_densitypuppet_32f.h
 include/volk/volk_32fc_s32f_power_spectrum_32f.h
 include/volk/volk_32fc_s32f_x2_power_spectral_density_32f.h
 include/volk/volk_32fc_s32fc_multiply_32fc.h
@@ -154,7 +158,8 @@ lib/cmake/volk/VolkConfigVersion.cmake
 lib/cmake/volk/VolkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/volk/VolkTargets.cmake
 lib/libvolk.so
-lib/libvolk.so.2.2.1
+lib/libvolk.so.2.5
+lib/libvolk.so.2.5.0
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.py
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.pyc
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.pyo
