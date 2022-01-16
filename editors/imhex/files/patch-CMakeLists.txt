@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2022-01-16 06:54:48 UTC
++++ CMakeLists.txt
+@@ -20,7 +20,6 @@ set(PLUGINS
+ detectOS()
+ detectArch()
+ setDefaultBuiltTypeIfUnset()
+-detectBadClone()
+ 
+ # Add bundled dependencies
+ add_subdirectory(plugins/libimhex)

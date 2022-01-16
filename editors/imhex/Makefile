@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -16,7 +16,8 @@ NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	__uint128_t and __int128_t are not supported
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
-		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX}
+		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
+		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json \
@@ -39,9 +40,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	WerWolv
 GH_PROJECT=	ImHex
 GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledialog \
-		fmtlib:fmt:${GH_TAG_FMT}:fmt
+		fmtlib:fmt:${GH_TAG_FMT}:fmt \
+		WerWolv:libromfs:${GH_TAG_LIBROMFS}:libromfs
 GH_TAG_FMT=	d141cdb
 GH_TAG_NATIVEFILEDIALOG=	322d1bc
+GH_TAG_LIBROMFS=	0842d22
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CAPSTONE=ON -DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_YARA=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON
 
@@ -53,6 +56,7 @@ NLS_USES=	gettext
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/xdg.hpp ${WRKSRC}/external/xdgpp
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/external/fmt
+	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/external/libromfs
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/external/nativefiledialog
 
 post-install-DOCS-on:
