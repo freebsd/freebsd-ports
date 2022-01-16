@@ -9,19 +9,15 @@ COMMENT=	C++ header-only PEG (Parsing Expression Grammars) library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yhirose
 
+CMAKE_TESTING_ON=	FREEBSD_BUILD_TESTS
+
 NO_ARCH=	yes
 
 PLIST_FILES=	include/peglib.h
-
-do-test: # testsuite segvs in the middle: https://github.com/yhirose/cpp-peglib/issues/189
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFREEBSD_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		test/test-main
 
 .include <bsd.port.mk>
