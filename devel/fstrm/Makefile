@@ -1,9 +1,10 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 
 PORTNAME=		fstrm
-PORTVERSION=		0.6.1
-DISTVERSIONPREFIX=	v
+DISTVERSION=		0.6.1
 CATEGORIES=		devel
+MASTER_SITES=		https://dl.farsightsecurity.com/dist/${PORTNAME}/ \
+			https://dns.company/downloads/${PORTNAME}/
 
 MAINTAINER=		freebsd@dns.company
 COMMENT=		Implementation of the Frame Streams data transport protocol in C
@@ -13,10 +14,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 
 LIB_DEPENDS=		libevent.so:devel/libevent
 
-USES=			autoreconf gmake libtool pkgconfig
-USE_GITHUB=		yes
-USE_LDCONFIG=		yes
-GH_ACCOUNT=		farsightsec
+USES=			gmake libtool pkgconfig
 
 GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install-strip
