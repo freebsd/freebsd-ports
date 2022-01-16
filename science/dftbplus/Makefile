@@ -1,5 +1,6 @@
 PORTNAME=	dftbplus
 DISTVERSION=	21.2
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:gcc-c++11-lib fortran python:build shebangfix
 USE_LDCONFIG=	yes
@@ -22,7 +24,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/dptools/bin/* tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
 		external/fypp/bin/fypp utils/test/testlist_to_fypp \
 		test/app/phonons/bin/tagdiff test/app/dftb+/bin/tagdiff test/app/dftb+/bin/tagdiff
-SHEBANG_GLOB=	*.py
+SHEBANG_GLOB=	*.py *.sh
 
 USE_GITHUB=	yes
 GH_TUPLE=	\
@@ -31,9 +33,9 @@ GH_TUPLE=	\
 		awvwgk:tblite:dfc761d:awvwgk_tblite/external/tblite/origin \
 		dftbplus:mpifx:8200a5e:mpifx/external/mpifx/origin \
 		dftbplus:scalapackfx:0d5750d:scalapackfx/external/scalapackfx/origin \
-		dftbplus:dftd3-lib:00504a9:dftd3/external/dftd3/origin \
-		dftbplus:testparams:1601609:testparams/external/slakos/origin \
+		dftbplus:testparams:cd7536f:testparams/external/slakos/origin \
 		dftd4:dftd4:1189af7:dftd4_dftd4/external/dftd4/origin \
+		grimme-lab:gbsa-parameters:6836c4d:grimme_lab_gbsa/external/gbsa/origin \
 		grimme-lab:mctc-lib:a2f70b0:grimme_lab_mctc_lib/external/mctc-lib/origin \
 		grimme-lab:mstore:974fb59:grimme_lab_mstore/external/mstore/origin \
 		grimme-lab:multicharge:dde0d67:grimme_lab_multicharge/external/multicharge/origin \
@@ -42,7 +44,7 @@ GH_TUPLE=	\
 		rk-lindsey:chimes_calculator:98e3653:rk_lindsey_chimes_calculator/external/chimes/origin \
 		toml-f:toml-f:f066ec6:toml_f_toml_f/external/toml-f/origin
 
-TEST_TARGET=	test # some tests are known to fail: https://github.com/dftbplus/dftbplus/issues/932
+TEST_TARGET=	test
 
 CMAKE_ON=	BLAS_DETECTION BUILD_SHARED_LIBS WITH_API ENABLE_DYNAMIC_LOADING
 CMAKE_ARGS=	-DLAPACK_LIBRARY=lapack -DSCALAPACK_LIBRARY=scalapack
