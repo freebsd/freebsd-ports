@@ -142,6 +142,7 @@ GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=		gnutls
 GSETTINGS_USE=			GNOME=glib20
 GSETTINGS_CONFIGURE_WITH=	gsettings
+GSETTINGS_VARS=			GLIB_SCHEMAS+=org.gnu.emacs.defaults.gschema.xml
 GTK2_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 				libfreetype.so:print/freetype2
 GTK2_USE=			GNOME=cairo,gtk20
