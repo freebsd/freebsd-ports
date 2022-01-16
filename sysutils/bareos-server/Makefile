@@ -228,7 +228,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample
 	${CHMOD} o+x ${STAGEDIR}${PREFIX}/bin/bsmtp
 	${MV} ${STAGEDIR}${ETCDIR}/mtx-changer.conf ${STAGEDIR}${ETCDIR}/mtx-changer.conf.sample
-#	${MV} ${STAGEDIR}${ETCDIR}/bareos-regress.conf ${STAGEDIR}${ETCDIR}//bareos-regress.conf.sample
 .endif
 	@${MKDIR} ${STAGEDIR}/var/run/bareos
 .endif
