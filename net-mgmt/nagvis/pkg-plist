@@ -678,10 +678,6 @@
 %%WWWDIR%%/share/userfiles/templates/default.map.html
 %%WWWDIR%%/share/userfiles/templates/default.overview.html
 %%WWWDIR%%/share/userfiles/templates/default.url.html
-%%WWWDIR%%/share/userfiles/templates/jquery-3.2.1.min.js
-%%WWWDIR%%/share/userfiles/templates/on-demand-filter.header.html
-%%WWWDIR%%/share/userfiles/templates/select2.min.css
-%%WWWDIR%%/share/userfiles/templates/select2.min.js
 @dir %%WWWDIR%%/etc/automaps
 @dir %%WWWDIR%%/share/userfiles/images/gadgets
 @dir %%WWWDIR%%/share/userfiles/styles
