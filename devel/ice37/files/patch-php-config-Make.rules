@@ -1,6 +1,6 @@
---- php/config/Make.rules.orig	2018-04-20 15:02:08 UTC
+--- php/config/Make.rules.orig	2021-06-21 14:44:58 UTC
 +++ php/config/Make.rules
-@@ -23,6 +23,10 @@ USE_NAMESPACES  ?= yes
+@@ -18,6 +18,10 @@ USE_NAMESPACES  ?= yes
  # Don't change anything below this line!
  # ----------------------------------------------------------------------
  

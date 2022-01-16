@@ -1,6 +1,6 @@
---- cpp/test/Ice/metrics/AllTests.cpp.orig	2018-04-20 15:02:08 UTC
+--- cpp/test/Ice/metrics/AllTests.cpp.orig	2021-06-21 14:44:58 UTC
 +++ cpp/test/Ice/metrics/AllTests.cpp
-@@ -712,9 +712,12 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -858,9 +858,12 @@ allTests(Test::TestHelper* helper, const CommunicatorO
          testAttribute(clientMetrics, clientProps, update.get(), "Connection", "incoming", "false");
          testAttribute(clientMetrics, clientProps, update.get(), "Connection", "adapterName", "");
          testAttribute(clientMetrics, clientProps, update.get(), "Connection", "connectionId", "Con1");
@@ -16,7 +16,7 @@
          testAttribute(clientMetrics, clientProps, update.get(), "Connection", "remotePort", port);
          testAttribute(clientMetrics, clientProps, update.get(), "Connection", "mcastHost", "");
          testAttribute(clientMetrics, clientProps, update.get(), "Connection", "mcastPort", "");
-@@ -803,7 +806,7 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -949,7 +952,7 @@ allTests(Test::TestHelper* helper, const CommunicatorO
          bool dnsException = false;
          try
          {
@@ -25,7 +25,7 @@
              test(false);
          }
          catch(const Ice::DNSException&)
-@@ -816,7 +819,7 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -962,7 +965,7 @@ allTests(Test::TestHelper* helper, const CommunicatorO
          }
          test(clientMetrics->getMetricsView("View", timestamp)["EndpointLookup"].size() == 2);
          m1 = clientMetrics->getMetricsView("View", timestamp)["EndpointLookup"][1];
@@ -34,7 +34,7 @@
               (!dnsException || m1->failures == 2));
          if(dnsException)
          {
-@@ -947,9 +950,11 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -1093,9 +1096,11 @@ allTests(Test::TestHelper* helper, const CommunicatorO
          testAttribute(serverMetrics, serverProps, update.get(), "Dispatch", "incoming", "true", op);
          testAttribute(serverMetrics, serverProps, update.get(), "Dispatch", "adapterName", "TestAdapter", op);
          testAttribute(serverMetrics, serverProps, update.get(), "Dispatch", "connectionId", "", op);

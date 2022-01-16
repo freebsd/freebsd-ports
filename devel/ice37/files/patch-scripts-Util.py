@@ -1,6 +1,6 @@
---- scripts/Util.py.orig	2019-02-11 16:48:19.076747000 +0100
-+++ scripts/Util.py	2019-02-11 19:16:32.768690000 +0100
-@@ -232,7 +232,7 @@
+--- scripts/Util.py.orig	2022-01-15 23:22:20 UTC
++++ scripts/Util.py
+@@ -263,7 +263,7 @@ class Platform(object):
          elif Mapping.getByName("cpp"):
              cwd = Mapping.getByName("cpp").getPath()
  
@@ -9,14 +9,16 @@
          for l in output.split("\n"):
              match = re.match(r'^.*:.*: (.*) = (.*)', l)
              if match and match.group(1):
-@@ -304,6 +304,27 @@
-     def hasOpenSSL(self):
-         return True
+@@ -348,6 +348,29 @@ class AIX(Platform):
+     def getInstallDir(self):
+         return "/opt/freeware"
  
 +class FreeBSD(Platform):
 +
 +    def __init__(self):
 +        self.nugetPackageCache = None
++        self._hasNodeJS = None
++        self._hasSwift = None
 +
 +    def hasOpenSSL(self):
 +        return True
@@ -37,24 +39,16 @@
  class Linux(Platform):
  
      def __init__(self):
-@@ -1374,13 +1402,13 @@
-             if os.path.exists(translator):
-                 return translator + " " + args if args else translator
-             elif isinstance(platform, Windows):
--                return os.path.join(os.path.dirname(sys.executable), "Scripts", "slice2py.exe")
-+                return os.path.join(os.path.dirname(sys.executable), "Scripts", "slice2py.exe") + " " + args if args else translator
-             elif os.path.exists("/usr/local/bin/slice2py"):
--                return "/usr/local/bin/slice2py"
-+                return "/usr/local/bin/slice2py" + " " + args if args else translator
-             else:
-                 import slice2py
-                 return sys.executable + " " + os.path.normpath(
--                            os.path.join(slice2py.__file__, "..", "..", "..", "..", "bin", "slice2py"))
-+                            os.path.join(slice2py.__file__, "..", "..", "..", "..", "bin", "slice2py")) + " " + args if args else translator
-         else:
-             return Process.getCommandLine(self, current, args)
- 
-@@ -3786,6 +3807,8 @@
+@@ -1443,7 +1466,7 @@
+         # Look for slice2py installed by pip if not found in the bin directory
+         #
+         if self.exe == "slice2py":
+-            translator = self.getMapping(current).getCommandLine(current, self, self.getExe(current), "")
++            translator = self.getMapping(current).getCommandLine(current, self, "%%LOCALBASE%%/bin/slice2py", "")
+             if not os.path.exists(translator):
+                 translator = sys.executable + " -m slice2py"
+             return (translator + " " + args).strip()
+@@ -4059,6 +4082,8 @@ if sys.platform == "darwin":
      platform = Darwin()
  elif sys.platform.startswith("aix"):
      platform = AIX()

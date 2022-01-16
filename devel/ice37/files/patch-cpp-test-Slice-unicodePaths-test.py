@@ -1,6 +1,6 @@
---- cpp/test/Slice/unicodePaths/test.py.orig	2018-08-27 01:10:47 UTC
+--- cpp/test/Slice/unicodePaths/test.py.orig	2022-01-15 23:22:20 UTC
 +++ cpp/test/Slice/unicodePaths/test.py
-@@ -14,7 +14,7 @@ class SliceUnicodePathsTestCase(ClientTe
+@@ -9,7 +9,7 @@ class SliceUnicodePathsTestCase(ClientTestCase):
  
      def runClientSide(self, current):
  

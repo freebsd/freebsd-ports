@@ -1,6 +1,6 @@
---- python/modules/IcePy/Makefile.mk.orig	2018-04-20 15:02:08 UTC
+--- python/modules/IcePy/Makefile.mk.orig	2021-06-21 14:44:58 UTC
 +++ python/modules/IcePy/Makefile.mk
-@@ -14,8 +14,8 @@ IcePy_targetname        := IcePy
+@@ -9,8 +9,8 @@ IcePy_targetname        := IcePy
  IcePy_targetdir         := $(lang_srcdir)/python
  IcePy_installdir        := $(install_pythondir)
  IcePy_cppflags          := -I$(project) $(ice_cpp_cppflags) -I$(top_srcdir)/cpp/src $(python_cppflags)

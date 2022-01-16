@@ -1,6 +1,6 @@
---- cpp/test/include/TestHelper.h.orig	2019-02-11 14:02:41.681160000 +0100
-+++ cpp/test/include/TestHelper.h	2019-02-11 16:04:38.557681000 +0100
-@@ -199,4 +199,20 @@
+--- cpp/test/include/TestHelper.h.orig	2021-06-21 14:44:58 UTC
++++ cpp/test/include/TestHelper.h
+@@ -199,4 +199,20 @@ runTest(int argc, char* argv[])
  
  #define test(ex) ((ex) ? ((void)0) : ::Test::testFailed(#ex, __FILE__, __LINE__))
  

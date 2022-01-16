@@ -1,6 +1,6 @@
---- php/Makefile.orig	2018-04-20 15:02:08 UTC
+--- php/Makefile.orig	2021-06-21 14:44:58 UTC
 +++ php/Makefile
-@@ -15,8 +15,8 @@ include $(top_srcdir)/config/Make.rules
+@@ -10,8 +10,8 @@ include $(top_srcdir)/config/Make.rules
  #
  # Load C++ dependencies
  #
@@ -11,7 +11,7 @@
  
  #
  # Load php rules after loading C++ dependencies
-@@ -44,11 +44,11 @@ $(call make-projects,$(projects))
+@@ -39,11 +39,11 @@ $(call make-projects,$(projects))
  
  install:: | $(DESTDIR)$(install_phpdir)
  	$(E) "Installing generated code"

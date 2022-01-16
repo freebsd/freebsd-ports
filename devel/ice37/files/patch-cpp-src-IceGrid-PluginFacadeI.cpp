@@ -1,6 +1,6 @@
---- cpp/src/IceGrid/PluginFacadeI.cpp.orig	2018-04-20 15:02:08 UTC
+--- cpp/src/IceGrid/PluginFacadeI.cpp.orig	2021-06-21 14:44:58 UTC
 +++ cpp/src/IceGrid/PluginFacadeI.cpp
-@@ -34,10 +34,16 @@ public:
+@@ -29,10 +29,16 @@ class Init (public)
          IceGrid::setRegistryPluginFacade(new RegistryPluginFacadeI);
      }
  

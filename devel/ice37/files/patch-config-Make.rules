@@ -1,6 +1,6 @@
---- config/Make.rules.orig	2018-04-20 15:02:08 UTC
+--- config/Make.rules.orig	2021-06-21 14:44:58 UTC
 +++ config/Make.rules
-@@ -150,7 +150,7 @@ slicedir                = $(if $(use-bin
+@@ -151,7 +151,7 @@ slicedir                = $(if $(use-bin-dist),$(ice_s
  sdkdir                  = $(if $(use-bin-dist),$(ice_home)/sdk,$(top_srcdir)/sdk)
  srcdir                  = $(call mappingdir,$(or $1,$(currentdir)),src)
  

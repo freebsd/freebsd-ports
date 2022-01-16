@@ -1,7 +1,7 @@
---- cpp/test/Glacier2/ssl/Server.cpp.orig	2018-04-20 15:02:08 UTC
+--- cpp/test/Glacier2/ssl/Server.cpp.orig	2021-06-21 14:44:58 UTC
 +++ cpp/test/Glacier2/ssl/Server.cpp
-@@ -35,9 +35,9 @@ void testContext(bool ssl, const Ice::Co
-         port << getTestPort(communicator->getProperties(), 1);
+@@ -31,9 +31,9 @@ void testContext(bool ssl, const Ice::CommunicatorPtr&
+         port << TestHelper::getTestPort(communicator->getProperties(), 1);
          test(ctx["_con.localPort"] == port.str());
      }
 -    test(ctx["_con.localAddress"] == "127.0.0.1");
@@ -12,7 +12,7 @@
  }
  
  }
-@@ -129,8 +129,8 @@ public:
+@@ -125,8 +125,8 @@ class SSLSessionManagerI : public Glacier2::SSLSession
      {
          testContext(true, current.adapter->getCommunicator(), current.ctx);
  

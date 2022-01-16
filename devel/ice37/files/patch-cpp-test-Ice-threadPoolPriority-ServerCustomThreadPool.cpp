@@ -1,6 +1,6 @@
---- cpp/test/Ice/threadPoolPriority/ServerCustomThreadPool.cpp.orig	2018-04-20 15:02:08 UTC
+--- cpp/test/Ice/threadPoolPriority/ServerCustomThreadPool.cpp.orig	2021-06-21 14:44:58 UTC
 +++ cpp/test/Ice/threadPoolPriority/ServerCustomThreadPool.cpp
-@@ -48,7 +48,7 @@ run(int, char**, const Ice::Communicator
+@@ -51,7 +51,7 @@ ServerCustomThreadPool::run(int argc, char** argv)
      communicator->getProperties()->setProperty("TestAdapter.ThreadPool.ThreadPriority", "1");
  #else
      communicator->getProperties()->setProperty("Ice.ThreadPool.Server.ThreadPriority", "10");

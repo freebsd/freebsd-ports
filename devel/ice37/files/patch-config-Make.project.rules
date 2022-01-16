@@ -1,14 +1,14 @@
---- config/Make.project.rules.orig	2018-04-20 15:02:08 UTC
+--- config/Make.project.rules.orig	2021-06-21 14:44:58 UTC
 +++ config/Make.project.rules
-@@ -48,17 +48,16 @@ component-configs       = $(call unique,
+@@ -43,17 +43,16 @@ component-configs       = $(call unique,$(foreach c,$(
  #
  # Some variables for utilities
  #
--INSTALL                 = install -p
--MV                      = mv -f
--RM                      = rm -f
--MKDIR                   = mkdir
--CHMOD                   = chmod
+-INSTALL                 ?= install -p
+-MV                      ?= mv -f
+-RM                      ?= rm -f
+-MKDIR                   ?= mkdir
+-CHMOD                   ?= chmod
 +MV                      = /bin/mv
 +RM                      = /bin/rm -f
 +MKDIR                   = /bin/mkdir -p
@@ -23,7 +23,7 @@
  
  #
  # $(call install-data-files,$1=files,$2=$srcdir,$3=$destdir,$4=target,$5=text-output)
-@@ -218,7 +217,7 @@ endef
+@@ -213,7 +212,7 @@ endef
  define install-static-library
  $(DESTDIR)$5/$(call mklibname,$1,$3,$4): $2/$(call mklibname,$1,$3,$4) | $(DESTDIR)$5
  	$(E) "Installing $$@"
@@ -32,7 +32,7 @@
  endef
  
  # $(call get-static-library-targets,$1=libname,$2=libdir,$3=version,$4=soversion,$5=devinstall)
-@@ -254,8 +253,7 @@ define install-shared-library
+@@ -249,8 +248,7 @@ define install-shared-library
  
  $(DESTDIR)$5/$(call mkshlibfilename,$1,$3,$4): $2/$(call mkshlibfilename,$1,$3,$4) | $(DESTDIR)$5
  	$(E) "Installing $$@"
@@ -42,7 +42,7 @@
  
  ifneq ($(and $4,$(filter-out undefined,$(origin mksoname))),)
  $(DESTDIR)$5/$(call mksoname,$1,$3,$4): $(DESTDIR)$5/$(call mkshlibfilename,$1,$3,$4) \
-@@ -295,8 +293,7 @@ endef
+@@ -289,8 +287,7 @@ endef
  define install-shared-module
  $(DESTDIR)$5/$1: $2/$1 | $(DESTDIR)$5
  	$(E) "Installing $$@"
@@ -52,7 +52,7 @@
  endef
  
  # $(call get-shared-module-targets,$1=libname,$2=libdir,$3=version,$4=soversion,$5=devinstall)
-@@ -320,8 +317,7 @@ endef
+@@ -314,8 +311,7 @@ endef
  define install-program
  $(DESTDIR)$5/$1$(EXE_EXT): $2/$1$(EXE_EXT) | $(DESTDIR)$5
  	$(E) "Installing $$@"

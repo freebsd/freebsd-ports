@@ -1,6 +1,6 @@
---- cpp/test/Ice/info/AllTests.cpp.orig	2018-04-20 15:02:08 UTC
+--- cpp/test/Ice/info/AllTests.cpp.orig	2021-06-21 14:44:58 UTC
 +++ cpp/test/Ice/info/AllTests.cpp
-@@ -129,13 +129,13 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -125,13 +125,13 @@ allTests(Test::TestHelper* helper)
              test(ipEndpoint);
              test(ipEndpoint->type() == Ice::TCPEndpointType || ipEndpoint->type() == Ice::SSLEndpointType ||
                  ipEndpoint->type() == Ice::WSEndpointType || ipEndpoint->type() == Ice::WSSEndpointType);
@@ -16,7 +16,7 @@
              test(udpEndpoint->datagram());
              test(udpEndpoint->port > 0);
  
-@@ -218,8 +218,8 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -214,8 +214,8 @@ allTests(Test::TestHelper* helper)
          test(info->remotePort == port);
          if(defaultHost == "127.0.0.1")
          {
@@ -27,7 +27,7 @@
          }
  #if !defined(ICE_OS_UWP)
          test(info->rcvSize >= 1024);
-@@ -279,8 +279,8 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -275,8 +275,8 @@ allTests(Test::TestHelper* helper)
          test(udpinfo->remotePort == port);
          if(defaultHost == "127.0.0.1")
          {

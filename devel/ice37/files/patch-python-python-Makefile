@@ -1,6 +1,6 @@
---- python/python/Makefile.orig	2018-04-20 15:02:08 UTC
+--- python/python/Makefile.orig	2021-06-21 14:44:58 UTC
 +++ python/python/Makefile
-@@ -16,7 +16,7 @@ include $(lang_srcdir)/config/Make.rules
+@@ -11,7 +11,7 @@ include $(lang_srcdir)/config/Make.rules
  #
  # Load C++ dependencies
  #
@@ -9,7 +9,7 @@
  
  .NOTPARALLEL:
  
-@@ -35,12 +35,12 @@ $(eval $(call make-python-slice,$(sliced
+@@ -30,12 +30,12 @@ $(eval $(call make-python-slice,$(slicedir),$(lang_src
  
  install:: | $(DESTDIR)$(install_pythondir)/Ice
  	$(E) "Installing generated code"
@@ -17,7 +17,7 @@
 +	$(Q)%%INSTALL_DATA%% -m 644 Ice/__init__.py $(DESTDIR)$(install_pythondir)/Ice
  # Ice/Future requires python >= 3.5
  ifeq ($(shell $(PYTHON) -c "print(1 if $(python-version) >= 3.5 else 0)"),1)
--	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(install_pythondir)/Ice/Py3
+-	$(Q)$(MKDIR) -p -m 755 $(DESTDIR)$(install_pythondir)/Ice/Py3
 -	$(Q)$(INSTALL) -m 644 Ice/Py3/IceFuture.py $(DESTDIR)$(install_pythondir)/Ice/Py3/
 +	$(Q)%%MKDIR%% $(DESTDIR)$(install_pythondir)/Ice/Py3
 +	$(Q)%%INSTALL_DATA%% -m 644 Ice/Py3/IceFuture.py $(DESTDIR)$(install_pythondir)/Ice/Py3/

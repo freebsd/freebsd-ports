@@ -1,6 +1,6 @@
---- cpp/test/Ice/threadPoolPriority/AllTests.cpp.orig	2018-04-20 15:02:08 UTC
+--- cpp/test/Ice/threadPoolPriority/AllTests.cpp.orig	2021-06-21 14:44:58 UTC
 +++ cpp/test/Ice/threadPoolPriority/AllTests.cpp
-@@ -30,7 +30,7 @@ allTests(const Ice::CommunicatorPtr& com
+@@ -26,7 +26,7 @@ allTests(Test::TestHelper* helper)
  #ifdef _WIN32
          test(1 == priority->getPriority());
  #else
