@@ -1,5 +1,5 @@
 PORTNAME=	hwloc
-DISTVERSION=	2.5.0
+DISTVERSION=	2.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
