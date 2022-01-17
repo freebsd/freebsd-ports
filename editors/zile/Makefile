@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libgee-0.8.so:devel/libgee
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:misc/help2man
 
-USES=		gmake ncurses perl5 pkgconfig compiler:c++11-lang
+USES=		gmake gnome ncurses perl5 pkgconfig compiler:c++11-lang
 USE_PERL5=	build
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

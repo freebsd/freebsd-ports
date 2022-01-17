@@ -310,7 +310,7 @@ SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.27:vod
 VOD_USE=		GNOME=libxml2
-VOD_USES=		iconv
+VOD_USES=		gnome iconv
 VOD_VARS=		DSO_EXTMODS+=vod
 VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-vod-module-config
 
