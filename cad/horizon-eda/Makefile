@@ -31,8 +31,6 @@ GH_PROJECT=	horizon
 
 MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 
-INSTALLS_ICONS=	yes
-
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 LLVM_VER=	12 # workaround for bug#253551

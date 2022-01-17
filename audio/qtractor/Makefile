@@ -39,8 +39,6 @@ USE_QT=		core gui widgets xml buildtools_build linguisttools_build qmake_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${DISTVERSION}
 
-INSTALLS_ICONS=	yes
-
 post-patch:
 	@${REINPLACE_CMD} \
 		's|the ALSA Sequencer kernel module (snd-seq-midi)|alsa-seq-server (installed by audio/alsa-seq-server)|' \
