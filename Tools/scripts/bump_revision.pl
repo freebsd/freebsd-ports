@@ -20,10 +20,13 @@ use strict;
 use Getopt::Std;
 use Carp 'verbose';
 use Cwd;
-use Data::Dumper;
 use File::Basename;
+use Data::Dumper;
+$Data::Dumper::Indent = 1; # simple indent
+$Data::Dumper::Purity = 1; # Perl syntax
+my $debug = 0;
 
-use vars qw/$opt_n $opt_f $opt_i $opt_u $opt_l $opt_g $opt_p/;
+use vars qw/$opt_n $opt_f $opt_i $opt_u $opt_l $opt_g $opt_p $opt_h/;
 
 # launder environment
 delete @ENV{'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};
@@ -107,7 +110,9 @@ my ($portsdir, $INDEX);
 {
     $opt_i = "";
     $opt_u = "";
-    getopts("fgi:lnu:p:") or die "Aborting";
+    getopts("fghi:lnu:p:") or die "Aborting";
+    usage() if $opt_h;
+    if ($ENV{'DEBUG'}) { $debug = $ENV{'DEBUG'}; }
     $shallow = $opt_l if $opt_l;
     if ($opt_l and $opt_g) {
 	die "Options -g and -l given, which are mutually exclusive. Pick either.";
@@ -132,8 +137,8 @@ my $TMPDIR = File::Basename::dirname($INDEX);
 #
 # Sanity checking
 #
-if (-d "$TMPDIR/.svn" and not $opt_f and not $opt_n) {
-    die "$TMPDIR/.svn exists, cowardly refusing to proceed.\n";
+if (-d "$TMPDIR/.git" and not $opt_f and not $opt_n) {
+    die "$TMPDIR/.git exists, cowardly refusing to proceed.\n";
 }
 
 
@@ -160,23 +165,28 @@ my %index = ();
 
     my @a;
     my @b;
-    my $port;
+    my $origin;
+    my $cat_port;
     map {
 	@a = split(/\|/, $_);
 	@b = split(/\//, $a[1]);
 
-	$port = $b[-2]."/".$b[-1];
+	$cat_port = $b[-2]."/".$a[0];
+	$cat_port =~ s/-[^-]+$//;
+	$origin = $b[-2]."/".$b[-1];
 
-	@{ $index{$port} }{'portname', 'portnameversion', 'origin', 'comment', 'deps'}
-	    = ($b[-1], $a[0], $port, $a[3], ());
+	@{ $index{$cat_port} }{'portname', 'portnameversion', 'origin', 'comment', 'deps'}
+	    = ($b[-1], $a[0], $origin, $a[3], ());
 
 	if ($a[8]) {
 	    @b = split(" ", $a[8]);
-	    @{ $index{$port}{deps} }{@b} = (1) x @b;
+	    @{ $index{$cat_port}{deps} }{@b} = (1) x @b;
 	}
-
     } @lines;
     print "- Processed ", scalar keys(%index), " entries.\n";
+    if ($debug and $debug > 1) {
+	   print STDERR Dumper(\%index);
+    }
 }
 
 my %DEPPORTS = ();
@@ -225,6 +235,7 @@ foreach my $PORT (@ARGV) {
 # In shallow mode, strip all those who don't have a direct dependency
 #
 sub direct_dependency($@) {
+    if ($debug) { print STDERR Dumper \@_; }
     my ($port, @requisites) = @_;
     open F, '-|', '/usr/bin/make', '-C', $port, qw/-V _RUN_DEPENDS -V _LIB_DEPENDS/ or die "cannot launch make: $!";
     my @lines = <F>;
@@ -243,7 +254,7 @@ if ($shallow) {
     foreach my $p (keys %DEPPORTS) {
 	print "- Checking requisites of port $idx/$n...\r";
 	++$idx;
-	unless (direct_dependency($p, @ARGV)) {
+	unless (direct_dependency($p, map { $index{$_}{origin} } @ARGV)) {
 	    delete $DEPPORTS{$p};
 	}
     }
@@ -258,6 +269,7 @@ my $ports = join(" ", keys %DEPPORTS);
 #
 unless ($opt_f or $opt_n) {
   $TMPDIR = ".bump_revision_pl_tmpdir.$$";
+  die "This code fragment has not been updated for Git yet.";
   print "svn checkout into $TMPDIR...\n";
   mkdir($TMPDIR, 0755);
   chdir($TMPDIR);
