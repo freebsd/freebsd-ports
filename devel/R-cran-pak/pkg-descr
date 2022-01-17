@@ -1,0 +1,8 @@
+The goal of 'pak' is to make package installation faster and more reliable. In
+particular, it performs all HTTP operations in parallel, so metadata resolution
+and package downloads are fast. Metadata and package files are cached on the
+local disk as well. 'pak' has a dependency solver, so it finds version
+conflicts before performing the installation. This version of 'pak' supports
+CRAN, 'Bioconductor' and 'GitHub' packages as well.
+
+WWW: https://pak.r-lib.org/
