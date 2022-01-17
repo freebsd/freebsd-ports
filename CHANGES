@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220117:
+AUTHOR: tobik@FreeBSD.org
+
+  Standalone USE_GL, USE_GNOME, USE_MATE, USE_PHP, USE_SDL,
+  USE_XORG have been deprecated for a while. For migration
+  purposes the framework automatically loaded the corresponding
+  USES={gl,gnome,mate,php,sdl,xorg} with a warning. The migration
+  period is now over and you must add the USES manually for USE_*
+  to have any effect.
+
 20220111:
 AUTHOR: se@FreeBSD.org
 
