@@ -1,11 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.8.2.1
+PORTVERSION=	1.8.2.2
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	9f82a4df3.diff:-p1 6a0a485bc.diff:-p1 c0b054733.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Realistic 3D train/railway simulator
@@ -33,18 +30,20 @@ NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		NLayer.NAudioSupport=1.0.0 \
 		NLayer=1.12.0 \
 		NVorbis=0.10.1 \
-		OpenTK-OpenBVE=1.0.0 \
-		OpenTK.GLControl-OpenBVE=1.0.0 \
+		OpenTK-OpenBVE=1.0.2 \
+		OpenTK.GLControl-OpenBVE=1.0.1 \
 		Prism.Core=7.2.0.1422 \
 		ReactiveProperty.Core=7.1.0 \
 		ReactiveProperty=7.1.0 \
-		SharpCompress=0.25.1 \
+		SharpCompress=0.30.1 \
 		System.Buffers=4.5.1 \
 		System.ComponentModel.Annotations=4.7.0 \
 		System.Memory=4.5.4 \
 		System.Numerics.Vectors=4.5.0 \
 		System.Reactive=4.4.1 \
 		System.Runtime.CompilerServices.Unsafe=4.7.1 \
+		System.Runtime.CompilerServices.Unsafe=5.0.0 \
+		System.Text.Encoding.CodePages=5.0.0 \
 		System.Threading.Tasks.Extensions=4.5.4 \
 		System.ValueTuple=4.5.0 \
 		Ude.NetStandard=1.2.0
@@ -59,10 +58,6 @@ OPTIONS_DEFINE=	DOCS
 .if defined(MONO_DEFAULT) && ${MONO_DEFAULT} > 5.10
 BROKEN=		fails to build with Mono version ${MONO_DEFAULT}: The imported project "/usr/local/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets" was not found
 .endif
-
-pre-extract:
-	@${MKDIR} ${_NUGET_PACKAGEDIR}/opentk.glcontrol-openbve/1.0.0
-	@${LN} -s OpenTK.GLControl.nuspec ${_NUGET_PACKAGEDIR}/opentk.glcontrol-openbve/1.0.0/OpenTK.GLControl-OpenBVE.nuspec
 
 post-patch:
 	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4\.7\.2,4.6.1,' \

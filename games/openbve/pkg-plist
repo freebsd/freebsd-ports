@@ -533,6 +533,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Formats/System.Memory.dll
 %%DATADIR%%/Data/Formats/System.Memory.xml
 %%DATADIR%%/Data/Formats/System.Numerics.Vectors.dll
+%%DATADIR%%/Data/Formats/System.Runtime.CompilerServices.Unsafe.dll
+%%DATADIR%%/Data/Formats/System.Runtime.CompilerServices.Unsafe.xml
 %%DATADIR%%/Data/Formats/System.Numerics.Vectors.xml
 %%DATADIR%%/Data/Formats/System.ValueTuple.dll
 %%DATADIR%%/Data/Formats/System.ValueTuple.xml
@@ -915,6 +917,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/System.Security.Cryptography.X509Certificates.dll
 %%DATADIR%%/System.Security.Principal.dll
 %%DATADIR%%/System.Security.SecureString.dll
+%%DATADIR%%/System.Text.Encoding.CodePages.dll
+%%DATADIR%%/System.Text.Encoding.CodePages.xml
 %%DATADIR%%/System.Text.Encoding.Extensions.dll
 %%DATADIR%%/System.Text.Encoding.dll
 %%DATADIR%%/System.Text.RegularExpressions.dll
