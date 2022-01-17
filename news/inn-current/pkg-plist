@@ -150,6 +150,7 @@ include/inn/portable-macros.h
 include/inn/portable-socket.h
 include/inn/portable-stdbool.h
 include/inn/qio.h
+include/inn/secrets.h
 include/inn/sequence.h
 include/inn/storage.h
 include/inn/system.h
@@ -220,6 +221,7 @@ man/man5/expire.ctl.5.gz
 man/man5/history.5.gz
 man/man5/incoming.conf.5.gz
 man/man5/inn-radius.conf.5.gz
+man/man5/inn-secrets.conf.5.gz
 man/man5/inn.conf.5.gz
 man/man5/innfeed.conf.5.gz
 man/man5/innreport.conf.5.gz
@@ -314,6 +316,7 @@ man/man8/writelog.8.gz
 %%EXAMPLESDIR%%/expire.ctl
 %%EXAMPLESDIR%%/incoming.conf
 %%EXAMPLESDIR%%/inn-radius.conf
+%%EXAMPLESDIR%%/inn-secrets.conf
 %%EXAMPLESDIR%%/inn.conf
 %%EXAMPLESDIR%%/innfeed.conf
 %%EXAMPLESDIR%%/innreport.conf
