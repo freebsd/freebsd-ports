@@ -1,0 +1,15 @@
+--- contrib/grpc/third_party/cares/cares/CMakeLists.txt.orig	2021-10-11 11:30:53 UTC
++++ contrib/grpc/third_party/cares/cares/CMakeLists.txt
+@@ -115,7 +115,11 @@ ENDIF ()
+ CHECK_LIBRARY_EXISTS (nsl gethostbyname "" HAVE_LIBNSL)
+ CHECK_LIBRARY_EXISTS (rt clock_gettime "" HAVE_LIBRT)
+ 
+-SET (HAVE_LIBRESOLV 1)
++# Look for dependent/required libraries
++CHECK_LIBRARY_EXISTS (resolv res_servicename "" HAVE_RES_SERVICENAME_IN_LIBRESOLV)
++IF (HAVE_RES_SERVICENAME_IN_LIBRESOLV)
++	SET (HAVE_LIBRESOLV 1)
++ENDIF ()
+ 
+ # Look for necessary includes
+ CHECK_INCLUDE_FILES (sys/types.h           HAVE_SYS_TYPES_H)

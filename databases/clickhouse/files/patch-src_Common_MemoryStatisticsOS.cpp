@@ -1,11 +1,15 @@
---- src/Common/MemoryStatisticsOS.cpp.orig	2021-03-19 11:39:14 UTC
+--- src/Common/MemoryStatisticsOS.cpp.orig	2021-12-26 09:29:33 UTC
 +++ src/Common/MemoryStatisticsOS.cpp
-@@ -1,14 +1,20 @@
+@@ -1,4 +1,4 @@
 -#if defined(OS_LINUX)
--
++#if defined(OS_LINUX) || defined(OS_FREEBSD)
+ 
  #include <sys/types.h>
  #include <sys/stat.h>
-+
+@@ -6,6 +6,13 @@
+ #include <unistd.h>
+ #include <cassert>
+ 
 +#ifdef OS_FREEBSD
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
@@ -13,18 +17,10 @@
 +#include <libprocstat.h>
 +#endif
 +
- #include <fcntl.h>
- #include <unistd.h>
- #include <cassert>
- 
  #include "MemoryStatisticsOS.h"
  
--#include <common/logger_useful.h>
-+//#include <common/logger_useful.h>
- #include <common/getPageSize.h>
- #include <Common/Exception.h>
- #include <IO/ReadBufferFromMemory.h>
-@@ -24,20 +30,40 @@ namespace ErrorCodes
+ #include <base/logger_useful.h>
+@@ -24,20 +31,40 @@ namespace ErrorCodes
      extern const int CANNOT_OPEN_FILE;
      extern const int CANNOT_READ_FROM_FILE_DESCRIPTOR;
      extern const int CANNOT_CLOSE_FILE;
@@ -66,7 +62,7 @@
      if (0 != ::close(fd))
      {
          try
-@@ -51,12 +77,42 @@ MemoryStatisticsOS::~MemoryStatisticsOS()
+@@ -51,12 +78,42 @@ MemoryStatisticsOS::~MemoryStatisticsOS()
              DB::tryLogCurrentException(__PRETTY_FUNCTION__);
          }
      }
@@ -109,7 +105,7 @@
      constexpr size_t buf_size = 1024;
      char buf[buf_size];
  
-@@ -99,10 +155,8 @@ MemoryStatisticsOS::Data MemoryStatisticsOS::get() con
+@@ -99,7 +156,7 @@ MemoryStatisticsOS::Data MemoryStatisticsOS::get() con
      data.shared *= page_size;
      data.code *= page_size;
      data.data_and_stack *= page_size;
@@ -118,6 +114,3 @@
      return data;
  }
  
- }
--
--#endif

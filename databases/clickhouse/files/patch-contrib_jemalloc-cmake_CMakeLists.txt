@@ -1,0 +1,13 @@
+--- contrib/jemalloc-cmake/CMakeLists.txt.orig	2021-12-26 09:29:33 UTC
++++ contrib/jemalloc-cmake/CMakeLists.txt
+@@ -19,8 +19,8 @@ if (NOT ENABLE_JEMALLOC)
+     return()
+ endif ()
+ 
+-if (NOT OS_LINUX)
+-    message (WARNING "jemalloc support on non-linux is EXPERIMENTAL")
++if (NOT OS_LINUX AND NOT OS_FREEBSD)
++    message (WARNING "jemalloc support on non-linux and non-bsd is EXPERIMENTAL")
+ endif()
+ 
+ if (OS_LINUX)
