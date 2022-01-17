@@ -1,10 +1,9 @@
 # Created by: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
 
 PORTNAME=	geeqie
-PORTVERSION=	1.6
-PORTREVISION=	16
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.geeqie.org/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image viewer forked from GQview
@@ -17,21 +16,23 @@ RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	geeqie-devel
 
-USES=		autoreconf compiler:c++11-lang gettext gmake gnome jpeg \
+USES=		autoreconf compiler:c++11-lang gmake gnome jpeg \
 		localbase pkgconfig desktop-file-utils tar:xz lua:53 shebangfix
 USE_GNOME=	cairo gdkpixbuf2 intltool
-
+USE_GITHUB=	yes
+GH_ACCOUNT=	BestImageViewer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readmedir="${DOCSDIR}"
-CONFIGURE_ARGS+=--disable-j2k  # not in ports (yet), disable proactively to avoid hidden dependency
 SHEBANG_FILES=	plugins/*/geeqie-*
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	EXIV2 LCMS LIRC MAP TIFF PDF FFMPEGTHUMBNAILER DOCS NLS HEIF WEBP DJVU OPENJPEG
-OPTIONS_DEFAULT=EXIV2 LCMS GTK3 PDF FFMPEGTHUMBNAILER HEIF WEBP DJVU OPENJPEG
+OPTIONS_DEFINE=	EXIV2 LCMS LIRC MAP FFMPEGTHUMBNAILER DOCS NLS ARCHIVE
+OPTIONS_DEFAULT=EXIV2 LCMS GTK3 PDF FFMPEGTHUMBNAILER HEIF WEBP DJVU OPENJPEG RAW ARCHIVE JPEGXL
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=GTK2 GTK3
+OPTIONS_GROUP=	FORMATS
+OPTIONS_GROUP_FORMATS=	TIFF PDF HEIF WEBP DJVU OPENJPEG RAW JPEGXL
 OPTIONS_SUB=	yes
 
 EXIV2_DESC=	Metadata editing
@@ -39,6 +40,7 @@ LCMS_DESC=	Color adjusting
 LIRC_DESC=	Remote control (broken)
 MAP_DESC=	GPS map support via libchamplain
 TOOLKIT_DESC=	Graphical user interface toolkit
+FORMATS_DESC=	Image formats support
 GTK2_DESC=	Use GTK 2
 GTK3_DESC=	Use GTK 3
 HEIF_DESC=	HEIF image format support
@@ -84,6 +86,8 @@ GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libfontconfig.so:x11-fonts/fontconfig
 
 NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 
 HEIF_CONFIGURE_ENABLE=	heif
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
@@ -96,5 +100,15 @@ DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 
 OPENJPEG_CONFIGURE_ENABLE=	j2k
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+
+RAW_CONFIGURE_ENABLE=	raw
+RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
+
+ARCHIVE_CONFIGURE_ENABLE=	archive
+ARCHIVE_USES=		libarchive
+
+JPEGXL_DESC=		JPEG XL support
+JPEGXL_CONFIGURE_ENABLE=jxl
+JPEGXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 
 .include <bsd.port.mk>
