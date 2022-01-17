@@ -40,7 +40,7 @@
  	GLX_ARCH_DEFINES="-D__GLX_ALIGN64 -mieee"
  	;;
 -  arm*)
-+  arm*|aarch64*)
++  arm*|aarch64*|riscv*)
  	ARM_VIDEO=yes
  	DEFAULT_INT10="stub"
 +	case $host_os in
