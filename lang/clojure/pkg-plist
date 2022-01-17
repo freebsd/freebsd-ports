@@ -5,3 +5,4 @@ man/man1/clojure.1.gz
 %%DATADIR%%/deps.edn
 %%DATADIR%%/example-deps.edn
 %%DATADIR%%/libexec/clojure-tools-%%PORTVERSION%%.jar
+%%DATADIR%%/libexec/exec.jar
