@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	spotify-qt
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
