@@ -1,6 +1,6 @@
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	76
+PORTREVISION=	77
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -66,8 +66,6 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/urlbst/urlbst \
 	texk/texlive/linked_scripts/yplan/yplan
 
-BINARY_ALIAS=	freetype-config=true
-
 # during build phase gnu configure is run a lot
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-texlive-build \
@@ -105,7 +103,10 @@ MAKE_ENV=	CONFIG_SITE=${CONFIG_SITE}
 INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	detex dvi2tty ps2eps texlive-texmf
+
+BINARY_ALIAS=	freetype-config=true
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
+
 INFO=	dvipng tlbuild
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"
 

@@ -1,0 +1,26 @@
+--- texk/texlive/linked_scripts/pdfjam/pdfjam.orig	2013-03-12 00:01:41 UTC
++++ texk/texlive/linked_scripts/pdfjam/pdfjam
+@@ -1143,19 +1143,19 @@ EndTemplate
+     )  > $texFile
+ if test "$hyperref" = false; then  ## we don't need hyperref
+     cp $texFile $tempFile
+-    sed '/\\\usepackage{hyperref}/d' $tempFile | \
+-	sed '/\\\hypersetup.*/d' > "${texFile}"
++    sed '/\\usepackage{hyperref}/d' $tempFile | \
++	sed '/\\hypersetup.*/d' > "${texFile}"
+     rm $tempFile
+ fi
+ if test -z "$geometry" ; then geometry=false ; fi
+ if test "$geometry" = false; then   ## geometry package is not to be used
+     cp $texFile $tempFile
+-    cat $tempFile | sed '/\\\usepackage.*{geometry}/d' > $texFile
++    cat $tempFile | sed '/\\usepackage.*{geometry}/d' > $texFile
+     rm $tempFile
+ fi
+ if test -z "$pagecolor"; then   ## color package is not needed
+     cp $texFile $tempFile
+-    cat $tempFile | sed '/\\\usepackage.*{color}/d' > $texFile
++    cat $tempFile | sed '/\\usepackage.*{color}/d' > $texFile
+     rm $tempFile
+ fi
+ ##
