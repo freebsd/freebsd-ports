@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	clojure
-PORTVERSION=	1.10.3.1020
+PORTVERSION=	1.10.3.1058
 CATEGORIES=	lang lisp java
 MASTER_SITES=	https://download.clojure.org/install/
 DISTNAME=	clojure-tools-${PORTVERSION}
@@ -32,6 +32,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/libexec ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/clojure-tools-${PORTVERSION}.jar \
 		${STAGEDIR}${DATADIR}/libexec
+	${INSTALL_DATA} ${WRKSRC}/exec.jar ${STAGEDIR}${DATADIR}/libexec
 	cd ${WRKSRC} && ${INSTALL_DATA} deps.edn example-deps.edn \
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} clojure clj ${STAGEDIR}${PREFIX}/bin
