@@ -241,6 +241,7 @@ share/locale/zu/LC_MESSAGES/caja.mo
 share/metainfo/caja.appdata.xml
 share/mime/application/x-mate-saved-search.xml
 share/mime/packages/caja.xml
+share/pixmaps/caja/audio.svg
 share/pixmaps/caja/backgrounds.png
 share/pixmaps/caja/chit_frame.png
 share/pixmaps/caja/colors.png
