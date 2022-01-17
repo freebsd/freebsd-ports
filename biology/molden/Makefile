@@ -46,7 +46,7 @@ post-extract:
 	# remove pre-built executables
 	@${RM} ${WRKSRC}/bin/*
 
-xpost-configure:
+post-configure:
 	@${ECHO_MSG} "********************"
 	@${ECHO_MSG} "**  If you want to use a larger MOLDEN,"
 	@${ECHO_MSG} "**  edit change_parameter.sh and run it,"

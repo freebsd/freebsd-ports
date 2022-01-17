@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip
 
-USES=		cmake:testing compiler:c++17-lang fortran gnome localbase:ldflags pkgconfig python:build shebangfix
+USES=		cmake:testing compiler:c++17-lang fortran gnome localbase:ldflags pkgconfig shebangfix
 USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
@@ -42,7 +42,8 @@ OPTIONS_SUB=		yes
 
 NEXUS_DESC=		Install Nexus (workflow utility) alongside QMCPACK
 NEXUS_CMAKE_BOOL=	INSTALL_NEXUS
-NEXUS_CMAKE_USES=	python
+NEXUS_USES=		python
+NEXUS_USES_OFF=		python:build
 NEXUS_PY_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \

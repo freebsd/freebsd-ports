@@ -37,7 +37,6 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 MAKE_ARGS+=	OS=freebsd ENV=gnu all
-TEST_TARGET=	test
 
 post-patch:
 .for def in ${DEFS}
