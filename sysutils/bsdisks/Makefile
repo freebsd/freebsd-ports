@@ -1,5 +1,5 @@
 PORTNAME=	bsdisks
-DISTVERSION=	0.26
+DISTVERSION=	0.27
 CATEGORIES=	sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,6 +14,6 @@ USE_QT=		qmake_build buildtools_build core dbus
 USE_GITLAB=		yes
 GL_SITE=		https://foss.heptapod.net
 GL_ACCOUNT=		bsdutils
-GL_COMMIT=		e1d6cc627e5371f26a3350f19e19f0d1d017b1f2
+GL_COMMIT=		6a92dd764fa6335848036e0233b0baf3e4d69f0c
 
 .include <bsd.port.mk>
