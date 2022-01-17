@@ -7,7 +7,6 @@ CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8fc2df08b40a.patch:-p1 # https://github.com/linuxmint/cinnamon/pull/10489
 PATCHFILES+=	aa0bf5b13078.patch:-p1 # https://github.com/linuxmint/cinnamon/pull/10606
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -1,7 +1,5 @@
 TIMESTAMP = 1612598797
 SHA256 (gnome/linuxmint-cinnamon-4.8.6_GH0.tar.gz) = 00f82253f44c694c379e29959aa6e57b4878b722df1f08d68f9466272ef64893
 SIZE (gnome/linuxmint-cinnamon-4.8.6_GH0.tar.gz) = 2378117
-SHA256 (gnome/8fc2df08b40a.patch) = b8e0624acaa6c29bba532bf4a9de7f762686b3090827ac926583df92a64f117f
-SIZE (gnome/8fc2df08b40a.patch) = 1332
 SHA256 (gnome/aa0bf5b13078.patch) = 82e482496063ab479759b9561f56b18a72578c32af7fbc1237d8566d39a63227
 SIZE (gnome/aa0bf5b13078.patch) = 1573

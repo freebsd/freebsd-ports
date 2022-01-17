@@ -5,9 +5,6 @@ PORTVERSION=	4.8.2
 CATEGORIES=	lang gnome
 DIST_SUBDIR=	gnome
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a4f6cfc52109.patch:-p1 # https://github.com/linuxmint/cjs/pull/98
-
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JavaScript bindings based on gobject-introspection
 
