@@ -1,11 +1,10 @@
 # Created by: Laurent Courty
 
 PORTNAME=	qgis
-DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_22_3
+PORTVERSION=	3.22.3
+PORTREVISION=	1
 CATEGORIES=	graphics geography
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+MASTER_SITES=	https://qgis.org/downloads/
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Free and Open Source Geographic Information System
@@ -106,9 +105,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
 		fortran gl gmake gnome pgsql pyqt:5 python:3.7+ qca qt:5 \
-		shebangfix sqlite:3
-USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME:tu}
+		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -138,7 +135,7 @@ CMAKE_OFF=	WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
-PLIST_SUB=	DISTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
