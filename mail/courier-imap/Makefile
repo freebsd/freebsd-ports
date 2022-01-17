@@ -1,7 +1,7 @@
 # Created by: Neil Blakey-Milner
 
 PORTNAME=	courier-imap
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.5
 PORTEPOCH=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode \
 		libcourierauth.so:security/courier-authlib-base \
-		libidn.so:dns/libidn
+		libidn.so:dns/libidn \
+		libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c++11-lang gmake localbase:ldflags perl5 pkgconfig ssl \
 		tar:bzip2
@@ -109,6 +110,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/libs/liblock/configure
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
+		-e 's|@LN_S@|${RLN}|' \
 		${WRKSRC}/Makefile.in
 
 post-patch-INOTIFY-on:

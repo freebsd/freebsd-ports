@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-04-25 13:49:07 UTC
+--- Makefile.in.orig	2022-01-16 16:04:19 UTC
 +++ Makefile.in
-@@ -395,8 +395,7 @@ sbin_SCRIPTS = sharedindexinstall shared
+@@ -416,8 +416,7 @@ sbin_SCRIPTS = sharedindexinstall sharedindexsplit
  CLEANFILES = $(databin_SCRIPTS) $(man_MANS) $(sysconf_DATA) $(sbin_SCRIPTS)
  databindir = $(datadir)
  databin_SCRIPTS = mkimapdcert mkpop3dcert mkdhparams
@@ -10,7 +10,7 @@
  
  sbinPROGRAMS = imaplogin pop3login
  libexecPROGRAMS = makedatprog couriertcpd
-@@ -412,7 +411,7 @@ man_MANS = couriertcpd.1 deliverquota.8 
+@@ -433,7 +432,7 @@ man_MANS = couriertcpd.1 deliverquota.8 maildirmake.1 
  EXTRA_DIST = README README.cygwin COPYING.GPL NEWS.html $(TEMPLFILES) \
  	pgpkeys.txt sysconftool
  sysconf_DATA = imapd.dist imapd-ssl.dist pop3d.dist pop3d-ssl.dist \
@@ -19,7 +19,7 @@
  
  libexec_SCRIPTS = imapd.rc imapd-ssl.rc pop3d.rc pop3d-ssl.rc
  HTML2TXT = links -dump -no-numbering -no-references
-@@ -793,8 +792,8 @@ install-man1: $(man_MANS)
+@@ -815,8 +814,8 @@ install-man1: $(man_MANS)
  	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
  	while read files; do \
  	  test -z "$$files" || { \
@@ -30,7 +30,7 @@
  	done; }
  
  uninstall-man1:
-@@ -829,15 +828,15 @@ install-man8: $(man_MANS)
+@@ -851,15 +850,15 @@ install-man8: $(man_MANS)
  	sed 'N;N;s,\n, ,g' | { \
  	list=; while read file base inst; do \
  	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
@@ -50,3 +50,21 @@
  	done; }
  
  uninstall-man8:
+@@ -1452,7 +1451,7 @@ pop3d.cnf: libs/imap/pop3d.cnf
+ quotawarnmsg.example: libs/maildir/quotawarnmsg
+ 	cp -f $(srcdir)/libs/maildir/quotawarnmsg quotawarnmsg.example
+ 
+-install-exec-local:
++install-exec-local: install-databinSCRIPTS
+ 	$(mkinstalldirs) $(DESTDIR)$(databindir)
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	test ! -x libs/tcpd/couriertls || $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) \
+@@ -1460,7 +1459,7 @@ install-exec-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(sbindir)
+ 	for f in mkimapdcert mkpop3dcert mkdhparams; \
+ 		do rm -f $(DESTDIR)$(sbindir)/$$f ; \
+-		$(LN_S) $(databindir)/$$f $(DESTDIR)$(sbindir)/$$f ; done
++		$(LN_S) $(DESTDIR)$(databindir)/$$f $(DESTDIR)$(sbindir)/$$f ; done
+ 	$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+ 
+ install-exec-hook:
