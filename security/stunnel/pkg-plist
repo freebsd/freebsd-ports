@@ -32,6 +32,7 @@ man/man8/stunnel.pl.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
 %%PORTDOCS%%@dir %%DOCSDIR%%
+@comment share/bash-completion/completions/stunnel.bash
 @dir lib/stunnel
 @dir etc/stunnel
 @dir etc/stunnel/conf.d

@@ -1,11 +1,11 @@
 # Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
 
 PORTNAME=	stunnel
-DISTVERSION=	5.61
+DISTVERSION=	5.62
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	https://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
-		https://www.stunnel.org/downloads/archive/5.x/ \
+MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
+		https://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
 		http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/
 
 MAINTAINER=	zi@FreeBSD.org
