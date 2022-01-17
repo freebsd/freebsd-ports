@@ -3,4 +3,4 @@ include/bsddialog.h
 include/bsddialog_theme.h
 lib/libbsddialog.a
 lib/libbsddialog.so
-lib/libbsddialog.so.0.1
+lib/libbsddialog.so.0.0.1
