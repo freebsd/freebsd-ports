@@ -1,4 +1,4 @@
---- libs/libnapi_fs.sh.orig	2020-04-24 07:22:41 UTC
+--- libs/libnapi_fs.sh.orig	2022-01-17 05:41:41 UTC
 +++ libs/libnapi_fs.sh
 @@ -54,7 +54,7 @@ _fs_configureStat_GV() {
      # verify stat tool
@@ -18,12 +18,21 @@
  }
  
  #
-@@ -83,6 +85,8 @@ _fs_configureMd5_GV() {
-     # verify md5 tool
+@@ -84,6 +86,8 @@ _fs_configureMd5_GV() {
      ___g_fsWrappers[$___g_fsMd5]="md5sum"
      wrappers_isSystemDarwin &&
-+        ___g_fsWrappers[$___g_fsMd5]="md5"
-+    wrappers_isSystemFreeBSD &&
          ___g_fsWrappers[$___g_fsMd5]="md5"
++    wrappers_isSystemFreeBSD &&
++        ___g_fsWrappers[$___g_fsMd5]="md5"
  }
  
+ #
+@@ -105,7 +109,7 @@ _fs_configure7z_GV() {
+     local k=''
+ 
+     # use 7z or 7za only, 7zr doesn't support passwords
+-    declare -a t7zs=( '7za' '7z' )
++    declare -a t7zs=( '7za' '7z' '7zz' )
+ 
+     for k in "${t7zs[@]}"; do
+         tools_isDetected "$k" &&

@@ -1,5 +1,6 @@
 PORTNAME=	napi
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	polish multimedia
 
 MAINTAINER=	dominik.lisiak@bemsoft.pl
@@ -7,7 +8,7 @@ COMMENT=	Command line subtitles downloader for napiprojekt.pl
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	7z:archivers/p7zip \
+RUN_DEPENDS=	7zz:archivers/7-zip \
 		base64:converters/base64 \
 		bash:shells/bash \
 		mediainfo:multimedia/mediainfo \
