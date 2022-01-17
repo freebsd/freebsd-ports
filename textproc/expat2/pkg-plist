@@ -9,7 +9,7 @@ lib/cmake/expat-%%EXPAT_VERSION%%/expat.cmake
 %%STATIC%%lib/libexpat.a
 lib/libexpat.so
 lib/libexpat.so.1
-lib/libexpat.so.1.8.2
+lib/libexpat.so.1.8.3
 libdata/pkgconfig/expat.pc
 man/man1/xmlwf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
