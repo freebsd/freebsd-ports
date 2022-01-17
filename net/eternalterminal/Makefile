@@ -1,6 +1,7 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
 DISTVERSION=	6.1.11
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	willtisdale@gmail.com
@@ -20,10 +21,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MisterTea
 GH_PROJECT=	EternalTerminal
 
-CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
+CMAKE_ON=	DISABLE_VCPKG
 
-CMAKE_ARGS+=	-DDISABLE_VCPKG:BOOL=ON
-CONFIGURE_ENV+=	VCPKG_FORCE_SYSTEM_BINARIES=1
+MAKE_JOBS_UNSAFE=	yes # temporarily set due to weird races resulting in build failures
+
+CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/rc.d/etserver
