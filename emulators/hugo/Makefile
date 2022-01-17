@@ -30,6 +30,8 @@ CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	gohugo
+
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MGTK2) && ${PORT_OPTIONS:MNETPLAY}
@@ -60,7 +62,5 @@ CONFIGURE_ENV+=	ac_cv_lib_SDL_mixer_main=no \
 		ac_cv_lib_vorbis_main=no \
 		ac_cv_lib_vorbisfile_main=no
 .endif
-
-CONFLICTS_INSTSLL=	gohugo
 
 .include <bsd.port.mk>

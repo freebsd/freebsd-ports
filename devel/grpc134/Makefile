@@ -39,6 +39,4 @@ CONFLICTS_INSTALL=	grpc grpc130
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-CONFLICTS_INSTALL=	grpc
-
 .include <bsd.port.mk>

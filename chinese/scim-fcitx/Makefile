@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_INSTALL=	zh-fcitx
+CONFLICTS_INSTALL=	zh-fcitx
 
 WRKSRC=		${WRKDIR}/fcitx
 

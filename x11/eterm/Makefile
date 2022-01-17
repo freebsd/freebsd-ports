@@ -36,7 +36,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11 xt
 CPE_VENDOR=	eterm_project
 
-CONFLICTS_INSTALL=	ja-eterm zh-eterm
+CONFLICTS_INSTALL?=	ja-eterm zh-eterm
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFINE_i386=	MMX
