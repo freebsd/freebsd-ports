@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold <m@absolight.net>
 
 PORTNAME=	DateTime
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
