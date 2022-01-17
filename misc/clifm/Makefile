@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	clifm
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 

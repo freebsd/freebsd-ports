@@ -27,6 +27,7 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/functions/subshell_notice.sh
 %%DATADIR%%/keybindings.cfm
 %%DATADIR%%/mimelist.cfm
+%%DATADIR%%/nets.cfm
 %%DATADIR%%/plugins/BFG.cfg
 %%DATADIR%%/plugins/BFG.sh
 %%DATADIR%%/plugins/batch_copy.sh
@@ -35,6 +36,7 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/colors.sh
 %%DATADIR%%/plugins/dragondrop.sh
 %%DATADIR%%/plugins/finder.sh
+%%DATADIR%%/plugins/fzcd.sh
 %%DATADIR%%/plugins/fzfdesel.sh
 %%DATADIR%%/plugins/fzfdirhist.sh
 %%DATADIR%%/plugins/fzfhist.sh
@@ -48,6 +50,7 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/mime_list.sh
 %%DATADIR%%/plugins/music_player.sh
 %%DATADIR%%/plugins/pdf_viewer.sh
+%%DATADIR%%/plugins/plugins-helper
 %%DATADIR%%/plugins/rgfind.sh
 %%DATADIR%%/plugins/update.sh
 %%DATADIR%%/plugins/vid_viewer.sh
