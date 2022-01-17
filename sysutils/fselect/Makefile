@@ -1,5 +1,6 @@
 PORTNAME=	fselect
 DISTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
