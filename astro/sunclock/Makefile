@@ -2,7 +2,7 @@
 
 PORTNAME=	sunclock
 PORTVERSION=	3.57
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -14,17 +14,15 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USES=		jpeg xorg
+USES=		jpeg localbase xorg
 USE_XORG=	xpm
 
 CPPFLAGS+=	$$(libpng-config --I_opts) \
-		-I${LOCALBASE}/include \
 		-DEMXBINDIR=\\\"${PREFIX}/bin\\\" \
 		-DDOCDIR=\\\"${PREFIX}/lib/X11/doc\\\"
-LDFLAGS+=	$$(libpng-config --L_opts) \
-		-L${LOCALBASE}/lib
+LDFLAGS+=	$$(libpng-config --L_opts)
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@cd ${WRKSRC} && ${SED} -e \
