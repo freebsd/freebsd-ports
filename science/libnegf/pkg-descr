@@ -1,0 +1,7 @@
+libNEGF is a general library for Non Equilibrium Green's Functions.
+
+With libNEGF you can calculate Equilibrium and Non Equilibrium Green's
+Function in open systems and related quantities, within an efficient
+sparse iterative scheme.
+
+WWW: https://github.com/libnegf/libnegf
