@@ -1,8 +1,8 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	gdb
-DISTVERSION=	11.1
-PORTREVISION=	2
+DISTVERSION=	11.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
