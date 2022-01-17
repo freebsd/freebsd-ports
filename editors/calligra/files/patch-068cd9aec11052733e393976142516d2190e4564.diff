@@ -1,0 +1,46 @@
+Part of this commit, which fixes build in C++17
+
+commit 068cd9aec11052733e393976142516d2190e4564
+Author: Pierre Ducroquet <pinaraf@pinaraf.info>
+Date:   Sun Feb 28 23:23:02 2021 +0100
+
+    Fix some more warnings
+
+diff --git filters/words/msword-odf/wv2/src/styles.h filters/words/msword-odf/wv2/src/styles.h
+index ba02def6845..41c8278dd21 100644
+--- filters/words/msword-odf/wv2/src/styles.h
++++ filters/words/msword-odf/wv2/src/styles.h
+@@ -58,8 +58,9 @@ struct STD
+     STD();
+     /**
+      * Simply calls read(...)
++     * @throw InvalidFormatException
+      */
+-    STD( U16 stdfSize, U16 totalSize, OLEStreamReader* stream, bool preservePos = false ) throw(InvalidFormatException);
++    STD( U16 stdfSize, U16 totalSize, OLEStreamReader* stream, bool preservePos = false );
+     /**
+      * Attention: This struct allocates memory on the heap
+      */
+@@ -74,8 +75,9 @@ struct STD
+      * false the state of stream will be changed!
+      *
+      * @return true - success, false - failed
++     * @throw InvalidFormatException
+      */
+-    bool read( const U16 cbStd, const U16 stdfSize, OLEStreamReader* stream, bool preservePos = false ) throw(InvalidFormatException);
++    bool read( const U16 cbStd, const U16 stdfSize, OLEStreamReader* stream, bool preservePos = false );
+ 
+     /**
+      * Same as reading :)
+@@ -365,7 +367,10 @@ private:
+ class WV2_EXPORT StyleSheet
+ {
+ public:
+-    StyleSheet( OLEStreamReader* tableStream, U32 fcStshf, U32 lcbStshf ) throw(InvalidFormatException);
++    /**
++     * @throw InvalidFormatException
++     */
++    StyleSheet( OLEStreamReader* tableStream, U32 fcStshf, U32 lcbStshf );
+     ~StyleSheet();
+ 
+     /**

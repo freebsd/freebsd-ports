@@ -1,0 +1,127 @@
+diff --git filters/libmsooxml/CMakeLists.txt filters/libmsooxml/CMakeLists.txt
+index cd5b597d319..b243cf875eb 100644
+--- filters/libmsooxml/CMakeLists.txt
++++ filters/libmsooxml/CMakeLists.txt
+@@ -2,11 +2,6 @@ if(Qca-qt5_FOUND)
+     add_definitions( -DHAVE_QCA2 )
+ endif()
+ 
+-# TEMPORARY: for std::auto_ptr deprecation warnings are only annoying noise
+-if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_GNUC)
+-    add_definitions(-Wno-deprecated-declarations)
+-endif ()
+-
+ include_directories(
+     ${KOMAIN_INCLUDES}
+     ${KOODF2_INCLUDES} # For charts
+diff --git filters/libmsooxml/MsooXmlImport.cpp filters/libmsooxml/MsooXmlImport.cpp
+index 8876988220f..c873a998413 100644
+--- filters/libmsooxml/MsooXmlImport.cpp
++++ filters/libmsooxml/MsooXmlImport.cpp
+@@ -594,8 +594,8 @@ KoFilter::ConversionStatus MsooXmlImport::imageFromFile(const QString& sourceNam
+     QString errorMessage;
+     KoFilter::ConversionStatus status = KoFilter::OK;
+ 
+-    std::auto_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(m_zip, errorMessage, sourceName, status));
+-    if (!inputDevice.get()) {
++    std::unique_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(m_zip, errorMessage, sourceName, status));
++    if (!inputDevice) {
+         return status;
+     }
+     QImageReader r(inputDevice.get(), QFileInfo(sourceName).suffix().toLatin1());
+diff --git filters/libmsooxml/MsooXmlThemesReader.cpp filters/libmsooxml/MsooXmlThemesReader.cpp
+index 5818a5caf03..9919d7f1ffb 100644
+--- filters/libmsooxml/MsooXmlThemesReader.cpp
++++ filters/libmsooxml/MsooXmlThemesReader.cpp
+@@ -736,14 +736,14 @@ KoFilter::ConversionStatus MsooXmlThemesReader::read_color()
+ */
+ KoFilter::ConversionStatus MsooXmlThemesReader::read_srgbClr_local()
+ {
+-    std::auto_ptr<DrawingMLColorSchemeItem> color(new DrawingMLColorSchemeItem);
++    std::unique_ptr<DrawingMLColorSchemeItem> color(new DrawingMLColorSchemeItem);
+     m_currentColor_local = 0;
+     READ_PROLOGUE
+     const QXmlStreamAttributes attrs(attributes());
+ 
+     READ_ATTR_WITHOUT_NS(val)
+-    color.get()->color = Utils::ST_HexColorRGB_to_QColor(val);
+-    //debugMsooXml << color.get()->color;
++    color->color = Utils::ST_HexColorRGB_to_QColor(val);
++    //debugMsooXml << color->color;
+ 
+     readNext();
+     READ_EPILOGUE_WITHOUT_RETURN
+@@ -841,19 +841,19 @@ KoFilter::ConversionStatus MsooXmlThemesReader::read_srgbClr_local()
+ */
+ KoFilter::ConversionStatus MsooXmlThemesReader::read_sysClr_local()
+ {
+-    std::auto_ptr<DrawingMLColorSchemeSystemItem> color(new DrawingMLColorSchemeSystemItem);
++    std::unique_ptr<DrawingMLColorSchemeSystemItem> color(new DrawingMLColorSchemeSystemItem);
+     m_currentColor_local = 0;
+     READ_PROLOGUE
+     const QXmlStreamAttributes attrs(attributes());
+ 
+     READ_ATTR_WITHOUT_NS(lastClr)
+-    color.get()->lastColor = Utils::ST_HexColorRGB_to_QColor(lastClr);
+-//     debugMsooXml << "lastClr:" << color.get()->lastColor.name();
++    color->lastColor = Utils::ST_HexColorRGB_to_QColor(lastClr);
++//     debugMsooXml << "lastClr:" << color->lastColor.name();
+ 
+     // System color value. This color is based upon the value that this color
+     // currently has within the system on which the document is being viewed.
+-    READ_ATTR_WITHOUT_NS_INTO(val, color.get()->systemColor)
+-//     debugMsooXml << "val:" << color.get()->systemColor;
++    READ_ATTR_WITHOUT_NS_INTO(val, color->systemColor)
++//     debugMsooXml << "val:" << color->systemColor;
+ 
+     readNext();
+     READ_EPILOGUE_WITHOUT_RETURN
+diff --git filters/libmsooxml/MsooXmlUtils.cpp filters/libmsooxml/MsooXmlUtils.cpp
+index 49f8faea449..99460c28df9 100644
+--- filters/libmsooxml/MsooXmlUtils.cpp
++++ filters/libmsooxml/MsooXmlUtils.cpp
+@@ -189,8 +189,8 @@ KoFilter::ConversionStatus Utils::loadAndParse(KoXmlDocument& doc, const KZip* z
+ {
+     errorMessage.clear();
+     KoFilter::ConversionStatus status;
+-    std::auto_ptr<QIODevice> device(openDeviceForFile(zip, errorMessage, fileName, status));
+-    if (!device.get())
++    std::unique_ptr<QIODevice> device(openDeviceForFile(zip, errorMessage, fileName, status));
++    if (!device)
+         return status;
+     return loadAndParse(device.get(), doc, errorMessage, fileName);
+ }
+@@ -205,8 +205,8 @@ KoFilter::ConversionStatus Utils::loadAndParseDocument(MsooXmlReader* reader,
+     Q_UNUSED(writers)
+     errorMessage.clear();
+     KoFilter::ConversionStatus status;
+-    std::auto_ptr<QIODevice> device(openDeviceForFile(zip, errorMessage, fileName, status));
+-    if (!device.get())
++    std::unique_ptr<QIODevice> device(openDeviceForFile(zip, errorMessage, fileName, status));
++    if (!device)
+         return status;
+     reader->setDevice(device.get());
+     reader->setFileName(fileName); // for error reporting
+@@ -389,9 +389,9 @@ KoFilter::ConversionStatus Utils::copyFile(const KZip* zip, QString& errorMessag
+         return status;
+     }
+ 
+-    std::auto_ptr<QIODevice> inputDevice = std::auto_ptr<QIODevice>(Utils::openDeviceForFile(zip, errorMessage, sourceName, status));
++    std::unique_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(zip, errorMessage, sourceName, status));
+ 
+-    if (!inputDevice.get()) {
++    if (!inputDevice) {
+         return status;
+     }
+ 
+@@ -423,8 +423,8 @@ KoFilter::ConversionStatus Utils::imageSize(const KZip* zip, QString& errorMessa
+ {
+     Q_ASSERT(size);
+     KoFilter::ConversionStatus status;
+-    std::auto_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(zip, errorMessage, sourceName, status));
+-    if (!inputDevice.get()) {
++    std::unique_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(zip, errorMessage, sourceName, status));
++    if (!inputDevice) {
+         return status;
+     }
+     QImageReader r(inputDevice.get(), QFileInfo(sourceName).suffix().toLatin1());

@@ -36,7 +36,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 BUILD_DEPENDS=	pstoedit:graphics/pstoedit
 RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
-USES=		cmake cpe compiler:c++11-lib desktop-file-utils eigen:3 \
+USES=		cmake cpe compiler:c++17-lang desktop-file-utils eigen:3 \
 		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 \
 		pkgconfig qca qt:5 shared-mime-info sqlite tar:xz xorg
 USE_KDE=	akonadicontacts activities archive auth bookmarks codecs completion \
