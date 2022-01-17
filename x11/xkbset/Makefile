@@ -1,9 +1,8 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	xkbset
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	stephen@FreeBSD.org
