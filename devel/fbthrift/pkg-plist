@@ -289,6 +289,7 @@ include/thrift/lib/cpp2/security/extensions/ThriftParametersServerExtension.h
 include/thrift/lib/cpp2/security/extensions/Types.h
 include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
 include/thrift/lib/cpp2/server/BaseThriftServer.h
+include/thrift/lib/cpp2/server/ConcurrencyControllerInterface.h
 include/thrift/lib/cpp2/server/ControlServerInterface.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
@@ -302,7 +303,9 @@ include/thrift/lib/cpp2/server/MonitoringServerInterface.h
 include/thrift/lib/cpp2/server/PolledServiceHealth.h
 include/thrift/lib/cpp2/server/PreprocessParams.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
+include/thrift/lib/cpp2/server/RequestPileInterface.h
 include/thrift/lib/cpp2/server/RequestsRegistry.h
+include/thrift/lib/cpp2/server/ResourcePoolHandle.h
 include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
 include/thrift/lib/cpp2/server/ServerFlags.h
@@ -389,6 +392,7 @@ include/thrift/lib/cpp2/transport/rocket/test/util/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/util/VersionServicesMock.h
 include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
+include/thrift/lib/cpp2/type/AnyRef.h
 include/thrift/lib/cpp2/type/AnyType.h
 include/thrift/lib/cpp2/type/AnyValue.h
 include/thrift/lib/cpp2/type/BaseType.h
@@ -403,6 +407,7 @@ include/thrift/lib/cpp2/type/detail/AnyData.h
 include/thrift/lib/cpp2/type/detail/AnyType.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/Traits.h
+include/thrift/lib/cpp2/type/detail/ThriftTypeInfo.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
 include/thrift/lib/cpp2/util/DebugString.h
