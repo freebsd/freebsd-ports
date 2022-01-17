@@ -1,6 +1,5 @@
 PORTNAME=	av1an
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -41,7 +40,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		bindgen-0.54.0 \
 		bitflags-1.3.2 \
 		bitstream-io-1.2.0 \
-		bumpalo-3.9.0 \
+		bumpalo-3.9.1 \
 		byte-slice-cast-1.2.0 \
 		bytes-1.1.0 \
 		cc-1.0.72 \
@@ -51,14 +50,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clang-sys-0.29.3 \
-		clap-3.0.5 \
-		clap_derive-3.0.5 \
+		clap-3.0.7 \
+		clap_derive-3.0.6 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.3 \
-		crossbeam-channel-0.5.1 \
+		crossbeam-channel-0.5.2 \
 		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.5 \
-		crossbeam-utils-0.8.5 \
+		crossbeam-epoch-0.9.6 \
+		crossbeam-utils-0.8.6 \
 		dashmap-5.0.0 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
@@ -71,9 +70,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		failure_derive-0.1.8 \
 		ffmpeg-next-4.4.0 \
 		ffmpeg-sys-next-4.4.0 \
-		flexi_logger-0.22.1 \
+		flexi_logger-0.22.2 \
 		form_urlencoded-1.0.1 \
-		getrandom-0.2.3 \
+		getrandom-0.2.4 \
 		getset-0.1.2 \
 		gimli-0.26.1 \
 		git2-0.13.25 \
@@ -83,7 +82,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		idna-0.2.3 \
-		indexmap-1.7.0 \
+		indexmap-1.8.0 \
 		indicatif-0.17.0-rc.1 \
 		instant-0.1.12 \
 		interpolate_name-0.2.3 \
@@ -108,7 +107,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.14 \
 		miow-0.3.7 \
-		nasm-rs-0.2.2 \
+		nasm-rs-0.2.3 \
 		nom-5.1.2 \
 		nom-7.1.0 \
 		noop_proc_macro-0.3.0 \
@@ -161,13 +160,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		semver-1.0.4 \
 		serde-1.0.133 \
 		serde_derive-1.0.133 \
-		serde_json-1.0.74 \
+		serde_json-1.0.75 \
 		shlex-0.1.1 \
 		shlex-1.1.0 \
 		signal-hook-registry-1.4.0 \
 		simd_helpers-0.1.0 \
 		simdutf8-0.1.3 \
-		smallvec-1.7.0 \
+		smallvec-1.8.0 \
 		smawk-0.3.1 \
 		splines-4.0.3 \
 		std_prelude-0.2.12 \
@@ -177,9 +176,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		strum-0.23.0 \
 		strum_macros-0.21.1 \
 		strum_macros-0.23.1 \
-		syn-1.0.84 \
+		syn-1.0.85 \
 		synstructure-0.12.6 \
-		sysinfo-0.22.4 \
+		sysinfo-0.22.5 \
 		system-deps-3.1.2 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
