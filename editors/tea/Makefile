@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	tea
-PORTVERSION=	60.5.1
+PORTVERSION=	60.6.0
 CATEGORIES=	editors
 
 MAINTAINER=	danilo@FreeBSD.org
