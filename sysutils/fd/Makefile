@@ -2,8 +2,7 @@
 
 PORTNAME=	fd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.3.0
-PORTREVISION=	2
+DISTVERSION=	8.3.1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-find
 
@@ -20,9 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.48 \
+		anyhow-1.0.52 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
@@ -30,7 +28,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-2.33.3 \
+		clap-2.34.0 \
 		crossbeam-utils-0.8.5 \
 		ctrlc-3.2.1 \
 		diff-0.1.12 \
@@ -48,17 +46,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		jemalloc-sys-0.3.2 \
 		jemallocator-0.3.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.108 \
+		libc-0.2.112 \
 		log-0.4.14 \
 		lscolors-0.8.1 \
 		memchr-2.4.1 \
 		memoffset-0.6.4 \
-		nix-0.23.0 \
+		nix-0.23.1 \
 		normpath-0.3.1 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		once_cell-1.8.0 \
+		num_cpus-1.13.1 \
+		once_cell-1.9.0 \
 		proc-macro2-1.0.32 \
 		quote-1.0.10 \
 		rand-0.4.6 \
@@ -83,7 +81,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-xid-0.2.2 \
 		users-0.11.0 \
 		vec_map-0.8.2 \
-		version_check-0.9.3 \
+		version_check-0.9.4 \
 		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
