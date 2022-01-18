@@ -1,8 +1,7 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	dvdstyler
-PORTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -25,7 +24,8 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libdbus-1.so:devel/dbus
+		libdbus-1.so:devel/dbus \
+		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	zip:archivers/zip \
 		wxsvg>=1.2:graphics/wxsvg \
 		dvdauthor:multimedia/dvdauthor \
@@ -35,8 +35,7 @@ RUN_DEPENDS=	zip:archivers/zip \
 
 USES=		autoreconf compiler:c++11-lib gettext gmake jpeg pkgconfig tar:bzip2
 
-USE_CXXSTD=	gnu++11
-USE_WX=		3.0
+USE_WX=		3.1
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH="" OBJCXX="${CXX}"
