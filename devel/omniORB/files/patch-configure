@@ -1,6 +1,6 @@
---- configure.orig	2020-04-04 14:09:52 UTC
+--- configure.orig	2021-04-11 12:58:05 UTC
 +++ configure
-@@ -7574,12 +7574,19 @@ case "$host" in
+@@ -7670,12 +7670,19 @@ case "$host" in
    *-*-irix*)     plat_name="IRIX";     plat_def="__irix__";     os_v="6";;
    *-*-aix*)      plat_name="AIX";      plat_def="__aix__";      os_v="4";;
    *-*-darwin*)   plat_name="Darwin";   plat_def="__darwin__";   os_v="1";;

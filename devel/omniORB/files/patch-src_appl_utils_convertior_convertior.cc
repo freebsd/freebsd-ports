@@ -1,6 +1,6 @@
---- src/appl/utils/convertior/convertior.cc.orig	2017-02-20 22:45:59 UTC
+--- src/appl/utils/convertior/convertior.cc.orig	2020-09-21 21:47:46 UTC
 +++ src/appl/utils/convertior/convertior.cc
-@@ -42,6 +42,12 @@
+@@ -38,6 +38,12 @@ using namespace std;
  // macro called minor.
  #undef minor
  
