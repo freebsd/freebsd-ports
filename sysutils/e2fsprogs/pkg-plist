@@ -47,7 +47,7 @@ man/man1/e2fsprogs-compile_et.1.gz
 %%FUSEFS%%man/man1/fuse2fs.1.gz
 man/man1/lsattr.1.gz
 man/man1/mk_cmds.1.gz
-man/man3/com_err.3.gz
+man/man3/e2fsprogs-com_err.3.gz
 man/man5/e2fsck.conf.5.gz
 man/man5/mke2fs.conf.5.gz
 man/man5/ext2.5.gz
