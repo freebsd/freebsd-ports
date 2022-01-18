@@ -14,6 +14,9 @@ COMMENT=	Portable, easy to use, and efficient C++ crypto library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
+DEPRECATED=	Deprecated upstream, users are recommended to migrate to 2.x
+EXPIRATION_DATE=2022-03-31
+
 BROKEN_riscv64=		fails to build: Unknown or unidentifiable processor "riscv"
 
 OPTIONS_DEFINE=		SSL GMP DOCS
