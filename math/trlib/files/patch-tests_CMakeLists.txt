@@ -1,0 +1,11 @@
+--- tests/CMakeLists.txt.orig	2022-01-18 08:26:36 UTC
++++ tests/CMakeLists.txt
+@@ -47,7 +47,7 @@ if(CHECK_FOUND)
+ 
+         if(APPLE)
+         else()
+-            add_custom_command(OUTPUT "test_${t}_valgrind.c" COMMAND sed "'/sr = srunner_create(s);/a    srunner_set_fork_status(sr, CK_NOFORK);'" "${CMAKE_CURRENT_SOURCE_DIR}/test_${t}.c" > "test_${t}_valgrind.c" DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test_${t}.c")
++            add_custom_command(OUTPUT "test_${t}_valgrind.c" COMMAND gsed "'/sr = srunner_create(s);/a    srunner_set_fork_status(sr, CK_NOFORK);'" "${CMAKE_CURRENT_SOURCE_DIR}/test_${t}.c" > "test_${t}_valgrind.c" DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test_${t}.c")
+             add_executable("test_${t}_valgrind" "test_${t}_valgrind.c" "${CMAKE_CURRENT_SOURCE_DIR}/trlib_test.c" ${MESSAGEFILES})
+             set_property(TARGET "test_${t}_valgrind" PROPERTY C_STANDARD 11)
+             target_link_libraries("test_${t}_valgrind" trlib ${LIBS})

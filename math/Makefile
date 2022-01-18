@@ -1059,6 +1059,7 @@
     SUBDIR += topcom
     SUBDIR += triangle
     SUBDIR += trlan
+    SUBDIR += trlib
     SUBDIR += tvmet
     SUBDIR += ump
     SUBDIR += units
