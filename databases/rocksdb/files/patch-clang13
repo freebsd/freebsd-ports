@@ -1,0 +1,180 @@
+From 9c6fb26033fe83ff8b931b72dc9d1f8496ad5ebd Mon Sep 17 00:00:00 2001
+From: Jay Zhuang <zjay@fb.com>
+Date: Tue, 11 Jan 2022 10:35:22 -0800
+Subject: [PATCH] Fix clang13 build error (#9374)
+
+Summary: Pull Request resolved: https://github.com/facebook/rocksdb/pull/9374
+
+Test Plan: Add CI for clang13 build
+
+Reviewed By: riversand963
+
+Differential Revision: D33522867
+
+Pulled By: jay-zhuang
+
+fbshipit-source-id: 642756825cf0b51e35861fb847ebaee4611b76ca
+---
+ .circleci/config.yml                    | 22 ++++++++++++++++++++++
+ db/compaction/compaction_picker_test.cc |  6 ++----
+ db/db_basic_test.cc                     |  3 ---
+ db/db_test2.cc                          |  5 -----
+ options/db_options.h                    |  1 -
+ utilities/env_mirror.cc                 |  4 ++++
+ 6 files changed, 28 insertions(+), 13 deletions(-)
+
+diff --git a/.circleci/config.yml b/.circleci/config.yml
+index 05eb3a419bc..42f01a2dd40 100644
+--- .circleci/config.yml.orig
++++ .circleci/config.yml
+@@ -83,6 +83,17 @@ commands:
+             echo "APT::Acquire::Retries \"10\";" | sudo tee -a /etc/apt/apt.conf.d/80-retries # llvm.org unreliable
+             sudo apt-get update -y && sudo apt-get install -y clang-10
+ 
++  install-clang-13:
++    steps:
++      - run:
++          name: Install Clang 13
++          command: |
++            echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" | sudo tee -a /etc/apt/sources.list
++            echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" | sudo tee -a /etc/apt/sources.list
++            echo "APT::Acquire::Retries \"10\";" | sudo tee -a /etc/apt/apt.conf.d/80-retries # llvm.org unreliable
++            wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
++            sudo apt-get update -y && sudo apt-get install -y clang-13
++
+   install-gflags:
+     steps:
+       - run:
+@@ -396,6 +407,16 @@ jobs:
+       - run: CC=gcc-11 CXX=g++-11 V=1 SKIP_LINK=1 make -j16 all 2>&1 | .circleci/cat_ignore_eagain # Linking broken because libgflags compiled with newer ABI
+       - post-steps
+ 
++  build-linux-clang-13-no_test_run:
++    machine:
++      image: ubuntu-2004:202010-01
++    resource_class: xlarge
++    steps:
++      - pre-steps
++      - install-clang-13
++      - run: CC=clang-13 CXX=clang++-13 USE_CLANG=1 make -j16 all 2>&1 | .circleci/cat_ignore_eagain
++      - post-steps
++
+   # This job is only to make sure the microbench tests are able to run, the benchmark result is not meaningful as the CI host is changing.
+   build-linux-microbench:
+     machine:
+@@ -792,6 +813,7 @@ workflows:
+   build-linux-compilers-no_test_run:
+     jobs:
+       - build-linux-clang-no_test_run
++      - build-linux-clang-13-no_test_run
+       - build-linux-gcc-4_8-no_test_run
+       - build-linux-gcc-8-no_test_run
+       - build-linux-gcc-9-no_test_run
+diff --git a/db/compaction/compaction_picker_test.cc b/db/compaction/compaction_picker_test.cc
+index 6b005db0b4c..1c928ad4ab4 100644
+--- db/compaction/compaction_picker_test.cc.orig
++++ db/compaction/compaction_picker_test.cc
+@@ -964,13 +964,11 @@ TEST_F(CompactionPickerTest, NeedsCompactionFIFO) {
+ 
+   // verify whether compaction is needed based on the current
+   // size of L0 files.
+-  uint64_t current_size = 0;
+   for (int i = 1; i <= kFileCount; ++i) {
+     NewVersionStorage(1, kCompactionStyleFIFO);
+     Add(0, i, ToString((i + 100) * 1000).c_str(),
+-        ToString((i + 100) * 1000 + 999).c_str(),
+-        kFileSize, 0, i * 100, i * 100 + 99);
+-    current_size += kFileSize;
++        ToString((i + 100) * 1000 + 999).c_str(), kFileSize, 0, i * 100,
++        i * 100 + 99);
+     UpdateVersionStorageInfo();
+     ASSERT_EQ(fifo_compaction_picker.NeedsCompaction(vstorage_.get()),
+               vstorage_->CompactionScore(0) >= 1);
+diff --git a/db/db_basic_test.cc b/db/db_basic_test.cc
+index 81ac829b49c..96687ba7433 100644
+--- db/db_basic_test.cc.orig
++++ db/db_basic_test.cc
+@@ -1892,7 +1892,6 @@ TEST_F(DBBasicTest, MultiGetBatchedValueSizeMultiLevelMerge) {
+ 
+   ASSERT_EQ(values.size(), keys.size());
+ 
+-  uint64_t curr_value_size = 0;
+   for (unsigned int j = 0; j < 26; ++j) {
+     int key = j + 10;
+     std::string value;
+@@ -1909,11 +1908,9 @@ TEST_F(DBBasicTest, MultiGetBatchedValueSizeMultiLevelMerge) {
+       value.append(",");
+       value.append("val_mem_" + std::to_string(key));
+     }
+-    curr_value_size += value.size();
+     ASSERT_EQ(values[j], value);
+     ASSERT_OK(statuses[j]);
+   }
+-  // ASSERT_TRUE(curr_value_size <= read_options.value_size_hard_limit);
+ 
+   // All remaning keys status is set Status::Abort
+   for (unsigned int j = 26; j < 40; j++) {
+diff --git a/db/db_test2.cc b/db/db_test2.cc
+index e09d05d45df..c123d7351a7 100644
+--- db/db_test2.cc.orig
++++ db/db_test2.cc
+@@ -2827,7 +2827,6 @@ TEST_F(DBTest2, ReadAmpBitmapLiveInCacheAfterDBClose) {
+     Close();
+     Reopen(options);
+ 
+-    uint64_t total_useful_bytes = 0;
+     std::set<int> read_keys;
+     std::string value;
+     // Iter1: Read half the DB, Read even keys
+@@ -2838,8 +2837,6 @@ TEST_F(DBTest2, ReadAmpBitmapLiveInCacheAfterDBClose) {
+ 
+       if (read_keys.find(i) == read_keys.end()) {
+         auto internal_key = InternalKey(key, 0, ValueType::kTypeValue);
+-        total_useful_bytes +=
+-            GetEncodedEntrySize(internal_key.size(), value.size());
+         read_keys.insert(i);
+       }
+     }
+@@ -2866,8 +2863,6 @@ TEST_F(DBTest2, ReadAmpBitmapLiveInCacheAfterDBClose) {
+ 
+       if (read_keys.find(i) == read_keys.end()) {
+         auto internal_key = InternalKey(key, 0, ValueType::kTypeValue);
+-        total_useful_bytes +=
+-            GetEncodedEntrySize(internal_key.size(), value.size());
+         read_keys.insert(i);
+       }
+     }
+diff --git a/options/db_options.h b/options/db_options.h
+index 5244460e899..d44331b06cf 100644
+--- options/db_options.h.orig
++++ options/db_options.h
+@@ -116,7 +116,6 @@ struct ImmutableDBOptions {
+ struct MutableDBOptions {
+   static const char* kName() { return "MutableDBOptions"; }
+   MutableDBOptions();
+-  explicit MutableDBOptions(const MutableDBOptions& options) = default;
+   explicit MutableDBOptions(const DBOptions& options);
+ 
+   void Dump(Logger* log) const;
+diff --git a/utilities/env_mirror.cc b/utilities/env_mirror.cc
+index 061b9863246..3ea323b4297 100644
+--- utilities/env_mirror.cc.orig
++++ utilities/env_mirror.cc
+@@ -27,13 +27,17 @@ class SequentialFileMirror : public SequentialFile {
+     if (as == Status::OK()) {
+       char* bscratch = new char[n];
+       Slice bslice;
++#ifndef NDEBUG
+       size_t off = 0;
++#endif
+       size_t left = aslice.size();
+       while (left) {
+         Status bs = b_->Read(left, &bslice, bscratch);
++#ifndef NDEBUG
+         assert(as == bs);
+         assert(memcmp(bscratch, scratch + off, bslice.size()) == 0);
+         off += bslice.size();
++#endif
+         left -= bslice.size();
+       }
+       delete[] bscratch;
