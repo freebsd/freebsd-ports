@@ -1,0 +1,8 @@
+mate-pam-helper is replacement for pam_helper for the new mate-screensaver.
+It is a small utility which allows non-PAM, or non-setuid applications to
+make use of PAM's authentication services.  It was mainly created to allow
+gnome-screensaver to make use of PAM, but any application could use it. It
+accepts two arguments, the PAM service name, and a username. It reads the
+user's password from stdin.
+
+WWW: https://github.com/ghostbsd/mate-pam-helper

@@ -365,6 +365,7 @@
     SUBDIR += maltrail
     SUBDIR += manipulate_data
     SUBDIR += masscan
+    SUBDIR += mate-pam-helper
     SUBDIR += matrixssl
     SUBDIR += mbedtls
     SUBDIR += mcrypt
