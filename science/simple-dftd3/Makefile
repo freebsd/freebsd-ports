@@ -1,0 +1,25 @@
+PORTNAME=	simple-dftd3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.0
+CATEGORIES=	science # chemistry
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Reimplementation of the DFT-D3 program
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	mstore>0:science/mstore # see https://github.com/awvwgk/simple-dftd3/issues/11
+LIB_DEPENDS=	libmctc-lib.so:science/mctc-lib \
+		libopenblas.so:math/openblas \
+		libtoml-f.so:textproc/toml-f
+
+USES=		cmake:testing fortran
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	awvwgk
+
+CMAKE_ON=	BUILD_SHARED_LIBS
+
+.include <bsd.port.mk>

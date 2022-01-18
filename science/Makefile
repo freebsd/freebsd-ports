@@ -366,6 +366,7 @@
     SUBDIR += simgrid
     SUBDIR += simint
     SUBDIR += simlib
+    SUBDIR += simple-dftd3
     SUBDIR += simsmith
     SUBDIR += smoldyn
     SUBDIR += sparta

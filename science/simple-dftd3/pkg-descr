@@ -1,0 +1,6 @@
+A simple drop-in replacement for dftd3.
+
+This program provides a small and easy to use implementation of the
+DFT-D3 dispersion correction.
+
+WWW: https://github.com/awvwgk/simple-dftd3
