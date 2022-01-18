@@ -1,0 +1,15 @@
+include/ChemicalFun/FormulaParser.h
+include/ChemicalFun/FormulaParser/ChemicalData.h
+include/ChemicalFun/FormulaParser/ChemicalFormulaParser.h
+include/ChemicalFun/FormulaParser/MoietyParser.h
+include/ChemicalFun/ReactionsGenerator.h
+include/ChemicalFun/ReactionsGenerator/ChemicalReactions.h
+include/ChemicalFun/ReactionsGenerator/Combiner.h
+include/ChemicalFun/ReactionsGenerator/Generator.h
+include/ChemicalFun/ReactionsGenerator/MatrixUtils.h
+include/ChemicalFun/ReactionsGenerator/Reaction.h
+lib/cmake/ChemicalFun/ChemicalFunConfig.cmake
+lib/cmake/ChemicalFun/ChemicalFunConfigVersion.cmake
+lib/cmake/ChemicalFun/ChemicalFunTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ChemicalFun/ChemicalFunTargets.cmake
+lib/libChemicalFun.so
