@@ -1,7 +1,7 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
 
 PORTNAME=	freetds
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.40
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -16,25 +16,34 @@ LICENSE=	LGPL20
 
 USES=		autoreconf compiler:c11 cpe gettext-tools gmake iconv \
 		libtool:keepla pkgconfig tar:bzip2
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
-TDS_VER?=	7.4
-CPPFLAGS+=	"-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tdsver=${TDS_VER} --sysconfdir=${ETCDIR} \
-		--enable-msdblib --enable-sybase-compat \
-		--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
-SUB_FILES=	pkg-message
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
+		--enable-msdblib \
+		--enable-sybase-compat \
+		--sysconfdir=${ETCDIR} \
+		--with-tdsver=${TDS_VER}
+
 INSTALL_TARGET=	install-strip
 
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTSCOUT=	limit:^\d+\.\d+\.\d{3}$
+SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
+
+PORTDOCS=	*
+
+TDS_VER?=	7.4
+
 OPTIONS_DEFINE=		DOCS ODBCWIDE
-OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_RADIO=		ODBC
 OPTIONS_RADIO_ODBC=	IODBC UNIXODBC
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
 ODBCWIDE_DESC=		Enable Wide ODBC Support
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls
@@ -42,16 +51,10 @@ IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 IODBC_CONFIGURE_ON=	--with-iodbc=${LOCALBASE}
 IODBC_CPPFLAGS=		-I${LOCALBASE}/include/libiodbc
 ODBCWIDE_CONFIGURE_ON=	--enable-odbc-wide
-OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 OPENSSL_USES=		ssl
-UNIXODBC_CONFIGURE_ON=	--with-unixodbc=${LOCALBASE}
+OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-
-PORTDOCS=	*
-
-INSTALL=	freetds
-
-PORTSCOUT=	limit:^\d+\.\d+\.\d{3}$
+UNIXODBC_CONFIGURE_ON=	--with-unixodbc=${LOCALBASE}
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MUNIXODBC}
