@@ -6,7 +6,28 @@ To enable the plugin please do the following steps:
 1. Add/update the following line in the netbox configuration (usually
    %%LOCALBASE%%/share/netbox/netbox/configuration.py):
 
-   PLUGINS = ['netbox_secretstore']
+   PLUGINS = ['netbox_plugin_extensions','netbox_secretstore']
+
+2. Run NetBox migrations and collect static files:
+
+   # cd %%LOCALBASE%%/share/netbox
+   # python%%PYTHON_VER%% manage.py migrate
+   # python%%PYTHON_VER%% manage.py collectstatic --no-input
+
+3. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
+EOD
+}
+{ type: upgrade
+  maximum_version: 1.0.14
+  message: <<EOD
+Due to some changes of net-mgmt/py-netbox-plugin-extensions, which is required
+by security/py-netbox-secretstore, the NetBox configuration must therefore be
+adjusted accordingly:
+
+1. Add/update the following line in the netbox configuration (usually
+   %%LOCALBASE%%/share/netbox/netbox/configuration.py):
+
+   PLUGINS = ['netbox_plugin_extensions','netbox_secretstore']
 
 2. Run NetBox migrations and collect static files:
 
