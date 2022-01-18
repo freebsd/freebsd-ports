@@ -1,6 +1,11 @@
---- setup.py.orig	2021-07-13 11:20:32 UTC
+--- setup.py.orig	2021-10-14 16:25:39 UTC
 +++ setup.py
-@@ -26,9 +26,9 @@ install_requires = [
+@@ -22,13 +22,13 @@ except ImportError:
+ install_requires = [
+     "Django>=3.0,<3.3",
+     "django-modelcluster>=5.2,<6.0",
+-    "django-taggit>=1.0,<2.0",
++    "django-taggit>=1.0",
      "django-treebeard>=4.2.0,<5.0,!=4.5",
      "djangorestframework>=3.11.1,<4.0",
      "django-filter>=2.2,<3.0",
