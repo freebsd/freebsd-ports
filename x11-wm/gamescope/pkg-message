@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Known issues:
-- Intel GPUs require mesa-devel, see
-  https://github.com/Plagman/gamescope/issues/49
-EOM
-}
-]
