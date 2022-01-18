@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-snap
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JCE (Java Cryptography Extension) by Cryptix
 
+DEPRECATED=	Abandonware, last release in 2005 and listed as dead upstream
+EXPIRATION_DATE=2022-03-31
+
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
