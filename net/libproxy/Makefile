@@ -2,8 +2,9 @@
 
 PORTNAME=	libproxy
 DISTVERSION=	0.4.17
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net devel
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
@@ -11,10 +12,9 @@ COMMENT?=	Library that provides automatic proxy configuration management
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		cmake cpe pathfix pkgconfig
+USES+=		cmake cpe pathfix pkgconfig tar:xz
 CPE_VENDOR=	libproxy_project
 PATHFIX_CMAKELISTSTXT=	devfiles.cmk
-USE_GITHUB=	yes
 
 CMAKE_ON+=	WITH_VALA
 CMAKE_OFF+=	BIPR WITH_DOTNET WITH_NATUS WITH_NM WITH_NMold
