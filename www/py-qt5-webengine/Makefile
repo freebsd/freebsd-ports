@@ -11,9 +11,6 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtWebEngine module
 
 LICENSE=	GPLv3
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 USES=		gl python:3.5+ pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core gui network printsupport webchannel

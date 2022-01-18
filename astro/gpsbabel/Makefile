@@ -56,11 +56,4 @@ do-install-GUI-on:
 	${INSTALL_DATA} ${WRKSRC}/gui/images/appicon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/gpsbabel.png
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-.endif
-
 .include <bsd.port.mk>

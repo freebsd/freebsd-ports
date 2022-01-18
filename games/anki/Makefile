@@ -14,9 +14,6 @@ COMMENT=	Flashcard trainer with spaced repetition
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Uses EOL Python 2.7 via www/py-qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	the bazel build framework supports only 64-bit systems.
 

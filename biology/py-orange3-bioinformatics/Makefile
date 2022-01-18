@@ -11,9 +11,6 @@ COMMENT=	Orange add-on providing common functionality for bioinformatics
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Uses EOL Python 2.7 via misc/orange3
-EXPIRATION_DATE=2021-06-23
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}Genesis-PyAPI>0:biology/py-Genesis-PyAPI@${PY_FLAVOR} \

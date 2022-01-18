@@ -10,9 +10,6 @@ COMMENT=	Web browser based on Webengine and Qt Framework
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 USES=		cmake desktop-file-utils kde:5 qt:5 ssl tar:xz xorg
 USE_KDE=	ecm_build i18n
 USE_QT=		concurrent core dbus declarative gui location network printsupport \

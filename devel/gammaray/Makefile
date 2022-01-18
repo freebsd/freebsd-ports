@@ -6,9 +6,6 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 USES=		cmake kde:5 pkgconfig qt:5
 
 USE_QT=		3d concurrent core declarative designer gui help linguisttools \

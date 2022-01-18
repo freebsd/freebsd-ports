@@ -7,9 +7,6 @@ COMMENT=	KDE based library to access google services
 
 LICENSE=	LGPL21
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 LIB_DEPENDS=	libical.so:devel/libical \
 		libsasl2.so:security/cyrus-sasl2
 

@@ -5,9 +5,6 @@ CATEGORIES=	net-im kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE integrated instant messaging framework
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 RUN_DEPENDS=	ktp-accounts-kcm>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-accounts-kcm \
 		ktp-approver>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-approver \
 		ktp-auth-handler>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-auth-handler \

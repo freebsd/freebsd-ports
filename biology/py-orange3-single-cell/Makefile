@@ -9,9 +9,6 @@ COMMENT=	Orange add-on for gene expression of single cell data
 
 LICENSE=	AGPLv3+
 
-DEPRECATED=	Uses EOL Python 2.7 via misc/orange3
-EXPIRATION_DATE=2021-06-23
-
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}orange3-bioinformatics>0:biology/py-orange3-bioinformatics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}astropy>0:astro/py-astropy@${PY_FLAVOR} \

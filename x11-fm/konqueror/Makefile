@@ -5,9 +5,6 @@ CATEGORIES=	x11-fm www kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE web browser and file manager
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
 		localbase:ldflags kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	activities  archive auth bookmarks codecs completion config configwidgets \

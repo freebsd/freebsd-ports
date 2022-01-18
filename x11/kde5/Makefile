@@ -47,11 +47,4 @@ KDEUTILS_RUN_DEPENDS=	kdeutils>=${KDE_APPLICATIONS_VERSION}:misc/kdeutils
 
 PULSEAUDIO_USE=		KDE=plasma-pa
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKDEPIM}
-DEPRECATED=	Uses EOL Python 2.7 via deskutils/kdepim
-EXPIRATION_DATE=2021-06-23
-.endif
-
 .include <bsd.port.mk>

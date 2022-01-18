@@ -7,9 +7,6 @@ COMMENT=	KDE PIM addons
 
 LICENSE=	LGPL21
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 BUILD_DEPENDS=	markdown:textproc/discount
 RUN_DEPENDS=	markdown:textproc/discount
 LIB_DEPENDS=	libassuan.so:security/libassuan \
