@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@FreeBSD.org>
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.12
+PORTVERSION=	6.0.1
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}/
@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm	\
 		swig:devel/swig
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
+		libharfbuzz.so:print/harfbuzz		\
 		libngspice.so:cad/ngspice_rework@shlib	\
 		libTKernel.so:cad/opencascade		\
 		libpixman-1.so:x11/pixman		\
@@ -31,17 +32,12 @@ USE_XORG=	ice x11 xext
 USE_GL=		gl glew glu glut
 USE_WX=		3.0
 WX_COMPS=	python:lib wx
-USE_GNOME=	atk cairo
+USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 CXXFLAGS+=	--std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DwxWidgets_USE_UNICODE=ON			\
-		-DKICAD_SCRIPTING_WXPYTHON=ON			\
 		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD}		\
-		-DKICAD_SCRIPTING=ON 				\
-		-DKICAD_SCRIPTING_MODULES=ON			\
-		-DKICAD_SCRIPTING_PYTHON3=ON			\
-		-DKICAD_SCRIPTING_WXPYTHON_PHOENIX=ON		\
-		-DKICAD_USE_OCE=OFF				\
+		-DKICAD_SCRIPTING_WXPYTHON=ON			\
 		-DKICAD_USE_OCC=ON				\
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 USE_LDCONFIG=	yes
@@ -60,10 +56,7 @@ DOXYGEN_ALL_TARGET=	all doxygen-docs
 DOXYGEN_PORTDOCS=	doxygen
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/share/kicad|${DATADIR}|'		\
-		-e 's|/usr/local|${PREFIX}|'				\
-		${WRKSRC}/common/gestfich.cpp
-	${REINPLACE_CMD} -e 's|/usr/bin/xdg-open|${LOCALBASE}/bin/xdg-open|' \
+	${REINPLACE_CMD} -e 's|/usr/local/bin/xdg-open|${LOCALBASE}/bin/xdg-open|' \
 		${WRKSRC}/common/pgm_base.cpp
 
 post-install-DOCS-on:
