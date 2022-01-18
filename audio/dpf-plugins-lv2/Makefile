@@ -1,7 +1,6 @@
 PORTNAME=	dpf-plugins
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4
-PORTREVISION=	2
+DISTVERSION=	1.5
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -14,20 +13,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	liblo.so:audio/liblo \
-		libprojectM.so:graphics/libprojectm
+		libprojectM.so:graphics/libprojectm \
+		libpulse-simple.so:audio/pulseaudio
 
 USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	DISTRHO
 GH_PROJECT=	DPF-Plugins
-USE_XORG=	x11
+USE_XORG=	x11 xcursor xext xrandr
 USE_GL=		gl
 
 CXXFLAGS+=	-I${FILESDIR}
 LDFLAGS+=	-pthread
 
-CONFLICTS_INSTALL=	 nekobi-lv2 # bin/Nekobi
+CONFLICTS_INSTALL=	nekobi-lv2 # bin/Nekobi
 
 OPTIONS_DEFINE=		JACK
 OPTIONS_DEFAULT=	JACK

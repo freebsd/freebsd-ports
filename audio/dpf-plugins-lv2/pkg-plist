@@ -10,7 +10,6 @@
 %%JACK%%bin/MaPitchshift
 %%JACK%%bin/Nekobi
 %%JACK%%bin/PingPongPan
-%%JACK%%bin/ProM
 %%JACK%%bin/SoulForce
 %%JACK%%bin/glBars
 lib/dssi/3BandEQ-dssi.so
@@ -110,6 +109,6 @@ lib/vst/MaGigaverb-vst.so
 lib/vst/MaPitchshift-vst.so
 lib/vst/Nekobi-vst.so
 lib/vst/PingPongPan-vst.so
-lib/vst/ProM-vst.so
+lib/vst/ProM.vst/ProM.so
 lib/vst/SoulForce-vst.so
 lib/vst/glBars-vst.so
