@@ -41,4 +41,3 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/avm_tests
 
 .include <bsd.port.mk>
-
