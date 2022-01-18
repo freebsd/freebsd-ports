@@ -1,0 +1,5 @@
+ScalapackFx library provides convenient modern Fortran (Fortran 2003)
+wrappers for the routines of the ScaLAPACK library. Currently mostly
+the routines related to diagonalization are covered.
+
+WWW: https://github.com/dftbplus/scalapackfx

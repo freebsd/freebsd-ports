@@ -993,6 +993,7 @@
     SUBDIR += sc
     SUBDIR += sc-im
     SUBDIR += scalapack
+    SUBDIR += scalapackfx
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-swt
     SUBDIR += scs
