@@ -11,6 +11,9 @@ COMMENT=	Running Python crons in a Django project
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.8:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-common-helpers>=0.6.4:www/py-django-common-helpers@${PY_FLAVOR}
 
