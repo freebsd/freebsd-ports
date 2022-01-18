@@ -1,6 +1,6 @@
 PORTNAME=	ammonite
-DISTVERSION=	2.5.0
-CATEGORIES=	shells java
+DISTVERSION=	2.5.1
+CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${PORTVERSION}/
 DISTNAME=	2.13-${PORTVERSION}
 EXTRACT_SUFX=

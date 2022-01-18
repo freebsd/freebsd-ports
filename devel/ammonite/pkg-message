@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+To use ammonite fully you should setup a configuration file
+~/.ammonite/predef.sc. Below is an example:
+
+interp.load.ivy("com.lihaoyi"   %% "os-lib"    % "0.8.0")
+interp.load.ivy("org.typelevel" %% "cats-core" % "2.7.0")
+
+// This @ is necessary for Ammonite to process the `interp.load.ivy`
+// before continuing.
+@
+import cats._
+import cats.data._
+import cats.syntax.all._
+EOM
+}
+]
