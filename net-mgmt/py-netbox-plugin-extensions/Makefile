@@ -1,5 +1,5 @@
 PORTNAME=	netbox-plugin-extensions
-DISTVERSION=	1.0.6
+DISTVERSION=	1.1.1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,8 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
 .include <bsd.port.mk>
