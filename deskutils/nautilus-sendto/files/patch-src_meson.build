@@ -1,0 +1,13 @@
+src/meson.build:10:5: ERROR: Function does not take positional arguments.
+
+--- src/meson.build.orig	2017-08-09 11:30:58 UTC
++++ src/meson.build
+@@ -7,7 +7,7 @@ executable('nautilus-sendto',
+ 
+ po_dir = join_paths(meson.source_root(), 'po')
+ 
+-i18n.merge_file ('appdata',
++i18n.merge_file (
+                  input: 'nautilus-sendto.metainfo.xml.in',
+                  output: 'nautilus-sendto.metainfo.xml',
+                  install: true,
