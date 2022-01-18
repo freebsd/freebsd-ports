@@ -322,4 +322,35 @@ previously missing:
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 EOD
 }
+{ type: upgrade
+  maximum_version: 3.1.6
+  message: <<EOD
+
+1. Please make sure that the PostgreSQL server for the NetBox instance is
+   running version 10 or higher.  This is because PostgreSQL 9.6 is End-of-Life
+   since November 2021 and NetBox 3.1 makes use of the "macaddr8" field which
+   was introduced with PostgreSQL 10.
+
+
+2. Following items should be checked as well:
+
+    * The tenant and tenant_id filters for the Cable model now filter on the
+      tenant assigned directly to each cable, rather than on the parent object
+      of either termination.
+
+    * The cable_peer and cable_peer_type attributes of cable termination models
+      have been renamed to link_peer and link_peer_type, respectively, to
+      accommodate wireless links between interfaces.
+
+    * Exported webhooks and custom fields now reference associated content
+      types by raw string value (e.g. "dcim.site") rather than by
+      human-friendly name.
+
+    * The 128GFC interface type has been corrected from 128gfc-sfp28 to
+      128gfc-qsfp28.
+
+    * Several changes to the REST API were made as well.  Please check the
+      changelogs for further details.
+EOD
+}
 ]
