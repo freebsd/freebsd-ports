@@ -13,6 +13,9 @@ COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2011 and broken functionality reported upstream
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	stunnel:security/stunnel \
 		xterm:x11/xterm
 
