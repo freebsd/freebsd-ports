@@ -1,12 +1,12 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	diffoscope
-PORTVERSION=	196
+PORTVERSION=	204
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	In-depth comparison of files, archives, and directories
 
 LICENSE=	GPLv3+
