@@ -6,6 +6,9 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
 
+PATCH_SITES=	https://gitlab.freedesktop.org/gstreamer/gst-libav/-/commit/
+PATCHFILES+=	07b43c727c9a.patch:-p1 # https://gitlab.freedesktop.org/gstreamer/gst-libav/-/merge_requests/127
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in with many audio/video decoders/encoders
 
