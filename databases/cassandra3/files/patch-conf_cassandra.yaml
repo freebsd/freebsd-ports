@@ -1,6 +1,6 @@
---- conf/cassandra.yaml.orig	2019-02-02 22:09:01 UTC
+--- conf/cassandra.yaml.orig	2021-07-01 14:37:50 UTC
 +++ conf/cassandra.yaml
-@@ -70,7 +70,7 @@ max_hints_delivery_threads: 2
+@@ -71,7 +71,7 @@ max_hints_delivery_threads: 2
  
  # Directory where Cassandra should store hints.
  # If not set, the default directory is $CASSANDRA_HOME/data/hints.
@@ -9,7 +9,7 @@
  
  # How often hints should be flushed from the internal buffers to disk.
  # Will *not* trigger fsync.
-@@ -187,13 +187,13 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
+@@ -188,13 +188,13 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
  # will spread data evenly across them, subject to the granularity of
  # the configured compaction strategy.
  # If not set, the default directory is $CASSANDRA_HOME/data/data.
@@ -26,7 +26,7 @@
  
  # Enable / disable CDC functionality on a per-node basis. This modifies the logic used
  # for write path allocation rejection (standard: never reject. cdc: reject Mutation
-@@ -204,7 +204,7 @@ cdc_enabled: false
+@@ -205,7 +205,7 @@ cdc_enabled: false
  # segment contains mutations for a CDC-enabled table. This should be placed on a
  # separate spindle than the data directories. If not set, the default directory is
  # $CASSANDRA_HOME/data/cdc_raw.
@@ -35,7 +35,7 @@
  
  # Policy for data disk failures:
  #
-@@ -305,20 +305,12 @@ key_cache_save_period: 14400
+@@ -306,20 +306,12 @@ key_cache_save_period: 14400
  
  # Row cache implementation class name. Available implementations:
  #
@@ -57,7 +57,7 @@
  #
  # Default value is 0, to disable row caching.
  row_cache_size_in_mb: 0
-@@ -365,7 +357,7 @@ counter_cache_save_period: 7200
+@@ -366,7 +358,7 @@ counter_cache_save_period: 7200
  
  # saved caches
  # If not set, the default directory is $CASSANDRA_HOME/data/saved_caches.

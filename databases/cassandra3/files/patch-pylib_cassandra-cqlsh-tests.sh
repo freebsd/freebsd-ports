@@ -1,39 +1,54 @@
---- pylib/cassandra-cqlsh-tests.sh.orig	2020-10-20 17:07:48 UTC
+--- pylib/cassandra-cqlsh-tests.sh.orig	2022-01-03 17:11:14 UTC
 +++ pylib/cassandra-cqlsh-tests.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -x
 +#!/usr/local/bin/bash -x
+ #
+ # Licensed to the Apache Software Foundation (ASF) under one
+ # or more contributor license agreements.  See the NOTICE file
+@@ -15,7 +15,6 @@
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+-#
  
  ################################
  #
-@@ -9,6 +9,8 @@
- WORKSPACE=$1
- PYTHON_VERSION=$2
- JAVA_HOME=$3
-+REPO_DIR=$4
-+PYTHON_CMD=$5
+@@ -24,9 +23,13 @@
+ ################################
  
+ WORKSPACE=$1
+-PYTHON_VERSION=$2
+-JAVA_HOME=$3
++JAVA_HOME=$2
++REPO_DIR=$3
++PYTHON_CMD=$4
++REPO_DIR=$5
+ 
++PYTHON_VERSION=python3
++
  if [ "${WORKSPACE}" = "" ]; then
      echo "Specify Cassandra source directory"
-@@ -48,7 +50,7 @@ fi
+     exit
+@@ -65,7 +68,7 @@ fi
  
  # Loop to prevent failure due to maven-ant-tasks not downloading a jar..
  for x in $(seq 1 3); do
 -    ant -buildfile ${CASSANDRA_DIR}/build.xml realclean jar
-+    ant -buildfile ${CASSANDRA_DIR}/build.xml -Dmaven.repo.local=${REPO_DIR} -Dlocalm2=${REPO_DIR} -Dpycmd=${PYTHON_CMD} realclean jar
++    ${ANT_CMD} -buildfile ${CASSANDRA_DIR}/build.xml realclean jar -Dmaven.repo.local=${REPO_DIR} -Dlocalm2=${REPO_DIR}
      RETURN="$?"
      if [ "${RETURN}" -eq "0" ]; then
          break
-@@ -62,7 +64,7 @@ fi
+@@ -79,7 +82,7 @@ fi
  
  # Set up venv with dtest dependencies
  set -e # enable immediate exit if venv setup fails
 -virtualenv --python=$PYTHON_VERSION venv
-+virtualenv --python=${PYTHON_CMD} venv
++virtualenv --python=$PYTHON_CMD venv
  source venv/bin/activate
  pip install -r ${CASSANDRA_DIR}/pylib/requirements.txt
  pip freeze
-@@ -103,7 +105,7 @@ case "${pre_or_post_cdc}" in
+@@ -120,7 +123,7 @@ case "${pre_or_post_cdc}" in
          ;;
  esac
  
