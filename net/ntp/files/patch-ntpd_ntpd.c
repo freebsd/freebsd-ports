@@ -1,15 +1,17 @@
 --- ntpd/ntpd.c.orig	2020-06-23 02:17:48.000000000 -0700
-+++ ntpd/ntpd.c	2021-10-16 07:59:32.497688000 -0700
-@@ -145,7 +145,7 @@
++++ ntpd/ntpd.c	2022-01-18 09:48:42.075461000 -0800
+@@ -145,7 +145,9 @@
  # include <seccomp.h>
  #endif /* LIBSECCOMP and KERN_SECCOMP */
  
 -#ifdef __FreeBSD__
-+#if defined(__FreeBSD_version) && __FreeBSD_version < 1400038
++#if defined(__FreeBSD_version) && \
++    ((__FreeBSD_version > 1400000 && __FreeBSD_version < 1400038) || \
++    (__FreeBSD_version > 1300000 && __FreeBSD_version < 1300524))
  #include <sys/procctl.h>
  #ifndef PROC_STACKGAP_CTL
  /*
-@@ -438,7 +438,7 @@
+@@ -438,7 +440,7 @@
  	char *argv[]
  	)
  {
