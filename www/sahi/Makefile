@@ -35,11 +35,6 @@ DOS2UNIX_GLOB=	linux.xml os.properties sahi.properties
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCHROME}
-DEPRECATED=	Uses EOL Python 2.7 via www/chromium
-EXPIRATION_DATE=2021-06-23
-.endif
-
 SAHI_BUILD=	2011.07.19
 
 USE_JAVA=	yes
