@@ -21,9 +21,6 @@ COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Uses EOL Python 2.7 via devel/electron13
-EXPIRATION_DATE=2021-06-23
-
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	zip:archivers/zip \
