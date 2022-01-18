@@ -1909,6 +1909,7 @@
     SUBDIR += tn-hunspell
     SUBDIR += tnef2txt
     SUBDIR += tokyodystopia
+    SUBDIR += toml-f
     SUBDIR += tr-aspell
     SUBDIR += trang
     SUBDIR += translate-toolkit
