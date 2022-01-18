@@ -14,7 +14,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.46.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -355,11 +355,13 @@ post-install:
 		${XARGS} <${FILESDIR}/unwanted ${RM} && \
 		${RMDIR} include/e2fsprogs/blkid
 	${MV} ${STAGEDIR}${PREFIX}/bin/compile_et ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/compile_et.1 ${STAGEDIR}${PREFIX}/man/man1/e2fsprogs-compile_et.1
+	${MV} ${STAGEDIR}${MANPREFIX}/man/man1/compile_et.1 ${STAGEDIR}${MANPREFIX}/man/man1/e2fsprogs-compile_et.1
 	${MKDIR} ${STAGEDIR}${DATADIR}/et/
 	${MV} ${STAGEDIR}${PREFIX}/share/et/* ${STAGEDIR}${DATADIR}/et/
 	${REINPLACE_CMD} -e 's}^DIR=.*$$}DIR=${DATADIR}/et}' -i '' ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/et
+	${MV} -f ${STAGEDIR}${MANPREFIX}/man/man3/com_err.3 \
+		 ${STAGEDIR}${MANPREFIX}/man/man3/e2fsprogs-com_err.3
 
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
