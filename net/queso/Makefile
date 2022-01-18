@@ -11,6 +11,9 @@ COMMENT=	Determine the remote OS using simple TCP packets
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware and obsolete, last release back in 1998. Please consider using security/nmap instead
+EXPIRATION_DATE=2022-03-31
+
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
