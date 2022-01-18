@@ -323,7 +323,7 @@ WARNING+=	"PYTHON_DEFAULT must be a version present in PYTHON2_DEFAULT or PYTHON
 .endif
 
 .if ${_PYTHON_ARGS} == 2.7
-DEV_WARNING+=		"lang/python27 reached End of Life and will be removed on 2020-12-31, consider converting to a modern version of python"
+DEV_WARNING+=		"lang/python27 reached End of Life and will be removed somewhere in the future, please convert to a modern version of python"
 .elif ${_PYTHON_ARGS} == 2
 DEV_ERROR+=		"USES=python:2 is no longer supported, use USES=python:2.7"
 .elif ${_PYTHON_ARGS} == 3
@@ -479,7 +479,6 @@ PYTHON_EXT_SUFFIX=	# empty
 
 .if ${PYTHON_MAJOR_VER} == 2
 DEPRECATED?=	Uses Python 2.7 which is EOLed upstream
-EXPIRATION_DATE?=	2020-12-31
 .endif
 
 .if !defined(PYTHONBASE)
