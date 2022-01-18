@@ -12,9 +12,6 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Uses EOL Python 2.7 via www/node10
-EXPIRATION_DATE=	2021-06-23
-
 USES=		cpe nodejs:run,10
 CPE_VENDOR=	elastic
 USE_RC_SUBR=	${PORTNAME}
