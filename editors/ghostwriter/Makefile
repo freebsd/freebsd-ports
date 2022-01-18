@@ -9,9 +9,6 @@ COMMENT=	Distraction-free Markdown editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		compiler:c++11-lang desktop-file-utils pkgconfig qmake qt:5

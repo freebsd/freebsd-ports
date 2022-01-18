@@ -38,8 +38,6 @@ CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
 USE_QT+=	webengine
 .else
 CMAKE_ARGS+=	-DWEBVIEW_PROVIDER=webkit

@@ -7,9 +7,6 @@ COMMENT=	Calendar support libraries for KDEPim
 
 LICENSE=	LGPL21
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz

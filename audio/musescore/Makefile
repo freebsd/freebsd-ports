@@ -65,9 +65,4 @@ WEBENGINE_CMAKE_BOOL=	BUILD_WEBENGINE
 CXXFLAGS+=	-Wno-inconsistent-missing-override
 .endif
 
-.if ${PORT_OPTIONS:MWEBENGINE}
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-.endif
-
 .include <bsd.port.post.mk>

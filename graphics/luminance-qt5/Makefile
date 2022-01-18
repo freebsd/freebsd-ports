@@ -41,11 +41,6 @@ HELPBROWSER_CMAKE_BOOL=	WITH_HELPBROWSER
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MHELPBROWSER}
-DEPRECATED=	Uses EoL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=	2021-06-23
-.endif
-
 post-patch:
 # Do not install yet another copy of GPL (we use license framework instead)
 # and fix installation path for docs (but not for internal help files)

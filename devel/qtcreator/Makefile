@@ -86,11 +86,6 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MWEBENGINE}
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-.endif
-
 # Force a modern LLVM >= 10
 .if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} > 80
 LLVM_DEFAULT=	11

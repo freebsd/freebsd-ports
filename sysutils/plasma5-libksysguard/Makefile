@@ -23,11 +23,4 @@ WEBENGINE_USE=	QT=webengine
 WEBENGINE_DESC=	HTML-based GUI ksysguard library based on Qt5WebEngine
 WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWEBENGINE}
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-.endif
-
 .include <bsd.port.mk>

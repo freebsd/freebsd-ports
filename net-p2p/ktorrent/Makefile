@@ -36,8 +36,6 @@ WORKSPACE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibKWorkspace
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
 PLIST_SUB+=	WEBENGINE=""
 USE_QT+=	webengine
 .else

@@ -8,9 +8,6 @@ COMMENT=	WYSIWYG visual XHTML editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 USES=		cmake qt:5 desktop-file-utils
 
 USE_GITHUB=	yes

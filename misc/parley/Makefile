@@ -5,9 +5,6 @@ CATEGORIES=	misc education kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Vocabulary trainer for KDE
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
