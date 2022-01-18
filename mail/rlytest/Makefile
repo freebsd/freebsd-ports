@@ -9,6 +9,10 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test remote system for unsecured mail relay
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, last release in 2003 and dead upstream
+EXPIRATION_DATE=2022-03-31
+
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
