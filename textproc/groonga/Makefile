@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-PORTVERSION=	11.1.0
+PORTVERSION=	11.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -12,43 +12,45 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libedit libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-benchmark \
 		--disable-document \
 		--localstatedir=/var \
+		--with-log-path=/var/log/groonga.log \
+		--with-munin-plugins \
 		--without-cutter \
 		--without-inkscape \
 		--without-kytea \
-		--without-lemon \
-		--with-log-path=/var/log/groonga.log \
-		--with-munin-plugins
+		--without-lemon
+
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		MECAB SUGGEST RUBY
-OPTIONS_DEFAULT=	MECAB SUGGEST RUBY
+OPTIONS_DEFINE=		MECAB RUBY SUGGEST
+OPTIONS_DEFAULT=	MECAB RUBY SUGGEST
 OPTIONS_SUB=		yes
 
-MECAB_DESC=		Morphological analysis support via MeCab
+MECAB_DESC=	Morphological analysis support via MeCab
+SUGGEST_DESC=	Suggestions support
+
 MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
-SUGGEST_DESC=		Suggestions support
+RUBY_RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
+RUBY_USE=		RUBY=yes
+RUBY_CONFIGURE_ON=	--enable-mruby
 SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack \
 			libzmq.so:net/libzmq2
-SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \
-			--with-message-pack=${LOCALBASE} \
-			--enable-zeromq
-SUGGEST_CONFIGURE_OFF=	--without-libevent \
-			--without-message-pack \
-			--disable-zeromq
-RUBY_CONFIGURE_ON=	--enable-mruby
-RUBY_USE=		RUBY=yes
-RUBY_RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
+SUGGEST_CONFIGURE_ON=	--enable-zeromq \
+			--with-libevent=${LOCALBASE} \
+			--with-message-pack=${LOCALBASE}
+SUGGEST_CONFIGURE_OFF=	--disable-zeromq \
+			--without-libevent \
+			--without-message-pack
 
 post-patch:
 	@${REINPLACE_CMD} -e \
