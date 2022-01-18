@@ -1,0 +1,197 @@
+--- document-server-package/Makefile.orig	2021-09-28 10:03:34 UTC
++++ document-server-package/Makefile
+@@ -134,6 +134,21 @@ else
+ 		DS_EXAMLE := /var/www/$(DS_PREFIX)-example
+ 		DEV_NULL := /dev/null
+ 	endif
++	ifeq ($(UNAME_S),FreeBSD)
++		PLATFORM := freebsd
++		SHARED_EXT := .so*
++		SHELL_EXT := .sh
++		ARCH_EXT := .zip
++		AR := 7z a -y
++		PACKAGES = tar
++		DS_PREFIX := $(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)
++		NGINX_CONF := /usr/local/etc/nginx/includes
++		NGINX_LOG := /var/log/$(DS_PREFIX)
++		DS_ROOT := /usr/local/www/$(DS_PREFIX)
++		DS_FILES := /var/db/$(DS_PREFIX)
++		DS_EXAMLE := /usr/local/www/$(DS_PREFIX)-example
++		DEV_NULL := /dev/null
++	endif
+ 	ifeq ($(UNAME_S),Darwin)
+ 		PLATFORM := mac
+ 		SHARED_EXT := .dylib
+@@ -152,6 +167,12 @@ else
+ 	ifeq ($(UNAME_P),x86_64)
+ 		ARCHITECTURE := 64
+ 	endif
++	ifeq ($(UNAME_P),amd64)
++		ARCHITECTURE := 64
++	endif
++	ifeq ($(UNAME_P),aarch64)
++		ARCHITECTURE := 64
++	endif
+ 	ifneq ($(filter %86,$(UNAME_P)),)
+ 		ARCHITECTURE := 32
+ 	endif
+@@ -293,7 +314,7 @@ clean:
+ 		
+ documentserver:
+ 	mkdir -p $(DOCUMENTSERVER_FILES)
+-	cp -rf -t $(DOCUMENTSERVER) ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)/*
++	cp -rf ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)/* $(DOCUMENTSERVER)
+ 
+ 	mkdir -p $(DOCUMENTSERVER_CONFIG)
+ 	mkdir -p $(DOCUMENTSERVER_CONFIG)/log4js
+@@ -302,25 +323,25 @@ documentserver:
+ 	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
+ 
+ 	# rename product specific folders
+-	sed "s|onlyoffice\/documentserver|"$(DS_PREFIX)"|"  -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' "s|onlyoffice\/documentserver|"$(DS_PREFIX)"|" $(DOCUMENTSERVER_CONFIG)/*.json
+ 
+ 	# rename db account params
+-	sed 's|\("db.*": "\)onlyoffice\("\)|\1'$(ONLYOFFICE_VALUE)'\2|'  -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("db.*": "\)onlyoffice\("\)|\1'$(ONLYOFFICE_VALUE)'\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ 
+ 	# rename db schema name
+-	sed 's|onlyoffice|'$(ONLYOFFICE_VALUE)'|'  -i $(DOCUMENTSERVER)/server/schema/**/*.sql
++	sed -i '' 's|onlyoffice|'$(ONLYOFFICE_VALUE)'|' $(DOCUMENTSERVER)/server/schema/**/*.sql
+ 
+ 	# ignore CREATE DATABASE commands in MySQL
+-	sed -r "s/^(CREATE DATABASE|USE)/-- \1/" -i $(DOCUMENTSERVER)/server/schema/mysql/*.sql
++	sed -i '' -r "s/^(CREATE DATABASE|USE)/-- \1/" $(DOCUMENTSERVER)/server/schema/mysql/*.sql
+ 
+ 	# rename product in license
+-	sed 's|ONLYOFFICE|'$(COMPANY_NAME)'|'  -i $(DOCUMENTSERVER)/server/3rd-Party.txt
+-	sed 's|DocumentServer|'$(PRODUCT_NAME)'|'  -i $(DOCUMENTSERVER)/server/3rd-Party.txt
++	sed -i '' 's|ONLYOFFICE|'$(COMPANY_NAME)'|' $(DOCUMENTSERVER)/server/3rd-Party.txt
++	sed -i '' 's|DocumentServer|'$(PRODUCT_NAME)'|' $(DOCUMENTSERVER)/server/3rd-Party.txt
+ 
+ 	# Prevent for modification original config
+ 	chmod ug=r $(DOCUMENTSERVER_CONFIG)/*.json
+ 
+-	cp -fr -t $(DOCUMENTSERVER) $(3RD_PARTY_LICENSE_FILES)
++	cp -fr $(3RD_PARTY_LICENSE_FILES) $(DOCUMENTSERVER)
+ 	rm -fr $(3RD_PARTY_LICENSE_FILES)
+ 
+ ifeq ($(PLATFORM),win)
+@@ -329,33 +350,33 @@ ifeq ($(PLATFORM),win)
+ 	cat exe/license/3rd-Party.txt ; >> $(DOCUMENTSERVER)/3rd-Party.txt
+ endif
+ 
+-	[ -f $(LICENSE_FILE) ] && cp -fr -t $(DOCUMENTSERVER) $(LICENSE_FILE) || true
++	[ -f $(LICENSE_FILE) ] && cp -fr $(LICENSE_FILE) $(DOCUMENTSERVER) || true
+ 
+ 	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
+ 	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
+ 	[ -f $(HTMLFILEINTERNAL)$(EXEC_EXT) ] && chmod u+x $(HTMLFILEINTERNAL)$(EXEC_EXT) || true
+ 	chmod u+x $(DOCUMENTSERVER)/server/tools/allfontsgen$(EXEC_EXT)
+ 
+-	sed "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  -i $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
++	sed -i '' "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|" $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
+ 
+ ifeq ($(PRODUCT_NAME_LOW), documentserver)
+-	sed 's|\("packageType": \)[0-9]\+\(.*\)|\10\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
+-	sed 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataMemory\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("packageType": \)[0-9]\+\(.*\)|\10\2|' $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataMemory\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ endif
+ 
+ ifeq ($(PRODUCT_NAME_LOW), $(filter $(PRODUCT_NAME_LOW),documentserver-ee documentserver-ie))
+-	sed 's|\("packageType": \)[0-9]\+\(.*\)|\11\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
+-	sed 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("packageType": \)[0-9]\+\(.*\)|\11\2|' $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ endif
+ 
+ ifeq ($(PRODUCT_NAME_LOW), documentserver-de)
+-	sed 's|\("packageType": \)[0-9]\+\(.*\)|\12\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
+-	sed 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("packageType": \)[0-9]\+\(.*\)|\12\2|' $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ endif
+ 
+ 	cd $(DOCUMENTSERVER)/npm && \
+ 		npm install && \
+-		pkg ./node_modules/json -o json
++		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/server/node_modules/.bin/pkg" ./node_modules/json -o json
+ 
+ ifeq ($(PLATFORM),win)		
+ 	cd $(DOCUMENTSERVER)/npm && \
+@@ -369,7 +390,7 @@ endif		
+ 
+ documentserver-example:
+ 	mkdir -p $(DOCUMENTSERVER_EXAMPLE)
+-	cp -rf -t $(DOCUMENTSERVER_EXAMPLE) ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)-example/* common/documentserver-example/welcome
++	cp -rf ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)-example/* common/documentserver-example/welcome $(DOCUMENTSERVER_EXAMPLE)
+ 	
+ 	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
+ 
+@@ -378,7 +399,7 @@ documentserver-example:
+ 	# Prevent for modification original config
+ 	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
+ 
+-	sed "s|{{OFFICIAL_PRODUCT_NAME}}|"$(OFFICIAL_PRODUCT_NAME)"|"  -i $(DOCUMENTSERVER_EXAMPLE)/welcome/*.html
++	sed -i '' "s|{{OFFICIAL_PRODUCT_NAME}}|"$(OFFICIAL_PRODUCT_NAME)"|" $(DOCUMENTSERVER_EXAMPLE)/welcome/*.html
+ 
+ 	echo "Done" > $@
+ 
+@@ -394,27 +415,27 @@ rpm/$(PACKAGE_NAME).spec : rpm/package.spec
+ exe/$(PACKAGE_NAME).iss : exe/package.iss
+ 	mv -f $< $@
+ 
+-%.rpm: 
+-	mkdir -p $(@D)
++#%.rpm: 
++#	mkdir -p $(@D)
++#
++#	cd $(@D)/../../.. && rpmbuild \
++#		-bb \
++#		--define '_topdir $(@D)/../../../builddir' \
++#		--define '_package_name $(PACKAGE_NAME)' \
++#		--define '_product_version $(PRODUCT_VERSION)' \
++#		--define '_build_number $(BUILD_NUMBER)' \
++#		--define '_company_name $(COMPANY_NAME)' \
++#		--define '_product_name $(PRODUCT_NAME)' \
++#		--define '_publisher_name $(PUBLISHER_NAME)' \
++#		--define '_publisher_url $(PUBLISHER_URL)' \
++#		--define '_support_url $(SUPPORT_URL)' \
++#		--define '_support_mail $(SUPPORT_MAIL)' \
++#		--define '_company_name_low $(COMPANY_NAME_LOW)' \
++#		--define '_product_name_low $(PRODUCT_NAME_LOW)' \
++#		--define '_ds_prefix $(DS_PREFIX)' \
++#		--define '_binary_payload w7.xzdio' \
++#		$(PACKAGE_NAME).spec
+ 
+-	cd $(@D)/../../.. && rpmbuild \
+-		-bb \
+-		--define '_topdir $(@D)/../../../builddir' \
+-		--define '_package_name $(PACKAGE_NAME)' \
+-		--define '_product_version $(PRODUCT_VERSION)' \
+-		--define '_build_number $(BUILD_NUMBER)' \
+-		--define '_company_name $(COMPANY_NAME)' \
+-		--define '_product_name $(PRODUCT_NAME)' \
+-		--define '_publisher_name $(PUBLISHER_NAME)' \
+-		--define '_publisher_url $(PUBLISHER_URL)' \
+-		--define '_support_url $(SUPPORT_URL)' \
+-		--define '_support_mail $(SUPPORT_MAIL)' \
+-		--define '_company_name_low $(COMPANY_NAME_LOW)' \
+-		--define '_product_name_low $(PRODUCT_NAME_LOW)' \
+-		--define '_ds_prefix $(DS_PREFIX)' \
+-		--define '_binary_payload w7.xzdio' \
+-		$(PACKAGE_NAME).spec
+-
+ ifeq ($(COMPANY_NAME_LOW),onlyoffice)
+ M4_PARAMS += -D M4_DS_EXAMPLE_ENABLE=1
+ endif
+@@ -439,6 +460,8 @@ deb/debian/$(PACKAGE_NAME).links : deb/debian/package.
+ 
+ %.exe:
+ 	cd $(@D) && $(ISCC) $(ISCC_PARAMS) $(PACKAGE_NAME).iss
++
++freebsd: $(COMMON_DEPS) $(LINUX_DEPS) documentserver
+ 
+ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) documentserver documentserver-example
+ 	cd deb && dpkg-buildpackage -b -uc -us --changes-option=-u.

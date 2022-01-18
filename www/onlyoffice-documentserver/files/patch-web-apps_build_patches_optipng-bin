@@ -1,0 +1,18 @@
+--- web-apps/build/patches/optipng-bin+5.1.0.patch.orig	2022-01-07 14:58:52 UTC
++++ web-apps/build/patches/optipng-bin+5.1.0.patch
+@@ -0,0 +1,15 @@
++diff --git a/node_modules/optipng-bin/lib/install.js b/node_modules/optipng-bin/lib/install.js
++index 2d1db3a..643f075 100644
++--- a/node_modules/optipng-bin/lib/install.js
+++++ b/node_modules/optipng-bin/lib/install.js
++@@ -10,8 +10,8 @@ bin.run(['--version']).then(() => {
++ 	log.warn('optipng pre-build test failed');
++ 	log.info('compiling from source');
++ 
++-	binBuild.url('https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.7/optipng-0.7.7.tar.gz', [
++-		`./configure --with-system-zlib --prefix="${bin.dest()}" --bindir="${bin.dest()}"`,
+++	binBuild.file('%%DISTDIR%%/optipng-0.7.7.tar.gz', [
+++		`./configure --with-system-zlib --with-system-libpng --prefix="${bin.dest()}" --bindir="${bin.dest()}"`,
++ 		'make install'
++ 	]).then(() => {
++ 		log.success('optipng built successfully');

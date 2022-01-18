@@ -1,0 +1,11 @@
+--- core/Common/3dParty/v8/v8/buildtools/third_party/libc++/BUILD.gn.orig	2020-11-16 13:30:51 UTC
++++ core/Common/3dParty/v8/v8/buildtools/third_party/libc++/BUILD.gn
+@@ -14,7 +14,7 @@ config("config") {
+     # its implementation.
+     cflags += [ "-Wno-macro-redefined" ]
+   } else {
+-    cflags += [ "-fPIC" ]
++    cflags += [ "-fPIC", "-I%%LOCALBASE%%/include" ]
+   }
+ }
+ 

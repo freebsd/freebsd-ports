@@ -1,0 +1,174 @@
+--- server/node_modules/pkg-fetch/patches/node.v16.13.0.cpp.patch.orig	2021-12-30 20:04:18.203959000 +0100
++++ server/node_modules/pkg-fetch/patches/node.v16.13.0.cpp.patch	2021-12-30 20:09:53.210319000 +0100
+@@ -521,3 +521,171 @@ index 0000000000..fb2d47f52b
+              'cflags_cc!': [ '-fno-rtti' ],
+            }],
+            [ 'OS == "mac" or OS == "ios"', {
++--- node/deps/openssl/config/archs/linux-elf/no-asm/openssl-cl.gypi.orig	2019-08-06 20:46:23 UTC
+++++ node/deps/openssl/config/archs/linux-elf/no-asm/openssl-cl.gypi
++@@ -12,7 +12,7 @@
++       '-Wall -O3 -fomit-frame-pointer',
++     ],
++     'openssl_ex_libs_linux-elf': [
++-      '-ldl -pthread',
+++      '-pthread',
++     ],
++     'openssl_cli_srcs_linux-elf': [
++       'openssl/apps/asn1pars.c',
++--- node/deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi.orig	2021-03-17 20:16:25 UTC
+++++ node/deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi
++@@ -698,7 +698,7 @@
++       '-Wall -O3 -fomit-frame-pointer',
++     ],
++     'openssl_ex_libs_linux-elf': [
++-      '-ldl -pthread',
+++      '-pthread',
++     ],
++   },
++   'include_dirs': [
++--- node/deps/openssl/openssl_no_asm.gypi.orig	2020-09-08 12:17:11 UTC
+++++ node/deps/openssl/openssl_no_asm.gypi
++@@ -48,7 +48,7 @@
++       'includes': ['config/archs/linux64-mips64/no-asm/openssl.gypi'],
++     }, {
++       # Other architectures don't use assembly
++-      'includes': ['config/archs/linux-x86_64/no-asm/openssl.gypi'],
+++      'includes': ['config/archs/linux-elf/no-asm/openssl.gypi'],
++     }],
++   ],
++ }
++--- node/deps/openssl/openssl-cl_no_asm.gypi.orig	2020-09-08 12:17:10 UTC
+++++ node/deps/openssl/openssl-cl_no_asm.gypi
++@@ -1,4 +1,5 @@
++ {
+++  'defines': ['OPENSSL_NO_ASM'],
++   'conditions': [
++     ['target_arch=="ppc" and OS=="aix"', {
++       'includes': ['config/archs/aix-gcc/no-asm/openssl-cl.gypi'],
++@@ -47,7 +48,7 @@
++       'includes': ['config/archs/linux64-mips64/no-asm/openssl-cl.gypi'],
++     }, {
++       # Other architectures don't use assembly
++-      'includes': ['config/archs/linux-x86_64/no-asm/openssl-cl.gypi'],
+++      'includes': ['config/archs/linux-elf/no-asm/openssl-cl.gypi'],
++     }],
++   ],
++ }
++--- node/deps/v8/src/base/platform/platform-freebsd.cc.orig	2020-06-30 17:49:16 UTC
+++++ node/deps/v8/src/base/platform/platform-freebsd.cc
++@@ -82,8 +82,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
++             lib_name = std::string(path);
++           }
++           result.push_back(SharedLibraryAddress(
++-              lib_name, reinterpret_cast<uintptr_t>(map->kve_start),
++-              reinterpret_cast<uintptr_t>(map->kve_end)));
+++              lib_name, static_cast<uintptr_t>(map->kve_start),
+++              static_cast<uintptr_t>(map->kve_end)));
++         }
++ 
++         start += ssize;
++@@ -94,6 +94,48 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
++ }
++ 
++ void OS::SignalCodeMovingGC() {}
+++
+++#ifdef __arm__
+++
+++bool OS::ArmUsingHardFloat() {
+++// GCC versions 4.6 and above define __ARM_PCS or __ARM_PCS_VFP to specify
+++// the Floating Point ABI used (PCS stands for Procedure Call Standard).
+++// We use these as well as a couple of other defines to statically determine
+++// what FP ABI used.
+++// GCC versions 4.4 and below don't support hard-fp.
+++// GCC versions 4.5 may support hard-fp without defining __ARM_PCS or
+++// __ARM_PCS_VFP.
+++
+++#define GCC_VERSION \
+++  (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
+++#if GCC_VERSION >= 40600 && !defined(__clang__)
+++#if defined(__ARM_PCS_VFP)
+++  return true;
+++#else
+++  return false;
+++#endif
+++
+++#elif GCC_VERSION < 40500 && !defined(__clang__)
+++  return false;
+++
+++#else
+++#if defined(__ARM_PCS_VFP)
+++  return true;
+++#elif defined(__ARM_PCS) || defined(__SOFTFP__) || defined(__SOFTFP) || \
+++    !defined(__VFP_FP__)
+++  return false;
+++#else
+++#error \
+++    "Your version of compiler does not report the FP ABI compiled for."     \
+++       "Please report it on this issue"                                        \
+++       "http://code.google.com/p/v8/issues/detail?id=2140"
+++
+++#endif
+++#endif
+++#undef GCC_VERSION
+++}
+++
+++#endif // def __arm__
++ 
++ void OS::AdjustSchedulingParams() {}
++ 
++--- node/deps/v8/src/codegen/ppc/constants-ppc.h.orig	2020-06-30 17:49:17 UTC
+++++ node/deps/v8/src/codegen/ppc/constants-ppc.h
++@@ -36,7 +36,7 @@
++ #endif
++ 
++ #if !(V8_HOST_ARCH_PPC || V8_HOST_ARCH_PPC64) || !V8_TARGET_ARCH_PPC64 || \
++-    V8_TARGET_LITTLE_ENDIAN || (defined(_CALL_ELF) && _CALL_ELF == 2)
+++    (defined(_CALL_ELF) && _CALL_ELF == 2)
++ #define ABI_RETURNS_OBJECT_PAIRS_IN_REGS 1
++ #else
++ #define ABI_RETURNS_OBJECT_PAIRS_IN_REGS 0
++@@ -44,7 +44,7 @@
++ 
++ #if !(V8_HOST_ARCH_PPC || V8_HOST_ARCH_PPC64) || \
++     (V8_TARGET_ARCH_PPC64 &&                     \
++-     (V8_TARGET_LITTLE_ENDIAN || (defined(_CALL_ELF) && _CALL_ELF == 2)))
+++     (defined(_CALL_ELF) && _CALL_ELF == 2))
++ #define ABI_CALL_VIA_IP 1
++ #else
++ #define ABI_CALL_VIA_IP 0
++--- node/deps/v8/src/libsampler/sampler.cc.orig	2021-10-08 13:38:46 UTC
+++++ node/deps/v8/src/libsampler/sampler.cc
++@@ -490,6 +490,10 @@ void SignalHandler::FillRegisterState(void* context, R
++   state->pc = reinterpret_cast<void*>(mcontext.__gregs[_REG_PC]);
++   state->sp = reinterpret_cast<void*>(mcontext.__gregs[_REG_SP]);
++   state->fp = reinterpret_cast<void*>(mcontext.__gregs[_REG_FP]);
+++#elif V8_TARGET_ARCH_PPC64
+++  state->pc = reinterpret_cast<void*>(mcontext.mc_srr0);
+++  state->sp = reinterpret_cast<void*>(mcontext.mc_frame[1]);
+++  state->fp = reinterpret_cast<void*>(mcontext.mc_frame[31]);
++ #endif  // V8_HOST_ARCH_*
++ #elif V8_OS_NETBSD
++ #if V8_HOST_ARCH_IA32
++--- node/node.gypi.orig	2021-03-03 05:40:19 UTC
+++++ node/node.gypi
++@@ -319,6 +319,9 @@
++     [ 'node_use_openssl=="true"', {
++       'defines': [ 'HAVE_OPENSSL=1' ],
++       'conditions': [
+++        ['openssl_no_asm==1', {
+++          'defines': [ 'OPENSSL_NO_ASM' ],
+++        }],
++         [ 'node_shared_openssl=="false"', {
++           'dependencies': [
++             './deps/openssl/openssl.gyp:openssl',
++--- node/src/cares_wrap.h.orig	2021-08-18 22:13:12 UTC
+++++ node/src/cares_wrap.h
++@@ -22,7 +22,7 @@
++ # include <netdb.h>
++ #endif  // __POSIX__
++ 
++-# include <ares_nameser.h>
+++# include <arpa/nameser.h>
++ 
++ namespace node {
++ namespace cares_wrap {

@@ -1,0 +1,36 @@
+--- server/package.json.orig	2021-09-28 08:06:55 UTC
++++ server/package.json
+@@ -9,7 +9,7 @@
+         "expand": true,
+         "src": [
+           "./**/sources/*.js",
+-          "./Common/package.json",
++          "./Common/*.json",
+           "./DocService/package.json",
+           "./DocService/public/healthcheck.docx",
+           "./FileConverter/package.json",
+@@ -34,6 +34,7 @@
+     "mkdir": {
+       "server": {
+         "options": {
++          "mode": "0755",
+           "create": [
+             "./build/server"
+           ]
+@@ -54,12 +55,14 @@
+     "./build/server/Metrics"
+   ],
+   "dependencies": {
+-    "grunt": "^1.3.0",
++    "grunt": "^1.4.1",
+     "grunt-banner": "^0.6.0",
+     "grunt-check-dependencies": "^1.0.0",
++    "grunt-cli": "^1.4.3",
+     "grunt-contrib-clean": "^2.0.0",
+     "grunt-contrib-copy": "^1.0.0",
++    "grunt-mkdir": "^1.0.0",
+     "grunt-stripcomments": "^0.7.2",
+-    "grunt-mkdir": "^1.0.0"
++    "pkg": "^5.5.1"
+   }
+ }

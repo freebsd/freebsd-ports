@@ -1,0 +1,13 @@
+--- core/Common/3dParty/v8/v8/build/win/BUILD.gn.orig	2021-12-20 12:36:58 UTC
++++ core/Common/3dParty/v8/v8/build/win/BUILD.gn
+@@ -10,8 +10,8 @@ import("//build/config/win/manifest.gni")
+ # be converted to check target platform before assigning source files to the
+ # sources variable. Remove this import and set_sources_assignment_filter call
+ # when the file has been converted. See https://crbug.com/1018739 for details.
+-import("//build/config/deprecated_default_sources_assignment_filter.gni")
+-set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
++#import("//build/config/deprecated_default_sources_assignment_filter.gni")
++#set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
+ 
+ # Depending on this target will cause the manifests for Chrome's default
+ # Windows and common control compatibility and elevation for executables.
