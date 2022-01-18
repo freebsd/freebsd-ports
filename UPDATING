@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220118
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. Please make sure that the PostgreSQL server for the NetBox instance is
+     running version 10 or higher.  This is because PostgreSQL 9.6 is
+     End-of-Life since November 2021 and NetBox 3.1 makes use of the
+     "macaddr8" field which was introduced with PostgreSQL 10.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20220110:
   AFFECTS: users of security/bastillion
   AUTHOR: netchild@FreeBSD.org
