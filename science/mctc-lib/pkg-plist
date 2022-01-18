@@ -14,6 +14,7 @@ include/mctc-lib/GNU-10.3.0/mctc_io_read_ctfile.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_read_gaussian.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_read_genformat.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_read_pdb.mod
+include/mctc-lib/GNU-10.3.0/mctc_io_read_qcschema.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_read_turbomole.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_read_vasp.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_read_xyz.mod
@@ -27,15 +28,17 @@ include/mctc-lib/GNU-10.3.0/mctc_io_write_ctfile.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_write_gaussian.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_write_genformat.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_write_pdb.mod
+include/mctc-lib/GNU-10.3.0/mctc_io_write_qcschema.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_write_turbomole.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_write_vasp.mod
 include/mctc-lib/GNU-10.3.0/mctc_io_write_xyz.mod
 include/mctc-lib/GNU-10.3.0/mctc_version.mod
+lib/cmake/mctc-lib/Findjsonfortran.cmake
 lib/cmake/mctc-lib/mctc-lib-config-version.cmake
 lib/cmake/mctc-lib/mctc-lib-config.cmake
 lib/cmake/mctc-lib/mctc-lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.2.3
+lib/libmctc-lib.so.0.2.4
 libdata/pkgconfig/mctc-lib.pc
