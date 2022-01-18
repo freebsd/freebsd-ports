@@ -56,9 +56,7 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/elisp.nanorc
 %%DATADIR%%/email.nanorc
 %%DATADIR%%/extra/ada.nanorc
-%%DATADIR%%/extra/debian.nanorc
 %%DATADIR%%/extra/fortran.nanorc
-%%DATADIR%%/extra/gentoo.nanorc
 %%DATADIR%%/extra/haskell.nanorc
 %%DATADIR%%/extra/povray.nanorc
 %%DATADIR%%/extra/spec.nanorc
@@ -91,3 +89,4 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/tex.nanorc
 %%DATADIR%%/texinfo.nanorc
 %%DATADIR%%/xml.nanorc
+%%DATADIR%%/yaml.nanorc
