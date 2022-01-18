@@ -1,6 +1,7 @@
 PORTNAME=	highs
-DISTVERSION=	g20210408
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.1-886
+DISTVERSIONSUFFIX=	-g697c7a88
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -10,14 +11,14 @@ COMMENT=	Solver for large scale sparse linear programming (LP) problems
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libOsi.so:math/osi
+#LIB_DEPENDS=	libOsi.so:math/osi
+CONFLICTS_BUILD=	coin-or-Osi # see https://github.com/ERGO-Code/HiGHS/issues/675
 
 USES=		blaslapack cmake:testing compiler:c++11-lang pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ERGO-Code
 GH_PROJECT=	HiGHS
-GH_TAGNAME=	cfe064e
 
 CMAKE_OFF=	BUILD_TESTING
 
