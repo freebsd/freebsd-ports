@@ -143,3 +143,5 @@ SHA256 (bilelmoussaoui-libadwaita-rs-b898c11fb6776fc7a9a6b920222fa3173216a80c_GL
 SIZE (bilelmoussaoui-libadwaita-rs-b898c11fb6776fc7a9a6b920222fa3173216a80c_GL0.tar.gz) = 104015
 SHA256 (World-Solanum-3e69272fb31bf18a7aa74ece9d904d445c458274_GL0.tar.gz) = 949e50fb8a733b196d95a1a87f5db2a7131ad17d9454955693d9b0380108d834
 SIZE (World-Solanum-3e69272fb31bf18a7aa74ece9d904d445c458274_GL0.tar.gz) = 104593
+SHA256 (e5c5d88f95b0.patch) = e2d30fb22bb8948659d909064df462bd74f44f2eb768757d041618aecb36b245
+SIZE (e5c5d88f95b0.patch) = 815

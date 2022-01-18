@@ -4,6 +4,9 @@ DISTVERSION=	2.1.0
 PORTREVISION=	6
 CATEGORIES=	deskutils
 
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	e5c5d88f95b0.patch:-p1 # https://gitlab.gnome.org/World/Solanum/-/merge_requests/49
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Pomodoro timer for the GNOME desktop
 
