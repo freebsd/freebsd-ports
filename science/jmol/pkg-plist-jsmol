@@ -337,7 +337,13 @@
 %%WWWDIR%%/j2s/J/adapter/smarter/Structure.js
 %%WWWDIR%%/j2s/J/adapter/smarter/StructureIterator.js
 %%WWWDIR%%/j2s/J/adapter/smarter/XtalSymmetry.js
+%%WWWDIR%%/j2s/J/adapter/writers/CIFWriter.js
+%%WWWDIR%%/j2s/J/adapter/writers/CMLWriter.js
 %%WWWDIR%%/j2s/J/adapter/writers/QCJSONWriter.js
+%%WWWDIR%%/j2s/J/adapter/writers/MOLWriter.js
+%%WWWDIR%%/j2s/J/adapter/writers/PDBWriter.js
+%%WWWDIR%%/j2s/J/adapter/writers/PWMWriter.js
+%%WWWDIR%%/j2s/J/adapter/writers/XSFWriter.js
 %%WWWDIR%%/j2s/J/api/AtomIndexIterator.js
 %%WWWDIR%%/j2s/J/api/EventManager.js
 %%WWWDIR%%/j2s/J/api/FontManager.js
@@ -393,6 +399,7 @@
 %%WWWDIR%%/j2s/J/api/JmolSyncInterface.js
 %%WWWDIR%%/j2s/J/api/JmolTouchSimulatorInterface.js
 %%WWWDIR%%/j2s/J/api/JmolViewer.js
+%%WWWDIR%%/j2s/J/api/JmolWriter.js
 %%WWWDIR%%/j2s/J/api/JmolZipUtilities.js
 %%WWWDIR%%/j2s/J/api/PlatformViewer.js
 %%WWWDIR%%/j2s/J/api/PymolAtomReader.js
@@ -1113,7 +1120,6 @@
 %%WWWDIR%%/j2s/JU/MessagePackReader.js
 %%WWWDIR%%/j2s/JU/Modulation.js
 %%WWWDIR%%/j2s/JU/ModulationSet.js
-%%WWWDIR%%/j2s/JU/MolWriter.js
 %%WWWDIR%%/j2s/JU/Node.js
 %%WWWDIR%%/j2s/JU/Normix.js
 %%WWWDIR%%/j2s/JU/OC.js
