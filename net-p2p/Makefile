@@ -2,6 +2,7 @@
 
     SUBDIR += amule
     SUBDIR += amule-devel
+    SUBDIR += arbitrum-avm
     SUBDIR += autoscan
     SUBDIR += awgg
     SUBDIR += bazarr
