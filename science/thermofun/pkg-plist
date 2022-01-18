@@ -8,8 +8,6 @@ include/ThermoFun/Common/ScalarTypes.hpp
 include/ThermoFun/Common/ThermoOmp.h
 include/ThermoFun/Common/ThermoScalar.hpp
 include/ThermoFun/Common/Units.hpp
-include/ThermoFun/Common/formuladata.h
-include/ThermoFun/Common/formulaparser.h
 include/ThermoFun/Database.h
 include/ThermoFun/ElectroModelsSolvent.h
 include/ThermoFun/Element.h

@@ -1,6 +1,6 @@
 PORTNAME=	thermofun
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.8
+DISTVERSION=	0.3.9
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
+LIB_DEPENDS=	libChemicalFun.so:science/chemicalfun
 
 USES=		cmake compiler:c++14-lang
 
