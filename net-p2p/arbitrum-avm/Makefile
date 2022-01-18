@@ -2,7 +2,8 @@ PORTNAME=	arbitrum-avm
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://neel.my.to/mirror/arbitrum/
+MASTER_SITES=	LOCAL/nc/mirror/ \
+		https://neel.my.to/mirror/arbitrum/
 DISTNAME=	arbitrum-${PORTVERSION}
 
 MAINTAINER=	nc@FreeBSD.org
