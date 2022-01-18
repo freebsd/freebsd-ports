@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 
 PORTNAME=	tmpreaper
-PORTVERSION=	1.6.15
+PORTVERSION=	1.6.16
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,11 +12,11 @@ COMMENT=	Cleans up files in directories based on their age
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
+USES=		autoreconf cpe
 CPE_VENDOR=	debian
 GNU_CONFIGURE=	yes
 
-PORTSCOUT=	ignore:1
+INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
