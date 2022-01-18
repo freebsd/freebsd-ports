@@ -12,6 +12,9 @@ COMMENT=	Distributed version control system with digital signatures
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, no release since 2014
+EXPIRATION_DATE=2022-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libidn.so:dns/libidn \
