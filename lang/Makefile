@@ -339,7 +339,6 @@
     SUBDIR += snobol4
     SUBDIR += solidity
     SUBDIR += spidermonkey17
-    SUBDIR += spidermonkey60
     SUBDIR += spidermonkey78
     SUBDIR += spl
     SUBDIR += squeak
