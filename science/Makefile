@@ -374,6 +374,7 @@
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
+    SUBDIR += tblite
     SUBDIR += teem
     SUBDIR += tfel
     SUBDIR += tfel-edf

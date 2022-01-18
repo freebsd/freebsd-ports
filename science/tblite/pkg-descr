@@ -1,0 +1,6 @@
+This project is an effort to create a library implementation of the
+extended tight binding (xTB) Hamiltonian which can be shared between
+xtb and dftb+. The current state of this project should be considered
+as highly experimental.
+
+WWW: https://github.com/tblite/tblite
