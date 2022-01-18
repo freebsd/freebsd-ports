@@ -4,7 +4,7 @@
 Krusader can use several external programs for additional functionality, from
 diff utilities to email programs.
 
-https://docs.kde.org/trunk5/en/extragear-utils/krusader/konfig-dependencies.html
+https://docs.kde.org/trunk5/en/krusader/krusader/konfig-dependencies.html
 contains a list of programs Krusader optionally looks for.
 
 To use 'update DB' button in the locate dialog, open "Settings->Configure
