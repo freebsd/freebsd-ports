@@ -1,5 +1,5 @@
---- python/dir.mk.orig	2015-06-26 10:32:49 UTC
-+++ python/dir.mk
+--- python3/dir.mk.orig	2022-01-18 19:50:00 UTC
++++ python3/dir.mk
 @@ -24,7 +24,7 @@ export:: $(FILES)
              $(ExportFileToDir) \
            done; \

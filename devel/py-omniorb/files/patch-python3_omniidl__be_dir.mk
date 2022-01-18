@@ -1,5 +1,5 @@
---- python/omniidl_be/dir.mk.orig	2003-03-23 21:51:59 UTC
-+++ python/omniidl_be/dir.mk
+--- python3/omniidl_be/dir.mk.orig	2022-01-18 19:52:54 UTC
++++ python3/omniidl_be/dir.mk
 @@ -13,8 +13,6 @@ export:: $(FILES)
            for file in $^; do \
              $(ExportFileToDir) \
