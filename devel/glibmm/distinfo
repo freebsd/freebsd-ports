@@ -1,3 +1,3 @@
-TIMESTAMP = 1601366996
-SHA256 (gnome/glibmm-2.64.2.tar.xz) = a75282e58d556d9b2bb44262b6f5fb76c824ac46a25a06f527108bec86b8d4ec
-SIZE (gnome/glibmm-2.64.2.tar.xz) = 7438116
+TIMESTAMP = 1641718573
+SHA256 (gnome/glibmm-2.66.2.tar.xz) = b2a4cd7b9ae987794cbb5a1becc10cecb65182b9bb841868625d6bbb123edb1d
+SIZE (gnome/glibmm-2.66.2.tar.xz) = 7603104
