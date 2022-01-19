@@ -1,8 +1,10 @@
 # Created by: KANOU Hiroki <kanou@khdd.net>
 
 PORTNAME=	libuninameslist
-PORTVERSION=	20200413
+DISTVERSION=	20211114
 CATEGORIES=	textproc
+MASTER_SITES=	https://github.com/fontforge/${PORTNAME}/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-dist-${DISTVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library of Unicode annotation data
@@ -10,13 +12,11 @@ COMMENT=	Library of Unicode annotation data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gmake libtool
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fontforge
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip

@@ -3,11 +3,11 @@ include/uninameslist.h
 %%FRENCH%%lib/libuninameslist-fr.a
 %%FRENCH%%lib/libuninameslist-fr.so
 %%FRENCH%%lib/libuninameslist-fr.so.1
-%%FRENCH%%lib/libuninameslist-fr.so.1.0.3
+%%FRENCH%%lib/libuninameslist-fr.so.1.0.5
 lib/libuninameslist.a
 lib/libuninameslist.so
 lib/libuninameslist.so.1
-lib/libuninameslist.so.1.0.7
+lib/libuninameslist.so.1.0.10
 libdata/pkgconfig/libuninameslist.pc
 %%FRENCH%%man/man3/libuninameslist-fr.3.gz
 man/man3/libuninameslist.3.gz
