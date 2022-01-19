@@ -1,45 +1,26 @@
-[
-{
-	message: <<EOD
-======================================================================
-It is recommended to run Jack with real-time priority. As FreeBSD doesn't
-allow unprivileged users to set real-time priority, you should do it manually
-with rtprio(1). As this port comes with jackd and jackdbus executables, note
-that only one can be used.
+The new JACK server comes with a DBUS control interface:
 
-Configure backend options using jack_control:
+$ jack_control help
 $ jack_control ds oss
+$ jack_control dp
 $ jack_control eps realtime False
-$ jack_control eps sync True
-
-Configure memory locking editing either /etc/login.conf or ~/.login_conf with:
-:memorylocked=unlimited:
-
-After every change to login.conf, you should execute:
-cap_mkdb /etc/login.conf
-
-There are two ways to start jack:
-* via dbus (new executable: jackdbus)
-* as rc service (classic executable: jackd)
-
-- Starting via DBUS:
 $ jack_control start
 
-- Starting as RC service:
-add the following lines to /etc/rc.conf:
-jackd_enable="YES"
-jackd_user="{your-jack-user}"
-jackd_rtprio="YES"
-jackd_args="-R -doss -r{sample-rate} -p1024 -n3 -w16 \
-            --capture /dev/dsp{N} --playback /dev/dsp{N}"
+Only root can grant real-time priority to processes for now, using rtprio(1).
+Upcoming FreeBSD releases will have a MAC policy with a realtime user group.
 
-Where:
-- your-jack-user: is the user who is going to use jack; currently
-                  only one user is supported
-- sample-rate: can be 44100, 48000, etc.
-- /dev/dsp{N}: your OSS devices, usually /dev/dsp0
-======================================================================
-EOD,
-	type: install
-}
-]
+Memory locking has to be allowed in /etc/login.conf or ~/.login_conf. Set the
+resource limit ":memorylocked=unlimited:" and don't forget to run
+
+# cap_mkdb /etc/login.conf
+
+It's still possible to start JACK server as an RC service for a dedicated user.
+Note that only one JACK server can be run at a time. An /etc/rc.conf example:
+
+jackd_enable="YES"
+jackd_user="joe"
+jackd_rtprio="YES"
+jackd_args="-R -doss -r48000 -p1024 -n1 -w16 \
+            --capture /dev/dsp0 --playback /dev/dsp0"
+
+Official JACK example clients and tools are available as jack-example-tools.
