@@ -1,6 +1,6 @@
---- lib/sbi/sbi_hart.c.orig	2021-01-30 20:30:32 UTC
+--- lib/sbi/sbi_hart.c.orig	2021-12-24 11:57:44 UTC
 +++ lib/sbi/sbi_hart.c
-@@ -188,6 +188,16 @@ int sbi_hart_pmp_configure(struct sbi_scratch *scratch
+@@ -203,6 +203,16 @@ int sbi_hart_pmp_configure(struct sbi_scratch *scratch
  	if (!pmp_count)
  		return 0;
  
