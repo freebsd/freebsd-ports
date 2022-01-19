@@ -29,6 +29,7 @@ USE_LDCONFIG=	yes
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
+CFLAGS_riscv64=	-mno-relax
 
 CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/llvm/
 
