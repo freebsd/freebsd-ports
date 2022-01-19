@@ -4,6 +4,8 @@ PORTNAME=	pdal
 DISTVERSION=	2.3.0
 PORTREVISION=	3
 CATEGORIES=	math databases graphics
+MASTER_SITES=	https://github.com/PDAL/PDAL/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library for translating and manipulating point cloud data
@@ -28,11 +30,10 @@ LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64le=libunwind.so:devel/libunwind
 
-USES=		cmake compiler:c++11-lib pathfix pkgconfig ssl
+USES=		cmake compiler:c++11-lib pathfix pkgconfig ssl tar:bz2
 USE_LDCONFIG=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME:tu}
-GH_PROJECT=	${GH_ACCOUNT}
+
+WRKSRC=		${WRKDIR}/${PORTNAME:tu}-${DISTVERSION}-src
 
 CMAKE_ON=	WITH_LASZIP #LASZIP is recommended
 CMAKE_OFF=	WITH_TESTS
