@@ -48,6 +48,7 @@
     SUBDIR += chemps2
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
+    SUBDIR += chimes-calculator
     SUBDIR += chrono
     SUBDIR += clhep
     SUBDIR += clipper
