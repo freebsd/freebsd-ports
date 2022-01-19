@@ -1,5 +1,5 @@
 PORTNAME=	cfr
-DISTVERSION=	0.151
+DISTVERSION=	0.152
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.benf.org/other/cfr/ \
 		https://www.benf.org/other/cfr/ \
