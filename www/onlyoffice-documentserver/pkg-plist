@@ -22614,7 +22614,7 @@ lib/libkernel.so
 @dir %%WWWDIR%%/Data
 @dir %%WWWDIR%%/documentserver/fonts
 @postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% /var/db/onlyoffice/documentserver
-@postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% /var/log/onlyoffice/documentserver 
+@postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% /var/log/onlyoffice/documentserver
 @postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% %D/%%WWWDIR%%/documentserver
 @postunexec rm -rf %D/%%WWWDIR%%/documentserver/fonts
 @postunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/slide/themes/theme*
