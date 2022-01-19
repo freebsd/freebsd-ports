@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	largetifftools
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.imnc.in2p3.fr/pagesperso/deroulers/software/largetifftools/download/${PORTNAME}-${PORTVERSION}/
 
