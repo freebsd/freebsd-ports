@@ -22,10 +22,11 @@ setup(
     license='Apache 2.0',
     keywords='__all__ public',
     url='http://public.readthedocs.io/',
-    packages=["src/public"],
+    package_dir={"":"src"},
+    packages=['public'],
     include_package_data=True,
     package_data={
-        'public': ['src/public/py.typed'],
+        'public': ['public/py.typed'],
         },
     # readthedocs builds fail unless zip_safe is False.
     zip_safe=False,
