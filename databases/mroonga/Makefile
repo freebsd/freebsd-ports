@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	mroonga
-PORTVERSION=	11.10
+PORTVERSION=	11.11
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 
@@ -11,20 +11,18 @@ COMMENT=	Open-source fulltext search engine for MySQL
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_MYSQL=	101m 102m 103m 57p 57w
-
 BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:configure
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		compiler:c11 libtool mysql pkgconfig shebangfix
+IGNORE_WITH_MYSQL=	101m 102m 103m 57p 57w
 
-SHEBANG_FILES=	data/rpm/post.sh \
-		data/rpm/preun.sh
+SHEBANG_FILES=	data/rpm/post.sh data/rpm/preun.sh
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mysql-source="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)" \
-		--with-mysql-build="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V BUILD_WRKSRC)" \
-		--with-mysql-config=${PREFIX}/bin/mysql_config
+CONFIGURE_ARGS=	--with-mysql-build="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V BUILD_WRKSRC)" \
+		--with-mysql-config=${PREFIX}/bin/mysql_config \
+		--with-mysql-source="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)"
 
 SUB_FILES=	pkg-message
 
