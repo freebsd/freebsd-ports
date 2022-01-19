@@ -12,6 +12,8 @@ COMMENT=	Server-side data ingestion and transformation tool
 
 LICENSE=	APACHE20
 
+ONLY_FOR_ARCHS= aarch64 amd64
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe shebangfix
