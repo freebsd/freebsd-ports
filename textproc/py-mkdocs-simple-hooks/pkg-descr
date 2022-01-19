@@ -1,0 +1,4 @@
+Plugin for MkDocs to define hooks, without having to create a separate
+plugin package.
+
+WWW: https://github.com/aklajnert/mkdocs-simple-hooks
