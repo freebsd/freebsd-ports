@@ -1,11 +1,25 @@
---- CMakeLists.txt.orig	2020-07-22 22:36:50 UTC
+--- CMakeLists.txt.orig	2019-11-04 16:28:52 UTC
 +++ CMakeLists.txt
-@@ -42,7 +42,7 @@ ExternalProject_Add(htslib
-     BUILD_IN_SOURCE 1
-     CONFIGURE_COMMAND autoheader && autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure 
-         --prefix=${PREFIX} --disable-bz2 --disable-lzma --disable-libcurl
--    BUILD_COMMAND make lib-static
-+    BUILD_COMMAND gmake lib-static
-     INSTALL_COMMAND ""
- )
+@@ -34,22 +34,6 @@ ELSE(LINK MATCHES shared)
+     message("shared build")
+ ENDIF(LINK MATCHES static)
  
+-
+-include(ExternalProject)
+-ExternalProject_Add(htslib
+-    PREFIX ${PROJECT_SOURCE_DIR}/ext/htslib
+-    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/htslib
+-    BUILD_IN_SOURCE 1
+-    CONFIGURE_COMMAND autoheader && autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure 
+-        --prefix=${PREFIX} --disable-bz2 --disable-lzma --disable-libcurl
+-    BUILD_COMMAND make lib-static
+-    INSTALL_COMMAND ""
+-)
+-
+-include_directories(${htslib_PREFIX}/src/htslib)
+-
+-
+-
+ # add_compile_options(-Wdeprecated-register)
+ 
+ add_subdirectory(src)

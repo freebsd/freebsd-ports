@@ -17,6 +17,20 @@ usage()
 
 
 ##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+
+##########################################################################
 #   Main
 ##########################################################################
 
@@ -32,9 +46,20 @@ fi
 
 cp -iR %%EXAMPLESDIR%% "$dir"
 cd "$dir"
-kallisto index -i transcripts.idx transcripts.fasta.gz
-kallisto quant -i transcripts.idx -o output -b 100 reads_1.fastq.gz reads_2.fastq.gz
+kallisto index --index=transcripts.idx transcripts.fasta.gz
+pause
+
+kallisto quant --index=transcripts.idx --genomebam --chromosomes=chrom.txt \
+    --gtf=transcripts.gtf.gz --output-dir=output \
+    --boostrap-samples=100 reads_1.fastq.gz reads_2.fastq.gz
+pause
+
 ls -l output
+pause
+
+# Test genomebam
+samtools view output/pseudoalignments.bam | more
+
 more output/abundance.tsv
 
 cat << EOM
