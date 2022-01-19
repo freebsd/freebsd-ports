@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Known issues:
-- mesa-dri > 21.3.0 breaks Vulkan renderer on Intel GPUs
-  https://github.com/yuzu-emu/yuzu/issues/7116
-EOM
-}
-]
