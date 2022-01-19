@@ -1,4 +1,4 @@
---- src/enums.h.orig	2020-04-19 12:38:51 UTC
+--- src/enums.h.orig	2020-04-19 10:50:48 UTC
 +++ src/enums.h
 @@ -9,6 +9,9 @@
  #ifndef SQUID_ENUMS_H

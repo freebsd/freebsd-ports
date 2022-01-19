@@ -1,22 +1,20 @@
 PORTNAME=	squid
-DISTVERSION=	4.15
+DISTVERSION=	5.3
 CATEGORIES=	www
-MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v4/ \
-		http://ca.squid-cache.org/Versions/v4/ \
-		http://www1.il.squid-cache.org/Versions/v4/ \
-		http://www1.jp.squid-cache.org/Versions/v4/ \
-		http://www2.gr.squid-cache.org/Versions/v4/ \
-		http://ca2.squid-cache.org/Versions/v4/ \
-		http://www.squid-cache.org/Versions/v4/
+MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v5/ \
+		http://www1.il.squid-cache.org/Versions/v5/ \
+		http://www1.jp.squid-cache.org/Versions/v5/ \
+		http://www2.gr.squid-cache.org/Versions/v5/ \
+		http://ca2.squid-cache.org/Versions/v5/ \
+		http://www.squid-cache.org/Versions/v5/
 
 PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
-		http://ca.squid-cache.org/%SUBDIR%/ \
 		http://www1.il.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.gr.squid-cache.org/%SUBDIR%/ \
 		http://ca2.squid-cache.org/%SUBDIR%/ \
 		http://www.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v4/changesets
+PATCH_SITE_SUBDIR=	Versions/v5/changesets
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
@@ -24,9 +22,9 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
+USES=		compiler:c++11-lib cpe gmake localbase:ldflags perl5 shebangfix tar:xz
 
-CONFLICTS=	squid3 squid-devel
+CONFLICTS=	squid-devel
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
@@ -45,7 +43,7 @@ OPTIONS_GROUP=	AUTH
 OPTIONS_RADIO=	FW
 OPTIONS_GROUP_AUTH=AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB AUTH_SQL
 OPTIONS_RADIO_FW=TP_IPF TP_IPFW TP_PF
-OPTIONS_DEFINE=	ARP_ACL BDB CACHE_DIGESTS DEBUG DELAY_POOLS DOCS ECAP ESI EXAMPLES \
+OPTIONS_DEFINE=	ARP_ACL TDB CACHE_DIGESTS DEBUG DELAY_POOLS DOCS ECAP ESI EXAMPLES \
 		FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 \
 		KQUEUE LARGEFILE LAX_HTTP NETTLE SNMP SSL SSL_CRTD \
 		STACKTRACES VIA_DB WCCP WCCPV2
@@ -59,30 +57,23 @@ OPTIONS_DEFAULT=ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS \
 		WCCPV2
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
-AUTH_LDAP_CFLAGS=		-I${LOCALBASE}/include
-AUTH_LDAP_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_LDAP_USE=			OPENLDAP=yes
 AUTH_LDAP_VARS=			BASIC_AUTH+=LDAP DIGEST_AUTH+="eDirectory LDAP" EXTERNAL_ACL+="LDAP_group eDirectory_userip"
-AUTH_SASL_CFLAGS=		-I${LOCALBASE}/include
-AUTH_SASL_CPPFLAGS=		-I${LOCALBASE}/include
-AUTH_SASL_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 AUTH_SASL_VARS=			BASIC_AUTH+=SASL
 AUTH_SMB_USES=			samba:run
 AUTH_SMB_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
 AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
 AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
-BDB_USES=			bdb
+TDB_CONFIGURE_ENABLE=		tdb
+TDB_LIB_DEPENDS=		libtdb.so:databases/tdb
+TDB_VARS=			EXTERNAL_ACL+="time_quota session"
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
-ECAP_CFLAGS=			-I${LOCALBASE}/include
 ECAP_CONFIGURE_ENABLE=		ecap
-ECAP_LDFLAGS=			-L${LOCALBASE}/lib
 ECAP_LIB_DEPENDS=		libecap.so:www/libecap
 ECAP_USES=			pkgconfig:build
-ESI_CFLAGS=			-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 ESI_CONFIGURE_ENABLE=		esi
-ESI_LDFLAGS=			-L${LOCALBASE}/lib
 ESI_LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 				libxml2.so:textproc/libxml2
 FOLLOW_XFF_CONFIGURE_ENABLE=	follow-x-forwarded-for
@@ -116,7 +107,7 @@ STACKTRACES_CONFIGURE_ENABLE=	stacktraces
 STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_LIB_DEPENDS=	libunwind.so:devel/libunwind
 STACKTRACES_CFLAGS=		-g
-STACKTRACES_LDFLAGS=		-lunwind -L${LOCALBASE}/lib
+STACKTRACES_LDFLAGS=		-lunwind
 STACKTRACES_VARS=		STRIP=""
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
 TP_IPF_CONFIGURE_ENABLE=	ipf-transparent
@@ -155,7 +146,7 @@ AUTH_NIS_DESC=		Install NIS/YP authentication helpers
 AUTH_SASL_DESC=		Install SASL authentication helpers
 AUTH_SMB_DESC=		Install SMB auth. helpers (req. Samba)
 AUTH_SQL_DESC=		Install SQL based auth
-BDB_DESC=		Berkeley DB support required for session and time quota external helpers
+TDB_DESC=		TrivialDB support required for session and time quota external helpers
 CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
@@ -248,17 +239,11 @@ NEGOTIATE_AUTH=	none
 PLIST_SUB+=	AUTH_KERB="@comment "
 .else
 # The kerberos_ldap_group external helper also depends on LDAP and SASL:
+# The kerberos_sid_group external helper depends on kerberos_ldap_group meanwhile
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
-EXTERNAL_ACL+=	kerberos_ldap_group
+EXTERNAL_ACL+=	kerberos_ldap_group kerberos_sid_group
 . endif
 NEGOTIATE_AUTH=	kerberos wrapper
-.endif
-
-# The session and time_quota external helpers require Berkeley DB support:
-.if ${PORT_OPTIONS:MBDB}
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
-LDFLAGS+=	-L${BDB_LIB_DIR}
-EXTERNAL_ACL+=	time_quota session
 .endif
 
 # Storage schemes:

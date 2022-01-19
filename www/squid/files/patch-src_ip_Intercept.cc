@@ -1,6 +1,6 @@
---- src/ip/Intercept.cc.orig	2018-07-02 03:26:07 UTC
+--- src/ip/Intercept.cc.orig	2021-12-07 14:15:52 UTC
 +++ src/ip/Intercept.cc
-@@ -215,10 +215,10 @@ Ip::Intercept::IpfInterception(const Comm::ConnectionP
+@@ -211,10 +211,10 @@ Ip::Intercept::IpfInterception(const Comm::ConnectionP
          newConn->remote.getInAddr(natLookup.nl_outipaddr.in4);
      }
  #else

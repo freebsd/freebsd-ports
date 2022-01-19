@@ -1,19 +1,10 @@
---- configure.orig	2021-05-10 03:35:34.000000000 -0700
-+++ configure	2021-11-29 12:11:20.139764000 -0800
-@@ -35087,7 +35087,7 @@
- ##
- 
- BUILD_HELPER="NIS"
--for ac_header in sys/types.h rpc/rpc.h rpcsvc/ypclnt.h rpcsvc/yp_prot.h crypt.h
-+for ac_header in sys/types.h rpc/rpc.h rpcsvc/ypclnt.h rpcsvc/yp_prot.h rpcsvc/crypt.h
- do :
-   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
- ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
-@@ -35102,8 +35102,10 @@
- #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+--- configure.orig	2021-12-07 14:11:12 UTC
++++ configure
+@@ -36683,8 +36683,10 @@ then :
+ #define `printf "%s\n" "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
--else
+-else $as_nop
 -  BUILD_HELPER=""
 +# XXX: On FreeBSD we have to do this to make NIS work
 +# until https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=188247
@@ -22,33 +13,7 @@
  fi
  
  done
-@@ -35576,7 +35578,7 @@
- 
-   # unconditionally requires crypt(3), for now
-   if test "x$ac_cv_func_crypt" != "x"; then
--    for ac_header in unistd.h crypt.h shadow.h
-+    for ac_header in unistd.h rpcsvc/crypt.h shadow.h
- do :
-   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
- ac_fn_cxx_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
-@@ -37982,7 +37984,7 @@
-   arpa/nameser.h \
-   assert.h \
-   bstring.h \
--  crypt.h \
-+  rpcsvc/crypt.h \
-   ctype.h \
-   direct.h \
-   errno.h \
-@@ -38190,6 +38192,7 @@
- #include <netinet/ip.h>
- #endif
- #if HAVE_NETINET_IP_COMPAT_H
-+#include <net/if.h>	/* IFNAMSIZ */
- #include <netinet/ip_compat.h>
- #endif
- #if HAVE_NETINET_IP_FIL_H
-@@ -39490,6 +39493,7 @@
+@@ -42604,6 +42606,7 @@ fi
  
  ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type_cpu_set_t" "
  #if HAVE_SCHED_H
@@ -56,35 +21,11 @@
  #include <sched.h>
  #endif
  
-@@ -42237,6 +42241,7 @@
- #     include <sys/ioccom.h>
- #     include <netinet/in.h>
- 
-+#     include <net/if.h>	/* IFNAMSIZ */
- #     include <netinet/ip_compat.h>
- #     include <netinet/ip_fil.h>
- #     include <netinet/ip_nat.h>
-@@ -42267,6 +42272,7 @@
+@@ -45611,6 +45614,7 @@ else $as_nop
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t
-+#       include <net/if.h>	/* IFNAMSIZ */
++#       include <net/if.h>     /* IFNAMSIZ */
  #       include <netinet/ip_compat.h>
  #       include <netinet/ip_fil.h>
  #       include <netinet/ip_nat.h>
-@@ -42311,6 +42317,7 @@
- 	ip_fil_compat.h \
- 	ip_fil.h \
- 	ip_nat.h \
-+	net/if.h \
- 	netinet/ip_compat.h \
- 	netinet/ip_fil_compat.h \
- 	netinet/ip_fil.h \
-@@ -42340,6 +42347,7 @@
- #if HAVE_IP_COMPAT_H
- #include <ip_compat.h>
- #elif HAVE_NETINET_IP_COMPAT_H
-+#include <net/if.h>	/* IFNAMSIZ */
- #include <netinet/ip_compat.h>
- #endif
- #if HAVE_IP_FIL_H
