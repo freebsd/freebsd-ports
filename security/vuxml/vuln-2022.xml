@@ -1,3 +1,94 @@
+  <vuln vid="7262f826-795e-11ec-8be6-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-connector-odbc</name>
+	<range><lt>8.0.28</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-c++</name>
+	<range><lt>8.0.28</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-java</name>
+	<range><lt>8.0.28</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-java51</name>
+	<range><lt>8.0.28</lt></range>
+      </package>
+      <package>
+	<name>mysql-server55</name>
+	<range><lt>5.5.63</lt></range>
+      </package>
+      <package>
+	<name>mysql-server56</name>
+	<range><lt>5.6.52</lt></range>
+      </package>
+      <package>
+	<name>mysql-server57</name>
+	<range><lt>5.7.37</lt></range>
+      </package>
+      <package>
+	<name>mysql-server80</name>
+	<range><lt>8.0.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujan2022.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 78 new security patches for
+	    Oracle MySQL. 3 of these vulnerabilities may be remotely exploitable
+	    without authentication, i.e., may be exploited over a network without
+	    requiring user credentials.<br/>
+	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 7.4</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22946</cvename>
+      <cvename>CVE-2021-3712</cvename>
+      <cvename>CVE-2022-21278</cvename>
+      <cvename>CVE-2022-21351</cvename>
+      <cvename>CVE-2022-21363</cvename>
+      <cvename>CVE-2022-21358</cvename>
+      <cvename>CVE-2022-21352</cvename>
+      <cvename>CVE-2022-21367</cvename>
+      <cvename>CVE-2022-21301</cvename>
+      <cvename>CVE-2022-21378</cvename>
+      <cvename>CVE-2022-21302</cvename>
+      <cvename>CVE-2022-21254</cvename>
+      <cvename>CVE-2022-21348</cvename>
+      <cvename>CVE-2022-21270</cvename>
+      <cvename>CVE-2022-21256</cvename>
+      <cvename>CVE-2022-21379</cvename>
+      <cvename>CVE-2022-21362</cvename>
+      <cvename>CVE-2022-21374</cvename>
+      <cvename>CVE-2022-21253</cvename>
+      <cvename>CVE-2022-21264</cvename>
+      <cvename>CVE-2022-21297</cvename>
+      <cvename>CVE-2022-21339</cvename>
+      <cvename>CVE-2022-21342</cvename>
+      <cvename>CVE-2022-21370</cvename>
+      <cvename>CVE-2022-21304</cvename>
+      <cvename>CVE-2022-21344</cvename>
+      <cvename>CVE-2022-21303</cvename>
+      <cvename>CVE-2022-21368</cvename>
+      <cvename>CVE-2022-21245</cvename>
+      <cvename>CVE-2022-21265</cvename>
+      <cvename>CVE-2022-21249</cvename>
+      <cvename>CVE-2022-21372</cvename>
+      <cvename>INSERT CVE RECORD IF AVAILABLE</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujan2022.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2022-01-18</discovery>
+      <entry>2022-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3ec8b30-757b-11ec-922f-654747404482">
     <topic>Prosody XMPP server advisory 2022-01-13</topic>
     <affects>
