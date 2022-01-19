@@ -78,6 +78,7 @@ include/polymake/fan/face_lattice_tools.h
 include/polymake/fan/hasse_diagram.h
 include/polymake/fan/intersection.h
 include/polymake/fan/next/compactification.h
+include/polymake/fan/prune_polyhedral_complex.h
 include/polymake/fan/reverse_search_chamber_decomposition.h
 include/polymake/fan/stacky_fan.h
 include/polymake/fan/stacky_fundamental_domain.h
@@ -370,13 +371,13 @@ include/polymake/type_utils.h
 include/polymake/vector
 lib/libpolymake-apps-rt.so
 lib/libpolymake-apps-rt.so.4
-lib/libpolymake-apps-rt.so.4.5
+lib/libpolymake-apps-rt.so.4.6
 lib/libpolymake-apps.so
 lib/libpolymake-apps.so.4
-lib/libpolymake-apps.so.4.5
+lib/libpolymake-apps.so.4.6
 lib/libpolymake.so
 lib/libpolymake.so.4
-lib/libpolymake.so.4.5
+lib/libpolymake.so.4.6
 libexec/polymake/config.ninja
 libexec/polymake/lib/common.so
 libexec/polymake/lib/fan.so
@@ -386,10 +387,10 @@ libexec/polymake/lib/group.so
 libexec/polymake/lib/ideal.so
 libexec/polymake/lib/libpolymake-apps-rt.so
 libexec/polymake/lib/libpolymake-apps-rt.so.4
-libexec/polymake/lib/libpolymake-apps-rt.so.4.5
+libexec/polymake/lib/libpolymake-apps-rt.so.4.6
 libexec/polymake/lib/libpolymake-apps.so
 libexec/polymake/lib/libpolymake-apps.so.4
-libexec/polymake/lib/libpolymake-apps.so.4.5
+libexec/polymake/lib/libpolymake-apps.so.4.6
 libexec/polymake/lib/matroid.so
 libexec/polymake/lib/polytope.so
 libexec/polymake/lib/topaz.so
@@ -1027,7 +1028,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/topaz/src/k_skeleton.cc
 %%DATADIR%%/apps/topaz/src/klein_bottle.cc
 %%DATADIR%%/apps/topaz/src/lawler.cc
-%%DATADIR%%/apps/topaz/src/link.cc
+%%DATADIR%%/apps/topaz/src/link_subcomplex.cc
 %%DATADIR%%/apps/topaz/src/merge_vertices.cc
 %%DATADIR%%/apps/topaz/src/minimal_non_faces.cc
 %%DATADIR%%/apps/topaz/src/mixed_graph.cc
@@ -1052,9 +1053,9 @@ libexec/polymake/shared
 %%DATADIR%%/apps/topaz/src/sphere.cc
 %%DATADIR%%/apps/topaz/src/stabbing_order.cc
 %%DATADIR%%/apps/topaz/src/stanley_reisner.cc
-%%DATADIR%%/apps/topaz/src/star.cc
 %%DATADIR%%/apps/topaz/src/star_deletion.cc
 %%DATADIR%%/apps/topaz/src/star_shaped_balls.cc
+%%DATADIR%%/apps/topaz/src/star_subcomplex.cc
 %%DATADIR%%/apps/topaz/src/stellar_subd_face.cc
 %%DATADIR%%/apps/topaz/src/stiefel_whitney.cc
 %%DATADIR%%/apps/topaz/src/sum_triangulation.cc
@@ -1492,6 +1493,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/4.3
 %%DATADIR%%/upgrades/4.4
 %%DATADIR%%/upgrades/4.5
+%%DATADIR%%/upgrades/4.6
 %%DATADIR%%/upgrades/big_objects-2.10.1
 %%DATADIR%%/upgrades/big_objects-2.11.1
 %%DATADIR%%/upgrades/big_objects-2.12.1
@@ -1508,6 +1510,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/big_objects-4.3.1
 %%DATADIR%%/upgrades/big_objects-4.3.3
 %%DATADIR%%/upgrades/big_objects-4.4.1
+%%DATADIR%%/upgrades/big_objects-4.5.1
 @dir libexec/polymake/bundled/atint
 %%BLISS%%@dir libexec/polymake/bundled/bliss
 @dir libexec/polymake/bundled/cdd
