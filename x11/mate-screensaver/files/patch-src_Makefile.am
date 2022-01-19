@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2022-01-18 23:58:33 UTC
++++ src/Makefile.am
+@@ -172,7 +172,7 @@ if HAVE_PASSWD_HELPER
+ mate_screensaver_dialog_LDADD +=	\
+ 	../helper/libhelper-proto.a
+ ../helper/libhelper-proto.a:
+-	$(MAKE) -C ../helper
++	$(MAKE) -C ../helper libhelper-proto.a
+ endif
+ 
+ BUILT_SOURCES = 		\
