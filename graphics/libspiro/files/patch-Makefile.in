@@ -1,0 +1,34 @@
+--- Makefile.in.orig	2022-01-17 16:21:59 UTC
++++ Makefile.in
+@@ -408,7 +408,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = . tests
++SUBDIRS = .
+ test_programs = call-test0 call-test1 call-test2 call-test3 call-test4 \
+ 		call-test5 call-test6 call-test7 call-test8 call-test9 \
+ 		call-test10 call-test11 call-test12 call-test13        \
+@@ -421,7 +421,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ AM_CFLAGS = $(WCFLAGS) $(LS_CFLAGS)
+ AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-undefined --mode=link
+ DISTCLEANFILES = libspiro.pc
+-DISTCHECK_CONFIGURE_FLAGS = --enable-verbose_lib --enable-test_inputs --enable-test-a-lot
++DISTCHECK_CONFIGURE_FLAGS = --enable-verbose_lib --disable-test_inputs --disable-test-a-lot
+ lib_LTLIBRARIES = libspiro.la
+ libspiro_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBSPIRO_VERSION)
+ libspiro_la_SOURCES = spiro.c bezctx.c spiroentrypoints.c
+@@ -1095,13 +1095,6 @@ libspiro_la.$(OBJEXT): bezctx.h bezctx_intf.h spiro.h 
+ 
+ libtool: $(LIBTOOL_DEPS)
+ 	$(SHELL) ./config.status libtool
+-
+-# test: run all tests in cwd and subdirs
+-test:	$(TEST_PROGS)
+-
+-.PHONY: test
+-# run make test as part of make check
+-check-local: test
+ 
+ check-valgrind:
+ @HAVEVALGRIND_TRUE@	$(MAKE);
