@@ -23,6 +23,8 @@ bin/kvantumpreview
 %%DATADIR%%/KvCurves/KvCurves.svg
 %%DATADIR%%/KvCurves3d/KvCurves3d.kvconfig
 %%DATADIR%%/KvCurves3d/KvCurves3d.svg
+%%DATADIR%%/KvCurves3d1/KvCurves3d1.kvconfig
+%%DATADIR%%/KvCurves3d1/KvCurves3d1.svg
 %%DATADIR%%/KvCurvesLight/KvCurvesLight.kvconfig
 %%DATADIR%%/KvCurvesLight/KvCurvesLight.svg
 %%DATADIR%%/KvCurvesLight1/KvCurvesLight1.kvconfig
@@ -84,6 +86,7 @@ share/color-schemes/KvBeige.colors
 share/color-schemes/KvBlender.colors
 share/color-schemes/KvBrown.colors
 share/color-schemes/KvCurves.colors
+share/color-schemes/KvCurves3d1.colors
 share/color-schemes/KvCurvesLight.colors
 share/color-schemes/KvCyan.colors
 share/color-schemes/KvDark.colors
@@ -113,6 +116,7 @@ share/icons/hicolor/scalable/apps/kvantum.svg
 share/kvantummanager/translations/kvantummanager_ar_DZ.qm
 share/kvantummanager/translations/kvantummanager_be.qm
 share/kvantummanager/translations/kvantummanager_bg.qm
+share/kvantummanager/translations/kvantummanager_ca.qm
 share/kvantummanager/translations/kvantummanager_cs.qm
 share/kvantummanager/translations/kvantummanager_cy.qm
 share/kvantummanager/translations/kvantummanager_da.qm
@@ -125,6 +129,7 @@ share/kvantummanager/translations/kvantummanager_fa.qm
 share/kvantummanager/translations/kvantummanager_fi.qm
 share/kvantummanager/translations/kvantummanager_fr.qm
 share/kvantummanager/translations/kvantummanager_he.qm
+share/kvantummanager/translations/kvantummanager_hr.qm
 share/kvantummanager/translations/kvantummanager_hu.qm
 share/kvantummanager/translations/kvantummanager_id.qm
 share/kvantummanager/translations/kvantummanager_it.qm
@@ -145,6 +150,7 @@ share/kvantummanager/translations/kvantummanager_zh_CN.qm
 share/kvantummanager/translations/kvantummanager_zh_Hant.qm
 share/kvantumpreview/translations/kvantumpreview_ar_DZ.qm
 share/kvantumpreview/translations/kvantumpreview_bg.qm
+share/kvantumpreview/translations/kvantumpreview_ca.qm
 share/kvantumpreview/translations/kvantumpreview_cs.qm
 share/kvantumpreview/translations/kvantumpreview_cy.qm
 share/kvantumpreview/translations/kvantumpreview_da.qm
@@ -157,6 +163,7 @@ share/kvantumpreview/translations/kvantumpreview_fa.qm
 share/kvantumpreview/translations/kvantumpreview_fi.qm
 share/kvantumpreview/translations/kvantumpreview_fr.qm
 share/kvantumpreview/translations/kvantumpreview_he.qm
+share/kvantumpreview/translations/kvantumpreview_hr.qm
 share/kvantumpreview/translations/kvantumpreview_hu.qm
 share/kvantumpreview/translations/kvantumpreview_id.qm
 share/kvantumpreview/translations/kvantumpreview_it.qm
