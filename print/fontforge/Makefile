@@ -1,8 +1,10 @@
 # Created by: KANOU Hiroki <kanou@khdd.net>
 
 PORTNAME=	fontforge
-PORTVERSION=	20201107
+DISTVERSION=	20201107
+PORTREVISION=	1
 CATEGORIES=	print
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -13,15 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		compiler:c++11-lang cmake cpe desktop-file-utils gettext gnome \
-		iconv:wchar_t pkgconfig shared-mime-info
-USE_GITHUB=	yes
+		iconv:wchar_t pkgconfig shared-mime-info tar:xz
 USE_GNOME=	cairo glib20 libxml2
-CMAKE_ARGS=	-DIconv_INCLUDE_DIR=${ICONV_INCLUDE_PATH} \
-		-DIconv_LIBRARY=${ICONV_LIB_PATH}
-
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
+
+CMAKE_ARGS=	-DIconv_INCLUDE_DIR=${ICONV_INCLUDE_PATH} \
+		-DIconv_LIBRARY=${ICONV_LIB_PATH}
 
 OPTIONS_DEFINE=	DOCS FREETYPE GIF JPEG PNG PYTHON READLINE SPIRO TIFF \
 		TILEPATH UNINAMESLIST WOFF2 WRITEPFM
@@ -46,7 +47,7 @@ FREETYPE_CMAKE_ON=	-DENABLE_FREETYPE_DEBUGGER:PATH=${WRKSRC}/freetype
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CMAKE_BOOL=	ENABLE_LIBGIF
 
-GTK3_USE=	gnome=gtk30
+GTK3_USE=	gnome=gdkpixbuf2,gtk30
 
 JPEG_USES=	jpeg
 JPEG_CMAKE_BOOL=ENABLE_LIBJPEG
