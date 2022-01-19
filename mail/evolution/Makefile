@@ -1,7 +1,7 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 
 PORTNAME=	evolution
-DISTVERSION=	3.42.1
+DISTVERSION=	3.42.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -45,7 +45,7 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 cpe desktop-file-utils cmake gettext gnome \
 		iconv:wchar_t sqlite libarchive localbase pathfix pkgconfig \
 		tar:xz xorg
-USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 intltool
+USE_GNOME=	cairo evolutiondataserver3 glib20 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 USE_LDCONFIG=	yes

@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-04-23 14:06:10 UTC
+--- CMakeLists.txt.orig	2022-01-19 19:56:07 UTC
 +++ CMakeLists.txt
 @@ -356,6 +356,7 @@ endif(WITH_HELP)
  # ******************************
@@ -8,3 +8,19 @@
  CHECK_C_SOURCE_COMPILES("#include <iconv.h>
  			#include <stdlib.h>
  			int main(void) { iconv_t cd; cd = iconv_open (\"UTF-8\", \"ISO-8859-1\"); return 0; }" HAVE_LIBICONV)
+@@ -709,7 +710,6 @@ endif(WITH_GLADE_CATALOG)
+ # news-to-appdata
+ # ******************************
+ 
+-set(CMAKE_REQUIRED_FLAGS ${GNOME_PLATFORM_CFLAGS})
+ set(CMAKE_REQUIRED_INCLUDES ${GNOME_PLATFORM_INCLUDE_DIRS})
+ set(CMAKE_REQUIRED_LIBRARIES ${GNOME_PLATFORM_LDFLAGS})
+ file(TO_NATIVE_PATH "${CMAKE_BINARY_DIR}/appdata-releases.txt" _output_filename)
+@@ -724,7 +724,6 @@ unset(_news_filename)
+ unset(_output_filename)
+ unset(CMAKE_REQUIRED_LIBRARIES)
+ unset(CMAKE_REQUIRED_INCLUDES)
+-unset(CMAKE_REQUIRED_FLAGS)
+ 
+ if(NOT "${_news_to_appdata_result}" EQUAL "1")
+ 	message(FATAL_ERROR "Failed to run news-to-appdata")
