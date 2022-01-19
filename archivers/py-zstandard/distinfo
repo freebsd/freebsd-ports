@@ -1,3 +1,3 @@
-TIMESTAMP = 1634885145
-SHA256 (zstandard-0.16.0.tar.gz) = eaae2d3e8fdf8bfe269628385087e4b648beef85bb0c187644e7df4fb0fe9046
-SIZE (zstandard-0.16.0.tar.gz) = 563633
+TIMESTAMP = 1642612359
+SHA256 (zstandard-0.17.0.tar.gz) = fa9194cb91441df7242aa3ddc4cb184be38876cb10dd973674887f334bafbfb6
+SIZE (zstandard-0.17.0.tar.gz) = 629456
