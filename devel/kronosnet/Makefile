@@ -1,7 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTNAME=	kronosnet
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 
