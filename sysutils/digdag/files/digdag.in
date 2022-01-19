@@ -25,11 +25,30 @@ load_rc_config ${name}
 : ${digdag_enable:="NO"}
 : ${digdag_user:="digdag"}
 : ${digdag_conf:="%%PREFIX%%/etc/digdag.conf"}
-: ${digdag_logfile="/var/log/digdag/digdag.log"}
+: ${digdag_logdir:="/var/log/digdag"}
+: ${digdag_logfile:="${digdag_logdir}/digdag.log"}
+: ${digdag_taskdir:="${digdag_logdir}/tasks"}
+: ${digdag_dbdir:="/var/db/digdag"}
 
 command="/usr/sbin/daemon"
 pidfile=/var/run/digdag/digdag.pid
 procname="%%JAVA%%"
-digdag_flags="-f -p ${pidfile} ${name} server --log ${digdag_logfile} --config ${digdag_conf}"
+digdag_flags="-f -p ${pidfile} ${name} server --log ${digdag_logfile} --task-log ${digdag_taskdir} --database ${digdag_dbdir} --config ${digdag_conf}"
+
+start_precmd="digdag_prestart"
+
+digdag_prestart()
+{
+	for dir in ${digdag_logdir} ${digdag_taskdir}
+	do
+		if [ ! -d ${dir} ]; then
+			install -d -m 0755 -o ${digdag_user} ${dir}
+		fi
+	done
+
+	if [ ! -d ${digdag_dbdir} ]; then
+		install -d -m 0750 -o ${digdag_user} ${digdag_dbdir}
+	fi
+}
 
 run_rc_command "$1"

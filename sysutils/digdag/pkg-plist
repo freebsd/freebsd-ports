@@ -2,5 +2,4 @@
 %%JAVAJARDIR%%/digdag/digdag-%%VERSION%%.jar
 bin/digdag
 @owner %%USERS%%
-@dir /var/log/digdag
 @dir /var/run/digdag

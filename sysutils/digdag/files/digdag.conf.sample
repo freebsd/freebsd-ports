@@ -50,6 +50,7 @@
 #api.max_sessions_page_size (integer. The max number of rows of sessions in api response)
 
 server.bind=127.0.0.1
+database.type=h2
 # generate with:
 #  openssl rand -base64 16
 #digdag.secret-encryption-key=<base64 key>
