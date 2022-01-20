@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo gnome
 USE_GITHUB=	yes
-USE_GNOME=	gtk30
+USE_GNOME=	gdkpixbuf2 gtk30
 GH_ACCOUNT=	qarmin
 PLIST_FILES=	bin/${PORTNAME}_cli \
 		bin/${PORTNAME}_gui \
