@@ -1,5 +1,5 @@
-%%ETCDIR%%/keybinds.oac
 bin/openage
+%%ETCDIR%%/keybinds.oac
 lib/libopenage.so
 lib/libopenage.so.0
 %%PYTHON_SITELIBDIR%%/openage/__init__.py
@@ -144,6 +144,8 @@ lib/libopenage.so.0
 %%PYTHON_SITELIBDIR%%/openage/convert/singlefile.py
 %%PYTHON_SITELIBDIR%%/openage/convert/slp%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/convert/slp_converter_pool.py
+%%PYTHON_SITELIBDIR%%/openage/convert/smp%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/openage/convert/smx%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/convert/stringresource.py
 %%PYTHON_SITELIBDIR%%/openage/convert/texture.py
 %%PYTHON_SITELIBDIR%%/openage/cppinterface/__init__.py
@@ -161,7 +163,11 @@ lib/libopenage.so.0
 %%PYTHON_SITELIBDIR%%/openage/cvar/config_file.py
 %%PYTHON_SITELIBDIR%%/openage/cvar/cvar%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/cvar/location.py
+%%PYTHON_SITELIBDIR%%/openage/cython_check%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/default_dirs.py
+%%PYTHON_SITELIBDIR%%/openage/event/__init__.py
+%%PYTHON_SITELIBDIR%%/openage/event/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openage/event/demo%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/game/__init__.py
 %%PYTHON_SITELIBDIR%%/openage/game/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openage/game/__pycache__/main.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -172,6 +178,10 @@ lib/libopenage.so.0
 %%PYTHON_SITELIBDIR%%/openage/log/__pycache__/tests.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openage/log/log_cpp%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/log/tests.py
+%%PYTHON_SITELIBDIR%%/openage/renderer/__init__.py
+%%PYTHON_SITELIBDIR%%/openage/renderer/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openage/renderer/renderer_cpp%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/openage/renderer/tests%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/openage/testing/__init__.py
 %%PYTHON_SITELIBDIR%%/openage/testing/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openage/testing/__pycache__/benchmark.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -242,6 +252,9 @@ lib/libopenage.so.0
 %%PYTHON_SITELIBDIR%%/openage/util/struct.py
 %%PYTHON_SITELIBDIR%%/openage/util/system.py
 %%PYTHON_SITELIBDIR%%/openage/util/threading.py
+%%PYTHON_SITELIBDIR%%/openage/versions/__init__.py
+%%PYTHON_SITELIBDIR%%/openage/versions/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openage/versions/versions%%PYTHON_EXT_SUFFIX%%.so
 share/applications/openage.desktop
 %%DATADIR%%/banner.svg
 %%DATADIR%%/gaben.png

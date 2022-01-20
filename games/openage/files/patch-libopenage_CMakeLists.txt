@@ -1,8 +1,8 @@
---- libopenage/CMakeLists.txt.orig	2018-07-14 15:12:15 UTC
+--- libopenage/CMakeLists.txt.orig	2020-08-15 10:50:07 UTC
 +++ libopenage/CMakeLists.txt
-@@ -86,13 +86,21 @@ if(MSVC)
+@@ -38,13 +38,21 @@ if(WIN32)
  endif()
- if(NOT APPLE AND NOT MSVC)
+ if(NOT APPLE AND NOT WIN32)
  	find_library(RT_LIB rt)
 -	if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
 -		find_library(EXECINFO_LIB execinfo)
@@ -16,17 +16,17 @@
 +   find_library(NYAN_LIBRARY NAMES "nyan" PATHS /usr/local/lib )
 +   list(APPEND CMAKE_REQUIRED_INCLUDES ${NYAN_INCLUDE_DIR})
 +   list(APPEND CMAKE_REQUIRED_LIBRARIES ${NYAN_LIBRARY})
-+
+ 
 +#    message(STATUS ${NYAN_INCLUDE_DIR})
 +#    message(STATUS ${NYAN_LIBRARY})
 +endif()
 +
- 
++
 +find_library(FONTCONFIG_LIB fontconfig)
  find_package(Freetype REQUIRED)
- find_package(OpenGL REQUIRED)
  find_package(PNG REQUIRED)
-@@ -115,74 +123,74 @@ endif()
+ find_package(SDL2 REQUIRED)
+@@ -70,78 +78,78 @@ endif()
  
  # first, try to locate nyan directly
  # this discovers the system package or the user-registry package
@@ -35,8 +35,12 @@
  
  # if this didn't work, we can download nyan like a git submodule.
  # this is the treeish to be checked out.
--set(nyan_clone_version origin/master)
-+#set(nyan_clone_version origin/master)
+-if(NOT DEFINED NYAN_CLONE_VERSION)
+-	set(NYAN_CLONE_VERSION origin/master)
+-endif()
++#if(NOT DEFINED NYAN_CLONE_VERSION)
++#	set(NYAN_CLONE_VERSION origin/master)
++#endif()
  
 -option(
 -	DOWNLOAD_NYAN
@@ -76,16 +80,57 @@
  # or if it was used before.
 -if((NOT nyan_FOUND AND DOWNLOAD_NYAN) OR FORCE_DOWNLOAD_NYAN)
 -	message(STATUS "Downloading nyan as submodule project...")
--
++#if((NOT nyan_FOUND AND DOWNLOAD_NYAN) OR FORCE_DOWNLOAD_NYAN)
++#	message(STATUS "Downloading nyan as submodule project...")
++#
++#	if(DISABLE_SUBPROJECT_UPDATES)
++#		set(DISABLE_NYAN_UPDATES "DISABLE_UPDATES")
++#	endif()
++#
++#	fetch_project(
++#		NAME nyan
++#		${DISABLE_NYAN_UPDATES}
++#		GIT_REPOSITORY https://github.com/SFTtech/nyan
++#		GIT_TAG ${NYAN_CLONE_VERSION}
++#	)
++#
++#	# don't register nyan to the userpackage-repo!
++#	set(REGISTER_USERPACKAGE OFF)
++#	# don't generate the `doc` target again (name conflict!)
++#	set(DOXYGEN_ENABLE OFF)
++#
++#	# register the targets
++#	add_subdirectory(${nyan_SOURCE_DIR} ${nyan_BINARY_DIR})
++#
++#	message(STATUS "nyan processed successfully!")
++#
++#elseif(NOT nyan_FOUND)
++#	message(FATAL_ERROR "
++#  Could not find the cmake package configuration file \"nyanConfig.cmake\".
++#  To find it, you have several options:
++#  * If your distribution provides it, install \"nyan\" through the package manager.
++#  * If you want openage to automatically download \"nyan\", append `-DDOWNLOAD_NYAN=YES` to the cmake invocation or use `./configure --download-nyan`.
++#  * If you want to build nyan manually, follow the build instructions:
++#      [[  doc/building.md#nyan-installation  ]]
++#  * If you already built nyan but it still can't be found (cmake package repo fails):
++#    * Try to set \"nyan_DIR\" to the nyan build directory (it contains nyanConfig.cmake)
++#      either through:  \"./configure $youroptions -- -Dnyan_DIR=/home/dev/nyan/build\"
++#      or:              \"cmake $yourotheroptions -Dnyan_DIR=/home/dev/nyan/build ..\"
++#
++#  In case of other problems, please try to figure them out (and tell us what you did).
++#  Contact information is in README.md.
++#")
++#endif()
+ 
 -	if(DISABLE_SUBPROJECT_UPDATES)
 -		set(DISABLE_NYAN_UPDATES "DISABLE_UPDATES")
 -	endif()
--
+ 
 -	fetch_project(
 -		NAME nyan
 -		${DISABLE_NYAN_UPDATES}
 -		GIT_REPOSITORY https://github.com/SFTtech/nyan
--		GIT_TAG ${nyan_clone_version}
+-		GIT_TAG ${NYAN_CLONE_VERSION}
 -	)
 -
 -	# don't register nyan to the userpackage-repo!
@@ -110,69 +155,31 @@
 -    * Try to set \"nyan_DIR\" to the nyan build directory (it contains nyanConfig.cmake)
 -      either through:  \"./configure $youroptions -- -Dnyan_DIR=/home/dev/nyan/build\"
 -      or:              \"cmake $yourotheroptions -Dnyan_DIR=/home/dev/nyan/build ..\"
-+#if((NOT nyan_FOUND AND DOWNLOAD_NYAN) OR FORCE_DOWNLOAD_NYAN)
-+#	message(STATUS "Downloading nyan as submodule project...")
-+#
-+#	if(DISABLE_SUBPROJECT_UPDATES)
-+#		set(DISABLE_NYAN_UPDATES "DISABLE_UPDATES")
-+#	endif()
-+#
-+#	fetch_project(
-+#		NAME nyan
-+#		${DISABLE_NYAN_UPDATES}
-+#		GIT_REPOSITORY https://github.com/SFTtech/nyan
-+#		GIT_TAG ${nyan_clone_version}
-+#	)
-+#
-+#	# don't register nyan to the userpackage-repo!
-+#	set(REGISTER_USERPACKAGE OFF)
-+#	# don't generate the `doc` target again (name conflict!)
-+#	set(DOXYGEN_ENABLE OFF)
-+#
-+#	# register the targets
-+#	add_subdirectory(${nyan_SOURCE_DIR} ${nyan_BINARY_DIR})
-+#
-+#	message(STATUS "nyan processed successfully!")
- 
+-
 -  In case of other problems, please try to figure them out (and tell us what you did).
 -  Contact information is in README.md.
 -")
 -endif()
-+#elseif(NOT nyan_FOUND)
-+#	message(FATAL_ERROR "
-+#  Could not find the cmake package configuration file \"nyanConfig.cmake\".
-+#  To find it, you have several options:
-+#  * If your distribution provides it, install \"nyan\" through the package manager.
-+#  * If you want openage to automatically download \"nyan\", append `-DDOWNLOAD_NYAN=YES` to the cmake invocation or use `./configure --download-nyan`.
-+#  * If you want to build nyan manually, follow the build instructions:
-+#      [[  doc/building.md#nyan-installation  ]]
-+#  * If you already built nyan but it still can't be found (cmake package repo fails):
-+#    * Try to set \"nyan_DIR\" to the nyan build directory (it contains nyanConfig.cmake)
-+#      either through:  \"./configure $youroptions -- -Dnyan_DIR=/home/dev/nyan/build\"
-+#      or:              \"cmake $yourotheroptions -Dnyan_DIR=/home/dev/nyan/build ..\"
-+#
-+#  In case of other problems, please try to figure them out (and tell us what you did).
-+#  Contact information is in README.md.
-+#")
-+#endif()
+-
+-
+ ##################################################
+ # optional dependencies
  
- 
- if(GCCBacktrace_FOUND)
-@@ -245,6 +253,7 @@ include_directories(
+@@ -264,6 +272,7 @@ target_include_directories(libopenage
  	${SDL2IMAGE_INCLUDE_DIRS}
  	${HarfBuzz_INCLUDE_DIRS}
  	${QTPLATFORM_INCLUDE_DIRS}
 +	${NYAN_INCLUDE_DIRS}
  )
  
- # link the executable to those libraries
-@@ -265,7 +274,8 @@ target_link_libraries(libopenage
- 		${RT_LIB}
- 		${OGG_LIB}
- 		${EXECINFO_LIB}
+ ##################################################
+@@ -274,7 +283,8 @@ target_include_directories(libopenage
+ target_link_libraries(libopenage
+ 	PRIVATE
+ 		Threads::Threads
 -		nyan::nyan
 +		${NYAN_LIBRARY}
 +#		nyan::nyan
- 
- 	# TODO: change to PUBLIC (or, alternatively, remove all keywords
- 	# of this type) when qt cmake scripts change declarations of the
+ 		Eigen3::Eigen
+ 		${PNG_LIBRARIES}
+ 		${OPUS_LIBRARIES}

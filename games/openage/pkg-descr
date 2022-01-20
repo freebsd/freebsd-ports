@@ -1,8 +1,8 @@
 Openage: a volunteer project to create a free engine clone of the Genie Engine
-used by Age of Empires, Age of Empires II (HD) and Star Wars: Galactic 
-Battlegrounds, comparable to projects like OpenMW, OpenRA, OpenTTD and 
-OpenRCT2. Openage uses the original game assets (such as sounds and graphics), 
-but (for obvious reasons) doesn't ship them. To play, you require an original 
+used by Age of Empires, Age of Empires II (HD) and Star Wars: Galactic
+Battlegrounds, comparable to projects like OpenMW, OpenRA, OpenTTD and
+OpenRCT2. Openage uses the original game assets (such as sounds and graphics),
+but (for obvious reasons) doesn't ship them. To play, you require an original
 AoE II : TC installation or AoE II: HD (installation via Wine).
 
 WWW: https://openage.sft.mx/

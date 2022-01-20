@@ -1,12 +1,7 @@
 PORTNAME=	openage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0-1262
-DISTVERSIONSUFFIX=	-ga554ab49
-PORTREVISION=	5
+DISTVERSION=	0.4.1
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/SFTtech/openage/commit/
-PATCHFILES=	663b1158018d839eb5cfed63f4b228c1590c6104.patch:-p1
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Free engine clone of the Genie Engine
@@ -32,8 +27,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang gl python:3.4+ qt:5 sdl shebangfix
-SHEBANG_FILES=	configure run.py buildsystem/cythonize.py
+USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:base python:3.4+ qt:5 sdl shebangfix
+SHEBANG_FILES=	configure run.py.in buildsystem/cythonize.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech
 USE_SDL=	image2 sdl2
@@ -45,8 +40,8 @@ USE_LDCONFIG=	yes
 CMAKE_OFF=	WANT_BACKTRACE WANT_GPERFTOOLS_PROFILER WANT_INOTIFY
 CMAKE_ARGS=	-DGLOBAL_CONFIG_DIR:STRING=${ETCDIR}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python3|${PYTHON_CMD}|' ${WRKSRC}/buildsystem/modules/FindPython.cmake
+pre-configure:
+	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/openage/codegen/main.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openage
