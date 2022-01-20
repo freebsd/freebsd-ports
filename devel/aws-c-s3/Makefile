@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	aws-c-s3
-PORTVERSION=	0.1.27
+PORTVERSION=	0.1.30
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
