@@ -7,6 +7,8 @@ COMMENT=	Apache MXNet: Ultra-scalable deep learning framework
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	https://github.com/apache/incubator-mxnet/issues/20832
+
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
 		liblapack.so:math/lapack \
