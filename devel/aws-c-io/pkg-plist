@@ -8,6 +8,7 @@ include/aws/io/io.h
 include/aws/io/logging.h
 include/aws/io/message_pool.h
 include/aws/io/pipe.h
+include/aws/io/pkcs11.h
 include/aws/io/retry_strategy.h
 include/aws/io/shared_library.h
 include/aws/io/socket.h

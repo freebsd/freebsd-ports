@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	aws-c-io
-PORTVERSION=	0.10.12
+PORTVERSION=	0.10.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
