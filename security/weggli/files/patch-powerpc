@@ -1,17 +1,5 @@
---- cargo-crates/libc-0.2.80/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2020-03-17 20:35:43 UTC
-+++ cargo-crates/libc-0.2.80/src/unix/bsd/freebsdlike/freebsd/mod.rs
-@@ -1486,6 +1486,9 @@ cfg_if! {
-     } else if #[cfg(target_arch = "powerpc64")] {
-         mod powerpc64;
-         pub use self::powerpc64::*;
-+    } else if #[cfg(target_arch = "powerpc")] {
-+        mod powerpc;
-+        pub use self::powerpc::*;
-     } else {
-         // Unknown target_arch
-     }
---- cargo-crates/libc-0.2.80/src/unix/bsd/freebsdlike/freebsd/powerpc.rs.orig	2021-06-23 22:40:24 UTC
-+++ cargo-crates/libc-0.2.80/src/unix/bsd/freebsdlike/freebsd/powerpc.rs
+--- cargo-crates/libc-0.2.107/src/unix/bsd/freebsdlike/freebsd/powerpc.rs.orig	2021-06-23 22:40:24 UTC
++++ cargo-crates/libc-0.2.107/src/unix/bsd/freebsdlike/freebsd/powerpc.rs
 @@ -0,0 +1,47 @@
 +pub type c_char = u8;
 +pub type c_long = i32;
