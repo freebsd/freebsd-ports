@@ -1,7 +1,6 @@
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.13
-PORTREVISION=	3
+DISTVERSION=	0.4.15
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -147,7 +146,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.28 \
-		pulldown-cmark-0.7.2 \
+		pulldown-cmark-0.9.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quote-1.0.9 \
