@@ -1824,6 +1824,7 @@
     SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += repos-style
+    SUBDIR += reproxy
     SUBDIR += resin3
     SUBDIR += restbed
     SUBDIR += retawq

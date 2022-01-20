@@ -1,0 +1,6 @@
+Reproxy is a simple edge HTTP(S) server and reverse proxy supporting
+various providers (docker, static, file, consul catalog).  One or more
+providers supply information about the requested server, requested URL,
+destination URL, and health check URL.
+
+WWW: https://reproxy.io/
