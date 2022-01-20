@@ -16773,3 +16773,4 @@ devel/wasi-compiler-rt12||2022-01-15|Has expired: this ports exists solely for b
 devel/e2fsprogs-libss||2022-01-17|Folded back into sysutils/e2fsprogs, which was the sole user
 lang/spidermonkey60|lang/spidermonkey78|2022-01-18|Has expired: Requires python2 to build
 shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell support
+emulators/yuzu-qt5|emulators/yuzu|2022-01-20|Merged as QT5 port option
