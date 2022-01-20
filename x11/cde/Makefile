@@ -40,6 +40,12 @@ MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64le
+CPPFLAGS+=	-DPOWERPC64LE
+.endif
+
 post-patch:
 	@if [ -f /usr/include/iconv.h ]; then \
 	    ${REINPLACE_CMD} -e 's!^[[:space:]]*const char .ip = (const char .) .bp!char *ip = *bp!' \
@@ -116,4 +122,4 @@ do-install:
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
