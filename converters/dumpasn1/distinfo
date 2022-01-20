@@ -1,0 +1,5 @@
+TIMESTAMP = 1642600501
+SHA256 (dumpasn1-20210212/dumpasn1.c) = 319a85af8d75f95f16ecb6fd8a9b59aef22a0e3798e84c830027d1bead9adaeb
+SIZE (dumpasn1-20210212/dumpasn1.c) = 105725
+SHA256 (dumpasn1-20210212/dumpasn1.cfg) = 1d02cfea8fa556281aed3911f96db517a50017eaaaded562fe6683d008bd1fac
+SIZE (dumpasn1-20210212/dumpasn1.cfg) = 251987

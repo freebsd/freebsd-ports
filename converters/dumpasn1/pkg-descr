@@ -1,0 +1,7 @@
+dumpasn1 is an ASN.1 parser which dumps the contents of an ASN.1-encoded
+file, as well as interpreting the OIDs contained in the file into
+human-readable format. Dumpasn1 is intended for examining the contents
+of PKI certificates and comes with a full list of security-related OIDs,
+but can be easily extended to parse other OIDs as well.
+
+WWW: http://www.cs.auckland.ac.nz/~pgut001/
