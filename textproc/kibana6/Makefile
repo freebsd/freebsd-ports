@@ -12,6 +12,9 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses expired www/node10
+EXPIRATION_DATE=2022-03-31
+
 USES=		cpe nodejs:run,10
 CPE_VENDOR=	elastic
 USE_RC_SUBR=	${PORTNAME}
