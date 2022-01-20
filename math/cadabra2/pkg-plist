@@ -7,6 +7,7 @@ bin/cadabra2html
 bin/cadabra2ipynb
 bin/cadabra2latex
 bin/cadabra2python
+bin/cdb-nbtool
 %%PYTHON_SITELIBDIR%%/cadabra2%%_PY_SONAME%%.so
 %%PYTHON_SITELIBDIR%%/cadabra2_defaults.py
 %%PYTHON_SITELIBDIR%%/cadabra2_jupyter/__init__.py
@@ -15,16 +16,22 @@ bin/cadabra2python
 %%PYTHON_SITELIBDIR%%/cadabra2_jupyter/context.py
 %%PYTHON_SITELIBDIR%%/cadabra2_jupyter/kernel.py
 %%PYTHON_SITELIBDIR%%/cadabra2_jupyter/server.py
+%%PYTHON_SITELIBDIR%%/cdb/core/_component%%_PY_SONAME%%.so
 %%PYTHON_SITELIBDIR%%/cdb/core/component.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/manip.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/solve.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/trace.cnb
 %%PYTHON_SITELIBDIR%%/cdb/gauge_theory/instantons.cnb
+%%PYTHON_SITELIBDIR%%/cdb/numeric/evaluate.cnb
+%%PYTHON_SITELIBDIR%%/cdb/numeric/integrate.cnb
 %%PYTHON_SITELIBDIR%%/cdb/relativity/abstract.cnb
 %%PYTHON_SITELIBDIR%%/cdb/relativity/schwarzschild.cnb
 %%PYTHON_SITELIBDIR%%/cdb/sympy/solvers.cnb
+%%PYTHON_SITELIBDIR%%/cdb/utils/_algorithm%%_PY_SONAME%%.so
 %%PYTHON_SITELIBDIR%%/cdb/utils/develop.cnb
+%%PYTHON_SITELIBDIR%%/cdb/utils/indices.cnb
 %%PYTHON_SITELIBDIR%%/cdb/utils/node.cnb
+%%PYTHON_SITELIBDIR%%/cdb/utils/tableau.cnb
 %%PYTHON_SITELIBDIR%%/cdb_appdirs.py
 %%PYTHON_SITELIBDIR%%/notebook/static/components/codemirror/mode/cadabra/cadabra.js
 %%GUI%%share/applications/cadabra2-gtk.desktop
@@ -49,6 +56,7 @@ bin/cadabra2python
 %%GUI%%%%DATADIR%%/manual/algorithms/expand.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand_delta.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand_diracbar.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/expand_dummies.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand_power.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/explicit_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/factor_in.cnb
@@ -68,6 +76,7 @@ bin/cadabra2python
 %%GUI%%%%DATADIR%%/manual/algorithms/replace_match.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/rewrite_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/simplify.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/slot_asym.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/sort_product.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/sort_spinors.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/sort_sum.cnb

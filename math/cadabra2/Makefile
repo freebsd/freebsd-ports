@@ -1,6 +1,5 @@
 PORTNAME=	cadabra2
-DISTVERSION=	2.3.6.8
-PORTREVISION=	1
+DISTVERSION=	2.3.8
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs \
+		libharfbuzz.so:print/harfbuzz \
 		libpcrecpp.so:devel/pcre \
 		libjsoncpp.so:devel/jsoncpp \
 		libgmp.so:math/gmp \
