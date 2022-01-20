@@ -4,7 +4,7 @@ DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classes with architecture-specific information useful to other projects
 
 LICENSE=	BSD2CLAUSE

@@ -4,7 +4,7 @@ DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	math devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction layer for constraint solvers
 
 LICENSE=	BSD2CLAUSE

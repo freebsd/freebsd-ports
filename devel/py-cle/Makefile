@@ -4,7 +4,7 @@ DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pythonic interface to analyze binary formats
 
 LICENSE=	BSD2CLAUSE

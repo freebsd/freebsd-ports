@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-architecture binary analysis toolkit
 
 LICENSE=	BSD3CLAUSE
