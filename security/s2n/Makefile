@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	s2n
-PORTVERSION=	1.1.2
+PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -34,7 +34,6 @@ post-build-TEST-on:
 	(cd ${WRKDIR}/.build && ninja test)
 
 post-install:
-	${LN} -s libs2n.so ${STAGEDIR}${LOCALBASE}/lib/libs2n.so.0
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -r ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
