@@ -81,16 +81,16 @@ JACK_CMAKE_BOOL=	USE_JACK
 PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
+QT5_USES=		desktop-file-utils qt:5 shared-mime-info
+QT5_USE=		QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,webengine,widgets
+QT5_CMAKE_BOOL=		ENABLE_QT ENABLE_QT_TRANSLATION YUZU_USE_QT_WEB_ENGINE
+QT5_PLIST_FILES=	bin/${PORTNAME} \
+			share/applications/${PORTNAME}.desktop \
+			share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+			share/mime/packages/${PORTNAME}.xml
+
 SNDIO_BUILD_DEPENDS=	sndio>0:audio/sndio
 SNDIO_CMAKE_BOOL=	USE_SNDIO
-
-QT5_USES=	desktop-file-utils qt:5 shared-mime-info
-QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,webengine,widgets
-QT5_CMAKE_BOOL=	ENABLE_QT ENABLE_QT_TRANSLATION YUZU_USE_QT_WEB_ENGINE
-QT5_PLIST_FILES=bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop \
-		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-		share/mime/packages/${PORTNAME}.xml
 
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 
