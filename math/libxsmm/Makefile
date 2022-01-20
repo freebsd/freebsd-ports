@@ -8,6 +8,7 @@ COMMENT=	Library for dense and sparse matrix operations and deep learning
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	error: assigning to '__m256i' (vector of 4 'long long' values) from incompatible type 'int'
 
 BUILD_DEPENDS=	bash:shells/bash
 
