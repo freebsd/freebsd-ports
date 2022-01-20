@@ -1,5 +1,3 @@
-TIMESTAMP = 1641913020
-SHA256 (ErikReider-SwayAudioIdleInhibit-v0.1-76dfdfb_GH0.tar.gz) = cdf5bec6f00ee27b3c750a1a0e30916519103e5e853095d3efcb7b10277555b4
-SIZE (ErikReider-SwayAudioIdleInhibit-v0.1-76dfdfb_GH0.tar.gz) = 17714
-SHA256 (dc40cedac608.patch) = 0ea913de6ae6dce813f9a0119f391f6e9a00a063c69652e99dd081b139f9688d
-SIZE (dc40cedac608.patch) = 587
+TIMESTAMP = 1642699200
+SHA256 (ErikReider-SwayAudioIdleInhibit-v0.1.1_GH0.tar.gz) = f6505261648f00deec27958db863237619e31541b67e67d5fa8631ed030fe524
+SIZE (ErikReider-SwayAudioIdleInhibit-v0.1.1_GH0.tar.gz) = 17713
