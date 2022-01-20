@@ -1,3 +1,111 @@
+  <vuln vid="51496cbc-7a0e-11ec-a323-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>97.0.4692.99</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/01/stable-channel-update-for-desktop_19.html">
+	  <p>This release contains 26 security fixes, including:</p>
+	  <ul>
+	    <li>[1284367] Critical CVE-2022-0289: Use after free in Safe
+	      browsing. Reported by Sergei Glazunov of Google Project Zero on
+	      2022-01-05</li>
+	    <li>[1260134][1260007] High CVE-2022-0290: Use after free in Site
+	      isolation. Reported by Brendon Tiszka and Sergei Glazunov of
+	      Google Project Zero on 2021-10-15</li>
+	    <li>[1281084] High CVE-2022-0291: Inappropriate implementation in
+	      Storage. Reported by Anonymous on 2021-12-19</li>
+	    <li>[1270358] High CVE-2022-0292: Inappropriate implementation in
+	      Fenced Frames. Reported by Brendon Tiszka  on 2021-11-16</li>
+	    <li>[1283371] High CVE-2022-0293: Use after free in Web packaging.
+	      Reported by Rong Jian and Guang Gong of 360 Alpha Lab on
+	      2021-12-30</li>
+	    <li>[1273017] High CVE-2022-0294: Inappropriate implementation in
+	      Push messaging. Reported by Rong Jian and Guang Gong of 360 Alpha
+	      Lab on 2021-11-23</li>
+	    <li>[1278180] High CVE-2022-0295: Use after free in Omnibox.
+	      Reported by Weipeng Jiang (@Krace) and Guang Gong of 360
+	      Vulnerability Research Institute on 2021-12-09</li>
+	    <li>[1283375] High CVE-2022-0296: Use after free in Printing.
+	      Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability
+	      Research Institute on 2021-12-30</li>
+	    <li>[1274316] High CVE-2022-0297: Use after free in Vulkan. Reported
+	      by Cassidy Kim of Amber Security Lab, OPPO Mobile
+	      Telecommunications Corp. Ltd. on 2021-11-28</li>
+	    <li>[1212957] High CVE-2022-0298: Use after free in Scheduling.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-05-25</li>
+	    <li>[1275438] High CVE-2022-0300: Use after free in Text Input
+	      Method Editor. Reported by Rong Jian and Guang Gong of 360 Alpha
+	      Lab on 2021-12-01</li>
+	    <li>[1276331] High CVE-2022-0301: Heap buffer overflow in DevTools.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability
+	      Research on 2021-12-03</li>
+	    <li>[1278613] High CVE-2022-0302: Use after free in Omnibox.
+	      Reported by Weipeng Jiang (@Krace) and Guang Gong of 360
+	      Vulnerability Research Institute on 2021-12-10</li>
+	    <li>[1281979] High CVE-2022-0303: Race in GPU Watchdog. Reported by
+	      Yigit Can YILMAZ (@yilmazcanyigit) on 2021-12-22</li>
+	    <li>[1282118] High CVE-2022-0304: Use after free in Bookmarks.
+	      Reported by Rong Jian and Guang Gong of 360 Alpha Lab on
+	      2021-12-22</li>
+	    <li>[1282354] High CVE-2022-0305: Inappropriate implementation in
+	      Service Worker API. Reported by @uwu7586 on 2021-12-23</li>
+	    <li>[1283198] High CVE-2022-0306: Heap buffer overflow in PDFium.
+	      Reported by Sergei Glazunov of Google Project Zero on
+	      2021-12-29</li>
+	    <li>[1281881] Medium CVE-2022-0307: Use after free in Optimization
+	      Guide. Reported by Samet Bekmezci @sametbekmezci on
+	      2021-12-21</li>
+	    <li>[1282480] Medium CVE-2022-0308: Use after free in Data Transfer.
+	      Reported by @ginggilBesel on 2021-12-24</li>
+	    <li>[1240472] Medium CVE-2022-0309: Inappropriate implementation in
+	      Autofill. Reported by Alesandro Ortiz on 2021-08-17</li>
+	    <li>[1283805] Medium CVE-2022-0310: Heap buffer overflow in Task
+	      Manager. Reported by Samet Bekmezci @sametbekmezci on
+	      2022-01-03</li>
+	    <li>[1283807] Medium CVE-2022-0311: Heap buffer overflow in Task
+	      Manager. Reported by Samet Bekmezci @sametbekmezci on
+	      2022-01-03</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0289</cvename>
+      <cvename>CVE-2022-0290</cvename>
+      <cvename>CVE-2022-0291</cvename>
+      <cvename>CVE-2022-0292</cvename>
+      <cvename>CVE-2022-0293</cvename>
+      <cvename>CVE-2022-0294</cvename>
+      <cvename>CVE-2022-0295</cvename>
+      <cvename>CVE-2022-0296</cvename>
+      <cvename>CVE-2022-0297</cvename>
+      <cvename>CVE-2022-0298</cvename>
+      <cvename>CVE-2022-0300</cvename>
+      <cvename>CVE-2022-0301</cvename>
+      <cvename>CVE-2022-0302</cvename>
+      <cvename>CVE-2022-0303</cvename>
+      <cvename>CVE-2022-0304</cvename>
+      <cvename>CVE-2022-0305</cvename>
+      <cvename>CVE-2022-0306</cvename>
+      <cvename>CVE-2022-0307</cvename>
+      <cvename>CVE-2022-0308</cvename>
+      <cvename>CVE-2022-0309</cvename>
+      <cvename>CVE-2022-0310</cvename>
+      <cvename>CVE-2022-0311</cvename>
+      <url>https://chromereleases.googleblog.com/2022/01/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2022-01-19</discovery>
+      <entry>2022-01-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7262f826-795e-11ec-8be6-d4c9ef517024">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
