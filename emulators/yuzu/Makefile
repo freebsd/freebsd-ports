@@ -69,8 +69,8 @@ LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 PLIST_FILES=	bin/${PORTNAME}-cmd
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN
-OPTIONS_DEFAULT=PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN
+OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_DEFAULT=PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
 
 ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 ALSA_CMAKE_BOOL=	USE_ALSA
@@ -82,8 +82,8 @@ PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 QT5_USES=		desktop-file-utils qt:5 shared-mime-info
-QT5_USE=		QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,webengine,widgets
-QT5_CMAKE_BOOL=		ENABLE_QT ENABLE_QT_TRANSLATION YUZU_USE_QT_WEB_ENGINE
+QT5_USE=		QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,widgets
+QT5_CMAKE_BOOL=		ENABLE_QT ENABLE_QT_TRANSLATION
 QT5_PLIST_FILES=	bin/${PORTNAME} \
 			share/applications/${PORTNAME}.desktop \
 			share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
@@ -97,11 +97,10 @@ VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VULKAN_DESC=		Vulkan renderer
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
-.if !exists(${.CURDIR:H:H}/www/qt5-webengine)
-# Temporarily disable web applet if qt5-webengine is missing
-QT5_USE:=		${QT5_USE:S/,webengine//}
-QT5_CMAKE_BOOL:=	${QT5_CMAKE_BOOL:N*WEB_ENGINE}
-.endif
+WEBENGINE_DESC=		Web applet support (implies QT5)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
+WEBENGINE_IMPLIES=	QT5
 
 post-patch:
 	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
