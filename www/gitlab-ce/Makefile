@@ -264,7 +264,7 @@ CONFLICTS_INSTALL=	gitolite \
 			gitolite2 \
 			gogs \
 			gitea \
-			${PYTHON_PKGNAMEPREFIX}-gitosis
+			gitosis
 
 USES=		go:modules shebangfix
 USE_RUBY=	yes
