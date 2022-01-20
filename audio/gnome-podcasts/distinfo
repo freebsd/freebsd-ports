@@ -571,3 +571,5 @@ SHA256 (danigm-gettext-rs-61938b9f5f1d3bdc31f9839f53fabe5ccf136a78_GH0.tar.gz) =
 SIZE (danigm-gettext-rs-61938b9f5f1d3bdc31f9839f53fabe5ccf136a78_GH0.tar.gz) = 13046
 SHA256 (World-podcasts-c86f7bfdef7692bbf20f315a90450321f6ca9ce7_GL0.tar.gz) = 24ad097d91f113af7dbd0b49d0da00612480a388c2a1137dcbaf1c2a21952ce0
 SIZE (World-podcasts-c86f7bfdef7692bbf20f315a90450321f6ca9ce7_GL0.tar.gz) = 2470192
+SHA256 (6614bb62ecbe.patch) = 1c9cafb55a03aaada44db5bc62d986d7551212c91bfdff75d6b76af88ba88c9e
+SIZE (6614bb62ecbe.patch) = 1406
