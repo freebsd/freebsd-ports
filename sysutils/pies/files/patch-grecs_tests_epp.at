@@ -1,0 +1,13 @@
+--- grecs/tests/epp.at.orig	2021-09-06 16:30:24 UTC
++++ grecs/tests/epp.at
+@@ -15,7 +15,9 @@
+ # along with Grecs.  If not, see <http://www.gnu.org/licenses/>.
+ AT_SETUP([External preprocessor])
+ 
+-AT_CHECK([m4 -s </dev/null 2>/dev/null || AT_SKIP_TEST])
++AT_CHECK([m4 -s </dev/null 2>/dev/null || AT_SKIP_TEST],[0],[stdout])
++# On FreeBSD, m4 outputs a single '#line 1 "stdin"' line
++AT_CHECK([s=`sed -e '/^#line/d' stdout`; test -z "$s" || AT_SKIP_TEST])
+ 
+ AT_CHECK([
+ AT_DATA([input],

@@ -8,5 +8,4 @@ sbin/pies
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pies.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pies.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pies.mo
-%%DATADIR%%/1.5/include/pp-setup
 @dir /var/pies
