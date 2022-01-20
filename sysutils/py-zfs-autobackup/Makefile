@@ -1,7 +1,7 @@
 # Created by: Sergey Kozlov <skozlov@FreeBSD.org>
 
 PORTNAME=	zfs-autobackup
-DISTVERSION=	3.1
+DISTVERSION=	3.1.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
