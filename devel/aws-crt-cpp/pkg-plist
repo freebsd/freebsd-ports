@@ -23,6 +23,7 @@ include/aws/crt/io/Bootstrap.h
 include/aws/crt/io/ChannelHandler.h
 include/aws/crt/io/EventLoopGroup.h
 include/aws/crt/io/HostResolver.h
+include/aws/crt/io/Pkcs11.h
 include/aws/crt/io/SocketOptions.h
 include/aws/crt/io/Stream.h
 include/aws/crt/io/TlsOptions.h

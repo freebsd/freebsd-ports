@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	aws-crt-cpp
-PORTVERSION=	0.17.2
+PORTVERSION=	0.17.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
