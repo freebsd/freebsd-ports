@@ -69,7 +69,7 @@ LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 PLIST_FILES=	bin/${PORTNAME}-cmd
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK NLS QT5 SNDIO VAAPI VULKAN WEBENGINE
 OPTIONS_DEFAULT=PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
 
 ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
@@ -78,12 +78,17 @@ ALSA_CMAKE_BOOL=	USE_ALSA
 JACK_BUILD_DEPENDS=	jackit>0:audio/jack
 JACK_CMAKE_BOOL=	USE_JACK
 
+NLS_DESC=		UI translations (implies QT5)
+NLS_USE=		QT=linguisttools_build
+NLS_CMAKE_BOOL=		ENABLE_QT_TRANSLATION
+NLS_IMPLIES=		QT5
+
 PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 QT5_USES=		desktop-file-utils qt:5 shared-mime-info
-QT5_USE=		QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,widgets
-QT5_CMAKE_BOOL=		ENABLE_QT ENABLE_QT_TRANSLATION
+QT5_USE=		QT=qmake_build,buildtools_build,concurrent_build,core,gui,widgets
+QT5_CMAKE_BOOL=		ENABLE_QT
 QT5_PLIST_FILES=	bin/${PORTNAME} \
 			share/applications/${PORTNAME}.desktop \
 			share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
