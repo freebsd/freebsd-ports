@@ -1,4 +1,4 @@
-TIMESTAMP = 1633547150
+TIMESTAMP = 1642594476
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.crate) = 17087
 SHA256 (rust/crates/atty-0.2.14.crate) = d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
@@ -151,5 +151,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.crate) = ac3b87c63620426dd9
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.crate) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (mgdm-htmlq-v0.3.0_GH0.tar.gz) = df07a3afbd61824d382961620782c10b0c839d33dbd4d9a2dda261091c830f60
-SIZE (mgdm-htmlq-v0.3.0_GH0.tar.gz) = 12165
+SHA256 (mgdm-htmlq-v0.4.0_GH0.tar.gz) = c2954c0fcb3ada664b14834646aa0a2c4268683cc51fd60d47a71a9f7e77d4b9
+SIZE (mgdm-htmlq-v0.4.0_GH0.tar.gz) = 13030
