@@ -1,7 +1,6 @@
 PORTNAME=	texlab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
-PORTREVISION=	2
+DISTVERSION=	3.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	kfv@kfv.io
@@ -20,7 +19,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
 		any_ascii-0.1.7 \
-		anyhow-1.0.44 \
+		anyhow-1.0.45 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		beef-0.5.0 \
@@ -54,7 +53,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.28 \
+		encoding_rs-0.8.29 \
 		encoding_rs_io-0.1.7 \
 		fern-0.6.0 \
 		filetime-0.2.14 \
@@ -177,7 +176,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		semver-parser-0.10.2 \
 		serde-1.0.130 \
 		serde_derive-1.0.130 \
-		serde_json-1.0.68 \
+		serde_json-1.0.69 \
 		serde_repr-0.1.7 \
 		serde_yaml-0.8.17 \
 		similar-1.3.0 \
@@ -185,7 +184,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		smallvec-0.6.14 \
 		smallvec-1.6.1 \
 		smartstring-0.2.6 \
-		smol_str-0.1.18 \
+		smol_str-0.1.21 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		string-interner-0.12.2 \
@@ -193,8 +192,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		string_cache_codegen-0.5.1 \
 		stringreader-0.1.1 \
 		strsim-0.8.0 \
-		structopt-0.3.23 \
-		structopt-derive-0.4.16 \
+		structopt-0.3.25 \
+		structopt-derive-0.4.18 \
 		strum-0.19.5 \
 		strum_macros-0.19.4 \
 		syn-1.0.73 \
