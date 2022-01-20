@@ -1,6 +1,6 @@
 PORTNAME=	birdfont
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.29.5
+DISTVERSION=	2.29.6
 CATEGORIES=	graphics x11-fonts
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,17 +14,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR} \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgee-0.8.so:devel/libgee \
+		libharfbuzz.so:print/harfbuzz \
 		libnotify.so:devel/libnotify \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libxmlbird.so:textproc/libxmlbird
 
 USES=		compiler:c++11-lang gettext-tools gnome pkgconfig \
-		python:3.7+,build shared-mime-info shebangfix sqlite:3 \
-		tar:xz
+		python:3.7+,build shared-mime-info shebangfix sqlite:3 tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	johanmattssonm
-USE_GNOME=	cairo glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py
 
