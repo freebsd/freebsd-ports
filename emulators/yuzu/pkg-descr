@@ -1,11 +1,7 @@
-yuzu is an experimental open-source emulator for the Nintendo Switch
-from the creators of Citra.
-
-It is written in C++ with portability in mind, with builds actively
-maintained for Windows and Linux. The emulator is capable of running
-several commercial games.
-
-yuzu only emulates a subset of Switch hardware and therefore most
-commercial games do not run at full speed or are not fully functional.
+yuzu is the world's most popular, open-source, Nintendo Switch emulator,
+started by the creators of Citra. It is written in C++ with portability in
+mind, with builds actively maintained for Windows and Linux. The emulator is
+capable of running most commercial games at full speed, provided you meet
+the necessary hardware requirements.
 
 WWW: https://yuzu-emu.org/
