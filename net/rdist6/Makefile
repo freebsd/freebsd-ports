@@ -10,7 +10,7 @@ MASTER_SITES=	https://fossies.org/linux/misc/old/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network file distribution/synchronisation utility
 
-BROKEN_FreeBSD_12=	y.tab.h file not found
+MAKE_JOBS_UNSAFE=	yes
 
 # To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
 RDIST_NAME?=	rdist6
