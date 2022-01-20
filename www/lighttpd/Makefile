@@ -1,7 +1,7 @@
 # Created by: k@123.org
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.63
+PORTVERSION=	1.4.64
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -24,8 +24,7 @@ USES+=	cpe
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd \
-		--with-pcre2
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
 INSTALL_TARGET=	install-strip
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
@@ -36,7 +35,7 @@ PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
 USE_RC_SUBR=	lighttpd
 REQUIRE=	LOGIN
 
-OPTIONS_DEFINE=	ATTR DBI DOCS GDBM IPV6 KRB5 LUA MAXMINDDB MEMCACHED NETTLE \
+OPTIONS_DEFINE=	ATTR DBI DOCS GDBM IPV6 KRB5 LUA MAXMINDDB NETTLE \
 		LDAP SPAWNFCGI VALGRIND WEBDAV ZSTD
 OPTIONS_GROUP=	SSL
 OPTIONS_GROUP_SSL=	OPENSSL GNUTLS MBEDTLS NSS WOLFSSL
@@ -51,7 +50,6 @@ KRB5_DESC=	Kerberos authentication (mod_authn_gssapi)
 LDAP_DESC=	LDAP authentication (mod_authn_ldap)
 LUA_DESC=	lua support (mod_magnet)
 MAXMINDDB_DESC=	IP-based geolocation lookup (mod_maxminddb)
-MEMCACHED_DESC=	memcached storage (mod_trigger_b4_dl)
 NETTLE_DESC=	Crypto support from Nettle
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
@@ -82,8 +80,6 @@ MAXMINDDB_CONFIGURE_WITH=	maxminddb=${LOCALBASE}
 MAXMINDDB_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 MBEDTLS_CONFIGURE_WITH=	mbedtls=${LOCALBASE}
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
-MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-MEMCACHED_CONFIGURE_WITH=memcached
 NETTLE_CONFIGURE_WITH=	nettle=${LOCALBASE}
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NSS_CONFIGURE_WITH=	nss=${LOCALBASE}
@@ -109,13 +105,24 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
 LIGHTTPD_CONF_D_FILES=	access_log.conf \
-	auth.conf cgi.conf \
-	debug.conf dirlisting.conf \
-	evhost.conf expire.conf fastcgi.conf \
-	magnet.conf mime.conf mysql_vhost.conf proxy.conf \
-	rrdtool.conf scgi.conf secdownload.conf \
-	simple_vhost.conf ssi.conf status.conf \
-	trigger_b4_dl.conf userdir.conf webdav.conf
+			auth.conf \
+			cgi.conf \
+			debug.conf \
+			dirlisting.conf \
+			evhost.conf \
+			expire.conf \
+			fastcgi.conf \
+			magnet.conf \
+			mime.conf \
+			proxy.conf \
+			rrdtool.conf \
+			scgi.conf \
+			secdownload.conf \
+			simple_vhost.conf \
+			ssi.conf \
+			status.conf \
+			userdir.conf \
+			webdav.conf
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
