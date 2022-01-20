@@ -1,5 +1,3 @@
-TIMESTAMP = 1618580803
-SHA256 (dwm-6.2.tar.gz) = 97902e2e007aaeaa3c6e3bed1f81785b817b7413947f1db1d3b62b8da4cd110e
-SIZE (dwm-6.2.tar.gz) = 25273
-SHA256 (dwm-ru_gaps-6.2.diff) = f381657d96bfb4ac36053641a3c862bf1b94c6b6934cff0982b1e26efd3199ad
-SIZE (dwm-ru_gaps-6.2.diff) = 4629
+TIMESTAMP = 1642674880
+SHA256 (dwm-6.3.tar.gz) = badaa028529b1fba1fd7f9a84f3b64f31190466c858011b53e2f7b70c6a3078d
+SIZE (dwm-6.3.tar.gz) = 25351

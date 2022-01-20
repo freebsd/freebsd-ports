@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220120:
+  AFFECTS: users of x11-wm/dwm
+  AUTHOR: 0mp@FreeBSD.org
+
+  dwm has been updated to 6.3. The option RUGAPS is no longer available because
+  it depends on a patch only available for version 6.2. RUGAPS can be
+  reintroduced if desired once it is ported to 6.3 by the interested party.
+
 20220118:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org

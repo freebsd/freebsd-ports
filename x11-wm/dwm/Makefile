@@ -1,8 +1,7 @@
 # Created by: Jeroen Schot <schot@a-eskwadraat.nl>
 
 PORTNAME=	dwm
-DISTVERSION=	6.2
-PORTREVISION=	2
+DISTVERSION=	6.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
@@ -34,7 +33,7 @@ PLIST_FILES=	bin/dwm \
 		share/xsessions/dwm.desktop
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DMENUANDSTERM DOCS RUGAPS SUPERASMODKEY VOLUMECONTROL XINERAMA
+OPTIONS_DEFINE=	DMENUANDSTERM DOCS SUPERASMODKEY VOLUMECONTROL XINERAMA
 OPTIONS_DEFAULT=DMENUANDSTERM XINERAMA
 
 DMENUANDSTERM_DESC=	Install x11/dmenu and x11/sterm as runtime dependencies
@@ -44,9 +43,6 @@ VOLUMECONTROL_DESC=	Use multimedia keys to raise or lower volume
 
 DMENUANDSTERM_RUN_DEPENDS=	dmenu:x11/dmenu \
 				st:x11/sterm
-
-RUGAPS_PATCH_SITES=		https://dwm.suckless.org/patches/ru_gaps/
-RUGAPS_PATCHFILES=		dwm-ru_gaps-6.2.diff:-p1
 
 SUPERASMODKEY_EXTRA_PATCHES=	${PATCHDIR}/superasmodkey-patch-config.def.h
 VOLUMECONTROL_EXTRA_PATCHES=	${PATCHDIR}/volumecontrol-patch-config.def.h
