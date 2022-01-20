@@ -1,5 +1,7 @@
 bin/nsxiv
 share/applications/nsxiv.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/image-info
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-handler
 share/icons/hicolor/128x128/apps/nsxiv.png
 share/icons/hicolor/16x16/apps/nsxiv.png
 share/icons/hicolor/32x32/apps/nsxiv.png

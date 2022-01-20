@@ -1,10 +1,7 @@
 PORTNAME=	nsxiv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	27.1-20
-DISTVERSIONSUFFIX=	-g065562d
+DISTVERSION=	28
 CATEGORIES=	graphics
-PATCH_SITES=	https://github.com/0mp/nsxiv/commit/
-PATCHFILES=	d44674845ac41621cdaf69f6898b81fac435233f.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple X image viewer
@@ -16,23 +13,20 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgif.so:graphics/giflib \
 		libImlib2.so:graphics/imlib2 \
-		libinotify.so:devel/libinotify
+		libinotify.so:devel/libinotify \
+		libwebp.so:graphics/webp \
+		libwebpdemux.so:graphics/webp
 
 USES=		desktop-file-utils gmake localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xft
 
-MAKE_ARGS=	PREFIX=${PREFIX}
-MAKE_ENV=	OPTIONAL_LIBS=-linotify
+MAKE_ARGS=	MANPREFIX=${MANPREFIX}/share/man
+MAKE_ENV=	EGPREFIX=${EXAMPLESDIR} LDLIBS=-linotify
 
 INSTALL_TARGET=	install-all
 
-OPTIONS_DEFINE=	DOCS
-
-# These examples files belong to the project's documentation. Let's leave them
-# in the doc directory for simplicity.
-PORTDOCS=	examples/image-info \
-		examples/key-handler
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
