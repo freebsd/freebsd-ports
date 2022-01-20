@@ -1,5 +1,6 @@
 PORTNAME=	pkg
 DISTVERSION=	1.17.99.9
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-devel
@@ -43,13 +44,6 @@ CONFIGURE_ARGS+=	--with-asan --with-ubsan
 #CONFIGURE_ARGS+=	--default-format=tzst
 #.endif
 
-.if !exists(/usr/libdata/pkgconfig/liblzma.pc)
-LIBLZMA_LIBS=	-llzma
-.else
-LIBLZMA_PC!=	${EGREP} ^Libs /usr/libdata/pkgconfig/liblzma.pc
-LIBLZMA_LIBS=	${LIBLZMA_PC:M-l*}
-.endif
-
 .if defined(WITH_PKG)
 .if ${WITH_PKG} != devel
 .	if !defined(PACKAGE_BUILDING)
@@ -66,10 +60,6 @@ PKG_DEPENDS=
 .if !exists(${LOCALBASE}/sbin/pkg) && !defined(CROSS_TOOLCHAIN)
 PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e "s|-llzma|${LIBLZMA_LIBS}|g" ${WRKSRC}/auto.def \
-		${WRKSRC}/src/Makefile.autosetup ${WRKSRC}/tests/Makefile.autosetup
 
 .if ${PORT_OPTIONS:MSAN}
 post-build:
