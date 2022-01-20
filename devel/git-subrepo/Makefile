@@ -1,5 +1,5 @@
 PORTNAME=	git-subrepo
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.3
 CATEGORIES=	devel
 
 MAINTAINER=	jhb@FreeBSD.org
