@@ -1,7 +1,7 @@
 # Created by: Thomas Bartelmess <thomas@bartelmess.io>
 
 PORTNAME=	graylog
-DISTVERSION=	4.2.4
+DISTVERSION=	4.2.5
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \
