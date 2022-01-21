@@ -1,6 +1,6 @@
---- crypto/CMakeLists.txt.orig	2022-01-08 15:58:38.096291000 -0500
-+++ crypto/CMakeLists.txt	2022-01-08 15:28:07.210470000 -0500
-@@ -462,6 +462,7 @@
+--- crypto/CMakeLists.txt.orig	2022-01-21 15:36:31 UTC
++++ crypto/CMakeLists.txt
+@@ -462,6 +462,7 @@ if(FIPS_DELOCATE OR FIPS_SHARED)
  endif()
  
  SET_TARGET_PROPERTIES(crypto PROPERTIES LINKER_LANGUAGE C)

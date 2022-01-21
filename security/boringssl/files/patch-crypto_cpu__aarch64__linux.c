@@ -1,8 +1,8 @@
---- crypto/cpu_aarch64_linux.c.orig	2022-01-05 15:30:33.000000000 -0500
-+++ crypto/cpu_aarch64_linux.c	2022-01-06 10:24:03.703277000 -0500
-@@ -14,10 +14,8 @@
+--- crypto/cpu_aarch64_linux.c.orig	2022-01-18 16:46:15 UTC
++++ crypto/cpu_aarch64_linux.c
+@@ -14,51 +14,49 @@
  
- #include <openssl/cpu.h>
+ #include "internal.h"
  
 -#if defined(OPENSSL_AARCH64) && defined(OPENSSL_LINUX) && \
 -    !defined(OPENSSL_STATIC_ARMCAP)
@@ -12,7 +12,6 @@
  
  #include <openssl/arm_arch.h>
  
-@@ -26,41 +24,41 @@
  
  extern uint32_t OPENSSL_armcap_P;
  
