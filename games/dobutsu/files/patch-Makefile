@@ -1,0 +1,9 @@
+--- Makefile.orig	2022-01-20 13:07:59 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ CC=c99
+-CFLAGS=$(RLCFLAGS) $(INTLCFLAGS) $(LZMACFLAGS) -O3 -DLOCALEDIR=\"$(LOCALEDIR)\" -g
++CFLAGS+=$(RLCFLAGS) $(INTLCFLAGS) $(LZMACFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\"
+ 
+ # for libedit support on FreeBSD
+ #RLCFLAGS=-I/usr/include/edit

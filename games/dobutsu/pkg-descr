@@ -1,5 +1,5 @@
-An engine for the Japanese chess variant Dobutsu shogi. Dobutsu uses a
+An engine for the Japanese chess variant Dobutsu shogi.  Dobutsu uses a
 comprehensive endgame table base to achieve perfect play from any
-position.
+position, but can also be configured to any strength you desire.
 
 WWW: https://github.com/clausecker/dobutsu
