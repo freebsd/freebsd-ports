@@ -3,6 +3,7 @@
 PORTNAME=	helmfile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.142.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	timp87@gmail.com
@@ -160,7 +161,7 @@ post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
 	@${RLN} ${WRKSRC_hashicorp_vault_sdk}/sdk ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
 
-#GO_BUILDFLAGS=	-ldflags="-X github.com/roboll/helmfile/pkg/app/version.Version=v${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags="-X github.com/roboll/helmfile/pkg/app/version.Version=v${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
