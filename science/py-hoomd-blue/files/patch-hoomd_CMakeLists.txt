@@ -1,0 +1,11 @@
+--- hoomd/CMakeLists.txt.orig	2022-01-21 08:28:13 UTC
++++ hoomd/CMakeLists.txt
+@@ -338,7 +338,7 @@ endif()
+ # Libraries and compile definitions for MPI enabled builds
+ if (ENABLE_MPI)
+     target_compile_definitions(_hoomd PUBLIC ENABLE_MPI)
+-    target_link_libraries(_hoomd PUBLIC MPI::MPI_CXX cereal)
++    target_link_libraries(_hoomd PUBLIC MPI::MPI_CXX)
+ 
+     if (ENABLE_MPI_CUDA)
+           target_compile_definitions(_hoomd PUBLIC ENABLE_MPI_CUDA)
