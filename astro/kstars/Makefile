@@ -32,9 +32,4 @@ USE_QT=		concurrent core datavis3d dbus declarative gui multimedia \
 		xml \
 		buildtools_build qmake_build
 
-post-extract:
-	# KDE Bug https://bugs.kde.org/show_bug.cgi?id=439541
-	# ${RM} ${WRKSRC}/po/de/docs/kstars/index.docbook
-	true
-
 .include <bsd.port.mk>
