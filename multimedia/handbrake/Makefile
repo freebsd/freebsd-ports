@@ -1,8 +1,7 @@
 # Created by: Andrew Thompson <andy@fud.org.nz>
 
 PORTNAME=	handbrake
-DISTVERSION=	1.4.2
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -47,13 +46,13 @@ USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:3.6+,build
 
 CONTRIB_FILES=	fdk-aac-2.0.1.tar.gz \
-		ffmpeg-4.4.tar.bz2 \
+		ffmpeg-4.4.1.tar.bz2 \
 		libbluray-1.3.0.tar.bz2 \
 		libdvdnav-6.1.1.tar.bz2 \
 		libdvdread-6.1.1.tar.bz2 \
-		dav1d-0.9.0.tar.bz2 \
+		dav1d-0.9.2.tar.bz2 \
 		x265_3.5.tar.gz \
-		zimg-3.0.1.tar.gz
+		zimg-3.0.3.tar.gz
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
@@ -79,16 +78,17 @@ NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
 # Enforce linking to bundled libraries instead of system libraries
 LDFLAGS+=	-L${BUILD_WRKSRC}/contrib/lib
 
-OPTIONS_DEFINE=		FDK_AAC MFX X11
-OPTIONS_DEFAULT=	MFX X11
-OPTIONS_EXCLUDE_powerpc=	MFX
-OPTIONS_EXCLUDE_powerpc64=	MFX
-OPTIONS_EXCLUDE_powerpc64le=	MFX
+OPTIONS_DEFINE=		FDK_AAC VPL X11
+OPTIONS_DEFAULT=	VPL X11
+OPTIONS_EXCLUDE_i386=	VPL
+OPTIONS_EXCLUDE_powerpc=	VPL
+OPTIONS_EXCLUDE_powerpc64=	VPL
+OPTIONS_EXCLUDE_powerpc64le=	VPL
 
 OPTIONS_SUB=	yes
 
 FDK_AAC_DESC=	Enable non-free Fraunhofer FDK AAC codec
-MFX_DESC=	Intel MediaSDK (aka Quick Sync Video)
+VPL_DESC=	Intel oneVPL (aka Quick Sync Video)
 X11_DESC=	Build GTK+3 based GUI program
 
 FDK_AAC_CONFIGURE_ENABLE=	fdk-aac
@@ -97,9 +97,10 @@ LICENSE_NAME_FDK_AAC=		Software License for The Fraunhofer FDK AAC Codec Library
 LICENSE_FILE_FDK_AAC=		${WRKDIR}/${DISTFILES:Mfdk*:R:R}/NOTICE
 LICENSE_PERMS_FDK_AAC=		dist-mirror pkg-mirror auto-accept
 
-MFX_LIB_DEPENDS=	libmfx.so:multimedia/intel-media-sdk \
+VPL_LIB_DEPENDS=	libvpl.so:multimedia/onevpl \
+			libmfx.so:multimedia/intel-media-sdk \
 			libva-drm.so:multimedia/libva
-MFX_CONFIGURE_ON=	--enable-qsv
+VPL_CONFIGURE_ON=	--enable-qsv
 
 X11_CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 X11_MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin

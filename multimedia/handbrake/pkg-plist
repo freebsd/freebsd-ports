@@ -5,6 +5,7 @@ bin/HandBrakeCLI
 %%X11%%share/icons/hicolor/scalable/apps/hb-icon.svg
 %%X11%%share/icons/hicolor/scalable/apps/fr.handbrake.ghb.svg
 %%X11%%share/locale/af/LC_MESSAGES/ghb.mo
+%%X11%%share/locale/co/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/cs/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/da/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/de/LC_MESSAGES/ghb.mo
