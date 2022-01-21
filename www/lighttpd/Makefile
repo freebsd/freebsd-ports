@@ -35,8 +35,8 @@ PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
 USE_RC_SUBR=	lighttpd
 REQUIRE=	LOGIN
 
-OPTIONS_DEFINE=	ATTR DBI DOCS GDBM IPV6 KRB5 LUA MAXMINDDB NETTLE \
-		LDAP SPAWNFCGI VALGRIND WEBDAV ZSTD
+OPTIONS_DEFINE=	ATTR DBI DOCS IPV6 KRB5 LUA MAXMINDDB NETTLE LDAP SPAWNFCGI \
+		VALGRIND WEBDAV ZSTD
 OPTIONS_GROUP=	SSL
 OPTIONS_GROUP_SSL=	OPENSSL GNUTLS MBEDTLS NSS WOLFSSL
 
@@ -45,7 +45,6 @@ OPTIONS_SUB=	yes
 
 ATTR_DESC=	extended attributes support
 DBI_DESC=	DBI authentication (mod_authn_dbi)
-GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
 KRB5_DESC=	Kerberos authentication (mod_authn_gssapi)
 LDAP_DESC=	LDAP authentication (mod_authn_ldap)
 LUA_DESC=	lua support (mod_magnet)
@@ -59,8 +58,6 @@ ZSTD_DESC=	mod_deflate support for zstd (Zstandard)
 ATTR_CONFIGURE_WITH=	attr
 DBI_CONFIGURE_WITH=	dbi=${LOCALBASE}
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
-GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
-GDBM_CONFIGURE_WITH=	gdbm
 GNUTLS_CONFIGURE_WITH=	gnutls=${LOCALBASE}
 GNUTLS_LIBS=		-lgnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
