@@ -1,6 +1,5 @@
 PORTNAME=	kstars
-DISTVERSION=	3.5.6
-PORTEPOCH=	1
+DISTVERSION=	3.5.7
 CATEGORIES=	astro kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -35,6 +34,7 @@ USE_QT=		concurrent core datavis3d dbus declarative gui multimedia \
 
 post-extract:
 	# KDE Bug https://bugs.kde.org/show_bug.cgi?id=439541
-	${RM} ${WRKSRC}/po/de/docs/kstars/index.docbook
+	# ${RM} ${WRKSRC}/po/de/docs/kstars/index.docbook
+	true
 
 .include <bsd.port.mk>

@@ -236,6 +236,10 @@ share/doc/HTML/en/kstars/ekos-logs.docbook
 share/doc/HTML/en/kstars/ekos-profile-editor.docbook
 share/doc/HTML/en/kstars/ekos-profile-wizard.docbook
 share/doc/HTML/en/kstars/ekos-scheduler.docbook
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-atpole.png
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-rotation.png
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-std.png
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-threequarteroverlap.png
 share/doc/HTML/en/kstars/ekos-setup.docbook
 share/doc/HTML/en/kstars/ekos-tutorials.docbook
 share/doc/HTML/en/kstars/ekos-user-interface.docbook
