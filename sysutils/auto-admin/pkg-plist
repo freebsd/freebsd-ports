@@ -1,9 +1,12 @@
+man/man1/auto-add-swap.1.gz
 man/man1/auto-admin.1.gz
+man/man1/auto-update-system.1.gz
 sbin/auto-ad-adduser
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
 sbin/auto-add-hosts-entry
 sbin/auto-add-proc-mount
+sbin/auto-add-swap
 sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
@@ -56,6 +59,7 @@ sbin/auto-get-network
 sbin/auto-gpu-setup
 sbin/auto-group-check
 sbin/auto-harden
+sbin/auto-hardware-specs
 sbin/auto-hex-to-octet
 sbin/auto-hyperthreading-toggle
 sbin/auto-idrac-config
@@ -73,8 +77,10 @@ sbin/auto-ipmi-remote-access
 sbin/auto-ipmi-remote-power
 sbin/auto-ipmi-remote-status
 sbin/auto-krb-auth-setup
+sbin/auto-last-update
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
+sbin/auto-localbase
 sbin/auto-lock-local-pw
 sbin/auto-lock-user
 sbin/auto-mark-install-from-source
@@ -134,6 +140,7 @@ sbin/auto-sound-driver-setup
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
 sbin/auto-su+j-toggle
+sbin/auto-sync-pxe-root-pw
 sbin/auto-sys-manager
 sbin/auto-transfer-pw
 sbin/auto-unlock-local-pw
