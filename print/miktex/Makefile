@@ -11,7 +11,7 @@ DISTFILES=	miktex-zzdb1-2.9.tar.lzma:bootstrap \
 		tetex.tar.lzma:bootstrap
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	arrowd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of TeX/LaTeX
 
 LICENSE=	MULTIPLE
