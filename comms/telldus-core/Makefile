@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	http://download.telldus.com/TellStick/Software/telldus-core/
 
-MAINTAINER=	johan@stromnet.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tellstick Telldus daemon + library
 
 LICENSE=	LGPL21
