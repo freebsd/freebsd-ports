@@ -1,10 +1,18 @@
---- a/bazel/grpc_deps.bzl.orig	2021-10-11 15:54:07.083144000 +0200
-+++ b/bazel/grpc_deps.bzl	2021-10-11 16:02:48.722952000 +0200
-@@ -239,6 +239,7 @@
-     if "com_google_absl" not in native.existing_rules():
+--- a/bazel/grpc_deps.bzl
++++ b/bazel/grpc_deps.bzl
+@@ -284,6 +284,7 @@
          http_archive(
              name = "com_google_absl",
+             sha256 = "35f22ef5cb286f09954b7cc4c85b5a3f6221c9d4df6b8c4a1e9d399555b366ee",
 +            patches = ["//third_party/grpc:extra-patch-absl_base_internal_unscaledcycleclock.cc"],
-             sha256 = "f368a8476f4e2e0eccf8a7318b98dafbe30b2600f4e3cf52636e5eb145aba06a",
-             strip_prefix = "abseil-cpp-df3ea785d8c30a9503321a3d35ee7d35808f190d",
+             strip_prefix = "abseil-cpp-997aaf3a28308eba1b9156aa35ab7bca9688e9f6",
              urls = [
+                 "https://storage.googleapis.com/grpc-bazel-mirror/github.com/abseil/abseil-cpp/archive/997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz",
+@@ -339,6 +340,7 @@
+         http_archive(
+             name = "upb",
+             sha256 = "6a5f67874af66b239b709c572ac1a5a00fdb1b29beaf13c3e6f79b1ba10dc7c4",
++            patches = ["//third_party/grpc:extra-patch-bazel_build_defs.bzl"],
+             strip_prefix = "upb-2de300726a1ba2de9a468468dc5ff9ed17a3215f",
+             urls = [
+                 "https://storage.googleapis.com/grpc-bazel-mirror/github.com/protocolbuffers/upb/archive/2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz",
