@@ -1,7 +1,7 @@
 #  Created by: Oleg Sidorkin <osidorkin@gmail.com>
 
 PORTNAME=	rss-bridge
-DISTVERSION=	2021-04-25
+DISTVERSION=	2022-01-20
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -31,6 +31,7 @@ SQLITE_USE=	PHP=sqlite3
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "." ${STAGEDIR}${WWWDIR} "-not ( \
-	    -name LICENSE -or -name .gitkeep )" )
+	    -name LICENSE -or -name .gitkeep -or -name docker-bake.hcl -or \
+	    -name docker-entrypoint.sh -or -regex ./contrib.* )" )
 
 .include <bsd.port.mk>
