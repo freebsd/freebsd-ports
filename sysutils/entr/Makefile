@@ -1,5 +1,5 @@
 PORTNAME=	entr
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://entrproject.org/code/
 
