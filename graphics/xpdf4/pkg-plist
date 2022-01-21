@@ -10,6 +10,8 @@ libexec/xpdf/pdftotext
 %%GUI%%libexec/xpdf/xpdf
 %%GUI%%bin/xpdf
 %%GUI%%%%DESKTOPDIR%%/xpdf.desktop
+%%GUI%%share/icons/hicolor/256x256/xpdf.png
+%%GUI%%share/icons/hicolor/scalable/xpdf.svg
 etc/man.d/xpdf.conf
 %%DATADIR%%/man/man1/pdfdetach.1.gz
 %%DATADIR%%/man/man1/pdffonts.1.gz
