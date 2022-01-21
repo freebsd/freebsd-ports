@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	14.6.2
+PORTVERSION=	14.6.3
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -18,6 +18,8 @@ USES=		gmake go:modules,no_targets
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse
+# found in work/gitlab-foss*/workhorse/go.mod
+#GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
