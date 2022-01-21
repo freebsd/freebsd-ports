@@ -4,6 +4,9 @@ DISTVERSION=	3.0.0-beta.13
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	3f8ed3abb36aa51c6d91c3ff1c1563ffc6ee37c2.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular dynamics and Monte Carlo soft matter simulation
 

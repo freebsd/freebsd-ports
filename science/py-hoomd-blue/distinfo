@@ -1,4 +1,4 @@
-TIMESTAMP = 1642744229
+TIMESTAMP = 1642797728
 SHA256 (glotzerlab-hoomd-blue-v3.0.0-beta.13_GH0.tar.gz) = e655a9afc7a8f7fe668552e0ffd9ba4a38884e791afd8ab45d81cc0df614fb40
 SIZE (glotzerlab-hoomd-blue-v3.0.0-beta.13_GH0.tar.gz) = 2525133
 SHA256 (glotzerlab-libgetar-85de0f2355ea938474452aaf6bb78904a91293ec_GH0.tar.gz) = 12815869b556c09f537e3d5ebed830298c61d458a8c967a60f7af607201750ed
@@ -25,3 +25,5 @@ SHA256 (glotzerlab-hoomd-examples-5a5e4e11e96397b761e90b27983cc38e2fb1a324_GH0.t
 SIZE (glotzerlab-hoomd-examples-5a5e4e11e96397b761e90b27983cc38e2fb1a324_GH0.tar.gz) = 5054053
 SHA256 (mphowardlab-hipper-b6da049a516ada03e4e1b66ca6b4c2c7c9668595_GH0.tar.gz) = c64a484884eaab3eb9fd8f7b27b144a7bfadfeab101e95d82bc2a6f7e4fb7cec
 SIZE (mphowardlab-hipper-b6da049a516ada03e4e1b66ca6b4c2c7c9668595_GH0.tar.gz) = 20228
+SHA256 (3f8ed3abb36aa51c6d91c3ff1c1563ffc6ee37c2.patch) = c2e0fecf532d9a73dd42cfce40302d7fe8402ff5d98620b70aca434032c1d0c9
+SIZE (3f8ed3abb36aa51c6d91c3ff1c1563ffc6ee37c2.patch) = 2719
