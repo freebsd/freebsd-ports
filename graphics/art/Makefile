@@ -1,5 +1,6 @@
 PORTNAME=	art
 DISTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -33,10 +34,9 @@ USE_XORG=	x11
 EXTRACT_CMD=	gtar
 
 OPTIONS_DEFINE=		OPENMP
-OPTIONS_DEFAULT=	# OPENMP
+OPTIONS_DEFAULT=	OPENMP
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
-OPENMP_BROKEN=		OpenMP multithreading is broken, see https://bitbucket.org/agriggio/art/issues/227
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/ART
