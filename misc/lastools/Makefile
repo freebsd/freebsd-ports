@@ -23,9 +23,8 @@ EXECUTABLES=	lasindex las2txt las2las txt2las lasdiff lasinfo laszip lasmerge la
 pre-install:
 	${MV} ${WRKSRC}/LASlib/src/LASlib-config.cmake ${WRKSRC}/LASlib/src/laslib-config.cmake
 
-post-install: # install executables, workaround for https://github.com/LAStools/LAStools/issues/120
+post-install: # strip the "64" suffix from executables
 .for e in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/${e}64 ${STAGEDIR}${PREFIX}/bin
 	${MV} ${STAGEDIR}${PREFIX}/bin/${e}64 ${STAGEDIR}${PREFIX}/bin/${e}
 .endfor
 
