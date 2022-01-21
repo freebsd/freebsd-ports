@@ -39,17 +39,17 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
         #define MFX_DEPRECATED __attribute__((deprecated))
         #if defined(__cplusplus)
           #define MFX_DEPRECATED_ENUM_FIELD_INSIDE(arg) arg __attribute__((deprecated))
---- dispatcher/vpl/mfx_dispatcher_vpl.h.orig	2021-12-07 00:05:44 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl.h.orig	2022-01-21 23:15:32 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl.h
-@@ -47,7 +47,7 @@ typedef char CHAR_TYPE;
-         // Windows x64
+@@ -48,7 +48,7 @@ typedef char CHAR_TYPE;
          #define MSDK_LIB_NAME L"libmfxhw64."
      #endif
+     #define ONEVPL_PRIORITY_PATH_VAR L"ONEVPL_PRIORITY_PATH"
 -#elif defined(__linux__)
 +#elif defined(__unix__)
      // Linux x64
-     #define MSDK_LIB_NAME "libmfxhw64."
- #endif
+     #define MSDK_LIB_NAME            "libmfxhw64."
+     #define ONEVPL_PRIORITY_PATH_VAR "ONEVPL_PRIORITY_PATH"
 --- dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp.orig	2021-12-07 00:05:44 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp
 @@ -401,7 +401,9 @@ mfxU32 LoaderCtxVPL::GetSearchPathsSystemDefault(std::
