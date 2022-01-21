@@ -4,7 +4,7 @@ PKGNAMESUFFIX=	20-traymonitor
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
-		libbareos.so:sysutils/bareos-client
+		libbareos.so:sysutils/bareos20-client
 
 CONFLICTS=	bareos-traymonitor bareos18-traymonitor bareos19-traymonitor
 

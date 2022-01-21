@@ -8,7 +8,7 @@ post-build:
 .endif
 
 pre-install:
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if ${PKGNAMESUFFIX} == "20-traymonitor"
 .	for d in client director monitor storage
 		${MKDIR} ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}
 		${FIND} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
@@ -25,7 +25,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bareos-fd ${STAGEDIR}${PREFIX}/sbin/bareos-fd-static
 	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${STAGEDIR}${PREFIX}/sbin/bconsole-static
 .endif
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if ${PKGNAMESUFFIX} == "20-traymonitor"
 # Install config files and preserve existing ones
 .for d in client director monitor storage
 	${INSTALL_SCRIPT} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
