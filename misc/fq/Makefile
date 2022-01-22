@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	fq
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -21,8 +21,8 @@ GH_TUPLE=	\
 		itchyny:timefmt-go:v0.1.3:itchyny_timefmt_go/vendor/github.com/itchyny/timefmt-go \
 		mitchellh:mapstructure:v1.4.3:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		wader:gojq:3894ded312be:wader_gojq/vendor/github.com/wader/gojq \
-		wader:readline:5a81f7707bac:wader_readline/vendor/github.com/wader/readline
+		wader:gojq:6a05b6c59ace:wader_gojq/vendor/github.com/wader/gojq \
+		wader:readline:692d84ca36e2:wader_readline/vendor/github.com/wader/readline
 
 PLIST_FILES=	bin/${PORTNAME}
 
