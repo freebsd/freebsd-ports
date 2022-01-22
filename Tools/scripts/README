@@ -30,6 +30,9 @@ gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
                should be listes in {RUN,LIB}_DEPENDS for this port
 mark_safe.pl - utility to set subsets of ports to MAKE_JOBS_(UN)SAFE=yes
 neededlibs.sh - Extract direct library dependencies from binaries.
+port_conflicts_check.lua - Verify that files installed by more than 1 port are covered
+               in CONFLICTS or CONFLICTS_INSTALL entries (and generate portedit commands
+	       to fix those issues)x
 portsearch - A utility for searching the ports tree. It allows more detailed
              search criteria than ``make search key=<string>'' and accepts
              all perl(1) regular expressions.
