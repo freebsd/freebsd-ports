@@ -73,7 +73,6 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-geos=${LOCALBASE}/bin/geos-config \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
 		--with-pthread=yes \
-		--with-openmp \
 		--prefix=${LOCALBASE} \
 		--exec-prefix=${LOCALBASE}
 
@@ -117,6 +116,10 @@ PGSQL_CONFIGURE_WITH=	postgres
 
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}${VER}
+.endif
+
+.if ${ARCH} != powerpc
+CONFIGURE_ARGS+=	--with-openmp
 .endif
 
 MANDIRS=	${PREFIX}/grass${VER}/docs/man/man1
