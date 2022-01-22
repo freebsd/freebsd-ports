@@ -20,7 +20,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64le && ${OSVERSION} < 1300523
+.if (${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc) && ${OSVERSION} < 1300523
 BUILD_DEPENDS=	llvm13>0:devel/llvm13
 CPP=		${LOCALBASE}/bin/clang-cpp13
 CC=		${LOCALBASE}/bin/clang13
