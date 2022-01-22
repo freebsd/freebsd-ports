@@ -12,6 +12,8 @@ COMMENT=	Collection of cheminformatics and machine-learning software
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned int' to 'npy_intp', see https://github.com/rdkit/rdkit/issues/4934
+
 BUILD_DEPENDS=	catch>0:devel/catch \
 		flex:textproc/flex \
 		rapidjson>=0:devel/rapidjson
