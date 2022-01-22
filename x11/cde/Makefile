@@ -122,6 +122,6 @@ do-install:
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
 	# Only a problem on armv7 so far
-	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -name 'exp.*' -delete
+	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -name 'ecp.*' -delete
 
 .include <bsd.port.post.mk>
