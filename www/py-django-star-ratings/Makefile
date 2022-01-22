@@ -1,7 +1,7 @@
 # Created by: Kevin Golding <ports@caomhin.org>
 
 PORTNAME=	django-star-ratings
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
