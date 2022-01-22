@@ -1,7 +1,8 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	rfc3986
-PORTVERSION=	2.0.0
+DISTVERSION=	1.5.0 # before updating to 2.0.0 make sure that dependencies listed in bug#261243 build
+PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sigmavirus24
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
