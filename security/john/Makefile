@@ -48,6 +48,12 @@ OPENCL_USE=		PERL5=build
 
 OPENMP_CONFIGURE_OFF=	--disable-openmp
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+CONFIGURE_ARGS+=	--disable-simd
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h
 	@${REINPLACE_CMD} -e '/^host_cpu=/s|$$| ; case $$host_cpu in\
