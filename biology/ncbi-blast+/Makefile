@@ -59,6 +59,10 @@ WRKSRC_SUBDIR=	c++
 LDFLAGS+=	-latomic # Only exists in gcc libs
 .endif
 
+.if ${ARCH} == powerpc
+CONFIGURE_ARGS+=	--without-openmp
+.endif
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
