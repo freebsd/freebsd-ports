@@ -1,7 +1,7 @@
 # Created by: Kevin Golding <ports@caomhin.org>
 
 PORTNAME=	django-registration
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
