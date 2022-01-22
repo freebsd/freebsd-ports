@@ -1,9 +1,3 @@
-TIMESTAMP = 1641963039
-SHA256 (miniupnp-libnatpmp-20211229-4b8b447_GH0.tar.gz) = c66ae17652c5c8b7625a64123bcbe73cc6d2cd897b87e1931c387a3bf6d80798
-SIZE (miniupnp-libnatpmp-20211229-4b8b447_GH0.tar.gz) = 26742
-SHA256 (39ad4b34b967.patch) = ee59bb5ee6c9cc597d6fd7dd1ca0ab2816207f8573017524f46b39397f0e9230
-SIZE (39ad4b34b967.patch) = 806
-SHA256 (16ae5af7b7c5.patch) = bf32f9746951fece16e1c5ae9def1e1aa47a579db7dcc8cd14b7a5f7c8d90ff3
-SIZE (16ae5af7b7c5.patch) = 665
-SHA256 (5f4a7c65837a.patch) = 65182f1dd723b7ec9720a44aca62ecb7c07757a1a13dd16f09aeab8a5629af99
-SIZE (5f4a7c65837a.patch) = 576
+TIMESTAMP = 1642880388
+SHA256 (miniupnp-libnatpmp-20220122-724dc69_GH0.tar.gz) = 370aabbe4257da52a1938e1bd49f696ecaf249155a3593c580a334178f89d7fd
+SIZE (miniupnp-libnatpmp-20220122-724dc69_GH0.tar.gz) = 27670
