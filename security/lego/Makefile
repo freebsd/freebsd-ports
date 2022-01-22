@@ -1,6 +1,6 @@
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.3
+DISTVERSION=	4.6.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -26,6 +26,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		Azure:go-autorest:v14.2.0:azure_go_autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		OpenDNS:vegadns2client:a3fa4a771d87:opendns_vegadns2client/vendor/github.com/OpenDNS/vegadns2client \
+		SSLMate:go-pkcs12:c5206de65a78:sslmate_go_pkcs12/vendor/software.sslmate.com/src/go-pkcs12 \
 		akamai:AkamaiOPEN-edgegrid-golang:v1.1.1:akamai_akamaiopen_edgegrid_golang/vendor/github.com/akamai/AkamaiOPEN-edgegrid-golang \
 		aliyun:alibaba-cloud-sdk-go:v1.61.1183:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
 		aws:aws-sdk-go:v1.39.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
@@ -51,7 +52,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
+		golang:net:4163338589ed:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
@@ -118,10 +119,11 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		square:go-jose:v2.6.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		tencentcloud:tencentcloud-sdk-go:v1.0.287:tencentcloud_tencentcloud_sdk_go_common/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
 		transip:gotransip:v6.6.1:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
 		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
-		vinyldns:go-vinyldns:148a5f6b8f14:vinyldns_go_vinyldns/vendor/github.com/vinyldns/go-vinyldns \
+		vinyldns:go-vinyldns:v0.9.16:vinyldns_go_vinyldns/vendor/github.com/vinyldns/go-vinyldns \
 		vultr:govultr:v2.7.1:vultr_govultr_v2/vendor/github.com/vultr/govultr/v2
 
 GO_TARGET=	./cmd/lego
