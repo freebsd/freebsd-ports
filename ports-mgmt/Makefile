@@ -25,6 +25,7 @@
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-devel
+    SUBDIR += pkg-graph
     SUBDIR += pkg-provides
     SUBDIR += pkg-rmleaf
     SUBDIR += pkg_cleanup
