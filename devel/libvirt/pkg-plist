@@ -17,6 +17,7 @@ sbin/virtvboxd
 man/man1/virsh.1.gz
 man/man1/virt-admin.1.gz
 man/man1/virt-host-validate.1.gz
+man/man1/virt-pki-query-dn.1.gz
 man/man1/virt-pki-validate.1.gz
 %%QEMU%%man/man1/virt-qemu-run.1.gz
 man/man1/virt-xml-validate.1.gz
@@ -33,6 +34,7 @@ man/man7/virkeyname-linux.7.gz
 man/man7/virkeyname-osx.7.gz
 man/man7/virkeyname-win32.7.gz
 man/man8/libvirtd.8.gz
+man/man8/virt-ssh-helper.8.gz
 man/man8/virtlockd.8.gz
 man/man8/virtlogd.8.gz
 man/man8/virtnetworkd.8.gz
