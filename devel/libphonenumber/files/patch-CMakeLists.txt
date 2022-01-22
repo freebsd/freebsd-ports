@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2022-01-21 23:54:09.004204000 +0100
++++ CMakeLists.txt	2022-01-22 17:06:23.060147000 +0100
+@@ -18,7 +18,7 @@
+ 
+ # Pick the C++ standard to compile with.
+ # Abseil currently supports C++11, C++14, and C++17.
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ project (libphonenumber)
+@@ -101,6 +101,7 @@
+ endif ()
+ 
+ # Find all the required libraries and programs.
++find_package(absl REQUIRED)
+ if (${USE_BOOST} STREQUAL "ON")
+   add_definitions ("-DI18N_PHONENUMBERS_USE_BOOST")
+   if (WIN32)
