@@ -380,6 +380,7 @@
     SUBDIR += virtualgl
     SUBDIR += wallutils
     SUBDIR += wapanel
+    SUBDIR += way-displays
     SUBDIR += waybar
     SUBDIR += wayland-logout
     SUBDIR += wayout
