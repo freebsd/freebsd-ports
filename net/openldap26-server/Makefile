@@ -1,7 +1,7 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
 
 PORTNAME=		openldap
-DISTVERSION=		2.6.0
+DISTVERSION=		2.6.1
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
