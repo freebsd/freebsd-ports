@@ -19,7 +19,7 @@ etc/mlterm/xim
 lib/libmef.a
 lib/libmef.so
 lib/libmef.so.3
-lib/libmef.so.%%GTK3_VERSION%%
+lib/libmef.so.3.0.1
 lib/libmlterm_coreotl.a
 lib/libmlterm_coreotl.so
 lib/libpobl.a

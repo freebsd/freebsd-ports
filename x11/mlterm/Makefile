@@ -1,9 +1,8 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 
 PORTNAME=	mlterm
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.2
 CATEGORIES=	x11
-MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
@@ -15,10 +14,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		cpe gettext gnome libtool perl5 pkgconfig xorg
-USE_XORG=	sm x11 xft
+USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+USE_XORG=	sm x11 xft
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gui=x11 --with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--enable-optimize-redrawing --disable-iiimf --with-gtk=2.0 \
@@ -27,6 +27,8 @@ EXTERNAL_TOOLS=	mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_JOBS_UNSAFE=	yes
+
+GH_ACCOUNT=	arakiken
 
 OPTIONS_DEFINE=	CAIRO DOCS FCITX FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
 OPTIONS_SUB=	yes
