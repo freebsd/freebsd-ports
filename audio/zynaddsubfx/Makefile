@@ -1,9 +1,8 @@
 # Created by: trasz <trasz@pin.if.uz.zgora.pl>
 
 PORTNAME=	zynaddsubfx
-DISTVERSION=	3.0.6-rc5
-PORTEPOCH=	1
-PORTREVISION=	3
+DISTVERSION=	3.0.6
+PORTEPOCH=	2
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -22,7 +21,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_TUPLE=	DISTRHO:DPF:86a621bfd86922a49ce593fec2a618a1e0cc6ef3:d/DPF \
-		fundamental:rtosc:75a58931f633ce77b08ce5ef86d7db58434af3ac:e/rtosc \
+		fundamental:rtosc:2aec26327e0139131c9bd7439c9928370fccf1ce:e/rtosc \
 		zynaddsubfx:instruments:c5c912131b31df5fdf372d2f06a25aaf2375837f:f/instruments
 
 OPTIONS_DEFINE=		BASH OSS JACK GUI PORTAUDIO SNDIO LASH DOCS EXAMPLES
@@ -90,16 +89,6 @@ CMAKE_ARGS+=	-DZYN_DATADIR:STRING=${DATADIR}
 CMAKE_ARGS+=	-DZYN_EXAMPLESDIR:STRING=${EXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
-CFLAGS+=	-DASM_F2I_YES
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-O3 .* -fomit-frame-pointer|| ; \
-		 /-DASM_F2I_YES/d ; \
-		 /-g #/d' ${WRKSRC}/src/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/banks \
