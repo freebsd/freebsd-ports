@@ -1,8 +1,8 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	viewnior
-PORTVERSION=	1.7
 DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1.8
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
