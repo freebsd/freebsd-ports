@@ -11,7 +11,6 @@ LICENSE=	LGPL21
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 BROKEN_i386=		cannot bind to a temporary of type va_list
-BROKEN_armv7=		STAGEDIR contains intermediate install files
 
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
@@ -122,5 +121,7 @@ do-install:
 
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
+	# Only a problem on armv7 so far
+	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -name 'exp.*' -delete
 
 .include <bsd.port.post.mk>
