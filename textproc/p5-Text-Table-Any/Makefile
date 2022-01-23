@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-Any
-PORTVERSION=	0.104
+PORTVERSION=	0.106
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=RECOMMENDED
 RECOMMENDED_DESC=	Recommended dependencies by upstream
 
 RECOMMENDED_BUILD_DEPENDS=	p5-Term-TablePrint>=0:devel/p5-Term-TablePrint \
-				p5-Text-ANSITable>=0:textproc/p5-Text-ANSITable \
+				p5-Text-ANSITable>=0.602:textproc/p5-Text-ANSITable \
 				p5-Text-ASCIITable>=0:textproc/p5-Text-ASCIITable \
 				p5-Text-FormatTable>=0:textproc/p5-Text-FormatTable \
 				p5-Text-MarkdownTable>=0:textproc/p5-Text-MarkdownTable \
@@ -51,7 +51,7 @@ RECOMMENDED_BUILD_DEPENDS=	p5-Term-TablePrint>=0:devel/p5-Term-TablePrint \
 				p5-Text-TabularDisplay>=0:textproc/p5-Text-TabularDisplay \
 				p5-Text-UnicodeBox>=0:textproc/p5-Text-UnicodeBox
 RECOMMENDED_RUN_DEPENDS=	p5-Term-TablePrint>=0:devel/p5-Term-TablePrint \
-				p5-Text-ANSITable>=0:textproc/p5-Text-ANSITable \
+				p5-Text-ANSITable>=0.602:textproc/p5-Text-ANSITable \
 				p5-Text-ASCIITable>=0:textproc/p5-Text-ASCIITable \
 				p5-Text-FormatTable>=0:textproc/p5-Text-FormatTable \
 				p5-Text-MarkdownTable>=0:textproc/p5-Text-MarkdownTable \
