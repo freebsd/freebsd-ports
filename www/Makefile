@@ -1906,6 +1906,7 @@
     SUBDIR += rubygem-faraday-net_http_persistent
     SUBDIR += rubygem-faraday-patron
     SUBDIR += rubygem-faraday-rack
+    SUBDIR += rubygem-faraday-retry
     SUBDIR += rubygem-faraday0
     SUBDIR += rubygem-faraday14
     SUBDIR += rubygem-faraday_middleware
