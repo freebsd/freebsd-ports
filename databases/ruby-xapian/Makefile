@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	xapian
-PORTVERSION=	1.4.18
+PORTVERSION=	1.4.19
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -37,8 +37,6 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
-
-PORTDOCS=	*
 
 CONFLICTS_INSTALL=	xapian-bindings12
 
