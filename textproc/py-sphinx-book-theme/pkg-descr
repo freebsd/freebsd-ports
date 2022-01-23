@@ -1,0 +1,14 @@
+sphinx-book-theme is an interactive book theme for Sphinx.
+
+This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
+interactive book. It has the following primary features:
+- Bootstrap 4 for visual elements and functionality.
+- Flexible content layout that is inspired by beautiful online books, such as
+  the Edward Tufte CSS guide
+- Visual classes designed for Jupyter Notebooks. Cell inputs, outputs, and
+  interactive functionality are all supported.
+- Launch buttons for online interactivity. For pages that are built with
+  computational material, connect your site to an online BinderHub for
+  interactive content.
+
+WWW: https://github.com/executablebooks/sphinx-book-theme
