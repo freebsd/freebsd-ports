@@ -1,7 +1,7 @@
 # Created by: arved
 
 PORTNAME=	remake
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	SF/bashdb/remake/4.3+dbg-${PORTVERSION}/
 DISTNAME=	remake-4.3+dbg-${PORTVERSION}
