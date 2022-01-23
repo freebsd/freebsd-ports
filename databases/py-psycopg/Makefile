@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	psycopg
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,11 +28,11 @@ POOL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg-pool>=0:databases/py-psycopg-po
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 
 .if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.zoneinfo>=0:devel/py-backports.zoneinfo@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.zoneinfo>=0.2.0:devel/py-backports.zoneinfo@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
