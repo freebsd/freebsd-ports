@@ -6,6 +6,9 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	218166246e29.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-font-viewer/-/merge_requests/27
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 font viewer utility
 
