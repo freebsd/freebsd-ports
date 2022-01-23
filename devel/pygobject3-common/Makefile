@@ -35,6 +35,7 @@ PORTSCOUT?=	limitw:1,even
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
 USES+=		gnome python:build
 USE_GNOME=	glib20:build introspection:build
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
