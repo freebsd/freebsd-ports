@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	xapian
-PORTVERSION=	1.4.18
+PORTVERSION=	1.4.19
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases python
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
