@@ -1,3 +1,5 @@
 TIMESTAMP = 1622048054
 SHA256 (gnome/gedit-40.1.tar.xz) = 55e394a82cb65678b1ab49526cf5bd43f00d8fba21476a4849051a8e137d3691
 SIZE (gnome/gedit-40.1.tar.xz) = 6850264
+SHA256 (gnome/c6c7c6580bc7.patch) = 4ecfe56b4c2f784b7d3a3291a48596981eb10db43e64a2eb478c86b8a4ab4818
+SIZE (gnome/c6c7c6580bc7.patch) = 958

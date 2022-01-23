@@ -6,6 +6,9 @@ CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	c6c7c6580bc7.patch:-p1 # https://gitlab.gnome.org/GNOME/gedit/-/merge_requests/124
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for GNOME 3 Desktop Environment
 
