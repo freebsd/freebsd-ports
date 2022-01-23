@@ -1,8 +1,7 @@
 # Created by: Lev Serebryakov <lev@FreeBSD.org>
 
 PORTNAME=	vips
-PORTVERSION=	8.12.0
-PORTREVISION=	1
+PORTVERSION=	8.12.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
