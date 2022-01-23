@@ -1,3 +1,5 @@
 TIMESTAMP = 1637907368
 SHA256 (virt-viewer-11.0.tar.xz) = a43fa2325c4c1c77a5c8c98065ac30ef0511a21ac98e590f22340869bad9abd0
 SIZE (virt-viewer-11.0.tar.xz) = 259772
+SHA256 (41cc016278e7.patch) = 53a905df3678fdf1be238e3e5e27a8b60126d9238a5058da8476fdcb80ccaf71
+SIZE (41cc016278e7.patch) = 1067
