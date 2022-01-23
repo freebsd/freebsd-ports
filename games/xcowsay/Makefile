@@ -1,7 +1,7 @@
 # Created by: chinsan
 
 PORTNAME=	xcowsay
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		LOCAL/ehaupt
