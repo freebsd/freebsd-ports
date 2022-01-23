@@ -16,6 +16,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Failed.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Job.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/JobField.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/Lookup.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Project.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Query.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Run.pm
@@ -176,6 +177,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/jquery-ui.min.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/jquery.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/json-formatter.umd.js
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/lookup.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/main.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/project.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/runtable.js
@@ -187,6 +189,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/MySQL56.sql
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/login.tx
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/lookup.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/main.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/project.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/upload.tx
@@ -203,6 +206,7 @@ bin/yath-ui-sweeper.pl
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Failed.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Job.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::JobField.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::Lookup.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Project.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Query.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Run.3.gz
