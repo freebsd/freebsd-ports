@@ -1,6 +1,7 @@
 PORTNAME=	bcal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,7 +15,8 @@ ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 # GNU bc must be used because bcal depends on some behaviors
 # specific to GNU bc. Run the test suite with the bc from the
 # base to see that some tests fail.
-RUN_DEPENDS=	${LOCALBASE}/bin/bc:math/gnubc
+RUN_DEPENDS=	${LOCALBASE}/bin/bc:math/gnubc \
+		calc:math/calc
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		gmake python:test,3.5+ readline
