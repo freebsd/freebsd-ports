@@ -1,5 +1,5 @@
 PORTNAME=	json-ld-preloaded
-PORTVERSION=	3.1.6
+PORTVERSION=	3.2.0
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,8 @@ COMMENT=	JSON-LD with preloaded contexts
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-RUN_DEPENDS=	rubygem-json-ld>=3.1<4:converters/rubygem-json-ld \
-		rubygem-rdf>=3.1<4:www/rubygem-rdf
+RUN_DEPENDS=	rubygem-json-ld>=3.2<4:converters/rubygem-json-ld \
+		rubygem-rdf>=3.2<4:www/rubygem-rdf
 
 USES=		gem
 USE_RUBY=	yes
