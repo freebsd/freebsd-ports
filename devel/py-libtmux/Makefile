@@ -1,7 +1,7 @@
 # Created by: Tony Narlock <tony@git-pull.com>
 
 PORTNAME=	libtmux
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	tmux:sysutils/tmux
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
