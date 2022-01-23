@@ -566,9 +566,10 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/AbstractEndpoint.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/AsyncSearch/Delete.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/AsyncSearch/Get.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/AsyncSearch/Status.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/AsyncSearch/Submit.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Autoscaling/DeleteAutoscalingPolicy.php
-%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Autoscaling/GetAutoscalingDecision.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Autoscaling/GetAutoscalingCapacity.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Autoscaling/GetAutoscalingPolicy.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Autoscaling/PutAutoscalingPolicy.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Bulk.php
@@ -611,6 +612,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ccr/Stats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ccr/Unfollow.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/ClearScroll.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/ClosePointInTime.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Cluster/AllocationExplain.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Cluster/DeleteComponentTemplate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Cluster/DeleteVotingConfigExclusions.php
@@ -628,6 +630,9 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Cluster/Stats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Count.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Create.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/DanglingIndices/DeleteDanglingIndex.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/DanglingIndices/ImportDanglingIndex.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/DanglingIndices/ListDanglingIndices.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/DataFrameTransformDeprecated/DeleteTransform.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/DataFrameTransformDeprecated/GetTransform.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/DataFrameTransformDeprecated/GetTransformStats.php
@@ -645,6 +650,8 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Enrich/GetPolicy.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Enrich/PutPolicy.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Enrich/Stats.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Eql/Delete.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Eql/Get.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Eql/Search.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Exists.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/ExistsSource.php
@@ -667,12 +674,14 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ilm/Start.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ilm/Stop.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Index.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/AddBlock.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Analyze.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/ClearCache.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/CloneIndices.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Close.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Create.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/CreateDataStream.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/DataStreamsStats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Delete.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/DeleteAlias.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/DeleteDataStream.php
@@ -689,14 +698,16 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Freeze.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Get.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetAlias.php
-%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetDataStreams.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetDataStream.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetFieldMapping.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetIndexTemplate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetMapping.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetSettings.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetTemplate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/GetUpgrade.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/MigrateToDataStream.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Open.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/PromoteDataStream.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/PutAlias.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/PutIndexTemplate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/PutMapping.php
@@ -705,11 +716,13 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Recovery.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Refresh.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/ReloadSearchAnalyzers.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/ResolveIndex.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Rollover.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Segments.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/ShardStores.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Shrink.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/SimulateIndexTemplate.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/SimulateTemplate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Split.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Stats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Indices/Unfreeze.php
@@ -785,10 +798,12 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/StartDatafeed.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/StopDataFrameAnalytics.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/StopDatafeed.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/UpdateDataFrameAnalytics.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/UpdateDatafeed.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/UpdateFilter.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/UpdateJob.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/UpdateModelSnapshot.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/UpgradeJobSnapshot.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/Validate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ml/ValidateDetector.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Monitoring/Bulk.php
@@ -799,6 +814,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Nodes/ReloadSecureSettings.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Nodes/Stats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Nodes/Usage.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/OpenPointInTime.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Ping.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/PutScript.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/RankEval.php
@@ -810,6 +826,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/GetRollupCaps.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/GetRollupIndexCaps.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/PutJob.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/Rollup.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/RollupSearch.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/StartJob.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Rollup/StopJob.php
@@ -824,6 +841,8 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/SearchableSnapshots/Stats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/Authenticate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/ChangePassword.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/ClearApiKeyCache.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/ClearCachedPrivileges.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/ClearCachedRealms.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/ClearCachedRoles.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/CreateApiKey.php
@@ -841,6 +860,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/GetToken.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/GetUser.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/GetUserPrivileges.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/GrantApiKey.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/HasPrivileges.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/InvalidateApiKey.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Security/InvalidateToken.php
@@ -858,6 +878,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Slm/Start.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Slm/Stop.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Snapshot/CleanupRepository.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Snapshot/CloneSnapshot.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Snapshot/Create.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Snapshot/CreateRepository.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Snapshot/Delete.php
@@ -893,6 +914,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/ExecuteWatch.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/GetWatch.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/PutWatch.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/QueryWatches.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/Start.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/Stats.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Endpoints/Watcher/Stop.php
@@ -907,6 +929,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/CatNamespace.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/CcrNamespace.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/ClusterNamespace.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/DanglingIndicesNamespace.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/DataFrameTransformDeprecatedNamespace.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/EnrichNamespace.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/EqlNamespace.php
@@ -1482,8 +1505,8 @@
 %%WWWDIR%%/translate.php
 %%WWWDIR%%/ucp.php
 %%WWWDIR%%/writecomment.php
-@dir %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt
 @dir(www,www,) %%WWWDIR%%/xml
+@dir %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt
 @dir(www,www,) %%WWWDIR%%/pdf
 @dir(www,www,) %%WWWDIR%%/inc
 @dir(www,www,) %%WWWDIR%%/images
