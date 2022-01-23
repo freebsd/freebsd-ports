@@ -1,3 +1,35 @@
+  <vuln vid="309c35f4-7c9f-11ec-a739-206a8a720317">
+    <topic>aide -- heap-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>aide</name>
+	<range><lt>0.17.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Bouman reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>AIDE before 0.17.4 allows local users to obtain root privileges
+	     via crafted file metadata (such as XFS extended attributes or
+	     tmpfs ACLs), because of a heap-based buffer overflow.</p>
+	  <p>Aide uses a fixed size (16k bytes) for the return buffer in
+	     encode_base64/decode_base64 functions. This results in a segfault
+	     if aide processes a file with too large extended attribute value
+	     or ACL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45417</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45417</url>
+    </references>
+    <dates>
+      <discovery>2022-01-15</discovery>
+      <entry>2022-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="51496cbc-7a0e-11ec-a323-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
