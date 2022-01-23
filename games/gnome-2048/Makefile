@@ -7,6 +7,9 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	194e22699f71.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-2048/-/merge_requests/21
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move the tiles until you obtain the 2048 tile
 
