@@ -7,8 +7,9 @@
 -        "chardet==3.*",
 +        "chardet>=3.0",
          "idna==2.*",
-         "rfc3986>=1.3,<2",
+-        "rfc3986>=1.3,<2",
 -        "httpcore==0.9.*",
++        "rfc3986>=1.3",
 +        "httpcore>=0.9",
      ],
      classifiers=[
