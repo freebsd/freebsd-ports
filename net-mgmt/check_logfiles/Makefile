@@ -1,5 +1,5 @@
 PORTNAME=	check_logfiles
-PORTVERSION=	3.13
+PORTVERSION=	4.0.1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
