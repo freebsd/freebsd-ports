@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-actionpack61>=4.0:www/rubygem-actionpack61
 USES=		cpe gem
 USE_RUBY=	yes
 
-#NO_ARCH=	yes
+NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	actionpack_page-caching
