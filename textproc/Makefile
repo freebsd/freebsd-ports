@@ -1468,6 +1468,7 @@
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-argparse
     SUBDIR += py-sphinx-autoapi
+    SUBDIR += py-sphinx-autobuild
     SUBDIR += py-sphinx-autodoc-typehints
     SUBDIR += py-sphinx-copybutton
     SUBDIR += py-sphinx-inline-tabs
