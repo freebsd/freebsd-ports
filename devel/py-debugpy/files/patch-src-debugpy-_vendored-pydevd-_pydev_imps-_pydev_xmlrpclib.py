@@ -1,4 +1,4 @@
---- src/debugpy/_vendored/pydevd/_pydev_imps/_pydev_xmlrpclib.py.orig	2021-09-26 20:08:06 UTC
+--- src/debugpy/_vendored/pydevd/_pydev_imps/_pydev_xmlrpclib.py.orig	2022-01-15 23:38:41 UTC
 +++ src/debugpy/_vendored/pydevd/_pydev_imps/_pydev_xmlrpclib.py
 @@ -146,9 +146,9 @@ from types import *
  # Internal stuff
@@ -47,7 +47,15 @@
  
  # --------------------------------------------------------------------
  # Error constants (from Dan Libby's specification at
-@@ -319,7 +319,7 @@ else:
+@@ -291,7 +291,6 @@ class Fault(Error):
+ if _bool_is_builtin:
+     boolean = Boolean = bool #@UndefinedVariable
+     # to avoid breaking code which references xmlrpclib.{True,False}
+-    True, False = True, False
+ else:
+     class Boolean:
+         """Boolean-value wrapper.
+@@ -319,11 +318,9 @@ else:
          def __int__(self):
              return self.value
  
@@ -55,8 +63,12 @@
 +        def __bool__(self):
              return self.value
  
-     True, False = Boolean(1), Boolean(0)
-@@ -420,9 +420,9 @@ def _datetime_type(data):
+-    True, False = Boolean(1), Boolean(0)
+-
+     ##
+     # Map true or false value to XML-RPC boolean values.
+     #
+@@ -420,9 +417,9 @@ def _datetime_type(data):
  
  import base64
  try:
@@ -68,7 +80,7 @@
  
  class Binary:
      """Wrapper for binary data."""
-@@ -448,7 +448,7 @@ class Binary:
+@@ -448,7 +445,7 @@ class Binary:
  
      def encode(self, out):
          out.write("<value><base64>\n")
@@ -77,7 +89,7 @@
          out.write("</base64></value>\n")
  
  def _binary(data):
-@@ -682,7 +682,7 @@ class Marshaller:
+@@ -682,7 +679,7 @@ class Marshaller:
          write("</string></value>\n")
      dispatch[StringType] = dump_string
  
@@ -86,7 +98,7 @@
          def dump_unicode(self, value, write, escape=escape):
              value = value.encode(self.encoding)
              write("<value><string>")
-@@ -692,7 +692,7 @@ class Marshaller:
+@@ -692,7 +689,7 @@ class Marshaller:
  
      def dump_array(self, value, write):
          i = id(value)
@@ -95,7 +107,7 @@
              raise TypeError("cannot marshal recursive sequences")
          self.memo[i] = None
          dump = self.__dump
-@@ -706,15 +706,15 @@ class Marshaller:
+@@ -706,15 +703,15 @@ class Marshaller:
  
      def dump_struct(self, value, write, escape=escape):
          i = id(value)
@@ -114,7 +126,7 @@
                      k = k.encode(self.encoding)
                  else:
                      raise TypeError("dictionary key must be string")
-@@ -1230,12 +1230,12 @@ class Transport:
+@@ -1230,12 +1227,12 @@ class Transport:
          if isinstance(host, TupleType):
              host, x509 = host
  
@@ -130,7 +142,7 @@
              auth = string.join(string.split(auth), "") # get rid of whitespace
              extra_headers = [
                  ("Authorization", "Basic " + auth)
-@@ -1253,9 +1253,9 @@ class Transport:
+@@ -1253,9 +1250,9 @@ class Transport:
  
      def make_connection(self, host):
          # create a HTTP connection object from a host descriptor
@@ -142,7 +154,7 @@
  
      ##
      # Send request header.
-@@ -1278,7 +1278,7 @@ class Transport:
+@@ -1278,7 +1275,7 @@ class Transport:
          connection.putheader("Host", host)
          if extra_headers:
              if isinstance(extra_headers, DictType):
@@ -151,7 +163,7 @@
              for key, value in extra_headers:
                  connection.putheader(key, value)
  
-@@ -1355,10 +1355,10 @@ class SafeTransport(Transport):
+@@ -1355,10 +1352,10 @@ class SafeTransport(Transport):
      def make_connection(self, host):
          # create a HTTPS connection object from a host descriptor
          # host may be a string, or a (host, x509-dict) tuple
@@ -164,7 +176,7 @@
          except AttributeError:
              raise NotImplementedError(
                  "your version of httplib doesn't support HTTPS"
-@@ -1410,11 +1410,11 @@ class ServerProxy:
+@@ -1410,11 +1407,11 @@ class ServerProxy:
          # establish a "logical" server connection
  
          # get the url
