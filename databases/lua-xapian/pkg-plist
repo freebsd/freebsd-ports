@@ -1,2 +1,7 @@
 %%LUA_MODLIBDIR%%/xapian.a
 %%LUA_MODLIBDIR%%/xapian.so
+%%LUA_DOCSDIR%%/lua/examples/simpleexpand.lua
+%%LUA_DOCSDIR%%/lua/examples/simpleindex.lua
+%%LUA_DOCSDIR%%/lua/examples/simplematchdecider.lua
+%%LUA_DOCSDIR%%/lua/examples/simplesearch.lua
+%%LUA_DOCSDIR%%/lua/index.html
