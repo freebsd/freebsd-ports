@@ -1,3 +1,5 @@
 TIMESTAMP = 1600462353
 SHA256 (accountsservice-0.6.55.tar.xz) = ff2b2419a7e06bd9cb335ffe391c7409b49a0f0130b890bd54692a3986699c9b
 SIZE (accountsservice-0.6.55.tar.xz) = 97972
+SHA256 (ac9b14f1c1bb.patch) = 2a369203c0f9d091ab1d6ff46c3b9ab88c345ed27e314f04a867ccc4b33e2be2
+SIZE (ac9b14f1c1bb.patch) = 723
