@@ -1,6 +1,5 @@
 bin/skrooge
 bin/skroogeconvert
-etc/xdg/skrooge_unit.knsrc
 lib/libskgbankgui.so.2
 lib/libskgbankgui.so.%%SHLIB_VER%%
 lib/libskgbankmodeler.so.2
@@ -397,6 +396,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-skg.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-skgc.svgz
 share/knotifications5/skrooge.notifyrc
 share/knsrcfiles/skrooge_monthly.knsrc
+share/knsrcfiles/skrooge_unit.knsrc
 share/kservices5/org.kde.plasma-runner-skrooge-add-operation.desktop
 share/kservices5/org.kde.skg-plugin-advice.desktop
 share/kservices5/org.kde.skg-plugin-bookmark.desktop
@@ -415,6 +415,7 @@ share/kservices5/org.kde.skrooge-import-afb120.desktop
 share/kservices5/org.kde.skrooge-import-backend-aqbanking.desktop
 share/kservices5/org.kde.skrooge-import-backend-weboob.desktop
 share/kservices5/org.kde.skrooge-import-backend-weboob_coming.desktop
+share/kservices5/org.kde.skrooge-import-backend-woob-ofx.desktop
 share/kservices5/org.kde.skrooge-import-backend-woob.desktop
 share/kservices5/org.kde.skrooge-import-backend-woob_coming.desktop
 share/kservices5/org.kde.skrooge-import-backend.desktop
@@ -485,6 +486,7 @@ share/kxmlgui5/skrooge_scheduled/skrooge_scheduled.rc
 share/kxmlgui5/skrooge_search/skrooge_search.rc
 share/kxmlgui5/skrooge_tracker/skrooge_tracker.rc
 share/kxmlgui5/skrooge_unit/skrooge_unit.rc
+share/locale/ar/LC_MESSAGES/skrooge.mo
 share/locale/bg/LC_MESSAGES/skrooge.mo
 share/locale/bs/LC_MESSAGES/skrooge.mo
 share/locale/ca/LC_MESSAGES/skrooge.mo
@@ -517,6 +519,7 @@ share/locale/pt_BR/LC_MESSAGES/skrooge.mo
 share/locale/ro/LC_MESSAGES/skrooge.mo
 share/locale/ru/LC_MESSAGES/skrooge.mo
 share/locale/sk/LC_MESSAGES/skrooge.mo
+share/locale/sl/LC_MESSAGES/skrooge.mo
 share/locale/sv/LC_MESSAGES/skrooge.mo
 share/locale/tr/LC_MESSAGES/skrooge.mo
 share/locale/ug/LC_MESSAGES/skrooge.mo
