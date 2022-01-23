@@ -1,9 +1,9 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 
 PORTNAME=	cdo
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/26654/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/26676/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -2,6 +2,8 @@ bin/cdi
 bin/cdo
 include/cdi.h
 include/cdi.inc
+lib/cmake/cdi-config-version.cmake
+lib/cmake/cdi-config.cmake
 lib/libcdi.a
 lib/libcdi.so
 lib/libcdi.so.0
