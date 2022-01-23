@@ -1,3 +1,5 @@
 TIMESTAMP = 1629038916
 SHA256 (gnome/gnome-photos-40.0.tar.xz) = e02d73e138af8b2868b5cad7faa1bdd278aeade3b6c3c92836511a4e6f3af1af
 SIZE (gnome/gnome-photos-40.0.tar.xz) = 632440
+SHA256 (gnome/a0ac868a19d5.patch) = 7a8a242b7e3fa9aad75a94ad244acf734342528c5acf6bce779b9c08b0394c31
+SIZE (gnome/a0ac868a19d5.patch) = 724
