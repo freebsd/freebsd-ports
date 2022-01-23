@@ -1,7 +1,7 @@
 # Created by: Cy Schubert (Cy.Schubert@uumail.gov.bc.ca)
 
 PORTNAME=	aide
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
