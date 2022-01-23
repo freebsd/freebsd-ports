@@ -46,3 +46,10 @@
 %%SITE_PERL%%/Xapian/WritableDatabase.pm
 %%SITE_ARCH%%/auto/Xapian/Xapian.a
 %%SITE_ARCH%%/auto/Xapian/Xapian.so
+%%PORTDOCS%%%%DOCSDIR%%/perl/examples/full-indexer.pl
+%%PORTDOCS%%%%DOCSDIR%%/perl/examples/full-searcher.pl
+%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simpleexpand.pl
+%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simpleindex.pl
+%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simplematchdecider.pl
+%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simplesearch.pl
+%%PORTDOCS%%%%DOCSDIR%%/perl/index.html
