@@ -6,6 +6,9 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	4be71525f071.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-weather/-/merge_requests/92
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather application for GNOME 3
 
