@@ -25,11 +25,11 @@ bin/ogr2ogr
 bin/ogrinfo
 bin/ogrlineref
 bin/ogrtindex
-bin/testepsg
 etc/bash_completion.d/gdal-bash-completion.sh
 include/cpl_atomic_ops.h
 include/cpl_auto_close.h
 include/cpl_aws.h
+include/cpl_compressor.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
