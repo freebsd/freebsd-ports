@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rubocop-performance
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
