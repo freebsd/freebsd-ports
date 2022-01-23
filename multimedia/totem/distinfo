@@ -1,3 +1,5 @@
 TIMESTAMP = 1635009173
 SHA256 (gnome/totem-3.38.2.tar.xz) = fce562e2b26cbcfc0c678538dcc81f9dc15ce60d5a89ee4358907bf634304c40
 SIZE (gnome/totem-3.38.2.tar.xz) = 2190700
+SHA256 (gnome/61e3a957cb73.patch) = e0f48d11bf404cdec7ad50f45c4595575a8c7bdad740b1f599ae31a766096d09
+SIZE (gnome/61e3a957cb73.patch) = 1122
