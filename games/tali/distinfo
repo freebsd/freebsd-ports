@@ -1,3 +1,5 @@
 TIMESTAMP = 1636401331
 SHA256 (gnome3/tali-40.4.tar.xz) = 02cacc76f4ee4230f67aa00ada194e9c548f89d27a0e72f200d8bd53aee71a17
 SIZE (gnome3/tali-40.4.tar.xz) = 1610864
+SHA256 (gnome3/79509bf3e945.patch) = 6a34a55e704148c0e3ee73c0d24739a5817f48e8220aad76e82760f0b2509c3c
+SIZE (gnome3/79509bf3e945.patch) = 1101
