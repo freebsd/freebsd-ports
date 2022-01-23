@@ -5,7 +5,7 @@
     https://software.intel.com/en-us/articles/how-to-detect-new-instruction-support-in-the-4th-generation-intel-core-processor-family
  */
 +
-+#if defined(__clang_major__) && __clang_major__ < 9
++#if !defined(_xgetbv)
  static inline uint64_t
  _xgetbv(uint32_t xcr) {
    uint32_t eax, edx;
