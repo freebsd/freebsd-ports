@@ -1,7 +1,7 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
 
 PORTNAME=	psutil
-PORTVERSION=	5.8.0
+PORTVERSION=	5.9.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
