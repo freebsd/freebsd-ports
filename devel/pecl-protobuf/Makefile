@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	protobuf
-PORTVERSION=	3.19.1
+PORTVERSION=	3.19.3
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
