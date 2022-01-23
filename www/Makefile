@@ -2038,6 +2038,7 @@
     SUBDIR += rubygem-ostatus2
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
+    SUBDIR += rubygem-patron
     SUBDIR += rubygem-platform-api
     SUBDIR += rubygem-propshaft
     SUBDIR += rubygem-protocol-hpack
