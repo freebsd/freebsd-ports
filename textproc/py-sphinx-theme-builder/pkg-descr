@@ -1,0 +1,8 @@
+Streamline the Sphinx theme development workflow, by building upon existing
+standardised tools.
+- simplified packaging experience
+- simplified JavaScript tooling setup
+- development server, with rebuild-on-save and automagical browser reloading
+- consistent repository structure across themes
+
+WWW: https://github.com/pradyunsg/sphinx-theme-builder
