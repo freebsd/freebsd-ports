@@ -1,3 +1,5 @@
 TIMESTAMP = 1583082376
 SHA256 (zathura-0.4.5.tar.gz) = 317882fc4e05104591c011c237b2ba6bf0b3978c189f5cdf3c978cb333ee04fe
 SIZE (zathura-0.4.5.tar.gz) = 195275
+SHA256 (c6ec5044c5ff.patch) = 27355d33be2308e7727e162f79516abdc17b6f184c123a77ba0cfe2bae46a68d
+SIZE (c6ec5044c5ff.patch) = 939

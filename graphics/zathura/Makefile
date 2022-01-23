@@ -5,6 +5,9 @@ DISTVERSION=	0.4.5
 CATEGORIES=	graphics print
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
+PATCH_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/commit/
+PATCHFILES+=	c6ec5044c5ff.patch:-p1 # meson 0.61
+
 MAINTAINER=	quentin.stievenart@gmail.com
 COMMENT=	Customizable lightweight pdf viewer
 
