@@ -2,6 +2,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.50
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://github.com/jedisct1/pure-ftpd/releases/download/${PORTVERSION}/ \
 		https://download.pureftpd.org/pub/pure-ftpd/releases/
