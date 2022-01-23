@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-translate
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
