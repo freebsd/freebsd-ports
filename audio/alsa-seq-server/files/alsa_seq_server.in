@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# PROVIDE: alsa_seq_server
+# REQUIRE: sysctl kld
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=alsa_seq_server
+rcvar=alsa_seq_server_enable
+
+load_rc_config $name
+
+: ${alsa_seq_server_enable="NO"}
+
+command="%%PREFIX%%/sbin/alsa-seq-server"
+command_args="-B -F umidi"
+
+run_rc_command "$1"
