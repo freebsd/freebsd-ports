@@ -16773,3 +16773,4 @@ devel/e2fsprogs-libss||2022-01-17|Folded back into sysutils/e2fsprogs, which was
 lang/spidermonkey60|lang/spidermonkey78|2022-01-18|Has expired: Requires python2 to build
 shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell support
 emulators/yuzu-qt5|emulators/yuzu|2022-01-20|Merged as QT5 port option
+print/py-fonttools3|print/py-fonttools|2022-01-23|Remove obsoleted port. Use print/py-fonttools instead
