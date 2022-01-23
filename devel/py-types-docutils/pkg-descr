@@ -2,4 +2,4 @@ This is a PEP 561 type stub package for the `docutils` package.
 It can be used by type-checking tools like mypy, PyCharm, pytype
 etc. to check code that uses `docutils`.
 
-WWW: https://pypi.org/project/types-docutils/
+WWW: https://github.com/python/typeshed/tree/master/stubs/docutils
