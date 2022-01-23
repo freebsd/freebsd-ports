@@ -1,5 +1,5 @@
 PORTNAME=	pysdl2
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +20,11 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-
-post-build-DOCS-on:
-	@cd ${WRKSRC}/doc && ${MAKE_CMD} html
+post-patch:
+	@${RM} ${WRKSRC}/doc/html/.buildinfo
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '! -name .buildinfo'
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
