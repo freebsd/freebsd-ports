@@ -1751,7 +1751,6 @@
     SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-ronn
     SUBDIR += rubygem-rouge
-    SUBDIR += rubygem-rouge2
     SUBDIR += rubygem-rouge312
     SUBDIR += rubygem-rouge326
     SUBDIR += rubygem-rttool

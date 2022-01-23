@@ -16774,3 +16774,4 @@ lang/spidermonkey60|lang/spidermonkey78|2022-01-18|Has expired: Requires python2
 shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell support
 emulators/yuzu-qt5|emulators/yuzu|2022-01-20|Merged as QT5 port option
 print/py-fonttools3|print/py-fonttools|2022-01-23|Remove obsoleted port. Use print/py-fonttools instead
+textproc/rubygem-rouge2|textproc/rubygem-rouge|2022-01-23|Remove obsoleted port. Use textproc/rubygem-rouge instead
