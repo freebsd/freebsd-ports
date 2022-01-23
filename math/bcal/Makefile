@@ -1,6 +1,6 @@
 PORTNAME=	bcal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
+DISTVERSION=	2.3
 CATEGORIES=	math
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -11,6 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
+# GNU bc must be used because bcal depends on some behaviors
+# specific to GNU bc. Run the test suite with the bc from the
+# base to see that some tests fail.
+RUN_DEPENDS=	${LOCALBASE}/bin/bc:math/gnubc
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		gmake python:test,3.5+ readline
@@ -26,6 +30,11 @@ PLIST_FILES=	bin/bcal \
 PORTDOCS=	CHANGELOG README.md
 
 OPTIONS_DEFINE=	DOCS
+
+_BC_CMD=	${LOCALBASE}/bin/bc
+
+post-patch:
+	${REINPLACE_CMD} 's|%%BC_CMD%%|${_BC_CMD}|g' ${WRKSRC}/src/bcal.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bcal
