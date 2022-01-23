@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-apis-sqladmin_v1beta4
-PORTVERSION=	0.21.0
+PORTVERSION=	0.22.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
