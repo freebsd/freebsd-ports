@@ -1,5 +1,5 @@
-TIMESTAMP = 1639652920
+TIMESTAMP = 1642959837
 SHA256 (media-session-0.4.1.tar.gz) = 119c9216070b54018217552c7924f9888da270c3c4647c5e2b85ffa6b1574975
 SIZE (media-session-0.4.1.tar.gz) = 123224
-SHA256 (PipeWire-pipewire-0.3.42_GH0.tar.gz) = 726d1f2faed6f1e93c1499cd20ff0d6461bc698166bea3b98d46c291794e6e1c
-SIZE (PipeWire-pipewire-0.3.42_GH0.tar.gz) = 1705295
+SHA256 (PipeWire-pipewire-0.3.43_GH0.tar.gz) = 87f692a2cb5b14ee900e102502b5e078a0cd3f7836f03a2e7cb30690ead37b50
+SIZE (PipeWire-pipewire-0.3.43_GH0.tar.gz) = 1713131
