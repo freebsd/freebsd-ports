@@ -1,4 +1,5 @@
 bin/ocp
+%%XORG%%bin/ocp-x11
 bin/ocp-curses
 %%SDL%%bin/ocp-sdl2
 lib/ocp/autoload/10-devi.so
@@ -50,12 +51,15 @@ lib/ocp/playit.so
 lib/ocp/playmp2.so
 lib/ocp/playogg.so
 %%ADPLUG%%lib/ocp/playopl.so
+lib/ocp/autoload/30-timidityconfig.so
 lib/ocp/playsid.so
 lib/ocp/playtimidity.so
 lib/ocp/playwav.so
 lib/ocp/playxm.so
 lib/ocp/playym.so
 man/man1/ocp.1.gz
+%%DATADIR%%/data/ocp.hlp
+%%DATADIR%%/etc/ocp.ini
 %%DESKTOP%%share/applications/cubic.org-opencubicplayer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -72,7 +76,11 @@ man/man1/ocp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/starting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/support.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wap.html
-%%XORG%%share/pixmaps/opencubicplayer.xpm
-%%XORG%%share/pixmaps/opencubicplayer_mini.xpm
-%%DATADIR%%/data/ocp.hlp
-%%DATADIR%%/etc/ocp.ini
+%%XORG%%share/icons/hicolor/128x128/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/16x16/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/22x22/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/24x24/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/32x32/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/48x48/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/64x64/apps/opencubicplayer.png
+%%XORG%%share/icons/hicolor/scalable/apps/opencubicplayer.svg
