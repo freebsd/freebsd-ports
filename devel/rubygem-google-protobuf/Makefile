@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-protobuf
-PORTVERSION=	3.19.1
+PORTVERSION=	3.19.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
