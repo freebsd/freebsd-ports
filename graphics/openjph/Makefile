@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	openjph
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 
-USES=		cmake compiler:c++11-lang pathfix
+USES=		cmake compiler:c++11-lang # pathfix
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
