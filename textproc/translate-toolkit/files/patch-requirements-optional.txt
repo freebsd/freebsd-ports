@@ -12,8 +12,8 @@
 -chardet==4.0.0              # chardet
 +chardet>=4.0.0              # chardet
  # Tmserver backend
--cheroot==8.5.2       # tmserver
-+cheroot>=8.5.2       # tmserver
+-cheroot==8.6.0       # tmserver
++cheroot>=8.6.0       # tmserver
  # Format support
 -fluent.syntax==0.18.1 # Fluent
 +fluent.syntax>=0.18.1 # Fluent
@@ -29,12 +29,12 @@
 +pycountry>=20.7.3          # Languages
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
--pyparsing==3.0.5     # RC
-+pyparsing>=3.0.5     # RC
+-pyparsing==3.0.6     # RC
++pyparsing>=3.0.6     # RC
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
--ruamel.yaml==0.17.17 # YAML
+-ruamel.yaml==0.17.20 # YAML
 +ruamel.yaml>=0.16.12 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal
