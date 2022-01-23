@@ -13,26 +13,28 @@ COMMENT=	Cacti templates for MySQL, Apache, Memcached, and more by Percona
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	cacti>=0:net-mgmt/cacti \
+DEPRECATED=	Upstream EOL reached on 2020-08-01
+EXPIRATION_DATE=	2022-02-22
+
+RUN_DEPENDS=	bash:shells/bash \
+		cacti>=0:net-mgmt/cacti \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
-		bash:shells/bash \
 		wget:ftp/wget
 
 USES=		mysql perl5 php:cli python:run shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	nagios/bin/pmp-check-pt-table-checksum \
-		nagios/bin/pmp-check-aws-rds.py \
-		cacti/bin/pmp-cacti-*
+SHEBANG_FILES=	cacti/bin/pmp-cacti-* nagios/bin/pmp-check-aws-rds.py \
+		nagios/bin/pmp-check-pt-table-checksum
+
+REINPLACE_ARGS=	-i ''
+NO_ARCH=	yes
 
 NO_BUILD=	yes
-NO_ARCH=	yes
 PORTDOCS=	Changelog
-
-CACTIDIR?=	share/cacti
 
 OPTIONS_DEFINE=	DOCS
 
-REINPLACE_ARGS=	-i ''
+CACTIDIR?=	share/cacti
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/cacti/|${PREFIX}/etc/cacti/|g' ${WRKSRC}/cacti/scripts/ss_get_mysql_stats.php ${WRKSRC}/cacti/scripts/ss_get_by_ssh.php
