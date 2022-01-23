@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	elasticsearch-api
-PORTVERSION=	7.16.1
+PORTVERSION=	7.16.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
