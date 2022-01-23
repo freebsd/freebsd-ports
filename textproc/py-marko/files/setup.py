@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 from setuptools import setup
 
@@ -16,8 +15,8 @@ EXTRAS_REQUIRE = {
     'benchmark': [
         'commonmark~=0.9',
         'markdown~=3.3',
-        'markdown-it-py~=0.6',
-        'mistune~=0.8',
+        'markdown-it-py~=2.0',
+        'mistune~=2.0',
         'mistletoe~=0.7',
     ],
 }
@@ -48,13 +47,13 @@ setup_kwargs = {
     'classifiers': [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
     'extras_require': EXTRAS_REQUIRE,
     'python_requires': '>=3.6',
