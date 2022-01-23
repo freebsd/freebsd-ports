@@ -4,7 +4,8 @@ PORTNAME=	xmlgraphics-commons
 PORTVERSION=	2.6
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	graphics textproc java
-MASTER_SITES=	APACHE/xmlgraphics/commons/binaries
+MASTER_SITES=	APACHE/xmlgraphics/commons/binaries \
+		https://archive.apache.org/dist/xmlgraphics/commons/binaries/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
