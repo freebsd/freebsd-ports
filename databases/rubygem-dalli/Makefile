@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	dalli
-PORTVERSION=	3.1.5
+PORTVERSION=	3.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
