@@ -1,3 +1,3 @@
-TIMESTAMP = 1641046656
-SHA256 (rubygem/faraday_middleware-aws-sigv4-0.6.0.gem) = d020e5e9b919251b27d504735b96ea8a59b89a61fb18c41eb647b3c67c488a2a
-SIZE (rubygem/faraday_middleware-aws-sigv4-0.6.0.gem) = 8704
+TIMESTAMP = 1642102609
+SHA256 (rubygem/faraday_middleware-aws-sigv4-0.6.1.gem) = 8a3652ad487945f5e732d13c28be8278f1017921118e8f6abbd569db0c95f444
+SIZE (rubygem/faraday_middleware-aws-sigv4-0.6.1.gem) = 8704
