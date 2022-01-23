@@ -1,7 +1,0 @@
-TIMESTAMP = 1634434473
-SHA256 (radiance-0.6.1.20200216/qthelper.hpp) = 86e1fcba6001829b7e23a856db84d01ebc76e63528f74064d7bc5705015a2684
-SIZE (radiance-0.6.1.20200216/qthelper.hpp) = 12024
-SHA256 (radiance-0.6.1.20200216/zbanks-radiance-0.6.1.20200216-baf2c40_GH0.tar.gz) = efbdcaa88c092690d253da1bc3d330d704c5d950bff779277bc7e6d54a5d38b2
-SIZE (radiance-0.6.1.20200216/zbanks-radiance-0.6.1.20200216-baf2c40_GH0.tar.gz) = 312159
-SHA256 (radiance-0.6.1.20200216/zbanks-BTrack-1c5b72e_GH0.tar.gz) = af567e80f6edf031af17bf4e7ed7eb89349be059046a4877defd14bb6cc70899
-SIZE (radiance-0.6.1.20200216/zbanks-BTrack-1c5b72e_GH0.tar.gz) = 21590
