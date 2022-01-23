@@ -1,6 +1,10 @@
 PORTNAME=	av1an
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2fc2ea51f2b6.patch:-p1 # https://github.com/master-of-zen/Av1an/pull/557
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Command-line encoding framework with per scene quality
