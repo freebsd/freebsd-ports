@@ -1,3 +1,5 @@
 TIMESTAMP = 1640291825
 SHA256 (gnome/gnome-calendar-41.2.tar.xz) = 956b2f190322651c67fe667223896f8aa5acf33b70ada5a3b05a5361bda6611a
 SIZE (gnome/gnome-calendar-41.2.tar.xz) = 583584
+SHA256 (gnome/e35dbc1acd03.patch) = ded10dd0b1e9fce59414fd60a6ab42c560842745ef38774dc6d30f222293e71d
+SIZE (gnome/e35dbc1acd03.patch) = 773
