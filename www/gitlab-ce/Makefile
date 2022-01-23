@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.6.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -93,7 +93,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-kaminari-rails61>=1.2.1<2.0:www/rubygem-kaminari-rails61 \
 	rubygem-hamlit>=2.15.0<2.16:www/rubygem-hamlit \
 	rubygem-carrierwave>=1.3.2<2.0:www/rubygem-carrierwave \
-	rubygem-mini_magick>=4.10.1<4.11:graphics/rubygem-mini_magick \
+	rubygem-mini_magick410>=4.10.1<4.11:graphics/rubygem-mini_magick410 \
 	rubygem-fog-aws>=3.12<4:net/rubygem-fog-aws \
 	rubygem-fog-core210=2.1.0:devel/rubygem-fog-core210 \
 	rubygem-fog-google>=1.15<2:net/rubygem-fog-google \
