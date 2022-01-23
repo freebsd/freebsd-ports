@@ -15,4 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Headers
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
