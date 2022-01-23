@@ -1,8 +1,7 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	npm
-PORTVERSION=	6.14.8
-PORTREVISION=	1
+PORTVERSION=	8.2.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES?=		nodejs:run
-USES+=		cpe python:3.5+ shebangfix tar:xz
+USES+=		cpe python:3.6+ shebangfix tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -26,7 +25,6 @@ CONFLICTS_INSTALL?=	npm-node14 npm-node16 npm-node17
 CPE_VENDOR=	npmjs
 
 SHEBANG_GLOB=	*.py
-SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 
 .include <bsd.port.pre.mk>
 
@@ -44,6 +42,6 @@ post-patch:
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/
 	${ECHO_CMD} 'python=${PYTHON_CMD}' > ${STAGEDIR}${PREFIX}/etc/npmrc
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
+	${PYTHON_CMD} -O -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
 
 .include <bsd.port.post.mk>
