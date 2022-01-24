@@ -8,7 +8,7 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <unistd.h>
-@@ -29,35 +30,53 @@
+@@ -29,35 +30,50 @@
  #include <arpa/inet.h>
  #include <string.h>
  #include <inttypes.h>
@@ -32,6 +32,8 @@
  	}
  
 -	*sockfd = socket(PF_INET, SOCK_STREAM, 0);
+-	if(*sockfd == -1) {
+-		log_error(LOG_ARGS, "Could not get socket");
 +	memset(&hints, 0, sizeof(hints));
 +	hints.ai_socktype = SOCK_STREAM;
 +	hints.ai_family = PF_UNSPEC;
@@ -39,10 +41,6 @@
 +	if (getaddrinfo(relayhost, srv, &hints, &ai) != 0) {
 +		log_error(LOG_ARGS, "Unable to lookup for relayhost %s:%s",
 +		    relayhost, srv);
-+		return;
-+	}
- 	if(*sockfd == -1) {
- 		log_error(LOG_ARGS, "Could not get socket");
  		return;
  	}
 -	addr.sin_family = PF_INET;
@@ -50,11 +48,12 @@
 -	addr.sin_port = htons(port);
 -	len = sizeof(addr);
 -	if(connect(*sockfd, (struct sockaddr *)&addr, len) == -1) {
++
 +	for (curai = ai; curai != NULL; curai = curai->ai_next) {
 +		if ((sd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) < 0) {
 +			continue;
 +		}
-+		if (connect(sd, ai->ai_addr, ai->ai_addrlen) == 0) {
++		if (connect(sd, ai->ai_addr, ai->ai_addrlen) != 0) {
 +			close(sd);
 +			sd = -1;
 +			continue;
