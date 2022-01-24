@@ -217,6 +217,7 @@
 %%WWWDIR%%/images/test2.jpg
 %%WWWDIR%%/inchi.htm
 %%WWWDIR%%/inline_old.htm
+%%WWWDIR%%/j.js
 %%WWWDIR%%/j2s/J/Jmol.properties
 %%WWWDIR%%/j2s/J/adapter/readers/cif/Cif2DataParser.js
 %%WWWDIR%%/j2s/J/adapter/readers/cif/Cif2Reader.js
