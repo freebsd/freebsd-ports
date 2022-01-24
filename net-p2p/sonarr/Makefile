@@ -5,7 +5,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v3/main/${PORTVERSION}/
 DISTNAME=	Sonarr.main.${PORTVERSION}.linux
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PVR for Usenet and BitTorrent users
 
 LICENSE=	GPLv3
