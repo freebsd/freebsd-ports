@@ -1,5 +1,5 @@
 PORTNAME=	citra
-PORTVERSION=	s20220108
+PORTVERSION=	s20220124
 PORTREVISION?=	0
 CATEGORIES=	emulators
 .if make(makesum)
@@ -9,9 +9,6 @@ MASTER_SITES=	LOCAL/jbeich:gamedb
 .endif
 DISTFILES=	${PORTNAME}/compatibility_list.json:gamedb
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4b04175c5d42.patch:-p1 # https://github.com/citra-emu/citra/pull/5917
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
@@ -31,7 +28,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	67f1e4111
+GH_TAGNAME=	4e15823db
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
