@@ -1,3 +1,5 @@
 TIMESTAMP = 1585464898
 SHA256 (frogr-1.6.tar.xz) = 3f0065faf4f3b8ce0c1fc9d59b229a8ac16f96f5e86a1280f6d9fe8cebb82ed3
 SIZE (frogr-1.6.tar.xz) = 2240748
+SHA256 (1eeb32b94b9e.patch) = 82dec491c79f1793e7614ad0f201da3e07436b4f7b5d61f007412c105c6de54b
+SIZE (1eeb32b94b9e.patch) = 1420
