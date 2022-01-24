@@ -1,5 +1,5 @@
 PORTNAME=	progressbar2
-PORTVERSION=	3.55.0
+PORTVERSION=	4.0.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-utils>=2.3.0:misc/py-python-utils@${P
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}progressbar \
-			${PYTHON_PKGNAMEPREFIX}progressbar231
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}progressbar
 
 .include <bsd.port.mk>
