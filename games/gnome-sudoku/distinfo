@@ -1,3 +1,5 @@
 TIMESTAMP = 1627967549
 SHA256 (gnome/gnome-sudoku-40.2.tar.xz) = 36120531e3c7139581ea3800fbfe3c2b31694c440145ecc897ac34e562d754a3
 SIZE (gnome/gnome-sudoku-40.2.tar.xz) = 358260
+SHA256 (gnome/7c9935a02b48.patch) = ec2699213543e125949a09922d87376cf7ab265f3ae9a9ae7149fdbb725a064e
+SIZE (gnome/7c9935a02b48.patch) = 1260
