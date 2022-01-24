@@ -1,10 +1,7 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.37
+DISTVERSION=	2.38
 CATEGORIES=	lang devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	78560c2760eaf990601cd0a73c6a8036eba0f8cc.patch:-p1 # https://github.com/sasagawa888/eisl/pull/168
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interpreter and compiler compatible with ISLisp standard
