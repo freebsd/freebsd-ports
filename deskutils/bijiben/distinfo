@@ -1,3 +1,5 @@
 TIMESTAMP = 1628011219
 SHA256 (gnome/bijiben-40.1.tar.xz) = 05a06fb066e9802f5f24ab67b0d2f71451866363ba3e39f9f775fd49a7587bbf
 SIZE (gnome/bijiben-40.1.tar.xz) = 687344
+SHA256 (gnome/01ccae2ccb64.patch) = b0e14ed0bb9f1eb8e38f7d267b8f58a3d6a5216709035775d93e29f598d559f1
+SIZE (gnome/01ccae2ccb64.patch) = 1162
