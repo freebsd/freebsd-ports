@@ -1,3 +1,5 @@
 TIMESTAMP = 1634651003
 SHA256 (gnome3/aisleriot-3.22.19.tar.gz) = 63d890479e2b9cf15702e264c5bbab0f7f2bbce610aecbfcfb5e88c547150e2f
 SIZE (gnome3/aisleriot-3.22.19.tar.gz) = 8047432
+SHA256 (gnome3/4bf6fcf5c804.patch) = 0ccdd0dbfefdf7fe3ed6b5718b71d8004fe3dd6ec8cf7b1a29b518c1389a5b8b
+SIZE (gnome3/4bf6fcf5c804.patch) = 801
