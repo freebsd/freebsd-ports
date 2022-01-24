@@ -1,3 +1,5 @@
 TIMESTAMP = 1632933738
 SHA256 (gnome3/hitori-3.38.3.tar.xz) = f7d7103cb0633fb013730131a98c3ae3a2162b9fb9499fc7f19512d581bf6569
 SIZE (gnome3/hitori-3.38.3.tar.xz) = 205100
+SHA256 (gnome3/d25728e122f1.patch) = 1262a8df7c8bbadbcc03cd2a14513d0c047bb8d58fe730174650ef139a7352d2
+SIZE (gnome3/d25728e122f1.patch) = 1294

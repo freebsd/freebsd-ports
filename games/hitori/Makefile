@@ -6,6 +6,9 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	d25728e122f1.patch:-p1 # https://gitlab.gnome.org/GNOME/hitori/-/merge_requests/35
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Hitori
 
