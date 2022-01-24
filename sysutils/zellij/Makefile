@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
-PORTREVISION=	1
+DISTVERSION=	0.24.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -75,8 +74,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
-		crossterm-0.19.0 \
-		crossterm_winapi-0.7.0 \
 		ctor-0.1.21 \
 		daemonize-0.4.1 \
 		darling-0.13.0 \
@@ -226,7 +223,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		serde_derive-1.0.130 \
 		serde_json-1.0.69 \
 		serde_yaml-0.8.21 \
-		signal-hook-0.1.17 \
 		signal-hook-0.3.10 \
 		signal-hook-registry-1.4.0 \
 		similar-1.3.0 \
@@ -248,7 +244,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		syn-1.0.81 \
 		target-lexicon-0.11.2 \
 		tempfile-3.2.0 \
-		termbg-0.2.4 \
 		terminal_size-0.1.17 \
 		terminfo-0.7.3 \
 		termion-1.5.6 \
