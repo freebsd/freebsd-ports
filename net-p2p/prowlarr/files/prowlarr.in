@@ -22,7 +22,7 @@ load_rc_config $name
 : ${%%PORTNAME%%_enable:=NO}
 : ${%%PORTNAME%%_user:="%%USERS%%"}
 : ${%%PORTNAME%%_group:="%%GROUPS%%"}
-: ${%%PORTNAME%%_exec_dir:="%%DATADIR%%"}
+: ${%%PORTNAME%%_exec_dir:="%%DATADIR%%/bin"}
 : ${%%PORTNAME%%_data_dir:="%%PREFIX%%/%%PORTNAME%%"}
 : ${%%PORTNAME%%_pid_dir:="/var/run/%%PORTNAME%%"}
 
@@ -40,6 +40,9 @@ start_precmd=${name}_precmd
         install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} ${%%PORTNAME%%_pid_dir}
     fi
 
+    # Needed for built-in updater
+    chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_exec_dir}
+
     # .NET 6+ use dual mode sockets to avoid the separate AF handling.
     # disable .NET use of V6 if no ipv6 is configured.
     # See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259194#c17
@@ -47,8 +50,6 @@ start_precmd=${name}_precmd
     if [ $? == 1 ]; then
         export DOTNET_SYSTEM_NET_DISABLEIPV6=1
     fi
-
-    chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_exec_dir}
 
     rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${%%PORTNAME%%_exec_dir}/Prowlarr --data=${%%PORTNAME%%_data_dir} --nobrowser >> /dev/null 2>&1 ${rc_flags}"
 }
