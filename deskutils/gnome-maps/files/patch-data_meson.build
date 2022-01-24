@@ -1,0 +1,14 @@
+https://gitlab.gnome.org/GNOME/gnome-maps/-/commit/def20cbb26e5
+
+data/meson.build:35:0: ERROR: Function does not take positional arguments.
+
+--- data/meson.build.orig	2021-12-04 21:56:34 UTC
++++ data/meson.build
+@@ -33,7 +33,6 @@ install_data(
+ appdata = app_id + '.appdata.xml'
+ 
+ appdata_file = i18n.merge_file(
+-	appdata,
+ 	input: appdata + '.in',
+ 	output: appdata,
+ 	po_dir: po_dir,
