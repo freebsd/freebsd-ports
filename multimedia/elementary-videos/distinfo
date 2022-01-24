@@ -1,3 +1,5 @@
 TIMESTAMP = 1628899382
 SHA256 (elementary-videos-2.7.3_GH0.tar.gz) = dc1877489c43a3aa9ba927d409afbc0ae62246c01019a6cfe07572b7c44c8f80
 SIZE (elementary-videos-2.7.3_GH0.tar.gz) = 2842420
+SHA256 (f6b94db27035.patch) = 7f647ec405c83e3cc69ae7caa1af162d73c024f25636b74b82f3685d13c2b4c4
+SIZE (f6b94db27035.patch) = 772
