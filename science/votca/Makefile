@@ -1,7 +1,6 @@
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.2-18560
-DISTVERSIONSUFFIX=	-gfbe18d971
+DISTVERSION=	2022
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,20 +32,14 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		cmake compiler:c++14-lang eigen:3 perl5 pkgconfig python:run \
 		shebangfix
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
-GH_TUPLE=	\
-		votca:tools:9c102e0:tools/tools \
-		votca:csg:da5c1dc:csg/csg \
-		votca:xtp:2a31d70:xtp/xtp \
-		votca:csg-tutorials:2b7b657:csg_tutorials/csg-tutorials \
-		votca:xtp-tutorials:8576616:xtp_tutorials/xtp-tutorials
+USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh *.pl *.py
 SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in \
 		tools/scripts/votca_compare.in tools/scripts/votca_help2doc.in \
 		xtp/scripts/xtp_update_mapfile.in xtp/scripts/xtp_basisset.in xtp/share/benchmark/xtp_benchmark.in xtp/scripts/xtp_autogen_mapping.in \
+		xtp/scripts/xtp_modify_jobfile.in \
 		xtp/scripts/xtp_qmmm2qm.in
 
 CMAKE_ON=	BUILD_XTP
@@ -59,7 +52,7 @@ OPTIONS_SUB=		yes
 APPS_DESC=		Build applications
 APPS_CMAKE_BOOL=	BUILD_CSGAPPS
 
-do-test: # 6 testscases are known to fail: https://github.com/votca/votca/issues/760
+do-test: # 6 testscases are known to fail: https://github.com/votca/votca/issues/760 ; https://github.com/votca/votca/issues/957
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
