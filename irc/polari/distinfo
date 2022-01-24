@@ -1,3 +1,5 @@
 TIMESTAMP = 1633284255
 SHA256 (gnome/polari-41.0.tar.xz) = a3b05f81660370c67c942b6f44b298c7b78816feb38c926ec2212bde22ea40eb
 SIZE (gnome/polari-41.0.tar.xz) = 1125016
+SHA256 (gnome/1ec40333a32d.patch) = 7b983f068ecedfa9452f8eb9998909addcec2ee9a35c7b012c9dadf56241d7d8
+SIZE (gnome/1ec40333a32d.patch) = 1331
