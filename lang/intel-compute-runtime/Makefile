@@ -1,5 +1,5 @@
 PORTNAME=	compute-runtime
-DISTVERSION=	22.04.22286
+DISTVERSION=	22.05.22297
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -41,7 +41,7 @@ L0_BUILD_DEPENDS=	level-zero>=1.0:devel/level-zero
 L0_CMAKE_BOOL=		BUILD_WITH_L0
 L0_CMAKE_ON=		-DNEO_VERSION_BUILD:STRING="0"
 L0_PLIST_FILES=		lib/libze_intel_gpu.so.1 \
-			lib/libze_intel_gpu.so.1.2.0
+			lib/libze_intel_gpu.so.1.3.0
 
 VAAPI_BUILD_DEPENDS=	${LOCALBASE}/include/va/va.h:multimedia/libva
 VAAPI_CMAKE_BOOL_OFF=	DISABLE_LIBVA
