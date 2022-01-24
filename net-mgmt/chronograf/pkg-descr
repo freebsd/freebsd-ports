@@ -1,0 +1,7 @@
+Chronograf is the administrative user interface and visualization engine of the
+stack. It makes it easy to setup and maintain the monitoring and alerting for
+your infrastructure. It's simple to use and includes templates and libraries
+that allow you to rapidly build dashboards with real-time visualizations of
+your data and to easily create alerting and automation rules.
+
+WWW: https://www.influxdata.com/time-series-platform/chronograf/

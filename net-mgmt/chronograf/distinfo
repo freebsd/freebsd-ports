@@ -1,0 +1,9 @@
+TIMESTAMP = 1642976926
+SHA256 (go/net-mgmt_chronograf/chronograf-v1.9.1/yarn-cache-chronograf-1.9.1.tar.xz) = 8754c6fa93ddc6bf6ec43a5131ee279c613a69e7b91c8d8d297bd5af7ac9ec4a
+SIZE (go/net-mgmt_chronograf/chronograf-v1.9.1/yarn-cache-chronograf-1.9.1.tar.xz) = 54926516
+SHA256 (go/net-mgmt_chronograf/chronograf-v1.9.1/node-v14.18.1-headers.tar.gz) = 3352973a1a737b47f2b1822ab9fd5d401427c7ba3b538ecae9928924d06b60a5
+SIZE (go/net-mgmt_chronograf/chronograf-v1.9.1/node-v14.18.1-headers.tar.gz) = 599969
+SHA256 (go/net-mgmt_chronograf/chronograf-v1.9.1/v1.9.1.mod) = 59f1c3378958c492514d54aad7f959d067beb7826419dc069bba9f3e62db263a
+SIZE (go/net-mgmt_chronograf/chronograf-v1.9.1/v1.9.1.mod) = 5419
+SHA256 (go/net-mgmt_chronograf/chronograf-v1.9.1/v1.9.1.zip) = 5ebeee56e3539f13fd638f13e31c07c4665e80ed3aa972e0e9e0b6b29c8f4111
+SIZE (go/net-mgmt_chronograf/chronograf-v1.9.1/v1.9.1.zip) = 3081960

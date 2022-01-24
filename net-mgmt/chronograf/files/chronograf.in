@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: chronograf
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable chronograf:
+# chronograf_enable="YES"
+#
+# chronograf_enable (bool):	Set to YES to enable chronograf
+#				Default: NO
+# chronograf_flags (str):	Extra flags passed to chronograf
+#				Default: -b %%CHRONOGRAF_DBDIR%%/chronograf-v1.db
+# chronograf_user (str):	chronograf daemon user
+#				Default: %%CHRONOGRAF_USER%%
+# chronograf_group (str):	chronograf daemon group
+#				Default: %%CHRONOGRAF_GROUP%%
+
+. /etc/rc.subr
+
+name=chronograf
+rcvar=chronograf_enable
+desc="Monitoring and visualization UI for the TICK stack"
+
+load_rc_config $name
+
+: ${chronograf_enable:=NO}
+: ${chronograf_flags="-b %%CHRONOGRAF_DBDIR%%/chronograf-v1.db"}
+: ${chronograf_user="%%CHRONOGRAF_USER%%"}
+: ${chronograf_group="%%CHRONOGRAF_GROUP%%"}
+
+start_precmd=chronograf_prestart
+logfile="%%CHRONOGRAF_LOGDIR%%/${name}.log"
+pidfile="/var/run/${name}/${name}.pid"
+command=/usr/sbin/daemon
+command_args="-cfr -P ${pidfile} -o ${logfile} %%PREFIX%%/bin/${name} ${chronograf_flags}"
+
+chronograf_prestart()
+{
+	# Have to empty rc_flags so they don't get passed to daemon(8)
+        rc_flags=""
+
+	if [ ! -d "%%CHRONOGRAF_DBDIR%%" ]; then
+		install -d -o "${chronograf_user}" -g "${chronograf_group}" -m 750 "%%CHRONOGRAF_DBDIR%%"
+	fi
+	if [ ! -d "%%CHRONOGRAF_LOGDIR%%" ]; then
+		install -d -o "${chronograf_user}" -g "${chronograf_group}" -m 750 "%%CHRONOGRAF_LOGDIR%%"
+	fi
+	if [ ! -d "/var/run/chronograf" ]; then
+		install -d -o "${chronograf_user}" -g "${chronograf_group}" -m 755 "/var/run/chronograf"
+	fi
+}
+
+run_rc_command "$1"
