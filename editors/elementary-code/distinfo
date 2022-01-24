@@ -1,3 +1,5 @@
 TIMESTAMP = 1628896888
 SHA256 (elementary-code-6.0.0_GH0.tar.gz) = c58b33db512e1c031f6870eb62b035dea764dbdd7c54b8e19c434af8ccd3a384
 SIZE (elementary-code-6.0.0_GH0.tar.gz) = 1303421
+SHA256 (a2607cce3a6b.patch) = d16ec6023bbc26a5fd919d2233e52caa983af667533c44592ba0120bd6122119
+SIZE (a2607cce3a6b.patch) = 661

@@ -3,6 +3,9 @@ DISTVERSION=	6.0.0
 PORTREVISION=	2
 CATEGORIES=	editors
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a2607cce3a6b.patch:-p1 # https://github.com/elementary/code/pull/1165
+
 MAINTAINER=	miguel@gocobachi.dev
 COMMENT=	Code editor designed for elementary OS
 
