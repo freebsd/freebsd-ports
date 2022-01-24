@@ -1,0 +1,68 @@
+commit 1683a9d0749550b81ba3fd7ddeba4fc0884acb47
+Author: Adriaan de Groot <groot@kde.org>
+Date:   Mon Jan 24 11:27:29 2022 +0100
+
+    Fix crash in destructor when using libcxx (Clang STL, FreeBSD)
+    
+    This code crashes in the destructor of LdapClient on FreeBSD.
+    The crash is visible to uses who
+    - start KOrganizer
+    - click the "New Event" button
+    
+    The underlying issue is a lot like the one described in
+            https://blogs.kde.org/2021/02/20/uniqueptr-difference-between-libstdc-and-libc-crashes-your-application
+    There is a convoluted call-chain on destruction of LdapClient:
+    - ~LdapClient
+    - ~std::unique_ptr<LdapClientPrivate>
+    - ~LdapClientPrivate
+    - LdapClient::cancelQuery
+    - (accesses to members of LdapClientPrivate `d`)
+    
+    With libcxx, the pointer in `d` is already set to nullptr and
+    SEGV happens. I'm not sure it isn't UB, anyway, since the
+    destructor body for LdapClient has already run.
+    
+    The fix moves the implementation of `cancelQuery()` into
+    the private class. This means that the LdapClient class does
+    a little less poking-and-prodding in the private class,
+    but also cuts out the call-from-private-back-to-destroyed-
+    owning-LdapClient, fixing the SEGV and possible UB.
+diff --git src/widgets/ldapclient.cpp src/widgets/ldapclient.cpp
+index cf94ea9..012b3a7 100644
+--- src/widgets/ldapclient.cpp
++++ src/widgets/ldapclient.cpp
+@@ -31,9 +31,11 @@ public:
+ 
+     ~LdapClientPrivate()
+     {
+-        q->cancelQuery();
++        cancelQuery();
+     }
+ 
++    void cancelQuery();
++    
+     void startParseLDIF();
+     void parseLDIF(const QByteArray &data);
+     void endParseLDIF();
+@@ -133,12 +135,17 @@ void LdapClient::startQuery(const QString &filter)
+ 
+ void LdapClient::cancelQuery()
+ {
+-    if (d->mJob) {
+-        d->mJob->kill();
+-        d->mJob = nullptr;
++    d->cancelQuery();
++}
++
++void LdapClient::LdapClientPrivate::cancelQuery()
++{
++    if (mJob) {
++        mJob->kill();
++        mJob = nullptr;
+     }
+ 
+-    d->mActive = false;
++    mActive = false;
+ }
+ 
+ void LdapClient::LdapClientPrivate::slotData(KIO::Job *, const QByteArray &data)
