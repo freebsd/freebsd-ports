@@ -1,9 +1,9 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	tree
-PORTVERSION=	1.8.0
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
+MASTER_SITES=	http://mama.indstate.edu/users/ice/tree/src/
 
 MAINTAINER=	gb@unistra.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
@@ -14,7 +14,8 @@ MAKE_ENV+=	MKDIR="${MKDIR}"
 USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/tree \
-		man/man1/tree.1.gz
+		man/man1/tree.1.gz \
+		man/man1/tree.fr.1.gz
 
 PORTDOCS=	CHANGES README
 
