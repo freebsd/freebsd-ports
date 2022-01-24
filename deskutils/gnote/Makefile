@@ -5,6 +5,9 @@ PORTVERSION=	41.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	32795e53681e.patch:-p1 # https://gitlab.gnome.org/GNOME/gnote/-/merge_requests/21
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ version of Tomboy, note taking application
 
