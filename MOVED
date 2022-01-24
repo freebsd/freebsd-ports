@@ -16775,5 +16775,5 @@ shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell suppor
 emulators/yuzu-qt5|emulators/yuzu|2022-01-20|Merged as QT5 port option
 print/py-fonttools3|print/py-fonttools|2022-01-23|Remove obsoleted port. Use print/py-fonttools instead
 textproc/rubygem-rouge2|textproc/rubygem-rouge|2022-01-23|Remove obsoleted port. Use textproc/rubygem-rouge instead
-security/truecrypt||2022-01-23|Has expired: Development and support for truecrypt ended in 2014
+security/truecrypt|security/veracrypt|2022-01-23|Has expired: Development and support for truecrypt ended in 2014
 graphics/radiance||2022-01-23|Has expired: Application uses deprecated OpenGL support in libmpv, see the comment in https://github.com/zbanks/radiance/issues/118
