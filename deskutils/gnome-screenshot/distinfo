@@ -1,3 +1,5 @@
 TIMESTAMP = 1640320955
 SHA256 (gnome3/gnome-screenshot-41.0.tar.xz) = 4adb7dec926428f74263d5796673cf142e4720b6e768f5468a8d0933f98c9597
 SIZE (gnome3/gnome-screenshot-41.0.tar.xz) = 359500
+SHA256 (gnome3/b60dad3c2536.patch) = 79859f8e5e15dcf2e3c010e61e7fec137dd13a212ee9bdb44e17305decdbf434
+SIZE (gnome3/b60dad3c2536.patch) = 979

@@ -6,6 +6,9 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	b60dad3c2536.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-screenshot/-/merge_requests/57
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 utility for making pictures of your screen
 
