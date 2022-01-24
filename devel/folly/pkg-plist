@@ -308,8 +308,6 @@ include/folly/experimental/coro/Concat-inl.h
 include/folly/experimental/coro/Concat.h
 include/folly/experimental/coro/Coroutine.h
 include/folly/experimental/coro/CurrentExecutor.h
-include/folly/experimental/coro/Dematerialize-inl.h
-include/folly/experimental/coro/Dematerialize.h
 include/folly/experimental/coro/DetachOnCancel.h
 include/folly/experimental/coro/Filter-inl.h
 include/folly/experimental/coro/Filter.h
@@ -318,12 +316,8 @@ include/folly/experimental/coro/Generator.h
 include/folly/experimental/coro/GmockHelpers.h
 include/folly/experimental/coro/GtestHelpers.h
 include/folly/experimental/coro/Invoke.h
-include/folly/experimental/coro/Materialize-inl.h
-include/folly/experimental/coro/Materialize.h
 include/folly/experimental/coro/Merge-inl.h
 include/folly/experimental/coro/Merge.h
-include/folly/experimental/coro/Multiplex-inl.h
-include/folly/experimental/coro/Multiplex.h
 include/folly/experimental/coro/Mutex.h
 include/folly/experimental/coro/Promise.h
 include/folly/experimental/coro/Result.h
