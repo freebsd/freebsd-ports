@@ -1,3 +1,5 @@
 TIMESTAMP = 1622396708
 SHA256 (gnome/gnome-sound-recorder-40.0.tar.xz) = d4aa4c104d7465dd15807bf1703e65ff682eff52841c59cf3a07f5eff42e6501
 SIZE (gnome/gnome-sound-recorder-40.0.tar.xz) = 199056
+SHA256 (gnome/1335b1b1aff6.patch) = d4b0c9eea75e3dbfce7b14237e153254c28ea963b011430fffdfc22f410d0f3e
+SIZE (gnome/1335b1b1aff6.patch) = 1387
