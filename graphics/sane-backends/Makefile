@@ -1,10 +1,9 @@
 # Created by: gary@hotlava.com
 
 PORTNAME=	sane-backends
-DISTVERSION=	1.0.32
-PORTREVISION=	9
+DISTVERSION=	1.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/
+MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/7d30fab4e115029d91027b6a58d64b43/
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	API for accessing scanners, digital cameras, frame grabbers, etc
@@ -38,14 +37,14 @@ OPTIONS_DEFINE=		AVAHI DOCS GPHOTO IEEE1284 IPV6 NLS SNMP USB V4L
 OPTIONS_DEFAULT=	AVAHI GPHOTO USB
 OPTIONS_SUB=		yes
 
-IEEE1284_DESC=	Parallel port support via libieee1284
+IEEE1284_DESC=	Parallel port support via libieee1284 (for i386 only)
 USB_DESC=	USB support
 
 AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app \
 				libcurl.so:ftp/curl \
 				libpoppler-glib.so:graphics/poppler-glib
 AVAHI_USE=			GNOME=cairo,glib20
-AVAHI_CONFIGURE_WITH=		avahi libcurl
+AVAHI_CONFIGURE_WITH=		avahi libcurl poppler-glib
 GPHOTO_LIB_DEPENDS=		libgphoto2.so:graphics/libgphoto2
 GPHOTO_CONFIGURE_WITH=		gphoto2
 IEEE1284_LIB_DEPENDS=		libieee1284.so:sysutils/libieee1284

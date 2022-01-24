@@ -594,6 +594,7 @@ sbin/saned
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sane-backends.mo
 @dir etc/sane.d/dll.d
 @dir share/sane/artec_eplus48u
 @dir share/sane/epjitsu
