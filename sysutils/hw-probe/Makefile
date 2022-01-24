@@ -12,6 +12,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	curl:ftp/curl \
 		hwstat:sysutils/hwstat \
+		lsblk:sysutils/lsblk \
 		smartctl:sysutils/smartmontools
 
 USE_GITHUB=	yes
