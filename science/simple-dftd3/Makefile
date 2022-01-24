@@ -1,7 +1,6 @@
 PORTNAME=	simple-dftd3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +9,7 @@ COMMENT=	Reimplementation of the DFT-D3 program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mstore>0:science/mstore # see https://github.com/awvwgk/simple-dftd3/issues/11
+BUILD_DEPENDS=	mstore>0:science/mstore
 LIB_DEPENDS=	libmctc-lib.so:science/mctc-lib \
 		libopenblas.so:math/openblas \
 		libtoml-f.so:textproc/toml-f
