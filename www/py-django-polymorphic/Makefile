@@ -1,8 +1,7 @@
 # Created by: Kevin Golding <ports@caomhin.org>
 
 PORTNAME=	django-polymorphic
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
