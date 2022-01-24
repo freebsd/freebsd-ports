@@ -1,3 +1,5 @@
 TIMESTAMP = 1617741522
 SHA256 (gnome/dconf-editor-3.38.3.tar.xz) = 571af4c7dad4f049b53e6cd728b79addf08c27ddab6bc57b396d211866ee79e3
 SIZE (gnome/dconf-editor-3.38.3.tar.xz) = 594544
+SHA256 (gnome/56474378568e.patch) = ee0470519b9ac98ede945aba1b25f4ab9ebc5494525d95af5eb5c00f4418fd94
+SIZE (gnome/56474378568e.patch) = 825

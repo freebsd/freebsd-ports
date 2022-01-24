@@ -6,6 +6,9 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	56474378568e.patch:-p1 # https://gitlab.gnome.org/GNOME/dconf-editor/-/merge_requests/21
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Configuration database editor for GNOME
 
