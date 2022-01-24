@@ -1,3 +1,5 @@
 TIMESTAMP = 1626545621
 SHA256 (gnome3/gnome-mahjongg-3.38.3.tar.xz) = d2b1e47d85852048b35d89e3ddaba1daeb06aaf97acfb67a501ce664ff509190
 SIZE (gnome3/gnome-mahjongg-3.38.3.tar.xz) = 3061860
+SHA256 (gnome3/7604f8c8311f.patch) = d5a840c1def4e862a615bfbac6cce43d0cd2534c94189d34ee56777d7c4915e4
+SIZE (gnome3/7604f8c8311f.patch) = 1307

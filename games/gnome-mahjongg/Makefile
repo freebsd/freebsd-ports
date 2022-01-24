@@ -6,6 +6,9 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	7604f8c8311f.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-mahjongg/-/merge_requests/26
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome mahjongg
 
