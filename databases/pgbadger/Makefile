@@ -1,7 +1,7 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
 
 PORTNAME=	pgbadger
-PORTVERSION=	11.6
+PORTVERSION=	11.7
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
