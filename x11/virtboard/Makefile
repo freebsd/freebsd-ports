@@ -7,7 +7,7 @@ CATEGORIES=	x11
 PATCH_SITES=	${GL_SITE}/jbeich/${GL_PROJECT}/-/commit/
 PATCHFILES+=	42e698964e42.patch:-p1 # https://source.puri.sm/Librem5/virtboard/-/merge_requests/35
 PATCHFILES+=	86e6915d4920.patch:-p1 # https://source.puri.sm/Librem5/virtboard/-/merge_requests/35
-PATCHFILES+=	f23aff6bb249.patch:-p1 # https://source.puri.sm/Librem5/virtboard/-/merge_requests/36
+PATCHFILES+=	2d30762e546b.patch:-p1 # https://source.puri.sm/Librem5/virtboard/-/merge_requests/36
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Basic keyboard, blazing the path of modern Wayland keyboards
