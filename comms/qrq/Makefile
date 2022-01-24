@@ -1,5 +1,5 @@
 PORTNAME=	qrq
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/qrq/
 
@@ -13,9 +13,15 @@ USE_CSTD=	c99
 
 SHEBANG_FILES=	qrqscore
 
-post-install:
-	${INSTALL_DATA}	${WRKSRC}/qrq.png ${STAGEDIR}${DATADIR}/qrq.png
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g'  \
+		-e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/qrq.c
 
-MAKE_ENV=	DESTDIR=${LOCALBASE}
+post-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA}	${WRKSRC}/qrq.png ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
