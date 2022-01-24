@@ -1,3 +1,5 @@
 TIMESTAMP = 1606281247
 SHA256 (gnome3/gnome-tetravex-3.38.2.tar.xz) = 1fcdf10979b9a3526009d783a1c88a389918f360da4edb44fba25c71f186911b
 SIZE (gnome3/gnome-tetravex-3.38.2.tar.xz) = 1004632
+SHA256 (gnome3/80912d06f5e5.patch) = 16b93b4ab3488cc8aec30e8b8d029952acc096caf716b65edec2fb558f8c81e0
+SIZE (gnome3/80912d06f5e5.patch) = 1308
