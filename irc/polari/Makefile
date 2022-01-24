@@ -7,7 +7,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	1ec40333a32d.patch:-p1 # https://gitlab.gnome.org/GNOME/gtranslator/-/merge_requests/90
+PATCHFILES+=	0f0a4b54142d.patch:-p1 # https://gitlab.gnome.org/GNOME/gtranslator/-/merge_requests/90
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Internet Relay Chat (IRC) client designed for GNOME 3
