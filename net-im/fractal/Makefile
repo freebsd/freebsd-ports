@@ -4,6 +4,9 @@ PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	https://gitlab.gnome.org/World/fractal/uploads/${GL_HASH}/
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	6fa1a23596d6.patch:-p1 # https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/867
+
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	GTK+ Matrix IM client
 
