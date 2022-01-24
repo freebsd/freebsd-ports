@@ -77,6 +77,7 @@ bin/3dDWItoDT
 bin/3dDWUncert
 bin/3dDeconvolve
 bin/3dDegreeCentrality
+bin/3dDepthMap
 bin/3dDespike
 bin/3dDetrend
 bin/3dECM
@@ -85,7 +86,6 @@ bin/3dEigsToDT
 bin/3dEmpty
 bin/3dEntropy
 bin/3dErrtsCormat
-bin/3dEulerDist
 bin/3dExchange
 bin/3dExtractGroupInCorr
 bin/3dExtrema
@@ -300,7 +300,7 @@ bin/@GetAfniRes
 bin/@GetAfniView
 bin/@GradFlipTest
 bin/@Install_3dPFM_Demo
-bin/@Install_AP_MULTI_DEMO1
+bin/@Install_APMULTI_Demo1_rest
 bin/@Install_AfniRetinoDemo
 bin/@Install_ClustScat_Demo
 bin/@Install_D99_macaque
@@ -682,8 +682,8 @@ include/afni/rcmat.h
 include/afni/tagset.h
 include/afni/thd_atlas.h
 include/afni/thd_compress.h
+include/afni/thd_depth_map_edt.h
 include/afni/thd_edge_dog.h
-include/afni/thd_euler_dist.h
 include/afni/thd_iochan.h
 include/afni/thd_maker.h
 include/afni/thd_ttatlas_CA_EZ.h
@@ -804,6 +804,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_dti_sundry.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_fat_funcs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_fat_plot_sel.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_format_cmd_str.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
