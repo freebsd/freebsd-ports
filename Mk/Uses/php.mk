@@ -190,8 +190,8 @@ PHP_EXT_DIR=   20180731
 PHP_EXT_INC=    pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
-PHP_EXT_DIR=	20190902
-PHP_EXT_INC=	hash pcre spl
+PHP_EXT_DIR=   20200930
+PHP_EXT_INC=    hash json pcre spl
 .    endif
 
 # Try to figure out what the PHP_EXT_DIR should be WRT the
