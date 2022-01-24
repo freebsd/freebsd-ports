@@ -1,5 +1,5 @@
 PORTNAME=	wordsearch
-DISTVERSION=	2.0
+DISTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/jensenpat/wordsearch/releases/download/${DISTVERSION}/
 
