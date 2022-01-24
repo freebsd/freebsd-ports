@@ -10,7 +10,8 @@ COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc \
+		itstool:textproc/itstool
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
 		liblcms2.so:graphics/lcms2 \
 		libgexiv2.so:graphics/gexiv2 \
