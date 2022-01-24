@@ -266,6 +266,7 @@
     SUBDIR += py-dlib
     SUBDIR += py-eccodes
     SUBDIR += py-esda
+    SUBDIR += py-fresnel
     SUBDIR += py-geolinks
     SUBDIR += py-geomet
     SUBDIR += py-geometer
