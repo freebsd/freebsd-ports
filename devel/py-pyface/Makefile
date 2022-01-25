@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	Vladimir.Chukharev@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enthought traits-capable windowing framework
 
 LICENSE=	BSD3CLAUSE LGPL21 EPL LGPL3

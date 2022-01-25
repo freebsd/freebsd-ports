@@ -6,7 +6,7 @@ CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	Vladimir.Chukharev@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web testing library for Robot Framework
 
 LICENSE=	APACHE20
