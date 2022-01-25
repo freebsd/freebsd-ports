@@ -1,5 +1,6 @@
 include/linux/cec.h
 include/linux/cec-funcs.h
+include/linux/const.h
 include/linux/dvb/audio.h
 include/linux/dvb/ca.h
 include/linux/dvb/dmx.h

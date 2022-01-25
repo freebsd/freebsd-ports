@@ -12,6 +12,7 @@ PLIST=		${.CURDIR}/pkg-plist
 BASE_HEADERS= \
 	linux/cec.h \
 	linux/cec-funcs.h \
+	linux/const.h \
 	linux/dvb/audio.h \
 	linux/dvb/ca.h \
 	linux/dvb/dmx.h \

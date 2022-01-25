@@ -17,6 +17,7 @@ include/libdvbv5/desc_language.h
 include/libdvbv5/desc_logical_channel.h
 include/libdvbv5/desc_network_name.h
 include/libdvbv5/desc_partial_reception.h
+include/libdvbv5/desc_registration_id.h
 include/libdvbv5/desc_sat.h
 include/libdvbv5/desc_service.h
 include/libdvbv5/desc_t2_delivery.h
