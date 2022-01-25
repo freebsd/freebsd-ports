@@ -1,0 +1,14 @@
+Minizip was originally developed in 1998. It was first included in the zlib
+distribution as an additional code contribution starting in zlib 1.1.2. Since
+that time, it has been continually improved upon and contributed to by many
+people.
+
++ Creating and extracting zip archives.
++ Adding and removing entries from zip archives.
++ Read and write raw zip entry data.
++ Reading and writing zip archives from memory.
++ Zlib, BZIP2, LZMA, and ZSTD compression methods.
++ Password protection through Traditional PKWARE and WinZIP AES encryption.
++ Buffered streaming for improved I/O performance.
+
+WWW: https://github.com/zlib-ng/minizip-ng

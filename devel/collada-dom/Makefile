@@ -9,12 +9,11 @@ COMMENT=	COLLADA Document Object Model (DOM) C++ Library
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libminizip.so:archivers/minizip \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake gnome
+USES=		cmake gnome minizip
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 USE_GITHUB=	yes

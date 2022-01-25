@@ -31,7 +31,6 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libhunspell-1.7.so:textproc/hunspell \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
-		libminizip.so:archivers/minizip \
 		librnnoise.so:audio/rnnoise \
 		libopenal.so:audio/openal-soft \
 		libopenh264.so:multimedia/openh264 \

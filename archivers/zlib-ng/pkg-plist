@@ -1,0 +1,7 @@
+include/zconf-ng.h
+include/zlib-ng.h
+lib/libz-ng.a
+lib/libz-ng.so
+lib/libz-ng.so.2
+lib/libz-ng.so.2.0.6
+libdata/pkgconfig/zlib-ng.pc

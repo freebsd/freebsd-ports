@@ -299,9 +299,8 @@ SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
 SIDPLAY_CONFIGURE_ENABLE=	sid
 CONFIGURE_ARGS+=	--disable-sid
 
-SKINS_USE=		XORG=xext,xinerama,xpm
-SKINS_LIB_DEPENDS=	libminizip.so:archivers/minizip \
-			libtar.so:devel/libtar
+SKINS_USE=		XORG=xext,xinerama,xpm minizip
+SKINS_LIB_DEPENDS=	libtar.so:devel/libtar
 SKINS_CONFIGURE_ENABLE=	skins2 libtar
 SKINS_IMPLIES=		QT5
 

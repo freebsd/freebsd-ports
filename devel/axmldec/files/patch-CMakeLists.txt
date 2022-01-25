@@ -9,7 +9,7 @@
 -
 +    include (FindPkgConfig)
 +    if (PKG_CONFIG_FOUND)
-+        pkg_check_modules(MINIZIP minizip)
++        pkg_check_modules(MINIZIP minizip-ng)
 +    endif()
 +    include_directories(${MINIZIP_INCLUDE_DIRS})
 +    find_library(MINIZIP_FROM_PORTS ${MINIZIP_LIBRARIES}

@@ -12,17 +12,15 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>=1.44.0:devel/boost-libs \
-		googletest>=1.7.0:devel/googletest \
-		minizip>=1.2.8:archivers/minizip
+		googletest>=1.7.0:devel/googletest
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libgtest.so:devel/googletest \
-		libminizip.so:archivers/minizip \
 		liburiparser.so:net/uriparser
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		cmake compiler:c11 pathfix
+USES=		cmake compiler:c11 minizip pathfix
 
 CMAKE_OFF=	WITH_JAVA WITH_PYTHON WITH_SWIG
 USE_CXXSTD=	gnu++98

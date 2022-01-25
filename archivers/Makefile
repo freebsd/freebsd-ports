@@ -88,6 +88,7 @@
     SUBDIR += mar
     SUBDIR += maxcso
     SUBDIR += minizip
+    SUBDIR += minizip-ng
     SUBDIR += mscompress
     SUBDIR += mtf
     SUBDIR += nfpm
@@ -265,6 +266,7 @@
     SUBDIR += zip-ada
     SUBDIR += zipmix
     SUBDIR += zipper
+    SUBDIR += zlib-ng
     SUBDIR += zoo
     SUBDIR += zopfli
     SUBDIR += zstd

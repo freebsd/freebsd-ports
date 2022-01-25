@@ -10,10 +10,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl libboost_system.so:devel/boost-libs \
-		libminizip.so:archivers/minizip libjsoncpp.so:devel/jsoncpp
+		libjsoncpp.so:devel/jsoncpp
 BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal
 
-USES=		cmake compiler:c++11-lang cpe pkgconfig ssl lua:53 sqlite
+USES=		cmake compiler:c++11-lang cpe minizip pkgconfig ssl lua:53 sqlite
 
 OPTIONS_SUB=	YES
 OPTIONS_DEFINE=	SMQTT PYTHON TELLDUS OPENZWAVE PRECOMP

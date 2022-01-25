@@ -22,14 +22,13 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libenchant.so:textproc/enchant \
 		libicui18n.so:devel/icu \
-		libminizip.so:archivers/minizip \
 		libsoup-2.4.so:devel/libsoup \
 		libsword.so:misc/sword \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 # gettext is always needed, even if NLS is off
-USES=		cmake compiler:c11 gettext gnome pkgconfig
+USES=		cmake compiler:c11 gettext gnome minizip pkgconfig
 USE_GNOME=	cairo gconf2 gtk30 gtkhtml4 intltool libgsf
 
 CMAKE_OFF=	EPUB

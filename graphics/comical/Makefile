@@ -12,10 +12,9 @@ COMMENT=	Sequential image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libminizip.so:archivers/minizip \
-		libunrar.so.6:archivers/libunrar6
+LIB_DEPENDS=	libunrar.so.6:archivers/libunrar6
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang gmake minizip
 USE_WX=		2.8+
 
 MAKE_ENV=	WX_CONFIG=${WX_CONFIG}

@@ -10,14 +10,13 @@ COMMENT=	WYSIWYG ePub editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libminizip.so:archivers/minizip \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libhunspell-1.7.so:textproc/hunspell
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0.15.0:devel/dulwich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
-		pkgconfig python:3.4+ qt:5 shebangfix
+		minizip pkgconfig python:3.4+ qt:5 shebangfix
 CPE_VENDOR=	${PORTNAME}-ebook
 
 USE_GITHUB=	yes

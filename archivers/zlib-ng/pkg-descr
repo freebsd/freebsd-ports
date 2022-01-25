@@ -1,0 +1,13 @@
+Zlib replacement with optimizations for next generation systems.
+
+The motivation for this fork came after seeing several 3rd party contributions
+containing new optimizations not getting implemented into the official zlib
+repository.
+
+Mark Adler has been maintaining zlib for a very long time, and he has done a
+great job and hopefully he will continue for a long time yet.
+
+The idea of zlib-ng is not to replace zlib, but to co-exist as a drop-in
+replacement with a lower threshold for code change.
+
+WWW: https://github.com/zlib-ng/zlib-ng

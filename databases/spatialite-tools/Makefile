@@ -13,11 +13,10 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos \
 		libfreexl.so:textproc/freexl \
 		libexpat.so:textproc/expat2 \
 		libspatialite.so:databases/spatialite \
-		libreadosm.so:astro/readosm \
-		libminizip.so:archivers/minizip
+		libreadosm.so:astro/readosm
 
 GNU_CONFIGURE=	yes
-USES=		gmake gnome pkgconfig iconv sqlite
+USES=		gmake gnome iconv minizip pkgconfig sqlite
 USE_GNOME=	libxml2
 
 CFLAGS+=	-I${LOCALBASE}/include

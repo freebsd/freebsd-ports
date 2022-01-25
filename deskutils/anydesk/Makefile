@@ -19,9 +19,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libinotify.so:devel/libinotify \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libxkbfile.so:x11/libxkbfile \
-		libminizip.so:archivers/minizip \
 
-USES=		cpe gl gnome xorg
+USES=		cpe gl gnome minizip xorg
 
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pangox-compat
