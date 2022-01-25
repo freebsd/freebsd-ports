@@ -1,0 +1,13 @@
+https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/merge_requests/210
+
+data/meson.build:2:5: ERROR: Function does not take positional arguments.
+
+--- data/meson.build.orig	2021-12-11 13:32:22 UTC
++++ data/meson.build
+@@ -1,5 +1,5 @@
+ session_desktop = 'gnome-classic.desktop'
+-i18n.merge_file('',
++i18n.merge_file(
+   input:  session_desktop + '.in',
+   output: session_desktop,
+   po_dir: '../po',
