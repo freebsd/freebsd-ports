@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	flipper-active_support_cache_store
-PORTVERSION=	0.23.0
+PORTVERSION=	0.23.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
