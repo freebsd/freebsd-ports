@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	Vladimir.Chukharev@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User registration with social account authentication
 
 LICENSE=	MIT

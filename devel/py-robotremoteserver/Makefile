@@ -5,7 +5,7 @@ CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	Vladimir.Chukharev@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Remote Server for Robot Framework
 
 LICENSE=	APACHE20

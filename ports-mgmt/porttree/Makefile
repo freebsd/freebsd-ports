@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	Vladimir.Chukharev@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show dependencies of FreeBSD port as pseudo graphical tree
 
 LICENSE=	MIT
