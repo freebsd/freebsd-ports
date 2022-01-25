@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 
 PORTNAME=	schismtracker
-PORTVERSION=	20211116
+PORTVERSION=	20220125
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
