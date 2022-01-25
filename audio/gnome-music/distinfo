@@ -1,3 +1,5 @@
 TIMESTAMP = 1632712899
 SHA256 (gnome3/gnome-music-41.0.tar.xz) = 69b13567a87dc77dcf0c926d71d0fa2ebfa5a97f37817828df71d8a1b0129fd2
 SIZE (gnome3/gnome-music-41.0.tar.xz) = 898652
+SHA256 (gnome3/d9f35b542adb.patch) = a9167b7ad5c8d3b91ff8f2dbd9c13b3aa2bfb737fa7c82362192b3c0dfb75961
+SIZE (gnome3/d9f35b542adb.patch) = 1035

@@ -6,6 +6,9 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	d9f35b542adb.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-music/-/merge_requests/899
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
 
