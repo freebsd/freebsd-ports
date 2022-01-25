@@ -6,6 +6,9 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	9a168cc23962.patch:-p1 # meson 0.61
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME Desktop
 
