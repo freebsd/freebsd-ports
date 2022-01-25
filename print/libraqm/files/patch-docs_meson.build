@@ -1,0 +1,10 @@
+--- docs/meson.build.orig	2022-01-02 09:05:53 UTC
++++ docs/meson.build
+@@ -20,6 +20,7 @@ gnome.gtkdoc(
+   content_files : [version_xml],
+   mkdb_args : ['--xml-mode', '--output-format=xml'],
+   install : true,
++  install_dir : get_option('prefix') / 'share/doc/libraqm',
+   scan_args : ['--ignore-decorators=RAQM_API'],
+   check : true,
+ )

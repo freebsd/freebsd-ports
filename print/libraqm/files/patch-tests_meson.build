@@ -1,0 +1,8 @@
+--- tests/meson.build.orig	2022-01-02 08:29:38 UTC
++++ tests/meson.build
+@@ -1,4 +1,4 @@
+-python3 = import('python').find_installation('python3')
++python3 = import('python').find_installation()
+ 
+ raqm_test = executable(
+   'raqm-test',
