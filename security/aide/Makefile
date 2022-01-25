@@ -11,7 +11,7 @@ COMMENT=	File and directory integrity checker
 LIB_DEPENDS=	libmhash.so:security/mhash \
 		libpcre.so:devel/pcre
 
-USES=		autoreconf bison gmake localbase
+USES=		bison gmake localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
