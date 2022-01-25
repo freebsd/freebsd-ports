@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	smooth
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
