@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ls-qpack
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
