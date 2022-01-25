@@ -1,10 +1,11 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	parse-type
-PORTVERSION=	0.5.6
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	parse_type-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplify to build parse types based on the parse module
@@ -19,9 +20,5 @@ USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-GH_ACCOUNT=	jenisys
-GH_PROJECT=	parse_type
-USE_GITHUB=	yes
 
 .include <bsd.port.mk>
