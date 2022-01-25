@@ -1,6 +1,5 @@
 PORTNAME=	libnpupnp
-DISTVERSION=	4.1.5
-PORTREVISION=	2
+DISTVERSION=	4.2.1
 CATEGORIES=	net
 MASTER_SITES=	https://www.lesbonscomptes.com/upmpdcli/downloads/
 
@@ -14,10 +13,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig
-USE_LDCONFIG=	yes
-
+USES=		compiler:c++11-lang libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
