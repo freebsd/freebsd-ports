@@ -1,0 +1,35 @@
+--- contrib/aaaa-filter-iterator.patch.orig	2021-12-20 17:00:58 UTC
++++ contrib/aaaa-filter-iterator.patch
+@@ -109,9 +109,9 @@ index 7bc67da6..e10f547a 100644
+  	iter_env->supports_ipv6 = cfg->do_ip6;
+  	iter_env->supports_ipv4 = cfg->do_ip4;
+ +	iter_env->aaaa_filter = cfg->aaaa_filter;
++	iter_env->outbound_msg_retry = cfg->outbound_msg_retry;
+  	return 1;
+  }
+- 
+ diff --git a/iterator/iterator.c b/iterator/iterator.c
+ index 23b07ea9..ca29b48c 100644
+ --- a/iterator/iterator.c
+@@ -387,15 +387,15 @@ index 1d0e8658..f284dd43 100644
+  %token VAR_PRIVATE_DOMAIN VAR_REMOTE_CONTROL VAR_CONTROL_ENABLE
+  %token VAR_CONTROL_INTERFACE VAR_CONTROL_PORT VAR_SERVER_KEY_FILE
+  %token VAR_SERVER_CERT_FILE VAR_CONTROL_KEY_FILE VAR_CONTROL_CERT_FILE
+-@@ -233,6 +234,7 @@ content_server: server_num_threads | server_verbosity | server_port |
++@@ -244,6 +244,7 @@ content_server: server_num_threads | server_verbosity | server_port |
+  	server_dlv_anchor_file | server_dlv_anchor | server_neg_cache_size |
+  	server_harden_referral_path | server_private_address |
+- 	server_private_domain | server_extended_statistics | 
++ 	server_private_domain | server_extended_statistics |
+ +	server_aaaa_filter |
+- 	server_local_data_ptr | server_jostle_timeout | 
+- 	server_unwanted_reply_threshold | server_log_time_ascii | 
+- 	server_domain_insecure | server_val_sig_skew_min | 
+-@@ -1563,6 +1565,15 @@ server_caps_whitelist: VAR_CAPS_WHITELIST STRING_ARG
++ 	server_local_data_ptr | server_jostle_timeout |
++ 	server_unwanted_reply_threshold | server_log_time_ascii |
++
++@@ -1742,6 +1744,15 @@ server_caps_whitelist: VAR_CAPS_WHITELIST STRING_ARG
+  			yyerror("out of memory");
+  	}
+  	;
