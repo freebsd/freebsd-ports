@@ -1,5 +1,5 @@
 PORTNAME=	moltemplate
-DISTVERSION=	2.19.14
+DISTVERSION=	2.20.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,8 @@ SHEBANG_FILES=	moltemplate/scripts/molc.sh
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes
+
+do-test: # testsuite fails to run: https://github.com/jewettaij/moltemplate/issues/65
+	@cd ${WRKSRC} && pytest
 
 .include <bsd.port.mk>
