@@ -22,17 +22,17 @@ install the certificates is to:
 Failed to initialize CoreCLR, HRESULT: 0x8007001F
 -------------------------------------------------
 .NET core may produce the above error message if the system has exceeded
-capacity for wired memory, or is unprivilaged allocations of wired memory is
+capacity for wired memory, or is unprivileged allocations of wired memory is
 not permitted.  
 
-To ensure unprivilaged allocation of wired memory is allowed, as root:
+To ensure unprivileged allocation of wired memory is allowed, as root:
 
-# sysctl security.bsd.unprivilaged_mlock=1
+# sysctl security.bsd.unprivileged_mlock=1
 
 To preserve this setting across reboots, append the following to
 /etc/sysctl.conf:
 
-security.bsd.unprivilaged_mlock=1
+security.bsd.unprivileged_mlock=1
 
 To check the usage and limit of wired memory see the 'vm.stats.vm.v_wire_count'
 and 'vm.max_wired' sysctl(8) respectively.  To increase the wired memory
