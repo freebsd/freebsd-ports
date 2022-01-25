@@ -11,7 +11,7 @@
      "django-filter>=2.2,<22",
 -    "draftjs_exporter>=2.1.5,<3.0",
 +    "draftjs_exporter>=2.1.5",
-     "Pillow>=4.0.0,<9.0.0",
+     "Pillow>=4.0.0,<10.0.0",
 -    "beautifulsoup4>=4.8,<4.10",
 +    "beautifulsoup4>=4.8,<4.11",
      "html5lib>=0.999,<2",
