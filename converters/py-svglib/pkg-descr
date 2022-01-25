@@ -1,0 +1,12 @@
+Svglib is a pure-Python library for reading SVG files and converting them (to a
+reasonable degree) to other formats using the ReportLab Open Source toolkit.
+
+Used as a package you can read existing SVG files and convert them into
+ReportLab Drawing objects that can be used in a variety of contexts, e.g. as
+ReportLab Platypus Flowable objects or in RML.
+
+As a command-line tool it converts SVG files into PDF ones (but adding other
+output formats like bitmap or EPS is really easy and will be better supported,
+soon).
+
+WWW: https://github.com/deeplook/svglib
