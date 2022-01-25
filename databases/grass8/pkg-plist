@@ -419,6 +419,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/demolocation/PERMANENT/vector/country_boundaries/topo
 %%GRASS_INST_DIR%%/docs/html/aspect.png
 %%GRASS_INST_DIR%%/docs/html/aspect_diagram.png
+%%GRASS_INST_DIR%%/docs/html/band_references_scheme.png
 %%GRASS_INST_DIR%%/docs/html/barscales/arrow_ends.png
 %%GRASS_INST_DIR%%/docs/html/barscales/both_ticks.png
 %%GRASS_INST_DIR%%/docs/html/barscales/classic.png
@@ -1762,7 +1763,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/wxGUI_iimage2target_frame.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_iphoto2image_frame.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_iscatt.jpg
-%%GRASS_INST_DIR%%/docs/html/wxGUI_layer_manager.jpg
+%%GRASS_INST_DIR%%/docs/html/wxGUI_layer_manager.png
 %%GRASS_INST_DIR%%/docs/html/wxGUI_map_display.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_modules_flags.png
 %%GRASS_INST_DIR%%/docs/html/wxGUI_modules_parameters.png
