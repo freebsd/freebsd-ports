@@ -23,6 +23,13 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	CLI
+CLI_DESC=	Command-line interface support
+
+CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-autobuild>=0:textproc/py-sphinx-autobuild@${PY_FLAVOR}
+
 post-patch:
 	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
