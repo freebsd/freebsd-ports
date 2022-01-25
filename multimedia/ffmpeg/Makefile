@@ -53,11 +53,6 @@ OPTIONS_DEFAULT=	AOM ASM ASS DAV1D DRM FONTCONFIG FREETYPE FREI0R GMP \
 # i386 is too register-starved for LTO (PR257124)
 OPTIONS_EXCLUDE_i386=	LTO
 
-.if !exists(${.CURDIR:H:H}/multimedia/aribb24)
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/100bfac6d6ec
-OPTIONS_EXCLUDE+=	ARIBB24
-.endif
-
 .if !exists(${.CURDIR:H:H}/multimedia/davs2)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/5985a1bf7233
 OPTIONS_EXCLUDE+=	DAVS2
