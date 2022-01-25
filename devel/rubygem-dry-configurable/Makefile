@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	dry-configurable
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,8 @@ COMMENT=	Mixin to add configuration functionality to your classes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_RUBY26=	yes
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-dry-core>=0.6<1:devel/rubygem-dry-core
