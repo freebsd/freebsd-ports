@@ -14,7 +14,6 @@ USES=		gettext php:mod
 WANT_PGSQL=	server
 # php extensions
 USE_PHP=	curl gd pcre session xml
-IGNORE_WITH_PHP=	81
 
 SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}

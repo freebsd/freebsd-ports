@@ -7,10 +7,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web based GroupWare system
 
 USES=		php:mod tar:bzip2
-IGNORE_WITH_PHP=	81
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/www/data-dist/phpgroupware
