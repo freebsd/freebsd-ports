@@ -1,6 +1,6 @@
---- src/base/platform/platform-posix.cc.orig	2021-11-15 18:52:12 UTC
+--- src/base/platform/platform-posix.cc.orig	2022-01-23 11:58:51 UTC
 +++ src/base/platform/platform-posix.cc
-@@ -511,7 +511,7 @@ bool OS::DecommitPages(void* address, size_t size) {
+@@ -547,7 +547,7 @@ bool OS::FreeAddressSpaceReservation(AddressSpaceReser
  
  // static
  bool OS::HasLazyCommits() {
@@ -9,7 +9,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -650,6 +650,12 @@ int OS::GetCurrentThreadId() {
+@@ -686,6 +686,12 @@ int OS::GetCurrentThreadId() {
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

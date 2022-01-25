@@ -1,8 +1,8 @@
---- include/v8config.h.orig	2021-10-06 18:22:58 UTC
+--- include/v8config.h.orig	2022-01-23 11:58:51 UTC
 +++ include/v8config.h
-@@ -338,7 +338,18 @@ path. Add it with -I<path> to the command line
- 
- # define V8_HAS_CPP_ATTRIBUTE_NODISCARD (V8_HAS_CPP_ATTRIBUTE(nodiscard))
+@@ -342,7 +342,18 @@ path. Add it with -I<path> to the command line
+ # define V8_HAS_CPP_ATTRIBUTE_NO_UNIQUE_ADDRESS \
+     (V8_HAS_CPP_ATTRIBUTE(no_unique_address))
  
 +// Work around Clang bug present in 9.0.1, at least.
 +//
