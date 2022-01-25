@@ -23,7 +23,6 @@ hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
 USE_PHP=	ctype dom fileinfo filter hash iconv intl json mbstring openssl \
 		pcre readline session xml xmlreader zlib
-IGNORE_WITH_PHP=80
 MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes

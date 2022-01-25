@@ -5,8 +5,8 @@ PORTVERSION=	${THEME_VERSION}.${THEME_BUILD}
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${THEME_VERSION}%20Beta/Build%20%23${THEME_BUILD}/
 PKGNAMEPREFIX=	roundcube-
-DISTNAME=	MobileCubeBeta%23${THEME_BUILD}
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+DISTNAME=	MobileCubeBeta%23${THEME_BUILD}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
@@ -17,12 +17,13 @@ THEME_VERSION?=	3.1.0
 THEME_BUILD?=	030110A
 
 USES=		php:flavors zip
-IGNORE_WITH_PHP=80 81
-NO_BUILD=	yes
+IGNORE_WITH_PHP=	81
+
+WWWDIR?=	${PREFIX}/www/roundcube/skins/MobileCube
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/MobileCubeBeta\#${THEME_BUILD}
-WWWDIR?=	${PREFIX}/www/roundcube/skins/MobileCube
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -or -name '.DS_Store' -delete

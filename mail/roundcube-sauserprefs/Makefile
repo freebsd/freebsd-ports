@@ -17,12 +17,12 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.8:mail/roundcube@${PHP_FLAVOR}
 
-USES=	php:flavors
-IGNORE_WITH_PHP=80 81
-NO_BUILD=	yes
-NO_ARCH=	yes
+USES=		php:flavors
+IGNORE_WITH_PHP=	81
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/sauserprefs
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}

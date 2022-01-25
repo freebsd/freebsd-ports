@@ -15,7 +15,7 @@ USES=		cpe gettext php tar:tgz
 CPE_VENDOR=	glpi-project
 USE_PHP=	bz2 ctype curl exif fileinfo gd iconv intl json mbstring \
 		mysqli opcache openssl session simplexml sodium xml xmlrpc zip zlib
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	81
 
 NO_ARCH=	yes
 NO_BUILD=	yes

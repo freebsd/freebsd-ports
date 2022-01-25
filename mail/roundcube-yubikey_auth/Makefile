@@ -15,19 +15,16 @@ BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=80 81
-
-USE_PHP=	curl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	northox
 GH_PROJECT=	roundcube-yubikey-plugin
 GH_TAGNAME=	383bbb3
-
-NO_BUILD=	yes
-NO_ARCH=	yes
+USE_PHP=	curl
+IGNORE_WITH_PHP=	81
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/roundcube_yubikey_authentication
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's/roundcube_yubikey_plugin/YubiKey OTP/g' \

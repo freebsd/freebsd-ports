@@ -23,7 +23,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_PHP=	curl dom simplexml sockets tokenizer xml xmlreader xmlwriter
-IGNORE_WITH_PHP=80 81
+IGNORE_WITH_PHP=81
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/carddav
 

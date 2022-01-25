@@ -16,15 +16,17 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.5:mail/roundcube@${PHP_FLAVOR}
 
-USES=	php:flavors
-IGNORE_WITH_PHP=80 81
-NO_BUILD=	yes
-NO_ARCH=	yes
+USES=		php:flavors
+IGNORE_WITH_PHP=	81
 
 WWWDIR=		${LOCALBASE}/www/roundcube
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/login_info
+
 PLUGDIR=	${WWWDIR}/plugins/login_info
 PLIST_SUB+=	PLUGDIR="www/roundcube/plugins/login_info"
-WRKSRC=		${WRKDIR}/login_info
 
 do-install:
 	@${ECHO} "Installing in ${PLUGDIR}"

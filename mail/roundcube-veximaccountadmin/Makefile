@@ -16,15 +16,17 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.9:mail/roundcube@${PHP_FLAVOR}
 
-USES=	php:flavors
-IGNORE_WITH_PHP=80 81
+USES=		php:flavors
+IGNORE_WITH_PHP=	81
+
+WWWDIR=		${PREFIX}/www/roundcube
+REINPLACE_ARGS=	-i ''
 NO_BUILD=	yes
 
-PLIST_SUB+=	PLUGINDIR="${PLUGINDIR}"
-WWWDIR=		${PREFIX}/www/roundcube
-PLUGINDIR=	${WWWDIR}/plugins/${PORTNAME}
 WRKSRC=		${WRKDIR}/veximaccountadmin
-REINPLACE_ARGS=-i ''
+
+PLIST_SUB+=	PLUGINDIR="${PLUGINDIR}"
+PLUGINDIR=	${WWWDIR}/plugins/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/new rcube_mdb2/new rcube_db/g' ${WRKSRC}/veximaccountadmin.php
