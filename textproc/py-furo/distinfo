@@ -1,3 +1,5 @@
-TIMESTAMP = 1642102353
+TIMESTAMP = 1643045828
 SHA256 (furo-2022.1.2.tar.gz) = b217f218cbcd423ffbfe69baa79389d4ecebf2d86f0d593c44ef31da7b5aed30
 SIZE (furo-2022.1.2.tar.gz) = 1659274
+SHA256 (furo-2022.1.2-static.tar.gz) = f6aa4ae25f7c4a8e91856c1312dab5c4fc4d25caea85f5c00827731aff5c0d64
+SIZE (furo-2022.1.2-static.tar.gz) = 38236

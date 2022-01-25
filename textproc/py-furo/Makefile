@@ -2,9 +2,13 @@
 
 PORTNAME=	furo
 PORTVERSION=	2022.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		LOCAL/sunpoet:static
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-static${EXTRACT_SUFX}:static
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Clean customizable Sphinx documentation theme
@@ -23,5 +27,8 @@ NO_ARCH=	yes
 
 post-patch:
 	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
+
+post-install:
+	cd ${WRKDIR}/static/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/furo/theme/furo/static/
 
 .include <bsd.port.mk>
