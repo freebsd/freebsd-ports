@@ -12,6 +12,10 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# https://groups.google.com/g/ansible-announce/c/kegIH5_okmg
+DEPRECATED=	Upstream support ceases
+EXPIRATION_DATE=	2022-05-23
+
 RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>0:devel/py-jmespath@${PY_FLAVOR} \
