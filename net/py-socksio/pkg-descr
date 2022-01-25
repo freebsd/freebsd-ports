@@ -1,0 +1,9 @@
+Client-side sans-I/O SOCKS proxy implementation. Supports SOCKS4, SOCKS4A, and
+SOCKS5.
+
+socksio is a sans-I/O library similar to h11 or h2, this means the library
+itself does not handle the actual sending of the bytes through the network, it
+only deals with the implementation details of the SOCKS protocols so you can use
+it in any I/O library you want.
+
+WWW: https://github.com/sethmlarson/socksio

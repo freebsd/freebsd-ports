@@ -1136,6 +1136,7 @@
     SUBDIR += py-smbprotocol
     SUBDIR += py-soap2py
     SUBDIR += py-socketio-client
+    SUBDIR += py-socksio
     SUBDIR += py-softlayer
     SUBDIR += py-speedtest-cli
     SUBDIR += py-sshtunnel
