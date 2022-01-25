@@ -1,21 +1,21 @@
 # Created by: Joris Dedieu <joris.dedieu@gmail.com>
 
 PORTNAME=	tinyows
-PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics www geography
 MASTER_SITES=	https://download.osgeo.org/mapserver/
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	High Performance WFS-T server
 
-DEPRECATED=	Depends on expired databases/postgis25
-EXPIRATION_DATE=2022-03-31
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		liblwgeom.so:databases/postgis25
+BUILD_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
+RUN_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
 
-USES=		pgsql tar:bzip2
+USES=		autoreconf pgsql
 
 GNU_CONFIGURE=	yes
 
