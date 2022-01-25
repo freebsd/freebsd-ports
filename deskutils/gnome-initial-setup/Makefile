@@ -6,6 +6,9 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	6423c28949f6.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/131
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	First boot setup tool for GNOME
 
