@@ -1,7 +1,6 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
-PORTREVISION=	1
+DISTVERSION=	1.16.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,19 +19,31 @@ LIB_DEPENDS=	libfeedback-0.0.so:accessibility/feedbackd \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		cargo compiler:c11 gettext-tools gnome meson pkgconfig
+USES=		cargo compiler:c11 gettext-tools gnome meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	23ae771605b8ef01c5313f75e3a736d84beefba4
+GL_COMMIT=	d49ce45de0956432cef9b957f806d9377fee4bc0
+SHEBANG_FILES=	tools/entry.py
 MAKE_ENV=	${CARGO_ENV}
 MESON_ARGS=	-Dstrict=false
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
 		bin/${PORTNAME}-test-layout \
 		share/applications/sm.puri.Squeekboard.desktop \
-		share/locale/de/LC_MESSAGES/${PORTNAME}.mo
+		share/locale/ca/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/fa/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/fi/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/fur/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/nl/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/ro/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/sl/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/uk/LC_MESSAGES/${PORTNAME}.mo \
+		${NULL}
 
 CARGO_CRATES=	atk-0.7.0 \
 		atk-sys-0.9.1 \
@@ -41,8 +52,7 @@ CARGO_CRATES=	atk-0.7.0 \
 		cairo-rs-0.7.1 \
 		cairo-sys-rs-0.9.2 \
 		cc-1.0.72 \
-		clap-2.33.3 \
-		dtoa-0.4.8 \
+		clap-2.33.4 \
 		fragile-0.3.0 \
 		gdk-0.11.0 \
 		gdk-pixbuf-0.7.0 \
@@ -56,23 +66,22 @@ CARGO_CRATES=	atk-0.7.0 \
 		gtk-0.7.0 \
 		gtk-sys-0.9.2 \
 		hashbrown-0.11.2 \
-		indexmap-1.7.0 \
+		indexmap-1.8.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.108 \
+		libc-0.2.113 \
 		linked-hash-map-0.5.4 \
 		maplit-1.0.2 \
 		memmap-0.7.0 \
 		pango-0.7.0 \
 		pango-sys-0.9.1 \
-		pkg-config-0.3.22 \
-		proc-macro2-1.0.32 \
-		quote-1.0.10 \
-		regex-1.3.9 \
-		regex-syntax-0.6.25 \
-		serde-1.0.130 \
-		serde_derive-1.0.130 \
-		serde_yaml-0.8.21 \
-		syn-1.0.82 \
+		pkg-config-0.3.24 \
+		proc-macro2-1.0.36 \
+		quote-1.0.15 \
+		ryu-1.0.9 \
+		serde-1.0.135 \
+		serde_derive-1.0.135 \
+		serde_yaml-0.8.23 \
+		syn-1.0.86 \
 		textwrap-0.11.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
