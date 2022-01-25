@@ -19,7 +19,7 @@
 #
 # GO_MODULE
 #	The name of the module as specified by "module" directive in go.mod.
-#	In most cases, this is the only requred variable for ports that
+#	In most cases, this is the only required variable for ports that
 #	use Go modules.
 #
 # GO_PKGNAME
