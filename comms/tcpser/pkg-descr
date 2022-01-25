@@ -5,4 +5,4 @@ Internet.  TCPSER supports all standard Hayes commands, and understands
 extended and vendor proprietary commands (though it does not implement
 many of them).  TCPSER can be used for both inbound and outbound connections.
 
-WWW: http://www.jbrain.com/pub/linux/serial/
+WWW: https://github.com/FozzTexx/tcpser
