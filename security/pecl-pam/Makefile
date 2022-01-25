@@ -1,7 +1,7 @@
 # Created by: wen@FreeBSD.org
 
 PORTNAME=	pam
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
