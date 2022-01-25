@@ -1,5 +1,5 @@
 PORTNAME=	azure-synapse-artifacts
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.5.0:net-mgmt/py-msrest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-core>=1.6.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}azure-core>=1.20.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
