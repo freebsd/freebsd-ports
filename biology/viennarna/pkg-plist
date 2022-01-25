@@ -27,6 +27,7 @@ bin/RNApvmin
 bin/RNAsnoop
 bin/RNAsubopt
 bin/RNAup
+bin/RNAmultifold
 bin/b2ct
 bin/ct2db
 bin/kinwalker
@@ -126,6 +127,7 @@ include/ViennaRNA/part_func_co.h
 include/ViennaRNA/part_func_up.h
 include/ViennaRNA/part_func_window.h
 include/ViennaRNA/perturbation_fold.h
+include/ViennaRNA/pf_multifold.h
 include/ViennaRNA/pk_plex.h
 include/ViennaRNA/plex.h
 include/ViennaRNA/plot_aln.h
@@ -153,6 +155,7 @@ include/ViennaRNA/stringdist.h
 include/ViennaRNA/structure_utils.h
 include/ViennaRNA/structured_domains.h
 include/ViennaRNA/subopt.h
+include/ViennaRNA/subopt_zuker.h
 include/ViennaRNA/svm.h
 include/ViennaRNA/svm_utils.h
 include/ViennaRNA/treedist.h
@@ -169,6 +172,7 @@ include/ViennaRNA/utils/svm.h
 include/ViennaRNA/utils/units.h
 include/ViennaRNA/vrna_config.h
 include/ViennaRNA/walk.h
+include/ViennaRNA/wrap_dlib.h
 include/ViennaRNA/zscore.h
 include/g2.h
 include/g2_FIG.h
@@ -197,6 +201,7 @@ man/man1/RNAforester.1.gz
 man/man1/RNAheat.1.gz
 man/man1/RNAinverse.1.gz
 man/man1/RNAlocmin.1.gz
+man/man1/RNAmultifold.1.gz
 man/man1/RNApaln.1.gz
 man/man1/RNAparconv.1.gz
 man/man1/RNApdist.1.gz

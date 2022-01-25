@@ -1,8 +1,7 @@
 PORTNAME=	viennarna
-DISTVERSION=	2.4.18
-PORTREVISION=	2
+DISTVERSION=	2.5.0
 CATEGORIES=	biology
-MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/
+MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_5_x/
 DISTNAME=	ViennaRNA-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
