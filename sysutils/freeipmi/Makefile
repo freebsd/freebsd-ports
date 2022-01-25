@@ -1,7 +1,7 @@
 # Created by: Dmitry Frolov <frol@nov.net>
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.9
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
