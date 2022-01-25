@@ -6,17 +6,17 @@ DISTFILES+=	v0.3.6${EXTRACT_SUFX}:builder \
 		v0.8.2${EXTRACT_SUFX}:xorm
 GH_TUPLE=	\
 		Azure:azure-sdk-for-go:v57.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
-		Azure:azure-sdk-for-go:bbf5386148eb:azure_azure_sdk_for_go_azcore \
-		Azure:azure-sdk-for-go:af32bacab1a2:azure_azure_sdk_for_go_azidentity \
-		Azure:azure-sdk-for-go:1eb47c16ddfd:azure_azure_sdk_for_go_internal \
+		Azure:azure-sdk-for-go:sdk/azcore/v0.19.0:azure_azure_sdk_for_go_sdk_azcore \
+		Azure:azure-sdk-for-go:sdk/azidentity/v0.10.0:azure_azure_sdk_for_go_sdk_azidentity \
+		Azure:azure-sdk-for-go:sdk/internal/v0.7.0:azure_azure_sdk_for_go_sdk_internal \
 		Azure:go-autorest:v14.2.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
-		Azure:go-autorest:3ddafdd73fe9:azure_go_autorest_autorest \
-		Azure:go-autorest:4e2e1bb52ffb:azure_go_autorest_autorest_adal \
-		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_autorest_date \
-		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_autorest_to \
-		Azure:go-autorest:446f41b7d65b:azure_go_autorest_autorest_validation \
-		Azure:go-autorest:820a319d2214:azure_go_autorest_logger \
-		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_tracing \
+		Azure:go-autorest:autorest/v0.11.20:azure_go_autorest_autorest \
+		Azure:go-autorest:autorest/adal/v0.9.15:azure_go_autorest_autorest_adal \
+		Azure:go-autorest:autorest/date/v0.3.0:azure_go_autorest_autorest_date \
+		Azure:go-autorest:autorest/to/v0.4.0:azure_go_autorest_autorest_to \
+		Azure:go-autorest:autorest/validation/v0.3.1:azure_go_autorest_autorest_validation \
+		Azure:go-autorest:logger/v0.2.1:azure_go_autorest_logger \
+		Azure:go-autorest:tracing/v0.6.0:azure_go_autorest_tracing \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		FZambia:eagle:v0.0.1:fzambia_eagle/vendor/github.com/FZambia/eagle \
 		FZambia:sentinel:v1.1.0:fzambia_sentinel/vendor/github.com/FZambia/sentinel \
@@ -122,6 +122,7 @@ GH_TUPLE=	\
 		googleapis:gax-go:v2.1.0:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.57.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.94.1:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:storage/v1.14.0:googleapis_google_cloud_go_storage \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gosimple:slug:v1.9.0:gosimple_slug/vendor/github.com/gosimple/slug \
@@ -225,7 +226,7 @@ GH_TUPLE=	\
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		teris-io:shortid:771a37caa5cf:teris_io_shortid/vendor/github.com/teris-io/shortid \
 		timberio:go-datemath:74ddef604fff:timberio_go_datemath/vendor/github.com/timberio/go-datemath \
-		ua-parser:uap-go:daf92ba38329:ua_parser_uap_go/vendor/github.com/ua-parser/uap-go \
+		ua-parser:uap-go:00c877edfe0f:ua_parser_uap_go/vendor/github.com/ua-parser/uap-go \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak \
 		uber:jaeger-client-go:v2.29.1:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
@@ -239,13 +240,13 @@ GH_TUPLE=	\
 		yudai:gojsondiff:v1.0.0:yudai_gojsondiff/vendor/github.com/yudai/gojsondiff \
 		yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs
 
-post-extract:
+deps-post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/azcore
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/azidentity
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/internal
-	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_azcore}/sdk/azcore ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/
-	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_azidentity}/sdk/azidentity ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/
-	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_internal}/sdk/internal ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/
+	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_sdk_azcore}/sdk/azcore ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/
+	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_sdk_azidentity}/sdk/azidentity ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/
+	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_sdk_internal}/sdk/internal ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/
 
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
@@ -262,7 +263,14 @@ post-extract:
 	@${RLN} ${WRKSRC_azure_go_autorest_autorest_to}/autorest/to ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/
 	@${RLN} ${WRKSRC_azure_go_autorest_autorest_validation}/autorest/validation ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/
 
+	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
+	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/
+
 	@${MKDIR} ${WRKSRC}/vendor/xorm.io
 	@${RLN} ${WRKDIR}/builder ${WRKSRC}/vendor/xorm.io/
 	@${RLN} ${WRKDIR}/core ${WRKSRC}/vendor/xorm.io/
 	@${RLN} ${WRKDIR}/xorm ${WRKSRC}/vendor/xorm.io/
+
+	@${RLN} ${WRKSRC}/pkg/macaron ${WRKSRC}/vendor/gopkg.in/macaron.v1
+	@${MKDIR} ${WRKSRC}/vendor/github.com/go-macaron
+	@${RLN} ${WRKSRC}/pkg/macaron/binding ${WRKSRC}/vendor/github.com/go-macaron/binding
