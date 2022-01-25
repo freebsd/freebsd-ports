@@ -1,21 +1,20 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.16
-DISTVERSIONPREFIX=	v
+DISTVERSION=	4.16
 CATEGORIES=	net security
+MASTER_SITES=	https://github.com/rofl0r/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		http://ftp.barfooze.de/pub/sabotage/tarballs/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:bzip2
-USE_GITHUB=	yes
-GH_ACCOUNT=	rofl0r
+USES=		gmake tar:xz
+HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-GNU_CONFIGURE=	yes
 
 CFLAGS+=	-DMONTEREY_HOOKING
 
