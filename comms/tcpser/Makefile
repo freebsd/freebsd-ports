@@ -9,15 +9,15 @@ COMMENT=	TCPSER turns serial port into an emulated Hayes compatible modem
 
 LICENSE=	GPLv2+
 
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	FozzTexx
 GH_TAGNAME=	95f4b51
 
 LDFLAGS+=	-pthread
-USES=		gmake
 
-PORTDOCS=	README.md CHANGES
 PLIST_FILES=	bin/tcpser
+PORTDOCS=	CHANGES README.md
 
 OPTIONS_DEFINE=	DOCS
 
