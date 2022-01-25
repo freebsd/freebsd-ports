@@ -2,6 +2,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libjson-c.so:devel/json-c \
 		libpng.so:graphics/png \
 		libproj.so:graphics/proj \
-		libqhull.so:math/qhull \
+		libqhull_r.so:math/qhull8 \
 		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	ARMADILLO CFITSIO CHARLS CRYPTOPP CURL DEFLATE DODS ECW EXPAT EXR FREEXL GEOS GTA HDF5 HEIF JASPER KML LERC LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PCRE2 PGSQL RASTERLITE2 SFCGAL SPATIALITE SQLITE TILEDB WEBP XERCES ZSTD
