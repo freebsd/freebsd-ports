@@ -1,7 +1,7 @@
 # Created by: Andrea Cervesato <andrea@cervesato.it>
 
 PORTNAME=	mod_qos
-DISTVERSION=	11.66
+DISTVERSION=	11.70
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-qos
 DIST_SUBDIR=	apache2
