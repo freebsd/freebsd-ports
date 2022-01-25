@@ -1,0 +1,13 @@
+ed25519.rb is a Ruby binding to the Ed25519 elliptic curve public-key signature
+system described in RFC 8032.
+
+Two implementations are provided: a MRI C extension which uses the "ref10"
+implementation from the SUPERCOP benchmark suite, and a pure Java version based
+on str4d/ed25519-java.
+
+Ed25519 is one of two notable algorithms implemented atop the Curve25519
+elliptic curve. The x25519 gem is a related project of this one, and implements
+the X25519 Diffie-Hellman key exchange algorithm on the Montgomery form of
+Curve25519.
+
+WWW: https://github.com/RubyCrypto/ed25519
