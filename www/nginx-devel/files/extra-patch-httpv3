@@ -1929,7 +1929,7 @@ diff --git a/src/event/quic/ngx_event_quic.c b/src/event/quic/ngx_event_quic.c
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic.c
-@@ -0,0 +1,1489 @@
+@@ -0,0 +1,1491 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -2063,8 +2063,8 @@ new file mode 100644
 +
 +    qc = ngx_quic_get_connection(c);
 +
-+    scid.data = qc->socket->cid->id;
-+    scid.len = qc->socket->cid->len;
++    scid.data = qc->path->cid->id;
++    scid.len = qc->path->cid->len;
 +
 +    if (scid.len != ctp->initial_scid.len
 +        || ngx_memcmp(scid.data, ctp->initial_scid.data, scid.len) != 0)
@@ -2305,7 +2305,7 @@ new file mode 100644
 +    {
 +        cid = ngx_queue_data(q, ngx_quic_client_id_t, queue);
 +
-+        if (cid->seqnum == 0 || cid->refcnt == 0) {
++        if (cid->seqnum == 0 || !cid->used) {
 +            /*
 +             * No stateless reset token in initial connection id.
 +             * Don't accept a token from an unused connection id.
@@ -2605,10 +2605,12 @@ new file mode 100644
 +    u_char                 *p, *start;
 +    ngx_int_t               rc;
 +    ngx_uint_t              good;
++    ngx_quic_path_t        *path;
 +    ngx_quic_header_t       pkt;
 +    ngx_quic_connection_t  *qc;
 +
 +    good = 0;
++    path = NULL;
 +
 +    size = b->last - b->pos;
 +
@@ -2622,6 +2624,7 @@ new file mode 100644
 +        pkt.len = b->last - p;
 +        pkt.log = c->log;
 +        pkt.first = (p == start) ? 1 : 0;
++        pkt.path = path;
 +        pkt.flags = p[0];
 +        pkt.raw->pos++;
 +
@@ -2651,6 +2654,8 @@ new file mode 100644
 +        if (rc == NGX_OK) {
 +            good = 1;
 +        }
++
++        path = pkt.path; /* preserve packet path from 1st packet */
 +
 +        /* NGX_OK || NGX_DECLINED */
 +
@@ -2757,14 +2762,15 @@ new file mode 100644
 +            }
 +
 +            if (pkt->first) {
-+                if (ngx_quic_find_path(c, c->udp->dgram->sockaddr,
-+                                       c->udp->dgram->socklen)
-+                    == NULL)
++                if (ngx_cmp_sockaddr(c->udp->dgram->sockaddr,
++                                     c->udp->dgram->socklen,
++                                     qc->path->sockaddr, qc->path->socklen, 1)
++                    != NGX_OK)
 +                {
 +                    /* packet comes from unknown path, possibly migration */
 +                    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, c->log, 0,
 +                                  "quic too early migration attempt");
-+                    return NGX_DECLINED;
++                    return NGX_DONE;
 +                }
 +            }
 +
@@ -2923,9 +2929,12 @@ new file mode 100644
 +
 +    pkt->decrypted = 1;
 +
-+    if (pkt->first) {
-+        if (ngx_quic_update_paths(c, pkt) != NGX_OK) {
-+            return NGX_ERROR;
++    c->log->action = "handling decrypted packet";
++
++    if (pkt->path == NULL) {
++        rc = ngx_quic_set_path(c, pkt);
++        if (rc != NGX_OK) {
++            return rc;
 +        }
 +    }
 +
@@ -2944,9 +2953,10 @@ new file mode 100644
 +         */
 +        ngx_quic_discard_ctx(c, ssl_encryption_initial);
 +
-+        if (qc->socket->path->state != NGX_QUIC_PATH_VALIDATED) {
-+            qc->socket->path->state = NGX_QUIC_PATH_VALIDATED;
-+            qc->socket->path->limited = 0;
++        if (!qc->path->validated) {
++            qc->path->validated = 1;
++            qc->path->limited = 0;
++            ngx_quic_path_dbg(c, "in handshake", qc->path);
 +            ngx_post_event(&qc->push, &ngx_posted_events);
 +        }
 +    }
@@ -3085,7 +3095,6 @@ new file mode 100644
 +    ngx_uint_t              do_close, nonprobing;
 +    ngx_chain_t             chain;
 +    ngx_quic_frame_t        frame;
-+    ngx_quic_socket_t      *qsock;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
@@ -3267,7 +3276,8 @@ new file mode 100644
 +
 +        case NGX_QUIC_FT_PATH_CHALLENGE:
 +
-+            if (ngx_quic_handle_path_challenge_frame(c, &frame.u.path_challenge)
++            if (ngx_quic_handle_path_challenge_frame(c, pkt,
++                                                     &frame.u.path_challenge)
 +                != NGX_OK)
 +            {
 +                return NGX_ERROR;
@@ -3326,26 +3336,18 @@ new file mode 100644
 +        ngx_quic_close_connection(c, NGX_OK);
 +    }
 +
-+    qsock = ngx_quic_get_socket(c);
++    if (pkt->path != qc->path && nonprobing) {
 +
-+    if (qsock != qc->socket) {
-+
-+        if (qsock->path != qc->socket->path && nonprobing) {
-+            /*
-+             * RFC 9000, 9.2.  Initiating Connection Migration
-+             *
-+             * An endpoint can migrate a connection to a new local
-+             * address by sending packets containing non-probing frames
-+             * from that address.
-+             */
-+            if (ngx_quic_handle_migration(c, pkt) != NGX_OK) {
-+                return NGX_ERROR;
-+            }
-+        }
 +        /*
-+         * else: packet arrived via non-default socket;
-+         *       no reason to change active path
++         * RFC 9000, 9.2.  Initiating Connection Migration
++         *
++         * An endpoint can migrate a connection to a new local
++         * address by sending packets containing non-probing frames
++         * from that address.
 +         */
++        if (ngx_quic_handle_migration(c, pkt) != NGX_OK) {
++            return NGX_ERROR;
++        }
 +    }
 +
 +    if (ngx_quic_ack_packet(c, pkt) != NGX_OK) {
@@ -3423,7 +3425,7 @@ diff --git a/src/event/quic/ngx_event_quic.h b/src/event/quic/ngx_event_quic.h
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic.h
-@@ -0,0 +1,87 @@
+@@ -0,0 +1,88 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -3466,6 +3468,7 @@ new file mode 100644
 +    size_t                     stream_buffer_size;
 +    ngx_uint_t                 max_concurrent_streams_bidi;
 +    ngx_uint_t                 max_concurrent_streams_uni;
++    ngx_uint_t                 active_connection_id_limit;
 +    ngx_int_t                  stream_close_code;
 +    ngx_int_t                  stream_reject_code_uni;
 +    ngx_int_t                  stream_reject_code_bidi;
@@ -5500,7 +5503,7 @@ diff --git a/src/event/quic/ngx_event_quic_connection.h b/src/event/quic/ngx_eve
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_connection.h
-@@ -0,0 +1,274 @@
+@@ -0,0 +1,272 @@
 +/*
 + * Copyright (C) Nginx, Inc.
 + */
@@ -5572,7 +5575,7 @@ new file mode 100644
 +    size_t                            len;
 +    u_char                            id[NGX_QUIC_CID_LEN_MAX];
 +    u_char                            sr_token[NGX_QUIC_SR_TOKEN_LEN];
-+    ngx_uint_t                        refcnt;
++    ngx_uint_t                        used;  /* unsigned  used:1; */
 +};
 +
 +
@@ -5586,20 +5589,22 @@ new file mode 100644
 +struct ngx_quic_path_s {
 +    ngx_queue_t                       queue;
 +    struct sockaddr                  *sockaddr;
++    ngx_sockaddr_t                    sa;
 +    socklen_t                         socklen;
-+    ngx_uint_t                        state;
-+    ngx_uint_t                        limited; /* unsigned  limited:1; */
++    ngx_quic_client_id_t             *cid;
 +    ngx_msec_t                        expires;
-+    ngx_msec_t                        last_seen;
 +    ngx_uint_t                        tries;
++    ngx_uint_t                        tag;
 +    off_t                             sent;
 +    off_t                             received;
 +    u_char                            challenge1[8];
 +    u_char                            challenge2[8];
-+    ngx_uint_t                        refcnt;
 +    uint64_t                          seqnum;
 +    ngx_str_t                         addr_text;
 +    u_char                            text[NGX_SOCKADDR_STRLEN];
++    unsigned                          validated:1;
++    unsigned                          validating:1;
++    unsigned                          limited:1;
 +};
 +
 +
@@ -5607,11 +5612,8 @@ new file mode 100644
 +    ngx_udp_connection_t              udp;
 +    ngx_quic_connection_t            *quic;
 +    ngx_queue_t                       queue;
-+
 +    ngx_quic_server_id_t              sid;
-+
-+    ngx_quic_path_t                  *path;
-+    ngx_quic_client_id_t             *cid;
++    ngx_uint_t                        used; /* unsigned  used:1; */
 +};
 +
 +
@@ -5687,8 +5689,7 @@ new file mode 100644
 +struct ngx_quic_connection_s {
 +    uint32_t                          version;
 +
-+    ngx_quic_socket_t                *socket;
-+    ngx_quic_socket_t                *backup;
++    ngx_quic_path_t                  *path;
 +
 +    ngx_queue_t                       sockets;
 +    ngx_queue_t                       paths;
@@ -5779,7 +5780,7 @@ diff --git a/src/event/quic/ngx_event_quic_connid.c b/src/event/quic/ngx_event_q
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_connid.c
-@@ -0,0 +1,613 @@
+@@ -0,0 +1,502 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -5797,13 +5798,10 @@ new file mode 100644
 +#if (NGX_QUIC_BPF)
 +static ngx_int_t ngx_quic_bpf_attach_id(ngx_connection_t *c, u_char *id);
 +#endif
-+static ngx_int_t ngx_quic_send_retire_connection_id(ngx_connection_t *c,
-+    uint64_t seqnum);
-+
++static ngx_int_t ngx_quic_retire_client_id(ngx_connection_t *c,
++    ngx_quic_client_id_t *cid);
 +static ngx_quic_client_id_t *ngx_quic_alloc_client_id(ngx_connection_t *c,
 +    ngx_quic_connection_t *qc);
-+static ngx_int_t ngx_quic_replace_retired_client_id(ngx_connection_t *c,
-+    ngx_quic_client_id_t *retired_cid);
 +static ngx_int_t ngx_quic_send_server_id(ngx_connection_t *c,
 +    ngx_quic_server_id_t *sid);
 +
@@ -5859,9 +5857,9 @@ new file mode 100644
 +ngx_quic_handle_new_connection_id_frame(ngx_connection_t *c,
 +    ngx_quic_new_conn_id_frame_t *f)
 +{
-+    uint64_t                seq;
 +    ngx_str_t               id;
 +    ngx_queue_t            *q;
++    ngx_quic_frame_t       *frame;
 +    ngx_quic_client_id_t   *cid, *item;
 +    ngx_quic_connection_t  *qc;
 +
@@ -5879,9 +5877,16 @@ new file mode 100644
 +         *  done so for that sequence number.
 +         */
 +
-+        if (ngx_quic_send_retire_connection_id(c, f->seqnum) != NGX_OK) {
++        frame = ngx_quic_alloc_frame(c);
++        if (frame == NULL) {
 +            return NGX_ERROR;
 +        }
++
++        frame->level = ssl_encryption_application;
++        frame->type = NGX_QUIC_FT_RETIRE_CONNECTION_ID;
++        frame->u.retire_cid.sequence_number = f->seqnum;
++
++        ngx_quic_queue_frame(qc, frame);
 +
 +        goto retire;
 +    }
@@ -5955,20 +5960,7 @@ new file mode 100644
 +            continue;
 +        }
 +
-+        /* this connection id must be retired */
-+        seq = cid->seqnum;
-+
-+        if (cid->refcnt) {
-+            /* we are going to retire client id which is in use */
-+            if (ngx_quic_replace_retired_client_id(c, cid) != NGX_OK) {
-+                return NGX_ERROR;
-+            }
-+
-+        } else {
-+            ngx_quic_unref_client_id(c, cid);
-+        }
-+
-+        if (ngx_quic_send_retire_connection_id(c, seq) != NGX_OK) {
++        if (ngx_quic_retire_client_id(c, cid) != NGX_OK) {
 +            return NGX_ERROR;
 +        }
 +    }
@@ -5995,25 +5987,47 @@ new file mode 100644
 +
 +
 +static ngx_int_t
-+ngx_quic_send_retire_connection_id(ngx_connection_t *c, uint64_t seqnum)
++ngx_quic_retire_client_id(ngx_connection_t *c, ngx_quic_client_id_t *cid)
 +{
-+    ngx_quic_frame_t       *frame;
++    ngx_queue_t            *q;
++    ngx_quic_path_t        *path;
++    ngx_quic_client_id_t   *new_cid;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
 +
-+    frame = ngx_quic_alloc_frame(c);
-+    if (frame == NULL) {
-+        return NGX_ERROR;
++    if (!cid->used) {
++        return ngx_quic_free_client_id(c, cid);
 +    }
 +
-+    frame->level = ssl_encryption_application;
-+    frame->type = NGX_QUIC_FT_RETIRE_CONNECTION_ID;
-+    frame->u.retire_cid.sequence_number = seqnum;
++    /* we are going to retire client id which is in use */
 +
-+    ngx_quic_queue_frame(qc, frame);
++    q = ngx_queue_head(&qc->paths);
 +
-+    /* we are no longer going to use this client id */
++    while (q != ngx_queue_sentinel(&qc->paths)) {
++
++        path = ngx_queue_data(q, ngx_quic_path_t, queue);
++        q = ngx_queue_next(q);
++
++        if (path->cid != cid) {
++            continue;
++        }
++
++        if (path == qc->path) {
++            /* this is the active path: update it with new CID */
++            new_cid = ngx_quic_next_client_id(c);
++            if (new_cid == NULL) {
++                return NGX_ERROR;
++            }
++
++            qc->path->cid = new_cid;
++            new_cid->used = 1;
++
++            return ngx_quic_free_client_id(c, cid);
++        }
++
++        return ngx_quic_free_path(c, path);
++    }
 +
 +    return NGX_OK;
 +}
@@ -6100,37 +6114,8 @@ new file mode 100644
 +    {
 +        cid = ngx_queue_data(q, ngx_quic_client_id_t, queue);
 +
-+        if (cid->refcnt == 0) {
++        if (!cid->used) {
 +            return cid;
-+        }
-+    }
-+
-+    return NULL;
-+}
-+
-+
-+ngx_quic_client_id_t *
-+ngx_quic_used_client_id(ngx_connection_t *c, ngx_quic_path_t *path)
-+{
-+    ngx_queue_t            *q;
-+    ngx_quic_socket_t      *qsock;
-+    ngx_quic_connection_t  *qc;
-+
-+    qc = ngx_quic_get_connection(c);
-+
-+    /* best guess: cid used by active path is good for us */
-+    if (qc->socket->path == path) {
-+        return qc->socket->cid;
-+    }
-+
-+    for (q = ngx_queue_head(&qc->sockets);
-+         q != ngx_queue_sentinel(&qc->sockets);
-+         q = ngx_queue_next(q))
-+    {
-+        qsock = ngx_queue_data(q, ngx_quic_socket_t, queue);
-+
-+        if (qsock->path && qsock->path == path) {
-+            return qsock->cid;
 +        }
 +    }
 +
@@ -6142,9 +6127,7 @@ new file mode 100644
 +ngx_quic_handle_retire_connection_id_frame(ngx_connection_t *c,
 +    ngx_quic_retire_cid_frame_t *f)
 +{
-+    ngx_quic_path_t        *path;
-+    ngx_quic_socket_t      *qsock, **tmp;
-+    ngx_quic_client_id_t   *cid;
++    ngx_quic_socket_t      *qsock;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
@@ -6190,76 +6173,14 @@ new file mode 100644
 +    ngx_log_debug1(NGX_LOG_DEBUG_EVENT, c->log, 0,
 +                   "quic socket #%uL is retired", qsock->sid.seqnum);
 +
-+    /* check if client is willing to retire sid we have in use */
-+    if (qsock->sid.seqnum == qc->socket->sid.seqnum) {
-+        tmp = &qc->socket;
-+
-+    } else if (qc->backup && qsock->sid.seqnum == qc->backup->sid.seqnum) {
-+        tmp = &qc->backup;
-+
-+    } else {
-+
-+        ngx_quic_close_socket(c, qsock);
-+
-+        /* restore socket count up to a limit after deletion */
-+        if (ngx_quic_create_sockets(c) != NGX_OK) {
-+            return NGX_ERROR;
-+        }
-+
-+        return NGX_OK;
-+    }
-+
-+    /* preserve path/cid from retired socket */
-+    path = qsock->path;
-+    cid = qsock->cid;
-+
-+    /* ensure that closing_socket will not drop path and cid */
-+    path->refcnt++;
-+    cid->refcnt++;
-+
 +    ngx_quic_close_socket(c, qsock);
-+
-+    /* restore original values */
-+    path->refcnt--;
-+    cid->refcnt--;
 +
 +    /* restore socket count up to a limit after deletion */
 +    if (ngx_quic_create_sockets(c) != NGX_OK) {
-+        goto failed;
++        return NGX_ERROR;
 +    }
-+
-+    qsock = ngx_quic_get_unconnected_socket(c);
-+    if (qsock == NULL) {
-+        qc->error = NGX_QUIC_ERR_CONNECTION_ID_LIMIT_ERROR;
-+        qc->error_reason = "not enough server IDs";
-+        goto failed;
-+    }
-+
-+    ngx_quic_connect(c, qsock, path, cid);
-+
-+    ngx_log_debug5(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic %s socket is now #%uL:%uL:%uL (%s)",
-+                   (*tmp) == qc->socket ? "active" : "backup",
-+                   qsock->sid.seqnum, qsock->cid->seqnum,
-+                   qsock->path->seqnum,
-+                   ngx_quic_path_state_str(qsock->path));
-+
-+    /* restore active/backup pointer in quic connection */
-+    *tmp = qsock;
 +
 +    return NGX_OK;
-+
-+failed:
-+
-+    /*
-+     * socket was closed, path and cid were preserved artifically
-+     * to be reused, but it didn't happen, thus unref here
-+     */
-+
-+    ngx_quic_unref_path(c, path);
-+    ngx_quic_unref_client_id(c, cid);
-+
-+    return NGX_ERROR;
 +}
 +
 +
@@ -6334,70 +6255,39 @@ new file mode 100644
 +}
 +
 +
-+static ngx_int_t
-+ngx_quic_replace_retired_client_id(ngx_connection_t *c,
-+    ngx_quic_client_id_t *retired_cid)
++ngx_int_t
++ngx_quic_free_client_id(ngx_connection_t *c, ngx_quic_client_id_t *cid)
 +{
-+    ngx_queue_t            *q;
-+    ngx_quic_socket_t      *qsock;
-+    ngx_quic_client_id_t   *cid;
++    ngx_quic_frame_t       *frame;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
 +
-+    for (q = ngx_queue_head(&qc->sockets);
-+         q != ngx_queue_sentinel(&qc->sockets);
-+         q = ngx_queue_next(q))
-+    {
-+        qsock = ngx_queue_data(q, ngx_quic_socket_t, queue);
-+
-+        if (qsock->cid == retired_cid) {
-+
-+            cid = ngx_quic_next_client_id(c);
-+            if (cid == NULL) {
-+                return NGX_ERROR;
-+            }
-+
-+            qsock->cid = cid;
-+            cid->refcnt++;
-+
-+            ngx_quic_unref_client_id(c, retired_cid);
-+
-+            if (retired_cid->refcnt == 0) {
-+                return NGX_OK;
-+            }
-+        }
++    frame = ngx_quic_alloc_frame(c);
++    if (frame == NULL) {
++        return NGX_ERROR;
 +    }
 +
-+    return NGX_OK;
-+}
++    frame->level = ssl_encryption_application;
++    frame->type = NGX_QUIC_FT_RETIRE_CONNECTION_ID;
++    frame->u.retire_cid.sequence_number = cid->seqnum;
 +
++    ngx_quic_queue_frame(qc, frame);
 +
-+void
-+ngx_quic_unref_client_id(ngx_connection_t *c, ngx_quic_client_id_t *cid)
-+{
-+    ngx_quic_connection_t  *qc;
-+
-+    if (cid->refcnt) {
-+        cid->refcnt--;
-+    } /* else: unused client id */
-+
-+    if (cid->refcnt) {
-+        return;
-+    }
-+
-+    qc = ngx_quic_get_connection(c);
++    /* we are no longer going to use this client id */
 +
 +    ngx_queue_remove(&cid->queue);
 +    ngx_queue_insert_head(&qc->free_client_ids, &cid->queue);
 +
 +    qc->nclient_ids--;
++
++    return NGX_OK;
 +}
 diff --git a/src/event/quic/ngx_event_quic_connid.h b/src/event/quic/ngx_event_quic_connid.h
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_connid.h
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,29 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -6423,16 +6313,15 @@ new file mode 100644
 +ngx_quic_client_id_t *ngx_quic_create_client_id(ngx_connection_t *c,
 +    ngx_str_t *id, uint64_t seqnum, u_char *token);
 +ngx_quic_client_id_t *ngx_quic_next_client_id(ngx_connection_t *c);
-+ngx_quic_client_id_t *ngx_quic_used_client_id(ngx_connection_t *c,
-+    ngx_quic_path_t *path);
-+void ngx_quic_unref_client_id(ngx_connection_t *c, ngx_quic_client_id_t *cid);
++ngx_int_t ngx_quic_free_client_id(ngx_connection_t *c,
++    ngx_quic_client_id_t *cid);
 +
 +#endif /* _NGX_EVENT_QUIC_CONNID_H_INCLUDED_ */
 diff --git a/src/event/quic/ngx_event_quic_frames.c b/src/event/quic/ngx_event_quic_frames.c
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_frames.c
-@@ -0,0 +1,811 @@
+@@ -0,0 +1,813 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -6971,14 +6860,16 @@ new file mode 100644
 +            continue;
 +        }
 +
-+        for (p = b->pos + offset; p != b->last && in; /* void */ ) {
++        p = b->pos + offset;
++
++        while (in) {
 +
 +            if (!ngx_buf_in_memory(in->buf) || in->buf->pos == in->buf->last) {
 +                in = in->next;
 +                continue;
 +            }
 +
-+            if (limit == 0) {
++            if (p == b->last || limit == 0) {
 +                break;
 +            }
 +
@@ -7295,7 +7186,7 @@ diff --git a/src/event/quic/ngx_event_quic_migration.c b/src/event/quic/ngx_even
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_migration.c
-@@ -0,0 +1,689 @@
+@@ -0,0 +1,672 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -7314,17 +7205,14 @@ new file mode 100644
 +    ngx_quic_path_t *path);
 +static ngx_int_t ngx_quic_send_path_challenge(ngx_connection_t *c,
 +    ngx_quic_path_t *path);
-+static ngx_int_t ngx_quic_path_restore(ngx_connection_t *c);
-+static ngx_quic_path_t *ngx_quic_alloc_path(ngx_connection_t *c);
++static ngx_quic_path_t *ngx_quic_get_path(ngx_connection_t *c, ngx_uint_t tag);
 +
 +
 +ngx_int_t
 +ngx_quic_handle_path_challenge_frame(ngx_connection_t *c,
-+    ngx_quic_path_challenge_frame_t *f)
++    ngx_quic_header_t *pkt, ngx_quic_path_challenge_frame_t *f)
 +{
-+    ngx_quic_path_t        *path;
 +    ngx_quic_frame_t        frame, *fp;
-+    ngx_quic_socket_t      *qsock;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
@@ -7341,18 +7229,16 @@ new file mode 100644
 +     * A PATH_RESPONSE frame MUST be sent on the network path where the
 +     * PATH_CHALLENGE frame was received.
 +     */
-+    qsock = ngx_quic_get_socket(c);
-+    path = qsock->path;
 +
 +    /*
 +     * An endpoint MUST expand datagrams that contain a PATH_RESPONSE frame
 +     * to at least the smallest allowed maximum datagram size of 1200 bytes.
 +     */
-+    if (ngx_quic_frame_sendto(c, &frame, 1200, path) != NGX_OK) {
++    if (ngx_quic_frame_sendto(c, &frame, 1200, pkt->path) != NGX_OK) {
 +        return NGX_ERROR;
 +    }
 +
-+    if (qsock == qc->socket) {
++    if (pkt->path == qc->path) {
 +        /*
 +         * RFC 9000, 9.3.3.  Off-Path Packet Forwarding
 +         *
@@ -7399,7 +7285,7 @@ new file mode 100644
 +    {
 +        path = ngx_queue_data(q, ngx_quic_path_t, queue);
 +
-+        if (path->state != NGX_QUIC_PATH_VALIDATING) {
++        if (!path->validating) {
 +            continue;
 +        }
 +
@@ -7410,7 +7296,7 @@ new file mode 100644
 +        }
 +    }
 +
-+    ngx_log_error(NGX_LOG_INFO, c->log, 0,
++    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, c->log, 0,
 +                  "quic stale PATH_RESPONSE ignored");
 +
 +    return NGX_OK;
@@ -7428,8 +7314,9 @@ new file mode 100644
 +
 +    rst = 1;
 +
-+    if (qc->backup) {
-+        prev = qc->backup->path;
++    prev = ngx_quic_get_path(c, NGX_QUIC_PATH_BACKUP);
++
++    if (prev != NULL) {
 +
 +        if (ngx_cmp_sockaddr(prev->sockaddr, prev->socklen,
 +                             path->sockaddr, path->socklen, 0)
@@ -7462,20 +7349,24 @@ new file mode 100644
 +    }
 +
 +    ngx_log_error(NGX_LOG_INFO, c->log, 0,
-+                   "quic path #%uL successfully validated", path->seqnum);
++                  "quic path #%uL addr:%V successfully validated",
++                  path->seqnum, &path->addr_text);
 +
-+    path->state = NGX_QUIC_PATH_VALIDATED;
++    ngx_quic_path_dbg(c, "is validated", path);
++
++    path->validated = 1;
++    path->validating = 0;
 +    path->limited = 0;
 +
 +    return NGX_OK;
 +}
 +
 +
-+static ngx_quic_path_t *
-+ngx_quic_alloc_path(ngx_connection_t *c)
++ngx_quic_path_t *
++ngx_quic_new_path(ngx_connection_t *c,
++    struct sockaddr *sockaddr, socklen_t socklen, ngx_quic_client_id_t *cid)
 +{
 +    ngx_queue_t            *q;
-+    struct sockaddr        *sa;
 +    ngx_quic_path_t        *path;
 +    ngx_quic_connection_t  *qc;
 +
@@ -7488,9 +7379,7 @@ new file mode 100644
 +
 +        ngx_queue_remove(&path->queue);
 +
-+        sa = path->sockaddr;
 +        ngx_memzero(path, sizeof(ngx_quic_path_t));
-+        path->sockaddr = sa;
 +
 +    } else {
 +
@@ -7498,37 +7387,18 @@ new file mode 100644
 +        if (path == NULL) {
 +            return NULL;
 +        }
-+
-+        path->sockaddr = ngx_palloc(c->pool, NGX_SOCKADDRLEN);
-+        if (path->sockaddr == NULL) {
-+            return NULL;
-+        }
 +    }
 +
-+    return path;
-+}
++    ngx_queue_insert_tail(&qc->paths, &path->queue);
 +
++    path->cid = cid;
++    cid->used = 1;
 +
-+ngx_quic_path_t *
-+ngx_quic_add_path(ngx_connection_t *c, struct sockaddr *sockaddr,
-+    socklen_t socklen)
-+{
-+    ngx_quic_path_t        *path;
-+    ngx_quic_connection_t  *qc;
-+
-+    qc = ngx_quic_get_connection(c);
-+
-+    path = ngx_quic_alloc_path(c);
-+    if (path == NULL) {
-+        return NULL;
-+    }
-+
-+    path->state = NGX_QUIC_PATH_NEW;
 +    path->limited = 1;
 +
 +    path->seqnum = qc->path_seqnum++;
-+    path->last_seen = ngx_current_msec;
 +
++    path->sockaddr = &path->sa.sockaddr;
 +    path->socklen = socklen;
 +    ngx_memcpy(path->sockaddr, sockaddr, socklen);
 +
@@ -7536,19 +7406,15 @@ new file mode 100644
 +    path->addr_text.len = ngx_sock_ntop(sockaddr, socklen, path->text,
 +                                        NGX_SOCKADDR_STRLEN, 1);
 +
-+    ngx_queue_insert_tail(&qc->paths, &path->queue);
-+
 +    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic path #%uL created src:%V",
++                   "quic path #%uL created addr:%V",
 +                   path->seqnum, &path->addr_text);
-+
 +    return path;
 +}
 +
 +
-+ngx_quic_path_t *
-+ngx_quic_find_path(ngx_connection_t *c, struct sockaddr *sockaddr,
-+    socklen_t socklen)
++static ngx_quic_path_t *
++ngx_quic_get_path(ngx_connection_t *c, ngx_uint_t tag)
 +{
 +    ngx_queue_t            *q;
 +    ngx_quic_path_t        *path;
@@ -7562,10 +7428,7 @@ new file mode 100644
 +    {
 +        path = ngx_queue_data(q, ngx_quic_path_t, queue);
 +
-+        if (ngx_cmp_sockaddr(sockaddr, socklen,
-+                             path->sockaddr, path->socklen, 1)
-+            == NGX_OK)
-+        {
++        if (path->tag == tag) {
 +            return path;
 +        }
 +    }
@@ -7575,83 +7438,92 @@ new file mode 100644
 +
 +
 +ngx_int_t
-+ngx_quic_update_paths(ngx_connection_t *c, ngx_quic_header_t *pkt)
++ngx_quic_set_path(ngx_connection_t *c, ngx_quic_header_t *pkt)
 +{
 +    off_t                   len;
-+    ngx_quic_path_t        *path;
++    ngx_queue_t            *q;
++    ngx_quic_path_t        *path, *probe;
 +    ngx_quic_socket_t      *qsock;
++    ngx_quic_send_ctx_t    *ctx;
 +    ngx_quic_client_id_t   *cid;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
 +    qsock = ngx_quic_get_socket(c);
 +
++    len = pkt->raw->last - pkt->raw->start;
++
 +    if (c->udp->dgram == NULL) {
-+        /* 1st ever packet in connection, path already exists */
-+        path = qsock->path;
++        /* first ever packet in connection, path already exists  */
++        path = qc->path;
 +        goto update;
 +    }
 +
-+    path = ngx_quic_find_path(c, c->udp->dgram->sockaddr,
-+                              c->udp->dgram->socklen);
++    probe = NULL;
 +
-+    if (path == NULL) {
-+        path = ngx_quic_add_path(c, c->udp->dgram->sockaddr,
-+                                 c->udp->dgram->socklen);
-+        if (path == NULL) {
-+            return NGX_ERROR;
-+        }
++    for (q = ngx_queue_head(&qc->paths);
++         q != ngx_queue_sentinel(&qc->paths);
++         q = ngx_queue_next(q))
++    {
++        path = ngx_queue_data(q, ngx_quic_path_t, queue);
 +
-+        if (qsock->path) {
-+            /* NAT rebinding case: packet to same CID, but from new address */
-+
-+            ngx_quic_unref_path(c, qsock->path);
-+
-+            qsock->path = path;
-+            path->refcnt++;
-+
++        if (ngx_cmp_sockaddr(c->udp->dgram->sockaddr, c->udp->dgram->socklen,
++                             path->sockaddr, path->socklen, 1)
++            == NGX_OK)
++        {
 +            goto update;
 +        }
 +
-+    } else if (qsock->path) {
-+        goto update;
-+    }
-+
-+    /* prefer unused client IDs if available */
-+    cid = ngx_quic_next_client_id(c);
-+    if (cid == NULL) {
-+
-+        /* try to reuse connection ID used on the same path */
-+        cid = ngx_quic_used_client_id(c, path);
-+        if (cid == NULL) {
-+
-+            qc->error = NGX_QUIC_ERR_CONNECTION_ID_LIMIT_ERROR;
-+            qc->error_reason = "no available client ids for new path";
-+
-+            ngx_log_error(NGX_LOG_ERR, c->log, 0,
-+                          "no available client ids for new path");
-+
-+            return NGX_ERROR;
++        if (path->tag == NGX_QUIC_PATH_PROBE) {
++            probe = path;
 +        }
 +    }
 +
-+    ngx_quic_connect(c, qsock, path, cid);
++    /* packet from new path, drop current probe, if any */
++
++    ctx = ngx_quic_get_send_ctx(qc, pkt->level);
++
++    /*
++     * only accept highest-numbered packets to prevent connection id
++     * exhaustion by excessive probing packets from unknown paths
++     */
++    if (pkt->pn != ctx->largest_pn) {
++        return NGX_DONE;
++    }
++
++    if (probe && ngx_quic_free_path(c, probe) != NGX_OK) {
++        return NGX_ERROR;
++    }
++
++    /* new path requires new client id */
++    cid = ngx_quic_next_client_id(c);
++    if (cid == NULL) {
++        ngx_log_error(NGX_LOG_ERR, c->log, 0,
++                      "quic no available client ids for new path");
++        /* stop processing of this datagram */
++        return NGX_DONE;
++    }
++
++    path = ngx_quic_new_path(c, c->udp->dgram->sockaddr,
++                             c->udp->dgram->socklen, cid);
++    if (path == NULL) {
++        return NGX_ERROR;
++    }
++
++    path->tag = NGX_QUIC_PATH_PROBE;
++
++    /*
++     * client arrived using new path and previously seen DCID,
++     * this indicates NAT rebinding (or bad client)
++     */
++    if (qsock->used) {
++        pkt->rebound = 1;
++    }
 +
 +update:
 +
-+    if (path->state != NGX_QUIC_PATH_NEW) {
-+        /* force limits/revalidation for paths that were not seen recently */
-+        if (ngx_current_msec - path->last_seen > qc->tp.max_idle_timeout) {
-+            path->state = NGX_QUIC_PATH_NEW;
-+            path->limited = 1;
-+            path->sent = 0;
-+            path->received = 0;
-+        }
-+    }
-+
-+    path->last_seen = ngx_current_msec;
-+
-+    len = pkt->raw->last - pkt->raw->start;
++    qsock->used = 1;
++    pkt->path = path;
 +
 +    /* TODO: this may be too late in some cases;
 +     *       for example, if error happens during decrypt(), we cannot
@@ -7662,11 +7534,38 @@ new file mode 100644
 +     */
 +    path->received += len;
 +
-+    ngx_log_debug7(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic packet via #%uL:%uL:%uL"
-+                   " size:%O path recvd:%O sent:%O limited:%ui",
-+                   qsock->sid.seqnum, qsock->cid->seqnum, path->seqnum,
-+                   len, path->received, path->sent, path->limited);
++    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, c->log, 0,
++                   "quic packet len:%O via sock#%uL path#%uL",
++                   len, qsock->sid.seqnum, path->seqnum);
++    ngx_quic_path_dbg(c, "status", path);
++
++    return NGX_OK;
++}
++
++
++ngx_int_t
++ngx_quic_free_path(ngx_connection_t *c, ngx_quic_path_t *path)
++{
++    ngx_quic_connection_t  *qc;
++
++    qc = ngx_quic_get_connection(c);
++
++    ngx_queue_remove(&path->queue);
++    ngx_queue_insert_head(&qc->free_paths, &path->queue);
++
++    /*
++     * invalidate CID that is no longer usable for any other path;
++     * this also requests new CIDs from client
++     */
++    if (path->cid) {
++        if (ngx_quic_free_client_id(c, path->cid) != NGX_OK) {
++            return NGX_ERROR;
++        }
++    }
++
++    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
++                   "quic path #%uL addr:%V retired",
++                   path->seqnum, &path->addr_text);
 +
 +    return NGX_OK;
 +}
@@ -7696,34 +7595,13 @@ new file mode 100644
 +ngx_int_t
 +ngx_quic_handle_migration(ngx_connection_t *c, ngx_quic_header_t *pkt)
 +{
-+    ngx_quic_path_t        *next;
-+    ngx_quic_socket_t      *qsock;
++    ngx_quic_path_t        *next, *bkp;
 +    ngx_quic_send_ctx_t    *ctx;
 +    ngx_quic_connection_t  *qc;
 +
-+    /* got non-probing packet via non-active socket with different path */
++    /* got non-probing packet via non-active path */
 +
 +    qc = ngx_quic_get_connection(c);
-+
-+    /* current socket, different from active */
-+    qsock = ngx_quic_get_socket(c);
-+
-+    next = qsock->path; /* going to migrate to this path... */
-+
-+    ngx_log_error(NGX_LOG_INFO, c->log, 0,
-+                   "quic migration from #%uL:%uL:%uL (%s)"
-+                   " to #%uL:%uL:%uL (%s)",
-+                   qc->socket->sid.seqnum, qc->socket->cid->seqnum,
-+                   qc->socket->path->seqnum,
-+                   ngx_quic_path_state_str(qc->socket->path),
-+                   qsock->sid.seqnum, qsock->cid->seqnum, next->seqnum,
-+                   ngx_quic_path_state_str(next));
-+
-+    if (next->state == NGX_QUIC_PATH_NEW) {
-+        if (ngx_quic_validate_path(c, qsock->path) != NGX_OK) {
-+            return NGX_ERROR;
-+        }
-+    }
 +
 +    ctx = ngx_quic_get_send_ctx(qc, pkt->level);
 +
@@ -7737,39 +7615,59 @@ new file mode 100644
 +        return NGX_OK;
 +    }
 +
-+    /* switching connection to new path */
++    next = pkt->path;
++
++    /*
++     * RFC 9000, 9.3.3:
++     *
++     * In response to an apparent migration, endpoints MUST validate the
++     * previously active path using a PATH_CHALLENGE frame.
++     */
++    if (pkt->rebound) {
++
++        /* NAT rebinding: client uses new path with old SID */
++        if (ngx_quic_validate_path(c, qc->path) != NGX_OK) {
++            return NGX_ERROR;
++        }
++    }
++
++    if (qc->path->validated) {
++
++        if (next->tag != NGX_QUIC_PATH_BACKUP) {
++            /* can delete backup path, if any */
++            bkp = ngx_quic_get_path(c, NGX_QUIC_PATH_BACKUP);
++
++            if (bkp && ngx_quic_free_path(c, bkp) != NGX_OK) {
++                return NGX_ERROR;
++            }
++        }
++
++        qc->path->tag = NGX_QUIC_PATH_BACKUP;
++        ngx_quic_path_dbg(c, "is now backup", qc->path);
++
++    } else {
++        if (ngx_quic_free_path(c, qc->path) != NGX_OK) {
++            return NGX_ERROR;
++        }
++    }
++
++    /* switch active path to migrated */
++    qc->path = next;
++    qc->path->tag = NGX_QUIC_PATH_ACTIVE;
 +
 +    ngx_quic_set_connection_path(c, next);
 +
-+    /*
-+     * RFC 9000, 9.5.  Privacy Implications of Connection Migration
-+     *
-+     * An endpoint MUST NOT reuse a connection ID when sending to
-+     * more than one destination address.
-+     */
-+
-+    /* preserve valid path we are migrating from */
-+    if (qc->socket->path->state == NGX_QUIC_PATH_VALIDATED) {
-+
-+        if (qc->backup) {
-+            ngx_quic_close_socket(c, qc->backup);
++    if (!next->validated && !next->validating) {
++        if (ngx_quic_validate_path(c, next) != NGX_OK) {
++            return NGX_ERROR;
 +        }
-+
-+        qc->backup = qc->socket;
-+
-+        ngx_log_error(NGX_LOG_INFO, c->log, 0,
-+                   "quic backup socket is now #%uL:%uL:%uL (%s)",
-+                   qc->backup->sid.seqnum, qc->backup->cid->seqnum,
-+                   qc->backup->path->seqnum,
-+                   ngx_quic_path_state_str(qc->backup->path));
 +    }
 +
-+    qc->socket = qsock;
-+
 +    ngx_log_error(NGX_LOG_INFO, c->log, 0,
-+                   "quic active socket is now #%uL:%uL:%uL (%s)",
-+                   qsock->sid.seqnum, qsock->cid->seqnum,
-+                   qsock->path->seqnum, ngx_quic_path_state_str(qsock->path));
++                  "quic migrated to path#%uL addr:%V",
++                  qc->path->seqnum, &qc->path->addr_text);
++
++    ngx_quic_path_dbg(c, "is now active", qc->path);
 +
 +    return NGX_OK;
 +}
@@ -7785,10 +7683,9 @@ new file mode 100644
 +    qc = ngx_quic_get_connection(c);
 +
 +    ngx_log_debug1(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic initiated validation of new path #%uL",
-+                   path->seqnum);
++                   "quic initiated validation of path #%uL", path->seqnum);
 +
-+    path->state = NGX_QUIC_PATH_VALIDATING;
++    path->validating = 1;
 +
 +    if (RAND_bytes(path->challenge1, 8) != 1) {
 +        return NGX_ERROR;
@@ -7822,7 +7719,7 @@ new file mode 100644
 +    ngx_quic_frame_t  frame;
 +
 +    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic path #%uL send path challenge tries:%ui",
++                   "quic path #%uL send path_challenge tries:%ui",
 +                   path->seqnum, path->tries);
 +
 +    ngx_memzero(&frame, sizeof(ngx_quic_frame_t));
@@ -7862,7 +7759,7 @@ new file mode 100644
 +    ngx_msec_t              now;
 +    ngx_queue_t            *q;
 +    ngx_msec_int_t          left, next, pto;
-+    ngx_quic_path_t        *path;
++    ngx_quic_path_t        *path, *bkp;
 +    ngx_connection_t       *c;
 +    ngx_quic_send_ctx_t    *ctx;
 +    ngx_quic_connection_t  *qc;
@@ -7876,13 +7773,14 @@ new file mode 100644
 +    next = -1;
 +    now = ngx_current_msec;
 +
-+    for (q = ngx_queue_head(&qc->paths);
-+         q != ngx_queue_sentinel(&qc->paths);
-+         q = ngx_queue_next(q))
-+    {
-+        path = ngx_queue_data(q, ngx_quic_path_t, queue);
++    q = ngx_queue_head(&qc->paths);
 +
-+        if (path->state != NGX_QUIC_PATH_VALIDATING) {
++    while (q != ngx_queue_sentinel(&qc->paths)) {
++
++        path = ngx_queue_data(q, ngx_quic_path_t, queue);
++        q = ngx_queue_next(q);
++
++        if (!path->validating) {
 +            continue;
 +        }
 +
@@ -7891,7 +7789,7 @@ new file mode 100644
 +        if (left > 0) {
 +
 +            if (next == -1 || left < next) {
-+                next = path->expires;
++                next = left;
 +            }
 +
 +            continue;
@@ -7915,26 +7813,43 @@ new file mode 100644
 +
 +        /* found expired path */
 +
-+        path->state = NGX_QUIC_PATH_NEW;
++        path->validated = 0;
++        path->validating = 0;
 +        path->limited = 1;
 +
-+        /*
-+         * RFC 9000, 9.4.  Loss Detection and Congestion Control
++
++        /* RFC 9000, 9.3.2.  On-Path Address Spoofing
 +         *
-+         * If the timer fires before the PATH_RESPONSE is received, the
-+         * endpoint might send a new PATH_CHALLENGE and restart the timer for
-+         * a longer period of time.  This timer SHOULD be set as described in
-+         * Section 6.2.1 of [QUIC-RECOVERY] and MUST NOT be more aggressive.
++         * To protect the connection from failing due to such a spurious
++         * migration, an endpoint MUST revert to using the last validated
++         * peer address when validation of a new peer address fails.
 +         */
 +
-+        if (qc->socket->path != path) {
-+            /* the path was not actually used */
-+            continue;
++        if (qc->path == path) {
++            /* active path validation failed */
++
++            bkp = ngx_quic_get_path(c, NGX_QUIC_PATH_BACKUP);
++
++            if (bkp == NULL) {
++                qc->error = NGX_QUIC_ERR_NO_VIABLE_PATH;
++                qc->error_reason = "no viable path";
++                ngx_quic_close_connection(c, NGX_ERROR);
++                return;
++            }
++
++            qc->path = bkp;
++            qc->path->tag = NGX_QUIC_PATH_ACTIVE;
++
++            ngx_quic_set_connection_path(c, qc->path);
++
++            ngx_log_error(NGX_LOG_INFO, c->log, 0,
++                          "quic path #%uL addr:%V is restored from backup",
++                          qc->path->seqnum, &qc->path->addr_text);
++
++            ngx_quic_path_dbg(c, "is active", qc->path);
 +        }
 +
-+        if (ngx_quic_path_restore(c) != NGX_OK) {
-+            qc->error = NGX_QUIC_ERR_NO_VIABLE_PATH;
-+            qc->error_reason = "no viable path";
++        if (ngx_quic_free_path(c, path) != NGX_OK) {
 +            ngx_quic_close_connection(c, NGX_ERROR);
 +            return;
 +        }
@@ -7943,47 +7858,6 @@ new file mode 100644
 +    if (next != -1) {
 +        ngx_add_timer(&qc->path_validation, next);
 +    }
-+}
-+
-+
-+static ngx_int_t
-+ngx_quic_path_restore(ngx_connection_t *c)
-+{
-+    ngx_quic_socket_t      *qsock;
-+    ngx_quic_connection_t  *qc;
-+
-+    qc = ngx_quic_get_connection(c);
-+
-+    /*
-+     * RFC 9000, 9.1.  Probing a New Path
-+     *
-+     * Failure to validate a path does not cause the connection to end
-+     *
-+     * RFC 9000, 9.3.2.  On-Path Address Spoofing
-+     *
-+     * To protect the connection from failing due to such a spurious
-+     * migration, an endpoint MUST revert to using the last validated
-+     * peer address when validation of a new peer address fails.
-+     */
-+
-+    if (qc->backup == NULL) {
-+        return NGX_ERROR;
-+    }
-+
-+    qc->socket = qc->backup;
-+    qc->backup = NULL;
-+
-+    qsock = qc->socket;
-+
-+    ngx_log_error(NGX_LOG_INFO, c->log, 0,
-+                   "quic active socket is restored to #%uL:%uL:%uL"
-+                   " (%s), no backup",
-+                   qsock->sid.seqnum, qsock->cid->seqnum, qsock->path->seqnum,
-+                   ngx_quic_path_state_str(qsock->path));
-+
-+    ngx_quic_set_connection_path(c, qsock->path);
-+
-+    return NGX_OK;
 +}
 diff --git a/src/event/quic/ngx_event_quic_migration.h b/src/event/quic/ngx_event_quic_migration.h
 new file mode 100644
@@ -8003,29 +7877,29 @@ new file mode 100644
 +#include <ngx_config.h>
 +#include <ngx_core.h>
 +
-+#define NGX_QUIC_PATH_RETRIES          3
++#define NGX_QUIC_PATH_RETRIES   3
 +
-+#define NGX_QUIC_PATH_NEW              0
-+#define NGX_QUIC_PATH_VALIDATING       1
-+#define NGX_QUIC_PATH_VALIDATED        2
++#define NGX_QUIC_PATH_PROBE     0
++#define NGX_QUIC_PATH_ACTIVE    1
++#define NGX_QUIC_PATH_BACKUP    2
 +
-+
-+#define ngx_quic_path_state_str(p)                                            \
-+    ((p)->state == NGX_QUIC_PATH_NEW) ? "new" :                               \
-+        (((p)->state == NGX_QUIC_PATH_VALIDATED) ? "validated" : "validating")
-+
++#define ngx_quic_path_dbg(c, msg, path)                                       \
++    ngx_log_debug7(NGX_LOG_DEBUG_EVENT, c->log, 0,                            \
++                   "quic path#%uL %s sent:%O recvd:%O state:%s%s%s",          \
++                   path->seqnum, msg, path->sent, path->received,             \
++                   path->limited ? "L" : "", path->validated ? "V": "N",      \
++                   path->validating ? "R": "");
 +
 +ngx_int_t ngx_quic_handle_path_challenge_frame(ngx_connection_t *c,
-+    ngx_quic_path_challenge_frame_t *f);
++    ngx_quic_header_t *pkt, ngx_quic_path_challenge_frame_t *f);
 +ngx_int_t ngx_quic_handle_path_response_frame(ngx_connection_t *c,
 +    ngx_quic_path_challenge_frame_t *f);
 +
-+ngx_quic_path_t *ngx_quic_find_path(ngx_connection_t *c,
-+    struct sockaddr *sockaddr, socklen_t socklen);
-+ngx_quic_path_t *ngx_quic_add_path(ngx_connection_t *c,
-+    struct sockaddr *sockaddr, socklen_t socklen);
++ngx_quic_path_t *ngx_quic_new_path(ngx_connection_t *c,
++    struct sockaddr *sockaddr, socklen_t socklen, ngx_quic_client_id_t *cid);
++ngx_int_t ngx_quic_free_path(ngx_connection_t *c, ngx_quic_path_t *path);
 +
-+ngx_int_t ngx_quic_update_paths(ngx_connection_t *c, ngx_quic_header_t *pkt);
++ngx_int_t ngx_quic_set_path(ngx_connection_t *c, ngx_quic_header_t *pkt);
 +ngx_int_t ngx_quic_handle_migration(ngx_connection_t *c,
 +    ngx_quic_header_t *pkt);
 +
@@ -8036,7 +7910,7 @@ diff --git a/src/event/quic/ngx_event_quic_output.c b/src/event/quic/ngx_event_q
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_output.c
-@@ -0,0 +1,1270 @@
+@@ -0,0 +1,1273 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -8090,7 +7964,7 @@ new file mode 100644
 +static ssize_t ngx_quic_output_packet(ngx_connection_t *c,
 +    ngx_quic_send_ctx_t *ctx, u_char *data, size_t max, size_t min);
 +static void ngx_quic_init_packet(ngx_connection_t *c, ngx_quic_send_ctx_t *ctx,
-+    ngx_quic_header_t *pkt);
++    ngx_quic_header_t *pkt, ngx_quic_path_t *path);
 +static ngx_uint_t ngx_quic_get_padding_level(ngx_connection_t *c);
 +static ssize_t ngx_quic_send(ngx_connection_t *c, u_char *buf, size_t len,
 +    struct sockaddr *sockaddr, socklen_t socklen);
@@ -8170,7 +8044,7 @@ new file mode 100644
 +
 +    qc = ngx_quic_get_connection(c);
 +    cg = &qc->congestion;
-+    path = qc->socket->path;
++    path = qc->path;
 +
 +    while (cg->in_flight < cg->window) {
 +
@@ -8308,7 +8182,7 @@ new file mode 100644
 +        return 0;
 +    }
 +
-+    if (qc->socket->path->limited) {
++    if (qc->path->limited) {
 +        /* don't even try to be faster on non-validated paths */
 +        return 0;
 +    }
@@ -8364,7 +8238,7 @@ new file mode 100644
 +
 +    qc = ngx_quic_get_connection(c);
 +    cg = &qc->congestion;
-+    path = qc->socket->path;
++    path = qc->path;
 +
 +    ctx = ngx_quic_get_send_ctx(qc, ssl_encryption_application);
 +
@@ -8544,17 +8418,18 @@ new file mode 100644
 +ngx_quic_output_packet(ngx_connection_t *c, ngx_quic_send_ctx_t *ctx,
 +    u_char *data, size_t max, size_t min)
 +{
-+    size_t              len, pad, min_payload, max_payload;
-+    u_char             *p;
-+    ssize_t             flen;
-+    ngx_str_t           res;
-+    ngx_int_t           rc;
-+    ngx_uint_t          nframes, expand;
-+    ngx_msec_t          now;
-+    ngx_queue_t        *q;
-+    ngx_quic_frame_t   *f;
-+    ngx_quic_header_t   pkt;
-+    static u_char       src[NGX_QUIC_MAX_UDP_PAYLOAD_SIZE];
++    size_t                  len, pad, min_payload, max_payload;
++    u_char                 *p;
++    ssize_t                 flen;
++    ngx_str_t               res;
++    ngx_int_t               rc;
++    ngx_uint_t              nframes, expand;
++    ngx_msec_t              now;
++    ngx_queue_t            *q;
++    ngx_quic_frame_t       *f;
++    ngx_quic_header_t       pkt;
++    ngx_quic_connection_t  *qc;
++    static u_char           src[NGX_QUIC_MAX_UDP_PAYLOAD_SIZE];
 +
 +    if (ngx_queue_empty(&ctx->frames)) {
 +        return 0;
@@ -8564,7 +8439,9 @@ new file mode 100644
 +                   "quic output %s packet max:%uz min:%uz",
 +                   ngx_quic_level_name(ctx->level), max, min);
 +
-+    ngx_quic_init_packet(c, ctx, &pkt);
++    qc = ngx_quic_get_connection(c);
++
++    ngx_quic_init_packet(c, ctx, &pkt, qc->path);
 +
 +    min_payload = ngx_quic_payload_size(&pkt, min);
 +    max_payload = ngx_quic_payload_size(&pkt, max);
@@ -8707,14 +8584,14 @@ new file mode 100644
 +
 +static void
 +ngx_quic_init_packet(ngx_connection_t *c, ngx_quic_send_ctx_t *ctx,
-+    ngx_quic_header_t *pkt)
++    ngx_quic_header_t *pkt, ngx_quic_path_t *path)
 +{
 +    ngx_quic_socket_t      *qsock;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
 +
-+    qsock = qc->socket;
++    qsock = ngx_quic_get_socket(c);
 +
 +    ngx_memzero(pkt, sizeof(ngx_quic_header_t));
 +
@@ -8732,8 +8609,8 @@ new file mode 100644
 +        }
 +    }
 +
-+    pkt->dcid.data = qsock->cid->id;
-+    pkt->dcid.len = qsock->cid->len;
++    pkt->dcid.data = path->cid->id;
++    pkt->dcid.len = path->cid->len;
 +
 +    pkt->scid.data = qsock->sid.id;
 +    pkt->scid.len = qsock->sid.len;
@@ -8849,7 +8726,7 @@ new file mode 100644
 +
 +    (void) ngx_quic_send(c, buf, len, c->sockaddr, c->socklen);
 +
-+    return NGX_ERROR;
++    return NGX_DONE;
 +}
 +
 +
@@ -9241,7 +9118,7 @@ new file mode 100644
 +    qc = ngx_quic_get_connection(c);
 +    ctx = ngx_quic_get_send_ctx(qc, ssl_encryption_application);
 +
-+    ngx_quic_init_packet(c, ctx, &pkt);
++    ngx_quic_init_packet(c, ctx, &pkt, path);
 +
 +    min = ngx_quic_path_limit(c, path, min);
 +
@@ -10589,7 +10466,7 @@ diff --git a/src/event/quic/ngx_event_quic_socket.c b/src/event/quic/ngx_event_q
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_socket.c
-@@ -0,0 +1,311 @@
+@@ -0,0 +1,234 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -10606,11 +10483,12 @@ new file mode 100644
 +ngx_quic_open_sockets(ngx_connection_t *c, ngx_quic_connection_t *qc,
 +    ngx_quic_header_t *pkt)
 +{
-+    ngx_quic_path_t       *path;
 +    ngx_quic_socket_t     *qsock, *tmp;
 +    ngx_quic_client_id_t  *cid;
 +
 +    /*
++     * qc->path = NULL
++     *
 +     * qc->nclient_ids = 0
 +     * qc->nsockets = 0
 +     * qc->max_retired_seqnum = 0
@@ -10643,6 +10521,8 @@ new file mode 100644
 +        return NGX_ERROR;
 +    }
 +
++    qsock->used = 1;
++
 +    qc->tp.initial_scid.len = qsock->sid.len;
 +    qc->tp.initial_scid.data = ngx_pnalloc(c->pool, qsock->sid.len);
 +    if (qc->tp.initial_scid.data == NULL) {
@@ -10661,19 +10541,20 @@ new file mode 100644
 +        goto failed;
 +    }
 +
-+    /* the client arrived from this path */
-+    path = ngx_quic_add_path(c, c->sockaddr, c->socklen);
-+    if (path == NULL) {
++    /* path of the first packet is our initial active path */
++    qc->path = ngx_quic_new_path(c, c->sockaddr, c->socklen, cid);
++    if (qc->path == NULL) {
 +        goto failed;
 +    }
 +
++    qc->path->tag = NGX_QUIC_PATH_ACTIVE;
++
 +    if (pkt->validated) {
-+        path->state = NGX_QUIC_PATH_VALIDATED;
-+        path->limited = 0;
++        qc->path->validated = 1;
++        qc->path->limited = 0;
 +    }
 +
-+    /* now bind socket to client and path */
-+    ngx_quic_connect(c, qsock, path, cid);
++    ngx_quic_path_dbg(c, "set active", qc->path);
 +
 +    tmp = ngx_pcalloc(c->pool, sizeof(ngx_quic_socket_t));
 +    if (tmp == NULL) {
@@ -10688,16 +10569,6 @@ new file mode 100644
 +    if (ngx_quic_listen(c, qc, tmp) != NGX_OK) {
 +        goto failed;
 +    }
-+
-+    ngx_quic_connect(c, tmp, path, cid);
-+
-+    /* use this socket as default destination */
-+    qc->socket = qsock;
-+
-+    ngx_log_debug4(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic active socket is #%uL:%uL:%uL (%s)",
-+                   qsock->sid.seqnum, qsock->cid->seqnum, qsock->path->seqnum,
-+                   ngx_quic_path_state_str(qsock->path));
 +
 +    return NGX_OK;
 +
@@ -10757,39 +10628,9 @@ new file mode 100644
 +    ngx_rbtree_delete(&c->listening->rbtree, &qsock->udp.node);
 +    qc->nsockets--;
 +
-+    if (qsock->path) {
-+        ngx_quic_unref_path(c, qsock->path);
-+    }
-+
-+    if (qsock->cid) {
-+        ngx_quic_unref_client_id(c, qsock->cid);
-+    }
-+
 +    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
 +                   "quic socket #%L closed nsock:%ui",
 +                   (int64_t) qsock->sid.seqnum, qc->nsockets);
-+}
-+
-+
-+void
-+ngx_quic_unref_path(ngx_connection_t *c, ngx_quic_path_t *path)
-+{
-+    ngx_quic_connection_t  *qc;
-+
-+    path->refcnt--;
-+
-+    if (path->refcnt) {
-+        return;
-+    }
-+
-+    qc = ngx_quic_get_connection(c);
-+
-+    ngx_queue_remove(&path->queue);
-+    ngx_queue_insert_head(&qc->free_paths, &path->queue);
-+
-+    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic path #%uL addr:%V removed",
-+                   path->seqnum, &path->addr_text);
 +}
 +
 +
@@ -10817,23 +10658,6 @@ new file mode 100644
 +                   (int64_t) sid->seqnum, &id, qc->nsockets);
 +
 +    return NGX_OK;
-+}
-+
-+
-+void
-+ngx_quic_connect(ngx_connection_t *c, ngx_quic_socket_t *sock,
-+    ngx_quic_path_t *path, ngx_quic_client_id_t *cid)
-+{
-+    sock->path = path;
-+    path->refcnt++;
-+
-+    sock->cid = cid;
-+    cid->refcnt++;
-+
-+    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic socket #%L connected to cid #%uL path:%uL",
-+                   (int64_t) sock->sid.seqnum,
-+                   sock->cid->seqnum, path->seqnum);
 +}
 +
 +
@@ -10877,35 +10701,11 @@ new file mode 100644
 +
 +    return NULL;
 +}
-+
-+
-+ngx_quic_socket_t *
-+ngx_quic_get_unconnected_socket(ngx_connection_t *c)
-+{
-+    ngx_queue_t            *q;
-+    ngx_quic_socket_t      *sock;
-+    ngx_quic_connection_t  *qc;
-+
-+    qc = ngx_quic_get_connection(c);
-+
-+    for (q = ngx_queue_head(&qc->sockets);
-+         q != ngx_queue_sentinel(&qc->sockets);
-+         q = ngx_queue_next(q))
-+    {
-+        sock = ngx_queue_data(q, ngx_quic_socket_t, queue);
-+
-+        if (sock->cid == NULL) {
-+            return sock;
-+        }
-+    }
-+
-+    return NULL;
-+}
 diff --git a/src/event/quic/ngx_event_quic_socket.h b/src/event/quic/ngx_event_quic_socket.h
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_socket.h
-@@ -0,0 +1,33 @@
+@@ -0,0 +1,28 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -10930,12 +10730,7 @@ new file mode 100644
 +    ngx_quic_socket_t *qsock);
 +void ngx_quic_close_socket(ngx_connection_t *c, ngx_quic_socket_t *qsock);
 +
-+void ngx_quic_unref_path(ngx_connection_t *c, ngx_quic_path_t *path);
-+void ngx_quic_connect(ngx_connection_t *c, ngx_quic_socket_t *qsock,
-+    ngx_quic_path_t *path, ngx_quic_client_id_t *cid);
-+
 +ngx_quic_socket_t *ngx_quic_find_socket(ngx_connection_t *c, uint64_t seqnum);
-+ngx_quic_socket_t *ngx_quic_get_unconnected_socket(ngx_connection_t *c);
 +
 +
 +#endif /* _NGX_EVENT_QUIC_SOCKET_H_INCLUDED_ */
@@ -10943,7 +10738,7 @@ diff --git a/src/event/quic/ngx_event_quic_ssl.c b/src/event/quic/ngx_event_quic
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_ssl.c
-@@ -0,0 +1,614 @@
+@@ -0,0 +1,617 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -11443,7 +11238,7 @@ new file mode 100644
 +    ngx_quic_queue_frame(qc, frame);
 +
 +    if (qc->conf->retry) {
-+        if (ngx_quic_send_new_token(c, qc->socket->path) != NGX_OK) {
++        if (ngx_quic_send_new_token(c, qc->path) != NGX_OK) {
 +            return NGX_ERROR;
 +        }
 +    }
@@ -11487,6 +11282,7 @@ new file mode 100644
 +    ssize_t                 len;
 +    ngx_str_t               dcid;
 +    ngx_ssl_conn_t         *ssl_conn;
++    ngx_quic_socket_t      *qsock;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
@@ -11515,8 +11311,10 @@ new file mode 100644
 +    SSL_set_quic_use_legacy_codepoint(ssl_conn, qc->version != 1);
 +#endif
 +
-+    dcid.data = qc->socket->sid.id;
-+    dcid.len = qc->socket->sid.len;
++    qsock = ngx_quic_get_socket(c);
++
++    dcid.data = qsock->sid.id;
++    dcid.len = qsock->sid.len;
 +
 +    if (ngx_quic_new_sr_token(c, &dcid, qc->conf->sr_token_key, qc->tp.sr_token)
 +        != NGX_OK)
@@ -15544,7 +15342,7 @@ new file mode 100644
 +    tp->max_ack_delay = NGX_QUIC_DEFAULT_MAX_ACK_DELAY;
 +    tp->ack_delay_exponent = NGX_QUIC_DEFAULT_ACK_DELAY_EXPONENT;
 +
-+    tp->active_connection_id_limit = 2;
++    tp->active_connection_id_limit = qcf->active_connection_id_limit;
 +    tp->disable_active_migration = qcf->disable_active_migration;
 +
 +    return NGX_OK;
@@ -15742,7 +15540,7 @@ diff --git a/src/event/quic/ngx_event_quic_transport.h b/src/event/quic/ngx_even
 new file mode 100644
 --- /dev/null
 +++ b/src/event/quic/ngx_event_quic_transport.h
-@@ -0,0 +1,395 @@
+@@ -0,0 +1,397 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -16045,6 +15843,7 @@ new file mode 100644
 +
 +typedef struct {
 +    ngx_log_t                                  *log;
++    ngx_quic_path_t                            *path;
 +
 +    ngx_quic_keys_t                            *keys;
 +
@@ -16080,6 +15879,7 @@ new file mode 100644
 +    unsigned                                    validated:1;
 +    unsigned                                    retried:1;
 +    unsigned                                    first:1;
++    unsigned                                    rebound:1;
 +} ngx_quic_header_t;
 +
 +
@@ -18981,7 +18781,7 @@ diff --git a/src/http/v3/ngx_http_v3_module.c b/src/http/v3/ngx_http_v3_module.c
 new file mode 100644
 --- /dev/null
 +++ b/src/http/v3/ngx_http_v3_module.c
-@@ -0,0 +1,539 @@
+@@ -0,0 +1,551 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -19086,6 +18886,13 @@ new file mode 100644
 +      ngx_http_quic_host_key,
 +      NGX_HTTP_SRV_CONF_OFFSET,
 +      0,
++      NULL },
++
++    { ngx_string("quic_active_connection_id_limit"),
++      NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_CONF_TAKE1,
++      ngx_conf_set_num_slot,
++      NGX_HTTP_SRV_CONF_OFFSET,
++      offsetof(ngx_http_v3_srv_conf_t, quic.active_connection_id_limit),
 +      NULL },
 +
 +      ngx_null_command
@@ -19224,6 +19031,7 @@ new file mode 100644
 +    h3scf->quic.gso_enabled = NGX_CONF_UNSET;
 +    h3scf->quic.stream_close_code = NGX_HTTP_V3_ERR_NO_ERROR;
 +    h3scf->quic.stream_reject_code_bidi = NGX_HTTP_V3_ERR_REQUEST_REJECTED;
++    h3scf->quic.active_connection_id_limit = NGX_CONF_UNSET_UINT;
 +
 +    return h3scf;
 +}
@@ -19263,6 +19071,10 @@ new file mode 100644
 +    ngx_conf_merge_value(conf->quic.gso_enabled, prev->quic.gso_enabled, 0);
 +
 +    ngx_conf_merge_str_value(conf->quic.host_key, prev->quic.host_key, "");
++
++    ngx_conf_merge_uint_value(conf->quic.active_connection_id_limit,
++                              prev->quic.active_connection_id_limit,
++                              2);
 +
 +    if (conf->quic.host_key.len == 0) {
 +
@@ -25400,7 +25212,7 @@ diff --git a/src/stream/ngx_stream_quic_module.c b/src/stream/ngx_stream_quic_mo
 new file mode 100644
 --- /dev/null
 +++ b/src/stream/ngx_stream_quic_module.c
-@@ -0,0 +1,360 @@
+@@ -0,0 +1,373 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -25468,6 +25280,13 @@ new file mode 100644
 +      ngx_stream_quic_host_key,
 +      NGX_STREAM_SRV_CONF_OFFSET,
 +      0,
++      NULL },
++
++    { ngx_string("quic_active_connection_id_limit"),
++      NGX_STREAM_MAIN_CONF|NGX_STREAM_SRV_CONF|NGX_CONF_TAKE1,
++      ngx_conf_set_num_slot,
++      NGX_STREAM_SRV_CONF_OFFSET,
++      offsetof(ngx_quic_conf_t, active_connection_id_limit),
 +      NULL },
 +
 +      ngx_null_command
@@ -25579,6 +25398,8 @@ new file mode 100644
 +    conf->retry = NGX_CONF_UNSET;
 +    conf->gso_enabled = NGX_CONF_UNSET;
 +
++    conf->active_connection_id_limit = NGX_CONF_UNSET_UINT;
++
 +    return conf;
 +}
 +
@@ -25606,6 +25427,10 @@ new file mode 100644
 +    ngx_conf_merge_value(conf->gso_enabled, prev->gso_enabled, 0);
 +
 +    ngx_conf_merge_str_value(conf->host_key, prev->host_key, "");
++
++    ngx_conf_merge_uint_value(conf->active_connection_id_limit,
++                              conf->active_connection_id_limit,
++                              2);
 +
 +    if (conf->host_key.len == 0) {
 +
