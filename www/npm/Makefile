@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	npm
-PORTVERSION=	8.2.0
+PORTVERSION=	8.3.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -26,13 +26,6 @@ CPE_VENDOR=	npmjs
 
 SHEBANG_GLOB=	*.py
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-# Workaround for kernel bug 178881
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bug-178881
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/etc/man.d/npm.conf
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
@@ -44,4 +37,4 @@ do-install:
 	${ECHO_CMD} 'python=${PYTHON_CMD}' > ${STAGEDIR}${PREFIX}/etc/npmrc
 	${PYTHON_CMD} -O -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
