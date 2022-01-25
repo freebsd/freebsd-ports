@@ -5,7 +5,7 @@ DISTVERSION=	1.0rc12
 CATEGORIES=	comms
 MASTER_SITES=	http://www.jbrain.com/pub/linux/serial/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	TCPSER turns serial port into an emulated Hayes compatible modem
 
 LICENSE=	GPLv2+
