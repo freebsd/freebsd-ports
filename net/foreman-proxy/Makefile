@@ -1,11 +1,11 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	2.5.4
+PORTVERSION=	3.0.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	freebsd@moov.de
 COMMENT=	Foreman Proxy Agent
 
 LICENSE=	GPLv3
@@ -24,9 +24,9 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 
 USES=		shebangfix tar:bzip2
 
-OPTIONS_DEFINE=	BMC PUPPET6
+OPTIONS_DEFINE=	BMC PUPPET7
 BMC_DESC=	Depend on rubyipmi and redfish_client for BMC support
-PUPPET6_DESC=	Depend on Puppet 6
+PUPPET7_DESC=	Depend on Puppet 7
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -53,7 +53,7 @@ SHEBANG_FILES=	extra/foreman-debug-proxy
 
 BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi \
 			rubygem-redfish_client>=0.5.1:sysutils/rubygem-redfish_client
-PUPPET6_RUN_DEPENDS=	puppet:sysutils/puppet6 \
+PUPPET7_RUN_DEPENDS=	puppet:sysutils/puppet7 \
 			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 
 post-patch:
@@ -63,7 +63,10 @@ post-patch:
 		-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%DATADIR%%|${DATADIR}|g" \
 		${WRKSRC}/bin/smart-proxy \
+		${WRKSRC}/extra/dhcpd_config_check.rb \
+		${WRKSRC}/extra/foreman-debug-proxy \
 		${WRKSRC}/extra/migrate_settings.rb \
+		${WRKSRC}/extra/puppet_sign.rb \
 		${WRKSRC}/extra/query.rb \
 		${WRKSRC}/extra/register_service.rb
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -82,7 +85,8 @@ do-install:
 	${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
 	${LN} -s Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
-.for script in foreman-debug-proxy migrate_settings.rb query.rb register_service.rb
+.for script in dhcpd_config_check.rb foreman-debug-proxy \
+	migrate_settings.rb puppet_sign.rb query.rb register_service.rb
 	${INSTALL_SCRIPT} ${WRKSRC}/extra/${script} \
 		${STAGEDIR}${DATADIR}/extra/${script}
 .endfor

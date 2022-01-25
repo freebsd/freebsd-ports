@@ -11,7 +11,7 @@ ${PREFIX}/etc/foreman-proxy/settings.d
 
 You can use a bundled script to convert your old settings to new settings:
 
-${PREFIX}/share/foreman/extra/migrate_settings.rb
+${PREFIX}/share/foreman-proxy/extra/migrate_settings.rb
 EOM
 }
 ]

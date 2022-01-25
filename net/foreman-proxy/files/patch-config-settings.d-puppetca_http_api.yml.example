@@ -1,0 +1,12 @@
+--- config/settings.d/puppetca_http_api.yml.example.orig  2021-10-26 14:48:17.000000000 +0200
++++ config/settings.d/puppetca_http_api.yml.example       2021-11-24 12:00:12.367622000 +0100
+@@ -3,6 +3,6 @@
+ #:puppet_url: https://puppet.example.com:8140
+ #
+ # SSL certificates used to access the CA API.
+-#:puppet_ssl_ca: /etc/puppetlabs/ssl/certs/ca.pem
+-#:puppet_ssl_cert: /etc/puppetlabs/ssl/certs/puppet.example.com.pem
+-#:puppet_ssl_key: /etc/puppetlabs/ssl/private_keys/puppet.example.com.pem
++#:puppet_ssl_ca: %%LOCALBASE%%/etc/puppetlabs/ssl/certs/ca.pem
++#:puppet_ssl_cert: %%LOCALBASE%%/etc/puppetlabs/ssl/certs/puppet.example.com.pem
++#:puppet_ssl_key: %%LOCALBASE%%/etc/puppetlabs/ssl/private_keys/puppet.example.com.pem

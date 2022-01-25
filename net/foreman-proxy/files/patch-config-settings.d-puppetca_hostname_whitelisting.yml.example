@@ -1,0 +1,8 @@
+--- config/settings.d/puppetca_hostname_whitelisting.yml.example.orig     2021-10-26 14:48:17.000000000 +0200
++++ config/settings.d/puppetca_hostname_whitelisting.yml.example  2021-11-24 11:59:39.227846000 +0100
+@@ -3,4 +3,4 @@
+ # Configuration of the PuppetCA hostname_whitelisting provider
+ #
+ 
+-#:autosignfile: /etc/puppet/autosign.conf
++#:autosignfile: %%LOCALBASE%%/etc/puppet/autosign.conf

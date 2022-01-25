@@ -44,6 +44,7 @@ sbin/smart-proxy
 %%DATADIR%%/bundler.d/windows.rb
 %%DATADIR%%/config
 %%DATADIR%%/config.ru
+%%DATADIR%%/extra/dhcpd_config_check.rb
 %%DATADIR%%/extra/foreman-debug-proxy
 %%DATADIR%%/extra/migrate_settings.rb
 %%DATADIR%%/extra/migrations/20150327000000_migrate_monolithic_config.rb
@@ -55,6 +56,7 @@ sbin/smart-proxy
 %%DATADIR%%/extra/migrations/20170523000000_migrate_autosign_setting.rb
 %%DATADIR%%/extra/migrations/2018062000000_migrate_puppetca_settings.rb
 %%DATADIR%%/extra/migrations/20181016000000_migrate_puppetca_puppet_cert_settings.rb
+%%DATADIR%%/extra/puppet_sign.rb
 %%DATADIR%%/extra/query.rb
 %%DATADIR%%/extra/register_service.rb
 %%DATADIR%%/lib/bundler_helper.rb
