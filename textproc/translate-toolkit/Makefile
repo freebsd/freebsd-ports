@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -49,7 +49,7 @@ ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@$
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
 INI_VARS=		MANPAGES+="ini2po po2ini"
-LANGUAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycountry>=20.7.3:textproc/py-pycountry@${PY_FLAVOR}
+LANGUAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycountry>=22.1.10:textproc/py-pycountry@${PY_FLAVOR}
 LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}python-Levenshtein>=0.12:devel/py-python-Levenshtein@${PY_FLAVOR}
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.5:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"

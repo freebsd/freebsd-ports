@@ -24,9 +24,9 @@
 -phply==1.2.5         # PHP
 +phply>=1.2.5         # PHP
  # To provide translations for language names without need for OS package.
--pycountry==20.7.3          # Languages
+-pycountry==22.1.10          # Languages
 -pyenchant==3.2.2     # spellcheck
-+pycountry>=20.7.3          # Languages
++pycountry>=22.1.10          # Languages
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
 -pyparsing==3.0.6     # RC
