@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-pinpoint
-PORTVERSION=	1.63.0
+PORTVERSION=	1.64.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
