@@ -1,7 +1,7 @@
 # Created by: rene@FreeBSD.org (repocopied from audio/py-mpd)
 
 PORTNAME=	python-mpd2
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
