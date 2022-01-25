@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	storj
-PORTVERSION=	1.46.3
+PORTVERSION=	1.47.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
