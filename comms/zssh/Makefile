@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively transferring files to a remote machine while using ssh
 
+DEPRECATED=	Abandonware, last release in 2003. Please consider using scp or net/croc instead
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	lrz:comms/lrzsz
 
 HAS_CONFIGURE=	yes
