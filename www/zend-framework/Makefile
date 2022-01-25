@@ -13,77 +13,42 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS=	ZendFramework-1.*
+USES=		gettext php:web,flavors tar:tgz
+USE_PHP=	spl
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	spl
-USES=		gettext php:web,flavors tar:tgz
-
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP MEMCACHE
-OPTIONS_DEFAULT=REQPHP
+PORTDOCS=	CHANGELOG.md CONTRIBUTING.md INSTALL.md README-GIT.md README.md
 
-MYSQL_DESC=	Enable MySQL PDO support
-MYSQLI_DESC=	Enable MySQLi support
+OPTIONS_DEFINE=		DBLIB DOCS MEMCACHE MYSQL MYSQLI ODBC OPTPHP PGSQL \
+			REQPHP SQLITE
+OPTIONS_DEFAULT=	REQPHP
+
 DBLIB_DESC=	Enable DBLIB PDO support
-PGSQL_DESC=	Enable PostgreSQL PDO support
-ODBC_DESC=	Enable ODBC PDO support
-SQLITE_DESC=	Enable SQLite v3 PDO support
-REQPHP_DESC=	Install required PHP dependencies
-OPTPHP_DESC=	Install optional PHP dependencies
 MEMCACHE_DESC=	Enable memcache support
+MYSQLI_DESC=	Enable MySQLi support
+OPTPHP_DESC=	Install optional PHP dependencies
+REQPHP_DESC=	Install required PHP dependencies
 
-PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
-
-.include <bsd.port.pre.mk>
-
+DBLIB_USE=	PHP=pdo_dblib
+MEMCACHE_USE=	PHP=memcache,memcached
+MYSQLI_USE=	PHP=mysqli
+MYSQL_USE=	PHP=pdo_mysql
+ODBC_USE=	PHP=pdo_odbc
+OPTPHP_USE=	PHP=bcmath,bitset,json,posix
+PGSQL_USE=	PHP=pdo_pgsql
 # Add all of the required and/or optional PHP extension dependencies,
 # if chosen by the user.
-.if ${PORT_OPTIONS:MREQPHP}
-USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
-		opcache pcre pdo session simplexml soap sqlite3 xml zlib
-.endif
-
-.if ${PORT_OPTIONS:MOPTPHP}
-USE_PHP+=	bcmath bitset json posix
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHE}
-USE_PHP+=	memcache memcached
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	pdo_mysql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQLI}
-USE_PHP+=	mysqli
-.endif
-
-.if ${PORT_OPTIONS:MDBLIB}
-USE_PHP+=	pdo_dblib
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pdo_pgsql
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-USE_PHP+=	pdo_odbc
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	pdo_sqlite
-.endif
+REQPHP_USE=	PHP=ctype,curl,dom,gd,hash,iconv,ldap,mbstring,mcrypt,opcache,pcre,pdo,session,simplexml,soap,sqlite3,xml,zlib
+SQLITE_USE=	PHP=pdo_sqlite
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "library bin resources" ${STAGEDIR}${DATADIR}
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
