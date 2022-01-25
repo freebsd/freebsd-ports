@@ -1,7 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 
 PORTNAME=	bulk_extractor
-DISTVERSION=	2.0.0-beta2
+DISTVERSION=	2.0.0-beta3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/simsong/${PORTNAME}/releases/download/v${DISTVERSION}/
 
