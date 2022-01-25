@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	flipper-ui
-PORTVERSION=	0.23.0
+PORTVERSION=	0.23.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
