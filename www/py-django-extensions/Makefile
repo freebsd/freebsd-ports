@@ -1,7 +1,7 @@
 # Created by: Kevin Golding <ports@caomhin.org>
 
 PORTNAME=	django-extensions
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
