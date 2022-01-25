@@ -1,5 +1,6 @@
 PORTNAME=	ImageMagick
 DISTVERSION=	6.9.12-34
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \

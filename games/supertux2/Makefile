@@ -2,6 +2,7 @@ PORTNAME=	supertux
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
 DISTVERSIONSUFFIX=	-Source
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
