@@ -2,7 +2,7 @@
 
 PORTNAME=	webcamd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.13.2.8
+DISTVERSION=	5.17.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -20,7 +20,7 @@ SUB_FILES=	webcamd.conf
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 GH_PROJECT=	${PORTNAME}
-GH_TUPLE=	torvalds:linux:v5.13-rc2:linux/media_tree \
+GH_TUPLE=	torvalds:linux:v5.17-rc1:linux/media_tree \
 		swills:v4l2loopback:8ab6a12:v4l2loopback/contrib/v4l2loopback
 
 OPTIONS_DEFINE=	DEBUG VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM V4L2LOOPBACK
