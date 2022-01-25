@@ -1,5 +1,5 @@
 PORTNAME=	bootsnap
-PORTVERSION=	1.9.4
+PORTVERSION=	1.10.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ COMMENT=	Boot large ruby/rails apps faster
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-msgpack>=1.0<2:devel/rubygem-msgpack
+RUN_DEPENDS=	rubygem-msgpack>=1.2<2:devel/rubygem-msgpack
 
 USES=		gem
 USE_RUBY=	yes
