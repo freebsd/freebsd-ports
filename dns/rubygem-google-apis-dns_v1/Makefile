@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-apis-dns_v1
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
