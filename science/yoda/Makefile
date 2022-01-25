@@ -1,5 +1,5 @@
 PORTNAME=	yoda
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.4
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -10,9 +10,17 @@ COMMENT=	Particle physics package with classes for data analysis, histogramming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gmake libtool
+TEST_DEPENDS=	bash:shells/bash
+
+USES=		compiler:c++11-lang gmake libtool python:test shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+SHEBANG_GLOB=	*.py *.sh
+
+TEST_TARGET=	check # doesn't report summary in the end, see https://gitlab.com/hepcedar/yoda/-/issues/49
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON

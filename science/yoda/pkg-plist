@@ -78,7 +78,7 @@ include/YODA/WriterMethods.icc
 include/YODA/WriterYODA.h
 include/YODA/YODA.h
 lib/libYODA.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-1.9.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-%%VERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda/__pycache__/plotting%%PYTHON_EXT_SUFFIX%%.pyc
