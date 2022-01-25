@@ -1,7 +1,7 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
 
 PORTNAME=	nbtscan
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	sunpoet@FreeBSD.org
