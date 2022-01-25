@@ -16777,3 +16777,4 @@ print/py-fonttools3|print/py-fonttools|2022-01-23|Remove obsoleted port. Use pri
 textproc/rubygem-rouge2|textproc/rubygem-rouge|2022-01-23|Remove obsoleted port. Use textproc/rubygem-rouge instead
 security/truecrypt|security/veracrypt|2022-01-23|Has expired: Development and support for truecrypt ended in 2014
 graphics/radiance||2022-01-23|Has expired: Application uses deprecated OpenGL support in libmpv, see the comment in https://github.com/zbanks/radiance/issues/118
+databases/postgis25||2022-01-25|Has expired: Deprecated in favour of databases/postgis3x
