@@ -2,6 +2,13 @@ bin/grafana-cli
 bin/grafana-server
 @sample %%ETCDIR%%/grafana.ini.sample
 %%DATADIR%%/conf/defaults.ini
+%%DATADIR%%/plugins-bundled/internal/input-datasource/MANIFEST.txt
+%%DATADIR%%/plugins-bundled/internal/input-datasource/README.md
+%%DATADIR%%/plugins-bundled/internal/input-datasource/img/input.svg
+%%DATADIR%%/plugins-bundled/internal/input-datasource/module.js
+%%DATADIR%%/plugins-bundled/internal/input-datasource/module.js.LICENSE.txt
+%%DATADIR%%/plugins-bundled/internal/input-datasource/module.js.map
+%%DATADIR%%/plugins-bundled/internal/input-datasource/plugin.json
 %%DATADIR%%/public/app/AppWrapper.tsx
 %%DATADIR%%/public/app/angular/AngularApp.ts
 %%DATADIR%%/public/app/angular/AngularLocationWrapper.test.ts
@@ -96,11 +103,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/ForgottenPassword/ForgottenPassword.tsx
 %%DATADIR%%/public/app/core/components/ForgottenPassword/SendResetMailPage.test.tsx
 %%DATADIR%%/public/app/core/components/ForgottenPassword/SendResetMailPage.tsx
-%%DATADIR%%/public/app/core/components/Layers/AddLayerButton.tsx
-%%DATADIR%%/public/app/core/components/Layers/LayerDragDropList.tsx
-%%DATADIR%%/public/app/core/components/Layers/LayerName.test.tsx
-%%DATADIR%%/public/app/core/components/Layers/LayerName.tsx
-%%DATADIR%%/public/app/core/components/Layers/types.ts
 %%DATADIR%%/public/app/core/components/LocalStorageValueProvider/LocalStorageValueProvider.tsx
 %%DATADIR%%/public/app/core/components/LocalStorageValueProvider/index.tsx
 %%DATADIR%%/public/app/core/components/Login/LoginCtrl.tsx
@@ -116,10 +118,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/NavBar/NavBarDropdown.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarItem.test.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarItem.tsx
-%%DATADIR%%/public/app/core/components/NavBar/NavBarItemMenu.tsx
-%%DATADIR%%/public/app/core/components/NavBar/NavBarItemMenuItem.tsx
-%%DATADIR%%/public/app/core/components/NavBar/NavBarItemMenuTrigger.tsx
-%%DATADIR%%/public/app/core/components/NavBar/NavBarItemWithoutMenu.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarMenu.test.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarMenu.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarMenuItem.test.tsx
@@ -127,7 +125,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/NavBar/NavBarNext.test.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarNext.tsx
 %%DATADIR%%/public/app/core/components/NavBar/NavBarSection.tsx
-%%DATADIR%%/public/app/core/components/NavBar/context.tsx
 %%DATADIR%%/public/app/core/components/NavBar/utils.test.ts
 %%DATADIR%%/public/app/core/components/NavBar/utils.ts
 %%DATADIR%%/public/app/core/components/NodeGraphSettings.tsx
@@ -456,6 +453,8 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/Silences.test.tsx
 %%DATADIR%%/public/app/features/alerting/unified/Silences.tsx
 %%DATADIR%%/public/app/features/alerting/unified/api/alertmanager.ts
+%%DATADIR%%/public/app/features/alerting/unified/api/annotations.test.ts
+%%DATADIR%%/public/app/features/alerting/unified/api/annotations.ts
 %%DATADIR%%/public/app/features/alerting/unified/api/grafana.ts
 %%DATADIR%%/public/app/features/alerting/unified/api/preview.ts
 %%DATADIR%%/public/app/features/alerting/unified/api/prometheus.ts
@@ -558,7 +557,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/ActionButton.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/ActionIcon.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/AlertInstanceDetails.tsx
-%%DATADIR%%/public/app/features/alerting/unified/components/rules/AlertInstanceStateFilter.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/AlertInstancesTable.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/AlertStateTag.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/CloudRules.tsx
@@ -581,6 +579,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/RulesFilter.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/RulesGroup.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rules/RulesTable.tsx
+%%DATADIR%%/public/app/features/alerting/unified/components/rules/StateHistory.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/silences/AmAlertStateTag.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/silences/Matchers.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/silences/MatchersField.tsx
@@ -606,8 +605,11 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useGroupedAlerts.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useHasRuler.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useIsRuleEditable.ts
+%%DATADIR%%/public/app/features/alerting/unified/hooks/useManagedAlertStateHistory.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/usePanelCombinedRules.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useRuleSourcesWithRuler.ts
+%%DATADIR%%/public/app/features/alerting/unified/hooks/useStateHistoryModal.tsx
+%%DATADIR%%/public/app/features/alerting/unified/hooks/useURLSearchParams.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useUnifiedAlertingSelector.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useVizHeight.ts
 %%DATADIR%%/public/app/features/alerting/unified/mocks.ts
@@ -632,8 +634,8 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/utils/constants.ts
 %%DATADIR%%/public/app/features/alerting/unified/utils/datasource.ts
 %%DATADIR%%/public/app/features/alerting/unified/utils/dynamicTable.ts
+%%DATADIR%%/public/app/features/alerting/unified/utils/matchers.test.ts
 %%DATADIR%%/public/app/features/alerting/unified/utils/matchers.ts
-%%DATADIR%%/public/app/features/alerting/unified/utils/misc.test.ts
 %%DATADIR%%/public/app/features/alerting/unified/utils/misc.ts
 %%DATADIR%%/public/app/features/alerting/unified/utils/query.test.ts
 %%DATADIR%%/public/app/features/alerting/unified/utils/query.ts
@@ -844,7 +846,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/dashboard/dashgrid/DashboardGrid.test.tsx
 %%DATADIR%%/public/app/features/dashboard/dashgrid/DashboardGrid.tsx
 %%DATADIR%%/public/app/features/dashboard/dashgrid/DashboardPanel.tsx
-%%DATADIR%%/public/app/features/dashboard/dashgrid/LazyLoader.tsx
 %%DATADIR%%/public/app/features/dashboard/dashgrid/PanelChrome.test.tsx
 %%DATADIR%%/public/app/features/dashboard/dashgrid/PanelChrome.tsx
 %%DATADIR%%/public/app/features/dashboard/dashgrid/PanelChromeAngular.tsx
@@ -1151,6 +1152,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/manage-dashboards/components/SnapshotListTable.test.tsx
 %%DATADIR%%/public/app/features/manage-dashboards/components/SnapshotListTable.tsx
 %%DATADIR%%/public/app/features/manage-dashboards/services/ValidationSrv.ts
+%%DATADIR%%/public/app/features/manage-dashboards/state/actions.test.ts
 %%DATADIR%%/public/app/features/manage-dashboards/state/actions.ts
 %%DATADIR%%/public/app/features/manage-dashboards/state/reducers.test.ts
 %%DATADIR%%/public/app/features/manage-dashboards/state/reducers.ts
@@ -1348,7 +1350,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/query/state/types.ts
 %%DATADIR%%/public/app/features/query/state/updateQueries.test.ts
 %%DATADIR%%/public/app/features/query/state/updateQueries.ts
-%%DATADIR%%/public/app/features/runtime/init.ts
 %%DATADIR%%/public/app/features/sandbox/BenchmarksPage.tsx
 %%DATADIR%%/public/app/features/sandbox/TestStuffPage.tsx
 %%DATADIR%%/public/app/features/search/components/ActionRow.tsx
@@ -1482,7 +1483,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/variables/editor/VariableEditorContainer.tsx
 %%DATADIR%%/public/app/features/variables/editor/VariableEditorEditor.tsx
 %%DATADIR%%/public/app/features/variables/editor/VariableEditorList.tsx
-%%DATADIR%%/public/app/features/variables/editor/VariableEditorListRow.tsx
 %%DATADIR%%/public/app/features/variables/editor/VariableHideSelect.tsx
 %%DATADIR%%/public/app/features/variables/editor/VariableSectionHeader.tsx
 %%DATADIR%%/public/app/features/variables/editor/VariableSelectField.tsx
@@ -1564,6 +1564,8 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/variables/state/actions.test.ts
 %%DATADIR%%/public/app/features/variables/state/actions.ts
 %%DATADIR%%/public/app/features/variables/state/helpers.ts
+%%DATADIR%%/public/app/features/variables/state/initVariableTransaction.test.ts
+%%DATADIR%%/public/app/features/variables/state/migrateVariablesDatasourceNameToRef.test.ts
 %%DATADIR%%/public/app/features/variables/state/onTimeRangeUpdated.test.ts
 %%DATADIR%%/public/app/features/variables/state/processVariable.test.ts
 %%DATADIR%%/public/app/features/variables/state/reducers.test.ts
@@ -2095,6 +2097,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/influxdb/components/RawInfluxQLEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/influxdb/components/VariableQueryEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/influxdb/components/VisualInfluxQLEditor/AddButton.tsx
+%%DATADIR%%/public/app/plugins/datasource/influxdb/components/VisualInfluxQLEditor/Editor.tags.test.tsx
 %%DATADIR%%/public/app/plugins/datasource/influxdb/components/VisualInfluxQLEditor/Editor.test.tsx
 %%DATADIR%%/public/app/plugins/datasource/influxdb/components/VisualInfluxQLEditor/Editor.tsx
 %%DATADIR%%/public/app/plugins/datasource/influxdb/components/VisualInfluxQLEditor/FormatAsSection.tsx
@@ -2259,6 +2262,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/opentsdb/types.ts
 %%DATADIR%%/public/app/plugins/datasource/postgres/README.md
 %%DATADIR%%/public/app/plugins/datasource/postgres/config_ctrl.ts
+%%DATADIR%%/public/app/plugins/datasource/postgres/datasource.test.ts
 %%DATADIR%%/public/app/plugins/datasource/postgres/datasource.ts
 %%DATADIR%%/public/app/plugins/datasource/postgres/img/postgresql_logo.svg
 %%DATADIR%%/public/app/plugins/datasource/postgres/meta_query.ts
@@ -2377,7 +2381,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/testdata/components/NodeGraphEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/testdata/components/PredictablePulseEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/testdata/components/RandomWalkEditor.tsx
-%%DATADIR%%/public/app/plugins/datasource/testdata/components/RawFrameEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/testdata/components/StreamingClientEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/testdata/components/USAQueryEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/testdata/components/index.ts
@@ -2526,7 +2529,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/geomap/components/ObservablePropsWrapper.tsx
 %%DATADIR%%/public/app/plugins/panel/geomap/editor/GazetteerPathEditor.tsx
 %%DATADIR%%/public/app/plugins/panel/geomap/editor/GeomapStyleRulesEditor.tsx
-%%DATADIR%%/public/app/plugins/panel/geomap/editor/LayersEditor.tsx
 %%DATADIR%%/public/app/plugins/panel/geomap/editor/LayersEditor/AddLayerButton.tsx
 %%DATADIR%%/public/app/plugins/panel/geomap/editor/LayersEditor/LayerHeader.test.tsx
 %%DATADIR%%/public/app/plugins/panel/geomap/editor/LayersEditor/LayerHeader.tsx
@@ -2944,6 +2946,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/2178.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2293.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/2293.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/2502.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/2502.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2762.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/2762.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2795.%%GRAFANA_BUILDHASH%%.js
@@ -2952,8 +2956,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/2907.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2909.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/2909.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/3009.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/3009.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/3020.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/3020.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/3038.%%GRAFANA_BUILDHASH%%.js
@@ -2984,6 +2986,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/3853.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/4017.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/4017.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/4057.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/4057.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/4079.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/4079.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/41f151d7bcbd0600c696.ttf
@@ -3014,6 +3018,9 @@ bin/grafana-server
 %%DATADIR%%/public/build/487.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/4939.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/4939.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/5105.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/5105.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
+%%DATADIR%%/public/build/5105.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/519.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/519.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/5276.%%GRAFANA_BUILDHASH%%.js
@@ -3034,13 +3041,12 @@ bin/grafana-server
 %%DATADIR%%/public/build/5902.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6146.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6146.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/6220.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/6220.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6223.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6223.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6278.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6278.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/633.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/633.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
-%%DATADIR%%/public/build/633.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6449.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6449.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6647.%%GRAFANA_BUILDHASH%%.js
@@ -3058,8 +3064,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/686.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/686.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/686.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/6886.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/6886.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6899.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6899.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/707.%%GRAFANA_BUILDHASH%%.js
@@ -3109,8 +3113,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/8631.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/8658.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/8658.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/8672.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/8672.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/8841.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/8841.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/8970.%%GRAFANA_BUILDHASH%%.js
@@ -3332,7 +3334,6 @@ bin/grafana-server
 %%DATADIR%%/public/dashboards/scripted_async.js
 %%DATADIR%%/public/dashboards/scripted_templated.js
 %%DATADIR%%/public/dashboards/template_vars.json
-%%DATADIR%%/public/dist/tsconfig.tsbuildinfo
 %%DATADIR%%/public/emails/README.md
 %%DATADIR%%/public/emails/alert_notification.html
 %%DATADIR%%/public/emails/alert_notification.txt
@@ -3433,8 +3434,6 @@ bin/grafana-server
 %%DATADIR%%/public/img/grafana_mask_icon.svg
 %%DATADIR%%/public/img/grafana_mask_icon_white.svg
 %%DATADIR%%/public/img/grafana_net_logo.svg
-%%DATADIR%%/public/img/grafana_text_logo-dark.svg
-%%DATADIR%%/public/img/grafana_text_logo-light.svg
 %%DATADIR%%/public/img/grafana_typelogo.svg
 %%DATADIR%%/public/img/grafanaconline.png
 %%DATADIR%%/public/img/graph404.svg
