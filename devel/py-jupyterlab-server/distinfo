@@ -1,3 +1,3 @@
-TIMESTAMP = 1642102275
-SHA256 (jupyterlab_server-2.10.2.tar.gz) = bf1ec9e49d4e26f14d70055cc293b3f8ec8410f95a4d5b4bd55c442d9b8b266c
-SIZE (jupyterlab_server-2.10.2.tar.gz) = 59380
+TIMESTAMP = 1643133753
+SHA256 (jupyterlab_server-2.10.3.tar.gz) = 3fb84a5813d6d836ceda773fb2d4e9ef3c7944dbc1b45a8d59d98641a80de80a
+SIZE (jupyterlab_server-2.10.3.tar.gz) = 59522
