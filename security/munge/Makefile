@@ -1,10 +1,10 @@
 # Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 
 PORTNAME=	munge
-PORTVERSION=	0.5.14
-DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	0.5.14
 PORTREVISION=	1
 CATEGORIES=	security
+MASTER_SITES=	https://github.com/dun/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Authentication service for creating and validating credentials
@@ -12,15 +12,15 @@ COMMENT=	Authentication service for creating and validating credentials
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl-prefix=${OPENSSLBASE}
-USES=		autoreconf cpe libtool pathfix perl5 ssl
+USES=		cpe libtool pathfix perl5 ssl tar:xz
 CPE_VENDOR=	opensuse
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
 USE_RC_SUBR=	munged
+
 INSTALL_TARGET=	install-strip
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	dun
+CONFIGURE_ARGS=	--with-openssl-prefix=${OPENSSLBASE}
 
 .include <bsd.port.mk>
