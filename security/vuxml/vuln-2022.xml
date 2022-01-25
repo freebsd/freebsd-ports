@@ -1,3 +1,38 @@
+  <vuln vid="58528a94-5100-4208-a04d-edc01598cf01">
+    <topic>strongswan - denial-of-service vulnerability in the gmp plugin/denial-of-service vulnerability in the in-memory certificate cache</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Strongswan Release Notes reports:</p>
+	<blockquote cite="https://github.com/strongswan/strongswan/releases/tag/5.9.4">
+	  <p>Fixed a denial-of-service vulnerability in the gmp plugin that
+	     was caused by an integer overflow when processing RSASSA-PSS
+	     signatures with very large salt lengths. This vulnerability has
+	     been registered as CVE-2021-41990.</p>
+	  <p>Fixed a denial-of-service vulnerability in the in-memory
+	     certificate cache if certificates are replaced and a very large
+	     random value caused an integer overflow. This vulnerability has
+	     been registered as CVE-2021-41991.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41990</cvename>
+      <cvename>CVE-2021-41991</cvename>
+      <url>https://www.strongswan.org/blog/2021/10/18/strongswan-vulnerability-(cve-2021-41990).html</url>
+      <url>https://www.strongswan.org/blog/2021/10/18/strongswan-vulnerability-(cve-2021-41991).html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-04</discovery>
+      <entry>2022-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="309c35f4-7c9f-11ec-a739-206a8a720317">
     <topic>aide -- heap-based buffer overflow</topic>
     <affects>
