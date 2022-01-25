@@ -1,5 +1,5 @@
 PORTNAME=	byacc
-PORTVERSION=	20220109
+PORTVERSION=	20220114
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-mirror.net/archives/byacc/ \
 		LOCAL/sunpoet
