@@ -1944,12 +1944,12 @@ man/man8/zeek.8.gz
 %%DATADIR%%/policy/tuning/track-all-assets.zeek
 @sample %%DATADIR%%/site/local.zeek.sample
 %%ZEEKCTL%%%%DATADIR%%/test-all-policy.zeek
-%%ZEEKCTL%%share/zeek/zeekctl/__load__.zeek
-%%ZEEKCTL%%share/zeek/zeekctl/auto.zeek
-%%ZEEKCTL%%share/zeek/zeekctl/check.zeek
-%%ZEEKCTL%%share/zeek/zeekctl/main.zeek
-%%ZEEKCTL%%share/zeek/zeekctl/process-trace.zeek
-%%ZEEKCTL%%share/zeek/zeekctl/standalone.zeek
+%%ZEEKCTL%%%%DATADIR%%/zeekctl/__load__.zeek
+%%ZEEKCTL%%%%DATADIR%%/zeekctl/auto.zeek
+%%ZEEKCTL%%%%DATADIR%%/zeekctl/check.zeek
+%%ZEEKCTL%%%%DATADIR%%/zeekctl/main.zeek
+%%ZEEKCTL%%%%DATADIR%%/zeekctl/process-trace.zeek
+%%ZEEKCTL%%%%DATADIR%%/zeekctl/standalone.zeek
 %%DATADIR%%/zeekygen/__load__.zeek
 %%DATADIR%%/zeekygen/example.zeek
 %%ZEEKCTL%%share/zeekctl/scripts/archive-log
