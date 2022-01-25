@@ -20,6 +20,7 @@ man/man1/fido2-assert.1.gz
 man/man1/fido2-cred.1.gz
 man/man1/fido2-token.1.gz
 man/man3/eddsa_pk_free.3.gz
+man/man3/eddsa_pk_from_EVP_PKEY.3.gz
 man/man3/eddsa_pk_from_ptr.3.gz
 man/man3/eddsa_pk_new.3.gz
 man/man3/eddsa_pk_to_EVP_PKEY.3.gz
@@ -48,6 +49,7 @@ man/man3/fido_assert_largeblob_key_ptr.3.gz
 man/man3/fido_assert_new.3.gz
 man/man3/fido_assert_rp_id.3.gz
 man/man3/fido_assert_set_authdata.3.gz
+man/man3/fido_assert_set_authdata_raw.3.gz
 man/man3/fido_assert_set_clientdata.3.gz
 man/man3/fido_assert_set_clientdata_hash.3.gz
 man/man3/fido_assert_set_count.3.gz
@@ -168,6 +170,7 @@ man/man3/fido_cred_user_id_len.3.gz
 man/man3/fido_cred_user_id_ptr.3.gz
 man/man3/fido_cred_user_name.3.gz
 man/man3/fido_cred_verify.3.gz
+man/man3/fido_cred_verify_self.3.gz
 man/man3/fido_cred_x5c_len.3.gz
 man/man3/fido_cred_x5c_ptr.3.gz
 man/man3/fido_credman_del_dev_rk.3.gz
@@ -205,6 +208,7 @@ man/man3/fido_dev_get_retry_count.3.gz
 man/man3/fido_dev_get_touch_begin.3.gz
 man/man3/fido_dev_get_touch_status.3.gz
 man/man3/fido_dev_get_uv_retry_count.3.gz
+man/man3/fido_dev_has_pin.3.gz
 man/man3/fido_dev_has_uv.3.gz
 man/man3/fido_dev_info_free.3.gz
 man/man3/fido_dev_info_manifest.3.gz
@@ -214,7 +218,9 @@ man/man3/fido_dev_info_path.3.gz
 man/man3/fido_dev_info_product.3.gz
 man/man3/fido_dev_info_product_string.3.gz
 man/man3/fido_dev_info_ptr.3.gz
+man/man3/fido_dev_info_set.3.gz
 man/man3/fido_dev_info_vendor.3.gz
+man/man3/fido_dev_io_handle.3.gz
 man/man3/fido_dev_is_fido2.3.gz
 man/man3/fido_dev_is_winhello.3.gz
 man/man3/fido_dev_largeblob_get.3.gz
@@ -226,7 +232,9 @@ man/man3/fido_dev_major.3.gz
 man/man3/fido_dev_make_cred.3.gz
 man/man3/fido_dev_minor.3.gz
 man/man3/fido_dev_new.3.gz
+man/man3/fido_dev_new_with_info.3.gz
 man/man3/fido_dev_open.3.gz
+man/man3/fido_dev_open_with_info.3.gz
 man/man3/fido_dev_protocol.3.gz
 man/man3/fido_dev_reset.3.gz
 man/man3/fido_dev_set_io_functions.3.gz
@@ -235,12 +243,15 @@ man/man3/fido_dev_set_pin_minlen.3.gz
 man/man3/fido_dev_set_pin_minlen_rpid.3.gz
 man/man3/fido_dev_set_sigmask.3.gz
 man/man3/fido_dev_set_timeout.3.gz
+man/man3/fido_dev_set_transport_functions.3.gz
 man/man3/fido_dev_supports_cred_prot.3.gz
 man/man3/fido_dev_supports_credman.3.gz
+man/man3/fido_dev_supports_permissions.3.gz
 man/man3/fido_dev_supports_pin.3.gz
 man/man3/fido_dev_supports_uv.3.gz
 man/man3/fido_dev_toggle_always_uv.3.gz
 man/man3/fido_init.3.gz
+man/man3/fido_set_log_handler.3.gz
 man/man3/fido_strerr.3.gz
 man/man3/rs256_pk_free.3.gz
 man/man3/rs256_pk_from_EVP_PKEY.3.gz
@@ -249,6 +260,7 @@ man/man3/rs256_pk_from_ptr.3.gz
 man/man3/rs256_pk_new.3.gz
 man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_free.html
+%%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_from_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_from_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_to_EVP_PKEY.html
@@ -280,6 +292,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_rp_id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_authdata.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_authdata_raw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_clientdata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_clientdata_hash.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_count.html
@@ -400,6 +413,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_user_id_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_user_name.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_verify.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_verify_self.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_x5c_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_x5c_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_credman_del_dev_rk.html
@@ -437,6 +451,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_touch_begin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_touch_status.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_uv_retry_count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_has_pin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_has_uv.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_free.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_manifest.html
@@ -446,7 +461,9 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_product.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_product_string.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_set.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_vendor.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_io_handle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_is_fido2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_is_winhello.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_largeblob_get.html
@@ -458,7 +475,9 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_make_cred.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_minor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_new.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_new_with_info.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_open.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_open_with_info.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_reset.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_io_functions.html
@@ -467,12 +486,15 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_pin_minlen_rpid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_sigmask.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_timeout.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_transport_functions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_cred_prot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_credman.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_permissions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_pin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_uv.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_toggle_always_uv.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_init.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_set_log_handler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_strerr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_free.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rs256_pk_from_EVP_PKEY.html
