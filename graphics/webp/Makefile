@@ -1,7 +1,7 @@
 # Created by: johans
 
 PORTNAME=	webp
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/ \
 		https://storage.googleapis.com/downloads.webmproject.org/releases/webp/
