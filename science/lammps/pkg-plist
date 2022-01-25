@@ -140,8 +140,8 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Li_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Li_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/MOH.nb3b.harmonic
-%%DATADIR%%/potentials/Mg_mm.eam.fs
 %%DATADIR%%/potentials/MgAl.rann
+%%DATADIR%%/potentials/Mg_mm.eam.fs
 %%DATADIR%%/potentials/Mo5.2.mgpt.README
 %%DATADIR%%/potentials/Mo5.2.mgpt.parmin
 %%DATADIR%%/potentials/Mo5.2.mgpt.potin
@@ -156,10 +156,10 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Mo_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/Ni.adp
 %%DATADIR%%/potentials/Ni.meam
-%%DATADIR%%/potentials/Ni_Mo.mliap.descriptor
-%%DATADIR%%/potentials/Ni_Mo.mliap.model
 %%DATADIR%%/potentials/NiAlH_jea.eam.alloy
 %%DATADIR%%/potentials/NiAlH_jea.eam.fs
+%%DATADIR%%/potentials/Ni_Mo.mliap.descriptor
+%%DATADIR%%/potentials/Ni_Mo.mliap.model
 %%DATADIR%%/potentials/Ni_Zuo_JPCA2020.quadratic.snap
 %%DATADIR%%/potentials/Ni_Zuo_JPCA2020.quadratic.snapcoeff
 %%DATADIR%%/potentials/Ni_Zuo_JPCA2020.quadratic.snapparam
@@ -190,11 +190,11 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/SiC.tersoff.zbl
 %%DATADIR%%/potentials/SiC.vashishta
 %%DATADIR%%/potentials/SiCGe.tersoff
-%%DATADIR%%/potentials/SiGeH.sw.quip
 %%DATADIR%%/potentials/SiC_1989.tersoff
 %%DATADIR%%/potentials/SiC_1990.tersoff
 %%DATADIR%%/potentials/SiC_1994.tersoff
 %%DATADIR%%/potentials/SiC_Erhart-Albe.tersoff
+%%DATADIR%%/potentials/SiGeH.sw.quip
 %%DATADIR%%/potentials/SiO.1990.vashishta
 %%DATADIR%%/potentials/SiO.1994.vashishta
 %%DATADIR%%/potentials/SiO.1997.vashishta
@@ -251,6 +251,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Zn.rann
 %%DATADIR%%/potentials/Zr.rann
 %%DATADIR%%/potentials/Zr_mm.eam.fs
+%%DATADIR%%/potentials/acks2_ff.water
 %%DATADIR%%/potentials/charmm22.cmap
 %%DATADIR%%/potentials/charmm36.cmap
 %%DATADIR%%/potentials/ci-reaxFF_ZBL.dat
@@ -274,3 +275,4 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/ffield.smtbq.TiO2
 %%DATADIR%%/potentials/lib.comb3
 %%DATADIR%%/potentials/library.meam
+%%DATADIR%%/potentials/tmd.sw.mod

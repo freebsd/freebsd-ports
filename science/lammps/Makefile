@@ -16,21 +16,24 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libhwloc.so:devel/hwloc2 \
 		libnghttp2.so:www/libnghttp2 \
 		libpciaccess.so:devel/libpciaccess \
-		libssh2.so:security/libssh2
+		libssh2.so:security/libssh2 \
+		libzstd.so:archivers/zstd
 
-USES=		blaslapack:openblas cmake:noninja compiler:c++11-lang eigen:3 fortran gnome localbase:ldflags shebangfix
+USES=		blaslapack:openblas cmake:noninja compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python:build shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	stable_29Sep2021
+GH_TAGNAME=	patch_7Jan2022
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
-CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" ${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
+CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" ${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}} \
+		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_ARGS_gcc=	-DBUILD_OMP:BOOL=false
 
 # enable packages (for a complete list see STANDARD_PACKAGES in cmake/CMakeLists.txt)
@@ -125,7 +128,14 @@ CMAKE_ARGS+=	-DBUILD_OMP:BOOL=true
 .endif
 
 post-patch:
+	# adjust SHELL in Makefile
 	@${REINPLACE_CMD} 's|SHELL = /bin/bash|SHELL = ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/Makefile
+	# fix python version, also see https://github.com/lammps/lammps/issues/3098, https://github.com/lammps/lammps/issues/3099
+	@${FIND} ${WRKSRC} -name "CMakeLists.txt" -o -name "*.cmake" | ${XARGS} ${REINPLACE_CMD} -e ' \
+		s|find_package(Python |find_package(Python $${FREEBSD_PYTHON_VER} EXACT |; \
+		s|find_package(Python3 3.6 |find_package(Python3 |; \
+		s|find_package(Python3 |find_package(Python3 $${FREEBSD_PYTHON_VER} EXACT | \
+		'
 
 post-patch-FFMPEG-off:
 	@${REINPLACE_CMD} 's|find_program(FFMPEG_EXECUTABLE|#&|' ${WRKSRC}/cmake/CMakeLists.txt
