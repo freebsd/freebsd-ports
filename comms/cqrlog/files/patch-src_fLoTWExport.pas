@@ -1,6 +1,6 @@
---- src/fLoTWExport.pas.orig	2018-06-17 12:42:42 UTC
+--- src/fLoTWExport.pas.orig	2021-01-16 14:03:35 UTC
 +++ src/fLoTWExport.pas
-@@ -250,7 +250,7 @@ begin
+@@ -267,7 +267,7 @@ begin
    else begin
      WindowState := wsMaximized
    end;

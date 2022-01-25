@@ -1,7 +1,29 @@
---- help/h1.html.orig	2018-06-17 12:42:42 UTC
+--- help/h1.html.orig	2021-01-16 14:03:35 UTC
 +++ help/h1.html
-@@ -414,7 +414,7 @@ There are no known dependencies issues.<
-     <pre>/usr/local/bin/xplanet</pre>
+@@ -79,7 +79,7 @@
+     <strong>Web browser for cqrlog</strong> - If you do not fill this cqrlog tires to find system default browser. Quite often it places xgd-open as default browser. xgd-open is a linux tool script that tries to find system default browser.
+     <br>Most cases it works, but in some cases xdg-open strips hashtag links away from url path. That makes the right help page open, but from start. Not from chapter you might expect.
+     <br>Fix for this is to give path and filename to your real browser. It does not have to be same as your system default one. You can compare results opening first BandMap window and pressing blue ? (help) button.
+-    <br>Do it first with cqrlog found browser (xdg-open). Then change your favorite browser path and name (like /usr/bin/firefox) and repeat pressing ? of Band Map.
++    <br>Do it first with cqrlog found browser (xdg-open). Then change your favorite browser path and name (like %%LOCALBASE%%/bin/firefox) and repeat pressing ? of Band Map.
+     <br>If no difference, you do not need to change default (unless you want use different browser than system default with cqrlog).
+     <br><strong>Hint:</strong> If you click Web browser name edit box a file open dialog opens and you can navigate to your browser. If you place cursor on Web browser name edit box, press left button and keep it down, you can paint exisiting text and use delete button to clear it and type new text.
+     <br><br>    
+@@ -401,7 +401,7 @@ converted records appears.<br><br><img src=img/h38.png
+             <img src="img/note.png"></td>
+         <td bgcolor=#eaeaea valign="top" align="justify"><strong>
+             <font color="blue">Note:</font></strong> There are 2 places where membership list files are stored.
+-            <br><strong>--Global files--</strong> are stored in /usr/share/cqrlog/members folder and will be 
++            <br><strong>--Global files--</strong> are stored in %%LOCALBASE%%/share/cqrlog/members folder and will be 
+             updated with cqrlog version updates.
+             <br><strong>--Local files--</strong>, a place where you can save your own membership list files, is
+             ~/.config/cqrlog/members folder.
+@@ -510,10 +510,10 @@ make install</pre>
+ There are no known dependencies issues.<br><br>
+ <div align=justify>
+     The first thing to be set up is the path to the xplanet binary. The default
+-    <pre>/usr/local/bin/xplanet</pre>
++    <pre>%%LOCALBASE%%/bin/xplanet</pre>
      is OK in most cases for installation from sources,
      the usual path for installation from precompiled packages is
 -    <pre>/usr/bin/xplanet</pre>

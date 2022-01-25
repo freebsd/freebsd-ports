@@ -1,5 +1,5 @@
---- src/cqrlog.lpi	2019-10-27 07:21:10.000000000 -0500
-+++ src/cqrlog.lpi	2019-12-29 23:56:25.793361000 -0500
+--- src/cqrlog.lpi.orig	2021-01-16 14:03:35 UTC
++++ src/cqrlog.lpi
 @@ -40,7 +40,7 @@
      <RunParams>
        <local>

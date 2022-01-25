@@ -1,15 +1,15 @@
---- src/dUtils.pas.orig	2018-06-17 12:42:42 UTC
+--- src/dUtils.pas.orig	2021-01-16 14:03:35 UTC
 +++ src/dUtils.pas
-@@ -2376,7 +2376,7 @@ var
+@@ -2603,7 +2603,7 @@ var
    proj: string = '';
  begin
    Result := '';
 -  Result := cqrini.ReadString('xplanet', 'path', '/usr/bin/xplanet');
-+  Result := cqrini.ReadString('xplanet', 'path', '%%LOCALBASE%%/bin/xplanet');
++  Result := cqrini.ReadString('xplanet', 'path', '%%LOCALBASD%%/bin/xplanet');
    myloc := cqrini.ReadString('Station', 'LOC', '');
+   customloc := cqrini.ReadString('xplanet', 'loc', '');
    if not FileExists(Result) then
-   begin
-@@ -2667,7 +2667,7 @@ begin
+@@ -2953,7 +2953,7 @@ begin
    if Device = '' then
      exit;
  
@@ -18,3 +18,12 @@
    if not FileExists(cmd) then
      exit;
    cmd := cmd + ' --model=' + rigid;
+@@ -3855,7 +3855,7 @@ end;
+ 
+ function TdmUtils.GetNewQSOCaption(capt: string): string;
+ begin
+-  Result := capt + ' ... (CQRLOG for Linux)';
++  Result := capt + ' ... (CQRLOG for FreeBSD)';
+   if dmData.LogName <> '' then
+     Result := Result + ', database: ' + dmData.LogName;
+ end;

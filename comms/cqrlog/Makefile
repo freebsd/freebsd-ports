@@ -1,8 +1,7 @@
 # Created by: Stephen Hurd <shurd@FreeBSD.org>
 
 PORTNAME=	cqrlog
-PORTVERSION=	2.4.0
-PORTREVISION=	5
+PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -57,15 +56,8 @@ post-patch:
 		${WRKSRC}/src/dUtils.pas \
 		${WRKSRC}/src/fLoTWExport.pas ${WRKSRC}/src/fLoTWExport.lfm \
 		${WRKSRC}/src/fPreferences.pas ${WRKSRC}/src/fRotControl.pas \
-		${WRKSRC}/src/fTRXControl.pas ${WRKSRC}/src/fGrayline.pas \
-		${WRKSRC}/src/fPreferences.lfm ${WRKSRC}/src/fPreferences.pas
+		${WRKSRC}/src/fTRXControl.pas ${WRKSRC}/src/fPreferences.lfm
 	${REINPLACE_CMD} -e s!%%DATADIR%%!${DATADIR}!g \
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
-	${REINPLACE_CMD} -e s!Linux!FreeBSD!g \
-		${WRKSRC}/src/fMain.lfm ${WRKSRC}/src/fNewQSO.lfm \
-		${WRKSRC}/src/dUtils.pas
-	${REINPLACE_CMD} -e s!%%OPENSSLLIB%%!${OPENSSLLIB}!g \
-		${WRKSRC}/src/synapse/ssl_openssl_lib.pas
-	${RM} -r ${WRKSRC}/src/mysql
 
 .include <bsd.port.mk>
