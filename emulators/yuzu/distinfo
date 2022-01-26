@@ -1,8 +1,8 @@
-TIMESTAMP = 1643067709
+TIMESTAMP = 1643171082
 SHA256 (yuzu/compatibility_list.json) = 730160cafb46ded975f78538c449907fa319ad5a4acdbc39f8cbc8101ef4e23c
 SIZE (yuzu/compatibility_list.json) = 1255203
-SHA256 (yuzu-emu-yuzu-s20220124-344236512_GH0.tar.gz) = f98f963a1860ab3900b215863000dd1ba2f3de8d980b7927c184700c95e86539
-SIZE (yuzu-emu-yuzu-s20220124-344236512_GH0.tar.gz) = 4491363
+SHA256 (yuzu-emu-yuzu-s20220125-9bf7ad97f_GH0.tar.gz) = ce475d3d969cedcbde77bc92ae53adf55f0c40b2625248e2b77b8ade013b90d8
+SIZE (yuzu-emu-yuzu-s20220125-9bf7ad97f_GH0.tar.gz) = 4491465
 SHA256 (yuzu-emu-mbedtls-v2.16.9-115-g8c88150ca_GH0.tar.gz) = 8cd6d075b4da0ad5fb995eb37390e2e6088be8d41ab1cdfc7e7e4256bd991450
 SIZE (yuzu-emu-mbedtls-v2.16.9-115-g8c88150ca_GH0.tar.gz) = 2679189
 SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-32-ga3fdfe8_GH0.tar.gz) = bd629d6296dd374eb2aeff923c75895ba0f3ce6448dad89763930e65b954e0cb
