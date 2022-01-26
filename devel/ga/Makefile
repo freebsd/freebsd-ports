@@ -1,6 +1,6 @@
 PORTNAME=	ga
-DISTVERSIONPREFIX=	v
-DISTVERSION=	5.8
+DISTVERSION=	5.8.1
+MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +16,6 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libscalapack.so:math/scalapack
 
 USES=		autoreconf fortran gmake libtool localbase
-USE_GITHUB=	yes
-GH_ACCOUNT=	GlobalArrays
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-blas4 --with-scalapack
 INSTALL_TARGET=	install-strip
