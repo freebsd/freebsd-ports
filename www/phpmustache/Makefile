@@ -1,7 +1,7 @@
 # Created by: Steve Polyack <spolyack@collaborativefusion.com>
 
 PORTNAME=	phpmustache
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
