@@ -39,7 +39,6 @@ include/snort/file_api/file_flows.h
 include/snort/file_api/file_identifier.h
 include/snort/file_api/file_lib.h
 include/snort/file_api/file_module.h
-include/snort/file_api/file_policy.h
 include/snort/file_api/file_segment.h
 include/snort/file_api/file_service.h
 include/snort/flow/deferred_trust.h
@@ -83,6 +82,7 @@ include/snort/hash/hashes.h
 include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
 include/snort/helpers/base64_encoder.h
+include/snort/helpers/bitop.h
 include/snort/helpers/boyer_moore_search.h
 include/snort/helpers/buffer_data.h
 include/snort/helpers/json_stream.h
@@ -100,6 +100,7 @@ include/snort/log/text_log.h
 include/snort/log/u2_packet.h
 include/snort/log/unified2.h
 include/snort/lua/snort_plugin.lua
+include/snort/main/analyzer.h
 include/snort/main/analyzer_command.h
 include/snort/main/policy.h
 include/snort/main/reload_tracker.h
