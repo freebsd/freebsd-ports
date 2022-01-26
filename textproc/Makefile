@@ -1211,16 +1211,6 @@
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += php-mecab
-    SUBDIR += php73-ctype
-    SUBDIR += php73-dom
-    SUBDIR += php73-enchant
-    SUBDIR += php73-pspell
-    SUBDIR += php73-simplexml
-    SUBDIR += php73-wddx
-    SUBDIR += php73-xml
-    SUBDIR += php73-xmlreader
-    SUBDIR += php73-xmlwriter
-    SUBDIR += php73-xsl
     SUBDIR += php74-ctype
     SUBDIR += php74-dom
     SUBDIR += php74-enchant

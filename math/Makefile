@@ -762,8 +762,6 @@
     SUBDIR += permlib
     SUBDIR += petanque
     SUBDIR += petiga
-    SUBDIR += php73-bcmath
-    SUBDIR += php73-gmp
     SUBDIR += php74-bcmath
     SUBDIR += php74-gmp
     SUBDIR += php80-bcmath

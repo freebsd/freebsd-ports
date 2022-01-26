@@ -977,10 +977,6 @@
     SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger
-    SUBDIR += php73-ldap
-    SUBDIR += php73-soap
-    SUBDIR += php73-sockets
-    SUBDIR += php73-xmlrpc
     SUBDIR += php74-ldap
     SUBDIR += php74-soap
     SUBDIR += php74-sockets

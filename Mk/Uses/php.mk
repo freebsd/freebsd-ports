@@ -40,7 +40,7 @@
 # For example:
 #
 # USES=		php:ext
-# USE_PHP=	xml wddx
+# USE_PHP=	xml
 # PHP_MOD_PRIO=	40
 #
 # The port can set these options in its Makefile before bsd.port.pre.mk:
@@ -108,7 +108,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	73 74 80 81
+_ALL_PHP_VERSIONS=	74 80 81
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -185,9 +185,6 @@ PHP_EXT_INC=    hash json pcre spl
 .    elif ${PHP_VER} == 74
 PHP_EXT_DIR=   20190902
 PHP_EXT_INC=    hash pcre spl
-.    elif ${PHP_VER} == 73
-PHP_EXT_DIR=   20180731
-PHP_EXT_INC=    pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
 PHP_EXT_DIR=   20200930
@@ -375,7 +372,7 @@ add-plist-phpext:
 .  if defined(USE_PHP) && ${USE_PHP:tl} != "yes"
 # non-version specific components
 _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
-		enchant exif fileinfo filter ftp gd gettext gmp \
+		enchant exif ffi fileinfo filter ftp gd gettext gmp \
 		hash iconv igbinary imap intl json ldap mbstring mcrypt \
 		memcache memcached mysqli odbc opcache \
 		openssl pcntl pcre pdo pdo_dblib pdo_firebird pdo_mysql \
@@ -384,10 +381,9 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER73=	${_USE_PHP_ALL} interbase pdf recode wddx
-_USE_PHP_VER74=	${_USE_PHP_ALL} ffi pdf
-_USE_PHP_VER80=	${_USE_PHP_ALL} ffi
-_USE_PHP_VER81=	${_USE_PHP_ALL} ffi
+_USE_PHP_VER74=	${_USE_PHP_ALL} pdf
+_USE_PHP_VER80=	${_USE_PHP_ALL}
+_USE_PHP_VER81=	${_USE_PHP_ALL}
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}
@@ -411,7 +407,6 @@ hash_DEPENDS=	security/php${PHP_VER}-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
 imap_DEPENDS=	mail/php${PHP_VER}-imap
-interbase_DEPENDS=	databases/php${PHP_VER}-interbase
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
@@ -439,7 +434,6 @@ posix_DEPENDS=	sysutils/php${PHP_VER}-posix
 pspell_DEPENDS=	textproc/php${PHP_VER}-pspell
 radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline
-recode_DEPENDS=	converters/php${PHP_VER}-recode
 redis_DEPENDS=	databases/pecl-redis@${PHP_FLAVOR}
 session_DEPENDS=www/php${PHP_VER}-session
 shmop_DEPENDS=	devel/php${PHP_VER}-shmop
@@ -455,7 +449,6 @@ sysvsem_DEPENDS=devel/php${PHP_VER}-sysvsem
 sysvshm_DEPENDS=devel/php${PHP_VER}-sysvshm
 tidy_DEPENDS=	www/php${PHP_VER}-tidy
 tokenizer_DEPENDS=	devel/php${PHP_VER}-tokenizer
-wddx_DEPENDS=	textproc/php${PHP_VER}-wddx
 xml_DEPENDS=	textproc/php${PHP_VER}-xml
 xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
 .if ${PHP_VER} >= 80
