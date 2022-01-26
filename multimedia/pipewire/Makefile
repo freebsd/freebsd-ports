@@ -78,12 +78,6 @@ MESON_ARGS=	-D pw-cat=enabled \
 CONFIGURE_ENV+=	${ncurses_ARGS:Mbase:C/.+/PKG_CONFIG_PATH="${FILESDIR}"/}
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMANPAGES} && ${PORT_OPTIONS:MPIPEWIRE_JACK}
-PLIST_FILES=	man/man1/pw-jack.1.gz
-.endif
-
 post-extract:
 	${LN} -s ${WRKDIR}/media-session-${MEDIA_SESSION_VERSION} ${WRKSRC}/subprojects/media-session
 

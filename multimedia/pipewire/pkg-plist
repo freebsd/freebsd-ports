@@ -220,6 +220,7 @@ libdata/pkgconfig/libspa-0.2.pc
 %%MANPAGES%%man/man1/pw-cat.1.gz
 %%MANPAGES%%man/man1/pw-cli.1.gz
 %%MANPAGES%%man/man1/pw-dot.1.gz
+%%MANPAGES%%%%PIPEWIRE_JACK%%man/man1/pw-jack.1.gz
 %%MANPAGES%%man/man1/pw-metadata.1.gz
 %%MANPAGES%%man/man1/pw-mididump.1.gz
 %%MANPAGES%%man/man1/pw-mon.1.gz
