@@ -24,4 +24,6 @@ CMAKE_OFF=		HEXL_BENCHMARK HEXL_TESTING
 CMAKE_TESTING_ON=	HEXL_TESTING
 CMAKE_TESTING_TARGET=	unittest
 
+CXXFLAGS+=	-I${LOCALBASE}/include/cpu_features
+
 .include <bsd.port.mk>

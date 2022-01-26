@@ -26,6 +26,7 @@ GH_ACCOUNT=	rvaser
 CMAKE_ON=	BUILD_SHARED_LIBS spoa_optimize_for_portability spoa_build_executable spoa_use_simde spoa_use_simde_nonvec spoa_use_simde_openmp
 CMAKE_OFF=	spoa_optimize_for_native
 
+CXXFLAGS+=	-I${LOCALBASE}/include/cpu_features
 LDFLAGS+=	-lz -lcpu_features
 
 .include <bsd.port.options.mk>

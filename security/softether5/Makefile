@@ -35,6 +35,8 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DSE_LOGDIR="${SE_LOGDIR}" \
 		-DSE_PIDDIR="${SE_PIDDIR}"
 
+CFLAGS+=	-I${LOCALBASE}/include/cpu_features
+
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	DISCLAIMER.md WARNING.TXT
@@ -54,7 +56,7 @@ SUB_FILES=	pkg-message
 # skip cpu_features when devel/cpu_features is not available
 CMAKE_BOOL_ON+=	SKIP_CPU_FEATURES
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/include/cpu_features_macros.h:devel/cpu_features
+BUILD_DEPENDS+=	${LOCALBASE}/include/cpu_features/cpu_features_macros.h:devel/cpu_features
 LIB_DEPENDS+=	libcpu_features.so:devel/cpu_features
 .endif
 
