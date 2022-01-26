@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-omniauth-openid-connect
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
