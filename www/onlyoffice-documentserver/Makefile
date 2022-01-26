@@ -1,15 +1,16 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.4.2
-PORTREVISION=	2
+DISTVERSION=	7.0.0.133
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
 		https://nodejs.org/dist/v16.13.0/:source3 \
 		SF/optipng/OptiPNG/optipng-0.7.7/:source4
-DISTFILES+=	v8-8.7.220.31_all.tar.gz:source1 \
+DISTFILES+=	v8-6.8.275.32_all.tar.gz:source1 \
+		v8-6.8.275.32_122aarch64.tar.gz:source1 \
+		v8-6.8.275.32_122amd64.tar.gz:source1 \
 		node-v16.13.0.tar.gz:source3 \
-		npm-cache-onlyoffice.tar.gz:source2 \
+		npm-cache-onlyoffice-${DISTVERSION}.tar.gz:source2 \
 		optipng-0.7.7.tar.gz:source4
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -18,6 +19,9 @@ COMMENT=	Secure office and productivity apps
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	uses aarch64 or amd64 binaries
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		binutils>=0:devel/binutils \
 		boost-libs>0:devel/boost-libs \
@@ -25,47 +29,47 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		gn:devel/gn \
 		java:java/openjdk11 \
 		ninja:devel/ninja \
-		node:www/node16 \
 		npm:www/npm-node16
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
 		libiconv.so:converters/libiconv \
 		libicutu.so:devel/icu
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
-		curl:ftp/curl \
 		gsed:textproc/gsed \
 		nginx:www/nginx \
 		pg_dump:databases/postgresql${PGSQL_VER_NODOT}-server \
 		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv pgsql pkgconfig \
+USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv nodejs:16,build pgsql pkgconfig \
 		python:3.7+,build qt:5
 USE_QT=		qmake_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
 GH_PROJECT=	DocumentServer
-GH_TUPLE=	ONLYOFFICE:core:0c29e4d:core/core \
-		ONLYOFFICE:core-fonts:3929a09:corefonts/core-fonts \
-		ONLYOFFICE:dictionaries:cfa50d3:dictionaries/dictionaries \
-		ONLYOFFICE:document-server-integration:v1.0.0:dsi/document-server-integration \
-		ONLYOFFICE:document-templates:v6.4.2.1:dt/document-templates \
-		ONLYOFFICE:sdkjs:9af7d08:sdkjs/sdkjs \
-		ONLYOFFICE:server:10929a0:server/server \
-		ONLYOFFICE:web-apps:1851cae:webapps/web-apps \
-		ONLYOFFICE:plugin-highlightcode:7ea4ddf:sdkjs_plugins_highlightcode/sdkjs-plugins/plugin-highlightcode \
-		ONLYOFFICE:plugin-macros:4027439:sdkjs_plugins_macros/sdkjs-plugins/plugin-macros \
-		ONLYOFFICE:plugin-mendeley:5a36bf9:sdkjs_plugins_mendeley/sdkjs-plugins/plugin-mendeley \
-		ONLYOFFICE:plugin-ocr:5b24c87:sdkjs_plugins_ocr/sdkjs-plugins/plugin-ocr \
-		ONLYOFFICE:plugin-photoeditor:995b5f6:sdkjs_plugins_photoeditor/sdkjs-plugins/plugin-photoeditor \
-		ONLYOFFICE:plugin-speech:fcec715:sdkjs_plugins_speech/sdkjs-plugins/plugin-speech \
-		ONLYOFFICE:plugin-thesaurus:4ada280:sdkjs_plugins_thesaurus/sdkjs-plugins/plugin-thesaurus \
-		ONLYOFFICE:plugin-translator:ba6caed:sdkjs_plugins_translator/sdkjs-plugins/plugin-translator \
-		ONLYOFFICE:plugin-youtube:4dec911:sdkjs_plugins_youtube/sdkjs-plugins/plugin-youtube \
-		ONLYOFFICE:plugin-zotero:c9f472f:sdkjs_plugins_zotero/sdkjs-plugins/plugin-zotero \
-		ONLYOFFICE:build_tools:cf4cac94:buildtools/build_tools \
-		ONLYOFFICE:DocumentBuilder:4169685e6:document_builder/DocumentBuilder \
-		ONLYOFFICE:onlyoffice.github.io:ca730969:sdkjs_plugins_v1/onlyoffice.github.io \
-		ONLYOFFICE:document-server-package:c12273c0a:dsp/document-server-package \
+GH_TAGNAME=	v7.0.0
+GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
+		ONLYOFFICE:core-fonts:v${DISTVERSION}:corefonts/core-fonts \
+		ONLYOFFICE:dictionaries:v${DISTVERSION}:dictionaries/dictionaries \
+		ONLYOFFICE:document-server-integration:v${DISTVERSION}:dsi/document-server-integration \
+		ONLYOFFICE:document-templates:v${DISTVERSION}:dt/document-templates \
+		ONLYOFFICE:sdkjs:v${DISTVERSION}:sdkjs/sdkjs \
+		ONLYOFFICE:server:v${DISTVERSION}:server/server \
+		ONLYOFFICE:web-apps:v${DISTVERSION}:webapps/web-apps \
+		ONLYOFFICE:plugin-highlightcode:v${DISTVERSION}:sdkjs_plugins_highlightcode/sdkjs-plugins/plugin-highlightcode \
+		ONLYOFFICE:plugin-macros:v${DISTVERSION}:sdkjs_plugins_macros/sdkjs-plugins/plugin-macros \
+		ONLYOFFICE:plugin-mendeley:v${DISTVERSION}:sdkjs_plugins_mendeley/sdkjs-plugins/plugin-mendeley \
+		ONLYOFFICE:plugin-ocr:v${DISTVERSION}:sdkjs_plugins_ocr/sdkjs-plugins/plugin-ocr \
+		ONLYOFFICE:plugin-photoeditor:v${DISTVERSION}:sdkjs_plugins_photoeditor/sdkjs-plugins/plugin-photoeditor \
+		ONLYOFFICE:plugin-speech:v${DISTVERSION}:sdkjs_plugins_speech/sdkjs-plugins/plugin-speech \
+		ONLYOFFICE:plugin-thesaurus:v${DISTVERSION}:sdkjs_plugins_thesaurus/sdkjs-plugins/plugin-thesaurus \
+		ONLYOFFICE:plugin-translator:v${DISTVERSION}:sdkjs_plugins_translator/sdkjs-plugins/plugin-translator \
+		ONLYOFFICE:plugin-youtube:v${DISTVERSION}:sdkjs_plugins_youtube/sdkjs-plugins/plugin-youtube \
+		ONLYOFFICE:plugin-zotero:v${DISTVERSION}:sdkjs_plugins_zotero/sdkjs-plugins/plugin-zotero \
+		ONLYOFFICE:build_tools:v${DISTVERSION}:buildtools/build_tools \
+		ONLYOFFICE:DocumentBuilder:v${DISTVERSION}:document_builder/DocumentBuilder \
+		ONLYOFFICE:onlyoffice.github.io:342e8f66:sdkjs_plugins_v1/onlyoffice.github.io \
+		ONLYOFFICE:document-server-package:v${DISTVERSION}:dsp/document-server-package \
 		hackers-painters:katana-parser:499118d3:hackers_painters_katana/core/Common/3dParty/html/katana-parser \
 		google:gumbo-parser:aa91b27:google_gumbo/core/Common/3dParty/html/gumbo-parser
 
@@ -98,6 +102,8 @@ CONFLICTS_BUILD=devel/googletest
 
 post-extract:
 	@${MV} ${WRKDIR}/v8 ${WRKSRC}/core/Common/3dParty/v8
+	@${MKDIR} ${WRKSRC}/core/Common/3dParty/v8/v8/out.gn/freebsd_64
+	@${MV} ${WRKDIR}/v8_obj_122${ARCH}/obj ${WRKSRC}/core/Common/3dParty/v8/v8/out.gn/freebsd_64
 
 	@${MKDIR} ${WRKDIR}/.pkg-cache/node
 	@${CP} ${DISTDIR}/node-v16.13.0.tar.gz ${WRKDIR}/.pkg-cache/node
@@ -113,11 +119,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/core/Common/3dParty/v8/v8/build/toolchain/gcc_toolchain.gni \
-		${WRKSRC}/core/Common/3dParty/v8/v8/buildtools/third_party/libc++/BUILD.gn \
+		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
 		${WRKSRC}/core/DesktopEditor/fontengine/ApplicationFonts.cpp
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%CXX%%|${CXX}|' \
-		${WRKSRC}/core/Common/3dParty/v8/v8/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/core/Common/base.pri
 	@${REINPLACE_CMD} 's|%%WRKDIR%%|${WRKDIR}|' \
 		${WRKSRC}/document-server-package/Makefile
@@ -157,12 +161,12 @@ do-build:
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install optipng-bin@5.1.0
 	@cd ${WRKSRC}/web-apps/build ; node_modules/.bin/patch-package
-	@cd ${WRKSRC}/web-apps/build/node_modules ; ${SETENV} ${MAKE_ENV} npm build optipng-bin
+	@cd ${WRKSRC}/web-apps/build/node_modules/optipng-bin ; ${SETENV} ${MAKE_ENV} npm run postinstall optipng-bin
 
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt
-	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install pkg
+	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install pkg@5.5.1
 	@cd ${WRKSRC}/sdkjs  ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/sdkjs  ; ${SETENV} ${MAKE_ENV} npm install grunt
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
