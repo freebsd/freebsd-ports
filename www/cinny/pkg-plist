@@ -43,8 +43,8 @@
 %%WWWDIR%%/b4c30855aff392d7e8dc.ttf
 @sample %%WWWDIR%%/config.json.example %%WWWDIR%%/config.json
 %%WWWDIR%%/index.html
-%%WWWDIR%%/main.9213b7a6571a24253228.bundle.css
-%%WWWDIR%%/main.946f61bde136a335f4fa.bundle.js
-%%WWWDIR%%/main.946f61bde136a335f4fa.bundle.js.LICENSE.txt
+%%WWWDIR%%/main.2c2fb44ffba1cb75ee19.bundle.js
+%%WWWDIR%%/main.2c2fb44ffba1cb75ee19.bundle.js.LICENSE.txt
+%%WWWDIR%%/main.f74efb7c231610caf471.bundle.css
 %%WWWDIR%%/olm.wasm
 %%WWWDIR%%/polyfill.a9097dc82278a0bb6197.bundle.js
