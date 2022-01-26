@@ -1,0 +1,7 @@
+This is Cagebreak, a Wayland tiling compositor. The goal of this
+project is to provide a successor to ratpoison for Wayland users.
+However, this is no reimplementation of ratpoison. Should you like to
+know if a feature will be implemented, open an issue or get in touch
+with the development team.
+
+WWW: https://github.com/project-repo/cagebreak

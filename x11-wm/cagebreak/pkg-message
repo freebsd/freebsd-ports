@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Known issues:
+- Running X11 applications (e.g., xterm) via Xwayland is broken, see
+  https://github.com/project-repo/cagebreak/issues/23
+EOM
+}
+]

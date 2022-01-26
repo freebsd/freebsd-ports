@@ -13,6 +13,7 @@
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += cage
+    SUBDIR += cagebreak
     SUBDIR += chamfer
     SUBDIR += compiz
     SUBDIR += compiz-plugins-extra
