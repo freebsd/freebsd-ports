@@ -13,8 +13,8 @@
 # 		  ext2/ext3/ext4 file systems at boot, before PREFIX is mounted
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.46.4
-PORTREVISION?=	3
+PORTVERSION=	1.46.5
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -59,6 +59,8 @@ MAKE_ENV+=	CHECK_CMD=@true
 PORTSCOUT=	ignore:1	# cannot handle the version in the directory
 
 .if !defined(MASTERDIR)
+CPPFLAGS+=	-D__GNUC_PREREQ\(a,b\)=1
+
 INSTALL_TARGET=		install install-libs
 
 OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS SLOWTESTS BASHTESTS LIBUNWIND
