@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
+# devel/rubygem-parser is required for database upgrade process
+# see https://gitlab.com/gitlab-org/gitlab/-/issues/350866
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=2.17.0:textproc/gitlab-elasticsearch-indexer \
@@ -254,7 +256,8 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-webauthn>=2.3<3:security/rubygem-webauthn \
 	rubygem-ipaddress>=0.8.3<0.9:net/rubygem-ipaddress \
 	rubygem-parslet1>=1.8<2:textproc/rubygem-parslet1 \
-	rubygem-ipynbdiff>=0.3.8<0.3.9:devel/rubygem-ipynbdiff
+	rubygem-ipynbdiff>=0.3.8<0.3.9:devel/rubygem-ipynbdiff \
+	rubygem-parser>=0:devel/rubygem-parser
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}

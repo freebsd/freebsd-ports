@@ -26,7 +26,7 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -328,114 +327,13 @@ gem 'batch-loader', '~> 2.0.1'
+@@ -328,115 +327,14 @@ gem 'batch-loader', '~> 2.0.1'
  gem 'peek', '~> 1.1'
  
  # Snowplow events tracking
@@ -39,7 +39,7 @@
  gem 'prometheus-client-mmap', '~> 0.15.0', require: 'prometheus/client'
  
  gem 'warning', '~> 1.2.0'
--
+ 
 -group :development do
 -  gem 'lefthook', '~> 0.7.0', require: false
 -  gem 'solargraph', '~> 0.43', require: false
@@ -139,6 +139,14 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
 -end
- 
+-
  gem 'octokit', '~> 4.15'
  
+ # Updating this gem version here is deprecated. See:
+@@ -542,3 +440,6 @@ gem 'ipaddress', '~> 0.8.3'
+ gem 'parslet', '~> 1.8'
+ 
+ gem 'ipynbdiff', '0.3.8'
++
++gem 'parser'
++
