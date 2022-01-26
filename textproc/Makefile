@@ -1703,6 +1703,7 @@
     SUBDIR += rubygem-minima
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
+    SUBDIR += rubygem-nokogiri111
     SUBDIR += rubygem-nokogiri-diff
     SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-octopress-escape-code

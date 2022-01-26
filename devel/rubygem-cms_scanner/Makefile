@@ -1,5 +1,6 @@
 PORTNAME=	cms_scanner
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ COMMENT=	Framework to provide an easy way to implement CMS Scanners
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-get_process_mem>=0.2.5<0.3:devel/rubygem-get_process_mem \
-		rubygem-nokogiri>=1.11.0<1.12:textproc/rubygem-nokogiri \
+		rubygem-nokogiri111>=1.11.0<1.12:textproc/rubygem-nokogiri111 \
 		rubygem-opt_parse_validator>=1.8.3<1.10:devel/rubygem-opt_parse_validator \
 		rubygem-public_suffix>=4.0.3<4.1:dns/rubygem-public_suffix \
 		rubygem-ruby-progressbar>=1.10.0<1.12:devel/rubygem-ruby-progressbar \
