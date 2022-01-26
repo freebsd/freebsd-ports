@@ -1,6 +1,6 @@
---- Makefile.orig	2021-12-21 14:02:19 UTC
+--- Makefile.orig	2022-01-21 10:20:57 UTC
 +++ Makefile
-@@ -289,7 +289,7 @@ help:
+@@ -298,7 +298,7 @@ help:
  
  .PHONY: build
  ## Build Go binaries and install required Ruby Gems.
@@ -9,7 +9,7 @@
  	@ # We used to install Gitaly binaries into the source directory by default when executing
  	@ # "make" or "make all", which has been changed in v14.5 to only build binaries into
  	@ # `_build/bin`. In order to quickly fail in case any source install still refers to these
-@@ -505,7 +505,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -522,7 +522,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -18,12 +18,3 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -599,7 +599,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
- ${TOOLS_DIR}/protoc.zip: ${TOOLS_DIR}/protoc.version
- 	${Q}if [ -z "${PROTOC_URL}" ]; then echo "Cannot generate protos on unsupported platform ${OS}" && exit 1; fi
- 	curl -o $@.tmp --silent --show-error -L ${PROTOC_URL}
--	${Q}printf '${PROTOC_HASH}  $@.tmp' | sha256sum -c -
-+	${Q}printf '${PROTOC_HASH}  $@.tmp' | sha256 -c -
- 	${Q}mv $@.tmp $@
- 
- ${PROTOC}: ${TOOLS_DIR}/protoc.zip

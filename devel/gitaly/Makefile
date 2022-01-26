@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.6.3
+DISTVERSION=	14.7.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -21,7 +21,7 @@ MY_DEPENDS=	git>=2.33.0:devel/git \
 		rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport61>=6.1.4.1<6.1.5:devel/rubygem-activesupport61 \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
-		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
+		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.2<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc142>=1.42.0.pre1<2:net/rubygem-grpc142 \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
@@ -49,12 +49,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	b16fee14516980fedd9d67d5207cadf2165ab162
+GL_COMMIT=	f29f1fdadb51328ed686c2c916b332eae6a55e49
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 137dd
+# 143dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -103,7 +103,7 @@ GH_TUPLE=	\
 		godbus:dbus:v5.0.4:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:e8c3332aa8e5:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
@@ -135,6 +135,14 @@ GH_TUPLE=	\
 		hashicorp:yamux:a95892c5f864:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		hhatto:gorst:ca9f730cac5b:hhatto_gorst/vendor/github.com/hhatto/gorst \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
+		jackc:chunkreader:v2.0.1:jackc_chunkreader_v2/vendor/github.com/jackc/chunkreader/v2 \
+		jackc:pgconn:v1.10.1:jackc_pgconn/vendor/github.com/jackc/pgconn \
+		jackc:pgio:v1.0.0:jackc_pgio/vendor/github.com/jackc/pgio \
+		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
+		jackc:pgproto3:v2.2.0:jackc_pgproto3_v2/vendor/github.com/jackc/pgproto3/v2 \
+		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
+		jackc:pgtype:v1.9.1:jackc_pgtype/vendor/github.com/jackc/pgtype \
+		jackc:pgx:v4.14.1:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
@@ -146,8 +154,7 @@ GH_TUPLE=	\
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
-		lib:pq:v1.10.1:lib_pq/vendor/github.com/lib/pq \
-		libgit2:git2go:v32.0.5:libgit2_git2go_v32/vendor/github.com/libgit2/git2go/v32 \
+		libgit2:git2go:v32.1.6:libgit2_git2go_v32/vendor/github.com/libgit2/git2go/v32 \
 		lightstep:lightstep-tracer-common:a8dfcb80d3a7:lightstep_lightstep_tracer_common_gogo/vendor/github.com/lightstep/lightstep-tracer-common \
 		lightstep:lightstep-tracer-go:v0.24.0:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
@@ -230,5 +237,3 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
-
-

@@ -1,25 +1,18 @@
---- ruby/Gemfile.orig	2021-12-21 14:02:19 UTC
+--- ruby/Gemfile.orig	2022-01-21 10:20:57 UTC
 +++ ruby/Gemfile
-@@ -2,12 +2,12 @@ source 'https://rubygems.org'
+@@ -2,7 +2,7 @@ source 'https://rubygems.org'
  
  gem 'rugged', '~> 1.2'
  gem 'github-linguist', '~> 7.12', require: 'linguist'
 -gem 'gitlab-markup', '~> 1.7.1'
 +gem 'gitlab-markup', '~> 1.8.0'
- gem 'activesupport', '~> 6.1.4.1'
+ gem 'activesupport', '~> 6.1.4.4'
  gem 'rdoc', '~> 6.0'
- gem 'gitlab-gollum-lib', '~> 4.2.7.10.gitlab.1', require: false
- gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.4.gitlab.1', require: false
--gem 'grpc', '~> 1.30.2'
-+gem 'grpc', '~> 1.42.0.pre1'
- gem 'sentry-raven', '~> 3.0', require: false
- gem 'faraday', '~> 1.0'
- gem 'rbtrace', require: false
-@@ -19,23 +19,4 @@ gem 'gitlab-labkit', '~> 0.21.1'
- # This version needs to be in sync with GitLab CE/EE
+ gem 'gitlab-gollum-lib', '~> 4.2.7.10.gitlab.2', require: false
+@@ -20,22 +20,3 @@ gem 'gitlab-labkit', '~> 0.21.1'
  gem 'licensee', '~> 9.14.1'
  
--gem 'google-protobuf', '~> 3.17.0'
+ gem 'google-protobuf', '~> 3.19.0'
 -
 -group :development, :test do
 -  gem 'rubocop', '~> 0.69', require: false
@@ -29,7 +22,7 @@
 -  gem 'factory_bot', require: false
 -  gem 'pry', '~> 0.12.2', require: false
 -
--  gem 'grpc-tools', '= 1.30.2'
+-  gem 'grpc-tools', '~> 1.42.0'
 -end
 -
 -# Gems required in omnibus-gitlab pipeline
@@ -39,4 +32,3 @@
 -  # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/74881
 -  gem 'gitlab-license_finder', require: false
 -end
-+gem 'google-protobuf', '~> 3.19.0'
