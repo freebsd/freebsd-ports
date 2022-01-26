@@ -1,3 +1,34 @@
+  <vuln vid="ccaea96b-7dcd-11ec-93df-00224d821998">
+    <topic>strongswan - Incorrect Handling of Early EAP-Success Messages</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Strongswan Release Notes reports:</p>
+	<blockquote cite="https://github.com/strongswan/strongswan/releases/tag/5.9.5">
+	  <p>Fixed a vulnerability in the EAP client implementation
+	    that was caused by incorrectly handling early EAP-Success
+	    messages. It may allow to bypass the client and in some
+	    scenarios even the server authentication, or could lead to
+	    a denial-of-service attack. This vulnerability has been
+	    registered as CVE-2021-45079.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45079</cvename>
+      <url>https://www.strongswan.org/blog/2022/01/24/strongswan-vulnerability-(cve-2021-45079).html</url>
+    </references>
+    <dates>
+      <discovery>2021-12-16</discovery>
+      <entry>2022-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58528a94-5100-4208-a04d-edc01598cf01">
     <topic>strongswan - denial-of-service vulnerability in the gmp plugin/denial-of-service vulnerability in the in-memory certificate cache</topic>
     <affects>
