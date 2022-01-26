@@ -1,6 +1,14 @@
 bin/flatc
+include/flatbuffers/allocator.h
+include/flatbuffers/array.h
 include/flatbuffers/base.h
+include/flatbuffers/bfbs_generator.h
+include/flatbuffers/buffer.h
+include/flatbuffers/buffer_ref.h
 include/flatbuffers/code_generators.h
+include/flatbuffers/default_allocator.h
+include/flatbuffers/detached_buffer.h
+include/flatbuffers/flatbuffer_builder.h
 include/flatbuffers/flatbuffers.h
 include/flatbuffers/flatc.h
 include/flatbuffers/flexbuffers.h
@@ -14,7 +22,13 @@ include/flatbuffers/reflection.h
 include/flatbuffers/reflection_generated.h
 include/flatbuffers/registry.h
 include/flatbuffers/stl_emulation.h
+include/flatbuffers/string.h
+include/flatbuffers/struct.h
+include/flatbuffers/table.h
 include/flatbuffers/util.h
+include/flatbuffers/vector.h
+include/flatbuffers/vector_downward.h
+include/flatbuffers/verifier.h
 lib/cmake/flatbuffers/FlatbuffersConfig.cmake
 lib/cmake/flatbuffers/FlatbuffersConfigVersion.cmake
 lib/cmake/flatbuffers/FlatbuffersSharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -23,5 +37,5 @@ lib/cmake/flatbuffers/FlatcTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flatbuffers/FlatcTargets.cmake
 lib/libflatbuffers.so
 lib/libflatbuffers.so.2
-lib/libflatbuffers.so.2.0.0
+lib/libflatbuffers.so.2.0.5
 libdata/pkgconfig/flatbuffers.pc
