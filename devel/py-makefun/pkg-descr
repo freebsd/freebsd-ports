@@ -1,0 +1,20 @@
+Makefun helps you create functions dynamically, with the signature of your
+choice. It was largely inspired by decorator and functools, and created mainly
+to cover some of their limitations.
+
+The typical use cases are:
+  * creating signature-preserving function wrappers - just like functools.wraps
+  but with accurate TypeError exception raising when user-provided arguments are
+  wrong, and with a very convenient way to access argument values.
+
+  * creating function wrappers that have more or less arguments that the
+  function they wrap. A bit like functools.partial but a lot more flexible and
+  friendly for your users. For example, I use it in my pytest plugins to add a
+  requests parameter to users' tests or fixtures when they do not already have
+  it.
+
+  * more generally, creating functions with a signature derived from a reference
+  signature, or even creating functions with a signature completely defined at
+  runtime.
+
+WWW: https://github.com/smarie/python-makefun

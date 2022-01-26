@@ -4751,6 +4751,7 @@
     SUBDIR += py-macholib
     SUBDIR += py-magic
     SUBDIR += py-mailcap-fix
+    SUBDIR += py-makefun
     SUBDIR += py-manuel
     SUBDIR += py-marrow.mailer
     SUBDIR += py-marrow.util
