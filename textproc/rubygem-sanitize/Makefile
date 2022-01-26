@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	sanitize
-PORTVERSION=	5.2.3
+PORTVERSION=	6.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-crass>=1.0.2<1.1:www/rubygem-crass \
-		rubygem-nokogiri>=1.8.0:textproc/rubygem-nokogiri \
-		rubygem-nokogumbo>=2.0<3:textproc/rubygem-nokogumbo
+		rubygem-nokogiri>=1.12.0:textproc/rubygem-nokogiri
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
