@@ -51,7 +51,7 @@ PROFILING_CONFIGURE_ON=	--profile
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c11
