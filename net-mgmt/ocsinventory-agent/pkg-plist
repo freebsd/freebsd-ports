@@ -74,6 +74,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Repository/CentOS.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Repository/Debian.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Repository/Rhel.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Repository/SuSE.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Screen.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Users.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/HPUX.pm
@@ -92,6 +93,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/HPUX/Storages.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Archs/ARM.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Archs/ARM/Bios.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Archs/ARM/CPU.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Archs/Alpha.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Archs/Alpha/CPU.pm
