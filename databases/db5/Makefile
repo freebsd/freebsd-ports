@@ -11,7 +11,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-DEPRECATED=	EOLd, upstream hiding patches, potential security issues
+DEPRECATED=	EOLd, potential security issues, maybe use db18 instead
 EXPIRATION_DATE=2022-06-30
 
 MAINTAINER=	ports@FreeBSD.org
