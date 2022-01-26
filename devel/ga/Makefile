@@ -1,7 +1,7 @@
 PORTNAME=	ga
 DISTVERSION=	5.8.1
-MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partitioned Global Address Space (PGAS) library for distributed arrays
