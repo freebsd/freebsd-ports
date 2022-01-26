@@ -1,7 +1,10 @@
+PORTREVISION=	1
 CATEGORIES=	www
 
-MASTERDIR=	${.CURDIR}/../../lang/php81
-
 PKGNAMESUFFIX=	-opcache
+
+USES=		php:zend,noflavors
+
+MASTERDIR=	${.CURDIR}/../../lang/php81
 
 .include "${MASTERDIR}/Makefile"

@@ -412,7 +412,6 @@ CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 # This is needed by Zend extensions, keep before everything.
 PHP_MOD_PRIO=		10
 CONFIGURE_ARGS+=	--enable-opcache
-USES+=			localbase php:zend
 .endif
 
 .if ${PHP_MODNAME} == "pcntl"
