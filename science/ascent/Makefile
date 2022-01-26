@@ -1,6 +1,7 @@
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.1-66
+DISTVERSIONSUFFIX=	-gbcf2742a
 CATEGORIES=	science
 PKGNAMESUFFIX=	-visualizer
 
@@ -11,7 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libconduit.so:science/conduit \
-		libsysinfo.so:devel/libsysinfo
+		libhdf5.so:science/hdf5 \
+		libsiloh5.so:science/silo \
+		libsysinfo.so:devel/libsysinfo \
+		libsz.so:science/szip
 
 USES=		cmake:testing compiler:c++11-lang fortran localbase:ldflags
 
