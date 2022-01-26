@@ -84,7 +84,7 @@ VTYSH_DESC=		Build integrated vty shell
 USERS=	frr
 GROUPS=	frr frrvty
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # PIM compile but didn't work on FreeBSD
