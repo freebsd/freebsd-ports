@@ -2,9 +2,13 @@
 
 PORTNAME=	cracklib
 PORTVERSION=	2.9.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cracklib/cracklib/releases/download/v${PORTVERSION}/ \
 		LOCAL/cy
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WORDS_DISTFILE}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT?=	Password-checking library
