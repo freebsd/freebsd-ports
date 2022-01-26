@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	14.6.3
+PORTVERSION=	14.7.0
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -25,7 +25,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	0a901d60f8ae4a60c04ae82e6e9c3a03e9321417
+GL_COMMIT=	abbf44bd6cfb29413b3cf5768b691e5b222b89ea
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -43,7 +43,6 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:datadog-go:v4.4.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.31.1:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
-		DataDog:sketches-go:v1.0.0:datadog_sketches_go/vendor/github.com/DataDog/sketches-go \
 		FZambia:sentinel:v1.0.0:fzambia_sentinel/vendor/github.com/FZambia/sentinel \
 		Microsoft:go-winio:v0.4.19:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \

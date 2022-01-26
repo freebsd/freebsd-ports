@@ -1,4 +1,4 @@
---- go.sum.orig	2021-10-22 06:12:32 UTC
+--- go.sum.orig	2022-01-21 10:23:10 UTC
 +++ go.sum
 @@ -100,6 +100,8 @@ github.com/CloudyKit/jet/v3 v3.0.0/go.mod h1:HKQPgSJmd
  github.com/DataDog/datadog-go v4.4.0+incompatible h1:R7WqXWP4fIOAqWJtUKmSfuc7eDsBT58k9AY5WSHVosk=
@@ -17,7 +17,7 @@
  github.com/google/martian v2.1.0+incompatible/go.mod h1:9I4somxYTbIHy5NJKHRl3wXiIaQGbYVAs8BPL6v8lEs=
  github.com/google/martian v2.1.1-0.20190517191504-25dcb96d9e51+incompatible h1:xmapqc1AyLoB+ddYT6r04bD9lIjlOqGaREovi0SzFaE=
  github.com/google/martian v2.1.1-0.20190517191504-25dcb96d9e51+incompatible/go.mod h1:9I4somxYTbIHy5NJKHRl3wXiIaQGbYVAs8BPL6v8lEs=
-@@ -1327,6 +1330,8 @@ gopkg.in/DataDog/dd-trace-go.v1 v1.7.0/go.mod h1:DVp8H
+@@ -1329,6 +1332,8 @@ gopkg.in/DataDog/dd-trace-go.v1 v1.7.0/go.mod h1:DVp8H
  gopkg.in/DataDog/dd-trace-go.v1 v1.30.0/go.mod h1:SnKViq44dv/0gjl9RpkP0Y2G3BJSRkp6eYdCSu39iI8=
  gopkg.in/DataDog/dd-trace-go.v1 v1.31.0 h1:ouY+DNlRTckk63TNh468tPWBC21qBZPniVQXQs0iq10=
  gopkg.in/DataDog/dd-trace-go.v1 v1.31.0/go.mod h1:SnKViq44dv/0gjl9RpkP0Y2G3BJSRkp6eYdCSu39iI8=
