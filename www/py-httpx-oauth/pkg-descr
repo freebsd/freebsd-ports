@@ -1,0 +1,4 @@
+A generic OAuth2 class is provided to adapt to any OAuth2-compliant service.
+Utilities are provided to ease the integration of an OAuth2 process in FastAPI.
+
+WWW: https://github.com/frankie567/httpx-oauth

@@ -1669,6 +1669,7 @@
     SUBDIR += py-httpretty
     SUBDIR += py-httptools
     SUBDIR += py-httpx
+    SUBDIR += py-httpx-oauth
     SUBDIR += py-httpx-socks
     SUBDIR += py-httpx013
     SUBDIR += py-hyper
