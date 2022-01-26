@@ -1,0 +1,7 @@
+Ansible is a radically simple configuration-management, deployment,
+task-execution, and multinode orchestration framework.
+
+ansible-core contains the core engine, modules and plugins. It does not contain
+community and partner supported Ansible Collections of modules and plugins.
+
+WWW: https://www.ansible.com/
