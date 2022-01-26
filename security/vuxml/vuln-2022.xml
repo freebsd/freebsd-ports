@@ -1,3 +1,32 @@
+  <vuln vid="0f8bf913-7efa-11ec-8c04-2cf05d620ecc">
+    <topic>polkit -- Local Privilege Escalation</topic>
+    <affects>
+      <package>
+	<name>polkit</name>
+	<range><lt>0.120_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qualys reports:</p>
+	<blockquote cite="https://seclists.org/oss-sec/2022/q1/80">
+	  <p>We discovered a Local Privilege Escalation (from any user to root) in
+polkit's pkexec, a SUID-root program that is installed by default on
+every major Linux distribution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-4034</cvename>
+      <url>https://seclists.org/oss-sec/2022/q1/80</url>
+      <freebsdpr>ports/261482</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2022-01-25</discovery>
+      <entry>2022-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ccaea96b-7dcd-11ec-93df-00224d821998">
     <topic>strongswan - Incorrect Handling of Early EAP-Success Messages</topic>
     <affects>
