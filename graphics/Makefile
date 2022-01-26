@@ -542,6 +542,7 @@
     SUBDIR += mapcache
     SUBDIR += mapserver
     SUBDIR += mapyrus
+    SUBDIR += matplotplusplus
     SUBDIR += megapov
     SUBDIR += meh
     SUBDIR += mesa-demos

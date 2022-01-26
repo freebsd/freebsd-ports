@@ -1,0 +1,10 @@
+Matplot++ is a graphics library for data visualization that provides
+interactive plotting, means for exporting plots in high-quality
+formats for scientific publications, a compact syntax consistent with
+similar libraries, dozens of plot categories with specialized
+algorithms, multiple coding styles, and supports generic backends.
+
+Matplot++ renders graphics using gnuplot and shows graphics in
+gnuplot standalone windows.
+
+WWW: https://alandefreitas.github.io/matplotplusplus/
