@@ -1,4 +1,4 @@
-PackageVersion=%%PKGNAME%%
+PackageVersion=%%PKGVERSION%%
 PackageAuthor=%%MAINTAINER%%
 UpdateMethod=External
 UpdateMethodMessage=use 'pkg upgrade' or [create a PR](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?component=Individual%20Port%28s%29&product=Ports%20%26%20Packages) requesting an update of the port

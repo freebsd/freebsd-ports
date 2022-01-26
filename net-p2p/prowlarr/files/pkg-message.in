@@ -17,7 +17,8 @@ If you are running this in a jail please set "allow_mlock=1" or similar
 for this jail otherwise the program will fail to start
 
 Finally, the built-in updater is disabled.
-If you like to use the updater, remove the file %%DATADIR%%/package_info and restart %%PORTNAME%%
+If you like to use the updater, remove the file %%DATADIR%%/package_info,
+chown the directory %%DATADIR%%/bin to %%USERS%% and restart %%PORTNAME%%
 The built-in updater can now be configured in the Settings tab of %%PORTNAME%%
 
 NOTE: While the built-in updater will update %%PORTNAME%% it has side-effects:

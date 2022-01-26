@@ -40,9 +40,6 @@ start_precmd=${name}_precmd
         install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} ${%%PORTNAME%%_pid_dir}
     fi
 
-    # Needed for built-in updater
-    chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_exec_dir}
-
     # .NET 6+ use dual mode sockets to avoid the separate AF handling.
     # disable .NET use of V6 if no ipv6 is configured.
     # See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259194#c17
