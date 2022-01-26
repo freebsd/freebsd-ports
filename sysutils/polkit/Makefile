@@ -2,8 +2,13 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.120
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://www.freedesktop.org/software/polkit/releases/
+
+PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/commit/
+PATCHFILES+=	e7f3d9e8341d.patch:-p1 # https://gitlab.freedesktop.org/polkit/polkit/-/merge_requests/99
+PATCHFILES+=	a2bf5c9c83b6.patch:-p1 # https://gitlab.freedesktop.org/polkit/polkit/-/merge_requests/104 (CVE-2021-4034)
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
