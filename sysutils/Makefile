@@ -41,6 +41,7 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += angrysearch
     SUBDIR += ansible
+    SUBDIR += ansible4
     SUBDIR += ansible-iocage
     SUBDIR += ansible-kld
     SUBDIR += ansible-sshjail

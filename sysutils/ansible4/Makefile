@@ -3,6 +3,7 @@ DISTVERSION=	4.10.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Radically simple IT automation
@@ -10,7 +11,7 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core211>0:sysutils/py-ansible-core211@${PY_FLAVOR}
 
 USES=		ansible:env cpe python:3.6+ shebangfix
 CPE_VENDOR=	redhat
@@ -30,7 +31,7 @@ NO_ARCH=	yes
 DO_MAKE_TEST=	ansible -m ping
 TEST_TARGET=	localhost
 
-_ANSIBLE_VERSIONS=	1 2 23 24 25 26 27 28
+_ANSIBLE_VERSIONS=	1 2 23 24 25 26 27 28 4
 _ANSIBLE_PACKAGES=	${PYTHON_PKGNAMEPREFIX}ansible
 .for version in ${_ANSIBLE_VERSIONS}
 _ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}
