@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	pillar
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,7 +10,7 @@ COMMENT=	Coloured Formatting for Columns
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
+CRAN_DEPENDS=	R-cran-cli>=2.3.0:devel/R-cran-cli \
 		R-cran-crayon>=1.3.4:devel/R-cran-crayon \
 		R-cran-ellipsis>=0.3.2:devel/R-cran-ellipsis \
 		R-cran-fansi>0:devel/R-cran-fansi \
