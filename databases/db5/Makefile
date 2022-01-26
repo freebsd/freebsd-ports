@@ -2,7 +2,7 @@
 
 PORTNAME=	db5
 PORTVERSION=	5.3.28
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases java
 MASTER_SITES=	https://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -11,7 +11,10 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	mandree@FreeBSD.org
+DEPRECATED=	EOLd, upstream hiding patches, potential security issues
+EXPIRATION_DATE=2022-06-30
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 
 LICENSE=	SLEEPYCAT
@@ -38,12 +41,11 @@ PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 MAKE_ARGS+=	docdir=${DOCSDIR}
 CFLAGS+=	-Wall -Wextra
 
-OPTIONS_DEFINE=	CRYPTO DEBUG L10N SQL JAVA TCL DOCS
+OPTIONS_DEFINE=	CRYPTO DEBUG L10N JAVA TCL DOCS
 OPTIONS_DEFAULT=CRYPTO
 OPTIONS_SUB=	yes
 CRYPTO_DESC=	Cryptography support
 L10N_DESC=	Localization support (EXPERIMENTAL)
-SQL_DESC=	Enable SQL API (EXPERIMENTAL)
 
 PORTDOCS=	*
 
@@ -52,8 +54,6 @@ DBLIBS=	libdb libdb_cxx libdb_stl
 DEBUG_CONFIGURE_ENABLE=	debug umrw
 CRYPTO_CONFIGURE_WITH=	cryptography=yes
 L10N_CONFIGURE_ENABLE=	localization
-SQL_CONFIGURE_ENABLE=	sql sql_codegen
-SQL_VARS=		DBLIBS+=libdb_sql
 JAVA_USE=		java
 # db5 is incompatible with openjdk8 and causes IllegalArgument
 # exceptions during build
@@ -83,6 +83,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/db5/db_*
+	${RM} -r ${STAGEDIR}${DOCSDIR}/bdb-sql
 .for i in ${DBLIBS}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib
@@ -100,9 +101,6 @@ post-install-JAVA-off:
 .for i in gsg gsg_db_rep gsg_txn
 	${RM} -r ${STAGEDIR}${DOCSDIR}/${i}/JAVA
 .endfor
-
-post-install-SQL-off:
-	${RM} -r ${STAGEDIR}${DOCSDIR}/bdb-sql
 
 post-install-TCL-on:
 	echo "package ifneeded Db_tcl ${BDBVER} \
