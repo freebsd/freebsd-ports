@@ -3,6 +3,7 @@ DISTVERSION=	2.11.7
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	211
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Radically simple IT automation
@@ -39,7 +40,7 @@ TEST_ARGS=	VERSION=${DISTVERSION} \
 TEST_ENV=	PYTHON_VERSION=${PYTHON_VER}
 TEST_TARGET=	tests
 
-CONFLICTS=	py*-ansible-base py*-ansible2
+CONFLICTS=	py*-ansible-base py*-ansible-core py*-ansible2
 
 NO_ARCH=	yes
 
