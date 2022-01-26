@@ -1,9 +1,8 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 
 PORTNAME=	mtr
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
