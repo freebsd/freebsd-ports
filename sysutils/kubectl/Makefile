@@ -1,7 +1,7 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 
 PORTNAME=	kubectl
-PORTVERSION=	1.23.1
+PORTVERSION=	1.23.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
