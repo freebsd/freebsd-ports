@@ -1,7 +1,7 @@
 PORTNAME=	libfabric
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.0
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/ofiwg/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Fabric Interfaces
@@ -11,11 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig tar:bz2
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	ofiwg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
