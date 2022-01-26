@@ -1,0 +1,26 @@
+commit 8535250a8eeeb441cf466124cc420724935022eb
+Author: Theodore Ts'o <tytso@mit.edu>
+Date:   Mon Jan 3 22:45:37 2022 -0500
+
+    tests: support older versions of timeout in r_corrupt_fs
+    
+    Older versions of the timeout program in coreutils don't support the
+    -v option.  (This is apparently still in use in the GNU/FreeBSD Debain
+    port since coreutils hasn't built successfully since Coreutils version
+    8.28.)
+    
+    Signed-off-by: Theodore Ts'o <tytso@mit.edu>
+
+diff --git a/tests/r_corrupt_fs/script b/tests/r_corrupt_fs/script
+index 08af91ed..f6d3a89d 100644
+--- ./tests/r_corrupt_fs/script
++++ b/tests/r_corrupt_fs/script
+@@ -17,7 +17,7 @@ $MKE2FS -q -F -t ext4 -o Linux -b 1024 $TMPFILE 32M >> $OUT.new 2>&1
+ echo debugfs -w -R \"set_bg 1 free_blocks_count 65536\" /tmp/foo.img >> $OUT.new
+ $DEBUGFS -w -R "set_bg 1 free_blocks_count 65536" $TMPFILE > /dev/null 2>&1
+ 
+-if type timeout > /dev/null 2>&1 ; then
++if timeout -v 1s true > /dev/null 2>&1 ; then
+    TIMEOUT="timeout -v 30s"
+ else
+    TIMEOUT=
