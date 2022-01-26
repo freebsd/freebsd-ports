@@ -1,8 +1,8 @@
-TIMESTAMP = 1643051817
-SHA256 (RPCS3-rpcs3-v0.0.20-13225-gd2897bc6a0_GH0.tar.gz) = 1ef15cdb8c4532b9429cab3a6a1e2c7bac2efbc6871ecd3f02351cace779f8ad
-SIZE (RPCS3-rpcs3-v0.0.20-13225-gd2897bc6a0_GH0.tar.gz) = 8256920
-SHA256 (RPCS3-hidapi-hidapi-0.11.2-3-g8ff2dee_GH0.tar.gz) = bcb3fa102bf899455d668b9006b5639017bde104b691b1600087dc91a5caa3d4
-SIZE (RPCS3-hidapi-hidapi-0.11.2-3-g8ff2dee_GH0.tar.gz) = 233682
+TIMESTAMP = 1643230947
+SHA256 (RPCS3-rpcs3-v0.0.20-13238-gb0f0641564_GH0.tar.gz) = 29ddef8fbfcf46d7a80e9a726356aac82ac83347aac896dfabb0e15478a11367
+SIZE (RPCS3-rpcs3-v0.0.20-13238-gb0f0641564_GH0.tar.gz) = 8260285
+SHA256 (RPCS3-hidapi-hidapi-0.11.2-4-g6cf1336_GH0.tar.gz) = 9f14a553b65008221b8c343d45a73d3c10da512e05cefecd5cc1ceacb32430c4
+SIZE (RPCS3-hidapi-hidapi-0.11.2-4-g6cf1336_GH0.tar.gz) = 233659
 SHA256 (RPCS3-llvm-mirror-509d31ad8967_GH0.tar.gz) = 82a62696fb4a24187ed50146edfba3e587aa7ec3c809e644e0d69a530f06e6f3
 SIZE (RPCS3-llvm-mirror-509d31ad8967_GH0.tar.gz) = 29967699
 SHA256 (asmjit-asmjit-fc2a5d8_GH0.tar.gz) = e4550efadfbc0f35ca7eecf099d3b8afff764bb4808061ee20aeb2637562f5c0

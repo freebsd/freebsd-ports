@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.20-13225 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gd2897bc6a0
+DISTVERSION=	0.0.20-13238 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gb0f0641564
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.2-3-g8ff2dee:hidapi/3rdparty/hidapi/hidapi \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.2-4-g6cf1336:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:509d31ad8967:llvm/llvm \
 		asmjit:asmjit:fc2a5d8:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
