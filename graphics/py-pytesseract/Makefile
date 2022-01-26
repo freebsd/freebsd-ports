@@ -1,5 +1,5 @@
 PORTNAME=	pytesseract
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,9 @@ RUN_DEPENDS=	tesseract:graphics/tesseract \
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
+		# if py-tox cannot detect py-filelock, be sure to have version 3.4.2_1 of the latter
 
-USES=		localbase python:3.4+
+USES=		localbase python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	madmaze
 USE_PYTHON=	autoplist concurrent distutils
