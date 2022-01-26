@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		compiler:c11 pkgconfig python:3.4+ shebangfix waf
+USES=		pkgconfig python:3.4+ shebangfix waf
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	jackd
 
@@ -48,6 +48,14 @@ OPUS_CONFIGURE_OFF=	--opus=no
 
 PROFILING_DESC=		Build with profiling information
 PROFILING_CONFIGURE_ON=	--profile
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c11
+.endif
 
 .include <bsd.port.pre.mk>
 
