@@ -9,6 +9,6 @@ include/yices.h
 include/yices_exit_codes.h
 include/yices_limits.h
 include/yices_types.h
+lib/libyices.a
 lib/libyices.so
-lib/libyices.so.2
 lib/libyices.so.2.6
