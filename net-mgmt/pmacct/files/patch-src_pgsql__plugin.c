@@ -1,7 +1,7 @@
---- src/pgsql_plugin.c.orig	2019-12-07 17:48:46 UTC
+--- src/pgsql_plugin.c.orig	2021-11-05 15:03:23 UTC
 +++ src/pgsql_plugin.c
 @@ -611,7 +611,7 @@ void PG_cache_purge(struct db_cache *queue[], int inde
-   if (pqq_ptr) goto start;
+   if (sql_pqq_ptr) goto start;
  
    idata->elap_time = time(NULL)-start;
 -  Log(LOG_INFO, "INFO ( %s/%s ): *** Purging cache - END (PID: %u, QN: %u/%u, ET: %lu) ***\n",

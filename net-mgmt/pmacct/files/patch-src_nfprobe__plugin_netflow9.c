@@ -1,6 +1,6 @@
---- src/nfprobe_plugin/netflow9.c.orig	2020-05-10 13:57:54 UTC
+--- src/nfprobe_plugin/netflow9.c.orig	2021-11-05 15:03:23 UTC
 +++ src/nfprobe_plugin/netflow9.c
-@@ -2233,7 +2233,7 @@ send_netflow_v9(struct FLOW **flows, int num_flows, in
+@@ -2232,7 +2232,7 @@ send_netflow_v9(struct FLOW **flows, int num_flows, in
  
  		/* Refresh template headers if we need to */
  		if (nf9_pkts_until_template <= 0) {

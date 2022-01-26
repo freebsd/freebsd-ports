@@ -11,6 +11,7 @@ sbin/sfacctd
 %%PORTDOCS%%%%DOCSDIR%%/CONFIG-KEYS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DOCKER.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQS
 %%PORTDOCS%%%%DOCSDIR%%/FLOW_AUGMENTATION_PROCESS_DESCRIPTION.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -73,6 +74,7 @@ sbin/sfacctd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/probe_netflow.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/probe_sflow.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampling.map.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/systemd/systemd_service_file.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tee_receivers.lst.example
 %%DATADIR%%/CONFIG-KEYS
 %%DATADIR%%/FAQS

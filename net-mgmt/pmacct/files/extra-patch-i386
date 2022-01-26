@@ -1,0 +1,29 @@
+--- src/sql_common_m.c.orig	2022-01-26 18:30:42.475639000 +0100
++++ src/sql_common_m.c	2022-01-26 18:31:05.795499000 +0100
+@@ -259,7 +259,7 @@
+ 
+     strncat(envbuf.ptr, "ELAPSED_TIME=", envbuf.end-envbuf.ptr);
+     tmpptr = envbuf.ptr + strlen(envbuf.ptr);
+-    snprintf(tmpptr, envbuf.end-tmpptr, "%lu", idata->elap_time);
++    snprintf(tmpptr, envbuf.end-tmpptr, "%u", idata->elap_time);
+     ptrs[count] = envbuf.ptr;
+     envbuf.ptr += strlen(envbuf.ptr)+1;
+     count++;
+@@ -292,7 +292,7 @@
+ 
+     strncat(envbuf.ptr, "SQL_HISTORY_BASETIME=", envbuf.end-envbuf.ptr);
+     tmpptr = envbuf.ptr + strlen(envbuf.ptr);
+-    snprintf(tmpptr, envbuf.end-tmpptr, "%lu", idata->basetime);
++    snprintf(tmpptr, envbuf.end-tmpptr, "%u", idata->basetime);
+     ptrs[count] = envbuf.ptr;
+     envbuf.ptr += strlen(envbuf.ptr)+1;
+     count++;
+@@ -303,7 +303,7 @@
+ 
+     strncat(envbuf.ptr, "SQL_HISTORY_TIMESLOT=", envbuf.end-envbuf.ptr);
+     tmpptr = envbuf.ptr + strlen(envbuf.ptr);
+-    snprintf(tmpptr, envbuf.end-tmpptr, "%lu", idata->timeslot);
++    snprintf(tmpptr, envbuf.end-tmpptr, "%u", idata->timeslot);
+     ptrs[count] = envbuf.ptr;
+     envbuf.ptr += strlen(envbuf.ptr)+1;
+     count++;
