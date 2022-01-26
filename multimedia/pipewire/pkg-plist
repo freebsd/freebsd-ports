@@ -6,6 +6,7 @@ bin/pw-cli
 bin/pw-dot
 bin/pw-dsdplay
 bin/pw-dump
+%%PIPEWIRE_JACK%%bin/pw-jack
 bin/pw-link
 bin/pw-loopback
 bin/pw-metadata
@@ -166,6 +167,15 @@ include/spa-0.2/spa/utils/type.h
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
 lib/libpipewire-0.3.so.0.343.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.343.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.343.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.343.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so

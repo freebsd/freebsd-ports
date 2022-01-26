@@ -1,5 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.43
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -27,18 +28,21 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PipeWire
 
-OPTIONS_DEFINE=		GSTREAMER MANPAGES MEDIASESSION PULSEAUDIO SDL VULKAN
-OPTIONS_DEFAULT=	GSTREAMER MANPAGES MEDIASESSION
+OPTIONS_DEFINE=		GSTREAMER PIPEWIRE_JACK MANPAGES MEDIASESSION PULSEAUDIO SDL VULKAN
+OPTIONS_DEFAULT=	GSTREAMER PIPEWIRE_JACK MANPAGES MEDIASESSION
 OPTIONS_SUB=	yes
 
 GSTREAMER_MESON_ENABLED=gstreamer
 GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1 \
 			libgstaudio-1.0.so:multimedia/gstreamer1-plugins
 
+PIPEWIRE_JACK_DESC=		Build pipewire-jack
+PIPEWIRE_JACK_MESON_ENABLED=	pipewire-jack
+
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man
 
-MEDIASESSION_DESC=	Session manager support
+MEDIASESSION_DESC=		Session manager support
 MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa
 MEDIASESSION_MESON_ON=		-Dsession-managers=media-session
 MEDIASESSION_MESON_OFF=		-Dsession-managers=''
@@ -63,7 +67,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D v4l2=enabled \
 		-D raop=enabled \
 		-D bluez5=disabled \
-		-D jack=disabled -D pipewire-jack=disabled \
+		-D jack=disabled \
 		-D systemd=disabled \
 		-D pipewire-v4l2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
@@ -72,6 +76,12 @@ MESON_ARGS=	-D pw-cat=enabled \
 # but only if devel/ncurses isn't installed
 .if !exists(/usr/libdata/pkgconfig/ncursesw.pc)
 CONFIGURE_ENV+=	${ncurses_ARGS:Mbase:C/.+/PKG_CONFIG_PATH="${FILESDIR}"/}
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMANPAGES} && ${PORT_OPTIONS:MPIPEWIRE_JACK}
+PLIST_FILES=	man/man1/pw-jack.1.gz
 .endif
 
 post-extract:
