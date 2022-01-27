@@ -90,11 +90,11 @@ include/ngs/unix/x86_64/atomic32.h
 lib/libngs-adapt-c++-static.a
 lib/libngs-adapt-c++.a
 lib/libngs-adapt-c++.a.2
-lib/libngs-adapt-c++.a.2.11.1
+lib/libngs-adapt-c++.a.2.11.2
 lib/libngs-c++-static.a
 lib/libngs-c++.a
 lib/libngs-c++.a.2
-lib/libngs-c++.a.2.11.1
+lib/libngs-c++.a.2.11.2
 lib/libngs-sdk.so
 lib/libngs-sdk.so.2
-lib/libngs-sdk.so.2.11.1
+lib/libngs-sdk.so.2.11.2
