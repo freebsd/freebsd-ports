@@ -15,6 +15,6 @@ BF_CPPFLAGS=	-I${LOCALBASE}/include
 BF_LIBS=
 DESCR=		${PKGDIR}/pkg-descr
 
-MASTERDIR=	${.CURDIR}/../bogofilter
+MASTERDIR=	${.CURDIR}/../bogofilter-bdb
 
 .include "${MASTERDIR}/Makefile"

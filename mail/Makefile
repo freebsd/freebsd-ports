@@ -30,8 +30,8 @@
     SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
+    SUBDIR += bogofilter-bdb
     SUBDIR += bogofilter-kc
-    SUBDIR += bogofilter-lmdb
     SUBDIR += bogofilter-sqlite
     SUBDIR += bsfilter
     SUBDIR += bsmtp

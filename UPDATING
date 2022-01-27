@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220126:
+  AFFECTS: users of mail/bogofilter, mail/bogofilter-lmdb
+  AUTHOR: mandree@FreeBSD.org
+
+  The default version of mail/bogofilter now uses LMDB instead
+  of Berkeley DB. It is not compatible and cannot read databases.
+
+  Your options are:
+  1. use bogoutil on each wordlist for each of your users first,
+  ONLY THEN reinstall bogofilter, THEN reload the databases with bogoutil,
+  OR
+  2. install the matching bogofilter version and
+  If you had been using bogofilter-lmdb so far, install bogofilter.
+  If you had been using bogofilter so far, install bogofilter-bdb.
+
 20220125:
   AFFECTS: users of lang/php74
   AUTHOR: tz@FreeBSD.org

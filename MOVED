@@ -16843,3 +16843,5 @@ net/php73-sockets|net/php74-sockets|2022-01-26|Has expired: Security support end
 net/php73-xmlrpc|net/php74-xmlrpc|2022-01-26|Has expired: Security support ended on 2021-12-06
 net/php73-ldap|net/php74-ldap|2022-01-26|Has expired: Security support ended on 2021-12-06
 net/php73-soap|net/php74-soap|2022-01-26|Has expired: Security support ended on 2021-12-06
+mail/bogofilter|mail/bogofilter-bdb|2022-01-26|Port renamed to make LMDB the new default DB
+mail/bogofilter-lmdb|mail/bogofilter|2022-01-26|Port renamed to make LMDB the new default DB
