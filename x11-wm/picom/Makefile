@@ -1,12 +1,7 @@
 PORTNAME=	picom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2
-PORTREVISION=	3
+DISTVERSION=	9-rc1
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	78223caea3f7.patch:-p1 # https://github.com/yshui/picom/pull/422
-PATCHFILES+=	b74f9d761664.patch:-p1 # https://github.com/yshui/picom/pull/424
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight X11 compositor
@@ -56,8 +51,8 @@ DBUS_MESON_TRUE=	dbus
 
 DOCS_BUILD_DEPENDS=	a2x:textproc/asciidoc
 DOCS_MESON_TRUE=	with_docs
-DOCS_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
-			share/man/man1/${PORTNAME}-trans.1.gz
+DOCS_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
+			man/man1/${PORTNAME}-trans.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
