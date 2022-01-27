@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-09-15 13:04:13 UTC
+--- CMakeLists.txt.orig	2022-01-21 18:01:36 UTC
 +++ CMakeLists.txt
-@@ -92,7 +92,7 @@ set( CMAKE_INSTALL_DATADIR "share/${PROJECT_NAME}" CAC
+@@ -100,7 +100,7 @@ set( CMAKE_INSTALL_DATADIR "share/${PROJECT_NAME}" CAC
  ################################################################################
  
  # needed for pynest test suite
@@ -9,7 +9,7 @@
    find_program( NOSETESTS NAMES nosetests )
  endif ()
  
-@@ -194,7 +194,7 @@ message("-- NEST version: ${NEST_VERSION_STRING}")
+@@ -202,7 +202,7 @@ message("-- NEST version: ${NEST_VERSION_STRING}")
  enable_testing()
  set( TEST_OPTS "" )
  
@@ -18,22 +18,21 @@
    set( TEST_OPTS "${TEST_OPTS};--with-python=${PYTHON}" )
  endif ()
  
-@@ -223,8 +223,12 @@ add_custom_target( installcheck
+@@ -231,9 +231,13 @@ add_custom_target( installcheck
  ##################        Define Subdirectories here          ##################
  ################################################################################
  
--add_subdirectory( doc )
--add_subdirectory( examples )
 +if (INSTALL_DOCS)
-+  add_subdirectory( doc )
+ add_subdirectory( doc )
 +endif()
+ add_subdirectory( bin )
 +if (INSTALL_EXAMPLES)
-+  add_subdirectory( examples )
+ add_subdirectory( examples )
 +endif()
- add_subdirectory( extras )
+ add_subdirectory( build_support )
  add_subdirectory( lib )
  add_subdirectory( libnestutil )
-@@ -234,7 +238,7 @@ add_subdirectory( nest )
+@@ -243,7 +247,7 @@ add_subdirectory( nest )
  add_subdirectory( nestkernel )
  add_subdirectory( thirdparty )
  add_subdirectory( testsuite )
