@@ -184,26 +184,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
          if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
          {
              bool needMkdir = true;
---- IGC/VectorCompiler/lib/Driver/SPIRVWrapper.cpp.orig	2021-04-20 09:14:00 UTC
-+++ IGC/VectorCompiler/lib/Driver/SPIRVWrapper.cpp
-@@ -47,7 +47,7 @@ IN THE SOFTWARE.
- #include "llvm/Support/DynamicLibrary.h"
- #include "llvm/Support/Path.h"
- #include "llvm/Support/Process.h"
--#if defined(__linux__)
-+#if !defined(_WIN32)
- #include <dlfcn.h>
- #endif // __linux__
- #if defined(_WIN32)
-@@ -171,7 +171,7 @@ Expected<SpirvReadVerifyType *> getSpirvReadVerifyFunc
-   constexpr char *SpirvReadVerifyName = "spirv_read_verify_module";
- 
-   const std::string SpirvLibPath = findSpirvDLL();
--#if defined(__linux__)
-+#if defined(RTLD_DEEPBIND)
-   // Hack to workaround cmoc crashes during loading of SPIRV library
-   static auto DeepBindHack =
-       dlopen(SpirvLibPath.c_str(), RTLD_NOW | RTLD_DEEPBIND);
 --- IGC/common/LLVMWarningsPop.hpp.orig	2021-05-12 10:04:39 UTC
 +++ IGC/common/LLVMWarningsPop.hpp
 @@ -41,6 +41,6 @@ SPDX-License-Identifier: MIT
