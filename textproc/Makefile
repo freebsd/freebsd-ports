@@ -450,6 +450,7 @@
     SUBDIR += mdbook-linkcheck
     SUBDIR += mdocml
     SUBDIR += meld
+    SUBDIR += meilisearch
     SUBDIR += mergestat
     SUBDIR += metauml
     SUBDIR += mgdiff

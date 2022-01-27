@@ -1,0 +1,16 @@
+Meilisearch is a powerful, fast, open-source, easy to use and
+deploy search engine. Both searching and indexing are highly
+customizable.
+
+  - Search-as-you-type experience (answers < 50 milliseconds)
+  - Full-text search
+  - Typo tolerant (understands typos and misspelling)
+  - Faceted search and filters
+  - Supports hanzi (Chinese characters)
+  - Supports synonyms
+  - Easy to install, deploy, and maintain
+  - Whole documents are returned
+  - Highly customizable
+  - RESTful API
+
+WWW: https://www.meilisearch.com/
