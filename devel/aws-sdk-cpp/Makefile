@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.9.167
+PORTVERSION=	1.9.183
 CATEGORIES=	devel
 
 MAINTAINER=	danilo@FreeBSD.org
