@@ -1,7 +1,7 @@
 # Created by: Albert Vernon <f3cun3c02@sneakemail.com>
 
 PORTNAME=	lzlib
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip/lzlib
 
