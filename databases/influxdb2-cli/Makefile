@@ -1,6 +1,6 @@
 PORTNAME=	influxdb2-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.1
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
