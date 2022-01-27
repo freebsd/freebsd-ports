@@ -1,28 +1,28 @@
 PORTNAME=	zabbix54
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-PKGNAMESUFFIX=	-frontend
+PKGNAMESUFFIX=	-frontend${PHP_PKGNAMESUFFIX}
+
+USES+=		php:web,flavors
+USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap \
+		mbstring openssl pcre session simplexml snmp sockets xml \
+		xmlreader xmlwriter
+IGNORE_WITH_PHP=	80 81
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}-server
-
-NO_BUILD=	yes
-NO_ARCH=	yes
 PATCHDIR=
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
-USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap mbstring \
-		openssl pcre session simplexml snmp sockets xml xmlreader xmlwriter
-USES+=		php:web
-
-OPTIONS_DEFINE=		MYSQLI PGSQL ORACLE
+OPTIONS_DEFINE=		MYSQLI ORACLE PGSQL
 OPTIONS_DEFAULT=	MYSQLI
 MYSQLI_DESC=		MySQLI backend
 
-MYSQLI_USE=	PHP=mysqli
-
-PGSQL_USE=	PHP=pgsql
-
+MYSQLI_USE=		PHP=mysqli
 ORACLE_CONFIGURE_WITH=	oracle
+PGSQL_USE=		PHP=pgsql
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
