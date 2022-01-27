@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-08-28 19:43:13 UTC
+--- CMakeLists.txt.orig	2022-01-15 08:35:15 UTC
 +++ CMakeLists.txt
 @@ -45,12 +45,17 @@ set(ISPC_BUILD TRUE)
  project(${PROJECT_NAME})
@@ -18,5 +18,5 @@
 -option(ARM_ENABLED "Enable ARM support" ON)
 +option(ARM_ENABLED "Enable ARM support" ${ARM_HOST})
  option(WASM_ENABLED "Enable experimental Web Assembly support" OFF)
- option(GENX_ENABLED "Enable GenX support" OFF)
+ option(XE_ENABLED "Enable Intel Xe support" OFF)
  option(ISPC_INCLUDE_EXAMPLES "Generate build targets for the ISPC examples" ON)

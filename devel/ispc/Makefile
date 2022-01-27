@@ -2,8 +2,7 @@
 
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.1
-PORTREVISION=	3
+DISTVERSION=	1.17.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION}
 
 USES=		bison cmake compiler:c++14-lang python:build,test shebangfix
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+
 SHEBANG_FILES=	*.py
 
 CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH}
@@ -31,20 +32,22 @@ BINARY_ALIAS=	flex=${LOCALBASE}/bin/flex python=${PYTHON_CMD} m4=${LOCALBASE}/bi
 PLIST_FILES=	bin/ispc \
 		bin/check_isa
 
-OPTIONS_DEFINE_amd64=	GENX
-OPTIONS_DEFAULT_amd64=	GENX
+OPTIONS_DEFINE_amd64=	XE
+OPTIONS_DEFAULT_amd64=	XE
 
-GENX_DESC=		Intel GPU 8/16-wide SIMD support
-GENX_BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VERSION}/lib/libLLVMGenXIntrinsics.a:devel/vc-intrinsics@llvm${LLVM_VERSION}
-GENX_LIB_DEPENDS=	libze_loader.so:devel/level-zero \
+XE_DESC=		Enable Intel Xe support
+XE_BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VERSION}/lib/libLLVMGenXIntrinsics.a:devel/vc-intrinsics@llvm${LLVM_VERSION}
+XE_LIB_DEPENDS=		libze_loader.so:devel/level-zero \
 			libLLVMSPIRVLib.so.${LLVM_VERSION}:devel/spirv-llvm-translator@llvm${LLVM_VERSION}
-GENX_CMAKE_BOOL=	GENX_ENABLED
-GENX_CMAKE_BOOL_OFF=	ISPCRT_BUILD_TESTS
-GENX_CMAKE_ON=		-DGENX_DEPS_DIR:PATH="${LOCALBASE}/llvm${LLVM_VERSION}"
-GENX_PLIST_FILES=	include/ispcrt/ispcrt.h \
+XE_CMAKE_BOOL=		XE_ENABLED
+XE_CMAKE_BOOL_OFF=	ISPCRT_BUILD_TESTS
+XE_CMAKE_ON=		-DXE_DEPS_DIR:PATH="${LOCALBASE}/llvm${LLVM_VERSION}" -DISPC_INCLUDE_XE_EXAMPLES=OFF
+XE_PLIST_FILES=		include/ispcrt/ispcrt.h \
 			include/ispcrt/ispcrt.hpp \
 			include/ispcrt/ispcrt.isph \
+			lib/cmake/ispcrt-${PORTVERSION}/Finddpcpp_compiler.cmake \
 			lib/cmake/ispcrt-${PORTVERSION}/Findlevel_zero.cmake \
+			lib/cmake/ispcrt-${PORTVERSION}/interop.cmake \
 			lib/cmake/ispcrt-${PORTVERSION}/ispc.cmake \
 			lib/cmake/ispcrt-${PORTVERSION}/ispcrtConfig.cmake \
 			lib/cmake/ispcrt-${PORTVERSION}/ispcrt_Exports-%%CMAKE_BUILD_TYPE%%.cmake \
@@ -61,9 +64,9 @@ GENX_PLIST_FILES=	include/ispcrt/ispcrt.h \
 #LLVM_VERSION=	${LLVM_DEFAULT}
 #.endif
 
-LLVM_VERSION?=	11 # 13 fails on some systems with: Assertion failed: (PointeeType && "Must specify element type"), function Create
+LLVM_VERSION?=	13
 
-do-test: # some tests fail: https://github.com/ispc/ispc/issues/1868
+do-test: # some tests fail: https://github.com/ispc/ispc/issues/1868, https://github.com/ispc/ispc/issues/2244
 	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py
 
 test-check-all: # the upstream claims that some of these checks are broken without using their patched llvm version, hence using llvm-devel

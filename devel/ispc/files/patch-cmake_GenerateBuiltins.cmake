@@ -1,6 +1,6 @@
---- cmake/GenerateBuiltins.cmake.orig	2021-07-15 23:04:31 UTC
+--- cmake/GenerateBuiltins.cmake.orig	2022-01-15 08:35:15 UTC
 +++ cmake/GenerateBuiltins.cmake
-@@ -289,6 +289,8 @@ function(builtin_genx_to_cpp bit resultFileName)
+@@ -312,6 +312,8 @@ function(builtin_xe_to_cpp bit resultFileName)
          set(os_name "windows")
      elseif (APPLE)
          set(SKIP ON)
