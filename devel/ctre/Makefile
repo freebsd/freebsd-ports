@@ -1,6 +1,6 @@
 PORTNAME=	ctre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
+DISTVERSION=	3.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +20,9 @@ CMAKE_OFF=	BUILD_TESTING
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: # everything is tested during compilation, if you are able to compile then it's ok
+do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} -j ${_MAKE_JOBS}
+	@${ECHO} "Test succeeded" # everything is tested during compilation, if you are able to compile then it's ok
 
 .include <bsd.port.mk>

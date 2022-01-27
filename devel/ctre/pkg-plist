@@ -49,3 +49,4 @@ include/unicode-db/unicode_interface.hpp
 share/cmake/ctre/ctre-config-version.cmake
 share/cmake/ctre/ctre-config.cmake
 share/cmake/ctre/ctre-targets.cmake
+share/pkgconfig/ctre.pc
