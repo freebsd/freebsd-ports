@@ -14,6 +14,6 @@ load_rc_config $name
 : ${alsa_seq_server_enable="NO"}
 
 command="%%PREFIX%%/sbin/alsa-seq-server"
-command_args="-B -F umidi"
+command_args="-B -F umidi -i 8"
 
 run_rc_command "$1"
