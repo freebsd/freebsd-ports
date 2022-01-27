@@ -2,7 +2,7 @@
 
 PORTNAME=	rsvndump
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,7 +11,11 @@ COMMENT=	Remote Subversion repository dumpfile generator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+USES=		bdb
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
+		libgdbm.so:databases/gdbm \
+		libexpat.so:textproc/expat2 \
+		libapr-1.so:devel/apr1
 
 OPTIONS_DEFINE=	DOCS NLS
 
