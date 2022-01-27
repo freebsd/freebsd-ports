@@ -3,6 +3,7 @@ share/libretro/info/2048_libretro.info
 share/libretro/info/3dengine_libretro.info
 share/libretro/info/4do_libretro.info
 share/libretro/info/81_libretro.info
+share/libretro/info/a5200_libretro.info
 share/libretro/info/advanced_tests_libretro.info
 share/libretro/info/atari800_libretro.info
 share/libretro/info/bk_libretro.info
@@ -69,6 +70,7 @@ share/libretro/info/fsuae_libretro.info
 share/libretro/info/fuse_libretro.info
 share/libretro/info/gambatte_libretro.info
 share/libretro/info/gearboy_libretro.info
+share/libretro/info/gearcoleco_libretro.info
 share/libretro/info/gearsystem_libretro.info
 share/libretro/info/genesis_plus_gx_libretro.info
 share/libretro/info/genesis_plus_gx_wide_libretro.info
@@ -83,6 +85,7 @@ share/libretro/info/higan_sfc_balanced_libretro.info
 share/libretro/info/higan_sfc_libretro.info
 share/libretro/info/imageviewer_libretro.info
 share/libretro/info/ishiiruka_libretro.info
+share/libretro/info/jaxe_libretro.info
 share/libretro/info/kronos_libretro.info
 share/libretro/info/lowresnx_libretro.info
 share/libretro/info/lutro_libretro.info
@@ -131,6 +134,7 @@ share/libretro/info/np2kai_libretro.info
 share/libretro/info/nxengine_libretro.info
 share/libretro/info/o2em_libretro.info
 share/libretro/info/oberon_libretro.info
+share/libretro/info/open-source-notices.info
 share/libretro/info/openlara_libretro.info
 share/libretro/info/opentyrian_libretro.info
 share/libretro/info/opera_libretro.info
@@ -220,6 +224,7 @@ share/libretro/info/vitaquake2-zaero_libretro.info
 share/libretro/info/vitaquake2_libretro.info
 share/libretro/info/vitaquake3_libretro.info
 share/libretro/info/vitavoyager_libretro.info
+share/libretro/info/wasm4_libretro.info
 share/libretro/info/x1_libretro.info
 share/libretro/info/x64sdl_libretro.info
 share/libretro/info/xrick_libretro.info

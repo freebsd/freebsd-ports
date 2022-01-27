@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	RetroArch
-PORTVERSION=	1.9.7
+PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games emulators
 
@@ -11,17 +11,30 @@ COMMENT=	Cross-platform entertainment system based on libretro API
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libdrm.so:graphics/libdrm \
 		libass.so:multimedia/libass \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig
-BUILD_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
-		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
 USES=		compiler:c++11-lib cpe gmake pkgconfig python:3.6+ shebangfix ssl
 CPE_VENDOR=	libretro
+USE_GITHUB=	yes
+GH_ACCOUNT=	libretro
+SHEBANG_FILES=	libretro-common/glsym/glgen.py libretro-common/glsym/rglgen.py \
+		tools/cg2glsl.py tools/vulkan_loader_generator.py
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-threads --disable-discord \
+		--sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
+LDFLAGS_i386=	-Wl,-znotext
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	CACA FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11 DOCS
 OPTIONS_DEFAULT=FFMPEG OSS SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11
@@ -29,8 +42,6 @@ FFMPEG_DESC=	On-the-fly recording of gameplay with libavcodec
 WAYLAND_DESC=	Wayland display support
 UDEV_DESC=	udev device hotplug support
 QT_DESC=	Qt based desktop-style GUI
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 
 CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 CACA_CONFIGURE_ENABLE=	caca
@@ -72,18 +83,6 @@ QT_CONFIGURE_ENABLE=	qt
 X11_USES=		xorg
 X11_USE=		XORG=x11,xcb,xext,xinerama,xv,xxf86vm,xrandr
 X11_CONFIGURE_ENABLE=	x11
-
-LDFLAGS_i386=	-Wl,-znotext
-CONFIGURE_ARGS+=--enable-threads --disable-discord
-CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
-SHEBANG_FILES=	libretro-common/glsym/glgen.py libretro-common/glsym/rglgen.py \
-		tools/cg2glsl.py tools/vulkan_loader_generator.py
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	libretro
-SUB_FILES=	pkg-message
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
