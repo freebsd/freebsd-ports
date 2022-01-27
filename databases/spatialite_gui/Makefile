@@ -1,10 +1,10 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
 
 PORTNAME=	spatialite_gui
-PORTVERSION=	1.7.1
-PORTREVISION=	9
+DISTVERSION=	2.1.0
+DISTVERSIONSUFFIX=	-beta1
 CATEGORIES=	databases geography
-MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
+MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Graphical User Interface (GUI) tool supporting SpatiaLite
@@ -12,21 +12,27 @@ COMMENT=	Graphical User Interface (GUI) tool supporting SpatiaLite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgaiagraphics.so:graphics/libgaiagraphics \
+LIB_DEPENDS=	librasterlite2.so:graphics/librasterlite2 \
 		libfreexl.so:textproc/freexl \
-		libspatialite.so:databases/spatialite
+		libspatialite.so:databases/spatialite \
+		libxlsxwriter.so:math/libxlsxwriter \
+		libvirtualpg.so:databases/virtualpg \
+		librttopo.so:devel/librttopo \
+		libcurl.so:ftp/curl \
+		libminizip.so:archivers/minizip \
+		libproj.so:graphics/proj \
+		libgeos_c.so:graphics/geos
 
 USES=		compiler:c++11-lang gmake gnome iconv localbase:ldflags \
-		pkgconfig
-USE_WX=		2.8
+		pgsql pkgconfig sqlite
+USE_WX=		3.0
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 
-CPPFLAGS+=	`${WX_CONFIG} --cppflags` "-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
+CPPFLAGS+=	`${WX_CONFIG} --cppflags`
 LDFLAGS+=	${ICONV_LIB} `${WX_CONFIG} --libs` -lsqlite3
-CONFIGURE_ARGS=	CFLAGS="${CFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-USE_LDCONFIG=	yes
-
-PLIST_FILES=	bin/spatialite_gui
+CONFIGURE_ARGS=	CFLAGS="${CFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		--with-wxconfig=${WX_CONFIG}
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
