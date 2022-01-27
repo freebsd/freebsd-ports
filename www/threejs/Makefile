@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	three.js
-PORTVERSION=	136
+PORTVERSION=	137
 DISTVERSIONPREFIX=	r
 CATEGORIES=	www
 
