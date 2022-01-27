@@ -39,6 +39,7 @@ include/gcem_incl/lcm.hpp
 include/gcem_incl/lgamma.hpp
 include/gcem_incl/lmgamma.hpp
 include/gcem_incl/log.hpp
+include/gcem_incl/log10.hpp
 include/gcem_incl/log1p.hpp
 include/gcem_incl/log2.hpp
 include/gcem_incl/log_binomial_coef.hpp
