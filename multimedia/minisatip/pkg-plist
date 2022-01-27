@@ -2,6 +2,7 @@ sbin/minisatip
 %%DATADIR%%/html/dLAN.xml
 %%DATADIR%%/html/dvbc.png
 %%DATADIR%%/html/dvbc2.png
+%%DATADIR%%/html/dvbci.png
 %%DATADIR%%/html/dvbs.png
 %%DATADIR%%/html/dvbs2.png
 %%DATADIR%%/html/dvbs2x.png
@@ -10,7 +11,6 @@ sbin/minisatip
 %%DATADIR%%/html/jquery-3.2.1.min.js
 %%DATADIR%%/html/jquery.dataTables.min.css
 %%DATADIR%%/html/jquery.dataTables.min.js
-%%DATADIR%%/html/jquery.pBar.min.js
 %%DATADIR%%/html/lr.jpg
 %%DATADIR%%/html/lr.png
 %%DATADIR%%/html/satip.xml
