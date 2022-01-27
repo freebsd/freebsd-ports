@@ -18,8 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-sam-translator>=1.38.0:devel/py-aws-sam-
 		${PYTHON_PKGNAMEPREFIX}six>=1.11:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>5.4:devel/py-yaml@${PY_FLAVOR}
 
-py36_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.4:devel/py-importlib-resources@${PY_FLAVOR}
-
 USES=		python:3.6-3.9
 USE_PYTHON=	autoplist concurrent distutils
 
