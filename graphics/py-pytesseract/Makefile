@@ -1,11 +1,14 @@
 PORTNAME=	pytesseract
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	wrapper for Google's Tesseract OCR engine
+
+PATCH_STRIP=	-p1
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,7 +28,7 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-		cd ${WRKSRC} && ${SETENV} ${TEST_ENV} tox -e ${PY_FLAVOR} --sitepackages
+		cd ${WRKSRC} && ${SETENV} ${TEST_ENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} --sitepackages
 
 .include <bsd.port.pre.mk>
 
