@@ -1,7 +1,7 @@
 # Created by: nork@FreeBSD.org
 
 PORTNAME=	openexr
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -27,8 +27,8 @@ PATCH_STRIP=	-p0
 
 _MAJORVER=	3_1
 _VER=		30
-_MINVER=	3
-_PLVER=		0
+_MINVER=	4
+_PLVER=		1
 
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
 		VER=${_VER} \
