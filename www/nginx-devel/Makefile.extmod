@@ -309,9 +309,10 @@ SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.32:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
-VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.27:vod
-VOD_USE=		GNOME=libxml2
-VOD_USES=		gnome iconv
+VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.29:vod
+VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+			libavutil.so:multimedia/ffmpeg
+VOD_USES=		iconv
 VOD_VARS=		DSO_EXTMODS+=vod
 VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-vod-module-config
 
