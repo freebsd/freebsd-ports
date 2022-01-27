@@ -23,6 +23,7 @@ include/SFCGAL/TriangulatedSurface.h
 include/SFCGAL/Validity.h
 include/SFCGAL/algorithm/BoundaryVisitor.h
 include/SFCGAL/algorithm/ConsistentOrientationBuilder.h
+include/SFCGAL/algorithm/alphaShapes.h
 include/SFCGAL/algorithm/area.h
 include/SFCGAL/algorithm/collect.h
 include/SFCGAL/algorithm/collectionExtract.h
