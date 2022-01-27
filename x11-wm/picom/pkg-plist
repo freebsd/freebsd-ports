@@ -1,4 +1,0 @@
-bin/picom
-bin/picom-trans
-@sample etc/xdg/picom.conf.sample
-share/applications/picom.desktop

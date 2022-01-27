@@ -28,6 +28,10 @@ USE_XORG=	x11 xcb xext pixman
 GH_ACCOUNT=	yshui
 MESON_ARGS=	-Dcompton=false -Dunittest=true
 TEST_TARGET=	test
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-trans \
+		"@sample etc/xdg/${PORTNAME}.conf.sample" \
+		share/applications/${PORTNAME}.desktop
 
 OPTIONS_DEFINE=	CONFIG DBUS DOCS DRM OPENGL PCRE
 OPTIONS_DEFAULT=CONFIG DBUS OPENGL PCRE
