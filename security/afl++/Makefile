@@ -1,7 +1,7 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
 
 PORTNAME=	afl
-PORTVERSION=	3.14c
+PORTVERSION=	4.00c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
@@ -23,13 +23,14 @@ _LLVM_VER=		13
 llvm_BUILD_DEPENDS=	clang${_LLVM_VER}:devel/llvm${_LLVM_VER}
 llvm_RUN_DEPENDS=	clang${_LLVM_VER}:devel/llvm${_LLVM_VER}
 
-USES=		gmake tar:tgz
+USES=		gmake shebangfix tar:tgz
 .if ${FLAVOR} == gcc
 USE_GCC=	yes
 .endif
 USE_GITHUB=	yes
 GH_ACCOUNT=	AFLplusplus
 GH_PROJECT=	AFLplusplus
+SHEBANG_FILES=	afl-persistent-config
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	${${ARCH} != amd64 && ${ARCH} != i386:?AFL_NO_X86=1:} \
