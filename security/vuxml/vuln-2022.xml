@@ -1,3 +1,32 @@
+  <vuln vid="65847d9d-7f3e-11ec-8624-b42e991fc52e">
+    <topic>mustache - Possible Remote Code Execution</topic>
+    <affects>
+      <package>
+	<name>phpmustache</name>
+	<range><lt>2.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>huntr.dev reports:</p>
+	<blockquote cite="https://huntr.dev/bounties/a5f5a988-aa52-4443-839d-299a63f44fb7/">
+	  <p>In Mustache.php v2.0.0 through v2.14.0, Sections tag can
+	    lead to arbitrary php code execution even if
+	    strict_callables is true when section value is
+	    controllable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0323</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-0323</url>
+    </references>
+    <dates>
+      <discovery>2022-01-20</discovery>
+      <entry>2022-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f8bf913-7efa-11ec-8c04-2cf05d620ecc">
     <topic>polkit -- Local Privilege Escalation</topic>
     <affects>
