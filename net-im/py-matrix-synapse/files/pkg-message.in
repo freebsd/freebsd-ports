@@ -18,9 +18,19 @@ instructions at %%DOCSDIR%%/UPGRADE.rst
 EOM
 }
 { type: upgrade
-  maximum_version: 1.27.0
+  maximum_version: 1.51.0
   message: <<EOM
-In synapse 1.27.0, the HTML templates for SSO and email notifications now have Jinja2's autoescape enabled for files ending in .html, .htm, and .xml. If you have customised these templates and see issues when viewing them you might need to update them. Please read the upgrade instructions for further details.
+Synapse 1.51.0 deprecates webclient listeners and non-HTTP(S)
+web_client_location settings. Please update your homeserver configurations
+accordingly.
+
+Additionally, if you run your own turn server for WebRTC and
+use Let's Encrypt certificates, be advised that some Android and iOS clients
+may be unable to connect. Please see upstream's turn-howto[0] for additional
+details on this issue.
+
+[0] https://matrix-org.github.io/synapse/latest/turn-howto.html
+
 EOM
 }
 {
