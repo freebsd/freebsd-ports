@@ -2,7 +2,7 @@
 
 PORTNAME=	midipp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.1.1
+DISTVERSION=		2.1.2
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	MIDI playback, recording, and live performance tool
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	libumidi>=2.1.1:audio/libumidi
+BUILD_DEPENDS=	libumidi>=2.1.3:audio/libumidi
 LIB_DEPENDS=	libumidi20.so:audio/libumidi
 
 USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2

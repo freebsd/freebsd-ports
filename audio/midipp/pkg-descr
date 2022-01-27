@@ -2,7 +2,8 @@ MIDI Player Pro allows you to play any kind of MIDI music in seconds
 with your fingertips. List of supported features:
 
 - Raw MIDI.
-- Jack MIDI.
+- ALSA MIDI.
+- JACK MIDI.
 - MPE support.
 - Import from lyrics sites (chorded lyrics)
 - Import from GuitarPro v3 and v4 format.
