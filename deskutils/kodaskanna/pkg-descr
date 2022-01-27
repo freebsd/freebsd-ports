@@ -1,0 +1,11 @@
+Kodaskanna is a utility for reading data from 1D/2D codes (e.g. QR 
+codes or bar codes) and making the data available for further processing.
+
+This initial 0.1.0 release supports scanning codes in static images. The image 
+input files (can be also non-local ones) can be either passed as argument on 
+the command line or manually selected via a file picker, pasted from the 
+clipboard or dropped by DnD. The extracted content can then be exported to the 
+clipboard or as a file. The version also provides integration via the Dolphin 
+context menu for image files and by a KDE Purpose "Export" plugin.
+
+WWW: https://invent.kde.org/graphics/kodaskanna
