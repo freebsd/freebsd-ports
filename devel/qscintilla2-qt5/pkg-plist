@@ -54,7 +54,7 @@
 %%QT_LIBDIR%%/libqscintilla2_qt5.so
 %%QT_LIBDIR%%/libqscintilla2_qt5.so.15
 %%QT_LIBDIR%%/libqscintilla2_qt5.so.15.1
-%%QT_LIBDIR%%/libqscintilla2_qt5.so.15.1.0
+%%QT_LIBDIR%%/libqscintilla2_qt5.so.15.1.1
 %%QT_MKSPECDIR%%/features/qscintilla2.prf
 %%QT_DATADIR%%/qsci/api/python/Python-2.4.api
 %%QT_DATADIR%%/qsci/api/python/Python-2.5.api
