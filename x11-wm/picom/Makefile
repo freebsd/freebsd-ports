@@ -1,11 +1,12 @@
 PORTNAME=	picom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	78223caea3f7.patch:-p1 # https://github.com/yshui/picom/pull/422
+PATCHFILES+=	b74f9d761664.patch:-p1 # https://github.com/yshui/picom/pull/424
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight X11 compositor
@@ -21,13 +22,11 @@ LIB_DEPENDS=	libev.so:devel/libev \
 RUN_DEPENDS=	xprop:x11/xprop \
 		xwininfo:x11/xwininfo
 
-CONFLICTS_INSTALL=	compton # bin/compton
-
 USES=		compiler:c11 meson localbase pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xcb xext pixman
 GH_ACCOUNT=	yshui
-MESON_ARGS=	-Dunittest=true
+MESON_ARGS=	-Dcompton=false -Dunittest=true
 TEST_TARGET=	test
 
 OPTIONS_DEFINE=	CONFIG DBUS DOCS DRM OPENGL PCRE
