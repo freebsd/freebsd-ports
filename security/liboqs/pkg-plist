@@ -26,4 +26,4 @@ lib/cmake/liboqs/liboqsConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/liboqs/liboqsConfig.cmake
 lib/liboqs.so
 lib/liboqs.so.0
-lib/liboqs.so.0.7.0
+lib/liboqs.so.0.7.1
