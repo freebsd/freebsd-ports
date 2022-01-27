@@ -2,6 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.21.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -91,11 +92,6 @@ PCRE_ONE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_ONE_CONFIGURE_ON=	--without-pcre2
 PCRE_TWO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-OPTIONS_RADIO+=		GSSAPI
-OPTIONS_RADIO_GSSAPI=	GSSAPI_HEIMDAL GSSAPI_MIT
-GSSAPI_HEIMDAL_USES=	gssapi:heimdal,flags
-GSSAPI_MIT_USES=	gssapi:mit
-
 OPTIONS_SUB=	yes
 
 .include "Makefile.options.desc"
@@ -111,9 +107,6 @@ ${opt}_IMPLIES=	HTTP
 .for opt in ${OPTIONS_GROUP_STREAMGRP:NSTREAM}
 ${opt}_IMPLIES=	STREAM
 .endfor
-
-GSSAPI_HEIMDAL_IMPLIES=	HTTP_AUTH_KRB5
-GSSAPI_MIT_IMPLIES=	HTTP_AUTH_KRB5
 
 # If the target is makesum, make sure that every distfile is fetched.
 .if ${.TARGETS:Mmakesum}
@@ -241,12 +234,6 @@ IGNORE=		required at least PCRE_ONE or PCRE_TWO \
     (empty(PORT_OPTIONS:MHTTPV3_BORING) && empty(PORT_OPTIONS:MHTTPV3_QTLS))
 IGNORE=		required HTTPV3_BORING or HTTPV3_QTLS \
 		to be defined. Please do 'make config' again
-.endif
-
-.if ${PORT_OPTIONS:MHTTP_AUTH_KRB5} && (empty(PORT_OPTIONS:MGSSAPI_HEIMDAL) && empty(PORT_OPTIONS:MGSSAPI_MIT))
-IGNORE=		required at least GSSAPI_HEIMDAL or \
-		GSSAPI_MIT to be defined. Please do \
-		'make config' again
 .endif
 
 .if ${PORT_OPTIONS:MPCRE_ONE}
