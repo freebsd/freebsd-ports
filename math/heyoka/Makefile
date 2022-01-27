@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
-PORTREVISION=	1
+DISTVERSION=	0.17.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +30,6 @@ LLVM_VERSION=	12
 
 CMAKE_ON=		HEYOKA_WITH_MPPP HEYOKA_WITH_SLEEF
 CMAKE_ARGS=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}
-CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS # tests can't be compiled: xtensor-blas isn't yet ported
+CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS # 3 tests fail, see https://github.com/bluescarni/heyoka/issues/228, also #229 and #230
 
 .include <bsd.port.mk>

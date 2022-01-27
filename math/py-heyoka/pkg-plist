@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/heyoka/__init__.py
+%%PYTHON_SITELIBDIR%%/heyoka/_ensemble_impl.py
 %%PYTHON_SITELIBDIR%%/heyoka/_sympy_utils.py
 %%PYTHON_SITELIBDIR%%/heyoka/_version.py
 %%PYTHON_SITELIBDIR%%/heyoka/core%%PYTHON_EXT_SUFFIX%%.so

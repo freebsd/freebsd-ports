@@ -25,6 +25,7 @@ include/heyoka/detail/vsop2013/vsop2013_6.hpp
 include/heyoka/detail/vsop2013/vsop2013_7.hpp
 include/heyoka/detail/vsop2013/vsop2013_8.hpp
 include/heyoka/detail/vsop2013/vsop2013_9.hpp
+include/heyoka/ensemble_propagate.hpp
 include/heyoka/exceptions.hpp
 include/heyoka/expression.hpp
 include/heyoka/func.hpp
@@ -75,5 +76,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.16
-lib/libheyoka.so.16.0
+lib/libheyoka.so.17
+lib/libheyoka.so.17.0
