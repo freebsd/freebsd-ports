@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
-PORTREVISION=	1
+DISTVERSION=	1.9.2
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -99,7 +98,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy-regex-2.2.2 \
 		lazy-regex-proc_macros-2.2.2 \
 		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
 		lfs-core-0.4.2 \
 		libc-0.2.107 \
 		libgit2-sys-0.12.25+1.3.0 \
@@ -182,7 +180,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		strsim-0.8.0 \
 		svg-0.8.2 \
 		syn-1.0.81 \
-		syntect-4.6.0 \
+		syntect-no-panic-4.6.1 \
 		tempfile-3.2.0 \
 		termimad-0.10.3 \
 		termimad-0.20.0 \
