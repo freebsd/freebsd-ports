@@ -137,8 +137,8 @@ _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 _WX_PORT_wx_3.0=	x11-toolkits/wxgtk30@${_GTKFLAVOR}
 _WX_LIB_wx_3.0=		wx_baseu-3.0
 
-_WX_PORT_python_3.0=	x11-toolkits/py-wxPython40@${PY_FLAVOR}
-_WX_FILE_python_3.0=	${PYTHON_SITELIBDIR}/wx/__init__.py
+_WX_PORT_python_3.1=	x11-toolkits/py-wxPython4@${PY_FLAVOR}
+_WX_FILE_python_3.1=	${PYTHON_SITELIBDIR}/wx/__init__.py
 
 # wxgtk 3.1
 _WX_PORT_wx_3.1=	x11-toolkits/wxgtk31

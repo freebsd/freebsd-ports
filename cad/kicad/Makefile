@@ -2,6 +2,7 @@
 
 PORTNAME=	kicad
 PORTVERSION=	6.0.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}/
@@ -19,7 +20,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
 		libTKernel.so:cad/opencascade		\
 		libpixman-1.so:x11/pixman		\
 		libpng.so:graphics/png			\
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl			\
+		libGLEW-wayland.so:graphics/glew-wayland
 
 CONFLICTS_INSTALL=	kicad-devel # bin/_cvpcb.kiface
 
@@ -30,7 +32,7 @@ SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 USE_XORG=	ice x11 xext
 USE_GL=		gl glew glu glut
-USE_WX=		3.0
+USE_WX=		3.1
 WX_COMPS=	python:lib wx
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 CXXFLAGS+=	--std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include
@@ -39,6 +41,8 @@ CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD}		\
 		-DKICAD_SCRIPTING_WXPYTHON=ON			\
 		-DKICAD_USE_OCC=ON				\
+		-DKICAD_USE_EGL=ON				\
+		-DKICAD_USE_BUNDLED_GLEW=OFF 			\
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 USE_LDCONFIG=	yes
 

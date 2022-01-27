@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220225:
+  AFFECTS: users of x11-toolkits/py-wxPython40
+  AUTHOR: lbartoletti@FreeBSD.org
+
+  x11-toolkits/py-wxPython40 has been removed to be replaced by the 4.1
+  version.
+  However the new wxPython ports is now named x11-toolkits/py-wxPython4.
+
+  Depending on the tools you use, you may have to remove the port
+  before ports upgrade.
+
 20220224:
   AFFECTS: users of net-im/openfire
   AUTHOR: nikita@druba.su

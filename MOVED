@@ -16898,3 +16898,4 @@ math/coinmumps|math/coin-or-mumps|2022-02-23|Renamed into a more appropriate nam
 www/py-weboob|www/py-woob|2022-02-24|Project renamed
 www/py-weboob-qt|www/py-woob-qt|2022-02-24|Project renamed
 math/py-pyipopt||2022-02-24|Removed: not compatible with the latest Ipopt-3.14.4 and abandoned upstream
+x11-toolkits/py-wxPython40|x11-toolkits/py-wxPython4|2022-02-25|Renamed to py-wxPython4

@@ -49,7 +49,8 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--enable-backtrace \
 		--enable-ipv6 \
 		--enable-optimise \
-		--enable-utf8 \
+		--enable-unicode \
+		--enable-std_string \
 		--enable-graphics_ctx \
 		--enable-compat28 \
 		--enable-compat30

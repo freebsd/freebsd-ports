@@ -2,7 +2,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -31,7 +31,7 @@ GL_COMMIT=	${GIT_SRC_HASH}
 
 CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
 USE_GL=		gl glew glu glut
-USE_WX=		3.0
+USE_WX=		3.1
 WX_COMPS=	wx python:lib
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
 USE_XORG+=	ice pixman x11 xext
@@ -68,6 +68,7 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_SPICE=ON \
 		-DKICAD_USE_OCE=OFF \
 		-DKICAD_USE_OCC=ON \
+		-DKICAD_USE_EGL=ON \
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 USE_LDCONFIG=	yes
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	mayavi
 DISTVERSION=	4.7.4
+PORTREVISION=	1
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +39,7 @@ RUN_DEPENDS=	vtk9>0:math/vtk9 \
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	noflavors distutils autoplist # noflavors to force python to be of the same version as in vtk9, which always has default python version
 
-USE_WX=		3.0+
+USE_WX=		3.1
 WX_COMPS=	python:run
 
 SHEBANG_FILES=	mayavi/tests/csv_files/csv_2_py
