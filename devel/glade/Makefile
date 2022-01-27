@@ -1,11 +1,14 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	glade
-PORTVERSION=	3.22.1
-PORTREVISION=	2
+PORTVERSION=	3.38.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	04ba6f96.patch:-p1 \
+		61304b2e.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	User interface builder for GTK+ 3
@@ -21,26 +24,25 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 CONFLICTS=	glade3-3.*
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
-		localbase:ldflags pathfix pkgconfig tar:xz
-USE_GNOME=	cairo gtk30 intlhack \
-		introspection:build
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+USES=		compiler:c11 desktop-file-utils gettext gnome localbase:ldflags \
+		meson pathfix pkgconfig tar:xz
+USE_GNOME=	cairo gtk30 intlhack introspection:build
 
 DOCSDIR=	${PREFIX}/share/doc/gladeui-2
 
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	PYTHON WEBKIT
-OPTIONS_DEFAULT=PYTHON WEBKIT
+OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		GJS PYTHON WEBKIT
+OPTIONS_DEFAULT=	GJS PYTHON WEBKIT
 
-PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_USES=	python:3.4+
-PYTHON_USE=	GNOME=pygobject3
+GJS_MESON_ENABLED=	gjs
+GJS_LIB_DEPENDS=	libgjs.so:lang/gjs
 
-WEBKIT_DESC=	Webkit glade support
-WEBKIT_CONFIGURE_ENABLE=	webkit2gtk
+PYTHON_MESON_ENABLED=	python
+PYTHON_USES=		python:3.4+
+PYTHON_USE=		GNOME=pygobject3
+
+WEBKIT_DESC=		Webkit glade support
+WEBKIT_MESON_ENABLED=	webkit2gtk
 WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
