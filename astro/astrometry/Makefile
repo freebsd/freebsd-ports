@@ -1,7 +1,7 @@
 # Created by: Sébastien Santoro <dereckson@gmail.com>
 
 PORTNAME=	astrometry
-PORTVERSION=	0.88
+PORTVERSION=	0.89
 CATEGORIES=	astro
 MASTER_SITES=	http://astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
