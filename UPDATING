@@ -29,7 +29,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use binary packages you should make a list of php packages
   before running 'pkg upgrade':
 
-  # pkg info php7\* > ~/installed-php-ports-list
+  # pkg info \*php7\* > ~/installed-php-ports-list
 
   After the upgrade, check with such list if all your php extensions
   are still installed, and reinstall them if needed.
