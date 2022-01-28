@@ -1,6 +1,7 @@
 %%WWWDIR%%/CHANGES.md
 %%WWWDIR%%/LICENSE.md
 %%WWWDIR%%/README.md
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/adapters/jquery.js
 %%WWWDIR%%/bender-runner.config.json
 %%WWWDIR%%/build-config.js
@@ -195,8 +196,6 @@
 %%WWWDIR%%/plugins/exportpdf/tests/statistics.js
 %%WWWDIR%%/plugins/exportpdf/tests/stylesheets.js
 %%WWWDIR%%/plugins/find/dialogs/find.js
-%%WWWDIR%%/plugins/flash/dialogs/flash.js
-%%WWWDIR%%/plugins/flash/images/placeholder.png
 %%WWWDIR%%/plugins/forms/dialogs/button.js
 %%WWWDIR%%/plugins/forms/dialogs/checkbox.js
 %%WWWDIR%%/plugins/forms/dialogs/form.js
@@ -360,6 +359,7 @@
 %%WWWDIR%%/plugins/tabletools/dialogs/tableCell.js
 %%WWWDIR%%/plugins/templates/dialogs/templates.css
 %%WWWDIR%%/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/plugins/templates/templatedefinition.js
 %%WWWDIR%%/plugins/templates/templates/default.js
 %%WWWDIR%%/plugins/templates/templates/images/template1.gif
 %%WWWDIR%%/plugins/templates/templates/images/template2.gif
@@ -461,10 +461,6 @@
 %%WWWDIR%%/samples/old/dialog/dialog.html
 %%WWWDIR%%/samples/old/divreplace.html
 %%WWWDIR%%/samples/old/enterkey/enterkey.html
-%%WWWDIR%%/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla
-%%WWWDIR%%/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf
-%%WWWDIR%%/samples/old/htmlwriter/assets/outputforflash/swfobject.js
-%%WWWDIR%%/samples/old/htmlwriter/outputforflash.html
 %%WWWDIR%%/samples/old/htmlwriter/outputhtml.html
 %%WWWDIR%%/samples/old/index.html
 %%WWWDIR%%/samples/old/inlineall.html
