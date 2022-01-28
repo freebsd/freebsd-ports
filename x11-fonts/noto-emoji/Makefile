@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	noto
-PORTVERSION=	2.028
+PORTVERSION=	2.034
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
 PKGNAMESUFFIX=	-emoji
