@@ -1,5 +1,8 @@
 [
 { type: upgrade,
+  message: Log into Baikal Web Admin to run the usual upgrade procedures.
+},
+{ type: upgrade,
   maximum_version: 0.7.1,
   message: <<EOM
 With the 0.7.0 release, our configuration format was updated to use YAML files.

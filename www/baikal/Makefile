@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	baikal
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.1
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fruux/Baikal/releases/download/${PORTVERSION}/
