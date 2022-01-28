@@ -1,17 +1,16 @@
 # Created by: Pedro Giffuni
 
-PORTNAME=	sourcesanspro
-PORTVERSION=	3.028
-MASTER_SITES=	https://github.com/adobe-fonts/source-sans-pro/releases/download/${PORTVERSION}R/
+PORTNAME=	source-sans
+PORTVERSION=	3.046
+MASTER_SITES=	https://github.com/adobe-fonts/source-sans/releases/download/${PORTVERSION}R/
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
-DISTNAME=	source-sans-${PORTVERSION:R}v${PORTVERSION:E}R
+DISTNAME=	TTF-source-sans-${PORTVERSION}R
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for user interfaces
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		fonts zip
 
@@ -19,7 +18,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-FONTNAME=	SourceSansPro
+FONTNAME=	SourceSans
 SUB_FILES=	pkg-message
 
 PORTSCOUT=	skipv:variable-fonts
