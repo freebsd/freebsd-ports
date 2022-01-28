@@ -1,20 +1,11 @@
-WARNING: This is highly experimental.
+YAML::PP is a modular YAML processor for YAML 1.2.
 
-Here are a few examples of what you can do right now:
+Additionally to loading and dumping it provides a parser and emitter. The
+parsing events are compatible to the YAML Test Suite and other libraries like
+libyaml.
 
-    my $yppl = YAML::PP::Loader->new;
-    my @documents = $yppl->load_string($yaml);
+Loading and Dumping can be customized.
 
-    # load file
-    my $yppl = YAML::PP::Loader->new;
-    my @documents = $yppl->load_file($filename);
-
-    # The loader offers JSON::PP, boolean.pm or pureperl 1/0 (default)
-    # for booleans
-    my $yppl = YAML::PP::Loader->new(boolean => 'JSON::PP');
-    my ($data1, $data2) = $yppl->load_string($yaml);
-
-    my $yppd = YAML::PP::Dumper->new();
-    my $yaml = $yppd->dump_string($data1, $data2);
+It supports the YAML 1.2 Failsafe, JSON and Core Schemas.
 
 WWW: https://github.com/perlpunk/YAML-PP-p5
