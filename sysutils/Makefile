@@ -41,12 +41,12 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += angrysearch
     SUBDIR += ansible
-    SUBDIR += ansible4
     SUBDIR += ansible-iocage
     SUBDIR += ansible-kld
     SUBDIR += ansible-sshjail
     SUBDIR += ansible-sysrc
     SUBDIR += ansible2
+    SUBDIR += ansible4
     SUBDIR += anvil
     SUBDIR += apache-mesos
     SUBDIR += apachetop

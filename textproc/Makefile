@@ -449,8 +449,8 @@
     SUBDIR += mdbook
     SUBDIR += mdbook-linkcheck
     SUBDIR += mdocml
-    SUBDIR += meld
     SUBDIR += meilisearch
+    SUBDIR += meld
     SUBDIR += mergestat
     SUBDIR += metauml
     SUBDIR += mgdiff
@@ -1702,8 +1702,8 @@
     SUBDIR += rubygem-minima
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
-    SUBDIR += rubygem-nokogiri111
     SUBDIR += rubygem-nokogiri-diff
+    SUBDIR += rubygem-nokogiri111
     SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-octopress-escape-code
     SUBDIR += rubygem-opml
