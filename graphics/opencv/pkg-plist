@@ -719,6 +719,9 @@ lib/libopencv_videoio.so.405
 lib/libopencv_videostab.so
 lib/libopencv_videostab.so.%%SHLIB_VER%%
 lib/libopencv_videostab.so.405
+%%VTK%%lib/libopencv_viz.so
+%%VTK%%lib/libopencv_viz.so.%%SHLIB_VER%%
+%%VTK%%lib/libopencv_viz.so.405
 %%PROTOBUF%%lib/libopencv_wechat_qrcode.so
 %%PROTOBUF%%lib/libopencv_wechat_qrcode.so.%%SHLIB_VER%%
 %%PROTOBUF%%lib/libopencv_wechat_qrcode.so.405

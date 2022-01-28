@@ -120,6 +120,8 @@ GTK3_CMAKE_BOOL=	WITH_GTK
 VTK_DESC=		Include VTK library support (build opencv_viz module)
 VTK_CMAKE_BOOL=		WITH_VTK
 VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
+VTK_USES=		qt:5
+VTK_USE=		QT=buildtools_build,qmake_build
 ###
 
 # IMAGE group options (GPHOTO2 JPEG OPENEXR PNG TIFF)
