@@ -22,7 +22,7 @@ load_rc_config $name
 : ${%%PORTNAME%%_enable:=NO}
 : ${%%PORTNAME%%_user:="%%USERS%%"}
 : ${%%PORTNAME%%_group:="%%GROUPS%%"}
-: ${%%PORTNAME%%_exec_dir:="%%DATADIR%%"}
+: ${%%PORTNAME%%_exec_dir:="%%DATADIR%%/bin"}
 : ${%%PORTNAME%%_data_dir:="%%PREFIX%%/%%PORTNAME%%"}
 : ${%%PORTNAME%%_pid_dir:="/var/run/%%PORTNAME%%"}
 
@@ -39,8 +39,6 @@ start_precmd=${name}_precmd
     if [ ! -d ${%%PORTNAME%%_pid_dir} ]; then
         install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} ${%%PORTNAME%%_pid_dir}
     fi
-
-    chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_exec_dir}
 
     # .NET 6+ use dual mode sockets to avoid the separate AF handling.
     # disable .NET use of V6 if no ipv6 is configured.

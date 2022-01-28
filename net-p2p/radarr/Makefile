@@ -1,9 +1,8 @@
 PORTNAME=	radarr
-PORTVERSION=	3.2.2.5080
-PORTREVISION=	1
+PORTVERSION=	4.0.2.5836
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Radarr.master.${PORTVERSION}.freebsd-core-x64
+DISTNAME=	Radarr.develop.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Movie Library Manager for Usenet and BitTorrent users
@@ -18,7 +17,6 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind \
-		mediainfo>0:multimedia/mediainfo \
 		openssl>0:security/openssl \
 		sqlite3>0:databases/sqlite3
 
@@ -26,9 +24,11 @@ USE_RC_SUBR=	${PORTNAME}
 
 NO_BUILD=	YES
 
-SUB_FILES=	${PORTNAME} pkg-message
+SUB_FILES=	${PORTNAME} package_info pkg-message
 SUB_LIST=	DATADIR=${DATADIR} \
 		GROUPS=${GROUPS} \
+		MAINTAINER=${MAINTAINER} \
+		PKGNAME=${PKGNAME} \
 		PORTNAME=${PORTNAME} \
 		USERS=${USERS}
 
@@ -40,8 +40,12 @@ WRKSRC=		${WRKDIR}/Radarr
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR} "! -name Radarr"
-	${INSTALL_PROGRAM} ${WRKSRC}/Radarr ${STAGEDIR}/${DATADIR}
+	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/ "! -name Radarr -and ! -name ffprobe"
+	${INSTALL_PROGRAM} ${WRKSRC}/Radarr ${STAGEDIR}/${DATADIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ffprobe ${STAGEDIR}/${DATADIR}/bin/
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
 
 .include <bsd.port.mk>
