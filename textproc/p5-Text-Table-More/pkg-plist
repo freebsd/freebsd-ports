@@ -1,3 +1,5 @@
 %%SITE_PERL%%/Text/Table/More.pm
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/bug220126a.pl
 %%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/emmy.pl
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/multirow-header.pl
 %%PERL5_MAN3%%/Text::Table::More.3.gz
