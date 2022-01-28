@@ -1,14 +1,13 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	unicodedata2
-PORTVERSION=	13.0.0.post2
-PORTREVISION=	1
+PORTVERSION=	14.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Unicodedata backport and updates
+COMMENT=	Unicodedata backport updated to the latest Unicode version
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
