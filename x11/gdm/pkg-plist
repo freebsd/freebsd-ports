@@ -20,9 +20,10 @@ lib/girepository-1.0/Gdm-1.0.typelib
 lib/libgdm.so
 lib/libgdm.so.1
 lib/libgdm.so.1.0.0
+lib/security/pam_gdm.so
 libdata/pkgconfig/gdm.pc
-libexec/gdm-disable-wayland
 libexec/gdm-host-chooser
+libexec/gdm-runtime-config
 libexec/gdm-session-worker
 libexec/gdm-simple-chooser
 libexec/gdm-wayland-session
@@ -52,6 +53,8 @@ share/help/en_GB/gdm/index.docbook
 share/help/en_GB/gdm/legal.xml
 share/help/es/gdm/index.docbook
 share/help/es/gdm/legal.xml
+share/help/eu/gdm/index.docbook
+share/help/eu/gdm/legal.xml
 share/help/fr/gdm/index.docbook
 share/help/fr/gdm/legal.xml
 share/help/gl/gdm/index.docbook
@@ -84,9 +87,6 @@ share/help/uk/gdm/index.docbook
 share/help/uk/gdm/legal.xml
 share/help/zh_CN/gdm/index.docbook
 share/help/zh_CN/gdm/legal.xml
-share/icons/hicolor/16x16/apps/gdm-xnest.png
-share/icons/hicolor/32x32/apps/gdm-setup.png
-share/icons/hicolor/32x32/apps/gdm-xnest.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/an/LC_MESSAGES/gdm.mo
@@ -103,6 +103,7 @@ share/locale/br/LC_MESSAGES/gdm.mo
 share/locale/bs/LC_MESSAGES/gdm.mo
 share/locale/ca/LC_MESSAGES/gdm.mo
 share/locale/ca@valencia/LC_MESSAGES/gdm.mo
+share/locale/ckb/LC_MESSAGES/gdm.mo
 share/locale/crh/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
 share/locale/csb/LC_MESSAGES/gdm.mo
@@ -150,6 +151,7 @@ share/locale/lv/LC_MESSAGES/gdm.mo
 share/locale/mai/LC_MESSAGES/gdm.mo
 share/locale/mg/LC_MESSAGES/gdm.mo
 share/locale/mi/LC_MESSAGES/gdm.mo
+share/locale/mjw/LC_MESSAGES/gdm.mo
 share/locale/mk/LC_MESSAGES/gdm.mo
 share/locale/ml/LC_MESSAGES/gdm.mo
 share/locale/mn/LC_MESSAGES/gdm.mo
@@ -178,6 +180,7 @@ share/locale/sq/LC_MESSAGES/gdm.mo
 share/locale/sr/LC_MESSAGES/gdm.mo
 share/locale/sr@latin/LC_MESSAGES/gdm.mo
 share/locale/sv/LC_MESSAGES/gdm.mo
+share/locale/sw/LC_MESSAGES/gdm.mo
 share/locale/ta/LC_MESSAGES/gdm.mo
 share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/tg/LC_MESSAGES/gdm.mo
@@ -194,12 +197,6 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
-share/pixmaps/gdm-foot-logo.png
-share/pixmaps/gdm-setup.png
-share/pixmaps/gdm-xnest.png
-share/pixmaps/gdm.png
-share/pixmaps/nobody.png
-share/pixmaps/nohost.png
 @postexec mkdir -p %D/share/xsessions
 @postexec dconf update
 @postunexec dconf update
@@ -208,7 +205,6 @@ share/pixmaps/nohost.png
 @mode
 @postunexec rm -rf %D/etc/gdm/home/.gconf*
 @dir %%ETCDIR%%/Sessions
-@dir %%ETCDIR%%/home/.local/share/applications
 @dir etc/dm
 @dir etc/dm/Sessions
 @dir share/xsessions

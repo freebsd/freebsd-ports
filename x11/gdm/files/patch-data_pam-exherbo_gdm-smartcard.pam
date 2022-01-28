@@ -1,0 +1,28 @@
+--- data/pam-exherbo/gdm-smartcard.pam.orig	2022-01-12 14:15:56 UTC
++++ data/pam-exherbo/gdm-smartcard.pam
+@@ -1,18 +1,16 @@
+-# mirrors system-auth / system(-local)-login
+-# except for the authentication method, which is:
+-# smartcard login
++#%PAM-1.0
+ 
+-auth        required    pam_env.so
+-auth        required    pam_tally.so file=/var/log/faillog onerr=succeed
+ auth        required    pam_shells.so
+ auth        required    pam_nologin.so
+-auth [success=done ignore=ignore default=die] pam_pkcs11.so wait_for_card card_only
+--auth       optional    pam_gnome_keyring.so
++auth        required    pam_faillock.so preauth
++auth        required    pam_pkcs11.so wait_for_card card_only
++auth        required    pam_env.so
++auth        [success=ok default=1] pam_gdm.so
++auth        optional    pam_gnome_keyring.so
+ 
+ account     include     system-local-login
+ 
+ password    include     system-local-login
+ 
+ session     include     system-local-login
+--session    optional    pam_gnome_keyring.so auto_start
+-
++session     optional    pam_gnome_keyring.so auto_start

@@ -1,12 +1,11 @@
-# $OpenBSD: gdm-launch-environment,v 1.3 2012/10/10 08:47:14 ajacoutot Exp $
+# $OpenBSD: gdm-launch-environment,v 1.5 2016/04/26 08:59:48 ajacoutot Exp $
 #
 # gdm-launch-environment settings for pam(3)
 
 auth		required	pam_permit.so
 
-account		required	pam_nologin.so
-account		include		system
+account		required	pam_permit.so
 
-password	include		system
+password	required	pam_permit.so
 
 session		include		system

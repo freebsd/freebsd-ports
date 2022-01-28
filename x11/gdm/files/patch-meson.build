@@ -1,0 +1,52 @@
+--- meson.build.orig	2022-01-12 14:15:56 UTC
++++ meson.build
+@@ -37,7 +37,12 @@ gdm_screenshot_dir = (get_option('screenshot-dir') != 
+ config_h_dir = include_directories('.')
+ 
+ # Dependencies
+-udev_dep = dependency('udev')
++if host_machine.system() == 'linux'
++  udev_dep = dependency('udev')
++else
++  udev_dep = declare_dependency()
++  udev_dir = '/usr/local/lib/udev/rules.d'
++endif
+ 
+ glib_min_version = '2.56.0'
+ 
+@@ -88,17 +93,22 @@ if find_x_server_out != ''
+ else
+   # what to do, what to do, this is wrong, but this just sets the
+   # defaults, perhaps this user is cross compiling or some such
+-  x_path = '/usr/bin/X11:/usr/X11R6/bin:/opt/X11R6/bin'
+-  x_bin = '/usr/bin/X'
++  x_path = '/usr/local/bin/X11:/usr/local/bin:/opt/X11R6/bin'
++  x_bin = '/usr/local/bin/X'
+ endif
+ xdmcp_dep = cc.find_library('Xdmcp', required: get_option('xdmcp'))
+ if xdmcp_dep.found() and get_option('tcp-wrappers')
+   libwrap_dep = cc.find_library('wrap')
+ endif
+ # systemd
+-systemd_dep = dependency('systemd')
+-libsystemd_dep = dependency('libsystemd')
+-if meson.version().version_compare('>= 0.53')
++if host_machine.system() == 'linux'
++  systemd_dep = dependency('systemd')
++  libsystemd_dep = dependency('libsystemd')
++else
++  systemd_dep = declare_dependency()
++  libsystemd_dep = declare_dependency()
++endif
++if host_machine.system() == 'linux'
+   systemd_multiseat_x = find_program('systemd-multi-seat-x',
+     required: false,
+     dirs: [
+@@ -255,6 +265,7 @@ conf.set('HAVE_UT_UT_TIME', utmp_has_time_field)
+ conf.set('HAVE_UT_UT_TV', utmp_has_tv_field)
+ conf.set('HAVE_UT_UT_SYSLEN', utmp_has_syslen_field)
+ conf.set('ENABLE_IPV6', get_option('ipv6'))
++conf.set('HAVE_SIGWAITINFO', cc.has_function('sigwaitinfo'))
+ configure_file(output: 'config.h', configuration: conf)
+ 
+ # Subdirs

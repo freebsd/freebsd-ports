@@ -1,0 +1,20 @@
+--- data/pam-exherbo/gdm-autologin.pam.orig	2022-01-12 14:15:56 UTC
++++ data/pam-exherbo/gdm-autologin.pam
+@@ -1,9 +1,7 @@
+-# mirrors system-auth / system(-local)-login
+-# except for the authentication method, which is:
+-# always permit login
++#%PAM-1.0
+ 
+ auth        [success=ok default=1] pam_gdm.so
+--auth       optional    pam_gnome_keyring.so
++auth        optional    pam_gnome_keyring.so
+ auth        sufficient  pam_permit.so
+ 
+ account     include     system-local-login
+@@ -11,4 +9,4 @@ account     include     system-local-login
+ password    include     system-local-login
+ 
+ session     include     system-local-login
+--session    optional    pam_gnome_keyring.so auto_start
++session     optional    pam_gnome_keyring.so auto_start

@@ -1,0 +1,18 @@
+--- daemon/meson.build.orig	2022-01-12 14:15:56 UTC
++++ daemon/meson.build
+@@ -128,6 +128,7 @@ endif
+ gdm_session_worker = executable('gdm-session-worker',
+   gdm_session_worker_src,
+   dependencies: gdm_session_worker_deps,
++  link_args : ['-lutil'],
+   include_directories: gdm_session_worker_includes,
+   install: true,
+   install_dir: get_option('libexecdir'),
+@@ -207,6 +208,7 @@ endif
+ gdm_daemon = executable('gdm',
+   [ gdm_daemon_sources, gdm_daemon_gen_sources ],
+   dependencies: gdm_daemon_deps,
++  link_args : ['-lutil'],
+   include_directories: config_h_dir,
+   install: true,
+   install_dir: get_option('sbindir')

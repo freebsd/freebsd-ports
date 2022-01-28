@@ -1,13 +1,66 @@
-$OpenBSD: patch-data_Init_in,v 1.7 2015/04/15 14:47:00 ajacoutot Exp $
---- data/Init.in.orig	Thu Apr  2 15:52:42 2015
-+++ data/Init.in	Wed Apr 15 16:43:30 2015
-@@ -6,6 +6,9 @@
+--- data/Init.in.orig	2022-01-12 14:15:56 UTC
++++ data/Init.in
+@@ -6,6 +6,19 @@
  PATH="@X_PATH@:$PATH"
  OLD_IFS=$IFS
  
-+# enhance fade in look
-+xsetroot -solid black
++# enhance fade in look;
++# gnome-shell-3.38.1/data/theme/gnome-shell-sass/widgets/_screen-shield.scss:
++# #lockDialogGroup {
++#   background-color: lighten(#2e3436, 8%);
++# }
++xsetroot -solid "#2e3436"
++
++# wait for ttys to be initialized
++while ! pgrep -qf "^/usr/libexec/getty "; do
++	sleep 1
++	[ $((i++)) -ge 10 ] && break
++done
 +
  gdmwhich () {
    COMMAND="$1"
    OUTPUT=
+@@ -22,10 +35,10 @@ gdmwhich () {
+   echo "$OUTPUT"
+ }
+ 
+-if [ -f /etc/X11/Xresources ]; then
+-    sysresources=/etc/X11/Xresources
++if [ -f /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources ]; then
++    sysresources=/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources
+ else
+-    sysresources=/usr/etc/X11/Xresources
++    sysresources=/usr/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources
+ fi
+ 
+ # merge in defaults
+@@ -33,10 +46,10 @@ if [ -f "$sysresources" ]; then
+     xrdb -nocpp -merge "$sysresources"
+ fi
+ 
+-if [ -f /etc/X11/Xmodmap ]; then
+-    sysmodmap=/etc/X11/Xmodmap
++if [ -f /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap ]; then
++    sysmodmap=/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap
+ else
+-    sysmodmap=/usr/etc/X11/Xmodmap
++    sysmodmap=/usr/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap
+ fi
+ 
+ XMODMAP=`gdmwhich xmodmap`
+@@ -93,5 +106,15 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+     fi
+   fi
+ fi
++
++# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/GiveConsole, fbtab(5)
++if [ -c /dev/dri/card0 ]; then
++    /sbin/chown _gdm /dev/dri/card0
++fi
++if [ -c /dev/dri/renderD128 ]; then
++    /sbin/chown _gdm /dev/dri/renderD128
++fi
++# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
++rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
+ 
+ exit 0

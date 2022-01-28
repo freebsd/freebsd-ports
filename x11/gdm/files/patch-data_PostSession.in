@@ -1,0 +1,14 @@
+--- data/PostSession.in.orig	2022-01-12 14:15:56 UTC
++++ data/PostSession.in
+@@ -1,3 +1,11 @@
+ #!/bin/sh
+ 
++# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/TakeConsole, fbtab(5)
++if [ -c /dev/dri/card0 ]; then
++    /sbin/chown root /dev/dri/card0
++fi
++if [ -c /dev/dri/renderD128 ]; then
++    /sbin/chown root /dev/dri/renderD128
++fi
++
+ exit 0

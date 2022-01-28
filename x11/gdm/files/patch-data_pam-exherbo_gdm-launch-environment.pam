@@ -1,0 +1,25 @@
+--- data/pam-exherbo/gdm-launch-environment.pam.orig	2022-01-12 14:15:56 UTC
++++ data/pam-exherbo/gdm-launch-environment.pam
+@@ -1,15 +1,16 @@
+-account     required    pam_nologin.so
+-account     required    pam_succeed_if.so audit quiet_success user = gdm
+-account     required    pam_permit.so
++#%PAM-1.0
+ 
+-auth        required    pam_env.so
+ auth        required    pam_succeed_if.so audit quiet_success user = gdm
+ auth        required    pam_permit.so
++auth        required    pam_env.so
+ 
++account     required    pam_succeed_if.so audit quiet_success user = gdm
++account     required    pam_permit.so
++
+ password    required    pam_deny.so
+ 
+--session    optional    pam_systemd.so
++session     optional    pam_loginuid.so
+ session     optional    pam_keyinit.so force revoke
+ session     required    pam_succeed_if.so audit quiet_success user = gdm
+ session     required    pam_permit.so
+-
++-session    optional    pam_systemd.so

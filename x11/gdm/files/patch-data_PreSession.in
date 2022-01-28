@@ -1,0 +1,14 @@
+--- data/PreSession.in.orig	2022-01-12 14:15:56 UTC
++++ data/PreSession.in
+@@ -7,3 +7,11 @@
+ # Note that output goes into the .xsession-errors file for easy debugging
+ #
+ PATH="@X_PATH@:$PATH"
++
++# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/GiveConsole, fbtab(5)
++if [ -c /dev/dri/card0 ]; then
++    /sbin/chown $USER /dev/dri/card0
++fi
++if [ -c /dev/dri/renderD128 ]; then
++    /sbin/chown $USER /dev/dri/renderD128
++fi
