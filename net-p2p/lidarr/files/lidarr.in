@@ -19,11 +19,12 @@ load_rc_config $name
 : ${lidarr_enable="NO"}
 : ${lidarr_user:="lidarr"}
 : ${lidarr_data_dir:="%%PREFIX%%/lidarr"}
+: ${lidarr_exec_dir:="%%DATADIR%%/bin"}
 
 pidfile="${lidarr_data_dir}/lidarr.pid"
 procname="%%PREFIX%%/bin/mono"
 command="/usr/sbin/daemon"
-command_args="-f ${procname} %%DATADIR%%/Lidarr.exe --nobrowser --data=${lidarr_data_dir}"
+command_args="-f ${procname} --debug ${lidarr_exec_dir}/Lidarr.exe --nobrowser --data=${lidarr_data_dir}"
 start_precmd=lidarr_precmd
 
 lidarr_precmd()
@@ -33,6 +34,10 @@ lidarr_precmd()
 	if [ ! -d ${lidarr_data_dir} ]; then
 		install -d -o ${lidarr_user} ${lidarr_data_dir}
 	fi
+
+	# Unwritable pids allow the service to start, but fails to work
+	# Rare, but if you are debugging as root and accidentally start the service...
+	/bin/rm -f ${pidfile}
 }
 
 run_rc_command "$1"
