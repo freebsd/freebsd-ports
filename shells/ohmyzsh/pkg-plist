@@ -26,6 +26,8 @@
 %%DATADIR%%/lib/termsupport.zsh
 %%DATADIR%%/lib/theme-and-appearance.zsh
 %%DATADIR%%/oh-my-zsh.sh
+%%DATADIR%%/plugins/1password/1password.plugin.zsh
+%%DATADIR%%/plugins/1password/README.md
 %%DATADIR%%/plugins/adb/README.md
 %%DATADIR%%/plugins/adb/_adb
 %%DATADIR%%/plugins/ag/README.md
@@ -220,6 +222,8 @@
 %%DATADIR%%/plugins/fbterm/fbterm.plugin.zsh
 %%DATADIR%%/plugins/fd/README.md
 %%DATADIR%%/plugins/fd/_fd
+%%DATADIR%%/plugins/fig/README.md
+%%DATADIR%%/plugins/fig/fig.plugin.zsh
 %%DATADIR%%/plugins/firewalld/README.md
 %%DATADIR%%/plugins/firewalld/firewalld.plugin.zsh
 %%DATADIR%%/plugins/flutter/README.md
@@ -510,6 +514,8 @@
 %%DATADIR%%/plugins/pm2/pm2.plugin.zsh
 %%DATADIR%%/plugins/pod/README.md
 %%DATADIR%%/plugins/pod/_pod
+%%DATADIR%%/plugins/poetry/README.md
+%%DATADIR%%/plugins/poetry/poetry.plugin.zsh
 %%DATADIR%%/plugins/postgres/README.md
 %%DATADIR%%/plugins/postgres/postgres.plugin.zsh
 %%DATADIR%%/plugins/pow/README.md
