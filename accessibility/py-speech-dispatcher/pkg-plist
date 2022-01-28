@@ -1,4 +1,5 @@
 bin/spd-conf
+man/man1/spd-conf.1.gz
 %%PYTHON_SITELIBDIR%%/speechd/__init__.py
 %%PYTHON_SITELIBDIR%%/speechd/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/speechd/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
