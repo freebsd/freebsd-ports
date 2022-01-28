@@ -205,12 +205,12 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #   pragma GCC diagnostic push
  #   if __GNUC__ > 8
  #       pragma GCC diagnostic ignored "-Winit-list-lifetime"
---- IGC/common/Stats.cpp.orig	2021-03-22 09:55:24 UTC
+--- IGC/common/Stats.cpp.orig	2022-01-28 10:30:23 UTC
 +++ IGC/common/Stats.cpp
-@@ -1061,7 +1061,7 @@ void TimeStats::printTimeCSV( std::string const& corpu
+@@ -1045,7 +1045,7 @@ void TimeStats::printTimeCSV( std::string const& corpu
      else
          subFile += IGC::Debug::GetShaderCorpusName();
-     const std::string outputFilePath = 
+     const std::string outputFilePath =
 -#if defined(__linux__)
 +#if !defined(_WIN32)
      subFile + ".csv";
