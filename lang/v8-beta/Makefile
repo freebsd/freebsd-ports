@@ -5,6 +5,7 @@ PORTNAME=	v8
 PORTVERSION=	9.8.177.7
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
+PKGNAMESUFFIX=	-beta
 DISTFILES=	v8-${PORTVERSION}.tar.gz \
 		build-${BUILD_REV}.tar.gz \
 		buildtools-${BUILDTOOLS_REV}.tar.gz \
@@ -13,15 +14,16 @@ DISTFILES=	v8-${PORTVERSION}.tar.gz \
 		googletest-${GOOGLETEST_REV}.tar.gz \
 		icu-${ICU_REV}.tar.gz \
 		zlib-${ZLIB_REV}.tar.gz
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
 DIST_SUBDIR=	v8/${PORTVERSION:R:R}
-PKGNAMESUFFIX=	-beta
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript engine by Google
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 BUILD_DEPENDS=	binutils>=0:devel/binutils \
 		gn:devel/gn \
@@ -77,7 +79,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/build/toolchain/gcc_toolchain.gni ${WRKSRC}/buildtools/third_party/libc++/BUILD.gn
 	# https://github.com/klzgrad/naiveproxy/blob/master/src/build/config/gclient_args.gni
-	${ECHO_CMD} 'checkout_google_benchmark = false' > ${WRKSRC}/build/config/gclient_args.gni
+	@${ECHO_CMD} 'checkout_google_benchmark = false' > ${WRKSRC}/build/config/gclient_args.gni
 
 # Use ICU from ports and create needed directory
 pre-configure:
