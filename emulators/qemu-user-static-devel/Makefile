@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	6.2.50
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20 \
 USES=		bison compiler:c11 cpe gmake ninja:build perl5 pkgconfig python:build
 
 USE_GITHUB=	yes
-GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:e8995e39204 \
+GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:93dc565013e \
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 
 HAS_CONFIGURE=	yes
