@@ -11,10 +11,10 @@ Date:   Thu Jun 13 11:53:00 2019 -0700
  4 files changed, 34 insertions(+), 3 deletions(-)
 
 diff --git config/external/moz.build config/external/moz.build
-index 03e4fa143bd1..a67d10b11fe6 100644
+index ab77121..75595d9 100644
 --- config/external/moz.build
 +++ config/external/moz.build
-@@ -40,8 +40,9 @@ if not CONFIG["MOZ_SYSTEM_LIBVPX"]:
+@@ -49,8 +49,9 @@ if not CONFIG["MOZ_SYSTEM_LIBVPX"]:
      external_dirs += ["media/libvpx"]
  
  if CONFIG["MOZ_AV1"]:
@@ -27,11 +27,11 @@ index 03e4fa143bd1..a67d10b11fe6 100644
  if not CONFIG["MOZ_SYSTEM_PNG"]:
      external_dirs += ["media/libpng"]
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index bcf5c4925564..48964a999a9b 100644
+index a1b58eb..65729f9 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1305,6 +1305,14 @@ if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-         'harfbuzz/hb.h',
+@@ -1289,6 +1289,14 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
+         'proxy.h',
      ]
  
 +if CONFIG['MOZ_SYSTEM_AV1']:
@@ -46,7 +46,7 @@ index bcf5c4925564..48964a999a9b 100644
      system_headers += [
          'vpx_mem/vpx_mem.h',
 diff --git dom/media/platforms/moz.build dom/media/platforms/moz.build
-index 092cee0c9b66..38e45de5b5f0 100644
+index 8509aec..eb6f129 100644
 --- dom/media/platforms/moz.build
 +++ dom/media/platforms/moz.build
 @@ -78,6 +78,11 @@ if CONFIG["MOZ_AV1"]:
@@ -62,10 +62,10 @@ index 092cee0c9b66..38e45de5b5f0 100644
  if CONFIG["MOZ_OMX"]:
      EXPORTS += [
 diff --git toolkit/moz.configure toolkit/moz.configure
-index 82b5a59acf42..e2329560b42b 100644
---- toolkit/moz.configure.orig	2021-04-13 16:12:34.770032000 +0200
-+++ toolkit/moz.configure	2021-04-18 00:03:41.432698000 +0200
-@@ -538,7 +538,23 @@
+index 0069865..e806fc8 100644
+--- toolkit/moz.configure
++++ toolkit/moz.configure
+@@ -523,7 +523,23 @@ def av1(value):
          return True
  
  
@@ -90,11 +90,11 @@ index 82b5a59acf42..e2329560b42b 100644
  def dav1d_asm(target):
      if target.cpu in ("aarch64", "x86", "x86_64"):
          return True
-@@ -554,6 +570,7 @@
+@@ -539,6 +555,7 @@ set_config("MOZ_DAV1D_ASM", dav1d_asm)
  set_define("MOZ_DAV1D_ASM", dav1d_asm)
  set_config("MOZ_AV1", av1)
  set_define("MOZ_AV1", av1)
 +set_config("MOZ_SYSTEM_AV1", depends_if(system_av1)(lambda _: True))
  
- # Built-in fragmented MP4 support.
+ # JXL Image Codec Support
  # ==============================================================
