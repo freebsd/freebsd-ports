@@ -2,8 +2,9 @@
 
 PORTNAME=	upx
 PORTVERSION=	3.96
-DISTVERSIONPREFIX=	v
+MASTER_SITES=	https://github.com/upx/upx/releases/download/v${PORTVERSION}/
 CATEGORIES=	archivers
+DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ultimate Packer for eXecutables
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libucl.so:archivers/ucl
 
-USES=		cpe gmake perl5
+USES=		cpe gmake perl5 tar:xz
 USE_PERL5=	build
 
 MAKE_ENV=	UPX_UCLDIR=${LOCALBASE} \
@@ -23,9 +24,6 @@ PLIST_FILES=	bin/upx \
 		man/man1/upx.1.gz
 
 CPE_VENDOR=	upx_project
-
-GH_TUPLE=	upx:upx-lzma-sdk:v${PORTVERSION}:lzma/src/lzma-sdk
-USE_GITHUB=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/upx.out ${STAGEDIR}${PREFIX}/bin/upx
