@@ -1,0 +1,46 @@
+Obtained from:	https://github.com/gamringer/php-pkcs11/commit/0df4a939a65137ef9002077cad4e6dab8c58c6cc
+
+--- pkcs11int.h.orig	2021-03-23 21:45:06 UTC
++++ pkcs11int.h
+@@ -192,6 +192,19 @@ DECLARE_MAGIC_FUNCS(pkcs11_digestcontext,             
+ DECLARE_MAGIC_FUNCS(pkcs11_encryptioncontext,             EncryptionContext)
+ DECLARE_MAGIC_FUNCS(pkcs11_decryptioncontext,             DecryptionContext)
+ 
++#if PHP_VERSION_ID < 80100
++
++#define PKCS11_ACC_NOT_SERIALIZABLE(ce) \
++    ce->serialize = zend_class_serialize_deny; \
++    ce->unserialize = zend_class_unserialize_deny;
++
++#else
++
++#define PKCS11_ACC_NOT_SERIALIZABLE(ce) \
++    ce->ce_flags |= ZEND_ACC_NOT_SERIALIZABLE;
++
++#endif
++
+ #define DEFINE_MAGIC_FUNCS(tt, lowername, classname)                            \
+ static zend_object *tt##_ctor(zend_class_entry *ce) {                           \
+     tt##_object *objval = zend_object_alloc(sizeof(tt##_object), ce);           \
+@@ -216,8 +229,7 @@ void register_##tt() {                                
+     tt##_handlers.clone_obj = NULL;                                             \
+     tt##_handlers.free_obj = tt##_dtor;                                         \
+     ce_Pkcs11_##classname = zend_register_internal_class(&ce);                  \
+-    ce_Pkcs11_##classname->serialize = zend_class_serialize_deny;               \
+-    ce_Pkcs11_##classname->unserialize = zend_class_unserialize_deny;           \
++    PKCS11_ACC_NOT_SERIALIZABLE(ce_Pkcs11_##classname);                         \
+ }
+ 
+ 
+--- pkcs11key.c.orig	2021-03-23 21:45:06 UTC
++++ pkcs11key.c
+@@ -612,6 +612,5 @@ void register_pkcs11_key() {
+     pkcs11_key_handlers.offset = XtOffsetOf(pkcs11_key_object, std);
+     pkcs11_key_handlers.clone_obj = NULL;
+     ce_Pkcs11_Key = zend_register_internal_class_ex(&ce, ce_Pkcs11_P11Object);
+-    ce_Pkcs11_Key->serialize = zend_class_serialize_deny;
+-    ce_Pkcs11_Key->unserialize = zend_class_unserialize_deny;
+-}
+\ No newline at end of file
++    PKCS11_ACC_NOT_SERIALIZABLE(ce_Pkcs11_Key);
++}
