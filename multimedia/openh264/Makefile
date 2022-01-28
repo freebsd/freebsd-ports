@@ -1,12 +1,8 @@
 PORTNAME=	openh264
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.2.0
 PORTEPOCH=	2
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6cc269bebccc.patch:-p1 # https://github.com/cisco/openh264/pull/3319
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Cisco implementation of H.264 codec
