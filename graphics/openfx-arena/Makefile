@@ -4,12 +4,13 @@ DISTVERSIONPREFIX=	Natron-
 PORTREVISION=	47
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	bc06a46bb1ccef8f7da6caf17faf165fbac662db.diff:-p1
+
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Extra OpenFX plugins for Natron
 
 LICENSE=	GPLv2
-
-BROKEN=		Doesn't compile, ./OpenFX/Support/include/ofxsCore.h:193:26: error: expected unqualified-id
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 BUILD_DEPENDS=	opencl>=0:devel/opencl

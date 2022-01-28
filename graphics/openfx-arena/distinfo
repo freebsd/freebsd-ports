@@ -11,3 +11,5 @@ SHA256 (NatronGitHub-SequenceParsing-9e8b77a_GH0.tar.gz) = 7a2c1591b3198f8780bf2
 SIZE (NatronGitHub-SequenceParsing-9e8b77a_GH0.tar.gz) = 15980
 SHA256 (NatronGitHub-tinydir-3aae922_GH0.tar.gz) = eb816fff00d9713742a1f1367432fee0ea73ccb0f458c90035543e923e8e55d1
 SIZE (NatronGitHub-tinydir-3aae922_GH0.tar.gz) = 24552
+SHA256 (bc06a46bb1ccef8f7da6caf17faf165fbac662db.diff) = 3b91e4cdfa5c29000d15fa5a485f648386fcc72aa36bc3d44e759c6cabe5ab88
+SIZE (bc06a46bb1ccef8f7da6caf17faf165fbac662db.diff) = 7313
