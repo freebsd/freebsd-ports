@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	cloc
-PORTVERSION=	1.90
+PORTVERSION=	1.92
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/AlDanial/cloc/releases/download/v${PORTVERSION}/
 
