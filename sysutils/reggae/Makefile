@@ -1,5 +1,5 @@
 PORTNAME=	reggae
-PORTVERSION=	0.1.20
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
