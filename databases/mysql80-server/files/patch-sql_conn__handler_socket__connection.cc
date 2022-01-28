@@ -1,6 +1,6 @@
---- sql/conn_handler/socket_connection.cc.orig	2019-09-20 08:30:51 UTC
+--- sql/conn_handler/socket_connection.cc.orig	2021-12-17 16:07:27 UTC
 +++ sql/conn_handler/socket_connection.cc
-@@ -950,9 +950,11 @@ bool check_connection_refused_by_tcp_wrapper(MYSQL_SOC
+@@ -953,9 +953,11 @@ bool check_connection_refused_by_tcp_wrapper(MYSQL_SOC
    signal(SIGCHLD, SIG_DFL);
    request_init(&req, RQ_DAEMON, libwrap_name, RQ_FILE,
                 mysql_socket_getfd(connect_sock), NULL);
@@ -14,7 +14,7 @@
      /*
        This may be stupid but refuse() includes an exit(0)
        which we surely don't want...
-@@ -964,12 +966,13 @@ bool check_connection_refused_by_tcp_wrapper(MYSQL_SOC
+@@ -967,12 +969,13 @@ bool check_connection_refused_by_tcp_wrapper(MYSQL_SOC
        This is unproblematic as TCP-wrapper is unix specific,
        anyway.
      */

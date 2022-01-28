@@ -1,8 +1,8 @@
---- cmake/os/FreeBSD.cmake.orig	2019-09-20 08:30:51 UTC
+--- cmake/os/FreeBSD.cmake.orig	2021-12-17 16:07:27 UTC
 +++ cmake/os/FreeBSD.cmake
-@@ -45,8 +45,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
-       MESSAGE(FATAL_ERROR
-         "GCC 5.3 or newer is required (-dumpversion says ${GCC_VERSION})")
+@@ -48,8 +48,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
+     IF(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.1)
+       MESSAGE(FATAL_ERROR "GCC 7.1 or newer is required")
      ENDIF()
 -  ELSE()
 -    MESSAGE(FATAL_ERROR "Unsupported compiler!")

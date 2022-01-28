@@ -1,4 +1,4 @@
---- vio/viossl.cc.orig	2019-09-20 08:30:51 UTC
+--- vio/viossl.cc.orig	2021-12-17 16:07:27 UTC
 +++ vio/viossl.cc
 @@ -45,7 +45,8 @@
    BIO_set_callback_ex was added in openSSL 1.1.1
@@ -10,8 +10,8 @@
  #define HAVE_BIO_SET_CALLBACK_EX
  #endif
  
-@@ -635,7 +636,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
- #if !defined(DBUG_OFF)
+@@ -640,7 +641,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
+ #if !defined(NDEBUG)
      {
        STACK_OF(SSL_COMP) *ssl_comp_methods = nullptr;
 -      ssl_comp_methods = SSL_COMP_get_compression_methods();
@@ -19,7 +19,7 @@
        n = sk_SSL_COMP_num(ssl_comp_methods);
        DBUG_PRINT("info", ("Available compression methods:\n"));
        if (n == 0)
-@@ -643,7 +644,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
+@@ -648,7 +649,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
        else
          for (j = 0; j < n; j++) {
            SSL_COMP *c = sk_SSL_COMP_value(ssl_comp_methods, j);

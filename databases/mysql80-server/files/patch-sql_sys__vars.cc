@@ -1,6 +1,6 @@
---- sql/sys_vars.cc.orig	2019-09-20 08:30:51 UTC
+--- sql/sys_vars.cc.orig	2021-12-17 16:07:27 UTC
 +++ sql/sys_vars.cc
-@@ -1875,7 +1875,7 @@ static Sys_var_ulong Sys_connect_timeout(
+@@ -1977,7 +1977,7 @@ static Sys_var_ulong Sys_connect_timeout(
      "The number of seconds the mysqld server is waiting for a connect "
      "packet before responding with 'Bad handshake'",
      GLOBAL_VAR(connect_timeout), CMD_LINE(REQUIRED_ARG),
@@ -9,7 +9,7 @@
  
  static Sys_var_ulong Sys_information_schema_stats_expiry(
      "information_schema_stats_expiry",
-@@ -2929,7 +2929,7 @@ static Sys_var_ulong Sys_net_read_timeout(
+@@ -3093,7 +3093,7 @@ static Sys_var_ulong Sys_net_read_timeout(
      "Number of seconds to wait for more data from a connection before "
      "aborting the read",
      SESSION_VAR(net_read_timeout), CMD_LINE(REQUIRED_ARG),
@@ -18,7 +18,7 @@
      NO_MUTEX_GUARD, NOT_IN_BINLOG, ON_CHECK(nullptr),
      ON_UPDATE(fix_net_read_timeout));
  
-@@ -2950,7 +2950,7 @@ static Sys_var_ulong Sys_net_write_timeout(
+@@ -3114,7 +3114,7 @@ static Sys_var_ulong Sys_net_write_timeout(
      "Number of seconds to wait for a block to be written to a connection "
      "before aborting the write",
      SESSION_VAR(net_write_timeout), CMD_LINE(REQUIRED_ARG),
@@ -27,7 +27,7 @@
      NO_MUTEX_GUARD, NOT_IN_BINLOG, ON_CHECK(nullptr),
      ON_UPDATE(fix_net_write_timeout));
  
-@@ -4459,6 +4459,7 @@ static Sys_var_ulong Sys_max_execution_time(
+@@ -4876,6 +4876,7 @@ static Sys_var_ulong Sys_max_execution_time(
      HINT_UPDATEABLE SESSION_VAR(max_execution_time), CMD_LINE(REQUIRED_ARG),
      VALID_RANGE(0, ULONG_MAX), DEFAULT(0), BLOCK_SIZE(1));
  
@@ -35,7 +35,7 @@
  static bool update_fips_mode(sys_var *, THD *, enum_var_type) {
    char ssl_err_string[OPENSSL_ERROR_LENGTH] = {'\0'};
    if (set_fips_mode(opt_ssl_fips_mode, ssl_err_string) != 1) {
-@@ -4470,14 +4471,30 @@ static bool update_fips_mode(sys_var *, THD *, enum_va
+@@ -4887,14 +4888,30 @@ static bool update_fips_mode(sys_var *, THD *, enum_va
    }
  }
  

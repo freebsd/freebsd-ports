@@ -1,5 +1,5 @@
---- vio/viosslfactories.cc.orig	2021-11-04 18:02:40.921064000 +0100
-+++ vio/viosslfactories.cc	2021-11-04 18:15:24.992676000 +0100
+--- vio/viosslfactories.cc.orig	2021-12-17 16:07:27 UTC
++++ vio/viosslfactories.cc
 @@ -40,6 +40,7 @@
  #include "vio/vio_priv.h"
  
@@ -30,10 +30,10 @@
  
 -#ifdef HAVE_TLSv13
 +#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
-   const char *tls_version_name_list[] = {"TLSv1", "TLSv1.1", "TLSv1.2",
-                                          "TLSv1.3"};
-   const char ctx_flag_default[] = "TLSv1,TLSv1.1,TLSv1.2,TLSv1.3";
-@@ -624,7 +627,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
+   const char *tls_version_name_list[] = {"TLSv1.2", "TLSv1.3"};
+   const char ctx_flag_default[] = "TLSv1.2,TLSv1.3";
+   const long tls_ctx_list[] = {SSL_OP_NO_TLSv1_2, SSL_OP_NO_TLSv1_3};
+@@ -623,7 +626,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
    ssl_ctx_options = (ssl_ctx_options | ssl_ctx_flags) &
                      (SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3 | SSL_OP_NO_TLSv1 |
                       SSL_OP_NO_TLSv1_1 | SSL_OP_NO_TLSv1_2
@@ -42,7 +42,7 @@
                       | SSL_OP_NO_TLSv1_3
  #endif /* HAVE_TLSv13 */
                       | SSL_OP_NO_TICKET);
-@@ -633,7 +636,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
+@@ -632,7 +635,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
      return nullptr;
  
    if (!(ssl_fd->ssl_context = SSL_CTX_new(is_client ?
@@ -51,7 +51,7 @@
                                                      TLS_client_method()
                                                      : TLS_server_method()
  #else  /* HAVE_TLSv13 */
-@@ -648,7 +651,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
+@@ -647,7 +650,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
      return nullptr;
    }
  

@@ -1,5 +1,5 @@
---- scripts/mysqld_safe.sh.orig	2022-01-07 11:33:53.643546000 +0100
-+++ scripts/mysqld_safe.sh	2022-01-07 11:37:41.505101000 +0100
+--- scripts/mysqld_safe.sh.orig	2022-01-23 11:48:36 UTC
++++ scripts/mysqld_safe.sh
 @@ -360,7 +360,7 @@ mysqld_ld_preload_text() {
  # running mysqld.  See ld.so for details.
  set_malloc_lib() {

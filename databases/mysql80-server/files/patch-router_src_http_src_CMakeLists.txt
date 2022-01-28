@@ -1,6 +1,6 @@
---- router/src/http/src/CMakeLists.txt.orig	2019-12-09 19:53:17 UTC
+--- router/src/http/src/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
 +++ router/src/http/src/CMakeLists.txt
-@@ -62,7 +62,6 @@ INSTALL(TARGETS http_common
+@@ -58,7 +58,6 @@ INSTALL(TARGETS http_common
    RUNTIME DESTINATION ${ROUTER_INSTALL_BINDIR} COMPONENT Router
    ARCHIVE DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
    LIBRARY DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
@@ -8,7 +8,7 @@
    )
  
  ## split library code from the plugin to use them _passwd and tests
-@@ -88,7 +87,6 @@ INSTALL(TARGETS http_auth_backend_lib
+@@ -84,7 +83,6 @@ INSTALL(TARGETS http_auth_backend_lib
    RUNTIME DESTINATION ${ROUTER_INSTALL_BINDIR} COMPONENT Router
    ARCHIVE DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
    LIBRARY DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
@@ -16,7 +16,7 @@
    )
  TARGET_INCLUDE_DIRECTORIES(http_auth_backend_lib PUBLIC
    ${CMAKE_CURRENT_SOURCE_DIR}
-@@ -141,7 +139,6 @@ INSTALL(TARGETS http_auth_realm_lib
+@@ -137,7 +135,6 @@ INSTALL(TARGETS http_auth_realm_lib
    RUNTIME DESTINATION ${ROUTER_INSTALL_BINDIR} COMPONENT Router
    ARCHIVE DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
    LIBRARY DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router

@@ -1,6 +1,6 @@
---- libmysql/CMakeLists.txt.orig	2021-07-01 07:53:49 UTC
+--- libmysql/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
 +++ libmysql/CMakeLists.txt
-@@ -197,6 +197,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
+@@ -198,6 +198,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
    )
  ENDIF()
  
@@ -12,7 +12,7 @@
  #
  # Include protocol tracing infrastructure and the test
  # trace plugin if enabled by build options.
-@@ -270,8 +275,15 @@ IF(WIN32)
+@@ -271,8 +276,15 @@ IF(WIN32)
    LIST(APPEND LIBS_TO_MERGE auth_win_client)
  ENDIF()
  
@@ -28,9 +28,9 @@
 +  MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
 +  ADD_SUBDIRECTORY(authentication_ldap)
  
- # authentication kerberos client plug-in
- ADD_SUBDIRECTORY(authentication_kerberos)
-@@ -281,6 +293,7 @@ MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERG
+ # FIDO authentication client plugin
+ ADD_SUBDIRECTORY(authentication_fido)
+@@ -288,6 +300,7 @@ MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERG
    COMPONENT Development
    LINK_LIBRARIES ${LIBS_TO_LINK}
    )
@@ -38,7 +38,7 @@
  
  # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
-@@ -327,17 +340,27 @@ ENDIF()
+@@ -334,17 +347,27 @@ ENDIF()
  
  # Merge several convenience libraries into one big mysqlclient
  # and link them together into shared library.
@@ -64,5 +64,5 @@
    )
 +ENDIF(WITHOUT_CLIENTLIBS)
  
- IF(LINUX_STANDALONE AND KERBEROS_CUSTOM_LIBRARY)
-   ADD_DEPENDENCIES(libmysql ${kerberos_target})
+ # Downgrade warning for strncat in my_crypt_genhash.
+ IF((WITH_LTO OR CMAKE_COMPILER_FLAG_WITH_LTO) AND MY_COMPILER_IS_GNU)

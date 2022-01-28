@@ -1,4 +1,4 @@
---- plugin/x/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
+--- plugin/x/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
 +++ plugin/x/CMakeLists.txt
 @@ -77,6 +77,8 @@ INCLUDE_DIRECTORIES(
    ${MYSQLX_GENERATE_DIR}
@@ -8,4 +8,4 @@
 +  ${BOOST_INCLUDE_DIR}
  )
  
- MY_INCLUDE_SYSTEM_DIRECTORIES(PROTOBUF)
+ MY_INCLUDE_SYSTEM_DIRECTORIES(LIBEVENT)

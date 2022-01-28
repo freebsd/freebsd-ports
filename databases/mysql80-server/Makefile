@@ -1,7 +1,7 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 
 PORTNAME?=		mysql
-PORTVERSION=		8.0.27
+PORTVERSION=		8.0.28
 PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
@@ -34,6 +34,8 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libprotobuf.so:devel/protobuf \
+		libfido2.so:security/libfido2 \
+		libhidapi.so:comms/hidapi \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
@@ -85,6 +87,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_ZSTD=system \
 		-DWITH_PROTOBUF=system \
 		-DWITH_SSL=system \
+		-DWITH_AUTHENTICATION_FIDO=1 \
 		-DBUILD_BUNDLED_ZLIB=0 \
 		-DBUILD_BUNDLED_LZ4=0
 
@@ -137,6 +140,8 @@ MMAN8=		mysqld.8
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 CMAKE_ARGS+=	-DWITHOUT_CLIENTLIBS="ON"
+# Disable unit tests, it fails on !amd64 and <13.0 due to c++17 rules
+CMAKE_ARGS+=   -DWITH_UNIT_TESTS="OFF"
 
 OPTIONS_GROUP=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
@@ -176,7 +181,8 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 # which is broken on i386 due to different size of types and caused a
 # 'static_assert(alignof(T) <= alignof(std::max_align_t))' error
 .if ${ARCH} == i386
-CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
+#CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
+SSP_UNSAFE=	yes
 .endif
 
 post-extract:

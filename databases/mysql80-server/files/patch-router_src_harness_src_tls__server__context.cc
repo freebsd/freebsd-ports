@@ -1,6 +1,6 @@
---- router/src/harness/src/tls_server_context.cc.orig	2019-09-20 08:30:51 UTC
+--- router/src/harness/src/tls_server_context.cc.orig	2021-12-17 16:07:27 UTC
 +++ router/src/harness/src/tls_server_context.cc
-@@ -166,7 +166,8 @@ void TlsServerContext::init_tmp_dh(const std::string &
+@@ -169,7 +169,8 @@ stdx::expected<void, std::error_code> TlsServerContext
      }
  
    } else {

@@ -1,5 +1,5 @@
---- scripts/CMakeLists.txt.orig	2021-11-04 17:42:29.686664000 +0100
-+++ scripts/CMakeLists.txt	2021-11-04 17:57:49.957200000 +0100
+--- scripts/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
++++ scripts/CMakeLists.txt
 @@ -323,6 +323,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
          GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
          STRING(REGEX REPLACE "^lib" "" lib "${lib}")

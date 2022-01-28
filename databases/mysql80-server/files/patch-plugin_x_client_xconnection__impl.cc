@@ -1,6 +1,6 @@
---- plugin/x/client/xconnection_impl.cc.orig	2019-09-20 08:30:51 UTC
+--- plugin/x/client/xconnection_impl.cc.orig	2021-12-17 16:07:27 UTC
 +++ plugin/x/client/xconnection_impl.cc
-@@ -520,6 +520,7 @@ XError Connection_impl::get_ssl_error(const int error_
+@@ -618,6 +618,7 @@ XError Connection_impl::get_ssl_error(const int error_
    return XError(CR_SSL_CONNECTION_ERROR, buffer);
  }
  
@@ -8,7 +8,7 @@
  /**
    Set fips mode in openssl library,
    When we set fips mode ON/STRICT, it will perform following operations:
-@@ -559,6 +560,7 @@ int set_fips_mode(const uint32_t fips_mode,
+@@ -657,6 +658,7 @@ int set_fips_mode(const uint32_t fips_mode,
  EXIT:
    return rc;
  }
@@ -16,7 +16,7 @@
  
  XError Connection_impl::activate_tls() {
    if (nullptr == m_vio) return get_socket_error(SOCKET_ECONNRESET);
-@@ -569,12 +571,14 @@ XError Connection_impl::activate_tls() {
+@@ -667,12 +669,14 @@ XError Connection_impl::activate_tls() {
    if (!m_context->m_ssl_config.is_configured())
      return XError{CR_SSL_CONNECTION_ERROR, ER_TEXT_TLS_NOT_CONFIGURATED, true};
  

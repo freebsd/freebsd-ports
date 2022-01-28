@@ -1,5 +1,5 @@
---- router/src/harness/src/tls_context.cc.orig	2021-11-04 17:14:44.779135000 +0100
-+++ router/src/harness/src/tls_context.cc	2021-11-04 17:35:31.121070000 +0100
+--- router/src/harness/src/tls_context.cc.orig	2021-12-17 16:07:27 UTC
++++ router/src/harness/src/tls_context.cc
 @@ -241,7 +241,7 @@ static int o11x_version(TlsVersion version) {
        return TLS1_1_VERSION;
      case TlsVersion::TLS_1_2:

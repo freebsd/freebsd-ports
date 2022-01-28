@@ -1,6 +1,6 @@
---- sql/mysqld.cc.orig	2019-09-20 08:30:51 UTC
+--- sql/mysqld.cc.orig	2021-12-17 16:07:27 UTC
 +++ sql/mysqld.cc
-@@ -5109,7 +5109,7 @@ static int init_thread_environment() {
+@@ -5285,7 +5285,7 @@ static int init_thread_environment() {
  
  static PSI_memory_key key_memory_openssl = PSI_NOT_INSTRUMENTED;
  
@@ -9,7 +9,7 @@
  #define FILE_LINE_ARGS
  #else
  #define FILE_LINE_ARGS , const char *, int
-@@ -5143,12 +5143,14 @@ static void init_ssl() {
+@@ -5316,12 +5316,14 @@ static void init_ssl() {
  }
  
  static int init_ssl_communication() {
