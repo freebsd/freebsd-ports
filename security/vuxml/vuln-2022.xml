@@ -1,3 +1,50 @@
+  <vuln vid="1aaaa5c6-804d-11ec-8be6-d4c9ef517024">
+    <topic>OpenSSL -- BN_mod_exp incorrect results on MIPS</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1m,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220128.txt">
+	  <p>BN_mod_exp may produce incorrect results on MIPS (Moderate)</p>
+	  <p>There is a carry propagation bug in the MIPS32 and MIPS64 squaring
+	    procedure. Many EC algorithms are affected, including some of the
+	    TLS 1.3 default curves. Impact was not analyzed in detail, because the
+	    pre-requisites for attack are considered unlikely and include reusing
+	    private keys. Analysis suggests that attacks against RSA and DSA as a
+	    result of this defect would be very difficult to perform and are not
+	    believed likely. Attacks against DH are considered just feasible
+	    (although very difficult) because most of the work necessary to deduce
+	    information about a private key may be performed offline. The amount
+	    of resources required for such an attack would be significant.
+	    However, for an attack on TLS to be meaningful, the server would have
+	    to share the DH private key among multiple clients, which is no longer
+	    an option since CVE-2016-0701.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-4160</cvename>
+      <url>https://www.openssl.org/news/secadv/20220128.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-01-28</discovery>
+      <entry>2022-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65847d9d-7f3e-11ec-8624-b42e991fc52e">
     <topic>mustache - Possible Remote Code Execution</topic>
     <affects>
