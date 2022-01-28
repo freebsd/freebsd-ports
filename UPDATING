@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220128:
+  AFFECTS: users of net-im/dendrite
+  AUTHOR: ashish@FreeBSD.org
+
+  The configuration needs to be updated to version 2 following upgrade to
+  Dendrite v0.6. Please refer to /usr/local/etc/dendrite/dendrite.yaml.sample
+  for a sample configuration.
+
 20220127:
   AFFECTS: users of PyQt
   AUTHOR: kde@FreeBSD.org
