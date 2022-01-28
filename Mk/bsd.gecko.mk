@@ -67,6 +67,9 @@ USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
+.if ${MOZILLA_VER:R:R} >= 96
+USE_XORG+=	xrandr
+.endif
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 LDFLAGS+=		-Wl,--as-needed
