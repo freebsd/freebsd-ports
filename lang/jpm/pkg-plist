@@ -9,6 +9,7 @@ lib/janet/jpm/dagbuild.janet
 lib/janet/jpm/declare.janet
 lib/janet/jpm/default-config.janet
 lib/janet/jpm/init.janet
+lib/janet/jpm/make-config.janet
 lib/janet/jpm/pm.janet
 lib/janet/jpm/rules.janet
 lib/janet/jpm/shutil.janet
