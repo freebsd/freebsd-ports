@@ -1,11 +1,10 @@
 # Created by: Stefan Wendler <stefan.wendler@tngtech.com>
 
 PORTNAME=	rubymine
-PORTVERSION=	2021.3.1
+PORTVERSION=	2021.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
-PKGNAMEPREFIX=	intellij-
 DISTNAME=	RubyMine-${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org

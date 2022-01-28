@@ -468,7 +468,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-RM-213.6461.75
+%%DATADIR%%/lib/build-marker-RM-213.6777.43
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -607,8 +607,8 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-a83ea4ee0d3d.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-a83ea4ee0d3d.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-e5421860d8a5.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-e5421860d8a5.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -659,6 +659,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2020.symbol.wellknown.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.full.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.intl.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.promise.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.string.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.weakref.d.ts
@@ -749,7 +750,6 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-host-unattended.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-host.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-lobby-common.jar
-%%DATADIR%%/plugins/cwm-plugin/lib/cwm-plugin-android.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-plugin-terminal.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-plugin.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-unattended-common.jar
@@ -761,7 +761,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/cwm-plugin/lib/projector-client-common.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/projector-client-swing.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
-%%DATADIR%%/plugins/cwm-plugin/lib/rd-text-2021.3.4.jar
+%%DATADIR%%/plugins/cwm-plugin/lib/rd-text-2021.3.5.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/tls-channel.jar
 %%DATADIR%%/plugins/cwm-plugin/quiche-native/darwin-aarch64/libquiche.dylib
 %%DATADIR%%/plugins/cwm-plugin/quiche-native/darwin-x86-64/libquiche.dylib
@@ -1585,6 +1585,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/constants.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/dir.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/enumerable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/core/exception.rbs
@@ -1626,6 +1627,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/abbrev/0/abbrev.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/base64/0/base64.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/benchmark/0/benchmark.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/bigdecimal/0/big_decimal.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/cgi/0/core.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/csv/0/csv.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/date/0/date.rbs
@@ -1635,6 +1637,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs18/stdlib/logger/0/formatter.rbs
@@ -1697,6 +1700,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/core/exception.rbs
@@ -1757,6 +1761,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs19/stdlib/logger/0/formatter.rbs
@@ -1834,6 +1839,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/core/exception.rbs
@@ -1894,6 +1900,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs20/stdlib/logger/0/formatter.rbs
@@ -1973,6 +1980,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/core/exception.rbs
@@ -2033,6 +2041,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs21/stdlib/logger/0/formatter.rbs
@@ -2113,6 +2122,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/core/exception.rbs
@@ -2173,6 +2183,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs22/stdlib/logger/0/formatter.rbs
@@ -2255,6 +2266,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/core/exception.rbs
@@ -2315,6 +2327,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs23/stdlib/logger/0/formatter.rbs
@@ -2398,6 +2411,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/core/exception.rbs
@@ -2459,6 +2473,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs24/stdlib/logger/0/formatter.rbs
@@ -2542,6 +2557,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/encoding.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/enumerable.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/enumerator.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/env.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/errno.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/errors.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/core/exception.rbs
@@ -2603,6 +2619,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/fileutils/0/fileutils.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/find/0/find.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/forwardable/0/forwardable.rbs
+%%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/io-console/0/io-console.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/ipaddr/0/ipaddr.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/json/0/json.rbs
 %%DATADIR%%/plugins/ruby/rubysigs/rubysigs25/stdlib/logger/0/formatter.rbs
@@ -5468,6 +5485,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/wsl-fs-helper/lib/bifurcan-0.2.0-alpha6.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/java-diff-utils-4.9.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/kotlinx-coroutines-debug-1.5.1.jar
+%%DATADIR%%/plugins/wsl-fs-helper/lib/kotlinx-coroutines-slf4j-1.5.2.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/okhttp-4.9.2.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/okio-2.8.0.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/wsl-fs-helper.jar
