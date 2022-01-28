@@ -5,7 +5,7 @@ DISTVERSION=	20200106
 PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line interface for Telegram
 
 LICENSE=	GPLv2
