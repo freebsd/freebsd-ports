@@ -8,6 +8,7 @@ include/charls/public_types.h
 include/charls/version.h
 lib/cmake/charls/charlsConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/charls/charlsConfig.cmake
+lib/cmake/charls/charlsConfigVersion.cmake
 lib/libcharls.so
 lib/libcharls.so.2
 lib/libcharls.so.%%PORTVERSION%%
