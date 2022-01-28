@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	BorderStyles-Standard
-PORTVERSION=	0.007
+PORTVERSION=	0.011
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERLANCAR
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-BorderStyleBase>=0:devel/p5-BorderStyleBase
+RUN_DEPENDS=	p5-BorderStyleBase>=0.009:devel/p5-BorderStyleBase
 
 USES=		perl5
 USE_PERL5=	configure
