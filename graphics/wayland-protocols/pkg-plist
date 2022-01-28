@@ -3,6 +3,7 @@ libdata/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/stable/viewporter/viewporter.xml
 %%DATADIR%%/stable/xdg-shell/xdg-shell.xml
 %%DATADIR%%/staging/drm-lease/drm-lease-v1.xml
+%%DATADIR%%/staging/ext-session-lock/ext-session-lock-v1.xml
 %%DATADIR%%/staging/xdg-activation/xdg-activation-v1.xml
 %%DATADIR%%/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
 %%DATADIR%%/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml

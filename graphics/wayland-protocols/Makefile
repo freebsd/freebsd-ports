@@ -1,5 +1,5 @@
 PORTNAME=	wayland-protocols
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
