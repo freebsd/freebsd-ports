@@ -3,7 +3,8 @@
 PORTNAME=	vnstat
 PORTVERSION=	2.9
 CATEGORIES=	net
-MASTER_SITES=	https://humdi.net/vnstat/
+MASTER_SITES=	https://github.com/vergoh/vnstat/releases/download/v${PORTVERSION}/ \
+		https://humdi.net/vnstat/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Console-based network traffic monitor
