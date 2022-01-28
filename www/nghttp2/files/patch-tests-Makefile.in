@@ -1,0 +1,31 @@
+sed -i .orig 's|$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' */Makefile.in
+
+--- tests/Makefile.in.orig	2021-10-19 09:32:30 UTC
++++ tests/Makefile.in
+@@ -141,7 +141,7 @@ failmalloc_OBJECTS = $(am_failmalloc_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @ENABLE_STATIC_FALSE@@HAVE_CUNIT_TRUE@am__DEPENDENCIES_2 = ${top_builddir}/lib/.libs/*.o \
+ @ENABLE_STATIC_FALSE@@HAVE_CUNIT_TRUE@	$(am__DEPENDENCIES_1)
+-@ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@am__DEPENDENCIES_2 = ${top_builddir}/lib/libnghttp2.la \
++@ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@am__DEPENDENCIES_2 = -lnghttp2 \
+ @ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@	$(am__DEPENDENCIES_1)
+ @ENABLE_FAILMALLOC_TRUE@@HAVE_CUNIT_TRUE@failmalloc_DEPENDENCIES = $(am__DEPENDENCIES_2)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -177,7 +177,7 @@ am__objects_1 =
+ main_OBJECTS = $(am_main_OBJECTS)
+ @ENABLE_STATIC_FALSE@@HAVE_CUNIT_TRUE@main_DEPENDENCIES = ${top_builddir}/lib/.libs/*.o \
+ @ENABLE_STATIC_FALSE@@HAVE_CUNIT_TRUE@	$(am__DEPENDENCIES_1)
+-@ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@main_DEPENDENCIES = ${top_builddir}/lib/libnghttp2.la \
++@ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@main_DEPENDENCIES = -lnghttp2 \
+ @ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@	$(am__DEPENDENCIES_1)
+ main_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -732,7 +732,7 @@ EXTRA_DIST = CMakeLists.txt
+ # files directly because the tests use symbols not included in public API.
+ @ENABLE_STATIC_FALSE@@HAVE_CUNIT_TRUE@main_LDADD = ${top_builddir}/lib/.libs/*.o \
+ @ENABLE_STATIC_FALSE@@HAVE_CUNIT_TRUE@	$(am__append_2)
+-@ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@main_LDADD = ${top_builddir}/lib/libnghttp2.la \
++@ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@main_LDADD = -lnghttp2 \
+ @ENABLE_STATIC_TRUE@@HAVE_CUNIT_TRUE@	$(am__append_2)
+ @HAVE_CUNIT_TRUE@main_LDFLAGS = -static
+ @ENABLE_FAILMALLOC_TRUE@@HAVE_CUNIT_TRUE@failmalloc_SOURCES = failmalloc.c failmalloc_test.c failmalloc_test.h \

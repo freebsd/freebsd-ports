@@ -1,0 +1,83 @@
+sed -i .orig 's|$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' */Makefile.in
+
+--- src/Makefile.in.orig	2021-10-19 09:32:30 UTC
++++ src/Makefile.in
+@@ -318,7 +318,7 @@ am__libnghttpx_a_SOURCES_DIST = util.cc util.h http2.c
+ libnghttpx_a_OBJECTS = $(am_libnghttpx_a_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @ENABLE_ASIO_LIB_TRUE@libnghttp2_asio_la_DEPENDENCIES =  \
+-@ENABLE_ASIO_LIB_TRUE@	$(top_builddir)/lib/libnghttp2.la \
++@ENABLE_ASIO_LIB_TRUE@	-lnghttp2 \
+ @ENABLE_ASIO_LIB_TRUE@	$(top_builddir)/third-party/liburl-parser.la \
+ @ENABLE_ASIO_LIB_TRUE@	$(top_builddir)/third-party/libllhttp.la \
+ @ENABLE_ASIO_LIB_TRUE@	$(am__DEPENDENCIES_1) \
+@@ -392,7 +392,7 @@ am__deflatehd_SOURCES_DIST = deflatehd.cc comp_helper.
+ @ENABLE_HPACK_TOOLS_TRUE@	$(am__objects_4)
+ deflatehd_OBJECTS = $(am_deflatehd_OBJECTS)
+ deflatehd_LDADD = $(LDADD)
+-deflatehd_DEPENDENCIES = $(top_builddir)/lib/libnghttp2.la \
++deflatehd_DEPENDENCIES = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la
+ am__h2load_SOURCES_DIST = util.cc util.h http2.cc http2.h h2load.cc \
+@@ -411,7 +411,7 @@ am__h2load_SOURCES_DIST = util.cc util.h http2.cc http
+ @ENABLE_APP_TRUE@	$(am__objects_5)
+ h2load_OBJECTS = $(am_h2load_OBJECTS)
+ h2load_LDADD = $(LDADD)
+-h2load_DEPENDENCIES = $(top_builddir)/lib/libnghttp2.la \
++h2load_DEPENDENCIES = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la
+ am__inflatehd_SOURCES_DIST = inflatehd.cc comp_helper.c comp_helper.h
+@@ -419,7 +419,7 @@ am__inflatehd_SOURCES_DIST = inflatehd.cc comp_helper.
+ @ENABLE_HPACK_TOOLS_TRUE@	$(am__objects_4)
+ inflatehd_OBJECTS = $(am_inflatehd_OBJECTS)
+ inflatehd_LDADD = $(LDADD)
+-inflatehd_DEPENDENCIES = $(top_builddir)/lib/libnghttp2.la \
++inflatehd_DEPENDENCIES = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la
+ am__nghttp_SOURCES_DIST = util.cc http2.cc timegm.c app_helper.cc \
+@@ -438,7 +438,7 @@ am__objects_7 =
+ @ENABLE_APP_TRUE@	$(am__objects_7) tls.$(OBJEXT)
+ nghttp_OBJECTS = $(am_nghttp_OBJECTS)
+ nghttp_LDADD = $(LDADD)
+-nghttp_DEPENDENCIES = $(top_builddir)/lib/libnghttp2.la \
++nghttp_DEPENDENCIES = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la
+ am__nghttpd_SOURCES_DIST = util.cc http2.cc timegm.c app_helper.cc \
+@@ -450,13 +450,13 @@ am__nghttpd_SOURCES_DIST = util.cc http2.cc timegm.c a
+ @ENABLE_APP_TRUE@	tls.$(OBJEXT) HttpServer.$(OBJEXT)
+ nghttpd_OBJECTS = $(am_nghttpd_OBJECTS)
+ nghttpd_LDADD = $(LDADD)
+-nghttpd_DEPENDENCIES = $(top_builddir)/lib/libnghttp2.la \
++nghttpd_DEPENDENCIES = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la
+ am__nghttpx_SOURCES_DIST = shrpx.cc shrpx.h
+ @ENABLE_APP_TRUE@am_nghttpx_OBJECTS = nghttpx-shrpx.$(OBJEXT)
+ nghttpx_OBJECTS = $(am_nghttpx_OBJECTS)
+-am__DEPENDENCIES_2 = $(top_builddir)/lib/libnghttp2.la \
++am__DEPENDENCIES_2 = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la
+ @ENABLE_APP_TRUE@nghttpx_DEPENDENCIES = libnghttpx.a \
+@@ -1146,7 +1146,7 @@ AM_CPPFLAGS = \
+ 	@DEFS@
+ 
+ AM_LDFLAGS = @LIBTOOL_LDFLAGS@
+-LDADD = $(top_builddir)/lib/libnghttp2.la \
++LDADD = -lnghttp2 \
+ 	$(top_builddir)/third-party/liburl-parser.la \
+ 	$(top_builddir)/third-party/libllhttp.la \
+ 	@JEMALLOC_LIBS@ \
+@@ -1322,7 +1322,7 @@ LDADD = $(top_builddir)/lib/libnghttp2.la \
+ @ENABLE_ASIO_LIB_TRUE@libnghttp2_asio_la_CPPFLAGS = ${AM_CPPFLAGS} ${BOOST_CPPFLAGS}
+ @ENABLE_ASIO_LIB_TRUE@libnghttp2_asio_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined -version-info 1:0:0
+ @ENABLE_ASIO_LIB_TRUE@libnghttp2_asio_la_LIBADD = \
+-@ENABLE_ASIO_LIB_TRUE@	$(top_builddir)/lib/libnghttp2.la \
++@ENABLE_ASIO_LIB_TRUE@	-lnghttp2 \
+ @ENABLE_ASIO_LIB_TRUE@	$(top_builddir)/third-party/liburl-parser.la \
+ @ENABLE_ASIO_LIB_TRUE@	$(top_builddir)/third-party/libllhttp.la \
+ @ENABLE_ASIO_LIB_TRUE@	@OPENSSL_LIBS@ \

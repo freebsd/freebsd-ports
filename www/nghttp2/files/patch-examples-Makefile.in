@@ -1,0 +1,66 @@
+sed -i .orig 's|$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' */Makefile.in
+
+--- examples/Makefile.in.orig	2021-10-19 09:32:30 UTC
++++ examples/Makefile.in
+@@ -146,7 +146,7 @@ am__asio_cl_SOURCES_DIST = asio-cl.cc
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@am_asio_cl_OBJECTS = asio_cl-asio-cl.$(OBJEXT)
+ asio_cl_OBJECTS = $(am_asio_cl_OBJECTS)
+ am__DEPENDENCIES_1 =
+-@ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@am__DEPENDENCIES_2 = $(top_builddir)/lib/libnghttp2.la \
++@ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@am__DEPENDENCIES_2 = -lnghttp2 \
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/src/libnghttp2_asio.la \
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la \
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@	$(am__DEPENDENCIES_1) \
+@@ -175,14 +175,14 @@ am__client_SOURCES_DIST = client.c
+ client_OBJECTS = $(am_client_OBJECTS)
+ client_LDADD = $(LDADD)
+ @ENABLE_EXAMPLES_TRUE@client_DEPENDENCIES =  \
+-@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/lib/libnghttp2.la \
++@ENABLE_EXAMPLES_TRUE@	-lnghttp2 \
+ @ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la
+ am__deflate_SOURCES_DIST = deflate.c
+ @ENABLE_EXAMPLES_TRUE@am_deflate_OBJECTS = deflate.$(OBJEXT)
+ deflate_OBJECTS = $(am_deflate_OBJECTS)
+ deflate_LDADD = $(LDADD)
+ @ENABLE_EXAMPLES_TRUE@deflate_DEPENDENCIES =  \
+-@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/lib/libnghttp2.la \
++@ENABLE_EXAMPLES_TRUE@	-lnghttp2 \
+ @ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la
+ am__libevent_client_SOURCES_DIST = libevent-client.c
+ @ENABLE_EXAMPLES_TRUE@am_libevent_client_OBJECTS =  \
+@@ -190,7 +190,7 @@ am__libevent_client_SOURCES_DIST = libevent-client.c
+ libevent_client_OBJECTS = $(am_libevent_client_OBJECTS)
+ libevent_client_LDADD = $(LDADD)
+ @ENABLE_EXAMPLES_TRUE@libevent_client_DEPENDENCIES =  \
+-@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/lib/libnghttp2.la \
++@ENABLE_EXAMPLES_TRUE@	-lnghttp2 \
+ @ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la
+ am__libevent_server_SOURCES_DIST = libevent-server.c
+ @ENABLE_EXAMPLES_TRUE@am_libevent_server_OBJECTS =  \
+@@ -198,7 +198,7 @@ am__libevent_server_SOURCES_DIST = libevent-server.c
+ libevent_server_OBJECTS = $(am_libevent_server_OBJECTS)
+ libevent_server_LDADD = $(LDADD)
+ @ENABLE_EXAMPLES_TRUE@libevent_server_DEPENDENCIES =  \
+-@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/lib/libnghttp2.la \
++@ENABLE_EXAMPLES_TRUE@	-lnghttp2 \
+ @ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+@@ -503,7 +503,7 @@ EXTRA_DIST = CMakeLists.txt
+ @ENABLE_EXAMPLES_TRUE@	@DEFS@
+ 
+ @ENABLE_EXAMPLES_TRUE@AM_LDFLAGS = @LIBTOOL_LDFLAGS@
+-@ENABLE_EXAMPLES_TRUE@LDADD = $(top_builddir)/lib/libnghttp2.la \
++@ENABLE_EXAMPLES_TRUE@LDADD = -lnghttp2 \
+ @ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la \
+ @ENABLE_EXAMPLES_TRUE@	@LIBEVENT_OPENSSL_LIBS@ \
+ @ENABLE_EXAMPLES_TRUE@	@OPENSSL_LIBS@ \
+@@ -518,7 +518,7 @@ EXTRA_DIST = CMakeLists.txt
+ # nghttp2/nghttp2.h) in this package is used rather than installed
+ # one.
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@ASIOCPPFLAGS = ${AM_CPPFLAGS} ${BOOST_CPPFLAGS}
+-@ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@ASIOLDADD = $(top_builddir)/lib/libnghttp2.la \
++@ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@ASIOLDADD = -lnghttp2 \
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/src/libnghttp2_asio.la @JEMALLOC_LIBS@ \
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@	$(top_builddir)/third-party/liburl-parser.la \
+ @ENABLE_ASIO_LIB_TRUE@@ENABLE_EXAMPLES_TRUE@	@OPENSSL_LIBS@ \
