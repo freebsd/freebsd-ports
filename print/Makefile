@@ -181,6 +181,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-fpdf
     SUBDIR += py-frescobaldi
+    SUBDIR += py-glyphsets
     SUBDIR += py-glyphtools
     SUBDIR += py-pdf
     SUBDIR += py-pdf2

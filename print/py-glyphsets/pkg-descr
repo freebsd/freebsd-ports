@@ -1,0 +1,12 @@
+glyphsets helps evaluate coverage of glyph sets in font projects
+
+If you are a font developer or typeface designer, see the
+"Lib/glyphsets/encodings/GF Glyph Sets" subdirectory which provides glyph set
+definition "standards" that are typically useful sets to draw.
+
+On the other hand, the nam files on the "Lib/glyphsets/encodings" directory are
+probably more useful for expert web developers. Those files explain how the
+Unicode Range subsets are defined, typically per script (writing system), in the
+Google Fonts css API.
+
+WWW: https://github.com/googlefonts/glyphsets
