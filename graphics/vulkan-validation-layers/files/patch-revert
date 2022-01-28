@@ -13,7 +13,7 @@ CMake Error at CMakeLists.txt:254 (find_package):
   "robin_hood" provides a separate development package or SDK, be sure it has
   been installed.
 
---- CMakeLists.txt.orig	2021-12-21 17:05:00 UTC
+--- CMakeLists.txt.orig	2022-01-28 00:29:34 UTC
 +++ CMakeLists.txt
 @@ -102,21 +102,7 @@ else()
      message("********************************************************************************")
@@ -37,25 +37,29 @@ CMake Error at CMakeLists.txt:254 (find_package):
  if (TARGET Vulkan::Headers)
      message(STATUS "Using Vulkan headers from Vulkan::Headers target")
      get_target_property(VulkanHeaders_INCLUDE_DIRS Vulkan::Headers INTERFACE_INCLUDE_DIRECTORIES)
-@@ -251,13 +237,12 @@ option(BUILD_LAYERS "Build layers" ON)
- option(BUILD_LAYER_SUPPORT_FILES "Generate layer files" OFF) # For generating files when not building layers
+@@ -252,17 +238,13 @@ option(BUILD_LAYER_SUPPORT_FILES "Generate layer files
  option(USE_ROBIN_HOOD_HASHING "Use robin-hood-hashing" ON)
  if (USE_ROBIN_HOOD_HASHING)
--    find_package(robin_hood REQUIRED CONFIG)
-+    if(NOT ROBIN_HOOD_HASHING_INSTALL_DIR)
-+	set(ROBIN_HOOD_HASHING_INSTALL_DIR $ENV{ROBIN_HOOD_HASHING_INSTALL_DIR} PATH "Path to robin-hood-hashing repository")
-+    endif()
-+    set(ROBIN_HOOD_HASHING_INCLUDE_DIR "${ROBIN_HOOD_HASHING_INSTALL_DIR}/src/include" PATH "Path to robin-hood-hashing/src/include")
+     if (NOT TARGET robin_hood::robin_hood)
+-        find_package(robin_hood REQUIRED CONFIG)
++        if(NOT ROBIN_HOOD_HASHING_INSTALL_DIR)
++            set(ROBIN_HOOD_HASHING_INSTALL_DIR $ENV{ROBIN_HOOD_HASHING_INSTALL_DIR} PATH "Path to robin-hood-hashing repository")
++        endif()
++        set(ROBIN_HOOD_HASHING_INCLUDE_DIR "${ROBIN_HOOD_HASHING_INSTALL_DIR}/src/include" PATH "Path to robin-hood-hashing/src/include")
+     endif()
  endif()
  
+-set(SPIRV_HEADERS_INCLUDE_DIR "" CACHE STRING "")
 -if(BUILD_LAYERS OR BUILD_TESTS)
--    find_package(SPIRV-Headers REQUIRED CONFIG)
+-    if (SPIRV_HEADERS_INCLUDE_DIR STREQUAL "")
+-        find_package(SPIRV-Headers REQUIRED CONFIG)
+-    endif()
 -endif()
 -
  if(BUILD_TESTS)
      set(GLSLANG_INSTALL_DIR "GLSLANG-NOTFOUND" CACHE PATH "Absolute path to a glslang install directory")
      if(NOT GLSLANG_INSTALL_DIR AND NOT DEFINED ENV{GLSLANG_INSTALL_DIR} AND NOT TARGET glslang)
-@@ -269,7 +254,20 @@ if(BUILD_TESTS)
+@@ -274,7 +256,20 @@ if(BUILD_TESTS)
          set(GLSLANG_INSTALL_DIR $ENV{GLSLANG_INSTALL_DIR})
      endif()
  
@@ -76,7 +80,7 @@ CMake Error at CMakeLists.txt:254 (find_package):
          message(STATUS "Using glslang install located at ${GLSLANG_INSTALL_DIR}")
          set(GLSLANG_SEARCH_PATH "${GLSLANG_INSTALL_DIR}/lib")
          set(GLSLANG_DEBUG_SEARCH_PATH "${GLSLANG_INSTALL_DIR}/lib")
-@@ -304,6 +302,34 @@ if(BUILD_TESTS)
+@@ -309,6 +304,34 @@ if(BUILD_TESTS)
      endif()
  endif()
  
@@ -111,7 +115,7 @@ CMake Error at CMakeLists.txt:254 (find_package):
  # Generate dependent helper files ------------------------------------------------------------------------------------------------
  
  set(SCRIPTS_DIR "${PROJECT_SOURCE_DIR}/scripts")
-@@ -346,7 +372,7 @@ target_include_directories(VkLayer_utils
+@@ -351,7 +374,7 @@ target_include_directories(VkLayer_utils
                                    ${VulkanHeaders_INCLUDE_DIR})
  
  if (USE_ROBIN_HOOD_HASHING)
@@ -120,7 +124,7 @@ CMake Error at CMakeLists.txt:254 (find_package):
      target_compile_definitions(VkLayer_utils PUBLIC USE_ROBIN_HOOD_HASHING)
  endif()
  
-@@ -387,8 +413,37 @@ endif()
+@@ -392,8 +415,37 @@ endif()
  
  if(BUILD_TESTS)
      # Attempt to enable googletest if available.
@@ -160,18 +164,22 @@ CMake Error at CMakeLists.txt:254 (find_package):
  endif()
  
  if(BUILD_LAYERS OR BUILD_LAYER_SUPPORT_FILES)
---- layers/CMakeLists.txt.orig	2021-12-21 17:05:00 UTC
+--- layers/CMakeLists.txt.orig	2022-01-28 00:29:34 UTC
 +++ layers/CMakeLists.txt
-@@ -269,8 +269,6 @@ if(INSTRUMENT_OPTICK)
+@@ -270,12 +270,6 @@ if(INSTRUMENT_OPTICK)
  endif()
  
  if(BUILD_LAYERS)
--    find_package(SPIRV-Tools REQUIRED CONFIG)
--    find_package(SPIRV-Tools-opt REQUIRED CONFIG)
+-    if (NOT TARGET SPIRV-Tools)
+-        find_package(SPIRV-Tools REQUIRED CONFIG)
+-    endif()
+-    if (NOT TARGET SPIRV-Tools-opt)
+-        find_package(SPIRV-Tools-opt REQUIRED CONFIG)
+-    endif()
      AddVkLayer(khronos_validation "${KHRONOS_LAYER_COMPILE_DEFINITIONS}"
          ${CHASSIS_LIBRARY_FILES}
          ${CORE_VALIDATION_LIBRARY_FILES}
-@@ -298,14 +296,15 @@ if(BUILD_LAYERS)
+@@ -303,19 +297,16 @@ if(BUILD_LAYERS)
  
      # Khronos validation additional dependencies
      target_include_directories(VkLayer_khronos_validation PRIVATE ${GLSLANG_INCLUDE_DIR})
@@ -183,12 +191,17 @@ CMake Error at CMakeLists.txt:254 (find_package):
      if (USE_ROBIN_HOOD_HASHING)
          target_include_directories(VkLayer_khronos_validation PRIVATE ${ROBIN_HOOD_HASHING_INCLUDE_DIR})
      endif()
--    target_link_libraries(VkLayer_khronos_validation PRIVATE SPIRV-Headers::SPIRV-Headers SPIRV-Tools-static SPIRV-Tools-opt)
--
+-    if (SPIRV_HEADERS_INCLUDE_DIR STREQUAL "")
+-        target_link_libraries(VkLayer_khronos_validation PRIVATE SPIRV-Headers::SPIRV-Headers)
+-    else()
+-        target_include_directories(VkLayer_khronos_validation PRIVATE ${SPIRV_HEADERS_INCLUDE_DIR})
+-    endif()
+ 
+-    target_link_libraries(VkLayer_khronos_validation PRIVATE SPIRV-Tools-static SPIRV-Tools-opt)
 +    target_link_libraries(VkLayer_khronos_validation PRIVATE ${SPIRV_TOOLS_LIBRARIES})
  
+ 
      # The output file needs Unix "/" separators or Windows "\" separators On top of that, Windows separators actually need to be doubled
-     # because the json format uses backslash escapes
 --- scripts/common_ci.py.orig	2021-12-21 17:05:00 UTC
 +++ scripts/common_ci.py
 @@ -76,6 +76,16 @@ def BuildVVL(args, build_tests=False):
