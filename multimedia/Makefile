@@ -290,6 +290,7 @@
     SUBDIR += onevpl
     SUBDIR += openh264
     SUBDIR += openshot
+    SUBDIR += opentimelineio
     SUBDIR += opentoonz
     SUBDIR += oscam
     SUBDIR += p5-Audio-M4P
