@@ -1,7 +1,7 @@
 # Created by: Ken Moore <ken@pcbsd.org>
 
 PORTNAME=	lumina
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 PORTEPOCH=	3
 CATEGORIES=	x11
 
