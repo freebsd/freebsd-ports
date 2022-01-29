@@ -1,0 +1,133 @@
+PORTNAME=	wl-gammarelay-rs
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+CATEGORIES=	accessibility
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	Adjust color temperature/brightness under Wayland via DBus
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	MaxVerevkin
+PLIST_FILES=	bin/${PORTNAME}
+
+CARGO_CRATES=	aho-corasick-0.7.18 \
+		anyhow-1.0.53 \
+		async-broadcast-0.3.4 \
+		async-channel-1.6.1 \
+		async-executor-1.4.1 \
+		async-io-1.6.0 \
+		async-lock-2.4.0 \
+		async-recursion-0.3.2 \
+		async-task-4.1.0 \
+		async-trait-0.1.52 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		bitflags-1.3.2 \
+		byteorder-1.4.3 \
+		cache-padded-1.2.0 \
+		cc-1.0.72 \
+		cfg-if-1.0.0 \
+		clap-3.0.13 \
+		clap_derive-3.0.12 \
+		concurrent-queue-1.2.2 \
+		derivative-2.2.0 \
+		dlib-0.5.0 \
+		downcast-rs-1.2.0 \
+		easy-parallel-3.2.0 \
+		enumflags2-0.7.3 \
+		enumflags2_derive-0.7.3 \
+		event-listener-2.5.2 \
+		fastrand-1.7.0 \
+		futures-0.3.19 \
+		futures-channel-0.3.19 \
+		futures-core-0.3.19 \
+		futures-executor-0.3.19 \
+		futures-io-0.3.19 \
+		futures-lite-1.12.0 \
+		futures-macro-0.3.19 \
+		futures-sink-0.3.19 \
+		futures-task-0.3.19 \
+		futures-util-0.3.19 \
+		getrandom-0.2.4 \
+		hashbrown-0.11.2 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		hex-0.4.3 \
+		indexmap-1.8.0 \
+		instant-0.1.12 \
+		lazy_static-1.4.0 \
+		libc-0.2.116 \
+		libloading-0.7.3 \
+		log-0.4.14 \
+		memchr-2.4.1 \
+		memmap-0.7.0 \
+		memoffset-0.6.5 \
+		mio-0.7.14 \
+		miow-0.3.7 \
+		nix-0.23.1 \
+		ntapi-0.3.6 \
+		once_cell-1.9.0 \
+		ordered-stream-0.0.1 \
+		os_str_bytes-6.0.0 \
+		parking-2.0.0 \
+		pin-project-lite-0.2.8 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.24 \
+		polling-2.2.0 \
+		ppv-lite86-0.2.16 \
+		proc-macro-crate-1.1.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.36 \
+		quote-1.0.15 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		scoped-tls-1.0.0 \
+		serde-1.0.136 \
+		serde_derive-1.0.136 \
+		serde_repr-0.1.7 \
+		sha1-0.6.1 \
+		sha1_smol-1.0.0 \
+		slab-0.4.5 \
+		smallvec-1.8.0 \
+		socket2-0.4.4 \
+		static_assertions-1.1.0 \
+		strsim-0.10.0 \
+		syn-1.0.86 \
+		termcolor-1.1.2 \
+		textwrap-0.14.2 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		tokio-1.16.1 \
+		tokio-macros-1.7.0 \
+		toml-0.5.8 \
+		unicode-xid-0.2.2 \
+		version_check-0.9.4 \
+		waker-fn-1.1.0 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wayland-backend-0.1.0-alpha3 \
+		wayland-client-0.30.0-alpha3 \
+		wayland-protocols-0.30.0-alpha3 \
+		wayland-scanner-0.30.0-alpha3 \
+		wayland-sys-0.30.0-alpha3 \
+		wepoll-ffi-0.1.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		xml-rs-0.8.4 \
+		zbus-2.0.1 \
+		zbus_macros-2.0.1 \
+		zbus_names-2.1.0 \
+		zvariant-3.1.2 \
+		zvariant_derive-3.1.2
+
+.include <bsd.port.mk>

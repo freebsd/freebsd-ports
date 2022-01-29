@@ -1,0 +1,6 @@
+wl-gammarelay-rs is a simple program that provides DBus interface to
+control display temperature and brightness under Wayland without
+flickering. Like wl-gammarelay, but written in Rust, runs on a single
+thread, has three times less SLOC and uses DBus (for simplicity).
+
+WWW: https://github.com/MaxVerevkin/wl-gammarelay-rs

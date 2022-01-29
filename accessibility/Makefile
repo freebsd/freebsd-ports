@@ -26,6 +26,7 @@
     SUBDIR += sct
     SUBDIR += sctd
     SUBDIR += speech-dispatcher
+    SUBDIR += wl-gammarelay-rs
     SUBDIR += wlsunset
     SUBDIR += yasr
 
