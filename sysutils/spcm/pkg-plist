@@ -52,6 +52,7 @@ sbin/cluster-enable-autologout
 sbin/cluster-firewall-config
 sbin/cluster-ganglia-restart
 sbin/cluster-get-sync-file
+sbin/cluster-hardware-specs
 sbin/cluster-highest-uid
 sbin/cluster-init-node
 sbin/cluster-ipmi-power-on
