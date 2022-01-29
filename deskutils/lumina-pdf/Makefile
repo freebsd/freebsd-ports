@@ -1,6 +1,5 @@
 PORTNAME=	lumina-pdf
-DISTVERSION=	1.6.0
-PORTREVISION=	23
+DISTVERSION=	1.6.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -15,7 +14,7 @@ USE_QT=		buildtools_build concurrent core gui \
 USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
-GH_TAGNAME=	645ed591ef91c3607d3ab87dd86f7acfd08b05c9
+GH_TAGNAME=	0dd7489a
 
 OPTIONS_DEFINE=	NLS
 
