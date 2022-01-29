@@ -91,6 +91,10 @@ include/jdftx/electronic/SpeciesInfo_internal.h
 include/jdftx/electronic/Symmetries.h
 include/jdftx/electronic/TetrahedralDOS.h
 include/jdftx/electronic/VanDerWaals.h
+include/jdftx/electronic/VanDerWaalsD2.h
+include/jdftx/electronic/VanDerWaalsD3.h
+include/jdftx/electronic/VanDerWaalsD3_data.h
+include/jdftx/electronic/VanDerWaalsD3_data_C6.h
 include/jdftx/electronic/Vibrations.h
 include/jdftx/electronic/symbols.h
 include/jdftx/fluid/ConvCoupling.h
@@ -127,6 +131,7 @@ include/jdftx/fluid/TranslationOperator.h
 include/jdftx/fluid/TranslationOperator_internal.h
 include/jdftx/fluid/VDWCoupling.h
 include/jdftx/phonon/Phonon.h
+include/jdftx/wannier/DefectSupercell.h
 include/jdftx/wannier/Wannier.h
 include/jdftx/wannier/WannierMinimizer.h
 include/jdftx/wannier/WannierMinimizerFD.h
