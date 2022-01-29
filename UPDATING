@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220129:
+  AFFECTS: users of editors/neovim
+  AUTHOR: adamw@FreeBSD.org
+
+  Neovim now uses luajit-openresty as the Lua provider. Many neovim plugins
+  compile some of their code (Packer does this, as do many LSP plugins).
+  Neovim will produce errors and fail to load the plugins.
+
+  Deleting and reinstalling any plugins that produce errors should fix the
+  startup.
+
+  If you use Packer, you also want to delete the startup cache:
+
+  # rm -rf ~/.config/nvim/plugin/packer_compiled.lua
+
 20220128:
   AFFECTS: users of net-im/dendrite
   AUTHOR: ashish@FreeBSD.org
