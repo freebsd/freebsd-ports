@@ -1,5 +1,5 @@
 PORTNAME=	ormar
-DISTVERSION=	0.10.23
+DISTVERSION=	0.10.24
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,9 @@ COMMENT=	Simple async ORM with fastapi in mind and pydantic validation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}databases>=0.3.2,<0.5.4:databases/py-databases@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}databases>=0.3.2,<0.6.0:databases/py-databases@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>=1.6.1,<1.8.3:devel/py-pydantic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.0,<1.4.28:databases/py-sqlalchemy14@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.0:databases/py-sqlalchemy14@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
