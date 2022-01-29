@@ -766,6 +766,7 @@
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-fakeredis
+    SUBDIR += py-fastapi-users-db-ormar
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-sqlalchemy
