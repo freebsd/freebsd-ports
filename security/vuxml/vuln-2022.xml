@@ -1,3 +1,38 @@
+  <vuln vid="b0c83e1a-8153-11ec-84f9-641c67a117d8">
+    <topic>varnish -- Request Smuggling Vulnerability</topic>
+    <affects>
+      <package>
+	<name>varnish6</name>
+	<range><lt>6.6.2</lt></range>
+      </package>
+      <package>
+	<name>varnish4</name>
+	<range><lt>4.1.11r6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00008.html">
+	  <p>A request smuggling attack can be performed on HTTP/1 connections on
+	    Varnish Cache servers. The smuggled request would be treated as an additional
+	    request by the Varnish server, go through normal VCL processing, and injected
+	    as a spurious response on the client connection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23959</cvename>
+      <url>https://varnish-cache.org/security/VSV00008.html</url>
+      <url>https://docs.varnish-software.com/security/VSV00008/</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23959</url>
+    </references>
+    <dates>
+      <discovery>2022-01-25</discovery>
+      <entry>2022-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6ef8a53-8062-11ec-9af3-fb232efe4d2e">
     <topic>OpenEXR -- Heap-buffer-overflow in Imf_3_1::LineCompositeTask::execute</topic>
     <affects>
