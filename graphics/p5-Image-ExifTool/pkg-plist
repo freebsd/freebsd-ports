@@ -100,6 +100,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
+%%SITE_PERL%%/Image/ExifTool/LIF.pm
 %%SITE_PERL%%/Image/ExifTool/LNK.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/cs.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/de.pm
@@ -129,6 +130,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MPC.pm
 %%SITE_PERL%%/Image/ExifTool/MPEG.pm
 %%SITE_PERL%%/Image/ExifTool/MPF.pm
+%%SITE_PERL%%/Image/ExifTool/MRC.pm
 %%SITE_PERL%%/Image/ExifTool/MWG.pm
 %%SITE_PERL%%/Image/ExifTool/MXF.pm
 %%SITE_PERL%%/Image/ExifTool/MacOS.pm
@@ -141,12 +143,14 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCustom.pm
+%%SITE_PERL%%/Image/ExifTool/NikonSettings.pm
 %%SITE_PERL%%/Image/ExifTool/Nintendo.pm
 %%SITE_PERL%%/Image/ExifTool/OOXML.pm
 %%SITE_PERL%%/Image/ExifTool/Ogg.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
 %%SITE_PERL%%/Image/ExifTool/OpenEXR.pm
 %%SITE_PERL%%/Image/ExifTool/Opus.pm
+%%SITE_PERL%%/Image/ExifTool/Other.pm
 %%SITE_PERL%%/Image/ExifTool/PCX.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/PGF.pm
@@ -215,6 +219,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/XMP2.pl
 %%SITE_PERL%%/Image/ExifTool/XMPStruct.pl
 %%SITE_PERL%%/Image/ExifTool/ZIP.pm
+%%SITE_PERL%%/Image/ExifTool/ZISRAW.pm
 %%SITE_PERL%%/Image/ExifTool/iWork.pm
 %%PERL5_MAN1%%/exiftool.1.gz
 %%PERL5_MAN3%%/File::RandomAccess.3.gz
@@ -248,8 +253,8 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::DjVu.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::EXE.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Exif.3.gz
-%%PERL5_MAN3%%/Image::ExifTool::FLAC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FITS.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::FLAC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLIF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLIR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Fixup.3.gz
@@ -283,6 +288,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Jpeg2000.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Kodak.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::KyoceraRaw.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::LIF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::LNK.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::cs.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::de.3.gz
@@ -312,6 +318,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::MPC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MPEG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MPF.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::MRC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MWG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MXF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MacOS.3.gz
@@ -324,13 +331,14 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Nikon.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::NikonCapture.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::NikonCustom.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::NikonSettings.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Nintendo.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::OOXML.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Ogg.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Olympus.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::OpenEXR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Opus.3.gz
-%%PERL5_MAN3%%/Image::ExifTool::Parrot.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Other.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PCX.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PDF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PGF.3.gz
@@ -343,6 +351,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Palm.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Panasonic.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PanasonicRaw.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Parrot.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Pentax.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PhaseOne.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PhotoCD.3.gz
@@ -397,4 +406,5 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::XMP2.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::XMPStruct.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ZIP.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::ZISRAW.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::iWork.3.gz
