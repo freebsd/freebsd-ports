@@ -338,7 +338,6 @@
     SUBDIR += juke
     SUBDIR += julius
     SUBDIR += kapitonov-plugins-pack-lv2
-    SUBDIR += kars-lv2
     SUBDIR += kexis
     SUBDIR += kid3-kf5
     SUBDIR += kid3-qt5
@@ -538,7 +537,6 @@
     SUBDIR += ncmpcpp
     SUBDIR += ncpamixer
     SUBDIR += ncspot
-    SUBDIR += nekobi-lv2
     SUBDIR += noise-repellent-lv2
     SUBDIR += noise-suppression-for-voice-lv2
     SUBDIR += normalize

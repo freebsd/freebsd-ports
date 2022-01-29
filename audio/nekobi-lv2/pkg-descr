@@ -1,8 +1,0 @@
-Simple single-oscillator synth based on the Roland TB-303.
-
-This is a DPF'ied build of nekobee, allowing LV2 and VST builds of the plugin,
-plus a nicer UI with a simple cat animation.
-
-Please see also the port audio/nekobee which is a corresponding DSSI plugin.
-
-WWW: https://github.com/DISTRHO/Nekobi
