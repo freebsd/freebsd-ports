@@ -1,6 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -21,25 +21,25 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		clap-3.0.0-rc.9 \
-		clap_derive-3.0.0-rc.9 \
+		clap-3.0.13 \
+		clap_derive-3.0.12 \
 		directories-4.0.1 \
 		dirs-sys-0.3.6 \
-		getrandom-0.2.3 \
+		getrandom-0.2.4 \
 		hashbrown-0.11.2 \
-		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		indexmap-1.7.0 \
+		indexmap-1.8.0 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.112 \
+		libc-0.2.116 \
 		memchr-2.4.1 \
 		os_str_bytes-6.0.0 \
-		ppv-lite86-0.2.15 \
+		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
-		quote-1.0.14 \
+		quote-1.0.15 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
@@ -49,19 +49,18 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		ryu-1.0.9 \
-		serde-1.0.132 \
-		serde_derive-1.0.132 \
-		serde_json-1.0.73 \
+		serde-1.0.136 \
+		serde_derive-1.0.136 \
+		serde_json-1.0.78 \
 		strsim-0.10.0 \
 		swayipc-3.0.0 \
 		swayipc-types-1.0.0 \
-		syn-1.0.84 \
+		syn-1.0.86 \
 		termcolor-1.1.2 \
 		textwrap-0.14.2 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		toml-0.5.8 \
-		unicode-segmentation-1.8.0 \
 		unicode-xid-0.2.2 \
 		version_check-0.9.4 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
