@@ -15,6 +15,7 @@ man/man8/start-lumina-desktop.8.gz
 share/applications/lthemeengine.desktop
 share/applications/lumina-info.desktop
 share/applications/lumina-support.desktop
+share/icons/hicolor/scalable/apps/Lumina-DE.svg
 share/icons/lumina-icons/LICENSE
 share/icons/lumina-icons/actions/symbolic/application.svg
 share/icons/lumina-icons/actions/symbolic/apps.svg

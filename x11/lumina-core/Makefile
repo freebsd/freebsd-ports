@@ -3,6 +3,7 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -16,7 +17,8 @@ RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		xbrightness>=0:x11/xbrightness \
 		compton>=0:x11-wm/compton \
 		xrandr>=0:x11/xrandr \
-		numlockx>=0:x11/numlockx
+		numlockx>=0:x11/numlockx \
+		${LOCALBASE}/share/icons/La-Capitaine/index.theme:x11-themes/la-capitaine-icon-theme
 LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
@@ -53,4 +55,6 @@ CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
 CONFLICTS_INSTALL=	lumina-1.2.*
 
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/share -name "ecp.*" -delete
 .include <bsd.port.mk>
