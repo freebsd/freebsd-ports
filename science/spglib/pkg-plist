@@ -3,4 +3,4 @@ include/spglib_f08.f90
 lib/libsymspg.a
 lib/libsymspg.so
 lib/libsymspg.so.1
-lib/libsymspg.so.1.16.2
+lib/libsymspg.so.1.16.3
