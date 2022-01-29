@@ -2,6 +2,7 @@ PORTNAME=	opentimelineio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.1
 CATEGORIES=	multimedia
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	API and interchange format for editorial timeline information
@@ -9,8 +10,10 @@ COMMENT=	API and interchange format for editorial timeline information
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++14-lang
-USE_LDCONFIG=	yes
+BUILD_DEPENDS=	cmake:devel/cmake
+
+USES=		compiler:c++14-lang python
+USE_PYTHON=	distutils concurrent # autoplist is broken, see https://github.com/PixarAnimationStudios/OpenTimelineIO/issues/1205
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios

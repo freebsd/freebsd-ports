@@ -334,6 +334,7 @@
     SUBDIR += py-mido
     SUBDIR += py-mlt6
     SUBDIR += py-moviepy
+    SUBDIR += py-opentimelineio
     SUBDIR += py-periscope
     SUBDIR += py-pretty_midi
     SUBDIR += py-pymediainfo
