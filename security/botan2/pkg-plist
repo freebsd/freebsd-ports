@@ -316,6 +316,7 @@ include/botan-2/botan/xmss_wots_privatekey.h
 include/botan-2/botan/xmss_wots_publickey.h
 include/botan-2/botan/xtea.h
 include/botan-2/botan/xts.h
+include/botan-2/botan/zfec.h
 include/botan-2/botan/zlib.h
 lib/libbotan-2.a
 lib/libbotan-2.so

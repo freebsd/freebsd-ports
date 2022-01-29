@@ -1,12 +1,11 @@
 PORTNAME=	botan
-DISTVERSION=	2.18.2
-PORTREVISION=	1
+DISTVERSION=	2.19.1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
 DISTNAME=	Botan-${PORTVERSION}
 
-MAINTAINER=	tremere@cainites.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, easy to use and efficient C++ crypto library
 
 LICENSE=	BSD2CLAUSE
@@ -36,7 +35,7 @@ LDFLAGS+=		-pthread
 
 DOCSDIR=	${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 
-_SOABIVER=	18
+_SOABIVER=	19
 _SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
 _SHLIBVERPATCH=	${DISTVERSION:S/./ /g:[3]}
 PLIST_SUB=	SHLIBVER=${_SHLIBVER} \
