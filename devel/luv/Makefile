@@ -1,6 +1,6 @@
 PORTNAME=	luv
 DISTVERSION=	1.41.0-0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	checo1705@secmail.pro
@@ -30,8 +30,8 @@ OPTIONS_DEFAULT_powerpc64le=	LUAJIT
 LUAJIT_DESC=	Use LuaJIT (instead of just Lua; recommended)
 LUAJIT_LIB_DEPENDS=	${LUAJIT_LIB_DEPENDS_${ARCH}}
 LUAJIT_LIB_DEPENDS_aarch64=	libluajit-5.1.so:lang/luajit-openresty
-LUAJIT_LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
-LUAJIT_LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
+LUAJIT_LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit-openresty
+LUAJIT_LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit-openresty
 LUAJIT_LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
 LUAJIT_LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
 LUAJIT_LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
