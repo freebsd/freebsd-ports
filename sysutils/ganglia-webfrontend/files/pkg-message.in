@@ -38,6 +38,11 @@ The default configuration is stored in
 %%WWWDIR%%/conf_default.php.
 If you want to customize the configuration make customizations to
 %%WWWDIR%%/conf.php .
+
+WARNING: Development of Ganglia has ceased.  It is incompatible with
+Python 3 and PHP 8 and there are mutliple unpatched vulnerabilities.
+Anyone still using Ganglia should start looking for alternatives.
+
 EOM
 }
 ]
