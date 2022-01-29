@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+
+The default Kodi build, and hence the binary package, does not include
+libdvdcss, which cannot be packaged for legal reasons.
+
+If you want to enable playing encrypted DVDs, you must build from source:
+
+cd ${PORTSDIR}/multimedia/kodi
+make config
+
+[ In the configuration menu, enable the libdvdcss option ]
+
+make deinstall reinstall
+
+EOM
+}
+]
