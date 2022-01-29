@@ -7,7 +7,7 @@ include/gpgrt.h
 lib/libgpg-error.a
 lib/libgpg-error.so
 lib/libgpg-error.so.0
-lib/libgpg-error.so.0.32.1
+lib/libgpg-error.so.0.32.2
 libdata/pkgconfig/gpg-error.pc
 man/man1/gpgrt-config.1.gz
 share/aclocal/gpg-error.m4
@@ -37,6 +37,7 @@ share/common-lisp/source/gpg-error/gpg-error.lisp
 %%NLS%%share/locale/ru/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo
