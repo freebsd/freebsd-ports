@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.5
+DISTVERSION=	5.0.6
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -41,7 +41,7 @@ GROUPS=		mongodb
 OPTIONS_DEFINE=			LTO SASL SSL
 OPTIONS_DEFAULT=		LTO SASL SSL
 OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12 on aarch64.
+OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12/llvm13 on aarch64.
 
 MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
@@ -70,7 +70,9 @@ EXTRA_PATCHES=	${FILESDIR}/${ARCH}
 
 ALL_TARGET=	install-core
 
-PORTSCOUT=	limitw:1,even
+# This ports is only following the Major Release.
+# https://docs.mongodb.com/manual/reference/versioning/
+PORTSCOUT=	limit:^5\.0\.
 
 CPE_PRODUCT=	mongodb
 
