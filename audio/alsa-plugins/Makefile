@@ -22,7 +22,6 @@ USES=		alias autoreconf libtool:keepla localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/alsa-lib
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	RM="${RM}"
-EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
 
