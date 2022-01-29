@@ -19,11 +19,12 @@ load_rc_config $name
 : ${sonarr_enable="NO"}
 : ${sonarr_user:="sonarr"}
 : ${sonarr_data_dir:="%%PREFIX%%/sonarr"}
+: ${sonarr_exec_dir:="%%DATADIR%%/bin"}
 
 pidfile="${sonarr_data_dir}/sonarr.pid"
 procname="%%PREFIX%%/bin/mono"
 command="/usr/sbin/daemon"
-command_args="-f ${procname} %%DATADIR%%/Sonarr.exe --nobrowser --data=${sonarr_data_dir}"
+command_args="-f ${procname} --debug ${sonarr_exec_dir}/Sonarr.exe --nobrowser --data=${sonarr_data_dir}"
 start_precmd=sonarr_precmd
 
 sonarr_precmd()
