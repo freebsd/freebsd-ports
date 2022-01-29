@@ -102,6 +102,7 @@
     SUBDIR += kf5-kiconthemes
     SUBDIR += kf5-oxygen-icons5
     SUBDIR += kf5-qqc2-desktop-style
+    SUBDIR += la-capitaine-icon-theme
     SUBDIR += layan-gtk-themes
     SUBDIR += lumina-themes
     SUBDIR += lxappearance
