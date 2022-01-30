@@ -1056,6 +1056,7 @@
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += topcom
+    SUBDIR += topologic
     SUBDIR += triangle
     SUBDIR += trlan
     SUBDIR += trlib

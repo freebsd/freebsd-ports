@@ -1,0 +1,18 @@
+--- TopologicCore/CMakeLists.txt.orig	2022-01-30 22:24:17 UTC
++++ TopologicCore/CMakeLists.txt
+@@ -378,6 +378,7 @@ endif()
+ ################################################################################
+ # Post build events
+ ################################################################################
++if (FALSE)
+ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "Any CPU")
+     add_custom_command_if(
+         TARGET ${PROJECT_NAME}
+@@ -414,6 +415,7 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+         COMMANDS
+         COMMAND $<CONFIG:Release> copy "$<SHELL_PATH:${CMAKE_SOURCE_DIR}/>references\\opencascade-7.4.0\\win32\\vc14\\bin\\*.dll" "$<SHELL_PATH:${CMAKE_SOURCE_DIR}/>output\\${CMAKE_VS_PLATFORM_NAME}\\$<CONFIG>"
+     )
++endif()
+ endif()
+ 
+ ################################################################################
