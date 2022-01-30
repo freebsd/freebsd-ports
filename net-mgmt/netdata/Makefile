@@ -6,7 +6,8 @@ DISTVERSION=	1.32.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} 91757292561eba170fe363b1f1023583216ca26f.patch:dashboard
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		91757292561eba170fe363b1f1023583216ca26f.patch:dashboard
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,22 +21,21 @@ PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	bash:shells/bash \
-		curl:ftp/curl \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR}
+		bash:shells/bash \
+		curl:ftp/curl
 
 USES=		autoreconf cpe gmake pathfix pkgconfig:both python shebangfix \
 		ssl
-SHEBANG_GLOB=	*
-
 USE_RC_SUBR=	${PORTNAME}
-
-INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-D_WANT_VMMETER
+SHEBANG_GLOB=	*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-unit-tests
+
+INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-D_WANT_VMMETER
 
 SUB_FILES=	${PORTNAME}.conf.sample
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
@@ -84,36 +84,22 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 
-.if ! ${PORT_OPTIONS:MCLOUD}
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
+	    ${PATCH_WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
+	    ${PATCH_WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%NETDATA_LOG%%|${NETDATA_LOG}|g' \
+	    ${PATCH_WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%NETDATA_PERST%%|${NETDATA_PERST}|g' \
+	    ${PATCH_WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g' \
+	    ${PATCH_WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|g' \
+	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
+
+post-patch-CLOUD-off:
 	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/91757292561eba170fe363b1f1023583216ca26f.patch
-	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%NETDATA_LOG%%|${NETDATA_LOG}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%NETDATA_PERST%%|${NETDATA_PERST}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|g' \
-	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
-.else
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%NETDATA_LOG%%|${NETDATA_LOG}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%NETDATA_PERST%%|${NETDATA_PERST}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|g' \
-	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
