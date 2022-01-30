@@ -1,5 +1,5 @@
 PORTNAME=	sabnzbdplus
-DISTVERSION=	3.4.2
+DISTVERSION=	3.5.0
 PORTEPOCH=	1
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
@@ -22,10 +22,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>=0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sabyenc3>=0:news/py-sabyenc3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}guessit>0:multimedia/py-guessit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}puremagic>0:sysutils/py-puremagic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
 		par2repair:archivers/par2cmdline \
 		unrar:archivers/unrar
 
-USES=		python:3.6+ shebangfix gettext
+USES=		python:3.7+ shebangfix gettext
 USE_RC_SUBR=	sabnzbd
 
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py
