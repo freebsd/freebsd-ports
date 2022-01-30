@@ -1,6 +1,6 @@
 --- oss/pcm_oss.c.orig	2020-02-19 09:35:42 UTC
 +++ oss/pcm_oss.c
-@@ -19,21 +19,45 @@
+@@ -19,21 +19,42 @@
   */
  
  #include <stdio.h>
@@ -39,19 +39,16 @@
 -	int fragment_set;
 -	int caps;
 +	int bufsz;
-+	int ptr;
-+	int ptr_align;
  	int format;
 -	unsigned int period_shift;
 -	unsigned int periods;
 -	unsigned int frame_bytes;
 +	int frame_bytes;
-+	int last_bytes;
 +	bool buffer_used;
  } snd_pcm_oss_t;
  
  static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *io,
-@@ -49,8 +73,21 @@ static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *i
+@@ -49,8 +70,21 @@ static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *i
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = write(oss->fd, buf, size);
@@ -75,7 +72,7 @@
  	return result / oss->frame_bytes;
  }
  
-@@ -67,24 +104,66 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
+@@ -67,24 +101,60 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = read(oss->fd, buf, size);
@@ -104,21 +101,17 @@
  	snd_pcm_oss_t *oss = io->private_data;
 -	struct count_info info;
 -	int ptr;
-+	struct count_info ci;
 +	audio_buf_info bi;
++	ssize_t bytes;
  
 -	if (ioctl(oss->fd, io->stream == SND_PCM_STREAM_PLAYBACK ?
 -		  SNDCTL_DSP_GETOPTR : SNDCTL_DSP_GETIPTR, &info) < 0) {
 -		fprintf(stderr, "*** OSS: oss_pointer error\n");
 -		return 0;
 +	if (io->stream == SND_PCM_STREAM_PLAYBACK) {
-+		if (ioctl(oss->fd, SNDCTL_DSP_GETOPTR, &ci) < 0)
-+			return -EINVAL;
 +		if (ioctl(oss->fd, SNDCTL_DSP_GETOSPACE, &bi) < 0)
 +			return -EINVAL;
 +	} else {
-+		if (ioctl(oss->fd, SNDCTL_DSP_GETIPTR, &ci) < 0)
-+			return -EINVAL;
 +		if (ioctl(oss->fd, SNDCTL_DSP_GETISPACE, &bi) < 0)
 +			return -EINVAL;
  	}
@@ -136,23 +129,21 @@
 +		}
 +	}
 +
-+	if (oss->last_bytes == -1)
-+		oss->last_bytes = ci.ptr;
++	if (io->stream == SND_PCM_STREAM_PLAYBACK)
++		bi.bytes = oss->bufsz - bi.bytes;
 +
-+	if (ci.ptr < oss->last_bytes)
-+		oss->ptr += oss->bufsz;
++	/*
++	 * Return exactly how many bytes can be read or written,
++	 * relative to the current application pointer.
++	 */
++	bytes = snd_pcm_frames_to_bytes(io->pcm, io->appl_ptr) + bi.bytes;
++	bytes %= io->buffer_size * oss->frame_bytes;
 +
-+	oss->ptr += ci.ptr;
-+	oss->ptr -= oss->last_bytes;
-+	oss->ptr %= oss->ptr_align;
-+
-+	oss->last_bytes = ci.ptr;
-+
-+	return snd_pcm_bytes_to_frames(io->pcm, oss->ptr);
++	return snd_pcm_bytes_to_frames(io->pcm, bytes);
  }
  
  static int oss_start(snd_pcm_ioplug_t *io)
-@@ -93,12 +172,25 @@ static int oss_start(snd_pcm_ioplug_t *io)
+@@ -93,12 +163,23 @@ static int oss_start(snd_pcm_ioplug_t *io)
  	int tmp = io->stream == SND_PCM_STREAM_PLAYBACK ?
  		PCM_ENABLE_OUTPUT : PCM_ENABLE_INPUT;
  
@@ -171,14 +162,12 @@
 +#endif
  	}
 +
-+	oss->last_bytes = -1;
-+	oss->ptr = 0;
 +	oss->buffer_used = false;
 +
  	return 0;
  }
  
-@@ -107,6 +199,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
+@@ -107,6 +188,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
  	snd_pcm_oss_t *oss = io->private_data;
  	int tmp = 0;
  
@@ -189,7 +178,7 @@
  	ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp);
  	return 0;
  }
-@@ -115,101 +211,176 @@ static int oss_drain(snd_pcm_ioplug_t *io)
+@@ -115,101 +200,176 @@ static int oss_drain(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -301,7 +290,6 @@
 -		oss->format = AFMT_S16_BE;
 -		break;
 -	default:
-+	oss->ptr_align = io->buffer_size * oss->frame_bytes;
 +
 +	oss->format = 0;
 +	for (i = 0; i != ARRAY_SIZE(oss_formats_tab); i++) {
@@ -411,8 +399,9 @@
 +	tmp = io->period_size * oss->frame_bytes;
 +	if (tmp > oss->bufsz)
 +		tmp = oss->bufsz;
-+	else if (tmp == 0)
-+		tmp = 1;
++	else if (tmp < bi.fragsize)
++		tmp = bi.fragsize;
++
 +	if (ioctl(oss->fd, SNDCTL_DSP_LOW_WATER, &tmp) < 0)
 +		perror("SNDCTL_DSP_LOW_WATER");
 +#endif
@@ -431,7 +420,7 @@
  	if ((flags = fcntl(oss->fd, F_GETFL)) < 0) {
  		err = -errno;
  		perror("F_GETFL");
-@@ -229,16 +400,148 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
+@@ -229,16 +389,148 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  	return 0;
  }
  
@@ -582,7 +571,7 @@
  	unsigned int format[5];
  	unsigned int nchannels;
  	unsigned int channel[6];
-@@ -317,6 +620,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
+@@ -317,6 +609,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
  		return err;
  
  	return 0;
@@ -590,7 +579,7 @@
  }
  
  
-@@ -324,6 +628,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
+@@ -324,6 +617,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -601,7 +590,7 @@
  	close(oss->fd);
  	free(oss->device);
  	free(oss);
-@@ -337,8 +645,8 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
+@@ -337,8 +634,8 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
  	.pointer = oss_pointer,
  	.close = oss_close,
  	.hw_params = oss_hw_params,
@@ -611,7 +600,7 @@
  };
  
  static const snd_pcm_ioplug_callback_t oss_capture_callback = {
-@@ -348,8 +656,8 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
+@@ -348,8 +645,8 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
  	.pointer = oss_pointer,
  	.close = oss_close,
  	.hw_params = oss_hw_params,
@@ -621,7 +610,7 @@
  };
  
  
-@@ -360,6 +668,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
+@@ -360,6 +657,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
  	int err;
  	snd_pcm_oss_t *oss;
  	
