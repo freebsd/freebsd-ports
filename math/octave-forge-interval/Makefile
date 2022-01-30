@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-interval
-PORTVERSION=	3.2.0
-PORTREVISION=	8
+PORTVERSION=	3.2.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
