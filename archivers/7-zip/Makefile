@@ -24,6 +24,7 @@ CPE_VENDOR=	7-zip
 MAKEFILE=	../../cmpl_clang.mak
 MAKE_ARGS=	LOCAL_FLAGS="${CFLAGS}" \
 		LOCAL_LIBS="${LIBS} -lsysinfo"
+CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
 
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/Alone2
