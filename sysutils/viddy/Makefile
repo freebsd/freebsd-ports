@@ -20,6 +20,8 @@ GO_BUILDFLAGS=	-ldflags "\
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
+PORTSCOUT=	ignore:1 site:none
+
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
