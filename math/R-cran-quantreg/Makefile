@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	quantreg
-PORTVERSION=	5.86
+PORTVERSION=	5.87
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,8 +11,7 @@ COMMENT=	Quantile Regression
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-SparseM>0:math/R-cran-SparseM \
-		R-cran-MatrixModels>0:math/R-cran-MatrixModels \
-		R-cran-conquer>0:math/R-cran-conquer
+		R-cran-MatrixModels>0:math/R-cran-MatrixModels
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
