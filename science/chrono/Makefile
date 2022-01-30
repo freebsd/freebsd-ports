@@ -1,12 +1,10 @@
 PORTNAME=	chrono
-DISTVERSION=	6.0.0
-PORTREVISION=	1
+DISTVERSION=	7.0.1
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	74df5c76d8d475818138a9a16ceccbd6f326247c.patch:-p1 # https://github.com/projectchrono/chrono/pull/295
-PATCHFILES+=	926dba0bef3f72fedff75770582df40fd8423258.patch:-p1 # https://github.com/projectchrono/chrono/pull/296
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for multi-physics simulation
@@ -41,7 +39,7 @@ DEMOS_CMAKE_BOOL=		BUILD_DEMOS
 DEMOS_BROKEN=			/usr/local/lib/libdmumps.so: undefined reference to `mpi_pack_'
 
 CASCADE_CMAKE_ON=		-DCASCADE_INCLUDE_DIR:STRING=${LOCALBASE}/include/OpenCASCADE -DCASCADE_LIBDIR:STRING=${LOCALBASE}/lib
-CASCADE_LIB_DEPENDS=		libTKernel.so:cad/opencascade
+CASCADE_LIB_DEPENDS=		libTKernel.so:cad/opencascade740
 
 DISTRIBUTED_BROKEN=		requires cuda_runtime_api.h in thrust package which is missing for some reason
 DISTRIBUTED_IMPLIES=		MULTICORE
@@ -66,7 +64,8 @@ SYNCHRONO_BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
 SYNCHRONO_LIB_DEPENDS=		libmpi.so:net/mpich
 SYNCHRONO_IMPLIES=		VEHICLE
 
-OPENGL_BROKEN=			Illegal instruction
+OPENGL_LIB_DEPENDS=		libglfw.so:graphics/glfw
+OPENGL_BROKEN=			clang-12 crashes
 
 VEHICLE_LIB_DEPENDS=		libsz.so:science/szip \
 				libmpi.so:net/openmpi
