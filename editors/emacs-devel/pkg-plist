@@ -1660,6 +1660,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/radix-tree.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/radix-tree.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/range.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/range.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/re-builder.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/re-builder.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/regexp-opt.el.gz
@@ -1845,6 +1847,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-cmpl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-dirs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-dirs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-extpipe.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-extpipe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-glob.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-glob.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/em-hist.el.gz
@@ -2249,6 +2253,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/eucjp-ms.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/fontset.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/fontset.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/idna-mapping.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/isearch-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/isearch-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/iso-ascii.el.gz
@@ -2287,6 +2292,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/rfc1843.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/robin.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/robin.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/textsec-check.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/textsec-check.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/textsec.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/textsec.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/titdic-cnv.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/titdic-cnv.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/ucs-normalize.el.gz
@@ -2296,6 +2305,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-category.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-combining.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-comment.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-confusable.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-decimal.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-decomposition.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-digit.el
@@ -2304,6 +2314,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-name.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-numeric.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-old-name.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-scripts.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-special-lowercase.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-special-titlecase.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-special-uppercase.el
