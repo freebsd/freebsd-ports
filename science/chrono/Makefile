@@ -1,5 +1,6 @@
 PORTNAME=	chrono
 DISTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
@@ -64,8 +65,10 @@ SYNCHRONO_BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
 SYNCHRONO_LIB_DEPENDS=		libmpi.so:net/mpich
 SYNCHRONO_IMPLIES=		VEHICLE
 
+OPENGL_USES=			gl
+OPENGL_USE=			GL=gl,glu,glew
+OPENGL_BUILD_DEPENDS=		${LOCALBASE}/include/glm/glm.hpp:math/glm
 OPENGL_LIB_DEPENDS=		libglfw.so:graphics/glfw
-OPENGL_BROKEN=			clang-12 crashes
 
 VEHICLE_LIB_DEPENDS=		libsz.so:science/szip \
 				libmpi.so:net/openmpi
