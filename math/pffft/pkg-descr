@@ -1,0 +1,14 @@
+PFFFT does 1D Fast Fourier Transforms, of single precision real and
+complex vectors. It tries do it fast, it tries to be correct, and it
+tries to be small. Computations do take advantage of SSE1 instructions
+on x86 cpus, Altivec on powerpc cpus, and NEON on ARM cpus.
+
+PFFFT is a fork of Julien Pommier's library on bitbucket with some
+changes and additions.
+
+PFFASTCONV does fast convolution (FIR filtering), of single precision
+real vectors, utilizing the PFFFT library.
+
+PFDSP contains a few other signal processing functions.
+
+WWW: https://github.com/marton78/pffft

@@ -1,0 +1,57 @@
+--- CMakeLists.txt.orig	2021-08-06 18:28:48 UTC
++++ CMakeLists.txt
+@@ -144,7 +144,7 @@ endif()
+ 
+ ######################################################
+ 
+-add_library(PFFFT STATIC ${FLOAT_SOURCES} ${DOUBLE_SOURCES} pffft_common.c pffft_priv_impl.h pffft.hpp )
++add_library(PFFFT ${FLOAT_SOURCES} ${DOUBLE_SOURCES} pffft_common.c pffft_priv_impl.h pffft.hpp )
+ set_target_properties(PFFFT PROPERTIES OUTPUT_NAME "pffft")
+ target_compile_definitions(PFFFT PRIVATE _USE_MATH_DEFINES)
+ if (USE_SCALAR_VECT)
+@@ -193,7 +193,7 @@ endif()
+ 
+ if (USE_TYPE_FLOAT)
+ 
+-  add_library(PFDSP STATIC pf_mixer.cpp pf_mixer.h pf_carrier.cpp pf_carrier.h pf_cic.cpp pf_cic.h fmv.h )
++  add_library(PFDSP pf_mixer.cpp pf_mixer.h pf_carrier.cpp pf_carrier.h pf_cic.cpp pf_cic.h fmv.h )
+   set_target_properties(PFDSP PROPERTIES OUTPUT_NAME "pfdsp")
+   target_compile_definitions(PFDSP PRIVATE _USE_MATH_DEFINES)
+   if (USE_DEBUG_ASAN)
+@@ -218,7 +218,7 @@ endif()
+ if (USE_FFTPACK)
+ 
+   # float / single precision
+-  add_library(FFTPACK_FLOAT STATIC fftpack.c fftpack.h)
++  add_library(FFTPACK_FLOAT fftpack.c fftpack.h)
+   target_compile_definitions(FFTPACK_FLOAT PRIVATE _USE_MATH_DEFINES)
+   target_compile_options(FFTPACK_FLOAT PRIVATE $<$<C_COMPILER_ID:GNU>:-Wall -Wextra -pedantic>)
+   target_link_libraries( FFTPACK_FLOAT ${MATHLIB} )
+@@ -227,7 +227,7 @@ if (USE_FFTPACK)
+   )
+ 
+   # double precision
+-  add_library(FFTPACK_DOUBLE STATIC fftpack.c fftpack.h)
++  add_library(FFTPACK_DOUBLE fftpack.c fftpack.h)
+   target_compile_definitions(FFTPACK_DOUBLE PRIVATE _USE_MATH_DEFINES)
+   target_compile_definitions(FFTPACK_DOUBLE PUBLIC FFTPACK_DOUBLE_PRECISION)
+   target_compile_options(FFTPACK_DOUBLE PRIVATE $<$<C_COMPILER_ID:GNU>:-Wall -Wextra -pedantic>)
+@@ -251,7 +251,7 @@ endif()
+ 
+ if (USE_TYPE_FLOAT)
+   # only 'float' supported in PFFASTCONV
+-  add_library(PFFASTCONV STATIC pffastconv.c pffastconv.h pffft.h )
++  add_library(PFFASTCONV pffastconv.c pffastconv.h pffft.h )
+   set_target_properties(PFFASTCONV PROPERTIES OUTPUT_NAME "pffastconv")
+   target_compile_definitions(PFFASTCONV PRIVATE _USE_MATH_DEFINES)
+   if (USE_DEBUG_ASAN)
+@@ -447,7 +447,9 @@ endif()
+ 
+ ######################################################
+ 
++if (FREEBSD_BUILD_EXAMPLES)
+ add_subdirectory(examples)
++endif()
+ 
+ ######################################################
+ 
