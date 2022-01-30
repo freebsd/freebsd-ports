@@ -85,6 +85,7 @@
     SUBDIR += ngspice_rework
     SUBDIR += nvc
     SUBDIR += opencascade
+    SUBDIR += opencascade740
     SUBDIR += openctm
     SUBDIR += openfpgaloader
     SUBDIR += openroad

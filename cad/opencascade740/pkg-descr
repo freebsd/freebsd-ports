@@ -1,0 +1,12 @@
+Open CASCADE Technology is a software development platform freely available in
+open source. It includes components for 3D surface and solid modeling,
+visualization, data exchange and rapid application development.
+
+Open CASCADE Technology can be best applied in development of numerical
+simulation software including CAD/CAM/CAE, AEC and GIS, as well as PDM
+applications.
+
+BUGS: the interesting parts of this port are the libraries, but some components
+      like Wok are not [yet] fully functional.
+
+WWW: http://www.opencascade.org/
