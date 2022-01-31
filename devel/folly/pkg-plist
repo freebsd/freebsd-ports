@@ -564,7 +564,6 @@ include/folly/json_patch.h
 include/folly/json_pointer.h
 include/folly/lang/Align.h
 include/folly/lang/Aligned.h
-include/folly/lang/Assume-inl.h
 include/folly/lang/Assume.h
 include/folly/lang/Badge.h
 include/folly/lang/Bits.h
@@ -576,6 +575,8 @@ include/folly/lang/CheckedMath.h
 include/folly/lang/CustomizationPoint.h
 include/folly/lang/Exception.h
 include/folly/lang/Extern.h
+include/folly/lang/Hint-inl.h
+include/folly/lang/Hint.h
 include/folly/lang/Keep.h
 include/folly/lang/Launder.h
 include/folly/lang/New.h
