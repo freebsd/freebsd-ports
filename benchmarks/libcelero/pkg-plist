@@ -29,6 +29,7 @@ include/celero/UserDefinedMeasurement.h
 include/celero/UserDefinedMeasurementCollector.h
 include/celero/UserDefinedMeasurementTemplate.h
 include/celero/Utilities.h
+lib/cmake/celero/celero-config.cmake
+lib/cmake/celero/celero-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/celero/celero-targets.cmake
 lib/libcelero.so
-share/celero-target-%%CMAKE_BUILD_TYPE%%.cmake
-share/celero-target.cmake
