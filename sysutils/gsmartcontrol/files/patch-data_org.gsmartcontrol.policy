@@ -1,0 +1,11 @@
+--- data/org.gsmartcontrol.policy.orig	2017-08-27 18:49:36.000000000 +0200
++++ data/org.gsmartcontrol.policy	2021-02-02 21:41:16.437199000 +0100
+@@ -12,7 +12,7 @@
+       <allow_inactive>auth_admin</allow_inactive>
+       <allow_active>auth_admin</allow_active>
+     </defaults>
+-    <annotate key="org.freedesktop.policykit.exec.path">/usr/sbin/gsmartcontrol</annotate>
++    <annotate key="org.freedesktop.policykit.exec.path">%%PREFIX%%/sbin/gsmartcontrol</annotate>
+     <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+   </action>
+ 

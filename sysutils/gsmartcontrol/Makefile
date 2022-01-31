@@ -2,7 +2,7 @@
 
 PORTNAME=	gsmartcontrol
 PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -42,5 +42,7 @@ post-patch:
 		${WRKSRC}/src/*/Makefile.in
 	@${REINPLACE_CMD} -i .c++20 '/config\.h/y/<>/""/' \
 		${WRKSRC}/src/global_macros.h
+	@${REINPLACE_CMD} -i '' 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/data/org.gsmartcontrol.policy
 
 .include <bsd.port.mk>
