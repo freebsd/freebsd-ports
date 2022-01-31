@@ -1,0 +1,5 @@
+This metaport installs the pieces of the GNOME desktop that are needed to
+provide a functional desktop. The x11/gnome metaport, contains the full
+version of the GNOME desktop environment.
+
+WWW: https://www.FreeBSD.org/gnome/

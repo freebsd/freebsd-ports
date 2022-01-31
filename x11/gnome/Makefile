@@ -1,12 +1,11 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
-PORTNAME=	gnome3
-PORTVERSION=	3.36
-PORTREVISION=	4
+PORTNAME=	gnome
+PORTVERSION=	41
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	"meta-port" for the GNOME 3 integrated X11 desktop
+COMMENT=	Metaport for the GNOME integrated X11 desktop
 
 FLAVORS=	full lite
 FLAVOR?=	full

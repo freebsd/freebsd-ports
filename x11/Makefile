@@ -79,6 +79,7 @@
     SUBDIR += gdm
     SUBDIR += glcapsviewer
     SUBDIR += gmrun
+    SUBDIR += gnome
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-desktop
     SUBDIR += gnome-menus
@@ -87,7 +88,6 @@
     SUBDIR += gnome-shell
     SUBDIR += gnome-shell-extensions
     SUBDIR += gnome-terminal
-    SUBDIR += gnome3
     SUBDIR += gnustep-app
     SUBDIR += grabc
     SUBDIR += grim

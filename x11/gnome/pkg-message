@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Congratulations!  GNOME 3 has been successfully installed on your system.
+Congratulations!  GNOME has been successfully installed on your system.
 For help on starting it up, as well as answers to common questions, and
 some known issues, please see the FreeBSD GNOME homepage at:
 

@@ -16882,3 +16882,4 @@ x11-fonts/sourcesanspro-ttf|x11-fonts/source-sans-ttf|2022-01-28|Rename to match
 audio/nekobi-lv2|audio/dpf-plugins-lv2|2022-01-28|Nekobi is part of dpf-plugins
 audio/kars-lv2|audio/dpf-plugins-lv2|2022-01-28|Kars is part of dpf-plugins
 lang/scala-docs||2022-01-31|New 3.x versions dropped archived documentation
+x11/gnome3|x11/gnome|2022-01-32|GNOME has moved past version 3, including the Ports version
