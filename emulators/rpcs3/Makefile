@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.20-13240 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g781b2b454
+DISTVERSION=	0.0.20-13251 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gfd0e7a4ef
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,12 +26,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.2-4-g6cf1336:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:509d31ad8967:llvm/llvm \
+		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:fc2a5d8:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.7.1:glslang/3rdparty/glslang/glslang \
-		kinetiknz:cubeb:cubeb-0.2-1345-g773f16b:cubeb/3rdparty/cubeb/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1350-gf79e0cf:cubeb/3rdparty/cubeb/cubeb \
 		wolfSSL:wolfssl:v5.1.0-stable-47-g4bbf90d60:wolfssl/3rdparty/wolfssl/wolfssl
 
 USES=		cmake compiler:c++17-lang gl iconv:wchar_t localbase:ldflags \

@@ -1,0 +1,25 @@
+In file included from rpcs3/Emu/Audio/audio_device_listener.cpp:5:
+In file included from rpcs3/Emu/Cell/Modules/cellAudio.h:9:
+In file included from rpcs3/Emu/Audio/audio_resampler.h:10:
+In file included from 3rdparty/SoundTouch/soundtouch/include/SoundTouch.h:68:
+3rdparty/SoundTouch/soundtouch/include/FIFOSamplePipe.h:62:9: error: use of old-style cast [-Werror,-Wold-style-cast]
+        ST_THROW_RT_ERROR("Error: Illegal number of channels");
+        ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3rdparty/SoundTouch/soundtouch/include/STTypes.h:128:45: note: expanded from macro 'ST_THROW_RT_ERROR'
+    #define ST_THROW_RT_ERROR(x)    {assert((const char *)x);}
+                                            ^             ~
+/usr/include/assert.h:56:21: note: expanded from macro 'assert'
+#define assert(e)       ((e) ? (void)0 : __assert(__func__, __FILE__, \
+                          ^
+
+--- 3rdparty/SoundTouch/soundtouch/include/STTypes.h.orig	2022-01-22 12:50:46 UTC
++++ 3rdparty/SoundTouch/soundtouch/include/STTypes.h
+@@ -125,7 +125,7 @@ namespace soundtouch
+ #ifdef ST_NO_EXCEPTION_HANDLING
+     // Exceptions disabled. Throw asserts instead if enabled.
+     #include <assert.h>
+-    #define ST_THROW_RT_ERROR(x)    {assert((const char *)x);}
++    #define ST_THROW_RT_ERROR(x)    {assert(static_cast<const char *>(x));}
+ #else
+     // use c++ standard exceptions
+     #include <stdexcept>
