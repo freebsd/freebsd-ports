@@ -1,0 +1,20 @@
+- workaround for https://gitlab.com/mattbas/glaxnimate/-/issues/484
+
+--- data/CMakeLists.txt.orig	2022-01-31 10:07:34 UTC
++++ data/CMakeLists.txt
+@@ -29,6 +29,7 @@ else()
+ endif()
+ 
+ # Translation
++if (FALSE)
+ include(../cmake/qt.cmake)
+ set(ALL_SOURCE_DIRECTORIES ${CMAKE_SOURCE_DIR}/src)
+ create_qt_linguist_translations(
+@@ -41,6 +42,7 @@ create_qt_linguist_translations(
+     translations/glaxnimate_zh_CN.ts
+ )
+ install(FILES ${LINGUIST_OUTPUT_FILES} DESTINATION ${DATA_INSTALL}/translations/)
++endif()
+ 
+ # Desktop
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/glaxnimate.in.desktop ${CMAKE_CURRENT_BINARY_DIR}/glaxnimate.desktop)

@@ -265,6 +265,7 @@
     SUBDIR += gimp-resynthesizer
     SUBDIR += gkrellkam2
     SUBDIR += glad
+    SUBDIR += glaxnimate
     SUBDIR += gle
     SUBDIR += glee
     SUBDIR += glew

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2022-01-31 09:47:12 UTC
++++ CMakeLists.txt
+@@ -29,7 +29,7 @@ set(PROJECT_MANINTAINER "${PROJECT_MANINTAINER_NAME} <
+ # CMake modules
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake" "${CMAKE_CURRENT_SOURCE_DIR}/external/cmake-modules")
+ include(misc)
+-include(GetGitRevisionDescription)
++#include(GetGitRevisionDescription)
+ 
+ # C++
+ set(CMAKE_CXX_STANDARD 17)
+@@ -38,7 +38,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ # Git
+ set(VERSION_NAKED ${PROJECT_VERSION})
+ set(VERSION_SUFFIX "" CACHE STRING "")
+-if (VERSION_SUFFIX STREQUAL "")
++if (FALSE AND VERSION_SUFFIX STREQUAL "")
+     git_describe(GIT_DESC --tags)
+     if ( NOT ${GIT_DESC} MATCHES ".*NOTFOUND" )
+         set(PROJECT_VERSION ${GIT_DESC})

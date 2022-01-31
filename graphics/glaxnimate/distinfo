@@ -1,0 +1,15 @@
+TIMESTAMP = 1643622529
+SHA256 (KDE-breeze-icons-1a13b09adc7ebe0c4b5be6cc1add3869f3de8a1a_GH0.tar.gz) = 5d7d4437bb0c87ac5573b9ae05328379bbaf6229818579456ee7b2ec1a827a37
+SIZE (KDE-breeze-icons-1a13b09adc7ebe0c4b5be6cc1add3869f3de8a1a_GH0.tar.gz) = 5573747
+SHA256 (mbasaglia-pybind11-7b30131fcbbbc227d2afcc969a8aab8c8b792b66_GH0.tar.gz) = b2568d046d2527a4d2bd22383f1d7853662492666994e20db16f70fcf578f87f
+SIZE (mbasaglia-pybind11-7b30131fcbbbc227d2afcc969a8aab8c8b792b66_GH0.tar.gz) = 702926
+SHA256 (mattbas-glaxnimate-7aaa27b346888d9aeae12815c3aa3e720adf985f_GL0.tar.gz) = 0882e269090dfd65e39689096b1c7ca8174dffa347535da209254da4e00f2528
+SIZE (mattbas-glaxnimate-7aaa27b346888d9aeae12815c3aa3e720adf985f_GL0.tar.gz) = 4746649
+SHA256 (mattbas-CMake-Lib-2738b6bbc3d386fa7cafb2267d5ad597a1f455a8_GL0.tar.gz) = f49748419723ea67dd9d0f57aaca83a9dad2a8a8510a2906802cadfb7cb0e91b
+SIZE (mattbas-CMake-Lib-2738b6bbc3d386fa7cafb2267d5ad597a1f455a8_GL0.tar.gz) = 8662
+SHA256 (mattbas-Qt-Color-Widgets-8d0f56c0b855ae766183ffec2cc3e973a5d4bf8f_GL0.tar.gz) = bc2558c4bac07c51657d126d2cf34eb78882115484e6dd2a851c8b4b9d9a189d
+SIZE (mattbas-Qt-Color-Widgets-8d0f56c0b855ae766183ffec2cc3e973a5d4bf8f_GL0.tar.gz) = 206927
+SHA256 (mattbas-Qt-History-LineEdit-e6c254f5a893963dfece477bc99405495e471483_GL0.tar.gz) = e77cf9382bbaf559eba9d5f59d6c9ef87577cbf85528b28fb0d891d9b78678d5
+SIZE (mattbas-Qt-History-LineEdit-e6c254f5a893963dfece477bc99405495e471483_GL0.tar.gz) = 7846
+SHA256 (mattbas-python-lottie-9e742aadb5ca7d0e8c9b01b2553c0a81de238ae4_GL0.tar.gz) = 54de1e9507524d83d4035ac3a16bd29c40335c6f9eb0a8b6376c3a10267e1a56
+SIZE (mattbas-python-lottie-9e742aadb5ca7d0e8c9b01b2553c0a81de238ae4_GL0.tar.gz) = 284790
