@@ -1,13 +1,13 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 
 PORTNAME=	pycharm-ce
-PORTVERSION=	2021.2.2
+PORTVERSION=	2021.3.1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
 DISTNAME=	pycharm-community-${PORTVERSION}
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	jonc@chen.org.nz
 COMMENT=	JetBrains PyCharm Community Edition IDE
 
 LICENSE=	APACHE20
