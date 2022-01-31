@@ -1,6 +1,5 @@
 PORTNAME=	gbrainy
-PORTREVISION=	1
-DISTVERSION=	2.4.3
+DISTVERSION=	2.4.4
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	https://gent.softcatala.org/jmas/gbrainy/
