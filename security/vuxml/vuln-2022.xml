@@ -1,3 +1,34 @@
+  <vuln vid="ee26f513-826e-11ec-8be6-d4c9ef517024">
+    <topic>Rust -- Race condition enabling symlink following</topic>
+    <affects>
+      <package>
+	<name>rust</name>
+	<range><lt>1.58.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://blog.rust-lang.org/2022/01/20/cve-2022-21658.html">
+	  <p>The Rust Security Response WG was notified that the
+	    std::fs::remove_dir_all standard library function is vulnerable to a
+	    race condition enabling symlink following (CWE-363). An attacker could
+	    use this security issue to trick a privileged program into deleting
+	    files and directories the attacker couldn't otherwise access or
+	    delete.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21658</cvename>
+      <url>https://blog.rust-lang.org/2022/01/20/cve-2022-21658.html</url>
+    </references>
+    <dates>
+      <discovery>2022-01-20</discovery>
+      <entry>2022-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0c83e1a-8153-11ec-84f9-641c67a117d8">
     <topic>varnish -- Request Smuggling Vulnerability</topic>
     <affects>
