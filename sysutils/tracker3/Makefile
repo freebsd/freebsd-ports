@@ -11,6 +11,8 @@ COMMENT=	Object database, tag/metadata database, search tool and indexer
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
+BROKEN=		fails to build with asciidoc >= 10
+
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		valac:lang/vala
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
