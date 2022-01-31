@@ -1,6 +1,6 @@
 PORTNAME=	binaryen
 DISTVERSIONPREFIX=	version_
-DISTVERSION=	98
+DISTVERSION=	105
 CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology

@@ -2,10 +2,13 @@ bin/wasm-as
 bin/wasm-ctor-eval
 bin/wasm-dis
 bin/wasm-emscripten-finalize
+bin/wasm-fuzz-types
 bin/wasm-metadce
 bin/wasm-opt
 bin/wasm-reduce
 bin/wasm-shell
+bin/wasm-split
 bin/wasm2js
 include/binaryen-c.h
+include/wasm-delegations.def
 lib/libbinaryen.so
