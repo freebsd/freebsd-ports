@@ -1,5 +1,5 @@
-TIMESTAMP = 1599897700
-SHA256 (commons-daemon-1.2.3-native-src.tar.gz) = c1c95af2f39b6ad39481fd64275093d5db9fe8f8a8c8cd5c5ba945bcef81b966
-SIZE (commons-daemon-1.2.3-native-src.tar.gz) = 208136
-SHA256 (commons-daemon-1.2.3-bin.tar.gz) = 17004f8f79a2618a7fd3604fad4035111c6f3494f3fbf31b9836f9e854b39de9
-SIZE (commons-daemon-1.2.3-bin.tar.gz) = 174682
+TIMESTAMP = 1643617637
+SHA256 (commons-daemon-1.2.4-native-src.tar.gz) = c082d63f6e27b904ffa573cf9c7ee213c49fbdc00ca828a6d5b8b19c7dcbe4ef
+SIZE (commons-daemon-1.2.4-native-src.tar.gz) = 207420
+SHA256 (commons-daemon-1.2.4-bin.tar.gz) = 3af9a61ef58660fe8a0492f9090e09cc800efda6f7ce3d64cf8fd9376c275e2f
+SIZE (commons-daemon-1.2.4-bin.tar.gz) = 175545

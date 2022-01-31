@@ -1,7 +1,7 @@
 # Created by: Ronald Klop <ronald@echteman.nl>
 
 PORTNAME=	commons-daemon
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/commons/daemon/source/:src \
 		https://archive.apache.org/dist/commons/daemon/binaries/:bin
