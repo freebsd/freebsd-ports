@@ -1,13 +1,21 @@
 include/entt/config/config.h
 include/entt/config/version.h
+include/entt/container/dense_hash_map.hpp
+include/entt/container/dense_hash_set.hpp
+include/entt/container/fwd.hpp
 include/entt/core/algorithm.hpp
 include/entt/core/any.hpp
 include/entt/core/attribute.h
+include/entt/core/compressed_pair.hpp
+include/entt/core/enum.hpp
 include/entt/core/family.hpp
 include/entt/core/fwd.hpp
 include/entt/core/hashed_string.hpp
 include/entt/core/ident.hpp
+include/entt/core/iterator.hpp
+include/entt/core/memory.hpp
 include/entt/core/monostate.hpp
+include/entt/core/tuple.hpp
 include/entt/core/type_info.hpp
 include/entt/core/type_traits.hpp
 include/entt/core/utility.hpp
@@ -19,7 +27,6 @@ include/entt/entity/handle.hpp
 include/entt/entity/helper.hpp
 include/entt/entity/observer.hpp
 include/entt/entity/organizer.hpp
-include/entt/entity/poly_storage.hpp
 include/entt/entity/registry.hpp
 include/entt/entity/runtime_view.hpp
 include/entt/entity/snapshot.hpp
@@ -34,6 +41,7 @@ include/entt/meta/adl_pointer.hpp
 include/entt/meta/container.hpp
 include/entt/meta/ctx.hpp
 include/entt/meta/factory.hpp
+include/entt/meta/fwd.hpp
 include/entt/meta/meta.hpp
 include/entt/meta/node.hpp
 include/entt/meta/pointer.hpp
