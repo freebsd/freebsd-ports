@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.192.0
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9a102248f2be.patch:-p1 # https://github.com/haasn/libplacebo/issues/118
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reusable library for GPU-accelerated video/image rendering
 

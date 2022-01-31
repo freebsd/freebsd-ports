@@ -1,3 +1,5 @@
 TIMESTAMP = 1642593684
 SHA256 (haasn-libplacebo-v4.192.0_GH0.tar.gz) = add894897360854a3f405bdea7c33b4d43cbc5a8c0a1d01ecb17514ea7fb861d
 SIZE (haasn-libplacebo-v4.192.0_GH0.tar.gz) = 631739
+SHA256 (9a102248f2be.patch) = 621e2cff64320e3610ee5ad88e647167ea921e6abc2073225204f8b63be1b857
+SIZE (9a102248f2be.patch) = 1003
