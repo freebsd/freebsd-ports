@@ -2,7 +2,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -49,7 +49,7 @@ OPTIONS_DEFAULT=FFMPEG VIS
 OPTIONS_SUB=	yes
 
 REINPLACE_ARGS=	-i ""
-LDFLAGS+=	-Wl,--allow-shlib-undefined
+LDFLAGS+=	-Wl,--allow-shlib-undefined -lexecinfo
 CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_INCLUDE=${PREFIX}/include/OpenCASCADE	\
 		-DINSTALL_DIR_LIB=${PREFIX}/lib				\
