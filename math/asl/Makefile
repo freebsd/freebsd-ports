@@ -1,6 +1,6 @@
 PORTNAME=	asl
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	math
 MASTER_SITES=	https://coin-or-tools.github.io/ThirdParty-ASL/:solvers
 PKGNAMEPREFIX=	coin-or-
@@ -19,6 +19,8 @@ GH_ACCOUNT=	coin-or-tools
 GH_PROJECT=	ThirdParty-ASL
 
 GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=install-strip
 
 BINARY_ALIAS=	make=${GMAKE}
 

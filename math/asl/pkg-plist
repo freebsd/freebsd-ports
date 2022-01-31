@@ -12,5 +12,5 @@ include/coin/ThirdParty/r_opn.hd
 include/coin/ThirdParty/stdio1.h
 lib/libcoinasl.so
 lib/libcoinasl.so.1
-lib/libcoinasl.so.1.4.3
+lib/libcoinasl.so.1.4.4
 libdata/pkgconfig/coinasl.pc
