@@ -11,6 +11,8 @@ COMMENT=	Remote Subversion repository dumpfile generator
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with asciidoc >= 10
+
 USES=		bdb
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libgdbm.so:databases/gdbm \
