@@ -75,6 +75,8 @@
 %%ELISPDIR%%/magit-section.elc
 %%ELISPDIR%%/magit-sequence.el
 %%ELISPDIR%%/magit-sequence.elc
+%%ELISPDIR%%/magit-sparse-checkout.el
+%%ELISPDIR%%/magit-sparse-checkout.elc
 %%ELISPDIR%%/magit-stash.el
 %%ELISPDIR%%/magit-stash.elc
 %%ELISPDIR%%/magit-status.el
