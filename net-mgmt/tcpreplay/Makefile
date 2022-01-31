@@ -1,7 +1,7 @@
 # Created by: cnh@ivmg.net
 
 PORTNAME=	tcpreplay
-PORTVERSION=	4.3.4
+PORTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -15,13 +15,14 @@ LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libopts.so:devel/autogen
 
 USES=		autoreconf cpe gmake libtool pkgconfig
+CPE_VENDOR=	appneta
 USE_GITHUB=	yes
 GH_ACCOUNT=	appneta
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
-CPE_VENDOR=	appneta
 TEST_TARGET=	test
 
 OPTIONS_DEFAULT=	LIBPCAP_BASE
@@ -37,8 +38,5 @@ LIBPCAP_PORTS_DESC=	Build with net/libpcap
 
 LIBPCAP_BASE_CONFIGURE_ON=	--with-libpcap=/usr/lib
 LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so:net/libpcap
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Wall -O3||' ${WRKSRC}/${CONFIGURE_SCRIPT}.ac
 
 .include <bsd.port.mk>
