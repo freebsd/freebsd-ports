@@ -1,0 +1,11 @@
+--- pam_oath/configure.orig	2022-01-31 11:20:05 UTC
++++ pam_oath/configure
+@@ -12156,8 +12156,6 @@ if test "x$ac_cv_header_security_pam_modutil_h" = xyes
+ #define HAVE_SECURITY_PAM_MODUTIL_H 1
+ _ACEOF
+ 
+-else
+-  as_fn_error $? "PAM header files not found, install libpam-dev." "$LINENO" 5
+ fi
+ 
+ done
