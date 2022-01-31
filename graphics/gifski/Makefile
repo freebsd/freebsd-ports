@@ -1,5 +1,5 @@
 PORTNAME=	gifski
-DISTVERSION=	1.6.3
+DISTVERSION=	1.6.4
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,13 +47,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		glob-0.3.0 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
-		imagequant-4.0.0-beta.6 \
+		imagequant-4.0.0-beta.7 \
 		imgref-1.9.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.112 \
 		libloading-0.5.2 \
-		lodepng-3.4.7 \
+		lodepng-3.5.0 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
 		miniz_oxide-0.4.4 \
@@ -87,7 +87,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasi-0.10.3+wasi-snapshot-preview1 \
 		weezl-0.1.5 \
 		wild-2.0.4 \
 		winapi-0.3.9 \
