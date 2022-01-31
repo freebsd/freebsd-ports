@@ -1,12 +1,12 @@
 PORTNAME=	klog
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Simple Qt-based amateur radio logger
 
 LICENSE=	GPLv3
-#LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
