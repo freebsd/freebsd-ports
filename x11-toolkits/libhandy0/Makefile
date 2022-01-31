@@ -9,6 +9,8 @@ COMMENT=	Library with GTK+ widgets for mobile phones
 
 LICENSE=	LGPL21
 
+BROKEN=		fails to build with glade >= 3.36
+
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgladeui-2.so:devel/glade
 
