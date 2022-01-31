@@ -1,7 +1,7 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 
 PORTNAME=	httpasyncclient
-DISTVERSION=	4.1.4
+DISTVERSION=	4.1.5
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/httpcomponents/${PORTNAME}/binary
 DISTNAME=	httpcomponents-asyncclient-${DISTVERSION}-bin
@@ -18,6 +18,7 @@ USES=		cpe
 CPE_VENDOR=	apache
 OPTIONS_DEFINE=	DOCS
 USE_JAVA=	yes
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/httpcomponents-asyncclient-${DISTVERSION}
@@ -42,6 +43,7 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${STAGEDIR}/${DOCSDIR}/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} javadoc ${STAGEDIR}${DOCSDIR}/)
 	@${ECHO_MSG} " [DONE]"
 .endif
 
