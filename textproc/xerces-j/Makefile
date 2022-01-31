@@ -1,7 +1,7 @@
 # Created by: Marcin Cieslak
 
 PORTNAME=	xerces-j
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.2
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/xerces/j/binaries/
 DISTNAME=	Xerces-J-bin.${PORTVERSION}
