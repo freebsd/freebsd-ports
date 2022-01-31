@@ -16881,3 +16881,4 @@ net-mgmt/zabbix54-frontend|net-mgmt/zabbix54-frontend@php74|2022-01-27|Build as 
 x11-fonts/sourcesanspro-ttf|x11-fonts/source-sans-ttf|2022-01-28|Rename to match upstream naming
 audio/nekobi-lv2|audio/dpf-plugins-lv2|2022-01-28|Nekobi is part of dpf-plugins
 audio/kars-lv2|audio/dpf-plugins-lv2|2022-01-28|Kars is part of dpf-plugins
+lang/scala-docs||2022-01-31|New 3.x versions dropped archived documentation

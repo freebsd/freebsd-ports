@@ -316,7 +316,6 @@
     SUBDIR += sather-tutorial
     SUBDIR += sbcl
     SUBDIR += scala
-    SUBDIR += scala-docs
     SUBDIR += scheme48
     SUBDIR += scm
     SUBDIR += sdcc
