@@ -3,6 +3,7 @@ include/thrift/ThriftLibrary.cmake
 include/thrift/lib/cpp/ContextStack.h
 include/thrift/lib/cpp/DistinctTable.h
 include/thrift/lib/cpp/EventHandlerBase.h
+include/thrift/lib/cpp/FieldId.h
 include/thrift/lib/cpp/Frozen.h
 include/thrift/lib/cpp/Reflection.h
 include/thrift/lib/cpp/RelativePtr.h
@@ -95,6 +96,7 @@ include/thrift/lib/cpp/util/PausableTimer.h
 include/thrift/lib/cpp/util/THttpParser.h
 include/thrift/lib/cpp/util/VarintUtils-inl.h
 include/thrift/lib/cpp/util/VarintUtils.h
+include/thrift/lib/cpp/util/test/VarintUtilsTestUtil.h
 include/thrift/lib/cpp2/Adapt.h
 include/thrift/lib/cpp2/BadFieldAccess.h
 include/thrift/lib/cpp2/BoxedValuePtr.h
@@ -109,6 +111,7 @@ include/thrift/lib/cpp2/IndirectionWrapper.h
 include/thrift/lib/cpp2/PluggableFunction.h
 include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
+include/thrift/lib/cpp2/TrustedServerException.h
 include/thrift/lib/cpp2/TypeClass.h
 include/thrift/lib/cpp2/async/AsyncClient.h
 include/thrift/lib/cpp2/async/AsyncProcessor.h
@@ -300,12 +303,14 @@ include/thrift/lib/cpp2/server/LoggingEventHelper.h
 include/thrift/lib/cpp2/server/MemoryTracker.h
 include/thrift/lib/cpp2/server/MonitoringMethodNames.h
 include/thrift/lib/cpp2/server/MonitoringServerInterface.h
+include/thrift/lib/cpp2/server/ParallelConcurrencyController.h
 include/thrift/lib/cpp2/server/PolledServiceHealth.h
 include/thrift/lib/cpp2/server/PreprocessParams.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
 include/thrift/lib/cpp2/server/RequestPileInterface.h
 include/thrift/lib/cpp2/server/RequestsRegistry.h
 include/thrift/lib/cpp2/server/ResourcePoolHandle.h
+include/thrift/lib/cpp2/server/RoundRobinRequestPile.h
 include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
 include/thrift/lib/cpp2/server/ServerFlags.h
@@ -421,6 +426,7 @@ include/thrift/lib/cpp2/util/MethodMetadata.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread-inl.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread.h
 include/thrift/lib/cpp2/util/ScopedServerThread.h
+include/thrift/lib/cpp2/visitation/ShrinkToFit.h
 include/thrift/lib/cpp2/visitation/for_each.h
 include/thrift/lib/cpp2/visitation/metadata.h
 include/thrift/lib/cpp2/visitation/visit_by_thrift_field_metadata.h
