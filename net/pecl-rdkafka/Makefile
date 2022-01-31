@@ -1,5 +1,5 @@
 PORTNAME=	rdkafka
-PORTVERSION=	4.0.4
+PORTVERSION=	6.0.0
 CATEGORIES=	net pear
 
 MAINTAINER=	sergey@akhmatov.ru
@@ -11,6 +11,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	librdkafka.so:net/librdkafka
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	80 81
 
 .include <bsd.port.mk>
