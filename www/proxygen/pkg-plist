@@ -87,7 +87,6 @@ include/proxygen/lib/http/codec/compress/HPACKEncoder.h
 include/proxygen/lib/http/codec/compress/HPACKEncoderBase.h
 include/proxygen/lib/http/codec/compress/HPACKHeader.h
 include/proxygen/lib/http/codec/compress/HPACKHeaderName.h
-include/proxygen/lib/http/codec/compress/HPACKQueue.h
 include/proxygen/lib/http/codec/compress/HPACKStreamingCallback.h
 include/proxygen/lib/http/codec/compress/Header.h
 include/proxygen/lib/http/codec/compress/HeaderCodec.h
@@ -108,6 +107,7 @@ include/proxygen/lib/http/codec/compress/experimental/simulator/CompressionSchem
 include/proxygen/lib/http/codec/compress/experimental/simulator/CompressionSimulator.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/CompressionTypes.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/CompressionUtils.h
+include/proxygen/lib/http/codec/compress/experimental/simulator/HPACKQueue.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/HPACKScheme.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/QMINScheme.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/QPACKScheme.h
