@@ -9,6 +9,9 @@ COMMENT=	Ganglia cluster monitor, web frontend
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 IGNORE_WITH_PHP=	80 81
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmond:sysutils/ganglia-monitor-core
