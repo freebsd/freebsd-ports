@@ -43,7 +43,7 @@ lib/gnote/plugins/41/underline.desktop
 lib/gnote/plugins/41/webdavsyncservice.desktop
 lib/libgnote-41.so
 lib/libgnote-41.so.0
-lib/libgnote-41.so.0.0.1
+lib/libgnote-41.so.0.0.2
 man/man1/gnote.1.gz
 share/applications/org.gnome.Gnote.desktop
 share/dbus-1/services/org.gnome.Gnote.service
