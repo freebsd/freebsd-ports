@@ -14,6 +14,9 @@ COMMENT=	PHP extension for the pHash perceptual hash library
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 LIB_DEPENDS=	libpHash.so:multimedia/pHash
 
 USES=		compiler:c++11-lang php:ext
