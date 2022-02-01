@@ -26,11 +26,11 @@ lib/libgphoto2/%%VERSION%%/canon.so
 lib/libgphoto2/%%VERSION%%/digigr8.so
 lib/libgphoto2/%%VERSION%%/dimagev.so
 lib/libgphoto2/%%VERSION%%/directory.so
-lib/libgphoto2/%%VERSION%%/docupen.so
+%%GD%%lib/libgphoto2/%%VERSION%%/docupen.so
 lib/libgphoto2/%%VERSION%%/jl2005a.so
 lib/libgphoto2/%%VERSION%%/jl2005c.so
 lib/libgphoto2/%%VERSION%%/kodak_dc240.so
-lib/libgphoto2/%%VERSION%%/lumix.so
+%%CURL%%lib/libgphoto2/%%VERSION%%/lumix.so
 lib/libgphoto2/%%VERSION%%/mars.so
 lib/libgphoto2/%%VERSION%%/pentax.so
 lib/libgphoto2/%%VERSION%%/ptp2.so

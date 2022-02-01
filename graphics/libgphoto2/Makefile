@@ -11,8 +11,7 @@ COMMENT=	Universal digital camera control library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libcurl.so:ftp/curl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		compiler:c11 gmake gnome iconv libtool localbase pathfix \
 		pkgconfig tar:bzip2
@@ -35,16 +34,25 @@ PATHFIX_MAKEFILEIN=	Makefile.in \
 
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.12.0
 
-OPTIONS_DEFINE=		DOCS GD JPEG LIBEXIF NLS
-OPTIONS_DEFAULT=	GD JPEG LIBEXIF
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	CURL DOCS GD JPEG LIBEXIF NLS
+OPTIONS_DEFAULT=	CURL GD JPEG LIBEXIF
+OPTIONS_SUB=	yes
 
+CURL_DESC=	Lumix WiFi support via cURL
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CONFIGURE_OFF=	--with-libcurl=no
+
+GD_DESC=	libGD conversion support
 GD_LIB_DEPENDS=		libgd.so:graphics/gd
 GD_CONFIGURE_OFF=	--with-gdlib=no
+
+JPEG_DESC=	JPEG image mangling support
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
+
 LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_CONFIGURE_OFF=	--with-libexif=no
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
