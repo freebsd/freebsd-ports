@@ -6,6 +6,9 @@ PKGNAMESUFFIX=	-extensions
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
 
+DEPRECATED=Upstream Security Support ends on 2022-11-28
+EXPIRATION_DATE=2022-11-29
+
 USES=		metaport php
 PHP_VER=	74
 IGNORE_WITH_PHP=	80 81

@@ -11,6 +11,9 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
+DEPRECATED=Upstream Security Support ends on 2022-11-28
+EXPIRATION_DATE=2022-11-29
+
 USES+=		compiler:c11 tar:xz cpe gnome pkgconfig
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
