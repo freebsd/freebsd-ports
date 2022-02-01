@@ -3,7 +3,12 @@
 PORTNAME=	po4a
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.66
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
+
+PATCH_SITES=	https://github.com/mquinson/po4a/commit/
+PATCHFILES=	fa2546f7a0f327603f7e1cffa8415101acce8a90.diff:-p1 \
+		49902aebbab06e3a376d231eb299fcd3c30d1722.diff:-p1
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Brings gettext translation tools to all kinds of docs
