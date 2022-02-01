@@ -2,6 +2,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	41.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -58,7 +59,7 @@ MESON_ARGS=	-Dat-spi-registryd-dir=${PREFIX}/libexec \
 		-Ddmconfdir=${PREFIX}/share/xsessions \
 		-Dgdm-xsession=true \
 		-Dgroup=gdm \
-		-Dinitial-vt=05 \
+		-Dinitial-vt=09 \
 		-Dlang-file=${PREFIX}/etc/gdm/locale.conf \
 		-Dlibaudit=disabled \
 		-Dlog-dir=/var/log/gdm \
