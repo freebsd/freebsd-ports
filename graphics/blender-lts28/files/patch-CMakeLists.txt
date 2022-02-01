@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-02-23 09:13:59 UTC
+--- CMakeLists.txt.orig	2019-07-31 13:12:04 UTC
 +++ CMakeLists.txt
 @@ -613,11 +613,6 @@ if(NOT WITH_PYTHON)
    set(WITH_DRACO OFF)
@@ -11,7 +11,7 @@
 -
  # enable boost for cycles, audaspace or i18n
  # otherwise if the user disabled
- 
+ if(NOT WITH_BOOST)
 @@ -1552,7 +1547,7 @@ elseif(
    CMAKE_C_COMPILER_ID MATCHES "Intel"
  )

@@ -1,6 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	2.83.15
-PORTREVISION=	10
+DISTVERSION=	2.83.18
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -23,14 +22,15 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++14-lang gl cpe gnome jpeg python:3.7 shebangfix \
+USES=		cmake compiler:c++14-lang cpe gl jpeg python:3.7 shebangfix \
 		tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
+INSTALLS_ICONS=	yes
 CMAKE_OFF=	WITH_IMAGE_OPENJPEG WITH_PYTHON_INSTALL \
 		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
-		WITH_CYCLES_LOGGING
+		WITH_CYCLES_LOGGING WITH_CYCLES_OSL WITH_LLVM
 
 SUB_FILES=	blender
 SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
@@ -45,7 +45,7 @@ CXXFLAGS_i386=	-march=i586
 # prevent conflict with other blender versions
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-PLIST_SUB+=	VER=${DISTVERSION:R} SUFFIX=${PKGNAMESUFFIX}
+PLIST_SUB+=	VER=${DISTVERSION:R} SUFFIX=${PKGNAMESUFFIX} CYCLESOSL="@comment "
 OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
@@ -53,13 +53,15 @@ OPTIONS_SUB=	yes
 ALEMBIC_CMAKE_BOOL=		WITH_ALEMBIC
 ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
 # note that this needs to be set to match alembics hdf5 option
-ALEMBIC_HDF5_IMPLIES=		ALEMBIC
+ALEMBIC_HDF5_REQUIRES=		ALEMBIC
 ALEMBIC_HDF5_CMAKE_BOOL=	WITH_ALEMBIC_HDF5
 ALEMBIC_HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 AVI_CMAKE_BOOL=			WITH_CODEC_AVI
 BULLET_CMAKE_BOOL=		WITH_BULLET
 CAMERATRACK_CMAKE_BOOL=		WITH_LIBMV
 CAMERATRACK_LIB_DEPENDS=	libunwind.so:devel/libunwind
+CAMERATRACK_ONLY_FOR_ARCHS=	i386 amd64
+CAMERATRACK_ONLY_FOR_ARCHS_REASON=	libunwind only supports x86/amd64
 CINEON_CMAKE_BOOL=		WITH_IMAGE_CINEON
 COLLADA_CMAKE_BOOL=		WITH_OPENCOLLADA
 COLLADA_LIB_DEPENDS=		libOpenCOLLADABaseUtils.so:graphics/opencollada \
@@ -73,6 +75,8 @@ CYCLES_LIB_DEPENDS=		libpugixml.so:textproc/pugixml
 CYCLESEMBR_IMPLIES=		CYCLES
 CYCLESEMBR_CMAKE_BOOL=		WITH_CYCLES_EMBREE
 CYCLESEMBR_LIB_DEPENDS=		libembree3.so:graphics/embree
+CYCLESEMBR_ONLY_FOR_ARCHS=	amd64
+CYCLESEMBR_ONLY_FOR_ARCHS_REASON=	embree only supports amd64
 CYCLESOSL_IMPLIES=		CYCLES
 CYCLESOSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
 CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
@@ -81,10 +85,11 @@ CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
 CYCLESOSL_BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 CYCLESOSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
 CYCLESOSL_RUN_DEPENDS=		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+CYCLESOSL_BROKEN=		OSL not supported with current ocio
 DDS_CMAKE_BOOL=			WITH_IMAGE_DDS
 DRACO_CMAKE_BOOL=		WITH_DRACO
 FFMPEG_CMAKE_BOOL=		WITH_CODEC_FFMPEG
-FFMPEG_LDFLAGS=			-L${PREFIX}/lib -lflite -lflite_cmu_us_kal -lflite_cmulex -lflite_usenglish
+FFMPEG_LDFLAGS=			-L${LOCALBASE}/lib -lflite -lflite_cmu_us_kal -lflite_cmulex -lflite_usenglish
 FFMPEG_LIB_DEPENDS=		libavutil.so:multimedia/ffmpeg \
 				libflite_cmu_us_kal.so:audio/flite
 FFTW3_CMAKE_BOOL=		WITH_FFTW3
@@ -115,7 +120,7 @@ NLS_USES=			gettext iconv:lib,wchar_t
 OPENAL_CMAKE_BOOL=		WITH_OPENAL
 OPENAL_USES=			openal:al,alut
 OPENCOLORIO_CMAKE_BOOL=		WITH_OPENCOLORIO
-OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
+OPENCOLORIO_LIB_DEPENDS=	libOpenColorIOv1.so:graphics/opencoloriov1 \
 				libyaml-cpp03.so:devel/yaml-cpp03 \
 				libtinyxml.so:textproc/tinyxml
 OPENEXR_CMAKE_BOOL=		WITH_IMAGE_OPENEXR
@@ -124,9 +129,12 @@ OPENEXR_LIB_DEPENDS=		libImath.so:math/Imath \
 				libOpenEXR.so:graphics/openexr
 OPENIMAGEIO_IMPLIES=		OPENEXR TIFF
 OPENIMAGEIO_CMAKE_BOOL=		WITH_OPENIMAGEIO
-OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
+OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO-ociov1.so:graphics/openimageio-ociov1
+#OPENIMAGEIO_LDFLAGS=		-lOpenImageIO_Util-ociov1
 OPENIMAGEDN_CMAKE_BOOL=		WITH_OPENIMAGEDENOISE
 OPENIMAGEDN_LIB_DEPENDS=	libOpenImageDenoise.so:graphics/oidn
+OPENIMAGEDN_ONLY_FOR_ARCHS=	amd64
+OPENIMAGEDN_ONLY_FOR_ARCHS_REASON=	oidn only supports amd64
 # openmp usually works on amd64
 OPENMP_CMAKE_BOOL=		WITH_OPENMP
 OPENSUBDIV_CMAKE_BOOL=		WITH_OPENSUBDIV
@@ -167,8 +175,15 @@ LLVM_VER=	${LLVM_DEFAULT}
 .endif
 
 post-patch-OPENCOLORIO-on:
-	@${REINPLACE_CMD} -e 's|yaml-cpp|&03|' \
-		${PATCH_WRKSRC}/build_files/cmake/Modules/FindOpenColorIO.cmake
+	@${REINPLACE_CMD} -e 's|OpenColorIO/OpenColorIO.h|OpenColorIOv1/OpenColorIO.h|' \
+		${PATCH_WRKSRC}/intern/opencolorio/ocio_impl_glsl.cc \
+		${PATCH_WRKSRC}/intern/opencolorio/ocio_impl.cc \
+		${PATCH_WRKSRC}/intern/cycles/render/colorspace.cpp \
+		${PATCH_WRKSRC}/intern/cycles/render/shader.cpp
+	@${REINPLACE_CMD} -e 's|<OpenImageIO/|<OpenImageIO-ociov1/|' \
+		${PATCH_WRKSRC}/source/blender/imbuf/intern/oiio/openimageio_api.cpp
+	@${FIND} ${PATCH_WRKSRC}/intern/cycles -iname '*.cpp' -or -iname '*.h' | \
+		${XARGS} ${REINPLACE_CMD} -e 's|<OpenImageIO/|<OpenImageIO-ociov1/|'
 
 post-build:
 	@(cd ${WRKSRC}/doc/manpage && \

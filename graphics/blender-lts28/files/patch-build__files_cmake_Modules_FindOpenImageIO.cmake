@@ -1,0 +1,29 @@
+--- build_files/cmake/Modules/FindOpenImageIO.cmake.orig	2021-12-06 20:51:59 UTC
++++ build_files/cmake/Modules/FindOpenImageIO.cmake
+@@ -36,7 +36,7 @@ SET(_openimageio_SEARCH_DIRS
+ 
+ FIND_PATH(OPENIMAGEIO_INCLUDE_DIR
+   NAMES
+-    OpenImageIO/imageio.h
++    OpenImageIO-ociov1/imageio.h
+   HINTS
+     ${_openimageio_SEARCH_DIRS}
+   PATH_SUFFIXES
+@@ -45,7 +45,7 @@ FIND_PATH(OPENIMAGEIO_INCLUDE_DIR
+ 
+ FIND_LIBRARY(OPENIMAGEIO_LIBRARY
+   NAMES
+-    OpenImageIO
++    OpenImageIO-ociov1
+   HINTS
+     ${_openimageio_SEARCH_DIRS}
+   PATH_SUFFIXES
+@@ -70,7 +70,7 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS(OpenImageIO DEFAULT_
+ IF(OPENIMAGEIO_FOUND)
+   SET(OPENIMAGEIO_LIBRARIES ${OPENIMAGEIO_LIBRARY})
+   SET(OPENIMAGEIO_INCLUDE_DIRS ${OPENIMAGEIO_INCLUDE_DIR})
+-  IF(EXISTS ${OPENIMAGEIO_INCLUDE_DIR}/OpenImageIO/pugixml.hpp)
++  IF(EXISTS ${OPENIMAGEIO_INCLUDE_DIR}/OpenImageIO-ociov1/pugixml.hpp)
+     SET(OPENIMAGEIO_PUGIXML_FOUND TRUE)
+   ELSE()
+     SET(OPENIMAGEIO_PUGIXML_FOUND FALSE)
