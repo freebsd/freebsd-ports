@@ -1,0 +1,11 @@
+--- src/libOpenImageIO/CMakeLists.txt.orig	2021-12-07 17:19:26 UTC
++++ src/libOpenImageIO/CMakeLists.txt
+@@ -195,7 +195,7 @@ set_target_properties(OpenImageIO
+                       PROPERTIES
+                          VERSION     ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
+                          SOVERSION   ${SOVERSION}
+-                         OUTPUT_NAME OpenImageIO${OIIO_LIBNAME_SUFFIX}
++                         OUTPUT_NAME OpenImageIO-ociov1${OIIO_LIBNAME_SUFFIX}
+                          POSITION_INDEPENDENT_CODE ON
+                      )
+ if (VISIBILITY_MAP_COMMAND)

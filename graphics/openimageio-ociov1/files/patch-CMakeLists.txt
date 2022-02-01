@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2021-10-31 17:08:10 UTC
++++ CMakeLists.txt
+@@ -214,8 +214,8 @@ endif ()
+ 
+ # install pkgconfig file
+ if (NOT MSVC)
+-   configure_file(src/build-scripts/OpenImageIO.pc.in "${CMAKE_BINARY_DIR}/OpenImageIO.pc" @ONLY)
+-   install (FILES "${CMAKE_BINARY_DIR}/OpenImageIO.pc"
++   configure_file(src/build-scripts/OpenImageIO.pc.in "${CMAKE_BINARY_DIR}/OpenImageIO-ociov1.pc" @ONLY)
++   install (FILES "${CMAKE_BINARY_DIR}/OpenImageIO-ociov1.pc"
+             DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+             COMPONENT developer)
+ endif()

@@ -1,0 +1,34 @@
+--- src/include/CMakeLists.txt.orig	2021-12-07 16:54:34 UTC
++++ src/include/CMakeLists.txt
+@@ -48,12 +48,12 @@ list (APPEND public_headers "${CMAKE_BINARY_DIR}/inclu
+ 
+ 
+ install (FILES ${public_headers}
+-         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
++         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}-ociov1
+          COMPONENT developer)
+ 
+ file (GLOB detail_headers OpenImageIO/detail/*.h)
+ install (FILES ${detail_headers}
+-         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/detail
++         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}-ociov1/detail
+          COMPONENT developer)
+ 
+ set (fmt_headers
+@@ -65,7 +65,7 @@ set (fmt_headers
+ file (COPY ${fmt_headers}
+       DESTINATION ${CMAKE_BINARY_DIR}/include/OpenImageIO/detail/fmt)
+ install (FILES ${fmt_headers}
+-         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/detail/fmt
++         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}-ociov1/detail/fmt
+          COMPONENT developer)
+ 
+ if (NOT USE_EXTERNAL_PUGIXML)
+@@ -76,6 +76,6 @@ if (NOT USE_EXTERNAL_PUGIXML)
+     file (COPY ${pugixml_headers}
+           DESTINATION ${CMAKE_BINARY_DIR}/include/OpenImageIO/detail/pugixml)
+     install (FILES ${pugixml_headers}
+-             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/detail/pugixml
++             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}-ociov1/detail/pugixml
+              COMPONENT developer)
+ endif ()
