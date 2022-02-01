@@ -1,5 +1,6 @@
 PORTNAME=	pgloader
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 MASTER_SITES=	https://beta.quicklisp.org/archive/alexandria/2020-09-25/:alexandria \
@@ -32,7 +33,7 @@ MASTER_SITES=	https://beta.quicklisp.org/archive/alexandria/2020-09-25/:alexandr
 		https://beta.quicklisp.org/archive/cxml/2020-06-10/:cxml \
 		https://beta.quicklisp.org/archive/drakma/2019-11-30/:drakma \
 		https://beta.quicklisp.org/archive/dynamic-classes/2013-01-28/:dynamicclasses \
-		https://beta.quicklisp.org/archive/esrap/2020-12-20/:esrap \
+		https://beta.quicklisp.org/archive/esrap/2021-10-20/:esrap \
 		https://beta.quicklisp.org/archive/flexi-streams/2020-09-25/:flexistreams \
 		https://beta.quicklisp.org/archive/garbage-pools/2021-01-24/:garbagepools \
 		https://beta.quicklisp.org/archive/global-vars/2014-11-06/:globalvars \
@@ -93,7 +94,7 @@ DISTFILES=	alexandria-20200925-git.tgz:alexandria \
 		cxml-20200610-git.tgz:cxml \
 		drakma-v2.0.7.tgz:drakma \
 		dynamic-classes-20130128-git.tgz:dynamicclasses \
-		esrap-20201220-git.tgz:esrap \
+		esrap-20211020-git.tgz:esrap \
 		flexi-streams-20200925-git.tgz:flexistreams \
 		garbage-pools-20210124-git.tgz:garbagepools \
 		global-vars-20141106-git.tgz:globalvars \
@@ -195,7 +196,7 @@ post-extract:
 	${RLN} ${WRKDIR}/cxml-20200610-git ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/drakma-v2.0.7 ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/dynamic-classes-20130128-git ${WRKSRC}/${MY_QL_SW}
-	${RLN} ${WRKDIR}/esrap-20201220-git ${WRKSRC}/${MY_QL_SW}
+	${RLN} ${WRKDIR}/esrap-20211020-git ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/flexi-streams-20200925-git ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/garbage-pools-20210124-git ${WRKSRC}/${MY_QL_SW}
 	${RLN} ${WRKDIR}/global-vars-20141106-git ${WRKSRC}/${MY_QL_SW}
