@@ -12,12 +12,14 @@ COMMENT=	Image viewer that uses Gdk-Pixbuf and OpenGL
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libSM.so:x11/libSM
 
 USES=		compiler:c11 desktop-file-utils gettext gl gmake gnome \
-		localbase:ldflags pathfix pkgconfig tar:bzip2
+		localbase:ldflags pathfix pkgconfig tar:bzip2 xorg
 USE_GNOME=	gnomeprefix gtk20
 USE_GL=		gl glu
+USE_XORG=	sm
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
