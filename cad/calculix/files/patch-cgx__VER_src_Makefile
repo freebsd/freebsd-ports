@@ -1,5 +1,5 @@
---- cgx_2.18/src/Makefile.orig	2021-03-11 17:35:46 UTC
-+++ cgx_2.18/src/Makefile
+--- cgx_2.19/src/Makefile.orig	2021-03-11 17:35:46 UTC
++++ cgx_2.19/src/Makefile
 @@ -4,11 +4,11 @@ CFLAGS = -O2 -Wall -Wno-narrowing \
    -I/usr/include/GL \
    -I../../libSNL/src \

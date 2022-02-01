@@ -1,4 +1,4 @@
---- Makefile.orig	2021-09-15 19:39:24 UTC
+--- Makefile.orig	2021-12-17 12:13:23 UTC
 +++ Makefile
 @@ -1,9 +1,9 @@
  
@@ -21,12 +21,12 @@
 -       $(DIR)/spooles.a \
 -	../../../ARPACK/libarpack_INTEL.a \
 -       -lpthread -lm -lc
-+       -lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% \
-+       -lpthread -lm
++	-lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% \
++	-lpthread -lm
  
- ccx_2.18: $(OCCXMAIN) ccx_2.18.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.18.c; $(FC)  -Wall -O2 -o $@ $(OCCXMAIN) ccx_2.18.a $(LIBS) -fopenmp
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.18.c; $(FC) -o $@ $(OCCXMAIN) ccx_2.18.a $(LIBS) -fopenmp
+ ccx_2.19: $(OCCXMAIN) ccx_2.19.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.19.c; $(FC)  -Wall -O2 -o $@ $(OCCXMAIN) ccx_2.19.a $(LIBS) -fopenmp
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.19.c; $(FC) $(FFLAGS) -o $@ $(OCCXMAIN) ccx_2.19.a $(LIBS) -fopenmp
  
- ccx_2.18.a: $(OCCXF) $(OCCXC)
+ ccx_2.19.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?
