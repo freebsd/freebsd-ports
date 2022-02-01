@@ -5,7 +5,7 @@ PORTVERSION=	2.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cooperative threading library for OCaml
 
 LICENSE=	LGPL21
@@ -55,6 +55,8 @@ post-patch:
 	    ; s,else Unix\.socketpair ,&?cloexec:None,' \
 		${WRKSRC}/src/unix/lwt_unix.ml \
 		${WRKSRC}/src/unix/lwt_unix.mli
+	@${REINPLACE_CMD} -e 's,socket -> string,socket -> bytes,' \
+		${WRKSRC}/src/ssl/lwt_ssl.mli
 
 do-configure:
 	cd ${WRKSRC}; ocaml setup.ml -configure ${CONFIGURE_ARGS}
