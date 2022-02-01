@@ -1,9 +1,8 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	lv2file
-DISTVERSION=	0.84-31
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gaed7c77
+DISTVERSIONPREFIX=	upstream/
+DISTVERSION=	0.93
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,12 +20,13 @@ LIB_DEPENDS=	libargtable2.so:devel/argtable \
 		libsratom-0.so:audio/sratom
 
 USES=		gmake localbase pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremysalwen
-PLIST_FILES=	bin/lv2file share/man/man1/lv2file.1.gz
+
+PLIST_FILES=	bin/lv2file
 
 post-install:
-		${INSTALL_MAN} ${WRKSRC}/debian/lv2file.1 ${STAGEDIR}${PREFIX}/share/man/man1
 		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lv2file
 
 .include <bsd.port.mk>
