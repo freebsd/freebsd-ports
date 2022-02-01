@@ -1,0 +1,131 @@
+OPTIONS_DEFINE=		\
+	ALEMBIC		\
+	ALEMBIC_HDF5	\
+	AVI		\
+	BULLET 		\
+	CAMERATRACK 	\
+	CINEON 		\
+	COLLADA		\
+	COMPOSITOR 	\
+	CYCLES 		\
+	CYCLESEMBR	\
+	CYCLESOSL 	\
+	DDS 		\
+	DRACO		\
+	EBOOL		\
+	FFMPEG 		\
+	FFTW3 		\
+	FRAMESERVER	\
+	FREESTYLE	\
+	HDR 		\
+	HEADLESS 	\
+	INPUT_NDOF	\
+	JACK 		\
+	LZO		\
+	LZMA		\
+	MENU 		\
+	MOD_BOOLEAN 	\
+	MOD_FLUID	\
+	MOD_OCEANSIM 	\
+	MOD_REMESH	\
+	MOD_SMOKE	\
+	NLS 		\
+	OPENAL 		\
+	OPENCOLORIO 	\
+	OPENEXR 	\
+	OPENIMAGEIO	\
+	OPENIMAGEDN	\
+	OPENMP 		\
+	OPENSUBDIV	\
+	OPENVDB		\
+	RAYOPTIMIZATION	\
+	SDL		\
+	SNDFILE		\
+	TBB		\
+	TIFF		\
+	TRACE		\
+	XINPUT		\
+	XF86VMODE
+
+OPTIONS_DEFAULT=	\
+	ALEMBIC		\
+	ALEMBIC_HDF5	\
+	AVI		\
+	BULLET		\
+	CINEON		\
+	COLLADA		\
+	COMPOSITOR	\
+	CYCLES		\
+	DDS		\
+	DRACO		\
+	EBOOL		\
+	FFMPEG 		\
+	FFTW3		\
+	FRAMESERVER	\
+	FREESTYLE	\
+	HDR		\
+	INPUT_NDOF	\
+	LZO		\
+	LZMA		\
+	MENU		\
+	MOD_BOOLEAN	\
+	MOD_FLUID	\
+	MOD_OCEANSIM	\
+	MOD_REMESH	\
+	MOD_SMOKE	\
+	OPENAL		\
+	OPENCOLORIO	\
+	OPENEXR		\
+	OPENIMAGEIO	\
+	OPENSUBDIV	\
+	OPENVDB		\
+	RAYOPTIMIZATION	\
+	SDL		\
+	TBB		\
+	TIFF		\
+	TRACE		\
+	XINPUT		\
+	XF86VMODE
+
+OPTIONS_DEFAULT_amd64=	CAMERATRACK CYCLESEMBR OPENIMAGEDN
+
+ALEMBIC_DESC=		Enable Alembic file support
+ALEMBIC_HDF5_DESC=	Enable Alembic hdf5 file support
+AVI_DESC=		Enable Blender's own AVI file support
+BULLET_DESC=		Bullet physics engine
+CINEON_DESC=		CINEON and DPX graphics format support
+CAMERATRACK_DESC=	Camera tracking support
+COLLADA_DESC=		Enable read/write support for COLLADA files
+COMPOSITOR_DESC=	Use the tile-based nodal compositor
+CYCLES_DESC=		Cycles render engine support
+CYCLESEMBR_DESC=	Embree support (amd64 only)
+CYCLESOSL_DESC=		Shading support for the cycles render engine
+DDS_DESC=		DDS graphics format support
+# this is required to support gltf import/export
+DRACO_DESC=		Install draco python module
+EBOOL_DESC=		Enable exact boolean support
+FFTW3_DESC=		Use fftw for smoke and audio effects
+FRAMESERVER_DESC=	Image FrameServer support for rendering
+FREESTYLE_DESC=		Enable advanced edges rendering
+HDR_DESC=		Generic high dynamic-range (HDR) support
+HEADLESS_DESC=		Disable user interface (for render-farms)
+INPUT_NDOF_DESC=	Enable NDOF input device support
+LZO_DESC=		Fast compression support
+LZMA_DESC=		Best compression support
+MENU_DESC=		Install desktop menu
+MOD_BOOLEAN_DESC=	Boolean modifier support
+MOD_FLUID_DESC=		Fluid simulation support
+MOD_OCEANSIM_DESC=	Ocean simulation support
+MOD_REMESH_DESC=	Remesh modifier support
+MOD_SMOKE_DESC=		Smoke simulation support
+OPENCOLORIO_DESC=	OpenColorIO-based color management support
+OPENIMAGEIO_DESC=	OpenImageIO image processing support
+OPENIMAGEDN_DESC=	OpenImageDenoise support
+OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
+OPENVDB_DESC=		Use openVDB library for volumetric data
+RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
+SDL_DESC=		Audio and Joystick support using SDL
+TBB_DESC=		Enable use of Intel's tbb
+TRACE_DESC=		Enable tracing image to GP stroke
+XINPUT_DESC=		X11 Xinput (tablet) support
+XF86VMODE_DESC=		X11 video mode switching support
