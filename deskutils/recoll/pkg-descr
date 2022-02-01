@@ -7,7 +7,7 @@ Features:
  * Easy installation, few dependencies. No database daemon, web server,
    desktop environment or exotic language necessary.
  * Will run on most Unix-based systems
- * Qt 4 GUI, plus command line.
+ * Qt 5 GUI, plus command line.
  * Searches most common document types, emails and their attachments.
    Transparently handles decompression (gzip, bzip2).
  * Powerful query facilities, with boolean searches, phrases, proximity,
