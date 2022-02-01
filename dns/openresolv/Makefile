@@ -1,19 +1,19 @@
 # Created by: Roy Marples <roy@marples.name>
 
 PORTNAME=	openresolv
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	3.12.0
 CATEGORIES=	dns
-MASTER_SITES=	http://roy.marples.name/downloads/openresolv/ \
-		ftp://roy.marples.name/pub/openresolv/
+MASTER_SITES=	https://roy.marples.name/downloads/openresolv/
 
 MAINTAINER=	roy@marples.name
 COMMENT=	Resolvconf compatible framework for managing resolv.conf
 
-USES=		cpe tar:bzip2
+USES=		cpe tar:xz
 CPE_VENDOR=	${PORTNAME}_project
-NO_ARCH=	yes
 
+GNU_CONFIGURE=	yes
+
+NO_ARCH=	yes
 SUB_FILES=	pkg-deinstall pkg-message
 
 .include <bsd.port.mk>

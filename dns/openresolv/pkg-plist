@@ -1,9 +1,12 @@
-@dir etc/resolvconf/update-libc.d
-@dir etc/resolvconf/resolv.conf.d
+etc/resolvconf.conf
+libexec/resolvconf/dnsmasq
+libexec/resolvconf/libc
+libexec/resolvconf/libc.d/avahi-daemon
+libexec/resolvconf/libc.d/mdnsd
+libexec/resolvconf/named
+libexec/resolvconf/pdns_recursor
+libexec/resolvconf/pdnsd
+libexec/resolvconf/unbound
 sbin/resolvconf
-etc/resolvconf/run
-etc/resolvconf/update.d/libc
-etc/resolvconf/update.d/dnsmasq
-etc/resolvconf/update.d/named
-man/man8/resolvconf.8.gz
-@dir /var/run/resolvconf
+share/man/man5/resolvconf.conf.5.gz
+share/man/man8/resolvconf.8.gz
