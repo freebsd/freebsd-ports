@@ -69,7 +69,7 @@ LDFLAGS=	-Wl,-E
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-6.* redis-devel-6.*
+CONFLICTS?=	redis-[1-9].* redis-devel-* redis62-*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb \
