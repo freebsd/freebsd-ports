@@ -1,6 +1,6 @@
---- content/browser/gpu/compositor_util.cc.orig	2021-09-24 04:26:05 UTC
+--- content/browser/gpu/compositor_util.cc.orig	2021-12-14 11:45:05 UTC
 +++ content/browser/gpu/compositor_util.cc
-@@ -127,11 +127,11 @@ const GpuFeatureData GetGpuFeatureData(
+@@ -145,11 +145,11 @@ const GpuFeatureData GetGpuFeatureData(
      {"video_decode",
       SafeGetFeatureStatus(gpu_feature_info,
                            gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_DECODE),

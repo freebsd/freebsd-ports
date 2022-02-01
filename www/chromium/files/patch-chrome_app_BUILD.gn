@@ -1,8 +1,8 @@
---- chrome/app/BUILD.gn.orig	2021-09-24 04:25:56 UTC
+--- chrome/app/BUILD.gn.orig	2021-12-31 00:57:19 UTC
 +++ chrome/app/BUILD.gn
-@@ -154,7 +154,7 @@ static_library("test_support") {
-     "//v8:v8_headers",
+@@ -184,7 +184,7 @@ static_library("test_support") {
    ]
+   public_deps = []
  
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {

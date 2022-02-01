@@ -1,4 +1,4 @@
---- chrome/browser/download/download_commands.cc.orig	2021-09-24 04:25:58 UTC
+--- chrome/browser/download/download_commands.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/download/download_commands.cc
 @@ -27,7 +27,7 @@
  #include "net/base/url_util.h"
@@ -9,7 +9,7 @@
      defined(OS_MAC) || defined(OS_FUCHSIA)
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_finder.h"
-@@ -165,7 +165,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -168,7 +168,7 @@ void DownloadCommands::ExecuteCommand(Command command)
    model_->ExecuteCommand(this, command);
  }
  
@@ -18,7 +18,7 @@
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
  Browser* DownloadCommands::GetBrowser() const {
-@@ -200,7 +200,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+@@ -203,7 +203,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
  #endif
  }
  

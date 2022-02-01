@@ -1,6 +1,6 @@
---- chrome/test/BUILD.gn.orig	2021-10-08 06:25:42 UTC
+--- chrome/test/BUILD.gn.orig	2021-12-31 00:57:26 UTC
 +++ chrome/test/BUILD.gn
-@@ -536,7 +536,7 @@ static_library("test_support") {
+@@ -538,7 +538,7 @@ static_library("test_support") {
      ]
    }
  
@@ -9,8 +9,8 @@
      public_deps += [ "//components/crash/core/app" ]
    }
  
-@@ -2119,7 +2119,7 @@ if (!is_android && !is_fuchsia) {
-       ]
+@@ -2191,7 +2191,7 @@ if (!is_android && !is_fuchsia) {
+       sources += [ "../browser/ui/views/frame/desktop_browser_frame_aura_linux_browsertest.cc" ]
      }
  
 -    if (is_linux || is_chromeos) {
@@ -18,7 +18,7 @@
        sources += [
          "../browser/error_reporting/webui_js_error_reporting_browsertest.cc",
        ]
-@@ -6353,7 +6353,7 @@ test("unit_tests") {
+@@ -6604,7 +6604,7 @@ test("unit_tests") {
      ]
    }
  
@@ -27,7 +27,7 @@
      deps += [ "//chrome/browser/error_reporting:unit_test" ]
    }
  
-@@ -8445,7 +8445,7 @@ test("chrome_app_unittests") {
+@@ -8765,7 +8765,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//pdf:pdf_ppapi",
    ]

@@ -1,6 +1,6 @@
---- base/location_unittest.cc.orig	2021-04-14 18:40:48 UTC
+--- base/location_unittest.cc.orig	2021-12-14 11:44:55 UTC
 +++ base/location_unittest.cc
-@@ -32,7 +32,7 @@ TEST(LocationTest, CurrentYieldsCorrectValue) {
+@@ -37,7 +37,7 @@ TEST(LocationTest, CurrentYieldsCorrectValue) {
    EXPECT_EQ(here.line_number(), previous_line + 1);
    EXPECT_STREQ("TestBody", here.function_name());
  #endif

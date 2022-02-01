@@ -1,0 +1,13 @@
+--- third_party/tflite/BUILD.gn.orig	2022-01-21 17:09:40 UTC
++++ third_party/tflite/BUILD.gn
+@@ -61,6 +61,10 @@ config("tflite_flags") {
+     defines += [ "TFLITE_WITH_RUY" ]
+   }
+ 
++  if (is_bsd) {
++    cflags -= [ "-Wno-unused-but-set-variable" ]
++  }
++
+   if (is_linux || is_chromeos_lacros) {
+     defines += [ "GEMMLOWP_ALLOW_SLOW_SCALAR_FALLBACK" ]
+   }

@@ -1,8 +1,8 @@
---- content/ppapi_plugin/ppapi_plugin_main.cc.orig	2021-07-19 18:45:15 UTC
+--- content/ppapi_plugin/ppapi_plugin_main.cc.orig	2021-12-31 00:57:32 UTC
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
-@@ -49,6 +49,10 @@
- #include "content/public/common/sandbox_init.h"
+@@ -50,6 +50,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
+ #include "sandbox/policy/sandbox_type.h"
  #endif
 +#if defined(OS_FREEBSD)
 +#include "content/public/common/sandbox_init.h"
@@ -11,7 +11,7 @@
  
  #ifdef V8_USE_EXTERNAL_STARTUP_DATA
  #include "gin/v8_initializer.h"
-@@ -140,6 +144,9 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+@@ -141,6 +145,9 @@ int PpapiPluginMain(const MainFunctionParams& paramete
        sandbox::policy::SandboxTypeFromCommandLine(command_line),
        sandbox::policy::SandboxLinux::PreSandboxHook(),
        sandbox::policy::SandboxLinux::Options());

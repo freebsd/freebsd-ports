@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2021-09-24 04:25:55 UTC
+--- base/BUILD.gn.orig	2021-12-31 00:57:18 UTC
 +++ base/BUILD.gn
-@@ -935,7 +935,7 @@ component("base") {
+@@ -954,7 +954,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,7 +9,7 @@
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -946,6 +946,11 @@ component("base") {
+@@ -965,6 +965,11 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -21,7 +21,7 @@
    }
  
    if (is_win) {
-@@ -1367,7 +1372,7 @@ component("base") {
+@@ -1391,7 +1396,7 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -30,7 +30,7 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1420,7 +1425,7 @@ component("base") {
+@@ -1444,7 +1449,7 @@ component("base") {
            "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
          ]
        }
@@ -39,7 +39,7 @@
          sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
        }
        if (is_win) {
-@@ -2099,6 +2104,34 @@ component("base") {
+@@ -2142,6 +2147,34 @@ component("base") {
      }
    }
  
@@ -74,7 +74,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3292,7 +3325,7 @@ test("base_unittests") {
+@@ -3359,7 +3392,7 @@ test("base_unittests") {
      }
    }
  
@@ -83,7 +83,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3339,7 +3372,7 @@ test("base_unittests") {
+@@ -3406,7 +3439,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]

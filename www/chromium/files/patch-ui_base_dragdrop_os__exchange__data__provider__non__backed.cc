@@ -1,6 +1,6 @@
---- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2021-09-14 01:52:22 UTC
+--- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2021-12-14 11:45:39 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -103,14 +103,14 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -85,14 +85,14 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
  }
  
  bool OSExchangeDataProviderNonBacked::GetString(std::u16string* data) const {

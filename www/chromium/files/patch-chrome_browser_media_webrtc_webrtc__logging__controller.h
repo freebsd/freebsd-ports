@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.h
-@@ -129,13 +129,13 @@ class WebRtcLoggingController
+@@ -132,13 +132,13 @@ class WebRtcLoggingController
                           size_t web_app_id,
                           const StartEventLoggingCallback& callback);
  
@@ -16,7 +16,7 @@
  
    // chrome::mojom::WebRtcLoggingClient methods:
    void OnAddMessages(
-@@ -188,7 +188,7 @@ class WebRtcLoggingController
+@@ -191,7 +191,7 @@ class WebRtcLoggingController
        bool success,
        const std::string& error_message);
  
@@ -25,7 +25,7 @@
    // Grants the render process access to the 'WebRTC Logs' directory, and
    // invokes |callback| with the ids necessary to create a DirectoryEntry
    // object. If the |logs_path| couldn't be created or found, |error_callback|
-@@ -196,7 +196,7 @@ class WebRtcLoggingController
+@@ -199,7 +199,7 @@ class WebRtcLoggingController
    void GrantLogsDirectoryAccess(LogsDirectoryCallback callback,
                                  LogsDirectoryErrorCallback error_callback,
                                  const base::FilePath& logs_path);

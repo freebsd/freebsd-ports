@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2021-09-24 04:26:00 UTC
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2021-12-31 00:57:25 UTC
 +++ chrome/browser/ui/browser_view_prefs.cc
-@@ -29,7 +29,7 @@ const char kTabStripLayoutType[] = "tab_strip_layout_t
+@@ -17,7 +17,7 @@ namespace {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -8,8 +8,8 @@
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  bool GetCustomFramePrefDefault() {
  #if defined(USE_OZONE)
-   if (features::IsUsingOzonePlatform()) {
-@@ -57,10 +57,10 @@ void RegisterBrowserViewProfilePrefs(
+     return ui::OzonePlatform::GetInstance()
+@@ -35,9 +35,9 @@ void RegisterBrowserViewProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,4 +21,3 @@
 +#endif  // (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) &&
          // defined(!OS_CHROMEOS)
  }
- 

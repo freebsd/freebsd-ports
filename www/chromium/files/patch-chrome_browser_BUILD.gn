@@ -1,8 +1,8 @@
---- chrome/browser/BUILD.gn.orig	2021-09-24 04:25:57 UTC
+--- chrome/browser/BUILD.gn.orig	2021-12-31 00:57:21 UTC
 +++ chrome/browser/BUILD.gn
-@@ -2458,9 +2458,18 @@ static_library("browser") {
-       deps += [ "//chromeos/services/libassistant/public/mojom" ]
-     }
+@@ -2520,9 +2520,18 @@ static_library("browser") {
+       "policy/messaging_layer/util/heartbeat_event_factory.h",
+     ]
    }
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_bsd) {
@@ -20,7 +20,16 @@
    if (use_ozone) {
      deps += [
        "//ui/events/ozone",
-@@ -5515,6 +5524,17 @@ static_library("browser") {
+@@ -5702,7 +5711,7 @@ static_library("browser") {
+     }
+   }
+ 
+-  if (is_linux && use_dbus) {
++  if ((is_linux && !is_bsd) && use_dbus) {
+     sources += [
+       "dbus_memory_pressure_evaluator_linux.cc",
+       "dbus_memory_pressure_evaluator_linux.h",
+@@ -5801,6 +5810,17 @@ static_library("browser") {
      ]
    }
  
@@ -38,8 +47,8 @@
    if (is_posix) {
      sources += [
        "shutdown_signal_handlers_posix.cc",
-@@ -5675,7 +5695,7 @@ static_library("browser") {
-     ]
+@@ -5966,7 +5986,7 @@ static_library("browser") {
+     deps += [ "//chromeos/ui/base" ]
    }
  
 -  if (is_posix && !is_mac) {

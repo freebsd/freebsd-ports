@@ -1,6 +1,6 @@
---- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2021-04-20 19:05:13 UTC
+--- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2021-12-31 01:00:54 UTC
 +++ third_party/perfetto/include/perfetto/ext/base/thread_utils.h
-@@ -23,7 +23,8 @@
+@@ -24,7 +24,8 @@
  
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
@@ -10,7 +10,7 @@
  #include <pthread.h>
  #include <string.h>
  #include <algorithm>
-@@ -41,7 +42,8 @@ namespace base {
+@@ -42,7 +43,8 @@ namespace base {
  
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \

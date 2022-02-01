@@ -1,6 +1,6 @@
---- apps/app_restore_service_browsertest.cc.orig	2021-04-14 18:40:47 UTC
+--- apps/app_restore_service_browsertest.cc.orig	2021-12-14 11:44:54 UTC
 +++ apps/app_restore_service_browsertest.cc
-@@ -148,7 +148,7 @@ IN_PROC_BROWSER_TEST_F(PlatformAppBrowserTest, FileAcc
+@@ -140,7 +140,7 @@ IN_PROC_BROWSER_TEST_F(PlatformAppBrowserTest, FileAcc
  }
  
  // Flaky: crbug.com/269613

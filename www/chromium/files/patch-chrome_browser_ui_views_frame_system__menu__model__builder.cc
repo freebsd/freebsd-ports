@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2021-09-24 04:26:00 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -111,7 +111,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -77,7 +77,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    model->AddItemWithStringId(IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
-@@ -128,7 +128,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -93,7 +93,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    bool supports_server_side_decorations = true;
  #if defined(USE_OZONE) && \
-@@ -185,7 +185,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -148,7 +148,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

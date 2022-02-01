@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2021-12-14 11:45:00 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.cc
 @@ -31,7 +31,7 @@ void AppearanceHandler::RegisterMessages() {
                            base::Unretained(this)));
@@ -6,7 +6,7 @@
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
-   web_ui()->RegisterMessageCallback(
+   web_ui()->RegisterDeprecatedMessageCallback(
        "useSystemTheme",
        base::BindRepeating(&AppearanceHandler::HandleUseSystemTheme,
 @@ -45,7 +45,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba

@@ -1,6 +1,6 @@
---- weblayer/browser/system_network_context_manager.cc.orig	2021-04-14 18:41:39 UTC
+--- weblayer/browser/system_network_context_manager.cc.orig	2021-12-14 11:45:40 UTC
 +++ weblayer/browser/system_network_context_manager.cc
-@@ -68,10 +68,10 @@ void SystemNetworkContextManager::ConfigureDefaultNetw
+@@ -69,10 +69,10 @@ void SystemNetworkContextManager::ConfigureDefaultNetw
    network_context_params->user_agent = user_agent;
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

@@ -1,11 +1,11 @@
---- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig	2021-04-14 18:41:37 UTC
+--- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig	2021-12-14 11:45:39 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider_factory.cc
 @@ -7,7 +7,7 @@
  #include "base/notreached.h"
  #include "build/build_config.h"
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "ui/base/dragdrop/os_exchange_data_provider_non_backed.h"
  #include "ui/base/ui_base_features.h"
  #if defined(USE_OZONE)

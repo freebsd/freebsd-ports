@@ -20,10 +20,10 @@ public:
   static SandboxFreeBSD* GetInstance();
 
   // Get a description for a sandbox type.
-  static std::string GetSandboxTypeInEnglish(SandboxType sandbox_type);
+  static std::string GetSandboxTypeInEnglish(sandbox::mojom::Sandbox sandbox_type);
 
   // Initializing the Capsicum sandbox.
-  bool InitializeSandbox(SandboxType sandbox_type);
+  bool InitializeSandbox(sandbox::mojom::Sandbox sandbox_type);
 
   // Testing whether the sandbox is enabled.
   bool IsSandboxed();

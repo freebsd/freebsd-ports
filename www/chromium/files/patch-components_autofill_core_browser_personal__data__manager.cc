@@ -1,6 +1,6 @@
---- components/autofill/core/browser/personal_data_manager.cc.orig	2021-09-24 04:26:02 UTC
+--- components/autofill/core/browser/personal_data_manager.cc.orig	2021-12-31 00:57:28 UTC
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -2071,7 +2071,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -2107,7 +2107,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
  // The feature is only for Linux, Windows and Mac.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
      defined(OS_APPLE)
    // This option should only be shown for users that have not enabled the Sync
    // Feature and that have server credit cards available.
-@@ -2095,7 +2095,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -2129,7 +2129,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
    return !is_opted_in;
  #else
    return false;

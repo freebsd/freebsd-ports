@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2021-09-24 18:32:31 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2021-12-14 11:45:00 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
-@@ -62,7 +62,7 @@ class SigninViewControllerDelegateViews
+@@ -63,7 +63,7 @@ class SigninViewControllerDelegateViews
        Browser* browser,
        signin_metrics::ReauthAccessPoint);
  

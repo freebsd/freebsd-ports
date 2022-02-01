@@ -1,6 +1,6 @@
---- chrome/browser/download/download_prefs.h.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/download/download_prefs.h.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/download/download_prefs.h
-@@ -117,7 +117,7 @@ class DownloadPrefs {
+@@ -121,7 +121,7 @@ class DownloadPrefs {
    // Disables auto-open based on file extension.
    void DisableAutoOpenByUserBasedOnExtension(const base::FilePath& file_name);
  
@@ -9,7 +9,7 @@
      defined(OS_MAC)
    // Store the user preference to disk. If |should_open| is true, also disable
    // the built-in PDF plugin. If |should_open| is false, enable the PDF plugin.
-@@ -176,7 +176,7 @@ class DownloadPrefs {
+@@ -180,7 +180,7 @@ class DownloadPrefs {
  
    std::unique_ptr<policy::URLBlocklist> auto_open_allowed_by_urls_;
  

@@ -1,6 +1,6 @@
---- base/memory/platform_shared_memory_region.h.orig	2021-07-19 18:45:05 UTC
+--- base/memory/platform_shared_memory_region.h.orig	2021-12-14 11:44:55 UTC
 +++ base/memory/platform_shared_memory_region.h
-@@ -25,7 +25,7 @@
+@@ -24,7 +24,7 @@
  #include "base/files/scoped_file.h"
  #endif
  
@@ -9,7 +9,7 @@
  namespace content {
  class SandboxIPCHandler;
  }
-@@ -118,7 +118,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -117,7 +117,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
      kMaxValue = GET_SHMEM_TEMP_DIR_FAILURE
    };
  
@@ -18,7 +18,7 @@
    // Structure to limit access to executable region creation.
    struct ExecutableRegion {
     private:
-@@ -262,7 +262,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -264,7 +264,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
                             CheckPlatformHandlePermissionsCorrespondToMode);
    static PlatformSharedMemoryRegion Create(Mode mode,
                                             size_t size

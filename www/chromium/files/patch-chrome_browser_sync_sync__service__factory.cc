@@ -1,6 +1,6 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2021-09-24 18:28:51 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
-@@ -110,7 +110,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
+@@ -106,7 +106,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
  // in lacros-chrome once build flag switch of lacros-chrome is
  // complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -9,7 +9,7 @@
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
    UMA_HISTOGRAM_BOOLEAN("Sync.Local.Enabled", local_sync_backend_enabled);
-@@ -128,7 +128,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
+@@ -124,7 +124,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
  
      init_params.start_behavior = syncer::SyncServiceImpl::AUTO_START;
    }

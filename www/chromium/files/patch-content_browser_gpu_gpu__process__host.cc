@@ -1,6 +1,15 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2021-09-24 04:26:05 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2022-01-20 10:35:56 UTC
 +++ content/browser/gpu/gpu_process_host.cc
-@@ -231,8 +231,8 @@ static const char* const kSwitchNames[] = {
+@@ -98,7 +98,7 @@
+ #include "ui/ozone/public/ozone_switches.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "ui/gfx/switches.h"
+ #endif
+ 
+@@ -233,8 +233,8 @@ static const char* const kSwitchNames[] = {
      sandbox::policy::switches::kNoSandbox,
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -11,7 +20,16 @@
      switches::kDisableDevShmUsage,
  #endif
  #if defined(OS_WIN)
-@@ -1130,7 +1130,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
+@@ -295,7 +295,7 @@ static const char* const kSwitchNames[] = {
+     switches::kOzoneDumpFile,
+     switches::kDisableBufferBWCompression,
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     switches::kX11Display,
+     switches::kNoXshm,
+ #endif
+@@ -1135,7 +1135,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
    std::unique_ptr<base::CommandLine> cmd_line =
        std::make_unique<base::CommandLine>(base::CommandLine::NO_PROGRAM);
  #else

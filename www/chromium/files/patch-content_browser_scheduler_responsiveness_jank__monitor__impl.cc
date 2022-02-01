@@ -1,6 +1,6 @@
---- content/browser/scheduler/responsiveness/jank_monitor_impl.cc.orig	2021-05-12 22:05:52 UTC
+--- content/browser/scheduler/responsiveness/jank_monitor_impl.cc.orig	2021-12-14 11:45:05 UTC
 +++ content/browser/scheduler/responsiveness/jank_monitor_impl.cc
-@@ -334,7 +334,7 @@ void JankMonitorImpl::ThreadExecutionState::DidRunTask
+@@ -333,7 +333,7 @@ void JankMonitorImpl::ThreadExecutionState::DidRunTask
      // in context menus, among others). Simply ignore the mismatches for now.
      // See https://crbug.com/929813 for the details of why the mismatch
      // happens.

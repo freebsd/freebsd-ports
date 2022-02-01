@@ -1,6 +1,6 @@
---- third_party/perfetto/gn/BUILD.gn.orig	2021-04-14 18:43:06 UTC
+--- third_party/perfetto/gn/BUILD.gn.orig	2021-12-14 11:47:11 UTC
 +++ third_party/perfetto/gn/BUILD.gn
-@@ -48,13 +48,15 @@ action("gen_buildflags") {
+@@ -51,13 +51,15 @@ action("gen_buildflags") {
    # we run the tools/gen_xxx generators.
    if (enable_perfetto_watchdog) {
      perfetto_watchdog = "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() || " +

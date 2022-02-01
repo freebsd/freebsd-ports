@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc.cc.orig	2021-09-24 04:25:55 UTC
+--- base/allocator/partition_allocator/partition_alloc.cc.orig	2021-12-31 00:57:18 UTC
 +++ base/allocator/partition_allocator/partition_alloc.cc
-@@ -57,7 +57,12 @@ void PartitionAllocGlobalInit(OomFunction on_out_of_me
+@@ -56,7 +56,12 @@ void PartitionAllocGlobalInit(OomFunction on_out_of_me
        "maximum direct mapped allocation");
  
    // Check that some of our zanier calculations worked out as expected.

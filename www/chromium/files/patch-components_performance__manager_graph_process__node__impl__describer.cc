@@ -1,6 +1,6 @@
---- components/performance_manager/graph/process_node_impl_describer.cc.orig	2021-04-23 20:25:11 UTC
+--- components/performance_manager/graph/process_node_impl_describer.cc.orig	2021-12-14 11:45:03 UTC
 +++ components/performance_manager/graph/process_node_impl_describer.cc
-@@ -58,7 +58,7 @@ base::Value GetProcessValueDict(const base::Process& p
+@@ -84,7 +84,7 @@ base::Value GetProcessValueDict(const base::Process& p
    if (process.IsValid()) {
      // These properties can only be accessed for valid processes.
      ret.SetIntKey("os_priority", process.GetPriority());

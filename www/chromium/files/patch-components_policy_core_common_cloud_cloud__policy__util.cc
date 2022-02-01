@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-09-14 01:51:55 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-12-31 00:57:30 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -18,7 +18,7 @@
  #include <wincred.h>
@@ -27,7 +27,7 @@
  #include "base/system/sys_info.h"
  #endif
  
-@@ -102,6 +102,10 @@ std::string GetMachineName() {
+@@ -85,6 +85,10 @@ std::string GetMachineName() {
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
    return std::string();
@@ -38,16 +38,16 @@
  #elif defined(OS_IOS)
    // Use the Vendor ID as the machine name.
    return ios::device_util::GetVendorId();
-@@ -152,7 +156,7 @@ std::string GetMachineName() {
+@@ -137,7 +141,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || \
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD) || \
+     defined(OS_ANDROID) || defined(OS_FUCHSIA)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
-   base::win::OSInfo::VersionNumber version_number =
-@@ -177,7 +181,7 @@ std::string GetOSArchitecture() {
+@@ -161,7 +165,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

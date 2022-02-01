@@ -1,4 +1,4 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2021-09-24 04:25:56 UTC
+--- base/trace_event/malloc_dump_provider.cc.orig	2021-12-14 11:44:55 UTC
 +++ base/trace_event/malloc_dump_provider.cc
 @@ -23,6 +23,8 @@
  
@@ -9,7 +9,7 @@
  #else
  #include <malloc.h>
  #endif
-@@ -213,6 +215,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+@@ -217,6 +219,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
                       &allocated_objects_count);
  #elif defined(OS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.

@@ -1,6 +1,6 @@
---- components/policy/core/common/cloud/cloud_policy_client.cc.orig	2021-09-24 04:26:04 UTC
+--- components/policy/core/common/cloud/cloud_policy_client.cc.orig	2021-12-14 11:45:03 UTC
 +++ components/policy/core/common/cloud/cloud_policy_client.cc
-@@ -405,7 +405,7 @@ void CloudPolicyClient::FetchPolicy() {
+@@ -393,7 +393,7 @@ void CloudPolicyClient::FetchPolicy() {
          fetch_request->set_invalidation_payload(invalidation_payload_);
        }
      }

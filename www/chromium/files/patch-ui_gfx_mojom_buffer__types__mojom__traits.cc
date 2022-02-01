@@ -1,4 +1,4 @@
---- ui/gfx/mojom/buffer_types_mojom_traits.cc.orig	2021-05-12 22:06:47 UTC
+--- ui/gfx/mojom/buffer_types_mojom_traits.cc.orig	2021-12-31 00:58:32 UTC
 +++ ui/gfx/mojom/buffer_types_mojom_traits.cc
 @@ -33,7 +33,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(
@@ -9,7 +9,7 @@
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewNativePixmapHandle(
            std::move(handle.native_pixmap_handle));
  #else
-@@ -114,7 +114,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+@@ -115,7 +115,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
        out->type = gfx::SHARED_MEMORY_BUFFER;
        out->region = std::move(platform_handle->get_shared_memory_handle());
        return true;

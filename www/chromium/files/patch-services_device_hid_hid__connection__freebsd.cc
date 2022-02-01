@@ -1,4 +1,4 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2021-09-29 12:19:04 UTC
+--- services/device/hid/hid_connection_freebsd.cc.orig	2022-01-21 12:26:39 UTC
 +++ services/device/hid/hid_connection_freebsd.cc
 @@ -0,0 +1,242 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
@@ -15,9 +15,9 @@
 +#include "base/location.h"
 +#include "base/numerics/safe_math.h"
 +#include "base/posix/eintr_wrapper.h"
-+#include "base/single_thread_task_runner.h"
 +#include "base/strings/stringprintf.h"
 +#include "base/task/post_task.h"
++#include "base/task/single_thread_task_runner.h"
 +#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_restrictions.h"
 +#include "base/threading/thread_task_runner_handle.h"

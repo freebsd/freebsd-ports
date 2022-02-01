@@ -1,4 +1,4 @@
---- google_apis/gcm/engine/heartbeat_manager.cc.orig	2021-04-14 18:41:04 UTC
+--- google_apis/gcm/engine/heartbeat_manager.cc.orig	2021-12-14 11:45:06 UTC
 +++ google_apis/gcm/engine/heartbeat_manager.cc
 @@ -32,13 +32,13 @@ const int kMinClientHeartbeatIntervalMs = 1000 * 30;  
  // Minimum time spent sleeping before we force a new heartbeat.
@@ -28,7 +28,7 @@
 @@ -201,7 +201,7 @@ void HeartbeatManager::RestartTimer() {
        base::BindOnce(&HeartbeatManager::CheckForMissedHeartbeat,
                       weak_ptr_factory_.GetWeakPtr()),
-       base::TimeDelta::FromMilliseconds(kHeartbeatMissedCheckMs));
+       base::Milliseconds(kHeartbeatMissedCheckMs));
 -#endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  }
@@ -45,7 +45,7 @@
        FROM_HERE,
        base::BindOnce(&HeartbeatManager::CheckForMissedHeartbeat,
                       weak_ptr_factory_.GetWeakPtr()),
-       base::TimeDelta::FromMilliseconds(kHeartbeatMissedCheckMs));
+       base::Milliseconds(kHeartbeatMissedCheckMs));
 -#endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  }

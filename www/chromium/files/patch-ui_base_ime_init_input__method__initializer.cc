@@ -1,9 +1,9 @@
---- ui/base/ime/init/input_method_initializer.cc.orig	2021-04-14 18:41:37 UTC
+--- ui/base/ime/init/input_method_initializer.cc.orig	2021-12-14 11:45:39 UTC
 +++ ui/base/ime/init/input_method_initializer.cc
 @@ -11,7 +11,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
- #include "ui/base/ime/chromeos/ime_bridge.h"
+ #include "ui/base/ime/ash/ime_bridge.h"
 -#elif defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
 +#elif defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "base/check.h"

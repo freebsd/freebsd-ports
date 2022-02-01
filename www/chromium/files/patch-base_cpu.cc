@@ -1,8 +1,8 @@
---- base/cpu.cc.orig	2021-09-14 01:51:47 UTC
+--- base/cpu.cc.orig	2021-12-14 11:44:55 UTC
 +++ base/cpu.cc
-@@ -16,7 +16,7 @@
- 
+@@ -17,7 +17,7 @@
  #include "base/cxx17_backports.h"
+ #include "base/no_destructor.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
@@ -24,7 +24,7 @@
  #endif  // defined(ARCH_CPU_ARM_FAMILY) && (defined(OS_ANDROID) ||
          // defined(OS_LINUX) || defined(OS_CHROMEOS))
  
-@@ -357,6 +365,8 @@ void CPU::Initialize(bool require_branding) {
+@@ -358,6 +366,8 @@ void CPU::Initialize(bool require_branding) {
    has_bti_ = hwcap2 & HWCAP2_BTI;
  #endif
  

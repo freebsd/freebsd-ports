@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_root.cc.orig	2021-09-14 01:51:47 UTC
+--- base/allocator/partition_allocator/partition_root.cc.orig	2021-12-31 00:57:18 UTC
 +++ base/allocator/partition_allocator/partition_root.cc
-@@ -27,7 +27,7 @@
+@@ -28,7 +28,7 @@
  #include "wow64apiset.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <pthread.h>
  #endif
  
-@@ -41,7 +41,7 @@ namespace base {
+@@ -42,7 +42,7 @@ namespace base {
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  // NO_THREAD_SAFETY_ANALYSIS: acquires the lock and doesn't release it, by
  // design.
-@@ -94,7 +94,7 @@ void AfterForkInChild() {
+@@ -111,7 +111,7 @@ void AfterForkInChild() {
    internal::ThreadCacheRegistry::Instance()
        .ForcePurgeAllThreadAfterForkUnsafe();
  }
@@ -27,7 +27,7 @@
  
  std::atomic<bool> g_global_init_called;
  void PartitionAllocMallocInitOnce() {
-@@ -104,7 +104,7 @@ void PartitionAllocMallocInitOnce() {
+@@ -121,7 +121,7 @@ void PartitionAllocMallocInitOnce() {
    if (!g_global_init_called.compare_exchange_strong(expected, true))
      return;
  
@@ -36,7 +36,7 @@
    // When fork() is called, only the current thread continues to execute in the
    // child process. If the lock is held, but *not* by this thread when fork() is
    // called, we have a deadlock.
-@@ -129,7 +129,7 @@ void PartitionAllocMallocInitOnce() {
+@@ -146,7 +146,7 @@ void PartitionAllocMallocInitOnce() {
    int err =
        pthread_atfork(BeforeForkInParent, AfterForkInParent, AfterForkInChild);
    PA_CHECK(err == 0);

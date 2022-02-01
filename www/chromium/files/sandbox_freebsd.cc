@@ -9,6 +9,7 @@
 #include "base/logging.h"
 #include "base/memory/singleton.h"
 #include "sandbox/policy/switches.h"
+#include "sandbox/policy/mojom/sandbox.mojom.h"
 
 namespace sandbox {
 namespace policy {
@@ -28,38 +29,40 @@ SandboxFreeBSD* SandboxFreeBSD::GetInstance() {
 }
 
 // static
-std::string SandboxFreeBSD::GetSandboxTypeInEnglish(SandboxType sandbox_type) {
+std::string SandboxFreeBSD::GetSandboxTypeInEnglish(sandbox::mojom::Sandbox sandbox_type) {
   switch (sandbox_type) {
-    case SandboxType::kNoSandbox:
+    case sandbox::mojom::Sandbox::kNoSandbox:
       return "Unsandboxed";
-    case SandboxType::kRenderer:
+    case sandbox::mojom::Sandbox::kRenderer:
       return "Renderer";
-    case SandboxType::kUtility:
+    case sandbox::mojom::Sandbox::kUtility:
       return "Utility";
-    case SandboxType::kGpu:
+    case sandbox::mojom::Sandbox::kGpu:
       return "GPU";
-    case SandboxType::kPpapi:
+    case sandbox::mojom::Sandbox::kPpapi:
       return "PPAPI";
-    case SandboxType::kNetwork:
+    case sandbox::mojom::Sandbox::kNetwork:
       return "Network";
-    case SandboxType::kCdm:
+    case sandbox::mojom::Sandbox::kCdm:
       return "CDM";
-    case SandboxType::kPrintCompositor:
+    case sandbox::mojom::Sandbox::kPrintCompositor:
       return "Print Compositor";
-    case SandboxType::kAudio:
+#if BUILDFLAG(ENABLE_PRINTING)
+    case sandbox::mojom::Sandbox::kPrintBackend:
+      return "Print Backend";
+#endif
+    case sandbox::mojom::Sandbox::kAudio:
       return "Audio";
-    case SandboxType::kSpeechRecognition:
+    case sandbox::mojom::Sandbox::kSpeechRecognition:
       return "Speech Recognition";
-    case SandboxType::kService:
+    case sandbox::mojom::Sandbox::kService:
       return "Service";
-    case SandboxType::kVideoCapture:
-      return "Video Capture";
     default:
       return "Unknown";
   }
 }
 
-bool SandboxFreeBSD::InitializeSandbox(SandboxType sandbox_type) {
+bool SandboxFreeBSD::InitializeSandbox(sandbox::mojom::Sandbox sandbox_type) {
   DCHECK(!initialize_sandbox_ran_);
   initialize_sandbox_ran_ = true;
 

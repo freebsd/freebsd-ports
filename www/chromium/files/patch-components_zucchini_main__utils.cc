@@ -1,6 +1,6 @@
---- components/zucchini/main_utils.cc.orig	2021-07-28 07:55:17 UTC
+--- components/zucchini/main_utils.cc.orig	2021-12-31 00:57:31 UTC
 +++ components/zucchini/main_utils.cc
-@@ -78,7 +78,7 @@ constexpr Command kCommands[] = {
+@@ -80,7 +80,7 @@ constexpr Command kCommands[] = {
  
  /******** GetPeakMemoryMetrics ********/
  
@@ -9,7 +9,7 @@
  // Linux does not have an exact mapping to the values used on Windows so use a
  // close approximation:
  // peak_virtual_memory ~= peak_page_file_usage
-@@ -120,7 +120,7 @@ void GetPeakMemoryMetrics(size_t* peak_virtual_memory,
+@@ -122,7 +122,7 @@ void GetPeakMemoryMetrics(size_t* peak_virtual_memory,
      }
    }
  }
@@ -18,7 +18,7 @@
  
  #if defined(OS_WIN)
  // On failure the input values will be set to 0.
-@@ -145,17 +145,17 @@ class ScopedResourceUsageTracker {
+@@ -147,17 +147,17 @@ class ScopedResourceUsageTracker {
    ScopedResourceUsageTracker() {
      start_time_ = base::TimeTicks::Now();
  
@@ -39,7 +39,7 @@
      size_t cur_peak_page_file_usage = 0;
      size_t cur_peak_working_set_size = 0;
      GetPeakMemoryMetrics(&cur_peak_page_file_usage, &cur_peak_working_set_size);
-@@ -171,7 +171,7 @@ class ScopedResourceUsageTracker {
+@@ -173,7 +173,7 @@ class ScopedResourceUsageTracker {
                << (cur_peak_working_set_size - start_peak_working_set_size_) /
                       1024
                << " KiB";
@@ -48,7 +48,7 @@
  
      LOG(INFO) << "Zucchini.TotalTime " << (end_time - start_time_).InSecondsF()
                << " s";
-@@ -179,10 +179,10 @@ class ScopedResourceUsageTracker {
+@@ -181,10 +181,10 @@ class ScopedResourceUsageTracker {
  
   private:
    base::TimeTicks start_time_;

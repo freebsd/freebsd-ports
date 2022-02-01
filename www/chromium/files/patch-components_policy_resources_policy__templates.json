@@ -1,6 +1,6 @@
---- components/policy/resources/policy_templates.json.orig	2021-09-24 04:26:04 UTC
+--- components/policy/resources/policy_templates.json.orig	2021-12-31 00:57:30 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -1272,7 +1272,7 @@
+@@ -1312,7 +1312,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -9,7 +9,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1298,7 +1298,7 @@
+@@ -1338,7 +1338,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +18,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1329,7 +1329,7 @@
+@@ -1369,7 +1369,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'okalitova@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -27,7 +27,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -4705,7 +4705,7 @@
+@@ -5233,7 +5233,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -4761,7 +4761,7 @@
+@@ -5299,7 +5299,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -9320,7 +9320,7 @@
+@@ -10052,7 +10052,7 @@
        'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -11161,7 +11161,7 @@
+@@ -12058,7 +12058,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -12008,7 +12008,7 @@
+@@ -12905,7 +12905,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

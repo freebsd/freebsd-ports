@@ -1,6 +1,6 @@
---- tools/perf/chrome_telemetry_build/BUILD.gn.orig	2021-09-14 01:52:22 UTC
+--- tools/perf/chrome_telemetry_build/BUILD.gn.orig	2021-12-14 11:45:38 UTC
 +++ tools/perf/chrome_telemetry_build/BUILD.gn
-@@ -62,7 +62,7 @@ group("telemetry_chrome_test") {
+@@ -45,7 +45,7 @@ group("telemetry_chrome_test") {
      data_deps += [ "//chrome:reorder_imports" ]
    }
  

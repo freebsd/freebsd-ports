@@ -1,6 +1,6 @@
---- chrome/browser/download/download_commands.h.orig	2021-09-24 04:25:58 UTC
+--- chrome/browser/download/download_commands.h.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/download/download_commands.h
-@@ -48,7 +48,7 @@ class DownloadCommands {
+@@ -53,7 +53,7 @@ class DownloadCommands {
    bool IsCommandVisible(Command command) const;
    void ExecuteCommand(Command command);
  

@@ -1,6 +1,6 @@
---- components/metrics/BUILD.gn.orig	2021-09-24 04:26:03 UTC
+--- components/metrics/BUILD.gn.orig	2021-12-31 00:57:29 UTC
 +++ components/metrics/BUILD.gn
-@@ -180,6 +180,11 @@ static_library("metrics") {
+@@ -187,6 +187,11 @@ static_library("metrics") {
    if (is_fuchsia) {
      sources += [ "drive_metrics_provider_fuchsia.cc" ]
    }

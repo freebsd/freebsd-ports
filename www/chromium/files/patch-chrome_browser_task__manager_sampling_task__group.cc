@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_group.cc.orig	2021-07-19 18:45:09 UTC
+--- chrome/browser/task_manager/sampling/task_group.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/task_manager/sampling/task_group.cc
-@@ -38,9 +38,9 @@ const int kBackgroundRefreshTypesMask =
+@@ -37,9 +37,9 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
      REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME |
  #endif  // defined(OS_WIN)
@@ -12,7 +12,7 @@
  #if BUILDFLAG(ENABLE_NACL)
      REFRESH_TYPE_NACL |
  #endif  // BUILDFLAG(ENABLE_NACL)
-@@ -123,9 +123,9 @@ TaskGroup::TaskGroup(
+@@ -122,9 +122,9 @@ TaskGroup::TaskGroup(
  #if BUILDFLAG(ENABLE_NACL)
        nacl_debug_stub_port_(nacl::kGdbDebugStubPortUnknown),
  #endif  // BUILDFLAG(ENABLE_NACL)
@@ -24,7 +24,7 @@
        idle_wakeups_per_second_(-1),
        gpu_memory_has_duplicates_(false),
        is_backgrounded_(false) {
-@@ -142,10 +142,10 @@ TaskGroup::TaskGroup(
+@@ -141,10 +141,10 @@ TaskGroup::TaskGroup(
                              weak_ptr_factory_.GetWeakPtr()),
          base::BindRepeating(&TaskGroup::OnIdleWakeupsRefreshDone,
                              weak_ptr_factory_.GetWeakPtr()),
@@ -37,7 +37,7 @@
          base::BindRepeating(&TaskGroup::OnProcessPriorityDone,
                              weak_ptr_factory_.GetWeakPtr()));
  
-@@ -329,14 +329,14 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
+@@ -321,14 +321,14 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
  #endif  // BUILDFLAG(ENABLE_NACL)
  

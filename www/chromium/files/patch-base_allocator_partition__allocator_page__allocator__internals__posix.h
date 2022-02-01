@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2021-07-19 18:45:05 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2021-12-14 11:44:55 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
 @@ -28,10 +28,14 @@
  #if defined(OS_ANDROID)
@@ -34,7 +34,7 @@
    int map_flags = MAP_ANONYMOUS | MAP_PRIVATE;
 +#endif
  
- #if defined(OS_APPLE)
+ #if defined(OS_MAC)
    // On macOS 10.14 and higher, executables that are code signed with the
 @@ -183,6 +194,8 @@ void* SystemAllocPagesInternal(void* hint,
      prctl(PR_SET_VMA, PR_SET_VMA_ANON_NAME, ret, length,
@@ -45,7 +45,7 @@
  #endif
  
    return ret;
-@@ -334,6 +347,8 @@ void DiscardSystemPagesInternal(void* address, size_t 
+@@ -346,6 +359,8 @@ void DiscardSystemPagesInternal(void* address, size_t 
      ret = madvise(address, length, MADV_DONTNEED);
    }
    PA_PCHECK(ret == 0);

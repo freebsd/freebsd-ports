@@ -1,6 +1,6 @@
---- chrome/browser/performance_monitor/process_monitor.h.orig	2021-09-24 04:25:58 UTC
+--- chrome/browser/performance_monitor/process_monitor.h.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/performance_monitor/process_monitor.h
-@@ -57,7 +57,7 @@ class ProcessMonitor {
+@@ -56,7 +56,7 @@ class ProcessMonitor {
      // can exceed 100% in multi-thread processes running on multi-core systems.
      double cpu_usage = 0.0;
  

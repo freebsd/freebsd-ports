@@ -1,6 +1,6 @@
---- chrome/browser/ui/BUILD.gn.orig	2021-09-24 04:25:59 UTC
+--- chrome/browser/ui/BUILD.gn.orig	2021-12-31 00:57:24 UTC
 +++ chrome/browser/ui/BUILD.gn
-@@ -642,10 +642,20 @@ static_library("ui") {
+@@ -682,10 +682,20 @@ static_library("ui") {
      ]
    }
  
@@ -22,7 +22,7 @@
    if (is_android) {
      sources += [
        "android/android_about_app_info.cc",
-@@ -3530,7 +3540,7 @@ static_library("ui") {
+@@ -3617,7 +3627,7 @@ static_library("ui") {
      }
    }
  
@@ -31,3 +31,25 @@
      # The first run dialog shows only on Linux and macOS.
      sources += [
        "views/first_run_dialog.cc",
+@@ -3723,6 +3733,12 @@ static_library("ui") {
+       deps += [ "//third_party/fontconfig" ]
+     }
+   }
++  if (is_bsd) {
++    sources -= [
++      "webui/webui_js_error/webui_js_error_ui.cc",
++      "webui/webui_js_error/webui_js_error_ui.h",
++    ]
++  }
+ 
+   if (toolkit_views) {
+     sources += [
+@@ -4739,7 +4755,7 @@ static_library("ui") {
+       ]
+     }
+ 
+-    if (is_win || is_linux) {
++    if ((is_win || is_linux) && !is_bsd) {
+       sources += [
+         "views/bluetooth_device_credentials_view.cc",
+         "views/bluetooth_device_credentials_view.h",

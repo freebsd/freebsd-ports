@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2021-04-14 18:40:56 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2021-12-14 11:45:00 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.h
-@@ -39,7 +39,7 @@ class AppearanceHandler : public SettingsPageUIHandler
+@@ -44,7 +44,7 @@ class AppearanceHandler : public SettingsPageUIHandler
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

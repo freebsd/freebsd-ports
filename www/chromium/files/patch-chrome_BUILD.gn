@@ -1,6 +1,6 @@
---- chrome/BUILD.gn.orig	2021-09-24 04:25:56 UTC
+--- chrome/BUILD.gn.orig	2021-12-31 00:57:18 UTC
 +++ chrome/BUILD.gn
-@@ -276,7 +276,9 @@ if (!is_android && !is_mac) {
+@@ -283,7 +283,9 @@ if (!is_android && !is_mac) {
            ":xdg_mime",  # Needs to be public for installer to consume files.
          ]
  
@@ -11,7 +11,7 @@
        }
  
        ldflags = []
-@@ -1366,7 +1368,7 @@ group("browser_dependencies") {
+@@ -1392,7 +1394,7 @@ group("browser_dependencies") {
      ]
    }
  
@@ -20,7 +20,7 @@
      public_deps += [ "//components/crash/core/app" ]
    }
  
-@@ -1686,7 +1688,7 @@ if (enable_resource_allowlist_generation) {
+@@ -1715,7 +1717,7 @@ if (is_win && enable_resource_allowlist_generation) {
  }
  
  if (is_linux || is_chromeos) {

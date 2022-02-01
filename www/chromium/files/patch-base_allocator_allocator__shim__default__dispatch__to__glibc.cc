@@ -1,7 +1,7 @@
---- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2021-04-14 18:40:48 UTC
+--- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2021-12-14 11:44:55 UTC
 +++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc
-@@ -6,18 +6,28 @@
- #include "base/compiler_specific.h"
+@@ -10,18 +10,28 @@
+ #include "base/process/memory.h"
  
  #include <dlfcn.h>
 -#include <malloc.h>
@@ -36,34 +36,46 @@
  }  // extern "C"
  
  namespace {
-@@ -25,32 +35,32 @@ namespace {
- using base::allocator::AllocatorDispatch;
+@@ -39,7 +49,7 @@ void* GlibcMalloc(const AllocatorDispatch*, size_t siz
+   if (UNLIKELY(size >= kMaxAllowedSize))
+     base::TerminateBecauseOutOfMemory(size);
  
- void* GlibcMalloc(const AllocatorDispatch*, size_t size, void* context) {
+-  return __libc_malloc(size);
++  return __malloc(size);
+ }
+ 
+ void* GlibcUncheckedMalloc(const AllocatorDispatch*,
+@@ -48,7 +58,7 @@ void* GlibcUncheckedMalloc(const AllocatorDispatch*,
+   if (UNLIKELY(size >= kMaxAllowedSize))
+     return nullptr;
+ 
 -  return __libc_malloc(size);
 +  return __malloc(size);
  }
  
  void* GlibcCalloc(const AllocatorDispatch*,
-                   size_t n,
-                   size_t size,
-                   void* context) {
+@@ -59,7 +69,7 @@ void* GlibcCalloc(const AllocatorDispatch*,
+   if (UNLIKELY(!total.IsValid() || total.ValueOrDie() >= kMaxAllowedSize))
+     base::TerminateBecauseOutOfMemory(size * n);
+ 
 -  return __libc_calloc(n, size);
 +  return __calloc(n, size);
  }
  
  void* GlibcRealloc(const AllocatorDispatch*,
-                    void* address,
-                    size_t size,
-                    void* context) {
+@@ -69,7 +79,7 @@ void* GlibcRealloc(const AllocatorDispatch*,
+   if (UNLIKELY(size >= kMaxAllowedSize))
+     base::TerminateBecauseOutOfMemory(size);
+ 
 -  return __libc_realloc(address, size);
 +  return __realloc(address, size);
  }
  
  void* GlibcMemalign(const AllocatorDispatch*,
-                     size_t alignment,
-                     size_t size,
-                     void* context) {
+@@ -79,11 +89,11 @@ void* GlibcMemalign(const AllocatorDispatch*,
+   if (UNLIKELY(size >= kMaxAllowedSize))
+     base::TerminateBecauseOutOfMemory(size);
+ 
 -  return __libc_memalign(alignment, size);
 +  return __memalign(alignment, size);
  }

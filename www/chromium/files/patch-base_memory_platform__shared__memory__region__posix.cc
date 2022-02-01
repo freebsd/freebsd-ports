@@ -1,4 +1,4 @@
---- base/memory/platform_shared_memory_region_posix.cc.orig	2021-04-14 18:40:48 UTC
+--- base/memory/platform_shared_memory_region_posix.cc.orig	2022-01-20 10:35:46 UTC
 +++ base/memory/platform_shared_memory_region_posix.cc
 @@ -23,7 +23,11 @@ struct ScopedPathUnlinkerTraits {
    static const FilePath* InvalidValue() { return nullptr; }
@@ -39,6 +39,15 @@
                                                                ,
                                                                bool executable
  #endif
+@@ -233,7 +237,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+   // flag.
+   FilePath directory;
+   if (!GetShmemTempDir(
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+           executable,
+ #else
+           false /* executable */,
 @@ -242,6 +246,22 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
      return {};
    }

@@ -1,6 +1,6 @@
---- chrome/browser/process_singleton_posix.cc.orig	2021-05-12 22:05:44 UTC
+--- chrome/browser/process_singleton_posix.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/process_singleton_posix.cc
-@@ -95,12 +95,12 @@
+@@ -97,12 +97,12 @@
  #include "net/base/network_interfaces.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -15,7 +15,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -297,7 +297,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -356,7 +356,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
      return g_user_opted_unlock_in_use_profile;
  
@@ -24,7 +24,7 @@
    std::u16string relaunch_button_text =
        l10n_util::GetStringUTF16(IDS_PROFILE_IN_USE_LINUX_RELAUNCH);
    return ShowProcessSingletonDialog(error, relaunch_button_text);
-@@ -874,7 +874,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
+@@ -935,7 +935,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
      return PROCESS_NONE;
    } else if (strncmp(buf, kACKToken, base::size(kACKToken) - 1) == 0) {
  #if defined(TOOLKIT_VIEWS) && \
