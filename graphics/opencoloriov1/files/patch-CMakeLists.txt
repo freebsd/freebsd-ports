@@ -1,0 +1,60 @@
+--- CMakeLists.txt.orig	2021-12-07 15:34:51 UTC
++++ CMakeLists.txt
+@@ -252,10 +252,10 @@ if(USE_EXTERNAL_YAML)
+     # Set minimum yaml version for non-patched sources.
+     set(YAML_VERSION_MIN "0.3.0")
+     include(FindPkgConfig)
+-    pkg_check_modules(PC_YAML_CPP REQUIRED QUIET yaml-cpp)
+-    find_path(YAML_CPP_INCLUDE_DIR yaml-cpp/yaml.h
++    pkg_check_modules(PC_YAML_CPP REQUIRED QUIET yaml-cpp03)
++    find_path(YAML_CPP_INCLUDE_DIR yaml-cpp03/yaml.h
+         HINTS  ${PC_YAML_CPP_INCLUDEDIR} ${PC_YAML_CPP_INCLUDE_DIRS} )
+-    find_library(YAML_CPP_LIBRARY LIBRARY_NAMES yaml-cpp libyaml-cpp
++    find_library(YAML_CPP_LIBRARY LIBRARY_NAMES yaml-cpp03 libyaml-cpp
+         HINTS ${PC_YAML_CPP_LIBRARY_DIRS} )
+     set(YAML_CPP_LIBRARIES ${YAML_CPP_LIBRARY})
+     set(YAML_CPP_INCLUDE_DIRS ${YAML_CPP_INCLUDE_DIR})
+@@ -531,7 +531,7 @@ endif()
+ configure_file(${CMAKE_SOURCE_DIR}/share/ocio/setup_ocio.sh.in
+     ${CMAKE_CURRENT_BINARY_DIR}/share/ocio/setup_ocio.sh @ONLY)
+ 
+-INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/share/ocio/setup_ocio.sh DESTINATION share/ocio/)
++#INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/share/ocio/setup_ocio.sh DESTINATION share/ocio/)
+ 
+ ###############################################################################
+ ### CPACK ###
+@@ -597,7 +597,7 @@ if(TARGET OpenColorIO_STATIC)
+     endif()
+ endif()
+ install(EXPORT OpenColorIO DESTINATION cmake)
+-file(WRITE "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmake"
++file(WRITE "${CMAKE_BINARY_DIR}/OpenColorIOv1Config.cmake"
+     "
+     get_filename_component(OpenColorIO_DIR \"\${CMAKE_CURRENT_LIST_FILE}\" PATH)
+     
+@@ -607,14 +607,14 @@ file(WRITE "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmak
+     message(STATUS OpenColorIO_INCLUDE_DIRS=\${OpenColorIO_INCLUDE_DIRS})
+     
+     ## targets libraries + associated definitions
+-    if(NOT TARGET OpenColorIO)
+-        include(\"\${OpenColorIO_DIR}/cmake/OpenColorIO.cmake\") ## thanks to imported target
+-        if(TARGET OpenColorIO AND NOT OpenColorIO_USE_STATIC)
++    if(NOT TARGET OpenColorIOv1)
++        include(\"\${OpenColorIO_DIR}/cmake/OpenColorIOv1.cmake\") ## thanks to imported target
++        if(TARGET OpenColorIOv1 AND NOT OpenColorIO_USE_STATIC)
+             message(STATUS \"shared target OpenColorIO : see OpenColorIO_LIBRARY\")
+-            set(OpenColorIO_LIBRARY         OpenColorIO)
++            set(OpenColorIO_LIBRARY         OpenColorIOv1)
+             set(OCIO_COMPILE_DEFINITIONS    ${OCIO_SHARED_COMPILE_DEFINITIONS})
+         endif()
+-        if(NOT TARGET OpenColorIO AND TARGET OpenColorIO_STATIC)
++        if(NOT TARGET OpenColorIOv1 AND TARGET OpenColorIO_STATIC)
+             message(STATUS \"static target OpenColorIO_STATIC : see OpenColorIO_LIBRARY\")
+             set(OpenColorIO_LIBRARY         OpenColorIO_STATIC)
+             set(OCIO_COMPILE_DEFINITIONS    ${OCIO_STATIC_COMPILE_DEFINITIONS})
+@@ -646,4 +646,4 @@ file(WRITE "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmak
+     message(STATUS OPENCOLORIO_FOUND=\${OPENCOLORIO_FOUND})
+     "
+ )
+-install(FILES "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmake" DESTINATION .)
++install(FILES "${CMAKE_BINARY_DIR}/OpenColorIOv1Config.cmake" DESTINATION .)
