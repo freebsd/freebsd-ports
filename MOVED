@@ -16883,3 +16883,4 @@ audio/nekobi-lv2|audio/dpf-plugins-lv2|2022-01-28|Nekobi is part of dpf-plugins
 audio/kars-lv2|audio/dpf-plugins-lv2|2022-01-28|Kars is part of dpf-plugins
 lang/scala-docs||2022-01-31|New 3.x versions dropped archived documentation
 x11/gnome3|x11/gnome|2022-01-32|GNOME has moved past version 3, including the Ports version
+security/krb5-117|security/krb5|2022-02-01|Has expired: EOL one year after the release of krb5 1.19
