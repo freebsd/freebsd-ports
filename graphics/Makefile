@@ -78,6 +78,7 @@
     SUBDIR += blender
     SUBDIR += blender-doc
     SUBDIR += blender-lts28
+    SUBDIR += blender-lts29
     SUBDIR += bmeps
     SUBDIR += bmp2html
     SUBDIR += bonzomatic
@@ -590,6 +591,7 @@
     SUBDIR += opencollada
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools
+    SUBDIR += opencoloriov1
     SUBDIR += opencsg
     SUBDIR += opencv
     SUBDIR += opendx
@@ -600,6 +602,7 @@
     SUBDIR += opengv
     SUBDIR += openicc-config
     SUBDIR += openimageio
+    SUBDIR += openimageio-ociov1
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
     SUBDIR += openjph
