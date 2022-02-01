@@ -1,13 +1,11 @@
-# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-
 PORTNAME=	openimageio
-DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.2.16.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.11.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	5
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -21,23 +19,27 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libheif.so:graphics/libheif \
 		libImath.so:math/Imath \
+		libOpenColorIO.so:graphics/opencolorio \
 		libOpenEXR.so:graphics/openexr \
 		libpng.so:graphics/png \
 		libsquish.so:graphics/squish \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		cmake jpeg compiler:c++11-lib iconv:wchar_t
+USES=		cmake jpeg compiler:c++14-lang iconv:wchar_t qt:5
+
+USE_QT+=	buildtools_build qmake_build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
 
 CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS \
-		STOP_ON_WARNING USE_OPENSSL
+		STOP_ON_WARNING USE_OPENSSL OIIO_DOWNLOAD_MISSING_TESTDATA
 
-OPTIONS_DEFINE=		DICOM DOCS FFMPEG FREETYPE GIF IMAGEVIEWER OCIO \
+OPTIONS_DEFINE=		DICOM DOCS FFMPEG FREETYPE GIF IMAGEVIEWER \
 			OPENCV OPENJPEG PTEX RAW TBB TEST TOOLS VDB
-OPTIONS_DEFAULT=	DICOM FREETYPE GIF OCIO OPENJPEG PTEX TOOLS
+OPTIONS_DEFAULT=	DICOM FREETYPE GIF OPENJPEG PTEX TOOLS VDB
 OPTIONS_SUB=		yes
 
 DOCS_CMAKE_BOOL=	INSTALL_DOCS
@@ -59,15 +61,11 @@ GIF_CMAKE_BOOL=		USE_GIF
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 IMAGEVIEWER_DESC=	Build image viewer (requires Qt)
-IMAGEVIEWER_USES=	gl qt:5
+IMAGEVIEWER_USES=	gl
 IMAGEVIEWER_IMPLIES=	TOOLS
 IMAGEVIEWER_CMAKE_BOOL=	USE_QT USE_OPENGL
 IMAGEVIEWER_USE=	GL=gl,glu,glew \
 			QT=buildtools,core,gui,opengl,qmake_build,widgets
-
-OCIO_DESC=		Color management support
-OCIO_CMAKE_BOOL=	USE_OCIO
-OCIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
 
 OPENCV_CMAKE_BOOL=	USE_OPENCV
 OPENCV_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
@@ -96,9 +94,9 @@ VDB_DESC=		OpenVDB support
 VDB_CMAKE_BOOL=		USE_OPENVDB
 VDB_LIB_DEPENDS=	libopenvdb.so:misc/openvdb
 
-# DISTVERSION has an extra digit which isn't in the lib name
-# for LIBVERS we want the first three digits
-PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
+PLIST_SUB=	SHL3=${PORTVERSION:R} SHL2=${PORTVERSION:R:R} SHL1=${PORTVERSION:R:R:R}
+SHL2=		${PORTVERSION:R:R}
+SHL1=		${PORTVERSION:R:R:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/src/cmake/modules/FindPtex.cmake
@@ -109,11 +107,12 @@ post-patch:
 BUILD_DEPENDS+=	${PREFIX}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind11
 LIB_DEPENDS+=	libOpenImageIO.so:graphics/openimageio
 PLIST=		${PKGDIR}/pkg-plist-pybind
-USES+=		python:3.6+
+USES+=		python
 USE_PYTHON=	flavors
 CMAKE_ON+=	USE_PYTHON
 # we don't need the apps built - only libs.
-CMAKE_OFF+=	USE_QT USE_OPENGL OIIO_BUILD_TOOLS OIIO_BUILD_TESTS
+CMAKE_OFF+=	USE_QT USE_OPENGL OIIO_BUILD_TOOLS OIIO_BUILD_TESTS \
+		EMBED_PLUGINS
 CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER}
 
 do-install:
@@ -124,10 +123,10 @@ USE_LDCONFIG=	yes
 CMAKE_OFF+=	USE_PYTHON
 
 post-install:
-	${LN} -sf libOpenImageIO.so.2.2 \
-		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.2
-	${LN} -sf libOpenImageIO_Util.so.2.2 \
-		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.2
+	${LN} -sf libOpenImageIO.so.${SHL2} \
+		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.${SHL1}
+	${LN} -sf libOpenImageIO_Util.so.${SHL2} \
+		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.${SHL1}
 
 do-test-TEST-on:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ARGS=-V ${MAKE_CMD} test
