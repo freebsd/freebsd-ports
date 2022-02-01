@@ -1,4 +1,4 @@
---- Modules/FindBoost.cmake.orig	2021-07-14 14:10:23 UTC
+--- Modules/FindBoost.cmake.orig	2022-01-25 13:45:06 UTC
 +++ Modules/FindBoost.cmake
 @@ -135,6 +135,9 @@ This module reads hints about search locations from va
  ``BOOST_LIBRARYDIR``
@@ -20,7 +20,7 @@
  #-------------------------------------------------------------------------------
  # Before we go searching, check whether a boost cmake package is available, unless
  # the user specifically asked NOT to search for one.
-@@ -2132,10 +2138,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+@@ -2162,10 +2168,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)
    unset(COMPONENT_PYTHON_VERSION_MINOR)
@@ -28,8 +28,8 @@
 +  if(${COMPONENT}${BOOST_PYTHON_SUFFIX} MATCHES "^(python|mpi_python|numpy)([0-9])\$")
      set(COMPONENT_UNVERSIONED "${CMAKE_MATCH_1}")
      set(COMPONENT_PYTHON_VERSION_MAJOR "${CMAKE_MATCH_2}")
--  elseif(${COMPONENT} MATCHES "^(python|mpi_python|numpy)([0-9])\\.?([0-9])\$")
-+  elseif(${COMPONENT}${BOOST_PYTHON_SUFFIX} MATCHES "^(python|mpi_python|numpy)([0-9])\\.?([0-9])\$")
+-  elseif(${COMPONENT} MATCHES "^(python|mpi_python|numpy)([0-9])\\.?([0-9]+)\$")
++  elseif(${COMPONENT}${BOOST_PYTHON_SUFFIX} MATCHES "^(python|mpi_python|numpy)([0-9]+)\$")
      set(COMPONENT_UNVERSIONED "${CMAKE_MATCH_1}")
      set(COMPONENT_PYTHON_VERSION_MAJOR "${CMAKE_MATCH_2}")
      set(COMPONENT_PYTHON_VERSION_MINOR "${CMAKE_MATCH_3}")
