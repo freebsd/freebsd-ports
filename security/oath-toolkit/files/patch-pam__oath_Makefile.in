@@ -1,6 +1,25 @@
---- pam_oath/Makefile.in.orig	2022-01-31 11:17:51 UTC
+--- pam_oath/Makefile.in.orig	2022-02-01 11:49:49 UTC
 +++ pam_oath/Makefile.in
-@@ -414,7 +414,7 @@ AM_CPPFLAGS = -I$(builddir)/../liboath
+@@ -149,7 +149,7 @@ am__uninstall_files_from_dir = { \
+ am__installdirs = "$(DESTDIR)$(pammoddir)"
+ LTLIBRARIES = $(pammod_LTLIBRARIES)
+ pam_oath_la_DEPENDENCIES = ../liboath/liboath.la
+-am_pam_oath_la_OBJECTS = pam_oath.lo
++am_pam_oath_la_OBJECTS = pam_oath.lo pam_modutil.lo
+ pam_oath_la_OBJECTS = $(am_pam_oath_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -173,7 +173,8 @@ am__v_at_1 = 
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
+ am__maybe_remake_depfiles = depfiles
+-am__depfiles_remade = ./$(DEPDIR)/pam_oath.Plo
++am__depfiles_remade = ./$(DEPDIR)/pam_modutil.Plo \
++	./$(DEPDIR)/pam_oath.Plo
+ am__mv = mv -f
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -414,7 +416,7 @@ AM_CPPFLAGS = -I$(builddir)/../liboath
  EXTRA_DIST = README
  pammoddir = $(PAMDIR)
  pammod_LTLIBRARIES = pam_oath.la
@@ -9,3 +28,31 @@
  # XXX add -Wl,-x too?  PAM documentation suggests it.
  pam_oath_la_LIBADD = ../liboath/liboath.la
  pam_oath_la_LDFLAGS = -module -avoid-version
+@@ -516,6 +518,7 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pam_modutil.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pam_oath.Plo@am__quote@ # am--include-marker
+ 
+ $(am__depfiles_remade):
+@@ -896,7 +904,8 @@ clean-am: clean-generic clean-libtool clean-pammodLTLI
+ 
+ distclean: distclean-recursive
+ 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+-		-rm -f ./$(DEPDIR)/pam_oath.Plo
++		-rm -f ./$(DEPDIR)/pam_modutil.Plo
++	-rm -f ./$(DEPDIR)/pam_oath.Plo
+ 	-rm -f Makefile
+ distclean-am: clean-am distclean-compile distclean-generic \
+ 	distclean-hdr distclean-libtool distclean-tags
+@@ -944,7 +953,8 @@ installcheck-am:
+ maintainer-clean: maintainer-clean-recursive
+ 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+ 	-rm -rf $(top_srcdir)/autom4te.cache
+-		-rm -f ./$(DEPDIR)/pam_oath.Plo
++		-rm -f ./$(DEPDIR)/pam_modutil.Plo
++	-rm -f ./$(DEPDIR)/pam_oath.Plo
+ 	-rm -f Makefile
+ maintainer-clean-am: distclean-am maintainer-clean-generic
+ 
