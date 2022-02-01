@@ -1,0 +1,50 @@
+--- rsblib/configure.orig	2022-02-01 02:31:47 UTC
++++ rsblib/configure
+@@ -16350,7 +16350,7 @@ if test x"$want_rsblib" != x"no" ; then
+ 	LIBRSB_LOCAL_LIBS="${BPWD}/librsb.la";
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: Assuming building as subdir of librsb, and that librsb will be built later." >&5
+ $as_echo "$as_me: Assuming building as subdir of librsb, and that librsb will be built later." >&6;}
+-	CPPFLAGS+=" -I${BPWD}"
++	CPPFLAGS="${CPPFLAGS} -I${BPWD}"
+ 	ac_cv_func_rsb_lib_init="yes";
+ else
+ 
+@@ -16438,9 +16438,9 @@ fi
+ $as_echo "$as_me: Where is librsb-config ?" >&6;};
+ 	else
+ 		want_rsblib=yes;
+-		CPPFLAGS+=" ` $LIBRSB_CONFIG --I_opts`"
+-		LDFLAGS+=" `$LIBRSB_CONFIG --ldflags`"
+-		LIBS+=" `$LIBRSB_CONFIG --libs --extra_libs`"
++		CPPFLAGS="${CPPFLAGS} ` $LIBRSB_CONFIG --I_opts`"
++		LDFLAGS="${LDFLAGS} `$LIBRSB_CONFIG --ldflags`"
++		LIBS="${LIBS} `$LIBRSB_CONFIG --libs --extra_libs`"
+ 	fi
+ 	for ac_header in rsb.h
+ do :
+@@ -16538,7 +16538,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_cancel" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_cancel" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_cancel" = xyes; then :
+-  LIBS+=" -lpthread";
++  LIBS="${LIBS} -lpthread";
+ fi
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lgtest" >&5
+@@ -16680,14 +16680,14 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_stdcppfs_main" >&5
+ $as_echo "$ac_cv_lib_stdcppfs_main" >&6; }
+ if test "x$ac_cv_lib_stdcppfs_main" = xyes; then :
+-  RGT_LDADD+=" -lstdc++fs";
++  RGT_LDADD="${RGT_LDADD} -lstdc++fs";
+ fi
+  else
+ 	rsb_have_gtest=0;
+ fi
+ if test x"$want_rsblib" != x"no" ; then
+ 	# adding this now: assuming configure called *before* librsb.la built.
+-	LIBS+=" ${LIBRSB_LOCAL_LIBS}"
++	LIBS="${LIBS} ${LIBRSB_LOCAL_LIBS}"
+ fi
+ RGT_LDADD="$RGT_LDADD"
+ 
