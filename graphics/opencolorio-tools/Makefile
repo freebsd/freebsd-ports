@@ -1,12 +1,9 @@
-# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-
 PKGNAMESUFFIX=	-tools
-PORTREVISION=	1
 
 COMMENT=	Tools to work with OpenColorIO profiles
 
 MASTERDIR=	${.CURDIR}/../opencolorio
 OCIO_SLAVE=	tools
-OPTIONS_EXCLUDE=DOCS
+OPTIONS_EXCLUDE=	DOCS
 
 .include "${MASTERDIR}/Makefile"
