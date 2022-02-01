@@ -1,4 +1,4 @@
-TIMESTAMP = 1613813074
+TIMESTAMP = 1640476747
 SHA256 (pgloader/alexandria-20200925-git.tgz) = d425c4106dbdf879d900d5979189c6df675323bd13cd0c0f80ea00a4ddb7fbb2
 SIZE (pgloader/alexandria-20200925-git.tgz) = 54730
 SHA256 (pgloader/anaphora-20210124-git.tgz) = 9b44816fc9a76f9293f9e1a714206a75ec94dcca59cd3e3173fa00b06de69d2c
@@ -59,8 +59,8 @@ SHA256 (pgloader/drakma-v2.0.7.tgz) = fc4f54a4b21632ded510a58b420b5a61e6772ce2f2
 SIZE (pgloader/drakma-v2.0.7.tgz) = 74290
 SHA256 (pgloader/dynamic-classes-20130128-git.tgz) = 4a93d3a39dca61c87b29877fa9707b647fc08f117f80f2a741f649e4d04c4b44
 SIZE (pgloader/dynamic-classes-20130128-git.tgz) = 7148
-SHA256 (pgloader/esrap-20201220-git.tgz) = 33cf9f99a3ee0716bc69cd29c035f5b1f2af8218924a9f36b6014594bc22117a
-SIZE (pgloader/esrap-20201220-git.tgz) = 69184
+SHA256 (pgloader/esrap-20211020-git.tgz) = f0f43009dc763ab41faa935db22ce2af183f825b4c1186ac12a8458da9da9819
+SIZE (pgloader/esrap-20211020-git.tgz) = 69199
 SHA256 (pgloader/flexi-streams-20200925-git.tgz) = 623d80b3a6a5ddfeec8365c940ddf2edba70ee85430f80767b645a399dcfbac2
 SIZE (pgloader/flexi-streams-20200925-git.tgz) = 442184
 SHA256 (pgloader/garbage-pools-20210124-git.tgz) = adb00cf419feb7dd625df71ffa1789573978fc11e67baa1e6fd4c21e5d15d7eb
