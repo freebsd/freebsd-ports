@@ -1,8 +1,6 @@
-# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-
 PORTNAME=	openshadinglanguage
-DISTVERSIONPREFIX=	Release-
-DISTVERSION=	1.11.15.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.11.17.0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -22,10 +20,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
-USES=		bison cmake compiler:c++14-lang ncurses
+USES=		bison cmake compiler:c++14-lang localbase ncurses qt:5
+
+USE_QT=		buildtools_build qmake_build
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	imageworks
+GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	OpenShadingLanguage
 
 CMAKE_ON=	ENABLERTTI OSL_BUILD_TESTS USE_LLVM_BITCODE USE_LIBCPLUSPLUS
@@ -43,14 +43,13 @@ MATERIALX_CMAKE_BOOL=	OSL_BUILD_MATERIALX
 
 OSLTOY_DESC=		Interactive shader edit and visualize tool
 OSLTOY_CMAKE_BOOL=	USE_QT
-OSLTOY_USES=		qt:5
-OSLTOY_USE=		QT=buildtools,core,gui,qmake_build,widgets
+OSLTOY_USE=		QT=buildtools_build,core,gui,qmake_build,widgets
 
-CXXFLAGS+=	-I${STAGEDIR}/include
+#CXXFLAGS+=	-I${STAGEDIR}/include
 
 # DISTVERSION has an extra digit which isn't in the lib name
 # for LIBVERS we want the first three digits
-PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
+PLIST_SUB=	SHL3=${PORTVERSION:R} SHL2=${PORTVERSION:R:R}
 
 .include <bsd.port.options.mk>
 
@@ -65,6 +64,7 @@ post-patch:
 		-e 's,%%PYCMD%%,${PYTHON_CMD},' \
 		${WRKSRC}/src/shaders/CMakeLists.txt \
 		${WRKSRC}/src/shaders/MaterialX/CMakeLists.txt \
+		${WRKSRC}/src/doc/CMakeLists.txt \
 		${WRKSRC}/src/liboslexec/CMakeLists.txt
 
 .if ${SLAVE_PORT} == yes
@@ -72,7 +72,7 @@ BUILD_DEPENDS+=	${PREFIX}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind
 LIB_DEPENDS+=	liboslquery.so:graphics/openshadinglanguage
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openimageio>0:graphics/py-openimageio@${PY_FLAVOR}
 PLIST=		${PKGDIR}/pkg-plist-pybind
-USES+=		python:3.6+
+USES+=		python
 USE_PYTHON=	flavors
 CMAKE_ON+=	USE_PYTHON
 CMAKE_ARGS+=	-DPYTHON_VERSION=${PYTHON_VER}
@@ -81,7 +81,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/oslquery.so ${STAGEDIR}${PYTHON_SITELIBDIR}
 .else # SLAVE_PORT != yes
-USES+=		python:3.6+,build
+USES+=		python:build
 BINARY_ALIAS+=	python=${PYTHON_CMD}
 CMAKE_OFF+=	USE_PYTHON
 USE_LDCONFIG=	yes
