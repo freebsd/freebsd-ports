@@ -37,6 +37,7 @@ PORTSCOUT=	limitw:1,even
 PLIST_SUB=	LIBVER=0.304.0
 
 OPTIONS_DEFINE=		DOCS MAN
+OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
 MAN_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
