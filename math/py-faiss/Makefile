@@ -10,6 +10,8 @@ COMMENT=	Library for efficient similarity search & clustering of dense vectors
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
+BROKEN_i386=	clang crashes, see bug#261580
+
 PY_DEPENDS=	${PYNUMPY}
 BUILD_DEPENDS=	swig:devel/swig \
 		${PY_DEPENDS}
