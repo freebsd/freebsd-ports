@@ -30,13 +30,9 @@ OPTIMIZE_CONFIGURE_ENV=	SPCFLAGS="${CFLAGS:N-O*}"
 
 post-patch:
 	@${REINPLACE_CMD} -E s/sed/gsed/g ${WRKSRC}/*.sh ${WRKSRC}/*/*.sh
-	#@${REINPLACE_CMD} -E s+/bin/sh+/${PREFIX}/bin/bash+g ${WRKSRC}/configure ${WRKSRC}/*/configure ${WRKSRC}/*.sh ${WRKSRC}/*/*.sh
 
 post-patch-OPTIMIZE-on:
 	@${REINPLACE_CMD} s/enable_optimize=no/enable_optimize=yes/ \
 		${WRKSRC}/configure
-
-#post-configure:
-#	cd ${WRKSRC} && ${GMAKE} cleanall
 
 .include <bsd.port.mk>
