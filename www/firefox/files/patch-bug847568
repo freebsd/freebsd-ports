@@ -28,9 +28,9 @@ diff --git dom/base/moz.build dom/base/moz.build
 index d390adf..4508f19 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -567,6 +567,9 @@ FINAL_LIBRARY = "xul"
- if CONFIG["MOZ_X11"]:
-     CXXFLAGS += CONFIG["TK_CFLAGS"]
+@@ -576,6 +576,9 @@ FINAL_LIBRARY = "xul"
+ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
+     CXXFLAGS += CONFIG["MOZ_GTK3_CFLAGS"]
  
 +if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
 +    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
@@ -215,9 +215,9 @@ diff --git old-configure.in old-configure.in
 index d147957..d332b34 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -2217,6 +2217,27 @@ dnl ========================================================
- 
- AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
+@@ -1335,6 +1335,27 @@ fi
+ AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
+ AC_SUBST(MOZ_MACBUNDLE_ID)
  
 +dnl ========================================================
 +dnl Check for graphite2
@@ -241,7 +241,7 @@ index d147957..d332b34 100644
 +fi
 +
  dnl ========================================================
- dnl Check for pixman and cairo
+ dnl = Child Process Name for IPC
  dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 2c3f869..e8a9d23 100644

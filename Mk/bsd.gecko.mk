@@ -167,6 +167,9 @@ pixman_MOZ_OPTIONS=	--enable-system-pixman
 
 png_LIB_DEPENDS=	libpng.so:graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
+.if ${MOZILLA_VER:R:R} >= 97
+png_MOZ_OPTIONS=	--with-system-png
+.endif
 
 sqlite_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite

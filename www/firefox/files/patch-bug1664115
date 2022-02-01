@@ -10,10 +10,10 @@ created by libcubeb.
  #include "Tracing.h"
  #include "webaudio/blink/DenormalDisabler.h"
 -#include "AudioThreadRegistry.h"
+ #include "mozilla/StaticPrefs_media.h"
  
  // Use abort() instead of exception in SoundTouch.
- #define ST_NO_EXCEPTION_HANDLING 1
-@@ -140,9 +139,7 @@
+@@ -141,9 +140,7 @@ AudioStream::AudioStream(DataSource& aSource)
        mTimeStretcher(nullptr),
        mState(INITIALIZED),
        mDataSource(aSource),
