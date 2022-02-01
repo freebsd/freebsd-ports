@@ -27,7 +27,7 @@ DNS_DESC=		DNS Support
 COMPRESSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>2.1.6:archivers/py-lz4@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}zstandard>0.12.0:archivers/py-zstandard@${PY_FLAVOR}
 DNS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}dnspython2>=1.16.0:dns/py-dnspython2@${PY_FLAVOR}
-GSSAPI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gssapi>1.6.14:security/py-gssapi@${PY_FLAVOR}
+GSSAPI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gssapi>=1.6.9:security/py-gssapi@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
