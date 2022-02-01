@@ -2,19 +2,32 @@
 { type: install
   message: <<EOM
 This package has installed ceph14, called nautilus.
-It comes with a web based dashboard that cannot be build 
-into a package but will require the user to install it himself.
 
-To install the dashboard, please execute:
-    as root execute:
-    cd ${LOCALBASE}/share/ceph/mgr/dashboard/frontend
+To be able to run Ceph, the following setup changes are needed:
+
+ - Mount linux compat filesystem, add to /etc/fstab:
+   # required by ceph
+   linprocfs   /compat/linux/proc      linprocfs rw            0       0
+   linsysfs    /compat/linux/sys       linsysfs  rw            0       0
+   fdescfs     /compat/linux/dev/fd    fdescfs rw,linrdlnk     0       0
+
+ - Shorten the WAIT2 time for TCP teardown
+   echo "net.inet.tcp.msl=3000" >> /etc/sysctl.conf
+
+Ceph comes with a web based dashboard that cannot be build 
+into a packagei. But the user can it himselfi from a ready-made RPM.
+
+To install the dashboard, please execute (as root):
+
+    mkdir -p /usr/local/share/ceph/mgr/dashboard
     pkg install rpm2cpio
+    cd /tmp
     fetch http://download.ceph.com/rpm-nautilus/el8/noarch/ceph-mgr-dashboard-14.2.22-0.el8.noarch.rpm
-    rpm2cpio ${DISTDIR}/ceph-mgr-dashboard-${DISTVERSION}-0.el7.noarch.rpm | \
-        ( cd ${WRKDIR}/dashboard; cpio -divm )
-    chown -R ceph:ceph .
-    chown -R ceph:ceph /var/lib/ceph
-
+    rpm2cpio ./ceph-mgr-dashboard-${DISTVERSION}-0.el8.noarch.rpm | cpio -divm 
+    cd /tmp/usr/share/ceph/mgr/dashboard
+    rsync -vra . /usr/local/share/ceph/mgr/dashboard/
+    chown -R ceph:ceph /usr/local/share/ceph/mgr/dashboard/
+    chown -R ceph:ceph /var/lib/ceph /var/run/ceph /var/log/ceph 
 EOM
 }
 ]
