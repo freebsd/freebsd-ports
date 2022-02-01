@@ -1,13 +1,13 @@
---- Makefile.orig	2022-01-25 03:54:45 UTC
+--- Makefile.orig	2021-04-25 13:47:46 UTC
 +++ Makefile
-@@ -1,9 +1,7 @@
+@@ -1,10 +1,6 @@
  SRC=src
  SRCS = $(SRC)/bridge.c $(SRC)/debug.c $(SRC)/getcmd.c $(SRC)/ip.c $(SRC)/init.c $(SRC)/modem_core.c $(SRC)/nvt.c $(SRC)/serial.c $(SRC)/ip232.c $(SRC)/util.c $(SRC)/phone_book.c $(SRC)/shared.c $(SRC)/tcpser.c $(SRC)/line.c $(SRC)/dce.c
  OBJS = $(SRC)/bridge.o $(SRC)/debug.o $(SRC)/getcmd.o $(SRC)/ip.o $(SRC)/init.o $(SRC)/modem_core.o $(SRC)/nvt.o $(SRC)/serial.o $(SRC)/ip232.o $(SRC)/util.o $(SRC)/phone_book.o $(SRC)/shared.o $(SRC)/tcpser.o $(SRC)/dce.o $(SRC)/line.o
 -CC = gcc
 -DEF = 
 -CFLAGS = -g $(DEF) -Wall
-+CFLAGS = -g -Wall
- LDFLAGS = -lpthread
+-LDFLAGS = -lpthread
  DEPEND = makedepend $(DEF) $(CFLAGS)
  
+ all:	tcpser
