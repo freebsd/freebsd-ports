@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export BLENDER_EXTERN_DRACO_LIBRARY_PATH=%%PYTHON_SITELIBDIR%%
+
+exec %%PREFIX%%/bin/blender-bin "$@"

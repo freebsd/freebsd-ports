@@ -20,6 +20,7 @@ OPTIONS_DEFINE=		\
 	HDR 		\
 	HEADLESS 	\
 	INPUT_NDOF	\
+	HARU		\
 	JACK 		\
 	LZO		\
 	LZMA		\
@@ -38,11 +39,15 @@ OPTIONS_DEFINE=		\
 	OPENMP 		\
 	OPENSUBDIV	\
 	OPENVDB		\
+	PUGIXML		\
+	PULSEAUDIO	\
+	QUADRIFLOW	\
 	RAYOPTIMIZATION	\
 	SDL		\
 	SNDFILE		\
 	TBB		\
 	TIFF		\
+	THUMBNAILER	\
 	TRACE		\
 	XINPUT		\
 	XF86VMODE
@@ -65,6 +70,7 @@ OPTIONS_DEFAULT=	\
 	FREESTYLE	\
 	HDR		\
 	INPUT_NDOF	\
+	HARU		\
 	LZO		\
 	LZMA		\
 	MENU		\
@@ -78,18 +84,20 @@ OPTIONS_DEFAULT=	\
 	OPENEXR		\
 	OPENIMAGEIO	\
 	OPENSUBDIV	\
+	OPENVDB		\
+	PUGIXML		\
+	PULSEAUDIO	\
+	QUADRIFLOW	\
 	RAYOPTIMIZATION	\
 	SDL		\
 	TBB		\
 	TIFF		\
+	THUMBNAILER	\
 	TRACE		\
 	XINPUT		\
 	XF86VMODE
-# off during onetbb transition
-#	OPENVDB
 
-# OPENIMAGEDN
-OPTIONS_DEFAULT_amd64=	CAMERATRACK CYCLESEMBR
+OPTIONS_DEFAULT_amd64=	CAMERATRACK CYCLESEMBR OPENIMAGEDN
 
 ALEMBIC_DESC=		Enable Alembic file support
 ALEMBIC_HDF5_DESC=	Enable Alembic hdf5 file support
@@ -109,6 +117,7 @@ EBOOL_DESC=		Enable exact boolean support
 FFTW3_DESC=		Use fftw for smoke and audio effects
 FRAMESERVER_DESC=	Image FrameServer support for rendering
 FREESTYLE_DESC=		Enable advanced edges rendering
+HARU_DESC=		Enable libharu support
 HDR_DESC=		Generic high dynamic-range (HDR) support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
@@ -125,9 +134,12 @@ OPENIMAGEIO_DESC=	OpenImageIO image processing support
 OPENIMAGEDN_DESC=	OpenImageDenoise support
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 OPENVDB_DESC=		Use openVDB library for volumetric data
+PUGIXML_DESC=		Enable pugixml support
+QUADRIFLOW_DESC=	Enable quadriflow remesher
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 SDL_DESC=		Audio and Joystick support using SDL
 TBB_DESC=		Enable use of Intel's tbb
+THUMBNAILER_DESC=	Build blender thumbnailer
 TRACE_DESC=		Enable tracing image to GP stroke
 XINPUT_DESC=		X11 Xinput (tablet) support
 XF86VMODE_DESC=		X11 video mode switching support
