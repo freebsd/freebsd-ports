@@ -1,5 +1,5 @@
 PORTNAME=	heimer
-DISTVERSION=	3.0.0
+DISTVERSION=	3.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -19,7 +19,7 @@ TEST_TARGET=	test
 
 PLIST_FILES=	bin/heimer \
 		share/applications/heimer.desktop \
-		share/icons/hicolor/64x64/apps/heimer.png \
+		share/icons/hicolor/256x256/apps/heimer.png \
 		share/metainfo/heimer.appdata.xml \
 		share/pixmaps/heimer.png
 
