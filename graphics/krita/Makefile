@@ -1,6 +1,6 @@
 PORTNAME=	krita
 DISTVERSION=	4.4.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libImath.so:math/Imath \
-		libOpenColorIO.so:graphics/opencolorio \
+		libOpenColorIOv1.so:graphics/opencoloriov1 \
 		libX11.so:x11/libX11 \
 		libboost_system.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \
@@ -62,5 +62,12 @@ PLIST_SUB=	SHLIB_VER=20.0.0 \
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 LDFLAGS+=	-lpthread
+
+post-patch:
+	${REINPLACE_CMD} -e 's|<OpenColorIO/|<OpenColorIOv1/|g' \
+		${WRKSRC}/libs/ui/canvas/kis_image_pyramid.cpp \
+		${WRKSRC}/plugins/dockers/lut/lutdocker_dock.h \
+		${WRKSRC}/plugins/dockers/lut/ocio_display_filter.h \
+		${WRKSRC}/plugins/dockers/lut/lutdocker.cpp
 
 .include <bsd.port.mk>
