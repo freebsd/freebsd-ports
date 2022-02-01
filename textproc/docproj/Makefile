@@ -1,5 +1,5 @@
 PORTNAME=	docproj
-PORTVERSION=	4.1
+PORTVERSION=	4.1.1
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -22,6 +22,6 @@ EPUB_RUN_DEPENDS=	asciidoctor-epub3:textproc/rubygem-asciidoctor-epub3
 GIT_RUN_DEPENDS=	git:devel/git
 IGOR_RUN_DEPENDS=	igor:textproc/igor
 PDF_RUN_DEPENDS=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
-TRANSLATOR_RUN_DEPENDS=	po4a>=0.63_1:textproc/po4a
+TRANSLATOR_RUN_DEPENDS=	po4a>=0.66_1:textproc/po4a
 
 .include <bsd.port.mk>
