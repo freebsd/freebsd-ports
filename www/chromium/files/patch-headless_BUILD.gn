@@ -1,6 +1,6 @@
---- headless/BUILD.gn.orig	2021-09-24 04:26:07 UTC
+--- headless/BUILD.gn.orig	2021-12-31 00:57:34 UTC
 +++ headless/BUILD.gn
-@@ -289,7 +289,7 @@ source_set("headless_shared_sources") {
+@@ -290,7 +290,7 @@ source_set("headless_shared_sources") {
    sources += generated_devtools_api
    sources += get_target_outputs(":protocol_sources")
  
@@ -9,7 +9,7 @@
      sources += [
        "lib/headless_crash_reporter_client.cc",
        "lib/headless_crash_reporter_client.h",
-@@ -308,7 +308,7 @@ source_set("headless_shared_sources") {
+@@ -309,7 +309,7 @@ source_set("headless_shared_sources") {
      "//url",
    ]
  
@@ -18,7 +18,7 @@
      deps += [
        "//components/crash/content/browser",
        "//components/crash/core/app",
-@@ -504,7 +504,7 @@ component("headless_non_renderer") {
+@@ -499,7 +499,7 @@ component("headless_non_renderer") {
        "//v8",
      ]
  
@@ -27,7 +27,7 @@
        deps += [
          "//components/crash/content/browser",
          "//components/crash/core/app",
-@@ -648,7 +648,7 @@ if (!is_component_build) {
+@@ -642,7 +642,7 @@ if (!is_component_build) {
        ]
      }
  
@@ -36,7 +36,7 @@
        deps += [ "//components/crash/core/app" ]
      }
    }
-@@ -877,7 +877,7 @@ static_library("headless_shell_lib") {
+@@ -887,7 +887,7 @@ static_library("headless_shell_lib") {
      public_deps += [ ":headless_non_renderer" ]
    }
  
@@ -45,7 +45,7 @@
      deps += [ "//components/crash/content/browser" ]
    }
  
-@@ -908,7 +908,7 @@ static_library("headless_shell_lib") {
+@@ -918,7 +918,7 @@ static_library("headless_shell_lib") {
      deps += [ "//components/os_crypt" ]
    }
  

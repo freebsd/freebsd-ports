@@ -1,4 +1,4 @@
---- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2021-07-19 18:45:14 UTC
+--- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2021-12-14 11:45:04 UTC
 +++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc
 @@ -17,7 +17,7 @@
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"
  #endif
  
-@@ -56,7 +56,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -51,7 +51,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
      // Initialize font access for Skia.
  #if defined(OS_WIN)
    content::InitializeDWriteFontProxy();
@@ -18,7 +18,7 @@
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    content::UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -75,7 +75,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -70,7 +70,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
    // encoding to PNG or we could provide our own codec implementations.
  
    // Sanity check that fonts are working.

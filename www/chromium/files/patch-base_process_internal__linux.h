@@ -1,6 +1,6 @@
---- base/process/internal_linux.h.orig	2021-04-14 18:40:48 UTC
+--- base/process/internal_linux.h.orig	2021-12-14 11:44:55 UTC
 +++ base/process/internal_linux.h
-@@ -18,6 +18,8 @@
+@@ -20,6 +20,8 @@
  #include "base/strings/string_number_conversions.h"
  #include "base/threading/platform_thread.h"
  
@@ -9,7 +9,7 @@
  namespace base {
  
  class Time;
-@@ -59,6 +61,14 @@ bool ParseProcStats(const std::string& stats_data,
+@@ -61,6 +63,14 @@ bool ParseProcStats(const std::string& stats_data,
  // If the ordering ever changes, carefully review functions that use these
  // values.
  enum ProcStatsFields {
@@ -24,7 +24,7 @@
    VM_COMM = 1,         // Filename of executable, without parentheses.
    VM_STATE = 2,        // Letter indicating the state of the process.
    VM_PPID = 3,         // PID of the parent.
-@@ -71,6 +81,7 @@ enum ProcStatsFields {
+@@ -73,6 +83,7 @@ enum ProcStatsFields {
    VM_STARTTIME = 21,   // The time the process started in clock ticks.
    VM_VSIZE = 22,       // Virtual memory size in bytes.
    VM_RSS = 23,         // Resident Set Size in pages.

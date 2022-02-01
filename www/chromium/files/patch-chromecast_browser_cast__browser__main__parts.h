@@ -1,6 +1,6 @@
---- chromecast/browser/cast_browser_main_parts.h.orig	2021-09-24 04:26:02 UTC
+--- chromecast/browser/cast_browser_main_parts.h.orig	2021-12-14 11:45:02 UTC
 +++ chromecast/browser/cast_browser_main_parts.h
-@@ -142,7 +142,7 @@ class CastBrowserMainParts : public content::BrowserMa
+@@ -146,7 +146,7 @@ class CastBrowserMainParts : public content::BrowserMa
    std::unique_ptr<PrefService> user_pref_service_;
  #endif
  

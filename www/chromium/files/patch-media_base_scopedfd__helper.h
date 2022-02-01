@@ -1,6 +1,6 @@
---- media/base/scopedfd_helper.h.orig	2021-04-14 18:41:05 UTC
+--- media/base/scopedfd_helper.h.orig	2021-12-14 11:45:07 UTC
 +++ media/base/scopedfd_helper.h
-@@ -14,14 +14,14 @@ namespace media {
+@@ -15,14 +15,14 @@ namespace media {
  // since the only current user is V4L2 we are limiting the scope to OS_LINUX so
  // the binary size does not inflate on non-using systems. Feel free to adapt
  // this and BUILD.gn as our needs evolve.

@@ -1,7 +1,7 @@
---- services/device/usb/BUILD.gn.orig	2021-04-14 18:41:08 UTC
+--- services/device/usb/BUILD.gn.orig	2021-12-14 11:45:09 UTC
 +++ services/device/usb/BUILD.gn
-@@ -142,7 +142,7 @@ static_library("usb") {
-     deps += [ "//third_party/re2" ]
+@@ -151,7 +151,7 @@ static_library("usb") {
+     deps += [ "//device/udev_linux" ]
    }
  
 -  if (is_android || is_chromeos || is_linux) {

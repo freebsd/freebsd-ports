@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2021-09-24 18:21:22 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -154,7 +154,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
+@@ -155,7 +155,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
  
  // getPersistentSecret
  
@@ -9,7 +9,7 @@
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -206,7 +206,7 @@ void EnterpriseReportingPrivateGetPersistentSecretFunc
+@@ -207,7 +207,7 @@ void EnterpriseReportingPrivateGetPersistentSecretFunc
    }
  }
  

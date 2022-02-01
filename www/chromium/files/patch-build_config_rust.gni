@@ -1,0 +1,11 @@
+--- build/config/rust.gni.orig	2021-12-31 00:57:18 UTC
++++ build/config/rust.gni
+@@ -67,7 +67,7 @@ toolchain_has_official_rust =
+     (!is_nacl &&
+      (is_android && (current_cpu == "arm" || current_cpu == "arm64" ||
+                      current_cpu == "x64" || current_cpu == "x86"))) ||
+-    (is_linux && current_cpu == "x64")
++    ((is_linux && !is_bsd) && current_cpu == "x64")
+ 
+ toolchain_has_rust = enable_rust && (toolchain_has_official_rust ||
+                                      use_unverified_rust_toolchain)

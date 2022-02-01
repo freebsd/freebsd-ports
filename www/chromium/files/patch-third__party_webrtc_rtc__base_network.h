@@ -1,6 +1,6 @@
---- third_party/webrtc/rtc_base/network.h.orig	2021-04-14 18:43:12 UTC
+--- third_party/webrtc/rtc_base/network.h.orig	2021-12-14 11:47:22 UTC
 +++ third_party/webrtc/rtc_base/network.h
-@@ -29,6 +29,10 @@
+@@ -31,6 +31,10 @@
  #include "rtc_base/third_party/sigslot/sigslot.h"
  #include "rtc_base/thread_annotations.h"
  

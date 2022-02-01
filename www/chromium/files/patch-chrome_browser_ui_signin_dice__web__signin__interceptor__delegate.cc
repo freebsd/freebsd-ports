@@ -1,6 +1,6 @@
---- chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc.orig	2021-09-24 18:30:02 UTC
+--- chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc
-@@ -56,7 +56,7 @@ class ForcedEnterpriseSigninInterceptionHandle
+@@ -57,7 +57,7 @@ class ForcedEnterpriseSigninInterceptionHandle
   private:
    void ShowEnterpriseProfileInterceptionDialog(const AccountInfo& account_info,
                                                 SkColor profile_color) {

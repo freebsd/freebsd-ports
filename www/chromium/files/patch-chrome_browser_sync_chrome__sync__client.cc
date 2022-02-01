@@ -1,6 +1,6 @@
---- chrome/browser/sync/chrome_sync_client.cc.orig	2021-09-24 04:25:59 UTC
+--- chrome/browser/sync/chrome_sync_client.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -465,7 +465,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -461,7 +461,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  
  // Chrome prefers OS provided spell checkers where they exist. So only sync the
  // custom dictionary on platforms that typically don't provide one.
@@ -9,7 +9,7 @@
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY) &&
        GetPrefService()->GetBoolean(spellcheck::prefs::kSpellCheckEnable)) {
-@@ -474,7 +474,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -470,7 +470,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
              syncer::DICTIONARY, model_type_store_factory,
              GetSyncableServiceForType(syncer::DICTIONARY), dump_stack));
    }

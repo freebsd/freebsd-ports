@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_function_pointers.cc.orig	2021-09-14 01:51:58 UTC
+--- gpu/vulkan/vulkan_function_pointers.cc.orig	2021-12-14 11:45:06 UTC
 +++ gpu/vulkan/vulkan_function_pointers.cc
 @@ -906,7 +906,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
    }
@@ -36,7 +36,7 @@
  
  #if defined(OS_WIN)
    if (gfx::HasExtension(enabled_extensions,
-@@ -1119,7 +1119,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1120,7 +1120,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }
    }
  
@@ -45,7 +45,7 @@
    if (gfx::HasExtension(enabled_extensions,
                          VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_EXTENSION_NAME)) {
      vkGetImageDrmFormatModifierPropertiesEXT =
-@@ -1132,7 +1132,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1133,7 +1133,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
        return false;
      }
    }

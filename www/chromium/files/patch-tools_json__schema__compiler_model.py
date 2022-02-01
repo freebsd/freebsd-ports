@@ -1,6 +1,6 @@
---- tools/json_schema_compiler/model.py.orig	2021-09-24 04:26:37 UTC
+--- tools/json_schema_compiler/model.py.orig	2021-12-14 11:45:38 UTC
 +++ tools/json_schema_compiler/model.py
-@@ -871,6 +871,7 @@ class Platforms(object):
+@@ -877,6 +877,7 @@ class Platforms(object):
    """Enum of the possible platforms.
    """
    CHROMEOS = _PlatformInfo("chromeos")

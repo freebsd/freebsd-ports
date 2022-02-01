@@ -1,6 +1,6 @@
---- media/formats/common/offset_byte_queue.h.orig	2021-04-14 18:41:05 UTC
+--- media/formats/common/offset_byte_queue.h.orig	2021-12-14 11:45:07 UTC
 +++ media/formats/common/offset_byte_queue.h
-@@ -36,15 +36,15 @@ class MEDIA_EXPORT OffsetByteQueue {
+@@ -40,15 +40,15 @@ class MEDIA_EXPORT OffsetByteQueue {
    // a null |buf| and a |size| of zero.
    void PeekAt(int64_t offset, const uint8_t** buf, int* size);
  

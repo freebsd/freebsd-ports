@@ -1,4 +1,4 @@
---- build/config/compiler/pgo/pgo.gni.orig	2021-10-08 06:25:34 UTC
+--- build/config/compiler/pgo/pgo.gni.orig	2022-01-20 10:35:46 UTC
 +++ build/config/compiler/pgo/pgo.gni
 @@ -16,7 +16,7 @@ declare_args() {
        # TODO(crbug.com/1052397): Remove chromeos_is_browser_only once

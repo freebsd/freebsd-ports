@@ -1,4 +1,4 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2021-09-24 18:22:53 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -9,7 +9,7 @@
  // Native headless is currently available only on Linux platform. More
@@ -9,7 +9,7 @@
  
  #include <cstdlib>
  #include <vector>
-@@ -100,7 +100,7 @@ void SetHeadlessDisplayBounds() {
+@@ -59,7 +59,7 @@ void SetUpCommandLine(const base::CommandLine* command
  
  }  // namespace headless
  
@@ -18,7 +18,7 @@
  
  namespace headless {
  
-@@ -114,4 +114,4 @@ void SetHeadlessDisplayBounds() {}
+@@ -71,4 +71,4 @@ void SetUpCommandLine(const base::CommandLine* command
  
  }  // namespace headless
  

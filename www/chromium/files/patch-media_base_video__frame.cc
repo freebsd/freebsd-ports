@@ -1,6 +1,6 @@
---- media/base/video_frame.cc.orig	2021-09-24 04:26:08 UTC
+--- media/base/video_frame.cc.orig	2021-12-14 11:45:07 UTC
 +++ media/base/video_frame.cc
-@@ -74,7 +74,7 @@ std::string VideoFrame::StorageTypeToString(
+@@ -73,7 +73,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -9,7 +9,7 @@
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -91,7 +91,7 @@ std::string VideoFrame::StorageTypeToString(
+@@ -90,7 +90,7 @@ std::string VideoFrame::StorageTypeToString(
  // static
  bool VideoFrame::IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
@@ -18,7 +18,7 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -279,7 +279,7 @@ static absl::optional<VideoFrameLayout> GetDefaultLayo
+@@ -278,7 +278,7 @@ static absl::optional<VideoFrameLayout> GetDefaultLayo
    return VideoFrameLayout::CreateWithPlanes(format, coded_size, planes);
  }
  
@@ -27,7 +27,7 @@
  // This class allows us to embed a vector<ScopedFD> into a scoped_refptr, and
  // thus to have several VideoFrames share the same set of DMABUF FDs.
  class VideoFrame::DmabufHolder
-@@ -297,7 +297,7 @@ class VideoFrame::DmabufHolder
+@@ -296,7 +296,7 @@ class VideoFrame::DmabufHolder
    friend class base::RefCountedThreadSafe<DmabufHolder>;
    ~DmabufHolder() = default;
  };
@@ -63,7 +63,7 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1243,7 +1243,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1253,7 +1253,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
@@ -72,7 +72,7 @@
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
-@@ -1355,7 +1355,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1365,7 +1365,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

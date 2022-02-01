@@ -1,6 +1,6 @@
---- chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.cc.orig	2021-09-24 04:25:58 UTC
+--- chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.cc.orig	2021-12-14 11:44:57 UTC
 +++ chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.cc
-@@ -639,7 +639,9 @@ void ChromeBrowsingDataRemoverDelegate::RemoveEmbedder
+@@ -608,7 +608,9 @@ void ChromeBrowsingDataRemoverDelegate::RemoveEmbedder
      }
  #endif
  

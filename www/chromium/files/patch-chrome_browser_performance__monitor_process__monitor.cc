@@ -1,6 +1,6 @@
---- chrome/browser/performance_monitor/process_monitor.cc.orig	2021-09-14 01:51:50 UTC
+--- chrome/browser/performance_monitor/process_monitor.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/performance_monitor/process_monitor.cc
-@@ -76,7 +76,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+@@ -75,7 +75,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
                                      const ProcessMonitor::Metrics& rhs) {
    lhs.cpu_usage += rhs.cpu_usage;
  

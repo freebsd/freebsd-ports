@@ -1,6 +1,6 @@
---- content/public/common/content_features.cc.orig	2021-09-24 04:26:06 UTC
+--- content/public/common/content_features.cc.orig	2022-01-20 10:35:57 UTC
 +++ content/public/common/content_features.cc
-@@ -50,7 +50,7 @@ const base::Feature kAudioServiceOutOfProcess {
+@@ -51,7 +51,7 @@ const base::Feature kAudioServiceOutOfProcess {
  // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
  // built with OS_CHROMEOS instead of OS_LINUX.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -9,7 +9,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -886,13 +886,13 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
+@@ -934,13 +934,13 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
  const base::Feature kWebAssemblyCodeProtection{
      "WebAssemblyCodeProtection", base::FEATURE_DISABLED_BY_DEFAULT};
  
@@ -25,18 +25,20 @@
          // defined(ARCH_CPU_X86_64)
  
  // Enable WebAssembly lazy compilation (JIT on first call).
-@@ -909,8 +909,8 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
-                                         base::FEATURE_ENABLED_BY_DEFAULT};
- 
+@@ -959,9 +959,9 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
  // Enable WebAssembly trap handler.
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
--     defined(OS_MAC)) &&                                             \
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_BSD) || \
-+     defined(OS_MAC)) &&                                                                \
-     defined(ARCH_CPU_X86_64)
- const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
-                                             base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -932,7 +932,7 @@ const base::Feature kWebAuthCable {
+ const base::Feature kWebAssemblyTrapHandler {
+   "WebAssemblyTrapHandler",
+-#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
+-      defined(OS_MAC)) &&                                             \
+-     defined(ARCH_CPU_X86_64)) ||                                     \
++#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_BSD) || \
++      defined(OS_MAC)) &&                                                                \
++     defined(ARCH_CPU_X86_64)) ||                                                        \
+     (defined(OS_MAC) && defined(ARCH_CPU_ARM64))
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+@@ -987,7 +987,7 @@ const base::Feature kWebAuthCable {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  // If updating this, also update kWebAuthCableServerLink.

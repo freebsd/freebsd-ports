@@ -1,15 +1,15 @@
---- chrome/app/chromium_strings.grd.orig	2021-09-14 01:51:48 UTC
+--- chrome/app/chromium_strings.grd.orig	2021-12-31 00:57:19 UTC
 +++ chrome/app/chromium_strings.grd
-@@ -722,7 +722,7 @@ Chromium is unable to recover your settings.
+@@ -802,7 +802,7 @@ Chromium is unable to recover your settings.
        </if>
  
        <!-- about:browser-switch strings -->
--      <if expr="is_win or is_macosx or (is_linux and not chromeos)">
-+      <if expr="is_win or is_macosx or (is_posix and not chromeos)">
+-      <if expr="is_win or is_macosx or is_fuchsia or (is_linux and not chromeos)">
++      <if expr="is_win or is_macosx or is_fuchsia or (is_linux and not chromeos) or is_bsd">
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
            Your system administrator has configured Chromium to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
          </message>
-@@ -846,7 +846,7 @@ Chromium is unable to recover your settings.
+@@ -926,7 +926,7 @@ Chromium is unable to recover your settings.
        </message>
  
        <!-- ProcessSingleton -->

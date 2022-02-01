@@ -1,7 +1,7 @@
---- chrome/test/chromedriver/chrome_launcher.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/test/chromedriver/chrome_launcher.cc.orig	2021-12-14 11:45:00 UTC
 +++ chrome/test/chromedriver/chrome_launcher.cc
-@@ -71,6 +71,10 @@
- #include "chrome/test/chromedriver/keycode_text_conversion.h"
+@@ -73,6 +73,10 @@
+ #include <windows.h>
  #endif
  
 +#if defined(OS_BSD)

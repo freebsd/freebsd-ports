@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/client/BUILD.gn.orig	2021-07-19 18:45:40 UTC
+--- third_party/crashpad/crashpad/client/BUILD.gn.orig	2021-12-31 00:58:27 UTC
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -44,6 +44,12 @@ crashpad_static_library("client") {
+@@ -52,6 +52,12 @@ crashpad_static_library("client") {
      ]
    }
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2021-09-24 04:26:00 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -44,11 +44,11 @@
+@@ -48,11 +48,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -14,7 +14,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -57,7 +57,7 @@ namespace {
+@@ -61,7 +61,7 @@ namespace {
  bool IsUsingGtkTheme(Profile* profile) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -23,7 +23,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -244,7 +244,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -263,7 +263,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -32,7 +32,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -365,7 +365,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -386,7 +386,7 @@ void BrowserFrame::SelectNativeTheme() {
      }
    }
  
@@ -41,7 +41,7 @@
    const views::LinuxUI* linux_ui = views::LinuxUI::instance();
    // Ignore GTK+ for web apps with window-controls-overlay as the
    // display_override so the web contents can blend with the overlay by using
-@@ -384,7 +384,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
+@@ -405,7 +405,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
    bool need_regenerate = false;
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.

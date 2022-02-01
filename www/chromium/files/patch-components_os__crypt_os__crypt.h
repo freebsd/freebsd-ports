@@ -1,4 +1,4 @@
---- components/os_crypt/os_crypt.h.orig	2021-05-12 22:05:50 UTC
+--- components/os_crypt/os_crypt.h.orig	2021-12-14 11:45:03 UTC
 +++ components/os_crypt/os_crypt.h
 @@ -17,9 +17,9 @@
  
@@ -12,8 +12,8 @@
  
  #if defined(OS_WIN) || defined(OS_MAC)
  class PrefRegistrySimple;
-@@ -38,16 +38,16 @@ class OSCrypt {
-  public:
+@@ -42,16 +42,16 @@ class OSCrypt {
+ 
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -32,7 +32,7 @@
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
    // Keychain it returns true if not using locked Keychain, false if using
-@@ -141,7 +141,7 @@ class OSCrypt {
+@@ -142,7 +142,7 @@ class OSCrypt {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -41,7 +41,7 @@
  // For unit testing purposes, inject methods to be used.
  // |get_key_storage_mock| provides the desired |KeyStorage| implementation.
  // If the provider returns |nullptr|, a hardcoded password will be used.
-@@ -156,6 +156,6 @@ void UseMockKeyStorageForTesting(
+@@ -157,6 +157,6 @@ void UseMockKeyStorageForTesting(
  // Clears any caching and most lazy initialisations performed by the production
  // code. Should be used after any test which required a password.
  COMPONENT_EXPORT(OS_CRYPT) void ClearCacheForTesting();

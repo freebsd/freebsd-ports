@@ -1,4 +1,4 @@
---- base/files/file_util_unittest.cc.orig	2021-09-14 01:51:47 UTC
+--- base/files/file_util_unittest.cc.orig	2021-12-31 00:57:18 UTC
 +++ base/files/file_util_unittest.cc
 @@ -1640,7 +1640,7 @@ TEST_F(FileUtilTest, DeleteDirRecursiveWithOpenFile) {
  #endif
@@ -18,7 +18,7 @@
  
  TEST_F(FileUtilTest, MoveFileNew) {
    // Create a file
-@@ -3508,7 +3508,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
+@@ -3509,7 +3509,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
  }
  #endif  // defined(OS_WIN)
  
@@ -27,7 +27,7 @@
  TEST_F(FileUtilTest, ReadFileToStringWithProcFileSystem) {
    FilePath file_path("/proc/cpuinfo");
    std::string data = "temp";
-@@ -3526,7 +3526,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithProcFileSyste
+@@ -3527,7 +3527,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithProcFileSyste
  
    EXPECT_FALSE(ReadFileToStringWithMaxSize(file_path, nullptr, 4));
  }

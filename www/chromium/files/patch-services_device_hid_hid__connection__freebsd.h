@@ -1,4 +1,4 @@
---- services/device/hid/hid_connection_freebsd.h.orig	2021-09-29 12:19:04 UTC
+--- services/device/hid/hid_connection_freebsd.h.orig	2022-01-21 12:26:39 UTC
 +++ services/device/hid/hid_connection_freebsd.h
 @@ -0,0 +1,67 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
@@ -15,7 +15,7 @@
 +#include "base/macros.h"
 +#include "base/memory/weak_ptr.h"
 +#include "base/memory/ref_counted_memory.h"
-+#include "base/sequenced_task_runner.h"
++#include "base/task/sequenced_task_runner.h"
 +#include "services/device/hid/hid_connection.h"
 +
 +namespace base {

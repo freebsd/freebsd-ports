@@ -1,6 +1,6 @@
---- content/public/common/content_constants.h.orig	2021-05-12 22:05:53 UTC
+--- content/public/common/content_constants.h.orig	2021-12-31 00:57:32 UTC
 +++ content/public/common/content_constants.h
-@@ -61,7 +61,7 @@ CONTENT_EXPORT extern const char kCorsExemptPurposeHea
+@@ -59,7 +59,7 @@ CONTENT_EXPORT extern const char kCorsExemptPurposeHea
  // it at run time.
  CONTENT_EXPORT std::string GetCorsExemptRequestedWithHeaderName();
  

@@ -1,14 +1,14 @@
---- third_party/angle/BUILD.gn.orig	2021-09-24 04:28:03 UTC
+--- third_party/angle/BUILD.gn.orig	2021-12-31 01:00:47 UTC
 +++ third_party/angle/BUILD.gn
-@@ -200,7 +200,6 @@ config("extra_warnings") {
+@@ -199,7 +199,6 @@ config("extra_warnings") {
+       "-Wtautological-type-limit-compare",
        "-Wundefined-reinterpret-cast",
        "-Wunneeded-internal-declaration",
-       "-Wweak-template-vtables",
 -      "-Wunused-but-set-variable",
  
        # The below warnings are used by WebKit. We enable them to make rolling
        # ANGLE in WebKit easier.
-@@ -210,11 +209,12 @@ config("extra_warnings") {
+@@ -209,11 +208,12 @@ config("extra_warnings") {
        "-Wunreachable-code-aggressive",
        "-Wshorten-64-to-32",
      ]
@@ -22,7 +22,7 @@
        ]
      }
    }
-@@ -486,6 +486,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -490,6 +490,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",

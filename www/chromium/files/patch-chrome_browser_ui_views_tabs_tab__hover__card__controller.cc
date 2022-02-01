@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2021-09-24 18:34:37 UTC
+--- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2021-12-14 11:45:00 UTC
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -298,7 +298,7 @@ void TabHoverCardController::ShowHoverCard(bool is_ini
+@@ -302,7 +302,7 @@ void TabHoverCardController::ShowHoverCard(bool is_ini
    slide_animator_->UpdateTargetBounds();
    MaybeStartThumbnailObservation(target_tab_, is_initial);
  

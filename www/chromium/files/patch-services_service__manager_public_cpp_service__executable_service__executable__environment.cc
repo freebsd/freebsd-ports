@@ -1,6 +1,6 @@
---- services/service_manager/public/cpp/service_executable/service_executable_environment.cc.orig	2021-06-11 15:03:35 UTC
+--- services/service_manager/public/cpp/service_executable/service_executable_environment.cc.orig	2021-12-31 00:57:38 UTC
 +++ services/service_manager/public/cpp/service_executable/service_executable_environment.cc
-@@ -50,6 +50,13 @@ ServiceExecutableEnvironment::ServiceExecutableEnviron
+@@ -51,6 +51,13 @@ ServiceExecutableEnvironment::ServiceExecutableEnviron
                  sandbox::policy::switches::kServiceSandboxType)),
          sandbox::policy::SandboxLinux::PreSandboxHook(), sandbox_options);
    }

@@ -1,4 +1,4 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2021-09-29 12:19:04 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2022-01-21 12:26:39 UTC
 +++ services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,397 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -24,7 +24,6 @@
 +#include "base/location.h"
 +#include "base/logging.h"
 +#include "base/posix/eintr_wrapper.h"
-+#include "base/single_thread_task_runner.h"
 +#include "base/stl_util.h"
 +#include "base/strings/pattern.h"
 +#include "base/strings/stringprintf.h"
@@ -32,6 +31,7 @@
 +#include "base/strings/string_util.h"
 +#include "base/strings/string_split.h"
 +#include "base/task/post_task.h"
++#include "base/task/single_thread_task_runner.h"
 +#include "base/task/thread_pool.h"
 +#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_task_runner_handle.h"
@@ -272,7 +272,7 @@
 +          // Do not re-add to checks
 +          if (permissions_checks_attempts_.find(device_name) == permissions_checks_attempts_.end()) {
 +            permissions_checks_attempts_.insert(std::pair<std::string, int>(device_name, kMaxPermissionChecks));
-+            timer_->Start(FROM_HERE, base::TimeDelta::FromSeconds(1),
++            timer_->Start(FROM_HERE, base::Seconds(1),
 +                          this, &BlockingTaskRunnerHelper::CheckPendingPermissionChange);
 +          }
 +        }

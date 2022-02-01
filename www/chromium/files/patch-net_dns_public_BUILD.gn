@@ -1,0 +1,11 @@
+--- net/dns/public/BUILD.gn.orig	2021-12-17 14:33:52 UTC
++++ net/dns/public/BUILD.gn
+@@ -37,7 +37,7 @@ source_set("public") {
+     "util.h",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "resolv_reader.cc",
+       "resolv_reader.h",

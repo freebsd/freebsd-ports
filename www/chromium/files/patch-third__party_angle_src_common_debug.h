@@ -1,6 +1,6 @@
---- third_party/angle/src/common/debug.h.orig	2021-09-24 04:28:03 UTC
+--- third_party/angle/src/common/debug.h.orig	2021-12-31 01:00:47 UTC
 +++ third_party/angle/src/common/debug.h
-@@ -393,7 +393,7 @@ std::ostream &FmtHex(std::ostream &os, T value)
+@@ -399,7 +399,7 @@ std::ostream &FmtHex(std::ostream &os, T value)
  #    define ANGLE_DISABLE_STRUCT_PADDING_WARNINGS
  #endif
  

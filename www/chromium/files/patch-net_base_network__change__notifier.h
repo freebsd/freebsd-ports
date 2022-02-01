@@ -1,6 +1,6 @@
---- net/base/network_change_notifier.h.orig	2021-07-28 11:56:28 UTC
+--- net/base/network_change_notifier.h.orig	2021-12-14 11:45:08 UTC
 +++ net/base/network_change_notifier.h
-@@ -415,7 +415,7 @@ class NET_EXPORT NetworkChangeNotifier {
+@@ -416,7 +416,7 @@ class NET_EXPORT NetworkChangeNotifier {
    // Chrome net code.
    static SystemDnsConfigChangeNotifier* GetSystemDnsConfigNotifier();
  
@@ -9,7 +9,7 @@
    // Returns the AddressTrackerLinux if present.
    static const internal::AddressTrackerLinux* GetAddressTracker();
  #endif
-@@ -571,7 +571,7 @@ class NET_EXPORT NetworkChangeNotifier {
+@@ -573,7 +573,7 @@ class NET_EXPORT NetworkChangeNotifier {
        SystemDnsConfigChangeNotifier* system_dns_config_notifier = nullptr,
        bool omit_observers_in_constructor_for_testing = false);
  

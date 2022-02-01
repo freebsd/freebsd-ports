@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2021-09-24 04:26:06 UTC
+--- content/public/common/content_switches.h.orig	2021-12-31 00:57:32 UTC
 +++ content/public/common/content_switches.h
-@@ -272,7 +272,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
+@@ -274,7 +274,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

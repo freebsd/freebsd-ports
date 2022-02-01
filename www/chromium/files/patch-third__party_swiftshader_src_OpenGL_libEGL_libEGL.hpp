@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig	2021-04-14 18:43:08 UTC
+--- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig	2021-12-14 11:47:13 UTC
 +++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp
 @@ -100,7 +100,7 @@ class LibEGL (private)
  				#endif
@@ -7,5 +7,5 @@
 -			#elif defined(__linux__)
 +			#elif defined(__linux__) || defined(__FreeBSD__)
  				#if defined(__LP64__)
- 					const char *libEGL_lib[] = {"lib64EGL_translator.so", "libEGL.so.1", "libEGL.so"};
+ 					const char *libEGL_lib[] = {"lib64EGL_translator.so", "libEGL.so.1", "libEGL.so", "libEGL_deprecated.so.1", "libEGL_deprecated.so"};
  				#else

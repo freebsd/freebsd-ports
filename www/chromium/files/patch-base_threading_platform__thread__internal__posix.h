@@ -1,6 +1,6 @@
---- base/threading/platform_thread_internal_posix.h.orig	2021-07-19 18:45:05 UTC
+--- base/threading/platform_thread_internal_posix.h.orig	2021-12-31 00:57:18 UTC
 +++ base/threading/platform_thread_internal_posix.h
-@@ -47,13 +47,13 @@ bool SetCurrentThreadPriorityForPlatform(ThreadPriorit
+@@ -46,13 +46,13 @@ bool SetCurrentThreadPriorityForPlatform(ThreadPriorit
  // of CanIncreaseThreadPriority().
  absl::optional<ThreadPriority> GetCurrentThreadPriorityForPlatform();
  

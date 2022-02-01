@@ -1,9 +1,9 @@
---- content/browser/v8_snapshot_files.cc.orig	2021-04-14 18:41:02 UTC
+--- content/browser/v8_snapshot_files.cc.orig	2021-12-31 00:57:32 UTC
 +++ content/browser/v8_snapshot_files.cc
-@@ -10,7 +10,7 @@
- namespace content {
+@@ -15,7 +15,7 @@ namespace content {
  
- std::map<std::string, base::FilePath> GetV8SnapshotFilesToPreload() {
+ std::map<std::string, base::FilePath> GetV8SnapshotFilesToPreload(
+     base::CommandLine& process_command_line) {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #if defined(USE_V8_CONTEXT_SNAPSHOT)

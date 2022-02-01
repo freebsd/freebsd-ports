@@ -1,7 +1,7 @@
---- base/process/kill_posix.cc.orig	2021-04-14 18:40:48 UTC
+--- base/process/kill_posix.cc.orig	2021-12-14 11:44:55 UTC
 +++ base/process/kill_posix.cc
-@@ -160,7 +160,7 @@ void EnsureProcessTerminated(Process process) {
-       0, new BackgroundReaper(std::move(process), TimeDelta::FromSeconds(2)));
+@@ -162,7 +162,7 @@ void EnsureProcessTerminated(Process process) {
+       0, new BackgroundReaper(std::move(process), Seconds(2)));
  }
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -9,7 +9,7 @@
  void EnsureProcessGetsReaped(Process process) {
    DCHECK(!process.is_current());
  
-@@ -171,7 +171,7 @@ void EnsureProcessGetsReaped(Process process) {
+@@ -173,7 +173,7 @@ void EnsureProcessGetsReaped(Process process) {
    PlatformThread::CreateNonJoinable(
        0, new BackgroundReaper(std::move(process), TimeDelta()));
  }

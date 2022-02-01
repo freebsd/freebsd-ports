@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2021-04-14 18:41:39 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2021-12-31 00:58:32 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.cc
 @@ -8,15 +8,15 @@
  
@@ -46,11 +46,12 @@
    out->modifier = data.modifier();
  #endif
  
-@@ -58,6 +58,6 @@ bool StructTraits<
+@@ -58,7 +58,7 @@ bool StructTraits<
  
    return data.ReadPlanes(&out->planes);
  }
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || defined(USE_OZONE)
  
- }  // namespace mojo
+ #if defined(OS_WIN)
+ bool StructTraits<gfx::mojom::DXGIHandleTokenDataView, gfx::DXGIHandleToken>::

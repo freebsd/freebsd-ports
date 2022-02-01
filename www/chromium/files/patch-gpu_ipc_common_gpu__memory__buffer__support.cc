@@ -1,4 +1,4 @@
---- gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2021-07-19 18:45:17 UTC
+--- gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2021-12-14 11:45:06 UTC
 +++ gpu/ipc/common/gpu_memory_buffer_support.cc
 @@ -17,7 +17,7 @@
  #include "gpu/ipc/common/gpu_memory_buffer_impl_io_surface.h"
@@ -36,7 +36,7 @@
    return gfx::NATIVE_PIXMAP;
  #elif defined(OS_WIN)
    return gfx::DXGI_SHARED_HANDLE;
-@@ -209,7 +209,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
+@@ -208,7 +208,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
            std::move(handle), size, format, usage, std::move(callback));
  #endif
