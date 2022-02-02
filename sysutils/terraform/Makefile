@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.4
+DISTVERSION=	1.1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/0mp:tencentcloud_tencentcloud_sdk_go
 
@@ -46,7 +46,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		armon:circbuf:5111143e8da2:armon_circbuf/vendor/github.com/armon/circbuf \
 		armon:go-metrics:f0300d1749da:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
-		aws:aws-sdk-go:v1.40.25:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.42.35:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		baiyubin:aliyun-sts-go-sdk:cfa1a18b161f:baiyubin_aliyun_sts_go_sdk/vendor/github.com/baiyubin/aliyun-sts-go-sdk \
 		bgentry:go-netrc:9fd32a8b3d3d:bgentry_go_netrc/vendor/github.com/bgentry/go-netrc \
 		bgentry:speakeasy:v0.1.0:bgentry_speakeasy/vendor/github.com/bgentry/speakeasy \
@@ -80,7 +80,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		golang:mock:v1.4.4:golang_mock/vendor/github.com/golang/mock \
 		golang:mock:v1.6.0:golang_mock_1 \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
-		golang:net:aaa1db679c0d:golang_net/vendor/golang.org/x/net \
+		golang:net:fe4d6282115f:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:d867a43fc93e:golang_sys/vendor/golang.org/x/sys \
