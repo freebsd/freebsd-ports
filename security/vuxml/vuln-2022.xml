@@ -1,3 +1,41 @@
+  <vuln vid="1d3677a8-9143-42d8-84a3-0585644dff4b">
+    <topic>h2o -- uninitialised memory access in HTTP3</topic>
+    <affects>
+      <package>
+	<name>h2o-devel</name>
+	<range><lt>2.3.0.d.20220131</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Emil Lerner reports:</p>
+	<blockquote cite="https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4">
+       <p>When receiving QUIC frames in certain order, HTTP/3 server-side
+       implementation of h2o can be misguided to treat uninitialized
+       memory as HTTP/3 frames that have been received. When h2o is
+       used as a reverse proxy, an attacker can abuse this vulnerability
+       to send internal state of h2o to backend servers controlled by
+       the attacker or third party. Also, if there is an HTTP endpoint
+       that reflects the traffic sent from the client, an attacker can
+       use that reflector to obtain internal state of h2o.</p>
+       <p>This internal state includes traffic of other connections in
+       unencrypted form and TLS session tickets.</p>
+       <p>This vulnerability exists in h2o server with HTTP/3
+       support, between commit 93af138 and d1f0f65. None of the
+       released versions of h2o are affected by this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43848</cvename>
+      <url>https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4</url>
+    </references>
+    <dates>
+      <discovery>2021-01-31</discovery>
+      <entry>2022-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b1b6d623-83e4-11ec-90de-1c697aa5a594">
     <topic>FreeBSD -- vt console buffer overflow</topic>
     <affects>
