@@ -30,7 +30,7 @@ Please see http://drupal.org/cron for important information on setting up
 periodic maintenance tasks in Drupal.
 
 Please see http://drupal.org/requirements for important information on
-system requirements for Drupal 8.  In particular, please ensure that your
+system requirements for Drupal 9.  In particular, please ensure that your
 configuration:
 
 - uses PHP 7.3 or later
