@@ -155,8 +155,6 @@
 %%DATADIR%%/plugins/dirhistory/dirhistory.plugin.zsh
 %%DATADIR%%/plugins/dirpersist/README.md
 %%DATADIR%%/plugins/dirpersist/dirpersist.plugin.zsh
-%%DATADIR%%/plugins/django/README.md
-%%DATADIR%%/plugins/django/django.plugin.zsh
 %%DATADIR%%/plugins/dnf/README.md
 %%DATADIR%%/plugins/dnf/dnf.plugin.zsh
 %%DATADIR%%/plugins/dnote/README.md
@@ -449,6 +447,9 @@
 %%DATADIR%%/plugins/mongocli/mongocli.plugin.zsh
 %%DATADIR%%/plugins/mosh/README.md
 %%DATADIR%%/plugins/mosh/mosh.plugin.zsh
+%%DATADIR%%/plugins/multipass/README.md
+%%DATADIR%%/plugins/multipass/_multipass
+%%DATADIR%%/plugins/multipass/multipass.plugin.zsh
 %%DATADIR%%/plugins/mvn/README.md
 %%DATADIR%%/plugins/mvn/mvn.plugin.zsh
 %%DATADIR%%/plugins/mysql-macports/README.md
@@ -788,8 +789,6 @@
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-kill-widget
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-usetty-wrapper
 %%DATADIR%%/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
-%%DATADIR%%/plugins/zsh_reload/README.md
-%%DATADIR%%/plugins/zsh_reload/zsh_reload.plugin.zsh
 %%DATADIR%%/templates/zshrc.zsh-template
 %%DATADIR%%/themes/3den.zsh-theme
 %%DATADIR%%/themes/Soliah.zsh-theme
