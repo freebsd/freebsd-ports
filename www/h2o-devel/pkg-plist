@@ -20,9 +20,9 @@ include/h2o/http2_casper.h
 include/h2o/http2_common.h
 include/h2o/http2_internal.h
 include/h2o/http2_scheduler.h
-include/h2o/http3_server.h
 include/h2o/http3_common.h
 include/h2o/http3_internal.h
+include/h2o/http3_server.h
 include/h2o/httpclient.h
 include/h2o/linklist.h
 include/h2o/memcached.h
@@ -48,12 +48,6 @@ include/h2o/tunnel.h
 include/h2o/url.h
 include/h2o/version.h
 include/h2o/websocket.h
-@comment lib/libh2o-evloop.so
-@comment lib/libh2o-evloop.so.0.16
-@comment lib/libh2o-evloop.so.0.16.0-beta2
-@comment lib/libh2o.so
-@comment lib/libh2o.so.0.16
-@comment lib/libh2o.so.0.16.0-beta2
 libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
 man/man5/h2o.conf.5.gz
