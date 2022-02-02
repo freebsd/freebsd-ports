@@ -10,6 +10,9 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le riscv64
 
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/psr.so:devel/pecl-psr@${PHP_FLAVOR}
