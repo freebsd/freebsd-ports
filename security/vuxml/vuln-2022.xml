@@ -1,3 +1,53 @@
+  <vuln vid="8579074c-839f-11ec-a3b2-005056a311d1">
+    <topic>samba -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba413</name>
+	<range><lt>4.13.17</lt></range>
+      </package>
+      <package>
+	<name>samba414</name>
+	<range><lt>4.14.12</lt></range>
+      </package>
+      <package>
+	<name>samba415</name>
+	<range><lt>4.15.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/history/security.html">
+	  <ul>
+	  <li>CVE-2021-43566: Malicious client using an SMB1 or NFS race to allow
+	      a directory to be created in an area of the server file system not
+	      exported under the share definition.</li>
+	  <li>CVE-2021-44141: Information leak via symlinks of existance of files
+	      or directories outside of the exported share.</li>
+	  <li>CVE-2021-44142: Out-of-bounds heap read/write vulnerability
+	      in VFS module vfs_fruit allows code execution.</li>
+	  <li>CVE-2022-0336: Samba AD users with permission to write to
+	      an account can impersonate arbitrary services.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43566</cvename>
+      <cvename>CVE-2021-44141</cvename>
+      <cvename>CVE-2021-44142</cvename>
+      <cvename>CVE-2022-0336</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2021-43566.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2021-44141.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2021-44142.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-0336.html</url>
+    </references>
+    <dates>
+      <discovery>2022-01-31</discovery>
+      <entry>2022-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee26f513-826e-11ec-8be6-d4c9ef517024">
     <topic>Rust -- Race condition enabling symlink following</topic>
     <affects>
