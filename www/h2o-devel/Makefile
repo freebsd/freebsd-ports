@@ -2,9 +2,12 @@
 
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-beta2.20210611
+DISTVERSION=	2.3.0-dev.20220131
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
+
+PATCH_SITES=    https://github.com/h2o/h2o/pull/
+PATCHFILES+=    2934.patch:-p1
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Optimized HTTP/2 server including support for TLS 1.3 and HTTP/1.x
@@ -21,9 +24,8 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-USE_PERL5=	run
 USE_LDCONFIG=	yes
-GH_TAGNAME=	96bf0ef
+GH_TAGNAME=	a68cabae
 
 CONFLICTS=	h2o
 
@@ -52,7 +54,7 @@ OPTIONS_DEFAULT=	MRUBY
 OPTIONS_SUB=		yes
 MRUBY_DESC=		Build with embedded mruby handler support
 
-CMAKE_ARGS+=		-DBUILD_SHARED_LIBS=ON -DWITH_BUNDLED_SSL=OFF
+CMAKE_ARGS+=		-DBUILD_SHARED_LIBS=OFF -DWITH_BUNDLED_SSL=OFF
 
 MRUBY_CMAKE_BOOL=	WITH_MRUBY
 MRUBY_USES=		bison
