@@ -1,6 +1,6 @@
-TIMESTAMP = 1637061176
-SHA256 (gopasspw-gopass-v1.13.0_GH0.tar.gz) = 785ef96a0519a0d91a524036dc982f8e6ee00e6841a7b4faf4c504368cff7d31
-SIZE (gopasspw-gopass-v1.13.0_GH0.tar.gz) = 2182196
+TIMESTAMP = 1643791135
+SHA256 (gopasspw-gopass-v1.13.1_GH0.tar.gz) = c59006956758b63847fcd2f4b05990ad01b94489df1eef2849d6587840d9945a
+SIZE (gopasspw-gopass-v1.13.1_GH0.tar.gz) = 2183318
 SHA256 (FiloSottile-age-v1.0.0_GH0.tar.gz) = 8d27684f62f9dc74014035e31619e2e07f8b56257b1075560456cbf05ddbcfce
 SIZE (FiloSottile-age-v1.0.0_GH0.tar.gz) = 59682
 SHA256 (FiloSottile-edwards25519-v1.0.0-rc.1_GH0.tar.gz) = 594002138a9b9e1c0eb114ad27ea473442a71249afe401bb5a77c7f0ff59f35a
