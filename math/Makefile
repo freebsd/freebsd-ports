@@ -240,6 +240,7 @@
     SUBDIR += dbcsr
     SUBDIR += deal.ii
     SUBDIR += dieharder
+    SUBDIR += dionysus
     SUBDIR += disco
     SUBDIR += djbfft
     SUBDIR += drgeo

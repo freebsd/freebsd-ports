@@ -1,0 +1,4 @@
+Dionysus is a computational topology package focused on persistent
+homology. It is written in C++, with Python bindings.
+
+WWW: https://mrzv.org/software/dionysus2/
