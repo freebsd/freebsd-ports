@@ -28,7 +28,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-PC-213.6461.77
+%%DATADIR%%/lib/build-marker-PC-213.6777.50
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -132,7 +132,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-host-unattended.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-host.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-lobby-common.jar
-%%DATADIR%%/plugins/cwm-plugin/lib/cwm-plugin-android.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-plugin-terminal.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-plugin.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/cwm-unattended-common.jar
@@ -144,7 +143,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/cwm-plugin/lib/projector-client-common.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/projector-client-swing.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
-%%DATADIR%%/plugins/cwm-plugin/lib/rd-text-2021.3.4.jar
+%%DATADIR%%/plugins/cwm-plugin/lib/rd-text-2021.3.5.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/tls-channel.jar
 %%DATADIR%%/plugins/cwm-plugin/quiche-native/darwin-aarch64/libquiche.dylib
 %%DATADIR%%/plugins/cwm-plugin/quiche-native/darwin-x86-64/libquiche.dylib
@@ -169,8 +168,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/platform-images/lib/platform-images.jar
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-22e0e7d7a2a5-eb8d386cac10.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-22e0e7d7a2a5-eb8d386cac10.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-8628e36dc4f1-eb8d386cac10.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-8628e36dc4f1-eb8d386cac10.txt
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/local/local.js
@@ -4127,6 +4126,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/space/lib/3rd-party.jar
 %%DATADIR%%/plugins/space/lib/jackson-datatype-joda-2.13.0.jar
 %%DATADIR%%/plugins/space/lib/joda-time-2.10.8.jar
+%%DATADIR%%/plugins/space/lib/kotlinx-coroutines-slf4j-1.5.2.jar
 %%DATADIR%%/plugins/space/lib/space-idea-sdk-1.1.83546.jar
 %%DATADIR%%/plugins/space/lib/space-java-jps.jar
 %%DATADIR%%/plugins/space/lib/space.jar

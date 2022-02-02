@@ -1,7 +1,7 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 
 PORTNAME=	pycharm-ce
-PORTVERSION=	2021.3.1
+PORTVERSION=	2021.3.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
