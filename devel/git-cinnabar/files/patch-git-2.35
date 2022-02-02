@@ -1,0 +1,88 @@
+https://github.com/glandium/git-cinnabar/commit/612e11da5def
+
+--- helper/GIT-VERSION.mk.orig	2021-11-19 21:23:13 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.34.0
++GIT_VERSION ?= v2.35.1
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/cinnabar-fast-import.c.orig	2021-11-19 21:23:13 UTC
++++ helper/cinnabar-fast-import.c
+@@ -522,8 +522,13 @@ static void do_set(struct string_list *args)
+ 	}
+ }
+ 
++#ifdef _WIN32
++int write_object_file_flags(const void *buf, size_t len, const char *type,
++                            struct object_id *oid, unsigned flags)
++#else
+ int write_object_file_flags(const void *buf, unsigned long len, const char *type,
+                             struct object_id *oid, unsigned flags)
++#endif
+ {
+ 	struct strbuf data;
+ 	enum object_type t;
+--- helper/cinnabar-helper.c.orig	2021-11-19 21:23:13 UTC
++++ helper/cinnabar-helper.c
+@@ -2411,13 +2411,10 @@ static void init_git_config()
+ 	 * might be important configuration items there (like http.sslcainfo
+ 	 * on git for windows).
+ 	 * Trick git into giving us the path to it system gitconfig. */
+-	const char *argv[] = {
+-		"git", "config", "--system", "-e", NULL
+-	};
+ 	if (env && *env) {
+ 		setup_path();
+ 	}
+-	proc.argv = argv;
++	strvec_pushl(&proc.args, "git", "config", "--system", "-e", NULL);
+ 	strvec_push(&proc.env_array, "GIT_EDITOR=echo");
+ 	proc.no_stdin = 1;
+ 	proc.no_stderr = 1;
+--- helper/cinnabar-util.c.orig	2021-11-19 21:23:13 UTC
++++ helper/cinnabar-util.c
+@@ -227,7 +227,7 @@ void pipe_writer(struct writer *writer, const char **a
+ 
+ 	writer_close(writer);
+ 	child_process_init(&context->proc);
+-	context->proc.argv = argv;
++	strvec_pushv(&context->proc.args, argv);
+ 	context->proc.in = -1;
+ 	context->proc.out = fileno((FILE*)writer->context);
+ 	context->proc.no_stderr = 1;
+--- helper/hg-connect-stdio.c.orig	2021-11-19 21:23:13 UTC
++++ helper/hg-connect-stdio.c
+@@ -215,7 +215,7 @@ struct hg_connection *hg_connect_stdio(const char *url
+ 	if (looks_like_command_line_option(path))
+ 		die("strange pathname '%s' blocked", path);
+ 
+-	proc->env = local_repo_env;
++	strvec_pushv(&proc->env_array, (const char **)local_repo_env);
+ 	proc->use_shell = 1;
+ 	proc->in = proc->out = proc->err = -1;
+ 
+--- helper/object-file.c.patch.orig	2021-11-19 21:23:13 UTC
++++ helper/object-file.c.patch
+@@ -1,13 +1,13 @@
+ diff --git a/object-file.c b/object-file.c
+-index c3d866a287..904149ce90 100644
++index 8be57f48de..52315414f3 100644
+ --- a/object-file.c
+ +++ b/object-file.c
+-@@ -1954,7 +1954,7 @@ static int freshen_packed_object(const struct object_id *oid)
+- 	return 1;
+- }
++@@ -34,6 +34,8 @@
++ #include "promisor-remote.h"
++ #include "submodule.h"
+  
+--int write_object_file_flags(const void *buf, unsigned long len,
+-+int real_write_object_file_flags(const void *buf, unsigned long len,
+- 			    const char *type, struct object_id *oid,
+- 			    unsigned flags)
+- {
+++#define write_object_file_flags real_write_object_file_flags
+++
++ /* The maximum size for an object header. */
++ #define MAX_HEADER_LEN 32
++ 
