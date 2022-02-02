@@ -1,6 +1,6 @@
 PORTNAME=	cpu_features
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -22,6 +22,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CFLAGS+=	-fPIC
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/internal
+	${INSTALL_DATA} ${WRKSRC}/include/internal/hwcaps.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}/internal/
 	${INSTALL_DATA} ${WRKSRC}/include/cpuinfo_*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
 .include <bsd.port.mk>
