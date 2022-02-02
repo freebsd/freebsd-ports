@@ -1,4 +1,4 @@
---- plugins/sudoers/sudoers.in.orig	2018-01-15 17:30:32 UTC
+--- plugins/sudoers/sudoers.in.orig	2021-12-04 23:28:43 UTC
 +++ plugins/sudoers/sudoers.in
 @@ -32,6 +32,14 @@
  ##
@@ -15,13 +15,13 @@
  ## You may wish to keep some of the following environment variables
  ## when running commands via sudo.
  ##
-@@ -91,6 +99,9 @@ root ALL=(ALL) ALL
+@@ -91,6 +99,9 @@ root ALL=(ALL:ALL) ALL
  ## of the user they are running the command as (root by default).
  # Defaults targetpw  # Ask for the password of the target user
- # ALL ALL=(ALL) ALL  # WARNING: only use this together with 'Defaults targetpw'
+ # ALL ALL=(ALL:ALL) ALL  # WARNING: only use this together with 'Defaults targetpw'
 +
 +## Uncomment to show on password prompt which users' password is being expected
 +# Defaults passprompt="%p's password:"
  
  ## Read drop-in files from @sysconfdir@/sudoers.d
- ## (the '#' here does not indicate a comment)
+ @includedir @sysconfdir@/sudoers.d
