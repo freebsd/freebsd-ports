@@ -1,7 +1,7 @@
 # Created by: Robert Withrow <witr@rwwa.com>
 
 PORTNAME=	findutils
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.0
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
