@@ -1,3 +1,34 @@
+  <vuln vid="b1b6d623-83e4-11ec-90de-1c697aa5a594">
+    <topic>FreeBSD -- vt console buffer overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.0</ge><lt>13.0_6</lt></range>
+	<range><ge>12.2</ge><lt>12.2_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Under certain conditions involving use of the highlight buffer
+	while text is scrolling on the console, console data may overwrite
+	data structures associated with the system console or other kernel
+	memory.</p>
+	<h1>Impact:</h1>
+	<p>Users with access to the system console may be able to cause system
+	misbehaviour.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29632</cvename>
+      <freebsdsa>SA-22:01.vt</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-01-11</discovery>
+      <entry>2022-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8579074c-839f-11ec-a3b2-005056a311d1">
     <topic>samba -- Multiple Vulnerabilities</topic>
     <affects>
