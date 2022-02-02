@@ -1,5 +1,5 @@
 PORTNAME=	helvum
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gtk40
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	ryuukyu
-GL_COMMIT=	85e249cb32c3fcfebd30f4bad95808e264514130
+GL_COMMIT=	094681637ec8f9f2acdb993230e10da88aa3fedb
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -35,7 +35,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		cc-1.0.72 \
 		cexpr-0.6.0 \
 		cfg-expr-0.8.1 \
-		cfg-expr-0.9.0 \
+		cfg-expr-0.9.1 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		clang-sys-1.3.0 \
@@ -53,22 +53,22 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		futures-io-0.3.19 \
 		futures-task-0.3.19 \
 		futures-util-0.3.19 \
-		gdk-pixbuf-0.15.1 \
+		gdk-pixbuf-0.15.4 \
 		gdk-pixbuf-sys-0.15.1 \
-		gdk4-0.4.4 \
+		gdk4-0.4.6 \
 		gdk4-sys-0.4.2 \
-		gio-0.15.3 \
-		gio-sys-0.15.1 \
-		glib-0.15.3 \
+		gio-0.15.4 \
+		gio-sys-0.15.4 \
+		glib-0.15.4 \
 		glib-macros-0.15.3 \
-		glib-sys-0.15.1 \
+		glib-sys-0.15.4 \
 		glob-0.3.0 \
 		gobject-sys-0.15.1 \
 		graphene-rs-0.15.1 \
 		graphene-sys-0.15.1 \
-		gsk4-0.4.4 \
+		gsk4-0.4.6 \
 		gsk4-sys-0.4.2 \
-		gtk4-0.4.5 \
+		gtk4-0.4.6 \
 		gtk4-macros-0.4.3 \
 		gtk4-sys-0.4.5 \
 		heck-0.3.3 \
@@ -79,7 +79,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lexical-core-0.7.6 \
-		libc-0.2.115 \
+		libc-0.2.116 \
 		libloading-0.7.3 \
 		libspa-0.4.1 \
 		libspa-sys-0.4.1 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		strum_macros-0.21.1 \
 		syn-1.0.86 \
 		system-deps-3.2.0 \
-		system-deps-6.0.0 \
+		system-deps-6.0.1 \
 		tap-1.0.1 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
