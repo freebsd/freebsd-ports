@@ -1,3 +1,90 @@
+  <vuln vid="e852f43c-846e-11ec-b043-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>98.0.4758.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/02/stable-channel-update-for-desktop.html">
+	  <p>This release contains 27 security fixes, including:</p>
+	  <ul>
+	    <li>[1284584] High CVE-2022-0452: Use after free in Safe Browsing.
+	      Reported by avaue at S.S.L. on 2022-01-05</li>
+	    <li>[1284916] High CVE-2022-0453: Use after free in Reader Mode.
+	      Reported by Rong Jian of VRI on 2022-01-06</li>
+	    <li>[1287962] High CVE-2022-0454: Heap buffer overflow in ANGLE.
+	      Reported by Seong-Hwan Park (SeHwa) of SecunologyLab on
+	      2022-01-17</li>
+	    <li>[1270593] High CVE-2022-0455: Inappropriate implementation in
+	      Full Screen Mode. Reported by Irvan Kurniawan (sourc7) on
+	      2021-11-16</li>
+	    <li>[1289523] High CVE-2022-0456: Use after free in Web Search.
+	      Reported by Zhihua Yao of KunLun Lab on 2022-01-21</li>
+	    <li>[1274445] High CVE-2022-0457: Type Confusion in V8. Reported by
+	      rax of the Group0x58 on 2021-11-29</li>
+	    <li>[1267060] High CVE-2022-0458: Use after free in Thumbnail Tab
+	      Strip. Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-11-05</li>
+	    <li>[1244205] High CVE-2022-0459: Use after free in Screen Capture.
+	      Reported by raven (@raid_akame) on 2021-08-28</li>
+	    <li>[1250227] Medium CVE-2022-0460: Use after free in Window Dialog.
+	      Reported by 0x74960 on 2021-09-16</li>
+	    <li>[1256823] Medium CVE-2022-0461: Policy bypass in COOP. Reported
+	      by NDevTK on 2021-10-05</li>
+	    <li>[1270470] Medium CVE-2022-0462: Inappropriate implementation in
+	      Scroll. Reported by Youssef Sammouda on 2021-11-16</li>
+	    <li>[1268240] Medium CVE-2022-0463: Use after free in Accessibility.
+	      Reported by Zhihua Yao of KunLun Lab on 2021-11-09</li>
+	    <li>[1270095] Medium CVE-2022-0464: Use after free in Accessibility.
+	      Reported by Zhihua Yao of KunLun Lab on 2021-11-14</li>
+	    <li>[1281941] Medium CVE-2022-0465: Use after free in Extensions.
+	      Reported by Samet Bekmezci @sametbekmezci on 2021-12-22</li>
+	    <li>[1115460] Medium CVE-2022-0466: Inappropriate implementation in
+	      Extensions Platform. Reported by David Erceg on 2020-08-12</li>
+	    <li>[1239496] Medium CVE-2022-0467: Inappropriate implementation in
+	      Pointer Lock. Reported by Alesandro Ortiz on 2021-08-13</li>
+	    <li>[1252716] Medium CVE-2022-0468: Use after free in Payments.
+	      Reported by Krace on 2021-09-24</li>
+	    <li>[1279531] Medium CVE-2022-0469: Use after free in Cast. Reported
+	      by Thomas Orlita on 2021-12-14</li>
+	    <li>[1269225] Low CVE-2022-0470: Out of bounds memory access in V8.
+	      Reported by Looben Yang on 2021-11-11</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0452</cvename>
+      <cvename>CVE-2022-0453</cvename>
+      <cvename>CVE-2022-0454</cvename>
+      <cvename>CVE-2022-0455</cvename>
+      <cvename>CVE-2022-0456</cvename>
+      <cvename>CVE-2022-0457</cvename>
+      <cvename>CVE-2022-0458</cvename>
+      <cvename>CVE-2022-0459</cvename>
+      <cvename>CVE-2022-0460</cvename>
+      <cvename>CVE-2022-0461</cvename>
+      <cvename>CVE-2022-0462</cvename>
+      <cvename>CVE-2022-0463</cvename>
+      <cvename>CVE-2022-0464</cvename>
+      <cvename>CVE-2022-0465</cvename>
+      <cvename>CVE-2022-0466</cvename>
+      <cvename>CVE-2022-0467</cvename>
+      <cvename>CVE-2022-0468</cvename>
+      <cvename>CVE-2022-0469</cvename>
+      <cvename>CVE-2022-0470</cvename>
+      <url>https://chromereleases.googleblog.com/2022/02/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-02-01</discovery>
+      <entry>2022-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1d3677a8-9143-42d8-84a3-0585644dff4b">
     <topic>h2o -- uninitialised memory access in HTTP3</topic>
     <affects>
