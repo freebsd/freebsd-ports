@@ -1,6 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.2
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -21,8 +21,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		clap-3.0.13 \
-		clap_derive-3.0.12 \
+		clap-3.0.14 \
+		clap_derive-3.0.14 \
 		directories-4.0.1 \
 		dirs-sys-0.3.6 \
 		getrandom-0.2.4 \
