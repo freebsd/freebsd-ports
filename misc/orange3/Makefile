@@ -1,5 +1,6 @@
 PORTNAME=	orange3
 DISTVERSION=	3.29.1
+PORTREVISION=	1
 CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org

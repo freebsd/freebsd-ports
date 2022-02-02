@@ -1,5 +1,6 @@
 PORTNAME=	dsbxinput
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	mk@nic-nac-project.org
