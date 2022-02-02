@@ -63,7 +63,10 @@ etc/bash_dialog
 %%NO_STATIC%%include/bash/xmalloc.h
 %%NO_STATIC%%include/bash/y.tab.h
 %%NO_STATIC%%lib/bash/Makefile.inc
+%%NO_STATIC%%lib/bash/accept
 %%NO_STATIC%%lib/bash/basename
+%%NO_STATIC%%lib/bash/csv
+%%NO_STATIC%%lib/bash/cut
 %%NO_STATIC%%lib/bash/dirname
 %%NO_STATIC%%lib/bash/fdflags
 %%NO_STATIC%%lib/bash/finfo
@@ -73,12 +76,15 @@ etc/bash_dialog
 %%NO_STATIC%%lib/bash/loadables.h
 %%NO_STATIC%%lib/bash/logname
 %%NO_STATIC%%lib/bash/mkdir
+%%NO_STATIC%%lib/bash/mkfifo
+%%NO_STATIC%%lib/bash/mktemp
 %%NO_STATIC%%lib/bash/mypid
 %%NO_STATIC%%lib/bash/pathchk
 %%NO_STATIC%%lib/bash/print
 %%NO_STATIC%%lib/bash/printenv
 %%NO_STATIC%%lib/bash/push
 %%NO_STATIC%%lib/bash/realpath
+%%NO_STATIC%%lib/bash/rm
 %%NO_STATIC%%lib/bash/rmdir
 %%NO_STATIC%%lib/bash/seq
 %%NO_STATIC%%lib/bash/setpgid
@@ -92,6 +98,8 @@ etc/bash_dialog
 %%NO_STATIC%%lib/bash/unlink
 %%NO_STATIC%%lib/bash/whoami
 %%NO_STATIC%%libdata/pkgconfig/bash.pc
+man/man1/bash.1.gz
+man/man1/bashbug.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bash.mo
@@ -113,6 +121,7 @@ etc/bash_dialog
 %%NLS%%share/locale/id/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bash.mo
@@ -130,5 +139,3 @@ etc/bash_dialog
 %%NLS%%share/locale/vi/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bash.mo
-man/man1/bash.1.gz
-man/man1/bashbug.1.gz
