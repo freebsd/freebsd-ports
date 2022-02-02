@@ -1,11 +1,10 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.10.8
+DISTVERSION=	3.11.0
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ec8e547be135.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	ea415ae28442.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	7c188b24afaa.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	2a84a44f6897.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	e0927f7bce95.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,7 +32,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
 GH_TUPLE=	nothings:stb:af1a5bc:stb/subprojects/stb
-GL_TUPLE=	https://gitlab.freedesktop.org:emersion:libliftoff:2e1dd93b60224e77f6a49ad8fb36d184e3a9a3bc:libliftoff/subprojects/libliftoff
+GL_TUPLE=	https://gitlab.freedesktop.org:emersion:libliftoff:378ccb4f84a2473fe73dbdc56fe35a0d2ee661cc:libliftoff/subprojects/libliftoff
 PLIST_FILES=	bin/${PORTNAME}
 MESON_ARGS=	--force-fallback-for=libliftoff # allow system wlroots
 
