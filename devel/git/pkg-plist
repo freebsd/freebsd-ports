@@ -702,6 +702,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.33.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.34.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.34.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.35.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.35.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1302,6 +1304,12 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/remote-helpers/git-remote-hg
 %%CONTRIB%%share/git-core/contrib/remotes2config.sh
 %%CONTRIB%%share/git-core/contrib/rerere-train.sh
+%%CONTRIB%%share/git-core/contrib/scalar/Makefile
+%%CONTRIB%%share/git-core/contrib/scalar/README.md
+%%CONTRIB%%share/git-core/contrib/scalar/scalar.c
+%%CONTRIB%%share/git-core/contrib/scalar/scalar.txt
+%%CONTRIB%%share/git-core/contrib/scalar/t/Makefile
+%%CONTRIB%%share/git-core/contrib/scalar/t/t9099-scalar.sh
 %%CONTRIB%%share/git-core/contrib/stats/git-common-hash
 %%CONTRIB%%share/git-core/contrib/stats/mailmap.pl
 %%CONTRIB%%share/git-core/contrib/stats/packinfo.pl
@@ -1355,4 +1363,5 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/git.mo
+%%CONTRIB%%@dir share/git-core/contrib/scalar/.depend
 @dir share/git-core/templates/branches
