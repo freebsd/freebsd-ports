@@ -1,17 +1,20 @@
---- CMakeLists.txt.orig	1970-01-01 00:00:00 UTC
+--- CMakeLists.txt.orig	2021-11-05 17:27:37 UTC
 +++ CMakeLists.txt
-@@ -253,7 +253,9 @@ if(ENABLE_DAKOTA_DOCS)
-   add_subdirectory(docs)
+@@ -258,9 +258,11 @@ if(ENABLE_DAKOTA_DOCS)
  endif()
  
+ # Legacy examples
 -add_subdirectory(examples)
 +if (FREEBSD_ENABLE_EXAMPLES)
 +  add_subdirectory(examples)
 +endif()
+ # New examples library, taking care to guard against empty directory
+-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/dakota-examples/CMakeLists.txt")
++if(FREEBSD_ENABLE_EXAMPLES AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/dakota-examples/CMakeLists.txt")
+   add_subdirectory(dakota-examples)
+ endif()
  
- add_subdirectory(interfaces)
- 
-@@ -275,19 +277,23 @@ install(FILES INSTALL LICENSE COPYRIGHT README
+@@ -284,19 +286,23 @@ install(FILES INSTALL LICENSE COPYRIGHT README
    DESTINATION ${DAKOTA_TOPFILES_INSTALL}
    )
  
@@ -33,5 +36,5 @@
    )
 +endif()
  
- # Final CPack settings (depends on DAKOTA_GIT_checkout)
+ # Final CPack settings
  dakota_cpack_finalize()

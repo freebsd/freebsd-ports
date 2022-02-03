@@ -1,5 +1,6 @@
 bin/coliny
 bin/dakota
+bin/dakota-ui.sh
 bin/dakota.input.nspec
 bin/dakota.input.summary
 bin/dakota.sh
@@ -11,6 +12,7 @@ bin/dakota_restart_util
 bin/dprepro
 bin/dprepro.perl
 bin/dprepro.py
+bin/dprepro3
 bin/fsu_cvt_standalone
 bin/fsu_halton_standalone
 bin/fsu_hammersley_standalone
@@ -26,6 +28,7 @@ bin/timer
 include/3po/cobyla.h
 include/APPSEvalMgr.hpp
 include/APPSOptimizer.hpp
+include/ActiveKey.hpp
 include/ActiveSubspaceModel.hpp
 include/AdaptedBasisModel.hpp
 include/AlgorithmConfig.hpp
@@ -288,6 +291,8 @@ include/GeneticAlgorithmPostProcessor.hpp.inl
 include/GeneticAlgorithmSelector.hpp
 include/GeneticAlgorithmSelector.hpp.inl
 include/GeometricRandomVariable.hpp
+include/Graph2D.hpp
+include/Graphics.hpp
 include/GridApplicInterface.hpp
 include/GumbelRandomVariable.hpp
 include/HDF5_IO.hpp
@@ -507,13 +512,16 @@ include/NegBinomialRandomVariable.hpp
 include/NestedModel.hpp
 include/NodalInterpPolyApproximation.hpp
 include/NomadOptimizer.hpp
+include/NonDACVSampling.hpp
 include/NonDAdaptImpSampling.hpp
 include/NonDAdaptiveSampling.hpp
 include/NonDBayesCalibration.hpp
 include/NonDC3FunctionTrain.hpp
 include/NonDCalibration.hpp
+include/NonDControlVariateSampling.hpp
 include/NonDCubature.hpp
 include/NonDDREAMBayesCalibration.hpp
+include/NonDEnsembleSampling.hpp
 include/NonDExpansion.hpp
 include/NonDGPImpSampling.hpp
 include/NonDGPMSABayesCalibration.hpp
@@ -521,6 +529,7 @@ include/NonDGlobalEvidence.hpp
 include/NonDGlobalInterval.hpp
 include/NonDGlobalReliability.hpp
 include/NonDGlobalSingleInterval.hpp
+include/NonDHierarchSampling.hpp
 include/NonDIntegration.hpp
 include/NonDInterval.hpp
 include/NonDLHSEvidence.hpp
@@ -532,10 +541,13 @@ include/NonDLocalInterval.hpp
 include/NonDLocalReliability.hpp
 include/NonDLocalSingleInterval.hpp
 include/NonDMUQBayesCalibration.hpp
+include/NonDMultifidelitySampling.hpp
+include/NonDMultilevControlVarSampling.hpp
 include/NonDMultilevelFunctionTrain.hpp
 include/NonDMultilevelPolynomialChaos.hpp
 include/NonDMultilevelSampling.hpp
 include/NonDMultilevelStochCollocation.hpp
+include/NonDNonHierarchSampling.hpp
 include/NonDPOFDarts.hpp
 include/NonDPolynomialChaos.hpp
 include/NonDQUESOBayesCalibration.hpp
@@ -549,6 +561,7 @@ include/NonDSurrogateExpansion.hpp
 include/NonDWASABIBayesCalibration.hpp
 include/NonDuplicatingRouletteWheelSelector.hpp
 include/NonDuplicatingRouletteWheelSelector.hpp.inl
+include/NonHierarchSurrModel.hpp
 include/NonLinearConstraint.h
 include/NonLinearConstraintNature.hpp
 include/NonLinearConstraintNature.hpp.inl
@@ -660,6 +673,7 @@ include/ProcessHandleApplicInterface.hpp
 include/ProgramOptions.hpp
 include/ProjectOrthogPolyApproximation.hpp
 include/PseudoRandomTestsOnly.h
+include/Pybind11Interface.hpp
 include/PythonInterface.hpp
 include/QMEApproximation.hpp
 include/QUESOImpl.hpp
@@ -1157,6 +1171,7 @@ include/SurrBasedMinimizer.hpp
 include/SurrogateData.hpp
 include/SurrogateModel.hpp
 include/SurrogatesBase.hpp
+include/SurrogatesGPKernels.hpp
 include/SurrogatesGPObjective.hpp
 include/SurrogatesGaussianProcess.hpp
 include/SurrogatesPolynomialRegression.hpp
@@ -1462,7 +1477,6 @@ include/bayes_calibration_utils.hpp
 include/bit_mask.hpp
 include/bit_mask.hpp.inl
 include/cb_level_log_gateway.hpp
-include/cblas.h
 include/cdflib.h
 include/colin/AmplApplication.h
 include/colin/AmplDriver.h
@@ -1471,7 +1485,6 @@ include/colin/AnalysisCodeApplication.h
 include/colin/AppRequest.h
 include/colin/AppRequest_Impl.h
 include/colin/AppResponse.h
-include/colin/AppResponse.h.orig
 include/colin/AppResponseAnalysis.h
 include/colin/AppResponseInfo.h
 include/colin/AppResponseLValues.h
@@ -1639,6 +1652,7 @@ include/log_gateways.hpp
 include/logs.hpp
 include/macros.hpp
 include/math_tools.hpp
+include/menu.h
 include/minimal_levels.hpp
 include/mutex.hpp
 include/mutex.hpp.inl
@@ -1651,6 +1665,7 @@ include/nidr.h
 include/null_log.hpp
 include/numeric_limits.hpp
 include/oa.h
+include/optpp_blas_wrap.h
 include/orthogonal_matching_pursuit.hpp
 include/ostream_entry.hpp
 include/ostream_log.hpp
@@ -2493,12 +2508,12 @@ lib/libcolin.so
 lib/libconmin.so
 lib/libcport.so
 lib/libdakota_dll_api.so
+lib/libdakota_sciplot.so
 lib/libdakota_src.so
 lib/libdakota_src_fortran.so
 lib/libdakota_surrogates.so
 lib/libdakota_util.so
 lib/libddace.so
-lib/libdemo_tpl.so
 lib/libdfftpack.so
 lib/libdream.so
 lib/libeutils.so
@@ -2511,9 +2526,12 @@ lib/liblhs.so
 lib/liblhs_mod.so
 lib/liblhs_mods.so
 lib/libmoga.so
-lib/libmuqUtilities.so
+lib/libmuqApproximation.so
+lib/libmuqInference.so
 lib/libmuqModeling.so
+lib/libmuqOptimization.so
 lib/libmuqSamplingAlgorithms.so
+lib/libmuqUtilities.so
 lib/libncsuopt.so
 lib/libnidr.so
 lib/libnomad.so
@@ -2522,7 +2540,7 @@ lib/libpebbl.so
 lib/libpecos_src.so
 lib/libpecos_util.so
 lib/libpsuade.so
-%%GSL%%lib/libqueso.so
+lib/libqueso.so
 lib/librol.so
 lib/librol.so.13
 lib/librol.so.13.0

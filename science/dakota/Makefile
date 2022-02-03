@@ -1,8 +1,9 @@
 PORTNAME=	dakota
-DISTVERSION=	6.13.0
-PORTREVISION=	4
+DISTVERSION=	6.15.0
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-public-src-cli
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interface between analysis codes & iterative systems analysis methods
@@ -10,13 +11,22 @@ COMMENT=	Interface between analysis codes & iterative systems analysis methods
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	nanoflann>0:math/nanoflann
 LIB_DEPENDS=	libblas.so:math/blas \
 		libboost_system.so:devel/boost-libs \
-		liblapack.so:math/lapack
+		libgsl.so:math/gsl \
+		libhdf5.so:science/hdf5 \
+		liblapack.so:math/lapack \
+		libnlopt.so:math/nlopt \
+		libsz.so:science/szip
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++11-lang fortran perl5 python shebangfix
+USES=		cmake compiler:c++11-lang fortran motif perl5 pkgconfig python shebangfix xorg
+USE_XORG=	ice sm x11 xau xdmcp xext xft xmu xrender xt
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	nodefault
+GH_TUPLE=	stan-dev:math:v2.18.0:stanmath/stanmath
 
 SHEBANG_GLOB=	*.sh *.py
 SHEBANG_FILES=	interfaces/Python/mpitile \
@@ -25,17 +35,21 @@ SHEBANG_FILES=	interfaces/Python/mpitile \
 		scripts/dprepro.perl \
 		test/dakota_test.perl
 
-CMAKE_ON=	Boost_NO_BOOST_CMAKE \
+CMAKE_ON=	HAVE_X_GRAPHICS # always enable graphics because w/out it a lot of unrelated files aren't installed due to bugs in the project
+CMAKE_ON+=	Boost_NO_BOOST_CMAKE \
 		DAKOTA_GIT_checkout
 #CMAKE_ON+=	HAVE_C3 # causes "duplicate include" error
 #CMAKE_ON+=	DAKOTA_DL_SOLVER # fails to compile: error: declaration of anonymous class must be a definition
 #CMAKE_ON+=	HAVE_NOWPAC # installs files into $PORTSDIR
-CMAKE_ON+=	HAVE_DREAM HAVE_ADAPTIVE_SAMPLING HAVE_OPTPP DAKOTA_HOPS HAVE_ACRO \
-		HAVE_JEGA HAVE_NOMAD HAVE_NPSOL HAVE_NL2SOL HAVE_DOT HAVE_SURFPACK \
-		HAVE_CONMIN HAVE_DDACE HAVE_FSUDACE HAVE_PSUADE HAVE_ROL HAVE_DEMO_TPL # enable some methods that aren't enabled by default, see the list @ src/DakotaIterator.cpp
+CMAKE_ON+=	HAVE_QUESO \
+		HAVE_MUQ MUQ_USE_PYTHON \
+		# enable some methods that aren't enabled by default, see the list @ src/DakotaIterator.cpp
+CMAKE_ON+=	DAKOTA_HAVE_GSL DAKOTA_HAVE_HDF5
 
 CMAKE_OFF=	DAKOTA_ENABLE_TESTS
-CMAKE_ARGS=	-DDakota_VERSION_SRC:STRING=${DISTVERSION} -DDakota_GIT_REVL:STRING=${GIT_HASH} -DDakota_RELEASE_DATE:${STRING}=20201116
+CMAKE_ARGS=	-DDakota_VERSION_SRC:STRING=${DISTVERSION} -DDakota_GIT_REVL:STRING=unknown -DDakota_RELEASE_DATE:${STRING}=20211115 \
+		-DPython_EXECUTABLE=${PYTHON_CMD} \
+		-DMUQ_STANMATH_DIR=${WRKSRC}/stanmath
 
 FFLAGS+=	-fallow-argument-mismatch
 LDFLAGS+=	-lexecinfo
@@ -43,59 +57,22 @@ LDFLAGS+=	-lexecinfo
 CONFLICTS_BUILD=	dakota # self: picks up some bundled packages from the pre-installed dakota package and then fails to install them
 CONFLICTS_INSTALL=	openblas
 
-USES_GIT=	no
-GIT_URL=	https://software.sandia.gov/git/dakota
-GIT_HASH=	82fd55ea1c6bb6d32e4c68e7f92d991d658ba90a
-
-.if ${USES_GIT} == "yes"
-FETCH_DEPENDS=	git:devel/git
-do-fetch:
-	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
-	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-	  cd ${DISTDIR}/${DIST_SUBDIR} && \
-	    git clone -q ${GIT_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
-	    (cd ${PORTNAME}-${DISTVERSIONFULL} && \
-	      git checkout devel && \
-	      git submodule init packages/external && \
-	      git submodule init packages/pecos && \
-	      git submodule init packages/surfpack && \
-	      git submodule update) && \
-	    (cd ${PORTNAME}-${DISTVERSIONFULL} && git reset -q --hard ${GIT_HASH} && ${RM} -r .git) && \
-	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -print0 | LC_ALL=C ${SORT} -z | \
-	        ${TAR} czf ${PORTNAME}-${DISTVERSIONFULL}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
-	    ${RM} -r ${PORTNAME}-${DISTVERSIONFULL}; \
-	fi
-.else
-DISTNAME=	${PORTNAME}-${DISTVERSION}-release-public.src-UI
-.endif
-
-OPTIONS_DEFINE=		GSL GUI HDF5
-OPTIONS_DEFAULT=	GSL HDF5
-OPTIONS_SUB=		yes
-
-GSL_DESC=		GSL support
-GSL_CMAKE_BOOL=		DAKOTA_HAVE_GSL HAVE_QUESO HAVE_QUESO_GPMSA # QUESO requires GSL
-GSL_LIB_DEPENDS=	libgsl.so:math/gsl
-
-HDF5_CMAKE_BOOL=	DAKOTA_HAVE_HDF5 \
-			HAVE_MUQ # MUQ module requires HDF5
-HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-			libsz.so:science/szip
-
-GUI_DESC=		Build the Dakota/Motif Graphics package
-GUI_CMAKE_BOOL=		HAVE_X_GRAPHICS
-GUI_BROKEN=		error: non-void function 'SciPlotListReturnPtr' should return a value
-
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${ECHO} ${DISTVERSION} > ${WRKSRC}/VERSION # expected by the 'install' target
 
+pre-configure: # MUQ_STANMATH_DIR is lost otherwise
+	@${REINPLACE_CMD} 's|find_package(PkgConfig)|set(MUQ_STANMATH_DIR ${WRKSRC}/stanmath)|' ${WRKSRC}/packages/external/muq2/cmake/finds/FindSTANMATH.cmake
+
 post-install:
 	# remove eigen3 that Dakota installs
 	cd ${STAGEDIR}${PREFIX} && ${RM} -r include/eigen3 share/eigen3
+	# remove cblas.h that Dakota installs
+	${RM} ${STAGEDIR}${PREFIX}/include/cblas.h
+	# remove *.orig files
+	${RM} ${STAGEDIR}${PREFIX}/include/colin/AppResponse.h.orig
 	# install libraries that it fails to install
-.for l in libmuqUtilities.so libmuqModeling.so libmuqSamplingAlgorithms.so
+.for l in libmuqSamplingAlgorithms.so libmuqApproximation.so libmuqInference.so libmuqModeling.so libmuqOptimization.so libmuqUtilities.so
 	${INSTALL_LIB} ${BUILD_WRKSRC}/packages/external/muq2/lib/${l} ${STAGEDIR}${PREFIX}/lib
 .endfor
 
