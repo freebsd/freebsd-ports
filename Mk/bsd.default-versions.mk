@@ -62,7 +62,7 @@ IMAGEMAGICK_DEFAULT?=	7
 JAVA_DEFAULT?=		8
 # Possible values: 2.0.12, 2.3.0
 .if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=       2.0.12
+LAZARUS_DEFAULT?=       2.2.0
 .else
 LAZARUS_DEFAULT?=       2.3.0
 .endif

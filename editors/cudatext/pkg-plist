@@ -357,6 +357,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/C.lcf
 %%DATADIR%%/data/lexlib/CSS.cuda-lexmap
 %%DATADIR%%/data/lexlib/CSS.lcf
+%%DATADIR%%/data/lexlib/HTML style.cuda-lexmap
+%%DATADIR%%/data/lexlib/HTML style.lcf
 %%DATADIR%%/data/lexlib/HTML.cuda-lexmap
 %%DATADIR%%/data/lexlib/HTML.lcf
 %%DATADIR%%/data/lexlib/Ini files.cuda-lexmap

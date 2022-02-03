@@ -1,6 +1,6 @@
 PORTNAME=	lazarus
-PORTVERSION=	2.0.12
-#DISTVERSIONSUFFIX=	-2
+PORTVERSION=	2.2.0
+DISTVERSIONSUFFIX=	-0
 PKGNAMESUFFIX?=  -gtk2
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -17,6 +17,7 @@ BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		fpcres:lang/fpc-utils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		gmake:devel/gmake \
+		${PPNAME}:lang/fpc \
 		fpcres:lang/fpc-utils \
 		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc-source
 
@@ -81,6 +82,10 @@ post-build:
 	@cd ${WRKSRC} && \
 		${RM} -R COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
 			ide/Makefile*.orig ide/Makefile*.bak lcl/interfaces/qt5/qtobjects.pas.orig
+	@cd ${WRKDIR} && \
+		${RM} -R docs/chm/.gitignore docs/html/.gitignore lazarus/tools/install/rpm/.gitignore \
+			lazarus/tools/.gitignore lazarus/components/chmhelp/lhelp/.gitignore \
+			lazarus/.git*
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper

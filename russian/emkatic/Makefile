@@ -1,8 +1,7 @@
 # Created by: Andrey Fesenko <andrey@bsdnir.info>
 
 PORTNAME=	emkatic
-PORTVERSION=	0.38
-PORTREVISION=	5
+PORTVERSION=	0.41
 CATEGORIES=	russian emulators
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
