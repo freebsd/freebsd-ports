@@ -2,10 +2,8 @@ bin/gromit-mpx
 @sample %%ETCDIR%%/gromit-mpx.cfg.sample
 man/man1/gromit-mpx.1.gz
 share/applications/net.christianbeier.Gromit-MPX.desktop
-share/icons/hicolor/scalable/apps/gromit-mpx.svg
-share/icons/hicolor/scalable/apps/gromit-mpx_active.svg
+share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.active.svg
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.svg
 share/metainfo/net.christianbeier.Gromit-MPX.appdata.xml
-share/pixmaps/gromit-mpx.png
-share/pixmaps/gromit-mpx.xpm
-share/pixmaps/gromit-mpx_active.png
+share/pixmaps/net.christianbeier.Gromit-MPX.active.png
+share/pixmaps/net.christianbeier.Gromit-MPX.png
