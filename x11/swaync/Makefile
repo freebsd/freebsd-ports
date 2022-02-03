@@ -1,6 +1,7 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +20,6 @@ USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
-GH_TAGNAME=	c345804
 
 post-patch:
 # Let @sample handle default files under etc/
