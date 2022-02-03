@@ -1,5 +1,6 @@
 PORTNAME=	helvum
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
