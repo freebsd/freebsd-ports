@@ -1,10 +1,18 @@
---- CMakeLists.txt.orig	2022-01-16 06:54:48 UTC
+--- CMakeLists.txt.orig	2022-01-30 20:55:06 UTC
 +++ CMakeLists.txt
-@@ -20,7 +20,6 @@ set(PLUGINS
- detectOS()
- detectArch()
+@@ -11,7 +11,6 @@ include("${CMAKE_SOURCE_DIR}/cmake/build_helpers.cmake
+ 
+ # Make sure project is configured correctly
  setDefaultBuiltTypeIfUnset()
 -detectBadClone()
  
- # Add bundled dependencies
- add_subdirectory(plugins/libimhex)
+ # List plugin names here. Project name must match folder name
+ set(PLUGINS
+@@ -28,7 +27,6 @@ configurePackingResources()
+ # Add ImHex sources
+ add_subdirectory(lib/libimhex)
+ add_subdirectory(main)
+-add_custom_target(imhex ALL DEPENDS main)
+ 
+ # Add unit tests
+ enable_testing()

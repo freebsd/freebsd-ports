@@ -1,5 +1,5 @@
---- plugins/libimhex/include/hex/pattern_language/ast_node.hpp.orig	2022-01-12 08:17:14 UTC
-+++ plugins/libimhex/include/hex/pattern_language/ast_node.hpp
+--- lib/libimhex/include/hex/pattern_language/ast_node.hpp.orig	2022-01-30 20:55:06 UTC
++++ lib/libimhex/include/hex/pattern_language/ast_node.hpp
 @@ -13,6 +13,8 @@
  #include <variant>
  #include <vector>
@@ -8,8 +8,8 @@
 +
  namespace hex::pl {
  
-     class ASTNode;
-@@ -1719,7 +1721,7 @@ namespace hex::pl {
+     class PatternData;
+@@ -1794,7 +1796,7 @@ namespace hex::pl {
          Path m_path;
  
          void readVariable(Evaluator *evaluator, auto &value, PatternData *variablePattern) const {
