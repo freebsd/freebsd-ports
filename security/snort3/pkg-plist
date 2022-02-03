@@ -186,12 +186,13 @@ include/snort/protocols/vlan.h
 include/snort/protocols/wlan.h
 include/snort/pub_sub/appid_debug_log_event.h
 include/snort/pub_sub/appid_events.h
+include/snort/pub_sub/assistant_gadget_event.h
 include/snort/pub_sub/cip_events.h
 include/snort/pub_sub/daq_message_event.h
 include/snort/pub_sub/data_decrypt_event.h
 include/snort/pub_sub/dcerpc_events.h
 include/snort/pub_sub/dhcp_events.h
-include/snort/pub_sub/efp_process_event.h
+include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
