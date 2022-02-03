@@ -1,25 +1,21 @@
 # Created by: liamfoy@sepulcrum.org
 
 PORTNAME=	qsf
-PORTVERSION=	1.2.7
-PORTREVISION=	3
+PORTVERSION=	1.2.15
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	jack@jarasoft.net
 COMMENT=	Small fast spam filter intended to be used with procmail
 
-OPTIONS_DEFINE=	GDBM MYSQL SQLITE2
-SQLITE2_DESC=	SQLite2 support
-
-USES=	tar:bzip2
+USES=	localbase tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/qsf \
 		man/man1/qsf.1.gz
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	GDBM MYSQL SQLITE2
+SQLITE2_DESC=	SQLite2 support
 
 .include <bsd.port.options.mk>
 
