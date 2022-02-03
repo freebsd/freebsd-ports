@@ -1,0 +1,11 @@
+--- bootstrap/Makefile.in.orig	2022-02-02 15:41:58 UTC
++++ bootstrap/Makefile.in
+@@ -1751,7 +1751,7 @@ top_builddir_absolute = @top_builddir_absolute@
+ top_srcdir = @top_srcdir@
+ top_srcdir_absolute = @top_srcdir_absolute@
+ GUILE_WARNINGS = -W0
+-GUILE_OPTIMIZATIONS = -O1
++GUILE_OPTIMIZATIONS = -O1 -Oresolve-primitives -Ocps
+ GOBJECTS = $(SOURCES:%.scm=%.go)
+ nobase_noinst_DATA = $(GOBJECTS)
+ CLEANFILES = $(GOBJECTS)
