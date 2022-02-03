@@ -1,0 +1,6 @@
+Curtail (previously ImCompressor) is an useful image compressor,
+supporting PNG, JPEG and WEBP file types. It support both lossless and
+lossy compression modes with an option to whether keep or not metadata
+of images. It is inspired by Trimage and Image-Optimizer.
+
+WWW: https://github.com/Huluti/Curtail
