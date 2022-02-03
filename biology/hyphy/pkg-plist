@@ -147,6 +147,8 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/ModelTest.bf
 %%DATADIR%%/TemplateBatchFiles/MolClockAllRoots.bf
 %%DATADIR%%/TemplateBatchFiles/MolecularClock.bf
+%%DATADIR%%/TemplateBatchFiles/MSS-selector-2.bf
+%%DATADIR%%/TemplateBatchFiles/MSS-selector.bf
 %%DATADIR%%/TemplateBatchFiles/NeighborJoining.bf
 %%DATADIR%%/TemplateBatchFiles/NielsenYang.bf
 %%DATADIR%%/TemplateBatchFiles/NucModelCompare.bf
