@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	Crypt-PKCS10
-PORTVERSION=	2.002
+PORTVERSION=	2.003
 PORTEPOCH=	1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
