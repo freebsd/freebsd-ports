@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	cgdb
-DISTVERSION=	0.7.1
+DISTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://cgdb.me/files/
 
