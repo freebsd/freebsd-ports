@@ -22,4 +22,4 @@ fetch -qo - https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/s
 make makesum
 echo "lang/rust-nightly: Update to $(make -V PORTVERSION)
 
-Changes:	https://github.com/rust-lang/rust/compare/${prev_commit}...${new_commit}" >rust-nightly.msg
+https://github.com/rust-lang/rust/compare/${prev_commit}...${new_commit}" >rust-nightly.msg

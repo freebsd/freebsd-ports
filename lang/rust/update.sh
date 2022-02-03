@@ -24,7 +24,8 @@ make -C ../rust-bootstrap makesum
 
 echo "lang/rust: Update to ${version}
 
-Changes:	https://blog.rust-lang.org/FIXME/Rust-${version}.html
+https://blog.rust-lang.org/FIXME/Rust-${version}.html
+
 PR:		FIXME
 Exp-run by:	antoine
 Differential Revision:	FIXME" >rust.msg
