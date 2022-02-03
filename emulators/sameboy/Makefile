@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.7
 CATEGORIES=	emulators games
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game Boy and Game Boy Color emulator written in C
 
 LICENSE=	MIT
