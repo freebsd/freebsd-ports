@@ -185,11 +185,11 @@ cbsd/etc/defaults/vm-freebsd-FreeBSD-riscv64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-12.3.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.0-LATEST.conf
-cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-21.conf
+cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-22.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-13-STABLE.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-MidnightBSD-x64-2.1.2.conf
-cbsd/etc/defaults/vm-freebsd-OPNsense-21-RELEASE-amd64.conf
+cbsd/etc/defaults/vm-freebsd-OPNsense-22-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-x64-12.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-12.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-12.3.conf
@@ -201,7 +201,7 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-21-RELEASE-amd64-21.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-linux-Android-x86.conf
-cbsd/etc/defaults/vm-linux-ArchLinux-x86-2021.conf
+cbsd/etc/defaults/vm-linux-ArchLinux-x86-2022.conf
 cbsd/etc/defaults/vm-linux-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
@@ -217,7 +217,7 @@ cbsd/etc/defaults/vm-linux-OracleLinux-7.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-8.conf
 cbsd/etc/defaults/vm-linux-Parrot-security-4-x64.conf
 cbsd/etc/defaults/vm-linux-Rocky-8-x86_64.conf
-cbsd/etc/defaults/vm-linux-TinyCore-x86-12.conf
+cbsd/etc/defaults/vm-linux-TinyCore-x86-13.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
@@ -227,7 +227,7 @@ cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-kubernetes-21.conf
+cbsd/etc/defaults/vm-linux-cloud-kubernetes-23.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-fedora-server-34-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-server-35-x86_64.conf
@@ -1158,6 +1158,7 @@ cbsd/upgrade/pre-patch-13.0.19.1
 cbsd/upgrade/pre-patch-13.0.2.0
 cbsd/upgrade/pre-patch-13.0.21.0
 cbsd/upgrade/pre-patch-13.0.21.1
+cbsd/upgrade/pre-patch-13.0.23.0
 cbsd/upgrade/pre-patch-13.0.3.0
 cbsd/upgrade/pre-patch-13.0.3.1
 cbsd/upgrade/pre-patch-13.0.4.0

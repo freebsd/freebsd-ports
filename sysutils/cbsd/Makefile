@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	13.0.22
+DISTVERSION=	13.0.23
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
