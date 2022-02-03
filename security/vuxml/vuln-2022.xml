@@ -211,10 +211,13 @@
 	<name>rust</name>
 	<range><lt>1.58.1</lt></range>
       </package>
+      <package>
+	<name>rust-nightly</name>
+	<range><lt>1.60.0.20220202</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
 	<blockquote cite="https://blog.rust-lang.org/2022/01/20/cve-2022-21658.html">
 	  <p>The Rust Security Response WG was notified that the
 	    std::fs::remove_dir_all standard library function is vulnerable to a
@@ -232,6 +235,7 @@
     <dates>
       <discovery>2022-01-20</discovery>
       <entry>2022-01-31</entry>
+      <modified>2022-02-03</modified>
     </dates>
   </vuln>
 
