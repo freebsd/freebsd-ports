@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		55c08c1cdbc5dea9687bdda5d7ba15c0161a9c13.patch:dashboard
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
