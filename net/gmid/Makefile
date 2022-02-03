@@ -1,5 +1,5 @@
 PORTNAME=	gmid
-DISTVERSION=	1.7.5
+DISTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/omar-polo/gmid/releases/download/${DISTVERSION}/
 
@@ -25,6 +25,7 @@ USERS=		_gmid
 GROUPS=		_gmid
 
 post-build:
+	${STRIP_CMD} ${WRKSRC}/gg
 	${STRIP_CMD} ${WRKSRC}/gmid
 
 post-install:
