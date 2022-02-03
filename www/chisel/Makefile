@@ -1,7 +1,6 @@
 PORTNAME=	chisel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.6
-PORTREVISION=	1
+DISTVERSION=	1.7.7
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,12 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-_BUILD_VERSION=	${DISTVERSION}
-
 GO_MODULE=	github.com/jpillora/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-		-X ${GO_MODULE}/share.BuildVersion=${_BUILD_VERSION}"
+		-X ${GO_MODULE}/share.BuildVersion=${DISTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
