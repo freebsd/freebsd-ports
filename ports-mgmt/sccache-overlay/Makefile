@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-overlay
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Ports overlay for sccache
 
 LICENSE=	APACHE20
