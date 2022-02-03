@@ -1,5 +1,5 @@
-TIMESTAMP = 1633589981
-SHA256 (go/devel_glab/glab-v1.21.1/v1.21.1.mod) = 3d21ac3c98d0fae1588e22eee76f6e231df3b9954d7dc647b85fbbc4b984b8bb
-SIZE (go/devel_glab/glab-v1.21.1/v1.21.1.mod) = 1533
-SHA256 (go/devel_glab/glab-v1.21.1/v1.21.1.zip) = 645b0484993a29984d6c3a35d8ae87bd19bfd4c98aee1bc8607b25387194532c
-SIZE (go/devel_glab/glab-v1.21.1/v1.21.1.zip) = 16680685
+TIMESTAMP = 1643917248
+SHA256 (go/devel_glab/glab-v1.22.0/v1.22.0.mod) = 04e40d15d57951ff4b9dca2e16a693eda23383276e89ddde072cf3f68b439a41
+SIZE (go/devel_glab/glab-v1.22.0/v1.22.0.mod) = 3269
+SHA256 (go/devel_glab/glab-v1.22.0/v1.22.0.zip) = 0c1a886e25d76f2815eec048f82b4ac0df9b3b6fe4ee9ab7cc2776b5b110d632
+SIZE (go/devel_glab/glab-v1.22.0/v1.22.0.zip) = 16698655
