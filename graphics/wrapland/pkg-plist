@@ -4,6 +4,7 @@ include/Wrapland/Client/buffer.h
 include/Wrapland/Client/compositor.h
 include/Wrapland/Client/connection_thread.h
 include/Wrapland/Client/contrast.h
+include/Wrapland/Client/data_control_v1.h
 include/Wrapland/Client/datadevice.h
 include/Wrapland/Client/datadevicemanager.h
 include/Wrapland/Client/dataoffer.h
@@ -50,6 +51,7 @@ include/Wrapland/Client/text_input_v2.h
 include/Wrapland/Client/text_input_v3.h
 include/Wrapland/Client/touch.h
 include/Wrapland/Client/viewporter.h
+include/Wrapland/Client/virtual_keyboard_v1.h
 include/Wrapland/Client/wlr_output_configuration_v1.h
 include/Wrapland/Client/wlr_output_manager_v1.h
 include/Wrapland/Client/wraplandclient_export.h
@@ -67,6 +69,7 @@ include/Wrapland/Server/buffer.h
 include/Wrapland/Server/client.h
 include/Wrapland/Server/compositor.h
 include/Wrapland/Server/contrast.h
+include/Wrapland/Server/data_control_v1.h
 include/Wrapland/Server/data_device.h
 include/Wrapland/Server/data_device_manager.h
 include/Wrapland/Server/data_offer.h
@@ -75,9 +78,9 @@ include/Wrapland/Server/display.h
 include/Wrapland/Server/dpms.h
 include/Wrapland/Server/drag_pool.h
 include/Wrapland/Server/drm_lease_v1.h
-include/Wrapland/Server/egl_stream_controller.h
 include/Wrapland/Server/fake_input.h
 include/Wrapland/Server/filtered_display.h
+include/Wrapland/Server/globals.h
 include/Wrapland/Server/idle_inhibit_v1.h
 include/Wrapland/Server/input_method_v2.h
 include/Wrapland/Server/kde_idle.h
@@ -115,6 +118,7 @@ include/Wrapland/Server/text_input_v3.h
 include/Wrapland/Server/touch.h
 include/Wrapland/Server/touch_pool.h
 include/Wrapland/Server/viewporter.h
+include/Wrapland/Server/virtual_keyboard_v1.h
 include/Wrapland/Server/wl_output.h
 include/Wrapland/Server/wraplandserver_export.h
 include/Wrapland/Server/xdg_activation_v1.h
