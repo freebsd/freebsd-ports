@@ -1,7 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 
 PORTNAME=	python-igraph
-DISTVERSION=	0.9.8
+DISTVERSION=	0.9.9
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
