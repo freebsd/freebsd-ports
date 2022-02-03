@@ -1,4 +1,4 @@
---- external/sqlite/sqlite3.c.orig	2021-10-01 09:37:04 UTC
+--- external/sqlite/sqlite3.c.orig	2021-11-12 08:57:25 UTC
 +++ external/sqlite/sqlite3.c
 @@ -13214,7 +13214,7 @@ struct fts5_api {
  ** autoconf-based build

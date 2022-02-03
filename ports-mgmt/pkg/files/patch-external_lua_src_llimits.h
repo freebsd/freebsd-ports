@@ -1,4 +1,4 @@
---- external/lua/src/llimits.h.orig	2021-09-30 20:41:22 UTC
+--- external/lua/src/llimits.h.orig	2021-11-12 08:57:25 UTC
 +++ external/lua/src/llimits.h
 @@ -132,7 +132,7 @@ typedef LUAI_UACINT l_uacInt;
  #define cast_char(i)	cast(char, (i))

@@ -1,4 +1,4 @@
---- external/lua/src/lcode.c.orig	2021-09-30 20:43:46 UTC
+--- external/lua/src/lcode.c.orig	2021-11-12 08:57:25 UTC
 +++ external/lua/src/lcode.c
 @@ -591,7 +591,7 @@ static int stringK (FuncState *fs, TString *s) {
  */

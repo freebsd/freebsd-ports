@@ -1,4 +1,4 @@
---- external/libucl/uthash/uthash.h.orig	2021-09-30 20:51:12 UTC
+--- external/libucl/uthash/uthash.h.orig	2021-11-12 08:57:25 UTC
 +++ external/libucl/uthash/uthash.h
 @@ -227,17 +227,17 @@ do {                                                  
          _hd_hh_del = &((delptr)->hh);                                            \
