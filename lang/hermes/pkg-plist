@@ -14,6 +14,7 @@ include/hermes/Public/GCTripwireContext.h
 include/hermes/Public/RuntimeConfig.h
 include/hermes/SynthTrace.h
 include/hermes/SynthTraceParser.h
+include/hermes/TimerStats.h
 include/hermes/TraceInterpreter.h
 include/hermes/TracingRuntime.h
 include/hermes/hermes.h
