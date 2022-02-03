@@ -1,7 +1,6 @@
 PORTNAME=	passivedns
-DISTVERSION=	1.2.1-22
-DISTVERSIONSUFFIX=	-gd757713
-PORTREVISION=	1
+DISTVERSION=	1.2.1-25
+DISTVERSIONSUFFIX=	-gb438a30
 CATEGORIES=	security
 
 MAINTAINER=	shadowbq@gmail.com
@@ -16,19 +15,19 @@ USES=		autoreconf gmake libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	gamelinux
 
-SUB_FILES=	pkg-message
+USE_RC_SUBR=	passivedns
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldns-includes=${LOCALBASE}/include \
 		--with-ldns-libraries=${LOCALBASE}/lib
 
-USE_RC_SUBR=	passivedns
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	JSON
 OPTIONS_DEFAULT=	JSON
 
-JSON_CONFIGURE_ENABLE=	json
 JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
+JSON_CONFIGURE_ENABLE=	json
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/passivedns \
