@@ -84,6 +84,14 @@ PLIST_FILES=		bin/${GODOTFILE}
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}" OPTIONS_EXCLUDE=
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*}
+MAKE_ARGS+=	module_embree_enabled=no \
+		module_raycast_enabled=no \
+		module_webm_enabled=no
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|custom_build|${OPSYS}_Ports_build|' \
 		${WRKSRC}/methods.py
