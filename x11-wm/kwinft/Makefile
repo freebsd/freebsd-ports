@@ -1,12 +1,11 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.23.2
-PORTREVISION=	1
+DISTVERSION=	5.24.0-beta.0
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	0499e4cd8162.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/issues/209
-PATCHFILES+=	e80b91d5bc45.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/issues/210
+PATCHFILES+=	1c81c5f3ef9a.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/163
+PATCHFILES+=	a6d7bb9acfef.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/164
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland compositor and X11 window manager
@@ -33,19 +32,20 @@ CONFLICTS_INSTALL=	plasma5-kwin # bin/kwin_wayland
 
 USES=		cmake:testing gl kde:5 pkgconfig python:run qt:5 shebangfix xorg
 USE_GITLAB=	yes
-USE_GL=		egl gbm
-USE_KDE=	ecm_build activities auth completion config configwidgets \
-		coreaddons crash decoration globalaccel i18n iconthemes \
+USE_GL=		egl
+USE_KDE=	ecm_build auth completion config configwidgets \
+		coreaddons crash dbusaddons decoration globalaccel i18n \
 		idletime kcmutils kdeclarative kio kscreenlocker newstuff \
 		notifications package plasma-framework service textwidgets \
 		widgetsaddons windowsystem xmlgui
 USE_LDCONFIG=	yes
 USE_QT=		qmake_build buildtools_build core dbus declarative gui \
 		multimedia_run quickcontrols2_run widgets x11extras
-USE_XORG=	x11 xcb xi
+USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
-GL_COMMIT=	611fe6a008c0fed3bff8004f56d240161190540b
+GL_COMMIT=	9a706378af61d93fbacd0cd9dcd1b0be68bc6c70
 PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=5.23.90 # XXX beta override
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, epoll-shim, glib, intl, Qt5*, KF5*
 
 OPTIONS_DEFINE=	BREEZE DOCS QA11Y

@@ -1,10 +1,6 @@
 [
 { type: install
   message: <<EOM
-WARNING: X11 support is currently unstable on FreeBSD. Replacing KWin
-         in Plasma Desktop may not work. Test standalone first.
-         See also https://gitlab.com/kwinft/kwinft/-/issues/208
-
 Native Wayland on top of KMS console:
 
   $ export XDG_RUNTIME_DIR=$(mktemp -dt run)
