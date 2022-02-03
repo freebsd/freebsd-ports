@@ -141,6 +141,7 @@
     SUBDIR += psi88
     SUBDIR += py-Genesis-PyAPI
     SUBDIR += py-PySCeS
+    SUBDIR += py-bcbio-gff
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
@@ -148,6 +149,7 @@
     SUBDIR += py-cutadapt
     SUBDIR += py-deeptools
     SUBDIR += py-deeptoolsintervals
+    SUBDIR += py-dna-features-viewer
     SUBDIR += py-dnaio
     SUBDIR += py-ete3
     SUBDIR += py-gffutils
