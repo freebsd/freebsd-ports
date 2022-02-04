@@ -1,3 +1,5 @@
 TIMESTAMP = 1640986340
 SHA256 (labwc-labwc-0.4.0_GH0.tar.gz) = 82e5fc359fa55a7f411e638e58a0487eda6f07f01c06230c20e8598779ee3d5e
 SIZE (labwc-labwc-0.4.0_GH0.tar.gz) = 99311
+SHA256 (6a3536cdd74e.patch) = af4f8977d37f0fc85e2c85e6230d3829eff0b8ad15737c4f76cc0bbc6f8fe629
+SIZE (6a3536cdd74e.patch) = 980

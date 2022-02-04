@@ -2,6 +2,9 @@ PORTNAME=	labwc
 DISTVERSION=	0.4.0
 CATEGORIES=	x11-wm
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	6a3536cdd74e.patch:-p1 # https://github.com/labwc/labwc/pull/228
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
 
