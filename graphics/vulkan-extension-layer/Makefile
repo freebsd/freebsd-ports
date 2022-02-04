@@ -16,4 +16,10 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
 
+.if ${DISTVERSION:E} < 205
+GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.204:vkheaders/Vulkan-Headers
+CMAKE_ARGS+=	-DVULKAN_HEADERS_INSTALL_DIR:PATH="${WRKSRC_vkheaders}"
+CFLAGS+=	-I${WRKSRC_vkheaders}/include -isystem${LOCALBASE}/include
+.endif
+
 .include <bsd.port.mk>

@@ -5,3 +5,5 @@ SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-137-gb42ba6d_GH0.tar.g
 SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-137-gb42ba6d_GH0.tar.gz) = 417861
 SHA256 (martinus-robin-hood-hashing-3.11.3_GH0.tar.gz) = dcf2b7fa9ef9dd0c67102d94c28e8df3effbe1845e0ed1f31f4772ca5e857fc4
 SIZE (martinus-robin-hood-hashing-3.11.3_GH0.tar.gz) = 170788
+SHA256 (KhronosGroup-Vulkan-Headers-v1.3.204_GH0.tar.gz) = 2cde2c90975a8f36d00cf8eb6308cb00323aafbc0b7374f4b346f1140f760b3d
+SIZE (KhronosGroup-Vulkan-Headers-v1.3.204_GH0.tar.gz) = 1422859

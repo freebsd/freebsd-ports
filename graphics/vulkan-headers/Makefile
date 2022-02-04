@@ -1,7 +1,10 @@
 PORTNAME=	vulkan-headers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.204
+DISTVERSION=	1.3.205
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b32da5329b50.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Headers/pull/260
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
