@@ -1,0 +1,15 @@
+TIMESTAMP = 1643935980
+SHA256 (mattbas-Knotter-91ad023f16e37e1dfbb975c3faf411e50b2ab63f_GL0.tar.gz) = 42fe2737eb803dd1ac44e2893feecda3f60e94562e697ac1af267941e6c30f9a
+SIZE (mattbas-Knotter-91ad023f16e37e1dfbb975c3faf411e50b2ab63f_GL0.tar.gz) = 4813964
+SHA256 (mattbas-CMake-Lib-6dd5afe4059899b47dbe0a7e2b940b1af41a59f6_GL0.tar.gz) = 3dee5bad6a403266e17eb0d179784f2bdfdcdfaadbd771a2b943ac3ef64f489a
+SIZE (mattbas-CMake-Lib-6dd5afe4059899b47dbe0a7e2b940b1af41a59f6_GL0.tar.gz) = 9179
+SHA256 (mattbas-Qt-Color-Widgets-450e54570a6f96b2d90960c3c62f7111bbc147e9_GL0.tar.gz) = 8bdc45d6fa45345cf573e2dc9f88b5e10b8a774be5b99eae987e0868afe6d294
+SIZE (mattbas-Qt-Color-Widgets-450e54570a6f96b2d90960c3c62f7111bbc147e9_GL0.tar.gz) = 206928
+SHA256 (mattbas-Qt-Extended-TabWidget-77cffc0714f9690d5627eaf6bd9b86b560f24066_GL0.tar.gz) = 7efb048130ee63a6686277dec1c634627d7756e88cbf453fa255a2e639eec107
+SIZE (mattbas-Qt-Extended-TabWidget-77cffc0714f9690d5627eaf6bd9b86b560f24066_GL0.tar.gz) = 6891
+SHA256 (mattbas-Qt-History-LineEdit-fd37e87bb790d87c709a3234b8a0d8eedbb04031_GL0.tar.gz) = 29a39539865d32eea00c25deb78f564175ef8a71561570f0e431dad1f3068bab
+SIZE (mattbas-Qt-History-LineEdit-fd37e87bb790d87c709a3234b8a0d8eedbb04031_GL0.tar.gz) = 7836
+SHA256 (mattbas-Qt-KeySequence-Widget-55faa8665c24bdc709582adb404401a909fc8c0c_GL0.tar.gz) = c8bf2952a02ef71941c14f8a089b4db9ed48e9777c043d9ced08bf7f08e1d67c
+SIZE (mattbas-Qt-KeySequence-Widget-55faa8665c24bdc709582adb404401a909fc8c0c_GL0.tar.gz) = 10054
+SHA256 (mattbas-Qt-Toolbar-Editor-dff8fa080f5fa596517c4d4c9523c7a968f13766_GL0.tar.gz) = 98859ef97c2be18ce383687832989ff7120320ada46f5f3aaf70c05d1f761403
+SIZE (mattbas-Qt-Toolbar-Editor-dff8fa080f5fa596517c4d4c9523c7a968f13766_GL0.tar.gz) = 9633
