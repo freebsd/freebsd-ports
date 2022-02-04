@@ -1,3 +1,59 @@
+  <vuln vid="3507bfb3-85d5-11ec-8c9c-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.7.0</ge><lt>14.7.1</lt></range>
+	<range><ge>14.6.0</ge><lt>14.6.4</lt></range>
+	<range><ge>0</ge><lt>14.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/02/03/security-release-gitlab-14-7-1-released/">
+	  <p>Arbitrary POST requests via special HTML attributes in Jupyter Notebooks</p>
+	  <p>DNS Rebinding vulnerability in Irker IRC Gateway integration</p>
+	  <p>Missing certificate validation for external CI services</p>
+	  <p>Blind SSRF Through Project Import</p>
+	  <p>Open redirect vulnerability in Jira Integration</p>
+	  <p>Issue link was disclosing the linked issue</p>
+	  <p>Service desk email accessible by project non-members</p>
+	  <p>Authenticated users can search other users by their private email</p>
+	  <p>"External status checks" can be accepted by users below developer access if the user is either author or assignee of the target merge request</p>
+	  <p>Deleting packages in bulk from package registries may cause table locks</p>
+	  <p>Autocomplete enabled on specific pages</p>
+	  <p>Possible SSRF due to not blocking shared address space</p>
+	  <p>System notes reveals private project path when Issue is moved to a public project</p>
+	  <p>Timeout for pages using Markdown</p>
+	  <p>Certain branch names could not be protected</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0427</cvename>
+      <cvename>CVE-2022-0425</cvename>
+      <cvename>CVE-2022-0123</cvename>
+      <cvename>CVE-2022-0136</cvename>
+      <cvename>CVE-2022-0283</cvename>
+      <cvename>CVE-2022-0390</cvename>
+      <cvename>CVE-2022-0373</cvename>
+      <cvename>CVE-2022-0371</cvename>
+      <cvename>CVE-2021-39943</cvename>
+      <cvename>CVE-2022-0477</cvename>
+      <cvename>CVE-2022-0167</cvename>
+      <cvename>CVE-2022-0249</cvename>
+      <cvename>CVE-2022-0344</cvename>
+      <cvename>CVE-2022-0488</cvename>
+      <cvename>CVE-2021-39931</cvename>
+      <url>https://about.gitlab.com/releases/2022/02/03/security-release-gitlab-14-7-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-02-03</discovery>
+      <entry>2022-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e852f43c-846e-11ec-b043-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
