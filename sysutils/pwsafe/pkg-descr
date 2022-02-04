@@ -6,4 +6,4 @@ Pwsafe is a Unix commandline program that manages encrypted password databases.
   on Linux, *BSD, OS X, Solaris.
 * Compatible with CounterPane's PasswordSafe Win32 program versions 1.9.x.
 
-WWW: http://nsd.dyndns.org/pwsafe/
+WWW: https://github.com/nsd20463/pwsafe/
