@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.7.0
+DISTVERSION=	14.7.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -49,12 +49,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	f29f1fdadb51328ed686c2c916b332eae6a55e49
+GL_COMMIT=	49e5d7a924dc86477c8c887f9ffeb41e41d546dc
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 143dd
+# 144dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -237,3 +237,4 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
+
