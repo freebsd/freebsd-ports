@@ -1,13 +1,12 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
-PORTREVISION=	1
+DISTVERSION=	0.1.3
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
@@ -27,7 +26,7 @@ GH_ACCOUNT=	riverwm
 GH_TUPLE=	ifreund:zig-pixman:d381567:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:80166ba:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:60dde05:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:417c103:zig_wlroots/deps/zig-wlroots
+		swaywm:zig-wlroots:49a5f81:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Drelease-fast} \
