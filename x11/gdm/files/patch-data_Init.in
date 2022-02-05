@@ -55,10 +55,10 @@
 +
 +# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/GiveConsole, fbtab(5)
 +if [ -c /dev/dri/card0 ]; then
-+    /sbin/chown _gdm /dev/dri/card0
++    /usr/sbin/chown _gdm /dev/dri/card0
 +fi
 +if [ -c /dev/dri/renderD128 ]; then
-+    /sbin/chown _gdm /dev/dri/renderD128
++    /usr/sbin/chown _gdm /dev/dri/renderD128
 +fi
 +# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
 +rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*

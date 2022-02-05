@@ -5,10 +5,10 @@
  
 +# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/TakeConsole, fbtab(5)
 +if [ -c /dev/dri/card0 ]; then
-+    /sbin/chown root /dev/dri/card0
++    /usr/sbin/chown root /dev/dri/card0
 +fi
 +if [ -c /dev/dri/renderD128 ]; then
-+    /sbin/chown root /dev/dri/renderD128
++    /usr/sbin/chown root /dev/dri/renderD128
 +fi
 +
  exit 0

@@ -7,8 +7,8 @@
 +
 +# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/GiveConsole, fbtab(5)
 +if [ -c /dev/dri/card0 ]; then
-+    /sbin/chown $USER /dev/dri/card0
++    /usr/sbin/chown $USER /dev/dri/card0
 +fi
 +if [ -c /dev/dri/renderD128 ]; then
-+    /sbin/chown $USER /dev/dri/renderD128
++    /usr/sbin/chown $USER /dev/dri/renderD128
 +fi
