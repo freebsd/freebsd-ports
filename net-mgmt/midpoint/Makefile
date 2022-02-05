@@ -1,5 +1,5 @@
 PORTNAME=	midpoint
-PORTVERSION=	4.0.3
+PORTVERSION=	4.4.1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://evolveum.com/downloads/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-dist
@@ -7,12 +7,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-dist
 MAINTAINER=	freebsd@rheinwolf.de
 COMMENT=	Identity management and identity governance system
 
-LICENSE=	AMS APACHE20 AREV BITSTREAM CDDL LGPL3 MIT
-LICENSE_COMB=	multi
-LICENSE_NAME_AMS=	AMSFonts Copyright version 2.2
-LICENSE_NAME_AREV=	Arev Fonts Copyright
-LICENSE_NAME_BITSTREAM=	Bitstream Vera Fonts Copyright
-LICENSE_FILE=	${WRKSRC}/NOTICE
+LICENSE=			AMS APACHE20 AREV BITSTREAM CDDL LGPL3 MIT
+LICENSE_COMB=			multi
+LICENSE_NAME_AMS=		AMSFonts Copyright version 2.2
+LICENSE_NAME_AREV=		Arev Fonts Copyright
+LICENSE_NAME_BITSTREAM=		Bitstream Vera Fonts Copyright
+LICENSE_FILE=			${WRKSRC}/NOTICE
 LICENSE_PERMS_AMS=		dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 LICENSE_PERMS_AREV=		dist-mirror dist-sell pkg-mirror pkg-sell \
@@ -21,10 +21,11 @@ LICENSE_PERMS_BITSTREAM=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	11+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk oracle
 JAVA_RUN=	yes
+
 USE_RC_SUBR=	midpoint
 
 NO_ARCH=	yes
