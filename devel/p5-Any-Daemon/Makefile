@@ -1,7 +1,7 @@
 # Created by: Martin Waschbuesch <martin@waschbuesch.de>
 
 PORTNAME=	Any-Daemon
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
