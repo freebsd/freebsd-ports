@@ -1,5 +1,6 @@
 PORTNAME=	av1an
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
