@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2021-07-28 16:16:27 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2020-07-09 16:50:11 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
-@@ -14,228 +14,1354 @@
+@@ -14,228 +14,1362 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -352,9 +352,17 @@
 +	if (vp->v_type != VFIFO)
 +		VN_LOCK_ASHARE(vp);
 +
++#if __FreeBSD_version < 1400051
 +	error = insmntque1(vp, mp, vboxfs_insmntque_dtr, NULL);
-+	if (error)
++#else
++	error = insmntque(vp, mp);
++#endif
++	if (error) {
++#if __FreeBSD_version >= 1400051
++		vboxfs_insmntque_dtr(vp, NULL);
++#endif
 +		vp = NULL;
++	}
 +
 +unlock:
 +	VBOXFS_NODE_LOCK(node);
