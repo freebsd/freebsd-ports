@@ -1,0 +1,78 @@
+--- Makefile.orig	2021-12-16 10:20:49 UTC
++++ Makefile
+@@ -7,6 +7,8 @@
+ 
+ export TOP := $(CURDIR)
+ 
++CXX ?= g++
++
+ ifndef ANDROID_ABI_LEVEL
+ ANDROID_ABI_LEVEL := 21
+ endif
+@@ -31,9 +33,7 @@ TOOLCHAIN_POSTFIX := .cmd
+ endif
+ endif
+ 
+-ifndef ARCH
+-ARCH := $(shell g++ -dumpmachine)/
+-endif
++ARCH :=
+ 
+ USYS := $(shell uname -s)
+ UMCH := $(shell uname -m)
+@@ -60,7 +60,7 @@ MAKEDIR = mkdir -p
+ RM = rm
+ AR = ar 
+ else
+-GCC = g++
++GCC = $(CXX)
+ MAKEDIR = mkdir -p
+ RM = rm
+ AR = ar
+@@ -81,9 +81,10 @@ endif
+ 
+ 
+ INCLUDE = -I src
++INCLUDE += -I /usr/local/include
+ LIBS := -lPocoNet -lPocoUtil -lPocoFoundation -lPocoJSON 
+ CFLAGS := $(INCLUDE) -g3 -std=c++11 -O0
+-SHARED_FLAGS := -fPIC -shared -Wl,$(SONAME),$(LIBNAME)
++SHARED_FLAGS := -fPIC -shared -Wl,$(SONAME),$(LIBNAME) -L /usr/local/lib
+ 
+ ifdef ANDROID
+ CFLAGS += -fPIC
+@@ -115,7 +116,7 @@ SHARED_OBJECTS := $(addprefix obj/shared/$(ARCH),$(not
+ 
+ all: lib
+ 
+-lib: makedir lib/$(ARCH)$(OUTPUT).a lib/$(ARCH)$(LIBNAME)
++lib: makedir lib/$(OUTPUT).a lib/$(LIBNAME)
+ 	
+ obj/static/$(ARCH)%.o: %.cpp
+ 	$(GCC) -c -o $@ $< $(CFLAGS)
+@@ -123,11 +124,11 @@ obj/static/$(ARCH)%.o: %.cpp
+ obj/shared/$(ARCH)%.o: %.cpp
+ 	$(GCC) -c -o $@ $< $(SHARED_FLAGS) $(CFLAGS) $(LIBS)
+ 	
+-lib/$(ARCH)$(OUTPUT).a: $(OBJECTS)
++lib/$(OUTPUT).a: $(OBJECTS)
+ 	-rm -f $@
+ 	$(AR) rcs $@ $^
+ 	
+-lib/$(ARCH)$(LIBNAME): $(SHARED_OBJECTS)
++lib/$(LIBNAME): $(SHARED_OBJECTS)
+ 	$(GCC) -o $@ $(CFLAGS) $(SHARED_FLAGS) $(SHARED_OBJECTS) $(LIBS)
+ 	
+ makedir:
+@@ -165,9 +166,9 @@ endif
+ .PHONY: install
+ install:
+ 	install -d $(DESTDIR)$(PREFIX)/lib/
+-	install -m 644 lib/$(ARCH)$(OUTPUT).a $(DESTDIR)$(PREFIX)/lib/
++	install -m 644 lib/$(OUTPUT).a $(DESTDIR)$(PREFIX)/lib/
+ ifndef OS
+-	install -m 644 lib/$(ARCH)$(OUTPUT).so.$(VERSION) $(DESTDIR)$(PREFIX)/lib/
++	install -m 644 lib/$(OUTPUT).so.$(VERSION) $(DESTDIR)$(PREFIX)/lib/
+ endif
+ 	install -d $(DESTDIR)$(PREFIX)/include/nymph
+ 	install -m 644 src/*.h $(DESTDIR)$(PREFIX)/include/nymph/

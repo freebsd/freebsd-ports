@@ -1,0 +1,8 @@
+NymphCast is a software solution which turns your choice of
+FreeBSD-capable hardware into an audio and video source for a
+television or powered speakers. It enables the streaming of audio
+and video over the network from a wide range of client devices,
+as well as the streaming of internet media to a NymphCast server,
+controlled by a client device, or directly on the receiver.
+
+WWW: http://nyanko.ws/nymphcast.php

@@ -1,0 +1,92 @@
+--- Makefile.orig	2021-12-25 18:20:11 UTC
++++ Makefile
+@@ -6,6 +6,9 @@
+ 
+ export TOP := $(CURDIR)
+ 
++CXX ?= c++
++ARCH =
++
+ ifndef ANDROID_ABI_LEVEL
+ ANDROID_ABI_LEVEL := 21
+ endif
+@@ -30,10 +33,6 @@ TOOLCHAIN_POSTFIX := .cmd
+ endif
+ endif
+ 
+-ifndef ARCH
+-ARCH := $(shell g++ -dumpmachine)/
+-endif
+-
+ USYS := $(shell uname -s)
+ UMCH := $(shell uname -m)
+ 
+@@ -59,7 +58,7 @@ MAKEDIR = mkdir -p
+ RM = rm
+ AR = ar 
+ else
+-GCC = g++
++GCC = $(CXX)
+ MAKEDIR = mkdir -p
+ RM = rm
+ AR = ar
+@@ -76,11 +75,11 @@ ifeq ($(shell uname -s),Darwin)
+ 	LIBNAME = $(OUTPUT).0.dylib
+ endif
+ 
+-INCLUDE := -I src
++INCLUDE := -I src -I /usr/local/include
+ LIBS := -lnymphrpc -lPocoNet -lPocoUtil -lPocoFoundation -lPocoJSON 
+ #-lstdc++fs
+ CFLAGS := $(INCLUDE) -g3 -std=c++17 -O0
+-SHARED_FLAGS := -fPIC -shared -Wl,$(SONAME),$(LIBNAME)
++SHARED_FLAGS := -fPIC -shared -Wl,$(SONAME),$(LIBNAME) -L /usr/local/lib
+ 
+ ifdef ANDROID
+ CFLAGS += -fPIC
+@@ -109,9 +108,10 @@ SOURCES := $(wildcard src/*.cpp)
+ OBJECTS := $(addprefix obj/static/$(ARCH),$(notdir) $(SOURCES:.cpp=.o))
+ SHARED_OBJECTS := $(addprefix obj/shared/$(ARCH),$(notdir) $(SOURCES:.cpp=.o))
+ 
+-all: lib
++all: makedir
++	$(MAKE) lib
+ 
+-lib: makedir lib/$(ARCH)$(OUTPUT).a lib/$(ARCH)$(LIBNAME)
++lib: makedir lib/$(OUTPUT).a lib/$(LIBNAME)
+ 	
+ obj/static/$(ARCH)%.o: %.cpp
+ 	$(GCC) -c -o $@ $< $(CFLAGS)
+@@ -119,11 +119,11 @@ obj/static/$(ARCH)%.o: %.cpp
+ obj/shared/$(ARCH)%.o: %.cpp
+ 	$(GCC) -c -o $@ $< $(CFLAGS) $(SHARED_FLAGS) $(LIBS)
+ 	
+-lib/$(ARCH)$(OUTPUT).a: $(OBJECTS)
++lib/$(OUTPUT).a: $(OBJECTS)
+ 	-rm -f $@
+ 	$(AR) rcs $@ $^
+ 	
+-lib/$(ARCH)$(LIBNAME): $(SHARED_OBJECTS)
++lib/$(LIBNAME): $(SHARED_OBJECTS)
+ 	$(GCC) -o $@ $(CFLAGS) $(SHARED_FLAGS) $(SHARED_OBJECTS) $(LIBS)
+ 	
+ makedir:
+@@ -168,9 +168,9 @@ endif
+ .PHONY: install
+ install:
+ 	install -d $(DESTDIR)$(PREFIX)/lib
+-	install -m 644 lib/$(ARCH)$(OUTPUT).a $(DESTDIR)$(PREFIX)/lib/
++	install -m 644 lib/$(OUTPUT).a $(DESTDIR)$(PREFIX)/lib/
+ ifndef OS
+-	install -m 644 lib/$(ARCH)$(OUTPUT).so.$(VERSION) $(DESTDIR)$(PREFIX)/lib
++	install -m 644 lib/$(OUTPUT).so.$(VERSION) $(DESTDIR)$(PREFIX)/lib
+ endif
+ 	install -d $(DESTDIR)$(PREFIX)/include
+ 	install -m 644 src/nymphcast_client.h $(DESTDIR)$(PREFIX)/include/
+@@ -183,4 +183,4 @@ ifndef OS
+ endif
+ 
+ package:
+-	tar -C lib/$(ARCH) -cvzf lib/$(OUTPUT)-$(VERSION)-$(USYS)-$(UMCH).tar.gz $(OUTPUT).a $(OUTPUT).so.$(VERSION)
+\ No newline at end of file
++	tar -C lib/$(ARCH) -cvzf lib/$(OUTPUT)-$(VERSION)-$(USYS)-$(UMCH).tar.gz $(OUTPUT).a $(OUTPUT).so.$(VERSION)

@@ -275,6 +275,9 @@
     SUBDIR += neolink
     SUBDIR += nordlicht
     SUBDIR += nostt
+    SUBDIR += nymphcast
+    SUBDIR += nymphcastlib
+    SUBDIR += nymphrpc
     SUBDIR += obs-audio-spectralizer
     SUBDIR += obs-ndi
     SUBDIR += obs-qtwebkit

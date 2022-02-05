@@ -1,0 +1,10 @@
+Libnymphcast is a library containing the core functionality for a NymphCast
+client. This includes:
+
+- Streaming media files to a remote NymphCast receiver.
+- Sending a URL to a media file to a NymphCast receiver to initiate playback.
+- Communication with remote NymphCast Apps.
+- Multi-casting media content.
+- Interact with NymphCast MediaServers.
+
+WWW: https://github.com/MayaPosch/libnymphcast

@@ -1,0 +1,4 @@
+include/nymphcast_client.h
+lib/libnymphcast.a
+lib/libnymphcast.so.0.1
+lib/libnymphcast.so
