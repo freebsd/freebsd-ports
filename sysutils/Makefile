@@ -140,6 +140,7 @@
     SUBDIR += bstack
     SUBDIR += btsixad
     SUBDIR += bulk_extractor
+    SUBDIR += bupstash
     SUBDIR += burp
     SUBDIR += burp-devel
     SUBDIR += busybox
