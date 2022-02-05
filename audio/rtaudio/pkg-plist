@@ -2,5 +2,5 @@ include/rtaudio/RtAudio.h
 include/rtaudio/rtaudio_c.h
 lib/librtaudio.so
 lib/librtaudio.so.6
-lib/librtaudio.so.6.0.1
+lib/librtaudio.so.6.0.2
 libdata/pkgconfig/rtaudio.pc
