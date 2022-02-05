@@ -5,6 +5,18 @@ Additional packages recommended for new users:
 - wf-shell (default background/launcher/panel)
 - wcm (GUI settings)
 - wayfire-plugins-extra
+
+Experimental features:
+- HiDPI support for X11 applications. For instructions see
+  https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064#note_1139855
+
+  Instead of ~/.config/sway/config edit ~/.config/wayfire.ini either via
+  wcm (General -> Core -> XWayland scale + General -> Autostart) or manually:
+
+    [core]
+    xwayland_scale = 2
+    [autostart]
+    xsettingsd = xsettingsd
 EOM
 }
 ]
