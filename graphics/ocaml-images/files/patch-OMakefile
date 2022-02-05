@@ -18,7 +18,16 @@
  
  # Specify directories where X's rgb.txt can be found
  PATH_RGB_TXT[]=
-@@ -175,13 +175,13 @@ print_configured() =
+@@ -95,6 +95,8 @@ print_configured() =
+      exit 1
+ 
+   CFLAGS = $(addprefix -I , $(INCLUDES))
++  OCAMLCFLAGS = -unsafe-string
++  OCAMLOPTFLAGS = -unsafe-string
+ 
+   WORD_SIZE = $(Word_size)
+ 
+@@ -175,13 +177,13 @@ print_configured() =
      OCAMLPACKS+=graphics
      export
  
