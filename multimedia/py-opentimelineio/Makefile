@@ -25,4 +25,6 @@ GH_TUPLE=	google:googletest:ba96d0b1161f540656efdaed035b3c062b60e006:google_goog
 		Tencent:rapidjson:4d6cb08189cf7336821f04090b612baa2ca6a90d:Tencent_rapidjson/src/deps/rapidjson \
 		thelink2012:any:f67bd5f8bbf7eb628bf38206d4ac5cb22438e6bb:thelink2012_any/src/deps/any
 
+PORTSCOUT=	ignore:0.91 # erroneously labeled tag
+
 .include <bsd.port.mk>
