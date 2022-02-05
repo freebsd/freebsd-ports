@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.6.5
+DISTVERSION=	1.7.0
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
