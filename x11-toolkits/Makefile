@@ -216,6 +216,7 @@
     SUBDIR += vte
     SUBDIR += vte3
     SUBDIR += wlroots
+    SUBDIR += wlroots-devel
     SUBDIR += wmapp
     SUBDIR += wxgtk28
     SUBDIR += wxgtk28-common

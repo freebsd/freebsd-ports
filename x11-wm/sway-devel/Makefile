@@ -1,31 +1,33 @@
 PORTNAME=	sway
-DISTVERSION=	1.7
+DISTVERSION=	1.7-103
+DISTVERSIONSUFFIX=	-g445bc2a94
 CATEGORIES=	x11-wm
+PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	i3-compatible Wayland compositor
+COMMENT=	i3-compatible Wayland compositor (development snapshot)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols \
-		wlroots>=0.15.0<0.16.0:x11-toolkits/wlroots
+		wlroots>=0.15.0.289<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libwayland-egl.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	swaybg:x11/swaybg
 
-CONFLICTS_INSTALL=	${PORTNAME}-devel
+CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		compiler:c11 gl gnome meson pkgconfig xorg
 USE_GITHUB=	yes
@@ -50,6 +52,7 @@ PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	gdk-pixbuf
 
 X11_USE=		XORG=xcb
+X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 X11_MESON_ENABLED=	xwayland
 
 post-patch:
@@ -61,4 +64,5 @@ post-patch:
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots-devel/override.mk"
 .include <bsd.port.mk>

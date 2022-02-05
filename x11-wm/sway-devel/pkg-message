@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Experimental features:
+- HiDPI support for X11 applications. For instructions see
+  https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064#note_1139855
+EOM
+}
+]
