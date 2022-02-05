@@ -250,6 +250,7 @@
     SUBDIR += neomutt
     SUBDIR += nextcloud-mail
     SUBDIR += nmh
+    SUBDIR += nmh-devel
     SUBDIR += noattach
     SUBDIR += nocc
     SUBDIR += normalizemime

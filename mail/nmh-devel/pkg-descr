@@ -1,0 +1,15 @@
+-----------
+What is it?
+-----------
+nmh (new MH) is an electronic mail handling system - a MUA (Mail
+User Agent) package for end-users to handle their e-mail. It was
+originally based on the package MH-6.8.3, and is intended to be a
+(mostly) compatible drop-in replacement for MH.
+
+nmh consists of a collection of fairly simple single-purpose programs
+to send, receive, save, retrieve, and manipulate e-mail messages. Since
+nmh is not a single comprehensive program, you may freely intersperse
+nmh commands with other shells commands, or write custom scripts which
+utilize these commands in flexible ways.
+
+WWW: http://savannah.nongnu.org/projects/nmh/

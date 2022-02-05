@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Some files you might need to customize include the following:
+
+    mhn.defaults - adjust the programs used to handle various
+	MIME content types.
+
+    mts.conf - adjust the "servers" setting if you don't have
+	a locally installed sendmail (or other MTA).
+
+You may also find interesting freely avaiable book about nmh:
+http://rand-mh.sourceforge.net/book/
+EOM
+}
+]

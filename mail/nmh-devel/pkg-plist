@@ -1,0 +1,192 @@
+bin/ali
+bin/anno
+bin/burst
+bin/comp
+bin/dist
+bin/flist
+bin/flists
+bin/fmttest
+bin/fnext
+bin/folder
+bin/folders
+bin/forw
+bin/fprev
+@group mail
+@mode 2755
+bin/inc
+@mode
+@group
+bin/install-mh
+bin/mark
+bin/mhbuild
+bin/mhfixmsg
+bin/mhlist
+bin/mhical
+bin/mhlogin
+bin/mhmail
+bin/mhn
+bin/mhparam
+bin/mhpath
+bin/mhshow
+bin/mhstore
+bin/msgchk
+bin/new
+bin/next
+bin/packf
+bin/pick
+bin/prev
+bin/prompter
+bin/refile
+bin/repl
+bin/rmf
+bin/rmm
+bin/scan
+bin/send
+bin/sendfiles
+bin/show
+bin/sortm
+bin/unseen
+bin/whatnow
+bin/whom
+@sample etc/nmh/MailAliases-dist etc/nmh/MailAliases
+@sample etc/nmh/bash_completion_nmh-dist etc/nmh/bash_completion_nmh
+@sample etc/nmh/mhical.12hour-dist etc/nmh/mhical.12hour
+@sample etc/nmh/mhical.24hour-dist etc/nmh/mhical.24hour
+@sample etc/nmh/mhl.replywithoutbody-dist etc/nmh/mhl.replywithoutbody
+@sample etc/nmh/rmmproc.messageid-dist etc/nmh/rmmproc.messageid
+@sample etc/nmh/components-dist etc/nmh/components
+@sample etc/nmh/digestcomps-dist etc/nmh/digestcomps
+@sample etc/nmh/distcomps-dist etc/nmh/distcomps
+@sample etc/nmh/forwcomps-dist etc/nmh/forwcomps
+@sample etc/nmh/mhl.body-dist etc/nmh/mhl.body
+@sample etc/nmh/mhl.digest-dist etc/nmh/mhl.digest
+@sample etc/nmh/mhl.format-dist etc/nmh/mhl.format
+@sample etc/nmh/mhl.forward-dist etc/nmh/mhl.forward
+@sample etc/nmh/mhl.headers-dist etc/nmh/mhl.headers
+@sample etc/nmh/mhl.reply-dist etc/nmh/mhl.reply
+@sample etc/nmh/mhn.defaults-dist etc/nmh/mhn.defaults
+@sample etc/nmh/mhshow.marker-dist etc/nmh/mhshow.marker
+@sample etc/nmh/mts.conf-dist etc/nmh/mts.conf
+@sample etc/nmh/rcvdistcomps-dist etc/nmh/rcvdistcomps
+@sample etc/nmh/rcvdistcomps.outbox-dist etc/nmh/rcvdistcomps.outbox
+@sample etc/nmh/replcomps-dist etc/nmh/replcomps
+@sample etc/nmh/replgroupcomps-dist etc/nmh/replgroupcomps
+@sample etc/nmh/scan.MMDDYY-dist etc/nmh/scan.MMDDYY
+@sample etc/nmh/scan.YYYYMMDD-dist etc/nmh/scan.YYYYMMDD
+@sample etc/nmh/scan.curses-dist etc/nmh/scan.curses
+@sample etc/nmh/scan.default-dist etc/nmh/scan.default
+@sample etc/nmh/scan.highlighted-dist etc/nmh/scan.highlighted
+@sample etc/nmh/scan.mailx-dist etc/nmh/scan.mailx
+@sample etc/nmh/scan.nomime-dist etc/nmh/scan.nomime
+@sample etc/nmh/scan.size-dist etc/nmh/scan.size
+@sample etc/nmh/scan.time-dist etc/nmh/scan.time
+@sample etc/nmh/scan.timely-dist etc/nmh/scan.timely
+@sample etc/nmh/scan.unseen-dist etc/nmh/scan.unseen
+libexec/nmh/ap
+libexec/nmh/dp
+libexec/nmh/fmtdump
+libexec/nmh/mhl
+libexec/nmh/mkstemp
+libexec/nmh/post
+libexec/nmh/rcvdist
+libexec/nmh/rcvpack
+libexec/nmh/rcvstore
+libexec/nmh/rcvtty
+libexec/nmh/slocal
+libexec/nmh/spost
+libexec/nmh/viamail
+man/man1/ali.1.gz
+man/man1/anno.1.gz
+man/man1/burst.1.gz
+man/man1/comp.1.gz
+man/man1/dist.1.gz
+man/man1/flist.1.gz
+man/man1/flists.1.gz
+man/man1/fmttest.1.gz
+man/man1/fnext.1.gz
+man/man1/folder.1.gz
+man/man1/folders.1.gz
+man/man1/forw.1.gz
+man/man1/fprev.1.gz
+man/man1/inc.1.gz
+man/man1/install-mh.1.gz
+man/man1/mark.1.gz
+man/man1/mh-mkstemp.1.gz
+man/man1/mhbuild.1.gz
+man/man1/mhfixmsg.1.gz
+man/man1/mhical.1.gz
+man/man1/mhl.1.gz
+man/man1/mhlist.1.gz
+man/man1/mhlogin.1.gz
+man/man1/mhmail.1.gz
+man/man1/mhn.1.gz
+man/man1/mhparam.1.gz
+man/man1/mhpath.1.gz
+man/man1/mhshow.1.gz
+man/man1/mhstore.1.gz
+man/man1/msgchk.1.gz
+man/man1/new.1.gz
+man/man1/next.1.gz
+man/man1/packf.1.gz
+man/man1/pick.1.gz
+man/man1/prev.1.gz
+man/man1/prompter.1.gz
+man/man1/rcvdist.1.gz
+man/man1/rcvpack.1.gz
+man/man1/rcvstore.1.gz
+man/man1/rcvtty.1.gz
+man/man1/refile.1.gz
+man/man1/repl.1.gz
+man/man1/rmf.1.gz
+man/man1/rmm.1.gz
+man/man1/scan.1.gz
+man/man1/send.1.gz
+man/man1/sendfiles.1.gz
+man/man1/show.1.gz
+man/man1/slocal.1.gz
+man/man1/sortm.1.gz
+man/man1/unseen.1.gz
+man/man1/whatnow.1.gz
+man/man1/whom.1.gz
+man/man5/mh-alias.5.gz
+man/man5/mh-draft.5.gz
+man/man5/mh-folders.5.gz
+man/man5/mh-format.5.gz
+man/man5/mh-mail.5.gz
+man/man5/mh-profile.5.gz
+man/man5/mh-sequence.5.gz
+man/man5/mh-tailor.5.gz
+man/man5/mh_profile.5.gz
+man/man5/mts.conf.5.gz
+man/man7/MH.7.gz
+man/man7/mh-chart.7.gz
+man/man7/mh-mime.7.gz
+man/man7/nmh.7.gz
+man/man8/ap.8.gz
+man/man8/dp.8.gz
+man/man8/fmtdump.8.gz
+man/man8/post.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/COMPLETION-TCSH
+%%PORTDOCS%%%%DOCSDIR%%/COMPLETION-ZSH
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/DIFFERENCES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MAIL.FILTERING
+%%PORTDOCS%%%%DOCSDIR%%/MAILING-LISTS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-ATTACHMENTS
+%%PORTDOCS%%%%DOCSDIR%%/README-HOOKS
+%%PORTDOCS%%%%DOCSDIR%%/README-components
+%%PORTDOCS%%%%DOCSDIR%%/README.SASL
+%%PORTDOCS%%%%DOCSDIR%%/README.about
+%%PORTDOCS%%%%DOCSDIR%%/README.developers
+%%PORTDOCS%%%%DOCSDIR%%/README.manpages
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/contrib/localpostproc
+%%PORTDOCS%%%%DOCSDIR%%/contrib/ml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/replaliases
+%%PORTDOCS%%%%DOCSDIR%%/contrib/replyfilter
+%%PORTDOCS%%%%DOCSDIR%%/contrib/vpick
