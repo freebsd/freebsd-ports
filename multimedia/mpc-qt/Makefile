@@ -1,7 +1,6 @@
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	20.10
-PORTREVISION=	1
+DISTVERSION=	22.02
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,6 +16,7 @@ USE_GITHUB=	yes
 USE_GL=		gl
 USE_QT=		qmake_build buildtools_build linguisttools_build \
 		core dbus gui network svg_run widgets x11extras
+QMAKE_ARGS=	MPCQT_VERSION="${DISTVERSION}${DISTVERSIONSUFFIX}"
 
 OPTIONS_DEFINE=	DOCS
 
