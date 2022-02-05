@@ -7,7 +7,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	christer.edwards@gmail.com
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Distributed remote execution and configuration management system
 
 LICENSE=	APACHE20
