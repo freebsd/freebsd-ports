@@ -210,6 +210,7 @@
     SUBDIR += asyncplusplus
     SUBDIR += atf
     SUBDIR += athens
+    SUBDIR += atlantis
     SUBDIR += atlas
     SUBDIR += atlas-devel
     SUBDIR += aunit

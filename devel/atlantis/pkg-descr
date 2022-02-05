@@ -1,0 +1,4 @@
+A self-hosted golang application that listens for Terraform pull request
+events via webhooks.
+
+WWW: https://www.runatlantis.io
