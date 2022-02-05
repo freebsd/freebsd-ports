@@ -1,6 +1,6 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
 
-PORTVERSION=	g20211214
+PORTVERSION=	g20220204
 # Always set PORTREVISION and PORTEPOCH explicitly as otherwise they are inherited from lang/go
 PORTREVISION=	0
 PORTEPOCH=	0
@@ -16,7 +16,7 @@ COMMENT=	Go programming language (development version)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	becaeea1199b875bc24800fa88f2f4fea119bf78
+GH_TAGNAME=	41f485b9a7d8fd647c415be1d11b612063dff21c
 
 CONFLICTS_INSTALL=	go
 
