@@ -15,8 +15,7 @@ share/bash-completion/completions/footclient
 share/fish/vendor_completions.d/foot.fish
 share/fish/vendor_completions.d/footclient.fish
 %%PORTDOCS%%%%DATADIR%%/foot.ini
-%%DATADIR%%/themes/PaperColorDark
-%%DATADIR%%/themes/PaperColorLight
+%%DATADIR%%/themes/apprentice
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/dracula
 %%DATADIR%%/themes/gruvbox-dark
@@ -24,6 +23,8 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/hacktober
 %%DATADIR%%/themes/kitty
 %%DATADIR%%/themes/nordiq
+%%DATADIR%%/themes/paper-color-dark
+%%DATADIR%%/themes/paper-color-light
 %%DATADIR%%/themes/selenized-black
 %%DATADIR%%/themes/selenized-dark
 %%DATADIR%%/themes/selenized-light
