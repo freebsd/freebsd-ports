@@ -935,6 +935,7 @@
     SUBDIR += grpc
     SUBDIR += grpc130
     SUBDIR += grpc134
+    SUBDIR += grpc142
     SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap

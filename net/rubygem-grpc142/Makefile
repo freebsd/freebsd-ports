@@ -1,5 +1,6 @@
 PORTNAME=	grpc
 PORTVERSION=	1.42.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	142
@@ -10,7 +11,7 @@ COMMENT=	Ruby implementation of gRPC
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcares.so:dns/c-ares \
-		libgrpc.so:devel/grpc
+		libgrpc.so:devel/grpc142
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-google-protobuf>=3.19<4:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos-types>=1.0<2:devel/rubygem-googleapis-common-protos-types

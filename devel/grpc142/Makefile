@@ -1,12 +1,12 @@
 # Created by: vanilla@
 
 PORTNAME=	grpc
-PORTVERSION=	1.34.1
+PORTVERSION=	1.42.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-PKGNAMESUFFIX=	134
+PKGNAMESUFFIX=	142
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	HTTP/2-based RPC framework
 
 LICENSE=	BSD3CLAUSE
@@ -35,8 +35,26 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 CMAKE_ON=	BUILD_SHARED_LIBS
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	grpc grpc130 grpc142
+PLIST_SUB=	SHLIB_MAJOR=${PORTVERSION:R} \
+		SHLIB_MINOR=${PORTVERSION:E}
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+CONFLICTS_INSTALL=	grpc130 grpc134 grpc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Remove openssl from grpc.pc because we do not ship openssl.pc in base system
+.if ${SSL_DEFAULT} == base
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-CMakeLists.txt
+.endif
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/third_party/abseil-cpp/
+	@${RM} -r ${WRKSRC}/third_party/benchmark/
+	@${RM} -r ${WRKSRC}/third_party/boringssl-with-bazel/
+	@${RM} -r ${WRKSRC}/third_party/cares/
+	@${RM} -r ${WRKSRC}/third_party/protobuf/
+	@${RM} -r ${WRKSRC}/third_party/re2/
+	@${RM} -r ${WRKSRC}/third_party/zlib/
+
+.include <bsd.port.post.mk>
