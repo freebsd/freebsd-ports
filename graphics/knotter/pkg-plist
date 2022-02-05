@@ -1,6 +1,7 @@
 bin/knotter
-share/icons/hicolor/64x64/knotter.png
-share/icons/hicolor/scalable/knotter.svg
+share/applications/knotter.desktop
+share/icons/hicolor/64x64/apps/knotter.png
+share/icons/hicolor/scalable/apps/knotter.svg
 %%DATADIR%%/knotter/img/handle_rotate_active.svg
 %%DATADIR%%/knotter/img/handle_rotate_rest.svg
 %%DATADIR%%/knotter/img/handle_scale_active.svg
@@ -588,7 +589,6 @@ share/icons/hicolor/scalable/knotter.svg
 %%DATADIR%%/knotter/img/knotter.png
 %%DATADIR%%/knotter/img/knotter.svg
 %%DATADIR%%/knotter/img/knotter.xpm
-%%DATADIR%%/knotter/knotter.desktop
 %%DATADIR%%/knotter/plugins/concentric_frame/concentric_frame.js
 %%DATADIR%%/knotter/plugins/concentric_frame/dialog.ui
 %%DATADIR%%/knotter/plugins/concentric_frame/frame-icon.svg
