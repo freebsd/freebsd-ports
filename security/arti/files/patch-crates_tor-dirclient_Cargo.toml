@@ -1,0 +1,9 @@
+--- crates/tor-dirclient/Cargo.toml.orig	2022-02-05 18:41:13 UTC
++++ crates/tor-dirclient/Cargo.toml
+@@ -38,5 +38,5 @@ thiserror = "1"
+ [dev-dependencies]
+ futures-await-test = "0.3.0"
+ tor-rtmock = { path="../tor-rtmock", version = "0.0.4"}
+-tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "native-tls" ] }
++tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "rustls" ] }
+ 

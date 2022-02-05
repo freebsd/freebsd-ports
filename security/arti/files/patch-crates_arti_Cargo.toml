@@ -1,0 +1,16 @@
+--- crates/arti/Cargo.toml.orig	2022-01-31 16:05:34 UTC
++++ crates/arti/Cargo.toml
+@@ -11,12 +11,10 @@ categories = [ "command-line-utilities", "cryptography
+ repository="https://gitlab.torproject.org/tpo/core/arti.git/"
+ 
+ [features]
+-default = [ "tokio", "native-tls" ]
++default = [ "tokio", "rustls" ]
+ async-std = [ "arti-client/async-std", "tor-rtcompat/async-std", "async-ctrlc", "once_cell" ]
+ tokio = [ "tokio-crate", "arti-client/tokio", "tor-rtcompat/tokio" ]
+-native-tls = [ "arti-client/native-tls", "tor-rtcompat/native-tls" ]
+ rustls = [ "arti-client/rustls", "tor-rtcompat/rustls" ]
+-static = [ "arti-client/static" ]
+ journald = [ "tracing-journald" ]
+ 
+ [dependencies]

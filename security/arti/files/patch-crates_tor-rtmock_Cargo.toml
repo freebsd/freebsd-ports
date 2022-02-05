@@ -1,0 +1,8 @@
+--- crates/tor-rtmock/Cargo.toml.orig	2022-02-05 18:45:03 UTC
++++ crates/tor-rtmock/Cargo.toml
+@@ -22,4 +22,4 @@ tor-rtcompat = { version = "0.0.4", path = "../tor-rtc
+ [dev-dependencies]
+ futures-await-test = "0.3.0"
+ rand = "0.8"
+-tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "native-tls" ] }
++tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "rustls" ] }

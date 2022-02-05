@@ -1,0 +1,32 @@
+--- crates/tor-rtcompat/Cargo.toml.orig	2022-02-05 18:43:53 UTC
++++ crates/tor-rtcompat/Cargo.toml
+@@ -15,10 +15,6 @@ repository="https://gitlab.torproject.org/tpo/core/art
+ default = [ ]
+ async-std = [ "async-std-crate", "async-io", "async_executors/async_std" ]
+ tokio = [ "tokio-crate", "tokio-util", "async_executors/tokio_tp" ]
+-# TODO: This feature makes us link native-tls statically even if we
+-# don't want to use native-tls in the first place.  That's not so clever!
+-static = [ "native-tls-crate/vendored" ]
+-native-tls = [ "native-tls-crate", "async-native-tls" ]
+ rustls = [ "rustls-crate", "async-rustls", "x509-signature" ]
+ 
+ [dependencies]
+@@ -27,12 +23,10 @@ async_executors = { version = "0.4", default_features 
+ async-trait = "0.1.2"
+ futures = "0.3"
+ pin-project = "1"
+-native-tls-crate = { package = "native-tls", version = "0.2", optional = true }
+ rustls-crate = { package = "rustls", version = "0.19", optional = true, features = [ "dangerous_configuration" ] }
+ 
+ async-std-crate = { package = "async-std", version = "1.7.0", optional = true }
+ async-io = { version = "1.4.1", optional = true }
+-async-native-tls = { version = "0.4.0", optional = true }
+ 
+ tokio-crate = { package = "tokio", version = "1.4", optional = true, features = ["rt", "rt-multi-thread", "io-util", "net", "time" ] }
+ tokio-util = { version = "0.6", features = ["compat"], optional = true }
+@@ -42,5 +36,4 @@ x509-signature = { version = "0.5.0", optional = true 
+ 
+ [dev-dependencies]
+ # Used for testing our TLS implementation.
+-native-tls-crate = { package = "native-tls", version = "0.2" }
+ 

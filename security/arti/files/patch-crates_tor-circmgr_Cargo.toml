@@ -1,0 +1,8 @@
+--- crates/tor-circmgr/Cargo.toml.orig	2022-02-05 18:40:29 UTC
++++ crates/tor-circmgr/Cargo.toml
+@@ -50,4 +50,4 @@ tor-guardmgr = { path="../tor-guardmgr", version = "0.
+ tor-llcrypto = { path="../tor-llcrypto", version = "0.0.3"}
+ tor-netdir = { path="../tor-netdir", version = "0.0.4", features=["testing"] }
+ tor-persist = { path="../tor-persist", version = "0.0.3", features=["testing"] }
+-tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "native-tls" ] }
++tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "rustls" ] }

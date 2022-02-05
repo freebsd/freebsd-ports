@@ -1,0 +1,25 @@
+--- crates/arti-client/Cargo.toml.orig	2022-01-31 16:05:34 UTC
++++ crates/arti-client/Cargo.toml
+@@ -11,12 +11,10 @@ categories = [ "network-programming", "cryptography" ]
+ repository="https://gitlab.torproject.org/tpo/core/arti.git/"
+ 
+ [features]
+-default = [ "tokio", "native-tls" ]
++default = [ "tokio", "rustls" ]
+ async-std = [ "tor-rtcompat/async-std" ]
+ tokio = [ "tor-rtcompat/tokio", "tor-proto/tokio" ]
+-native-tls = [ "tor-rtcompat/native-tls" ]
+ rustls = [ "tor-rtcompat/rustls" ]
+-static = [ "tor-rtcompat/static", "tor-dirmgr/static" ]
+ 
+ # Enable experimental APIs that are not yet officially supported.
+ #
+@@ -44,7 +42,7 @@ serde = { version = "1.0.103", features = ["derive"] }
+ thiserror = "1"
+ 
+ [dev-dependencies]
+-tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "native-tls" ] }
++tor-rtcompat = { path="../tor-rtcompat", version = "0.0.4", features=["tokio", "rustls" ] }
+ tokio-crate = { package = "tokio", version = "1.4", features = ["rt", "rt-multi-thread", "io-util", "net", "time", "macros" ] }
+ hyper = { version = "0.14", features = ["http1", "client", "runtime"] }
+ pin-project = "1"

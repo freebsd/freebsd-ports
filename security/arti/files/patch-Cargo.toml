@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2022-02-05 18:57:23 UTC
++++ Cargo.toml
+@@ -33,7 +33,7 @@ members = [
+     "crates/tor-dirmgr",
+     "crates/arti-client",
+     "crates/arti-config",
+-    "crates/arti-bench",
++#    "crates/arti-bench",
+     "crates/arti"
+ ]
+ 

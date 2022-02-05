@@ -1,0 +1,9 @@
+--- crates/tor-dirmgr/Cargo.toml.orig	2022-02-05 18:41:56 UTC
++++ crates/tor-dirmgr/Cargo.toml
+@@ -56,5 +56,5 @@ humantime-serde = "1"
+ futures-await-test = "0.3.0"
+ hex-literal = "0.3"
+ tempfile = "3"
+-tor-rtcompat = { path = "../tor-rtcompat", version = "0.0.4", features = [ "tokio", "native-tls" ] }
++tor-rtcompat = { path = "../tor-rtcompat", version = "0.0.4", features = [ "tokio", "rustls" ] }
+ float_eq = "0.7"
