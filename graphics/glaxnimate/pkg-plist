@@ -16254,5 +16254,11 @@ share/applications/glaxnimate.desktop
 %%DATADIR%%/glaxnimate/templates/Telegram_Sticker_60.rawr
 %%DATADIR%%/glaxnimate/themes/dark.ini
 %%DATADIR%%/glaxnimate/themes/light.ini
+%%DATADIR%%/glaxnimate/translations/glaxnimate_de.qm
+%%DATADIR%%/glaxnimate/translations/glaxnimate_en_GB.qm
+%%DATADIR%%/glaxnimate/translations/glaxnimate_en_US.qm
+%%DATADIR%%/glaxnimate/translations/glaxnimate_fr.qm
+%%DATADIR%%/glaxnimate/translations/glaxnimate_it.qm
+%%DATADIR%%/glaxnimate/translations/glaxnimate_zh_CN.qm
 share/icons/hicolor/512x512/apps/glaxnimate.png
 share/icons/hicolor/scalable/apps/glaxnimate.svg

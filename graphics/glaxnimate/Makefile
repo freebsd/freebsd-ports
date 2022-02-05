@@ -1,5 +1,6 @@
 PORTNAME=	glaxnimate
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,5 +32,7 @@ GH_TUPLE=	KDE:breeze-icons:1a13b09adc7ebe0c4b5be6cc1add3869f3de8a1a:KDE_breeze_i
 		mbasaglia:pybind11:7b30131fcbbbc227d2afcc969a8aab8c8b792b66:mbasaglia_pybind11/external/QtAppSetup/external/pybind11
 
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
+
+ALL_TARGET=	all translations
 
 .include <bsd.port.mk>
