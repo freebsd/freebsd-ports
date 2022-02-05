@@ -1,11 +1,6 @@
 PORTNAME=	avogadrolibs
-DISTVERSION=	1.94.0
-PORTREVISION=	2
+DISTVERSION=	1.95.1
 CATEGORIES=	science
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	cf9d82575796d5fcabb153bdebde26843d81d83e.patch:-p1 \
-		ea813f683cdd9865994c0ba94a24325e04b9f8fb.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Avogadro2 libraries for chemical editor and visualization applications
