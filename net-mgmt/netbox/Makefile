@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.6
+DISTVERSION=	3.1.7
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj32-djangorestframework (in conjunction with www/py-dj32-drf-yasg)
 #
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-include>=0.6.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.1.7<9:textproc/py-mkdocs-material@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.1.9<9:textproc/py-mkdocs-material@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.11<3.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-cors-headers>=3.11.0<4:www/py-dj32-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-debug-toolbar>=3.2.4<4:www/py-dj32-django-debug-toolbar@${PY_FLAVOR} \
@@ -48,7 +48,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.11<3.3:www/py-django32@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}social-auth-app-django>=5.0.0<6:www/py-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.1.0<5:security/py-social-auth-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.1<2:graphics/py-svgwrite@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tablib>=3.1.0<3.2:textproc/py-tablib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tablib>=3.2.0<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1<7:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.9.0<21:www/py-gunicorn@${PY_FLAVOR}
 

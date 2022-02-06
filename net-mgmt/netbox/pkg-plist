@@ -247,6 +247,7 @@
 %%DATADIR%%/dcim/migrations/0141_asn_model.py
 %%DATADIR%%/dcim/migrations/0142_rename_128gfc_qsfp28.py
 %%DATADIR%%/dcim/migrations/0143_remove_primary_for_related_name.py
+%%DATADIR%%/dcim/migrations/0144_fix_cable_abs_length.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/models/__init__.py
 %%DATADIR%%/dcim/models/cables.py
@@ -528,8 +529,8 @@
 %%DATADIR%%/project-static/docs/administration/permissions/index.html
 %%DATADIR%%/project-static/docs/administration/replicating-netbox/index.html
 %%DATADIR%%/project-static/docs/assets/images/favicon.png
-%%DATADIR%%/project-static/docs/assets/javascripts/bundle.01de222e.min.js
-%%DATADIR%%/project-static/docs/assets/javascripts/bundle.01de222e.min.js.map
+%%DATADIR%%/project-static/docs/assets/javascripts/bundle.960e086b.min.js
+%%DATADIR%%/project-static/docs/assets/javascripts/bundle.960e086b.min.js.map
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.ar.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.da.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.de.min.js
@@ -558,8 +559,8 @@
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/wordcut.js
 %%DATADIR%%/project-static/docs/assets/javascripts/workers/search.22074ed6.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/workers/search.22074ed6.min.js.map
-%%DATADIR%%/project-static/docs/assets/stylesheets/main.cd566b2a.min.css
-%%DATADIR%%/project-static/docs/assets/stylesheets/main.cd566b2a.min.css.map
+%%DATADIR%%/project-static/docs/assets/stylesheets/main.2b4465f4.min.css
+%%DATADIR%%/project-static/docs/assets/stylesheets/main.2b4465f4.min.css.map
 %%DATADIR%%/project-static/docs/assets/stylesheets/palette.e6a45f82.min.css
 %%DATADIR%%/project-static/docs/assets/stylesheets/palette.e6a45f82.min.css.map
 %%DATADIR%%/project-static/docs/configuration/dynamic-settings/index.html
