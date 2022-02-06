@@ -1,5 +1,6 @@
 PORTNAME=	duktape
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	https://duktape.org/
 PKGNAMESUFFIX=	-lib
@@ -22,7 +23,13 @@ PLIST_FILES=	include/duk_config.h \
 		include/duktape.h \
 		lib/libduktape.so \
 		lib/libduktape.so.${MAJOR} \
-		lib/libduktape.so.${MAJOR}.${MINOR}
+		lib/libduktape.so.${MAJOR}.${MINOR} \
+		libdata/pkgconfig/duktape.pc
+
+SUB_FILES=	duktape.pc
+SUB_LIST=	PORTVERSION=${DISTVERSION} \
+		DESCRIPTION="${COMMENT}" \
+		URL="${MASTER_SITES}"
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/duktape.h ${STAGEDIR}${PREFIX}/include
@@ -30,5 +37,6 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/libduktape.so.${MAJOR}.${MINOR} ${STAGEDIR}${PREFIX}/lib
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libduktape.so.${MAJOR}.${MINOR} ${STAGEDIR}${PREFIX}/lib/libduktape.so
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libduktape.so.${MAJOR}.${MINOR} ${STAGEDIR}${PREFIX}/lib/libduktape.so.${MAJOR}
+	${INSTALL_DATA} ${WRKDIR}/duktape.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>

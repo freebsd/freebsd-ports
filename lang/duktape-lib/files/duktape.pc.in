@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+exec_prefix=%%PREFIX%%
+libdir=%%PREFIX%%/lib
+includedir=%%PREFIX%%/include
+
+Name: duktape
+Description: %%DESCRIPTION%%
+URL: %%URL%%
+Version: %%PORTVERSION%%
+Libs: -L${libdir} -lduktape
+Cflags: -I${includedir}
