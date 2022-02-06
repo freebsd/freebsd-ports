@@ -21,6 +21,8 @@ GH_TUPLE=	capnproto:capnproto:14f24a4:capnproto/third_party/capnproto \
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+CONFLICTS_INSTALL=	capnproto capnproto080 surelog # bin/uhdm-dump lib/libcapnp.so
+
 BINARY_ALIAS=	tclsh=${TCLSH}
 
 .include <bsd.port.mk>

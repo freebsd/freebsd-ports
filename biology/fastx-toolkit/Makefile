@@ -17,4 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	agordon
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	autoconf-archive # share/aclocal/ax_c_long_long.m4
+
 .include <bsd.port.mk>

@@ -22,4 +22,6 @@ USE_KDE=	ecm
 
 INSTALL_TARGET=	install
 
+CONFLICTS_INSTALL=	zh-fcitx-table-extra # share/icons/hicolor/48x48/apps/fcitx-cantonese.png
+
 .include <bsd.port.mk>

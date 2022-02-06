@@ -30,6 +30,8 @@ GH_TUPLE=	\
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+CONFLICTS_INSTALL=	capnproto capnproto080 uhdm # bin/uhdm-dump lib/libcapnp.so
+
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 
 OPTIONS_DEFINE=	PYTHON

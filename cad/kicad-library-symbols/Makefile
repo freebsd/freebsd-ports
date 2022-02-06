@@ -16,7 +16,7 @@ RUN_DEPENDS=	kicad:cad/kicad
 
 USES=		cmake tar:bz2
 
-CONFLICTS=	kicad-devel-r2*
+CONFLICTS_INSTALL=	kicad-library-symbols-devel # share/kicad/symbols/4xxx.kicad_sym
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Release" \

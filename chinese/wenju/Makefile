@@ -18,6 +18,8 @@ USE_GNOME=	gtk20
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	reed talkfilters # bin/wrap
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext

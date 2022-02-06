@@ -37,7 +37,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
-CONFLICTS=	zh-scim-fcitx
+CONFLICTS_INSTALL=	fcitx5 zh-fcitx5-chinese-addons zh-scim-fcitx # bin/createPYMB share/icons/hicolor/128x128/apps/fcitx.png share/icons/hicolor/16x16/apps/fcitx-fullwidth-active.png
 
 USE_GNOME=	pango intltool libxml2 introspection
 USE_KDE=	ecm

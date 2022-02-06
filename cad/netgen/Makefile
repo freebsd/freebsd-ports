@@ -31,6 +31,8 @@ LDFLAGS+=	-lexecinfo
 
 CMAKE_OFF=	USE_NATIVE_ARCH
 
+CONFLICTS_INSTALL=	libvisual netgen-lvs pybind11 # bin/netgen include/pybind11/attr.h lib/libvisual.so
+
 OPTIONS_DEFINE=	JPEG MPEG CGNS
 
 JPEG_DESC=	Enable snapshots using jpeg

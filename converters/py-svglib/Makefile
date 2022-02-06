@@ -23,6 +23,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
+CONFLICTS_INSTALL=	svg2pdf # bin/svg2pdf
+
 NO_ARCH=	yes
 
 # Workaround to get a working console script

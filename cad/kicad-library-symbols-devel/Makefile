@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	kicad:cad/kicad-devel
 
-CONFLICTS=	kicad-4.*
+CONFLICTS_INSTALL=	kicad-library-symbols # share/kicad/symbols/4xxx.kicad_sym
 
 USE_GITLAB=	nodefault
 GL_ACCOUNT=	kicad

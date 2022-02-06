@@ -19,6 +19,8 @@ USES=		autoreconf iconv libtool
 GH_ACCOUNT=	xiaoyjy
 USE_GITHUB=	yes
 
+CONFLICTS_INSTALL=	libunicode # include/unicode.h
+
 .include <bsd.port.pre.mk>
 
 .if !empty(ICONV_LIB)

@@ -28,6 +28,8 @@ CONFIGURE_ARGS+=	--with-config=${CONFDIR}/qico.conf \
 			--with-default-speed=115200
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+CONFLICTS_INSTALL=	qcc # bin/qcc
+
 DOCS=		Changes FAQ README
 EXAMPLES=	koi8r_866.cp onchat qhistory qico.xpm qlinks sfreq \
 		stat.run synctime test.pl tossing

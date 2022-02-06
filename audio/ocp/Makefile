@@ -36,6 +36,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS_i386=	-Wl,-z,notext
 
+CONFLICTS_INSTALL=	alliance # man/man1/ocp.1.gz
+
 INFO=		ocp
 
 OPTIONS_DEFINE=		ADPLUG ALSA DOCS FLAC MIDI OSS SDL X11

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 
-CONFLICTS=	kicad-4.*
+CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	kicad/code

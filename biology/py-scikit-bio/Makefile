@@ -26,6 +26,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}ddtrace # lib/python3.8/site-packages/benchmarks/__init__.py
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386

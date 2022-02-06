@@ -18,6 +18,8 @@ USE_GNOME+=	gtk20
 GTK_CFLAGS=	`pkg-config --cflags gtk+-2.0`
 GTK_LIBS=	`pkg-config --libs gtk+-2.0`
 
+CONFLICTS_INSTALL=	scotch # bin/gbase
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|(i == argc)|(i+1 == argc)|' ${WRKSRC}/${PORTNAME}.c

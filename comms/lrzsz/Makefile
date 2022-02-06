@@ -18,6 +18,8 @@ CPE_VENDOR=	lrzsz_project
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all # vcheck
 
+CONFLICTS_INSTALL=	lrzip # bin/lrz
+
 OPTIONS_DEFINE=	NLS
 
 NLS_USES=		gettext

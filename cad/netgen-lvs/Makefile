@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	HAVE_PYTHON3=yes
 CONFIGURE_ARGS=	--with-interpreter=tcl --with-tcl=${LOCALBASE}/lib/tcl8.6 --with-tk=${LOCALBASE}/lib/tk8.6 --with-x
 
+CONFLICTS_INSTALL=	netgen # bin/netgen
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/env python3$$|#!${PYTHON_CMD}|' \
 		${WRKSRC}/python/*.py \

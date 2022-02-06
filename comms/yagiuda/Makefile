@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	4ti2 # bin/output
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:

@@ -20,4 +20,6 @@ GH_ACCOUNT=	fcitx
 
 USE_KDE=	ecm
 
+CONFLICTS_INSTALL=	zh-fcitx-chewing # share/icons/hicolor/48x48/apps/fcitx-chewing.png
+
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ COMMENT=	The Traditional Chinese version of phpBB3
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-CONFLICTS=	phpbb-tw-[0-2]* phpbb-devel-[0-3]* phpbb-[0-3]*
+CONFLICTS_INSTALL=	phpbb phpbb3 zh-phpbb-tw # share/doc/phpbb/AUTHORS share/doc/phpbb/CHANGELOG.html
 
 USES=		zip
 

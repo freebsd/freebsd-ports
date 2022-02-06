@@ -26,4 +26,6 @@ USE_KDE=	ecm
 
 INSTALL_TARGET=	install
 
+CONFLICTS_INSTALL=	fcitx-table-other # share/icons/hicolor/32x32/apps/fcitx-thai.png
+
 .include <bsd.port.mk>

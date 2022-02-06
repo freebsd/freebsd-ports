@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=	${PREFIX}/bin/bash
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-gsl --with-cluster --with-kinwalker --enable-mpfr --without-python --without-python3 --without-perl
 
+CONFLICTS_INSTALL=	g2 # include/g2.h
+
 INFO=		RNAlib
 
 DATASDIR=	${PREFIX}/share/ViennaRNA

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
 		libpng.so:graphics/png			\
 		libcurl.so:ftp/curl
 
-CONFLICTS=	kicad-devel-r201*
+CONFLICTS_INSTALL=	kicad-devel # bin/_cvpcb.kiface
 
 USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gl \
 		gnome pkgconfig python:3.5+ shared-mime-info shebangfix ssl \

@@ -27,8 +27,6 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdouble-conversion.so:devel/double-conversion
 
-#CONFLICTS=	openscad-devel
-
 USES=		bison compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
 		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
@@ -40,6 +38,8 @@ GH_TAGNAME=	41f58fe57c03457a3a8b4dc541ef5654ec3e8c78
 QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 LDFLAGS+=	-Wl,--as-needed
+
+CONFLICTS_INSTALL=	openscad-devel # bin/openscad
 
 post-patch:
 	@${REINPLACE_CMD} 's/-libusb//' ${WRKSRC}/features/hidapi.prf

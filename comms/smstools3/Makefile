@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-CONFLICTS=	gnokii smstools-2.* sendsms
+CONFLICTS_INSTALL=	gnokii sendsms # bin/sendsms
 
 OPTIONS_DEFINE=	STATS UTF8 EXAMPLES DOCS
 OPTIONS_DEFAULT=	STATS UTF8

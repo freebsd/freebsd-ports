@@ -45,6 +45,8 @@ CMAKE_ON=	ENABLE_OPENCC
 CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
+CONFLICTS_INSTALL=	zh-fcitx # share/icons/hicolor/16x16/apps/fcitx-fullwidth-active.png
+
 # These must follow modules/pinyinhelper/CMakeLists.txt
 PY_STROKE_VER=	20121124
 PY_TABLE_VER=	20121124

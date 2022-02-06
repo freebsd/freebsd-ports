@@ -18,4 +18,6 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 
 USES=		cmake gettext gnome pkgconfig tar:xz
 
+CONFLICTS_INSTALL=	zh-fcitx5-chewing # share/icons/hicolor/48x48/apps/fcitx-chewing.png
+
 .include <bsd.port.mk>

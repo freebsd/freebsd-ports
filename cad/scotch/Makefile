@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		bison:alias gmake localbase
 
-CONFLICTS=	gbase-0.* gmap-2015.*
+CONFLICTS_INSTALL=	gbase gmap # bin/gbase bin/gmap
 
 MAKE_JOBS_UNSAFE=yes
 

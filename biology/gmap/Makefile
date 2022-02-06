@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS_REASON=	upstream supports only x86 and possibly POWER8
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 
-CONFLICTS_INSTALL=	cpuid
+CONFLICTS_INSTALL=	cpuid scotch # bin/cpuid bin/gmap
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C|\.|-|g}
 CFLAGS+=	-fcommon

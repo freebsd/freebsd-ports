@@ -14,7 +14,7 @@ CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset=big5
 
-CONFLICTS_INSTALL=	eterm ja-eterm
+CONFLICTS_INSTALL=	eterm eterm-bg ja-eterm # bin/Esetroot share/Eterm/pix/scale/Neopolis-horizon.jpg
 
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist

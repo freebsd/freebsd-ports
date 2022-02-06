@@ -16,7 +16,7 @@ LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/seqan/LICENSE
 USES=		zip
 NO_BUILD=	yes
 
-CONFLICTS=	seqan-[2-9]*
+CONFLICTS_INSTALL=	seqan # include/seqan/align.h
 
 OPTIONS_DEFINE=	DOCS
 

@@ -23,6 +23,8 @@ NO_BUILD=	yes
 
 USES=		emacs:run
 
+CONFLICTS_INSTALL=	verilog-mode.el verilog-mode.el-emacs_* # share/emacs/site-lisp/verilog-mode.el
+
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 do-install:

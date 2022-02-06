@@ -15,6 +15,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	smi # bin/smi
+
 DOCS=		README docs/*.txt
 EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
 

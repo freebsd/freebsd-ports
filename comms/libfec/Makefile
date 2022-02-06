@@ -30,6 +30,8 @@ PLIST_FILES=	include/fec.h		\
 # makefile tries to create libfec.so from object files compiled without -fPIC.
 CFLAGS+=	-fPIC
 
+CONFLICTS_INSTALL=	reed-solomon simd-viterbi # man/man3/rs.3.gz man/man3/simd-viterbi.3.gz
+
 post-patch:
 	@${CP} ${FILESDIR}/cpu_mode.c ${WRKSRC}
 

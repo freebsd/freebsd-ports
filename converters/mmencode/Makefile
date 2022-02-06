@@ -20,6 +20,8 @@ USES=		tar:Z
 ALL_TARGET=	mmencode
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+CONFLICTS_INSTALL=	elm metamail # bin/mimencode bin/mmencode
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmencode ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../man/mmencode.1 \

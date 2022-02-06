@@ -26,6 +26,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		gettext-runtime iconv jpeg motif xorg
 USE_XORG=	x11 xau xext xft xmu xrender xt
 
+CONFLICTS_INSTALL=	fhist ncbi-cxx-toolkit # bin/test_regexp man/man1/fmerge.1.gz
+
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS

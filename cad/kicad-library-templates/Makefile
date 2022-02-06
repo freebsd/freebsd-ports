@@ -16,7 +16,7 @@ RUN_DEPENDS=	kicad:cad/kicad
 
 USES=		cmake tar:bz2
 
-CONFLICTS=	kicad-devel-r2*
+CONFLICTS_INSTALL=	kicad-library-tmpl-devel # share/kicad/template/A2_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Release" \

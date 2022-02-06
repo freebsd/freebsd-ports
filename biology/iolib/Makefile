@@ -22,4 +22,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lpthread
 
+CONFLICTS_INSTALL=	filters scramble # bin/scramble
+
 .include <bsd.port.mk>

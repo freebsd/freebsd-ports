@@ -28,7 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-debug --with-dll --without-static \
 		--without-vdb
 
-CONFLICTS_INSTALL=	ncbi-blast+
+CONFLICTS_INSTALL=	dakota libxdiff ncbi-blast+ ncbi-toolkit proj \
+			py*-speedtest-cli # bin/blast_formatter bin/speedtest bin/test_regexp lib/libeutils.so lib/libproj.so lib/libxdiff.so
 
 post-install:
 	# strip

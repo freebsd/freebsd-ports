@@ -34,7 +34,7 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 CFLAGS+=	-fcommon
 
-CONFLICTS_INSTALL=	fspclient
+CONFLICTS_INSTALL=	ocp publib
 
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/alliance/src

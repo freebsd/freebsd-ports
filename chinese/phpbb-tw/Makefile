@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
-CONFLICTS=	phpbb
+CONFLICTS_INSTALL=	phpbb phpbb3 zh-phpbb3-tw # share/doc/phpbb/AUTHORS share/doc/phpbb/CHANGELOG.html
 USES=		dos2unix php
 
 # Get HOSTNAME
