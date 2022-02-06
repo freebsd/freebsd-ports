@@ -98,7 +98,7 @@ LDFLAGS+=	-g
 DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
-CONFLICTS_INSTALL=	ali ja-mh pixie p5-Dist-Joseki
+CONFLICTS_INSTALL=	ali ja-mh pixie p5-Dist-Joseki nmh-1.*
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
