@@ -2,7 +2,7 @@
 
 PORTNAME=	nmh
 PORTVERSION=	1.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH
 
@@ -17,7 +17,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR}
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		liblockfile.so:devel/liblockfile
 
 OPTIONS_DEFINE=	DOCS HASH_BKP SASL2 TLS REPLYFILTER
 OPTIONS_RADIO=	MIME_HTML

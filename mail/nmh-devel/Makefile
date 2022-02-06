@@ -2,6 +2,7 @@
 
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -22,7 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR}
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		liblockfile.so:devel/liblockfile
 
 OPTIONS_DEFINE=	DOCS HASH_BKP SASL2 TLS REPLYFILTER
 OPTIONS_RADIO=	MIME_HTML
