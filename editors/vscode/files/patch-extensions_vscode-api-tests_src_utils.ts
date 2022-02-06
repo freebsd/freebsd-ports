@@ -1,6 +1,6 @@
---- extensions/vscode-api-tests/src/utils.ts.orig	2019-12-18 06:34:54 UTC
+--- extensions/vscode-api-tests/src/utils.ts.orig	2022-02-02 16:57:24 UTC
 +++ extensions/vscode-api-tests/src/utils.ts
-@@ -36,7 +36,7 @@ export async function deleteFile(file: vscode.Uri): Pr
+@@ -38,7 +38,7 @@ export async function deleteFile(file: vscode.Uri): Pr
  }
  
  export function pathEquals(path1: string, path2: string): boolean {

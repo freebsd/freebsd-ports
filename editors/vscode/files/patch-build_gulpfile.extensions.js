@@ -1,6 +1,6 @@
---- build/gulpfile.extensions.js.orig	2021-12-06 21:35:50 UTC
+--- build/gulpfile.extensions.js.orig	2022-02-02 16:57:24 UTC
 +++ build/gulpfile.extensions.js
-@@ -220,7 +220,7 @@ const cleanExtensionsBuildTask = task.define('clean-ex
+@@ -221,7 +221,7 @@ const cleanExtensionsBuildTask = task.define('clean-ex
  const compileExtensionsBuildTask = task.define('compile-extensions-build', task.series(
  	cleanExtensionsBuildTask,
  	task.define('bundle-extensions-build', () => ext.packageLocalExtensionsStream(false).pipe(gulp.dest('.build'))),

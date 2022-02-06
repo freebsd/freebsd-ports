@@ -1,6 +1,6 @@
---- extensions/emmet/src/test/testUtils.ts.orig	2019-12-18 06:34:11 UTC
+--- extensions/emmet/src/test/testUtils.ts.orig	2022-02-02 16:57:24 UTC
 +++ extensions/emmet/src/test/testUtils.ts
-@@ -26,7 +26,7 @@ export function createRandomFile(contents = '', fileEx
+@@ -31,7 +31,7 @@ export function createRandomFile(contents = '', fileEx
  }
  
  export function pathEquals(path1: string, path2: string): boolean {
