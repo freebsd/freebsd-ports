@@ -1,11 +1,7 @@
 PORTNAME=	kuserfeedback
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
-
-PATCH_SITES=	https://invent.kde.org/libraries/kuserfeedback/-/commit/
-PATCHFILES=	17db7d75643b4f3dccd5b36a6ab175f03ba74297.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Framework for collecting user feedback

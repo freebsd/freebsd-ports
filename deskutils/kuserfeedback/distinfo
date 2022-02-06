@@ -1,5 +1,3 @@
-TIMESTAMP = 1644017581
-SHA256 (kuserfeedback-1.0.0.tar.xz) = 5a2f53ebb4b99a280757ca32bd9b686a7764a726e7e4d8bafee33acbb44b9db7
-SIZE (kuserfeedback-1.0.0.tar.xz) = 187784
-SHA256 (17db7d75643b4f3dccd5b36a6ab175f03ba74297.diff) = 50fe80c634fc685798bb8ba07ff1424ef67e8e378b18477514c4a01b2925b0ea
-SIZE (17db7d75643b4f3dccd5b36a6ab175f03ba74297.diff) = 1219
+TIMESTAMP = 1644099718
+SHA256 (kuserfeedback-1.2.0.tar.xz) = 76aac922b153249b274680a6f4c72c238ef14e3df04bad00cb64158b1063f264
+SIZE (kuserfeedback-1.2.0.tar.xz) = 206364

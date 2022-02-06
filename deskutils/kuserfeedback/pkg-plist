@@ -1,6 +1,5 @@
 bin/UserFeedbackConsole
 bin/userfeedbackctl
-etc/xdg/org_kde_UserFeedback.categories
 include/KUserFeedback/AbstractDataSource
 include/KUserFeedback/ApplicationVersionSource
 include/KUserFeedback/CompilerInfoSource
@@ -49,17 +48,21 @@ lib/cmake/KUserFeedback/KUserFeedbackTarget-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KUserFeedback/KUserFeedbackTarget.cmake
 lib/libKUserFeedbackCore.so
 lib/libKUserFeedbackCore.so.1
-lib/libKUserFeedbackCore.so.1.0.0
+lib/libKUserFeedbackCore.so.1.2.0
 lib/libKUserFeedbackWidgets.so
 lib/libKUserFeedbackWidgets.so.1
-lib/libKUserFeedbackWidgets.so.1.0.0
+lib/libKUserFeedbackWidgets.so.1.2.0
 lib/qt5/mkspecs/modules/qt_KUserFeedbackCore.pri
 lib/qt5/mkspecs/modules/qt_KUserFeedbackWidgets.pri
 lib/qt5/qml/org/kde/userfeedback/libKUserFeedbackQml.so
 lib/qt5/qml/org/kde/userfeedback/qmldir
 share/KDE/UserFeedbackConsole/user-feedback-manual.qch
 share/KDE/UserFeedbackConsole/user-feedback.qhc
-share/applications/UserFeedbackConsole.desktop
+share/applications/org.kde.kuserfeedback-console.desktop
+share/locale/ar/LC_MESSAGES/userfeedbackconsole5_qt.qm
+share/locale/ar/LC_MESSAGES/userfeedbackprovider5_qt.qm
+share/locale/az/LC_MESSAGES/userfeedbackconsole5_qt.qm
+share/locale/az/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/ca/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/ca/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/userfeedbackconsole5_qt.qm
@@ -82,6 +85,8 @@ share/locale/fr/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/fr/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/gl/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/gl/LC_MESSAGES/userfeedbackprovider5_qt.qm
+share/locale/ia/LC_MESSAGES/userfeedbackconsole5_qt.qm
+share/locale/ia/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/it/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/it/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/ja/LC_MESSAGES/userfeedbackconsole5_qt.qm
@@ -92,6 +97,7 @@ share/locale/lt/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/lt/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/nl/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/nl/LC_MESSAGES/userfeedbackprovider5_qt.qm
+share/locale/nn/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/pl/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/pl/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/pt/LC_MESSAGES/userfeedbackconsole5_qt.qm
@@ -102,6 +108,8 @@ share/locale/ru/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/ru/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/sk/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/sk/LC_MESSAGES/userfeedbackprovider5_qt.qm
+share/locale/sl/LC_MESSAGES/userfeedbackconsole5_qt.qm
+share/locale/sl/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/sv/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/sv/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/tr/LC_MESSAGES/userfeedbackconsole5_qt.qm
@@ -112,3 +120,5 @@ share/locale/zh_CN/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackprovider5_qt.qm
+share/metainfo/org.kde.kuserfeedback-console.appdata.xml
+share/qlogging-categories5/org_kde_UserFeedback.categories
