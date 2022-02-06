@@ -9,7 +9,7 @@ COMMENT=	Session manager and task runner for tmux
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	sysutils/tmux
+RUN_DEPENDS=	tmux:sysutils/tmux
 
 USES=		go:modules
 GO_MODULE=	github.com/ivaaaan/${PORTNAME}
