@@ -14,9 +14,6 @@ bin/crowdsec-cli
 @sample %%ETCDIR%%/notifications/http/http.yaml.sample
 @sample %%ETCDIR%%/notifications/slack/slack.yaml.sample
 @sample %%ETCDIR%%/notifications/splunk/splunk.yaml.sample
-%%ETCDIR%%/dev.yaml
-%%ETCDIR%%/user.yaml
-%%ETCDIR%%/crowdsec.service
 %%ETCDIR%%/patterns/aws
 %%ETCDIR%%/patterns/bacula
 %%ETCDIR%%/patterns/bro

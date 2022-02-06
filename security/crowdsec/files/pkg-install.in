@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in
+        "POST-INSTALL")
+                if [ -e /var/run/crowdsec.running ]; then
+                        service crowdsec start
+                        rm -f /var/run/crowdsec.running
+                fi
+                ;;
+esac

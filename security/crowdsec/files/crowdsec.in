@@ -72,7 +72,7 @@ crowdsec_precmd() {
 crowdsec_start()
 {
     /usr/sbin/daemon -f -p ${pidfile} -t "${desc}" -- \
-        ${command} -c ${crowdsec_config} ${crowdsec_flags}
+        ${command} -c "${crowdsec_config}" ${crowdsec_flags}
 }
 
 crowdsec_configtest()

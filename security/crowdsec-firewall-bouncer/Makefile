@@ -25,6 +25,7 @@ GH_TAGNAME=	v0.0.20-freebsd
 USE_RC_SUBR=	crowdsec_firewall
 
 SUB_FILES=	pkg-message \
+		pkg-install \
 		pkg-deinstall
 
 # BUILD_VERSION=$(git describe --tags $(git rev-list --tags --max-count=1))

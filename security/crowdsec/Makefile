@@ -1,5 +1,6 @@
 PORTNAME=	crowdsec
 PORTVERSION=	1.2.3	# NOTE: change BUILD_VERSION and BUILD_TAG as well
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -24,6 +25,7 @@ GH_TAGNAME=	v1.2.3-freebsd
 USE_RC_SUBR=	crowdsec
 
 SUB_FILES=	pkg-message \
+		pkg-install \
 		pkg-deinstall
 
 # BUILD_VERSION=$(git describe --tags $(git rev-list --tags --max-count=1))
@@ -129,5 +131,5 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/crowdsec.conf-newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/crowdsec.conf.sample
-
+	
 .include <bsd.port.mk>
