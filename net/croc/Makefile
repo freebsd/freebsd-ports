@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.5.0
+PORTVERSION=	9.5.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -21,9 +21,9 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.5:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:e81a3d93ecf6:golang_net/vendor/golang.org/x/net \
-		golang:sys:808efd93c36d:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:30dcbda58838:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
+		golang:sys:99c3d69c2c27:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
@@ -38,8 +38,8 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.5:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		schollz:logger:v1.2.0:schollz_logger/vendor/github.com/schollz/logger \
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
 		schollz:pake:v3.0.2:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
-		schollz:peerdiscovery:v1.6.9:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
-		schollz:progressbar:v3.8.3:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
+		schollz:peerdiscovery:v1.6.11:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
+		schollz:progressbar:v3.8.6:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tscholl2:siec:9bdfc483d499:tscholl2_siec/vendor/github.com/tscholl2/siec \
