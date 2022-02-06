@@ -1,0 +1,24 @@
+- use pffft from the package, see https://github.com/DISTRHO/Cardinal/issues/130
+
+--- src/Makefile.orig	2022-02-06 00:30:19 UTC
++++ src/Makefile
+@@ -50,7 +50,7 @@ BASE_FLAGS += -IRack/dep/glfw/include
+ BASE_FLAGS += -IRack/dep/nanosvg/src
+ BASE_FLAGS += -IRack/dep/osdialog
+ BASE_FLAGS += -IRack/dep/oui-blendish
+-BASE_FLAGS += -IRack/dep/pffft
++#BASE_FLAGS += -IRack/dep/pffft
+ 
+ ifeq ($(DEBUG),true)
+ BASE_FLAGS += -UDEBUG
+@@ -108,8 +108,8 @@ RACK_FILES += override/MenuBar.cpp
+ RACK_FILES += override/Model.cpp
+ RACK_FILES += override/Scene.cpp
+ 
+-RACK_FILES += Rack/dep/pffft/pffft.c
+-RACK_FILES += Rack/dep/pffft/fftpack.c
++#RACK_FILES += Rack/dep/pffft/pffft.c
++#RACK_FILES += Rack/dep/pffft/fftpack.c
+ RACK_FILES += Rack/dep/osdialog/osdialog.c
+ 
+ IGNORED_FILES  = Rack/src/asset.cpp
