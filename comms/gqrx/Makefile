@@ -1,7 +1,7 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 
 PORTNAME=	gqrx
-PORTVERSION=	2.15.2
+PORTVERSION=	2.15.8
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -44,12 +44,12 @@ USE_QT=		core gui network svg widgets
 CMAKE_ARGS+=	-DLINUX_AUDIO_BACKEND:STRING="Portaudio"
 
 PLIST_FILES=	bin/gqrx \
-		share/applications/gqrx.desktop \
+		share/applications/dk.gqrx.gqrx.desktop \
 		man/man1/gqrx.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/gqrx ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/gqrx.desktop \
+	${INSTALL_DATA} ${WRKSRC}/dk.gqrx.gqrx.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_MAN} ${WRKSRC}/resources/gqrx.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
