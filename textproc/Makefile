@@ -220,6 +220,7 @@
     SUBDIR += fpc-aspell
     SUBDIR += fpc-libxml2
     SUBDIR += freexl
+    SUBDIR += fuzzysearchdatabase
     SUBDIR += fy-aspell
     SUBDIR += fzf
     SUBDIR += fzy
