@@ -14,6 +14,8 @@ USES+=		compiler:c11 cpe gnome pkgconfig tar:xz
 CPE_PRODUCT=	php
 PHP_VER=	81
 
+CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
+
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
@@ -34,8 +36,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
-
-CONFLICTS_INSTALL=	php[0-9][0-9]${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE+=		CGI CLI DEBUG DTRACE EMBED FPM IPV6 LINKTHR \
 				MYSQL80 MYSQLND PHPDBG ZTS

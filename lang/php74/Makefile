@@ -18,6 +18,8 @@ USES+=		compiler:c11 tar:xz cpe gnome pkgconfig
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
 
+CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
+
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libargon2.so:security/libargon2
@@ -35,8 +37,6 @@ USE_GNOME=	libxml2
 
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
-
-CONFLICTS_INSTALL=	php[0-9][0-9]${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MYSQLND LINKTHR ZTS
 OPTIONS_DEFAULT=CLI CGI FPM EMBED MYSQLND LINKTHR DTRACE
