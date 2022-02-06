@@ -1,0 +1,40 @@
+--- ./CHANGELOG.orig	2022-02-06 11:07:17 UTC
++++ ./CHANGELOG
+@@ -5,6 +5,14 @@ version 2.87
+ 	Replace --address=/#/..... functionality which got
+ 	missed in the 2.86 domain search rewrite.
+ 
++	Note in manpage the change in behaviour of -address. This behaviour
++	actually changed in v2.86, but was undocumented there. From 2.86 on,
++	(eg) --address=/example.com/1.2.3.4 ONLY applies to A queries. All other
++	types of query will be sent upstream. Pre 2.86, that would catch the
++	whole example.com domain and queries for other types would get
++	a local NODATA answer. The pre-2.86 behaviour is still available,
++	by configuring --address=/example.com/1.2.3.4 --local=/example.com/
++
+ 	
+ version 2.86
+ 	Handle DHCPREBIND requests in the DHCPv6 server code.
+--- ./man/dnsmasq.8.orig	2021-09-08 20:21:22 UTC
++++ ./man/dnsmasq.8
+@@ -515,7 +515,7 @@ is exactly equivalent to 
+ .TP
+ .B \-A, --address=/<domain>[/<domain>...]/[<ipaddr>]
+ Specify an IP address to return for any host in the given domains.
+-Queries in the domains are never forwarded and always replied to
++A (or AAAA) queries in the domains are never forwarded and always replied to
+ with the specified IP address which may be IPv4 or IPv6. To give
+ both IPv4 and IPv6 addresses for a domain, use repeated \fB--address\fP flags.
+ To include multiple IP addresses for a single query, use
+@@ -537,6 +537,11 @@ address of 0.0.0.0 and its IPv6 equivalent of :: so
+ its subdomains. This is partly syntactic sugar for \fB--address=/example.com/0.0.0.0\fP
+ and \fB--address=/example.com/::\fP but is also more efficient than including both
+ as separate configuration lines. Note that NULL addresses normally work in the same way as localhost, so beware that clients looking up these names are likely to end up talking to themselves.
++
++Note that the behaviour for queries which don't match the specified address literal changed in version 2.86.
++Previous versions, configured with (eg) --address=/example.com/1.2.3.4 and then queried for a RR type other than
++A would return a NoData answer. From  2.86, the query is sent upstream. To restore the pre-2.86 behaviour,
++use the configuration --address=/example.com/1.2.3.4 --local=/example.com/
+ .TP
+ .B --ipset=/<domain>[/<domain>...]/<ipset>[,<ipset>...]
+ Places the resolved IP addresses of queries for one or more domains in
