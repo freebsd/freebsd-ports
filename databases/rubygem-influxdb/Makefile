@@ -1,8 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	influxdb
-PORTVERSION=	0.7.0
-PORTREVISION=	0
+PORTVERSION=	0.8.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
