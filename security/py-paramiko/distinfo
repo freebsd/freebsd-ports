@@ -1,3 +1,3 @@
-TIMESTAMP = 1613647037
-SHA256 (paramiko-2.7.2.tar.gz) = 7f36f4ba2c0d81d219f4595e35f70d56cc94f9ac40a6acdf51d6ca210ce65035
-SIZE (paramiko-2.7.2.tar.gz) = 1069537
+TIMESTAMP = 1644230220
+SHA256 (paramiko-2.9.2.tar.gz) = 944a9e5dbdd413ab6c7951ea46b0ab40713235a9c4c5ca81cfe45c6f14fa677b
+SIZE (paramiko-2.9.2.tar.gz) = 1070160
