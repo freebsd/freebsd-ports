@@ -9,6 +9,13 @@ Add this to /etc/make.conf
 SCCACHE_DIR=	${HOME}/.sccache
 OVERLAYS+=	%%DATADIR%%/overlay
 
+During the build a sccache server is started, bound to
+${SCCACHE_UNIX_LISTEN} (default /tmp/sccache-overlay.socket). It
+automatically shuts down after 600 seconds if nothing is using
+it. To cleanly shut it down earlier use
+
+$ make sccache-stop
+
 Poudriere setup
 ===============
 
