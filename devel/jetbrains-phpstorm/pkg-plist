@@ -28,7 +28,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-PS-213.6461.83
+%%DATADIR%%/lib/build-marker-PS-213.6777.58
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -180,8 +180,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-a83ea4ee0d3d.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-a83ea4ee0d3d.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-e5421860d8a5.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-e5421860d8a5.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -232,6 +232,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2020.symbol.wellknown.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.full.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.intl.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.promise.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.string.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2021.weakref.d.ts
@@ -366,8 +367,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php/lib/commons-compress-1.21.jar
 %%DATADIR%%/plugins/php/lib/php-openapi-src.jar
 %%DATADIR%%/plugins/php/lib/php.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-f9ed7592f7e3.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-f9ed7592f7e3.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-56832a6883fc.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-56832a6883fc.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
 %%DATADIR%%/plugins/phpstorm-docker/lib/phpstorm-docker.jar
@@ -843,6 +844,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/wsl-fs-helper/lib/bifurcan-0.2.0-alpha6.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/java-diff-utils-4.9.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/kotlinx-coroutines-debug-1.5.1.jar
+%%DATADIR%%/plugins/wsl-fs-helper/lib/kotlinx-coroutines-slf4j-1.5.2.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/okhttp-4.9.2.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/okio-2.8.0.jar
 %%DATADIR%%/plugins/wsl-fs-helper/lib/wsl-fs-helper.jar
