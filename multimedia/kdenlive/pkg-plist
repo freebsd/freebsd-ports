@@ -461,6 +461,10 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/lumas/PAL/square2-bars.pgm
 %%DATADIR%%/lumas/PAL/square2.pgm
 %%DATADIR%%/lumas/PAL/symmetric_clock.pgm
+%%DATADIR%%/luts/BLUE_TINT.cube
+%%DATADIR%%/luts/CINEMATIC.cube
+%%DATADIR%%/luts/GREEN_TINT.cube
+%%DATADIR%%/luts/TEAL_ORANGE.cube
 %%DATADIR%%/profiles/dci_2160p_2398
 %%DATADIR%%/profiles/dci_2160p_24
 %%DATADIR%%/profiles/dci_2160p_25
