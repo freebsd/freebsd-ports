@@ -1,7 +1,7 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
 
 PORTNAME=	ii
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	irc
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		LOCAL/sbz
