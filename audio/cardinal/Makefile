@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libsndfile.so:audio/libsndfile \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		gl gmake libarchive localbase:ldflags pkgconfig python shebangfix xorg
+USES=		compiler:c++11-lang gl gmake libarchive localbase:ldflags pkgconfig python shebangfix xorg
 USE_XORG=	x11 xcursor xext xrandr
 USE_GL=		gl
 
@@ -121,6 +121,8 @@ MAKE_ENV=	LD_PRELOAD=/usr/lib/libpthread.so # workaround for https://github.com/
 MAKE_ARGS=	SYSDEPS=true
 
 BINARY_ALIAS=	gcc-ar=ar \
-		python3=${PYTHON_CMD}
+		python3=${PYTHON_CMD} \
+		c++=${FILESDIR}/c++ \
+		cc=${FILESDIR}/cc
 
 .include <bsd.port.mk>
