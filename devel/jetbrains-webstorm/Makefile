@@ -1,7 +1,7 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
 
 PORTNAME=	webstorm
-PORTVERSION=	2021.3.1
+PORTVERSION=	2021.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -33,7 +33,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/WebStorm-213.6461.79
+WRKSRC=		${WRKDIR}/WebStorm-213.6777.57
 
 do-install:
 # Linux/Windows/OS X only so remove them
