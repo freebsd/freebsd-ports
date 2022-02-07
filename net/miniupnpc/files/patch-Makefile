@@ -1,14 +1,14 @@
---- Makefile.orig	2018-04-06 10:53:30 UTC
+--- Makefile.orig	2021-09-28 21:11:31 UTC
 +++ Makefile
-@@ -139,7 +139,6 @@ TESTMINIWGETOBJS := $(TESTMINIWGETOBJS) 
- TESTIGDDESCPARSE := $(TESTIGDDESCPARSE) minissdpc.o
+@@ -147,7 +147,6 @@ TESTIGDDESCPARSE += $(BUILD)/minissdpc.o
+ LIBOBJS += $(BUILD)/minissdpc.o
  endif
  
 -LIBDIR ?= lib
  # install directories
  ifeq ($(strip $(PREFIX)),)
  INSTALLPREFIX ?= /usr
-@@ -147,9 +146,9 @@ else
+@@ -155,14 +154,14 @@ else
  INSTALLPREFIX ?= $(PREFIX)
  endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
@@ -20,12 +20,38 @@
  PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
  
  FILESTOINSTALL = $(LIBRARY) $(EXECUTABLES)
-@@ -229,7 +228,7 @@ distclean: clean
+ ifeq (, $(findstring amiga, $(OS)))
+-FILESTOINSTALL += $(SHAREDLIBRARY) miniupnpc.pc
++FILESTOINSTALL += $(SHAREDLIBRARY) $(BUILD)/miniupnpc.pc
+ endif
  
- updateversion:	miniupnpc.h
- 	cp miniupnpc.h miniupnpc.h.bak
--	sed 's/\(.*MINIUPNPC_API_VERSION\s\+\)[0-9]\+/\1$(APIVERSION)/' < miniupnpc.h.bak > miniupnpc.h
-+	sed -E 's/(.*MINIUPNPC_API_VERSION[[:space:]]+)[0-9]+/\1$(APIVERSION)/' < miniupnpc.h.bak > miniupnpc.h
+ 
+@@ -242,7 +241,7 @@ distclean: clean
+ 
+ updateversion:	include/miniupnpc.h
+ 	cp $< $<.bak
+-	sed 's/\(.*MINIUPNPC_API_VERSION\s\+\)[0-9]\+/\1$(APIVERSION)/' < $<.bak > $<
++	sed -E 's/(.*MINIUPNPC_API_VERSION[[:space:]]+)[0-9]+/\1$(APIVERSION)/' < $<.bak > $<
  
  install:	updateversion $(FILESTOINSTALL)
  	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRINC)
+@@ -251,15 +250,15 @@ install:	updateversion $(FILESTOINSTALL)
+ 	$(INSTALL) -m 644 $(LIBRARY) $(DESTDIR)$(INSTALLDIRLIB)
+ ifeq (, $(findstring amiga, $(OS)))
+ 	$(INSTALL) -m 644 $(SHAREDLIBRARY) $(DESTDIR)$(INSTALLDIRLIB)/$(SONAME)
+-	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/$(SHAREDLIBRARY)
++	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/libminiupnpc.so
+ 	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
+-	$(INSTALL) -m 644 miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
++	$(INSTALL) -m 644 $(BUILD)/miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
+ endif
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRBIN)
+ ifneq (, $(findstring amiga, $(OS)))
+-	$(INSTALL) -m 755 upnpc-static $(DESTDIR)$(INSTALLDIRBIN)/upnpc
++	$(INSTALL) -m 755 $(BUILD)/upnpc-static $(DESTDIR)$(INSTALLDIRBIN)/upnpc
+ else
+-	$(INSTALL) -m 755 upnpc-shared $(DESTDIR)$(INSTALLDIRBIN)/upnpc
++	$(INSTALL) -m 755 $(BUILD)/upnpc-shared $(DESTDIR)$(INSTALLDIRBIN)/upnpc
+ endif
+ 	$(INSTALL) -m 755 external-ip.sh $(DESTDIR)$(INSTALLDIRBIN)/external-ip
+ ifeq (, $(findstring amiga, $(OS)))
