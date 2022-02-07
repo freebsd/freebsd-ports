@@ -1,5 +1,3 @@
-TIMESTAMP = 1609782591
-SHA256 (lfittl-libpg_query-10-1.0.4_GH0.tar.gz) = 88cc90296e5fcaaebd0b360c46698b7c5badddf86f120e249ef682a820d41338
-SIZE (lfittl-libpg_query-10-1.0.4_GH0.tar.gz) = 1508585
-SHA256 (820f5294f92927d6c4f61722bb28cf380942b83c.patch) = 3d528a6d72aac8a3aa04c64d2218c43de9818baf2b0cbe54e7a075cbf069436c
-SIZE (820f5294f92927d6c4f61722bb28cf380942b83c.patch) = 2374
+TIMESTAMP = 1644225490
+SHA256 (lfittl-libpg_query-13-2.1.0_GH0.tar.gz) = a01329ae5bac19b10b8ddf8012bd663a20f85f180d6d7b900c1a1ca8444d19a5
+SIZE (lfittl-libpg_query-13-2.1.0_GH0.tar.gz) = 3541762
