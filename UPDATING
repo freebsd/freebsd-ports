@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220207:
+  AFFECTS: users of security/amavisd-new
+  AUTHOR: flo@FreeBSD.org
+
+  Amavis does now depend on archivers/7-zip (7zz) you might need to update
+  your amavisd.conf and replace all ocurances of p7zip (7zr) accordingly.
+
 20220129:
   AFFECTS: users of editors/neovim
   AUTHOR: adamw@FreeBSD.org

@@ -1,0 +1,20 @@
+--- amavisd.orig	2022-02-07 16:26:10 UTC
++++ amavisd
+@@ -1740,13 +1740,13 @@ BEGIN {
+     ['tnef', \&Amavis::Unpackers::do_tnef],
+ #   ['lha',  \&Amavis::Unpackers::do_lha,   \$lha],  # not safe, use 7z instead
+ #   ['sit',  \&Amavis::Unpackers::do_unstuff, \$unstuff],  # not safe
+-    [['zip','kmz'], \&Amavis::Unpackers::do_7zip,  ['7za', '7z'] ],
++    [['zip','kmz'], \&Amavis::Unpackers::do_7zip,  ['7za', '7zz', '7z'] ],
+     [['zip','kmz'], \&Amavis::Unpackers::do_unzip],
+-    ['7z',   \&Amavis::Unpackers::do_7zip,  ['7zr', '7za', '7z'] ],
++    ['7z',   \&Amavis::Unpackers::do_7zip,  ['7zr', '7za', '7zz', '7z'] ],
+     [[qw(gz bz2 Z tar)],
+-             \&Amavis::Unpackers::do_7zip,  ['7za', '7z'] ],
++             \&Amavis::Unpackers::do_7zip,  ['7za', '7zz', '7z'] ],
+     [[qw(xz lzma jar cpio arj rar swf lha iso cab deb rpm)],
+-             \&Amavis::Unpackers::do_7zip,  '7z' ],
++             \&Amavis::Unpackers::do_7zip,  ['7zz', '7z'] ],
+     ['exe',  \&Amavis::Unpackers::do_executable, \$unrar, \$lha, \$unarj],
+   );
+ 

@@ -1,6 +1,5 @@
 PORTNAME=	amavisd-new
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.12.2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://gitlab.com/amavis/amavis/-/archive/v${PORTVERSION}/
@@ -42,9 +41,9 @@ DAEMON?=	/usr/sbin/daemon -p
 
 OPTIONS_DEFINE=	IPV6 BDB SNMP SQLITE MYSQL PGSQL LDAP SASL SPAMASSASSIN P0F \
 		FILE RAR UNRAR ARJ UNARJ LHA ARC NOMARCH CAB RPM ZOO UNZOO LZOP \
-		P7ZIP MSWORD TNEF DOCS
+		7ZIP MSWORD TNEF DOCS
 OPTIONS_DEFAULT=	BDB SPAMASSASSIN FILE UNRAR ARJ LHA ARC CAB RPM ZOO LZOP \
-			P7ZIP MSWORD
+			7ZIP MSWORD
 BDB_DESC=		Use BerkeleyDB for nanny/cache/snmp
 SNMP_DESC=		Install amavisd snmp subagent
 SQLITE_DESC=		Use SQLite for lookups
@@ -67,7 +66,7 @@ RPM_DESC=		RPM support with archivers/rpm2cpio
 ZOO_DESC=		ZOO support with archivers/zoo
 UNZOO_DESC=		ZOO support with archivers/unzoo
 LZOP_DESC=		LZOP support with archivers/lzop
-P7ZIP_DESC=		P7ZIP support with archivers/p7zip
+7ZIP_DESC=		7ZIP support with archivers/7-zip
 MSWORD_DESC=		Ms Word support with textproc/ripole
 TNEF_DESC=		Add external tnef decoder converters/tnef
 
@@ -195,8 +194,8 @@ RUN_DEPENDS+=	unzoo>=4.4_1:archivers/unzoo
 RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:archivers/lzop
 .endif
 
-.if ${PORT_OPTIONS:MP7ZIP}
-RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:archivers/p7zip
+.if ${PORT_OPTIONS:M7ZIP}
+RUN_DEPENDS+=	${LOCALBASE}/bin/7zz:archivers/7-zip
 .endif
 
 .if ${PORT_OPTIONS:MMSWORD}
