@@ -1,6 +1,6 @@
---- orconfig.h.in.orig	2017-11-30 20:34:49 UTC
+--- orconfig.h.in.orig	2022-02-04 16:24:11 UTC
 +++ orconfig.h.in
-@@ -517,7 +517,10 @@
+@@ -610,7 +610,10 @@
  #undef HAVE_TIME_H
  
  /* Define to 1 if you have the `timingsafe_memcmp' function. */
