@@ -449,6 +449,7 @@
     SUBDIR += md4c
     SUBDIR += mdbook
     SUBDIR += mdbook-linkcheck
+    SUBDIR += mdbook-mermaid
     SUBDIR += mdocml
     SUBDIR += meilisearch
     SUBDIR += meld
