@@ -3,7 +3,7 @@ bin/kwallet-query
 include/KF5/KWallet/KWallet
 include/KF5/KWallet/kwallet.h
 include/KF5/KWallet/kwallet_export.h
-include/KF5/kwallet_version.h
+include/KF5/KWallet/kwallet_version.h
 lib/cmake/KF5Wallet/KF5WalletConfig.cmake
 lib/cmake/KF5Wallet/KF5WalletConfigVersion.cmake
 lib/cmake/KF5Wallet/KF5WalletTargets-%%CMAKE_BUILD_TYPE%%.cmake

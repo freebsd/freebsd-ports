@@ -12,7 +12,7 @@ include/KF5/KActivities/kactivities/info.h
 include/KF5/KActivities/kactivities/kactivities_export.h
 include/KF5/KActivities/kactivities/resourceinstance.h
 include/KF5/KActivities/kactivities/version.h
-include/KF5/kactivities_version.h
+include/KF5/KActivities/kactivities_version.h
 lib/cmake/KF5Activities/KF5ActivitiesConfig.cmake
 lib/cmake/KF5Activities/KF5ActivitiesConfigVersion.cmake
 lib/cmake/KF5Activities/KF5ActivitiesLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake

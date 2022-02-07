@@ -14,7 +14,7 @@ include/KF5/KIconThemes/kiconengine.h
 include/KF5/KIconThemes/kiconloader.h
 include/KF5/KIconThemes/kicontheme.h
 include/KF5/KIconThemes/kiconthemes_export.h
-include/KF5/kiconthemes_version.h
+include/KF5/KIconThemes/kiconthemes_version.h
 lib/cmake/KF5IconThemes/KF5IconThemesConfig.cmake
 lib/cmake/KF5IconThemes/KF5IconThemesConfigVersion.cmake
 lib/cmake/KF5IconThemes/KF5IconThemesTargets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -24,6 +24,7 @@ include/KF5/KService/kplugininfo.h
 include/KF5/KService/kplugintrader.h
 include/KF5/KService/kservice.h
 include/KF5/KService/kservice_export.h
+include/KF5/KService/kservice_version.h
 include/KF5/KService/kserviceaction.h
 include/KF5/KService/kservicegroup.h
 include/KF5/KService/kservicetype.h
@@ -33,7 +34,6 @@ include/KF5/KService/ksycoca.h
 include/KF5/KService/ksycocaentry.h
 include/KF5/KService/ksycocatype.h
 include/KF5/KService/ktoolinvocation.h
-include/KF5/kservice_version.h
 lib/cmake/KF5Service/KF5ServiceConfig.cmake
 lib/cmake/KF5Service/KF5ServiceConfigVersion.cmake
 lib/cmake/KF5Service/KF5ServiceMacros.cmake

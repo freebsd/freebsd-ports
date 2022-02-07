@@ -65,7 +65,7 @@ include/KF5/ThreadWeaver/threadweaver/weaver.h
 include/KF5/ThreadWeaver/threadweaver/weaverimplstate.h
 include/KF5/ThreadWeaver/threadweaver/weaverinterface.h
 include/KF5/ThreadWeaver/threadweaver/workinghardstate.h
-include/KF5/threadweaver_version.h
+include/KF5/ThreadWeaver/threadweaver_version.h
 lib/cmake/KF5ThreadWeaver/KF5ThreadWeaverConfig.cmake
 lib/cmake/KF5ThreadWeaver/KF5ThreadWeaverConfigVersion.cmake
 lib/cmake/KF5ThreadWeaver/KF5ThreadWeaverTargets-%%CMAKE_BUILD_TYPE%%.cmake

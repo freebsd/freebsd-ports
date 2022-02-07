@@ -152,9 +152,9 @@ include/KF5/KWidgetsAddons/kurllabel.h
 include/KF5/KWidgetsAddons/kviewstatemaintainerbase.h
 include/KF5/KWidgetsAddons/kviewstateserializer.h
 include/KF5/KWidgetsAddons/kwidgetsaddons_export.h
+include/KF5/KWidgetsAddons/kwidgetsaddons_version.h
 include/KF5/KWidgetsAddons/kxyselector.h
 include/KF5/KWidgetsAddons/lineediturldropeventfilter.h
-include/KF5/kwidgetsaddons_version.h
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfig.cmake
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfigVersion.cmake
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake

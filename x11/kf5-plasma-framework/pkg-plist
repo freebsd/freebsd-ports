@@ -15,6 +15,7 @@ include/KF5/Plasma/Service
 include/KF5/Plasma/ServiceJob
 include/KF5/Plasma/Svg
 include/KF5/Plasma/Theme
+include/KF5/Plasma/plasma_version.h
 include/KF5/PlasmaQuick/AppletQuickItem
 include/KF5/PlasmaQuick/ConfigModel
 include/KF5/PlasmaQuick/ConfigView
@@ -41,7 +42,6 @@ include/KF5/plasma/servicejob.h
 include/KF5/plasma/svg.h
 include/KF5/plasma/theme.h
 include/KF5/plasma/version.h
-include/KF5/plasma_version.h
 include/KF5/plasmaquick/appletquickitem.h
 include/KF5/plasmaquick/configmodel.h
 include/KF5/plasmaquick/configview.h
@@ -558,6 +558,7 @@ share/plasma/desktoptheme/default/icons/view.svgz
 share/plasma/desktoptheme/default/icons/vlc.svgz
 share/plasma/desktoptheme/default/icons/wallet.svgz
 share/plasma/desktoptheme/default/icons/window.svgz
+share/plasma/desktoptheme/default/icons/yakuake.svgz
 share/plasma/desktoptheme/default/icons/zoom.svgz
 share/plasma/desktoptheme/default/metadata.desktop
 share/plasma/desktoptheme/default/opaque/dialogs/background.svgz

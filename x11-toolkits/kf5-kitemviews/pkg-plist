@@ -13,11 +13,11 @@ include/KF5/KItemViews/kcategorydrawer.h
 include/KF5/KItemViews/kextendableitemdelegate.h
 include/KF5/KItemViews/kfilterproxysearchline.h
 include/KF5/KItemViews/kitemviews_export.h
+include/KF5/KItemViews/kitemviews_version.h
 include/KF5/KItemViews/klistwidgetsearchline.h
 include/KF5/KItemViews/ktreewidgetsearchline.h
 include/KF5/KItemViews/ktreewidgetsearchlinewidget.h
 include/KF5/KItemViews/kwidgetitemdelegate.h
-include/KF5/kitemviews_version.h
 lib/cmake/KF5ItemViews/KF5ItemViewsConfig.cmake
 lib/cmake/KF5ItemViews/KF5ItemViewsConfigVersion.cmake
 lib/cmake/KF5ItemViews/KF5ItemViewsTargets-%%CMAKE_BUILD_TYPE%%.cmake

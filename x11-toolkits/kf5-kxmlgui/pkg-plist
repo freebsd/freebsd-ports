@@ -36,11 +36,11 @@ include/KF5/KXmlGui/ktoolbar.h
 include/KF5/KXmlGui/ktooltiphelper.h
 include/KF5/KXmlGui/kundoactions.h
 include/KF5/KXmlGui/kxmlgui_export.h
+include/KF5/KXmlGui/kxmlgui_version.h
 include/KF5/KXmlGui/kxmlguibuilder.h
 include/KF5/KXmlGui/kxmlguiclient.h
 include/KF5/KXmlGui/kxmlguifactory.h
 include/KF5/KXmlGui/kxmlguiwindow.h
-include/KF5/kxmlgui_version.h
 lib/cmake/KF5XmlGui/KF5XmlGuiConfig.cmake
 lib/cmake/KF5XmlGui/KF5XmlGuiConfigVersion.cmake
 lib/cmake/KF5XmlGui/KF5XmlGuiTargets-%%CMAKE_BUILD_TYPE%%.cmake

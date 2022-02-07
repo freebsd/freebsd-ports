@@ -101,7 +101,7 @@ include/KF5/KWayland/Server/xdgdecoration_interface.h
 include/KF5/KWayland/Server/xdgforeign_interface.h
 include/KF5/KWayland/Server/xdgoutput_interface.h
 include/KF5/KWayland/Server/xdgshell_interface.h
-include/KF5/kwayland_version.h
+include/KF5/KWayland/kwayland_version.h
 lib/cmake/KF5Wayland/KF5WaylandConfig.cmake
 lib/cmake/KF5Wayland/KF5WaylandConfigVersion.cmake
 lib/cmake/KF5Wayland/KF5WaylandTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -115,5 +115,6 @@ lib/libKF5WaylandServer.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/org-kde-kf5-kwayland-testserver
 %%QT_MKSPECDIR%%/modules/qt_KWaylandClient.pri
 %%QT_MKSPECDIR%%/modules/qt_KWaylandServer.pri
+libdata/pkgconfig/KF5WaylandClient.pc
 share/qlogging-categories5/kwayland.categories
 share/qlogging-categories5/kwayland.renamecategories

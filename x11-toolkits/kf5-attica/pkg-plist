@@ -39,8 +39,8 @@ include/KF5/Attica/Attica/Topic
 include/KF5/Attica/attica/accountbalance.h
 include/KF5/Attica/attica/achievement.h
 include/KF5/Attica/attica/activity.h
-include/KF5/Attica/attica/atticabasejob.h
 include/KF5/Attica/attica/attica_export.h
+include/KF5/Attica/attica/atticabasejob.h
 include/KF5/Attica/attica/atticautils.h
 include/KF5/Attica/attica/buildservice.h
 include/KF5/Attica/attica/buildservicejob.h
@@ -80,7 +80,7 @@ include/KF5/Attica/attica/putjob.h
 include/KF5/Attica/attica/remoteaccount.h
 include/KF5/Attica/attica/topic.h
 include/KF5/Attica/attica/version.h
-include/KF5/attica_version.h
+include/KF5/Attica/attica_version.h
 lib/cmake/KF5Attica/KF5AtticaConfig.cmake
 lib/cmake/KF5Attica/KF5AtticaConfigVersion.cmake
 lib/cmake/KF5Attica/KF5AtticaTargets-%%CMAKE_BUILD_TYPE%%.cmake

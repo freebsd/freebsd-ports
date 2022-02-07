@@ -2,9 +2,6 @@ PORTNAME=	frameworkintegration
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11 kde kde-frameworks
 
-PATCH_SITES=	https://invent.kde.org/frameworks/frameworkintegration/commit/
-PATCHFILES=	675802e706a737c008aa74600ac804b06db52140.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 workspace and cross-framework integration plugins
 

@@ -5,9 +5,9 @@ include/KF5/KCodecs/KEncodingProber
 include/KF5/KCodecs/kcharsets.h
 include/KF5/KCodecs/kcodecs.h
 include/KF5/KCodecs/kcodecs_export.h
+include/KF5/KCodecs/kcodecs_version.h
 include/KF5/KCodecs/kemailaddress.h
 include/KF5/KCodecs/kencodingprober.h
-include/KF5/kcodecs_version.h
 lib/cmake/KF5Codecs/KF5CodecsConfig.cmake
 lib/cmake/KF5Codecs/KF5CodecsConfigVersion.cmake
 lib/cmake/KF5Codecs/KF5CodecsTargets-%%CMAKE_BUILD_TYPE%%.cmake

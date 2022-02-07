@@ -1,5 +1,6 @@
 bin/gentrigrams
 bin/parsetrigrams
+include/KF5/Sonnet/sonnet_version.h
 include/KF5/SonnetCore/Sonnet/BackgroundChecker
 include/KF5/SonnetCore/Sonnet/GuessLanguage
 include/KF5/SonnetCore/Sonnet/Settings
@@ -24,7 +25,6 @@ include/KF5/SonnetUi/sonnet/dictionarycombobox.h
 include/KF5/SonnetUi/sonnet/highlighter.h
 include/KF5/SonnetUi/sonnet/sonnetui_export.h
 include/KF5/SonnetUi/sonnet/spellcheckdecorator.h
-include/KF5/sonnet_version.h
 lib/cmake/KF5Sonnet/KF5SonnetConfig.cmake
 lib/cmake/KF5Sonnet/KF5SonnetConfigVersion.cmake
 lib/cmake/KF5Sonnet/KF5SonnetTargets-%%CMAKE_BUILD_TYPE%%.cmake

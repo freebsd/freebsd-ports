@@ -561,6 +561,8 @@ share/icons/oxygen/base/128x128/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/128x128/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/128x128/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/128x128/mimetypes/encrypted.png
+share/icons/oxygen/base/128x128/mimetypes/font-otf.png
+share/icons/oxygen/base/128x128/mimetypes/font-ttf.png
 share/icons/oxygen/base/128x128/mimetypes/fonts-package.png
 share/icons/oxygen/base/128x128/mimetypes/image-bmp.png
 share/icons/oxygen/base/128x128/mimetypes/image-gif.png
@@ -2264,6 +2266,8 @@ share/icons/oxygen/base/16x16/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/16x16/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/16x16/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/16x16/mimetypes/encrypted.png
+share/icons/oxygen/base/16x16/mimetypes/font-otf.png
+share/icons/oxygen/base/16x16/mimetypes/font-ttf.png
 share/icons/oxygen/base/16x16/mimetypes/fonts-package.png
 share/icons/oxygen/base/16x16/mimetypes/image-bmp.png
 share/icons/oxygen/base/16x16/mimetypes/image-gif.png
@@ -4093,6 +4097,8 @@ share/icons/oxygen/base/22x22/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/22x22/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/22x22/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/22x22/mimetypes/encrypted.png
+share/icons/oxygen/base/22x22/mimetypes/font-otf.png
+share/icons/oxygen/base/22x22/mimetypes/font-ttf.png
 share/icons/oxygen/base/22x22/mimetypes/fonts-package.png
 share/icons/oxygen/base/22x22/mimetypes/image-bmp.png
 share/icons/oxygen/base/22x22/mimetypes/image-gif.png
@@ -4657,6 +4663,7 @@ share/icons/oxygen/base/256x256/mimetypes/application-vnd.sun.xml.math.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.sun.xml.writer.global.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.sun.xml.writer.png.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.wordperfect.png
+share/icons/oxygen/base/256x256/mimetypes/application-wps-office.xls.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-7z-compressed.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-abiword.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-ace.png
@@ -4790,6 +4797,8 @@ share/icons/oxygen/base/256x256/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/256x256/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/256x256/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/256x256/mimetypes/encrypted.png
+share/icons/oxygen/base/256x256/mimetypes/font-otf.png
+share/icons/oxygen/base/256x256/mimetypes/font-ttf.png
 share/icons/oxygen/base/256x256/mimetypes/fonts-package.png
 share/icons/oxygen/base/256x256/mimetypes/image-bmp.png
 share/icons/oxygen/base/256x256/mimetypes/image-gif.png
@@ -6200,6 +6209,8 @@ share/icons/oxygen/base/32x32/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/32x32/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/32x32/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/32x32/mimetypes/encrypted.png
+share/icons/oxygen/base/32x32/mimetypes/font-otf.png
+share/icons/oxygen/base/32x32/mimetypes/font-ttf.png
 share/icons/oxygen/base/32x32/mimetypes/fonts-package.png
 share/icons/oxygen/base/32x32/mimetypes/image-bmp.png
 share/icons/oxygen/base/32x32/mimetypes/image-gif.png
@@ -7632,6 +7643,8 @@ share/icons/oxygen/base/48x48/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/48x48/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/48x48/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/48x48/mimetypes/encrypted.png
+share/icons/oxygen/base/48x48/mimetypes/font-otf.png
+share/icons/oxygen/base/48x48/mimetypes/font-ttf.png
 share/icons/oxygen/base/48x48/mimetypes/fonts-package.png
 share/icons/oxygen/base/48x48/mimetypes/image-bmp.png
 share/icons/oxygen/base/48x48/mimetypes/image-gif.png
@@ -8492,6 +8505,8 @@ share/icons/oxygen/base/64x64/mimetypes/audio-x-mpeg.png
 share/icons/oxygen/base/64x64/mimetypes/audio-x-speex+ogg.png
 share/icons/oxygen/base/64x64/mimetypes/audio-x-wav.png
 share/icons/oxygen/base/64x64/mimetypes/encrypted.png
+share/icons/oxygen/base/64x64/mimetypes/font-otf.png
+share/icons/oxygen/base/64x64/mimetypes/font-ttf.png
 share/icons/oxygen/base/64x64/mimetypes/fonts-package.png
 share/icons/oxygen/base/64x64/mimetypes/image-bmp.png
 share/icons/oxygen/base/64x64/mimetypes/image-gif.png

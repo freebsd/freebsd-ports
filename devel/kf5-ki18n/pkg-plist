@@ -5,6 +5,7 @@ include/KF5/KI18n/KLocalizedTranslator
 include/KF5/KI18n/KuitMarkup
 include/KF5/KI18n/KuitSetup
 include/KF5/KI18n/ki18n_export.h
+include/KF5/KI18n/ki18n_version.h
 include/KF5/KI18n/klazylocalizedstring.h
 include/KF5/KI18n/klocalizedcontext.h
 include/KF5/KI18n/klocalizedstring.h
@@ -18,7 +19,6 @@ include/KF5/KI18nLocaleData/kcountry.h
 include/KF5/KI18nLocaleData/kcountrysubdivision.h
 include/KF5/KI18nLocaleData/ki18nlocaledata_export.h
 include/KF5/KI18nLocaleData/ktimezone.h
-include/KF5/ki18n_version.h
 lib/cmake/KF5I18n/KF5I18nConfig.cmake
 lib/cmake/KF5I18n/KF5I18nConfigVersion.cmake
 lib/cmake/KF5I18n/KF5I18nMacros.cmake

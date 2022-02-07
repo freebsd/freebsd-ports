@@ -12,10 +12,10 @@ include/KF5/KNotifications/knotificationplugin.h
 include/KF5/KNotifications/knotificationreplyaction.h
 include/KF5/KNotifications/knotificationrestrictions.h
 include/KF5/KNotifications/knotifications_export.h
+include/KF5/KNotifications/knotifications_version.h
 include/KF5/KNotifications/knotifyconfig.h
 include/KF5/KNotifications/kpassivepopup.h
 include/KF5/KNotifications/kstatusnotifieritem.h
-include/KF5/knotifications_version.h
 lib/cmake/KF5Notifications/KF5NotificationsConfig.cmake
 lib/cmake/KF5Notifications/KF5NotificationsConfigVersion.cmake
 lib/cmake/KF5Notifications/KF5NotificationsTargets-%%CMAKE_BUILD_TYPE%%.cmake

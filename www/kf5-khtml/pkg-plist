@@ -37,11 +37,11 @@ include/KF5/KHtml/khtml_events.h
 include/KF5/KHtml/khtml_export.h
 include/KF5/KHtml/khtml_part.h
 include/KF5/KHtml/khtml_settings.h
+include/KF5/KHtml/khtml_version.h
 include/KF5/KHtml/khtmldefaults.h
 include/KF5/KHtml/khtmlpart.h
 include/KF5/KHtml/khtmlsettings.h
 include/KF5/KHtml/khtmlview.h
-include/KF5/khtml_version.h
 lib/cmake/KF5KHtml/KF5KHtmlConfig.cmake
 lib/cmake/KF5KHtml/KF5KHtmlConfigVersion.cmake
 lib/cmake/KF5KHtml/KF5KHtmlTargets-%%CMAKE_BUILD_TYPE%%.cmake

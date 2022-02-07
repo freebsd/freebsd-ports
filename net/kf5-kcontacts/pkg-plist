@@ -59,7 +59,7 @@ include/KF5/KContacts/kcontacts/timezone.h
 include/KF5/KContacts/kcontacts/title.h
 include/KF5/KContacts/kcontacts/vcardconverter.h
 include/KF5/KContacts/kcontacts/vcarddrag.h
-include/KF5/kcontacts_version.h
+include/KF5/KContacts/kcontacts_version.h
 lib/cmake/KF5Contacts/KF5ContactsConfig.cmake
 lib/cmake/KF5Contacts/KF5ContactsConfigVersion.cmake
 lib/cmake/KF5Contacts/KF5ContactsTargets-%%CMAKE_BUILD_TYPE%%.cmake

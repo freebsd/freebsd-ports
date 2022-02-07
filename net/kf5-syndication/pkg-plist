@@ -129,7 +129,7 @@ include/KF5/Syndication/syndication/specificitemvisitor.h
 include/KF5/Syndication/syndication/syndication.h
 include/KF5/Syndication/syndication/syndication_export.h
 include/KF5/Syndication/syndication/tools.h
-include/KF5/syndication_version.h
+include/KF5/Syndication/syndication_version.h
 lib/cmake/KF5Syndication/KF5SyndicationConfig.cmake
 lib/cmake/KF5Syndication/KF5SyndicationConfigVersion.cmake
 lib/cmake/KF5Syndication/KF5SyndicationTargets-%%CMAKE_BUILD_TYPE%%.cmake

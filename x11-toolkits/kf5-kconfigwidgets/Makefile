@@ -1,5 +1,5 @@
 PORTNAME=	kconfigwidgets
-DISTVERSION=	5.90.1
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

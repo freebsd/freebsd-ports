@@ -6,13 +6,13 @@ include/KF5/KAuth/KAuthHelperSupport
 include/KF5/KAuth/KAuthObjectDecorator
 include/KF5/KAuth/kauth.h
 include/KF5/KAuth/kauth_export.h
+include/KF5/KAuth/kauth_version.h
 include/KF5/KAuth/kauthaction.h
 include/KF5/KAuth/kauthactionreply.h
 include/KF5/KAuth/kauthcore_export.h
 include/KF5/KAuth/kauthexecutejob.h
 include/KF5/KAuth/kauthhelpersupport.h
 include/KF5/KAuth/kauthobjectdecorator.h
-include/KF5/kauth_version.h
 lib/cmake/KF5Auth/KF5AuthConfig.cmake
 lib/cmake/KF5Auth/KF5AuthConfigVersion.cmake
 lib/cmake/KF5Auth/KF5AuthMacros.cmake

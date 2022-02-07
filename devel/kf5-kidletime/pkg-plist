@@ -1,8 +1,8 @@
 include/KF5/KIdleTime/KIdleTime
 include/KF5/KIdleTime/kidletime.h
 include/KF5/KIdleTime/kidletime_export.h
+include/KF5/KIdleTime/kidletime_version.h
 include/KF5/KIdleTime/private/abstractsystempoller.h
-include/KF5/kidletime_version.h
 lib/cmake/KF5IdleTime/KF5IdleTimeConfig.cmake
 lib/cmake/KF5IdleTime/KF5IdleTimeConfigVersion.cmake
 lib/cmake/KF5IdleTime/KF5IdleTimeTargets-%%CMAKE_BUILD_TYPE%%.cmake

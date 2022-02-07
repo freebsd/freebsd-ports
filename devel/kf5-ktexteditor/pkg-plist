@@ -61,7 +61,7 @@ include/KF5/KTextEditor/ktexteditor/sessionconfiginterface.h
 include/KF5/KTextEditor/ktexteditor/texthintinterface.h
 include/KF5/KTextEditor/ktexteditor/view.h
 include/KF5/KTextEditor/ktexteditor_export.h
-include/KF5/ktexteditor_version.h
+include/KF5/KTextEditor/ktexteditor_version.h
 lib/cmake/KF5TextEditor/KF5TextEditorConfig.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorConfigVersion.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorTargets-%%CMAKE_BUILD_TYPE%%.cmake

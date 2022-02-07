@@ -7,7 +7,7 @@ include/KF5/KPackage/kpackage/package_export.h
 include/KF5/KPackage/kpackage/packageloader.h
 include/KF5/KPackage/kpackage/packagestructure.h
 include/KF5/KPackage/kpackage/version.h
-include/KF5/kpackage_version.h
+include/KF5/KPackage/kpackage_version.h
 lib/cmake/KF5Package/KF5PackageConfig.cmake
 lib/cmake/KF5Package/KF5PackageConfigVersion.cmake
 lib/cmake/KF5Package/KF5PackageMacros.cmake

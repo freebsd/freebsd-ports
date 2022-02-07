@@ -19,6 +19,7 @@ include/KF5/KDeclarative/kdeclarative/kdeclarative.h
 include/KF5/KDeclarative/kdeclarative/kdeclarative_export.h
 include/KF5/KDeclarative/kdeclarative/qmlobject.h
 include/KF5/KDeclarative/kdeclarative/qmlobjectsharedengine.h
+include/KF5/KDeclarative/kdeclarative_version.h
 include/KF5/KDeclarative/kquickaddons/configmodule.h
 include/KF5/KDeclarative/kquickaddons/imagetexturescache.h
 include/KF5/KDeclarative/kquickaddons/managedconfigmodule.h
@@ -29,7 +30,6 @@ include/KF5/KDeclarative/kquickaddons/quickviewsharedengine.h
 include/KF5/KDeclarative/quickaddons/imagetexturescache.h
 include/KF5/KDeclarative/quickaddons/managedtexturenode.h
 include/KF5/KDeclarative/quickaddons/quickaddons_export.h
-include/KF5/kdeclarative_version.h
 lib/cmake/KF5Declarative/KF5DeclarativeConfig.cmake
 lib/cmake/KF5Declarative/KF5DeclarativeConfigVersion.cmake
 lib/cmake/KF5Declarative/KF5DeclarativeTargets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -64,7 +64,7 @@ include/KF5/KParts/kparts/selectorinterface.h
 include/KF5/KParts/kparts/statusbarextension.h
 include/KF5/KParts/kparts/textextension.h
 include/KF5/KParts/kparts/windowargs.h
-include/KF5/kparts_version.h
+include/KF5/KParts/kparts_version.h
 lib/cmake/KF5Parts/KF5PartsConfig.cmake
 lib/cmake/KF5Parts/KF5PartsConfigVersion.cmake
 lib/cmake/KF5Parts/KF5PartsTargets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -6,8 +6,8 @@ include/KF5/KPlotting/kplotaxis.h
 include/KF5/KPlotting/kplotobject.h
 include/KF5/KPlotting/kplotpoint.h
 include/KF5/KPlotting/kplotting_export.h
+include/KF5/KPlotting/kplotting_version.h
 include/KF5/KPlotting/kplotwidget.h
-include/KF5/kplotting_version.h
 lib/cmake/KF5Plotting/KF5PlottingConfig.cmake
 lib/cmake/KF5Plotting/KF5PlottingConfigVersion.cmake
 lib/cmake/KF5Plotting/KF5PlottingTargets-%%CMAKE_BUILD_TYPE%%.cmake

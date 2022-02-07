@@ -3,9 +3,9 @@ include/KF5/KPty/KPtyDevice
 include/KF5/KPty/KPtyProcess
 include/KF5/KPty/kpty.h
 include/KF5/KPty/kpty_export.h
+include/KF5/KPty/kpty_version.h
 include/KF5/KPty/kptydevice.h
 include/KF5/KPty/kptyprocess.h
-include/KF5/kpty_version.h
 lib/cmake/KF5Pty/KF5PtyConfig.cmake
 lib/cmake/KF5Pty/KF5PtyConfigVersion.cmake
 lib/cmake/KF5Pty/KF5PtyTargets-%%CMAKE_BUILD_TYPE%%.cmake

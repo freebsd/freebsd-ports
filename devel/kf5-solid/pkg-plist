@@ -30,11 +30,11 @@ include/KF5/Solid/solid/portablemediaplayer.h
 include/KF5/Solid/solid/predicate.h
 include/KF5/Solid/solid/processor.h
 include/KF5/Solid/solid/solid_export.h
+include/KF5/Solid/solid_version.h
 include/KF5/Solid/solid/solidnamespace.h
 include/KF5/Solid/solid/storageaccess.h
 include/KF5/Solid/solid/storagedrive.h
 include/KF5/Solid/solid/storagevolume.h
-include/KF5/solid_version.h
 lib/cmake/KF5Solid/KF5SolidConfig.cmake
 lib/cmake/KF5Solid/KF5SolidConfigVersion.cmake
 lib/cmake/KF5Solid/KF5SolidTargets-%%CMAKE_BUILD_TYPE%%.cmake

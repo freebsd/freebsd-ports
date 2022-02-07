@@ -799,6 +799,7 @@ include/KF5/KDELibs4Support/kdebug.h
 include/KF5/KDELibs4Support/kdefakes.h
 include/KF5/KDELibs4Support/kdelibs4support_export.h
 include/KF5/KDELibs4Support/kdelibs4support_export_internal.h
+include/KF5/KDELibs4Support/kdelibs4support_version.h
 include/KF5/KDELibs4Support/kdemacros.h
 include/KF5/KDELibs4Support/kdeprintdialog.h
 include/KF5/KDELibs4Support/kdeversion.h
@@ -900,7 +901,6 @@ include/KF5/KDELibs4Support/predicateproperties.h
 include/KF5/KDELibs4Support/qtest_kde.h
 include/KF5/KDELibs4Support/solid/networking.h
 include/KF5/KDELibs4Support/solid/powermanagement.h
-include/KF5/kdelibs4support_version.h
 lib/cmake/KDELibs4/KDELibsDependencies.cmake
 lib/cmake/KDELibs4/KF5KDELibs4LibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDELibs4/KF5KDELibs4LibraryTargets.cmake
@@ -1010,6 +1010,7 @@ lib/libexec/kf5/fileshareset
 man/ca/man1/kf5-config.1.gz
 man/de/man1/kf5-config.1.gz
 man/es/man1/kf5-config.1.gz
+man/fr/man1/kf5-config.1.gz
 man/it/man1/kf5-config.1.gz
 man/man1/kf5-config.1.gz
 man/nl/man1/kf5-config.1.gz

@@ -5,7 +5,7 @@ include/KF5/KEmoticons/kemoticons.h
 include/KF5/KEmoticons/kemoticons_export.h
 include/KF5/KEmoticons/kemoticonsprovider.h
 include/KF5/KEmoticons/kemoticonstheme.h
-include/KF5/kemoticons_version.h
+include/KF5/KEmoticons/kemoticons_version.h
 lib/cmake/KF5Emoticons/KF5EmoticonsConfig.cmake
 lib/cmake/KF5Emoticons/KF5EmoticonsConfigVersion.cmake
 lib/cmake/KF5Emoticons/KF5EmoticonsTargets-%%CMAKE_BUILD_TYPE%%.cmake

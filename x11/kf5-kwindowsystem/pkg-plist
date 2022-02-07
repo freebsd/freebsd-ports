@@ -24,6 +24,7 @@ include/KF5/KWindowSystem/kwindowinfo.h
 include/KF5/KWindowSystem/kwindowshadow.h
 include/KF5/KWindowSystem/kwindowsystem.h
 include/KF5/KWindowSystem/kwindowsystem_export.h
+include/KF5/KWindowSystem/kwindowsystem_version.h
 include/KF5/KWindowSystem/kxmessages.h
 include/KF5/KWindowSystem/netwm.h
 include/KF5/KWindowSystem/netwm_def.h
@@ -32,7 +33,6 @@ include/KF5/KWindowSystem/private/kwindowinfo_p.h
 include/KF5/KWindowSystem/private/kwindowshadow_p.h
 include/KF5/KWindowSystem/private/kwindowsystem_p.h
 include/KF5/KWindowSystem/private/kwindowsystemplugininterface_p.h
-include/KF5/kwindowsystem_version.h
 lib/cmake/KF5WindowSystem/KF5WindowSystemConfig.cmake
 lib/cmake/KF5WindowSystem/KF5WindowSystemConfigVersion.cmake
 lib/cmake/KF5WindowSystem/KF5WindowSystemTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -41,7 +41,6 @@ lib/libKF5WindowSystem.so
 lib/libKF5WindowSystem.so.5
 lib/libKF5WindowSystem.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KWindowSystem.pri
-%%QT_PLUGINDIR%%/kf5/kwindowsystem/KF5WindowSystemWaylandPlugin.so
 %%QT_PLUGINDIR%%/kf5/kwindowsystem/KF5WindowSystemX11Plugin.so
 share/locale/af/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/ar/LC_MESSAGES/kwindowsystem5_qt.qm

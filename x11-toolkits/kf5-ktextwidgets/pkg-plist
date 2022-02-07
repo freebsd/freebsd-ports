@@ -17,7 +17,7 @@ include/KF5/KTextWidgets/krichtextedit.h
 include/KF5/KTextWidgets/krichtextwidget.h
 include/KF5/KTextWidgets/ktextedit.h
 include/KF5/KTextWidgets/ktextwidgets_export.h
-include/KF5/ktextwidgets_version.h
+include/KF5/KTextWidgets/ktextwidgets_version.h
 lib/cmake/KF5TextWidgets/KF5TextWidgetsConfig.cmake
 lib/cmake/KF5TextWidgets/KF5TextWidgetsConfigVersion.cmake
 lib/cmake/KF5TextWidgets/KF5TextWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -14,7 +14,7 @@ include/KF5/KDESu/kdesu/stub.h
 include/KF5/KDESu/kdesu/stubprocess.h
 include/KF5/KDESu/kdesu/su.h
 include/KF5/KDESu/kdesu/suprocess.h
-include/KF5/kdesu_version.h
+include/KF5/KDESu/kdesu_version.h
 lib/cmake/KF5Su/KF5SuConfig.cmake
 lib/cmake/KF5Su/KF5SuConfigVersion.cmake
 lib/cmake/KF5Su/KF5SuTargets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -26,7 +26,7 @@ include/KF5/KBookmarks/kbookmarkmenu.h
 include/KF5/KBookmarks/kbookmarkowner.h
 include/KF5/KBookmarks/kbookmarks_export.h
 include/KF5/KBookmarks/konqbookmarkmenu.h
-include/KF5/kbookmarks_version.h
+include/KF5/KBookmarks/kbookmarks_version.h
 lib/cmake/KF5Bookmarks/KF5BookmarksConfig.cmake
 lib/cmake/KF5Bookmarks/KF5BookmarksConfigVersion.cmake
 lib/cmake/KF5Bookmarks/KF5BookmarksTargets-%%CMAKE_BUILD_TYPE%%.cmake

@@ -1,7 +1,7 @@
 include/KF5/KNotifyConfig/KNotifyConfigWidget
 include/KF5/KNotifyConfig/knotifyconfig_export.h
+include/KF5/KNotifyConfig/knotifyconfig_version.h
 include/KF5/KNotifyConfig/knotifyconfigwidget.h
-include/KF5/knotifyconfig_version.h
 lib/cmake/KF5NotifyConfig/KF5NotifyConfigConfig.cmake
 lib/cmake/KF5NotifyConfig/KF5NotifyConfigConfigVersion.cmake
 lib/cmake/KF5NotifyConfig/KF5NotifyConfigTargets-%%CMAKE_BUILD_TYPE%%.cmake

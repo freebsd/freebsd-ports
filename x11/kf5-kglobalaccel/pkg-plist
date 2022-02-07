@@ -7,7 +7,7 @@ include/KF5/KGlobalAccel/kglobalshortcutinfo.h
 include/KF5/KGlobalAccel/private/kf5globalaccelprivate_export.h
 include/KF5/KGlobalAccel/private/kglobalaccel_interface.h
 include/KF5/KGlobalAccel/private/kglobalacceld.h
-include/KF5/kglobalaccel_version.h
+include/KF5/KGlobalAccel/kglobalaccel_version.h
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfig.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfigVersion.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets-%%CMAKE_BUILD_TYPE%%.cmake

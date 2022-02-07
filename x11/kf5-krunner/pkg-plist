@@ -11,7 +11,7 @@ include/KF5/KRunner/krunner/querymatch.h
 include/KF5/KRunner/krunner/runnercontext.h
 include/KF5/KRunner/krunner/runnermanager.h
 include/KF5/KRunner/krunner/runnersyntax.h
-include/KF5/krunner_version.h
+include/KF5/KRunner/krunner_version.h
 lib/cmake/KF5Runner/KF5KRunnerMacros.cmake
 lib/cmake/KF5Runner/KF5RunnerConfig.cmake
 lib/cmake/KF5Runner/KF5RunnerConfigVersion.cmake

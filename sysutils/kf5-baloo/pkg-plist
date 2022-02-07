@@ -20,7 +20,7 @@ include/KF5/Baloo/baloo/query.h
 include/KF5/Baloo/baloo/queryrunnable.h
 include/KF5/Baloo/baloo/resultiterator.h
 include/KF5/Baloo/baloo/taglistjob.h
-include/KF5/baloo_version.h
+include/KF5/Baloo/baloo_version.h
 lib/cmake/KF5Baloo/KF5BalooConfig.cmake
 lib/cmake/KF5Baloo/KF5BalooConfigVersion.cmake
 lib/cmake/KF5Baloo/KF5BalooTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -66,8 +66,14 @@ share/locale/az/LC_MESSAGES/balooshow5.mo
 share/locale/az/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/az/LC_MESSAGES/kio5_tags.mo
 share/locale/az/LC_MESSAGES/kio5_timeline.mo
+share/locale/bg/LC_MESSAGES/balooctl5.mo
+share/locale/bg/LC_MESSAGES/baloodb5.mo
+share/locale/bg/LC_MESSAGES/balooengine5.mo
 share/locale/bg/LC_MESSAGES/baloosearch5.mo
 share/locale/bg/LC_MESSAGES/balooshow5.mo
+share/locale/bg/LC_MESSAGES/kio5_baloosearch.mo
+share/locale/bg/LC_MESSAGES/kio5_tags.mo
+share/locale/bg/LC_MESSAGES/kio5_timeline.mo
 share/locale/bs/LC_MESSAGES/balooctl5.mo
 share/locale/bs/LC_MESSAGES/baloosearch5.mo
 share/locale/bs/LC_MESSAGES/balooshow5.mo

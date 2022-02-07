@@ -31,7 +31,7 @@ include/KF5/KDNSSD/kdnssd/servicebase.h
 include/KF5/KDNSSD/kdnssd/servicebrowser.h
 include/KF5/KDNSSD/kdnssd/servicemodel.h
 include/KF5/KDNSSD/kdnssd/servicetypebrowser.h
-include/KF5/kdnssd_version.h
+include/KF5/KDNSSD/kdnssd_version.h
 lib/cmake/KF5DNSSD/KF5DNSSDConfig.cmake
 lib/cmake/KF5DNSSD/KF5DNSSDConfigVersion.cmake
 lib/cmake/KF5DNSSD/KF5DNSSDTargets-%%CMAKE_BUILD_TYPE%%.cmake

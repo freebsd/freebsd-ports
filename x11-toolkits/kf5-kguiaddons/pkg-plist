@@ -1,3 +1,4 @@
+bin/kde-geo-uri-handler
 include/KF5/KGuiAddons/KColorCollection
 include/KF5/KGuiAddons/KColorMimeData
 include/KF5/KGuiAddons/KColorUtils
@@ -18,6 +19,7 @@ include/KF5/KGuiAddons/kdatevalidator.h
 include/KF5/KGuiAddons/keysequencerecorder.h
 include/KF5/KGuiAddons/kfontutils.h
 include/KF5/KGuiAddons/kguiaddons_export.h
+include/KF5/KGuiAddons/kguiaddons_version.h
 include/KF5/KGuiAddons/kiconutils.h
 include/KF5/KGuiAddons/kimagecache.h
 include/KF5/KGuiAddons/klocalimagecacheimpl.h
@@ -25,7 +27,6 @@ include/KF5/KGuiAddons/kmodifierkeyinfo.h
 include/KF5/KGuiAddons/kmodifierkeyinfoprovider_p.h
 include/KF5/KGuiAddons/ksystemclipboard.h
 include/KF5/KGuiAddons/kwordwrap.h
-include/KF5/kguiaddons_version.h
 lib/cmake/KF5GuiAddons/KF5GuiAddonsConfig.cmake
 lib/cmake/KF5GuiAddons/KF5GuiAddonsConfigVersion.cmake
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -35,4 +36,8 @@ lib/libKF5GuiAddons.so.5
 lib/libKF5GuiAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KGuiAddons.pri
 %%QT_PLUGINDIR%%/kf5/kguiaddons/kmodifierkey/kmodifierkey_xcb.so
+share/applications/google-maps-geo-handler.desktop
+share/applications/openstreetmap-geo-handler.desktop
+share/applications/qwant-maps-geo-handler.desktop
+share/applications/wheelmap-geo-handler.desktop
 share/qlogging-categories5/kguiaddons.categories

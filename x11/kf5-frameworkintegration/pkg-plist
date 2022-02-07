@@ -1,7 +1,7 @@
+include/KF5/FrameworkIntegration/frameworkintegration_version.h
 include/KF5/KStyle/KStyle
 include/KF5/KStyle/kstyle.h
 include/KF5/KStyle/kstyle_export.h
-include/KF5/frameworkintegration_version.h
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationConfig.cmake
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationConfigVersion.cmake
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationTargets-%%CMAKE_BUILD_TYPE%%.cmake

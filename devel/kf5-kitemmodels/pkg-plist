@@ -17,13 +17,13 @@ include/KF5/KItemModels/kconcatenaterowsproxymodel.h
 include/KF5/KItemModels/kdescendantsproxymodel.h
 include/KF5/KItemModels/kextracolumnsproxymodel.h
 include/KF5/KItemModels/kitemmodels_export.h
+include/KF5/KItemModels/kitemmodels_version.h
 include/KF5/KItemModels/klinkitemselectionmodel.h
 include/KF5/KItemModels/kmodelindexproxymapper.h
 include/KF5/KItemModels/knumbermodel.h
 include/KF5/KItemModels/krearrangecolumnsproxymodel.h
 include/KF5/KItemModels/krecursivefilterproxymodel.h
 include/KF5/KItemModels/kselectionproxymodel.h
-include/KF5/kitemmodels_version.h
 lib/cmake/KF5ItemModels/KF5ItemModelsConfig.cmake
 lib/cmake/KF5ItemModels/KF5ItemModelsConfigVersion.cmake
 lib/cmake/KF5ItemModels/KF5ItemModelsTargets-%%CMAKE_BUILD_TYPE%%.cmake

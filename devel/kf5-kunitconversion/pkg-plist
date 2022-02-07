@@ -7,7 +7,7 @@ include/KF5/KUnitConversion/kunitconversion/kunitconversion_export.h
 include/KF5/KUnitConversion/kunitconversion/unit.h
 include/KF5/KUnitConversion/kunitconversion/unitcategory.h
 include/KF5/KUnitConversion/kunitconversion/value.h
-include/KF5/kunitconversion_version.h
+include/KF5/KUnitConversion/kunitconversion_version.h
 lib/cmake/KF5UnitConversion/KF5UnitConversionConfig.cmake
 lib/cmake/KF5UnitConversion/KF5UnitConversionConfigVersion.cmake
 lib/cmake/KF5UnitConversion/KF5UnitConversionTargets-%%CMAKE_BUILD_TYPE%%.cmake

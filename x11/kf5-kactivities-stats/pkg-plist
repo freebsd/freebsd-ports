@@ -11,7 +11,7 @@ include/KF5/KActivitiesStats/kactivitiesstats/resultmodel.h
 include/KF5/KActivitiesStats/kactivitiesstats/resultset.h
 include/KF5/KActivitiesStats/kactivitiesstats/resultwatcher.h
 include/KF5/KActivitiesStats/kactivitiesstats/terms.h
-include/KF5/kactivitiesstats_version.h
+include/KF5/KActivitiesStats/kactivitiesstats_version.h
 lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsConfig.cmake
 lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsConfigVersion.cmake
 lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
