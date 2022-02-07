@@ -1,4 +1,4 @@
 PatchELF is a small utility to modify the dynamic linker and RPATH of ELF
 executables.
 
-WWW: https://nixos.org/patchelf.html
+WWW: https://github.com/NixOS/patchelf
