@@ -18,6 +18,7 @@ WEATHER_DESC=	Support weather forecast display
 
 USES=	horde cpe php
 USE_PHP=	filter gettext hash
+IGNORE_WITH_PHP=80 81
 
 CONFLICTS_INSTALL=	php*-horde
 
