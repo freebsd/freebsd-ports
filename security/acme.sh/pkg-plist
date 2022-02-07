@@ -20,6 +20,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/mydevil.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/mysqld.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/nginx.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/openmediavault.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/opensshd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/openstack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/panos.sh
@@ -30,6 +31,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/ssh.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/strongswan.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/synology_dsm.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/truenas.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/unifi.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/vault.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/vault_cli.sh
@@ -54,6 +56,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_cn.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_conoha.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_constellix.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_cpanel.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_cx.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_cyon.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_da.sh
@@ -61,6 +64,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_desec.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_df.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dgon.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dnshome.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dnsimple.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_do.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_doapi.sh
@@ -112,6 +116,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_myapi.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_mydevil.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_mydnsjp.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_mythic_beasts.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_namecheap.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_namecom.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_namesilo.sh
@@ -160,8 +165,11 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zilore.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zone.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zonomi.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/bark.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/cqhttp.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/dingtalk.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/feishu.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/gotify.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/ifttt.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/mail.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/mailgun.sh
