@@ -3,17 +3,18 @@
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
 PORTREVISION=	2
+MASTER_SITES=	#
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${NMH_COMMIT_DATE}-${GIT_TAGNAME}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	cschuber
-GH_PROJECT=	nmh
-GH_TAGNAME=	9159514406
+GIT_TAGNAME=	9159514
 NMH_COMMIT_DATE=	2022.02.04
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
 
 LICENSE=	BSD3CLAUSE
 
@@ -101,6 +102,13 @@ DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
 CONFLICTS_INSTALL=	ali ja-mh pixie p5-Dist-Joseki nmh-1.*
+
+do-fetch:
+	@cd ${DISTDIR} && \
+	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
+		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
+		    "https://git.savannah.gnu.org/gitweb/?p=nmh.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
+	fi
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
