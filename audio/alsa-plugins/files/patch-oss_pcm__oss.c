@@ -72,7 +72,7 @@
  	return result / oss->frame_bytes;
  }
  
-@@ -67,24 +101,60 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
+@@ -67,37 +101,122 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = read(oss->fd, buf, size);
@@ -101,56 +101,97 @@
  	snd_pcm_oss_t *oss = io->private_data;
 -	struct count_info info;
 -	int ptr;
++	snd_pcm_sframes_t frames;
 +	audio_buf_info bi;
-+	ssize_t bytes;
  
 -	if (ioctl(oss->fd, io->stream == SND_PCM_STREAM_PLAYBACK ?
 -		  SNDCTL_DSP_GETOPTR : SNDCTL_DSP_GETIPTR, &info) < 0) {
 -		fprintf(stderr, "*** OSS: oss_pointer error\n");
--		return 0;
++	switch (io->state) {
++	case SND_PCM_STATE_XRUN:
++		return -EPIPE;
++	case SND_PCM_STATE_RUNNING:
++	case SND_PCM_STATE_DRAINING:
++		break;
++	default:
+ 		return 0;
+ 	}
+-	ptr = snd_pcm_bytes_to_frames(io->pcm, info.ptr);
+-	return ptr;
++
 +	if (io->stream == SND_PCM_STREAM_PLAYBACK) {
 +		if (ioctl(oss->fd, SNDCTL_DSP_GETOSPACE, &bi) < 0)
 +			return -EINVAL;
 +	} else {
 +		if (ioctl(oss->fd, SNDCTL_DSP_GETISPACE, &bi) < 0)
 +			return -EINVAL;
- 	}
--	ptr = snd_pcm_bytes_to_frames(io->pcm, info.ptr);
--	return ptr;
++	}
 +
 +	/* check for over- and under- run */
 +	if (bi.bytes != oss->bufsz) {
 +		oss->buffer_used = true;
 +	} else {
-+		/* only report error once */
-+		if (oss->buffer_used == true) {
-+			oss->buffer_used = false;
++		if (oss->buffer_used)
 +			return -EPIPE;
-+		}
 +	}
 +
-+	if (io->stream == SND_PCM_STREAM_PLAYBACK)
-+		bi.bytes = oss->bufsz - bi.bytes;
++	frames = bi.bytes / oss->frame_bytes;
 +
-+	/*
-+	 * Return exactly how many bytes can be read or written,
-+	 * relative to the current application pointer.
-+	 */
-+	bytes = snd_pcm_frames_to_bytes(io->pcm, io->appl_ptr) + bi.bytes;
-+	bytes %= io->buffer_size * oss->frame_bytes;
++	/* range check */
++	if (frames < 0)
++		frames = 0;
++	else if (frames > io->buffer_size)
++		frames = io->buffer_size;
 +
-+	return snd_pcm_bytes_to_frames(io->pcm, bytes);
++	/* set hw_ptr directly */
++	if (io->stream == SND_PCM_STREAM_PLAYBACK) {
++		io->hw_ptr = io->appl_ptr + frames - io->buffer_size;
++	} else {
++		io->hw_ptr = io->appl_ptr + frames;
++	}
++	return 0;
  }
  
++static int oss_prepare(snd_pcm_ioplug_t *io)
++{
++	snd_pcm_oss_t *oss = io->private_data;
++	snd_pcm_sw_params_t *swparams;
++	snd_pcm_uframes_t min_avail;
++	int tmp;
++
++	snd_pcm_sw_params_alloca(&swparams);
++
++	if (snd_pcm_sw_params_current(io->pcm, swparams) == 0) {
++		snd_pcm_sw_params_get_avail_min(swparams, &min_avail);
++		snd_pcm_sw_params_alloca(&swparams);
++	} else {
++	  	min_avail = io->period_size;
++	}
++
++	tmp = min_avail * oss->frame_bytes;
++	if (tmp > oss->bufsz)
++		tmp = oss->bufsz;
++	else if (tmp < 1)
++		tmp = 1;
++
++#ifdef SNDCTL_DSP_LOW_WATER
++	if (ioctl(oss->fd, SNDCTL_DSP_LOW_WATER, &tmp) < 0)
++		return -EINVAL;
++#endif
++	oss->buffer_used = false;
++
++	return 0;
++}
++
  static int oss_start(snd_pcm_ioplug_t *io)
-@@ -93,12 +163,23 @@ static int oss_start(snd_pcm_ioplug_t *io)
+ {
+ 	snd_pcm_oss_t *oss = io->private_data;
  	int tmp = io->stream == SND_PCM_STREAM_PLAYBACK ?
  		PCM_ENABLE_OUTPUT : PCM_ENABLE_INPUT;
  
 +#ifdef ALSA_OSS_DEBUG_VERBOSE
 +	fprintf(stderr, "%s()\n", __func__);
 +#endif
-+
  	if (ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp) < 0) {
  		fprintf(stderr, "*** OSS: trigger failed\n");
 +#ifdef __FreeBSD__
@@ -161,13 +202,9 @@
  			read(oss->fd, &tmp, 0);
 +#endif
  	}
-+
-+	oss->buffer_used = false;
-+
  	return 0;
  }
- 
-@@ -107,6 +188,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
+@@ -107,6 +226,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
  	snd_pcm_oss_t *oss = io->private_data;
  	int tmp = 0;
  
@@ -178,7 +215,7 @@
  	ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp);
  	return 0;
  }
-@@ -115,101 +200,176 @@ static int oss_drain(snd_pcm_ioplug_t *io)
+@@ -115,101 +238,164 @@ static int oss_drain(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -224,7 +261,7 @@
 -		return -EINVAL;
 -	}
 -	return 0;
-+	*delayp = snd_pcm_bytes_to_frames(io->pcm, tmp);
++	*delayp = tmp / oss->frame_bytes;
 +
 +	return (0);
  }
@@ -290,7 +327,6 @@
 -		oss->format = AFMT_S16_BE;
 -		break;
 -	default:
-+
 +	oss->format = 0;
 +	for (i = 0; i != ARRAY_SIZE(oss_formats_tab); i++) {
 +		if (oss_formats_tab[i].alsa_format == io->format) {
@@ -310,8 +346,8 @@
 +
 +	ioctl(oss->fd, SNDCTL_DSP_RESET);
 +
-+	/* use a 16ms HW buffer by default */
-+	tmp = ((16 * io->rate) / 1000) * oss->frame_bytes;
++	/* use a 8ms HW buffer by default */
++	tmp = ((8 * io->rate) / 1000) * oss->frame_bytes;
 +
 +	/* round up to nearest power of two */
 +	while (tmp & (tmp - 1))
@@ -395,17 +431,6 @@
 +
 +	oss->bufsz = bi.fragsize * bi.fragstotal;
 +
-+#ifdef SNDCTL_DSP_LOW_WATER
-+	tmp = io->period_size * oss->frame_bytes;
-+	if (tmp > oss->bufsz)
-+		tmp = oss->bufsz;
-+	else if (tmp < bi.fragsize)
-+		tmp = bi.fragsize;
-+
-+	if (ioctl(oss->fd, SNDCTL_DSP_LOW_WATER, &tmp) < 0)
-+		perror("SNDCTL_DSP_LOW_WATER");
-+#endif
-+
 +#ifdef ALSA_OSS_DEBUG_VERBOSE
 +	fprintf(stderr,
 +	    "\n\n[%lu -> %d] %lu ~ %d -> %d, %lu ~ %d -> %d [d:%ld lw:%d]\n\n",
@@ -420,7 +445,7 @@
  	if ((flags = fcntl(oss->fd, F_GETFL)) < 0) {
  		err = -errno;
  		perror("F_GETFL");
-@@ -229,16 +389,148 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
+@@ -229,16 +415,148 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  	return 0;
  }
  
@@ -571,7 +596,7 @@
  	unsigned int format[5];
  	unsigned int nchannels;
  	unsigned int channel[6];
-@@ -317,6 +609,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
+@@ -317,6 +635,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
  		return err;
  
  	return 0;
@@ -579,7 +604,7 @@
  }
  
  
-@@ -324,6 +617,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
+@@ -324,6 +643,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -590,27 +615,23 @@
  	close(oss->fd);
  	free(oss->device);
  	free(oss);
-@@ -337,8 +634,8 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
- 	.pointer = oss_pointer,
- 	.close = oss_close,
+@@ -339,6 +662,7 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
  	.hw_params = oss_hw_params,
--	.prepare = oss_prepare,
+ 	.prepare = oss_prepare,
  	.drain = oss_drain,
 +	.delay = oss_delay,
  };
  
  static const snd_pcm_ioplug_callback_t oss_capture_callback = {
-@@ -348,8 +645,8 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
- 	.pointer = oss_pointer,
- 	.close = oss_close,
+@@ -350,6 +674,7 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
  	.hw_params = oss_hw_params,
--	.prepare = oss_prepare,
+ 	.prepare = oss_prepare,
  	.drain = oss_drain,
 +	.delay = oss_delay,
  };
  
  
-@@ -360,6 +657,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
+@@ -360,6 +685,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
  	int err;
  	snd_pcm_oss_t *oss;
  	
