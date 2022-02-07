@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	unicode_plot
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
