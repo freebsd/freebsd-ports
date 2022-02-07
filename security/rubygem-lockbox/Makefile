@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	lockbox
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.8
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
