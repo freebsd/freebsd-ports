@@ -1,0 +1,15 @@
+--- utilities/unicode/CMakeLists.txt.orig	2022-02-18 10:42:10 UTC
++++ utilities/unicode/CMakeLists.txt
+@@ -34,12 +34,6 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+ elseif (CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeBSD|NetBSD|DragonFly)")
+    include(GNUInstallDirs)
+ 
+-   # rpath used for rcc and uic when compiling a user application
+-   file(RELATIVE_PATH CS_BIN_RPATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}"
+-                                   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
+-
+-   set(CMAKE_INSTALL_RPATH "$ORIGIN/${CS_BIN_RPATH}")
+-
+ elseif (CMAKE_SYSTEM_NAME MATCHES "Windows")
+    set(CMAKE_INSTALL_BINDIR bin)
+    set(CMAKE_INSTALL_LIBDIR lib)

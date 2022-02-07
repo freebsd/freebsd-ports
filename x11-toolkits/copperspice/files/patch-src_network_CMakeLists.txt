@@ -1,0 +1,22 @@
+--- src/network/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/network/CMakeLists.txt
+@@ -92,7 +92,7 @@ target_link_libraries(CsNetwork
+ 
+ target_include_directories(CsNetwork
+    PUBLIC
+-   $<INSTALL_INTERFACE:include/QtNetwork>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtNetwork
+ )
+ 
+ set_target_properties(CsNetwork
+@@ -114,8 +114,8 @@ install(
+    TARGETS CsNetwork
+    EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

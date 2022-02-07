@@ -7,6 +7,7 @@
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += color-widgets-qt5
+    SUBDIR += copperspice
     SUBDIR += ctk
     SUBDIR += fltk
     SUBDIR += fox14

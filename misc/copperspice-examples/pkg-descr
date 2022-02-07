@@ -1,0 +1,5 @@
+CopperSpice is a set of individual libraries which can be used to develop
+cross platform software applications in C++. This is the example application
+for CopperSpice, which showcases most of the things the library can do.
+
+WWW: https://www.copperspice.com/

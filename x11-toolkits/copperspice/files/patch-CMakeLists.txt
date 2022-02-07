@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ CMakeLists.txt
+@@ -43,12 +43,6 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+ elseif (CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeBSD|NetBSD|DragonFly)")
+    include(GNUInstallDirs)
+ 
+-   # rpath used for rcc and uic when compiling a user application
+-   file(RELATIVE_PATH CS_BIN_RPATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}"
+-                                   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
+-
+-   set(CMAKE_INSTALL_RPATH "$ORIGIN/${CS_BIN_RPATH}")
+-
+ elseif (CMAKE_SYSTEM_NAME MATCHES "Windows")
+    set(CMAKE_INSTALL_BINDIR bin)
+    set(CMAKE_INSTALL_LIBDIR lib)
+@@ -549,6 +543,13 @@ elseif (WITH_WEBKIT AND NOT (WITH_GUI AND WITH_NETWORK
+    message(SEND_ERROR "WebKit component requires Gui, Network, and Script components")
+ 
+ endif()
++
++# To improve co-installability, insert this subdirectory in library-
++# and include-file installation paths (e.g. libraries end up installed
++# in ${PREFIX}/lib/${CS_NAMESPACE_DIRECTORY}/ ) It may be empty,
++# for no intermediate subdirectory. If it isn't empty, must end with /.
++set(CS_NAMESPACE_DIRECTORY "/copperspice/")
++set(CS_FULL_LIBDIR ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY})
+ 
+ add_subdirectory(src/core)
+ foreach(component ${CS_OPTIONAL_COMPONENTS})

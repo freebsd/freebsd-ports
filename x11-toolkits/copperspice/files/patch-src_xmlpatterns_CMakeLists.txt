@@ -1,0 +1,22 @@
+--- src/xmlpatterns/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/xmlpatterns/CMakeLists.txt
+@@ -67,7 +67,7 @@ target_sources(CsXmlPatterns
+ 
+ target_include_directories(CsXmlPatterns
+    PUBLIC
+-   $<INSTALL_INTERFACE:include/QtXmlPatterns>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtXmlPatterns
+ )
+ 
+ target_link_libraries(CsXmlPatterns
+@@ -95,8 +95,8 @@ install(
+     TARGETS CsXmlPatterns
+     EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

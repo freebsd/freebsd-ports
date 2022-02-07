@@ -1,0 +1,22 @@
+--- src/sql/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/sql/CMakeLists.txt
+@@ -76,7 +76,7 @@ target_link_libraries(CsSql
+ 
+ target_include_directories(CsSql
+    PUBLIC
+-   $<INSTALL_INTERFACE:include/QtSql>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtSql
+ )
+ 
+ set_target_properties(CsSql
+@@ -98,8 +98,8 @@ install(
+    TARGETS CsSql
+    EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

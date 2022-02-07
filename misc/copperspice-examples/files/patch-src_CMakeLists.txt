@@ -1,0 +1,62 @@
+--- src/CMakeLists.txt.orig	2022-02-15 21:15:36 UTC
++++ src/CMakeLists.txt
+@@ -182,25 +182,26 @@ endif()
+ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    install(TARGETS KitchenSink DESTINATION ../MacOS)
+ else()
+-   install(TARGETS KitchenSink DESTINATION .)
++   install(TARGETS KitchenSink)
+ endif()
+ 
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/script.js       DESTINATION ./resources)
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/sampleMenu.xml  DESTINATION ./resources)
++set(install_resource_dir ${CMAKE_INSTALL_DATADIR}/copperspice/kitchensink/resources)
++# install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/script.js       DESTINATION ${install_resource_dir})
++# install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/sampleMenu.xml  DESTINATION ${install_resource_dir})
+ 
+ # installs the CopperSpice libraries
+-cs_copy_library(CsCore)
+-cs_copy_library(CsGui)
+-cs_copy_library(CsNetwork)
+-cs_copy_library(CsOpenGL)
+-cs_copy_library(CsScript)
+-cs_copy_library(CsSql)
+-cs_copy_library(CsSvg)
+-cs_copy_library(CsXml)
+-cs_copy_library(CsXmlPatterns)
++# cs_copy_library(CsCore)
++# cs_copy_library(CsGui)
++# cs_copy_library(CsNetwork)
++# cs_copy_library(CsOpenGL)
++# cs_copy_library(CsScript)
++# cs_copy_library(CsSql)
++# cs_copy_library(CsSvg)
++# cs_copy_library(CsXml)
++# cs_copy_library(CsXmlPatterns)
+ 
+ if("Multimedia" IN_LIST COPPERSPICE_COMPONENTS)
+-   cs_copy_library(CsMultimedia)
++   # cs_copy_library(CsMultimedia)
+ endif()
+ 
+ if("WebKit" IN_LIST COPPERSPICE_COMPONENTS)
+@@ -226,15 +227,15 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+ elseif(CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeBSD|NetBSD|DragonFly)")
+ 
+    # installs the platform Gui plugin
+-   cs_copy_plugins(CsGui)
+-   cs_copy_plugins(CsOpenGL)
++   # cs_copy_plugins(CsGui)
++   # cs_copy_plugins(CsOpenGL)
+ 
+    # three files
+    if("Multimedia" IN_LIST COPPERSPICE_COMPONENTS)
+-      cs_copy_plugins(CsMultimedia)
++      # cs_copy_plugins(CsMultimedia)
+    endif()
+ 
+-   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/ks.png DESTINATION ./resources)
++   # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/ks.png DESTINATION ${install_resource_dir})
+ 
+ elseif(CMAKE_SYSTEM_NAME MATCHES "Windows")
+ 

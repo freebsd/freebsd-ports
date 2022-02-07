@@ -53,6 +53,7 @@
     SUBDIR += compat8x
     SUBDIR += compat9x
     SUBDIR += concourse
+    SUBDIR += copperspice-examples
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosti

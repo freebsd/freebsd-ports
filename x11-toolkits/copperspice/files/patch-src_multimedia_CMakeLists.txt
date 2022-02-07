@@ -1,0 +1,22 @@
+--- src/multimedia/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/multimedia/CMakeLists.txt
+@@ -81,7 +81,7 @@ target_link_libraries(CsMultimedia
+ target_include_directories(CsMultimedia
+    PUBLIC
+    ${GSTREAMER_INCLUDE_DIRS}
+-   $<INSTALL_INTERFACE:include/QtMultimedia>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtMultimedia
+ )
+ 
+ set_target_properties(CsMultimedia
+@@ -103,8 +103,8 @@ install(
+     TARGETS CsMultimedia
+     EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(
