@@ -1,0 +1,4 @@
+io-wait provides the feature for waiting until IO is readable or writable
+without blocking.
+
+WWW: https://github.com/ruby/io-wait
