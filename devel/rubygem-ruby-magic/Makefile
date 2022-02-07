@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	ruby-magic
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,5 +16,8 @@ RUN_DEPENDS=	rubygem-mini_portile2>=2.6<3:devel/rubygem-mini_portile2
 USES=		gem
 USE_RUBY=	yes
 CONFIGURE_ARGS+=	--use-system-libraries
+
+post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ports
 
 .include <bsd.port.mk>
