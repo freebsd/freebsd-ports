@@ -1,7 +1,7 @@
 # Created by: Hye-Shik Chang
 
 PORTNAME=	libsigsegv
-PORTVERSION=	2.12
+PORTVERSION=	2.14
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -22,6 +22,6 @@ PLIST_FILES=	include/sigsegv.h \
 		lib/libsigsegv.a \
 		lib/libsigsegv.so \
 		lib/libsigsegv.so.2 \
-		lib/libsigsegv.so.2.0.5
+		lib/libsigsegv.so.2.0.7
 
 .include <bsd.port.mk>
