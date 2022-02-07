@@ -1,7 +1,7 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 
 PORTNAME=	tcpser
-DISTVERSION=	20210425
+DISTVERSION=	g20210425
 CATEGORIES=	comms
 
 MAINTAINER=	nc@FreeBSD.org
