@@ -121,8 +121,6 @@ MAKE_ENV=	LD_PRELOAD=/usr/lib/libpthread.so # workaround for https://github.com/
 MAKE_ARGS=	SYSDEPS=true
 
 BINARY_ALIAS=	gcc-ar=ar \
-		python3=${PYTHON_CMD} \
-		c++=${FILESDIR}/c++ \
-		cc=${FILESDIR}/cc
+		python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
