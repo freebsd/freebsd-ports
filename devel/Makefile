@@ -7202,6 +7202,7 @@
     SUBDIR += wininfo
     SUBDIR += wizardkit
     SUBDIR += woff2
+    SUBDIR += wrangler
     SUBDIR += wxformbuilder
     SUBDIR += xa65
     SUBDIR += xbyak
