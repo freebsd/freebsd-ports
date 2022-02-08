@@ -6,7 +6,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network based Caller ID package
 
 LICENSE=	GPLv3+
