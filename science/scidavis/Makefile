@@ -1,6 +1,5 @@
 PORTNAME=	scidavis
-PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTVERSION=	2.7
 CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
@@ -9,7 +8,6 @@ COMMENT=	Scientific data analysis and visualization
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	sip:devel/py-sip4
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libmuparser.so:math/muparser \
 		libpng.so:graphics/png \
@@ -35,7 +33,7 @@ OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Python scripting support
 PYTHON_USES=	pyqt:5 python:3.6+
-PYTHON_USE=	PYQT=pyqt5
+PYTHON_USE=	PYQT=pyqt5 sip
 PYTHON_CMAKE_ON=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
 			-DSCRIPTING_PYTHON=True
 PYTHON_CMAKE_OFF=	-DSCRIPTING_PYTHON=False
