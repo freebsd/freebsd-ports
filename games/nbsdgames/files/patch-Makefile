@@ -1,4 +1,4 @@
---- Makefile.orig	2021-05-07 00:50:08 UTC
+--- Makefile.orig	2022-02-02 12:39:13 UTC
 +++ Makefile
 @@ -6,7 +6,7 @@
  GAMES_DIR?=/usr/games
@@ -10,11 +10,11 @@
  
  
 @@ -16,11 +16,11 @@ SCORE_FILES= pipes_scores jewels_scores miketron_score
- all: $(ALL)
+ all: $(ALL) 
  
  scorefiles:
 -	for sf in $(SCORE_FILES); do touch $(SCORES_DIR)/$$sf ; chmod 664 $(SCORES_DIR)/$$sf; chown :games $(SCORES_DIR)/$$sf ; done;
--	for game in $(ALL); do chown :games $(GAMES_DIR)/$$game; chmod g+s $(GAMES_DIR)/$$game ; done;
+-	for game in $(ALL); do chown :games $(GAMES_DIR)/$$game; chmod g $(GAMES_DIR)/$$game ; done;
 +	mkdir -p ${DESTDIR}${SCORES_DIR}
 +	for sf in $(SCORE_FILES); do touch ${DESTDIR}$(SCORES_DIR)/$$sf.sample; done;
  
@@ -24,12 +24,14 @@
  jewels: jewels.c config.h common.h
  	$(CC) jewels.c $(LDFLAGS) $(CFLAGS) -o ./jewels
  sudoku: sudoku.c config.h 
-@@ -60,6 +60,6 @@ clean:
- 	rm $(ALL)
+@@ -66,8 +66,8 @@ clean:
+ 	for game in $(ALL); do rm $$game; done;
  uninstall:
- 	for game in $(ALL); do rm $(GAMES_DIR)/$$game; rm $(MAN_DIR)/$$game.6.gz done;
+ 	for game in $(ALL); do rm $(GAMES_DIR)/$$game; rm $(MAN_DIR)/$$game.6.gz ;done;
 -install: $(ALL)
--	cp $(ALL) $(GAMES_DIR)
+-	cp $(ALL)  $(GAMES_DIR)
 +install: $(ALL) manpages scorefiles
-+	cp $(ALL) ${DESTDIR}$(GAMES_DIR)
++	cp $(ALL)  ${DESTDIR}$(GAMES_DIR)
+ test:
+ 	for game in $(ALL); do ./$$game ;done;
  

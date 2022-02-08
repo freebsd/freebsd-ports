@@ -1,6 +1,6 @@
 PORTNAME=	nbsdgames
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.2
+DISTVERSION=	5
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -29,6 +29,7 @@ _GAMES=	battleship \
 	miketron \
 	mines \
 	muncher \
+	nbsdgames \
 	pipes \
 	rabbithole \
 	redsquare \
@@ -36,8 +37,12 @@ _GAMES=	battleship \
 	snakeduel \
 	sos \
 	sudoku \
+	tugow
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/nbsdgames.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
+	${INSTALL_DATA} ${WRKSRC}/nbsdgames.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
 .for game in ${_GAMES}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${game}
 .endfor

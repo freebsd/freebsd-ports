@@ -8,6 +8,7 @@ bin/memoblocks
 @(,games,2555) bin/miketron
 bin/mines
 @(,games,2555) bin/muncher
+bin/nbsdgames
 @(,games,2555) bin/pipes
 bin/rabbithole
 bin/redsquare
@@ -15,6 +16,7 @@ bin/reversi
 bin/snakeduel
 bin/sos
 bin/sudoku
+@(,games,2555) bin/tugow
 @dir(,games) /var/games/nbsdgames
 @sample(,games,0664) /var/games/nbsdgames/darrt_scores.sample
 @sample(,games,0664) /var/games/nbsdgames/fisher_scores.sample
@@ -22,6 +24,9 @@ bin/sudoku
 @sample(,games,0664) /var/games/nbsdgames/muncher_scores.sample
 @sample(,games,0664) /var/games/nbsdgames/miketron_scores.sample
 @sample(,games,0664) /var/games/nbsdgames/pipes_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/tugow_scores.sample
+share/applications/nbsdgames.desktop
+share/icons/hicolor/scalable/apps/nbsdgames.svg
 share/man/man6/battleship.6.gz
 share/man/man6/checkers.6.gz
 share/man/man6/darrt.6.gz
