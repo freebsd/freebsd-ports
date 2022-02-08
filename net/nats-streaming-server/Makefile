@@ -1,5 +1,5 @@
 PORTNAME=	nats-streaming-server
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -31,7 +31,7 @@ GH_TUPLE=	armon:go-metrics:ec5e00d3c878:armon_go_metrics/vendor/github.com/armon
 		mattn:go-isatty:v0.0.10:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jwt:58e87895b296:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:v2.7.1:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats-server:v2.7.2:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		nats-io:nats.go:972a071d373d:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
