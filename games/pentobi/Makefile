@@ -1,5 +1,5 @@
 PORTNAME=	pentobi
-PORTVERSION=	19.1
+PORTVERSION=	20.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -20,11 +20,9 @@ USE_QT=		core gui concurrent quickcontrols2 declarative network \
 		qmake_build buildtools_build linguisttools_build
 CMAKE_ARGS=	-DDOCBOOK_XSL=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
 
-PORTDOCS=	AUTHORS.md HACKING.md NEWS.md README.md
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS TEST GNOME KDE
-OPTIONS_DEFAULT=EXTERNAL_HELP
 OPTIONS_SUB=	yes
 
 TEST_CMAKE_BOOL=	PENTOBI_BUILD_TESTS
@@ -38,6 +36,7 @@ KDE_DESC=		Build KDE thumbnailer
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS.md HACKING.md NEWS.md \
+		README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
