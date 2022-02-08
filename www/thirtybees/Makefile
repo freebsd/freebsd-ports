@@ -1,5 +1,5 @@
 PORTNAME=	thirtybees
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	www finance
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSES
 USES=		php:web zip
 USE_PHP=	bcmath curl gd imap json mbstring opcache openssl pdo_mysql \
 		soap xml zip
+IGNORE_WITH_PHP=80
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
