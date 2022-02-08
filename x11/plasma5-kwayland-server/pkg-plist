@@ -18,7 +18,7 @@ include/KWaylandServer/datasource_interface.h
 include/KWaylandServer/display.h
 include/KWaylandServer/dpms_interface.h
 include/KWaylandServer/drmclientbuffer.h
-include/KWaylandServer/eglstream_controller_interface.h
+include/KWaylandServer/drmleasedevice_v1_interface.h
 include/KWaylandServer/fakeinput_interface.h
 include/KWaylandServer/filtered_display.h
 include/KWaylandServer/idle_interface.h
@@ -41,6 +41,7 @@ include/KWaylandServer/plasmawindowmanagement_interface.h
 include/KWaylandServer/pointer_interface.h
 include/KWaylandServer/pointerconstraints_v1_interface.h
 include/KWaylandServer/pointergestures_v1_interface.h
+include/KWaylandServer/primaryoutput_v1_interface.h
 include/KWaylandServer/primaryselectiondevice_v1_interface.h
 include/KWaylandServer/primaryselectiondevicemanager_v1_interface.h
 include/KWaylandServer/primaryselectionoffer_v1_interface.h

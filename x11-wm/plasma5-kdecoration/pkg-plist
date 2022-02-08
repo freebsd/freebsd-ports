@@ -4,6 +4,7 @@ include/KDecoration2/KDecoration2/DecorationButton
 include/KDecoration2/KDecoration2/DecorationButtonGroup
 include/KDecoration2/KDecoration2/DecorationSettings
 include/KDecoration2/KDecoration2/DecorationShadow
+include/KDecoration2/KDecoration2/DecorationThemeProvider
 include/KDecoration2/KDecoration2/Private/DecoratedClientPrivate
 include/KDecoration2/KDecoration2/Private/DecorationBridge
 include/KDecoration2/KDecoration2/Private/DecorationSettingsPrivate
@@ -14,6 +15,7 @@ include/KDecoration2/kdecoration2/decorationbuttongroup.h
 include/KDecoration2/kdecoration2/decorationdefines.h
 include/KDecoration2/kdecoration2/decorationsettings.h
 include/KDecoration2/kdecoration2/decorationshadow.h
+include/KDecoration2/kdecoration2/decorationthemeprovider.h
 include/KDecoration2/kdecoration2/kdecoration2_export.h
 include/KDecoration2/kdecoration2/private/decoratedclientprivate.h
 include/KDecoration2/kdecoration2/private/decorationbridge.h

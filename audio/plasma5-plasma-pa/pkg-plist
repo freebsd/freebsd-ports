@@ -92,8 +92,6 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lt/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
-share/locale/ml/LC_MESSAGES/kcm_pulseaudio.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/nb/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/nl/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
@@ -141,7 +139,7 @@ share/plasma/plasmoids/org.kde.plasma.volume/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ConfigGeneral.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/DeviceListItem.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/Header.qml
+share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/HorizontalStackView.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ListItemBase.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/SmallToolButton.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/StreamListItem.qml

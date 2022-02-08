@@ -1,7 +1,9 @@
 lib/libexec/xdg-desktop-portal-kde
+lib/systemd/user/plasma-xdg-desktop-portal-kde.service
 share/applications/org.freedesktop.impl.portal.desktop.kde.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.kde.service
 share/knotifications5/xdg-desktop-portal-kde.notifyrc
+share/locale/ar/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/az/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/ca/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/ca@valencia/LC_MESSAGES/xdg-desktop-portal-kde.mo
@@ -43,6 +45,4 @@ share/locale/tr/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/uk/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-desktop-portal-kde.mo
-%%DATADIR%%/qml/AppChooserDialog.qml
-%%DATADIR%%/qml/UserInfoDialog.qml
 share/xdg-desktop-portal/portals/kde.portal

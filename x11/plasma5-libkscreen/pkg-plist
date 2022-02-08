@@ -32,6 +32,7 @@ lib/libKF5Screen.so
 lib/libKF5Screen.so.%%KDE_PLASMA_VERSION%%
 lib/libKF5Screen.so.7
 lib/libexec/kf5/kscreen_backend_launcher
+lib/systemd/user/plasma-kscreen.service
 %%QT_PLUGINDIR%%/kf5/kscreen/KSC_Fake.so
 %%QT_PLUGINDIR%%/kf5/kscreen/KSC_KWayland.so
 %%QT_PLUGINDIR%%/kf5/kscreen/KSC_QScreen.so

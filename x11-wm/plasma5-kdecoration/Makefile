@@ -9,7 +9,7 @@ LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_LDCONFIG=	yes
-USE_KDE=	i18n \
+USE_KDE=	coreaddons i18n \
 		ecm_build
 USE_QT=		core gui \
 		buildtools_build qmake_build testlib_build

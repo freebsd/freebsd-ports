@@ -1,15 +1,13 @@
 bin/sddmthemeinstaller
 lib/libexec/kauth/kcmsddm_authhelper
-%%QT_PLUGINDIR%%/kcms/kcm_sddm.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_sddm.so
+share/applications/kcm_sddm.desktop
 share/dbus-1/system-services/org.kde.kcontrol.kcmsddm.service
 share/dbus-1/system.d/org.kde.kcontrol.kcmsddm.conf
 share/knsrcfiles/sddmtheme.knsrc
 share/kpackage/kcms/kcm_sddm/contents/ui/Advanced.qml
 share/kpackage/kcms/kcm_sddm/contents/ui/DetailsDialog.qml
 share/kpackage/kcms/kcm_sddm/contents/ui/main.qml
-share/kpackage/kcms/kcm_sddm/metadata.desktop
-share/kpackage/kcms/kcm_sddm/metadata.json
-share/kservices5/kcm_sddm.desktop
 share/locale/ar/LC_MESSAGES/kcm_sddm.mo
 share/locale/ast/LC_MESSAGES/kcm_sddm.mo
 share/locale/az/LC_MESSAGES/kcm_sddm.mo

@@ -1,6 +1,6 @@
 lib/libexec/kauth/kded-smart-helper
-%%QT_PLUGINDIR%%/kcms/smart.so
 %%QT_PLUGINDIR%%/kf5/kded/smart.so
+%%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/smart.so
 share/dbus-1/system-services/org.kde.kded.smart.service
 share/dbus-1/system.d/org.kde.kded.smart.conf
 share/knotifications5/org.kde.kded.smart.notifyrc
@@ -8,7 +8,6 @@ share/kpackage/kcms/plasma_disks/contents/main.qml
 share/kpackage/kcms/plasma_disks/contents/ui/ReportPage.qml
 share/kpackage/kcms/plasma_disks/metadata.desktop
 share/kpackage/kcms/plasma_disks/metadata.json
-share/kservices5/smart.desktop
 share/locale/az/LC_MESSAGES/plasma_disks.mo
 share/locale/ca/LC_MESSAGES/plasma_disks.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_disks.mo

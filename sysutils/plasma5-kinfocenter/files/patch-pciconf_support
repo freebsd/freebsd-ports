@@ -1,0 +1,124 @@
+From 602697a3e3870335358dd9334bcacd1157af371b Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Mon, 24 Jan 2022 11:41:16 +0100
+Subject: [PATCH] kcm_pci: add support for pciconf for FreeBSD
+
+Summary:
+* add search module for pciconf binary
+* prefer pciconf over lspci if found (maybe add an option to override?)
+* add backend.h containing 'pciconv -lv' respectively 'lscpi -v'
+
+Test Plan:
+
+Reviewers: #freebsd
+
+Subscribers:
+---
+ Modules/pci/CMakeLists.txt                       | 14 ++++++++++++++
+ Modules/pci/backend.h.cmake                      |  2 ++
+ Modules/pci/{kcm_pci.json => kcm_pci.json.cmake} |  2 +-
+ Modules/pci/main.cpp                             |  5 ++++-
+ cmake/Findpciconf.cmake                          | 10 ++++++++++
+ 5 files changed, 31 insertions(+), 2 deletions(-)
+ create mode 100644 Modules/pci/backend.h.cmake
+ rename Modules/pci/{kcm_pci.json => kcm_pci.json.cmake} (99%)
+ create mode 100644 cmake/Findpciconf.cmake
+
+diff --git Modules/pci/CMakeLists.txt Modules/pci/CMakeLists.txt
+index 664d6bb1..5b35ab8d 100644
+--- Modules/pci/CMakeLists.txt
++++ Modules/pci/CMakeLists.txt
+@@ -4,6 +4,20 @@
+ find_package(lspci)
+ set_package_properties(lspci PROPERTIES TYPE RUNTIME)
+ 
++find_package(pciconf)
++set_package_properties(pciconf PROPERTIES TYPE RUNTIME)
++
++if(pciconf_FOUND)
++    set(PCI_BACKEND pciconf)
++    set(PCI_BACKEND_ARGUMENTS "-lv")
++else()
++    set(PCI_BACKEND lspci)
++    set(PCI_BACKEND_ARGUMENTS "-v")
++endif()
++
++configure_file(kcm_pci.json.cmake kcm_pci.json)
++configure_file(backend.h.cmake backend.h)
++
+ add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pci\")
+ 
+ add_library(kcm_pci MODULE main.cpp)
+diff --git Modules/pci/backend.h.cmake Modules/pci/backend.h.cmake
+new file mode 100644
+index 00000000..525b37b0
+--- /dev/null
++++ Modules/pci/backend.h.cmake
+@@ -0,0 +1,2 @@
++#cmakedefine PCI_BACKEND "@PCI_BACKEND@"
++#cmakedefine PCI_BACKEND_ARGUMENTS "@PCI_BACKEND_ARGUMENTS@"
+diff --git Modules/pci/kcm_pci.json Modules/pci/kcm_pci.json.cmake
+similarity index 99%
+rename from Modules/pci/kcm_pci.json
+rename to Modules/pci/kcm_pci.json.cmake
+index 695f43c5..23036fac 100644
+--- Modules/pci/kcm_pci.json
++++ Modules/pci/kcm_pci.json.cmake
+@@ -121,7 +121,7 @@
+         "Name[zh_CN]": "PCI",
+         "Name[zh_TW]": "PCI"
+     },
+-    "TryExec": "lspci",
++    "TryExec": "@PCI_BACKEND@",
+     "X-KDE-KInfoCenter-Category": "device_information",
+     "X-KDE-Keywords": "PCI,PCI-Devices,PCI-Bus,System Information",
+     "X-KDE-Keywords[ar]": "PCI,أجهزة PCI,PCI-Bus,معلومات النّظام",
+diff --git Modules/pci/main.cpp Modules/pci/main.cpp
+index 590503ab..30179d64 100644
+--- Modules/pci/main.cpp
++++ Modules/pci/main.cpp
+@@ -1,6 +1,7 @@
+ /*
+     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+     SPDX-FileCopyrightText: 2021 Harald Sitter <sitter@kde.org>
++    SPDX-FileCopyrightText: 2022 Tobias C. Berner <tcberner@FreeBSD.org>
+ */
+ 
+ #include <KAboutData>
+@@ -10,6 +11,8 @@
+ 
+ #include <CommandOutputContext.h>
+ 
++#include "backend.h"
++
+ class KCMXServer : public KQuickAddons::ConfigModule
+ {
+     Q_OBJECT
+@@ -17,7 +20,7 @@ public:
+     explicit KCMXServer(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
+         : ConfigModule(parent, data, args)
+     {
+-        auto outputContext = new CommandOutputContext(QStringLiteral("lspci"), {QStringLiteral("-v")}, parent);
++        auto outputContext = new CommandOutputContext(QStringLiteral(PCI_BACKEND), {QStringLiteral(PCI_BACKEND_ARGUMENTS)}, parent);
+         qmlRegisterSingletonInstance("org.kde.kinfocenter.pci.private", 1, 0, "InfoOutputContext", outputContext);
+ 
+         auto *about = new KAboutData(QStringLiteral("kcm_pci"), i18nc("@label kcm name", "PCI"), QStringLiteral("1.0"), QString(), KAboutLicense::GPL);
+diff --git cmake/Findpciconf.cmake cmake/Findpciconf.cmake
+new file mode 100644
+index 00000000..07cf1cf7
+--- /dev/null
++++ cmake/Findpciconf.cmake
+@@ -0,0 +1,10 @@
++# This module defines the following variables:
++#
++#  pciconf_FOUND - true if found
++#  pciconf_PATH - path to the bin (only when found)
++#
++# SPDX-License-Identifier: BSD-2-Clause
++# SPDX-FileCopyrightText: 2022 Tobias C. Berner <tcberner@FreeBSD.org>
++
++include(ProgramFinder)
++program_finder(pciconf)
+-- 
+2.34.1
+

@@ -148,6 +148,7 @@ share/locale/uk/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/zh_CN/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/zh_CN/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-systemmonitor.mo
+share/plasma/kinfocenter/externalmodules/kcm_external_plasma-systemmonitor.desktop
 %%DATADIR%%/applications.page
 %%DATADIR%%/history.page
 %%DATADIR%%/overview.page

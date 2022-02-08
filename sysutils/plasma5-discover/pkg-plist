@@ -5,7 +5,7 @@ lib/libexec/DiscoverNotifier
 lib/plasma-discover/libDiscoverCommon.so
 lib/plasma-discover/libDiscoverNotifiers.so
 %%QT_PLUGINDIR%%/discover/kns-backend.so
-%%QT_PLUGINDIR%%/kcms/kcm_updates.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_updates.so
 share/applications/org.kde.discover.desktop
 share/applications/org.kde.discover.notifier.desktop
 share/applications/org.kde.discover.snap.desktop
@@ -17,9 +17,6 @@ share/icons/hicolor/32x32/apps/plasmadiscover.png
 share/icons/hicolor/48x48/apps/plasmadiscover.png
 share/knotifications5/discoverabstractnotifier.notifyrc
 share/kpackage/kcms/kcm_updates/contents/ui/main.qml
-share/kpackage/kcms/kcm_updates/metadata.desktop
-share/kpackage/kcms/kcm_updates/metadata.json
-share/kservices5/kcm_updates.desktop
 share/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 share/icons/hicolor/scalable/apps/plasmadiscover.svg
 share/locale/ar/LC_MESSAGES/kcm_updates.mo
@@ -195,6 +192,7 @@ share/locale/sv/LC_MESSAGES/libdiscover.mo
 share/locale/sv/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/sv/LC_MESSAGES/plasma-discover.mo
 share/locale/ta/LC_MESSAGES/kcm_updates.mo
+share/locale/ta/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ta/LC_MESSAGES/plasma-discover.mo
 share/locale/tg/LC_MESSAGES/libdiscover.mo
 share/locale/tg/LC_MESSAGES/plasma-discover-notifier.mo

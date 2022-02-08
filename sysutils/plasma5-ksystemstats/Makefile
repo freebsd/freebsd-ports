@@ -2,10 +2,6 @@ PORTNAME=	ksystemstats
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	sysutils kde kde-plasma
 
-PATCH_SITES=	https://invent.kde.org/plasma/ksystemstats/-/commit/
-PATCHFILES=	15a03830f7d77e63c98c018f466796099aa482c5.diff:-p1 \
-		cfcb1ed7962290c868a2027151273947da3aa1d8.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to report system activity
 

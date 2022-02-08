@@ -2,9 +2,6 @@ PORTNAME=	libksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	sysutils kde kde-plasma
 
-PATCH_SITES=	https://invent.kde.org/plasma/libksysguard/-/commit/
-PATCHFILES=	d8312cfd67a2e9481e466674ba9922bc18e5c5bf.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to track and control running processes
 

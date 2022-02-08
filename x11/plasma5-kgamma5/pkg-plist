@@ -1,4 +1,5 @@
-%%QT_PLUGINDIR%%/kcm_kgamma.so
+%%QT_PLUGINDIR%%/plasma/kcminit/kcm_kgamma_init.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_kgamma.so
 share/doc/HTML/ca/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kgamma5/index.docbook
 share/doc/HTML/cs/kcontrol/kgamma5/index.cache.bz2
@@ -36,7 +37,6 @@ share/kgamma/pics/greyscale.png
 share/kgamma/pics/lightgrey.png
 share/kgamma/pics/midgrey.png
 share/kgamma/pics/rgbscale.png
-share/kservices5/kgamma.desktop
 share/locale/ar/LC_MESSAGES/kcmkgamma.mo
 share/locale/ast/LC_MESSAGES/kcmkgamma.mo
 share/locale/az/LC_MESSAGES/kcmkgamma.mo

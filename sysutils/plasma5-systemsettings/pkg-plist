@@ -1,4 +1,6 @@
+bin/systemsettings
 bin/systemsettings5
+share/locale/my/LC_MESSAGES/systemsettings.mo
 lib/libsystemsettingsview.so.3
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_systemsettings.so
 %%QT_PLUGINDIR%%/systemsettingsview/icon_mode.so
@@ -33,11 +35,14 @@ share/kglobalaccel/systemsettings.desktop
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/images/plasma-logo.svg
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoriesPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoryItem.qml
+share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/FooterToolbar.qml
+share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/HamburgerMenuButton.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/IntroIcon.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SubCategoryPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/introPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/metadata.desktop
+share/kservicetypes5/infocenterexternalapp.desktop
 share/kservicetypes5/systemsettingscategory.desktop
 share/kservicetypes5/systemsettingsexternalapp.desktop
 share/kservicetypes5/systemsettingsview.desktop
@@ -125,7 +130,6 @@ share/locale/wa/LC_MESSAGES/systemsettings.mo
 share/locale/zh_CN/LC_MESSAGES/systemsettings.mo
 share/locale/zh_TW/LC_MESSAGES/systemsettings.mo
 share/metainfo/org.kde.systemsettings.metainfo.xml
-%%DATADIR%%/systemsettings.kcfg
 share/qlogging-categories5/systemsettings.categories
 %%DATADIR%%/categories/settings-appearance-color.desktop
 %%DATADIR%%/categories/settings-appearance-font.desktop
@@ -156,3 +160,4 @@ share/qlogging-categories5/systemsettings.categories
 %%DATADIR%%/categories/settings-workspace-shortcuts.desktop
 %%DATADIR%%/categories/settings-workspace-windowmanagement.desktop
 %%DATADIR%%/categories/settings-workspace.desktop
+%%DATADIR%%/systemsettings.kcfg

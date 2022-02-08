@@ -2,9 +2,6 @@ PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11-wm kde kde-plasma
 
-PATCH_SITES=	https://invent.kde.org/plasma/kwin/-/commit/
-PATCHFILES=	f7bd6ef6c133658f0af562d40c27ad82c5e96748.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 window manager
 

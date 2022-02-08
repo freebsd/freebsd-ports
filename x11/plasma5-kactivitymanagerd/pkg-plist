@@ -14,6 +14,7 @@ share/dbus-1/services/org.kde.ActivityManager.service
 share/krunner/dbusplugins/plasma-runnners-activities.desktop
 share/kservices5/kactivitymanagerd.desktop
 share/kservicetypes5/kactivitymanagerd-plugin.desktop
+share/locale/ar/LC_MESSAGES/kactivities5.mo
 share/locale/az/LC_MESSAGES/kactivities5.mo
 share/locale/bg/LC_MESSAGES/kactivities5.mo
 share/locale/bs/LC_MESSAGES/kactivities5.mo
