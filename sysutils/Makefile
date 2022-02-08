@@ -305,6 +305,7 @@
     SUBDIR += duplicity
     SUBDIR += duply
     SUBDIR += dupmerge
+    SUBDIR += dust
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup
     SUBDIR += dvdimagecmp
