@@ -1,13 +1,9 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 
 PORTNAME=	inkscape
-DISTVERSION=	1.1
-PORTREVISION=	8
+DISTVERSION=	1.1.2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://inkscape.org/gallery/item/26932/
-
-PATCH_SITES=	https://gitlab.com/inkscape/inkscape/-/commit/
-PATCHFILES=	7d9497b64df1ec3ddfb65efd105dd11212014ce9.patch:-p1
+MASTER_SITES=	https://inkscape.org/gallery/item/31668/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -55,7 +51,7 @@ USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_2021-05-24_c4e8f9ed74
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_2022-02-04_0a00cf5339
 
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct

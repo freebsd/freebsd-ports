@@ -1,5 +1,3 @@
-TIMESTAMP = 1639251421
-SHA256 (inkscape-1.1.tar.xz) = 71e6e8ce3fdf702f59dbc4a276665eb982eb7822b029bbdbeced2df4301795e6
-SIZE (inkscape-1.1.tar.xz) = 34203156
-SHA256 (7d9497b64df1ec3ddfb65efd105dd11212014ce9.patch) = ed61d89468901fbf8a2148d49eeb7753c40fb7f074ec7008b604f46b146c7ae7
-SIZE (7d9497b64df1ec3ddfb65efd105dd11212014ce9.patch) = 1158
+TIMESTAMP = 1644185391
+SHA256 (inkscape-1.1.2.tar.xz) = 3ffe54a06d0b25a4cd8b6eb424536ef1ed205be13443a39cd437c8c7b89b96d1
+SIZE (inkscape-1.1.2.tar.xz) = 34222832

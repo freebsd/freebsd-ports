@@ -112,7 +112,6 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/extensions/Poly3DObjects/trunc_oct.obj
 %%DATADIR%%/extensions/Poly3DObjects/trunc_tet.obj
 %%DATADIR%%/extensions/README.md
-%%DATADIR%%/extensions/STYLEGUIDE.md
 %%DATADIR%%/extensions/TESTING.md
 %%DATADIR%%/extensions/addnodes.inx
 %%DATADIR%%/extensions/addnodes.py
@@ -2467,6 +2466,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/screens/start-welcome-text.pl.svg
 %%DATADIR%%/screens/start-welcome-text.pt.svg
 %%DATADIR%%/screens/start-welcome-text.pt_BR.svg
+%%DATADIR%%/screens/start-welcome-text.ro.svg
 %%DATADIR%%/screens/start-welcome-text.ru.svg
 %%DATADIR%%/screens/start-welcome-text.sk.svg
 %%DATADIR%%/screens/start-welcome-text.svg
@@ -2526,6 +2526,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%NLS%%%%DATADIR%%/templates/default.ks@aran.svg
 %%NLS%%%%DATADIR%%/templates/default.ks@deva.svg
 %%NLS%%%%DATADIR%%/templates/default.lv.svg
+%%NLS%%%%DATADIR%%/templates/default.lt.svg
 %%NLS%%%%DATADIR%%/templates/default.mai.svg
 %%NLS%%%%DATADIR%%/templates/default.ml.svg
 %%NLS%%%%DATADIR%%/templates/default.mni.svg
