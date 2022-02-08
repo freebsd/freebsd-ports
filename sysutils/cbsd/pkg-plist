@@ -200,6 +200,8 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-21-RELEASE-amd64-21.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
+cbsd/etc/defaults/vm-linux-Alpine-extended-3.conf
+cbsd/etc/defaults/vm-linux-Alpine-standart-3.conf
 cbsd/etc/defaults/vm-linux-Android-x86.conf
 cbsd/etc/defaults/vm-linux-ArchLinux-x86-2022.conf
 cbsd/etc/defaults/vm-linux-CentOS-7-x86_64.conf
@@ -357,6 +359,7 @@ cbsd/modules/bsdconf.d/cloud-tpl/centos7/20-user-data-root-lockpassword
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/20-user-data-root-password
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/20-user-data-user-lockpassword
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/20-user-data-user-password
+cbsd/modules/bsdconf.d/cloud-tpl/centos7/30-network-config-dhcp4
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/30-network-config-static
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/30-user-data-chpasswd
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/40-network-config
@@ -626,9 +629,9 @@ cbsd/share/emulators/ostype_bhyve.subr
 cbsd/share/emulators/ostype_qemu.subr
 cbsd/share/emulators/ostype_virtualbox.subr
 cbsd/share/emulators/ostype_xen.subr
-cbsd/share/etcupdate_11.txt.xz
 cbsd/share/etcupdate_12.txt.xz
 cbsd/share/etcupdate_13.txt.xz
+cbsd/share/etcupdate_14.txt.xz
 cbsd/share/examples/bhyve/bhyverun.sh
 cbsd/share/examples/cbsdfile/CBSDfile
 cbsd/share/examples/cloud-init/centos/meta-data
@@ -1159,6 +1162,7 @@ cbsd/upgrade/pre-patch-13.0.2.0
 cbsd/upgrade/pre-patch-13.0.21.0
 cbsd/upgrade/pre-patch-13.0.21.1
 cbsd/upgrade/pre-patch-13.0.23.0
+cbsd/upgrade/pre-patch-13.0.24.0
 cbsd/upgrade/pre-patch-13.0.3.0
 cbsd/upgrade/pre-patch-13.0.3.1
 cbsd/upgrade/pre-patch-13.0.4.0
