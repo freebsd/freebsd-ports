@@ -1,5 +1,5 @@
 PORTNAME=	tuptime
-DISTVERSION=	5.0.2
+DISTVERSION=	5.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
