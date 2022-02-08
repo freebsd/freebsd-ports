@@ -1,6 +1,6 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.24.0-beta.0
+DISTVERSION=	5.24.0
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -43,9 +43,8 @@ USE_QT=		qmake_build buildtools_build core dbus declarative gui \
 		multimedia_run quickcontrols2_run widgets x11extras
 USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
-GL_COMMIT=	9a706378af61d93fbacd0cd9dcd1b0be68bc6c70
+GL_COMMIT=	8d1c576db6061d963734b013cd10460155d73f6d
 PLIST_SUB=	VERSION=${PORTVERSION}
-PLIST_SUB=	VERSION=5.23.90 # XXX beta override
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, epoll-shim, glib, intl, Qt5*, KF5*
 
 OPTIONS_DEFINE=	BREEZE DOCS QA11Y
