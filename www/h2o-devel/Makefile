@@ -2,12 +2,9 @@
 
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20220131
+DISTVERSION=	2.3.0-dev.20220208
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES=    https://github.com/h2o/h2o/pull/
-PATCHFILES+=    2934.patch:-p1
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Optimized HTTP/2 server including support for TLS 1.3 and HTTP/1.x
@@ -25,7 +22,7 @@ USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_TAGNAME=	a68cabae
+GH_TAGNAME=	34a5ac2
 
 CONFLICTS=	h2o
 
