@@ -1,3 +1,5 @@
-TIMESTAMP = 1618681274
-SHA256 (emersion-grim-v1.3.2_GH0.tar.gz) = 42c2952e98389506156c08e40e0c37afdc2ec5ef4d55a5a4febde6acdac4d1c8
-SIZE (emersion-grim-v1.3.2_GH0.tar.gz) = 15781
+TIMESTAMP = 1644362430
+SHA256 (emersion-grim-v1.4.0_GH0.tar.gz) = b6786e889ed93568634189a59f6b6429c041bf74883c10e8b6e2ed6772ae7ffb
+SIZE (emersion-grim-v1.4.0_GH0.tar.gz) = 18287
+SHA256 (89e02e663fab.patch) = 72a9df80e4e3f77259302b4789104ef9b075b902ab20a592e6c1e8972a2dc0ef
+SIZE (89e02e663fab.patch) = 749
