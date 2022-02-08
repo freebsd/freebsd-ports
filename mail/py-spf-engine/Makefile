@@ -1,7 +1,7 @@
 # Created by: Giel van Schijndel <me@mortis.eu>
 
 PORTNAME=	spf-engine
-PORTVERSION=	2.9.2
+DISTVERSION=	2.9.3
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,29 +21,26 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authres>0:mail/py-authres@${PY_FLAVOR} \
 USES=		python:3.3+ shebangfix
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	pyspf-milter
-NO_ARCH=	yes
+
+SHEBANG_FILES=	spf_engine/milter_spf.py spf_engine/policyd_spf.py
 
 CONFLICTS=	py*-postfix-policyd-spf-python
+
+NO_ARCH=	yes
+SUB_FILES=	pkg-message
+SUB_LIST=	PYSPF_MILTER_RUNDIR=${PYSPF_MILTER_RUNDIR} \
+		PYTHON_CMD=${PYTHON_CMD}
 
 USERS=		pyspf-milter
 GROUPS=		pyspf-milter
 
 PYSPF_MILTER_RUNDIR=	/var/run/pyspf-milter
 
-PLIST_FILES=	'@sample etc/python-policyd-spf/policyd-spf.conf.sample' \
-		'@dir(${USERS},${GROUPS},755) ${PYSPF_MILTER_RUNDIR}'
+PLIST_FILES=	'@dir(${USERS},${GROUPS},755) ${PYSPF_MILTER_RUNDIR}' \
+		'@sample etc/python-policyd-spf/policyd-spf.conf.sample'
 
-SHEBANG_FILES=	spf_engine/milter_spf.py \
-		spf_engine/policyd_spf.py
-
-PORTDOCS=	CHANGES \
-		README \
-		README.per_user_whitelisting \
+PORTDOCS=	CHANGES README README.per_user_whitelisting \
 		policyd-spf.conf.commented
-
-SUB_FILES=	pkg-message
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
-		PYSPF_MILTER_RUNDIR=${PYSPF_MILTER_RUNDIR}
 
 OPTIONS_DEFINE=	DOCS
 
