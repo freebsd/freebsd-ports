@@ -4,7 +4,7 @@ CATEGORIES=	lang devel
 MASTER_SITES=	https://duktape.org/
 PKGNAMESUFFIX=	-lib
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Javascript engine (shared lib)
 
 LICENSE=	MIT
