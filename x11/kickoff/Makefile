@@ -4,7 +4,7 @@ DISTVERSION=	0.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Minimalistic program launcher
+COMMENT=	Minimalistic program launcher for Wayland
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
