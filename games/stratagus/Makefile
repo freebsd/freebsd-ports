@@ -18,7 +18,7 @@ RUN_DEPENDS=	zenity:x11/zenity
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wargus
 
-USES=		cmake compiler:c++17-lang lua:51 pkgconfig sdl
+USES=		cmake lua:51 pkgconfig sdl
 USE_SDL=	sdl2 mixer2 image2
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \
@@ -42,6 +42,14 @@ THEORA_CMAKE_BOOL=	WITH_THEORA
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
 VORBIS_CMAKE_BOOL=	WITH_OGGVORBIS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++17-lang
+.endif
 
 .include <bsd.port.pre.mk>
 
