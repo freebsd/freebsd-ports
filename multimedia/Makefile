@@ -160,6 +160,8 @@
     SUBDIR += kooha
     SUBDIR += kvazaar
     SUBDIR += l-smash
+    SUBDIR += lebiniou
+    SUBDIR += lebiniou-data
     SUBDIR += libaacs
     SUBDIR += libass
     SUBDIR += libbdplus
