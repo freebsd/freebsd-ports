@@ -5,7 +5,7 @@ PORTVERSION=	3.5.1
 CATEGORIES=	comms net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows to access serial ports over IP
 
 LICENSE=	GPLv2+
