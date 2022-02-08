@@ -1,3 +1,36 @@
+  <vuln vid="fc2a9541-8893-11ec-9d01-80ee73419af3">
+    <topic>xrdp -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>xrdp</name>
+	<range><lt>0.9.18.1</lt></range>
+	<range><ge>0.9.17</ge></range>
+      </package>
+      <package>
+	<name>xrdp-devel</name>
+	<range><lt>0.9.18.1</lt></range>
+	<range><ge>0.9.17</ge></range>
+      </package>
+
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xrdp project reports:</p>
+	<blockquote cite="https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-8h98-h426-xf32">
+	  <p>An integer underflow leading to a heap overflow in the sesman server allows any unauthenticated attacker which is accessible to a sesman server (listens by default on localhost when installing xrdp, but can be remote if configured otherwise) to execute code as root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23613</cvename>
+      <url>https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-8h98-h426-xf32</url>
+    </references>
+    <dates>
+      <discovery>2022-01-23</discovery>
+      <entry>2022-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3507bfb3-85d5-11ec-8c9c-001b217b3468">
     <topic>Gitlab -- multiple vulnerabilities</topic>
     <affects>
