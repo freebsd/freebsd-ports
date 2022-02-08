@@ -1,0 +1,28 @@
+--- Makefile.orig	2022-02-08 16:00:48 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-PREFIX = /usr/local
++PREFIX = %%PREFIX%%
+ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/lib
+ LIBEXECDIR = $(PREFIX)/libexec
+@@ -18,7 +18,7 @@ endif
+ 
+ # If you want to keep symbols in the installed binary, run make with
+ # `STRIP=true` to run /bin/true instead of the strip command.
+-STRIP = strip
++STRIP = $(STRIP_CMD)
+ 
+ SRCS=$(wildcard *.cc elf/*.cc macho/*.cc)
+ HEADERS=$(wildcard *.h elf/*.h macho/*.h)
+@@ -99,8 +99,8 @@ endif
+ 
+ # Use pkg-config to know where libcrypto resides.
+ ifneq ($(OS), Darwin)
+-  MOLD_CXXFLAGS += $(shell pkg-config --cflags-only-I openssl)
+-  MOLD_LDFLAGS += $(shell pkg-config --libs-only-L openssl) -lcrypto
++  MOLD_CXXFLAGS += -I${OPENSSLINC}
++  MOLD_LDFLAGS += -L${OPENSSLLIB} -lcrypto
+ endif
+ 
+ # '-latomic' flag is needed building on riscv64 system
