@@ -3,7 +3,7 @@ DISTVERSION=	2.6.0
 CATEGORIES=	lang devel
 MASTER_SITES=	https://duktape.org/
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Javascript engine
 
 LICENSE=	MIT
