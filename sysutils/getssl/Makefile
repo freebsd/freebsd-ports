@@ -1,6 +1,6 @@
 PORTNAME=	getssl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.35
+DISTVERSION=	2.46
 CATEGORIES=	sysutils
 
 MAINTAINER=	rainbow@sanitylinux.org
