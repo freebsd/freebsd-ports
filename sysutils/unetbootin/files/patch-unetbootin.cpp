@@ -6,7 +6,7 @@
  #endif // Q_OS_LINUX
 +#ifdef Q_OS_FREEBSD
 +	syslinuxcommand = locatecommand("syslinux", tr("FAT32-formatted USB drive"), "syslinux");
-+	sevzcommand = locatecommand("7z", tr("either"), "p7zip");
++	sevzcommand = locatecommand("7zz", tr("either"), "7-zip");
 +	mke2fscommand = locatecommand("mke2fs", tr("LiveUSB persistence"), "e2fsprogs");
 +#endif // Q_OS_FREEBSD
  	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
