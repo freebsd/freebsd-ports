@@ -136,6 +136,7 @@
     SUBDIR += py-hid
     SUBDIR += py-hidapi
     SUBDIR += py-libimobiledevice
+    SUBDIR += py-libscrc
     SUBDIR += py-pyserial
     SUBDIR += py-xmodem
     SUBDIR += pyla
