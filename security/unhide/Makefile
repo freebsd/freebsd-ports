@@ -1,18 +1,21 @@
 # Created by: ntarmos@cs.uoi.gr
 
 PORTNAME=	unhide
-PORTVERSION=	20121229
+DISTVERSION=	20210124
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
-DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Forensic tool to find hidden processes and TCP/UDP ports
 
 LICENSE=	GPLv3
 
-NO_WRKSUBDIR=	true
 USES=		tar:tgz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	YJesus
+GH_PROJECT=	Unhide
+GH_TAGNAME=	v${DISTVERSION}
+
 PLIST_FILES=	man/man8/unhide.8.gz \
 		man/man8/unhide-tcp.8.gz \
 		sbin/unhide \
