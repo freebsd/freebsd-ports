@@ -25,7 +25,7 @@ RAR_DESC=	RAR archive support
 RPM_DESC=	RPM archive support
 ZIP_DESC=	ZIP archive support
 
-7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
+7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 ARJ_RUN_DEPENDS=	arj:archivers/arj
 ACE_RUN_DEPENDS=	unace:archivers/unace
 DEB_RUN_DEPENDS=	dpkg-deb:archivers/dpkg

@@ -1,0 +1,11 @@
+--- wrappers/7za.src.orig	2005-11-15 11:59:51 UTC
++++ wrappers/7za.src
+@@ -25,7 +25,7 @@ E_UNSUPPORTED=65
+ EXTS="7z"
+ 
+ # Programs to wrap
+-P7Z_PROG="7za"
++P7Z_PROG="7zz"
+ 
+ # Setup awk program to use
+ AWK_PROGS="mawk gawk awk"
