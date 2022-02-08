@@ -1,5 +1,5 @@
 PORTNAME=	fheroes2
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,13 +18,5 @@ USE_SDL=	image2 mixer2 sdl2 ttf2
 SHEBANG_FILES=	script/demo/download_demo_version.sh
 
 OPTIONS_DEFINE=	DOCS
-
-PLIST_FILES=	bin/${PORTNAME} \
-		${DATADIR}/files/data/resurrection.h2d
-PORTDOCS=	LICENSE \
-		README.txt \
-		changelog.txt \
-		demo/download_demo_version.sh \
-		homm2/extract_homm2_resources.sh
 
 .include <bsd.port.mk>
