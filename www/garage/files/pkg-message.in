@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+  To get started, refer to the documentation at:
+
+    %%DOCSDIR%%/book/src/quick_start/index.md
+EOM
+}
+]

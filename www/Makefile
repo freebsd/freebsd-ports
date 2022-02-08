@@ -179,6 +179,7 @@
     SUBDIR += g-gcl
     SUBDIR += gallery-dl
     SUBDIR += gallery2
+    SUBDIR += garage
     SUBDIR += gatling
     SUBDIR += gauche-makiki
     SUBDIR += gecko-mediaplayer

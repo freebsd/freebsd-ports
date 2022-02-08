@@ -1,0 +1,202 @@
+PORTNAME=	garage
+DISTVERSION=	0.6.0
+CATEGORIES=	www
+MASTER_SITES=	https://git.deuxfleurs.fr/Deuxfleurs/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	ashish@FreeBSD.org
+COMMENT=	Open-source distributed storage service
+
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libsodium.so:security/libsodium
+
+USES=		cargo pkgconfig
+CARGO_ENV+=	SODIUM_USE_PKG_CONFIG=1
+CARGO_INSTALL_PATH=	src/garage
+CARGO_CRATES=	aho-corasick-0.7.18 \
+		arc-swap-1.4.0 \
+		arrayvec-0.5.2 \
+		async-trait-0.1.51 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.3.2 \
+		blake2-0.9.2 \
+		block-buffer-0.9.0 \
+		byteorder-1.4.3 \
+		bytes-0.6.0 \
+		bytes-1.1.0 \
+		cc-1.0.71 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		cpufeatures-0.2.1 \
+		crc32fast-1.2.1 \
+		crossbeam-epoch-0.9.5 \
+		crossbeam-utils-0.8.5 \
+		crypto-mac-0.8.0 \
+		crypto-mac-0.10.1 \
+		digest-0.9.0 \
+		env_logger-0.7.1 \
+		err-derive-0.2.4 \
+		err-derive-0.3.0 \
+		fnv-1.0.7 \
+		form_urlencoded-1.0.1 \
+		fs2-0.4.3 \
+		futures-0.3.17 \
+		futures-channel-0.3.17 \
+		futures-core-0.3.17 \
+		futures-executor-0.3.17 \
+		futures-io-0.3.17 \
+		futures-macro-0.3.17 \
+		futures-sink-0.3.17 \
+		futures-task-0.3.17 \
+		futures-util-0.3.17 \
+		fxhash-0.2.1 \
+		garage_model-0.5.1 \
+		garage_rpc-0.5.1 \
+		garage_table-0.5.1 \
+		garage_util-0.5.1 \
+		generic-array-0.14.4 \
+		gethostname-0.2.1 \
+		getrandom-0.2.3 \
+		git-version-0.3.5 \
+		git-version-macro-0.3.5 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		hex-0.4.3 \
+		hexdump-0.1.1 \
+		hmac-0.10.1 \
+		http-0.2.5 \
+		http-body-0.4.3 \
+		http-range-0.1.4 \
+		httparse-1.5.1 \
+		httpdate-0.3.2 \
+		httpdate-1.0.1 \
+		humantime-1.3.0 \
+		hyper-0.14.13 \
+		idna-0.2.3 \
+		instant-0.1.11 \
+		itertools-0.4.19 \
+		itoa-0.4.8 \
+		jobserver-0.1.24 \
+		kuska-handshake-0.2.0 \
+		kuska-sodiumoxide-0.2.5-0 \
+		lazy_static-1.4.0 \
+		libc-0.2.103 \
+		libsodium-sys-0.2.7 \
+		lock_api-0.4.5 \
+		log-0.4.14 \
+		matches-0.1.9 \
+		md-5-0.9.1 \
+		memchr-2.4.1 \
+		memoffset-0.6.4 \
+		minimal-lexical-0.2.1 \
+		mio-0.7.13 \
+		miow-0.3.7 \
+		netapp-0.3.0 \
+		nom-7.1.0 \
+		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		once_cell-1.8.0 \
+		opaque-debug-0.3.0 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		percent-encoding-2.1.0 \
+		pin-project-1.0.8 \
+		pin-project-internal-1.0.8 \
+		pin-project-lite-0.2.7 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.20 \
+		ppv-lite86-0.2.14 \
+		pretty_env_logger-0.4.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.30 \
+		quick-error-1.2.3 \
+		quick-xml-0.21.0 \
+		quote-1.0.10 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		redox_syscall-0.2.10 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		rmp-0.8.10 \
+		rmp-serde-0.14.4 \
+		rmp-serde-0.15.5 \
+		roxmltree-0.14.1 \
+		rustversion-1.0.5 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		serde-1.0.130 \
+		serde_bytes-0.11.5 \
+		serde_derive-1.0.130 \
+		serde_json-1.0.68 \
+		sha2-0.9.8 \
+		signal-hook-registry-1.4.0 \
+		slab-0.4.5 \
+		sled-0.34.7 \
+		smallvec-1.7.0 \
+		socket2-0.4.2 \
+		structopt-0.3.23 \
+		structopt-derive-0.4.16 \
+		subtle-2.4.1 \
+		syn-1.0.80 \
+		synstructure-0.12.6 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		time-0.1.43 \
+		tinyvec-1.5.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.12.0 \
+		tokio-macros-1.5.0 \
+		tokio-stream-0.1.7 \
+		tokio-util-0.6.8 \
+		toml-0.5.8 \
+		tower-service-0.3.1 \
+		tracing-0.1.29 \
+		tracing-core-0.1.21 \
+		try-lock-0.2.3 \
+		typenum-1.14.0 \
+		unicode-bidi-0.3.7 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.8.0 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.2 \
+		url-2.2.2 \
+		version_check-0.9.3 \
+		walkdir-2.3.2 \
+		want-0.3.0 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		xmlparser-0.13.3 \
+		xxhash-rust-0.8.2 \
+		zstd-0.9.0+zstd.1.5.0 \
+		zstd-safe-4.1.1+zstd.1.5.0 \
+		zstd-sys-1.6.1+zstd.1.5.0
+SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	${GREP} -F -Rl /etc/garage ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,/etc/garage,${ETCDIR},g'
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name *\.bak"
+
+.include <bsd.port.mk>
