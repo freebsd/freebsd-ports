@@ -27,16 +27,24 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 USES=		cmake compiler:c++11-lib cpe libedit perl5 \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-SHEBANG_FILES=	llvm/utils/lit/lit.py \
-		llvm/utils/llvm-lit/llvm-lit.in \
-		clang/utils/hmaptool/hmaptool \
-		clang/tools/scan-view/bin/scan-view \
+SHEBANG_FILES=	\
 		clang/tools/clang-format/git-clang-format \
 		clang/tools/clang-format/clang-format-diff.py \
+		clang/tools/scan-build-py/bin/analyze-build \
+		clang/tools/scan-build-py/bin/intercept-build \
+		clang/tools/scan-build-py/bin/scan-build \
+		clang/tools/scan-build-py/libexec/analyze-cc \
+		clang/tools/scan-build-py/libexec/analyze-c++ \
+		clang/tools/scan-build-py/libexec/intercept-cc \
+		clang/tools/scan-build-py/libexec/intercept-c++ \
+		clang/tools/scan-view/bin/scan-view \
+		clang/utils/hmaptool/hmaptool \
 		llvm/tools/opt-viewer/optrecord.py \
 		llvm/tools/opt-viewer/opt-diff.py \
 		llvm/tools/opt-viewer/opt-stats.py \
-		llvm/tools/opt-viewer/opt-viewer.py
+		llvm/tools/opt-viewer/opt-viewer.py \
+		llvm/utils/lit/lit.py \
+		llvm/utils/llvm-lit/llvm-lit.in
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
