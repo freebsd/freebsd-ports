@@ -1,5 +1,5 @@
 PORTNAME=	cardinal
-PORTVERSION=	g20220206
+PORTVERSION=	g20220207
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,43 +26,14 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	DISTRHO
 GH_PROJECT=	Cardinal
-GH_TAGNAME=	d0224fc
+GH_TAGNAME=	4efe110
 
 GH_TUPLE=	\
-		craigsapp:midifile:99e87b684f88ebff6417ef25f269f1a95b780ad2:craigsapp_midifile/plugins/BaconPlugs/libs/midifile \
-		\
-		LancePutnam:Gamma:70ba31c92db6afa160523940fd046a2bc249e8ad:LancePutnam_Gamma/plugins/HetrickCV/Gamma \
-		\
-		pichenettes:avril:276b2887e4110ca913294fcbb313163dfb28a448:pichenettes_avril/plugins/AudibleInstruments/eurorack/avrlib \
-		pichenettes:avrilx:868d6e74eb8555f9575b5149202256156e5c03fa:pichenettes_avrilx/plugins/AudibleInstruments/eurorack/avrlibx \
-		pichenettes:stmlib:8998429236d6edd4934b6c9ae8e0f167e3d30aa7:pichenettes_stmlib/plugins/AudibleInstruments/eurorack/stmlib \
-		pichenettes:stm-audio-bootloader:1ec7d6374e2d305cb710170eb80de9b66e795792:pichenettes_stm_audio_bootloader/plugins/AudibleInstruments/eurorack/stm_audio_bootloader \
-		pichenettes:avr-audio-bootloader:0de2be5928afdf7fb3e5ada60544ed6c15ab808f:pichenettes_avr_audio_bootloader/plugins/AudibleInstruments/eurorack/avr_audio_bootloader \
-		\
-		CardinalModules:eurorack:87bf3b1da88147e3fcc8c57e3072eec67ccd380a:CardinalModules_eurorack/plugins/AudibleInstruments/eurorack \
-		\
-		Chowdhury-DSP:chowdsp_utils:b75c3401fa93bbc596a72d21f50e1268fce415a4:Chowdhury_DSP_chowdsp_utils/plugins/ChowDSP/lib/chowdsp_utils \
-		\
-		JerrySievert:SynthDevKit:0f322e58f00f1a04276ecc3eadb610b418f040d5:JerrySievert_SynthDevKit/plugins/DrumKit/deps/SynthDevKit \
-		\
-		falkTX:Carla-Plugins:4d9d457d86bebe68f76640718d20f9b72b0a57c6:falkTX_Carla_Plugins/carla/source/native-plugins/external \
-		\
-		VCVRack:nanovg:0bebdb314aff9cfa28fde4744bcb037a2b3fd756:VCVRack_nanovg/src/Rack/dep/nanovg \
-		memononen:nanosvg:25241c5a8f8451d41ab1b02ab2d865b01600d949:memononen_nanosvg/src/Rack/dep/nanosvg \
-		AndrewBelt:osdialog:21b9dcc2a1bbdacb9b46da477ffd82a4ce9204b9:AndrewBelt_osdialog/src/Rack/dep/osdialog \
-		VCVRack:oui-blendish:2fc6405883f8451944ed080547d073c8f9f31898:VCVRack_oui_blendish/src/Rack/dep/oui-blendish \
-		VCVRack:rtaudio:8128053f4bd83463c7c901d9f5d40b272c2f4e4e:VCVRack_rtaudio/src/Rack/dep/rtaudio \
-		VCVRack:glfw:0e18076016f4ba57c314eeebd85654c70644abe3:VCVRack_glfw/src/Rack/dep/glfw \
-		gulrak:filesystem:7e37433f318488ae4bc80f80e12df12a01579874:gulrak_filesystem/src/Rack/dep/filesystem \
-		\
-		DISTRHO:pugl:b1d9703ecbdb0a033fe0b9acdf58b90f7d81a8e5:DISTRHO_pugl/dpf/dgl/src/pugl-upstream \
-		\
 		VCVRack:Rack:0d003b96476af45102117c2bb958aeb59eb523cf:VCVRack_Rack/src/Rack \
-		DISTRHO:DPF:7e6e3cc84b60727599120a8756396caa2919d46e:DISTRHO_DPF/dpf \
+		DISTRHO:DPF:60b9b76b466ad62a9f64f2eb7557a2563bbbf683:DISTRHO_DPF/dpf \
 		meganz:mingw-std-threads:f6365f900fb9b1cd6014c8d1cf13ceacf8faf3de:meganz_mingw_std_threads/include/mingw-std-threads \
 		DLTcollab:sse2neon:be721a98e7829ce5824a53da78d8210c024ba6c0:DLTcollab_sse2neon/include/sse2neon \
 		CardinalModules:Fundamental:50f8ccce5ec433470d87894c94762df133d940f1:CardinalModules_Fundamental/plugins/Fundamental \
-		VCVRack:Befaco:ec406ce181f340bce8e475cb508c4db0db02fdc6:VCVRack_Befaco/plugins/Befaco \
 		CardinalModules:AudibleInstruments:fec73bc29fc3771d23e6ea03132597774f61c92e:CardinalModules_AudibleInstruments/plugins/AudibleInstruments \
 		AnimatedCircuits:RackModules:bd45fc5e9b472182bcc74da264f865d1424a76be:AnimatedCircuits_RackModules/plugins/AnimatedCircuits \
 		mhampton:ZetaCarinaeModules:7fa3a59e71cf5f541a335e89bc45102923a3fd62:mhampton_ZetaCarinaeModules/plugins/ZetaCarinaeModules \
@@ -78,10 +49,10 @@ GH_TUPLE=	\
 		MarcBoule:MindMeldModular:621a29f3f1b521582fd11ca7f17635d19faa340c:MarcBoule_MindMeldModular/plugins/MindMeldModular \
 		ValleyAudio:ValleyRackFree:440553f3371eab4a84e2b6dcbd3b44ca027871d7:ValleyAudio_ValleyRackFree/plugins/ValleyAudio \
 		SVModular:DrumKit:8d78f221927f5aa75d99e4fb8a6b8750141e0933:SVModular_DrumKit/plugins/DrumKit \
-		falkTX:Carla:afc25ae3137be9cb7addedd16ff45fbe0ab4ea97:falkTX_Carla/carla \
+		falkTX:Carla:b8d38e395c215eed189a4849972f90af810ef971:falkTX_Carla/carla \
 		Xenakios:Atelier:b84dea414c3a2bac231d1c5b837c3003d60a6446:Xenakios_Atelier/plugins/Atelier \
 		CardinalModules:mscHack:cf6b1aa5ae47a9e56a0f2ddb0c1aa54927134fb5:CardinalModules_mscHack/plugins/mscHack \
-		zezic:ZZC:268c15711a7fe184970b1525c98f17e72db64af5:zezic_ZZC/plugins/ZZC \
+		zezic:ZZC:15364616da500d31f7545dcbfc01b4fda7f7c9d4:zezic_ZZC/plugins/ZZC \
 		wiqid:repelzen:185e07ea94086a04b3daacb4bf94c0fbd3544725:wiqid_repelzen/plugins/repelzen \
 		CardinalModules:AriaModules:90f8009e1431341225c616bb3a9c250b02bce2c1:CardinalModules_AriaModules/plugins/AriaModules \
 		baconpaul:BaconPlugs:0a6c390eedf98884393f82cb066038a78a316ea5:baconpaul_BaconPlugs/plugins/BaconPlugs \
@@ -100,22 +71,44 @@ GH_TUPLE=	\
 		LomasModules:LomasModules:a4b802ae1ac12415cbeaeaef5f949dd8d38dfc5c:LomasModules_LomasModules/plugins/LomasModules \
 		expertsleepersltd:vcvrack-encoders:df096a635fe8d3ea86a1e6451a55e45ccee5b83d:expertsleepersltd_vcvrack_encoders/plugins/ExpertSleepers-Encoders \
 		CardinalModules:ihtsyn:31c4229eb328f6aaa4024f76c595b55213cdf1cf:CardinalModules_ihtsyn/plugins/ihtsyn \
-		JerrySievert:QuickJS:b70d5344013836544631c361ae20569b978176c9:JerrySievert_QuickJS/deps/QuickJS \
-		NikolaiVChr:Autinn:bc880d9d8fb59016de61e3253aff2b543d7bb665:NikolaiVChr_Autinn/plugins/Autinn
+		CardinalModules:QuickJS:9ed118744671f1e257ebb0d731300ba115f6cfce:CardinalModules_QuickJS/deps/QuickJS \
+		NikolaiVChr:Autinn:bc880d9d8fb59016de61e3253aff2b543d7bb665:NikolaiVChr_Autinn/plugins/Autinn \
+		\
+		VCVRack:nanovg:0bebdb314aff9cfa28fde4744bcb037a2b3fd756:VCVRack_nanovg/src/Rack/dep/nanovg \
+		memononen:nanosvg:25241c5a8f8451d41ab1b02ab2d865b01600d949:memononen_nanosvg/src/Rack/dep/nanosvg \
+		AndrewBelt:osdialog:21b9dcc2a1bbdacb9b46da477ffd82a4ce9204b9:AndrewBelt_osdialog/src/Rack/dep/osdialog \
+		VCVRack:oui-blendish:2fc6405883f8451944ed080547d073c8f9f31898:VCVRack_oui_blendish/src/Rack/dep/oui-blendish \
+		VCVRack:rtaudio:8128053f4bd83463c7c901d9f5d40b272c2f4e4e:VCVRack_rtaudio/src/Rack/dep/rtaudio \
+		VCVRack:glfw:0e18076016f4ba57c314eeebd85654c70644abe3:VCVRack_glfw/src/Rack/dep/glfw \
+		gulrak:filesystem:7e37433f318488ae4bc80f80e12df12a01579874:gulrak_filesystem/src/Rack/dep/filesystem \
+		\
+		craigsapp:midifile:99e87b684f88ebff6417ef25f269f1a95b780ad2:craigsapp_midifile/plugins/BaconPlugs/libs/midifile \
+		\
+		JerrySievert:SynthDevKit:0f322e58f00f1a04276ecc3eadb610b418f040d5:JerrySievert_SynthDevKit/plugins/DrumKit/deps/SynthDevKit \
+		\
+		Chowdhury-DSP:chowdsp_utils:b75c3401fa93bbc596a72d21f50e1268fce415a4:Chowdhury_DSP_chowdsp_utils/plugins/ChowDSP/lib/chowdsp_utils \
+		\
+		pichenettes:avril:276b2887e4110ca913294fcbb313163dfb28a448:pichenettes_avril/plugins/AudibleInstruments/eurorack/avrlib \
+		pichenettes:avrilx:868d6e74eb8555f9575b5149202256156e5c03fa:pichenettes_avrilx/plugins/AudibleInstruments/eurorack/avrlibx \
+		pichenettes:stmlib:8998429236d6edd4934b6c9ae8e0f167e3d30aa7:pichenettes_stmlib/plugins/AudibleInstruments/eurorack/stmlib \
+		pichenettes:stm-audio-bootloader:1ec7d6374e2d305cb710170eb80de9b66e795792:pichenettes_stm_audio_bootloader/plugins/AudibleInstruments/eurorack/stm_audio_bootloader \
+		pichenettes:avr-audio-bootloader:0de2be5928afdf7fb3e5ada60544ed6c15ab808f:pichenettes_avr_audio_bootloader/plugins/AudibleInstruments/eurorack/avr_audio_bootloader \
+		\
+		CardinalModules:eurorack:87bf3b1da88147e3fcc8c57e3072eec67ccd380a:CardinalModules_eurorack/plugins/AudibleInstruments/eurorack \
+		\
+		LancePutnam:Gamma:70ba31c92db6afa160523940fd046a2bc249e8ad:LancePutnam_Gamma/plugins/HetrickCV/Gamma \
+		\
+		DISTRHO:pugl:b1d9703ecbdb0a033fe0b9acdf58b90f7d81a8e5:DISTRHO_pugl/dpf/dgl/src/pugl-upstream \
+		\
+		falkTX:Carla-Plugins:4d9d457d86bebe68f76640718d20f9b72b0a57c6:falkTX_Carla_Plugins/carla/source/native-plugins/external \
 
 USE_GITLAB=	nodefault
 GL_TUPLE=	sonusdept:sonusmodular:b63a685c6c68be188f5a3d5d9f6582eb94d62e53:sonusmodular/plugins/sonusmodular
 
 SHEBANG_GLOB=	*.sh
 
-CFLAGS+=	-I${FILESDIR}
-CXXFLAGS+=	-I${LOCALBASE}/include/pffft \
-		-Daligned_alloc_16=malloc \
-		-Daligned_free_16=free \
-		-pthread
-LDFLAGS+=	-lpffft \
-		-lpthread \
-		${FILESDIR}/mntent_compat.c
+CXXFLAGS+=	-I${LOCALBASE}/include/pffft
+LDFLAGS+=	-lpffft
 
 MAKE_ENV=	LD_PRELOAD=/usr/lib/libpthread.so # workaround for https://github.com/DISTRHO/Cardinal/issues/128#issuecomment-1030817359
 MAKE_ARGS=	SYSDEPS=true
