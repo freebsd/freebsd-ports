@@ -1,8 +1,7 @@
 # Created by: lightside <lightside@gmx.com>
 
 PORTNAME=	pioneer
-DISTVERSION=	20210723
-PORTREVISION=	1
+DISTVERSION=	20220203
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,10 +24,8 @@ LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_powerpc=		fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
-BROKEN_powerpc64=	fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
-BROKEN_powerpcspe=	fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
-BROKEN_riscv64=		fails to build: contrib/profiler/Profiler.h:158:28: inconsistent operand constraints in an 'asm'
+# XXX: if you have similar error, try adding failing arch to USE_CHRONO condition in contrib/profiler/Profiler.h
+BROKEN_xxx=		fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
 
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libfreetype.so:print/freetype2 \
@@ -50,7 +47,7 @@ PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DOCS NOGPUJOBS PROFILER
+OPTIONS_DEFINE=		DOCS PROFILER
 
 NOGPUJOBS_DESC=		Disable EnableGPUJobs for config.ini by default
 PROFILER_DESC=		Build with internal profiler
@@ -63,18 +60,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^include(FindGit/d ; \
 		/TIMESTAMP PROJECT_VERSION/s|.*|set(PROJECT_VERSION "${GH_TAGNAME}")|' \
 		${WRKSRC}/CMakeLists.txt
-
-post-patch-NOGPUJOBS-on:
-# Revert 41272a856d9072404efbfdb10f0e3c9e4f96bb4d commit, in case of
-# GL_OUT_OF_MEMORY OpenGL error, when turning to gas giant planet
-	@${REINPLACE_CMD} -e '/EnableGPUJobs/s|1|0|' \
-		 ${WRKSRC}/src/GameConfig.cpp
-
-post-patch-PROFILER-off:
-	@${REINPLACE_CMD} -i '.profiler' -e '/contrib\/profiler/d ; /profiler$$/d ; \
-		/target_link_libraries(savegamedump/s| profiler||' \
-		${WRKSRC}/CMakeLists.txt \
-		${WRKSRC}/src/core/CMakeLists.txt
 
 post-install:
 .for f in modelcompiler savegamedump

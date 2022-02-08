@@ -8,6 +8,9 @@ different versions of Pioneer. The universe might not be the same in the next
 version of Pioneer. Anything can change. The game is not finished.
 
 Take a look at %%QUICKSTART_PATH%%/Quickstart.txt for more info.
+
+If you encounter GL_OUT_OF_MEMORY error, try setting EnableGPUJobs to 0 in
+your ~/.pioneer/config.ini
 EOM
 }
 ]
