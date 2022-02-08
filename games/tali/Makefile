@@ -1,13 +1,10 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	tali
-PORTVERSION=	40.4
+PORTVERSION=	40.5
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	79509bf3e945.patch:-p1 # https://gitlab.gnome.org/GNOME/tali/-/merge_requests/14
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome tali
