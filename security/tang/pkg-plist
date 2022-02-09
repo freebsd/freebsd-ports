@@ -1,4 +1,5 @@
 libexec/tangd
+man/man1/tangd-rotate-keys.1.gz
 man/man1/tang-show-keys.1.gz
 man/man8/tang.8.gz
 libexec/tangd-keygen
