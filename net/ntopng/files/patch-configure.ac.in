@@ -1,0 +1,11 @@
+--- configure.ac.in.orig	2022-02-08 09:52:25 UTC
++++ configure.ac.in
+@@ -444,7 +444,7 @@ if test "${with_nedge+set}" != set; then
+  PF_RING_HOME=${HOME}/PF_RING
+ 
+   if test $SYSTEM = "FreeBSD"; then
+-     LIBPCAP="${PF_RING_HOME}/userland/libpcap/libpcap.a"
++     # Use pcap from base
+   else
+     if test -d ${PF_RING_HOME}; then
+       AC_MSG_CHECKING(for PF_RING source installed in $PF_RING_HOME)

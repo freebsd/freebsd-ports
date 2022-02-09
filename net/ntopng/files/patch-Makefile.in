@@ -1,25 +1,16 @@
---- Makefile.in.orig	2021-08-20 09:38:15 UTC
+--- Makefile.in.orig	2022-02-08 09:52:25 UTC
 +++ Makefile.in
-@@ -39,7 +39,8 @@ else ifeq ($(OS),Darwin)
+@@ -44,7 +44,8 @@ else ifeq ($(OS),Darwin)
  	LUA_PLATFORM=macosx
  else ifeq ($(OS), $(filter $(OS), FreeBSD))
  	LUA_PLATFORM=freebsd
 -	LUA_LIB=/usr/local/lib/liblua-5.3.a
-+        LUA_INC=-I%%LOCALBASE%%/include/lua53
-+	LUA_LIB=-llua-5.3
++	LUA_INC=-I%%LOCALBASE%%/include/lua54
++	LUA_LIB=-llua-5.4
  endif
  
  
-@@ -87,7 +88,7 @@ ifeq (@NEDGE@, 0)
-  HAS_ZEROMQ=$(shell pkg-config --exists libzmq && echo 0)
-  ifeq ($(HAS_ZEROMQ), 0)
- 	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
--	ZMQ_STATIC=/usr/local/lib/libzmq.a
-+	ZMQ_STATIC=/nonexistent
- 	ifeq ($(wildcard $(ZMQ_STATIC)),)
- 		ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
- 	else
-@@ -123,7 +124,7 @@ RPM_PKG = $(TARGET)-$(NTOPNG_VERSION)-@REVISION@.$(PLA
+@@ -102,7 +103,7 @@ RPM_PKG = $(TARGET)-$(NTOPNG_VERSION)-@REVISION@.$(PLA
  RPM_DATA_PKG = $(TARGET)-data-$(NTOPNG_VERSION)-@REVISION@.noarch.rpm
  ######
  
