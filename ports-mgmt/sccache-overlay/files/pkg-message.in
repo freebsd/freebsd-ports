@@ -10,9 +10,9 @@ SCCACHE_DIR=	${HOME}/.sccache
 OVERLAYS+=	%%DATADIR%%/overlay
 
 During the build a sccache server is started, bound to
-${SCCACHE_UNIX_LISTEN} (default /tmp/sccache-overlay.socket). It
-automatically shuts down after 600 seconds if nothing is using
-it. To cleanly shut it down earlier use
+${SCCACHE_UNIX_LISTEN} (default /tmp/sccache-overlay.socket).
+Idle timeout has been disabled to make builds more reliable. To
+cleanly shut down the server after the build use
 
 $ make sccache-stop
 
