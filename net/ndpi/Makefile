@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 
 PORTNAME=	ndpi
-PORTVERSION=	4.0.d20211111
+PORTVERSION=	4.2.d20220201
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -30,12 +30,9 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
 GH_PROJECT=	nDPI
-GH_TAGNAME=	92a1be2
+GH_TAGNAME=	8b5c6af
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R:R} VER=${PORTVERSION:R}
-
-post-patch:
-	(cd ${WRKSRC} && ${SH} autogen.sh)
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/#define PACKAGE/#define NDPI_PACKAGE/g' \

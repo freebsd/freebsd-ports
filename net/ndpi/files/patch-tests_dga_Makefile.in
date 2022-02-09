@@ -1,0 +1,26 @@
+--- tests/dga/Makefile.in.orig	2022-02-01 08:14:05 UTC
++++ tests/dga/Makefile.in
+@@ -12,16 +12,13 @@ HEADERS=$(SRCHOME)/include/ndpi_api.h $(SRCHOME)/inclu
+ OBJS=dga_evaluate
+ PREFIX?=@prefix@
+ 
+-ifneq ($(BUILD_MINGW),)
+ all:
+ 	@echo 'DGA test disabled due to mingw build.'
+ 
+-else
+-
+ all: dga_evaluate
+ 
+ EXECUTABLE_SOURCES := dga_evaluate.c
+-COMMON_SOURCES := $(filter-out $(EXECUTABLE_SOURCES),$(wildcard *.c ))
++COMMON_SOURCES=
+ 
+ dga_evaluate: $(LIBNDPI) dga_evaluate.o
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) dga_evaluate.o $(LIBS) -o $@
+@@ -42,5 +39,3 @@ distdir:
+ 
+ distclean: clean
+ 	/bin/rm -f Makefile
+-
+-endif

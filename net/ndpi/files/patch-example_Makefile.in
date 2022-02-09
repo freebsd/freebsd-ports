@@ -1,42 +1,47 @@
---- example/Makefile.in.orig	2020-10-19 14:18:25 UTC
+--- example/Makefile.in.orig	2022-02-01 08:14:05 UTC
 +++ example/Makefile.in
-@@ -9,17 +9,12 @@ HEADERS=intrusion_detection.h reader_util.h $(SRCHOME)
+@@ -12,28 +12,14 @@ HEADERS=intrusion_detection.h reader_util.h $(SRCHOME)
          $(SRCHOME)/include/ndpi_typedefs.h $(SRCHOME)/include/ndpi_protocol_ids.h
  OBJS=ndpiReader.o reader_util.o intrusion_detection.o
  PREFIX?=@prefix@
 +EXAMPLESDIR?=share/examples/ndpi
  
 -ifneq ($(BUILD_MINGW),)
--all:
--	@echo 'Examples disabled due to mingw build.'
+-SUFFIX:=.exe
+-CFLAGS+=-I@srcdir@/../windows/WpdPack/Include -I@srcdir@/../windows/WpdPack/Include/pcap
+-LIBS+=-Wl,-Bstatic -lpthread -Wl,-Bdynamic
+-
+-ifneq ($(BUILD_MINGW_X64),)
+-LIBS+=@srcdir@/../windows/WpdPack/Lib/x64/wpcap.lib
+-else
+-LIBS+=@srcdir@/../windows/WpdPack/Lib/wpcap.lib
+-endif
 -
 -else
 -
- all: ndpiReader @DPDK_TARGET@
+ LIBS+=-lpthread
+ 
+-endif
+-
+ all: ndpiReader$(SUFFIX) @DPDK_TARGET@
  
  EXECUTABLE_SOURCES := ndpiReader.c ndpiSimpleIntegration.c
 -COMMON_SOURCES := $(filter-out $(EXECUTABLE_SOURCES),$(wildcard *.c ))
-+COMMON_SOURCES=intrusion_detection.c reader_util.c
++COMMON_SOURCES := reader_util.c
  
  libndpiReader.a: $(COMMON_SOURCES:%.c=%.o) $(LIBNDPI)
- 	ar rsv libndpiReader.a $(COMMON_SOURCES:%.c=%.o)
-@@ -35,10 +30,10 @@ ndpiSimpleIntegration: ndpiSimpleIntegration.o
+ 	$(AR) rsv libndpiReader.a $(COMMON_SOURCES:%.c=%.o)
+@@ -49,10 +35,10 @@ ndpiSimpleIntegration$(SUFFIX): ndpiSimpleIntegration.
  
- install: ndpiReader
+ install: ndpiReader$(SUFFIX)
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/ndpi
 +	mkdir -p $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/
- 	cp ndpiReader $(DESTDIR)$(PREFIX)/bin/
+ 	cp ndpiReader$(SUFFIX) $(DESTDIR)$(PREFIX)/bin/
 -	cp protos.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiProtos.txt
 -	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiCustomCategory.txt
 +	cp protos.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiProtos.txt
 +	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiCustomCategory.txt
+ 	[ -f ndpiSimpleIntegration$(SUFFIX) ] && cp ndpiSimpleIntegration$(SUFFIX) $(DESTDIR)$(PREFIX)/bin/ndpiSimpleIntegration$(SUFFIX) || true
  	[ -f build/app/ndpiReader.dpdk ] && cp build/app/ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
  	[ -f ndpiReader.dpdk ] && cp ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
- 
-@@ -61,5 +56,3 @@ distdir:
- distclean: clean
- 	/bin/rm -f Makefile.dpdk
- 	/bin/rm -f Makefile
--
--endif

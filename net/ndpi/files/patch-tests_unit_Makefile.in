@@ -1,0 +1,26 @@
+--- tests/unit/Makefile.in.orig	2022-02-01 08:14:05 UTC
++++ tests/unit/Makefile.in
+@@ -12,16 +12,10 @@ HEADERS=$(SRCHOME)/include/ndpi_api.h $(SRCHOME)/inclu
+ OBJS=unit
+ PREFIX?=@prefix@
+ 
+-ifneq ($(BUILD_MINGW),)
+-all:
+-	@echo 'Unit tests disabled due to mingw build.'
+-
+-else
+-
+ all: unit
+ 
+ EXECUTABLE_SOURCES := unit.c
+-COMMON_SOURCES := $(filter-out $(EXECUTABLE_SOURCES),$(wildcard *.c ))
++COMMON_SOURCES= 
+ 
+ unit: $(LIBNDPI) unit.o
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) unit.o $(LIBS) -o $@
+@@ -42,5 +36,3 @@ distdir:
+ 
+ distclean: clean
+ 	/bin/rm -f Makefile
+-
+-endif
