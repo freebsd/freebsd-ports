@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	inotify-tools # new fork https://github.com/ericcurtin/inotify-tools
-DISTVERSION=	3.21.9.6
+DISTVERSION=	3.22.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
