@@ -1,0 +1,10 @@
+Now you can view images directly in the current terminal window!
+
+The program uses Sway IPC to determine the geometry of the currently
+focused container. This data is used to calculate the position and
+size of the new "overlay" window that will be used to draw the image.
+In the next step, swayimg adds two Sway rules for the self window:
+"floating enable" and "move position". Then it creates a new Wayland
+window and draws the image from the specified file.
+
+WWW: https://github.com/artemsen/swayimg
