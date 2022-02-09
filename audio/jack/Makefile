@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.20
 CATEGORIES=	audio
 
+PATCH_SITES=    https://github.com/jackaudio/jack2/commit/
+PATCHFILES+=    21b293dbc37d42446141a08922cdec0d2550c6a0.patch:-p1
+
 MAINTAINER=	dev@submerge.ch
 COMMENT=	Low latency audio server
 
