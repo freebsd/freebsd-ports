@@ -3,7 +3,7 @@ DISTVERSION=	2.3.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
-MAINTAINER=	ports@xanderio.de
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Stacking Wayland compositor with tiling capabilities
 
 LICENSE=	BSD2CLAUSE
