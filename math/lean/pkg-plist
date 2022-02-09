@@ -515,6 +515,7 @@ lib/lean/library/init/meta/fun_info.lean
 lib/lean/library/init/meta/has_reflect.lean
 lib/lean/library/init/meta/hole_command.lean
 lib/lean/library/init/meta/injection_tactic.lean
+lib/lean/library/init/meta/instance_cache.lean
 lib/lean/library/init/meta/interaction_monad.lean
 lib/lean/library/init/meta/interactive.lean
 lib/lean/library/init/meta/interactive_base.lean
