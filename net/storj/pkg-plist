@@ -6,6 +6,7 @@ bin/metabase-orphaned-segments
 bin/metabase-verify
 bin/metric-receiver
 bin/multinode
+bin/partnerid-to-useragent-migration
 bin/satellite
 bin/storagenode
 bin/storagenode-updater
