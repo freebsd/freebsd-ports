@@ -324,7 +324,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \
-	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
+	    ${SETENV} ${MAKE_ENV} ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 .if ${PORT_OPTIONS:MPYTHON}
 	${PYTHON_CMD} -mcompileall \
 	    ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom
