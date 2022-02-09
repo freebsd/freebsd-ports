@@ -51,7 +51,6 @@ command_args="${_daemon_args} ${_signal_cli} ${_signal_cli_args} ${_signal_cli_c
 extra_commands="runcli"
 
 start_precmd="signal_cli_prestart"
-runcli_precmd="signal_cli_preruncli"
 runcli_cmd="signal_cli_runcli"
 
 signal_cli_create_config_dir() {
