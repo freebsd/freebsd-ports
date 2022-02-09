@@ -19,7 +19,7 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NOT_FOR_ARCHS=		riscv64
+NOT_FOR_ARCHS=	riscv64
 NOT_FOR_ARCHS_REASON=	unsupported platform
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
@@ -38,9 +38,9 @@ USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 CONFLICTS=	racket-minimal
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	CS
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 OPTIONS_DEFAULT_powerpc64=	BC
 OPTIONS_DEFAULT_powerpc64le=	BC
@@ -49,7 +49,7 @@ OPTIONS_DEFINE_i386=	FUTURES JIT
 OPTIONS_EXCLUDE_powerpc64=	CS
 OPTIONS_EXCLUDE_powerpc64le=	CS
 
-OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE=		BACKEND
 OPTIONS_SINGLE_BACKEND=	BC CS
 
 BACKEND_DESC=	Racket Backend
@@ -58,15 +58,18 @@ CS_DESC=	Build ChezScheme backend
 FUTURES_DESC=	Enable futures (only for BC backend)
 JIT_DESC=	Enable JIT compiler (only for BC backend)
 
-BC_CONFIGURE_ON=	--enable-bconly --enable-libffi --enable-places
-CS_CONFIGURE_ON=	--enable-csonly --enable-mach=${CHEZ_MACHTYPE}
+BC_CONFIGURE_ON=		--enable-bconly \
+				--enable-libffi \
+				--enable-places
+CS_CONFIGURE_ON=		--enable-csonly \
+				--enable-mach=${CHEZ_MACHTYPE}
 FUTURES_CONFIGURE_ENABLE=	futures
 FUTURES_IMPLIES=		JIT
-FUTURES_PREVENTS=	CS
-FUTURES_PREVENTS_MSG=	CS enables futures by default
+FUTURES_PREVENTS=		CS
+FUTURES_PREVENTS_MSG=		CS enables futures by default
 JIT_CONFIGURE_ENABLE=		jit
-JIT_PREVENTS=	CS
-JIT_PREVENTS_MSG=	CS enables jit by default
+JIT_PREVENTS=			CS
+JIT_PREVENTS_MSG=		CS enables jit by default
 
 .include <bsd.port.options.mk>
 
