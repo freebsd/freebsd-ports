@@ -3,7 +3,7 @@
   message: <<EOM
 Support for 7zip and rar archives requires the appropriate executables.
 If ark has been packaged without options 7ZIP or RAR, you can install
-archivers/p7zip (for 7ZIP) or archivers/unrar and archivers/rar (for RAR)
+archivers/7-zip (for 7ZIP) or archivers/unrar and archivers/rar (for RAR)
 to allow ark to handle those archives.
 EOM
 }

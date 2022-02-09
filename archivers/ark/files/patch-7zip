@@ -1,0 +1,76 @@
+diff --git a/plugins/cli7zplugin/CMakeLists.txt b/plugins/cli7zplugin/CMakeLists.txt
+index 735c833a..3450a504 100644
+--- a/plugins/cli7zplugin/CMakeLists.txt
++++ b/plugins/cli7zplugin/CMakeLists.txt
+@@ -7,7 +7,7 @@ set(kerfuffle_cli7z_SRCS cliplugin.cpp)
+ ecm_qt_declare_logging_category(kerfuffle_cli7z_SRCS
+                                 HEADER ark_debug.h
+                                 IDENTIFIER ARK
+-                                CATEGORY_NAME ark.cli7z DESCRIPTION "Ark p7zip" EXPORT ARK)
++                                CATEGORY_NAME ark.cli7z DESCRIPTION "Ark 7-Zip" EXPORT ARK)
+ 
+ # NOTE: the first double-quotes of the first mime and the last
+ # double-quotes of the last mime must NOT be escaped.
+@@ -24,9 +24,9 @@ kerfuffle_add_plugin(kerfuffle_cli7z ${kerfuffle_cli7z_SRCS})
+ set(SUPPORTED_ARK_MIMETYPES "${SUPPORTED_ARK_MIMETYPES}${SUPPORTED_CLI7Z_MIMETYPES}" PARENT_SCOPE)
+ set(INSTALLED_KERFUFFLE_PLUGINS "${INSTALLED_KERFUFFLE_PLUGINS}kerfuffle_cli7z;" PARENT_SCOPE)
+ 
+-find_program(P7ZIP 7z)
+-if(P7ZIP)
+-    message(STATUS "Found p7zip executable: ${P7ZIP}")
++find_program(7ZIP 7z)
++if(7ZIP)
++    message(STATUS "Found 7-Zip executable: ${7ZIP}")
+ else()
+     message(WARNING "Could not find the 7z executable. Ark won't be able to handle the 7z archive format.")
+ endif()
+diff --git a/plugins/cli7zplugin/cliplugin.cpp b/plugins/cli7zplugin/cliplugin.cpp
+index 1781117a..3450ad22 100644
+--- a/plugins/cli7zplugin/cliplugin.cpp
++++ b/plugins/cli7zplugin/cliplugin.cpp
+@@ -50,8 +50,7 @@ void CliPlugin::setupCliProperties()
+     m_cliProps->setProperty("captureProgress", false);
+ 
+     m_cliProps->setProperty("addProgram", QStringLiteral("7z"));
+-    m_cliProps->setProperty("addSwitch", QStringList{QStringLiteral("a"),
+-                                                 QStringLiteral("-l")});
++    m_cliProps->setProperty("addSwitch", QStringLiteral("a"));
+ 
+     m_cliProps->setProperty("deleteProgram", QStringLiteral("7z"));
+     m_cliProps->setProperty("deleteSwitch", QStringLiteral("d"));
+@@ -111,7 +110,7 @@ bool CliPlugin::readListLine(const QString& line)
+         return false;
+     }
+ 
+-    const QRegularExpression rxVersionLine(QStringLiteral("^p7zip Version ([\\d\\.]+) .*$"));
++    const QRegularExpression rxVersionLine(QStringLiteral("^7-Zip .* ([\\d\\.]+) .*$"));
+     QRegularExpressionMatch matchVersion;
+ 
+     switch (m_parseState) {
+@@ -120,7 +119,7 @@ bool CliPlugin::readListLine(const QString& line)
+         if (matchVersion.hasMatch()) {
+             m_parseState = ParseStateHeader;
+             const QString p7zipVersion = matchVersion.captured(1);
+-            qCDebug(ARK) << "p7zip version" << p7zipVersion << "detected";
++            qCDebug(ARK) << "7-Zip version" << p7zipVersion << "detected";
+         }
+         break;
+ 
+@@ -294,7 +293,7 @@ bool CliPlugin::readDeleteLine(const QString &line)
+ {
+     if (line.startsWith(QLatin1String("Error: ")) &&
+         line.endsWith(QLatin1String(" is not supported archive"))) {
+-        Q_EMIT error(i18n("Delete operation failed. Try upgrading p7zip or disabling the p7zip plugin in the configuration dialog."));
++        Q_EMIT error(i18n("Delete operation failed. Try upgrading 7-Zip or disabling the 7-Zip plugin in the configuration dialog."));
+         return false;
+     }
+ 
+@@ -333,7 +332,7 @@ void CliPlugin::handleMethods(const QStringList &methods)
+ 
+ bool CliPlugin::isPasswordPrompt(const QString &line)
+ {
+-    return line.startsWith(QLatin1String("Enter password (will not be echoed):"));
++    return line.startsWith(QLatin1String("Enter password"));
+ }
+ 
+ bool CliPlugin::isWrongPasswordMsg(const QString &line)

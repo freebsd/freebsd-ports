@@ -1,5 +1,6 @@
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,6 +20,8 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 
 USE_LDCONFIG=	yes
 
+PATCH_STRIP=	-p1
+
 OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
 OPTIONS_DEFAULT=	7ZIP ZIP DOCS
 OPTIONS_DEFAULT_i386=	RAR
@@ -28,7 +31,7 @@ OPTIONS_SUB=		YES
 # The 7ZIP and RAR options only need runtime dependencies;
 # the port builds identically with or without them.
 7ZIP_DESC=	Support for 7-Zip archives (runtime)
-7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
+7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 
 RAR_DESC=	Support for RAR archives (runtime)
 RAR_RUN_DEPENDS=	unrar:archivers/unrar \
@@ -40,5 +43,11 @@ ZIP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibZip
 
 # Override shared library version
 KDE_APPLICATIONS_SHLIB_VER=	${KDE_APPLICATIONS_VERSION}
+
+post-patch:
+	${REINPLACE_CMD} '/Program/s,"7z","7zz",' \
+		${WRKSRC}/plugins/cli7zplugin/cliplugin.cpp
+	${REINPLACE_CMD} 's,"7z","7zz",' \
+		${WRKSRC}/plugins/cli7zplugin/kerfuffle_cli7z.json.cmake
 
 .include <bsd.port.mk>
