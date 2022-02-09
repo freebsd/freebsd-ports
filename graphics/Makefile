@@ -268,6 +268,7 @@
     SUBDIR += gkrellkam2
     SUBDIR += glad
     SUBDIR += glaxnimate
+    SUBDIR += glbinding
     SUBDIR += gle
     SUBDIR += glee
     SUBDIR += glew
