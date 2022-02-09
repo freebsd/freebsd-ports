@@ -194,6 +194,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/pkg/private/get-info.rkt
 %%DATADIR%%/collects/pkg/private/git-url-scheme.rkt
 %%DATADIR%%/collects/pkg/private/git.rkt
+%%DATADIR%%/collects/pkg/private/github-url.rkt
 %%DATADIR%%/collects/pkg/private/info-to-desc.rkt
 %%DATADIR%%/collects/pkg/private/install.rkt
 %%DATADIR%%/collects/pkg/private/lock.rkt
@@ -321,6 +322,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/include.rkt
 %%DATADIR%%/collects/racket/info.rkt
 %%DATADIR%%/collects/racket/init.rkt
+%%DATADIR%%/collects/racket/interaction-info.rkt
 %%DATADIR%%/collects/racket/interactive.rkt
 %%DATADIR%%/collects/racket/kernel.rkt
 %%DATADIR%%/collects/racket/kernel/init.rkt
@@ -690,6 +692,8 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/xml/xml.rkt
 %%DATADIR%%/links.rktd
 %%DATADIR%%/pkgs/.LOCKpkgs.rktd
+%%DATADIR%%/pkgs/base/LICENSE
+%%DATADIR%%/pkgs/base/info.rkt
 %%DATADIR%%/pkgs/pkgs.rktd
 %%DATADIR%%/pkgs/racket-lib/LICENSE
 %%DATADIR%%/pkgs/racket-lib/info.rkt
@@ -1008,6 +1012,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/git-url-
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/git-url-scheme_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/git_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/git_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/github-url_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/github-url_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/info-to-desc_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/info-to-desc_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/install_rkt.dep
@@ -1138,6 +1144,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/info_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/info_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/init_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/init_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/interaction-info_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/interaction-info_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/interactive_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/interactive_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/kernel_rkt.dep
