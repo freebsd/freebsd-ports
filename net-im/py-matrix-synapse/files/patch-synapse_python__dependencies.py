@@ -1,4 +1,4 @@
---- synapse/python_dependencies.py.orig	2022-01-15 14:42:17 UTC
+--- synapse/python_dependencies.py.orig	2022-02-08 11:47:35 UTC
 +++ synapse/python_dependencies.py
 @@ -51,7 +51,7 @@ REQUIREMENTS = [
      # we use the TYPE_CHECKER.redefine method added in jsonschema 3.0.0
@@ -9,12 +9,21 @@
      "unpaddedbase64>=1.1.0",
      "canonicaljson>=1.4.0",
      # we use the type definitions added in signedjson 1.1.
-@@ -86,7 +86,7 @@ REQUIREMENTS = [
+@@ -77,7 +77,7 @@ REQUIREMENTS = [
+     "phonenumbers>=8.2.0",
+     # we use GaugeHistogramMetric, which was added in prom-client 0.4.0.
+     # 0.13.0 has an incorrect type annotation, see #11832.
+-    "prometheus_client>=0.4.0,<0.13.0",
++    "prometheus_client>=0.4.0",
+     # we use `order`, which arrived in attrs 19.2.0.
+     # Note: 21.1.0 broke `/sync`, see #9936
+     "attrs>=19.2.0,!=21.1.0",
+@@ -87,7 +87,7 @@ REQUIREMENTS = [
      "typing-extensions>=3.7.4",
      # We enforce that we have a `cryptography` version that bundles an `openssl`
      # with the latest security patches.
 -    "cryptography>=3.4.7",
 +    "cryptography",
      "ijson>=3.1",
+     "matrix-common==1.0.0",
  ]
- 
