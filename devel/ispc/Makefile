@@ -3,7 +3,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -40,7 +40,11 @@ BINARY_ALIAS=	flex=${LOCALBASE}/bin/flex python=${PYTHON_CMD} m4=${LOCALBASE}/bi
 PLIST_FILES=	bin/ispc \
 		bin/check_isa
 
-OPTIONS_DEFINE_amd64=	XE
+OPTIONS_DEFINE_amd64=	ARM XE
+OPTIONS_DEFINE_i386=	ARM
+
+ARM_DESC=		Enable ARM support - requires ARM backend in LLVM
+ARM_CMAKE_BOOL=		ARM_ENABLED
 
 XE_DESC=		Enable Intel Xe support
 XE_BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VERSION}/lib/libLLVMGenXIntrinsics.a:devel/vc-intrinsics@llvm${LLVM_VERSION}
