@@ -6933,7 +6933,7 @@ In limited circumstances it was possible for users to authenticate using variati
     <affects>
       <package>
 	<name>libX11</name>
-	<range><lt>1.7.1</lt></range>
+	<range><lt>1.7.1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -6956,6 +6956,7 @@ In limited circumstances it was possible for users to authenticate using variati
     <dates>
       <discovery>2021-05-11</discovery>
       <entry>2021-06-01</entry>
+      <modified>2022-02-08</modified>
     </dates>
   </vuln>
 
