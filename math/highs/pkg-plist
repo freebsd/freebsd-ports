@@ -62,6 +62,7 @@ include/model/HighsHessianUtils.h
 include/model/HighsModel.h
 include/parallel/HighsBinarySemaphore.h
 include/parallel/HighsCacheAlign.h
+include/parallel/HighsCombinable.h
 include/parallel/HighsMutex.h
 include/parallel/HighsParallel.h
 include/parallel/HighsSpinMutex.h
@@ -129,7 +130,7 @@ lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
 lib/libbasiclu.so
 lib/libhighs.so
-lib/libhighs.so.1.1
-lib/libhighs.so.1.1.1
+lib/libhighs.so.1.2
+lib/libhighs.so.1.2.0
 lib/libipx.so
 libdata/pkgconfig/highs.pc
