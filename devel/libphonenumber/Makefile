@@ -1,6 +1,7 @@
 PORTNAME=	libphonenumber
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.12.42
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,9 +9,9 @@ COMMENT=	Library for parsing, formatting, and validating phone numbers
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	googletest>0:devel/googletest \
-		abseil>0:devel/abseil
-LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
+BUILD_DEPENDS=	googletest>0:devel/googletest
+LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
+		libboost_atomic.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		libprotobuf.so:devel/protobuf
 
