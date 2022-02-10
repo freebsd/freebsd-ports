@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: kineto
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# kineto_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable kineto.
+# kineto_root (str):		Default is gemini://localhost
+#				The gemini root proxy URL
+# kineto_bind (str):		The bind address
+#				unset by default - will bind to :8080
+# kineto_css_path (str):	File system path of CSS stylesheet
+#				Unset by default
+# kineto_css_url (str):		URL of CSS stylesheet
+#				Unset by default
+# kineta_user (str):		Default "nobody"
+#				The kineto process user
+
+. /etc/rc.subr
+
+name=kineto
+desc="HTTP to Gemini proxy"
+rcvar=kineto_enable
+
+load_rc_config $name
+
+: ${kineto_enable:=NO}
+: ${kineto_root=gemini://localhost}
+: ${kineto_user=nobody}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="${kineto_root}"
+pidfile="/var/run/${name}.pid"
+
+start_precmd="${name}_setflags"
+start_cmd="${name}_start"
+
+kineto_setflags()
+{
+    rc_flags="${kineto_bind:+-b $kineto_bind }${kineto_css_path:+-s $kineto_css_path }${kineto_css_url:+-e $kineto_css_url }${rc_flags}"
+}
+
+kineto_start()
+{
+    check_startmsgs && echo "Starting ${name}."
+    /usr/sbin/daemon -S -s info -l daemon -T $name -u "${kineto_user}" -p "${pidfile}" $command $rc_flags $command_args
+}
+
+run_rc_command "$1"
