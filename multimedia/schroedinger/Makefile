@@ -14,6 +14,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandoned legacy video codec, upstream is dead and last release was back in 2012.
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
 USES=		libtool pkgconfig
