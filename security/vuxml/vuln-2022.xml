@@ -1,3 +1,57 @@
+  <vuln vid="ff5606f7-8a45-11ec-8be6-d4c9ef517024">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb103-client</name>
+	<range><lt>10.3.33</lt></range>
+      </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.33</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-client</name>
+	<range><lt>10.4.23</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.23</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-client</name>
+	<range><lt>10.5.14</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MariaDB reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/cve/">
+	  <p>MariaDB reports 5 vulnerabilities in supported versions
+	    without further detailed information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24052</cvename>
+      <cvename>CVE-2022-24051</cvename>
+      <cvename>CVE-2022-24050</cvename>
+      <cvename>CVE-2022-24048</cvename>
+      <cvename>CVE-2021-46659</cvename>
+      <url>https://mariadb.com/kb/en/cve/</url>
+      <url>https://mariadb.com/kb/en/mdb-10333-rn/</url>
+      <url>https://mariadb.com/kb/en/mdb-10423-rn/</url>
+      <url>https://mariadb.com/kb/en/mdb-10514-rn/</url>
+    </references>
+    <dates>
+      <discovery>2022-02-10</discovery>
+      <entry>2022-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc2a9541-8893-11ec-9d01-80ee73419af3">
     <topic>xrdp -- privilege escalation</topic>
     <affects>
