@@ -1,8 +1,8 @@
 automake has warnings, it is ok here.
 
---- configure.ac.orig	2021-09-17 07:10:48 UTC
+--- configure.ac.orig	2022-02-09 16:40:14 UTC
 +++ configure.ac
-@@ -46,7 +46,7 @@ AC_CANONICAL_HOST
+@@ -48,7 +48,7 @@ AC_CANONICAL_HOST
  AC_CANONICAL_TARGET
  
  AC_CONFIG_SRCDIR([bin/named/main.c])

@@ -49,13 +49,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.18a0.2021.10.08
+ISCVERSION=	9.17.22a0.2022.02.09
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	e112afa15668bd3b1baed59df2d21e01b46da15e
+GL_COMMIT=	59c3b17ad0b7590350b516eff62abde6a1f4382b
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -122,6 +122,11 @@ PORTREVISION_DESC=	Show PORTREVISION in the version string
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 START_LATE_DESC=	Start BIND late in the boot process (see help)
 TCP_FASTOPEN_DESC=	RFC 7413 support
+
+DOCS_ALL_TARGET=	all html
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+DOCS_USES=	python:env
 
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
@@ -231,9 +236,10 @@ post-install:
 	@${RM} -rf ${STAGEDIR}/wrkdirs
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/arm/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/arm
 .else
 
 do-install:
