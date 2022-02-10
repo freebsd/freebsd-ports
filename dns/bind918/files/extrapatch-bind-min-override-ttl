@@ -1,0 +1,61 @@
+Add the override-cache-ttl feature.
+
+--- bin/named/config.c.orig	2022-01-24 08:28:57 UTC
++++ bin/named/config.c
+@@ -172,6 +172,7 @@ options {\n\
+ 	notify-source *;\n\
+ 	notify-source-v6 *;\n\
+ 	nsec3-test-zone no;\n\
++	override-cache-ttl 0; /* do not override */\n\
+ 	parental-source *;\n\
+ 	parental-source-v6 *;\n\
+ 	provide-ixfr true;\n\
+--- bin/named/server.c.orig	2022-01-24 08:28:57 UTC
++++ bin/named/server.c
+@@ -4482,6 +4482,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+ 	}
+ 
+ 	obj = NULL;
++	result = named_config_get(maps, "override-cache-ttl", &obj);
++	INSIST(result == ISC_R_SUCCESS);
++	view->overridecachettl = cfg_obj_asduration(obj);
++
++	obj = NULL;
+ 	result = named_config_get(maps, "max-cache-ttl", &obj);
+ 	INSIST(result == ISC_R_SUCCESS);
+ 	view->maxcachettl = cfg_obj_asduration(obj);
+--- lib/dns/include/dns/view.h.orig	2022-01-24 08:28:57 UTC
++++ lib/dns/include/dns/view.h
+@@ -155,6 +155,7 @@ struct dns_view {
+ 	bool		      requestnsid;
+ 	bool		      sendcookie;
+ 	dns_ttl_t	      maxcachettl;
++	dns_ttl_t	      overridecachettl;
+ 	dns_ttl_t	      maxncachettl;
+ 	dns_ttl_t	      mincachettl;
+ 	dns_ttl_t	      minncachettl;
+--- lib/dns/resolver.c.orig	2022-01-24 08:28:57 UTC
++++ lib/dns/resolver.c
+@@ -6119,6 +6119,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
+ 		}
+ 
+ 		/*
++		 * Enforce the configure cache TTL override.
++		 */
++                if (res->view->overridecachettl)
++                        rdataset->ttl = res->view->overridecachettl;
++
++		/*
+ 		 * Enforce the configure maximum cache TTL.
+ 		 */
+ 		if (rdataset->ttl > res->view->maxcachettl) {
+--- lib/isccfg/namedconf.c.orig	2022-01-24 08:28:57 UTC
++++ lib/isccfg/namedconf.c
+@@ -2086,6 +2086,7 @@ static cfg_clausedef_t view_clauses[] = {
+ #endif /* ifdef HAVE_LMDB */
+ 	{ "max-acache-size", NULL, CFG_CLAUSEFLAG_ANCIENT },
+ 	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
++	{ "override-cache-ttl", &cfg_type_duration, 0 },
+ 	{ "max-cache-ttl", &cfg_type_duration, 0 },
+ 	{ "max-clients-per-query", &cfg_type_uint32, 0 },
+ 	{ "max-ncache-ttl", &cfg_type_duration, 0 },

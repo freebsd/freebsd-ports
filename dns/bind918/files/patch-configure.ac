@@ -1,0 +1,13 @@
+automake has warnings, it is ok here.
+
+--- configure.ac.orig	2022-01-24 20:06:11 UTC
++++ configure.ac
+@@ -48,7 +48,7 @@ AC_CANONICAL_HOST
+ AC_CANONICAL_TARGET
+ 
+ AC_CONFIG_SRCDIR([bin/named/main.c])
+-AM_INIT_AUTOMAKE([1.9 tar-pax foreign subdir-objects dist-xz no-dist-gzip -Wall -Werror])
++AM_INIT_AUTOMAKE([1.9 tar-pax foreign subdir-objects dist-xz no-dist-gzip -Wall])
+ AM_SILENT_RULES([yes])
+ AM_EXTRA_RECURSIVE_TARGETS([test unit doc])
+ 

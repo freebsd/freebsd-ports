@@ -1,0 +1,22 @@
+Exclude the "tools" from building and installing.
+
+--- bin/Makefile.am.orig	2021-09-17 07:10:48 UTC
++++ bin/Makefile.am
+@@ -1 +1 @@
+-SUBDIRS = named rndc dig delv dnssec tools nsupdate check confgen tests plugins
++SUBDIRS = named rndc tools check confgen tests plugins
+--- bin/tools/Makefile.am.orig	2021-09-17 07:10:48 UTC
++++ bin/tools/Makefile.am
+@@ -9,11 +9,7 @@ LDADD +=			\
+ 	$(LIBISC_LIBS)
+ 
+ bin_PROGRAMS =			\
+-	arpaname		\
+-	mdig			\
+-	named-journalprint	\
+-	named-rrchecker		\
+-	nsec3hash
++	named-journalprint
+ 
+ arpaname_LDADD =		\
+ 	$(LIBISC_LIBS)
