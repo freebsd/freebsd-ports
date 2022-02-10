@@ -1,5 +1,5 @@
---- deps/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2021-09-09 17:30:32 UTC
-+++ deps/boringssl/src/crypto/cpu-aarch64-linux.c
+--- quiche/deps/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2021-09-09 17:30:32 UTC
++++ quiche/deps/boringssl/src/crypto/cpu-aarch64-linux.c
 @@ -14,49 +14,45 @@
  
  #include <openssl/cpu.h>
