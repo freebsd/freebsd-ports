@@ -22,7 +22,7 @@
  
  IF(NOT WITHOUT_SERVER)
    MYSQL_ADD_EXECUTABLE(mysql_upgrade
-@@ -55,6 +59,7 @@ IF(NOT WITHOUT_SERVER)
+@@ -55,6 +59,7 @@ IF(NOT_WITHOUT_SERVER)
      )
  ENDIF()
  
