@@ -1,3 +1,3 @@
-TIMESTAMP = 1643784764
-SHA256 (oci-2.55.1.tar.gz) = af94db42d3ff4e2bc8315073bab8bee06e1a0692af85a3e1de533b48b6576a26
-SIZE (oci-2.55.1.tar.gz) = 5858544
+TIMESTAMP = 1644349278
+SHA256 (oci-2.56.0.tar.gz) = 752593f39f85ef91cdbc3f237d09ca80ae40f617167adaf7cedddf3bc6dedf0f
+SIZE (oci-2.56.0.tar.gz) = 5885884
