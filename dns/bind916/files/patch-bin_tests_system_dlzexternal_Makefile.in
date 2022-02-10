@@ -1,8 +1,8 @@
 BIND9 seems to be abusing LDFLAGS here, and it breaks our linker.
 
---- bin/tests/system/dlzexternal/Makefile.in.orig	2019-06-28 12:33:29 UTC
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2022-01-12 13:50:10 UTC
 +++ bin/tests/system/dlzexternal/Makefile.in
-@@ -35,7 +35,7 @@ OBJS =
+@@ -37,7 +37,7 @@ OBJS =
  @BIND9_MAKE_RULES@
  
  CFLAGS =	@CFLAGS@ @SO_CFLAGS@
