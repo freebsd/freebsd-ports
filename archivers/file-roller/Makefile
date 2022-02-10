@@ -2,6 +2,7 @@
 
 PORTNAME=	file-roller
 PORTVERSION=	3.40.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -62,5 +63,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/fr-command-tar.c \
 		${WRKSRC}/src/fr-command-zip.c
+	@${REINPLACE_CMD} -e 's|"7z"|"7zz"|g' \
+		${WRKSRC}/src/fr-archive-libarchive.c \
+		${WRKSRC}/src/fr-command-7z.c \
+		${WRKSRC}/src/fr-command-tar.c
 
 .include <bsd.port.mk>
