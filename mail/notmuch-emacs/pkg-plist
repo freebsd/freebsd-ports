@@ -17,7 +17,7 @@
 %%EMACS_SITE_LISPDIR%%/notmuch-jump.elc
 %%EMACS_SITE_LISPDIR%%/notmuch-lib.el.gz
 %%EMACS_SITE_LISPDIR%%/notmuch-lib.elc
-%%EMACS_SITE_LISPDIR%%/notmuch-logo.png
+%%EMACS_SITE_LISPDIR%%/notmuch-logo.svg
 %%EMACS_SITE_LISPDIR%%/notmuch-maildir-fcc.el.gz
 %%EMACS_SITE_LISPDIR%%/notmuch-maildir-fcc.elc
 %%EMACS_SITE_LISPDIR%%/notmuch-message.el.gz
