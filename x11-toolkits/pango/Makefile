@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	pango
-PORTVERSION=	1.50.3
+PORTVERSION=	1.50.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,7 +28,7 @@ USE_GNOME=	cairo glib20 introspection:build
 CPE_VENDOR=	gnome
 
 VERSION=	1.8.0
-LIBVERSION=	0.5000.3
+LIBVERSION=	0.5000.4
 PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
 
 FONTSCALE=	${LOCALBASE}/share/fonts/TTF/luximb.ttf

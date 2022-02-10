@@ -13,6 +13,7 @@ include/pango-1.0/pango/pango-enum-types.h
 include/pango-1.0/pango/pango-features.h
 include/pango-1.0/pango/pango-font.h
 include/pango-1.0/pango/pango-fontmap.h
+include/pango-1.0/pango/pango-fontset-simple.h
 include/pango-1.0/pango/pango-fontset.h
 include/pango-1.0/pango/pango-glyph-item.h
 include/pango-1.0/pango/pango-glyph.h
@@ -889,6 +890,7 @@ share/gir-1.0/PangoOT-1.0.gir
 %%PORTDOCS%%%%DOCSDIR%%/reference/PangoFc/const.VERSION.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/PangoFc/fonts.css
 %%PORTDOCS%%%%DOCSDIR%%/reference/PangoFc/fzy.js
+%%PORTDOCS%%%%DOCSDIR%%/reference/Pango/method.Matrix.get_slant_ratio.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/PangoFc/go-up-symbolic.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/PangoFc/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/PangoFc/index.json
