@@ -1,9 +1,9 @@
---- ../spnego-http-auth-nginx-module-72c8ee0/config.orig	2020-10-17 22:35:57.676855000 +0200
-+++ ../spnego-http-auth-nginx-module-72c8ee0/config	2020-10-17 22:40:49.255324000 +0200
+--- ../spnego-http-auth-nginx-module-c626163/config.orig	2020-10-17 22:35:57.676855000 +0200
++++ ../spnego-http-auth-nginx-module-c626163/config	2020-10-17 22:40:49.255324000 +0200
 @@ -1,8 +1,10 @@
  ngx_addon_name=ngx_http_auth_spnego_module
 -ngx_feature_libs="-lgssapi_krb5 -lkrb5 -lcom_err"
-+ngx_feature_libs="%%GSSAPILIBS%%"
++ngx_feature_libs="-L%%GSSAPILIBDIR%% %%GSSAPILIBS%%"
 +ngx_module_incs="%%GSSAPINCDIR%%"
  
 +

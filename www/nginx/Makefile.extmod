@@ -76,7 +76,7 @@ HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:80d89d9:http_auth_jwt
 HTTP_AUTH_JWT_VARS=			DSO_EXTMODS+=http_auth_jwt
 HTTP_AUTH_JWT_LIB_DEPENDS=	libjwt.so:www/libjwt libjansson.so:devel/jansson
 
-HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:72c8ee0:auth_krb5
+HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:c626163:auth_krb5
 HTTP_AUTH_KRB5_VARS=		DSO_EXTMODS+=auth_krb5
 HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
 
