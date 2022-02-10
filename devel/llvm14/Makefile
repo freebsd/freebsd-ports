@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	13.0.1
+DISTVERSION=	14.0.0rc1
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -44,10 +44,10 @@ SHEBANG_FILES=	\
 		clang/tools/scan-build-py/bin/analyze-build \
 		clang/tools/scan-build-py/bin/intercept-build \
 		clang/tools/scan-build-py/bin/scan-build \
-		clang/tools/scan-build-py/libexec/analyze-cc \
 		clang/tools/scan-build-py/libexec/analyze-c++ \
-		clang/tools/scan-build-py/libexec/intercept-cc \
+		clang/tools/scan-build-py/libexec/analyze-cc \
 		clang/tools/scan-build-py/libexec/intercept-c++ \
+		clang/tools/scan-build-py/libexec/intercept-cc \
 		clang/tools/scan-view/bin/scan-view \
 		clang/utils/hmaptool/hmaptool \
 		llvm/tools/opt-viewer/opt-diff.py \
@@ -236,6 +236,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-strip.1 \
 		llvm-symbolizer.1 \
 		llvm-tblgen.1 \
+		llvm-tli-checker.1 \
 		tblgen.1 \
 		opt.1
 
@@ -264,9 +265,9 @@ EXTRAS_LIBS=	libclangApplyReplacements \
 EXTRAS_FILES=	index.js
 EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EXTRAS_FILES:tW:C/  */|/g}
 
-FLANG_PATTERN=	${FLANG_COMMANDS:S/^/bin./:tW:C/  */|/g}|flang|libFIROptimizer|libFortran
+FLANG_PATTERN=	${FLANG_COMMANDS:S/^/bin./:tW:C/  */|/g}|flang|libFIR|libFortran
 
-MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR
+MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR|obj.MLIRCAP
 
 .include <bsd.port.options.mk>
 
@@ -297,7 +298,7 @@ MAN1SRCS+=	clang.1 \
 		clang-tblgen.1 \
 		diagtool.1 \
 		scan-build.1
-CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer|AnalyzerPlugin.so)
+CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer|AnalyzerPlugin.so)
 USES+=		gnome
 .endif
 
@@ -389,8 +390,7 @@ STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis
-_BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
-_BE_LIBS_BACKWARDS_AMDGPU=MCACustomBehaviour
+_BE_LIBS_AMDGPU=	AsmParser Disassembler TargetMCA Utils
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler
@@ -404,8 +404,9 @@ _BE_LIBS_BACKWARDS_PowerPC=Exegesis
 _BE_LIBS_RISCV=		AsmParser Disassembler
 _BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
+_BE_LIBS_VE=		AsmParser Disassembler
 _BE_LIBS_WebAssembly=	AsmParser Disassembler Utils
-_BE_LIBS_X86=		AsmParser Disassembler
+_BE_LIBS_X86=		AsmParser Disassembler TargetMCA
 _BE_LIBS_BACKWARDS_X86=Exegesis
 _BE_LIBS_XCore=		Disassembler
 .for BE in FREEBSD NATIVE STANDARD
@@ -424,6 +425,7 @@ _COMPILER_RT_LIBS_i386=	\
 	libclang_rt.asan-i386.a \
 	libclang_rt.asan-i386.so \
 	libclang_rt.asan-preinit-i386.a \
+	libclang_rt.asan_static-i386.a \
 	libclang_rt.asan_cxx-i386.a \
 	libclang_rt.builtins-i386.a \
 	libclang_rt.cfi-i386.a \
@@ -447,6 +449,7 @@ _COMPILER_RT_LIBS=	\
 	libclang_rt.asan-x86_64.so \
 	libclang_rt.asan_cxx-x86_64.a \
 	libclang_rt.asan_cxx-x86_64.a.syms \
+	libclang_rt.asan_static-x86_64.a \
 	libclang_rt.builtins-x86_64.a \
 	libclang_rt.cfi-x86_64.a \
 	libclang_rt.cfi_diag-x86_64.a \
@@ -466,6 +469,7 @@ _COMPILER_RT_LIBS=	\
 	libclang_rt.stats_client-x86_64.a \
 	libclang_rt.tsan-x86_64.a \
 	libclang_rt.tsan-x86_64.a.syms \
+	libclang_rt.tsan-x86_64.so \
 	libclang_rt.tsan_cxx-x86_64.a \
 	libclang_rt.tsan_cxx-x86_64.a.syms \
 	libclang_rt.ubsan_minimal-x86_64.a \
@@ -536,7 +540,8 @@ post-install:
 post-install-DOCS-on:
 	${RM} -r ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/* ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM/* ${STAGEDIR}${DOCSDIR}
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc
 .for _man in ${MAN1SRCS}
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
@@ -545,6 +550,9 @@ post-install-DOCS-on:
 .if ! ${PORT_OPTIONS:MLIT}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
+.endif
+.if ! ${PORT_OPTIONS:MLLDB}
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lldb-tblgen.1
 .endif
 .if ! ${PORT_OPTIONS:MMLIR}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/mlir-tblgen.1
@@ -628,6 +636,7 @@ build-plist:
 	    ${GREP} -v '[/-]lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
+	    -e 's|${PYTHON_EXT_SUFFIX:C/\./\\./g}|%%PYTHON_EXT_SUFFIX%%|' \
 	    -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \

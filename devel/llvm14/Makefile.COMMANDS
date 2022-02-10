@@ -14,6 +14,7 @@ LLVM_COMMANDS=	\
 		llvm-cov \
 		llvm-cvtres \
 		llvm-cxxmap \
+		llvm-debuginfod-find \
 		llvm-diff \
 		llvm-dis \
 		llvm-dlltool \
@@ -56,6 +57,7 @@ LLVM_COMMANDS=	\
 		llvm-symbolizer \
 		llvm-tapi-diff \
 		llvm-tblgen \
+		llvm-tli-checker \
 		llvm-undname \
 		llvm-windres \
 		llvm-xray \
@@ -72,6 +74,7 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-wrapper \
 		clang-rename \
@@ -100,7 +103,7 @@ EXTRAS_COMMANDS= \
 		run-clang-tidy
 
 FLANG_COMMANDS= \
-		f18 \
+		bbc \
 		f18-parse-demo \
 		fir-opt \
 		flang \
@@ -115,8 +118,6 @@ LIT_COMMANDS=	\
 LLD_COMMANDS=	\
 		ld.lld \
 		ld64.lld \
-		ld64.lld.darwinnew \
-		ld64.lld.darwinold \
 		lld \
 		lld-link \
 		wasm-ld
@@ -130,10 +131,10 @@ LLDB_COMMANDS=	\
 
 MLIR_COMMANDS=	\
 		mlir-cpu-runner \
-		mlir-linalg-ods-gen \
 		mlir-linalg-ods-yaml-gen \
 		mlir-lsp-server \
 		mlir-opt \
+		mlir-pdll \
 		mlir-reduce \
 		mlir-tblgen \
 		mlir-translate
