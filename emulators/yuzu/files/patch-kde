@@ -1,0 +1,71 @@
+$ pkg install yuzu plasma5-plasma-integration
+$ export XDG_CURRENT_DESKTOP=KDE KDE_FULL_SESSION=true
+$ yuzu
+[...]
+* thread #1, name = 'yuzu', stop reason = signal SIGSEGV: address access protected (fault address: 0x83c1ccc18)
+    frame #0: 0x000000083c1ccc18 libcxxrt.so.1`vtable for __cxxabiv1::__si_class_type_info + 16
+libcxxrt.so.1`vtable for __cxxabiv1::__si_class_type_info:
+->  0x83c1ccc18 <+16>: nop
+    0x83c1ccc19 <+17>: xchgl  %ecx, %eax
+    0x83c1ccc1a <+18>: imull  $0x0, (%rcx), %eax
+    0x83c1ccc1d <+21>: addb   %al, (%rax)
+(lldb) bt
+* thread #1, name = 'yuzu', stop reason = signal SIGSEGV: address access protected (fault address: 0x83c1ccc18)
+  * frame #0: 0x000000083c1ccc18 libcxxrt.so.1`vtable for __cxxabiv1::__si_class_type_info + 16
+    frame #1: 0x0000000822adcf48
+    frame #2: 0x000000089c992d16 libKF5ConfigCore.so.5`KConfigGroupPrivate::create(master=0x0000000822adcf48, name=0x0000000822adceb0, isImmutable=false, isConst=false) at kconfiggroup.cpp:114:13
+    frame #3: 0x000000089c98bc2a libKF5ConfigCore.so.5`KConfigGroup::KConfigGroup(this=0x0000000822adcf38, master=0x0000000822adcf48, _group="Inactive") at kconfiggroup.cpp:476:9
+    frame #4: 0x00000008964fc32f libKF5ConfigWidgets.so.5`KColorSchemePrivate::KColorSchemePrivate(this=0x0000000875c8b3c0, config=0x0000000822add248, state=Inactive, group="Colors:View", defaults=0x00000008964c84b0) at kcolorscheme.cpp:313:38
+    frame #5: 0x00000008964fe613 libKF5ConfigWidgets.so.5`KColorScheme::KColorScheme(this=0x0000000822add250, state=Inactive, set=View, config=KSharedConfigPtr @ 0x0000000822add248) at kcolorscheme.cpp:552:17
+    frame #6: 0x00000008964ff40c libKF5ConfigWidgets.so.5`KColorScheme::createApplicationPalette(config=0x000000088d3a7160) at kcolorscheme.cpp:702:22
+    frame #7: 0x000000088ef1fb6d KDEPlasmaPlatformTheme.so`KHintsSettings::loadPalettes(this=0x000000088d3a7140) at khintssettings.cpp:423:66
+    frame #8: 0x000000088ef1e242 KDEPlasmaPlatformTheme.so`KHintsSettings::KHintsSettings(this=0x000000088d3a7140, kdeglobals=KSharedConfig::Ptr @ 0x0000000822addd10) at khintssettings.cpp:144:5
+    frame #9: 0x000000088ef183e8 KDEPlasmaPlatformTheme.so`KdePlatformTheme::loadSettings(this=0x000000088d3b19c0) at kdeplatformtheme.cpp:179:19
+    frame #10: 0x000000088ef182a2 KDEPlasmaPlatformTheme.so`KdePlatformTheme::KdePlatformTheme(this=0x000000088d3b19c0) at kdeplatformtheme.cpp:62:5
+    frame #11: 0x000000088ef4544a KDEPlasmaPlatformTheme.so`KdePlatformThemePlugin::create(this=0x000000088d38a750, key=0x0000000822adde40, paramList=0x0000000822adde60) at main.cpp:25:20
+    frame #12: 0x000000083710e720 libQt5Gui.so.5`QPlatformTheme* qLoadPlugin<QPlatformTheme, QPlatformThemePlugin, QStringList&>(loader=0x00000008376e6358, key=0x0000000822adde40, args=0x0000000822adde60) at qfactoryloader_p.h:108:52
+    frame #13: 0x000000083710e016 libQt5Gui.so.5`QPlatformThemeFactory::create(key=0x0000000875bc4bb0, platformPluginPath=0x0000000822ade300) at qplatformthemefactory.cpp:73:12
+    frame #14: 0x000000083711adaf libQt5Gui.so.5`init_platform(pluginNamesWithArguments=0x0000000822ade1c8, platformPluginPath=0x0000000822ade300, platformThemeName=0x0000000822ade220, argc=0x0000000822ade6bc, argv=0x0000000822ade9d8) at qguiapplication.cpp:1282:50
+    frame #15: 0x000000083711a111 libQt5Gui.so.5`QGuiApplicationPrivate::createPlatformIntegration(this=0x0000000875c56000) at qguiapplication.cpp:1481:5
+    frame #16: 0x000000083711b22c libQt5Gui.so.5`QGuiApplicationPrivate::createEventDispatcher(this=0x0000000875c56000) at qguiapplication.cpp:1498:9
+    frame #17: 0x000000083573cb75 libQt5Widgets.so.5`QApplicationPrivate::createEventDispatcher(this=0x0000000875c56000) at qapplication.cpp:167:29
+    frame #18: 0x0000000838c2ffc6 libQt5Core.so.5`QCoreApplicationPrivate::init(this=0x0000000875c56000) at qcoreapplication.cpp:835:9
+    frame #19: 0x00000008371157f3 libQt5Gui.so.5`QGuiApplicationPrivate::init(this=0x0000000875c56000) at qguiapplication.cpp:1527:30
+    frame #20: 0x000000083573d129 libQt5Widgets.so.5`QApplicationPrivate::init(this=0x0000000875c56000) at qapplication.cpp:513:29
+    frame #21: 0x000000083573d105 libQt5Widgets.so.5`QApplication::QApplication(this=0x0000000822ade6d0, argc=0x0000000822ade6bc, argv=0x0000000822ade9d8, _internal=331522) at qapplication.cpp:501:8
+    frame #22: 0x00000000006447c1 yuzu`main(argc=1, argv=0x0000000822ade9d8) at main.cpp:3697:32
+    frame #23: 0x0000000000445890 yuzu`_start(ap=<unavailable>, cleanup=<unavailable>) at crt1_c.c:73:7
+(lldb) f 2
+frame #2: 0x000000089bdbad16 libKF5ConfigCore.so.5`KConfigGroupPrivate::create(master=0x000000082359a8a8, name=0x000000082359a810, isImmutable=false, isConst=false) at kconfiggroup.cpp:114:13
+   111      static QExplicitlySharedDataPointer<KConfigGroupPrivate> create(KConfigBase *master, const QByteArray &name, bool isImmutable, bool isConst)
+   112      {
+   113          QExplicitlySharedDataPointer<KConfigGroupPrivate> data;
+-> 114          if (dynamic_cast<KConfigGroup *>(master)) {
+   115              data = new KConfigGroupPrivate(static_cast<KConfigGroup *>(master), isImmutable, isConst, name);
+   116          } else {
+   117              data = new KConfigGroupPrivate(dynamic_cast<KConfig *>(master), isImmutable, isConst, name);
+(lldb) f 22
+frame #22: 0x00000000006447c1 yuzu`main(argc=1, argv=0x0000000822ade9d8) at main.cpp:3697:32
+   3694
+   3695     // Enables the core to make the qt created contexts current on std::threads
+   3696     QCoreApplication::setAttribute(Qt::AA_DontCheckOpenGLContextThreadAffinity);
+-> 3697     QApplication app(argc, argv);
+   3698
+   3699     // Qt changes the locale and causes issues in float conversion using std::to_string() when
+   3700     // generating shaders
+
+--- src/yuzu/main.cpp.orig	2022-02-09 18:29:32 UTC
++++ src/yuzu/main.cpp
+@@ -3692,6 +3692,12 @@ int main(int argc, char* argv[]) {
+     }
+ #endif
+ 
++#if (defined(__FreeBSD__) || defined(__OpenBSD__)) && !defined(_LIBCPP_VERSION)
++    // -static-libstdc++ is fragile on libc++ systems
++    qunsetenv("XDG_CURRENT_DESKTOP");
++    qunsetenv("KDE_FULL_SESSION");
++#endif
++
+     // Enables the core to make the qt created contexts current on std::threads
+     QCoreApplication::setAttribute(Qt::AA_DontCheckOpenGLContextThreadAffinity);
+     QApplication app(argc, argv);
