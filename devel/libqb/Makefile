@@ -1,9 +1,9 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTNAME=		libqb
-DISTVERSIONPREFIX=	v
 DISTVERSION=		2.0.4
 CATEGORIES=		devel
+MASTER_SITES=		https://github.com/ClusterLabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=		egypcio@FreeBSD.org
 COMMENT=		High performance logging, tracing, ipc, and polling library
@@ -11,7 +11,6 @@ COMMENT=		High performance logging, tracing, ipc, and polling library
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-LIB_DEPENDS=		libxml2.so:textproc/libxml2
 TEST_DEPENDS=		checkmk:devel/check
 
 GROUPS=			haclient
@@ -19,20 +18,16 @@ GROUPS=			haclient
 QB_SOCKET_DIR?=		/var/run/qb
 PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
-USES=			autoreconf cpe gmake libtool pathfix pkgconfig python
+USES=			cpe gmake gnome libtool pkgconfig python tar:xz
 CPE_VENDOR=		clusterlabs
-USE_BINUTILS=		yes
-USE_GITHUB=		yes
+GNU_CONFIGURE=		yes
+USE_GNOME=		libxml2
 USE_LDCONFIG=		yes
 
-GH_ACCOUNT=		ClusterLabs
-
-GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-socket-dir=${QB_SOCKET_DIR} \
-			PACKAGE_STRING="${PORTNAME} ${PORTVERSION}" \
-			PACKAGE_VERSION=${PORTVERSION}
-LDFLAGS+=		-B${LOCALBASE}/bin
-PATHFIX_MAKEFILEIN=	Makefile.am
+			PACKAGE_STRING="${PORTNAME} ${DISTVERSION}" \
+			PACKAGE_VERSION=${DISTVERSION}
+LDFLAGS=		-B${LOCALBASE}/bin
 
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
@@ -43,8 +38,11 @@ OPTIONS_SUB=		yes
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-post-patch:
-	${REINPLACE_CMD} -e 's/doxygen2man//g' ${WRKSRC}/Makefile.am
+post-configure:
+	${REINPLACE_CMD} -e 's/install: install-am/install:/g' ${WRKSRC}/doxygen2man/Makefile
+
+post-configure-DOXYGEN-off:
+	${REINPLACE_CMD} -e 's/doxygen2man docs//g' ${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${QB_SOCKET_DIR}
