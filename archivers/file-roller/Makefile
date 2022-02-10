@@ -41,7 +41,7 @@ OPTIONS_GROUP_FORMATS=	7ZIP ARJ LZO RAR ZIP
 FORMATS_DESC=	Additional compression formats support
 
 7ZIP_DESC=	7zip archive support
-7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
+7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 
 ARJ_DESC=	ARJ archive support
 ARJ_RUN_DEPENDS=	arj:archivers/arj
