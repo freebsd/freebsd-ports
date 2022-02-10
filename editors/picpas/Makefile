@@ -41,6 +41,7 @@ LAZBUILD_ARGS=		-d
 post-patch:
 	${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/Source/Globales.pas
 	${REINPLACE_CMD} 's|0.8.7|${PORTVERSION}|g' ${WRKSRC}/version.txt
+	${REINPLACE_CMD} '81d' ${WRKSRC}/Source/FrameSyntaxTree.lfm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/PicPas-freebsd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
