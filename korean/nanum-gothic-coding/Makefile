@@ -1,8 +1,9 @@
-PORTNAME=	nanum-gothic-coding
+PORTNAME=	nanum
 DISTVERSION=	2.5
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	https://github.com/naver/nanumfont/releases/download/VER${DISTVERSION}/ \
 		LOCAL/jkim
+PKGNAMESUFFIX=	-gothic-coding
 DISTNAME=	NanumGothicCoding-${DISTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
