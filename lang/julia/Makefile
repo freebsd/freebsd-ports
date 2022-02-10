@@ -1,9 +1,8 @@
 # Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
 
 PORTNAME=	julia
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.2
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	2
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${DISTVERSION}/
 
