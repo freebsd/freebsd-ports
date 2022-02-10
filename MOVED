@@ -16887,3 +16887,4 @@ security/krb5-117|security/krb5|2022-02-01|Has expired: EOL one year after the r
 www/annie|www/lux|2022-02-03|Project renamed
 devel/rubygem-gettext_i18n_rails_js-rails60|devel/rubygem-gettext_i18n_rails_js-rails61|2022-02-07|Obsolete use devel/rubygem-gettext_i18n_rails_js-rails61 instead
 security/rubygem-devise-two-factor-rails60|security/rubygem-devise-two-factor-rails61|2022-02-07|Obsolete use security/rubygem-devise-two-factor-rails61 instead
+korean/nanumcoding-ttf|korean/nanum-gothic-coding|2022-02-10|Renamed to match upstream naming

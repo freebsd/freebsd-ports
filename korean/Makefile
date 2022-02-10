@@ -26,7 +26,7 @@
     SUBDIR += libreoffice
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
-    SUBDIR += nanumcoding-ttf
+    SUBDIR += nanum-gothic-coding
     SUBDIR += nanumfonts-otf
     SUBDIR += nanumfonts-ttf
     SUBDIR += nhpf
