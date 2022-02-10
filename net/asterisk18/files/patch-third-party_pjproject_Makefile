@@ -1,8 +1,8 @@
---- third-party/pjproject/Makefile.orig	2020-09-09 15:43:27 UTC
+--- third-party/pjproject/Makefile.orig	2022-02-03 12:25:09 UTC
 +++ third-party/pjproject/Makefile
-@@ -98,14 +98,10 @@ _all: $(TARGETS)
+@@ -98,15 +98,11 @@ SHELL_ECHO_PREFIX := echo '[pjproject] '
  
- .DELETE_ON_ERROR:
+ _all: $(TARGETS)
  
 -$(DOWNLOAD_DIR)/$(TARBALL_FILE): ../versions.mak
 -	$(CMD_PREFIX) ($(TARBALL_EXISTS) && $(TARBALL_VERIFY) && touch $@) || (rm -rf $@ ;\
@@ -12,12 +12,14 @@
 +	@true
  
  source/.unpacked: $(DOWNLOAD_DIR)/$(TARBALL_FILE)
--	$(CMD_PREFIX) $(TARBALL_VERIFY) || (rm -rf $@ ;\
--	$(SHELL_ECHO_PREFIX) Retrying download ; $(TARBALL_DOWNLOAD))
- 	$(ECHO_PREFIX) Unpacking $<
- 	-@rm -rf source pjproject-*/ >/dev/null 2>&1
- 	$(CMD_PREFIX) $(TAR) -xjf $<
-@@ -165,7 +161,7 @@ $(PJSIP_LIB_FILES): $(PJLIB_UTIL_LIB_FILES)
+-	$(CMD_PREFIX) \
+-		$(TARBALL_VERIFY) || (rm -rf $@ ; $(SHELL_ECHO_PREFIX) Retrying download ; $(TARBALL_DOWNLOAD)) ;\
+-		$(SHELL_ECHO_PREFIX) Unpacking $< ;\
++	$(SHELL_ECHO_PREFIX) Unpacking $< ;\
+ 		rm -rf source pjproject-*/ $(REALLY_QUIET) || : ;\
+ 		$(TAR) -xjf $< ;\
+ 		mv pjproject-$(PJPROJECT_VERSION) source
+@@ -212,7 +208,7 @@ $(ALL_LIB_FILES): source/build.mak source/pjlib/includ
  
  pjproject.symbols: $(ALL_LIB_FILES)
  	$(ECHO_PREFIX) Generating symbols
