@@ -7,7 +7,7 @@ CATEGORIES=	www databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kristaps.kulis@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pluggable search for Django
 
 LICENSE=	BSD3CLAUSE
