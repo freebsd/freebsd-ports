@@ -1,6 +1,7 @@
 PORTNAME=	openroad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0
+DISTVERSION=	2.0-2930
+DISTVERSIONSUFFIX=	-gaa6d690df
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -15,26 +16,29 @@ BROKEN_i386=	C++ issue on i386, should be resolved in the next update
 BUILD_DEPENDS=	base64:converters/base64 \
 		boost-libs>0:devel/boost-libs \
 		coin-or-lemon>0:math/lemon \
+		gmake:devel/gmake \
 		swig:devel/swig
 LIB_DEPENDS=	libcudd.so:math/cudd \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog
 
-USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 localbase:ldflags python:3.7+,build tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
+USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 localbase:ldflags python:3.7+,build readline tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
 USE_QT=		core gui widgets buildtools_build qmake_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-OpenROAD-Project
 GH_PROJECT=	OpenROAD
-GH_TUPLE=	The-OpenROAD-Project:OpenSTA:be0d38e:The_OpenROAD_Project_OpenSTA/src/sta
+GH_TUPLE=	The-OpenROAD-Project:OpenSTA:d42313d:The_OpenROAD_Project_OpenSTA/src/sta \
+		The-OpenROAD-Project:abc:d1cd437:abc/third-party/abc
 
 CMAKE_OFF=	BUILD_PYTHON FREEBSD_BUILD_TESTS
 CMAKE_ON=	BUILD_TCL
 CMAKE_ARGS=	-DFREEBSD_TCL_VER=${TCL_VER:S/.//} -DFREEBSD_TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
 
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 \
+		-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
+BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH} make=${GMAKE}
 
 PLIST_FILES=	bin/openroad \
 		bin/sta

@@ -1,5 +1,5 @@
---- src/stt/etc/MakeDatVar.tcl.orig	2021-07-23 05:46:52 UTC
-+++ src/stt/etc/MakeDatVar.tcl
+--- src/stt/src/flt/etc/MakeDatVar.tcl.orig	2022-02-10 04:38:37 UTC
++++ src/stt/src/flt/etc/MakeDatVar.tcl
 @@ -32,7 +32,7 @@ close $var_stream
  set b64_file "[file rootname $dat_file].b64"
  set b64_file2 "[file rootname $dat_file].tr"
