@@ -40,7 +40,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=		compiler:c11 cpe libedit pkgconfig ssl tar:xz
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.16.24
+ISCVERSION=	9.16.25
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -139,6 +139,10 @@ DLZ_POSTGRESQL_USES=		pgsql
 
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+DOCS_USES=	python:env
+
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 				libprotobuf-c.so:devel/protobuf-c
@@ -234,6 +238,9 @@ post-patch-PORTREVISION-on:
 		${WRKSRC}/version
 .  endif
 
+post-build-DOCS-on:
+	cd ${WRKSRC}/doc/arm && ${MAKE} html
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
 	${MKDIR} ${STAGEDIR}${ETCDIR}
@@ -251,9 +258,10 @@ post-install:
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/arm/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/arm
 .else
 
 post-install-MANPAGES-on:

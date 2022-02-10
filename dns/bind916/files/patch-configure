@@ -1,6 +1,6 @@
 Fixup gssapi and db detection.
 
---- configure.orig	2021-12-07 12:24:49 UTC
+--- configure.orig	2022-01-12 13:50:10 UTC
 +++ configure
 @@ -17769,27 +17769,9 @@ done
  		# problems start to show up.
@@ -81,7 +81,7 @@ Fixup gssapi and db detection.
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -23320,7 +23262,7 @@ $as_echo "" >&6; }
+@@ -23322,7 +23264,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  

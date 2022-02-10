@@ -1,8 +1,8 @@
 Add the override-cache-ttl feature.
 
---- bin/named/config.c.orig	2021-11-05 09:03:26 UTC
+--- bin/named/config.c.orig	2022-01-12 13:50:10 UTC
 +++ bin/named/config.c
-@@ -165,6 +165,7 @@ options {\n\
+@@ -167,6 +167,7 @@ options {\n\
  	notify-source *;\n\
  	notify-source-v6 *;\n\
  	nsec3-test-zone no;\n\
@@ -10,9 +10,9 @@ Add the override-cache-ttl feature.
  	parental-source *;\n\
  	parental-source-v6 *;\n\
  	provide-ixfr true;\n\
---- bin/named/server.c.orig	2021-11-05 09:03:26 UTC
+--- bin/named/server.c.orig	2022-01-12 13:50:10 UTC
 +++ bin/named/server.c
-@@ -4415,6 +4415,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+@@ -4421,6 +4421,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
  
  	obj = NULL;
@@ -24,9 +24,9 @@ Add the override-cache-ttl feature.
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asduration(obj);
---- lib/dns/include/dns/view.h.orig	2021-11-05 09:03:26 UTC
+--- lib/dns/include/dns/view.h.orig	2022-01-12 13:50:10 UTC
 +++ lib/dns/include/dns/view.h
-@@ -152,6 +152,7 @@ struct dns_view {
+@@ -154,6 +154,7 @@ struct dns_view {
  	bool		      requestnsid;
  	bool		      sendcookie;
  	dns_ttl_t	      maxcachettl;
@@ -34,9 +34,9 @@ Add the override-cache-ttl feature.
  	dns_ttl_t	      maxncachettl;
  	dns_ttl_t	      mincachettl;
  	dns_ttl_t	      minncachettl;
---- lib/dns/resolver.c.orig	2021-11-05 09:03:26 UTC
+--- lib/dns/resolver.c.orig	2022-01-12 13:50:10 UTC
 +++ lib/dns/resolver.c
-@@ -6476,6 +6476,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
+@@ -6478,6 +6478,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
  		}
  
  		/*
@@ -49,9 +49,9 @@ Add the override-cache-ttl feature.
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2021-11-05 09:03:26 UTC
+--- lib/isccfg/namedconf.c.orig	2022-01-12 13:50:10 UTC
 +++ lib/isccfg/namedconf.c
-@@ -2048,6 +2048,7 @@ static cfg_clausedef_t view_clauses[] = {
+@@ -2050,6 +2050,7 @@ static cfg_clausedef_t view_clauses[] = {
  #endif /* ifdef HAVE_LMDB */
  	{ "max-acache-size", &cfg_type_sizenodefault, CFG_CLAUSEFLAG_OBSOLETE },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
