@@ -9,6 +9,11 @@ bin/yosys-smtbmc
 %%DATADIR%%/achronix/speedster22i/cells_sim.v
 %%DATADIR%%/adff2dff.v
 %%DATADIR%%/anlogic/arith_map.v
+%%DATADIR%%/anlogic/brams.txt
+%%DATADIR%%/anlogic/brams_init_16.vh
+%%DATADIR%%/anlogic/brams_init_8.vh
+%%DATADIR%%/anlogic/brams_init_9.vh
+%%DATADIR%%/anlogic/brams_map.v
 %%DATADIR%%/anlogic/cells_map.v
 %%DATADIR%%/anlogic/cells_sim.v
 %%DATADIR%%/anlogic/eagle_bb.v
@@ -108,6 +113,7 @@ bin/yosys-smtbmc
 %%DATADIR%%/include/kernel/constids.inc
 %%DATADIR%%/include/kernel/ff.h
 %%DATADIR%%/include/kernel/ffinit.h
+%%DATADIR%%/include/kernel/fstdata.h
 %%DATADIR%%/include/kernel/hashlib.h
 %%DATADIR%%/include/kernel/log.h
 %%DATADIR%%/include/kernel/macc.h
@@ -122,6 +128,7 @@ bin/yosys-smtbmc
 %%DATADIR%%/include/kernel/yosys.h
 %%DATADIR%%/include/libs/ezsat/ezminisat.h
 %%DATADIR%%/include/libs/ezsat/ezsat.h
+%%DATADIR%%/include/libs/fst/fstapi.h
 %%DATADIR%%/include/libs/json11/json11.hpp
 %%DATADIR%%/include/libs/sha1/sha1.h
 %%DATADIR%%/include/passes/fsm/fsmdata.h
