@@ -65,7 +65,7 @@ APU_CONFIG=	${LOCALBASE}/bin/apu-1-config
 
 CONFIGURE_ARGS+=--with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 CFLAGS+=	-fpic -DPIC
 .endif
 
