@@ -44,7 +44,6 @@ include/h2o/time_.h
 include/h2o/timerwheel.h
 include/h2o/token.h
 include/h2o/token_table.h
-include/h2o/tunnel.h
 include/h2o/url.h
 include/h2o/version.h
 include/h2o/websocket.h

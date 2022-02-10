@@ -2,7 +2,7 @@
 
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20220208
+DISTVERSION=	2.3.0-dev.20220210
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -22,7 +22,7 @@ USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_TAGNAME=	34a5ac2
+GH_TAGNAME=	dcc7134
 
 CONFLICTS=	h2o-2*
 
