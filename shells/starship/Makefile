@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.2.1
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -24,7 +23,14 @@ CARGO_CRATES=	ahash-0.4.7 \
 		ansi_term-0.12.1 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
+		async-broadcast-0.3.4 \
+		async-channel-1.6.1 \
+		async-executor-1.4.1 \
 		async-io-1.6.0 \
+		async-lock-2.4.0 \
+		async-recursion-0.3.2 \
+		async-task-4.1.0 \
+		async-trait-0.1.52 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
@@ -40,11 +46,10 @@ CARGO_CRATES=	ahash-0.4.7 \
 		bytes-1.1.0 \
 		cache-padded-1.1.1 \
 		cc-1.0.70 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.0.7 \
-		clap_complete-3.0.3 \
+		clap-3.0.14 \
+		clap_complete-3.0.6 \
 		clap_derive-3.0.0 \
 		combine-4.6.3 \
 		concurrent-queue-1.2.2 \
@@ -66,27 +71,25 @@ CARGO_CRATES=	ahash-0.4.7 \
 		dirs-sys-next-0.1.2 \
 		dlv-list-0.2.3 \
 		downcast-0.11.0 \
+		easy-parallel-3.2.0 \
 		either-1.6.1 \
-		enumflags2-0.6.4 \
-		enumflags2_derive-0.6.4 \
+		enumflags2-0.7.3 \
+		enumflags2_derive-0.7.3 \
+		event-listener-2.5.2 \
 		fake-simd-0.1.2 \
 		fastrand-1.5.0 \
 		float-cmp-0.9.0 \
 		form_urlencoded-1.0.1 \
 		fragile-1.0.0 \
-		futures-0.3.17 \
-		futures-channel-0.3.17 \
 		futures-core-0.3.17 \
-		futures-executor-0.3.17 \
 		futures-io-0.3.17 \
 		futures-lite-1.12.0 \
-		futures-macro-0.3.17 \
 		futures-sink-0.3.17 \
 		futures-task-0.3.17 \
 		futures-util-0.3.17 \
 		generic-array-0.12.4 \
 		generic-array-0.14.4 \
-		gethostname-0.2.1 \
+		gethostname-0.2.2 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		git2-0.13.25 \
@@ -94,6 +97,7 @@ CARGO_CRATES=	ahash-0.4.7 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
+		hex-0.4.3 \
 		idna-0.2.3 \
 		indexmap-1.8.0 \
 		instant-0.1.10 \
@@ -108,6 +112,7 @@ CARGO_CRATES=	ahash-0.4.7 \
 		libgit2-sys-0.12.26+1.3.0 \
 		libz-sys-1.1.3 \
 		linked-hash-map-0.5.4 \
+		local_ipaddress-0.1.3 \
 		log-0.4.14 \
 		mac-notification-sys-0.3.0 \
 		mach-0.3.2 \
@@ -119,13 +124,10 @@ CARGO_CRATES=	ahash-0.4.7 \
 		minimal-lexical-0.2.1 \
 		mockall-0.11.0 \
 		mockall_derive-0.11.0 \
-		nb-connect-1.2.0 \
-		nix-0.17.0 \
-		nix-0.21.0 \
 		nix-0.23.1 \
 		nom-7.1.0 \
 		normalize-line-endings-0.3.0 \
-		notify-rust-4.5.5 \
+		notify-rust-4.5.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
@@ -136,7 +138,8 @@ CARGO_CRATES=	ahash-0.4.7 \
 		opaque-debug-0.2.3 \
 		open-2.0.2 \
 		ordered-multimap-0.3.1 \
-		os_info-3.0.9 \
+		ordered-stream-0.0.1 \
+		os_info-3.2.0 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
 		path-slash-0.1.4 \
@@ -154,14 +157,11 @@ CARGO_CRATES=	ahash-0.4.7 \
 		predicates-2.1.0 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.3 \
-		proc-macro-crate-0.1.5 \
 		proc-macro-crate-1.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.29 \
-		process_control-3.2.0 \
+		process_control-3.2.1 \
 		quick-xml-0.22.0 \
 		quote-1.0.9 \
 		rand-0.8.4 \
@@ -180,17 +180,18 @@ CARGO_CRATES=	ahash-0.4.7 \
 		rust-argon2-0.8.3 \
 		rust-ini-0.17.0 \
 		ryu-1.0.5 \
-		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		semver-1.0.4 \
-		serde-1.0.133 \
-		serde_derive-1.0.133 \
-		serde_json-1.0.74 \
+		semver-1.0.5 \
+		serde-1.0.136 \
+		serde_derive-1.0.136 \
+		serde_json-1.0.78 \
 		serde_repr-0.1.7 \
 		sha-1-0.8.2 \
 		sha-1-0.10.0 \
+		sha1-0.6.1 \
+		sha1_smol-1.0.0 \
 		shadow-rs-0.8.1 \
-		shell-words-1.0.0 \
+		shell-words-1.1.0 \
 		slab-0.4.4 \
 		socket2-0.4.2 \
 		starship-battery-0.7.9 \
@@ -211,14 +212,14 @@ CARGO_CRATES=	ahash-0.4.7 \
 		tinyvec-1.4.0 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
-		toml_edit-0.13.0 \
+		toml_edit-0.13.4 \
 		treeline-0.1.0 \
 		typenum-1.14.0 \
 		ucd-trie-0.1.3 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.8.0 \
+		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		uom-0.30.0 \
@@ -228,35 +229,35 @@ CARGO_CRATES=	ahash-0.4.7 \
 		vcpkg-0.2.15 \
 		version_check-0.9.3 \
 		versions-4.0.0 \
-		void-1.0.2 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wepoll-ffi-0.1.2 \
-		which-4.2.2 \
+		which-4.2.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.24.0 \
-		windows-sys-0.29.0 \
-		windows_aarch64_msvc-0.29.0 \
+		windows-sys-0.30.0 \
+		windows_aarch64_msvc-0.30.0 \
 		windows_i686_gnu-0.24.0 \
-		windows_i686_gnu-0.29.0 \
+		windows_i686_gnu-0.30.0 \
 		windows_i686_msvc-0.24.0 \
-		windows_i686_msvc-0.29.0 \
+		windows_i686_msvc-0.30.0 \
 		windows_x86_64_gnu-0.24.0 \
-		windows_x86_64_gnu-0.29.0 \
+		windows_x86_64_gnu-0.30.0 \
 		windows_x86_64_msvc-0.24.0 \
-		windows_x86_64_msvc-0.29.0 \
+		windows_x86_64_msvc-0.30.0 \
 		winrt-notification-0.5.0 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5 \
-		zbus-1.9.1 \
-		zbus_macros-1.9.1 \
-		zvariant-2.8.0 \
-		zvariant_derive-2.8.0
-CARGO_FEATURES=	notify-rust
+		zbus-2.1.1 \
+		zbus_macros-2.1.1 \
+		zbus_names-2.1.0 \
+		zvariant-3.1.2 \
+		zvariant_derive-3.1.2
+#CARGO_FEATURES=	notify-rust
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=		FONTS
