@@ -157,6 +157,7 @@ include/tg_owt/api/test/network_emulation/create_cross_traffic.h
 include/tg_owt/api/test/network_emulation/cross_traffic.h
 include/tg_owt/api/test/network_emulation/network_emulation_interfaces.h
 include/tg_owt/api/test/network_emulation_manager.h
+include/tg_owt/api/test/peer_network_dependencies.h
 include/tg_owt/api/test/peerconnection_quality_test_fixture.h
 include/tg_owt/api/test/simulated_network.h
 include/tg_owt/api/test/simulcast_test_fixture.h
@@ -245,6 +246,7 @@ include/tg_owt/api/video_codecs/vp8_frame_config.h
 include/tg_owt/api/video_codecs/vp8_temporal_layers.h
 include/tg_owt/api/video_codecs/vp8_temporal_layers_factory.h
 include/tg_owt/api/video_codecs/vp9_profile.h
+include/tg_owt/api/video_track_source_constraints.h
 include/tg_owt/api/video_track_source_proxy_factory.h
 include/tg_owt/api/voip/test/mock_voip_engine.h
 include/tg_owt/api/voip/voip_base.h
@@ -255,6 +257,7 @@ include/tg_owt/api/voip/voip_engine_factory.h
 include/tg_owt/api/voip/voip_network.h
 include/tg_owt/api/voip/voip_statistics.h
 include/tg_owt/api/voip/voip_volume_control.h
+include/tg_owt/api/wrapping_async_dns_resolver.h
 include/tg_owt/audio/audio_level.h
 include/tg_owt/audio/audio_receive_stream.h
 include/tg_owt/audio/audio_send_stream.h
@@ -278,53 +281,6 @@ include/tg_owt/audio/voip/audio_egress.h
 include/tg_owt/audio/voip/audio_ingress.h
 include/tg_owt/audio/voip/test/mock_task_queue.h
 include/tg_owt/audio/voip/voip_core.h
-include/tg_owt/base/android/android_hardware_buffer_compat.h
-include/tg_owt/base/android/android_image_reader_abi.h
-include/tg_owt/base/android/android_image_reader_compat.h
-include/tg_owt/base/android/apk_assets.h
-include/tg_owt/base/android/application_status_listener.h
-include/tg_owt/base/android/base_jni_onload.h
-include/tg_owt/base/android/build_info.h
-include/tg_owt/base/android/bundle_utils.h
-include/tg_owt/base/android/callback_android.h
-include/tg_owt/base/android/child_process_binding_types.h
-include/tg_owt/base/android/content_uri_utils.h
-include/tg_owt/base/android/early_trace_event_binding.h
-include/tg_owt/base/android/event_log.h
-include/tg_owt/base/android/int_string_callback.h
-include/tg_owt/base/android/java_exception_reporter.h
-include/tg_owt/base/android/java_handler_thread.h
-include/tg_owt/base/android/java_heap_dump_generator.h
-include/tg_owt/base/android/java_runtime.h
-include/tg_owt/base/android/jni_android.h
-include/tg_owt/base/android/jni_array.h
-include/tg_owt/base/android/jni_generator/jni_generator_helper.h
-include/tg_owt/base/android/jni_generator/sample_for_tests.h
-include/tg_owt/base/android/jni_int_wrapper.h
-include/tg_owt/base/android/jni_registrar.h
-include/tg_owt/base/android/jni_string.h
-include/tg_owt/base/android/jni_utils.h
-include/tg_owt/base/android/jni_weak_ref.h
-include/tg_owt/base/android/library_loader/anchor_functions.h
-include/tg_owt/base/android/library_loader/library_loader_hooks.h
-include/tg_owt/base/android/library_loader/library_prefetcher.h
-include/tg_owt/base/android/linker/legacy_linker_jni.h
-include/tg_owt/base/android/linker/linker_jni.h
-include/tg_owt/base/android/linker/modern_linker_jni.h
-include/tg_owt/base/android/locale_utils.h
-include/tg_owt/base/android/memory_pressure_listener_android.h
-include/tg_owt/base/android/orderfile/orderfile_instrumentation.h
-include/tg_owt/base/android/path_utils.h
-include/tg_owt/base/android/reached_addresses_bitset.h
-include/tg_owt/base/android/reached_code_profiler.h
-include/tg_owt/base/android/scoped_hardware_buffer_fence_sync.h
-include/tg_owt/base/android/scoped_hardware_buffer_handle.h
-include/tg_owt/base/android/scoped_java_ref.h
-include/tg_owt/base/android/sys_utils.h
-include/tg_owt/base/android/task_scheduler/post_task_android.h
-include/tg_owt/base/android/task_scheduler/task_runner_android.h
-include/tg_owt/base/android/timezone_utils.h
-include/tg_owt/base/android/unguessable_token_android.h
 include/tg_owt/base/compiler_specific.h
 include/tg_owt/build/build_config.h
 include/tg_owt/call/adaptation/adaptation_constraint.h
@@ -428,11 +384,11 @@ include/tg_owt/common_audio/wav_header.h
 include/tg_owt/common_audio/window_generator.h
 include/tg_owt/common_video/frame_counts.h
 include/tg_owt/common_video/frame_rate_estimator.h
+include/tg_owt/common_video/framerate_controller.h
 include/tg_owt/common_video/generic_frame_descriptor/generic_frame_info.h
 include/tg_owt/common_video/h264/h264_bitstream_parser.h
 include/tg_owt/common_video/h264/h264_common.h
 include/tg_owt/common_video/h264/pps_parser.h
-include/tg_owt/common_video/h264/prefix_parser.h
 include/tg_owt/common_video/h264/sps_parser.h
 include/tg_owt/common_video/h264/sps_vui_rewriter.h
 include/tg_owt/common_video/h265/h265_bitstream_parser.h
@@ -440,6 +396,7 @@ include/tg_owt/common_video/h265/h265_common.h
 include/tg_owt/common_video/h265/h265_pps_parser.h
 include/tg_owt/common_video/h265/h265_sps_parser.h
 include/tg_owt/common_video/h265/h265_vps_parser.h
+include/tg_owt/common_video/h265/legacy_bit_buffer.h
 include/tg_owt/common_video/include/bitrate_adjuster.h
 include/tg_owt/common_video/include/incoming_video_stream.h
 include/tg_owt/common_video/include/quality_limitation_reason.h
@@ -448,6 +405,7 @@ include/tg_owt/common_video/include/video_frame_buffer_pool.h
 include/tg_owt/common_video/libyuv/include/webrtc_libyuv.h
 include/tg_owt/common_video/test/utilities.h
 include/tg_owt/common_video/video_render_frames.h
+include/tg_owt/logging/rtc_event_log/encoder/bit_writer.h
 include/tg_owt/logging/rtc_event_log/encoder/blob_encoding.h
 include/tg_owt/logging/rtc_event_log/encoder/delta_encoding.h
 include/tg_owt/logging/rtc_event_log/encoder/rtc_event_log_encoder.h
@@ -455,6 +413,7 @@ include/tg_owt/logging/rtc_event_log/encoder/rtc_event_log_encoder_common.h
 include/tg_owt/logging/rtc_event_log/encoder/rtc_event_log_encoder_legacy.h
 include/tg_owt/logging/rtc_event_log/encoder/rtc_event_log_encoder_new_format.h
 include/tg_owt/logging/rtc_event_log/encoder/var_int.h
+include/tg_owt/logging/rtc_event_log/events/fixed_length_encoding_parameters_v3.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_alr_state.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_audio_network_adaptation.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_audio_playout.h
@@ -464,6 +423,9 @@ include/tg_owt/logging/rtc_event_log/events/rtc_event_bwe_update_delay_based.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_bwe_update_loss_based.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_dtls_transport_state.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_dtls_writable_state.h
+include/tg_owt/logging/rtc_event_log/events/rtc_event_field_encoding.h
+include/tg_owt/logging/rtc_event_log/events/rtc_event_field_encoding_parser.h
+include/tg_owt/logging/rtc_event_log/events/rtc_event_field_extraction.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_frame_decoded.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_generic_ack_received.h
 include/tg_owt/logging/rtc_event_log/events/rtc_event_generic_packet_received.h
@@ -501,7 +463,6 @@ include/tg_owt/media/base/fake_media_engine.h
 include/tg_owt/media/base/fake_network_interface.h
 include/tg_owt/media/base/fake_rtp.h
 include/tg_owt/media/base/fake_video_renderer.h
-include/tg_owt/media/base/h264_profile_level_id.h
 include/tg_owt/media/base/media_channel.h
 include/tg_owt/media/base/media_config.h
 include/tg_owt/media/base/media_constants.h
@@ -516,7 +477,6 @@ include/tg_owt/media/base/video_adapter.h
 include/tg_owt/media/base/video_broadcaster.h
 include/tg_owt/media/base/video_common.h
 include/tg_owt/media/base/video_source_base.h
-include/tg_owt/media/base/vp9_profile.h
 include/tg_owt/media/engine/adm_helpers.h
 include/tg_owt/media/engine/encoder_simulcast_proxy.h
 include/tg_owt/media/engine/fake_video_codec_factory.h
@@ -752,6 +712,8 @@ include/tg_owt/modules/audio_coding/neteq/post_decode_vad.h
 include/tg_owt/modules/audio_coding/neteq/preemptive_expand.h
 include/tg_owt/modules/audio_coding/neteq/random_vector.h
 include/tg_owt/modules/audio_coding/neteq/red_payload_splitter.h
+include/tg_owt/modules/audio_coding/neteq/relative_arrival_delay_tracker.h
+include/tg_owt/modules/audio_coding/neteq/reorder_optimizer.h
 include/tg_owt/modules/audio_coding/neteq/statistics_calculator.h
 include/tg_owt/modules/audio_coding/neteq/sync_buffer.h
 include/tg_owt/modules/audio_coding/neteq/test/neteq_decoding_test.h
@@ -785,6 +747,7 @@ include/tg_owt/modules/audio_coding/neteq/tools/resample_input_audio_file.h
 include/tg_owt/modules/audio_coding/neteq/tools/rtc_event_log_source.h
 include/tg_owt/modules/audio_coding/neteq/tools/rtp_file_source.h
 include/tg_owt/modules/audio_coding/neteq/tools/rtp_generator.h
+include/tg_owt/modules/audio_coding/neteq/underrun_optimizer.h
 include/tg_owt/modules/audio_coding/test/Channel.h
 include/tg_owt/modules/audio_coding/test/EncodeDecodeTest.h
 include/tg_owt/modules/audio_coding/test/PCMFile.h
@@ -924,6 +887,7 @@ include/tg_owt/modules/audio_processing/aecm/aecm_defines.h
 include/tg_owt/modules/audio_processing/aecm/echo_control_mobile.h
 include/tg_owt/modules/audio_processing/agc/agc.h
 include/tg_owt/modules/audio_processing/agc/agc_manager_direct.h
+include/tg_owt/modules/audio_processing/agc/analog_gain_stats_reporter.h
 include/tg_owt/modules/audio_processing/agc/clipping_predictor.h
 include/tg_owt/modules/audio_processing/agc/clipping_predictor_evaluator.h
 include/tg_owt/modules/audio_processing/agc/clipping_predictor_level_buffer.h
@@ -935,22 +899,20 @@ include/tg_owt/modules/audio_processing/agc/legacy/gain_control.h
 include/tg_owt/modules/audio_processing/agc/loudness_histogram.h
 include/tg_owt/modules/audio_processing/agc/mock_agc.h
 include/tg_owt/modules/audio_processing/agc/utility.h
-include/tg_owt/modules/audio_processing/agc2/adaptive_agc.h
 include/tg_owt/modules/audio_processing/agc2/adaptive_digital_gain_applier.h
+include/tg_owt/modules/audio_processing/agc2/adaptive_digital_gain_controller.h
 include/tg_owt/modules/audio_processing/agc2/adaptive_mode_level_estimator.h
 include/tg_owt/modules/audio_processing/agc2/agc2_common.h
 include/tg_owt/modules/audio_processing/agc2/agc2_testing_common.h
 include/tg_owt/modules/audio_processing/agc2/biquad_filter.h
 include/tg_owt/modules/audio_processing/agc2/compute_interpolated_gain_curve.h
 include/tg_owt/modules/audio_processing/agc2/cpu_features.h
-include/tg_owt/modules/audio_processing/agc2/down_sampler.h
 include/tg_owt/modules/audio_processing/agc2/fixed_digital_level_estimator.h
 include/tg_owt/modules/audio_processing/agc2/gain_applier.h
 include/tg_owt/modules/audio_processing/agc2/interpolated_gain_curve.h
 include/tg_owt/modules/audio_processing/agc2/limiter.h
 include/tg_owt/modules/audio_processing/agc2/limiter_db_gain_curve.h
 include/tg_owt/modules/audio_processing/agc2/noise_level_estimator.h
-include/tg_owt/modules/audio_processing/agc2/noise_spectrum_estimator.h
 include/tg_owt/modules/audio_processing/agc2/rnn_vad/auto_correlation.h
 include/tg_owt/modules/audio_processing/agc2/rnn_vad/common.h
 include/tg_owt/modules/audio_processing/agc2/rnn_vad/features_extraction.h
@@ -969,8 +931,7 @@ include/tg_owt/modules/audio_processing/agc2/rnn_vad/test_utils.h
 include/tg_owt/modules/audio_processing/agc2/rnn_vad/vector_math.h
 include/tg_owt/modules/audio_processing/agc2/saturation_protector.h
 include/tg_owt/modules/audio_processing/agc2/saturation_protector_buffer.h
-include/tg_owt/modules/audio_processing/agc2/signal_classifier.h
-include/tg_owt/modules/audio_processing/agc2/vad_with_level.h
+include/tg_owt/modules/audio_processing/agc2/vad_wrapper.h
 include/tg_owt/modules/audio_processing/agc2/vector_float_frame.h
 include/tg_owt/modules/audio_processing/audio_buffer.h
 include/tg_owt/modules/audio_processing/audio_processing_impl.h
@@ -990,9 +951,7 @@ include/tg_owt/modules/audio_processing/include/audio_frame_proxies.h
 include/tg_owt/modules/audio_processing/include/audio_frame_view.h
 include/tg_owt/modules/audio_processing/include/audio_processing.h
 include/tg_owt/modules/audio_processing/include/audio_processing_statistics.h
-include/tg_owt/modules/audio_processing/include/config.h
 include/tg_owt/modules/audio_processing/include/mock_audio_processing.h
-include/tg_owt/modules/audio_processing/level_estimator.h
 include/tg_owt/modules/audio_processing/logging/apm_data_dumper.h
 include/tg_owt/modules/audio_processing/ns/fast_math.h
 include/tg_owt/modules/audio_processing/ns/histograms.h
@@ -1124,6 +1083,7 @@ include/tg_owt/modules/desktop_capture/fallback_desktop_capturer_wrapper.h
 include/tg_owt/modules/desktop_capture/full_screen_application_handler.h
 include/tg_owt/modules/desktop_capture/full_screen_window_detector.h
 include/tg_owt/modules/desktop_capture/linux/base_capturer_pipewire.h
+include/tg_owt/modules/desktop_capture/linux/egl_dmabuf.h
 include/tg_owt/modules/desktop_capture/linux/mouse_cursor_monitor_x11.h
 include/tg_owt/modules/desktop_capture/linux/screen_capturer_x11.h
 include/tg_owt/modules/desktop_capture/linux/shared_x_display.h
@@ -1353,6 +1313,7 @@ include/tg_owt/modules/video_capture/windows/video_capture_ds.h
 include/tg_owt/modules/video_coding/chain_diff_calculator.h
 include/tg_owt/modules/video_coding/codec_timer.h
 include/tg_owt/modules/video_coding/codecs/av1/av1_svc_config.h
+include/tg_owt/modules/video_coding/codecs/av1/dav1d_decoder.h
 include/tg_owt/modules/video_coding/codecs/av1/libaom_av1_decoder.h
 include/tg_owt/modules/video_coding/codecs/av1/libaom_av1_encoder.h
 include/tg_owt/modules/video_coding/codecs/h264/h264_color_space.h
@@ -1398,9 +1359,11 @@ include/tg_owt/modules/video_coding/fec_controller_default.h
 include/tg_owt/modules/video_coding/fec_rate_table.h
 include/tg_owt/modules/video_coding/frame_buffer.h
 include/tg_owt/modules/video_coding/frame_buffer2.h
+include/tg_owt/modules/video_coding/frame_buffer3.h
 include/tg_owt/modules/video_coding/frame_dependencies_calculator.h
 include/tg_owt/modules/video_coding/frame_object.h
 include/tg_owt/modules/video_coding/generic_decoder.h
+include/tg_owt/modules/video_coding/h264_packet_buffer.h
 include/tg_owt/modules/video_coding/h264_sprop_parameter_sets.h
 include/tg_owt/modules/video_coding/h264_sps_pps_tracker.h
 include/tg_owt/modules/video_coding/h265_vps_sps_pps_tracker.h
@@ -1442,9 +1405,10 @@ include/tg_owt/modules/video_coding/test/stream_generator.h
 include/tg_owt/modules/video_coding/timestamp_map.h
 include/tg_owt/modules/video_coding/timing.h
 include/tg_owt/modules/video_coding/unique_timestamp_counter.h
+include/tg_owt/modules/video_coding/utility/bandwidth_quality_scaler.h
 include/tg_owt/modules/video_coding/utility/decoded_frames_history.h
 include/tg_owt/modules/video_coding/utility/frame_dropper.h
-include/tg_owt/modules/video_coding/utility/framerate_controller.h
+include/tg_owt/modules/video_coding/utility/framerate_controller_deprecated.h
 include/tg_owt/modules/video_coding/utility/ivf_file_reader.h
 include/tg_owt/modules/video_coding/utility/ivf_file_writer.h
 include/tg_owt/modules/video_coding/utility/qp_parser.h
@@ -1453,6 +1417,7 @@ include/tg_owt/modules/video_coding/utility/simulcast_rate_allocator.h
 include/tg_owt/modules/video_coding/utility/simulcast_test_fixture_impl.h
 include/tg_owt/modules/video_coding/utility/simulcast_utility.h
 include/tg_owt/modules/video_coding/utility/vp8_header_parser.h
+include/tg_owt/modules/video_coding/utility/vp9_constants.h
 include/tg_owt/modules/video_coding/utility/vp9_uncompressed_header_parser.h
 include/tg_owt/modules/video_coding/video_coding_impl.h
 include/tg_owt/modules/video_coding/video_receiver2.h
@@ -1463,9 +1428,9 @@ include/tg_owt/modules/video_processing/util/denoiser_filter_sse2.h
 include/tg_owt/modules/video_processing/util/noise_estimation.h
 include/tg_owt/modules/video_processing/util/skin_detection.h
 include/tg_owt/modules/video_processing/video_denoiser.h
+include/tg_owt/net/dcsctp/common/handover_testing.h
 include/tg_owt/net/dcsctp/common/internal_types.h
 include/tg_owt/net/dcsctp/common/math.h
-include/tg_owt/net/dcsctp/common/pair_hash.h
 include/tg_owt/net/dcsctp/common/sequence_numbers.h
 include/tg_owt/net/dcsctp/common/str_join.h
 include/tg_owt/net/dcsctp/fuzzers/dcsctp_fuzzers.h
@@ -1521,13 +1486,13 @@ include/tg_owt/net/dcsctp/packet/parameter/state_cookie_parameter.h
 include/tg_owt/net/dcsctp/packet/parameter/supported_extensions_parameter.h
 include/tg_owt/net/dcsctp/packet/sctp_packet.h
 include/tg_owt/net/dcsctp/packet/tlv_trait.h
+include/tg_owt/net/dcsctp/public/dcsctp_handover_state.h
 include/tg_owt/net/dcsctp/public/dcsctp_message.h
 include/tg_owt/net/dcsctp/public/dcsctp_options.h
 include/tg_owt/net/dcsctp/public/dcsctp_socket.h
 include/tg_owt/net/dcsctp/public/dcsctp_socket_factory.h
 include/tg_owt/net/dcsctp/public/mock_dcsctp_socket.h
 include/tg_owt/net/dcsctp/public/packet_observer.h
-include/tg_owt/net/dcsctp/public/strong_alias.h
 include/tg_owt/net/dcsctp/public/text_pcap_packet_observer.h
 include/tg_owt/net/dcsctp/public/timeout.h
 include/tg_owt/net/dcsctp/public/types.h
@@ -1542,6 +1507,7 @@ include/tg_owt/net/dcsctp/socket/dcsctp_socket.h
 include/tg_owt/net/dcsctp/socket/heartbeat_handler.h
 include/tg_owt/net/dcsctp/socket/mock_context.h
 include/tg_owt/net/dcsctp/socket/mock_dcsctp_socket_callbacks.h
+include/tg_owt/net/dcsctp/socket/packet_sender.h
 include/tg_owt/net/dcsctp/socket/state_cookie.h
 include/tg_owt/net/dcsctp/socket/stream_reset_handler.h
 include/tg_owt/net/dcsctp/socket/transmission_control_block.h
@@ -1551,6 +1517,7 @@ include/tg_owt/net/dcsctp/timer/fake_timeout.h
 include/tg_owt/net/dcsctp/timer/task_queue_timeout.h
 include/tg_owt/net/dcsctp/timer/timer.h
 include/tg_owt/net/dcsctp/tx/mock_send_queue.h
+include/tg_owt/net/dcsctp/tx/outstanding_data.h
 include/tg_owt/net/dcsctp/tx/retransmission_error_counter.h
 include/tg_owt/net/dcsctp/tx/retransmission_queue.h
 include/tg_owt/net/dcsctp/tx/retransmission_timeout.h
@@ -1683,6 +1650,7 @@ include/tg_owt/pc/test/mock_data_channel.h
 include/tg_owt/pc/test/mock_peer_connection_observers.h
 include/tg_owt/pc/test/mock_rtp_receiver_internal.h
 include/tg_owt/pc/test/mock_rtp_sender_internal.h
+include/tg_owt/pc/test/mock_voice_media_channel.h
 include/tg_owt/pc/test/peer_connection_test_wrapper.h
 include/tg_owt/pc/test/rtc_stats_obtainer.h
 include/tg_owt/pc/test/rtp_transport_test_util.h
@@ -1711,6 +1679,7 @@ include/tg_owt/rtc_base/async_tcp_socket.h
 include/tg_owt/rtc_base/async_udp_socket.h
 include/tg_owt/rtc_base/atomic_ops.h
 include/tg_owt/rtc_base/bit_buffer.h
+include/tg_owt/rtc_base/bitstream_reader.h
 include/tg_owt/rtc_base/boringssl_certificate.h
 include/tg_owt/rtc_base/boringssl_identity.h
 include/tg_owt/rtc_base/bounded_inline_vector.h
@@ -1743,6 +1712,7 @@ include/tg_owt/rtc_base/event.h
 include/tg_owt/rtc_base/event_tracer.h
 include/tg_owt/rtc_base/experiments/alr_experiment.h
 include/tg_owt/rtc_base/experiments/balanced_degradation_settings.h
+include/tg_owt/rtc_base/experiments/bandwidth_quality_scaler_settings.h
 include/tg_owt/rtc_base/experiments/cpu_speed_experiment.h
 include/tg_owt/rtc_base/experiments/encoder_info_settings.h
 include/tg_owt/rtc_base/experiments/field_trial_list.h
@@ -1768,7 +1738,6 @@ include/tg_owt/rtc_base/firewall_socket_server.h
 include/tg_owt/rtc_base/format_macros.h
 include/tg_owt/rtc_base/gtest_prod_util.h
 include/tg_owt/rtc_base/gunit.h
-include/tg_owt/rtc_base/hash.h
 include/tg_owt/rtc_base/helpers.h
 include/tg_owt/rtc_base/http_common.h
 include/tg_owt/rtc_base/ifaddrs_android.h
@@ -1871,6 +1840,7 @@ include/tg_owt/rtc_base/strings/audio_format_to_string.h
 include/tg_owt/rtc_base/strings/json.h
 include/tg_owt/rtc_base/strings/string_builder.h
 include/tg_owt/rtc_base/strings/string_format.h
+include/tg_owt/rtc_base/strong_alias.h
 include/tg_owt/rtc_base/swap_queue.h
 include/tg_owt/rtc_base/synchronization/mutex.h
 include/tg_owt/rtc_base/synchronization/mutex_abseil.h
@@ -1930,7 +1900,6 @@ include/tg_owt/rtc_base/win/scoped_com_initializer.h
 include/tg_owt/rtc_base/win/windows_version.h
 include/tg_owt/rtc_base/win32.h
 include/tg_owt/rtc_base/win32_socket_init.h
-include/tg_owt/rtc_base/win32_socket_server.h
 include/tg_owt/rtc_base/win32_window.h
 include/tg_owt/rtc_base/zero_memory.h
 include/tg_owt/sdk/android/native_api/audio_device_module/audio_device_android.h
@@ -2156,13 +2125,9 @@ include/tg_owt/sdk/objc/components/video_codec/RTCDefaultVideoEncoderFactory.h
 include/tg_owt/sdk/objc/components/video_codec/RTCH264ProfileLevelId.h
 include/tg_owt/sdk/objc/components/video_codec/RTCH265ProfileLevelId.h
 include/tg_owt/sdk/objc/components/video_codec/RTCVideoDecoderFactoryH264.h
-include/tg_owt/sdk/objc/components/video_codec/RTCVideoDecoderFactoryH265.h
 include/tg_owt/sdk/objc/components/video_codec/RTCVideoDecoderH264.h
-include/tg_owt/sdk/objc/components/video_codec/RTCVideoDecoderH265.h
 include/tg_owt/sdk/objc/components/video_codec/RTCVideoEncoderFactoryH264.h
-include/tg_owt/sdk/objc/components/video_codec/RTCVideoEncoderFactoryH265.h
 include/tg_owt/sdk/objc/components/video_codec/RTCVideoEncoderH264.h
-include/tg_owt/sdk/objc/components/video_codec/RTCVideoEncoderH265.h
 include/tg_owt/sdk/objc/components/video_codec/UIDevice+H264Profile.h
 include/tg_owt/sdk/objc/components/video_codec/helpers.h
 include/tg_owt/sdk/objc/components/video_codec/nalu_rewriter.h
@@ -2588,342 +2553,6 @@ include/tg_owt/third_party/libvpx/source/config/win/x64/vp9_rtcd.h
 include/tg_owt/third_party/libvpx/source/config/win/x64/vpx_config.h
 include/tg_owt/third_party/libvpx/source/config/win/x64/vpx_dsp_rtcd.h
 include/tg_owt/third_party/libvpx/source/config/win/x64/vpx_scale_rtcd.h
-include/tg_owt/third_party/libvpx/source/libvpx/args.h
-include/tg_owt/third_party/libvpx/source/libvpx/examples/svc_context.h
-include/tg_owt/third_party/libvpx/source/libvpx/ivfdec.h
-include/tg_owt/third_party/libvpx/source/libvpx/ivfenc.h
-include/tg_owt/third_party/libvpx/source/libvpx/md5_utils.h
-include/tg_owt/third_party/libvpx/source/libvpx/rate_hist.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/acm_random.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/bench.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/buffer.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/clear_system_state.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/codec_factory.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/decode_test_driver.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/encode_test_driver.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/i420_video_source.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/ivf_video_source.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/md5_helper.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/register_state_check.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/svc_test.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/test_vectors.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/util.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/video_source.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/vpx_scale_test.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/webm_video_source.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/y4m_video_source.h
-include/tg_owt/third_party/libvpx/source/libvpx/test/yuv_video_source.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-death-test.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-matchers.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-message.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-param-test.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-printers.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-spi.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-test-part.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest-typed-test.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest_pred_impl.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/gtest_prod.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/custom/gtest-port.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/custom/gtest-printers.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/custom/gtest.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-death-test-internal.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-filepath.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-internal.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-param-util.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-port-arch.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-port.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-string.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/include/gtest/internal/gtest-type-util.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/googletest/src/src/gtest-internal-inl.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/common/file_util.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/common/hdr_util.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/common/webmids.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/mkvmuxer/mkvmuxer.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/mkvmuxer/mkvmuxertypes.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/mkvmuxer/mkvmuxerutil.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/mkvmuxer/mkvwriter.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/mkvparser/mkvparser.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libwebm/mkvparser/mkvreader.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/basic_types.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/compare.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/convert.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/convert_argb.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/convert_from.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/convert_from_argb.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/cpu_id.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/macros_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/mjpeg_decoder.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/planar_functions.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/rotate.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/rotate_argb.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/rotate_row.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/row.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/scale.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/scale_argb.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/scale_row.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/version.h
-include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/include/libyuv/video_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/tools_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/video_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/video_reader.h
-include/tg_owt/third_party/libvpx/source/libvpx/video_writer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/alloccommon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/arm/loopfilter_arm.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/blockd.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/coefupdateprobs.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/default_coef_probs.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/entropy.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/entropymode.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/entropymv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/extend.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/filter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/findnearmv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/header.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/invtrans.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/loopfilter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/mips/msa/vp8_macros_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/modecont.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/mv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/onyx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/onyxc_int.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/onyxd.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/postproc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/ppflags.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/quant_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/reconinter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/reconintra.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/reconintra4x4.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/setupintrarecon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/swapyv12buffer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/systemdependent.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/threading.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/treecoder.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/vp8_entropymodedata.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/vp8_skin_detection.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/dboolhuff.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/decodemv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/decoderthreading.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/detokenize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/ec_types.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/error_concealment.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/onyxd_int.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/decoder/treereader.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/bitstream.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/block.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/boolhuff.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/dct_value_cost.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/dct_value_tokens.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/defaultcoefcounts.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/denoising.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/encodeframe.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/encodeintra.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/encodemb.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/encodemv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/ethreading.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/firstpass.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/lookahead.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/mcomp.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/modecosts.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/mr_dissim.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/onyx_int.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/pickinter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/picklpf.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/quantize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/ratectrl.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/rdopt.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/segmentation.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/temporal_filter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/tokenize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/treewriter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_iht_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_alloccommon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_blockd.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_common_data.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_entropy.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_entropymode.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_entropymv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_enums.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_filter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_frame_buffers.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_idct.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_loopfilter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_mfqe.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_mv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_mvref_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_onyxc_int.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_postproc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_ppflags.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_pred_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_quant_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_reconinter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_reconintra.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_scale.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_scan.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_thread_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodeframe.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodemv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/decoder/vp9_decoder.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/decoder/vp9_detokenize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/decoder/vp9_dsubexp.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/decoder/vp9_job_queue.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/mips/msa/vp9_fdct_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_alt_ref_aq.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_360.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_bitstream.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_block.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_blockiness.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_context_tree.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_cost.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_denoiser.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeframe.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemb.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encoder.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_ethread.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_ext_ratectrl.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_extend.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_firstpass.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_job_queue.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_lookahead.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_mbgraph.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_mcomp.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_multi_thread.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_noise_estimate.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_non_greedy_mv.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_partition_models.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_picklpf.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_pickmode.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_rd.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_resize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_segmentation.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_skin_detection.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_speed_features.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_subexp.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_svc_layercontext.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_temporal_filter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_tokenize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/vp9_treewriter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/x86/temporal_filter_constants.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/ratectrl_rtc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/simple_encode.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/vp9_cx_iface.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/vp9_dx_iface.h
-include/tg_owt/third_party/libvpx/source/libvpx/vp9/vp9_iface_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/internal/vpx_codec_internal.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vp8.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vp8cx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vp8dx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_codec.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_decoder.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_encoder.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_ext_ratectrl.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_frame_buffer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_image.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx/vpx_integer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/highbd_idct_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/idct_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/mem_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/sum_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/transpose_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/vpx_convolve8_neon.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/arm/vpx_convolve8_neon_asm.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/bitreader.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/bitreader_buffer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/bitwriter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/bitwriter_buffer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/fwd_txfm.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/inv_txfm.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/common_dspr2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/convolve_common_dspr2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/fwd_txfm_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/inv_txfm_dspr2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/inv_txfm_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/loopfilter_filters_dspr2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/loopfilter_macros_dspr2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/loopfilter_masks_dspr2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/loopfilter_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/macros_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/txfm_macros_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/mips/vpx_convolve_msa.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/postproc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/ppc/bitdepth_conversion_vsx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/ppc/inv_txfm_vsx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/ppc/transpose_vsx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/ppc/txfm_common_vsx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/ppc/types_vsx.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/prob.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/psnr.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/quantize.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/skin_detection.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/ssim.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/txfm_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/variance.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/vpx_convolve.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/vpx_dsp_common.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/vpx_filter.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/bitdepth_conversion_avx2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/bitdepth_conversion_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/convolve.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/convolve_avx2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/convolve_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/convolve_ssse3.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/fwd_dct32x32_impl_avx2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/fwd_dct32x32_impl_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/fwd_txfm_impl_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/fwd_txfm_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/highbd_inv_txfm_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/highbd_inv_txfm_sse4.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/inv_txfm_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/inv_txfm_ssse3.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/mem_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/quantize_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/quantize_ssse3.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/transpose_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_dsp/x86/txfm_common_sse2.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_mem/include/vpx_mem_intrnl.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_mem/vpx_mem.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/arm.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/asmdefs_mmi.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/bitops.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/compiler_attributes.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/emmintrin_compat.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/mem.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/mem_ops.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/mem_ops_aligned.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/mips.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/msvc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/ppc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/static_assert.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/system_state.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/vpx_once.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/vpx_timer.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_ports/x86.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_scale/vpx_scale.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_scale/yv12config.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_util/endian_inl.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_util/vpx_atomics.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_util/vpx_debug_util.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_util/vpx_thread.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_util/vpx_timestamp.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpx_util/vpx_write_yuv_frame.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpxenc.h
-include/tg_owt/third_party/libvpx/source/libvpx/vpxstats.h
-include/tg_owt/third_party/libvpx/source/libvpx/warnings.h
-include/tg_owt/third_party/libvpx/source/libvpx/webmdec.h
-include/tg_owt/third_party/libvpx/source/libvpx/webmenc.h
-include/tg_owt/third_party/libvpx/source/libvpx/y4menc.h
-include/tg_owt/third_party/libvpx/source/libvpx/y4minput.h
 include/tg_owt/third_party/libyuv/include/libyuv.h
 include/tg_owt/third_party/libyuv/include/libyuv/basic_types.h
 include/tg_owt/third_party/libyuv/include/libyuv/compare.h
@@ -3159,6 +2788,7 @@ include/tg_owt/third_party/yasm/source/config/openbsd/libyasm-stdint.h
 include/tg_owt/third_party/yasm/source/config/win/config.h
 include/tg_owt/third_party/yasm/source/config/win/libyasm-stdint.h
 include/tg_owt/video/adaptation/balanced_constraint.h
+include/tg_owt/video/adaptation/bandwidth_quality_scaler_resource.h
 include/tg_owt/video/adaptation/bitrate_constraint.h
 include/tg_owt/video/adaptation/encode_usage_resource.h
 include/tg_owt/video/adaptation/overuse_frame_detector.h
@@ -3175,6 +2805,7 @@ include/tg_owt/video/encoder_bitrate_adjuster.h
 include/tg_owt/video/encoder_overshoot_detector.h
 include/tg_owt/video/encoder_rtcp_feedback.h
 include/tg_owt/video/end_to_end_tests/multi_stream_tester.h
+include/tg_owt/video/frame_cadence_adapter.h
 include/tg_owt/video/frame_dumping_decoder.h
 include/tg_owt/video/frame_encode_metadata_writer.h
 include/tg_owt/video/quality_limitation_reason_tracker.h
@@ -3198,7 +2829,6 @@ include/tg_owt/video/video_loopback.h
 include/tg_owt/video/video_quality_observer.h
 include/tg_owt/video/video_quality_observer2.h
 include/tg_owt/video/video_quality_test.h
-include/tg_owt/video/video_receive_stream.h
 include/tg_owt/video/video_receive_stream2.h
 include/tg_owt/video/video_send_stream.h
 include/tg_owt/video/video_send_stream_impl.h
@@ -3216,30 +2846,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/api/g3doc
 @dir include/tg_owt/api/video_codecs/test
 @dir include/tg_owt/audio/test/unittests
-@dir include/tg_owt/base/android/java/src/org/chromium/base/annotations
-@dir include/tg_owt/base/android/java/src/org/chromium/base/compat
-@dir include/tg_owt/base/android/java/src/org/chromium/base/library_loader
-@dir include/tg_owt/base/android/java/src/org/chromium/base/memory
-@dir include/tg_owt/base/android/java/src/org/chromium/base/metrics
-@dir include/tg_owt/base/android/java/src/org/chromium/base/multidex
-@dir include/tg_owt/base/android/java/src/org/chromium/base/process_launcher
-@dir include/tg_owt/base/android/java/src/org/chromium/base/supplier
-@dir include/tg_owt/base/android/java/src/org/chromium/base/task
-@dir include/tg_owt/base/android/java/templates
-@dir include/tg_owt/base/android/javatests/src/org/chromium/base/library_loader
-@dir include/tg_owt/base/android/javatests/src/org/chromium/base/metrics
-@dir include/tg_owt/base/android/javatests/src/org/chromium/base/task
-@dir include/tg_owt/base/android/javatests/src/org/chromium/base/util
-@dir include/tg_owt/base/android/jni_generator/golden
-@dir include/tg_owt/base/android/jni_generator/java/src/org/chromium/example/jni_generator
-@dir include/tg_owt/base/android/jni_generator/java/src/org/chromium/jni_generator
-@dir include/tg_owt/base/android/junit/src/org/chromium/base/memory
-@dir include/tg_owt/base/android/junit/src/org/chromium/base/metrics/test
-@dir include/tg_owt/base/android/junit/src/org/chromium/base/process_launcher
-@dir include/tg_owt/base/android/junit/src/org/chromium/base/supplier
-@dir include/tg_owt/base/android/junit/src/org/chromium/base/task
-@dir include/tg_owt/base/android/junit/src/org/chromium/base/util
-@dir include/tg_owt/base/android/proguard
 @dir include/tg_owt/logging/g3doc
 @dir include/tg_owt/modules/audio_coding/codecs/g711/test
 @dir include/tg_owt/modules/audio_coding/codecs/g722/test
@@ -3317,33 +2923,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/third_party/libsrtp/crypto/replay
 @dir include/tg_owt/third_party/libsrtp/crypto/test
 @dir include/tg_owt/third_party/libsrtp/srtp
-@dir include/tg_owt/third_party/libvpx/source/libvpx/build/make
-@dir include/tg_owt/third_party/libvpx/source/libvpx/build_debug/non_greedy_mv_test_files
-@dir include/tg_owt/third_party/libvpx/source/libvpx/test/android
-@dir include/tg_owt/third_party/libvpx/source/libvpx/third_party/libyuv/source
-@dir include/tg_owt/third_party/libvpx/source/libvpx/third_party/x86inc
-@dir include/tg_owt/third_party/libvpx/source/libvpx/tools/3D-Reconstruction/MotionEST
-@dir include/tg_owt/third_party/libvpx/source/libvpx/tools/3D-Reconstruction/genY4M
-@dir include/tg_owt/third_party/libvpx/source/libvpx/tools/3D-Reconstruction/sketch_3D_reconstruction
-@dir include/tg_owt/third_party/libvpx/source/libvpx/tools/non_greedy_mv
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/arm/neon
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/generic
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/mips/mmi
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/common/x86
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/mips/mmi
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/mips/msa
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp8/encoder/x86
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/mips/dspr2
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/mips/msa
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/ppc
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp9/common/x86
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/arm/neon
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vp9/encoder/ppc
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vpx/src
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vpx_scale/generic
-@dir include/tg_owt/third_party/libvpx/source/libvpx/vpx_scale/mips/dspr2
 @dir include/tg_owt/third_party/libyuv/build_overrides
 @dir include/tg_owt/third_party/libyuv/docs
 @dir include/tg_owt/third_party/libyuv/source
@@ -3429,6 +3008,7 @@ lib/libtg_owt.a
 @dir include/tg_owt/third_party/pffft/patches
 @dir include/tg_owt/third_party/pipewire
 @dir include/tg_owt/third_party/usrsctp/usrsctplib/fuzzer/CORPUS_CONNECT
+@dir include/tg_owt/third_party/usrsctp/usrsctplib/fuzzer/CORPUS_FRAGMENT
 @dir include/tg_owt/third_party/usrsctp/usrsctplib/fuzzer/CORPUS_LISTEN
 @dir include/tg_owt/third_party/yasm/binaries/win
 @dir include/tg_owt/tools/generate_stubs
