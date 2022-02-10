@@ -738,7 +738,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.5
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.5.0
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -1494,11 +1494,9 @@ GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactEditorTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactFolderLinksTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactFolderProperties.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactFoldersView.wox
-GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactView.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactViewTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactsUserFolders.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactsUserRightsEditor.wox
-GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxListView.wox
 GNUstep/Local/Library/SOGo/Templates/MailPartViewers/UIxMailPartAlternativeViewer.wox
 GNUstep/Local/Library/SOGo/Templates/MailPartViewers/UIxMailPartEncryptedViewer.wox
 GNUstep/Local/Library/SOGo/Templates/MailPartViewers/UIxMailPartExternalHTMLViewer.wox
@@ -1874,6 +1872,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/fonts/MaterialIcons-Regular.woff2
 GNUstep/Local/Library/SOGo/WebServerResources/img/cardboard-transp.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/certificate-off.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/certificate.svg
+GNUstep/Local/Library/SOGo/WebServerResources/img/email-256px.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/felt-transp.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/ic_person_grey_24px.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/inverse.png
@@ -2118,12 +2117,6 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/d
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/table/dialogs/table.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/tabletools/dialogs/tableCell.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/widget/images/handle.png
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/LICENSE.md
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/ciframe.html
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/wsc.css
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/wsc.js
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/wsc_ie.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/skins/n1theme/dialog.css
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/skins/n1theme/dialog_ie.css
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/skins/n1theme/dialog_ie8.css
