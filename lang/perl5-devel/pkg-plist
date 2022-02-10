@@ -272,6 +272,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Math/BigInt/Lib.pm
 %%PRIV_LIB%%/Math/BigInt/Trace.pm
 %%PRIV_LIB%%/Math/BigRat.pm
+%%PRIV_LIB%%/Math/BigRat/Trace.pm
 %%PRIV_LIB%%/Math/Complex.pm
 %%PRIV_LIB%%/Math/Trig.pm
 %%PRIV_LIB%%/Memoize.pm
@@ -636,6 +637,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/bignum.pm
 %%PRIV_LIB%%/bigrat.pm
 %%PRIV_LIB%%/blib.pm
+%%PRIV_LIB%%/builtin.pm
 %%PRIV_LIB%%/bytes.pm
 %%PRIV_LIB%%/bytes_heavy.pl
 %%PRIV_LIB%%/charnames.pm
@@ -975,6 +977,10 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5353delta.1.gz
 %%MAN1%%/perl5354delta.1.gz
 %%MAN1%%/perl5355delta.1.gz
+%%MAN1%%/perl5356delta.1.gz
+%%MAN1%%/perl5357delta.1.gz
+%%MAN1%%/perl5358delta.1.gz
+%%MAN1%%/perl5359delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1014,7 +1020,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perldiag.1.gz
 %%MAN1%%/perldoc.1.gz
 %%MAN1%%/perldocstyle.1.gz
-%%MAN1%%/perldos.1.gz
 %%MAN1%%/perldsc.1.gz
 %%MAN1%%/perldtrace.1.gz
 %%MAN1%%/perlebcdic.1.gz
@@ -1680,6 +1685,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/bignum.3.gz
 %%MAN3%%/bigrat.3.gz
 %%MAN3%%/blib.3.gz
+%%MAN3%%/builtin.3.gz
 %%MAN3%%/bytes.3.gz
 %%MAN3%%/charnames.3.gz
 %%MAN3%%/constant.3.gz
@@ -1779,6 +1785,10 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5353delta.pod
 %%PRIV_LIB%%/pod/perl5354delta.pod
 %%PRIV_LIB%%/pod/perl5355delta.pod
+%%PRIV_LIB%%/pod/perl5356delta.pod
+%%PRIV_LIB%%/pod/perl5357delta.pod
+%%PRIV_LIB%%/pod/perl5358delta.pod
+%%PRIV_LIB%%/pod/perl5359delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1817,7 +1827,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perldiag.pod
 %%PRIV_LIB%%/pod/perldoc.pod
 %%PRIV_LIB%%/pod/perldocstyle.pod
-%%PRIV_LIB%%/pod/perldos.pod
 %%PRIV_LIB%%/pod/perldsc.pod
 %%PRIV_LIB%%/pod/perldtrace.pod
 %%PRIV_LIB%%/pod/perlebcdic.pod

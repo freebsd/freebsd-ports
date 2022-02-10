@@ -1,6 +1,6 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2021-09-05 12:09:49 UTC
+--- t/porting/customized.dat.orig	2022-02-08 18:00:07 UTC
 +++ t/porting/customized.dat
 @@ -2,6 +2,7 @@
  #     cd t
@@ -10,7 +10,7 @@ Fix tests for modified files.
  Filter::Util::Call pod/perlfilter.pod 2d98239c4f4a930ad165444c3879629bb91f4cef
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
  Math::Complex cpan/Math-Complex/lib/Math/Complex.pm 66f28a17647e2de166909ca66e4ced26f8a0a62e
-@@ -17,7 +18,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
+@@ -19,7 +20,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
  Net::Ping dist/Net-Ping/t/450_service.t f6578680f2872d7fc9f24dd75388d55654761875
  Net::Ping dist/Net-Ping/t/500_ping_icmp.t 3eeb60181c01b85f876bd6658644548fdf2e24d4
  Net::Ping dist/Net-Ping/t/501_ping_icmpv6.t cd719bca662b054b676dd2ee6e0c73c7a5e50cf9
