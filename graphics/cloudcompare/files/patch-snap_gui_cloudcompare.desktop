@@ -1,0 +1,13 @@
+--- snap/gui/cloudcompare.desktop.orig	2018-03-16 21:26:02 UTC
++++ snap/gui/cloudcompare.desktop
+@@ -2,8 +2,8 @@
+ Type=Application
+ Name=CloudCompare
+ Comment=3D point cloud and mesh processing software
+-Exec=cloudcompare.CloudCompare
++Exec=CloudCompare
+ Terminal=false
+ Categories=Graphics;
+-Icon=${SNAP}/meta/gui/cloudcompare.png
++Icon=/usr/local/share/pixmaps/cloudcompare.png
+ 
