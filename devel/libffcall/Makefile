@@ -25,8 +25,7 @@ CFLAGS+=		-fPIC
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ffcall-abi.h
+.if ${ARCH:Mpowerpc64*}
 USES+=		compiler:gcc-c++11-lib
 .endif
 
