@@ -1,0 +1,10 @@
+A C/C++ based package for advanced data transformation and statistical
+computing in R that is extremely fast, flexible and parsimonious
+to code with, class-agnostic and programmer friendly. It is well
+integrated with base R, 'dplyr' / (grouped) 'tibble', 'data.table',
+'plm' (panel-series and data frames), 'sf' data frames, and
+non-destructively handles other matrix or data frame based classes
+(such as 'ts', 'xts' / 'zoo', 'timeSeries', 'tsibble', 'tibbletime'
+etc.)
+
+WWW: https://cran.r-project.org/web/packages/collapse/

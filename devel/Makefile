@@ -31,6 +31,7 @@
     SUBDIR += R-cran-cliapp
     SUBDIR += R-cran-clipr
     SUBDIR += R-cran-clisymbols
+    SUBDIR += R-cran-collapse
     SUBDIR += R-cran-covr
     SUBDIR += R-cran-cpp11
     SUBDIR += R-cran-crayon
