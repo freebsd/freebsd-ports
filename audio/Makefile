@@ -3,6 +3,7 @@
     SUBDIR += GxSwitchlessWah-lv2
     SUBDIR += HVSC-Update
     SUBDIR += Maaate
+    SUBDIR += a2jmidid
     SUBDIR += aacgain
     SUBDIR += aacplusenc
     SUBDIR += abcde

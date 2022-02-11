@@ -1,0 +1,18 @@
+--- meson.build.orig	2022-02-11 10:51:29 UTC
++++ meson.build
+@@ -17,6 +17,7 @@ dep_jack = dependency('jack')
+ dep_alsa = dependency('alsa')
+ lib_dl = cc.find_library('dl')
+ lib_pthread = cc.find_library('pthread')
++lib_execinfo = cc.find_library('execinfo')
+ deps_a2jmidid = [dep_alsa, dep_jack, lib_dl, lib_pthread]
+ 
+ # source definitions
+@@ -50,6 +51,7 @@ if get_option('disable-dbus')
+ else
+   dep_dbus = dependency('dbus-1')
+   deps_a2jmidid += [dep_dbus]
++  deps_a2jmidid += [lib_execinfo]
+   dbus_data = configuration_data()
+   dbus_data.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
+   dbus_data.set('dbus_service_dir', join_paths(get_option('prefix'), 'share', 'dbus-1', 'services'))

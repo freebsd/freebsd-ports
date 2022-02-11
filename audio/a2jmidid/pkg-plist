@@ -1,0 +1,12 @@
+%%DBUS%%bin/a2j
+%%DBUS%%bin/a2j_control
+bin/a2jmidi_bridge
+bin/a2jmidid
+bin/j2amidi_bridge
+%%DBUS%%man/man1/a2j.1.gz
+%%DBUS%%man/man1/a2j_control.1.gz
+man/man1/a2jmidi_bridge.1.gz
+man/man1/a2jmidid.1.gz
+man/man1/j2amidi_bridge.1.gz
+%%DBUS%%share/dbus-1/services/org.gna.home.a2jmidid.service
+
