@@ -1,0 +1,31 @@
+--- sshd_config.nopam	2022-02-11 19:19:59.515475000 +0000
++++ sshd_config	2022-02-11 19:20:45.334738000 +0000
+@@ -55,8 +55,8 @@
+ # Don't read the user's ~/.rhosts and ~/.shosts files
+ #IgnoreRhosts yes
+ 
+-# To disable tunneled clear text passwords, change to no here!
+-#PasswordAuthentication yes
++# To enable tunneled clear text passwords, change to yes here!
++#PasswordAuthentication no
+ #PermitEmptyPasswords no
+ 
+ # Change to no to disable s/key passwords
+@@ -72,7 +72,7 @@
+ #GSSAPIAuthentication no
+ #GSSAPICleanupCredentials yes
+ 
+-# Set this to 'yes' to enable PAM authentication, account processing,
++# Set this to 'no' to disable PAM authentication, account processing,
+ # and session processing. If this is enabled, PAM authentication will
+ # be allowed through the KbdInteractiveAuthentication and
+ # PasswordAuthentication.  Depending on your PAM configuration,
+@@ -81,7 +81,7 @@
+ # If you just want the PAM account and session checks to run without
+ # PAM authentication, then enable this but set PasswordAuthentication
+ # and KbdInteractiveAuthentication to 'no'.
+-#UsePAM no
++#UsePAM yes
+ 
+ #AllowAgentForwarding yes
+ #AllowTcpForwarding yes

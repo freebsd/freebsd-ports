@@ -2,7 +2,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	8.9p1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -66,6 +66,8 @@ FIDO_U2F_DESC=		FIDO/U2F support (security/libfido2)
 BLACKLISTD_DESC=	FreeBSD blacklistd(8) support
 
 OPTIONS_SUB=		yes
+
+PAM_EXTRA_PATCHES=	${FILESDIR}/extra-patch-pam-sshd_config
 
 TCP_WRAPPERS_EXTRA_PATCHES=${FILESDIR}/extra-patch-tcpwrappers
 
