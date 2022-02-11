@@ -6,6 +6,7 @@ Features:
 - gtk-2.0 contains the GTK+2 theme, styling applications that doesn't
   use GTK+3 yet.
 - gtk-3.0 contains the GTK+3 theme, styling most modern GTK+ applications.
+- gtk-4.0 contains the GTK+4 theme, styling most modern GTK+ applications.
 - xfwm4 contains the theme that styles the xfwm4 window manager for XFCE4.
 
 WWW: https://github.com/lassekongo83/zuki-themes
