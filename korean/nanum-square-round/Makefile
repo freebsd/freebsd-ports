@@ -1,4 +1,4 @@
-PKGNAMESUFFIX=	-square-round
-FONTDESC=	NanumSquareRound
+NANUM_FONTDESC=	NanumSquareRound
+NANUM_FONTNAME=	square-round
 
 .include "${.CURDIR}/../../korean/nanumfonts/Makefile.common"
