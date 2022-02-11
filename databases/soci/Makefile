@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.3
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	C++ Database Access Library
 
 LICENSE=	BSL
