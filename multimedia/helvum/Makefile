@@ -151,6 +151,9 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		wyz-0.2.0
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
+		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
+		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
 		${WRKSRC}/build-aux/cargo.sh
