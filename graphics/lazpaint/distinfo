@@ -1,7 +1,7 @@
-TIMESTAMP = 1613656109
-SHA256 (bgrabitmap-lazpaint-v7.1.6_GH0.tar.gz) = 9726370964f9d86ea12a900d04fdce35f3b3922e63b3039ce9787155b6a0797d
-SIZE (bgrabitmap-lazpaint-v7.1.6_GH0.tar.gz) = 34817420
-SHA256 (bgrabitmap-bgracontrols-95fc0d2_GH0.tar.gz) = 7ca2220ec6c4115cbb0069de29e50190d3465d3f2f65721ea34c64a4b1987484
-SIZE (bgrabitmap-bgracontrols-95fc0d2_GH0.tar.gz) = 16811386
-SHA256 (bgrabitmap-bgrabitmap-ace7e0e_GH0.tar.gz) = ae3f28596c2a5f44bc468f6c3380fc1ceb27e95afea579f09b1d340c781bbef2
-SIZE (bgrabitmap-bgrabitmap-ace7e0e_GH0.tar.gz) = 6983967
+TIMESTAMP = 1644619495
+SHA256 (bgrabitmap-lazpaint-v7.1.6-426f74adc0fc5bca31213c2e7c3ae772ba49769a_GH0.tar.gz) = 63a833575b72abb1a808e36be0683f42b1464585713fd2bf485204c9d7689ce2
+SIZE (bgrabitmap-lazpaint-v7.1.6-426f74adc0fc5bca31213c2e7c3ae772ba49769a_GH0.tar.gz) = 36733913
+SHA256 (bgrabitmap-bgracontrols-2797120_GH0.tar.gz) = bcdff6f80a903a2ccfa11ae5fb7dfbaf991dcf498a6ed495069d0c3f4e2f904d
+SIZE (bgrabitmap-bgracontrols-2797120_GH0.tar.gz) = 16830016
+SHA256 (bgrabitmap-bgrabitmap-d52b5b7_GH0.tar.gz) = e2bae5e75d6356b67ceb625c8d38e2795dd0e055f70c3a1cc53e27beabb56429
+SIZE (bgrabitmap-bgrabitmap-d52b5b7_GH0.tar.gz) = 6995022

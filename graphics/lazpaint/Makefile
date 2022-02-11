@@ -19,9 +19,10 @@ USE_FPC=	chm fcl-base fcl-image fcl-json fcl-net fcl-web fcl-xml \
 USE_XORG=	x11
 DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt)
 USE_GITHUB=	yes
+GH_TAGNAME=	426f74adc0fc5bca31213c2e7c3ae772ba49769a
 GH_ACCOUNT=	bgrabitmap
-GH_TUPLE=	bgrabitmap:bgracontrols:95fc0d2:bgracontrols/bgracontrols \
-		bgrabitmap:bgrabitmap:ace7e0e:bgrabitmap/bgrabitmapnew
+GH_TUPLE=	bgrabitmap:bgracontrols:2797120:bgracontrols/bgracontrols \
+		bgrabitmap:bgrabitmap:d52b5b7:bgrabitmap/bgrabitmapnew
 
 USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo

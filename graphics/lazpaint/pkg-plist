@@ -7,6 +7,7 @@ share/icons/hicolor/48x48/apps/lazpaint.png
 %%DATADIR%%/i18n/lazpaint.es.po
 %%DATADIR%%/i18n/lazpaint.fi.po
 %%DATADIR%%/i18n/lazpaint.fr.po
+%%DATADIR%%/i18n/lazpaint.it.po
 %%DATADIR%%/i18n/lazpaint.ja.po
 %%DATADIR%%/i18n/lazpaint.kab.po
 %%DATADIR%%/i18n/lazpaint.lv.po
@@ -49,6 +50,7 @@ share/icons/hicolor/48x48/apps/lazpaint.png
 %%DATADIR%%/i18n/lcresourcestring.lv.po
 %%DATADIR%%/i18n/lcresourcestring.nl.po
 %%DATADIR%%/i18n/lcresourcestring.po
+%%DATADIR%%/i18n/lcresourcestring.pot
 %%DATADIR%%/i18n/lcresourcestring.pt_BR.po
 %%DATADIR%%/i18n/lcresourcestring.ru.po
 %%DATADIR%%/i18n/lcresourcestring.sv.po
