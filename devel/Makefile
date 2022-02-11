@@ -5164,6 +5164,7 @@
     SUBDIR += py-qutip
     SUBDIR += py-ramlfications
     SUBDIR += py-rapidfuzz
+    SUBDIR += py-rapidfuzz-capi
     SUBDIR += py-ratelimiter
     SUBDIR += py-rauth
     SUBDIR += py-raven

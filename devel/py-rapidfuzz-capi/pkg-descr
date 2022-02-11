@@ -1,0 +1,8 @@
+This package provides the C-API of RapidFuzz. It can be used inside
+the pyproject.toml to compile and extension module extending
+RapidFuzz. Providing this C-API in a separate package simplifies the
+build process. It allows the usage on platforms which are not
+supported by RapidFuzz, or for which RapidFuzz does not provide wheels
+(e.g. because they are not officially supported by numpy).
+
+WWW: https://github.com/maxbachmann/rapidfuzz_capi
