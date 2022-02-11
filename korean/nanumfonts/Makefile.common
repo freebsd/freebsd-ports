@@ -6,14 +6,15 @@ MASTER_SITES=	https://hangeul.naver.com/hangeul_static/webfont/zips/ \
 DISTNAME?=	${PORTNAME}${PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
-COMMENT=	${FONTDESC} Hangul fonts (${FLAVOR:tu})
+COMMENT=	${FONTDESC} Hangul fonts (${WEBFONT:tu})
 MAINTAINER=	jkim@FreeBSD.org
 
 LICENSE=	OFL11
 LICENSE_FILE=	${FILESDIR}/LICENSE
 
-FLAVORS=	otf ttf
-FLAVOR?=	${FLAVORS:[2]}
+#FLAVORS=	otf ttf
+#FLAVOR?=	${FLAVORS:[2]}
+WEBFONT=	ttf
 
 DESCR=		${.CURDIR}/../../korean/nanumfonts/pkg-descr
 FILESDIR=	${.CURDIR}/../../korean/nanumfonts/files
@@ -23,7 +24,7 @@ USES=		fonts zip
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.${FLAVOR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.${WEBFONT} ${STAGEDIR}${FONTSDIR}
 	@${FIND} ${STAGEDIR}${FONTSDIR} -not -type d | ${SORT} | \
 	    ${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
 
