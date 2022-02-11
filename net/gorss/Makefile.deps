@@ -1,0 +1,21 @@
+# Generated with `make gomod-vendor'
+GH_TUPLE=	\
+		OpenPeeDeeP:xdg:v0.2.0:openpeedeep_xdg/vendor/github.com/OpenPeeDeeP/xdg \
+		PuerkitoBio:goquery:v1.5.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
+		andybalholm:cascadia:v1.0.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
+		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
+		gdamore:tcell:v1.2.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		gilliek:go-opml:v1.0.0:gilliek_go_opml/vendor/github.com/gilliek/go-opml \
+		golang:net:ba9fcec4b297:golang_net/vendor/golang.org/x/net \
+		golang:sys:e07cf5db2756:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		jaytaylor:html2text:01ec452cbe43:jaytaylor_html2text/vendor/jaytaylor.com/html2text \
+		lucasb-eyer:go-colorful:v1.0.2:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-sqlite3:v1.11.0:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mmcdole:gofeed:v1.0.0-beta2:mmcdole_gofeed/vendor/github.com/mmcdole/gofeed \
+		mmcdole:goxpp:0068e33feabf:mmcdole_goxpp/vendor/github.com/mmcdole/goxpp \
+		olekukonko:tablewriter:v0.0.1:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		rivo:tview:f8bc69b90341:rivo_tview/vendor/github.com/rivo/tview \
+		rivo:uniseg:b9f5b9457d44:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		ssor:bom:6386211fdfcf:ssor_bom/vendor/github.com/ssor/bom
