@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	plm
-DISTVERSION=	2.4-3
+DISTVERSION=	2.6-0
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +11,7 @@ COMMENT=	Linear Models for Panel Data
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-bdsmatrix>0:math/R-cran-bdsmatrix \
+		R-cran-collapse>=1.6.0:devel/R-cran-collapse \
 		R-cran-zoo>0:math/R-cran-zoo \
 		R-cran-sandwich>0:math/R-cran-sandwich \
 		R-cran-lmtest>0:finance/R-cran-lmtest \
