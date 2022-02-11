@@ -1,8 +1,7 @@
 # Created by: Andreev Maxim
 
 PORTNAME=	xarchiver
-PORTVERSION=	0.5.4.16
-PORTREVISION=	1
+PORTVERSION=	0.5.4.17
 CATEGORIES=	archivers
 
 MAINTAINER=	ports@FreeBSD.org
