@@ -4,7 +4,7 @@ CATEGORIES=	korean x11-fonts
 MASTER_SITES=	https://hangeul.naver.com/hangeul_static/webfont/zips/ \
 		LOCAL/jkim
 PKGNAMESUFFIX=	-${NANUM_FONTNAME}
-DISTNAME?=	${PORTNAME}${PKGNAMESUFFIX}
+DISTNAME?=	${PORTNAME}-${NANUM_FONTNAME}
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
