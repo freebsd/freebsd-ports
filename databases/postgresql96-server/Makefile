@@ -21,4 +21,7 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 ICU_PATCHFILE=	pg-96b4-icu-2016-10-02.diff.gz
 OPTIONS_DEFAULT+=ICU
 
+DEPRECATED=	PostgreSQL-9.6 has reached end-of-life
+EXPIRATION_DATE=2022-03-11
+
 .include "${.CURDIR}/../postgresql14-server/Makefile"
