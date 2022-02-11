@@ -1,7 +1,7 @@
 # Created by: Albert Vernon <f3cun3c02@sneakemail.com>
 
 PORTNAME=	zutils
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/zutils
 
