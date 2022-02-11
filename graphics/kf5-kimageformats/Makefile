@@ -1,5 +1,6 @@
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +17,7 @@ USE_QT=		core gui printsupport widgets \
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 
 OPTIONS_DEFINE=	AVIF JXL OPENEXR
-OPTIONS_DEFAULT=	AVIF OPENEXR
+OPTIONS_DEFAULT=	AVIF JXL OPENEXR
 OPTIONS_SUB=	yes
 
 AVIF_DESC=		AV1 Image File Format via libavif
