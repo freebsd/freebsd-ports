@@ -5,4 +5,11 @@ via Mark Dank's GEM package, Pd can be used for simultaneous computer
 animation and computer audio.  Second, an experimental facility is provided
 for defining and accessing data structures.
 
+The MIDI support implemented in this port is derived from Raphael Graf's
+patches for a sndio backend on the OpenBSD audio/portmidi port, applied to an
+embedded PortMIDI library, enhanced to detect a variable number of MIDI (umidi)
+devices:
+http://openbsd-archive.7691.n7.nabble.com/audio-portmidi-input-td363848.html
+https://marc.info/?l=openbsd-ports&m=155221816900336&w=2
+
 Unofficial web site: http://puredata.org/

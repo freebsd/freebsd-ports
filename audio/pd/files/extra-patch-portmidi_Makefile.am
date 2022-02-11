@@ -1,0 +1,27 @@
+--- portmidi/Makefile.am.orig	2015-05-13 13:58:54.000000000 -0700
++++ portmidi/Makefile.am	2020-07-07 02:39:30.587648000 -0700
+@@ -9,10 +9,9 @@
+ libportmidi_la_SOURCES = pm_common/pmutil.c pm_common/portmidi.c
+ 
+ if LINUX
+-INCLUDES +=  -Ipm_linux
++INCLUDES +=  -Ipm_sndio
+ libportmidi_la_SOURCES += porttime/ptlinux.c \
+-		pm_linux/pmlinux.c \
+-		pm_linux/pmlinuxalsa.c
++		pm_sndio/pmsndio.c
+ endif
+ 
+ if MACOSX
+@@ -37,10 +36,5 @@
+ 	pm_common/pminternal.h \
+ 	pm_common/pmutil.h \
+ 	pm_common/portmidi.h \
+-	pm_linux/pmlinux.h \
+-	pm_linux/pmlinuxalsa.h \
+-	pm_mac/pmmac.h \
+-	pm_mac/pmmacosxcm.h \
+-	pm_win/pmdll.h \
+-	pm_win/pmwinmm.h \
++	pm_sndio/pmsndio.h \
+ 	porttime/porttime.h
