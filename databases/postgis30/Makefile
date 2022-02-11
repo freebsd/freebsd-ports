@@ -1,8 +1,7 @@
 # Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
 
 PORTNAME=	postgis
-PORTVERSION=	3.0.4
-PORTREVISION=	3
+PORTVERSION=	3.0.5
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	30
