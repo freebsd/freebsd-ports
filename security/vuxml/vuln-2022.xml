@@ -1,3 +1,37 @@
+  <vuln vid="d923fb0c-8c2f-11ec-aa85-0800270512f4">
+    <topic>zsh -- Arbitrary command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>zsh</name>
+	<range><lt>5.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p> Marc Cornellà reports:</p>
+	<blockquote cite="https://zsh.sourceforge.io/releases.html">
+	  <p>
+	    Some prompt expansion sequences, such as %F, support 'arguments'
+	    which are themselves expanded in case they contain colour values,
+	    etc. This additional expansion would trigger PROMPT_SUBST evaluation,
+	    if enabled. This could be abused to execute code the user didn't
+	    expect. e.g., given a certain prompt configuration, an attacker
+	    could trick a user into executing arbitrary code by having them
+	    check out a Git branch with a specially crafted name.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45444</cvename>
+      <url>https://zsh.sourceforge.io/releases.html</url>
+    </references>
+    <dates>
+      <discovery>2022-02-12</discovery>
+      <entry>2022-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b0ad196-1ee8-4a98-89b1-4d5d82af49a9">
     <topic>jenkins -- DoS vulnerability in bundled XStream library</topic>
     <affects>
