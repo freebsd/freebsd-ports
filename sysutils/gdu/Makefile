@@ -1,6 +1,6 @@
 PORTNAME=	gdu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.12.1
+DISTVERSION=	5.13.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -16,6 +16,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		fatih:color:v1.12.0:fatih_color/vendor/github.com/fatih/color \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:f057f0a857a1:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:sys:97244b99971b:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
@@ -25,6 +26,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		pbnjay:memory:7b4eea64cf58:pbnjay_memory/vendor/github.com/pbnjay/memory \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rivo:tview:29d673af0ce2:rivo_tview/vendor/github.com/rivo/tview \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
