@@ -15,8 +15,8 @@ man/man1/hexchat.1.gz
 share/metainfo/io.github.Hexchat.appdata.xml
 share/applications/io.github.Hexchat.desktop
 %%DBUS%%share/dbus-1/services/org.hexchat.service.service
-share/icons/hicolor/48x48/apps/hexchat.png
-share/icons/hicolor/scalable/apps/hexchat.svg
+share/icons/hicolor/48x48/apps/io.github.Hexchat.png
+share/icons/hicolor/scalable/apps/io.github.Hexchat.svg
 share/locale/af/LC_MESSAGES/hexchat.mo
 share/locale/am/LC_MESSAGES/hexchat.mo
 share/locale/ast/LC_MESSAGES/hexchat.mo

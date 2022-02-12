@@ -1,7 +1,7 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	hexchat
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	irc gnome
 
