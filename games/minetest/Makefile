@@ -1,6 +1,5 @@
 PORTNAME=	minetest
-PORTVERSION=	5.4.1
-PORTREVISION=	2
+PORTVERSION=	5.5.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,10 +9,12 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/doc/lgpl-2.1.txt
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libjsoncpp.so:devel/jsoncpp
+		libjsoncpp.so:devel/jsoncpp \
+		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c11 iconv:wchar_t sqlite
 USE_GITHUB=	yes
+GH_TUPLE=	minetest:irrlicht:d3132e0:irrlicht/lib/irrlichtmt
 
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
@@ -26,7 +27,7 @@ PORTSCOUT=	skipv:5.4.2-android
 PORTDATA=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	CURL SOUND FREETYPE NCURSES LUAJIT \
+OPTIONS_DEFINE=	CURL SOUND NCURSES LUAJIT \
 		DOCS EXAMPLES NLS
 OPTIONS_MULTI=	COMP
 OPTIONS_GROUP=	DATABASE
@@ -38,13 +39,13 @@ DATABASE_DESC=		Database support
 OPTIONS_GROUP_DATABASE=	PGSQL LEVELDB REDIS SPATIAL
 
 OPTIONS_DEFAULT=	CLIENT SERVER \
-			CURL SOUND FREETYPE NCURSES LUAJIT
+			CURL SOUND NCURSES LUAJIT
 OPTIONS_SUB=		yes
 
 CLIENT_DESC=		Build client
 CLIENT_CMAKE_BOOL=	BUILD_CLIENT
 CLIENT_LIB_DEPENDS=	libpng.so:graphics/png \
-			libIrrlicht.so:x11-toolkits/irrlicht
+			libfreetype.so:print/freetype2
 CLIENT_USES=		gl jpeg xorg
 CLIENT_USE=		GL=gl XORG=x11,xext,xxf86vm
 SERVER_DESC=		Build server
@@ -55,9 +56,6 @@ CURL_CMAKE_BOOL=	ENABLE_CURL
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 SOUND_DESC=		Enable sound
 SOUND_CMAKE_BOOL=	ENABLE_SOUND
-FREETYPE_DESC=		Support for TrueType fonts with unicode
-FREETYPE_CMAKE_BOOL=	ENABLE_FREETYPE
-FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 NCURSES_DESC=		Enable ncurses console
 NCURSES_CMAKE_BOOL=	ENABLE_CURSES
 NCURSES_USES=		ncurses
@@ -94,14 +92,6 @@ LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
 USE_RC_SUBR=	${PORTNAME}
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
-.endif
-
-# hacky way to not bring irrlicht and X11 depends for server only
-.if ! ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSERVER}
-BUILD_DEPENDS+=	${NONEXISTENT}:x11-toolkits/irrlicht:patch
-IRRLICHT_INCLUDE_DIR=	`${MAKE} -C ${PORTSDIR}/x11-toolkits/irrlicht -V WRKSRC`/include
-CMAKE_ARGS+=	-DIRRLICHT_INCLUDE_DIR:STRING="${IRRLICHT_INCLUDE_DIR}"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-irrlichtdepend
 .endif
 
 post-extract:

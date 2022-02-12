@@ -1,3 +1,5 @@
-TIMESTAMP = 1618146422
-SHA256 (minetest-minetest-5.4.1_GH0.tar.gz) = de9e4410583c845c104b4be25f9d0b8743d8573c120149b8910ae2519f9ab14e
-SIZE (minetest-minetest-5.4.1_GH0.tar.gz) = 11209289
+TIMESTAMP = 1644232113
+SHA256 (minetest-minetest-5.5.0_GH0.tar.gz) = 8b9bef6054c8895cc3329ae6d05cb355eef9c7830600d82dc9eaa4664f87c8f9
+SIZE (minetest-minetest-5.5.0_GH0.tar.gz) = 9558895
+SHA256 (minetest-irrlicht-d3132e0_GH0.tar.gz) = 0a26c999af70994f6680ae5e589e4d5231cb0a989a73f0b63e6bc924f5cf7721
+SIZE (minetest-irrlicht-d3132e0_GH0.tar.gz) = 4158424
