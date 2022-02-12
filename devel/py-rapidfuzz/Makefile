@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++14-lang python:3.6+
 USE_PYTHON=	distutils autoplist
 
 post-install:
