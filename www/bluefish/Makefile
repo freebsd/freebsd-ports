@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libenchant.so:textproc/enchant
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
-		pkgconfig python:3.0-3.8 shared-mime-info shebangfix tar:bzip2
+		pkgconfig python:3.0-3.9 shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	data/css_decompressor \
 		data/cssmin.py \
 		data/jsbeautify \
