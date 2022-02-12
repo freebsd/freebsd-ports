@@ -37,6 +37,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	World
 MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
+MAKE_ENV=	MALLOC_CONF=junk:false
 SUB_FILES=	pkg-message
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
