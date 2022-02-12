@@ -1,11 +1,10 @@
---- Cargo.toml.orig	2021-12-11 16:10:28 UTC
+--- Cargo.toml.orig	2022-02-12 17:10:55 UTC
 +++ Cargo.toml
-@@ -31,7 +31,7 @@ lazy_static = "1.4.0"
- indexmap = { version = "1.7.0", features = ["serde"] }
- natord = "1.0.9"
- humansize = "1.1.1"
--mlua = { version = "0.7.0", features = ["luajit", "vendored", "serialize", "send"] }
-+mlua = { version = "0.7.0", features = ["luajit", "serialize", "send"] }
- ansi-to-tui = "0.4.1"
- libc = "0.2.109"
- tui-input = { version = "0.1.2", features = [ "serde" ] }
+@@ -71,7 +71,6 @@ features = ['serde']
+ version = '0.7'
+ features = [
+     'luajit',
+-    'vendored',
+     'serialize',
+     'send',
+ ]
