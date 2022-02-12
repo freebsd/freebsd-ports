@@ -1,7 +1,7 @@
 PORTNAME=	kitty
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1
+DISTVERSION=	0.24.2
 CATEGORIES=	x11
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
@@ -26,9 +26,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 cpe gettext-runtime gl gmake ncurses:port pkgconfig \
-		python:3.5+ shebangfix terminfo xorg
-USE_GITHUB=	yes
+USES=		compiler:c11 cpe gettext-runtime gl gmake pkgconfig \
+		python:3.5+ shebangfix tar:xz terminfo xorg
 GH_ACCOUNT=	kovidgoyal
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
@@ -58,6 +57,13 @@ _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
 .if ${ARCH} == powerpc64 || ${ARCH:Mriscv64*}
 MAKE_ENV+=	KITTY_NO_LTO=1
+.endif
+
+# ncursesw and tinfo >= 6.1 seem to be neededd
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400035
+USES+=ncurses:port
+.else
+USES+=ncurses
 .endif
 
 # For librsync, we need to set header and library path
