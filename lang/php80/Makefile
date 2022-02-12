@@ -12,10 +12,6 @@ COMMENT=	PHP Scripting Language
 LICENSE=	PHP301
 
 USES+=		compiler:c11 tar:xz cpe gnome pkgconfig
-# Although php builds fine with libressl* but most of the php modules
-# require curl which fails to build with libressl*. So do an early
-# check and prevent php from being built with libressl*
-IGNORE_SSL=	libressl libressl-devel
 CPE_PRODUCT=	php
 
 CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
