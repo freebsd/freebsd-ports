@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220212:
+  AFFECTS: users of lang/php8[01][-extensions]?
+  AUTHOR: bofh@FreeBSD.org
+
+  Non-Default OPTION MYSQL80 has been removed in lieu of making
+  php8[01]-openssl as part of DEFAULT php8[01] installation. Although
+  for php74 it is not the case. Ports that depends on
+  security/php8[01]-openssl will no longer be installed as these have
+  been removed. There is no side effect of this for ports which have
+  USE_PHP=openssl. In case for php74 as the default php74-openssl will
+  be installed otherwise it will be used from php installation.
+
 20220207:
   AFFECTS: users of security/amavisd-new
   AUTHOR: flo@FreeBSD.org

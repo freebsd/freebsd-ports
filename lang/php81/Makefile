@@ -1,6 +1,6 @@
 PORTNAME=	php81
 DISTVERSION=	8.1.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
@@ -11,6 +11,10 @@ COMMENT=	PHP Scripting Language (8.1.X branch)
 LICENSE=	PHP301
 
 USES+=		compiler:c11 cpe gnome pkgconfig tar:xz
+# Although php builds fine with libressl* but most of the php modules
+# require curl which fails to build with libressl*. So do an early
+# check and prevent php from being built with libressl*
+IGNORE_SSL=	libressl libressl-devel
 CPE_PRODUCT=	php
 PHP_VER=	81
 
@@ -26,19 +30,21 @@ CONFIGURE_ARGS+=	--disable-all \
 			--with-config-file-scan-dir=${PREFIX}/etc/php \
 			--with-layout=GNU \
 			--with-libxml \
+			--with-openssl \
 			--with-password-argon2=${LOCALBASE}
 DESTDIRNAME=		INSTALL_ROOT
 
-USES+=		autoreconf:build
+USES+=		autoreconf:build ssl
 USE_GNOME=	libxml2
 
 CPPFLAGS=	-I${LOCALBASE}/include
 
+LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE+=		CGI CLI DEBUG DTRACE EMBED FPM IPV6 LINKTHR \
-				MYSQL80 MYSQLND PHPDBG ZTS
+				MYSQLND PHPDBG ZTS
 OPTIONS_DEFAULT=		CGI CLI DTRACE EMBED FPM LINKTHR MYSQLND
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
@@ -62,7 +68,6 @@ CLI_DESC=	Build CLI version
 EMBED_DESC=	Build embedded library
 FPM_DESC=	Build FPM version
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
-MYSQL80_DESC=	Build with MySQL caching password mechanism
 MYSQLND_DESC=	Build with MySQL Native Driver
 PHPDBG_DESC=	Interactive PHP debugger
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
@@ -82,12 +87,6 @@ FPM_VARS=		PHP_SAPI+=fpm \
 			USE_RC_SUBR+=php-fpm
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 LINKTHR_LIBS=		-lpthread
-MYSQL80_USES=		ssl
-MYSQL80_CONFIGURE_ON=	--with-openssl
-MYSQL80_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-			PHP_OPENSSL=no
-MYSQL80_LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
 MYSQLND_CONFIGURE_ON=	--enable-mysqlnd
 PHPDBG_CONFIGURE_ON=	--enable-phpdbg
 PHPDBG_VARS=		PHP_SAPI+=phpdbg
@@ -126,11 +125,10 @@ PLIST_SUB+=	SAPI_INC="@comment "
 .endif
 
 CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \
-		lt_cv_path_SED="sed"
-
-.if ${PORT_OPTIONS:MMYSQL80}
-WARNING=	"PHP is now built with MySQL 8.0 support which has caching password mechanism. This implies ${PORTNAME}-openssl module. Hence ${PORTNAME}-openssl can no longer be installed alongside with ${PORTNAME}. If you require ${PORTNAME}-openssl module please rebuild ${PORTNAME} with MYSQL80 OPTION disabled. Otherwise remove ${PORTNAME}-openssl DEPENDENCY from ports."
-.endif
+		lt_cv_path_SED="sed" \
+		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+		PHP_OPENSSL=yes
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
@@ -150,11 +148,6 @@ post-build:
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} -n "PHP_EXT_DIR=" >> ${WRKDIR}/php.conf
 	@${SH} ${WRKSRC}/scripts/php-config --extension-dir | ${SED} -ne 's,^${PREFIX}/lib/php/,,p' >> ${WRKDIR}/php.conf
-
-post-build-MYSQL80-off:
-	@${ECHO_CMD} "PHP_EXT_INC=hash json pcre spl" >> ${WRKDIR}/php.conf
-
-post-build-MYSQL80-on:
 	@${ECHO_CMD} "PHP_EXT_INC=hash json openssl pcre spl" >> ${WRKDIR}/php.conf
 
 test: build
@@ -281,8 +274,7 @@ CONFIGURE_ARGS+=	--enable-filter
 CONFIGURE_ARGS+=	--enable-ftp
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-		PHP_OPENSSL=yes
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		pkgconfig ssl
@@ -345,9 +337,8 @@ CONFIGURE_ARGS+=	--with-imap-ssl=${OPENSSLBASE} \
 			--with-imap=${LOCALBASE}
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-		PHP_OPENSSL=yes
-  
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl
 .endif
@@ -389,7 +380,7 @@ OPTIONS_DEFINE=		MYSQLND
 OPTIONS_DEFAULT=	MYSQLND
 
 MYSQLND_DESC=		Use MySQL Native Driver
-MYSQLND_CONFIGURE_ARGS=	--with-mysqli=mysqlnd
+MYSQLND_CONFIGURE_ON=	--with-mysqli=mysqlnd
 MYSQLND_CONFIGURE_OFF=	--with-mysqli=${LOCALBASE}/bin/mysql_config
 MYSQLND_USES_OFF=	mysql
 .endif
@@ -399,13 +390,6 @@ LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 
 CONFIGURE_ARGS+=	--enable-odbc \
 			--with-unixODBC=${LOCALBASE}
-.endif
-
-.if ${PHP_MODNAME} == "openssl"
-USES+=			ssl
-CONFIGURE_ARGS+=	--with-openssl
-CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
@@ -453,10 +437,11 @@ OPTIONS_DEFINE=		MYSQLND
 OPTIONS_DEFAULT=	MYSQLND
 
 MYSQLND_DESC=		Use MySQL Native Driver
+
 MYSQLND_CONFIGURE_OFF=	--with-pdo-mysql=${LOCALBASE} \
 			--with-zlib-dir=/usr
-MYSQLND_CONFIGURE_ON=	--with-pdo-mysql=mysqlnd
 MYSQLND_USES_OFF=	mysql
+MYSQLND_CONFIGURE_ON=	--with-pdo-mysql=mysqlnd
 
 USE_PHP=	pdo:build
 .endif
@@ -626,18 +611,7 @@ USES+=			pkgconfig
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_MODNAME} == "openssl"
-post-stage:
-	@if ${PREFIX}/bin/php -m | grep openssl 2>/dev/null && ( [ ! -f ${PREFIX}/etc/php/ext-20-openssl.ini ] && [ ! -f ${PREFIX}/etc/php/ext-30-openssl.ini ] ); then \
-		${ECHO_CMD}; \
-		${ECHO_MSG} "===>  ${PKGNAME} "openssl module is already built with php base.; \
-		${ECHO_CMD}; \
-		${FALSE}; \
-	fi
-.endif
-
-.if ${PHP_MODNAME} == "openssl" || ${PHP_MODNAME} == "sqlite3" || ${PHP_MODNAME} == \
-	"zlib"
+.if ${PHP_MODNAME} == "sqlite3" || ${PHP_MODNAME} == "zlib"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif

@@ -178,17 +178,17 @@ PHP_VER=	${FLAVOR:S/^php//}
 # Mk/bsd.default-versions.mk in sync.
 .    if ${PHP_VER} == 81
 PHP_EXT_DIR=   20210902
-PHP_EXT_INC=    hash json pcre spl
+PHP_EXT_INC=    hash json openssl pcre spl
 .    elif ${PHP_VER} == 80
 PHP_EXT_DIR=   20200930
-PHP_EXT_INC=    hash json pcre spl
+PHP_EXT_INC=    hash json openssl pcre spl
 .    elif ${PHP_VER} == 74
 PHP_EXT_DIR=   20190902
 PHP_EXT_INC=    hash pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
 PHP_EXT_DIR=   20200930
-PHP_EXT_INC=    hash json pcre spl
+PHP_EXT_INC=    hash json openssl pcre spl
 .    endif
 
 # Try to figure out what the PHP_EXT_DIR should be WRT the
@@ -403,12 +403,13 @@ ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd
 gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
-hash_DEPENDS=	security/php${PHP_VER}-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 intl_DEPENDS=	devel/php${PHP_VER}-intl
+.if ${PHP_VER} < 80
 json_DEPENDS=	devel/php${PHP_VER}-json
+.endif
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcrypt_DEPENDS=	security/pecl-mcrypt@${PHP_FLAVOR}
@@ -418,7 +419,9 @@ mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
+.if ${PHP_VER} < 80
 openssl_DEPENDS=security/php${PHP_VER}-openssl
+.endif
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pdf_DEPENDS=	print/pecl-pdflib@${PHP_FLAVOR}
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo

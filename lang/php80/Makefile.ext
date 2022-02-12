@@ -3,7 +3,7 @@ COMMENT=	The ${PHP_MODNAME} shared extension for php
 USES+=	php:ext,noflavors
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
 PHP_VER=	80
-IGNORE_WITH_PHP= 72 73 74
+IGNORE_WITH_PHP= 74 81
 
 EXTSUBDIR=	${DISTNAME}/ext/${PHP_MODNAME}
 WRKSRC=		${WRKDIR}/${EXTSUBDIR}
@@ -52,6 +52,21 @@ INIFILE_DESC=	INI file support
 FLATFILE_DESC=	flatfile support
 LMDB_DESC=	LMDB database support
 
+CDB_CONFIGURE_OFF=--without-cdb
+DB4_CONFIGURE_ON=--with-db4=${LOCALBASE}
+DB4_USES=			bdb
+DB4_VARS=	WITH_BDB_HIGHEST=yes
+FLATFILE_CONFIGURE_OFF=--disable-flatfile
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+GDBM_CONFIGURE_ON=--with-gdbm=${LOCALBASE}
+INIFILE_CONFIGURE_OFF=--disable-inifile
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_CONFIGURE_ON=	--with-lmdb=${LOCALBASE}
+QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
+QDBM_CONFIGURE_ON=--with-qdbm=${LOCALBASE}
+TOKYO_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
+TOKYO_CONFIGURE_ON=--with-tcadb=${LOCALBASE}
+
 PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 .endif
 
@@ -94,8 +109,7 @@ CONFIGURE_ARGS+=--enable-filter \
 CONFIGURE_ARGS+=--enable-ftp
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-		PHP_OPENSSL=yes
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl pkgconfig
@@ -120,6 +134,12 @@ JIS_DESC=	Enable JIS-mapped Japanese font support
 WEBP_DESC=  Enable WebP image format support
 X11_DESC=	Enable XPM support
 
+JIS_CONFIGURE_ON=--enable-gd-jis-conv
+WEBP_CONFIGURE_ON=--with-webp
+WEBP_LIB_DEPENDS=   libwebp.so:graphics/webp
+X11_USES=		xorg
+X11_USE=	XORG=xpm
+X11_CONFIGURE_ON=--with-xpm
 .endif
 
 .if ${PHP_MODNAME} == "gettext"
@@ -148,13 +168,15 @@ OPTIONS_DEFAULT=PANDA
 CCLIENT_DESC=	Uses the original but unmaintained cclient
 PANDA_DESC=	Uses the forked panda-cclient instead of the original cclient
 
+PANDA_LIB_DEPENDS=	libc-client4.so.10:mail/panda-cclient
+PANDA_LIB_DEPENDS_OFF=	libc-client4.so.9:mail/cclient
+
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 		--with-pcre-dir=${LOCALBASE} \
 		--with-imap-ssl=${OPENSSLBASE}
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-		PHP_OPENSSL=yes
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
   
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl
@@ -187,6 +209,10 @@ OPTIONS_DEFAULT=REGEX
 
 REGEX_DESC=	Enable multibyte regex support
 
+REGEX_CONFIGURE_OFF=--disable-mbregex
+REGEX_CONFIGURE_ON=--with-onig=${LOCALBASE}
+REGEX_LIB_DEPENDS=	libonig.so:devel/oniguruma
+
 PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .endif
 
@@ -195,6 +221,10 @@ OPTIONS_DEFINE=	MYSQLND
 OPTIONS_DEFAULT=MYSQLND
 
 MYSQLND_DESC=	Use MySQL Native Driver
+
+MYSQLND_CONFIGURE_ON=--with-mysqli=mysqlnd
+MYSQLND_CONFIGURE_OFF=--with-mysqli=${LOCALBASE}/bin/mysql_config
+MYSQLND_USES_OFF=	mysql
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
@@ -202,13 +232,6 @@ LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 
 CONFIGURE_ARGS+=--enable-odbc \
 		--with-unixODBC=${LOCALBASE}
-.endif
-
-.if ${PHP_MODNAME} == "openssl"
-USES+=			ssl
-CONFIGURE_ARGS+=	--with-openssl
-CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
@@ -234,6 +257,9 @@ USE_PHP=	pdo:build
 OPTIONS_DEFINE=	MSSQL
 
 MSSQL_DESC=	Enable Microsoft SQL Server support
+
+MSSQL_LIB_DEPENDS=	libsybdb.so:databases/freetds
+MSSQL_LIB_DEPENDS_OFF=	libct.so:databases/freetds
 .endif
 
 .if ${PHP_MODNAME} == "pdo_firebird"
@@ -255,6 +281,11 @@ OPTIONS_DEFINE=	MYSQLND
 OPTIONS_DEFAULT=MYSQLND
 
 MYSQLND_DESC=	Use MySQL Native Driver
+
+MYSQLND_CONFIGURE_ON=--with-pdo-mysql=mysqlnd
+MYSQLND_CONFIGURE_OFF=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+MYSQLND_USES_OFF=	mysql
 
 USE_PHP=	pdo:build
 .endif
@@ -433,131 +464,15 @@ CONFIGURE_ARGS+=--with-zlib=/usr
 USES+=		pkgconfig
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${PHP_MODNAME} == "dba"
-.	if empty(PORT_OPTIONS:MCDB)
-CONFIGURE_ARGS+=--without-cdb
-.	endif
-.	if ${PORT_OPTIONS:MDB4}
-CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
-
-USES+=			bdb
-WITH_BDB_HIGHEST=	yes
-.	endif
-.	if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	libgdbm.so:databases/gdbm
-
-CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
-.	endif
-.	if ${PORT_OPTIONS:MQDBM}
-LIB_DEPENDS+=	libqdbm.so:databases/qdbm
-
-CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
-.	endif
-.	if ${PORT_OPTIONS:MTOKYO}
-LIB_DEPENDS+=	libtokyocabinet.so:databases/tokyocabinet
-
-CONFIGURE_ARGS+=--with-tcadb=${LOCALBASE}
-.	endif
-.	if empty(PORT_OPTIONS:MINIFILE)
-CONFIGURE_ARGS+=--disable-inifile
-.	endif
-.	if empty(PORT_OPTIONS:MFLATFILE)
-CONFIGURE_ARGS+=--disable-flatfile
-.	endif
-
-.	if ${PORT_OPTIONS:MLMDB}
-LIB_DEPENDS+=	liblmdb.so:databases/lmdb
-CONFIGURE_ARGS+=	--with-lmdb=${LOCALBASE}
-.endif
-.endif
-
-.if ${PHP_MODNAME} == "mysqli"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-mysqli=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
-USES+=	mysql
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "pdo_mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-USES+=	mysql
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "gd"
-.	if ${PORT_OPTIONS:MJIS}
-CONFIGURE_ARGS+=--enable-gd-jis-conv
-.	endif
-.   if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=   libwebp.so:graphics/webp
-
-CONFIGURE_ARGS+=--with-webp
-.   endif
-.	if ${PORT_OPTIONS:MX11}
-USES+=		xorg
-USE_XORG=	xpm
-
-CONFIGURE_ARGS+=--with-xpm
-.	endif
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if ${PHP_MODNAME} == "imap"
-.	if ${PORT_OPTIONS:MPANDA}
-LIB_DEPENDS+=	libc-client4.so.10:mail/panda-cclient
-.	else
-LIB_DEPENDS+=	libc-client4.so.9:mail/cclient
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "mbstring"
-.	if ${PORT_OPTIONS:MREGEX}
-LIB_DEPENDS+=	libonig.so:devel/oniguruma
-CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
-.	else
-CONFIGURE_ARGS+=--disable-mbregex
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "openssl"
-post-stage:
-	@if ${PREFIX}/bin/php -m | grep openssl 2>/dev/null && ( [ ! -f ${PREFIX}/etc/php/ext-20-openssl.ini ] && [ ! -f ${PREFIX}/etc/php/ext-30-openssl.ini ] ); then \
-		${ECHO_CMD}; \
-		${ECHO_MSG} "===>  ${PKGNAME} "openssl module is already built with php base.; \
-		${ECHO_CMD}; \
-		${FALSE}; \
-	fi
-.endif
-
-.if ${PHP_MODNAME} == "openssl" || ${PHP_MODNAME} == "sqlite3"
+.if ${PHP_MODNAME} == "sqlite3" || ${PHP_MODNAME} == "zlib"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
-.endif
-
-.if ${PHP_MODNAME} == "pdo_dblib"
-.	if ${PORT_OPTIONS:MMSSQL}
-LIB_DEPENDS+=	libsybdb.so:databases/freetds
-.	else
-LIB_DEPENDS+=	libct.so:databases/freetds
-.	endif
 .endif
 
 .if ${PHP_MODNAME} == "xml"
 post-extract:
 	@${MKDIR} ${WRKSRC}/ext/xml
 	@${CP} ${WRKSRC}/expat_compat.h ${WRKSRC}/ext/xml
-.endif
-
-.if ${PHP_MODNAME} == "zlib"
-post-extract:
-	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
