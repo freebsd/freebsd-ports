@@ -1,7 +1,7 @@
 # Created by: torstenb
 
 PORTNAME=	zsh
-DISTVERSION=	5.8
+DISTVERSION=	5.8.1
 CATEGORIES=	shells
 MASTER_SITES=	https://www.zsh.org/pub/ \
 		SF \
