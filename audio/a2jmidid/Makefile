@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libjack.so:audio/jack
 
-USES=		meson tar:bzip2 uidfix
+USES=		meson pkgconfig tar:bzip2 uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jackaudio
