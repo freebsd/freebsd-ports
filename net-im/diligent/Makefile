@@ -11,6 +11,10 @@ COMMENT=	Unofficial Qt Slack client
 
 LICENSE=	LGPL3
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandoned upstream, users also confirms port to be non working
+EXPIRATION_DATE=2022-03-31
+
 USE_LDCONFIG=	yes
 USE_QT=		core gui linguist network svg \
 		webkit widgets x11extras buildtools_build
