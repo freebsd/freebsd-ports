@@ -1,5 +1,5 @@
---- ./plugins/core/qRANSAC_SD/RANSAC_SD_orig/GfxTL/FlatCopyVector.h.orig	2019-01-07 13:54:30.016129000 -0500
-+++ ./plugins/core/qRANSAC_SD/RANSAC_SD_orig/GfxTL/FlatCopyVector.h	2019-01-07 13:55:05.855728000 -0500
+--- plugins/core/Standard/qRANSAC_SD/RANSAC_SD_orig/GfxTL/FlatCopyVector.h.orig	2020-09-08 09:36:07 UTC
++++ plugins/core/Standard/qRANSAC_SD/RANSAC_SD_orig/GfxTL/FlatCopyVector.h
 @@ -1,6 +1,6 @@
  #ifndef GfxTL__FLATCOPYVECTOR_HEADER__
  #define GfxTL__FLATCOPYVECTOR_HEADER__
