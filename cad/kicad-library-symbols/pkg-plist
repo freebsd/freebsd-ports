@@ -196,6 +196,7 @@
 %%DATADIR%%/symbols/Transistor_BJT.kicad_sym
 %%DATADIR%%/symbols/Transistor_FET.kicad_sym
 %%DATADIR%%/symbols/Transistor_IGBT.kicad_sym
+%%DATADIR%%/symbols/Transistor_Power_Module.kicad_sym
 %%DATADIR%%/symbols/Triac_Thyristor.kicad_sym
 %%DATADIR%%/symbols/Valve.kicad_sym
 %%DATADIR%%/symbols/Video.kicad_sym
