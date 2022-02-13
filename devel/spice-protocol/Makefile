@@ -1,7 +1,7 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	spice-protocol
-PORTVERSION=	0.14.3
+PORTVERSION=	0.14.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spice-space.org/download/releases/
 
