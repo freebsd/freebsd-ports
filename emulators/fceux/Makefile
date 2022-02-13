@@ -1,5 +1,5 @@
 PORTNAME=	fceux
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/fceultra/Source%20Code/${DISTVERSION}%20src/
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libminizip.so:archivers/minizip
 
 USES=		cmake desktop-file-utils gl lua:51 pkgconfig qt:5 sdl
 USE_GL=		gl glu
-USE_QT=		buildtools_build core gui opengl qmake_build sql widgets
+USE_QT=		buildtools_build core gui opengl qmake_build widgets
 USE_SDL=	sdl2
 
 CFLAGS+=	-DPUBLIC_RELEASE
