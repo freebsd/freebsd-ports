@@ -1138,6 +1138,7 @@
     SUBDIR += rhc
     SUBDIR += rinse
     SUBDIR += rmlint
+    SUBDIR += rocinante
     SUBDIR += rocr
     SUBDIR += roct
     SUBDIR += root-tail
