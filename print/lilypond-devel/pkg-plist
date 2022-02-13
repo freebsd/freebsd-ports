@@ -111,6 +111,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-rests.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-scripts.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-sharps.mf
+%%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-sori-koron.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-ties.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-timesignatures.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/feta-trills.mf
@@ -188,7 +189,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/ly/event-listener.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/festival.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/generate-documentation.ly
-%%DATADIR%%/%%DISTVERSION%%/ly/generate-interface-doc-init.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/grace-init.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/graphviz-init.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/gregorian.ly
@@ -205,6 +205,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/ly/norsk.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/paper-defaults-init.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/performer-init.ly
+%%DATADIR%%/%%DISTVERSION%%/ly/persian.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/piano-tkit.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/portugues.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/predefined-fretboards-init.ly

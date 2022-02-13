@@ -1,7 +1,7 @@
 # Created by: patrick, trevor
 
 PORTNAME=	lilypond
-DISTVERSION=	2.23.5
+DISTVERSION=	2.23.6
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -43,10 +43,10 @@ CONFIGURE_ENV+=		ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 			HOME=${WRKDIR} \
 			YACC=${YACC}
 
-CONFLICTS_INSTALL=	lilypond
-
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all
+
+CONFLICTS_INSTALL=	lilypond
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
@@ -71,6 +71,7 @@ URW_DESC=	Use bundled URW fonts
 GUILE2_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 			libguile-2.2.so:lang/guile2
 GUILE2_LIB_DEPENDS_OFF=	libguile.so:lang/guile1
+GUILE2_CONFIGURE_ENV=	GUILE_FLAVOR=guile-2.2
 
 NLS_USES=	gettext
 
