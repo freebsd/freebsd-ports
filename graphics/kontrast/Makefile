@@ -1,6 +1,6 @@
 PORTNAME=	kontrast
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	graphics kde kde-applications
+CATEGORIES=	graphics accessibility kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Color contrast checker
