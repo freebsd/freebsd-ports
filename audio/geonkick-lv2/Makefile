@@ -1,6 +1,6 @@
 PORTNAME=	geonkick
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.1
+DISTVERSION=	2.9.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 
 USES=		compiler:c++17-lang cmake desktop-file-utils gnome localbase:ldflags \
 		pkgconfig shared-mime-info xorg
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	iurie-sw
 USE_GNOME=	cairo
