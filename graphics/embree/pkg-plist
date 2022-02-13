@@ -174,10 +174,10 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box.ecs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box.mtl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box.obj
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_instanced.ecs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_instanced.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box.xml.bin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_instanced.ecs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_instanced.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_mblur.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_mblur.xml.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve0.xml
@@ -208,6 +208,8 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_bspline_curve_twisted.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curve0.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curve1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curve_large_curvature.ecs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curve_large_curvature.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curves.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_hermite_curve_twisted.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/points.ecs

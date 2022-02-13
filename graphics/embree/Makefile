@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	embree
-PORTVERSION=	3.13.2
-PORTREVISION=	2
+PORTVERSION=	3.13.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -55,7 +54,7 @@ CMAKE_ARGS+=	-DEMBREE_ISA_AVX512:BOOL=OFF
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	    '/SET(CMAKE_INSTALL_BINDIR/s,\$$.*),${EXAMPLESDIR}),' \
+	    '/SET(CMAKE_INSTALL_BINDIR/s,\$$.*),${EXAMPLESDIR}"),' \
 		${WRKSRC}/common/cmake/package.cmake
 	@${REINPLACE_CMD} -e 's,Win32,${OPSYS},gi' \
 		${WRKSRC}/common/simd/vint4_sse2.h
