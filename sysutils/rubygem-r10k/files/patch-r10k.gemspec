@@ -1,4 +1,4 @@
---- r10k.gemspec.orig	2021-12-03 17:56:58 UTC
+--- r10k.gemspec.orig	2022-02-13 01:18:09 UTC
 +++ r10k.gemspec
 @@ -24,28 +24,28 @@ Gem::Specification.new do |s|
  
@@ -16,7 +16,7 @@
 +      s.add_runtime_dependency(%q<fast_gettext>.freeze, [">= 1.1.0"])
 +      s.add_runtime_dependency(%q<gettext>.freeze, [">= 3.0.2"])
 +      s.add_runtime_dependency(%q<jwt>.freeze, [">= 2.2.3"])
-       s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.9.0"])
+       s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.9"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 3.1"])
        s.add_development_dependency(%q<rake>.freeze, [">= 0"])
        s.add_development_dependency(%q<yard>.freeze, ["~> 0.9.11"])
@@ -34,7 +34,7 @@
 +      s.add_dependency(%q<fast_gettext>.freeze, [">= 1.1.0"])
 +      s.add_dependency(%q<gettext>.freeze, [">= 3.0.2"])
 +      s.add_dependency(%q<jwt>.freeze, [">= 2.2.3"])
-       s.add_dependency(%q<minitar>.freeze, ["~> 0.9.0"])
+       s.add_dependency(%q<minitar>.freeze, ["~> 0.9"])
        s.add_dependency(%q<rspec>.freeze, ["~> 3.1"])
        s.add_dependency(%q<rake>.freeze, [">= 0"])
 @@ -53,14 +53,14 @@ Gem::Specification.new do |s|
@@ -53,6 +53,6 @@
 +    s.add_dependency(%q<fast_gettext>.freeze, [">= 1.1.0"])
 +    s.add_dependency(%q<gettext>.freeze, [">= 3.0.2"])
 +    s.add_dependency(%q<jwt>.freeze, [">= 2.2.3"])
-     s.add_dependency(%q<minitar>.freeze, ["~> 0.9.0"])
+     s.add_dependency(%q<minitar>.freeze, ["~> 0.9"])
      s.add_dependency(%q<rspec>.freeze, ["~> 3.1"])
      s.add_dependency(%q<rake>.freeze, [">= 0"])
