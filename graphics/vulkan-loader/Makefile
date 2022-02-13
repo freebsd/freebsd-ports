@@ -43,7 +43,7 @@ post-patch:
 		-e '/FALLBACK/s,/etc,${PREFIX}&,' \
 		-e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/CMakeLists.txt
-# https://bugs.llvm.org/show_bug.cgi?id=47348
+# https://github.com/llvm/llvm-project/issues/46692
 	@if [ "${CHOSEN_COMPILER_TYPE}-${ARCH}-${_OSRELEASE:C/.*-//}" = "clang-i386-CURRENT" ]; then \
 		${ECHO} "disabled" >${WRKSRC}/loader/asm_test_x86.S; \
 	fi
