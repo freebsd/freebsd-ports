@@ -1,3 +1,31 @@
+  <vuln vid="24049967-88ec-11ec-88f5-901b0e934d69">
+    <topic>py-twisted -- cookie and authorization headers are leaked when following cross-origin redirects</topic>
+      <affects>
+	<package>
+	  <name>py37-twisted</name>
+	  <name>py38-twisted</name>
+	  <name>py39-twisted</name>
+	  <name>py310-twisted</name>
+	  <range><lt>22.1.0</lt></range>
+	</package>
+      </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Twisted developers report:</p>
+	<blockquote cite="https://github.com/twisted/twisted/security/advisories/GHSA-92x2-jw7w-xvvx">
+	  <p> Cookie and Authorization headers are leaked when following cross-origin redirects in <code>twited.web.client.RedirectAgent</code> and <code>twisted.web.client.BrowserLikeRedirectAgent</code>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/twisted/twisted/security/advisories/GHSA-92x2-jw7w-xvvx</url>
+    </references>
+    <dates>
+      <discovery>2022-02-07</discovery>
+      <entry>2022-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d923fb0c-8c2f-11ec-aa85-0800270512f4">
     <topic>zsh -- Arbitrary command execution vulnerability</topic>
     <affects>
