@@ -26,7 +26,7 @@ CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER} \
 		CXX=${LOCALBASE}/bin/clang++${LLVM_VER} \
 		CPP=${LOCALBASE}/bin/clang-cpp${LLVM_VER}
 
-USES=		autoreconf gmake libtool perl5
+USES=		autoreconf compiler gmake libtool perl5
 
 CFLAGS_powerpc64=	-mabi=elfv2
 
@@ -34,6 +34,14 @@ CFLAGS_powerpc64=	-mabi=elfv2
 
 .if ${ARCH} == powerpc
 LLD_UNSAFE=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+# Detect base system libc++ >= 14 by checking for COMPILER_VERSION.
+# Not really the ideal way, but it should work.
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 140
+CXXFLAGS+=	-include ${FILESDIR}/builtin_is_constant_evaluated.h
 .endif
 
 .include <bsd.port.mk>
