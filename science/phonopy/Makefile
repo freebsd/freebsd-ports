@@ -1,6 +1,6 @@
 PORTNAME=	phonopy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.13.1
 CATEGORIES=	science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,6 @@ PLIST_FILES=	include/phonopy.h \
 		lib/libphpy.a \
 		lib/libphpy.so \
 		lib/libphpy.so.1 \
-		lib/libphpy.so.2.11.0
+		lib/libphpy.so.${DISTVERSION}
 
 .include <bsd.port.mk>
