@@ -1,6 +1,5 @@
 PORTNAME=	musikcube
-DISTVERSION=	0.96.10
-PORTREVISION=	1
+DISTVERSION=	0.96.11
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +16,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libFLAC.so:audio/flac \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libmp3lame.so:audio/lame \
+		libmpg123.so:audio/mpg123 \
 		libogg.so:audio/libogg \
 		libopenmpt.so:audio/libopenmpt \
 		libsndio.so:audio/sndio \
@@ -28,6 +28,13 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} \
+		share/musikcube/libmusikcore.so \
+		share/musikcube/musikcube \
+		share/musikcube/musikcubed \
+		share/musikcube/plugins/*.so
 
 .include <bsd.port.options.mk>
 
