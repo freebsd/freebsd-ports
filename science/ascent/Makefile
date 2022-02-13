@@ -1,7 +1,6 @@
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1-66
-DISTVERSIONSUFFIX=	-gbcf2742a
+DISTVERSION=	0.8.0
 CATEGORIES=	science
 PKGNAMESUFFIX=	-visualizer
 
@@ -21,7 +20,7 @@ USES=		cmake:testing compiler:c++11-lang fortran localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alpine-DAV
-GH_TUPLE=	Alpine-DAV:spack_configs:2ea6c17:spack_configs/../scripts/uberenv_configs/spack_configs \
+GH_TUPLE=	Alpine-DAV:spack_configs:26ea412:spack_configs/../scripts/uberenv_configs/spack_configs \
 		LLNL:blt:86a7d6b:blt/blt \
 		llnl:uberenv:105e384:uberenv/../scripts/uberenv
 

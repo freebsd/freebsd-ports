@@ -1,8 +1,8 @@
-TIMESTAMP = 1643225312
-SHA256 (Alpine-DAV-ascent-v0.7.1-66-gbcf2742a_GH0.tar.gz) = fe3cf2a88d2a385a3a6ec58005677c4735782d13ed5b1a0aaf14ef77ab02fba2
-SIZE (Alpine-DAV-ascent-v0.7.1-66-gbcf2742a_GH0.tar.gz) = 61861109
-SHA256 (Alpine-DAV-spack_configs-2ea6c17_GH0.tar.gz) = 133b7d189ab336a28a6f8d6fcdbd82fa6f5c9f3997da8515a1f19252b8680775
-SIZE (Alpine-DAV-spack_configs-2ea6c17_GH0.tar.gz) = 11559
+TIMESTAMP = 1644785036
+SHA256 (Alpine-DAV-ascent-v0.8.0_GH0.tar.gz) = 546977ba7d176f6d6d2e1ada4222beafd217ad770018f4b06f9a91c50051d694
+SIZE (Alpine-DAV-ascent-v0.8.0_GH0.tar.gz) = 61884586
+SHA256 (Alpine-DAV-spack_configs-26ea412_GH0.tar.gz) = 2d92cf6fa0f0b541f9fb70e897e96230b820c3d93e01e345653cb541a089e1e1
+SIZE (Alpine-DAV-spack_configs-26ea412_GH0.tar.gz) = 14097
 SHA256 (LLNL-blt-86a7d6b_GH0.tar.gz) = 4298f150e0397367d75795598f4a63cf8c6e29578f9dc907160118fc556d6a3e
 SIZE (LLNL-blt-86a7d6b_GH0.tar.gz) = 1180289
 SHA256 (llnl-uberenv-105e384_GH0.tar.gz) = a47a418e53e571a60ef37318e377597b6b2827b38a9eafabca13b8053b50b95a
