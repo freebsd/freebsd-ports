@@ -7,6 +7,8 @@ include/crypto-vala.h
 %%UPLOAD%%lib/dino/plugins/http-files.so
 %%OMEMO%%lib/dino/plugins/omemo.so
 %%GNUPG%%lib/dino/plugins/openpgp.so
+%%ICE%%lib/dino/plugins/ice.so
+%%RTP%%lib/dino/plugins/rtp.so
 lib/libdino.so
 lib/libdino.so.0
 lib/libdino.so.0.0
@@ -149,5 +151,3 @@ share/vala/vapi/xmpp-vala.deps
 share/vala/vapi/xmpp-vala.vapi
 share/vala/vapi/crypto-vala.deps
 share/vala/vapi/crypto-vala.vapi
-%%ICE%%lib/dino/plugins/ice.so
-%%RTP%%lib/dino/plugins/rtp.so

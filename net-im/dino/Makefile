@@ -1,6 +1,7 @@
 PORTNAME=		dino
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.3.0
+PORTREVISION=		1
 CATEGORIES=		net-im
 
 MAINTAINER=		ashish@FreeBSD.org
@@ -16,7 +17,9 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libsoup-2.4.so:devel/libsoup \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
-		libgspell-1.so:textproc/gspell
+		libgspell-1.so:textproc/gspell \
+		libgcrypt.so:security/libgcrypt \
+		libsrtp2.so:net/libsrtp2
 
 USES=		cmake cpe desktop-file-utils gettext-tools gnome \
 		ninja pkgconfig
@@ -48,8 +51,7 @@ RTP_USE=		GSTREAMER1=srtp
 RTP_VARS=		ENABLED_PLUGINS+=rtp
 RTP_VARS_OFF=		DISABLED_PLUGINS+=rtp
 OMEMO_GH_TUPLE=	signalapp:libsignal-protocol-c:v2.3.3:signalapp/plugins/signal-protocol/libsignal-protocol-c
-OMEMO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-			libqrencode.so:graphics/libqrencode
+OMEMO_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 OMEMO_VARS=		ENABLED_PLUGINS+=omemo
 OMEMO_CMAKE_BOOL=	BUILD_LIBSIGNAL_IN_TREE
 OMEMO_VARS_OFF=		DISABLED_PLUGINS+=omemo
