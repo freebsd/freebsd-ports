@@ -1,9 +1,9 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	hexchat
-PORTVERSION=	2.16.1
-DISTVERSIONPREFIX=	v
+DISTVERSION=	2.16.1
 CATEGORIES=	irc gnome
+MASTER_SITES=	https://dl.hexchat.net/hexchat/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
@@ -21,16 +21,18 @@ RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gettext-tools gnome \
 		libtool localbase meson ninja pkgconfig python:3.5+ shebangfix \
-		ssl xorg
+		ssl tar:xz xorg
 CPE_VENDOR=	${PORTNAME}_project
-USE_GNOME=	cairo gtk20 intltool libxml2
+SHEBANG_FILES=	meson_post_install.py \
+		plugins/perl/generate_header.py \
+		plugins/python/generate_plugin.py \
+		src/common/make-te.py
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libxml2
 USE_XORG=	x11
-USE_GITHUB=	yes
+
+INSTALLS_ICONS=yes
 
 MESON_ARGS=	-Dtls=enabled -Dgtk-frontend=true -Dwith-python=python-${PYTHON_VER}
-INSTALL_TARGET=	install-strip
-
-LIBS+=		-lX11
 
 SUB_FILES=	pkg-message
 
@@ -65,12 +67,6 @@ PERL_MESON_TRUE=	with-perl
 PERL_USES=		perl5
 TEXTFE_MESON_TRUE=	text-frontend
 SYSINFO_MESON_TRUE=	with-sysinfo
-
-BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-SHEBANG_FILES=	meson_post_install.py \
-		plugins/perl/generate_header.py \
-		src/common/make-te.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
