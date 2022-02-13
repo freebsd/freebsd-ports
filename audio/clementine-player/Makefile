@@ -12,6 +12,9 @@ COMMENT=	Cross-platform music player based on Amarok 1.4
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last release in 2016, many issue reports upstream and little to no development for years. Please consider using audio/strawberry
+EXPIRATION_DATE=2022-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
