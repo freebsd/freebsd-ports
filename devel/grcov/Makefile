@@ -1,6 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
+DISTVERSION=	0.8.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -83,7 +83,7 @@ CARGO_CRATES=	\
 		maplit-1.0.2 \
 		md-5-0.10.0 \
 		memchr-2.4.0 \
-		memmap-0.7.0 \
+		memmap2-0.5.2 \
 		memoffset-0.6.4 \
 		miniz_oxide-0.4.4 \
 		msvc-demangler-0.9.0 \
@@ -106,7 +106,7 @@ CARGO_CRATES=	\
 		phf_shared-0.10.0 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
-		pretty_assertions-1.0.0 \
+		pretty_assertions-1.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.27 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	\
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-0.10.0 \
-		semver-1.0.4 \
+		semver-1.0.5 \
 		semver-parser-0.7.0 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
@@ -145,7 +145,7 @@ CARGO_CRATES=	\
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		symbolic-common-8.5.0 \
+		symbolic-common-8.6.0 \
 		symbolic-demangle-8.5.0 \
 		syn-1.0.73 \
 		synstructure-0.12.4 \
