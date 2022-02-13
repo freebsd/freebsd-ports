@@ -38,7 +38,7 @@ TEST_MESON_TRUE=enable_tests testdata_tests
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
 .endif
 
-# https://bugs.llvm.org/show_bug.cgi?id=40635
+# https://github.com/llvm/llvm-project/issues/39981
 .if !empty(CFLAGS:M-flto*)
 MESON_ARGS+=	${MESON_ARGS_${CHOSEN_COMPILER_TYPE}_${ARCH}}
 MESON_ARGS_clang_amd64=	-Dstack_alignment=16
