@@ -20,6 +20,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS INSTALL_PFDSP INSTALL_PFFASTCONV
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
+CFLAGS+=	-msse2
 CXXFLAGS+=	-msse2 # fixes error: always_inline function '_mm_unpacklo_ps' requires target feature 'sse', but would be inlined into function 'pffft_zreorder' that is compiled without support for 'sse'
 .endif
 
