@@ -1,7 +1,7 @@
 # Created by: Julien Laffaye <jlaffaye@FreeBSD.org>
 
 PORTNAME=	pelican
-PORTVERSION=	4.7.1
+PORTVERSION=	4.7.2
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
