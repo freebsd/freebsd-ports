@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 
 PORTNAME=	colordiff
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.colordiff.org/ LOCAL/ehaupt
 
