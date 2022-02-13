@@ -1,5 +1,5 @@
-TIMESTAMP = 1628345619
-SHA256 (jq-1.2.1.tar.gz) = 73ce588025495e6ebcda20bb9e64b6d9f3f1657c22895143ae243899ac710cbc
-SIZE (jq-1.2.1.tar.gz) = 72435
+TIMESTAMP = 1644792897
+SHA256 (jq-1.2.2.tar.gz) = 86ace2c43f17b5a64a38887ede72c7b8ce2ab0bcfa81ee28ff6434e935010abe
+SIZE (jq-1.2.2.tar.gz) = 72440
 SHA256 (jq-1.2.1-tests.tar.gz) = 7648084f434896eda31bb5e09a4f6d32ebb561660c95655e08346c33be9b3ece
 SIZE (jq-1.2.1-tests.tar.gz) = 2856
