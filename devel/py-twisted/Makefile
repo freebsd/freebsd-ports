@@ -1,7 +1,7 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
 
 PORTNAME=	twisted
-PORTVERSION=	21.7.0
+PORTVERSION=	22.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,12 +19,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}constantly>=15.1:devel/py-constantly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperlink>=17.1.1:www/py-hyperlink@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}incremental>=21.3.0:devel/py-incremental@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyHamcrest>=1.9.0:textproc/py-pyhamcrest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.4.2:devel/py-zope.interface@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.5:devel/py-typing-extensions@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyHamcrest>=1.9.0:textproc/py-pyhamcrest@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
+USES=		cpe python:3.7-3.10
 USE_PYTHON=	autoplist concurrent distutils
 
 CPE_VENDOR=	twistedmatrix
