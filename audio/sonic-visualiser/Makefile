@@ -1,6 +1,6 @@
 PORTNAME=	sonic-visualiser
 DISTVERSION=	4.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2607/
 
