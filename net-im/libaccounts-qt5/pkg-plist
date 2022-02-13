@@ -67,6 +67,9 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/closed.png
 %%DOCS%%share/doc/accounts-qt/html/deprecated.html
 %%DOCS%%share/doc/accounts-qt/html/dir_61c9e5842729cb34568d93cb98ad85b9.html
+%%DOCS%%share/doc/accounts-qt/html/dir_61c9e5842729cb34568d93cb98ad85b9_dep.map
+%%DOCS%%share/doc/accounts-qt/html/dir_61c9e5842729cb34568d93cb98ad85b9_dep.md5
+%%DOCS%%share/doc/accounts-qt/html/dir_61c9e5842729cb34568d93cb98ad85b9_dep.png
 %%DOCS%%share/doc/accounts-qt/html/dir_c3d1d086c816c0518443c9e800634b9c.html
 %%DOCS%%share/doc/accounts-qt/html/dir_c3d1d086c816c0518443c9e800634b9c.js
 %%DOCS%%share/doc/accounts-qt/html/dir_e68e8157741866f444e17edd764ebbae.html
