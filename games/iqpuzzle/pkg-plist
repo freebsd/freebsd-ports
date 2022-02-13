@@ -1,5 +1,6 @@
 bin/iqpuzzle
 man/de/man6/iqpuzzle.6.gz
+man/it/man6/iqpuzzle.6.gz
 man/man6/iqpuzzle.6.gz
 share/applications/com.github.elth0r0.iqpuzzle.desktop
 share/icons/hicolor/128x128/apps/iqpuzzle.png
