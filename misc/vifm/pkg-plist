@@ -22,6 +22,7 @@ share/zsh/site-functions/_vifm
 %%DATADIR%%/vifmrc
 %%DATADIR%%/vim-doc/doc/tags
 %%DATADIR%%/vim-doc/doc/vifm-app.txt
+%%DATADIR%%/vim-doc/doc/vifm-lua.txt
 %%DATADIR%%/vim/autoload/vifm/edit.vim
 %%DATADIR%%/vim/doc/tags
 %%DATADIR%%/vim/doc/vifm-plugin.txt
