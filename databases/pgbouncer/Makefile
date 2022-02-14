@@ -1,8 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.16.0
-PORTREVISION=	1
+PORTVERSION=	1.16.1
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -46,6 +45,8 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|= /etc/pgbouncer/userlist.txt|= ${PREFIX}/etc/pgbouncer.users|g" \
+		-e "s|= /var/log/pgbouncer/pgbouncer.log|= ${PGBOUNCER_LOGDIR}/pgbouncer.log|g" \
+		-e "s|= /var/run/pgbouncer/pgbouncer.pid|= ${PGBOUNCER_RUNDIR}/pgbouncer.pid|g" \
 		-e "s|= /etc/pgbouncer/resolv.conf|= ${PREFIX}/etc/pgbouncer-resolv.conf|g" \
 		-e "s|include /etc/pgbouncer/pgbouncer-other.ini|include ${PREFIX}/etc/pgbouncer-other.ini|g" \
 		${WRKSRC}/etc/pgbouncer.ini
