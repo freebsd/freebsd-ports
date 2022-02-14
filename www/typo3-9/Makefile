@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 DEPRECATED=	Mainstream support ended 2021-09-30
-EXPIRATION_DATE=2024-09-30
+EXPIRATION_DATE=2022-03-31
 
 USES=		cpe php:web,flavors shebangfix
 USE_PHP=	ctype dom fileinfo filter hash intl json openssl pcre session simplexml \
