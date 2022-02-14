@@ -57,7 +57,9 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/branches/dis.des
 %%DATADIR%%/dat/des/branches/elf.des
 %%DATADIR%%/dat/des/branches/geh.des
+%%DATADIR%%/dat/des/branches/geh_lava_maze.des
 %%DATADIR%%/dat/des/branches/hell.des
+%%DATADIR%%/dat/des/branches/hells.des
 %%DATADIR%%/dat/des/branches/hilbert_zone.des
 %%DATADIR%%/dat/des/branches/lair.des
 %%DATADIR%%/dat/des/branches/orc.des
@@ -102,6 +104,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/builder/shops.des
 %%DATADIR%%/dat/des/builder/uniques.des
 %%DATADIR%%/dat/des/guide.txt
+%%DATADIR%%/dat/des/portals/arena.des
 %%DATADIR%%/dat/des/portals/bailey.des
 %%DATADIR%%/dat/des/portals/bazaar.des
 %%DATADIR%%/dat/des/portals/desolation.des
@@ -127,6 +130,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/serial/rivers.des
 %%DATADIR%%/dat/des/serial/serial_guide.txt
 %%DATADIR%%/dat/des/serial/sigils.des
+%%DATADIR%%/dat/des/serial/subway.des
 %%DATADIR%%/dat/des/serial/undead.des
 %%DATADIR%%/dat/des/serial/window.des
 %%DATADIR%%/dat/des/sprint/arena_sprint.des
@@ -347,6 +351,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/descript/lv/unident.txt
 %%DATADIR%%/dat/descript/lv/unrand.txt
 %%DATADIR%%/dat/descript/monsters.txt
+%%DATADIR%%/dat/descript/mutations.txt
 %%DATADIR%%/dat/descript/nl/ability.txt
 %%DATADIR%%/dat/descript/nl/tutorial.txt
 %%DATADIR%%/dat/descript/nl/unident.txt
@@ -640,6 +645,8 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_natasha_and_boris.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_rune_and_run_failed_on_dis.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_thunder_fist_nikola.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_ignis_the_dying_flame.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_menkaure_prince_of_dust.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_nibiki_octopode.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_peileppe_bloax_eye.png

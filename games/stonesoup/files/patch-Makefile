@@ -1,4 +1,4 @@
---- Makefile.orig	2021-08-20 10:45:00 UTC
+--- Makefile.orig	2022-01-25 18:04:53 UTC
 +++ Makefile
 @@ -131,7 +131,7 @@ include Makefile.obj
  # Which C++ standard to support
@@ -20,7 +20,7 @@
  #
  # The GCC and GXX variables are set later.
  #
-@@ -503,7 +499,7 @@ endif
+@@ -505,7 +501,7 @@ endif
  
  # Attempt to use a full compiler name, to make
  # distcc builds work nicely.
@@ -29,7 +29,7 @@
  ifeq ($(LMACH),-)
  LMACH :=
  endif
-@@ -549,15 +545,6 @@ ifdef USE_ICC
+@@ -551,15 +547,6 @@ ifdef USE_ICC
  
  # Some very good optimization flags.
    CFOPTIMIZE := -O2 -parallel
@@ -45,7 +45,7 @@
  endif
  
  # Define this to automatically generate code optimized for your machine
-@@ -858,7 +845,7 @@ ifndef NOWIZARD
+@@ -860,7 +847,7 @@ ifndef NOWIZARD
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE

@@ -1,7 +1,7 @@
 # Created by: Tobias Rehbein <tobias.rehbein@web.de>
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.27.1
+DISTVERSION=	0.28.0
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -59,7 +59,6 @@ OPTIONS_DEFINE=	LUA NOWIZARD SOUND
 OPTIONS_DEFAULT=LUA
 OPTIONS_SUB=	yes
 
-SOUND_DESC=	Sound support
 NOWIZARD_DESC=	Disable Wizard mode
 LUA_DESC=	Bindings for LUA user scripts
 
@@ -69,21 +68,21 @@ USE_SDL=	sdl2 image2 mixer2
 USE_GL=		gl glu
 MAKE_ARGS+=	TILES=y SOUND=y
 BUILD_DEPENDS+=	\
-		advpng:archivers/advancecomp \
 		fc-list:x11-fonts/fontconfig \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
-		pngcrush:graphics/pngcrush
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 LIB_DEPENDS+=libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 DESKTOP_ENTRIES=	"Dungeon Crawl Stone Soup" "${COMMENT}" "${DATADIR}/dat/tiles/stone_soup_icon-512x512.png" "${GAME}" "Game;" false
 .else
 USES+=		ncurses
+OPTIONS_DEFINE+=	SOUND
+SOUND_DESC=	Sound support
+SOUND_MAKE_ARGS=	SOUND=y
+SOUND_RUN_DEPENDS=	sox:audio/sox
 .endif
 
 NOWIZARD_MAKE_ARGS=	NOWIZARD=y
-SOUND_MAKE_ARGS=	SOUND=y
-SOUND_RUN_DEPENDS=	sox:audio/sox
 LUA_MAKE_ARGS_OFF=	NO_LUA_BINDINGS=yes
 
 post-patch-SOUND-on:
@@ -94,7 +93,7 @@ post-patch-SOUND-off:
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/sound.h
 
 pre-build:
-	@${ECHO} ${PORTVERSION} > ${WRKSRC}/util/release_ver
+	@${ECHO} ${PKGVERSION} > ${WRKSRC}/util/release_ver
 
 pre-install:
 	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' -delete

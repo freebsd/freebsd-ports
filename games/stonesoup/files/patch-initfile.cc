@@ -1,6 +1,6 @@
---- initfile.cc.orig	2021-08-20 10:45:00 UTC
+--- initfile.cc.orig	2022-01-25 18:04:53 UTC
 +++ initfile.cc
-@@ -4529,7 +4529,7 @@ static void _bones_rewrite(const string filename, cons
+@@ -4795,7 +4795,7 @@ static void _bones_rewrite(const string filename, cons
          if (dups)
              cout << ", " << dups << " duplicates removed";
          cout << "\n";
@@ -9,7 +9,7 @@
          _write_bones(filename, out);
      }
      else
-@@ -4554,7 +4554,7 @@ static void _bones_merge(const vector<string> files, c
+@@ -4820,7 +4820,7 @@ static void _bones_merge(const vector<string> files, c
              break;
      }
      if (file_exists(out_name))
