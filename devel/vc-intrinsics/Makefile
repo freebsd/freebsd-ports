@@ -1,5 +1,5 @@
 PORTNAME=	vc-intrinsics
-PORTVERSION=	s20211222
+PORTVERSION=	s20220214
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${FLAVOR}>0:devel/${FLAVOR}
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
-GH_TAGNAME=	753ad50
+GH_TAGNAME=	a727062
 CMAKE_ARGS=	-DLLVM_DIR:PATH="${LOCALBASE}/${FLAVOR}"
 CMAKE_INSTALL_PREFIX=		${PREFIX}/${FLAVOR}
 _PLIST_FILES=	include/llvm/GenXIntrinsics/GenXIntrOpts.h \
@@ -29,6 +29,8 @@ _PLIST_FILES=	include/llvm/GenXIntrinsics/GenXIntrOpts.h \
 		include/llvm/GenXIntrinsics/GenXVersion.h \
 		lib/cmake/LLVMGenXIntrinsics/LLVMGenXIntrinsicsConfig-%%CMAKE_BUILD_TYPE%%.cmake \
 		lib/cmake/LLVMGenXIntrinsics/LLVMGenXIntrinsicsConfig.cmake \
+		lib/cmake/VCIntrinsics${FLAVOR:S/llvm//}/VCIntrinsics${FLAVOR:S/llvm//}Config-%%CMAKE_BUILD_TYPE%%.cmake \
+		lib/cmake/VCIntrinsics${FLAVOR:S/llvm//}/VCIntrinsics${FLAVOR:S/llvm//}Config.cmake \
 		lib/libLLVMGenXIntrinsics.a
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
 
