@@ -1,7 +1,7 @@
 # Created by: Hung-Yi Chen <gaod@hychen.org>
 
 PORTNAME=	mitmproxy
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 
@@ -38,11 +38,21 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.2.10:www/py-asgiref@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}publicsuffix2>=2.20190812:dns/py-publicsuffix2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.11:archivers/py-zstandard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}parver>0:devel/py-parver@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		cpe python:3.8+
 USE_PYTHON=	distutils autoplist noflavors
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
+
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
