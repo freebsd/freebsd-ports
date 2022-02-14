@@ -4,7 +4,7 @@
  	char**		p_string;
  	char*		prv_f = 0;
  	va_list		prv_ap;
-+#ifdef POWERPC64LE
++#ifdef __powerpc64__
 +	va_listarg	tmpval;
 +#endif
  
@@ -14,7 +14,7 @@
  			prv_f = f;
  			f = va_arg(ap, char*);
  			va_copy(prv_ap, ap);
-+#ifdef POWERPC64LE
++#ifdef __powerpc64__
 +			tmpval = va_listval(va_arg(ap, va_listarg));
 +			va_copy(ap, tmpval);
 +#else

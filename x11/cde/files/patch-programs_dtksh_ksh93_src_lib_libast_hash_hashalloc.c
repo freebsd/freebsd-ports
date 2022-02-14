@@ -4,7 +4,7 @@
  	va_list*		vp = va;
  	Hash_region_f		region = 0;
  	void*			handle;
-+#ifdef POWERPC64LE
++#ifdef __powerpc64__
 +	va_listarg		tmpval;
 +#endif
  
@@ -14,7 +14,7 @@
  				va_copy(*vp, ap);
  				vp++;
  			}
-+#ifdef POWERPC64LE
++#ifdef __powerpc64__
 +			tmpval = va_listval(va_arg(ap, va_listarg));
 +			va_copy(ap, tmpval);
 +#else

@@ -41,12 +41,6 @@ MAKE_ENV=	MALLOC_CONF=junk:false
 SUB_FILES=	pkg-message
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64le
-CPPFLAGS+=	-DPOWERPC64LE
-.endif
-
 post-patch:
 	@if [ -f /usr/include/iconv.h ]; then \
 	    ${REINPLACE_CMD} -e 's!^[[:space:]]*const char .ip = (const char .) .bp!char *ip = *bp!' \
@@ -125,4 +119,4 @@ post-install:
 	# Only a problem on armv7 so far
 	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -name 'ecp.*' -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
