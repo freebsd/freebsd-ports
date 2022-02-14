@@ -1,0 +1,17 @@
+/usr/bin/eql5
+/usr/include/eql5/dyn_object.h
+/usr/include/eql5/eql.h
+/usr/include/eql5/eql_fun.h
+/usr/include/eql5/eql_global.h
+%%QT_LIBDIR%%/libeql5.so
+%%QT_LIBDIR%%/libeql5.so.1
+%%QT_LIBDIR%%/libeql5.so.1.0
+%%QT_LIBDIR%%/libeql5.so.1.0.0
+%%QT_LIBDIR%%/libeql5_help.so
+%%QT_LIBDIR%%/libeql5_multimedia.so
+%%QT_LIBDIR%%/libeql5_network.so
+%%QT_LIBDIR%%/libeql5_quick.so
+%%QT_LIBDIR%%/libeql5_sql.so
+%%QT_LIBDIR%%/libeql5_svg.so
+%%QT_LIBDIR%%/libeql5_webengine.so
+@dir /usr/include/eql5
