@@ -1,10 +1,10 @@
---- PATCHES.orig	2021-06-13 21:49:47 UTC
+--- PATCHES.orig	2022-02-12 23:46:24 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
---- init.h.orig	2021-06-13 21:49:46 UTC
+--- init.h.orig	2022-02-12 23:46:24 UTC
 +++ init.h
-@@ -3322,6 +3322,13 @@ struct option_t MuttVars[] = {
+@@ -3430,6 +3430,13 @@ struct option_t MuttVars[] = {
    ** In either case, a missing real name will be filled in afterwards
    ** using the value of $$realname.
    */
@@ -15,12 +15,12 @@
 +  ** headers of reply mails you send, like $reverse_alias does in the index.
 +  ** When unset, the headers taken from the original mail are left unchanged.
 +  */
-   { "rfc2047_parameters", DT_BOOL, R_NONE, {.l=OPTRFC2047PARAMS}, {.l=0} },
+   { "rfc2047_parameters", DT_BOOL, R_NONE, {.l=OPTRFC2047PARAMS}, {.l=1} },
    /*
    ** .pp
---- mutt.h.orig	2021-06-13 21:49:46 UTC
+--- mutt.h.orig	2022-02-12 23:46:24 UTC
 +++ mutt.h
-@@ -525,6 +525,7 @@ enum
+@@ -533,6 +533,7 @@ enum
    OPTREVALIAS,
    OPTREVNAME,
    OPTREVREAL,
@@ -28,32 +28,32 @@
    OPTRFC2047PARAMS,
    OPTSAVEADDRESS,
    OPTSAVEEMPTY,
---- protos.h.orig	2021-05-23 18:20:51 UTC
+--- protos.h.orig	2022-02-09 20:12:23 UTC
 +++ protos.h
-@@ -85,6 +85,7 @@ char* mutt_extract_message_id (const char *, const cha
+@@ -86,6 +86,7 @@ char* mutt_extract_message_id (const char *, const cha
  ADDRESS *mutt_get_address (ENVELOPE *, char **);
  ADDRESS *mutt_lookup_alias (const char *s);
  ADDRESS *mutt_remove_duplicates (ADDRESS *);
 +ADDRESS *mutt_reverse_address (ADDRESS *);
+ ADDRESS *mutt_remove_adrlist_group_delimiters (ADDRESS *);
  ADDRESS *mutt_expand_aliases (ADDRESS *);
  ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
- 
---- send.c.orig	2021-05-28 19:33:58 UTC
+--- send.c.orig	2022-01-15 20:43:36 UTC
 +++ send.c
-@@ -739,6 +739,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
+@@ -744,6 +744,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
    /* the CC field can get cluttered, especially with lists */
    env->to = mutt_remove_duplicates (env->to);
    env->cc = mutt_remove_duplicates (env->cc);
 +  if (option (OPTREVREPLY)){
-+	env->to = mutt_reverse_address (env->to);
-+	env->cc = mutt_reverse_address (env->cc);
++    env->to = mutt_reverse_address (env->to);
++    env->cc = mutt_reverse_address (env->cc);
 +  }
    env->cc = mutt_remove_xrefs (env->to, env->cc);
  
    if (env->cc && !env->to)
---- sendlib.c.orig	2021-05-23 18:20:51 UTC
+--- sendlib.c.orig	2022-01-22 23:36:22 UTC
 +++ sendlib.c
-@@ -3044,6 +3044,35 @@ static void set_noconv_flags (BODY *b, short flag)
+@@ -3093,6 +3093,37 @@ static void set_noconv_flags (BODY *b, short flag)
    }
  }
  
@@ -85,6 +85,8 @@
 +  }
 +  return addr;
 +}
++
++
 +
  int mutt_write_fcc (const char *path, SEND_CONTEXT *sctx, const char *msgid, int post, const char *fcc)
  {
