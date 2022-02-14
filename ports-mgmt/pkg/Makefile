@@ -75,9 +75,9 @@ pre-everything::
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
 
-# Use the internal pkg instead, generally, unless this is a cross-build,
-# in which case that won't work. Hope for the best then.
-.if !defined(CROSS_TOOLCHAIN)
+# Use the internal pkg instead, generally, unless this is a cross-build without
+# emulation, in which case that won't work. Hope for the best then.
+.if !defined(CROSS_TOOLCHAIN) || defined(QEMU_EMULATING)
 PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
 
