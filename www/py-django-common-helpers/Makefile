@@ -11,6 +11,9 @@ COMMENT=	Common things every Django app needs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer maintained, doesn't work with newer versions of Django
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.8:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.5+
