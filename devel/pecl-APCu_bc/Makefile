@@ -9,6 +9,9 @@ COMMENT=	APCu Backwards Compatibility Module
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
 
 USES=		localbase php:pecl
