@@ -152,13 +152,11 @@
     <affects>
       <package>
 	<name>xrdp</name>
-	<range><lt>0.9.18.1</lt></range>
-	<range><ge>0.9.17</ge></range>
+	<range><lt>0.9.18.1,1</lt><ge>0.9.17,1</ge></range>
       </package>
       <package>
 	<name>xrdp-devel</name>
-	<range><lt>0.9.18.1</lt></range>
-	<range><ge>0.9.17</ge></range>
+	<range><lt>0.9.18.1,1</lt><ge>0.9.17,1</ge></range>
       </package>
 
     </affects>
@@ -177,6 +175,7 @@
     <dates>
       <discovery>2022-01-23</discovery>
       <entry>2022-02-08</entry>
+      <modified>2022-02-14</modified>
     </dates>
   </vuln>
 
