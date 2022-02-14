@@ -25,7 +25,7 @@ LIB_DEPENDS=	libnymphrpc.so:multimedia/nymphrpc \
 		libSDL2.so:devel/sdl20 \
 		libcurl.so:ftp/curl \
 		libfreeimage.so:graphics/freeimage \
-		libSDL2_image-2.0.so:graphics/sdl2_image \
+		libSDL2_image-2.0.so.0:graphics/sdl2_image \
 		libavutil.so:multimedia/ffmpeg \
 		libvlccore.so:multimedia/vlc \
 		libfreetype.so:print/freetype2
