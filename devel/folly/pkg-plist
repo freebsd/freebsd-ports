@@ -153,6 +153,7 @@ include/folly/container/detail/F14Policy.h
 include/folly/container/detail/F14SetFallback.h
 include/folly/container/detail/F14Table.h
 include/folly/container/detail/Util.h
+include/folly/container/heap_vector_types.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
 include/folly/detail/AsyncTrace.h
@@ -175,7 +176,6 @@ include/folly/detail/PolyDetail.h
 include/folly/detail/RangeCommon.h
 include/folly/detail/RangeSse42.h
 include/folly/detail/Singleton.h
-include/folly/detail/SingletonStackTrace.h
 include/folly/detail/SlowFingerprint.h
 include/folly/detail/SocketFastOpen.h
 include/folly/detail/Sse.h
