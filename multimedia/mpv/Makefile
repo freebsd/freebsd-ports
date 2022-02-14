@@ -13,6 +13,11 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	b030cfe05f58.patch:-p1 # https://github.com/mpv-player/mpv/pull/9440
 PATCHFILES+=	edf0039d7621.patch:-p1 # https://github.com/mpv-player/mpv/pull/9298
 PATCHFILES+=	5319731526fb.patch:-p1 # https://github.com/mpv-player/mpv/pull/9298
+PATCHFILES+=	82390d212123.patch:-p1 # https://github.com/mpv-player/mpv/pull/9587
+PATCHFILES+=	22b0bac28e6c.patch:-p1 # https://github.com/mpv-player/mpv/pull/9587
+PATCHFILES+=	b7a71ea70671.patch:-p1 # https://github.com/mpv-player/mpv/pull/9734
+PATCHFILES+=	09343bc86e8b.patch:-p1 # https://github.com/mpv-player/mpv/pull/9734
+PATCHFILES+=	bc9805c71a67.patch:-p1 # https://github.com/mpv-player/mpv/pull/9830
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -53,7 +58,7 @@ OPTIONS_DEFAULT=	ARCHIVE DVDNAV LUA MANPAGES OPENGL UCHARDET \
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L
 OPTIONS_GROUP_VO=	CACA OPENGL SIXEL VAAPI VDPAU VULKAN WAYLAND X11
-OPTIONS_GROUP_AO=	ALSA JACK OPENAL PULSEAUDIO SDL SNDIO
+OPTIONS_GROUP_AO=	ALSA JACK OPENAL PIPEWIRE PULSEAUDIO SDL SNDIO
 OPTIONS_RADIO=		YOUTUBE
 OPTIONS_RADIO_YOUTUBE=	YTDL YTDLP
 OPTIONS_SINGLE=		LUA
@@ -64,6 +69,7 @@ DVDNAV_DESC=		DVD menu navigation
 LUA_NONE_DESC=		Disable Lua scripting language support
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 MUJS_DESC=		Use MuJS for Javascript language support
+PIPEWIRE_DESC=		Pipewire sound server support
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VULKAN_DESC=		Vulkan output support
@@ -126,6 +132,9 @@ _OPENAL_LDFLAGS_i386=		-Wl,-znotext
 OPENGL_USES=			gl
 OPENGL_USE=			GL=egl,gbm
 OPENGL_CONFIGURE_OFF=		--disable-gl
+
+PIPEWIRE_LIB_DEPENDS=		libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_CONFIGURE_OFF=		--disable-pipewire
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
