@@ -6,8 +6,8 @@ bin/darktable-cmstest
 bin/darktable-generate-cache
 bin/darktable-rs-identify
 lib/darktable/libdarktable.so
+%%AVIF%%lib/darktable/plugins/imageio/format/libavif.so
 lib/darktable/plugins/imageio/format/libcopy.so
-%%LIBAVIF%%lib/darktable/plugins/imageio/format/libavif.so
 %%OPENEXR%%lib/darktable/plugins/imageio/format/libexr.so
 %%OPENJPEG%%lib/darktable/plugins/imageio/format/libj2k.so
 lib/darktable/plugins/imageio/format/libjpeg.so
@@ -414,6 +414,7 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo

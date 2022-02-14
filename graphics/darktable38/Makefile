@@ -1,10 +1,13 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	darktable
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 PKGNAMESUFFIX=	38
+
+DEPRECATED=	to be folded back to graphics/darktable within 2022Q1
+EXPIRATION_DATE=2022-03-31
 
 MAINTAINER=	mandree@FreeBSD.org
 # lwhsu and dumbbell hereby receive blanket approval to deal with this port
@@ -64,63 +67,63 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-OPTIONS_DEFINE=		DOCS GEO GPHOTO GMIC GRAPHMAGICK LIBAVIF LIBSECRET LTO \
+OPTIONS_DEFINE=		DOCS GEO GPHOTO GMIC GRAPHMAGICK AVIF LIBSECRET LTO \
 			LUA NLS OPENEXR OPENJPEG PRINT TOOLS WEBP
-OPTIONS_DEFAULT=	GEO GPHOTO LUA OPENEXR OPENJPEG PRINT WEBP
+OPTIONS_DEFAULT=	AVIF GEO GPHOTO HEIF LUA OPENEXR OPENJPEG PRINT WEBP
 OPTIONS_SUB=		yes
 
+AVIF_DESC=		Support encoding and decoding .avif files
 GEO_DESC=		Support geotagging
 GMIC_DESC=		Support G'Mic-compressed LUT in lut3d
-LIBAVIF_DESC=		Support encoding and decoding .avif files
 LIBSECRET_DESC=		Support libsecret as password backend
 
 GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
-GEO_CMAKE_OFF=		-DUSE_MAP:BOOL=OFF
+GEO_CMAKE_BOOL=		USE_MAP
 
 GMIC_LIB_DEPENDS=	libgmic.so:graphics/gmic
-GMIC_CMAKE_OFF=		-DUSE_GMIC:BOOL=OFF
+GMIC_CMAKE_BOOL=	USE_GMIC
 
 GPHOTO_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
-GPHOTO_CMAKE_OFF=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
+GPHOTO_CMAKE_BOOL=	USE_CAMERA_SUPPORT
 
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
-GRAPHMAGICK_CMAKE_OFF=	-DUSE_GRAPHICSMAGICK:BOOL=OFF
+GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
 
-LIBAVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
-LIBAVIF_CMAKE_OFF=	-DUSE_LIBAVIF:BOOL=OFF
+AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
+AVIF_CMAKE_BOOL=	USE_AVIF
 
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
-LIBSECRET_CMAKE_OFF=	-DUSE_LIBSECRET:BOOL=OFF
+LIBSECRET_CMAKE_BOOL=	USE_LIBSECRET
 
 LTO_CMAKE_BOOL=		RAWSPEED_ENABLE_LTO
 
 LUA_USES=		lua:54
-LUA_CMAKE_OFF=		-DUSE_LUA:BOOL=OFF
+LUA_CMAKE_BOOL=		USE_LUA
 
 # FIXME: Even with NLS turned off, darktable(1) is still linked to
 # libintl.so.
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-runtime
-NLS_CMAKE_OFF=		-DUSE_NLS:BOOL=OFF
+NLS_CMAKE_BOOL=		USE_NLS
 NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
 OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 			libImath.so:math/Imath
 OPENEXR_CFLAGS=		-I${LOCALBASE}/include/Imath
-OPENEXR_CMAKE_OFF=	-DUSE_OPENEXR:BOOL=OFF
+OPENEXR_CMAKE_BOOL=	USE_OPENEXR
 
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
-OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
+OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
 
 PRINT_LIB_DEPENDS=	libcups.so:print/cups
-PRINT_CMAKE_OFF=	-DBUILD_PRINT:BOOL=OFF
+PRINT_CMAKE_BOOL=	BUILD_PRINT
 
 TOOLS_DESC=		Install additional scripts
 TOOLS_BUILD_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
+WEBP_CMAKE_BOOL=	USE_WEBP
 
 .include <bsd.port.options.mk>
 
