@@ -1,5 +1,5 @@
 PORTNAME=	wtf
-PORTVERSION=	0.40.0
+PORTVERSION=	0.41.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	go-
@@ -132,7 +132,7 @@ GH_TUPLE=	\
 		microsoft:azure-devops-go-api:26902c1d4325:microsoft_azure_devops_go_api_azuredevops/vendor/github.com/microsoft/azure-devops-go-api \
 		mitchellh:hashstructure:2bca23e0e452:mitchellh_hashstructure/vendor/github.com/mitchellh/hashstructure \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		mmcdole:gofeed:v1.1.0:mmcdole_gofeed/vendor/github.com/mmcdole/gofeed \
+		mmcdole:gofeed:68ee9054d97b:mmcdole_gofeed/vendor/github.com/mmcdole/gofeed \
 		mmcdole:goxpp:0068e33feabf:mmcdole_goxpp/vendor/github.com/mmcdole/goxpp \
 		mndrix:tap-go:56cca451570b:mndrix_tap_go/vendor/github.com/mndrix/tap-go \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
