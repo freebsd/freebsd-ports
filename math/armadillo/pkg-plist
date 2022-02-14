@@ -428,6 +428,8 @@ include/armadillo_bits/op_prod_bones.hpp
 include/armadillo_bits/op_prod_meat.hpp
 include/armadillo_bits/op_range_bones.hpp
 include/armadillo_bits/op_range_meat.hpp
+include/armadillo_bits/op_rank_bones.hpp
+include/armadillo_bits/op_rank_meat.hpp
 include/armadillo_bits/op_relational_bones.hpp
 include/armadillo_bits/op_relational_meat.hpp
 include/armadillo_bits/op_repelem_bones.hpp
@@ -595,7 +597,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.10
-lib/libarmadillo.so.10.7.1
+lib/libarmadillo.so.10.8.2
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
