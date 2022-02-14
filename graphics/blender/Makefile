@@ -177,8 +177,8 @@ CMAKE_ARGS+=		-DWITH_GHOST_DEBUG:BOOL=ON
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != amd64 && ${ARCH} != i386
-CMAKE_ARGS+=	-DWITH_CPU_SSE:BOOL=OFF
+.if ${ARCH:Mpowerpc*} || ${ARCH:Mriscv64*}
+CMAKE_ARGS+=		-DWITH_CPU_SIMD:BOOL=OFF
 .endif
 
 .if ${LLVM_DEFAULT:M[678]0}
