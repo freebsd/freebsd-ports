@@ -1,5 +1,5 @@
 PORTNAME=	cocoalib
-DISTVERSION=	0.99712
+DISTVERSION=	0.99717
 CATEGORIES=	math
 MASTER_SITES=	http://cocoa.dima.unige.it/cocoalib/tgz/
 DISTNAME=	CoCoALib-${DISTVERSION}

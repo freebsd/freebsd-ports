@@ -1,4 +1,3 @@
-include/CoCoA/apply.H
 include/CoCoA/ApproxPts.H
 include/CoCoA/ApproxPts2.H
 include/CoCoA/assert.H
@@ -262,7 +261,6 @@ lib/libcocoa.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/SmallFpDoubleImpl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SmallFpImpl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SmallFpLogImpl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/SmallPrime.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SmartPtrIRC.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SmartPtrIRCCOW.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SocketStream.html
@@ -378,6 +376,7 @@ lib/libcocoa.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RandomSource1.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RandomSource2.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RingElem1.C
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RingElem2.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RingFp1.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RingFp2.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-RingFq1.C
@@ -416,9 +415,11 @@ lib/libcocoa.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-bool.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-class.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-fn-defn.C
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-for-loop.C
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-vector.C
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++.C
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-loop-for1.C
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-loop-for2.C
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-loop-while.C
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-vector1.C
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-vector2.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-convert1.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-empty.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-error1.C
@@ -442,6 +443,5 @@ lib/libcocoa.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-ring2.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-symbol1.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-symbol2.C
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-c++-vector2.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-verbose1.C
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
