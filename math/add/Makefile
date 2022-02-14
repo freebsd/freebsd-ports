@@ -1,7 +1,7 @@
 # Created by: Andrey Zakhvatov
 
 PORTNAME=	add
-PORTVERSION=	20180401
+PORTVERSION=	20220117
 CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
 
