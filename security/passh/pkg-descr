@@ -1,0 +1,5 @@
+Passh is a tool for inputting passwords to programs like sudo, SSH, and
+su in a non-interactive way. The goal of the project is to address some
+of the limitations of a similar tool called sshpass.
+
+WWW: https://github.com/clarkwang/passh
