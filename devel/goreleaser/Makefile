@@ -1,6 +1,6 @@
 PORTNAME=	goreleaser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@fuz.su
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		go:modules
 GO_MODULE=	github.com/goreleaser/goreleaser
-GO_BUILDFLAGS=	-ldflags="-X main.version=${DISTVERSION} -X 'main.builtBy=FreeBSD ports'"
+GO_BUILDFLAGS=	-ldflags="-X main.version=${PKGVERSION} -X 'main.builtBy=FreeBSD ports'"
 
 # TODO: generate documentation
 PLIST_FILES=	bin/goreleaser \
