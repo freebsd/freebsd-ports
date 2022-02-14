@@ -1,5 +1,5 @@
-TIMESTAMP = 1633396547
-SHA256 (go/security_gokart/gokart-v0.3.0/v0.3.0.mod) = 32d3dfaeb74e86df0fd520a532f1ecefe3bd71ced8271ac464c64bc58f28ee49
-SIZE (go/security_gokart/gokart-v0.3.0/v0.3.0.mod) = 405
-SHA256 (go/security_gokart/gokart-v0.3.0/v0.3.0.zip) = fa3bcd4287efbe8a08706fc646a6f3556dc903ba8bc11db8edd565ee0c70ff79
-SIZE (go/security_gokart/gokart-v0.3.0/v0.3.0.zip) = 134289
+TIMESTAMP = 1644406920
+SHA256 (go/security_gokart/gokart-v0.4.0/v0.4.0.mod) = 1757f82538a935487202cbdcc8c646c7d7894f59d6162d9f15758812d6bb5b2c
+SIZE (go/security_gokart/gokart-v0.4.0/v0.4.0.mod) = 426
+SHA256 (go/security_gokart/gokart-v0.4.0/v0.4.0.zip) = cffa5217d44792c34ab0a77b83540d93ea5c97030a7e7e8af30f14cb78bd7b8b
+SIZE (go/security_gokart/gokart-v0.4.0/v0.4.0.zip) = 136498
