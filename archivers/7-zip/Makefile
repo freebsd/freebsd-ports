@@ -1,5 +1,6 @@
 PORTNAME=	7-zip
 DISTVERSION=	21.07
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
@@ -33,7 +34,8 @@ DOS2UNIX_FILES=	C/CpuArch.c \
 		CPP/7zip/var_gcc.mak \
 		CPP/Windows/SystemInfo.cpp
 
-PLIST_FILES=	bin/7zz
+PLIST_FILES=	bin/7zz \
+		share/man/man1/7zz.1.gz
 PORTDOCS=	7zC.txt 7zFormat.txt License.txt Methods.txt \
 		lzma.txt readme.txt src-history.txt
 
@@ -44,6 +46,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/b/c/7zz ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/7zz.1 ${STAGEDIR}/${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \

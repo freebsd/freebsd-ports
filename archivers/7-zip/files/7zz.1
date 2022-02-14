@@ -1,0 +1,215 @@
+.TH 7ZZ "1" "February 14, 2022"
+.SH NAME
+7zz \- Standalone console version of the 7-Zip file archiver
+.SH SYNOPSIS
+.B 7zz
+.\" \fI\,<command> \/[\fI\,<switch>\/...] \fI\,<archive_name> \/[\fI\,<file_names>\/...] [\fI\,@list_file\/]
+.BR <command>
+.BR [<switch>...]
+.BR <archive_name>
+.BR [<file_names>]
+.BR [@listfile]
+.SH DESCRIPTION
+7\-Zip is a file archiver with a high compression ratio. Supported formats:
+.IP
+Packing and unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM.
+.IP
+Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VHDX, VMDK, WIM, XAR and Z.
+.SH Commands
+.TP
+.BR a
+Add files to archive
+.TP
+.BR b
+Benchmark
+.TP
+.BR d
+Delete files from archive
+.TP
+.BR e
+Extract files from archive (without using directory names)
+.TP
+.BR h
+Calculate hash values for files
+.TP
+.BR i
+Show information about supported formats
+.TP
+.BR l
+List contents of archive
+.TP
+.BR rn
+Rename files in archive
+.TP
+.BR t
+Test integrity of archive
+.TP
+.BR u
+Update files to archive
+.TP
+.BR x
+Extract files with full paths
+.SH Switches
+.TP
+.BR \-\-
+Stop switches and @listfile parsing
+.TP
+.BR \-ai[r[\-|0]]{@listfile|!wildcard}
+Include archives
+.TP
+.BR \-ax[r[\-|0]]{@listfile|!wildcard}
+Exclude archives
+.TP
+.BR \-ao{a|s|t|u}
+Set Overwrite mode
+.TP
+.BR \-an
+Disable archive_name field
+.TP
+.BR \-bb[0\-3]
+Set output log level
+.TP
+.BR \-bd
+Disable progress indicator
+.TP
+.BR \-bs{o|e|p}{0|1|2}
+Set output stream for output/error/progress line
+.TP
+.BR \-bt
+show execution time statistics
+.TP
+.BR \-i[r[\-|0]]{@listfile|!wildcard}
+Include filenames
+.TP
+.BR \-m{Parameters}
+Set compression Method
+.TP
+.BR \-mmt[N]
+Set number of CPU threads
+.TP
+.BR \-mx[N]
+Set compression level: \-mx1 (fastest) ... \-mx9 (ultra)
+.TP
+.BR \-o{Directory}
+Set Output directory
+.TP
+.BR \-p{Password}
+Set Password
+.TP
+.BR \-r[\-|0]
+Recurse subdirectories for name search
+.TP
+.BR \-sa{a|e|s}
+Set Archive name mode
+.TP
+.BR \-scc{UTF\-8|WIN|DOS}
+Set charset for for console input/output
+.TP
+.BR \-scs{UTF\-8|UTF\-16LE|UTF\-16BE|WIN|DOS|{id}}
+Set charset for list files
+.TP
+.BR \-scrc[CRC32|CRC64|SHA1|SHA256|*]
+Set hash function for x, e, h commands
+.TP
+.BR \-sdel
+Delete files after compression
+.TP
+.BR \-seml[.]
+Send archive by email
+.TP
+.BR \-sfx[{name}]
+Create SFX archive
+.TP
+.BR \-si[{name}]
+Read data from stdin
+.TP
+.BR \-slp
+Set Large Pages mode
+.TP
+.BR \-slt
+Show technical information for l (List) command
+.TP
+.BR \-snh
+Store hard links as links
+.TP
+.BR \-snl
+Store symbolic links as links
+.TP
+.BR \-sni
+Store NT security information
+.TP
+.BR \-sns[\-]
+Store NTFS alternate streams
+.TP
+.BR \-so
+Write data to stdout
+.TP
+.BR \-spd
+Disable wildcard matching for file names
+.TP
+.BR \-spe
+Eliminate duplication of root folder for extract command
+.TP
+.BR \-spf
+Use fully qualified file paths
+.TP
+.BR \-ssc[\-]
+Set sensitive case mode
+.TP
+.BR \-sse
+Stop archive creating, if it can't open some input file
+.TP
+.BR \-ssp
+Do not change Last Access Time of source files while archiving
+.TP
+.BR \-ssw
+Compress shared files
+.TP
+.BR \-stl
+Set archive timestamp from the most recently modified file
+.TP
+.BR \-stm{HexMask}
+Set CPU thread affinity mask (hexadecimal number)
+.TP
+.BR \-stx{Type}
+Exclude archive type
+.TP
+.BR \-t{Type}
+Set type of archive
+.TP
+.BR \-u[\-][p#][q#][r#][x#][y#][z#][!newArchiveName]
+Update options
+.TP
+.BR \-v{Size}[b|k|m|g]
+Create volumes
+.TP
+.BR \-w[{path}]
+Set working directory. Empty path means a temporary directory
+.TP
+.BR \-x[r[\-|0]]{@listfile|!wildcard}
+Exclude filenames
+.TP
+.BR \-y
+Assume Yes on all queries
+.SH Listfile
+You can supply one or more filenames or wildcards for special list files (files containing lists of files). The filenames in such list file must be separated by new line symbol(s). For list files, 7\-Zip uses UTF\-8 encoding by default. You can change encoding using
+.BR \-scs
+switch. Multiple list files are supported.
+.PP
+For example, if the file "listfile.txt" contains the following:
+.IP
+My programs\\*.cpp
+.br
+Src\\*.cpp
+.PP
+then the command
+.IP
+.B 7z a \-tzip archive.zip @listfile.txt
+.PP
+adds to the archive "archive.zip" all "*.cpp" files from directories "My programs" and "Src".
+.SH "SEE ALSO"
+.BR xz (1)
+.br
+Frequently Asked Questions: <https://www.7-zip.org/faq.html>
+.br
+Recover corrupted 7z archive: <https://www.7-zip.org/recover.html>
