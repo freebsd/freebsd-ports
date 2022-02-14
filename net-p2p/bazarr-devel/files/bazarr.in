@@ -29,7 +29,7 @@ load_rc_config ${name}
 pidfile="${bazarr_datadir}/bazarr.pid"
 procname="%%PYTHON_CMD%%"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} %%DATADIR%%/bazarr.py --no-update -c ${bazarr_datadir}"
+command_args="-f -p ${pidfile} ${procname} %%DATADIR%%/bin/bazarr.py --no-update -c ${bazarr_datadir}"
 start_precmd=bazarr_precmd
 
 bazarr_precmd()

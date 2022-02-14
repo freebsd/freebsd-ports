@@ -1,6 +1,7 @@
 PORTNAME=	bazarr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.3-beta.28
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	https://github.com/morpheus65535/bazarr/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -23,7 +24,10 @@ USES=		python:3.7+ zip
 
 USE_RC_SUBR=	bazarr
 
+SUB_FILES=	${PORTNAME} package_info
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		MAINTAINER=${MAINTAINER} \
+		PKGVERSION=${PKGVERSION} \
 		USERS=${USERS}
 
 NO_WRKSUBDIR=	yes
@@ -36,10 +40,11 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}
+	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/
 
 post-install:
+	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
 	@${FIND} -s ${STAGEDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 
