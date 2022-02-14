@@ -2,6 +2,7 @@
 
 PORTNAME=	gollum
 PORTVERSION=	5.2.3
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git \
 		rubygem-gemojione>=3.3.0:graphics/rubygem-gemojione \
 		rubygem-gollum-lib>=5.1.3:www/rubygem-gollum-lib \
-		rubygem-gollum-rugged_adapter>=1.0:www/rubygem-gollum-rugged_adapter \
 		rubygem-kramdown>=2.3.1:textproc/rubygem-kramdown \
 		rubygem-kramdown-parser-gfm>=1.1.0:textproc/rubygem-kramdown-parser-gfm \
 		rubygem-mustache0>=0.99.5:devel/rubygem-mustache0 \
