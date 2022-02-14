@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	michal@hanu.la
-COMMENT=	Alert routing for prometheus
+COMMENT=	Alert routing for Prometheus
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
