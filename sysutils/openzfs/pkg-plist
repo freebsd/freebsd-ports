@@ -54,7 +54,6 @@ etc/zfs/zpool.d/w_ucor
 include/libspl/assert.h
 include/libspl/atomic.h
 include/libspl/fcntl.h
-include/libspl/ia32/sys/asm_linkage.h
 include/libspl/libdevinfo.h
 include/libspl/libgen.h
 include/libspl/libshare.h
@@ -448,7 +447,6 @@ man/man8/zfs-userspace.8.gz
 man/man8/zfs-wait.8.gz
 man/man8/zfs.8.gz
 man/man8/zfs_ids_to_path.8.gz
-man/man8/zgenhostid.8.gz
 man/man8/zinject.8.gz
 man/man8/zpool-add.8.gz
 man/man8/zpool-attach.8.gz
@@ -1020,6 +1018,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/receive-o-x_props_override.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_-e.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_-wR-encrypted-mix.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_003_pos.ksh
@@ -2266,6 +2265,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_invalid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_mixed_raw.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_partial_dataset.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_raw_spill_block.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_dnode_size.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_encrypted_files.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_files.ksh
@@ -2337,6 +2337,9 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/sparse/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/sparse/sparse.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/sparse/sparse_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/stat/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/stat/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/stat/stat_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_file
@@ -2344,6 +2347,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_sgid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_suid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_suid_sgid.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_zil_replay.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/threadsappend/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/threadsappend/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/threadsappend/threadsappend_001_pos.ksh
@@ -2399,6 +2403,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_send_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/vdev_zaps.kshlib
