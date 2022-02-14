@@ -23,6 +23,7 @@ share/emacs/site-lisp/imaxima.el
 share/emacs/site-lisp/imaxima.lisp
 share/emacs/site-lisp/maxima-font-lock.el
 share/emacs/site-lisp/maxima.el
+share/emacs/site-lisp/mylatex.ltx.el
 share/emacs/site-lisp/setup-imaxima-imath.el
 share/emacs/site-lisp/smart-complete.el
 share/emacs/site-lisp/sshell.el
