@@ -1,4 +1,5 @@
 DISTVERSION=	2021-09-18
+PORTREVISION=	1
 MASTER_SITES=	SF/schilytools
 DISTNAME=	schily-${DISTVERSION}
 
@@ -56,7 +57,6 @@ DESCR=		${.CURDIR}/pkg-descr
 post-extract:
 	@cd ${WRKSRC}/rmt && ${MV} rmt.dfl srmt.dfl
 	@cd ${WRKSRC}/rmt && ${MV} default-rmt.sample default-srmt.sample
-
 
 do-configure:
 .if "${BOOTSTRAP_SMAKE}" == "yes"

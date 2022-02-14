@@ -206,6 +206,7 @@ lib/libxtermcap.so.1.0
 %%PROFILE%%lib/profiled/libxtermcap.a
 %%PORTDOCS%%share/doc/libparanoia/README.interface
 %%PORTDOCS%%share/doc/libparanoia/README.paranoia
+%%NLS%%share/locale/C/LC_MESSAGES/SCHILY_utils.mo
 %%NLS%%share/locale/af/LC_MESSAGES/SCHILY_utils.mo
 %%NLS%%share/locale/am/LC_MESSAGES/SCHILY_utils.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/SCHILY_utils.mo
