@@ -2,12 +2,13 @@
 
 PORTNAME=		bastillion
 DISTVERSIONPREFIX=	jetty-v
-DISTVERSION=		3.13_00
+DISTVERSION=		3.14_00
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-upgrade-4.00.01.jar
 PORTREVISION=		0
 CATEGORIES=		security www java
-MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
+#MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
+MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v3.14.0/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Web-based SSH console
