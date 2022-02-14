@@ -189,6 +189,7 @@ include/proxygen/lib/stats/ResourceStats.h
 include/proxygen/lib/transport/H3DatagramAsyncSocket.h
 include/proxygen/lib/transport/PersistentFizzPskCache.h
 include/proxygen/lib/transport/PersistentQuicPskCache.h
+include/proxygen/lib/transport/PersistentQuicTokenCache.h
 include/proxygen/lib/utils/AcceptorAddress.h
 include/proxygen/lib/utils/AsyncTimeoutSet.h
 include/proxygen/lib/utils/Base64.h
