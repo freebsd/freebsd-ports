@@ -1,6 +1,6 @@
-TIMESTAMP = 1629211581
-SHA256 (AlessioDP-kpmenu-v1.4.0_GH0.tar.gz) = 350c2bb029ce0946187ee97aecb4a66ceb1b87c512c69220a9a6d50bde5e42bf
-SIZE (AlessioDP-kpmenu-v1.4.0_GH0.tar.gz) = 40189
+TIMESTAMP = 1644840398
+SHA256 (AlessioDP-kpmenu-v1.4.1_GH0.tar.gz) = 2c2a686a0b5a0f2f7278873e21bca98062df873908e7c498717cd77bb727146a
+SIZE (AlessioDP-kpmenu-v1.4.1_GH0.tar.gz) = 42550
 SHA256 (aead-argon2-a87724528b07_GH0.tar.gz) = fcc6a59b12eaae873919a6f837d9f6adef154a56f185f0caea314ab8751a3c89
 SIZE (aead-argon2-a87724528b07_GH0.tar.gz) = 8957
 SHA256 (aead-chacha20-8b13a72661da_GH0.tar.gz) = fcb5ec57f75d002ab2c0566af1da4abaf7a1a59b10d1091356d60cc132dabf84
