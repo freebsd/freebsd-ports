@@ -13,6 +13,7 @@ include/quic/api/test/MockQuicSocket.h
 include/quic/api/test/Mocks.h
 include/quic/client/QuicClientAsyncTransport.h
 include/quic/client/QuicClientTransport.h
+include/quic/client/connector/QuicConnector.h
 include/quic/client/handshake/CachedServerTransportParameters.h
 include/quic/client/handshake/ClientHandshake.h
 include/quic/client/handshake/ClientHandshakeFactory.h
@@ -39,6 +40,7 @@ include/quic/common/EnumArray.h
 include/quic/common/FunctionLooper.h
 include/quic/common/IntervalSet-inl.h
 include/quic/common/IntervalSet.h
+include/quic/common/MonitoredObject.h
 include/quic/common/SmallVec.h
 include/quic/common/SocketUtil.h
 include/quic/common/TimeUtil.h
@@ -50,6 +52,7 @@ include/quic/congestion_control/Bandwidth.h
 include/quic/congestion_control/Bbr.h
 include/quic/congestion_control/BbrBandwidthSampler.h
 include/quic/congestion_control/BbrRttSampler.h
+include/quic/congestion_control/BbrTesting.h
 include/quic/congestion_control/CongestionControlFunctions.h
 include/quic/congestion_control/CongestionControllerFactory.h
 include/quic/congestion_control/Copa.h
@@ -79,6 +82,7 @@ include/quic/fizz/client/handshake/FizzClientExtensions.h
 include/quic/fizz/client/handshake/FizzClientHandshake.h
 include/quic/fizz/client/handshake/FizzClientQuicHandshakeContext.h
 include/quic/fizz/client/handshake/QuicPskCache.h
+include/quic/fizz/client/handshake/QuicTokenCache.h
 include/quic/fizz/handshake/FizzBridge.h
 include/quic/fizz/handshake/FizzCryptoFactory.h
 include/quic/fizz/handshake/FizzPacketNumberCipher.h
@@ -113,13 +117,14 @@ include/quic/server/RateLimiter.h
 include/quic/server/SlidingWindowRateLimiter.h
 include/quic/server/handshake/AppToken.h
 include/quic/server/handshake/DefaultAppTokenValidator.h
-include/quic/server/handshake/RetryTokenGenerator.h
 include/quic/server/handshake/ServerHandshake.h
 include/quic/server/handshake/ServerHandshakeFactory.h
 include/quic/server/handshake/ServerTransportParametersExtension.h
 include/quic/server/handshake/StatelessResetGenerator.h
+include/quic/server/handshake/TokenGenerator.h
 include/quic/server/state/ServerConnectionIdRejector.h
 include/quic/server/state/ServerStateMachine.h
+include/quic/state/AckEvent.h
 include/quic/state/AckHandlers.h
 include/quic/state/AckStates.h
 include/quic/state/DatagramHandlers.h
@@ -133,6 +138,7 @@ include/quic/state/QuicPriorityQueue.h
 include/quic/state/QuicStateFunctions.h
 include/quic/state/QuicStreamFunctions.h
 include/quic/state/QuicStreamManager.h
+include/quic/state/QuicStreamPrioritiesObserver.h
 include/quic/state/QuicStreamUtilities.h
 include/quic/state/QuicTransportStatsCallback.h
 include/quic/state/SimpleFrameFunctions.h
@@ -142,6 +148,7 @@ include/quic/state/TransportSettings.h
 include/quic/state/stream/StreamReceiveHandlers.h
 include/quic/state/stream/StreamSendHandlers.h
 include/quic/state/stream/StreamStateFunctions.h
+include/quic/state/test/AckEventTestUtil.h
 include/quic/state/test/MockQuicStats.h
 include/quic/state/test/Mocks.h
 lib/cmake/mvfst/mvfst-config.cmake
