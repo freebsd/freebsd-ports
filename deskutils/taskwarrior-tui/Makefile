@@ -1,0 +1,218 @@
+PORTNAME=	taskwarrior-tui
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.19.1
+CATEGORIES=	deskutils
+
+MAINTAINER=	alexis.praga@free.fr
+COMMENT=	Terminal User Interface (TUI) for Taskwarrior
+
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	kdheepak
+
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		aho-corasick-0.7.18 \
+		anyhow-1.0.52 \
+		arc-swap-0.4.8 \
+		async-attributes-1.1.2 \
+		async-channel-1.6.1 \
+		async-executor-1.4.1 \
+		async-global-executor-2.0.2 \
+		async-io-1.6.0 \
+		async-lock-2.4.0 \
+		async-mutex-1.4.0 \
+		async-process-1.3.0 \
+		async-std-1.10.0 \
+		async-task-4.0.3 \
+		atomic-waker-1.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.63 \
+		better-panic-0.2.0 \
+		bitflags-1.3.2 \
+		blocking-1.1.0 \
+		bumpalo-3.8.0 \
+		cache-padded-1.2.0 \
+		cassowary-0.3.0 \
+		cc-1.0.72 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-3.0.0 \
+		clap_complete-3.0.0 \
+		clap_derive-3.0.0 \
+		clicolors-control-1.0.1 \
+		clipboard-win-4.2.2 \
+		concurrent-queue-1.2.2 \
+		console-0.9.2 \
+		crossbeam-utils-0.8.5 \
+		crossterm-0.20.0 \
+		crossterm-0.22.1 \
+		crossterm_winapi-0.8.0 \
+		crossterm_winapi-0.9.0 \
+		ctor-0.1.21 \
+		darling-0.10.2 \
+		darling_core-0.10.2 \
+		darling_macro-0.10.2 \
+		derivative-2.2.0 \
+		derive_builder-0.9.0 \
+		derive_builder_core-0.9.0 \
+		dirs-4.0.0 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.3.6 \
+		dirs-sys-next-0.1.2 \
+		either-1.6.1 \
+		encode_unicode-0.3.6 \
+		endian-type-0.1.2 \
+		error-code-2.3.0 \
+		event-listener-2.5.1 \
+		failure-0.1.8 \
+		failure_derive-0.1.8 \
+		fastrand-1.6.0 \
+		fd-lock-3.0.2 \
+		fnv-1.0.7 \
+		futures-0.3.19 \
+		futures-channel-0.3.19 \
+		futures-core-0.3.19 \
+		futures-executor-0.3.19 \
+		futures-io-0.3.19 \
+		futures-lite-1.12.0 \
+		futures-macro-0.3.19 \
+		futures-sink-0.3.19 \
+		futures-task-0.3.19 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.19 \
+		getrandom-0.2.3 \
+		gimli-0.26.1 \
+		gloo-timers-0.2.2 \
+		hashbrown-0.11.2 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		humantime-2.1.0 \
+		ident_case-1.0.1 \
+		indexmap-1.7.0 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-1.0.1 \
+		js-sys-0.3.55 \
+		kv-log-macro-1.0.7 \
+		lazy_static-1.4.0 \
+		libc-0.2.112 \
+		linked-hash-map-0.5.4 \
+		lock_api-0.4.5 \
+		log-0.4.14 \
+		log-mdc-0.1.0 \
+		log4rs-1.0.0 \
+		memchr-2.4.1 \
+		memoffset-0.6.5 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.4.4 \
+		mio-0.7.14 \
+		miow-0.3.7 \
+		nibble_vec-0.1.0 \
+		nix-0.23.1 \
+		nom-7.1.0 \
+		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.1 \
+		object-0.27.1 \
+		once_cell-1.9.0 \
+		ordered-float-2.8.0 \
+		os_str_bytes-6.0.0 \
+		parking-2.0.0 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		path-clean-0.1.0 \
+		pin-project-lite-0.2.8 \
+		pin-utils-0.1.0 \
+		polling-2.2.0 \
+		ppv-lite86-0.2.16 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.36 \
+		quote-1.0.14 \
+		radix_trie-0.2.1 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		redox_syscall-0.1.57 \
+		redox_syscall-0.2.10 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		rustc-demangle-0.1.21 \
+		rustyline-9.1.2 \
+		ryu-1.0.9 \
+		scopeguard-1.1.0 \
+		serde-1.0.132 \
+		serde-value-0.7.0 \
+		serde_derive-1.0.132 \
+		serde_json-1.0.73 \
+		serde_yaml-0.8.23 \
+		shellexpand-2.1.0 \
+		shlex-1.1.0 \
+		signal-hook-0.3.13 \
+		signal-hook-mio-0.2.1 \
+		signal-hook-registry-1.4.0 \
+		slab-0.4.5 \
+		smallvec-1.7.0 \
+		socket2-0.4.2 \
+		str-buf-1.0.5 \
+		strsim-0.9.3 \
+		strsim-0.10.0 \
+		syn-1.0.84 \
+		synstructure-0.12.6 \
+		termcolor-1.1.2 \
+		termios-0.3.3 \
+		textwrap-0.14.2 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		thread-id-3.3.0 \
+		time-0.1.44 \
+		traitobject-0.1.0 \
+		tui-0.16.0 \
+		typemap-0.3.3 \
+		unicode-segmentation-1.8.0 \
+		unicode-truncate-0.2.0 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.2 \
+		unsafe-any-0.4.2 \
+		utf8parse-0.2.0 \
+		uuid-0.8.2 \
+		value-bag-1.0.0-alpha.8 \
+		version_check-0.9.4 \
+		versions-3.0.3 \
+		waker-fn-1.1.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.78 \
+		wasm-bindgen-backend-0.2.78 \
+		wasm-bindgen-futures-0.4.28 \
+		wasm-bindgen-macro-0.2.78 \
+		wasm-bindgen-macro-support-0.2.78 \
+		wasm-bindgen-shared-0.2.78 \
+		web-sys-0.3.55 \
+		wepoll-ffi-0.1.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.28.0 \
+		windows_aarch64_msvc-0.28.0 \
+		windows_i686_gnu-0.28.0 \
+		windows_i686_msvc-0.28.0 \
+		windows_x86_64_gnu-0.28.0 \
+		windows_x86_64_msvc-0.28.0 \
+		yaml-rust-0.4.5 \
+		task-hookrs@git+https://github.com/kdheepak/task-hookrs\#6f04ee63c0d58bb0fe9bd6563457df52b5b5f84d
+
+PLIST_FILES=	bin/taskwarrior-tui
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/taskwarrior-tui
+
+.include <bsd.port.mk>

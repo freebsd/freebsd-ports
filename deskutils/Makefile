@@ -243,6 +243,7 @@
     SUBDIR += taskd
     SUBDIR += tasksh
     SUBDIR += taskwarrior
+    SUBDIR += taskwarrior-tui
     SUBDIR += teapot
     SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
