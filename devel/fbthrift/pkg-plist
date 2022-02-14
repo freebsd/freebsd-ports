@@ -25,7 +25,6 @@ include/thrift/lib/cpp/async/TStreamAsyncChannel-inl.h
 include/thrift/lib/cpp/async/TStreamAsyncChannel.h
 include/thrift/lib/cpp/async/TUnframedAsyncChannel-inl.h
 include/thrift/lib/cpp/async/TUnframedAsyncChannel.h
-include/thrift/lib/cpp/async/TZlibAsyncChannel.h
 include/thrift/lib/cpp/concurrency/Exception.h
 include/thrift/lib/cpp/concurrency/FunctionRunner.h
 include/thrift/lib/cpp/concurrency/InitThreadFactory.h
@@ -309,6 +308,7 @@ include/thrift/lib/cpp2/server/PreprocessParams.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
 include/thrift/lib/cpp2/server/RequestPileInterface.h
 include/thrift/lib/cpp2/server/RequestsRegistry.h
+include/thrift/lib/cpp2/server/ResourcePool.h
 include/thrift/lib/cpp2/server/ResourcePoolHandle.h
 include/thrift/lib/cpp2/server/RoundRobinRequestPile.h
 include/thrift/lib/cpp2/server/ServerAttribute.h
@@ -330,9 +330,6 @@ include/thrift/lib/cpp2/test/ProtoBufStructs-inl.h
 include/thrift/lib/cpp2/test/Structs.h
 include/thrift/lib/cpp2/test/ThriftStructs-inl.h
 include/thrift/lib/cpp2/test/util/FakeClock.h
-include/thrift/lib/cpp2/test/util/TestClientChannelFactory.h
-include/thrift/lib/cpp2/test/util/TestHTTPClientChannelFactory.h
-include/thrift/lib/cpp2/test/util/TestHeaderClientChannelFactory.h
 include/thrift/lib/cpp2/test/util/TestInterface.h
 include/thrift/lib/cpp2/test/util/TestServerFactory.h
 include/thrift/lib/cpp2/test/util/TestThriftServerFactory.h
