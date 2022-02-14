@@ -1,5 +1,5 @@
 PORTNAME=	gmid
-DISTVERSION=	1.8
+DISTVERSION=	1.8.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/omar-polo/gmid/releases/download/${DISTVERSION}/
 
