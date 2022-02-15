@@ -1,0 +1,28 @@
+--- contrib/fixps.in.orig	2000-02-21 08:16:15 UTC
++++ contrib/fixps.in
+@@ -38,7 +38,7 @@ output=-	# Default is stdout
+ run_gs=0
+ # What action to perform: fixps, cat, check, and gs
+ task=fixps
+-tmpdir=/tmp/$program.$$
++tmpdir=$(mktemp -d -t ${program}) || exit 1
+ verbose=echo
+ 
+ # The version/usage strings
+@@ -191,7 +191,6 @@ else
+   trap "/bin/rm -rf $tmpdir" 0 1 2 3 13 15
+ fi
+ 
+-mkdir $tmpdir
+ fixps_sed=$tmpdir/fixps.sed
+ 
+ # If printing from stdin, save into a tmp file
+@@ -390,7 +389,7 @@ if test $task != check; then
+   	eval "$command" ;;
+       gs)
+         $verbose "$program: making a full rewrite of the file ($gs)." >&2
+-  	$gs -q -dNOPAUSE -dBATCH -sDEVICE=pswrite -sOutputFile=- -c save pop -f "$file" ;;
++  	$gs -q -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pswrite -sOutputFile=- -c save pop -f "$file" ;;
+     esac
+   )
+ fi
