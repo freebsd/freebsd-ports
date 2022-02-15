@@ -10,8 +10,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
-TEST_DEPENDS=	catch>0:devel/catch \
-		bash:shells/bash
+TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake:testing compiler:c++17-lang
 USE_GITHUB=	yes
