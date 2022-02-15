@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 
 PORTNAME=	Flask
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
