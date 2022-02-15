@@ -1,7 +1,7 @@
 # Created by: Timur I. Bakeyev <bat@cpan.org>
 
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
