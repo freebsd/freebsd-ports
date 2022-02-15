@@ -12,6 +12,9 @@ COMMENT=	PHP bindings of the MeCab
 
 LICENSE=	MIT
 
+DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 
 USES=		php:ext
