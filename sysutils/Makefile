@@ -123,6 +123,7 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
+    SUBDIR += bkt
     SUBDIR += boot-extract
     SUBDIR += boxbackup-devel
     SUBDIR += bpytop
