@@ -9,7 +9,7 @@ COMMENT=	Versatile Video Coding (VVC) decoder
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 powerpc64le
 
 USES=		cmake compiler:c++14-lang
 USE_LDCONFIG=	yes
