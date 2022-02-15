@@ -4,7 +4,7 @@ DISTVERSION=	5.1.0
 CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Free and open source C++ spell checking library
+COMMENT=	Fast and safe spellchecking C++ library
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
