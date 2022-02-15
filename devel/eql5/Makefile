@@ -24,16 +24,10 @@ GL_COMMIT=	82c209a46962f8a7e9f7d8f81b25cc21e8861e42
 
 WRKSRC_SUBDIR=	src
 
-QMAKE_CONFIGURE_ARGS=	eql5.pro
+QMAKE_SOURCE_PATH=	${WRKSRC}/eql5.pro
 
 post-extract: # see https://gitlab.com/eql/EQL5/-/issues/26
 	@${FIND} ${WRKSRC} -name "*.pro" | ${XARGS} ${REINPLACE_CMD} -e 's|^linux|freebsd|'
-
-do-configure: # same as in qmake.mk but w/out -- due to the qmake bug https://bugreports.qt.io/browse/QTBUG-100811
-	@cd ${_QMAKE_WRKSRC} && \
-		${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} \
-			${QMAKE_SOURCE_PATH} \
-			${QMAKE_CONFIGURE_ARGS}
 
 pre-build:
 	@cd ${WRKSRC} && ecl -shell make.lisp
