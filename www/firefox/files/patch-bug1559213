@@ -61,6 +61,28 @@ index 8509aec..eb6f129 100644
  
  if CONFIG["MOZ_OMX"]:
      EXPORTS += [
+diff --git media/ffvpx/libavcodec/moz.build media/ffvpx/libavcodec/moz.build
+index 0069865..e806fc8 100644
+--- media/ffvpx/libavcodec/moz.build
++++ media/ffvpx/libavcodec/moz.build
+@@ -112,9 +112,15 @@ if not CONFIG['MOZ_FFVPX_AUDIOONLY']:
+             'vaapi_vp8.c',
+             'vaapi_vp9.c',
+         ]
++        if CONFIG["MOZ_SYSTEM_AV1"]:
++          CFLAGS += CONFIG['MOZ_SYSTEM_LIBDAV1D_CFLAGS']
++          OS_LIBS += CONFIG['MOZ_SYSTEM_LIBDAV1D_LIBS']
++        else:
++          USE_LIBS += [
++            'dav1d',
++            'media_libdav1d_asm',
++          ]
+         USE_LIBS += [
+-          'dav1d',
+-          'media_libdav1d_asm',
+           'mozva'
+         ]
+ 
 diff --git toolkit/moz.configure toolkit/moz.configure
 index 0069865..e806fc8 100644
 --- toolkit/moz.configure
