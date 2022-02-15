@@ -9,8 +9,7 @@ COMMENT=	Versatile Video Coding (VVC) decoder
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=		amd64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	uses explicit SSE instructions without any way to turn them off, can be removed once this bug is fixed: https://github.com/fraunhoferhhi/vvdec/issues/9; also is for 64-bit systems
+ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le
 
 USES=		cmake compiler:c++14-lang
 USE_LDCONFIG=	yes
@@ -20,5 +19,11 @@ GH_ACCOUNT=	fraunhoferhhi
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	FREEBSD_VVDEC_ENABLE_X86_SIMD
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CMAKE_ARGS+=	-DVVDEC_ENABLE_LINK_TIME_OPT:BOOL=OFF
+.endif
 
 .include <bsd.port.mk>
