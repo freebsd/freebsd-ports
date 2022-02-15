@@ -1,3 +1,56 @@
+  <vuln vid="e12432af-8e73-11ec-8bc4-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>98.0.4758.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/02/stable-channel-update-for-desktop_14.html">
+	  <p>This release contains 11 security fixes, including:</p>
+	  <ul>
+	    <li>[1290008] High CVE-2022-0603: Use after free in File Manager.
+	      Reported by Chaoyuan Peng (@ret2happy) on 2022-01-22</li>
+	    <li>[1273397] High CVE-2022-0604: Heap buffer overflow in Tab
+	      Groups. Reported by Krace on 2021-11-24</li>
+	    <li>[1286940] High CVE-2022-0605: Use after free in Webstore API.
+	      Reported by Thomas Orlita on 2022-01-13</li>
+	    <li>[1288020] High CVE-2022-0606: Use after free in ANGLE. Reported
+	      by Cassidy Kim of Amber Security Lab, OPPO Mobile
+	      Telecommunications Corp. Ltd. on 2022-01-17</li>
+	    <li>[1250655] High CVE-2022-0607: Use after free in GPU. Reported by
+	      0x74960 on 2021-09-17</li>
+	    <li>[1270333] High CVE-2022-0608: Integer overflow in Mojo. Reported
+	      by Sergei Glazunov of Google Project Zero on 2021-11-16</li>
+	    <li>[1296150] High CVE-2022-0609: Use after free in Animation.
+	      Reported by Adam Weidemann and Clément Lecigne of Google'
+	      Threat Analysis Group on 2022-02-10</li>
+	    <li>[1285449] Medium CVE-2022-0610: Inappropriate implementation in
+	      Gamepad API. Reported by Anonymous on 2022-01-08</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0603</cvename>
+      <cvename>CVE-2022-0604</cvename>
+      <cvename>CVE-2022-0605</cvename>
+      <cvename>CVE-2022-0606</cvename>
+      <cvename>CVE-2022-0607</cvename>
+      <cvename>CVE-2022-0608</cvename>
+      <cvename>CVE-2022-0609</cvename>
+      <cvename>CVE-2022-0610</cvename>
+      <url>https://chromereleases.googleblog.com/2022/02/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2022-02-14</discovery>
+      <entry>2022-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24049967-88ec-11ec-88f5-901b0e934d69">
     <topic>py-twisted -- cookie and authorization headers are leaked when following cross-origin redirects</topic>
       <affects>
