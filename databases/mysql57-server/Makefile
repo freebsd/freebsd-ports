@@ -1,7 +1,7 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 
 PORTNAME?=	mysql
-PORTVERSION=	5.7.36
+PORTVERSION=	5.7.37
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-5.7
