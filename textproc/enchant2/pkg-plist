@@ -9,6 +9,8 @@ include/enchant-2/enchant.h
 %%HSPELL%%lib/enchant-2/enchant_hspell.so
 %%HUNSPELL%%lib/enchant-2/enchant_hunspell.a
 %%HUNSPELL%%lib/enchant-2/enchant_hunspell.so
+%%NUSPELL%%lib/enchant-2/enchant_nuspell.a
+%%NUSPELL%%lib/enchant-2/enchant_nuspell.so
 %%ZEMBEREK%%lib/enchant-2/enchant_zemberek.a
 %%ZEMBEREK%%lib/enchant-2/enchant_zemberek.so
 lib/libenchant-2.a
