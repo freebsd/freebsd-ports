@@ -45,7 +45,7 @@ HUNSPELL_CONFIGURE_ON=	--with-hunspell-dir=${LOCALBASE}/share/hunspell
 NUSPELL_LIB_DEPENDS=	libicuuc.so:devel/icu \
 			libnuspell.so:textproc/nuspell
 NUSPELL_CONFIGURE_WITH=	nuspell
-NUSPELL_CONFIGURE_ON=	--with-nuspell-dir=${LOCALBASE}/share/nuspell
+NUSPELL_CONFIGURE_ON=	--with-nuspell-dir=${LOCALBASE}/share/hunspell
 
 ZEMBEREK_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libdbus-glib-1.so:devel/dbus-glib
