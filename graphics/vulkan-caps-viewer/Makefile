@@ -1,5 +1,5 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	3.11
+DISTVERSION=	3.20
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
