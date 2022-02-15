@@ -307,7 +307,6 @@ sbin/groonga-httpd-restart
 %%RUBY%%%%DATADIR%%/tools/groonga-object-list-checker.rb
 %%RUBY%%%%DATADIR%%/tools/index-column-diff-all.sh
 %%RUBY%%%%DATADIR%%/tools/object-inspect-all.sh
-%%RUBY%%%%DATADIR%%/tools/prepare-sphinx-html.rb
 %%RUBY%%%%DATADIR%%/tools/ucd-symbol-list.rb
 @dir /var/log/groonga/httpd
 @dir /var/log/groonga
