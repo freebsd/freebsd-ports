@@ -1,5 +1,5 @@
 PORTNAME=	automuteus
-DISTVERSION=	6.15.2
+DISTVERSION=	6.16.0
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -13,11 +13,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	denverquane
 
 GH_TUPLE=	\
-		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		BurntSushi:toml:v1.0.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		automuteus:galactus:v1.2.2:automuteus_galactus/vendor/github.com/automuteus/galactus \
-		automuteus:utils:v0.0.18:automuteus_utils/vendor/github.com/automuteus/utils \
+		automuteus:utils:v0.0.21:automuteus_utils/vendor/github.com/automuteus/utils \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		bsm:redislock:v0.7.0:bsm_redislock/vendor/github.com/bsm/redislock \
+		bsm:redislock:v0.7.1:bsm_redislock/vendor/github.com/bsm/redislock \
 		bwmarrin:discordgo:v0.23.2:bwmarrin_discordgo/vendor/github.com/bwmarrin/discordgo \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:68d13333faf2:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		googollee:go-socket.io:v1.4.4:googollee_go_socket_io/vendor/github.com/googollee/go-socket.io \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
