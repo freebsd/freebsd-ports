@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=HUNSPELL
 OPTIONS_SUB=	yes
 HSPELL_DESC=	Spell checking via Hspell
 HUNSPELL_DESC=	Spell checking via Hunspell
+NUSPELL_DESC=	Spell checking via Nuspell
 ZEMBEREK_DESC=	Spell checking via Zemberek
 
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
