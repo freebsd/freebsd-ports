@@ -1,9 +1,8 @@
 # Created by: Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
 
 PORTNAME=	doublecmd
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
