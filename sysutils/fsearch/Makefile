@@ -1,9 +1,11 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	fsearch
-DISTVERSION=	0.1beta4
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	7f602118e0de9f524e71.diff:-p1 f0ee01b40156ddb36651.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast file search utility for Unix-like systems
@@ -24,5 +26,8 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 post-patch:
 	@${REINPLACE_CMD} -e 's,v=UNKNOWN,v=${DISTVERSION},' \
 		${WRKSRC}/build-aux/git-version-gen
+	@${PRINTF} '\n%s\n%s;\n' int \
+		'strverscmp(const char *, const char *)' \
+		>> ${WRKSRC}/src/fsearch_string_utils.h
 
 .include <bsd.port.mk>
