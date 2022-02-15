@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski
 
 PORTNAME=	Workflow
-DISTVERSION=	1.58
+DISTVERSION=	1.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,6 @@ RUN_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
 		p5-Exception-Class>=1.10:devel/p5-Exception-Class \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Log-Log4perl>=0.34:devel/p5-Log-Log4perl \
-		p5-Syntax-Keyword-Try>=0:devel/p5-Syntax-Keyword-Try \
 		p5-XML-Simple>=2:textproc/p5-XML-Simple
 TEST_DEPENDS=	p5-DBD-Mock>=0.10:databases/p5-DBD-Mock \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
