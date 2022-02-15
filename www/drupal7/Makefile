@@ -1,7 +1,7 @@
 # Created by: Nick Hilliard <nick@foobar.org>
 
 PORTNAME=	drupal7
-DISTVERSION=	7.82
+DISTVERSION=	7.87
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
