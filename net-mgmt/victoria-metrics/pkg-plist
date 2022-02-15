@@ -48,5 +48,20 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ha-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single.md
+%%PORTDOCS%%%%DOCSDIR%%/operator/README.md
+%%PORTDOCS%%%%DOCSDIR%%/operator/VictoriaMetrics-Operator.md
+%%PORTDOCS%%%%DOCSDIR%%/operator/additional-scrape.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/api.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/auth.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/backups.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/design.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/high-availability.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/operator/managing-versions.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/quick-start.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/relabeling.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/resources-validation.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/security.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/vars.MD
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

@@ -14,7 +14,7 @@ daemon_pidfile="/var/run/${name}-daemon.pid"
 logdir="/var/log/${name}"
 logfile="${logdir}/vmagent.log"
 command="%%PREFIX%%/bin/vmagent"
-vmagent_args=${vmagent_args-"--remoteWrite.tmpDataPath=/tmp --promscrape.config=%%PREFIX%%/etc/prometheus/prometheus.yml --remoteWrite.url=http://127.0.0.1:8429/api/v1/write -httpListenAddr=:9429 --memory.allowedPercent=80"}
+vmagent_args=${vmagent_args-"--remoteWrite.tmpDataPath=/tmp --promscrape.config=%%PREFIX%%/etc/prometheus/prometheus.yml --remoteWrite.url=http://127.0.0.1:8429/api/v1/write --memory.allowedPercent=80"}
 vmagent_user="%%VICTORIA_USER%%"
 load_rc_config ${name}
 
