@@ -13,6 +13,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	ilias-5.4.[0-9]*
 
+DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 RUN_DEPENDS=	composer:devel/php-composer \
 		zip:archivers/zip \
 		${UNZIP_CMD}:archivers/unzip \
