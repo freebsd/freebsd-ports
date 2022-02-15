@@ -1,0 +1,8 @@
+bin/ssh-certinfo
+bin/ssh-diff
+bin/ssh-facts
+bin/ssh-force-password
+bin/ssh-hostkeys
+bin/ssh-keyinfo
+bin/ssh-ping
+bin/ssh-version

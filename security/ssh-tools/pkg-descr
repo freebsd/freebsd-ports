@@ -1,0 +1,6 @@
+ssh-tools is a collection of scripts, which aims
+to make the use of SSH more convenient. The scripts
+are mostly wrappers around one-liners users write
+manually when necessary.
+
+WWW: https://github.com/vaporup/ssh-tools

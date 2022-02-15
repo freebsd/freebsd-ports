@@ -1244,6 +1244,7 @@
     SUBDIR += ssb
     SUBDIR += ssdeep
     SUBDIR += ssh-multiadd
+    SUBDIR += ssh-tools
     SUBDIR += ssh-vault
     SUBDIR += sshguard
     SUBDIR += sshpass
