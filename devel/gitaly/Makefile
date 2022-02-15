@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.7.1
+DISTVERSION=	14.7.3
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -49,7 +49,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	49e5d7a924dc86477c8c887f9ffeb41e41d546dc
+GL_COMMIT=	9115228ca694cf94776a13d09afd654422a7d366
 
 # for go dependencies
 USE_GITHUB=	nodefault

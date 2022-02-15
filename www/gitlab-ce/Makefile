@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.7.1
+PORTVERSION=	14.7.3
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -175,7 +175,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-loofah>=2.9.0<3.0:textproc/rubygem-loofah \
 	rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 	rubygem-charlock_holmes>=0.7.7<0.8.0:textproc/rubygem-charlock_holmes \
-	rubygem-ruby-magic>=0.5.3<1:devel/rubygem-ruby-magic \
+	rubygem-ruby-magic>=0.5.4<1:devel/rubygem-ruby-magic \
 	rubygem-fast_blank>=0:devel/rubygem-fast_blank \
 	rubygem-gitlab-chronic>=0.10.5<0.11.0:devel/rubygem-gitlab-chronic \
 	rubygem-gitlab_chronic_duration>=0.10.6.2<0.10.7:devel/rubygem-gitlab_chronic_duration \
@@ -278,7 +278,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	c25c22ccd8cdf0ec66b7e91ad7f8edd4d3a4f86c
+GL_COMMIT=	293f6bb322ba6f3aba63744cea1cc3c9d648aba0
 
 USERS=	git
 GROUPS=	git
