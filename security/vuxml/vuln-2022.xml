@@ -136,6 +136,7 @@
       <cvename>CVE-2022-24050</cvename>
       <cvename>CVE-2022-24048</cvename>
       <cvename>CVE-2021-46659</cvename>
+      <cvename>CVE-2021-46663</cvename>
       <url>https://mariadb.com/kb/en/cve/</url>
       <url>https://mariadb.com/kb/en/mdb-10333-rn/</url>
       <url>https://mariadb.com/kb/en/mdb-10423-rn/</url>
@@ -144,6 +145,7 @@
     <dates>
       <discovery>2022-02-10</discovery>
       <entry>2022-02-10</entry>
+      <modified>2022-02-15</modified>
     </dates>
   </vuln>
 
@@ -152,11 +154,11 @@
     <affects>
       <package>
 	<name>xrdp</name>
-	<range><lt>0.9.18.1,1</lt><ge>0.9.17,1</ge></range>
+	<range><ge>0.9.17,1</ge><lt>0.9.18.1,1</lt></range>
       </package>
       <package>
 	<name>xrdp-devel</name>
-	<range><lt>0.9.18.1,1</lt><ge>0.9.17,1</ge></range>
+	<range><ge>0.9.17,1</ge><lt>0.9.18.1,1</lt></range>
       </package>
 
     </affects>
@@ -175,7 +177,7 @@
     <dates>
       <discovery>2022-01-23</discovery>
       <entry>2022-02-08</entry>
-      <modified>2022-02-14</modified>
+      <modified>2022-02-15</modified>
     </dates>
   </vuln>
 
