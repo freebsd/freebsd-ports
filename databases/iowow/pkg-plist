@@ -14,6 +14,7 @@ include/iowow/iwp.h
 include/iowow/iwpool.h
 include/iowow/iwrb.h
 include/iowow/iwrdb.h
+include/iowow/iwre.h
 include/iowow/iwsha2.h
 include/iowow/iwstree.h
 include/iowow/iwstw.h
