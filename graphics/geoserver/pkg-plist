@@ -539,7 +539,7 @@
 %%G%%/lib/jetty-webapp-%%JETTY%%.jar
 %%G%%/lib/jetty-xml-%%JETTY%%.jar
 %%G%%/lib/jsp-api-2.0.jar
-%%G%%/lib/log4j-1.2.17.jar
+%%G%%/lib/log4j-1.2.17.norce.jar
 %%G%%/lib/xmlParserAPIs-2.6.2.jar
 %%G%%/logs/keepme.txt
 %%G%%/modules/bytebufferpool.mod
@@ -726,8 +726,8 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/jaxb-runtime-2.4.0-b180830.0438.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jettison-1.0.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jgridshift-core-1.3.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jna-5.9.0.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jna-platform-5.9.0.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jna-5.10.0.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jna-platform-5.10.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/joda-time-2.8.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/json-20180813.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/json-lib-2.4.2-%%G%%.jar
@@ -778,7 +778,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/jt-zonalstats-%%JT1%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jts-core-1.18.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/log4j-1.2.17.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/log4j-1.2.17.norce.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/mail-1.4.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/marlin-0.9.3.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/net.opengis.fes-%%VER1%%.jar
@@ -791,7 +791,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/org.eclipse.emf.ecore.xmi-2.15.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/org.eclipse.xsd-2.12.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/org.w3.xlink-%%VER1%%.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/oshi-core-5.8.1.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/oshi-core-5.8.6.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/picocontainer-1.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/pngj-2.0.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/postgresql-42.2.19.jar
