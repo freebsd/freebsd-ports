@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.92.1
+DISTVERSION=	0.92.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -62,12 +62,13 @@ GH_TUPLE=	\
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:6944b10bf410:golang_image/vendor/golang.org/x/image \
-		golang:net:60bc85c4be6d:golang_net/vendor/golang.org/x/net \
+		golang:net:4f30a5c0130f:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:af8b64212486:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.1.9:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.20.0:google_go_cloud/vendor/gocloud.dev \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -101,8 +102,8 @@ GH_TUPLE=	\
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
 		niklasfasching:go-org:v1.6.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		pelletier:go-toml:fa0796069526:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		pelletier:go-toml:v1.9.4:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		pelletier:go-toml:v2.0.0-beta.6:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rogpeppe:go-internal:v1.8.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
@@ -150,21 +151,23 @@ EXTENDED_DESC=		Enable SCSS/SASS support
 EXTENDED_VARS=		CGO_ENABLED=1 CGO_LDFLAGS="-lm" BUILD_TAGS="-tags extended"
 EXTENDED_VARS_OFF=	CGO_ENABLED=0
 
-PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
-		hugo-convert-toYAML.1 hugo-convert.1 hugo-env.1 \
-		hugo-gen-autocomplete.1 hugo-gen-chromastyles.1 \
-		hugo-gen-doc.1 hugo-gen-man.1 hugo-gen.1 \
-		hugo-import-jekyll.1 hugo-import.1 hugo-list-drafts.1 \
-		hugo-list-expired.1 hugo-list-future.1 hugo-list.1 \
-		hugo-new-site.1 hugo-new-theme.1 hugo-new.1 hugo-server.1 \
-		hugo-version.1 hugo.1
+PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershell.1 \
+		hugo-completion-zsh.1 hugo-completion.1 hugo-config-mounts.1 \
+		hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 hugo-convert-toYAML.1 \
+		hugo-convert.1 hugo-deploy.1 hugo-env.1 hugo-gen-chromastyles.1 hugo-gen-doc.1 \
+		hugo-gen-man.1 hugo-gen.1 hugo-import-jekyll.1 hugo-import.1 hugo-list-all.1 \
+		hugo-list-drafts.1 hugo-list-expired.1 hugo-list-future.1 hugo-list.1 \
+		hugo-mod-clean.1 hugo-mod-get.1 hugo-mod-graph.1 hugo-mod-init.1 \
+		hugo-mod-npm-pack.1 hugo-mod-npm.1 hugo-mod-tidy.1 hugo-mod-vendor.1 \
+		hugo-mod-verify.1 hugo-mod.1 hugo-new-site.1 hugo-new-theme.1 hugo-new.1 \
+		hugo-server.1 hugo-version.1 hugo.1
 
 # needed to get DISTINFO_FILE in scope for the shell command evaluation by go.mk
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
 # COMMIT_ID should be the first 8 positions of the commit hash, characters should be UPPERCASE
-COMMIT_ID=		85e2e862
+COMMIT_ID=		cdf6a0d6
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
