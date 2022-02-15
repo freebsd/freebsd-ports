@@ -609,9 +609,16 @@ share/locale/pt_BR/LC_MESSAGES/kcmsamba.mo
 share/locale/pt_BR/LC_MESSAGES/kcmusb.mo
 share/locale/pt_BR/LC_MESSAGES/kinfocenter.mo
 share/locale/ro/LC_MESSAGES/kcm_about-distro.mo
+share/locale/ro/LC_MESSAGES/kcm_cpu.mo
+share/locale/ro/LC_MESSAGES/kcm_egl.mo
 share/locale/ro/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/ro/LC_MESSAGES/kcm_glx.mo
+share/locale/ro/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ro/LC_MESSAGES/kcm_nic.mo
 share/locale/ro/LC_MESSAGES/kcm_pci.mo
+share/locale/ro/LC_MESSAGES/kcm_vulkan.mo
+share/locale/ro/LC_MESSAGES/kcm_wayland.mo
+share/locale/ro/LC_MESSAGES/kcm_xserver.mo
 share/locale/ro/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ro/LC_MESSAGES/kcmsamba.mo
 share/locale/ro/LC_MESSAGES/kcmusb.mo
