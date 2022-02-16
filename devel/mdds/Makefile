@@ -1,5 +1,5 @@
 PORTNAME=	mdds
-PORTVERSION=	1.7.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://kohei.us/files/mdds/src/
 
@@ -9,7 +9,7 @@ COMMENT=	Multi-dimensional data index algorithm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2
+USES=		tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes
