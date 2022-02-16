@@ -2,7 +2,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.17
+DISTVERSION=	0.9.18.1
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -19,26 +19,27 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	xterm:x11/xterm \
 		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		${LOCALBASE}/lib/pulse-14.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		autoreconf:build compiler:c11 cpe jpeg localbase libtool pkgconfig \
 		ssl xorg
+CPE_VENDOR=	neutrinolabs
 USE_XORG=	ice pixman sm x11 xfixes xrandr
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 
-CPE_VENDOR=	neutrinolabs
-
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.5:librfxcodec/librfxcodec \
+GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.6:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
 
 CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
 		--enable-pam-config=freebsd \
-		--enable-jpeg --enable-pixman --enable-rfxcodec --enable-painter
+		--enable-jpeg --enable-pixman --enable-rfxcodec --enable-painter \
+		--enable-imlib2
 LDFLAGS+=	-lssl
-CONFLICTS=	xrdp-devel[0-9]*
+CONFLICTS=	xrdp-devel
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
@@ -52,7 +53,7 @@ FUSE_DESC=	Enable drive redirection via FUSE (experimental)
 MP3LAME_DESC=	Enable MP3 Lame for audio redirection
 OPUS_DESC=	Enable Opus for audio redirection
 
-DEBUG_CONFIGURE_ENABLE=	debug-all
+DEBUG_CONFIGURE_ENABLE=	devel-debug devel-logging
 FDKAAC_CONFIGURE_ENABLE=	fdkaac
 FDKAAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
 FUSE_CONFIGURE_ENABLE=	fuse
