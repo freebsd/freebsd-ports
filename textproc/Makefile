@@ -377,6 +377,7 @@
     SUBDIR += libfo
     SUBDIR += libfolia
     SUBDIR += libgepub
+    SUBDIR += libixion
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
     SUBDIR += libkomparediff2
