@@ -1,5 +1,5 @@
---- src/scripting/lua/Makefile.orig	2007-07-30 16:17:41.000000000 +0200
-+++ src/scripting/lua/Makefile	2007-07-30 16:17:53.000000000 +0200
+--- src/scripting/lua/Makefile.orig	2021-12-24 19:53:43 UTC
++++ src/scripting/lua/Makefile
 @@ -1,7 +1,7 @@
  top_builddir=../../..
  include $(top_builddir)/Makefile.config

@@ -1,6 +1,6 @@
---- src/intl/gettext/Makefile.orig	Thu Feb 16 07:41:10 2006
-+++ src/intl/gettext/Makefile	Thu Feb 16 07:48:45 2006
-@@ -47,14 +47,12 @@
+--- src/intl/gettext/Makefile.orig	2021-12-24 19:53:43 UTC
++++ src/intl/gettext/Makefile
+@@ -49,14 +49,12 @@ install-local: $(builddir)/charset.alias all
  	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
  	    orig=$(DESTDIR)$(libdir)/charset.alias; \
  	    sed -f ref-add.sed $$orig > $$temp; \
@@ -15,7 +15,7 @@
  	      rm -f $$temp; \
  	    fi; \
  	  fi; \
-@@ -65,7 +63,6 @@
+@@ -67,7 +65,6 @@ install-local: $(builddir)/charset.alias all
  	  temp=$(DESTDIR)$(localedir)/t-locale.alias; \
  	  dest=$(DESTDIR)$(localedir)/locale.alias; \
  	  sed -f ref-add.sed $$orig > $$temp; \

@@ -1,0 +1,11 @@
+--- configure.ac.orig	2022-01-29 19:43:50 UTC
++++ configure.ac
+@@ -1861,7 +1861,7 @@ if test "x$ac_cv_c_compiler_gnu" = "xyes"; then
+       ;;
+     10|10.*|11|11.*)
+       # gettext
+-      CFLAGS="$CFLAGS -fno-strict-aliasing -Wno-builtin-declaration-mismatch -Wno-array-bounds"
++      CFLAGS="$CFLAGS -fno-strict-aliasing -Wno-array-bounds"
+       ;;
+     *)
+       # These should be ok using -Werror

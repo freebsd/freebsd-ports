@@ -2,6 +2,7 @@ bin/elinks
 man/man1/elinks.1.gz
 man/man5/elinkskeys.5.gz
 man/man5/elinks.conf.5.gz
+%%NLS%%share/locale/af/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/be/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/elinks.mo
@@ -19,6 +20,7 @@ man/man5/elinks.conf.5.gz
 %%NLS%%share/locale/id/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/is/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/it/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/elinks.mo

@@ -1,20 +1,22 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
 
 PORTNAME=	elinks
-DISTVERSION=	0.11.7
-PORTREVISION=	13
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.15.0
 CATEGORIES=	www
-MASTER_SITES=	http://elinks.or.cz/download/
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	jailbird@fdf.net
 COMMENT=	Links text WWW browser with enhancements
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		bison:alias cpe gmake localbase ssl tar:bzip2
+USES=		autoreconf bison:alias cpe gmake localbase ssl
 CONFIGURE_ARGS=	--without-zlib
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rkd77
 
 LIBS+=		-lexecinfo
 
