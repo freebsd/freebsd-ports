@@ -1,6 +1,6 @@
---- include/LibreOfficeKit/LibreOfficeKitInit.h.orig	2020-11-22 14:05:28 UTC
+--- include/LibreOfficeKit/LibreOfficeKitInit.h.orig	2022-01-26 14:35:29 UTC
 +++ include/LibreOfficeKit/LibreOfficeKitInit.h
-@@ -25,7 +25,7 @@ extern "C"
+@@ -20,7 +20,7 @@
  
  #if defined(__linux__) || defined (__FreeBSD__) || defined(_AIX) ||\
      defined(_WIN32) || defined(__APPLE__) || defined (__NetBSD__) ||\

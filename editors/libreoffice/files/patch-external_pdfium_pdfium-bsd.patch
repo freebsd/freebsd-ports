@@ -1,0 +1,49 @@
+Index: external/pdfium/pdfium-bsd.patch
+--- external/pdfium/pdfium-bsd.patch.orig	2022-02-15 12:21:30 UTC
++++ external/pdfium/pdfium-bsd.patch
+@@ -0,0 +1,45 @@
++--- ./core/fxcrt/cfx_datetime.cpp.orig	Thu Feb  3 17:25:02 2022
+++++ ./core/fxcrt/cfx_datetime.cpp	Thu Feb
++@@ -11,7 +11,7 @@
++ #include "third_party/base/check.h"
++ 
++ #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
++-    defined(OS_APPLE) || defined(OS_ASMJS)
+++    defined(OS_APPLE) || defined(OS_ASMJS) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
++ #include <sys/time.h>
++ #include <time.h>
++ #endif
++--- ./core/fxge/linux/fx_linux_impl.cpp.orig	Thu Feb  3 17:25:22 2022
+++++ ./core/fxge/linux/fx_linux_impl.cpp	Thu Feb
++@@ -17,7 +17,7 @@
++ #include "third_party/base/check.h"
++ #include "third_party/base/cxx17_backports.h"
++ 
++-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS)
+++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS) && !defined(OS_FREEBSD) && !defined(OS_OPENBSD)
++ #error "Included on the wrong platform"
++ #endif
++ 
++@@ -165,9 +165,8 @@
++   std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
++     auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
++     if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {
++-      pInfo->AddPath("/usr/share/fonts");
++-      pInfo->AddPath("/usr/share/X11/fonts/Type1");
++-      pInfo->AddPath("/usr/share/X11/fonts/TTF");
+++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
+++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
++       pInfo->AddPath("/usr/local/share/fonts");
++     }
++     return pInfo;
++--- ./core/fxge/cfx_fontmapper.cpp.orig	Thu Feb  3 17:25:53 2022
+++++ ./core/fxge/cfx_fontmapper.cpp	Thu Feb
++@@ -156,7 +156,7 @@
++     {"ForteMT", "Forte"},
++ };
++ 
++-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ASMJS)
+++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ASMJS) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
++ const char kNarrowFamily[] = "LiberationSansNarrow";
++ #elif defined(OS_ANDROID)
++ const char kNarrowFamily[] = "RobotoCondensed";

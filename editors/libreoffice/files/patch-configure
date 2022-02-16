@@ -1,6 +1,6 @@
---- configure.orig	2021-12-29 08:52:37 UTC
+--- configure.orig	2022-01-26 14:39:31 UTC
 +++ configure
-@@ -13380,6 +13380,11 @@ freebsd*)
+@@ -14488,6 +14488,11 @@ freebsd*)
          RTL_ARCH=PowerPC_64
          PLATFORMID=freebsd_powerpc64
          ;;
@@ -12,71 +12,21 @@
      powerpc|powerpcspe)
          CPUNAME=POWERPC
          RTL_ARCH=PowerPC
-@@ -30522,19 +30527,19 @@ $as_echo "external" >&6; }
-     SYSTEM_MDDS=TRUE
- 
- pkg_failed=no
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for mdds-1.5 >= 1.5.0" >&5
--$as_echo_n "checking for mdds-1.5 >= 1.5.0... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for mdds-1.7 >= 1.7.0" >&5
-+$as_echo_n "checking for mdds-1.7 >= 1.7.0... " >&6; }
- 
- if test -n "$MDDS_CFLAGS"; then
-     pkg_cv_MDDS_CFLAGS="$MDDS_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.5 >= 1.5.0\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "mdds-1.5 >= 1.5.0") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.7 >= 1.7.0\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "mdds-1.7 >= 1.7.0") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_MDDS_CFLAGS=`$PKG_CONFIG --cflags "mdds-1.5 >= 1.5.0" 2>/dev/null`
-+  pkg_cv_MDDS_CFLAGS=`$PKG_CONFIG --cflags "mdds-1.7 >= 1.7.0" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -30546,12 +30551,12 @@ if test -n "$MDDS_LIBS"; then
-     pkg_cv_MDDS_LIBS="$MDDS_LIBS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.5 >= 1.5.0\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "mdds-1.5 >= 1.5.0") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.7 >= 1.7.0\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "mdds-1.7 >= 1.7.0") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_MDDS_LIBS=`$PKG_CONFIG --libs "mdds-1.5 >= 1.5.0" 2>/dev/null`
-+  pkg_cv_MDDS_LIBS=`$PKG_CONFIG --libs "mdds-1.7 >= 1.7.0" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -30572,14 +30577,14 @@ else
-         _pkg_short_errors_supported=no
+@@ -36188,7 +36193,7 @@ else $as_nop
+   as_fn_error $? "zxing headers not found." "$LINENO" 5
  fi
-         if test $_pkg_short_errors_supported = yes; then
--	        MDDS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "mdds-1.5 >= 1.5.0" 2>&1`
-+	        MDDS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "mdds-1.7 >= 1.7.0" 2>&1`
-         else
--	        MDDS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "mdds-1.5 >= 1.5.0" 2>&1`
-+	        MDDS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "mdds-1.7 >= 1.7.0" 2>&1`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$MDDS_PKG_ERRORS" >&5
- 
--	as_fn_error $? "Package requirements (mdds-1.5 >= 1.5.0) were not met:
-+	as_fn_error $? "Package requirements (mdds-1.7 >= 1.7.0) were not met:
- 
- $MDDS_PKG_ERRORS
- 
-@@ -34794,7 +34799,7 @@ else
- fi
- 
  
 -        ZXING_CFLAGS=-I/usr/include/ZXing
 +        ZXING_CFLAGS=-I/usr/local/include/ZXing
-         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lZXing" >&5
- $as_echo_n "checking for main in -lZXing... " >&6; }
- if ${ac_cv_lib_ZXing_main+:} false; then :
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for main in -lZXing" >&5
+ printf %s "checking for main in -lZXing... " >&6; }
+ if test ${ac_cv_lib_ZXing_main+y}
+@@ -43445,7 +43450,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+ done
+ 
+ if test -z "$SHA256SUM"; then
+-    for i in sha256sum /usr/local/bin/sha256sum /usr/sfw/bin/sha256sum /opt/sfw/bin/sha256sum /opt/local/bin/sha256sum; do
++    for i in gsha256sum /usr/local/bin/sha256sum /usr/sfw/bin/sha256sum /opt/sfw/bin/sha256sum /opt/local/bin/sha256sum; do
+         eval "$i --version" > /dev/null 2>&1
+         ret=$?
+         if test $ret -eq 0; then
