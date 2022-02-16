@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-09-07 06:43:55 UTC
+--- CMakeLists.txt.orig	2022-02-15 14:40:48 UTC
 +++ CMakeLists.txt
 @@ -49,6 +49,7 @@ ADD_CUSTOM_COMMAND(  
      OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/libsedml_wrap.cpp
@@ -20,12 +20,3 @@
  endif()
  
  # 
-@@ -135,7 +136,7 @@ endif()
- #
- set(PYTHON_PACKAGE_INSTALL_DIR)
- if (UNIX OR CYGWIN) 
--  execute_process(COMMAND "${PYTHON_EXECUTABLE}" -c "import sys;import platform; sys.stdout.write(platform.python_version()[:3])"
-+  execute_process(COMMAND "${PYTHON_EXECUTABLE}" -c "import sys;import platform; sys.stdout.write(platform.python_version().rsplit('.', 1)[0])"
-     OUTPUT_VARIABLE PYTHON_VERSION)
-   set(PYTHON_PACKAGE_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR}/python${PYTHON_VERSION}/site-packages)
- else()
