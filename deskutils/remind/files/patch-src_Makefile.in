@@ -1,16 +1,15 @@
---- src/Makefile.in.orig	2007-10-09 19:45:41.000000000 +0300
-+++ src/Makefile.in	2007-10-09 19:46:25.000000000 +0300
-@@ -51,9 +51,12 @@
+--- src/Makefile.in.orig	2022-02-10 22:15:01 UTC
++++ src/Makefile.in
+@@ -52,8 +52,11 @@ remind: $(REMINDOBJS)
  
  install-nostripped: all
  	-mkdir -p $(DESTDIR)$(bindir) || true
 -	for prog in $(PROGS) $(SCRIPTS) ; do \
 +	for prog in $(PROGS) ; do \
  		$(INSTALL_PROGRAM) $$prog $(DESTDIR)$(bindir) || exit 1; \
- 	done
++	done
 +	for script in $(SCRIPTS) ; do \
 +		$(INSTALL_SCRIPT) $$script $(DESTDIR)$(bindir) || exit 1; \
-+	done
+ 	done
  	rm -f $(DESTDIR)$(bindir)/rem > /dev/null 2>&1 || true
  	ln -s remind $(DESTDIR)$(bindir)/rem
- 	-mkdir -p $(DESTDIR)$(mandir)/man1 || true

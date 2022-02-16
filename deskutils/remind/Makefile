@@ -1,9 +1,11 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
 
 PORTNAME=	remind
-DISTVERSION=	03.03.12
+DISTVERSION=	03.04.00
 CATEGORIES=	deskutils
-MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
+# upstream moves distfiles to OLD once a new release appears
+MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
+		https://dianne.skoll.ca/projects/remind/download/OLD/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Sophisticated calendar and alarm program
@@ -14,22 +16,17 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INSTALL_TARGET=	${WITH_DEBUG:Dinstall-nostripped:Uinstall}
 
-PLIST_FILES=	bin/rem \
-		bin/rem2ps \
-		bin/remind \
-		man/man1/rem.1.gz \
-		man/man1/rem2ps.1.gz \
-		man/man1/remind.1.gz
-
-OPTIONS_DEFINE=	A4 TCLTK REM2HTML
-OPTIONS_DEFAULT=	LANG_US REM2HTML
+OPTIONS_DEFINE=	A4 TCLTK REM2HTML REM2PDF
+OPTIONS_DEFAULT=	LANG_US REM2HTML REM2PDF
 OPTIONS_SINGLE=	LANGUAGE
 OPTIONS_SINGLE_LANGUAGE= \
 		LANG_US LANG_DE LANG_NL LANG_FI LANG_FR LANG_NN LANG_DA \
 		LANG_PL LANG_PBR LANG_IT LANG_RO LANG_ES LANG_IS
+OPTIONS_SUB=	yes
 A4_DESC=	Use A4 instead of Letter paper
 LANGUAGE_DESC=	User interface language
 REM2HTML_DESC=	Build and install rem2html (requires Perl)
+REM2PDF_DESC=	Build and install rem2pdf (requires Perl)
 
 # do not sort these -- correspond to enumeration in source code
 LANG.US=	ENGLISH
@@ -45,35 +42,27 @@ LANG.IT=	ITALIAN
 LANG.RO=	ROMANIAN
 LANG.ES=	SPANISH
 LANG.IS=	ICELANDIC
+CFLAGS+=	-DLANG=${${PORT_OPTIONS:MLANG_*:S/_/./}}
 
 TCLTK_USES=	tk
 TCLTK_RUN_DEPENDS=	dtplite:devel/tcllib
-TCLTK_PLIST_FILES=	bin/tkremind \
-			man/man1/tkremind.1.gz
+
 REM2HTML_USES=	perl5
-REM2HTML_BUILD_DEPENDS=	p5-JSON-MaybeXS>0:converters/p5-JSON-MaybeXS
 REM2HTML_RUN_DEPENDS=	p5-JSON-MaybeXS>0:converters/p5-JSON-MaybeXS
-REM2HTML_PLIST_FILES=	bin/rem2html
+
+REM2PDF_USES=	perl5
+REM2PDF_RUN_DEPENDS=	p5-Cairo>0:graphics/p5-Cairo \
+			p5-Pango>0:x11-toolkits/p5-Pango
 
 # hard wired customisation variables
-LAT_DEG?=	45
-LAT_MIN?=	24
-LAT_SEC?=	0
-LON_DEG?=	75
-LON_MIN?=	39
-LON_SEC?=	0
+DEFAULT_LATITUDE?=	45.42055555555555
+DEFAULT_LONGITUDE?=	-75.68972222222223
 LOCATION?=	Ottawa
-
-CFLAGS+=	-DLANG=${${PORT_OPTIONS:MLANG_*:S/_/./}}
 
 post-patch:
 	@${REINPLACE_CMD} \
-	    -e 's#LAT_DEG 45#LAT_DEG ${LAT_DEG}#' \
-	    -e 's#LAT_MIN 24#LAT_MIN ${LAT_MIN}#' \
-	    -e 's#LAT_SEC  0#LAT_SEC ${LAT_SEC}#' \
-	    -e 's#LON_DEG 75#LON_DEG ${LON_DEG}#' \
-	    -e 's#LON_MIN 39#LON_MIN ${LON_MIN}#' \
-	    -e 's#LON_SEC  0#LON_SEC ${LON_SEC}#' \
+	    -e 's#DEFAULT_LATITUDE 39#DEFAULT_LATITUDE ${DEFAULT_LATITUDE}#' \
+	    -e 's#DEFAULT_LONGITUDE 39#DEFAULT_LONGITUDE ${DEFAULT_LONGITUDE}#' \
 	    -e 's#Ottawa#${LOCATION}#' ${WRKSRC}/src/custom.h
 
 post-patch-A4-on:
@@ -82,11 +71,18 @@ post-patch-A4-on:
 post-patch-TCLTK-on:
 	@${REINPLACE_CMD} -e 's,wish,${WISH},' ${WRKSRC}/scripts/tkremind
 
+do-build:
+	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
+
 do-install:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 
 do-install-REM2HTML-on:
 	cd ${WRKSRC}/rem2html && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
+
+do-install-REM2PDF-on:
+	cd ${WRKSRC}/rem2pdf && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.top ${MAKE_ARGS} all
+	cd ${WRKSRC}/rem2pdf && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.top ${MAKE_ARGS} install
 
 post-install-TCLTK-off:
 	${RM} ${STAGEDIR}${PREFIX}/bin/tkremind

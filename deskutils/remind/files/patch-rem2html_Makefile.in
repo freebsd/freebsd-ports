@@ -1,6 +1,6 @@
---- rem2html/Makefile.in.orig	2021-10-16 12:02:17 UTC
+--- rem2html/Makefile.in.orig	2022-02-10 22:15:01 UTC
 +++ rem2html/Makefile.in
-@@ -12,16 +12,14 @@ all:
+@@ -12,17 +12,15 @@ all:
  	true
  
  install:
@@ -11,6 +11,7 @@
 -	    $(PERL) -M$$m -e 1 > /dev/null 2>&1; \
 -	    if test $$? != 0 ; then echo "Not installing rem2html; missing $$m"; exit 0; fi; \
 -	done; \
+-	pod2man rem2html > rem2html.1 && mkdir -p $(DESTDIR)$(mandir)/man1 && cp rem2html.1 $(DESTDIR)$(mandir)/man1/rem2html.1 || true; \
 -	echo "Installing rem2html in $(DESTDIR)$(bindir)"; \
 -	mkdir -p $(DESTDIR)$(bindir) && sed -e 's|^#!perl|#!$(PERL)|' < rem2html > $(DESTDIR)$(bindir)/rem2html && chmod 755 $(DESTDIR)$(bindir)/rem2html && exit 0; \
 -	exit 1;
@@ -18,6 +19,7 @@
 +        do \
 +	    $(PERL) -M$$m -e 1 ; \
 +	done
++	pod2man rem2html > rem2html.1 && mkdir -p $(DESTDIR)$(mandir)/man1 && cp rem2html.1 $(DESTDIR)$(mandir)/man1/rem2html.1 || true
 +	@echo "Installing rem2html in $(DESTDIR)$(bindir)"
 +	mkdir -p $(DESTDIR)$(bindir)
 +	sed -e 's|^#!perl|#!$(PERL)|' < rem2html > rem2html.out
