@@ -1,5 +1,5 @@
 PORTNAME=	qmk
-DISTVERSION=	0.1.1
+DISTVERSION=	1.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dotty-dict>=0:devel/py-dotty-dict@${PY_FLAVO
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_GLOB=	*.py
+
+# Upstream stopped providing a setup.py
+post-patch:
+	@${ECHO_CMD} 'import setuptools; setuptools.setup()' > ${WRKSRC}/setup.py
 
 TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}"
 TEST_TARGET=	config
