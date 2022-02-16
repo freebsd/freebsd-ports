@@ -325,7 +325,7 @@ libexec/netdata/python.d/w1sensor.chart.py
 libexec/netdata/python.d/web_log.chart.py
 libexec/netdata/python.d/zscores.chart.py
 sbin/netdata
-sbin/netdata-claim.sh
+%%CLOUD%%sbin/netdata-claim.sh
 sbin/netdatacli
 @mode 4640
 @owner netdata

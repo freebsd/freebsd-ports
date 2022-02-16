@@ -3,6 +3,7 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.33.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
@@ -113,5 +114,8 @@ post-install:
 			${STAGEDIR}${LOCALBASE}/lib/${PORTNAME}/conf.d/*/*.txt ; do \
 		${MV} $$fi $$fi".sample"; \
 	done)
+
+post-install-CLOUD-off:
+	rm ${STAGEDIR}${PREFIX}/sbin/netdata-claim.sh
 
 .include <bsd.port.mk>
