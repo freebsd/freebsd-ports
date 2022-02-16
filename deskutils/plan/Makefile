@@ -6,11 +6,14 @@ PORTNAME=	plan
 PORTVERSION=	1.10.1
 PORTREVISION=	1
 CATEGORIES+=	deskutils
-MASTER_SITES=	ftp://plan.ftp.fu-berlin.de/
+MASTER_SITES=	https://cschubert.com/distfiles/plan/ \
+		ftp://ftp.bitrot.de/pub/plan/ \
+		ftp://plan.ftp.fu-berlin.de/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X/Motif schedule planner with calendar
 
+FETCH_ARGS=	-Fr --no-passive
 USES=		motif
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	freebsd
