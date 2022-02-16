@@ -1,7 +1,7 @@
 # Created by: Pedro Giffuni
 
 PORTNAME=	crayon
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
