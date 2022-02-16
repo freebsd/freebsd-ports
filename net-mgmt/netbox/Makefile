@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.7
+DISTVERSION=	3.1.8
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj32-djangorestframework (in conjunction with www/py-dj32-drf-yasg)
 #
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-include>=0.6.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.1.9<9:textproc/py-mkdocs-material@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.1.11<9:textproc/py-mkdocs-material@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.11<3.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-cors-headers>=3.11.0<4:www/py-dj32-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-debug-toolbar>=3.2.4<4:www/py-dj32-django-debug-toolbar@${PY_FLAVOR} \
@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.11<3.3:www/py-django32@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}dj32-django-redis>=5.2.0<6:www/py-dj32-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-rq>=2.5.1<2.6:devel/py-dj32-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-tables2>=2.4.1<2.5:www/py-dj32-django-tables2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj32-django-taggit>=2.0.0<3:www/py-dj32-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj32-django-taggit>=2.1.0<3:www/py-dj32-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-timezone-field>=4.2.3<5:www/py-dj32-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-djangorestframework>=3.12.4<3.13.0:www/py-dj32-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-drf-yasg>=1.20.0<1.21:www/py-dj32-drf-yasg@${PY_FLAVOR} \
