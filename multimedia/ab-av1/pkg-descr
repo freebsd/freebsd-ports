@@ -1,0 +1,3 @@
+AV1 encoding tool with fast VMAF sampling. Uses svt-av1, ffmpeg & vmaf.
+
+WWW: https://github.com/alexheretic/ab-av1
