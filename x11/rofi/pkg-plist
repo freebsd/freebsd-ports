@@ -7,6 +7,8 @@ include/rofi/mode.h
 include/rofi/rofi-icon-fetcher.h
 include/rofi/rofi-types.h
 libdata/pkgconfig/rofi.pc
+man/man5/rofi-dmenu.5.gz
+man/man5/rofi-keys.5.gz
 man/man1/rofi-sensible-terminal.1.gz
 man/man1/rofi-theme-selector.1.gz
 man/man1/rofi.1.gz

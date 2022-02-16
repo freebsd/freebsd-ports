@@ -1,6 +1,6 @@
-TIMESTAMP = 1641307313
-SHA256 (davatorium-rofi-1.7.2_GH0.tar.gz) = 570825e7d29116b0ed1cbeb1e92b1bb4a887c4fecbca0afca12f193c6053410c
-SIZE (davatorium-rofi-1.7.2_GH0.tar.gz) = 8985595
+TIMESTAMP = 1643471823
+SHA256 (davatorium-rofi-1.7.3_GH0.tar.gz) = d557721596c944db83b1053f8007ae3699a14d6e13375490fff14d0780b0ad12
+SIZE (davatorium-rofi-1.7.3_GH0.tar.gz) = 8989633
 SHA256 (sardemff7-libgwater-1db5b4b_GH0.tar.gz) = 07aca73075e9fd052c642ea87e4231afb94af345802bcb0e9bfd35bbff2e71e1
 SIZE (sardemff7-libgwater-1db5b4b_GH0.tar.gz) = 10798
 SHA256 (sardemff7-libnkutils-d08fa89_GH0.tar.gz) = e829be3e498f8d7c55ec9e866598db98800476b91e60f1f3c76316cc91c09b75
