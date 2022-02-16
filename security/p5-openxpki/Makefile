@@ -2,7 +2,7 @@
 
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.16.1
+DISTVERSION=	3.18.0
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -52,6 +52,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Mail-RFC822-Address>=0:mail/p5-Mail-RFC822-Address \
 		p5-Moose>=0:devel/p5-Moose \
+		p5-MooseX-InsideOut>=0.106:devel/p5-MooseX-InsideOut \
 		p5-MooseX-NonMoose>=0:devel/p5-MooseX-NonMoose \
 		p5-MooseX-Params-Validate>=0.21:devel/p5-MooseX-Params-Validate \
 		p5-Net-DNS>0.83:dns/p5-Net-DNS \

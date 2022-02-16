@@ -70,6 +70,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::verify_cert.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::AWSCloudHSM.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::LunaGem.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::OpenSSL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::PKCS11.3.gz
@@ -322,10 +323,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::TestConnection.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::UnrevokeCertificate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Noop.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::AddToQueue.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::GenerateExportFile.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::GetConfig.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::TagAsExported.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::Detail.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::GetList.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::Summary.3.gz
@@ -356,6 +353,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ExportToFile.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GenerateKey.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GeneratePassword.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetIdentifierForAlias.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetCertificateIdentifier.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::InjectExtraParam.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ListActiveToken.3.gz
@@ -569,6 +567,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/verify_cert.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Config.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine.pm
+%%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/AWSCloudHSM.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/LunaGem.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/OpenSSL.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/PKCS11.pm
@@ -867,6 +866,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/GenerateKey.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/GeneratePassword.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/GetCertificateIdentifier.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/GetIdentifierForAlias.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/GetSystemStatus.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/InjectExtraParam.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/ListActiveToken.pm
