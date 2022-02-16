@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	cli
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,7 +10,7 @@ COMMENT=	Helpers for Developing Command Line Interfaces
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-glue>0:devel/R-cran-glue
+CRAN_DEPENDS=	R-cran-glue>=1.6.0:devel/R-cran-glue
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
