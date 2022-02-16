@@ -1,0 +1,44 @@
+Regressed by https://gitlab.freedesktop.org/mesa/mesa/-/commit/c50557d9612a
+
+../src/amd/vulkan/radv_device.c:39:10: fatal error: 'sys/inotify.h' file not found
+#include <sys/inotify.h>
+         ^~~~~~~~~~~~~~~
+
+--- src/amd/vulkan/radv_device.c.orig	2022-02-18 15:04:48 UTC
++++ src/amd/vulkan/radv_device.c
+@@ -35,7 +35,7 @@
+ #include <sys/sysmacros.h>
+ #endif
+ 
+-#ifndef _WIN32
++#ifdef __linux__
+ #include <sys/inotify.h>
+ #endif
+ 
+@@ -2974,7 +2974,7 @@ radv_parse_force_vrs_config_file(const char *config_fi
+    return force_vrs;
+ }
+ 
+-#ifndef _WIN32
++#ifdef __linux__
+ 
+ #define BUF_LEN ((10 * (sizeof(struct inotify_event) + NAME_MAX + 1)))
+ 
+@@ -3020,7 +3020,7 @@ radv_notifier_thread_run(void *data)
+ static int
+ radv_device_init_notifier(struct radv_device *device)
+ {
+-#ifdef _WIN32
++#ifndef __linux__
+    return true;
+ #else
+    struct radv_notifier *notifier = &device->notifier;
+@@ -3053,7 +3053,7 @@ fail_watch:
+ static void
+ radv_device_finish_notifier(struct radv_device *device)
+ {
+-#ifndef _WIN32
++#ifdef __linux__
+    struct radv_notifier *notifier = &device->notifier;
+ 
+    if (!notifier->thread)
