@@ -1,7 +1,7 @@
 # Created by: Mohammad S. Babaei <info@babaei.net>
 
 PORTNAME=	wt
-DISTVERSION=	4.6.1
+DISTVERSION=	4.6.2
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
@@ -138,6 +138,8 @@ UNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 WTHTTP_CMAKE_BOOL=	CONNECTOR_HTTP
 
 PORTEXAMPLES=	*
+
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.options.mk>
 
