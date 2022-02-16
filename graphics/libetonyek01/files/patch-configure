@@ -6,8 +6,8 @@
    --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
 -  --with-mdds=1.5|1.4|1.2|1.0|0.x
 -                          Specify which version of mdds to use (1.5 is the
-+  --with-mdds=1.7|1.5|1.4|1.2|1.0|0.x
-+                          Specify which version of mdds to use (1.7 is the
++  --with-mdds=2.0|1.7|1.5|1.4|1.2|1.0|0.x
++                          Specify which version of mdds to use (2.0 is the
                            default)
    --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
                            both]
@@ -16,7 +16,7 @@
    withval=$with_mdds;
  else
 -  with_mdds="1.5"
-+  with_mdds="1.7"
++  with_mdds="2.0"
  fi
  
  
