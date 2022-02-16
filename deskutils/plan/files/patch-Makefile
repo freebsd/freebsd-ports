@@ -1,5 +1,5 @@
---- Makefile.orig	2007-07-03 15:08:52.000000000 -0300
-+++ Makefile	2009-10-05 22:12:11.000000000 -0300
+--- Makefile.orig	2017-10-25 07:17:42.000000000 -0700
++++ Makefile	2022-02-16 13:38:09.182449000 -0800
 @@ -8,19 +8,19 @@
  # after "=", this is parsed and rewritten by the configure script.
  #
@@ -64,11 +64,11 @@
  NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
  	  -DNO_MOTIF
 -FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
-+FBSD_C	= -ansi -I$(LOCALBASE)/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
++FBSD_C	= -ansi -I$(LOCALBASE)/include -DBSD -DNOLOCK -DRABBITS\
  	  -DSTDLIBMALLOC
  OBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
  	  -DNO_MOTIF -DSTDLIBMALLOC
-@@ -221,10 +225,10 @@
+@@ -226,10 +230,10 @@
  BSDIG_L2= -L/usr/X11/lib -lc
  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
  NBSD_L2	= -L/usr/X11R6/lib -lc
@@ -82,8 +82,8 @@
 +OBSD_L2	=
  LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lXm -lXt -lX11 -lXpm -lc -lXext -lICE -lX11
  LINUX_L2= -lc
- SLINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM /usr/X11R6/lib/libXm.a -lXt -lX11 /usr/X11R6/lib/libXpm.a -lc -lXext -lSM -lICE -lX11
-@@ -291,7 +295,7 @@
+ DEBIAN_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lXm -lXt -lX11 -lXpm -lc -lXext -lICE -lX11
+@@ -298,7 +302,7 @@
  	@echo "  make bsdi      BSDI/386"
  	@echo "  make bsdig     BSDI/386 with gcc"
  	@echo "  make netbsd    NetBSD/i386 1.0A (maybe others too)"
@@ -92,7 +92,7 @@
  	@echo "  make openbsd	OpenBSD"
  	@echo "  make svr4      SVR4 Using gcc"
  	@echo "  make news4     Sony NEWS-OS4.x"
-@@ -542,7 +546,7 @@
+@@ -552,7 +556,7 @@
  	$(CCLINE) -c -DLIB=\"$(LIB)\" $<
  
  holiday.o: holiday.c $(MAKEFILE)
@@ -101,16 +101,16 @@
  
  util.o: util.c $(MAKEFILE)
  	$(CCLINE) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
-@@ -617,10 +621,10 @@
+@@ -627,10 +631,10 @@
  LIST	= README HISTORY plan.spec holiday/* language/* misc/* src/resources.h.bigfonts web/*
  SRC	= Makefile $(P_SRC) daemon.c $(N_SRC) $(S_SRC) $(INC) $(S_INC) configure
  
 -LDIR	= /usr/X11R6/lib
-+LDIR	= $(LOCALBASE)/lib
++LDIR	= ${LOCALBASE}/lib
  BINDIR	= plan-$(VERSION)
  gMYCC	= gcc
 -gCF	= -m32 -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
-+gCF	= -m32 -I$(LOCALBASE)/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
- gL1F	= -L$(LDIR) $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lICE -lXp -lX11
++gCF	= -m32 -I${LOCALBASE}/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
+ gL1F	= -L$(LDIR) $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lICE -lX11
  gL2F	= -lc
  
