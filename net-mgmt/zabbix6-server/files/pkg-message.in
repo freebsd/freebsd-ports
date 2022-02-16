@@ -10,18 +10,18 @@ required. It is not needed to run Zabbix agent.
 % cd %%DATADIR%%/%%ZABBIX_BUILD%%/database
 
 And follow the instructions:
-https://www.zabbix.com/documentation/5.4/manual/appendix/install/db_scripts
+https://www.zabbix.com/documentation/6.0/manual/appendix/install/db_scripts
 
-Upgrade notes for 5.4.0:
-https://www.zabbix.com/documentation/5.4/manual/installation/upgrade_notes_520
+Upgrade notes for 6.0.0:
+https://www.zabbix.com/documentation/6.0/en/manual/installation/upgrade_notes_600
 
 Upgrade procedure:
-https://www.zabbix.com/documentation/5.4/manual/installation/upgrade/sources
+https://www.zabbix.com/documentation/6.0/manual/installation/upgrade/sources
 
 Please see https://www.zabbix.com/ for detailed information about Zabbix.
 
 Official Zabbix documentation:
-https://www.zabbix.com/documentation/5.4/start
+https://www.zabbix.com/documentation/6.0/en/manual
 
 For Zabbix frontend "Welcome" screen. Enter the user name Admin with password
 zabbix to log in as a Zabbix superuser.
@@ -36,7 +36,7 @@ Zabbix stable release, plus one (1) additional month of Limited Support
 (critical and security issues only). Zabbix Standard version release will result
 in change of the second version number.
 
-Stable release:         Zabbix 5.4
+Stable release:         Zabbix 6.0
 Release date:           May 17, 2021
 End of Full Support:    Nov 30, 2021
 End of Limited Support: Dec 31, 2021
