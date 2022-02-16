@@ -1,5 +1,5 @@
 PORTNAME=	libnumbertext
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/Numbertext/libnumbertext/releases/download/${PORTVERSION}/
 
