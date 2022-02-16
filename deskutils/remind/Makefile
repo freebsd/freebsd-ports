@@ -3,7 +3,9 @@
 PORTNAME=	remind
 DISTVERSION=	03.03.11
 CATEGORIES=	deskutils
-MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
+# upstream moves distfiles to OLD once a new release appears
+MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
+		https://dianne.skoll.ca/projects/remind/download/OLD/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Sophisticated calendar and alarm program
