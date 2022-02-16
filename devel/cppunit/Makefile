@@ -1,6 +1,5 @@
 PORTNAME=	cppunit
-PORTVERSION=	1.14.0
-PORTREVISION=	11
+PORTVERSION=	1.15.1
 CATEGORIES=	devel
 MASTER_SITES=	https://dev-www.libreoffice.org/src/
 
@@ -24,6 +23,10 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	cppunit-config
 SUB_LIST+=	DISTVERSION=${DISTVERSION}
+
+PLIST_SUB=	VERSION=${PORTVERSION:R}
+
+PORTDOCS=	*
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/cppunit-config ${STAGEDIR}${PREFIX}/bin/
