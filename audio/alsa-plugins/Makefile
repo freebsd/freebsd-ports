@@ -2,7 +2,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 MASTER_SITES=	GH
@@ -53,8 +53,13 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
 
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex libspeexdsp.so:audio/speexdsp
 SPEEX_CONFIGURE_ON=	--with-speex=lib
 SPEEX_CONFIGURE_OFF=	--without-speex
+
+post-install:
+	# sanitize links
+	cd ${STAGEDIR}${PREFIX}/etc/alsa/conf.d && for i in [0-9][0-9]-*.conf ; do \
+		${LN} -sf ../../../share/alsa/alsa.conf.d/$$i . ; done
 
 .include <bsd.port.mk>

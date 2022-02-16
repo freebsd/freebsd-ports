@@ -4,6 +4,7 @@
 @comment etc/alsa/conf.d/50-arcam-av-ctl.conf
 @comment etc/alsa/conf.d/50-oss.conf
 @comment etc/alsa/conf.d/50-pulseaudio.conf
+%%SPEEX%%etc/alsa/conf.d/60-speex.conf
 @comment etc/alsa/conf.d/60-upmix.conf
 @comment etc/alsa/conf.d/60-vdownmix.conf
 @comment etc/alsa/conf.d/98-usb-stream.conf
@@ -54,6 +55,7 @@ lib/alsa-lib/libasound_module_pcm_vdownmix.so
 @comment share/alsa/alsa.conf.d/50-oss.conf
 %%PULSEAUDIO%%share/alsa/alsa.conf.d/50-pulseaudio.conf
 %%FFMPEG%%share/alsa/alsa.conf.d/60-a52-encoder.conf
+%%SPEEX%%share/alsa/alsa.conf.d/60-speex.conf
 @comment share/alsa/alsa.conf.d/60-upmix.conf
 @comment share/alsa/alsa.conf.d/60-vdownmix.conf
 @comment share/alsa/alsa.conf.d/98-usb-stream.conf
