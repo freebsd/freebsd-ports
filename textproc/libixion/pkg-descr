@@ -1,0 +1,8 @@
+Ixion is a library for calculating the results of formula expressions stored in
+multiple fomrula cells.  The cells can be referenced by each other, and Ixion
+resolves their dependencies automatically upon calculation. Ixion also supports
+re-calculations where the contents of one or more cells have been modified since
+the last calculation, and a partial calculation of only the affected cells need
+to be calculated.
+
+WWW: https://gitlab.com/ixion/ixion
