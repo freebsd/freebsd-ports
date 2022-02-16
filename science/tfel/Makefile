@@ -1,7 +1,7 @@
 # Created by: Pedro F. Giffuni
 
 PORTNAME=	tfel
-PORTVERSION=	3.4.0
+PORTVERSION=	4.0.0
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-mfront
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	gnuplot:math/gnuplot
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		cmake compiler:c++0x fortran tar:bzip2
+USES=		cmake compiler:c++0x fortran
 
 CONFLICTS_INSTALL=	tfel-mfront-edf-3.*
 
@@ -32,6 +32,7 @@ PYTHON_CMAKE_BOOL=	enable-python enable-python-bindings
 
 CMAKE_ON=	enable-aster enable-calculix enable-fortran
 CMAKE_ARGS+=	-DCOMPILER_CXXFLAGS="${CXXFLAGS}" -DCOMPILER_FLAGS="${CFLAGS}"
+PLIST_SUB=	VER=${PORTVERSION}
 USE_LDCONFIG=	yes
 
 .ifdef PACKAGE_BUILDING
