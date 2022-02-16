@@ -2,6 +2,7 @@
 
 PORTNAME=	gap
 DISTVERSION=	4.11.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
@@ -93,5 +94,10 @@ post-install:
 .for p in ${MINPACK} ${ADD_PACK}
 	(cd ${WRKSRC}/pkg && ${CP} -R $$(ls -d ${p}*) ${STAGEDIR}${DATADIR}/pkg/)
 .endfor
+	# correct paths in sysinfo.gap
+	${REINPLACE_CMD} -i '' -e ' \
+		s|^GAP_BIN_DIR=.*|GAP_BIN_DIR="${PREFIX}/bin"|; \
+		s|^GAP_LIB_DIR=.*|GAP_LIB_DIR="${PREFIX}/lib"|; \
+		' ${STAGEDIR}${DATADIR}/sysinfo.gap
 
 .include <bsd.port.mk>
