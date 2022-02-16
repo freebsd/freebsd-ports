@@ -1,5 +1,6 @@
 PORTNAME=	NymphCast
 DISTVERSION=	v0.1-rc0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 # -p3 because WRKSRC_SUBDIR is set; the patches are from the toplevel,
