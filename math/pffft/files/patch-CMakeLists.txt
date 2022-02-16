@@ -9,7 +9,16 @@
  set_target_properties(PFFFT PROPERTIES OUTPUT_NAME "pffft")
  target_compile_definitions(PFFFT PRIVATE _USE_MATH_DEFINES)
  if (USE_SCALAR_VECT)
-@@ -193,7 +193,7 @@ endif()
+@@ -173,8 +173,6 @@ if (USE_SIMD AND USE_TYPE_DOUBLE)
+     else()
+       set_property(SOURCE pffft_double.c PROPERTY COMPILE_FLAGS "-mavx")
+     endif()
+-  else()
+-    set_property(SOURCE pffft_double.c PROPERTY COMPILE_FLAGS "-march=native")
+   endif()
+   if(DISABLE_SIMD_AVX)
+     target_compile_definitions(PFFFT PRIVATE PFFFT_AVX_DISABLE=1)
+@@ -193,7 +191,7 @@ endif()
  
  if (USE_TYPE_FLOAT)
  
@@ -18,7 +27,7 @@
    set_target_properties(PFDSP PROPERTIES OUTPUT_NAME "pfdsp")
    target_compile_definitions(PFDSP PRIVATE _USE_MATH_DEFINES)
    if (USE_DEBUG_ASAN)
-@@ -218,7 +218,7 @@ endif()
+@@ -218,7 +216,7 @@ endif()
  if (USE_FFTPACK)
  
    # float / single precision
@@ -27,7 +36,7 @@
    target_compile_definitions(FFTPACK_FLOAT PRIVATE _USE_MATH_DEFINES)
    target_compile_options(FFTPACK_FLOAT PRIVATE $<$<C_COMPILER_ID:GNU>:-Wall -Wextra -pedantic>)
    target_link_libraries( FFTPACK_FLOAT ${MATHLIB} )
-@@ -227,7 +227,7 @@ if (USE_FFTPACK)
+@@ -227,7 +225,7 @@ if (USE_FFTPACK)
    )
  
    # double precision
@@ -36,7 +45,7 @@
    target_compile_definitions(FFTPACK_DOUBLE PRIVATE _USE_MATH_DEFINES)
    target_compile_definitions(FFTPACK_DOUBLE PUBLIC FFTPACK_DOUBLE_PRECISION)
    target_compile_options(FFTPACK_DOUBLE PRIVATE $<$<C_COMPILER_ID:GNU>:-Wall -Wextra -pedantic>)
-@@ -251,7 +251,7 @@ endif()
+@@ -251,7 +249,7 @@ endif()
  
  if (USE_TYPE_FLOAT)
    # only 'float' supported in PFFASTCONV
@@ -45,7 +54,7 @@
    set_target_properties(PFFASTCONV PROPERTIES OUTPUT_NAME "pffastconv")
    target_compile_definitions(PFFASTCONV PRIVATE _USE_MATH_DEFINES)
    if (USE_DEBUG_ASAN)
-@@ -447,7 +447,9 @@ endif()
+@@ -447,7 +445,9 @@ endif()
  
  ######################################################
  
