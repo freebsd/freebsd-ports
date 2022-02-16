@@ -1,6 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -19,13 +19,15 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
 		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		anmitsu:go-shlex:38f4b401e2be:anmitsu_go_shlex/vendor/github.com/anmitsu/go-shlex \
+		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
-		charmbracelet:bubbles:v0.10.0:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
-		charmbracelet:bubbletea:v0.19.3:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
+		caarlos0:env:v6.9.1:caarlos0_env_v6/vendor/github.com/caarlos0/env/v6 \
+		charmbracelet:bubbles:1d489252fe50:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
+		charmbracelet:bubbletea:42cd4c31919c:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:glamour:v0.4.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:keygen:v0.1.2:charmbracelet_keygen/vendor/github.com/charmbracelet/keygen \
 		charmbracelet:lipgloss:v0.4.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
-		charmbracelet:wish:v0.1.2:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
+		charmbracelet:wish:534842b53d2a:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
 		containerd:console:v1.0.3:containerd_console/vendor/github.com/containerd/console \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
@@ -35,29 +37,34 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.4.2:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
+		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:5e0467b6c7ce:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:d55c255bac03:golang_net/vendor/golang.org/x/net \
 		golang:sys:5a964db01320:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:v1.1.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		matryer:is:v1.2.0:matryer_is/vendor/github.com/matryer/is \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		meowgorithm:babyenv:v1.3.1:meowgorithm_babyenv/vendor/github.com/meowgorithm/babyenv \
 		microcosm-cc:bluemonday:v1.0.17:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mikesmitty:edkey:3356ea4e686a:mikesmitty_edkey/vendor/github.com/mikesmitty/edkey \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		muesli:ansi:c9f0611b6c70:muesli_ansi/vendor/github.com/muesli/ansi \
+		muesli:mango:v0.1.0:muesli_mango/vendor/github.com/muesli/mango \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
-		muesli:termenv:v0.9.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:roff:v0.1.0:muesli_roff/vendor/github.com/muesli/roff \
+		muesli:termenv:v0.11.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
+		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
 		yuin:goldmark:v1.4.4:yuin_goldmark/vendor/github.com/yuin/goldmark
