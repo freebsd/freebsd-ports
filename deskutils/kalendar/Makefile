@@ -13,13 +13,14 @@ USES=		cmake compiler:c++17-lang desktop-file-utils grantlee:5 kde:5 \
 		qt:5 tar:xz xorg
 USE_QT=		concurrent core dbus declarative gui location multimedia \
 		network printsupport quickcontrols2 svg widgets xml \
-		buildtools_build linguist_build qmake_build
+		buildtools_build declarative-test_build linguist_build \
+		qmake_build testlib_build
 USE_KDE=	akonadi akonadicalendar akonadicontacts auth calendarcore \
 		calendarsupport calendarutils codecs config configwidgets \
 		contacts coreaddons dbusaddons eventviews grantleetheme i18n \
 		identitymanagement itemmodels kio kirigami2 mime notifications \
-		people pimtextedit service sonnet textwidgets widgetsaddons \
-		windowsystem xmlgui \
+		people pimtextedit qqc2-desktop-style service sonnet \
+		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm_build
 USE_XORG=	x11
 
