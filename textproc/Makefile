@@ -429,6 +429,7 @@
     SUBDIR += lt-hyphen
     SUBDIR += lttoolbox
     SUBDIR += ltxml
+    SUBDIR += lua-icu-utils
     SUBDIR += lua-lyaml
     SUBDIR += luaexpat
     SUBDIR += lucene
