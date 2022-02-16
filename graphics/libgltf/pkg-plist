@@ -1,6 +1,7 @@
-include/libgltf-0.0/libgltf.h
-include/libgltf-0.0/types.h
-lib/libgltf-0.0.so
-lib/libgltf-0.0.so.0
-lib/libgltf-0.0.so.0.0.2
-libdata/pkgconfig/libgltf-0.0.pc
+include/libgltf-%%VERSION%%/libgltf.h
+include/libgltf-%%VERSION%%/types.h
+lib/libgltf-%%VERSION%%.a
+lib/libgltf-%%VERSION%%.so
+lib/libgltf-%%VERSION%%.so.1
+lib/libgltf-%%VERSION%%.so.1.0.0
+libdata/pkgconfig/libgltf-%%VERSION%%.pc
