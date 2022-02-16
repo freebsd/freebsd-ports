@@ -1,0 +1,12 @@
+--- ../holiday/holiday_canada.orig	1995-04-17 14:46:02.000000000 -0700
++++ ../holiday/holiday_canada	2022-02-16 11:24:04.169278000 -0800
+@@ -5,7 +5,8 @@
+ :
+ small "New Year's Day" weekend on january 1
+ small "Valentine's Day" on february 14
+-small "God Friday" weekend on easter minus 2 days
++small "Family Day" weekend on third monday in february
++small "Good Friday" weekend on easter minus 2 days
+ small "Easter" weekend on easter
+ small "Easter Monday" weekend on easter plus 1 day
+ small "Mother's Day" on second sunday in may
