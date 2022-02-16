@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	System for computational discrete algebra
 
 LICENSE=	GPLv2+
