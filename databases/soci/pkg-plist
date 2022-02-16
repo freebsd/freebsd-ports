@@ -13,7 +13,7 @@ include/soci/connection-pool.h
 include/soci/empty/soci-empty.h
 include/soci/error.h
 include/soci/exchange-traits.h
-include/soci/firebird/soci-firebird.h
+%%FIREBIRD%%include/soci/firebird/soci-firebird.h
 include/soci/into-type.h
 include/soci/into.h
 include/soci/logger.h
@@ -64,10 +64,10 @@ lib/libsoci_empty.a
 lib/libsoci_empty.so
 lib/libsoci_empty.so.4.0
 lib/libsoci_empty.so.4.0.3
-lib/libsoci_firebird.a
-lib/libsoci_firebird.so
-lib/libsoci_firebird.so.4.0
-lib/libsoci_firebird.so.4.0.3
+%%FIREBIRD%%lib/libsoci_firebird.a
+%%FIREBIRD%%lib/libsoci_firebird.so
+%%FIREBIRD%%lib/libsoci_firebird.so.4.0
+%%FIREBIRD%%lib/libsoci_firebird.so.4.0.3
 lib/libsoci_mysql.a
 lib/libsoci_mysql.so
 lib/libsoci_mysql.so.4.0
