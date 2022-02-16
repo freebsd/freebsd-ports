@@ -1,7 +1,7 @@
 # Created by: Dirk Jagdmann <doj@cubic.org>
 
 PORTNAME=	quilt
-PORTVERSION=	0.66
+PORTVERSION=	0.67
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
