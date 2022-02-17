@@ -1,7 +1,6 @@
 PORTNAME=	openvkl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +17,12 @@ LIB_DEPENDS=	libembree3.so:graphics/embree \
 		librkcommon.so:devel/rkcommon \
 		libtbbmalloc.so:devel/onetbb
 
-USES=		cmake:testing gl
+USES=		cmake:testing compiler:c++11-lib gl
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_TESTING
+CMAKE_OFF=	BUILD_TESTING BUILD_EXAMPLES
 CMAKE_TESTING_ON=	BUILD_TESTING
 
 OPTIONS_DEFINE=		DOCS VDB
