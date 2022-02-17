@@ -1,7 +1,6 @@
 PORTNAME=	rkcommon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,5 +20,7 @@ GH_ACCOUNT=	ospray
 CMAKE_OFF=	BUILD_TESTING
 CXXFLAGS_i386=	-msse2 # workaround for error: '_mm_setcsr' needs target feature sse
 CMAKE_TESTING_ON=	BUILD_TESTING
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
