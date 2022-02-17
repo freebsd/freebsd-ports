@@ -1,12 +1,16 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	adb32f3f8f37.patch:-p1 # https://github.com/libjxl/libjxl/pull/193
 PATCHFILES+=	c31dca74e68f.patch:-p1 # https://github.com/libjxl/libjxl/pull/678
+PATCHFILES+=	0b70567432ab.patch:-p1 # https://github.com/libjxl/libjxl/pull/797
+PATCHFILES+=	e0107a6ca637.patch:-p1 # https://github.com/libjxl/libjxl/pull/847
+PATCHFILES+=	e903d53a58b4.patch:-p1 # https://github.com/libjxl/libjxl/pull/1071
+PATCHFILES+=	600b59153882.patch:-p1 # https://github.com/libjxl/libjxl/pull/1156
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
