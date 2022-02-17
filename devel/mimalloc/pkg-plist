@@ -7,4 +7,5 @@ lib/cmake/mimalloc/mimalloc-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mimalloc/mimalloc.cmake
 lib/libmimalloc.a
 lib/libmimalloc.so
+lib/libmimalloc.so.2
 lib/libmimalloc.so.2.0
