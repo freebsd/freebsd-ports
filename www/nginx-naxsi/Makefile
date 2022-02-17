@@ -3,7 +3,7 @@
 PORTNAME=	nginx
 PKGNAMESUFFIX=	-naxsi
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Robust and small WWW server (plus NAXSI)
 
 MASTERDIR=	${.CURDIR}/../nginx
