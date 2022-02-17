@@ -2,13 +2,14 @@
 
 PORTNAME=	proctitle
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils pear
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PECL extension that allows changing the current process' name
 
+LICENSE=	PHP301
+
 USES=		php:pecl
-IGNORE_WITH_PHP=	80 81
 
 .include <bsd.port.mk>
