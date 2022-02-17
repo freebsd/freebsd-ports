@@ -1,7 +1,7 @@
---- go/base/Config.php.orig	2020-01-30 15:07:35.000000000 +0100
-+++ go/base/Config.php	2020-02-03 08:46:09.904940000 +0100
-@@ -760,7 +760,7 @@
- 	 * @var     StringHelper
+--- go/base/Config.php.orig	2022-02-17 21:30:45.309754000 +0100
++++ go/base/Config.php	2022-02-17 21:38:23.780207000 +0100
+@@ -757,21 +757,21 @@ var $billing_clear_payment_method_on_duplicate = true;
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_zip = '/usr/bin/zip';
@@ -9,25 +9,32 @@
  
  	/**
  	 * Command to unpack ZIP archive
-@@ -774,7 +774,7 @@
- 	 * @var     StringHelper
+ 	 * @var     string
+ 	 * @access  public
+ 	 */
+-	var $cmd_unzip = '/usr/bin/unzip';
++	var $cmd_unzip = '/usr/local/bin/unzip';
+ 
+ 	/**
+ 	 * Command to control TAR archives
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_tar = '/bin/tar';
-+	var $cmd_tar = '/usr/bin/tar';
++	var $cmd_tar = '/usr/local/bin/tar';
  
  	/**
  	 * Command to set system passwords. Used by passwd.users.class.inc.
-@@ -783,14 +783,14 @@
- 	 * @var     StringHelper
+@@ -780,14 +780,14 @@ var $billing_clear_payment_method_on_duplicate = true;
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_chpasswd = '/usr/sbin/chpasswd';
-+	var $cmd_chpasswd = '/usr/bin/passwd';
++	var $cmd_chpasswd = '/usr/local/bin/passwd';
  
  	/**
  	 * Command to SUDO
- 	 * @var     StringHelper
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_sudo = '/usr/bin/sudo';
@@ -35,8 +42,8 @@
  
  	/**
  	 * Command to convert xml to wbxml
-@@ -798,7 +798,7 @@
- 	 * @var     StringHelper
+@@ -795,7 +795,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_xml2wbxml = '/usr/bin/xml2wbxml';
@@ -44,8 +51,8 @@
  
  	/**
  	 * Command to convert wbxml to xml
-@@ -806,7 +806,7 @@
- 	 * @var     StringHelper
+@@ -803,7 +803,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_wbxml2xml = '/usr/bin/wbxml2xml';
@@ -53,8 +60,8 @@
  
  	/**
  	 * Command to unpack winmail.dat files
-@@ -814,7 +814,7 @@
- 	 * @var     StringHelper
+@@ -811,7 +811,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+ 	 * @var     string
  	 * @access  public
  	 */
 -	var $cmd_tnef = '/usr/bin/tnef';
