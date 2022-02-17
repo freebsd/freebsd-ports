@@ -67,37 +67,46 @@ pre-configure:
 .endfor
 
 post-build:
-	cd ${WRKSRC}/pkg/simpcomp && \
-	    ${SETENV} ${CONFIGURE_ENV} ${SH} configure \
-		${CONFIGURE_ARGS:N--with-*} && \
-	    ${MAKE} ${MAKEFLAGS} && \
-	    ${MAKE} ${MAKEFLAGS} install-strip && \
-	    ${RM} bistellar
+	@cd ${WRKSRC}/pkg/simpcomp && \
+		${SETENV} ${CONFIGURE_ENV} ${SH} configure \
+			${CONFIGURE_ARGS:N--with-*} && \
+		${MAKE} ${MAKEFLAGS} && \
+		${MAKE} ${MAKEFLAGS} install-strip && \
+		${RM} bistellar
 
 post-install:
+	# additional header
 	${INSTALL_DATA} ${WRKSRC}/gen/config.h ${STAGEDIR}${PREFIX}/include/gap
-	(cd ${WRKSRC} &&	\
-	./libtool --mode=install install gap ${STAGEDIR}${PREFIX}/bin/gap-bin)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gap-bin ${STAGEDIR}${PREFIX}/lib/libgap.so.0.0.0
-	(cd ${WRKSRC} &&	\
-	./libtool --mode=install install gac ${STAGEDIR}${PREFIX}/bin/gac)
+	# install gap binary and wrapper
+	${INSTALL_PROGRAM} ${WRKSRC}/gap ${STAGEDIR}${PREFIX}/bin/gap-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
+	# strip
+	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/gap-bin lib/libgap.so.0.0.0
+	# install gac executable
+	${INSTALL_SCRIPT} ${WRKSRC}/gac ${STAGEDIR}${PREFIX}/bin/gac
+	#
 	${SED} -e "s:${WRKSRC}:${GAP_LIBDIR}:" ${WRKSRC}/bin/gap.sh \
 		> ${WRKSRC}/bin/gap
-	${SED} -e "s:GAP_DIR=.*:GAP_DIR=${DATADIR}:" \
+	${SED} \
+		-e "s:GAP_DIR=.*:GAP_DIR=${DATADIR}:" \
 		-e "s:GAP_EXE=.*:GAP_EXE=${PREFIX}/bin/gap-bin:" \
-		-e "/^exec/s:/gap::" ${WRKSRC}/bin/gap.sh > ${WRKSRC}/bin/gap
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
+		-e "/^exec/s:/gap::" ${WRKSRC}/bin/gap.sh \
+		> ${WRKSRC}/bin/gap
+	# install packages
 	${MKDIR} ${STAGEDIR}${DATADIR}/pkg
-.for subdir in doc etc gen grp lib tst sysinfo.gap
-	${CP} -R ${WRKSRC}/${subdir} ${STAGEDIR}${DATADIR}/
+.for f in doc etc gen grp lib tst sysinfo.gap
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/
 .endfor
 .for p in ${MINPACK} ${ADD_PACK}
-	(cd ${WRKSRC}/pkg && ${CP} -R $$(ls -d ${p}*) ${STAGEDIR}${DATADIR}/pkg/)
+	cd ${WRKSRC}/pkg && ${CP} -R $$(ls -d ${p}*) ${STAGEDIR}${DATADIR}/pkg/
 .endfor
 	# correct paths in sysinfo.gap
 	${REINPLACE_CMD} -i '' -e ' \
 		s|^GAP_BIN_DIR=.*|GAP_BIN_DIR="${PREFIX}/bin"|; \
 		s|^GAP_LIB_DIR=.*|GAP_LIB_DIR="${PREFIX}/lib"|; \
 		' ${STAGEDIR}${DATADIR}/sysinfo.gap
+
+do-test:
+	@cd ${WRKSRC} && ./gap ${FILESDIR}/test.g
 
 .include <bsd.port.mk>
