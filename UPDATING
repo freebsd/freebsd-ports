@@ -17,6 +17,23 @@ you update your ports collection, before attempting any port upgrades.
   USE_PHP=openssl. In case for php74 as the default php74-openssl will
   be installed otherwise it will be used from php installation.
 
+  If you are using pkg, you have to remove php8[01]-openssl manually after
+  the upgrade :
+
+  # pkg info \*php8\* > ~/installed-php-ports-list
+
+  # pkg upgrade -y
+  # pkg delete -f php8[01]-openssl
+  # service -R
+
+  While rebuilding from ports users old php.conf is not overwritten. So 
+  have to manually remove the ports. For portmaster users:
+  # sh
+  # REINSTALL="$(pkg info -o "*php80*" | grep -v openssl | awk '{printf "%s ", $2}')"
+  # pkg delete -f "*php80*"
+  # portmaster $REINSTALL
+  # portmaster -a
+
 20220207:
   AFFECTS: users of security/amavisd-new
   AUTHOR: flo@FreeBSD.org
