@@ -1,14 +1,18 @@
---- libmariadb/libmariadb/CMakeLists.txt.orig	2017-05-14 23:13:15 UTC
+--- libmariadb/libmariadb/CMakeLists.txt.orig	2022-02-10 19:42:57 UTC
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -401,9 +401,11 @@ SET_TARGET_PROPERTIES(libmariadb PROPERT
+@@ -459,6 +459,7 @@ IF(NOT WIN32)
+   SET_TARGET_PROPERTIES(mariadbclient PROPERTIES OUTPUT_NAME "${LIBMARIADB_STATIC_NAME}")
+ ENDIF()
+ 
++IF(NOT WITHOUT_CLIENT)
  INSTALL(TARGETS mariadbclient
            COMPONENT Development
            DESTINATION ${INSTALL_LIBDIR})
-+IF(NOT WITHOUT_CLIENT)
- INSTALL(TARGETS libmariadb
-           COMPONENT SharedLibraries
-         DESTINATION ${INSTALL_LIBDIR})
+@@ -470,6 +471,7 @@ INSTALL(TARGETS libmariadb LIBRARY DESTINATION ${INSTA
+         COMPONENT SharedLibraries NAMELINK_SKIP)
+ INSTALL(TARGETS libmariadb LIBRARY DESTINATION ${INSTALL_LIBDIR}
+         COMPONENT Development NAMELINK_ONLY)
 +ENDIF()
  
- IF(WIN32)
+ IF(MSVC)
     # On Windows, install PDB
