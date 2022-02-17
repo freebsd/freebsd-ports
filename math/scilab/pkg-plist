@@ -17723,11 +17723,11 @@ share/mime/packages/scilab.xml
 %%DATADIR%%/modules/ui_data/images/icons/16x16/mimetypes/user.png
 %%GUI%%%%DATADIR%%/modules/ui_data/jar/org.scilab.modules.ui_data.jar
 %%DATADIR%%/modules/ui_data/license.txt
-%%DATADIR%%/modules/ui_data/macros/browsevar_seeSpecial.bin
+%%GUI%%%%DATADIR%%/modules/ui_data/macros/browsevar_seeSpecial.bin
 %%DATADIR%%/modules/ui_data/macros/browsevar_seeSpecial.sci
 %%DATADIR%%/modules/ui_data/macros/buildmacros.sce
-%%DATADIR%%/modules/ui_data/macros/lib
-%%DATADIR%%/modules/ui_data/macros/uiSpreadsheet.bin
+%%GUI%%%%DATADIR%%/modules/ui_data/macros/lib
+%%GUI%%%%DATADIR%%/modules/ui_data/macros/uiSpreadsheet.bin
 %%DATADIR%%/modules/ui_data/macros/uiSpreadsheet.sci
 %%DATADIR%%/modules/ui_data/sci_gateway/ui_data_gateway.xml
 %%DATADIR%%/modules/ui_data/tests/nonreg_tests/bug_10402.tst
