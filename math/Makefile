@@ -1082,6 +1082,7 @@
     SUBDIR += wxmaxima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
+    SUBDIR += xgap
     SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas
