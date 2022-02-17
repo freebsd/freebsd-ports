@@ -5,13 +5,8 @@ To complete the installation of this port, you need to copy the files
 DUKE3D.GRP and DUKE.RTS from the original Duke Nukem 3D distribution to
 %%DATADIR%% with names "duke3d.grp" and "duke.rts"
 
-If you installed any of the optional packs, run the game with -g and the full
-path of the pack file e.g. eduke32 -g %%DATADIR%%/duke3d_voxels.zip
-
 To use the XXX Pack, you need to first include the HRP,
-i.e. eduke32 -g %%DATADIR%%/duke3d_hrp.zip -g %%DATADIR%%/duke3d_xxx.zip
-
-The Voxel pack is intended for use with classic textures, HRP has new models.
+i.e. eduke32 -g %%DATADIR%%/duke3d_hrp.zip -g %%DATADIR%%/duke-erp-210701.zip
 EOM
 }
 ]
