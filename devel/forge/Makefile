@@ -1,7 +1,6 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,21 +11,21 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.2.0:databases/closql@${EMACS_FLAVOR} \
-		dash.el${EMACS_PKGNAMESUFFIX}>=2.18.1:devel/dash.el@${EMACS_FLAVOR} \
+		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		emacsql${EMACS_PKGNAMESUFFIX}>=3.0.0:databases/emacsql@${EMACS_FLAVOR} \
 		ghub${EMACS_PKGNAMESUFFIX}>=3.5.4:devel/ghub@${EMACS_FLAVOR} \
 		magit${EMACS_PKGNAMESUFFIX}>=3.3.0:devel/magit@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.4:textproc/markdown-mode.el@${EMACS_FLAVOR} \
 		transient${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient@${EMACS_FLAVOR} \
-		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.3:textproc/yaml.el@${EMACS_FLAVOR}
+		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.4:textproc/yaml.el@${EMACS_FLAVOR}
 RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.2.0:databases/closql@${EMACS_FLAVOR} \
-		dash.el${EMACS_PKGNAMESUFFIX}>=2.18.1:devel/dash.el@${EMACS_FLAVOR} \
+		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		emacsql${EMACS_PKGNAMESUFFIX}>=3.0.0:databases/emacsql@${EMACS_FLAVOR} \
 		ghub${EMACS_PKGNAMESUFFIX}>=3.5.4:devel/ghub@${EMACS_FLAVOR} \
 		magit${EMACS_PKGNAMESUFFIX}>=3.3.0:devel/magit@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.4:textproc/markdown-mode.el@${EMACS_FLAVOR} \
 		transient${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient@${EMACS_FLAVOR} \
-		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.3:textproc/yaml.el@${EMACS_FLAVOR}
+		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.4:textproc/yaml.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
@@ -41,7 +40,7 @@ ALL_TARGET=	lisp info
 CONFLICTS=	forge-devel*
 
 INFO=		forge
-PORTDOCS=	README.md
+PORTDOCS=	CHANGELOG README.md
 
 OPTIONS_DEFINE=	DOCS
 
@@ -60,6 +59,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:C/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
