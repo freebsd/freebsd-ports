@@ -46,6 +46,7 @@ include/mysql/mysqld_error.h
 @sample etc/my.cnf.sample
 @comment libexec/rcmysql
 %%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi_client.so
+lib/mysql/libmariadb.a
 lib/mysql/libmariadb.so
 lib/mysql/libmariadb.so.3
 lib/mysql/libmariadbclient.a

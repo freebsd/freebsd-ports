@@ -1,10 +1,10 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.32
+PORTVERSION=	10.3.34
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
+MASTER_SITES=	http://ftp.nluug.nl/db/${SITESDIR} \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
 		http://gd.tuwien.ac.at/db/${SITESDIR}/ \
 		http://mirrors.fe.up.pt/pub/${SITESDIR}/ \
