@@ -150,6 +150,7 @@ include/mysql/server/sslopt-case.h
 include/mysql/server/sslopt-longopts.h
 include/mysql/server/sslopt-vars.h
 include/mysql/server/typelib.h
+@comment lib/mysql/libmariadb.a
 @comment lib/mysql/libmariadbclient.a
 lib/mysql/libmariadbd.a
 lib/mysql/libmariadbd.so
