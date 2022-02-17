@@ -4,7 +4,7 @@ PORTNAME=	nginx
 PORTREVISION=	7
 PKGNAMESUFFIX=	-full
 
-MAINTAINER=	robak@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust and small WWW server (full package)
 
 MASTERDIR=	${.CURDIR}/../nginx
