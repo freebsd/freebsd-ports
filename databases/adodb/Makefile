@@ -6,6 +6,9 @@ CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php-4-and-5/${PORTNAME}-${PORTVERSION:S/.//g}-for-php
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
+DEPRECATED=	Unsupported upstream, cannot be used with PHP 8.0+
+EXPIRATION_DATE=	2022-03-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database library for PHP
 
@@ -14,6 +17,7 @@ LICENSE_COMB=	dual
 
 USES=		cpe php tar:tgz
 USE_PHP=	pcre
+IGNORE_WITH_PHP=	80 81
 
 CONFLICTS=	adodb-5.*
 
