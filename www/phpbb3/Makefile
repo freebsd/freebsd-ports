@@ -1,7 +1,7 @@
 # Created by: Zhen REN <bg1tpt@gmail.com>
 
 PORTNAME=	phpbb
-DISTVERSION=	3.3.4
+DISTVERSION=	3.3.5
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpbb.com/pub/release/${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
 PKGNAMESUFFIX=	3
