@@ -126,9 +126,9 @@
 %%DATADIR%%/perf/perf-mysql.inc.php
 %%DATADIR%%/perf/perf-oci8.inc.php
 %%DATADIR%%/perf/perf-postgres.inc.php
+%%DATADIR%%/perf/perf-sqlite3.inc.php
 %%DATADIR%%/pivottable.inc.php
 %%DATADIR%%/rsfilter.inc.php
-%%DATADIR%%/server.php
 %%DATADIR%%/session/adodb-compress-bzip2.php
 %%DATADIR%%/session/adodb-compress-gzip.php
 %%DATADIR%%/session/adodb-cryptsession.php
