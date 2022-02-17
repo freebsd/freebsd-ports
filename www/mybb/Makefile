@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	mybb
-DISTVERSION=	1.8.22
+DISTVERSION=	1.8.29
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1822
+GH_TAGNAME=	${PORTNAME}_1829
 
 USES=		cpe mysql php:web
 NO_BUILD=	yes
