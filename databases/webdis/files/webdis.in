@@ -30,7 +30,7 @@ start_precmd=webdis_start_precmd
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
-command_args="-f -c -p ${pidfile} ${procname} ${webdis_config}"
+command_args="-r -f -c -p ${pidfile} ${procname} ${webdis_config}"
 
 webdis_start_precmd()
 {
