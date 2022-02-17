@@ -1,5 +1,5 @@
 PORTNAME=	eql5
-PORTVERSION=	g20211105
+PORTVERSION=	g20220217
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,14 +20,11 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	eql
 GL_PROJECT=	${PORTNAME:tu}
-GL_COMMIT=	82c209a46962f8a7e9f7d8f81b25cc21e8861e42
+GL_COMMIT=	0bf4fbaf2e231a30a0173640c3bd478e6ea6ad7a
 
 WRKSRC_SUBDIR=	src
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/eql5.pro
-
-post-extract: # see https://gitlab.com/eql/EQL5/-/issues/26
-	@${FIND} ${WRKSRC} -name "*.pro" | ${XARGS} ${REINPLACE_CMD} -e 's|^linux|freebsd|'
 
 pre-build:
 	@cd ${WRKSRC} && ecl -shell make.lisp
