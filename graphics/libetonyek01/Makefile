@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 USES=		compiler:c++11-lib gmake libtool pathfix \
 		pkgconfig tar:xz
 
-MDDS_VERSION=	1.7
+MDDS_VERSION=	2.0
 
 CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs --with-mdds=${MDDS_VERSION}
 CPPFLAGS+=	-I${LOCALBASE}/include
