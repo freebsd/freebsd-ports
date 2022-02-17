@@ -77,21 +77,20 @@ post-build:
 post-install:
 	# additional header
 	${INSTALL_DATA} ${WRKSRC}/gen/config.h ${STAGEDIR}${PREFIX}/include/gap
-	# install gap binary and wrapper
+	# install gap binary
 	${INSTALL_PROGRAM} ${WRKSRC}/gap ${STAGEDIR}${PREFIX}/bin/gap-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
 	# strip
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/gap-bin lib/libgap.so.0.0.0
 	# install gac executable
 	${INSTALL_SCRIPT} ${WRKSRC}/gac ${STAGEDIR}${PREFIX}/bin/gac
-	#
-	${SED} -e "s:${WRKSRC}:${GAP_LIBDIR}:" ${WRKSRC}/bin/gap.sh \
-		> ${WRKSRC}/bin/gap
-	${SED} \
-		-e "s:GAP_DIR=.*:GAP_DIR=${DATADIR}:" \
-		-e "s:GAP_EXE=.*:GAP_EXE=${PREFIX}/bin/gap-bin:" \
-		-e "/^exec/s:/gap::" ${WRKSRC}/bin/gap.sh \
-		> ${WRKSRC}/bin/gap
+	# prepare and install wrapper
+	@${CAT} ${WRKSRC}/bin/gap.sh | ${SED} -e ' \
+		s:${WRKSRC}:${GAP_LIBDIR}:; \
+		s:GAP_DIR=.*:GAP_DIR=${DATADIR}:; \
+		s:GAP_EXE=.*:GAP_EXE=${PREFIX}/bin/gap-bin:; \
+		/^exec/s:/gap::; \
+		' > ${WRKSRC}/bin/gap
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
 	# install packages
 	${MKDIR} ${STAGEDIR}${DATADIR}/pkg
 .for f in doc etc gen grp lib tst sysinfo.gap
