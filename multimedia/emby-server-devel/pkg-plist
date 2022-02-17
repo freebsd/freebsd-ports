@@ -993,6 +993,7 @@ lib/emby-server/system/plugins/AudioDb.dll
 lib/emby-server/system/plugins/BlurayMounter.dll
 lib/emby-server/system/plugins/DvdMounter.dll
 lib/emby-server/system/plugins/Emby.Dlna.dll
+lib/emby-server/system/plugins/Emby.M3UTuner.dll
 lib/emby-server/system/plugins/Emby.PortMapper.dll
 lib/emby-server/system/plugins/Emby.Server.CinemaMode.dll
 lib/emby-server/system/plugins/Emby.Webhooks.dll
