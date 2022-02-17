@@ -10,10 +10,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:insource cpe go:no_targets localbase perl5
 
-CONFLICTS_INSTALL=	security/libressl \
-			security/libressl-devel \
-			security/openssl \
-			security/openssl-devel \
+CONFLICTS_INSTALL=	security/libressl security/libressl-devel \
+			security/openssl security/openssl-devel \
 			security/openssl-quictls
 
 CPE_VENDOR=	google
@@ -30,7 +28,9 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1 \
 USE_LDCONFIG=	yes
 LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/lib
 TEST_TARGET=	run_tests
-MAKE_ENV+=	GOPATH=${WRKSRC}/vendor GOPROXY=off GOFLAGS=-mod=vendor
+MAKE_ENV+=	GOFLAGS=-mod=vendor \
+		GOPATH=${WRKSRC}/vendor \
+		GOPROXY=off
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/bssl ${STAGEDIR}${PREFIX}/bin/
