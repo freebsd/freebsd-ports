@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	igraph
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	math
 
 MAINTAINER=	wen@FreeBSD.org
@@ -28,7 +28,8 @@ pre-configure:
 	@${ECHO} ${PORTVERSION} > ${WRKSRC}/IGRAPH_VERSION
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300523
+.if (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300523) || \
+	(${OSVERSION} >= 1200000 && ${OSVERSION} < 1203500)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-etc_cmake_compilers.cmake
 .endif
 
