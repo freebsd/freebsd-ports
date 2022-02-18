@@ -1,4 +1,4 @@
-TIMESTAMP = 1643383092
+TIMESTAMP = 1645142188
 SHA256 (nginx-1.21.6.tar.gz) = 66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
 SIZE (nginx-1.21.6.tar.gz) = 1073364
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -61,8 +61,8 @@ SHA256 (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = d2499d94d82d4e4eac8425d79
 SIZE (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = 14558
 SHA256 (openresty-nginx-eval-module-582bd25_GH0.tar.gz) = 014bedb2b334ba8e8e23b4c660590357f8055dbed7b9b017e4cc2937876a8822
 SIZE (openresty-nginx-eval-module-582bd25_GH0.tar.gz) = 14849
-SHA256 (aperezdc-ngx-fancyindex-v0.5.1_GH0.tar.gz) = 238bd5521d6c9b55780e6871339a7ea79508b9a6758ad2fa4451f2dfe26d94c9
-SIZE (aperezdc-ngx-fancyindex-v0.5.1_GH0.tar.gz) = 28277
+SHA256 (aperezdc-ngx-fancyindex-v0.5.2_GH0.tar.gz) = c3dd84d8ba0b8daeace3041ef5987e3fb96e9c7c17df30c9ffe2fe3aa2a0ca31
+SIZE (aperezdc-ngx-fancyindex-v0.5.2_GH0.tar.gz) = 29052
 SHA256 (alibaba-nginx-http-footer-filter-1.2.2_GH0.tar.gz) = 3493b54460c59370f9f60c6e662862752f1920fc6e684f7a66bb2b3260692813
 SIZE (alibaba-nginx-http-footer-filter-1.2.2_GH0.tar.gz) = 3934
 SHA256 (leev-ngx_http_geoip2_module-3.3_GH0.tar.gz) = 41378438c833e313a18869d0c4a72704b4835c30acaf7fd68013ab6732ff78a7
