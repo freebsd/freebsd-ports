@@ -3,7 +3,7 @@
 PORTNAME=	grib_api
 PORTVERSION=	1.28.0
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/3473437/ \
 		LOCAL/sunpoet
@@ -34,6 +34,7 @@ USE_LDCONFIG=	yes
 
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
+OPENJPEG_CFLAGS=	-I${LOCALBASE}/include/openjpeg-1.5
 OPENJPEG_CONFIGURE_ON=	--with-openjpeg=${LOCALBASE}
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
 
