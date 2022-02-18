@@ -80,6 +80,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.9.xml
+share/osinfo/os/altlinux.org/alt-10.0.xml
 share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
@@ -531,6 +532,7 @@ share/osinfo/os/openbsd.org/openbsd-6.6.xml
 share/osinfo/os/openbsd.org/openbsd-6.7.xml
 share/osinfo/os/openbsd.org/openbsd-6.8.xml
 share/osinfo/os/openbsd.org/openbsd-6.9.xml
+share/osinfo/os/openbsd.org/openbsd-7.0.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -599,7 +601,9 @@ share/osinfo/os/oracle.com/ol-8.3.xml
 share/osinfo/os/oracle.com/ol-8.4.xml
 share/osinfo/os/oracle.com/ol-8.5.xml
 share/osinfo/os/oracle.com/solaris-11.xml
+share/osinfo/os/pureos.net/pureos-10.xml
 share/osinfo/os/pureos.net/pureos-8.xml
+share/osinfo/os/pureos.net/pureos-9.xml
 share/osinfo/os/redhat.com/rhel-2.1.1.xml
 share/osinfo/os/redhat.com/rhel-2.1.2.xml
 share/osinfo/os/redhat.com/rhel-2.1.3.xml
