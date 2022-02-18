@@ -1,6 +1,6 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.11.0
+DISTVERSION=	2.3.12.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
@@ -68,9 +68,9 @@ IMAGEVIEWER_USE=	GL=gl,glu,glew \
 			QT=buildtools,core,gui,opengl,qmake_build,widgets
 
 OPENCV_CMAKE_BOOL=	USE_OPENCV
+OPENCV_IMPLIES=		OPENJPEG
 OPENCV_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
-			libopencv_core.so:graphics/opencv \
-			libopenjpeg.so:graphics/openjpeg15
+			libopencv_core.so:graphics/opencv
 
 OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
