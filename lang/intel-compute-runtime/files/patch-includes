@@ -23,10 +23,10 @@ runtime/tbx/tbx_sockets_imp.cpp:107:9: error: unknown type name 'sockaddr_in'; d
 struct sockaddr {
        ^
 
---- level_zero/tools/source/metrics/linux/os_metric_enumeration_imp_linux.cpp.orig	2021-01-20 18:22:07 UTC
-+++ level_zero/tools/source/metrics/linux/os_metric_enumeration_imp_linux.cpp
-@@ -11,7 +11,9 @@
- #include "level_zero/tools/source/metrics/metric_enumeration_imp.h"
+--- level_zero/tools/source/metrics/linux/os_metric_oa_enumeration_imp_linux.cpp.orig	2021-01-20 18:22:07 UTC
++++ level_zero/tools/source/metrics/linux/os_metric_oa_enumeration_imp_linux.cpp
+@@ -13,7 +13,9 @@
+ #include "level_zero/tools/source/metrics/metric_oa_source.h"
  
  #include <sys/stat.h>
 +#if defined(__linux__)
