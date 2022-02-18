@@ -1,0 +1,54 @@
+--- Makefile.in.orig	2022-01-16 10:49:42 UTC
++++ Makefile.in
+@@ -5282,9 +5282,9 @@ QCOLLECTIONGENERATOR_QTVER = @QCOLLECTIONGENERATOR_QTV
+ QHELPGENERATOR = @QHELPGENERATOR@
+ QHELPGENERATORFLAGS = @QHELPGENERATORFLAGS@
+ QHELPGENERATOR_QTVER = @QHELPGENERATOR_QTVER@
+-QHULL_CPPFLAGS = @QHULL_CPPFLAGS@
+-QHULL_LDFLAGS = @QHULL_LDFLAGS@
+-QHULL_LIBS = @QHULL_LIBS@
++QHULL_R_CPPFLAGS = @QHULL_R_CPPFLAGS@
++QHULL_R_LDFLAGS = @QHULL_R_LDFLAGS@
++QHULL_R_LIBS = @QHULL_R_LIBS@
+ QRUPDATE_CPPFLAGS = @QRUPDATE_CPPFLAGS@
+ QRUPDATE_LDFLAGS = @QRUPDATE_LDFLAGS@
+ QRUPDATE_LIBS = @QRUPDATE_LIBS@
+@@ -8343,9 +8343,9 @@ DLDFCN_SRC = \
+ 
+ DLDFCN_LIBS = $(DLDFCN_SRC:.cc=.la)
+ libinterp_dldfcn___delaunayn___la_SOURCES = libinterp/dldfcn/__delaunayn__.cc
+-libinterp_dldfcn___delaunayn___la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(QHULL_CPPFLAGS)
+-libinterp_dldfcn___delaunayn___la_LDFLAGS = -avoid-version -module $(NO_UNDEFINED_LDFLAG) $(QHULL_LDFLAGS) $(OCT_LINK_OPTS) $(WARN_LDFLAGS)
+-libinterp_dldfcn___delaunayn___la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(QHULL_LIBS)
++libinterp_dldfcn___delaunayn___la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(QHULL_R_CPPFLAGS)
++libinterp_dldfcn___delaunayn___la_LDFLAGS = -avoid-version -module $(NO_UNDEFINED_LDFLAG) $(QHULL_R_LDFLAGS) $(OCT_LINK_OPTS) $(WARN_LDFLAGS)
++libinterp_dldfcn___delaunayn___la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(QHULL_R_LIBS)
+ libinterp_dldfcn___delaunayn___la_DEPENDENCIES = $(OCT_LINK_DEPS)
+ libinterp_dldfcn___fltk_uigetfile___la_SOURCES = libinterp/dldfcn/__fltk_uigetfile__.cc
+ libinterp_dldfcn___fltk_uigetfile___la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(FLTK_CPPFLAGS) $(FT2_CPPFLAGS)
+@@ -8373,9 +8373,9 @@ libinterp_dldfcn___ode15___la_LDFLAGS = -avoid-version
+ libinterp_dldfcn___ode15___la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(SUNDIALS_XLIBS)
+ libinterp_dldfcn___ode15___la_DEPENDENCIES = $(OCT_LINK_DEPS)
+ libinterp_dldfcn___voronoi___la_SOURCES = libinterp/dldfcn/__voronoi__.cc
+-libinterp_dldfcn___voronoi___la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(QHULL_CPPFLAGS)
+-libinterp_dldfcn___voronoi___la_LDFLAGS = -avoid-version -module $(NO_UNDEFINED_LDFLAG) $(QHULL_LDFLAGS) $(OCT_LINK_OPTS) $(WARN_LDFLAGS)
+-libinterp_dldfcn___voronoi___la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(QHULL_LIBS)
++libinterp_dldfcn___voronoi___la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(QHULL_R_CPPFLAGS)
++libinterp_dldfcn___voronoi___la_LDFLAGS = -avoid-version -module $(NO_UNDEFINED_LDFLAG) $(QHULL_R_LDFLAGS) $(OCT_LINK_OPTS) $(WARN_LDFLAGS)
++libinterp_dldfcn___voronoi___la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(QHULL_R_LIBS)
+ libinterp_dldfcn___voronoi___la_DEPENDENCIES = $(OCT_LINK_DEPS)
+ libinterp_dldfcn_audiodevinfo_la_SOURCES = libinterp/dldfcn/audiodevinfo.cc
+ libinterp_dldfcn_audiodevinfo_la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(PORTAUDIO_CPPFLAGS)
+@@ -8388,9 +8388,9 @@ libinterp_dldfcn_audioread_la_LDFLAGS = -avoid-version
+ libinterp_dldfcn_audioread_la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(SNDFILE_LIBS)
+ libinterp_dldfcn_audioread_la_DEPENDENCIES = $(OCT_LINK_DEPS)
+ libinterp_dldfcn_convhulln_la_SOURCES = libinterp/dldfcn/convhulln.cc
+-libinterp_dldfcn_convhulln_la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(QHULL_CPPFLAGS)
+-libinterp_dldfcn_convhulln_la_LDFLAGS = -avoid-version -module $(NO_UNDEFINED_LDFLAG) $(QHULL_LDFLAGS) $(OCT_LINK_OPTS) $(WARN_LDFLAGS)
+-libinterp_dldfcn_convhulln_la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(QHULL_LIBS)
++libinterp_dldfcn_convhulln_la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(QHULL_R_CPPFLAGS)
++libinterp_dldfcn_convhulln_la_LDFLAGS = -avoid-version -module $(NO_UNDEFINED_LDFLAG) $(QHULL_R_LDFLAGS) $(OCT_LINK_OPTS) $(WARN_LDFLAGS)
++libinterp_dldfcn_convhulln_la_LIBADD = $(DLD_LIBOCTINTERP_LIBADD) $(QHULL_R_LIBS)
+ libinterp_dldfcn_convhulln_la_DEPENDENCIES = $(OCT_LINK_DEPS)
+ libinterp_dldfcn_fftw_la_SOURCES = libinterp/dldfcn/fftw.cc
+ libinterp_dldfcn_fftw_la_CPPFLAGS = $(libinterp_liboctinterp_la_CPPFLAGS) $(FFTW_XCPPFLAGS)

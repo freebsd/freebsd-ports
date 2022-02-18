@@ -2,7 +2,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libftgl.so:graphics/ftgl \
 		libhdf5.so:science/hdf5 \
 		libpcre.so:devel/pcre \
-		libqhull.so.7:math/qhull \
+		libqhull_r.so:math/qhull8 \
 		libqrupdate.so:math/qrupdate \
 		libamd.so:math/suitesparse-amd \
 		libcamd.so:math/suitesparse-camd \
@@ -46,7 +46,6 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libOSMesa.so:graphics/libosmesa \
 		libsundials_arkode.so:math/sundials \
 		libportaudio.so:audio/portaudio
-#		libsndfile.so:audio/libsndfile # Commented out until this port no longer has vulnerabilities.
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 		tar:xz compiler:c++14-lang \
@@ -91,6 +90,7 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 INFO=		octave liboctave
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS JAVA QT5
 
@@ -107,12 +107,13 @@ QT5_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
 DOCS_USE=	TEX=dvipsk:build,formats:build
 JAVA_USE=	JAVA=yes
+JAVA_CFLAGS=	-I${JAVA_HOME}/include/${OPSYS:tl}
 QT5_USES=	qt:5
 OPENBLAS_USES=	blaslapack:openblas
 NETLIB_USES=	blaslapack:netlib
 ATLAS_USES=		blaslapack:atlas
 
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} 's+"makeinfo"+"${LOCALBASE}/bin/makeinfo"+' ${WRKSRC}/libinterp/corefcn/help.cc
 	${REINPLACE_CMD} 's/"-qt=$$qt_version"/"-qt=qt$$qt_version"/' ${WRKSRC}/configure
 
