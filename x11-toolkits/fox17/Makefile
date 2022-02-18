@@ -2,7 +2,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.7.77
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -51,6 +51,7 @@ DEBUG_CXXFLAGS_OFF=	-DNDEBUG
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
 
+OPENJPEG_CFLAGS=	-I${LOCALBASE}/include/openjpeg-1.5
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	jp2
 
