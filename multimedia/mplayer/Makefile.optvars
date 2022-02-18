@@ -87,6 +87,7 @@ OPENGL_USES=		gl
 OPENGL_CONFIGURE_OFF=	--disable-gl
 OPENGL_IMPLIES=		X11
 
+OPENJPEG_CFLAGS=	-I${LOCALBASE}/include/openjpeg-1.5
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_OFF=	--disable-libopenjpeg
 
