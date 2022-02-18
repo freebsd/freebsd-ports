@@ -64,6 +64,7 @@ GOPLUGIN_DESC=		Enable the go collector plugin
 
 CLOUD_CONFIGURE_ON=		--with-aclk-ng
 CLOUD_CONFIGURE_OFF=		--disable-cloud
+CLOUD_LIB_DEPENDS=		libprotobuf.so:devel/protobuf
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
 CUPS_CONFIGURE_ENABLE=		plugin-cups
 DBENGINE_LIB_DEPENDS=		libJudy.so:devel/judy \
