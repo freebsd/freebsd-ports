@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	Reddit-Client
-PORTVERSION=	1.374
+PORTVERSION=	1.389
 PORTEPOCH=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
