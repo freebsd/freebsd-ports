@@ -2,6 +2,7 @@ bin/blockattack
 share/applications/blockattack.desktop
 %%DATADIR%%/blockattack.data
 %%DATADIR%%/locale/da/LC_MESSAGES/blockattack_roftb.mo
+%%DATADIR%%/mods/1.3.0.bricks.data
 share/icons/hicolor/128x128/apps/blockattack.png
 share/icons/hicolor/16x16/apps/blockattack.png
 share/icons/hicolor/256x256/apps/blockattack.png

@@ -1,6 +1,6 @@
 PORTNAME=	blockattack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.8.0
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,7 +30,7 @@ post-patch:
 # Respect PREFIX when looking for data directories
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		-e 's,/usr/local,${PREFIX},' \
-		${WRKSRC}/source/code/sago/platform_folders.cpp
+		${WRKSRC}/source/misc/embedded_libs/PlatformFolders-*/sago/platform_folders.cpp
 
 post-build:
 # Generate game data and translations
