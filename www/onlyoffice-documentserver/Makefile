@@ -1,6 +1,7 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.0.0.133
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -37,11 +38,10 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
 		gsed:textproc/gsed \
 		nginx:www/nginx \
-		pg_dump:databases/postgresql${PGSQL_VER_NODOT}-server \
 		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv nodejs:16,build pgsql pkgconfig \
+USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv nodejs:16,build pkgconfig \
 		python:3.7+,build qt:5
 USE_QT=		qmake_build
 USE_GITHUB=	yes
@@ -73,6 +73,14 @@ GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		hackers-painters:katana-parser:499118d3:hackers_painters_katana/core/Common/3dParty/html/katana-parser \
 		google:gumbo-parser:aa91b27:google_gumbo/core/Common/3dParty/html/gumbo-parser
 
+OPTIONS_SINGLE=		DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL
+OPTIONS_DEFAULT=	PGSQL
+
+MYSQL_USES+=	mysql:server
+PGSQL_USES+=	pgsql
+PGSQL_VARS=	WANT_PGSQL=server
+
 BINARY_ALIAS=	python=${PYTHON_CMD}
 USE_LDCONFIG=	yes
 
@@ -87,7 +95,8 @@ GROUPS=		${DS_GROUPNAME}
 
 PLIST_SUB=	DS_GROUPNAME=${DS_GROUPNAME} \
 		DS_USERNAME=${DS_USERNAME}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message \
+		onlyoffice.newsyslog.sample
 SUB_LIST=	ETCDIR=${ETCDIR} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
@@ -150,6 +159,8 @@ post-patch:
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4
 	@${REINPLACE_CMD} 's|%%DISTDIR%%|${DISTDIR}|' \
 		${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
+		${WRKSRC}/document-server-package/Makefile
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
 	@${FIND} ${WRKSRC}/server -type f -name npm-shrinkwrap.json -delete
@@ -194,12 +205,15 @@ do-install:
 	${RM} ${WRKSRC}/document-server-package/common/documentserver/config/*-mac.json ${WRKSRC}/document-server-package/common/documentserver/config/*-windows.json
 	cd ${WRKSRC}/document-server-package/common/documentserver/supervisor && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/supervisor "-name *\.conf"
 	cd ${WRKSRC}/document-server-package/common/documentserver/logrotate && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/logrotate "-name *\.conf"
-.for f in ds.conf includes/http-common.conf includes/ds-common.conf includes/ds-docservice.conf includes/ds-letsencrypt.conf
+	@${CP} ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf.tmpl ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf
+.for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-common.conf includes/ds-docservice.conf includes/ds-letsencrypt.conf
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/nginx/${f} ${STAGEDIR}${ETCDIR}/documentserver/nginx/${f}.sample
 .endfor
 	cd ${WRKSRC}/document-server-package/common/documentserver/nginx/includes && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/nginx/includes "-name *\.conf"
 	cd ${WRKSRC}/document-server-package/common/documentserver/config && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver
 	${INSTALL_DATA} ${FILESDIR}/local.json.sample ${STAGEDIR}${ETCDIR}/documentserver
+	${MKDIR} ${STAGEDIR}/${ETCDIR}/documentserver/newsyslog.conf.d
+	${INSTALL_DATA} ${WRKDIR}/onlyoffice.newsyslog.sample ${STAGEDIR}/${ETCDIR}/documentserver/newsyslog.conf.d
 
 # create missing dir
 	${MKDIR} ${STAGEDIR}/var/log/onlyoffice/documentserver/docservice \

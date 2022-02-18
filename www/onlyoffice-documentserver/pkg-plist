@@ -8,7 +8,9 @@ bin/documentserver-update-securelink.sh
 %%ETCDIR%%/documentserver/log4js/development.json
 %%ETCDIR%%/documentserver/log4js/production.json
 %%ETCDIR%%/documentserver/logrotate/ds.conf
+@sample %%ETCDIR%%/documentserver/newsyslog.conf.d/onlyoffice.newsyslog.sample
 @sample %%ETCDIR%%/documentserver/nginx/ds.conf.sample
+@sample %%ETCDIR%%/documentserver/nginx/ds-ssl.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-common.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-docservice.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-letsencrypt.conf.sample

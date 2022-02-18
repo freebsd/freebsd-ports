@@ -19,25 +19,33 @@ upgrade Document Server to a new version and all your changes will be lost.
   Optionally in case of a jail with local IP and no internet access:
     update /etc/hosts in order to resolve your nextcloud server to its local IP
 
-2. Configure PostgreSQL server (don't forget to change the password):
-  # service postgresql initdb
-  # service postgresql start
-  # psql -U postgres -c "CREATE DATABASE onlyoffice;"
-  # psql -U postgres -c "CREATE USER onlyoffice WITH password 'onlyoffice';"
-  # psql -U postgres -c "GRANT ALL privileges ON DATABASE onlyoffice TO onlyoffice;"
-  # psql -hlocalhost -Uonlyoffice -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/createdb.sql
+2. Set up the database (either PostgreSQL or MySQL):
+  For PostgreSQL (don't forget to change the password):
+    # service postgresql initdb
+    # service postgresql start
+    # psql -U postgres -c "CREATE DATABASE onlyoffice;"
+    # psql -U postgres -c "CREATE USER onlyoffice WITH password 'onlyoffice';"
+    # psql -U postgres -c "GRANT ALL privileges ON DATABASE onlyoffice TO onlyoffice;"
+    # psql -hlocalhost -Uonlyoffice -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/createdb.sql
 
-  Optionally in case of a jail with local IP:
-    update /var/db/postgres/data13/pg_hba.conf accordingly
+    Optionally in case of a jail with local IP:
+      update /var/db/postgres/data13/pg_hba.conf accordingly
+
+  For MySQL don't forget to change the password):
+    # service mysql-server start
+    # mysql -u root -p -e "CREATE DATABASE onlyoffice DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"
+    # mysql -u root -p -e "CREATE USER 'onlyoffice'@'localhost' IDENTIFIED BY 'onlyoffice';"
+    # mysql -u root -p -e mysql -u root -p -e "GRANT ALL privileges ON  onlyoffice.* TO 'onlyoffice'@'localhost';"
+    # mysql -u onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/createdb.sql
 
 3. Create a new rabbitmq user for the ONLYOFFICE Document Server configuration (don't forget to change the password):
   # service rabbitmq start
-  # rabbitmqctl add_user onlyoffice password
-  # rabbitmqctl set_user_tags onlyoffice administrator
-  # rabbitmqctl set_permissions -p / onlyoffice ".*" ".*" ".*"
+  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` add_user onlyoffice password
+  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_user_tags onlyoffice administrator
+  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_permissions -p / onlyoffice ".*" ".*" ".*"
   and change it in %%ETCDIR%%/documentserver/local.json accordingly.
 
-4. Setup supervisord in order to execute documentserver services:
+4. Set up supervisord in order to execute documentserver services:
   - let supervisord.conf load files contained in this directory by adding to
     %%PREFIX%%/etc/supervisord.conf:
 [include]
@@ -46,7 +54,7 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
   - start supervisord:
     # service supervisord start
 
-5. Setup nginx:
+5. Set up nginx:
   - nginx sample configuration files are located in: %%ETCDIR%%/documentserver/nginx
     Do not edit them as they will be restored everytime the port is updated.
 
@@ -61,6 +69,12 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
 
 8. Enjoy.
 
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+After each update, you have to generate the fonts and presentation themes:
+  # %%PREFIX%%/bin/documentserver-generate-allfonts.sh
 EOM
 }
 ]
