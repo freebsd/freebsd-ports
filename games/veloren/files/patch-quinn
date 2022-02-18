@@ -1,8 +1,17 @@
 https://github.com/quinn-rs/quinn/issues/1142
 
---- cargo-crates/quinn-0.7.2/src/platform/unix.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/quinn-0.7.2/src/platform/unix.rs
-@@ -284,7 +284,7 @@ fn recv(
+--- cargo-crates/quinn-udp-0.1.0/src/unix.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/quinn-udp-0.1.0/src/unix.rs
+@@ -229,7 +229,7 @@ fn send(
+ 
+     loop {
+         let n =
+-            unsafe { libc::sendmmsg(io.as_raw_fd(), msgs.as_mut_ptr(), num_transmits as u32, 0) };
++            unsafe { libc::sendmmsg(io.as_raw_fd(), msgs.as_mut_ptr(), num_transmits as usize, 0) };
+         if n == -1 {
+             let e = io::Error::last_os_error();
+             match e.kind() {
+@@ -338,7 +338,7 @@ fn recv(
              libc::recvmmsg(
                  io.as_raw_fd(),
                  hdrs.as_mut_ptr(),
@@ -11,7 +20,7 @@ https://github.com/quinn-rs/quinn/issues/1142
                  0,
                  ptr::null_mut(),
              )
-@@ -381,7 +381,8 @@ fn prepare_msg(
+@@ -432,7 +432,8 @@ fn prepare_msg(
      }
  
      if let Some(ip) = &transmit.src_ip {
@@ -21,7 +30,7 @@ https://github.com/quinn-rs/quinn/issues/1142
              match ip {
                  IpAddr::V4(v4) => {
                      let pktinfo = libc::in_pktinfo {
-@@ -451,6 +452,7 @@ fn decode_recv(
+@@ -502,6 +503,7 @@ fn decode_recv(
                      ecn_bits = cmsg::decode::<libc::c_int>(cmsg) as u8;
                  }
              },
