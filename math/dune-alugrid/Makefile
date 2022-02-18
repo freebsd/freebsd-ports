@@ -40,4 +40,6 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 
 PORTDOCS=	*
 
+CXXFLAGS+=	-fsigned-char
+
 .include <bsd.port.mk>
