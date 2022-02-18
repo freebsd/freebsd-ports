@@ -1,4 +1,5 @@
 PORTNAME=		afni
+PORTREVISION=		1
 DISTVERSIONPREFIX=	AFNI_
 DISTVERSION=		22.0.10
 CATEGORIES=		science biology graphics perl5 python
@@ -30,7 +31,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 # Remote execution of suma.  Also needed for glxinfo.
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
-		qhull:math/qhull \
+		qhull:math/qhull8 \
 		R:math/R \
 		${CRAN_DEPENDS}
 
