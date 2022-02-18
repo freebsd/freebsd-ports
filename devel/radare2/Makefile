@@ -11,8 +11,7 @@ COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	armv6 armv7 mips mips64 powerpc powerpc64 powerpc64le \
-		powerpcspe riscv64 sparc64
+NOT_FOR_ARCHS=	armv6 armv7 mips mips64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
 LIB_DEPENDS=	libcapstone.so:devel/capstone4
@@ -39,6 +38,12 @@ DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile
 # current directory, including .bak file left by ${REINPLACE_CMD}
 # called by pathfix.
 post-patch:
+	${CP} ${WRKSRC}/libr/debug/p/native/linux/reg/linux-ppc.h \
+		${WRKSRC}/libr/debug/p/native/reg/kfbsd-ppc.h
+	${CP} ${WRKSRC}/libr/debug/p/native/linux/reg/linux-ppc64.h \
+		${WRKSRC}/libr/debug/p/native/reg/kfbsd-ppc64.h
+	${CP} ${WRKSRC}/libr/debug/p/native/linux/reg/linux-riscv64.h \
+		${WRKSRC}/libr/debug/p/native/reg/kfbsd-riscv64.h
 	${RM} ${WRKSRC}/libr/flag/d/Makefile.bak
 
 .include <bsd.port.mk>
