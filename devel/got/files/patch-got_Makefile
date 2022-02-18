@@ -1,6 +1,6 @@
---- got/Makefile.orig	2021-10-04 10:07:14 UTC
+--- got/Makefile.orig	2022-01-19 10:29:31 UTC
 +++ got/Makefile
-@@ -29,8 +29,4 @@ DPADD = ${LIBZ} ${LIBUTIL}
+@@ -30,8 +30,4 @@ DPADD = ${LIBZ} ${LIBUTIL}
  NOMAN = Yes
  .endif
  
