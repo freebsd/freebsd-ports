@@ -1,7 +1,7 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 
 PORTNAME=	libosinfo
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS+=	-Denable-vala=disabled \
 			-Dwith-usb-ids-path=${LOCALBASE}/share/usbids/usb.ids \
 			-Dwith-pci-ids-path=${LOCALBASE}/share/pciids/pci.ids
 
-SHLIB_VER=	0.1009.0
+SHLIB_VER=	0.1010.0
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 
 OPTIONS_DEFINE=	GTKDOC
