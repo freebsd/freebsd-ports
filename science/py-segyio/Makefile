@@ -1,5 +1,5 @@
 PORTNAME=	segyio
-DISTVERSION=	1.9.8
+DISTVERSION=	1.9.9
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,6 +9,7 @@ COMMENT=	Python binding for segyio, the seismic data library
 LICENSE=	LGPL3+
 
 BUILD_DEPENDS=	cmake:devel/cmake \
+		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR} \
