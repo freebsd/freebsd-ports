@@ -1,10 +1,11 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	96c78f97731c.patch:-p1 # https://github.com/artemsen/swayimg/pull/23
+PATCHFILES+=	787d13e36783.patch:-p1 # https://github.com/artemsen/swayimg/pull/23
 PATCHFILES+=	d12f10e9ebbd.patch:-p1 # https://github.com/artemsen/swayimg/pull/24
 
 MAINTAINER=	jbeich@FreeBSD.org
