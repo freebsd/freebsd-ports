@@ -1,6 +1,6 @@
---- doc/docbook/src/tcl.xml.orig	2015-04-12 10:08:04 UTC
+--- doc/docbook/src/tcl.xml.orig	2019-06-01 23:24:33 UTC
 +++ doc/docbook/src/tcl.xml
-@@ -576,7 +576,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SU
+@@ -755,7 +755,7 @@ Combination of previously defined matrices, deep lists
  	if (pm->fdata[i] > max)
  	max = pm->fdata[i];
  
@@ -9,7 +9,7 @@
  	return TCL_OK;
  	}
  
-@@ -589,7 +589,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SU
+@@ -768,7 +768,7 @@ Combination of previously defined matrices, deep lists
  	if (pm->fdata[i] &lt; min)
  	min = pm->fdata[i];
  

@@ -6,8 +6,8 @@ include/plplot/csa.h
 include/plplot/csadll.h
 include/plplot/disptab.h
 include/plplot/drivers.h
-%%QHULL2015%%include/plplot/nn.h
-%%QHULL2015%%include/plplot/nndll.h
+%%QHULL2020%%include/plplot/nn.h
+%%QHULL2020%%include/plplot/nndll.h
 include/plplot/pdf.h
 include/plplot/plConfig.h
 include/plplot/plDevs.h
@@ -34,8 +34,8 @@ lib/cmake/plplot/export_cairo-release.cmake
 lib/cmake/plplot/export_cairo.cmake
 lib/cmake/plplot/export_csirocsa-release.cmake
 lib/cmake/plplot/export_csirocsa.cmake
-%%QHULL2015%%lib/cmake/plplot/export_csironn-release.cmake
-%%QHULL2015%%lib/cmake/plplot/export_csironn.cmake
+%%QHULL2020%%lib/cmake/plplot/export_csironn-release.cmake
+%%QHULL2020%%lib/cmake/plplot/export_csironn.cmake
 %%GD%%lib/cmake/plplot/export_gd-release.cmake
 %%GD%%lib/cmake/plplot/export_gd.cmake
 lib/cmake/plplot/export_mem-release.cmake
@@ -107,9 +107,9 @@ lib/cmake/plplot/plplot_exports.cmake
 lib/libcsirocsa.so
 lib/libcsirocsa.so.0
 lib/libcsirocsa.so.0.0.1
-%%QHULL2015%%lib/libcsironn.so
-%%QHULL2015%%lib/libcsironn.so.0
-%%QHULL2015%%lib/libcsironn.so.0.0.2
+%%QHULL2020%%lib/libcsironn.so
+%%QHULL2020%%lib/libcsironn.so.0
+%%QHULL2020%%lib/libcsironn.so.0.0.2
 %%FORTRAN%%lib/libplfortrandemolib.a
 lib/libplplot.so
 lib/libplplot.so.17
@@ -186,7 +186,7 @@ libdata/pkgconfig/plplot.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.csa
 %%PORTDOCS%%%%DOCSDIR%%/README.cumulated_release
 %%PORTDOCS%%%%DOCSDIR%%/README.drivers
-%%QHULL2015%%%%PORTDOCS%%%%DOCSDIR%%/README.nn
+%%QHULL2020%%%%PORTDOCS%%%%DOCSDIR%%/README.nn
 %%PORTDOCS%%%%DOCSDIR%%/README.pkg-config
 %%PORTDOCS%%%%DOCSDIR%%/README.release
 %%PORTDOCS%%%%DOCSDIR%%/README.wxwidgets

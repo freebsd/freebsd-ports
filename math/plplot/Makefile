@@ -2,7 +2,7 @@
 
 PORTNAME=	plplot
 DISTVERSION=	5.15.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libLASi.so:devel/lasi \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libltdl.so:devel/libltdl
 RUN_DEPENDS=	bash:shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:x11-fonts/freefont-ttf
@@ -58,8 +59,8 @@ PLIST_SUB=	PLPLOT_VERSION=${PORTVERSION}
 
 FREEFONT_DIR=	${LOCALBASE}/share/fonts/freefont-ttf
 
-OPTIONS_DEFINE=		DOCS FORTRAN GD LUA QHULL2015 QT5 TCLTK THREADS WXGTK X11
-OPTIONS_DEFAULT=	QHULL2015 THREADS WXGTK X11
+OPTIONS_DEFINE=		DOCS FORTRAN GD LUA QHULL2020 QT5 TCLTK THREADS WXGTK X11
+OPTIONS_DEFAULT=	QHULL2020 THREADS WXGTK X11
 OPTIONS_SUB=		yes
 
 FORTRAN_USES=		fortran
@@ -76,9 +77,10 @@ LUA_BUILD_DEPENDS=	swig:devel/swig
 LUA_CMAKE_BOOL=		ENABLE_lua
 LUA_CMAKE_ON=		-DLUA_EXECUTABLE:FILEPATH="${LUA_CMD}"
 
-QHULL2015_DESC=		Latest Qhull support
-QHULL2015_LIB_DEPENDS=	libqhull.so.7:math/qhull
-QHULL2015_CMAKE_ON=	-DQHULL_INCLUDE_DIRS:PATH="${LOCALBASE}/include/libqhull"
+QHULL2020_DESC=		Latest Qhull support
+QHULL2020_LIB_DEPENDS=	libqhull_r.so:math/qhull8
+QHULL2020_CMAKE_BOOL=	PL_HAVE_QHULL HAS_LIBQHULL_INCLUDE
+QHULL2020_CMAKE_ON=	-DQHULL_RPATH=:FILEPATH="${LOCALBASE}/lib/libqhull_r.so"
 
 TCLTK_LIB_DEPENDS=	libitk.so:x11-toolkits/itk
 TCLTK_RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
