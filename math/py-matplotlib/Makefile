@@ -2,6 +2,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0.10:security/py-certifi@${PY_FLAVOR}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libqhull.so:math/qhull \
+		libqhull_r.so:math/qhull8 \
 		libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${PYNUMPY} \
