@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-03-27 11:58:08.000000000 +0100
-+++ CMakeLists.txt	2014-05-24 11:24:37.000000000 +0200
-@@ -54,7 +54,7 @@
+--- CMakeLists.txt.orig	2014-03-28 08:20:25 UTC
++++ CMakeLists.txt
+@@ -54,7 +54,7 @@ if(NOT OPENJPEG_SOVERSION)
  endif(NOT OPENJPEG_SOVERSION)
  SET(OPENJPEG_LIBRARY_PROPERTIES
    VERSION   "${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}.${OPENJPEG_VERSION_BUILD}"
@@ -9,21 +9,7 @@
  )
  
  # --------------------------------------------------------------------------
-@@ -94,7 +94,7 @@
- # Install directories
- 
- STRING(TOLOWER ${PROJECT_NAME} projectname)
--SET(OPENJPEG_INSTALL_SUBDIR "${projectname}-${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}")
-+SET(OPENJPEG_INSTALL_SUBDIR "${projectname}")
- 
- IF(NOT OPENJPEG_INSTALL_BIN_DIR)
-   SET(OPENJPEG_INSTALL_BIN_DIR "bin")
-@@ -125,11 +125,11 @@
- ENDIF(NOT OPENJPEG_INSTALL_DATA_DIR)
- 
- IF(NOT OPENJPEG_INSTALL_INCLUDE_DIR)
--  SET(OPENJPEG_INSTALL_INCLUDE_DIR "include/${OPENJPEG_INSTALL_SUBDIR}")
-+  SET(OPENJPEG_INSTALL_INCLUDE_DIR "include/")
+@@ -129,11 +129,11 @@ IF(NOT OPENJPEG_INSTALL_INCLUDE_DIR)
  ENDIF(NOT OPENJPEG_INSTALL_INCLUDE_DIR)
  
  IF(NOT OPENJPEG_INSTALL_MAN_DIR)
@@ -32,16 +18,12 @@
  ENDIF(NOT OPENJPEG_INSTALL_MAN_DIR)
  
  IF(NOT OPENJPEG_INSTALL_DOC_DIR)
-@@ -148,7 +148,7 @@
-   # We could install *.cmake files in share/ however those files contains
-   # hardcoded path to libraries on a multi-arch system (fedora/debian) those
-   # path will be different (lib/i386-linux-gnu vs lib/x86_64-linux-gnu)
--  SET(OPENJPEG_INSTALL_PACKAGE_DIR "${OPENJPEG_INSTALL_LIB_DIR}/${OPENJPEG_INSTALL_SUBDIR}")
-+  SET(OPENJPEG_INSTALL_PACKAGE_DIR "${OPENJPEG_INSTALL_SHARE_DIR}/${OPENJPEG_INSTALL_SUBDIR}")
- ENDIF(NOT OPENJPEG_INSTALL_PACKAGE_DIR)
+-  SET(OPENJPEG_INSTALL_DOC_DIR "share/doc/${OPENJPEG_INSTALL_SUBDIR}")
++  SET(OPENJPEG_INSTALL_DOC_DIR "share/doc/${projectname}")
+ ENDIF(NOT OPENJPEG_INSTALL_DOC_DIR)
  
- #-----------------------------------------------------------------------------
-@@ -188,10 +188,10 @@
+ if(NOT OPENJPEG_INSTALL_JNI_DIR)
+@@ -188,10 +188,10 @@ IF(UNIX)
    CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libopenjpeg1.pc.cmake
      ${CMAKE_CURRENT_BINARY_DIR}/libopenjpeg1.pc @ONLY)
    INSTALL( FILES  ${CMAKE_CURRENT_BINARY_DIR}/libopenjpeg1.pc DESTINATION
@@ -54,7 +36,7 @@
  ENDIF(UNIX)
  
  #-----------------------------------------------------------------------------
-@@ -288,6 +288,7 @@
+@@ -288,6 +288,7 @@ ENDIF(BUILD_TESTING)
  #-----------------------------------------------------------------------------
  # install all targets referenced as OPENJPEGTargets
  INSTALL(EXPORT OpenJPEGTargets DESTINATION ${OPENJPEG_INSTALL_PACKAGE_DIR})
