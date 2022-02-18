@@ -1,3 +1,57 @@
+  <vuln vid="27bf9378-8ffd-11ec-8be6-d4c9ef517024">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb103-client</name>
+	<range><lt>10.3.34</lt></range>
+      </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.34</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-client</name>
+	<range><lt>10.4.24</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.24</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-client</name>
+	<range><lt>10.5.15</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MariaDB reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/cve/">
+	  <p>MariaDB reports 5 vulnerabilities in supported versions
+	    resulting from fuzzing tests</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-46661</cvename>
+      <cvename>CVE-2021-46663</cvename>
+      <cvename>CVE-2021-46664</cvename>
+      <cvename>CVE-2021-46665</cvename>
+      <cvename>CVE-2021-46668</cvename>
+      <url>https://mariadb.com/kb/en/cve/</url>
+      <url>https://mariadb.com/kb/en/mdb-10334-rn/</url>
+      <url>https://mariadb.com/kb/en/mdb-10424-rn/</url>
+      <url>https://mariadb.com/kb/en/mdb-10515-rn/</url>
+    </references>
+    <dates>
+      <discovery>2022-02-12</discovery>
+      <entry>2022-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="096ab080-907c-11ec-bb14-002324b2fba8">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
@@ -236,7 +290,6 @@
       <cvename>CVE-2022-24050</cvename>
       <cvename>CVE-2022-24048</cvename>
       <cvename>CVE-2021-46659</cvename>
-      <cvename>CVE-2021-46663</cvename>
       <url>https://mariadb.com/kb/en/cve/</url>
       <url>https://mariadb.com/kb/en/mdb-10333-rn/</url>
       <url>https://mariadb.com/kb/en/mdb-10423-rn/</url>
@@ -245,7 +298,7 @@
     <dates>
       <discovery>2022-02-10</discovery>
       <entry>2022-02-10</entry>
-      <modified>2022-02-15</modified>
+      <modified>2022-02-17</modified>
     </dates>
   </vuln>
 
