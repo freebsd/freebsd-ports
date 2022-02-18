@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220218:
+AUTHOR: jrm@FreeBSD.org
+
+  A new USES has been added to change an ELF binary's feature control note.
+
+    USES=           elfctl
+    ELF_FEATURES=   +noaslr,wxneeded:foo \
+                    -noprotmax:foo \
+                    +nostackgap:bar
+
+  Turns on noaslr and wxneeded and turns off noprotmax for the ELF
+  binary foo and turns on nostackgap for the ELF binary bar.
+
+  The file paths listed in ELF_FEATURES are relative to ${BUILD_WRKSRC}.
+  File modifications are made post-build as certain test targets may run on
+  the build-tree binaries.
+
 20220127:
 AUTHOR: kde@FreeBSD.org
 
