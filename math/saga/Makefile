@@ -2,6 +2,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	8.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopencv_core.so:graphics/opencv \
 		libpdal_base.so:math/pdal \
 		libproj.so:graphics/proj \
-		libqhull_r.so:math/qhull \
+		libqhull_r.so:math/qhull8 \
 		libsvm.so:science/libsvm \
 		libsz.so:science/szip \
 		libtiff.so:graphics/tiff
