@@ -3,8 +3,9 @@
 PORTNAME=	vexim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail www
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Web interface for managing virtual domains for exim
@@ -15,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 SUB_FILES=	pkg-message
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		gettext php
+USES=		gettext php:flavors
 USE_PHP=	gettext session posix
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}2
-GH_TAGNAME=	2f51492
+GH_TAGNAME=	cdfb0df
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
