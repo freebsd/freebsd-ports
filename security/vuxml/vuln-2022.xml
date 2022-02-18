@@ -1,3 +1,50 @@
+  <vuln vid="096ab080-907c-11ec-bb14-002324b2fba8">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/50974">
+	  <p>crypto/elliptic: fix IsOnCurve for big.Int values that are not
+	    valid coordinates</p>
+	  <p>Some big.Int values that are not valid field elements (negative or
+	    overflowing) might cause Curve.IsOnCurve to incorrectly return true.
+	    Operating on those values may cause a panic or an invalid curve
+	    operation. Note that Unmarshal will never return such values.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/50699">
+	  <p>math/big: prevent large memory consumption in Rat.SetString</p>
+	  <p>An attacker can cause unbounded memory growth in a program using
+	    (*Rat).SetString due to an unhandled overflow.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/35671">
+	  <p>cmd/go: prevent branches from materializing into versions</p>
+	  <p>A branch whose name resembles a version tag (such as "v1.0.0" or
+	    "subdir/v2.0.0-dev") can be considered a valid version by the go
+	    command. Materializing versions from branches might be unexpected
+	    and bypass ACLs that limit the creation of tags but not branches.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23806</cvename>
+      <url>https://github.com/golang/go/issues/50974</url>
+      <cvename>CVE-2022-23772</cvename>
+      <url>https://github.com/golang/go/issues/50699</url>
+      <cvename>CVE-2022-23773</cvename>
+      <url>https://github.com/golang/go/issues/35671</url>
+    </references>
+    <dates>
+      <discovery>2022-02-10</discovery>
+      <entry>2022-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e12432af-8e73-11ec-8bc4-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
