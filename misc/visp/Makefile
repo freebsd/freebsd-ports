@@ -1,6 +1,6 @@
 PORTNAME=	visp
 DISTVERSION=	3.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
@@ -20,13 +20,16 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopencv_core.so:graphics/opencv \
 		libopencv_videoio.so:graphics/opencv \
 		libpcl_common.so:graphics/pcl-pointclouds \
-		libqhull.so:math/qhull \
+		libqhull_r.so:math/qhull8 \
 		libpng.so:graphics/png \
-		libv4l2.so:multimedia/libv4l
+		libv4l2.so:multimedia/libv4l \
+		liblz4.so:archivers/liblz4 \
+		libdc1394.so:multimedia/libdc1394
 
-USES=		cmake compiler:c++14-lang eigen:3 fortran gnome jpeg xorg zip
+USES=		cmake compiler:c++14-lang eigen:3 fortran gl gnome jpeg xorg zip
 USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xext
+USE_GL=		gl glu opengl
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	WITH_QBDEVICE BUILD_EXAMPLES BUILD_TUTORIALS BUILD_TESTS BUILD_DEMOS
