@@ -1,7 +1,7 @@
 # Created by: alexis
 
 PORTNAME=	nsd
-DISTVERSION=	4.3.9
+DISTVERSION=	4.4.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -11,9 +11,9 @@ COMMENT=	Authoritative only non-recursive name server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe ssl
-
 LIB_DEPENDS=	libevent.so:devel/libevent
+
+USES=		cpe ssl
 
 CPE_VENDOR=	nlnetlabs
 USE_RC_SUBR=	nsd
@@ -23,7 +23,6 @@ NSDGROUP?=	nsd
 NSDLSDIR=	/var
 NSDDBDIR=	/var/db/nsd
 NSDRUNDIR=	/var/run/nsd
-NSDMAX_IPS?=	512
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
@@ -34,13 +33,13 @@ CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
 		--with-ssl=${OPENSSLBASE} \
 		--with-user=${NSDUSER}
 
+USERS=		${NSDUSER}
+GROUPS=		${NSDGROUP}
+
 PLIST_SUB=	NSDDBDIR=${NSDDBDIR} \
 		NSDGROUP=${NSDGROUP} \
 		NSDRUNDIR=${NSDRUNDIR} \
 		NSDUSER=${NSDUSER}
-
-USERS=		${NSDUSER}
-GROUPS=		${NSDGROUP}
 
 PORTDOCS=	CREDITS ChangeLog LICENSE NSD-4-features NSD-DATABASE \
 		NSD-DIFFFILE NSD-FOR-BIND-USERS README README.icc RELNOTES \
@@ -54,37 +53,38 @@ OPTIONS_DEFAULT=	BIND8_STATS LARGEFILE MINRESPSIZE NSEC3 RADIXTREE RRL \
 			ZONE_STATS
 OPTIONS_SUB=		yes
 
-MUNIN_PLUGIN_IMPLIES=	BIND8_STATS
-
-ROOT_SERVER_DESC=	Configure as a root server
-LARGEFILE_DESC=		Largefile support
 BIND8_STATS_DESC=	BIND8-like NSTATS & XSTATS
 CHECKING_DESC=		Internal run-time checks
-NSEC3_DESC=		NSEC3 support
+DNSTAP_DESC=		Enable dnstap logging support
+LARGEFILE_DESC=		Largefile support
 MINRESPSIZE_DESC=	Minimial response sizing
 MMAP_DESC=		Use mmap instead of malloc (experimental)
+MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
+NSEC3_DESC=		NSEC3 support
+PACKED_DESC=		Enable packed structures for reduced memory use
+RADIXTREE_DESC=		Enabled: more (15%) memory use but less CPU cycles
+ROOT_SERVER_DESC=	Configure as a root server
 RRL_DESC=		Response Rate Limiting
 ZONE_STATS_DESC=	Separate statistics for each zone
-MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
-RADIXTREE_DESC=		Enabled: more (15%) memory use but less CPU cycles
-PACKED_DESC=		Enable packed structures for reduced memory use
-DNSTAP_DESC=		Enable dnstap logging support
 
-ROOT_SERVER_CONFIGURE_ENABLE=	root-server
-LARGEFILE_CONFIGURE_ENABLE=	largefile
 BIND8_STATS_CONFIGURE_ENABLE=	bind8-stats
 CHECKING_CONFIGURE_ENABLE=	checking
-NSEC3_CONFIGURE_ENABLE=		nsec3
-MINRESPSIZE_CONFIGURE_ENABLE=	minimal-responses
-MMAP_CONFIGURE_ENABLE=		mmap
-RRL_CONFIGURE_ENABLE=		ratelimit
-ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
-IPV6_CONFIGURE_ENABLE=		ipv6
-RADIXTREE_CONFIGURE_ENABLE=	radix-tree
-PACKED_CONFIGURE_ENABLE=	packed
-DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 				libprotobuf-c.so:devel/protobuf-c
+DNSTAP_CONFIGURE_ENABLE=	dnstap
+IPV6_CONFIGURE_ENABLE=		ipv6
+LARGEFILE_CONFIGURE_ENABLE=	largefile
+MINRESPSIZE_CONFIGURE_ENABLE=	minimal-responses
+MMAP_CONFIGURE_ENABLE=		mmap
+MUNIN_PLUGIN_IMPLIES=		BIND8_STATS
+NSEC3_CONFIGURE_ENABLE=		nsec3
+PACKED_CONFIGURE_ENABLE=	packed
+RADIXTREE_CONFIGURE_ENABLE=	radix-tree
+ROOT_SERVER_CONFIGURE_ENABLE=	root-server
+RRL_CONFIGURE_ENABLE=		ratelimit
+ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
+
+NSDMAX_IPS?=	512
 
 post-build-MUNIN_PLUGIN-on:
 	${REINPLACE_CMD} \
@@ -102,13 +102,13 @@ post-install:
 		${STAGEDIR}${PREFIX}/sbin/nsd-checkzone \
 		${STAGEDIR}${PREFIX}/sbin/nsd-control
 
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+
 post-install-MUNIN_PLUGIN-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/nsd_munin_ \
 		${STAGEDIR}${PREFIX}/share/munin/plugins
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
