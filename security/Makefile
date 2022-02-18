@@ -222,6 +222,7 @@
     SUBDIR += hashcat
     SUBDIR += hashcat-legacy
     SUBDIR += heaan
+    SUBDIR += headscale
     SUBDIR += heimdal
     SUBDIR += helib
     SUBDIR += hexl
