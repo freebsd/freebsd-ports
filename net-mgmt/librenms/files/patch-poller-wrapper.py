@@ -1,11 +1,12 @@
---- poller-wrapper.py.orig	2021-01-14 02:21:36 UTC
+--- poller-wrapper.py.orig	2022-01-26 18:26:32 UTC
 +++ poller-wrapper.py
-@@ -44,6 +44,8 @@ except ImportError as exc:
-     print('ERROR: %s' % exc)
-     sys.exit(2)
- 
+@@ -40,6 +40,9 @@ if not config:
+     logger = logging.getLogger(__name__)
+     logger.critical("Could not run {} wrapper. Missing config".format(WRAPPER_TYPE))
+     sys.exit(1)
++
 +os.environ['PATH'] += ':%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin'
 +
- 
- APP_NAME = "poller_wrapper"
- LOG_FILE = "logs/" + APP_NAME + ".log"
+ log_dir = config["log_dir"]
+ log_file = os.path.join(log_dir, WRAPPER_TYPE + "_wrapper.log")
+ logger = LibreNMS.logger_get_logger(log_file, debug=args.debug)

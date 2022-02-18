@@ -1,4 +1,4 @@
---- config.php.default.orig	2020-07-10 19:56:16 UTC
+--- config.php.default.orig	2022-01-23 14:47:41 UTC
 +++ config.php.default
 @@ -2,10 +2,26 @@
  
@@ -14,7 +14,7 @@
 +
  // This is the user LibreNMS will run as
 -//Please ensure this user is created and has the correct permissions to your install
--$config['user'] = 'librenms';
+-#$config['user'] = 'librenms';
 +// Please ensure this user is created and has the correct permissions to your install
 +// The FreeBSD package sets this.
 +// It's up to you to install a webserver, such as Apache or Nginx. By default, they
@@ -29,7 +29,7 @@
  ### This should *only* be set if you want to *force* a particular hostname/port
  ### It will prevent the web interface being usable form any other hostname
  #$config['base_url']        = "/";
-@@ -27,7 +43,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+@@ -27,7 +43,8 @@
  #$config['nets'][] = "192.168.0.0/16";
  
  # Uncomment the next line to disable daily updates
@@ -38,11 +38,11 @@
 +$config['update'] = 0;
  
  # Number in days of how long to keep old rrd files. 0 disables this feature
- $config['rrd_purge'] = 0;
-@@ -43,3 +60,22 @@ $config['enable_billing'] = 1;
+ #$config['rrd_purge'] = 0;
+@@ -43,3 +60,22 @@
  
  # Enable the in-built services support (Nagios plugins)
- $config['show_services'] = 1;
+ #$config['show_services'] = 1;
 +
 +# These paths are supplied by the FreeBSD port and correct those found in
 +# the code.

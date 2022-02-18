@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220218:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  The storage directory has moved from WWWDIR to /var/db/librenms/storage
+  to comply with man 7 hier. When upgrading, you may need to manually create
+  this symlink.
+
 20220212:
   AFFECTS: users of lang/php8[01][-extensions]?
   AUTHOR: bofh@FreeBSD.org

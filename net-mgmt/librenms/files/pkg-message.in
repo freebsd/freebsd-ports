@@ -8,19 +8,37 @@ http://docs.librenms.org/
 with the following notes:
 - Installation directory is %%WWWDIR%%
 
-NOTE: setting sql-mode="" is no longer required. You can remove
-it from %%LOCALBASE%%/etc/mysql/my.cnf
+NOTE: setting sql-mode="" is no longer required. You can remove it from
+%%LOCALBASE%%/etc/mysql/my.cnf
 
-However, 'lower_case_table_names=0' is required.
+LibreNMS requires specific entries in my.cnf for MySQL. In MySQL 8, once the
+service is started for the first time, the lower_case_table_names value can not
+be changed. It is recommended that you my.cnf before starting MySQL for the
+first time or pass specific values on the command-line when starting MySQL. 
 
-HEADS UP
+NOTE that the lower_case_table_names entry needs to be set before you start
+MySQL for the first time.
 
-Polling via cron job has been removed.. Please use the Dispatcher.
+innodb_file_per_table=1
+lower_case_table_names=0
 
-LibreNMS will be dropped support for PHP 7.1 and Python 2
-see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+By default MySQL 8 uses a different authentication plugin to auth database users.
+If you see errors in the logs like this:
 
-Your existing crontab entries are no longer useful and should be deleted.
+"The server requested authentication method unknown to the client..."
+
+Add this to my.cnf:
+
+[mysqld]
+default-authentication-plugin=mysql_native_password
+
+The following MySQL configuration is required. Adjust 'localhost' as
+required if MySQL is on a different host.
+
+CREATE DATABASE librenms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'librenms'@'localhost' IDENTIFIED with mysql_native_password BY 'password';
+GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';
+FLUSH PRIVILEGES;
 
 Enable the poller service with this command:
 
@@ -28,30 +46,12 @@ sysrc librenms_enable="YES"
 
 The service will log to /var/log/librems/librenms-service.log
 
-see also https://docs.librenms.org/Extensions/Dispatcher-Service/
-
 For log file rotation
 
 * sample file installed to %%WWWDIR%%/contrib/newsyslog.conf.sample
 * actual file installed, never overwriting, to %%PREFIX%%/etc/newsyslog.conf.d/librenms.conf
 
-When converting from PYPOLLER to the Dispatcher Service (PYSERVICE),
-these steps will help you get started:
-
-* compile with PYSERVICE enabled and PYPOLLER disabled
-* comment out the crontab entries listed above under PYPOLLER
-* populate %%WWWDIR%%/.env with:
-  * APP_KEY - see farther below for how to create
-  * NODE_ID - see just below for how to create
-  * DB_HOST
-  * DB_DATABASE
-  * DB_USERNAME
-  * DB_PASSWORD
-* you can create a NODE_ID with: php -r 'echo uniqid() . "\n";'
-
-When setting up a new install, you need a %%WWWDIR%%/.env file.
-
-To create:
+For new installs, you need a %%WWWDIR%%/.env file. To create:
 
 cd %%WWWDIR%%
 cp -i .env.example .env
@@ -60,29 +60,39 @@ That file will eventually contain secrets.  Make sure it is not world-readable.
 
 Database connection details are required in that file.
 
+When trying to run /install for the first time you need to have (INSTALL=true)
+in your .env file. If you don't set it you will get a 403 error on the
+webpage.
+
 Then run:
 
 sudo php artisan key:generate
 
-It should write directly to your .env file
-
-The output should look something like this:
+It should write directly to your .env file. The output should look something
+like this:
 
 $ sudo php artisan key:generate
 Application key set successfully.
 
-When migrating to PYSERVICE (also known as the Dispatcher Service):
-
-It is also a good idea to:
-cd %%WWWDIR%%
-sudo ./validate.php
-
 You need an APP_KEY.
 
+* %%WWWDIR%%/.env should now contain:
+  * APP_KEY
+  * NODE_I
+  * DB_HOST
+  * DB_DATABASE
+  * DB_USERNAME
+  * DB_PASSWORD
+
+* you can create a NODE_ID with: php -r 'echo uniqid() . "\n";'
 
 After that, follow the LibreNMS documentation for configuration.
 
-You probably want to install lang/python3 to get validate.php clean.
+It is also a good idea to validate your configuation after MySQL has been
+started:
+
+cd %%WWWDIR%%
+sudo ./validate.php
 
 EOM
 }
@@ -97,26 +107,34 @@ Or the database upgrade script:
 
 ./lnms migrate
 
-re: https://docs.librenms.org/#General/Updating/
+NOTE: that script is particular about who runs it and ownership.
+You might have to chown www first, then:
 
-HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP
-HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP
+chown www lnms
+su -fm www
+./lnms migrate
+exit
+chown root lnms
 
-Polling via cron job is now gone. Please use the Dispatcher.
 
-LibreNMS will be droppped support for PHP 7.1 and Python 2.
-see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+re: https://docs.librenms.org/General/Updating/
 
-Your existing crontab entries can be deleted.
+LibreNMS requires specific entries in my.cnf for MySQL.
 
-For more information, see pkg info --pkg-message librenms
+NOTE that the lower_case_table_names entry needs to be set before you start
+MySQL for the first time.
 
-You probably want to install lang/python3 to get validate.php clean.
+innodb_file_per_table=1
+lower_case_table_names=0
 
-Logs have been relocated to /var/log/librenms - see UPDATING 20200726
-Logs which were going to /var/log/messages and /var/log/librenms/ now only go
-to /var/log/librenms/
+For MySQL 8, you need to update the my.cnf
 
+And adjust the login (adjusting localhost as required):
+
+alter user 'librenms'@'localhost' identified with mysql_native_password by 'passwordhere';
+
+NOTE: Starting with the 22.2.1 port the %%%WWWDIR%%/storage directory has
+been replaced with a symlink to /var/db/librenms/storage
 
 EOM
 }
