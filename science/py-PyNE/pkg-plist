@@ -30,6 +30,7 @@ include/pyne/measure.h
 include/pyne/nucname.h
 include/pyne/particle.h
 include/pyne/pyne.h
+include/pyne/pyne_version.h
 include/pyne/rxname.h
 include/pyne/source.h
 include/pyne/source_sampling.h
@@ -37,7 +38,7 @@ include/pyne/tally.h
 include/pyne/transmuters.h
 include/pyne/utils.h
 lib/libpyne.so
-%%PYTHON_SITELIBDIR%%/pyne-0.7.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/pyne-0.7.6-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/pyne/__init__.pxd
 %%PYTHON_SITELIBDIR%%/pyne/__init__.py
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -60,6 +61,7 @@ lib/libpyne.so
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/origen22%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/partisn%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/ptrac_to_hdf5%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pyne/__pycache__/pyne_version%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/r2s%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/rxdata%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/serpent%%PYTHON_EXT_SUFFIX%%.pyc
@@ -217,6 +219,7 @@ lib/libpyne.so
 %%PYTHON_SITELIBDIR%%/pyne/ptrac_to_hdf5.py
 %%PYTHON_SITELIBDIR%%/pyne/pyne_config.pxd
 %%PYTHON_SITELIBDIR%%/pyne/pyne_config.so
+%%PYTHON_SITELIBDIR%%/pyne/pyne_version.py
 %%PYTHON_SITELIBDIR%%/pyne/r2s.py
 %%PYTHON_SITELIBDIR%%/pyne/rxdata.py
 %%PYTHON_SITELIBDIR%%/pyne/rxname.pxd
