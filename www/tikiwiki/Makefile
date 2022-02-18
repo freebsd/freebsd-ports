@@ -1,9 +1,9 @@
 # Created by: Babak Farrokhi <babak@farrokhi.net>
 
 PORTNAME=	tikiwiki
-DISTVERSION=	21.2
+DISTVERSION=	23.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Tiki_21.x_UY_Scuti/${DISTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_23.x_Wasat/${DISTVERSION}/
 DISTNAME=	tiki-${DISTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
