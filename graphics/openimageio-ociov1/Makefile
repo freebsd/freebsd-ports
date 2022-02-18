@@ -1,6 +1,7 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.19.0
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 PKGNAMESUFFIX=	-ociov1
 # special port to link oiio libs with ociov1
@@ -59,8 +60,8 @@ GIF_CMAKE_BOOL=		USE_GIF
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 OPENCV_CMAKE_BOOL=	USE_OPENCV
-OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
-			libopenjpeg.so:graphics/openjpeg15
+OPENCV_IMPLIES=		OPENJPEG
+OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv
 
 OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
