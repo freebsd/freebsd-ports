@@ -2,7 +2,7 @@
 
 PORTNAME=	gap
 DISTVERSION=	4.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
@@ -83,6 +83,11 @@ post-install:
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/gap-bin lib/libgap.so.0.0.0
 	# install gac executable
 	${INSTALL_SCRIPT} ${WRKSRC}/gac ${STAGEDIR}${PREFIX}/bin/gac
+	${REINPLACE_CMD} -i '' -e ' \
+		s|^\. "$${abs_top_builddir}/sysinfo.gap"|. "${DATADIR}/sysinfo.gap"|; \
+		s|^abs_top_builddir=.*|abs_top_builddir="${DATADIR}/min-builddir"|; \
+		s|^abs_top_srcdir=.*|abs_top_srcdir="${DATADIR}/min-srcdir"| \
+		' ${STAGEDIR}${PREFIX}/bin/gac
 	# prepare and install wrapper
 	@${CAT} ${WRKSRC}/bin/gap.sh | ${SED} -e ' \
 		s:${WRKSRC}:${GAP_LIBDIR}:; \
@@ -91,6 +96,11 @@ post-install:
 		/^exec/s:/gap::; \
 		' > ${WRKSRC}/bin/gap
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
+	# min-builddir and min-srcdir
+	${MKDIR} ${STAGEDIR}${DATADIR}/min-builddir ${STAGEDIR}${DATADIR}/min-srcdir
+	${INSTALL_SCRIPT} ${WRKSRC}/libtool ${STAGEDIR}${DATADIR}/min-builddir
+	${RLN} ${STAGEDIR}${PREFIX}/bin/gap ${STAGEDIR}${DATADIR}/min-builddir/gap
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} obj ${STAGEDIR}${DATADIR}/min-builddir/
 	# install packages
 	${MKDIR} ${STAGEDIR}${DATADIR}/pkg
 .for f in doc etc gen grp lib tst sysinfo.gap
@@ -103,6 +113,7 @@ post-install:
 	${REINPLACE_CMD} -i '' -e ' \
 		s|^GAP_BIN_DIR=.*|GAP_BIN_DIR="${PREFIX}/bin"|; \
 		s|^GAP_LIB_DIR=.*|GAP_LIB_DIR="${PREFIX}/lib"|; \
+		s| -isystem ${PREFIX}/include |&-I${PREFIX}/include/gap |; \
 		' ${STAGEDIR}${DATADIR}/sysinfo.gap
 
 do-test:
