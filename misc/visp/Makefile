@@ -1,6 +1,6 @@
 PORTNAME=	visp
 DISTVERSION=	3.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopencv_core.so:graphics/opencv \
 		libopencv_videoio.so:graphics/opencv \
 		libpcl_common.so:graphics/pcl-pointclouds \
-		libqhull_r.so:math/qhull8 \
+		libqhull_r.so:math/qhull \
 		libpng.so:graphics/png \
 		libv4l2.so:multimedia/libv4l \
 		liblz4.so:archivers/liblz4 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libftgl.so:graphics/ftgl \
 		libhdf5.so:science/hdf5 \
 		libpcre.so:devel/pcre \
-		libqhull_r.so:math/qhull8 \
+		libqhull_r.so:math/qhull \
 		libqrupdate.so:math/qrupdate \
 		libamd.so:math/suitesparse-amd \
 		libcamd.so:math/suitesparse-camd \

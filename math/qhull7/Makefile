@@ -1,11 +1,12 @@
 # Created by: pusto@web.de
 
 PORTNAME=	qhull
-DISTVERSION=	8.0.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	7.3.2
+PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.qhull.org/download/
-PKGNAMESUFFIX=	8
-DISTNAME=	${PORTNAME}-2020-src-${DISTVERSION}
+PKGNAMESUFFIX=	7
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
@@ -15,17 +16,21 @@ LICENSE_NAME=	Qhull License
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake tar:tgz
+DEPRECATED=	Conflicts with qhull
+
+USES=		cmake
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	qhull afni qhull5
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-2020.2
+CONFLICTS=	qhull8 afni qhull5
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
 DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/cmake/Qhull/QhullTargets-${CMAKE_BUILD_TYPE:tl}.cmake
 
 .include <bsd.port.mk>

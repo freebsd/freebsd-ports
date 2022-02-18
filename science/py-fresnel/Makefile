@@ -2,6 +2,7 @@ PORTNAME=	fresnel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.4-4
 DISTVERSIONSUFFIX=	-g3ba217f
+PORTREVISION=	1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libembree3.so:graphics/embree \
-		libqhull_r.so:math/qhull8 \
+		libqhull_r.so:math/qhull \
 		libtbb.so:devel/onetbb
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
