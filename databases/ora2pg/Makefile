@@ -1,7 +1,7 @@
 # Created by: Jov amutu@amutu.com
 
 PORTNAME=	ora2pg
-PORTVERSION=	22.1
+PORTVERSION=	23.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 

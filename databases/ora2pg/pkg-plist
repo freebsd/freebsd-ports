@@ -4,6 +4,7 @@ bin/ora2pg_scanner
 %%SITE_PERL%%/Ora2Pg.pm
 %%SITE_PERL%%/Ora2Pg/GEOM.pm
 %%SITE_PERL%%/Ora2Pg/MySQL.pm
+%%SITE_PERL%%/Ora2Pg/Oracle.pm
 %%SITE_PERL%%/Ora2Pg/PLSQL.pm
 %%PERL5_MAN3%%/ora2pg.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
