@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	10.3.0
+PORTVERSION=	11.2.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	avr-
@@ -25,7 +25,7 @@ RUN_DEPENDS=	avr-as:devel/binutils@avr \
 USES=		bison compiler:c++11-lang cpe gmake iconv libtool localbase \
 		makeinfo perl5 tar:xz
 CPE_VENDOR=	gnu
-USE_CXXSTD=	gnu++03
+USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	${PREFIX}/lib/gcci/avr/${SUFFIX}
 USE_PERL5=	build
 
@@ -73,9 +73,10 @@ post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/avr/${PORTVERSION}/liblto_plugin.so.0 \
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/avr/${PORTVERSION}/liblto_plugin.so \
 		${STAGEDIR}${PREFIX}/lib/libcc1.so.0.0.0 \
 		${STAGEDIR}${PREFIX}/lib/gcc/avr/${PORTVERSION}/plugin/libcc1plugin.so.0.0.0 \
 		${STAGEDIR}${PREFIX}/lib/gcc/avr/${PORTVERSION}/plugin/libcp1plugin.so.0.0.0
+	tar -C ${STAGEDIR}${PREFIX} -xj -f ${FILESDIR}/specs-avr-dx.tar.bz2
 
 .include <bsd.port.post.mk>
