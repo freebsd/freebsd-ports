@@ -1,6 +1,7 @@
 bin/swaync
 bin/swaync-client
 @sample etc/xdg/swaync/config.json.sample
+etc/xdg/swaync/configSchema.json
 @sample etc/xdg/swaync/style.css.sample
 lib/systemd/user/swaync.service
 share/bash-completion/completions/swaync
