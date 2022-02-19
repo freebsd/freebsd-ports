@@ -1,4 +1,4 @@
---- testssl.sh.orig	2020-09-29 09:50:09 UTC
+--- testssl.sh.orig	2022-02-19 20:34:21 UTC
 +++ testssl.sh
 @@ -132,7 +132,7 @@ declare -r RUN_DIR="$(dirname "$0")"
  declare -r SYSTEM="$(uname -s)"
@@ -14,16 +14,16 @@
  #
  # Following variables make use of $ENV and can be used like "OPENSSL=<myprivate_path_to_openssl> ./testssl.sh <URI>"
 +if [[ -z "$OPENSSL" ]]; then
-+     OPENSSL=%%PREFIX%%/openssl-unsafe/bin/openssl
++     OPENSSL="%%PREFIX%%/openssl-unsafe/bin/openssl"
 +fi
  declare -x OPENSSL
  OPENSSL_TIMEOUT=${OPENSSL_TIMEOUT:-""}  # Default connect timeout with openssl before we call the server side unreachable
  CONNECT_TIMEOUT=${CONNECT_TIMEOUT:-""}  # Default connect timeout with sockets before we call the server side unreachable
-@@ -20128,7 +20131,6 @@ lets_roll() {
+@@ -20345,7 +20348,6 @@ lets_roll() {
       mybanner
       check_proxy
       check4openssl_oldfarts
 -     check_bsd_mount
- 
+      setup_lc_collate
  
       if "$do_display_only"; then
