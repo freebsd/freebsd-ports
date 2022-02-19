@@ -16605,7 +16605,7 @@ www/bareos17-webui|www/bareos18-webui|2021-12-05|Has expired: Deprecated, no new
 math/eigen2||2021-12-07|Has expired: No longer available upstream, no consumers in ports
 emulators/qemu41||2021-12-10|Has expired: Use emulators/qemu or emulators/qemu-devel
 security/putty-gtk2||2021-12-15|Has expired: putty-gtk2 is being phased out
-games/xnethack-nox11|games/xnethack@nox11|2021-12-05|Turned into flavor
+games/xnethack-nox11|games/xnethack@nox11|2021-12-16|Turned into flavor
 devel/py-dexml||2021-12-20|Has expired: Use devel/py-dexml2
 misc/cmatrix|games/cmatrix|2021-12-20|Move to a more appropriate category
 games/homura|games/suyimazu|2021-12-21|Project renamed
@@ -16842,7 +16842,6 @@ net/php73-sockets|net/php74-sockets|2022-01-26|Has expired: Security support end
 net/php73-xmlrpc|net/php74-xmlrpc|2022-01-26|Has expired: Security support ended on 2021-12-06
 net/php73-ldap|net/php74-ldap|2022-01-26|Has expired: Security support ended on 2021-12-06
 net/php73-soap|net/php74-soap|2022-01-26|Has expired: Security support ended on 2021-12-06
-mail/bogofilter|mail/bogofilter-bdb|2022-01-26|Port renamed to make LMDB the new default DB
 mail/bogofilter-lmdb|mail/bogofilter|2022-01-26|Port renamed to make LMDB the new default DB
 comms/py-qt5-sensors|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
 comms/py-qt5-serialport|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
@@ -16876,7 +16875,6 @@ x11-toolkits/py-qt5-quick3d|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt
 x11-toolkits/py-qt5-quickwidgets|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
 x11-toolkits/py-qt5-widgets|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
 x11/py-qt5-opengl|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
-net-mgmt/zabbix54-frontend|net-mgmt/zabbix54-frontend@php74|2022-01-27|Build as php 7.4-flavored only
 x11-fonts/sourcesanspro-ttf|x11-fonts/source-sans-ttf|2022-01-28|Rename to match upstream naming
 audio/nekobi-lv2|audio/dpf-plugins-lv2|2022-01-28|Nekobi is part of dpf-plugins
 audio/kars-lv2|audio/dpf-plugins-lv2|2022-01-28|Kars is part of dpf-plugins
@@ -16891,7 +16889,6 @@ korean/nanumfonts-otf|korean/nanumfonts|2022-02-10|Split into multiple ports, us
 korean/nanumfonts-ttf|korean/nanumfonts|2022-02-10|Split into multiple ports, use korean/nanumfonts meta-port instead
 security/php80-openssl||2022-02-12|php80-openssl module is a default module for lang/php80 from now on
 security/php81-openssl||2022-02-12|php81-openssl module is a default module for lang/php81 from now on
-math/qhull|math/qhull7|2022-02-19|qhull as version 8 is the default from now on.
-math/qhull8|math/qhull|2022-02-19|qhull as version 8 is the default from now on.
-print/tex-aleph||2022-02-18|tex-aleph has been removed from texlive-2021 system
+math/qhull8|math/qhull|2022-02-19|qhull as version 8 is the default from now on
+print/tex-aleph||2022-02-19|tex-aleph has been removed from texlive-2021 system
 sysutils/intel-pcm-devel||2022-02-19|intel-pcm-devel has been removed, encouraging users to use intel-pcm instead
