@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220219:
+  AFFECTS: users of math/qhull*
+  AUTHOR: stephen@FreeBSD.org
+
+  Because of entries in MOVED, portupgrade can get confused updating qhull.
+  It is recommended that you delete qhull and ports depending upon it, and
+  then reinstalling all the dependent ports.
+
 20220218:
   AFFECTS: users of net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
