@@ -1,5 +1,5 @@
-TIMESTAMP = 1640361586
-SHA256 (go/devel_shfmt/shfmt-v3.4.2/v3.4.2.mod) = 2e0584f84d898828f141167b2267d42e716fa7a7980d1325495b58ab5467e5a1
-SIZE (go/devel_shfmt/shfmt-v3.4.2/v3.4.2.mod) = 495
-SHA256 (go/devel_shfmt/shfmt-v3.4.2/v3.4.2.zip) = 550065633da5119c2cac76c0b46d58f3803695444c91093ca87371ae2aebcc9f
-SIZE (go/devel_shfmt/shfmt-v3.4.2/v3.4.2.zip) = 217742
+TIMESTAMP = 1645303558
+SHA256 (go/devel_shfmt/shfmt-v3.4.3/v3.4.3.mod) = 2e0584f84d898828f141167b2267d42e716fa7a7980d1325495b58ab5467e5a1
+SIZE (go/devel_shfmt/shfmt-v3.4.3/v3.4.3.mod) = 495
+SHA256 (go/devel_shfmt/shfmt-v3.4.3/v3.4.3.zip) = dacce6a29fa168e94a58062c62b88c4388cdaaed7e829f81a304ca5830d8a477
+SIZE (go/devel_shfmt/shfmt-v3.4.3/v3.4.3.zip) = 218179
