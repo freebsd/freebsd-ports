@@ -24,6 +24,7 @@
     SUBDIR += deforaos-editor
     SUBDIR += dhex
     SUBDIR += diakonos
+    SUBDIR += diamond
     SUBDIR += dkns
     SUBDIR += drjava
     SUBDIR += dte

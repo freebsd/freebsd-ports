@@ -1,0 +1,19 @@
+Diamond is a cross platform compact editor designed for programmers.
+It was developed using the CopperSpice libraries and was written in C++.
+
+ - View multiple documents in movable tabs
+ - Auto Load previously open Files
+ - Configuration saved as a JSON format
+ - Define preset Folders
+ - Insert Date, Time, and Symbols
+ - Search and Replace
+ - Advanced Find
+ - Syntax Highlighting based on File Type
+ - Horizontal or Vertical split Window
+ - Spell Check
+ - Customize printed Header and Footer
+ - Show Spaces and Tabs
+ - User definable standard and custom Keyboard Shortcuts
+ - Record, Save, and Play back Macros
+
+WWW: https://github.com/copperspice/diamond
