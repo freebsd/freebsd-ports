@@ -1,6 +1,6 @@
-TIMESTAMP = 1645115249
-SHA256 (charmbracelet-soft-serve-v0.2.1_GH0.tar.gz) = e9cb8afa318b9ff8cf4bcac9c160d7237b7560e9adf517157b4c70a1c6f3bb4f
-SIZE (charmbracelet-soft-serve-v0.2.1_GH0.tar.gz) = 36475
+TIMESTAMP = 1645251955
+SHA256 (charmbracelet-soft-serve-v0.2.2_GH0.tar.gz) = 8a93fc3ff56efc9375a80cf22d8b36da47e2a49b83b0acfd96ee1a2ec4fd3475
+SIZE (charmbracelet-soft-serve-v0.2.2_GH0.tar.gz) = 36916
 SHA256 (Microsoft-go-winio-v0.5.1_GH0.tar.gz) = 7d68437cf732590f4c3002d8a1b446f3f584387c3538bdd4862ebff5b0b8dda9
 SIZE (Microsoft-go-winio-v0.5.1_GH0.tar.gz) = 91153
 SHA256 (ProtonMail-go-crypto-70ae35bab23f_GH0.tar.gz) = 2c219269633c8fb5d061b7ed67ae71f8c52eacaebf9d226fd88b96a294cbce53
