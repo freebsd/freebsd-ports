@@ -1,5 +1,5 @@
 PORTNAME=	gssapi
-DISTVERSION=	1.6.14
+DISTVERSION=	1.7.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ LICENSE=	ISCL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
 
-# Officially: 3.6, 3.7, 3.8, 3.9
-USES=	python:3.6+
+# Officially: 3.6-3.10
+USES=	python:3.6-3.10
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_RADIO=	GSSAPI
