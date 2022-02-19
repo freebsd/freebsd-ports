@@ -1,7 +1,6 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,8 +21,14 @@ GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
 
 post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/src/meson.build
 # Let @sample handle default files under etc/
-	@${REINPLACE_CMD} -e "/inst.*conf/s/'[^']*/&', rename: &.sample/1" \
+	@${REINPLACE_CMD} -e "s,'/',get_option('prefix')," \
+		-e "/output.*json/s/'[^']*/&.sample/" \
+		-e "/inst.*css/s/'[^']*/&', rename: &.sample/1" \
 		${WRKSRC}/src/meson.build
 
 .include <bsd.port.mk>
