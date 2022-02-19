@@ -1,5 +1,5 @@
 
-PORTREVISION=	19
+PORTREVISION=	20
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -13,6 +13,9 @@ EXTRACT_ONLY:=	${DISTFILES}
 PKGNAMESUFFIX=	6
 
 COMMENT=	Full integrated office productivity suite
+
+DEPRECATED=	Unsupported upstream. Please consider using editors/libreoffice instead
+EXPIRATION_DATE=2022-03-31
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
@@ -40,7 +43,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libcdr-0.1.so:graphics/libcdr01 \
 		libepoxy.so:graphics/libepoxy \
 		libfreehand-0.1.so:graphics/libfreehand \
-		libgltf-0.0.so:graphics/libgltf \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libzmf-0.0.so:graphics/libzmf \
 		libpng.so:graphics/png \
