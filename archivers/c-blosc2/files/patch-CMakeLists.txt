@@ -5,7 +5,7 @@
          message(WARNING "Unable to determine which ${CMAKE_SYSTEM_PROCESSOR} hardware features are supported by the C compiler (${CMAKE_C_COMPILER_ID} ${CMAKE_C_COMPILER_VERSION}).")
      endif()
 -elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL ppc64le)
-+elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "^(ppc64le|powerpc64le)")
++elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(ppc64le|powerpc64le)")
      if(CMAKE_C_COMPILER_ID STREQUAL GNU AND CMAKE_C_COMPILER_VERSION VERSION_GREATER 8)
          set(COMPILER_SUPPORT_ALTIVEC TRUE)
      else()
