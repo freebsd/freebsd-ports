@@ -2,7 +2,7 @@ PORTNAME=	xpdfopen
 PORTVERSION=	0.86
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 DISTNAME=	texlive-${TEXLIVE_VERSION}-source
 DIST_SUBDIR=	TeX
 
