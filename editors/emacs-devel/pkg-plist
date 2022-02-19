@@ -890,6 +890,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/adwaita-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/deeper-blue-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/dichromacy-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/leuven-dark-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/leuven-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/light-blue-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/manoj-dark-theme.el
@@ -951,8 +952,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/auth-source-pass.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/auth-source.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/auth-source.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/autoarg.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/autoarg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/autoinsert.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/autoinsert.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/autorevert.el.gz
@@ -1573,6 +1572,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/crm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cursor-sensor.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cursor-sensor.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/debug-early.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/debug-early.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/debug.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/debug.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/derived.el.gz
@@ -2953,6 +2954,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/abbrevlist.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/assoc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/assoc.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoarg.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoarg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.el.gz
@@ -3060,6 +3063,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt-control.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt-control.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt100-led.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt100-led.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/yow.el.gz
@@ -3994,10 +4001,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/version.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/view.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/view.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/vt-control.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/vt-control.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/vt100-led.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/vt100-led.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/w32-fns.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/w32-fns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/w32-vars.el.gz
