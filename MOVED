@@ -16894,3 +16894,4 @@ security/php81-openssl||2022-02-12|php81-openssl module is a default module for 
 math/qhull|math/qhull7|2022-02-19|qhull as version 8 is the default from now on.
 math/qhull8|math/qhull|2022-02-19|qhull as version 8 is the default from now on.
 print/tex-aleph||2022-02-18|tex-aleph has been removed from texlive-2021 system
+sysutils/intel-pcm-devel||2022-02-19|intel-pcm-devel has been removed, encouraging users to use intel-pcm instead

@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20220219:
+  AFFECTS: users of sysutils/intel-pcm-devel
+  AUTHOR: egypcio@FreeBSD.org
+
+  sysutils/intel-pcm-devel became quite obsolte once sysutils/intel-pcm is
+  now pretty much following a constant and stable update cycle, so users of
+  the -devel version are encouraged to switch to it.
+
+  If you still have sysutils/intel-pcm-devel installed, please delete it from
+  your system and install sysutils/intel-pcm instead:
+
+  # pkg delete sysutils/intel-pcm-devel
+  # pkg install sysutils/intel-pcm
+
+20220219:
   AFFECTS: users of math/qhull*
   AUTHOR: stephen@FreeBSD.org
 

@@ -535,7 +535,6 @@
     SUBDIR += installwatch
     SUBDIR += intel-nvmupdate
     SUBDIR += intel-pcm
-    SUBDIR += intel-pcm-devel
     SUBDIR += intel-undervolt
     SUBDIR += inxi
     SUBDIR += ioc
