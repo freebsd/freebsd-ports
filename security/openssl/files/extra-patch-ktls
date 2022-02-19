@@ -1,8 +1,8 @@
 diff --git CHANGES CHANGES
-index 7d0129e687..7f8057bb6f 100644
+index 9d58cb0c58..6484e7ea52 100644
 --- CHANGES
 +++ CHANGES
-@@ -471,6 +471,11 @@
+@@ -556,6 +556,11 @@
       necessary to configure just to create a source distribution.
       [Richard Levitte]
  
@@ -15,7 +15,7 @@ index 7d0129e687..7f8057bb6f 100644
  
    *) Timing vulnerability in DSA signature generation
 diff --git Configure Configure
-index b286dd0678..f66f6bb3b1 100755
+index faf57b155a..2759ba6433 100755
 --- Configure
 +++ Configure
 @@ -341,6 +341,7 @@ my @dtls = qw(dtls1 dtls1_2);
@@ -34,7 +34,7 @@ index b286dd0678..f66f6bb3b1 100755
                  );
  
  # Note: => pair form used for aesthetics, not to truly make a hash table
-@@ -1580,6 +1582,33 @@ unless ($disabled{devcryptoeng}) {
+@@ -1583,6 +1585,33 @@ unless ($disabled{devcryptoeng}) {
      }
  }
  
@@ -89,10 +89,10 @@ index f3ac727183..f6f754fd5e 100644
                     Build with the Address sanitiser. This is a developer option
                     only. It may not work on all platforms and should never be
 diff --git apps/s_client.c apps/s_client.c
-index 83b3fc9c7f..68bd9ced01 100644
+index 121cd1444f..aa5841cd08 100644
 --- apps/s_client.c
 +++ apps/s_client.c
-@@ -3282,6 +3282,12 @@ static void print_stuff(BIO *bio, SSL *s, int full)
+@@ -3284,6 +3284,12 @@ static void print_stuff(BIO *bio, SSL *s, int full)
      BIO_printf(bio, "Expansion: %s\n",
                 expansion ? SSL_COMP_get_name(expansion) : "NONE");
  #endif
@@ -106,10 +106,10 @@ index 83b3fc9c7f..68bd9ced01 100644
  #ifdef SSL_DEBUG
      {
 diff --git apps/s_server.c apps/s_server.c
-index 0ba75999fd..ddc0b4bcd7 100644
+index 64d53e68d0..9fcb8d7a7b 100644
 --- apps/s_server.c
 +++ apps/s_server.c
-@@ -2923,6 +2923,12 @@ static void print_connection_info(SSL *con)
+@@ -2934,6 +2934,12 @@ static void print_connection_info(SSL *con)
          }
          OPENSSL_free(exportedkeymat);
      }
@@ -123,7 +123,7 @@ index 0ba75999fd..ddc0b4bcd7 100644
      (void)BIO_flush(bio_s_out);
  }
 diff --git crypto/bio/b_sock2.c crypto/bio/b_sock2.c
-index 335dfabc61..80ef348d92 100644
+index 104ff31b0d..771729880e 100644
 --- crypto/bio/b_sock2.c
 +++ crypto/bio/b_sock2.c
 @@ -12,6 +12,7 @@
@@ -369,10 +369,10 @@ index 6251f3d46a..8de1f58292 100644
      default:
          ret = 0;
 diff --git crypto/err/openssl.txt crypto/err/openssl.txt
-index 7e1776375d..b22e8a735c 100644
+index 902e97b843..846c896359 100644
 --- crypto/err/openssl.txt
 +++ crypto/err/openssl.txt
-@@ -1318,6 +1318,7 @@ SSL_F_SSL_RENEGOTIATE:516:SSL_renegotiate
+@@ -1319,6 +1319,7 @@ SSL_F_SSL_RENEGOTIATE:516:SSL_renegotiate
  SSL_F_SSL_RENEGOTIATE_ABBREVIATED:546:SSL_renegotiate_abbreviated
  SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT:320:*
  SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT:321:*
@@ -381,10 +381,10 @@ index 7e1776375d..b22e8a735c 100644
  SSL_F_SSL_SESSION_NEW:189:SSL_SESSION_new
  SSL_F_SSL_SESSION_PRINT_FP:190:SSL_SESSION_print_fp
 diff --git crypto/evp/e_aes.c crypto/evp/e_aes.c
-index 405ddbf9bf..4640c7528a 100644
+index a1d3ab90fa..715fac9f88 100644
 --- crypto/evp/e_aes.c
 +++ crypto/evp/e_aes.c
-@@ -2895,6 +2895,14 @@ static int aes_gcm_ctrl(EVP_CIPHER_CTX *c, int type, int arg, void *ptr)
+@@ -2889,6 +2889,14 @@ static int aes_gcm_ctrl(EVP_CIPHER_CTX *c, int type, int arg, void *ptr)
          memcpy(ptr, c->buf, arg);
          return 1;
  
@@ -623,7 +623,7 @@ index 5e3ce1e7e4..9b271d8e65 100644
  =head1 COPYRIGHT
  
 diff --git engines/e_afalg.c engines/e_afalg.c
-index 4b17228461..5ef3a8d457 100644
+index 2d16c13834..748969204e 100644
 --- engines/e_afalg.c
 +++ engines/e_afalg.c
 @@ -407,7 +407,7 @@ static int afalg_start_cipher_sk(afalg_ctx *actx, const unsigned char *in,
@@ -644,7 +644,7 @@ index 4b17228461..5ef3a8d457 100644
      msg.msg_control = cbuf;
      msg.msg_controllen = sizeof(cbuf);
 diff --git include/internal/bio.h include/internal/bio.h
-index c343b27629..521b5fa219 100644
+index c343b27629..365d41dabb 100644
 --- include/internal/bio.h
 +++ include/internal/bio.h
 @@ -7,6 +7,9 @@
@@ -673,9 +673,9 @@ index c343b27629..521b5fa219 100644
 + * BIO_FLAGS_KTLS_TX_CTRL_MSG means we are about to send a ctrl message next.
 + * BIO_FLAGS_KTLS_RX means we are using ktls with this BIO for receiving.
 + */
-+# define BIO_FLAGS_KTLS_TX          0x800
 +# define BIO_FLAGS_KTLS_TX_CTRL_MSG 0x1000
 +# define BIO_FLAGS_KTLS_RX          0x2000
++# define BIO_FLAGS_KTLS_TX          0x4000
 +
 +/* KTLS related controls and flags */
 +# define BIO_set_ktls_flag(b, is_tx) \
@@ -1111,7 +1111,7 @@ index 0000000000..5f9e3f91ed
 +# endif /* OPENSSL_NO_KTLS */
 +#endif /* HEADER_INTERNAL_KTLS */
 diff --git include/openssl/bio.h include/openssl/bio.h
-index ae559a5105..fa50337aab 100644
+index ae559a5105..66fc0d7c4a 100644
 --- include/openssl/bio.h
 +++ include/openssl/bio.h
 @@ -141,6 +141,26 @@ extern "C" {
@@ -1141,6 +1141,15 @@ index ae559a5105..fa50337aab 100644
  /* modifiers */
  # define BIO_FP_READ             0x02
  # define BIO_FP_WRITE            0x04
+@@ -171,6 +191,8 @@ extern "C" {
+ # define BIO_FLAGS_NONCLEAR_RST  0x400
+ # define BIO_FLAGS_IN_EOF        0x800
+ 
++/* the BIO FLAGS values 0x1000 to 0x4000 are reserved for internal KTLS flags */
++
+ typedef union bio_addr_st BIO_ADDR;
+ typedef struct bio_addrinfo_st BIO_ADDRINFO;
+ 
 diff --git include/openssl/err.h include/openssl/err.h
 index b49f88129e..dce9885d3f 100644
 --- include/openssl/err.h
@@ -1200,10 +1209,10 @@ index fd0c5a9996..cfb87e6322 100644
                                                    size_t len, void *arg));
  void SSL_set_record_padding_callback_arg(SSL *ssl, void *arg);
 diff --git include/openssl/sslerr.h include/openssl/sslerr.h
-index 82983d3c1e..0bdc8f3b2c 100644
+index 701d61c6e9..c0310941c4 100644
 --- include/openssl/sslerr.h
 +++ include/openssl/sslerr.h
-@@ -219,6 +219,7 @@ int ERR_load_SSL_strings(void);
+@@ -220,6 +220,7 @@ int ERR_load_SSL_strings(void);
  # define SSL_F_SSL_RENEGOTIATE_ABBREVIATED                546
  # define SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT                320
  # define SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT                321
@@ -1487,7 +1496,7 @@ index 0000000000..c7a440b79b
 +
 +#endif /* OPENSSL_SYS_LINUX */
 diff --git ssl/record/rec_layer_s3.c ssl/record/rec_layer_s3.c
-index b2a7a47eb0..f53c402006 100644
+index 8249b4ace9..1356bd7b7b 100644
 --- ssl/record/rec_layer_s3.c
 +++ ssl/record/rec_layer_s3.c
 @@ -268,11 +268,15 @@ int ssl3_read_n(SSL *s, size_t n, size_t max, int extend, int clearold,
@@ -1784,10 +1793,10 @@ index 5e8dd7f704..4760eeb7d8 100644
  #define SSL3_RECORD_get_off(r)                  ((r)->off)
  #define SSL3_RECORD_set_off(r, o)               ((r)->off = (o))
 diff --git ssl/record/ssl3_buffer.c ssl/record/ssl3_buffer.c
-index 9b2a6964c6..fef54e01f3 100644
+index b9ba25e0c3..10d11ab76c 100644
 --- ssl/record/ssl3_buffer.c
 +++ ssl/record/ssl3_buffer.c
-@@ -111,23 +111,27 @@ int ssl3_setup_write_buffer(SSL *s, size_t numwpipes, size_t len)
+@@ -110,23 +110,27 @@ int ssl3_setup_write_buffer(SSL *s, size_t numwpipes, size_t len)
      for (currpipe = 0; currpipe < numwpipes; currpipe++) {
          SSL3_BUFFER *thiswb = &wb[currpipe];
  
@@ -1827,7 +1836,7 @@ index 9b2a6964c6..fef54e01f3 100644
              }
              memset(thiswb, 0, sizeof(SSL3_BUFFER));
              thiswb->buf = p;
-@@ -160,7 +164,10 @@ int ssl3_release_write_buffer(SSL *s)
+@@ -159,7 +163,10 @@ int ssl3_release_write_buffer(SSL *s)
      while (pipes > 0) {
          wb = &RECORD_LAYER_get_wbuf(&s->rlayer)[pipes - 1];
  
@@ -1840,7 +1849,7 @@ index 9b2a6964c6..fef54e01f3 100644
          pipes--;
      }
 diff --git ssl/record/ssl3_record.c ssl/record/ssl3_record.c
-index ab5d22aa10..3d747db64b 100644
+index f158544789..9dda123d44 100644
 --- ssl/record/ssl3_record.c
 +++ ssl/record/ssl3_record.c
 @@ -186,9 +186,11 @@ int ssl3_get_record(SSL *s)
@@ -1905,7 +1914,7 @@ index ab5d22aa10..3d747db64b 100644
          }
 +
          if (more > 0) {
-             /* now s->packet_length == SSL3_RT_HEADER_LENGTH */
+             /* now s->rlayer.packet_length == SSL3_RT_HEADER_LENGTH */
  
 @@ -491,6 +518,13 @@ int ssl3_get_record(SSL *s)
          return 1;
@@ -1964,10 +1973,10 @@ index 0a3fef7c8c..8013c62f07 100644
      if (value == NULL)
          return -3;
 diff --git ssl/ssl_err.c ssl/ssl_err.c
-index 4b12ed1485..0561678c33 100644
+index 324f2ccbb0..03273204ee 100644
 --- ssl/ssl_err.c
 +++ ssl/ssl_err.c
-@@ -312,6 +312,7 @@ static const ERR_STRING_DATA SSL_str_functs[] = {
+@@ -313,6 +313,7 @@ static const ERR_STRING_DATA SSL_str_functs[] = {
       "SSL_renegotiate_abbreviated"},
      {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT, 0), ""},
      {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT, 0), ""},
@@ -1976,7 +1985,7 @@ index 4b12ed1485..0561678c33 100644
      {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_NEW, 0), "SSL_SESSION_new"},
      {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_PRINT_FP, 0),
 diff --git ssl/ssl_lib.c ssl/ssl_lib.c
-index 58f8f3c14c..3fc6549c80 100644
+index 9c411a3293..ff5a9e0566 100644
 --- ssl/ssl_lib.c
 +++ ssl/ssl_lib.c
 @@ -11,6 +11,7 @@
@@ -2052,7 +2061,7 @@ index 58f8f3c14c..3fc6549c80 100644
      } else {
          BIO_up_ref(rbio);
          SSL_set0_wbio(s, rbio);
-@@ -1961,6 +1983,69 @@ int ssl_write_internal(SSL *s, const void *buf, size_t num, size_t *written)
+@@ -1963,6 +1985,70 @@ int ssl_write_internal(SSL *s, const void *buf, size_t num, size_t *written)
      }
  }
  
@@ -2099,7 +2108,8 @@ index 58f8f3c14c..3fc6549c80 100644
 +    }
 +
 +#ifdef OPENSSL_NO_KTLS
-+    ERR_raise_data(ERR_LIB_SYS, ERR_R_INTERNAL_ERROR, "calling sendfile()");
++    SYSerr(SSL_F_SSL_SENDFILE, ERR_R_INTERNAL_ERROR);
++    ERR_add_error_data(1, "calling sendfile()");
 +    return -1;
 +#else
 +    ret = ktls_sendfile(SSL_get_wfd(s), fd, offset, size, flags);
@@ -2122,7 +2132,7 @@ index 58f8f3c14c..3fc6549c80 100644
  int SSL_write(SSL *s, const void *buf, int num)
  {
      int ret;
-@@ -2205,6 +2290,10 @@ long SSL_ctrl(SSL *s, int cmd, long larg, void *parg)
+@@ -2212,6 +2298,10 @@ long SSL_ctrl(SSL *s, int cmd, long larg, void *parg)
      case SSL_CTRL_SET_MAX_SEND_FRAGMENT:
          if (larg < 512 || larg > SSL3_RT_MAX_PLAIN_LENGTH)
              return 0;
@@ -2133,7 +2143,7 @@ index 58f8f3c14c..3fc6549c80 100644
          s->max_send_fragment = larg;
          if (s->max_send_fragment < s->split_send_fragment)
              s->split_send_fragment = s->max_send_fragment;
-@@ -4425,11 +4514,18 @@ int SSL_CTX_set_block_padding(SSL_CTX *ctx, size_t block_size)
+@@ -4469,11 +4559,18 @@ int SSL_CTX_set_block_padding(SSL_CTX *ctx, size_t block_size)
      return 1;
  }
  
@@ -2155,7 +2165,7 @@ index 58f8f3c14c..3fc6549c80 100644
  
  void SSL_set_record_padding_callback_arg(SSL *ssl, void *arg)
 diff --git ssl/ssl_local.h ssl/ssl_local.h
-index 8c3542a542..c10e7d52ce 100644
+index 9f346e30e8..3c4bf726bc 100644
 --- ssl/ssl_local.h
 +++ ssl/ssl_local.h
 @@ -34,6 +34,8 @@
@@ -2536,10 +2546,10 @@ index b8fb07f210..39530237d8 100644
      return ret;
  }
 diff --git test/build.info test/build.info
-index bc3dae81f9..e5ccaab5ba 100644
+index 726bd22127..201d5d6191 100644
 --- test/build.info
 +++ test/build.info
-@@ -544,7 +544,7 @@ INCLUDE_MAIN___test_libtestutil_OLB = /INCLUDE=MAIN
+@@ -546,7 +546,7 @@ INCLUDE_MAIN___test_libtestutil_OLB = /INCLUDE=MAIN
    # We disable this test completely in a shared build because it deliberately
    # redefines some internal libssl symbols. This doesn't work in a non-shared
    # build
@@ -2562,7 +2572,7 @@ index 5490885309..3478e540ed 100644
  plan tests => 1;
  
 diff --git test/sslapitest.c test/sslapitest.c
-index 4a27ee1ba2..1388219551 100644
+index 21322ceec5..a8a0327765 100644
 --- test/sslapitest.c
 +++ test/sslapitest.c
 @@ -7,6 +7,7 @@
@@ -2588,7 +2598,7 @@ index 4a27ee1ba2..1388219551 100644
  #include "../ssl/ssl_local.h"
  
  #ifndef OPENSSL_NO_TLS1_3
-@@ -779,6 +782,433 @@ static int execute_test_large_message(const SSL_METHOD *smeth,
+@@ -780,6 +783,433 @@ static int execute_test_large_message(const SSL_METHOD *smeth,
      return testresult;
  }
  
@@ -3022,7 +3032,7 @@ index 4a27ee1ba2..1388219551 100644
  static int test_large_message_tls(void)
  {
      return execute_test_large_message(TLS_server_method(), TLS_client_method(),
-@@ -6747,6 +7177,12 @@ int setup_tests(void)
+@@ -6881,6 +7311,12 @@ int setup_tests(void)
          return 0;
      }
  
