@@ -301,6 +301,7 @@ bin/@GetAfniView
 bin/@GradFlipTest
 bin/@Install_3dPFM_Demo
 bin/@Install_APMULTI_Demo1_rest
+bin/@Install_APMULTI_Demo2_realtime
 bin/@Install_AfniRetinoDemo
 bin/@Install_ClustScat_Demo
 bin/@Install_D99_macaque
