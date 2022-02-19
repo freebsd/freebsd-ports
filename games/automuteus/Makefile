@@ -1,5 +1,5 @@
 PORTNAME=	automuteus
-DISTVERSION=	6.16.4
+DISTVERSION=	6.16.7
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -15,7 +15,7 @@ GH_ACCOUNT=	denverquane
 GH_TUPLE=	\
 		BurntSushi:toml:v1.0.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		automuteus:galactus:v1.2.2:automuteus_galactus/vendor/github.com/automuteus/galactus \
-		automuteus:utils:v0.0.25:automuteus_utils/vendor/github.com/automuteus/utils \
+		automuteus:utils:v0.0.28:automuteus_utils/vendor/github.com/automuteus/utils \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bsm:redislock:v0.7.1:bsm_redislock/vendor/github.com/bsm/redislock \
 		bwmarrin:discordgo:v0.23.2:bwmarrin_discordgo/vendor/github.com/bwmarrin/discordgo \
@@ -73,4 +73,3 @@ post-install:
 	@${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/logs.txt
 
 .include <bsd.port.mk>
-
