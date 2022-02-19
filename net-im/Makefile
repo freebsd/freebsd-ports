@@ -25,6 +25,7 @@
     SUBDIR += gajim
     SUBDIR += gitterdone
     SUBDIR += gloox
+    SUBDIR += gomuks
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabber.el
