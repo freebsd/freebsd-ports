@@ -116,7 +116,8 @@ RBLAS_EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_extra_blas_Makefile.in \
 RPROF_CONFIGURE_ENABLE=		R-profiling
 TCLTK_IMPLIES=			X11
 TCLTK_USES=			tcl tk
-TCLTK_CONFIGURE_WITH=		tcltk
+TCLTK_CONFIGURE_WITH=		tcltk tcl_config=${TCL_LIBDIR}/tclConfig.sh \
+				tk_config=${TK_LIBDIR}/tkConfig.sh
 TEXDOCS_USE=			TEX=dvipsk:build,kpathsea:build,pdftex:build
 .for i in KPSEWHICH MAKEINDEX PDFLATEX PDFTEX TEX TEXI2DVI
 TEXDOCS_CONFIGURE_ENV_OFF+=	ac_cv_path_${i}=""
