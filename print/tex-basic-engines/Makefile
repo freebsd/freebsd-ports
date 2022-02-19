@@ -12,7 +12,7 @@ COMMENT=	Basic TeX Engines
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		libtool localbase pkgconfig tar:xz
-USE_TEX=	kpathsea web2c>=${PORTVERSION}
+USE_TEX=	kpathsea web2c
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		${EXCLUDE_ENGINES:S/^/--disable-/} \
