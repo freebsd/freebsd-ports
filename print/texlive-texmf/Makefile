@@ -5,7 +5,7 @@ MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMESUFFIX=	-texmf
 DISTFILES=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}${EXTRACT_SUFX}
 DIST_SUBDIR=	TeX
-EXTRACT_ONLY=	latex-base-20150101.2${EXTRACT_SUFX}
+EXTRACT_ONLY=
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
@@ -13,8 +13,6 @@ COMMENT=	TeX Live Typesetting System, texmf Tree
 USES=		cpe python:run shebangfix tar:xz
 CPE_VENDOR=	tug
 USE_TEX=	base basic:extract texhash tlmgr:run
-
-CONFLICTS_INSTALL=	texlive-base-202[0-9]* texlive-texmf-202[0-9]*
 
 EXTRACT_AFTER_ARGS=	| ${TAR} xf - \
 			${EXCLUDE_FILES:S,^,--exclude ${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}/,}
