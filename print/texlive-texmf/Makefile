@@ -16,6 +16,7 @@ USE_TEX=	base basic:extract texhash tlmgr:run
 
 EXTRACT_AFTER_ARGS=	| ${TAR} xf - \
 			${EXCLUDE_FILES:S,^,--exclude ${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}/,}
+DISABLE_SIZE=	yes # XXX bug 262056: distfile too large
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
