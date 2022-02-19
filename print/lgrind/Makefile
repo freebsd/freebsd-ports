@@ -13,15 +13,13 @@ COMMENT=	Produce beautiful listings of source code with LaTeX
 # Converted from RESTRICTED
 LICENSE=	lgrind-license
 LICENSE_NAME=	lgrind
-LICENSE_TEXT=	According to the README-file there is a license issue \
-		because of non-free code. Check the README file within \
-		the source tarball. No response from author of some code \
-		this port is based on.
+LICENSE_TEXT=	According to the README-file there is a license issue because of non-free code. Check the README file within the source tarball. No response from author of some code this port is based on.
 LICENSE_PERMS=	auto-accept
 
-USE_TEX=	latex texhash
+BROKEN=		fails to build with latest TeX2021
 
 USES=		zip
+USE_TEX=	latex texhash
 
 post-patch:
 # PREFIX safeness
