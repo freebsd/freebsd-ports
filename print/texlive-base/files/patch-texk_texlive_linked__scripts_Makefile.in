@@ -1,0 +1,20 @@
+--- texk/texlive/linked_scripts/Makefile.in.orig	2022-02-14 21:00:19 UTC
++++ texk/texlive/linked_scripts/Makefile.in
+@@ -290,8 +290,6 @@ texmf_shell_scripts = \
+ 	texlive-extra/dvi2fax.sh \
+ 	texlive-extra/dvired.sh \
+ 	texlive-extra/fontinst.sh \
+-	texlive-extra/kpsetool.sh \
+-	texlive-extra/kpsewhere.sh \
+ 	texlive-extra/ps2frag.sh \
+ 	texlive-extra/pslatex.sh \
+ 	texlive-extra/rubibtex.sh \
+@@ -471,8 +469,6 @@ bin_links = \
+ 	cluttex:cllualatex \
+ 	epstopdf:repstopdf \
+ 	fmtutil:mktexfmt \
+-	kpsetool:kpsexpand \
+-	kpsetool:kpsepath \
+ 	mktexlsr:texhash \
+ 	pdfcrop:rpdfcrop \
+ 	texdef:latexdef

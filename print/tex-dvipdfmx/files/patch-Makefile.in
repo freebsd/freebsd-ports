@@ -1,24 +1,24 @@
---- Makefile.in.orig	2015-02-23 08:21:46 UTC
+--- Makefile.in.orig	2020-11-19 18:31:09 UTC
 +++ Makefile.in
-@@ -136,7 +136,7 @@ CONFIG_CLEAN_VPATH_FILES =
- @XDVIPDFMX_TRUE@am__EXEEXT_2 = xdvipdfmx$(EXEEXT)
+@@ -137,7 +137,7 @@ CONFIG_CLEAN_FILES = callexe.c
+ CONFIG_CLEAN_VPATH_FILES =
  am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
  	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(cmapdatadir)" \
 -	"$(DESTDIR)$(configdatadir)" "$(DESTDIR)$(glyphlistdatadir)" \
 +	"$(DESTDIR)$(configdatadir)" \
  	"$(DESTDIR)$(mapdatadir)"
  PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
- nodist_call_dvipdfmx_OBJECTS = call_dvipdfmx-callexe.$(OBJEXT)
-@@ -294,7 +294,7 @@ man1dir = $(mandir)/man1
+ nodist_call_xdvipdfmx_OBJECTS = call_xdvipdfmx-callexe.$(OBJEXT)
+@@ -288,7 +288,7 @@ man1dir = $(mandir)/man1
  NROFF = nroff
  MANS = $(dist_man1_MANS)
  DATA = $(dist_cmapdata_DATA) $(dist_configdata_DATA) \
 -	$(dist_glyphlistdata_DATA) $(dist_mapdata_DATA)
 +	$(dist_mapdata_DATA)
- am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
- 	$(LISP)config.h.in
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP) \
+ 	config.h.in
  # Read a list of newline-separated strings from the standard input,
-@@ -2713,7 +2713,7 @@ check: check-am
+@@ -1666,7 +1666,7 @@ check: check-am
  all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h \
  		all-local
  installdirs:
@@ -27,7 +27,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -2775,7 +2775,7 @@ info: info-am
+@@ -1800,7 +1800,7 @@ info: info-am
  info-am:
  
  install-data-am: install-dist_cmapdataDATA install-dist_configdataDATA \

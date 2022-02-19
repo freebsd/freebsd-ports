@@ -1,9 +1,9 @@
 PORTNAME=	basic-engines
-PORTVERSION=	20150521
+PORTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
-MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
+MASTER_SITES=	TEX_CTAN/systems/texlive/Source/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-20150521-source
+DISTNAME=	texlive-${PORTVERSION}-source
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
@@ -11,30 +11,40 @@ COMMENT=	Basic TeX Engines
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		pkgconfig libtool tar:xz
-USE_TEX=	kpathsea web2c>=20150521_1
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
-EXTRACT_FILES=	build-aux \
-		libs/xpdf \
-		texk/web2c
-WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
-GNU_CONFIGURE=	yes
-EXCLUDE_ENGINES=aleph luatex luajittex mf \
-		mf-nowin ptex eptex uptex euptex xetex \
-		otangle mp pmp upmp web2c web-progs synctex
-CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
-		--disable-missing \
-		--with-x=no \
-		--without-mf-x-toolkit \
-		--with-system-zlib \
-		--with-system-kpathsea
+USES=		libtool localbase pkgconfig tar:xz
+USE_TEX=	kpathsea web2c>=${PORTVERSION}
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		${EXCLUDE_ENGINES:S/^/--disable-/} \
+			--disable-missing \
+			--with-system-kpathsea \
+			--with-system-zlib \
+			--with-x=no \
+			--without-mf-x-toolkit
 .for L in libpng
-CONFIGURE_ARGS+=--with-system-$L \
-		--with-$L-include=${LOCALBASE}/include \
-		--with-$L-libdir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-$L-include=${LOCALBASE}/include \
+			--with-$L-libdir=${LOCALBASE}/lib \
+			--with-system-$L
 .endfor
-CFLAGS+=	-I${LOCALBASE}/include
+
 INSTALL_TARGET=	install-strip
+
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+EXTRACT_FILES=	build-aux libs/xpdf texk/web2c
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
+
+EXCLUDE_ENGINES=	aleph luatex luajittex mf mf-nowin ptex eptex uptex \
+			euptex xetex otangle mp pmp upmp web2c web-progs \
+			synctex \
+			luahbtex \
+			luajithbtex \
+			mflua \
+			mfluajit \
+			latex
+
+post-extract:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-configure:
 	cd ${WRKDIR}/${DISTNAME}/libs/xpdf && \

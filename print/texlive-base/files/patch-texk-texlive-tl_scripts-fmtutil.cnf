@@ -1,13 +1,11 @@
---- texk/texlive/tl_scripts/fmtutil.cnf.orig	2015-05-05 22:32:32 UTC
-+++ texk/texlive/tl_scripts/fmtutil.cnf
-@@ -37,80 +37,80 @@
- 
+--- texk/texlive/tl_support/fmtutil.cnf.orig	2020-10-07 21:13:01 UTC
++++ texk/texlive/tl_support/fmtutil.cnf
+@@ -41,118 +41,118 @@
+ #    AddFormat directives in (ultimately) the *.tlpsrc files. Don't edit here.
  #
  # from aleph:
 -aleph aleph - *aleph.ini
--lamed aleph language.dat *lambda.ini
 +#aleph aleph - *aleph.ini
-+#lamed aleph language.dat *lambda.ini
  #
  # from amstex:
 -amstex pdftex - -translate-file=cp227.tcx *amstex.ini
@@ -31,13 +29,15 @@
  #
  # from csplain:
 -csplain pdftex - -etex -enc csplain-utf8.ini
+-luacsplain luatex - -etex csplain.ini
+-pdfcsplain luatex - -etex csplain.ini
 -pdfcsplain pdftex - -etex -enc csplain-utf8.ini
 -pdfcsplain xetex - -etex csplain.ini
--pdfcsplain luatex - -etex csplain.ini
 +#csplain pdftex - -etex -enc csplain-utf8.ini
++#luacsplain luatex - -etex csplain.ini
++#pdfcsplain luatex - -etex csplain.ini
 +#pdfcsplain pdftex - -etex -enc csplain-utf8.ini
 +#pdfcsplain xetex - -etex csplain.ini
-+#pdfcsplain luatex - -etex csplain.ini
  #
  # from eplain:
 -eplain pdftex language.dat -translate-file=cp227.tcx *eplain.ini
@@ -50,33 +50,44 @@
 +#pdfjadetex pdftex language.dat *pdfjadetex.ini
  #
  # from latex-bin:
--latex pdftex language.dat -translate-file=cp227.tcx *latex.ini
--pdflatex pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini
 -dvilualatex luatex language.dat,language.dat.lua dvilualatex.ini
--lualatex luatex language.dat,language.dat.lua lualatex.ini
-+#latex pdftex language.dat -translate-file=cp227.tcx *latex.ini
-+#pdflatex pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini
+-latex pdftex language.dat -translate-file=cp227.tcx *latex.ini
+-lualatex luahbtex language.dat,language.dat.lua lualatex.ini
+-pdflatex pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini
 +#dvilualatex luatex language.dat,language.dat.lua dvilualatex.ini
-+#lualatex luatex language.dat,language.dat.lua lualatex.ini
- #! luajitlatex luajittex language.dat,language.dat.lua lualatex.ini
++#latex pdftex language.dat -translate-file=cp227.tcx *latex.ini
++#lualatex luahbtex language.dat,language.dat.lua lualatex.ini
++#pdflatex pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini
+ #
+ # from latex-bin-dev:
+-dvilualatex-dev luatex language.dat,language.dat.lua dvilualatex.ini
+-latex-dev pdftex language.dat -translate-file=cp227.tcx *latex.ini
+-lualatex-dev luahbtex language.dat,language.dat.lua lualatex.ini
+-pdflatex-dev pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini
++#dvilualatex-dev luatex language.dat,language.dat.lua dvilualatex.ini
++#latex-dev pdftex language.dat -translate-file=cp227.tcx *latex.ini
++#lualatex-dev luahbtex language.dat,language.dat.lua lualatex.ini
++#pdflatex-dev pdftex language.dat -translate-file=cp227.tcx *pdflatex.ini
  #
  # from lollipop:
--lollipop pdftex - -translate-file=cp227.tcx *lollipop.ini
--lualollipop luatex - lualollipop.ini
--xelollipop xetex - -etex xelollipop.ini
-+#lollipop pdftex - -translate-file=cp227.tcx *lollipop.ini
-+#lualollipop luatex - lualollipop.ini
-+#xelollipop xetex - -etex xelollipop.ini
- #! dvilollipop pdftex - -translate-file=cp227.tcx *lollipop.ini
- #! dvilualollipop luatex - -translate-file=cp227.tcx lualollipop.ini
+-lollipop tex - lollipop.ini
++#lollipop tex - lollipop.ini
+ #
+ # from luahbtex:
+-luahbtex luahbtex language.def,language.dat.lua luatex.ini
++#luahbtex luahbtex language.def,language.dat.lua luatex.ini
+ #
+ # from luajittex:
+-luajithbtex luajithbtex language.def,language.dat.lua luatex.ini
+-luajittex luajittex language.def,language.dat.lua luatex.ini
++#luajithbtex luajithbtex language.def,language.dat.lua luatex.ini
++#luajittex luajittex language.def,language.dat.lua luatex.ini
  #
  # from luatex:
--luatex luatex language.def,language.dat.lua luatex.ini
 -dviluatex luatex language.def,language.dat.lua dviluatex.ini
--luajittex luajittex language.def,language.dat.lua luatex.ini
-+#luatex luatex language.def,language.dat.lua luatex.ini
+-luatex luatex language.def,language.dat.lua luatex.ini
 +#dviluatex luatex language.def,language.dat.lua dviluatex.ini
-+#luajittex luajittex language.def,language.dat.lua luatex.ini
++#luatex luatex language.def,language.dat.lua luatex.ini
  #
  # from metafont:
 -mf mf-nowin - -translate-file=cp227.tcx mf.ini
@@ -90,6 +101,9 @@
 +#pdfmex pdftex mexconf.tex -translate-file=cp227.tcx *pdfmex.ini
 +#utf8mex pdftex mexconf.tex -enc *utf8mex.ini
  #
+ # from mflua:
+ #! mflua mflua-nowin - mf.ini
+ #
  # from mltex:
 -mllatex pdftex language.dat -translate-file=cp227.tcx -mltex *mllatex.ini
 -mltex pdftex - -translate-file=cp227.tcx -mltex mltex.ini
@@ -100,51 +114,62 @@
 -mptopdf pdftex - -translate-file=cp227.tcx mptopdf.tex
 +#mptopdf pdftex - -translate-file=cp227.tcx mptopdf.tex
  #
+ # from optex:
+-optex luatex hyphen-lan.opm optex.ini
++#optex luatex hyphen-lan.opm optex.ini
+ #
  # from pdftex:
--pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
 -etex pdftex language.def -translate-file=cp227.tcx *etex.ini
 -pdfetex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
-+#pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
+-pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
 +#etex pdftex language.def -translate-file=cp227.tcx *etex.ini
 +#pdfetex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
++#pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini
+ #
+ # from platex:
+-platex eptex language.dat *platex.ini
+-platex-dev eptex language.dat *platex.ini
++#platex eptex language.dat *platex.ini
++#platex-dev eptex language.dat *platex.ini
  #
  # from ptex:
--ptex ptex - ptex.ini
 -eptex eptex language.def *eptex.ini
--platex eptex language.dat *platex.ini
-+#ptex ptex - ptex.ini
+-ptex ptex - ptex.ini
 +#eptex eptex language.def *eptex.ini
-+#platex eptex language.dat *platex.ini
- #
- # from t2:
- #! cyramstex pdftex language.dat -translate-file=cp227.tcx *cyramstx.ini
-@@ -118,20 +118,20 @@ platex eptex language.dat *platex.ini
- #! cyrtexinfo pdftex language.dat -translate-file=cp227.tcx *cyrtxinf.ini
++#ptex ptex - ptex.ini
  #
  # from tex:
 -tex tex - tex.ini
-+# tex tex - tex.ini
++#tex tex - tex.ini
  #
  # from texsis:
 -texsis pdftex - -translate-file=cp227.tcx texsis.ini
-+# texsis pdftex - -translate-file=cp227.tcx texsis.ini
++#texsis pdftex - -translate-file=cp227.tcx texsis.ini
+ #
+ # from uplatex:
+-uplatex euptex language.dat *uplatex.ini
+-uplatex-dev euptex language.dat *uplatex.ini
++#uplatex euptex language.dat *uplatex.ini
++#uplatex-dev euptex language.dat *uplatex.ini
  #
  # from uptex:
--uptex uptex - uptex.ini
 -euptex euptex language.def *euptex.ini
--uplatex euptex language.dat *uplatex.ini
-+# uptex uptex - uptex.ini
-+# euptex euptex language.def *euptex.ini
-+# uplatex euptex language.dat *uplatex.ini
+-uptex uptex - uptex.ini
++#euptex euptex language.def *euptex.ini
++#uptex uptex - uptex.ini
+ #
+ # from xelatex-dev:
+-xelatex-dev xetex language.dat -etex xelatex.ini
++#xelatex-dev xetex language.dat -etex xelatex.ini
  #
  # from xetex:
--xetex xetex language.def -etex xetex.ini
 -xelatex xetex language.dat -etex xelatex.ini
-+# xetex xetex language.def -etex xetex.ini
-+# xelatex xetex language.dat -etex xelatex.ini
+-xetex xetex language.def -etex xetex.ini
++#xelatex xetex language.dat -etex xelatex.ini
++#xetex xetex language.def -etex xetex.ini
  #
  # from xmltex:
--xmltex pdftex language.dat *xmltex.ini
 -pdfxmltex pdftex language.dat *pdfxmltex.ini
-+# xmltex pdftex language.dat *xmltex.ini
-+# pdfxmltex pdftex language.dat *pdfxmltex.ini
+-xmltex pdftex language.dat *xmltex.ini
++#pdfxmltex pdftex language.dat *pdfxmltex.ini
++#xmltex pdftex language.dat *xmltex.ini

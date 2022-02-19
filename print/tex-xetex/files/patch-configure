@@ -1,19 +1,45 @@
---- configure.orig	2015-04-12 11:22:39.000000000 +0000
-+++ configure	2015-07-25 21:47:24.532843000 +0000
-@@ -1033,6 +1033,8 @@ with_system_poppler
- with_system_xpdf
+--- configure.orig	2021-02-17 03:03:54 UTC
++++ configure
+@@ -1055,6 +1055,8 @@ with_mpfr_includes
+ with_mpfr_libdir
  with_system_zziplib
  with_system_teckit
 +with_teckit_includes
 +with_teckit_libdir
- with_system_icu
  with_system_graphite2
  with_system_harfbuzz
-@@ -23712,26 +23714,6 @@ $as_echo "#define z_const /**/" >>confde
+ with_system_icu
+@@ -24940,11 +24942,6 @@ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=pplib, libn
+   PPLIB_INCLUDES="-I$kpse_BLD/libs/pplib/include"
+   PPLIB_LIBS="$kpse_BLD/libs/pplib/libpplib.a"
+   PPLIB_DEPEND='${top_builddir}/../../libs/pplib/libpplib.a'
+-  PPLIB_RULE='# Rebuild libpplib
+-$(PPLIB_DEPEND): ${top_builddir}/../../libs/pplib/include/pplib.h
+-	cd ${top_builddir}/../../libs/pplib && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/pplib/include/pplib.h:
+-	cd ${top_builddir}/../../libs/pplib && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+ 
+ ##tldbg _KPSE_LIB_FLAGS: Setup zlib (-lz) flags.
+ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=zlib, libname=z, options=, tlincl=-IBLD/libs/zlib/include, tllib=BLD/libs/zlib/libz.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/zlib/include/zconf.h.' >&5
+@@ -25025,113 +25022,6 @@ $as_echo "#define z_const /**/" >>confdefs.h
   ;;
  esac
  
--## _KPSE_LIB_FLAGS: Setup lua52 (-ltexlua52) flags
+-##tldbg _KPSE_LIB_FLAGS: Setup lua53 (-ltexlua53) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=lua53, libname=texlua53, options=lt tree, tlincl=-IBLD/libs/lua53/include, tllib=BLD/libs/lua53/libtexlua53.la, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/lua53/include/lua.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: lua53 (texlua53) lt tree.
+-  LUA53_INCLUDES="-I$kpse_BLD/libs/lua53/include"
+-  LUA53_LIBS="$kpse_BLD/libs/lua53/libtexlua53.la"
+-  LUA53_DEPEND='${top_builddir}/../../libs/lua53/libtexlua53.la'
+-  LUA53_RULE='# Rebuild libtexlua53
+-$(LUA53_DEPEND): ${top_builddir}/../../libs/lua53/include/lua.h
+-	cd ${top_builddir}/../../libs/lua53 && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/lua53/include/lua.h:
+-	cd ${top_builddir}/../../libs/lua53 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-
+-##tldbg _KPSE_LIB_FLAGS: Setup lua52 (-ltexlua52) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=lua52, libname=texlua52, options=lt tree, tlincl=-IBLD/libs/lua52/include, tllib=BLD/libs/lua52/libtexlua52.la, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/lua52/include/lua.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: lua52 (texlua52) lt tree.
 -  LUA52_INCLUDES="-I$kpse_BLD/libs/lua52/include"
 -  LUA52_LIBS="$kpse_BLD/libs/lua52/libtexlua52.la"
 -  LUA52_DEPEND='${top_builddir}/../../libs/lua52/libtexlua52.la'
@@ -23,7 +49,10 @@
 -${top_builddir}/../../libs/lua52/include/lua.h:
 -	cd ${top_builddir}/../../libs/lua52 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -
--## _KPSE_LIB_FLAGS: Setup luajit (-ltexluajit) flags
+-echo 'tldbg:KPSE_LUAJIT_FLAGS called.' >&5
+-##tldbg _KPSE_LIB_FLAGS: Setup luajit (-ltexluajit) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=luajit, libname=texluajit, options=lt tree, tlincl=-IBLD/libs/luajit/include, tllib=BLD/libs/luajit/libtexluajit.la, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/luajit/include/luajit.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: luajit (texluajit) lt tree.
 -  LUAJIT_INCLUDES="-I$kpse_BLD/libs/luajit/include"
 -  LUAJIT_LIBS="$kpse_BLD/libs/luajit/libtexluajit.la"
 -  LUAJIT_DEPEND='${top_builddir}/../../libs/luajit/libtexluajit.la'
@@ -32,17 +61,88 @@
 -	cd ${top_builddir}/../../libs/luajit && $(MAKE) $(AM_MAKEFLAGS) rebuild
 -${top_builddir}/../../libs/luajit/include/luajit.h:
 -	cd ${top_builddir}/../../libs/luajit && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-#
+-# checking for openbsd for additional jit libraries needed, which is the
+-# case for clang; no point in going to the trouble elsewhere since no
+-# other system needs it.
+-case $build_os in
+-openbsd*)
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking on openbsd if additional jit libraries are needed" >&5
+-$as_echo_n "checking on openbsd if additional jit libraries are needed... " >&6; }
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-#include "stdint.h"
+-      typedef struct _Unwind_Context _Unwind_Context;
+-      extern uintptr_t _Unwind_GetCFA(_Unwind_Context *);
+-int
+-main ()
+-{
+-_Unwind_Context *ctx;
+-      _Unwind_GetCFA(ctx);
 -
- ## _KPSE_LIB_FLAGS: Setup libpng (-lpng) flags
- 
- # Check whether --with-system-libpng was given.
-@@ -24045,43 +24027,35 @@ ${top_builddir}/../../libs/xpdf/xpdf/Str
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-else
+-
+-    jitlibs="-lc++abi -lpthread"
+-    save_LIBS=$LIBS
+-    LIBS="$LIBS $jitlibs"
+-    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-#include "stdint.h"
+-          typedef struct _Unwind_Context _Unwind_Context;
+-          extern uintptr_t _Unwind_GetCFA(_Unwind_Context *);
+-int
+-main ()
+-{
+-_Unwind_Context *ctx;
+-          _Unwind_GetCFA(ctx);
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: \"$jitlibs\"" >&5
+-$as_echo "\"$jitlibs\"" >&6; }
+-        LIBLUAJIT_LDEXTRA="$LIBLUAJIT_LDEXTRA $jitlibs"
+-
+-else
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "luajit could not be linked
+-See \`config.log' for more details" "$LINENO" 5; }
+-
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-    LIBS=$save_LIBS
+-
+-
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-  ;;
+-esac
+-echo 'tldbg:KPSE_LUAJIT_FLAGS done.' >&5
+-
+ ##tldbg _KPSE_LIB_FLAGS: Setup libpng (-lpng) flags.
+ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=libpng, libname=png, options=, tlincl=-IBLD/libs/libpng/include, tllib=BLD/libs/libpng/libpng.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/libpng/include/png.h.' >&5
+ ##tldbg _KPSE_LIB_FLAGS_TL: libpng (png) .
+@@ -25515,47 +25405,37 @@ ${top_builddir}/../../libs/xpdf/xpdf/Stream.h:
  fi
  test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_LIBS -lgdi32"
  
--## _KPSE_LIB_FLAGS: Setup zziplib (-lzzip) flags
-+## _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags
- 
+-##tldbg _KPSE_LIB_FLAGS: Setup zziplib (-lzzip) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=zziplib, libname=zzip, options=, tlincl=-IBLD/libs/zziplib/include, tllib=BLD/libs/zziplib/libzzip.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/zziplib/include/zzip/zzip.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: zziplib (zzip) .
+-
 -# Check whether --with-system-zziplib was given.
 -if test "${with_system_zziplib+set}" = set; then :
 -  withval=$with_system_zziplib;
@@ -63,14 +163,18 @@
 -	cd ${top_builddir}/../../libs/zziplib && $(MAKE) $(AM_MAKEFLAGS) rebuild
 -${top_builddir}/../../libs/zziplib/include/zzip/zzip.h:
 -	cd ${top_builddir}/../../libs/zziplib && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-fi
+-
+ ##tldbg _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags.
+ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=teckit, libname=TECkit, options=, tlincl=-IBLD/libs/teckit/include, tllib=BLD/libs/teckit/libTECkit.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/teckit/include/teckit/TECkit_Common.h.' >&5
+ ##tldbg _KPSE_LIB_FLAGS_TL: teckit (TECkit) .
+ 
+-# Check whether --with-system-teckit was given.
 +# Check whether --with-teckit-includes was given.
 +if test "${with_teckit_includes+set}" = set; then :
 +  withval=$with_teckit_includes;
- fi
- 
--## _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags
--
--# Check whether --with-system-teckit was given.
++fi
++
 +# Check whether --with-teckit-libdir was given.
 +if test "${with_teckit_libdir+set}" = set; then :
 +  withval=$with_teckit_libdir;

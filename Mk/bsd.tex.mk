@@ -22,7 +22,7 @@ TEX_MAINTAINER=	freebsd-tex@FreeBSD.org
 #  ptexenc:	character code conversion library for pTeX
 #  basic:	basic TeX engines including tex and pdftex
 #  tlmgr:	tlmgr dependency (Perl modules)
-#  texlua:	texlua52 library
+#  texlua:	texlua53 library
 #  texluajit:	texluajit library
 #  synctex:	synctex library
 #  xpdfopen:	pdfopen/pdfclose utility
@@ -32,12 +32,11 @@ TEX_MAINTAINER=	freebsd-tex@FreeBSD.org
 #  xdvik:	XDvi
 #  gbklatex:	gbklatex
 #
-#  formats:	TeX, LaTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
+#  formats:	TeX, LaTeX, AMSTeX, ConTeXT, EplainTeX,
 #		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
 #  latex:	LaTeX
 #  pdftex:	PDFTeX
-#  aleph:	Aleph
 #  jadetex:	JadeTeX
 #  luatex:	LuaTeX
 #  ptex:	pTeX
@@ -67,6 +66,8 @@ TEXMFVARDIR?=	share/texmf-var
 TEXMFCONFIGDIR?=share/texmf-config
 FMTUTIL_CNF?=	${TEXMFCONFIGDIR}/web2c/fmtutil.cnf
 TEXHASHDIRS?=	${TEXMFDIR} ${TEXMFDISTDIR} ${TEXMFLOCALDIR} ${TEXMFVARDIR} ${TEXMFCONFIGDIR}
+TEXLIVE_YEAR?=	2021
+TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0325
 
 .for V in TEXMFDIR TEXMFDISTDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR FMTUTIL_CNF
 PLIST_SUB+=	$V="${$V}"
@@ -85,7 +86,7 @@ _USE_TEX_BASE_PKGNAME=	texlive-base
 _USE_TEX_GBKLATEX_DEP=	gbklatex
 _USE_TEX_GBKLATEX_PORT=	${_USE_TEX_BASE_PORT}
 _USE_TEX_GBKLATEX_PKGNAME=${_USE_TEX_BASE_PKGNAME}
-_USE_TEX_SOURCE_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/source/.keep_me
+_USE_TEX_SOURCE_DEP=   ${_USE_TEX_SOURCE_PKGNAME}>=${TEXLIVE_VERSION}
 _USE_TEX_SOURCE_PORT=	print/${_USE_TEX_SOURCE_PKGNAME}
 _USE_TEX_SOURCE_PKGNAME=texlive-texmf-source
 _USE_TEX_DOCS_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/doc/texlive/texlive-en/README
@@ -129,7 +130,7 @@ _USE_TEX_KPATHSEA_PKGNAME=tex-kpathsea
 _USE_TEX_PTEXENC_DEP=	libptexenc.so
 _USE_TEX_PTEXENC_PORT=	print/${_USE_TEX_PTEXENC_PKGNAME}
 _USE_TEX_PTEXENC_PKGNAME=tex-ptexenc
-_USE_TEX_TEXLUA_DEP=	libtexlua52.so
+_USE_TEX_TEXLUA_DEP=	libtexlua53.so
 _USE_TEX_TEXLUA_PORT=	devel/${_USE_TEX_TEXLUA_PKGNAME}
 _USE_TEX_TEXLUA_PKGNAME=tex-libtexlua
 _USE_TEX_TEXLUAJIT_DEP=	libtexluajit.so
@@ -144,9 +145,6 @@ _USE_TEX_SYNCTEX_PKGNAME=tex-synctex
 _USE_TEX_XPDFOPEN_DEP=	pdfopen
 _USE_TEX_XPDFOPEN_PORT=	print/${_USE_TEX_XPDFOPEN_PKGNAME}
 _USE_TEX_XPDFOPEN_PKGNAME=	xpdfopen
-_USE_TEX_ALEPH_DEP=	aleph
-_USE_TEX_ALEPH_PORT=	print/${_USE_TEX_ALEPH_PKGNAME}
-_USE_TEX_ALEPH_PKGNAME=	tex-aleph
 _USE_TEX_LUATEX_DEP=	luatex
 _USE_TEX_LUATEX_PORT=	print/${_USE_TEX_LUATEX_PKGNAME}
 _USE_TEX_LUATEX_PKGNAME=tex-luatex
@@ -154,9 +152,9 @@ _USE_TEX_XETEX_DEP=	xetex
 _USE_TEX_XETEX_PORT=	print/${_USE_TEX_XETEX_PKGNAME}
 _USE_TEX_XETEX_PKGNAME=	tex-xetex
 
-_USE_TEX_FULLLIST=	texmf>=20150523_3 base>=20150521_5 \
+_USE_TEX_FULLLIST=	texmf>=${TEXLIVE_VERSION} base>=${TEXLIVE_VERSION} \
 		web2c tlmgr:run \
-		basic formats aleph xetex jadetex luatex xmltex ptex \
+		basic formats xetex jadetex luatex xmltex ptex \
 		dvipsk dvipdfmx xdvik xpdfopen:run \
 		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib synctex:lib
 
@@ -168,10 +166,10 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
-_U:=	${_U}>=20150523_3
+_U:=	${_U}>=${TEXLIVE_VERSION}
 . endif
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
-_U:=	${_U}>=20150521_5
+_U:=	${_U}>=${TEXLIVE_VERSION}
 . endif
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
@@ -290,21 +288,6 @@ do-updmap:
 post-install-script: do-updmap
 .endif
 
-TEX_FORMAT_ALEPH?= \
-	"aleph aleph - *aleph.ini" \
-	"lamed aleph language.dat *lambda.ini"
-TEX_FORMAT_ALEPH_FILES=	\
-	${TEXMFVARDIR}/web2c/aleph/aleph.log \
-	${TEXMFVARDIR}/web2c/aleph/aleph.fmt \
-	${TEXMFVARDIR}/web2c/aleph/lamed.log \
-	${TEXMFVARDIR}/web2c/aleph/lamed.fmt
-TEX_FORMAT_ALEPH_BIN=	\
-	bin/lamed
-TEX_FORMAT_ALEPH_DIRS=	\
-	${TEXMFVARDIR}/web2c/aleph
-post-install-aleph:
-	${LN} -sf aleph ${STAGEDIR}${PREFIX}/bin/lamed
-
 TEX_FORMAT_AMSTEX?= \
 	"amstex pdftex - -translate-file=cp227.tcx *amstex.ini"
 TEX_FORMAT_AMSTEX_FILES= \
@@ -330,23 +313,6 @@ TEX_FORMAT_CONTEXT_DIRS= \
 post-install-context:
 	@${DO_NADA}
 #	${LN} -sf mpost ${PREFIX}/bin/metafun
-
-TEX_FORMAT_CSLATEX?= \
-	"cslatex pdftex - -etex cslatex.ini" \
-	"pdfcslatex pdftex - -etex cslatex.ini"
-TEX_FORMAT_CSLATEX_FILES= \
-	${TEXMFVARDIR}/web2c/pdftex/cslatex.log \
-	${TEXMFVARDIR}/web2c/pdftex/cslatex.fmt \
-	${TEXMFVARDIR}/web2c/pdftex/pdfcslatex.log \
-	${TEXMFVARDIR}/web2c/pdftex/pdfcslatex.fmt
-TEX_FORMAT_CSLATEX_BIN= \
-	bin/cslatex \
-	bin/pdfcslatex
-TEX_FORMAT_CSLATEX_DIRS= \
-	${TEXMFVARDIR}/web2c/pdftex
-post-install-cslatex:
-	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/cslatex
-	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/pdfcslatex
 
 TEX_FORMAT_CSPLAIN?= \
 	"csplain pdftex - -etex -enc csplain-utf8.ini" \
@@ -416,7 +382,7 @@ TEX_FORMAT_LUATEX?= \
 	"lualatex luatex language.dat,language.dat.lua lualatex.ini" \
 	"luajittex luajittex language.def,language.dat.lua luatex.ini" \
 	"pdfcsplain luatex - -etex csplain.ini" \
-	"lualollipop luatex - lualollipop.in"
+	"lollipop luatex - lollipop.ini"
 TEX_FORMAT_LUATEX_FILES= \
 	${TEXMFVARDIR}/web2c/luatex/dviluatex.log \
 	${TEXMFVARDIR}/web2c/luatex/dviluatex.fmt \
@@ -558,8 +524,16 @@ TEX_FORMAT_PTEX_FILES= \
 	${TEXMFVARDIR}/web2c/eptex/platex.fmt
 TEX_FORMAT_PTEX_BIN= \
 	bin/eptex \
+	bin/pbibtex \
+	bin/pdvitype \
 	bin/ptex \
-	bin/platex
+	bin/platex \
+	bin/ppltotf \
+	bin/ptftopl \
+	bin/upbibtex \
+	bin/updvitype \
+	bin/uppltotf \
+	bin/uptftopl
 TEX_FORMAT_PTEX_DIRS= \
 	${TEXMFVARDIR}/web2c/ptex \
 	${TEXMFVARDIR}/web2c/eptex
@@ -614,8 +588,10 @@ TEX_FORMAT_XETEX?= \
 	"xelatex xetex language.dat -etex xelatex.ini" \
 	"pdfcsplain xetex - -etex csplain.ini" \
 	"cont-en xetex cont-usr.tex -8bit *cont-en.mkii" \
-	"xelollipop xetex - -etex xelollipop.ini"
+	"lollipop xetex - -etex lollipop.ini"
 TEX_FORMAT_XETEX_FILES=	\
+	${TEXMFVARDIR}/web2c/xetex/lollipop.fmt \
+	${TEXMFVARDIR}/web2c/xetex/lollipop.log \
 	${TEXMFVARDIR}/web2c/xetex/cont-en.log \
 	${TEXMFVARDIR}/web2c/xetex/cont-en.fmt \
 	${TEXMFVARDIR}/web2c/xetex/pdfcsplain.log \
@@ -623,9 +599,7 @@ TEX_FORMAT_XETEX_FILES=	\
 	${TEXMFVARDIR}/web2c/xetex/xetex.log \
 	${TEXMFVARDIR}/web2c/xetex/xetex.fmt \
 	${TEXMFVARDIR}/web2c/xetex/xelatex.log \
-	${TEXMFVARDIR}/web2c/xetex/xelatex.fmt \
-	${TEXMFVARDIR}/web2c/xetex/xelollipop.log \
-	${TEXMFVARDIR}/web2c/xetex/xelollipop.fmt
+	${TEXMFVARDIR}/web2c/xetex/xelatex.fmt
 TEX_FORMAT_XETEX_BIN=	\
 	bin/xetex \
 	bin/xelatex \

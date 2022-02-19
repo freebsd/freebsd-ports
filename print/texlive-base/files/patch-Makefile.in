@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-07-23 10:46:25.620611000 +0900
-+++ Makefile.in	2015-07-23 10:46:40.645948000 +0900
-@@ -487,7 +487,7 @@
+--- Makefile.in.orig	2021-02-08 15:49:16 UTC
++++ Makefile.in
+@@ -489,7 +489,7 @@ NEVER_NAMES_SUB = -o -name .deps -o -name .dirstamp -o
  NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
  
  # Files not to be distributed

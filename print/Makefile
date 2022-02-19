@@ -232,7 +232,6 @@
     SUBDIR += splix
     SUBDIR += system-config-printer
     SUBDIR += t1utils
-    SUBDIR += tex-aleph
     SUBDIR += tex-basic-engines
     SUBDIR += tex-dvipdfmx
     SUBDIR += tex-dvipsk

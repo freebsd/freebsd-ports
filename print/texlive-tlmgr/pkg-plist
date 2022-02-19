@@ -1,7 +1,7 @@
 bin/tlmgr
-share/tlpkg
 %%SITE_PERL%%/TeXLive/TLConfFile.pm
 %%SITE_PERL%%/TeXLive/TLConfig.pm
+%%SITE_PERL%%/TeXLive/TLCrypto.pm
 %%SITE_PERL%%/TeXLive/TLDownload.pm
 %%SITE_PERL%%/TeXLive/TLPDB.pm
 %%SITE_PERL%%/TeXLive/TLPOBJ.pm
@@ -13,6 +13,7 @@ share/tlpkg
 %%SITE_PERL%%/TeXLive/TeXCatalogue.pm
 %%TEXMFDISTDIR%%/.texlive-tlmgr
 %%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
+share/tlpkg
 /var/db/tlpkg/texlive.tlpdb
 /var/db/tlpkg/texmf.cnf
 /var/db/tlpkg/tlmgr.log

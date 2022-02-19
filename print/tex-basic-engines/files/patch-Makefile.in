@@ -1,31 +1,31 @@
---- Makefile.in.orig	2015-04-17 04:53:45.000000000 +0900
-+++ Makefile.in	2015-07-26 07:48:39.326669000 +0900
-@@ -99,8 +99,8 @@
- 	pdftex$(EXEEXT) ttf2afm$(EXEEXT) pdftosrc$(EXEEXT) \
- 	luatex$(EXEEXT) luajittex$(EXEEXT) txt2zlib$(EXEEXT) \
- 	xetex$(EXEEXT) $(am__EXEEXT_4) aleph$(EXEEXT) synctex$(EXEEXT)
+--- Makefile.in.orig	2021-02-17 11:40:54 UTC
++++ Makefile.in
+@@ -117,9 +117,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+ 	luahbtex$(EXEEXT) luajithbtex$(EXEEXT) xetex$(EXEEXT) \
+ 	$(am__EXEEXT_4) aleph$(EXEEXT) synctex$(EXEEXT) \
+ 	md5main$(EXEEXT)
 -bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_5) \
--	ctie$(EXEEXT) cweave$(EXEEXT) tie$(EXEEXT) $(am__EXEEXT_6) \
+-	ctie$(EXEEXT) cweave$(EXEEXT) ctwill$(EXEEXT) \
+-	ctwill-refsort$(EXEEXT) ctwill-twinx$(EXEEXT) tie$(EXEEXT) \
 +bin_PROGRAMS = $(am__EXEEXT_5) \
-+	$(am__EXEEXT_6) \
- 	$(am__EXEEXT_7) $(am__EXEEXT_8) $(am__EXEEXT_9) \
- 	$(am__EXEEXT_10) $(am__EXEEXT_11) $(am__EXEEXT_12) \
- 	$(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
-@@ -2081,7 +2081,7 @@
+ 	$(am__EXEEXT_6) $(am__EXEEXT_7) $(am__EXEEXT_8) \
+ 	$(am__EXEEXT_9) $(am__EXEEXT_10) $(am__EXEEXT_11) \
+ 	$(am__EXEEXT_12) $(am__EXEEXT_13) $(am__EXEEXT_14) \
+@@ -3108,7 +3106,7 @@ AM_CFLAGS = $(WARNING_CFLAGS)
  AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
  AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
  version = $(WEB2CVERSION)
 -SUBDIRS = doc lib man web2c . window omegafonts otps
 +SUBDIRS = lib man web2c .
  proglib = lib/lib.a
- EXTRA_LIBRARIES = libmf.a libmputil.a libmplib.a libkanji.a \
- 	libukanji.a libpdftex.a libluasocket.a libluajitsocket.a \
-@@ -2090,7 +2090,7 @@
+ 
+ #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3128,7 +3126,7 @@ EXTRA_LIBRARIES = libmf.a libmflua.a libmfluaotfcc.a l
  EXTRA_LTLIBRARIES = libsynctex.la
- lib_LIBRARIES = $(am__append_98)
- lib_LTLIBRARIES = $(am__append_97)
+ lib_LIBRARIES = $(am__append_122)
+ lib_LTLIBRARIES = $(am__append_121)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
  nodist_man_MANS = 
+ TEST_EXTENSIONS = .pl .test
  EXTRA_DIST = PROJECTS cftests cpascal.h help.h w2c/config.h \
- 	triptrap-sh tangle.web tangle.ch tangleboot.pin cwebdir \

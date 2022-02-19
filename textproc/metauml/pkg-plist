@@ -31,5 +31,5 @@
 %%MPDIR%%/util_picture_stack.mp
 %%MPDIR%%/util_positioning.mp
 %%MPDIR%%/util_shade.mp
-@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
-@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@postunexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@postexec %%MKTEXLSR%% %D/%%TEXMFDIR%%

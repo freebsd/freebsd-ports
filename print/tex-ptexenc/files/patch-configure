@@ -1,6 +1,6 @@
---- configure.orig	2015-07-25 21:31:25 UTC
+--- configure.orig	2020-01-16 22:02:50 UTC
 +++ configure
-@@ -14889,7 +14889,7 @@ if ${ac_cv_lib_iconv_iconv_open+:} false
+@@ -14951,7 +14951,7 @@ if ${ac_cv_lib_iconv_iconv_open+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14924,7 +14924,7 @@ if test "x$ac_cv_lib_iconv_iconv_open" =
+@@ -14986,7 +14986,7 @@ if test "x$ac_cv_lib_iconv_iconv_open" = xyes; then :
  #define HAVE_LIBICONV 1
  _ACEOF
  
@@ -18,7 +18,7 @@
  
  else
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libiconv_open in -liconv" >&5
-@@ -14933,7 +14933,7 @@ if ${ac_cv_lib_iconv_libiconv_open+:} fa
+@@ -14995,7 +14995,7 @@ if ${ac_cv_lib_iconv_libiconv_open+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +27,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14968,7 +14968,7 @@ if test "x$ac_cv_lib_iconv_libiconv_open
+@@ -15030,7 +15030,7 @@ if test "x$ac_cv_lib_iconv_libiconv_open" = xyes; then
  #define HAVE_LIBICONV 1
  _ACEOF
  

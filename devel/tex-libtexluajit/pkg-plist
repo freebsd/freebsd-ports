@@ -7,5 +7,5 @@ include/texluajit/lualib.h
 lib/libtexluajit.a
 lib/libtexluajit.so
 lib/libtexluajit.so.2
-lib/libtexluajit.so.2.0.3
+lib/libtexluajit.so.2.1.0
 libdata/pkgconfig/texluajit.pc

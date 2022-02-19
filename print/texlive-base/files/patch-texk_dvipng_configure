@@ -1,13 +1,13 @@
---- texk/dvipng/configure.orig	2021-08-02 22:16:56 UTC
+--- texk/dvipng/configure.orig	2020-11-19 18:31:09 UTC
 +++ texk/dvipng/configure
-@@ -16273,8 +16273,8 @@ else
-   FT2_CONFIG="$ac_cv_prog_FT2_CONFIG"
+@@ -16428,8 +16428,8 @@ else
+   PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
  fi
  if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
 -  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
 -  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
 +  FREETYPE2_INCLUDES=`pkg-config freetype2 --cflags`
 +  FREETYPE2_LIBS=`pkg-config freetype2 --libs`
- elif test "x$need_freetype2:$with_system_freetype2" = xyes:yes; then
-   as_fn_error $? "did not find freetype-config required for system freetype2 library" "$LINENO" 5
- fi
+ elif $PKG_CONFIG --libs freetype2 >/dev/null 2>&1; then
+   FREETYPE2_INCLUDES=`$PKG_CONFIG --cflags freetype2`
+   FREETYPE2_LIBS=`$PKG_CONFIG --libs freetype2`

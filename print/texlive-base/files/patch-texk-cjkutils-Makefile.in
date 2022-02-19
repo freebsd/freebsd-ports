@@ -1,6 +1,6 @@
---- texk/cjkutils/Makefile.in.orig	2015-03-12 14:42:02 UTC
+--- texk/cjkutils/Makefile.in.orig	2020-11-19 18:31:09 UTC
 +++ texk/cjkutils/Makefile.in
-@@ -121,7 +121,7 @@ CONFIG_CLEAN_FILES =
+@@ -136,7 +136,7 @@ CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
  @WIN32_TRUE@am__EXEEXT_1 = gbklatex$(EXEEXT) gbkpdflatex$(EXEEXT)
  am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
@@ -9,7 +9,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  bg5conv_SOURCES = bg5conv.c
  bg5conv_OBJECTS = bg5conv.$(OBJEXT)
-@@ -1412,7 +1412,7 @@ check: check-am
+@@ -1451,7 +1451,7 @@ check: check-am
  all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) c-auto.h \
  		all-local
  installdirs:
@@ -18,7 +18,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1477,7 +1477,7 @@ info: info-am
+@@ -1525,7 +1525,7 @@ info: info-am
  
  info-am:
  

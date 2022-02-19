@@ -1,25 +1,32 @@
---- man/Makefile.in.orig	2015-07-25 06:17:56.308987000 +0900
-+++ man/Makefile.in	2015-07-25 06:20:43.483764000 +0900
-@@ -437,10 +437,10 @@
- 	$(otangle_man_sources) aleph.man $(misc_man_sources) \
- 	amslatex.min initex.min lamstex.min slitex.min spell.add \
- 	virtex.min
--bootstrap_man_sources = ctie.man cweb.man tangle.man tie.man
+--- man/Makefile.in.orig	2022-02-14 20:13:35 UTC
++++ man/Makefile.in
+@@ -452,27 +452,19 @@ EXTRA_DIST = $(bootstrap_man_sources) $(web_man_source
+ 	mf.man mpost.man etex.man $(pdftex_man_sources) ptex.man \
+ 	ppltotf.man ptftopl.man luatex.man xetex.man \
+ 	$(otangle_man_sources) aleph.man $(misc_man_sources) spell.add
+-bootstrap_man_sources = ctie.man cweb.man ctwill.man tangle.man tie.man
 +bootstrap_man_sources =
  
  # Symlinks within $(man1dir): FILE:LINK indicates LINK.1->FILE.1
--man1_links = cweb:ctangle cweb:cweave $(am__append_4) $(am__append_8) \
-+man1_links = $(am__append_4) $(am__append_8) \
- 	$(am__append_10) $(am__append_13) $(am__append_15)
+-man1_links = cweb:ctangle cweb:cweave ctwill:ctwill-refsort \
+-	ctwill:ctwill-twinx $(am__append_3) $(am__append_5) \
++man1_links = $(am__append_3) $(am__append_5) \
+ 	$(am__append_6) $(am__append_10) $(am__append_12) \
+-	$(am__append_14) $(am__append_17) $(am__append_19) \
+-	latex-dev:pdflatex-dev latex-dev:xelatex-dev \
+-	latex-dev:lualatex-dev latex-dev:dvilualatex-dev \
+-	latex-dev:platex-dev latex-dev:uplatex-dev
++	$(am__append_14) $(am__append_17) $(am__append_19)
  web_man_sources = bibtex.man dvicopy.man dvitomp.man dvitype.man gftodvi.man \
  	gftopk.man gftype.man mft.man patgen.man pktogf.man pktype.man \
-@@ -448,10 +448,7 @@
+ 	pltotf.man pooltype.man tftopl.man vftovp.man vptovf.man weave.man
  
  pdftex_man_sources = pdftex.man pdftosrc.man ttf2afm.man
  otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.man ovp2ovf.man
 -misc_man_sources = \
 -	amstex.man \
 -	latex.man \
+-	latex-dev.man \
 -	pdfetex.man
 +misc_man_sources =
  

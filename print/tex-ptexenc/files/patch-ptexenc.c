@@ -1,6 +1,6 @@
---- ptexenc.c.orig	2014-04-28 06:37:18 UTC
+--- ptexenc.c.orig	2022-01-29 14:44:21 UTC
 +++ ptexenc.c
-@@ -15,6 +15,7 @@
+@@ -16,6 +16,7 @@
  #include <ptexenc/unicode-jp.h>
  
  #include <ctype.h>
@@ -8,7 +8,7 @@
  
  #define ENC_UNKNOWN  0
  #define ENC_JIS      1
-@@ -23,10 +24,46 @@
+@@ -24,10 +25,46 @@
  #define ENC_UTF8     4
  #define ENC_UPTEX    5
  
@@ -18,45 +18,45 @@
  static boolean prior_file_enc = false;
  
 +static struct le {
-+	char *name;
-+	int enc;
-+	int flag;
++    char *name;
++    int enc;
++    int flag;
 +} letable[] = {
-+	{"*.UTF-8",     ENC_UTF8, FNM_NOESCAPE},
-+	{"*.eucJP",     ENC_EUC, FNM_NOESCAPE | FNM_CASEFOLD},
-+	{"*.EUC-JP",    ENC_EUC, FNM_NOESCAPE},
-+	{"*.EUC",       ENC_EUC, FNM_NOESCAPE | FNM_CASEFOLD},
-+	{"*.PCK",       ENC_SJIS, FNM_NOESCAPE | FNM_CASEFOLD},
-+	{"*.SJIS",      ENC_SJIS, FNM_NOESCAPE | FNM_CASEFOLD},
-+	{"*.ISO-2022-JP",       ENC_JIS, FNM_NOESCAPE | FNM_CASEFOLD},
-+	{NULL, 0, 0}
++    {"*.UTF-8",     ENC_UTF8, FNM_NOESCAPE},
++    {"*.eucJP",     ENC_EUC, FNM_NOESCAPE | FNM_CASEFOLD},
++    {"*.EUC-JP",    ENC_EUC, FNM_NOESCAPE},
++    {"*.EUC",       ENC_EUC, FNM_NOESCAPE | FNM_CASEFOLD},
++    {"*.PCK",       ENC_SJIS, FNM_NOESCAPE | FNM_CASEFOLD},
++    {"*.SJIS",      ENC_SJIS, FNM_NOESCAPE | FNM_CASEFOLD},
++    {"*.ISO-2022-JP",       ENC_JIS, FNM_NOESCAPE | FNM_CASEFOLD},
++    {NULL, 0, 0}
 +};
 +
 +static int
 +default_kanji_enc(void)
 +{
-+	struct le *le;
-+	const char *name;
-+	int i;
++    struct le *le;
++    const char *name;
++    int i;
 +
-+	if (default_kanji_is_uptex)
-+		return (ENC_UPTEX);
-+	name = getenv("LANG");
-+	if (name == NULL)
-+		return (ENC_UTF8);
++    if (default_kanji_is_uptex)
++        return (ENC_UPTEX);
++    name = getenv("LANG");
++    if (name == NULL)
++        return (ENC_UTF8);
 +
-+	for (i = 0; letable[i].name != NULL; i++) {
-+		if (fnmatch(letable[i].name, name, letable[i].flag) !=
-+		    FNM_NOMATCH)
-+			return (letable[i].enc);
-+	}
-+	return (ENC_UTF8);
++    for (i = 0; letable[i].name != NULL; i++) {
++        if (fnmatch(letable[i].name, name, letable[i].flag) !=
++            FNM_NOMATCH)
++                return (letable[i].enc);
++    }
++    return (ENC_UTF8);
 +}
 +
  #define ESC '\033'
  
  #ifndef NOFILE
-@@ -64,7 +101,7 @@ static const_string enc_to_string(int en
+@@ -64,7 +101,7 @@ const_string enc_to_string(int enc)
  static int string_to_enc(const_string str)
  {
      if (str == NULL)                    return ENC_UNKNOWN;
@@ -83,7 +83,7 @@
          internal_enc = ENC_UPTEX;
      } else {
  #ifdef WIN32
-         default_kanji_enc = ENC_SJIS;
+         default_kanji_enc = ENC_UTF8;
          internal_enc = ENC_SJIS;
  #else
 -        default_kanji_enc = ENC_UTF8;

@@ -3,9 +3,7 @@ bin/pdftex
 bin/pdftosrc
 bin/tex
 bin/ttf2afm
-man/man1/amstex.1.gz
-man/man1/latex.1.gz
-man/man1/pdfetex.1.gz
+man/man1/initex.1.gz
 man/man1/pdflatex.1.gz
 man/man1/pdftex.1.gz
 man/man1/pdftosrc.1.gz

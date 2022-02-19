@@ -1,10 +1,12 @@
---- configure.orig	2015-04-12 11:22:39 UTC
+--- configure.orig	2021-02-17 03:03:54 UTC
 +++ configure
-@@ -23756,121 +23756,6 @@ ${top_builddir}/../../libs/libpng/includ
+@@ -25158,243 +25158,6 @@ ${top_builddir}/../../libs/libpng/include/png.h:
  	cd ${top_builddir}/../../libs/libpng && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
  
--## _KPSE_LIB_FLAGS: Setup freetype2 (-lfreetype) flags
+-##tldbg _KPSE_LIB_FLAGS: Setup freetype2 (-lfreetype) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=freetype2, libname=freetype, options=, tlincl=-IBLD/libs/freetype2/freetype2, tllib=BLD/libs/freetype2/libfreetype.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/freetype2/freetype2/ft2build.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: freetype2 (freetype) .
 -
 -# Check whether --with-system-freetype2 was given.
 -if test "${with_system_freetype2+set}" = set; then :
@@ -102,9 +104,103 @@
 -else
 -  FT2_CONFIG="$ac_cv_prog_FT2_CONFIG"
 -fi
+-if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_prog_PKG_CONFIG+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test -n "$PKG_CONFIG"; then
+-  ac_cv_prog_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_PKG_CONFIG="${ac_tool_prefix}pkg-config"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-fi
+-fi
+-PKG_CONFIG=$ac_cv_prog_PKG_CONFIG
+-if test -n "$PKG_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
+-$as_echo "$PKG_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-
+-fi
+-if test -z "$ac_cv_prog_PKG_CONFIG"; then
+-  ac_ct_PKG_CONFIG=$PKG_CONFIG
+-  # Extract the first word of "pkg-config", so it can be a program name with args.
+-set dummy pkg-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_prog_ac_ct_PKG_CONFIG+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test -n "$ac_ct_PKG_CONFIG"; then
+-  ac_cv_prog_ac_ct_PKG_CONFIG="$ac_ct_PKG_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_ac_ct_PKG_CONFIG="pkg-config"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-fi
+-fi
+-ac_ct_PKG_CONFIG=$ac_cv_prog_ac_ct_PKG_CONFIG
+-if test -n "$ac_ct_PKG_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_PKG_CONFIG" >&5
+-$as_echo "$ac_ct_PKG_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-  if test "x$ac_ct_PKG_CONFIG" = x; then
+-    PKG_CONFIG="false"
+-  else
+-    case $cross_compiling:$ac_tool_warned in
+-yes:)
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-ac_tool_warned=yes ;;
+-esac
+-    PKG_CONFIG=$ac_ct_PKG_CONFIG
+-  fi
+-else
+-  PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
+-fi
 -if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
 -  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
 -  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
+-elif $PKG_CONFIG --libs freetype2 >/dev/null 2>&1; then
+-  FREETYPE2_INCLUDES=`$PKG_CONFIG --cflags freetype2`
+-  FREETYPE2_LIBS=`$PKG_CONFIG --libs freetype2`
 -elif test "x$need_freetype2:$with_system_freetype2" = xyes:yes; then
 -  as_fn_error $? "did not find freetype-config required for system freetype2 library" "$LINENO" 5
 -fi
@@ -119,14 +215,43 @@
 -	cd ${top_builddir}/../../libs/freetype2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -fi
 -
- ## _KPSE_LIB_FLAGS: Setup pixman (-lpixman) flags
- 
- # Check whether --with-system-pixman was given.
-@@ -24069,218 +23954,6 @@ ${top_builddir}/../../libs/zziplib/inclu
+-##tldbg _KPSE_LIB_FLAGS: Setup pixman (-lpixman) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=pixman, libname=pixman, options=, tlincl=-IBLD/libs/pixman/include, tllib=BLD/libs/pixman/libpixman.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/pixman/include/pixman.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: pixman (pixman) .
+-
+-# Check whether --with-system-pixman was given.
+-if test "${with_system_pixman+set}" = set; then :
+-  withval=$with_system_pixman;
+-fi
+-if test "x$with_system_pixman" = xyes; then
+-  if $PKG_CONFIG pixman-1 --atleast-version=0.18; then
+-  PIXMAN_INCLUDES=`$PKG_CONFIG pixman-1 --cflags`
+-  PIXMAN_LIBS=`$PKG_CONFIG pixman-1 --libs`
+-elif test "x$need_pixman:$with_system_pixman" = xyes:yes; then
+-  as_fn_error $? "did not find pixman-1 0.18 or better" "$LINENO" 5
+-fi
+-else
+-  PIXMAN_INCLUDES="-I$kpse_BLD/libs/pixman/include"
+-  PIXMAN_LIBS="$kpse_BLD/libs/pixman/libpixman.a"
+-  PIXMAN_DEPEND='${top_builddir}/../../libs/pixman/libpixman.a'
+-  PIXMAN_RULE='# Rebuild libpixman
+-$(PIXMAN_DEPEND): ${top_builddir}/../../libs/pixman/include/pixman.h
+-	cd ${top_builddir}/../../libs/pixman && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/pixman/include/pixman.h:
+-	cd ${top_builddir}/../../libs/pixman && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-fi
+-
+ ##tldbg _KPSE_LIB_FLAGS: Setup cairo (-lcairo) flags.
+ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=cairo, libname=cairo, options=, tlincl=-IBLD/libs/cairo/cairo, tllib=BLD/libs/cairo/libcairo.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/cairo/cairo/cairo.h.' >&5
+ ##tldbg _KPSE_LIB_FLAGS_TL: cairo (cairo) .
+@@ -25540,339 +25303,6 @@ $(ZZIPLIB_DEPEND): ${top_builddir}/../../libs/zziplib/
+ ${top_builddir}/../../libs/zziplib/include/zzip/zzip.h:
  	cd ${top_builddir}/../../libs/zziplib && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
- 
--## _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags
+-
+-##tldbg _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=teckit, libname=TECkit, options=, tlincl=-IBLD/libs/teckit/include, tllib=BLD/libs/teckit/libTECkit.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/teckit/include/teckit/TECkit_Common.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: teckit (TECkit) .
 -
 -# Check whether --with-system-teckit was given.
 -if test "${with_system_teckit+set}" = set; then :
@@ -150,14 +275,78 @@
 -	cd ${top_builddir}/../../libs/teckit && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -fi
 -
--## _KPSE_LIB_FLAGS: Setup icu (-licuxxx) flags
+-
+-# LuaTeX and XeTeX need harfbuzz.
+-if test "x$enable_xetex" = xyes \
+-   || test "x$enable_luatex" = xyes || test "x$enable_luatex53" = xyes; then
+-  ##tldbg _KPSE_LIB_FLAGS: Setup graphite2 (-lgraphite2) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=graphite2, libname=graphite2, options=, tlincl=-IBLD/libs/graphite2/include -DGRAPHITE2_STATIC, tllib=BLD/libs/graphite2/libgraphite2.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/graphite2/include/graphite2/Font.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: graphite2 (graphite2) .
+-
+-# Check whether --with-system-graphite2 was given.
+-if test "${with_system_graphite2+set}" = set; then :
+-  withval=$with_system_graphite2;
+-fi
+-if test "x$with_system_graphite2" = xyes; then
+-  if $PKG_CONFIG graphite2; then
+-  GRAPHITE2_INCLUDES=`$PKG_CONFIG graphite2 --cflags`
+-  GRAPHITE2_LIBS=`$PKG_CONFIG graphite2 --libs`
+-elif test "x$need_graphite2:$with_system_graphite2" = xyes:yes; then
+-  as_fn_error $? "did not find graphite2" "$LINENO" 5
+-fi
+-else
+-  GRAPHITE2_INCLUDES="-I$kpse_BLD/libs/graphite2/include -DGRAPHITE2_STATIC"
+-  GRAPHITE2_LIBS="$kpse_BLD/libs/graphite2/libgraphite2.a"
+-  GRAPHITE2_DEPEND='${top_builddir}/../../libs/graphite2/libgraphite2.a'
+-  GRAPHITE2_RULE='# Rebuild libgraphite2
+-$(GRAPHITE2_DEPEND): ${top_builddir}/../../libs/graphite2/include/graphite2/Font.h
+-	cd ${top_builddir}/../../libs/graphite2 && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/graphite2/include/graphite2/Font.h:
+-	cd ${top_builddir}/../../libs/graphite2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-fi
+-
+-##tldbg _KPSE_LIB_FLAGS: Setup harfbuzz (-lharfbuzz) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=harfbuzz, libname=harfbuzz, options=, tlincl=-IBLD/libs/harfbuzz/include, tllib=BLD/libs/harfbuzz/libharfbuzz.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/harfbuzz/include/hb.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: harfbuzz (harfbuzz) .
+-
+-# Check whether --with-system-harfbuzz was given.
+-if test "${with_system_harfbuzz+set}" = set; then :
+-  withval=$with_system_harfbuzz;
+-fi
+-if test "x$with_system_harfbuzz" = xyes; then
+-  if $PKG_CONFIG harfbuzz; then
+-  HARFBUZZ_INCLUDES=`$PKG_CONFIG harfbuzz --cflags`
+-  HARFBUZZ_LIBS=`$PKG_CONFIG harfbuzz --libs`
+-elif test "x$need_harfbuzz:$with_system_harfbuzz" = xyes:yes; then
+-  as_fn_error $? "did not find harfbuzz" "$LINENO" 5
+-fi
+-else
+-  HARFBUZZ_INCLUDES="-I$kpse_BLD/libs/harfbuzz/include"
+-  HARFBUZZ_LIBS="$kpse_BLD/libs/harfbuzz/libharfbuzz.a"
+-  HARFBUZZ_DEPEND='${top_builddir}/../../libs/harfbuzz/libharfbuzz.a'
+-  HARFBUZZ_RULE='# Rebuild libharfbuzz
+-$(HARFBUZZ_DEPEND): ${top_builddir}/../../libs/harfbuzz/include/hb.h
+-	cd ${top_builddir}/../../libs/harfbuzz && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/harfbuzz/include/hb.h:
+-	cd ${top_builddir}/../../libs/harfbuzz && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-fi
+-
+-fi # end xetex/luatex for harfbuzz
+-
+-# XeTeX, but not LuaTeX, needs icu and graphite.
+-if test "x$enable_xetex" = xyes; then
+-  echo 'tldbg:KPSE_ICU_FLAGS called: more-icu-libs=, icu-config-args=.' >&5
+-##tldbg _KPSE_LIB_FLAGS: Setup icu (-licuxxx) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=icu, libname=icuxxx, options=, tlincl=-DU_STATIC_IMPLEMENTATION -IBLD/libs/icu/include, tllib= BLD/libs/icu/icu-build/lib/libicuuc.a BLD/libs/icu/icu-build/lib/libicudata.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/icu/include/unicode/uversion.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: icu (icuxxx) .
 -
 -# Check whether --with-system-icu was given.
 -if test "${with_system_icu+set}" = set; then :
 -  withval=$with_system_icu;
 -fi
 -if test "x$with_system_icu" = xyes; then
--  if test -n "$ac_tool_prefix"; then
+-  echo 'tldbg:KPSE_ICU_SYSTEM_FLAGS called.' >&5
+-if test -n "$ac_tool_prefix"; then
 -  # Extract the first word of "${ac_tool_prefix}icu-config", so it can be a program name with args.
 -set dummy ${ac_tool_prefix}icu-config; ac_word=$2
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
@@ -248,11 +437,105 @@
 -else
 -  ICU_CONFIG="$ac_cv_prog_ICU_CONFIG"
 -fi
+-if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_prog_PKG_CONFIG+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test -n "$PKG_CONFIG"; then
+-  ac_cv_prog_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_PKG_CONFIG="${ac_tool_prefix}pkg-config"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-fi
+-fi
+-PKG_CONFIG=$ac_cv_prog_PKG_CONFIG
+-if test -n "$PKG_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
+-$as_echo "$PKG_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-
+-fi
+-if test -z "$ac_cv_prog_PKG_CONFIG"; then
+-  ac_ct_PKG_CONFIG=$PKG_CONFIG
+-  # Extract the first word of "pkg-config", so it can be a program name with args.
+-set dummy pkg-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_prog_ac_ct_PKG_CONFIG+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test -n "$ac_ct_PKG_CONFIG"; then
+-  ac_cv_prog_ac_ct_PKG_CONFIG="$ac_ct_PKG_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_ac_ct_PKG_CONFIG="pkg-config"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-fi
+-fi
+-ac_ct_PKG_CONFIG=$ac_cv_prog_ac_ct_PKG_CONFIG
+-if test -n "$ac_ct_PKG_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_PKG_CONFIG" >&5
+-$as_echo "$ac_ct_PKG_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-  if test "x$ac_ct_PKG_CONFIG" = x; then
+-    PKG_CONFIG="false"
+-  else
+-    case $cross_compiling:$ac_tool_warned in
+-yes:)
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-ac_tool_warned=yes ;;
+-esac
+-    PKG_CONFIG=$ac_ct_PKG_CONFIG
+-  fi
+-else
+-  PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
+-fi
 -if $ICU_CONFIG --version >/dev/null 2>&1; then
 -  ICU_INCLUDES=`$ICU_CONFIG --cppflags`
 -  ICU_LIBS=`$ICU_CONFIG --ldflags-searchpath --ldflags-libsonly --ldflags-system`
+-elif $PKG_CONFIG --libs icu-uc icu-io >/dev/null 2>&1; then
+-  ICU_INCLUDES=`$PKG_CONFIG --cflags icu-uc icu-io`
+-  ICU_LIBS=`$PKG_CONFIG --libs icu-uc icu-io`
 -elif test "x$need_icu:$with_system_icu" = xyes:yes; then
--  as_fn_error $? "did not find icu-config required for system icu libraries" "$LINENO" 5
+-  as_fn_error $? "did not find either pkg-config or icu-config; one is required for system icu library support" "$LINENO" 5
 -fi
 -else
 -  ICU_INCLUDES="-DU_STATIC_IMPLEMENTATION -I$kpse_BLD/libs/icu/include"
@@ -264,56 +547,16 @@
 -${top_builddir}/../../libs/icu/include/unicode/uversion.h:
 -	cd ${top_builddir}/../../libs/icu && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -fi
+-# checking for openbsd to add -lpthread for icu.
+-case $build_os in
+-openbsd*)
+-  eval ICUXXX_LIBS=\"$ICUXXX_LIBS -lpthread\"
+-  ;;
+-esac
 -
--## _KPSE_LIB_FLAGS: Setup graphite2 (-lgraphite2) flags
--
--# Check whether --with-system-graphite2 was given.
--if test "${with_system_graphite2+set}" = set; then :
--  withval=$with_system_graphite2;
--fi
--if test "x$with_system_graphite2" = xyes; then
--  if $PKG_CONFIG graphite2; then
--  GRAPHITE2_INCLUDES=`$PKG_CONFIG graphite2 --cflags`
--  GRAPHITE2_LIBS=`$PKG_CONFIG graphite2 --libs`
--elif test "x$need_graphite2:$with_system_graphite2" = xyes:yes; then
--  as_fn_error $? "did not find graphite2" "$LINENO" 5
--fi
--else
--  GRAPHITE2_INCLUDES="-I$kpse_BLD/libs/graphite2/include -DGRAPHITE2_STATIC"
--  GRAPHITE2_LIBS="$kpse_BLD/libs/graphite2/libgraphite2.a"
--  GRAPHITE2_DEPEND='${top_builddir}/../../libs/graphite2/libgraphite2.a'
--  GRAPHITE2_RULE='# Rebuild libgraphite2
--$(GRAPHITE2_DEPEND): ${top_builddir}/../../libs/graphite2/include/graphite2/Font.h
--	cd ${top_builddir}/../../libs/graphite2 && $(MAKE) $(AM_MAKEFLAGS) rebuild
--${top_builddir}/../../libs/graphite2/include/graphite2/Font.h:
--	cd ${top_builddir}/../../libs/graphite2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
--fi
--
--## _KPSE_LIB_FLAGS: Setup harfbuzz (-lharfbuzz) flags
--
--# Check whether --with-system-harfbuzz was given.
--if test "${with_system_harfbuzz+set}" = set; then :
--  withval=$with_system_harfbuzz;
--fi
--if test "x$with_system_harfbuzz" = xyes; then
--  if $PKG_CONFIG harfbuzz-icu; then
--  HARFBUZZ_INCLUDES=`$PKG_CONFIG harfbuzz-icu --cflags`
--  HARFBUZZ_LIBS=`$PKG_CONFIG harfbuzz-icu --libs`
--elif test "x$need_harfbuzz:$with_system_harfbuzz" = xyes:yes; then
--  as_fn_error $? "did not find harfbuzz-icu" "$LINENO" 5
--fi
--else
--  HARFBUZZ_INCLUDES="-I$kpse_BLD/libs/harfbuzz/include"
--  HARFBUZZ_LIBS="$kpse_BLD/libs/harfbuzz/libharfbuzz.a"
--  HARFBUZZ_DEPEND='${top_builddir}/../../libs/harfbuzz/libharfbuzz.a'
--  HARFBUZZ_RULE='# Rebuild libharfbuzz
--$(HARFBUZZ_DEPEND): ${top_builddir}/../../libs/harfbuzz/include/hb.h
--	cd ${top_builddir}/../../libs/harfbuzz && $(MAKE) $(AM_MAKEFLAGS) rebuild
--${top_builddir}/../../libs/harfbuzz/include/hb.h:
--	cd ${top_builddir}/../../libs/harfbuzz && $(MAKE) $(AM_MAKEFLAGS) rebuild'
--fi
--
--## _KPSE_LIB_FLAGS: Setup graphite2 (-lgraphite2) flags
+-  ##tldbg _KPSE_LIB_FLAGS: Setup graphite2 (-lgraphite2) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=graphite2, libname=graphite2, options=, tlincl=-IBLD/libs/graphite2/include -DGRAPHITE2_STATIC, tllib=BLD/libs/graphite2/libgraphite2.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/graphite2/include/graphite2/Font.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: graphite2 (graphite2) .
 -
 -# Check whether --with-system-graphite2 was given.
 -if test "${with_system_graphite2+set}" = set; then :
@@ -337,7 +580,7 @@
 -	cd ${top_builddir}/../../libs/graphite2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -fi
 -
--
+-fi # end xetex for icu/graphite
+ 
  # Check size of off_t (using <kpathsea/config.h>)
  eval CPPFLAGS=\"$KPATHSEA_INCLUDES \$CPPFLAGS\"
- eval LIBS=\"$KPATHSEA_LIBS \$LIBS\"

@@ -1116,12 +1116,11 @@ MASTER_SITE_TCLTK+= \
 
 .if !defined(IGNORE_MASTER_SITE_TEX_CTAN)
 MASTER_SITE_TEX_CTAN+= \
-	http://ctan.unsw.edu.au/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
-	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
-	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
-	ftp://mirror.macomnet.net/pub/CTAN/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/
+	https://ftp.math.utah.edu/pub/tex/historic/%SUBDIR%/ \
+	https://ftp.tu-chemnitz.de/pub/tug/historic/%SUBDIR%/ \
+	https://pi.kwarc.info/historic/%SUBDIR%/ \
+	https://mirrors.tuna.tsinghua.edu.cn/tex-historic-archive/%SUBDIR%/ \
+	https://mirror.nju.edu.cn/tex-historic/%SUBDIR%/
 .endif
 
 # Derived from: https://www.torproject.org/getinvolved/mirrors.html.en

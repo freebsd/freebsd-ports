@@ -1,28 +1,28 @@
 # Created by: Peter Johnson <johnson.peter@gmail.com>
 
 PORTNAME=	dblatex
-DISTVERSION=	0.3.11
-DISTVERSIONSUFFIX=	py3
+DISTVERSION=	0.3.12
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DocBook to LaTeX/ConTeXt Publishing
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:print/texlive-texmf
-RUN_DEPENDS=	xsltproc:textproc/libxslt \
-		docbook-xml>0:textproc/docbook-xml
+BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/iftex/ifxetex.sty:print/texlive-texmf
+RUN_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
+		xsltproc:textproc/libxslt
 
-USES=		tar:bzip2 python:3.5+
-USE_PYTHON=	distutils autoplist noflavors
-USE_TEX=	dvipsk:run tex
-NO_ARCH=	yes
-
+USES=		python:3.5+ tar:bzip2
+USE_PYTHON=	autoplist distutils noflavors
 PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports \
 				--prefix=${PREFIX}
+USE_TEX=	dvipsk:run tex
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 

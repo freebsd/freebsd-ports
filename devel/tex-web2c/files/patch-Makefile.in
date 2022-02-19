@@ -1,17 +1,15 @@
---- Makefile.in.orig	2015-04-17 04:53:45.000000000 +0900
-+++ Makefile.in	2015-07-26 07:55:27.835477000 +0900
-@@ -2086,11 +2086,11 @@
- EXTRA_LIBRARIES = libmf.a libmputil.a libmplib.a libkanji.a \
- 	libukanji.a libpdftex.a libluasocket.a libluajitsocket.a \
- 	libluamisc.a libluajitmisc.a libunilib.a libff.a libjitff.a \
--	libluatex.a libluajittex.a libxetex.a libsynctex.a libmd5.a
+--- Makefile.in.orig	2022-01-30 13:19:25 UTC
++++ Makefile.in
+@@ -3125,10 +3125,10 @@ EXTRA_LIBRARIES = libmf.a libmflua.a libmfluaotfcc.a l
+ 	libluajittexspecific.a libluahbtexspecific.a \
+ 	libluajithbtexspecific.a libluaffi.a libluaharfbuzz.a \
+ 	libluajitharfbuzz.a libxetex.a libsynctex.a libmd5.a
 -EXTRA_LTLIBRARIES = libsynctex.la
-+	libluatex.a libluajittex.a libxetex.a libmd5.a
 +EXTRA_LTLIBRARIES =
- lib_LIBRARIES = $(am__append_98)
- lib_LTLIBRARIES = $(am__append_97)
+ lib_LIBRARIES = $(am__append_122)
+ lib_LTLIBRARIES = $(am__append_121)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
  nodist_man_MANS = 
+ TEST_EXTENSIONS = .pl .test
  EXTRA_DIST = PROJECTS cftests cpascal.h help.h w2c/config.h \
- 	triptrap-sh tangle.web tangle.ch tangleboot.pin cwebdir \

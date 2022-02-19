@@ -1,6 +1,6 @@
---- texk/chktex/Makefile.in.orig	2015-04-13 09:45:32 UTC
+--- texk/chktex/Makefile.in.orig	2020-11-19 18:31:09 UTC
 +++ texk/chktex/Makefile.in
-@@ -119,10 +119,8 @@ mkinstalldirs = $(install_sh) -d
+@@ -125,10 +125,8 @@ mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = config.h
  CONFIG_CLEAN_FILES = ChkTeX.t deweb.pl
  CONFIG_CLEAN_VPATH_FILES =
@@ -8,12 +8,12 @@
 -	"$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(texmfdir)" \
 -	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(configdir)" \
 -	"$(DESTDIR)$(pdfdocdir)"
-+am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texmfdir)" \
++am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texmfdir) \
 +	"$(DESTDIR)$(man1dir)"
  PROGRAMS = $(bin_PROGRAMS)
  am__chktex_SOURCES_DIST = @CHKTEX_TREE@/ChkTeX.c \
  	@CHKTEX_TREE@/ChkTeX.h @CHKTEX_TREE@/FindErrs.c \
-@@ -1405,7 +1403,7 @@ check-am: all-am
+@@ -1432,7 +1430,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h
  installdirs:
@@ -22,7 +22,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1469,9 +1467,7 @@ info: info-am
+@@ -1504,9 +1502,7 @@ info: info-am
  
  info-am:
  

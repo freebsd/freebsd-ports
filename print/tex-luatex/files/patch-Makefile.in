@@ -1,60 +1,71 @@
---- Makefile.in.orig	2015-04-16 19:53:45 UTC
+--- Makefile.in.orig	2021-02-17 11:40:54 UTC
 +++ Makefile.in
-@@ -99,6 +99,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EX
- 	pdftex$(EXEEXT) ttf2afm$(EXEEXT) pdftosrc$(EXEEXT) \
- 	luatex$(EXEEXT) luajittex$(EXEEXT) txt2zlib$(EXEEXT) \
- 	xetex$(EXEEXT) $(am__EXEEXT_4) aleph$(EXEEXT) synctex$(EXEEXT)
+@@ -117,6 +117,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+ 	luahbtex$(EXEEXT) luajithbtex$(EXEEXT) xetex$(EXEEXT) \
+ 	$(am__EXEEXT_4) aleph$(EXEEXT) synctex$(EXEEXT) \
+ 	md5main$(EXEEXT)
 +inst_bin_PROGRAMS = luatex$(EXEEXT) luajittex$(EXEEXT)
  bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_5) \
- 	ctie$(EXEEXT) cweave$(EXEEXT) tie$(EXEEXT) $(am__EXEEXT_6) \
- 	$(am__EXEEXT_7) $(am__EXEEXT_8) $(am__EXEEXT_9) \
-@@ -1939,14 +1940,16 @@ LTLIBOBJS = @LTLIBOBJS@
- LTLIBSYNCTEX = @LTLIBSYNCTEX@
- LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
- LUA52_DEFINES = @LUA52_DEFINES@
--LUA52_DEPEND = @LUA52_DEPEND@
--LUA52_INCLUDES = @LUA52_INCLUDES@
--LUA52_LIBS = @LUA52_LIBS@
-+LUA52_DEPEND =
-+LUA52_INCLUDES = -I${LOCALBASE}/include/texlua52 \
-+    -I@top_srcdir@/../../libs/lua52/lua-5.2.4/src
-+LUA52_LIBS = -L${LOCALBASE}/lib -ltexlua52
+ 	ctie$(EXEEXT) cweave$(EXEEXT) ctwill$(EXEEXT) \
+ 	ctwill-refsort$(EXEEXT) ctwill-twinx$(EXEEXT) tie$(EXEEXT) \
+@@ -2966,14 +2967,16 @@ LUA52_DEPEND = @LUA52_DEPEND@
+ LUA52_INCLUDES = @LUA52_INCLUDES@
+ LUA52_LIBS = @LUA52_LIBS@
+ LUA53_DEFINES = @LUA53_DEFINES@
+-LUA53_DEPEND = @LUA53_DEPEND@
+-LUA53_INCLUDES = @LUA53_INCLUDES@
+-LUA53_LIBS = @LUA53_LIBS@
++LUA53_DEPEND =
++LUA53_INCLUDES = -I${LOCALBASE}/include/texlua53 \
++	-I@top_srcdir@/../../libs/lua53/lua53-src/src
++LUA53_LIBS = -L${LOCALBASE}/lib -ltexlua53
  LUAJIT_DEFINES = @LUAJIT_DEFINES@
 -LUAJIT_DEPEND = @LUAJIT_DEPEND@
 -LUAJIT_INCLUDES = @LUAJIT_INCLUDES@
 +LUAJIT_DEPEND =
 +LUAJIT_INCLUDES = -I${LOCALBASE}/include/texluajit \
-+    -I@top_srcdir@/../../libs/luajit/LuaJIT-2.0.3/src
++	-I@top_srcdir@/../../libs/luajit/LuaJIT-src/src
  LUAJIT_LDEXTRA = @LUAJIT_LDEXTRA@
 -LUAJIT_LIBS = @LUAJIT_LIBS@
 +LUAJIT_LIBS = -L${LOCALBASE}/lib -ltexluajit
  MAINT = @MAINT@
  MAKEINFO = @MAKEINFO@
  MANIFEST_TOOL = @MANIFEST_TOOL@
-@@ -2081,7 +2084,7 @@ AM_CFLAGS = $(WARNING_CFLAGS)
+@@ -3004,7 +3007,8 @@ PIXMAN_INCLUDES = @PIXMAN_INCLUDES@
+ PIXMAN_LIBS = @PIXMAN_LIBS@
+ PKG_CONFIG = @PKG_CONFIG@
+ PPLIB_DEPEND = @PPLIB_DEPEND@
+-PPLIB_INCLUDES = @PPLIB_INCLUDES@
++PPLIB_INCLUDES = -I@top_srcdir@/../../libs/pplib/pplib-src/src/util \
++	-I@top_srcdir@/../../libs/pplib/pplib-src/src
+ PPLIB_LIBS = @PPLIB_LIBS@
+ PTEXENC_DEPEND = @PTEXENC_DEPEND@
+ PTEXENC_INCLUDES = @PTEXENC_INCLUDES@
+@@ -3108,7 +3112,7 @@ AM_CFLAGS = $(WARNING_CFLAGS)
  AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
  AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
  version = $(WEB2CVERSION)
 -SUBDIRS = doc lib man web2c . window omegafonts otps
 +SUBDIRS = .
  proglib = lib/lib.a
- EXTRA_LIBRARIES = libmf.a libmputil.a libmplib.a libkanji.a \
- 	libukanji.a libpdftex.a libluasocket.a libluajitsocket.a \
-@@ -2431,9 +2434,7 @@ TRIPTRAP_CLEAN = $(am__append_9) $(am__a
- TRIPTRAP = $(am__append_8) $(am__append_16) $(am__append_25) \
- 	$(am__append_42) $(am__append_48) $(am__append_54) \
- 	$(am__append_60) $(am__append_66)
--bin_links = $(am__append_5) $(am__append_13) $(am__append_22) \
--	$(am__append_31) $(am__append_36) $(am__append_75) \
--	$(am__append_80)
-+bin_links = $(am__append_75) $(am__append_80)
- install_exe_links = $(am__append_20) $(am__append_29) $(am__append_34) \
- 	$(am__append_73) $(am__append_78)
- uninstall_exe_links = $(am__append_21) $(am__append_30) \
-@@ -4739,9 +4740,9 @@ synctexdir/libsynctex_la-synctex_parser_
  
- libsynctex.la: $(libsynctex_la_OBJECTS) $(libsynctex_la_DEPENDENCIES) $(EXTRA_libsynctex_la_DEPENDENCIES) 
- 	$(AM_V_CCLD)$(libsynctex_la_LINK)  $(libsynctex_la_OBJECTS) $(libsynctex_la_LIBADD) $(LIBS)
+ #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3603,10 +3607,7 @@ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__appe
+ 	$(am__append_35) $(am__append_43) $(am__append_59) \
+ 	$(am__append_64) $(am__append_69) $(am__append_74) \
+ 	$(am__append_79)
+-bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
+-	$(am__append_24) $(am__append_33) $(am__append_41) \
+-	$(am__append_49) $(am__append_54) $(am__append_88) \
+-	$(am__append_93) $(am__append_98) $(am__append_103)
++bin_links = $(am__append_75) $(am__append_80)
+ install_exe_links = $(am__append_12) $(am__append_22) $(am__append_31) \
+ 	$(am__append_39) $(am__append_47) $(am__append_52) \
+ 	$(am__append_86) $(am__append_91) $(am__append_96) \
+@@ -5555,9 +5556,9 @@ silent-sh: $(top_builddir)/config.status $(srcdir)/sil
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ synctexdir/synctex.pc: $(top_builddir)/config.status $(top_srcdir)/synctexdir/synctex.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
 -install-binPROGRAMS: $(bin_PROGRAMS)
 +install-binPROGRAMS: $(inst_bin_PROGRAMS)
  	@$(NORMAL_INSTALL)
@@ -63,7 +74,7 @@
  	if test -n "$$list"; then \
  	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
  	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
-@@ -4771,7 +4772,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
+@@ -5587,7 +5588,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  
  uninstall-binPROGRAMS:
  	@$(NORMAL_UNINSTALL)
@@ -72,7 +83,7 @@
  	files=`for p in $$list; do echo "$$p"; done | \
  	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
  	      -e 's/$$/$(EXEEXT)/' \
-@@ -14447,7 +14448,7 @@ install-data: install-data-recursive
+@@ -19270,7 +19271,7 @@ install-data: install-data-recursive
  uninstall: uninstall-recursive
  
  install-am: all-am
@@ -81,11 +92,12 @@
  
  installcheck: installcheck-recursive
  install-strip:
-@@ -14668,8 +14669,6 @@ $(proglib): ${srcdir}/lib/*.c
+@@ -21003,9 +21004,6 @@ $(proglib): ${srcdir}/lib/*.c
  @KPATHSEA_RULE@
  @PTEXENC_RULE@
  @ZLIB_RULE@
 -@LUA52_RULE@
+-@LUA53_RULE@
 -@LUAJIT_RULE@
  @LIBPNG_RULE@
  @FREETYPE2_RULE@

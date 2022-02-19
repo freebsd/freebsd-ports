@@ -3,7 +3,7 @@
 PORTNAME=	texworks
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.6.2
-PORTREVISION=	36
+PORTREVISION=	37
 CATEGORIES=	editors
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -49,5 +49,8 @@ LUA_PLIST_FILES=	lib/texworks/libTWLuaPlugin.so
 PYTHON_USES=		python:3.4+
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
 PYTHON_PLIST_FILES=	lib/texworks/libTWPythonPlugin.so
+
+post-patch:
+	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} 's|synctex_next_result|synctex_scanner_next_result|g'
 
 .include <bsd.port.mk>

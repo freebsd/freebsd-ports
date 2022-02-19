@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-10-04 13:42:08 UTC
+--- Makefile.in.orig	2020-12-31 21:51:18 UTC
 +++ Makefile.in
-@@ -396,7 +396,8 @@ libptexenc_la_SOURCES = \
+@@ -400,7 +400,8 @@ libptexenc_la_SOURCES = \
  libptexenc_la_LIBADD = $(KPATHSEA_LIBS)
  nobase_include_HEADERS = \
  	ptexenc/ptexenc.h \

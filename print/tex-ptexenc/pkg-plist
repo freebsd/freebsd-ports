@@ -1,8 +1,8 @@
 include/ptexenc/ptexenc.h
-include/ptexenc/unicode.h
 include/ptexenc/unicode-jp.h
+include/ptexenc/unicode.h
 lib/libptexenc.a
 lib/libptexenc.so
 lib/libptexenc.so.1
-lib/libptexenc.so.1.3.3
+lib/libptexenc.so.1.3.9
 libdata/pkgconfig/ptexenc.pc

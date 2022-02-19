@@ -1,10 +1,11 @@
 bin/synctex
 include/synctex/synctex_parser.h
 include/synctex/synctex_parser_utils.h
+include/synctex/synctex_version.h
 lib/libsynctex.a
 lib/libsynctex.so
-lib/libsynctex.so.1
-lib/libsynctex.so.1.17.0
+lib/libsynctex.so.2
+lib/libsynctex.so.2.0.0
 libdata/pkgconfig/synctex.pc
 man/man1/synctex.1.gz
 man/man5/synctex.5.gz

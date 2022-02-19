@@ -1,25 +1,26 @@
 PORTNAME=	xpdfopen
 PORTVERSION=	0.86
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
-DISTNAME=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source
+DISTNAME=	texlive-${TEXLIVE_VERSION}-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Command line utility for PDF viewers
 
-CONFLICTS=	texlive-base-20150521_[1-4]
-
-USES=		tar:xz xorg
+USES=		localbase:ldflags tar:xz xorg
+USE_TEX=	yes
 USE_XORG=	x11 xmu
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
-EXTRACT_FILES=	build-aux \
-		utils/xpdfopen
-DISTVERSION_TEXLIVE_SOURCE=	20150521
-WRKSRC=		${WRKDIR}/${DISTNAME}/utils/xpdfopen
+
+EXTRACT_FILES=	build-aux utils/xpdfopen
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFLICTS=	texlive-base-*
+
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/utils/xpdfopen
 
 PLIST_FILES=	bin/pdfclose \
 		bin/pdfopen \

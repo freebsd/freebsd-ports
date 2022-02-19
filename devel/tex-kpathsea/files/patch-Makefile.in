@@ -1,84 +1,20 @@
---- Makefile.in.orig	2015-03-16 07:52:01 UTC
+--- Makefile.in.orig	2022-01-30 05:38:17 UTC
 +++ Makefile.in
-@@ -170,8 +170,8 @@ am__uninstall_files_from_dir = { \
-          $(am__cd) "$$dir" && rm -f $$files; }; \
-   }
- am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" \
--	"$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(web2cdir)" \
--	"$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(kpseincludedir)" \
-+	"$(DESTDIR)$(web2cdir)" \
-+	"$(DESTDIR)$(pkgconfigdir)" \
- 	"$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpselibdir)"
- LTLIBRARIES = $(lib_LTLIBRARIES)
- libkpathsea_la_DEPENDENCIES = $(LTLIBOBJS)
-@@ -306,7 +306,7 @@ am__can_run_installinfo = \
+@@ -364,7 +364,7 @@ am__can_run_installinfo = \
      *) (install-info --version) >/dev/null 2>&1;; \
    esac
- DATA = $(dist_noinst_DATA) $(dist_web2c_DATA) $(pkgconfig_DATA)
+ DATA = $(dist_noinst_DATA) $(pkgconfig_DATA)
 -HEADERS = $(kpseinclude_HEADERS) $(nodist_kpseinclude_HEADERS) \
-+HEADERS = $(kpseinclude_HEADERS) \
- 	$(nodist_kpselib_HEADERS) $(noinst_HEADERS)
++HEADERS = $(nodist_kpseinclude_HEADERS) \
+ 	$(noinst_HEADERS)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
-@@ -717,12 +717,12 @@ libkpathsea_la_SOURCES = tex-file.c abso
- kpseincludedir = ${includedir}/kpathsea
- nodist_kpseinclude_HEADERS = \
- 	kpathsea.h \
--	paths.h
-+	paths.h \
-+	c-auto.h
- 
- kpseinclude_HEADERS = config.h $(direct_headers) $(indirect_headers)
- kpselibdir = ${libdir}/kpathsea
--nodist_kpselib_HEADERS = \
--	c-auto.h
-+nodist_kpselib_HEADERS =
- 
- 
- # Headers included directly into kpathsea.h
-@@ -785,7 +785,7 @@ noinst_HEADERS = \
- 	xopendir.h \
- 	xstat.h
- 
- pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = kpathsea.pc
- DISTCLEANFILES = paths.h stamp-paths kpathsea.h
- kpseaccess_SOURCES = access.c
-@@ -2103,7 +2103,7 @@ install-binPROGRAMS: install-libLTLIBRAR
+@@ -2101,7 +2101,7 @@ install-binPROGRAMS: install-libLTLIBRARIES
  
  installdirs: installdirs-recursive
  installdirs-am:
--	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpselibdir)"; do \
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)"; do \
 +	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(kpseincludedir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -2167,10 +2167,9 @@ info: info-recursive
- 
- info-am:
- 
--install-data-am: install-data-local install-dist_web2cDATA \
--	install-dist_web2cSCRIPTS install-kpseincludeHEADERS \
-+install-data-am: install-data-local install-kpseincludeHEADERS \
- 	install-nodist_kpseincludeHEADERS \
--	install-nodist_kpselibHEADERS install-pkgconfigDATA
-+	install-pkgconfigDATA
- 
- install-dvi: install-dvi-recursive
- 
-@@ -2319,13 +2318,13 @@ install-data-local: installdirs-am
- uninstall-local:
- @WIN32_FALSE@	@for f in $(dist_noinst_SCRIPTS); do \
- @WIN32_FALSE@	  if grep "original $$f --" "$(DESTDIR)$(bindir)/$$f" >/dev/null 2>&1; then \
--@WIN32_FALSE@	    echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
-+@WIN32_FALSE@	    echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
- @WIN32_FALSE@	    rm -f "$(DESTDIR)$(bindir)/$$f"; \
- @WIN32_FALSE@	  else :; fi; \
- @WIN32_FALSE@	done
- 	@for f in $(dist_noinst_DATA); do \
- 	  if grep "original $$f --" "$(DESTDIR)$(web2cdir)/$$f" >/dev/null 2>&1; then \
--	    echo " rm -f '$(DESTDIR)$(web2cdir)/$$f'"; \
-+	    echo " rm -f '$(DESTDIR)$(web2cdir)/$$f'"; \
- 	    rm -f "$(DESTDIR)$(web2cdir)/$$f"; \
- 	  else :; fi; \
- 	done

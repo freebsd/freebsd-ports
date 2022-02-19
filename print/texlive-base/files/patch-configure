@@ -1,6 +1,6 @@
---- configure.orig	2015-04-12 11:22:39 UTC
+--- configure.orig	2021-03-24 21:28:22 UTC
 +++ configure
-@@ -5685,7 +5685,16 @@ $as_echo "$as_me:   ->  installed \`zlib' headers and 
+@@ -5918,7 +5918,16 @@ $as_echo "$as_me:   ->  installed \`zlib' headers and 
      as_fn_error $? "Sorry, \`--with-system-teckit' requires \`--with-system-zlib'" "$LINENO" 5
    fi
  fi
@@ -17,18 +17,18 @@
  test "x$need_teckit" = xyes && {
    need_zlib=yes
  }
-@@ -21198,8 +21207,8 @@ else
-   FT2_CONFIG="$ac_cv_prog_FT2_CONFIG"
+@@ -21447,8 +21456,8 @@ else
+   PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
  fi
  if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
 -  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
 -  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
 +  FREETYPE2_INCLUDES=`pkg-config freetype2 --cflags`
 +  FREETYPE2_LIBS=`pkg-config freetype2 --libs`
- elif test "x$need_freetype2:$with_system_freetype2" = xyes:yes; then
-   as_fn_error $? "did not find freetype-config required for system freetype2 library" "$LINENO" 5
- fi
-@@ -21284,11 +21293,12 @@ elif test "x$need_graphite2:$with_system_graphite2" = 
+ elif $PKG_CONFIG --libs freetype2 >/dev/null 2>&1; then
+   FREETYPE2_INCLUDES=`$PKG_CONFIG --cflags freetype2`
+   FREETYPE2_LIBS=`$PKG_CONFIG --libs freetype2`
+@@ -21513,11 +21522,12 @@ elif test "x$need_graphite2:$with_system_graphite2" = 
    as_fn_error $? "did not find graphite2" "$LINENO" 5
  fi
  
@@ -45,4 +45,4 @@
 +  TECKIT_LIBS="-L$with_teckit_libdir $TECKIT_LIBS"
  fi
  
- if test -n "$ac_tool_prefix"; then
+ echo 'tldbg:KPSE_ICU_SYSTEM_FLAGS called.' >&5

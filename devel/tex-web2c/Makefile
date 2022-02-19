@@ -1,6 +1,5 @@
 PORTNAME=	web2c
-PORTVERSION=	20150521
-PORTREVISION=	3
+PORTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMEPREFIX=	tex-
@@ -10,49 +9,57 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
 
-LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libopenjp2.so:graphics/openjpeg \
 		libpng.so:graphics/png \
-		libzzip.so:devel/zziplib \
-		libmpfr.so:math/mpfr
+		libzzip.so:devel/zziplib
 
-USES=		gnome pathfix pkgconfig libtool tar:xz xorg
-USE_TEX=	kpathsea ptexenc
-USE_XORG=	pixman
+USES=		gnome libtool localbase pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
-EXTRACT_FILES=	build-aux \
-		libs/xpdf \
-		texk/web2c
-WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-luatex \
-		--disable-luajittex \
-		--disable-xetex \
-		--disable-aleph \
-		--disable-ptex \
-		--disable-tex \
-		--disable-latex \
-		--disable-pdftex \
-		--disable-eptex \
-		--disable-uptex \
-		--disable-euptex \
-		--disable-synctex \
-		--with-x=no \
-		--without-mf-x-toolkit \
-		--with-system-zlib \
-		--with-system-zziplib
+USE_TEX=	kpathsea ptexenc
+USE_XORG=	pixman
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-aleph \
+			--disable-eptex \
+			--disable-euptex \
+			--disable-latex \
+			--disable-luahbtex \
+			--disable-luajithbtex \
+			--disable-luajittex \
+			--disable-luatex \
+			--disable-mflua \
+			--disable-mfluajit \
+			--disable-pdftex \
+			--disable-ptex \
+			--disable-synctex \
+			--disable-tex \
+			--disable-uptex \
+			--disable-xetex \
+			--with-system-zlib \
+			--with-system-zziplib \
+			--with-x=no \
+			--without-mf-x-toolkit
 .for L in pixman cairo gmp mpfr libpng icu kpathsea ptexenc
-CONFIGURE_ARGS+=--with-system-$L \
-		--with-$L-include=${LOCALBASE}/include \
-		--with-$L-libdir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-$L-include=${LOCALBASE}/include \
+			--with-$L-libdir=${LOCALBASE}/lib \
+			--with-system-$L
 .endfor
-CFLAGS+=	-I${LOCALBASE}/include
+
 INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	cweb
 
-INFO=	web2c
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+EXTRACT_FILES=	build-aux libs/xpdf texk/web2c
+WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
+
+INFO=		web2c
+
+post-extract:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 pre-configure:
 	for D in libs/xpdf; do \

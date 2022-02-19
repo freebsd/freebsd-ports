@@ -1,15 +1,15 @@
---- texmf.cnf.orig	2015-04-13 00:20:30.000000000 +0900
-+++ texmf.cnf	2015-09-26 04:35:35.579765000 +0900
-@@ -51,7 +51,7 @@
- % Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
- % Kpathsea sets SELFAUTOLOC (the directory with the binary),
- % SELFAUTODIR (its parent), and SELFAUTOPARENT (its grandparent).
+--- texmf.cnf.orig	2021-03-23 18:18:30 UTC
++++ texmf.cnf
+@@ -59,7 +59,7 @@
+ % SELFAUTOPARENT (its grandparent = /usr/local/texlive/YYYY), and
+ % SELFAUTOGRANDPARENT (its great-grandparent = /usr/local/texlive).
+ % Sorry for the off-by-one-generation names.
 -TEXMFROOT = $SELFAUTOPARENT
 +TEXMFROOT = $SELFAUTODIR/share
  
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -61,7 +61,7 @@
+@@ -69,7 +69,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -18,7 +18,7 @@
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -495,6 +495,7 @@
+@@ -566,6 +566,7 @@ $SELFAUTOLOC/texmf-local/web2c,\
  $SELFAUTOLOC/texmf-dist/web2c,\
  $SELFAUTOLOC/texmf/web2c,\
  \
@@ -26,7 +26,7 @@
  $SELFAUTODIR,\
  $SELFAUTODIR/share/texmf-local/web2c,\
  $SELFAUTODIR/share/texmf-dist/web2c,\
-@@ -722,7 +723,7 @@
+@@ -804,7 +805,7 @@ hash_extra = 600000
  pool_size = 6250000
  % Minimum pool space after TeX's own strings; must be at least
  % 25000 less than pool_size, but doesn't need to be nearly that large.
@@ -34,8 +34,8 @@
 +string_vacancies = 150000
  % Maximum number of strings.
  max_strings = 500000
- % min pool space left after loading .fmt
-@@ -732,7 +733,7 @@
+ % Min pool space left after loading .fmt.
+@@ -816,7 +817,7 @@ strings_free = 100
  % expansion works by writing material into the buffer and reparsing the
  % line.  As a consequence, certain constructs require the buffer to be
  % very large, even though most documents can be handled with a small value.
@@ -44,10 +44,10 @@
  
  % Hyphenation trie.  The maximum possible is 4194303 (ssup_trie_size in
  % the sources), but we don't need that much.  The value here suffices
-@@ -743,7 +744,7 @@
- 
- hyph_size = 8191        % prime number of hyphenation exceptions, >610, <32767.
+@@ -828,7 +829,7 @@ trie_size = 1100000
+ hyph_size = 8191        % prime number of hyphenation exceptions, >610, <65535
                          % http://primes.utm.edu/curios/page.php/8191.html
+                         % dynamically increased as necessary, so not important.
 -nest_size = 500         % simultaneous semantic levels (e.g., groups)
 +nest_size = 2500        % simultaneous semantic levels (e.g., groups)
  max_in_open = 15        % simultaneous input files and error insertions, 
