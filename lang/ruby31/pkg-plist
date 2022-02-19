@@ -1,6 +1,6 @@
 %%IF_DEFAULT%%bin/ruby
 bin/ruby%%RUBY_SUFFIX%%
-include/ruby-%%RUBY_VER%%/%%RUBY_ARCH%%/rb_mjit_min_header-%%RUBY_VER%%.0.h
+include/ruby-%%RUBY_VER%%/%%RUBY_ARCH%%/rb_mjit_min_header-%%RUBY_VERSION%%.h
 include/ruby-%%RUBY_VER%%/%%RUBY_ARCH%%/ruby/config.h
 include/ruby-%%RUBY_VER%%/ruby.h
 include/ruby-%%RUBY_VER%%/ruby/assert.h
@@ -1566,6 +1566,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d61/structrb__global__vm__lock__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d66/internal_2enumerator_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d6c/structbackref__name__tag.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d70/rb__mjit__min__header-3_81_81_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d72/structmagic__comment.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d73/structar__table__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d74/structwmap__iter__arg.html
@@ -1671,7 +1672,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d15/rbasic_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d17/structno__gvl__stat__data.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d1a/struct_r_struct.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d1f/rb__mjit__min__header-3_81_80_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d27/structrb__iseq__constant__body.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d28/warning__push_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d28/warning__push_8h_source.html
@@ -6447,6 +6447,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/FakePackage/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/app_script_text-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/at-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/bash_prolog_script-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/bin_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/build_args-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/build_extensions-i.ri
@@ -6472,11 +6473,14 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/install-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/installation_satisfies_dependency%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/installed_specs-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/load_relative_enabled%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/options-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/package-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/path_warning-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/pre_install_checks-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/rb_config-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/ruby_install_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/shebang-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/spec_file-i.ri
@@ -7808,7 +7812,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/location_of_caller-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/marshal_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/needs-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/open_with_flock-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/open_file-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/operating_system_defaults-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/path_separator-c.ri
