@@ -1,4 +1,4 @@
---- lib/libimhex/source/helpers/file.cpp.orig	2022-01-30 20:55:06 UTC
+--- lib/libimhex/source/helpers/file.cpp.orig	2022-02-15 12:57:57 UTC
 +++ lib/libimhex/source/helpers/file.cpp
 @@ -5,12 +5,12 @@ namespace hex {
  
@@ -25,7 +25,7 @@
      }
  
      void File::close() {
-@@ -95,10 +95,10 @@ namespace hex {
+@@ -96,10 +96,10 @@ namespace hex {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,7 +40,7 @@
  
          return size;
      }
-@@ -106,7 +106,7 @@ namespace hex {
+@@ -107,7 +107,7 @@ namespace hex {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  

@@ -1,6 +1,6 @@
---- lib/libimhex/include/hex/pattern_language/ast_node.hpp.orig	2022-01-30 20:55:06 UTC
+--- lib/libimhex/include/hex/pattern_language/ast_node.hpp.orig	2022-02-15 12:57:57 UTC
 +++ lib/libimhex/include/hex/pattern_language/ast_node.hpp
-@@ -13,6 +13,8 @@
+@@ -14,6 +14,8 @@
  #include <variant>
  #include <vector>
  
@@ -9,7 +9,7 @@
  namespace hex::pl {
  
      class PatternData;
-@@ -1794,7 +1796,7 @@ namespace hex::pl {
+@@ -1895,7 +1897,7 @@ namespace hex::pl {
          Path m_path;
  
          void readVariable(Evaluator *evaluator, auto &value, PatternData *variablePattern) const {

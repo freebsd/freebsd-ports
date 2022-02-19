@@ -1,8 +1,8 @@
-TIMESTAMP = 1643635079
+TIMESTAMP = 1645106596
 SHA256 (imhex/xdg.hpp) = 2e08ce74adb71ff9b9aa9e1c999733fccd4b00967b9cf0c0e51dbf049392a9ec
 SIZE (imhex/xdg.hpp) = 7674
-SHA256 (imhex/WerWolv-ImHex-v1.14.0_GH0.tar.gz) = 8f303a89c03294ab77d8c97ecaa091c397bfc15f562b9be48d301f830dcd8943
-SIZE (imhex/WerWolv-ImHex-v1.14.0_GH0.tar.gz) = 8845734
+SHA256 (imhex/WerWolv-ImHex-v1.15.0_GH0.tar.gz) = 101546a3018a073aefb5c7063a82425d4c116784d0c1673207b1c543cd8e7629
+SIZE (imhex/WerWolv-ImHex-v1.15.0_GH0.tar.gz) = 8860931
 SHA256 (imhex/btzy-nativefiledialog-extended-322d1bc_GH0.tar.gz) = 1950e8870068b64f862da0dcaebabaeae9a8d0edacae80ec2208a2df9c1e360f
 SIZE (imhex/btzy-nativefiledialog-extended-322d1bc_GH0.tar.gz) = 400379
 SHA256 (imhex/capstone-engine-capstone-c7c665f_GH0.tar.gz) = 7da2ea128eb6cf627be547da50275e8e8d6df0c184b2c8713a47eff5ae824ea7

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-01-30 20:55:06 UTC
+--- CMakeLists.txt.orig	2022-02-15 12:57:57 UTC
 +++ CMakeLists.txt
-@@ -11,7 +11,6 @@ include("${CMAKE_SOURCE_DIR}/cmake/build_helpers.cmake
+@@ -11,7 +11,6 @@ include("${IMHEX_BASE_FOLDER}/cmake/build_helpers.cmak
  
  # Make sure project is configured correctly
  setDefaultBuiltTypeIfUnset()
@@ -15,4 +15,4 @@
 -add_custom_target(imhex ALL DEPENDS main)
  
  # Add unit tests
- enable_testing()
+ add_subdirectory(tests EXCLUDE_FROM_ALL)
