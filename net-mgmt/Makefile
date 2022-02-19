@@ -315,6 +315,7 @@
     SUBDIR += py-opn-cli
     SUBDIR += py-pdagent
     SUBDIR += py-pdagent-integrations
+    SUBDIR += py-phonebox-plugin
     SUBDIR += py-prometheus-client
     SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang

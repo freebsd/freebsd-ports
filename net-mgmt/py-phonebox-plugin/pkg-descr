@@ -1,0 +1,22 @@
+This NetBox plugin is intented for Telephone Number Management.  It currently
+implements a Number abstraction representing a single telephone number of an
+arbitrary format.  A Number can consist of valid DTMF characters and leading
+plus sign for E.164 support:
+
+* Leading Plus ("+") sign (optional)
+* Digits 0-9
+* Characters A, B, C, D
+* Pound sign ("#")
+* Asterisk sign ("*")
+
+Support for Bulk Edit/Delete operations for Numbers and the following voice
+circuit types is included as well:
+
+* SIP Trunk.
+* Digital Voice Circuit (PRI/BRI/etc).
+* Analog Voice Circuit (CO lines/etc).
+
+The plugin also introduces a NetBox REST API extension which is compatible
+with pynetbox.
+
+WWW: https://github.com/iDebugAll/phonebox_plugin
