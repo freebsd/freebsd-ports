@@ -41,5 +41,5 @@ share/texmf/fonts/source/public/GOOE/wodd.mf
 share/texmf/tex/generic/GOOE/gooemacs.tex
 share/texmf/tex/generic/GOOE/gotcmacs.tex
 share/texmf/tex/generic/GOOE/manual.dvi
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+@postexec %%MKTEXLSR%%
+@postunexec %%MKTEXLSR%%
