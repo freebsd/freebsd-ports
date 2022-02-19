@@ -1,15 +1,12 @@
 PORTNAME=	cloudflared
-DISTVERSION=	2022.2.0
+DISTVERSION=	2022.2.1
 CATEGORIES=	net www
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Cloudflare's Argo Tunnel client
 
-# Not sure if we are allowed to redistribute it.
-LICENSE=	cloudflare
-LICENSE_NAME=	cloudflare
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	no-dist-sell no-pkg-sell
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
