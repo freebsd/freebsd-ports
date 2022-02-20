@@ -1,5 +1,5 @@
 PORTNAME=	fastapi-users
-PORTVERSION=	9.2.4
+PORTVERSION=	9.2.5
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<1.2:mail/py-email-validator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.2,<0.71.0:www/py-fastapi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.2,<0.80.0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}makefun>=1.11.2,<1.14:devel/py-makefun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.1.0:www/py-pyjwt@${PY_FLAVOR} \
