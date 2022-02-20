@@ -6,10 +6,10 @@ AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
 AALIB_CONFIGURE_OFF=	--disable-aa
 
 AMR_NB_LIB_DEPENDS=	libopencore-amrnb.so:audio/opencore-amr
-AMR_NB_CONFIGURE_OFF=	--disable-libopencore_amrnb
+AMR_NB_CONFIGURE_ENABLE=libopencore_amrnb
 
 AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:audio/opencore-amr
-AMR_WB_CONFIGURE_OFF=	--disable-libopencore_amrwb
+AMR_WB_CONFIGURE_ENABLE=libopencore_amrwb
 
 ASS_LIB_DEPENDS=	libass.so:multimedia/libass
 ASS_CONFIGURE_OFF=	--disable-ass
@@ -24,7 +24,7 @@ CDIO_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=	--disable-libcdio
 
 DV_LIB_DEPENDS=		libdv.so:multimedia/libdv
-DV_CONFIGURE_OFF=	--disable-libdv
+DV_CONFIGURE_ENABLE=	libdv
 
 DVDNAV_LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav
 DVDNAV_CONFIGURE_OFF=	--disable-dvdnav
@@ -137,7 +137,7 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=	--disable-vdpau
 
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
-VPX_CONFIGURE_OFF=	--disable-libvpx-lavc
+VPX_CONFIGURE_ENABLE=	libvpx-lavc
 
 X11_USES=		xorg
 X11_USE=		XORG=x11,xext,xorgproto,xscrnsaver
