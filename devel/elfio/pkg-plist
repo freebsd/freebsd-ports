@@ -13,15 +13,16 @@ include/elfio/elfio_strings.hpp
 include/elfio/elfio_symbols.hpp
 include/elfio/elfio_utils.hpp
 include/elfio/elfio_version.hpp
+include/elfio/elfio_versym.hpp
 %%PORTDOCS%%%%DOCSDIR%%/elfio.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/add_section
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/add_section.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anonymizer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anonymizer.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c_example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elfdump
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elfdump.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elfio_c_wrapper.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proc_mem.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/write_obj

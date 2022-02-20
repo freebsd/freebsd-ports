@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	elfio
-PORTVERSION=	3.9
+PORTVERSION=	3.10
 CATEGORIES=	devel
 MASTER_SITES=	SF/elfio/ELFIO-sources/ELFIO-${PORTVERSION}
 
