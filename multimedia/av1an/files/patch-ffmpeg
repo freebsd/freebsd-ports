@@ -35,6 +35,19 @@ help: change the type of the numeric literal from `i8` to `u8`
 205 |     [[0_u8; AV_ERROR_MAX_STRING_SIZE]; 27];
     |       ~~~~
 
+https://github.com/zmwangx/rust-ffmpeg-sys/commit/b9382c010ab2
+
+error[E0428]: the name `AV_PIX_FMT_YUV420P9` is defined multiple times
+   --> cargo-crates/ffmpeg-sys-next-4.4.0/src/avutil/pixfmt.rs:155:1
+    |
+38  | pub const AV_PIX_FMT_YUV420P9: AVPixelFormat = AV_PIX_FMT_YUV420P9LE;
+    | --------------------------------------------------------------------- previous definition of the value `AV_PIX_FMT_YUV420P9` here
+...
+155 | pub const AV_PIX_FMT_YUV420P9: AVPixelFormat = AV_PIX_FMT_YUV420P9BE;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ `AV_PIX_FMT_YUV420P9` redefined here
+    |
+    = note: `AV_PIX_FMT_YUV420P9` must be defined only once in the value namespace of this module
+
 --- cargo-crates/ffmpeg-next-4.4.0/src/util/error.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/ffmpeg-next-4.4.0/src/util/error.rs
 @@ -17,10 +17,10 @@ pub use libc::{
@@ -61,3 +74,13 @@ help: change the type of the numeric literal from `i8` to `u8`
  
  pub fn register_all() {
      unsafe {
+--- cargo-crates/ffmpeg-sys-next-4.4.0/src/avutil/pixfmt.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/ffmpeg-sys-next-4.4.0/src/avutil/pixfmt.rs
+@@ -35,6 +35,7 @@ pub const AV_PIX_FMT_BGR555: AVPixelFormat = AV_PIX_FM
+ #[cfg(target_endian = "little")]
+ pub const AV_PIX_FMT_BGR444: AVPixelFormat = AV_PIX_FMT_BGR444LE;
+ 
++#[cfg(target_endian = "little")]
+ pub const AV_PIX_FMT_YUV420P9: AVPixelFormat = AV_PIX_FMT_YUV420P9LE;
+ #[cfg(target_endian = "little")]
+ pub const AV_PIX_FMT_YUV422P9: AVPixelFormat = AV_PIX_FMT_YUV422P9LE;
