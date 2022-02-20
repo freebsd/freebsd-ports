@@ -8,4 +8,4 @@ Note: since release 2.0.0, mathicsscript (a text interface) and mathics-django
 are no more included, and must be installed separately.
 
 WWW: https://mathics.org/
-WWW: https://github.com/mathics/Mathics
+WWW: https://github.com/Mathics3/mathics-core
