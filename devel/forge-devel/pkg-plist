@@ -35,3 +35,4 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-topic.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge.elc
+%%PDF%%%%DOCSDIR%%/forge.pdf
