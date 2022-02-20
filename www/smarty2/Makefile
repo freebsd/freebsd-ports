@@ -1,7 +1,7 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.31
+PORTVERSION=	2.6.32
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/files/docs/:manual
