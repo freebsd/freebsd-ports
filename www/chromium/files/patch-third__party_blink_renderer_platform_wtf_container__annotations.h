@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/wtf/container_annotations.h.orig	2021-12-31 00:57:42 UTC
+--- third_party/blink/renderer/platform/wtf/container_annotations.h.orig	2022-02-07 13:39:41 UTC
 +++ third_party/blink/renderer/platform/wtf/container_annotations.h
 @@ -12,7 +12,7 @@
  // TODO(ochang): Remove the ARCH_CPU_X86_64 condition to enable this for X86
@@ -9,19 +9,3 @@
  #define ANNOTATE_CONTIGUOUS_CONTAINER
  #define ANNOTATE_NEW_BUFFER(buffer, capacity, newSize)                       \
    if (buffer) {                                                              \
-@@ -37,13 +37,13 @@
-   ANNOTATE_NEW_BUFFER(buffer, newCapacity, bufferSize);
- // Annotations require buffers to begin on an 8-byte boundary.
- 
--#else  // ADDRESS_SANITIZER && (OS_LINUX || OS_CHROMEOS) && ARCH_CPU_X86_64
-+#else  // ADDRESS_SANITIZER && (OS_LINUX || OS_CHROMEOS || OS_BSD) && ARCH_CPU_X86_64
- 
- #define ANNOTATE_NEW_BUFFER(buffer, capacity, newSize)
- #define ANNOTATE_DELETE_BUFFER(buffer, capacity, oldSize)
- #define ANNOTATE_CHANGE_SIZE(buffer, capacity, oldSize, newSize)
- #define ANNOTATE_CHANGE_CAPACITY(buffer, oldCapacity, bufferSize, newCapacity)
- 
--#endif  // ADDRESS_SANITIZER && (OS_LINUX || OS_CHROMEOS) && ARCH_CPU_X86_64
-+#endif  // ADDRESS_SANITIZER && (OS_LINUX || OS_CHROMEOS || OS_BSD) && ARCH_CPU_X86_64
- 
- #endif  // THIRD_PARTY_BLINK_RENDERER_PLATFORM_WTF_CONTAINER_ANNOTATIONS_H_

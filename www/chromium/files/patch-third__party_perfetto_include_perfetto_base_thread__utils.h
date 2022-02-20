@@ -1,24 +1,22 @@
---- third_party/perfetto/include/perfetto/base/thread_utils.h.orig	2021-12-14 11:47:11 UTC
+--- third_party/perfetto/include/perfetto/base/thread_utils.h.orig	2022-02-07 13:39:41 UTC
 +++ third_party/perfetto/include/perfetto/base/thread_utils.h
-@@ -37,6 +37,9 @@ __declspec(dllimport) unsigned long __stdcall GetCurre
+@@ -34,6 +34,7 @@ __declspec(dllimport) unsigned long __stdcall GetCurre
+ #include <sys/syscall.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#include <pthread.h>
  #else
  #include <pthread.h>
  #endif
-+#if PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-+#include <pthread_np.h>
-+#endif
- 
- namespace perfetto {
- namespace base {
-@@ -45,6 +48,11 @@ namespace base {
+@@ -45,6 +46,11 @@ namespace base {
  using PlatformThreadId = pid_t;
  inline PlatformThreadId GetThreadId() {
    return gettid();
 +}
-+#elif PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-+using PlatformThreadId = pid_t;
++#elif PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
++using PlatformThreadId = uint64_t;
 +inline PlatformThreadId GetThreadId() {
-+  return pthread_getthreadid_np();
++  return reinterpret_cast<uint64_t>(pthread_self());
  }
  #elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX)
  using PlatformThreadId = pid_t;

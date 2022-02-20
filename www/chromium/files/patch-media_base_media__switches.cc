@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2021-12-31 00:57:35 UTC
+--- media/base/media_switches.cc.orig	2022-02-07 13:39:41 UTC
 +++ media/base/media_switches.cc
 @@ -9,7 +9,7 @@
  #include "build/chromeos_buildflags.h"
@@ -9,25 +9,25 @@
  #include "base/cpu.h"
  #endif
  
-@@ -418,7 +418,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
- // Show toolbar button that opens dialog for controlling media sessions.
+@@ -397,7 +397,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
  const base::Feature kGlobalMediaControls {
    "GlobalMediaControls",
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     BUILDFLAG(IS_CHROMEOS_LACROS)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -455,7 +455,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
- // Show picture-in-picture button in Global Media Controls.
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -429,7 +429,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
  const base::Feature kGlobalMediaControlsPictureInPicture {
    "GlobalMediaControlsPictureInPicture",
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS) || BUILDFLAG(IS_CHROMEOS_LACROS)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || BUILDFLAG(IS_CHROMEOS_LACROS)
++    defined(OS_CHROMEOS) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -497,7 +497,7 @@ const base::Feature kUseR16Texture{"use-r16-texture",
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -470,7 +470,7 @@ const base::Feature kUseR16Texture{"use-r16-texture",
  const base::Feature kUnifiedAutoplay{"UnifiedAutoplay",
                                       base::FEATURE_ENABLED_BY_DEFAULT};
  
@@ -36,16 +36,7 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  const base::Feature kVaapiVideoDecodeLinux{"VaapiVideoDecoder",
-@@ -505,7 +505,7 @@ const base::Feature kVaapiVideoDecodeLinux{"VaapiVideo
- 
- const base::Feature kVaapiVideoEncodeLinux{"VaapiVideoEncoder",
-                                            base::FEATURE_DISABLED_BY_DEFAULT};
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
- 
- // Enable VA-API hardware decode acceleration for AV1.
- const base::Feature kVaapiAV1Decoder{"VaapiAV1Decoder",
-@@ -944,7 +944,7 @@ bool IsLiveCaptionFeatureEnabled() {
+@@ -926,7 +926,7 @@ bool IsLiveCaptionFeatureEnabled() {
      return false;
  #endif
  

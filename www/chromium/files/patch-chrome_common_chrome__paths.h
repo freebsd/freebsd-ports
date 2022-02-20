@@ -1,14 +1,14 @@
---- chrome/common/chrome_paths.h.orig	2021-12-31 00:57:25 UTC
+--- chrome/common/chrome_paths.h.orig	2022-02-07 13:39:41 UTC
 +++ chrome/common/chrome_paths.h
-@@ -56,7 +56,7 @@ enum {
+@@ -54,7 +54,7 @@ enum {
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                            \
-     ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
+-    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
++    ((defined(OS_LINUX) || defined(OS_BSD) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
--    defined(OS_MAC)
-+    defined(OS_MAC) || defined(OS_BSD)
+     defined(OS_MAC)
    DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
-                                  // on Chrome Mac and Chromium Linux.
-                                  // On Chrome OS, this path is used for OEM
 @@ -64,7 +64,7 @@ enum {
                                   // create it.
  #endif

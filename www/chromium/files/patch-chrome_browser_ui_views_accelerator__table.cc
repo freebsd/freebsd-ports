@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2021-12-14 11:44:59 UTC
+--- chrome/browser/ui/views/accelerator_table.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/ui/views/accelerator_table.cc
 @@ -62,7 +62,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_NUMPAD9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
@@ -18,16 +18,7 @@
      {ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1},
-@@ -112,7 +112,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
-     {ui::VKEY_8, ui::EF_ALT_DOWN, IDC_SELECT_TAB_7},
-     {ui::VKEY_NUMPAD8, ui::EF_ALT_DOWN, IDC_SELECT_TAB_7},
-     {ui::VKEY_BROWSER_FAVORITES, ui::EF_NONE, IDC_SHOW_BOOKMARK_BAR},
--#endif  // OS_LINUX && !OS_CHROMEOS
-+#endif  // (OS_LINUX || OS_BSD) && !OS_CHROMEOS
-     {ui::VKEY_B, ui::EF_SHIFT_DOWN | ui::EF_PLATFORM_ACCELERATOR,
-      IDC_SHOW_BOOKMARK_BAR},
-     {ui::VKEY_OEM_MINUS, ui::EF_PLATFORM_ACCELERATOR, IDC_ZOOM_MINUS},
-@@ -139,14 +139,14 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -139,7 +139,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
       IDC_SHOW_AVATAR_MENU},
  
  // Platform-specific key maps.
@@ -36,11 +27,3 @@
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-     {ui::VKEY_BROWSER_REFRESH, ui::EF_NONE, IDC_RELOAD},
-     {ui::VKEY_BROWSER_REFRESH, ui::EF_CONTROL_DOWN, IDC_RELOAD_BYPASSING_CACHE},
-     {ui::VKEY_BROWSER_REFRESH, ui::EF_SHIFT_DOWN, IDC_RELOAD_BYPASSING_CACHE},
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-     // Chrome OS keyboard does not have delete key, so assign it to backspace.

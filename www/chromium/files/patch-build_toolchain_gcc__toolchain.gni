@@ -1,10 +1,11 @@
---- build/toolchain/gcc_toolchain.gni.orig	2022-01-20 10:35:46 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2022-02-07 13:39:41 UTC
 +++ build/toolchain/gcc_toolchain.gni
-@@ -49,6 +49,11 @@ if (enable_resource_allowlist_generation) {
+@@ -49,6 +49,12 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
 +declare_args() {
++  extra_cppflags = ""
 +  extra_cxxflags = ""
 +  extra_ldflags = ""
 +}
@@ -12,34 +13,27 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -731,13 +736,23 @@ template("gcc_toolchain") {
+@@ -737,13 +743,17 @@ template("gcc_toolchain") {
  # use_gold too.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
 -    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 -    cc = "${prefix}/clang"
 -    cxx = "${prefix}/clang++"
--    ld = cxx
++    if (is_freebsd) {
++      prefix = "/usr/local/bin"
++    } else {
++      prefix = "/usr/bin"
++    }
++    cc = "cc"
++    cxx = "c++"
+     ld = cxx
 -    readelf = "${prefix}/llvm-readelf"
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${prefix}/llvm-nm"
-+    if (is_bsd) {
-+      prefix = "/usr/local/bin"
-+      cc = "cc"
-+      cxx = "c++"
-+      ld = cxx
-+      readelf = "readelf"
-+      ar = "${prefix}/ar"
-+      nm = "${prefix}/nm"
-+    } else {
-+      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
-+      cc = "${prefix}/clang"
-+      cxx = "${prefix}/clang++"
-+      ld = cxx
-+      readelf = "${prefix}/llvm-readelf"
-+      ar = "${prefix}/llvm-ar"
-+      nm = "${prefix}/llvm-nm"
-+    }
++    readelf = "${prefix}/readelf"
++    ar = "${prefix}/ar"
++    nm = "${prefix}/nm"
  
      forward_variables_from(invoker,
                             [

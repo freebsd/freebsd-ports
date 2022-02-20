@@ -1,20 +1,20 @@
---- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig	2021-12-14 11:44:58 UTC
+--- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/enterprise/signals/device_info_fetcher.cc
-@@ -12,6 +12,8 @@
+@@ -10,7 +10,7 @@
+ #include "chrome/browser/enterprise/signals/device_info_fetcher_mac.h"
+ #elif defined(OS_WIN)
  #include "chrome/browser/enterprise/signals/device_info_fetcher_win.h"
- #elif defined(OS_LINUX) || defined(OS_CHROMEOS)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
-+#elif defined(OS_FREEBSD)
-+#include "chrome/browser/enterprise/signals/device_info_fetcher_freebsd.h"
  #endif
  
- namespace enterprise_signals {
-@@ -71,6 +73,8 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
+@@ -70,7 +70,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
+   return std::make_unique<DeviceInfoFetcherMac>();
+ #elif defined(OS_WIN)
    return std::make_unique<DeviceInfoFetcherWin>();
- #elif defined(OS_LINUX) || defined(OS_CHROMEOS)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return std::make_unique<DeviceInfoFetcherLinux>();
-+#elif defined(OS_FREEBSD)
-+  return std::make_unique<DeviceInfoFetcherFreeBSD>();
  #else
    return std::make_unique<StubDeviceFetcher>();
- #endif

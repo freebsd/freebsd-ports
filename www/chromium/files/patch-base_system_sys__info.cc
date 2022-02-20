@@ -1,6 +1,6 @@
---- base/system/sys_info.cc.orig	2021-12-14 11:44:55 UTC
+--- base/system/sys_info.cc.orig	2022-02-07 13:39:41 UTC
 +++ base/system/sys_info.cc
-@@ -92,7 +92,7 @@ void SysInfo::GetHardwareInfo(base::OnceCallback<void(
+@@ -100,7 +100,7 @@ void SysInfo::GetHardwareInfo(base::OnceCallback<void(
  #if defined(OS_WIN) || defined(OS_ANDROID) || defined(OS_APPLE)
    base::ThreadPool::PostTaskAndReplyWithResult(
        FROM_HERE, {}, base::BindOnce(&GetHardwareInfoSync), std::move(callback));

@@ -1,4 +1,4 @@
---- ui/gl/gl_bindings_autogen_glx.cc.orig	2021-04-14 18:41:39 UTC
+--- ui/gl/gl_bindings_autogen_glx.cc.orig	2022-02-07 13:39:41 UTC
 +++ ui/gl/gl_bindings_autogen_glx.cc
 @@ -115,6 +115,8 @@ void DriverGLX::InitializeExtensionBindings() {
  
@@ -9,8 +9,8 @@
    ext.b_GLX_EXT_swap_control =
        gfx::HasExtension(extensions, "GLX_EXT_swap_control");
    ext.b_GLX_EXT_texture_from_pixmap =
-@@ -145,6 +147,11 @@ void DriverGLX::InitializeExtensionBindings() {
-             GetGLProcAddress("glXCreateContextAttribsARB"));
+@@ -156,6 +158,11 @@ void DriverGLX::InitializeExtensionBindings() {
+         GetGLProcAddress("glXGetMscRateOML"));
    }
  
 +  if (ext.b_GLX_ARB_get_proc_address) {
@@ -18,9 +18,9 @@
 +        GetGLProcAddress("glXGetProcAddressARB"));
 +  }
 +
-   if (ext.b_GLX_SGIX_fbconfig) {
-     fn.glXGetFBConfigFromVisualSGIXFn =
-         reinterpret_cast<glXGetFBConfigFromVisualSGIXProc>(
+   if (ext.b_GLX_OML_sync_control) {
+     fn.glXGetSyncValuesOMLFn = reinterpret_cast<glXGetSyncValuesOMLProc>(
+         GetGLProcAddress("glXGetSyncValuesOML"));
 @@ -346,6 +353,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
    return driver_->fn.glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
@@ -37,7 +37,7 @@
  }
  
 +__GLXextFuncPtr TraceGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
-+  TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXGetProcAddressARB")
++  TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLXAPI::glXGetProcAddressARB")
 +  return glx_api_->glXGetProcAddressARBFn(procName);
 +}
 +

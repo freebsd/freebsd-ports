@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2021-12-14 11:45:09 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2022-02-07 13:39:41 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
@@ -10,7 +10,7 @@
  #include <unistd.h>
  
  #include <map>
-@@ -507,6 +509,7 @@ bool SettingGetterImplGSettings::CheckVersion(
+@@ -506,6 +508,7 @@ bool SettingGetterImplGSettings::CheckVersion(
  }
  #endif  // defined(USE_GIO)
  
@@ -18,7 +18,7 @@
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
  int StringToIntOrDefault(base::StringPiece value, int default_value) {
-@@ -1008,6 +1011,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+@@ -1007,6 +1010,7 @@ class SettingGetterImplKDE : public ProxyConfigService
    // events on.
    scoped_refptr<base::SequencedTaskRunner> file_task_runner_;
  };
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -1223,9 +1227,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1222,9 +1226,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

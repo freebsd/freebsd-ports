@@ -1,4 +1,4 @@
---- ipc/ipc_channel_common.cc.orig	2021-04-14 18:41:05 UTC
+--- ipc/ipc_channel_common.cc.orig	2022-02-07 13:39:41 UTC
 +++ ipc/ipc_channel_common.cc
 @@ -10,7 +10,7 @@
  
@@ -9,12 +9,3 @@
  
  namespace {
  int g_global_pid = 0;
-@@ -26,7 +26,7 @@ int Channel::GetGlobalPid() {
-   return g_global_pid;
- }
- 
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- // static
- std::unique_ptr<Channel> Channel::CreateClient(

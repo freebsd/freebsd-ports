@@ -1,32 +1,29 @@
---- third_party/angle/BUILD.gn.orig	2021-12-31 01:00:47 UTC
+--- third_party/angle/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ third_party/angle/BUILD.gn
-@@ -199,7 +199,6 @@ config("extra_warnings") {
+@@ -206,7 +206,6 @@ config("extra_warnings") {
        "-Wtautological-type-limit-compare",
        "-Wundefined-reinterpret-cast",
        "-Wunneeded-internal-declaration",
 -      "-Wunused-but-set-variable",
+       "-Wsuggest-destructor-override",
+       "-Wsuggest-override",
  
-       # The below warnings are used by WebKit. We enable them to make rolling
-       # ANGLE in WebKit easier.
-@@ -209,11 +208,12 @@ config("extra_warnings") {
-       "-Wunreachable-code-aggressive",
-       "-Wshorten-64-to-32",
-     ]
--    if (!use_xcode_clang) {
-+    if (!use_xcode_clang && !is_bsd) {
-       # Mac catalyst uses a clang version that doesn't have these.
-       cflags += [
-         "-Wsuggest-destructor-override",
-         "-Wsuggest-override",
-+        "-Wunused-but-set-variable",
-       ]
-     }
+@@ -384,7 +383,7 @@ angle_static_library("angle_common") {
+     all_dependent_configs = [ ":angle_disable_pool_alloc" ]
    }
-@@ -490,6 +490,7 @@ angle_static_library("angle_gpu_info_util") {
-         "X11",
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     libs = [ "dl" ]
+   }
+ 
+@@ -498,6 +497,9 @@ angle_static_library("angle_gpu_info_util") {
          "Xi",
          "Xext",
-+        "GL",
        ]
++      if (is_bsd) {
++        libs += [ "GL" ]
++      }
      }
    }
+ 

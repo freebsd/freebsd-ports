@@ -1,39 +1,50 @@
---- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2021-09-24 04:25:55 UTC
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-02-07 13:39:41 UTC
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
 @@ -17,6 +17,10 @@
  #include <pthread.h>
  #endif
  
-+#if defined(OS_FREEBSD)
++#if defined(OS_BSD)
 +#include <pthread_np.h>
 +#endif
 +
  #if defined(LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -54,7 +58,15 @@ void* GetStackTop() {
+@@ -48,6 +52,36 @@ void* GetStackTop() {
  
  void* GetStackTop() {
-   pthread_attr_t attr;
-+#if defined(OS_FREEBSD)
-+  int error = pthread_attr_init(&attr);
-+  if (error) {
+   return pthread_get_stackaddr_np(pthread_self());
++}
++
++#elif defined(OS_OPENBSD)
++
++void* GetStackTop() {
++  stack_t ss;
++  if (pthread_stackseg_np(pthread_self(), &ss) != 0)
 +    return nullptr;
-+  }
-+  error = pthread_attr_get_np(pthread_self(), &attr);
-+#else
-   int error = pthread_getattr_np(pthread_self(), &attr);
-+#endif
-   if (!error) {
-     void* base;
-     size_t size;
-@@ -71,6 +83,9 @@ void* GetStackTop() {
-   // See https://code.google.com/p/nativeclient/issues/detail?id=3431.
-   return __libc_stack_end;
- #else
-+#if defined(OS_FREEBSD)
++  return reinterpret_cast<uint8_t*>(ss.ss_sp);
++}
++
++#elif defined(OS_FREEBSD)
++
++void* GetStackTop() {
++   pthread_attr_t attr;
++   int error = pthread_attr_init(&attr);
++   if (error) {
++     return nullptr;
++   }
++   error = pthread_attr_get_np(pthread_self(), &attr);
++   if (!error) {
++     void* base;
++     size_t size;
++     error = pthread_attr_getstack(&attr, &base, &size);
++     PA_CHECK(!error);
++     pthread_attr_destroy(&attr);
++     return reinterpret_cast<uint8_t*>(base) + size;
++   }
 +  pthread_attr_destroy(&attr);
-+#endif
-   return nullptr;
- #endif  // defined(LIBC_GLIBC)
++  return nullptr;
  }
+ 
+ #elif defined(OS_POSIX) || defined(OS_FUCHSIA)

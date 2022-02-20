@@ -1,10 +1,10 @@
---- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2021-07-19 18:45:44 UTC
+--- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2022-02-07 13:39:41 UTC
 +++ ui/gfx/linux/client_native_pixmap_dmabuf.cc
 @@ -5,7 +5,9 @@
  #include "ui/gfx/linux/client_native_pixmap_dmabuf.h"
  
  #include <fcntl.h>
-+#if !defined(__FreeBSD__)
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
  #include <linux/version.h>
 +#endif
  #include <stddef.h>
@@ -19,7 +19,7 @@
 -#else
 -#include <linux/types.h>
 -
-+#if defined(__FreeBSD__)
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
  struct dma_buf_sync {
    __u64 flags;
  };

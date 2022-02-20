@@ -1,10 +1,11 @@
---- tools/variations/fieldtrial_to_struct.py.orig	2021-04-14 18:41:37 UTC
+--- tools/variations/fieldtrial_to_struct.py.orig	2022-02-07 13:39:41 UTC
 +++ tools/variations/fieldtrial_to_struct.py
-@@ -36,6 +36,7 @@ _platforms = [
-     'android_webview',
-     'chromeos',
-     'chromeos_lacros',
-+    'freebsd',
-     'fuchsia',
-     'ios',
+@@ -41,6 +41,8 @@ _platforms = [
      'linux',
+     'mac',
+     'windows',
++    'openbsd',
++    'freebsd',
+ ]
+ 
+ _form_factors = [

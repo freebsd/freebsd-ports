@@ -1,4 +1,4 @@
---- chrome/common/pref_names.h.orig	2021-12-31 00:57:26 UTC
+--- chrome/common/pref_names.h.orig	2022-02-07 13:39:41 UTC
 +++ chrome/common/pref_names.h
 @@ -371,7 +371,7 @@ extern const char kUseAshProxy[];
  #endif  //  BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -18,37 +18,34 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -582,7 +582,7 @@ extern const char kDownloadExtensionsToOpen[];
- extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -583,7 +583,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
-     defined(OS_MAC)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
-@@ -691,7 +691,7 @@ extern const char kWebAppsPreferences[];
+ #if defined(OS_ANDROID)
+@@ -689,7 +689,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+ extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
- #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
- 
-@@ -831,9 +831,9 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -830,7 +830,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
 -#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
--#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
- #if defined(OS_POSIX) || defined(OS_FUCHSIA)
- extern const char kNtlmV2Enabled[];
-@@ -1079,7 +1079,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1074,7 +1074,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
  extern const char kSandboxExternalProtocolBlocked[];
  

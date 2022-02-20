@@ -1,6 +1,6 @@
---- net/proxy_resolution/configured_proxy_resolution_service.cc.orig	2021-12-14 11:45:09 UTC
+--- net/proxy_resolution/configured_proxy_resolution_service.cc.orig	2022-02-07 13:39:41 UTC
 +++ net/proxy_resolution/configured_proxy_resolution_service.cc
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  #elif defined(OS_MAC)
  #include "net/proxy_resolution/proxy_config_service_mac.h"
  #include "net/proxy_resolution/proxy_resolver_mac.h"
@@ -9,7 +9,7 @@
  #include "net/proxy_resolution/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy_resolution/proxy_config_service_android.h"
-@@ -63,7 +63,7 @@ namespace net {
+@@ -64,7 +64,7 @@ namespace net {
  
  namespace {
  
@@ -18,7 +18,7 @@
  constexpr net::NetworkTrafficAnnotationTag kSystemProxyConfigTrafficAnnotation =
      net::DefineNetworkTrafficAnnotation("proxy_config_system", R"(
        semantics {
-@@ -1421,7 +1421,7 @@ ConfiguredProxyResolutionService::CreateSystemProxyCon
+@@ -1422,7 +1422,7 @@ ConfiguredProxyResolutionService::CreateSystemProxyCon
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return std::make_unique<UnsetProxyConfigService>();

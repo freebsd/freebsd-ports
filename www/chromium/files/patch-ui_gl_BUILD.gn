@@ -1,11 +1,36 @@
---- ui/gl/BUILD.gn.orig	2021-09-14 01:52:23 UTC
+--- ui/gl/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ ui/gl/BUILD.gn
-@@ -229,7 +229,7 @@ component("gl") {
-       ]
-     }
+@@ -162,8 +162,6 @@ component("gl") {
+     defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
+   }
  
--    if (is_posix && !is_fuchsia && !is_mac) {
-+    if (is_posix && !is_fuchsia && !is_mac && !is_bsd) {
-       # Windows has USE_EGL but doesn't support base::FileDescriptor.
-       # libsync isn't supported or needed on MacOSX.
-       # Fuchsia is excluded due to a libsync dependency and because it's
+-  include_dirs = [ "//third_party/mesa_headers" ]
+-
+   all_dependent_configs = [ ":gl_config" ]
+ 
+   public_configs = [ "//third_party/khronos:khronos_headers" ]
+@@ -180,7 +178,6 @@ component("gl") {
+   ]
+   public_deps = [
+     "//base",
+-    "//third_party/mesa_headers",
+     "//ui/events/platform",
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+@@ -409,7 +406,6 @@ component("gl") {
+       data_deps += [
+         "//third_party/angle:libEGL",
+         "//third_party/angle:libGLESv2",
+-        "//third_party/mesa_headers",
+       ]
+       if (enable_swiftshader) {
+         data_deps += [ "//third_party/swiftshader" ]
+@@ -636,8 +632,6 @@ test("gl_unittests") {
+     "//ui/platform_window",
+     "//ui/platform_window:platform_impls",
+   ]
+-
+-  data_deps = [ "//third_party/mesa_headers" ]
+ 
+   # TODO(https://crbug.com/789065): this must be moved to Ozone.
+   if (ozone_platform_x11) {

@@ -1,4 +1,4 @@
---- ui/gl/sync_control_vsync_provider.cc.orig	2021-12-14 11:45:40 UTC
+--- ui/gl/sync_control_vsync_provider.cc.orig	2022-02-07 13:39:41 UTC
 +++ ui/gl/sync_control_vsync_provider.cc
 @@ -11,7 +11,7 @@
  #include "base/trace_event/trace_event.h"
@@ -27,12 +27,7 @@
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
-@@ -155,11 +155,11 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
-   return true;
- #else
-   return false;
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+@@ -159,7 +159,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
  }
  
  bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {

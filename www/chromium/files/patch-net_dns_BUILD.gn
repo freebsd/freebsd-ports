@@ -1,6 +1,6 @@
---- net/dns/BUILD.gn.orig	2021-12-14 11:45:09 UTC
+--- net/dns/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ net/dns/BUILD.gn
-@@ -111,7 +111,7 @@ source_set("dns") {
+@@ -112,7 +112,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]

@@ -1,4 +1,4 @@
---- base/i18n/icu_util.cc.orig	2021-05-12 22:05:40 UTC
+--- base/i18n/icu_util.cc.orig	2022-02-07 13:39:41 UTC
 +++ base/i18n/icu_util.cc
 @@ -49,7 +49,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -9,12 +9,13 @@
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !BUILDFLAG(IS_CHROMECAST))
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
-@@ -343,7 +343,7 @@ void InitializeIcuTimeZone() {
+@@ -343,7 +343,8 @@ void InitializeIcuTimeZone() {
        FuchsiaIntlProfileWatcher::GetPrimaryTimeZoneIdForIcuInitialization();
    icu::TimeZone::adoptDefault(
        icu::TimeZone::createTimeZone(icu::UnicodeString::fromUTF8(zone_id)));
 -#elif (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !BUILDFLAG(IS_CHROMECAST)
-+#elif (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMECAST)
++#elif (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && \
++       !BUILDFLAG(IS_CHROMECAST)
    // To respond to the time zone change properly, the default time zone
    // cache in ICU has to be populated on starting up.
    // See TimeZoneMonitorLinux::NotifyClientsFromImpl().

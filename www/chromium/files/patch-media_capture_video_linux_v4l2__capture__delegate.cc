@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2021-05-12 22:05:55 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2022-02-07 13:39:41 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -4,8 +4,10 @@
  
@@ -24,3 +24,21 @@
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
+@@ -660,7 +662,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+ 
+ V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
+ 
+-bool V4L2CaptureDelegate::RunIoctl(int request, void* argp) {
++bool V4L2CaptureDelegate::RunIoctl(unsigned int request, void* argp) {
+   int num_retries = 0;
+   for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
+        ++num_retries) {
+@@ -670,7 +672,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+   return num_retries != kMaxIOCtrlRetries;
+ }
+ 
+-int V4L2CaptureDelegate::DoIoctl(int request, void* argp) {
++int V4L2CaptureDelegate::DoIoctl(unsigned int request, void* argp) {
+   return HANDLE_EINTR(v4l2_->ioctl(device_fd_.get(), request, argp));
+ }
+ 

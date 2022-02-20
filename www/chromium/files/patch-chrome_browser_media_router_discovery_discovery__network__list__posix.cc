@@ -1,10 +1,17 @@
---- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/media/router/discovery/discovery_network_list_posix.cc
-@@ -10,6 +10,7 @@
- #include <netinet/in.h>
- #include <sys/socket.h>
- #include <sys/types.h>
+@@ -5,11 +5,12 @@
+ #include "chrome/browser/media/router/discovery/discovery_network_list.h"
+ 
+ #include <ifaddrs.h>
++#include <sys/socket.h>
++#include <sys/types.h>
 +#include <sys/time.h>
+ #include <net/if.h>
+ #include <net/if_arp.h>
+ #include <netinet/in.h>
+-#include <sys/socket.h>
+-#include <sys/types.h>
  
  #include <algorithm>
  
@@ -17,7 +24,7 @@
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
-@@ -27,12 +28,12 @@
+@@ -27,7 +28,7 @@
  namespace media_router {
  namespace {
  
@@ -26,9 +33,3 @@
  using sll = struct sockaddr_ll;
  #define SOCKET_ARP_TYPE(s) ((s)->sll_hatype)
  #define SOCKET_ADDRESS_LEN(s) ((s)->sll_halen)
- #define SOCKET_ADDRESS(s) ((s)->sll_addr)
--#else  // defined(OS_MAC)
-+#else  // defined(OS_MAC) || defined(OS_BSD)
- #define AF_PACKET AF_LINK
- using sll = struct sockaddr_dl;
- #define SOCKET_ARP_TYPE(s) ((s)->sdl_type)

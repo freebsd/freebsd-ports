@@ -1,4 +1,4 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2021-05-12 22:05:58 UTC
+--- services/network/network_sandbox_hook_linux.cc.orig	2022-02-07 13:39:41 UTC
 +++ services/network/network_sandbox_hook_linux.cc
 @@ -32,6 +32,7 @@ std::vector<BrokerFilePermission> GetNetworkFilePermis
  }
@@ -12,7 +12,7 @@
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();
-+#endif // defined(OS_BSD)
++#endif
    return true;
  }
  

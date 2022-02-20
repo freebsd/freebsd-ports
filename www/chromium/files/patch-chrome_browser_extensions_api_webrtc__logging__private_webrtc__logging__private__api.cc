@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2021-12-31 00:57:22 UTC
+--- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
 @@ -30,7 +30,7 @@
  #include "extensions/browser/process_manager.h"
@@ -27,15 +27,3 @@
    // Unlike other WebrtcLoggingPrivate functions that take a RequestInfo object,
    // this function shouldn't be called by a component extension on behalf of
    // some web code. It returns a DirectoryEntry for use directly in the calling
-@@ -603,9 +603,9 @@ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
-           &WebrtcLoggingPrivateGetLogsDirectoryFunction::FireErrorCallback,
-           this));
-   return RespondLater();
--#else   // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#else   // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   return RespondNow(Error("Not supported on the current OS"));
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- }
- 
- void WebrtcLoggingPrivateGetLogsDirectoryFunction::FireCallback(

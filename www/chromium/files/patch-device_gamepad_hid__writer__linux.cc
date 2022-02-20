@@ -1,11 +1,11 @@
---- device/gamepad/hid_writer_linux.cc.orig	2021-04-14 18:41:03 UTC
+--- device/gamepad/hid_writer_linux.cc.orig	2022-02-07 13:39:41 UTC
 +++ device/gamepad/hid_writer_linux.cc
-@@ -4,6 +4,8 @@
- 
- #include "device/gamepad/hid_writer_linux.h"
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
  
 +#include <unistd.h>
 +
- #include "base/posix/eintr_wrapper.h"
+ #include "device/gamepad/hid_writer_linux.h"
  
- namespace device {
+ #include "base/posix/eintr_wrapper.h"

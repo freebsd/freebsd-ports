@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2021-12-31 00:57:32 UTC
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2022-02-07 13:39:41 UTC
 +++ content/browser/gpu/gpu_data_manager_impl_private.cc
-@@ -1298,7 +1298,7 @@ void GpuDataManagerImplPrivate::AppendGpuCommandLine(
+@@ -1341,7 +1341,7 @@ void GpuDataManagerImplPrivate::AppendGpuCommandLine(
        break;
      case gpu::GpuMode::SWIFTSHADER: {
        bool legacy_software_gl = true;

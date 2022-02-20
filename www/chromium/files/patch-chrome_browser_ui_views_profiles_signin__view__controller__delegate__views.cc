@@ -1,20 +1,20 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2021-09-24 18:32:11 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
-@@ -83,7 +83,7 @@ SigninViewControllerDelegateViews::CreateReauthConfirm
-                              kReauthDialogHeight, kReauthDialogWidth);
+@@ -82,7 +82,7 @@ SigninViewControllerDelegateViews::CreateReauthConfirm
  }
  
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     BUILDFLAG(IS_CHROMEOS_LACROS)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  // static
  std::unique_ptr<views::WebView>
-@@ -345,7 +345,7 @@ SigninViewControllerDelegate::CreateReauthConfirmation
-       browser, ui::MODAL_TYPE_CHILD, false, true);
+ SigninViewControllerDelegateViews::CreateEnterpriseConfirmationWebView(
+@@ -341,7 +341,7 @@ SigninViewControllerDelegate::CreateReauthConfirmation
  }
  
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     BUILDFLAG(IS_CHROMEOS_LACROS)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  // static
  SigninViewControllerDelegate*
+ SigninViewControllerDelegate::CreateEnterpriseConfirmationDelegate(

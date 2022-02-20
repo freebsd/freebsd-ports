@@ -1,11 +1,11 @@
---- chrome/browser/download/download_commands.h.orig	2021-12-14 11:44:58 UTC
+--- chrome/browser/download/download_commands.h.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/download/download_commands.h
-@@ -53,7 +53,7 @@ class DownloadCommands {
-   bool IsCommandVisible(Command command) const;
+@@ -54,7 +54,7 @@ class DownloadCommands {
    void ExecuteCommand(Command command);
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
-     defined(OS_MAC) || defined(OS_FUCHSIA)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC) || defined(OS_FUCHSIA)
++    defined(OS_MAC) || defined(OS_FUCHSIA) || defined(OS_BSD)
    bool IsDownloadPdf() const;
    bool CanOpenPdfInSystemViewer() const;
+   Browser* GetBrowser() const;

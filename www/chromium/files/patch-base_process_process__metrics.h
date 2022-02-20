@@ -1,15 +1,15 @@
---- base/process/process_metrics.h.orig	2021-12-14 11:44:55 UTC
+--- base/process/process_metrics.h.orig	2022-02-07 13:39:41 UTC
 +++ base/process/process_metrics.h
 @@ -37,7 +37,7 @@
- #include "base/win/windows_types.h"
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
  #include <string>
  #include <utility>
-@@ -54,7 +54,7 @@ class Value;
+ #include <vector>
+@@ -53,7 +53,7 @@ class Value;
  // Full declaration is in process_metrics_iocounters.h.
  struct IoCounters;
  
@@ -18,16 +18,7 @@
  // Minor and major page fault counts since the process creation.
  // Both counts are process-wide, and exclude child processes.
  //
-@@ -64,7 +64,7 @@ struct PageFaultCounts {
-   int64_t minor;
-   int64_t major;
- };
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
- 
- // Convert a POSIX timeval to microseconds.
- BASE_EXPORT int64_t TimeValToMicroseconds(const struct timeval& tv);
-@@ -108,7 +108,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -107,7 +107,7 @@ class BASE_EXPORT ProcessMetrics {
    // convenience wrapper for CreateProcessMetrics().
    static std::unique_ptr<ProcessMetrics> CreateCurrentProcessMetrics();
  
@@ -37,24 +28,15 @@
    // attempt to extend this to other platforms.
    BASE_EXPORT size_t GetResidentSetSize() const;
 @@ -134,7 +134,7 @@ class BASE_EXPORT ProcessMetrics {
-   // will result in a time delta of 2 seconds/per 1 wall-clock second.
    TimeDelta GetCumulativeCPUUsage() WARN_UNUSED_RESULT;
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
    // Emits the cumulative CPU usage for all currently active threads since they
    // were started into the output parameter (replacing its current contents).
-@@ -169,7 +169,7 @@ class BASE_EXPORT ProcessMetrics {
-   bool ParseProcTimeInState(const std::string& content,
-                             PlatformThreadId tid,
-                             TimeInStatePerThread& time_in_state_per_thread);
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) ||
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) ||
-         // defined(OS_AIX)
- 
-   // Returns the number of average idle cpu wakeups per second since the last
-@@ -218,14 +218,14 @@ class BASE_EXPORT ProcessMetrics {
+   // Threads that have already terminated will not be reported. Thus, the sum of
+@@ -217,7 +217,7 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_POSIX)
  
@@ -63,105 +45,70 @@
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
  
-   // Minor and major page fault count as reported by /proc/[pid]/stat.
-   // Returns true for success.
-   bool GetPageFaultCounts(PageFaultCounts* counts) const;
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
- 
-   // Returns total memory usage of malloc.
-   size_t GetMallocUsage();
 @@ -237,7 +237,7 @@ class BASE_EXPORT ProcessMetrics {
-   ProcessMetrics(ProcessHandle process, PortProvider* port_provider);
  #endif  // !defined(OS_MAC)
  
--#if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
-+#if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
-@@ -248,10 +248,10 @@ class BASE_EXPORT ProcessMetrics {
-       uint64_t absolute_package_idle_wakeups);
+ #if defined(OS_APPLE)
+@@ -248,7 +248,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
    CPU::CoreType GetCoreType(int core_index);
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) ||
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) ||
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) ||
          // defined(OS_AIX)
- 
- #if defined(OS_WIN)
 @@ -273,7 +273,7 @@ class BASE_EXPORT ProcessMetrics {
-   // Number of bytes transferred to/from disk in bytes.
    uint64_t last_cumulative_disk_usage_ = 0;
  
--#if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
-+#if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
-@@ -315,7 +315,7 @@ BASE_EXPORT size_t GetHandleLimit();
- BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
- #endif  // defined(OS_POSIX)
+   uint64_t last_absolute_idle_wakeups_;
+@@ -316,7 +316,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
  
--#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||      \
-+#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||      \
      defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_AIX) || \
-     defined(OS_FUCHSIA)
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
  // Data about system-wide memory consumption. Values are in KB. Available on
+ // Windows, Mac, Linux, Android and Chrome OS.
+ //
 @@ -351,7 +351,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
-   int avail_phys = 0;
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
+   // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
 @@ -366,7 +366,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
-   int swap_free = 0;
  #endif
  
--#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
-     defined(OS_AIX) || defined(OS_FUCHSIA)
+ #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX) || defined(OS_FUCHSIA)
++    defined(OS_AIX) || defined(OS_FUCHSIA) || defined(OS_BSD)
    int buffers = 0;
    int cached = 0;
-@@ -376,7 +376,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
-   int inactive_file = 0;
-   int dirty = 0;
-   int reclaimable = 0;
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) ||
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) ||
-         // defined(OS_AIX) defined(OS_FUCHSIA)
- 
- #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -399,11 +399,11 @@ struct BASE_EXPORT SystemMemoryInfoKB {
- // Exposed for memory debugging widget.
- BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
- 
--#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
-         // defined(OS_CHROMEOS) defined(OS_ANDROID) || defined(OS_AIX) ||
+   int active_anon = 0;
+@@ -403,7 +403,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
          // defined(OS_FUCHSIA)
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
-     defined(OS_AIX)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
-@@ -479,7 +479,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
- // Returns the amount of time spent in user space since boot across all CPUs.
- BASE_EXPORT TimeDelta GetUserCpuTimeSinceBoot();
- 
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) ||
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) ||
-         // defined(OS_AIX)
- 
- #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -591,7 +591,7 @@ class BASE_EXPORT SystemMetrics {
+ // Exposed for testing.
+@@ -590,7 +590,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

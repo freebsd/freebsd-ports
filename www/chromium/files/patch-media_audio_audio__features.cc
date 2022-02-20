@@ -1,11 +1,11 @@
---- media/audio/audio_features.cc.orig	2021-04-14 18:41:05 UTC
+--- media/audio/audio_features.cc.orig	2022-02-07 13:39:41 UTC
 +++ media/audio/audio_features.cc
-@@ -12,7 +12,7 @@ namespace features {
- // detected. It will be restarted when needed.
+@@ -13,7 +13,7 @@ namespace features {
  const base::Feature kAudioServiceOutOfProcessKillAtHang{
    "AudioServiceOutOfProcessKillAtHang",
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
+       base::FEATURE_DISABLED_BY_DEFAULT

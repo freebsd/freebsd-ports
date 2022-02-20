@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2021-12-31 00:57:25 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -53,7 +53,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
@@ -22,8 +22,8 @@
  }
  
  void OpaqueBrowserFrameView::WindowIconPressed() {
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   // TODO(pbos): Figure out / document why this is Linux only. This needs a
-   // comment.
-   views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Chrome OS doesn't show the window icon, and Windows handles this on its own
+   // due to the hit test being HTSYSMENU.
+   menu_runner_ = std::make_unique<views::MenuRunner>(

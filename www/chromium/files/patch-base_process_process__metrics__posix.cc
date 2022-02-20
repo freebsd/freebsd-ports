@@ -1,10 +1,10 @@
---- base/process/process_metrics_posix.cc.orig	2021-07-19 18:45:05 UTC
+--- base/process/process_metrics_posix.cc.orig	2022-02-07 13:39:41 UTC
 +++ base/process/process_metrics_posix.cc
 @@ -20,6 +20,8 @@
  
  #if defined(OS_APPLE)
  #include <malloc/malloc.h>
-+#elif defined(OS_FREEBSD)
++#elif defined(OS_OPENBSD)
 +#include <stdlib.h>
  #else
  #include <malloc.h>
