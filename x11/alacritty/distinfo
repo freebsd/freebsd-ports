@@ -1,4 +1,4 @@
-TIMESTAMP = 1642934000
+TIMESTAMP = 1645396658
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/android_glue-0.2.3.crate) = 000444226fcff248f2bc4c7625be32c63caccfecc2723a2b9f78a7487a49c407
@@ -401,5 +401,5 @@ SHA256 (rust/crates/xml-rs-0.8.4.crate) = d2d7d3948613f75c98fd9328cfdcc45acc4d36
 SIZE (rust/crates/xml-rs-0.8.4.crate) = 52690
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (alacritty-alacritty-v0.10.0_GH0.tar.gz) = 5dee9c94f944b742b0189dd87c43c87175ffadde8049abb4668ca5a3e68fd65a
-SIZE (alacritty-alacritty-v0.10.0_GH0.tar.gz) = 1437372
+SHA256 (alacritty-alacritty-v0.10.1_GH0.tar.gz) = e48d4b10762c2707bb17fd8f89bd98f0dcccc450d223cade706fdd9cfaefb308
+SIZE (alacritty-alacritty-v0.10.1_GH0.tar.gz) = 1439045
