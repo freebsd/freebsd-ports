@@ -19,6 +19,7 @@ bin/mathics-generate-json-table
 %%PYTHON_SITELIBDIR%%/mathics_scanner/characters.py
 %%PYTHON_SITELIBDIR%%/mathics_scanner/data/characters.json
 %%PYTHON_SITELIBDIR%%/mathics_scanner/data/element.csv
+%%PYTHON_SITELIBDIR%%/mathics_scanner/data/named-characters.yml
 %%PYTHON_SITELIBDIR%%/mathics_scanner/errors.py
 %%PYTHON_SITELIBDIR%%/mathics_scanner/feed.py
 %%PYTHON_SITELIBDIR%%/mathics_scanner/generate/__pycache__/build_tables.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
