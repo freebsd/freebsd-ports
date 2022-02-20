@@ -258,6 +258,7 @@
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
+    SUBDIR += fishfight
     SUBDIR += fishsupper
     SUBDIR += five-or-more
     SUBDIR += fkiss

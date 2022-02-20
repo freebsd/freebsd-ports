@@ -1,0 +1,154 @@
+https://github.com/not-fl3/miniquad/pull/270
+
+error[E0428]: the name `GL_TIME_ELAPSED` is defined multiple times
+    --> cargo-crates/sapp-dummy-0.1.5/src/gl.rs:1455:1
+     |
+922  | pub const GL_TIME_ELAPSED: u32 = 35007;
+     | --------------------------------------- previous definition of the value `GL_TIME_ELAPSED` here
+...
+1455 | pub const GL_TIME_ELAPSED: u32 = 35007;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ `GL_TIME_ELAPSED` redefined here
+     |
+     = note: `GL_TIME_ELAPSED` must be defined only once in the value namespace of this module
+
+--- cargo-crates/miniquad-0.3.0-alpha.42/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/miniquad-0.3.0-alpha.42/Cargo.toml
+@@ -32,7 +32,7 @@ version = "0.1"
+ default = ["sapp-linux"]
+ kms = ["sapp-kms"]
+ log-impl = []
+-[target."cfg(not(any(target_os=\"linux\", target_os=\"macos\", target_os=\"android\", target_os=\"ios\", target_arch=\"wasm32\", windows)))".dependencies.sapp-dummy]
++[target."cfg(not(any(unix, target_arch=\"wasm32\", windows)))".dependencies.sapp-dummy]
+ version = "=0.1.5"
+ [target."cfg(target_arch = \"wasm32\")".dependencies.sapp-wasm]
+ version = "=0.1.26"
+@@ -40,11 +40,11 @@ version = "=0.1.26"
+ version = "=0.1.14"
+ [target."cfg(target_os = \"ios\")".dependencies.sapp-ios]
+ version = "=0.1.2"
+-[target."cfg(target_os = \"linux\")".dependencies.sapp-kms]
++[target."cfg(all(unix, not(any(target_os = \"macos\", target_os = \"ios\", target_os = \"android\"))))".dependencies.sapp-kms]
+ version = "=0.1.1"
+ optional = true
+ 
+-[target."cfg(target_os = \"linux\")".dependencies.sapp-linux]
++[target."cfg(all(unix, not(any(target_os = \"macos\", target_os = \"ios\", target_os = \"android\"))))".dependencies.sapp-linux]
+ version = "=0.1.13"
+ optional = true
+ [target."cfg(target_os = \"macos\")".dependencies.sapp-darwin]
+diff --git cargo-crates/miniquad-0.3.0-alpha.42/src/clipboard.rs cargo-crates/miniquad-0.3.0-alpha.42/src/clipboard.rs
+index 3251b24df2b6..a8561a89aeb9 100644
+--- cargo-crates/miniquad-0.3.0-alpha.42/src/clipboard.rs
++++ cargo-crates/miniquad-0.3.0-alpha.42/src/clipboard.rs
+@@ -2,7 +2,7 @@
+ 
+ use crate::Context;
+ 
+-#[cfg(all(target_os = "linux", feature = "sapp-linux"))]
++#[cfg(all(unix, not(any(target_os = "macos", target_os = "ios", target_os = "android")), feature = "sapp-linux"))]
+ mod linux_x11 {
+     use crate::Context;
+ 
+@@ -53,7 +53,7 @@ mod windows {
+ }
+ 
+ #[cfg(not(any(
+-    all(target_os = "linux", feature = "sapp-linux"),
++    all(all(unix, not(target_os = "macos"), not(target_os = "ios"), not(target_os = "android")), feature = "sapp-linux"),
+     target_os = "windows",
+     target_arch = "wasm32"
+ )))]
+@@ -68,12 +68,12 @@ mod dummy {
+ }
+ 
+ #[cfg(not(any(
+-    all(target_os = "linux", feature = "sapp-linux"),
++    all(all(unix, not(target_os = "macos"), not(target_os = "ios"), not(target_os = "android")), feature = "sapp-linux"),
+     target_os = "windows",
+     target_arch = "wasm32"
+ )))]
+ use dummy as clipboard;
+-#[cfg(all(target_os = "linux", feature = "sapp-linux"))]
++#[cfg(all(all(unix, not(target_os = "macos"), not(target_os = "ios"), not(target_os = "android")), feature = "sapp-linux"))]
+ use linux_x11 as clipboard;
+ #[cfg(target_arch = "wasm32")]
+ use wasm as clipboard;
+diff --git cargo-crates/miniquad-0.3.0-alpha.42/src/lib.rs cargo-crates/miniquad-0.3.0-alpha.42/src/lib.rs
+index 4718901dd2d8..f69cb15e13c1 100644
+--- cargo-crates/miniquad-0.3.0-alpha.42/src/lib.rs
++++ cargo-crates/miniquad-0.3.0-alpha.42/src/lib.rs
+@@ -7,19 +7,16 @@ pub use sapp_android;
+ #[cfg(target_os = "macos")]
+ extern crate sapp_darwin as sapp;
+ #[cfg(not(any(
+-    target_os = "linux",
+-    target_os = "macos",
+-    target_os = "ios",
+-    target_os = "android",
++    unix,
+     target_arch = "wasm32",
+     windows
+ )))]
+ extern crate sapp_dummy as sapp;
+ #[cfg(target_os = "ios")]
+ extern crate sapp_ios as sapp;
+-#[cfg(all(target_os = "linux", feature = "kms"))]
++#[cfg(all(unix, not(any(target_os = "macos", target_os = "ios", target_os = "android")), feature = "kms"))]
+ extern crate sapp_kms as sapp;
+-#[cfg(all(target_os = "linux", not(feature = "kms")))]
++#[cfg(all(unix, not(any(target_os = "macos", target_os = "ios", target_os = "android")), not(feature = "kms")))]
+ extern crate sapp_linux as sapp;
+ 
+ #[cfg(target_arch = "wasm32")]
+@@ -140,7 +137,7 @@ impl Context {
+     pub fn set_mouse_cursor(&self, _cursor_icon: CursorIcon) {
+         #[cfg(any(
+             target_arch = "wasm32",
+-            all(target_os = "linux", not(feature = "kms")),
++            all(unix, not(any(target_os = "macos", target_os = "ios", target_os = "android")), not(feature = "kms")),
+             windows,
+         ))]
+         unsafe {
+@@ -164,12 +161,9 @@ impl Context {
+     /// Set the application's window size.
+     #[allow(unused_variables)]
+     pub fn set_window_size(&self, new_width: u32, new_height: u32) {
+-        #[cfg(not(any(
+-            target_os = "linux",
+-            target_os = "macos",
+-            target_os = "ios",
+-            target_os = "android",
+-        )))]
++        #[cfg(not(
++            unix,
++        ))]
+         unsafe {
+             if sapp::sapp_is_fullscreen() {
+                 #[cfg(feature = "log-impl")]
+@@ -183,10 +177,7 @@ impl Context {
+     #[allow(unused_variables)]
+     pub fn set_fullscreen(&self, fullscreen: bool) {
+         #[cfg(not(any(
+-            target_os = "linux",
+-            target_os = "macos",
+-            target_os = "ios",
+-            target_os = "android",
++            unix,
+         )))]
+         unsafe {
+             sapp::sapp_set_fullscreen(fullscreen);
+--- cargo-crates/sapp-linux-0.1.13/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/sapp-linux-0.1.13/build.rs
+@@ -1,12 +1,6 @@
+ use std::env;
+ 
+ fn main() {
+-    let target = env::var("TARGET").unwrap_or_else(|e| panic!("{}", e));
+-
+-    if target.contains("linux") == false {
+-        panic!("sapp_linux support only linux target");
+-    }
+-
+     println!("cargo:rustc-link-lib=dylib=GL");
+     println!("cargo:rustc-link-lib=dylib=X11");
+     println!("cargo:rustc-link-lib=dylib=Xi");

@@ -1,0 +1,16 @@
+Fish Fight is a tactical 2D shooter, played by up to 4 players online
+or on a shared screen. Aim either left or right; the rest is up to
+clever movement and positioning in this fish-on-fish brawler! Made
+with Rust-lang and Macroquad.
+
+### Key Features (WIP)
+
+- 2 to 4 players in either Local Multiplayer or Online Play
+- Easy to pick up, emphasizing strategy over twitch reaction
+- Customize characters with hats, saved to your cross-platform profile
+- Create & explore user-made weapons, levels, audio and other scripted
+  extensions
+- Smart level creation tools
+- Tournaments & matchmaking built in
+
+WWW: https://fishfight.org/

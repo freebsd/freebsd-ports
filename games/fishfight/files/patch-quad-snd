@@ -1,0 +1,39 @@
+https://github.com/not-fl3/quad-snd/pull/36
+
+error[E0432]: unresolved import `snd`
+  --> cargo-crates/quad-snd-0.2.3/src/lib.rs:32:9
+   |
+32 | pub use snd::{AudioContext, Sound};
+   |         ^^^ use of undeclared crate or module `snd`
+   |
+help: there is a crate or module with a similar name
+   |
+32 | pub use std::{AudioContext, Sound};
+   |         ~~~
+
+--- cargo-crates/quad-snd-0.2.3/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/quad-snd-0.2.3/Cargo.toml
+@@ -22,10 +22,10 @@ features = ["wav", "ogg_vorbis"]
+ default-features = false
+ [target."cfg(target_os = \"android\")".dependencies.audir-sles]
+ version = "0.1.0"
+-[target."cfg(target_os = \"linux\")".dependencies.libc]
++[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.libc]
+ version = "0.2"
+ 
+-[target."cfg(target_os = \"linux\")".dependencies.quad-alsa-sys]
++[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.quad-alsa-sys]
+ version = "0.3.2"
+ [target."cfg(target_os = \"windows\")".dependencies.winapi]
+ version = "0.3.8"
+--- cargo-crates/quad-snd-0.2.3/src/lib.rs.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/quad-snd-0.2.3/src/lib.rs
+@@ -10,7 +10,7 @@ pub use error::Error;
+ #[path = "opensles_snd.rs"]
+ mod snd;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd"))]
+ #[path = "alsa_snd.rs"]
+ mod snd;
+ 
