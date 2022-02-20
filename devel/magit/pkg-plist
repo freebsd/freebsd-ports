@@ -96,3 +96,5 @@
 %%ELISPDIR%%/magit-worktree.elc
 %%ELISPDIR%%/magit.el
 %%ELISPDIR%%/magit.elc
+%%PDF%%%%DOCSDIR%%/magit-section.pdf
+%%PDF%%%%DOCSDIR%%/magit.pdf
