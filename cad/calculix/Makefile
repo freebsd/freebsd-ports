@@ -8,7 +8,7 @@ DISTFILES=	${DIST_SOURCES}
 DIST_SUBDIR=	calculix
 EXTRACT_ONLY=	${DIST_SOURCES}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
