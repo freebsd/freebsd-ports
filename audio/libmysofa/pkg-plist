@@ -3,7 +3,7 @@ include/mysofa.h
 lib/libmysofa.a
 lib/libmysofa.so
 lib/libmysofa.so.1
-lib/libmysofa.so.1.1.0
+lib/libmysofa.so.1.2.2
 libdata/pkgconfig/libmysofa.pc
 %%DATADIR%%/MIT_KEMAR_normal_pinna.sofa
 %%DATADIR%%/default.sofa
