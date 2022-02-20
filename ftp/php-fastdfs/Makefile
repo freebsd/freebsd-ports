@@ -8,6 +8,9 @@ COMMENT=	PHP module for accessing a FastDFS cluster
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29
+EXPIRATION_DATE=2022-11-28
+
 LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
 		libfdfsclient.so:ftp/fastdfs
 
