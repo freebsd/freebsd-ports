@@ -15,11 +15,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey \
 		pidof:sysutils/pidof
 
-USES=		perl5 shebangfix
+USES=		perl5
 USE_PERL5=	configure
-
-SHEBANG_FILES=	bin/pt-ioprofile bin/pt-mext bin/pt-mysql-summary bin/pt-summary
-bash_OLD_CMD+=  /bin/sh
 
 NO_ARCH=	yes
 
