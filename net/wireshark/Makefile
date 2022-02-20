@@ -1,7 +1,7 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 
 PORTNAME?=	wireshark
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \

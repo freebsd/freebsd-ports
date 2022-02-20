@@ -642,13 +642,13 @@ include/wireshark/wsutil/wslog.h
 include/wireshark/wsutil/xtea.h
 lib/libwireshark.so
 lib/libwireshark.so.15
-lib/libwireshark.so.15.0.1
+lib/libwireshark.so.15.0.2
 lib/libwiretap.so
 lib/libwiretap.so.12
-lib/libwiretap.so.12.0.1
+lib/libwiretap.so.12.0.2
 lib/libwsutil.so
 lib/libwsutil.so.13
-lib/libwsutil.so.13.0.0
+lib/libwsutil.so.13.1.0
 lib/wireshark/cmake/FindGLIB2.cmake
 lib/wireshark/cmake/FindWSLibrary.cmake
 lib/wireshark/cmake/FindWSWinLibs.cmake
