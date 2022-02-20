@@ -1,5 +1,6 @@
 PORTNAME=	libglvnd
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -8,7 +9,9 @@ COMMENT=	GL Vendor-Neutral Dispatch library
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
-USES=		localbase meson pkgconfig
+BUILD_DEPENDS=	as:devel/binutils
+
+USES=		compiler:c++11-lib localbase meson pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
@@ -27,9 +30,8 @@ X11_MESON_ENABLED=	x11 glx
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc64*}
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lib
+CFLAGS+=	-no-integrated-as
+CXXFLAGS+=	-no-integrated-as
 .endif
 
 # Lots of software expects gl.pc even when it can build with EGL only
