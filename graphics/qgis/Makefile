@@ -1,8 +1,7 @@
 # Created by: Laurent Courty
 
 PORTNAME=	qgis
-DISTVERSION=	3.22.3
-PORTREVISION=	2
+DISTVERSION=	3.24.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -108,10 +107,10 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYQT=	pyqt5 qscintilla2 pysip sip 
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
-		designer doc gamepad gui linguist_build location \
+		designer_build qdoc_build gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \
-		sql sql-pgsql sql-sqlite3 svg testlib uitools \
-		webengine widgets webkit xml
+		sql sql-pgsql sql-sqlite3 svg testlib uitools_build \
+		webengine webkit widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
