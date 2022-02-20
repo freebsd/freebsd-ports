@@ -1,12 +1,12 @@
 # Created by: Pedro Giffuni
 
 PORTNAME=	reduce
-PORTVERSION=	20210413
+PORTVERSION=	20211019
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
-DISTNAME=	Reduce-svn5758-src
+DISTNAME=	Reduce-svn6110-src
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Codemist Standard Lisp REDUCE general-purpose computer system
 
 LICENSE=	BSD2CLAUSE
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		autoreconf:build libtool gmake ncurses jpeg xorg
 USE_XORG=	x11 xcursor xext xorgproto xft xrandr xrender
 
-SFSUBDIR=	snapshot_2021-04-13
+SFSUBDIR=	snapshot_2021-10-19
 
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CPPFLAGS+=	-I${NCURSESINC}
