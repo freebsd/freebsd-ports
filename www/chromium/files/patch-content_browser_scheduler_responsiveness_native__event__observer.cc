@@ -1,4 +1,4 @@
---- content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2021-04-14 18:41:02 UTC
+--- content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2022-02-07 13:39:41 UTC
 +++ content/browser/scheduler/responsiveness/native_event_observer.cc
 @@ -15,7 +15,7 @@
  
@@ -18,12 +18,3 @@
  void NativeEventObserver::RegisterObserver() {
    aura::Env::GetInstance()->AddWindowEventDispatcherObserver(this);
  }
-@@ -61,7 +61,7 @@ void NativeEventObserver::OnWindowEventDispatcherFinis
-   did_run_event_callback_.Run(info.unique_id);
-   events_being_processed_.pop_back();
- }
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if defined(OS_WIN)
- void NativeEventObserver::RegisterObserver() {

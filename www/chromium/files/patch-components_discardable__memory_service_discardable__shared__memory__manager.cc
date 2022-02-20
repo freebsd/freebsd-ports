@@ -1,11 +1,11 @@
---- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2021-04-14 18:40:59 UTC
+--- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2022-02-07 13:39:41 UTC
 +++ components/discardable_memory/service/discardable_shared_memory_manager.cc
-@@ -33,7 +33,7 @@
- #include "components/discardable_memory/common/discardable_shared_memory_heap.h"
- #include "mojo/public/cpp/bindings/self_owned_receiver.h"
+@@ -171,7 +171,7 @@ int64_t GetDefaultMemoryLimit() {
+   // Limits the number of FDs used to 32, assuming a 4MB allocation size.
+   int64_t max_default_memory_limit = 128 * kMegabyte;
+ #else
+-  int64_t max_default_memory_limit = 512 * kMegabyte;
++  int64_t max_default_memory_limit = 128 * kMegabyte;
+ #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- #include "base/files/file_path.h"
- #include "base/files/file_util.h"
- #include "base/metrics/histogram_macros.h"
+   // Use 1/8th of discardable memory on low-end devices.

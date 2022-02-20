@@ -1,13 +1,13 @@
---- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig	2021-04-14 18:43:08 UTC
+--- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig	2022-02-07 13:39:41 UTC
 +++ third_party/swiftshader/src/Main/SwiftConfig.cpp
 @@ -764,7 +764,11 @@ namespace sw
  		struct stat status;
  		int lastModified = ini.getInteger("LastModified", "Time", 0);
  
-+#if !defined(__FreeBSD__)
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
  		bool noConfig = stat("SwiftShader.ini", &status) != 0;
 +#else
-+               bool noConfig = false;
++		bool noConfig = false;
 +#endif
  		newConfig = !noConfig && abs((int)status.st_mtime - lastModified) > 1;
  

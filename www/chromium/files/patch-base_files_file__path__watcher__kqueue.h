@@ -1,13 +1,10 @@
---- base/files/file_path_watcher_kqueue.h.orig	2021-04-14 18:40:48 UTC
+--- base/files/file_path_watcher_kqueue.h.orig	2022-02-07 13:39:41 UTC
 +++ base/files/file_path_watcher_kqueue.h
-@@ -5,6 +5,10 @@
+@@ -5,6 +5,7 @@
  #ifndef BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
  #define BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_
  
-+#ifdef __FreeBSD__
-+#include <sys/stdint.h>
-+#include <sys/types.h>
-+#endif
++#include <sys/time.h>
  #include <sys/event.h>
  
  #include <memory>

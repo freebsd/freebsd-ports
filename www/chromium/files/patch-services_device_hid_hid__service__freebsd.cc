@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2022-01-21 12:26:39 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2022-02-07 13:39:41 UTC
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,397 @@
+@@ -0,0 +1,398 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -76,6 +76,9 @@
 +    timer_.reset(new base::RepeatingTimer());
 +    devd_buffer_ = new net::IOBufferWithSize(1024);
 +  }
++
++  BlockingTaskRunnerHelper(const BlockingTaskRunnerHelper&) = delete;
++  BlockingTaskRunnerHelper& operator=(const BlockingTaskRunnerHelper&) = delete;
 +
 +  ~BlockingTaskRunnerHelper() {
 +  }
@@ -305,8 +308,6 @@
 +  base::ScopedFD devd_fd_;
 +  scoped_refptr<net::IOBufferWithSize> devd_buffer_;
 +  std::map<std::string, int> permissions_checks_attempts_;
-+
-+  DISALLOW_COPY_AND_ASSIGN(BlockingTaskRunnerHelper);
 +};
 +
 +HidServiceFreeBSD::HidServiceFreeBSD()

@@ -1,15 +1,15 @@
---- chrome/browser/notifications/notification_display_service_impl.cc.orig	2021-09-24 04:25:58 UTC
+--- chrome/browser/notifications/notification_display_service_impl.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/notifications/notification_display_service_impl.cc
-@@ -29,7 +29,7 @@
- #include "chrome/browser/extensions/api/notifications/extension_notification_handler.h"
+@@ -31,7 +31,7 @@
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD) || \
-     defined(OS_WIN) || defined(OS_FUCHSIA)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN) || defined(OS_FUCHSIA)
++    defined(OS_WIN) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
  #include "chrome/browser/sharing/sharing_notification_handler.h"
-@@ -63,7 +63,7 @@ NotificationDisplayServiceImpl* NotificationDisplaySer
+ #endif
+@@ -64,7 +64,7 @@ NotificationDisplayServiceImpl* NotificationDisplaySer
  // static
  void NotificationDisplayServiceImpl::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
@@ -18,12 +18,21 @@
    registry->RegisterBooleanPref(prefs::kAllowNativeNotifications, true);
    registry->RegisterBooleanPref(prefs::kAllowSystemNotifications, true);
  #endif
-@@ -79,7 +79,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
-     AddNotificationHandler(NotificationHandler::Type::WEB_PERSISTENT,
+@@ -81,7 +81,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
                             std::make_unique<PersistentNotificationHandler>());
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD) || \
-     defined(OS_WIN)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
      AddNotificationHandler(
          NotificationHandler::Type::SEND_TAB_TO_SELF,
+         std::make_unique<send_tab_to_self::DesktopNotificationHandler>(
+@@ -89,7 +89,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+ #endif
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+     AddNotificationHandler(
+         NotificationHandler::Type::TAILORED_SECURITY,
+         std::make_unique<safe_browsing::TailoredSecurityNotificationHandler>());

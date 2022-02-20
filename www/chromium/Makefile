@@ -1,7 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	97.0.4692.99
+PORTVERSION=	98.0.4758.102
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -14,7 +14,6 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=			aarch64 amd64 i386
-BROKEN_i386=	Does not compile, __ElfN macros unknown
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -29,7 +28,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 		${LOCALBASE}/include/va/va.h:multimedia/libva \
-		${LOCALBASE}/bin/python2.7:lang/python27
+		${LOCALBASE}/bin/python2.7:lang/python27 \
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
@@ -71,7 +71,7 @@ USES=		bison compiler:c++17-lang cpe desktop-file-utils dos2unix gl gnome jpeg l
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
-DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
+DOS2UNIX_FILES=	third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 USE_GL=		gbm gl
 USE_GNOME=	atk dconf gdkpixbuf2 glib20 gtk30 libxml2 libxslt
 USE_LDCONFIG=	${DATADIR}
@@ -85,7 +85,6 @@ ALL_TARGET=	chrome
 
 BINARY_ALIAS=	python=${LOCALBASE}/bin/python2.7 \
 		python3=${PYTHON_CMD}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
 #
@@ -99,6 +98,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
+		enable_wmax_tokens=false \
+		fatal_linker_warnings=false \
 		is_clang=true \
 		optimize_webui=false \
 		toolkit_views=true \
@@ -113,8 +114,10 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_freetype=false \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
+		use_udev=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}"
+
 # TODO: investigate building with these options:
 # use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
@@ -202,18 +205,11 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-# Add extra-patch-no-mempcpy-nasm only when there's no mempcpy() in base.
-# Nested variable expansion avoids executing the test when not needed for
-# expanding EXTRA_PATCHES.
-EXTRA_PATCHES+=	${"${:!${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h \
-	|| ${TRUE}!}" == "":?${PATCHDIR}/extra-patch-no-mempcpy-nasm:}
-
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
 .if ${COMPILER_VERSION} < 120
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_config_compiler_pgo_pgo.gni
 
 .if ${PORT_OPTIONS:MLTO}
 BROKEN+=	does not build with LTO needs LLVM 12+
@@ -245,20 +241,6 @@ post-extract-TEST-on:
 	@${MKDIR} ${WRKSRC}/third_party/test_fonts/test_fonts
 	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
 
-post-patch:
-	@${MKDIR} ${WRKSRC}/sandbox/policy/freebsd
-	@${CP} ${FILESDIR}/dir_reader_freebsd.h ${WRKSRC}/base/files
-	@${CP} ${FILESDIR}/device_info_fetcher_freebsd.h ${WRKSRC}/chrome/browser/enterprise/signals
-	@${CP} ${FILESDIR}/device_info_fetcher_freebsd.cc ${WRKSRC}/chrome/browser/enterprise/signals
-	@${CP} ${FILESDIR}/sandbox_freebsd.h ${WRKSRC}/sandbox/policy/freebsd
-	@${CP} ${FILESDIR}/sandbox_freebsd.cc ${WRKSRC}/sandbox/policy/freebsd
-
-post-patch-SNDIO-on:
-	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
-	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
-	@${CP} ${FILESDIR}/sndio_input.* ${WRKSRC}/media/audio/sndio
-	@${CP} ${FILESDIR}/audio_manager_openbsd.* ${WRKSRC}/media/audio/openbsd
-
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
 	# system libraries and not shipped ones.
@@ -266,11 +248,13 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+		flac fontconfig freetype harfbuzz-ng libusb libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
+.for brand in Chrome Chromium
 	${CP} -R \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/ \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/freebsd
+		${WRKSRC}/third_party/ffmpeg/chromium/config/${brand}/linux/ \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/${brand}/freebsd
+.endfor
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files
@@ -281,8 +265,8 @@ do-configure:
 		gen --args='${GN_ARGS}' out/${BUILDTYPE}
 
 	# Setup nodejs dependency
-	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
-	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
+	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin
+	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
 
 	# Setup buildtools/freebsd
 	@${MKDIR} ${WRKSRC}/buildtools/freebsd
@@ -346,8 +330,8 @@ post-install-DEBUG-on:
 		${STAGEDIR}${DATADIR}
 
 post-install-DRIVER-on:
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chromedriver \
-		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chromedriver.unstripped \
+		${STAGEDIR}${PREFIX}/bin/chromedriver
 
 do-test-TEST-on:
 .for t in ${TEST_TARGETS}

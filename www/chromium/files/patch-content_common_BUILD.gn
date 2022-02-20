@@ -1,33 +1,12 @@
---- content/common/BUILD.gn.orig	2021-12-31 00:57:32 UTC
+--- content/common/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ content/common/BUILD.gn
-@@ -342,7 +342,7 @@ source_set("common") {
-     sources -= [ "cursors/webcursor_aura.cc" ]
-   }
- 
--  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_bsd) {
-     sources += [
-       "sandbox_init_linux.cc",
-       "zygote/sandbox_support_linux.cc",
-@@ -357,6 +357,12 @@ source_set("common") {
-     ]
-   }
- 
-+  if (is_bsd) {
-+    deps += [
-+      "//third_party/fontconfig",
-+    ]
-+  }
-+
-   if (use_zygote_handle) {
-     sources += [
-       "zygote/zygote_handle_impl_linux.h",
-@@ -406,7 +412,7 @@ source_set("common") {
+@@ -407,6 +407,9 @@ if (is_linux || is_chromeos) {
+     public = [ "set_process_title_linux.h" ]
+     sources = [ "set_process_title_linux.cc" ]
+     deps = [ "//base" ]
++    if (is_bsd) {
++      sources -= [ "set_process_title_linux.cc" ]
++    }
    }
  }
  
--if (is_linux || is_chromeos) {
-+if ((is_linux || is_chromeos) && !is_bsd) {
-   source_set("set_process_title_linux") {
-     public = [ "set_process_title_linux.h" ]
-     sources = [ "set_process_title_linux.cc" ]

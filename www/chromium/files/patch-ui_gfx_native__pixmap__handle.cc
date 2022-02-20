@@ -1,6 +1,6 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2021-04-14 18:41:39 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2022-02-07 13:39:41 UTC
 +++ ui/gfx/native_pixmap_handle.cc
-@@ -9,11 +9,15 @@
+@@ -9,7 +9,7 @@
  #include "base/logging.h"
  #include "build/build_config.h"
  
@@ -9,16 +9,14 @@
  #include <drm_fourcc.h>
  #include "base/posix/eintr_wrapper.h"
  #endif
+@@ -19,9 +19,13 @@
+ #include "base/fuchsia/fuchsia_logging.h"
+ #endif
  
 +#if defined(OS_BSD)
 +#include <unistd.h>
 +#endif
 +
- #if defined(OS_FUCHSIA)
- #include <lib/zx/vmo.h>
- #include "base/fuchsia/fuchsia_logging.h"
-@@ -21,7 +25,7 @@
- 
  namespace gfx {
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

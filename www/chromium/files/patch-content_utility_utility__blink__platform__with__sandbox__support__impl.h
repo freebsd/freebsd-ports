@@ -1,6 +1,6 @@
---- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2021-12-14 11:45:06 UTC
+--- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2022-02-07 13:39:41 UTC
 +++ content/utility/utility_blink_platform_with_sandbox_support_impl.h
-@@ -11,7 +11,7 @@
+@@ -10,7 +10,7 @@
  #include "build/build_config.h"
  #include "third_party/blink/public/platform/platform.h"
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -39,10 +39,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
+@@ -38,10 +38,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
    blink::WebSandboxSupport* GetSandboxSupport() override;
  
   private:

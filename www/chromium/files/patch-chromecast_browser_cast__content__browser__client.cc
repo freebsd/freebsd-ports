@@ -1,18 +1,15 @@
---- chromecast/browser/cast_content_browser_client.cc.orig	2021-12-31 00:57:27 UTC
+--- chromecast/browser/cast_content_browser_client.cc.orig	2022-02-07 13:39:41 UTC
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -130,9 +130,9 @@
+@@ -132,7 +132,7 @@
  #include "extensions/common/constants.h"                            // nogncheck
  #endif
  
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(USE_OZONE)
  #include "chromecast/browser/webview/webview_controller.h"
--#endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
-+#endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(USE_OZONE)
+ #endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
  
- #if BUILDFLAG(ENABLE_CAST_RENDERER)
- #include "base/task/sequenced_task_runner.h"
-@@ -478,7 +478,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -475,7 +475,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {
@@ -21,7 +18,7 @@
      // Necessary for accelerated 2d canvas.  By default on Linux, Chromium
      // assumes GLES2 contexts can be lost to a power-save mode, which breaks GPU
      // canvas apps.
-@@ -870,12 +870,12 @@ CastContentBrowserClient::CreateThrottlesForNavigation
+@@ -867,7 +867,7 @@ CastContentBrowserClient::CreateThrottlesForNavigation
              handle, general_audience_browsing_service_.get()));
    }
  
@@ -30,9 +27,3 @@
    auto webview_throttle = WebviewController::MaybeGetNavigationThrottle(handle);
    if (webview_throttle) {
      throttles.push_back(std::move(webview_throttle));
-   }
--#endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
-+#endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(USE_OZONE)
- 
-   return throttles;
- }

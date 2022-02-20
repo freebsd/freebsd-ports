@@ -1,4 +1,4 @@
---- sandbox/policy/BUILD.gn.orig	2021-12-14 11:45:09 UTC
+--- sandbox/policy/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ sandbox/policy/BUILD.gn
 @@ -35,7 +35,7 @@ component("policy") {
      "//sandbox/policy/mojom",
@@ -9,19 +9,31 @@
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -88,6 +88,15 @@ component("policy") {
+@@ -88,6 +88,27 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
 +    ]
 +  }
-+  if (is_bsd) {
++  if (is_openbsd) {
 +    sources += [
-+      "freebsd/sandbox_freebsd.h",
-+      "freebsd/sandbox_freebsd.cc",
++      "openbsd/sandbox_openbsd.cc",
++      "openbsd/sandbox_openbsd.h",
 +    ]
 +    deps += [
 +      "//sandbox:sandbox_buildflags",
++      "//ui/gfx/x",
++    ]
++    libs = [ "util" ]
++  }
++  if (is_freebsd) {
++    sources += [
++      "freebsd/sandbox_freebsd.cc",
++      "freebsd/sandbox_freebsd.h",
++    ]
++    deps += [
++      "//sandbox:sandbox_buildflags",
++      "//ui/gfx/x",
      ]
    }
    if (is_chromeos_ash) {

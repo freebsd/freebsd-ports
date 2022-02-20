@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2021-12-31 00:57:32 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2022-02-07 13:39:41 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
 @@ -108,7 +108,7 @@
  
@@ -27,16 +27,17 @@
    if (sandboxEnabled()) {
  #if defined(OS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -261,7 +261,7 @@ RendererBlinkPlatformImpl::WrapSharedURLLoaderFactory(
+@@ -261,7 +261,8 @@ RendererBlinkPlatformImpl::WrapSharedURLLoaderFactory(
        /*terminate_sync_load_event=*/nullptr);
  }
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
++// pledge
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_BSD)
  void RendererBlinkPlatformImpl::SetDisplayThreadPriority(
      base::PlatformThreadId thread_id) {
    if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
-@@ -276,7 +276,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
+@@ -276,7 +277,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {

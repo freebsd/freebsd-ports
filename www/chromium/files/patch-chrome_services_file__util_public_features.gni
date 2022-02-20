@@ -1,9 +1,0 @@
---- chrome/services/file_util/public/features.gni.orig	2022-01-03 16:49:41 UTC
-+++ chrome/services/file_util/public/features.gni
-@@ -11,5 +11,5 @@ declare_args() {
-   enable_xz_extractor = enable_extensions
- 
-   # Enables analysis of Office documents for malicious macros
--  enable_maldoca = is_linux || is_win
-+  enable_maldoca = (is_linux || is_win) && !is_bsd
- }

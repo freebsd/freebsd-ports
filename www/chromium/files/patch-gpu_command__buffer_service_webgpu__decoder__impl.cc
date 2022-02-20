@@ -1,7 +1,7 @@
---- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2021-12-31 00:57:34 UTC
+--- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2022-02-07 13:39:41 UTC
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -1015,12 +1015,12 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
-       static_cast<DawnRequestAdapterSerial>(c.request_adapter_serial);
+@@ -1021,7 +1021,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
+   }
  
    if (gr_context_type_ != GrContextType::kVulkan) {
 -#if defined(OS_LINUX)
@@ -9,9 +9,3 @@
      SendAdapterProperties(request_adapter_serial, -1, nullptr,
                            "WebGPU on Linux requires command-line flag "
                            "--enable-features=Vulkan,UseSkiaRenderer");
-     return error::kNoError;
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
-   }
- 
-   int32_t requested_adapter_index = GetPreferredAdapterIndex(power_preference);

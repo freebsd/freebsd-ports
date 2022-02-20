@@ -1,11 +1,11 @@
---- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig	2021-12-31 00:57:24 UTC
+--- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc
-@@ -708,7 +708,7 @@ void IncidentReportingService::OnEnvironmentDataCollec
-   environment_collection_pending_ = false;
+@@ -709,7 +709,7 @@ void IncidentReportingService::OnEnvironmentDataCollec
  
  // Process::Current().CreationTime() is missing on some platforms.
--#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_CHROMEOS)
+ #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
    base::TimeDelta uptime =
        first_incident_time_ - base::Process::Current().CreationTime();
+   environment_data->mutable_process()->set_uptime_msec(uptime.InMilliseconds());

@@ -1,4 +1,4 @@
---- base/threading/platform_thread_linux.cc.orig	2022-01-20 10:35:46 UTC
+--- base/threading/platform_thread_linux.cc.orig	2022-02-07 13:39:41 UTC
 +++ base/threading/platform_thread_linux.cc
 @@ -29,7 +29,9 @@
  
@@ -10,21 +10,8 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -61,7 +63,7 @@ int g_scheduler_boost_adj;
- int g_scheduler_limit_adj;
- bool g_scheduler_use_latency_tune_adj;
- 
--#if !defined(OS_NACL) && !defined(OS_AIX)
-+#if !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)
- 
- // Defined by linux uclamp ABI of sched_setattr().
- const uint32_t kSchedulerUclampMin = 0;
-@@ -129,10 +131,10 @@ int sched_setattr(pid_t pid,
-                   unsigned int flags) {
-   return syscall(__NR_sched_setattr, pid, attr, flags);
- }
--#endif  // !defined(OS_NACL) && !defined(OS_AIX)
-+#endif  // !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)
+@@ -132,7 +134,7 @@ int sched_setattr(pid_t pid,
+ #endif  // !defined(OS_NACL) && !defined(OS_AIX)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
  
 -#if !defined(OS_NACL)
@@ -77,15 +64,6 @@
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -364,7 +366,7 @@ void PlatformThread::SetName(const std::string& name) 
-   // We expect EPERM failures in sandboxed processes, just ignore those.
-   if (err < 0 && errno != EPERM)
-     DPLOG(ERROR) << "prctl(PR_SET_NAME)";
--#endif  //  !defined(OS_NACL) && !defined(OS_AIX)
-+#endif  //  !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)
- }
- 
- #if !defined(OS_NACL) && !defined(OS_AIX)
 @@ -377,8 +379,10 @@ void PlatformThread::SetThreadPriority(ProcessId proce
    // priority.
    CHECK_NE(thread_id, process_id);
@@ -97,14 +75,3 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
    // For upstream uclamp interface. We try both legacy (schedtune, as done
-@@ -435,7 +439,9 @@ void InitThreading() {}
- void TerminateOnThread() {}
- 
- size_t GetDefaultThreadStackSize(const pthread_attr_t& attributes) {
--#if !defined(THREAD_SANITIZER)
-+#if defined(OS_BSD)
-+  return (1 << 23);
-+#elif !defined(THREAD_SANITIZER)
-   return 0;
- #else
-   // ThreadSanitizer bloats the stack heavily. Evidence has been that the

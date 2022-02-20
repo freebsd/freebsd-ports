@@ -1,27 +1,45 @@
---- v8/BUILD.gn.orig	2021-12-31 01:01:02 UTC
+--- v8/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ v8/BUILD.gn
-@@ -5090,9 +5090,15 @@ v8_component("v8_libbase") {
+@@ -1181,6 +1181,14 @@ config("toolchain") {
+   } else if (target_os == "win") {
+     defines += [ "V8_HAVE_TARGET_OS" ]
+     defines += [ "V8_TARGET_OS_WIN" ]
++  } else if (target_os == "openbsd") {
++    defines += [ "V8_HAVE_TARGET_OS" ]
++    defines += [ "V8_TARGET_OS_OPENBSD" ]
++    defines += [ "V8_TARGET_OS_BSD" ]
++  } else if (target_os == "freebsd") {
++    defines += [ "V8_HAVE_TARGET_OS" ]
++    defines += [ "V8_TARGET_OS_FREEBSD" ]
++    defines += [ "V8_TARGET_OS_BSD" ]
+   }
+ 
+   # TODO(jochen): Support v8_enable_prof on Windows.
+@@ -5094,7 +5102,7 @@ v8_component("v8_libbase") {
      }
    }
  
 -  if (is_linux || is_chromeos) {
-+  if (is_bsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "src/base/debug/stack_trace_posix.cc",
-+      "src/base/platform/platform-freebsd.cc",
-+    ]
-+    libs = [ "rt", "execinfo" ]
-+  } else if (is_linux || is_chromeos) {
+       "src/base/platform/platform-linux.cc",
+@@ -5104,6 +5112,18 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_openbsd) {
 +    sources += [
 +      "src/base/debug/stack_trace_posix.cc",
-       "src/base/platform/platform-linux.cc",
-     ]
- 
-@@ -5655,6 +5661,7 @@ if (current_toolchain == v8_generator_toolchain) {
-       "src/interpreter/bytecodes.cc",
-       "src/interpreter/bytecodes.h",
-     ]
-+    libs = ["execinfo"]
- 
-     configs = [ ":internal_config" ]
- 
++      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
++  } else if (is_freebsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",

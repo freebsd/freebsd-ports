@@ -1,6 +1,6 @@
---- chrome/browser/themes/theme_helper.cc.orig	2021-12-14 11:44:59 UTC
+--- chrome/browser/themes/theme_helper.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/themes/theme_helper.cc
-@@ -341,7 +341,7 @@ bool ThemeHelper::ShouldUseIncreasedContrastThemeSuppl
+@@ -334,7 +334,7 @@ bool ThemeHelper::ShouldUseIncreasedContrastThemeSuppl
      ui::NativeTheme* native_theme) const {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

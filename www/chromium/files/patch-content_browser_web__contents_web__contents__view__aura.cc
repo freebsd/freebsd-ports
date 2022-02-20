@@ -1,7 +1,7 @@
---- content/browser/web_contents/web_contents_view_aura.cc.orig	2021-12-31 00:57:32 UTC
+--- content/browser/web_contents/web_contents_view_aura.cc.orig	2022-02-07 13:39:41 UTC
 +++ content/browser/web_contents/web_contents_view_aura.cc
 @@ -159,7 +159,7 @@ class WebDragSourceAura : public content::WebContentsO
-   aura::Window* window_;
+   raw_ptr<aura::Window> window_;
  };
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN)

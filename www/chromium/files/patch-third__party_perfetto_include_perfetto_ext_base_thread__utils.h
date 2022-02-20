@@ -1,41 +1,15 @@
---- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2021-12-31 01:00:54 UTC
+--- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2022-02-07 13:39:41 UTC
 +++ third_party/perfetto/include/perfetto/ext/base/thread_utils.h
-@@ -24,7 +24,8 @@
+@@ -40,9 +40,10 @@
+ namespace perfetto {
+ namespace base {
  
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
 -    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) ||   \
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
- #include <pthread.h>
- #include <string.h>
- #include <algorithm>
-@@ -42,7 +43,8 @@ namespace base {
- 
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
-     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
--    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) ||   \
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
++    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
  // Sets the "comm" of the calling thread to the first 15 chars of the given
  // string.
  inline bool MaybeSetThreadName(const std::string& name) {
-@@ -51,6 +53,9 @@ inline bool MaybeSetThreadName(const std::string& name
- 
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
-   return pthread_setname_np(buf) == 0;
-+#elif PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-+  pthread_set_name_np(pthread_self(), buf);
-+  return true;
- #else
-   return pthread_setname_np(pthread_self(), buf) == 0;
- #endif
-@@ -61,6 +66,8 @@ inline bool GetThreadName(std::string& out_result) {
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
-   if (prctl(PR_GET_NAME, buf) != 0)
-     return false;
-+#elif PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-+  pthread_get_name_np(pthread_self(), buf, sizeof(buf));
- #else
-   if (pthread_getname_np(pthread_self(), buf, sizeof(buf)) != 0)
-     return false;

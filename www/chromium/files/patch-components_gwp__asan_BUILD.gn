@@ -1,10 +1,11 @@
---- components/gwp_asan/BUILD.gn.orig	2021-04-14 18:40:59 UTC
+--- components/gwp_asan/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ components/gwp_asan/BUILD.gn
-@@ -20,4 +20,7 @@ test("gwp_asan_unittests") {
+@@ -14,7 +14,7 @@ test("gwp_asan_unittests") {
+     "//components/gwp_asan/common:unit_tests",
+     "//testing/gtest",
+   ]
+-  if (is_win || is_mac || is_linux || is_chromeos || is_android) {
++  if ((is_win || is_mac || is_linux || is_chromeos || is_android) && !is_bsd) {
+     deps += [
+       "//components/gwp_asan/client:unit_tests",
        "//components/gwp_asan/crash_handler:unit_tests",
-     ]
-   }
-+  if (is_bsd) {
-+    deps -= [ "//components/gwp_asan/crash_handler:unit_tests" ]
-+  }
- }

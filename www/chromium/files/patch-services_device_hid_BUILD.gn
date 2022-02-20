@@ -1,10 +1,20 @@
---- services/device/hid/BUILD.gn.orig	2021-04-14 18:41:08 UTC
+--- services/device/hid/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ services/device/hid/BUILD.gn
-@@ -45,6 +45,15 @@ source_set("hid") {
-     deps += [ "//device/udev_linux" ]
-   }
+@@ -33,6 +33,25 @@ source_set("hid") {
+     "//services/device/public/mojom",
+   ]
  
-+  if (is_bsd) {
++  if (is_openbsd) {
++    sources += [
++      "hid_connection_fido.cc",
++      "hid_connection_fido.h",
++      "hid_service_fido.cc",
++      "hid_service_fido.h",
++    ]
++    libs = ["fido2", "cbor", "usbhid", "crypto", "util"]
++  }
++
++  if (is_freebsd) {
 +    sources += [
 +      "hid_connection_freebsd.cc",
 +      "hid_connection_freebsd.h",
@@ -13,6 +23,6 @@
 +    ]
 +  }
 +
-   if (is_chromeos_ash) {
-     deps += [ "//chromeos/dbus/permission_broker" ]
-   }
+   if ((is_linux || is_chromeos) && use_udev) {
+     sources += [
+       "hid_connection_linux.cc",

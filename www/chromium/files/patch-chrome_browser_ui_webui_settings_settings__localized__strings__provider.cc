@@ -1,15 +1,15 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2021-12-31 00:57:25 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2022-02-07 13:39:41 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -117,7 +117,7 @@
+@@ -116,7 +116,7 @@
  #include "chrome/browser/ui/webui/settings/chromeos/constants/routes.mojom.h"
  #endif
  
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
  #include "ui/display/screen.h"
  #endif
  
-@@ -137,7 +137,7 @@
+@@ -136,7 +136,7 @@
  #include "chrome/browser/ui/webui/certificate_manager_localized_strings_provider.h"
  #endif
  
@@ -23,7 +23,7 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
      {"systemTheme", IDS_SETTINGS_SYSTEM_THEME},
      {"useSystemTheme", IDS_SETTINGS_USE_SYSTEM_THEME},
      {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
@@ -32,7 +32,7 @@
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
      {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if defined(OS_MAC)
@@ -41,7 +41,7 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
    bool show_custom_chrome_frame = ui::OzonePlatform::GetInstance()
                                        ->GetPlatformRuntimeProperties()
                                        .supports_server_side_window_decorations;

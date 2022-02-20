@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2021-12-14 11:45:07 UTC
+--- media/base/video_frame.cc.orig	2022-02-07 13:39:41 UTC
 +++ media/base/video_frame.cc
 @@ -73,7 +73,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -27,15 +27,6 @@
  // This class allows us to embed a vector<ScopedFD> into a scoped_refptr, and
  // thus to have several VideoFrames share the same set of DMABUF FDs.
  class VideoFrame::DmabufHolder
-@@ -296,7 +296,7 @@ class VideoFrame::DmabufHolder
-   friend class base::RefCountedThreadSafe<DmabufHolder>;
-   ~DmabufHolder() = default;
- };
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- // static
- bool VideoFrame::IsValidConfig(VideoPixelFormat format,
 @@ -617,7 +617,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    for (size_t i = 0; i < num_planes; ++i)
      planes[i].stride = gpu_memory_buffer->stride(i);

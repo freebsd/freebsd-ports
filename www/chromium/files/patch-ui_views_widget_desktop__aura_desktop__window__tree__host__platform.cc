@@ -1,6 +1,6 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2021-12-31 00:58:32 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2022-02-07 13:39:41 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -911,7 +911,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
+@@ -910,7 +910,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

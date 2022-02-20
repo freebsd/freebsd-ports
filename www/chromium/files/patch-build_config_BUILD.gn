@@ -1,21 +1,22 @@
---- build/config/BUILD.gn.orig	2021-05-12 22:05:40 UTC
+--- build/config/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ build/config/BUILD.gn
-@@ -227,9 +227,7 @@ config("default_libs") {
+@@ -222,13 +222,17 @@ config("default_libs") {
+       "CoreText.framework",
+       "Foundation.framework",
      ]
-   } else if (is_linux || is_chromeos) {
+-  } else if (is_linux || is_chromeos) {
++  } else if ((is_linux && !is_bsd) || is_chromeos) {
      libs = [
--      "dl",
+       "dl",
        "pthread",
--      "rt",
+       "rt",
      ]
-   }
+-  }
++  } else if (is_bsd) {
++    libs = [
++      "pthread",
++    ]
++ }
  }
-@@ -308,7 +306,7 @@ config("executable_config") {
-       "//build/config/ios:ios_dynamic_flags",
-       "//build/config/ios:ios_executable_flags",
-     ]
--  } else if (is_linux || is_chromeos || is_android || current_os == "aix") {
-+  } else if (is_linux || is_bsd || is_chromeos || is_android || current_os == "aix") {
-     configs += [ "//build/config/gcc:executable_config" ]
-     if (is_chromecast) {
-       configs += [ "//build/config/chromecast:executable_config" ]
+ 
+ group("common_deps") {

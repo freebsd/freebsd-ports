@@ -1,4 +1,4 @@
---- pdf/out_of_process_instance.cc.orig	2021-12-31 00:57:37 UTC
+--- pdf/out_of_process_instance.cc.orig	2022-02-07 13:39:41 UTC
 +++ pdf/out_of_process_instance.cc
 @@ -75,7 +75,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -9,7 +9,7 @@
  #include "pdf/ppapi_migration/pdfium_font_linux.h"
  #endif
  
-@@ -749,7 +749,7 @@ void OutOfProcessInstance::RotateCounterclockwise() {
+@@ -735,7 +735,7 @@ void OutOfProcessInstance::RotateCounterclockwise() {
  }
  
  void OutOfProcessInstance::SetLastPluginInstance() {

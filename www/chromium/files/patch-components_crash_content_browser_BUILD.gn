@@ -1,5 +1,14 @@
---- components/crash/content/browser/BUILD.gn.orig	2021-05-12 22:05:49 UTC
+--- components/crash/content/browser/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ components/crash/content/browser/BUILD.gn
+@@ -21,7 +21,7 @@ source_set("browser") {
+     "//content/public/common",
+   ]
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux && !is_bsd) || is_chromeos || is_android) {
+     # Want this file on both Linux and Android.
+     sources += [
+       "crash_handler_host_linux.cc",
 @@ -37,7 +37,7 @@ source_set("browser") {
  
    # This is not in the GYP build but this target includes breakpad client

@@ -1,6 +1,6 @@
---- ui/gfx/canvas_skia.cc.orig	2021-04-14 18:41:39 UTC
+--- ui/gfx/canvas_skia.cc.orig	2022-02-07 13:39:41 UTC
 +++ ui/gfx/canvas_skia.cc
-@@ -209,7 +209,7 @@ void Canvas::DrawStringRectWithFlags(const base::strin
+@@ -209,7 +209,7 @@ void Canvas::DrawStringRectWithFlags(const std::u16str
      Range range = StripAcceleratorChars(flags, &adjusted_text);
      bool elide_text = ((flags & NO_ELLIPSIS) == 0);
  

@@ -1,4 +1,4 @@
---- base/memory/discardable_memory.cc.orig	2021-05-12 22:05:40 UTC
+--- base/memory/discardable_memory.cc.orig	2022-02-07 13:39:41 UTC
 +++ base/memory/discardable_memory.cc
 @@ -24,7 +24,7 @@ const base::Feature kMadvFreeDiscardableMemory{
      "MadvFreeDiscardableMemory", base::FEATURE_DISABLED_BY_DEFAULT};
@@ -9,14 +9,7 @@
  const base::Feature kDiscardableMemoryBackingTrial{
      "DiscardableMemoryBackingTrial", base::FEATURE_DISABLED_BY_DEFAULT};
  
-@@ -42,13 +42,13 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
-         DiscardableMemoryTrialGroup::kEmulatedSharedMemory,
-         &kDiscardableMemoryBackingParamOptions};
- 
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- }  // namespace features
+@@ -48,7 +48,7 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
  
  namespace {
  
@@ -25,12 +18,7 @@
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
-@@ -62,11 +62,11 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
-   }
-   NOTREACHED();
- }
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+@@ -66,7 +66,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
  
  }  // namespace
  
@@ -39,15 +27,7 @@
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
-@@ -88,18 +88,18 @@ DiscardableMemoryTrialGroup GetDiscardableMemoryBackin
-   DCHECK(DiscardableMemoryBackingFieldTrialIsEnabled());
-   return features::kDiscardableMemoryBackingParam.Get();
- }
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- DiscardableMemory::DiscardableMemory() = default;
- 
+@@ -95,7 +95,7 @@ DiscardableMemory::DiscardableMemory() = default;
  DiscardableMemory::~DiscardableMemory() = default;
  
  DiscardableMemoryBacking GetDiscardableMemoryBacking() {
@@ -56,8 +36,3 @@
    if (DiscardableMemoryBackingFieldTrialIsEnabled()) {
      return GetBackingForFieldTrial();
    }
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if defined(OS_ANDROID)
-   if (ashmem_device_is_supported())

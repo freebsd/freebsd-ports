@@ -1,11 +1,11 @@
---- extensions/renderer/bindings/api_binding_util.cc.orig	2021-12-14 11:45:06 UTC
+--- extensions/renderer/bindings/api_binding_util.cc.orig	2022-02-07 13:39:41 UTC
 +++ extensions/renderer/bindings/api_binding_util.cc
-@@ -140,6 +140,8 @@ std::string GetPlatformString() {
-   return "win";
- #elif defined(OS_FUCHSIA)
-   return "fuchsia";
-+#elif defined(OS_BSD)
-+  return "bsd";
- #else
-   NOTREACHED();
-   return std::string();
+@@ -132,7 +132,7 @@ std::string GetPlatformString() {
+   return "lacros";
+ #elif BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_CHROMEOS_LACROS)
+   return "chromeos";
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   return "linux";
+ #elif defined(OS_MAC)
+   return "mac";

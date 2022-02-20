@@ -1,6 +1,6 @@
---- printing/mojom/printing_context_mojom_traits.h.orig	2021-12-16 15:15:50 UTC
+--- printing/mojom/printing_context_mojom_traits.h.orig	2022-02-07 13:39:41 UTC
 +++ printing/mojom/printing_context_mojom_traits.h
-@@ -171,12 +171,12 @@ struct StructTraits<printing::mojom::PrintSettingsData
+@@ -168,7 +168,7 @@ struct StructTraits<printing::mojom::PrintSettingsData
      return s.pages_per_sheet();
    }
  
@@ -9,9 +9,3 @@
    static const printing::PrintSettings::AdvancedSettings& advanced_settings(
        const printing::PrintSettings& s) {
      return s.advanced_settings();
-   }
--#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- #if defined(OS_CHROMEOS)
-   static bool send_user_info(const printing::PrintSettings& s) {

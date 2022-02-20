@@ -1,17 +1,14 @@
---- chromecast/media/base/default_monotonic_clock.cc.orig	2021-04-14 18:40:58 UTC
+--- chromecast/media/base/default_monotonic_clock.cc.orig	2022-02-07 13:39:41 UTC
 +++ chromecast/media/base/default_monotonic_clock.cc
-@@ -11,9 +11,9 @@
+@@ -11,7 +11,7 @@
  #include "base/time/time.h"
  #include "build/build_config.h"
  
 -#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "chromecast/media/base/buildflags.h"
--#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
  
- #if defined(OS_FUCHSIA)
- #include <zircon/syscalls.h>
 @@ -27,7 +27,7 @@ std::unique_ptr<MonotonicClock> MonotonicClock::Create
    return std::make_unique<DefaultMonotonicClock>();
  }

@@ -1,6 +1,6 @@
---- build/config/linux/BUILD.gn.orig	2021-09-24 04:25:56 UTC
+--- build/config/linux/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ build/config/linux/BUILD.gn
-@@ -39,7 +39,7 @@ config("runtime_library") {
+@@ -42,7 +42,7 @@ config("runtime_library") {
  
    if ((!(is_chromeos_ash || is_chromeos_lacros) ||
         default_toolchain != "//build/toolchain/cros:target") &&

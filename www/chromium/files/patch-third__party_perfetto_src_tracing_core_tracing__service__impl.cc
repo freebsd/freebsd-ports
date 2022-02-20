@@ -1,24 +1,12 @@
---- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2021-12-31 01:00:54 UTC
+--- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2022-02-07 13:39:41 UTC
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -42,7 +42,8 @@
+@@ -2990,7 +2990,8 @@ bool TracingServiceImpl::SnapshotClocks(
  
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
-     PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
--    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) ||   \
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
- #define PERFETTO_HAS_CHMOD
- #include <sys/stat.h>
- #endif
-@@ -2911,8 +2912,9 @@ bool TracingServiceImpl::SnapshotClocks(
- 
-   TracingSession::ClockSnapshotData new_snapshot_data;
- 
--#if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
--    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \
-+#if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) &&   \
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&     \
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD) && \
-     !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL)
+ #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
+     !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \
+-    !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL)
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
    struct {
      clockid_t id;
+     protos::pbzero::BuiltinClock type;

@@ -1,26 +1,23 @@
---- third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig	2021-12-14 11:47:03 UTC
+--- third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig	2022-02-07 13:39:41 UTC
 +++ third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
-@@ -71,6 +71,15 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
+@@ -71,6 +71,12 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
  
  bool GetSystemInfo(SystemInfo *info)
  {
-+#if defined(__FreeBSD__)
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
 +    if (!CollectMesaCardInfo(&(info->gpus)))
 +    {
-+        if (!GetPCIDevicesFreeBSD(&(info->gpus)))
-+        {
-+            return GetSystemInfoVulkan(info);
-+        }
++        return false;
 +    }
 +#else
      if (!GetPCIDevicesWithLibPCI(&(info->gpus)))
      {
- #if defined(ANGLE_HAS_VULKAN_SYSTEM_INFO)
-@@ -80,6 +89,7 @@ bool GetSystemInfo(SystemInfo *info)
+ #if defined(ANGLE_USE_VULKAN_SYSTEM_INFO)
+@@ -85,6 +91,7 @@ bool GetSystemInfo(SystemInfo *info)
+     {
          return false;
- #endif  // defined(ANGLE_HAS_VULKAN_SYSTEM_INFO)
      }
 +#endif
  
-     if (info->gpus.size() == 0)
-     {
+     GetDualGPUInfo(info);
+ 

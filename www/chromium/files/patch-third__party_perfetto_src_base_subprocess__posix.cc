@@ -1,37 +1,22 @@
---- third_party/perfetto/src/base/subprocess_posix.cc.orig	2021-09-14 01:58:28 UTC
+--- third_party/perfetto/src/base/subprocess_posix.cc.orig	2022-02-07 13:39:41 UTC
 +++ third_party/perfetto/src/base/subprocess_posix.cc
-@@ -20,7 +20,8 @@
+@@ -35,7 +35,8 @@
+ #include <thread>
+ #include <tuple>
  
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
-     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
--    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) ||   \
-+    PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
- 
- #include <fcntl.h>
- #include <poll.h>
-@@ -38,6 +39,8 @@
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
-+#elif PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-+#include <sys/procctl.h>
  #endif
- 
- #include "perfetto/base/logging.h"
-@@ -70,6 +73,9 @@ void __attribute__((noreturn)) ChildProcess(ChildProce
+@@ -64,7 +65,8 @@ struct ChildProcessArgs {
+ // Don't add any dynamic allocation in this function. This will be invoked
+ // under a fork(), potentially in a state where the allocator lock is held.
+ void __attribute__((noreturn)) ChildProcess(ChildProcessArgs* args) {
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
+   // In no case we want a child process to outlive its parent process. This is
    // relevant for tests, so that a test failure/crash doesn't leave child
-   // processes around that get reparented to init.
-   prctl(PR_SET_PDEATHSIG, SIGKILL);
-+#elif PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-+  int procctl_value = SIGKILL;
-+  procctl(P_PID, 0, PROC_PDEATHSIG_CTL, &procctl_value);
- #endif
- 
-   auto die = [args](const char* err) __attribute__((noreturn)) {
-@@ -440,4 +446,4 @@ void Subprocess::KillAndWaitForTermination(int sig_num
- }  // namespace base
- }  // namespace perfetto
- 
--#endif  // PERFETTO_OS_LINUX || PERFETTO_OS_ANDROID || PERFETTO_OS_APPLE
-+#endif  // PERFETTO_OS_LINUX || PERFETTO_OS_ANDROID || PERFETTO_OS_APPLE || PERFETTO_OS_FREEBSD

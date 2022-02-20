@@ -1,6 +1,6 @@
---- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2021-12-14 11:45:05 UTC
+--- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2022-02-07 13:39:41 UTC
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.h
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  #include "build/build_config.h"
  #include "content/child/blink_platform_impl.h"
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -40,11 +40,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+@@ -39,11 +39,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
    blink::WebThemeEngine* ThemeEngine() override;
  
   private:

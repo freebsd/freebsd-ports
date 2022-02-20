@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2021-12-31 00:57:18 UTC
+--- base/BUILD.gn.orig	2022-02-07 13:39:41 UTC
 +++ base/BUILD.gn
-@@ -954,7 +954,7 @@ component("base") {
+@@ -975,7 +975,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,10 +9,11 @@
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -965,6 +965,11 @@ component("base") {
+@@ -986,6 +986,12 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
++
 +    if (is_bsd) {
 +      sources += [
 +        "profiler/stack_sampler_posix.cc",
@@ -21,74 +22,81 @@
    }
  
    if (is_win) {
-@@ -1391,7 +1396,7 @@ component("base") {
+@@ -1416,11 +1422,24 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
 -      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
-+      (is_android || ((is_linux || is_chromeos) && !is_chromecast) && !is_clang) &&
++      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_bsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1444,7 +1449,7 @@ component("base") {
-           "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
-         ]
-       }
--      if (is_chromeos || is_linux) {
-+      if ((is_chromeos || is_linux) && !is_bsd) {
-         sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
-       }
-       if (is_win) {
-@@ -2142,6 +2147,34 @@ component("base") {
-     }
-   }
  
++  # *BSD needs libkvm
++  if (is_bsd) {
++    libs += [ "kvm" ]
++  }
++
++  if (is_freebsd) {
++    libs += [
++      "iconv",
++      "execinfo",
++      "util",
++    ]
++  }
++
+   if (use_allocator_shim) {
+     sources += [
+       "allocator/allocator_shim.cc",
+@@ -1443,7 +1462,7 @@ component("base") {
+         "allocator/early_zone_registration_mac.h",
+       ]
+     }
+-    if (is_chromeos || is_linux) {
++    if (is_chromeos || (is_linux && !is_bsd)) {
+       sources += [
+         "allocator/allocator_shim_override_cpp_symbols.h",
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+@@ -2176,6 +2195,42 @@ component("base") {
+         "linux_util.h",
+       ]
+     }
++  }
++
 +  if (is_bsd) {
 +    sources -= [
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",
++      "files/scoped_file_linux.cc",
 +      "process/memory_linux.cc",
-+      "process/process_handle_linux.cc",
++      "process/process_linux.cc",
++      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
-+      "system/sys_info_linux.cc"
++      "process/process_handle_linux.cc"
 +    ]
 +    sources += [
-+      "files/file_path_watcher_freebsd.cc",
++      "process/memory_stubs.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
-+      "process/memory_stubs.cc",
++      "files/file_path_watcher_bsd.cc",
++    ]
++  }
++
++  if (is_openbsd) {
++    sources += [
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++    ]
++  } else if (is_freebsd) {
++    sources += [
 +      "process/process_handle_freebsd.cc",
 +      "process/process_iterator_freebsd.cc",
 +      "process/process_metrics_freebsd.cc",
 +      "system/sys_info_freebsd.cc",
 +    ]
-+    libs = [
-+      "execinfo", # logging.cc
-+      "kvm",      # process_metrics_freebsd
-+      "util"      # process_metrics_freebsd
-+    ]
-+  }
-+
-+
-   # iOS
-   if (is_ios) {
-     sources -= [
-@@ -3359,7 +3392,7 @@ test("base_unittests") {
-     }
    }
  
--  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_bsd) {
-     sources += [
-       "debug/proc_maps_linux_unittest.cc",
-       "files/scoped_file_linux_unittest.cc",
-@@ -3406,7 +3439,7 @@ test("base_unittests") {
-       "posix/unix_domain_socket_unittest.cc",
-       "task/thread_pool/task_tracker_posix_unittest.cc",
-     ]
--    if (!is_nacl && !is_apple) {
-+    if (!is_nacl && !is_apple && !is_bsd) {
-       sources += [
-         "cpu_affinity_posix_unittest.cc",
-         "profiler/stack_copier_signal_unittest.cc",
+   # iOS
