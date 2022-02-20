@@ -87,9 +87,8 @@ OPENGL_USES=		gl
 OPENGL_CONFIGURE_OFF=	--disable-gl
 OPENGL_IMPLIES=		X11
 
-OPENJPEG_CFLAGS=	-I${LOCALBASE}/include/openjpeg-1.5
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
-OPENJPEG_CONFIGURE_OFF=	--disable-libopenjpeg
+OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CONFIGURE_OFF=	--disable-libopus
