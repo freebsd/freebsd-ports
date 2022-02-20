@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	mathicsscript
-PORTVERSION=	3.1.0
+PORTVERSION=	4.0.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 
