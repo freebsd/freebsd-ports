@@ -1,6 +1,5 @@
 PORTNAME=	grip
-PORTVERSION=	4.5.2
-PORTREVISION=	2
+PORTVERSION=	4.6.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,6 +8,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Preview GitHub Markdown files locally before committing
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.4.0:devel/py-docopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.5.1:textproc/py-markdown@${PY_FLAVOR} \
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.4.0:devel/py-docopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}path-and-address>=2.0.1:www/py-path-and-address@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.4.1:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	grip
