@@ -96,6 +96,7 @@ libdata/pkgconfig/carla-host-plugin.pc
 libdata/pkgconfig/carla-native-plugin.pc
 libdata/pkgconfig/carla-standalone.pc
 libdata/pkgconfig/carla-utils.pc
+share/appdata/studio.kx.carla.appdata.xml
 share/applications/carla-control.desktop
 share/applications/carla-jack-multi.desktop
 share/applications/carla-jack-single.desktop
