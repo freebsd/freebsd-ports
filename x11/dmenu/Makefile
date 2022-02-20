@@ -1,7 +1,7 @@
 # Created by: Jeroen Schot <schot@a-eskwadraat.nl>
 
 PORTNAME=	dmenu
-DISTVERSION=	5.0
+DISTVERSION=	5.1
 CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
