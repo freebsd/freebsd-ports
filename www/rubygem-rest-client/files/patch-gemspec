@@ -1,11 +1,11 @@
---- rest-client.gemspec.orig	2021-07-19 21:01:10 UTC
+--- rest-client.gemspec.orig	2021-10-25 12:19:21 UTC
 +++ rest-client.gemspec
-@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
-       s.add_development_dependency(%q<pry-doc>.freeze, ["~> 0"])
-       s.add_development_dependency(%q<rdoc>.freeze, [">= 2.4.2", "< 6.0"])
-       s.add_development_dependency(%q<rubocop>.freeze, ["~> 0.49"])
--      s.add_runtime_dependency(%q<http-accept>.freeze, [">= 1.7.0", "< 2.0"])
-+      s.add_runtime_dependency(%q<http-accept>.freeze, [">= 1.7.0"])
-       s.add_runtime_dependency(%q<http-cookie>.freeze, [">= 1.0.2", "< 2.0"])
-       s.add_runtime_dependency(%q<mime-types>.freeze, [">= 1.16", "< 4.0"])
-       s.add_runtime_dependency(%q<netrc>.freeze, ["~> 0.8"])
+@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
+     s.add_development_dependency(%q<pry-doc>.freeze, ["~> 0"])
+     s.add_development_dependency(%q<rdoc>.freeze, [">= 2.4.2", "< 6.0"])
+     s.add_development_dependency(%q<rubocop>.freeze, ["~> 0.49"])
+-    s.add_runtime_dependency(%q<http-accept>.freeze, [">= 1.7.0", "< 2.0"])
++    s.add_runtime_dependency(%q<http-accept>.freeze, [">= 1.7.0"])
+     s.add_runtime_dependency(%q<http-cookie>.freeze, [">= 1.0.2", "< 2.0"])
+     s.add_runtime_dependency(%q<mime-types>.freeze, [">= 1.16", "< 4.0"])
+     s.add_runtime_dependency(%q<netrc>.freeze, ["~> 0.8"])

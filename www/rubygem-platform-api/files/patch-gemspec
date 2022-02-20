@@ -1,11 +1,11 @@
---- platform-api.gemspec.orig	2020-06-14 15:31:22 UTC
+--- platform-api.gemspec.orig	2021-10-25 12:18:43 UTC
 +++ platform-api.gemspec
-@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
-       s.add_development_dependency(%q<heroku_hatchet>.freeze, [">= 0"])
-       s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<heroics>.freeze, ["~> 0.1.1"])
--      s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0.0"])
-+      s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<rate_throttle_client>.freeze, ["~> 0.1.0"])
-     else
-       s.add_dependency(%q<bundler>.freeze, [">= 0"])
+@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
+     s.add_development_dependency(%q<heroku_hatchet>.freeze, [">= 0"])
+     s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
+     s.add_runtime_dependency(%q<heroics>.freeze, ["~> 0.1.1"])
+-    s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0.0"])
++    s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<rate_throttle_client>.freeze, ["~> 0.1.0"])
+   else
+     s.add_dependency(%q<bundler>.freeze, [">= 0"])

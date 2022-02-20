@@ -1,7 +1,7 @@
 # Created by: Alexander Novitsky <alecn2002@yandex.ru>
 
 PORTNAME=	gems
-PORTVERSION=	3.0.8
+PORTVERSION=	3.3.7
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,15 +16,20 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/MIT.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+
 USES=		cpe tar:tgz
 USE_RUBY=	yes
 
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
-GEMS_ENV=	DONT_USE_BUNDLER_FOR_GEMDEPS=true GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}
+GEMS_ENV=	GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}
 NO_ARCH=	yes
 NO_BUILD=	yes
 RUBY_SETUP=	setup.rb
-RUBY_SETUP_OPTIONS=	--destdir=${STAGEDIR} --no-regenerate-binstubs
+RUBY_SETUP_OPTIONS=	--destdir=${STAGEDIR} \
+	--no-regenerate-binstubs \
+	--no-regenerate-plugins \
+	--format-executable
 
 CACHE_DIR=	${GEMS_BASE_DIR}/cache
 DOC_DIR=	${GEMS_BASE_DIR}/doc
@@ -45,9 +50,15 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_VARS_OFF=	RUBY_SETUP_OPTIONS+="--no-ri --no-rdoc"
 
+post-extract:
+	${RM} -r ${WRKSRC}/bundler
+	${RM} -r ${WRKSRC}/lib/rubygems/ssl_certs
+	${FIND} ${WRKSRC} -name .document -delete
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info
+	${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/plugins
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CACHE_DIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR}

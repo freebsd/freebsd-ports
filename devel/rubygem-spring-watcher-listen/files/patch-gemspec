@@ -1,11 +1,11 @@
---- spring-watcher-listen.gemspec.orig	2021-09-19 15:55:26 UTC
+--- spring-watcher-listen.gemspec.orig	2021-10-25 12:03:03 UTC
 +++ spring-watcher-listen.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
-       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6"])
-       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
-       s.add_development_dependency(%q<activesupport>.freeze, [">= 0"])
--      s.add_runtime_dependency(%q<spring>.freeze, [">= 1.2", "< 3.0"])
-+      s.add_runtime_dependency(%q<spring>.freeze, [">= 1.2"])
-       s.add_runtime_dependency(%q<listen>.freeze, [">= 2.7", "< 4.0"])
-     else
-       s.add_dependency(%q<bundler>.freeze, ["~> 1.6"])
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+     s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6"])
+     s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+     s.add_development_dependency(%q<activesupport>.freeze, [">= 0"])
+-    s.add_runtime_dependency(%q<spring>.freeze, [">= 1.2", "< 3.0"])
++    s.add_runtime_dependency(%q<spring>.freeze, [">= 1.2"])
+     s.add_runtime_dependency(%q<listen>.freeze, [">= 2.7", "< 4.0"])
+   else
+     s.add_dependency(%q<bundler>.freeze, ["~> 1.6"])

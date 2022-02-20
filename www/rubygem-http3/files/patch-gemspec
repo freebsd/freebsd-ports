@@ -1,11 +1,11 @@
---- http.gemspec.orig	2021-07-15 21:54:09 UTC
+--- http.gemspec.orig	2021-10-25 12:18:31 UTC
 +++ http.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
-     s.specification_version = 4
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   end
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.6.0"])
-+      s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.6"])
-       s.add_runtime_dependency(%q<http-form_data>.freeze, ["~> 2.0"])
-       s.add_runtime_dependency(%q<http-cookie>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.3"])
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.6.0"])
++    s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.6"])
+     s.add_runtime_dependency(%q<http-form_data>.freeze, ["~> 2.0"])
+     s.add_runtime_dependency(%q<http-cookie>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.3"])

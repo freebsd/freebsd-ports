@@ -1,4 +1,4 @@
---- nokogiri.gemspec.orig	2022-01-26 09:41:30 UTC
+--- nokogiri.gemspec.orig	2022-01-27 10:36:01 UTC
 +++ nokogiri.gemspec
 @@ -13,10 +13,9 @@ Gem::Specification.new do |s|
    s.date = "2021-06-02"
@@ -12,11 +12,11 @@
    s.homepage = "https://nokogiri.org".freeze
    s.licenses = ["MIT".freeze]
    s.rdoc_options = ["--main".freeze, "README.md".freeze]
-@@ -29,7 +28,6 @@ Gem::Specification.new do |s|
+@@ -30,7 +29,6 @@ Gem::Specification.new do |s|
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<racc>.freeze, ["~> 1.4"])
--      s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.5.0"])
-       s.add_development_dependency(%q<bundler>.freeze, ["~> 2.2"])
-       s.add_development_dependency(%q<concourse>.freeze, ["~> 0.41"])
-       s.add_development_dependency(%q<hoe-markdown>.freeze, ["~> 1.4"])
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<racc>.freeze, ["~> 1.4"])
+-    s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.5.0"])
+     s.add_development_dependency(%q<bundler>.freeze, ["~> 2.2"])
+     s.add_development_dependency(%q<concourse>.freeze, ["~> 0.41"])
+     s.add_development_dependency(%q<hoe-markdown>.freeze, ["~> 1.4"])

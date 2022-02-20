@@ -34,6 +34,7 @@ DOC_DIR=	${GEMS_BASE_DIR}/doc
 CACHE_DIR=	${GEMS_BASE_DIR}/cache
 SPEC_DIR=	${GEMS_BASE_DIR}/specifications
 EXT_DIR=	${GEMS_BASE_DIR}/extensions
+PLUGINS_DIR=	${GEMS_BASE_DIR}/plugins
 GEM_NAME?=	${DISTNAME}
 GEM_LIB_DIR?=	${GEMS_DIR}/${GEM_NAME}
 GEM_DOC_DIR?=	${DOC_DIR}/${GEM_NAME}
@@ -53,6 +54,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		CACHE_DIR="${CACHE_DIR}" \
 		SPEC_DIR="${SPEC_DIR}" \
 		EXT_DIR="${EXT_DIR}" \
+		PLUGINS_DIR="${PLUGINS_DIR}" \
 		PORT="${PORTNAME}-${PORTVERSION}" \
 		GEM_NAME="${GEM_NAME}" \
 		GEM_LIB_DIR="${GEM_LIB_DIR}" \
@@ -110,6 +112,7 @@ do-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext -type d -empty -delete 2> /dev/null || ${TRUE}
 	${RM} -r ${STAGEDIR}${PREFIX}/${CACHE_DIR} 2> /dev/null || ${TRUE}
 	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
+	${RMDIR} ${STAGEDIR}${PREFIX}/${PLUGINS_DIR} 2> /dev/null || ${TRUE}
 .if !${PORT_OPTIONS:MDOCS}
 	-@${RMDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR}
 .endif
@@ -127,6 +130,10 @@ gem-autoplist:
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 	@if [ -d ${STAGEDIR}${PREFIX}/${EXT_DIR} ]; then \
 		${FIND} -ds ${STAGEDIR}${PREFIX}/${EXT_DIR} -type f -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST} ; \
+	fi
+	@if [ -d ${STAGEDIR}${PREFIX}/${PLUGINS_DIR} ]; then \
+		${FIND} -ds ${STAGEDIR}${PREFIX}/${PLUGINS_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST} ; \
 	fi
 .endif

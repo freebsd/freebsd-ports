@@ -1,11 +1,11 @@
---- actioncable.gemspec.orig	2017-09-12 19:41:46 UTC
+--- actioncable.gemspec.orig	2021-10-27 13:51:00 UTC
 +++ actioncable.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.1.7"])
-       s.add_runtime_dependency(%q<nio4r>.freeze, ["~> 2.0"])
--      s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6.1"])
-+      s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6", ">= 0.6.1"])
-     else
-       s.add_dependency(%q<actionpack>.freeze, ["= 5.1.7"])
-       s.add_dependency(%q<nio4r>.freeze, ["~> 2.0"])
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.1.7"])
+     s.add_runtime_dependency(%q<nio4r>.freeze, ["~> 2.0"])
+-    s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6.1"])
++    s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6", ">= 0.6.1"])
+   else
+     s.add_dependency(%q<actionpack>.freeze, ["= 5.1.7"])
+     s.add_dependency(%q<nio4r>.freeze, ["~> 2.0"])

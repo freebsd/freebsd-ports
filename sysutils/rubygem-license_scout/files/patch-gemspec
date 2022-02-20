@@ -1,16 +1,16 @@
---- license_scout.gemspec.orig	2021-10-22 11:28:34 UTC
+--- license_scout.gemspec.orig	2021-11-01 13:35:57 UTC
 +++ license_scout.gemspec
-@@ -23,10 +23,10 @@ Gem::Specification.new do |s|
+@@ -24,10 +24,10 @@ Gem::Specification.new do |s|
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 2.2"])
--      s.add_runtime_dependency(%q<mixlib-shellout>.freeze, ["~> 2.2"])
--      s.add_runtime_dependency(%q<toml-rb>.freeze, ["~> 1.0"])
-+      s.add_runtime_dependency(%q<mixlib-shellout>.freeze, [">= 2.2"])
-+      s.add_runtime_dependency(%q<toml-rb>.freeze, [">= 1.0"])
-       s.add_runtime_dependency(%q<licensee>.freeze, ["~> 9.8"])
--      s.add_runtime_dependency(%q<mixlib-config>.freeze, ["~> 2.2"])
-+      s.add_runtime_dependency(%q<mixlib-config>.freeze, [">= 2.2"])
-       s.add_runtime_dependency(%q<mixlib-cli>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<mixlib-log>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<terminal-table>.freeze, [">= 0"])
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 2.2"])
+-    s.add_runtime_dependency(%q<mixlib-shellout>.freeze, ["~> 2.2"])
+-    s.add_runtime_dependency(%q<toml-rb>.freeze, ["~> 1.0"])
++    s.add_runtime_dependency(%q<mixlib-shellout>.freeze, [">= 2.2"])
++    s.add_runtime_dependency(%q<toml-rb>.freeze, [">= 1.0"])
+     s.add_runtime_dependency(%q<licensee>.freeze, ["~> 9.8"])
+-    s.add_runtime_dependency(%q<mixlib-config>.freeze, ["~> 2.2"])
++    s.add_runtime_dependency(%q<mixlib-config>.freeze, [">= 2.2"])
+     s.add_runtime_dependency(%q<mixlib-cli>.freeze, [">= 0"])
+     s.add_runtime_dependency(%q<mixlib-log>.freeze, [">= 0"])
+     s.add_runtime_dependency(%q<terminal-table>.freeze, [">= 0"])

@@ -1,11 +1,11 @@
---- github_api.gemspec.orig	2021-10-23 07:17:33 UTC
+--- github_api.gemspec.orig	2021-10-27 14:40:20 UTC
 +++ github_api.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4"])
--      s.add_runtime_dependency(%q<hashie>.freeze, ["~> 3.5", ">= 3.5.2"])
-+      s.add_runtime_dependency(%q<hashie>.freeze, [">= 3.5.2"])
-       s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.8", "< 2"])
-       s.add_runtime_dependency(%q<oauth2>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<descendants_tracker>.freeze, ["~> 0.0.4"])
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4"])
+-    s.add_runtime_dependency(%q<hashie>.freeze, ["~> 3.5", ">= 3.5.2"])
++    s.add_runtime_dependency(%q<hashie>.freeze, [">= 3.5.2"])
+     s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.8", "< 2"])
+     s.add_runtime_dependency(%q<oauth2>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<descendants_tracker>.freeze, ["~> 0.0.4"])

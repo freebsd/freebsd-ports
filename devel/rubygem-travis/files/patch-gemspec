@@ -1,11 +1,11 @@
---- travis.gemspec.orig	2021-07-04 17:56:14 UTC
+--- travis.gemspec.orig	2021-10-25 12:05:18 UTC
 +++ travis.gemspec
-@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<highline>.freeze, ["~> 2.0"])
-       s.add_runtime_dependency(%q<gh>.freeze, ["~> 0.13"])
--      s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1", "< 2.5.0"])
-+      s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
-       s.add_runtime_dependency(%q<json_pure>.freeze, ["~> 2.3"])
-       s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.4"])
-       s.add_development_dependency(%q<rspec>.freeze, ["~> 2.12"])
+@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<highline>.freeze, ["~> 2.0"])
+     s.add_runtime_dependency(%q<gh>.freeze, ["~> 0.13"])
+-    s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1", "< 2.5.0"])
++    s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
+     s.add_runtime_dependency(%q<json_pure>.freeze, ["~> 2.3"])
+     s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.4"])
+     s.add_development_dependency(%q<rspec>.freeze, ["~> 2.12"])

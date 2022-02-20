@@ -1,11 +1,11 @@
---- shellplay.gemspec.orig	2019-07-14 18:13:28 UTC
+--- shellplay.gemspec.orig	2021-10-25 11:51:29 UTC
 +++ shellplay.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
-     s.specification_version = 4
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+   end
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.0.0"])
-+      s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.0"])
-       s.add_runtime_dependency(%q<cliprompt>.freeze, ["~> 0.1.2"])
-       s.add_runtime_dependency(%q<configstruct>.freeze, ["~> 0.1.0"])
-       s.add_runtime_dependency(%q<shell2html>.freeze, ["~> 0.0.6"])
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.0.0"])
++    s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.0"])
+     s.add_runtime_dependency(%q<cliprompt>.freeze, ["~> 0.1.2"])
+     s.add_runtime_dependency(%q<configstruct>.freeze, ["~> 0.1.0"])
+     s.add_runtime_dependency(%q<shell2html>.freeze, ["~> 0.0.6"])

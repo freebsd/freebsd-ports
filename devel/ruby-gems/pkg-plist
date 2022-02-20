@@ -46,6 +46,7 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/core_ext/kernel_gem.rb
 %%RUBY_SITELIBDIR%%/rubygems/core_ext/kernel_require.rb
 %%RUBY_SITELIBDIR%%/rubygems/core_ext/kernel_warn.rb
+%%RUBY_SITELIBDIR%%/rubygems/core_ext/tcpsocket_init.rb
 %%RUBY_SITELIBDIR%%/rubygems/defaults.rb
 %%RUBY_SITELIBDIR%%/rubygems/dependency.rb
 %%RUBY_SITELIBDIR%%/rubygems/dependency_installer.rb
@@ -68,10 +69,22 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/install_message.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_update_options.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
-%%RUBY_SITELIBDIR%%/rubygems/installer_test_case.rb
+%%RUBY_SITELIBDIR%%/rubygems/installer_uninstaller_utils.rb
 %%RUBY_SITELIBDIR%%/rubygems/local_remote_options.rb
 %%RUBY_SITELIBDIR%%/rubygems/mock_gem_ui.rb
 %%RUBY_SITELIBDIR%%/rubygems/name_tuple.rb
+%%RUBY_SITELIBDIR%%/rubygems/openssl.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/COPYING
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optionparser.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/ac.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/date.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/kwargs.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/shellwords.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/time.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/uri.rb
+%%RUBY_SITELIBDIR%%/rubygems/optparse/lib/optparse/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/digest_io.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/file_source.rb
@@ -81,13 +94,13 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_header.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader/entry.rb
-%%RUBY_SITELIBDIR%%/rubygems/package/tar_test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_writer.rb
 %%RUBY_SITELIBDIR%%/rubygems/package_task.rb
 %%RUBY_SITELIBDIR%%/rubygems/path_support.rb
 %%RUBY_SITELIBDIR%%/rubygems/platform.rb
 %%RUBY_SITELIBDIR%%/rubygems/psych_additions.rb
 %%RUBY_SITELIBDIR%%/rubygems/psych_tree.rb
+%%RUBY_SITELIBDIR%%/rubygems/query_utils.rb
 %%RUBY_SITELIBDIR%%/rubygems/rdoc.rb
 %%RUBY_SITELIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/request.rb
@@ -103,6 +116,7 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/resolver.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/activation_request.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/api_set.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/api_set/gem_parser.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/api_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/best_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/composed_set.rb
@@ -119,6 +133,7 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/resolver/lock_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/lock_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/LICENSE
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/resolution_state.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/specification_provider.rb
@@ -155,7 +170,6 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/security/signer.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/trust_dir.rb
 %%RUBY_SITELIBDIR%%/rubygems/security_option.rb
-%%RUBY_SITELIBDIR%%/rubygems/server.rb
 %%RUBY_SITELIBDIR%%/rubygems/source.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/git.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/installed.rb
@@ -164,20 +178,17 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/source/specific_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/vendor.rb
 %%RUBY_SITELIBDIR%%/rubygems/source_list.rb
-%%RUBY_SITELIBDIR%%/rubygems/source_local.rb
-%%RUBY_SITELIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification_policy.rb
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
-%%RUBY_SITELIBDIR%%/rubygems/syck_hack.rb
-%%RUBY_SITELIBDIR%%/rubygems/test_case.rb
-%%RUBY_SITELIBDIR%%/rubygems/test_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
+%%RUBY_SITELIBDIR%%/rubygems/tsort.rb
+%%RUBY_SITELIBDIR%%/rubygems/tsort/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/tsort/lib/tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
+%%RUBY_SITELIBDIR%%/rubygems/unknown_command_spell_checker.rb
+%%RUBY_SITELIBDIR%%/rubygems/uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/uri_formatter.rb
 %%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb
 %%RUBY_SITELIBDIR%%/rubygems/util.rb
@@ -186,8 +197,8 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/validator.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
-%%RUBY_SITELIBDIR%%/ubygems.rb
 @dir lib/ruby/gems/%%RUBY_VER%%/build_info
+@dir lib/ruby/gems/%%RUBY_VER%%/plugins
 @dir %%CACHE_DIR%%
 @dir %%DOC_DIR%%
 @dir %%EXT_DIR%%

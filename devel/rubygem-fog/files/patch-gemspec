@@ -1,17 +1,17 @@
---- fog.gemspec.orig	2020-10-23 16:57:41 UTC
+--- fog.gemspec.orig	2021-11-01 13:29:16 UTC
 +++ fog.gemspec
-@@ -35,12 +35,12 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<fog-aliyun>.freeze, [">= 0.1.0"])
-       s.add_runtime_dependency(%q<fog-atmos>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0.6.0"])
--      s.add_runtime_dependency(%q<fog-brightbox>.freeze, ["~> 0.4"])
-+      s.add_runtime_dependency(%q<fog-brightbox>.freeze, [">= 0.4"])
-       s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.4"])
-       s.add_runtime_dependency(%q<fog-cloudstack>.freeze, ["~> 0.1.0"])
-       s.add_runtime_dependency(%q<fog-digitalocean>.freeze, [">= 0.3.0"])
-       s.add_runtime_dependency(%q<fog-dnsimple>.freeze, ["~> 2.1"])
--      s.add_runtime_dependency(%q<fog-dynect>.freeze, ["~> 0.0.2"])
-+      s.add_runtime_dependency(%q<fog-dynect>.freeze, [">= 0.0.2"])
-       s.add_runtime_dependency(%q<fog-ecloud>.freeze, ["~> 0.1"])
-       s.add_runtime_dependency(%q<fog-google>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<fog-internet-archive>.freeze, [">= 0"])
+@@ -36,12 +36,12 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<fog-aliyun>.freeze, [">= 0.1.0"])
+     s.add_runtime_dependency(%q<fog-atmos>.freeze, [">= 0"])
+     s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0.6.0"])
+-    s.add_runtime_dependency(%q<fog-brightbox>.freeze, ["~> 0.4"])
++    s.add_runtime_dependency(%q<fog-brightbox>.freeze, [">= 0.4"])
+     s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.4"])
+     s.add_runtime_dependency(%q<fog-cloudstack>.freeze, ["~> 0.1.0"])
+     s.add_runtime_dependency(%q<fog-digitalocean>.freeze, [">= 0.3.0"])
+     s.add_runtime_dependency(%q<fog-dnsimple>.freeze, ["~> 2.1"])
+-    s.add_runtime_dependency(%q<fog-dynect>.freeze, ["~> 0.0.2"])
++    s.add_runtime_dependency(%q<fog-dynect>.freeze, [">= 0.0.2"])
+     s.add_runtime_dependency(%q<fog-ecloud>.freeze, ["~> 0.1"])
+     s.add_runtime_dependency(%q<fog-google>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<fog-internet-archive>.freeze, [">= 0"])

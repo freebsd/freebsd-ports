@@ -1,10 +1,10 @@
---- lita.gemspec.orig	2021-07-15 22:37:14 UTC
+--- lita.gemspec.orig	2021-10-25 12:10:58 UTC
 +++ lita.gemspec
-@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.15"])
-       s.add_runtime_dependency(%q<puma>.freeze, [">= 4.3"])
-       s.add_runtime_dependency(%q<rack>.freeze, [">= 2.2"])
--      s.add_runtime_dependency(%q<rb-readline>.freeze, [">= 0.5"])
-       s.add_runtime_dependency(%q<redis-namespace>.freeze, [">= 1.7"])
-       s.add_runtime_dependency(%q<thor>.freeze, [">= 1.0"])
-       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.15"])
+     s.add_runtime_dependency(%q<puma>.freeze, [">= 4.3"])
+     s.add_runtime_dependency(%q<rack>.freeze, [">= 2.2"])
+-    s.add_runtime_dependency(%q<rb-readline>.freeze, [">= 0.5"])
+     s.add_runtime_dependency(%q<redis-namespace>.freeze, [">= 1.7"])
+     s.add_runtime_dependency(%q<thor>.freeze, [">= 1.0"])
+     s.add_development_dependency(%q<rake>.freeze, [">= 0"])

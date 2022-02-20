@@ -1,11 +1,11 @@
---- jekyll.gemspec.orig	2021-01-31 08:04:37 UTC
+--- jekyll.gemspec.orig	2021-10-27 13:55:35 UTC
 +++ jekyll.gemspec
-@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<pathutil>.freeze, ["~> 0.9"])
-       s.add_runtime_dependency(%q<rouge>.freeze, ["~> 3.0"])
-       s.add_runtime_dependency(%q<safe_yaml>.freeze, ["~> 1.0"])
--      s.add_runtime_dependency(%q<terminal-table>.freeze, ["~> 2.0"])
-+      s.add_runtime_dependency(%q<terminal-table>.freeze, [">= 2.0"])
-     else
-       s.add_dependency(%q<addressable>.freeze, ["~> 2.4"])
-       s.add_dependency(%q<colorator>.freeze, ["~> 1.0"])
+@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<pathutil>.freeze, ["~> 0.9"])
+     s.add_runtime_dependency(%q<rouge>.freeze, ["~> 3.0"])
+     s.add_runtime_dependency(%q<safe_yaml>.freeze, ["~> 1.0"])
+-    s.add_runtime_dependency(%q<terminal-table>.freeze, ["~> 2.0"])
++    s.add_runtime_dependency(%q<terminal-table>.freeze, [">= 2.0"])
+   else
+     s.add_dependency(%q<addressable>.freeze, ["~> 2.4"])
+     s.add_dependency(%q<colorator>.freeze, ["~> 1.0"])

@@ -1,0 +1,42 @@
+commit b110d12e9c3bd2d153886681ff42c53c59ecd12d
+Author:     Thibault Jouan <tj@a13.fr>
+AuthorDate: Mon Oct 11 23:54:27 2021 +0000
+Commit:     Thibault Jouan <tj@a13.fr>
+CommitDate: Wed Oct 13 11:49:25 2021 +0000
+
+    Prevent bundler installation
+    
+      Since RubyGems 3.1 the `setup' command also installs bundler and the
+    `USE_BUNDLER_FOR_GEMDEPS' environment variable has been removed.
+    
+      We have to manually patch this command to remove bundler installation.
+
+diff --git lib/rubygems/commands/setup_command.rb lib/rubygems/commands/setup_command.rb
+index 2f7f29575..8fef1c539 100644
+--- lib/rubygems/commands/setup_command.rb
++++ lib/rubygems/commands/setup_command.rb
+@@ -180,8 +180,6 @@ def execute
+     # Can be removed one we drop support for bundler 2.2.3 (the last version installing man files to man_dir)
+     remove_old_man_files man_dir if man_dir && File.exist?(man_dir)
+ 
+-    install_default_bundler_gem bin_dir
+-
+     if mode = options[:dir_mode]
+       @mkdirs.uniq!
+       File.chmod(mode, @mkdirs)
+@@ -311,7 +309,6 @@ def shebang
+ 
+   def install_lib(lib_dir)
+     libs = { 'RubyGems' => 'lib' }
+-    libs['Bundler'] = 'bundler/lib'
+     libs.each do |tool, path|
+       say "Installing #{tool}" if @verbose
+ 
+@@ -520,7 +517,6 @@ def remove_old_bin_files(bin_dir)
+ 
+   def remove_old_lib_files(lib_dir)
+     lib_dirs = { File.join(lib_dir, 'rubygems') => 'lib/rubygems' }
+-    lib_dirs[File.join(lib_dir, 'bundler')] = 'bundler/lib/bundler'
+     lib_dirs.each do |old_lib_dir, new_lib_dir|
+       lib_files = files_in(new_lib_dir)
+ 

@@ -1,20 +1,20 @@
---- amqp-utils.gemspec.orig	2017-07-29 22:22:56 UTC
+--- amqp-utils.gemspec.orig	2021-10-25 12:11:57 UTC
 +++ amqp-utils.gemspec
 @@ -23,13 +23,13 @@ Gem::Specification.new do |s|
-     s.specification_version = 3
+   end
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<amqp>.freeze, ["~> 0.7.1"])
-+      s.add_runtime_dependency(%q<amqp>.freeze, [">= 0.7.1"])
-       s.add_runtime_dependency(%q<trollop>.freeze, ["~> 1.16.2"])
--      s.add_runtime_dependency(%q<facets>.freeze, ["~> 2.9"])
-+      s.add_runtime_dependency(%q<facets>.freeze, [">= 2.9"])
-       s.add_runtime_dependency(%q<clio>.freeze, ["~> 0.3.0"])
-       s.add_runtime_dependency(%q<json>.freeze, ["~> 1.5"])
--      s.add_runtime_dependency(%q<heredoc_unindent>.freeze, ["~> 1.1.2"])
--      s.add_runtime_dependency(%q<msgpack>.freeze, ["~> 0.4.5"])
-+      s.add_runtime_dependency(%q<heredoc_unindent>.freeze, [">= 1.1.2"])
-+      s.add_runtime_dependency(%q<msgpack>.freeze, [">= 0.4.5"])
-     else
-       s.add_dependency(%q<amqp>.freeze, ["~> 0.7.1"])
-       s.add_dependency(%q<trollop>.freeze, ["~> 1.16.2"])
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<amqp>.freeze, ["~> 0.7.1"])
++    s.add_runtime_dependency(%q<amqp>.freeze, [">= 0.7.1"])
+     s.add_runtime_dependency(%q<trollop>.freeze, ["~> 1.16.2"])
+-    s.add_runtime_dependency(%q<facets>.freeze, ["~> 2.9"])
++    s.add_runtime_dependency(%q<facets>.freeze, [">= 2.9"])
+     s.add_runtime_dependency(%q<clio>.freeze, ["~> 0.3.0"])
+     s.add_runtime_dependency(%q<json>.freeze, ["~> 1.5"])
+-    s.add_runtime_dependency(%q<heredoc_unindent>.freeze, ["~> 1.1.2"])
+-    s.add_runtime_dependency(%q<msgpack>.freeze, ["~> 0.4.5"])
++    s.add_runtime_dependency(%q<heredoc_unindent>.freeze, [">= 1.1.2"])
++    s.add_runtime_dependency(%q<msgpack>.freeze, [">= 0.4.5"])
+   else
+     s.add_dependency(%q<amqp>.freeze, ["~> 0.7.1"])
+     s.add_dependency(%q<trollop>.freeze, ["~> 1.16.2"])

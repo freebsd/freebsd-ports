@@ -1,11 +1,11 @@
---- sidetiq.gemspec.orig	2017-01-28 14:39:41 UTC
+--- sidetiq.gemspec.orig	2021-10-25 12:02:47 UTC
 +++ sidetiq.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 4.1.0"])
-       s.add_runtime_dependency(%q<celluloid>.freeze, [">= 0.17.3"])
--      s.add_runtime_dependency(%q<ice_cube>.freeze, ["~> 0.14.0"])
-+      s.add_runtime_dependency(%q<ice_cube>.freeze, [">= 0.14.0"])
-       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
-       s.add_development_dependency(%q<sinatra>.freeze, [">= 0"])
-       s.add_development_dependency(%q<mocha>.freeze, [">= 0"])
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 4.1.0"])
+     s.add_runtime_dependency(%q<celluloid>.freeze, [">= 0.17.3"])
+-    s.add_runtime_dependency(%q<ice_cube>.freeze, ["~> 0.14.0"])
++    s.add_runtime_dependency(%q<ice_cube>.freeze, [">= 0.14.0"])
+     s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+     s.add_development_dependency(%q<sinatra>.freeze, [">= 0"])
+     s.add_development_dependency(%q<mocha>.freeze, [">= 0"])

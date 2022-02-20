@@ -1,11 +1,11 @@
---- gitlab-pygments.rb.gemspec.orig	2016-12-03 11:15:33 UTC
+--- gitlab-pygments.rb.gemspec.orig	2021-10-25 11:56:48 UTC
 +++ gitlab-pygments.rb.gemspec
-@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
-     s.specification_version = 4
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+   end
  
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.1.0"])
-+      s.add_runtime_dependency(%q<yajl-ruby>.freeze, [">= 1.1.0"])
-       s.add_runtime_dependency(%q<posix-spawn>.freeze, ["~> 0.3.6"])
-       s.add_development_dependency(%q<rake-compiler>.freeze, ["~> 0.7.6"])
-     else
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.1.0"])
++    s.add_runtime_dependency(%q<yajl-ruby>.freeze, [">= 1.1.0"])
+     s.add_runtime_dependency(%q<posix-spawn>.freeze, ["~> 0.3.6"])
+     s.add_development_dependency(%q<rake-compiler>.freeze, ["~> 0.7.6"])
+   else
