@@ -1,6 +1,6 @@
 PORTNAME=		snowflake
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.0.1
+DISTVERSION=		2.1.0
 CATEGORIES=		security net
 PKGNAMESUFFIX=		-tor
 
@@ -18,7 +18,7 @@ USE_GITHUB=	nodefault
 USE_GITLAB=	nodefault
 CPE_VENDOR=	torproject
 TPO_GEOIP=	7ce4b3d98d01ff33bad8007db3f488d5b172382a
-TPO_SNOWFLAKE=	ead5a960d7fa19dc890ccbfc0765c5ab6629eaa9
+TPO_SNOWFLAKE=	e6e5e20ae8b5883b37f5dea656540825e237d820
 
 GO_PKGNAME=	git.torproject.org/pluggable-transports/snowflake.git/v2
 GO_TARGET=	./client ./proxy ./server
@@ -27,7 +27,7 @@ GL_SITE=	https://gitlab.torproject.org/tpo
 GL_TUPLE=	anti-censorship:pluggable-transports/${PORTNAME}:${TPO_SNOWFLAKE}:tpo_acs_snowflake/vendor/git.torproject.org/pluggable-transports/snowflake.git/v2 \
 		anti-censorship:geoip:${TPO_GEOIP}:tpo_acs_geoip/vendor/gitlab.torproject.org/tpo/anti-censorship/geoip
 
-GH_TUPLE=	torbsd:goptlib:v1.1.0:torbsd_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
+GH_TUPLE=	torbsd:goptlib:v1.2.0:torbsd_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
 	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 	cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 	golang:crypto:513c2a44f670:golang_crypto/vendor/golang.org/x/crypto \
@@ -47,7 +47,7 @@ GH_TUPLE=	torbsd:goptlib:v1.1.0:torbsd_goptlib/vendor/git.torproject.org/pluggab
 	matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 	mmcloughlin:avo:443f81d77104:mmcloughlin_avo/vendor/github.com/mmcloughlin/avo \
 	pion:datachannel:v1.4.21:pion_datachannel/vendor/github.com/pion/datachannel \
-	pion:dtls:v2.0.8:pion_dtls_v2/vendor/github.com/pion/dtls/v2 \
+	pion:dtls:v2.0.12:pion_dtls_v2/vendor/github.com/pion/dtls/v2 \
 	pion:ice:v2.0.15:pion_ice_v2/vendor/github.com/pion/ice/v2 \
 	pion:interceptor:v0.0.10:pion_interceptor/vendor/github.com/pion/interceptor \
 	pion:logging:v0.2.2:pion_logging/vendor/github.com/pion/logging \
@@ -71,6 +71,7 @@ GH_TUPLE=	torbsd:goptlib:v1.1.0:torbsd_goptlib/vendor/git.torproject.org/pluggab
 	protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 	smartystreets:assertions:b2de0cb4f26d:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 	smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
+	stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 	templexxx:cpu:v0.0.7:templexxx_cpu/vendor/github.com/templexxx/cpu \
 	templexxx:xorsimd:v0.4.1:templexxx_xorsimd/vendor/github.com/templexxx/xorsimd \
 	tjfoc:gmsm:v1.3.2:tjfoc_gmsm/vendor/github.com/tjfoc/gmsm \
