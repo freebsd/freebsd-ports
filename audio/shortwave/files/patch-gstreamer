@@ -1,17 +1,19 @@
-From e1466728515296b9c8b84a38ab8aa58766c6f9c4 Mon Sep 17 00:00:00 2001
-From: Fabio Valentini <decathorpe@gmail.com>
-Date: Wed, 4 Aug 2021 13:30:53 +0200
-Subject: [PATCH] gstreamer-audio: fix audio_format code for big-endian targets
+https://gitlab.freedesktop.org/gstreamer/gstreamer-rs/-/commit/e14667285152
 
----
- gstreamer-audio/src/audio_format.rs | 88 ++++++++++++++---------------
- 1 file changed, 44 insertions(+), 44 deletions(-)
+error[E0433]: failed to resolve: could not find `AudioFormat` in the list of imported crates
+  --> src/audio_format.rs:62:15
+   |
+62 |             ::AudioFormat::F64be,
+   |               ^^^^^^^^^^^ could not find `AudioFormat` in the list of imported crates
+error[E0433]: failed to resolve: could not find `AudioFormat` in the list of imported crates
+  --> src/audio_format.rs:63:15
+   |
+63 |             ::AudioFormat::F64le,
+   |               ^^^^^^^^^^^ could not find `AudioFormat` in the list of imported crates
 
-diff --git a/gstreamer-audio/src/audio_format.rs b/gstreamer-audio/src/audio_format.rs
-index 99c891f5b..5212814f4 100644
---- ../gstreamer-rs-f00c57cd6f2a0912e04c10887cedbe95be7d5dea/gstreamer-audio/src/audio_format.rs
+--- ../gstreamer-rs-f00c57cd6f2a0912e04c10887cedbe95be7d5dea/gstreamer-audio/src/audio_format.rs.orig	2021-04-23 12:28:54 UTC
 +++ ../gstreamer-rs-f00c57cd6f2a0912e04c10887cedbe95be7d5dea/gstreamer-audio/src/audio_format.rs
-@@ -59,36 +59,36 @@ pub static AUDIO_FORMATS_ALL: Lazy<Box<[crate::AudioFormat]>> = Lazy::new(|| {
+@@ -59,36 +59,36 @@ pub static AUDIO_FORMATS_ALL: Lazy<Box<[crate::AudioFo
      #[cfg(target_endian = "big")]
      {
          Box::new([
@@ -78,7 +80,7 @@ index 99c891f5b..5212814f4 100644
          ])
      }
  });
-@@ -170,33 +170,33 @@ pub const AUDIO_FORMAT_S8: crate::AudioFormat = crate::AudioFormat::S8;
+@@ -168,33 +168,33 @@ pub const AUDIO_FORMAT_S8: crate::AudioFormat = crate:
  pub const AUDIO_FORMAT_U8: crate::AudioFormat = crate::AudioFormat::U8;
  
  #[cfg(target_endian = "big")]
@@ -126,6 +128,3 @@ index 99c891f5b..5212814f4 100644
  
  #[cfg(target_endian = "little")]
  pub const AUDIO_FORMAT_S16: crate::AudioFormat = crate::AudioFormat::S16le;
--- 
-GitLab
-
