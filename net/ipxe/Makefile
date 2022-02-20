@@ -83,7 +83,7 @@ ISO_MAKE_ARGS=		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 			LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 ISO_ALL_TARGET=		bin/ipxe.iso
 
-PORTSCOUT=		skipv:1.21.1
+PORTSCOUT=		skipv:1.20.1
 
 .include <bsd.port.pre.mk>
 
