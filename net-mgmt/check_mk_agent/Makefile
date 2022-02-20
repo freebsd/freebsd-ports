@@ -1,6 +1,6 @@
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0p18
+DISTVERSION=	2.0.0p20
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/agents/:agent \
 		https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
