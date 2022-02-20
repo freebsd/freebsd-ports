@@ -1,7 +1,10 @@
 PORTNAME=	ssh-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	security
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	0bf5771fe3fafcb60ebf4541b8d382eb0ec9f7bc.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	CLI tools that make SSH more convenient
