@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/1.7.x/
 DISTNAME=	ViennaCL-${PORTVERSION}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear algebra and solver library using CUDA, OpenCL, and OpenMP
 
 LICENSE=	MIT

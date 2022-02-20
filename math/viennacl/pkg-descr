@@ -1,14 +1,14 @@
-ViennaCL is a free open-source linear algebra library for computations on 
-many-core architectures (GPUs, MIC) and multi-core CPUs. The library is 
-written in C++ and supports CUDA, OpenCL, and OpenMP (including switches 
+ViennaCL is a free open-source linear algebra library for computations on
+many-core architectures (GPUs, MIC) and multi-core CPUs. The library is
+written in C++ and supports CUDA, OpenCL, and OpenMP (including switches
 at runtime).
 
 The highlights of the latest 1.7.x release family are:
 
 * Fast sparse matrix-matrix multiplications, outperforming CUBLAS and MKL.
-* Fine-grained parallel algebraic multigrid preconditioners for CPUs, Xeon 
+* Fine-grained parallel algebraic multigrid preconditioners for CPUs, Xeon
     Phis, and GPUs.
-* Fine-grained parallel incomplete LU factorization preconditioners for 
+* Fine-grained parallel incomplete LU factorization preconditioners for
     CPUs, Xeon Phis, and GPUs.
 
 WWW: http://viennacl.sourceforge.net/
