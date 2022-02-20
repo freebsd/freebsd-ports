@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.5
+DISTVERSION=	1.1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/0mp:tencentcloud_tencentcloud_sdk_go
 
@@ -86,7 +86,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		golang:sys:d867a43fc93e:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
+		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.7:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -121,7 +121,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		hashicorp:go-rootcerts:v1.0.2:hashicorp_go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
 		hashicorp:go-safetemp:v1.0.0:hashicorp_go_safetemp/vendor/github.com/hashicorp/go-safetemp \
 		hashicorp:go-slug:v0.7.0:hashicorp_go_slug/vendor/github.com/hashicorp/go-slug \
-		hashicorp:go-tfe:e52963e079d0:hashicorp_go_tfe/vendor/github.com/hashicorp/go-tfe \
+		hashicorp:go-tfe:v0.21.0:hashicorp_go_tfe/vendor/github.com/hashicorp/go-tfe \
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
