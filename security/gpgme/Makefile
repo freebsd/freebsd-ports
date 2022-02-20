@@ -1,7 +1,7 @@
 # Created by: teramoto@comm.eng.osaka-u.ac.jp
 
 PORTNAME=	gpgme
-PORTVERSION=	1.15.1
+PORTVERSION=	1.17.0
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -82,8 +82,8 @@ TEST_USE=		QT=testlib_build
 BUILD_DEPENDS+=	swig:devel/swig \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-USES+=		python:3.6+
-USE_PYTHON=	py3kplist flavors
+USES+=		python:3.7+
+USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--enable-languages="python"
 CONFIGURE_ENV+=	BSD_PYTHON="${PYTHON_CMD}" \
 		BSD_PYTHON_VERSION="${PYTHON_VER}" \

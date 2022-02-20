@@ -1,4 +1,5 @@
 include/QGpgME/AbstractImportJob
+include/QGpgME/AddExistingSubkeyJob
 include/QGpgME/AddUserIDJob
 include/QGpgME/ChangeExpiryJob
 include/QGpgME/ChangeOwnerTrustJob
@@ -27,6 +28,7 @@ include/QGpgME/MultiDeleteJob
 include/QGpgME/Protocol
 include/QGpgME/QGpgMENewCryptoConfig
 include/QGpgME/QuickJob
+include/QGpgME/ReceiveKeysJob
 include/QGpgME/RefreshKeysJob
 include/QGpgME/SignEncryptJob
 include/QGpgME/SignJob
@@ -35,8 +37,11 @@ include/QGpgME/SpecialJob
 include/QGpgME/TofuPolicyJob
 include/QGpgME/VerifyDetachedJob
 include/QGpgME/VerifyOpaqueJob
+include/QGpgME/WKDLookupJob
+include/QGpgME/WKDLookupResult
 include/QGpgME/WKSPublishJob
 include/qgpgme/abstractimportjob.h
+include/qgpgme/addexistingsubkeyjob.h
 include/qgpgme/adduseridjob.h
 include/qgpgme/changeexpiryjob.h
 include/qgpgme/changeownertrustjob.h
@@ -67,6 +72,7 @@ include/qgpgme/qgpgme_export.h
 include/qgpgme/qgpgme_version.h
 include/qgpgme/qgpgmenewcryptoconfig.h
 include/qgpgme/quickjob.h
+include/qgpgme/receivekeysjob.h
 include/qgpgme/refreshkeysjob.h
 include/qgpgme/signencryptjob.h
 include/qgpgme/signjob.h
@@ -75,9 +81,11 @@ include/qgpgme/specialjob.h
 include/qgpgme/tofupolicyjob.h
 include/qgpgme/verifydetachedjob.h
 include/qgpgme/verifyopaquejob.h
+include/qgpgme/wkdlookupjob.h
+include/qgpgme/wkdlookupresult.h
 include/qgpgme/wkspublishjob.h
 lib/cmake/QGpgme/QGpgmeConfig.cmake
 lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
 lib/libqgpgme.so.7
-lib/libqgpgme.so.7.5.1
+lib/libqgpgme.so.7.7.0

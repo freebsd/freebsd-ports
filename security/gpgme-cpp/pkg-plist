@@ -10,6 +10,7 @@ include/gpgme++/error.h
 include/gpgme++/eventloopinteractor.h
 include/gpgme++/exception.h
 include/gpgme++/global.h
+include/gpgme++/gpgaddexistingsubkeyeditinteractor.h
 include/gpgme++/gpgadduserideditinteractor.h
 include/gpgme++/gpgagentgetinfoassuantransaction.h
 include/gpgme++/gpggencardkeyinteractor.h
@@ -42,4 +43,4 @@ lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake
 lib/libgpgmepp.so
 lib/libgpgmepp.so.6
-lib/libgpgmepp.so.6.12.1
+lib/libgpgmepp.so.6.14.0
