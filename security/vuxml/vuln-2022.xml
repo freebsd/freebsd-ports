@@ -1,3 +1,31 @@
+  <vuln vid="4d763c65-9246-11ec-9aa3-4ccc6adda413">
+    <topic>libmysoft -- Heap-based buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libmysofa</name>
+	<range><lt>1.2.1.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zhengjie Du reports:</p>
+	<blockquote cite="https://huntr.dev/bounties/7ca8d9ea-e2a6-4294-af28-70260bb53bc1/">
+	  <p>There are some heap-buffer-overflows in mysofa2json of
+	    libmysofa. They are in function loudness, mysofa_check and
+	    readOHDRHeaderMessageDataLayout.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3756</cvename>
+      <url>https://www.huntr.dev/bounties/7ca8d9ea-e2a6-4294-af28-70260bb53bc1/</url>
+    </references>
+    <dates>
+      <discovery>2021-09-27</discovery>
+      <entry>2022-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27bf9378-8ffd-11ec-8be6-d4c9ef517024">
     <topic>MariaDB -- Multiple vulnerabilities</topic>
     <affects>
