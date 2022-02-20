@@ -19,11 +19,16 @@ USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT?=	swaywm
 USE_GNOME=	cairo pango
-PLIST_FILES=	"@(,,4755) bin/${PORTNAME}" \
+PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
+
+# https://reviews.freebsd.org/D34321
+.if !exists(/usr/libexec/pam_unix-helper)
+PLIST_FILES:=	"@(,,4755) "${PLIST_FILES}
+.endif
 
 OPTIONS_DEFINE=	MANPAGES PIXBUF
 OPTIONS_DEFAULT=MANPAGES PIXBUF
