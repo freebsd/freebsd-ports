@@ -1,7 +1,7 @@
 PORTNAME=	wshowkeys
 PORTVERSION=	s20200330
 DISTVERSIONSUFFIX=	-0-g6388a49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -22,6 +22,6 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo pango
-PLIST_FILES=	"@(,,4755) bin/${PORTNAME}"
+PLIST_FILES=	"@(,video,4750) bin/${PORTNAME}"
 
 .include <bsd.port.mk>
