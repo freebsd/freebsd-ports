@@ -1,6 +1,7 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -23,9 +24,19 @@ ALL_TARGET=	lisp info
 NO_ARCH=	yes
 
 INFO=		ghub
-PORTDOCS=	CHANGELOG README.md
+PORTDOCS=	CHANGELOG README.md ghub.html
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS PDF
+
+PDF_DESC=	Build and install PDF document
+
+DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
+DOCS_ALL_TARGET=	html
+DOCS_BINARY_ALIAS=	sed=gsed
+PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USE=		TEX=dvipdfmx:build
+PDF_ALL_TARGET=		pdf
+PDF_PLIST_FILES=	${DOCSDIR}/ghub.pdf
 
 ELISP_FILES=	buck.el buck.elc ghub-autoloads.el ghub-graphql.el \
 		ghub-graphql.elc ghub.el ghub.elc glab.el glab.elc gogs.el \
@@ -39,6 +50,11 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:C/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.md \
+		${WRKSRC}/docs/ghub.html ${STAGEDIR}${DOCSDIR}
+
+do-install-PDF-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/ghub.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
