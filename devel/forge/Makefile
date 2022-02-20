@@ -1,6 +1,7 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -32,19 +33,31 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
 MAKE_ENV+=	INSTALL_INFO=install-info \
-		LOAD_PATH="${_LOAD_PATH}"
+		LOAD_PATH="${LOAD_PATH}"
 # Parallel build fails if Emacs is built with native compilation enabled
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	lisp info
 
 CONFLICTS=	forge-devel*
 
+NO_ARCH=	yes
+
 INFO=		forge
-PORTDOCS=	CHANGELOG README.md
+PORTDOCS=	CHANGELOG README.md forge.html
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS PDF
+OPTIONS_SUB=	yes
 
-_LOAD_PATH=	-L ${PREFIX}/${EMACS_SITE_LISPDIR} -L \
+PDF_DESC=	Build and install PDF document
+
+DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
+DOCS_ALL_TARGET=	html
+DOCS_BINARY_ALIAS=	sed=gsed
+PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USE=		TEX=dvipdfmx:build
+PDF_ALL_TARGET=		pdf
+
+LOAD_PATH=	-L ${PREFIX}/${EMACS_SITE_LISPDIR} -L \
 		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L \
 		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/closql -L \
 		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/emacsql -L \
@@ -59,6 +72,11 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:C/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.md \
+		${WRKSRC}/docs/forge.html ${STAGEDIR}${DOCSDIR}
+
+do-install-PDF-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/forge.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
