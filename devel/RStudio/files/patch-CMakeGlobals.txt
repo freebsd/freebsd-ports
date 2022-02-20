@@ -1,6 +1,6 @@
---- CMakeGlobals.txt.orig	2021-05-24 22:22:25 UTC
+--- CMakeGlobals.txt.orig	2022-02-16 19:26:03 UTC
 +++ CMakeGlobals.txt
-@@ -118,7 +118,7 @@ endif()
+@@ -159,7 +159,7 @@ endif()
  
  # record git revision hash (cache it since we don't use this in development
  # mode and we don't want it to force rebuilds there)
@@ -9,7 +9,7 @@
     find_program(GIT_EXECUTABLE git)
     if(GIT_EXECUTABLE)
        execute_process(
-@@ -129,6 +129,7 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSTUDIO_GIT_REVIS
+@@ -170,6 +170,7 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSTUDIO_GIT_REVIS
        SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
     endif()
  endif()
@@ -17,7 +17,16 @@
  
  # record these from Jenkins if available
  if("$ENV{GIT_COMMIT}" STREQUAL "")
-@@ -238,14 +239,14 @@ else()
+@@ -223,7 +224,7 @@ if(LINUX AND UNAME_M STREQUAL aarch64)
+    set(QUARTO_ENABLED FALSE CACHE INTERNAL "")
+ else()
+    # enable by default
+-   set(QUARTO_ENABLED TRUE CACHE INTERNAL "")
++   set(QUARTO_ENABLED ${FREEBSD_QUARTO_ENABLED})
+    add_definitions(-DQUARTO_ENABLED)
+ endif()
+ 
+@@ -298,14 +299,14 @@ else()
  endif()
  
  # if the install prefix is /usr/local then tweak as appropriate

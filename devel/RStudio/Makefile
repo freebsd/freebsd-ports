@@ -3,7 +3,7 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.09.2+382
+DISTVERSION=	2022.02.0+443
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -40,6 +40,7 @@ USES=		cmake fortran localbase:ldflags pgsql pkgconfig sqlite ssl
 USE_JAVA=	yes
 JAVA_VERSION=	8
 JAVA_BUILD=	yes
+
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tl}
 GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
@@ -83,6 +84,12 @@ USER=		nobody
 SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME:tl}-server
 .endif
+
+OPTIONS_DEFINE=		WITH_QUARTO
+
+WITH_QUARTO_DESC=	Build with support for Quarto
+WITH_QUARTO_CMAKE_BOOL=	FREEBSD_QUARTO_ENABLED
+WITH_QUARTO_BROKEN=	Quarto isn't yet ported
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/dependencies/dictionaries && ${MV} ${WRKDIR}/en_* ${WRKSRC}/dependencies/dictionaries/

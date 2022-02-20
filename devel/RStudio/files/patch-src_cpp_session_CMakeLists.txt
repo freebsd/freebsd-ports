@@ -1,41 +1,37 @@
---- src/cpp/session/CMakeLists.txt.orig	2021-09-22 13:58:50 UTC
+--- src/cpp/session/CMakeLists.txt.orig	2022-02-16 19:26:03 UTC
 +++ src/cpp/session/CMakeLists.txt
-@@ -23,7 +23,7 @@ add_subdirectory(workers)
- if(WIN32)
-    set(RSTUDIO_DEPENDENCIES_DICTIONARIES_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/dictionaries")
-    set(RSTUDIO_DEPENDENCIES_MATHJAX_DIR      "${RSTUDIO_DEPENDENCIES_DIR}/common/mathjax-27")
--   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR       "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/${PANDOC_VERSION}")
-+   #set(RSTUDIO_DEPENDENCIES_PANDOC_DIR       "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/${PANDOC_VERSION}")
- else()
+@@ -55,20 +55,21 @@ endif()
+ # install pandoc
+ # - by default, we use quarto + quarto's bundled pandoc
+ # - if quarto is not enabled, use pandoc fallback
+-if(QUARTO_ENABLED)
+-   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_DEPENDENCIES_QUARTO_DIR}/bin")
+-elseif(EXISTS "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
+-   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
+-else()
+-   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_DEPENDENCIES_DIR}/pandoc/${PANDOC_VERSION}")
+-endif()
++#if(QUARTO_ENABLED)
++#   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_DEPENDENCIES_QUARTO_DIR}/bin")
++#elseif(EXISTS "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
++#   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
++#else()
++#   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_DEPENDENCIES_DIR}/pandoc/${PANDOC_VERSION}")
++#endif()
  
-    # indirection to help build machine find these libraries?
-@@ -39,18 +39,19 @@ else()
-       set(RSTUDIO_DEPENDENCIES_MATHJAX_DIR "${RSTUDIO_DEPENDENCIES_DIR}/mathjax-27")
-    endif()
- 
--   if(EXISTS "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
--      set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
--   else()
--      set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_DEPENDENCIES_DIR}/pandoc/${PANDOC_VERSION}")
--   endif()
-+   #if(EXISTS "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
-+   #   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_TOOLS_ROOT}/pandoc/${PANDOC_VERSION}")
-+   #else()
-+   #   set(RSTUDIO_DEPENDENCIES_PANDOC_DIR "${RSTUDIO_DEPENDENCIES_DIR}/pandoc/${PANDOC_VERSION}")
-+   #endif()
- 
- endif()
  
  # validate our dependencies exist
  foreach(VAR RSTUDIO_DEPENDENCIES_DICTIONARIES_DIR
              RSTUDIO_DEPENDENCIES_MATHJAX_DIR
--            RSTUDIO_DEPENDENCIES_PANDOC_DIR)
+-            RSTUDIO_DEPENDENCIES_PANDOC_DIR
+-            RSTUDIO_DEPENDENCIES_QUARTO_DIR)
 +            #RSTUDIO_DEPENDENCIES_PANDOC_DIR
-+)
++            RSTUDIO_DEPENDENCIES_QUARTO_DIR
++            )
  
-    # validate existence
-    if(NOT EXISTS "${${VAR}}")
-@@ -71,19 +72,19 @@ foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})
+  
+    # skip quarto if not enabled
+@@ -95,19 +96,19 @@ foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})
  endforeach()
  
  # verify libclang is installed (Windows only)
@@ -67,9 +63,9 @@
  # include files
  file(GLOB_RECURSE SESSION_HEADER_FILES "*.h*")
  
-@@ -457,6 +458,9 @@ add_stripped_executable(
-    ${SESSION_SOURCE_FILES}
-    ${SESSION_HEADER_FILES})
+@@ -528,6 +529,9 @@ else()
+ 
+ endif()
  
 +# additional libraries
 +target_link_libraries(rsession -L${FREEBSD_LIBDIR} -linotify -lprocstat)
@@ -77,22 +73,22 @@
  # skip libR RPATH at development time
  if(RSTUDIO_DEVELOPMENT OR RSTUDIO_RUN_IN_PLACE)
     set_target_properties(rsession PROPERTIES SKIP_BUILD_RPATH TRUE)
-@@ -592,10 +596,10 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSESSION_ALTERNAT
-            DESTINATION "${RSTUDIO_INSTALL_SUPPORTING}/resources")
- 
-    # install pandoc
--   file(GLOB PANDOC_FILES "${RSTUDIO_DEPENDENCIES_PANDOC_DIR}/pandoc*")
--   install(FILES ${PANDOC_FILES}
--           PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
--           DESTINATION "${RSTUDIO_INSTALL_BIN}/pandoc")
-+   #file(GLOB PANDOC_FILES "${RSTUDIO_DEPENDENCIES_PANDOC_DIR}/pandoc*")
-+   #install(FILES ${PANDOC_FILES}
-+   #        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-+   #        DESTINATION "${RSTUDIO_INSTALL_BIN}/pandoc")
+@@ -688,10 +692,10 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSESSION_ALTERNAT
+                DESTINATION "${RSTUDIO_INSTALL_BIN}"
+                USE_SOURCE_PERMISSIONS)
+       endif()
+-   else()
+-      install(DIRECTORY "${RSTUDIO_DEPENDENCIES_PANDOC_DIR}/"
+-              DESTINATION "${RSTUDIO_INSTALL_BIN}/pandoc"
+-              USE_SOURCE_PERMISSIONS)
++   #else()
++      #install(DIRECTORY "${RSTUDIO_DEPENDENCIES_PANDOC_DIR}/"
++      #        DESTINATION "${RSTUDIO_INSTALL_BIN}/pandoc"
++      #        USE_SOURCE_PERMISSIONS)
+    endif()
  
     # install embedded packages
-    foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})
-@@ -635,18 +639,18 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSESSION_ALTERNAT
+@@ -732,18 +736,18 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSESSION_ALTERNAT
        DESTINATION ${RSTUDIO_INSTALL_SUPPORTING}/resources)
  
     # install libclang
