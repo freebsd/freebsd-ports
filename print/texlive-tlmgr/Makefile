@@ -19,8 +19,6 @@ CPE_VENDOR=	tug
 USE_PERL5=	run
 USE_TEX=	kpathsea
 
-CONFLICTS=	texlive-base-[0-9]* texlive-infra
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 

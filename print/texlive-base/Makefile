@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=--with-system-$L \
 MAKE_ENV=	CONFIG_SITE=${CONFIG_SITE}
 INSTALL_TARGET=	install-strip
 
-CONFLICTS_INSTALL=	detex dvi2tty ps2eps texlive-texmf
+CONFLICTS_INSTALL=	detex dvi2tty ps2eps
 
 BINARY_ALIAS=	freetype-config=true
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}

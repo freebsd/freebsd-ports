@@ -36,9 +36,11 @@ you update your ports collection, before attempting any port upgrades.
   create a ticket or send a mail to tex@FreeBSD.org
 
   print/tex-aleph has been removed as per upstream. This package should be
-  removed manually:
+  removed manually. Additionally users have reported to delete 
+  texlive-texmf prior to starting update, or pkg-static will indicate
+  there is a conflict during the upgrade of texlive-base :
 
-  # pkg remove tex-aleph
+  # pkg remove tex-aleph texlive-texmf
 
 20220218:
   AFFECTS: users of net-mgmt/librenms

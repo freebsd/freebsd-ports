@@ -16,8 +16,6 @@ USE_XORG=	x11 xmu
 EXTRACT_FILES=	build-aux utils/xpdfopen
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	texlive-base-*
-
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils/xpdfopen
