@@ -36,8 +36,6 @@ include/linuxsampler/plugins/InstrumentEditorFactory.h
 include/linuxsampler/scriptvm/ScriptVM.h
 include/linuxsampler/scriptvm/ScriptVMFactory.h
 include/linuxsampler/scriptvm/common.h
-lib/dssi/linuxsampler.a
-lib/dssi/linuxsampler.so
 lib/linuxsampler/liblinuxsampler.a
 lib/linuxsampler/liblinuxsampler.so
 lib/linuxsampler/liblinuxsampler.so.6
