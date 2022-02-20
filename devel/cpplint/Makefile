@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	cpplint
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
