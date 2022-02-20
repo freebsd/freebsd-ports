@@ -1450,6 +1450,7 @@
     SUBDIR += py-cssmin
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
+    SUBDIR += py-dj-database-url
     SUBDIR += py-dj32-django-auth-ldap
     SUBDIR += py-dj32-django-cacheops
     SUBDIR += py-dj32-django-cors-headers
