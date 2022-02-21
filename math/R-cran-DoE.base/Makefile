@@ -1,12 +1,11 @@
 # Created by: Pedro Giffuni
 
 PORTNAME=	DoE.base
-DISTVERSION=	1.1-3
-PORTREVISION=	2
+DISTVERSION=	1.2
 CATEGORIES=	math devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Factorials, Orthogonal Arrays and Base Utilities for DoE
 
 LICENSE=	GPLv2+
