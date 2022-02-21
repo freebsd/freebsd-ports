@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 9;
+my $micro = 10;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -813,13 +813,6 @@ sub checkplist {
 			$found_so++;
 		}
 
-		if ($_ =~ m|^share/icons/.*/| &&
-			$makevar{INSTALLS_ICONS} eq '' &&
-			needs_installs_icons()) {
-			&perror("WARN", $file, $., "installing icons, ".
-				"please define INSTALLS_ICONS as appropriate");
-		}
-
 		if ($_ =~ m|\.omf$| && $makevar{INSTALLS_OMF} eq '') {
 			&perror("WARN", $file, $., "installing OMF files, ".
 				"please define INSTALLS_OMF (see the FreeBSD GNOME ".
@@ -1162,7 +1155,7 @@ sub check_depends_syntax {
 			if ($k eq '') {
 				next;
 			}
-			my $tmp_depends = $k;
+			my ($tmp_depends, $fl) = split(/\@/, $k);
 			$tmp_depends =~ s/\$\{[^}]+}//g;
 			my @l = split(':', $tmp_depends);
 
@@ -1183,8 +1176,7 @@ sub check_depends_syntax {
 			}
 			my %m = ();
 			$m{'dep'} = $l[0];
-			my ($di, $fl) = split(/\@/, $l[1]);
-			$m{'dir'} = $di;
+			$m{'dir'} = $l[1];
 			$m{'fla'} = $fl // '';
 			$m{'tgt'} = $l[2] // '';
 			my %depmvars = ();
@@ -1571,12 +1563,6 @@ sub checkmakefile {
 					"ends in \".core\".  This file may be deleted if ".
 					"daily_clean_disks_enable=\"YES\" in /etc/periodic.conf.  ".
 					"If possible, install this file with a different name.");
-			}
-			if ($plist_file =~ m|^share/icons/.*/| &&
-				$makevar{INSTALLS_ICONS} eq '' &&
-		        needs_installs_icons()) {
-				&perror("WARN", "", -1, "PLIST_FILES: installing icons, ".
-					"please define INSTALLS_ICONS as appropriate");
 			}
 			if ($plist_file =~ /%%[\w_\d]+%%/) {
 				&perror("FATAL", "", -1, "PLIST_FILES: files cannot contain ".
@@ -2005,9 +1991,8 @@ sub checkmakefile {
 	#
 	# whole file: using INSTALLS_ICONS when it is not wanted
 	#
-	if (!($makevar{INSTALLS_ICONS} eq '') &&
-		!needs_installs_icons()) {
-		&perror("WARN", $file, -1, "INSTALLS_ICONS is set, but should not be.");
+	if (!($makevar{INSTALLS_ICONS} eq '')) {
+		&perror("WARN", $file, -1, "INSTALLS_ICONS is now deprecated.  It should be removed.");
 	}
 
 	#
@@ -2176,6 +2161,7 @@ xargs xmkmf
 				next;
 			}
 			if ($curline =~ /(?:^|\s)[\@\-]{0,2}$i(?:$|\s)/
+				&& $curline !~ /^PORTNAME=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_INSTALL_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^IGNORE(_[\w\d]+)?(.)?=[^\n]+$i/m
@@ -2873,7 +2859,8 @@ DIST_SUBDIR EXTRACT_ONLY
 					if ($i =~ /^$ms/ && $i ne $ms) {
 						my $ip = $i;
 						$ip =~ s/^$ms\///;
-						my $exp_sd = get_makevar($ip);
+						my (@ip_parts) = split(/:/, $ip);
+						my $exp_sd = get_makevar($ip_parts[0]);
 						if ($exp_sd eq $sd) {
 							&perror("WARN", $file, -1, "typically when you specify magic site $ms ".
 								"you do not need anything else as $sd is assumed");
@@ -3951,10 +3938,6 @@ sub urlcheck {
 	&perror("FATAL", $file, -1, "URL \"$url\" contains ".
 				"extra \":\".");
 	}
-}
-
-sub needs_installs_icons {
-	return $makevar{USES} =~ /gnome/
 }
 
 sub TRUE {1;}
