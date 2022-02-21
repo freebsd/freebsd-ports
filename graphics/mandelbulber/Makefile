@@ -1,6 +1,5 @@
 PORTNAME=	mandelbulber
-PORTVERSION=	2.26
-PORTREVISION=	1
+PORTVERSION=	2.27
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		liblzo2.so:archivers/lzo2
+		liblzo2.so:archivers/lzo2 \
+		libOpenEXR.so:graphics/openexr
 BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_image.h:devel/stb
 
 USE_GITHUB=	yes
