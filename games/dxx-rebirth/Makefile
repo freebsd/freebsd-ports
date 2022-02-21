@@ -6,6 +6,9 @@ CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
+PATCH_SITES=	https://github.com/dxx-rebirth/dxx-rebirth/commit/
+PATCHFILES=	b8ae2c5e55cc9643cd8c3253ff8e12628c754d84.patch:-p1
+
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source port of Descent and Descent 2
 
