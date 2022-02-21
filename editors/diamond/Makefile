@@ -1,7 +1,9 @@
 PORTNAME=	diamond
 DISTVERSIONPREFIX=	diamond-
 DISTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	editors
+PKGNAMESUFFIX=	-cs
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Compact programmers editor
@@ -9,7 +11,7 @@ COMMENT=	Compact programmers editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=    libhunspell-1.7.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 BUILD_DEPENDS=	copperspice>=1.7:x11-toolkits/copperspice
 RUN_DEPENDS=	copperspice>=1.7:x11-toolkits/copperspice
 
@@ -23,4 +25,3 @@ GH_ACCOUNT=	copperspice
 GH_PROJECT=	diamond
 
 .include <bsd.port.mk>
-

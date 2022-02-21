@@ -9,6 +9,15 @@
  if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
     set_target_properties(Diamond PROPERTIES OUTPUT_NAME diamond)
  
+@@ -160,7 +162,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    )
+ 
+ elseif(CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeBSD|NetBSD|DragonFly)")
+-   set_target_properties(Diamond PROPERTIES OUTPUT_NAME diamond)
++   set_target_properties(Diamond PROPERTIES OUTPUT_NAME diamond-cs)
+ 
+    find_package(PkgConfig)
+    pkg_check_modules(Hunspell IMPORTED_TARGET hunspell)
 @@ -169,8 +171,9 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeB
        PRIVATE
        PkgConfig::Hunspell
