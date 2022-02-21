@@ -1,6 +1,6 @@
 PORTNAME=	NymphCast
 DISTVERSION=	v0.1-rc0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 # -p3 because WRKSRC_SUBDIR is set; the patches are from the toplevel,
@@ -23,16 +23,15 @@ LIB_DEPENDS=	libnymphrpc.so:multimedia/nymphrpc \
 		libnymphcast.so:multimedia/nymphcastlib \
 		libasound.so:audio/alsa-lib \
 		libPocoFoundation.so:devel/poco \
-		libSDL2.so:devel/sdl20 \
 		libcurl.so:ftp/curl \
 		libfreeimage.so:graphics/freeimage \
-		libSDL2_image-2.0.so.0:graphics/sdl2_image \
 		libavutil.so:multimedia/ffmpeg \
 		libvlccore.so:multimedia/vlc \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++17-lang gl gmake pkgconfig
+USES=		compiler:c++17-lang gl gmake pkgconfig sdl
 USE_GL=		gl
+USE_SDL=	sdl2 image2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MayaPosch

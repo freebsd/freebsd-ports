@@ -1,5 +1,6 @@
 PORTNAME=	NymphRPC
 DISTVERSION=	v0.1-alpha1
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	adridg@FreeBSD.org

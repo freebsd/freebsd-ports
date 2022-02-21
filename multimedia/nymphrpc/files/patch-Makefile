@@ -41,16 +41,20 @@
  
  ifdef ANDROID
  CFLAGS += -fPIC
-@@ -115,7 +116,7 @@ SHARED_OBJECTS := $(addprefix obj/shared/$(ARCH),$(not
+@@ -113,9 +114,10 @@ SOURCES := $(wildcard src/*.cpp)
+ OBJECTS := $(addprefix obj/static/$(ARCH),$(notdir) $(SOURCES:.cpp=.o))
+ SHARED_OBJECTS := $(addprefix obj/shared/$(ARCH),$(notdir) $(SOURCES:.cpp=.o))
  
- all: lib
+-all: lib
++all: makedir 
++	$(MAKE) lib
  
 -lib: makedir lib/$(ARCH)$(OUTPUT).a lib/$(ARCH)$(LIBNAME)
 +lib: makedir lib/$(OUTPUT).a lib/$(LIBNAME)
  	
  obj/static/$(ARCH)%.o: %.cpp
  	$(GCC) -c -o $@ $< $(CFLAGS)
-@@ -123,11 +124,11 @@ obj/static/$(ARCH)%.o: %.cpp
+@@ -123,11 +125,11 @@ obj/static/$(ARCH)%.o: %.cpp
  obj/shared/$(ARCH)%.o: %.cpp
  	$(GCC) -c -o $@ $< $(SHARED_FLAGS) $(CFLAGS) $(LIBS)
  	
@@ -64,7 +68,7 @@
  	$(GCC) -o $@ $(CFLAGS) $(SHARED_FLAGS) $(SHARED_OBJECTS) $(LIBS)
  	
  makedir:
-@@ -165,9 +166,9 @@ endif
+@@ -165,9 +167,9 @@ endif
  .PHONY: install
  install:
  	install -d $(DESTDIR)$(PREFIX)/lib/
