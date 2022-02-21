@@ -1,3 +1,40 @@
+  <vuln vid="1cd565da-455e-41b7-a5b9-86ad8e81e33e">
+    <topic>seatd-launch -- remove files with escalated privileges with SUID</topic>
+    <affects>
+      <package>
+	<name>seatd</name>
+	<range><ge>0.6.0</ge><lt>0.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kenny Levinsen reports:</p>
+	<blockquote cite="https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CETEO7R.QG8B1KGD531R1%40kl.wtf%3E">
+	  <p>seatd-launch could use a user-specified socket path instead of the
+	    internally generated socket path, and would unlink the socket path
+	    before use to guard against collision with leftover sockets. This
+	    meant that a caller could freely control what file path would be
+	    unlinked and replaced with a user-owned seatd socket for the duration
+	    of the session.</p>
+	  <p>If seatd-launch had the SUID bit set, this could be used by a
+	    malicious user to remove files with the privileges of the owner of
+	    seatd-launch, which is likely root, and replace it with a user-owned
+	    domain socket.</p>
+	  <p>This does not directly allow retrieving the contents of existing
+	    files, and the user-owned socket file is at the current time not
+	    believed to be directly useful for further exploitation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CETEO7R.QG8B1KGD531R1%40kl.wtf%3E</url>
+    </references>
+    <dates>
+      <discovery>2022-02-21</discovery>
+      <entry>2022-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43ae57f6-92ab-11ec-81b4-2cf05d620ecc">
     <topic>Qt5 -- QProcess unexpected search path</topic>
     <affects>
