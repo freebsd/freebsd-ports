@@ -1,7 +1,7 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 
 PORTNAME=	lxml
-PORTVERSION=	4.7.1
+PORTVERSION=	4.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
