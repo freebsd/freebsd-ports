@@ -140,6 +140,7 @@ man/man1/mstresourcedump.1.gz
 man/man1/mstvpd.1.gz
 %%DATADIR%%/BlueField.csv
 %%DATADIR%%/BlueField2.csv
+%%DATADIR%%/BlueField3.csv
 %%DATADIR%%/ConnectIB.csv
 %%DATADIR%%/ConnectX2.csv
 %%DATADIR%%/ConnectX3.csv
@@ -154,6 +155,7 @@ man/man1/mstvpd.1.gz
 %%DATADIR%%/InfiniScaleIV.csv
 %%DATADIR%%/Quantum.csv
 %%DATADIR%%/Spectrum.csv
+%%DATADIR%%/Spectrum2.csv
 %%DATADIR%%/Spectrum3.csv
 %%DATADIR%%/SwitchIB.csv
 %%DATADIR%%/SwitchIB2.csv

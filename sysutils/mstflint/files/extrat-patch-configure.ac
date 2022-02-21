@@ -1,6 +1,6 @@
---- configure.ac.orig	2020-01-05 16:50:06.000000000 +0100
-+++ configure.ac	2020-01-09 00:15:46.179518000 +0100
-@@ -104,12 +104,10 @@ AC_ARG_ENABLE(fw-mgr,
+--- configure.ac.orig	2022-02-21 15:07:33.000000000 +0100
++++ configure.ac	2022-02-21 15:08:50.061537000 +0100
+@@ -114,12 +114,10 @@ AC_ARG_ENABLE(fw-mgr,
               [enable_fw_mgr="no"])
  AC_MSG_RESULT($enable_fw_mgr)
  if test "x$enable_fw_mgr" = "xyes"; then
@@ -13,7 +13,7 @@
  fi
  
  # Adabe
-@@ -133,8 +131,6 @@ if test "x$enable_adb_generic_tools" = "xyes"; then
+@@ -143,8 +141,6 @@ if test "x$enable_adb_generic_tools" = "xyes"; then
      AC_LANG_POP([C++])
  fi
  
@@ -22,10 +22,10 @@
  AM_CONDITIONAL(ENABLE_FWMGR, [test "x$enable_fw_mgr" = "xyes" ])
  AC_SUBST(ENABLE_FWMGR)
  
-@@ -352,11 +348,6 @@ AS_IF([test "x$enable_cs" = "xyes" || test "x$enable_o
- AS_IF([test "x$enable_openssl" = "xyes"], [
-         AC_CONFIG_FILES(mlxsign_lib/Makefile)
-     ])
+@@ -370,11 +366,6 @@ AS_IF([test "x$enable_openssl" = "xyes"], [
+         [AC_CONFIG_FILES(mlxsign_lib/Makefile)],
+         [AC_MSG_ERROR([Required OpenSSL version >= $MIN_OPENSSL_VER (or use --disable-openssl)])])
+ ])
 -
 -if [ test "x$enable_openssl" = "xno" ] && \
 -    [ test "x$enable_fw_mgr" = "xyes" ] ; then

@@ -1,6 +1,6 @@
---- mlxarchive/Makefile.am.orig	2020-01-05 16:50:06.000000000 +0100
-+++ mlxarchive/Makefile.am	2020-01-09 14:15:21.405697000 +0100
-@@ -20,8 +20,6 @@ DEV_MGT_DIR = $(USER_DIR)/dev_mgt
+--- mlxarchive/Makefile.am.orig	2021-11-30 12:55:03.000000000 +0100
++++ mlxarchive/Makefile.am	2022-02-21 15:13:48.562527000 +0100
+@@ -40,8 +40,6 @@ DEV_MGT_DIR = $(USER_DIR)/dev_mgt
  TOOLS_CRYPTO_DIR = $(USER_DIR)/tools_crypto
  CMDIF_DIR = $(USER_DIR)/cmdif
  
@@ -9,16 +9,9 @@
  INCLUDES = $(JSON_CFLAGS) -I. \
             -I$(USER_DIR) -I$(USER_DIR)/libmfa \
             -I$(MTCR_DIR) -I$(USER_DIR)/include/mtcr_ul \
-@@ -64,13 +62,13 @@ mstarchive_LDADD = libmstarchive.a\
-                    $(USER_DIR)/xz_utils/libxz_utils.a\
-                    $(USER_DIR)/ext_libs/minixz/libminixz.a\
- 		   $(USER_DIR)/xz_utils/libxz_utils.a \
--                   $(CURL_LIBS)\
-                    -lboost_regex -lboost_filesystem -lboost_system \
-                    -llzma -lm $(LIBSTD_CPP) ${LDL}
- 
+@@ -91,6 +89,7 @@ mstarchive_LDADD = libmstarchive.a\
  if ENABLE_OPENSSL
- mstarchive_LDADD += $(top_srcdir)/mlxsign_lib/libmlxsign.a -lcrypto
+ mstarchive_LDADD += $(top_srcdir)/mlxsign_lib/libmlxsign.a -lcrypto -lssl
  else
 +AM_CXXFLAGS += -DNO_OPEN_SSL
  endif
