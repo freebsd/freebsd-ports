@@ -2,6 +2,7 @@ PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
 CATEGORIES=	games
+MASTER_SITES=	LOCAL/jbeich
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer voxel RPG written in Rust
