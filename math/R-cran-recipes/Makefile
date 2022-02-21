@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	recipes
-PORTVERSION=	0.1.17
+PORTVERSION=	0.2.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,9 +12,10 @@ LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-ellipsis>0:devel/R-cran-ellipsis \
-		R-cran-generics>=0.1.0:devel/R-cran-generics \
+		R-cran-generics>=0.1.0.9000:devel/R-cran-generics \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-gower>0:math/R-cran-gower \
+		R-cran-hardhat>=0.1.6.9001:devel/R-cran-hardhat \
 		R-cran-ipred>=0.9.12:math/R-cran-ipred \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-lubridate>0:devel/R-cran-lubridate \
