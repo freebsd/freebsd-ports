@@ -1,5 +1,5 @@
 PORTNAME=	mariadb-connector-c
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.6
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
