@@ -1,7 +1,7 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
 
 PORTNAME=	pymemcache
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
