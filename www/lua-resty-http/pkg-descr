@@ -1,0 +1,15 @@
+Lua HTTP client cosocket driver for OpenResty / ngx_lua
+
+Features:
+- HTTP 1.0 and 1.1
+- SSL
+- Streaming interface to the response body, for predictable memory usage
+- Alternative simple interface for single-shot requests without a manual
+  connection step
+- Chunked and non-chunked transfer encodings
+- Connection keepalives
+- Request pipelining
+- Trailers
+- HTTP proxy connections
+
+WWW: https://github.com/ledgetech/lua-resty-http

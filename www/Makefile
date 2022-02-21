@@ -320,6 +320,7 @@
     SUBDIR += logtools
     SUBDIR += ls-qpack
     SUBDIR += lua-resty-core
+    SUBDIR += lua-resty-http
     SUBDIR += lua-resty-lrucache
     SUBDIR += luakit
     SUBDIR += luakit-devel
