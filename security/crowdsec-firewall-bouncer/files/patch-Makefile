@@ -1,11 +1,15 @@
---- Makefile.orig	2021-12-22 22:57:23 UTC
+--- Makefile.orig	2022-02-11 13:22:37 UTC
 +++ Makefile
-@@ -11,7 +11,7 @@ BUILD_VERSION?="$(shell git describe --tags `git rev-l
- BUILD_GOVERSION="$(shell go version | cut -d " " -f3 | sed -r 's/[go]+//g')"
- BUILD_TIMESTAMP=$(shell date +%F"_"%T)
- BUILD_TAG?="$(shell git rev-parse HEAD)"
--export LD_OPTS=-ldflags "-s -w -X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.Version=$(BUILD_VERSION) \
-+export LD_OPTS=-mod vendor -modcacherw --ldflags "-s -w -X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.Version=$(BUILD_VERSION) \
- -X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.BuildDate=$(BUILD_TIMESTAMP) \
- -X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.Tag=$(BUILD_TAG) \
- -X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.GoVersion=$(BUILD_GOVERSION)"
+@@ -54,10 +54,10 @@ lint:
+ 	golangci-lint run
+ 
+ static: goversion clean
+-	$(GOBUILD) -ldflags "$(LDFLAGS_STATIC)" -o $(BINARY_NAME) -v -a -tags netgo
++	$(GOBUILD) -mod vendor -modcacherw -ldflags "$(LDFLAGS_STATIC)" -o $(BINARY_NAME) -v -a -tags netgo
+ 
+ build: goversion clean
+-	$(GOBUILD) -ldflags "$(LDFLAGS_DYNAMIC)" -o $(BINARY_NAME) -v
++	$(GOBUILD) -mod vendor -modcacherw -ldflags "$(LDFLAGS_DYNAMIC)" -o $(BINARY_NAME) -v
+ 
+ test:
+ 	@$(GOTEST) -ldflags "$(LDFLAGS_DYNAMIC)" -v ./...

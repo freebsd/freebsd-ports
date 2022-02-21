@@ -1,7 +1,4 @@
 @mode 0755
 bin/crowdsec-firewall-bouncer
-@dir etc/newsyslog.conf.d
 @mode 0600
 @sample %%ETCDIR%%/crowdsec-firewall-bouncer.yaml.sample
-@mode 0644
-@sample etc/newsyslog.conf.d/crowdsec-firewall-bouncer.conf.sample

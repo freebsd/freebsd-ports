@@ -1,3 +1,3 @@
-TIMESTAMP = 1640213523
-SHA256 (crowdsecurity-cs-firewall-bouncer-v0.0.20-v0.0.20-freebsd_GH0.tar.gz) = 95f8abf5f44e700e7f0a41edf5367715ce06918cb0de7a5d084bdca277563171
-SIZE (crowdsecurity-cs-firewall-bouncer-v0.0.20-v0.0.20-freebsd_GH0.tar.gz) = 3018717
+TIMESTAMP = 1645218461
+SHA256 (crowdsecurity-cs-firewall-bouncer-v0.0.23.r2-v0.0.23.r2-freebsd_GH0.tar.gz) = efb34044e8a648c1ec505fef64de3e4901ac760e732b647650f8e46547c7fe87
+SIZE (crowdsecurity-cs-firewall-bouncer-v0.0.23.r2-v0.0.23.r2-freebsd_GH0.tar.gz) = 3053462

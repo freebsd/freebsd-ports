@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # PROVIDE: crowdsec_firewall
-# REQUIRE: LOGIN DAEMON NETWORKING crowdsec
+# REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -9,6 +9,10 @@
 #
 # crowdsec_firewall_enable (bool):	Set it to YES to enable crowdsec firewall.
 #					Default is "NO"
+# crowdsec_firewall_config (str):	Set the bouncer config path.
+#					Default is "%%ETCDIR%%/crowdsec-firewall-bouncer.yaml"
+# crowdsec_firewall_flags (str):	extra flags to run bouncer.
+#					Default is ""
 
 . /etc/rc.subr
 
@@ -20,6 +24,7 @@ load_rc_config $name
 
 : "${crowdsec_firewall_enable:=NO}"
 : "${crowdsec_firewall_config:=%%ETCDIR%%/crowdsec-firewall-bouncer.yaml}"
+: "${crowdsec_firewall_flags:=}"
 
 pidfile=/var/run/${name}.pid
 required_files="$crowdsec_firewall_config"
@@ -30,10 +35,13 @@ start_precmd="${name}_precmd"
 crowdsec_firewall_precmd() {
     CSCLI=%%PREFIX%%/bin/cscli
     orig_line="api_key: \${API_KEY}"
+    # IF the bouncer is not configured
     if grep -q "^${orig_line}" "${crowdsec_firewall_config}"; then
         SUFFIX=$(LC_CTYPE=C tr -dc A-Za-z0-9 </dev/urandom | head -c 8)
         BOUNCER="cs-firewall-bouncer-${SUFFIX}"
+        # AND crowdsec is installed..
         if command -v "$CSCLI" >/dev/null; then
+            # THEN, register it to the local API
             API_KEY=$($CSCLI bouncers add "${BOUNCER}" -o raw)
             if [ -n "$API_KEY" ]; then
                 sed -i "" "s/^${orig_line}/api_key: ${API_KEY}     # ${BOUNCER}/" "${crowdsec_firewall_config}"
@@ -41,20 +49,11 @@ crowdsec_firewall_precmd() {
             fi
         fi
     fi
-
-    # needs real tabs
-    cat <<-EOT | /sbin/pfctl -f /dev/fd/0
-	table <crowdsec-blacklists> persist
-	table <crowdsec6-blacklists> persist
-	block drop in quick from <crowdsec-blacklists> to any
-	block drop in quick from <crowdsec6-blacklists> to any
-	EOT
-
 }
 
 crowdsec_firewall_start() {
     /usr/sbin/daemon -f -p ${pidfile} -t "${desc}" -- \
-        ${command} -c "${crowdsec_firewall_config}"
+        ${command} -c "${crowdsec_firewall_config}" ${crowdsec_firewall_flags}
 }
 
 run_rc_command "$1"
