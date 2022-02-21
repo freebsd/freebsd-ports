@@ -31,11 +31,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/data/syncedlist.py
 %%PYTHON_SITELIBDIR%%/hoomd/data/typeconverter.py
 %%PYTHON_SITELIBDIR%%/hoomd/data/typeparam.py
-%%PYTHON_SITELIBDIR%%/hoomd/dem/__init__.py
-%%PYTHON_SITELIBDIR%%/hoomd/dem/_dem%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/hoomd/dem/pair.py
-%%PYTHON_SITELIBDIR%%/hoomd/dem/params.py
-%%PYTHON_SITELIBDIR%%/hoomd/dem/utils.py
 %%PYTHON_SITELIBDIR%%/hoomd/device.py
 %%PYTHON_SITELIBDIR%%/hoomd/error.py
 %%PYTHON_SITELIBDIR%%/hoomd/example_plugin/__init__.py
@@ -54,8 +49,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/_hpmc%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/compute.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/field.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/user.py
-%%PYTHON_SITELIBDIR%%/hoomd/hpmc/field.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/wall.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/user.py
@@ -66,7 +62,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_clusters.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_compute_free_volume.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_compute_sdf.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_external_field.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_external_user.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_external_wall.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_move_size_tuner.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_muvt.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_union_user.py
@@ -115,9 +113,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GSDDumpWriter.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GSDReader.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GSDShapeSpecWriter.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GetarDumpIterators.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GetarDumpWriter.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GetarInitializer.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/GlobalArray.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/HOOMDMPI.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/HOOMDMath.h
@@ -139,7 +134,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ParticleFilterUpdater.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ParticleGroup.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ParticleGroup.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Profiler.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/PythonAnalyzer.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/PythonLocalDataAccess.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/PythonUpdater.h
@@ -160,18 +154,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Variant.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/VectorMath.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/WarpTools.cuh
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEM2DForceCompute.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEM2DForceComputeGPU.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEM2DForceGPU.cuh
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEM3DForceCompute.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEM3DForceComputeGPU.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEM3DForceGPU.cuh
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/DEMEvaluator.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/NoFriction.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/SWCAPotential.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/VectorMath.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/WCAPotential.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/dem/atomics.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/BVLSSolver.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/ECL.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/HIP/cmake/FindHIP.cmake
@@ -469,21 +451,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/jitify.hpp
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/kiss_fft.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/kiss_fftnd.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/dirent/include/dirent.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/lz4/lz4.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/lz4/lz4hc.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/lz4/lz4opt.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/miniz/miniz.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/sqlite3/sqlite3.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/sqlite3/sqlite3ext.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/Archive.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/DirArchive.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/GTAR.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/Record.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/SharedArray.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/SqliteArchive.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/TarArchive.hpp
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/libgetar/src/ZipArchive.hpp
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/nano-signal-slot/nano_function.hpp
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/nano-signal-slot/nano_observer.hpp
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/nano-signal-slot/nano_signal_slot.hpp
@@ -589,7 +556,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ComputeSDF.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ExternalField.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ExternalFieldComposite.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ExternalFieldLattice.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ExternalFieldHarmonic.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ExternalFieldWall.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/GPUHelpers.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/GPUTree.h
@@ -628,7 +595,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClusters.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClustersGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClustersGPUDepletants.cuh
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterExternalFieldWall.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterMuVT.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterQuickCompress.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/XenoCollide2D.h
@@ -670,6 +636,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorBondTether.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorExternalElectricField.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorExternalPeriodic.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairALJ.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairBuckingham.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDLVO.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDPDLJThermo.h
@@ -690,7 +657,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairMorse.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairOPP.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairReactionField.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairSLJ.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairTWF.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairYukawa.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairZBL.h
@@ -752,7 +718,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialSpecialPairGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialTersoff.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialTersoffGPU.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/QuaternionMath.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TableAngleForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TableAngleForceComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TableDihedralForceCompute.h
@@ -848,6 +813,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/forces_and_energies.json
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_active.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_active_rotational_diffusion.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_alj.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_angle.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_aniso_pair.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_array_view.py
@@ -859,6 +825,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_filter_md.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_flags.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_gsd.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_improper.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_lj_equation_of_state.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_manifolds.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_meta_wall_list.py
@@ -869,6 +837,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_pppm_coulomb.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_reverse_perturbation_flow.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_rigid.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_special_pair.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_table_pressure.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_thermo.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_thermoHMA.py

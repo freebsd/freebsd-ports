@@ -1,8 +1,6 @@
-TIMESTAMP = 1642797728
-SHA256 (glotzerlab-hoomd-blue-v3.0.0-beta.13_GH0.tar.gz) = e655a9afc7a8f7fe668552e0ffd9ba4a38884e791afd8ab45d81cc0df614fb40
-SIZE (glotzerlab-hoomd-blue-v3.0.0-beta.13_GH0.tar.gz) = 2525133
-SHA256 (glotzerlab-libgetar-85de0f2355ea938474452aaf6bb78904a91293ec_GH0.tar.gz) = 12815869b556c09f537e3d5ebed830298c61d458a8c967a60f7af607201750ed
-SIZE (glotzerlab-libgetar-85de0f2355ea938474452aaf6bb78904a91293ec_GH0.tar.gz) = 2600137
+TIMESTAMP = 1645400314
+SHA256 (glotzerlab-hoomd-blue-v3.0.0-beta.14_GH0.tar.gz) = 1af1716bbd1ac0e23f8c4f684254dadc3e28017405902e0e1fb85e6792a20f53
+SIZE (glotzerlab-hoomd-blue-v3.0.0-beta.14_GH0.tar.gz) = 2480582
 SHA256 (glotzerlab-upp11-0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360_GH0.tar.gz) = 759695139bddae1d8a7cd52c967b856d6debf28fb37ea177f78c4434e2b210a8
 SIZE (glotzerlab-upp11-0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360_GH0.tar.gz) = 21058
 SHA256 (glotzerlab-nano-signal-slot-34223a4a7e97f8e114ef007e5360cf7a71265da3_GH0.tar.gz) = d15030482c82d9e4a99c2f67d8ef23b33cc318dd48ac0f8e804c6d4750f27ff4
@@ -21,7 +19,5 @@ SHA256 (mphowardlab-neighbor-ba0f06869b766066a7068852fa3b8c5fa746f71f_GH0.tar.gz
 SIZE (mphowardlab-neighbor-ba0f06869b766066a7068852fa3b8c5fa746f71f_GH0.tar.gz) = 49039
 SHA256 (mphowardlab-hipper-b6da049a516ada03e4e1b66ca6b4c2c7c9668595_GH0.tar.gz) = c64a484884eaab3eb9fd8f7b27b144a7bfadfeab101e95d82bc2a6f7e4fb7cec
 SIZE (mphowardlab-hipper-b6da049a516ada03e4e1b66ca6b4c2c7c9668595_GH0.tar.gz) = 20228
-SHA256 (glotzerlab-hoomd-examples-5a5e4e11e96397b761e90b27983cc38e2fb1a324_GH0.tar.gz) = 9fe5ed481937103e1d9ffa60f1c6ec46f2e93647f4a88681e132223d5133a951
-SIZE (glotzerlab-hoomd-examples-5a5e4e11e96397b761e90b27983cc38e2fb1a324_GH0.tar.gz) = 5054053
-SHA256 (3f8ed3abb36aa51c6d91c3ff1c1563ffc6ee37c2.patch) = c2e0fecf532d9a73dd42cfce40302d7fe8402ff5d98620b70aca434032c1d0c9
-SIZE (3f8ed3abb36aa51c6d91c3ff1c1563ffc6ee37c2.patch) = 2719
+SHA256 (glotzerlab-hoomd-examples-78174286427a2ec1c23e84015f7b4ba4f5f86d20_GH0.tar.gz) = 4eed7c90835a5171cf61157aa391c610f7c5a7428d08cc05c64c4b88396cedef
+SIZE (glotzerlab-hoomd-examples-78174286427a2ec1c23e84015f7b4ba4f5f86d20_GH0.tar.gz) = 5123923
