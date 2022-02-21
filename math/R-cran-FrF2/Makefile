@@ -1,12 +1,11 @@
 # Created by: Pedro Giffuni
 
 PORTNAME=	FrF2
-DISTVERSION=	1.7-3
-PORTREVISION=	2
+DISTVERSION=	2.2-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Statistical Methods for Quality Science
 
 LICENSE=	GPLv2+
