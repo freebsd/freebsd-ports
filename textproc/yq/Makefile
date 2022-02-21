@@ -1,6 +1,5 @@
 PORTNAME=	yq
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
+DISTVERSION=	2.14.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 
@@ -10,6 +9,8 @@ COMMENT=	Command-line YAML and XML processor, jq wrapper for YAML/XML documents
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	jq:textproc/jq \
 		${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8.1:devel/py-argcomplete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaml>=5.3.1:textproc/py-pyaml@${PY_FLAVOR} \
@@ -19,8 +20,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>0:devel/py-flake8@${PY_FLAVOR}
 
 USES=		python
-USE_GITHUB=	yes
-GH_ACCOUNT=	kislyuk
 USE_PYTHON=	distutils noflavors autoplist
 
 CONFLICTS_INSTALL=	go-yq
