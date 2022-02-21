@@ -1,9 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 
 PORTNAME=	weex
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4.1
 CATEGORIES=	ftp
-MASTER_SITES=	SF/weex/weex
+MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
