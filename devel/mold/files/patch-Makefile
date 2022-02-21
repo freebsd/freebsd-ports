@@ -1,26 +1,29 @@
---- Makefile.orig	2022-02-08 16:00:48 UTC
+--- Makefile.orig	2022-02-20 07:40:17 UTC
 +++ Makefile
-@@ -1,4 +1,4 @@
+@@ -4,7 +4,7 @@
+ 
+ VERSION = 1.1
+ 
 -PREFIX = /usr/local
 +PREFIX = %%PREFIX%%
  BINDIR = $(PREFIX)/bin
  LIBDIR = $(PREFIX)/lib
  LIBEXECDIR = $(PREFIX)/libexec
-@@ -18,7 +18,7 @@ endif
+@@ -27,7 +27,7 @@ PKG_CONFIG = pkg-config
  
  # If you want to keep symbols in the installed binary, run make with
  # `STRIP=true` to run /bin/true instead of the strip command.
 -STRIP = strip
 +STRIP = $(STRIP_CMD)
  
- SRCS=$(wildcard *.cc elf/*.cc macho/*.cc)
- HEADERS=$(wildcard *.h elf/*.h macho/*.h)
-@@ -99,8 +99,8 @@ endif
+ SRCS = $(wildcard *.cc elf/*.cc macho/*.cc)
+ OBJS = $(SRCS:%.cc=out/%.o)
+@@ -103,8 +103,8 @@ ifneq ($(OS), Darwin)
+ endif
  
- # Use pkg-config to know where libcrypto resides.
- ifneq ($(OS), Darwin)
--  MOLD_CXXFLAGS += $(shell pkg-config --cflags-only-I openssl)
--  MOLD_LDFLAGS += $(shell pkg-config --libs-only-L openssl) -lcrypto
+ ifeq ($(NEEDS_LIBCRYPTO), 1)
+-  MOLD_CXXFLAGS += $(shell $(PKG_CONFIG) --cflags-only-I openssl)
+-  MOLD_LDFLAGS += $(shell $(PKG_CONFIG) --libs-only-L openssl) -lcrypto
 +  MOLD_CXXFLAGS += -I${OPENSSLINC}
 +  MOLD_LDFLAGS += -L${OPENSSLLIB} -lcrypto
  endif
