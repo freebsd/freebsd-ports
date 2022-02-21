@@ -1,5 +1,5 @@
 PORTNAME=	mariadb
-PORTVERSION=	3.1.14
+PORTVERSION=	3.1.15
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
