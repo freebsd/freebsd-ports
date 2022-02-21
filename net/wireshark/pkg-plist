@@ -665,6 +665,8 @@ lib/wireshark/cmake/WiresharkTargets.cmake
 %%SSHDUMP_LIB%%lib/wireshark/extcap/sshdump
 %%UDPDUMP_LIB%%lib/wireshark/extcap/udpdump
 lib/wireshark/plugins/3.6/codecs/g711.so
+%%RTP%%lib/wireshark/plugins/3.6/codecs/g722.so
+%%RTP%%lib/wireshark/plugins/3.6/codecs/g726.so
 lib/wireshark/plugins/3.6/codecs/l16mono.so
 %%OPUS%%lib/wireshark/plugins/3.6/codecs/opus_dec.so
 lib/wireshark/plugins/3.6/epan/ethercat.so
