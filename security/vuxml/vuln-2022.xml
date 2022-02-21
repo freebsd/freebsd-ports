@@ -1,3 +1,31 @@
+  <vuln vid="43ae57f6-92ab-11ec-81b4-2cf05d620ecc">
+    <topic>Qt5 -- QProcess unexpected search path</topic>
+    <affects>
+      <package>
+	<name>qt5-core</name>
+	<range><lt>5.15.2p263_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Qt Company reports:</p>
+	<blockquote cite="https://lists.qt-project.org/pipermail/announce/2022-February/000333.html">
+	  <p>Recently, the Qt Project's security team was made aware of an issue regarding QProcess and determined it to be a security issue on Unix-based platforms only. We do not believe this to be a considerable risk for applications as the likelihood of it being triggered is minimal.
+</p>
+<p>Specifically, the problem is around using QProcess to start an application without having an absolute path, and as a result, it depends on it finding it in the PATH environment variable. As a result, it may be possible for an attacker to place their copy of the executable in question inside the working/current directory for the QProcess and have it invoked that instead.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-25255</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25255</url>
+    </references>
+    <dates>
+      <discovery>2022-02-17</discovery>
+      <entry>2022-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d763c65-9246-11ec-9aa3-4ccc6adda413">
     <topic>libmysoft -- Heap-based buffer overflow vulnerability</topic>
     <affects>
