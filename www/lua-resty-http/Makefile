@@ -11,8 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	luajit-openresty>=2.1:lang/luajit-openresty
 
-USES=		lua:module
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ledgetech
 
