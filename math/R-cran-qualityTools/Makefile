@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Statistical Methods for Quality Science
 
 LICENSE=	GPLv2

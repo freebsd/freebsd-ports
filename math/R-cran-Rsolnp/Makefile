@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General Non-Linear Optimization
 
 LICENSE=	GPLv2 GPLv3

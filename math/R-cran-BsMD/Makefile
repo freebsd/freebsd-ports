@@ -5,7 +5,7 @@ DISTVERSION=	2020.4.30
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bayes Screening and Model Discrimination
 
 LICENSE=	GPLv2+
