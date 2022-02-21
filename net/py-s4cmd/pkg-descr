@@ -1,0 +1,15 @@
+S4cmd is a command-line utility for accessing S3 storage, inspired by
+s3cmd.
+
+It is intended as an alternative to s3cmd for enhanced performance and
+for large files, and with a number of additional features and fixes for
+data-intensive applications.
+
+It strives to be compatible with the most common usage scenarios for
+s3cmd. It does not offer exact drop-in compatibility, due to a number of
+corner cases where different behavior seems preferable, or for bugfixes.
+
+S4cmd supports the regular commands you might expect for fetching and
+storing files in S3: ls, put, get, cp, mv, sync, del, du.
+
+WWW: https://github.com/bloomreach/s4cmd
