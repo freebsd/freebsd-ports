@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to compile: invalid output constraint =a in assembler
 BROKEN_armv6=		fails to compile: invalid output constraint =a in assembler
-BROKEN_powerpc64=	fails to compile: 'itr' does not name a type
 BROKEN_riscv64=		fails to compile: invalid output constraint =a in assembler
 
 BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
