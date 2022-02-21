@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	mockery
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
