@@ -1,15 +1,11 @@
---- Makefile.in.orig	2021-03-21 22:29:42 UTC
+--- Makefile.in.orig	2022-02-21 11:12:46 UTC
 +++ Makefile.in
-@@ -206,11 +206,7 @@ install: all
- 	for BIN in bird @CLIENT@ ; do								\
+@@ -207,7 +207,7 @@ install: all
  		$(INSTALL_PROGRAM) $(exedir)/$$BIN $(DESTDIR)/$(sbindir)/$$BIN ;		\
  	done
--	if ! test -f $(DESTDIR)/@CONFIG_FILE@ ; then						\
+ 	if ! test -f $(DESTDIR)/@CONFIG_FILE@ ; then						\
 -		$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/@CONFIG_FILE@ ;	\
--	else											\
--		echo "Not overwriting old bird.conf" ;						\
--	fi
-+	$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/@CONFIG_FILE@.sample ;	\
- 
- install-docs:
- 	$(INSTALL) -d $(DESTDIR)/$(docdir)
++		$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/@CONFIG_FILE@.sample ;	\
+ 	else											\
+ 		echo "Not overwriting old bird.conf" ;						\
+ 	fi
