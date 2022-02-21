@@ -1,7 +1,7 @@
 # Created by: Luiz Eduardo R. Cordeiro
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.53
+PORTVERSION=	0.55
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
