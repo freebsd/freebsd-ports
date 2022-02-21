@@ -157,7 +157,6 @@ include/folly/container/heap_vector_types.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
 include/folly/detail/AsyncTrace.h
-include/folly/detail/AtFork.h
 include/folly/detail/AtomicHashUtils.h
 include/folly/detail/AtomicUnorderedMapUtils.h
 include/folly/detail/DiscriminatedPtrDetail.h
@@ -284,6 +283,9 @@ include/folly/experimental/channels/Merge-inl.h
 include/folly/experimental/channels/Merge.h
 include/folly/experimental/channels/MergeChannel-inl.h
 include/folly/experimental/channels/MergeChannel.h
+include/folly/experimental/channels/MultiplexChannel-inl.h
+include/folly/experimental/channels/MultiplexChannel.h
+include/folly/experimental/channels/OnClosedException.h
 include/folly/experimental/channels/Producer-inl.h
 include/folly/experimental/channels/Producer.h
 include/folly/experimental/channels/RateLimiter.h
@@ -291,6 +293,8 @@ include/folly/experimental/channels/Transform-inl.h
 include/folly/experimental/channels/Transform.h
 include/folly/experimental/channels/detail/AtomicQueue.h
 include/folly/experimental/channels/detail/ChannelBridge.h
+include/folly/experimental/channels/detail/FunctionTraits.h
+include/folly/experimental/channels/detail/MultiplexerTraits.h
 include/folly/experimental/channels/detail/PointerVariant.h
 include/folly/experimental/channels/detail/Utility.h
 include/folly/experimental/coro/Accumulate-inl.h
@@ -772,6 +776,7 @@ include/folly/synchronization/example/HazptrLockFreeLIFO.h
 include/folly/synchronization/example/HazptrSWMRSet.h
 include/folly/synchronization/example/HazptrWideCAS.h
 include/folly/synchronization/test/Semaphore.h
+include/folly/system/AtFork.h
 include/folly/system/HardwareConcurrency.h
 include/folly/system/MemoryMapping.h
 include/folly/system/Pid.h
