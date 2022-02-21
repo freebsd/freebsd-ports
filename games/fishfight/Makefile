@@ -6,7 +6,7 @@ CATEGORIES=	games
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tactical 2D shooter in fishy pixels style
 
-LICENSE=	MIT CC-BY-NC-4.0
+LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/licenses/LICENSE-MIT
 
