@@ -73,13 +73,13 @@ error[E0428]: the name `GL_TIME_ELAPSED` is defined multiple times
  
  #[cfg(not(any(
 -    all(target_os = "linux", feature = "sapp-linux"),
-+    all(feature = "sapp-linux"), any(
++    all(feature = "sapp-linux", any(
 +        target_os = "linux",
 +        target_os = "dragonfly",
 +        target_os = "freebsd",
 +        target_os = "netbsd",
-+        target_os = "openbsd"
-+    ),
++        target_os = "openbsd",
++    )),
      target_os = "windows",
      target_arch = "wasm32"
  )))]
