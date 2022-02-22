@@ -27,9 +27,12 @@ X11_MESON_ENABLED=	x11 glx
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64le
 BUILD_DEPENDS=	as:devel/binutils
 CFLAGS+=	-no-integrated-as
+.elif ${ARCH} == powerpc64
+BUILD_DEPENDS=	as:devel/binutils
+CFLAGS+=	-no-integrated-as -O0
 .endif
 
 # Lots of software expects gl.pc even when it can build with EGL only
