@@ -1,15 +1,15 @@
---- configure.ac.orig	2020-06-29 08:47:18 UTC
+--- configure.ac.orig	2021-12-04 20:10:28 UTC
 +++ configure.ac
-@@ -742,7 +742,7 @@ else
-       if test "x$GUILE" = "x"; then
+@@ -679,7 +679,7 @@ else
+       if test "x$GUILE_CONFIG" = "x"; then
          use_guile="No (guile not available)"
        else
--        [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
-+        [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^.* \([0-9\.]*\)$/\1/ p'`]
+-        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
++        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \([0-9\.]*\)$/\1/ p'`]
          GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
          GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
-         if test 0$GUILE_VERSION_MAJOR -lt 2; then
-@@ -972,17 +972,17 @@ else
+         AC_CHECK_PROGS(GUILE,guile$GUILE_VERSION_MAJOR.$GUILE_VERSION_MINOR guile$GUILE_VERSION_MAJOR guile)
+@@ -897,17 +897,17 @@ else
              if test "x$PKG_CONFIG" != "x"; then
  	        AC_MSG_CHECKING(for Lua headers and libraries with pkg-config)
  	        echo
@@ -30,16 +30,7 @@
  		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
  		        fi
                          break
-@@ -1271,7 +1271,7 @@ else
- 	use_python="No (python is too old)"
-       else
-         PYTHON_PREFIX=`$PYTHON -c "import sys; print(sys.prefix)"`
--        PYTHON_INCLUDES=-I$PYTHON_PREFIX/include/python$PYTHON_VERSION_SHORT
-+        PYTHON_INCLUDES=-I$PYTHON_INCLUDEDIR
- #        PYTHON_LIBS="-lpython$PYTHON_VERSION_SHORT"
- 	PYTHON_LIBS="-undefined dynamic_lookup"
-         PYTHON_INSTALL_DIR="`$PYTHON $srcdir/config/config_python.py archsitelib`"
-@@ -1502,6 +1502,7 @@ else
+@@ -1324,6 +1324,7 @@ else
  	    use_ruby="No (ruby not available)"
            else
              RUBY_CFLAGS="-I`$RUBY $srcdir/config/config_ruby.rb archdir`"

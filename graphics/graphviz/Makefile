@@ -1,10 +1,10 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
 
 PORTNAME=	graphviz
-PORTVERSION=	2.44.1
-PORTREVISION=	18
+PORTVERSION=	2.50.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
-MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
+MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libexpat.so:textproc/expat2 \
+		libharfbuzz.so:print/harfbuzz \
 		libgd.so:${GD_PORT}
 
 USES=		compiler:c++11-lang cpe pathfix shebangfix gmake bison \
@@ -92,8 +93,8 @@ SMYRNA_USES=	gnome gl
 SMYRNA_USE=	GNOME=libglade2,pangox-compat,gdkpixbuf2 GL=glut,glu,gl
 GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
+PHP_USES=	php:build gnome
 PHP_USE=	GNOME=libxml2
-PHP_USES=	php:build
 PYTHON_USES=	python:build
 RUBY_USE=	RUBY=yes
 LUA_USES=	lua
@@ -115,6 +116,7 @@ GHOSTSCRIPT_LIB_DEPENDS=	libgs.so:print/${_GS_PORT}
 
 XPM_CONFIGURE_WITH=		x
 XPM_CONFIGURE_ENV=		ac_cv_header_sys_inotify_h=no
+XPM_CONFIGURE_ON=		--enable-lefty
 DIGCOLA_CONFIGURE_WITH=		digcola
 IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
 IPSEPCOLA_IMPLIES=		DIGCOLA
