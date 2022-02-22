@@ -23,7 +23,6 @@ bin/qmgrctl.sh
 bin/rcvrenvfromlog.sh
 bin/runas
 bin/smconf
-include/sm/generic.h
 include/sm/error.h
 include/sm/hdrmoddef.h
 include/sm/mfapi.h
@@ -46,6 +45,7 @@ lib/meta1/libthr.a
 libexec/qmgr
 libexec/smar
 libexec/smtpc
+libexec/smtpp
 libexec/smtps
 man/man5/meta1.conf.5.gz
 man/man8/createmap.8.gz
@@ -61,6 +61,7 @@ man/man8/meta1.8.gz
 %%MSP%%man/man8/sendmail.8.gz
 man/man8/smar.8.gz
 man/man8/smtpc.8.gz
+man/man8/smtpp.8.gz
 man/man8/smtps.8.gz
 sbin/greyprint
 sbin/greyrm

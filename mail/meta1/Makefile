@@ -1,9 +1,9 @@
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.16.0
+PORTVERSION=	1.1.0a.17.0
 PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/noise/
-DISTNAME=	${PORTNAME}-1.1.Alpha16.0
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/proxy/
+DISTNAME=	${PORTNAME}-1.1.Alpha17.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
