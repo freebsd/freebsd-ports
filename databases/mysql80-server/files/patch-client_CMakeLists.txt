@@ -56,7 +56,7 @@
    )
 +ENDIF()
 +
-+IF(NOT_WITHOUT_SERVER)
++IF(NOT WITHOUT_SERVER)
  MYSQL_ADD_EXECUTABLE(mysql_secure_installation
    mysql_secure_installation.cc
    LINK_LIBRARIES mysqlclient
