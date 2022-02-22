@@ -1,7 +1,7 @@
 # Created by: Piotr Florczyk <p.florczyk@adminworkshop.pl>
 
 PORTNAME=	construct
-PORTVERSION=	2.10.67
+PORTVERSION=	2.10.68
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
