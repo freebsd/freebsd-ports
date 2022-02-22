@@ -16893,3 +16893,4 @@ print/tex-aleph||2022-02-19|tex-aleph has been removed from texlive-2021 system
 sysutils/intel-pcm-devel||2022-02-19|intel-pcm-devel has been removed, encouraging users to use intel-pcm instead
 graphics/copperspice|x11-toolkits/copperspice|2022-02-20|Revive in more appropriate category
 math/mathics-django||2022-02-20|Mathics-Django now requires npm: you can use math/mathicsscript instead
+net-mgmt/percona-monitoring-plugins||2022-02-22|Has expired: Upstream EOL reached on 2020-08-01

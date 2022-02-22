@@ -276,7 +276,6 @@
     SUBDIR += pandorafms_agent
     SUBDIR += pandorafms_console
     SUBDIR += pandorafms_server
-    SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
     SUBDIR += php74-snmp
