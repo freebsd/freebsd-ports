@@ -128,7 +128,6 @@ lib/libweather_ion.so
 lib/libweather_ion.so.7
 lib/libweather_ion.so.7.0.0
 %%QT_PLUGINDIR%%/fontthumbnail.so
-%%QT_PLUGINDIR%%/kcm_fontinst.so
 %%QT_PLUGINDIR%%/kf5/kded/appmenu.so
 %%QT_PLUGINDIR%%/kf5/kded/colorcorrectlocationupdater.so
 %%QT_PLUGINDIR%%/kf5/kded/desktopnotifier.so
@@ -2506,6 +2505,7 @@ share/locale/hi/LC_MESSAGES/kcm_nightcolor.mo
 share/locale/hi/LC_MESSAGES/kcm_notifications.mo
 share/locale/hi/LC_MESSAGES/kcm_style.mo
 share/locale/hi/LC_MESSAGES/kcm_translations.mo
+share/locale/hi/LC_MESSAGES/kcm_users.mo
 share/locale/hi/LC_MESSAGES/kcmformats.mo
 share/locale/hi/LC_MESSAGES/kcminit.mo
 share/locale/hi/LC_MESSAGES/kfontinst.mo
