@@ -3,7 +3,7 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
+		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
 		xscreensaver>=0:x11/xscreensaver \
 		xbrightness>=0:x11/xbrightness \
 		compton>=0:x11-wm/compton \
