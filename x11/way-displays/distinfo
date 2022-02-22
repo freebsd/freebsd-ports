@@ -1,5 +1,9 @@
-TIMESTAMP = 1642830068
-SHA256 (alex-courtis-way-displays-1.3.0_GH0.tar.gz) = 4a757f079e14bcfcd2804fed0a4a6190535ae059b45e3d73e5b298bba306201b
-SIZE (alex-courtis-way-displays-1.3.0_GH0.tar.gz) = 54611
-SHA256 (90081b314a75.patch) = 0dd16e43b035bda5c3568d661202f6d18053ab7c8e51be5b3e04d7d8bee93214
-SIZE (90081b314a75.patch) = 1245
+TIMESTAMP = 1645508903
+SHA256 (alex-courtis-way-displays-1.4.0_GH0.tar.gz) = 0514e79fe113ebee02b3ca338336d10cf94d9ebf2e7bdb798dc48a3ca157ae28
+SIZE (alex-courtis-way-displays-1.4.0_GH0.tar.gz) = 67238
+SHA256 (813843077c0c.patch) = f7283740949023d63e7000a42c772f83c1438a4260ed9ffe8eed68c6eff21aec
+SIZE (813843077c0c.patch) = 662
+SHA256 (edeeb344a430.patch) = 6fd33e87498ce1fdda29249ff5dd1282a4e6e67143d3a5d45e4a31ea815b1364
+SIZE (edeeb344a430.patch) = 789
+SHA256 (d57fc203a043.patch) = 474965ecb18733d123969824bbf0514e8b144f00d54004472431db7b8362392a
+SIZE (d57fc203a043.patch) = 1758
