@@ -12,10 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto \
 		scdoc:textproc/scdoc
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-		libuInputPlus.so:devel/libuinputplus \
-		libboost_program_options.so:devel/boost-libs \
-		libevdevPlus.so:devel/libevdevplus
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
 USES=		cmake compiler:c++11-lang localbase
 
