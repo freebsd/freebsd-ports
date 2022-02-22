@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.4
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -65,7 +65,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		golang:sys:57398862261d:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:time:7e3f01d25324:golang_time/vendor/golang.org/x/time \
+		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		golang:tools:316ba0b74098:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
@@ -90,7 +90,6 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		jackpal:go-nat-pmp:v1.0.2:jackpal_go_nat_pmp/vendor/github.com/jackpal/go-nat-pmp \
 		jbenet:go-temp-err-catcher:v0.1.0:jbenet_go_temp_err_catcher/vendor/github.com/jbenet/go-temp-err-catcher \
 		jbenet:goprocess:v0.1.4:jbenet_goprocess/vendor/github.com/jbenet/goprocess \
-		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
 		juju:errors:3fe23663418f:juju_errors/vendor/github.com/juju/errors \
 		juju:testing:77eb13d6cad2:juju_testing/vendor/github.com/juju/testing \
 		klauspost:compress:v1.14.2:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -145,7 +144,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:b0d1ba599a6d:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:9805ef634335:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:20632dd262ed:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:pinecone:351265543ddf:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.10:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
@@ -167,10 +166,10 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		multiformats:go-multihash:v0.0.14:multiformats_go_multihash/vendor/github.com/multiformats/go-multihash \
 		multiformats:go-multistream:v0.2.0:multiformats_go_multistream/vendor/github.com/multiformats/go-multistream \
 		multiformats:go-varint:v0.0.6:multiformats_go_varint/vendor/github.com/multiformats/go-varint \
-		nats-io:jwt:v2.2.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
+		nats-io:jwt:58e87895b296:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
-		neilalexander:nats-server:c76d5fd70423:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		neilalexander:nats-server:087330ed46ad:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		neilalexander:nats.go:f4ddebe1061c:neilalexander_nats_go/vendor/github.com/nats-io/nats.go \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
@@ -184,7 +183,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pressly:goose:v2.7.0:pressly_goose/vendor/github.com/pressly/goose \
-		prometheus:client_golang:v1.11.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.12.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.32.1:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
