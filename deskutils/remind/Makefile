@@ -2,6 +2,7 @@
 
 PORTNAME=	remind
 DISTVERSION=	03.04.00
+PORTREVISION=	1
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \

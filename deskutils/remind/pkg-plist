@@ -1,0 +1,16 @@
+bin/rem
+%%REM2HTML%%bin/rem2html
+%%REM2PDF%%bin/rem2pdf
+bin/rem2ps
+bin/remind
+%%TCLTK%%bin/tkremind
+%%REM2PDF%%%%SITE_PERL%%/Remind/PDF.pm
+%%REM2PDF%%%%SITE_PERL%%/Remind/PDF/Entry.pm
+%%REM2PDF%%%%PERL5_MAN1%%/rem2pdf.1.gz
+%%REM2PDF%%%%PERL5_MAN3%%/Remind::PDF.3.gz
+%%REM2PDF%%%%PERL5_MAN3%%/Remind::PDF::Entry.3.gz
+man/man1/rem.1.gz
+%%REM2HTML%%man/man1/rem2html.1.gz
+man/man1/rem2ps.1.gz
+man/man1/remind.1.gz
+%%TCLTK%%man/man1/tkremind.1.gz
