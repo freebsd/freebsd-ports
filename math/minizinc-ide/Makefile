@@ -1,6 +1,5 @@
 PORTNAME=	minizinc-ide
-DISTVERSION=	2.5.5
-PORTREVISION=	2
+DISTVERSION=	2.6.0
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	minizinc:math/minizinc
 
 USES=		gl compiler:c++11-lang qmake qt:5
-USE_QT=		core declarative gui location network printsupport sql webchannel webengine widgets buildtools_build
+USE_QT=		core declarative gui location network printsupport sql webchannel webengine websockets widgets buildtools_build
 USE_GL=		gl
 
 USE_GITHUB=	yes
