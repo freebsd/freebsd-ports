@@ -1,5 +1,5 @@
 PORTNAME=	kid3
-PORTVERSION=	3.8.6
+PORTVERSION=	3.9.1
 PORTREVISION?=	0
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
@@ -60,7 +60,7 @@ ACOUSTID_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 ACOUSTID_CMAKE_BOOL=	WITH_CHROMAPRINT WITH_FFMPEG
 
 CLI_DESC=		Build and install command line utility
-CLI_USES=		python:3.5+,test readline
+CLI_USES=		python:3.7+,test readline
 CLI_VARS=		KID3_APPS+=CLI
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
@@ -79,6 +79,7 @@ TAGLIB_CMAKE_BOOL=	WITH_TAGLIB
 
 TEST_USE=		LOCALE=en_US.UTF-8 QT=testlib_build
 TEST_CMAKE_BOOL=	BUILD_TESTING
+TEST_TARGET=		# define to override CMAKE_ARGS from Uses/kde.mk
 TEST_WRKSRC=		${BUILD_WRKSRC}/src/test
 TEST_VARS=		KID3_APPS+=TEST
 

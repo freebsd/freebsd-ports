@@ -29,6 +29,9 @@ man/nl/man1/kid3.1.gz
 %%CLI%%man/pt/man1/kid3-cli.1.gz
 %%QT%%man/pt/man1/kid3-qt.1.gz
 man/pt/man1/kid3.1.gz
+%%CLI%%man/ru/man1/kid3-cli.1.gz
+%%QT%%man/ru/man1/kid3-qt.1.gz
+man/ru/man1/kid3.1.gz
 %%CLI%%man/sv/man1/kid3-cli.1.gz
 %%QT%%man/sv/man1/kid3-qt.1.gz
 man/sv/man1/kid3.1.gz
@@ -49,6 +52,8 @@ share/applications/org.kde.kid3%%QT_SUFX%%.desktop
 %%KF5%%share/doc/HTML/nl/kid3/index.docbook
 %%KF5%%share/doc/HTML/pt/kid3/index.cache.bz2
 %%KF5%%share/doc/HTML/pt/kid3/index.docbook
+%%KF5%%share/doc/HTML/ru/kid3/index.cache.bz2
+%%KF5%%share/doc/HTML/ru/kid3/index.docbook
 %%KF5%%share/doc/HTML/sv/kid3/index.cache.bz2
 %%KF5%%share/doc/HTML/sv/kid3/index.docbook
 %%KF5%%share/doc/HTML/uk/kid3/index.cache.bz2
@@ -79,8 +84,10 @@ share/icons/hicolor/64x64/apps/kid3%%QT_SUFX%%.png
 %%DATADIR%%/translations/kid3_en_GB.qm
 %%DATADIR%%/translations/kid3_es.qm
 %%DATADIR%%/translations/kid3_et.qm
+%%DATADIR%%/translations/kid3_eu.qm
 %%DATADIR%%/translations/kid3_fi.qm
 %%DATADIR%%/translations/kid3_fr.qm
+%%DATADIR%%/translations/kid3_is.qm
 %%DATADIR%%/translations/kid3_it.qm
 %%DATADIR%%/translations/kid3_ko.qm
 %%DATADIR%%/translations/kid3_nl.qm
@@ -88,6 +95,7 @@ share/icons/hicolor/64x64/apps/kid3%%QT_SUFX%%.png
 %%DATADIR%%/translations/kid3_pt.qm
 %%DATADIR%%/translations/kid3_pt_BR.qm
 %%DATADIR%%/translations/kid3_ru.qm
+%%DATADIR%%/translations/kid3_sl.qm
 %%DATADIR%%/translations/kid3_sr.qm
 %%DATADIR%%/translations/kid3_sr@ijekavian.qm
 %%DATADIR%%/translations/kid3_sr@ijekavianlatin.qm
