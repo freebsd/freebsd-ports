@@ -1,9 +1,9 @@
 Fix dectection of fox libs
 Prevent linking to unneeded Qt5 libraries
 
---- configure.orig	2021-02-15 19:34:27 UTC
+--- configure.orig	2022-02-15 16:09:36 UTC
 +++ configure
-@@ -22229,7 +22229,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
+@@ -23446,7 +23446,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -12,23 +12,25 @@ Prevent linking to unneeded Qt5 libraries
  else
  
        ac_ext=cpp
-@@ -23825,8 +23825,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
+@@ -25042,8 +25042,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
  QMAKE_EXTRA_TARGETS += percent
  EOF
      $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
--    QT_CXXFLAGS=`make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
--    QT_LIBS=`make -s -f $am_have_qt_makefile LIBS`
-+    QT_CXXFLAGS=`make -s -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
-+    QT_LIBS=`make -s -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
+-    QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
+-    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile LIBS`
++    QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
++    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
      rm $am_have_qt_pro $am_have_qt_makefile
+     rmdir $am_have_qt_dir
  
-     # Look for specific tools in $PATH
-@@ -23850,8 +23850,8 @@ else
+@@ -25067,9 +25067,9 @@ else
  fi
  
  
+-    QT_RCC=`which rcc`
 -    QT_LRELEASE=`which lrelease`
 -    QT_LUPDATE=`which lupdate`
++    QT_RCC=#none
 +    QT_LRELEASE=#none
 +    QT_LUPDATE=#none
  

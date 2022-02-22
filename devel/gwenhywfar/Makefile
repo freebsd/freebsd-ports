@@ -1,8 +1,8 @@
 PORTNAME=	gwenhywfar
-PORTVERSION=	5.6.0
-PORTREVISION?=	1
+PORTVERSION=	5.9.0
+PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/364/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/415/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
@@ -26,7 +26,9 @@ USE_LDCONFIG=	yes
 
 GWEN_SHLIB_VER=	79
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}" \
-		GWEN_MAJ_MIN_VER="${PORTVERSION:R}"
+		GWEN_MAJOR_VER="${PORTVERSION:R:R}" \
+		GWEN_MINOR_VER="${PORTVERSION:R:E}" \
+		GWEN_PATCH_VER="${PORTVERSION:E}"
 
 .if !defined(SLAVEPORT)
 OPTIONS_DEFINE=			DOXYGEN LIBXML2 MEMDEBUG OPENSSL
