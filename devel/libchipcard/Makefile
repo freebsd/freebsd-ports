@@ -1,15 +1,15 @@
 # Created by: Martin Preuss <martin@libchipcard.de>
 
 PORTNAME=	libchipcard
-PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTVERSION=	5.1.6
 CATEGORIES=	devel
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/158/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/382/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for easy access to chipcards
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libgwenhywfar.so:devel/gwenhywfar

@@ -4,11 +4,14 @@ bin/chipcard-tool
 bin/geldkarte
 bin/kvkcard
 bin/memcard
+bin/usbtan-test
+bin/zkacard-tool
 etc/chipcard/chipcardc.conf.default
 @sample etc/chipcard/chipcardc.conf.example etc/chipcard/chipcardc.conf
 include/libchipcard5/chipcard/card.h
 include/libchipcard5/chipcard/card_imp.h
 include/libchipcard5/chipcard/card_l.h
+include/libchipcard5/chipcard/cards/chiptanusb.h
 include/libchipcard5/chipcard/cards/ddvcard.h
 include/libchipcard5/chipcard/cards/egkcard.h
 include/libchipcard5/chipcard/cards/geldkarte.h
@@ -32,6 +35,9 @@ include/libchipcard5/chipcard/sharedstuff/msgengine.h
 include/libchipcard5/chipcard/sharedstuff/pininfo.h
 include/libchipcard5/chipcard/tlv.h
 include/libchipcard5/chipcard/version.h
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/chiptanusb.a
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/chiptanusb.so
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/chiptanusb.xml
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.a
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.so
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.xml
@@ -44,9 +50,12 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/zkacard.xml
 lib/libchipcard.a
 lib/libchipcard.so
 lib/libchipcard.so.6
-lib/libchipcard.so.6.0.4
+lib/libchipcard.so.6.1.6
+libdata/pkgconfig/libchipcard-client.pc
+libdata/pkgconfig/libchipcard-server.pc
 share/aclocal/chipcard.m4
 share/chipcard/apps/README
+share/chipcard/apps/chiptanusb.xml
 share/chipcard/apps/ddv.xml
 share/chipcard/apps/ddv0.xml
 share/chipcard/apps/ddv1.xml
@@ -62,6 +71,7 @@ share/chipcard/apps/starcoscard.xml
 share/chipcard/apps/zkacard.xml
 share/chipcard/cards/README
 share/chipcard/cards/card.xml
+share/chipcard/cards/chiptanusb.xml
 share/chipcard/cards/cyberjack_pcsc/card.xml
 share/chipcard/cards/cyberjack_pcsc/kvk.xml
 share/chipcard/cards/cyberjack_pcsc/processorcard.xml
