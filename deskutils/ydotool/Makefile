@@ -1,12 +1,13 @@
 PORTNAME=	ydotool
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic command-line automation tool (no X!)
 
-LICENSE=	MIT
+LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto \
@@ -20,8 +21,6 @@ USES=		cmake compiler:c++11-lang localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ReimuNotMoe
-
-USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
 LDFLAGS+=	-L${LOCALBASE}/lib -lepoll-shim
