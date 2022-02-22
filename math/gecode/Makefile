@@ -3,7 +3,7 @@
 PORTNAME=	gecode
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	6.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--disable-examples
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gecode
-GH_TAGNAME=	0916a1a # 6.3.0 branch is ready for a long time, but hasn't been tagged yet
+GH_TAGNAME=	6b09bea # 6.3.0 branch is ready for a long time, but hasn't been tagged yet
 
 DATADIR=	${PREFIX}/share/minizinc/gecode # it only installs the MiniZinc library into DATADIR
 

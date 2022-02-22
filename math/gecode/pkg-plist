@@ -755,11 +755,13 @@ include/gecode/third-party/boost/type.hpp
 %%FLATZINC%%%%DATADIR%%/fzn_count_eq.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_count_eq_reif.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_cumulative.mzn
+%%FLATZINC%%%%DATADIR%%/fzn_cumulative_opt.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_decreasing_bool.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_decreasing_int.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_diffn.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_disjoint.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_disjunctive_strict.mzn
+%%FLATZINC%%%%DATADIR%%/fzn_disjunctive_strict_opt.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_exactly_set.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_global_cardinality.mzn
 %%FLATZINC%%%%DATADIR%%/fzn_global_cardinality_closed.mzn
