@@ -21,6 +21,7 @@ include/aqbanking6/aqbanking/types/document.h
 include/aqbanking6/aqbanking/types/imexporter_accountinfo.h
 include/aqbanking6/aqbanking/types/imexporter_context.h
 include/aqbanking6/aqbanking/types/message.h
+include/aqbanking6/aqbanking/types/refaccount.h
 include/aqbanking6/aqbanking/types/security.h
 include/aqbanking6/aqbanking/types/transaction.h
 include/aqbanking6/aqbanking/types/transactionlimits.h
@@ -50,7 +51,7 @@ lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config-version.cmake
 lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config.cmake
 lib/libaqbanking.so
 lib/libaqbanking.so.%%AQB_SHLIB_VER%%
-lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.10
+lib/libaqbanking.so.%%AQB_SHLIB_VER%%.%%AQB_MIN_PATCH_VER%%
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 %%DATADIR%%/aqbanking/typemaker2/c/ab_account.tm2
@@ -120,6 +121,8 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/csv/profiles/lbbberlin.conf
 %%DATADIR%%/imexporters/csv/profiles/mijnpostbank.conf
 %%DATADIR%%/imexporters/csv/profiles/oko.conf
+%%DATADIR%%/imexporters/csv/profiles/onvista-prices.conf
+%%DATADIR%%/imexporters/csv/profiles/onvista-trans.conf
 %%DATADIR%%/imexporters/csv/profiles/postbankffm.conf
 %%DATADIR%%/imexporters/csv/profiles/psk.conf
 %%DATADIR%%/imexporters/csv/profiles/sepadebitnotes.conf
@@ -203,6 +206,9 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/typemaker2/c/ab_providerqueue.tm2
 %%DATADIR%%/typemaker2/c/ab_providerqueue_list.tm2
 %%DATADIR%%/typemaker2/c/ab_queue.tm2
+%%DATADIR%%/typemaker2/c/ab_reference_account.tm2
+%%DATADIR%%/typemaker2/c/ab_reference_account_list.tm2
+%%DATADIR%%/typemaker2/c/ab_reference_account_list2.tm2
 %%DATADIR%%/typemaker2/c/ab_security.tm2
 %%DATADIR%%/typemaker2/c/ab_security_list.tm2
 %%DATADIR%%/typemaker2/c/ab_security_list2.tm2

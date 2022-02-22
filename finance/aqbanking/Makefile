@@ -1,7 +1,7 @@
 PORTNAME=	aqbanking
-PORTVERSION=	6.2.10
+PORTVERSION=	6.4.1
 CATEGORIES=	finance
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/368/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/400/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
@@ -24,7 +24,8 @@ USE_LDCONFIG=	yes
 
 AQB_SHLIB_VER=	44
 PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}" \
-		AQB_MAJ_MIN_VER="${PORTVERSION:R}"
+		AQB_MAJ_MIN_VER="${PORTVERSION:R}" \
+		AQB_MIN_PATCH_VER="${PORTVERSION:R:E}.${PORTVERSION:E}"
 
 OPTIONS_DEFINE=		DOCS DOXYGEN EBICS KTOBLZCHECK
 OPTIONS_DEFAULT=	KTOBLZCHECK
