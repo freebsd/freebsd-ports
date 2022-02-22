@@ -1,18 +1,13 @@
 PORTNAME=	neo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6
+DISTVERSION=	0.6.1
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	4dd64a0.patch:-p1 # https://github.com/st3w/neo/issues/8
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	cmatrix clone with 32-bit color and Unicode support
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 
 USES=		autoreconf compiler:c++11-lang ncurses
 USE_GITHUB=	yes
