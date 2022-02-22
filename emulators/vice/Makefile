@@ -1,8 +1,8 @@
 # Created by: dchapes@ddm.on.ca
 
 PORTNAME=	vice
-PORTVERSION=	3.5
-PORTREVISION=	2
+PORTVERSION=	3.6.1
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
