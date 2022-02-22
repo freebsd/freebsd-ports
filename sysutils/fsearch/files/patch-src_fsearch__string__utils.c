@@ -24,8 +24,8 @@
 +#define  LEN    3
 +
 +/* Compare S1 and S2 as strings holding indices/version numbers,
-+   returning less than, equal to or greater than zero if S1 is less than,
-+   equal to, or greater than S2. */
++   returning less than, equal to, or greater than zero if S1 is less
++   than, equal to, or greater than S2. */
 +
 +int
 +strverscmp (const char *s1, const char *s2)

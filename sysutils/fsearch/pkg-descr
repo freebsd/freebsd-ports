@@ -1,11 +1,11 @@
 FSearch is a fast file search utility, inspired by Everything Search
-Engine.  It is written in C and based on GTK+3.  It features:
+Engine.  It is written in plain C and based on GTK 3.  It features:
 
   - Instant (as you type) results
-  - Wildcard support and regular expression support
-  - Filter support (only search for files, folders or everything)
+  - Wildcard and regular expression support
+  - Filters (only search for files, folders, or everything)
   - Include and exclude specific folders to be indexed
   - Fast sort by file name, path, size, or modification time
-  - Customizable interface
+  - Customizable user interface
 
 WWW: http://cboxdoerfer.github.io/fsearch/
