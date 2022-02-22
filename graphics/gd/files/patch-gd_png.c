@@ -1,6 +1,6 @@
---- src/gd_png.c.orig	2016-10-12 08:13:44 UTC
+--- src/gd_png.c.orig	2021-09-11 04:43:11 UTC
 +++ src/gd_png.c
-@@ -277,6 +277,14 @@ BGD_DECLARE(gdImagePtr) gdImageCreateFro
+@@ -276,6 +276,14 @@ BGD_DECLARE(gdImagePtr) gdImageCreateFromPngCtx (gdIOC
  	png_read_info (png_ptr, info_ptr);	/* read all PNG info up to image data */
  
  	png_get_IHDR (png_ptr, info_ptr, &width, &height, &bit_depth, &color_type, &interlace_type, NULL, NULL);

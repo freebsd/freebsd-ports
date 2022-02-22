@@ -1,6 +1,6 @@
---- src/bdftogd.orig	2017-01-29 09:45:57 UTC
+--- src/bdftogd.orig	2021-09-11 04:41:44 UTC
 +++ src/bdftogd
-@@ -24,6 +24,9 @@ $gdname = 'gd' . $gdname unless $gdname 
+@@ -24,6 +24,9 @@ $gdname = 'gd' . $gdname unless $gdname =~ /^gd/i;
  my $filename = shift;
  $filename = 'gd' . $filename unless $filename =~ /^gd/i;
  

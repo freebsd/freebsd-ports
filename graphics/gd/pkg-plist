@@ -11,11 +11,11 @@ bin/giftogd2
 %%PNG%%bin/pngtogd
 %%PNG%%bin/pngtogd2
 %%PNG%%bin/webpng
-include/entities.h
 include/gd.h
 include/gd_color_map.h
 include/gd_errors.h
 include/gd_io.h
+include/gd_io_stream.h
 include/gdcache.h
 include/gdfontg.h
 include/gdfontl.h
@@ -29,5 +29,5 @@ lib/libgd.a
 lib/libgd.la
 lib/libgd.so
 lib/libgd.so.6
-lib/libgd.so.6.0.9
+lib/libgd.so.6.0.11
 libdata/pkgconfig/gdlib.pc
