@@ -11,6 +11,7 @@ bin/tlmgr
 %%SITE_PERL%%/TeXLive/TLUtils.pm
 %%SITE_PERL%%/TeXLive/TLWinGoo.pm
 %%SITE_PERL%%/TeXLive/TeXCatalogue.pm
+%%SITE_PERL%%/TeXLive/trans.pl
 %%TEXMFDISTDIR%%/.texlive-tlmgr
 %%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
 share/tlpkg

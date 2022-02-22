@@ -1,5 +1,6 @@
 PORTNAME=	texlive
 PORTVERSION=	${TEXLIVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print perl5
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMESUFFIX=	-tlmgr
@@ -42,6 +43,8 @@ do-install:
 	    ${LN} -s ../${TEXMFDISTDIR}/scripts/texlive/tlmgr.pl tlmgr
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}-extra/tlpkg/TeXLive/*.pm \
+	    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}-extra/tlpkg/TeXLive/trans.pl \
 	    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/.texlive-tlmgr
