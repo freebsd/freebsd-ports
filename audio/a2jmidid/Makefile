@@ -2,6 +2,7 @@
 
 PORTNAME=	a2jmidid
 PORTVERSION=	9
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -26,5 +27,11 @@ DBUS_LIB_DEPENDS= libdbus-1.so:devel/dbus
 DBUS_MESON_OFF=	"-Ddisable-dbus=true"
 
 DEBUG_CFLAGS= "-DDEBUG"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 || ${ARCH} == riscv64
+MESON_ARGS+=	-Db_lto=false
+.endif
 
 .include <bsd.port.mk>
