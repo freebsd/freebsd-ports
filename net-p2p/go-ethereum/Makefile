@@ -1,6 +1,6 @@
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.14
+DISTVERSION=	1.10.16
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -35,7 +35,7 @@ GH_TUPLE=	\
 		cloudflare:cloudflare-go:v0.14.0:cloudflare_cloudflare_go/vendor/github.com/cloudflare/cloudflare-go \
 		consensys:gnark-crypto:39ac3d4b3f1f:consensys_gnark_crypto/vendor/github.com/consensys/gnark-crypto \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		deckarep:golang-set:504e848d77ea:deckarep_golang_set/vendor/github.com/deckarep/golang-set \
+		deckarep:golang-set:v1.8.0:deckarep_golang_set/vendor/github.com/deckarep/golang-set \
 		deepmap:oapi-codegen:v1.8.2:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
 		dlclark:regexp2:a2a8dda75c91:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dop251:goja:d99e4b8cbf48:dop251_goja/vendor/github.com/dop251/goja \
@@ -61,7 +61,7 @@ GH_TUPLE=	\
 		google:uuid:v1.1.5:google_uuid/vendor/github.com/google/uuid \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
-		graph-gophers:graphql-go:beb923fada29:graph_gophers_graphql_go/vendor/github.com/graph-gophers/graphql-go \
+		graph-gophers:graphql-go:v1.3.0:graph_gophers_graphql_go/vendor/github.com/graph-gophers/graphql-go \
 		hashicorp:go-bexpr:v0.1.10:hashicorp_go_bexpr/vendor/github.com/hashicorp/go-bexpr \
 		hashicorp:golang-lru:80c98217689d:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		holiman:bloomfilter:v2.0.3:holiman_bloomfilter_v2/vendor/github.com/holiman/bloomfilter \
@@ -70,10 +70,10 @@ GH_TUPLE=	\
 		influxdata:influxdb-client-go:v2.4.0:influxdata_influxdb_client_go_v2/vendor/github.com/influxdata/influxdb-client-go/v2 \
 		influxdata:influxdb:v1.8.3:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		influxdata:line-protocol:9aa0e372d097:influxdata_line_protocol/vendor/github.com/influxdata/line-protocol \
-		jackpal:go-nat-pmp:1fa385a6f458:jackpal_go_nat_pmp/vendor/github.com/jackpal/go-nat-pmp \
+		jackpal:go-nat-pmp:v1.0.2:jackpal_go_nat_pmp/vendor/github.com/jackpal/go-nat-pmp \
 		jedisct1:go-minisign:45766022959e:jedisct1_go_minisign/vendor/github.com/jedisct1/go-minisign \
 		julienschmidt:httprouter:v1.2.0:julienschmidt_httprouter/vendor/github.com/julienschmidt/httprouter \
-		karalabe:usb:4c5740d64559:karalabe_usb/vendor/github.com/karalabe/usb \
+		karalabe:usb:v0.0.2:karalabe_usb/vendor/github.com/karalabe/usb \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-ieproxy:6dee0af9227d:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
