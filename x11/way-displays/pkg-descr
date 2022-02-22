@@ -8,6 +8,9 @@ way-displays: Auto Manage Your Wayland Displays
 
 Works out of the box: no configuration required.
 
+Command line client to inspect, modify and persist changes to the
+active configuration.
+
 Wayland successor to xlayoutdisplay, inspired by kanshi.
 
 WWW: https://github.com/alex-courtis/way-displays
