@@ -27,6 +27,7 @@ include/KastenControllers/Kasten/UiColorSchemeControllerFactory
 include/KastenControllers/Kasten/VersionControllerFactory
 include/KastenControllers/Kasten/VersionViewToolFactory
 include/KastenControllers/Kasten/VersionViewToolViewFactory
+include/KastenControllers/Kasten/ViewAreaContextMenuControllerFactory
 include/KastenControllers/Kasten/ViewAreaSplitControllerFactory
 include/KastenControllers/Kasten/ViewListMenuControllerFactory
 include/KastenControllers/Kasten/ZoomBarControllerFactory
@@ -59,6 +60,7 @@ include/KastenControllers/kasten/uicolorschemecontrollerfactory.hpp
 include/KastenControllers/kasten/versioncontrollerfactory.hpp
 include/KastenControllers/kasten/versionviewtoolfactory.hpp
 include/KastenControllers/kasten/versionviewtoolviewfactory.hpp
+include/KastenControllers/kasten/viewareacontextmenucontrollerfactory.hpp
 include/KastenControllers/kasten/viewareasplitcontrollerfactory.hpp
 include/KastenControllers/kasten/viewlistmenucontrollerfactory.hpp
 include/KastenControllers/kasten/zoombarcontrollerfactory.hpp
