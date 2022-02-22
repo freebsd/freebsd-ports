@@ -1,11 +1,11 @@
-TIMESTAMP = 1637047582
-SHA256 (devcpu-data-amd/microcode_amd.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 8a9d9e8b788e31e61cddc03cb1eeab5db99e0f667128943ff0780e6437d2e43e
-SIZE (devcpu-data-amd/microcode_amd.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 12684
-SHA256 (devcpu-data-amd/microcode_amd_fam15h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 9d4a668410e72a4bdb86dc23e4261eca04daa83456ada02504115223f356981a
-SIZE (devcpu-data-amd/microcode_amd_fam15h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 7876
-SHA256 (devcpu-data-amd/microcode_amd_fam16h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = e02ad653b39c975d6c52674b50f23727bb6706bab7b4e5b391a4ce229e7ff121
-SIZE (devcpu-data-amd/microcode_amd_fam16h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 3510
-SHA256 (devcpu-data-amd/microcode_amd_fam17h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 5288d1ac032abe61441c5626091458803f925304ee45ca18de38a4edd66cddd2
-SIZE (devcpu-data-amd/microcode_amd_fam17h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 6476
-SHA256 (devcpu-data-amd/microcode_amd_fam19h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = dee0e71fc01482e4e1d89c18a25410ef82e56665f26f58912387f91e5c368bcf
-SIZE (devcpu-data-amd/microcode_amd_fam19h.bin?id=f5d519563ac9d2d1f382a817aae5ec5473811ac8) = 16804
+TIMESTAMP = 1645493052
+SHA256 (devcpu-data-amd/microcode_amd.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 8a9d9e8b788e31e61cddc03cb1eeab5db99e0f667128943ff0780e6437d2e43e
+SIZE (devcpu-data-amd/microcode_amd.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 12684
+SHA256 (devcpu-data-amd/microcode_amd_fam15h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 9d4a668410e72a4bdb86dc23e4261eca04daa83456ada02504115223f356981a
+SIZE (devcpu-data-amd/microcode_amd_fam15h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 7876
+SHA256 (devcpu-data-amd/microcode_amd_fam16h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = e02ad653b39c975d6c52674b50f23727bb6706bab7b4e5b391a4ce229e7ff121
+SIZE (devcpu-data-amd/microcode_amd_fam16h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 3510
+SHA256 (devcpu-data-amd/microcode_amd_fam17h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 5288d1ac032abe61441c5626091458803f925304ee45ca18de38a4edd66cddd2
+SIZE (devcpu-data-amd/microcode_amd_fam17h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 6476
+SHA256 (devcpu-data-amd/microcode_amd_fam19h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = c4aad240800cb458382eefd60b0d47607c13401d47a0594df37cbcc70ad81031
+SIZE (devcpu-data-amd/microcode_amd_fam19h.bin?id=3c60818505d8b27e8716717d202a3068cf757ca5) = 16804
