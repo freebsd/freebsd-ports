@@ -1,0 +1,6 @@
+SeExpr is an embeddable, arithmetic expression language that enables flexible
+artistic control and customization in creating computer graphics images.
+
+kseexpr is a fork of SeExpr for Krita.
+
+WWW: https://invent.kde.org/graphics/kseexpr

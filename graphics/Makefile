@@ -422,6 +422,7 @@
     SUBDIR += kqtquickcharts
     SUBDIR += kquickimageeditor
     SUBDIR += krita
+    SUBDIR += kseexpr
     SUBDIR += ksnip
     SUBDIR += kxstitch
     SUBDIR += l2p
