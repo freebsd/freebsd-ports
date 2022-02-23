@@ -1,19 +1,12 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	813843077c0c.patch:-p1 # https://github.com/alex-courtis/way-displays/pull/21
-PATCHFILES+=	edeeb344a430.patch:-p1 # https://github.com/alex-courtis/way-displays/pull/21
-PATCHFILES+=	d57fc203a043.patch:-p1 # https://github.com/alex-courtis/way-displays/pull/21
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Auto Manage Your Wayland Displays
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_aarch64=	https://github.com/alex-courtis/way-displays/issues/23
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libinotify.so:devel/libinotify \
@@ -25,6 +18,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alex-courtis
+MAKEFILE=	GNUmakefile
 MAKE_ENV=	VERSION="${DISTVERSIONFULL}"
 MAKE_ARGS=	OFLAGS=
 PLIST_FILES=	bin/${PORTNAME} \
