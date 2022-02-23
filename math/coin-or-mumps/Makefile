@@ -1,31 +1,31 @@
-PORTNAME=	coinmumps
+PORTNAME=	mumps
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.3
 CATEGORIES=	math
-MASTER_SITES=	http://coin-or-tools.github.io/ThirdParty-Mumps/:mumps
+MASTER_SITES=	http://mumps.enseeiht.fr/:mumps
 PKGNAMEPREFIX=	coin-or-
 DISTFILES=	MUMPS_${MUMPS_VERSION}.tar.gz:mumps
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	MUltifrontal Massively Parallel sparse direct Solver (MUMPS)
+COMMENT=	COIN-OR autotools harness to build Mumps
 
-LICENSE=	PD
-LICENSE_FILE=	${WRKDIR}/MUMPS_${MUMPS_VERSION}/LICENSE
+LICENSE=	EPL
 
-LIB_DEPENDS=	libblas.so:math/blas
+LIB_DEPENDS=	libblas.so:math/blas \
+		libcoinmetis.so:math/coin-or-metis
 
-USES=		fortran gmake libtool
+USES=		fortran gmake libtool pkgconfig
 USE_LDCONFIG=	yes
-
-GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or-tools
 GH_PROJECT=	ThirdParty-Mumps
 
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
-MUMPS_VERSION=	4.10.0
+MUMPS_VERSION=	4.10.0 # from the script get.Mumps
 
 .include <bsd.port.pre.mk>
 
@@ -35,10 +35,10 @@ MUMPS_VERSION=	4.10.0
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-post-extract:
-	@${RLN} ${WRKDIR}/MUMPS_${MUMPS_VERSION} ${WRKSRC}/MUMPS
+post-extract: # link MUMPS into the location in the tree
+	@cd ${WRKSRC} && ${LN} -s ${WRKDIR}/MUMPS_${MUMPS_VERSION} MUMPS
 
-post-patch: # from get.Mumps
+pre-build: # patching from get.Mumps
 	@cd ${WRKSRC} && \
 		${PATCH} -p0 < mumps.patch && \
 		${PATCH} -p0 < mumps_mpi.patch && \

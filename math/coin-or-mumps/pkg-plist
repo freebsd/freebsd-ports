@@ -4,5 +4,5 @@ include/coin/ThirdParty/mumps_compat.h
 include/coin/ThirdParty/mumps_mpi.h
 lib/libcoinmumps.so
 lib/libcoinmumps.so.1
-lib/libcoinmumps.so.1.6.2
+lib/libcoinmumps.so.1.6.3
 libdata/pkgconfig/coinmumps.pc

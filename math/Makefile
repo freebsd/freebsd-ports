@@ -219,7 +219,6 @@
     SUBDIR += coin-or-metis
     SUBDIR += coin-or-mumps
     SUBDIR += coinmp
-    SUBDIR += coinmumps
     SUBDIR += coinutils
     SUBDIR += colpack
     SUBDIR += combblas

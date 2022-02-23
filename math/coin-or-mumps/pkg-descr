@@ -1,0 +1,5 @@
+This is an autotools-based build system to build and install
+MUltifrontal Massively Parallel sparse direct Solver (MUMPS).
+This installation of MUMPS is used by some other COIN-OR projects.
+
+WWW: https://github.com/coin-or-tools/ThirdParty-Mumps
