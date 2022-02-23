@@ -216,6 +216,8 @@
     SUBDIR += coin-or-data-netlib
     SUBDIR += coin-or-data-sample
     SUBDIR += coin-or-data-stochastic
+    SUBDIR += coin-or-metis
+    SUBDIR += coin-or-mumps
     SUBDIR += coinmp
     SUBDIR += coinmumps
     SUBDIR += coinutils
