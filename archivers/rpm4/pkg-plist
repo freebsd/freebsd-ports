@@ -10,6 +10,7 @@ bin/rpmquery
 bin/rpmsign
 bin/rpmspec
 bin/rpmverify
+%%PLUGINS%%etc/dbus-1/system.d/org.rpm.conf
 include/rpm/argv.h
 include/rpm/header.h
 include/rpm/rpmarchive.h
@@ -58,6 +59,10 @@ lib/librpmio.so.9.2.0
 lib/librpmsign.so
 lib/librpmsign.so.9
 lib/librpmsign.so.9.2.0
+%%PLUGINS%%lib/rpm-plugins/dbus_announce.so
+%%PLUGINS%%lib/rpm-plugins/prioreset.so
+%%PLUGINS%%lib/rpm-plugins/syslog.so
+%%PLUGINS%%lib/rpm-plugins/systemd_inhibit.so
 lib/rpm/brp-elfperms
 lib/rpm/brp-compress
 lib/rpm/brp-remove-la-files
@@ -176,6 +181,11 @@ man/ko/man8/rpm.8.gz
 man/ko/man8/rpm2cpio.8.gz
 man/man1/gendiff.1.gz
 man/man8/rpm-misc.8.gz
+%%PLUGINS%%man/man8/rpm-plugin-dbus-announce.8.gz
+%%PLUGINS%%man/man8/rpm-plugin-prioreset.8.gz
+%%PLUGINS%%man/man8/rpm-plugin-syslog.8.gz
+%%PLUGINS%%man/man8/rpm-plugin-systemd-inhibit.8.gz
+%%PLUGINS%%man/man8/rpm-plugins.8.gz
 man/man8/rpm.8.gz
 man/man8/rpm2archive.8.gz
 man/man8/rpm2cpio.8.gz
@@ -234,5 +244,6 @@ man/sk/man8/rpm.8.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
+%%PLUGINS%%@dir lib/rpm-plugins
 @dir lib/rpm/lua
 @dir lib/rpm/macros.d

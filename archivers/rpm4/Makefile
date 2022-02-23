@@ -2,6 +2,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.17.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.17.x/
 PKGNAMESUFFIX=	4
