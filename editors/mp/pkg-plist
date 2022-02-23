@@ -3,11 +3,11 @@ bin/mp-5
 %%GUI%%share/applications/minimum-profit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/mp_actions.html
+%%PORTDOCS%%%%DOCSDIR%%/mp_actions.gmi
 %%PORTDOCS%%%%DOCSDIR%%/mp_actions.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_api.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_api.txt
-%%PORTDOCS%%%%DOCSDIR%%/mp_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/mp_configuration.gmi
 %%PORTDOCS%%%%DOCSDIR%%/mp_configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_cookbook.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_cookbook.txt

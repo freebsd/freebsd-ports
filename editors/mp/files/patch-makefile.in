@@ -1,11 +1,11 @@
---- makefile.in.orig	2020-10-11 16:57:43 UTC
+--- makefile.in.orig	2022-02-03 09:30:31 UTC
 +++ makefile.in
-@@ -52,13 +52,13 @@ mp.zip.o: mp.zip
- 	$(LD) -r -b binary mp.zip -o $@
+@@ -56,13 +56,13 @@ $(MPSL)/libmpsl.a: $(MPSL)/VERSION $(MPSL)/config.h
+ 	$(MAKE) -C $(MPSL) libmpsl.a
  
- $(APPNAME): $(OBJS) $(MPDM)/libmpdm.a $(MPSL)/libmpsl.a
--	$(CCLINK) $(CFLAGS) $(OBJS) `cat config.ldflags` -o $@
-+	$(CCLINK) $(LDFLAGS) $(OBJS) `cat config.ldflags` -o $@
+ $(APPNAME): $(OBJS) $(DRV_OBJS) $(MPDM)/libmpdm.a $(MPSL)/libmpsl.a
+-	$(CCLINK) $(CFLAGS) $(OBJS) $(DRV_OBJS) `cat config.ldflags` -o $@
++	$(CCLINK) $(LDFLAGS) $(OBJS) $(DRV_OBJS) `cat config.ldflags` -o $@
  
  mpv_kde4.o: mpv_kde4.cpp mpv_qk_common.moc
 -	$(CPP) $(CFLAGS) -I. `cat config.cflags` -c $<

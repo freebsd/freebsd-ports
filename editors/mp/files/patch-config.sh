@@ -1,4 +1,4 @@
---- config.sh.orig	2021-01-14 18:21:08 UTC
+--- config.sh.orig	2022-02-03 09:30:31 UTC
 +++ config.sh
 @@ -40,6 +40,7 @@ while [ $# -gt 0 ] ; do
      case $1 in
@@ -36,7 +36,7 @@
  cat $MPDM/config.ldflags >> config.ldflags
  cat $MPSL/config.ldflags >> config.ldflags
  
-@@ -285,8 +287,8 @@ else
+@@ -286,8 +288,8 @@ else
          TMP_CFLAGS="$(ncurses5-config --cflags)"
          TMP_LDFLAGS="$(ncurses5-config --libs)"
      else
@@ -47,7 +47,7 @@
      fi
  
      if chk_compiles "$(cat <<EOF
-@@ -450,8 +452,8 @@ if [ "$WITHOUT_QT5" = "1" ] ; then
+@@ -451,8 +453,8 @@ if [ "$WITHOUT_QT5" = "1" ] ; then
  else
      if chk_pkgconfig Qt5Widgets
      then
@@ -58,7 +58,7 @@
  
          if USE_CXX=true chk_compiles "$(cat <<EOF
  #include <QtWidgets>
-@@ -540,8 +542,8 @@ if [ "$WITHOUT_GTK" = "1" ] ; then
+@@ -541,8 +543,8 @@ if [ "$WITHOUT_GTK" = "1" ] ; then
  else
      # Try first GTK 3.0
      if chk_pkgconfig gtk+-3.0 ; then
@@ -69,7 +69,7 @@
  
          if chk_compiles "$(cat <<EOF
  #include <gtk/gtk.h>
-@@ -549,10 +551,10 @@ else
+@@ -550,10 +552,10 @@ else
  int main(void) { gtk_main(); return 0; }
  EOF
  )" ; then
@@ -82,12 +82,12 @@
              DRIVERS="gtk $DRIVERS"
              DRV_OBJS="mpv_gtk.o $DRV_OBJS"
              CFLAGS="$CFLAGS $TMP_CFLAGS"
-@@ -701,7 +703,7 @@ if [ "$WITH_EXTERNAL_ARCH" = "1" ] ; then
+@@ -704,7 +706,7 @@ if [ "$WITH_EXTERNAL_ARCH" = "1" ] ; then
      echo "#define CONFOPT_EXTERNAL_ARCH 1" >> config.h
      echo "#define ARCH_START NULL" >> config.h
      echo "#define ARCH_END NULL" >> config.h
--    MORE_TARGETS="mp.tar"
-+    MORE_TARGETS="mp.tar $MORE_TARGETS"
-     MORE_INSTALL_TARGETS="install-tar $MORE_INSTALL_TARGETS"
+-    MORE_TARGETS="$ARCH_FILE"
++    MORE_TARGETS="$ARCH_FILE $MORE_TARGETS"
+     MORE_INSTALL_TARGETS="install-arch $MORE_INSTALL_TARGETS"
  fi
  

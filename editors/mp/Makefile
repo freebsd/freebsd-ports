@@ -1,7 +1,7 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
 
 PORTNAME=	mp
-DISTVERSION=	5.50
+DISTVERSION=	5.57
 CATEGORIES=	editors
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -14,9 +14,7 @@ USES=		gmake iconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ttcdt
-GH_PROJECT=	mp-5.x mpdm:mpdm mpsl:mpsl
-GH_TAGNAME=	2.72:mpdm 2.62:mpsl
-GH_SUBDIR=	mpdm:mpdm mpsl:mpsl
+GH_PROJECT=	mp-5.x
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
