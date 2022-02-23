@@ -2,8 +2,7 @@
 #    $MCom: ports/editors/poedit/Makefile,v 1.2 2006/10/05 07:03:09 mezz Exp $
 
 PORTNAME=	poedit
-PORTVERSION=	1.8.4
-PORTREVISION=	35
+PORTVERSION=	3.0.1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVERSION}-oss/
 
