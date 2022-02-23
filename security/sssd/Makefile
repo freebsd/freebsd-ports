@@ -33,6 +33,10 @@ BUILD_DEPENDS=	xmlcatalog:textproc/libxml2 \
 		krb5>=1.10:security/krb5 \
 		nsupdate:dns/bind-tools
 
+FLAVORS=	default smb
+FLAVOR?=	${FLAVORS:[1]}
+smb_PKGNAMESUFFIX=	-smb
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-selinux --without-semanage \
 		--without-libnl --without-nfsv4-idmapd-plugin \
@@ -82,6 +86,10 @@ SMB_LIB_DEPENDS=	libndr-nbt.so.0:net/samba412 \
 			libndr.so.1:net/samba412 \
 			libsamba-util.so.0:net/samba412 \
 			libsmbclient.so.0:net/samba412
+
+.if ${FLAVOR} == smb
+OPTIONS_DEFAULT+=	SMB
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|NSS_STATUS_NOTFOUND|NS_NOTFOUND|g' \
