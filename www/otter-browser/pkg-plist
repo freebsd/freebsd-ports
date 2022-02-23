@@ -41,6 +41,7 @@ share/icons/hicolor/64x64/apps/otter-browser.png
 %%DATADIR%%/locale/otter-browser_ru.qm
 %%DATADIR%%/locale/otter-browser_sk.qm
 %%DATADIR%%/locale/otter-browser_sl.qm
+%%DATADIR%%/locale/otter-browser_sq.qm
 %%DATADIR%%/locale/otter-browser_sr.qm
 %%DATADIR%%/locale/otter-browser_sr@ijekavian.qm
 %%DATADIR%%/locale/otter-browser_sr@ijekavianlatin.qm
