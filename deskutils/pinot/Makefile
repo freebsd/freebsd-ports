@@ -1,8 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	pinot
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.21
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
