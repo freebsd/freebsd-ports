@@ -1,0 +1,5 @@
+This is an autotools-based build system to build and install routines
+from the Harwell Subroutine Library (HSL). This installation of HSL
+routines is used by some other COIN-OR projects, in particular Ipopt.
+
+WWW: https://github.com/coin-or-tools/ThirdParty-HSL

@@ -359,6 +359,7 @@
     SUBDIR += hpipm
     SUBDIR += hs-Agda
     SUBDIR += hs-penrose
+    SUBDIR += hsl
     SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
