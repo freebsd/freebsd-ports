@@ -2,7 +2,7 @@
 
 PORTNAME=	sssd
 PORTVERSION=	1.16.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
@@ -60,8 +60,10 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
+TEST_TARGET=	check
+
 USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
-		python:3.7 shebangfix gssapi:mit
+		python:3.6+ shebangfix gssapi:mit
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 INSTALL_TARGET=	install-strip

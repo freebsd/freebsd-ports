@@ -1,4 +1,4 @@
---- configure.ac.orig	2020-03-17 13:31:28 UTC
+--- configure.ac	2020-03-17 13:31:28 UTC
 +++ configure.ac
 @@ -44,8 +44,6 @@ AM_CONDITIONAL([HAVE_GCC], [test "$ac_cv_prog_gcc" = y
  AC_CHECK_HEADERS(stdint.h dlfcn.h)
@@ -9,10 +9,29 @@
  m4_include([src/build_macros.m4])
  BUILD_WITH_SHARED_BUILD_DIR
  
-@@ -356,8 +354,8 @@ them please use argument --without-python3-bindings wh
+@@ -62,4 +60,18 @@
+
+ AM_CONDITIONAL([HAVE_PTHREAD], [test x"$HAVE_PTHREAD" != "x"])
++
++saved_CFLAGS="$CFLAGS"
++CFLAGS="-Werror"
++AC_COMPILE_IFELSE(
++    [AC_LANG_PROGRAM([[#include <string.h>]],
++        [[(void)mempcpy(NULL, NULL, 0);]])],
++    [AC_DEFINE([HAVE_MEMPCPY], [1], [mempcpy() available])
++     HAVE_MEMPCPY=1
++    ],
++    [AC_MSG_WARN([mempcpy() not found, will use private implementation])])
++
++CFLAGS="$saved_CFLAGS"
++
++AM_CONDITIONAL([HAVE_MEMPCPY], [test x"$HAVE_MEMPCPY" != "x"])
+
+ # Check library for the timer_create function
+@@ -356,8 +358,8 @@ them please use argument --without-python3-bindings wh
      AM_CHECK_PYTHON_HEADERS([],
                              AC_MSG_ERROR([Could not find python3 headers]))
- 
+
 -    AC_SUBST([py3execdir], [$pyexecdir])
 -    AC_SUBST([python3dir], [$pythondir])
 +    AC_SUBST([py3execdir], [$(eval echo $pyexecdir)])

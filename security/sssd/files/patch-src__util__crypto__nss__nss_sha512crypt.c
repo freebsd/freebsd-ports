@@ -2,15 +2,17 @@ diff --git src/util/crypto/nss/nss_sha512crypt.c src/util/crypto/nss/nss_sha512c
 index 4d0594d9f..49801222d 100644
 --- src/util/crypto/nss/nss_sha512crypt.c
 +++ src/util/crypto/nss/nss_sha512crypt.c
-@@ -29,6 +29,12 @@
+@@ -29,6 +29,14 @@
  #include <sechash.h>
  #include <pk11func.h>
  
++#ifndef HAVE_MEMPCPY
 +static void *
 +mempcpy (void *dest, const void *src, size_t n)
 +{
 +  return (char *) memcpy (dest, src, n) + n;
 +}
++#endif /* HAVE_MEMPCPY */
 +
  /* Define our magic string to mark salt for SHA512 "encryption" replacement. */
  const char sha512_salt_prefix[] = "$6$";
