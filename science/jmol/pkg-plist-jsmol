@@ -295,6 +295,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/spartan/SpartanUtil.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlArgusReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlChem3dReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/xml/XmlChemDrawReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlCmlReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlHandler.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlMOReader.js
@@ -724,6 +725,10 @@
 %%WWWDIR%%/j2s/J/shapesurface/PMeshWriter.js
 %%WWWDIR%%/j2s/J/shapesurface/Plot3D.js
 %%WWWDIR%%/j2s/J/shapesurface/Pmesh.js
+%%WWWDIR%%/j2s/J/symmetry/sg/sggroups_ordered.txt
+%%WWWDIR%%/j2s/J/symmetry/sg/sgmap.txt
+%%WWWDIR%%/j2s/J/symmetry/sg/sgops_ordered.txt
+%%WWWDIR%%/j2s/JS/SpaceGroupFinder.js
 %%WWWDIR%%/j2s/J/thread/AnimationThread.js
 %%WWWDIR%%/j2s/J/thread/HoverWatcherThread.js
 %%WWWDIR%%/j2s/J/thread/JmolThread.js
