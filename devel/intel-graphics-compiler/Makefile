@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	aa7df33aebe0.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/210
+PATCHFILES+=	35c947c2631e.patch:-p1 # https://github.com/intel/intel-graphics-compiler/issues/142
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
@@ -32,7 +33,8 @@ GH_ACCOUNT=	intel
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-123-g814e728:headers/../SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2021.4:tools/../SPIRV-Tools
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH:PATH="${LOCALBASE}/${FLAVOR}" \
-		-DIGC_OPTION__LLVM_PREFERRED_VERSION:STRING="${FLAVOR:S/llvm//}"
+		-DIGC_OPTION__LLVM_PREFERRED_VERSION:STRING="${FLAVOR:S/llvm//}" \
+		-DIGC_OPTION__VC_INTRINSICS_MODE:STRING=Prebuilds
 CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
 

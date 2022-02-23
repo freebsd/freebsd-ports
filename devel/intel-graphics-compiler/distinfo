@@ -7,3 +7,5 @@ SHA256 (KhronosGroup-SPIRV-Tools-v2021.4_GH0.tar.gz) = d68de260708dda785d109ff1c
 SIZE (KhronosGroup-SPIRV-Tools-v2021.4_GH0.tar.gz) = 2887505
 SHA256 (aa7df33aebe0.patch) = b2da1a00ac59ce7e98fd6cfb554f8974b1500bc1b9973387181414ffa4cffea5
 SIZE (aa7df33aebe0.patch) = 2242
+SHA256 (35c947c2631e.patch) = fea59a67ebba1debed6d4948139184ba8677989c1b966794ac60161936846153
+SIZE (35c947c2631e.patch) = 3354
