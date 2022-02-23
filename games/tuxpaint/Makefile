@@ -1,7 +1,7 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.26
+PORTVERSION=	0.9.27
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -13,14 +13,17 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libpaper.so:print/libpaper \
-		libimagequant.so:graphics/libimagequant
+		libimagequant.so:graphics/libimagequant \
+		libpng16.so:graphics/png \
+		libharfbuzz.so:print/harfbuzz
+
 RUN_DEPENDS=	anytopnm:graphics/netpbm \
 		bash:shells/bash
 
 USES=		gettext gmake gnome gperf magick:7,build pkgconfig sdl shebangfix
 SHEBANG_FILES=	src/tuxpaint-import.sh
 USE_GNOME=	librsvg2
-USE_SDL=	image mixer sdl ttf pango
+USE_SDL=	gfx image mixer sdl ttf pango
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PREFIX="${PREFIX}" \

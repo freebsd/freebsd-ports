@@ -26,6 +26,7 @@ lib/tuxpaint/plugins/grass.so
 lib/tuxpaint/plugins/halftone.so
 lib/tuxpaint/plugins/kalidescope.so
 lib/tuxpaint/plugins/light.so
+lib/tuxpaint/plugins/lightning.so
 lib/tuxpaint/plugins/metalpaint.so
 lib/tuxpaint/plugins/mirror_flip.so
 lib/tuxpaint/plugins/mosaic_shaped.so
@@ -39,12 +40,14 @@ lib/tuxpaint/plugins/rails.so
 lib/tuxpaint/plugins/rainbow.so
 lib/tuxpaint/plugins/rain.so
 lib/tuxpaint/plugins/realrainbow.so
+lib/tuxpaint/plugins/reflection.so
 lib/tuxpaint/plugins/ripples.so
 lib/tuxpaint/plugins/rosette.so
 lib/tuxpaint/plugins/sharpen.so
 lib/tuxpaint/plugins/shift.so
 lib/tuxpaint/plugins/smudge.so
 lib/tuxpaint/plugins/snow.so
+lib/tuxpaint/plugins/stretch.so
 lib/tuxpaint/plugins/string.so
 lib/tuxpaint/plugins/tint.so
 lib/tuxpaint/plugins/toothpaste.so
@@ -52,10 +55,13 @@ lib/tuxpaint/plugins/tornado.so
 lib/tuxpaint/plugins/tv.so
 lib/tuxpaint/plugins/waves.so
 lib/tuxpaint/plugins/xor.so
+man/es_ES.UTF-8/man1/tuxpaint.1.gz
+man/fr_FR.UTF-8/man1/tuxpaint.1.gz
+man/gl_ES.UTF-8/man1/tuxpaint.1.gz
+man/ja_JP.UTF-8/man1/tuxpaint.1.gz
 man/man1/tp-magic-config.1.gz
 man/man1/tuxpaint.1.gz
 man/man1/tuxpaint-import.1.gz
-man/pl/man1/tuxpaint.1.gz
 share/locale/ach/LC_MESSAGES/tuxpaint.mo
 share/locale/af/LC_MESSAGES/tuxpaint.mo
 share/locale/ak/LC_MESSAGES/tuxpaint.mo
