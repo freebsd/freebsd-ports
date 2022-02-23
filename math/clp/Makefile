@@ -2,7 +2,7 @@
 
 PORTNAME=	Clp
 DISTVERSION=	1.17.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-
