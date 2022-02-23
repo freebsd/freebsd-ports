@@ -1,6 +1,6 @@
-TIMESTAMP = 1645217936
-SHA256 (emby-server-devel/embyserver-netframework_4.7.0.24.zip) = d94aaadbce1e48b24d2e9f0d3402688e99b7112a5c7a64c5386e4a01df310ae5
-SIZE (emby-server-devel/embyserver-netframework_4.7.0.24.zip) = 48623550
+TIMESTAMP = 1645638774
+SHA256 (emby-server-devel/embyserver-netframework_4.7.0.25.zip) = f6e30562d45b521e2c8bcc57ac70ea683117b84f12db8f28637227629a8c93ef
+SIZE (emby-server-devel/embyserver-netframework_4.7.0.25.zip) = 48612929
 SHA256 (emby-server-devel/ffdetect-2021_02_27-x64_freebsd13.tar.xz) = 883e02378da5f111931e36226fe85bcf19deeaaf4ede446e267081838e936ac7
 SIZE (emby-server-devel/ffdetect-2021_02_27-x64_freebsd13.tar.xz) = 75244
 SHA256 (emby-server-devel/ffmpeg-2021_02_27.tar.gz) = dd587ddbde4c967695919d7f85b0f28e6d7262f55171f3e8052eef2f4a7f585c

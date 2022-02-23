@@ -383,7 +383,6 @@ lib/emby-server/system/dashboard-ui/modules/common/playback/experimentalwarnings
 lib/emby-server/system/dashboard-ui/modules/common/playback/playaccessvalidation.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/playbackmanager.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/playbackvalidation.js
-lib/emby-server/system/dashboard-ui/modules/common/playback/playmethodhelper.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/playqueueconfirmation.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/playqueuemanager.js
 lib/emby-server/system/dashboard-ui/modules/common/pluginmanager.js
