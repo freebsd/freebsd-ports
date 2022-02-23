@@ -21,6 +21,8 @@ USE_QT=		buildtools_build qmake_build core gui opengl widgets
 
 MAKE_JOBS_UNSAFE=	yes	# https://github.com/wdas/seexpr/issues/40
 
+CONFLICTS_INSTALL=	kseexpr
+
 OPTIONS_DEFINE=	ANIMCURVE DEEPWATER LLVM NLS PYTHON
 OPTIONS_DEFAULT=	DEEPWATER
 OPTIONS_SUB=	yes
