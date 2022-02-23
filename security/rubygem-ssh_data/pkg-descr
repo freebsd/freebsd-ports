@@ -1,0 +1,12 @@
+This is a Ruby library for processing SSH keys and certificates.
+
+The scope of this project is limited to processing and directly using keys and certificates.
+It can be used to generate SSH private keys, verify signatures using public keys, sign data
+using private keys, issue certificates using private keys, and parse certificates and public
+and private keys. This library supports RSA, DSA, ECDSA, and ED25519* keys. This library
+does not offer or intend to offer functionality for SSH connectivity, processing of SSH wire
+protocol data, or processing of other key formats or types.
+
+Project Status: Used by @github in production
+
+WWW: https://github.com/github/ssh_data

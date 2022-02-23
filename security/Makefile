@@ -1174,6 +1174,7 @@
     SUBDIR += rubygem-securerandom
     SUBDIR += rubygem-signet
     SUBDIR += rubygem-six
+    SUBDIR += rubygem-ssh_data
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-sslshake
