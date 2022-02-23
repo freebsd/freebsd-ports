@@ -1,3 +1,29 @@
+  <vuln vid="022dde12-8f4a-11ec-83ac-080027415d17">
+    <topic>cyrus-sasl -- Escape password for SQL insert/update commands</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl-sql</name>
+	<range><ge>2.1.27</ge><lt>2.1.27_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus SASL 2.1.x Release Notes New in 2.1.28 reports:</p>
+	<blockquote cite="https://www.cyrusimap.org/sasl/sasl/release-notes/2.1/index.html#new-in-2-1-28">
+	  <p>Escape password for SQL insert/update commands.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24407</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24407</url>
+    </references>
+    <dates>
+      <discovery>2022-02-04</discovery>
+      <entry>2022-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85d976be-93e3-11ec-aaad-14dae9d5a9d2">
     <topic>The Update Framwork -- path traversal vulnerability</topic>
     <affects>
