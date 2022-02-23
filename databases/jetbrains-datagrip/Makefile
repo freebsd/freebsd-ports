@@ -1,5 +1,5 @@
 PORTNAME=	datagrip
-PORTVERSION=	2021.3.1
+PORTVERSION=	2021.3.4
 CATEGORIES=	databases java
 MASTER_SITES=	https://download-cf.jetbrains.com/datagrip/
 PKGNAMEPREFIX=	jetbrains-
