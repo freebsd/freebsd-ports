@@ -1,5 +1,5 @@
 PORTNAME=	citra
-PORTVERSION=	s20220221
+PORTVERSION=	s20220225
 PORTREVISION?=	0
 CATEGORIES=	emulators
 .if make(makesum)
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	db5edf549
+GH_TAGNAME=	25ad002e6
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:8289d0d:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
@@ -45,7 +45,7 @@ GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		lvandeve:lodepng:31d9704:lodepng/externals/lodepng/lodepng \
 		neobrain:nihstro:fd69de1:nihstro/externals/nihstro \
 		weidai11:cryptopp:CRYPTOPP_8_5_0:cryptopp/externals/cryptopp/cryptopp \
-		wwylele:teakra:3e032a7:teakra/externals/teakra
+		wwylele:teakra:01db7cd:teakra/externals/teakra
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl
 USE_SDL=	sdl2
