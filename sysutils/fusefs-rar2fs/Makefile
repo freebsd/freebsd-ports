@@ -1,6 +1,7 @@
 # Created by: Joris Vandalon
 
 PORTNAME=	rar2fs
+PORTREVISION=	1
 DISTVERSION=	1.29.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
