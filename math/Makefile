@@ -850,6 +850,7 @@
     SUBDIR += py-iminuit
     SUBDIR += py-intspan
     SUBDIR += py-iohexperimenter
+    SUBDIR += py-ipyopt
     SUBDIR += py-jax
     SUBDIR += py-keras
     SUBDIR += py-keras-applications

@@ -1,0 +1,3 @@
+Python interface for the interior point optimizer COIN-OR IPOpt.
+
+WWW: https://gitlab.com/g-braeunlich/ipyopt
