@@ -16,6 +16,7 @@ include/freerdp2/freerdp/cache/nine_grid.h
 include/freerdp2/freerdp/cache/offscreen.h
 include/freerdp2/freerdp/cache/palette.h
 include/freerdp2/freerdp/cache/pointer.h
+include/freerdp2/freerdp/channels/ainput.h
 include/freerdp2/freerdp/channels/audin.h
 include/freerdp2/freerdp/channels/channels.h
 include/freerdp2/freerdp/channels/cliprdr.h
@@ -35,6 +36,7 @@ include/freerdp2/freerdp/channels/urbdrc.h
 include/freerdp2/freerdp/channels/video.h
 include/freerdp2/freerdp/channels/wtsvc.h
 include/freerdp2/freerdp/client.h
+include/freerdp2/freerdp/client/ainput.h
 include/freerdp2/freerdp/client/audin.h
 include/freerdp2/freerdp/client/channels.h
 include/freerdp2/freerdp/client/cliprdr.h
@@ -112,6 +114,7 @@ include/freerdp2/freerdp/primitives.h
 include/freerdp2/freerdp/rail.h
 include/freerdp2/freerdp/scancode.h
 include/freerdp2/freerdp/secondary.h
+include/freerdp2/freerdp/server/ainput.h
 include/freerdp2/freerdp/server/audin.h
 include/freerdp2/freerdp/server/channels.h
 include/freerdp2/freerdp/server/cliprdr.h
