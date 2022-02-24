@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.8
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/biojppm/c4core/commit/
+PATCHFILES=	ed9bf87ab152509fcd5c54bdc40ebed9a2b4ede7.patch:-p1
+
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Library of low-level C++ utilities
 
