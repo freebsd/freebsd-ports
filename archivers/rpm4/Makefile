@@ -2,7 +2,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.17.x/
 PKGNAMESUFFIX=	4
@@ -59,11 +59,12 @@ OPTIONS_DEFINE=	PYTHON PLUGINS NLS DOCS
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
+PYTHON_CONFIGURE_ENABLE=python
+PYTHON_USES=		python
+
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 NLS_LIBS=		-lintl
-
-PYTHON_RUN_DEPENDS=    ${LOCALBASE}/lib/rpm/pythondistdeps.py:archivers/py-python-rpm-packaging
 
 PLUGINS_CONFIGURE_ENABLE=plugins
 PLUGINS_LIB_DEPENDS=	libdbus-1.so:devel/dbus

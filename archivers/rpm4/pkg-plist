@@ -59,6 +59,9 @@ lib/librpmio.so.9.2.0
 lib/librpmsign.so
 lib/librpmsign.so.9
 lib/librpmsign.so.9.2.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpm.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
 %%PLUGINS%%lib/rpm-plugins/dbus_announce.so
 %%PLUGINS%%lib/rpm-plugins/prioreset.so
 %%PLUGINS%%lib/rpm-plugins/syslog.so
