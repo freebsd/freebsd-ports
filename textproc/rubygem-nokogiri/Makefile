@@ -1,5 +1,5 @@
 PORTNAME=	nokogiri
-PORTVERSION=	1.13.1
+PORTVERSION=	1.13.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		rubygem-mini_portile2>=2.7.0<2.8:devel/rubygem-mini_portile2
+		rubygem-mini_portile2>=2.8.0<2.9:devel/rubygem-mini_portile2
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libxml2.so:textproc/libxml2
