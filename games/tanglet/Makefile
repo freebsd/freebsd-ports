@@ -1,9 +1,8 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	tanglet
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tanglet/
 
@@ -11,7 +10,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Single player word finding game based on Boggle
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
+LICENSE_FILE=	${WRKSRC}/data/LICENSES/GPL-3.0.txt
 
 USES=		compiler:c++11-lib desktop-file-utils gl pkgconfig qmake \
 		qt:5 shared-mime-info tar:bzip2

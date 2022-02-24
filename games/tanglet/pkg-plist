@@ -18,6 +18,13 @@ share/icons/hicolor/scalable/apps/tanglet.svg
 share/metainfo/tanglet.appdata.xml
 share/mime/packages/tanglet.xml
 share/pixmaps/tanglet.xpm
+%%DATADIR%%/data/LICENSES/CC-BY-4.0.txt
+%%DATADIR%%/data/LICENSES/CC-BY-SA-3.0.txt
+%%DATADIR%%/data/LICENSES/CC0-1.0.txt
+%%DATADIR%%/data/LICENSES/GPL-2.0.txt
+%%DATADIR%%/data/LICENSES/GPL-3.0.txt
+%%DATADIR%%/data/LICENSES/LGPL-3.0.txt
+%%DATADIR%%/data/LICENSES/SCOWL.txt
 %%DATADIR%%/data/ca/dice
 %%DATADIR%%/data/ca/language.ini
 %%DATADIR%%/data/ca/words
