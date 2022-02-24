@@ -1,7 +1,6 @@
 PORTNAME=	gravity
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.20210512
-PORTREVISION=	1
+DISTVERSION=	1.1.20210825
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -18,8 +17,6 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCgl.so:math/cgl \
 		libClp.so:math/clp \
 		libcoinasl.so:math/asl \
-		libCoinUtils.so:math/coinutils \
-		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
@@ -29,10 +26,12 @@ USES=		cmake compiler:c++11-lang eigen:3 localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 GH_PROJECT=	Gravity
-GH_TAGNAME=	da941e9
+GH_TAGNAME=	e500e78
 
 CMAKE_ARGS+=	-DIPOPT_ROOT_DIR=${LOCALBASE}
-CMAKE_ON=	Boost Ipopt
+CMAKE_ON=	Boost
+CMAKE_OFF=	MP
+CMAKE_OFF+=	Ipopt CoinUtils # fails to find Ipopt and CoinUtils for some reason
 
 LDFLAGS+=	-L${LOCALBASE}/lib/gcc${GCC_DEFAULT}
 
