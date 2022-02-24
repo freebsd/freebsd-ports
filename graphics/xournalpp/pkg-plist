@@ -1,5 +1,6 @@
 bin/xournalpp
 bin/xournalpp-thumbnailer
+share/locale/af_ZA/LC_MESSAGES/xournalpp.mo
 share/locale/ar/LC_MESSAGES/xournalpp.mo
 share/locale/ca/LC_MESSAGES/xournalpp.mo
 share/locale/cs/LC_MESSAGES/xournalpp.mo
@@ -25,6 +26,7 @@ share/locale/pt_BR/LC_MESSAGES/xournalpp.mo
 share/locale/pt_PT/LC_MESSAGES/xournalpp.mo
 share/locale/ro/LC_MESSAGES/xournalpp.mo
 share/locale/ru/LC_MESSAGES/xournalpp.mo
+share/locale/si_LK/LC_MESSAGES/xournalpp.mo
 share/locale/sv/LC_MESSAGES/xournalpp.mo
 share/locale/th/LC_MESSAGES/xournalpp.mo
 share/locale/tr/LC_MESSAGES/xournalpp.mo
@@ -32,6 +34,8 @@ share/locale/vi/LC_MESSAGES/xournalpp.mo
 share/locale/zh/LC_MESSAGES/xournalpp.mo
 share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
+share/man/man1/xournalpp-thumbnailer.1.gz
+share/man/man1/xournalpp.1.gz
 %%DATADIR%%/plugins/ColorCycle/main.lua
 %%DATADIR%%/plugins/ColorCycle/plugin.ini
 %%DATADIR%%/plugins/Example/main.lua
