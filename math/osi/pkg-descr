@@ -14,6 +14,6 @@ Solver        Derived Class
 * SoPlex      OsiSpx
 * SYMPHONY    OsiSym
 * Vol         OsiVol
-* XPRESS-MP   OsiXpr 
+* XPRESS-MP   OsiXpr
 
 WWW: https://projects.coin-or.org/Osi/

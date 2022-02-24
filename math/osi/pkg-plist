@@ -15,9 +15,9 @@ include/coin/OsiSolverParameters.hpp
 include/coin/OsiUnitTests.hpp
 lib/libOsi.so
 lib/libOsi.so.1
-lib/libOsi.so.1.13.6
+lib/libOsi.so.1.13.7
 lib/libOsiCommonTests.so
 lib/libOsiCommonTests.so.1
-lib/libOsiCommonTests.so.1.13.6
+lib/libOsiCommonTests.so.1.13.7
 libdata/pkgconfig/osi-unittests.pc
 libdata/pkgconfig/osi.pc
