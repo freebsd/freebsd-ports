@@ -1,8 +1,7 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	cutemaze
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
