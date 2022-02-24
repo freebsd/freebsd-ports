@@ -2,9 +2,10 @@
 
 PORTNAME=	spampd
 PORTVERSION=	2.61
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spamassassin SMTP Proxy
 
 LICENSE=	GPLv3
