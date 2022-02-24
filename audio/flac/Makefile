@@ -1,8 +1,7 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	flac
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
 		https://ftp.osuosl.org/pub/xiph/releases/flac/
@@ -17,7 +16,7 @@ LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.FDL
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		autoreconf compiler:c11 cpe iconv libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 cpe iconv libtool pathfix pkgconfig tar:xz
 
 CPE_VENDOR=	flac_project
 
