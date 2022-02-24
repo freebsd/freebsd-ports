@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220224:
+  AFFECTS: users of net-im/openfire
+  AUTHOR: nikita@druba.su
+
+  The port version have been updated from 4.6.x to 4.7.x.
+  It is recommended to do database and configs backup before updating.
+
 20220219:
   AFFECTS: users of sysutils/intel-pcm-devel
   AUTHOR: egypcio@FreeBSD.org
