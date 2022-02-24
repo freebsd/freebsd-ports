@@ -1,7 +1,12 @@
 PORTNAME=	obs-studio
-DISTVERSION=	27.1.3
-PORTREVISION=	1
+DISTVERSION=	27.2.1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	79aed14aff55c62fee78c0f4828c65ac05caf036.patch:-p1 \
+		ecd7a59aed665eca0a50b99939ef28e04e144876.patch:-p1 \
+		c201bd067fd3e4c9a6139ad52e0ad61bc1ca0117.patch:-p1 \
+		445f39764b8f11f951d41d14ee57ae13f57b13d4.patch:-p1 # backport the PR "Fix building OBS Studio on FreeBSD", https://github.com/obsproject/obs-studio/pull/6026
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
@@ -21,6 +26,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2 \
 		libjansson.so:devel/jansson \
 		libmbedtls.so:security/mbedtls \
+		libpci.so:devel/libpci \
 		libspeexdsp.so:audio/speexdsp \
 		libsysinfo.so:devel/libsysinfo \
 		libudev.so:devel/libudev-devd \
@@ -33,6 +39,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-render-util.so:x11/xcb-util-renderutil \
 		libxcb-util.so:x11/xcb-util \
+		libxkbcommon.so:x11/libxkbcommon \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
@@ -99,6 +106,9 @@ PLIST_SUB+=	LUAJIT=""
 post-patch:
 	@${REINPLACE_CMD} -e 's| 3.4)| ${PYTHON_VER})|' \
 		${WRKSRC}/cmake/Modules/FindPythonDeps.cmake
+	# patch out linixism
+	#@${REINPLACE_CMD} -e 's|versionsort|alphasort|' \
+	#	${WRKSRC}/plugins/linux-v4l2/v4l2-output.c
 
 post-install:
 	# https://github.com/obsproject/obs-studio/issues/2625
