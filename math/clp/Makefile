@@ -1,8 +1,7 @@
 # Created by: Robin Schilham
 
 PORTNAME=	Clp
-DISTVERSION=	1.17.3
-PORTREVISION=	6
+DISTVERSION=	1.17.6
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-
@@ -15,7 +14,8 @@ LICENSE=	EPL
 BUILD_DEPENDS=	coin-or-Data-Sample>0:math/coin-or-data-sample \
 		coin-or-Data-Netlib>0:math/coin-or-data-netlib
 LIB_DEPENDS=	libcoinasl.so:math/asl \
-		libcoinmumps.so:math/ipopt \
+		libcoinmetis.so:math/coin-or-metis \
+		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
 		libOsi.so:math/osi
 RUN_DEPENDS=	coin-or-Data-Sample>0:math/coin-or-data-sample \

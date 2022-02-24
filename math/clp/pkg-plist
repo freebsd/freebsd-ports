@@ -53,13 +53,13 @@ include/coin/Idiot.hpp
 include/coin/OsiClpSolverInterface.hpp
 lib/libClp.so
 lib/libClp.so.1
-lib/libClp.so.1.14.3
+lib/libClp.so.1.14.6
 lib/libClpSolver.so
 lib/libClpSolver.so.1
-lib/libClpSolver.so.1.14.3
+lib/libClpSolver.so.1.14.6
 lib/libOsiClp.so
 lib/libOsiClp.so.1
-lib/libOsiClp.so.1.14.3
+lib/libOsiClp.so.1.14.6
 libdata/pkgconfig/clp.pc
 libdata/pkgconfig/osi-clp.pc
 %%DATADIR%%/coin/doc/Clp/AUTHORS
