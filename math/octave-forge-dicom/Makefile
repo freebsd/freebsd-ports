@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 
 PORTNAME=	octave-forge-dicom
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
