@@ -1,8 +1,7 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
 
 PORTNAME=	cryptopp
-PORTVERSION=	8.5.0
-PORTREVISION=	1
+PORTVERSION=	8.6.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cryptopp.com/
 DISTNAME=	cryptopp${PORTVERSION:S/.//g}
