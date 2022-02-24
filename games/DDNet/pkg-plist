@@ -1,5 +1,5 @@
 %%CLIENT%%bin/DDNet
-bin/DDNet-Server
+%%SERVER%%bin/DDNet-Server
 lib/ddnet/config_retrieve
 lib/ddnet/config_store
 lib/ddnet/crapnet
@@ -16,10 +16,12 @@ lib/ddnet/packetgen
 lib/ddnet/unicode_confusables
 lib/ddnet/uuid
 %%CLIENT%%share/applications/ddnet.desktop
-%%CLIENT%%share/icons/hicolor/128x128/apps/ddnet.png
 %%CLIENT%%share/icons/hicolor/16x16/apps/ddnet.png
+%%SERVER%%share/icons/hicolor/16x16/apps/ddnet-server.png
 %%CLIENT%%share/icons/hicolor/256x256/apps/ddnet.png
+%%SERVER%%share/icons/hicolor/256x256/apps/ddnet-server.png
 %%CLIENT%%share/icons/hicolor/32x32/apps/ddnet.png
+%%SERVER%%share/icons/hicolor/32x32/apps/ddnet-server.png
 %%CLIENT%%share/icons/hicolor/48x48/apps/ddnet.png
-%%CLIENT%%share/icons/hicolor/512x512/apps/ddnet.png
+%%SERVER%%share/icons/hicolor/48x48/apps/ddnet-server.png
 %%CLIENT%%share/metainfo/ddnet.appdata.xml

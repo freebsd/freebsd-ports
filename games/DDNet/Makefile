@@ -1,5 +1,5 @@
 PORTNAME=	DDNet
-PORTVERSION=	15.8.1
+PORTVERSION=	15.9
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 
@@ -8,6 +8,8 @@ COMMENT=	DDraceNetwork, a cooperative racing mod of Teeworlds
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
+
+LIB_DEPENDS=	libpnglite.so:graphics/pnglite
 
 USES=		cmake compiler:c++11-lang pkgconfig python sqlite:3 ssl tar:xz
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE="${PYTHON_CMD}"
@@ -18,8 +20,10 @@ CXXFLAGS+=	-DBINARY_DIR="\\\"${PREFIX}/bin\\\""
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/ddnet
 
-OPTIONS_DEFINE=		CLIENT TEST WEBSOCKETS MYSQL VIDEORECORDER UPNP
-OPTIONS_DEFAULT=	CLIENT TEST VIDEORECORDER UPNP
+OPTIONS_DEFINE=		TEST WEBSOCKETS MYSQL VIDEORECORDER UPNP
+OPTIONS_MULTI=		COMPONENTS
+OPTIONS_MULTI_COMPONENTS=CLIENT SERVER
+OPTIONS_DEFAULT=	CLIENT SERVER TEST VIDEORECORDER UPNP
 OPTIONS_SUB=		yes
 
 CLIENT_DESC=		Build game client
@@ -28,12 +32,18 @@ CLIENT_USES=		gettext gl sdl xorg desktop-file-utils
 CLIENT_USE=		GL=gl,glew SDL=sdl2
 CLIENT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libwavpack.so:audio/wavpack \
-			libpnglite.so:graphics/pnglite \
 			libopusfile.so:audio/opusfile \
 			libopus.so:audio/opus \
 			libogg.so:audio/libogg \
 			libnotify.so:devel/libnotify \
 			libcurl.so:ftp/curl
+
+SERVER_DESC=		Build game server
+SERVER_CMAKE_BOOL=	SERVER
+# does not build without these libs, but does not need them in
+# runtime either
+SERVER_BUILD_DEPENDS=	glew>=0:graphics/glew \
+			wavpack>=0:audio/wavpack
 
 TEST_BUILD_DEPENDS=	googletest>=0:devel/googletest
 TEST_TEST_TARGET=	run_tests
@@ -54,6 +64,7 @@ VIDEORECORDER_LIB_DEPENDS=libavcodec.so:multimedia/ffmpeg
 UPNP_DESC=		UPnP support for the server
 UPNP_CMAKE_BOOL=	UPNP
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
+UPNP_IMPLIES=		SERVER
 
 post-extract:
 # json-parser and md5 are left intact
