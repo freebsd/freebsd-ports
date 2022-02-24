@@ -1030,6 +1030,7 @@
     SUBDIR += wesnoth
     SUBDIR += whichwayisup
     SUBDIR += widelands
+    SUBDIR += wipeclean
     SUBDIR += wizznic
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
