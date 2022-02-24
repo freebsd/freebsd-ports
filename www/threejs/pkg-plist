@@ -183,9 +183,10 @@
 %%WWWDIR%%/objects/SkinnedMesh.js
 %%WWWDIR%%/objects/Sprite.js
 %%WWWDIR%%/renderers/WebGL1Renderer.js
+%%WWWDIR%%/renderers/WebGL3DRenderTarget.js
+%%WWWDIR%%/renderers/WebGLArrayRenderTarget.js
 %%WWWDIR%%/renderers/WebGLCubeRenderTarget.js
 %%WWWDIR%%/renderers/WebGLMultipleRenderTargets.js
-%%WWWDIR%%/renderers/WebGLMultisampleRenderTarget.js
 %%WWWDIR%%/renderers/WebGLRenderTarget.js
 %%WWWDIR%%/renderers/WebGLRenderer.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk.js
@@ -257,6 +258,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/map_particle_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/metalnessmap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/metalnessmap_pars_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/morphcolor_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphnormal_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphtarget_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphtarget_vertex.glsl.js
@@ -350,11 +352,12 @@
 %%WWWDIR%%/textures/CanvasTexture.js
 %%WWWDIR%%/textures/CompressedTexture.js
 %%WWWDIR%%/textures/CubeTexture.js
+%%WWWDIR%%/textures/Data3DTexture.js
+%%WWWDIR%%/textures/DataArrayTexture.js
 %%WWWDIR%%/textures/DataTexture.js
-%%WWWDIR%%/textures/DataTexture2DArray.js
-%%WWWDIR%%/textures/DataTexture3D.js
 %%WWWDIR%%/textures/DepthTexture.js
 %%WWWDIR%%/textures/FramebufferTexture.js
+%%WWWDIR%%/textures/Source.js
 %%WWWDIR%%/textures/Texture.js
 %%WWWDIR%%/textures/VideoTexture.js
 %%WWWDIR%%/utils.js
