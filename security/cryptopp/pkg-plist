@@ -93,6 +93,7 @@ include/cryptopp/iterhash.h
 include/cryptopp/kalyna.h
 include/cryptopp/keccak.h
 include/cryptopp/lea.h
+include/cryptopp/lsh.h
 include/cryptopp/lubyrack.h
 include/cryptopp/luc.h
 include/cryptopp/mars.h
