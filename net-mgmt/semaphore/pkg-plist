@@ -1,9 +1,7 @@
 bin/semaphore
 @sample %%ETCDIR%%/config.json.sample
 %%DATADIR%%/v0.0.0.sql
-%%DATADIR%%/v0.1.0.sql
 %%DATADIR%%/v1.0.0.sql
-%%DATADIR%%/v1.1.0.sql
 %%DATADIR%%/v1.2.0.sql
 %%DATADIR%%/v1.3.0.sql
 %%DATADIR%%/v1.4.0.sql
@@ -19,3 +17,24 @@ bin/semaphore
 %%DATADIR%%/v2.4.0.sql
 %%DATADIR%%/v2.5.0.sql
 %%DATADIR%%/v2.5.2.sql
+%%DATADIR%%/v2.7.1.sql
+%%DATADIR%%/v2.7.10.sql
+%%DATADIR%%/v2.7.12.sql
+%%DATADIR%%/v2.7.13.sql
+%%DATADIR%%/v2.7.4.sql
+%%DATADIR%%/v2.7.6.sql
+%%DATADIR%%/v2.7.8.sql
+%%DATADIR%%/v2.7.9.sql
+%%DATADIR%%/v2.8.0.sql
+%%DATADIR%%/v2.8.1.sql
+%%DATADIR%%/v2.8.20.sql
+%%DATADIR%%/v2.8.25.sql
+%%DATADIR%%/v2.8.26.sql
+%%DATADIR%%/v2.8.36.sql
+%%DATADIR%%/v2.8.38.sql
+%%DATADIR%%/v2.8.39.sql
+%%DATADIR%%/v2.8.40.sql
+%%DATADIR%%/v2.8.42.sql
+%%DATADIR%%/v2.8.51.sql
+%%DATADIR%%/v2.8.7.sql
+%%DATADIR%%/v2.8.8.sql
