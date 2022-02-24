@@ -1,3 +1,30 @@
+  <vuln vid="5e1440c6-95af-11ec-b320-f8b156b6dcc8">
+    <topic>flac -- fix encoder bug</topic>
+    <affects>
+      <package>
+	<name>flac</name>
+	<range><lt>1.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FLAC 1.3.4 release reports:</p>
+	<blockquote cite="https://xiph.org/flac/changelog.html">
+	  <p>Fix 12 decoder bugs found by oss-fuzz.</p>
+	  <p>Fix encoder bug CVE-2021-0561.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-0561</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-0561</url>
+    </references>
+    <dates>
+      <discovery>2022-02-20</discovery>
+      <entry>2022-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="022dde12-8f4a-11ec-83ac-080027415d17">
     <topic>cyrus-sasl -- Escape password for SQL insert/update commands</topic>
     <affects>
