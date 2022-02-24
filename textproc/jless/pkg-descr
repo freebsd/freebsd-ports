@@ -1,0 +1,15 @@
+JLess is a command-line JSON viewer designed for reading, exploring, and
+searching through JSON data.
+
+JLess will pretty print your JSON and apply syntax highlighting. Use it when
+exploring external APIs, or debugging request payloads.
+
+Expand and collapse Objects and Arrays to grasp the high- and low-level
+structure of a JSON document. JLess has a large suite of vim-inspired commands
+that make exploring data a breeze.
+
+JLess supports full text regular-expression based search. Quickly find the data
+you're looking for in long String values, or jump between values for the same
+Object key.
+
+WWW: https://jless.io

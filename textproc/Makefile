@@ -326,6 +326,7 @@
     SUBDIR += jdictionary-int-eng
     SUBDIR += jid
     SUBDIR += jing
+    SUBDIR += jless
     SUBDIR += jo
     SUBDIR += jq
     SUBDIR += jql
