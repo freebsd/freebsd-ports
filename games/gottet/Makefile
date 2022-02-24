@@ -1,9 +1,8 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	gottet
-PORTVERSION=	1.1.9
+PORTVERSION=	1.2.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
 

@@ -12,6 +12,7 @@ share/applications/gottet.desktop
 %%NLS%%%%DATADIR%%/translations/gottet_es.qm
 %%NLS%%%%DATADIR%%/translations/gottet_fr.qm
 %%NLS%%%%DATADIR%%/translations/gottet_he.qm
+%%NLS%%%%DATADIR%%/translations/gottet_it.qm
 %%NLS%%%%DATADIR%%/translations/gottet_ko.qm
 %%NLS%%%%DATADIR%%/translations/gottet_lt.qm
 %%NLS%%%%DATADIR%%/translations/gottet_ms.qm
@@ -36,4 +37,3 @@ share/icons/hicolor/512x512/apps/gottet.png
 share/icons/hicolor/64x64/apps/gottet.png
 share/icons/hicolor/scalable/apps/gottet.svg
 share/metainfo/gottet.appdata.xml
-share/pixmaps/gottet.xpm
