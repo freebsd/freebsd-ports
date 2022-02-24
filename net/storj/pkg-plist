@@ -14,5 +14,4 @@ bin/storj-admin
 bin/storj-identity
 bin/storj-sim
 bin/uplink
-bin/uplinkng
 bin/versioncontrol
