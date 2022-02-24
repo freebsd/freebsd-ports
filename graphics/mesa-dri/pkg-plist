@@ -9,6 +9,8 @@ include/GL/internal/dri_interface.h
 %%I915_DRIVER%%lib/dri/i915_dri.so
 %%I965_DRIVER%%lib/dri/i965_dri.so
 %%IRIS_GDRIVER%%lib/dri/iris_dri.so
+%%PANFROST_GDRIVER%%lib/dri/panfrost_dri.so
+%%PANFROST_GDRIVER%%lib/dri/rockchip_dri.so
 %%SWRAST_GDRIVER%%lib/dri/kms_swrast_dri.so
 %%R200_DRIVER%%lib/dri/r200_dri.so
 %%R300_GDRIVER%%lib/dri/r300_dri.so
@@ -29,9 +31,11 @@ include/GL/internal/dri_interface.h
 @comment lib/libglapi.so.0.0.0
 %%INTEL_VDRIVER%%lib/libvulkan_intel.so
 %%AMD_VDRIVER%%lib/libvulkan_radeon.so
+%%SWRAST_VDRIVER%%lib/libvulkan_lvp.so
 libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/gbm.pc
 share/drirc.d/00-mesa-defaults.conf
 share/drirc.d/01-freebsd.conf
 %%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%AMD_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+%%SWRAST_VDRIVER%%share/vulkan/icd.d/lvp_icd.%%ARCH%%.json
