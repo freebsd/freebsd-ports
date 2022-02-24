@@ -25,6 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Net/Sieve.php:net/pear-Net_Sieve@${PHP_FLAV
 
 USES=		cpe php tar:bzip2
 USE_PHP=	bcmath bz2 ctype filter json session simplexml tidy xsl xmlreader zlib
+PHP_VER=	74
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
