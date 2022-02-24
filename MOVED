@@ -16895,3 +16895,5 @@ graphics/copperspice|x11-toolkits/copperspice|2022-02-20|Revive in more appropri
 math/mathics-django||2022-02-20|Mathics-Django now requires npm: you can use math/mathicsscript instead
 net-mgmt/percona-monitoring-plugins||2022-02-22|Has expired: Upstream EOL reached on 2020-08-01
 math/coinmumps|math/coin-or-mumps|2022-02-23|Renamed into a more appropriate name
+www/py-weboob|www/py-woob|2022-02-24|Project renamed
+www/py-weboob-qt|www/py-woob-qt|2022-02-24|Project renamed

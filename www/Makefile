@@ -1790,8 +1790,6 @@
     SUBDIR += py-webargs
     SUBDIR += py-webassets
     SUBDIR += py-webob
-    SUBDIR += py-weboob
-    SUBDIR += py-weboob-qt
     SUBDIR += py-websocket-client
     SUBDIR += py-webunit
     SUBDIR += py-werkzeug
@@ -1799,6 +1797,8 @@
     SUBDIR += py-whitenoise
     SUBDIR += py-wikipedia
     SUBDIR += py-wikitools
+    SUBDIR += py-woob
+    SUBDIR += py-woob-qt
     SUBDIR += py-ws4py
     SUBDIR += py-wsaccel
     SUBDIR += py-wsgidav

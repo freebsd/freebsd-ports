@@ -1,5 +1,5 @@
-PORTNAME=	weboob
-PORTVERSION=	2.0
+PORTNAME=	woob
+PORTVERSION=	3.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		wget:ftp/wget \
 		gpg2:security/gnupg
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
@@ -48,7 +48,6 @@ RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's|/etc/ssl/certs|${LOCALBASE}/etc/ssl|g' ${WRKSRC}/weboob/browser/nss.py
-	@(cd ${WRKSRC}/man && ${RM} q*.1 weboob-config-qt.1)
+	@${REINPLACE_CMD} -e 's|/etc/ssl/certs|${LOCALBASE}/etc/ssl|g' ${WRKSRC}/woob/browser/nss.py
 
 .include <bsd.port.mk>
