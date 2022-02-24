@@ -1,37 +1,41 @@
 PORTNAME=	mkclean
-PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/matroska/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean and optimize Matroska and WebM files
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=	Does not install: arm-none-linux-gnueabi-gcc: Command not found
-BROKEN_armv6=	Does not install: arm-none-linux-gnueabi-gcc: Command not found
-BROKEN_armv7=	Does not install: arm-none-linux-gnueabi-gcc: Command not found
-BROKEN_mips64=	Does not install: mipsel-linux-gcc: Command not found
-BROKEN_riscv64=	Does not compile: cc: invalid arch name 'i486', string must begin with rv32{i,e,g} or rv64{i,g}
-BROKEN_sparc64=	Does not install: gmake: GNUmakefile: No such file or directory
+# These may work better now with cmake.
+BROKEN_aarch64=	does not install: arm-none-linux-gnueabi-gcc: Command not found
+BROKEN_armv6=	does not install: arm-none-linux-gnueabi-gcc: Command not found
+BROKEN_armv7=	does not install: arm-none-linux-gnueabi-gcc: Command not found
+BROKEN_mips64=	does not install: mipsel-linux-gcc: Command not found
+BROKEN_riscv64=	does not compile: cc: invalid arch name 'i486', string must begin with rv32{i,e,g} or rv64{i,g}
+BROKEN_sparc64=	does not install: gmake: GNUmakefile: No such file or directory
 
-HAS_CONFIGURE=	yes
+USES=		cmake compiler:c++11-lang cpe iconv localbase:ldflags
 
-USES=		compiler:c++11-lang cpe iconv localbase:ldflags gmake tar:bzip2
 CPE_VENDOR=	matroska
 
-LDFLAGS+=	${ICONV_LIB}
+USE_GITHUB=	yes
+GH_ACCOUNT=	Matroska-Org
+GH_PROJECT=	foundation-source
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
-MAKE_ENV=	"LFLAGS=${LDFLAGS}"
-MAKEFILE=	GNUmakefile
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+NO_INSTALL=	yes
+
+post-extract:
+	@${REINPLACE_CMD} -e 's/vfs.h/mount.h/' ${WRKSRC}/corec/corec/helpers/file/file_libc.c
+
+LDFLAGS+=	${ICONV_LIB}
 
 PLIST_FILES=	bin/mkclean \
 		bin/mkWDclean
 
-post-extract:
-	@${REINPLACE_CMD} -e 's,/usr/local,$$(DESTDIR)$$(PREFIX),g' ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
-	@${RM} ${WRKSRC}/libmatroska2/test/test.proj
+post-stage:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME}/mkclean ${STAGEDIR}${LOCALBASE}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME}/mkWDclean ${STAGEDIR}${LOCALBASE}/bin
 
 .include <bsd.port.mk>
