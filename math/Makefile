@@ -900,7 +900,6 @@
     SUBDIR += py-pygsl
     SUBDIR += py-pygslodeiv2
     SUBDIR += py-pyhull
-    SUBDIR += py-pyipopt
     SUBDIR += py-pymc3
     SUBDIR += py-pynauty
     SUBDIR += py-pyneqsys

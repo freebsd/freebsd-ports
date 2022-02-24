@@ -16897,3 +16897,4 @@ net-mgmt/percona-monitoring-plugins||2022-02-22|Has expired: Upstream EOL reache
 math/coinmumps|math/coin-or-mumps|2022-02-23|Renamed into a more appropriate name
 www/py-weboob|www/py-woob|2022-02-24|Project renamed
 www/py-weboob-qt|www/py-woob-qt|2022-02-24|Project renamed
+math/py-pyipopt||2022-02-24|Removed: not compatible with the latest Ipopt-3.14.4 and abandoned upstream
