@@ -1,5 +1,5 @@
 PORTNAME=	welle.io
-DISTVERSION=	2.3
+DISTVERSION=	2.4
 CATEGORIES=	audio hamradio
 
 MAINTAINER=	nsonack@outlook.com
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cmake compiler:c++11-lang pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlbrechtL
-GH_TAGNAME=	66675c9a4160c644a5ade5bf7a0cd0647647f33c
+GH_TAGNAME=	0aacf578d77d79212483cd6fce436fb66523f63f
 USE_QT=		charts core dbus declarative gui multimedia network \
 		quickcontrols2 widgets buildtools_build qmake_build
 
