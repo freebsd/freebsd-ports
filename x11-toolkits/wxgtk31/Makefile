@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	31-gtk3
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with GTK+ bindings
 
 LICENSE=	GPLv2+
