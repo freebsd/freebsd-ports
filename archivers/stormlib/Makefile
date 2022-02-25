@@ -3,7 +3,7 @@ PORTVERSION=	9.23
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to process MPQ (MoPaQ) archives
 
 LICENSE=	MIT
