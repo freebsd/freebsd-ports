@@ -80,6 +80,7 @@
     SUBDIR += qbittorrent
     SUBDIR += qtum
     SUBDIR += radarr
+    SUBDIR += readarr
     SUBDIR += retroshare
     SUBDIR += rslsync
     SUBDIR += rtorrent

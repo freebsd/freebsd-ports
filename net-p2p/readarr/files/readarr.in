@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN network
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf or use sysrc to enable %%PORTNAME%%
+# ${%%PORTNAME%%_enable="YES"}
+# Optionaly there are some other parameters
+# ${%%PORTNAME%%_user="%%USERS%%"}
+# ${%%PORTNAME%%_group="%%GROUPS%%"}
+# This stores %%PORTNAME%% data (e.g., databases, configs, logs)
+# ${%%PORTNAME%%_data_dir="%%PREFIX%%/%%PORTNAME%%"}
+# This stores the PID files that daemon will use
+# ${%%PORTNAME%%_pid_dir:="/var/run/%%PORTNAME%%"}
+
+. /etc/rc.subr
+name=%%PORTNAME%%
+rcvar=%%PORTNAME%%_enable
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable:=NO}
+: ${%%PORTNAME%%_user:="%%USERS%%"}
+: ${%%PORTNAME%%_group:="%%GROUPS%%"}
+: ${%%PORTNAME%%_exec_dir:="%%DATADIR%%/bin"}
+: ${%%PORTNAME%%_data_dir:="%%PREFIX%%/%%PORTNAME%%"}
+: ${%%PORTNAME%%_pid_dir:="/var/run/%%PORTNAME%%"}
+
+pidfile="${%%PORTNAME%%_pid_dir}/${name}_daemon.pid"
+pidfile_child="${%%PORTNAME%%_pid_dir}/${name}_child.pid"
+command="/usr/sbin/daemon"
+
+
+start_precmd=${name}_precmd
+%%PORTNAME%%_precmd() {
+    if [ ! -d ${%%PORTNAME%%_data_dir} ]; then
+        install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} ${%%PORTNAME%%_data_dir}
+    fi
+    if [ ! -d ${%%PORTNAME%%_pid_dir} ]; then
+        install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} ${%%PORTNAME%%_pid_dir}
+    fi
+
+    # .NET 6+ use dual mode sockets to avoid the separate AF handling.
+    # disable .NET use of V6 if no ipv6 is configured.
+    # See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259194#c17
+    ifconfig | grep -q inet6
+    if [ $? == 1 ]; then
+        export DOTNET_SYSTEM_NET_DISABLEIPV6=1
+    fi
+
+    rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${%%PORTNAME%%_exec_dir}/Readarr --data=${%%PORTNAME%%_data_dir} --nobrowser >> /dev/null 2>&1 ${rc_flags}"
+}
+
+run_rc_command "$1"

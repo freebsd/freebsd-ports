@@ -306,7 +306,7 @@ autoscan:*:358:358::0:0:Autoscan Daemon:/nonexistent:/usr/sbin/nologin
 prowlarr:*:359:359::0:0:Prowlarr Daemon:/nonexistent:/usr/sbin/nologin
 v2ray:*:360:360::0:0:V2Ray Daemon:/nonexistent:/usr/sbin/nologin
 httptunnel:*:361:361::0:0:httptunnel Daemon:/nonexistent:/usr/sbin/nologin
-# free: 362
+readarr:*:362:362::0:0:Readarr Daemon:/nonexistent:/usr/sbin/nologin
 # free: 363
 # free: 364
 # free: 365
