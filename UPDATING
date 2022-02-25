@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220227:
+  AFFECTS: users of graphics/bmeps
+  AUTHOR: takefu@airport.fm
+
+  The binary and man page have been renamed from bmpp{.1.gz} to bitmap2pp{.1.gz}
+
 20220225:
   AFFECTS: users of x11-toolkits/py-wxPython40
   AUTHOR: lbartoletti@FreeBSD.org
