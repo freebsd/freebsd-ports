@@ -1,3 +1,34 @@
+  <vuln vid="7695b0af-958f-11ec-9aa3-4ccc6adda413">
+    <topic>cryptopp -- ElGamal implementation allows plaintext recovery</topic>
+    <affects>
+      <package>
+	<name>cryptopp</name>
+	<range><lt>8.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Crypto++ 8.6 release notes reports:</p>
+	<blockquote cite="https://www.cryptopp.com/release860.html">
+	  <p>The ElGamal implementation in Crypto++ through 8.5 allows plaintext
+	    recovery because, during interaction between two cryptographic
+	    libraries, a certain dangerous combination of the prime defined by
+	    the receiver's public key, the generator defined by the receiver's
+	    public key, and the sender's ephemeral exponents can lead to a
+	    cross-configuration attack against OpenPGP.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-40530</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-40530</url>
+    </references>
+    <dates>
+      <discovery>2021-09-06</discovery>
+      <entry>2022-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5e1440c6-95af-11ec-b320-f8b156b6dcc8">
     <topic>flac -- fix encoder bug</topic>
     <affects>
