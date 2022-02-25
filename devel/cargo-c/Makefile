@@ -1,7 +1,6 @@
 PORTNAME=	cargo-c
-DISTVERSION=	0.9.7
-DISTVERSIONSUFFIX=	+cargo-0.59
-PORTREVISION=	1
+DISTVERSION=	0.9.8
+DISTVERSIONSUFFIX=	+cargo-0.60
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -27,34 +26,34 @@ PLIST_FILES=	bin/cargo-capi \
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.52 \
+		anyhow-1.0.55 \
 		arrayvec-0.5.2 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitmaps-2.1.0 \
 		bstr-0.2.17 \
 		bytesize-1.1.0 \
-		cargo-0.59.0 \
+		cargo-0.60.0 \
 		cargo-platform-0.1.2 \
-		cargo-util-0.1.1 \
+		cargo-util-0.1.2 \
 		cbindgen-0.20.0 \
-		cc-1.0.72 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
 		commoncrypto-0.2.0 \
 		commoncrypto-sys-0.2.0 \
-		core-foundation-0.9.2 \
+		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
-		crates-io-0.33.0 \
-		crc32fast-1.3.1 \
-		crossbeam-utils-0.8.6 \
+		crates-io-0.33.1 \
+		crc32fast-1.3.2 \
+		crossbeam-utils-0.8.7 \
 		crypto-hash-0.3.4 \
 		curl-0.4.42 \
 		curl-sys-0.4.52+curl-7.81.0 \
 		either-1.6.1 \
 		env_logger-0.9.0 \
-		fastrand-1.6.0 \
+		fastrand-1.7.0 \
 		filetime-0.2.15 \
 		flate2-1.0.22 \
 		fnv-1.0.7 \
@@ -83,7 +82,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		jobserver-0.1.24 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.113 \
+		libc-0.2.119 \
 		libgit2-sys-0.12.26+1.3.0 \
 		libnghttp2-sys-0.1.7+1.45.0 \
 		libssh2-sys-0.2.23 \
@@ -100,13 +99,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.17.0+1.1.1m \
 		openssl-sys-0.9.72 \
-		os_info-3.1.0 \
+		os_info-3.2.0 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.24 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
-		quote-1.0.14 \
+		quote-1.0.15 \
 		rand_core-0.5.1 \
 		rand_xoshiro-0.4.0 \
 		redox_syscall-0.2.10 \
@@ -119,14 +118,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
-		semver-1.0.4 \
-		serde-1.0.134 \
-		serde_derive-1.0.134 \
+		semver-1.0.6 \
+		serde-1.0.136 \
+		serde_derive-1.0.136 \
 		serde_ignored-0.1.2 \
-		serde_json-1.0.75 \
+		serde_json-1.0.79 \
 		shell-escape-0.1.5 \
 		sized-chunks-0.6.5 \
-		socket2-0.4.3 \
+		socket2-0.4.4 \
 		strip-ansi-escapes-0.1.1 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
@@ -136,14 +135,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		tempfile-3.3.0 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
-		thread_local-1.1.3 \
+		thread_local-1.1.4 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.7 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.8.0 \
+		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
