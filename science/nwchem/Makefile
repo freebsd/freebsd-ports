@@ -1,6 +1,6 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.2.20211110
+DISTVERSION=	7.0.2.20220224
 DISTVERSIONSUFFIX=	-release
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
 		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3 \
@@ -32,7 +32,7 @@ USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	7b21660b82ebd85ef659f6fba7e1e73433b0bd0a
+GH_TAGNAME=	7a73690b20764d26dc9fdfae9ff0c110253fbf6f
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
@@ -48,7 +48,7 @@ BINARY_ALIAS+=	make=${GMAKE} # only for LIBXC
 
 PLIST_FILES=	bin/nwchem etc/nwchemrc
 
-LIBXC_VERSION=	5.1.7 # from src/libext/libxc/build_libxc.sh
+LIBXC_VERSION=	5.2.0 # from src/libext/libxc/build_libxc.sh
 
 OPTIONS_DEFINE=		LIBXC PYTHON
 OPTIONS_DEFAULT=	LIBXC PYTHON MPICH # the default should be the same as for the MPI option in math/scalapack and devel/ga
