@@ -1,3 +1,4 @@
+%%ETCDIR%%/cron.d/dma
 @(root,mail,2555) libexec/dma
 @(root,mail,4554) libexec/dma-mbox-create
 @sample(root,mail,0644) etc/dma/dma.conf.sample

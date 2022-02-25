@@ -33,10 +33,8 @@ shutdown, add the following to rc.conf as well:
 
 dma_flushq_enable="YES"
 
-you can also add a cronjob to do regular mailq flushes using the following
-command:
-
-%%PREFIX%%/libexec/dma -q
+A crontab configuration to flush every 30 minutes was added to
+%%PREFIX%%/etc/cron.d/dma.
 
 And you can disable some sendmail specific daily maintenance routines in your
 /etc/periodic.conf file:

@@ -28,7 +28,7 @@ CFLAGS+=	-DCONF_PATH='\"${PREFIX}/etc/dma\"' -DDMA_GROUP='\"mail\"' \
 LDFLAGS+=	-L${OPENSSLLIB}
 
 PORTSCOUT=	limit:^[0-9\.]*$$
-SUB_FILES=	pkg-message
+SUB_FILES=	dma_cron pkg-message
 
 BUILD_WRKSRC=	${WRKSRC}/bsd
 INSTALL_WRKSRC=	${WRKSRC}/bsd
@@ -43,11 +43,13 @@ post-patch:
 		${WRKSRC}/bsd/dma-mbox-create/Makefile
 
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/cron.d
 	${MKDIR} ${STAGEDIR}/var/spool/dma
 	${INSTALL_DATA} ${WRKSRC}/dma.conf \
 		${STAGEDIR}${ETCDIR}/dma.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/auth.conf \
 		${STAGEDIR}${ETCDIR}/auth.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/dma_cron \
+		${STAGEDIR}${ETCDIR}/cron.d/dma
 
 .include <bsd.port.mk>
