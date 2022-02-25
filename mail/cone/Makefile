@@ -1,8 +1,7 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
 
 PORTNAME=	cone
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -18,7 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libidn.so:dns/libidn \
-		libcourier-unicode.so:devel/courier-unicode
+		libcourier-unicode.so:devel/courier-unicode \
+		libldap_r.so:net/openldap24-client
+
 BUILD_DEPENDS=	gpgv:security/gnupg1
 RUN_DEPENDS=	gpgv:security/gnupg1
 
