@@ -22,12 +22,18 @@ GH_PROJECT=	r2cutter
 GH_TUPLE=	radareorg:cutter-translations:8e1d24b:translations/translations
 
 USE_QT=		core declarative gui linguist location network printsupport svg \
-		webchannel webengine widgets buildtools_build
+		webchannel widgets buildtools_build
 USE_GL=		gl
 
 WRKSRC_SUBDIR=	src
 
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+USE_QT+=	webengine
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/python3/python-${PYTHON_VER}/' ${WRKSRC}/Cutter.pro
