@@ -47,11 +47,11 @@ OPTIONS_SUB=		yes
 GUI_DESC=		Build with ElmerGUI (Graphical User Interface)
 OCC_DESC=		Use OpenCASCADE for CAD import in ElmerGUI
 
-GUI_LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6
+GUI_LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt6@qt5
 GUI_USES=		gl jpeg qt:5 xorg
 GUI_USE=		gl=gl,glu xorg=ice,sm,x11,xext,xt qt=${_QT5_LIBS:ts,}
 GUI_CMAKE_BOOL=		WITH_ELMERGUI WITH_PARAVIEW
-GUI_CMAKE_ON=		-DQWT_LIBRARY=${QT_LIBDIR}/libqwt6.so \
+GUI_CMAKE_ON=		-DQWT_LIBRARY=${QT_LIBDIR}/libqwt.so \
 			-DQWT_INCLUDE_DIR=${QT_INCDIR}/qwt6 \
 			-DDESIRED_QT_VERSION=5 \
 			-DWITH_QT5:BOOL=TRUE \

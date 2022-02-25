@@ -1,6 +1,6 @@
---- qwtconfig.pri.orig	2018-03-06 14:23:36 UTC
+--- qwtconfig.pri.orig	2022-03-09 05:42:32 UTC
 +++ qwtconfig.pri
-@@ -19,7 +19,7 @@ QWT_VERSION      = $${QWT_VER_MAJ}.$${QW
+@@ -19,7 +19,7 @@ QWT_VERSION      = $${QWT_VER_MAJ}.$${QWT_VER_MIN}.$${
  QWT_INSTALL_PREFIX = $$[QT_INSTALL_PREFIX]
  
  unix {
@@ -22,7 +22,7 @@
  
  ######################################################################
  # Designer plugin
-@@ -42,7 +42,7 @@ QWT_INSTALL_LIBS      = $${QWT_INSTALL_P
+@@ -42,7 +42,7 @@ QWT_INSTALL_LIBS      = $${QWT_INSTALL_PREFIX}/lib
  # runtime environment of designer/creator.
  ######################################################################
  
@@ -31,8 +31,8 @@
  
  # linux distributors often organize the Qt installation
  # their way and QT_INSTALL_PREFIX doesn't offer a good
-@@ -63,7 +63,7 @@ QWT_INSTALL_PLUGINS   = $${QWT_INSTALL_P
- # with every Qt upgrade. 
+@@ -63,7 +63,7 @@ QWT_INSTALL_PLUGINS   = $${QWT_INSTALL_PREFIX}/plugins
+ # with every Qt upgrade.
  ######################################################################
  
 -QWT_INSTALL_FEATURES  = $${QWT_INSTALL_PREFIX}/features
@@ -40,12 +40,3 @@
  # QWT_INSTALL_FEATURES  = $$[QT_INSTALL_PREFIX]/features
  
  ######################################################################
-@@ -110,7 +110,7 @@ QWT_CONFIG     += QwtOpenGL
- # to your qmake project file.
- ######################################################################
- 
--#QWT_CONFIG     += QwtMathML
-+QWT_CONFIG     += QwtMathML
- 
- ######################################################################
- # If you want to build the Qwt designer plugin, 

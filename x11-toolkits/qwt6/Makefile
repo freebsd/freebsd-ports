@@ -1,33 +1,36 @@
 PORTNAME=	qwt
-PORTVERSION=	6.1.6
-PORTREVISION=	1
+PORTVERSION=	6.2.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
-PKGNAMESUFFIX=	6-qt5
+PKGNAMESUFFIX=	6-${FLAVOR}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 WWW=		http://qwt.sourceforge.net/
 
-USES=		compiler:c++11-lang gl gmake qmake qt:5 tar:bzip2
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt5
+
+USES=		compiler:c++11-lang gl gmake qmake qt:${FLAVOR:S/qt//} tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools:build widgets gui core designer gui opengl svg xml printsupport concurrent
+_USE_QT_qt5=	concurrent core designer dbus gui opengl printsupport svg xml widgets buildtools:build qmake:build
+_USE_QT_qt6=	base svg tools
+USE_QT=		${_USE_QT_${FLAVOR}}
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-DOCSDIR=	${PREFIX}/share/doc/qwt6-qt5
+DOCSDIR=	${PREFIX}/share/doc/qwt6-${FLAVOR}
 PORTDOCS=	*
 PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
-		SHLIB_SHVER=${PORTVERSION:R}
+		SHLIB_SHVER=${PORTVERSION:R} \
+		FLAVOR=${FLAVOR:S/qt/Qt/}
 
 QMAKE_ARGS+=	PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
-
-PLIST_FILES=	${PREFIX}/${QT_PLUGINDIR_REL}/designer/libqwt6_designer_plugin.so
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLS.*doc/d' ${WRKSRC}/doc/doc.pro
-	@${REINPLACE_CMD} -e 's/%%QT_VERSION%%/5/g' \
+	@${REINPLACE_CMD} \
 			-e 's|%%QT_INCDIR%%|${QT_INCDIR}|g' \
 			-e 's|%%QT_LIBDIR%%|${QT_LIBDIR}|g' \
 			-e 's|%%QT_MKSPECDIR%%|${QT_MKSPECDIR}|g' \

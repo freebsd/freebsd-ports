@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libftxui-component.so:devel/ftxui \
 		libhdf5.so:science/hdf5 \
 		libprotobuf.so:devel/protobuf \
-		libqwt6.so:x11-toolkits/qwt6 \
+		libqwt.so:x11-toolkits/qwt6@qt5 \
 		libspdlog.so:devel/spdlog \
 		libtinyxml2.so:textproc/tinyxml2 \
 		libyaml-cpp.so:devel/yaml-cpp
@@ -50,7 +50,7 @@ CMAKE_ARGS=	-DGIT_REVISION_MAJOR=${DISTVERSION:R:R} \
 		-DGIT_REVISION_PATCH=${DISTVERSION:E} \
 		-Dasio_INCLUDE_DIR=${LOCALBASE}/include \
 		-Dqwt_INCLUDE_DIR=${LOCALBASE}/include/qt5/qwt6 \
-		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt6.so
+		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt.so
 
 CXXFLAGS+=	-pthread # see https://github.com/eclipse-ecal/ecal/issues/933
 LDFLAGS+=	-labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_spinlock_wait -ltinyxml2
