@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	22.0-branchpoint-752
-DISTVERSIONSUFFIX=	-gb4bef890ee4
+DISTVERSION=	22.0-branchpoint-828
+DISTVERSIONSUFFIX=	-ge5c39bc427f
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -147,6 +147,8 @@ post-patch:
 		${WRKSRC}/bin/git_sha1_gen.py
 
 post-patch-COINST-on:
+	@${MV} ${WRKSRC}/src/amd/vulkan/00-radv-defaults.conf \
+		${WRKSRC}/src/amd/vulkan/00-radv${PKGNAMESUFFIX}-defaults.conf
 	@${MV} ${WRKSRC}/src/util/00-${PORTNAME}-defaults.conf \
 		${WRKSRC}/src/util/00-${PKGBASE}-defaults.conf
 

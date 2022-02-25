@@ -40,17 +40,26 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  _xa = get_option('gallium-xa')
---- src/amd/vulkan/meson.build.orig	2021-02-15 15:47:31 UTC
+--- src/amd/vulkan/meson.build.orig	2022-02-25 15:38:08 UTC
 +++ src/amd/vulkan/meson.build
-@@ -150,7 +150,7 @@ if with_llvm and with_ld_version_script
- endif
+@@ -92,7 +92,7 @@ libradv_files = files(
+   'vk_format.h',
+ )
+ 
+-files_drirc = files('00-radv-defaults.conf')
++files_drirc = files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
+ 
+ install_data(files_drirc, install_dir : join_paths(get_option('datadir'), 'drirc.d'))
+ 
+@@ -150,7 +150,7 @@ endif
+ vulkan_radv_def = 'vulkan_radv.def'
  
  libvulkan_radeon = shared_library(
 -  'vulkan_radeon',
 +  'vulkan_radeon' + get_option('egl-lib-suffix'),
    [libradv_files, radv_entrypoints, sha1_h],
+   vs_module_defs : vulkan_radv_def,
    include_directories : [
-     inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_gallium_aux, inc_amd, inc_amd_common, inc_amd_common_llvm, inc_compiler, inc_util, inc_vulkan_wsi,
 --- src/egl/meson.build.orig	2020-12-03 22:36:27 UTC
 +++ src/egl/meson.build
 @@ -144,7 +144,7 @@ if not with_glvnd
