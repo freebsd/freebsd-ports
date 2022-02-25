@@ -1,8 +1,8 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
 
 PORTNAME=	vaultwarden
-DISTVERSION=	1.23.1
-PORTREVISION=	2
+DISTVERSION=	1.24.0
+#PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web
 DISTFILES=	${WV_DISTFILE}:web
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	libnettle.so:security/nettle
 
 USES=		cargo ssl pgsql mysql:client
 
-DISTVERSION_WV=	2.25.0
+DISTVERSION_WV=	2.25.1b
 WV_DISTFILE=	bw_web_v${DISTVERSION_WV}.tar.gz
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -37,11 +37,12 @@ CARGO_ENV+=	RUSTC_BOOTSTRAP=1
 # make cargo-crates
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
+		ahash-0.3.8 \
 		aho-corasick-0.7.18 \
 		alloc-no-stdlib-2.0.3 \
 		alloc-stdlib-0.2.1 \
 		async-compression-0.3.8 \
-		async-trait-0.1.51 \
+		async-trait-0.1.52 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.63 \
@@ -68,7 +69,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cfg-if-1.0.0 \
 		chashmap-2.2.2 \
 		chrono-0.4.19 \
-		chrono-tz-0.6.0 \
+		chrono-tz-0.6.1 \
 		chrono-tz-build-0.0.2 \
 		const_fn-0.4.8 \
 		cookie-0.14.4 \
@@ -81,6 +82,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cron-0.9.0 \
 		crypto-mac-0.10.1 \
 		crypto-mac-0.11.1 \
+		dashmap-4.0.2 \
 		data-encoding-2.3.2 \
 		data-url-0.1.1 \
 		diesel-1.4.8 \
@@ -91,11 +93,11 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		discard-1.0.4 \
 		dotenv-0.15.0 \
 		either-1.6.1 \
-		encoding_rs-0.8.29 \
+		encoding_rs-0.8.30 \
 		enum-as-inner-0.3.3 \
 		error-chain-0.11.0 \
 		fake-simd-0.1.2 \
-		fastrand-1.5.0 \
+		fastrand-1.6.0 \
 		fern-0.6.0 \
 		flate2-1.0.22 \
 		fnv-1.0.7 \
@@ -106,24 +108,27 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futf-0.1.4 \
-		futures-0.3.18 \
-		futures-channel-0.3.18 \
-		futures-core-0.3.18 \
-		futures-executor-0.3.18 \
-		futures-io-0.3.18 \
-		futures-macro-0.3.18 \
-		futures-sink-0.3.18 \
-		futures-task-0.3.18 \
-		futures-util-0.3.18 \
+		futures-0.3.19 \
+		futures-channel-0.3.19 \
+		futures-core-0.3.19 \
+		futures-executor-0.3.19 \
+		futures-io-0.3.19 \
+		futures-macro-0.3.19 \
+		futures-sink-0.3.19 \
+		futures-task-0.3.19 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.19 \
 		generic-array-0.12.4 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		gimli-0.26.1 \
 		glob-0.3.0 \
-		h2-0.3.7 \
+		governor-0.3.2 \
+		h2-0.3.9 \
 		half-1.8.2 \
-		handlebars-4.1.5 \
+		handlebars-4.1.6 \
+		hashbrown-0.8.2 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
@@ -136,7 +141,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		httparse-1.5.1 \
 		httpdate-1.0.2 \
 		hyper-0.10.16 \
-		hyper-0.14.15 \
+		hyper-0.14.16 \
 		hyper-sync-rustls-0.3.0-rc.17 \
 		hyper-tls-0.5.0 \
 		idna-0.1.5 \
@@ -147,6 +152,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ipconfig-0.2.2 \
 		ipnet-2.3.1 \
 		itoa-0.4.8 \
+		itoa-1.0.1 \
 		js-sys-0.3.55 \
 		jsonwebtoken-7.2.0 \
 		kernel32-sys-0.2.2 \
@@ -154,7 +160,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lettre-0.10.0-rc.4 \
-		libc-0.2.108 \
+		libc-0.2.112 \
 		libsqlite3-sys-0.22.2 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.5 \
@@ -186,22 +192,24 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		native-tls-0.2.8 \
 		net2-0.2.37 \
 		new_debug_unreachable-1.0.4 \
+		no-std-compat-0.4.1 \
 		nom-4.1.1 \
 		nom-7.1.0 \
+		nonzero_ext-0.2.0 \
 		ntapi-0.3.6 \
 		num-bigint-0.2.6 \
 		num-derive-0.3.3 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
+		num_cpus-1.13.1 \
 		object-0.27.1 \
-		once_cell-1.8.0 \
+		once_cell-1.9.0 \
 		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.38 \
 		openssl-probe-0.1.4 \
-		openssl-src-300.0.2+3.0.0 \
-		openssl-sys-0.9.71 \
+		openssl-src-111.17.0+1.1.1m \
+		openssl-sys-0.9.72 \
 		owning_ref-0.3.3 \
 		parity-ws-0.11.1 \
 		parking_lot-0.4.8 \
@@ -220,7 +228,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
 		phf-0.8.0 \
-		phf-0.10.0 \
+		phf-0.10.1 \
 		phf_codegen-0.8.0 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.8.0 \
@@ -230,15 +238,16 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pico-args-0.4.2 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.22 \
+		pkg-config-0.3.24 \
 		ppv-lite86-0.2.15 \
 		pq-sys-0.4.6 \
 		precomputed-hash-0.1.1 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.32 \
-		psl-types-2.0.9 \
+		proc-macro2-1.0.34 \
+		psl-types-2.0.10 \
 		publicsuffix-2.1.1 \
+		quanta-0.4.1 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quote-0.6.13 \
@@ -262,7 +271,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.7 \
+		reqwest-0.11.8 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
 		rmp-0.8.10 \
@@ -270,7 +279,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.2.3 \
 		rustls-0.17.0 \
-		ryu-1.0.6 \
+		ryu-1.0.9 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
@@ -281,11 +290,11 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		security-framework-sys-2.4.2 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.130 \
+		serde-1.0.132 \
 		serde_bytes-0.11.5 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.130 \
-		serde_json-1.0.72 \
+		serde_derive-1.0.132 \
+		serde_json-1.0.73 \
 		serde_urlencoded-0.7.0 \
 		sha-1-0.8.2 \
 		sha-1-0.9.8 \
@@ -310,7 +319,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		string_cache_codegen-0.5.1 \
 		subtle-2.4.1 \
 		syn-0.15.44 \
-		syn-1.0.82 \
+		syn-1.0.84 \
 		syslog-4.0.1 \
 		tempfile-3.2.0 \
 		tendril-0.4.2 \
@@ -323,7 +332,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		time-macros-impl-0.1.2 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.14.0 \
+		tokio-1.15.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-socks-0.5.1 \
 		tokio-util-0.6.9 \
@@ -339,7 +348,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		try-lock-0.2.3 \
 		twoway-0.1.8 \
 		typeable-0.1.2 \
-		typenum-1.14.0 \
+		typenum-1.15.0 \
 		u2f-0.2.0 \
 		ucd-trie-0.1.3 \
 		uncased-0.9.6 \
@@ -369,7 +378,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasm-bindgen-macro-support-0.2.78 \
 		wasm-bindgen-shared-0.2.78 \
 		web-sys-0.3.55 \
-		webauthn-rs-0.3.0 \
+		webauthn-rs-0.3.1 \
 		webpki-0.21.4 \
 		webpki-roots-0.19.0 \
 		widestring-0.4.3 \
@@ -389,6 +398,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rocket,rocket_codegen,rocket_contrib,rocket_http@git+https://github.com/SergioBenitez/Rocket?rev=263e39b5b429de1913ce7e3036575a7b4d88b6d7\#263e39b5b429de1913ce7e3036575a7b4d88b6d7 \
 		job_scheduler@git+https://github.com/jjlin/job_scheduler?rev=ee023418dbba2bfe1e30a5fd7d937f9e33739806\#ee023418dbba2bfe1e30a5fd7d937f9e33739806
 
+post-patch:
+	${REINPLACE_CMD} 's/^rust-version = "1.60"/rust-version = "1.58.1"/' \
+		${WRKSRC}/Cargo.toml
+
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}/rc.conf.d
 	${CP} ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${LOCALBASE}/etc/rc.conf.d/${PORTNAME}.sample
@@ -400,4 +413,3 @@ post-install:
 		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
-
