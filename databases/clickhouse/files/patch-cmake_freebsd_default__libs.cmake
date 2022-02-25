@@ -1,4 +1,4 @@
---- cmake/freebsd/default_libs.cmake.orig	2021-12-26 09:29:33 UTC
+--- cmake/freebsd/default_libs.cmake.orig	2022-01-22 20:43:13 UTC
 +++ cmake/freebsd/default_libs.cmake
 @@ -4,13 +4,13 @@ if (NOT COMPILER_CLANG)
      message (FATAL_ERROR "FreeBSD build is supported only for Clang")
