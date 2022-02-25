@@ -64,4 +64,5 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/operator/security.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/vars.MD
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/url-examples.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
