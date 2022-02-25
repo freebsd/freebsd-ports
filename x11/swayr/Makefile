@@ -1,6 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.0
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -18,21 +18,24 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		clap-3.0.14 \
-		clap_derive-3.0.14 \
+		clap-3.1.2 \
+		clap_derive-3.1.2 \
 		directories-4.0.1 \
 		dirs-sys-0.3.6 \
-		getrandom-0.2.4 \
+		env_logger-0.9.0 \
+		getrandom-0.2.5 \
 		hashbrown-0.11.2 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		humantime-2.1.0 \
 		indexmap-1.8.0 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.117 \
+		libc-0.2.119 \
+		log-0.4.14 \
 		memchr-2.4.1 \
 		os_str_bytes-6.0.0 \
 		ppv-lite86-0.2.16 \
@@ -40,22 +43,21 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
 		quote-1.0.15 \
-		rand-0.8.4 \
+		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.3.1 \
 		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
-		rt-format-0.2.1 \
+		rt-format-0.3.0 \
 		ryu-1.0.9 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.78 \
+		serde_json-1.0.79 \
 		strsim-0.10.0 \
 		swayipc-3.0.0 \
-		swayipc-types-1.0.0 \
+		swayipc-types-1.0.1 \
 		syn-1.0.86 \
 		termcolor-1.1.2 \
 		textwrap-0.14.2 \
