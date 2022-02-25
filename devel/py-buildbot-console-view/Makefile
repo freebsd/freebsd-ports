@@ -1,7 +1,7 @@
 # Created by: Michael Gmelin <grembo@FreeBSD.org>
 
 PORTNAME=	buildbot-console-view
-PORTVERSION=	2.10.5
+PORTVERSION=	3.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
