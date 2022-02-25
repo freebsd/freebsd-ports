@@ -17,14 +17,14 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c++11-lang gmake gnome localbase:ldflags pkgconfig
 
-OPTIONS_DEFINE=	DOCS
-
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-stlport
 
-PORTDOCS=	README
 PLIST_FILES=	bin/gmrun ${DATADIR}/gmrunrc
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/my_alphasort/s#const void\*#const struct dirent**#g' \
