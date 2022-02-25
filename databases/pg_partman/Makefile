@@ -1,6 +1,6 @@
 PORTNAME=	pg_partman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.1
+DISTVERSION=	4.6.0
 CATEGORIES=	databases
 
 MAINTAINER=	lacey.leanne@gmail.com
@@ -13,13 +13,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:databases/py-psycopg2
 
 USES=		cpe gmake pgsql:9.4+ python uidfix shebangfix
 CPE_VENDOR=	pgxn
-LLD_UNSAFE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keithf4
 
 WANT_PGSQL=	server
 SHEBANG_GLOB=	*.py
+
+LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
