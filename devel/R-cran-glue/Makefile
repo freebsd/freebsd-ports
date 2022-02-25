@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	glue
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
