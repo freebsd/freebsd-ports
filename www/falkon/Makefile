@@ -1,5 +1,6 @@
 PORTNAME=	falkon
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	KDE/stable/falkon/${DISTVERSION}/
 
@@ -13,7 +14,7 @@ USES=		cmake desktop-file-utils kde:5 qt:5 ssl tar:xz xorg
 USE_KDE=	archive i18n \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
-		sql webchannel webengine widgets x11extras \
+		sql webchannel webengine widgets x11extras sql-sqlite3_run \
 		buildtools_build qmake_build
 USE_XORG=	xcb
 
