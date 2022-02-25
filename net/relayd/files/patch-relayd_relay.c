@@ -1,5 +1,23 @@
 --- relayd/relay.c.orig	2014-08-10 20:08:47 UTC
 +++ relayd/relay.c
+@@ -2097,7 +2097,7 @@ relay_ssl_ctx_create(struct relay *rlay)
+ 	/* Verify the server certificate if we have a CA chain */
+ 	if ((rlay->rl_conf.flags & F_SSLCLIENT) &&
+ 	    (rlay->rl_ssl_ca != NULL)) {
+-		if (!ssl_ctx_load_verify_memory(ctx,
++		if (!SSL_CTX_load_verify_mem(ctx,
+ 		    rlay->rl_ssl_ca, rlay->rl_conf.ssl_ca_len))
+ 			goto err;
+ 		SSL_CTX_set_verify(ctx, SSL_VERIFY_PEER, NULL);
+@@ -2107,7 +2107,7 @@ relay_ssl_ctx_create(struct relay *rlay)
+ 		return (ctx);
+ 
+ 	log_debug("%s: loading certificate", __func__);
+-	if (!ssl_ctx_use_certificate_chain(ctx,
++	if (!SSL_CTX_use_certificate_chain_mem(ctx,
+ 	    rlay->rl_ssl_cert, rlay->rl_conf.ssl_cert_len))
+ 		goto err;
+ 
 @@ -2716,12 +2716,12 @@ relay_load_certfiles(struct relay *rlay)
  		return (-1);
  
