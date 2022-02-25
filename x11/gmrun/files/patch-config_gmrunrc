@@ -1,0 +1,12 @@
+--- config/gmrunrc.orig	2003-11-16 10:43:41 UTC
++++ config/gmrunrc
+@@ -7,7 +7,8 @@ Terminal = gnome-terminal --start-factory-server --use
+ TermExec = ${Terminal} -e
+ AlwaysInTerm = ssh telnet ftp lynx mc vi vim pine centericq perldoc man
+ 
+-# Set window geometry (except height)
++# Set window geometry (except height).
++# Top / Left = -1: Center dialog box in the current screen.
+ Width = 400
+ Top = 100
+ Left = 200
