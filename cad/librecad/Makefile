@@ -1,7 +1,9 @@
 PORTNAME=	librecad
-DISTVERSION=	2.2.0-rc2
-PORTREVISION=	1
+DISTVERSION=	2.2.0-rc3
 CATEGORIES=	cad
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8c3b652a8813.patch:-p1 # https://github.com/LibreCAD/LibreCAD/issues/1488
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2D CAD system
@@ -28,9 +30,6 @@ post-patch:
 		${WRKSRC}/common.pri
 	@${REINPLACE_CMD} -e 's|lrelease|${LRELEASE}|' \
 		${WRKSRC}/scripts/postprocess-unix.sh
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
-		${WRKSRC}/librecad/src/lib/engine/rs_settings.cpp \
-		${WRKSRC}/librecad/src/lib/engine/rs_system.cpp
 
 pre-install:
 	@${CHMOD} +w ${WRKSRC}/unix/resources/plugins/*.so
