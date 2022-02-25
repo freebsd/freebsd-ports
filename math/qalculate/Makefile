@@ -1,7 +1,7 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
 
 PORTNAME=	qalculate
-PORTVERSION=	3.17.0
+PORTVERSION=	4.0.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 DISTNAME=	${GH_PROJECT}-${PORTVERSION}
@@ -12,7 +12,8 @@ COMMENT=	Multi-purpose desktop calculator (GTK+3 frontend)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqalculate.so:math/libqalculate
+LIB_DEPENDS=	libqalculate.so:math/libqalculate \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:c++11-lang gettext gmake gnome \

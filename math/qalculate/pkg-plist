@@ -1,5 +1,5 @@
 bin/qalculate-gtk
-lib/qalculate-search-provider
+libexec/qalculate-search-provider
 man/man1/qalculate-gtk.1.gz
 share/applications/qalculate-gtk.desktop
 share/dbus-1/services/io.github.Qalculate.SearchProvider.service
@@ -29,6 +29,7 @@ share/dbus-1/services/io.github.Qalculate.SearchProvider.service
 %%DOCSDIR%%/html/figures/variable-manager.png
 %%DOCSDIR%%/html/figures/variance-formula.svg
 %%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/qalc.html
 %%DOCSDIR%%/html/qalculate-definitions-functions.html
 %%DOCSDIR%%/html/qalculate-definitions-units.html
 %%DOCSDIR%%/html/qalculate-definitions-variables.html
@@ -52,10 +53,13 @@ share/icons/hicolor/32x32/apps/qalculate.png
 share/icons/hicolor/48x48/apps/qalculate.png
 share/icons/hicolor/64x64/apps/qalculate.png
 share/icons/hicolor/scalable/apps/qalculate.svg
+%%NLS%%share/locale/ca/LC_MESSAGES/qalculate-gtk.mo
+%%NLS%%share/locale/de/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/es/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/qalculate-gtk.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/qalculate-gtk.mo
