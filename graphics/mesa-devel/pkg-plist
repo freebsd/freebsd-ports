@@ -37,6 +37,7 @@ lib/libglapi%%SUFFIX%%.so.0.0.0
 %%NO_COINST%%libdata/pkgconfig/dri.pc
 %%NO_COINST%%libdata/pkgconfig/gbm.pc
 share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
+%%radv%%share/drirc.d/00-radv%%SUFFIX%%-defaults.conf
 %%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
 %%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
 %%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
