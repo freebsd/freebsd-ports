@@ -33,12 +33,6 @@ SUB_FILES=	pkg-message
 BUILD_WRKSRC=	${WRKSRC}/bsd
 INSTALL_WRKSRC=	${WRKSRC}/bsd
 
-# 11.x has dma imported into base and /var/spool/dma added to mtree
-PLIST_SUB+=	VARDIR="@comment "
-
-# Allow subports to extend.
-CONFFILES+=	auth.conf dma.conf
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dma,${PREFIX}/etc/dma,g' \
 		${WRKSRC}/dma.8
