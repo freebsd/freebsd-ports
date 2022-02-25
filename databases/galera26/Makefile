@@ -1,7 +1,7 @@
 # Created by: Nicolas Embriz <nbari@tequila.io>
 
 PORTNAME=	galera
-PORTVERSION=	26.4.10
+PORTVERSION=	26.4.11
 DISTVERSIONPREFIX=	release_
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
@@ -32,7 +32,7 @@ USES=		compiler:c++11-lang python:build cmake ssl
 
 USE_GITHUB=	yes
 GH_TUPLE?=	codership:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
-		codership:wsrep-API:76cf223c690845bbf561cb820a46e06a18ad80d1:dummy/wsrep/src
+		codership:wsrep-API:02ed17238cee97b5a3ea2495ca87b63570403f01:dummy/wsrep/src
 
 CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
 
