@@ -1,13 +1,13 @@
 # Created by: lesi@FreeBSD.org
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.109
+PORTVERSION=	2.4.110
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
 
 PATCH_SITES=	https://gitlab.freedesktop.org/mesa/${PORTNAME:S/lib//}/-/commit/
-PATCHFILES+=	9ef84bbc6269.patch:-p1 # https://gitlab.freedesktop.org/mesa/drm/-/merge_requests/193
+PATCHFILES+=	7207431e466a.patch:-p1 # https://gitlab.freedesktop.org/mesa/drm/-/merge_requests/193
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
