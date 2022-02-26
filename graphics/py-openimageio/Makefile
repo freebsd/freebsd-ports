@@ -1,6 +1,6 @@
 # Created by: Shane Ambler
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
