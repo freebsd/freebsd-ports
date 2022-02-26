@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	epix
-DISTVERSION=	1.2.19
+DISTVERSION=	1.2.21
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 
