@@ -1,5 +1,6 @@
 PORTNAME=	bio-mocha
 DISTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 DISTFILES+=	${PORTNAME}_${DISTVERSION}-20220112.tar.gz
@@ -19,7 +20,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.14
+GH_TAGNAME=	1.15
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
