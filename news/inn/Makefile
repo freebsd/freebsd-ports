@@ -1,7 +1,7 @@
 # Created by: torstenb
 
 PORTNAME?=		inn
-PORTVERSION?=		2.6.4
+PORTVERSION?=		2.6.5
 PORTREVISION?=		0
 CATEGORIES=		news
 MASTER_SITES=		ISC
@@ -49,8 +49,6 @@ SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
 
 PLIST_SUB+=		SNAPSHOT=""
 .else
-EXTRA_PATCHES=		${PATCHDIR}/extra-patch-storage_buffindexed_shmem.c
-
 PLIST_SUB+=		SNAPSHOT="@comment "
 .endif
 
@@ -74,8 +72,8 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 
 UUCP_RNEWS_RUN_DEPENDS=	uucp:net/freebsd-uucp
 
-INNLIB_LONG?=		6.0.1
-LIBVER_LONG?=		3.0.4
+INNLIB_LONG?=		6.1.0
+LIBVER_LONG?=		3.0.5
 PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG} \
 			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG}
 
