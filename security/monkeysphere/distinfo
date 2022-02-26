@@ -1,3 +1,3 @@
-TIMESTAMP = 1547723173
-SHA256 (monkeysphere_0.42.orig.tar.gz) = c1c956b1c86aaa44134fc1a9d75f5aef61266e3a9d8a6218b45d6c54bb7c58c1
-SIZE (monkeysphere_0.42.orig.tar.gz) = 110415
+TIMESTAMP = 1645881389
+SHA256 (dkg-monkeysphere-0.42-monkeysphere_0.42_GH0.tar.gz) = 8190047383a91c17301be8063f59b9f9c07b349853f865ce0f6d199094cfe90d
+SIZE (dkg-monkeysphere-0.42-monkeysphere_0.42_GH0.tar.gz) = 110434

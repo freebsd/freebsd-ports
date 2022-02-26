@@ -3,17 +3,11 @@
 PORTNAME=	monkeysphere
 PORTVERSION=	0.42
 CATEGORIES=	security
-MASTER_SITES=	http://archive.monkeysphere.info/debian/pool/monkeysphere/m/monkeysphere/
-DISTFILES=	${PORTNAME}_${DISTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Use the OpenPGP web of trust to verify ssh connections
 
 LICENSE=	GPLv3
-
-BROKEN=		Unfetchable
-DEPRECATED=	Abandonware, dead upstream
-EXPIRATION_DATE=2022-03-31
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
@@ -25,6 +19,9 @@ RUN_DEPENDS=	gpg2:security/gnupg \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 USES=		gmake shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	dkg
+GH_TAGNAME=	${PORTNAME}_${PORTVERSION}
 
 SHEBANG_FILES=	src/share/checkperms src/transitions/0.23 \
 		src/transitions/0.28 src/share/keytrans
