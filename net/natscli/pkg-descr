@@ -1,0 +1,16 @@
+NATS is an open-source, cloud-native messaging system.
+
+This is a command line utility to interact with and manage NATS.
+
+Features:
+
+  * JetStream management
+  * JetStream data and configuration backup
+  * Message publish and subscribe
+  * Service requests and creation
+  * Benchmarking and Latency testing
+  * Super Cluster observation
+  * Configuration context maintenance
+  * NATS ecosystem schema registry
+
+WWW: https://github.com/nats-io/natscli
