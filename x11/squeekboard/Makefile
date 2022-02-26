@@ -1,7 +1,6 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.0
-PORTREVISION=	1
+DISTVERSION=	1.17.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +24,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	d49ce45de0956432cef9b957f806d9377fee4bc0
+GL_COMMIT=	c912b73c4b229b61ce30d2923988e3277f3fe5a8
 SHEBANG_FILES=	tools/entry.py
 MAKE_ENV=	${CARGO_ENV}
 MESON_ARGS=	-Dstrict=false
@@ -38,6 +37,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/fa/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fi/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fur/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/gl/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/he/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/nl/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/ro/LC_MESSAGES/${PORTNAME}.mo \
@@ -48,11 +49,11 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 CARGO_CRATES=	atk-0.7.0 \
 		atk-sys-0.9.1 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		bitflags-1.2.1 \
 		cairo-rs-0.7.1 \
 		cairo-sys-rs-0.9.2 \
-		cc-1.0.72 \
+		cc-1.0.73 \
 		clap-2.33.4 \
 		fragile-0.3.0 \
 		gdk-0.11.0 \
@@ -69,7 +70,7 @@ CARGO_CRATES=	atk-0.7.0 \
 		hashbrown-0.11.2 \
 		indexmap-1.8.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.113 \
+		libc-0.2.119 \
 		linked-hash-map-0.5.4 \
 		maplit-1.0.2 \
 		memmap-0.7.0 \
@@ -79,8 +80,8 @@ CARGO_CRATES=	atk-0.7.0 \
 		proc-macro2-1.0.36 \
 		quote-1.0.15 \
 		ryu-1.0.9 \
-		serde-1.0.135 \
-		serde_derive-1.0.135 \
+		serde-1.0.136 \
+		serde_derive-1.0.136 \
 		serde_yaml-0.8.23 \
 		syn-1.0.86 \
 		textwrap-0.11.0 \
