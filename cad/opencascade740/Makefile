@@ -2,6 +2,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0 # resurrected because science/chrono only builds with opencascade-7.4.0, see https://github.com/projectchrono/chrono/issues/359#issuecomment-1023478083
+PORTREVISION=	1
 CATEGORIES=	cad science
 PKGNAMESUFFIX=	740
 
@@ -16,8 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt5/bin/qmake:devel/qt5-qmake	\
 		${LOCALBASE}/lib/qt5/bin/moc:devel/qt5-buildtools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
-		libfreetype.so:print/freetype2		\
-		libtbb.so:devel/tbb
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
@@ -52,7 +52,7 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_SAMPLES=${OCCROOT}/samples		\
 		-DINSTALL_DIR_TESTS=${OCCROOT}/tests			\
 		-DINSTALL_TEST_CASES:BOOL=ON				\
-		-DUSE_TBB:BOOL=ON					\
+		-DUSE_TBB:BOOL=OFF					\
 		-DUSE_VTK:BOOL=OFF
 
 USE_LDCONFIG=	yes
