@@ -1,9 +1,9 @@
 PORTNAME=	libpgf
-PORTVERSION=	7.15.32
+PORTVERSION=	7.21.7
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-latest/ \
-		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
-DISTNAME=	libPGF-codec-and-console-src
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Progressive Graphics Format (PGF) library
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf cpe dos2unix libtool pathfix zip
 USE_LDCONFIG=	yes
 
-DOS2UNIX_FILES=	configure.ac
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-WRKSRC=		${WRKDIR}/PGF/Codec
+pre-configure:
+	@${MKDIR} ${WRKSRC}/m4
 
 .include <bsd.port.mk>
