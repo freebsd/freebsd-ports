@@ -1,14 +1,7 @@
-bin/bjoentegaard
-bin/block-rate-estim
-bin/enc265
-bin/gen-enc-table
-bin/rd-curves
-bin/tests
-bin/yuv-distortion
+bin/libde265-dec265
 include/libde265/de265-version.h
 include/libde265/de265.h
-lib/libde265.a
 lib/libde265.so
 lib/libde265.so.0
-lib/libde265.so.0.0.10
+lib/libde265.so.0.1.1
 libdata/pkgconfig/libde265.pc
