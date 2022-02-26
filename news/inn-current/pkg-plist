@@ -42,6 +42,7 @@ bin/filter/nnrpd_auth.pl
 bin/filter/nnrpd_auth.py
 bin/filter/nnrpd_dynamic.py
 bin/filter/startup_innd.pl
+bin/gencancel
 bin/getlist
 bin/grephistory
 bin/imapfeed
@@ -184,6 +185,7 @@ lib/libinnstorage.so.%%LIBVER_LONG%%
 @cwd
 man/man1/convdate.1.gz
 man/man1/fastrm.1.gz
+man/man1/gencancel.1.gz
 man/man1/getlist.1.gz
 man/man1/grephistory.1.gz
 man/man1/inews.1.gz
