@@ -486,6 +486,7 @@
     SUBDIR += nanomsg
     SUBDIR += nast
     SUBDIR += nats-nkeys
+    SUBDIR += nats-nsc
     SUBDIR += nats-server
     SUBDIR += nats-streaming-server
     SUBDIR += nats-top

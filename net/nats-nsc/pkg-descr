@@ -1,0 +1,5 @@
+NATS is an open-source, cloud-native messaging system.
+
+This is a tool for creating NATS account and user access configurations.
+
+WWW: https://github.com/nats-io/nsc
