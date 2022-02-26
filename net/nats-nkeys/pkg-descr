@@ -1,0 +1,17 @@
+NATS is an open-source, cloud-native messaging system.
+
+This is a command line utility to manage NATS Ed25519 keys.
+
+The NATS ecosystem will be moving to Ed25519 keys for identity,
+authentication and authorization for entities such as Accounts,
+Users, Servers and Clusters.
+
+Ed25519 is fast and resistant to side channel attacks. Generation
+of a seed key is all that is needed to be stored and kept safe, as
+the seed can generate both the public and private keys.
+
+The NATS system will utilize Ed25519 keys, meaning that NATS systems
+will never store or even have access to any private keys. Authentication
+will utilize a random challenge response mechanism.
+
+WWW: https://github.com/nats-io/nkeys

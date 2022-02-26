@@ -485,6 +485,7 @@
     SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += nast
+    SUBDIR += nats-nkeys
     SUBDIR += nats-server
     SUBDIR += nats-streaming-server
     SUBDIR += nats-top
