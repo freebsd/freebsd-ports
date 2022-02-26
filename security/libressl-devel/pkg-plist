@@ -81,8 +81,8 @@ include/openssl/x509v3.h
 include/tls.h
 lib/libcrypto.a
 lib/libcrypto.so
-lib/libcrypto.so.%%OPENSSL_SHLIBVER%%
-lib/libcrypto.so.%%OPENSSL_SHLIBVER%%.0.0
+lib/libcrypto.so.49
+lib/libcrypto.so.49.0.0
 lib/libssl.a
 lib/libssl.so
 lib/libssl.so.52
