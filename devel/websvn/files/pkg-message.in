@@ -10,7 +10,7 @@ EOM
 },
 { type: remove
   message: <<EOM
-Consider deleting %%PREFIX%%/%%ETCDIR%%!
+Consider deleting %%ETCDIR%%!
 EOM
 }
 ]
