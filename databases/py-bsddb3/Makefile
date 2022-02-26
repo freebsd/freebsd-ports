@@ -12,15 +12,21 @@ COMMENT=	Python extension module for BerkeleyDB 4.7, 4.8, 5.1, 5.3, 6.1 and 6.2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		bdb python:3.6+
-USE_PYTHON=	distutils autoplist
+DEPRECATED=	Requires upstream EOLd db5. Use py-berkeleydb
+EXPIRATION_DATE=	2022-06-30
 
-PYDISTUTILS_CONFIGUREARGS=--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
+USES=		bdb:5 python:3.6-3.9
+USE_PYTHON=	autoplist distutils
+
+PYDISTUTILS_CONFIGUREARGS=	--libs="-l${BDB_LIB_NAME}" \
+				--berkeley-db=${LOCALBASE}
 PYDISTUTILS_BUILDARGS=	--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
-PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} --berkeley-db=${LOCALBASE}
+PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
+				--berkeley-db=${LOCALBASE}
+
+DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 PORTDOCS=	*
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
