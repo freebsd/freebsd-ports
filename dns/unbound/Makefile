@@ -2,6 +2,7 @@
 
 PORTNAME=	unbound
 DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
@@ -64,6 +65,7 @@ DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 				libprotobuf-c.so:devel/protobuf-c
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DOH_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
+DOH_CONFIGURE_ON=		--with-libnghttp2
 ECDSA_CONFIGURE_ENABLE=		ecdsa
 ECDSA_VARS=			DEPENDS_ARGS+=WITH_ECDSA=yes
 EVAPI_CONFIGURE_ENABLE=		event-api
