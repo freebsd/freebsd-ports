@@ -1,0 +1,11 @@
+--- plugins/paintops/mypaint/CMakeLists.txt.orig	2022-01-05 11:03:09 UTC
++++ plugins/paintops/mypaint/CMakeLists.txt
+@@ -26,7 +26,7 @@ ki18n_wrap_ui(kritamypaintop_SOURCES wdgmypaintoptions
+ 
+ add_library(kritamypaintop MODULE ${kritamypaintop_SOURCES})
+ 
+-target_link_libraries(kritamypaintop kritalibpaintop mypaint kritawidgetutils kritaui kritalibbrush kritaresources)
++target_link_libraries(kritamypaintop kritalibpaintop ${LibMyPaint_LIBRARY} kritawidgetutils kritaui kritalibbrush kritaresources)
+ 
+ 
+ install(TARGETS kritamypaintop  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})

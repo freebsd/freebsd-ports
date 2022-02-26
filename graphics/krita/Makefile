@@ -1,6 +1,5 @@
 PORTNAME=	krita
-DISTVERSION=	4.4.8
-PORTREVISION=	7
+DISTVERSION=	5.0.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -11,8 +10,10 @@ COMMENT=	Sketching and painting program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	vc>=1.1.0:devel/vc \
+		libheif>=1.12.0:graphics/libheif
 LIB_DEPENDS=	libImath.so:math/Imath \
-		libOpenColorIOv1.so:graphics/opencoloriov1 \
+		libOpenColorIO.so:graphics/opencolorio \
 		libX11.so:x11/libX11 \
 		libboost_system.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \
@@ -22,12 +23,14 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libgsl.so:math/gsl \
 		libheif.so:graphics/libheif \
 		liblcms2.so:graphics/lcms2 \
+		libmypaint.so:graphics/libmypaint \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libquazip1-qt5.so:archivers/quazip \
 		libraw.so:graphics/libraw \
 		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp \
 		libxcb.so:x11/libxcb \
 		libxcb-util.so:x11/xcb-util
 
@@ -38,7 +41,7 @@ USES=		cmake:noninja gmake compiler:c++11-lib desktop-file-utils \
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
-		svg testlib widgets x11extras xml \
+		sql svg testlib widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm xcb xext xi
 
@@ -52,22 +55,10 @@ GMIC_DESC=		Depend on the G'Mic plugin #'
 GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt@krita
 
 OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
-			libSeExpr2.so:graphics/seexpr
+			libKSeExpr.so:graphics/kseexpr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
-CONFLICTS_INSTALL=	calligra-2*
-
-PLIST_SUB=	SHLIB_VER=20.0.0 \
-		SHLIB_SHVER=20
-
-CFLAGS+=	-I${LOCALBASE}/include/Imath
-LDFLAGS+=	-lpthread
-
-post-patch:
-	${REINPLACE_CMD} -e 's|<OpenColorIO/|<OpenColorIOv1/|g' \
-		${WRKSRC}/libs/ui/canvas/kis_image_pyramid.cpp \
-		${WRKSRC}/plugins/dockers/lut/lutdocker_dock.h \
-		${WRKSRC}/plugins/dockers/lut/ocio_display_filter.h \
-		${WRKSRC}/plugins/dockers/lut/lutdocker.cpp
+PLIST_SUB=	SHLIB_VER=17.0.0 \
+		SHLIB_SHVER=17
 
 .include <bsd.port.mk>
