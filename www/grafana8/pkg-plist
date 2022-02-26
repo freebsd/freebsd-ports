@@ -397,7 +397,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/AlertRuleItem.tsx
 %%DATADIR%%/public/app/features/alerting/AlertRuleList.test.tsx
 %%DATADIR%%/public/app/features/alerting/AlertRuleList.tsx
-%%DATADIR%%/public/app/features/alerting/AlertRuleListIndex.tsx
 %%DATADIR%%/public/app/features/alerting/AlertTab.tsx
 %%DATADIR%%/public/app/features/alerting/AlertTabCtrl.test.ts
 %%DATADIR%%/public/app/features/alerting/AlertTabCtrl.ts
@@ -405,7 +404,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/EditNotificationChannelPage.tsx
 %%DATADIR%%/public/app/features/alerting/FeatureTogglePage.tsx
 %%DATADIR%%/public/app/features/alerting/NewNotificationChannelPage.tsx
-%%DATADIR%%/public/app/features/alerting/NotificationsIndex.tsx
 %%DATADIR%%/public/app/features/alerting/NotificationsListPage.tsx
 %%DATADIR%%/public/app/features/alerting/StateHistory.tsx
 %%DATADIR%%/public/app/features/alerting/TestRuleResult.test.tsx
@@ -616,6 +614,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/mocks/grafana-notifiers.ts
 %%DATADIR%%/public/app/features/alerting/unified/state/AlertingQueryRunner.test.ts
 %%DATADIR%%/public/app/features/alerting/unified/state/AlertingQueryRunner.ts
+%%DATADIR%%/public/app/features/alerting/unified/state/actions.test.ts
 %%DATADIR%%/public/app/features/alerting/unified/state/actions.ts
 %%DATADIR%%/public/app/features/alerting/unified/state/reducers.ts
 %%DATADIR%%/public/app/features/alerting/unified/styles/notifications.ts
@@ -1073,6 +1072,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/folders/FolderSettingsPage.tsx
 %%DATADIR%%/public/app/features/folders/__snapshots__/FolderSettingsPage.test.tsx.snap
 %%DATADIR%%/public/app/features/folders/components/NewDashboardsFolder.tsx
+%%DATADIR%%/public/app/features/folders/state/actions.test.ts
 %%DATADIR%%/public/app/features/folders/state/actions.ts
 %%DATADIR%%/public/app/features/folders/state/navModel.ts
 %%DATADIR%%/public/app/features/folders/state/reducers.test.ts
@@ -2944,6 +2944,9 @@ bin/grafana-server
 %%DATADIR%%/public/build/211.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2178.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/2178.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/2201.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/2201.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
+%%DATADIR%%/public/build/2201.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2293.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/2293.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/2502.%%GRAFANA_BUILDHASH%%.js
@@ -3018,9 +3021,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/487.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/4939.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/4939.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/5105.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/5105.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
-%%DATADIR%%/public/build/5105.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/519.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/519.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/5276.%%GRAFANA_BUILDHASH%%.js
@@ -3041,8 +3041,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/5902.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6146.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6146.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/6220.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/6220.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6223.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6223.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6278.%%GRAFANA_BUILDHASH%%.js
@@ -3066,6 +3064,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/686.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6899.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6899.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/6972.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/6972.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/707.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/707.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/7072.%%GRAFANA_BUILDHASH%%.js
@@ -5068,6 +5068,10 @@ bin/grafana-server
 %%DATADIR%%/public/lib/monaco/min/vs/language/typescript/tsWorker.js.LICENSE.txt
 %%DATADIR%%/public/lib/monaco/min/vs/loader.js
 %%DATADIR%%/public/lib/monaco/min/vs/loader.js.LICENSE.txt
+%%DATADIR%%/public/locales/en/messages.js
+%%DATADIR%%/public/locales/es/messages.js
+%%DATADIR%%/public/locales/fr/messages.js
+%%DATADIR%%/public/locales/pseudo-LOCALE/messages.js
 %%DATADIR%%/public/maps/countries.geojson
 %%DATADIR%%/public/maps/usa-states.geojson
 %%DATADIR%%/public/robots.txt

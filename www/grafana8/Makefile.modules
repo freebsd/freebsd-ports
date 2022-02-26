@@ -49,7 +49,7 @@ GH_TUPLE=	\
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		cue-lang:cue:v0.4.0:cuelang_cue/vendor/cuelang.org/go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		deepmap:oapi-codegen:v1.6.0:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
+		deepmap:oapi-codegen:v1.8.2:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
 		dennwc:varint:v1.0.0:dennwc_varint/vendor/github.com/dennwc/varint \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		dlclark:regexp2:a2a8dda75c91:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
@@ -151,7 +151,7 @@ GH_TUPLE=	\
 		hashicorp:yamux:26ff87cf9493:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		igm:sockjs-go:v3.0.1:igm_sockjs_go_v3/vendor/github.com/igm/sockjs-go \
 		inconshreveable:log15:67afb5ed74ec:inconshreveable_log15/vendor/github.com/inconshreveable/log15 \
-		influxdata:influxdb-client-go:5d1fff431040:influxdata_influxdb_client_go_v2/vendor/github.com/influxdata/influxdb-client-go/v2 \
+		influxdata:influxdb-client-go:v2.6.0:influxdata_influxdb_client_go_v2/vendor/github.com/influxdata/influxdb-client-go/v2 \
 		influxdata:line-protocol:9aa0e372d097:influxdata_line_protocol/vendor/github.com/influxdata/line-protocol \
 		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
