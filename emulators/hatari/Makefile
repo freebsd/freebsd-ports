@@ -1,7 +1,7 @@
 # Created by: Michael Neumann <mneumann@ntecs.de>
 
 PORTNAME=	hatari
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
@@ -20,7 +20,6 @@ USES=		cmake desktop-file-utils gnome python:3.6+ readline \
 		sdl shared-mime-info shebangfix tar:bzip2 xorg
 USE_GNOME=	gtk30
 USE_XORG=	sm ice x11 xext
-USE_PYTHON=	concurrent
 
 SHEBANG_FILES=	python-ui/*.py tools/*.py \
 		tools/debugger/*.py tools/hconsole/*.py
