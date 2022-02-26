@@ -1,3 +1,111 @@
+  <vuln vid="d71d154a-8b83-11ec-b369-6c3be5272acd">
+    <topic>Grafana -- Teams API IDOR</topic>
+    <affects>
+      <package>
+	<name>grafana6</name>
+	<range><ge>6.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><lt>7.5.15</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/02/08/grafana-7.5.15-and-8.3.5-released-with-moderate-severity-security-fixes/">
+	  <p>On Jan. 18, an external security researcher, Kürşad ALSAN from <a href="https://www.nspect.io/">NSPECT.IO</a> (<a href="https://twitter.com/nspectio">@nspectio</a> on Twitter), contacted Grafana to disclose an IDOR (Insecure Direct Object Reference) vulnerability on Grafana Teams APIs. This vulnerability only impacts the following API endpoints:</p>
+	  <ul>
+	    <li><strong>/teams/:teamId</strong> - an authenticated attacker can view unintended data by querying for the specific team ID.</li>
+	    <li><strong>/teams/:search</strong> - an authenticated attacker can search for teams and see the total number of available teams, including for those teams that the user does not have access to.</li>
+	    <li><strong>/teams/:teamId/members</strong> - when editors_can_admin flag is enabled, an authenticated attacker can see unintended data by querying for the specific team ID.</li>
+	  </ul>
+	  <p>We believe that this vulnerability is rated at CVSS 4.3 (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21713</cvename>
+      <url>https://grafana.com/blog/2022/02/08/grafana-7.5.15-and-8.3.5-released-with-moderate-severity-security-fixes/</url>
+    </references>
+    <dates>
+      <discovery>2022-01-18</discovery>
+      <entry>2022-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d4284c2e-8b83-11ec-b369-6c3be5272acd">
+    <topic>Grafana -- CSRF</topic>
+    <affects>
+      <package>
+	<name>grafana6</name>
+	<range><ge>6.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><lt>7.5.15</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/02/08/grafana-7.5.15-and-8.3.5-released-with-moderate-severity-security-fixes/">
+	  <p>On Jan. 18, security researchers <a href="https://twitter.com/jub0bs">@jub0bs</a> and <a href="https://twitter.com/theabrahack">@abrahack</a> contacted Grafana to <a href="https://jub0bs.com/posts/2022-02-08-cve-2022-21703-writeup/">disclose a CSRF vulnerability</a> which allows anonymous attackers to elevate their privileges by mounting cross-origin attacks against authenticated high-privilege Grafana users (for example, Editors or Admins). An attacker can exploit this vulnerability for privilege escalation by tricking an authenticated user into inviting the attacker as a new user with high privileges. We believe that this vulnerability is rated at CVSS 6.8 (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21703</cvename>
+      <url>https://grafana.com/blog/2022/02/08/grafana-7.5.15-and-8.3.5-released-with-moderate-severity-security-fixes/</url>
+    </references>
+    <dates>
+      <discovery>2022-01-18</discovery>
+      <entry>2022-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cecbc674-8b83-11ec-b369-6c3be5272acd">
+    <topic>Grafana -- XSS</topic>
+    <affects>
+      <package>
+	<name>grafana6</name>
+	<range><ge>6.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><lt>7.5.15</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/02/08/grafana-7.5.15-and-8.3.5-released-with-moderate-severity-security-fixes/">
+	  <p>On Jan. 16, an external security researcher, Jasu Viding contacted Grafana to disclose an XSS vulnerability in the way that Grafana handles data sources. Should an existing data source connected to Grafana be compromised, it could be used to inappropriately gain access to other data sources connected to the same Grafana org. We believe that this vulnerability is rated at CVSS 6.8 (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21702</cvename>
+      <url>https://grafana.com/blog/2022/02/08/grafana-7.5.15-and-8.3.5-released-with-moderate-severity-security-fixes/</url>
+    </references>
+    <dates>
+      <discovery>2022-01-16</discovery>
+      <entry>2022-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7695b0af-958f-11ec-9aa3-4ccc6adda413">
     <topic>cryptopp -- ElGamal implementation allows plaintext recovery</topic>
     <affects>
