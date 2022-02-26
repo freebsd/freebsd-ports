@@ -6,7 +6,7 @@ DISTVERSION=	4.7.1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 
-MASTER_SITES=	LOCAL/driesm:maven
+MASTER_SITES=	LOCAL/fernape:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
