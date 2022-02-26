@@ -24,6 +24,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${BDB_VER} > 5
+MAKE_ENV=	YES_I_HAVE_THE_RIGHT_TO_USE_THIS_BERKELEY_DB_VERSION=yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|%%DBVERSION%%|${BDB_LIB_NAME}| ; \
 		s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}| ; \
@@ -41,4 +47,4 @@ post-install-DOCS-on:
 do-test:
 	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./test.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
