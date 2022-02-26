@@ -1,12 +1,12 @@
 PORTNAME=	nats-server
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Messaging system written in Go
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
@@ -17,8 +17,8 @@ GH_TUPLE=	golang:crypto:5e0467b6c7ce:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:5a964db01320:golang_sys/vendor/golang.org/x/sys \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
-		klauspost:compress:v1.13.4:klauspost_compress/vendor/github.com/klauspost/compress \
-		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
+		klauspost:compress:v1.14.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jwt:58e87895b296:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nats.go:972a071d373d:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
