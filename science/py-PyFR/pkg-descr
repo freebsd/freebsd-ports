@@ -17,4 +17,4 @@ following capabilities:
 * Mesh Files Imported - Gmsh (.msh), CGNS (.cgns)
 * Solution Files Exported - Unstructured VTK (.vtu, .pvtu)
 
-WWW: http://www.pyfr.org/
+WWW: https://www.pyfr.org/
