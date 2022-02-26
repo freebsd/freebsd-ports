@@ -27,6 +27,7 @@ man/man1/samtools-bedcov.1.gz
 man/man1/samtools-calmd.1.gz
 man/man1/samtools-cat.1.gz
 man/man1/samtools-collate.1.gz
+man/man1/samtools-consensus.1.gz
 man/man1/samtools-coverage.1.gz
 man/man1/samtools-depad.1.gz
 man/man1/samtools-depth.1.gz
@@ -38,6 +39,7 @@ man/man1/samtools-fixmate.1.gz
 man/man1/samtools-flags.1.gz
 man/man1/samtools-flagstat.1.gz
 man/man1/samtools-fqidx.1.gz
+man/man1/samtools-head.1.gz
 man/man1/samtools-idxstats.1.gz
 man/man1/samtools-import.1.gz
 man/man1/samtools-index.1.gz

@@ -1,7 +1,7 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
 
 PORTNAME=	samtools
-DISTVERSION=	1.14
+DISTVERSION=	1.15
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
