@@ -11,6 +11,9 @@ COMMENT=	GTK3-based genealogy program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Requires py-bsddb3 which requires upstream EOLd db5
+EXPIRATION_DATE=	2022-06-30
+
 LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
 		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR} \
