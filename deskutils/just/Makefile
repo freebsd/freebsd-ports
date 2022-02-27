@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	0.10.7
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +15,11 @@ GH_ACCOUNT=	casey
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		camino-1.0.7 \
-		cc-1.0.72 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
 		cradle-0.2.1 \
@@ -36,20 +35,21 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		executable-path-1.0.0 \
 		fastrand-1.7.0 \
 		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
 		instant-0.1.12 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.116 \
+		libc-0.2.119 \
 		linked-hash-map-0.5.4 \
 		log-0.4.14 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
 		nix-0.23.1 \
-		output_vt100-0.1.2 \
-		pretty_assertions-1.0.0 \
+		output_vt100-0.1.3 \
+		pretty_assertions-1.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
@@ -63,15 +63,15 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.9 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.78 \
+		serde_json-1.0.79 \
 		similar-2.1.0 \
 		snafu-0.7.0 \
 		snafu-derive-0.7.0 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		strum-0.23.0 \
-		strum_macros-0.23.1 \
+		strum-0.24.0 \
+		strum_macros-0.24.0 \
 		syn-1.0.86 \
 		target-2.0.0 \
 		tempfile-3.3.0 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
 		typed-arena-2.0.1 \
-		unicode-segmentation-1.8.0 \
+		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		vec_map-0.8.2 \
