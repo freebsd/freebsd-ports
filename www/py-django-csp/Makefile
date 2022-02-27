@@ -1,11 +1,11 @@
 PORTNAME=	django-csp
-PORTVERSION=	3.5
+PORTVERSION=	3.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	django_csp-${PORTVERSION}
 
-MAINTAINER=	alex@xanderio.de
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Adds Content-Security-Policy headers to Django
 
 LICENSE=	BSD3CLAUSE
@@ -17,5 +17,11 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	JINJA2
+OPTIONS_DEFAULT=	JINJA2
+
+JINJA2_DESC=	Support for Django templates via Jinja2
+JINJA2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.9.6:devel/py-Jinja2@${PY_FLAVOR}
 
 .include <bsd.port.mk>
