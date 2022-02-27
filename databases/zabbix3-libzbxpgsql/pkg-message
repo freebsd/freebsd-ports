@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-In order to enable the module, add libzbxpgsql.so to the LoadModule=
-line in zabbix_agentd.conf and restart the agent with
-service zabbix_agentd restart
-EOM
-}
-]

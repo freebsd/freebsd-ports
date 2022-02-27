@@ -1,6 +1,0 @@
-include/gaiagraphics.h
-lib/libgaiagraphics.a
-lib/libgaiagraphics.so
-lib/libgaiagraphics.so.1
-lib/libgaiagraphics.so.1.0.0
-libdata/pkgconfig/gaiagraphics.pc

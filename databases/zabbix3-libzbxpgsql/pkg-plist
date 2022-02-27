@@ -1,4 +1,0 @@
-lib/libzbxpgsql.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Template_PostgreSQL_Server_2.0.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Template_PostgreSQL_Server_2.4.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Template_PostgreSQL_Server_3.0.xml

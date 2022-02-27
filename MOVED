@@ -16899,3 +16899,5 @@ www/py-weboob|www/py-woob|2022-02-24|Project renamed
 www/py-weboob-qt|www/py-woob-qt|2022-02-24|Project renamed
 math/py-pyipopt||2022-02-24|Removed: not compatible with the latest Ipopt-3.14.4 and abandoned upstream
 x11-toolkits/py-wxPython40|x11-toolkits/py-wxPython4|2022-02-25|Renamed to py-wxPython4
+graphics/libgaiagraphics|graphics/librasterlite2|2022-02-27|Has expired: Abandoned upstream, replaced by graphics/librasterlite2
+databases/zabbix3-libzbxpgsql||2022-02-27|Has expired: Upstream EOL reached on 2021-02-28
