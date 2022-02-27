@@ -1,6 +1,5 @@
 PORTNAME=	libcircllhist
-PORTVERSION=	g20211005
-PORTREVISION=	1
+PORTVERSION=	g20221215
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -10,11 +9,12 @@ WWW=		https://github.com/circonus-labs/libcircllhist
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gmake
+USES=		autoreconf gmake lua:51,env shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	openhistogram
-GH_TAGNAME=	79fab69ee82597e3940cab017d7b0cd50ef3e9c1
+GH_TAGNAME=	95f8f6b089fc4e8dc215ed903221f9f55d4813b3
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	src/test/runTest.sh
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all
