@@ -1190,6 +1190,7 @@
     SUBDIR += libconfuse
     SUBDIR += libcreg
     SUBDIR += libcrossguid
+    SUBDIR += libcuckoo
     SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libdaemon

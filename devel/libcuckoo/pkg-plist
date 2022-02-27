@@ -1,0 +1,9 @@
+include/libcuckoo-c/cuckoo_table_template.cc
+include/libcuckoo-c/cuckoo_table_template.h
+include/libcuckoo/bucket_container.hh
+include/libcuckoo/cuckoohash_config.hh
+include/libcuckoo/cuckoohash_map.hh
+include/libcuckoo/cuckoohash_util.hh
+share/cmake/libcuckoo/libcuckoo-config-version.cmake
+share/cmake/libcuckoo/libcuckoo-config.cmake
+share/cmake/libcuckoo/libcuckoo-targets.cmake
