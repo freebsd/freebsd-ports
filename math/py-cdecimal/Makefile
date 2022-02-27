@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 DEPRECATED=	upstream does not support it after Python-3.2
+EXPIRATION_DATE=	2022-05-27
 
 USES=		python:3.6-3.8
 USE_PYTHON=	distutils autoplist
