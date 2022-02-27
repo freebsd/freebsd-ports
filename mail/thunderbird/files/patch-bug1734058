@@ -1,0 +1,45 @@
+commit 874adf9b96df
+Author: Jon Bauman <jbauman@mozilla.com>
+Date:   Tue Oct 26 17:11:36 2021 +0000
+
+    Bug 1734058 - Update dav1d to new version f52aee04fbd711cddab23d0aa9b196e9c963e7b8 from 2021-10-04 21:58:36. r=mjf,haik
+    
+    This is a fairly significant update, so required a few changes to Gecko code, but I've commented on the interesting details, so they should be easy to find
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D129465
+---
+ dom/media/platforms/agnostic/DAV1DDecoder.cpp | 7 +------
+ image/decoders/nsAVIFDecoder.cpp              | 1 +
+ 2 files changed, 2 insertions(+), 6 deletions(-)
+
+diff --git dom/media/platforms/agnostic/DAV1DDecoder.cpp dom/media/platforms/agnostic/DAV1DDecoder.cpp
+index 459531fe8cf0..3c596b1fefe1 100644
+--- dom/media/platforms/agnostic/DAV1DDecoder.cpp
++++ dom/media/platforms/agnostic/DAV1DDecoder.cpp
+@@ -37,13 +37,8 @@ RefPtr<MediaDataDecoder::InitPromise> DAV1DDecoder::Init() {
+   } else if (mInfo.mDisplay.width >= 1024) {
+     decoder_threads = 4;
+   }
+-  settings.n_frame_threads =
++  settings.n_threads =
+       static_cast<int>(std::min(decoder_threads, GetNumberOfProcessors()));
+-  // There is not much improvement with more than 2 tile threads at least with
+-  // the content being currently served. The ideal number of tile thread would
+-  // much the tile count of the content. Maybe dav1d can help to do that in the
+-  // future.
+-  settings.n_tile_threads = 2;
+ 
+   int res = dav1d_open(&mContext, &settings);
+   if (res < 0) {
+diff --git image/decoders/nsAVIFDecoder.cpp image/decoders/nsAVIFDecoder.cpp
+index 9d1b7496a129..3bb9e8f8d08a 100644
+--- image/decoders/nsAVIFDecoder.cpp
++++ image/decoders/nsAVIFDecoder.cpp
+@@ -581,6 +581,7 @@ class Dav1dDecoder final : AVIFDecoderInterface {
+     Dav1dSettings settings;
+     dav1d_default_settings(&settings);
+     settings.all_layers = 0;
++    settings.max_frame_delay = 1;
+     // TODO: tune settings a la DAV1DDecoder for AV1 (Bug 1681816)
+ 
+     return dav1d_open(&mContext, &settings);
