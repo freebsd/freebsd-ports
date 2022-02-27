@@ -494,6 +494,7 @@
     SUBDIR += gstopd
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
+    SUBDIR += handlr
     SUBDIR += hardlink
     SUBDIR += hare
     SUBDIR += hared

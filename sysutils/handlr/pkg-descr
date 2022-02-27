@@ -1,0 +1,17 @@
+Manage your default applications with ease using handlr!
+
+Features:
+ Set default handler by extension or mime-type.
+ Intelligent mime type detection from files based on extension and content.
+ Open multiple files at once.
+ Set multiple handlers for mime/extension and use rofi/dmenu to pick one.
+ Wildcard support like text/*.
+ Automatically removes invalid/wrong .
+desktop entries from mimeapps.
+list.
+ Helper commands like launch, get --json for your scripting needs.
+ Unnecessarily fast (written in Rust).
+ Single compiled binary with no dependencies.
+
+
+WWW: https://github.com/chmln/handlr
