@@ -1,5 +1,5 @@
-TIMESTAMP = 1645642530
-SHA256 (MUMPS_4.10.0.tar.gz) = d0f86f91a74c51a17a2ff1be9c9cee2338976f13a6d00896ba5b43a5ca05d933
-SIZE (MUMPS_4.10.0.tar.gz) = 2481516
-SHA256 (coin-or-tools-ThirdParty-Mumps-releases-1.6.3_GH0.tar.gz) = c66a2e77c601e8e094c6b71c1b13d015745481afb286e5776bb4379e241168c8
-SIZE (coin-or-tools-ThirdParty-Mumps-releases-1.6.3_GH0.tar.gz) = 269165
+TIMESTAMP = 1645990832
+SHA256 (MUMPS_5.4.1.tar.gz) = 93034a1a9fe0876307136dcde7e98e9086e199de76f1c47da822e7d4de987fa8
+SIZE (MUMPS_5.4.1.tar.gz) = 4027725
+SHA256 (coin-or-tools-ThirdParty-Mumps-releases-3.0.2_GH0.tar.gz) = d63e8b1cc585ffcaed574e31c3dbb729845fc35e89482c50fe7f7c23f7c56c41
+SIZE (coin-or-tools-ThirdParty-Mumps-releases-3.0.2_GH0.tar.gz) = 296269

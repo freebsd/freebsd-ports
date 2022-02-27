@@ -1,6 +1,6 @@
 PORTNAME=	mumps
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	1.6.3
+DISTVERSION=	3.0.2
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/:mumps
 PKGNAMEPREFIX=	coin-or-
@@ -12,7 +12,8 @@ COMMENT=	COIN-OR autotools harness to build Mumps
 LICENSE=	EPL
 
 LIB_DEPENDS=	libblas.so:math/blas \
-		libcoinmetis.so:math/coin-or-metis
+		libcoinmetis.so:math/coin-or-metis \
+		liblapack.so:math/lapack
 
 USES=		fortran gmake libtool pkgconfig
 USE_LDCONFIG=	yes
@@ -25,7 +26,7 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
-MUMPS_VERSION=	4.10.0 # from the script get.Mumps
+MUMPS_VERSION=	5.4.1 # from the script get.Mumps
 
 .include <bsd.port.pre.mk>
 
@@ -40,8 +41,8 @@ post-extract: # link MUMPS into the location in the tree
 
 pre-build: # patching from get.Mumps
 	@cd ${WRKSRC} && \
-		${PATCH} -p0 < mumps.patch && \
 		${PATCH} -p0 < mumps_mpi.patch && \
-		${MV} MUMPS/libseq/mpi.h MUMPS/libseq/mumps_mpi.h
+		${MV} MUMPS/libseq/mpi.h MUMPS/libseq/mumps_mpi.h && \
+		${PATCH} -p0 < mumps_dump.patch
 
 .include <bsd.port.post.mk>
