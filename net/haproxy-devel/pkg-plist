@@ -24,8 +24,10 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/how-it-works.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/http2.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/http_load_time.url
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/pool-debugging.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/rate-shaping.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/sess_par_sec.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/thread-group.txt
 %%PORTDOCS%%%%DOCSDIR%%/gpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy.1
 %%PORTDOCS%%%%DOCSDIR%%/internals/acl.txt
@@ -33,6 +35,10 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/filters.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/htx-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/initcalls.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/api/ist.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/api/list.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/api/pools.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/api/scheduler.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/body-parsing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-header.txt
