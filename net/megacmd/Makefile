@@ -1,9 +1,9 @@
 PORTNAME=	megacmd
-DISTVERSION=	1.4.1
-DISTVERSIONSUFFIX=	_Win
+DISTVERSION=	1.5.0
+DISTVERSIONSUFFIX=	_Linux
 CATEGORIES=	net
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Command Line Interactive and Scriptable Application to access MEGA
 
 LICENSE=	GPLv3 BSD2CLAUSE
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	meganz
 GH_PROJECT=	MEGAcmd sdk:sdk
 GH_SUBDIR=	sdk:sdk
-GH_TAGNAME=	v3.7.3c:sdk
+GH_TAGNAME=	v3.9.11a:sdk
 
 USE_LDCONFIG=	yes
 

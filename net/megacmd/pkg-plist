@@ -71,8 +71,8 @@ include/mega/console.h
 include/mega/crypto/cryptopp.h
 include/mega/crypto/sodium.h
 include/mega/db.h
-include/mega/db/bdb.h
 include/mega/db/sqlite.h
+include/mega/drivenotify.h
 include/mega/file.h
 include/mega/fileattributefetch.h
 include/mega/filefingerprint.h
@@ -81,7 +81,7 @@ include/mega/gfx.h
 include/mega/gfx/GfxProcCG.h
 include/mega/gfx/external.h
 include/mega/gfx/freeimage.h
-include/mega/gfx/qt.h
+include/mega/gfx/gfx_pdfium.h
 include/mega/http.h
 include/mega/json.h
 include/mega/logging.h
@@ -114,8 +114,6 @@ include/mega/sync.h
 include/mega/thread.h
 include/mega/thread/cppthread.h
 include/mega/thread/posixthread.h
-include/mega/thread/qtthread.h
-include/mega/thread/win32thread.h
 include/mega/transfer.h
 include/mega/transferslot.h
 include/mega/treeproc.h
@@ -128,6 +126,6 @@ include/mega/waiter.h
 include/megaapi.h
 include/megaapi_impl.h
 lib/libmega.so
-lib/libmega.so.30703
-lib/libmega.so.30703.0.0
+lib/libmega.so.30911
+lib/libmega.so.30911.0.0
 libdata/pkgconfig/libmega.pc
