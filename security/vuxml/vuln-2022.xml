@@ -1,3 +1,40 @@
+  <vuln vid="0eab001a-9708-11ec-96c9-589cfc0f81b0">
+    <topic>typo3 -- XSS vulnerability in svg-sanitize</topic>
+    <affects>
+      <package>
+       <name>typo3-10-php74</name>
+       <range><lt>10.4.25</lt></range>
+      </package>
+      <package>
+       <name>typo3-11-php74</name>
+       <name>typo3-11-php80</name>
+       <name>typo3-11-php81</name>
+       <range><lt>11.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The TYPO3 project reports:</p>
+       <blockquote cite="https://typo3.org/article/typo3-psa-2022-001">
+	 <p>The SVG sanitizer library enshrined/svg-sanitize before version
+	 0.15.0 did not remove HTML elements wrapped in a CDATA section.
+	 As a result, SVG content embedded in HTML (fetched as text/html)
+	 was susceptible to cross-site scripting. Plain SVG files
+	 (fetched as image/svg+xml) were not affected.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23638</cvename>
+      <url>https://github.com/typo3/typo3/commit/9940defb21</url>
+      <url>https://typo3.org/article/typo3-psa-2022-001</url>
+    </references>
+    <dates>
+      <discovery>2022-02-22</discovery>
+      <entry>2022-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d71d154a-8b83-11ec-b369-6c3be5272acd">
     <topic>Grafana -- Teams API IDOR</topic>
     <affects>
