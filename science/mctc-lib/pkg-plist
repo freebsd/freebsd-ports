@@ -10,10 +10,12 @@ include/mctc-lib/mctc_io_convert.mod
 include/mctc-lib/mctc_io_filetype.mod
 include/mctc-lib/mctc_io_math.mod
 include/mctc-lib/mctc_io_read.mod
+include/mctc-lib/mctc_io_read_aims.mod
 include/mctc-lib/mctc_io_read_ctfile.mod
 include/mctc-lib/mctc_io_read_gaussian.mod
 include/mctc-lib/mctc_io_read_genformat.mod
 include/mctc-lib/mctc_io_read_pdb.mod
+include/mctc-lib/mctc_io_read_qchem.mod
 include/mctc-lib/mctc_io_read_qcschema.mod
 include/mctc-lib/mctc_io_read_turbomole.mod
 include/mctc-lib/mctc_io_read_vasp.mod
@@ -24,10 +26,12 @@ include/mctc-lib/mctc_io_structure_info.mod
 include/mctc-lib/mctc_io_symbols.mod
 include/mctc-lib/mctc_io_utils.mod
 include/mctc-lib/mctc_io_write.mod
+include/mctc-lib/mctc_io_write_aims.mod
 include/mctc-lib/mctc_io_write_ctfile.mod
 include/mctc-lib/mctc_io_write_gaussian.mod
 include/mctc-lib/mctc_io_write_genformat.mod
 include/mctc-lib/mctc_io_write_pdb.mod
+include/mctc-lib/mctc_io_write_qchem.mod
 include/mctc-lib/mctc_io_write_qcschema.mod
 include/mctc-lib/mctc_io_write_turbomole.mod
 include/mctc-lib/mctc_io_write_vasp.mod
@@ -40,5 +44,5 @@ lib/cmake/mctc-lib/mctc-lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.2.4
+lib/libmctc-lib.so.0.2.5
 libdata/pkgconfig/mctc-lib.pc
