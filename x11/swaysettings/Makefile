@@ -1,5 +1,5 @@
 PORTNAME=	swaysettings
-PORTVERSION=	s20211118
+PORTVERSION=	s20220227
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwaySettings
-GH_TAGNAME=	13212aa
+GH_TAGNAME=	709b482
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 
 post-patch:
