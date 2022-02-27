@@ -29,6 +29,7 @@ include/oskar/beam_pattern/oskar_beam_pattern_create.h
 include/oskar/beam_pattern/oskar_beam_pattern_free.h
 include/oskar/beam_pattern/oskar_beam_pattern_reset_cache.h
 include/oskar/beam_pattern/oskar_beam_pattern_run.h
+include/oskar/beam_utils/oskar_beam_utils.h
 include/oskar/binary/oskar_binary.h
 include/oskar/binary/oskar_binary_create.h
 include/oskar/binary/oskar_binary_data_types.h
@@ -445,10 +446,10 @@ include/oskar/vis/oskar_vis_header_read.h
 include/oskar/vis/oskar_vis_header_write.h
 include/oskar/vis/oskar_vis_header_write_ms.h
 lib/liboskar.so
-lib/liboskar.so.2.8.0
+lib/liboskar.so.2.8.2
 lib/liboskar_apps.so
-lib/liboskar_apps.so.2.8.0
+lib/liboskar_apps.so.2.8.2
 lib/liboskar_binary.so
 lib/liboskar_binary.so.2.1
 lib/liboskar_settings.so
-lib/liboskar_settings.so.2.8.0
+lib/liboskar_settings.so.2.8.2
