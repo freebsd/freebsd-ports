@@ -1,7 +1,6 @@
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.0-244 # 3.12.0 is broken: https://github.com/QMCPACK/qmcpack/issues/3698
-DISTVERSIONSUFFIX=	-ga6ecd880c
+DISTVERSION=	3.13.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +30,7 @@ CMAKE_OFF=	BUILD_UNIT_TESTS
 CMAKE_ARGS=	-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_TESTING_ON=	BUILD_UNIT_TESTS # at least 3 testcases are known to fail
 
-PROGS=		convert4qmc convertpw4qmc qmc-check-affinity qmc-extract-eshdf-kvectors qmc-get-supercell qmcfinitesize qmcpack qmcpack.settings
+PROGS=		convert4qmc convertpw4qmc gpaw4qmcpack.py ppconvert qmc-check-affinity qmc-extract-eshdf-kvectors qmc-get-supercell qmcfinitesize qmcpack qmcpack.settings
 PLIST_FILES=	${PROGS:C/^/bin\//}
 
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
