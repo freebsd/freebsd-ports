@@ -1,5 +1,5 @@
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.27
+PORTVERSION=	2.1.28
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-sasl/releases/download/${PORTNAME}-${PORTVERSION}/
 

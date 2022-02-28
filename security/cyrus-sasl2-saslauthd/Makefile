@@ -1,5 +1,4 @@
 PKGNAMESUFFIX=	-saslauthd
-PORTREVISION=	2
 
 COMMENT=	SASL authentication server for cyrus-sasl2
 
