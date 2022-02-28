@@ -2,6 +2,7 @@
 
 PORTNAME=	zsh-completions
 PORTVERSION=	0.33.0
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,6 +18,9 @@ NO_BUILD=	yes
 
 GH_ACCOUNT=	zsh-users
 USE_GITHUB=	yes
+
+post-patch:
+	@${RM} ${WRKSRC}/src/_tarsnap
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
