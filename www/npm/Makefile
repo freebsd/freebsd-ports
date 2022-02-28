@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	npm
-PORTVERSION=	8.3.2
+PORTVERSION=	8.4.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
