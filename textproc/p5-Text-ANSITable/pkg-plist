@@ -41,6 +41,7 @@ bin/ansitable-list-style-sets
 %%SITE_PERL%%/ColorTheme/Text/ANSITable/Standard/NoGradationWhiteBG.pm
 %%SITE_PERL%%/Text/ANSITable.pm
 %%SITE_PERL%%/Text/ANSITable/StyleSet/AltRow.pm
+%%SITE_PERL%%/auto/share/dist/Text-ANSITable/examples/demo1.pl
 %%PERL5_MAN1%%/ansitable-list-border-styles.1.gz
 %%PERL5_MAN1%%/ansitable-list-color-themes.1.gz
 %%PERL5_MAN1%%/ansitable-list-style-sets.1.gz

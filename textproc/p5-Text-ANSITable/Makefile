@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-ANSITable
-PORTVERSION=	0.607
+PORTVERSION=	0.608
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,8 @@ COMMENT=	Create nice formatted tables using extended ASCII and ANSI colors
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-BorderStyles-Standard>=0:devel/p5-BorderStyles-Standard \
 		p5-Color-RGB-Util>=0.600:devel/p5-Color-RGB-Util \
 		p5-ColorThemeBase-Static>=0.006:devel/p5-ColorThemeBase-Static \
