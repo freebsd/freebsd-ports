@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	train
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.6
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
