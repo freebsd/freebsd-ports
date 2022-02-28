@@ -1,8 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	msktutil
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -12,7 +11,6 @@ COMMENT=	Utility to manage Active Directory interoperability
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libudns.so:dns/udns
 RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 USES=		autoreconf ssl
@@ -38,6 +36,7 @@ CONFIGURE_ARGS+=		--with-krb5-config=${KRB5CONFIG}
 PLIST_FILES=	man/man1/msktutil.1.gz sbin/msktutil
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/bin/msktutil ${STAGEDIR}${PREFIX}/sbin/msktutil
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/msktutil
 
 .include <bsd.port.mk>
