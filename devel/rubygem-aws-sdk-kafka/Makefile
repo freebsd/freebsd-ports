@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-kafka
-PORTVERSION=	1.46.0
+PORTVERSION=	1.47.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
