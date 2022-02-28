@@ -16907,3 +16907,8 @@ databases/zabbix3-libzbxpgsql||2022-02-27|Has expired: Upstream EOL reached on 2
 lang/bf2c||2022-02-28|Has expired: No development since 2013
 lang/nbc||2022-02-28|Has expired: No releases since 2011, for previous generation LEGO Mindstorms
 textproc/gutenmark||2022-02-28|Has expired: No releases since 2011
+net-mgmt/zabbix3-proxy||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
+net-mgmt/zabbix3-java||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
+net-mgmt/zabbix3-frontend||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
+net-mgmt/zabbix3-agent||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
+net-mgmt/zabbix3-server||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
