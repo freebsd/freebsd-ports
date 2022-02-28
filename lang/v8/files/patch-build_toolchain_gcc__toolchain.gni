@@ -1,4 +1,4 @@
---- build/toolchain/gcc_toolchain.gni.orig	2021-11-15 18:52:18 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2022-01-23 11:59:03 UTC
 +++ build/toolchain/gcc_toolchain.gni
 @@ -49,6 +49,11 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -731,13 +736,23 @@ template("gcc_toolchain") {
+@@ -738,13 +743,23 @@ template("gcc_toolchain") {
  # use_gold too.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
