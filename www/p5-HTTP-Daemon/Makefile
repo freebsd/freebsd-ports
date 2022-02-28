@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
 
 PORTNAME=	HTTP-Daemon
-PORTVERSION=	6.12
+PORTVERSION=	6.13
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
