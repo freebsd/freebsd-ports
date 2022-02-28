@@ -1,0 +1,17 @@
+--- requirements_dev.txt.orig	2022-01-25 22:10:16 UTC
++++ requirements_dev.txt
+@@ -1,14 +1,8 @@
+ numpy >= 1.16.5
+ 
+-# ------------------------------------------------
+-# ** MUST sync with misc/requirements_wheel.txt **
+-# ------------------------------------------------
+-# Note 11/23/2021: the current version of the AWS sdk does not work with cmake 3.22
+-cmake >= 3.21, < 3.22
+ cython >= 0.27
+ pybind11 >= 2.6.2
+ setuptools >= 18.0
+ setuptools_scm >= 1.5.4
+-wheel >= 0.30
+ contextvars ;python_version<"3.7"
+ dataclasses ;python_version<"3.7"
