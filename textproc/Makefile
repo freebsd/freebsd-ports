@@ -1368,6 +1368,7 @@
     SUBDIR += py-mkdocs-material
     SUBDIR += py-mkdocs-material-extensions
     SUBDIR += py-mkdocs-nature
+    SUBDIR += py-mkdocstrings
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-myst-parser
     SUBDIR += py-nbsphinx

@@ -1,0 +1,15 @@
+This Python package is an extension for MkDocs and its main purpose is the
+automation of documentation from sources.
+
+Features:
+
+* Language-agnostic
+* Multiple themes support
+* Cross-references across pages
+* Cross-references across sites
+* Inline injection in Markdown
+* Global and local configuration
+* Watch source code directories
+* Reasonable defaults
+
+WWW: https://github.com/mkdocstrings/mkdocstrings
