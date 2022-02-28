@@ -2,13 +2,13 @@
 %%SITE_ARCH%%/Object/Pad/ExtensionBuilder.pm
 %%SITE_ARCH%%/Object/Pad/ExtensionBuilder_data.pm
 %%SITE_ARCH%%/Object/Pad/MOP/Class.pm
+%%SITE_ARCH%%/Object/Pad/MOP/Field.pm
+%%SITE_ARCH%%/Object/Pad/MOP/FieldAttr.pm
 %%SITE_ARCH%%/Object/Pad/MOP/Method.pm
-%%SITE_ARCH%%/Object/Pad/MOP/Slot.pm
-%%SITE_ARCH%%/Object/Pad/MOP/SlotAttr.pm
 %%SITE_ARCH%%/auto/Object/Pad/Pad.so
 %%PERL5_MAN3%%/Object::Pad.3.gz
 %%PERL5_MAN3%%/Object::Pad::ExtensionBuilder.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::Class.3.gz
+%%PERL5_MAN3%%/Object::Pad::MOP::Field.3.gz
+%%PERL5_MAN3%%/Object::Pad::MOP::FieldAttr.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::Method.3.gz
-%%PERL5_MAN3%%/Object::Pad::MOP::Slot.3.gz
-%%PERL5_MAN3%%/Object::Pad::MOP::SlotAttr.3.gz
