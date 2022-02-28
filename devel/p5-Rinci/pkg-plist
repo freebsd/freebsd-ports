@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Rinci.pod
 %%SITE_PERL%%/Rinci/FAQ.pod
 %%SITE_PERL%%/Rinci/Transaction.pod
-%%SITE_PERL%%/Rinci/Undo.pod
 %%SITE_PERL%%/Rinci/Upgrading.pod
 %%SITE_PERL%%/Rinci/function.pod
 %%SITE_PERL%%/Rinci/package.pod
@@ -11,7 +10,6 @@
 %%PERL5_MAN3%%/Rinci.3.gz
 %%PERL5_MAN3%%/Rinci::FAQ.3.gz
 %%PERL5_MAN3%%/Rinci::Transaction.3.gz
-%%PERL5_MAN3%%/Rinci::Undo.3.gz
 %%PERL5_MAN3%%/Rinci::Upgrading.3.gz
 %%PERL5_MAN3%%/Rinci::function.3.gz
 %%PERL5_MAN3%%/Rinci::package.3.gz
