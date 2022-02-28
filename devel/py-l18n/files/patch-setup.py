@@ -1,11 +1,20 @@
---- setup.py.orig	2020-10-31 03:58:31 UTC
+--- setup.py.orig	2021-11-12 09:24:24 UTC
 +++ setup.py
-@@ -69,7 +69,7 @@ class PredistBuild(object):
-         log.info('translation files built successfully')
+@@ -30,17 +30,8 @@ DEV_STATUS = {'pre': '2 - Pre-Alpha',
+ CMD_PACKAGES = {
+     'sdist': 'setuptools.command',
+     'bdist': 'distutils.command',
+-    'bdist_wheel': 'wheel',
+     'bdist_egg': 'setuptools.command',
+-    'bdist_rpm': 'setuptools.command',
+ }
+-
+-try:
+-    from setuptools.command import bdist_wininst
+-    CMD_PACKAGES['bdist_wininst'] = 'setuptools.command'
+-except ImportError:
+-    # python > 3.10
+-    pass
  
- cmd_classes = {}
--for cmd in ('sdist', 'bdist', 'bdist_egg', 'bdist_rpm', 'bdist_wininst'):
-+for cmd in ('sdist', 'bdist', 'bdist_egg'):
-     try:
-         cmd_module = getattr(__import__('setuptools.command', fromlist=[cmd]),
-                              cmd)
+ 
+ class PredistBuild(object):
