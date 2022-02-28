@@ -5,3 +5,4 @@ It integrates with popular Python web frameworks as well as libraries like
 SQLAlchemy to keep your code as DRY (Don't Repeat Yourself) as possible.
 
 WWW: http://spyne.io/
+WWW: https://github.com/arskom/spyne
