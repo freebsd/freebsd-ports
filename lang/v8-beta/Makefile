@@ -1,8 +1,8 @@
 # We follow the beta channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.8-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.9-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	9.8.177.7
+PORTVERSION=	9.9.115.5
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 PKGNAMESUFFIX=	-beta
@@ -44,13 +44,13 @@ CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8
 
-BUILD_REV=	9cfc74504f0c5093fe6799e70f15bded2423b5b4
-BUILDTOOLS_REV=	075dd7e22837a69189003e4fa84499acf63188cf
-CLANG_REV=	336fcfd099995c128bc93e97b8263cc6fc891cc8
+BUILD_REV=	f3be6e847f004923466a350274aae3fbf048c19c
+BUILDTOOLS_REV=	f78b4b9f33bd8ef9944d5ce643daff1c31880189
+CLANG_REV=	df50898d39a35c2467fa89f8d7a6eedac1fd6aa4
 COMMON_REV=	7f36dbc19d31e2aad895c60261ca8f726442bfbb
-GOOGLETEST_REV=	4c5650f68866e3c2e60361d5c4c95c6f335fb64b
-ICU_REV=	edf883ad2db9c723b058a6a17a146d68d6343143
-ZLIB_REV=	efd9399ae01364926be2a38946127fdf463480db
+GOOGLETEST_REV=	c9643a2e45ed0cb18b8409c62994be7c6e66dc1b
+ICU_REV=	b9f6d0a5c5375dc4643f35360d257dba37c1d3e1
+ZLIB_REV=	fc5cfd78a357d5bb7735a58f383634faaafe706a
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
