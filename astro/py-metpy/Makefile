@@ -24,16 +24,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.0:math/py-matplotlib@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.3.0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray>=0.14.1:devel/py-xarray@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.0.0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
 
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3.0:devel/py-importlib-resources@${PY_FLAVOR}
