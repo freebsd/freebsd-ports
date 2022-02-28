@@ -1,9 +1,7 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
 
 PORTNAME=	pygsl
-PORTVERSION=	2.3.0
-DISTVERSIONSUFFIX=	.1
-PORTREVISION=	8
+PORTVERSION=	2.3.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
