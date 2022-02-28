@@ -17,6 +17,8 @@ USES=		cpe gmake perl5 shebangfix
 SHEBANG_FILES=	check-module
 CPE_VENDOR=	gnu
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
 PORTDOCS=	gnulib.html
