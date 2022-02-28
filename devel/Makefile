@@ -5352,6 +5352,7 @@
     SUBDIR += py-types-xxhash
     SUBDIR += py-typing-extensions
     SUBDIR += py-typing-inspect
+    SUBDIR += py-tzdata
     SUBDIR += py-tzlocal
     SUBDIR += py-u-msgpack-python
     SUBDIR += py-ua_parser
