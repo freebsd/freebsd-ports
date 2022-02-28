@@ -1,5 +1,5 @@
 PORTNAME=	mkgmap
-PORTVERSION=	r4896
+PORTVERSION=	r4897
 CATEGORIES=	astro converters java
 MASTER_SITES=	https://www.mkgmap.org.uk/download/
 
