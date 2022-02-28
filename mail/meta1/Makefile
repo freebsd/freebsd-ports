@@ -41,19 +41,17 @@ USERS=		meta1s meta1q meta1c meta1m meta1
 META1CONFDIR?=	${PREFIX}/etc/meta1
 NOLOGIN_CMD?=	/usr/sbin/nologin
 
-OPTIONS_DEFINE=	IPV6 BDB PMILTER DKIM MSP SASL2 SASL2AUTHD TLS DOCS
+OPTIONS_DEFINE=	IPV6 PMILTER DKIM MSP SASL2 SASL2AUTHD TLS DOCS
 OPTIONS_DEFAULT=	PMILTER DKIM SASL2 TLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 
-BDB_DESC=	External Berkeley DB support
 PMILTER_DESC=	Adds policy milter support
 DKIM_DESC=	Enable DKIM signing support
 MSP_DESC=	Enable mail submision program
 SASL2_DESC=	Adds SASL2 support
 SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
 
-BDB_USES=		bdb
 PMILTER_USES=		ssl
 PMILTER_CONFIGURE_ENABLE=	pmilter
 DKIM_CONFIGURE_ENABLE=	DKIM
@@ -72,18 +70,6 @@ TLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 .if ${PORT_OPTIONS:MIPV6}
 MAKE_ENV+=	MTA_NETINET6=1
-.endif
-
-.if ${PORT_OPTIONS:MBDB}
-BROKEN=		port version of Berkeley DB is not compatible
-INVALID_BDB_VER=	48 5 6
-CONFIGURE_ARGS+=	--disable-included-bdb
-CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR}
-CONFIGURE_ARGS+=	--with-bdb-libdir=${BDB_LIB_DIR}
-CONFIGURE_ARGS+=	--with-bdb-lib=${BDB_LIB_NAME}
-PLIST_SUB+=	WITH_BDBINT="@comment "
-.else
-PLIST_SUB+=	WITH_BDBINT=""
 .endif
 
 .if ${PORT_OPTIONS:MMSP}
