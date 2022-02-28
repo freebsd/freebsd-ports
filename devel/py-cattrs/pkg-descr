@@ -1,0 +1,23 @@
+cattrs is an open source Python library for structuring and unstructuring data.
+cattrs works best with attrs classes, dataclasses and the usual Python
+collections, but other kinds of classes are supported by manually registering
+converters.
+
+Python has a rich set of powerful, easy to use, built-in data types like
+dictionaries, lists and tuples. These data types are also the lingua franca of
+most data serialization libraries, for formats like json, msgpack, yaml or toml.
+
+Data types like this, and mappings like dict s in particular, represent
+unstructured data. Your data is, in all likelihood, structured: not all
+combinations of field names or values are valid inputs to your programs. In
+Python, structured data is better represented with classes and enumerations.
+attrs is an excellent library for declaratively describing the structure of your
+data, and validating it.
+
+When you're handed unstructured data (by your network, file system,
+database...), cattrs helps to convert this data into structured data. When you
+have to convert your structured data into data types other libraries can handle,
+cattrs turns your classes and enumerations into dictionaries, integers and
+strings.
+
+WWW: https://github.com/python-attrs/cattrs
