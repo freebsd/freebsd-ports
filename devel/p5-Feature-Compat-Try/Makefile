@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Feature-Compat-Try
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Syntax-Keyword-Try>=0.22:devel/p5-Syntax-Keyword-Try
+RUN_DEPENDS=	p5-Syntax-Keyword-Try>=0.27:devel/p5-Syntax-Keyword-Try
 
 USES=		perl5
 USE_PERL5=	modbuild
