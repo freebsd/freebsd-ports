@@ -19,6 +19,8 @@ WRKSRC=	${WRKDIR}/${OCTSRC}/src
 
 LIB_DEPENDS+=	libcfitsio.so:astro/cfitsio
 
+NO_ARCH=	yes
+
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
