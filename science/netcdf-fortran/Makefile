@@ -28,11 +28,4 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-.include <bsd.port.options.mk>
-
-# XXX: Drop after updating to 4.5.3
-.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
-FCFLAGS+=	-fallow-argument-mismatch
-.endif
-
 .include <bsd.port.mk>
