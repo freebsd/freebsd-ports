@@ -1,0 +1,9 @@
+MkDocs generates anchors for each heading, and they can always be used to link
+to something, either within the same page or by specifying the path of the
+other page.
+
+But with this plugin, you can link to a heading from any other page on the site
+without needing to know the path of either of the pages, just the heading title
+itself.
+
+WWW: https://github.com/mkdocstrings/autorefs

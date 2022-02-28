@@ -1364,6 +1364,7 @@
     SUBDIR += py-misaka
     SUBDIR += py-mistune
     SUBDIR += py-mkdocs
+    SUBDIR += py-mkdocs-autorefs
     SUBDIR += py-mkdocs-material
     SUBDIR += py-mkdocs-material-extensions
     SUBDIR += py-mkdocs-nature
