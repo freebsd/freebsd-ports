@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	distributed
-PORTVERSION=	2021.12.0
+PORTVERSION=	2022.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.6:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask>=${PORTVERSION}:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.6.0:devel/py-msgpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.0.2:devel/py-sortedcontainers@${PY_FLAVOR} \
