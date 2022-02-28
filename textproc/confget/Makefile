@@ -1,7 +1,7 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
 
 PORTNAME=	confget
-PORTVERSION=	3.0.2
+PORTVERSION=	4.1.0
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/
@@ -23,7 +23,7 @@ PORTEXAMPLES=	t1.ini t2.ini
 OPTIONS_DEFINE=	EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE
 
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE_MAKE_ENV_OFF=	PCRE_CFLAGS="" PCRE_LIBS=""
 
 do-install:
