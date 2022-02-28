@@ -8,4 +8,4 @@ technique for implementing:
  * stack overflow handlers,
  * distributed shared memory,
 
-WWW: http://www.gnu.org/software/libsigsegv/
+WWW: https://www.gnu.org/software/libsigsegv/
