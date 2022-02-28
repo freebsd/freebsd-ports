@@ -1,7 +1,7 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
 
 PORTNAME=	tdiary
-DISTVERSION=	5.2.0
+DISTVERSION=	5.2.1
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -14,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bundler>=2.0.2:sysutils/rubygem-bundler \
 		rubygem-emot>=0.0.4:textproc/rubygem-emot \
-		rubygem-fastimage>=2.1.7:graphics/rubygem-fastimage \
+		rubygem-fastimage>=2.2.6:graphics/rubygem-fastimage \
 		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
 		rubygem-mail>=2.7.1:mail/rubygem-mail \
 		rubygem-rack>=2.2.3,3:www/rubygem-rack \
-		rubygem-rake>=12.3.3:devel/rubygem-rake
+		rubygem-rake>=13.0.6:devel/rubygem-rake
 
 USES=		cpe shebangfix
 USE_RUBY=	yes
