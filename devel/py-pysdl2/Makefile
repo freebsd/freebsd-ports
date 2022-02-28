@@ -1,5 +1,5 @@
 PORTNAME=	pysdl2
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,14 +17,5 @@ USE_PYTHON=	autoplist concurrent distutils
 USE_SDL=	gfx2 image2 mixer2 sdl2 ttf2
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${RM} ${WRKSRC}/doc/html/.buildinfo
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
