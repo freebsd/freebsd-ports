@@ -14,3 +14,4 @@ C libraries, and for fast C modules that speed up the execution of
 Python code.
 
 WWW: https://cython.org/
+WWW: https://github.com/cython/cython
