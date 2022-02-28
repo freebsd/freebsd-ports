@@ -1,5 +1,3 @@
-PORTREVISION=	2
-
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 USES=		cpe libtool:keepla pathfix perl5
@@ -60,6 +58,6 @@ PLAIN_CONFIGURE_ENABLE=	plain
 SCRAM_DESC=		SCRAM authentication
 SCRAM_CONFIGURE_ENABLE=	scram
 
-DOCS=	AUTHORS COPYING ChangeLog INSTALL INSTALL.TXT README
+DOCS=	AUTHORS COPYING ChangeLog INSTALL.TXT README
 
 .include "${.CURDIR}/../../security/cyrus-sasl2/Makefile.common"
