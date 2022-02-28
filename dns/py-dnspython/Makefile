@@ -2,6 +2,7 @@
 
 PORTNAME=	dnspython
 PORTVERSION=	1.16.0
+PORTEPOCH=	1
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,27 +13,20 @@ COMMENT=	DNS toolkit for Python
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.7+ zip
+USES=		python:2.7-3.7 zip
 USE_PYTHON=	autoplist concurrent cython distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	EXAMPLES PYCRYPTODOME
-PYCRYPTODOME_DESC=	Enable pycryptodome (part of dnssec needs it)
+PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py xfr.py \
+		zonediff.py
+
+OPTIONS_DEFINE=			EXAMPLES PYCRYPTODOME
+PYCRYPTODOME_DESC=		Enable pycryptodome (part of dnssec needs it)
 PYCRYPTODOME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR}
 
-PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py \
-		xfr.py zonediff.py
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_MAJOR_VER} == 3
-PORTVERSION=	2.1.0
-.endif
-
 post-install-EXAMPLES-on:
-# examples
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
