@@ -19,9 +19,9 @@ man/man8/monkeysphere-host.8.gz
 sbin/monkeysphere-authentication
 sbin/monkeysphere-host
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/examples/crontab
 %%PORTDOCS%%%%DOCSDIR%%/examples/make-x509-certreqs
 %%PORTDOCS%%%%DOCSDIR%%/examples/monkeysphere-monitor-keys
-%%PORTDOCS%%%%DOCSDIR%%/examples/crontab
 %%PORTDOCS%%%%DOCSDIR%%/examples/ssh_config
 %%PORTDOCS%%%%DOCSDIR%%/examples/sshd_config
 %%DATADIR%%/VERSION
