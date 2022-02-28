@@ -2,6 +2,7 @@
 
 PORTNAME=	cucumber-wire
 PORTVERSION=	6.2.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Wire protocol plugin for Cucumber
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-cucumber-core>=10.1.0<11:devel/rubygem-cucumber-core \
-		rubygem-cucumber-cucumber-expressions>=14.0.0<15:devel/rubygem-cucumber-cucumber-expressions
+		rubygem-cucumber-cucumber-expressions14>=14.0.0<15:devel/rubygem-cucumber-cucumber-expressions14
 
 USES=		gem
 USE_RUBY=	yes
