@@ -1,0 +1,15 @@
+Deprecated 2-parameter SetTotalBytesLimit() has be removed since protobuf 3.18.0.
+
+Reference:	https://github.com/protocolbuffers/protobuf/commit/cda795437d00a15f375d3d5e2659adac715459c6
+
+--- src/Socket_p.h.orig	2021-10-12 08:14:23 UTC
++++ src/Socket_p.h
+@@ -548,7 +548,7 @@ namespace Arcus
+ 
+         google::protobuf::io::ArrayInputStream array(wire_message->data, wire_message->size);
+         google::protobuf::io::CodedInputStream stream(&array);
+-        stream.SetTotalBytesLimit(message_size_maximum, message_size_warning);
++        stream.SetTotalBytesLimit(message_size_maximum);
+         if(!message->ParseFromCodedStream(&stream))
+         {
+             error(ErrorCode::ParseFailedError, "Failed to parse message:" + std::string(wire_message->data));
