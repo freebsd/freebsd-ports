@@ -1,0 +1,15 @@
+Deprecated 2-parameter SetTotalBytesLimit() has be removed since protobuf 3.18.0.
+
+Reference:	https://github.com/protocolbuffers/protobuf/commit/cda795437d00a15f375d3d5e2659adac715459c6
+
+--- rapid/plugin/x/ngs/src/protocol_decoder.cc.orig	2021-11-29 20:09:43 UTC
++++ rapid/plugin/x/ngs/src/protocol_decoder.cc
+@@ -123,7 +123,7 @@ Error_code Message_decoder::parse(Request &request)
+     google::protobuf::io::CodedInputStream stream(reinterpret_cast<const uint8_t*>(request.buffer()),
+                                                   static_cast<int>(request.buffer_size()));
+     // variable 'mysqlx_max_allowed_packet' has been checked when buffer was filling by data
+-    stream.SetTotalBytesLimit(static_cast<int>(request.buffer_size()), -1 /*no warnings*/);
++    stream.SetTotalBytesLimit(static_cast<int>(request.buffer_size()));
+     // Protobuf limits the number of nested objects when decoding messages
+     // lets set the value in explicit way (to ensure that is set accordingly with
+     // out stack size)
