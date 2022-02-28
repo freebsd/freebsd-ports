@@ -1,7 +1,7 @@
 # Created by: Peter Schmiedeskamp <pschmied@qwest.net>
 
 PORTNAME=	libexif
-PORTVERSION=	0.6.23
+PORTVERSION=	0.6.24
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libexif/libexif/releases/download/v${PORTVERSION}/
 
@@ -11,7 +11,7 @@ COMMENT=	Library to read digital camera file meta-data
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gmake libtool localbase pathfix pkgconfig tar:xz
+USES=		cpe gmake libtool localbase pathfix pkgconfig tar:bzip2
 
 CONFIGURE_ARGS=	--disable-docs
 GNU_CONFIGURE=	yes
