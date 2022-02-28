@@ -16877,6 +16877,9 @@ x11/py-qt5-opengl|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
 x11-fonts/sourcesanspro-ttf|x11-fonts/source-sans-ttf|2022-01-28|Rename to match upstream naming
 audio/nekobi-lv2|audio/dpf-plugins-lv2|2022-01-28|Nekobi is part of dpf-plugins
 audio/kars-lv2|audio/dpf-plugins-lv2|2022-01-28|Kars is part of dpf-plugins
+converters/p5-JSON1|converters/p5-JSON|2022-01-29|Remove obsoleted port. Use converters/p5-JSON instead
+devel/rubygem-bootsnap19|devel/rubygem-bootsnap|2022-01-29|Remove obsoleted port. Use devel/rubygem-bootsnap instead
+textproc/rubygem-rouge326|textproc/rubygem-rouge|2022-01-29|Remove obsoleted port. Use textproc/rubygem-rouge instead
 lang/scala-docs||2022-01-31|New 3.x versions dropped archived documentation
 x11/gnome3|x11/gnome|2022-01-31|GNOME has moved past version 3, including the Ports version
 security/krb5-117|security/krb5|2022-02-01|Has expired: EOL one year after the release of krb5 1.19
