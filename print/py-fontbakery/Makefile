@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	fontbakery
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beziers>=0:graphics/py-beziers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0:textproc/py-cmarkgfm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}collidoscope>=0:print/py-collidoscope@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}collidoscope>=0.4.1:print/py-collidoscope@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defcon>=0:x11-fonts/py-defcon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dehinter>=3.1.0:print/py-dehinter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}font-v>=0:print/py-font-v@${PY_FLAVOR} \
