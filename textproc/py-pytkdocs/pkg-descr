@@ -1,0 +1,4 @@
+This Python package is used to load Python objects documentation.  It accepts
+JSON on standard input and writes JSON on standard output.
+
+WWW: https://github.com/mkdocstrings/pytkdocs
