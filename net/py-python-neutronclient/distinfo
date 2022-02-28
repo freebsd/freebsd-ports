@@ -1,3 +1,3 @@
-TIMESTAMP = 1599729137
-SHA256 (python-neutronclient-7.2.1.tar.gz) = d5f23eeb5fc418c9eeb7761a4decd399f4f33b70cee346b88fb2e5df2088ff19
-SIZE (python-neutronclient-7.2.1.tar.gz) = 294034
+TIMESTAMP = 1643998838
+SHA256 (python-neutronclient-7.7.0.tar.gz) = 9190174b1b848ff9d7fff1a131f76c045dc90f59dc03448ae27c4a89f925fffc
+SIZE (python-neutronclient-7.7.0.tar.gz) = 304440
