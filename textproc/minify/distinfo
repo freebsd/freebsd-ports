@@ -1,6 +1,6 @@
-TIMESTAMP = 1643133683
-SHA256 (tdewolff-minify-v2.9.29_GH0.tar.gz) = 17b072c5f95e027550f181bddbd6729de9945b1b086954845d9f42343d6bb703
-SIZE (tdewolff-minify-v2.9.29_GH0.tar.gz) = 4888155
+TIMESTAMP = 1643971004
+SHA256 (tdewolff-minify-v2.10.0_GH0.tar.gz) = a26c531d5071c6bd5d2300b4906fd2c7e227a19c23549219ccfae2c20114c60e
+SIZE (tdewolff-minify-v2.10.0_GH0.tar.gz) = 5202095
 SHA256 (djherbis-atime-v1.1.0_GH0.tar.gz) = 30c7b31f47371a8f5af3d573d096200218cfcb39234306ce8ef999c7ba1fda2a
 SIZE (djherbis-atime-v1.1.0_GH0.tar.gz) = 3140
 SHA256 (dustin-go-humanize-v1.0.0_GH0.tar.gz) = e4540bd50ac855143b4f2e509313079c50cf5d8774f09cc10dbca5ae9803d8ba

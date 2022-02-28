@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	minify
-PORTVERSION=	2.9.29
+PORTVERSION=	2.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc www
 
