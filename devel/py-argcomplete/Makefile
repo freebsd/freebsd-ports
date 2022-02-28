@@ -1,7 +1,7 @@
 # Created by: Tony Narlock <tony@git-pull.com>
 
 PORTNAME=	argcomplete
-PORTVERSION=	1.12.3
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
