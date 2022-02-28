@@ -1,0 +1,357 @@
+--- nose/config.py.orig	2015-04-04 08:52:52 UTC
++++ nose/config.py
+@@ -65,7 +65,7 @@ class ConfiguredDefaultsOptionParser(object):
+             cfg = ConfigParser.RawConfigParser()
+             try:
+                 cfg.read(filename)
+-            except ConfigParser.Error, exc:
++            except ConfigParser.Error as exc:
+                 raise ConfigError("Error reading config file %r: %s" %
+                                   (filename, str(exc)))
+             config.extend(self._configTuples(cfg, filename))
+@@ -79,7 +79,7 @@ class ConfiguredDefaultsOptionParser(object):
+             filename = '<???>'
+         try:
+             cfg.readfp(fh)
+-        except ConfigParser.Error, exc:
++        except ConfigParser.Error as exc:
+             raise ConfigError("Error reading config file %r: %s" %
+                               (filename, str(exc)))
+         return self._configTuples(cfg, filename)
+@@ -113,12 +113,12 @@ class ConfiguredDefaultsOptionParser(object):
+                 continue
+             try:
+                 self._processConfigValue(name, value, values, parser)
+-            except NoSuchOptionError, exc:
++            except NoSuchOptionError as exc:
+                 self._file_error(
+                     "Error reading config file %r: "
+                     "no such option %r" % (filename, exc.name),
+                     name=name, filename=filename)
+-            except optparse.OptionValueError, exc:
++            except optparse.OptionValueError as exc:
+                 msg = str(exc).replace('--' + name, repr(name), 1)
+                 self._file_error("Error reading config file %r: "
+                                  "%s" % (filename, msg),
+@@ -128,12 +128,12 @@ class ConfiguredDefaultsOptionParser(object):
+         values = self._parser.get_default_values()
+         try:
+             config = self._readConfiguration(config_files)
+-        except ConfigError, exc:
++        except ConfigError as exc:
+             self._error(str(exc))
+         else:
+             try:
+                 self._applyConfigurationToValues(self._parser, config, values)
+-            except ConfigError, exc:
++            except ConfigError as exc:
+                 self._error(str(exc))
+         return self._parser.parse_args(args, values)
+ 
+--- nose/core.py.orig	2015-04-04 08:52:52 UTC
++++ nose/core.py
+@@ -150,7 +150,7 @@ class TestProgram(unittest.TestProgram):
+         if self.config.options.version:
+             from nose import __version__
+             sys.stdout = sys.__stdout__
+-            print "%s version %s" % (os.path.basename(sys.argv[0]), __version__)
++            print("%s version %s" % (os.path.basename(sys.argv[0]), __version__))
+             sys.exit(0)
+ 
+         if self.config.options.showPlugins:
+@@ -224,25 +224,25 @@ class TestProgram(unittest.TestProgram):
+         v = self.config.verbosity
+         self.config.plugins.sort()
+         for p in self.config.plugins:
+-            print "Plugin %s" % p.name
++            print("Plugin %s" % p.name)
+             if v >= 2:
+-                print "  score: %s" % p.score
+-                print '\n'.join(textwrap.wrap(p.help().strip(),
++                print("  score: %s" % p.score)
++                print('\n'.join(textwrap.wrap(p.help().strip(),
+                                               initial_indent='  ',
+-                                              subsequent_indent='  '))
++                                              subsequent_indent='  ')))
+                 if v >= 3:
+                     parser = DummyParser()
+                     p.addOptions(parser)
+                     if len(parser.options):
+                         print
+-                        print "  Options:"
++                        print("  Options:")
+                         for opts, help in parser.options:
+-                            print '  %s' % (', '.join(opts))
++                            print('  %s' % (', '.join(opts)))
+                             if help:
+-                                print '\n'.join(
++                                print('\n'.join(
+                                     textwrap.wrap(help.strip(),
+                                                   initial_indent='    ',
+-                                                  subsequent_indent='    '))
++                                                  subsequent_indent='    ')))
+                 print
+ 
+     def usage(cls):
+--- nose/ext/dtcompat.py.orig	2012-09-29 08:18:54 UTC
++++ nose/ext/dtcompat.py
+@@ -341,9 +341,9 @@ class _OutputRedirectingPdb(pdb.Pdb):
+ # [XX] Normalize with respect to os.path.pardir?
+ def _module_relative_path(module, path):
+     if not inspect.ismodule(module):
+-        raise TypeError, 'Expected a module: %r' % module
++        raise TypeError('Expected a module: %r' % module)
+     if path.startswith('/'):
+-        raise ValueError, 'Module-relative files may not have absolute paths'
++        raise ValueError('Module-relative files may not have absolute paths')
+ 
+     # Find the base directory for the path.
+     if hasattr(module, '__file__'):
+@@ -875,7 +875,7 @@ class DocTestFinder:
+         add them to `tests`.
+         """
+         if self._verbose:
+-            print 'Finding tests in %s' % name
++            print('Finding tests in %s' % name)
+ 
+         # If we've already processed this object, then ignore it.
+         if id(obj) in seen:
+@@ -1179,8 +1179,8 @@
+             # keyboard interrupts.)
+             try:
+                 # Don't blink!  This is where the user's code gets run.
+-                exec compile(example.source, filename, "single",
+-                             compileflags, 1) in test.globs
++                exec(compile(example.source, filename, "single",
++                             compileflags, 1), test.globs)
+                 self.debugger.set_continue() # ==== Example Finished ====
+                 exception = None
+             except KeyboardInterrupt:
+@@ -1354,28 +1354,28 @@ class DocTestRunner:
+                 failed.append(x)
+         if verbose:
+             if notests:
+-                print len(notests), "items had no tests:"
++                print(len(notests), "items had no tests:")
+                 notests.sort()
+                 for thing in notests:
+-                    print "   ", thing
++                    print("   ", thing)
+             if passed:
+-                print len(passed), "items passed all tests:"
++                print(len(passed), "items passed all tests:")
+                 passed.sort()
+                 for thing, count in passed:
+-                    print " %3d tests in %s" % (count, thing)
++                    print(" %3d tests in %s" % (count, thing))
+         if failed:
+-            print self.DIVIDER
+-            print len(failed), "items had failures:"
++            print(self.DIVIDER)
++            print(len(failed), "items had failures:")
+             failed.sort()
+             for thing, (f, t) in failed:
+-                print " %3d of %3d in %s" % (f, t, thing)
++                print(" %3d of %3d in %s" % (f, t, thing))
+         if verbose:
+-            print totalt, "tests in", len(self._name2ft), "items."
+-            print totalt - totalf, "passed and", totalf, "failed."
++            print(totalt, "tests in", len(self._name2ft), "items.")
++            print(totalt - totalf, "passed and", totalf, "failed.")
+         if totalf:
+-            print "***Test Failed***", totalf, "failures."
++            print("***Test Failed***", totalf, "failures.")
+         elif verbose:
+-            print "Test passed."
++            print("Test passed.")
+         return totalf, totalt
+ 
+     #/////////////////////////////////////////////////////////////////
+@@ -1385,8 +1385,8 @@ class DocTestRunner:
+         d = self._name2ft
+         for name, (f, t) in other._name2ft.items():
+             if name in d:
+-                print "*** DocTestRunner.merge: '" + name + "' in both" \
+-                    " testers; summing outcomes."
++                print("*** DocTestRunner.merge: '" + name + "' in both" \
++                    " testers; summing outcomes.")
+                 f2, t2 = d[name]
+                 f = f + f2
+                 t = t + t2
+@@ -1875,10 +1875,10 @@ class Tester:
+     def runstring(self, s, name):
+         test = DocTestParser().get_doctest(s, self.globs, name, None, None)
+         if self.verbose:
+-            print "Running string", name
++            print("Running string", name)
+         (f,t) = self.testrunner.run(test)
+         if self.verbose:
+-            print f, "of", t, "examples failed in string", name
++            print(f, "of", t, "examples failed in string", name)
+         return (f,t)
+ 
+     def rundoc(self, object, name=None, module=None):
+@@ -2247,7 +2247,7 @@ def debug_script(src, pm=False, globs=None):
+             try:
+                 execfile(srcfilename, globs, globs)
+             except:
+-                print sys.exc_info()[1]
++                print(sys.exc_info()[1])
+                 pdb.post_mortem(sys.exc_info()[2])
+         else:
+             # Note that %r is vital here.  '%s' instead can, e.g., cause
+--- nose/failure.py.orig	2015-04-04 08:52:52 UTC
++++ nose/failure.py
+@@ -36,7 +36,7 @@ class Failure(unittest.TestCase):
+     def runTest(self):
+         if self.tb is not None:
+             if is_base_exception(self.exc_val):
+-                raise self.exc_val, None, self.tb
+-            raise self.exc_class, self.exc_val, self.tb
++                raise self.exc_val.with_traceback(self.tb)
++            raise self.exc_class(self.exc_val).with_traceback(self.tb)
+         else:
+             raise self.exc_class(self.exc_val)
+--- nose/inspector.py.orig	2012-09-29 08:18:54 UTC
++++ nose/inspector.py
+@@ -38,7 +38,7 @@ def inspect_traceback(tb):
+         try:
+             for tok in tokenize.generate_tokens(src.readline):
+                 exp(*tok)
+-        except tokenize.TokenError, e:
++        except tokenize.TokenError as e:
+             # this can happen if our inspectable region happens to butt up
+             # against the end of a construct like a docstring with the closing
+             # """ on separate line
+--- nose/plugins/base.py.orig	2015-03-18 23:44:59 UTC
++++ nose/plugins/base.py
+@@ -67,7 +67,7 @@ class Plugin(object):
+         try:
+             self.options(parser, env)
+             self.can_configure = True
+-        except OptionConflictError, e:
++        except OptionConflictError as e:
+             warn("Plugin %s has conflicting option string: %s and will "
+                  "be disabled" % (self, e), RuntimeWarning)
+             self.enabled = False
+--- nose/plugins/cover.py.orig	2015-04-04 09:28:20 UTC
++++ nose/plugins/cover.py
+@@ -194,14 +194,14 @@ class Coverage(Plugin):
+             log.debug("Generating HTML coverage report")
+             try:
+                 self.coverInstance.html_report(modules, self.coverHtmlDir)
+-            except coverage.misc.CoverageException, e:
++            except coverage.misc.CoverageException as e:
+                 log.warning("Failed to generate HTML report: %s" % str(e))
+ 
+         if self.coverXmlFile:
+             log.debug("Generating XML coverage report")
+             try:
+                 self.coverInstance.xml_report(modules, self.coverXmlFile)
+-            except coverage.misc.CoverageException, e:
++            except coverage.misc.CoverageException as e:
+                 log.warning("Failed to generate XML report: %s" % str(e))
+ 
+         # make sure we have minimum required coverage
+--- nose/plugins/doctests.py.orig	2015-04-04 08:52:52 UTC
++++ nose/plugins/doctests.py
+@@ -275,7 +275,7 @@ class Doctest(Plugin):
+                 try:
+                     fixture_context = __import__(
+                         fixt_mod, globals(), locals(), ["nop"])
+-                except ImportError, e:
++                except ImportError as e:
+                     log.debug(
+                         "Could not import %s: %s (%s)", fixt_mod, e, sys.path)
+                 log.debug("Fixture module %s resolved to %s",
+@@ -413,7 +413,7 @@ class DocTestCase(doctest.DocTestCase):
+         if value is None:
+             return
+         setattr(builtin_mod, self._result_var,  value)
+-        print repr(value)
++        print(repr(value))
+ 
+     def tearDown(self):
+         super(DocTestCase, self).tearDown()
+@@ -446,7 +446,7 @@ class DocFileCase(doctest.DocFileCase):
+         if value is None:
+             return
+         setattr(builtin_mod, self._result_var, value)
+-        print repr(value)
++        print(repr(value))
+ 
+     def tearDown(self):
+         super(DocFileCase, self).tearDown()
+--- nose/plugins/manager.py.orig	2014-08-13 09:44:58 UTC
++++ nose/plugins/manager.py
+@@ -387,7 +387,7 @@ class EntryPointPluginManager(PluginManager):
+                     plugcls = ep.load()
+                 except KeyboardInterrupt:
+                     raise
+-                except Exception, e:
++                except Exception as e:
+                     # never want a plugin load to kill the test run
+                     # but we can't log here because the logger is not yet
+                     # configured
+--- nose/plugins/multiprocess.py.orig	2014-03-29 10:20:27 UTC
++++ nose/plugins/multiprocess.py
+@@ -478,7 +478,7 @@ class MultiProcessTestRunner(TextTestRunner):
+                                 self.config.multiprocess_timeout-timeprocessing)
+             log.debug("Completed %s tasks (%s remain)", len(completed), len(tasks))
+ 
+-        except (KeyboardInterrupt, SystemExit), e:
++        except (KeyboardInterrupt, SystemExit) as e:
+             log.info('parent received ctrl-c when waiting for test results')
+             thrownError = e
+             #resultQueue.get(False)
+@@ -715,7 +715,7 @@ def __runner(ix, testQueue, resultQueue, currentaddr, 
+             test(result)
+             currentaddr.value = bytes_('')
+             resultQueue.put((ix, test_addr, test.tasks, batch(result)))
+-        except KeyboardInterrupt, e: #TimedOutException:
++        except KeyboardInterrupt as e: #TimedOutException:
+             timeout = isinstance(e, TimedOutException)
+             if timeout:
+                 keyboardCaught.set()
+@@ -810,7 +810,7 @@ class NoSharedFixtureContextSuite(ContextSuite):
+                 #log.debug('running test %s in suite %s', test, self);
+                 try:
+                     test(orig)
+-                except KeyboardInterrupt, e:
++                except KeyboardInterrupt as e:
+                     timeout = isinstance(e, TimedOutException)
+                     if timeout:
+                         msg = 'Timeout when running test %s in suite %s'
+--- nose/plugins/plugintest.py.orig	2015-04-04 08:52:52 UTC
++++ nose/plugins/plugintest.py
+@@ -404,7 +404,7 @@ def run(*arg, **kw):
+             sys.stderr = stderr
+             sys.stdout = stdout
+     out = buffer.getvalue()
+-    print munge_nose_output_for_doctest(out)
++    print(munge_nose_output_for_doctest(out))
+ 
+ 
+ def run_buffered(*arg, **kw):
+--- nose/plugins/testid.py.orig	2015-04-04 08:52:52 UTC
++++ nose/plugins/testid.py
+@@ -198,7 +198,7 @@ class TestId(Plugin):
+                 self.ids, self.tests, self.failed, self.source_names,
+                 self.idfile)
+             fh.close()
+-        except ValueError, e:
++        except ValueError as e:
+             # load() may throw a ValueError when reading the ids file, if it
+             # was generated with a newer version of Python than we are currently
+             # running.
+--- nose/twistedtools.py.orig	2013-04-05 22:25:31 UTC
++++ nose/twistedtools.py
+@@ -166,7 +166,7 @@ def deferred(timeout=None):
+             # Re-raise all exceptions
+             if error is not None:
+                 exc_type, exc_value, tb = error
+-                raise exc_type, exc_value, tb
++                raise exc_type(exc_value).with_traceback(tb)
+         wrapper = make_decorator(func)(wrapper)
+         return wrapper
+     return decorate
