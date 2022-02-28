@@ -19,8 +19,4 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
 GH_TAGNAME=	2aa7937
 
-post-patch:
-	@${GREP} -lr 'msgpuck/msgpuck.h' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|msgpuck/msgpuck.h|msgpuck.h|'
-	@${REINPLACE_CMD} -e 's|libmsgpuck.a|libmsgpuck.so|' ${WRKSRC}/cmake/FindMsgPuck.cmake
-
 .include <bsd.port.mk>
