@@ -30,7 +30,7 @@ RUBYGEM_ARGS=	-l --no-update-sources --ignore-dependencies \
 		--install-dir  ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} \
 		--bindir=${STAGEDIR}${PREFIX}/bin
 
-RUBYGEMBIN=	${LOCALBASE}/bin/gem${RUBY_VER:S/.//}
+RUBYGEMBIN=	${LOCALBASE}/bin/gem
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
 GEMS_DIR=	${GEMS_BASE_DIR}/gems
 DOC_DIR=	${GEMS_BASE_DIR}/doc
