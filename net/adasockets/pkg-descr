@@ -1,7 +1,0 @@
-The AdaSockets library allows the use of BSD sockets from within an Ada
-program.  It is limited to IP version 4 sockets (TCP, UDP, multicast).
-It is released under the GNAT Modified General Public License, which
-means AdaSockets can be freely used in proprietary applications without
-affecting their licenses.
-
-WWW: http://www.rfc1149.net/devel/adasockets.html

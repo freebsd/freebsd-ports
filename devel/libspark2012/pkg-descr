@@ -1,6 +1,0 @@
-At least one port requires exactly the Spark.Ada library that came
-with SPARK 2012.  SPARK itself is not in ports -- SPARK 2014 is the
-first version planned to arrive -- so this is a separately packaged
-SPARK 2012 library to be compiled with the GNAT Ada compiler.
-
-WWW: http://www.spark-2014.org

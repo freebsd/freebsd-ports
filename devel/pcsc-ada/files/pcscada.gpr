@@ -1,7 +1,0 @@
-project PCSCada is
-   for Source_Dirs use ("../../include/pcscada");
-   for Library_Name use "pcscada";
-   for Library_Dir use "../../lib/pcscada";
-   for Library_Kind use "static";
-   for Externally_Built use "true";
-end PCSCada;

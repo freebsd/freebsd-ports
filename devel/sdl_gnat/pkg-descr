@@ -1,7 +1,0 @@
-The Ada compiler package GNAT GPL 2013 from Adacore contained a set of
-thin bindings for the Simple DirectMedia Layer (SDL).  These bindings have
-been pulled out and packaged as a separate library.  It should be noted
-that they are covered by the full GPLv3 which is not a typical license for
-thin bindings.
-
-WWW: http://libre.adacore.com/tools/gnat-gpl-edition

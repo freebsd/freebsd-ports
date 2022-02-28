@@ -33,8 +33,6 @@
     SUBDIR += gtk20
     SUBDIR += gtk30
     SUBDIR += gtk40
-    SUBDIR += gtkada
-    SUBDIR += gtkada3
     SUBDIR += gtkd
     SUBDIR += gtkdatabox
     SUBDIR += gtkextra

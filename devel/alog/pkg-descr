@@ -1,6 +1,0 @@
-Alog is a stackable logging framework for Ada. It aims to be straight
-forward to use and is easily extendable. It provides support for various
-logger types, log facilities, loglevel policies and message
-transformations.
-
-WWW: http://www.codelabs.ch/alog

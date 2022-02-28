@@ -7,7 +7,6 @@
     SUBDIR += R-cran-twitteR
     SUBDIR += Sockets
     SUBDIR += activemq
-    SUBDIR += adasockets
     SUBDIR += addrwatch
     SUBDIR += afpfs-ng
     SUBDIR += aget
@@ -17,7 +16,6 @@
     SUBDIR += akonadi-notes
     SUBDIR += akonadi-search
     SUBDIR += aluminum
-    SUBDIR += anet
     SUBDIR += aoe
     SUBDIR += apache-commons-net
     SUBDIR += apinger

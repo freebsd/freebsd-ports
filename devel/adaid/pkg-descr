@@ -1,9 +1,0 @@
-AdaID is a simple Ada library for generating UUIDs.
-
-Supported operations include:
-  * Generating random UUIDs
-  * Generating name-based UUIDs
-  * Restoring UUIDs from a string representation.
-  * Converting a UUID to a string
-
-WWW: https://github.com/anthony-arnold/AdaID

@@ -40,7 +40,6 @@
     SUBDIR += gdt
     SUBDIR += geda
     SUBDIR += gerbv
-    SUBDIR += ghdl
     SUBDIR += gmsh
     SUBDIR += gnucap
     SUBDIR += gplcver

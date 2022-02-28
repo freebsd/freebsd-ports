@@ -1,8 +1,0 @@
-project AdaID is
-   for Languages        use ("ada");
-   for Library_Name     use "adaid";
-   for Source_Dirs      use ("../../include/adaid");
-   for Library_Dir      use "../../lib/adaid";
-   for Library_Kind     use "dynamic";
-   for Externally_Built use "true";
-end AdaID;

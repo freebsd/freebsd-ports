@@ -87,7 +87,6 @@
     SUBDIR += idnkit2
     SUBDIR += inadyn
     SUBDIR += ipcheck
-    SUBDIR += ironsides
     SUBDIR += kadnode
     SUBDIR += kf5-kdnssd
     SUBDIR += knock

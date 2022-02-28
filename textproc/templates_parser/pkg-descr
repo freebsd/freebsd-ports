@@ -1,9 +1,0 @@
-This is the template engine for the Ada Web Server.  It is modular and
-therefore can be split out of AWS and used on its own.
-
-As it was designed for generating web pages, it's function is to parse
-a page template and replace tokens with specified values.  This template
-engine is amazingly fast due to its concurrent cached compiled templates
-support.
-
-WWW: http://docs.adacore.com/aws-docs/templates_parser

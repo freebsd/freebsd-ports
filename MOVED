@@ -16912,3 +16912,40 @@ net-mgmt/zabbix3-java||2022-02-28|Has expired: Upstream EOL reached on 2021-02-2
 net-mgmt/zabbix3-frontend||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
 net-mgmt/zabbix3-agent||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
 net-mgmt/zabbix3-server||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
+archivers/zip-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
+cad/ghdl||2022-02-28|Removed, depends on expired lang/gcc6-aux
+databases/adabase||2022-02-28|Removed, depends on expired lang/gcc6-aux
+databases/apq||2022-02-28|Removed, depends on expired lang/gcc6-aux
+databases/apq-mysql||2022-02-28|Removed, depends on expired lang/gcc6-aux
+databases/apq-odbc||2022-02-28|Removed, depends on expired lang/gcc6-aux
+databases/apq-pgsql||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/ada-util||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/adabooch||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/adaid||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/ahven||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/alog||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/aunit||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/florist-gpl||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/gprbuild||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/libspark2012||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/matreshka||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/pcsc-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/pragmarcs||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/sdl_gnat||2022-02-28|Removed, depends on expired lang/gcc6-aux
+dns/ironsides||2022-02-28|Removed, depends on expired lang/gcc6-aux
+graphics/generic_image_decoder||2022-02-28|Removed, depends on expired lang/gcc6-aux
+lang/adacontrol||2022-02-28|Removed, depends on expired lang/gcc6-aux
+lang/asis||2022-02-28|Removed, depends on expired lang/gcc6-aux
+lang/gnat_util||2022-02-28|Removed, depends on expired lang/gcc6-aux
+lang/lua-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
+math/plplot-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
+misc/excel-writer||2022-02-28|Removed, depends on expired lang/gcc6-aux
+net/adasockets||2022-02-28|Removed, depends on expired lang/gcc6-aux
+net/anet||2022-02-28|Removed, depends on expired lang/gcc6-aux
+security/libadacrypt||2022-02-28|Removed, depends on expired lang/gcc6-aux
+textproc/adabrowse||2022-02-28|Removed, depends on expired lang/gcc6-aux
+textproc/templates_parser||2022-02-28|Removed, depends on expired lang/gcc6-aux
+textproc/words||2022-02-28|Removed, depends on expired lang/gcc6-aux
+textproc/xmlada||2022-02-28|Removed, depends on expired lang/gcc6-aux
+x11-toolkits/gtkada||2022-02-28|Removed, depends on expired lang/gcc6-aux
+x11-toolkits/gtkada3||2022-02-28|Removed, depends on expired lang/gcc6-aux

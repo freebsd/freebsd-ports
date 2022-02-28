@@ -34,7 +34,6 @@
     SUBDIR += R-cran-xtable
     SUBDIR += R-cran-yaml
     SUBDIR += UCD
-    SUBDIR += adabrowse
     SUBDIR += add-css-links
     SUBDIR += addts
     SUBDIR += af-aspell
@@ -1887,7 +1886,6 @@
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
-    SUBDIR += templates_parser
     SUBDIR += tet-aspell
     SUBDIR += texi2db
     SUBDIR += texi2html
@@ -1957,7 +1955,6 @@
     SUBDIR += wikiman
     SUBDIR += word2x
     SUBDIR += wordnet
-    SUBDIR += words
     SUBDIR += write-good
     SUBDIR += wv
     SUBDIR += wv2
@@ -1981,7 +1978,6 @@
     SUBDIR += xml-format
     SUBDIR += xml-lite.el
     SUBDIR += xml2rfc
-    SUBDIR += xmlada
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
     SUBDIR += xmlenc

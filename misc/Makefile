@@ -88,7 +88,6 @@
     SUBDIR += erlang-mimerl
     SUBDIR += erlang-mimetypes
     SUBDIR += estic
-    SUBDIR += excel-writer
     SUBDIR += exercism
     SUBDIR += explosions
     SUBDIR += ezc3d

@@ -1,7 +1,0 @@
-library project Ahven is
-   for Library_Name     use "ahven";
-   for Library_Kind     use "static";
-   for Source_Dirs      use ("../../include/ahven");
-   for Library_Dir      use "../../lib/ahven";
-   for Externally_Built use "true";
-end Ahven;
