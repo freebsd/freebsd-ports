@@ -1,0 +1,434 @@
+Reference:	https://git.xapian.org/?p=xapian;a=commit;h=fe7db763379cc5ac1649498d38446eb8fee32b56
+		https://github.com/xapian/xapian/commit/fe7db763379cc5ac1649498d38446eb8fee32b56
+
+--- Makefile.in.orig	2021-12-31 23:07:33 UTC
++++ Makefile.in
+@@ -643,9 +643,9 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
+ PACKAGE_URL = @PACKAGE_URL@
+ PACKAGE_VERSION = @PACKAGE_VERSION@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-PCRE_CFLAGS = @PCRE_CFLAGS@
+-PCRE_CONFIG = @PCRE_CONFIG@
+-PCRE_LIBS = @PCRE_LIBS@
++PCRE2_CFLAGS = @PCRE2_CFLAGS@
++PCRE2_CONFIG = @PCRE2_CONFIG@
++PCRE2_LIBS = @PCRE2_LIBS@
+ PERL = @PERL@
+ PKG_CONFIG = @PKG_CONFIG@
+ RANLIB = @RANLIB@
+@@ -843,15 +843,15 @@ noinst_HEADERS = omega.h query.h cgiparam.h index_file
+ 	common/stringutils.h
+ AM_LDFLAGS = $(NO_UNDEFINED) $(MAGIC_LDFLAGS)
+ 
+-# We want to compile transform.cc with PCRE_CFLAGS, but if this adds a -I for
++# We want to compile transform.cc with PCRE2_CFLAGS, but if this adds a -I for
+ # a directory with a different version of iconv, then we get problems (this
+ # has been reported on macOS).  We solve this using a technique suggested by
+ # the automake manual: compile each of transform.cc and utf8convert.cc into
+ # its own convenience library so each only gets its own CPPFLAGS.
+ noinst_LTLIBRARIES = libtransform.la libutf8convert.la
+ libtransform_la_SOURCES = transform.cc
+-libtransform_la_CPPFLAGS = $(PCRE_CFLAGS)
+-libtransform_la_LIBADD = $(PCRE_LIBS)
++libtransform_la_CPPFLAGS = $(PCRE2_CFLAGS)
++libtransform_la_LIBADD = $(PCRE2_LIBS)
+ libutf8convert_la_SOURCES = utf8convert.cc
+ libutf8convert_la_CPPFLAGS = $(AM_CPPFLAGS) $(INCICONV)
+ libutf8convert_la_LIBADD = $(XAPIAN_LIBS) $(LTLIBICONV)
+--- configure.orig	2021-12-31 23:07:31 UTC
++++ configure
+@@ -638,10 +638,10 @@ LTLIBOBJS
+ LIBOBJS
+ AUTOM4TE
+ AM_CXXFLAGS
+-PCRE_LIBS
+-PCRE_CFLAGS
++PCRE2_LIBS
++PCRE2_CFLAGS
+ PKG_CONFIG
+-PCRE_CONFIG
++PCRE2_CONFIG
+ RST2HTML
+ HELP2MAN
+ PERL
+@@ -828,7 +828,7 @@ XAPIAN_CONFIG
+ PERL
+ HELP2MAN
+ RST2HTML
+-PCRE_CONFIG
++PCRE2_CONFIG
+ PKG_CONFIG'
+ 
+ 
+@@ -1502,7 +1502,8 @@ Some influential environment variables:
+   PERL        Perl interpreter
+   HELP2MAN    help2man man page generator
+   RST2HTML    reST to HTML convertor
+-  PCRE_CONFIG Location of pcre-config
++  PCRE2_CONFIG
++              Location of pcre2-config
+   PKG_CONFIG  Location of pkg-config
+ 
+ Use these variables to override the choices made by `configure' or to help
+@@ -18921,12 +18922,12 @@ fi
+ 
+ pcre_runtime_installed() {
+       for sfx in '' 32 64 ; do
+-    set /usr/lib$sfx/libpcre*.so.*
+-    if test "/usr/lib$sfx/libpcre?.so.*" != "$1" ; then
++    set /usr/lib$sfx/libpcre2-*.so.*
++    if test "/usr/lib$sfx/libpcre2-*.so.*" != "$1" ; then
+       if test -r /etc/debian_version ; then
+-	pkg="libpcre3-dev"
++	pkg="libpcre2-dev"
+       else
+-	pkg="pcre-devel"
++	pkg="pcre2-devel"
+       fi
+       as_fn_set_status 0
+     fi
+@@ -18934,8 +18935,9 @@ pcre_runtime_installed() {
+   as_fn_set_status 1
+ }
+ 
++PCRE2_LIBS_FLAG=--libs8
+ 
+-if test -z "$PCRE_CONFIG" ; then
++if test -z "$PCRE2_CONFIG" ; then
+ 
+   if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+@@ -19036,28 +19038,29 @@ else
+ fi
+ 
+   if test -n "$PKG_CONFIG" ; then
+-    pcre_try="$PKG_CONFIG libpcre"
++    pcre_try="$PKG_CONFIG libpcre2-8"
+     if $pcre_try 2>/dev/null ; then
+-      PCRE_CONFIG=$pcre_try
++      PCRE2_CONFIG=$pcre_try
++      PCRE2_LIBS_FLAG=--libs
+     else
+       if pcre_runtime_installed ; then
+-	as_fn_error $? "'$pcre_try' failed, but the PCRE runtime library seems to be installed.  If you've installed PCRE from a package, you probably need to install an extra package called something like $pkg in order to be able to build $PACKAGE_NAME." "$LINENO" 5
++	as_fn_error $? "'$pcre_try' failed, but the PCRE2 runtime library seems to be installed.  If you've installed PCRE2 from a package, you probably need to install an extra package called something like $pkg in order to be able to build $PACKAGE_NAME." "$LINENO" 5
+       else
+-	as_fn_error $? "'$pcre_try' failed.  If the PCRE library is installed, you need to add PCRE_CONFIG=/path/to/pcre-config to your configure command." "$LINENO" 5
++	as_fn_error $? "'$pcre_try' failed.  If the PCRE2 library is installed, you need to add PCRE2_CONFIG=/path/to/pcre2-config to your configure command." "$LINENO" 5
+       fi
+     fi
+   else
+                 if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}pcre-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}pcre-config; ac_word=$2
++  # Extract the first word of "${ac_tool_prefix}pcre2-config", so it can be a program name with args.
++set dummy ${ac_tool_prefix}pcre2-config; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_path_PCRE_CONFIG+:} false; then :
++if ${ac_cv_path_PCRE2_CONFIG+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  case $PCRE_CONFIG in
++  case $PCRE2_CONFIG in
+   [\\/]* | ?:[\\/]*)
+-  ac_cv_path_PCRE_CONFIG="$PCRE_CONFIG" # Let the user override the test with a path.
++  ac_cv_path_PCRE2_CONFIG="$PCRE2_CONFIG" # Let the user override the test with a path.
+   ;;
+   *)
+   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+@@ -19067,7 +19070,7 @@ do
+   test -z "$as_dir" && as_dir=.
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_PCRE_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    ac_cv_path_PCRE2_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+     $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -19078,10 +19081,10 @@ IFS=$as_save_IFS
+   ;;
+ esac
+ fi
+-PCRE_CONFIG=$ac_cv_path_PCRE_CONFIG
+-if test -n "$PCRE_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PCRE_CONFIG" >&5
+-$as_echo "$PCRE_CONFIG" >&6; }
++PCRE2_CONFIG=$ac_cv_path_PCRE2_CONFIG
++if test -n "$PCRE2_CONFIG"; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PCRE2_CONFIG" >&5
++$as_echo "$PCRE2_CONFIG" >&6; }
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -19089,18 +19092,18 @@ fi
+ 
+ 
+ fi
+-if test -z "$ac_cv_path_PCRE_CONFIG"; then
+-  ac_pt_PCRE_CONFIG=$PCRE_CONFIG
+-  # Extract the first word of "pcre-config", so it can be a program name with args.
+-set dummy pcre-config; ac_word=$2
++if test -z "$ac_cv_path_PCRE2_CONFIG"; then
++  ac_pt_PCRE2_CONFIG=$PCRE2_CONFIG
++  # Extract the first word of "pcre2-config", so it can be a program name with args.
++set dummy pcre2-config; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_path_ac_pt_PCRE_CONFIG+:} false; then :
++if ${ac_cv_path_ac_pt_PCRE2_CONFIG+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  case $ac_pt_PCRE_CONFIG in
++  case $ac_pt_PCRE2_CONFIG in
+   [\\/]* | ?:[\\/]*)
+-  ac_cv_path_ac_pt_PCRE_CONFIG="$ac_pt_PCRE_CONFIG" # Let the user override the test with a path.
++  ac_cv_path_ac_pt_PCRE2_CONFIG="$ac_pt_PCRE2_CONFIG" # Let the user override the test with a path.
+   ;;
+   *)
+   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+@@ -19110,7 +19113,7 @@ do
+   test -z "$as_dir" && as_dir=.
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_ac_pt_PCRE_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    ac_cv_path_ac_pt_PCRE2_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+     $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -19121,17 +19124,17 @@ IFS=$as_save_IFS
+   ;;
+ esac
+ fi
+-ac_pt_PCRE_CONFIG=$ac_cv_path_ac_pt_PCRE_CONFIG
+-if test -n "$ac_pt_PCRE_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_pt_PCRE_CONFIG" >&5
+-$as_echo "$ac_pt_PCRE_CONFIG" >&6; }
++ac_pt_PCRE2_CONFIG=$ac_cv_path_ac_pt_PCRE2_CONFIG
++if test -n "$ac_pt_PCRE2_CONFIG"; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_pt_PCRE2_CONFIG" >&5
++$as_echo "$ac_pt_PCRE2_CONFIG" >&6; }
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+ fi
+ 
+-  if test "x$ac_pt_PCRE_CONFIG" = x; then
+-    PCRE_CONFIG=""
++  if test "x$ac_pt_PCRE2_CONFIG" = x; then
++    PCRE2_CONFIG=""
+   else
+     case $cross_compiling:$ac_tool_warned in
+ yes:)
+@@ -19139,23 +19142,23 @@ yes:)
+ $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+ ac_tool_warned=yes ;;
+ esac
+-    PCRE_CONFIG=$ac_pt_PCRE_CONFIG
++    PCRE2_CONFIG=$ac_pt_PCRE2_CONFIG
+   fi
+ else
+-  PCRE_CONFIG="$ac_cv_path_PCRE_CONFIG"
++  PCRE2_CONFIG="$ac_cv_path_PCRE2_CONFIG"
+ fi
+ 
+-    if test -z $PCRE_CONFIG ; then
++    if test -z $PCRE2_CONFIG ; then
+       if pcre_runtime_installed ; then
+-	as_fn_error $? "Can't find pcre-config, although the PCRE runtime library seems to be installed.  If you've installed PCRE from a package, you probably need to install an extra package called something like $pkg in order to be able to build $PACKAGE_NAME." "$LINENO" 5
++	as_fn_error $? "Can't find pcre2-config, although the PCRE2 runtime library seems to be installed.  If you've installed PCRE2 from a package, you probably need to install an extra package called something like $pkg in order to be able to build $PACKAGE_NAME." "$LINENO" 5
+       else
+-	as_fn_error $? "Can't find pcre-config.  If the PCRE library is installed, you need to add PCRE_CONFIG=/path/to/pcre-config to your configure command." "$LINENO" 5
++	as_fn_error $? "Can't find pcre2-config.  If the PCRE2 library is installed, you need to add PCRE2_CONFIG=/path/to/pcre2-config to your configure command." "$LINENO" 5
+       fi
+     fi
+   fi
+ fi
+-PCRE_CFLAGS=`$PCRE_CONFIG --cflags`
+-PCRE_LIBS=`$PCRE_CONFIG --libs`
++PCRE2_CFLAGS=`$PCRE2_CONFIG --cflags`
++PCRE2_LIBS=`$PCRE2_CONFIG $PCRE2_LIBS_FLAG`
+ 
+ 
+ 
+--- transform.cc.orig	2021-12-31 23:06:40 UTC
++++ transform.cc
+@@ -1,7 +1,7 @@
+ /** @file
+  * @brief Implement OmegaScript $transform function.
+  */
+-/* Copyright (C) 2003,2009,2015 Olly Betts
++/* Copyright (C) 2003,2009,2015,2022 Olly Betts
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+@@ -22,32 +22,44 @@
+ 
+ #include "transform.h"
+ 
+-#include <pcre.h>
++#define PCRE2_CODE_UNIT_WIDTH 8
++#include <pcre2.h>
+ 
++#include <cstdint>
+ #include <map>
+ #include <string>
+ #include <vector>
+ 
+ using namespace std;
+ 
+-static map<pair<string, int>, pcre *> re_cache;
++static map<pair<string, uint32_t>, pcre2_code*> re_cache;
++static pcre2_match_data* md = NULL;
+ 
+-static pcre *
+-get_re(const string & pattern, int options)
++static pcre2_code*
++get_re(const string& pattern, uint32_t options)
+ {
+-    pair<string, int> re_key = make_pair(pattern, options);
++    pair<string, uint32_t> re_key = make_pair(pattern, options);
+     auto re_it = re_cache.find(re_key);
+     if (re_it != re_cache.end()) {
+ 	return re_it->second;
+     }
+ 
+-    const char *error;
+-    int erroffset;
+-    pcre * re =
+-	pcre_compile(pattern.c_str(), options, &error, &erroffset, NULL);
++    if (!md) {
++	// Create lazily - here is a good point as it's a single place we
++	// have to pass through before executing a regex.
++	md = pcre2_match_data_create(10, NULL);
++    }
++
++    int error_code;
++    PCRE2_SIZE erroffset;
++    auto re = pcre2_compile(PCRE2_SPTR8(pattern.data()), pattern.size(),
++			    options, &error_code, &erroffset, NULL);
+     if (!re) {
+ 	string m = "$transform failed to compile its regular expression: ";
+-	m += error;
++	// pcre2api(3) says that "a buffer size of 120 code units is ample".
++	unsigned char buf[120];
++	pcre2_get_error_message(error_code, buf, sizeof(buf));
++	m += reinterpret_cast<char*>(buf);
+ 	throw m;
+     }
+     re_cache.insert(make_pair(re_key, re));
+@@ -57,35 +69,34 @@ get_re(const string & pattern, int options)
+ void
+ omegascript_match(string & value, const vector<string> & args)
+ {
+-    int offsets[30];
+-    int options = 0;
++    uint32_t options = PCRE2_UTF;
+     if (args.size() > 2) {
+ 	const string &opts = args[2];
+-	for (string::const_iterator i = opts.begin(); i != opts.end(); ++i) {
+-	    switch (*i) {
++	for (char ch : opts) {
++	    switch (ch) {
+ 		case 'i':
+-		    options |= PCRE_CASELESS;
++		    options |= PCRE2_CASELESS;
+ 		    break;
+ 		case 'm':
+-		    options |= PCRE_MULTILINE;
++		    options |= PCRE2_MULTILINE;
+ 		    break;
+ 		case 's':
+-		    options |= PCRE_DOTALL;
++		    options |= PCRE2_DOTALL;
+ 		    break;
+ 		case 'x':
+-		    options |= PCRE_EXTENDED;
++		    options |= PCRE2_EXTENDED;
+ 		    break;
+ 		default: {
+ 		    string m = "Unknown $match option character: ";
+-		    m += *i;
++		    m += ch;
+ 		    throw m;
+ 		}
+ 	    }
+ 	}
+     }
+-    pcre * re = get_re(args[0], options);
+-    int matches = pcre_exec(re, NULL, args[1].data(), args[1].size(),
+-			    0, 0, offsets, 30);
++    pcre2_code* re = get_re(args[0], options);
++    int matches = pcre2_match(re, PCRE2_SPTR8(args[1].data()), args[1].size(),
++			      0, 0, md, NULL);
+     if (matches > 0) {
+ 	value += "true";
+     }
+@@ -94,42 +105,42 @@ omegascript_match(string & value, const vector<string>
+ void
+ omegascript_transform(string & value, const vector<string> & args)
+ {
+-    int offsets[30];
+     bool replace_all = false;
+-    int options = 0;
++    uint32_t options = PCRE2_UTF;
+     if (args.size() > 3) {
+ 	const string & opts = args[3];
+-	for (string::const_iterator i = opts.begin(); i != opts.end(); ++i) {
+-	    switch (*i) {
++	for (char ch : opts) {
++	    switch (ch) {
+ 		case 'g':
+ 		    replace_all = true;
+ 		    break;
+ 		case 'i':
+-		    options |= PCRE_CASELESS;
++		    options |= PCRE2_CASELESS;
+ 		    break;
+ 		case 'm':
+-		    options |= PCRE_MULTILINE;
++		    options |= PCRE2_MULTILINE;
+ 		    break;
+ 		case 's':
+-		    options |= PCRE_DOTALL;
++		    options |= PCRE2_DOTALL;
+ 		    break;
+ 		case 'x':
+-		    options |= PCRE_EXTENDED;
++		    options |= PCRE2_EXTENDED;
+ 		    break;
+ 		default: {
+ 		    string m = "Unknown $transform option character: ";
+-		    m += *i;
++		    m += ch;
+ 		    throw m;
+ 		}
+ 	    }
+ 	}
+     }
+ 
+-    pcre * re = get_re(args[0], options);
+-    size_t start = 0;
++    pcre2_code* re = get_re(args[0], options);
++    PCRE2_SIZE start = 0;
+     do {
+-	int matches = pcre_exec(re, NULL, args[2].data(), args[2].size(),
+-				int(start), 0, offsets, 30);
++	int matches = pcre2_match(re,
++				  PCRE2_SPTR8(args[2].data()), args[2].size(),
++				  start, 0, md, NULL);
+ 	if (matches <= 0) {
+ 	    // (matches == PCRE_ERROR_NOMATCH) is OK, otherwise this is an
+ 	    // error.  FIXME: should we report this rather than ignoring it?
+@@ -137,9 +148,9 @@ omegascript_transform(string & value, const vector<str
+ 	}
+ 
+ 	// Substitute \1 ... \9, and \\.
+-	string::const_iterator i;
++	PCRE2_SIZE* offsets = pcre2_get_ovector_pointer(md);
+ 	value.append(args[2], start, offsets[0] - start);
+-	for (i = args[1].begin(); i != args[1].end(); ++i) {
++	for (auto i = args[1].begin(); i != args[1].end(); ++i) {
+ 	    char ch = *i;
+ 	    if (ch != '\\') {
+ 		value += ch;

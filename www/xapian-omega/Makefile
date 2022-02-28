@@ -2,6 +2,7 @@
 
 PORTNAME=	xapian-omega
 PORTVERSION=	1.4.19
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -13,15 +14,16 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
-LIB_DEPENDS=	libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libxapian.so:databases/xapian-core
 
 USES=		compiler:c++11-lang libtool localbase perl5 shebangfix tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		ac_cv_func_snprintf=snprintf
-CONFIGURE_ENV=	PCRE_CONFIG=${LOCALBASE}/bin/pcre-config \
-		XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
+#xCONFIGURE_ENV=	PCRE2_CONFIG=${LOCALBASE}/bin/pcre2-config
+#xCONFIGURE_ENV=	PCRE2_CONFIG=${LOCALBASE}/bin/pcre2-config
+CONFIGURE_ENV=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
