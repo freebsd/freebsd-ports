@@ -3,8 +3,11 @@
 %%SITE_PERL%%/MCE/Candy.pm
 %%SITE_PERL%%/MCE/Channel.pm
 %%SITE_PERL%%/MCE/Channel/Mutex.pm
+%%SITE_PERL%%/MCE/Channel/MutexFast.pm
 %%SITE_PERL%%/MCE/Channel/Simple.pm
+%%SITE_PERL%%/MCE/Channel/SimpleFast.pm
 %%SITE_PERL%%/MCE/Channel/Threads.pm
+%%SITE_PERL%%/MCE/Channel/ThreadsFast.pm
 %%SITE_PERL%%/MCE/Child.pm
 %%SITE_PERL%%/MCE/Core.pod
 %%SITE_PERL%%/MCE/Core/Input/Generator.pm
@@ -35,8 +38,11 @@
 %%PERL5_MAN3%%/MCE::Candy.3.gz
 %%PERL5_MAN3%%/MCE::Channel.3.gz
 %%PERL5_MAN3%%/MCE::Channel::Mutex.3.gz
+%%PERL5_MAN3%%/MCE::Channel::MutexFast.3.gz
 %%PERL5_MAN3%%/MCE::Channel::Simple.3.gz
+%%PERL5_MAN3%%/MCE::Channel::SimpleFast.3.gz
 %%PERL5_MAN3%%/MCE::Channel::Threads.3.gz
+%%PERL5_MAN3%%/MCE::Channel::ThreadsFast.3.gz
 %%PERL5_MAN3%%/MCE::Child.3.gz
 %%PERL5_MAN3%%/MCE::Core.3.gz
 %%PERL5_MAN3%%/MCE::Core::Input::Generator.3.gz
