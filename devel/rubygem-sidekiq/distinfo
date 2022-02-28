@@ -1,3 +1,3 @@
-TIMESTAMP = 1638557246
-SHA256 (rubygem/sidekiq-6.3.1.gem) = 12620d2da458829ad0461a71542c6d743787bfc0bbba47bf63364906f962684c
-SIZE (rubygem/sidekiq-6.3.1.gem) = 260096
+TIMESTAMP = 1643971196
+SHA256 (rubygem/sidekiq-6.4.0.gem) = 8e7618739d76b05bf1ede0248cc0f3f626ac5319ef46c8aa2d7e339539a6f482
+SIZE (rubygem/sidekiq-6.4.0.gem) = 261632
