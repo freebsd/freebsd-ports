@@ -50,7 +50,7 @@ USE_RUBY=	yes
 SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \
 		scripts/sign.sh scripts/website_push_www.sh
 GEMFILES=	vagrant-${PORTVERSION}.gem
-RUBYGEMBIN=	gem${RUBY_SUFFIX}
+RUBYGEMBIN=	gem
 
 NO_ARCH=	yes
 
