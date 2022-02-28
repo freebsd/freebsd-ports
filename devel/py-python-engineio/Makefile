@@ -1,6 +1,5 @@
 PORTNAME=	python-engineio
-PORTVERSION=	3.14.2
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,7 @@ COMMENT=	Python implementation of the Engine.IO realtime client and server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
