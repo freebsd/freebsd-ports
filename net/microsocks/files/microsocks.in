@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# PROVIDE: microsocks
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# microsocks_enable (bool):		Enable microsocks
+#					Default: NO
+# microsocks_user (str):		User to run microsocks under
+#					Default: unset
+# microsocks_args (str):		Arguments for microsocks
+#					Default: unset
+# microsocks_syslog_enable(bool):	Enable writing output to syslog.
+#					Default: YES
+# microsocks_syslog_tag(str):		Syslog tag if syslog enabled.
+#					Default: microsocks
+# microsocks_syslog_priority(str):	Syslog priority if syslog enabled.
+#					Default: info
+# microsocks_syslog_facility(str):	Syslog facility if syslog enabled.
+#					Default: daemon
+
+. /etc/rc.subr
+
+name=microsocks
+rcvar=microsocks_enable
+
+load_rc_config $name
+
+: ${microsocks_enable:="NO"}
+: ${microsocks_syslog_enable:="YES"}
+: ${microsocks_syslog_facility:="daemon"}
+: ${microsocks_syslog_priority:="info"}
+: ${microsocks_syslog_tag:="microsocks"}
+: ${microsocks_syslog_flags:=""}
+
+start_precmd=microsocks_prestart
+stop_postcmd=microsocks_poststop
+
+if checkyesno microsocks_syslog_enable; then
+	microsocks_syslog_flags="-T ${microsocks_syslog_tag} -s ${microsocks_syslog_priority} -l ${microsocks_syslog_facility}"
+fi
+
+pidfile="/var/run/${name}.pid"
+microsocks_command="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f ${microsocks_syslog_flags} -P ${pidfile} -t ${name} ${microsocks_command} ${microsocks_args}"
+
+microsocks_prestart()
+{
+	if [ -z "${microsocks_user}" ]; then
+		err 3 "microsocks: microsocks_user is unset. Set it to an existing user and try again."
+	fi
+	install -m 0600 -o "${microsocks_user}" /dev/null "${pidfile}"
+}
+
+microsocks_poststop()
+{
+	rm -f "${pidfile}"
+}
+
+run_rc_command "$1"

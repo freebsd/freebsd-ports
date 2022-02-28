@@ -1,5 +1,6 @@
 PORTNAME=	microsocks
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://ftp.barfooze.de/pub/sabotage/tarballs/
 
@@ -10,6 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:xz
+
+USE_RC_SUBR=	microsocks
 
 PLIST_FILES=	bin/microsocks
 
