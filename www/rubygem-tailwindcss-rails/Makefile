@@ -18,4 +18,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+# tailwindcss-rails 2.x uses pre-built Tailwind CSS CLI
+PORTSCOUT=	limit:^1\.
+
 .include <bsd.port.mk>
