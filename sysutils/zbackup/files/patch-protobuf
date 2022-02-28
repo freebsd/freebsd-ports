@@ -1,0 +1,15 @@
+Deprecated 2-parameter SetTotalBytesLimit() has be removed since protobuf 3.18.0.
+
+Reference:	https://github.com/protocolbuffers/protobuf/commit/cda795437d00a15f375d3d5e2659adac715459c6
+
+--- backup_restorer.cc.orig	2015-09-16 07:28:04 UTC
++++ backup_restorer.cc
+@@ -27,7 +27,7 @@ void restore( ChunkStorage::Reader & chunkStorageReade
+   // TODO: this disables size checks for each separate message. Figure a better
+   // way to do this while keeping them enabled. It seems we need to create an
+   // instance of CodedInputStream for each message, but it might be expensive
+-  cis.SetTotalBytesLimit( backupData.size(), -1 );
++  cis.SetTotalBytesLimit( backupData.size() );
+ 
+   // Used when emitting chunks
+   string chunk;
