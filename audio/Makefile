@@ -660,6 +660,7 @@
     SUBDIR += py-pylast
     SUBDIR += py-pyliblo
     SUBDIR += py-pymad
+    SUBDIR += py-pyogg
     SUBDIR += py-pysndfile
     SUBDIR += py-python-mpd2
     SUBDIR += py-soundcloud

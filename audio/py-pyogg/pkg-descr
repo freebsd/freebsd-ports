@@ -1,0 +1,7 @@
+PyOgg provides bindings for Xiph.org's OGG Vorbis, OGG Opus, and FLAC
+audio file formats.
+
+All the functions, structures, and datatypes are the same as in the C++
+implementation, except for some that could not be translated.
+
+WWW: https://pypi.org/project/PyOgg/
