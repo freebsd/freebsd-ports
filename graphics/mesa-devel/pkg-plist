@@ -6,8 +6,10 @@
 %%NO_COINST%%include/gbm.h
 %%crocus%%lib/dri%%SUFFIX%%/crocus_dri.so
 %%iris%%lib/dri%%SUFFIX%%/iris_dri.so
+%%panfrost%%lib/dri%%SUFFIX%%/panfrost_dri.so
 %%r600%%lib/dri%%SUFFIX%%/r600_dri.so
 %%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_dri.so
+%%panfrost%%lib/dri%%SUFFIX%%/rockchip_dri.so
 %%VAAPI%%%%r600%%lib/dri%%SUFFIX%%/r600_drv_video.so
 %%VAAPI%%%%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_drv_video.so
 %%NO_COINST%%lib/libEGL_mesa%%SUFFIX%%.so
