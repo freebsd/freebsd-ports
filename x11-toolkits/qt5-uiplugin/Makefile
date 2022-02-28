@@ -14,4 +14,6 @@ USE_QT=		core gui widgets \
 BUILD_WRKSRC=	${WRKSRC}/src/designer/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/designer/src/${PORTNAME}
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
