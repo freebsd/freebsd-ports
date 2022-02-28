@@ -32,7 +32,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS STORMLIB
 OPTIONS_DEFAULT=STORMLIB
 
-STORMLIB_DESC=		Enable StormLib support
+STORMLIB_DESC=		Support importing data from BattleNet (GoG) edition
 STORMLIB_CMAKE_BOOL=	WITH_STORMLIB StormLib_FIND_REQUIRED
 STORMLIB_LIB_DEPENDS=	libstorm.so:archivers/stormlib
 
