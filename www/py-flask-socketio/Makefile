@@ -1,5 +1,5 @@
 PORTNAME=	flask-socketio
-PORTVERSION=	4.3.2
+PORTVERSION=	5.1.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.9:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-socketio>=4.3.0<5:devel/py-python-socketio@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-socketio>=5.0.2:devel/py-python-socketio@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
