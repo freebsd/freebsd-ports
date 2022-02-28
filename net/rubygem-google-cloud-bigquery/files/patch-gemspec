@@ -1,0 +1,11 @@
+--- google-cloud-bigquery.gemspec.orig	2022-01-30 20:23:22 UTC
++++ google-cloud-bigquery.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<google-api-client>.freeze, ["~> 0.33"])
+     s.add_runtime_dependency(%q<google-cloud-core>.freeze, ["~> 1.2"])
+-    s.add_runtime_dependency(%q<googleauth>.freeze, ["~> 0.9"])
++    s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.9", "< 2.a"])
+     s.add_runtime_dependency(%q<mini_mime>.freeze, ["~> 1.0"])
+     s.add_development_dependency(%q<autotest-suffix>.freeze, ["~> 1.1"])
+     s.add_development_dependency(%q<google-style>.freeze, ["~> 1.24.0"])
