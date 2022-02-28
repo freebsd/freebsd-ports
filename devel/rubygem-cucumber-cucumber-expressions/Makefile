@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cucumber-cucumber-expressions
-PORTVERSION=	14.0.0
+PORTVERSION=	15.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
