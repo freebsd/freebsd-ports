@@ -434,5 +434,5 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.14.2
+lib/libgeos_c.so.1.14.3
 libdata/pkgconfig/geos.pc

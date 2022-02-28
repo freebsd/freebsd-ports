@@ -1,17 +1,15 @@
---- tests/thread/Makefile.in.orig	2020-12-09 19:04:24 UTC
+--- tests/thread/Makefile.in.orig	2021-11-01 18:12:44 UTC
 +++ tests/thread/Makefile.in
-@@ -316,13 +316,13 @@ top_srcdir = @top_srcdir@
+@@ -330,13 +330,11 @@ top_srcdir = @top_srcdir@
  #
  AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/tests/unit/tut -I$(top_builddir)/capi
  
 -# The -lstdc++ is needed for --disable-shared to work
-+# The  is needed for --disable-shared to work
  threadtest_SOURCES = threadtest.c
 -threadtest_LDADD = $(top_builddir)/capi/libgeos_c.la -lpthread -lstdc++
 +threadtest_LDADD = $(top_builddir)/capi/libgeos_c.la -lpthread
  
 -# The -lstdc++ is needed for --disable-shared to work
-+# The  is needed for --disable-shared to work
  badthreadtest_SOURCES = badthreadtest.c
 -badthreadtest_LDADD = $(top_builddir)/capi/libgeos_c.la -lpthread -lstdc++
 +badthreadtest_LDADD = $(top_builddir)/capi/libgeos_c.la -lpthread

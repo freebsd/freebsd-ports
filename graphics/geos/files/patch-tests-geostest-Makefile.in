@@ -1,11 +1,10 @@
---- tests/geostest/Makefile.in.orig	2020-12-09 19:04:24 UTC
+--- tests/geostest/Makefile.in.orig	2021-11-01 18:12:44 UTC
 +++ tests/geostest/Makefile.in
-@@ -319,9 +319,9 @@ EXTRA_DIST = \
+@@ -332,9 +332,8 @@ EXTRA_DIST = \
  	testrunner.sh
  
  
 -# The -lstdc++ is needed for --disable-shared to work
-+# The  is needed for --disable-shared to work
  geostest_SOURCES = geostest.c
 -geostest_LDADD = $(top_builddir)/capi/libgeos_c.la -lstdc++
 +geostest_LDADD = $(top_builddir)/capi/libgeos_c.la
