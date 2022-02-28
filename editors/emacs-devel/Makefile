@@ -1,7 +1,7 @@
 # Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
 
 PORTNAME=	emacs
-DISTVERSION=	29.0.50.20220218
+DISTVERSION=	29.0.50.20220228
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	7829f1b
+GH_TAGNAME=	0470ef0
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -72,7 +72,8 @@ INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 		idlwave ido info mairix-el message mh-e modus-themes newsticker \
 		nxml-mode octave-mode org pcl-cvs pgg rcirc reftex remember \
 		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
-		tramp transient url vhdl-mode vip viper widget wisent woman
+		tramp transient url vhdl-mode vip viper vtable widget wisent \
+		woman
 INFO_PATH=	${DATADIR_REL}/info
 PLIST_SUB=	EMACS_VER=${DISTVERSION:R} \
 		GNU_HOST=${CONFIGURE_TARGET}
