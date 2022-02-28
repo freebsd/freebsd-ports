@@ -1,5 +1,10 @@
 %%SITE_PERL%%/Text/Table/More.pm
 %%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/bug220126a.pl
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/demo-1x1.pl
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/demo-3x4.pl
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/demo-colspan-rowspan.pl
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/demo-colspan-rowspan2.pl
+%%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/demo-colspan-rowspan2b.pl
 %%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/emmy.pl
 %%SITE_PERL%%/auto/share/dist/Text-Table-More/examples/multirow-header.pl
 %%PERL5_MAN3%%/Text::Table::More.3.gz
