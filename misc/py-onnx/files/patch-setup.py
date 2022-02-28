@@ -1,6 +1,6 @@
---- setup.py.orig	2021-01-29 23:31:55 UTC
+--- setup.py.orig	2022-02-07 19:42:28 UTC
 +++ setup.py
-@@ -56,11 +56,12 @@ COVERAGE = bool(os.getenv('COVERAGE'))
+@@ -61,11 +61,12 @@ COVERAGE = bool(os.getenv('COVERAGE', '0') == '1')
  # Version
  ################################################################################
  
@@ -17,4 +17,4 @@
 +git_version = None
  
  with open(os.path.join(TOP_DIR, 'VERSION_NUMBER')) as version_file:
-     VersionInfo = namedtuple('VersionInfo', ['version', 'git_version'])(
+     VERSION_NUMBER = version_file.read().strip()

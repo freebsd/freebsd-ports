@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2021-02-01 05:41:35 UTC
+--- CMakeLists.txt.orig	2022-02-07 19:42:24 UTC
 +++ CMakeLists.txt
 @@ -18,7 +18,7 @@ project(onnx C CXX)
  option(ONNX_BUILD_BENCHMARKS "Build ONNX micro-benchmarks" OFF)
- option(ONNX_USE_PROTOBUF_SHARED_LIBS "Build ONNX using protobuf shared library. Sets PROTOBUF_USE_DLLS CMAKE Flag " OFF)
+ option(ONNX_USE_PROTOBUF_SHARED_LIBS "Build ONNX using protobuf shared library. Sets PROTOBUF_USE_DLLS CMAKE Flag and Protobuf_USE_STATIC_LIBS. " OFF)
  
 -option(BUILD_ONNX_PYTHON "Build Python binaries" OFF)
 +option(BUILD_ONNX_PYTHON "Build Python binaries" ON)
