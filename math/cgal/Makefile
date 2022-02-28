@@ -24,6 +24,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 #Not yet in ports
 USES=		cmake eigen:3 shebangfix tar:xz
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	scripts/cgal_create_CMakeLists \
 		scripts/cgal_create_cmake_script
 
