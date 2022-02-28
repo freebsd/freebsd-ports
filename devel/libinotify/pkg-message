@@ -1,38 +1,6 @@
 [
 { type: install
   message: <<EOM
-Libinotify functionality on FreeBSD is missing support for
-
-  - detecting a file being moved into or out of a directory within the
-    same filesystem
-  - certain modifications to a symbolic link (rather than the
-    file it points to.)
-
-in addition to the known limitations on all platforms using kqueue(2)
-where various open and close notifications are unimplemented.
-
-This means the following regression tests will fail:
-
-Directory notifications:
-   IN_MOVED_FROM
-   IN_MOVED_TO
-
-Open/close notifications:
-   IN_OPEN
-   IN_CLOSE_NOWRITE
-   IN_CLOSE_WRITE
-
-Symbolic Link notifications:
-   IN_DONT_FOLLOW
-   IN_ATTRIB
-   IN_MOVE_SELF
-   IN_DELETE_SELF
-
-Kernel patches to address the missing directory and symbolic link
-notifications are available from:
-
-https://github.com/libinotify-kqueue/libinotify-kqueue/tree/master/patches
-
 You might want to consider increasing the kern.maxfiles tunable if you plan
 to use this library for applications that need to monitor activity of a lot
 of files.

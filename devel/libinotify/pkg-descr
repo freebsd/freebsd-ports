@@ -2,7 +2,4 @@ This library provides inotify-compatible interface for applications,
 that need to monitor changes happening in a filesystem.  It can be useful
 when porting Linux applications, which often use inotify interface.
 
-The IN_OPEN, IN_CLOSE_WRITE and IN_CLOSE_NOWRITE events are not yet
-implemented, so the relevant tests are known to fail.
-
 WWW: https://github.com/libinotify-kqueue/libinotify-kqueue
