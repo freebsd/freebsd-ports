@@ -1,6 +1,6 @@
---- cmddata.cpp.orig	2019-04-27 20:05:15 UTC
+--- cmddata.cpp.orig	2022-01-24 07:33:17 UTC
 +++ cmddata.cpp
-@@ -167,6 +167,34 @@ void CommandData::ParseDone()
+@@ -171,6 +171,34 @@ void CommandData::ParseDone()
    // Suppress the copyright message and final end of line for 'lb' and 'vb'.
    if ((CmdChar=='L' || CmdChar=='V') && Command[1]=='B')
      BareOutput=true;
@@ -35,7 +35,7 @@
  }
  
  
-@@ -910,6 +938,22 @@ void CommandData::ProcessSwitch(const wc
+@@ -912,6 +940,22 @@ void CommandData::ProcessSwitch(const wchar *Switch)
        else
          wcsncpyz(CommentFile,Switch+1,ASIZE(CommentFile));
        break;
@@ -58,22 +58,22 @@
      case '?' :
        OutHelp(RARX_SUCCESS);
        break;
---- cmdmix.cpp.orig	2019-04-27 20:05:15 UTC
+--- cmdmix.cpp.orig	2022-01-24 07:33:17 UTC
 +++ cmdmix.cpp
-@@ -63,7 +63,11 @@ void CommandData::OutHelp(RAR_EXIT ExitC
+@@ -63,7 +63,11 @@ void CommandData::OutHelp(RAR_EXIT ExitCode)
      MCHelpSwAT,MCHelpSwAC,MCHelpSwAD,MCHelpSwAG,MCHelpSwAI,MCHelpSwAP,
-     MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
-     MCHelpSwDH,MCHelpSwEP,MCHelpSwEP3,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
--    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
+     MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,MCHelpSwDH,MCHelpSwEP,
+     MCHelpSwEP3,MCHelpSwEP4,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
+-    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,MCHelpSwME,MCHelpSwN,MCHelpSwNa,
 +    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,
 +#ifdef WITH_ICONV
 +    MCHelpSwLA,MCHelpSwLL,MCHelpSwLO,
 +#endif
-+    MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
-     MCHelpSwO,MCHelpSwOC,MCHelpSwOL,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
-     MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSC,MCHelpSwSL,MCHelpSwSM,
-     MCHelpSwTA,MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,
---- global.hpp.orig	2019-04-27 20:05:17 UTC
++    MCHelpSwME,MCHelpSwN,MCHelpSwNa,
+     MCHelpSwNal,MCHelpSwO,MCHelpSwOC,MCHelpSwOL,MCHelpSwOP,MCHelpSwOR,
+     MCHelpSwOW,MCHelpSwP,MCHelpSwR,MCHelpSwRI,MCHelpSwSC,MCHelpSwSI,
+     MCHelpSwSL,MCHelpSwSM,MCHelpSwTA,MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,
+--- global.hpp.orig	2022-01-24 07:33:18 UTC
 +++ global.hpp
 @@ -9,6 +9,17 @@
  
@@ -93,9 +93,9 @@
 +#endif
  
  #endif
---- loclang.hpp.orig	2019-04-27 20:05:18 UTC
+--- loclang.hpp.orig	2022-01-24 07:33:18 UTC
 +++ loclang.hpp
-@@ -8,7 +8,7 @@
+@@ -9,7 +9,7 @@
  #define   MRegTo             L"\nRegistered to %s\n"
  #define   MShare             L"\nTrial version             Type 'rar -?' for help\n"
  #define   MRegKeyWarning     L"\nAvailable license key is valid only for %s\n"
@@ -104,16 +104,16 @@
  #define   MBeta              L"beta"
  #define   Mx86               L"x86"
  #define   Mx64               L"x64"
-@@ -323,7 +323,7 @@
+@@ -327,7 +327,7 @@
  #define   MProcessArc        L"\n\nProcessing archive %s"
- #define   MCorrectingName    L"\nWARNING: Attempting to correct the invalid file name"
+ #define   MCorrectingName    L"\nWARNING: Attempting to correct the invalid file or directory name"
  #define   MUnpCannotMerge    L"\nWARNING: You need to start extraction from a previous volume to unpack %s"
 -#define   MUnknownOption     L"\nERROR: Unknown option: %s"
 +#define   MUnknownOption     L"\nERROR: Unknown option: %s\n"
  #define   MSubHeadCorrupt    L"\nERROR: Corrupt data header found, ignored"
  #define   MSubHeadUnknown    L"\nWARNING: Unknown data header format, ignored"
  #define   MSubHeadDataCRC    L"\nERROR: Corrupt %s data block"
-@@ -351,6 +351,12 @@
+@@ -355,6 +355,12 @@
  #define   MSHelpCmdV         L"\n  -v      Verbosely list contents of archive" 
  #define   MRecVolLimit       L"\nTotal number of usual and recovery volumes must not exceed %d"
  #define   MVolumeNumber      L"volume %d"
@@ -124,11 +124,11 @@
 +#define   MIconvCannotOpen   L"\nCannot open iconv to convert between '%s' and '%s' with option '%s'"
 +#endif
  #define   MCannotDelete      L"\nCannot delete %s"
- #define   MRecycleFailed     L"\nCannot move some files and folders to Recycle Bin"
+ #define   MRecycleFailed     L"\nCannot move some files and directories to Recycle Bin"
  #define   MCalcCRC           L"\nCalculating the checksum"
---- os.hpp.orig	2019-04-27 20:05:18 UTC
+--- os.hpp.orig	2022-01-24 07:33:18 UTC
 +++ os.hpp
-@@ -166,6 +166,10 @@
+@@ -168,6 +168,10 @@
  #include <locale.h>
  
  
@@ -139,9 +139,9 @@
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
---- strfn.cpp.orig	2019-04-27 20:05:20 UTC
+--- strfn.cpp.orig	2022-01-24 07:33:18 UTC
 +++ strfn.cpp
-@@ -14,6 +14,19 @@ const wchar *NullToEmpty(const wchar *St
+@@ -14,6 +14,19 @@ const wchar *NullToEmpty(const wchar *Str)
  
  void IntToExt(const char *Src,char *Dest,size_t DestSize)
  {
@@ -161,7 +161,7 @@
  #ifdef _WIN_ALL
    // OemToCharBuff does not stop at 0, so let's check source length.
    size_t SrcLength=strlen(Src)+1;
-@@ -25,6 +38,7 @@ void IntToExt(const char *Src,char *Dest
+@@ -25,6 +38,7 @@ void IntToExt(const char *Src,char *Dest,size_t DestSi
    if (Dest!=Src)
      strncpyz(Dest,Src,DestSize);
  #endif
