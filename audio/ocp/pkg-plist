@@ -20,6 +20,7 @@ lib/ocp/autoload/30-smpbase.so
 lib/ocp/autoload/30-ymtype.so
 lib/ocp/autoload/35-cpiface.so
 lib/ocp/autoload/40-cphlpif.so
+lib/ocp/autoload/60-cdfs.so
 %%ALSA%%lib/ocp/devpalsa.so
 lib/ocp/devpdisk.so
 lib/ocp/devpnone.so
