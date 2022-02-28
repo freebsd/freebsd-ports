@@ -1,7 +1,7 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
 
 PORTNAME=	fDOMDocument
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}TheSeer_
 
@@ -11,23 +11,22 @@ COMMENT=	Extension to PHP standard DOM
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:flavors pear:env
+USES=		pear:env
+USE_PHP=	dom xml
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	theseer
 
-USE_PHP=	dom xml
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_FILES=	share/PHP/fDOMDocument/fDOMDocument.php
+
 PEAR_CHANNEL=	theseer
 PEAR_CHANNEL_VER=	>=20120501
 
-NO_BUILD=	yes
-
-PHP_DIR=	share/PHP
-
-PLIST_FILES=	${PHP_DIR}/${PORTNAME}/fDOMDocument.php
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/fDOMDocument.php \
-		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/PHP/fDOMDocument
+	${INSTALL_SCRIPT} ${WRKSRC}/src/fDOMDocument.php ${STAGEDIR}${PREFIX}/share/PHP/fDOMDocument
 
 .include <bsd.port.mk>
