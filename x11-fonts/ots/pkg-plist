@@ -8,4 +8,8 @@ lib/libots.a
 lib/libots.so
 lib/libots.so.8
 lib/libots.so.%%PORTVERSION%%
+man/man1/ots-idempotent.1.gz
+man/man1/ots-perf.1.gz
 man/man1/ots-sanitize.1.gz
+man/man1/ots-side-by-side.1.gz
+man/man1/ots-validator-checker.1.gz
