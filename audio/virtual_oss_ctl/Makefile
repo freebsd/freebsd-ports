@@ -2,8 +2,7 @@
 
 PORTNAME=	virtual_oss_ctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.9
-PORTREVISION=	1
+DISTVERSION=	1.2.10
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -21,7 +20,7 @@ USE_QT=		buildtools_build core gui widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 
-GH_TUPLE=	hselasky:virtual_oss:v1.2.11:d/virtual_oss
+GH_TUPLE=	hselasky:virtual_oss:v1.2.19:d/virtual_oss
 
 PLIST_FILES= \
 	bin/virtual_oss_ctl \
