@@ -6,8 +6,8 @@ bin/darktable-cmstest
 bin/darktable-generate-cache
 bin/darktable-rs-identify
 lib/darktable/libdarktable.so
-lib/darktable/plugins/imageio/format/libcopy.so
 %%AVIF%%lib/darktable/plugins/imageio/format/libavif.so
+lib/darktable/plugins/imageio/format/libcopy.so
 %%OPENEXR%%lib/darktable/plugins/imageio/format/libexr.so
 %%OPENJPEG%%lib/darktable/plugins/imageio/format/libj2k.so
 lib/darktable/plugins/imageio/format/libjpeg.so
@@ -30,6 +30,7 @@ lib/darktable/plugins/libbasicadj.so
 lib/darktable/plugins/libbilat.so
 lib/darktable/plugins/libbilateral.so
 lib/darktable/plugins/libbloom.so
+lib/darktable/plugins/libblurs.so
 lib/darktable/plugins/libborders.so
 lib/darktable/plugins/libcacorrect.so
 lib/darktable/plugins/libcacorrectrgb.so
@@ -55,6 +56,7 @@ lib/darktable/plugins/libcrop.so
 lib/darktable/plugins/libdefringe.so
 lib/darktable/plugins/libdemosaic.so
 lib/darktable/plugins/libdenoiseprofile.so
+lib/darktable/plugins/libdiffuse.so
 lib/darktable/plugins/libdither.so
 lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
@@ -117,6 +119,7 @@ lib/darktable/plugins/lighttable/libduplicate.so
 lib/darktable/plugins/lighttable/libexport.so
 lib/darktable/plugins/lighttable/libfilmstrip.so
 lib/darktable/plugins/lighttable/libfilter.so
+lib/darktable/plugins/lighttable/libgamepad.so
 %%GEO%%lib/darktable/plugins/lighttable/libgeotagging.so
 lib/darktable/plugins/lighttable/libglobal_toolbox.so
 lib/darktable/plugins/lighttable/libhinter.so
@@ -186,11 +189,12 @@ share/applications/darktable.desktop
 %%NO_OPENCL%%%%DATADIR%%/kernels/bilateral.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/blendop.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/bloom.cl
+%%NO_OPENCL%%%%DATADIR%%/kernels/blurs.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/channelmixer.cl
+%%NO_OPENCL%%%%DATADIR%%/kernels/color_conversion.h
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorreconstruction.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorspace.h
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorspaces.cl
-%%NO_OPENCL%%%%DATADIR%%/kernels/color_conversion.h
 %%NO_OPENCL%%%%DATADIR%%/kernels/common.h
 %%NO_OPENCL%%%%DATADIR%%/kernels/demosaic_markesteijn.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/demosaic_other.cl
@@ -198,6 +202,7 @@ share/applications/darktable.desktop
 %%NO_OPENCL%%%%DATADIR%%/kernels/demosaic_rcd.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/demosaic_vng.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/denoiseprofile.cl
+%%NO_OPENCL%%%%DATADIR%%/kernels/diffuse.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/dwt.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/extended.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/filmic.cl
@@ -389,7 +394,6 @@ share/applications/darktable.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS.md
-%%PORTDOCS%%%%DOCSDIR%%/darktablerc.html
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
 share/icons/hicolor/24x24/apps/darktable.png
@@ -401,17 +405,19 @@ share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
-%%NLS%%share/locale/af/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/de/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/es/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/he/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/darktable.mo
 share/metainfo/darktable.appdata.xml
