@@ -13,7 +13,6 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
-    SUBDIR += bf2c
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += c
@@ -196,7 +195,6 @@
     SUBDIR += munger
     SUBDIR += myrddin
     SUBDIR += nawk
-    SUBDIR += nbc
     SUBDIR += nbfc
     SUBDIR += neko
     SUBDIR += nesasm

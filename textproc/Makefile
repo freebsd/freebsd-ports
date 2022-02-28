@@ -255,7 +255,6 @@
     SUBDIR += gtkspell
     SUBDIR += gtkspell3
     SUBDIR += gu-aspell
-    SUBDIR += gutenmark
     SUBDIR += gv-aspell
     SUBDIR += halibut
     SUBDIR += heirloom-doctools
