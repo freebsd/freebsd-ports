@@ -2,7 +2,9 @@
 
 PORTNAME=	folium
 PORTVERSION=	0.12.1
-DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	.post1
+PORTREVISION=	1
+MASTER_SITES=	CHEESESHOP
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,8 +24,5 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-GH_ACCOUNT=	python-visualization
-USE_GITHUB=	yes
 
 .include <bsd.port.mk>
