@@ -14,4 +14,5 @@ man/man1/tarsnap-keyregen.1.gz
 man/man1/tarsnap-recrypt.1.gz
 man/man1/tarsnap.1.gz
 man/man5/tarsnap.conf.5.gz
+share/zsh/site-functions/_tarsnap
 @sample etc/tarsnap.conf.sample
