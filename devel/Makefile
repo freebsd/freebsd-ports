@@ -6437,6 +6437,7 @@
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-hashie-forbidden_attributes
+    SUBDIR += rubygem-hashie4
     SUBDIR += rubygem-health_check
     SUBDIR += rubygem-heapy
     SUBDIR += rubygem-highline
