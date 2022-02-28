@@ -1,3 +1,29 @@
+  <vuln vid="a80c6273-988c-11ec-83ac-080027415d17">
+    <topic>cyrus-sasl -- Fix off by one error</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl</name>
+	<range><ge>2.1.27</ge><lt>2.1.28</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus SASL 2.1.x Release Notes New in 2.1.28 reports:</p>
+	<blockquote cite="https://www.cyrusimap.org/sasl/sasl/release-notes/2.1/index.html#new-in-2-1-28">
+	  <p>Fix off by one error</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-19906</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19906</url>
+    </references>
+    <dates>
+      <discovery>2019-12-19</discovery>
+      <entry>2022-02-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0eab001a-9708-11ec-96c9-589cfc0f81b0">
     <topic>typo3 -- XSS vulnerability in svg-sanitize</topic>
     <affects>
