@@ -1,5 +1,6 @@
 PORTNAME=	libcuckoo
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
