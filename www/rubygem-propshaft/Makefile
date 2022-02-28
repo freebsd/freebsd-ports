@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	propshaft
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
