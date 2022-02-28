@@ -20,6 +20,8 @@ PORTDOCS=	LICENSE.rst CHANGELOG.rst README.rst
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
