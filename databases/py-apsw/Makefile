@@ -1,9 +1,8 @@
 # Created by: Rusty Nejdl
 
 PORTNAME=	apsw
-PORTVERSION=	3.35.4
+PORTVERSION=	3.37.0
 DISTVERSIONSUFFIX=	-r1
-PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	https://github.com/rogerbinns/apsw/releases/download/${PORTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Another Python SQLite Wrapper
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
