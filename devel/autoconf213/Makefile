@@ -32,6 +32,8 @@ INFO=		autoconf-${BUILD_VERSION}
 
 STRIP=		# none
 
+NO_ARCH=	yes
+
 post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
 
