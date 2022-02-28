@@ -48,6 +48,7 @@ include/quic/common/Timers.h
 include/quic/common/TransportKnobs.h
 include/quic/common/Variant.h
 include/quic/common/WindowedCounter.h
+include/quic/common/third-party/enum.h
 include/quic/congestion_control/Bandwidth.h
 include/quic/congestion_control/Bbr.h
 include/quic/congestion_control/BbrBandwidthSampler.h

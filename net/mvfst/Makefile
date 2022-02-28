@@ -1,5 +1,5 @@
 PORTNAME=	mvfst
-DISTVERSION=	g20220214
+DISTVERSION=	g20220226
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,17 +9,26 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libdouble-conversion.so:devel/double-conversion \
+		libevent.so:devel/libevent \
 		libfizz.so:security/fizz \
 		libfmt.so:devel/libfmt \
 		libfolly.so:devel/folly \
-		libglog.so:devel/glog
+		libgflags.so:devel/gflags \
+		libglog.so:devel/glog \
+		libicui18n.so:devel/icu \
+		liblz4.so:archivers/liblz4 \
+		libsnappy.so:archivers/snappy \
+		libsodium.so:security/libsodium \
+		libunwind.so:devel/libunwind \
+		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang cpe
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
-GH_TAGNAME=	2955152e0024c07e1ced07a1f968c7d25bc53ce3
+GH_TAGNAME=	aae5177794ce1c34ac77250cc2f325e8c1957259
 
 CPE_VENDOR=	facebook
 
