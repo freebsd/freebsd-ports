@@ -7,6 +7,8 @@
 %%ELISPDIR%%/magit-autoloads.el
 %%ELISPDIR%%/magit-autorevert.el
 %%ELISPDIR%%/magit-autorevert.elc
+%%ELISPDIR%%/magit-base.el
+%%ELISPDIR%%/magit-base.elc
 %%ELISPDIR%%/magit-bundle.el
 %%ELISPDIR%%/magit-bundle.elc
 %%ELISPDIR%%/magit-bisect.el
@@ -37,8 +39,6 @@
 %%ELISPDIR%%/magit-git.elc
 %%ELISPDIR%%/magit-gitignore.el
 %%ELISPDIR%%/magit-gitignore.elc
-%%ELISPDIR%%/magit-imenu.el
-%%ELISPDIR%%/magit-imenu.elc
 %%LIBEGIT2%%%%ELISPDIR%%/magit-libgit.el
 %%LIBEGIT2%%%%ELISPDIR%%/magit-libgit.elc
 %%ELISPDIR%%/magit-log.el
@@ -89,8 +89,6 @@
 %%ELISPDIR%%/magit-tag.elc
 %%ELISPDIR%%/magit-transient.el
 %%ELISPDIR%%/magit-transient.elc
-%%ELISPDIR%%/magit-utils.el
-%%ELISPDIR%%/magit-utils.elc
 %%ELISPDIR%%/magit-version.el
 %%ELISPDIR%%/magit-wip.el
 %%ELISPDIR%%/magit-wip.elc
