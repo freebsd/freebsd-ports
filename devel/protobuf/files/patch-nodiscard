@@ -1,0 +1,27 @@
+Fix build for devel/protozero (at least)
+
+FAILED: test/CMakeFiles/writer_tests.dir/t/bytes/bytes_testcase.pb.cc.o 
+/usr/local/libexec/ccache/c++  -I/wrkdirs/usr/ports/devel/protozero/work/protozero-1.7.1/include -I/wrkdirs/usr/ports/devel/protozero/work/protozero-1.7.1/test/include -isystem /wrkdirs/usr/ports/devel/protozero/work/protozero-1.7.1/test/catch -isystem /usr/local/include -isystem /wrkdirs/usr/ports/devel/protozero/work/.build/test -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -pthread -Wall -Wextra -pedantic -Wsign-compare -Wunused-parameter -Wno-float-equal -Wno-covered-switch-default -Werror -std=c++11 -MD -MT test/CMakeFiles/writer_tests.dir/t/bytes/bytes_testcase.pb.cc.o -MF test/CMakeFiles/writer_tests.dir/t/bytes/bytes_testcase.pb.cc.o.d -o test/CMakeFiles/writer_tests.dir/t/bytes/bytes_testcase.pb.cc.o -c /wrkdirs/usr/ports/devel/protozero/work/.build/test/t/bytes/bytes_testcase.pb.cc
+In file included from /wrkdirs/usr/ports/devel/protozero/work/.build/test/t/bytes/bytes_testcase.pb.cc:4:
+/wrkdirs/usr/ports/devel/protozero/work/.build/test/t/bytes/bytes_testcase.pb.h:190:3: error: use of the 'nodiscard' attribute is a C++17 extension [-Werror,-Wc++17-extensions]
+  PROTOBUF_NODISCARD std::string* release_s();
+  ^
+/usr/local/include/google/protobuf/port_def.inc:463:30: note: expanded from macro 'PROTOBUF_NODISCARD'
+#define PROTOBUF_NODISCARD [[nodiscard]]
+                             ^
+1 error generated.
+
+Obtained from:	https://github.com/protocolbuffers/protobuf/commit/ab4585a6956675ce14a1cba5d321fde980bbf12b (part of)
+Reference:	https://github.com/protocolbuffers/protobuf/issues/9181
+
+--- src/google/protobuf/port_def.inc.orig	2022-01-28 16:33:11 UTC
++++ src/google/protobuf/port_def.inc
+@@ -459,7 +459,7 @@
+ #ifdef PROTOBUF_NODISCARD
+ #error PROTOBUF_NODISCARD was previously defined
+ #endif
+-#if __has_cpp_attribute(nodiscard)
++#if __has_cpp_attribute(nodiscard) && PROTOBUF_CPLUSPLUS_MIN(201703L)
+ #define PROTOBUF_NODISCARD [[nodiscard]]
+ #elif __has_attribute(warn_unused_result) || PROTOBUF_GNUC_MIN(4, 8)
+ #define PROTOBUF_NODISCARD __attribute__((warn_unused_result))

@@ -2,7 +2,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	22.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
