@@ -1,0 +1,12 @@
+Autopage is a Python library to automatically display terminal output from a
+program in a pager (like less) whenever you need it, and never when you don't.
+And it only takes one line of code.
+
+You know how some CLI programs like git (and a handful of others, including man
+and systemctl) automatically pipe their output to less? Except not if there's
+less than one screen's worth of data. And if you redirect the output to a file
+or a pipe, it does the right thing instead. Colours are preserved. Don't you
+wish all programs worked like that? Now at least all of your Python programs
+can.
+
+WWW: https://github.com/zaneb/autopage

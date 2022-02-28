@@ -4193,6 +4193,7 @@
     SUBDIR += py-autocommand
     SUBDIR += py-autoflake
     SUBDIR += py-automaton
+    SUBDIR += py-autopage
     SUBDIR += py-autoprop
     SUBDIR += py-avro
     SUBDIR += py-awesomeversion
