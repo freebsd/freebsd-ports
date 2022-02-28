@@ -1,7 +1,7 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
 
 PORTNAME=	Scalar-List-Utils
-PORTVERSION=	1.60
+PORTVERSION=	1.61
 PORTEPOCH=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
