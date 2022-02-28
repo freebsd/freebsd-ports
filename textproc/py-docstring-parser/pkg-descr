@@ -1,0 +1,10 @@
+This package makes the parsing of Python docstrings easier.
+
+Currently supported docstrings are:
+
+* Epydoc docstrings.
+* Google
+* Numpydoc-style
+* ReST
+
+WWW: https://github.com/rr-/docstring_parser
