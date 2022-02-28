@@ -1,7 +1,7 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
 
 PORTNAME=	gevent
-PORTVERSION=	21.8.0
+PORTVERSION=	21.12.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
