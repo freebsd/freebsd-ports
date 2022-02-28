@@ -1,5 +1,4 @@
 bin/gem
-bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/available_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/basic_specification.rb
@@ -198,9 +197,9 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
 @dir lib/ruby/gems/%%RUBY_VER%%/build_info
-@dir lib/ruby/gems/%%RUBY_VER%%/plugins
 @dir %%CACHE_DIR%%
 @dir %%DOC_DIR%%
 @dir %%EXT_DIR%%
 @dir %%GEMS_DIR%%
+@dir %%PLUGINS_DIR%%
 @dir %%SPEC_DIR%%
