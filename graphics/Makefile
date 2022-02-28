@@ -823,6 +823,7 @@
     SUBDIR += price
     SUBDIR += processing
     SUBDIR += proj
+    SUBDIR += proj-data
     SUBDIR += pstoedit
     SUBDIR += ptex
     SUBDIR += py-OWSLib

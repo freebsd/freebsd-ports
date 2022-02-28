@@ -1,0 +1,9 @@
+The datum grid package for PROJ contains shift grids for horizontal and vertical
+coordinate transformations.
+
+The PROJ-data package includes all grids and other resources previously tracked
+by the proj-datumgrid series of packages as well as some new grids. All grids in
+the PROJ-data package have been converted to the new Geodetic Tiff Grid (GTG)
+format introduced in PROJ with RFC4.
+
+WWW: https://github.com/OSGeo/PROJ-data
