@@ -1,3 +1,3 @@
-TIMESTAMP = 1623686456
-SHA256 (protobuf-3.17.3.tar.gz) = 72804ea5eaa9c22a090d2803813e280fb273b62d5ae497aaf3553d141c4fdd7b
-SIZE (protobuf-3.17.3.tar.gz) = 228448
+TIMESTAMP = 1643440680
+SHA256 (protobuf-3.19.4.tar.gz) = 9df0c10adf3e83015ced42a9a7bd64e13d06c4cf45c340d2c63020ea04499d0a
+SIZE (protobuf-3.19.4.tar.gz) = 217854
