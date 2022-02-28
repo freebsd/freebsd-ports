@@ -1,5 +1,5 @@
 PORTNAME=	klog
-PORTVERSION=	1.8.7
+PORTVERSION=	2.0
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -9,11 +9,11 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhamlib.so:comms/hamlib
-
 USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GITHUB=	yes
 USE_GL=		gl
-USE_QT=		buildtools_build charts core gui linguisttools_build multimedia network \
+USE_QT=		buildtools_build charts core declarative gui \
+		linguisttools_build location multimedia network \
 		printsupport sql sql-sqlite3_run serialport widgets
 GH_ACCOUNT=	ea4k
 GH_PROJECT=	klog
