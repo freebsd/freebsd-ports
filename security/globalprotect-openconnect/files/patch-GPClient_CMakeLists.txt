@@ -1,0 +1,11 @@
+--- GPClient/CMakeLists.txt.orig	2022-03-01 20:51:43 UTC
++++ GPClient/CMakeLists.txt
+@@ -51,7 +51,7 @@ add_3rdparty(
+ 
+ add_3rdparty(
+     plog
+-    GIT_REPOSITORY https://github.com/SergiusTheBest/plog.git
++    #GIT_REPOSITORY https://github.com/SergiusTheBest/plog.git
+     GIT_TAG 1.1.5
+     CMAKE_ARGS
+         -DPLOG_BUILD_SAMPLES=OFF

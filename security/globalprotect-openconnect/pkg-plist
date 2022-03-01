@@ -1,0 +1,8 @@
+bin/gpclient
+bin/gpservice
+lib/systemd/system/gpservice.service
+share/applications/com.yuezk.qt.gpclient.desktop
+share/dbus-1/system-services/com.yuezk.qt.GPService.service
+share/dbus-1/system.d/com.yuezk.qt.GPService.conf
+share/icons/hicolor/scalable/apps/com.yuezk.qt.gpclient.svg
+share/metainfo/com.yuezk.qt.gpclient.metainfo.xml
