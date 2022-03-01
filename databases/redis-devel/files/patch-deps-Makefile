@@ -1,5 +1,5 @@
---- deps/Makefile.orig	2021-12-01 10:06:05.001367000 -0500
-+++ deps/Makefile	2021-12-01 10:08:16.372525000 -0500
+--- deps/Makefile.orig	2021-12-01 15:06:05 UTC
++++ deps/Makefile
 @@ -76,7 +76,7 @@
  ifeq ($(LUA_DEBUG),yes)
  	LUA_CFLAGS+= -O0 -g -DLUA_USE_APICHECK

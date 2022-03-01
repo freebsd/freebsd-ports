@@ -1,5 +1,5 @@
---- deps/hiredis/Makefile.orig	2021-01-12 09:21:03.000000000 -0500
-+++ deps/hiredis/Makefile	2021-01-13 11:40:26.109827000 -0500
+--- deps/hiredis/Makefile.orig	2021-01-12 14:21:03 UTC
++++ deps/hiredis/Makefile
 @@ -21,7 +21,7 @@
  HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
  
