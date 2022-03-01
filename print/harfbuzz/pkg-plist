@@ -88,7 +88,6 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-5-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-6-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-7-2.html
-%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-7-5.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-7-7.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-8-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-8-1.html
@@ -112,6 +111,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-3-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-4-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-full.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/apple-advanced-typography-api.html
@@ -135,6 +135,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-coretext.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-deprecated.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-directwrite.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-draw.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-face.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-font.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
