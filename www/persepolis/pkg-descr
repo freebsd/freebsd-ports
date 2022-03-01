@@ -1,0 +1,9 @@
+Persepolis is a download manager and GUI for Aria2 which is written
+in Python using Qt and other components.  It features:
+
+  - Multi-segment downloading
+  - Scheduling downloads
+  - Download queuing
+  - And many more!
+
+WWW: https://persepolisdm.github.io/

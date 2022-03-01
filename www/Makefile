@@ -1376,6 +1376,7 @@
     SUBDIR += pecl-yaf
     SUBDIR += pecl-yar
     SUBDIR += perlbal
+    SUBDIR += persepolis
     SUBDIR += pglogd
     SUBDIR += phalcon
     SUBDIR += phalcon4
