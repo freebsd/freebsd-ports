@@ -1,0 +1,21 @@
+GH_TUPLE=       \
+                beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+                cespare:xxhash:v2.1.2:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+                coreos:go-systemd:d3cd4ed1dbcf:coreos_go_systemd/vendor/github.com/coreos/go-systemd \
+                felixge:httpsnoop:v1.0.1:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
+                golang:crypto:20e1d8d225ab:golang_crypto/vendor/golang.org/x/crypto \
+                golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
+                golang:sys:da31bd327af9:golang_sys/vendor/golang.org/x/sys \
+                gorilla:handlers:v1.5.1:gorilla_handlers/vendor/github.com/gorilla/handlers \
+                inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+                klauspost:cpuid:v2.0.4:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
+                matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
+                minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
+                miolini:datacounter:v1.0.2:miolini_datacounter/vendor/github.com/miolini/datacounter \
+                prometheus:client_golang:v1.12.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+                prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+                prometheus:common:v0.32.1:prometheus_common/vendor/github.com/prometheus/common \
+                prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
+                protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+                spf13:cobra:v1.3.0:spf13_cobra/vendor/github.com/spf13/cobra \
+                spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag
