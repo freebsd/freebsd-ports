@@ -398,6 +398,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/sox_phaser.xml
 %%DATADIR%%/effects/sox_stretch.xml
 %%DATADIR%%/effects/speed.xml
+%%DATADIR%%/effects/spot_remover.xml
 %%DATADIR%%/effects/subtitles.xml
 %%DATADIR%%/effects/swapchannels.xml
 %%DATADIR%%/effects/tcolor.xml

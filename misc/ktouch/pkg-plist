@@ -117,10 +117,10 @@ share/icons/hicolor/scalable/apps/ktouch.svgz
 %%DATADIR%%/schemata/data.xsd
 %%DATADIR%%/schemata/keyboardlayout.xsd
 share/locale/ar/LC_MESSAGES/ktouch.mo
+share/locale/be/LC_MESSAGES/ktouch.mo
 share/locale/bg/LC_MESSAGES/ktouch.mo
 share/locale/bs/LC_MESSAGES/ktouch.mo
 share/locale/ca/LC_MESSAGES/ktouch.mo
-share/locale/be/LC_MESSAGES/ktouch.mo
 share/locale/ca@valencia/LC_MESSAGES/ktouch.mo
 share/locale/cs/LC_MESSAGES/ktouch.mo
 share/locale/da/LC_MESSAGES/ktouch.mo
@@ -140,6 +140,7 @@ share/locale/he/LC_MESSAGES/ktouch.mo
 share/locale/hi/LC_MESSAGES/ktouch.mo
 share/locale/hr/LC_MESSAGES/ktouch.mo
 share/locale/hu/LC_MESSAGES/ktouch.mo
+share/locale/ia/LC_MESSAGES/ktouch.mo
 share/locale/is/LC_MESSAGES/ktouch.mo
 share/locale/it/LC_MESSAGES/ktouch.mo
 share/locale/ja/LC_MESSAGES/ktouch.mo

@@ -745,6 +745,7 @@ share/locale/pt_BR/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_vkontakte.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_yandexfotki.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugins.mo
+share/locale/ro/LC_MESSAGES/kipiplugin_dropbox.mo
 share/locale/ro/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/ro/LC_MESSAGES/kipiplugin_flickr.mo
 share/locale/ro/LC_MESSAGES/kipiplugin_googleservices.mo
