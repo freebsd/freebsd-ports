@@ -19,6 +19,7 @@ USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
+CXXFLAGS+=	-fsigned-char
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib \
 		--program-suffix=5
