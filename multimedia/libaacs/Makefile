@@ -1,7 +1,7 @@
 # Created by: kamikaze@bsdforen.de
 
 PORTNAME=	libaacs
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
