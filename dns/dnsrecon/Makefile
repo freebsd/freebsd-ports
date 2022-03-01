@@ -1,5 +1,6 @@
 PORTNAME=	dnsrecon
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	rihaz.jerrin@gmail.com
@@ -7,19 +8,20 @@ COMMENT=	DNS enumeration tool
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython2>=0:dns/py-dnspython2@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	darkoperator
 
-USES=		python shebangfix
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 SHEBANG_FILES=	${WRKSRC}/dnsrecon.py
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 FILELIST=	namelist.txt subdomains-top1mil-20000.txt \
 		subdomains-top1mil-5000.txt subdomains-top1mil.txt
 
