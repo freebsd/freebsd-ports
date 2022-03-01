@@ -30,6 +30,7 @@ lib/seed7/lib/bytedata.s7i
 lib/seed7/lib/cards.s7i
 lib/seed7/lib/category.s7i
 lib/seed7/lib/cc_conf.s7i
+lib/seed7/lib/ccittfax.s7i
 lib/seed7/lib/cgi.s7i
 lib/seed7/lib/cgidialog.s7i
 lib/seed7/lib/char.s7i
@@ -142,7 +143,6 @@ lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/imagefile.s7i
 lib/seed7/lib/inflate.s7i
-lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/iobuffer.s7i
@@ -218,6 +218,7 @@ lib/seed7/lib/tar.s7i
 lib/seed7/lib/tdes.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
+lib/seed7/lib/tiff.s7i
 lib/seed7/lib/time.s7i
 lib/seed7/lib/tls.s7i
 lib/seed7/lib/unicode.s7i
