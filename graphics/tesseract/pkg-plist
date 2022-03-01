@@ -29,7 +29,7 @@ include/tesseract/version.h
 lib/libtesseract.a
 lib/libtesseract.so
 lib/libtesseract.so.5
-lib/libtesseract.so.5.0.0
+lib/libtesseract.so.5.0.1
 libdata/pkgconfig/tesseract.pc
 man/man1/ambiguous_words.1.gz
 man/man1/classifier_tester.1.gz
