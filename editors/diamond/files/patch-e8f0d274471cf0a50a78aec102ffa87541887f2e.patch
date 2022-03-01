@@ -1,0 +1,47 @@
+From e8f0d274471cf0a50a78aec102ffa87541887f2e Mon Sep 17 00:00:00 2001
+From: Adriaan de Groot <groot@kde.org>
+Date: Sun, 20 Feb 2022 16:23:53 +0100
+Subject: [PATCH] Fix crash when passing filenames on command-line
+
+Consider running `diamond file.txt`. If previously there
+was an untitled tab open and nothing else, we arrive
+here with 2 tabs, `cnt==2`. The first for-loop finds
+an untitled tab at index `k==0` and decrements `cnt`,
+then the for-loop increments `k` and the for-loop terminates
+(because `1 < 1` is false). We have `cnt==1` but an **empty**
+list `m_openedFiles`. This crashes with an out-of-bounds access
+in the second for-loop, because `cnt` doesn't match the length
+of the list anymore.
+
+As a fix:
+- do not modify `cnt` in the first for-loop, always check
+  all of the current tabs,
+- re-calculate the `cnt` based on the files that are actually
+  opened, before the second loop.
+---
+ src/recent_tabs.cpp | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/src/recent_tabs.cpp b/src/recent_tabs.cpp
+index b3359ac..3eef680 100644
+--- src/recent_tabs.cpp
++++ src/recent_tabs.cpp
+@@ -31,15 +31,13 @@ void MainWindow::openTab_CreateMenus()
+    for (int k = 0; k < cnt; ++k) {
+       fullName = this->get_curFileName(k);
+ 
+-      if (fullName.isEmpty()) {
+-         --cnt;
+-
+-      } else {
++      if (!fullName.isEmpty()) {
+          m_openedFiles.append(fullName);
+          m_openedModified.append(false);
+       }
+    }
+-
++   // How many were really opened
++   cnt = m_openedFiles.count(); 
+    //
+    QMenu *windowMenu = m_ui->menuWindow;
+    windowMenu->addSeparator();
