@@ -96,6 +96,7 @@
     SUBDIR += csstidy
     SUBDIR += ctemplate
     SUBDIR += cutelyst
+    SUBDIR += darkhttpd
     SUBDIR += davical
     SUBDIR += davix
     SUBDIR += dddbl
