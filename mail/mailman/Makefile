@@ -2,7 +2,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.39
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -149,8 +149,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mailpasswds
 .endif
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython1>=0:dns/py-dnspython1@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython1>=0:dns/py-dnspython1@${PY_FLAVOR}
 
 pre-everything::
 	@${ECHO} ""
