@@ -13,6 +13,9 @@ COMMENT=	DNS toolkit for Python - 2.X branch
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use dns/py-dnspython
+EXPIRATION_DATE=	2022-03-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
