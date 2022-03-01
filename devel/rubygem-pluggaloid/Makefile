@@ -1,5 +1,5 @@
 PORTNAME=	pluggaloid
-PORTVERSION=	1.4.1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ COMMENT=	Extensible plugin system for mikutter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-delayer>=0:devel/rubygem-delayer \
+RUN_DEPENDS=	rubygem-delayer>=1.1.0:devel/rubygem-delayer \
 		rubygem-instance_storage>=1.0.0<2:devel/rubygem-instance_storage
 
 USES=		gem
