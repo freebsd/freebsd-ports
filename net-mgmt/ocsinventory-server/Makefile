@@ -1,5 +1,5 @@
 PORTNAME=	ocsinventory-server
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -27,6 +27,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USE_GITHUB=	YES
+GH_TAGNAME=	f19e7606b91fe240a31eb4823310bea5ebbda40a
 GH_ACCOUNT=	OCSInventory-NG
 GH_PROJECT=	OCSInventory-Server
 
