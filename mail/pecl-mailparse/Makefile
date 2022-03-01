@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
 PORTNAME=	mailparse
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	mail www
 
 MAINTAINER=	dbaio@FreeBSD.org
