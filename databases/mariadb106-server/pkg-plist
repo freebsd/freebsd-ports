@@ -60,7 +60,7 @@ bin/test-connect-t
 %%S3%%%%ETCDIR%%/conf.d/s3.cnf
 @comment %%ETCDIR%%/server.cnf
 @sample %%ETCDIR%%/conf.d/server.cnf.sample
-@sample %%ETCDIR%%/conf.d/spider.cnf.sample
+%%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample
 %%WSREP%%@sample %%ETCDIR%%/conf.d/wsrep.cnf.sample
 @comment %%ETCDIR%%/my.cnf
 @sample %%ETCDIR%%/user_map.conf.sample
