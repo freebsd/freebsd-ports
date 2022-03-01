@@ -50,8 +50,7 @@ post-install:
 
 # llvm 13.0 and above.
 .if (${OSVERSION} >= 1400042) || \
-	(${OSVERSION} < 1400000 && ${OSVERSION} >= 1300522) || \
-	(${OSVERSION} < 1300000 && ${OSVERSION} >= 1203505)
+	(${OSVERSION} < 1400000 && ${OSVERSION} >= 1300522)
 CONFIGURE_ARGS+=	DCFLAGS=-L=-Wl,-z,nostart-stop-gc
 .endif
 

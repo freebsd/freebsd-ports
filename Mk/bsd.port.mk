@@ -40,9 +40,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
 # OSREL			- The release version of the operating system as a text
-#				  string (e.g., "12.2").
+#				  string (e.g., "12.3").
 # OSVERSION		- The operating system version as a comparable integer;
-#				  the value of __FreeBSD_version (e.g., 1202000).
+#				  the value of __FreeBSD_version (e.g., 1203000).
 #
 # This is the beginning of the list of all variables that need to be
 # defined in a port, listed in order that they should be included
@@ -1177,7 +1177,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .endif
 _EXPORTED_VARS+=	OSVERSION
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1202000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1203000
 _UNSUPPORTED_SYSTEM_MESSAGE=	Ports Collection support for your ${OPSYS} version has ended, and no ports\
 								are guaranteed to build on this system. Please upgrade to a supported release.
 . if defined(ALLOW_UNSUPPORTED_SYSTEM)

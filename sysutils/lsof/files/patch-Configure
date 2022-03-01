@@ -1,6 +1,6 @@
---- Configure.orig	2020-11-10 11:00:21.000000000 -0800
-+++ Configure	2021-01-29 19:04:42.100811000 -0800
-@@ -1628,6 +1628,10 @@
+--- Configure.orig	2020-11-10 19:00:21 UTC
++++ Configure
+@@ -1628,6 +1628,10 @@ kernel generation process.
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=13000
  	;;
@@ -11,7 +11,7 @@
        *)
  	echo Unknown FreeBSD release: `uname -r`
  	rm -f $LSOF_HLP
-@@ -1639,7 +1643,7 @@
+@@ -1639,7 +1643,7 @@ kernel generation process.
      # Clear LSOF_UNSUP message for supported versions of FreeBSD.
      
      case $LSOF_VERS in  # {

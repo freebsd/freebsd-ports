@@ -76,7 +76,7 @@ WCPSKEY_EXTRA_PATCHES=	${FILESDIR}/wildcard-psk.diff ${FILESDIR}/wildcard-psk-oa
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100510
+.if ${OPSYS} == FreeBSD
 REQUIREMOD?=	ipsec
 .endif
 
