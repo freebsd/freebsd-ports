@@ -1,6 +1,7 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 
 PORTNAME=	dma
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.20220128
 PORTEPOCH=	1
@@ -43,13 +44,14 @@ post-patch:
 		${WRKSRC}/bsd/dma-mbox-create/Makefile
 
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}/cron.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}/var/spool/dma
 	${INSTALL_DATA} ${WRKSRC}/dma.conf \
 		${STAGEDIR}${ETCDIR}/dma.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/auth.conf \
 		${STAGEDIR}${ETCDIR}/auth.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/dma_cron \
-		${STAGEDIR}${ETCDIR}/cron.d/dma
+		${STAGEDIR}${PREFIX}/etc/cron.d/dma
 
 .include <bsd.port.mk>
