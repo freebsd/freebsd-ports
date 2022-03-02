@@ -1,5 +1,5 @@
 PORTNAME=	vkd3d
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.winehq.org/${PORTNAME}/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,17 +16,23 @@ LIB_DEPENDS=	libSPIRV-Tools-shared.so:graphics/spirv-tools \
 		libvulkan.so:graphics/vulkan-loader
 RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
-USES=		gmake libtool localbase pkgconfig tar:xz
+USES=		bison gmake libtool localbase ncurses pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen-doc --with-spirv-tools
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
+# Override pkg-config support before https://cgit.freebsd.org/src/commit/?id=396851c20aeb
+# but only if devel/ncurses isn't installed
+.if !exists(/usr/libdata/pkgconfig/ncurses.pc)
+CONFIGURE_ENV+=	NCURSES_CFLAGS=" " NCURSES_LIBS="-lncurses"
+.endif
+
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
 #     graphics/spirv-tools depend on it as well
 USE_GITHUB=	nodefault
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.3:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-137-gb42ba6d:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include
 
 .include <bsd.port.mk>
