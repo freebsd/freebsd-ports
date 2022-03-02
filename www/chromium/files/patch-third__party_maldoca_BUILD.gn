@@ -1,0 +1,13 @@
+--- third_party/maldoca/BUILD.gn.orig	2022-02-28 16:54:41 UTC
++++ third_party/maldoca/BUILD.gn
+@@ -299,6 +299,10 @@ static_library("maldoca") {
+     ":maldoca_chromium_config",
+     ":maldoca_flags",
+   ]
++
++  if (is_bsd) {
++    libs = [ "iconv" ]
++  }
+ }
+ 
+ fuzzer_test("process_doc_fuzzer") {

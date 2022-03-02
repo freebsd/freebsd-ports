@@ -1,6 +1,6 @@
---- media/audio/sndio/sndio_output.cc.orig	2022-02-07 13:39:41 UTC
+--- media/audio/sndio/sndio_output.cc.orig	2022-02-28 16:54:41 UTC
 +++ media/audio/sndio/sndio_output.cc
-@@ -0,0 +1,183 @@
+@@ -0,0 +1,187 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -50,18 +50,37 @@
 +}
 +
 +bool SndioAudioOutputStream::Open() {
-+  struct sio_par par;
-+  int sig;
-+
 +  if (params.format() != AudioParameters::AUDIO_PCM_LINEAR &&
 +      params.format() != AudioParameters::AUDIO_PCM_LOW_LATENCY) {
 +    LOG(WARNING) << "Unsupported audio format.";
 +    return false;
 +  }
++  state = kStopped;
++  volpending = 0;
++  vol = SIO_MAXVOL;
++  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
++  return true;
++}
++
++void SndioAudioOutputStream::Close() {
++  if (state == kClosed)
++    goto release;
++  if (state == kRunning)
++    Stop();
++  state = kClosed;
++  delete [] buffer;
++release:
++  manager->ReleaseOutputStream(this);  // Calls the destructor
++}
++
++void SndioAudioOutputStream::Start(AudioSourceCallback* callback) {
++  struct sio_par par;
++  int sig;
++
 +  sio_initpar(&par);
 +  par.rate = params.sample_rate();
 +  par.pchan = params.channels();
-+  par.bits = SampleFormatToBitsPerChannel(kSampleFormat); 
++  par.bits = SampleFormatToBitsPerChannel(kSampleFormat);
 +  par.bps = par.bits / 8;
 +  par.sig = sig = par.bits != 8 ? 1 : 0;
 +  par.le = SIO_LE_NATIVE;
@@ -70,11 +89,12 @@
 +  hdl = sio_open(SIO_DEVANY, SIO_PLAY, 0);
 +  if (hdl == NULL) {
 +    LOG(ERROR) << "Couldn't open audio device.";
-+    return false;
++    return;
 +  }
 +  if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par)) {
 +    LOG(ERROR) << "Couldn't set audio parameters.";
-+    goto bad_close;
++    sio_close(hdl);
++    return;
 +  }
 +  if (par.rate  != (unsigned int)params.sample_rate() ||
 +      par.pchan != (unsigned int)params.channels() ||
@@ -83,39 +103,22 @@
 +      (par.bps > 1 && par.le != SIO_LE_NATIVE) ||
 +      (par.bits != par.bps * 8)) {
 +    LOG(ERROR) << "Unsupported audio parameters.";
-+    goto bad_close;
++    sio_close(hdl);
++    return;
 +  }
-+  state = kStopped;
-+  volpending = 0;
-+  vol = 0;
-+  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
++
 +  sio_onmove(hdl, &OnMoveCallback, this);
 +  sio_onvol(hdl, &OnVolCallback, this);
-+  return true;
-+ bad_close:
-+  sio_close(hdl);
-+  return false;
-+}
 +
-+void SndioAudioOutputStream::Close() {
-+  if (state == kClosed)
-+    return;
-+  if (state == kRunning)
-+    Stop();
-+  state = kClosed;
-+  delete [] buffer;
-+  sio_close(hdl);
-+  manager->ReleaseOutputStream(this);  // Calls the destructor
-+}
-+
-+void SndioAudioOutputStream::Start(AudioSourceCallback* callback) {
 +  state = kRunning;
 +  hw_delay = 0;
 +  source = callback;
 +  sio_start(hdl);
++
 +  if (pthread_create(&thread, NULL, &ThreadEntry, this) != 0) {
 +    LOG(ERROR) << "Failed to create real-time thread.";
 +    sio_stop(hdl);
++    sio_close(hdl);
 +    state = kStopped;
 +  }
 +}
@@ -126,6 +129,7 @@
 +  state = kStopWait;
 +  pthread_join(thread, NULL);
 +  sio_stop(hdl);
++  sio_close(hdl);
 +  state = kStopped;
 +}
 +

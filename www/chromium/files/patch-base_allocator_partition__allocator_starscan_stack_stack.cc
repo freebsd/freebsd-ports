@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-02-07 13:39:41 UTC
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-02-28 16:54:41 UTC
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
 @@ -17,6 +17,10 @@
  #include <pthread.h>
@@ -47,4 +47,4 @@
 +  return nullptr;
  }
  
- #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
+ #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)

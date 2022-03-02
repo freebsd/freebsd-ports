@@ -1,10 +1,10 @@
---- base/synchronization/lock_impl.h.orig	2022-02-07 13:39:41 UTC
+--- base/synchronization/lock_impl.h.orig	2022-02-28 16:54:41 UTC
 +++ base/synchronization/lock_impl.h
 @@ -107,6 +107,10 @@ void LockImpl::Unlock() {
  }
  
- #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
-+#if defined(OS_FREEBSD)
+ #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FREEBSD)
 +#pragma GCC diagnostic push
 +#pragma GCC diagnostic ignored "-Wthread-safety-analysis"
 +#endif
@@ -15,7 +15,7 @@
    int rv = pthread_mutex_unlock(&native_handle_);
    DCHECK_EQ(rv, 0) << ". " << strerror(rv);
  }
-+#if defined(OS_FREEBSD)
++#if BUILDFLAG(IS_FREEBSD)
 +#pragma GCC diagnostic pop
 +#endif
  #endif

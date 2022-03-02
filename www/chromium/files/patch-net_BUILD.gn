@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2022-02-07 13:39:41 UTC
+--- net/BUILD.gn.orig	2022-03-01 11:59:41 UTC
 +++ net/BUILD.gn
 @@ -100,7 +100,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1213,6 +1213,15 @@ component("net") {
+@@ -1215,6 +1215,15 @@ component("net") {
      ]
    }
  
@@ -25,7 +25,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1345,7 +1354,7 @@ component("net") {
+@@ -1347,7 +1356,7 @@ component("net") {
      }
    }
  
@@ -34,7 +34,7 @@
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1378,7 +1387,7 @@ component("net") {
+@@ -1380,7 +1389,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -43,7 +43,45 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4713,7 +4722,7 @@ test("net_unittests") {
+@@ -2445,7 +2454,7 @@ if (is_linux || is_chromeos || is_mac) {
+   }
+ }
+ 
+-if (is_linux || is_chromeos) {
++if ((is_linux || is_chromeos) && !is_bsd) {
+   static_library("epoll_server") {
+     sources = [
+       "tools/epoll_server/platform/impl/epoll_bug_impl.h",
+@@ -4439,7 +4448,7 @@ test("net_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "base/address_tracker_linux_unittest.cc",
+       "base/network_interfaces_linux_unittest.cc",
+@@ -4513,6 +4522,10 @@ test("net_unittests") {
+     "//url:buildflags",
+   ]
+ 
++  if (is_bsd) {
++    deps += [ "//sandbox/policy" ]
++  }
++
+   allow_circular_includes_from = [ "//net/third_party/quiche:quiche_tests" ]
+ 
+   if (enable_websockets) {
+@@ -4560,7 +4573,7 @@ test("net_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "quic/platform/impl/quic_epoll_clock_test.cc",
+       "quic/platform/impl/quic_flags_test.cc",
+@@ -4706,7 +4719,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

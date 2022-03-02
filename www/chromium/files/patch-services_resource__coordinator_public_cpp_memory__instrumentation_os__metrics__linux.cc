@@ -1,4 +1,4 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2022-02-28 16:54:41 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 @@ -5,7 +5,9 @@
  #include <dlfcn.h>
@@ -48,7 +48,7 @@
    // files. Refactor to get everything from /status using ProcessMetric.
    auto statm_file = GetProcPidDir(pid).Append("statm");
 @@ -336,10 +345,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
- #endif  //  defined(OS_ANDROID)
+ #endif  //  BUILDFLAG(IS_ANDROID)
  
    return true;
 +#endif

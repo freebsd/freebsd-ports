@@ -1,6 +1,6 @@
---- media/audio/sndio/sndio_input.cc.orig	2022-02-07 13:39:41 UTC
+--- media/audio/sndio/sndio_input.cc.orig	2022-02-28 16:54:41 UTC
 +++ media/audio/sndio/sndio_input.cc
-@@ -0,0 +1,200 @@
+@@ -0,0 +1,201 @@
 +// Copyright 2013 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -127,7 +127,7 @@
 +void SndioAudioInputStream::Close() {
 +
 +  if (state == kClosed)
-+    return;
++    goto release;
 +
 +  if (state == kRunning)
 +    Stop();
@@ -136,6 +136,7 @@
 +  delete [] buffer;
 +  sio_close(hdl);
 +
++release:
 +  manager->ReleaseInputStream(this);
 +}
 +

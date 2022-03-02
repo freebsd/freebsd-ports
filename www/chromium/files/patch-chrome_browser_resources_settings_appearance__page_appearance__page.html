@@ -1,11 +1,11 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2021-09-14 01:51:51 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2022-02-28 16:54:41 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
 @@ -27,7 +27,7 @@
            <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
                label="$i18n{themes}" sub-label="[[themeSublabel_]]"
                on-click="openThemeUrl_" external></cr-link-row>
--<if expr="not is_linux or chromeos or lacros">
-+<if expr="not is_posix or chromeos or lacros">
+-<if expr="not is_linux or chromeos_ash or chromeos_lacros">
++<if expr="not is_posix or chromeos_ash or chromeos_lacros">
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
              <div class="separator"></div>
              <cr-button id="useDefault" on-click="onUseDefaultTap_">

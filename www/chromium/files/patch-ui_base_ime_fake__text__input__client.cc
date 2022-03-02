@@ -1,11 +1,11 @@
---- ui/base/ime/fake_text_input_client.cc.orig	2021-12-16 15:20:38 UTC
+--- ui/base/ime/fake_text_input_client.cc.orig	2022-02-28 16:54:41 UTC
 +++ ui/base/ime/fake_text_input_client.cc
-@@ -160,7 +160,7 @@ bool FakeTextInputClient::ShouldDoLearning() {
+@@ -161,7 +161,7 @@ bool FakeTextInputClient::ShouldDoLearning() {
    return false;
  }
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  bool FakeTextInputClient::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {

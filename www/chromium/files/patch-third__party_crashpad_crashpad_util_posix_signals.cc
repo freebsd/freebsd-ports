@@ -1,24 +1,24 @@
---- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2022-02-07 13:39:41 UTC
+--- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2022-02-28 16:54:41 UTC
 +++ third_party/crashpad/crashpad/util/posix/signals.cc
-@@ -50,7 +50,7 @@ constexpr int kCrashSignals[] = {
+@@ -51,7 +51,7 @@ constexpr int kCrashSignals[] = {
  #if defined(SIGEMT)
      SIGEMT,
  #endif  // defined(SIGEMT)
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      SIGXCPU,
      SIGXFSZ,
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -90,7 +90,7 @@ constexpr int kTerminateSignals[] = {
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+@@ -91,7 +91,7 @@ constexpr int kTerminateSignals[] = {
      SIGXCPU,
      SIGXFSZ,
- #endif  // defined(OS_APPLE)
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #endif  // BUILDFLAG(IS_APPLE)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      SIGIO,
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  };
-@@ -232,8 +232,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
+@@ -233,8 +233,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
           // remains. See 10.12.3 xnu-3789.41.3/bsd/kern/kern_sig.c
           // psignal_internal().
           (code > 0 &&

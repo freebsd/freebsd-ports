@@ -1,10 +1,10 @@
---- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2022-02-28 16:54:41 UTC
 +++ content/browser/zygote_host/zygote_host_impl_linux.cc
 @@ -28,6 +28,7 @@ namespace content {
  
  namespace {
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  // Receive a fixed message on fd and return the sender's PID.
  // Returns true if the message received matches the expected message.
  bool ReceiveFixedMessage(int fd,
@@ -20,7 +20,7 @@
  }
  
  ZygoteHostImpl::ZygoteHostImpl()
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
      : use_namespace_sandbox_(false),
        use_suid_sandbox_(false),
        use_suid_sandbox_for_adj_oom_score_(false),
@@ -34,7 +34,7 @@
  }
  
  void ZygoteHostImpl::Init(const base::CommandLine& command_line) {
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (command_line.HasSwitch(sandbox::policy::switches::kNoSandbox)) {
      return;
    }
@@ -50,7 +50,7 @@
      base::CommandLine* cmd_line,
      base::ScopedFD* control_fd,
      base::FileHandleMappingVector additional_remapped_fds) {
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    int fds[2];
    CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds));
    CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
@@ -63,8 +63,8 @@
 +#endif
  }
  
--#if !defined(OS_OPENBSD)
-+#if !defined(OS_BSD)
+-#if !BUILDFLAG(IS_OPENBSD)
++#if !BUILDFLAG(IS_BSD)
  void ZygoteHostImpl::AdjustRendererOOMScore(base::ProcessHandle pid,
                                              int score) {
    // 1) You can't change the oom_score_adj of a non-dumpable process

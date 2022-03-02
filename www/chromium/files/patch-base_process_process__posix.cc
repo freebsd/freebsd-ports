@@ -1,6 +1,11 @@
---- base/process/process_posix.cc.orig	2022-02-07 13:39:41 UTC
+--- base/process/process_posix.cc.orig	2022-02-28 16:54:41 UTC
 +++ base/process/process_posix.cc
-@@ -27,6 +27,11 @@
+@@ -23,10 +23,15 @@
+ #include "build/build_config.h"
+ #include "third_party/abseil-cpp/absl/types/optional.h"
+ 
+-#if BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #include <sys/event.h>
  #endif
  
@@ -12,6 +17,24 @@
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
+@@ -95,7 +100,7 @@ bool WaitpidWithTimeout(base::ProcessHandle handle,
+   return ret_pid > 0;
+ }
+ 
+-#if BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ // Using kqueue on Mac so that we can wait on non-child processes.
+ // We can't use kqueues on child processes because we need to reap
+ // our own children using wait.
+@@ -200,7 +205,7 @@ bool WaitForExitWithTimeoutImpl(base::ProcessHandle ha
+   const bool exited = (parent_pid < 0);
+ 
+   if (!exited && parent_pid != our_pid) {
+-#if BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+     // On Mac we can wait on non child processes.
+     return WaitForSingleNonChildProcess(handle, timeout);
+ #else
 @@ -358,7 +363,55 @@ void Process::Exited(int exit_code) const {}
  
  int Process::GetPriority() const {

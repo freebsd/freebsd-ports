@@ -1,10 +1,10 @@
---- base/tracing/trace_time.cc.orig	2022-02-07 13:39:41 UTC
+--- base/tracing/trace_time.cc.orig	2022-02-28 16:54:41 UTC
 +++ base/tracing/trace_time.cc
 @@ -8,13 +8,17 @@
  #include "build/build_config.h"
  #include "third_party/perfetto/include/perfetto/base/time.h"
  
-+#if defined(OS_FREEBSD)
++#if BUILDFLAG(IS_FREEBSD)
 +#define CLOCK_BOOTTIME CLOCK_UPTIME
 +#endif
 +
@@ -13,9 +13,9 @@
  
  int64_t TraceBootTicksNow() {
    // On Windows and Mac, TRACE_TIME_TICKS_NOW() behaves like boottime already.
- #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
--    defined(OS_FUCHSIA)
-+    defined(OS_FUCHSIA) || defined(OS_BSD)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
+-    BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    struct timespec ts;
    int res = clock_gettime(CLOCK_BOOTTIME, &ts);
    if (res != -1)
