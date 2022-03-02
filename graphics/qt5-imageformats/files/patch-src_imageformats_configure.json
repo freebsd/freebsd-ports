@@ -1,0 +1,10 @@
+--- src/imageformats/configure.json.orig	2022-03-02 19:21:52 UTC
++++ src/imageformats/configure.json
+@@ -19,6 +19,7 @@
+             "headers": "jasper/jasper.h",
+             "test": {
+                 "include": [
++                    "cstddef",
+                     "string.h",
+                     "jasper/jasper.h"
+                 ],
