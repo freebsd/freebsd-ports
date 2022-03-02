@@ -1,3 +1,3 @@
-TIMESTAMP = 1583857275
-SHA256 (linux_libusb-13.0r358841.tar.bz2) = 0114a83eb21889ff54e1f2f551296ef584e7fe1a8d468ade6ec1bc017937deb7
-SIZE (linux_libusb-13.0r358841.tar.bz2) = 69877
+TIMESTAMP = 1646223126
+SHA256 (hselasky-linux_libusb-13.1.0_GH0.tar.gz) = 1c2eca07aaba1af10a51ce263938dea78b79efdd5616af6f58665188de455825
+SIZE (hselasky-linux_libusb-13.1.0_GH0.tar.gz) = 89639
