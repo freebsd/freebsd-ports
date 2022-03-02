@@ -1,6 +1,6 @@
 @(,games,2555) bin/toppler
-man/man6/toppler.6.gz
 share/applications/toppler.desktop
+share/man/man6/toppler.6.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/toppler.mo
 %%NLS%%share/locale/de/LC_MESSAGES/toppler.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/toppler.mo
