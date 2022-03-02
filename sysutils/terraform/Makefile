@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/0mp:tencentcloud_tencentcloud_sdk_go
 
@@ -32,11 +32,11 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		Netflix:go-expect:e1a7c020ce25:netflix_go_expect/vendor/github.com/Netflix/go-expect \
 		abdullin:seq:d5467c17e7af:abdullin_seq/vendor/github.com/abdullin/seq \
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
-		aliyun:alibaba-cloud-sdk-go:6e358769c32a:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
+		aliyun:alibaba-cloud-sdk-go:v1.61.1501:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
 		aliyun:aliyun-oss-go-sdk:8205d1f41e70:aliyun_aliyun_oss_go_sdk/vendor/github.com/aliyun/aliyun-oss-go-sdk \
 		aliyun:aliyun-tablestore-go-sdk:v4.1.2:aliyun_aliyun_tablestore_go_sdk/vendor/github.com/aliyun/aliyun-tablestore-go-sdk \
-		antchfx:xpath:c8489ed3251e:antchfx_xpath/vendor/github.com/antchfx/xpath \
-		antchfx:xquery:ad5b8c7a47b0:antchfx_xquery/vendor/github.com/antchfx/xquery \
+		antchfx:xmlquery:v1.3.5:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
+		antchfx:xpath:v1.1.10:antchfx_xpath/vendor/github.com/antchfx/xpath \
 		apparentlymart:go-cidr:v1.1.0:apparentlymart_go_cidr/vendor/github.com/apparentlymart/go-cidr \
 		apparentlymart:go-dump:042adf3cf4a0:apparentlymart_go_dump/vendor/github.com/apparentlymart/go-dump \
 		apparentlymart:go-shquot:v0.0.1:apparentlymart_go_shquot/vendor/github.com/apparentlymart/go-shquot \
@@ -60,16 +60,16 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		dimchansky:utfbom:v1.1.1:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		dominikh:go-tools:v0.3.0-0.dev:dominikh_go_tools/vendor/honnef.co/go/tools \
 		dylanmei:iso8601:v0.1.0:dylanmei_iso8601/vendor/github.com/dylanmei/iso8601 \
-		dylanmei:winrmtest:99b7fe2fddf1:dylanmei_winrmtest/vendor/github.com/dylanmei/winrmtest \
+		dylanmei:winrmtest:fbc9ae56efb6:dylanmei_winrmtest/vendor/github.com/dylanmei/winrmtest \
 		etcd-io:etcd:15715dcf1ace:etcd_io_etcd/vendor/go.etcd.io/etcd \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
-		go-ini:ini:v1.42.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.66.2:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v0.4.0:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-test:deep:v1.0.3:go_test_deep/vendor/github.com/go-test/deep \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gofrs:uuid:v3.3.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
+		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/dgrijalva/jwt-go \
 		golang-jwt:jwt:v4.1.0:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
@@ -101,7 +101,6 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		googleapis:google-cloud-go:v0.79.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gophercloud:gophercloud:c3bfe50899e5:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		gophercloud:utils:7c72efc7435d:gophercloud_utils/vendor/github.com/gophercloud/utils \
-		gopherjs:gopherjs:0766667cb4d1:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		grpc:grpc-go:v1.1.0:grpc_grpc_go_1/vendor/google.golang.org/grpc/cmd/protoc-gen-go-grpc \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:aws-sdk-go-base:v0.7.1:hashicorp_aws_sdk_go_base/vendor/github.com/hashicorp/aws-sdk-go-base \
@@ -120,7 +119,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		hashicorp:go-retryablehttp:v0.7.0:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:go-rootcerts:v1.0.2:hashicorp_go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
 		hashicorp:go-safetemp:v1.0.0:hashicorp_go_safetemp/vendor/github.com/hashicorp/go-safetemp \
-		hashicorp:go-slug:v0.7.0:hashicorp_go_slug/vendor/github.com/hashicorp/go-slug \
+		hashicorp:go-slug:v0.8.0:hashicorp_go_slug/vendor/github.com/hashicorp/go-slug \
 		hashicorp:go-tfe:v0.21.0:hashicorp_go_tfe/vendor/github.com/hashicorp/go-tfe \
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
@@ -138,7 +137,6 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		joyent:triton-go:d8f9c0314926:joyent_triton_go/vendor/github.com/joyent/triton-go \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
-		jtolds:gls:v4.2.1:jtolds_gls/vendor/github.com/jtolds/gls \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
 		klauspost:compress:v1.11.2:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.2.1:kr_pretty/vendor/github.com/kr/pretty \
@@ -182,8 +180,6 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v59.2.0:azure_azure_sdk_for_go/vendor/github.co
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
-		smartystreets:assertions:b2de0cb4f26d:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
-		smartystreets:goconvey:ef6db91d284a:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		tencentcloud:tencentcloud-sdk-go:v1.0.232:tencentcloud_tencentcloud_sdk_go_common/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
