@@ -150,6 +150,7 @@
     SUBDIR += plib
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
+    SUBDIR += py-awesometkinter
     SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-guietta
