@@ -17,8 +17,9 @@ include/planarity/listcoll.h
 include/planarity/planarity.h
 include/planarity/platformTime.h
 include/planarity/stack.h
+include/planarity/strbuf.h
 lib/libplanarity.a
 lib/libplanarity.so
 lib/libplanarity.so.0
-lib/libplanarity.so.0.0.2
+lib/libplanarity.so.0.1.0
 man/man1/planarity.1.gz
