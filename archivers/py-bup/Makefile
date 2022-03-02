@@ -1,7 +1,7 @@
 # Created by: José García Juanino <jjuanino@gmail.com>
 
 PORTNAME=	bup
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	archivers python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,9 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylibacl>0:security/py-pylibacl@${PY_FLAVOR}
 		par2cmdline>0.4:archivers/par2cmdline
 BUILD_DEPENDS=	bash:shells/bash \
 		git>1.5.6:devel/git
+RUN_DEPENDS=	bash:shells/bash
 
-USES=		python:3.6+ gmake
+USES=		gmake python:3.6+ shebangfix
 USE_PYTHON=	autoplist
+SHEBANG_FILES=	test/ext/test-sparse-files lib/cmd/import-rdiff-backup-cmd.sh
 
 PLIST_SUB=	MANDIR=${PREFIX}/share/man
 

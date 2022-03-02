@@ -1,6 +1,6 @@
---- t/test-sparse-files.sh.orig	2020-12-15 12:42:46.593767000 -0800
-+++ t/test-sparse-files.sh	2020-12-15 12:43:10.570419000 -0800
-@@ -31,6 +31,12 @@
+--- test/ext/test-sparse-files.orig	2021-01-09 22:11:10 UTC
++++ test/ext/test-sparse-files
+@@ -31,6 +31,12 @@ if [ "$probe_size" -ge "$((data_size / 1024))" ]; then
      exit 0
  fi
  
