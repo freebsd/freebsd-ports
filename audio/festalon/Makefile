@@ -13,7 +13,7 @@ COMMENT=	Command line player for .nsf and .hes audio files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 
