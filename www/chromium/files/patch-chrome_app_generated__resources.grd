@@ -1,4 +1,4 @@
---- chrome/app/generated_resources.grd.orig	2022-02-07 13:39:41 UTC
+--- chrome/app/generated_resources.grd.orig	2022-02-28 16:54:41 UTC
 +++ chrome/app/generated_resources.grd
 @@ -2,7 +2,7 @@
  
@@ -9,7 +9,7 @@
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in tools/grit/grit_rule.gni.
  -->
-@@ -296,7 +296,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -298,7 +298,7 @@ are declared in tools/grit/grit_rule.gni.
        <part file="profiles_strings.grdp" />
  
        <!-- Web app intent picker strings -->
@@ -18,7 +18,7 @@
          <part file="url_handler_intent_picker_strings.grdp" />
        </if>
  
-@@ -2811,7 +2811,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -2813,7 +2813,7 @@ are declared in tools/grit/grit_rule.gni.
        </if>
  
        <!-- Bluetooth Device Credentials (i.e. PIN/Passkey) dialog -->
@@ -27,7 +27,7 @@
          <message name="IDS_BLUETOOTH_DEVICE_CREDENTIALS_TITLE" desc="Title of the Bluetooth device credentials prompt dialog.">
            Device Credentials
          </message>
-@@ -5557,7 +5557,7 @@ Keep your key file in a safe place. You will need it t
+@@ -5568,7 +5568,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
@@ -36,7 +36,7 @@
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -8016,7 +8016,7 @@ Keep your key file in a safe place. You will need it t
+@@ -8043,7 +8043,7 @@ Keep your key file in a safe place. You will need it t
          Google Pay
        </message>
  
@@ -45,7 +45,7 @@
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -9104,7 +9104,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -9134,7 +9134,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

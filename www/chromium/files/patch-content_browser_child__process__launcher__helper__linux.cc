@@ -1,10 +1,10 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2022-02-28 16:54:41 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -19,7 +19,9 @@
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include "content/public/common/zygote/zygote_handle.h"
 +#endif
  #include "sandbox/policy/linux/sandbox_linux.h"
@@ -14,7 +14,7 @@
      int* launch_result) {
    *is_synchronous_launch = true;
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
            ? nullptr
@@ -22,7 +22,7 @@
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;
  
--#if !defined(OS_OPENBSD)
+-#if !BUILDFLAG(IS_OPENBSD)
      if (handle) {
        // It could be a renderer process or an utility process.
        int oom_score = content::kMiscOomScore;
@@ -45,7 +45,7 @@
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (process.zygote) {
      info.status = process.zygote->GetTerminationStatus(
          process.process.Handle(), known_dead, &info.exit_code);
@@ -60,7 +60,7 @@
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (process.zygote) {
      // If the renderer was created via a zygote, we have to proxy the reaping
      // through the zygote process.
@@ -68,7 +68,7 @@
    } else {
 +#endif
      base::EnsureProcessTerminated(std::move(process.process));
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    }
 +#endif
  }

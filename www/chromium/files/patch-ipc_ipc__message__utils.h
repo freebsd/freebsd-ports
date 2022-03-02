@@ -1,11 +1,11 @@
---- ipc/ipc_message_utils.h.orig	2021-07-19 18:45:18 UTC
+--- ipc/ipc_message_utils.h.orig	2022-02-28 16:54:41 UTC
 +++ ipc/ipc_message_utils.h
-@@ -206,7 +206,7 @@ struct ParamTraits<unsigned int> {
- //   3) Android 64 bit and Fuchsia also have int64_t typedef'd to long.
+@@ -205,7 +205,7 @@ struct ParamTraits<unsigned int> {
  // Since we want to support Android 32<>64 bit IPC, as long as we don't have
  // these traits for 32 bit ARM then that'll catch any errors.
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
-     defined(OS_FUCHSIA) || (defined(OS_ANDROID) && defined(ARCH_CPU_64_BITS))
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_FUCHSIA) ||                                              \
++    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD) ||                         \
+     (BUILDFLAG(IS_ANDROID) && defined(ARCH_CPU_64_BITS))
  template <>
  struct ParamTraits<long> {

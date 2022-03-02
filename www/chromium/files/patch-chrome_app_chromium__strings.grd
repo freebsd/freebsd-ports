@@ -1,6 +1,6 @@
---- chrome/app/chromium_strings.grd.orig	2022-02-07 13:39:41 UTC
+--- chrome/app/chromium_strings.grd.orig	2022-02-28 16:54:41 UTC
 +++ chrome/app/chromium_strings.grd
-@@ -296,7 +296,7 @@ If you update this file, be sure also to update google
+@@ -298,7 +298,7 @@ If you update this file, be sure also to update google
            Welcome to Chromium; new browser window opened
          </message>
        </if>
@@ -9,7 +9,7 @@
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Chromium
          </message>
-@@ -808,7 +808,7 @@ Chromium is unable to recover your settings.
+@@ -810,7 +810,7 @@ Chromium is unable to recover your settings.
        </if>
  
        <!-- about:browser-switch strings -->
@@ -18,7 +18,7 @@
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
            Your system administrator has configured Chromium to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
          </message>
-@@ -934,7 +934,7 @@ Chromium is unable to recover your settings.
+@@ -936,7 +936,7 @@ Chromium is unable to recover your settings.
        </message>
  
        <!-- ProcessSingleton -->

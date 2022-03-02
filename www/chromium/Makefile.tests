@@ -1,7 +1,12 @@
 TEST_TARGETS=	base_unittests \
+		blink_unittests \
 		chromedriver_unittests \
+		components_unittests \
+		content_unittests \
 		crypto_unittests \
 		headless_unittests \
+		media_unittests \
+		mojo_unittests \
+		net_unittests \
 		printing_unittests \
 		url_unittests
-		

@@ -1,6 +1,6 @@
---- components/policy/tools/generate_policy_source.py.orig	2022-02-07 13:39:41 UTC
+--- components/policy/tools/generate_policy_source.py.orig	2022-02-28 16:54:41 UTC
 +++ components/policy/tools/generate_policy_source.py
-@@ -47,8 +47,10 @@ PLATFORM_STRINGS = {
+@@ -48,8 +48,10 @@ PLATFORM_STRINGS = {
      'ios': ['ios'],
      'chrome.win': ['win'],
      'chrome.linux': ['linux'],

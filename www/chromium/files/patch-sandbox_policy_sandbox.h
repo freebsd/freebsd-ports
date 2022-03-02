@@ -1,10 +1,10 @@
---- sandbox/policy/sandbox.h.orig	2022-02-07 13:39:41 UTC
+--- sandbox/policy/sandbox.h.orig	2022-02-28 16:54:41 UTC
 +++ sandbox/policy/sandbox.h
 @@ -12,6 +12,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/openbsd/sandbox_openbsd.h"
 +#endif  
 +
@@ -15,8 +15,8 @@
  
  class SANDBOX_POLICY_EXPORT Sandbox {
   public:
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    static bool Initialize(sandbox::mojom::Sandbox sandbox_type,
                           SandboxLinux::PreSandboxHook hook,
                           const SandboxLinux::Options& options);

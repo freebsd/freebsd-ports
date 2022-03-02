@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/address_space_randomization.h.orig	2021-10-07 16:50:24 UTC
+--- base/allocator/partition_allocator/address_space_randomization.h.orig	2022-02-28 16:54:41 UTC
 +++ base/allocator/partition_allocator/address_space_randomization.h
-@@ -36,7 +36,7 @@ AslrMask(uintptr_t bits) {
+@@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  
  #if defined(ARCH_CPU_64_BITS)
  

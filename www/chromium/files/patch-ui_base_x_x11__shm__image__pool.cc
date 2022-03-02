@@ -1,4 +1,4 @@
---- ui/base/x/x11_shm_image_pool.cc.orig	2022-02-07 13:39:41 UTC
+--- ui/base/x/x11_shm_image_pool.cc.orig	2022-02-28 16:54:41 UTC
 +++ ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/environment.h"
@@ -12,7 +12,7 @@
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  return base::SysInfo::MaxSharedMemorySize();
 +#else
    struct shminfo info;
@@ -27,7 +27,7 @@
  }
  
  bool ShouldUseMitShm(x11::Connection* connection) {
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  return false;
 +#endif
    // MIT-SHM may be available on remote connetions, but it will be unusable.  Do
@@ -37,8 +37,8 @@
          shmctl(state.shmid, IPC_RMID, nullptr);
          return false;
        }
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
@@ -46,8 +46,8 @@
          return false;
        state.shmseg = shmseg;
        state.shmem_attached_to_server = true;
--#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
+-#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
        // The Linux-specific shmctl behavior above may not be portable, so we're
        // forced to do IPC_RMID after the server has attached to the segment.
        shmctl(state.shmid, IPC_RMID, nullptr);

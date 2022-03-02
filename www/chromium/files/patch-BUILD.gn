@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2022-02-07 13:39:41 UTC
+--- BUILD.gn.orig	2022-02-28 16:54:41 UTC
 +++ BUILD.gn
 @@ -52,7 +52,7 @@ declare_args() {
    root_extra_deps = []
@@ -18,7 +18,7 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -638,6 +638,15 @@ group("gn_all") {
+@@ -636,6 +636,15 @@ group("gn_all") {
      }
    }
  
@@ -34,7 +34,7 @@
    if (is_mac) {
      deps += [
        "//third_party/breakpad:crash_inspector",
-@@ -688,7 +697,7 @@ group("gn_all") {
+@@ -686,7 +695,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -43,7 +43,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1139,7 +1148,7 @@ if (!is_ios) {
+@@ -1137,7 +1146,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -52,7 +52,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1148,7 +1157,7 @@ if (!is_ios) {
+@@ -1146,7 +1155,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -61,7 +61,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1525,7 +1534,7 @@ group("chromium_builder_perf") {
+@@ -1521,7 +1530,7 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

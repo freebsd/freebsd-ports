@@ -1,11 +1,11 @@
---- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2022-02-07 13:39:41 UTC
+--- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2022-02-28 16:54:41 UTC
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -17,7 +17,7 @@
  #include "third_party/base/check.h"
  #include "third_party/base/cxx17_backports.h"
  
--#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS)
-+#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS) && !defined(OS_BSD)
+-#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_ASMJS)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_ASMJS) && !BUILDFLAG(IS_BSD)
  #error "Included on the wrong platform"
  #endif
  

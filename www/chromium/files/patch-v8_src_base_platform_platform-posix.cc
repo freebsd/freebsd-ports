@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2022-02-07 13:39:41 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2022-02-28 16:54:41 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -65,7 +65,7 @@
  #include <sys/syscall.h>
@@ -33,7 +33,7 @@
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -547,7 +555,7 @@ bool OS::FreeAddressSpaceReservation(AddressSpaceReser
+@@ -545,7 +553,7 @@ bool OS::FreeAddressSpaceReservation(AddressSpaceReser
  
  // static
  bool OS::HasLazyCommits() {
@@ -42,7 +42,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1140,7 +1148,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1138,7 +1146,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && \

@@ -1,18 +1,18 @@
---- net/dns/dns_reloader.cc.orig	2022-02-07 13:39:41 UTC
+--- net/dns/dns_reloader.cc.orig	2022-02-28 16:54:41 UTC
 +++ net/dns/dns_reloader.cc
-@@ -4,7 +4,7 @@
+@@ -6,7 +6,7 @@
  
- #include "net/dns/dns_reloader.h"
+ #include "build/build_config.h"
  
--#if defined(OS_POSIX) && !defined(OS_APPLE) && !defined(OS_OPENBSD) && \
-+#if defined(OS_POSIX) && !defined(OS_APPLE) && !defined(OS_BSD) && \
-     !defined(OS_ANDROID) && !defined(OS_FUCHSIA)
+-#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_OPENBSD) && \
++#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD) && \
+     !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_FUCHSIA)
  
  #include <resolv.h>
-@@ -111,5 +111,5 @@ void DnsReloaderMaybeReload() {
+@@ -113,5 +113,5 @@ void DnsReloaderMaybeReload() {
  
  }  // namespace net
  
--#endif  // defined(OS_POSIX) && !defined(OS_APPLE) && !defined(OS_OPENBSD) &&
-+#endif  // defined(OS_POSIX) && !defined(OS_APPLE) && !defined(OS_BSD) &&
-         // !defined(OS_ANDROID)
+-#endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_OPENBSD)
++#endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD) &&
+         // && !BUILDFLAG(IS_ANDROID)

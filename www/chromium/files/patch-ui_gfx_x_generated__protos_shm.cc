@@ -1,6 +1,6 @@
---- ui/gfx/x/generated_protos/shm.cc.orig	2021-10-08 06:26:48 UTC
+--- ui/gfx/x/generated_protos/shm.cc.orig	2022-02-28 16:54:41 UTC
 +++ ui/gfx/x/generated_protos/shm.cc
-@@ -43,6 +43,8 @@
+@@ -44,6 +44,8 @@
  #include <xcb/xcb.h>
  #include <xcb/xcbext.h>
  

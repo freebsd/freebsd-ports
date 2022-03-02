@@ -1,10 +1,11 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2022-02-07 13:39:41 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2022-02-28 16:54:41 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,177 @@
+@@ -0,0 +1,181 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
++#include "base/command_line.h"
 +#include "base/metrics/histogram_macros.h"
 +#include "base/memory/ptr_util.h"
 +
@@ -15,9 +16,8 @@
 +#if defined(USE_SNDIO)
 +#include "media/audio/sndio/sndio_input.h"
 +#include "media/audio/sndio/sndio_output.h"
-+#else
-+#include "media/audio/fake_audio_manager.h"
 +#endif
++#include "media/audio/fake_audio_manager.h"
 +#include "media/base/limits.h"
 +#include "media/base/media_switches.h"
 +
@@ -31,7 +31,7 @@
 +
 +#if defined(USE_SNDIO)
 +// Maximum number of output streams that can be open simultaneously.
-+static const int kMaxOutputStreams = 4;
++static const int kMaxOutputStreams = 50;
 +
 +// Default sample rate for input and output streams.
 +static const int kDefaultSampleRate = 48000;
@@ -87,9 +87,7 @@
 +  SetMaxOutputStreamsAllowed(kMaxOutputStreams);
 +}
 +
-+AudioManagerSndio::~AudioManagerSndio() {
-+  Shutdown();
-+}
++AudioManagerSndio::~AudioManagerSndio() = default;
 +
 +AudioOutputStream* AudioManagerSndio::MakeLinearOutputStream(
 +    const AudioParameters& params,
@@ -166,6 +164,12 @@
 +    std::unique_ptr<AudioThread> audio_thread,
 +    AudioLogFactory* audio_log_factory) {
 +  DLOG(WARNING) << "CreateAudioManager";
++  // For testing allow audio output to be disabled.
++  if (base::CommandLine::ForCurrentProcess()->HasSwitch(
++          switches::kDisableAudioOutput)) {
++    return std::make_unique<FakeAudioManager>(std::move(audio_thread),
++                                              audio_log_factory);
++  }
 +#if defined(USE_SNDIO)
 +  UMA_HISTOGRAM_ENUMERATION("Media.SndioAudioIO", kSndio, kAudioIOMax + 1);
 +  return std::make_unique<AudioManagerSndio>(std::move(audio_thread),

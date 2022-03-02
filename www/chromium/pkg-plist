@@ -8,6 +8,7 @@ bin/chrome
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so
 %%DATADIR%%/libVkICD_mock_icd.so
+%%DATADIR%%/libvulkan.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/am.pak.info
 %%DATADIR%%/locales/ar.pak
@@ -134,7 +135,6 @@ bin/chrome
 %%DEBUG%%%%DATADIR%%/libimmediate_crash_test_helper.so
 %%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
 %%DEBUG%%%%DATADIR%%/libtest_shared_library.so
-%%DEBUG%%%%DATADIR%%/libvulkan.so.1
 %%DRIVER%%bin/chromedriver
 man/man1/chrome.1.gz
 share/applications/chromium-browser.desktop

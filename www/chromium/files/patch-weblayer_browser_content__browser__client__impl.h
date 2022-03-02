@@ -1,6 +1,6 @@
---- weblayer/browser/content_browser_client_impl.h.orig	2022-02-07 13:39:41 UTC
+--- weblayer/browser/content_browser_client_impl.h.orig	2022-02-28 16:54:41 UTC
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -178,7 +178,7 @@ class ContentBrowserClientImpl : public content::Conte
+@@ -177,7 +177,7 @@ class ContentBrowserClientImpl : public content::Conte
        override;
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

@@ -1,4 +1,4 @@
---- base/system/sys_info.h.orig	2022-02-07 13:39:41 UTC
+--- base/system/sys_info.h.orig	2022-02-28 16:54:41 UTC
 +++ base/system/sys_info.h
 @@ -236,6 +236,8 @@ class BASE_EXPORT SysInfo {
    // On Desktop this returns true when memory <= 2GB.
@@ -12,9 +12,9 @@
 @@ -246,7 +248,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
- #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
--    defined(OS_AIX)
-+    defined(OS_AIX) || defined(OS_BSD)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
+-    BUILDFLAG(IS_AIX)
++    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
    static int64_t AmountOfAvailablePhysicalMemory(
        const SystemMemoryInfoKB& meminfo);
  #endif

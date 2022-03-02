@@ -1,0 +1,11 @@
+--- third_party/boringssl/BUILD.gn.orig	2022-03-01 11:59:41 UTC
++++ third_party/boringssl/BUILD.gn
+@@ -92,7 +92,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
+         public_configs = [ ":no_asm_config" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_linux || is_chromeos || is_android) {
++      if ((is_linux || is_chromeos || is_android) && !is_bsd) {
+         sources += crypto_sources_linux_aarch64
+       } else if (is_apple) {
+         # TODO(davidben): Rename all the file lists, etc., upstream from mac

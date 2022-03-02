@@ -1,0 +1,33 @@
+--- net/third_party/quiche/BUILD.gn.orig	2022-02-28 16:54:41 UTC
++++ net/third_party/quiche/BUILD.gn
+@@ -706,7 +706,7 @@ proto_library("net_quic_test_tools_proto") {
+   extra_configs = [ "//build/config/compiler:wexit_time_destructors" ]
+ }
+ 
+-if (is_linux || is_chromeos) {
++if ((is_linux || is_chromeos) && !is_bsd) {
+   source_set("epoll_server_core") {
+     sources = [
+       "src/epoll_server/platform/api/epoll_bug.h",
+@@ -1061,7 +1061,7 @@ source_set("quic_test_tools_core") {
+     "//third_party/quic_trace:quic_trace_proto",
+   ]
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/epoll_server/fake_simple_epoll_server.cc",
+       "src/epoll_server/fake_simple_epoll_server.h",
+@@ -1526,10 +1526,10 @@ source_set("quiche_tests") {
+   ]
+   public_deps = []
+ 
+-  if (is_linux || is_chromeos_lacros) {
++  if ((is_linux || is_chromeos_lacros) && !is_bsd) {
+     public_deps += [ "//net:epoll_quic_tools" ]
+   }
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/epoll_server/simple_epoll_server_test.cc",
+       "src/quic/core/chlo_extractor_test.cc",

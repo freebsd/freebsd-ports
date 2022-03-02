@@ -1,20 +1,20 @@
---- chrome/common/chrome_paths.h.orig	2022-02-07 13:39:41 UTC
+--- chrome/common/chrome_paths.h.orig	2022-02-28 16:54:41 UTC
 +++ chrome/common/chrome_paths.h
-@@ -54,7 +54,7 @@ enum {
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
- #if BUILDFLAG(IS_CHROMEOS_ASH) ||                            \
--    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-+    ((defined(OS_LINUX) || defined(OS_BSD) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-      BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
-     defined(OS_MAC)
+@@ -56,7 +56,7 @@ enum {
+ #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
+     ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
+      BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
+                                  // on Chrome Mac and Chromium Linux.
+                                  // On Chrome OS, this path is used for OEM
 @@ -64,7 +64,7 @@ enum {
                                   // create it.
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
@@ -22,8 +22,8 @@
    DIR_CHROMEOS_CUSTOM_WALLPAPERS,     // Directory where custom wallpapers
                                        // reside.
  #endif
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    DIR_NATIVE_MESSAGING,       // System directory where native messaging host
                                // manifest files are stored.
    DIR_USER_NATIVE_MESSAGING,  // Directory with Native Messaging Hosts

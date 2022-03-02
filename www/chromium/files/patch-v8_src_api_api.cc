@@ -1,4 +1,4 @@
---- v8/src/api/api.cc.orig	2022-02-07 13:39:41 UTC
+--- v8/src/api/api.cc.orig	2022-02-28 16:54:41 UTC
 +++ v8/src/api/api.cc
 @@ -140,7 +140,7 @@
  #include "src/wasm/wasm-serialization.h"
@@ -9,7 +9,7 @@
  #include <signal.h>
  #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
-@@ -6126,7 +6126,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6155,7 +6155,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

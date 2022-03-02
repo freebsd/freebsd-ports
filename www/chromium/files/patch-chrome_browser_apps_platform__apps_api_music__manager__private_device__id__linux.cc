@@ -1,4 +1,4 @@
---- chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc.orig	2022-02-28 16:54:41 UTC
 +++ chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc
 @@ -4,6 +4,15 @@
  
@@ -16,7 +16,7 @@
  #include <ifaddrs.h>
  #include <net/if.h>
  #include <stddef.h>
-@@ -105,11 +114,33 @@ class MacAddressProcessor {
+@@ -106,11 +115,33 @@ class MacAddressProcessor {
                          const char* const prefixes[],
                          size_t prefixes_count) {
      const int MAC_LENGTH = 6;
@@ -51,7 +51,7 @@
      int sd = socket(AF_INET, SOCK_DGRAM, 0);
      int result = ioctl(sd, SIOCGIFHWADDR, &ifinfo);
      close(sd);
-@@ -119,11 +150,17 @@ class MacAddressProcessor {
+@@ -120,11 +151,17 @@ class MacAddressProcessor {
  
      const char* mac_address =
          static_cast<const char*>(ifinfo.ifr_hwaddr.sa_data);

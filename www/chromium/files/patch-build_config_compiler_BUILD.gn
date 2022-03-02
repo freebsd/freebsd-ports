@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2022-02-07 13:39:41 UTC
+--- build/config/compiler/BUILD.gn.orig	2022-02-28 16:54:41 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -236,13 +236,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
@@ -38,7 +38,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -903,7 +910,7 @@ config("compiler_cpu_abi") {
+@@ -902,7 +909,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -47,7 +47,7 @@
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -917,7 +924,7 @@ config("compiler_cpu_abi") {
+@@ -916,7 +923,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -56,7 +56,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1238,7 +1245,7 @@ config("compiler_deterministic") {
+@@ -1237,7 +1244,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -65,7 +65,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1525,7 +1532,7 @@ config("default_warnings") {
+@@ -1524,7 +1531,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -74,7 +74,7 @@
          # TODO(https://crbug.com/1016945): Re-enable once ChromeOS toolchain is up to date
          cflags += [ "-Wno-builtin-assume-aligned-alignment" ]
        }
-@@ -1676,7 +1683,7 @@ config("no_chromium_code") {
+@@ -1709,7 +1716,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -83,7 +83,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2191,7 +2198,7 @@ config("afdo_optimize_size") {
+@@ -2224,7 +2231,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -92,7 +92,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2207,7 +2214,7 @@ config("afdo") {
+@@ -2240,7 +2247,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -101,7 +101,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2346,7 +2353,8 @@ config("symbols") {
+@@ -2379,7 +2386,8 @@ config("symbols") {
      }
    }
  

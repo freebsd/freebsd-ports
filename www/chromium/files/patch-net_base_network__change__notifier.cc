@@ -1,26 +1,21 @@
---- net/base/network_change_notifier.cc.orig	2022-02-07 13:39:41 UTC
+--- net/base/network_change_notifier.cc.orig	2022-02-28 16:54:41 UTC
 +++ net/base/network_change_notifier.cc
 @@ -38,7 +38,7 @@
  #include "net/base/network_change_notifier_linux.h"
- #elif defined(OS_APPLE)
+ #elif BUILDFLAG(IS_APPLE)
  #include "net/base/network_change_notifier_mac.h"
--#elif BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_ANDROID)
-+#elif BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_ANDROID) || defined(OS_BSD)
+-#elif BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_ANDROID)
++#elif BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  #include "net/base/network_change_notifier_posix.h"
- #elif defined(OS_FUCHSIA)
+ #elif BUILDFLAG(IS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -303,9 +303,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
-   // service in a separate process.
-   return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
-                                                       initial_subtype);
--#elif BUILDFLAG(IS_CHROMEOS_ASH)
-+#elif BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_BSD)
-+#if !defined(OS_BSD)
-   return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
-                                                       initial_subtype);
-+#else
-+  return NULL;
-+#endif
- #elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-   return std::make_unique<NetworkChangeNotifierLinux>(
-       std::unordered_set<std::string>());
+@@ -320,6 +320,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+ #elif BUILDFLAG(IS_FUCHSIA)
+   return std::make_unique<NetworkChangeNotifierFuchsia>(
+       /*require_wlan=*/false);
++#elif BUILDFLAG(IS_BSD)
++  return std::make_unique<MockNetworkChangeNotifier>(
++      /*dns_config_notifier*/nullptr);
+ #else
+   NOTIMPLEMENTED();
+   return NULL;
