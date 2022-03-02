@@ -1,0 +1,18 @@
+Chiptune tracker compatible with DefleMask modules (.dmf).
+
+    * It supports the following systems:
+        o Sega Genesis
+        o Sega Master System
+        o Game Boy
+        o PC Engine
+        o NES
+        o Commodore 64
+        o Yamaha YM2151 (plus PCM)
+        o Neo Geo
+        o AY-3-8910 (ZX Spectrum, Atari ST, etc.)
+        o Microchip AY8930
+        o Philips SAA1099
+        o Amiga
+        o TIA (Atari 2600/7800)
+
+WWW: https://github.com/tildearrow/furnace

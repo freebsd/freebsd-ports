@@ -212,6 +212,7 @@
     SUBDIR += freepats
     SUBDIR += ft2play
     SUBDIR += funktrackergold
+    SUBDIR += furnace
     SUBDIR += ganv
     SUBDIR += gbemol
     SUBDIR += gbsplay
