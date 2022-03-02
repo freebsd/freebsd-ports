@@ -7,6 +7,9 @@ COMMENT=	Packet sink/source using the netmap API
 
 LICENSE=	BSD2CLAUSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Not supported on i386
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	luigirizzo
