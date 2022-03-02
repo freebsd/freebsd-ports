@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-03-02 05:28:33 UTC
++++ CMakeLists.txt
+@@ -281,6 +281,8 @@ else()
+     add_library(netgen_python INTERFACE)
+ endif()
+ 
++target_link_libraries(netgen_python INTERFACE pthread)
++
+ if (USE_PYTHON)
+     add_subdirectory(external_dependencies/pybind11)
+     find_path(PYBIND_INCLUDE_DIR pybind11/pybind11.h HINTS ${PYTHON_INCLUDE_DIR})
