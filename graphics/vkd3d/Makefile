@@ -20,6 +20,7 @@ USES=		gmake libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen-doc --with-spirv-tools
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
