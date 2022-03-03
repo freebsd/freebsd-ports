@@ -9,6 +9,7 @@ include/gedit-%%VERSION%%/gedit/gedit-enum-types.h
 include/gedit-%%VERSION%%/gedit/gedit-menu-extension.h
 include/gedit-%%VERSION%%/gedit/gedit-message-bus.h
 include/gedit-%%VERSION%%/gedit/gedit-message.h
+include/gedit-%%VERSION%%/gedit/gedit-progress-info-bar.h
 include/gedit-%%VERSION%%/gedit/gedit-statusbar.h
 include/gedit-%%VERSION%%/gedit/gedit-tab.h
 include/gedit-%%VERSION%%/gedit/gedit-utils.h
@@ -34,11 +35,13 @@ lib/gedit/plugins/filebrowser.plugin
 lib/gedit/plugins/libdocinfo.so
 lib/gedit/plugins/libfilebrowser.so
 lib/gedit/plugins/libmodelines.so
+lib/gedit/plugins/libopenlinks.so
 lib/gedit/plugins/libquickhighlight.so
 lib/gedit/plugins/libsort.so
 lib/gedit/plugins/libspell.so
 lib/gedit/plugins/libtime.so
 lib/gedit/plugins/modelines.plugin
+lib/gedit/plugins/openlinks.plugin
 lib/gedit/plugins/pythonconsole.plugin
 lib/gedit/plugins/pythonconsole/__init__.py
 lib/gedit/plugins/pythonconsole/config.py
@@ -117,6 +120,7 @@ share/help/C/gedit/figures/gedit3-screenshot.png
 share/help/C/gedit/figures/org.gnome.gedit.svg
 share/help/C/gedit/gedit-change-color-scheme.page
 share/help/C/gedit/gedit-change-default-font.page
+share/help/C/gedit/gedit-character-encodings.page
 share/help/C/gedit/gedit-close-file.page
 share/help/C/gedit/gedit-create-new-file.page
 share/help/C/gedit/gedit-edit-as-root.page
@@ -158,6 +162,7 @@ share/help/ar/gedit/figures/gedit3-screenshot.png
 share/help/ar/gedit/figures/org.gnome.gedit.svg
 share/help/ar/gedit/gedit-change-color-scheme.page
 share/help/ar/gedit/gedit-change-default-font.page
+share/help/ar/gedit/gedit-character-encodings.page
 share/help/ar/gedit/gedit-close-file.page
 share/help/ar/gedit/gedit-create-new-file.page
 share/help/ar/gedit/gedit-edit-as-root.page
@@ -199,6 +204,7 @@ share/help/bg/gedit/figures/gedit3-screenshot.png
 share/help/bg/gedit/figures/org.gnome.gedit.svg
 share/help/bg/gedit/gedit-change-color-scheme.page
 share/help/bg/gedit/gedit-change-default-font.page
+share/help/bg/gedit/gedit-character-encodings.page
 share/help/bg/gedit/gedit-close-file.page
 share/help/bg/gedit/gedit-create-new-file.page
 share/help/bg/gedit/gedit-edit-as-root.page
@@ -240,6 +246,7 @@ share/help/ca/gedit/figures/gedit3-screenshot.png
 share/help/ca/gedit/figures/org.gnome.gedit.svg
 share/help/ca/gedit/gedit-change-color-scheme.page
 share/help/ca/gedit/gedit-change-default-font.page
+share/help/ca/gedit/gedit-character-encodings.page
 share/help/ca/gedit/gedit-close-file.page
 share/help/ca/gedit/gedit-create-new-file.page
 share/help/ca/gedit/gedit-edit-as-root.page
@@ -281,6 +288,7 @@ share/help/cs/gedit/figures/gedit3-screenshot.png
 share/help/cs/gedit/figures/org.gnome.gedit.svg
 share/help/cs/gedit/gedit-change-color-scheme.page
 share/help/cs/gedit/gedit-change-default-font.page
+share/help/cs/gedit/gedit-character-encodings.page
 share/help/cs/gedit/gedit-close-file.page
 share/help/cs/gedit/gedit-create-new-file.page
 share/help/cs/gedit/gedit-edit-as-root.page
@@ -322,6 +330,7 @@ share/help/da/gedit/figures/gedit3-screenshot.png
 share/help/da/gedit/figures/org.gnome.gedit.svg
 share/help/da/gedit/gedit-change-color-scheme.page
 share/help/da/gedit/gedit-change-default-font.page
+share/help/da/gedit/gedit-character-encodings.page
 share/help/da/gedit/gedit-close-file.page
 share/help/da/gedit/gedit-create-new-file.page
 share/help/da/gedit/gedit-edit-as-root.page
@@ -363,6 +372,7 @@ share/help/de/gedit/figures/gedit3-screenshot.png
 share/help/de/gedit/figures/org.gnome.gedit.svg
 share/help/de/gedit/gedit-change-color-scheme.page
 share/help/de/gedit/gedit-change-default-font.page
+share/help/de/gedit/gedit-character-encodings.page
 share/help/de/gedit/gedit-close-file.page
 share/help/de/gedit/gedit-create-new-file.page
 share/help/de/gedit/gedit-edit-as-root.page
@@ -404,6 +414,7 @@ share/help/el/gedit/figures/gedit3-screenshot.png
 share/help/el/gedit/figures/org.gnome.gedit.svg
 share/help/el/gedit/gedit-change-color-scheme.page
 share/help/el/gedit/gedit-change-default-font.page
+share/help/el/gedit/gedit-character-encodings.page
 share/help/el/gedit/gedit-close-file.page
 share/help/el/gedit/gedit-create-new-file.page
 share/help/el/gedit/gedit-edit-as-root.page
@@ -445,6 +456,7 @@ share/help/en_GB/gedit/figures/gedit3-screenshot.png
 share/help/en_GB/gedit/figures/org.gnome.gedit.svg
 share/help/en_GB/gedit/gedit-change-color-scheme.page
 share/help/en_GB/gedit/gedit-change-default-font.page
+share/help/en_GB/gedit/gedit-character-encodings.page
 share/help/en_GB/gedit/gedit-close-file.page
 share/help/en_GB/gedit/gedit-create-new-file.page
 share/help/en_GB/gedit/gedit-edit-as-root.page
@@ -486,6 +498,7 @@ share/help/es/gedit/figures/gedit3-screenshot.png
 share/help/es/gedit/figures/org.gnome.gedit.svg
 share/help/es/gedit/gedit-change-color-scheme.page
 share/help/es/gedit/gedit-change-default-font.page
+share/help/es/gedit/gedit-character-encodings.page
 share/help/es/gedit/gedit-close-file.page
 share/help/es/gedit/gedit-create-new-file.page
 share/help/es/gedit/gedit-edit-as-root.page
@@ -527,6 +540,7 @@ share/help/eu/gedit/figures/gedit3-screenshot.png
 share/help/eu/gedit/figures/org.gnome.gedit.svg
 share/help/eu/gedit/gedit-change-color-scheme.page
 share/help/eu/gedit/gedit-change-default-font.page
+share/help/eu/gedit/gedit-character-encodings.page
 share/help/eu/gedit/gedit-close-file.page
 share/help/eu/gedit/gedit-create-new-file.page
 share/help/eu/gedit/gedit-edit-as-root.page
@@ -568,6 +582,7 @@ share/help/fi/gedit/figures/gedit3-screenshot.png
 share/help/fi/gedit/figures/org.gnome.gedit.svg
 share/help/fi/gedit/gedit-change-color-scheme.page
 share/help/fi/gedit/gedit-change-default-font.page
+share/help/fi/gedit/gedit-character-encodings.page
 share/help/fi/gedit/gedit-close-file.page
 share/help/fi/gedit/gedit-create-new-file.page
 share/help/fi/gedit/gedit-edit-as-root.page
@@ -609,6 +624,7 @@ share/help/fr/gedit/figures/gedit3-screenshot.png
 share/help/fr/gedit/figures/org.gnome.gedit.svg
 share/help/fr/gedit/gedit-change-color-scheme.page
 share/help/fr/gedit/gedit-change-default-font.page
+share/help/fr/gedit/gedit-character-encodings.page
 share/help/fr/gedit/gedit-close-file.page
 share/help/fr/gedit/gedit-create-new-file.page
 share/help/fr/gedit/gedit-edit-as-root.page
@@ -650,6 +666,7 @@ share/help/gl/gedit/figures/gedit3-screenshot.png
 share/help/gl/gedit/figures/org.gnome.gedit.svg
 share/help/gl/gedit/gedit-change-color-scheme.page
 share/help/gl/gedit/gedit-change-default-font.page
+share/help/gl/gedit/gedit-character-encodings.page
 share/help/gl/gedit/gedit-close-file.page
 share/help/gl/gedit/gedit-create-new-file.page
 share/help/gl/gedit/gedit-edit-as-root.page
@@ -691,6 +708,7 @@ share/help/hu/gedit/figures/gedit3-screenshot.png
 share/help/hu/gedit/figures/org.gnome.gedit.svg
 share/help/hu/gedit/gedit-change-color-scheme.page
 share/help/hu/gedit/gedit-change-default-font.page
+share/help/hu/gedit/gedit-character-encodings.page
 share/help/hu/gedit/gedit-close-file.page
 share/help/hu/gedit/gedit-create-new-file.page
 share/help/hu/gedit/gedit-edit-as-root.page
@@ -732,6 +750,7 @@ share/help/id/gedit/figures/gedit3-screenshot.png
 share/help/id/gedit/figures/org.gnome.gedit.svg
 share/help/id/gedit/gedit-change-color-scheme.page
 share/help/id/gedit/gedit-change-default-font.page
+share/help/id/gedit/gedit-character-encodings.page
 share/help/id/gedit/gedit-close-file.page
 share/help/id/gedit/gedit-create-new-file.page
 share/help/id/gedit/gedit-edit-as-root.page
@@ -773,6 +792,7 @@ share/help/it/gedit/figures/gedit3-screenshot.png
 share/help/it/gedit/figures/org.gnome.gedit.svg
 share/help/it/gedit/gedit-change-color-scheme.page
 share/help/it/gedit/gedit-change-default-font.page
+share/help/it/gedit/gedit-character-encodings.page
 share/help/it/gedit/gedit-close-file.page
 share/help/it/gedit/gedit-create-new-file.page
 share/help/it/gedit/gedit-edit-as-root.page
@@ -814,6 +834,7 @@ share/help/ja/gedit/figures/gedit3-screenshot.png
 share/help/ja/gedit/figures/org.gnome.gedit.svg
 share/help/ja/gedit/gedit-change-color-scheme.page
 share/help/ja/gedit/gedit-change-default-font.page
+share/help/ja/gedit/gedit-character-encodings.page
 share/help/ja/gedit/gedit-close-file.page
 share/help/ja/gedit/gedit-create-new-file.page
 share/help/ja/gedit/gedit-edit-as-root.page
@@ -855,6 +876,7 @@ share/help/ko/gedit/figures/gedit3-screenshot.png
 share/help/ko/gedit/figures/org.gnome.gedit.svg
 share/help/ko/gedit/gedit-change-color-scheme.page
 share/help/ko/gedit/gedit-change-default-font.page
+share/help/ko/gedit/gedit-character-encodings.page
 share/help/ko/gedit/gedit-close-file.page
 share/help/ko/gedit/gedit-create-new-file.page
 share/help/ko/gedit/gedit-edit-as-root.page
@@ -896,6 +918,7 @@ share/help/lv/gedit/figures/gedit3-screenshot.png
 share/help/lv/gedit/figures/org.gnome.gedit.svg
 share/help/lv/gedit/gedit-change-color-scheme.page
 share/help/lv/gedit/gedit-change-default-font.page
+share/help/lv/gedit/gedit-character-encodings.page
 share/help/lv/gedit/gedit-close-file.page
 share/help/lv/gedit/gedit-create-new-file.page
 share/help/lv/gedit/gedit-edit-as-root.page
@@ -937,6 +960,7 @@ share/help/oc/gedit/figures/gedit3-screenshot.png
 share/help/oc/gedit/figures/org.gnome.gedit.svg
 share/help/oc/gedit/gedit-change-color-scheme.page
 share/help/oc/gedit/gedit-change-default-font.page
+share/help/oc/gedit/gedit-character-encodings.page
 share/help/oc/gedit/gedit-close-file.page
 share/help/oc/gedit/gedit-create-new-file.page
 share/help/oc/gedit/gedit-edit-as-root.page
@@ -978,6 +1002,7 @@ share/help/pl/gedit/figures/gedit3-screenshot.png
 share/help/pl/gedit/figures/org.gnome.gedit.svg
 share/help/pl/gedit/gedit-change-color-scheme.page
 share/help/pl/gedit/gedit-change-default-font.page
+share/help/pl/gedit/gedit-character-encodings.page
 share/help/pl/gedit/gedit-close-file.page
 share/help/pl/gedit/gedit-create-new-file.page
 share/help/pl/gedit/gedit-edit-as-root.page
@@ -1019,6 +1044,7 @@ share/help/pt_BR/gedit/figures/gedit3-screenshot.png
 share/help/pt_BR/gedit/figures/org.gnome.gedit.svg
 share/help/pt_BR/gedit/gedit-change-color-scheme.page
 share/help/pt_BR/gedit/gedit-change-default-font.page
+share/help/pt_BR/gedit/gedit-character-encodings.page
 share/help/pt_BR/gedit/gedit-close-file.page
 share/help/pt_BR/gedit/gedit-create-new-file.page
 share/help/pt_BR/gedit/gedit-edit-as-root.page
@@ -1060,6 +1086,7 @@ share/help/ro/gedit/figures/gedit3-screenshot.png
 share/help/ro/gedit/figures/org.gnome.gedit.svg
 share/help/ro/gedit/gedit-change-color-scheme.page
 share/help/ro/gedit/gedit-change-default-font.page
+share/help/ro/gedit/gedit-character-encodings.page
 share/help/ro/gedit/gedit-close-file.page
 share/help/ro/gedit/gedit-create-new-file.page
 share/help/ro/gedit/gedit-edit-as-root.page
@@ -1101,6 +1128,7 @@ share/help/ru/gedit/figures/gedit3-screenshot.png
 share/help/ru/gedit/figures/org.gnome.gedit.svg
 share/help/ru/gedit/gedit-change-color-scheme.page
 share/help/ru/gedit/gedit-change-default-font.page
+share/help/ru/gedit/gedit-character-encodings.page
 share/help/ru/gedit/gedit-close-file.page
 share/help/ru/gedit/gedit-create-new-file.page
 share/help/ru/gedit/gedit-edit-as-root.page
@@ -1142,6 +1170,7 @@ share/help/sl/gedit/figures/gedit3-screenshot.png
 share/help/sl/gedit/figures/org.gnome.gedit.svg
 share/help/sl/gedit/gedit-change-color-scheme.page
 share/help/sl/gedit/gedit-change-default-font.page
+share/help/sl/gedit/gedit-character-encodings.page
 share/help/sl/gedit/gedit-close-file.page
 share/help/sl/gedit/gedit-create-new-file.page
 share/help/sl/gedit/gedit-edit-as-root.page
@@ -1183,6 +1212,7 @@ share/help/sv/gedit/figures/gedit3-screenshot.png
 share/help/sv/gedit/figures/org.gnome.gedit.svg
 share/help/sv/gedit/gedit-change-color-scheme.page
 share/help/sv/gedit/gedit-change-default-font.page
+share/help/sv/gedit/gedit-character-encodings.page
 share/help/sv/gedit/gedit-close-file.page
 share/help/sv/gedit/gedit-create-new-file.page
 share/help/sv/gedit/gedit-edit-as-root.page
@@ -1224,6 +1254,7 @@ share/help/te/gedit/figures/gedit3-screenshot.png
 share/help/te/gedit/figures/org.gnome.gedit.svg
 share/help/te/gedit/gedit-change-color-scheme.page
 share/help/te/gedit/gedit-change-default-font.page
+share/help/te/gedit/gedit-character-encodings.page
 share/help/te/gedit/gedit-close-file.page
 share/help/te/gedit/gedit-create-new-file.page
 share/help/te/gedit/gedit-edit-as-root.page
@@ -1265,6 +1296,7 @@ share/help/th/gedit/figures/gedit3-screenshot.png
 share/help/th/gedit/figures/org.gnome.gedit.svg
 share/help/th/gedit/gedit-change-color-scheme.page
 share/help/th/gedit/gedit-change-default-font.page
+share/help/th/gedit/gedit-character-encodings.page
 share/help/th/gedit/gedit-close-file.page
 share/help/th/gedit/gedit-create-new-file.page
 share/help/th/gedit/gedit-edit-as-root.page
@@ -1306,6 +1338,7 @@ share/help/uk/gedit/figures/gedit3-screenshot.png
 share/help/uk/gedit/figures/org.gnome.gedit.svg
 share/help/uk/gedit/gedit-change-color-scheme.page
 share/help/uk/gedit/gedit-change-default-font.page
+share/help/uk/gedit/gedit-character-encodings.page
 share/help/uk/gedit/gedit-close-file.page
 share/help/uk/gedit/gedit-create-new-file.page
 share/help/uk/gedit/gedit-edit-as-root.page
@@ -1347,6 +1380,7 @@ share/help/zh_CN/gedit/figures/gedit3-screenshot.png
 share/help/zh_CN/gedit/figures/org.gnome.gedit.svg
 share/help/zh_CN/gedit/gedit-change-color-scheme.page
 share/help/zh_CN/gedit/gedit-change-default-font.page
+share/help/zh_CN/gedit/gedit-character-encodings.page
 share/help/zh_CN/gedit/gedit-close-file.page
 share/help/zh_CN/gedit/gedit-create-new-file.page
 share/help/zh_CN/gedit/gedit-edit-as-root.page
@@ -1388,6 +1422,7 @@ share/help/zh_HK/gedit/figures/gedit3-screenshot.png
 share/help/zh_HK/gedit/figures/org.gnome.gedit.svg
 share/help/zh_HK/gedit/gedit-change-color-scheme.page
 share/help/zh_HK/gedit/gedit-change-default-font.page
+share/help/zh_HK/gedit/gedit-character-encodings.page
 share/help/zh_HK/gedit/gedit-close-file.page
 share/help/zh_HK/gedit/gedit-create-new-file.page
 share/help/zh_HK/gedit/gedit-edit-as-root.page
@@ -1429,6 +1464,7 @@ share/help/zh_TW/gedit/figures/gedit3-screenshot.png
 share/help/zh_TW/gedit/figures/org.gnome.gedit.svg
 share/help/zh_TW/gedit/gedit-change-color-scheme.page
 share/help/zh_TW/gedit/gedit-change-default-font.page
+share/help/zh_TW/gedit/gedit-character-encodings.page
 share/help/zh_TW/gedit/gedit-close-file.page
 share/help/zh_TW/gedit/gedit-create-new-file.page
 share/help/zh_TW/gedit/gedit-edit-as-root.page
@@ -1467,6 +1503,7 @@ share/help/zh_TW/gedit/index.page
 share/help/zh_TW/gedit/legal.xml
 share/icons/hicolor/scalable/apps/org.gnome.gedit.svg
 share/icons/hicolor/symbolic/apps/org.gnome.gedit-symbolic.svg
+share/locale/ab/LC_MESSAGES/gedit.mo
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
 share/locale/an/LC_MESSAGES/gedit.mo
