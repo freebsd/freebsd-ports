@@ -14,7 +14,7 @@
    ui::ScopedKeyboardLayout keyboard_layout(ui::KEYBOARD_LAYOUT_ENGLISH_US);
    const char kTextForKeys[] = {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
        0, 0, 0, 0, '\t', 0, '\r', '\r', 0, 0, 0, 0, 0,
  #else
        0, 0, 0, 0, 0, 0, '\r', '\r', 0, 0, 0, 0, 0,
