@@ -1,5 +1,5 @@
-TIMESTAMP = 1638995403
-SHA256 (gnome/gnome-control-center-41.2.tar.xz) = 8271fc6b33ec2418a578304dd3e57d665f0d7cc706a99a97be419848618fe248
-SIZE (gnome/gnome-control-center-41.2.tar.xz) = 6619180
+TIMESTAMP = 1646329631
+SHA256 (gnome/gnome-control-center-41.4.tar.xz) = d6db0c4cb70857becf48ac5007f12b5f63b9d5d7e80ea7ee57d3be512669f7c9
+SIZE (gnome/gnome-control-center-41.4.tar.xz) = 6616908
 SHA256 (gnome/416e354c0f46.patch) = 3aba0668132001f37385afd317164b815fe8ef244fa40dbee44e8f903314ab4d
 SIZE (gnome/416e354c0f46.patch) = 14773
