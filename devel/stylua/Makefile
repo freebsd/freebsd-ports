@@ -1,7 +1,6 @@
 PORTNAME=	stylua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.3
-PORTREVISION=	2
+DISTVERSION=	0.12.4
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -16,7 +15,8 @@ GH_ACCOUNT=	JohnnyMorganz
 GH_PROJECT=	StyLua
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.44 \
+		anyhow-1.0.53 \
+		assert_cmd-2.0.4 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
@@ -26,23 +26,25 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cast-0.2.7 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
-		console-0.14.1 \
+		console-0.15.0 \
 		convert_case-0.4.0 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
-		crossbeam-channel-0.5.1 \
+		crossbeam-channel-0.5.2 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
-		crossbeam-utils-0.8.5 \
+		crossbeam-utils-0.8.7 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		derive_more-0.99.16 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
 		fnv-1.0.7 \
-		full_moon-0.14.0 \
-		full_moon_derive-0.9.0 \
+		full_moon-0.15.1 \
+		full_moon_derive-0.10.0 \
 		globset-0.4.8 \
 		half-1.7.1 \
 		hashbrown-0.11.2 \
@@ -50,7 +52,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		hermit-abi-0.1.19 \
 		ignore-0.4.18 \
 		indexmap-1.7.0 \
-		insta-1.8.0 \
+		insta-1.12.0 \
 		itertools-0.10.1 \
 		itoa-0.4.8 \
 		js-sys-0.3.55 \
@@ -61,8 +63,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		memchr-2.4.1 \
 		memoffset-0.6.4 \
 		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		once_cell-1.8.0 \
+		num_cpus-1.13.1 \
+		once_cell-1.9.0 \
 		oorandom-11.1.3 \
 		paste-0.1.18 \
 		paste-impl-0.1.18 \
@@ -73,6 +75,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
+		predicates-2.1.1 \
+		predicates-core-1.0.3 \
+		predicates-tree-1.0.5 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
@@ -91,18 +96,19 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		semver-0.11.0 \
 		semver-1.0.4 \
 		semver-parser-0.10.2 \
-		serde-1.0.130 \
+		serde-1.0.136 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.130 \
+		serde_derive-1.0.136 \
 		serde_json-1.0.68 \
 		serde_yaml-0.8.21 \
-		similar-1.3.0 \
+		similar-2.1.0 \
 		smol_str-0.1.18 \
 		strsim-0.8.0 \
-		structopt-0.3.23 \
-		structopt-derive-0.4.16 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
 		syn-1.0.76 \
 		terminal_size-0.1.17 \
+		termtree-0.2.4 \
 		textwrap-0.11.0 \
 		thread_local-1.1.3 \
 		threadpool-1.8.1 \
@@ -112,9 +118,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
-		uuid-0.8.2 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
+		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
 		wasm-bindgen-0.2.78 \
 		wasm-bindgen-backend-0.2.78 \
