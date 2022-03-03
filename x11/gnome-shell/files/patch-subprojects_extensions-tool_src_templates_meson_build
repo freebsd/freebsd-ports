@@ -1,0 +1,19 @@
+$OpenBSD: patch-subprojects_extensions-tool_src_templates_meson_build,v 1.2 2022/01/14 07:28:50 ajacoutot Exp $
+
+From 65450a836ee9e0722a2d4c3327f52345eae293c6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Thu, 23 Dec 2021 17:18:16 +0100
+Subject: [PATCH] build: Drop incorrect positional arg
+
+Index: subprojects/extensions-tool/src/templates/meson.build
+--- subprojects/extensions-tool/src/templates/meson.build.orig
++++ subprojects/extensions-tool/src/templates/meson.build
+@@ -4,7 +4,7 @@ template_metas = [
+ ]
+ template_deps = []
+ foreach template : template_metas
+-  template_deps += i18n.merge_file(template,
++  template_deps += i18n.merge_file(
+     input: template + '.in',
+     output: template,
+     po_dir: po_dir,

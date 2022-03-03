@@ -1,0 +1,17 @@
+$OpenBSD: patch-subprojects_extensions-tool_man_meson_build,v 1.1 2020/05/14 15:28:46 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-shell/issues/1854
+
+Index: subprojects/extensions-tool/man/meson.build
+--- subprojects/extensions-tool/man/meson.build.orig
++++ subprojects/extensions-tool/man/meson.build
+@@ -1,7 +1,7 @@
+ custom_target('gnome-extensions.1',
+-  input: ['gnome-extensions.txt', 'stylesheet.xsl'],
++  input: 'gnome-extensions.txt',
+   output: 'gnome-extensions.1',
+-  command: [a2x, '-D', '@OUTDIR@', '--xsl-file', '@INPUT1@', '-f', 'manpage', '@INPUT0@'],
++  command: [a2x, '-D', '@OUTDIR@', '-f', 'manpage', '@INPUT0@'],
+   install_dir: mandir + '/man1',
+   install: true
+ )

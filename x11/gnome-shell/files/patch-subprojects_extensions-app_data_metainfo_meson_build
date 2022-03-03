@@ -1,0 +1,17 @@
+$OpenBSD: patch-subprojects_extensions-app_data_metainfo_meson_build,v 1.2 2022/01/14 07:28:50 ajacoutot Exp $
+
+From 65450a836ee9e0722a2d4c3327f52345eae293c6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Thu, 23 Dec 2021 17:18:16 +0100
+Subject: [PATCH] build: Drop incorrect positional arg
+
+Index: subprojects/extensions-app/data/metainfo/meson.build
+--- subprojects/extensions-app/data/metainfo/meson.build.orig
++++ subprojects/extensions-app/data/metainfo/meson.build
+@@ -1,5 +1,5 @@
+ metainfo = app_id + '.metainfo.xml'
+-i18n.merge_file(metainfo,
++i18n.merge_file(
+   input: base_id + '.metainfo.xml.in',
+   output: metainfo,
+   po_dir: po_dir,
