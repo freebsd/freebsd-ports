@@ -29,7 +29,4 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.3:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include
 
-post-patch:
-	@${REINPLACE_CMD} '/libdl not found/d' ${WRKSRC}/configure
-
 .include <bsd.port.mk>
