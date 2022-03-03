@@ -33,6 +33,7 @@ man/man7/virkeycode-xtkbd.7.gz
 man/man7/virkeyname-linux.7.gz
 man/man7/virkeyname-osx.7.gz
 man/man7/virkeyname-win32.7.gz
+man/man8/libvirt-guests.8.gz
 man/man8/libvirtd.8.gz
 man/man8/virt-ssh-helper.8.gz
 man/man8/virtlockd.8.gz
@@ -305,17 +306,33 @@ lib/libvirt/storage-file/libvirt_storage_file_fs.so
 %%QEMU%%@dir /var/cache/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel
+%%QEMU%%@dir /var/lib/libvirt/qemu/checkpoint
+%%QEMU%%@dir /var/lib/libvirt/qemu/dump
+%%QEMU%%@dir /var/lib/libvirt/qemu/nvram
+%%QEMU%%@dir /var/lib/libvirt/qemu/ram
+%%QEMU%%@dir /var/lib/libvirt/qemu/save
+%%QEMU%%@dir /var/lib/libvirt/qemu/snapshot
 %%QEMU%%@dir /var/lib/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/swtpm
 %%QEMU%%@dir /var/log/swtpm/libvirt/qemu
 %%QEMU%%@dir /var/log/swtpm/libvirt
 %%QEMU%%@dir /var/log/swtpm
+%%QEMU%%@dir /var/run/libvirt/qemu/dbus
+%%QEMU%%@dir /var/run/libvirt/qemu/slirp
 %%QEMU%%@dir /var/run/libvirt/qemu/swtpm
 %%QEMU%%@dir /var/run/libvirt/qemu
+%%XEN%%@dir /var/lib/libvirt/libxl/channel/target
+%%XEN%%@dir /var/lib/libvirt/libxl/channel
+%%XEN%%@dir /var/lib/libvirt/libxl/dump
+%%XEN%%@dir /var/lib/libvirt/libxl/save
 %%XEN%%@dir /var/lib/libvirt/libxl
 %%XEN%%@dir /var/log/libvirt/libxl
 %%XEN%%@dir /var/run/libvirt/libxl
+%%QEMU%%@dir %%ETCDIR%%/qemu/autostart
+%%XEN%%@dir %%ETCDIR%%/libxl/autostart
 @dir %%ETCDIR%%/qemu/networks/autostart
+@dir %%ETCDIR%%/storage/autostart
+@dir %%ETCDIR%%/secrets
 @dir /var/cache/libvirt
 @dir /var/lib/libvirt/boot
 @dir /var/lib/libvirt/dnsmasq
@@ -330,6 +347,9 @@ lib/libvirt/storage-file/libvirt_storage_file_fs.so
 @dir /var/log/libvirt/qemu
 @dir /var/log/libvirt/uml
 @dir /var/log/libvirt
+@dir /var/run/libvirt/common
 @dir /var/run/libvirt/lockd
 @dir /var/run/libvirt/network
+@dir /var/run/libvirt/secrets
+@dir /var/run/libvirt/storage
 @dir /var/run/libvirt
