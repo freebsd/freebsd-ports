@@ -1,5 +1,5 @@
 PORTNAME=	ioztat
-DISTVERSION=	1.1.0
+DISTVERSION=	2.0.1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sysctl>0:devel/py-sysctl@${PY_FLAVOR}
 
-USES=		python:3.6+,run shebangfix
+USES=		python:3.7+,run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
@@ -23,9 +23,11 @@ SHEBANG_FILES=	${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man8/${PORTNAME}.8.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
