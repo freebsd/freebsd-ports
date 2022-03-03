@@ -1,5 +1,5 @@
-TIMESTAMP = 1644684174
-SHA256 (go/textproc_mergestat/mergestat-v0.5.3/v0.5.3.mod) = 05aceabac7a20f7d841a22a794af7b21ab74aef6fd11bd652e91de2eae52f8ee
-SIZE (go/textproc_mergestat/mergestat-v0.5.3/v0.5.3.mod) = 3346
-SHA256 (go/textproc_mergestat/mergestat-v0.5.3/v0.5.3.zip) = 929d61e1ce84961eee78675490270590575b38f0bfaba6c59287b2b65d565bac
-SIZE (go/textproc_mergestat/mergestat-v0.5.3/v0.5.3.zip) = 2942145
+TIMESTAMP = 1646322394
+SHA256 (go/textproc_mergestat/mergestat-v0.5.4/v0.5.4.mod) = 05aceabac7a20f7d841a22a794af7b21ab74aef6fd11bd652e91de2eae52f8ee
+SIZE (go/textproc_mergestat/mergestat-v0.5.4/v0.5.4.mod) = 3346
+SHA256 (go/textproc_mergestat/mergestat-v0.5.4/v0.5.4.zip) = 7cf5dafc8fe4422b96aa23628ba986528a51ee4aa50312e059e00f6d70652580
+SIZE (go/textproc_mergestat/mergestat-v0.5.4/v0.5.4.zip) = 2945976
