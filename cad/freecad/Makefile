@@ -1,6 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.19.2
-PORTREVISION=	4
+DISTVERSION=	0.19.3
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -11,8 +10,6 @@ COMMENT=	General purpose 3D CAD modeller
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		does not build with OpenCascade 7.6 (yet)
 
 BUILD_DEPENDS=	pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
@@ -25,7 +22,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
-		libTKernel.so:cad/opencascade \
+		libTKernel.so:cad/opencascade740 \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
