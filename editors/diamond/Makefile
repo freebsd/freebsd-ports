@@ -1,15 +1,17 @@
 PORTNAME=	diamond
 DISTVERSION=	1.3.7
-DISTNAME=	Diamond-${DISTVERSION}
 CATEGORIES=	editors
-PKGNAMESUFFIX=	-cs
 MASTER_SITES=	https://download.copperspice.com/${PORTNAME}/source/
+PKGNAMESUFFIX=	-cs
+DISTNAME=	Diamond-${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Compact programmers editor
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 BUILD_DEPENDS=	copperspice>=1.7:x11-toolkits/copperspice
