@@ -1,6 +1,6 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
+DISTVERSION=	0.17.3
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,16 +14,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sayanarijit
 
 CARGO_CRATES=	ansi-to-tui-0.4.1 \
-		anyhow-1.0.53 \
+		anyhow-1.0.55 \
 		assert_cmd-2.0.4 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		bumpalo-3.9.1 \
 		cassowary-0.3.0 \
 		cast-0.2.7 \
-		cc-1.0.72 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.34.0 \
@@ -31,8 +31,8 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		criterion-plot-0.4.4 \
 		crossbeam-channel-0.5.2 \
 		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.6 \
-		crossbeam-utils-0.8.6 \
+		crossbeam-epoch-0.9.7 \
+		crossbeam-utils-0.8.7 \
 		crossterm-0.20.0 \
 		crossterm-0.22.1 \
 		crossterm_winapi-0.8.0 \
@@ -45,7 +45,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		erased-serde-0.3.18 \
-		getrandom-0.2.4 \
+		getrandom-0.2.5 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
@@ -57,7 +57,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		lazy_static-1.4.0 \
-		libc-0.2.117 \
+		libc-0.2.119 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.6 \
 		log-0.4.14 \
@@ -66,12 +66,12 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
 		mime-0.3.16 \
-		mime_guess-2.0.3 \
+		mime_guess-2.0.4 \
 		mio-0.7.14 \
 		miow-0.3.7 \
 		mlua-0.7.3 \
 		natord-1.0.9 \
-		ntapi-0.3.6 \
+		ntapi-0.3.7 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
@@ -100,11 +100,11 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.4 \
+		semver-1.0.6 \
 		serde-1.0.136 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.78 \
+		serde_json-1.0.79 \
 		serde_yaml-0.8.23 \
 		signal-hook-0.3.13 \
 		signal-hook-mio-0.2.1 \
@@ -118,7 +118,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.1 \
 		tui-0.16.0 \
 		tui-input-0.1.2 \
 		unicase-2.6.0 \
-		unicode-segmentation-1.8.0 \
+		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		version_check-0.9.4 \
