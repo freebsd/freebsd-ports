@@ -1339,6 +1339,7 @@
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/id.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/it.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/mn.php
+%%WWWDIR%%/go/modules/community/googleauthenticator/language/nb.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/nl.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/pl.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/pt_br.php
@@ -1363,6 +1364,7 @@
 %%WWWDIR%%/go/modules/community/history/language/de.php
 %%WWWDIR%%/go/modules/community/history/language/en.php
 %%WWWDIR%%/go/modules/community/history/language/it.php
+%%WWWDIR%%/go/modules/community/history/language/nb.php
 %%WWWDIR%%/go/modules/community/history/language/nl.php
 %%WWWDIR%%/go/modules/community/history/language/pt_pt.php
 %%WWWDIR%%/go/modules/community/history/model/LogEntry.php
@@ -2307,6 +2309,7 @@
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/ticketcreated.php
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/ticketlist.php
 %%WWWDIR%%/modules/demodata/language/it.php
+%%WWWDIR%%/modules/demodata/language/nb.php
 %%WWWDIR%%/modules/documenttemplates/DocumenttemplatesModule.php
 %%WWWDIR%%/modules/documenttemplates/EmailTemplateDialog.js
 %%WWWDIR%%/modules/documenttemplates/NewOODocumentMenuItem.js
@@ -2767,6 +2770,7 @@
 %%WWWDIR%%/modules/jitsimeet/JitsimeetModule.php
 %%WWWDIR%%/modules/jitsimeet/language/de.php
 %%WWWDIR%%/modules/jitsimeet/language/en.php
+%%WWWDIR%%/modules/jitsimeet/language/nb.php
 %%WWWDIR%%/modules/jitsimeet/language/nl.php
 %%WWWDIR%%/modules/jitsimeet/model/Settings.php
 %%WWWDIR%%/modules/jitsimeet/views/Extjs3/PluginCalendar.js
@@ -3586,6 +3590,7 @@
 %%WWWDIR%%/modules/tasks/language/bg.php
 %%WWWDIR%%/modules/tasks/language/de.php
 %%WWWDIR%%/modules/tasks/language/mn.php
+%%WWWDIR%%/modules/tasks/language/nb.php
 %%WWWDIR%%/modules/tasks/language/pt_pt.php
 %%WWWDIR%%/modules/tickets/CustomFieldSetDialog.js
 %%WWWDIR%%/modules/tickets/InvoiceDialog.js
