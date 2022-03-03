@@ -1,3 +1,3 @@
-TIMESTAMP = 1632801889
-SHA256 (gnome/gjs-1.70.0.tar.xz) = 4b0629341a318a02374e113ab97f9a9f3325423269fc1e0b043a5ffb01861c5f
-SIZE (gnome/gjs-1.70.0.tar.xz) = 595292
+TIMESTAMP = 1646329506
+SHA256 (gnome/gjs-1.70.1.tar.xz) = bbdc0eec7cf25fbc534769f6a1fb2c7a18e17b871efdb0ca58e9abf08b28003f
+SIZE (gnome/gjs-1.70.1.tar.xz) = 598444
