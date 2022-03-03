@@ -1,0 +1,7 @@
+bin/make_dparser
+include/dparse.h
+include/dparse_tables.h
+include/dparse_tree.h
+include/dsymtab.h
+lib/libdparse.a
+man/man1/make_dparser.1.gz
