@@ -1,5 +1,6 @@
 PORTNAME=	sdl12-compat
-PORTVERSION=	s20220128
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	1.2.52
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,12 +18,11 @@ CMAKE_OFF+=	${CMAKE_TESTING_ON}
 CMAKE_TESTING_ON=	SDL12TESTS
 CMAKE_TESTING_TARGET=	# post-test
 GH_ACCOUNT=	libsdl-org
-GH_TAGNAME=	b3328aa
 SUFFIX=		-${PORTNAME:C/.*-//}
 PLIST_FILES=	etc/libmap.d/${PORTNAME}.conf \
 		lib/libSDL-1.2${SUFFIX}.so \
 		lib/libSDL-1.2${SUFFIX}.so.0 \
-		lib/libSDL-1.2${SUFFIX}.so.1.2.50 \
+		lib/libSDL-1.2${SUFFIX}.so.1.2.52 \
 		"@comment lib/libSDLmain.a"
 
 post-patch:
