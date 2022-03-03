@@ -8,7 +8,7 @@ cat << "EOF" > $HOME/.telak/telakrc
 # telakrc - see telak(1) for more config options
 
 [example]
-url = http://www.critical.ch/telak/d-mon.gif
+url = https://critical.ch/telak/d-mon.png
 x = 15
 y = 15
 
