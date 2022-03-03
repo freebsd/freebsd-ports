@@ -7,6 +7,7 @@ include/fluent-bit/flb_api.h
 include/fluent-bit/flb_avro.h
 include/fluent-bit/flb_aws_credentials.h
 include/fluent-bit/flb_aws_util.h
+include/fluent-bit/flb_base64.h
 include/fluent-bit/flb_bits.h
 include/fluent-bit/flb_callback.h
 include/fluent-bit/flb_compat.h
