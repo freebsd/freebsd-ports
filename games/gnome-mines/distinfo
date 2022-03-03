@@ -1,5 +1,3 @@
-TIMESTAMP = 1622413500
-SHA256 (gnome/gnome-mines-40.0.tar.xz) = 1f79ba6c2ae4a56e5a0c23668d40f05cfcac68a2d848db1a1cf9920c779bc669
-SIZE (gnome/gnome-mines-40.0.tar.xz) = 283016
-SHA256 (gnome/0a10c3a8ae43.patch) = c4e786769b40ffe7b6795c2597a9afda68776e6e86ac33733330692c773d0a9b
-SIZE (gnome/0a10c3a8ae43.patch) = 1288
+TIMESTAMP = 1646339170
+SHA256 (gnome/gnome-mines-40.1.tar.xz) = 3502e9b3f71cb3b2e711c0e6019187febcc2bca877e3d456dcab700f7be31272
+SIZE (gnome/gnome-mines-40.1.tar.xz) = 280768

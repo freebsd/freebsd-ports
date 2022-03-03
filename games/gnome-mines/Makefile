@@ -1,13 +1,10 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	gnome-mines
-PORTVERSION=	40.0
+PORTVERSION=	40.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	0a10c3a8ae43.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-mines/-/merge_requests/31
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome minesweeper
