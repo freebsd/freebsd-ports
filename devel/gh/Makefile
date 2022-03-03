@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.2
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -19,7 +19,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
 		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
-		briandowns:spinner:v1.18.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
+		briandowns:spinner:v1.18.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		charmbracelet:glamour:v0.4.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		cli:browser:v1.1.0:cli_browser/vendor/github.com/cli/browser \
 		cli:crypto:6be313f59b03:cli_crypto/vendor/golang.org/x/crypto \
@@ -35,7 +35,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:97ca703d548d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
 		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -47,7 +47,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		henvic:httpretty:v0.0.6:henvic_httpretty/vendor/github.com/henvic/httpretty \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		itchyny:gojq:v0.12.6:itchyny_gojq/vendor/github.com/itchyny/gojq \
+		itchyny:gojq:v0.12.7:itchyny_gojq/vendor/github.com/itchyny/gojq \
 		itchyny:timefmt-go:v0.1.3:itchyny_timefmt_go/vendor/github.com/itchyny/timefmt-go \
 		joho:godotenv:v1.4.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
