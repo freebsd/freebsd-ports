@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-maps
-DISTVERSION=	41.2
+DISTVERSION=	41.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
