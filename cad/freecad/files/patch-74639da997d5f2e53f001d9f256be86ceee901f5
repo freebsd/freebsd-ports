@@ -1,0 +1,477 @@
+commit 74639da997d5f2e53f001d9f256be86ceee901f5
+Author: wmayer <wmayer@users.sourceforge.net>
+Date:   Sat Oct 9 13:49:02 2021 +0200
+
+    OCCT: port FreeCAD sources to version 7.6
+    SMESH is not yet ported
+    Although FreeCAD code compiles with OCCT 7.6 it doesn't work at the moment
+
+diff --git src/Mod/Drawing/App/DrawingExport.cpp src/Mod/Drawing/App/DrawingExport.cpp
+index b87891ed50..7572be417c 100644
+--- src/Mod/Drawing/App/DrawingExport.cpp
++++ src/Mod/Drawing/App/DrawingExport.cpp
+@@ -64,10 +64,7 @@
+ #include <BRep_Tool.hxx>
+ 
+ #include <BRepAdaptor_CompCurve.hxx>
+-#include <BRepAdaptor_HCompCurve.hxx>
+ #include <Approx_Curve3d.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
+ #include <Geom_BSplineCurve.hxx>
+ #include <Geom_BezierCurve.hxx>
+ #include <GeomConvert_BSplineCurveToBezierCurve.hxx>
+@@ -75,11 +72,19 @@
+ #include <Geom2d_BSplineCurve.hxx>
+ #include <BRepLProp_CLProps.hxx>
+ #include <Standard_Failure.hxx>
++#include <Standard_Version.hxx>
++#if OCC_VERSION_HEX < 0x070600
++#include <BRepAdaptor_HCurve.hxx>
++#endif
+ 
+ #include "DrawingExport.h"
+ #include <Base/Tools.h>
+ #include <Base/Vector3D.h>
+ 
++#if OCC_VERSION_HEX >= 0x070600
++using BRepAdaptor_HCurve = BRepAdaptor_Curve;
++#endif
++
+ using namespace Drawing;
+ using namespace std;
+ 
+diff --git src/Mod/Drawing/App/ProjectionAlgos.cpp src/Mod/Drawing/App/ProjectionAlgos.cpp
+index 9afae7e9c0..da03d49057 100644
+--- src/Mod/Drawing/App/ProjectionAlgos.cpp
++++ src/Mod/Drawing/App/ProjectionAlgos.cpp
+@@ -61,10 +61,7 @@
+ #include <BRepMesh_IncrementalMesh.hxx>
+ #include <BRepLib.hxx>
+ #include <BRepAdaptor_CompCurve.hxx>
+-#include <BRepAdaptor_HCompCurve.hxx>
+ #include <Approx_Curve3d.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
+ #include <Geom_BSplineCurve.hxx>
+ #include <Geom_BezierCurve.hxx>
+ #include <GeomConvert_BSplineCurveToBezierCurve.hxx>
+diff --git src/Mod/Import/App/ImpExpDxf.cpp src/Mod/Import/App/ImpExpDxf.cpp
+index 09827bd928..dcd88ef138 100644
+--- src/Mod/Import/App/ImpExpDxf.cpp
++++ src/Mod/Import/App/ImpExpDxf.cpp
+@@ -29,7 +29,6 @@
+ 
+ #include <Approx_Curve3d.hxx>
+ #include <BRepAdaptor_Curve.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
+ #include <BRep_Builder.hxx>
+ #include <BRepBuilderAPI_MakeEdge.hxx>
+ #include <BRepBuilderAPI_MakeVertex.hxx>
+@@ -47,6 +46,7 @@
+ #include <gp_Pnt.hxx>
+ #include <gp_Dir.hxx>
+ #include <gp_Vec.hxx>
++#include <Standard_Version.hxx>
+ #include <TopoDS.hxx>
+ #include <TopoDS_Edge.hxx>
+ #include <TopoDS_Vertex.hxx>
+@@ -55,6 +55,9 @@
+ #include <TopExp_Explorer.hxx>
+ #include <TopoDS_Edge.hxx>
+ #include <TColgp_Array1OfPnt.hxx>
++#if OCC_VERSION_HEX < 0x070600
++#include <BRepAdaptor_HCurve.hxx>
++#endif
+ 
+ #include <Base/Console.h>
+ #include <Base/Parameter.h>
+@@ -68,6 +71,10 @@
+ 
+ using namespace Import;
+ 
++#if OCC_VERSION_HEX >= 0x070600
++using BRepAdaptor_HCurve = BRepAdaptor_Curve;
++#endif
++
+ 
+ //******************************************************************************
+ // reading
+diff --git src/Mod/Part/App/GeomPlate/CurveConstraintPyImp.cpp src/Mod/Part/App/GeomPlate/CurveConstraintPyImp.cpp
+index 3271f3651a..b63227d537 100644
+--- src/Mod/Part/App/GeomPlate/CurveConstraintPyImp.cpp
++++ src/Mod/Part/App/GeomPlate/CurveConstraintPyImp.cpp
+@@ -24,10 +24,13 @@
+ #include "PreCompiled.h"
+ #ifndef _PreComp_
+ # include <GeomAdaptor_Curve.hxx>
+-# include <GeomAdaptor_HCurve.hxx>
+ # include <Geom2dAdaptor_Curve.hxx>
+-# include <Geom2dAdaptor_HCurve.hxx>
+ # include <Standard_Failure.hxx>
++# include <Standard_Version.hxx>
++# if OCC_VERSION_HEX < 0x070600
++# include <GeomAdaptor_HCurve.hxx>
++# include <Geom2dAdaptor_HCurve.hxx>
++# endif
+ #endif
+ 
+ #include "GeomPlate/CurveConstraintPy.h"
+@@ -76,6 +79,16 @@ int CurveConstraintPy::PyInit(PyObject* args, PyObject* kwds)
+                 return -1;
+             }
+ 
++#if OCC_VERSION_HEX >= 0x070600
++            Handle(Adaptor3d_Curve) hCurve;
++            if (curve->getTypeId().isDerivedFrom(GeomTrimmedCurve::getClassTypeId())) {
++                GeomTrimmedCurve* trim = static_cast<GeomTrimmedCurve*>(curve);
++                hCurve = new GeomAdaptor_Curve(handle, trim->getFirstParameter(), trim->getLastParameter());
++            }
++            else {
++                hCurve = new GeomAdaptor_Curve(handle);
++            }
++#else
+             Handle(Adaptor3d_HCurve) hCurve;
+             if (curve->getTypeId().isDerivedFrom(GeomTrimmedCurve::getClassTypeId())) {
+                 GeomTrimmedCurve* trim = static_cast<GeomTrimmedCurve*>(curve);
+@@ -86,6 +99,7 @@ int CurveConstraintPy::PyInit(PyObject* args, PyObject* kwds)
+                 GeomAdaptor_Curve adapt(handle);
+                 hCurve = new GeomAdaptor_HCurve(adapt);
+             }
++#endif
+ 
+             ptr.reset(new GeomPlate_CurveConstraint(hCurve, order, nbPts, tolDist, tolAng, tolCurv));
+         }
+@@ -212,11 +226,15 @@ PyObject* CurveConstraintPy::curve3d(PyObject *args)
+         return nullptr;
+ 
+     try {
+-        Handle(Adaptor3d_HCurve) hAdapt = getGeomPlate_CurveConstraintPtr()->Curve3d();
++        auto hAdapt = getGeomPlate_CurveConstraintPtr()->Curve3d();
+         if (hAdapt.IsNull())
+             Py_Return;
+ 
++#if OCC_VERSION_HEX >= 0x070600
++        const Adaptor3d_Curve& a3d = *hAdapt;
++#else
+         const Adaptor3d_Curve& a3d = hAdapt->Curve();
++#endif
+         std::unique_ptr<GeomCurve> ptr(Part::makeFromCurveAdaptor(a3d));
+         return ptr->getPyObject();
+     }
+@@ -282,6 +300,16 @@ PyObject* CurveConstraintPy::setProjectedCurve(PyObject *args)
+             return nullptr;
+         }
+ 
++#if OCC_VERSION_HEX >= 0x070600
++        Handle(Adaptor2d_Curve2d) hCurve;
++        if (handle->IsKind(STANDARD_TYPE(Geom2d_TrimmedCurve))) {
++            Handle(Geom2d_TrimmedCurve) aTC (Handle(Geom2d_TrimmedCurve)::DownCast (handle));
++            hCurve = new Geom2dAdaptor_Curve(handle, aTC->FirstParameter(), aTC->LastParameter());
++        }
++        else {
++            hCurve = new Geom2dAdaptor_Curve(handle);
++        }
++#else
+         Handle(Adaptor2d_HCurve2d) hCurve;
+         if (handle->IsKind(STANDARD_TYPE(Geom2d_TrimmedCurve))) {
+             Handle(Geom2d_TrimmedCurve) aTC (Handle(Geom2d_TrimmedCurve)::DownCast (handle));
+@@ -292,6 +320,7 @@ PyObject* CurveConstraintPy::setProjectedCurve(PyObject *args)
+             Geom2dAdaptor_Curve adapt(handle);
+             hCurve = new Geom2dAdaptor_HCurve(adapt);
+         }
++#endif
+ 
+         getGeomPlate_CurveConstraintPtr()->SetProjectedCurve(hCurve, tolU, tolV);
+         Py_Return;
+@@ -308,11 +337,15 @@ PyObject* CurveConstraintPy::projectedCurve(PyObject *args)
+         return nullptr;
+ 
+     try {
+-        Handle(Adaptor2d_HCurve2d) hAdapt = getGeomPlate_CurveConstraintPtr()->ProjectedCurve();
++        auto hAdapt = getGeomPlate_CurveConstraintPtr()->ProjectedCurve();
+         if (hAdapt.IsNull())
+             Py_Return;
+ 
++#if OCC_VERSION_HEX >= 0x070600
++        const Adaptor2d_Curve2d& a2d = *hAdapt;
++#else
+         const Adaptor2d_Curve2d& a2d = hAdapt->Curve2d();
++#endif
+         std::unique_ptr<Geom2dCurve> ptr(Part::makeFromCurveAdaptor2d(a2d));
+         return ptr->getPyObject();
+     }
+diff --git src/Mod/Part/App/Geometry.cpp src/Mod/Part/App/Geometry.cpp
+index e6d6396ca9..1d1d67d4f0 100644
+--- src/Mod/Part/App/Geometry.cpp
++++ src/Mod/Part/App/Geometry.cpp
+@@ -51,7 +51,6 @@
+ # include <Geom_RectangularTrimmedSurface.hxx>
+ # include <Geom_SurfaceOfRevolution.hxx>
+ # include <Geom_SurfaceOfLinearExtrusion.hxx>
+-# include <GeomAdaptor_HCurve.hxx>
+ # include <GeomAPI_Interpolate.hxx>
+ # include <GeomConvert.hxx>
+ # include <GeomConvert_CompCurveToBSplineCurve.hxx>
+@@ -101,6 +100,9 @@
+ # include <GeomAPI_ExtremaCurveCurve.hxx>
+ # include <ShapeConstruct_Curve.hxx>
+ # include <LProp_NotDefined.hxx>
++# if OCC_VERSION_HEX < 0x070600
++# include <GeomAdaptor_HCurve.hxx>
++# endif
+ 
+ # include <ctime>
+ # include <cmath>
+@@ -144,6 +146,9 @@
+ 
+ #include "Geometry.h"
+ 
++#if OCC_VERSION_HEX >= 0x070600
++using GeomAdaptor_HCurve = GeomAdaptor_Curve;
++#endif
+ 
+ using namespace Part;
+ 
+diff --git src/Mod/Part/App/PartFeatures.cpp src/Mod/Part/App/PartFeatures.cpp
+index 2dc503bdf2..4d9e1fc0f9 100644
+--- src/Mod/Part/App/PartFeatures.cpp
++++ src/Mod/Part/App/PartFeatures.cpp
+@@ -25,9 +25,7 @@
+ #ifndef _PreComp_
+ # include <BRepFill.hxx>
+ # include <BRepAdaptor_Curve.hxx>
+-# include <BRepAdaptor_HCurve.hxx>
+ # include <BRepAdaptor_CompCurve.hxx>
+-# include <BRepAdaptor_HCompCurve.hxx>
+ # include <BRepLib_MakeWire.hxx>
+ # include <Geom_BSplineSurface.hxx>
+ # include <TopoDS.hxx>
+@@ -43,7 +41,7 @@
+ # include <TopExp_Explorer.hxx>
+ # include <TopoDS.hxx>
+ # include <Precision.hxx>
+-# include <Adaptor3d_HCurve.hxx>
++# include <memory>
+ #endif
+ 
+ 
+@@ -170,22 +168,18 @@ App::DocumentObjectExecReturn *RuledSurface::execute(void)
+ 
+         if (Orientation.getValue() == 0) {
+             // Automatic
+-            Handle(Adaptor3d_HCurve) a1;
+-            Handle(Adaptor3d_HCurve) a2;
++            std::unique_ptr<Adaptor3d_Curve> a1;
++            std::unique_ptr<Adaptor3d_Curve> a2;
+             if (!isWire) {
+-                BRepAdaptor_Curve adapt1(TopoDS::Edge(S1));
+-                BRepAdaptor_Curve adapt2(TopoDS::Edge(S2));
+-                a1 = new BRepAdaptor_HCurve(adapt1);
+-                a2 = new BRepAdaptor_HCurve(adapt2);
++                a1 = std::make_unique<BRepAdaptor_Curve>(TopoDS::Edge(S1));
++                a2 = std::make_unique<BRepAdaptor_Curve>(TopoDS::Edge(S2));
+             }
+             else {
+-                BRepAdaptor_CompCurve adapt1(TopoDS::Wire(S1));
+-                BRepAdaptor_CompCurve adapt2(TopoDS::Wire(S2));
+-                a1 = new BRepAdaptor_HCompCurve(adapt1);
+-                a2 = new BRepAdaptor_HCompCurve(adapt2);
++                a1 = std::make_unique<BRepAdaptor_CompCurve>(TopoDS::Wire(S1));
++                a2 = std::make_unique<BRepAdaptor_CompCurve>(TopoDS::Wire(S2));
+             }
+ 
+-            if (!a1.IsNull() && !a2.IsNull()) {
++            if (a1 && a2) {
+                 // get end points of 1st curve
+                 Standard_Real first, last;
+                 first = a1->FirstParameter();
+diff --git src/Mod/Part/App/TopoShapeFacePyImp.cpp src/Mod/Part/App/TopoShapeFacePyImp.cpp
+index ea6cd98bdf..63e8bead74 100644
+--- src/Mod/Part/App/TopoShapeFacePyImp.cpp
++++ src/Mod/Part/App/TopoShapeFacePyImp.cpp
+@@ -493,6 +493,15 @@ PyObject* TopoShapeFacePy::getUVNodes(PyObject *args)
+         return Py::new_reference_to(list);
+     }
+ 
++#if OCC_VERSION_HEX >= 0x070600
++    for (int i=1; i<=mesh->NbNodes(); i++) {
++        gp_Pnt2d pt2d = mesh->UVNode(i);
++        Py::Tuple uv(2);
++        uv.setItem(0, Py::Float(pt2d.X()));
++        uv.setItem(1, Py::Float(pt2d.Y()));
++        list.append(uv);
++    }
++#else
+     const TColgp_Array1OfPnt2d& aNodesUV = mesh->UVNodes();
+     for (int i=aNodesUV.Lower(); i<=aNodesUV.Upper(); i++) {
+         gp_Pnt2d pt2d = aNodesUV(i);
+@@ -501,6 +510,7 @@ PyObject* TopoShapeFacePy::getUVNodes(PyObject *args)
+         uv.setItem(1, Py::Float(pt2d.Y()));
+         list.append(uv);
+     }
++#endif
+ 
+     return Py::new_reference_to(list);
+ }
+diff --git src/Mod/Part/App/TopoShapeWirePyImp.cpp src/Mod/Part/App/TopoShapeWirePyImp.cpp
+index 95c1aff681..a1f32d6d03 100644
+--- src/Mod/Part/App/TopoShapeWirePyImp.cpp
++++ src/Mod/Part/App/TopoShapeWirePyImp.cpp
+@@ -344,9 +344,9 @@ PyObject* TopoShapeWirePy::approximate(PyObject *args, PyObject *kwds)
+         return 0;
+     try {
+         BRepAdaptor_CompCurve adapt(TopoDS::Wire(getTopoShapePtr()->getShape()));
+-        Handle(Adaptor3d_HCurve) hcurve = adapt.Trim(adapt.FirstParameter(),
+-                                                    adapt.LastParameter(),
+-                                                    tol2d);
++        auto hcurve = adapt.Trim(adapt.FirstParameter(),
++                                 adapt.LastParameter(),
++                                 tol2d);
+         Approx_Curve3d approx(hcurve, tol3d, GeomAbs_C0, maxseg, maxdeg);
+         if (approx.IsDone()) {
+             return new BSplineCurvePy(new GeomBSplineCurve(approx.Curve()));
+diff --git src/Mod/Part/Gui/TaskCheckGeometry.cpp src/Mod/Part/Gui/TaskCheckGeometry.cpp
+index 5de7c16920..aaef13d9d0 100644
+--- src/Mod/Part/Gui/TaskCheckGeometry.cpp
++++ src/Mod/Part/Gui/TaskCheckGeometry.cpp
+@@ -711,8 +711,10 @@ int TaskCheckGeometryResults::goBOPSingleCheck(const TopoDS_Shape& shapeIn, Resu
+ #if OCC_VERSION_HEX >= 0x060900
+ #if OCC_VERSION_HEX < 0x070500
+   BOPCheck.SetProgressIndicator(theProgress);
+-#else
++#elif OCC_VERSION_HEX < 0x070600
+   BOPCheck.SetProgressIndicator(theScope);
++#else
++  Q_UNUSED(theScope)
+ #endif // 0x070500
+ #else
+   Q_UNUSED(theProgress);
+@@ -740,7 +742,7 @@ int TaskCheckGeometryResults::goBOPSingleCheck(const TopoDS_Shape& shapeIn, Resu
+   Base::TimeInfo start_time;
+ #endif
+ 
+-BOPCheck.Perform();
++  BOPCheck.Perform();
+ 
+ #ifdef FC_DEBUG
+   float bopAlgoTime = Base::TimeInfo::diffTimeF(start_time,Base::TimeInfo());
+diff --git src/Mod/Part/Gui/ViewProviderExt.cpp src/Mod/Part/Gui/ViewProviderExt.cpp
+index 77cefbe3e0..8a52f1701b 100644
+--- src/Mod/Part/Gui/ViewProviderExt.cpp
++++ src/Mod/Part/Gui/ViewProviderExt.cpp
+@@ -1150,16 +1150,25 @@
+ 
+ 
+             // cycling through the poly mesh
++#if OCC_VERSION_HEX < 0x070600
+             const Poly_Array1OfTriangle& Triangles = mesh->Triangles();
+             const TColgp_Array1OfPnt& Nodes = mesh->Nodes();
+             TColgp_Array1OfDir Normals (Nodes.Lower(), Nodes.Upper());
++#else
++            int numNodes =  mesh->NbNodes();
++            TColgp_Array1OfDir Normals (1, numNodes);
++#endif
+             if (NormalsFromUV)
+                 getNormals(actFace, mesh, Normals);
+             
+             for (int g=1;g<=nbTriInFace;g++) {
+                 // Get the triangle
+                 Standard_Integer N1,N2,N3;
++#if OCC_VERSION_HEX < 0x070600
+                 Triangles(g).Get(N1,N2,N3);
++#else
++                mesh->Triangle(g).Get(N1,N2,N3);
++#endif
+ 
+                 // change orientation of the triangle if the face is reversed
+                 if ( orient != TopAbs_FORWARD ) {
+@@ -1169,7 +1178,11 @@
+                 }
+ 
+                 // get the 3 points of this triangle
++#if OCC_VERSION_HEX < 0x070600
+                 gp_Pnt V1(Nodes(N1)), V2(Nodes(N2)), V3(Nodes(N3));
++#else
++                gp_Pnt V1(mesh->Node(N1)), V2(mesh->Node(N2)), V3(mesh->Node(N3));
++#endif
+ 
+                 // get the 3 normals of this triangle
+                 gp_Vec NV1, NV2, NV3;
+@@ -1246,7 +1259,11 @@
+                         // rare cases where some points are only referenced by the polygon
+                         // but not by any triangle. Thus, we must apply the coordinates to
+                         // make sure that everything is properly set.
++#if OCC_VERSION_HEX < 0x070600
+                         gp_Pnt p(Nodes(nodeIndex));
++#else
++                        gp_Pnt p(mesh->Node(nodeIndex));
++#endif
+                         if (!identity)
+                             p.Transform(myTransf);
+                         verts[index].setValue((float)(p.X()),(float)(p.Y()),(float)(p.Z()));
+diff --git src/Mod/Path/App/AppPathPy.cpp src/Mod/Path/App/AppPathPy.cpp
+index 6e0c72d2f5..ce912b4474 100644
+--- src/Mod/Path/App/AppPathPy.cpp
++++ src/Mod/Path/App/AppPathPy.cpp
+@@ -49,10 +49,7 @@
+ #include <TopExp_Explorer.hxx>
+ #include <gp_Lin.hxx>
+ #include <BRep_Tool.hxx>
+-#include <BRepAdaptor_CompCurve.hxx>
+-#include <BRepAdaptor_HCompCurve.hxx>
+-#include <Approx_Curve3d.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
++#include <BRepAdaptor_Curve.hxx>
+ 
+ #include "CommandPy.h"
+ #include "PathPy.h"
+diff --git src/Mod/TechDraw/App/Geometry.cpp src/Mod/TechDraw/App/Geometry.cpp
+index b6c3637137..59a92d7e51 100644
+--- src/Mod/TechDraw/App/Geometry.cpp
++++ src/Mod/TechDraw/App/Geometry.cpp
+@@ -28,13 +28,13 @@
+ #include <BRepAdaptor_Curve.hxx>
+ #include <BRep_Tool.hxx>
+ #include <BRepTools.hxx>
+-#include <BRepAdaptor_HCurve.hxx>
+ #include <BRepLib.hxx>
+ #include <BRepBuilderAPI_MakeVertex.hxx>
+ #include <BRepBuilderAPI_MakeEdge.hxx>
+ #include <BRepBuilderAPI_MakeWire.hxx>
+ #include <BRepBuilderAPI_MakeFace.hxx>
+ #include <BRepExtrema_DistShapeShape.hxx>
++#include <BRepLProp_CLProps.hxx>
+ #include <Precision.hxx>
+ #include <GCPnts_AbscissaPoint.hxx>
+ #include <gce_MakeCirc.hxx>
+@@ -58,14 +58,16 @@
+ #include <GeomLProp_CLProps.hxx>
+ #include <GeomAPI_ProjectPointOnCurve.hxx>
+ #include <Poly_Polygon3D.hxx>
++#include <Standard_Version.hxx>
+ #include <TopoDS.hxx>
+ #include <TopoDS_Edge.hxx>
+ #include <TopExp.hxx>
+ #include <TopExp_Explorer.hxx>
+ #include <TColgp_Array1OfPnt2d.hxx>
+ #include <TColgp_Array1OfPnt.hxx>
+-#include <BRepLProp_CLProps.hxx>
+-
++#if OCC_VERSION_HEX < 0x070600
++#include <BRepAdaptor_HCurve.hxx>
++#endif
+ #include <cmath>
+ #endif  // #ifndef _PreComp_
+ 
+@@ -86,6 +88,10 @@
+ using namespace TechDraw;
+ using namespace std;
+ 
++#if OCC_VERSION_HEX >= 0x070600
++using BRepAdaptor_HCurve = BRepAdaptor_Curve;
++#endif
++
+ #define GEOMETRYEDGE 0
+ #define COSMETICEDGE 1
+ #define CENTERLINE   2

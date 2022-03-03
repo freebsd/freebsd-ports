@@ -1,5 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.19.3
+DISTVERSION=	0.19.4
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
-		libTKernel.so:cad/opencascade740 \
+		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
