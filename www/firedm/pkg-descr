@@ -1,0 +1,6 @@
+FireDM is an open-source, multi-connection, graphical download manager.
+It can download regular files, supports downloading videos and playlists
+from YouTube and other media websites.  Developed in Python, based on
+Tkinter, libcurl, and yt-dlp (youtube_dl).
+
+WWW: https://github.com/firedm/FireDM

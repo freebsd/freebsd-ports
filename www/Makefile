@@ -159,6 +159,7 @@
     SUBDIR += ffsend
     SUBDIR += fgallery
     SUBDIR += filtron
+    SUBDIR += firedm
     SUBDIR += firefox
     SUBDIR += firefox-esr
     SUBDIR += flat-frog
