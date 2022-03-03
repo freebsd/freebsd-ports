@@ -309,9 +309,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  			free(cipher_list);
  			return 0;
  		}
---- work/openssh-7.7p1/clientloop.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ work/openssh-7.7p1/clientloop.c	2018-06-27 16:40:24.560906000 -0700
-@@ -1549,6 +1549,15 @@ client_request_x11(struct ssh *ssh, const char *reques
+--- work/openssh/clientloop.c.orig	2022-02-23 03:31:11.000000000 -0800
++++ work/openssh/clientloop.c	2022-03-02 12:53:47.624273000 -0800
+@@ -1571,6 +1571,15 @@ client_request_x11(struct ssh *ssh, const char *reques
  	sock = x11_connect_display(ssh);
  	if (sock < 0)
  		return NULL;
@@ -327,10 +327,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	c = channel_new(ssh, "x11",
  	    SSH_CHANNEL_X11_OPEN, sock, sock, -1,
  	    CHAN_TCP_WINDOW_DEFAULT, CHAN_X11_PACKET_DEFAULT, 0, "x11", 1);
-@@ -1574,6 +1583,14 @@ client_request_agent(struct ssh *ssh, const char *requ
- 			    __func__, ssh_err(r));
- 		return NULL;
- 	}
+@@ -1606,6 +1615,14 @@ client_request_agent(struct ssh *ssh, const char *requ
+ 	else
+ 		debug2_fr(r, "ssh_agent_bind_hostkey");
+ 
 +#ifdef HPN_ENABLED
 +	if (!options.hpn_disabled)
 +		c = channel_new(ssh, "authentication agent connection",
@@ -342,7 +342,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	c = channel_new(ssh, "authentication agent connection",
  	    SSH_CHANNEL_OPEN, sock, sock, -1,
  	    CHAN_X11_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0,
-@@ -1602,6 +1619,12 @@ client_request_tun_fwd(struct ssh *ssh, int tun_mode,
+@@ -1634,6 +1651,12 @@ client_request_tun_fwd(struct ssh *ssh, int tun_mode,
  	}
  	debug("Tunnel forwarding using interface %s", ifname);
  
