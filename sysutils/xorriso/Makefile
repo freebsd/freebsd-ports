@@ -1,8 +1,7 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
 
 PORTNAME=	xorriso
-PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTVERSION=	1.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
