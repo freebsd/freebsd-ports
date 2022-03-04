@@ -1753,6 +1753,7 @@
 %%WWWDIR%%/test/fixtures/files/import_issues.csv
 %%WWWDIR%%/test/fixtures/files/import_issues_auto_mapping.csv
 %%WWWDIR%%/test/fixtures/files/import_issues_utf8_with_bom.csv
+%%WWWDIR%%/test/fixtures/files/import_issues_with_relation_and_invalid_issues.csv
 %%WWWDIR%%/test/fixtures/files/import_subtasks.csv
 %%WWWDIR%%/test/fixtures/files/import_subtasks_with_relations.csv
 %%WWWDIR%%/test/fixtures/files/import_subtasks_with_unique_id.csv

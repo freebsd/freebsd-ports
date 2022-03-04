@@ -1,7 +1,11 @@
 --- Gemfile.orig	2021-04-30 11:34:49 UTC
 +++ Gemfile
-@@ -6,14 +6,14 @@ gem 'bundler', '>= 1.12.0'
- gem 'rails', '5.2.6'
+@@ -3,19 +3,19 @@ gem 'bundler', '>= 1.12.0'
+ ruby '>= 2.4.0', '< 2.8.0'
+ gem 'bundler', '>= 1.12.0'
+ 
+-gem 'rails', '5.2.6.2'
++gem 'rails', '5.2.6'
  gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
  gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::Version.new('2.6.0')
 -gem 'rouge', '~> 3.26.0'
@@ -16,9 +20,12 @@
 -gem 'csv', (RUBY_VERSION < '2.5' ? ['>= 3.1.1', '<= 3.1.5'] : '~> 3.1.1')
 +gem 'csv', (RUBY_VERSION < '2.5' ? ['>= 3.1.1', '<= 3.1.5'] : '~> 3.2.0')
  gem 'nokogiri', (RUBY_VERSION < '2.5' ? '~> 1.10.0' : '~> 1.11.1')
- gem 'i18n', '~> 1.8.2'
+-gem 'i18n', '~> 1.8.2'
++gem 'i18n', '>= 1.8.2'
  gem "rbpdf", "~> 1.20.0"
-@@ -38,67 +38,6 @@ group :openid do
+ gem 'addressable'
+ gem 'rubyzip', '~> 2.3.0'
+@@ -38,68 +38,6 @@ end
    gem "rack-openid"
  end
  
@@ -38,7 +45,8 @@
 -require 'yaml'
 -database_file = File.join(File.dirname(__FILE__), "config/database.yml")
 -if File.exist?(database_file)
--  database_config = YAML::load(ERB.new(IO.read(database_file)).result)
+-  yaml_config = ERB.new(IO.read(database_file)).result
+-  database_config = YAML.respond_to?(:unsafe_load) ? YAML.unsafe_load(yaml_config) : YAML.load(yaml_config)
 -  adapters = database_config.values.map {|c| c['adapter']}.compact.uniq
 -  if adapters.any?
 -    adapters.each do |adapter|
@@ -86,7 +94,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -107,4 +46,8 @@ end
+@@ -108,4 +46,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
