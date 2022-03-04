@@ -1,7 +1,7 @@
 PORTNAME=		dino
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.3.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net-im
 
 MAINTAINER=		ashish@FreeBSD.org
@@ -47,7 +47,7 @@ ICE_VARS=		ENABLED_PLUGINS+=ice
 ICE_VARS_OFF=		DISABLED_PLUGINS+=ice
 RTP_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
-RTP_USE=		GSTREAMER1=srtp
+RTP_USE=		GSTREAMER1=srtp,gtk,pulse,opus,speex,vpx,x264,v4l2
 RTP_VARS=		ENABLED_PLUGINS+=rtp
 RTP_VARS_OFF=		DISABLED_PLUGINS+=rtp
 OMEMO_GH_TUPLE=	signalapp:libsignal-protocol-c:v2.3.3:signalapp/plugins/signal-protocol/libsignal-protocol-c
