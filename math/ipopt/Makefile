@@ -25,7 +25,8 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
 		CXX="${CXX} -B${LOCALBASE}/bin"
 CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
-		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib"
+		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib" \
+		--disable-java
 
 CXXFLAGS+=	-ffast-math
 DEBUG_CXXFLAGS=	-fomit-frame-pointer
