@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	tmux-mem-cpu-load
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
