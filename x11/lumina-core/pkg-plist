@@ -12,6 +12,7 @@ man/man1/lumina-desktop.1.gz
 man/man1/lumina-info.1.gz
 man/man1/lumina-open.1.gz
 man/man8/start-lumina-desktop.8.gz
+@(root,wheel,4555) sbin/lumina-checkpass
 share/applications/lthemeengine.desktop
 share/applications/lumina-info.desktop
 share/applications/lumina-support.desktop
