@@ -2,7 +2,7 @@ PORTNAME=	libretro-gw
 PORTVERSION=	0.20210129
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro core for Game & Watch simulators
 
 LICENSE=	GPLv2

@@ -3,7 +3,7 @@ PORTVERSION=	0.20210131
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Desmume to libretro based on Desmume SVN circa 2015
 
 LICENSE=	GPLv2

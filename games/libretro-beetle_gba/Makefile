@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_gba
 PORTVERSION=	0.20210131
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen GBA to libretro
 
 LICENSE=	GPLv2

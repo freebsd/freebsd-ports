@@ -2,7 +2,7 @@ PORTNAME=	libretro-gpsp
 PORTVERSION=	0.20210215
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Gameboy emulator for libretro
 
 LICENSE=	GPLv2

@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_pce_fast
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen PCE Fast to libretro
 
 LICENSE=	GPLv2

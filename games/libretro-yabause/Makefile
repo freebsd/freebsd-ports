@@ -2,7 +2,7 @@ PORTNAME=	libretro-yabause
 PORTVERSION=	0.20210204
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Saturn emulator for libretro
 
 LICENSE=	GPLv2

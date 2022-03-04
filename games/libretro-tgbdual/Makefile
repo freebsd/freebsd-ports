@@ -2,7 +2,7 @@ PORTNAME=	libretro-tgbdual
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Open-source GB/GBC emulator with game link support
 
 LICENSE=	GPLv2

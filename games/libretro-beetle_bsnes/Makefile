@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_bsnes
 PORTVERSION=	0.20210101
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen bSNES to libretro
 
 LICENSE=	GPLv2

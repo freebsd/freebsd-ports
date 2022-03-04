@@ -2,7 +2,7 @@ PORTNAME=	libretro-fuse
 PORTVERSION=	0.20210204
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of the Fuse Unix Spectrum Emulator to libretro
 
 LICENSE=	GPLv3

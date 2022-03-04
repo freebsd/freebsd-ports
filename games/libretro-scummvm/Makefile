@@ -2,7 +2,7 @@ PORTNAME=	libretro-scummvm
 PORTVERSION=	0.20201129
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	ScummVM with libretro backend
 
 LICENSE=	GPLv2

@@ -2,7 +2,7 @@ PORTNAME=	libretro-emux
 PORTVERSION=	0.20200504
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Cross-platform emulator project supporting various machines
 
 LICENSE=	GPLv2

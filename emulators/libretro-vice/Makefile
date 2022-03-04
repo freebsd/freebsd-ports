@@ -3,7 +3,7 @@ PORTVERSION=	0.20201218
 CATEGORIES=	emulators games
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	${${FLAVOR}_COMMENT}
 
 LICENSE=	GPLv2

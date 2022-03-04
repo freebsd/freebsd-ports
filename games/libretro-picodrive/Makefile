@@ -2,7 +2,7 @@ PORTNAME=	libretro-picodrive
 PORTVERSION=	0.20200504
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Fast MegaDrive/MegaCD/32X emulator
 
 LICENSE=	MAME-License

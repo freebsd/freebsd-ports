@@ -2,7 +2,7 @@ PORTNAME=	libretro-snes9x
 PORTVERSION=	0.20211024
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Snes9x - Portable Super Nintendo emulator
 
 # Commercial users must seek permission from copyright holders.

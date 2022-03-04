@@ -4,7 +4,7 @@ CATEGORIES=	net-p2p python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Graphical client for the Soulseek file sharing network
 
 LICENSE=	GPLv3

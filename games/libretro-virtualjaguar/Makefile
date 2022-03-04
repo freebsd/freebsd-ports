@@ -2,7 +2,7 @@ PORTNAME=	libretro-virtualjaguar
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Virtual Jaguar to Libretro
 
 LICENSE=	GPLv3

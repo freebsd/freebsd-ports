@@ -2,7 +2,7 @@ PORTNAME=	libretro-hatari
 PORTVERSION=	0.20210127
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Atari ST/STE/TT/Falcon emulator
 
 LICENSE=	GPLv2

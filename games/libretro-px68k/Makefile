@@ -2,7 +2,7 @@ PORTNAME=	libretro-px68k
 PORTVERSION=	0.20210113
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	SHARP X68000 libretro core
 
 LICENSE=	GPLv2

@@ -2,7 +2,7 @@ PORTNAME=	openmsx
 DISTVERSION=	17.0
 CATEGORIES=	emulators
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Open source MSX emulator
 
 LICENSE=	GPLv2

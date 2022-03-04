@@ -2,7 +2,7 @@ PORTNAME=	libretro-freeintv
 PORTVERSION=	0.20210512
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro emulation core for the Mattel Intellivision
 
 LICENSE=	GPLv3

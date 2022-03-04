@@ -2,7 +2,7 @@ PORTNAME=	libretro-nxengine
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Cave Story game engine clone for libretro
 
 LICENSE=	GPLv3
