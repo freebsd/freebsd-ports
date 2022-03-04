@@ -167,6 +167,7 @@
     SUBDIR += api-sanity-autotest
     SUBDIR += apitrace
     SUBDIR += app-builder
+    SUBDIR += appstream
     SUBDIR += appstream-glib
     SUBDIR += apr1
     SUBDIR += arachne-pnr

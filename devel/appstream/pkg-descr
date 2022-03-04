@@ -1,0 +1,13 @@
+AppStream is a collaborative effort for making machine-readable software
+metadata easily available to programs that need it. It is part of the
+Freedesktop ecosystem and provides a convenient way to retrieve information
+about available software.
+
+AppStream consists of a specification to describe individual software
+component metadata in XML (so-called MetaInfo files), as well as a
+derived specification for a metadata-collection format to provide a
+list of these metadata entries in XML or YAML for easy consumption by
+software centers and other tools which need to know about available
+software in a repository.
+
+WWW: https://www.freedesktop.org/wiki/Distributions/AppStream/
