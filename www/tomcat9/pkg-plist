@@ -400,10 +400,9 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/applet/Clock2.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp2/jsp2-example-taglib.tld
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/tags/displayProducts.tag
@@ -544,11 +543,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/num/numguess.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/num/numguess.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/num/numguess.jsp.html
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/plugin/applet/Clock2.class
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/plugin/applet/Clock2.java
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/plugin/plugin.html
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/plugin/plugin.jsp
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/plugin/plugin.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/security/protected/error.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/security/protected/error.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/security/protected/index.jsp
