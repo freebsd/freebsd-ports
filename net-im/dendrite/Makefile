@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -56,19 +56,20 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:db638375bc3a:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:86341886e292:golang_crypto/vendor/golang.org/x/crypto \
 		golang:image:6944b10bf410:golang_image/vendor/golang.org/x/image \
 		golang:mobile:858099ff7816:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
 		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:57398862261d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		golang:tools:316ba0b74098:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
+		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:8816d57aaa9a:google_go_genproto/vendor/google.golang.org/genproto \
 		google:gopacket:v1.1.18:google_gopacket/vendor/github.com/google/gopacket \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
@@ -92,7 +93,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		jbenet:goprocess:v0.1.4:jbenet_goprocess/vendor/github.com/jbenet/goprocess \
 		juju:errors:3fe23663418f:juju_errors/vendor/github.com/juju/errors \
 		juju:testing:77eb13d6cad2:juju_testing/vendor/github.com/juju/testing \
-		klauspost:compress:v1.14.2:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.13.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		koron:go-ssdp:2e1c40ed0b5d:koron_go_ssdp/vendor/github.com/koron/go-ssdp \
 		lib:pq:v1.10.4:lib_pq/vendor/github.com/lib/pq \
 		libp2p:go-addr-util:v0.0.2:libp2p_go_addr_util/vendor/github.com/libp2p/go-addr-util \
@@ -144,8 +145,8 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:b0d1ba599a6d:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:20632dd262ed:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:351265543ddf:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:gomatrixserverlib:e124bd7d7902:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:0f0afd1a46aa:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.10:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
