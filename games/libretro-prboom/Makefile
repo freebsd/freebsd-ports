@@ -2,7 +2,7 @@ PORTNAME=	libretro-prboom
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of prboom to libretro
 
 LICENSE=	GPLv2

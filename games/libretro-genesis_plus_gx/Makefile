@@ -2,7 +2,7 @@ PORTNAME=	libretro-genesis_plus_gx
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Enhanced port of Genesis Plus
 
 # Commercial users must seek permission from copyright holders.

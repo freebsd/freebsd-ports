@@ -2,7 +2,7 @@ PORTNAME=	libretro-mu
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	PalmOS emulator to the libretro API
 
 LICENSE=	GPLv3 MIT

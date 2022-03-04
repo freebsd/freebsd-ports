@@ -2,7 +2,7 @@ PORTNAME=	libretro-o2em
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of O2EM to the libretro API, an Odyssey 2 / VideoPac emulator
 
 LICENSE=	ART20

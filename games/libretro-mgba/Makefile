@@ -2,7 +2,7 @@ PORTNAME=	libretro-mgba
 PORTVERSION=	0.20210128
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Game Boy Advance Emulator for libretro
 
 LICENSE=	MPL20

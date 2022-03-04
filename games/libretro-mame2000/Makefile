@@ -2,7 +2,7 @@ PORTNAME=	libretro-mame2000
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	MAME (0.37b5) for libretro
 
 LICENSE=	GPLv2

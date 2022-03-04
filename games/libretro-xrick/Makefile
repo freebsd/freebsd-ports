@@ -2,7 +2,7 @@ PORTNAME=	libretro-xrick
 PORTVERSION=	0.20201218
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro implementation of "Rick Dangerous"
 
 LICENSE=	GPLv2

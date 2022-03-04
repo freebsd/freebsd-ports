@@ -2,7 +2,7 @@ PORTNAME=	libretro-stella2014
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Stella (Atari 2600) to libretro (2014)
 
 LICENSE=	GPLv2

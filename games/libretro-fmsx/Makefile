@@ -2,7 +2,7 @@ PORTNAME=	libretro-fmsx
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of fMSX to the libretro API
 
 LICENSE=	FMSX

@@ -4,7 +4,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Fork of clementine with many features
 
 LICENSE=	GPLv3

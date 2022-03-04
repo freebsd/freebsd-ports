@@ -2,7 +2,7 @@ PORTNAME=	libretro-prosystem
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of ProSystem to the libretro API
 
 LICENSE=	GPLv2

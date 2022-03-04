@@ -3,7 +3,7 @@ PORTVERSION=	0.20210214
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro port of Tyrquake (Quake 1 engine)
 
 LICENSE=	GPLv2

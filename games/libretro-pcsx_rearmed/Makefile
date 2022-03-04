@@ -3,7 +3,7 @@ PORTVERSION=	0.20210215
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Fork of PCSX with ARM optimizations
 
 LICENSE=	GPLv2

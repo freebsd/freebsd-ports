@@ -2,7 +2,7 @@ PORTNAME=	libretro-nestopia
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	NEStopia emulator for libretro
 
 LICENSE=	GPLv2

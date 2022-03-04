@@ -3,7 +3,7 @@ PORTVERSION=	0.20210127
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Improved Nintendo 64 core for libretro
 
 # Commercial users must seek permission from copyright holders.

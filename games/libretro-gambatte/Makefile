@@ -2,7 +2,7 @@ PORTNAME=	libretro-gambatte
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro Implementation of libgambatte, a Game Boy Color emulator
 
 LICENSE=	GPLv2

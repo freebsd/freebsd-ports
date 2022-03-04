@@ -3,7 +3,7 @@ PORTVERSION=	0.20210128
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port/fork of Mednafen PSX to the Libretro API
 
 LICENSE=	GPLv2

@@ -1,4 +1,4 @@
-# Created by: Daniel Menelkir <menelkir@itroll.org>
+# Created by: Daniel Menelkir <dmenelkir@gmail.com>
 
 PORTNAME=	pamixer
 DISTVERSIONPREFIX=	v
@@ -6,7 +6,7 @@ DISTVERSION=	1.4-15
 DISTVERSIONSUFFIX=	-g4ea2594
 CATEGORIES=	audio
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Pulseaudio command line mixer
 
 LICENSE=	GPLv3

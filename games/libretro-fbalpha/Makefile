@@ -3,7 +3,7 @@ PORTVERSION=	0.20200504
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Final Burn Alpha port for libretro
 
 # Commercial users must seek permission from copyright holders.

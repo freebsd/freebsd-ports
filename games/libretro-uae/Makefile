@@ -3,7 +3,7 @@ PORTVERSION=	0.20200527
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro port of UAE
 
 LICENSE=	GPLv2

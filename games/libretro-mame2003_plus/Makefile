@@ -2,7 +2,7 @@ PORTNAME=	libretro-mame2003_plus
 PORTVERSION=	0.20210214
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Updated MAME 0.78 for libretro with added game support
 
 LICENSE=	GPLv2

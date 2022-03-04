@@ -2,7 +2,7 @@ PORTNAME=	libretro-fbneo
 PORTVERSION=	0.20211215
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Final Burn Alpha fork for libretro
 
 LICENSE=	FBNeo

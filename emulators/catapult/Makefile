@@ -4,7 +4,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	GUI for openMSX
 
 LICENSE=	GPLv2

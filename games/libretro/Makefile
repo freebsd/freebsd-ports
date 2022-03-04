@@ -2,7 +2,7 @@ PORTNAME=	libretro
 PORTVERSION=	0.3
 CATEGORIES=	games
 
-MAINTAINER=	menelkir@itroll.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Meta-port for libretro cores
 
 USES=		metaport
