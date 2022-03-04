@@ -60,6 +60,8 @@ libdata/pkgconfig/vpl.pc
 %%DATADIR%%/examples/content/cars_128x96.i420
 %%DATADIR%%/examples/content/cars_128x96.mjpeg
 %%DATADIR%%/examples/content/cars_128x96.nv12
+%%DATADIR%%/examples/content/cars_320x240.i420
+%%DATADIR%%/examples/content/cars_320x240.nv12
 %%DATADIR%%/examples/coreAPI/legacy-decode/CMakeLists.txt
 %%DATADIR%%/examples/coreAPI/legacy-decode/License.txt
 %%DATADIR%%/examples/coreAPI/legacy-decode/README.md

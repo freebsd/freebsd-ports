@@ -50,9 +50,9 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // Linux x64
      #define MSDK_LIB_NAME            "libmfxhw64."
      #define ONEVPL_PRIORITY_PATH_VAR "ONEVPL_PRIORITY_PATH"
---- dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp.orig	2021-12-07 00:05:44 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp.orig	2022-03-04 22:06:17 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp
-@@ -401,7 +401,9 @@ mfxU32 LoaderCtxVPL::GetSearchPathsSystemDefault(std::
+@@ -413,7 +413,9 @@ mfxU32 LoaderCtxVPL::GetSearchPathsSystemDefault(std::
  #ifdef __linux__
      // Add the standard path for libmfx1 install in Ubuntu
      searchDirs.push_back("/usr/lib/x86_64-linux-gnu");
@@ -62,15 +62,6 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // Add other default paths
      searchDirs.push_back("/lib");
      searchDirs.push_back("/usr/lib");
-@@ -1069,7 +1071,7 @@ mfxStatus LoaderCtxVPL::QueryLibraryCaps() {
-                 // update number of valid MSDK adapters
-                 numImplMSDK++;
- 
--#ifdef __linux__
-+#ifdef __unix__
-                 // currently only one adapter on Linux (avoid multiple copies)
-                 break;
- #endif
 --- dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp.orig	2021-12-07 00:05:44 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp
 @@ -18,7 +18,7 @@
@@ -82,7 +73,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // Linux x64
      #define LIB_ONEVPL "libmfx-gen.so.1.2"
      #define LIB_MSDK   "libmfxhw64.so.1"
---- dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp.orig	2022-02-05 00:35:54 UTC
+--- dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp.orig	2022-03-04 22:06:17 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp
 @@ -10,7 +10,7 @@
      #include "vpl/mfx_dispatcher_vpl_win.h"
@@ -93,7 +84,7 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #include <pthread.h>
      #define strncpy_s(dst, size, src, cnt) strcpy((dst), (src)) // NOLINT
  #endif
-@@ -161,7 +161,7 @@ mfxAccelerationMode LoaderCtxMSDK::CvtAccelType(mfxIMP
+@@ -161,7 +161,7 @@ mfxStatus LoaderCtxMSDK::GetDefaultAccelType(mfxU32 ad
  }
  
  mfxStatus LoaderCtxMSDK::GetDefaultAccelType(mfxU32 adapterID, mfxIMPL *implDefault, mfxU64 *luid) {
@@ -102,24 +93,33 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      // VAAPI only
      *implDefault = MFX_IMPL_VIA_VAAPI;
      *luid        = 0;
-@@ -248,7 +248,7 @@ mfxStatus LoaderCtxMSDK::QueryMSDKCaps(STRING_TYPE lib
- 
+@@ -249,7 +249,7 @@ mfxStatus LoaderCtxMSDK::QueryMSDKCaps(STRING_TYPE lib
      m_libNameFull = libNameFull;
+     m_deviceID    = 0;
  
 -#ifdef __linux__
 +#ifdef __unix__
      // require pthreads to be linked in for MSDK RT to load
      pthread_key_t pkey;
      if (pthread_key_create(&pkey, NULL) == 0) {
-@@ -483,7 +483,7 @@ mfxStatus LoaderCtxMSDK::QueryExtDeviceID(mfxExtendedD
+@@ -452,7 +452,7 @@ mfxStatus LoaderCtxMSDK::GetRenderNodeDescription(mfxU
+     vendorID = 0;
+     deviceID = 0;
+ 
+-#if defined(__linux__)
++#if defined(__unix__)
+     mfxU32 DRMRenderNodeNum = 128 + adapterID;
+     std::string nodeStr     = std::to_string(DRMRenderNodeNum);
+ 
+@@ -540,7 +540,7 @@ mfxStatus LoaderCtxMSDK::QueryExtDeviceID(mfxExtendedD
              luidArr >>= 8;
          }
      }
 -#elif defined(__linux__)
 +#elif defined(__unix__)
-     // fill in Linux-specific properties
      extDeviceID->DRMPrimaryNodeNum = adapterID;
      extDeviceID->DRMRenderNodeNum  = 128 + adapterID;
+ #endif
 --- examples/coreAPI/legacy-decode/src/util.h.orig	2021-12-07 00:05:44 UTC
 +++ examples/coreAPI/legacy-decode/src/util.h
 @@ -30,7 +30,7 @@ enum {
