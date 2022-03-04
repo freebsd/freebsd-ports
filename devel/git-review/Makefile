@@ -1,7 +1,11 @@
 PORTNAME=	git-review
 DISTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
+
+PATCH_SITES=	https://opendev.org/opendev/${PORTNAME}/commit/
+PATCHFILES+=	7182166ec00ad3645821435d72c5424b4629165f.diff:-p1 # Fix run with git >= 2.34.0
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Allow to push code to review and interact with a Gerrit server
