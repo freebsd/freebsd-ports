@@ -4,4 +4,4 @@ from the console.
 It allows you to push change to review, download a changeset into a new branch,
 push a change as draft or push an amended change as new patchset.
 
-WWW: https://launchpad.net/git-review/
+WWW: https://docs.opendev.org/opendev/git-review/
