@@ -1,8 +1,9 @@
 PORTNAME=	mod_security
-PORTVERSION=	2.9.3
+DISTVERSIONPREFIX=	v
+PORTVERSION=	2.9.5
 PORTREVISION=	0
 CATEGORIES=	www security
-MASTER_SITES=	http://www.modsecurity.org/tarball/${PORTVERSION}/
+MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/_//:S/2//}-${PORTVERSION}
 
