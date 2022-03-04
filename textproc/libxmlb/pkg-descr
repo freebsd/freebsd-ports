@@ -1,0 +1,10 @@
+XML is slow to parse and strings inside the document cannot be memory mapped as
+they do not have a trailing NUL char. The libxmlb library takes XML source, and
+converts it to a structured binary representation with a deduplicated string
+table -- where the strings have the NULs included.
+
+This allows an application to mmap the binary XML file, do an XPath query and
+return some strings without actually parsing the entire document. This is all
+done using (almost) zero allocations and no actual copying of the binary data.
+
+WWW:	https://github.com/hughsie/libxmlb

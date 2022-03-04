@@ -409,6 +409,7 @@
     SUBDIR += libxdiff
     SUBDIR += libxml++26
     SUBDIR += libxml2
+    SUBDIR += libxmlb
     SUBDIR += libxmlbird
     SUBDIR += libxode
     SUBDIR += libxslt
