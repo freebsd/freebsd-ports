@@ -2,6 +2,7 @@
 
 PORTNAME=	mcomix
 PORTVERSION=	1.2.1g20210526
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=5.2.0:graphics/py-pillow@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gnome python:3.8+ shebangfix
+USES=		desktop-file-utils gnome python:3.8+ shebangfix
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
@@ -41,5 +42,6 @@ do-install:
 	(cd ${WRKSRC}/mcomix/mcomix && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/mcomix)
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/mcomix
 	${INSTALL} ${WRKSRC}/mcomix/mcomixstarter.py ${STAGEDIR}/${PREFIX}/bin/mcomix
+	${INSTALL_DATA} ${WRKSRC}/mime/mcomix.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

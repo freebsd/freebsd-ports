@@ -257,3 +257,4 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/mcomix/upgrade_tools.py
 %%PYTHON_SITELIBDIR%%/mcomix/worker_thread.py
 %%PYTHON_SITELIBDIR%%/mcomix/zoom.py
+share/applications/mcomix.desktop
