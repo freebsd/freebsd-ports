@@ -1,10 +1,10 @@
 PORTNAME=	ghostscript
-PORTVERSION=	9.52
+PORTVERSION=	9.55.0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PostScript and PDF interpreter, X11 support
 
 LICENSE=	AGPLv3
@@ -15,13 +15,13 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \
 		libjbig2dec.so:graphics/jbig2dec \
+		libopenjp2.so:graphics/openjpeg \
 		libpaper.so:print/libpaper \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	ghostscript9-agpl-base>=${PORTVERSION}:print/ghostscript9-agpl-base
 
 USES=		cpe gmake iconv localbase pkgconfig tar:xz xorg
-USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xt
 
@@ -51,6 +51,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-dynamic \
 		--enable-fontconfig \
 		--enable-freetype \
+		--enable-openjpeg \
 		--with-drivers=ALL \
 		--with-fontpath=${LOCALBASE}/share/fonts \
 		--with-jbig2dec \
@@ -63,7 +64,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 ALL_TARGET=	./obj/X11.so
 INSTALL_TARGET=	install-shared
 PLIST_FILES=	lib/${PORTNAME}/${PORTVERSION}/X11.so
-	
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/X11.so
 

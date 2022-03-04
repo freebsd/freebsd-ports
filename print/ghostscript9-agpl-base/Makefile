@@ -1,11 +1,10 @@
 PORTNAME=	ghostscript
-PORTVERSION=	9.52
-PORTREVISION=	20
+PORTVERSION=	9.55.0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-base
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PostScript and PDF interpreter
 
 LICENSE=	AGPLv3
@@ -16,13 +15,13 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \
 		libjbig2dec.so:graphics/jbig2dec \
+		libopenjp2.so:graphics/openjpeg \
 		libpaper.so:print/libpaper \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	poppler-data>=0.4.9:graphics/poppler-data
 
 USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
-USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL= \
@@ -50,6 +49,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-dynamic \
 		--enable-fontconfig \
 		--enable-freetype \
+		--enable-openjpeg \
 		--with-drivers=ALL \
 		--with-fontpath=${LOCALBASE}/share/fonts \
 		--with-jbig2dec \
@@ -60,10 +60,11 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--without-x
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
-PLIST_SUB=	GS_VERSION="${PORTVERSION}"
+PLIST_SUB=	GS_VERSION="${PORTVERSION:S/.0$//}" \
+		PORTVERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=	DOCS CUPS IJS JPEG2000
-OPTIONS_DEFAULT=CUPS
+OPTIONS_DEFINE=	DOCS CUPS IJS
+OPTIONS_DEFAULT=DOCS CUPS
 OPTIONS_SUB=	yes
 
 CUPS_CONFIGURE_ENABLE=	cups
@@ -73,9 +74,6 @@ IJS_CONFIGURE_WITH=	ijs
 IJS_DESC=		Support libijs based Ghostscript devices
 IJS_LIB_DEPENDS=	libijs.so:print/libijs
 
-JPEG2000_CONFIGURE_ENABLE=	openjpeg
-JPEG2000_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gs
 	${RM} ${STAGEDIR}${PREFIX}/bin/gsx
@@ -83,15 +81,15 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgs.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/color/icc
 	${MV} ${STAGEDIR}${DATADIR}/iccprofiles \
-		${STAGEDIR}${PREFIX}/share/color/icc/ghostscript
+	    ${STAGEDIR}${PREFIX}/share/color/icc/ghostscript
 	${RLN} ${STAGEDIR}${PREFIX}/share/color/icc/ghostscript \
-		${STAGEDIR}${DATADIR}/iccprofiles
+	    ${STAGEDIR}${DATADIR}/iccprofiles
 	${RLN} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cmap
 	${MV} ${STAGEDIR}${DATADIR}/Resource/CMap/Identity* \
-		${STAGEDIR}${PREFIX}/share/cmap
+	    ${STAGEDIR}${PREFIX}/share/cmap
 	${RM} -r ${STAGEDIR}${DATADIR}/Resource/CMap
 	${RLN} ${STAGEDIR}${PREFIX}/share/cmap \
-		${STAGEDIR}${DATADIR}/Resource/CMap
+	    ${STAGEDIR}${DATADIR}/Resource/CMap
 
 .include <bsd.port.mk>

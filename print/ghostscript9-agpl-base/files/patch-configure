@@ -1,17 +1,6 @@
---- configure.orig	2020-03-19 08:22:25 UTC
+--- configure.orig	2021-09-27 07:44:02 UTC
 +++ configure
-@@ -4522,8 +4522,8 @@ case $host in
-         ;;
-         *bsd*)
-         if test $ac_cv_c_compiler_gnu = yes; then
--            CC_OPT_FLAGS_TO_TRY="-O2 -DNDEBUG"
--            CC_DBG_FLAGS_TO_TRY="-gdwarf-2 -g3 -O0"
-+            CC_OPT_FLAGS_TO_TRY=""
-+            CC_DBG_FLAGS_TO_TRY=""
-         fi
-         ;;
-         *-darwin*)
-@@ -5357,7 +5357,7 @@ if test "${enable_threadsafe+set}" = set; then :
+@@ -5539,7 +5539,7 @@ if test "${enable_threadsafe+set}" = set; then :
  fi
  
  if test x$enable_threadsafe = xyes ; then
@@ -20,7 +9,7 @@
  fi
  
  
-@@ -10683,42 +10683,42 @@ if test x$enable_threadsafe = xyes; then
+@@ -11352,42 +11352,42 @@ if test x$enable_threadsafe = xyes; then
  
    for ntsdev in $NTS_DEVS ; do
      NTS_EXCLUDES="$(echo \"$P_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
@@ -71,7 +60,7 @@
    done
  
    NTS_EXCLUDES=`echo "$NTS_EXCLUDES" | tr " " "\n" | sort | uniq | tr "\n" " "`
-@@ -10970,7 +10970,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -11686,7 +11686,12 @@ if test "${enable_dynamic+set}" = set; then :
          DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *bsd*)

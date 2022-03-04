@@ -181,6 +181,7 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/Resource/Font/URWGothic-DemiOblique
 %%DATADIR%%/Resource/Font/Z003-MediumItalic
 %%DATADIR%%/Resource/IdiomSet/Pscript5Idiom
+%%DATADIR%%/Resource/IdiomSet/PPI_CUtils
 %%DATADIR%%/Resource/Init/FAPIcidfmap
 %%DATADIR%%/Resource/Init/FAPIconfig
 %%DATADIR%%/Resource/Init/FAPIfontmap
@@ -300,15 +301,13 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/lib/cdj690.upp
 %%DATADIR%%/lib/cdj690ec.upp
 %%DATADIR%%/lib/cid2code.ps
-%%DATADIR%%/lib/dmp_init.ps
-%%DATADIR%%/lib/dmp_site.ps
 %%DATADIR%%/lib/dnj750c.upp
 %%DATADIR%%/lib/dnj750m.upp
 %%DATADIR%%/lib/docie.ps
-%%DATADIR%%/lib/escp_24.src
 %%DATADIR%%/lib/font2pcl.ps
 %%DATADIR%%/lib/ghostpdf.ppd
 %%DATADIR%%/lib/gs_ce_e.ps
+%%DATADIR%%/lib/gs_css_e.ps
 %%DATADIR%%/lib/gs_il2_e.ps
 %%DATADIR%%/lib/gs_kanji.ps
 %%DATADIR%%/lib/gs_ksb_e.ps
@@ -404,4 +403,4 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/lib/viewps2a.ps
 %%DATADIR%%/lib/winmaps.ps
 %%DATADIR%%/lib/zeroline.ps
-@dir lib/ghostscript/%%GS_VERSION%%
+@dir lib/ghostscript/%%PORTVERSION%%
