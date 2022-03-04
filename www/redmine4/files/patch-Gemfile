@@ -1,14 +1,14 @@
 --- Gemfile.orig	2021-04-22 10:46:10 UTC
 +++ Gemfile
-@@ -1,21 +1,21 @@
+@@ -1,21 +1,21 @@ source 'https://rubygems.org'
  source 'https://rubygems.org'
  
 -ruby '>= 2.3.0', '< 2.7.0' if Bundler::VERSION >= '1.12.0'
 +ruby '>= 2.3.0', '< 2.8.0' if Bundler::VERSION >= '1.12.0'
  gem "bundler", ">= 1.5.0"
  
--gem 'rails', '5.2.6'
-+gem 'rails', '~> 5.2.5'
+-gem 'rails', '5.2.6.2'
++gem 'rails', '5.2.6'
  gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
  gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::Version.new('2.6.0')
  gem "rouge", "~> 3.12.0"
@@ -28,16 +28,16 @@
  gem "rbpdf", "~> 1.20.0"
  
  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-@@ -22,7 +22,7 @@ gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :ms
+@@ -23,7 +23,7 @@ group :ldap do
  
  # Optional gem for LDAP authentication
  group :ldap do
 -  gem "net-ldap", "~> 0.16.0"
-+  gem "net-ldap", "~> 0.17.0"
++  gem "net-ldap", ">= 0.17.0"
  end
  
  # Optional gem for OpenID authentication
-@@ -31,66 +31,6 @@ group :openid do
+@@ -32,67 +32,6 @@ end
    gem "rack-openid"
  end
  
@@ -57,7 +57,8 @@
 -require 'yaml'
 -database_file = File.join(File.dirname(__FILE__), "config/database.yml")
 -if File.exist?(database_file)
--  database_config = YAML::load(ERB.new(IO.read(database_file)).result)
+-  yaml_config = ERB.new(IO.read(database_file)).result
+-  database_config = YAML.respond_to?(:unsafe_load) ? YAML.unsafe_load(yaml_config) : YAML.load(yaml_config)
 -  adapters = database_config.values.map {|c| c['adapter']}.compact.uniq
 -  if adapters.any?
 -    adapters.each do |adapter|
@@ -104,7 +105,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -99,4 +39,8 @@ end
+@@ -101,4 +40,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
