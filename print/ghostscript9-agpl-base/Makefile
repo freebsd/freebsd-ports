@@ -1,7 +1,7 @@
 PORTNAME=	ghostscript
 PORTVERSION=	9.55.0
 CATEGORIES=	print
-MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
+MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//g}/
 PKGNAMESUFFIX=	9-agpl-base
 
 MAINTAINER=	hrs@FreeBSD.org
