@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.2
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-rsec>=0.4.3:devel/rubygem-rsec \
 		rubygem-sd_notify>=0.1.1:devel/rubygem-sd_notify \
 		rubygem-sinatra>=2.0:www/rubygem-sinatra \
-		wget:ftp/wget
+		curl:ftp/curl
 
 USES=		shebangfix tar:bzip2
 
