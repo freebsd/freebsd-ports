@@ -1,0 +1,4 @@
+This git credential helper allows you to cache your git-credentials with
+gopass.
+
+WWW: https://github.com/gopasspw/git-credential-gopass

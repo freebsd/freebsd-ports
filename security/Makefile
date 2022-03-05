@@ -179,6 +179,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += gcr
     SUBDIR += gef
+    SUBDIR += git-credential-gopass
     SUBDIR += git-crypt
     SUBDIR += git-remote-gcrypt
     SUBDIR += git-secret
