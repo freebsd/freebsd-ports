@@ -3,7 +3,7 @@
 # Author: Michiel van Baak <michiel@vanbaak.eu>
 #
 # PROVIDE: autoscan
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN network
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable autoscan:
