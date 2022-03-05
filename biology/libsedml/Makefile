@@ -1,6 +1,6 @@
 PORTNAME=	libsedml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.27
+DISTVERSION=	2.0.28
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	libsbml>0:biology/libsbml \
 RUN_DEPENDS=	libsbml>0:biology/libsbml \
 		libnuml>0:biology/libnuml # when static lib libnuml.a is fixed these should be run-time dependency
 
-USES=		cmake gnome
+USES=		cmake compiler:c++11-lang gnome
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

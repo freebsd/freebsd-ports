@@ -108,4 +108,4 @@ include/sedml/common/sedmlfwd.h
 lib/libsedml-static.a
 lib/libsedml.so
 lib/libsedml.so.2
-lib/libsedml.so.2.0.27
+lib/libsedml.so.2.0.28
