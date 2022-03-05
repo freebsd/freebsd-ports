@@ -1,0 +1,17 @@
+===>   Updating Cargo.lock
+error: failed to parse manifest at `.../ab-av1-0.3.0/Cargo.toml`
+
+Caused by:
+  feature `strip` is required
+
+  The package requires the Cargo feature called `strip`, but that feature is not stabilized in this version of Cargo (1.58.0).
+  Consider trying a newer version of Cargo (this may require the nightly release).
+  See https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#profile-strip-option for more information about the status of this feature.
+
+--- Cargo.toml.orig	2022-03-05 09:26:22 UTC
++++ Cargo.toml
+@@ -33,4 +33,3 @@ opt-level = "s"
+ [profile.release]
+ lto = true
+ opt-level = "s"
+-strip = true
