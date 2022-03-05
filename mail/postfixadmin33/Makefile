@@ -1,6 +1,6 @@
 PORTNAME=	postfixadmin33
 DISTVERSIONPREFIX=	postfixadmin-
-DISTVERSION=	3.3.10
+DISTVERSION=	3.3.11
 CATEGORIES=	mail www
 .if defined(_PFA_LITE)
 PKGNAMESUFFIX=	-lite${PHP_PKGNAMESUFFIX}
@@ -66,7 +66,8 @@ do-install:
 	(cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/${i})
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
-.for i in GPL-LICENSE.TXT LICENSE.TXT password_expiration.sql postfixadmin.my.cnf
+.for i in GPL-LICENSE.TXT LICENSE.TXT password_expiration.sql \
+	postfixadmin.my.cnf
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
 
