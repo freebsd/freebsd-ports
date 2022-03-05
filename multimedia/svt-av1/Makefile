@@ -1,7 +1,11 @@
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	af222120c8cf.patch:-p1 # https://gitlab.com/AOMediaCodec/SVT-AV1/-/merge_requests/1843
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable AV1 encoder
