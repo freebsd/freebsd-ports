@@ -788,8 +788,12 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_null_version_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_null_version_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_project_namespace_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_project_namespace_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_requires_null_version_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_requires_null_version_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.module
