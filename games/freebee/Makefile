@@ -1,6 +1,6 @@
 PORTNAME=	freebee
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.7
+DISTVERSION=	2.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,6 +17,8 @@ GH_ACCOUNT=	freebee-game
 GH_PROJECT=	console-client
 
 PORTDOCS=	README.md
+
+PLIST_FILES=	bin/freebee share/man/man6/freebee.6.gz
 
 OPTIONS_DEFINE=	DOCS
 
