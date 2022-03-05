@@ -4,13 +4,13 @@ PORTNAME=	zabbix5
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend
 
-MASTERDIR=	${.CURDIR}/../zabbix5-server
-
 USES+=		php:web
 USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap \
 		mbstring pcre session simplexml snmp sockets xml xmlreader \
 		xmlwriter
+IGNORE_WITH_PHP=        80 81
 
+MASTERDIR=	${.CURDIR}/../zabbix5-server
 PATCHDIR=
 NO_ARCH=	yes
 NO_BUILD=	yes
