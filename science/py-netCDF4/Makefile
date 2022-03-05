@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	netCDF4
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	rel
 CATEGORIES=	science python
@@ -19,18 +19,17 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cftime>=0:devel/py-cftime@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils cython cython_run
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+USE_GITHUB=	yes
+GH_ACCOUNT=	Unidata
+GH_PROJECT=	netcdf4-python
+USE_PYTHON=	autoplist concurrent cython cython_run distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-GH_ACCOUNT=	Unidata
-GH_PROJECT=	netcdf4-python
-USE_GITHUB=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${ECHO_CMD} -n > ${WRKSRC}/setup.cfg
