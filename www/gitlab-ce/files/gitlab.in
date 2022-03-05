@@ -15,7 +15,7 @@
 # Based on work of: @charlienewey, rovanion.luckey@gmail.com, @randx, @tz
 
 # PROVIDE: gitlab
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN redis
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable GitLab:
