@@ -143,6 +143,8 @@ share/doc/janus-gateway/README.md
 %%DATADIR%%/demos/meetecho-logo.png
 %%DATADIR%%/demos/multiopus.html
 %%DATADIR%%/demos/multiopus.js
+%%DATADIR%%/demos/mvideoroomtest.html
+%%DATADIR%%/demos/mvideoroomtest.js
 %%DATADIR%%/demos/navbar.html
 %%DATADIR%%/demos/nosiptest.html
 %%DATADIR%%/demos/nosiptest.js
@@ -181,6 +183,8 @@ share/doc/janus-gateway/README.md
 %%DATADIR%%/streams/music.mulaw
 %%DATADIR%%/streams/radio.alaw
 %%DATADIR%%/streams/test_gstreamer.sh
-%%DATADIR%%/streams/test_gstreamer_1.sh
+%%DATADIR%%/streams/test_gstreamer1.sh
+%%DATADIR%%/streams/test_gstreamer1_multistream.sh
+%%DATADIR%%/streams/test_gstreamer_multistream.sh
 @dir %%DATADIR%%/duktape
 @dir %%DATADIR%%/lua
