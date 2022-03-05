@@ -5,7 +5,7 @@ GH_TUPLE=	\
 		VictoriaMetrics:metrics:v1.18.1:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
 		VictoriaMetrics:metricsql:v0.40.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		aws:aws-sdk-go:v1.43.3:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.43.10:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.2:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
@@ -19,22 +19,22 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:27dd8689420f:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:ee480838109b:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:00053529121e:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:daf995802d7b:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:9aa15565e42a:google_go_genproto/vendor/google.golang.org/genproto \
 		googleapis:gax-go:v2.1.1:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.70.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:compute/v1.4.0:googleapis_google_cloud_go_compute \
+		googleapis:google-cloud-go:compute/v1.5.0:googleapis_google_cloud_go_compute \
 		googleapis:google-cloud-go:storage/v1.21.0:googleapis_google_cloud_go_storage \
-		googleapis:google-cloud-go:v0.100.2:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		googleapis:google-cloud-go:v0.2.0:googleapis_google_cloud_go_iam/vendor/cloud.google.com/go/iam \
+		googleapis:google-cloud-go:v0.100.2:googleapis_google_cloud_go \
+		googleapis:google-cloud-go:v0.3.0:googleapis_google_cloud_go_iam/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.44.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		influxdata:influxdb:v1.9.6:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
