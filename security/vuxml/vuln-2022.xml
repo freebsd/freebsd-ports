@@ -1,3 +1,51 @@
+  <vuln vid="964c5460-9c66-11ec-ad3a-001999f8d30b">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><lt>16.24.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories/">
+	  <p>AST-2022-004 - The header length on incoming STUN
+	  messages that contain an ERROR-CODE attribute is not
+	  properly checked. This can result in an integer underflow.
+	  Note, this requires ICE or WebRTC support to be in use
+	  with a malicious remote party.</p>
+	  <p>AST-2022-005 - When acting as a UAC, and when placing
+	  an outgoing call to a target that then forks Asterisk may
+	  experience undefined behavior (crashes, hangs, etc) after
+	  a dialog set is prematurely freed.</p>
+	  <p>AST-2022-006 - If an incoming SIP message contains a
+	  malformed multi-part body an out of bounds read access
+	  may occur, which can result in undefined behavior. Note,
+	  its currently uncertain if there is any externally
+	  exploitable vector within Asterisk for this issue, but
+	  providing this as a security issue out of caution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37706</cvename>
+      <cvename>CVE-2022-23608</cvename>
+      <cvename>CVE-2022-21723</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-004.html</url>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-005.html</url>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-006.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-03</discovery>
+      <entry>2022-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e0914087-9a09-11ec-9e61-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
