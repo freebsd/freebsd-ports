@@ -1,5 +1,5 @@
 PORTNAME=	mdds
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	https://kohei.us/files/mdds/src/
 
