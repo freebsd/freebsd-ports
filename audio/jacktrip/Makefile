@@ -1,10 +1,7 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b3a73695ba1788274ca19b7f00f4c06e2b41649b.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-machine audio network performance over the Internet
