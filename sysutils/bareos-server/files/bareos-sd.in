@@ -26,7 +26,7 @@ load_rc_config $name
 : ${bareos_sd_pidfile="/var/run/bareos/bareos-sd.9103.pid"}
 
 command=%%PREFIX%%/sbin/bareos-sd
-command_args="-c ${bareos_sd_config}"
+command_args="-c ${bareos_sd_config} -p ${bareos_sd_pidfile}"
 pidfile="${bareos_sd_pidfile}"
 start_precmd="bareos_start_precmd"
 

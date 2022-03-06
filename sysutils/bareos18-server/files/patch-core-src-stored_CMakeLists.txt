@@ -1,6 +1,6 @@
---- core/src/stored/CMakeLists.txt	2020-12-11 10:27:01.000000000 -0500
-+++ core/src/stored/CMakeLists.txt	2021-02-19 18:05:23.992747000 -0500
-@@ -193,26 +193,34 @@
+--- core/src/stored/CMakeLists.txt	2021-09-13 03:57:27.000000000 -0500
++++ core/src/stored/CMakeLists.txt	2022-03-04 20:39:26.209621000 -0500
+@@ -193,26 +193,35 @@
  target_link_libraries(bareos-sd
     stored_objects
     ${BAREOS_SD_LIBRARIES}
@@ -11,6 +11,7 @@
  add_executable(bls ${BLSSRCS})
  target_link_libraries(bls
     bareos bareossd bareosfind 
++   ${JANSSON_LIBRARIES}
 +   ${PTHREAD_LIBRARIES}
     )
  
@@ -35,7 +36,7 @@
      )
  
  add_executable(bcopy ${BCOPYSRCS})
-@@ -220,6 +228,8 @@
+@@ -220,6 +229,8 @@
  
  target_link_libraries(bcopy
     bareossd bareos 
@@ -44,7 +45,7 @@
      )
  
  INSTALL(TARGETS bareossd DESTINATION ${libdir})
-@@ -232,7 +242,7 @@
+@@ -232,7 +243,7 @@
  install(CODE "set(SRC_DIR \"${PROJECT_SOURCE_DIR}\")")
  install(SCRIPT ${PROJECT_SOURCE_DIR}/cmake/install-stored-configfiles.cmake)
  

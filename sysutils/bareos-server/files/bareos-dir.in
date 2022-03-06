@@ -26,7 +26,7 @@ load_rc_config $name
 : ${bareos_dir_pidfile="/var/run/bareos/bareos-dir.9101.pid"}
 
 command=%%PREFIX%%/sbin/bareos-dir
-command_args="-c ${bareos_dir_config}"
+command_args="-c ${bareos_dir_config} -p ${bareos_dir_pidfile}"
 pidfile="${bareos_dir_pidfile}"
 bconsole_command=/usr/local/bin/bconsole
 start_precmd="bareos_start_precmd"
