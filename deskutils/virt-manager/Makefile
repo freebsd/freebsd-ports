@@ -1,5 +1,5 @@
 PORTNAME=	virt-manager
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
