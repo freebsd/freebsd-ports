@@ -6,7 +6,6 @@ man/man1/prg2lout.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/design/README
 %%PORTDOCS%%%%DOCSDIR%%/design/all
 %%PORTDOCS%%%%DOCSDIR%%/design/mydefs
-%%PORTDOCS%%%%DOCSDIR%%/design/outfile.ps
 %%PORTDOCS%%%%DOCSDIR%%/design/s1_0
 %%PORTDOCS%%%%DOCSDIR%%/design/s2_0
 %%PORTDOCS%%%%DOCSDIR%%/design/s2_1
@@ -55,7 +54,6 @@ man/man1/prg2lout.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/expert/exa_page
 %%PORTDOCS%%%%DOCSDIR%%/expert/exa_para
 %%PORTDOCS%%%%DOCSDIR%%/expert/mydefs
-%%PORTDOCS%%%%DOCSDIR%%/expert/outfile.ps
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_back
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_begi
@@ -119,7 +117,6 @@ man/man1/prg2lout.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/slides/README
 %%PORTDOCS%%%%DOCSDIR%%/slides/all
 %%PORTDOCS%%%%DOCSDIR%%/slides/mydefs
-%%PORTDOCS%%%%DOCSDIR%%/slides/outfile.ps
 %%PORTDOCS%%%%DOCSDIR%%/user/README
 %%PORTDOCS%%%%DOCSDIR%%/user/all
 %%PORTDOCS%%%%DOCSDIR%%/user/ap_byp
