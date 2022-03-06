@@ -1,5 +1,5 @@
 PORTNAME=	digikam
-DISTVERSION=	7.5.0
+DISTVERSION=	7.6.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
@@ -64,7 +64,8 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_IMPLIES=	DOCS
 
 KDEPIM_DESC=		KDEPim Addressbook support
-KDEPIM_USE=		KDE=akonadi,akonadicontacts,contacts
+KDEPIM_USE=		KDE=akonadi,akonadicontacts,contacts,grantleetheme
+KDEPIM_USES=		grantlee:5
 KDEPIM_CMAKE_BOOL=	ENABLE_AKONADICONTACTSUPPORT
 KDEPIM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5AkonadiContact
 

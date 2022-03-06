@@ -85,6 +85,7 @@ include/digikam/metaengine.h
 include/digikam/metaengine_data.h
 include/digikam/photoinfocontainer.h
 include/digikam/previewlayout.h
+include/digikam/previewloadthread.h
 include/digikam/previewsettings.h
 include/digikam/previewtoolbar.h
 include/digikam/queuesettings.h
