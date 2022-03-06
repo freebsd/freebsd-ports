@@ -16,8 +16,6 @@ LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE-BSD2.md
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.md
 LICENSE_FILE_MIT=		${WRKSRC}/third_party/safestringlib/LICENSE
 
-BROKEN_i386=	https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1231
-
 BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		cmake compiler:c11

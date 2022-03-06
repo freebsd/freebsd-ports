@@ -1,0 +1,29 @@
+https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1231
+
+Source/Lib/Encoder/ASM_SSE2/highbd_variance_impl_sse2.asm:41: error: impossible combination of address sizes
+Source/Lib/Common/ASM_SSSE3/aom_subpixel_8t_ssse3.asm:377: error: impossible combination of address sizes
+Source/Lib/Encoder/ASM_SSE4_1/pickrst_sse4.c:511:14: warning: implicit declaration of function '_mm_insert_epi64' is invalid in C99 [-Wimplicit-function-declaration]
+    dst[0] = _mm_insert_epi64(dst[0], *(int64_t *)src, 1);
+             ^
+Source/Lib/Encoder/ASM_SSE4_1/pickrst_sse4.c:511:12: error: assigning to '__m128i' (vector of 2 'long long' values) from incompatible type 'int'
+    dst[0] = _mm_insert_epi64(dst[0], *(int64_t *)src, 1);
+           ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Source/Lib/Encoder/ASM_AVX2/pickrst_avx2.c:20:
+Source/Lib/Encoder/ASM_AVX2/pickrst_avx2.h:393:12: warning: implicit declaration of function '_mm256_insert_epi64' is invalid in C99 [-Wimplicit-function-declaration]
+    *dst = _mm256_insert_epi64(*dst, *(int64_t *)src, 1);
+           ^
+Source/Lib/Encoder/ASM_AVX2/pickrst_avx2.h:393:10: error: assigning to '__m256i' (vector of 4 'long long' values) from incompatible type 'int'
+    *dst = _mm256_insert_epi64(*dst, *(int64_t *)src, 1);
+         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- CMakeLists.txt.orig	2021-05-08 09:05:00 UTC
++++ CMakeLists.txt
+@@ -42,7 +42,7 @@ check_c_source_compiles("
+ include(CheckCSourceCompiles)
+ 
+ check_c_source_compiles("
+-#if defined(_M_IX86) || defined(_M_X64) || defined(__i386__) || defined(__x86_64__)
++#if defined(_M_X64) || defined(__x86_64__)
+ #else
+ #error \"Non-x86\"
+ #endif
