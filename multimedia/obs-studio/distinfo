@@ -1,12 +1,10 @@
-TIMESTAMP = 1645741975
-SHA256 (obsproject-obs-studio-27.2.1_GH0.tar.gz) = 1fbe3a0716bbf0aaf27e9d1d7f232ac9c3fc831a6f9a4f47422dfe0365b944b4
-SIZE (obsproject-obs-studio-27.2.1_GH0.tar.gz) = 16382458
+TIMESTAMP = 1646541073
+SHA256 (obsproject-obs-studio-27.2.3_GH0.tar.gz) = 72db55d63ddf82adcb84d7787d7e31fa9a20578cd42b0db657546588f6c294bc
+SIZE (obsproject-obs-studio-27.2.3_GH0.tar.gz) = 16383685
 SHA256 (obsproject-obs-browser-f1a61c5_GH0.tar.gz) = 6c9948047dd01a8baaa47f98d8929950a3977e56ad6a06deacbf7acf9c7af648
 SIZE (obsproject-obs-browser-f1a61c5_GH0.tar.gz) = 79279
 SHA256 (obsproject-obs-vst-aaa7b7f_GH0.tar.gz) = f6d1f8ef3d417b0cdf8b88df7b9308c827d47fca809b1fa414e5d87f6f9e10c3
 SIZE (obsproject-obs-vst-aaa7b7f_GH0.tar.gz) = 516781
-SHA256 (79aed14aff55c62fee78c0f4828c65ac05caf036.patch) = 79bc7213c0d240d7accfcc07dc940b44113739b5e2683b875a678b252f95d0ce
-SIZE (79aed14aff55c62fee78c0f4828c65ac05caf036.patch) = 882
 SHA256 (ecd7a59aed665eca0a50b99939ef28e04e144876.patch) = 3c13de74b34f31f59b038c2858d2f6ca7fe5b387150d18c175290aa20b1e68c0
 SIZE (ecd7a59aed665eca0a50b99939ef28e04e144876.patch) = 3418
 SHA256 (c201bd067fd3e4c9a6139ad52e0ad61bc1ca0117.patch) = ab7035ad3bf0d681db0eae6664e6a8f236b16ade50cc4e46bb3e0fc9631e9198
