@@ -1920,6 +1920,8 @@
 %%WWWDIR%%/locale/fi_FI/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/gl/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/gl/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/id/LC_MESSAGES/messages.mo
@@ -2419,6 +2421,7 @@
 %%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/plugins/no_iframes/init.php
 %%WWWDIR%%/plugins/note/init.php
+%%WWWDIR%%/plugins/note/note.css
 %%WWWDIR%%/plugins/note/note.js
 %%WWWDIR%%/plugins/nsfw/init.php
 %%WWWDIR%%/plugins/nsfw/nsfw.png
