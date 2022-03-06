@@ -1,8 +1,7 @@
 # Created by: Laurent Courty
 
 PORTNAME=	qgis
-DISTVERSION=	3.16.16
-PORTREVISION=	2
+DISTVERSION=	3.22.4
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -15,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	gpsbabel>=1.5.4:astro/gpsbabel \
 		opencl>=0:devel/opencl \
-		sip:devel/py-sip4 \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.1:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \
@@ -45,6 +43,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libmdal.so:math/mdal \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
+		libpdal_base.so:math/pdal \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
 		libqjson-qt5.so:devel/qjson \
@@ -62,6 +61,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}black>=19.10:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.1:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Fiona>=0:graphics/py-fiona@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gdal>=3.1.0:graphics/py-gdal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}geojson>=2.3.0:devel/py-geojson@${PY_FLAVOR} \
@@ -106,12 +106,12 @@ USES=		bison cmake compiler:features desktop-file-utils \
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	pyqt5 qscintilla2
+USE_PYQT=	pyqt5 qscintilla2 pysip sip 
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
-		designer doc gamepad gui linguist_build location \
+		designer_build qdoc_build gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \
-		sql sql-pgsql sql-sqlite3 svg testlib uitools \
-		webengine widgets webkit xml
+		sql sql-pgsql sql-sqlite3 svg testlib uitools_build \
+		webengine webkit widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
@@ -125,7 +125,8 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so
 CMAKE_ON=	BUILD_TESTING ENABLE_TESTS USE_OPENCL WITH_3D WITH_ASTYLE \
-		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_POSTGRESQL
+		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_EPT WITH_POSTGRESQL \
+		WITH_PDAL
 CMAKE_OFF=	WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis
@@ -151,6 +152,13 @@ SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 
 .include <bsd.port.pre.mk>
+
+# QGIS requires flex >= 2.5.6, see
+# https://github.com/qgis/QGIS/blob/fb0f334b06e0828e5695ffcaa7c7eb82d6516cb0/INSTALL.md
+.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1300501)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
+CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
+.endif
 
 post-patch:
 # On i386, '-mllvm -inline-threshold=128' does not build under all circumstances

@@ -1,13 +1,13 @@
---- python/plugins/processing/algs/saga/SagaAlgorithmProvider.py.orig	2019-12-07 13:18:21 UTC
-+++ python/plugins/processing/algs/saga/SagaAlgorithmProvider.py
-@@ -79,13 +79,13 @@ class SagaAlgorithmProvider(QgsProcessingProvider):
- 
-     def canBeActivated(self):
-         version = SagaUtils.getInstalledVersion(True)
--        if version is not None and (version.startswith(REQUIRED_VERSION) or version.startswith(BETA_SUPPORT_VERSION)):
-+        if version is not None and (version.startswith(REQUIRED_VERSION) or version >= BETA_SUPPORT_VERSION):
-             return True
-         return False
+--- python/plugins/sagaprovider/SagaAlgorithmProvider.py.orig	2021-06-21 15:09:09 UTC
++++ python/plugins/sagaprovider/SagaAlgorithmProvider.py
+@@ -78,13 +78,13 @@ class SagaAlgorithmProvider(QgsProcessingProvider):
+             version is not None
+             and (
+                 version.startswith(REQUIRED_VERSION)
+-                or version.startswith(BETA_SUPPORT_VERSION)
++                or version >= BETA_SUPPORT_VERSION
+             )
+         )
  
      def warningMessage(self):
          version = SagaUtils.getInstalledVersion(True)
@@ -16,7 +16,7 @@
              return self.tr('SAGA version {} is not officially supported - algorithms may encounter issues').format(version)
          return ''
  
-@@ -96,7 +96,7 @@ class SagaAlgorithmProvider(QgsProcessingProvider):
+@@ -95,7 +95,7 @@ class SagaAlgorithmProvider(QgsProcessingProvider):
                                       self.tr('Processing'), Qgis.Critical)
              return
  
