@@ -1,6 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.12
+DISTVERSION=	0.11.0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,12 +24,12 @@ CARGO_CRATES=	adler32-1.2.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		bumpalo-3.9.1 \
-		bytemuck-1.7.3 \
+		bytemuck-1.8.0 \
 		cast-0.2.7 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.0.14 \
-		clap_derive-3.0.14 \
+		clap-3.1.5 \
+		clap_derive-3.1.4 \
 		crc32fast-1.3.2 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
@@ -46,7 +46,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		env_logger-0.9.0 \
-		getrandom-0.2.4 \
+		getrandom-0.2.5 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
 		heck-0.4.0 \
@@ -57,7 +57,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		lazy_static-1.4.0 \
-		libc-0.2.117 \
+		libc-0.2.119 \
 		libflate-1.1.2 \
 		libflate_lz77-1.1.0 \
 		lock_api-0.4.6 \
@@ -69,7 +69,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		num-format-0.4.0 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
-		once_cell-1.9.0 \
+		once_cell-1.10.0 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.0.0 \
 		output_vt100-0.1.3 \
@@ -88,23 +88,22 @@ CARGO_CRATES=	adler32-1.2.0 \
 		proc-macro2-1.0.36 \
 		quick-xml-0.22.0 \
 		quote-1.0.15 \
-		rand-0.8.4 \
+		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.3.1 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.2.10 \
+		redox_syscall-0.2.11 \
 		regex-1.5.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
-		rgb-0.8.31 \
+		rgb-0.8.32 \
 		rle-decode-fast-1.0.3 \
 		rustc_version-0.4.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.5 \
+		semver-1.0.6 \
 		serde-1.0.136 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
@@ -113,11 +112,11 @@ CARGO_CRATES=	adler32-1.2.0 \
 		str_stack-0.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.86 \
-		termcolor-1.1.2 \
+		termcolor-1.1.3 \
 		termtree-0.2.4 \
 		testing_logger-0.1.1 \
 		textwrap-0.11.0 \
-		textwrap-0.14.2 \
+		textwrap-0.15.0 \
 		tinytemplate-1.2.1 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
