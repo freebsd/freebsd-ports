@@ -25,6 +25,7 @@
 %%DATADIR%%/lib/spectrum.zsh
 %%DATADIR%%/lib/termsupport.zsh
 %%DATADIR%%/lib/theme-and-appearance.zsh
+%%DATADIR%%/lib/vcs_info.zsh
 %%DATADIR%%/oh-my-zsh.sh
 %%DATADIR%%/plugins/1password/1password.plugin.zsh
 %%DATADIR%%/plugins/1password/README.md
@@ -137,6 +138,8 @@
 %%DATADIR%%/plugins/copydir/copydir.plugin.zsh
 %%DATADIR%%/plugins/copyfile/README.md
 %%DATADIR%%/plugins/copyfile/copyfile.plugin.zsh
+%%DATADIR%%/plugins/copypath/README.md
+%%DATADIR%%/plugins/copypath/copypath.plugin.zsh
 %%DATADIR%%/plugins/cp/README.md
 %%DATADIR%%/plugins/cp/cp.plugin.zsh
 %%DATADIR%%/plugins/cpanm/README.md
