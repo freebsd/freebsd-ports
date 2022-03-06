@@ -2,7 +2,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	1
+#PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -16,25 +16,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/bin/swig:devel/swig
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libharfbuzz.so:print/harfbuzz \
 		libngspice.so:cad/ngspice_rework@shlib \
 		libTKernel.so:cad/opencascade \
 		libpixman-1.so:x11/pixman \
 		libpng.so:graphics/png \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libGLEW-wayland.so:graphics/glew-wayland
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
-
-USE_GITLAB=	yes
-GL_ACCOUNT=	kicad/code
-GL_PROJECT=	kicad
-GL_COMMIT=	${GIT_SRC_HASH}
-
-CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
-USE_GL=		gl glew glu glut
-USE_WX=		3.1
-WX_COMPS=	wx python:lib
-USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
-USE_XORG+=	ice pixman x11 xext
 
 BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
@@ -43,13 +33,22 @@ OPTIONS_DEFINE=	DOCS
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
+USES=		desktop-file-utils shared-mime-info compiler:c++14-lang tar:bzip2 cmake:insource,noninja \
+		gettext pkgconfig python:3.5+ shebangfix ssl gl xorg gnome
+USE_GITLAB=	yes
+GL_ACCOUNT=	kicad/code
+GL_PROJECT=	kicad
+GL_COMMIT=	${GIT_SRC_HASH}
+USE_GL=		gl glew glu glut
+USE_WX=		3.1
+WX_COMPS=	wx python:lib
+USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
+USE_XORG+=	ice pixman x11 xext
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-USES=		desktop-file-utils shared-mime-info compiler:c++14-lang tar:bzip2 cmake:insource,noninja \
-		gettext pkgconfig python:3.5+ shebangfix ssl gl xorg gnome
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
-
+CXXFLAGS+=	-I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \

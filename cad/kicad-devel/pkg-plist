@@ -206,6 +206,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/simulation/sallen_key/sallen_key.kicad_sch
 %%DATADIR%%/demos/simulation/sallen_key/sallen_key_schlib.kicad_sym
 %%DATADIR%%/demos/simulation/sallen_key/sym-lib-table
+%%DATADIR%%/demos/simulation/subsheets/subsheet1.kicad_sch
+%%DATADIR%%/demos/simulation/subsheets/subsheet2.kicad_sch
+%%DATADIR%%/demos/simulation/subsheets/subsheets.kicad_pro
+%%DATADIR%%/demos/simulation/subsheets/subsheets.kicad_sch
 %%DATADIR%%/demos/simulation/v_i_sources/sym-lib-table
 %%DATADIR%%/demos/simulation/v_i_sources/v_i_sources.kicad_pro
 %%DATADIR%%/demos/simulation/v_i_sources/v_i_sources.kicad_sch
