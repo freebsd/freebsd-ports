@@ -1,9 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
-PORTNAME=	1password-client
-DISTVERSION=	1.12.4
+PORTNAME=	1password-client-devel
+DISTVERSION=	2.0.0-beta.14
 CATEGORIES=	security
-MASTER_SITES=	https://cache.agilebits.com/dist/1P/op/pkg/v${DISTVERSION}/ \
+MASTER_SITES=	https://cache.agilebits.com/dist/1P/op2/pkg/v${DISTVERSION}/ \
 		LOCAL/ler/op
 
 MAINTAINER=	ler@FreeBSD.org
@@ -17,7 +17,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/op
-CONFLICTS_INSTALL=	security/op security/1password-client-devel
+CONFLICTS_INSTALL=	security/op security/1password-client
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/op ${STAGEDIR}${PREFIX}/bin
