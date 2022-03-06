@@ -1,6 +1,6 @@
 %%CONFIG%%bin/alsoft-config
-bin/makemhr
-bin/openal-info
+%%UTILS%%bin/makemhr
+%%UTILS%%bin/openal-info
 %%ETCDIR%%/alsoftrc.sample
 %%ETCDIR%%/hrtf/Default HRTF.mhr
 %%ETCDIR%%/presets/3D7.1.ambdec
