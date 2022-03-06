@@ -875,6 +875,7 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
+    SUBDIR += py-numpy-groupies
     SUBDIR += py-numpy-stl
     SUBDIR += py-openTSNE
     SUBDIR += py-opt-einsum
