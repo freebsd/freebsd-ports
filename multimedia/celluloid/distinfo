@@ -1,5 +1,3 @@
-TIMESTAMP = 1636045846
-SHA256 (celluloid-player-celluloid-v0.22_GH0.tar.gz) = dc5a7da19f89cf5dd6caeab2625fea1b8ac9a0311bfb14f5dc1e9c76daba4a9f
-SIZE (celluloid-player-celluloid-v0.22_GH0.tar.gz) = 489189
-SHA256 (f49bdcdcee55.patch) = c8cb4ddb78d61dd62d0a0852e7b3f96b53d2491fcb6d289ec6b591bf17d231be
-SIZE (f49bdcdcee55.patch) = 782
+TIMESTAMP = 1646592158
+SHA256 (celluloid-player-celluloid-v0.23_GH0.tar.gz) = 4f7028c456877395c99b24e4a7e097ae035b9eefcff0de3e94b8fb338df90d95
+SIZE (celluloid-player-celluloid-v0.23_GH0.tar.gz) = 500388
