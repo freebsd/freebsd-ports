@@ -1,0 +1,1148 @@
+--- deap/algorithms.py.orig	2020-01-21 01:17:45 UTC
++++ deap/algorithms.py
+@@ -27,7 +27,7 @@ you really want them to do.
+ 
+ import random
+ 
+-import tools
++from . import tools
+ 
+ 
+ def varAnd(population, toolbox, cxpb, mutpb):
+@@ -157,7 +157,7 @@ def eaSimple(population, toolbox, cxpb, mutpb, ngen, s
+     record = stats.compile(population) if stats else {}
+     logbook.record(gen=0, nevals=len(invalid_ind), **record)
+     if verbose:
+-        print logbook.stream
++        print(logbook.stream)
+ 
+     # Begin the generational process
+     for gen in range(1, ngen + 1):
+@@ -184,7 +184,7 @@ def eaSimple(population, toolbox, cxpb, mutpb, ngen, s
+         record = stats.compile(population) if stats else {}
+         logbook.record(gen=gen, nevals=len(invalid_ind), **record)
+         if verbose:
+-            print logbook.stream
++            print(logbook.stream)
+ 
+     return population, logbook
+ 
+@@ -227,10 +227,10 @@ def varOr(population, toolbox, lambda_, cxpb, mutpb):
+         "or equal to 1.0.")
+ 
+     offspring = []
+-    for _ in xrange(lambda_):
++    for _ in range(lambda_):
+         op_choice = random.random()
+         if op_choice < cxpb:            # Apply crossover
+-            ind1, ind2 = map(toolbox.clone, random.sample(population, 2))
++            ind1, ind2 = list(map(toolbox.clone, random.sample(population, 2)))
+             ind1, ind2 = toolbox.mate(ind1, ind2)
+             del ind1.fitness.values
+             offspring.append(ind1)
+@@ -308,7 +308,7 @@ def eaMuPlusLambda(population, toolbox, mu, lambda_, c
+     record = stats.compile(population) if stats is not None else {}
+     logbook.record(gen=0, nevals=len(invalid_ind), **record)
+     if verbose:
+-        print logbook.stream
++        print(logbook.stream)
+ 
+     # Begin the generational process
+     for gen in range(1, ngen + 1):
+@@ -332,7 +332,7 @@ def eaMuPlusLambda(population, toolbox, mu, lambda_, c
+         record = stats.compile(population) if stats is not None else {}
+         logbook.record(gen=gen, nevals=len(invalid_ind), **record)
+         if verbose:
+-            print logbook.stream
++            print(logbook.stream)
+ 
+     return population, logbook
+ 
+@@ -409,7 +409,7 @@ def eaMuCommaLambda(population, toolbox, mu, lambda_, 
+     record = stats.compile(population) if stats is not None else {}
+     logbook.record(gen=0, nevals=len(invalid_ind), **record)
+     if verbose:
+-        print logbook.stream
++        print(logbook.stream)
+ 
+     # Begin the generational process
+     for gen in range(1, ngen + 1):
+@@ -433,7 +433,7 @@ def eaMuCommaLambda(population, toolbox, mu, lambda_, 
+         record = stats.compile(population) if stats is not None else {}
+         logbook.record(gen=gen, nevals=len(invalid_ind), **record)
+         if verbose:
+-            print logbook.stream
++            print(logbook.stream)
+     return population, logbook
+ 
+ 
+@@ -477,7 +477,7 @@ def eaGenerateUpdate(toolbox, ngen, halloffame=None, s
+     logbook = tools.Logbook()
+     logbook.header = ['gen', 'nevals'] + (stats.fields if stats else [])
+ 
+-    for gen in xrange(ngen):
++    for gen in range(ngen):
+         # Generate a new population
+         population = toolbox.generate()
+         # Evaluate the individuals
+@@ -494,6 +494,6 @@ def eaGenerateUpdate(toolbox, ngen, halloffame=None, s
+         record = stats.compile(population) if stats is not None else {}
+         logbook.record(gen=gen, nevals=len(population), **record)
+         if verbose:
+-            print logbook.stream
++            print(logbook.stream)
+ 
+     return population, logbook
+--- deap/base.py.orig	2020-01-21 01:17:45 UTC
++++ deap/base.py
+@@ -189,12 +189,12 @@ class Fitness(object):
+             self.wvalues = tuple(map(mul, values, self.weights))
+         except TypeError:
+             _, _, traceback = sys.exc_info()
+-            raise TypeError, ("Both weights and assigned values must be a "
++            raise TypeError("Both weights and assigned values must be a "
+                               "sequence of numbers when assigning to values of "
+                               "%r. Currently assigning value(s) %r of %r to a "
+                               "fitness with weights %s."
+                               % (self.__class__, values, type(values),
+-                                 self.weights)), traceback
++                                 self.weights)).with_traceback(traceback)
+ 
+     def delValues(self):
+         self.wvalues = ()
+--- deap/benchmarks/__init__.py.orig	2020-01-21 01:17:45 UTC
++++ deap/benchmarks/__init__.py
+@@ -489,7 +489,7 @@ def dtlz1(individual, obj):
+     """
+     g = 100 * (len(individual[obj-1:]) + sum((xi-0.5)**2 - cos(20*pi*(xi-0.5)) for xi in individual[obj-1:]))
+     f = [0.5 * reduce(mul, individual[:obj-1], 1) * (1 + g)]
+-    f.extend(0.5 * reduce(mul, individual[:m], 1) * (1 - individual[m]) * (1 + g) for m in reversed(xrange(obj-1)))
++    f.extend(0.5 * reduce(mul, individual[:m], 1) * (1 - individual[m]) * (1 + g) for m in reversed(range(obj-1)))
+     return f
+ 
+ def dtlz2(individual, obj):
+@@ -588,7 +588,7 @@ def dtlz5(ind, n_objs):
+     theta = lambda x: pi / (4.0 * (1 + gval)) * (1 + 2 * gval * x)
+     fit = [(1 + gval) * cos(pi / 2.0 * ind[0]) * reduce(lambda x,y: x*y, [cos(theta(a)) for a in ind[1:]])]
+            
+-    for m in reversed(range(1, n_objs)):
++    for m in reversed(list(range(1, n_objs))):
+         if m == 1:
+             fit.append((1 + gval) * sin(pi / 2.0 * ind[0]))
+         else:
+@@ -608,7 +608,7 @@ def dtlz6(ind, n_objs):
+     fit = [(1 + gval) * cos(pi / 2.0 * ind[0]) *
+            reduce(lambda x,y: x*y, [cos(theta(a)) for a in ind[1:]])]
+ 
+-    for m in reversed(range(1, n_objs)):
++    for m in reversed(list(range(1, n_objs))):
+         if m == 1:
+             fit.append((1 + gval) * sin(pi / 2.0 * ind[0]))
+         else:
+--- deap/benchmarks/binary.py.orig	2020-01-21 01:17:45 UTC
++++ deap/benchmarks/binary.py
+@@ -13,7 +13,7 @@
+ #    You should have received a copy of the GNU Lesser General Public
+ #    License along with DEAP. If not, see <http://www.gnu.org/licenses/>.
+ 
+-from __future__ import division
++
+ from functools import wraps
+ import math
+ 
+@@ -29,7 +29,7 @@ def bin2float(min_, max_, nbits):
+             # User must take care to make nelem an integer.
+             nelem = len(individual)//nbits
+             decoded = [0] * nelem
+-            for i in xrange(nelem):
++            for i in range(nelem):
+                 gene = int("".join(map(str,
+                                        individual[i*nbits:i*nbits+nbits])),
+                            2)
+@@ -68,10 +68,10 @@ def chuang_f1(individual):
+     """
+     total = 0
+     if individual[-1] == 0:
+-        for i in xrange(0, len(individual)-1, 4):
++        for i in range(0, len(individual)-1, 4):
+             total += inv_trap(individual[i:i+4])
+     else:
+-        for i in xrange(0, len(individual)-1, 4):
++        for i in range(0, len(individual)-1, 4):
+             total += trap(individual[i:i+4])
+     return total,
+ 
+@@ -85,16 +85,16 @@ def chuang_f2(individual):
+     """
+     total = 0
+     if individual[-2] == 0 and individual[-1] == 0:
+-        for i in xrange(0, len(individual)-2, 8):
++        for i in range(0, len(individual)-2, 8):
+             total += inv_trap(individual[i:i+4]) + inv_trap(individual[i+4:i+8])
+     elif individual[-2] == 0 and individual[-1] == 1:
+-        for i in xrange(0, len(individual)-2, 8):
++        for i in range(0, len(individual)-2, 8):
+             total += inv_trap(individual[i:i+4]) + trap(individual[i+4:i+8])
+     elif individual[-2] == 1 and individual[-1] == 0:
+-        for i in xrange(0, len(individual)-2, 8):
++        for i in range(0, len(individual)-2, 8):
+             total += trap(individual[i:i+4]) + inv_trap(individual[i+4:i+8])
+     else:
+-        for i in xrange(0, len(individual)-2, 8):
++        for i in range(0, len(individual)-2, 8):
+             total += trap(individual[i:i+4]) + trap(individual[i+4:i+8])
+     return total,
+ 
+@@ -108,10 +108,10 @@ def chuang_f3(individual):
+     """
+     total = 0
+     if individual[-1] == 0:
+-        for i in xrange(0, len(individual)-1, 4):
++        for i in range(0, len(individual)-1, 4):
+             total += inv_trap(individual[i:i+4])
+     else:
+-        for i in xrange(2, len(individual)-3, 4):
++        for i in range(2, len(individual)-3, 4):
+             total += inv_trap(individual[i:i+4])
+         total += trap(individual[-2:]+individual[:2])
+     return total,
+@@ -125,7 +125,7 @@ def royal_road1(individual, order):
+     nelem = len(individual) // order
+     max_value = int(2**order - 1)
+     total = 0
+-    for i in xrange(nelem):
++    for i in range(nelem):
+         value = int("".join(map(str, individual[i*order:i*order+order])), 2)
+         total += int(order) * int(value/max_value)
+     return total,
+--- deap/benchmarks/movingpeaks.py.orig	2020-01-21 01:17:45 UTC
++++ deap/benchmarks/movingpeaks.py
+@@ -393,6 +393,6 @@ def diversity(population):
+ 
+ if __name__ == "__main__":
+     mpb = MovingPeaks(dim=2, npeaks=[1,1,10], number_severity=0.1)
+-    print mpb.maximums()
++    print(mpb.maximums())
+     mpb.changePeaks()
+-    print mpb.maximums()
++    print(mpb.maximums())
+--- deap/benchmarks/tools.py.orig	2020-01-21 01:17:45 UTC
++++ deap/benchmarks/tools.py
+@@ -285,7 +285,7 @@ def convergence(first_front, optimal_front):
+         distances.append(float("inf"))
+         for opt_ind in optimal_front:
+             dist = 0.
+-            for i in xrange(len(opt_ind)):
++            for i in range(len(opt_ind)):
+                 dist += (ind.fitness.values[i] - opt_ind[i])**2
+             if dist < distances[-1]:
+                 distances[-1] = dist
+--- deap/cma.py.orig	2020-01-21 01:17:45 UTC
++++ deap/cma.py
+@@ -24,7 +24,7 @@ import copy
+ from math import sqrt, log, exp
+ import numpy
+ 
+-import tools
++from . import tools
+ 
+ 
+ class Strategy(object):
+@@ -118,7 +118,7 @@ class Strategy(object):
+         """
+         arz = numpy.random.standard_normal((self.lambda_, self.dim))
+         arz = self.centroid + self.sigma * numpy.dot(arz, self.BD.T)
+-        return map(ind_init, arz)
++        return list(map(ind_init, arz))
+ 
+     def update(self, population):
+         """Update the current covariance matrix strategy from the
+@@ -286,7 +286,7 @@ class StrategyOnePlusLambda(object):
+         # self.y = numpy.dot(self.A, numpy.random.standard_normal(self.dim))
+         arz = numpy.random.standard_normal((self.lambda_, self.dim))
+         arz = self.parent + self.sigma * numpy.dot(arz, self.A.T)
+-        return map(ind_init, arz)
++        return list(map(ind_init, arz))
+ 
+     def update(self, population):
+         """Update the current covariance matrix strategy from the
+--- deap/creator.py.orig	2020-01-21 01:17:45 UTC
++++ deap/creator.py
+@@ -142,7 +142,7 @@ def create(name, base, **kargs):
+ 
+     dict_inst = {}
+     dict_cls = {}
+-    for obj_name, obj in kargs.iteritems():
++    for obj_name, obj in kargs.items():
+         if isinstance(obj, type):
+             dict_inst[obj_name] = obj
+         else:
+@@ -161,7 +161,7 @@ def create(name, base, **kargs):
+         """Replace the __init__ function of the new type, in order to
+         add attributes that were defined with **kargs to the instance.
+         """
+-        for obj_name, obj in dict_inst.iteritems():
++        for obj_name, obj in dict_inst.items():
+             setattr(self, obj_name, obj())
+         if base.__init__ is not object.__init__:
+             base.__init__(self, *args, **kargs)
+--- deap/gp.py.orig	2020-01-21 01:17:45 UTC
++++ deap/gp.py
+@@ -31,7 +31,7 @@ from functools import partial, wraps
+ from inspect import isclass
+ from operator import eq, lt
+ 
+-import tools  # Needed by HARM-GP
++from . import tools  # Needed by HARM-GP
+ 
+ ######################################
+ # GP Data structure                  #
+@@ -197,7 +197,7 @@ class Primitive(object):
+         self.arity = len(args)
+         self.args = args
+         self.ret = ret
+-        args = ", ".join(map("{{{0}}}".format, range(self.arity)))
++        args = ", ".join(map("{{{0}}}".format, list(range(self.arity))))
+         self.seq = "{name}({args})".format(name=self.name, args=args)
+ 
+     def format(self, *args):
+@@ -298,7 +298,7 @@ class PrimitiveSetTyped(object):
+         def addType(dict_, ret_type):
+             if ret_type not in dict_:
+                 new_list = []
+-                for type_, list_ in dict_.items():
++                for type_, list_ in list(dict_.items()):
+                     if issubclass(type_, ret_type):
+                         for item in list_:
+                             if item not in new_list:
+@@ -478,11 +478,11 @@ def compile(expr, pset):
+         return eval(code, pset.context, {})
+     except MemoryError:
+         _, _, traceback = sys.exc_info()
+-        raise MemoryError, ("DEAP : Error in tree evaluation :"
++        raise MemoryError("DEAP : Error in tree evaluation :"
+                             " Python cannot evaluate a tree higher than 90. "
+                             "To avoid this problem, you should use bloat control on your "
+                             "operators. See the DEAP documentation for more information. "
+-                            "DEAP will now abort."), traceback
++                            "DEAP will now abort.").with_traceback(traceback)
+ 
+ 
+ def compileADF(expr, psets):
+@@ -504,7 +504,7 @@ def compileADF(expr, psets):
+     """
+     adfdict = {}
+     func = None
+-    for pset, subexpr in reversed(zip(psets, expr)):
++    for pset, subexpr in reversed(list(zip(psets, expr))):
+         pset.context.update(adfdict)
+         func = compile(subexpr, pset)
+         adfdict.update({pset.name: func})
+@@ -613,9 +613,9 @@ def generate(pset, min_, max_, condition, type_=None):
+                 term = random.choice(pset.terminals[type_])
+             except IndexError:
+                 _, _, traceback = sys.exc_info()
+-                raise IndexError, "The gp.generate function tried to add " \
++                raise IndexError("The gp.generate function tried to add " \
+                                   "a terminal of type '%s', but there is " \
+-                                  "none available." % (type_,), traceback
++                                  "none available." % (type_,)).with_traceback(traceback)
+             if isclass(term):
+                 term = term()
+             expr.append(term)
+@@ -624,9 +624,9 @@ def generate(pset, min_, max_, condition, type_=None):
+                 prim = random.choice(pset.primitives[type_])
+             except IndexError:
+                 _, _, traceback = sys.exc_info()
+-                raise IndexError, "The gp.generate function tried to add " \
++                raise IndexError("The gp.generate function tried to add " \
+                                   "a primitive of type '%s', but there is " \
+-                                  "none available." % (type_,), traceback
++                                  "none available." % (type_,)).with_traceback(traceback)
+             expr.append(prim)
+             for arg in reversed(prim.args):
+                 stack.append((depth + 1, arg))
+@@ -654,8 +654,8 @@ def cxOnePoint(ind1, ind2):
+     types2 = defaultdict(list)
+     if ind1.root.ret == __type__:
+         # Not STGP optimization
+-        types1[__type__] = xrange(1, len(ind1))
+-        types2[__type__] = xrange(1, len(ind2))
++        types1[__type__] = range(1, len(ind1))
++        types2[__type__] = range(1, len(ind2))
+         common_types = [__type__]
+     else:
+         for idx, node in enumerate(ind1[1:], 1):
+@@ -1009,8 +1009,8 @@ def harm(population, toolbox, cxpb, mutpb, ngen,
+                 opRandom = random.random()
+                 if opRandom < cxpb:
+                     # Crossover
+-                    aspirant1, aspirant2 = toolbox.mate(*map(toolbox.clone,
+-                                                             toolbox.select(population, 2)))
++                    aspirant1, aspirant2 = toolbox.mate(*list(map(toolbox.clone,
++                                                             toolbox.select(population, 2))))
+                     del aspirant1.fitness.values, aspirant2.fitness.values
+                     if acceptfunc(len(aspirant1)):
+                         producedpop.append(aspirant1)
+@@ -1058,7 +1058,7 @@ def harm(population, toolbox, cxpb, mutpb, ngen,
+     record = stats.compile(population) if stats else {}
+     logbook.record(gen=0, nevals=len(invalid_ind), **record)
+     if verbose:
+-        print logbook.stream
++        print(logbook.stream)
+ 
+     # Begin the generational process
+     for gen in range(1, ngen + 1):
+@@ -1125,7 +1125,7 @@ def harm(population, toolbox, cxpb, mutpb, ngen,
+         record = stats.compile(population) if stats else {}
+         logbook.record(gen=gen, nevals=len(invalid_ind), **record)
+         if verbose:
+-            print logbook.stream
++            print(logbook.stream)
+ 
+     return population, logbook
+ 
+@@ -1186,7 +1186,7 @@ def graph(expr):
+        <http://networkx.lanl.gov/pygraphviz/>`_ as the nodes might be plotted
+        out of order when using `NetworX <http://networkx.github.com/>`_.
+     """
+-    nodes = range(len(expr))
++    nodes = list(range(len(expr)))
+     edges = list()
+     labels = dict()
+ 
+--- deap/tests/test_benchmarks.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tests/test_benchmarks.py
+@@ -34,7 +34,7 @@ class BenchmarkTest(unittest.TestCase):
+         full_individual = creator.Individual([1] * 10)
+         two_individiual = creator.Individual(8*[0] + [1, 0])
+         population = [zero_individual, full_individual, two_individiual]
+-        fitnesses = map(self.toolbox.evaluate, population)
++        fitnesses = list(map(self.toolbox.evaluate, population))
+         for ind, fit in zip(population, fitnesses):
+             ind.fitness.values = fit
+         assert population[0].fitness.values == (0.0, )
+@@ -46,7 +46,7 @@ class BenchmarkTest(unittest.TestCase):
+         wrong_population = [wrong_size_individual]
+         # It is up the user to make sure that bin2float gets an individual with
+         # an adequate length; no exceptions are raised.
+-        fitnesses = map(self.toolbox.evaluate, wrong_population)
++        fitnesses = list(map(self.toolbox.evaluate, wrong_population))
+         for ind, fit in zip(wrong_population, fitnesses):
+             # In python 2.7 operator.mul works in a different way than in
+             # python3. Thus an error occurs in python2.7 but an assignment is
+--- deap/tests/test_init.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tests/test_init.py
+@@ -8,6 +8,6 @@ from deap import tools
+ class LogbookTest(unittest.TestCase):
+     def test_statistics_compile(self):
+         l = 10
+-        gen_idx = partial(random.sample, range(l), l)
++        gen_idx = partial(random.sample, list(range(l)), l)
+         i = tools.initIterate(list, gen_idx)
+         self.assertSetEqual(set(i), set(range(l)))
+--- deap/tests/test_logbook.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tests/test_logbook.py
+@@ -7,7 +7,7 @@ class LogbookTest(unittest.TestCase):
+ 
+     def setUp(self):
+         self.logbook = tools.Logbook()
+-        print
++        print()
+ 
+     def test_multi_chapters(self):
+         self.logbook.record(gen=0, evals=100, fitness={'obj 1' : {'avg' : 1.0, 'max' : 10},
+@@ -18,23 +18,23 @@ class LogbookTest(unittest.TestCase):
+                                           'obj 2' : {'avg' : 1.0, 'max' : 10}},
+                             length={'avg' : 1.0, 'max' : 30},
+                             test={'avg' : 1.0, 'max' : 20})
+-        print(self.logbook.stream)
++        print((self.logbook.stream))
+ 
+ 
+     def test_one_chapter(self):
+         self.logbook.record(gen=0, evals=100, fitness={'avg' : 1.0, 'max' : 10})
+         self.logbook.record(gen=0, evals=100, fitness={'avg' : 1.0, 'max' : 10})
+-        print(self.logbook.stream)
++        print((self.logbook.stream))
+ 
+     def test_one_big_chapter(self):
+         self.logbook.record(gen=0, evals=100, fitness={'obj 1' : {'avg' : 1.0, 'max' : 10}, 'obj 2' : {'avg' : 1.0, 'max' : 10}})
+         self.logbook.record(gen=0, evals=100, fitness={'obj 1' : {'avg' : 1.0, 'max' : 10}, 'obj 2' : {'avg' : 1.0, 'max' : 10}})
+-        print(self.logbook.stream)
++        print((self.logbook.stream))
+ 
+     def test_no_chapters(self):
+         self.logbook.record(gen=0, evals=100, **{'avg' : 1.0, 'max' : 10})
+         self.logbook.record(gen=0, evals=100, **{'avg' : 1.0, 'max' : 10})
+-        print(self.logbook.stream)
++        print((self.logbook.stream))
+ 
+ 
+ 
+--- deap/tools/_hypervolume/pyhv.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/_hypervolume/pyhv.py
+@@ -64,7 +64,7 @@ class _HyperVolume:
+         """
+ 
+         def weaklyDominates(point, other):
+-            for i in xrange(len(point)):
++            for i in range(len(point)):
+                 if point[i] > other[i]:
+                     return False
+             return True
+@@ -152,7 +152,7 @@ class _HyperVolume:
+                 hvol = qPrevDimIndex.volume[dimIndex] + qPrevDimIndex.area[dimIndex] * (qCargo[dimIndex] - qPrevDimIndex.cargo[dimIndex])
+             else:
+                 qArea[0] = 1
+-                qArea[1:dimIndex+1] = [qArea[i] * -qCargo[i] for i in xrange(dimIndex)]
++                qArea[1:dimIndex+1] = [qArea[i] * -qCargo[i] for i in range(dimIndex)]
+             q.volume[dimIndex] = hvol
+             if q.ignore >= dimIndex:
+                 qArea[dimIndex] = qPrevDimIndex.area[dimIndex]
+@@ -184,7 +184,7 @@ class _HyperVolume:
+         dimensions = len(self.referencePoint)
+         nodeList = _MultiList(dimensions)
+         nodes = [_MultiList.Node(dimensions, point) for point in front]
+-        for i in xrange(dimensions):
++        for i in range(dimensions):
+             self.sortByDimension(nodes, i)
+             nodeList.extend(nodes, i)
+         self.list = nodeList
+@@ -239,7 +239,7 @@ class _MultiList: 
+         
+     def __str__(self):
+         strings = []
+-        for i in xrange(self.numberLists):
++        for i in range(self.numberLists):
+             currentList = []
+             node = self.sentinel.next[i]
+             while node != self.sentinel:
+@@ -292,7 +292,7 @@ class _MultiList: 
+         
+     def remove(self, node, index, bounds): 
+         """Removes and returns 'node' from all lists in [0, 'index'[."""
+-        for i in xrange(index): 
++        for i in range(index): 
+             predecessor = node.prev[i]
+             successor = node.next[i]
+             predecessor.next[i] = successor
+@@ -309,7 +309,7 @@ class _MultiList: 
+         nodes of the node that is reinserted are in the list.
+ 
+         """
+-        for i in xrange(index):
++        for i in range(index):
+             node.prev[i].next[i] = node
+             node.next[i].prev[i] = node
+             if bounds[i] > node.cargo[i]:
+@@ -329,8 +329,8 @@ if __name__ == "__main__":
+     pointset = [(a, a) for a in numpy.arange(1, 0, -0.01)]
+     ref = numpy.array([2, 2])
+ 
+-    print("Python version: %f" % hypervolume(pointset, ref))
++    print(("Python version: %f" % hypervolume(pointset, ref)))
+     if hv:
+-        print("C version: %f" % hv.hypervolume(pointset, ref))
+-    print("Approximated: %f" % hypervolume_approximation(pointset, ref))
++        print(("C version: %f" % hv.hypervolume(pointset, ref)))
++    print(("Approximated: %f" % hypervolume_approximation(pointset, ref)))
+ 
+--- deap/tools/constraint.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/constraint.py
+@@ -172,6 +172,6 @@ if __name__ == "__main__":
+     toolbox.decorate("evaluate", ClosestValidPenalty(valid, closest_feasible, 1.0e-6, distance))
+ 
+     ind1 = creator.Individual((-5.6468535666e-01,2.2483050478e+00,-1.1087909644e+00,-1.2710112861e-01,1.1682438733e+00,-1.3642007438e+00,-2.1916417835e-01,-5.9137308999e-01,-1.0870160336e+00,6.0515070232e-01,2.1532075914e+00,-2.6164718271e-01,1.5244071578e+00,-1.0324305612e+00,1.2858152343e+00,-1.2584683962e+00,1.2054392372e+00,-1.7429571973e+00,-1.3517256013e-01,-2.6493429355e+00,-1.3051320798e-01,2.2641961090e+00,-2.5027232340e+00,-1.2844874148e+00,1.9955852925e+00,-1.2942218834e+00,3.1340109155e+00,1.6440111097e+00,-1.7750105857e+00,7.7610242710e-01))
+-    print(toolbox.evaluate(ind1))
+-    print("Individuals is valid: %s" % ("True" if valid(ind1) else "False"))
++    print((toolbox.evaluate(ind1)))
++    print(("Individuals is valid: %s" % ("True" if valid(ind1) else "False")))
+ 
+--- deap/tools/crossover.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/crossover.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++
+ import random
+ import warnings
+ 
+@@ -84,7 +84,7 @@ def cxUniform(ind1, ind2, indpb):
+     :mod:`random` module.
+     """
+     size = min(len(ind1), len(ind2))
+-    for i in xrange(size):
++    for i in range(size):
+         if random.random() < indpb:
+             ind1[i], ind2[i] = ind2[i], ind1[i]
+ 
+@@ -115,7 +115,7 @@ def cxPartialyMatched(ind1, ind2):
+     p1, p2 = [0] * size, [0] * size
+ 
+     # Initialize the position of each indices in the individuals
+-    for i in xrange(size):
++    for i in range(size):
+         p1[ind1[i]] = i
+         p2[ind2[i]] = i
+     # Choose crossover points
+@@ -127,7 +127,7 @@ def cxPartialyMatched(ind1, ind2):
+         cxpoint1, cxpoint2 = cxpoint2, cxpoint1
+ 
+     # Apply crossover between cx points
+-    for i in xrange(cxpoint1, cxpoint2):
++    for i in range(cxpoint1, cxpoint2):
+         # Keep track of the selected values
+         temp1 = ind1[i]
+         temp2 = ind2[i]
+@@ -166,11 +166,11 @@ def cxUniformPartialyMatched(ind1, ind2, indpb):
+     p1, p2 = [0] * size, [0] * size
+ 
+     # Initialize the position of each indices in the individuals
+-    for i in xrange(size):
++    for i in range(size):
+         p1[ind1[i]] = i
+         p2[ind2[i]] = i
+ 
+-    for i in xrange(size):
++    for i in range(size):
+         if random.random() < indpb:
+             # Keep track of the selected values
+             temp1 = ind1[i]
+@@ -209,7 +209,7 @@ def cxOrdered(ind1, ind2):
+        optimization and machine learning. Addison Wesley, 1989
+     """
+     size = min(len(ind1), len(ind2))
+-    a, b = random.sample(xrange(size), 2)
++    a, b = random.sample(range(size), 2)
+     if a > b:
+         a, b = b, a
+ 
+@@ -321,7 +321,7 @@ def cxSimulatedBinaryBounded(ind1, ind2, eta, low, up)
+     elif len(up) < size:
+         raise IndexError("up must be at least the size of the shorter individual: %d < %d" % (len(up), size))
+ 
+-    for i, xl, xu in zip(xrange(size), low, up):
++    for i, xl, xu in zip(range(size), low, up):
+         if random.random() <= 0.5:
+             # This epsilon should probably be changed for 0 since
+             # floating point arithmetic in Python is safer
+--- deap/tools/emo.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/emo.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++
+ import bisect
+ from collections import defaultdict, namedtuple
+ from itertools import chain
+@@ -74,7 +74,7 @@ def sortNondominated(individuals, k, first_front_only=
+     map_fit_ind = defaultdict(list)
+     for ind in individuals:
+         map_fit_ind[ind.fitness].append(ind)
+-    fits = map_fit_ind.keys()
++    fits = list(map_fit_ind.keys())
+ 
+     current_front = []
+     next_front = []
+@@ -129,7 +129,7 @@ def assignCrowdingDist(individuals):
+ 
+     nobj = len(individuals[0].fitness.values)
+ 
+-    for i in xrange(nobj):
++    for i in range(nobj):
+         crowd.sort(key=lambda element: element[0][i])
+         distances[crowd[0][1]] = float("inf")
+         distances[crowd[-1][1]] = float("inf")
+@@ -184,7 +184,7 @@ def selTournamentDCD(individuals, k):
+     individuals_2 = random.sample(individuals, len(individuals))
+ 
+     chosen = []
+-    for i in xrange(0, k, 4):
++    for i in range(0, k, 4):
+         chosen.append(tourn(individuals_1[i],   individuals_1[i+1]))
+         chosen.append(tourn(individuals_1[i+2], individuals_1[i+3]))
+         chosen.append(tourn(individuals_2[i],   individuals_2[i+1]))
+@@ -248,7 +248,7 @@ def sortLogNondominated(individuals, k, first_front_on
+ 
+     #Launch the sorting algorithm
+     obj = len(individuals[0].fitness.wvalues)-1
+-    fitnesses = unique_fits.keys()
++    fitnesses = list(unique_fits.keys())
+     front = dict.fromkeys(fitnesses, 0)
+ 
+     # Sort the fitnesses lexicographically.
+@@ -284,7 +284,7 @@ def sortNDHelperA(fitnesses, obj, front):
+             front[s2] = max(front[s2], front[s1] + 1)
+     elif obj == 1:
+         sweepA(fitnesses, front)
+-    elif len(frozenset(map(itemgetter(obj), fitnesses))) == 1:
++    elif len(frozenset(list(map(itemgetter(obj), fitnesses)))) == 1:
+         #All individuals for objective M are equal: go to objective M-1
+         sortNDHelperA(fitnesses, obj-1, front)
+     else:
+@@ -615,7 +615,7 @@ def associate_to_niche(fitnesses, reference_points, be
+ 
+     # Retrieve min distance niche index
+     niches = numpy.argmin(distances, axis=1)
+-    distances = distances[range(niches.shape[0]), niches]
++    distances = distances[list(range(niches.shape[0])), niches]
+     return niches, distances
+ 
+ 
+@@ -705,7 +705,7 @@ def selSPEA2(individuals, k):
+     K = math.sqrt(N)
+     strength_fits = [0] * N
+     fits = [0] * N
+-    dominating_inds = [list() for i in xrange(N)]
++    dominating_inds = [list() for i in range(N)]
+ 
+     for i, ind_i in enumerate(individuals):
+         for j, ind_j in enumerate(individuals[i+1:], i+1):
+@@ -716,19 +716,19 @@ def selSPEA2(individuals, k):
+                 strength_fits[j] += 1
+                 dominating_inds[i].append(j)
+ 
+-    for i in xrange(N):
++    for i in range(N):
+         for j in dominating_inds[i]:
+             fits[i] += strength_fits[j]
+ 
+     # Choose all non-dominated individuals
+-    chosen_indices = [i for i in xrange(N) if fits[i] < 1]
++    chosen_indices = [i for i in range(N) if fits[i] < 1]
+ 
+     if len(chosen_indices) < k:     # The archive is too small
+-        for i in xrange(N):
++        for i in range(N):
+             distances = [0.0] * N
+-            for j in xrange(i + 1, N):
++            for j in range(i + 1, N):
+                 dist = 0.0
+-                for l in xrange(L):
++                for l in range(L):
+                     val = individuals[i].fitness.values[l] - \
+                           individuals[j].fitness.values[l]
+                     dist += val * val
+@@ -737,7 +737,7 @@ def selSPEA2(individuals, k):
+             density = 1.0 / (kth_dist + 2.0)
+             fits[i] += density
+ 
+-        next_indices = [(fits[i], i) for i in xrange(N)
++        next_indices = [(fits[i], i) for i in range(N)
+                         if not i in chosen_indices]
+         next_indices.sort()
+         #print next_indices
+@@ -745,12 +745,12 @@ def selSPEA2(individuals, k):
+ 
+     elif len(chosen_indices) > k:   # The archive is too large
+         N = len(chosen_indices)
+-        distances = [[0.0] * N for i in xrange(N)]
+-        sorted_indices = [[0] * N for i in xrange(N)]
+-        for i in xrange(N):
+-            for j in xrange(i + 1, N):
++        distances = [[0.0] * N for i in range(N)]
++        sorted_indices = [[0] * N for i in range(N)]
++        for i in range(N):
++            for j in range(i + 1, N):
+                 dist = 0.0
+-                for l in xrange(L):
++                for l in range(L):
+                     val = individuals[chosen_indices[i]].fitness.values[l] - \
+                           individuals[chosen_indices[j]].fitness.values[l]
+                     dist += val * val
+@@ -759,8 +759,8 @@ def selSPEA2(individuals, k):
+             distances[i][i] = -1
+ 
+         # Insert sort is faster than quick sort for short arrays
+-        for i in xrange(N):
+-            for j in xrange(1, N):
++        for i in range(N):
++            for j in range(1, N):
+                 l = j
+                 while l > 0 and distances[i][j] < distances[i][sorted_indices[i][l - 1]]:
+                     sorted_indices[i][l] = sorted_indices[i][l - 1]
+@@ -772,8 +772,8 @@ def selSPEA2(individuals, k):
+         while size > k:
+             # Search for minimal distance
+             min_pos = 0
+-            for i in xrange(1, N):
+-                for j in xrange(1, size):
++            for i in range(1, N):
++                for j in range(1, size):
+                     dist_i_sorted_j = distances[i][sorted_indices[i][j]]
+                     dist_min_sorted_j = distances[min_pos][sorted_indices[min_pos][j]]
+ 
+@@ -784,11 +784,11 @@ def selSPEA2(individuals, k):
+                         break
+ 
+             # Remove minimal distance from sorted_indices
+-            for i in xrange(N):
++            for i in range(N):
+                 distances[i][min_pos] = float("inf")
+                 distances[min_pos][i] = float("inf")
+ 
+-                for j in xrange(1, size - 1):
++                for j in range(1, size - 1):
+                     if sorted_indices[i][j] == min_pos:
+                         sorted_indices[i][j] = sorted_indices[i][j + 1]
+                         sorted_indices[i][j + 1] = min_pos
+--- deap/tools/indicator.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/indicator.py
+@@ -41,7 +41,7 @@ def hypervolume(front, **kargs):
+         return hv.hypervolume(numpy.concatenate((wobj[:i], wobj[i+1:])), ref)
+ 
+     # Parallelization note: Cannot pickle local function
+-    contrib_values = map(contribution, range(len(front)))
++    contrib_values = list(map(contribution, list(range(len(front)))))
+ 
+     # Select the maximum hypervolume value (correspond to the minimum difference)
+     return numpy.argmax(contrib_values)
+@@ -62,7 +62,7 @@ def additive_epsilon(front, **kargs):
+         mwobj[i] = numpy.ma.masked
+         return numpy.min(numpy.max(wobj[i] - mwobj, axis=1))
+ 
+-    contrib_values = map(contribution, range(len(front)))
++    contrib_values = list(map(contribution, list(range(len(front)))))
+ 
+     # Select the minimum contribution value
+     return numpy.argmin(contrib_values)
+@@ -84,7 +84,7 @@ def multiplicative_epsilon(front, **kargs):
+         mwobj[i] = numpy.ma.masked
+         return numpy.min(numpy.max(wobj[i] / mwobj, axis=1))
+ 
+-    contrib_values = map(contribution, range(len(front)))
++    contrib_values = list(map(contribution, list(range(len(front)))))
+ 
+     # Select the minimum contribution value
+     return numpy.argmin(contrib_values)
+--- deap/tools/init.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/init.py
+@@ -1,5 +1,5 @@
+-from __future__ import division
+ 
++
+ def initRepeat(container, func, n):
+     """Call the function *container* with a generator function corresponding
+     to the calling *n* times the function *func*.
+@@ -22,7 +22,7 @@ def initRepeat(container, func, n):
+ 
+     See the :ref:`list-of-floats` and :ref:`population` tutorials for more examples.
+     """
+-    return container(func() for _ in xrange(n))
++    return container(func() for _ in range(n))
+ 
+ def initIterate(container, generator):
+     """Call the function *container* with an iterable as
+@@ -72,7 +72,7 @@ def initCycle(container, seq_func, n=1):
+ 
+     See the :ref:`funky` tutorial for an example.
+     """
+-    return container(func() for _ in xrange(n) for func in seq_func)
++    return container(func() for _ in range(n) for func in seq_func)
+ 
+ __all__ = ['initRepeat', 'initIterate', 'initCycle']
+ 
+--- deap/tools/migration.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/migration.py
+@@ -1,6 +1,6 @@
+-from __future__ import division
+ 
+ 
++
+ def migRing(populations, k, selection, replacement=None, migarray=None):
+     """Perform a ring migration between the *populations*. The migration first
+     select *k* emigrants from each population using the specified *selection*
+@@ -31,12 +31,12 @@ def migRing(populations, k, selection, replacement=Non
+     """
+     nbr_demes = len(populations)
+     if migarray is None:
+-        migarray = range(1, nbr_demes) + [0]
++        migarray = list(range(1, nbr_demes)) + [0]
+ 
+-    immigrants = [[] for i in xrange(nbr_demes)]
+-    emigrants = [[] for i in xrange(nbr_demes)]
++    immigrants = [[] for i in range(nbr_demes)]
++    emigrants = [[] for i in range(nbr_demes)]
+ 
+-    for from_deme in xrange(nbr_demes):
++    for from_deme in range(nbr_demes):
+         emigrants[from_deme].extend(selection(populations[from_deme], k))
+         if replacement is None:
+             # If no replacement strategy is selected, replace those who migrate
+--- deap/tools/mutation.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/mutation.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++
+ import math
+ import random
+ 
+@@ -41,7 +41,7 @@ def mutGaussian(individual, mu, sigma, indpb):
+     elif len(sigma) < size:
+         raise IndexError("sigma must be at least the size of individual: %d < %d" % (len(sigma), size))
+ 
+-    for i, m, s in zip(xrange(size), mu, sigma):
++    for i, m, s in zip(range(size), mu, sigma):
+         if random.random() < indpb:
+             individual[i] += random.gauss(m, s)
+ 
+@@ -72,7 +72,7 @@ def mutPolynomialBounded(individual, eta, low, up, ind
+     elif len(up) < size:
+         raise IndexError("up must be at least the size of individual: %d < %d" % (len(up), size))
+ 
+-    for i, xl, xu in zip(xrange(size), low, up):
++    for i, xl, xu in zip(range(size), low, up):
+         if random.random() <= indpb:
+             x = individual[i]
+             delta_1 = (x - xl) / (xu - xl)
+@@ -110,7 +110,7 @@ def mutShuffleIndexes(individual, indpb):
+     functions from the python base :mod:`random` module.
+     """
+     size = len(individual)
+-    for i in xrange(size):
++    for i in range(size):
+         if random.random() < indpb:
+             swap_indx = random.randint(0, size - 2)
+             if swap_indx >= i:
+@@ -135,7 +135,7 @@ def mutFlipBit(individual, indpb):
+     This function uses the :func:`~random.random` function from the python base
+     :mod:`random` module.
+     """
+-    for i in xrange(len(individual)):
++    for i in range(len(individual)):
+         if random.random() < indpb:
+             individual[i] = type(individual[i])(not individual[i])
+ 
+@@ -166,7 +166,7 @@ def mutUniformInt(individual, low, up, indpb):
+     elif len(up) < size:
+         raise IndexError("up must be at least the size of individual: %d < %d" % (len(up), size))
+ 
+-    for i, xl, xu in zip(xrange(size), low, up):
++    for i, xl, xu in zip(range(size), low, up):
+         if random.random() < indpb:
+             individual[i] = random.randint(xl, xu)
+ 
+@@ -207,7 +207,7 @@ def mutESLogNormal(individual, c, indpb):
+     n = random.gauss(0, 1)
+     t0_n = t0 * n
+ 
+-    for indx in xrange(size):
++    for indx in range(size):
+         if random.random() < indpb:
+             individual.strategy[indx] *= math.exp(t0_n + t * random.gauss(0, 1))
+             individual[indx] += individual.strategy[indx] * random.gauss(0, 1)
+--- deap/tools/selection.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/selection.py
+@@ -1,4 +1,4 @@
+-from __future__ import division
++
+ import random
+ import numpy as np
+ 
+@@ -21,7 +21,7 @@ def selRandom(individuals, k):
+     This function uses the :func:`~random.choice` function from the
+     python base :mod:`random` module.
+     """
+-    return [random.choice(individuals) for i in xrange(k)]
++    return [random.choice(individuals) for i in range(k)]
+ 
+ 
+ def selBest(individuals, k, fit_attr="fitness"):
+@@ -63,7 +63,7 @@ def selTournament(individuals, k, tournsize, fit_attr=
+     :mod:`random` module.
+     """
+     chosen = []
+-    for i in xrange(k):
++    for i in range(k):
+         aspirants = selRandom(individuals, tournsize)
+         chosen.append(max(aspirants, key=attrgetter(fit_attr)))
+     return chosen
+@@ -90,7 +90,7 @@ def selRoulette(individuals, k, fit_attr="fitness"):
+     s_inds = sorted(individuals, key=attrgetter(fit_attr), reverse=True)
+     sum_fits = sum(getattr(ind, fit_attr).values[0] for ind in individuals)
+     chosen = []
+-    for i in xrange(k):
++    for i in range(k):
+         u = random.random() * sum_fits
+         sum_ = 0
+         for ind in s_inds:
+@@ -147,7 +147,7 @@ def selDoubleTournament(individuals, k, fitness_size, 
+ 
+     def _sizeTournament(individuals, k, select):
+         chosen = []
+-        for i in xrange(k):
++        for i in range(k):
+             # Select two individuals from the population
+             # The first individual has to be the shortest
+             prob = parsimony_size / 2.
+@@ -167,7 +167,7 @@ def selDoubleTournament(individuals, k, fitness_size, 
+ 
+     def _fitTournament(individuals, k, select):
+         chosen = []
+-        for i in xrange(k):
++        for i in range(k):
+             aspirants = select(individuals, k=fitness_size)
+             chosen.append(max(aspirants, key=attrgetter(fit_attr)))
+         return chosen
+@@ -198,7 +198,7 @@ def selStochasticUniversalSampling(individuals, k, fit
+ 
+     distance = sum_fits / float(k)
+     start = random.uniform(0, distance)
+-    points = [start + i*distance for i in xrange(k)]
++    points = [start + i*distance for i in range(k)]
+ 
+     chosen = []
+     for p in points:
+@@ -234,9 +234,9 @@ def selLexicase(individuals, k):
+             if fit_weights[cases[0]] > 0:
+                 f = max
+ 
+-            best_val_for_case = f(map(lambda x: x.fitness.values[cases[0]], candidates))
++            best_val_for_case = f([x.fitness.values[cases[0]] for x in candidates])
+ 
+-            candidates = list(filter(lambda x: x.fitness.values[cases[0]] == best_val_for_case, candidates))
++            candidates = list([x for x in candidates if x.fitness.values[cases[0]] == best_val_for_case])
+             cases.pop(0)
+ 
+         selected_individuals.append(random.choice(candidates))
+@@ -266,13 +266,13 @@ def selEpsilonLexicase(individuals, k, epsilon):
+ 
+         while len(cases) > 0 and len(candidates) > 1:
+             if fit_weights[cases[0]] > 0:
+-                best_val_for_case = max(map(lambda x: x.fitness.values[cases[0]], candidates))
++                best_val_for_case = max([x.fitness.values[cases[0]] for x in candidates])
+                 min_val_to_survive_case = best_val_for_case - epsilon
+-                candidates = list(filter(lambda x: x.fitness.values[cases[0]] >= min_val_to_survive_case, candidates))
++                candidates = list([x for x in candidates if x.fitness.values[cases[0]] >= min_val_to_survive_case])
+             else :
+-                best_val_for_case = min(map(lambda x: x.fitness.values[cases[0]], candidates))
++                best_val_for_case = min([x.fitness.values[cases[0]] for x in candidates])
+                 max_val_to_survive_case = best_val_for_case + epsilon
+-                candidates = list(filter(lambda x: x.fitness.values[cases[0]] <= max_val_to_survive_case, candidates))
++                candidates = list([x for x in candidates if x.fitness.values[cases[0]] <= max_val_to_survive_case])
+ 
+             cases.pop(0)
+ 
+@@ -307,11 +307,11 @@ def selAutomaticEpsilonLexicase(individuals, k):
+             if fit_weights[cases[0]] > 0:
+                 best_val_for_case = max(errors_for_this_case)
+                 min_val_to_survive = best_val_for_case - median_absolute_deviation
+-                candidates = list(filter(lambda x: x.fitness.values[cases[0]] >= min_val_to_survive, candidates))
++                candidates = list([x for x in candidates if x.fitness.values[cases[0]] >= min_val_to_survive])
+             else :
+                 best_val_for_case = min(errors_for_this_case)
+                 max_val_to_survive = best_val_for_case + median_absolute_deviation
+-                candidates = list(filter(lambda x: x.fitness.values[cases[0]] <= max_val_to_survive, candidates))
++                candidates = list([x for x in candidates if x.fitness.values[cases[0]] <= max_val_to_survive])
+ 
+             cases.pop(0)
+ 
+--- deap/tools/support.py.orig	2020-01-21 01:17:45 UTC
++++ deap/tools/support.py
+@@ -1,7 +1,7 @@
+-from __future__ import division
+ 
++
+ try:
+-    import cPickle as pickle
++    import pickle as pickle
+ except ImportError:
+     import pickle
+ 
+@@ -205,7 +205,7 @@ class Statistics(object):
+         values = tuple(self.key(elem) for elem in data)
+ 
+         entry = dict()
+-        for key, func in self.functions.iteritems():
++        for key, func in self.functions.items():
+             entry[key] = func(values)
+         return entry
+ 
+@@ -236,7 +236,7 @@ class MultiStatistics(dict):
+         :param data: Sequence of objects on which the statistics are computed.
+         """
+         record = {}
+-        for name, stats in self.items():
++        for name, stats in list(self.items()):
+             record[name] = stats.compile(data)
+         return record
+ 
+@@ -255,7 +255,7 @@ class MultiStatistics(dict):
+                          automatically to the registered function when called,
+                          optional.
+         """
+-        for stats in self.values():
++        for stats in list(self.values()):
+             stats.register(name, function, *args, **kargs)
+ 
+ class Logbook(list):
+@@ -339,8 +339,8 @@ class Logbook(list):
+         in the dictionary are recorded in a chapter entitled as the name of the
+         key part of the pair. Chapters are also Logbook.
+         """
+-        apply_to_all = {k: v for k, v in infos.items() if not isinstance(v, dict)}
+-        for key, value in infos.items():
++        apply_to_all = {k: v for k, v in list(infos.items()) if not isinstance(v, dict)}
++        for key, value in list(infos.items()):
+             if isinstance(value, dict):
+                 chapter_infos = value.copy()
+                 chapter_infos.update(apply_to_all)
+@@ -402,11 +402,11 @@ class Logbook(list):
+         if isinstance(key, slice):
+             for i, in range(*key.indices(len(self))):
+                 self.pop(i)
+-                for chapter in self.chapters.values():
++                for chapter in list(self.chapters.values()):
+                     chapter.pop(i)
+         else:
+             self.pop(key)
+-            for chapter in self.chapters.values():
++            for chapter in list(self.chapters.values()):
+                 chapter.pop(key)
+ 
+     def pop(self, index=0):
+@@ -431,11 +431,11 @@ class Logbook(list):
+         if not columns:
+             columns = sorted(self[0].keys()) + sorted(self.chapters.keys())
+         if not self.columns_len or len(self.columns_len) != len(columns):
+-            self.columns_len = map(len, columns)
++            self.columns_len = list(map(len, columns))
+ 
+         chapters_txt = {}
+         offsets = defaultdict(int)
+-        for name, chapter in self.chapters.items():
++        for name, chapter in list(self.chapters.items()):
+             chapters_txt[name] = chapter.__txt__(startindex)
+             if startindex == 0:
+                 offsets[name] = len(chapters_txt[name]) - len(self)
+@@ -458,17 +458,17 @@ class Logbook(list):
+             header = []
+             nlines = 1
+             if len(self.chapters) > 0:
+-                nlines += max(map(len, chapters_txt.values())) - len(self) + 1
+-            header = [[] for i in xrange(nlines)]
++                nlines += max(list(map(len, list(chapters_txt.values())))) - len(self) + 1
++            header = [[] for i in range(nlines)]
+             for j, name in enumerate(columns):
+                 if name in chapters_txt:
+                     length = max(len(line.expandtabs()) for line in chapters_txt[name])
+                     blanks = nlines - 2 - offsets[name]
+-                    for i in xrange(blanks):
++                    for i in range(blanks):
+                         header[i].append(" " * length)
+                     header[blanks].append(name.center(length))
+                     header[blanks+1].append("-" * length)
+-                    for i in xrange(offsets[name]):
++                    for i in range(offsets[name]):
+                         header[blanks+2+i].append(chapters_txt[name][i])
+                 else:
+                     length = max(len(line[j].expandtabs()) for line in str_matrix)
+--- setup.py.orig	2020-01-21 01:17:45 UTC
++++ setup.py
+@@ -87,7 +87,6 @@ def run_setup(build_ext):
+          ext_modules=extra_modules,
+          cmdclass={"build_ext": ve_build_ext},
+          install_requires=['numpy'],
+-         use_2to3=True
+     )
+ 
+ try:
