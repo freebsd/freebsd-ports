@@ -1,0 +1,299 @@
+--- fudge/__init__.py.orig	2017-12-12 15:17:01 UTC
++++ fudge/__init__.py
+@@ -9,7 +9,7 @@ __version__ = '1.1.1'
+ import os
+ import re
+ import sys
+-import thread
++import _thread
+ import warnings
+ from fudge.exc import FakeDeclarationError
+ from fudge.patcher import *
+@@ -49,7 +49,7 @@ class Registry(object):
+         self.clear_actual_calls()
+         for stack in self.call_stacks:
+             stack.reset()
+-        for fake, call_order in self.get_expected_call_order().items():
++        for fake, call_order in list(self.get_expected_call_order().items()):
+             call_order.reset_calls()
+ 
+     def clear_expectations(self):
+@@ -67,12 +67,12 @@ class Registry(object):
+             this_call_order.add_expected_call(expected_call)
+ 
+     def get_expected_calls(self):
+-        self.expected_calls.setdefault(thread.get_ident(), [])
+-        return self.expected_calls[thread.get_ident()]
++        self.expected_calls.setdefault(_thread.get_ident(), [])
++        return self.expected_calls[_thread.get_ident()]
+ 
+     def get_expected_call_order(self):
+-        self.expected_call_order.setdefault(thread.get_ident(), {})
+-        return self.expected_call_order[thread.get_ident()]
++        self.expected_call_order.setdefault(_thread.get_ident(), {})
++        return self.expected_call_order[_thread.get_ident()]
+ 
+     def remember_expected_call_order(self, expected_call_order):
+         ordered_fakes = self.get_expected_call_order()
+@@ -94,7 +94,7 @@ class Registry(object):
+             for exp in self.get_expected_calls():
+                 exp.assert_called()
+                 exp.assert_times_called()
+-            for fake, call_order in self.get_expected_call_order().items():
++            for fake, call_order in list(self.get_expected_call_order().items()):
+                 call_order.assert_order_met(finalize=True)
+         finally:
+             self.clear_calls()
+@@ -305,7 +305,7 @@ class Call(object):
+         # i.e. keyword args that are only checked if the call provided them
+         if self.expected_matching_kwargs:
+             for expected_arg, expected_value in \
+-                                self.expected_matching_kwargs.items():
++                                list(self.expected_matching_kwargs.items()):
+                 if expected_arg in kwargs:
+                     if expected_value != kwargs[expected_arg]:
+                         raise AssertionError(
+@@ -340,13 +340,13 @@ class Call(object):
+ 
+             if self.expected_kwarg_count is None:
+                 self.expected_kwarg_count = 0
+-            if len(kwargs.keys()) != self.expected_kwarg_count:
++            if len(list(kwargs.keys())) != self.expected_kwarg_count:
+                 raise AssertionError(
+                     "%s was called with %s keyword arg(s) but expected %s" % (
+-                        self, len(kwargs.keys()), self.expected_kwarg_count))
++                        self, len(list(kwargs.keys())), self.expected_kwarg_count))
+ 
+         if self.unexpected_kwargs:
+-            for un_key, un_val in self.unexpected_kwargs.items():
++            for un_key, un_val in list(self.unexpected_kwargs.items()):
+                 if un_key in kwargs and kwargs[un_key] == un_val:
+                     raise AssertionError(
+                         "%s was called unexpectedly with kwarg %s=%s" %
+--- fudge/inspector.py.orig	2017-12-12 15:17:01 UTC
++++ fudge/inspector.py
+@@ -505,7 +505,7 @@ class Stringlike(ValueTest):
+         return self._make_argspec(fmt_val(self.part))
+ 
+     def stringlike(self, value):
+-        if isinstance(value, (str, unicode)):
++        if isinstance(value, str):
+             return value
+         else:
+             return str(value)
+@@ -530,7 +530,7 @@ class HasAttr(ValueTest):
+         return self._make_argspec(", ".join(sorted(fmt_dict_vals(self.attributes))))
+ 
+     def __eq__(self, other):
+-        for name, value in self.attributes.items():
++        for name, value in list(self.attributes.items()):
+             if not hasattr(other, name):
+                 return False
+             if getattr(other, name) != value:
+--- fudge/patcher.py.orig	2015-06-08 18:33:15 UTC
++++ fudge/patcher.py
+@@ -80,7 +80,7 @@ class patch(object):
+             except:
+                 etype, val, tb = sys.exc_info()
+                 self.__exit__(etype, val, tb)
+-                raise etype, val, tb
++                raise etype(val).with_traceback(tb)
+             else:
+                 self.__exit__(None, None, None)
+             return value
+@@ -239,7 +239,7 @@ def patch_object(obj, attr_name, patched_value):
+         'clean'
+         
+     """
+-    if isinstance(obj, (str, unicode)):
++    if isinstance(obj, str):
+         obj_path = adjusted_path = obj
+         done = False
+         exc = None
+@@ -259,7 +259,7 @@ def patch_object(obj, attr_name, patched_value):
+                     # We're at the top level module and it doesn't exist.
+                     # Raise the first exception since it will make more sense:
+                     etype, val, tb = exc
+-                    raise etype, val, tb
++                    raise etype(val).with_traceback(tb)
+                 if not adjusted_path.count('.'):
+                     at_top_level = True
+         for part in obj_path.split('.')[1:]:
+--- fudge/tests/test_fudge.py.orig	2015-06-08 19:36:17 UTC
++++ fudge/tests/test_fudge.py
+@@ -1,4 +1,4 @@
+-from __future__ import with_statement
++
+ import sys
+ import unittest
+ 
+@@ -63,7 +63,7 @@ class TestFake(unittest.TestCase):
+         eq_(my_obj.vice, 'versa')
+         try:
+             my_obj.stuff
+-        except Exception, exc:
++        except Exception as exc:
+             eq_(str(exc), 'broken stuff')
+         else:
+             raise RuntimeError('expected Exception')
+@@ -89,7 +89,7 @@ class TestFake(unittest.TestCase):
+         )
+         try:
+             fake.set_bits()
+-        except AssertionError, exc:
++        except AssertionError as exc:
+             eq_(str(exc),
+             "fake:widget.set_bits('123456789101112131415161718192021222324252627...') "
+             "was called unexpectedly with args ()")
+@@ -192,7 +192,7 @@ class TestLongArgValues(unittest.TestCase):
+         try:
+             # this should not be shortened but the above arg spec should:
+             fake.set_bits("99999999999999999999999999999999999999999999999999999999")
+-        except AssertionError, exc:
++        except AssertionError as exc:
+             eq_(str(exc),
+             "fake:widget.set_bits('123456789101112131415161718192021222324252627...') "
+             "was called unexpectedly with args "
+@@ -207,7 +207,7 @@ class TestLongArgValues(unittest.TestCase):
+         try:
+             # this should not be shortened but the above arg spec should:
+             fake.set_bits(newbits="99999999999999999999999999999999999999999999999999999999")
+-        except AssertionError, exc:
++        except AssertionError as exc:
+             eq_(str(exc),
+             "fake:widget.set_bits(newbits='123456789101112131415161718192021222324252627...') "
+             "was called unexpectedly with args "
+--- fudge/tests/test_inspector.py.orig	2017-12-12 15:17:01 UTC
++++ fudge/tests/test_inspector.py
+@@ -133,8 +133,8 @@ class TestObjectlike(unittest.TestCase):
+         eq_(repr(o), "arg.has_attr(one=1, two='two')")
+ 
+     def test_objectlike_unicode(self):
+-        o = inspector.HasAttr(one=1, ivan=u"Ivan_Krsti\u0107")
+-        eq_(repr(o), "arg.has_attr(ivan=%s, one=1)" % repr(u'Ivan_Krsti\u0107'))
++        o = inspector.HasAttr(one=1, ivan="Ivan_Krsti\u0107")
++        eq_(repr(o), "arg.has_attr(ivan=%s, one=1)" % repr('Ivan_Krsti\u0107'))
+ 
+     def test_objectlike_repr_long_val(self):
+         o = inspector.HasAttr(
+@@ -157,24 +157,24 @@ class TestStringlike(unittest.TestCase):
+         db.execute("select from")
+ 
+     def test_startswith_ok_uni(self):
+-        db = Fake("db").expects("execute").with_args(arg.startswith(u"Ivan_Krsti\u0107"))
+-        db.execute(u"Ivan_Krsti\u0107(); foo();")
++        db = Fake("db").expects("execute").with_args(arg.startswith("Ivan_Krsti\u0107"))
++        db.execute("Ivan_Krsti\u0107(); foo();")
+ 
+     def test_startswith_unicode(self):
+-        p = inspector.Startswith(u"Ivan_Krsti\u0107")
+-        eq_(repr(p), "arg.startswith(%s)" % repr(u'Ivan_Krsti\u0107'))
++        p = inspector.Startswith("Ivan_Krsti\u0107")
++        eq_(repr(p), "arg.startswith(%s)" % repr('Ivan_Krsti\u0107'))
+ 
+     def test_endswith_ok(self):
+         db = Fake("db").expects("execute").with_args(arg.endswith("values (1,2,3,4)"))
+         db.execute("insert into foo values (1,2,3,4)")
+ 
+     def test_endswith_ok_uni(self):
+-        db = Fake("db").expects("execute").with_args(arg.endswith(u"Ivan Krsti\u0107"))
+-        db.execute(u"select Ivan Krsti\u0107")
++        db = Fake("db").expects("execute").with_args(arg.endswith("Ivan Krsti\u0107"))
++        db.execute("select Ivan Krsti\u0107")
+ 
+     def test_endswith_unicode(self):
+-        p = inspector.Endswith(u"Ivan_Krsti\u0107")
+-        eq_(repr(p), "arg.endswith(%s)" % repr(u'Ivan_Krsti\u0107'))
++        p = inspector.Endswith("Ivan_Krsti\u0107")
++        eq_(repr(p), "arg.endswith(%s)" % repr('Ivan_Krsti\u0107'))
+ 
+     def test_startswith_repr(self):
+         p = inspector.Startswith("_start")
+@@ -247,8 +247,8 @@ class TestContains(unittest.TestCase):
+         eq_(repr(c), "arg.contains(':part:')")
+ 
+     def test_unicode(self):
+-        c = inspector.Contains(u"Ivan_Krsti\u0107")
+-        eq_(repr(c), "arg.contains(%s)" % repr(u'Ivan_Krsti\u0107'))
++        c = inspector.Contains("Ivan_Krsti\u0107")
++        eq_(repr(c), "arg.contains(%s)" % repr('Ivan_Krsti\u0107'))
+ 
+ class TestMakeValueTest(unittest.TestCase):
+ 
+--- fudge/tests/test_patcher.py.orig	2015-06-08 18:33:15 UTC
++++ fudge/tests/test_patcher.py
+@@ -1,4 +1,4 @@
+-from __future__ import with_statement
++
+ import inspect
+ import unittest
+ 
+--- fudge/tests/test_registry.py.orig	2015-06-08 18:33:15 UTC
++++ fudge/tests/test_registry.py
+@@ -1,5 +1,5 @@
+ 
+-import thread
++import _thread
+ import sys
+ import unittest
+ import fudge
+@@ -85,13 +85,13 @@ class TestRegistry(unittest.TestCase):
+         eq_(len(self.reg.get_expected_calls()), 1)
+         exp_order = ExpectedCallOrder(self.fake)
+         self.reg.remember_expected_call_order(exp_order)
+-        eq_(self.reg.get_expected_call_order().keys(), [self.fake])
++        eq_(list(self.reg.get_expected_call_order().keys()), [self.fake])
+         
+         fudge.clear_expectations()
+         
+         eq_(len(self.reg.get_expected_calls()), 0, 
+             "clear_expectations() should reset expectations")
+-        eq_(len(self.reg.get_expected_call_order().keys()), 0,
++        eq_(len(list(self.reg.get_expected_call_order().keys())), 0,
+             "clear_expectations() should reset expected call order")
+     
+     def test_multithreading(self):
+@@ -114,7 +114,7 @@ class TestRegistry(unittest.TestCase):
+                     
+                     exp_order = ExpectedCallOrder(self.fake)
+                     reg.remember_expected_call_order(exp_order)
+-                    eq_(len(reg.get_expected_call_order().keys()), 1)
++                    eq_(len(list(reg.get_expected_call_order().keys())), 1)
+                     
+                     # registered first time on __init__ :
+                     exp = ExpectedCall(self.fake, 'callMe', call_order=exp_order) 
+@@ -131,17 +131,17 @@ class TestRegistry(unittest.TestCase):
+                     
+                     fudge.verify()
+                     fudge.clear_expectations()
+-                except Exception, er:
++                except Exception as er:
+                     thread_run.errors.append(er)
+                     raise
+             finally:
+                 thread_run.waiting -= 1
+                 
+-        thread.start_new_thread(registry, (1,))
+-        thread.start_new_thread(registry, (2,))
+-        thread.start_new_thread(registry, (3,))
+-        thread.start_new_thread(registry, (4,))
+-        thread.start_new_thread(registry, (5,))
++        _thread.start_new_thread(registry, (1,))
++        _thread.start_new_thread(registry, (2,))
++        _thread.start_new_thread(registry, (3,))
++        _thread.start_new_thread(registry, (4,))
++        _thread.start_new_thread(registry, (5,))
+ 
+         count = 0
+         while thread_run.waiting > 0:
+--- fudge/util.py.orig	2015-06-08 18:33:15 UTC
++++ fudge/util.py
+@@ -30,7 +30,7 @@ def fmt_dict_vals(dict_vals, shorten=True):
+     """Returns list of key=val pairs formatted
+     for inclusion in an informative text string.
+     """
+-    items = dict_vals.items()
++    items = list(dict_vals.items())
+     if not items:
+         return [fmt_val(None, shorten=shorten)]
+     return ["%s=%s" % (k, fmt_val(v, shorten=shorten)) for k,v in items]
