@@ -401,6 +401,12 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/dictionaries/uk_UA/th_uk_UA.idx
 %%WWWDIR%%/documentserver/dictionaries/uk_UA/uk_UA.aff
 %%WWWDIR%%/documentserver/dictionaries/uk_UA/uk_UA.dic
+%%WWWDIR%%/documentserver/dictionaries/uz_Cyrl_UZ/README.md
+%%WWWDIR%%/documentserver/dictionaries/uz_Cyrl_UZ/uz_Cyrl_UZ.aff
+%%WWWDIR%%/documentserver/dictionaries/uz_Cyrl_UZ/uz_Cyrl_UZ.dic
+%%WWWDIR%%/documentserver/dictionaries/uz_Latn_UZ/README.md
+%%WWWDIR%%/documentserver/dictionaries/uz_Latn_UZ/uz_Latn_UZ.aff
+%%WWWDIR%%/documentserver/dictionaries/uz_Latn_UZ/uz_Latn_UZ.dic
 %%WWWDIR%%/documentserver/dictionaries/vi_VN/vi_VN.aff
 %%WWWDIR%%/documentserver/dictionaries/vi_VN/vi_VN.dic
 %%WWWDIR%%/documentserver/dictionaries/vi_VN/vi_VN_Vietnamese.txt

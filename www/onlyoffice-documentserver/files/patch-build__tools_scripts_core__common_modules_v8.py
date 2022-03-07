@@ -73,12 +73,11 @@
  
        if base.is_dir("v8/third_party/binutils/Linux_x64/Release/bin"):
          for file in os.listdir("v8/third_party/binutils/Linux_x64/Release/bin"):
-@@ -160,6 +163,11 @@ def make():
+@@ -160,6 +163,10 @@ def make():
  
    base_args64 = "target_cpu=\\\"x64\\\" v8_target_cpu=\\\"x64\\\" v8_static_library=true is_component_build=false v8_use_snapshot=false"
    base_args32 = "target_cpu=\\\"x86\\\" v8_target_cpu=\\\"x86\\\" v8_static_library=true is_component_build=false v8_use_snapshot=false"
 +
-+# v8_monolithic=true
 +#  if config.check_option("platform", "freebsd_64"):
 +#    base.cmd2("gn", ["gen", "out.gn/freebsd_64", "--args=\"v8_monolithic=true is_debug=false v8_static_library=true is_component_build=false is_clang=true use_sysroot=false treat_warnings_as_errors=false clang_use_chrome_plugins=false  use_lld=true use_custom_libcxx=false v8_use_external_startup_data=false is_component_build=false\""])
 +#    base.cmd("ninja", ["-C", "out.gn/freebsd_64"])
