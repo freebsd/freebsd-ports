@@ -16,6 +16,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
 USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
