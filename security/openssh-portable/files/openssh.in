@@ -22,6 +22,7 @@ load_rc_config ${name}
 : ${openssh_enable:="NO"}
 : ${openssh_skipportscheck="NO"}
 
+# These only control ssh-keygen automatically generating host keys.
 : ${openssh_dsa_enable="YES"}
 : ${openssh_dsa_flags=""}
 : ${openssh_rsa_enable="YES"}
