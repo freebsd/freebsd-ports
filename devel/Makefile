@@ -4516,6 +4516,7 @@
     SUBDIR += py-filemagic
     SUBDIR += py-filetype
     SUBDIR += py-findlibs
+    SUBDIR += py-findpython
     SUBDIR += py-first
     SUBDIR += py-five.globalrequest
     SUBDIR += py-fixtures
