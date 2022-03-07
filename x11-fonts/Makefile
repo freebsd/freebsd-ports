@@ -213,6 +213,7 @@
     SUBDIR += proggy_fonts-ttf
     SUBDIR += psftools
     SUBDIR += py-QtAwesome
+    SUBDIR += py-afdko
     SUBDIR += py-babelfont
     SUBDIR += py-bdflib
     SUBDIR += py-booleanOperations
