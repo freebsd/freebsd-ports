@@ -2,7 +2,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.com/l_sim/${PORTNAME}/-/archive/${PORTVERSION}/
 

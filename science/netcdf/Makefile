@@ -1,11 +1,10 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 
 PORTNAME=	netcdf
-PORTVERSION=	4.7.4
+PORTVERSION=	4.8.1
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
-MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
-		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
+MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-c/${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,6 +23,7 @@ CONFIGURE_ARGS=	--disable-filter-testing \
 CPPFLAGS+=	-fPIC -DPIC
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+LIBS+=		-lexecinfo
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 

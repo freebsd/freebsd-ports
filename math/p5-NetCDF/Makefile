@@ -2,7 +2,7 @@
 
 PORTNAME=	NetCDF
 PORTVERSION=	1.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math perl5
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf-perl/
 PKGNAMEPREFIX=	p5-
