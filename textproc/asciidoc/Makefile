@@ -1,7 +1,7 @@
 # Created by: anholt@FreeBSD.org
 
 PORTNAME=	asciidoc
-PORTVERSION=	10.1.1
+PORTVERSION=	10.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
