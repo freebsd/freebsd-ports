@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2022-02-24 19:28:27 UTC
++++ CMakeLists.txt
+@@ -36,13 +36,13 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_D
+ # https://www.antlr.org/download/antlr4-cpp-runtime-4.9.2-source.zip
+ # set(ANTLR4_ZIP_REPOSITORY "/path_to_antlr4_archive/a4.zip")
+ 
+-add_definitions(-DANTLR4CPP_STATIC)
+-set(ANTLR4_WITH_STATIC_CRT OFF)
++#add_definitions(-DANTLR4CPP_STATIC)
++#set(ANTLR4_WITH_STATIC_CRT OFF)
+ # Use slightly more recent commit than 4.9.2 to deal with utfcpp test
+ # compilation problems
+ # set(ANTLR4_TAG tags/4.9.2)
+-set(ANTLR4_TAG 916f03366edf15bf8b50010b11d479c189bf9f96)
+-include(ExternalAntlr4Cpp)
++#set(ANTLR4_TAG 916f03366edf15bf8b50010b11d479c189bf9f96)
++#include(ExternalAntlr4Cpp)
+ 
+ # sanitizer support
+ # work around https://github.com/pypa/setuptools/issues/1928 with environment
+@@ -78,4 +78,4 @@ add_subdirectory(c/sfntedit/source)
+ add_subdirectory(c/spot/source)
+ add_subdirectory(c/tx/source)
+ add_subdirectory(c/type1/source)
+-add_subdirectory(c/makeotf)
++#add_subdirectory(c/makeotf)
