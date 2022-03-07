@@ -1,0 +1,10 @@
+This is a low-level library for installing a Python package from a wheel
+distribution. It provides basic functionality and abstractions for handling
+wheels and installing packages from wheels.
+
+- Logic for "unpacking" a wheel (i.e. installation).
+- Abstractions for various parts of the unpacking process.
+- Extensible simple implementations of the abstractions.
+- Platform-independent Python script wrapper generation.
+
+WWW: https://github.com/pradyunsg/installer
