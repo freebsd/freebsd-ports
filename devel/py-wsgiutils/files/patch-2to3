@@ -1,0 +1,473 @@
+--- examples/testApp.py.orig	2005-02-15 20:22:58 UTC
++++ examples/testApp.py
+@@ -40,7 +40,7 @@ class TestApp:
+ 	def requestHandler (self, request):
+ 		# This is a multi-threaded area, we must be thread safe.
+ 		session = request.getSession()
+-		if (session.has_key ('lastRequestTime')):
++		if ('lastRequestTime' in session):
+ 			lastRequest = session ['lastRequestTime']
+ 		else:
+ 			lastRequest = None
+@@ -98,7 +98,7 @@ calcclient = SessionClient.LocalSessionClient ('calcse
+ calcAdaptor = wsgiAdaptor.wsgiAdaptor (CalcApp(), 'siteCookieKey', calcclient)
+ 
+ # Now place the adaptor in WSGI web container
+-print "Serving two apps on http://localhost:1066/test.py and http://localhost:1066/calc.py"
++print("Serving two apps on http://localhost:1066/test.py and http://localhost:1066/calc.py")
+ server = wsgiServer.WSGIServer (("", 1066), {'/test.py': testadaptor.wsgiHook
+ 													  ,'/calc.py': calcAdaptor.wsgiHook})
+ server.serve_forever()
+--- lib/wsgiutils/SessionClient.py.orig	2004-11-16 02:29:22 UTC
++++ lib/wsgiutils/SessionClient.py
+@@ -30,8 +30,8 @@
+ 		Clients that provide Session services.
+ """
+ 
+-import socket, xdrlib, struct, cPickle, random, time
+-import anydbm
++import socket, xdrlib, struct, pickle, random, time
++import dbm
+ import threading
+ import logging
+ 
+@@ -56,11 +56,11 @@ class LocalSessionClient (object):
+ 		self.cookieName = cookieName
+ 		self.log = logging.getLogger ("LocalSessionClient")
+ 		self.dbLock = threading.Lock()
+-		self.db = anydbm.open (dbFileLocation, 'c')
++		self.db = dbm.open (dbFileLocation, 'c')
+ 		
+ 	def getSession (self, cookies):
+ 		cookieValue = None
+-		if (cookies.has_key (self.cookieName)):
++		if (self.cookieName in cookies):
+ 			cookieValue = cookies [self.cookieName].value
+ 			self.log.info ("Found session ID %s" % cookieValue)
+ 		else:
+@@ -72,7 +72,7 @@ class LocalSessionClient (object):
+ 			return Session (sessID)
+ 		
+ 		self.dbLock.acquire()
+-		if (self.db.has_key (cookieValue)):
++		if (cookieValue in self.db):
+ 			pickledSessionData = self.db [cookieValue]
+ 			self.dbLock.release()
+ 		else:
+@@ -83,7 +83,7 @@ class LocalSessionClient (object):
+ 			return Session(sessID)
+ 			
+ 		self.log.info ("Session for ID %s found in db." % str (cookieValue))
+-		sessionData = cPickle.loads (pickledSessionData)
++		sessionData = pickle.loads (pickledSessionData)
+ 		if ((time.time() - sessionData.getLastAccessed()) > self.lifeSpan):
+ 			self.log.info ("Session has expired - cleaning up old data.")
+ 			sessionData.clear()
+@@ -92,7 +92,7 @@ class LocalSessionClient (object):
+ 	def saveSession (self, session):
+ 		self.dbLock.acquire()
+ 		session.lastAccessed = time.time()
+-		self.db [session.getSessionID()] = cPickle.dumps (session)
++		self.db [session.getSessionID()] = pickle.dumps (session)
+ 		self.db.sync()
+ 		self.dbLock.release()
+ 		
+@@ -123,7 +123,7 @@ class SessionServerClient (object):
+ 				self.sessionServerSocket = None
+ 				oldSock.close()
+ 				self.log.debug ("Close succedded")
+-		except Exception, e:
++		except Exception as e:
+ 			self.log.warn ("Error attempting to close old socket (%s) carrying on." % str (e))
+ 			
+ 		try:
+@@ -131,14 +131,14 @@ class SessionServerClient (object):
+ 			self.sessionServerSocket = socket.socket (socket.AF_UNIX, socket.SOCK_STREAM)
+ 			self.sessionServerSocket.connect (self.socketLocation)
+ 			self.log.info ("Connection to session server established!")
+-		except Exception, e:
++		except Exception as e:
+ 			self.log.error ("Unable to connect to session server: %s" % str (e))
+ 			self.sessionServerSocket = None
+ 		self.socketLock.release()
+ 	
+ 	def getSession (self, cookies):
+ 		cookieValue = None
+-		if (cookies.has_key (self.cookieName)):
++		if (self.cookieName in cookies):
+ 			cookieValue = cookies [self.cookieName].value
+ 			self.log.info ("Found session ID %s" % cookieValue)
+ 		else:
+@@ -166,7 +166,7 @@ class SessionServerClient (object):
+ 			rawmsg = self.sessionServerSocket.recv (msgLen)
+ 			# Can now release the lock
+ 			self.socketLock.release()
+-		except Exception, e:
++		except Exception as e:
+ 			# Something went wrong talking to the session server.
+ 			self.socketLock.release()
+ 			self.log.error ("Error communicating with the session server (%s), trying to re-connect." % str (e))
+@@ -187,7 +187,7 @@ class SessionServerClient (object):
+ 			pickledSessionData = msg.unpack_string()
+ 			# The pickled object 
+ 			# Now de-pickle the list of name-value pairs.
+-			sessionData = cPickle.loads (pickledSessionData)
++			sessionData = pickle.loads (pickledSessionData)
+ 			if ((time.time() - sessionData.getLastAccessed()) > self.lifeSpan):
+ 				self.log.info ("Session has expired - cleaning up old data.")
+ 				sessionData.clear()
+@@ -201,7 +201,7 @@ class SessionServerClient (object):
+ 		msg.pack_string ("SET")
+ 		session.lastAccessed = time.time()
+ 		msg.pack_string (session.getSessionID())
+-		msg.pack_string (cPickle.dumps (session))
++		msg.pack_string (pickle.dumps (session))
+ 		msg = msg.get_buffer()
+ 		msgLen = struct.pack ('!l', len (msg))
+ 		# Must get the lock at this stage!
+@@ -216,7 +216,7 @@ class SessionServerClient (object):
+ 			rawmsg = self.sessionServerSocket.recv (msgLen)
+ 			# Can now release the lock
+ 			self.socketLock.release()
+-		except Exception, e:
++		except Exception as e:
+ 			# Something went wrong talking to the session server.
+ 			self.socketLock.release()
+ 			self.log.error ("Error communicating with the session server (%s), trying to re-connect." % str (e))
+@@ -252,7 +252,7 @@ class SessionServerClient (object):
+ 			self.sessionServerSocket = None
+ 			# Can now release the lock
+ 			self.socketLock.release()
+-		except Exception, e:
++		except Exception as e:
+ 			# Something went wrong talking to the session server.
+ 			self.socketLock.release()
+ 			self.log.error ("Error communicating with the session server (%s), trying to re-connect." % str (e))
+--- lib/wsgiutils/SessionServer.py.orig	2004-11-07 15:24:15 UTC
++++ lib/wsgiutils/SessionServer.py
+@@ -30,7 +30,7 @@
+ 		A Unix daemon server that provides Session persistence.
+ """
+ 
+-import os, logging, threading, Queue, socket, anydbm, xdrlib, struct
++import os, logging, threading, queue, socket, dbm, xdrlib, struct
+ 
+ # Wire protocol is based on XDR messages.  Each message is precedded by a 4 byte length in network byte order.
+ # Client can issue a message of two strings, GET, KEY
+@@ -41,7 +41,7 @@ class Server (object):
+ 	def __init__ (self, addr, dbfile):
+ 		self.addr = addr
+ 		self.dbfile = dbfile
+-		self.db = anydbm.open (dbfile, 'c')
++		self.db = dbm.open (dbfile, 'c')
+ 		self.log = logging.getLogger ("SessionServer")
+ 		self.log.info ("Server init function.")
+ 		
+@@ -55,20 +55,20 @@ class Server (object):
+ 			listenSocket.bind (self.addr)
+ 			listenSocket.listen(2)
+ 			serving = True
+-		except Exception, e:
++		except Exception as e:
+ 			self.log.critical ("Unable to start listening on socket: %s" % str (e))
+ 			serving = False
+ 		while (serving):
+ 			try:
+ 				connSocket, connAddr = listenSocket.accept()
+-			except Exception, e:
++			except Exception as e:
+ 				self.log.error ("Exception occured while waiting for a client: " + str (e))
+ 				self.db.sync()
+ 				self.db.close()
+ 				return
+ 			try:
+ 				self.handleClient (connSocket)
+-			except Exception, e:
++			except Exception as e:
+ 				try:
+ 					self.log.info ("Error handling client (%s), closing socket." % str (e))
+ 					connSocket.close()
+@@ -96,7 +96,7 @@ class Server (object):
+ 				replymsg.pack_string ("OK")
+ 			elif (msgType == "GET"):
+ 				key = msg.unpack_string()
+-				if (self.db.has_key (key)):
++				if (key in self.db):
+ 					self.log.info ("Loading session ID %s" % key)
+ 					value = self.db [key]
+ 					replymsg.pack_string ("FOUND")
+--- lib/wsgiutils/wsgiAdaptor.py.orig	2005-02-15 20:10:56 UTC
++++ lib/wsgiutils/wsgiAdaptor.py
+@@ -30,23 +30,23 @@
+ 		Provides a basic web environment within a WSGI server.
+ """
+ 
+-import Cookie, hmac, base64, socket, xdrlib, struct, pickle, cgi, urllib, os, os.path, SimpleHTTPServer
++import http.cookies, hmac, base64, socket, xdrlib, struct, pickle, cgi, urllib.request, urllib.parse, urllib.error, os, os.path, http.server
+ import logging	
+ 		
+-class simpleCookie (Cookie.SimpleCookie):
++class simpleCookie (http.cookies.SimpleCookie):
+ 	def __init__ (self, digestKey, dataToLoad = None):
+ 		self.digestKey = digestKey
+ 		self.log = logging.getLogger ("simpleCookie")
+ 		if (dataToLoad is not None):
+-			Cookie.BaseCookie.__init__ (self, dataToLoad)
++			http.cookies.BaseCookie.__init__ (self, dataToLoad)
+ 		else:
+-			Cookie.BaseCookie.__init__ (self)
++			http.cookies.BaseCookie.__init__ (self)
+ 		
+ 	def value_decode (self, avalue):
+ 		""" Return the value decoded - note that the documentation is wrong and the return value
+ 			is actuall a tuple of unquotedvalue, originalvalue
+ 		"""
+-		unqoutedvalue, dummy = Cookie.SimpleCookie.value_decode (self, avalue)
++		unqoutedvalue, dummy = http.cookies.SimpleCookie.value_decode (self, avalue)
+ 		if (self.digestKey is None):
+ 			return unqoutedvalue, dummy 
+ 		coder = hmac.new(self.digestKey)
+@@ -65,11 +65,11 @@ class simpleCookie (Cookie.SimpleCookie):
+ 			is actuall a tuple of originalvalue, quotedevalue
+ 		"""
+ 		if (self.digestKey is None):
+-			return Cookie.SimpleCookie.value_encode (self, avalue)
++			return http.cookies.SimpleCookie.value_encode (self, avalue)
+ 		coder = hmac.new(self.digestKey)
+ 		coder.update (avalue)
+ 		valuetostore = coder.hexdigest() + avalue
+-		return Cookie.SimpleCookie.value_encode (self, valuetostore)
++		return http.cookies.SimpleCookie.value_encode (self, valuetostore)
+ 		
+ class Request (object):
+ 	def __init__ (self, environment):
+@@ -88,7 +88,7 @@ class Request (object):
+ 		# Re-construct the URL prefix.
+ 		url = environment ['wsgi.url_scheme'] + '://'
+ 		
+-		if environment.has_key ('HTTP_HOST'):
++		if 'HTTP_HOST' in environment:
+ 			url += environment ['HTTP_HOST']
+ 		else:
+ 			url += environment ['SERVER_NAME']
+@@ -100,7 +100,7 @@ class Request (object):
+ 				if environment ['SERVER_PORT'] != '80':
+ 				   url += ':' + environment ['SERVER_PORT']
+ 		
+-		url += urllib.quote(environment.get('SCRIPT_NAME',''))
++		url += urllib.parse.quote(environment.get('SCRIPT_NAME',''))
+ 		self.urlPrefix = url
+ 	
+ 	def getFormFields (self):
+@@ -154,7 +154,7 @@ class Request (object):
+ 		else:
+ 			startDir = os.path.abspath (rootDir)
+ 		
+-		decodedPath = urllib.unquote (path)
++		decodedPath = urllib.parse.unquote (path)
+ 		if (decodedPath.startswith ('/')):
+ 			decodedPath = decodedPath [1:]
+ 		# Build the path and collapse any indirection (../)
+@@ -175,7 +175,7 @@ class Request (object):
+ 			
+ 		# Guess the content type.
+ 		fileExtension = os.path.splitext (realPath)[1]
+-		contentType = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map [fileExtension]
++		contentType = http.server.SimpleHTTPRequestHandler.extensions_map [fileExtension]
+ 		self.contentValue = theFileContents
+ 		self.contentType = contentType
+ 		self.response = "200 OK"
+@@ -196,7 +196,7 @@ class wsgiAdaptor (object):
+ 		# Find authorisation headers and handle them, updating the request object.
+ 		# If a response is to be immediately sent to the user then return true, otherwise false
+ 		# Look for authorised users.
+-		if (environment.has_key ('HTTP_AUTHORIZATION')):
++		if ('HTTP_AUTHORIZATION' in environment):
+ 			self.log.debug ("Found authorization header.")
+ 			credentials = environment ['HTTP_AUTHORIZATION']
+ 			authTypeOffset = credentials.find (' ')
+@@ -215,7 +215,7 @@ class wsgiAdaptor (object):
+ 				
+ 	def getCookies (self, environment):
+ 		# Do we have any cookies?
+-		if (environment.has_key ('HTTP_COOKIE')):
++		if ('HTTP_COOKIE' in environment):
+ 			# Yes we have cookies!
+ 			cookieValue = environment ['HTTP_COOKIE']
+ 			cookies = simpleCookie (self.cookieKey, cookieValue)
+@@ -246,7 +246,7 @@ class wsgiAdaptor (object):
+ 		
+ 		try:
+ 			self.application.requestHandler (request)
+-		except Exception, e:
++		except Exception as e:
+ 			self.log.critical ("Application experienced unhandled error: " + str (e))
+ 			request.sendResponse ("500 Internal Server Error", "Internal application error")
+ 			return self.renderToClient (start_response, request, cookies)
+@@ -269,7 +269,7 @@ class wsgiAdaptor (object):
+ 		headers.append (('Content-length', str (len (request.contentValue))))
+ 		if (cookies is not None):
+ 			# Add the cookies
+-			for cookie in cookies.values():
++			for cookie in list(cookies.values()):
+ 				headers.append (('Set-Cookie', cookie.OutputString()))
+ 		
+ 		# Finally start the transaction with wsgi
+--- lib/wsgiutils/wsgiServer.py.orig	2018-08-14 08:15:20 UTC
++++ lib/wsgiutils/wsgiServer.py
+@@ -30,9 +30,9 @@
+ 		A basic multi-threaded WSGI server.
+ """
+ 
+-import SimpleHTTPServer, SocketServer, BaseHTTPServer, urlparse
++import http.server, socketserver, http.server, urllib.parse
+ import sys, logging, socket, errno
+-import traceback, StringIO
++import traceback, io
+ 
+ SERVER_ERROR = """\
+ <html>
+@@ -47,7 +47,7 @@ SERVER_ERROR = """\
+ </html>
+ """
+ 
+-class WSGIHandler (SimpleHTTPServer.SimpleHTTPRequestHandler):
++class WSGIHandler (http.server.SimpleHTTPRequestHandler):
+ 	def log_message (self, *args):
+ 		pass
+ 		
+@@ -55,7 +55,7 @@ class WSGIHandler (SimpleHTTPServer.SimpleHTTPRequestH
+ 		pass
+ 		
+ 	def getApp (self):
+-		protocol, host, path, parameters, query, fragment = urlparse.urlparse ('http://dummyhost%s' % self.path)
++		protocol, host, path, parameters, query, fragment = urllib.parse.urlparse ('http://dummyhost%s' % self.path)
+ 		
+ 		# Find any application we might have
+ 		for appPath, app in self.server.wsgiApplications:
+@@ -79,7 +79,7 @@ class WSGIHandler (SimpleHTTPServer.SimpleHTTPRequestH
+ 		if (not app):
+ 			if (self.server.serveFiles):
+ 				# Not a request for an application, just a file.
+-				SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET (self)
++				http.server.SimpleHTTPRequestHandler.do_GET (self)
+ 				return
+ 			self.send_error (404, 'Application not found.')
+ 			return
+@@ -114,7 +114,7 @@ class WSGIHandler (SimpleHTTPServer.SimpleHTTPRequestH
+ 			   ,'SERVER_PORT': str (self.server.server_address [1])
+ 			   ,'SERVER_PROTOCOL': self.request_version
+ 			   }
+-		for httpHeader, httpValue in self.headers.items():
++		for httpHeader, httpValue in list(self.headers.items()):
+ 			env ['HTTP_%s' % httpHeader.replace ('-', '_').upper()] = httpValue
+ 
+ 		# Setup the state
+@@ -132,18 +132,18 @@ class WSGIHandler (SimpleHTTPServer.SimpleHTTPRequestH
+ 				finally:
+ 					if hasattr(result, 'close'):
+ 						result.close()
+-			except socket.error, socketErr:
++			except socket.error as socketErr:
+ 				# Catch common network errors and suppress them
+ 				if (socketErr.args[0] in (errno.ECONNABORTED, errno.EPIPE)):
+ 					logging.debug ("Network error caught: (%s) %s" % (str (socketErr.args[0]), socketErr.args[1]))
+ 					# For common network errors we just return
+ 					return
+-			except socket.timeout, socketTimeout:
++			except socket.timeout as socketTimeout:
+ 				# Socket time-out
+ 				logging.debug ("Socket timeout")
+ 				return
+ 		except:
+-			errorMsg = StringIO.StringIO()
++			errorMsg = io.StringIO()
+ 			traceback.print_exc(file=errorMsg)
+ 			logging.error (errorMsg.getvalue())
+ 			if not self.wsgiSentHeaders:
+@@ -176,11 +176,11 @@ class WSGIHandler (SimpleHTTPServer.SimpleHTTPRequestH
+ 		# Send the data
+ 		self.wfile.write (data)
+ 
+-class WSGIServer (SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
++class WSGIServer (socketserver.ThreadingMixIn, http.server.HTTPServer):
+ 	def __init__ (self, serverAddress, wsgiApplications, serveFiles=1):
+-		BaseHTTPServer.HTTPServer.__init__ (self, serverAddress, WSGIHandler)
++		http.server.HTTPServer.__init__ (self, serverAddress, WSGIHandler)
+ 		appList = []
+-		for urlPath, wsgiApp in wsgiApplications.items():
++		for urlPath, wsgiApp in list(wsgiApplications.items()):
+ 			appList.append ((urlPath, wsgiApp))
+ 		self.wsgiApplications = appList
+ 		self.serveFiles = serveFiles
+--- runtests.py.orig	2004-11-16 02:29:22 UTC
++++ runtests.py
+@@ -27,7 +27,7 @@ except:
+ #or else we would be testing the system one and not the one with the changes :)
+ import sys
+ sys.path.insert(0, os.path.join(os.getcwd(),'lib'))
+-print "System path is: " + str (sys.path)
++print("System path is: " + str (sys.path))
+ def path_vistor(files, dirname, names):
+ 	"""Visits each file in the and appends the filename to the given list"""
+ 	if (dirname.find ("PerformanceTests") > 0):
+@@ -40,14 +40,14 @@ def regressionTest():
+ 	files = []
+ 	os.path.walk("tests", path_vistor, files)					
+ 	test = re.compile(".*\.py$", re.IGNORECASE)
+-	files = filter(test.search, files)
++	files = list(filter(test.search, files))
+ 	
+ 	#load each test into the testsuite
+ 	filenameToModuleName = lambda f: os.path.splitext(f)[0]
+-	moduleNames = map(filenameToModuleName, files)		 
+-	modules = map(__import__, moduleNames)				 
++	moduleNames = list(map(filenameToModuleName, files))		 
++	modules = list(map(__import__, moduleNames))				 
+ 	load = unittest.defaultTestLoader.loadTestsFromModule
+-	return unittest.TestSuite(map(load, modules))
++	return unittest.TestSuite(list(map(load, modules)))
+ 
+ if __name__ == "__main__":
+ 	unittest.main(defaultTest="regressionTest")
+--- tests/CookieTests/SimpleCookieTests.py.orig	2004-11-16 02:29:22 UTC
++++ tests/CookieTests/SimpleCookieTests.py
+@@ -40,21 +40,21 @@ class SimpleCookieTests (unittest.TestCase):
+ 		cookies = wsgiAdaptor.simpleCookie (None, "")
+ 		cookies ['valueOne'] = 'A stored value'
+ 		cookieValue = []
+-		for cookie in cookies.values():
++		for cookie in list(cookies.values()):
+ 			cookieValue.append (('Set-Cookie', cookie.OutputString()))
+ 		expectedValue = [('Set-Cookie', 'valueOne="A stored value";')]
+-		self.failUnless (cookieValue == expectedValue, "Cookie had value %s, excpected %s" % (str (cookieValue), str (expectedValue)))
++		self.assertTrue (cookieValue == expectedValue, "Cookie had value %s, excpected %s" % (str (cookieValue), str (expectedValue)))
+ 		cookies = wsgiAdaptor.simpleCookie (None, cookieValue[0][1])
+-		self.failUnless (cookies['valueOne'].value == 'A stored value', "Cookie changed value - received %s" % cookies['valueOne'].value)
++		self.assertTrue (cookies['valueOne'].value == 'A stored value', "Cookie changed value - received %s" % cookies['valueOne'].value)
+ 
+ 	def testSignedCookies (self):
+ 		# Test that plain cookies make it in and out safely.
+ 		cookies = wsgiAdaptor.simpleCookie ("testSignature", "")
+ 		cookies ['valueOne'] = 'A stored value'
+ 		cookieValue = []
+-		for cookie in cookies.values():
++		for cookie in list(cookies.values()):
+ 			cookieValue.append (('Set-Cookie', cookie.OutputString()))
+ 		testValue = cookieValue[0][1] + 'valueTwo="A stored value";'
+ 		cookies = wsgiAdaptor.simpleCookie ("testSignature", testValue)
+-		self.failUnless (cookies['valueOne'].value == 'A stored value', "Cookie changed value - received %s" % cookies['valueOne'].value)
+-		self.failIf (cookies['valueTwo'].value == "A stored value", "Signed cookie allowed bad cookie value through.")
++		self.assertTrue (cookies['valueOne'].value == 'A stored value', "Cookie changed value - received %s" % cookies['valueOne'].value)
++		self.assertFalse (cookies['valueTwo'].value == "A stored value", "Signed cookie allowed bad cookie value through.")
+--- tests/RequestObjectTests/RequestObjectTests.py.orig	2005-02-15 20:14:48 UTC
++++ tests/RequestObjectTests/RequestObjectTests.py
+@@ -50,7 +50,7 @@ class RequestTests (unittest.TestCase):
+ 		request = wsgiAdaptor.Request (ENV)
+ 		# Try the good test.
+ 		request.sendFileForPath ("Test%20File", dirToTest)
+-		self.failUnless (testdata == request.contentValue, "Reading test file failed: %s" % str (request.contentValue))
++		self.assertTrue (testdata == request.contentValue, "Reading test file failed: %s" % str (request.contentValue))
+ 		# Cleanup
+ 		os.remove (os.path.join (dirToTest, "Test File"))
+ 		os.rmdir (dirToTest)
