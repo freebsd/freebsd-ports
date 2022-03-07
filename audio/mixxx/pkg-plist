@@ -1,9 +1,5 @@
 bin/mixxx
 share/applications/org.mixxx.Mixxx.desktop
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Mixxx-Keyboard-Shortcuts.pdf
-%%PORTDOCS%%%%DOCSDIR%%/README.md
 share/icons/hicolor/128x128/apps/mixxx.png
 share/icons/hicolor/256x256/apps/mixxx.png
 share/icons/hicolor/32x32/apps/mixxx.png
