@@ -1,7 +1,7 @@
 # Created by: Mathias Monnerville <mathias@monnerville.com>
 
 PORTNAME=	glpi
-PORTVERSION=	9.5.5
+PORTVERSION=	9.5.7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/

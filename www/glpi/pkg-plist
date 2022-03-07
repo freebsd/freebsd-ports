@@ -60,6 +60,7 @@
 %%WWWDIR%%/ajax/getKbRevision.php
 %%WWWDIR%%/ajax/getKnowbaseItemAnswer.php
 %%WWWDIR%%/ajax/getMapPoint.php
+%%WWWDIR%%/ajax/getRightDropdownValue.php
 %%WWWDIR%%/ajax/getUserPicture.php
 %%WWWDIR%%/ajax/helpdesk_observer.php
 %%WWWDIR%%/ajax/impact.php
@@ -801,6 +802,7 @@
 %%WWWDIR%%/front/wifinetwork.form.php
 %%WWWDIR%%/front/wifinetwork.php
 %%WWWDIR%%/inc/abstractquery.class.php
+%%WWWDIR%%/inc/abstractrightsdropdown.class.php
 %%WWWDIR%%/inc/ajax.class.php
 %%WWWDIR%%/inc/alert.class.php
 %%WWWDIR%%/inc/api/api.class.php
@@ -921,6 +923,7 @@
 %%WWWDIR%%/inc/console/migration/myisamtoinnodbcommand.class.php
 %%WWWDIR%%/inc/console/migration/racksplugintocorecommand.class.php
 %%WWWDIR%%/inc/console/migration/timestampscommand.class.php
+%%WWWDIR%%/inc/console/migration/unsignedkeyscommand.class.php
 %%WWWDIR%%/inc/console/plugin/abstractplugincommand.class.php
 %%WWWDIR%%/inc/console/plugin/activatecommand.class.php
 %%WWWDIR%%/inc/console/plugin/deactivatecommand.class.php
@@ -1352,6 +1355,7 @@
 %%WWWDIR%%/inc/savedsearch_user.class.php
 %%WWWDIR%%/inc/search.class.php
 %%WWWDIR%%/inc/session.class.php
+%%WWWDIR%%/inc/sharedashboarddropdown.class.php
 %%WWWDIR%%/inc/singletonrulelist.class.php
 %%WWWDIR%%/inc/sla.class.php
 %%WWWDIR%%/inc/slalevel.class.php
@@ -1490,6 +1494,8 @@
 %%WWWDIR%%/install/update_952_953.php
 %%WWWDIR%%/install/update_953_954.php
 %%WWWDIR%%/install/update_954_955.php
+%%WWWDIR%%/install/update_955_956.php
+%%WWWDIR%%/install/update_956_957.php
 %%WWWDIR%%/install/update_content.php
 %%WWWDIR%%/install/update_to_031.php
 %%WWWDIR%%/install/update_xx_xy.tpl.php
