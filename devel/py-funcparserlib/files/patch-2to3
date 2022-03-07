@@ -1,0 +1,1019 @@
+--- funcparserlib/lexer.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/lexer.py
+@@ -32,9 +32,9 @@ class LexerError(Exception):
+         self.msg = msg
+ 
+     def __str__(self):
+-        s = u'cannot tokenize data'
++        s = 'cannot tokenize data'
+         line, pos = self.place
+-        return u'%s: %d,%d: "%s"' % (s, line, pos, self.msg)
++        return '%s: %d,%d: "%s"' % (s, line, pos, self.msg)
+ 
+ 
+ class Token(object):
+@@ -45,7 +45,7 @@ class Token(object):
+         self.end = end
+ 
+     def __repr__(self):
+-        return u'Token(%r, %r)' % (self.type, self.value)
++        return 'Token(%r, %r)' % (self.type, self.value)
+ 
+     def __eq__(self, other):
+         # FIXME: Case sensitivity is assumed here
+@@ -57,10 +57,10 @@ class Token(object):
+         else:
+             sl, sp = self.start
+             el, ep = self.end
+-            return u'%d,%d-%d,%d:' % (sl, sp, el, ep)
++            return '%d,%d-%d,%d:' % (sl, sp, el, ep)
+ 
+     def __str__(self):
+-        s = u"%s %s '%s'" % (self._pos_str(), self.type, self.value)
++        s = "%s %s '%s'" % (self._pos_str(), self.type, self.value)
+         return s.strip()
+ 
+     @property
+@@ -68,7 +68,7 @@ class Token(object):
+         return self.value
+ 
+     def pformat(self):
+-        return u"%s %s '%s'" % (self._pos_str().ljust(20),
++        return "%s %s '%s'" % (self._pos_str().ljust(20),
+                                 self.type.ljust(14),
+                                 self.value)
+ 
+@@ -88,12 +88,12 @@ def make_tokenizer(specs):
+             m = regexp.match(str, i)
+             if m is not None:
+                 value = m.group()
+-                nls = value.count(u'\n')
++                nls = value.count('\n')
+                 n_line = line + nls
+                 if nls == 0:
+                     n_pos = pos + len(value)
+                 else:
+-                    n_pos = len(value) - value.rfind(u'\n') - 1
++                    n_pos = len(value) - value.rfind('\n') - 1
+                 return Token(type, value, (line, pos + 1), (n_line, n_pos))
+         else:
+             errline = str.splitlines()[line - 1]
+--- funcparserlib/parser.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/parser.py
+@@ -102,11 +102,11 @@ class Parser(object):
+         Runs a parser wrapped into this object.
+         """
+         if debug:
+-            log.debug(u'trying %s' % self.name)
++            log.debug('trying %s' % self.name)
+         return self._run(tokens, s)
+ 
+     def _run(self, tokens, s):
+-        raise NotImplementedError(u'you must define() a parser')
++        raise NotImplementedError('you must define() a parser')
+ 
+     def parse(self, tokens):
+         """Sequence(a) -> b
+@@ -120,13 +120,13 @@ class Parser(object):
+         try:
+             (tree, _) = self.run(tokens, State())
+             return tree
+-        except NoParseError, e:
++        except NoParseError as e:
+             max = e.state.max
+             if len(tokens) > max:
+                 tok = tokens[max]
+             else:
+-                tok = u'<EOF>'
+-            raise NoParseError(u'%s: %s' % (e.msg, tok), e.state)
++                tok = '<EOF>'
++            raise NoParseError('%s: %s' % (e.msg, tok), e.state)
+ 
+     def __add__(self, other):
+         """Parser(a, b), Parser(a, c) -> Parser(a, _Tuple(b, c))
+@@ -160,7 +160,7 @@ class Parser(object):
+ 
+         # or in terms of bind and pure:
+         # _add = self.bind(lambda x: other.bind(lambda y: pure(magic(x, y))))
+-        _add.name = u'(%s , %s)' % (self.name, other.name)
++        _add.name = '(%s , %s)' % (self.name, other.name)
+         return _add
+ 
+     def __or__(self, other):
+@@ -177,10 +177,10 @@ class Parser(object):
+         def _or(tokens, s):
+             try:
+                 return self.run(tokens, s)
+-            except NoParseError, e:
++            except NoParseError as e:
+                 return other.run(tokens, State(s.pos, e.state.max))
+ 
+-        _or.name = u'(%s | %s)' % (self.name, other.name)
++        _or.name = '(%s | %s)' % (self.name, other.name)
+         return _or
+ 
+     def __rshift__(self, f):
+@@ -201,7 +201,7 @@ class Parser(object):
+ 
+         # or in terms of bind and pure:
+         # _shift = self.bind(lambda x: pure(f(x)))
+-        _shift.name = u'(%s)' % (self.name,)
++        _shift.name = '(%s)' % (self.name,)
+         return _shift
+ 
+     def bind(self, f):
+@@ -216,7 +216,7 @@ class Parser(object):
+             (v, s2) = self.run(tokens, s)
+             return f(v).run(tokens, s2)
+ 
+-        _bind.name = u'(%s >>=)' % (self.name,)
++        _bind.name = '(%s >>=)' % (self.name,)
+         return _bind
+ 
+ 
+@@ -233,14 +233,14 @@ class State(object):
+         self.max = max
+ 
+     def __str__(self):
+-        return unicode((self.pos, self.max))
++        return str((self.pos, self.max))
+ 
+     def __repr__(self):
+-        return u'State(%r, %r)' % (self.pos, self.max)
++        return 'State(%r, %r)' % (self.pos, self.max)
+ 
+ 
+ class NoParseError(Exception):
+-    def __init__(self, msg=u'', state=None):
++    def __init__(self, msg='', state=None):
+         self.msg = msg
+         self.state = state
+ 
+@@ -257,7 +257,7 @@ class _Ignored(object):
+         self.value = value
+ 
+     def __repr__(self):
+-        return u'_Ignored(%s)' % repr(self.value)
++        return '_Ignored(%s)' % repr(self.value)
+ 
+ 
+ @Parser
+@@ -269,10 +269,10 @@ def finished(tokens, s):
+     if s.pos >= len(tokens):
+         return None, s
+     else:
+-        raise NoParseError(u'should have reached <EOF>', s)
++        raise NoParseError('should have reached <EOF>', s)
+ 
+ 
+-finished.name = u'finished'
++finished.name = 'finished'
+ 
+ 
+ def many(p):
+@@ -291,10 +291,10 @@ def many(p):
+             while True:
+                 (v, s) = p.run(tokens, s)
+                 res.append(v)
+-        except NoParseError, e:
++        except NoParseError as e:
+             return res, State(s.pos, e.state.max)
+ 
+-    _many.name = u'{ %s }' % p.name
++    _many.name = '{ %s }' % p.name
+     return _many
+ 
+ 
+@@ -307,21 +307,21 @@ def some(pred):
+     @Parser
+     def _some(tokens, s):
+         if s.pos >= len(tokens):
+-            raise NoParseError(u'no tokens left in the stream', s)
++            raise NoParseError('no tokens left in the stream', s)
+         else:
+             t = tokens[s.pos]
+             if pred(t):
+                 pos = s.pos + 1
+                 s2 = State(pos, max(pos, s.max))
+                 if debug:
+-                    log.debug(u'*matched* "%s", new state = %s' % (t, s2))
++                    log.debug('*matched* "%s", new state = %s' % (t, s2))
+                 return t, s2
+             else:
+                 if debug:
+-                    log.debug(u'failed "%s", state = %s' % (t, s))
+-                raise NoParseError(u'got unexpected token', s)
++                    log.debug('failed "%s", state = %s' % (t, s))
++                raise NoParseError('got unexpected token', s)
+ 
+-    _some.name = u'(some)'
++    _some.name = '(some)'
+     return _some
+ 
+ 
+@@ -331,7 +331,7 @@ def a(value):
+     Returns a parser that parses a token that is equal to the value value.
+     """
+     name = getattr(value, 'name', value)
+-    return some(lambda t: t == value).named(u'(a "%s")' % (name,))
++    return some(lambda t: t == value).named('(a "%s")' % (name,))
+ 
+ 
+ def pure(x):
+@@ -339,7 +339,7 @@ def pure(x):
+     def _pure(_, s):
+         return x, s
+ 
+-    _pure.name = u'(pure %r)' % (x,)
++    _pure.name = '(pure %r)' % (x,)
+     return _pure
+ 
+ 
+@@ -351,7 +351,7 @@ def maybe(p):
+     NOTE: In a statically typed language, the type Maybe b could be more
+     approprieate.
+     """
+-    return (p | pure(None)).named(u'[ %s ]' % (p.name,))
++    return (p | pure(None)).named('[ %s ]' % (p.name,))
+ 
+ 
+ def skip(p):
+@@ -369,7 +369,7 @@ def oneplus(p):
+     Returns a parser that applies the parser p one or more times.
+     """
+     q = p + many(p) >> (lambda x: [x[0]] + x[1])
+-    return q.named(u'(%s , { %s })' % (p.name, p.name))
++    return q.named('(%s , { %s })' % (p.name, p.name))
+ 
+ 
+ def with_forward_decls(suspension):
+@@ -398,7 +398,7 @@ def forward_decl():
+ 
+     @Parser
+     def f(tokens, s):
+-        raise NotImplementedError(u'you must define() a forward_decl somewhere')
++        raise NotImplementedError('you must define() a forward_decl somewhere')
+ 
+     return f
+ 
+--- funcparserlib/tests/dot.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/tests/dot.py
+@@ -41,17 +41,17 @@ except ImportError:
+                 args.append(kwargs[name])
+             return tuple.__new__(cls, args)
+ 
+-        names = dict((i, f) for i, f in enumerate(fields.split(u' ')))
+-        methods = dict(prop(i, f) for i, f in enumerate(fields.split(u' ')))
++        names = dict((i, f) for i, f in enumerate(fields.split(' ')))
++        methods = dict(prop(i, f) for i, f in enumerate(fields.split(' ')))
+         methods.update({
+             '__new__': new,
+-            '__repr__': lambda self: u'%s(%s)' % (
++            '__repr__': lambda self: '%s(%s)' % (
+                 name,
+-                u', '.join(u'%s=%r' % (
+-                    f, getattr(self, f)) for f in fields.split(u' ')))})
++                ', '.join('%s=%r' % (
++                    f, getattr(self, f)) for f in fields.split(' ')))})
+         return type(name, (tuple,), methods)
+ 
+-ENCODING = u'UTF-8'
++ENCODING = 'UTF-8'
+ 
+ Graph = namedtuple('Graph', 'strict type id stmts')
+ SubGraph = namedtuple('SubGraph', 'id stmts')
+@@ -64,16 +64,16 @@ DefAttrs = namedtuple('DefAttrs', 'object attrs')
+ def tokenize(str):
+     """str -> Sequence(Token)"""
+     specs = [
+-        (u'Comment', (ur'/\*(.|[\r\n])*?\*/', MULTILINE)),
+-        (u'Comment', (ur'//.*',)),
+-        (u'NL', (ur'[\r\n]+',)),
+-        (u'Space', (ur'[ \t\r\n]+',)),
+-        (u'Name', (ur'[A-Za-z\200-\377_][A-Za-z\200-\377_0-9]*',)),
+-        (u'Op', (ur'[{};,=\[\]]|(->)|(--)',)),
+-        (u'Number', (ur'-?(\.[0-9]+)|([0-9]+(\.[0-9]*)?)',)),
+-        (u'String', (ur'"[^"]*"',)), # '\"' escapes are ignored
++        ('Comment', (r'/\*(.|[\r\n])*?\*/', MULTILINE)),
++        ('Comment', (r'//.*',)),
++        ('NL', (r'[\r\n]+',)),
++        ('Space', (r'[ \t\r\n]+',)),
++        ('Name', (r'[A-Za-z\200-\377_][A-Za-z\200-\377_0-9]*',)),
++        ('Op', (r'[{};,=\[\]]|(->)|(--)',)),
++        ('Number', (r'-?(\.[0-9]+)|([0-9]+(\.[0-9]*)?)',)),
++        ('String', (r'"[^"]*"',)), # '\"' escapes are ignored
+     ]
+-    useless = [u'Comment', u'NL', u'Space']
++    useless = ['Comment', 'NL', 'Space']
+     t = make_tokenizer(specs)
+     return [x for x in t(str) if x.type not in useless]
+ 
+@@ -83,33 +83,33 @@ def parse(seq):
+     unarg = lambda f: lambda args: f(*args)
+     tokval = lambda x: x.value
+     flatten = lambda list: sum(list, [])
+-    n = lambda s: a(Token(u'Name', s)) >> tokval
+-    op = lambda s: a(Token(u'Op', s)) >> tokval
++    n = lambda s: a(Token('Name', s)) >> tokval
++    op = lambda s: a(Token('Op', s)) >> tokval
+     op_ = lambda s: skip(op(s))
+-    id_types = [u'Name', u'Number', u'String']
+-    id = some(lambda t: t.type in id_types).named(u'id') >> tokval
+-    make_graph_attr = lambda args: DefAttrs(u'graph', [Attr(*args)])
++    id_types = ['Name', 'Number', 'String']
++    id = some(lambda t: t.type in id_types).named('id') >> tokval
++    make_graph_attr = lambda args: DefAttrs('graph', [Attr(*args)])
+     make_edge = lambda x, xs, attrs: Edge([x] + xs, attrs)
+ 
+     node_id = id # + maybe(port)
+     a_list = (
+         id +
+-        maybe(op_(u'=') + id) +
+-        skip(maybe(op(u',')))
++        maybe(op_('=') + id) +
++        skip(maybe(op(',')))
+         >> unarg(Attr))
+     attr_list = (
+-        many(op_(u'[') + many(a_list) + op_(u']'))
++        many(op_('[') + many(a_list) + op_(']'))
+         >> flatten)
+     attr_stmt = (
+-        (n(u'graph') | n(u'node') | n(u'edge')) +
++        (n('graph') | n('node') | n('edge')) +
+         attr_list
+         >> unarg(DefAttrs))
+-    graph_attr = id + op_(u'=') + id >> make_graph_attr
++    graph_attr = id + op_('=') + id >> make_graph_attr
+     node_stmt = node_id + attr_list >> unarg(Node)
+     # We use a forward_decl becaue of circular definitions like (stmt_list ->
+     # stmt -> subgraph -> stmt_list)
+     subgraph = forward_decl()
+-    edge_rhs = skip(op(u'->') | op(u'--')) + (subgraph | node_id)
++    edge_rhs = skip(op('->') | op('--')) + (subgraph | node_id)
+     edge_stmt = (
+         (subgraph | node_id) +
+         oneplus(edge_rhs) +
+@@ -122,21 +122,21 @@ def parse(seq):
+         | graph_attr
+         | node_stmt
+     )
+-    stmt_list = many(stmt + skip(maybe(op(u';'))))
++    stmt_list = many(stmt + skip(maybe(op(';'))))
+     subgraph.define(
+-        skip(n(u'subgraph')) +
++        skip(n('subgraph')) +
+         maybe(id) +
+-        op_(u'{') +
++        op_('{') +
+         stmt_list +
+-        op_(u'}')
++        op_('}')
+         >> unarg(SubGraph))
+     graph = (
+-        maybe(n(u'strict')) +
+-        maybe(n(u'graph') | n(u'digraph')) +
++        maybe(n('strict')) +
++        maybe(n('graph') | n('digraph')) +
+         maybe(id) +
+-        op_(u'{') +
++        op_('{') +
+         stmt_list +
+-        op_(u'}')
++        op_('}')
+         >> unarg(Graph))
+     dotfile = graph + skip(finished)
+ 
+@@ -145,17 +145,17 @@ def parse(seq):
+ 
+ def pretty_parse_tree(x):
+     """object -> str"""
+-    Pair = namedtuple(u'Pair', u'first second')
++    Pair = namedtuple('Pair', 'first second')
+     p = lambda x, y: Pair(x, y)
+ 
+     def kids(x):
+         """object -> list(object)"""
+         if isinstance(x, (Graph, SubGraph)):
+-            return [p(u'stmts', x.stmts)]
++            return [p('stmts', x.stmts)]
+         elif isinstance(x, (Node, DefAttrs)):
+-            return [p(u'attrs', x.attrs)]
++            return [p('attrs', x.attrs)]
+         elif isinstance(x, Edge):
+-            return [p(u'nodes', x.nodes), p(u'attrs', x.attrs)]
++            return [p('nodes', x.nodes), p('attrs', x.attrs)]
+         elif isinstance(x, Pair):
+             return x.second
+         else:
+@@ -166,20 +166,20 @@ def pretty_parse_tree(x):
+         if isinstance(x, Pair):
+             return x.first
+         elif isinstance(x, Graph):
+-            return u'Graph [id=%s, strict=%r, type=%s]' % (
++            return 'Graph [id=%s, strict=%r, type=%s]' % (
+                 x.id, x.strict is not None, x.type)
+         elif isinstance(x, SubGraph):
+-            return u'SubGraph [id=%s]' % (x.id,)
++            return 'SubGraph [id=%s]' % (x.id,)
+         elif isinstance(x, Edge):
+-            return u'Edge'
++            return 'Edge'
+         elif isinstance(x, Attr):
+-            return u'Attr [name=%s, value=%s]' % (x.name, x.value)
++            return 'Attr [name=%s, value=%s]' % (x.name, x.value)
+         elif isinstance(x, DefAttrs):
+-            return u'DefAttrs [object=%s]' % (x.object,)
++            return 'DefAttrs [object=%s]' % (x.object,)
+         elif isinstance(x, Node):
+-            return u'Node [id=%s]' % (x.id,)
++            return 'Node [id=%s]' % (x.id,)
+         else:
+-            return unicode(x)
++            return str(x)
+ 
+     return pretty_tree(x, kids, show)
+ 
+@@ -190,14 +190,14 @@ def main():
+     #import funcparserlib
+     #funcparserlib.parser.debug = True
+     try:
+-        stdin = os.fdopen(sys.stdin.fileno(), u'rb')
++        stdin = os.fdopen(sys.stdin.fileno(), 'rb')
+         input = stdin.read().decode(ENCODING)
+         tree = parse(tokenize(input))
+         #print pformat(tree)
+-        print pretty_parse_tree(tree).encode(ENCODING)
+-    except (NoParseError, LexerError), e:
+-        msg = (u'syntax error: %s' % e).encode(ENCODING)
+-        print >> sys.stderr, msg
++        print(pretty_parse_tree(tree).encode(ENCODING))
++    except (NoParseError, LexerError) as e:
++        msg = ('syntax error: %s' % e).encode(ENCODING)
++        print(msg, file=sys.stderr)
+         sys.exit(1)
+ 
+ 
+--- funcparserlib/tests/json.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/tests/json.py
+@@ -17,35 +17,35 @@ from funcparserlib.lexer import make_tokenizer, Token,
+ from funcparserlib.parser import (some, a, maybe, many, finished, skip,
+                                   forward_decl, NoParseError)
+ 
+-ENCODING = u'UTF-8'
++ENCODING = 'UTF-8'
+ regexps = {
+-    u'escaped': ur'''
++    'escaped': r'''
+         \\                                  # Escape
+           ((?P<standard>["\\/bfnrt])        # Standard escapes
+         | (u(?P<unicode>[0-9A-Fa-f]{4})))   # uXXXX
+         ''',
+-    u'unescaped': ur'''
++    'unescaped': r'''
+         [^"\\]                              # Unescaped: avoid ["\\]
+         ''',
+ }
+-re_esc = re.compile(regexps[u'escaped'], VERBOSE)
++re_esc = re.compile(regexps['escaped'], VERBOSE)
+ 
+ 
+ def tokenize(str):
+     """str -> Sequence(Token)"""
+     specs = [
+-        (u'Space', (ur'[ \t\r\n]+',)),
+-        (u'String', (ur'"(%(unescaped)s | %(escaped)s)*"' % regexps, VERBOSE)),
+-        (u'Number', (ur'''
++        ('Space', (r'[ \t\r\n]+',)),
++        ('String', (r'"(%(unescaped)s | %(escaped)s)*"' % regexps, VERBOSE)),
++        ('Number', (r'''
+             -?                  # Minus
+             (0|([1-9][0-9]*))   # Int
+             (\.[0-9]+)?         # Frac
+             ([Ee][+-][0-9]+)?   # Exp
+             ''', VERBOSE)),
+-        (u'Op', (ur'[{}\[\]\-,:]',)),
+-        (u'Name', (ur'[A-Za-z_][A-Za-z_0-9]*',)),
++        ('Op', (r'[{}\[\]\-,:]',)),
++        ('Name', (r'[A-Za-z_][A-Za-z_0-9]*',)),
+     ]
+-    useless = [u'Space']
++    useless = ['Space']
+     t = make_tokenizer(specs)
+     return [x for x in t(str) if x.type not in useless]
+ 
+@@ -55,9 +55,9 @@ def parse(seq):
+     const = lambda x: lambda _: x
+     tokval = lambda x: x.value
+     toktype = lambda t: some(lambda x: x.type == t) >> tokval
+-    op = lambda s: a(Token(u'Op', s)) >> tokval
++    op = lambda s: a(Token('Op', s)) >> tokval
+     op_ = lambda s: skip(op(s))
+-    n = lambda s: a(Token(u'Name', s)) >> tokval
++    n = lambda s: a(Token('Name', s)) >> tokval
+ 
+     def make_array(n):
+         if n is None:
+@@ -76,37 +76,37 @@ def parse(seq):
+ 
+     def unescape(s):
+         std = {
+-            u'"': u'"', u'\\': u'\\', u'/': u'/', u'b': u'\b', u'f': u'\f',
+-            u'n': u'\n', u'r': u'\r', u't': u'\t',
++            '"': '"', '\\': '\\', '/': '/', 'b': '\b', 'f': '\f',
++            'n': '\n', 'r': '\r', 't': '\t',
+         }
+ 
+         def sub(m):
+-            if m.group(u'standard') is not None:
+-                return std[m.group(u'standard')]
++            if m.group('standard') is not None:
++                return std[m.group('standard')]
+             else:
+-                return unichr(int(m.group(u'unicode'), 16))
++                return chr(int(m.group('unicode'), 16))
+ 
+         return re_esc.sub(sub, s)
+ 
+     def make_string(n):
+         return unescape(n[1:-1])
+ 
+-    null = n(u'null') >> const(None)
+-    true = n(u'true') >> const(True)
+-    false = n(u'false') >> const(False)
+-    number = toktype(u'Number') >> make_number
+-    string = toktype(u'String') >> make_string
++    null = n('null') >> const(None)
++    true = n('true') >> const(True)
++    false = n('false') >> const(False)
++    number = toktype('Number') >> make_number
++    string = toktype('String') >> make_string
+     value = forward_decl()
+-    member = string + op_(u':') + value >> tuple
++    member = string + op_(':') + value >> tuple
+     object = (
+-        op_(u'{') +
+-        maybe(member + many(op_(u',') + member)) +
+-        op_(u'}')
++        op_('{') +
++        maybe(member + many(op_(',') + member)) +
++        op_('}')
+         >> make_object)
+     array = (
+-        op_(u'[') +
+-        maybe(value + many(op_(u',') + value)) +
+-        op_(u']')
++        op_('[') +
++        maybe(value + many(op_(',') + value)) +
++        op_(']')
+         >> make_array)
+     value.define(
+         null
+@@ -133,10 +133,10 @@ def main():
+         stdin = os.fdopen(sys.stdin.fileno(), 'rb')
+         input = stdin.read().decode(ENCODING)
+         tree = loads(input)
+-        print pformat(tree)
+-    except (NoParseError, LexerError), e:
+-        msg = (u'syntax error: %s' % e).encode(ENCODING)
+-        print >> sys.stderr, msg
++        print(pformat(tree))
++    except (NoParseError, LexerError) as e:
++        msg = ('syntax error: %s' % e).encode(ENCODING)
++        print(msg, file=sys.stderr)
+         sys.exit(1)
+ 
+ 
+--- funcparserlib/tests/test_dot.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/tests/test_dot.py
+@@ -3,7 +3,7 @@
+ import unittest
+ from funcparserlib.parser import NoParseError
+ from funcparserlib.lexer import LexerError
+-from dot import parse, tokenize, Graph, Edge, SubGraph, DefAttrs, Attr, Node
++from .dot import parse, tokenize, Graph, Edge, SubGraph, DefAttrs, Attr, Node
+ 
+ 
+ class DotTest(unittest.TestCase):
+@@ -11,17 +11,17 @@ class DotTest(unittest.TestCase):
+         self.assertEqual(parse(tokenize(data)), expected)
+ 
+     def test_comments(self):
+-        self.t(u'''
++        self.t('''
+             /* комм 1 */
+             graph /* комм 4 */ g1 {
+                 // комм 2 /* комм 3 */
+             }
+             // комм 5
+         ''',
+-               Graph(strict=None, type=u'graph', id=u'g1', stmts=[]))
++               Graph(strict=None, type='graph', id='g1', stmts=[]))
+ 
+     def test_connected_subgraph(self):
+-        self.t(u'''
++        self.t('''
+             digraph g1 {
+                 n1 -> n2 ->
+                 subgraph n3 {
+@@ -31,27 +31,27 @@ class DotTest(unittest.TestCase):
+                 subgraph n3 {} -> n1;
+             }
+         ''',
+-               Graph(strict=None, type=u'digraph', id=u'g1', stmts=[
++               Graph(strict=None, type='digraph', id='g1', stmts=[
+                    Edge(
+                        nodes=[
+-                           u'n1',
+-                           u'n2',
+-                           SubGraph(id=u'n3', stmts=[
++                           'n1',
++                           'n2',
++                           SubGraph(id='n3', stmts=[
+                                Edge(
+-                                   nodes=[u'nn1', u'nn2', u'nn3'],
++                                   nodes=['nn1', 'nn2', 'nn3'],
+                                    attrs=[]),
+                                Edge(
+-                                   nodes=[u'nn3', u'nn1'],
++                                   nodes=['nn3', 'nn1'],
+                                    attrs=[])])],
+                        attrs=[]),
+                    Edge(
+                        nodes=[
+-                           SubGraph(id=u'n3', stmts=[]),
+-                           u'n1'],
++                           SubGraph(id='n3', stmts=[]),
++                           'n1'],
+                        attrs=[])]))
+ 
+     def test_default_attrs(self):
+-        self.t(u'''
++        self.t('''
+             digraph g1 {
+                 page="3,3";
+                 graph [rotate=90];
+@@ -61,52 +61,52 @@ class DotTest(unittest.TestCase):
+                 n3 -> n1;
+             }
+         ''',
+-               Graph(strict=None, type=u'digraph', id=u'g1', stmts=[
+-                   DefAttrs(object=u'graph', attrs=[
+-                       Attr(name=u'page', value=u'"3,3"')]),
+-                   DefAttrs(object=u'graph', attrs=[
+-                       Attr(name=u'rotate', value=u'90')]),
+-                   DefAttrs(object=u'node', attrs=[
+-                       Attr(name=u'shape', value=u'box'),
+-                       Attr(name=u'color', value=u'"#0000ff"')]),
+-                   DefAttrs(object=u'edge', attrs=[
+-                       Attr(name=u'style', value=u'dashed')]),
+-                   Edge(nodes=[u'n1', u'n2', u'n3'], attrs=[]),
+-                   Edge(nodes=[u'n3', u'n1'], attrs=[])]))
++               Graph(strict=None, type='digraph', id='g1', stmts=[
++                   DefAttrs(object='graph', attrs=[
++                       Attr(name='page', value='"3,3"')]),
++                   DefAttrs(object='graph', attrs=[
++                       Attr(name='rotate', value='90')]),
++                   DefAttrs(object='node', attrs=[
++                       Attr(name='shape', value='box'),
++                       Attr(name='color', value='"#0000ff"')]),
++                   DefAttrs(object='edge', attrs=[
++                       Attr(name='style', value='dashed')]),
++                   Edge(nodes=['n1', 'n2', 'n3'], attrs=[]),
++                   Edge(nodes=['n3', 'n1'], attrs=[])]))
+ 
+     def test_empty_graph(self):
+-        self.t(u'''
++        self.t('''
+             graph g1 {}
+         ''',
+-               Graph(strict=None, type=u'graph', id=u'g1', stmts=[]))
++               Graph(strict=None, type='graph', id='g1', stmts=[]))
+ 
+     def test_few_attrs(self):
+-        self.t(u'''
++        self.t('''
+             digraph g1 {
+                     n1 [attr1, attr2 = value2];
+             }
+         ''',
+-               Graph(strict=None, type=u'digraph', id=u'g1', stmts=[
+-                   Node(id=u'n1', attrs=[
+-                       Attr(name=u'attr1', value=None),
+-                       Attr(name=u'attr2', value=u'value2')])]))
++               Graph(strict=None, type='digraph', id='g1', stmts=[
++                   Node(id='n1', attrs=[
++                       Attr(name='attr1', value=None),
++                       Attr(name='attr2', value='value2')])]))
+ 
+     def test_few_nodes(self):
+-        self.t(u'''
++        self.t('''
+             graph g1 {
+                 n1;
+                 n2;
+                 n3
+             }
+         ''',
+-               Graph(strict=None, type=u'graph', id=u'g1', stmts=[
+-                   Node(id=u'n1', attrs=[]),
+-                   Node(id=u'n2', attrs=[]),
+-                   Node(id=u'n3', attrs=[])]))
++               Graph(strict=None, type='graph', id='g1', stmts=[
++                   Node(id='n1', attrs=[]),
++                   Node(id='n2', attrs=[]),
++                   Node(id='n3', attrs=[])]))
+ 
+     def test_illegal_comma(self):
+         try:
+-            self.t(u'''
++            self.t('''
+                 graph g1 {
+                     n1;
+                     n2;
+@@ -120,48 +120,48 @@ class DotTest(unittest.TestCase):
+ 
+     def test_null(self):
+         try:
+-            self.t(u'')
++            self.t('')
+         except NoParseError:
+             pass
+         else:
+             self.fail('must raise NoParseError')
+ 
+     def test_simple_cycle(self):
+-        self.t(u'''
++        self.t('''
+             digraph g1 {
+                 n1 -> n2 [w=5];
+                 n2 -> n3 [w=10];
+                 n3 -> n1 [w=7];
+             }
+         ''',
+-               Graph(strict=None, type=u'digraph', id=u'g1', stmts=[
+-                   Edge(nodes=[u'n1', u'n2'], attrs=[
+-                       Attr(name=u'w', value=u'5')]),
+-                   Edge(nodes=[u'n2', u'n3'], attrs=[
+-                       Attr(name=u'w', value=u'10')]),
+-                   Edge(nodes=[u'n3', u'n1'], attrs=[
+-                       Attr(name=u'w', value=u'7')])]))
++               Graph(strict=None, type='digraph', id='g1', stmts=[
++                   Edge(nodes=['n1', 'n2'], attrs=[
++                       Attr(name='w', value='5')]),
++                   Edge(nodes=['n2', 'n3'], attrs=[
++                       Attr(name='w', value='10')]),
++                   Edge(nodes=['n3', 'n1'], attrs=[
++                       Attr(name='w', value='7')])]))
+ 
+     def test_single_unicode_char(self):
+         try:
+-            self.t(u'ф')
++            self.t('ф')
+         except LexerError:
+             pass
+         else:
+             self.fail('must raise LexerError')
+ 
+     def test_unicode_names(self):
+-        self.t(u'''
++        self.t('''
+             digraph g1 {
+                 n1 -> "Медведь" [label="Поехали!"];
+                 "Медведь" -> n3 [label="Добро пожаловать!"];
+                 n3 -> n1 ["Водка"="Селёдка"];
+             }
+         ''',
+-               Graph(strict=None, type=u'digraph', id=u'g1', stmts=[
+-                   Edge(nodes=[u'n1', u'"Медведь"'], attrs=[
+-                       Attr(name=u'label', value=u'"Поехали!"')]),
+-                   Edge(nodes=[u'"Медведь"', u'n3'], attrs=[
+-                       Attr(name=u'label', value=u'"Добро пожаловать!"')]),
+-                   Edge(nodes=[u'n3', u'n1'], attrs=[
+-                       Attr(name=u'"Водка"', value=u'"Селёдка"')])]))
++               Graph(strict=None, type='digraph', id='g1', stmts=[
++                   Edge(nodes=['n1', '"Медведь"'], attrs=[
++                       Attr(name='label', value='"Поехали!"')]),
++                   Edge(nodes=['"Медведь"', 'n3'], attrs=[
++                       Attr(name='label', value='"Добро пожаловать!"')]),
++                   Edge(nodes=['n3', 'n1'], attrs=[
++                       Attr(name='"Водка"', value='"Селёдка"')])]))
+--- funcparserlib/tests/test_json.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/tests/test_json.py
+@@ -3,7 +3,7 @@
+ import unittest
+ from funcparserlib.parser import NoParseError
+ from funcparserlib.lexer import LexerError
+-import json
++from . import json
+ 
+ 
+ class JsonTest(unittest.TestCase):
+@@ -11,25 +11,25 @@ class JsonTest(unittest.TestCase):
+         self.assertEqual(json.loads(data), expected)
+ 
+     def test_1_array(self):
+-        self.t(u'[1]', [1])
++        self.t('[1]', [1])
+ 
+     def test_1_object(self):
+-        self.t(u'{"foo": "bar"}', {u'foo': u'bar'})
++        self.t('{"foo": "bar"}', {'foo': 'bar'})
+ 
+     def test_bool_and_null(self):
+-        self.t(u'[null, true, false]', [None, True, False])
++        self.t('[null, true, false]', [None, True, False])
+ 
+     def test_empty_array(self):
+-        self.t(u'[]', [])
++        self.t('[]', [])
+ 
+     def test_empty_object(self):
+-        self.t(u'{}', {})
++        self.t('{}', {})
+ 
+     def test_many_array(self):
+-        self.t(u'[1, 2, [3, 4, 5], 6]', [1, 2, [3, 4, 5], 6])
++        self.t('[1, 2, [3, 4, 5], 6]', [1, 2, [3, 4, 5], 6])
+ 
+     def test_many_object(self):
+-        self.t(u'''
++        self.t('''
+             {
+                 "foo": 1,
+                 "bar":
+@@ -41,25 +41,25 @@ class JsonTest(unittest.TestCase):
+                 "spam": "eggs"
+             }
+         ''', {
+-            u'foo': 1,
+-            u'bar': {
+-                u'baz': 2,
+-                u'quux': [True, False],
+-                u'{}': {},
++            'foo': 1,
++            'bar': {
++                'baz': 2,
++                'quux': [True, False],
++                '{}': {},
+             },
+-            u'spam': u'eggs',
++            'spam': 'eggs',
+         })
+ 
+     def test_null(self):
+         try:
+-            self.t(u'')
++            self.t('')
+         except NoParseError:
+             pass
+         else:
+             self.fail('must raise NoParseError')
+ 
+     def test_numbers(self):
+-        self.t(u'''\
++        self.t('''\
+             [
+                 0, 1, -1, 14, -14, 65536,
+                 0.0, 3.14, -3.14, -123.456,
+@@ -72,7 +72,7 @@ class JsonTest(unittest.TestCase):
+         ])
+ 
+     def test_strings(self):
+-        self.t(ur'''
++        self.t(r'''
+             [
+                 ["", "hello", "hello world!"],
+                 ["привет, мир!", "λx.x"],
+@@ -81,16 +81,16 @@ class JsonTest(unittest.TestCase):
+                 ["вот функция идентичности:\nλx.x\nили так:\n\u03bbx.x"]
+             ]
+         ''', [
+-            [u'', u'hello', u'hello world!'],
+-            [u'привет, мир!', u'λx.x'],
+-            [u'"', u'\\', u'/', u'\x08', u'\x0c', u'\n', u'\r', u'\t'],
+-            [u'\u0000', u'\u03bb', u'\uffff', u'\uffff'],
+-            [u'вот функция идентичности:\nλx.x\nили так:\n\u03bbx.x'],
++            ['', 'hello', 'hello world!'],
++            ['привет, мир!', 'λx.x'],
++            ['"', '\\', '/', '\x08', '\x0c', '\n', '\r', '\t'],
++            ['\u0000', '\u03bb', '\uffff', '\uffff'],
++            ['вот функция идентичности:\nλx.x\nили так:\n\u03bbx.x'],
+         ])
+ 
+     def test_toplevel_string(self):
+         try:
+-            self.t(u'неправильно')
++            self.t('неправильно')
+         except LexerError:
+             pass
+         else:
+--- funcparserlib/tests/test_parsing.py.orig	2013-04-24 02:24:14 UTC
++++ funcparserlib/tests/test_parsing.py
+@@ -8,35 +8,35 @@ from funcparserlib.parser import a, many, some, skip, 
+ class ParsingTest(unittest.TestCase):
+     # Issue 31
+     def test_many_backtracking(self):
+-        x = a(u'x')
+-        y = a(u'y')
++        x = a('x')
++        y = a('y')
+         expr = many(x + y) + x + x
+-        self.assertEqual(expr.parse(u'xyxyxx'),
+-                         ([(u'x', u'y'), (u'x', u'y')], u'x', u'x'))
++        self.assertEqual(expr.parse('xyxyxx'),
++                         ([('x', 'y'), ('x', 'y')], 'x', 'x'))
+ 
+     # Issue 14
+     def test_error_info(self):
+         tokenize = make_tokenizer([
+-            (u'keyword', (ur'(is|end)',)),
+-            (u'id', (ur'[a-z]+',)),
+-            (u'space', (ur'[ \t]+',)),
+-            (u'nl', (ur'[\n\r]+',)),
++            ('keyword', (r'(is|end)',)),
++            ('id', (r'[a-z]+',)),
++            ('space', (r'[ \t]+',)),
++            ('nl', (r'[\n\r]+',)),
+         ])
+         try:
+-            list(tokenize(u'f is ф'))
+-        except LexerError, e:
+-            self.assertEqual(unicode(e),
+-                             u'cannot tokenize data: 1,6: "f is \u0444"')
++            list(tokenize('f is ф'))
++        except LexerError as e:
++            self.assertEqual(str(e),
++                             'cannot tokenize data: 1,6: "f is \u0444"')
+         else:
+-            self.fail(u'must raise LexerError')
++            self.fail('must raise LexerError')
+ 
+         sometok = lambda type: some(lambda t: t.type == type)
+-        keyword = lambda s: a(Token(u'keyword', s))
++        keyword = lambda s: a(Token('keyword', s))
+ 
+-        id = sometok(u'id')
+-        is_ = keyword(u'is')
+-        end = keyword(u'end')
+-        nl = sometok(u'nl')
++        id = sometok('id')
++        is_ = keyword('is')
++        end = keyword('end')
++        nl = sometok('nl')
+ 
+         equality = id + skip(is_) + id >> tuple
+         expr = equality + skip(nl)
+@@ -46,17 +46,17 @@ class ParsingTest(unittest.TestCase):
+ spam is eggs
+ eggs isnt spam
+ end"""
+-        toks = [x for x in tokenize(msg) if x.type != u'space']
++        toks = [x for x in tokenize(msg) if x.type != 'space']
+         try:
+             file.parse(toks)
+-        except NoParseError, e:
++        except NoParseError as e:
+             self.assertEqual(e.msg,
+-                             u"got unexpected token: 2,11-2,14: id 'spam'")
++                             "got unexpected token: 2,11-2,14: id 'spam'")
+             self.assertEqual(e.state.pos, 4)
+             self.assertEqual(e.state.max, 7)
+             # May raise KeyError
+             t = toks[e.state.max]
+-            self.assertEqual(t, Token(u'id', u'spam'))
++            self.assertEqual(t, Token('id', 'spam'))
+             self.assertEqual((t.start, t.end), ((2, 11), (2, 14)))
+         else:
+-            self.fail(u'must raise NoParseError')
++            self.fail('must raise NoParseError')
+--- funcparserlib/util.py.orig	2013-04-24 02:07:36 UTC
++++ funcparserlib/util.py
+@@ -28,7 +28,7 @@ def pretty_tree(x, kids, show):
+     Returns a pseudographic tree representation of x similar to the tree command
+     in Unix.
+     """
+-    (MID, END, CONT, LAST, ROOT) = (u'|-- ', u'`-- ', u'|   ', u'    ', u'')
++    (MID, END, CONT, LAST, ROOT) = ('|-- ', '`-- ', '|   ', '    ', '')
+ 
+     def rec(x, indent, sym):
+         line = indent + sym + show(x)
+@@ -44,6 +44,6 @@ def pretty_tree(x, kids, show):
+                 next_indent = indent + LAST
+             syms = [MID] * (len(xs) - 1) + [END]
+             lines = [rec(x, next_indent, sym) for x, sym in zip(xs, syms)]
+-            return u'\n'.join([line] + lines)
++            return '\n'.join([line] + lines)
+ 
+-    return rec(x, u'', ROOT)
++    return rec(x, '', ROOT)
+--- setup.py.orig	2013-05-02 15:09:16 UTC
++++ setup.py
+@@ -4,8 +4,6 @@ from setuptools import setup
+ import sys
+ 
+ extra = {}
+-if sys.version_info >= (3,):
+-    extra['use_2to3'] = True
+ 
+ 
+ setup(
