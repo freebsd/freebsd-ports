@@ -80,3 +80,75 @@ Error parsing global options: Unknown error occurred
  
      // sort by platform, unknown will appear at beginning
      std::sort(allDevices.begin(), allDevices.end(), [](const Device &a, const Device &b) {
+--- dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp.orig	2022-03-04 22:06:17 UTC
++++ dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp
+@@ -446,6 +446,32 @@ mfxStatus LoaderCtxMSDK::CheckD3D9Support(mfxU64 luid,
+ #endif
+ }
+ 
++#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__) && __FreeBSD__ < 13
++#include <sys/sysctl.h>
++#else
++#include <sys/ioctl.h>
++#include <fcntl.h>
++#include <unistd.h>
++#endif // defined(__FreeBSD__) && __FreeBSD__ < 13
++
++struct drm_pciinfo {
++	uint16_t	domain;
++	uint8_t		bus;
++	uint8_t		dev;
++	uint8_t		func;
++	uint16_t	vendor_id;
++	uint16_t	device_id;
++	uint16_t	subvendor_id;
++	uint16_t	subdevice_id;
++	uint8_t		revision_id;
++};
++
++#define DRM_IOCTL_BASE		'd'
++#define DRM_IOR(nr,type)	_IOR(DRM_IOCTL_BASE,nr,type)
++#define DRM_IOCTL_GET_PCIINFO	DRM_IOR(0x15, struct drm_pciinfo)
++#endif
++
+ mfxStatus LoaderCtxMSDK::GetRenderNodeDescription(mfxU32 adapterID,
+                                                   mfxU32 &vendorID,
+                                                   mfxU16 &deviceID) {
+@@ -456,6 +482,28 @@
+     mfxU32 DRMRenderNodeNum = 128 + adapterID;
+     std::string nodeStr     = std::to_string(DRMRenderNodeNum);
+ 
++#ifdef DRM_IOCTL_GET_PCIINFO
++#if defined(__FreeBSD__) && __FreeBSD__ < 13
++    std::string mib = "dev.drm." + nodeStr + ".PCI_ID";
++    char pci_id[20];
++    size_t len = sizeof(pci_id);
++    if (!sysctlbyname(mib.c_str(), pci_id, &len, NULL, 0))
++        sscanf(pci_id, "%x:%hx", &vendorID, &deviceID);
++#else
++    std::string path = "/dev/dri/renderD" + nodeStr;
++    int fd = open(path.c_str(), O_RDONLY);
++    if (fd != -1) {
++        struct drm_pciinfo pinfo;
++        if (!ioctl(fd, DRM_IOCTL_GET_PCIINFO, &pinfo)) {
++            vendorID = pinfo.vendor_id;
++            deviceID = pinfo.device_id;
++        }
++        close(fd);
++    }
++#endif // defined(__FreeBSD__) && __FreeBSD__ < 13
++    if (vendorID != 0x8086)
++        return MFX_ERR_UNSUPPORTED;
++#else
+     std::string vendorPath = "/sys/class/drm/renderD" + nodeStr + "/device/vendor";
+     std::string devPath    = "/sys/class/drm/renderD" + nodeStr + "/device/device";
+ 
+@@ -481,6 +529,7 @@ mfxStatus LoaderCtxMSDK::GetRenderNodeDescription(mfxU
+             deviceID = (mfxU32)u32;
+         fclose(devFile);
+     }
++#endif
+ 
+     if (deviceID == 0)
+         return MFX_ERR_UNSUPPORTED;
