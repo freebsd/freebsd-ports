@@ -87,5 +87,5 @@ include/qgpgme/wkspublishjob.h
 lib/cmake/QGpgme/QGpgmeConfig.cmake
 lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
-lib/libqgpgme.so.7
-lib/libqgpgme.so.7.7.0
+lib/libqgpgme.so.15
+lib/libqgpgme.so.15.0.0
