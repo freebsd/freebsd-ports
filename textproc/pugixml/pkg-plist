@@ -6,5 +6,5 @@ lib/cmake/pugixml/pugixml-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/pugixml/pugixml-targets.cmake
 lib/libpugixml.so
 lib/libpugixml.so.1
-lib/libpugixml.so.1.11
+lib/libpugixml.so.1.12
 libdata/pkgconfig/pugixml.pc
