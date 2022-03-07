@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	flipper-active_support_cache_store
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	ActiveSupport::Cache store adapter for Flipper
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport50>=4.2<8:devel/rubygem-activesupport50 \
-		rubygem-flipper>=${PORTVERSION}<0.24:devel/rubygem-flipper
+		rubygem-flipper>=${PORTVERSION}<0.25:devel/rubygem-flipper
 
 USES=		gem
 USE_RUBY=	yes
