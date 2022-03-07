@@ -1,0 +1,15 @@
+--- gtk2.gemspec.orig	2022-03-06 22:30:50 UTC
++++ gtk2.gemspec
+@@ -25,9 +25,9 @@ Gem::Specification.new do |s|
+   end
+ 
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<atk>.freeze, ["= 3.4.3"])
+-    s.add_runtime_dependency(%q<pango>.freeze, ["= 3.4.3"])
+-    s.add_runtime_dependency(%q<gdk_pixbuf2>.freeze, ["= 3.4.3"])
++    s.add_runtime_dependency(%q<atk>.freeze, [">= 3.4.3"])
++    s.add_runtime_dependency(%q<pango>.freeze, [">= 3.4.3"])
++    s.add_runtime_dependency(%q<gdk_pixbuf2>.freeze, [">= 3.4.3"])
+   else
+     s.add_dependency(%q<atk>.freeze, ["= 3.4.3"])
+     s.add_dependency(%q<pango>.freeze, ["= 3.4.3"])
