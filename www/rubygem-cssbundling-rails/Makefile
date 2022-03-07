@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cssbundling-rails
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
