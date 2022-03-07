@@ -1,8 +1,8 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	mixxx
-DISTVERSION=	2.3.0
-PORTREVISION=	6
+DISTVERSION=	2.3.2
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -80,9 +80,11 @@ WAVPACK_CMAKE_BOOL=	WAVPACK
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx|" \
-		${WRKSRC}/res/linux/mixxx.desktop
+		${WRKSRC}/res/linux/org.mixxx.Mixxx.desktop
 	@${REINPLACE_CMD} -e "s,(Q_OS_LINUX),(Q_OS_LINUX) || defined(Q_OS_FREEBSD),g" \
 		${WRKSRC}/src/util/screensaver.h
+	@${REINPLACE_CMD} -e "s|QUIET hidapi-libusb|QUIET hidapi|" \
+		${WRKSRC}/cmake/modules/Findhidapi.cmake
 .for i in midi/midimessage.h
 	@${ECHO_CMD} >> ${WRKSRC}/src/controllers/${i}
 .endfor

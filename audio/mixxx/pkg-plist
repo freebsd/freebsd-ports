@@ -1,8 +1,16 @@
 bin/mixxx
-share/applications/mixxx.desktop
+share/applications/org.mixxx.Mixxx.desktop
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/Mixxx-Keyboard-Shortcuts.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/icons/hicolor/128x128/apps/mixxx.png
+share/icons/hicolor/256x256/apps/mixxx.png
 share/icons/hicolor/32x32/apps/mixxx.png
+share/icons/hicolor/512x512/apps/mixxx.png
+share/icons/hicolor/64x64/apps/mixxx.png
 share/icons/hicolor/scalable/apps/mixxx.svg
-share/metainfo/mixxx.metainfo.xml
+share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/.eslintrc.json
 %%DATADIR%%/controllers/Akai MPD24.midi.xml
 %%DATADIR%%/controllers/Akai-LPD8-RK-scripts.js
@@ -163,6 +171,7 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/controllers/Numark MIXTRACK.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack 2.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack Platinum.midi.xml
+%%DATADIR%%/controllers/Numark Mixtrack Pro FX.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack Pro.midi.xml
 %%DATADIR%%/controllers/Numark N4.midi.xml
 %%DATADIR%%/controllers/Numark NS7.midi.xml
@@ -176,6 +185,7 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/controllers/Numark-Mixtrack-3-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-3.midi.xml
 %%DATADIR%%/controllers/Numark-Mixtrack-Platinum-scripts.js
+%%DATADIR%%/controllers/Numark-Mixtrack-Pro-FX-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-Pro-scripts.js
 %%DATADIR%%/controllers/Numark-N4-scripts.js
 %%DATADIR%%/controllers/Numark-NS7-scripts.js
@@ -183,6 +193,8 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/controllers/Numark-Total-Control-scripts.js
 %%DATADIR%%/controllers/Numark-V7-scripts.js
 %%DATADIR%%/controllers/Numark-iDJ-Live-II-scripts.js
+%%DATADIR%%/controllers/Numark_DJ2GO2_Touch.midi.xml
+%%DATADIR%%/controllers/Numark_DJ2GO2_Touch_scripts.js
 %%DATADIR%%/controllers/Pioneer CDJ HID.hid.xml
 %%DATADIR%%/controllers/Pioneer CDJ-2000.midi.xml
 %%DATADIR%%/controllers/Pioneer CDJ-350 Ch1.midi.xml
@@ -201,6 +213,8 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/controllers/Pioneer-DDJ-SB.midi.xml
 %%DATADIR%%/controllers/Pioneer-DDJ-SB2-scripts.js
 %%DATADIR%%/controllers/Pioneer-DDJ-SB2.midi.xml
+%%DATADIR%%/controllers/Pioneer-DDJ-SB3-scripts.js
+%%DATADIR%%/controllers/Pioneer-DDJ-SB3.midi.xml
 %%DATADIR%%/controllers/Pioneer-DDJ-SX-scripts.js
 %%DATADIR%%/controllers/README.txt
 %%DATADIR%%/controllers/Reloop Beatmix 2-4.midi.xml
@@ -284,7 +298,7 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/controllers/novation-launchpad/.gitignore
 %%DATADIR%%/controllers/novation-launchpad/LICENSE
 %%DATADIR%%/controllers/novation-launchpad/Makefile
-%%DATADIR%%/controllers/novation-launchpad/README.MD
+%%DATADIR%%/controllers/novation-launchpad/README.md
 %%DATADIR%%/controllers/novation-launchpad/docs/lp-1.png
 %%DATADIR%%/controllers/novation-launchpad/docs/lp-2.png
 %%DATADIR%%/controllers/novation-launchpad/docs/lp-3.png
@@ -491,6 +505,8 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/icon/ic_lib_spinbox_up_white.svg
 %%DATADIR%%/skins/Deere/icon/ic_library_bpm_locked.svg
 %%DATADIR%%/skins/Deere/icon/ic_library_bpm_unlocked.svg
+%%DATADIR%%/skins/Deere/icon/ic_library_checkbox.svg
+%%DATADIR%%/skins/Deere/icon/ic_library_checkbox_checked.svg
 %%DATADIR%%/skins/Deere/icon/ic_library_checkmark_blue.svg
 %%DATADIR%%/skins/Deere/icon/ic_library_checkmark_grey.svg
 %%DATADIR%%/skins/Deere/icon/ic_library_checkmark_orange.svg
@@ -734,6 +750,8 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_bpm_locked_orange.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_bpm_unlocked_grey.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_bpm_up.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_checkbox.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_checkbox_checked.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_checkmark_grey.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_checkmark_indeterminate_grey.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_checkmark_indeterminate_orange.svg
@@ -1200,6 +1218,7 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_bpm_locked_black.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_bpm_locked_blue.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_bpm_unlocked_grey.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_checkbox.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_checkmark_blue.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_checkmark_grey.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__lib_checkmark_indeterminate_blue.svg
@@ -1611,6 +1630,8 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/btn/btn_kill_overdown_summer.png
 %%DATADIR%%/skins/Shade/btn/btn_lib_bpm_locked.svg
 %%DATADIR%%/skins/Shade/btn/btn_lib_bpm_unlocked.svg
+%%DATADIR%%/skins/Shade/btn/btn_lib_checkbox.svg
+%%DATADIR%%/skins/Shade/btn/btn_lib_checkbox_checked.svg
 %%DATADIR%%/skins/Shade/btn/btn_lib_checkmark.svg
 %%DATADIR%%/skins/Shade/btn/btn_lib_checkmark_black.svg
 %%DATADIR%%/skins/Shade/btn/btn_lib_checkmark_dark_grey.svg
@@ -2246,6 +2267,8 @@ share/metainfo/mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/buttons/btn_keylock_on.svg
 %%DATADIR%%/skins/Tango/buttons/btn_lib_bpm_locked.svg
 %%DATADIR%%/skins/Tango/buttons/btn_lib_bpm_unlocked.svg
+%%DATADIR%%/skins/Tango/buttons/btn_lib_checkbox.svg
+%%DATADIR%%/skins/Tango/buttons/btn_lib_checkbox_checked.svg
 %%DATADIR%%/skins/Tango/buttons/btn_lib_checkmark.svg
 %%DATADIR%%/skins/Tango/buttons/btn_lib_checkmark_dark_grey.svg
 %%DATADIR%%/skins/Tango/buttons/btn_lib_checkmark_grey.svg
