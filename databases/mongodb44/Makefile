@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.4.12
+DISTVERSION=	4.4.13
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -32,7 +32,7 @@ USE_RC_SUBR=	mongod
 
 PORTSCOUT=	limit:^4\.4\.
 
-CONFLICTS_INSTALL=	mongodb36 mongodb4[02] mongodb50
+CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 
 OPTIONS_DEFINE=	LTO SASL SSL
 OPTIONS_DEFAULT=LTO SASL SSL
