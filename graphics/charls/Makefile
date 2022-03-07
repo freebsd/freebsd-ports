@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	charls
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.4
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
