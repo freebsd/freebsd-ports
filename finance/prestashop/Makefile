@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	prestashop
-PORTVERSION=	1.7.8.2
+PORTVERSION=	1.7.8.4
 CATEGORIES=	finance www
 MASTER_SITES=	https://download.prestashop.com/download/releases/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
