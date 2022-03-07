@@ -1,0 +1,10 @@
+trainstation is a tool that allows the efficient construction of
+linear models. It provides supplementary functionality for handling
+data and model metrics and relies on the scikit-learn library for the
+actual training. trainstation has been originally developed to aid the
+construction of force constant and cluster expansions. Since it has
+proven to be valuable in more general contexts and to simplify the
+maintenance of the two aforementioned packages, the functionality has
+been moved into a separate package.
+
+WWW: https://trainstation.materialsmodeling.org/
