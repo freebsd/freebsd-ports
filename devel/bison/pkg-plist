@@ -5,7 +5,6 @@ share/aclocal/bison-i18n.m4
 %%DATADIR%%/bison-default.css
 %%DATADIR%%/m4sugar/foreach.m4
 %%DATADIR%%/m4sugar/m4sugar.m4
-%%DATADIR%%/skeletons/README-D.txt
 %%DATADIR%%/skeletons/bison.m4
 %%DATADIR%%/skeletons/c++-skel.m4
 %%DATADIR%%/skeletons/c++.m4
@@ -16,6 +15,7 @@ share/aclocal/bison-i18n.m4
 %%DATADIR%%/skeletons/d.m4
 %%DATADIR%%/skeletons/glr.c
 %%DATADIR%%/skeletons/glr.cc
+%%DATADIR%%/skeletons/glr2.cc
 %%DATADIR%%/skeletons/java-skel.m4
 %%DATADIR%%/skeletons/java.m4
 %%DATADIR%%/skeletons/lalr1.cc
@@ -36,6 +36,13 @@ share/aclocal/bison-i18n.m4
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/examples/c/glr/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/c/glr/README.md
+%%PORTDOCS%%%%DOCSDIR%%/examples/c/glr/c++-types.y
+%%PORTDOCS%%%%DOCSDIR%%/examples/d/calc/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/d/calc/calc.y
+%%PORTDOCS%%%%DOCSDIR%%/examples/d/simple/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/d/simple/calc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/README.md
@@ -72,9 +79,7 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/reccalc/scan.l
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/rpcalc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/rpcalc/rpcalc.y
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/calc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/calc/Calc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/calc/Makefile

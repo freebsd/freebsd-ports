@@ -1,6 +1,6 @@
---- lib/config.in.h.orig	2021-01-23 14:24:00 UTC
+--- lib/config.in.h.orig	2021-09-10 09:15:27 UTC
 +++ lib/config.in.h
-@@ -1603,7 +1603,7 @@
+@@ -1918,7 +1918,7 @@
            || (defined _MSC_VER && 1900 <= _MSC_VER)) \
        && 0)
      /* [[noreturn]] is not practically usable, because with it the syntax
