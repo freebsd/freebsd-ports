@@ -1277,6 +1277,7 @@
     SUBDIR += libibuddy
     SUBDIR += libical
     SUBDIR += libindicator
+    SUBDIR += libinjection
     SUBDIR += libinotify
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
