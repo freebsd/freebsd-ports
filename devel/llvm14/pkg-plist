@@ -2797,9 +2797,11 @@ llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/PDB/PDBSymbolUnknown.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/PDB/PDBSymbolUsingNamespace.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/PDB/PDBTypes.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/PDB/UDTLayout.h
+llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/DIFetcher.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/DIPrinter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/SymbolizableModule.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/Symbolize.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Debuginfod/DIFetcher.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Debuginfod/Debuginfod.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Debuginfod/HTTPClient.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Demangle/Demangle.h
