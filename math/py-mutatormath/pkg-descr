@@ -1,0 +1,8 @@
+MutatorMath is a Python library for the calculation of piecewise linear
+interpolations in n-dimensions with any number of masters. It was developed for
+interpolating data related to fonts, but if can handle any arithmetic object.
+- The objects/ subpackage contains the general calculation tools.
+- The ufo/ subpackage contains tools to specifically process UFO data.
+- MutatorMath has no user interface, just the math.
+
+WWW: https://github.com/LettError/MutatorMath
