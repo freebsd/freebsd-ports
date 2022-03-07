@@ -1,0 +1,162 @@
+--- opster.py.orig	2018-10-21 19:05:05 UTC
++++ opster.py
+@@ -3,7 +3,7 @@
+ '''
+ 
+ import sys, traceback, getopt, types, textwrap, inspect, os, re, keyword, codecs
+-from itertools import imap
++
+ from functools import wraps
+ from collections import namedtuple, Callable
+ from contextlib import contextmanager
+@@ -19,12 +19,12 @@ def write(text, out=None):
+     '''Write output to a given stream (stdout by default).'''
+     out = out or sys.stdout
+     try:
+-        print >> out, text
++        print(text, file=out)
+     # Needed on Python 2.x if text is str/bytes containing non-ascii
+     # characters and sys.stdout is replaced by a writer from the codecs
+     # module. text will be decoded as ascii giving the decode error.
+     except UnicodeDecodeError:
+-        print >> out, text.decode('utf-8')
++        print(text.decode('utf-8'), file=out)
+     # Get the order of stdout/stderr correct on Windows. AFAICT this is only
+     # needed for the test environment but it's harmless otherwise.
+     out.flush()
+@@ -294,9 +294,9 @@ def help_(cmdtable, globalopts, scriptname):
+             hlp = {}
+             # determine if any command is marked for shortlist
+             shortlist = (name == 'shortlist' and
+-                         any(imap(lambda x: x.startswith('^'), cmdtable)))
++                         any(map(lambda x: x.startswith('^'), cmdtable)))
+ 
+-            for cmd, info in cmdtable.items():
++            for cmd, info in list(cmdtable.items()):
+                 if cmd.startswith('~'):
+                     continue  # do not display hidden commands
+                 if shortlist and not cmd.startswith('^'):
+@@ -306,7 +306,7 @@ def help_(cmdtable, globalopts, scriptname):
+                 hlp[cmd] = doc.strip().splitlines()[0].rstrip()
+ 
+             hlplist = sorted(hlp)
+-            maxlen = max(map(len, hlplist))
++            maxlen = max(list(map(len, hlplist)))
+ 
+             write('usage: %s <command> [options]' % scriptname)
+             write('\ncommands:\n')
+@@ -449,7 +449,7 @@ def Option(opt):
+ def CmdTable(cmdtable):
+     '''Factory to convert option tuples in a cmdtable'''
+     newtable = {}
+-    for name, (func, opts, usage) in cmdtable.items():
++    for name, (func, opts, usage) in list(cmdtable.items()):
+         newtable[name] = (func, [Option(o) for o in opts], usage)
+     return newtable
+ 
+@@ -499,7 +499,7 @@ class LiteralOption(BaseOption):
+ 
+ class UnicodeOption(BaseOption):
+     '''Handle unicode values, decoding input'''
+-    type = unicode
++    type = str
+ 
+     def convert(self, final):
+         return decodearg(final)
+@@ -508,7 +508,7 @@ class UnicodeOption(BaseOption):
+ class BoolOption(BaseOption):
+     '''Boolean option type.'''
+     has_parameter = False
+-    type = (bool, types.NoneType)
++    type = (bool, type(None))
+ 
+     def convert(self, final):
+         return bool(final)
+@@ -682,7 +682,7 @@ def findpossible(cmd, table):
+     '''
+     pattern = '.*?'.join(list(cmd))
+     choice = {}
+-    for e in table.keys():
++    for e in list(table.keys()):
+         aliases = aliases_(e)
+         found = None
+         if cmd in aliases:
+@@ -706,12 +706,12 @@ def findcmd(cmd, table):
+         return choice[cmd]
+ 
+     if len(choice) > 1:
+-        clist = choice.keys()
++        clist = list(choice.keys())
+         clist.sort()
+         raise AmbiguousCommand(cmd, clist)
+ 
+     if choice:
+-        return choice.values()[0]
++        return list(choice.values())[0]
+ 
+     raise UnknownCommand(cmd)
+ 
+@@ -951,7 +951,7 @@ def pretty_doc_string(item):
+     if len(lines) <= 1:
+         return raw_doc
+     indent = len(lines[1]) - len(lines[1].lstrip())
+-    return '\n'.join([lines[0]] + map(lambda l: l[indent:], lines[1:]))
++    return '\n'.join([lines[0]] + [l[indent:] for l in lines[1:]])
+ 
+ 
+ def name_from_python(name):
+@@ -990,12 +990,12 @@ def autocomplete(cmdtable, args, middleware):
+         current = ''
+ 
+     commands = []
+-    for k in cmdtable.keys():
++    for k in list(cmdtable.keys()):
+         commands += aliases_(k)
+ 
+     # command
+     if cword == 1:
+-        print ' '.join(filter(lambda x: x.startswith(current), commands))
++        print(' '.join([x for x in commands if x.startswith(current)]))
+ 
+     # command options
+     elif cwords[0] in commands:
+@@ -1013,9 +1013,9 @@ def autocomplete(cmdtable, args, middleware):
+                 if middleware:
+                     completer = middleware(completer)
+                 args = completer(current)
+-                print ' '.join(args),
++                print(' '.join(args), end=' ')
+ 
+-        print ' '.join((o for o in options if o.startswith(current)))
++        print(' '.join((o for o in options if o.startswith(current))))
+ 
+     sys.exit(1)
+ 
+@@ -1058,7 +1058,7 @@ def completion(type=('t', 'bash', 'Completion type (ba
+     '''Outputs completion script for bash or zsh.'''
+ 
+     prog_name = os.path.split(sys.argv[0])[1]
+-    print COMPLETIONS[type].strip() % prog_name
++    print(COMPLETIONS[type].strip() % prog_name)
+ 
+ 
+ # --------
+--- setup.py.orig	2018-10-21 19:01:07 UTC
++++ setup.py
+@@ -4,10 +4,6 @@ import sys, os, re
+ 
+ from setuptools import setup
+ 
+-if sys.version_info[0] >= 3:
+-    extra = {'use_2to3': True}
+-else:
+-    extra = {}
+ 
+ def read(fname):
+     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+@@ -46,4 +42,4 @@ setup(
+         ],
+     py_modules=['opster'],
+     platforms='any',
+-    **extra)
++    )
