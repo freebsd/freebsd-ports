@@ -230,6 +230,7 @@
     SUBDIR += py-ufoLib
     SUBDIR += py-ufolint
     SUBDIR += py-ufonormalizer
+    SUBDIR += py-ufoprocessor
     SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
     SUBDIR += sgifonts

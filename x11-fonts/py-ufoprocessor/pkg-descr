@@ -1,0 +1,4 @@
+ufoProcessor is a Python package based on the designSpaceDocument specifically
+to process and generate instances for UFO files, glyphs and other data.
+
+WWW: https://github.com/LettError/ufoProcessor
