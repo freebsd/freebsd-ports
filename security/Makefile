@@ -2,6 +2,7 @@
 
     SUBDIR += 0d1n
     SUBDIR += 1password-client
+    SUBDIR += 1password-client-devel
     SUBDIR += 2fa
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
