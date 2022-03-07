@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	help2man
-PORTVERSION=	1.48.5
+PORTVERSION=	1.49.1
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
