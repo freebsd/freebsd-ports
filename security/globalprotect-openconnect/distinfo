@@ -1,7 +1,7 @@
-TIMESTAMP = 1646167885
-SHA256 (yuezk-GlobalProtect-openconnect-v1.3.4_GH0.tar.gz) = 2c98132352e8fb6f582093ccf33131d471d09f6fa1af950444d4adbfae703521
-SIZE (yuezk-GlobalProtect-openconnect-v1.3.4_GH0.tar.gz) = 115036
+TIMESTAMP = 1646656332
+SHA256 (yuezk-GlobalProtect-openconnect-v1.4.1_GH0.tar.gz) = d0ecc53d5671f46026b0f0749f929debe8c0d8c559b26d51e5f069f61a6ba5f0
+SIZE (yuezk-GlobalProtect-openconnect-v1.4.1_GH0.tar.gz) = 118400
 SHA256 (itay-grudev-SingleApplication-v3.3.0_GH0.tar.gz) = b5a789e7e4fda5239b09249a74a91c9ffea8581dcb59bc693e3db8af96d6f1bf
 SIZE (itay-grudev-SingleApplication-v3.3.0_GH0.tar.gz) = 21148
-SHA256 (SergiusTheBest-plog-1.1.5_GH0.tar.gz) = 6c80b4701183d2415bec927e1f5ca9b1761b3b5c65d3e09fb29c743e016d5609
-SIZE (SergiusTheBest-plog-1.1.5_GH0.tar.gz) = 40453
+SHA256 (SergiusTheBest-plog-1.1.6_GH0.tar.gz) = 99fbb43772f92664ff086166fdff75cc437e9e50e74efec2fba80765fa6b67ae
+SIZE (SergiusTheBest-plog-1.1.6_GH0.tar.gz) = 44556

@@ -1,6 +1,6 @@
 PORTNAME=	globalprotect-openconnect
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.4
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,6 +18,6 @@ USE_QT=		buildtools core dbus declarative gui location network printsupport qmak
 GH_ACCOUNT=	yuezk
 GH_PROJECT=	GlobalProtect-openconnect
 GH_TUPLE+=	itay-grudev:SingleApplication:v3.3.0:sa/3rdparty/SingleApplication
-GH_TUPLE+=	SergiusTheBest:plog:1.1.5:plog/3rdparty/plog
+GH_TUPLE+=	SergiusTheBest:plog:1.1.6:plog/3rdparty/plog
 
 .include <bsd.port.mk>
