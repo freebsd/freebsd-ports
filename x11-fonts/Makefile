@@ -217,6 +217,7 @@
     SUBDIR += py-babelfont
     SUBDIR += py-bdflib
     SUBDIR += py-booleanOperations
+    SUBDIR += py-cffsubr
     SUBDIR += py-compreffor
     SUBDIR += py-cu2qu
     SUBDIR += py-defcon
