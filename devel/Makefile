@@ -5344,6 +5344,7 @@
     SUBDIR += py-types-click
     SUBDIR += py-types-docutils
     SUBDIR += py-types-futures
+    SUBDIR += py-types-mock
     SUBDIR += py-types-protobuf
     SUBDIR += py-types-psycopg2
     SUBDIR += py-types-requests

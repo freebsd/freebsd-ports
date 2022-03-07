@@ -1,0 +1,5 @@
+This is a PEP 561 type stub package for the mock package. It can be used by
+type-checking tools like mypy, PyCharm, pytype etc. to check code that uses
+mock.
+
+WWW: https://github.com/python/typeshed/tree/master/stubs/mock
