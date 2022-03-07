@@ -5,7 +5,7 @@ PORTVERSION=	1.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python API for libmagic, the library behind the Unix file command
 
 LICENSE=	APACHE20
