@@ -1,7 +1,7 @@
 # Created by: Jonathan Weiss (<jw@innerewut.de>)
 
 PORTNAME=	activesupport
-PORTVERSION=	6.0.4.4
+PORTVERSION=	6.0.4.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
