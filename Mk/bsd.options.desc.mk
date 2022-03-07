@@ -53,6 +53,7 @@ CDIO_DESC?=		CDIO support via libcdio
 CDPARANOIA_DESC?=	CD ripping support (via cdparanoia)
 CELT_DESC?=		CELT audio codec support
 CFITSIO_DESC?=		FITS support via CFITSIO
+CLI_DESC?=		Command-line interface support
 COLORD_DESC?=		Color management via colord
 COMPOSITE_DESC?=	X11 Composite extension support
 COOKIE_DESC?=		Web cookie support
