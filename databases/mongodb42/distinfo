@@ -1,6 +1,6 @@
-TIMESTAMP = 1641336337
-SHA256 (mongodb-src-r4.2.18.tar.gz) = 5bbb9567cc1f358ac7d9f37d9fe749862728bdf9f742d1dfc5e35a8b6c2985ba
-SIZE (mongodb-src-r4.2.18.tar.gz) = 62239720
+TIMESTAMP = 1646484953
+SHA256 (mongodb-src-r4.2.19.tar.gz) = 7e78131ddf9f49d1ea8aa4183984bba3a3f9787c9b799cb788d2a41b31668d3c
+SIZE (mongodb-src-r4.2.19.tar.gz) = 62246504
 SHA256 (a0a70c53cc7a.patch) = 1435de7b6e6343c996fd58556d721f184b208d90d280996bd0c35dd32339b6b2
 SIZE (a0a70c53cc7a.patch) = 1078
 SHA256 (edf4ab0f8174.patch) = 87be45f996b1b7fc3700407d6d6671ec6b4b6a593de54ca5355bb6daec3d0213
