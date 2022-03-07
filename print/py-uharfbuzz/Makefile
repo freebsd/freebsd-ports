@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	uharfbuzz
-PORTVERSION=	0.19.0
+PORTVERSION=	0.21.0
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,6 @@ COMMENT=	Streamlined Cython bindings for the harfbuzz shaping engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		requires https://github.com/harfbuzz/uharfbuzz/pull/110
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
@@ -22,6 +20,7 @@ USE_PYTHON=	autoplist concurrent cython distutils
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py ${WRKSRC}/src/uharfbuzz/_harfbuzz.cpp
+	@${RM} ${WRKSRC}/src/uharfbuzz/_harfbuzz.cpp
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/harfbuzz/
 

@@ -1,0 +1,440 @@
+Obtained from:	https://github.com/harfbuzz/uharfbuzz/pull/110/commits/6a926ca7746a35a98ed8d719c870e340d1733e63
+		https://github.com/harfbuzz/uharfbuzz/pull/110/commits/5d9150cc267b16401f98d0f0effd656dcc0d6c38
+
+--- src/uharfbuzz/_harfbuzz.pyx.orig	2022-02-08 07:41:12 UTC
++++ src/uharfbuzz/_harfbuzz.pyx
+@@ -1,5 +1,6 @@
+ #cython: language_level=3
+ import os
++import warnings
+ from enum import IntEnum
+ from .charfbuzz cimport *
+ from libc.stdlib cimport free, malloc
+@@ -529,12 +530,12 @@ cdef class Font:
+         def close_path(c):
+             c.closePath()
+ 
+-        funcs.set_move_to_func(move_to)
+-        funcs.set_line_to_func(line_to)
+-        funcs.set_cubic_to_func(cubic_to)
+-        funcs.set_quadratic_to_func(quadratic_to)
+-        funcs.set_close_path_func(close_path)
+-        funcs.draw_glyph(self, gid, pen)
++        funcs.set_move_to_func(move_to, pen)
++        funcs.set_line_to_func(line_to, pen)
++        funcs.set_cubic_to_func(cubic_to, pen)
++        funcs.set_quadratic_to_func(quadratic_to, pen)
++        funcs.set_close_path_func(close_path, pen)
++        funcs.get_glyph_shape(self, gid)
+ 
+ 
+ cdef hb_position_t _glyph_h_advance_func(hb_font_t* font, void* font_data,
+@@ -888,39 +889,69 @@ def ot_layout_get_baseline(font: Font,
+ def ot_font_set_funcs(Font font):
+     hb_ot_font_set_funcs(font._hb_font)
+ 
+-cdef void _move_to_func(hb_position_t to_x,
+-                        hb_position_t to_y,
++cdef void _move_to_func(hb_draw_funcs_t *dfuncs,
++                        void *draw_data,
++                        hb_draw_state_t *st,
++                        float to_x,
++                        float to_y,
+                         void *user_data):
+-    m = (<object>user_data).move_to_func()
+-    m(to_x, to_y, (<object>user_data).user_data())
++    m = (<object>draw_data).move_to_func()
++    userdata = <object>user_data
++    if userdata is None:
++        userdata = (<object>draw_data).user_data()
++    m(to_x, to_y, userdata)
+ 
+-cdef void _line_to_func(hb_position_t to_x,
+-                        hb_position_t to_y,
++cdef void _line_to_func(hb_draw_funcs_t *dfuncs,
++                        void *draw_data,
++                        hb_draw_state_t *st,
++                        float to_x,
++                        float to_y,
+                         void *user_data):
+-    l = (<object>user_data).line_to_func()
+-    l(to_x, to_y, (<object>user_data).user_data())
++    l = (<object>draw_data).line_to_func()
++    userdata = <object>user_data
++    if userdata is None:
++        userdata = (<object>draw_data).user_data()
++    l(to_x, to_y, userdata)
+ 
+-cdef void _close_path_func(void *user_data):
+-    cl = (<object>user_data).close_path_func()
+-    cl((<object>user_data).user_data())
++cdef void _close_path_func(hb_draw_funcs_t *dfuncs,
++                           void *draw_data,
++                           hb_draw_state_t *st,
++                           void *user_data):
++    cl = (<object>draw_data).close_path_func()
++    userdata = <object>user_data
++    if userdata is None:
++        userdata = (<object>draw_data).user_data()
++    cl(userdata)
+ 
+-cdef void _quadratic_to_func(hb_position_t c1_x,
+-                        hb_position_t c1_y,
+-                        hb_position_t to_x,
+-                        hb_position_t to_y,
+-                        void *user_data):
+-    q = (<object>user_data).quadratic_to_func()
+-    q(c1_x, c1_y, to_x, to_y, (<object>user_data).user_data())
++cdef void _quadratic_to_func(hb_draw_funcs_t *dfuncs,
++                             void *draw_data,
++                             hb_draw_state_t *st,
++                             float c1_x,
++                             float c1_y,
++                             float to_x,
++                             float to_y,
++                             void *user_data):
++    q = (<object>draw_data).quadratic_to_func()
++    userdata = <object>user_data
++    if userdata is None:
++        userdata = (<object>draw_data).user_data()
++    q(c1_x, c1_y, to_x, to_y, userdata)
+ 
+-cdef void _cubic_to_func(hb_position_t c1_x,
+-                        hb_position_t c1_y,
+-                        hb_position_t c2_x,
+-                        hb_position_t c2_y,
+-                        hb_position_t to_x,
+-                        hb_position_t to_y,
+-                        void *user_data):
+-    c = (<object>user_data).cubic_to_func()
+-    c(c1_x, c1_y, c2_x, c2_y, to_x, to_y, (<object>user_data).user_data())
++cdef void _cubic_to_func(hb_draw_funcs_t *dfuncs,
++                         void *draw_data,
++                         hb_draw_state_t *st,
++                         float c1_x,
++                         float c1_y,
++                         float c2_x,
++                         float c2_y,
++                         float to_x,
++                         float to_y,
++                         void *user_data):
++    c = (<object>draw_data).cubic_to_func()
++    userdata = <object>user_data
++    if userdata is None:
++        userdata = (<object>draw_data).user_data()
++    c(c1_x, c1_y, c2_x, c2_y, to_x, to_y, userdata)
+ 
+ 
+ cdef class DrawFuncs:
+@@ -939,9 +970,16 @@ cdef class DrawFuncs:
+     def __dealloc__(self):
+         hb_draw_funcs_destroy(self._hb_drawfuncs)
+ 
++    def get_glyph_shape(self, font: Font, gid: int):
++        hb_font_get_glyph_shape(font._hb_font, gid, self._hb_drawfuncs, <void*>self);
++
+     def draw_glyph(self, font: Font, gid: int, user_data: object):
++        warnings.warn(
++            "draw_glyph() is deprecated, use get_glyph_shape() instead",
++            DeprecationWarning,
++        )
+         self._user_data = user_data
+-        hb_font_draw_glyph(font._hb_font, gid, self._hb_drawfuncs, <void*>self);
++        self.get_glyph_shape(font, gid)
+ 
+     def move_to_func(self):
+         return self._move_to_func
+@@ -963,54 +1001,59 @@ cdef class DrawFuncs:
+ 
+     def set_move_to_func(self,
+                                  func: Callable[[
+-                                     int,
+-                                     int,
++                                     float,
++                                     float,
+                                      object,  # user_data
+-                                 ], None]) -> None:
++                                 ], None],
++                                 user_data: object = None) -> None:
+         self._move_to_func = func
+         hb_draw_funcs_set_move_to_func(
+-            self._hb_drawfuncs, _move_to_func)
++            self._hb_drawfuncs, _move_to_func, <void*>user_data, NULL)
+ 
+     def set_line_to_func(self,
+                          func: Callable[[
+-                             int,
+-                             int,
++                             float,
++                             float,
+                              object,  # user_data
+-                         ], None]) -> None:
++                         ], None],
++                         user_data: object = None) -> None:
+         self._line_to_func = func
+         hb_draw_funcs_set_line_to_func(
+-            self._hb_drawfuncs, _line_to_func)
++            self._hb_drawfuncs, _line_to_func, <void*>user_data, NULL)
+ 
+     def set_cubic_to_func(self,
+                           func: Callable[[
+-                             int,
+-                             int,
+-                             int,
+-                             int,
+-                             int,
+-                             int,
++                             float,
++                             float,
++                             float,
++                             float,
++                             float,
++                             float,
+                              object,  # user_data
+-                          ], None]) -> None:
++                          ], None],
++                          user_data: object = None) -> None:
+         self._cubic_to_func = func
+         hb_draw_funcs_set_cubic_to_func(
+-            self._hb_drawfuncs, _cubic_to_func)
++            self._hb_drawfuncs, _cubic_to_func, <void*>user_data, NULL)
+ 
+     def set_quadratic_to_func(self,
+                               func: Callable[[
+-                                 int,
+-                                 int,
+-                                 int,
+-                                 int,
++                                 float,
++                                 float,
++                                 float,
++                                 float,
+                                  object,  # user_data
+-                             ], None]) -> None:
++                              ], None],
++                              user_data: object = None) -> None:
+         self._quadratic_to_func = func
+         hb_draw_funcs_set_quadratic_to_func(
+-            self._hb_drawfuncs, _quadratic_to_func)
++            self._hb_drawfuncs, _quadratic_to_func, <void*>user_data, NULL)
+ 
+     def set_close_path_func(self,
+                             func: Callable[[
+                                 object
+-                            ], None]) -> None:
++                            ], None],
++                            user_data: object = None) -> None:
+         self._close_path_func = func
+         hb_draw_funcs_set_close_path_func(
+-            self._hb_drawfuncs, _close_path_func)
++            self._hb_drawfuncs, _close_path_func, <void*>user_data, NULL)
+--- src/uharfbuzz/charfbuzz.pxd.orig	2022-02-08 07:41:12 UTC
++++ src/uharfbuzz/charfbuzz.pxd
+@@ -59,6 +59,15 @@ cdef extern from "hb.h":
+         unsigned short u8[4]
+         short i8[4]
+ 
++    ctypedef union hb_var_num_t:
++        float f
++        unsigned long u32
++        long i32
++        unsigned int u16[2]
++        int i16[2]
++        unsigned short u8[4]
++        short i8[4]
++
+     # hb-blob.h
+     ctypedef struct hb_blob_t:
+         pass
+@@ -300,63 +309,106 @@ cdef extern from "hb.h":
+         unsigned int size)
+     void hb_font_destroy(hb_font_t* font)
+ 
++    ctypedef struct hb_draw_state_t:
++       hb_bool_t path_open
++       float path_start_x
++       float path_start_y
++       float current_x
++       float current_y
++       hb_var_num_t reserved1
++       hb_var_num_t reserved2
++       hb_var_num_t reserved3
++       hb_var_num_t reserved4
++       hb_var_num_t reserved5
++       hb_var_num_t reserved6
++       hb_var_num_t reserved7
++
+     ctypedef struct hb_draw_funcs_t:
+         pass
+ 
+     ctypedef void (*hb_draw_move_to_func_t) (
+-        hb_position_t to_x,
+-        hb_position_t to_y,
++        hb_draw_funcs_t *dfuncs,
++        void *draw_data,
++        hb_draw_state_t *st,
++        float to_x,
++        float to_y,
+         void *user_data);
++
+     ctypedef void (*hb_draw_line_to_func_t) (
+-        hb_position_t to_x,
+-        hb_position_t to_y,
++        hb_draw_funcs_t *dfuncs,
++        void *draw_data,
++        hb_draw_state_t *st,
++        float to_x,
++        float to_y,
+         void *user_data);
++
+     ctypedef void (*hb_draw_quadratic_to_func_t) (
+-        hb_position_t control_x,
+-        hb_position_t control_y,
+-        hb_position_t to_x,
+-        hb_position_t to_y,
++        hb_draw_funcs_t *dfuncs,
++        void *draw_data,
++        hb_draw_state_t *st,
++        float control_x,
++        float control_y,
++        float to_x,
++        float to_y,
+         void *user_data);
++
+     ctypedef void (*hb_draw_cubic_to_func_t) (
+-        hb_position_t control1_x,
+-        hb_position_t control1_y,
+-        hb_position_t control2_x,
+-        hb_position_t control2_y,
+-        hb_position_t to_x,
+-        hb_position_t to_y,
++        hb_draw_funcs_t *dfuncs,
++        void *draw_data,
++        hb_draw_state_t *st,
++        float control1_x,
++        float control1_y,
++        float control2_x,
++        float control2_y,
++        float to_x,
++        float to_y,
+         void *user_data);
++
+     ctypedef void (*hb_draw_close_path_func_t) (
++        hb_draw_funcs_t *dfuncs,
++        void *draw_data,
++        hb_draw_state_t *st,
+         void *user_data);
+ 
+     void hb_draw_funcs_set_move_to_func (
+-        hb_draw_funcs_t* funcs,
+-        hb_draw_move_to_func_t move_to)
++        hb_draw_funcs_t* dfuncs,
++        hb_draw_move_to_func_t func,
++        void *user_data,
++        hb_destroy_func_t destroy)
+ 
+     void hb_draw_funcs_set_line_to_func (
+-        hb_draw_funcs_t* funcs,
+-        hb_draw_line_to_func_t line_to)
++        hb_draw_funcs_t* dfuncs,
++        hb_draw_line_to_func_t func,
++        void *user_data,
++        hb_destroy_func_t destroy)
+ 
+     void hb_draw_funcs_set_quadratic_to_func (
+-        hb_draw_funcs_t* funcs,
+-        hb_draw_quadratic_to_func_t quadratic_to)
++        hb_draw_funcs_t* dfuncs,
++        hb_draw_quadratic_to_func_t func,
++        void *user_data,
++        hb_destroy_func_t destroy)
+ 
+     void hb_draw_funcs_set_cubic_to_func (
+-        hb_draw_funcs_t* funcs,
+-        hb_draw_cubic_to_func_t cubic_to)
++        hb_draw_funcs_t* dfuncs,
++        hb_draw_cubic_to_func_t func,
++        void *user_data,
++        hb_destroy_func_t destroy)
+ 
+     void hb_draw_funcs_set_close_path_func(
+-        hb_draw_funcs_t* funcs,
+-        hb_draw_close_path_func_t close_path)
++        hb_draw_funcs_t* dfuncs,
++        hb_draw_close_path_func_t func,
++        void *user_data,
++        hb_destroy_func_t destroy)
+ 
+     hb_draw_funcs_t* hb_draw_funcs_create()
+ 
+     void hb_draw_funcs_destroy(hb_draw_funcs_t* funcs)
+ 
+-    hb_bool_t hb_font_draw_glyph(
++    void hb_font_get_glyph_shape(
+         hb_font_t *font,
+         hb_codepoint_t glyph,
+-        const hb_draw_funcs_t *funcs,
+-        void *user_data)
++        const hb_draw_funcs_t *dfuncs,
++        void *draw_data)
+ 
+     # hb-shape.h
+     void hb_shape(
+--- tests/test_uharfbuzz.py.orig	2022-02-08 07:41:12 UTC
++++ tests/test_uharfbuzz.py
+@@ -495,27 +495,49 @@ class TestCallbacks:
+         buf.set_message_func(message_collector.message)
+         hb.shape(blankfont, buf)
+ 
+-
+     def test_draw_funcs(self, opensans):
+         funcs = hb.DrawFuncs()
+         container = []
+         def move_to(x,y,c):
+-            c.append(f"M{x},{y}")
++            c.append(f"M{x:g},{y:g}")
+         def line_to(x,y,c):
+-            c.append(f"L{x},{y}")
++            c.append(f"L{x:g},{y:g}")
+         def cubic_to(c1x,c1y,c2x,c2y,x,y,c):
+-            c.append(f"C{c1x},{c1y} {c2x},{c2y} {x},{y}")
++            c.append(f"C{c1x:g},{c1y:g} {c2x:g},{c2y:g} {x:g},{y:g}")
+         def quadratic_to(c1x,c1y,x,y,c):
+-            c.append(f"Q{c1x},{c1y} {x},{y}")
++            c.append(f"Q{c1x:g},{c1y:g} {x:g},{y:g}")
+         def close_path(c):
+             c.append("Z")
+ 
++        funcs.set_move_to_func(move_to, container)
++        funcs.set_line_to_func(line_to, container)
++        funcs.set_cubic_to_func(cubic_to, container)
++        funcs.set_quadratic_to_func(quadratic_to, container)
++        funcs.set_close_path_func(close_path, container)
++        funcs.get_glyph_shape(opensans, 1)
++        assert "".join(container) == "M1120,0L938,465L352,465L172,0L0,0L578,1468L721,1468L1296,0L1120,0ZM885,618L715,1071Q682,1157 647,1282Q625,1186 584,1071L412,618L885,618Z"
++
++    def test_draw_funcs_deprecated(self, opensans):
++        funcs = hb.DrawFuncs()
++        container = []
++        def move_to(x,y,c):
++            c.append(f"M{x:g},{y:g}")
++        def line_to(x,y,c):
++            c.append(f"L{x:g},{y:g}")
++        def cubic_to(c1x,c1y,c2x,c2y,x,y,c):
++            c.append(f"C{c1x:g},{c1y:g} {c2x:g},{c2y:g} {x:g},{y:g}")
++        def quadratic_to(c1x,c1y,x,y,c):
++            c.append(f"Q{c1x:g},{c1y:g} {x:g},{y:g}")
++        def close_path(c):
++            c.append("Z")
++
+         funcs.set_move_to_func(move_to)
+         funcs.set_line_to_func(line_to)
+         funcs.set_cubic_to_func(cubic_to)
+         funcs.set_quadratic_to_func(quadratic_to)
+         funcs.set_close_path_func(close_path)
+-        funcs.draw_glyph(opensans, 1, container)
++        with pytest.warns(DeprecationWarning):
++            funcs.draw_glyph(opensans, 1, container)
+         assert "".join(container) == "M1120,0L938,465L352,465L172,0L0,0L578,1468L721,1468L1296,0L1120,0ZM885,618L715,1071Q682,1157 647,1282Q625,1186 584,1071L412,618L885,618Z"
+ 
+     def test_draw_pen(self, opensans):
