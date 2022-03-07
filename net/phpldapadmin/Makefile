@@ -2,6 +2,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.6.3
+PORTREVISION=	1
 CATEGORIES=	net www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -44,14 +45,17 @@ SUB_FILES+=	pkg-message
 
 post-patch:
 	cd ${WRKSRC} ;							    \
+	cp lib/Attribute.php lib/PLAAttribute.php;			    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore   \
-	    ! -name .gitignore ! -name *.orig | ${SORT} |		    \
+	    ! -name .gitignore ! -name *.orig 				    \
+	    ! -name Attribute.php | ${SORT} |				    \
 	    ${SED} -e "s!^\.!${WWWDIR_REL}!"			>${PLIST} ;
 
 do-install:
 	cd ${WRKSRC} ;					 \
 	for src in $$( ${FIND} . ! -name .cvsignore	 \
-		! -name .gitignore ! -name *.orig ) ; do \
+		! -name .gitignore ! -name *.orig	 \
+		! -name Attribute.php) ; do		 \
 	    dst=${STAGEDIR}${WWWDIR}$${src#.} ;		 \
 	    if ${TEST} -d $$src ; then			 \
 		${MKDIR} $$dst ;			 \
