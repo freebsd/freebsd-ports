@@ -1,6 +1,6 @@
---- configure.orig	Thu May  3 12:06:58 2007
-+++ configure	Thu May  3 12:07:01 2007
-@@ -1265,7 +1265,7 @@
+--- configure.orig	2004-07-20 09:30:46 UTC
++++ configure
+@@ -1265,7 +1265,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  gaadatadir=$datadir/gaa
  gaadocdir=$datadir/doc/gaa
@@ -9,7 +9,7 @@
  
  
  
-@@ -2888,7 +2888,7 @@
+@@ -2888,7 +2888,7 @@ fi
  
  
  if test $ac_cv_c_compiler_gnu != no; then
