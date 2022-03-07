@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pundit
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
