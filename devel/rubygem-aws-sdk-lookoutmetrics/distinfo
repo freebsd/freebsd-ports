@@ -1,3 +1,3 @@
-TIMESTAMP = 1643133901
-SHA256 (rubygem/aws-sdk-lookoutmetrics-1.13.0.gem) = 4843cac258762bcfaece5bd7bf1588677eb627fb622ea695469fc3b6884e2357
-SIZE (rubygem/aws-sdk-lookoutmetrics-1.13.0.gem) = 39424
+TIMESTAMP = 1646058542
+SHA256 (rubygem/aws-sdk-lookoutmetrics-1.15.0.gem) = 2ec08db65c33dc6ea6748b14a0455aa32ec07bbf2e572e3c02cd1736086ee524
+SIZE (rubygem/aws-sdk-lookoutmetrics-1.15.0.gem) = 39424
