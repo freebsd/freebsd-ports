@@ -1,7 +1,7 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 
 PORTNAME=	styleguide
-PORTVERSION=	20220113
+PORTVERSION=	20220210
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
