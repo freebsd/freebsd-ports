@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	myst-parser
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.15,1<0.18,1:textproc/py-docutils
 		${PYTHON_PKGNAMEPREFIX}markdown-it-py>=1.0.0<3.0.0:textproc/py-markdown-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mdit-py-plugins>=0.3.0<0.4:textproc/py-mdit-py-plugins@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=3.1,1<5,1:textproc/py-sphinx@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sphinx>=3.1,1<5,1:textproc/py-sphinx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
