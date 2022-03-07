@@ -1,7 +1,7 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
 
 PORTNAME=	semantic-version
-PORTVERSION=	2.8.5
+PORTVERSION=	2.9.0
 MASTER_SITES=	CHEESESHOP
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python library provides a few tools to handle SemVer in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.1:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
