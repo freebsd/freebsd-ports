@@ -60,7 +60,7 @@ GHOSTSCRIPT_DEFAULT?=	agpl
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 7, 8, 11, 12, 13, 14, 15, 16
 JAVA_DEFAULT?=		8
-# Possible values: 2.0.12, 2.3.0
+# Possible values: 2.2.0, 2.3.0
 .if !defined(WANT_LAZARUS_DEVEL)
 LAZARUS_DEFAULT?=       2.2.0
 .else
