@@ -1,3 +1,3 @@
-TIMESTAMP = 1643133763
-SHA256 (oslo.utils-4.12.1.tar.gz) = cf3121c76fe3c2963ed563a8ebc3c9fd3bc3cba5d44fbe8aecb5407d430c3092
-SIZE (oslo.utils-4.12.1.tar.gz) = 101375
+TIMESTAMP = 1646058004
+SHA256 (oslo.utils-4.12.2.tar.gz) = 41fd2c4ff6d2e8da38aadb5a5bf24258a8650e0e0a698a6b239d48b8e4177c3b
+SIZE (oslo.utils-4.12.2.tar.gz) = 101505
