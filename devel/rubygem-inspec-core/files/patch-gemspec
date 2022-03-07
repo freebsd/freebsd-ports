@@ -1,0 +1,11 @@
+--- inspec-core.gemspec.orig	2022-02-28 22:46:33 UTC
++++ inspec-core.gemspec
+@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<thor>.freeze, [">= 0.20", "< 2.0"])
+     s.add_runtime_dependency(%q<method_source>.freeze, [">= 0.8", "< 2.0"])
+     s.add_runtime_dependency(%q<rubyzip>.freeze, [">= 1.2.2", "< 3.0"])
+-    s.add_runtime_dependency(%q<rspec>.freeze, [">= 3.9", "< 3.11"])
++    s.add_runtime_dependency(%q<rspec>.freeze, [">= 3.9", "< 3.12"])
+     s.add_runtime_dependency(%q<rspec-its>.freeze, ["~> 1.2"])
+     s.add_runtime_dependency(%q<pry>.freeze, ["~> 0.13"])
+     s.add_runtime_dependency(%q<hashie>.freeze, [">= 3.4", "< 5.0"])
