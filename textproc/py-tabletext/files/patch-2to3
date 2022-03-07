@@ -1,0 +1,71 @@
+--- setup.py.orig	2014-08-14 18:05:14 UTC
++++ setup.py
+@@ -13,6 +13,5 @@ setup(name='tabletext',
+       author_email='thibaut.horel+tabletext@gmail.com',
+       py_modules=['tabletext'],
+       entry_points={"console_scripts": ["table=tabletext:main"]},
+-      use_2to3=True,
+       license='GNU GPLv3'
+       )
+--- tabletext.py.orig	2014-08-14 00:50:38 UTC
++++ tabletext.py
+@@ -16,20 +16,20 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-from __future__ import unicode_literals
++
+ import re
+ from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter,\
+     RawDescriptionHelpFormatter
+ import sys
+ from codecs import open, getwriter
+-from itertools import izip_longest
++from itertools import zip_longest
+ 
+ 
+ __all__ = ["to_text"]
+ 
+ 
+ def _get_widths(table, formats, padding):
+-    columns = izip_longest(*table, fillvalue="")
++    columns = zip_longest(*table, fillvalue="")
+     return [max(len(_format_entry(entry, format_string, padding))
+                 for entry in column)
+             for column, format_string in zip(columns, formats)]
+@@ -63,7 +63,7 @@ def _format_entry(entry, format_string, padding):
+ def _format_row(row, formats, padding, ver):
+     return (ver + ver.join(_format_entry(entry, format_string, padding)
+                            for entry, format_string
+-                           in izip_longest(row, formats, fillvalue=""))
++                           in zip_longest(row, formats, fillvalue=""))
+             + ver)
+ 
+ 
+@@ -85,7 +85,7 @@ def to_text(table, formats=None, padding=(1, 1), corne
+     n_columns = max(len(row) for row in table)
+     if not formats:
+         formats = [""] * n_columns
+-    elif type(formats) is unicode:
++    elif type(formats) is str:
+         formats = [formats] * n_columns
+     if len(corners) == 1:
+         corners = corners * 9
+@@ -131,7 +131,7 @@ For more details and bug reports, see: https://github.
+                         default=[1, 1])
+     parser.add_argument("--format", help="format string for the table entries",
+                         default="", dest="formats", metavar="FORMAT",
+-                        type=unicode)
++                        type=str)
+     parser.add_argument("--header", help="format first row as header",
+                         action="store_true")
+     parser.add_argument("--hhor", help="horizontal line character \
+@@ -169,7 +169,7 @@ There is NO WARRANTY, to the extent permitted by law. 
+     del args["sep"]
+     if sys.version < '3':
+         sys.stdout = getwriter('utf8')(sys.stdout)
+-    print to_text(table, **args)
++    print(to_text(table, **args))
+ 
+ if __name__ == "__main__":
+     main()
