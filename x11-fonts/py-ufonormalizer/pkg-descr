@@ -1,0 +1,4 @@
+ufoNormalizer provides a standard formatting so that there are meaningful diffs
+in version control rather than formatting noise.
+
+WWW: https://github.com/unified-font-object/ufoNormalizer
