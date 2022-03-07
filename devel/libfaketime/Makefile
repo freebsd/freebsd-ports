@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.7
 CATEGORIES=	devel
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modifies the system time for a single application
 
 LICENSE=	GPLv2

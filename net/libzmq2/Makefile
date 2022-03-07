@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZeroMQ core library (Version 2)
 
 LICENSE=	LGPL3+

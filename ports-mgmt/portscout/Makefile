@@ -4,7 +4,7 @@ PORTNAME=	portscout
 PORTVERSION=	0.8.1.5
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to scan for new versions of FreeBSD ports
 
 LICENSE=	BSD2CLAUSE

@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=		www python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		koobs@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		WebSocket client & server library, WAMP real-time framework
 
 LICENSE=	BSD2CLAUSE

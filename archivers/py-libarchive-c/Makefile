@@ -6,7 +6,7 @@ CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to libarchive
 
 LICENSE=	LGPL20+

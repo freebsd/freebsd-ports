@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cryptographic and general-purpose routines
 
 LICENSE=	MIT

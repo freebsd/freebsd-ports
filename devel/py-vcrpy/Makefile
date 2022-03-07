@@ -6,7 +6,7 @@ CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically mock HTTP interactions to simplify and speed up testing
 
 LICENSE=	MIT

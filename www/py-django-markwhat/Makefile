@@ -6,7 +6,7 @@ CATEGORIES=	www python textproc
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of template filters that implement common markup languages
 
 LICENSE=	BSD3CLAUSE

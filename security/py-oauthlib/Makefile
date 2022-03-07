@@ -7,7 +7,7 @@ CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC-compliant implementation of the OAuth request-signing logic
 
 LICENSE=	BSD3CLAUSE

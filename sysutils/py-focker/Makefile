@@ -3,7 +3,7 @@ DISTVERSION=	0.93-g20200628
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD image orchestration tool in the vein of Docker
 
 LICENSE=	GPLv3

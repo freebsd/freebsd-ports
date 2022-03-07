@@ -5,7 +5,7 @@ PORTVERSION=	0.4.15
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File type identification using libmagic
 
 LICENSE=	MIT

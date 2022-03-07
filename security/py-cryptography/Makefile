@@ -6,7 +6,7 @@ CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cryptographic recipes and primitives for Python developers
 
 LICENSE=			APACHE20 BSD3CLAUSE

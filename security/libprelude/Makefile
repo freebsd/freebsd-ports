@@ -5,7 +5,7 @@ PORTVERSION=	1.2.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-siem.org/attachments/download/410/
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sensor support library from Prelude SIEM
 
 LICENSE=	GPLv2+

@@ -2,7 +2,7 @@ PORTNAME=	libhtp
 PORTVERSION=	0.5.33
 CATEGORIES=	devel
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security-aware parser for the HTTP protocol
 
 LICENSE=	BSD3CLAUSE

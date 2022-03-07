@@ -3,7 +3,7 @@ PORTVERSION=	0.0.5
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aquantia AQtion (Atlantic) Network Driver (Development Preview)
 
 LICENSE=	BSD3CLAUSE

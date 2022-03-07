@@ -7,7 +7,7 @@ CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-tools
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API and command-line toolset for Twitter (twitter.com)
 
 LICENSE=	MIT

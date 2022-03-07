@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Requests with Gevent to make asynchronous HTTP requests
 
 LICENSE=	BSD2CLAUSE

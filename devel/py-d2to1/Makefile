@@ -5,7 +5,7 @@ DISTVERSION=	0.2.12.post1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distutils2-like setup.cfg files with setuptools setup.py
 
 LICENSE=	BSD3CLAUSE

@@ -5,7 +5,7 @@ PORTVERSION=	4.1.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/zeromq/${PORTNAME}/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ
 
 LICENSE=	MPL20

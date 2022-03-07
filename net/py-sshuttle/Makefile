@@ -6,7 +6,7 @@ CATEGORIES=	net python net-vpn
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured VPN over an SSH tunnel
 
 LICENSE=	LGPL21+

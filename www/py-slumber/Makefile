@@ -5,7 +5,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that makes consuming a REST API easier and more convenient
 
 LICENSE=	BSD2CLAUSE

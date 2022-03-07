@@ -7,7 +7,7 @@ CATEGORIES=	net python devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to sendfile(2)
 
 LICENSE=	MIT

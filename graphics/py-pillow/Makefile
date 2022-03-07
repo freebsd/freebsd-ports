@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of the Python Imaging Library (PIL)
 
 LICENSE=	PIL

@@ -5,7 +5,7 @@ PORTVERSION=	6.0.7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax software
 
 LICENSE=	MIT

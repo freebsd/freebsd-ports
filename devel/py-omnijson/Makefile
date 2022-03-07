@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wraps the best Python JSON installed
 
 LICENSE=	MIT

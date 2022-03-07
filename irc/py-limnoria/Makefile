@@ -5,7 +5,7 @@ PORTVERSION=	2019.09.08
 CATEGORIES=	irc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modified version of Supybot (IRC bot and framework)
 
 LICENSE=	BSD3CLAUSE
