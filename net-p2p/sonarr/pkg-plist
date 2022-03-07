@@ -24,8 +24,8 @@
 %%DATADIR%%/bin/Microsoft.Owin.dll
 %%DATADIR%%/bin/Microsoft.Win32.Primitives.dll
 %%DATADIR%%/bin/MimeKit.dll
+%%DATADIR%%/bin/Mono.Nat.dll
 %%DATADIR%%/bin/MonoTorrent.dll
-%%DATADIR%%/bin/MonoTorrent.dll.mdb
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Nancy.Authentication.Basic.dll
 %%DATADIR%%/bin/Nancy.Authentication.Forms.dll
@@ -37,6 +37,7 @@
 %%DATADIR%%/bin/Org.Mentalis.dll
 %%DATADIR%%/bin/Owin.dll
 %%DATADIR%%/bin/RestSharp.dll
+%%DATADIR%%/bin/ReusableTasks.dll
 %%DATADIR%%/bin/Sentry.PlatformAbstractions.dll
 %%DATADIR%%/bin/Sentry.Protocol.dll
 %%DATADIR%%/bin/Sentry.dll
