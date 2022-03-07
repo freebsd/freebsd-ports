@@ -1,0 +1,812 @@
+--- scripts/example-ask.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-ask.py
+@@ -11,25 +11,25 @@ sparql.setQuery("""
+ """)
+ 
+ # JSON example
+-print '\n\n*** JSON Example'
++print('\n\n*** JSON Example')
+ sparql.setReturnFormat(JSON)
+ results = sparql.query().convert()
+-print results
++print(results)
+ 
+ # XML example
+-print '\n\n*** XML Example'
++print('\n\n*** XML Example')
+ sparql.setReturnFormat(XML)
+ results = sparql.query().convert()
+-print results.toxml()
++print(results.toxml())
+ 
+ # CSV example
+-print '\n\n*** CSV Example'
++print('\n\n*** CSV Example')
+ sparql.setReturnFormat(CSV)
+ results = sparql.query().convert()
+-print results
++print(results)
+ 
+ # TSV example
+-print '\n\n*** TSV Example'
++print('\n\n*** TSV Example')
+ sparql.setReturnFormat(TSV)
+ results = sparql.query().convert()
+-print results
++print(results)
+--- scripts/example-construct.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-construct.py
+@@ -23,29 +23,29 @@ sparql.setQuery("""
+ """)
+ 
+ # RDF/XML example
+-print '\n\n*** RDF/XML Example'
++print('\n\n*** RDF/XML Example')
+ sparql.setReturnFormat(XML)
+ results = sparql.query().convert()
+-print(results.serialize(format='xml'))
++print((results.serialize(format='xml')))
+ 
+ # N3 example
+-print '\n\n*** N3 Example'
++print('\n\n*** N3 Example')
+ sparql.setReturnFormat(N3)
+ results = sparql.query().convert()
+ g = Graph()
+ g.parse(data=results, format="n3")
+-print(g.serialize(format='n3'))
++print((g.serialize(format='n3')))
+ 
+ # Turtle example
+-print '\n\n*** TURTLE Example'
++print('\n\n*** TURTLE Example')
+ sparql.setReturnFormat(TURTLE)
+ results = sparql.query().convert()
+ g = Graph()
+ g.parse(data=results, format="turtle")
+-print(g.serialize(format='turtle'))
++print((g.serialize(format='turtle')))
+ 
+ # JSONLD example
+-print '\n\n*** JSONLD Example'
++print('\n\n*** JSONLD Example')
+ sparql.setReturnFormat(JSONLD)
+ results = sparql.query().convert()
+-print(results.serialize(format='json-ld'))
++print((results.serialize(format='json-ld')))
+--- scripts/example-dbpedia.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-dbpedia.py
+@@ -14,7 +14,7 @@ sparql.setReturnFormat(JSON)
+ results = sparql.query()
+ results.print_results()
+ 
+-print
++print()
+ 
+ sparql.setQuery("""
+ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+--- scripts/example-delete.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-delete.py
+@@ -13,4 +13,4 @@ DELETE
+ """)
+ 
+ results = sparql.query()
+-print results.response.read()
+\ No newline at end of file
++print(results.response.read())
+--- scripts/example-describe.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-describe.py
+@@ -8,29 +8,29 @@ sparql.setQuery("""
+ """)
+ 
+ # RDF/XML example
+-print '\n\n*** RDF/XML Example'
++print('\n\n*** RDF/XML Example')
+ sparql.setReturnFormat(RDFXML)
+ results = sparql.query().convert()
+-print(results.serialize(format='xml'))
++print((results.serialize(format='xml')))
+ 
+ # N3 example
+-print '\n\n*** N3 Example'
++print('\n\n*** N3 Example')
+ sparql.setReturnFormat(N3)
+ results = sparql.query().convert()
+ g = Graph()
+ g.parse(data=results, format="n3")
+-print(g.serialize(format='n3'))
++print((g.serialize(format='n3')))
+ 
+ # Turtle example
+-print '\n\n*** TURTLE Example'
++print('\n\n*** TURTLE Example')
+ sparql.setReturnFormat(TURTLE)
+ results = sparql.query().convert()
+ g = Graph()
+ g.parse(data=results, format="turtle")
+-print(g.serialize(format='turtle'))
++print((g.serialize(format='turtle')))
+ 
+ # JSONLD example
+-print '\n\n*** JSONLD Example'
++print('\n\n*** JSONLD Example')
+ sparql.setReturnFormat(JSONLD)
+ results = sparql.query().convert()
+-print(results.serialize(format='json-ld'))
++print((results.serialize(format='json-ld')))
+--- scripts/example-insert-using-rdflib.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-insert-using-rdflib.py
+@@ -25,4 +25,4 @@ sparql.setMethod(POST)
+ sparql.setQuery(query)
+ 
+ results = sparql.query()
+-print results.response.read()
++print(results.response.read())
+--- scripts/example-insert.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-insert.py
+@@ -13,4 +13,4 @@ INSERT
+ """)
+ 
+ results = sparql.query()
+-print results.response.read()
++print(results.response.read())
+--- scripts/example-optional.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example-optional.py
+@@ -15,11 +15,11 @@ sparql.setQuery("""
+ """)
+ 
+ # JSON example
+-print '\n\n*** JSON Example'
++print('\n\n*** JSON Example')
+ sparql.setReturnFormat(JSON)
+ results = sparql.query().convert()
+ for result in results["results"]["bindings"]:
+-    if result.has_key("party"):
+-        print "* " + result["person"]["value"] + " ** " + result["party"]["value"]
++    if "party" in result:
++        print("* " + result["person"]["value"] + " ** " + result["party"]["value"])
+     else:
+-        print result["person"]["value"]
++        print(result["person"]["value"])
+--- scripts/example.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/example.py
+@@ -11,38 +11,38 @@ sparql.setQuery("""
+ """)
+ 
+ # JSON example
+-print '\n\n*** JSON Example'
++print('\n\n*** JSON Example')
+ sparql.setReturnFormat(JSON)
+ results = sparql.query().convert()
+ for result in results["results"]["bindings"]:
+-    print result["label"]["value"]
++    print(result["label"]["value"])
+ 
+ # XML example
+-print '\n\n*** XML Example'
++print('\n\n*** XML Example')
+ sparql.setReturnFormat(XML)
+ results = sparql.query().convert()
+-print results.toxml()
++print(results.toxml())
+ 
+ # N3 example
+-print '\n\n*** N3 Example'
++print('\n\n*** N3 Example')
+ sparql.setReturnFormat(N3)
+ results = sparql.query().convert()
+-print results
++print(results)
+ 
+ # RDF example
+-print '\n\n*** RDF Example'
++print('\n\n*** RDF Example')
+ sparql.setReturnFormat(RDF)
+ results = sparql.query().convert()
+-print results.serialize()
++print(results.serialize())
+ 
+ # CSV example
+-print '\n\n*** CSV Example'
++print('\n\n*** CSV Example')
+ sparql.setReturnFormat(CSV)
+ results = sparql.query().convert()
+-print results
++print(results)
+ 
+ # TSV example
+-print '\n\n*** TSV Example'
++print('\n\n*** TSV Example')
+ sparql.setReturnFormat(TSV)
+ results = sparql.query().convert()
+-print results
++print(results)
+--- scripts/sparql.py.orig	2019-04-18 10:02:26 UTC
++++ scripts/sparql.py
+@@ -17,10 +17,10 @@ def main(server, query, sponge=False):
+     res = sparql.query()
+     variables = res.variables
+ 
+-    print "Variables:"
+-    print variables
+-    print
+-    print "Bindings:"
++    print("Variables:")
++    print(variables)
++    print()
++    print("Bindings:")
+     for b in res.bindings:
+         for v in res.variables:
+             try:
+@@ -34,8 +34,8 @@ def main(server, query, sponge=False):
+             except KeyError:
+                 # no binding to that one...
+                 str = "%s: <<None>>" % v
+-            print str.encode('utf-8')
+-        print
++            print(str.encode('utf-8'))
++        print()
+ 
+ 
+ 
+@@ -51,7 +51,7 @@ usagetxt = """%s [-s] [-u url] [file]
+ file: sparql query file
+ """
+ def usage():
+-    print usagetxt % sys.argv[0]
++    print(usagetxt % sys.argv[0])
+     sys.exit(1)
+ 
+ if __name__ == '__main__':
+@@ -66,7 +66,7 @@ if __name__ == '__main__':
+                 server = localVirtuoso
+                 sponge = True
+             elif o == "-h":
+-                print usage
++                print(usage)
+                 sys.exit(0)
+             elif o == "-u":
+                 server = a
+--- setup.py.orig	2019-04-18 10:02:26 UTC
++++ setup.py
+@@ -75,8 +75,6 @@ setup(
+         'Topic :: Software Development :: Libraries :: Python Modules',
+       ],
+       keywords = ['python', 'sparql', 'rdf', 'rdflib'],
+-      use_2to3 = True,
+-      use_2to3_fixers = ['custom_fixers'],
+       project_urls={
+         'Home': 'https://rdflib.github.io/sparqlwrapper/',
+         'Documentation': 'https://rdflib.github.io/sparqlwrapper/doc/',
+--- SPARQLWrapper/__init__.py.orig	2019-12-22 10:59:06 UTC
++++ SPARQLWrapper/__init__.py
+@@ -1,6 +1,6 @@
+ # -*- coding: utf8 -*-
+ 
+-u"""
++"""
+ 
+ **SPARQLWrapper** is a simple Python wrapper around a `SPARQL <https://www.w3.org/TR/sparql11-overview/>`_ service to
+ remotelly execute your queries. It helps in creating the query
+@@ -30,11 +30,11 @@ __date__ = "2019-04-18"
+ __agent__ = "sparqlwrapper %s (rdflib.github.io/sparqlwrapper)" % __version__
+ 
+ 
+-from Wrapper import SPARQLWrapper
+-from Wrapper import XML, JSON, TURTLE, N3, JSONLD, RDF, RDFXML, CSV, TSV
+-from Wrapper import GET, POST
+-from Wrapper import SELECT, CONSTRUCT, ASK, DESCRIBE, INSERT, DELETE
+-from Wrapper import URLENCODED, POSTDIRECTLY
+-from Wrapper import BASIC, DIGEST
++from .Wrapper import SPARQLWrapper
++from .Wrapper import XML, JSON, TURTLE, N3, JSONLD, RDF, RDFXML, CSV, TSV
++from .Wrapper import GET, POST
++from .Wrapper import SELECT, CONSTRUCT, ASK, DESCRIBE, INSERT, DELETE
++from .Wrapper import URLENCODED, POSTDIRECTLY
++from .Wrapper import BASIC, DIGEST
+ 
+-from SmartWrapper import SPARQLWrapper2
++from .SmartWrapper import SPARQLWrapper2
+--- SPARQLWrapper/KeyCaseInsensitiveDict.py.orig	2019-12-21 20:12:35 UTC
++++ SPARQLWrapper/KeyCaseInsensitiveDict.py
+@@ -28,7 +28,7 @@ class KeyCaseInsensitiveDict(dict):
+         """
+         :param dict d: The source dictionary.
+         """
+-        for k, v in d.items():
++        for k, v in list(d.items()):
+             self[k] = v
+ 
+     def __setitem__(self, key, value):
+--- SPARQLWrapper/SmartWrapper.py.orig	2019-12-21 20:12:35 UTC
++++ SPARQLWrapper/SmartWrapper.py
+@@ -19,7 +19,7 @@
+   :requires: `RDFLib <https://rdflib.readthedocs.io>`_ package.
+ """
+ 
+-import urllib2
++import urllib.request, urllib.error, urllib.parse
+ from types import *
+ import SPARQLWrapper
+ from SPARQLWrapper.Wrapper import JSON, SELECT
+@@ -209,12 +209,12 @@ class Bindings(object):
+             if len(keys) == 0:
+                 return False
+             for k in keys:
+-                if not isinstance(k, basestring) or not k in self.variables:
++                if not isinstance(k, str) or not k in self.variables:
+                     return False
+             return True
+ 
+         def _nonSliceCase(key):
+-            if isinstance(key, basestring) and key != "" and key in self.variables:
++            if isinstance(key, str) and key != "" and key in self.variables:
+                 # unicode or string:
+                 return [key]
+             elif type(key) is list or type(key) is tuple:
+--- SPARQLWrapper/Wrapper.py.orig	2019-12-21 20:12:35 UTC
++++ SPARQLWrapper/Wrapper.py
+@@ -22,17 +22,17 @@
+   :requires: `RDFLib <https://rdflib.readthedocs.io>`_ package.
+ """
+ 
+-import urllib
+-import urllib2
+-from urllib2 import urlopen as urlopener  # don't change the name: tests override it
++import urllib.request, urllib.parse, urllib.error
++import urllib.request, urllib.error, urllib.parse
++from urllib.request import urlopen as urlopener  # don't change the name: tests override it
+ import base64
+ import re
+ import sys
+ import warnings
+ 
+ import json
+-from KeyCaseInsensitiveDict import KeyCaseInsensitiveDict
+-from SPARQLExceptions import QueryBadFormed, EndPointNotFound, EndPointInternalError, Unauthorized, URITooLong
++from .KeyCaseInsensitiveDict import KeyCaseInsensitiveDict
++from .SPARQLExceptions import QueryBadFormed, EndPointNotFound, EndPointInternalError, Unauthorized, URITooLong
+ from SPARQLWrapper import __agent__
+ 
+ #  From <https://www.w3.org/TR/sparql11-protocol/#query-success>
+@@ -804,7 +804,7 @@ class SPARQLWrapper(object):
+             :raises TypeError: If the :attr:`query` parameter is not an unicode-string or utf-8 encoded byte-string.
+         """
+         if sys.version < '3':  # have to write it like this, for 2to3 compatibility
+-            if isinstance(query, unicode):
++            if isinstance(query, str):
+                 pass
+             elif isinstance(query, str):
+                 query = query.decode('utf-8')
+@@ -874,8 +874,8 @@ class SPARQLWrapper(object):
+                 return
+ 
+             keepalive_handler = HTTPHandler()
+-            opener = urllib2.build_opener(keepalive_handler)
+-            urllib2.install_opener(opener)
++            opener = urllib.request.build_opener(keepalive_handler)
++            urllib.request.install_opener(opener)
+         except ImportError:
+             warnings.warn("keepalive support not available, so the execution of this method has no effect")
+ 
+@@ -941,10 +941,10 @@ class SPARQLWrapper(object):
+ 
+         pairs = (
+             "%s=%s" % (
+-                urllib.quote_plus(param.encode('UTF-8'), safe='/'),
+-                urllib.quote_plus(value.encode('UTF-8'), safe='/')
++                urllib.parse.quote_plus(param.encode('UTF-8'), safe='/'),
++                urllib.parse.quote_plus(value.encode('UTF-8'), safe='/')
+             )
+-            for param, values in query_parameters.items() for value in values
++            for param, values in list(query_parameters.items()) for value in values
+         )
+         return '&'.join(pairs)
+ 
+@@ -1005,11 +1005,11 @@ class SPARQLWrapper(object):
+                 warnings.warn("update operations MUST be done by POST")
+ 
+             if self.requestMethod == POSTDIRECTLY:
+-                request = urllib2.Request(uri + "?" + self._getRequestEncodedParameters())
++                request = urllib.request.Request(uri + "?" + self._getRequestEncodedParameters())
+                 request.add_header("Content-Type", "application/sparql-update")
+                 request.data = self.queryString.encode('UTF-8')
+             else:  # URL-encoded
+-                request = urllib2.Request(uri)
++                request = urllib.request.Request(uri)
+                 request.add_header("Content-Type", "application/x-www-form-urlencoded")
+                 request.data = self._getRequestEncodedParameters(("update", self.queryString)).encode('ascii')
+         else:
+@@ -1018,15 +1018,15 @@ class SPARQLWrapper(object):
+ 
+             if self.method == POST:
+                 if self.requestMethod == POSTDIRECTLY:
+-                    request = urllib2.Request(uri + "?" + self._getRequestEncodedParameters())
++                    request = urllib.request.Request(uri + "?" + self._getRequestEncodedParameters())
+                     request.add_header("Content-Type", "application/sparql-query")
+                     request.data = self.queryString.encode('UTF-8')
+                 else:  # URL-encoded
+-                    request = urllib2.Request(uri)
++                    request = urllib.request.Request(uri)
+                     request.add_header("Content-Type", "application/x-www-form-urlencoded")
+                     request.data = self._getRequestEncodedParameters(("query", self.queryString)).encode('ascii')
+             else:  # GET
+-                request = urllib2.Request(uri + "?" + self._getRequestEncodedParameters(("query", self.queryString)))
++                request = urllib.request.Request(uri + "?" + self._getRequestEncodedParameters(("query", self.queryString)))
+ 
+         request.add_header("User-Agent", self.agent)
+         request.add_header("Accept", self._getAcceptHeader())
+@@ -1036,11 +1036,11 @@ class SPARQLWrapper(object):
+                 request.add_header("Authorization", "Basic %s" % base64.b64encode(credentials.encode('utf-8')).decode('utf-8'))
+             elif self.http_auth == DIGEST:
+                 realm = self.realm
+-                pwd_mgr = urllib2.HTTPPasswordMgr()
++                pwd_mgr = urllib.request.HTTPPasswordMgr()
+                 pwd_mgr.add_password(realm, uri, self.user, self.passwd)
+-                opener = urllib2.build_opener()
+-                opener.add_handler(urllib2.HTTPDigestAuthHandler(pwd_mgr))
+-                urllib2.install_opener(opener)
++                opener = urllib.request.build_opener()
++                opener.add_handler(urllib.request.HTTPDigestAuthHandler(pwd_mgr))
++                urllib.request.install_opener(opener)
+             else:
+                 valid_types = ", ".join(_allowedAuth)
+                 raise NotImplementedError("Expecting one of: {0}, but received: {1}".format(valid_types,
+@@ -1072,7 +1072,7 @@ class SPARQLWrapper(object):
+             else:
+                 response = urlopener(request)
+             return response, self.returnFormat
+-        except urllib2.HTTPError as e:
++        except urllib.error.HTTPError as e:
+             if e.code == 400:
+                 raise QueryBadFormed(e.read())
+             elif e.code == 404:
+@@ -1186,9 +1186,9 @@ class QueryResult(object):
+         """
+         return self.response.__iter__()
+ 
+-    def next(self):
++    def __next__(self):
+         """Method for the standard iterator."""
+-        return self.response.next()
++        return next(self.response)
+ 
+     def _convertJSON(self):
+         """
+@@ -1416,17 +1416,17 @@ class QueryResult(object):
+             width = self.__get_results_width(results)
+         index = 0
+         for var in results["head"]["vars"]:
+-            print ("?" + var).ljust(width[index]), "|",
++            print(("?" + var).ljust(width[index]), "|", end=' ')
+             index += 1
+-        print
+-        print "=" * (sum(width) + 3 * len(width))
++        print()
++        print("=" * (sum(width) + 3 * len(width)))
+         for result in results["results"]["bindings"]:
+             index = 0
+             for var in results["head"]["vars"]:
+                 result_value = self.__get_prettyprint_string_sparql_var_result(result[var])
+-                print result_value.ljust(width[index]), "|",
++                print(result_value.ljust(width[index]), "|", end=' ')
+                 index += 1
+-            print
++            print()
+ 
+     def __get_results_width(self, results, minWidth=2):
+         width = []
+--- test/4store__v1_1_5__agroportal__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/4store__v1_1_5__agroportal__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/agrovoc-allegrograph_on_hold.py.orig	2019-12-21 20:12:35 UTC
++++ test/agrovoc-allegrograph_on_hold.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/allegrograph__v4_14_1__mmi__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/allegrograph__v4_14_1__mmi__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/blazegraph__wikidata__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/blazegraph__wikidata__test.py
+@@ -36,7 +36,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/fuseki2__v3_6_0__agrovoc__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/fuseki2__v3_6_0__agrovoc__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/fuseki2__v3_8_0__stw__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/fuseki2__v3_8_0__stw__test.py
+@@ -36,7 +36,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/graphdbEnterprise__v8_9_0__rs__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/graphdbEnterprise__v8_9_0__rs__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+@@ -980,7 +980,7 @@ class SPARQLWrapperTests(unittest.TestCase):
+     @unittest.skip("graphDB supports only Content Negotiation")
+     def testDescribeByGETinXML(self):
+         result = self.__generic(describeQuery, XML, GET)
+-        print result.geturl()
++        print(result.geturl())
+         ct = result.info()["content-type"]
+         assert True in [one in ct for one in _RDF_XML], ct
+         results = result.convert()
+--- test/lov-fuseki_on_hold.py.orig	2019-12-21 20:12:35 UTC
++++ test/lov-fuseki_on_hold.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/rdf4j__geosciml__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/rdf4j__geosciml__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+@@ -1001,7 +1001,7 @@ class SPARQLWrapperTests(unittest.TestCase):
+ 
+     def testDescribeByGETinXML_Conneg(self):
+         result = self.__generic(describeQuery, XML, GET, onlyConneg=True)
+-        print result.geturl()
++        print(result.geturl())
+         ct = result.info()["content-type"]
+         assert True in [one in ct for one in _RDF_XML], ct
+         results = result.convert()
+--- test/stardog__lindas__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/stardog__lindas__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/virtuoso__v7_20_3230__dbpedia__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/virtuoso__v7_20_3230__dbpedia__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/virtuoso__v8_03_3313__dbpedia__test.py.orig	2019-12-21 20:12:35 UTC
++++ test/virtuoso__v8_03_3313__dbpedia__test.py
+@@ -34,7 +34,7 @@ _SPARQL_DESCRIBE_CONSTRUCT_POSSIBLE = _RDF_XML + _RDF_
+ try:
+     from urllib.error import HTTPError   # Python 3
+ except ImportError:
+-    from urllib2 import HTTPError        # Python 2
++    from urllib.error import HTTPError        # Python 2
+ 
+ try:
+     bytes   # Python 2.6 and above
+--- test/wrapper_test.py.orig	2019-12-21 20:12:35 UTC
++++ test/wrapper_test.py
+@@ -6,9 +6,9 @@ import sys
+ import logging
+ 
+ import unittest
+-import urllib2
+-from urlparse import urlparse, parse_qsl, parse_qs
+-from urllib2 import Request
++import urllib.request, urllib.error, urllib.parse
++from urllib.parse import urlparse, parse_qsl, parse_qs
++from urllib.request import Request
+ import time
+ 
+ logging.basicConfig()
+@@ -25,7 +25,7 @@ if _top_level_path not in sys.path:
+ 
+ # we don't want to let Wrapper do real web-requests. so, we are…
+ # constructing a simple Mock!
+-from urllib2 import HTTPError
++from urllib.error import HTTPError
+ 
+ from io import StringIO
+ import warnings
+@@ -51,14 +51,14 @@ def urlopener(request):
+ 
+ def urlopener_error_generator(code):
+     def urlopener_error(request):
+-        raise HTTPError(request.get_full_url, code, '', {}, StringIO(u''))
++        raise HTTPError(request.get_full_url, code, '', {}, StringIO(''))
+ 
+     return urlopener_error
+ 
+ 
+ def urlopener_check_data_encoding(request):
+     if sys.version < '3':  # have to write it like this, for 2to3 compatibility
+-        if isinstance(request.data, unicode):
++        if isinstance(request.data, str):
+             raise TypeError
+     else:
+         if isinstance(request.data, str):
+@@ -120,7 +120,7 @@ class SPARQLWrapper_Test(TestCase):
+             return parameters
+         else:
+             result = {}
+-            for k, vs in parameters.iteritems():
++            for k, vs in parameters.items():
+                 result[k] = [v.encode('utf-8') for v in vs]
+             return result
+ 
+@@ -310,7 +310,7 @@ class SPARQLWrapper_Test(TestCase):
+         request = self._get_request(self.wrapper)
+         self.assertFalse(request.has_header('Authorization'))
+         self.assertEqual(self.wrapper.http_auth, DIGEST)
+-        self.assertIsInstance(urllib2._opener, urllib2.OpenerDirector)
++        self.assertIsInstance(urllib2._opener, urllib.request.OpenerDirector)
+ 
+         self.wrapper.setHTTPAuth(DIGEST)
+         self.wrapper.setCredentials('login', 'password')
+@@ -353,7 +353,7 @@ class SPARQLWrapper_Test(TestCase):
+ 
+     def testSetQueryEncodingIssues(self):
+         #further details from issue #35
+-        query = u'INSERT DATA { <urn:michel> <urn:says> "これはテストです" }'
++        query = 'INSERT DATA { <urn:michel> <urn:says> "これはテストです" }'
+         query_bytes = query.encode('utf-8')
+ 
+         self.wrapper.setMethod(POST)
+@@ -361,21 +361,21 @@ class SPARQLWrapper_Test(TestCase):
+ 
+         self.wrapper.setQuery(query)
+         request = self._get_request(self.wrapper)
+-        self.assertEquals(query_bytes, request.data)
++        self.assertEqual(query_bytes, request.data)
+ 
+         self.wrapper.setQuery(query_bytes)
+         request = self._get_request(self.wrapper)
+-        self.assertEquals(query_bytes, request.data)
++        self.assertEqual(query_bytes, request.data)
+ 
+         self.wrapper.setRequestMethod(URLENCODED)
+ 
+         self.wrapper.setQuery(query)
+         parameters = self._get_request_parameters_as_bytes(self.wrapper)
+-        self.assertEquals(query_bytes, parameters['update'][0])
++        self.assertEqual(query_bytes, parameters['update'][0])
+ 
+         self.wrapper.setQuery(query_bytes)
+         parameters = self._get_request_parameters_as_bytes(self.wrapper)
+-        self.assertEquals(query_bytes, parameters['update'][0])
++        self.assertEqual(query_bytes, parameters['update'][0])
+ 
+         try:
+             self.wrapper.setQuery(query.encode('sjis'))
+@@ -642,7 +642,7 @@ WHERE {
+ }
+ """
+         parsed_query = self.wrapper._cleanComments(query)
+-        self.assertEquals(query, parsed_query)
++        self.assertEqual(query, parsed_query)
+ 
+     def testCommentBeginningLine(self):
+         # see issue #77
+@@ -663,7 +663,7 @@ WHERE {
+ }
+ """
+         parsed_query = self.wrapper._cleanComments(query)
+-        self.assertEquals(expected_parsed_query, parsed_query)
++        self.assertEqual(expected_parsed_query, parsed_query)
+ 
+     def testCommentEmtpyLine(self):
+         # see issue #77
+@@ -684,7 +684,7 @@ WHERE {
+ }
+ """
+         parsed_query = self.wrapper._cleanComments(query)
+-        self.assertEquals(expected_parsed_query, parsed_query)
++        self.assertEqual(expected_parsed_query, parsed_query)
+ 
+     def testCommentsFirstLine(self):
+         # see issue #77
+@@ -697,7 +697,7 @@ WHERE {
+                                    WHERE {?s ?p ?o}"""
+ 
+         parsed_query = self.wrapper._cleanComments(query)
+-        self.assertEquals(expected_parsed_query, parsed_query)
++        self.assertEqual(expected_parsed_query, parsed_query)
+ 
+     @unittest.skip("issue #80")
+     def testCommentAfterStatements(self):
+@@ -719,13 +719,13 @@ WHERE {
+ }
+ """
+         parsed_query = self.wrapper._cleanComments(query)
+-        self.assertEquals(expected_parsed_query, parsed_query)
++        self.assertEqual(expected_parsed_query, parsed_query)
+ 
+     def testSingleLineQueryLine(self):
+         # see issue #74
+         query = "prefix whatever: <http://example.org/blah#> ASK { ?s ?p ?o }"
+         parsed_query = self.wrapper._cleanComments(query)
+-        self.assertEquals(query, parsed_query)
++        self.assertEqual(query, parsed_query)
+ 
+         self.wrapper.setQuery(query)
+         self.assertTrue(self.wrapper.isSparqlQueryRequest())
+@@ -783,7 +783,7 @@ class QueryResult_Test(unittest.TestCase):
+             def __iter__(self):
+                 self.iter_called = True
+ 
+-            def next(self):
++            def __next__(self):
+                 self.next_called = True
+ 
+         result = FakeResponse()
+@@ -791,7 +791,7 @@ class QueryResult_Test(unittest.TestCase):
+         qr = QueryResult(result)
+         qr.geturl()
+         qr.__iter__()
+-        qr.next()
++        next(qr)
+ 
+         self.assertTrue(result.geturl_called)
+         self.assertTrue(result.iter_called)
