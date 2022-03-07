@@ -4,7 +4,7 @@
  # Create options 
  libs="-L$pkglibdir @RPATH_OPTION@ @LIBS_FOR_CLIENTS@"
  embedded_libs="-L$pkglibdir @RPATH_OPTION@ @EMB_LIBS_FOR_CLIENTS@"
-+embedded_libs="$embedded_libs -L/usr/local/lib "
++embedded_libs="$embedded_libs -%%LOCALBASE%%/lib "
  
  include="-I$pkgincludedir"
  if [ "$basedir" != "/usr" ]; then

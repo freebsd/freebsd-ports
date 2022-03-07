@@ -115,7 +115,7 @@ DISABLED_PLUGINS+=	AUTH_TEST_PLUGIN DAEMON_EXAMPLE DIALOG_EXAMPLES \
 DATADIR=	${PREFIX}/share/mysql
 ETCDIR=		${PREFIX}/etc/mysql
 
-CONFLICTS_INSTALL=	mariadb10[0-46-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+CONFLICTS_INSTALL=	mariadb10[0-57-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysqlwsrep* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-*
