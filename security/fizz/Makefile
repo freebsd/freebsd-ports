@@ -1,6 +1,6 @@
 PORTNAME=	fizz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.02.28.00
+DISTVERSION=	2022.03.07.00
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,12 +9,19 @@ COMMENT=	C++14 implementation of the TLS-1.3 standard
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libdouble-conversion.so:devel/double-conversion \
+		libevent.so:devel/libevent \
 		libfmt.so:devel/libfmt \
 		libfolly.so:devel/folly \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
-		libsodium.so:security/libsodium
+		libicui18n.so:devel/icu \
+		liblz4.so:archivers/liblz4 \
+		libsnappy.so:archivers/snappy \
+		libsodium.so:security/libsodium \
+		libunwind.so:devel/libunwind \
+		libzstd.so:archivers/zstd			
 
 USES=		cmake compiler:c++14-lang ssl cpe
 CPE_VENDOR=	facebook

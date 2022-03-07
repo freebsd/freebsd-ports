@@ -170,6 +170,5 @@ lib/cmake/fizz/fizz-config.cmake
 lib/cmake/fizz/fizz-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fizz/fizz-targets.cmake
 lib/libfizz.so
-lib/libfizz.so.1
 lib/libfizz.so.1.0.0
 lib/libfizz_test_support.so
