@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-storage
-PORTVERSION=	1.36.0
+PORTVERSION=	1.36.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
