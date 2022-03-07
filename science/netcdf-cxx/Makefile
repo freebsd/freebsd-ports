@@ -4,8 +4,7 @@ PORTNAME=	netcdf-cxx
 PORTVERSION=	4.3.1
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
-		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
+MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-cxx/${PORTVERSION}/ \
 		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}4-${PORTVERSION}
 
