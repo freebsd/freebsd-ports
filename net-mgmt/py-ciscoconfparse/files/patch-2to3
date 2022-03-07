@@ -1,0 +1,461 @@
+--- ciscoconfparse/__init__.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/__init__.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ from ciscoconfparse.ciscoconfparse import __author_email__
+ from ciscoconfparse.ciscoconfparse import __author__
+ from ciscoconfparse.ciscoconfparse import __license__
+--- ciscoconfparse/__main__.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/__main__.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ 
+ """ __main__.py - Parse, Query, Build, and Modify IOS-style configurations
+ 
+--- ciscoconfparse/ccp_abc.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/ccp_abc.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ from operator import methodcaller, attrgetter
+ from abc import ABCMeta, abstractmethod
+ from copy import deepcopy
+@@ -37,9 +37,7 @@ r""" ccp_abc.py - Parse, Query, Build, and Modify IOS-
+ ##
+ 
+ 
+-class BaseCfgLine(object):
+-    __metaclass__ = ABCMeta
+-
++class BaseCfgLine(object, metaclass=ABCMeta):
+     def __init__(self, text="", comment_delimiter="!"):
+         """Accept an IOS line number and initialize family relationship
+         attributes"""
+@@ -313,14 +311,14 @@ class BaseCfgLine(object):
+            !
+            >>>
+         """
+-        cobjs = filter(methodcaller("re_search", linespec), self.children)
+-        retval = map(attrgetter("text"), cobjs)
++        cobjs = list(filter(methodcaller("re_search", linespec), self.children))
++        retval = list(map(attrgetter("text"), cobjs))
+         # Delete the children
+-        map(methodcaller("delete"), cobjs)
++        list(map(methodcaller("delete"), cobjs))
+         return retval
+ 
+     def has_child_with(self, linespec):
+-        return bool(filter(methodcaller("re_search", linespec), self.children))
++        return bool(list(filter(methodcaller("re_search", linespec), self.children)))
+ 
+     @junos_unsupported
+     def insert_before(self, insertstr):
+@@ -876,7 +874,7 @@ class BaseCfgLine(object):
+         a list of all ancestors in the direct line as well as this obj.  
+         Cousins or aunts / uncles are *not* returned.  Note: children of this 
+         object are *not* returned."""
+-        retval = map(lambda x: x.text, sorted(self.all_parents))
++        retval = [x.text for x in sorted(self.all_parents)]
+         retval.append(self.text)
+         return retval
+ 
+--- ciscoconfparse/ccp_util.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/ccp_util.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ from operator import attrgetter
+ from colorama import Fore
+ import itertools
+@@ -542,7 +542,7 @@ class IPv4Obj(object):
+         ## For Python3 iteration...
+         return self.network_object.__next__()
+ 
+-    def next(self):
++    def __next__(self):
+         ## For Python2 iteration...
+         return self.network_object.__next__()
+ 
+@@ -998,7 +998,7 @@ class IPv6Obj(object):
+         ## For Python3 iteration...
+         return self.network_object.__next__()
+ 
+-    def next(self):
++    def __next__(self):
+         ## For Python2 iteration...
+         return self.network_object.__next__()
+ 
+@@ -1399,7 +1399,7 @@ def dns_query(input_str="", query_type="", server="", 
+     elif query_type == "AXFR":
+         """This is a hack: return text of zone transfer, instead of axfr objs"""
+         _zone = zone.from_xfr(query.xfr(server, input_str, lifetime=timeout))
+-        return [_zone[node].to_text(node) for node in _zone.nodes.keys()]
++        return [_zone[node].to_text(node) for node in list(_zone.nodes.keys())]
+     elif query_type == "CNAME":
+         try:
+             answer = resolver.query(input_str, query_type)
+@@ -1689,7 +1689,7 @@ class CiscoRange(MutableSequence):
+ 
+                     # Unicode is the only type with .isnumeric()...
+                     if sys.version_info < (3, 0, 0):
+-                        prefix_removed = unicode(ii[len(common_prefix):], "utf-8")
++                        prefix_removed = str(ii[len(common_prefix):], "utf-8")
+                     else:
+                         prefix_removed = ii[len(common_prefix):]
+ 
+@@ -1734,7 +1734,7 @@ class CiscoRange(MutableSequence):
+             begin, end = int(begin.strip()), int(end.strip()) + 1
+             assert begin > -1
+             assert end > begin
+-            retval.extend(range(begin, end))
++            retval.extend(list(range(begin, end)))
+         return list(set(retval))
+ 
+     def _range(self):
+@@ -1784,7 +1784,7 @@ class CiscoRange(MutableSequence):
+         for ii in self._list:
+             # Removed try / except which is slower than sys.version_info
+             if sys.version_info < (3, 0, 0):
+-                unicode_ii = unicode(str(ii))  # Python2.7...
++                unicode_ii = str(str(ii))  # Python2.7...
+             else:
+                 unicode_ii = str(ii)
+ 
+--- ciscoconfparse/ciscoconfparse.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/ciscoconfparse.py
+@@ -1,6 +1,6 @@
+ 
+-from __future__ import absolute_import
+ 
++
+ from loguru import logger
+ 
+ from ciscoconfparse.models_cisco import IOSHostnameLine, IOSRouteLine
+@@ -886,7 +886,7 @@ class CiscoConfParse(object):
+         elif exactmatch:
+             # Return objects whose text attribute matches linespec exactly
+             linespec_re = re.compile("^{0}$".format(dnaspec))
+-        return list(filter(lambda obj: linespec_re.search(obj.dna), self.ConfigObjs))
++        return list([obj for obj in self.ConfigObjs if linespec_re.search(obj.dna)])
+ 
+     def find_objects(self, linespec, exactmatch=False, ignore_ws=False):
+         """Find all :class:`~models_cisco.IOSCfgLine` objects whose text
+@@ -1412,7 +1412,7 @@ class CiscoConfParse(object):
+         retval = list()
+         if ignore_ws:
+             parentspec = self._build_space_tolerant_regex(parentspec)
+-            childspec = map(self._build_space_tolerant_regex, childspec)
++            childspec = list(map(self._build_space_tolerant_regex, childspec))
+ 
+         for parentobj in self.find_objects(parentspec):
+             results = set([])
+@@ -1450,7 +1450,7 @@ class CiscoConfParse(object):
+         retval = list()
+         if ignore_ws:
+             parentspec = self._build_space_tolerant_regex(parentspec)
+-            childspec = map(self._build_space_tolerant_regex, childspec)
++            childspec = list(map(self._build_space_tolerant_regex, childspec))
+ 
+         for parentobj in self.find_objects(parentspec):
+             results = set([])
+@@ -2719,7 +2719,7 @@ class CiscoConfParse(object):
+         tmp = self._find_line_OBJ(linespec)
+         if uncfgspec is None:
+             uncfgspec = linespec
+-        a_lines = map(lambda x: x.text, tmp)
++        a_lines = [x.text for x in tmp]
+         a = CiscoConfParse(a_lines)
+ 
+         b = CiscoConfParse(cfgspec, factory=False)
+@@ -2758,10 +2758,10 @@ class CiscoConfParse(object):
+                             a_lines.append(obj.text)
+                             a_linenums.append(obj.linenum)
+                             a_lines.extend(
+-                                map(lambda x: getattr(x, "text"), obj.all_children)
++                                [getattr(x, "text") for x in obj.all_children]
+                             )
+                             a_linenums.extend(
+-                                map(lambda x: getattr(x, "linenum"), obj.all_children)
++                                [getattr(x, "linenum") for x in obj.all_children]
+                             )
+                     b_lines = list()
+                     b_linenums = list()
+@@ -2769,10 +2769,10 @@ class CiscoConfParse(object):
+                         b_lines.append(obj.text)
+                         b_linenums.append(obj.linenum)
+                         b_lines.extend(
+-                            map(lambda x: getattr(x, "text"), obj.all_children)
++                            [getattr(x, "text") for x in obj.all_children]
+                         )
+                         b_linenums.extend(
+-                            map(lambda x: getattr(x, "linenum"), obj.all_children)
++                            [getattr(x, "linenum") for x in obj.all_children]
+                         )
+                 else:
+                     if ignore_order:
+@@ -2784,20 +2784,12 @@ class CiscoConfParse(object):
+                             a_nonparents, b_nonparents
+                         )
+                     else:
+-                        a_lines = map(
+-                            lambda x: getattr(x, "text"), getattr(adiff_level, attr)
+-                        )
++                        a_lines = [getattr(x, "text") for x in getattr(adiff_level, attr)]
+                         # Build a map from a_lines index to a.ConfigObjs index
+-                        a_linenums = map(
+-                            lambda x: getattr(x, "linenum"), getattr(adiff_level, attr)
+-                        )
+-                    b_lines = map(
+-                        lambda x: getattr(x, "text"), getattr(bdiff_level, attr)
+-                    )
++                        a_linenums = [getattr(x, "linenum") for x in getattr(adiff_level, attr)]
++                    b_lines = [getattr(x, "text") for x in getattr(bdiff_level, attr)]
+                     # Build a map from b_lines index to b.ConfigObjs index
+-                    b_linenums = map(
+-                        lambda x: getattr(x, "linenum"), getattr(bdiff_level, attr)
+-                    )
++                    b_linenums = [getattr(x, "linenum") for x in getattr(bdiff_level, attr)]
+ 
+                 ###
+                 ### Mark diffs here
+@@ -2836,7 +2828,7 @@ class CiscoConfParse(object):
+                             aobj = aobjs[idx]
+                             # set aparent_text to all parents' text (joined)
+                             aparent_text = " ".join(
+-                                map(lambda x: x.text, aobj.all_parents)
++                                [x.text for x in aobj.all_parents]
+                             )
+                         except IndexError:
+                             # aobj doesn't exist, if we get an index error
+@@ -2851,7 +2843,7 @@ class CiscoConfParse(object):
+                             bobj = bobjs[idx]
+                             # set bparent_text to all parents' text (joined)
+                             bparent_text = " ".join(
+-                                map(lambda x: x.text, bobj.all_parents)
++                                [x.text for x in bobj.all_parents]
+                             )
+                         except IndexError:
+                             # bobj doesn't exist, if we get an index error
+@@ -3055,7 +3047,7 @@ class CiscoConfParse(object):
+         elif exactmatch:
+             # Return objects whose text attribute matches linespec exactly
+             linespec_re = re.compile("^%s$" % linespec)
+-        return list(filter(lambda obj: linespec_re.search(obj.text), self.ConfigObjs))
++        return list([obj for obj in self.ConfigObjs if linespec_re.search(obj.text)])
+ 
+     def _find_sibling_OBJ(self, lineobject):
+         """SEMI-PRIVATE: Takes a singe object and returns a list of sibling
+@@ -3198,7 +3190,7 @@ class IOSConfigList(MutableSequence):
+             logger.debug("self._list = {0}".format(self._list))
+ 
+     def has_line_with(self, linespec):
+-        return bool(filter(methodcaller("re_search", linespec), self._list))
++        return bool(list(filter(methodcaller("re_search", linespec), self._list)))
+ 
+     @junos_unsupported
+     def insert_before(self, exist_val, new_val, atomic=False):
+@@ -3440,7 +3432,7 @@ class IOSConfigList(MutableSequence):
+ 
+     def _banner_mark_regex(self, REGEX):
+         # Build a list of all leading banner lines
+-        banner_objs = list(filter(lambda obj: REGEX.search(obj.text), self._list))
++        banner_objs = list([obj for obj in self._list if REGEX.search(obj.text)])
+ 
+         BANNER_STR_RE = r"^(?:(?P<btype>(?:set\s+)*banner\s\w+\s+)(?P<bchar>\S))"
+         for parent in banner_objs:
+@@ -3582,9 +3574,7 @@ class IOSConfigList(MutableSequence):
+             if (indent < max_indent) and is_config_line:
+                 parent = None
+                 # walk parents and intelligently prune stale parents
+-                stale_parent_idxs = filter(
+-                    lambda ii: ii >= indent, sorted(parents.keys(), reverse=True)
+-                )
++                stale_parent_idxs = [ii for ii in sorted(list(parents.keys()), reverse=True) if ii >= indent]
+                 for parent_idx in stale_parent_idxs:
+                     del parents[parent_idx]
+             else:
+@@ -3793,7 +3783,7 @@ class NXOSConfigList(MutableSequence):
+             logger.debug("self._list = {0}".format(self._list))
+ 
+     def has_line_with(self, linespec):
+-        return bool(filter(methodcaller("re_search", linespec), self._list))
++        return bool(list(filter(methodcaller("re_search", linespec), self._list)))
+ 
+     def insert_before(self, robj, val, atomic=False):
+         ## Insert something before robj
+@@ -3904,7 +3894,7 @@ class NXOSConfigList(MutableSequence):
+ 
+     def _banner_mark_regex(self, REGEX):
+         # Build a list of all leading banner lines
+-        banner_objs = list(filter(lambda obj: REGEX.search(obj.text), self._list))
++        banner_objs = list([obj for obj in self._list if REGEX.search(obj.text)])
+ 
+         BANNER_STR_RE = r"^(?:(?P<btype>(?:set\s+)*banner\s\w+\s+)(?P<bchar>\S))"
+         for parent in banner_objs:
+@@ -4020,9 +4010,7 @@ class NXOSConfigList(MutableSequence):
+             if (indent < max_indent) and is_config_line:
+                 parent = None
+                 # walk parents and intelligently prune stale parents
+-                stale_parent_idxs = filter(
+-                    lambda ii: ii >= indent, sorted(parents.keys(), reverse=True)
+-                )
++                stale_parent_idxs = [ii for ii in sorted(list(parents.keys()), reverse=True) if ii >= indent]
+                 for parent_idx in stale_parent_idxs:
+                     del parents[parent_idx]
+             else:
+@@ -4227,7 +4215,7 @@ class ASAConfigList(MutableSequence):
+         self._list = self._bootstrap_obj_init(list(map(attrgetter("text"), self._list)))
+ 
+     def has_line_with(self, linespec):
+-        return bool(filter(methodcaller("re_search", linespec), self._list))
++        return bool(list(filter(methodcaller("re_search", linespec), self._list)))
+ 
+     def insert_before(self, robj, val, atomic=False):
+         ## Insert something before robj
+@@ -4357,9 +4345,7 @@ class ASAConfigList(MutableSequence):
+             if (indent < max_indent) and is_config_line:
+                 parent = None
+                 # walk parents and intelligently prune stale parents
+-                stale_parent_idxs = filter(
+-                    lambda ii: ii >= indent, sorted(parents.keys(), reverse=True)
+-                )
++                stale_parent_idxs = [ii for ii in sorted(list(parents.keys()), reverse=True) if ii >= indent]
+                 for parent_idx in stale_parent_idxs:
+                     del parents[parent_idx]
+             else:
+@@ -4700,7 +4686,7 @@ if __name__ == "__main__":
+         diff = CiscoConfParse(opts.config).req_cfgspec_all_diff(opts.arg1.split(","))
+     elif opts.method == "decrypt":
+         pp = CiscoPassword()
+-        print(pp.decrypt(opts.arg1))
++        print((pp.decrypt(opts.arg1)))
+         exit(1)
+     elif opts.method == "help":
+         print("Valid methods and their arguments:")
+@@ -4710,10 +4696,10 @@ if __name__ == "__main__":
+         print("   find_blocks:            arg1=linespec")
+         print("   find_parents_w_child:   arg1=parentspec  arg2=childspec")
+         print("   find_parents_wo_child:  arg1=parentspec  arg2=childspec")
+-        print(
++        print((
+             "   req_cfgspec_excl_diff:  arg1=linespec    arg2=uncfgspec"
+             + "   arg3=cfgspec"
+-        )
++        ))
+         print("   req_cfgspec_all_diff:   arg1=cfgspec")
+         print("   decrypt:                arg1=encrypted_passwd")
+         exit(1)
+--- ciscoconfparse/errors.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/errors.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ 
+ r""" errors.py - Parse, Query, Build, and Modify IOS-style configs
+ 
+--- ciscoconfparse/models_asa.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/models_asa.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ import re
+ 
+ from ciscoconfparse.protocol_values import (
+--- ciscoconfparse/models_cisco.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/models_cisco.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ import traceback
+ import sys
+ import re
+@@ -1412,7 +1412,7 @@ class BaseIOSIntfLine(IOSCfgLine):
+             }
+ 
+             ## Analyze each vdict in sequence and apply to retval sequentially
+-            for key, val in vdict.items():
++            for key, val in list(vdict.items()):
+                 if val != "_nomatch_":
+                     ## absolute in the key overrides previous values
+                     if "absolute" in key:
+@@ -1851,7 +1851,7 @@ class IOSAccessLine(BaseCfgLine):
+         retval = self.re_match_typed(
+             r"([a-zA-Z]+\s+)*(\d+\s*\d*)$", group=2, result_type=str, default=""
+         )
+-        tmp = map(int, retval.strip().split())
++        tmp = list(map(int, retval.strip().split()))
+         return tmp
+ 
+     def manual_exectimeout_min(self):
+@@ -1869,7 +1869,7 @@ class IOSAccessLine(BaseCfgLine):
+         retval = self.re_match_iter_typed(
+             r"^\s*exec-timeout\s+(\d+\s*\d*)\s*$", group=1, result_type=str, default=""
+         )
+-        tmp = map(int, retval.strip().split())
++        tmp = list(map(int, retval.strip().split()))
+         return tmp
+ 
+ 
+--- ciscoconfparse/models_junos.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/models_junos.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ import sys
+ import re
+ import os
+--- ciscoconfparse/models_nxos.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/models_nxos.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ import sys
+ import re
+ import os
+@@ -1365,7 +1365,7 @@ class BaseNXOSIntfLine(NXOSCfgLine):
+             }
+ 
+             ## Analyze each vdict in sequence and apply to retval sequentially
+-            for key, val in vdict.items():
++            for key, val in list(vdict.items()):
+                 if val != "_nomatch_":
+                     ## absolute in the key overrides previous values
+                     if "absolute" in key:
+@@ -1971,7 +1971,7 @@ class NXOSAccessLine(BaseCfgLine):
+         retval = self.re_match_typed(
+             r"([a-zA-Z]+\s+)*(\d+\s*\d*)$", group=2, result_type=str, default=""
+         )
+-        tmp = map(int, retval.strip().split())
++        tmp = list(map(int, retval.strip().split()))
+         return tmp
+ 
+     def manual_exectimeout_min(self):
+@@ -1989,7 +1989,7 @@ class NXOSAccessLine(BaseCfgLine):
+         retval = self.re_match_iter_typed(
+             r"^\s*exec-timeout\s+(\d+\s*\d*)\s*$", group=1, result_type=str, default=""
+         )
+-        tmp = map(int, retval.strip().split())
++        tmp = list(map(int, retval.strip().split()))
+         return tmp
+ 
+ 
+--- ciscoconfparse/protocol_values.py.orig	2021-11-02 03:51:35 UTC
++++ ciscoconfparse/protocol_values.py
+@@ -1,4 +1,4 @@
+-from __future__ import absolute_import
++
+ 
+ """ protocol_values.py - Parse, Query, Build, and Modify IOS-style configurations
+      Copyright (C) 2020-2021 David Michael Pennington at Cisco Systems
+--- setup.py.orig	2021-11-02 03:51:35 UTC
++++ setup.py
+@@ -127,7 +127,6 @@ def setup_packages():
+         long_description=read("README.rst"),
+         include_package_data=True,  # See MANIFEST.in for explicit rules
+         packages=find_packages(),
+-        use_2to3=True,  # Reqd for Windows + Py3 - ref Github issue #32
+         zip_safe=False,
+         python_requires='>=3.5',
+         install_requires=REQUIRES,
