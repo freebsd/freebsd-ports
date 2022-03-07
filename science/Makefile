@@ -251,6 +251,7 @@
     SUBDIR += py-access
     SUBDIR += py-asdf
     SUBDIR += py-asdf-standard
+    SUBDIR += py-asdf-transform-schemas
     SUBDIR += py-ase
     SUBDIR += py-avogadrolibs
     SUBDIR += py-cdo
