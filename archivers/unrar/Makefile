@@ -1,11 +1,11 @@
 # Created by: ache
 
 PORTNAME=	unrar
-PORTVERSION=	6.10
+PORTVERSION=	6.11
 PORTEPOCH=	6
 CATEGORIES+=	archivers
 MASTER_SITES=	https://rarlab.com/rar/
-DISTNAME=	unrarsrc-6.1.4
+DISTNAME=	unrarsrc-6.1.6
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
