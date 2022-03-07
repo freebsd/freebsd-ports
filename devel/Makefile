@@ -1142,6 +1142,7 @@
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libabigail
+    SUBDIR += libac
     SUBDIR += libafterbase
     SUBDIR += liballium
     SUBDIR += libantlr3c

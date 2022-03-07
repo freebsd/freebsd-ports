@@ -1,0 +1,11 @@
+This port is the C++ implementation of the Aho-Corasick (AC) string matching
+algorithm.
+
+The upstream began with pure Lua implementation and realize the performance is
+not satisfactory. So they switch to C/C++ implementation.
+
+There are two shared objects provided by this package: libac.so and
+ahocorasick.so The former is a regular shared object which can be directly used
+by C/C++ application, or by Lua via FFI; and the later is a Lua module.
+
+WWW: https://github.com/cloudflare/lua-aho-corasick
