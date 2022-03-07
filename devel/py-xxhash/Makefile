@@ -1,5 +1,5 @@
 PORTNAME=	xxhash
-PORTVERSION=	2.0.2
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Python bindings for the xxHash library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxhash>=0.8.0:devel/xxhash
+BUILD_DEPENDS=	xxhash>=0.8.1:devel/xxhash
 LIB_DEPENDS=	libxxhash.so:devel/xxhash
 
 USES=		localbase python:3.6+

@@ -1,3 +1,3 @@
-TIMESTAMP = 1619198539
-SHA256 (xxhash-2.0.2.tar.gz) = b7bead8cf6210eadf9cecf356e17af794f57c0939a3d420a00d87ea652f87b49
-SIZE (xxhash-2.0.2.tar.gz) = 64283
+TIMESTAMP = 1646058056
+SHA256 (xxhash-3.0.0.tar.gz) = 30b2d97aaf11fb122023f6b44ebb97c6955e9e00d7461a96415ca030b5ceb9c7
+SIZE (xxhash-3.0.0.tar.gz) = 74279
