@@ -1,7 +1,7 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.35.1
+DISTVERSION=	3.36.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
@@ -123,7 +123,8 @@ JAVA_MOD_USE=			JAVA=yes
 JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle \
 				bash:shells/bash
 JAVA_MOD_PLIST_DIRS=		lib/syslog-ng/java-modules/elastic-jest-client
-JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-1.2.16.jar \
+JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-api-2.17.2.jar \
+				lib/syslog-ng/java-modules/log4j-core-2.17.2.jar \
 				lib/syslog-ng/java-modules/elastic-jest-client/jest-2.0.2.jar \
 				lib/syslog-ng/java-modules/elastic-jest-client/jest-common-2.0.2.jar \
 				lib/syslog-ng/java-modules/elastic-jest-client/httpcore-nio-4.4.4.jar \
