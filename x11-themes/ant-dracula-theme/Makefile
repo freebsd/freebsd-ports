@@ -2,7 +2,7 @@
 
 PORTNAME=	ant-dracula-theme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0
+DISTVERSION=	3.0
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -17,13 +17,13 @@ GH_PROJECT=	gtk
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	CINNAMON GNOMESHELL KDE METACITY XFCE
-OPTIONS_DEFAULT=	GNOMESHELL KDE METACITY XFCE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		CINNAMON GNOMESHELL KDE METACITY XFCE
+OPTIONS_DEFAULT=	CINNAMON GNOMESHELL KDE METACITY XFCE
+OPTIONS_SUB=		yes
 
-CINNAMON_DESC=	Install Cinnamon theme
+CINNAMON_DESC=		Install Cinnamon theme
 CINNAMON_IMPLIES=	METACITY
-CINNAMON_VARS=	THEME_SUBSETS+=cinnamon
+CINNAMON_VARS=		THEME_SUBSETS+=cinnamon
 
 GNOMESHELL_DESC=	Install Gnome-Shell theme
 GNOMESHELL_VARS=	THEME_SUBSETS+=gnome-shell
@@ -37,12 +37,14 @@ XFCE_DESC=	Install XFCE theme
 XFCE_VARS=	THEME_SUBSETS+=xfwm4
 
 THEMEDIR=	${PREFIX}/share/themes/Ant-Dracula
-THEME_SUBSETS=	assets gtk-2.0 gtk-3.0 gtk-3.20 index.theme
+THEME_SUBSETS=	assets gtk-2.0 gtk-3.0 gtk-3.20 gtk-4.0 index.theme
 
 post-patch:
 	${RM} ${WRKSRC}/gtk-2.0/render-assets.sh \
 		${WRKSRC}/gtk-3.20/assets/render-gtk3-assets-hidpi.py \
-		${WRKSRC}/gtk-3.20/assets/render-gtk3-assets.py
+		${WRKSRC}/gtk-3.20/assets/render-gtk3-assets.py \
+		${WRKSRC}/gtk-4.0/assets/render-gtk3-assets-hidpi.py \
+		${WRKSRC}/gtk-4.0/assets/render-gtk3-assets.py
 
 .include <bsd.port.options.mk>
 
