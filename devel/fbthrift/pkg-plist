@@ -205,6 +205,7 @@ include/thrift/lib/cpp2/op/Compare.h
 include/thrift/lib/cpp2/op/Create.h
 include/thrift/lib/cpp2/op/DeterministicAccumulator.h
 include/thrift/lib/cpp2/op/Hash.h
+include/thrift/lib/cpp2/op/Patch.h
 include/thrift/lib/cpp2/op/StdHasher.h
 include/thrift/lib/cpp2/op/Testing.h
 include/thrift/lib/cpp2/op/detail/Clear.h
@@ -212,6 +213,7 @@ include/thrift/lib/cpp2/op/detail/Compare.h
 include/thrift/lib/cpp2/op/detail/Create.h
 include/thrift/lib/cpp2/op/detail/Hash.h
 include/thrift/lib/cpp2/op/detail/HashProtocol.h
+include/thrift/lib/cpp2/op/detail/Patch.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
 include/thrift/lib/cpp2/protocol/CompactProtocol-inl.h
