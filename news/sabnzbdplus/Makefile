@@ -1,5 +1,5 @@
 PORTNAME=	sabnzbdplus
-DISTVERSION=	3.5.0
+DISTVERSION=	3.5.1
 PORTEPOCH=	1
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
