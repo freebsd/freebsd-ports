@@ -1,11 +1,11 @@
 # Created by: stas@FreeBSD.org
 
 PORTNAME=	libunwind
-PORTVERSION=	20201110	# This is the release date on https://download.savannah.gnu.org/releases/libunwind/
+PORTVERSION=	20211201	# This is the release date on https://download.savannah.gnu.org/releases/libunwind/
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH \
 		https://github.com/libunwind/libunwind/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-1.5.0
+DISTNAME=	${PORTNAME}-1.6.2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
