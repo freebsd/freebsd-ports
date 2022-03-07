@@ -1,4 +1,4 @@
---- libcdi/src/namespace.c.orig	2020-01-21 20:19:01 UTC
+--- libcdi/src/namespace.c.orig	2022-01-21 08:38:53 UTC
 +++ libcdi/src/namespace.c
 @@ -88,11 +88,13 @@ static pthread_mutex_t namespaceMutex;
  static void
@@ -13,4 +13,4 @@
 +#endif
  }
  
- #  define NAMESPACE_LOCK()         pthread_mutex_lock(&namespaceMutex)
+ #define NAMESPACE_LOCK() pthread_mutex_lock(&namespaceMutex)

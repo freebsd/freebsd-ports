@@ -1,6 +1,6 @@
---- libcdi/src/cgribexlib.c.orig	2021-02-16 14:56:42 UTC
+--- libcdi/src/cgribexlib.c.orig	2022-01-28 10:46:29 UTC
 +++ libcdi/src/cgribexlib.c
-@@ -10,7 +10,7 @@
+@@ -12,7 +12,7 @@
  #pragma GCC diagnostic warning "-Wstrict-overflow"
  #endif
  
@@ -9,7 +9,7 @@
  #pragma options nostrict
  #include <ppu_intrinsics.h>
  #endif
-@@ -726,6 +726,19 @@ void sse2_minmax_val_double(const double *restrict buf
+@@ -734,6 +734,19 @@ void sse2_minmax_val_double(const double *restrict buf
  #endif // SIMD
  
  #if defined(_ARCH_PWR6)
