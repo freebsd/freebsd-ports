@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,8 +15,8 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_CommandLine>=1.1.10:devel/pear-Console
 USES=		pear
 USE_PHP=	mbstring posix
 
-CONFLICTS_INSTALL=	php*-pear-Crypt_GPG # bin/crypt-gpg-pinentry
-
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	php*-pear-Crypt_GPG # bin/crypt-gpg-pinentry
 
 .include <bsd.port.mk>
