@@ -1,0 +1,145 @@
+--- setup.py.orig	2012-01-29 14:23:38 UTC
++++ setup.py
+@@ -24,12 +24,6 @@ from setuptools import setup
+ import sys
+ if sys.version > '3':
+     extras = dict(
+-    use_2to3 = True,
+-    convert_2to3_doctests = ['src/zope/testing/doctest.txt',
+-                             'src/zope/testing/formparser.txt',
+-                             'src/zope/testing/module.txt',
+-                             'src/zope/testing/setupstack.txt',
+-                             ],
+     dependency_links = ['.'], # Only until zope.interface 3.6 and zope.exception 3.6 has been released.
+     )
+ else:
+--- src/zope/testing/doctest/__init__.py.orig	2012-01-29 14:23:14 UTC
++++ src/zope/testing/doctest/__init__.py
+@@ -84,7 +84,7 @@ if sys.version < '2.6.5':    
+         If the string `s` is Unicode, it is encoded using the stdout
+         encoding and the `backslashreplace` error handler.
+         """
+-        if isinstance(s, unicode):
++        if isinstance(s, str):
+             s = s.encode(doctest._encoding, 'backslashreplace')
+         # This regexp matches the start of non-blank lines:
+         return re.sub('(?m)^(?!$)', indent*' ', s)
+@@ -216,7 +216,7 @@ doctest.DocTestCase.tearDown = _patched_tearDown
+ # Patch so you can set REPORT_ONLY_FIRST_FAILURE even if you have a DIFF flag
+ # on the test.
+ import sys
+-from StringIO import StringIO
++from io import StringIO
+ 
+ def _patched_runTest(self):
+     test = self._dt_test
+--- src/zope/testing/doctestunit.py.orig	2012-01-29 14:23:14 UTC
++++ src/zope/testing/doctestunit.py
+@@ -22,8 +22,8 @@ warnings.warn('zope.testing.doctestunit is deprecated 
+               'the Python standard library doctest module', DeprecationWarning,
+               stacklevel=2)
+ 
+-from doctest import DocFileSuite, DocTestSuite
+-from doctest import debug_src, debug
++from .doctest import DocFileSuite, DocTestSuite
++from .doctest import debug_src, debug
+ 
+ def pprint():
+     from pprint import PrettyPrinter
+--- src/zope/testing/formparser.py.orig	2012-01-29 14:23:14 UTC
++++ src/zope/testing/formparser.py
+@@ -11,8 +11,8 @@ the `zope.testbrowser` package.
+ """
+ __docformat__ = "reStructuredText"
+ 
+-import HTMLParser
+-import urlparse
++import html.parser
++import urllib.parse
+ 
+ 
+ def parse(data, base=None):
+@@ -30,7 +30,7 @@ class FormParser(object):
+     def __init__(self, data, base=None):
+         self.data = data
+         self.base = base
+-        self._parser = HTMLParser.HTMLParser()
++        self._parser = html.parser.HTMLParser()
+         self._parser.handle_data = self._handle_data
+         self._parser.handle_endtag = self._handle_endtag
+         self._parser.handle_starttag = self._handle_starttag
+@@ -80,7 +80,7 @@ class FormParser(object):
+             method = kwattr(d, "method", "get")
+             action = d.get("action", "").strip() or None
+             if self.base and action:
+-                action = urlparse.urljoin(self.base, action)
++                action = urllib.parse.urljoin(self.base, action)
+             enctype = kwattr(d, "enctype", "application/x-www-form-urlencoded")
+             self.current = Form(name, id, method, action, enctype)
+             self.forms.append(self.current)
+@@ -91,7 +91,7 @@ class FormParser(object):
+             readonly = "readonly" in d
+             src = d.get("src", "").strip() or None
+             if self.base and src:
+-                src = urlparse.urljoin(self.base, src)
++                src = urllib.parse.urljoin(self.base, src)
+             value = d.get("value")
+             size = intattr(d, "size")
+             maxlength = intattr(d, "maxlength")
+@@ -113,7 +113,7 @@ class FormParser(object):
+         elif tag == "base":
+             href = d.get("href", "").strip()
+             if href and self.base:
+-                href = urlparse.urljoin(self.base, href)
++                href = urllib.parse.urljoin(self.base, href)
+             self.base = href
+         elif tag == "select":
+             disabled = "disabled" in d
+--- src/zope/testing/server.py.orig	2012-01-29 14:23:14 UTC
++++ src/zope/testing/server.py
+@@ -22,9 +22,9 @@ in the browser, the username and password are optional
+ done with inspecting the application press Ctrl+C to continue with the
+ functional test.
+ """
+-import urlparse
++import urllib.parse
+ import webbrowser
+-from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
++from http.server import HTTPServer, BaseHTTPRequestHandler
+ import sys
+ 
+ 
+@@ -78,10 +78,10 @@ def addPortToURL(url, port):
+         'http://localhost:555/index.html'
+ 
+     """
+-    (scheme, netloc, url, query, fragment) = urlparse.urlsplit(url)
++    (scheme, netloc, url, query, fragment) = urllib.parse.urlsplit(url)
+     netloc = netloc.split(':')[0]
+     netloc = "%s:%s" % (netloc, port)
+-    url = urlparse.urlunsplit((scheme, netloc, url, query, fragment))
++    url = urllib.parse.urlunsplit((scheme, netloc, url, query, fragment))
+     return url
+ 
+ 
+@@ -93,7 +93,7 @@ def startServer(http, url, user=None, password=None, p
+         httpd = HTTPServer(server_address, requestHandler)
+         # XXX we rely on browser being slower than our server
+         webbrowser.open(url)
+-        print >> sys.stderr, 'Starting HTTP server...'
++        print('Starting HTTP server...', file=sys.stderr)
+         httpd.serve_forever()
+     except KeyboardInterrupt:
+-        print >> sys.stderr, 'Stopped HTTP server.'
++        print('Stopped HTTP server.', file=sys.stderr)
+--- src/zope/testing/tests.py.orig	2012-01-29 14:23:14 UTC
++++ src/zope/testing/tests.py
+@@ -12,7 +12,7 @@
+ """Tests for the testing framework.
+ """
+ 
+-import doctest
++from . import doctest
+ import sys
+ import re
+ import unittest
