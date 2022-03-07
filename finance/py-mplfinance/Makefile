@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	mplfinance
-PORTVERSION=	0.12.8b6
+PORTVERSION=	0.12.8b9
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
