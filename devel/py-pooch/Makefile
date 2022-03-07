@@ -22,6 +22,16 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PROGRESS SFTP XXHASH
+OPTIONS_DEFAULT=PROGRESS SFTP XXHASH
+PROGRESS_DESC=	Progress bar support
+SFTP_DESC=	SFTP download support
+XXHASH_DESC=	Hash algorithm support
+
+PROGRESS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tqdm>=4.41.0<5.0.0:misc/py-tqdm@${PY_FLAVOR}
+SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=2.7.0:security/py-paramiko@${PY_FLAVOR}
+XXHASH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xxhash>=1.4.3:devel/py-xxhash@${PY_FLAVOR}
+
 post-patch:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
