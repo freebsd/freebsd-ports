@@ -1,0 +1,911 @@
+--- filelike/__init__.py.orig	2010-11-17 01:31:48 UTC
++++ filelike/__init__.py
+@@ -96,9 +96,9 @@ __ver_tuple__ = (__ver_major__,__ver_minor__,__ver_pat
+ __version__ = "%d.%d.%d%s" % __ver_tuple__
+ 
+ 
+-from StringIO import StringIO
+-import urllib2
+-import urlparse
++from io import StringIO
++import urllib.request, urllib.error, urllib.parse
++import urllib.parse
+ import tempfile
+ 
+ 
+@@ -270,7 +270,7 @@ class FileLikeBase(object):
+         self.close()
+         return False
+     
+-    def next(self):
++    def __next__(self):
+         """next() method complying with the iterator protocol.
+ 
+         File-like objects are their own iterators, with each call to
+@@ -636,7 +636,7 @@ class Opener(object):
+         for o in self.openers:
+             try:
+                 f = o(filename,mode)
+-            except IOError,e:
++            except IOError as e:
+                 f = None
+             if f is not None:
+                 break
+@@ -660,17 +660,17 @@ class Opener(object):
+ def _urllib_opener(filename,mode):
+     if mode not in ("r","r-"):
+         return None
+-    comps = urlparse.urlparse(filename)
++    comps = urllib.parse.urlparse(filename)
+     # ensure it's a URL
+     if comps[0] == "":
+         return None
+-    f = urllib2.urlopen(filename)
++    f = urllib.request.urlopen(filename)
+     f.name = f.geturl()
+     f.mode = mode
+     return f
+ def _file_opener(filename,mode):
+     # Dont open URLS as local files
+-    comps = urlparse.urlparse(filename)
++    comps = urllib.parse.urlparse(filename)
+     if comps[0] and comps[1]:
+         return None
+     return file(filename,mode)
+@@ -701,7 +701,7 @@ def is_filelike(obj,mode="rw"):
+         if isinstance(obj,FileLikeBase):
+             if not hasattr(obj,"_read"):
+                 return False
+-            if obj._read.im_class is FileLikeBase:
++            if obj._read.__self__.__class__ is FileLikeBase:
+                 return False
+         else:
+             attrs = ("read","readline","readlines","__iter__",)
+@@ -714,7 +714,7 @@ def is_filelike(obj,mode="rw"):
+         if isinstance(obj,FileLikeBase):
+             if not hasattr(obj,"_write"):
+                 return False
+-            if obj._write.im_class is FileLikeBase:
++            if obj._write.__self__.__class__ is FileLikeBase:
+                 return False
+         else:
+             attrs = ("write","writelines","close")
+@@ -726,7 +726,7 @@ def is_filelike(obj,mode="rw"):
+         if isinstance(obj,FileLikeBase):
+             if not hasattr(obj,"_seek"):
+                 return False
+-            if obj._seek.im_class is FileLikeBase:
++            if obj._seek.__self__.__class__ is FileLikeBase:
+                 return False
+         else:
+             attrs = ("seek","tell",)
+@@ -885,7 +885,7 @@ def to_filelike(obj,mode="r+"):
+     if is_filelike(obj,mode):
+         return obj
+     # Strings can be wrapped using StringIO
+-    if isinstance(obj,basestring):
++    if isinstance(obj,str):
+         return StringIO(obj)
+     # Anything with read() and/or write() can be trivially wrapped
+     hasRead = hasattr(obj,"read")
+--- filelike/pipeline/__init__.py.orig	2009-08-01 11:19:15 UTC
++++ filelike/pipeline/__init__.py
+@@ -88,7 +88,7 @@ class PipelineEntry:
+     
+     def _create(self,fileobj,mode=None):
+         """Create instance of the FileWrapper over given file object."""
+-        if mode is not None and not self._kwds.has_key("mode"):
++        if mode is not None and "mode" not in self._kwds:
+             kwds = self._kwds.copy()
+             kwds["mode"] = mode
+         else:
+--- filelike/pipeline/tests.py.orig	2009-08-01 11:19:15 UTC
++++ filelike/pipeline/tests.py
+@@ -1,6 +1,6 @@
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ from filelike.pipeline import *
+ 
+@@ -23,7 +23,7 @@ class Test_Pipeline(unittest.TestCase):
+         """Test a simple reading pipeline."""
+         pf = self.ciphertext > Decrypt(self.cipher) | Head(bytes=10)
+         txt = pf.read()
+-        self.assertEquals(txt,self.plaintext[:10])
++        self.assertEqual(txt,self.plaintext[:10])
+ 
+     def test_WriterLine(self):
+         """Test a simple writer pipeline."""
+@@ -31,5 +31,5 @@ class Test_Pipeline(unittest.TestCase):
+         pf.write(self.plaintext)
+         pf.flush()
+         txt = self.outfile.getvalue()
+-        self.assertEquals(txt,self.ciphertext[:15])
++        self.assertEqual(txt,self.ciphertext[:15])
+ 
+--- filelike/tests.py.orig	2010-11-10 05:05:12 UTC
++++ filelike/tests.py
+@@ -1,6 +1,6 @@
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ import tempfile
+ import os
+ 
+@@ -31,7 +31,7 @@ class Test_Read(unittest.TestCase):
+         pass for the built-in file type, how can we expect to achieve
+         anything with them?
+         """
+-        mode = filter(lambda c: c in "rwa+t",mode)
++        mode = [c for c in mode if c in "rwa+t"]
+         if "b" not in mode:
+             mode = mode + "b"
+         if "r" not in mode and "+" not in mode:
+@@ -57,17 +57,17 @@ class Test_Read(unittest.TestCase):
+ 
+     def test_read_all(self):
+         c = self.file.read()
+-        self.assertEquals(c,self.contents)
++        self.assertEqual(c,self.contents)
+ 
+     def test_read_stream(self):
+         f = self.makeFile(self.contents,"r-")
+-        self.assertEquals(f.read(),self.contents)
++        self.assertEqual(f.read(),self.contents)
+ 
+     def test_read_size(self):
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[:5])
++        self.assertEqual(c,self.contents[:5])
+         c = self.file.read(7)
+-        self.assertEquals(c,self.contents[5:12])
++        self.assertEqual(c,self.contents[5:12])
+ 
+     def test_readline(self):
+         c = self.file.readline()
+@@ -75,24 +75,24 @@ class Test_Read(unittest.TestCase):
+             extra = ""
+         else:
+             extra = "\n"
+-        self.assertEquals(c,self.contents.split("\n")[0]+extra)
++        self.assertEqual(c,self.contents.split("\n")[0]+extra)
+ 
+     def test_readlines(self):
+         cs = [ln.strip("\n") for ln in self.file.readlines()]
+-        self.assertEquals(cs,self.contents.split("\n"))
++        self.assertEqual(cs,self.contents.split("\n"))
+ 
+     def test_xreadlines(self):
+-        cs = [ln.strip("\n") for ln in self.file.xreadlines()]
+-        self.assertEquals(cs,self.contents.split("\n"))
++        cs = [ln.strip("\n") for ln in self.file]
++        self.assertEqual(cs,self.contents.split("\n"))
+ 
+     def test_read_empty_file(self):
+         f = self.makeFile(self.empty_contents,"r")
+-        self.assertEquals(f.read(),self.empty_contents)
++        self.assertEqual(f.read(),self.empty_contents)
+ 
+     def test_eof(self):
+         self.file.read()
+-        self.assertEquals(self.file.read(),"")
+-        self.assertEquals(self.file.read(),"")
++        self.assertEqual(self.file.read(),"")
++        self.assertEqual(self.file.read(),"")
+ 
+ 
+ class Test_ReadWrite(Test_Read):
+@@ -104,97 +104,97 @@ class Test_ReadWrite(Test_Read):
+     def test_write(self):
+         f = self.makeFile(self.empty_contents,"w")
+         f.write(self.contents)
+-        self.assertEquals(f.tell(),len(self.contents))
++        self.assertEqual(f.tell(),len(self.contents))
+         f.flush()
+-        self.assertEquals(f.getvalue(),self.contents)
++        self.assertEqual(f.getvalue(),self.contents)
+         f.close()
+ 
+     def test_append(self):
+         f = self.makeFile(self.empty_contents,"a")
+         f.write(self.contents)
+-        self.assertEquals(f.tell(),len(self.contents))
++        self.assertEqual(f.tell(),len(self.contents))
+         f.flush()
+-        self.assertEquals(f.getvalue(),self.contents)
++        self.assertEqual(f.getvalue(),self.contents)
+         f.close()
+ 
+     def test_write_stream(self):
+         f = self.makeFile(self.empty_contents,"w-")
+         f.write(self.contents)
+-        self.assertEquals(f.tell(),len(self.contents))
++        self.assertEqual(f.tell(),len(self.contents))
+         f.flush()
+-        self.assertEquals(f.getvalue(),self.contents)
++        self.assertEqual(f.getvalue(),self.contents)
+         f.close()
+ 
+     def test_write_read(self):
+         self.file.write("hello")
+         self.file.seek(0,1)
+         c = self.file.read()
+-        self.assertEquals(c,self.contents[5:])
++        self.assertEqual(c,self.contents[5:])
+ 
+     def test_read_write_read(self):
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[:5])
++        self.assertEqual(c,self.contents[:5])
+         self.file.write("hello")
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[10:15])
++        self.assertEqual(c,self.contents[10:15])
+ 
+ 
+ class Test_ReadWriteSeek(Test_ReadWrite):
+     """Generic file-like testcases for seekable files."""
+ 
+     def test_seek_tell(self):
+-        self.assertEquals(self.file.tell(),0)
++        self.assertEqual(self.file.tell(),0)
+         self.file.seek(7)
+-        self.assertEquals(self.file.tell(),7)
+-        self.assertEquals(self.file.read(),self.contents[7:])
++        self.assertEqual(self.file.tell(),7)
++        self.assertEqual(self.file.read(),self.contents[7:])
+         self.file.seek(0,0)
+-        self.assertEquals(self.file.tell(),0)
++        self.assertEqual(self.file.tell(),0)
+ 
+     def test_read_write_seek(self):
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[:5])
++        self.assertEqual(c,self.contents[:5])
+         self.file.seek(0,1)
+         self.file.write("hello")
+-        self.assertEquals(self.file.tell(),10)
++        self.assertEqual(self.file.tell(),10)
+         self.file.seek(0)
+-        self.assertEquals(self.file.tell(),0)
++        self.assertEqual(self.file.tell(),0)
+         c = self.file.read(10)
+-        self.assertEquals(c,self.contents[:5] + "hello")
++        self.assertEqual(c,self.contents[:5] + "hello")
+ 
+     def test_seek_cur(self):
+-        self.assertEquals(self.file.tell(),0)
++        self.assertEqual(self.file.tell(),0)
+         self.file.seek(7,1)
+-        self.assertEquals(self.file.tell(),7)
++        self.assertEqual(self.file.tell(),7)
+         self.file.seek(7,1)
+-        self.assertEquals(self.file.tell(),14)
++        self.assertEqual(self.file.tell(),14)
+         self.file.seek(-5,1)
+-        self.assertEquals(self.file.tell(),9)
++        self.assertEqual(self.file.tell(),9)
+ 
+     def test_seek_end(self):
+-        self.assertEquals(self.file.tell(),0)
++        self.assertEqual(self.file.tell(),0)
+         self.file.seek(-7,2)
+-        self.assertEquals(self.file.tell(),len(self.contents)-7)
++        self.assertEqual(self.file.tell(),len(self.contents)-7)
+         self.file.seek(3,1)
+-        self.assertEquals(self.file.tell(),len(self.contents)-4)
++        self.assertEqual(self.file.tell(),len(self.contents)-4)
+ 
+     def test_write_at_end(self):
+-        self.assertEquals(self.file.tell(),0)
++        self.assertEqual(self.file.tell(),0)
+         self.file.seek(0,2)
+         self.file.write("testable")
+         self.file.seek(0,0)
+-        self.assertEquals(self.file.read(),self.contents+"testable")
++        self.assertEqual(self.file.read(),self.contents+"testable")
+ 
+     def test_write_twice(self):
+         f = self.makeFile(self.empty_contents,"w")
+         f.write(self.contents)
+-        self.assertEquals(f.tell(),len(self.contents))
++        self.assertEqual(f.tell(),len(self.contents))
+         f.flush()
+-        self.assertEquals(f.getvalue(),self.contents)
++        self.assertEqual(f.getvalue(),self.contents)
+         f.seek(-5,2)
+-        self.assertEquals(f.tell(),len(self.contents) - 5)
++        self.assertEqual(f.tell(),len(self.contents) - 5)
+         f.write(self.contents[-5:])
+         f.flush()
+-        self.assertEquals(f.getvalue(),self.contents)
++        self.assertEqual(f.getvalue(),self.contents)
+ 
+ 
+ class Test_StringIO(Test_ReadWriteSeek):
+@@ -206,7 +206,7 @@ class Test_StringIO(Test_ReadWriteSeek):
+         def xreadlines():
+             for ln in f.readlines():
+                 yield ln
+-        f.xreadlines = xreadlines
++        f.__iter__ = xreadlines
+         return f
+ 
+ 
+@@ -230,10 +230,10 @@ class Test_IsTo(unittest.TestCase):
+ 
+     def test_isfilelike(self):
+         """Test behaviour of is_filelike."""
+-        self.assert_(is_filelike(tempfile.TemporaryFile()))
+-        self.assert_(is_filelike(tempfile.TemporaryFile("r"),"r"))
+-        self.assert_(is_filelike(tempfile.TemporaryFile("r"),"w"))
+-        self.assert_(is_filelike(StringIO()))
++        self.assertTrue(is_filelike(tempfile.TemporaryFile()))
++        self.assertTrue(is_filelike(tempfile.TemporaryFile("r"),"r"))
++        self.assertTrue(is_filelike(tempfile.TemporaryFile("r"),"w"))
++        self.assertTrue(is_filelike(StringIO()))
+ 
+     def test_tofilelike_read(self):
+         """Test behavior of to_filelike for mode "r-"."""
+@@ -241,8 +241,8 @@ class Test_IsTo(unittest.TestCase):
+             def read(self,sz=-1):
+                 return ""
+         f = to_filelike(F(),"r-")
+-        self.assertEquals(f.__class__,wrappers.FileWrapper)
+-        self.assertEquals(f.read(),"")
++        self.assertEqual(f.__class__,wrappers.FileWrapper)
++        self.assertEqual(f.read(),"")
+         self.assertRaises(ValueError,to_filelike,F(),"r")
+         self.assertRaises(ValueError,to_filelike,F(),"w-")
+         self.assertRaises(ValueError,to_filelike,F(),"rw")
+@@ -255,8 +255,8 @@ class Test_IsTo(unittest.TestCase):
+             def seek(self,offset,whence):
+                 pass
+         f = to_filelike(F(),"r")
+-        self.assertEquals(f.__class__,wrappers.FileWrapper)
+-        self.assertEquals(f.read(),"")
++        self.assertEqual(f.__class__,wrappers.FileWrapper)
++        self.assertEqual(f.read(),"")
+         self.assertRaises(ValueError,to_filelike,F(),"w")
+         self.assertRaises(ValueError,to_filelike,F(),"w-")
+         self.assertRaises(ValueError,to_filelike,F(),"rw")
+@@ -267,7 +267,7 @@ class Test_IsTo(unittest.TestCase):
+             def write(self,data):
+                 pass
+         f = to_filelike(F(),"w-")
+-        self.assertEquals(f.__class__,wrappers.FileWrapper)
++        self.assertEqual(f.__class__,wrappers.FileWrapper)
+         self.assertRaises(ValueError,to_filelike,F(),"w")
+         self.assertRaises(ValueError,to_filelike,F(),"r")
+         self.assertRaises(ValueError,to_filelike,F(),"r-")
+@@ -281,7 +281,7 @@ class Test_IsTo(unittest.TestCase):
+             def seek(self,offset,whence):
+                 pass
+         f = to_filelike(F(),"w")
+-        self.assertEquals(f.__class__,wrappers.FileWrapper)
++        self.assertEqual(f.__class__,wrappers.FileWrapper)
+         self.assertRaises(ValueError,to_filelike,F(),"r")
+         self.assertRaises(ValueError,to_filelike,F(),"r-")
+ 
+@@ -295,19 +295,19 @@ class Test_IsTo(unittest.TestCase):
+             def seek(self,offset,whence):
+                 pass
+         f = to_filelike(F(),"rw")
+-        self.assertEquals(f.__class__,wrappers.FileWrapper)
+-        self.assertEquals(f.read(),"")
++        self.assertEqual(f.__class__,wrappers.FileWrapper)
++        self.assertEqual(f.read(),"")
+ 
+     def test_tofilelike_stringio(self):
+         """Test behaviour of to_filelike on StringIO instances."""
+         f = to_filelike(StringIO())
+-        self.assert_(isinstance(f,StringIO))
++        self.assertTrue(isinstance(f,StringIO))
+ 
+     def test_tofilelike_string(self):
+         """Test behaviour of to_filelike on strings."""
+         f = to_filelike("testing")
+-        self.assert_(isinstance(f,StringIO))
+-        self.assertEquals(f.read(),"testing")
++        self.assertTrue(isinstance(f,StringIO))
++        self.assertEqual(f.read(),"testing")
+         
+ 
+ class Test_Docs(unittest.TestCase):
+--- filelike/wrappers/buffer.py.orig	2010-11-10 05:11:39 UTC
++++ filelike/wrappers/buffer.py
+@@ -173,7 +173,7 @@ class Buffer(FileWrapper):
+             try:
+                 self._buffer._file.truncate(size)
+             except Exception:
+-                raise et,ev,tb
++                raise et(ev).with_traceback(tb)
+         # StringIO objects don't truncate to larger size correctly.
+         if hasattr(self._buffer,"_file"):
+             _file = self._buffer._file
+--- filelike/wrappers/debug.py.orig	2010-09-12 23:47:10 UTC
++++ filelike/wrappers/debug.py
+@@ -28,7 +28,7 @@ For the moment, just prints to stdout.
+ import filelike
+ from filelike.wrappers import FileWrapper
+ 
+-from StringIO import StringIO
++from io import StringIO
+ 
+ 
+ class Debug(FileWrapper):
+@@ -40,7 +40,7 @@ class Debug(FileWrapper):
+ 
+     def _debug(self,action,*args):
+         args = [repr(a) for a in args]
+-        print "<%s : %s>  %s" % (self.label,action," | ".join(args))
++        print("<%s : %s>  %s" % (self.label,action," | ".join(args)))
+     
+     def __init__(self,fileobj,label="",mode=None):
+         self.label = label
+--- filelike/wrappers/tests/test_buffer.py.orig	2010-03-02 22:43:43 UTC
++++ filelike/wrappers/tests/test_buffer.py
+@@ -3,7 +3,7 @@ from filelike.wrappers import Buffer, FlushableBuffer
+ from filelike import tests
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ 
+ def get_buffered_value(f):
+@@ -56,10 +56,10 @@ class Test_Buffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("testing")
+         f.flush()
+-        self.assertEquals(f.getvalue(),"testing")
+-        self.assertEquals(s.getvalue(),"")
++        self.assertEqual(f.getvalue(),"testing")
++        self.assertEqual(s.getvalue(),"")
+         f.close()
+-        self.assertEquals(s.getvalue(),"testing")
++        self.assertEqual(s.getvalue(),"testing")
+ 
+     def test_buffer_rw(self):
+         f = self.makeFile("testing","r+")
+@@ -70,10 +70,10 @@ class Test_Buffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("hello")
+         f.flush()
+-        self.assertEquals(f.getvalue(),"hellong")
+-        self.assertEquals(s.getvalue(),"testing")
++        self.assertEqual(f.getvalue(),"hellong")
++        self.assertEqual(s.getvalue(),"testing")
+         f.close()
+-        self.assertEquals(s.getvalue(),"hellong")
++        self.assertEqual(s.getvalue(),"hellong")
+ 
+     def test_buffer_a(self):
+         f = self.makeFile("hello","a")
+@@ -84,10 +84,10 @@ class Test_Buffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("testing")
+         f.flush()
+-        self.assertEquals(f.getvalue(),"testing")
+-        self.assertEquals(s.getvalue(),"hello")
++        self.assertEqual(f.getvalue(),"testing")
++        self.assertEqual(s.getvalue(),"hello")
+         f.close()
+-        self.assertEquals(s.getvalue(),"hellotesting")
++        self.assertEqual(s.getvalue(),"hellotesting")
+ 
+     def test_buffer_ra(self):
+         f = self.makeFile("hello","a+")
+@@ -98,10 +98,10 @@ class Test_Buffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("testing")
+         f.flush()
+-        self.assertEquals(f.getvalue(),"hellotesting")
+-        self.assertEquals(s.getvalue(),"hello")
++        self.assertEqual(f.getvalue(),"hellotesting")
++        self.assertEqual(s.getvalue(),"hello")
+         f.close()
+-        self.assertEquals(s.getvalue(),"hellotesting")
++        self.assertEqual(s.getvalue(),"hellotesting")
+ 
+ 
+ class Test_Buffer_rollover(Test_Buffer):
+@@ -140,7 +140,7 @@ class Test_FlushableBuffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("testing")
+         f.close()
+-        self.assertEquals(s.getvalue(),"testing")
++        self.assertEqual(s.getvalue(),"testing")
+ 
+     def test_buffer_rw(self):
+         f = self.makeFile("testing","r+")
+@@ -151,7 +151,7 @@ class Test_FlushableBuffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("hello")
+         f.close()
+-        self.assertEquals(s.getvalue(),"hellong")
++        self.assertEqual(s.getvalue(),"hellong")
+ 
+     def test_buffer_a(self):
+         f = self.makeFile("hello","a")
+@@ -162,12 +162,12 @@ class Test_FlushableBuffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("testing")
+         f.close()
+-        self.assertEquals(s.getvalue(),"hellotesting")
++        self.assertEqual(s.getvalue(),"hellotesting")
+ 
+     def test_buffer_ra(self):
+         f = self.makeFile("hello","a+")
+-        self.assertEquals(f._fileobj.tell(),5)
+-        self.assertEquals(f.tell(),5)
++        self.assertEqual(f._fileobj.tell(),5)
++        self.assertEqual(f.tell(),5)
+         s = f._fileobj
+         close = s.close
+         def noop():
+@@ -175,7 +175,7 @@ class Test_FlushableBuffer(tests.Test_ReadWriteSeek):
+         s.close = noop
+         f.write("testing")
+         f.close()
+-        self.assertEquals(s.getvalue(),"hellotesting")
++        self.assertEqual(s.getvalue(),"hellotesting")
+ 
+ 
+ class Test_FlushableBuffer_rollover(Test_FlushableBuffer):
+--- filelike/wrappers/tests/test_compress.py.orig	2009-08-01 11:19:16 UTC
++++ filelike/wrappers/tests/test_compress.py
+@@ -4,7 +4,7 @@ from filelike import tests
+ from filelike.wrappers.tests.test_buffer import get_buffered_value, def_getvalue_maybe_buffered
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ import bz2
+ 
+@@ -27,22 +27,22 @@ class Test_BZip2(tests.Test_ReadWriteSeek):
+     def test_write_read(self):
+         self.file.write(self.contents[0:5])
+         c = self.file.read()
+-        self.assertEquals(c,self.contents[5:])
++        self.assertEqual(c,self.contents[5:])
+ 
+     def test_read_write_read(self):
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[:5])
++        self.assertEqual(c,self.contents[:5])
+         self.file.write(self.contents[5:10])
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[10:15])
++        self.assertEqual(c,self.contents[10:15])
+ 
+     def test_read_write_seek(self):
+         c = self.file.read(5)
+-        self.assertEquals(c,self.contents[:5])
++        self.assertEqual(c,self.contents[:5])
+         self.file.write(self.contents[5:10])
+         self.file.seek(0)
+         c = self.file.read(10)
+-        self.assertEquals(c,self.contents[:10])
++        self.assertEqual(c,self.contents[:10])
+ 
+     def test_resulting_file(self):
+         """Make sure BZip2 changes are pushed through to actual file."""
+@@ -59,7 +59,7 @@ class Test_BZip2(tests.Test_ReadWriteSeek):
+             f.seek(-6,1)
+             f.write(bz2.compress("hello Australia!"))
+             f.close()
+-            self.assertEquals(open(fn).read(),"hello Australia!")
++            self.assertEqual(open(fn).read(),"hello Australia!")
+         finally:
+             os.unlink(fn)
+ 
+@@ -91,7 +91,7 @@ class Test_UnBZip2(tests.Test_ReadWrite):
+             f.seek(-6,1)
+             f.write("tralia!")
+             f.close()
+-            self.assertEquals(open(fn).read(),bz2.compress("hello Australia!"))
++            self.assertEqual(open(fn).read(),bz2.compress("hello Australia!"))
+         finally:
+           os.unlink(fn)
+ 
+--- filelike/wrappers/tests/test_crypto.py.orig	2009-08-01 11:19:16 UTC
++++ filelike/wrappers/tests/test_crypto.py
+@@ -3,7 +3,7 @@ from filelike.wrappers import Decrypt, Encrypt
+ from filelike import tests, NotSeekableError
+ from filelike.wrappers.tests.test_buffer import def_getvalue_maybe_buffered
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ 
+ class Test_Encrypt(tests.Test_ReadWriteSeek):
+--- filelike/wrappers/tests/test_fixedblocksize.py.orig	2009-08-01 11:19:16 UTC
++++ filelike/wrappers/tests/test_fixedblocksize.py
+@@ -3,7 +3,7 @@ import unittest
+ from filelike.wrappers import FixedBlockSize
+ from filelike import tests
+ 
+-from StringIO import StringIO
++from io import StringIO
+ 
+ class Test_FixedBlockSize5(tests.Test_ReadWriteSeek):
+     """Testcases for the FixedBlockSize class, with blocksize 5."""
+@@ -16,11 +16,11 @@ class Test_FixedBlockSize5(tests.Test_ReadWriteSeek):
+         class BSFile:
+             """Simulate reads/writes, asserting correct blocksize."""
+             def read(s,size=-1):
+-                self.assert_(size < 0 or size % self.blocksize == 0)
++                self.assertTrue(size < 0 or size % self.blocksize == 0)
+                 return f.read(size)
+             def write(s,data):
+                 if not s._flushing:
+-                    self.assert_(len(data)%self.blocksize == 0)
++                    self.assertTrue(len(data)%self.blocksize == 0)
+                 f.write(data)
+             def seek(s,offset,whence):
+                 f.seek(offset,whence)
+--- filelike/wrappers/tests/test_padtoblocksize.py.orig	2009-08-01 11:19:15 UTC
++++ filelike/wrappers/tests/test_padtoblocksize.py
+@@ -2,7 +2,7 @@
+ from filelike.wrappers import PadToBlockSize, UnPadToBlockSize
+ from filelike import tests, NotSeekableError
+ 
+-from StringIO import StringIO
++from io import StringIO
+ 
+ 
+ class Test_PadToBlockSize5(tests.Test_ReadWriteSeek):
+@@ -35,8 +35,8 @@ class Test_PadToBlockSize5(tests.Test_ReadWriteSeek):
+     def test_padding(self):
+         for (plain,padded) in zip(self.text_plain,self.text_padded):
+             f = self.makeFile(padded,"rw")
+-            self.assert_(len(padded) % self.blocksize == 0)
+-            self.assertEquals(f._fileobj.getvalue(),plain)
++            self.assertTrue(len(padded) % self.blocksize == 0)
++            self.assertEqual(f._fileobj.getvalue(),plain)
+ 
+     def test_write_zeds(self):
+         f = self.makeFile("","w")
+@@ -46,7 +46,7 @@ class Test_PadToBlockSize5(tests.Test_ReadWriteSeek):
+         f.write("mbedded in it Z")
+         f.write(f._padding(txt))
+         f.flush()
+-        self.assertEquals(f._fileobj.getvalue(),txt)
++        self.assertEqual(f._fileobj.getvalue(),txt)
+ 
+     def test_write_at_end(self):
+         pass
+@@ -94,7 +94,7 @@ class Test_UnPadToBlockSize5(tests.Test_ReadWriteSeek)
+     def test_padding(self):
+         for (plain,padded) in zip(self.text_plain,self.text_padded):
+             f = self.makeFile(plain,"rw")
+-            self.assertEquals(f._fileobj.getvalue(),padded)
++            self.assertEqual(f._fileobj.getvalue(),padded)
+ 
+     def test_write_zeds(self):
+         f = self.makeFile("","w")
+@@ -103,13 +103,13 @@ class Test_UnPadToBlockSize5(tests.Test_ReadWriteSeek)
+         f.write("ith lots of Z's e")
+         f.write("mbedded in it Z")
+         f.flush()
+-        self.assertEquals(f._fileobj.getvalue(),txt + f._padding(txt))
++        self.assertEqual(f._fileobj.getvalue(),txt + f._padding(txt))
+ 
+     def test_read_zeds(self):
+         f = self.makeFile("","r")
+         txt = "test data Z with lots of Z's embedded in it Z"
+         f._fileobj = StringIO(txt + f._padding(txt))
+-        self.assertEquals(f.read(),txt)
++        self.assertEqual(f.read(),txt)
+ 
+ 
+ class Test_UnPadToBlockSize7(Test_UnPadToBlockSize5):
+--- filelike/wrappers/tests/test_slice.py.orig	2009-08-01 11:19:15 UTC
++++ filelike/wrappers/tests/test_slice.py
+@@ -3,7 +3,7 @@ from filelike.wrappers import Slice
+ from filelike import tests
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+  
+ 
+ class Test_Slice_Whole(tests.Test_ReadWriteSeek):
+@@ -74,14 +74,14 @@ class Test_Slice_StartStopResize(Test_Slice_Whole):
+         f = Slice(StringIO("mytestdata"),start=2,stop=6)
+         f.write("TE")
+         f.seek(0)
+-        self.assertEquals(f.read(),"TEst")
+-        self.assertEquals(f._fileobj.getvalue(),"myTEstdata")
++        self.assertEqual(f.read(),"TEst")
++        self.assertEqual(f._fileobj.getvalue(),"myTEstdata")
+         f.seek(0)
+         self.assertRaises(IOError,f.write,"TESTDATA")
+-        self.assertEquals(f._fileobj.getvalue(),"myTESTdata")
++        self.assertEqual(f._fileobj.getvalue(),"myTESTdata")
+         # Resizability allows data to be overwritten
+         f = Slice(StringIO("mytestdata"),start=2,stop=6,resizable=True)
+         f.write("TESTDA")
+-        self.assertEquals(f._fileobj.getvalue(),"myTESTDAta")
+-        self.assertEquals(f.stop,8)
++        self.assertEqual(f._fileobj.getvalue(),"myTESTDAta")
++        self.assertEqual(f.stop,8)
+         
+--- filelike/wrappers/tests/test_translate.py.orig	2009-08-01 11:19:16 UTC
++++ filelike/wrappers/tests/test_translate.py
+@@ -3,7 +3,7 @@ from filelike.wrappers import Translate, BytewiseTrans
+ from filelike import tests, NotSeekableError
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ 
+ class Test_Translate(tests.Test_ReadWriteSeek):
+--- filelike/wrappers/tests/test_unix.py.orig	2009-08-01 11:19:16 UTC
++++ filelike/wrappers/tests/test_unix.py
+@@ -2,7 +2,7 @@
+ from filelike.wrappers import Head
+ 
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ class Test_Head(unittest.TestCase):
+     """Testcases for the Head wrapper class."""
+@@ -19,90 +19,90 @@ class Test_Head(unittest.TestCase):
+         """Test reading bytes from head of a file."""
+         hf = Head(self.infile,"r",bytes=10)
+         txt = hf.read()
+-        self.assertEquals(len(txt),10)
+-        self.assertEquals(txt,self.intext[:10])
++        self.assertEqual(len(txt),10)
++        self.assertEqual(txt,self.intext[:10])
+     
+     def test_ReadHeadLongBytes(self):
+         """Test reading entirety of head of file."""
+         hf = Head(self.infile,"r",bytes=1000)
+         txt = hf.read()
+-        self.assertEquals(txt,self.intext)
++        self.assertEqual(txt,self.intext)
+     
+     def test_ReadHeadLines(self):
+         """Test reading lines from head of file."""
+         hf = Head(self.infile,"r",lines=2)
+         txt = hf.read()
+-        self.assertEquals(txt.count("\n"),2)
+-        self.assertEquals(txt,"\n".join(self.intext.split("\n")[:2])+"\n")
++        self.assertEqual(txt.count("\n"),2)
++        self.assertEqual(txt,"\n".join(self.intext.split("\n")[:2])+"\n")
+ 
+     def test_ReadHeadLinesExact(self):
+         """Test reading exact number of lines from head of file."""
+         hf = Head(self.infile,"r",lines=3)
+         txt = hf.read()
+-        self.assertEquals(txt.count("\n"),2)
+-        self.assertEquals(txt,self.intext)
++        self.assertEqual(txt.count("\n"),2)
++        self.assertEqual(txt,self.intext)
+ 
+     def test_ReadHeadLongLines(self):
+         """Test reading all lines from head of file."""
+         hf = Head(self.infile,"r",lines=200)
+         txt = hf.read()
+-        self.assertEquals(txt,self.intext)
++        self.assertEqual(txt,self.intext)
+         
+     def test_ReadBytesOverLines(self):
+         """Test reading limited by bytes, not lines"""
+         hf = Head(self.infile,"r",bytes=5,lines=2)
+         txt = hf.read()
+-        self.assertEquals(len(txt),5)
+-        self.assertEquals(txt,self.intext[:5])
++        self.assertEqual(len(txt),5)
++        self.assertEqual(txt,self.intext[:5])
+         
+     def test_ReadLinesOverBytes(self):
+         """Test reading limited by lines, not bytes"""
+         hf = Head(self.infile,"r",bytes=500,lines=1)
+         txt = hf.read()
+-        self.assertEquals(txt.count("\n"),1)
+-        self.assertEquals(txt,self.intext.split("\n")[0]+"\n")
++        self.assertEqual(txt.count("\n"),1)
++        self.assertEqual(txt,self.intext.split("\n")[0]+"\n")
+ 
+     def test_WriteHeadBytes(self):
+         """Test writing bytes to head of a file."""
+         hf = Head(self.outfile,"w",bytes=10)
+         hf.write(self.intext)
+-        self.assertEquals(len(self.outfile.getvalue()),10)
+-        self.assertEquals(self.outfile.getvalue(),self.intext[:10])
++        self.assertEqual(len(self.outfile.getvalue()),10)
++        self.assertEqual(self.outfile.getvalue(),self.intext[:10])
+     
+     def test_WriteHeadLongBytes(self):
+         """Test writing entirety of head of file."""
+         hf = Head(self.outfile,"w",bytes=1000)
+         hf.write(self.intext)
+-        self.assertEquals(self.outfile.getvalue(),self.intext)
++        self.assertEqual(self.outfile.getvalue(),self.intext)
+     
+     def test_WriteHeadLines(self):
+         """Test writing lines to head of file."""
+         hf = Head(self.outfile,"w",lines=2)
+         hf.write(self.intext)
+-        self.assertEquals(self.outfile.getvalue().count("\n"),2)
+-        self.assertEquals(self.outfile.getvalue(),"\n".join(self.intext.split("\n")[:2])+"\n")
++        self.assertEqual(self.outfile.getvalue().count("\n"),2)
++        self.assertEqual(self.outfile.getvalue(),"\n".join(self.intext.split("\n")[:2])+"\n")
+ 
+     def test_WriteHeadLongLines(self):
+         """Test writing all lines to head of file."""
+         hf = Head(self.outfile,"w",lines=200)
+         hf.write(self.intext)
+-        self.assertEquals(self.outfile.getvalue(),self.intext)
++        self.assertEqual(self.outfile.getvalue(),self.intext)
+         
+     def test_WriteBytesOverLines(self):
+         """Test writing limited by bytes, not lines"""
+         hf = Head(self.outfile,"w",bytes=5,lines=2)
+         hf.write(self.intext)
+         txt = self.outfile.getvalue()
+-        self.assertEquals(len(txt),5)
+-        self.assertEquals(txt,self.intext[:5])
++        self.assertEqual(len(txt),5)
++        self.assertEqual(txt,self.intext[:5])
+         
+     def test_writeLinesOverBytes(self):
+         """Test writing limited by lines, not bytes"""
+         hf = Head(self.outfile,"w",bytes=500,lines=1)
+         hf.write(self.intext)
+         txt = self.outfile.getvalue()
+-        self.assertEquals(txt.count("\n"),1)
+-        self.assertEquals(txt,self.intext.split("\n")[0]+"\n")
++        self.assertEqual(txt.count("\n"),1)
++        self.assertEqual(txt,self.intext.split("\n")[0]+"\n")
+ 
+ 
+ def testsuite():
+--- filelike/wrappers/tests/tests.py.orig	2009-08-01 11:19:16 UTC
++++ filelike/wrappers/tests/tests.py
+@@ -5,7 +5,7 @@ from filelike import tests
+ import os
+ import tempfile
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ 
+ class Test_FileWrapper(tests.Test_ReadWriteSeek):
+@@ -37,12 +37,12 @@ class Test_OpenerDecoders(unittest.TestCase):
+         f.write("contents")
+         f.close()
+         f = filelike.open(self.tfilename,"r")
+-        self.assertEquals(f.name,self.tfilename)
+-        self.assertEquals(f.read(),"contents")
++        self.assertEqual(f.name,self.tfilename)
++        self.assertEqual(f.read(),"contents")
+         f.close()
+     
+     def test_RemoteBzFile(self):
+         """Test opening a remote BZ2 file."""
+         f = filelike.open("http://www.rfk.id.au/static/test.txt.bz2","r-")
+-        self.assertEquals(f.read(),"contents goes here if you please.\n\n")
++        self.assertEqual(f.read(),"contents goes here if you please.\n\n")
+ 
+--- setup.py.orig	2010-09-12 23:37:46 UTC
++++ setup.py
+@@ -7,8 +7,6 @@ from setuptools import setup, find_packages
+ 
+ setup_kwds = {}
+ setup_kwds["test_suite"] = "filelike.tests.build_test_suite"
+-if sys.version_info > (3,):
+-    setup_kwds["use_2to3"] = True
+ 
+ 
+ info = {}
