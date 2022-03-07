@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	cssutils
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -17,7 +17,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.1:devel/py-setuptools_scm@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -31,6 +31,9 @@ OPTIONS_DEFINE=	EXAMPLES
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
