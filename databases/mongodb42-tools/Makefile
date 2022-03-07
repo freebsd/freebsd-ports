@@ -1,6 +1,6 @@
 PORTNAME=	mongodb42-tools
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.18
+DISTVERSION=	4.2.19
 CATEGORIES=	databases
 
 MAINTAINER=	ronald-lists@klop.ws
@@ -20,7 +20,7 @@ GH_PROJECT=	mongo-tools
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
-CONFLICTS_INSTALL=	mongodb36-tools mongodb40-tools mongodb-tools
+CONFLICTS_INSTALL=	mongodb[0-9][0-9]-tools mongodb-tools
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
