@@ -9,13 +9,12 @@ INSTALL_REQUIRE = [
     'blinker',
     'click>=7',
     'importlib-metadata; python_version < "3.8"',
-    'installer>=0.3.0,<0.5',
+    'installer>=0.3.0,<0.6',
     'packaging',
-    'pdm-pep517>=0.9,<0.10',
+    'pdm-pep517>=0.9,<0.12',
     'pep517>=0.11.0',
     'platformdirs',
     'python-dotenv>=0.15',
-    'pythonfinder',
     'resolvelib>=0.8,<0.9',
     'shellingham>=1.3.2',
     'tomli>=1.1.0',
@@ -63,8 +62,6 @@ setup_kwargs = {
     'long_description_content_type': 'text/markdown',
     'keywords': ['packaging', 'dependency', 'workflow'],
     'classifiers': [
-        'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -75,8 +72,6 @@ setup_kwargs = {
     'install_requires': INSTALL_REQUIRE,
     'python_requires': '>=3.7',
     'entry_points': ENTRY_POINTS,
-
 }
-
 
 setup(**setup_kwargs)
