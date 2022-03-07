@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rb-kqueue
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
