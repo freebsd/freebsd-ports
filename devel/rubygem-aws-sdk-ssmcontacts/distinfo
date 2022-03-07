@@ -1,3 +1,3 @@
-TIMESTAMP = 1641046578
-SHA256 (rubygem/aws-sdk-ssmcontacts-1.11.0.gem) = ad9b8c924e3fb2db72221b62bc68262863965a113230fa4dc40552993f69ce59
-SIZE (rubygem/aws-sdk-ssmcontacts-1.11.0.gem) = 35840
+TIMESTAMP = 1646058726
+SHA256 (rubygem/aws-sdk-ssmcontacts-1.13.0.gem) = ece24d14aed1d8cde1d2fab632fe2d1ada3f2694ffe5192e7462d0160867b832
+SIZE (rubygem/aws-sdk-ssmcontacts-1.13.0.gem) = 36352
