@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pagerduty
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,6 @@ COMMENT=	Lightweight interface for calling the PagerDuty Integration API
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-RUN_DEPENDS=	rubygem-json>=1.7.7:devel/rubygem-json
 
 USES=		gem
 USE_RUBY=	yes
