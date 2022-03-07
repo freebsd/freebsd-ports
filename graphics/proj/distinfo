@@ -1,15 +1,3 @@
 TIMESTAMP = 1641329624
 SHA256 (proj-8.2.1.tar.gz) = 76ed3d0c3a348a6693dfae535e5658bbfd47f71cb7ff7eb96d9f12f7e068b1cf
 SIZE (proj-8.2.1.tar.gz) = 5882136
-SHA256 (proj-datumgrid-1.8.zip) = b9838ae7e5f27ee732fb0bfed618f85b36e8bb56d7afb287d506338e9f33861e
-SIZE (proj-datumgrid-1.8.zip) = 6601640
-SHA256 (proj-datumgrid-europe-1.6.zip) = c596ad4cc995c19c407f24a9a76a714300240b7691bf86fd3393ab0f65ba15a0
-SIZE (proj-datumgrid-europe-1.6.zip) = 189035881
-SHA256 (proj-datumgrid-north-america-1.4.zip) = eb8a1b6fa96580e88555fb1ce3e61aa6d02e07b7d6d0023aecf2cebfa575becf
-SIZE (proj-datumgrid-north-america-1.4.zip) = 452383542
-SHA256 (proj-datumgrid-oceania-1.2.zip) = 7da6829ed2067cc7f294e06b57c86fc258e7355230d88e6dbf830854e768d942
-SIZE (proj-datumgrid-oceania-1.2.zip) = 144240678
-SHA256 (proj-datumgrid-world-1.0.zip) = cbffb31faecb16f3f7acbfe7e85e81440aa8d6eae670de7ec2d19a13c02b4681
-SIZE (proj-datumgrid-world-1.0.zip) = 134375434
-SHA256 (proj-data-1.8.tar.gz) = 1e732dcee36d0829d87cecd70993e48b23305a3a54ca6346e5f094dcdc9a8e28
-SIZE (proj-data-1.8.tar.gz) = 586765549
