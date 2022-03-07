@@ -107,5 +107,4 @@ lib/cmake/wangle/wangle-config.cmake
 lib/cmake/wangle/wangle-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/wangle/wangle-targets.cmake
 lib/libwangle.so
-lib/libwangle.so.1
 lib/libwangle.so.1.0.0
