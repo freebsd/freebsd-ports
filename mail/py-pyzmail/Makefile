@@ -10,10 +10,9 @@ COMMENT=	Easy mail library to parse, compose and send emails
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist distutils
 
-NO_BUILD=	yes
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
