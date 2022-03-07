@@ -1,11 +1,9 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ttfautohint-py
-PORTVERSION=	0.4.3
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	.post1
+PORTVERSION=	0.5.0
 CATEGORIES=	print python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,11 +19,5 @@ USES=		gmake python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-GH_ACCOUNT=	fonttools
-USE_GITHUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
