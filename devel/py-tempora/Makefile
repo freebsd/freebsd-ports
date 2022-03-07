@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	tempora
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,8 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 .include <bsd.port.mk>
