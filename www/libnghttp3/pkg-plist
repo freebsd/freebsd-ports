@@ -2,6 +2,6 @@ include/nghttp3/nghttp3.h
 include/nghttp3/version.h
 lib/libnghttp3.a
 lib/libnghttp3.so
-lib/libnghttp3.so.0
-lib/libnghttp3.so.0.0.1
+lib/libnghttp3.so.1
+lib/libnghttp3.so.1.0.0
 libdata/pkgconfig/libnghttp3.pc
