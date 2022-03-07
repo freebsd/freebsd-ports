@@ -4,8 +4,8 @@ include/fitsio2.h
 include/longnam.h
 lib/libcfitsio.a
 lib/libcfitsio.so
-lib/libcfitsio.so.%%SHLIB_MAJOR%%
-lib/libcfitsio.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
+lib/libcfitsio.so.9
+lib/libcfitsio.so.9.%%PORTVERSION%%
 libdata/pkgconfig/cfitsio.pc
 %%PORTDOCS%%%%DOCSDIR%%/cfortran.doc
 %%PORTDOCS%%%%DOCSDIR%%/fitsio.doc

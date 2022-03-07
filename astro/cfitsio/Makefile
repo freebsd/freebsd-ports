@@ -22,13 +22,8 @@ CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
-		SHLIB_MINOR=${SHLIB_MINOR}
-
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CPE_VENDOR=	nasa
-
-SHLIB_MAJOR=	9
-SHLIB_MINOR=	${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,10 +33,10 @@ post-patch:
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libcfitsio.a ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/libcfitsio.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libcfitsio.so.9.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/cfitsio.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-	${LN} -fs libcfitsio.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.${SHLIB_MAJOR}
-	${LN} -fs libcfitsio.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
+	${LN} -fs libcfitsio.so.9.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.9
+	${LN} -fs libcfitsio.so.9.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
