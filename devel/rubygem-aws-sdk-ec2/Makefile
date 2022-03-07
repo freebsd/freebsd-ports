@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-ec2
-PORTVERSION=	1.288.0
+PORTVERSION=	1.296.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
