@@ -54,6 +54,7 @@ man/man7/parallel_tutorial.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/parallel_design.pdf
 %%PORTDOCS%%%%DOCSDIR%%/parallel_design.rst
 %%PORTDOCS%%%%DOCSDIR%%/parallel_design.texi
+%%PORTDOCS%%%%DOCSDIR%%/parallel_options_map.pdf
 %%PORTDOCS%%%%DOCSDIR%%/parallel_tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/parallel_tutorial.pdf
 %%PORTDOCS%%%%DOCSDIR%%/parallel_tutorial.rst
