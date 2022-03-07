@@ -19,5 +19,8 @@ lib/cmake/KeyFinder/KeyFinderConfig.cmake
 lib/cmake/KeyFinder/KeyFinderConfigVersion.cmake
 lib/cmake/KeyFinder/KeyFinderTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KeyFinder/KeyFinderTargets.cmake
+lib/cmake/KeyFinder/modules/FindFFTW3.cmake
 lib/libkeyfinder.so
+lib/libkeyfinder.so.2
+lib/libkeyfinder.so.2.2.6
 libdata/pkgconfig/libkeyfinder.pc
