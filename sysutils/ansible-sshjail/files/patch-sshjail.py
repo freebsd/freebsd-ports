@@ -3,15 +3,9 @@ From: =?UTF-8?q?Lo=C3=AFc=20Blot?= <nerzhul@users.noreply.github.com>
 Date: Sat, 18 Dec 2021 11:16:53 +0100
 Subject: [PATCH] fix: ansible 2.12 and + compat + become fix
 
----
- sshjail.py | 19 ++++++++++++++++---
- 1 file changed, 16 insertions(+), 3 deletions(-)
-
-diff --git a/sshjail.py b/sshjail.py
-index 7987d39..118f96f 100644
---- sshjail.py
+--- sshjail.py.orig	2021-08-15 18:02:16 UTC
 +++ sshjail.py
-@@ -289,6 +289,17 @@
+@@ -289,6 +289,17 @@ DOCUMENTATION = '''
          vars:
            - name: ansible_ssh_use_tty
              version_added: '2.7'
@@ -29,7 +23,15 @@ index 7987d39..118f96f 100644
        timeout:
          default: 10
          description:
-@@ -442,9 +453,11 @@ def _normalize_path(self, path, prefix):
+@@ -420,6 +431,7 @@ class Connection(ConnectionBase):
+         if 'sudo' in cmd:
+             cmd = self._strip_sudo(executable, cmd)
+ 
++        self.set_option('host', self.host)
+         cmd = ' '.join([executable, '-c', pipes.quote(cmd)])
+         if slpcmd:
+             cmd = '%s %s %s %s' % (self.get_jail_connector(), self.get_jail_id(), cmd, '&& sleep 0')
+@@ -442,9 +454,11 @@ class Connection(ConnectionBase):
          return os.path.join(prefix, normpath[1:])
  
      def _copy_file(self, from_file, to_file, executable='/bin/sh'):
