@@ -1,3 +1,3 @@
-TIMESTAMP = 1636117302
-SHA256 (google-cloud-logging-2.7.0.tar.gz) = 5a4ad2832be3b86c8f0fb57b2d382a1f67218137c6f6051372647ac5147d6421
-SIZE (google-cloud-logging-2.7.0.tar.gz) = 187047
+TIMESTAMP = 1646058158
+SHA256 (google-cloud-logging-3.0.0.tar.gz) = 452e361e1dcbc28f2208c0805c1a7cbac030764556703d97656d05218b933708
+SIZE (google-cloud-logging-3.0.0.tar.gz) = 199558
