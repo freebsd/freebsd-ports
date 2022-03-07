@@ -1,10 +1,9 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	netcdf-fortran
-PORTVERSION=	4.5.3
+PORTVERSION=	4.5.4
 CATEGORIES=	science
-MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
-		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
+MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-fortran/${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

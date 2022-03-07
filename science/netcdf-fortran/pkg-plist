@@ -15,7 +15,7 @@ lib/libnetcdff.a
 lib/libnetcdff.settings
 lib/libnetcdff.so
 lib/libnetcdff.so.7
-lib/libnetcdff.so.7.0.0
+lib/libnetcdff.so.7.1.0
 libdata/pkgconfig/netcdf-fortran.pc
 man/man3/netcdf_f77.3.gz
 man/man3/netcdf_fortran.3.gz

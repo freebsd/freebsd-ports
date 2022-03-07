@@ -2,6 +2,7 @@
 
 PORTNAME=	abinit
 DISTVERSION=	9.4.2
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
