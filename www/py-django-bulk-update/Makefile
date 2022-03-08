@@ -10,6 +10,9 @@ COMMENT=	Bulk update using a single query over Django ORM
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer maintained, not compatible with newer versions of Django
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.8:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.5+
