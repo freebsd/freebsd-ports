@@ -10,6 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for http://www.qma.com/
 
+BROKEN=		Service is no longer available
+DEPRECATED=	QMA service provider is no longer around
+EXPIRATION_DATE=2022-03-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SMS-Send>=0:comms/p5-SMS-Send \
 		p5-Crypt-SSLeay>=0.57:security/p5-Crypt-SSLeay \
