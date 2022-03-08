@@ -1,0 +1,58 @@
+Revert https://github.com/celluloid-player/celluloid/commit/8b68f560628a
+as x11-toolkits/gtk40 on 2022Q1 tracks 4.4.* series.
+
+src/meson.build:53:0: ERROR: Invalid version of dependency, need 'gtk4' ['>=4.6.1'] found '4.4.1'.
+
+--- README.md.orig	2022-03-06 18:42:38 UTC
++++ README.md
+@@ -15,7 +15,7 @@ - glib >= 2.66
+ - pkg-config (build)
+ - gcc (build)
+ - glib >= 2.66
+-- gtk >= 4.6.1
++- gtk >= 4.0
+ - mpv >= 0.32
+ - epoxy
+ - lua (optional)
+--- configure.ac.orig	2022-03-06 18:42:38 UTC
++++ configure.ac
+@@ -90,14 +90,14 @@ AS_IF([test "x$GLIB_GENMARSHAL" = "x"], [
+ 	AC_MSG_ERROR([Could not find glib-genmarshal])
+ ])
+ 
+-PKG_CHECK_MODULES(DEPS, [gtk4 >= 4.6.1 glib-2.0 >= 2.66 mpv >= 1.107 epoxy])
++PKG_CHECK_MODULES(DEPS, [gtk4 glib-2.0 >= 2.66 mpv >= 1.107 epoxy])
+ AC_SEARCH_LIBS([sqrt], [m])
+ 
+ AC_DEFINE([GLIB_VERSION_MIN_REQUIRED], [GLIB_VERSION_2_66], [Dont warn using older APIs])
+ AC_DEFINE([GLIB_VERSION_MAX_ALLOWED], [GLIB_VERSION_2_66], [Prevents using newer APIs])
+ 
+-AC_DEFINE([GDK_VERSION_MIN_REQUIRED], [GDK_VERSION_4_6], [Dont warn using older APIs])
+-AC_DEFINE([GDK_VERSION_MAX_ALLOWED], [GDK_VERSION_4_6], [Prevents using newer APIs])
++AC_DEFINE([GDK_VERSION_MIN_REQUIRED], [GDK_VERSION_4_0], [Dont warn using older APIs])
++AC_DEFINE([GDK_VERSION_MAX_ALLOWED], [GDK_VERSION_4_0], [Prevents using newer APIs])
+ 
+ AC_DEFINE_UNQUOTED([G_LOG_DOMAIN], "$PACKAGE_NAME", [Default logging facility])
+ 
+--- src/meson.build.orig	2022-03-06 18:42:38 UTC
++++ src/meson.build
+@@ -50,7 +50,7 @@ sources += custom_target('authors',
+   ]
+ )
+ 
+-libgtk = dependency('gtk4', version: '>=4.6.1')
++libgtk = dependency('gtk4')
+ localedir = join_paths(get_option('prefix'), get_option('localedir'))
+ cflags = [
+   '-DG_SETTINGS_ENABLE_BACKEND',
+@@ -60,8 +60,8 @@ cflags = [
+   '-DG_LOG_DOMAIN="@0@"'.format(meson.project_name()),
+   '-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66',
+   '-DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66',
+-  '-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_4_6',
+-  '-DGDK_VERSION_MAX_ALLOWED=GDK_VERSION_4_6'
++  '-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_4_0',
++  '-DGDK_VERSION_MAX_ALLOWED=GDK_VERSION_4_0'
+ ]
+ 
+ if get_option('buildtype') == 'release'
