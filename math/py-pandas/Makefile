@@ -1,5 +1,5 @@
 PORTNAME=	pandas
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.5
 PORTEPOCH=	1
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
@@ -16,11 +16,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.21<3:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16.5,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.3:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2017.3,1:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0:devel/py-arrow@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
 CPE_VENDOR=	numfocus
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	cython distutils
 
 OPTIONS_DEFINE=		MPL SCIPY
 OPTIONS_GROUP=		ACCEL STORAGE HTML EXCEL
