@@ -1,3 +1,12 @@
 Django reCAPTCHA form field/widget integration app.
 
-WWW: https://github.com/praekelt/django-recaptcha
+Following reCAPTCHA variants are supported:
+
+* Google reCAPTCHA V2 - Checkbox (Default)
+* Google reCAPTCHA V2 - Invisible
+* Google reCAPTCHA V3
+
+Django reCAPTCHA uses a modified version of the Python reCAPTCHA client which
+is included in the package as "client.py"
+
+WWW: https://github.com/torchbox/django-recaptcha
