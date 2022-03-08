@@ -161,6 +161,7 @@ lib/php/arcanist/src/exception/ArcanistDiffByteSizeException.php
 lib/php/arcanist/src/exception/ArcanistMissingArgumentTerminatorException.php
 lib/php/arcanist/src/exception/ArcanistUsageException.php
 lib/php/arcanist/src/exception/PhutilInvalidStateException.php
+lib/php/arcanist/src/exception/PhutilRegexException.php
 lib/php/arcanist/src/exception/__tests__/PhutilInvalidStateExceptionTestCase.php
 lib/php/arcanist/src/exception/usage/ArcanistNoEffectException.php
 lib/php/arcanist/src/exception/usage/ArcanistNoEngineException.php
@@ -172,6 +173,7 @@ lib/php/arcanist/src/filesystem/Filesystem.php
 lib/php/arcanist/src/filesystem/FilesystemException.php
 lib/php/arcanist/src/filesystem/PhutilDeferredLog.php
 lib/php/arcanist/src/filesystem/PhutilDirectoryFixture.php
+lib/php/arcanist/src/filesystem/PhutilErrorLog.php
 lib/php/arcanist/src/filesystem/PhutilFileLock.php
 lib/php/arcanist/src/filesystem/PhutilLock.php
 lib/php/arcanist/src/filesystem/PhutilLockException.php
@@ -205,12 +207,22 @@ lib/php/arcanist/src/filesystem/linesofalarge/LinesOfALargeExecFuture.php
 lib/php/arcanist/src/filesystem/linesofalarge/LinesOfALargeFile.php
 lib/php/arcanist/src/filesystem/linesofalarge/__tests__/LinesOfALargeExecFutureTestCase.php
 lib/php/arcanist/src/filesystem/linesofalarge/__tests__/LinesOfALargeFileTestCase.php
+lib/php/arcanist/src/filesystem/memory/ArcanistHostMemorySnapshot.php
+lib/php/arcanist/src/filesystem/memory/__tests__/ArcanistHostMemorySnapshotTestCase.php
+lib/php/arcanist/src/filesystem/memory/__tests__/data/meminfo_swap_badunits.txt
+lib/php/arcanist/src/filesystem/memory/__tests__/data/meminfo_swap_duplicate.txt
+lib/php/arcanist/src/filesystem/memory/__tests__/data/meminfo_swap_invalid.txt
+lib/php/arcanist/src/filesystem/memory/__tests__/data/meminfo_swap_missing.txt
+lib/php/arcanist/src/filesystem/memory/__tests__/data/meminfo_swap_normal.txt
+lib/php/arcanist/src/filesystem/memory/__tests__/data/meminfo_swap_zero.txt
 lib/php/arcanist/src/future/Future.php
 lib/php/arcanist/src/future/FutureIterator.php
 lib/php/arcanist/src/future/FuturePool.php
 lib/php/arcanist/src/future/FutureProxy.php
 lib/php/arcanist/src/future/ImmediateFuture.php
+lib/php/arcanist/src/future/MethodCallFuture.php
 lib/php/arcanist/src/future/__tests__/FutureIteratorTestCase.php
+lib/php/arcanist/src/future/__tests__/MethodCallFutureTestCase.php
 lib/php/arcanist/src/future/asana/PhutilAsanaFuture.php
 lib/php/arcanist/src/future/aws/PhutilAWSCloudFormationFuture.php
 lib/php/arcanist/src/future/aws/PhutilAWSCloudWatchFuture.php
@@ -395,6 +407,7 @@ lib/php/arcanist/src/lint/linter/ArcanistMergeConflictLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistNoLintLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPEP8Linter.php
 lib/php/arcanist/src/lint/linter/ArcanistPhpLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPhpLinter.php.bak
 lib/php/arcanist/src/lint/linter/ArcanistPhpcsLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPhutilLibraryLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPuppetLintLinter.php
@@ -651,6 +664,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistDoubleQuoteXHPASTLinterRul
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistDuplicateKeysInArrayXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistDuplicateSwitchCaseXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistDynamicDefineXHPASTLinterRule.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistEachUseXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistElseIfUsageXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistEmptyFileXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistEmptyStatementXHPASTLinterRule.php
@@ -694,6 +708,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPaamayimNekudotayimSpacing
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistParentMemberReferenceXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistParenthesesSpacingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistParseStrUseXHPASTLinterRule.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPartialCatchXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPlusOperatorOnStringsXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistPublicPropertyXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistRaggedClassTreeEdgeXHPASTLinterRule.php
@@ -753,6 +768,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistDoubleQuoteXHPAS
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistDuplicateKeysInArrayXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistDuplicateSwitchCaseXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistDynamicDefineXHPASTLinterRuleTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistEachUseXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistElseIfUsageXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistEmptyStatementXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistExitExpressionXHPASTLinterRuleTestCase.php
@@ -796,6 +812,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPaamayimNekudota
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistParentMemberReferenceXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistParenthesesSpacingXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistParseStrUseXHPASTLinterRuleTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPartialCatchXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPlusOperatorOnStringsXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistPublicPropertyXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistRaggedClassTreeEdgeXHPASTLinterRuleTestCase.php
@@ -853,6 +870,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/class-must-be-declared-a
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/class-must-be-declared-abstract/should-be-abstract.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/class-name-literal/class-name-literal.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/comment-style/hash-comments.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/comment-style/hash-directives.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/concatenation-operator/concatenation-operator.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/constructor-parentheses/constructor-parentheses.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/continue-inside-switch/continue-inside-switch-1-valid.lint-test
@@ -870,6 +888,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/double-quote/double-quot
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/duplicate-keys-in-array/duplicate-keys-in-array.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/duplicate-switch-case/duplicate-switch-case.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/dynamic-define/dynamic-define.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/each-use/each.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/elseif-usage/elseif-usage.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/empty-statement/empty-statement.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/exit-expression/exit-expression.lint-test
@@ -926,6 +945,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parent-member-references
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parentheses-spacing/array.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parentheses-spacing/parentheses-spacing.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/parse_str-use/parse_str-use.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/partial-catch/catch-without-throwable.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/php-close-tag/php-close-tag-inline-html-good.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/php-close-tag/php-close-tag.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/php-compatibility/conditional-usage.lint-test
@@ -1019,6 +1039,7 @@ lib/php/arcanist/src/lint/renderer/__tests__/data/xml.txt
 lib/php/arcanist/src/log/ArcanistLogEngine.php
 lib/php/arcanist/src/log/ArcanistLogMessage.php
 lib/php/arcanist/src/moduleutils/PhutilLibraryMapBuilder.php
+lib/php/arcanist/src/moduleutils/PhutilLibraryMapBuilder.php.bak
 lib/php/arcanist/src/object/Phobject.php
 lib/php/arcanist/src/object/__tests__/PhobjectTestCase.php
 lib/php/arcanist/src/object/__tests__/PhutilTestPhobject.php
@@ -1296,6 +1317,7 @@ lib/php/arcanist/src/phage/action/PhagePlanAction.php
 lib/php/arcanist/src/phage/agent/PhagePHPAgent.php
 lib/php/arcanist/src/phage/bootloader/PhageAgentBootloader.php
 lib/php/arcanist/src/phage/bootloader/PhagePHPAgentBootloader.php
+lib/php/arcanist/src/phage/bootloader/PhagePHPAgentBootloader.php.bak
 lib/php/arcanist/src/phage/toolset/PhageToolset.php
 lib/php/arcanist/src/phage/util/PhutilBallOfPHP.php
 lib/php/arcanist/src/phage/workflow/PhageExecWorkflow.php
@@ -1329,6 +1351,7 @@ lib/php/arcanist/src/ref/commit/ArcanistCommitRef.php
 lib/php/arcanist/src/ref/commit/ArcanistCommitSymbolRef.php
 lib/php/arcanist/src/ref/commit/ArcanistCommitSymbolRefInspector.php
 lib/php/arcanist/src/ref/commit/ArcanistGitCommitSymbolCommitHardpointQuery.php
+lib/php/arcanist/src/ref/commit/ArcanistMercurialCommitSymbolCommitHardpointQuery.php
 lib/php/arcanist/src/ref/file/ArcanistFileRef.php
 lib/php/arcanist/src/ref/file/ArcanistFileSymbolRef.php
 lib/php/arcanist/src/ref/paste/ArcanistPasteRef.php
@@ -1405,6 +1428,7 @@ lib/php/arcanist/src/repository/state/ArcanistGitLocalState.php
 lib/php/arcanist/src/repository/state/ArcanistMercurialLocalState.php
 lib/php/arcanist/src/repository/state/ArcanistRepositoryLocalState.php
 lib/php/arcanist/src/runtime/ArcanistRuntime.php
+lib/php/arcanist/src/runtime/ArcanistRuntime.php.bak
 lib/php/arcanist/src/serviceprofiler/PhutilServiceProfiler.php
 lib/php/arcanist/src/symbols/PhutilClassMapQuery.php
 lib/php/arcanist/src/symbols/PhutilSymbolLoader.php
@@ -1426,6 +1450,7 @@ lib/php/arcanist/src/toolset/workflow/ArcanistHelpWorkflow.php
 lib/php/arcanist/src/toolset/workflow/ArcanistPromptsWorkflow.php
 lib/php/arcanist/src/toolset/workflow/ArcanistShellCompleteWorkflow.php
 lib/php/arcanist/src/toolset/workflow/ArcanistVersionWorkflow.php
+lib/php/arcanist/src/toolset/workflow/ArcanistVersionWorkflow.php.bak
 lib/php/arcanist/src/unit/ArcanistUnitTestResult.php
 lib/php/arcanist/src/unit/__tests__/ArcanistUnitTestResultTestCase.php
 lib/php/arcanist/src/unit/engine/ArcanistConfigurationDrivenUnitTestEngine.php
@@ -1467,6 +1492,7 @@ lib/php/arcanist/src/unit/renderer/ArcanistUnitRenderer.php
 lib/php/arcanist/src/upload/ArcanistFileDataRef.php
 lib/php/arcanist/src/upload/ArcanistFileUploader.php
 lib/php/arcanist/src/utils/AbstractDirectedGraph.php
+lib/php/arcanist/src/utils/ArcanistNonblockingGuard.php
 lib/php/arcanist/src/utils/CaseInsensitiveArray.php
 lib/php/arcanist/src/utils/PhutilArray.php
 lib/php/arcanist/src/utils/PhutilArrayCheck.php
@@ -1479,6 +1505,7 @@ lib/php/arcanist/src/utils/PhutilDirectedScalarGraph.php
 lib/php/arcanist/src/utils/PhutilEditDistanceMatrix.php
 lib/php/arcanist/src/utils/PhutilExampleBufferedIterator.php
 lib/php/arcanist/src/utils/PhutilExecutionEnvironment.php
+lib/php/arcanist/src/utils/PhutilExecutionEnvironment.php.bak
 lib/php/arcanist/src/utils/PhutilHashingIterator.php
 lib/php/arcanist/src/utils/PhutilLunarPhase.php
 lib/php/arcanist/src/utils/PhutilProxyIterator.php
@@ -1517,6 +1544,7 @@ lib/php/arcanist/src/work/ArcanistMercurialWorkEngine.php
 lib/php/arcanist/src/work/ArcanistWorkEngine.php
 lib/php/arcanist/src/workflow/ArcanistAmendWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistAnoidWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistAnoidWorkflow.php.bak
 lib/php/arcanist/src/workflow/ArcanistBookmarksWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistBranchesWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistCallConduitWorkflow.php
@@ -1531,6 +1559,7 @@ lib/php/arcanist/src/workflow/ArcanistInspectWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistInstallCertificateWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistLandWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistLiberateWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistLiberateWorkflow.php.bak
 lib/php/arcanist/src/workflow/ArcanistLintWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistLintersWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistListWorkflow.php
@@ -1582,6 +1611,7 @@ lib/php/arcanist/support/init/init-script.php
 lib/php/arcanist/support/lib/extract-symbols.php
 lib/php/arcanist/support/lib/rebuild-map.php
 lib/php/arcanist/support/shell/hooks/bash-completion.sh
+lib/php/arcanist/support/shell/hooks/bash-completion.sh.bak
 lib/php/arcanist/support/shell/rules/.keep
 lib/php/arcanist/support/shell/rules/bash-rules.sh
 lib/php/arcanist/support/shell/templates/bash-template.sh

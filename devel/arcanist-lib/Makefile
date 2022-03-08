@@ -1,6 +1,5 @@
 PORTNAME?=	arcanist
-PORTVERSION?=	20210113
-PORTREVISION?=  1
+PORTVERSION?=	20211210
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -14,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PHP_DESTDIR=	lib/php/arcanist
 USES=		php:cli,flavors python:env shebangfix
-IGNORE_WITH_PHP=	81
 SHEBANG_FILES=	bin/arc \
 		bin/phage \
 		scripts/*.php \
@@ -32,7 +30,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 PORTSCOUT=	ignore:1
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	b2e715f
+GH_TAGNAME=	b50a646
 PLIST=		${.CURDIR}/pkg-plist
 
 .if ${SLAVEPORT} == lib
