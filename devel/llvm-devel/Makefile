@@ -164,6 +164,7 @@ LLDB_USE=		GNOME=libxml2
 LLDB_VARS=		_USES_PYTHON=python:3.6+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
+OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
 OPENMP_PORTDOCS=	openmp
 OPENMP_USES=		perl5
 OPENMP_USE=		PERL5=build
@@ -199,6 +200,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-dwarfdump.1 \
 		llvm-exegesis.1 \
 		llvm-extract.1 \
+		llvm-ifs.1 \
 		llvm-install-name-tool.1 \
 		llvm-lib.1 \
 		llvm-libtool-darwin.1 \

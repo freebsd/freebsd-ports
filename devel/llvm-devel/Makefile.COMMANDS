@@ -46,6 +46,7 @@ LLVM_COMMANDS=	\
 		llvm-readelf \
 		llvm-readobj \
 		llvm-reduce \
+		llvm-remark-size-diff \
 		llvm-rtdyld \
 		llvm-sim \
 		llvm-size \
@@ -73,9 +74,11 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-linker-wrapper \
 		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-wrapper \
+		clang-pseudo \
 		clang-repl \
 		clang-scan-deps \
 		diagtool \
@@ -101,6 +104,7 @@ EXTRAS_COMMANDS= \
 		pp-trace
 
 FLANG_COMMANDS=	\
+		bbc \
 		f18-parse-demo \
 		fir-opt \
 		flang \
