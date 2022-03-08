@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	edid-decode
-PORTVERSION=	0.1.20220204
+PORTVERSION=	0.1.20220301
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/ehaupt
 
