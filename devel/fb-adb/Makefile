@@ -27,6 +27,9 @@ COMMENT=	Better shell for Android devices
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Last release in 2016 and deprecated by upstream, please consider using devel/android-tools-adb instead
+EXPIRATION_DATE=2022-03-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 IGNORE_DragonFly=	requires linuxulator for Android NDK
 
