@@ -1,3 +1,3 @@
-TIMESTAMP = 1642506738
-SHA256 (django-timezone-field-4.2.3.tar.gz) = 5dd5bd9249382bef8847d3e7e4c32b7be182a4b538f354130d1252ed228892f8
-SIZE (django-timezone-field-4.2.3.tar.gz) = 8347
+TIMESTAMP = 1645108464
+SHA256 (django-timezone-field-5.0.tar.gz) = 15746ed367a5a32eda76cfa2886eeec1de8cda79f519b7c5e12f87ed7cdbd663
+SIZE (django-timezone-field-5.0.tar.gz) = 11838
