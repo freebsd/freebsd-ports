@@ -90,6 +90,7 @@ include/igc/ocl_igc_shared/executable_format/program_debug_data.h
 include/igc/ocl_igc_shared/gtpin/gtpin_driver_common.h
 include/igc/ocl_igc_shared/gtpin/gtpin_driver_common_bti.h
 include/igc/ocl_igc_shared/gtpin/gtpin_ocl_interface.h
+include/igc/ocl_igc_shared/raytracing/ocl_raytracing_structures.h
 include/visa/RelocationInfo.h
 @comment lib/igc/NOTICES.txt
 lib/libiga%%ARCH_SUFX%%.so
