@@ -7,7 +7,6 @@ include/python%%XYDOT%%%%ABI%%/Python.h
 include/python%%XYDOT%%%%ABI%%/abstract.h
 include/python%%XYDOT%%%%ABI%%/bltinmodule.h
 include/python%%XYDOT%%%%ABI%%/boolobject.h
-include/python%%XYDOT%%%%ABI%%/buffer.h
 include/python%%XYDOT%%%%ABI%%/bytearrayobject.h
 include/python%%XYDOT%%%%ABI%%/bytesobject.h
 include/python%%XYDOT%%%%ABI%%/ceval.h
@@ -100,6 +99,7 @@ include/python%%XYDOT%%%%ABI%%/internal/pycore_genobject.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_getopt.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_gil.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_global_objects.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_global_strings.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_hamt.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_hashtable.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_import.h
@@ -150,6 +150,7 @@ include/python%%XYDOT%%%%ABI%%/osdefs.h
 include/python%%XYDOT%%%%ABI%%/osmodule.h
 include/python%%XYDOT%%%%ABI%%/patchlevel.h
 include/python%%XYDOT%%%%ABI%%/py_curses.h
+include/python%%XYDOT%%%%ABI%%/pybuffer.h
 include/python%%XYDOT%%%%ABI%%/pycapsule.h
 include/python%%XYDOT%%%%ABI%%/pyconfig.h
 include/python%%XYDOT%%%%ABI%%/pydtrace.h
@@ -168,6 +169,7 @@ include/python%%XYDOT%%%%ABI%%/pystrcmp.h
 include/python%%XYDOT%%%%ABI%%/pystrtod.h
 include/python%%XYDOT%%%%ABI%%/pythonrun.h
 include/python%%XYDOT%%%%ABI%%/pythread.h
+include/python%%XYDOT%%%%ABI%%/pytypedefs.h
 include/python%%XYDOT%%%%ABI%%/rangeobject.h
 include/python%%XYDOT%%%%ABI%%/setobject.h
 include/python%%XYDOT%%%%ABI%%/sliceobject.h
@@ -802,6 +804,9 @@ lib/python%%XYDOT%%/asyncio/__pycache__/subprocess.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/asyncio/__pycache__/tasks.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/asyncio/__pycache__/tasks.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/asyncio/__pycache__/tasks.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/asyncio/__pycache__/taskgroups.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/asyncio/__pycache__/taskgroups.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/asyncio/__pycache__/taskgroups.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/asyncio/__pycache__/threads.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/asyncio/__pycache__/threads.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/asyncio/__pycache__/threads.cpython-%%XY%%.pyc
@@ -843,6 +848,7 @@ lib/python%%XYDOT%%/asyncio/staggered.py
 lib/python%%XYDOT%%/asyncio/streams.py
 lib/python%%XYDOT%%/asyncio/subprocess.py
 lib/python%%XYDOT%%/asyncio/tasks.py
+lib/python%%XYDOT%%/asyncio/taskgroups.py
 lib/python%%XYDOT%%/asyncio/threads.py
 lib/python%%XYDOT%%/asyncio/transports.py
 lib/python%%XYDOT%%/asyncio/trsock.py
@@ -2434,6 +2440,9 @@ lib/python%%XYDOT%%/idlelib/__pycache__/tree.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/undo.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/undo.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/undo.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/util.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/util.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/util.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/window.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/window.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/window.cpython-%%XY%%.pyc
@@ -2656,6 +2665,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_tree.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_undo.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_undo.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_undo.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_util.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_util.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_util.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.pyc
@@ -2671,6 +2683,8 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.py
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/example_noext
+lib/python%%XYDOT%%/idlelib/idle_test/example_stub.pyi
 lib/python%%XYDOT%%/idlelib/idle_test/htest.py
 lib/python%%XYDOT%%/idlelib/idle_test/mock_idle.py
 lib/python%%XYDOT%%/idlelib/idle_test/mock_tk.py
@@ -2729,6 +2743,7 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_textview.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_tooltip.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_tree.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_undo.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_util.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_warning.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_window.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_zoomheight.py
@@ -2762,6 +2777,7 @@ lib/python%%XYDOT%%/idlelib/textview.py
 lib/python%%XYDOT%%/idlelib/tooltip.py
 lib/python%%XYDOT%%/idlelib/tree.py
 lib/python%%XYDOT%%/idlelib/undo.py
+lib/python%%XYDOT%%/idlelib/util.py
 lib/python%%XYDOT%%/idlelib/window.py
 lib/python%%XYDOT%%/idlelib/zoomheight.py
 lib/python%%XYDOT%%/idlelib/zzdummy.py
@@ -2949,6 +2965,7 @@ lib/python%%XYDOT%%/lib-dynload/fcntl.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/grp.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/math.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/mmap.cpython-%%XY%%%%ABI%%.so
+lib/python%%XYDOT%%/lib-dynload/nis.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib-dynload/ossaudiodev.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/pyexpat.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/readline.cpython-%%XY%%%%ABI%%.so
@@ -2961,9 +2978,9 @@ lib/python%%XYDOT%%/lib-dynload/xxlimited.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.alpha.5.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.alpha.6.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.alpha.5.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.alpha.6.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
@@ -3561,6 +3578,9 @@ lib/python%%XYDOT%%/test/__pycache__/ann_module6.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module7.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module7.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module7.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/ann_module8.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/ann_module8.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/ann_module8.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.pyc
@@ -5036,6 +5056,7 @@ lib/python%%XYDOT%%/test/ann_module4.py
 lib/python%%XYDOT%%/test/ann_module5.py
 lib/python%%XYDOT%%/test/ann_module6.py
 lib/python%%XYDOT%%/test/ann_module7.py
+lib/python%%XYDOT%%/test/ann_module8.py
 lib/python%%XYDOT%%/test/audiodata/pluck-alaw.aifc
 lib/python%%XYDOT%%/test/audiodata/pluck-pcm16.aiff
 lib/python%%XYDOT%%/test/audiodata/pluck-pcm16.au
@@ -5607,6 +5628,9 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_server.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sock_lowlevel.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sock_lowlevel.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sock_lowlevel.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_ssl.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_ssl.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_ssl.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sslproto.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sslproto.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sslproto.cpython-%%XY%%.pyc
@@ -5616,6 +5640,9 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_streams.cpython-%%XY%%.py
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_subprocess.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_subprocess.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_subprocess.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_taskgroups.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_taskgroups.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_taskgroups.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_tasks.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_tasks.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_tasks.cpython-%%XY%%.pyc
@@ -5658,9 +5685,11 @@ lib/python%%XYDOT%%/test/test_asyncio/test_selector_events.py
 lib/python%%XYDOT%%/test/test_asyncio/test_sendfile.py
 lib/python%%XYDOT%%/test/test_asyncio/test_server.py
 lib/python%%XYDOT%%/test/test_asyncio/test_sock_lowlevel.py
+lib/python%%XYDOT%%/test/test_asyncio/test_ssl.py
 lib/python%%XYDOT%%/test/test_asyncio/test_sslproto.py
 lib/python%%XYDOT%%/test/test_asyncio/test_streams.py
 lib/python%%XYDOT%%/test/test_asyncio/test_subprocess.py
+lib/python%%XYDOT%%/test/test_asyncio/test_taskgroups.py
 lib/python%%XYDOT%%/test/test_asyncio/test_tasks.py
 lib/python%%XYDOT%%/test/test_asyncio/test_threads.py
 lib/python%%XYDOT%%/test/test_asyncio/test_transports.py
