@@ -1,6 +1,6 @@
---- src/src.pro.orig	2021-09-24 07:19:35 UTC
+--- src/src.pro.orig	2021-11-16 21:43:56 UTC
 +++ src/src.pro
-@@ -7,40 +7,6 @@ QT_FOR_CONFIG += qml qml-private quick-private
+@@ -7,40 +7,7 @@ QT_FOR_CONFIG += qml qml-private quick-private
  # Otherwise we cannot compile qmltyperegistrar
  requires(qtConfig(commandlineparser))
  
@@ -39,6 +39,7 @@
 -    QT_FOR_CONFIG += network
 -    qtConfig(thread):qtConfig(localserver):qtConfig(qml-debug): SUBDIRS += qmldebug
 -}
-+SUBDIRS += qmltest
++SUBDIRS += qmltest \
++           imports
  
  DISTFILES += sync.profile configure.json

@@ -22,4 +22,11 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_qmltest_private.pri
 %%QT_QMLDIR%%/Qt/test/qtestroot/plugins.qmltypes
 %%QT_QMLDIR%%/Qt/test/qtestroot/qmldir
+%%QT_QMLDIR%%/QtTest/SignalSpy.qml
+%%QT_QMLDIR%%/QtTest/TestCase.qml
+%%QT_QMLDIR%%/QtTest/libqmltestplugin.so
+%%QT_QMLDIR%%/QtTest/libqmltestplugin.so.debug
+%%QT_QMLDIR%%/QtTest/plugins.qmltypes
+%%QT_QMLDIR%%/QtTest/qmldir
+%%QT_QMLDIR%%/QtTest/testlogger.js
 libdata/pkgconfig/Qt5QuickTest.pc
