@@ -529,8 +529,8 @@
 %%DATADIR%%/project-static/docs/administration/permissions/index.html
 %%DATADIR%%/project-static/docs/administration/replicating-netbox/index.html
 %%DATADIR%%/project-static/docs/assets/images/favicon.png
-%%DATADIR%%/project-static/docs/assets/javascripts/bundle.5a9542cf.min.js
-%%DATADIR%%/project-static/docs/assets/javascripts/bundle.5a9542cf.min.js.map
+%%DATADIR%%/project-static/docs/assets/javascripts/bundle.467223ff.min.js
+%%DATADIR%%/project-static/docs/assets/javascripts/bundle.467223ff.min.js.map
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.ar.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.da.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.de.min.js
@@ -557,10 +557,10 @@
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.zh.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/tinyseg.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/wordcut.js
-%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.092fa1f6.min.js
-%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.092fa1f6.min.js.map
-%%DATADIR%%/project-static/docs/assets/stylesheets/main.50e68009.min.css
-%%DATADIR%%/project-static/docs/assets/stylesheets/main.50e68009.min.css.map
+%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.bd0b6b67.min.js
+%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.bd0b6b67.min.js.map
+%%DATADIR%%/project-static/docs/assets/stylesheets/main.2d9f7617.min.css
+%%DATADIR%%/project-static/docs/assets/stylesheets/main.2d9f7617.min.css.map
 %%DATADIR%%/project-static/docs/assets/stylesheets/palette.e6a45f82.min.css
 %%DATADIR%%/project-static/docs/assets/stylesheets/palette.e6a45f82.min.css.map
 %%DATADIR%%/project-static/docs/configuration/dynamic-settings/index.html
