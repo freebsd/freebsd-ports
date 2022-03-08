@@ -15,6 +15,8 @@ PATCHFILES+=	e919bea9c84e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7346
 PATCHFILES+=	98d47bc50cab.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7497 mainline-merge
 PATCHFILES+=	8cf82354b1e4.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7812 mainline-merge
 PATCHFILES+=	7f211fe02815.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7832 mainline-merge
+PATCHFILES+=	e500040e260e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7974 mainline-merge
+PATCHFILES+=	87574ef6d760.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7975 mainline-merge
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
