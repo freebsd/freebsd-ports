@@ -1,5 +1,6 @@
 PORTNAME=	rsyslog
 PORTVERSION=	8.2202.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libestr.so:devel/libestr \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		cpe libtool pkgconfig autoreconf python:env
-USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^8\.
 
@@ -146,11 +146,8 @@ CONFIGURE_ARGS+=	--enable-imdiag --enable-imfile --enable-impstats \
 			ac_cv_func_inotify_init=no ac_cv_header_sys_inotify_h=no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
-		${WRKSRC}/tools/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
-	@${REINPLACE_CMD} -e 's,/lib/rsyslog,${PREFIX}/lib/rsyslog,' ${WRKSRC}/tools/syslogd.c
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
