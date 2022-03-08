@@ -5,7 +5,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	devel www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python library for OAuth 1.0/a, 2.0, and Ofly consumers
 
 LICENSE=	MIT

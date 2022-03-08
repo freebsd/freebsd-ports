@@ -4,7 +4,7 @@ PORTNAME=	libucl
 PORTVERSION=	0.8.1
 CATEGORIES=	textproc devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Universal configuration library parser
 
 LICENSE=	BSD2CLAUSE

@@ -23,7 +23,7 @@ MASTER_SITES=	https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DIST_SUBDIR=	x264
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT?=	H.264/MPEG-4 AVC Video Encoding (Front End CLI)
 
 LICENSE=	GPLv2

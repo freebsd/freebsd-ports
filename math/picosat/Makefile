@@ -5,7 +5,7 @@ DISTVERSION=	965
 CATEGORIES=	math
 MASTER_SITES=	http://fmv.jku.at/picosat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Satisfiability (SAT) solver for boolean variables
 
 LICENSE=	MIT

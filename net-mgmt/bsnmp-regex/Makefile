@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/olivier
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	bsnmpd module allowing creation of counters from log files
 
 LICENSE=	BSD3CLAUSE

@@ -5,7 +5,7 @@ PORTVERSION=	3.0.5
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Rolling backport of unittest.mock for all Pythons
 
 LICENSE=	BSD2CLAUSE

@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://humungus.tedunangst.com/r/reop/d/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Reasonable Expectation Of Privacy
 
 LICENSE=	ISCL

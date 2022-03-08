@@ -3,7 +3,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pure Python QR code generator with SVG, EPS, PNG and terminal output
 
 LICENSE=	BSD3CLAUSE
