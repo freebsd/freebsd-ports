@@ -265,12 +265,15 @@ share/locale/et/LC_MESSAGES/kcmusb.mo
 share/locale/et/LC_MESSAGES/kinfocenter.mo
 share/locale/eu/LC_MESSAGES/kcm_about-distro.mo
 share/locale/eu/LC_MESSAGES/kcm_cpu.mo
+share/locale/eu/LC_MESSAGES/kcm_egl.mo
 share/locale/eu/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/eu/LC_MESSAGES/kcm_glx.mo
 share/locale/eu/LC_MESSAGES/kcm_interrupts.mo
 share/locale/eu/LC_MESSAGES/kcm_nic.mo
 share/locale/eu/LC_MESSAGES/kcm_pci.mo
 share/locale/eu/LC_MESSAGES/kcm_vulkan.mo
 share/locale/eu/LC_MESSAGES/kcm_wayland.mo
+share/locale/eu/LC_MESSAGES/kcm_xserver.mo
 share/locale/eu/LC_MESSAGES/kcmdevinfo.mo
 share/locale/eu/LC_MESSAGES/kcmsamba.mo
 share/locale/eu/LC_MESSAGES/kcmusb.mo
