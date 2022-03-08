@@ -5503,7 +5503,6 @@
     SUBDIR += py-zope.testbrowser
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
-    SUBDIR += py-zsm-lib
     SUBDIR += py3c
     SUBDIR += pybind11
     SUBDIR += pybugz

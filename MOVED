@@ -16949,3 +16949,4 @@ textproc/words||2022-02-28|Removed, depends on expired lang/gcc6-aux
 textproc/xmlada||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada3||2022-02-28|Removed, depends on expired lang/gcc6-aux
+devel/py-zsm-lib|sysutils/zsm|2022-03-07|Remove obsoleted port. Use sysutils/zsm instead
