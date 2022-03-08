@@ -10,6 +10,10 @@ MASTER_SITES=	CPAN/WWW/MACKERS \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send SMS messages via the websites of Irish mobile operators
 
+BROKEN=		Multiple user reports of broken usage on upstream forum
+DEPRECATED=	Abandonware, last release in 2010 and upstream is dead
+EXPIRATION_DATE=2022-03-31
+
 BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-Lingua-EN-Squeeze>=0:textproc/p5-Lingua-EN-Squeeze \
