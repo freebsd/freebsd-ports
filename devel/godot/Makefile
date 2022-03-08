@@ -86,7 +86,7 @@ PLIST_FILES=		bin/${GODOTFILE}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH:Mpowerpc*} || ${ARCH:Mriscv64*}
 MAKE_ARGS+=	module_embree_enabled=no \
 		module_raycast_enabled=no \
 		module_webm_enabled=no
