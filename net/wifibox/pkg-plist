@@ -2,7 +2,8 @@
 @sample etc/wifibox/core.conf.sample
 @sample etc/wifibox/interfaces.conf.sample
 @sample etc/wifibox/udhcpd.conf.sample
-@sample etc/wifibox/wpa_supplicant.conf.sample
+@sample etc/wifibox/wpa_ctrl.conf.sample
+@sample etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
 @sample etc/devd/wifibox.conf.sample
 etc/rc.d/wifibox
 man/man5/wifibox-alpine.5.gz
@@ -12,10 +13,10 @@ sbin/wifibox
 share/wifibox/device.map
 share/wifibox/grub.cfg
 share/wifibox/disk.img
+/var/run/wifibox/appliance/run
 @preexec /usr/bin/touch /var/log/wifibox.log
 @preunexec /bin/rm -f /var/log/wifibox.log
 @preunexec /usr/bin/find /var/run/wifibox -type f -delete
-@preunexec /usr/bin/find /var/run/wifibox -type l -exec /bin/rm -f {} \;
 @dir /var/run/wifibox/appliance/cache
 @dir /var/run/wifibox/appliance/empty
 @dir /var/run/wifibox/appliance/lib/apk

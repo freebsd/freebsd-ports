@@ -1,5 +1,5 @@
 PORTNAME=	wifibox
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -13,10 +13,14 @@ EXTRACT_ONLY=	${_DISTFILES:N*.img.xz}
 
 RUN_DEPENDS=	grub2-bhyve>0:sysutils/grub2-bhyve
 
-OPTIONS_DEFINE=			BHYVE_PLUS
+OPTIONS_DEFINE=			BHYVE_PLUS WPA_PASSTHRU
+OPTIONS_DEFAULT=		WPA_PASSTHRU
 OPTIONS_EXCLUDE_FreeBSD_12=	BHYVE_PLUS
 
 BHYVE_PLUS_DESC=		Use bhyve+ (experimental)
+WPA_PASSTHRU_DESC=		Support WPA Supplicant pass-through
+
+WPA_PASSTHRU_RUN_DEPENDS=	socat>0:net/socat
 
 .include <bsd.port.options.mk>
 
@@ -31,7 +35,7 @@ GH_PROJECT=	freebsd-wifibox freebsd-wifibox-image:image
 GH_TAGNAME=	${PORTVERSION}
 GH_TAGNAME+=	${IMAGE_VERSION}:image
 
-IMAGE_VERSION=	snapshot-20220208
+IMAGE_VERSION=	snapshot-20220307
 IMAGE_FILE=	freebsd-wifibox-appliance.${IMAGE_VERSION}.img.xz
 IMAGE_MAN=	wifibox-alpine.5
 
