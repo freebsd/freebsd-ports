@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Automates the process of being the program chair of a conference
 
+DEPRECATED=	Abandonware, last release in 2003 and upstream refers to PHP 4.x and is dead
+EXPIRATION_DATE=2022-03-31
+
 USES=	php:web
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
