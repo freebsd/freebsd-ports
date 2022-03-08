@@ -1,7 +1,7 @@
 # Created by: Oliver Lehmann
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.71.3
+PORTVERSION=	0.71.4
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
