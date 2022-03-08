@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2022-01-21 10:23:10 UTC
+--- config/gitlab.yml.example.orig	2022-02-21 12:45:48 UTC
 +++ config/gitlab.yml.example
-@@ -1139,14 +1139,14 @@ production: &base
+@@ -1156,14 +1156,14 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -18,7 +18,7 @@
      # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
      # keep_time: 604800   # default: 0 (forever) (in seconds)
      # pg_schema: public     # default: nil, it means that all schemas will be backed up
-@@ -1195,12 +1195,12 @@ production: &base
+@@ -1212,12 +1212,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -34,7 +34,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1215,13 +1215,13 @@ production: &base
+@@ -1232,13 +1232,13 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -50,7 +50,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1234,13 +1234,13 @@ production: &base
+@@ -1251,13 +1251,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -66,7 +66,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1261,16 +1261,16 @@ production: &base
+@@ -1278,16 +1278,16 @@ production: &base
  
      # Sidekiq exporter is webserver built in to Sidekiq to expose Prometheus metrics
      sidekiq_exporter:
@@ -91,7 +91,7 @@
  
      # Web exporter is a dedicated Rack server running alongside Puma to expose Prometheus metrics
      # It runs alongside the `/metrics` endpoints to ease the publish of metrics
-@@ -1488,13 +1488,13 @@ test:
+@@ -1508,13 +1508,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:

@@ -1,8 +1,8 @@
---- Gemfile.orig	2022-01-21 10:23:10 UTC
+--- Gemfile.orig	2022-02-21 12:45:48 UTC
 +++ Gemfile
 @@ -4,7 +4,7 @@ source 'https://rubygems.org'
  
- gem 'rails', '~> 6.1.4.4'
+ gem 'rails', '~> 6.1.4.6'
  
 -gem 'bootsnap', '~> 1.9.1', require: false
 +gem 'bootsnap', '~> 1.9', require: false
@@ -99,7 +99,7 @@
 -end
 -
 -group :development, :test, :danger do
--  gem 'gitlab-dangerfiles', '~> 2.6.1', require: false
+-  gem 'gitlab-dangerfiles', '~> 2.8.0', require: false
 -end
 -
 -group :development, :test, :coverage do
@@ -143,7 +143,7 @@
  gem 'octokit', '~> 4.15'
  
  # Updating this gem version here is deprecated. See:
-@@ -542,3 +440,6 @@ gem 'ipaddress', '~> 0.8.3'
+@@ -535,3 +433,6 @@ gem 'ipaddress', '~> 0.8.3'
  gem 'parslet', '~> 1.8'
  
  gem 'ipynbdiff', '0.3.8'

@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.7.3
-PORTREVISION=	2
+PORTVERSION=	14.8.0
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,15 +18,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=2.17.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-agent>=14.4.0:net/gitlab-agent \
-	gitlab-pages>=1.51.0:www/gitlab-pages \
-	gitlab-shell>=13.22.2:devel/gitlab-shell \
+	gitlab-agent>=14.8.1:net/gitlab-agent \
+	gitlab-pages>=1.54.0:www/gitlab-pages \
+	gitlab-shell>=13.23.2:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
-	rubygem-rails61>=6.1.4.4<6.1.5:www/rubygem-rails61 \
+	rubygem-rails61>=6.1.4.6<6.1.5:www/rubygem-rails61 \
 	rubygem-bootsnap>=1.9.1<1.11:devel/rubygem-bootsnap \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
@@ -75,7 +75,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-attr_encrypted>=3.1.0<3.2.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1<0.3.0:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.11<1.1.0:dns/rubygem-validates_hostname \
-	rubygem-rubyzip20>=2.0.0<2.1.0:archivers/rubygem-rubyzip20 \
+	rubygem-rubyzip>=2.3.2<2.4:archivers/rubygem-rubyzip \
 	rubygem-acme-client>=2.0.9<3:security/rubygem-acme-client \
 	rubygem-browser>=4.2<5.0:www/rubygem-browser \
 	rubygem-ohai>=16.10<17:sysutils/rubygem-ohai \
@@ -140,12 +140,12 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-diff_match_patch>=0.1.0<0.2.0:textproc/rubygem-diff_match_patch \
 	rubygem-rack>=2.2.3<2.3,3:www/rubygem-rack \
 	rubygem-rack-timeout>=0.5.1<0.6:www/rubygem-rack-timeout \
-	rubygem-puma>=5.5.2<5.6:www/rubygem-puma \
+	rubygem-puma>=5.6.2<5.7:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0.3.1:www/rubygem-puma_worker_killer \
 	rubygem-sd_notify>=0.1.0<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=9.0<10:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq>=6.3<7:devel/rubygem-sidekiq \
+	rubygem-sidekiq>=6.4<7:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron>=1.2<2.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.8.1<1.9.0:databases/rubygem-redis-namespace \
 	rubygem-gitlab-sidekiq-fetcher>=0.8.0<0.9:devel/rubygem-gitlab-sidekiq-fetcher \
@@ -159,7 +159,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-js_regex>=3.7<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
 	rubygem-redis44>=4.4.0<4.5:databases/rubygem-redis44 \
-	rubygem-connection_pool>=2.0<3.0:net/rubygem-connection_pool \
+	rubygem-connection_pool>=2.2.5<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack-rails61>=5.2.0<5.3:databases/rubygem-redis-actionpack-rails61 \
 	rubygem-discordrb-webhooks>=3.4<4.0:net-im/rubygem-discordrb-webhooks \
 	rubygem-jira-ruby>=2.1.4<2.2:devel/rubygem-jira-ruby \
@@ -186,14 +186,14 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 	rubygem-tanuki_emoji>=0.5<1:graphics/rubygem-tanuki_emoji \
 	rubygem-gon-rails61>=6.4.0<6.5:www/rubygem-gon-rails61 \
-	rubygem-request_store>=1.5<2.0:devel/rubygem-request_store \
+	rubygem-request_store>=1.5.1<2.0:devel/rubygem-request_store \
 	rubygem-base32>=0.3.0<0.4.0:converters/rubygem-base32 \
-	rubygem-gitlab-license>=2.0<3:devel/rubygem-gitlab-license \
+	rubygem-gitlab-license>=2.1.0<2.2:devel/rubygem-gitlab-license \
 	rubygem-rack-attack>=6.3.0<6.4.0:www/rubygem-rack-attack \
 	rubygem-sentry-raven>=3.1<4.0:devel/rubygem-sentry-raven \
 	rubygem-pg_query>=2.1<3:databases/rubygem-pg_query \
 	rubygem-premailer-rails-rails61>=1.10.3<1.11.0:mail/rubygem-premailer-rails-rails61 \
-	rubygem-gitlab-labkit>=0.21.3<0.22:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=0.22.0<0.23:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.14.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.15<4.0:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails61>=6.0<7.0:devel/rubygem-rails-i18n-rails61 \
@@ -223,12 +223,9 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-vmstat>=2.3.0<2.4.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.4.3<1.5:sysutils/rubygem-sys-filesystem \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
-	rubygem-net-ssh>=6.0<7,2:security/rubygem-net-ssh \
-	rubygem-sshkey>=2.0<3.0:security/rubygem-sshkey \
-	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
-	rubygem-bcrypt_pbkdf>=1.1<2.0:security/rubygem-bcrypt_pbkdf \
+	rubygem-ssh_data>=1.2<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
-	rubygem-gitaly>=14.6.0.pre.rc1<14.7.0:net/rubygem-gitaly \
+	rubygem-gitaly>=14.8.0.pre.rc1<14.9.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2,1<0.0.3,1:net/rubygem-kas-grpc \
 	rubygem-grpc142>=1.42.0<1.43:net/rubygem-grpc142 \
 	rubygem-google-protobuf>=3.19.0<3.20:devel/rubygem-google-protobuf \
@@ -237,7 +234,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-flipper-active_record-rails61>=0.21.0<0.22:databases/rubygem-flipper-active_record-rails61 \
 	rubygem-flipper-active_support_cache_store-rails61>=0.21.0<0.22:devel/rubygem-flipper-active_support_cache_store-rails61 \
 	rubygem-unleash>=3.2.2<3.3:devel/rubygem-unleash \
-	rubygem-gitlab-experiment>=0.6.5<0.7:devel/rubygem-gitlab-experiment \
+	rubygem-gitlab-experiment>=0.7.0<0.8:devel/rubygem-gitlab-experiment \
 	rubygem-lograge-rails61>=0.11.2<1.0:www/rubygem-lograge-rails61 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
@@ -278,7 +275,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	293f6bb322ba6f3aba63744cea1cc3c9d648aba0
+GL_COMMIT=	3f274363e9dc9a1be75edfcd3dd5adb64b1e8c29
 
 USERS=	git
 GROUPS=	git
