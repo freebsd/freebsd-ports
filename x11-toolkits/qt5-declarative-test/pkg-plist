@@ -25,7 +25,7 @@
 %%QT_QMLDIR%%/QtTest/SignalSpy.qml
 %%QT_QMLDIR%%/QtTest/TestCase.qml
 %%QT_QMLDIR%%/QtTest/libqmltestplugin.so
-%%QT_QMLDIR%%/QtTest/libqmltestplugin.so.debug
+%%DEBUG%%%%QT_QMLDIR%%/QtTest/libqmltestplugin.so.debug
 %%QT_QMLDIR%%/QtTest/plugins.qmltypes
 %%QT_QMLDIR%%/QtTest/qmldir
 %%QT_QMLDIR%%/QtTest/testlogger.js
