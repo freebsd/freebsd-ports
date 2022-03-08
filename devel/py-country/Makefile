@@ -1,11 +1,11 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 
 PORTNAME=	country
-PORTVERSION=	18.5.26
+DISTVERSION=	22.3.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pycountry-${PORTVERSION}
+DISTNAME=	pycountry-${DISTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python API for ISO country, subdivision, language and currency
