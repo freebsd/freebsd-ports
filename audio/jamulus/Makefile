@@ -1,7 +1,6 @@
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_8_1
-PORTREVISION=	1
+DISTVERSION=	3_8_2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,7 @@ USE_QT+=	gui widgets
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/applications/${PORTNAME}-server.desktop \
+		share/man/man1/Jamulus.1.gz \
 		share/pixmaps/${PORTNAME}.png \
 		share/pixmaps/${PORTNAME}-server.png
 .endif
