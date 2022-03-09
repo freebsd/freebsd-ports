@@ -1,5 +1,5 @@
---- vendor/libc-0.2.106/src/unix/bsd/freebsdlike/freebsd/riscv64.rs.orig	2021-11-05 13:41:21 UTC
-+++ vendor/libc-0.2.106/src/unix/bsd/freebsdlike/freebsd/riscv64.rs
+--- vendor/libc-0.2.108/src/unix/bsd/freebsdlike/freebsd/riscv64.rs.orig	2021-11-05 13:41:21 UTC
++++ vendor/libc-0.2.108/src/unix/bsd/freebsdlike/freebsd/riscv64.rs
 @@ -0,0 +1,154 @@
 +pub type c_char = u8;
 +pub type c_long = i64;

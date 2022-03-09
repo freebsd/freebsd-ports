@@ -1,6 +1,6 @@
---- vendor/libc/src/unix/bsd/freebsdlike/freebsd/freebsd11/mod.rs.orig	2021-11-29 20:27:33 UTC
-+++ vendor/libc/src/unix/bsd/freebsdlike/freebsd/freebsd11/mod.rs
-@@ -217,7 +217,8 @@ extern "C" {
+--- vendor/libc-0.2.108/src/unix/bsd/freebsdlike/freebsd/freebsd12/mod.rs.orig	2021-11-29 20:27:33 UTC
++++ vendor/libc-0.2.108/src/unix/bsd/freebsdlike/freebsd/freebsd12/mod.rs
+@@ -241,7 +241,8 @@ extern "C" {
  
  cfg_if! {
      if #[cfg(any(target_arch = "x86_64",
