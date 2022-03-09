@@ -1,8 +1,9 @@
 PORTNAME=	cdialog
-DISTVERSION=	1.3.20201126
+DISTVERSION=	1.3-20220117
 PORTEPOCH=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME:S|^c||}/
+MASTER_SITES=	ftp://ftp.invisible-island.net/pub/${PORTNAME:S|^c||}/\
+		https://invisible-mirror.net/archives/${PORTNAME:S|^c||}/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	jcpierri@gmail.com
