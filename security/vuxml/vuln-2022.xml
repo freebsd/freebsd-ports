@@ -1,3 +1,43 @@
+  <vuln vid="2823048d-9f8f-11ec-8c9c-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.8.0</ge><lt>14.8.2</lt></range>
+	<range><ge>14.7.0</ge><lt>14.7.4</lt></range>
+	<range><ge>0</ge><lt>14.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/02/25/critical-security-release-gitlab-14-8-2-released/">
+	  <p>Runner registration token disclosure through Quick Actions</p>
+	  <p>Unprivileged users can add other users to groups through an API endpoint</p>
+	  <p>Inaccurate display of Snippet contents can be potentially misleading to users</p>
+	  <p>Environment variables can be leaked via the sendmail delivery method</p>
+	  <p>Unauthenticated user enumeration on GraphQL API</p>
+	  <p>Adding a mirror with SSH credentials can leak password</p>
+	  <p>Denial of Service via user comments</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0735</cvename>
+      <cvename>CVE-2022-0549</cvename>
+      <cvename>CVE-2022-0751</cvename>
+      <cvename>CVE-2022-0741</cvename>
+      <cvename>CVE-2021-4191</cvename>
+      <cvename>CVE-2022-0738</cvename>
+      <cvename>CVE-2022-0489</cvename>
+      <url>https://about.gitlab.com/releases/2022/02/25/critical-security-release-gitlab-14-8-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-02-25</discovery>
+      <entry>2022-03-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b8f38b8-9e3b-11ec-9629-a0369f17b2e4">
   <vuln vid="b3695b08-3b3a-11eb-af2a-080027dbe4b7">
     <topic>glpi -- Public GLPIKEY can be used to decrypt any data</topic>
