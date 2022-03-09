@@ -6,6 +6,17 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
 #include <linux/perf_event.h>
          ^~~~~~~~~~~~~~~~~~~~
 
+--- level_zero/tools/source/sysman/engine/linux/CMakeLists.txt.orig	2022-03-09 15:02:18 UTC
++++ level_zero/tools/source/sysman/engine/linux/CMakeLists.txt
+@@ -9,7 +9,7 @@ set(L0_SRCS_TOOLS_SYSMAN_ENGINE_LINUX
+     ${CMAKE_CURRENT_SOURCE_DIR}/os_engine_imp.h
+ )
+ 
+-if(NEO_ENABLE_i915_PRELIM_DETECTION)
++if(NEO_ENABLE_i915_PRELIM_DETECTION AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
+   list(APPEND L0_SRCS_TOOLS_SYSMAN_ENGINE_LINUX
+        ${CMAKE_CURRENT_SOURCE_DIR}/os_engine_imp_prelim.cpp
+   )
 --- level_zero/tools/source/sysman/engine/linux/os_engine_imp.cpp.orig	2021-03-24 20:23:19 UTC
 +++ level_zero/tools/source/sysman/engine/linux/os_engine_imp.cpp
 @@ -49,9 +49,11 @@ ze_result_t LinuxEngineImp::getActivity(zes_engine_sta
