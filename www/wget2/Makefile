@@ -1,6 +1,6 @@
 PORTNAME=	wget2
 DISTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	GNU/wget
 
@@ -30,7 +30,8 @@ OPTIONS_SUB=	yes
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 IDN_CONFIGURE_WITH=	libidn2
 
-MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc \
+			gsed:textproc/gsed
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 

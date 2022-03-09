@@ -1,0 +1,9 @@
+--- docs/wget2_md2man.sh.in.orig	2021-08-21 17:47:39 UTC
++++ docs/wget2_md2man.sh.in
+@@ -11,5 +11,5 @@ set -e
+   echo ""
+   cat "$1"
+ ) | \
+-sed '/# Wget2/,/^#/{/^# </!d}' | \
++gsed '/# Wget2/,/^#/{/^# </!d}' | \
+ $PANDOC -s -f markdown -t man -o "$2"
