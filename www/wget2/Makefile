@@ -1,6 +1,6 @@
 PORTNAME=	wget2
 DISTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	GNU/wget
 
@@ -16,13 +16,13 @@ USES=		autoreconf charsetfix cpe iconv libtool:build localbase pkgconfig tar:lz
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	wget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-lzip  # not in ports yet
+CONFIGURE_ARGS=	--without-lz  # not in ports yet
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	IDN MANPAGES DOXYGEN NLS PSL NGHTTP2 BROTLI ZSTD GPGME TEST HSTS
 OPTIONS_RADIO=	SSL PCRE
-OPTIONS_RADIO_SSL=GNUTLS OPENSSL # WOLFSSL
+OPTIONS_RADIO_SSL=GNUTLS OPENSSL NOSSL # WOLFSSL
 OPTIONS_RADIO_PCRE=PCRE1 PCRE2
 OPTIONS_DEFAULT=IDN MANPAGES OPENSSL NLS PSL NGHTTP2 BROTLI ZSTD GPGME TEST HSTS
 OPTIONS_SUB=	yes
@@ -72,27 +72,26 @@ GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 TEST_TEST_TARGET=	check
 TEST_CONFIGURE_WITH=	libmicrohttpd
-TEST_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
+TEST_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd \
+			libgnutls.so:security/gnutls
 TEST_TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 			p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
-.include <bsd.port.options.mk>
+OPENSSL_CONFIGURE_ON=	--with-ssl=openssl --with-openssl
+OPENSSL_USES=		ssl
+OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
+OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 
-.if ${PORT_OPTIONS:MOPENSSL}
-USES+=		ssl
-CONFIGURE_ARGS+=--with-ssl=openssl --with-openssl
-CPPFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-.elif ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
-CONFIGURE_ARGS+=--with-ssl=gnutls
-.elif ${PORT_OPTIONS:MWOLFSSL}
-BROKEN=		does not build: use of undeclared identifier WOLFSSL_ALPN_CONTINUE_ON_MISMATCH
-LIB_DEPENDS+=	libwolfssl.so:security/wolfssl
-CONFIGURE_ARGS+=--with-ssl=wolfssl
-.else
-CONFIGURE_ARGS+=--with-ssl=none
-.endif
+GNUTLS_CONFIGURE_ON=	--with-ssl=gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+
+WOLFSSL_CONFIGURE_ON=	--with-ssl=wolfssl
+WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
+WOLFSSL_BROKEN=		does not build: use of undeclared identifier WOLFSSL_ALPN_CONTINUE_ON_MISMATCH
+
+NOSSL_DESC=		Disable SSL support
+NOSSL_LIB_DEPENDS=	libnettle.so:security/nettle  # still required libnettle for hashing and checksumming
+NOSSL_CONFIGURE_ON=	--with-ssl=none
 
 post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -e '/AC_CHECK_PROGS/ s|pandoc|&-not-found|' ${WRKSRC}/configure.ac
