@@ -1,2 +1,3 @@
-SHA256 (django-voting-0.2.tar.gz) = 0b09805478040289d05579b4ae0f7412b4c1350b9a2cedc14610d24ae17bdd84
-SIZE (django-voting-0.2.tar.gz) = 14724
+TIMESTAMP = 1646761432
+SHA256 (django-voting-1.0.tar.gz) = 161581586a18f4eab4a691a61f970026880d92ab265c362c46fe497622019720
+SIZE (django-voting-1.0.tar.gz) = 18848
