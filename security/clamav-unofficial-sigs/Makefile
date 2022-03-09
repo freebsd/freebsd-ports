@@ -1,7 +1,7 @@
 # Created by: Marko Njezic <sf@maxempire.com>
 
 PORTNAME=	clamav-unofficial-sigs
-PORTVERSION=	7.0.1
+PORTVERSION=	7.2.5
 CATEGORIES=	security
 
 MAINTAINER=	freebsd@mnd.sc
@@ -14,6 +14,7 @@ COMMON_DEPENDS=	clamscan:security/clamav \
 		rsync:net/rsync \
 		curl:ftp/curl \
 		gpg:security/gnupg \
+		gsed:textproc/gsed \
 		bash:shells/bash
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
