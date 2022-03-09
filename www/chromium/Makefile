@@ -2,7 +2,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	99.0.4844.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:fonts
@@ -98,7 +98,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_wmax_tokens=false \
 		fatal_linker_warnings=false \
 		is_clang=true \
-		optimize_webui=false \
+		optimize_webui=true \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
