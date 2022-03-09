@@ -1,7 +1,7 @@
 # Created by: Sergey Matveychuk <sem@ciam.ru>
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.119
+PORTVERSION=	2.8.120
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
