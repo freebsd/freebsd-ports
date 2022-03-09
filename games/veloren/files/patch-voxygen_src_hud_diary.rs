@@ -1,0 +1,13 @@
+https://gitlab.com/veloren/veloren/-/issues/1493
+
+--- voxygen/src/hud/diary.rs.orig	2022-03-08 09:15:13 UTC
++++ voxygen/src/hud/diary.rs
+@@ -1260,7 +1260,7 @@ impl<'a> Widget for Diary<'a> {
+                                 (None, None) => String::new(),
+                             }
+                         },
+-                        unknown => unreachable!(unknown),
++                        unknown => unreachable!("unknown"),
+                     };
+ 
+                     let mut number = Text::new(&value)
