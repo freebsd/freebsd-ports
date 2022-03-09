@@ -22,7 +22,7 @@ USE_QT=		core buildtools designer gui multimedia network printsupport \
 		qmake sql svg testlib uitools widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
-CXXFLAGS+=	-fPIC -I${LOCALBASE}/include/qt5 \
+CXXFLAGS+=	-fdeclspec -fPIC -I${LOCALBASE}/include/qt5 \
 		${QT5MODULES:S,^,-I${LOCALBASE}/include/qt5/Qt,}
 LDFLAGS+=	${LIBS} ${QT5MODULES:S,^,-lQt5,} \
 		-L${LOCALBASE}/lib/qt5 -lpthread
