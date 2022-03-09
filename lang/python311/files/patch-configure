@@ -1,0 +1,11 @@
+--- configure.orig	2022-02-23 19:32:58 UTC
++++ configure
+@@ -7244,7 +7244,7 @@ fi
+ 
+ if test "$Py_LTO" = 'true' ; then
+   case $CC in
+-    *clang*)
++    *clang*|cc)
+             LDFLAGS_NOLTO="-fno-lto"
+ 
+       if test -n "$ac_tool_prefix"; then
