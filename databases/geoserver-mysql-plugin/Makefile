@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 
 PORTNAME=	geoserver
-PORTVERSION=	2.20.2
+PORTVERSION=	2.20.3
 CATEGORIES=	databases geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}/extensions
 PKGNAMESUFFIX=	-mysql-plugin
@@ -16,12 +16,12 @@ RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:graphics/geoserver
 
 USES=		zip
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 GSLIBDIR=	geoserver/webapps/geoserver/WEB-INF/lib
-SUB_FILES=	pkg-message
-PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-26.2.jar \
+PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-26.3.jar \
 		${GSLIBDIR}/mysql-connector-java-8.0.23.jar
 
 do-install:
