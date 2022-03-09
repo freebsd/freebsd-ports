@@ -41,7 +41,7 @@ USES=		cmake:noninja gmake compiler:c++11-lib desktop-file-utils \
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
-		sql svg testlib widgets x11extras xml \
+		sql svg testlib widgets x11extras xml sql-sqlite3_run \
 		buildtools_build qmake_build
 USE_XORG=	ice sm xcb xext xi
 
