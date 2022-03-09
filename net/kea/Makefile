@@ -16,7 +16,7 @@ LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
 
 # ISC releases things like 1.4.0-P1, which our versioning doesn't like
-ISCVERSION=	2.0.1
+ISCVERSION=	2.0.2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
