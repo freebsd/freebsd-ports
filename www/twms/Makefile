@@ -3,7 +3,7 @@ PORTVERSION=	0.06y
 PORTREVISION=	1
 CATEGORIES=	www astro
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny WMS server
 
 LICENSE=	GPLv3+
