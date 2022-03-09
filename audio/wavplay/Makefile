@@ -1,10 +1,9 @@
 # Created by: greg
 
 PORTNAME=	wavplay
-PORTVERSION=	1.4
-PORTREVISION=	4
+PORTVERSION=	2.0
 CATEGORIES=	audio
-MASTER_SITES=	SUNSITE/apps/sound/players/
+MASTER_SITES=	SF/${PORTNAME}/Release%20Downloads/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Wav player and recorder
@@ -15,13 +14,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	does not play sound correctly
 
-CFLAGS+=	-D_WANT_SEMUN
+USES=		autoreconf libtool:build
+GNU_CONFIGURE=	yes
 
-INSTALL_TARGET=	install PREFIX="${STAGEDIR}${PREFIX}"
+OPTIONS_DEFINE=	X11
+OPTIONS_SUB=	yes
 
-PLIST_FILES=	bin/wavplay bin/wavrec man/man1/${PORTNAME}.1.gz
+X11_CONFIGURE_OFF=	--enable-nox
+X11_USES=		localbase:ldflags xorg
+X11_USE=		XORG=x11,xmu,xt
+X11_LIB_DEPENDS=	libXm.so:x11-toolkits/lesstif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|u_long|u_int|g' ${WRKSRC}/*.c ${WRKSRC}/*.h
+	@${REINPLACE_CMD} -e 's|machine/soundcard|sys/soundcard|g' ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>

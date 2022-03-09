@@ -1,0 +1,5 @@
+bin/wavplay
+bin/wavplay-config
+bin/wavrec
+%%X11%%bin/xltwavplay
+man/man1/wavplay.1.gz
