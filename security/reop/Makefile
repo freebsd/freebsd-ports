@@ -1,8 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	reop
-PORTVERSION=	2.1.0
-PORTREVISION=	4
+PORTVERSION=	2.1.1
 CATEGORIES=	security
 MASTER_SITES=	https://humungus.tedunangst.com/r/reop/d/
 
@@ -16,8 +15,8 @@ LIB_DEPENDS=	libsodium.so:security/libsodium
 USES=		gmake tar:tgz
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS+=	CPPFLAGS="-D_NSIG=NSIG" \
-		CFLAGS+="-I${LOCALBASE}/include -Iother -Wno-pointer-sign" \
+MAKE_ARGS+=	CFLAGS+="-I${LOCALBASE}/include -Iother -Wno-pointer-sign" \
+		CPPFLAGS="-D_NSIG=NSIG" \
 		PREFIX="${STAGEDIR}${PREFIX}"
 
 PLIST_FILES=	bin/reop \
