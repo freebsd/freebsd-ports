@@ -794,7 +794,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/oshi-core-5.8.6.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/picocontainer-1.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/pngj-2.0.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/postgresql-42.2.19.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/postgresql-42.3.3.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/serializer-2.7.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/si-quantity-%%SI%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/si-units-%%SI%%.jar
