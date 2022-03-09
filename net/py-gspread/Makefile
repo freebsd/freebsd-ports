@@ -1,7 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	gspread
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
