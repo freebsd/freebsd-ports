@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b389ce89bdb6.patch:-p1 # unbreak JXL
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AV1 reference encoder/decoder
 
@@ -28,9 +31,6 @@ JXL_DESC=		Encoding tuning for Butteraugli
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 JXL_USES=		pkgconfig
 JXL_CMAKE_ON=		-DCONFIG_TUNE_BUTTERAUGLI:STRING=1
-JXL_BROKEN=		fails to build after \
-			https://aomedia.googlesource.com/aom/+/dba4f0f3efda%5E!/ \
-			https://aomedia.googlesource.com/aom/+/b89e8f8f7a2c%5E!/
 
 VMAF_DESC=		Encoding tuning for VMAF
 VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
