@@ -1,5 +1,5 @@
 PORTNAME=	mecrisp-stellaris
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	lang
 MASTER_SITES=	SF/mecrisp
 
