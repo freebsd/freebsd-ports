@@ -52,6 +52,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_Bank.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VC_BTC_Sigwit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_BitcoinCash.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Ethereum.png
