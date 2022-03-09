@@ -1,19 +1,14 @@
---- configure.ac.orig	2022-01-16 14:23:16 UTC
+--- configure.ac.orig	2022-01-25 13:04:14 UTC
 +++ configure.ac
-@@ -15,10 +15,10 @@ dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOS
- dnl GNU General Public License for more details.
- 
- AC_PREREQ(2.57)
--AC_INIT([geeqie], m4_translit(m4_esyscmd([if [ $(git tag --list 'v[1-9]*' --points-at HEAD | wc -c) -gt 0 ]; then git tag --list v[1-9]* --points-at HEAD | tail -n 1 | tr -d 'v' ; else git tag --list v[1-9]* | tail -n 1 | tr -d 'v' && echo "+git" && git log --max-count=1 --date=format:"%Y%m%d" --format="%ad" && echo "-" && git rev-parse --quiet --verify --short HEAD; fi ]), m4_newline), [geeqie@freelists.org], [], [http://www.geeqie.org/])
-+AC_INIT([geeqie], 0, [geeqie@freelists.org], [], [http://www.geeqie.org/])
+@@ -18,7 +18,6 @@ AC_PREREQ(2.57)
+ AC_INIT([geeqie], m4_translit(m4_esyscmd([./version.sh]), m4_newline), [geeqie@freelists.org], [], [http://www.geeqie.org/])
  
  # Add -Werror to the default CFLAGS
 -CFLAGS+=" -Werror -Wno-error=deprecated-declarations -Wno-error=sign-compare -Wno-error=return-type"
-+#CFLAGS+=" -Werror -Wno-error=deprecated-declarations -Wno-error=sign-compare -Wno-error=return-type"
  
  # Check for rightly dirs
  AC_CONFIG_SRCDIR([src/main.c])
-@@ -550,7 +550,7 @@ AC_ARG_ENABLE([lua],
+@@ -550,7 +549,7 @@ AC_ARG_ENABLE([lua],
      [liblua=$enableval], [liblua=auto])
  
  if test "x${liblua}" != "xno"; then
@@ -22,7 +17,7 @@
      [
        HAVE_LUA=yes
        AC_DEFINE(HAVE_LUA, 1, [define to enable lua support])
-@@ -763,7 +763,7 @@ AC_SUBST(JPEGXL_LIBS)
+@@ -763,7 +762,7 @@ AC_SUBST(JPEGXL_LIBS)
  #  Markdown support
  # ----------------------------------------------------------------------
  
