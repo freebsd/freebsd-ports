@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	maptools
-DISTVERSION=	1.1-2
+DISTVERSION=	1.1-3
 CATEGORIES=	astro
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
