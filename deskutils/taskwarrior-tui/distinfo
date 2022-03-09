@@ -1,4 +1,4 @@
-TIMESTAMP = 1644681767
+TIMESTAMP = 1645825868
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
 SIZE (rust/crates/addr2line-0.17.0.crate) = 32260
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -391,5 +391,5 @@ SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
 SHA256 (kdheepak-task-hookrs-6f04ee63c0d58bb0fe9bd6563457df52b5b5f84d_GH0.tar.gz) = a0fe4df81ac13c63ef9bfe855b7ddbfa7ea8def5baaaa1afc32eeabd941c5a3d
 SIZE (kdheepak-task-hookrs-6f04ee63c0d58bb0fe9bd6563457df52b5b5f84d_GH0.tar.gz) = 20104
-SHA256 (kdheepak-taskwarrior-tui-v0.19.1_GH0.tar.gz) = a591f3e07e4c0dfb7569249f3bbc5be4a58b3272c786b630a8454090f6cca07a
-SIZE (kdheepak-taskwarrior-tui-v0.19.1_GH0.tar.gz) = 76358
+SHA256 (kdheepak-taskwarrior-tui-v0.20.1_GH0.tar.gz) = a308d44cec4693fa1595b48d938ae7398743b8073de0ffce4ea9214f66c4b1e1
+SIZE (kdheepak-taskwarrior-tui-v0.20.1_GH0.tar.gz) = 77344
