@@ -146,6 +146,7 @@ libexec/trafficserver/inliner.so
 libexec/trafficserver/ja3_fingerprint.so
 libexec/trafficserver/libloader.so
 %%IMAGEMAGICK%%libexec/trafficserver/magick.so
+libexec/trafficserver/maxmind_acl.so
 libexec/trafficserver/memory_profile.so
 libexec/trafficserver/metalink.so
 libexec/trafficserver/money_trace.so

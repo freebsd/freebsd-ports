@@ -1,7 +1,7 @@
 # Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 
 PORTNAME=	trafficserver
-PORTVERSION=	9.1.1
+PORTVERSION=	9.1.2
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
