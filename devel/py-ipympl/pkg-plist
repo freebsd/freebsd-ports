@@ -1,0 +1,4 @@
+etc/jupyter/nbconfig/notebook.d/jupyter-matplotlib.json
+%%PYTHON_SITELIBDIR%%/ipympl/nbextension/package.json
+share/jupyter/labextensions/jupyter-matplotlib
+share/jupyter/nbextensions/jupyter-matplotlib
