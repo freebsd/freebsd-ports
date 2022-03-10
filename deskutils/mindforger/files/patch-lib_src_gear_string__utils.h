@@ -1,11 +1,12 @@
---- lib/src/gear/string_utils.h.orig	2020-03-08 17:03:52 UTC
+--- lib/src/gear/string_utils.h.orig	2022-01-09 17:09:45 UTC
 +++ lib/src/gear/string_utils.h
-@@ -114,12 +114,12 @@ static inline char *stringTrim(const char *s) {
- }
- 
- static inline std::string &stringLeftTrim(std::string& s) {
--    s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(isspace))));
-+    s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int c) { return !std::isspace(c); }));
+@@ -118,13 +118,13 @@ static inline std::string &stringLeftTrim(std::string&
+         s.begin(),
+         std::find_if(s.begin(),
+         s.end(),
+-        std::not1(std::ptr_fun<int, int>(isspace)))
++        [](int c) { return !std::isspace(c); })
+     );
      return s;
  }
  

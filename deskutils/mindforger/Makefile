@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	mindforger
-PORTVERSION=	1.53.0
+PORTVERSION=	1.54.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -48,6 +48,7 @@ post-patch:
 		${WRKSRC}/app/src/qt/note_view_presenter.cpp \
 		${WRKSRC}/app/src/qt/note_view_presenter.h \
 		${WRKSRC}/app/src/qt/outline_header_view_presenter.cpp
+	@${REINPLACE_CMD} -e 's/53/54/' ${WRKSRC}/lib/src/app_info.h
 	@${REINPLACE_CMD} -e 's/_current_dir_name(/cwd(nullptr, 0/' \
 		${WRKSRC}/lib/src/gear/file_utils.cpp
 
