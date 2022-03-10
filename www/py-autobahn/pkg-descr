@@ -11,4 +11,4 @@ WebSocket allows bidirectional real-time messaging on the Web and WAMP
 adds asynchronous Remote Procedure Calls and Publish & Subscribe on top
 of WebSocket.
 
-WWW: http://autobahn.ws/python
+WWW: https://github.com/crossbario/autobahn-python
