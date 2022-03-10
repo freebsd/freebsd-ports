@@ -16,6 +16,7 @@ include/xine/input_plugin.h
 include/xine/io_helper.h
 include/xine/list.h
 include/xine/metronom.h
+include/xine/mfrag.h
 include/xine/os_types.h
 include/xine/osd.h
 include/xine/plugin_catalog.h
@@ -28,6 +29,7 @@ include/xine/scratch.h
 include/xine/sorted_array.h
 include/xine/spu.h
 include/xine/spu_decoder.h
+include/xine/stree.h
 include/xine/tickets.h
 include/xine/vdr.h
 include/xine/version.h
@@ -47,7 +49,7 @@ lib/libxine.la
 lib/libxine-interface.la
 lib/libxine.so
 lib/libxine.so.2
-lib/libxine.so.2.9.0
+lib/libxine.so.2.10.0
 %%PLUGINSDIR%%/mime.types
 %%PLUGINSDIR%%/post/xineplug_post_audio_filters.so
 %%PLUGINSDIR%%/post/xineplug_post_goom.so
@@ -56,6 +58,11 @@ lib/libxine.so.2.9.0
 %%PLUGINSDIR%%/post/xineplug_post_switch.so
 %%PLUGINSDIR%%/post/xineplug_post_tvtime.so
 %%PLUGINSDIR%%/post/xineplug_post_visualizations.so
+%%PLUGINSDIR%%/xineplug_hw_frame_vaapi.so
+%%PLUGINSDIR%%/xineplug_va_display_drm.so
+%%PLUGINSDIR%%/xineplug_va_display_glx.so
+%%PLUGINSDIR%%/xineplug_va_display_wl.so
+%%PLUGINSDIR%%/xineplug_va_display_x11.so
 %%ALSA%%%%PLUGINSDIR%%/xineplug_ao_out_alsa.so
 %%JACK%%%%PLUGINSDIR%%/xineplug_ao_out_jack.so
 %%PLUGINSDIR%%/xineplug_ao_out_oss.so

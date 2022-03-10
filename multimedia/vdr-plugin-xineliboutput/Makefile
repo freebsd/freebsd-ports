@@ -2,7 +2,7 @@
 
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20120511
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xineliboutput/files/xineliboutput/vdr-xineliboutput-${PORTVERSION}/:release \
 		LOCAL/nox:snapshot
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--add-cflags=-I${VDRDIR} \
 PATCH_STRIP=	-p1
 
 WRKSRC=			${WRKDIR}/vdr-${PLUGIN}
-XINE_PLUGINSDIR=	lib/xine/plugins/2.9
+XINE_PLUGINSDIR=	lib/xine/plugins/2.10
 
 PLIST_SUB=	XINE_PLUGINSDIR=${XINE_PLUGINSDIR}
 PORTDOCS=	HISTORY README
