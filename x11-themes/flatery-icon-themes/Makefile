@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	flatery-icon-themes
-DISTVERSION=	2021-09-08
+DISTVERSION=	2022-01-17
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -13,17 +13,12 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	cbrnix
 GH_PROJECT=	Flatery
-GH_TAGNAME=	d96f58c
+GH_TAGNAME=	59ebcf4cb7a68
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-post-patch:
-	${RM} ${WRKSRC}/.directory \
-	${WRKSRC}/README.md \
-	${WRKSRC}/install.sh \
-	${WRKSRC}/cover.png
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
-	${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/icons
+	${CP} -R ${WRKSRC}/Flatery* ${STAGEDIR}${PREFIX}/share/icons
 
 .include <bsd.port.mk>
