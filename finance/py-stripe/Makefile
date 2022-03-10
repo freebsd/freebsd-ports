@@ -1,8 +1,7 @@
 # Created by: Trevor Caira <trevor@bitba.se>
-#
 
 PORTNAME=	stripe
-PORTVERSION=	2.29.4
+PORTVERSION=	2.67.0
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
