@@ -1,8 +1,7 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
 
 PORTNAME=	cbor2
-PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTVERSION=	5.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +17,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
-
-NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
