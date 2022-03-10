@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.8.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -53,7 +53,6 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-omniauth-github>=1.4.0<2.0:net/rubygem-omniauth-github \
 	rubygem-omniauth-gitlab>=1.0.2<1.1.0:security/rubygem-omniauth-gitlab \
 	rubygem-omniauth-google-oauth2>=0.6.0<0.7.0:net/rubygem-omniauth-google-oauth2 \
-	rubygem-omniauth-kerberos>=0.3.0<0.4.0:net/rubygem-omniauth-kerberos \
 	rubygem-omniauth-oauth2-generic>=0.2.2<0.3.0:security/rubygem-omniauth-oauth2-generic \
 	rubygem-omniauth-saml>=1.10<2.0:security/rubygem-omniauth-saml \
 	rubygem-omniauth-shibboleth>=1.3.0<1.4.0:security/rubygem-omniauth-shibboleth \
@@ -283,6 +282,13 @@ GROUPS=	git
 NO_BUILD=	yes
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=			KERBEROS
+OPTIONS_DEFAULT=		KERBEROS
+
+KERBEROS_BUILD_DEPENDS=		rubygem-omniauth-kerberos>=0.3.0<0.4.0:net/rubygem-omniauth-kerberos
+KERBEROS_RUN_DEPENDS=		rubygem-omniauth-kerberos>=0.3.0<0.4.0:net/rubygem-omniauth-kerberos
+KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config/gitlab.yml.example \
