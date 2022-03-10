@@ -1,5 +1,5 @@
 bin/opentyrian
-man/man6/opentyrian.6.gz
 share/applications/opentyrian.desktop
+share/man/man6/opentyrian.6.gz
 share/pixmaps/opentyrian.png
 %%DATADIR%%/.keepme
