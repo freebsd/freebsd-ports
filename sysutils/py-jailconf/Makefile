@@ -1,22 +1,21 @@
 PORTNAME=	jailconf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
+DISTVERSION=	0.2.2
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Parse and edit your FreeBSD jail.conf file
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.9:devel/py-ply@${PY_FLAVOR}
 
-USES=		python:3.0+
+USES=		python:3.3+
 USE_GITHUB=	yes # tests nnot packaged in PyPI sdist
-USE_PYTHON=	autoplist distutils
-
-#LICENSE=	"BSD". Unclear. See Upstream #1
-#LICENSE_FILE=	Does not exist
-
 GH_ACCOUNT=	leforestier
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
