@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	scipy
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION}/:doc \
 		CHEESESHOP:source \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++14-lang cpe fortran python:3.7+ shebangfix
+USES=		compiler:c++14-lang cpe fortran python:3.8-3.10 shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
 
 FFLAGS+=	-std=legacy
@@ -35,13 +35,7 @@ PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
 PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
 
-SHEBANG_FILES=	scipy/sparse/linalg/isolve/tests/test_gcrotmk.py
-
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-# This line help fix the plist error because autoplist list it as a file but it is a directory
-	@${TOUCH} ${WRKSRC}/scipy/stats/tests/data/tmp
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/scipy/ -name '*.so' | ${XARGS} ${STRIP_CMD}
@@ -49,5 +43,8 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py
 
 .include <bsd.port.mk>
