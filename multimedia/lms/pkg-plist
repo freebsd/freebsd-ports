@@ -3,12 +3,14 @@ bin/lms-metadata
 bin/lms-recommendation
 lib/liblmsauth.so
 lib/liblmsav.so
-lib/liblmscover.so
 lib/liblmsdatabase.so
+lib/liblmsimage.so
 lib/liblmsmetadata.so
 lib/liblmsrecommendation.so
 lib/liblmsscanner.so
 lib/liblmsscrobbling.so
+lib/liblmsservice-cover.so
+lib/liblmssom.so
 lib/liblmssubsonic.so
 lib/liblmsutils.so
 @sample etc/lms.conf.sample

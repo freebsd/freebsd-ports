@@ -1,4 +1,4 @@
---- src/libs/utils/impl/ChildProcess.cpp.orig	2021-04-25 18:33:13 UTC
+--- src/libs/utils/impl/ChildProcess.cpp.orig	2022-02-02 17:25:04 UTC
 +++ src/libs/utils/impl/ChildProcess.cpp
 @@ -68,6 +68,7 @@ ChildProcess::ChildProcess(boost::asio::io_context& io
  	if (res < 0)
@@ -6,11 +6,11 @@
  
 +#if !defined(__FreeBSD__) // see https://github.com/epoupon/lms/issues/144
  	{
- 		const std::size_t pipeSize {65536*8};
- 
-@@ -77,6 +78,7 @@ ChildProcess::ChildProcess(boost::asio::io_context& io
- 		if (fcntl(pipe[1], F_SETPIPE_SZ, pipeSize) == -1)
+ #if defined(__linux__) && defined(F_SETPIPE_SZ)
+ 		// Just a hint here to prevent the writer from writing too many bytes ahead of the reader
+@@ -79,6 +80,7 @@ ChildProcess::ChildProcess(boost::asio::io_context& io
  			throw SystemException {errno, "fcntl failed!"};
+ #endif
  	}
 +#endif
  

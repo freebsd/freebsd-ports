@@ -1,6 +1,5 @@
 PORTNAME=	lms
-DISTVERSION=	3.25.2
-PORTREVISION=	1
+DISTVERSION=	3.28.0
 MASTER_SITES=	https://github.com/epoupon/lms/archive/refs/tags/v${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 CATEGORIES=	multimedia
 
@@ -10,6 +9,8 @@ COMMENT=	Lightweight Music Server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	googletest>0:devel/googletest \
+		${LOCALBASE}/include/stb/stb_image.h:devel/stb
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
