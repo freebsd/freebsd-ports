@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.93.2
+DISTVERSION=	0.94.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -38,11 +38,11 @@ GH_TUPLE=	\
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		evanw:esbuild:v0.14.23:evanw_esbuild/vendor/github.com/evanw/esbuild \
+		evanw:esbuild:v0.14.25:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		frankban:quicktest:v1.14.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.5.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		getkin:kin-openapi:v0.90.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
+		getkin:kin-openapi:v0.91.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-openapi:jsonpointer:v0.19.5:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
 		go-openapi:swag:v0.19.5:go_openapi_swag/vendor/github.com/go-openapi/swag \
@@ -85,7 +85,7 @@ GH_TUPLE=	\
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
-		kyokomi:emoji:v2.2.8:kyokomi_emoji_v2/vendor/github.com/kyokomi/emoji/v2 \
+		kyokomi:emoji:v2.2.9:kyokomi_emoji_v2/vendor/github.com/kyokomi/emoji/v2 \
 		magefile:mage:v1.12.1:magefile_mage/vendor/github.com/magefile/mage \
 		mailru:easyjson:b2ccc519800e:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
@@ -95,7 +95,7 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.4.3:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:v0.3.0:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
-		niklasfasching:go-org:v1.6.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v1.6.2:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v2.0.0-beta.6:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -114,7 +114,7 @@ GH_TUPLE=	\
 		tdewolff:minify:v2.10.0:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.5.27:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		yuin:goldmark:v1.4.7:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.4.8:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		sanity-io:litter:v1.5.2:sanity_io_litter/vendor/github.com/sanity-io/litter
 
 post-extract:
@@ -159,7 +159,7 @@ PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershe
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
 # COMMIT_ID should be the first 8 positions of the commit hash, characters should be UPPERCASE
-COMMIT_ID=		643B5AE9
+COMMIT_ID=		63B23660
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
