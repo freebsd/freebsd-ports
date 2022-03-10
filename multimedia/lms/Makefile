@@ -37,7 +37,11 @@ post-patch:
 		${WRKSRC}/conf/lms.conf
 
 post-install:
+	# link sample
 	${RLN} ${STAGEDIR}${DATADIR}/lms.conf ${STAGEDIR}${PREFIX}/etc/lms.conf.sample
+	# create the DB directory
 	${MKDIR} ${STAGEDIR}/var/db/lms
+	# install the PAM config file # PAM breaks, see https://github.com/epoupon/lms/issues/210
+	${RLN} ${STAGEDIR}${DATADIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/pam.d/${PORTNAME}
 
 .include <bsd.port.mk>

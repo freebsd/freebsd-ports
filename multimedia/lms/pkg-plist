@@ -14,6 +14,7 @@ lib/liblmssom.so
 lib/liblmssubsonic.so
 lib/liblmsutils.so
 @sample etc/lms.conf.sample
+etc/pam.d/lms
 %%DATADIR%%/approot/admin-database.xml
 %%DATADIR%%/approot/admin-initwizard.xml
 %%DATADIR%%/approot/admin-scannercontroller.xml
