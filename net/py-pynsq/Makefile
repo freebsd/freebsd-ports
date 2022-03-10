@@ -1,9 +1,8 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	pynsq
-PORTVERSION=	0.9.0b1
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +12,7 @@ COMMENT=	Official Python client library for NSQ
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado5<6:www/py-tornado5@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-snappy>0:archivers/py-python-snappy@${PY_FLAVOR} \
@@ -21,9 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3.1:devel/py-pytest@${PY_FLAVOR} 
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	distutils autoplist
-
 GH_ACCOUNT=	nsqio
+USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
