@@ -1,3 +1,4 @@
+bin/nncp-ack
 bin/nncp-bundle
 bin/nncp-call
 bin/nncp-caller
