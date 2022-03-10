@@ -38,7 +38,6 @@
     </dates>
   </vuln>
 
-  <vuln vid="1b8f38b8-9e3b-11ec-9629-a0369f17b2e4">
   <vuln vid="b3695b08-3b3a-11eb-af2a-080027dbe4b7">
     <topic>glpi -- Public GLPIKEY can be used to decrypt any data</topic>
     <affects>
