@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	twitter
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.3
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	distutils concurrent autoplist
-
 GH_ACCOUNT=	sixohsix
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
