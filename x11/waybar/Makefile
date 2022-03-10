@@ -1,6 +1,9 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.10
+DISTVERSION=	0.9.12
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8b6bc215ccdd.patch:-p1 # https://github.com/Alexays/Waybar/pull/1476
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
