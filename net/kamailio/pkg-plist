@@ -208,6 +208,8 @@
 %%MYSQL%%lib/kamailio/kamctl/kamctl.mysql
 %%MYSQL%%lib/kamailio/kamctl/kamdbctl.mysql
 %%MYSQL%%lib/kamailio/modules/db_mysql.so
+%%OUTBOUND%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.outbound
+%%OUTBOUND%%lib/kamailio/modules/outbound.so
 %%PERL%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.app_perl
 %%PERL%%lib/kamailio/modules/app_perl.so
 %%PERL%%lib/kamailio/perl/Kamailio.pm
@@ -230,6 +232,8 @@
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/Result.pm
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/VTab.pm
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/Value.pm
+%%PHONENUM%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.phonenum
+%%PHONENUM%%lib/kamailio/modules/phonenum.so
 %%PGSQL%%%%DATADIR%%/postgres/acc-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/alias_db-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/auth_db-create.sql

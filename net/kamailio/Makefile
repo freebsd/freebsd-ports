@@ -1,7 +1,7 @@
 # Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
 
 PORTNAME=	kamailio
-PORTVERSION=	5.5.3
+PORTVERSION=	5.5.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -12,9 +12,6 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libexpat.so:textproc/expat2 \
-		libxml2.so:textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		compiler:c11 cpe gmake ncurses pkgconfig python:3.5+ readline \
@@ -43,7 +40,8 @@ USERS=		${KAMAILIO_USER}
 GROUPS=		${KAMAILIO_GROUP}
 
 OPTIONS_DEFINE=			DATABASE DIALPLAN DOCS EVAPI JWT KAFKA LWSC \
-				MQTT PERL PRESENCE RADIUS SCTP SECSIPID TLS WEBSOCKET
+				MQTT OUTBOUND PERL PHONENUM PRESENCE RADIUS \
+				SCTP SECSIPID TLS WEBSOCKET
 OPTIONS_DEFAULT=		MYSQL PRESENCE RADIUS SQLITE TLS
 OPTIONS_GROUP=			DATABASE_DRIVERS KEMI_LANGS
 OPTIONS_GROUP_DATABASE_DRIVERS=	MYSQL PGSQL SQLITE UNIXODBC
@@ -60,6 +58,8 @@ KEMI_LANGS_DESC=	Kamailio Embedded Interface Interpreters
 LUAJIT_DESC=		Execute embedded Lua scripts
 LWSC_DESC=		Websocket client connector using libwebsockets
 MQTT_DESC=		MQTT connector for bi-directional publish-subscribe communication
+OUTBOUND_DESC=		SIP Outbound support
+PHONENUM_DESC=		Phone number lookup and normalization using libphonenumber
 PRESENCE_DESC=		Presence support
 PYTHON3_DESC=		Execute embedded Python3 scripts
 SCTP_DESC=		SCTP support
@@ -95,6 +95,8 @@ MYSQL_IMPLIES=	DATABASE
 MYSQL_USES=	mysql
 MYSQL_VARS=	EXTRA_GROUPS+=mysql
 
+OUTBOUND_VARS=	EXTRA_MODULES+=outbound
+
 PERL_USES=	perl5
 PERL_MAKE_ENV=	PERLCCOPTS="`perl -MExtUtils::Embed -e ccopts`" \
 		PERLLDOPTS="`perl -MExtUtils::Embed -e ldopts`" \
@@ -105,7 +107,12 @@ PGSQL_IMPLIES=	DATABASE
 PGSQL_USES=	pgsql
 PGSQL_VARS=	EXTRA_GROUPS+=postgres
 
-PRESENCE_VARS=	EXTRA_GROUPS+=presence
+PHONENUM_LIB_DEPENDS=	libphonenumber.so:devel/libphonenumber
+PHONENUM_VARS=		EXTRA_MODULES+=phonenum
+
+PRESENCE_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libxml2.so:textproc/libxml2
+PRESENCE_VARS=		EXTRA_GROUPS+=presence
 
 PYTHON3_USES=		gettext-runtime
 PYTHON3_MAKE_ARGS=	PYTHON3=${PYTHON_CMD}
@@ -136,7 +143,8 @@ WEBSOCKET_VARS=		EXTRA_MODULES+=websocket
 
 DEFAULT_GROUPS=	standard
 
-CFG_ARGS+=	run_target="${KAMAILIO_RUNDIR}"
+CFG_ARGS+=	LIBDIR="lib" \
+		run_target="${KAMAILIO_RUNDIR}"
 
 .if !empty (EXTRA_GROUPS)
 CFG_ARGS+=	group_include="${DEFAULT_GROUPS} ${EXTRA_GROUPS}"
