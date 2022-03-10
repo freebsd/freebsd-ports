@@ -1,0 +1,11 @@
+--- jenkins_api_client.gemspec.orig	2022-03-10 09:12:17 UTC
++++ jenkins_api_client.gemspec
+@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
+   s.executables = ["jenkinscli".freeze]
+   s.files = ["bin/jenkinscli".freeze, "java_deps/jenkins-cli.jar".freeze, "jenkins_api_client.gemspec".freeze, "lib/jenkins_api_client.rb".freeze, "lib/jenkins_api_client/build_queue.rb".freeze, "lib/jenkins_api_client/cli/base.rb".freeze, "lib/jenkins_api_client/cli/helper.rb".freeze, "lib/jenkins_api_client/cli/job.rb".freeze, "lib/jenkins_api_client/cli/node.rb".freeze, "lib/jenkins_api_client/cli/system.rb".freeze, "lib/jenkins_api_client/client.rb".freeze, "lib/jenkins_api_client/exceptions.rb".freeze, "lib/jenkins_api_client/job.rb".freeze, "lib/jenkins_api_client/node.rb".freeze, "lib/jenkins_api_client/plugin_manager.rb".freeze, "lib/jenkins_api_client/plugin_settings/base.rb".freeze, "lib/jenkins_api_client/plugin_settings/collection.rb".freeze, "lib/jenkins_api_client/plugin_settings/hipchat.rb".freeze, "lib/jenkins_api_client/plugin_settings/workspace_cleanup.rb".freeze, "lib/jenkins_api_client/system.rb".freeze, "lib/jenkins_api_client/urihelper.rb".freeze, "lib/jenkins_api_client/user.rb".freeze, "lib/jenkins_api_client/version.rb".freeze, "lib/jenkins_api_client/view.rb".freeze]
+   s.homepage = "https://github.com/arangamani/jenkins_api_client".freeze
+-  s.required_ruby_version = Gem::Requirement.new("~> 2.1".freeze)
++  s.required_ruby_version = Gem::Requirement.new(">= 2.1".freeze)
+   s.rubygems_version = "3.3.7".freeze
+   s.summary = "Jenkins JSON API Client".freeze
+ 
