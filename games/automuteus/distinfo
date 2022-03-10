@@ -1,6 +1,6 @@
-TIMESTAMP = 1645284829
-SHA256 (denverquane-automuteus-6.16.7_GH0.tar.gz) = 0413b5d49944e6dcad47fd672c37d37fcf2448dcd7190dd7f9eb619995776575
-SIZE (denverquane-automuteus-6.16.7_GH0.tar.gz) = 11327053
+TIMESTAMP = 1646932933
+SHA256 (denverquane-automuteus-6.16.9_GH0.tar.gz) = 8203cd6442ebd545cdae383dba5cc6f72edb4ff2789433da795f37164a5f54ca
+SIZE (denverquane-automuteus-6.16.9_GH0.tar.gz) = 11326519
 SHA256 (BurntSushi-toml-v1.0.0_GH0.tar.gz) = 7f2c8a91ddaed4455c889baf526a5c0a57f9574676513d546b9f0499eae9b0c8
 SIZE (BurntSushi-toml-v1.0.0_GH0.tar.gz) = 90415
 SHA256 (automuteus-galactus-v1.2.2_GH0.tar.gz) = 5296c340a199c26ac7a0ead52c91aed7c6e087fae8000022abb27119686ea2ce
