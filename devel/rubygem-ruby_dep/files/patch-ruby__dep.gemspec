@@ -1,0 +1,11 @@
+--- ruby_dep.gemspec.orig	2022-03-10 09:26:07 UTC
++++ ruby_dep.gemspec
+@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
+   s.files = [".gitignore".freeze, ".rspec".freeze, ".rubocop.yml".freeze, ".travis.yml".freeze, "LICENSE.txt".freeze, "README.md".freeze, "lib/ruby_dep.rb".freeze, "lib/ruby_dep/logger.rb".freeze, "lib/ruby_dep/quiet.rb".freeze, "lib/ruby_dep/ruby_version.rb".freeze, "lib/ruby_dep/travis.rb".freeze, "lib/ruby_dep/travis/ruby_version.rb".freeze, "lib/ruby_dep/version.rb".freeze, "lib/ruby_dep/warning.rb".freeze]
+   s.homepage = "https://github.com/e2/ruby_dep".freeze
+   s.licenses = ["MIT".freeze]
+-  s.required_ruby_version = Gem::Requirement.new(["~> 2.2".freeze, ">= 2.2.5".freeze])
++  s.required_ruby_version = Gem::Requirement.new([">= 2.2".freeze, ">= 2.2.5".freeze])
+   s.rubygems_version = "3.3.7".freeze
+   s.summary = "Extracts supported Ruby versions from Travis file".freeze
+ 
