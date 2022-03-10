@@ -26,7 +26,5 @@ processLine1 l
 processLine2 l
   | "%%GMP%%" `isPrefixOf` l ||
     "%%SIMPLE%%" `isPrefixOf` l = l
-  | "/integer-gmp-" `isInfixOf` l = "%%GMP%%" ++ l
-  | "/integer-simple-" `isInfixOf` l = "%%SIMPLE%%" ++ l
   | "/libCffi" `isInfixOf` l = "%%NODYNAMIC%%" ++ l
   | otherwise = l
