@@ -11,7 +11,7 @@ compositors providing the following features:
 - Disk
 - Memory
 - CPU load average
-- Temperature
+- Temperature (Linux-only)
 - MPD
 - Custom scripts
 - Multiple output configuration
