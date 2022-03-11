@@ -32,6 +32,7 @@ include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
 include/harfbuzz/hb-style.h
+include/harfbuzz/hb-subset-repacker.h
 include/harfbuzz/hb-subset.h
 include/harfbuzz/hb-unicode.h
 include/harfbuzz/hb-version.h
