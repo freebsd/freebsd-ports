@@ -1,0 +1,6 @@
+njs scripting language, or just njs, is a subset of the JavaScript language
+that allows extending nginx functionality.  njs is created in compliance
+with ECMAScript 5.1 (strict mode) with some ECMAScript 6 and later
+extensions.  The compliance is still evolving.
+
+WWW: https://nginx.org/en/docs/njs/

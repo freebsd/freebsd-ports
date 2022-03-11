@@ -2,7 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.21.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -325,9 +325,7 @@ pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
 do-configure-NJS-on:
-	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} \
-		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} njs \
-		&& ${MV} build/njs ${WRKSRC_njs} )
+	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )
 
 .if !target(do-install)
 do-install:
@@ -362,9 +360,6 @@ do-install-NAXSI-on:
 	${INSTALL_DATA} \
 	${WRKDIR}/naxsi-${NAXSI_NGINX_VER}/naxsi_config/naxsi_core.rules \
 	${STAGEDIR}${ETCDIR}
-
-do-install-NJS-on:
-	${INSTALL_PROGRAM} ${WRKSRC_njs}/njs ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 .if !target(post-install)
