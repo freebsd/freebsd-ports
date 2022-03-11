@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	pgroonga
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
@@ -20,8 +20,8 @@ LLD_UNSAFE=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB=	MVER=${PORTVERSION}
 
-OPTIONS_DEFINE=	MECAB
-MECAB_DESC=	Use MeCab as a tokenizer
+OPTIONS_DEFINE=		MECAB
+MECAB_DESC=		Use MeCab as a tokenizer
 MECAB_BUILD_DEPENDS=	mecab-ipadics>=0.996:japanese/mecab-ipadic
 
 .include <bsd.port.pre.mk>
