@@ -37,6 +37,7 @@ include/omalloc/omalloc.h
 include/omalloc/omallocClass.h
 include/resources/feFopen.h
 include/resources/feResource.h
+include/resources/fegetopt.h
 include/resources/omFindExec.h
 include/resources/singular_resourcesconfig.h
 include/singular/Singular/attrib.h
@@ -116,7 +117,6 @@ include/singular/coeffs/mpr_complex.h
 include/singular/coeffs/mpr_global.h
 include/singular/coeffs/ntupel.h
 include/singular/coeffs/numbers.h
-include/singular/coeffs/numstats.h
 include/singular/coeffs/rintegers.h
 include/singular/coeffs/rmodulo2m.h
 include/singular/coeffs/rmodulon.h
@@ -195,7 +195,6 @@ include/singular/misc/sirandom.h
 include/singular/polys/PolyEnumerator.h
 include/singular/polys/clapconv.h
 include/singular/polys/clapsing.h
-include/singular/polys/coeffrings.h
 include/singular/polys/ext_fields/algext.h
 include/singular/polys/ext_fields/transext.h
 include/singular/polys/flint_mpoly.h
@@ -228,19 +227,19 @@ include/singular/reporter/reporter.h
 include/singular/reporter/s_buff.h
 include/singular/reporter/si_signals.h
 include/singular/singularconfig.h
-lib/libSingular-4.2.1.so
+lib/libSingular-4.3.0.so
 lib/libSingular.a
 lib/libSingular.so
-lib/libfactory-4.2.1.so
+lib/libfactory-4.3.0.so
 lib/libfactory.a
 lib/libfactory.so
 lib/libomalloc-0.9.6.so
 lib/libomalloc.a
 lib/libomalloc.so
-lib/libpolys-4.2.1.so
+lib/libpolys-4.3.0.so
 lib/libpolys.a
 lib/libpolys.so
-lib/libsingular_resources-4.2.1.so
+lib/libsingular_resources-4.3.0.so
 lib/libsingular_resources.a
 lib/libsingular_resources.so
 libdata/pkgconfig/Singular.pc
@@ -255,7 +254,6 @@ libexec/singular/MOD/customstd.a
 libexec/singular/MOD/customstd.so
 libexec/singular/MOD/freealgebra.a
 libexec/singular/MOD/freealgebra.so
-libexec/singular/MOD/gen_test
 libexec/singular/MOD/gfanlib.a
 libexec/singular/MOD/gfanlib.so
 libexec/singular/MOD/gitfan.a
@@ -408,7 +406,6 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/arnoldclassify.lib
 %%DATADIR%%/LIB/arr.lib
 %%DATADIR%%/LIB/assprimeszerodim.lib
-%%DATADIR%%/LIB/atkins.lib
 %%DATADIR%%/LIB/autgradalg.lib
 %%DATADIR%%/LIB/bfun.lib
 %%DATADIR%%/LIB/bimodules.lib
@@ -446,6 +443,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/dummy.lib
 %%DATADIR%%/LIB/elim.lib
 %%DATADIR%%/LIB/ellipticcovers.lib
+%%DATADIR%%/LIB/enumpoints.lib
 %%DATADIR%%/LIB/equising.lib
 %%DATADIR%%/LIB/ffmodstd.lib
 %%DATADIR%%/LIB/ffsolve.lib
@@ -543,6 +541,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/primdec.lib
 %%DATADIR%%/LIB/primdecint.lib
 %%DATADIR%%/LIB/primitiv.lib
+%%DATADIR%%/LIB/puiseuxexpansions.lib
 %%DATADIR%%/LIB/purityfiltration.lib
 %%DATADIR%%/LIB/qhmoduli.lib
 %%DATADIR%%/LIB/qmatrix.lib
@@ -569,6 +568,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/rstandard.lib
 %%DATADIR%%/LIB/rwalk.lib
 %%DATADIR%%/LIB/sagbi.lib
+%%DATADIR%%/LIB/sagbigrob.lib
 %%DATADIR%%/LIB/schreyer.lib
 %%DATADIR%%/LIB/schubert.lib
 %%DATADIR%%/LIB/sets.lib

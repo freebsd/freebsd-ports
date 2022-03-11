@@ -1,7 +1,6 @@
 PORTNAME=	singular
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	4-2-1
-PORTREVISION=	1
+DISTVERSION=	4-3-0
 CATEGORIES=	math
 #MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/
 
@@ -16,16 +15,21 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool ncurses perl5 pkgconfig readline shebangfix
-GNU_CONFIGURE=	yes
+USE_PERL5=	build
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Singular
 GH_PROJECT=	Singular
-USE_PERL5=	build
-USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} --disable-dependency-tracking --without-python
+
 SHEBANG_FILES=	Singular/surfex \
 		libpolys/libpolys-config.in \
 		libsingular-config.in
+
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=		FLINT NTL
 OPTIONS_DEFAULT=	FLINT NTL
