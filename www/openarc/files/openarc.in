@@ -1,0 +1,166 @@
+#!/bin/sh
+
+# PROVIDE: milter-openarc
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these milteropenarc_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/milteropenarc
+#
+# milteropenarc_enable (bool):   Set to "NO" by default.
+#                                Set it to "YES" to enable arc-milter
+# milteropenarc_uid (str):       Set username to run milter.
+# milteropenarc_gid (str):       Set group to run milter.
+# milteropenarc_profiles (list): Set to "" by default.
+#                                Define your profiles here.
+# milteropenarc_cfgfile (str):   Configuration file. See openarc.conf(5)
+#
+# milteropenarc_${profile}_* :   Variables per profile.
+#                                Sockets must be different from each other.
+#
+# milteropenarc_socket_perms (str): Permissions for local|unix socket.
+#
+
+. /etc/rc.subr
+
+name="milteropenarc"
+rcvar=milteropenarc_enable
+
+extra_commands="reload"
+start_precmd="arc_prepcmd"
+start_postcmd="arc_start_postcmd"
+stop_postcmd="arc_postcmd"
+command="/usr/local/sbin/openarc"
+_piddir="/var/run/milteropenarc"
+pidfile="${_piddir}/pid"
+sig_reload="USR1"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${milteropenarc_enable="NO"}
+: ${milteropenarc_uid="mailnull"}
+: ${milteropenarc_gid="mailnull"}
+: ${milteropenarc_cfgfile="/usr/local/etc/mail/openarc.conf"}
+: ${milteropenarc_socket_perms="0755"}
+
+# Options other than above can be set with $milteropenarc_flags.
+# see arc-milter documentation for detail.
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${milteropenarc_profiles}" != "x" ]; then
+        pidfile="${_piddir}/${profile}.pid"
+        eval milteropenarc_enable="\${milteropenarc_${profile}_enable:-${milteropenarc_enable}}"
+        eval milteropenarc_socket="\${milteropenarc_${profile}_socket:-}"
+        eval milteropenarc_socket_perms="\${milteropenarc_${profile}_socket_perms:-}"
+        if [ "x${milteropenarc_socket}" = "x" ];then
+            echo "You must define a socket (milteropenarc_${profile}_socket)"
+            exit 1
+        fi
+        eval milteropenarc_cfgfile="\${milteropenarc_${profile}_cfgfile:-${milteropenarc_cfgfile}}"
+        if [ -f "${milteropenarc_cfgfile}" ];then
+            milteropenarc_cfgfile="-c ${milteropenarc_cfgfile}"
+        else
+            milteropenarc_cfgfile=""
+        fi
+        if [ "x${milteropenarc_socket}" != "x" ];then
+            _socket_prefix="-p"
+        fi
+        if [ "x${milteropenarc_uid}" != "x" ];then
+            _uid_prefix="-u"
+            if [ "x${milteropenarc_gid}" != "x" ];then
+                milteropenarc_uid=${milteropenarc_uid}:${milteropenarc_gid}
+            fi
+        fi
+        command_args="-l ${_socket_prefix} ${milteropenarc_socket} ${_uid_prefix} ${milteropenarc_uid} -P ${pidfile} ${milteropenarc_cfgfile}"
+    else
+        echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${milteropenarc_profiles}" != "x" -a "x$1" != "x" ]; then
+        if [ "x$1" != "xrestart" ]; then
+            for profile in ${milteropenarc_profiles}; do
+                echo "===> milteropenarc profile: ${profile}"
+                /usr/local/etc/rc.d/milter-openarc $1 ${profile}
+                retcode="$?"
+                if [ "0${retcode}" -ne 0 ]; then
+                    failed="${profile} (${retcode}) ${failed:-}"
+                else
+                    success="${profile} ${success:-}"
+                fi
+            done
+            exit 0
+        else
+            restart_precmd=""
+        fi
+    else
+        if [ -f "${milteropenarc_cfgfile}" ];then
+            milteropenarc_cfgfile="-c ${milteropenarc_cfgfile}"
+        else
+            milteropenarc_cfgfile=""
+        fi
+        if [ "x${milteropenarc_socket}" != "x" ];then
+            _socket_prefix="-p"
+        fi
+        if [ "x${milteropenarc_uid}" != "x" ];then
+            _uid_prefix="-u"
+            if [ "x${milteropenarc_gid}" != "x" ];then
+                milteropenarc_uid=${milteropenarc_uid}:${milteropenarc_gid}
+            fi
+        fi
+        command_args="-l ${_socket_prefix} ${milteropenarc_socket} ${_uid_prefix} ${milteropenarc_uid} -P ${pidfile} ${milteropenarc_cfgfile}"
+    fi
+fi
+
+arc_prepcmd ()
+{
+    if [ -S ${milteropenarc_socket##local:} ] ; then
+        rm -f ${milteropenarc_socket##local:}
+    elif [ -S ${milteropenarc_socket##unix:} ] ; then
+        rm -f ${milteropenarc_socket##unix:}
+    fi
+    if [ ! -d ${_piddir} ] ; then
+        mkdir -p ${_piddir}
+    fi
+    if [ -n "${milteropenarc_uid}" ] ; then
+        chown ${milteropenarc_uid} ${_piddir}
+    fi
+    if [ -n "${milteropenarc_gid}" ] ; then
+       chgrp ${milteropenarc_gid} ${_piddir}
+    fi
+    chmod ${milteropenarc_socket_perms} ${_piddir}
+}
+
+arc_start_postcmd ()
+{
+    if [ "x${milteropenarc_socket}" != "x" ] ; then
+        # postcmd is executed too fast and socket is not created before checking...
+        sleep 1
+        if [ -S ${milteropenarc_socket##local:} ] ; then
+            chmod ${milteropenarc_socket_perms} ${milteropenarc_socket##local:}
+        elif [ -S ${milteropenarc_socket##unix:} ] ; then
+            chmod ${milteropenarc_socket_perms} ${milteropenarc_socket##unix:}
+        fi
+    fi
+}
+
+arc_postcmd()
+{
+    if [ "x${milteropenarc_socket}" != "x" ] ; then
+        if [ -S ${milteropenarc_socket##local:} ] ; then
+            rm -f ${milteropenarc_socket##local:}
+        elif [ -S ${milteropenarc_socket##unix:} ] ; then
+            rm -f ${milteropenarc_socket##unix:}
+        fi
+    fi
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"
