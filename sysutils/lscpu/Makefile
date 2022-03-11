@@ -9,8 +9,7 @@ COMMENT=	Display information about the CPU architecture
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	unconditionally invokes x86-specific code
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64le powerpc64 powerpc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NanXiao
