@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20220311:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: grembo@FreeBSD.org
+
+  In order to comply to hier(7), VirtualBox's configuration of non-default
+  IP ranges to be used in host-only mode moved from /etc/vbox/networks.conf
+  to ${LOCALBASE}/etc/vbox/networks.conf.
+
+20220311:
   AFFECTS: users of net/nats-server
   AUTHOR: olgeni@FreeBSD.org
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.32
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -51,6 +52,8 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	AIO ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS OPUS PULSEAUDIO \
 		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
@@ -307,10 +310,12 @@ post-patch:
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
 	    ${WRKSRC}/tools/kBuildTools/VBoxGccFreeBSD.kmk
 .endif
+	# Causes a "reinplace" QA warning with default LOCALBASE
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
@@ -321,6 +326,7 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
+	# Causes a "reinplace" QA warning with default PREFIX/VBOX_DIR
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
 	    -e 's|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh

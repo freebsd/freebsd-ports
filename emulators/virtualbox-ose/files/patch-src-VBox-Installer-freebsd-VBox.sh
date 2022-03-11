@@ -1,6 +1,6 @@
 --- src/VBox/Installer/freebsd/VBox.sh.orig	2016-08-27 05:10:34 UTC
 +++ src/VBox/Installer/freebsd/VBox.sh
-@@ -0,0 +1,67 @@
+@@ -0,0 +1,74 @@
 +#!/bin/sh
 +#
 +# Oracle VM VirtualBox startup script, FreeBSD hosts.
@@ -26,9 +26,16 @@
 +        test -f /usr/local/lib/virtualbox/VBoxRT.so; then
 +        INSTALL_DIR=/usr/local/lib/virtualbox
 +    else
-+        echo "Could not find VirtualBox installation. Please reinstall."
++        >&2 echo "Could not find VirtualBox installation. Please reinstall."
 +        exit 1
 +    fi
++
++if [ -d /etc/vbox ]; then
++    >&2 cat <<-EOH
++	WARNING: Directory /etc/vbox found, but ignored. VirtualBox
++	         configuration files are stored in /usr/local/etc/vbox/.
++	EOH
++fi
 +
 +# workaround for the KDE dialog problem
 +KDE_FORK_SLAVES=1; export KDE_FORK_SLAVES
@@ -63,7 +70,7 @@
 +        exec "$INSTALL_DIR/vboxwebsrv" "$@"
 +        ;;
 +    *)
-+        echo "Unknown application - $APP"
++        >&2 echo "Unknown application - $APP"
 +        exit 1
 +        ;;
 +esac
