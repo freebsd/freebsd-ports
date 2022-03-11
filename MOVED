@@ -2141,7 +2141,6 @@ devel/bugzilla2||2011-06-07|Removed: no longer under development
 lang/ruby-js||2011-06-09|Removed: depends on expired port, seems abandonware itself
 textproc/ruby-xml-script||2011-06-09|Removed: depends on expired port, seems abandonware itself
 www/ruby-asp||2011-06-09|Removed: depends on expired port, seems abandonware itself
-lang/njs||2011-06-09|Has expired: Upstream disappeared and distfile is no longer available
 editors/wily||2011-06-09|Removed, depends on an expired port
 x11-fonts/Xg||2011-06-09|Has expired: Upstream disappeared and distfile is no longer available
 irc/bitlbee-otr||2011-06-13|Removed, overridden by irc/bitlbee
