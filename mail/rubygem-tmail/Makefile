@@ -11,6 +11,8 @@ COMMENT=	RFC2822/MIME compliant mail manipulating library for Ruby
 # Seems to be a dead project, last upgrade 2010-02-07 and homepage does not load anymore:
 # https://rubygems.org/gems/tmail, http://tmail.rubyforge.org/
 BROKEN_RUBY27=	yes
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
 
 USE_RUBY=	yes
 USES=		gem
