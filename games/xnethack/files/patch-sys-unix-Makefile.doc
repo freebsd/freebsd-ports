@@ -1,8 +1,11 @@
---- sys/unix/Makefile.doc.orig	2021-03-22 22:28:14 UTC
+--- sys/unix/Makefile.doc.orig	2022-03-07 23:57:15 UTC
 +++ sys/unix/Makefile.doc
-@@ -66,15 +66,15 @@ Guidebook.dvi:	Guidebook.tex
- 	latex Guidebook.tex
- 
+@@ -73,17 +73,17 @@ Guidebook.dvi	: Guidebook.tex
+ # (note: 'make makedefs', not 'make $(MAKEDEFS)')
+ $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h ../src/mdlib.c \
+ 		  ../util/mdgrep.h
+-	( cd ../util ; make makedefs )
++	( cd ../util ; ${MAKE} makedefs )
  
 -GAME	= nethack
 -MANDIR	= /usr/man/man6
@@ -22,7 +25,7 @@
  # manual installation for most SYSV-style systems
  # GAMEMANCREATE = cat nethack.6 | $(NHGREP) | nroff -man - >
  # RCVRMANCREATE = cat recover.6 | $(NHGREP) | nroff -man - >
-@@ -82,10 +82,10 @@ MDMANCREATE = cat makedefs.6 | $(NHGREP) >
+@@ -91,10 +91,10 @@ MDMANCREATE = cat makedefs.6 | $(NHGREP) >
  # MDMANCREATE = cat makedefs.6 | $(NHGREP) | nroff -man - >
  
  manpages:

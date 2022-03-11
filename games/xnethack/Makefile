@@ -1,7 +1,6 @@
 PORTNAME=	xNetHack
 DISTVERSIONPREFIX=	xnh
-DISTVERSION=	6.1
-PORTREVISION=	1
+DISTVERSION=	7.0
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -12,9 +11,10 @@ LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/dat/license
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FLAVORS=	x11 nox11
+FLAVORS=	x11 nox11 qt
 FLAVOR?=	${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=	-nox11
+qt_PKGNAMESUFFIX=	-qt
 
 USES=		alias compiler:c11 gmake ncurses tar:tgz lua:54
 USE_GITHUB=	yes
@@ -33,11 +33,20 @@ DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
 .if ${FLAVOR} == "x11"
 USES+=		xorg
 USE_XORG=	xaw xpm xmu xext xt x11 sm ice
-CFLAGS+=	-DX11_GRAPHICS -DUSE_TILES
+CFLAGS+=	-DUSE_TILES
 GRAPHICS=	X11_GRAPHICS
 .elif ${FLAVOR} == "nox11"
 GRAPHICS=	# none
+.elif ${FLAVOR} == "qt"
+USES+=		localbase pkgconfig qt:5
+USE_QT=		buildtools_build core gui multimedia network widgets
+MAKE_ENV+=	MOCPATH=${MOC} LINK="${CXX} -pie"
+# Qt wants PIC for some reason.  For C code, PIE should be enough.
+CFLAGS+=	-I${QT_INCDIR} -fpie
+CXXFLAGS+=	-I${QT_INCDIR} -fpic
+GRAPHICS=	QT_GRAPHICS
 .endif
+
 CFLAGS+=	-DNOMAIL -DCURSES_GRAPHICS
 
 OPTIONS_DEFINE=	DOCS
@@ -63,7 +72,10 @@ post-patch:
 .endif
 
 do-configure:
+	${TOUCH} ${WRKSRC}/dat/gitinfo.txt
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
+	# work around a race condition
+	cd ${WRKSRC}/util; ${MAKE_CMD} tiletxt.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/recover
@@ -75,6 +87,7 @@ post-install:
 	@${CP} ${STAGEDIR}/${DATADIR}/sysconf ${STAGEDIR}/${DATADIR}/sysconf.sample
 	# Make "sample" files from records to prevent them being removed
 	# if they have been altered
+	@${CP} ${STAGEDIR}/${DATADIR}/logfile ${STAGEDIR}/${DATADIR}/livelog.sample
 	@${CP} ${STAGEDIR}/${DATADIR}/logfile ${STAGEDIR}/${DATADIR}/logfile.sample
 	@${CP} ${STAGEDIR}/${DATADIR}/record ${STAGEDIR}/${DATADIR}/record.sample
 	@${CP} ${STAGEDIR}/${DATADIR}/xlogfile ${STAGEDIR}/${DATADIR}/xlogfile.sample

@@ -79,6 +79,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/bigrm-1.lua
 %%DATADIR%%/bigrm-10.lua
 %%DATADIR%%/bigrm-11.lua
+%%DATADIR%%/bigrm-12.lua
 %%DATADIR%%/bigrm-2.lua
 %%DATADIR%%/bigrm-3.lua
 %%DATADIR%%/bigrm-4.lua
@@ -101,10 +102,12 @@ bin/%%HACKNAME%%
 %%DATADIR%%/help
 %%DATADIR%%/hh
 %%DATADIR%%/history
+%%DATADIR%%/invocation.lua
 %%DATADIR%%/juiblex.lua
 %%DATADIR%%/keyhelp
 %%DATADIR%%/knox.lua
 %%DATADIR%%/license
+@sample(games,games,664) %%DATADIR%%/livelog.sample
 @sample(games,games,664) %%DATADIR%%/logfile.sample
 %%DATADIR%%/medusa-1.lua
 %%DATADIR%%/medusa-2.lua
@@ -123,9 +126,12 @@ bin/%%HACKNAME%%
 %%DATADIR%%/minetn-6.lua
 %%DATADIR%%/minetn-7.lua
 %%DATADIR%%/minetn-8.lua
+%%DATADIR%%/nhcore.lua
 %%DATADIR%%/nhlib.lua
+%%DATADIR%%/nhtiles.bmp
 %%DATADIR%%/opthelp
 %%DATADIR%%/options
+%%DATADIR%%/optmenu
 %%DATADIR%%/oracle-1.lua
 %%DATADIR%%/oracle-2.lua
 %%DATADIR%%/oracle-3.lua
@@ -141,6 +147,7 @@ bin/%%HACKNAME%%
 @mode 02755
 %%DATADIR%%/recover
 @mode
+%%DATADIR%%/rip.xpm
 %%DATADIR%%/rumors
 %%DATADIR%%/sanctum.lua
 %%DATADIR%%/shirts
@@ -158,6 +165,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/tower1.lua
 %%DATADIR%%/tower2.lua
 %%DATADIR%%/tower3.lua
+%%DATADIR%%/tower4.lua
 %%DATADIR%%/tribute
 %%DATADIR%%/valley.lua
 %%DATADIR%%/water.lua

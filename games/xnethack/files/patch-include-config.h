@@ -1,6 +1,6 @@
---- include/config.h.orig	2021-03-22 22:28:14 UTC
+--- include/config.h.orig	2022-03-07 23:57:15 UTC
 +++ include/config.h
-@@ -294,11 +294,11 @@
+@@ -303,11 +303,11 @@
  
  #if defined(UNIX) && !defined(ZLIB_COMP) && !defined(COMPRESS)
  /* path and file name extension for compression program */
@@ -16,7 +16,7 @@
  #endif
  
  #ifndef COMPRESS
-@@ -383,7 +383,7 @@
+@@ -392,7 +392,7 @@
   * otherwise it will be the current directory.
   */
  #ifndef HACKDIR
@@ -25,7 +25,7 @@
  #endif
  
  /*
-@@ -646,7 +646,7 @@ typedef unsigned char uchar;
+@@ -653,7 +653,7 @@ typedef unsigned char uchar;
  #ifdef DUMPLOG
  
  #ifndef DUMPLOG_FILE

@@ -1,4 +1,4 @@
---- util/makedefs.c.orig	2021-03-22 22:28:14 UTC
+--- util/makedefs.c.orig	2022-03-07 23:57:15 UTC
 +++ util/makedefs.c
 @@ -116,6 +116,7 @@ static struct version_info version;
  #define MAXFNAMELEN 600
@@ -8,7 +8,7 @@
  
  #ifdef FILE_PREFIX
  /* if defined, a first argument not starting with - is
-@@ -229,6 +230,12 @@ main(int argc, char *argv[])
+@@ -230,6 +231,12 @@ main(int argc, char *argv[])
          return 1;
      }
  
@@ -21,9 +21,9 @@
  #ifdef FILE_PREFIX
      if (argc >= 2 && argv[1][0] != '-') {
          file_prefix = argv[1];
-@@ -964,12 +971,12 @@ do_rnd_access_file(const char* fname, const char* defl
-        more likely to be picked than normal but it's nothing to worry about */
-     (void) fputs(xcrypt(deflt_content), ofp);
+@@ -989,12 +996,12 @@ do_rnd_access_file(
+         Strcat(buf, "\n"); /* so make sure that the default one does too    */
+     (void) fputs(xcrypt(padline(buf, padlength)), ofp);
  
 -    tfp = getfp(DATA_TEMPLATE, "grep.tmp", WRTMODE, FLG_TEMPFILE);
 +    tfp = getfp(DATA_TEMPLATE, tempfilename, WRTMODE, FLG_TEMPFILE);
@@ -35,8 +35,8 @@
 +    ifp = getfp(DATA_TEMPLATE, tempfilename, RDTMODE, 0);
  #endif
      while ((line = fgetline(ifp)) != 0) {
-         if (line[0] != '#' && line[0] != '\n')
-@@ -980,7 +987,7 @@ do_rnd_access_file(const char* fname, const char* defl
+         if (line[0] != '#' && line[0] != '\n') {
+@@ -1007,7 +1014,7 @@ do_rnd_access_file(
      Fclose(ofp);
  
  #ifdef HAS_NO_MKSTEMP
@@ -45,7 +45,7 @@
  #endif
      return;
  }
-@@ -1758,12 +1765,12 @@ do_dungeon(void)
+@@ -1791,12 +1798,12 @@ do_dungeon(void)
      }
      Fprintf(ofp, "%s", Dont_Edit_Data);
  
@@ -60,7 +60,7 @@
  #endif
      while ((line = fgetline(ifp)) != 0) {
          SpinCursor(3);
-@@ -1779,7 +1786,7 @@ do_dungeon(void)
+@@ -1812,7 +1819,7 @@ do_dungeon(void)
      Fclose(ofp);
  
  #ifdef HAS_NO_MKSTEMP
