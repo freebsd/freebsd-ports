@@ -128,6 +128,7 @@ include/meshing/boundarylayer.hpp
 include/meshing/classifyhpel.hpp
 include/meshing/clusters.hpp
 include/meshing/curvedelems.hpp
+include/meshing/delaunay2d.hpp
 include/meshing/findip.hpp
 include/meshing/findip2.hpp
 include/meshing/geomsearch.hpp

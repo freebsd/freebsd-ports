@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@FreeBSD.org>
 
 PORTNAME=	netgen
-PORTVERSION=	6.2.2201
+PORTVERSION=	6.2.2202
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
