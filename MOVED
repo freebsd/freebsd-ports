@@ -16950,3 +16950,11 @@ textproc/xmlada||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada3||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/py-zsm-lib|sysutils/zsm|2022-03-07|Remove obsoleted port. Use sysutils/zsm instead
+databases/postgresql96-client||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+databases/postgresql96-contrib||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+databases/postgresql96-docs||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+databases/postgresql96-pgtcl||2022-03-11|Removed, part of expired PostgresQL 9.6
+databases/postgresql96-plperl||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+databases/postgresql96-plpython||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+databases/postgresql96-pltcl||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+databases/postgresql96-server||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life

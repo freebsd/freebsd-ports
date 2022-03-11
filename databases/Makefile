@@ -714,14 +714,6 @@
     SUBDIR += postgresql14-plpython
     SUBDIR += postgresql14-pltcl
     SUBDIR += postgresql14-server
-    SUBDIR += postgresql96-client
-    SUBDIR += postgresql96-contrib
-    SUBDIR += postgresql96-docs
-    SUBDIR += postgresql96-pgtcl
-    SUBDIR += postgresql96-plperl
-    SUBDIR += postgresql96-plpython
-    SUBDIR += postgresql96-pltcl
-    SUBDIR += postgresql96-server
     SUBDIR += powa-archivist
     SUBDIR += powa-web
     SUBDIR += powerarchitect
