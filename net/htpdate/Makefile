@@ -1,8 +1,7 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 
 PORTNAME=	htpdate
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
 		http://twekkel.home.xs4all.nl/htp/
