@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 
 INSTALL_TARGET=	install-strip
 
+CFLAGS+=	-fdeclspec
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
