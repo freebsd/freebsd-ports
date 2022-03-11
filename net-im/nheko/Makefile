@@ -1,6 +1,6 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.9.1-1
+DISTVERSION=	0.9.2
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -9,7 +9,8 @@ COMMENT=	Matrix IM client based on Qt technologies
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json
+BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json \
+		asciidoc>=10:textproc/asciidoc
 # All those boost-libs are pulled in through mtxclient, which
 # links to them but stage-qa still complains.
 LIB_DEPENDS=	\
@@ -31,7 +32,9 @@ USE_QT=		concurrent core dbus declarative gui multimedia network \
 
 # There is one external dependency: lmdb++
 #  - lmdb++ is a single header file, it just needs to be included
-CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb -DVOIP=OFF
+CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb \
+		-DVOIP=OFF \
+		-DCMAKE_INSTALL_MANDIR=share/man
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
 LDFLAGS+=	-L${LOCALBASE}/lib -lfmt
 

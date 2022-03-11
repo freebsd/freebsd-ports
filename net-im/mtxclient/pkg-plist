@@ -41,6 +41,7 @@ include/mtx/events/tombstone.hpp
 include/mtx/events/topic.hpp
 include/mtx/events/unknown.hpp
 include/mtx/events/voip.hpp
+include/mtx/events/widget.hpp
 include/mtx/events_impl.hpp
 include/mtx/identifiers.hpp
 include/mtx/lightweight_error.hpp
