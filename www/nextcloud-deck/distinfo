@@ -1,3 +1,3 @@
-TIMESTAMP = 1638286846
-SHA256 (nextcloud/deck-1.6.0/deck.tar.gz) = aed13df7f3606363ecae336333ab88c40de5afb02b34fd666c77ba6819a80ac9
-SIZE (nextcloud/deck-1.6.0/deck.tar.gz) = 8000715
+TIMESTAMP = 1647021083
+SHA256 (nextcloud/deck-1.6.1/deck-v1.6.1.tar.gz) = 65edb46ab7b1ec06611e749620f37c0e502d6a5a7efd197bab04c0f8806fdefa
+SIZE (nextcloud/deck-1.6.1/deck-v1.6.1.tar.gz) = 8230297
