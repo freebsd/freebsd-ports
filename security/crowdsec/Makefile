@@ -1,6 +1,5 @@
 PORTNAME=	crowdsec
-PORTVERSION=	1.2.3	# NOTE: change BUILD_VERSION and BUILD_TAG as well
-PORTREVISION=	1
+PORTVERSION=	1.3.2	# NOTE: change BUILD_VERSION and BUILD_TAG as well
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -15,23 +14,28 @@ BUILD_DEPENDS=	git:devel/git@lite \
 		jq:textproc/jq
 
 USES=		gmake
+ALL_TARGET=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	crowdsec
-GH_TAGNAME=	v1.2.3-freebsd
+GH_TAGNAME=	v1.3.2-freebsd-wip
 #GH_TAGNAME is automatically set from DISTVERSION
+
+OPTIONS_DEFINE=	FIREWALL_BOUNCER
+OPTIONS_DEFAULT=
+
+FIREWALL_BOUNCER_DESC=	Depend on security/crowdsec-firewall-bouncer
+FIREWALL_BOUNCER_RUN_DEPENDS=	crowdsec-firewall-bouncer>=0.0.23.r2:security/crowdsec-firewall-bouncer
 
 USE_RC_SUBR=	crowdsec
 
-SUB_FILES=	pkg-message \
-		pkg-install \
-		pkg-deinstall
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 
-# BUILD_VERSION=$(git describe --tags $(git rev-list --tags --max-count=1))
-# BUILD_TAG=$(git rev-parse HEAD)
-MAKE_ENV=	BUILD_VERSION="v1.2.3" \
-		BUILD_TAG="fc4be1e0ffc5888f2824358464cb2426cd4472e1"
+MAKE_ENV=	BUILD_VERSION="v1.3.2" \
+		BUILD_TAG="716251323da59f1ce04fb1fc38af0a72629b5d78" \
+		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
+		DEFAULT_DATADIR="/var/db/crowdsec/data"
 
 PLUGIN_DIR=	${PREFIX}/lib/crowdsec/plugins
 STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
@@ -39,17 +43,10 @@ STAGE_BIN=	${STAGEDIR}${PREFIX}/bin
 
 post-patch:
 	@${REINPLACE_CMD} 's,/etc/crowdsec/,${ETCDIR}/,g' \
-		${WRKSRC}/pkg/csconfig/config.go \
-		${WRKSRC}/pkg/cstest/hubtest_item.go \
-		${WRKSRC}/cmd/crowdsec-cli/machines.go \
-		${WRKSRC}/cmd/crowdsec-cli/main.go \
-		${WRKSRC}/cmd/crowdsec/main.go \
 		${WRKSRC}/config/config.yaml \
 		${WRKSRC}/config/profiles.yaml
 
 	@${REINPLACE_CMD} 's,/var/lib/,/var/db/,g' \
-		${WRKSRC}/pkg/csconfig/config.go \
-		${WRKSRC}/pkg/metabase/database.go \
 		${WRKSRC}/config/config.yaml \
 		${WRKSRC}/config/profiles.yaml
 
@@ -81,6 +78,9 @@ do-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/config.yaml \
 		${STAGEDIR}${ETCDIR}/config.yaml.sample
 
+	@${MV} ${STAGEDIR}${ETCDIR}/console.yaml \
+		${STAGEDIR}${ETCDIR}/console.yaml.sample
+
 	@${MV} ${STAGEDIR}${ETCDIR}/profiles.yaml \
 		${STAGEDIR}${ETCDIR}/profiles.yaml.sample
 
@@ -96,19 +96,19 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/email
 	@${MV} ${WRKSRC}/plugins/notifications/email/email.yaml \
-		${STAGEDIR}${ETCDIR}/notifications/email/email.yaml.sample
+		${STAGEDIR}${ETCDIR}/notifications/email.yaml.sample
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${MV} ${WRKSRC}/plugins/notifications/http/http.yaml \
-		${STAGEDIR}${ETCDIR}/notifications/http/http.yaml.sample
+		${STAGEDIR}${ETCDIR}/notifications/http.yaml.sample
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
 	@${MV} ${WRKSRC}/plugins/notifications/slack/slack.yaml \
-		${STAGEDIR}${ETCDIR}/notifications/slack/slack.yaml.sample
+		${STAGEDIR}${ETCDIR}/notifications/slack.yaml.sample
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/splunk
 	@${MV} ${WRKSRC}/plugins/notifications/splunk/splunk.yaml \
-		${STAGEDIR}${ETCDIR}/notifications/splunk/splunk.yaml.sample
+		${STAGEDIR}${ETCDIR}/notifications/splunk.yaml.sample
 
 	# updated by "cscli machines" at first service start
 	@${MV} ${STAGEDIR}${ETCDIR}/local_api_credentials.yaml \
@@ -126,10 +126,15 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/db/crowdsec/data
 
 	#
-	# Log rotation
+	# Cleanup
 	#
 
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/crowdsec.conf-newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/crowdsec.conf.sample
-	
+	@${RM} ${STAGEDIR}${ETCDIR}/crowdsec.service
+	@${RM} ${STAGEDIR}${ETCDIR}/dev.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/user.yaml
+	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/email
+	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/http
+	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
+	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/splunk
+
 .include <bsd.port.mk>

@@ -8,12 +8,13 @@ bin/crowdsec-cli
 @mode 0644
 @sample %%ETCDIR%%/acquis.yaml.sample
 @sample %%ETCDIR%%/config.yaml.sample
+@sample %%ETCDIR%%/console.yaml.sample
 @sample %%ETCDIR%%/profiles.yaml.sample
 @sample %%ETCDIR%%/simulation.yaml.sample
-@sample %%ETCDIR%%/notifications/email/email.yaml.sample
-@sample %%ETCDIR%%/notifications/http/http.yaml.sample
-@sample %%ETCDIR%%/notifications/slack/slack.yaml.sample
-@sample %%ETCDIR%%/notifications/splunk/splunk.yaml.sample
+@sample %%ETCDIR%%/notifications/email.yaml.sample
+@sample %%ETCDIR%%/notifications/http.yaml.sample
+@sample %%ETCDIR%%/notifications/slack.yaml.sample
+@sample %%ETCDIR%%/notifications/splunk.yaml.sample
 %%ETCDIR%%/patterns/aws
 %%ETCDIR%%/patterns/bacula
 %%ETCDIR%%/patterns/bro
@@ -38,7 +39,6 @@ bin/crowdsec-cli
 %%ETCDIR%%/patterns/smb
 %%ETCDIR%%/patterns/ssh
 %%ETCDIR%%/patterns/tcpdump
-@sample etc/newsyslog.conf.d/crowdsec.conf.sample
 @mode 0755
 lib/crowdsec/plugins/notification-email
 lib/crowdsec/plugins/notification-http
@@ -47,4 +47,3 @@ lib/crowdsec/plugins/notification-splunk
 @dir %%ETCDIR%%/hub
 @dir /var/db/crowdsec/data
 @dir /var/db/crowdsec
-@dir etc/newsyslog.conf.d

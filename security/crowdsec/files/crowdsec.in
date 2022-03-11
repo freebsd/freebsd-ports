@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: crowdsec
+# BEFORE: crowdsec_firewall
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown
 #
