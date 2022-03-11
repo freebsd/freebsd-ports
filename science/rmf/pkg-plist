@@ -98,4 +98,4 @@ include/RMF/types.h
 include/RMF/utility.h
 include/RMF/validate.h
 lib/libRMF.so
-lib/libRMF.so.1.3
+lib/libRMF.so.1.4

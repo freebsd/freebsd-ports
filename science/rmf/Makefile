@@ -1,5 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
-USES=		compiler:c++11-lang cmake python:build shebangfix
+USES=		compiler:c++17-lang cmake python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
