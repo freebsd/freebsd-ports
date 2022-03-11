@@ -1,5 +1,5 @@
 PORTNAME=	natscli
-PORTVERSION=	0.0.29
+PORTVERSION=	0.0.30
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -37,16 +37,16 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/Alec
 		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
 		guptarohit:asciigraph:v0.5.2:guptarohit_asciigraph/vendor/github.com/guptarohit/asciigraph \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.14.3:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.14.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		mattn:go-colorable:v0.1.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
-		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
-		nats-io:jsm.go:v0.0.29:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
+		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
+		nats-io:jsm.go:v0.0.30:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
 		nats-io:jwt:58e87895b296:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:58806c1290b3:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:0096b1bfae8d:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:5c0d1999ff72:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:2f2f6968e98d:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		prometheus:client_golang:v1.12.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
