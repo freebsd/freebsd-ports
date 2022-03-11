@@ -1,7 +1,7 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
 
 PORTNAME=	strptime
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
