@@ -1,6 +1,6 @@
 PORTNAME=	CheMPS2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.11
+DISTVERSION=	1.8.12
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,9 +13,10 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
 USES=		blaslapack:openblas cmake fortran
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	SebWouters
-USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DSHARED_ONLY:BOOL=ON
 CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=OFF
