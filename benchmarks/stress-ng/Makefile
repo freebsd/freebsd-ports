@@ -1,6 +1,6 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.13.11
+DISTVERSION=	0.13.12
 PORTREVISION=	0
 CATEGORIES=	benchmarks
 
@@ -38,11 +38,6 @@ LIBINOTIFY_LDFLAGS=		-linotify
 LIBINOTIFY_MAKE_ARGS_OFF=	HAVE_SYS_INOTIFY_H=0
 
 MAKE_ARGS=	VERBOSE=1
-
-post-patch:
-	${REINPLACE_CMD} -e \
-		's/int main(void)/int main(void) __attributes__((noinline))/' \
-		${WRKSRC}/stress-atomic.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
