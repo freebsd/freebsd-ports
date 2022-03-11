@@ -1,6 +1,7 @@
 PORTNAME=	nats-server
 PORTVERSION=	2.7.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -26,6 +27,8 @@ GH_TUPLE=	golang:crypto:5e0467b6c7ce:golang_crypto/vendor/golang.org/x/crypto \
 		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
 
 USE_RC_SUBR=	nats.sh
+USERS=		nats
+GROUPS=		nats
 
 OPTIONS_DEFINE=	DOCS
 

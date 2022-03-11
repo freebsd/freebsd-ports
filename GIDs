@@ -244,7 +244,7 @@ openvpn:*:301:
 netdata:*:302:
 onlyoffice:*:303:www
 glewlwyd:*:304:
-# free: 305
+nats:*:305:
 # free: 306
 # free: 307
 # free: 308

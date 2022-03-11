@@ -8,7 +8,8 @@
 #
 # nats_enable (bool):		Set it to "YES" to enable nats server.
 #				Default is "NO".
-# nats_user:			User name to run as. default "nobody"
+# nats_user:			User name to run as. default "nats"
+# nats_group:			Group name to run as. default "nats"
 # nats_options:			Options to pass nats server
 #
 
@@ -18,12 +19,26 @@ name=nats
 rcvar=`set_rcvar`
 
 load_rc_config ${name}
+
 : ${nats_enable:=NO}
-: ${nats_user:=nobody}
+: ${nats_user:=nats}
+: ${nats_group:=nats}
 : ${nats_options="-c %%PREFIX%%/etc/nats.conf"}
 
-command=/usr/sbin/daemon
+start_precmd=nats_start_precmd
+
+pidfile="/var/run/${name}.pid"
 procname=%%PREFIX%%/bin/nats-server
-command_args="${procname} ${nats_options}"
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} ${procname} ${nats_options}"
+
+extra_commands="logrotate ldm"
+logrotate_cmd="${procname} --signal reopen=${pidfile}"
+ldm_cmd="${procname} --signal ldm=${pidfile}"
+
+nats_start_precmd()
+{
+    install -o ${nats_user} -g ${nats_group} /dev/null ${pidfile}
+}
 
 run_rc_command "$1"

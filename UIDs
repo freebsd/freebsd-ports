@@ -249,7 +249,7 @@ openvpn:*:301:301::0:0:OpenVPN pseudo-user:/nonexistent:/usr/sbin/nologin
 netdata:*:302:302::0:0:NetData Daemon:/var/cache/netdata:/usr/sbin/nologin
 onlyoffice:*:303:303::0:0:Onlyoffice pseudo-user:/usr/local/www/onlyoffice/documentserver:/usr/sbin/nologin
 glewlwyd:*:304:304::0:0:Glewlwyd SSO server:/nonexistent:/usr/sbin/nologin
-# free: 305
+nats:*:305:305::0:0:NATS Daemon:/nonexistent:/usr/sbin/nologin
 # free: 306
 # free: 307
 # free: 308
