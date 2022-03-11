@@ -1,5 +1,5 @@
 PORTNAME=	clojure-cider
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -19,8 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	clojure-emacs
 GH_PROJECT=	cider
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/cider-client.el \
 		${EMACS_SITE_LISPDIR}/cider-eldoc.el \
