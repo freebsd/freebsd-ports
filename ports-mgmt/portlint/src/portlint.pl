@@ -2994,12 +2994,13 @@ DIST_SUBDIR EXTRACT_ONLY
 		my %seen;
 		foreach my $conflict (split ' ', $conflicts) {
 			if (not $seen{$conflict}) {
-				`$pkg_version -T '$makevar{PKGBASE}' '$conflict' || $pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
-				my $selfconflict = !$?;
-				if ($selfconflict) {
-					&perror("FATAL", "", -1, "Package conflicts with itself. ".
-						"You should remove \"$conflict\" from CONFLICTS.");
-				} elsif ($conflict =~ m/-\[0-9\]\*$/) {
+#				`$pkg_version -T '$makevar{PKGBASE}' '$conflict' || $pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
+#				my $selfconflict = !$?;
+#				if ($selfconflict) {
+#					&perror("FATAL", "", -1, "Package conflicts with itself. ".
+#						"You should remove \"$conflict\" from CONFLICTS.");
+#				} elsif ($conflict =~ m/-\[0-9\]\*$/) {
+				if ($conflict =~ m/-\[0-9\]\*$/) {
 					&perror("WARN", $file, -1, "CONFLICTS definition \"$conflict\" ".
 						"ends in redundant version pattern. ".
 						"You should remove \"-[0-9]*\" from that pattern.");
