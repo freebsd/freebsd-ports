@@ -7,7 +7,7 @@ include/asql-qt5/ASql/amigrations.h
 include/asql-qt5/ASql/apg.h
 include/asql-qt5/ASql/apool.h
 include/asql-qt5/ASql/apreparedquery.h
-include/asql-qt5/ASql/aqsqlexports.h
+include/asql-qt5/ASql/asqlexports.h
 include/asql-qt5/ASql/aresult.h
 include/asql-qt5/ASql/atransaction.h
 lib/cmake/ASqlQt5/ASql0Qt5Targets-%%CMAKE_BUILD_TYPE%%.cmake
