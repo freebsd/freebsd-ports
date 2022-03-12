@@ -1,0 +1,81 @@
+https://gitlab.com/gilrs-project/gilrs/-/merge_requests/56
+
+--- cargo-crates/gilrs-0.8.2/src/mapping/mod.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-0.8.2/src/mapping/mod.rs
+@@ -24,14 +24,14 @@ use vec_map::VecMap;
+ use self::parser::{Error as ParserError, ErrorKind as ParserErrorKind, Parser, Token};
+ 
+ /// Platform name used by SDL mappings
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd"))]
+ const SDL_PLATFORM_NAME: &str = "Linux";
+ #[cfg(target_os = "macos")]
+ const SDL_PLATFORM_NAME: &'static str = "Mac OS X";
+ #[cfg(target_os = "windows")]
+ const SDL_PLATFORM_NAME: &'static str = "Windows";
+ #[cfg(all(
+-    not(target_os = "linux"),
++    not(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd")),
+     not(target_os = "macos"),
+     not(target_os = "windows")
+ ))]
+--- cargo-crates/gilrs-core-0.3.2/Cargo.toml.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.3.2/Cargo.toml
+@@ -54,16 +54,16 @@ optional = true
+ [target."cfg(target_arch = \"wasm32\")".dev-dependencies.wasm-bindgen-rs]
+ version = "0.2"
+ package = "wasm-bindgen"
+-[target."cfg(target_os = \"linux\")".dependencies.libc]
++[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.libc]
+ version = "0.2"
+ 
+-[target."cfg(target_os = \"linux\")".dependencies.libudev-sys]
++[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.libudev-sys]
+ version = "0.1"
+ 
+-[target."cfg(target_os = \"linux\")".dependencies.nix]
++[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.nix]
+ version = "0.23.1"
+ 
+-[target."cfg(target_os = \"linux\")".dependencies.vec_map]
++[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.vec_map]
+ version = "0.8"
+ [target."cfg(target_os = \"macos\")".dependencies.core-foundation]
+ version = "0.6"
+--- cargo-crates/gilrs-core-0.3.2/src/platform/linux/ff.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.3.2/src/platform/linux/ff.rs
+@@ -104,10 +104,10 @@ impl Device {
+ 
+ impl Drop for Device {
+     fn drop(&mut self) {
+-        #[cfg(target_pointer_width = "64")]
+-        let effect = self.effect as u64;
+-        #[cfg(target_pointer_width = "32")]
+-        let effect = self.effect as u32;
++        #[cfg(target_os = "linux")]
++        let effect = self.effect as ::libc::c_ulong;
++        #[cfg(not(target_os = "linux"))]
++        let effect = self.effect as ::libc::c_int;
+ 
+         if let Err(err) = unsafe { ioctl::eviocrmff(self.file.as_raw_fd(), effect) } {
+             error!(
+--- cargo-crates/gilrs-core-0.3.2/src/platform/mod.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.3.2/src/platform/mod.rs
+@@ -21,7 +21,7 @@
+ 
+ pub use self::platform::*;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd"))]
+ #[path = "linux/mod.rs"]
+ mod platform;
+ 
+@@ -38,7 +38,7 @@ mod platform;
+ mod platform;
+ 
+ #[cfg(all(
+-    not(target_os = "linux"),
++    not(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd")),
+     not(target_os = "macos"),
+     not(target_os = "windows"),
+     not(target_arch = "wasm32")
