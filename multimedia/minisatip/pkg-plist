@@ -13,6 +13,7 @@ sbin/minisatip
 %%DATADIR%%/html/jquery.dataTables.min.js
 %%DATADIR%%/html/lr.jpg
 %%DATADIR%%/html/lr.png
+%%DATADIR%%/html/satfinder.html
 %%DATADIR%%/html/satip.xml
 %%DATADIR%%/html/sm.jpg
 %%DATADIR%%/html/sm.png
