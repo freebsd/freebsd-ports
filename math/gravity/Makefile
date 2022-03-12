@@ -1,6 +1,6 @@
 PORTNAME=	gravity
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.20210825
+DISTVERSION=	1.1.20220309
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -10,8 +10,7 @@ COMMENT=	Mathematical modeling for optimization and machine learning
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs \
-		gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT} # not sure why does it need gcc, maybe for libquadmath.so
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs
 LIB_DEPENDS=	libblas.so:math/blas \
 		libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
@@ -19,21 +18,18 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libcoinasl.so:math/asl \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
-RUN_DEPENDS=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
 
 USES=		cmake compiler:c++11-lang eigen:3 localbase:ldflags pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 GH_PROJECT=	Gravity
-GH_TAGNAME=	e500e78
+GH_TAGNAME=	47ac86a
 
 CMAKE_ARGS+=	-DIPOPT_ROOT_DIR=${LOCALBASE}
 CMAKE_ON=	Boost
 CMAKE_OFF=	MP
 CMAKE_OFF+=	Ipopt CoinUtils # fails to find Ipopt and CoinUtils for some reason
-
-LDFLAGS+=	-L${LOCALBASE}/lib/gcc${GCC_DEFAULT}
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
