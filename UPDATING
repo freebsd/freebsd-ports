@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20220311:
+  AFFECTS: users of multimedia/get_iplayer
+  AUTHOR: jamie@catflap.org
+
+  get_iplayer has a number of changes to quality settings that may
+  break existing configurations. Please see the release notes for
+  further information:
+
+  https://github.com/get-iplayer/get_iplayer/wiki/release320to329#release329
+
+20220311:
   AFFECTS: users of emulators/virtualbox-ose
   AUTHOR: grembo@FreeBSD.org
 
