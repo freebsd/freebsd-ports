@@ -1,16 +1,11 @@
 # Created by: Denis Podolskiy <bytestore@yandex.ru>
 
 PORTNAME=	jpeg-turbo
-DISTVERSION=	2.1.1
-PORTREVISION?=	1
+DISTVERSION=	2.1.3
+PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${DISTVERSION}
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
-
-PATCH_SITES=	https://github.com/libjpeg-turbo/libjpeg-turbo/commit/
-PATCHFILES=	173900b1cabb027495ae530c71250bcedc9925d5.patch:-p1 \
-		129f0cb76346ceede8f4d8d87dea8acb0809056c.patch:-p1 \
-		d401d6251412a2985810ffaffb90b448a6ee12a9.patch:-p1
 
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
