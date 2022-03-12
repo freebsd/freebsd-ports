@@ -10,7 +10,8 @@ COMMENT=	Simulation Description Format (SDF) parser and description files
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake \
-		ignition-tools>0:devel/ignition-tools
+		ignition-tools>0:devel/ignition-tools \
+		rubygem-rexml>0:textproc/rubygem-rexml
 LIB_DEPENDS=	libignition-math6.so:math/ignition-math \
 		libconsole_bridge.so:devel/ros-console_bridge \
 		libtinyxml2.so:textproc/tinyxml2 \
