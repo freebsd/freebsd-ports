@@ -1,43 +1,50 @@
 PORTNAME=	nfft
-PORTVERSION=	3.5.2
-PORTREVISION=	1
+DISTVERSION=	3.5.2
+PORTREVISION=	2
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/NFFT/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nonequispaced fast Fourier transform
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		cunit>0:devel/cunit
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		autoreconf libtool
-USE_GITHUB=	yes
-GH_ACCOUNT=	NFFT
+USES=		libtool localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fftw3=${PREFIX}
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS DOXYGEN
+CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
+CONFIGURE_ARGS=		--disable-static \
+			--disable-doxygen-doc \
+			--enable-all \
+			--with-fftw3
+
+OPTIONS_DEFINE=			DOCS OPENMP
+OPTIONS_DEFAULT_aarch64=	OPENMP
+OPTIONS_DEFAULT_amd64=		OPENMP
 OPTIONS_SUB=	yes
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_ALL_TARGET=	all doc
-DOXYGEN_IMPLIES=	DOCS
+OPENMP_CONFIGURE_ENABLE=	openmp
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-post-extract:
-	${CP} ${PATCHDIR}/cpow.c ${WRKSRC}/3rdparty
+# We don't have cexpl implemented in earlier versions
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216862
 
-pre-configure:
-	cd ${WRKSRC} && bash ./bootstrap.sh
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300521
 
-do-configure:
-	cd ${WRKSRC} && bash ${WRKSRC}/configure ${CONFIGURE_ARGS}
+LIB_DEPENDS+=	libopenlibm.so:math/openlibm
+LDFLAGS+=	-lopenlibm
 
-.include <bsd.port.post.mk>
+.endif
+
+.include <bsd.port.mk>
