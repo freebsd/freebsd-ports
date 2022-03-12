@@ -1,10 +1,10 @@
---- setup.py.orig	2015-06-25 09:44:36 UTC
+--- setup.py.orig	2021-05-12 21:19:48 UTC
 +++ setup.py
-@@ -1,9 +1,28 @@
- #!/usr/bin/env python
- 
+@@ -5,9 +5,28 @@ except ImporError:
+     from setuptools import setup
+ except ImporError:
+     from distutils.core import setup
 +from setuptools.command.test import test as TestCommand
- from distutils.core import setup
  import os.path
  import sys
  
@@ -27,10 +27,10 @@
 +        sys.exit(errno)
 +
  # stop with the bug reports
- if sys.version_info < (2, 6):
-     raise RuntimeError("Twiggy requires Python 2.6 or greater")
-@@ -34,4 +53,6 @@ setup(name='Twiggy',
-       "Programming Language :: Python :: 3.4",
+ if sys.version_info < (2, 7):
+     raise RuntimeError("Twiggy requires Python 2.7 or greater")
+@@ -41,4 +60,6 @@ setup(name='Twiggy',
+       "Programming Language :: Python :: 3.9",
        "License :: OSI Approved :: BSD License",],
        long_description=open('README.rst').read(),
 +      tests_require=['pytest'],
