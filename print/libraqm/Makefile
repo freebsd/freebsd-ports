@@ -1,5 +1,5 @@
 PORTNAME=	libraqm
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/HOST-Oman/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	raqm-${DISTVERSION}

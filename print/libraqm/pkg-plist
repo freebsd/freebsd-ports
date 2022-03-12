@@ -2,7 +2,7 @@ include/raqm-version.h
 include/raqm.h
 lib/libraqm.so
 lib/libraqm.so.0
-lib/libraqm.so.0.8.0
+lib/libraqm.so.0.9.0
 libdata/pkgconfig/raqm.pc
 %%PORTDOCS%%%%DOCSDIR%%/annotation-glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-0-1.html
@@ -11,6 +11,7 @@ libdata/pkgconfig/raqm.pc
 %%PORTDOCS%%%%DOCSDIR%%/api-index-0-6.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-0-7.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-0-8.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index-0-9.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
