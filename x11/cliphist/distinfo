@@ -1,0 +1,9 @@
+TIMESTAMP = 1647089680
+SHA256 (sentriz-cliphist-v0.3.1_GH0.tar.gz) = 381b92356e76229c5d15c2d42b3ee63734b7463aacbd200087abd6ed3c30c5ce
+SIZE (sentriz-cliphist-v0.3.1_GH0.tar.gz) = 18757
+SHA256 (etcd-io-bbolt-v1.3.6_GH0.tar.gz) = a2e524f7f32c44fa0765de192ac0789c585010cadd2c2ddcf9518e858a96ec1f
+SIZE (etcd-io-bbolt-v1.3.6_GH0.tar.gz) = 98025
+SHA256 (golang-sys-3681064d5158_GH0.tar.gz) = c084b1b6a081b78986c7364ec483397d6c128aa447ab672aa132fda309bd4db7
+SIZE (golang-sys-3681064d5158_GH0.tar.gz) = 1258557
+SHA256 (matryer-is-v1.4.0_GH0.tar.gz) = 9fdffa00496e767c2585c2fd7dbb018bee65b6f65f95aaeb96966719fbdd3ddc
+SIZE (matryer-is-v1.4.0_GH0.tar.gz) = 89607
