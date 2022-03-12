@@ -42,7 +42,6 @@ HEIF_DESC=	HEIF image format support
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 HEIF_CONFIGURE_OFF=	--without-heif
 HEIF_CPPFLAGS=		-I${LOCALBASE}/include
-AVIF_DESC=	AVIF image format support
 AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
 AVIF_CONFIGURE_OFF=	--without-avif
 AVIF_CPPFLAGS=		-I${LOCALBASE}/include

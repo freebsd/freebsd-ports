@@ -36,6 +36,7 @@ ASSERT_DESC?=		Enable debug assertions
 ATLAS_DESC?=		ATLAS blas implementation
 AUDIOFILE_DESC?=	SGI audio file format support
 AVAHI_DESC?=		Zeroconf support via Avahi
+AVIF_DESC?=		AV1 Image File Format via libavif
 BASH_DESC?=		Install programmable completions for Bash
 BDB_DESC?=		Berkeley DB support
 BDB1_DESC?=		Berkeley DB 1.85 support
