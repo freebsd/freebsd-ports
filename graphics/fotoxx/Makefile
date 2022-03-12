@@ -1,7 +1,7 @@
 # Created by: Rod Person <rodperson@rodperson.com>
 
 PORTNAME=	fotoxx
-PORTVERSION=	22.12
+PORTVERSION=	22.14
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
@@ -26,10 +26,6 @@ ALL_TARGET=	fotoxx
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*
-PORTDATA=	*
-PLIST_FILES=	bin/fotoxx \
-		share/man/man1/fotoxx.1.gz \
-		share/applications/fotoxx.desktop
 
 OPTIONS_DEFINE=	DOCS
 
