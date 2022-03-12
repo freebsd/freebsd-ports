@@ -11,6 +11,9 @@ COMMENT=	Single Sign On server, multiple factor authentication
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Doesn't build, ld: error: duplicate symbol
+EXPIRATION_DATE=2022-03-31
+
 USES=		cmake pgsql
 
 USE_GITHUB=	yes
