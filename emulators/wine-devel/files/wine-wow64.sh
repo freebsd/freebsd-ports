@@ -9,7 +9,17 @@ I386_ROOT="${WINE_i386_ROOT:-$HOME/.i386-wine-pkg}"
 if [ ! -f "$I386_ROOT/$PREFIX/bin/wine" ]
 then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
-  printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine-devel mesa-dri"
+  printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine mesa-dri"
+  ABI=$(pkg config ABI | sed s/amd64/i386/)
+  FREEBSD_VERSION_MAJOR=`uname -r | sed "s/\..*//"`
+  cat <<- HERE
+
+	If using Poudriere, please make sure your repo is setup to use ${ABI}
+	and create symlinks for
+	  FreeBSD:$FREEBSD_VERSION_MAJOR:amd64 and
+	  FreeBSD:$FREEBSD_VERSION_MAJOR:i386
+	to the relevant output directories. See pkg.conf(5) for more info.
+HERE
   exit 1
 fi
 
