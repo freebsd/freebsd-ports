@@ -1,8 +1,8 @@
 include/tls.h
 lib/libtls.a
 lib/libtls.so
-lib/libtls.so.22
-lib/libtls.so.22.0.0
+lib/libtls.so.24
+lib/libtls.so.24.0.1
 libdata/pkgconfig/libtls.pc
 man/man3/tls_accept_cbs.3.gz
 man/man3/tls_accept_fds.3.gz
