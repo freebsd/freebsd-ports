@@ -2,7 +2,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.20.2
-PORTREVISION?=	8
+PORTREVISION?=	9
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -350,8 +350,6 @@ do-install-NAXSI-on:
 	${WRKDIR}/naxsi-${NAXSI_NGINX_VER}/naxsi_config/naxsi_core.rules \
 	${STAGEDIR}${ETCDIR}
 
-do-install-NJS-on:
-	${INSTALL_PROGRAM} ${WRKSRC_njs}/build/njs ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 .if !target(post-install)
