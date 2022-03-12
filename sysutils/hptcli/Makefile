@@ -4,7 +4,7 @@ PORTNAME=	hptcli
 PORTVERSION=	3.6
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.highpoint-tech.com/BIOS_Driver/HRM/FreeBSD/
+MASTER_SITES=	https://download.freenas.org/distfiles/
 DISTNAME=	CLI-FreeBSD-3.6-1-120913
 
 MAINTAINER=	wg@FreeBSD.org
