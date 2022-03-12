@@ -1,7 +1,7 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	postfix
-DISTVERSION=	3.7-20211107
+DISTVERSION=	3.8-20220220
 PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
@@ -60,8 +60,8 @@ USERS=		postfix
 GROUPS=		mail maildrop postfix
 
 OPTIONS_DEFINE=		BDB BLACKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MYSQL \
-			NIS PCRE PGSQL SASL SQLITE TEST TLS
-OPTIONS_DEFAULT?=	BLACKLISTD EAI PCRE TLS
+			NIS PCRE2 PGSQL SASL SQLITE TEST TLS
+OPTIONS_DEFAULT?=	BLACKLISTD EAI PCRE2 TLS
 OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
 .if ${FLAVOR:U} == ldap
@@ -81,6 +81,7 @@ EAI_DESC=		Email Address Internationalization (SMTPUTF8) support
 INST_BASE_DESC=		Install into /usr and /etc/postfix
 LDAP_DESC=		LDAP maps (uses WITH_OPENLDAP_VER)
 LMDB_DESC=		LMDB maps
+PCRE2_DESC=             Use Perl Compatible Regular Expressions, version 2
 RG1_DESC=		Kerberos network authentication protocol type
 SASLKMIT_DESC=		If your SASL req. MIT Kerberos5, select this
 SASLKRB5_DESC=		If your SASL req. Kerberos5, select this
@@ -94,7 +95,7 @@ EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USE=			OPENLDAP=yes
 LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
 MYSQL_USES?=			mysql
-PCRE_LIB_DEPENDS=		libpcre.so:devel/pcre
+PCRE2_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
 PGSQL_USES=			pgsql
 SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
@@ -197,10 +198,10 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -licuuc
 POSTFIX_CCARGS+=	-DNO_EAI
 .endif
 
-.if ${PORT_OPTIONS:MPCRE}
+.if ${PORT_OPTIONS:MPCRE2}
 DYN_EXT+=		pcre
-POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PCRE=`${LOCALBASE}/bin/pcre-config --libs`"
+POSTFIX_CCARGS+=	-DHAS_PCRE=2 -I${LOCALBASE}/include
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PCRE=`${LOCALBASE}/bin/pcre2-config --libs8`"
 .else
 POSTFIX_CCARGS+=	-DNO_PCRE
 .endif

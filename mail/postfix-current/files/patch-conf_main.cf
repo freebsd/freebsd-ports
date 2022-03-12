@@ -1,0 +1,11 @@
+--- conf/main.cf.orig	2022-03-12 22:37:09 UTC
++++ conf/main.cf
+@@ -681,4 +681,7 @@ sample_directory = /etc/postfix
+ # readme_directory: The location of the Postfix README files.
+ #
+ readme_directory = no
+-inet_protocols = ipv4
++inet_protocols = all
++
++# smtp CA path (default to system-wide location)
++smtp_tls_CApath = /etc/ssl/certs

@@ -11,6 +11,7 @@ Run the following commands to enable postfix during startup:
 
 If postfix is *not* already activated in %%MC_PREFIX%%/etc/mail/mailer.conf
   - mv %%MC_PREFIX%%/etc/mail/mailer.conf %%MC_PREFIX%%/etc/mail/mailer.conf.old
+  - install -d %%MC_PREFIX%%/etc/mail
   - install -m 0644 %%DATADIR%%/mailer.conf.postfix %%MC_PREFIX%%/etc/mail/mailer.conf
 
 Disable sendmail(8) specific tasks,
