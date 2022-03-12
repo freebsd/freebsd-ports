@@ -11,6 +11,9 @@ COMMENT=	Python client for Apple Push Notification service
 
 LICENSE=	MIT
 
+DEPRECATED=	Use devel/py-aioapns
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyper>0:www/py-hyper@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=1.4.0:www/py-pyjwt@${PY_FLAVOR}
