@@ -151,6 +151,7 @@ include/lean_ext/library/expr_lt.h
 include/lean_ext/library/expr_pair.h
 include/lean_ext/library/expr_pair_maps.h
 include/lean_ext/library/expr_unsigned_map.h
+include/lean_ext/library/feature_search.h
 include/lean_ext/library/fingerprint.h
 include/lean_ext/library/fun_info.h
 include/lean_ext/library/handle.h
@@ -194,6 +195,7 @@ include/lean_ext/library/phashtable.h
 include/lean_ext/library/pipe.h
 include/lean_ext/library/placeholder.h
 include/lean_ext/library/pp_options.h
+include/lean_ext/library/predict/predict.h
 include/lean_ext/library/print.h
 include/lean_ext/library/private.h
 include/lean_ext/library/process.h
@@ -509,6 +511,7 @@ lib/lean/library/init/meta/environment.lean
 lib/lean/library/init/meta/exceptional.lean
 lib/lean/library/init/meta/expr.lean
 lib/lean/library/init/meta/expr_address.lean
+lib/lean/library/init/meta/feature_search.lean
 lib/lean/library/init/meta/float.lean
 lib/lean/library/init/meta/format.lean
 lib/lean/library/init/meta/fun_info.lean
