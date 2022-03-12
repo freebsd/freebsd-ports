@@ -1,0 +1,10 @@
+--- Makefile.orig	2022-03-12 15:37:17 UTC
++++ Makefile
+@@ -214,6 +214,7 @@ install_shared: liblowdown.so install_lib_common
+ 
+ install_shared: liblowdown.so install_lib_common
+ 	$(INSTALL_LIB) liblowdown.so.$(LIBVER) $(DESTDIR)$(LIBDIR)
++	ln -sf libdowndown.so.${LIBVER} $(DESTDIR)$(LIBDIR)/liblowdown.so
+ 
+ install_static: liblowdown.a install_lib_common
+ 	$(INSTALL_LIB) liblowdown.a $(DESTDIR)$(LIBDIR)
