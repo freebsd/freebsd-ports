@@ -1,0 +1,125 @@
+--- texk/xdvik/configure.orig	2014-04-13 03:58:38 UTC
++++ texk/xdvik/configure
+@@ -667,6 +667,7 @@ X_CFLAGS
+ XMKMF
+ LIBOBJS
+ ALLOCA
++FONTCONFIGCPPFLAGS
+ PS_DEF
+ CPP
+ OTOOL64
+@@ -13309,6 +13310,20 @@ $as_echo "#define A4 1" >>confdefs.h
+ 
+ fi
+ 
++
++$as_echo "#define PTEX 1" >>confdefs.h
++
++if pkg-config fontconfig --modversion > /dev/null 2>&1; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: adding fontconfig-\`pkg-config fontconfig --modversion\` library" >&5
++$as_echo "adding fontconfig-\`pkg-config fontconfig --modversion\` library" >&6; }
++  FONTCONFIGCPPFLAGS="`pkg-config fontconfig --cflags`"
++  LIBS="`pkg-config fontconfig --libs` $LIBS"
++
++
++$as_echo "#define HAVE_FONTCONFIG 1" >>confdefs.h
++
++fi
++
+ ac_config_headers="$ac_config_headers c-auto.h:c-auto.in"
+ 
+ 
+@@ -18393,8 +18408,8 @@ else
+   FT2_CONFIG="$ac_cv_prog_FT2_CONFIG"
+ fi
+ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+-  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
+-  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
++  FREETYPE2_INCLUDES=`pkg-config freetype2 --cflags`
++  FREETYPE2_LIBS=`pkg-config freetype2 --libs`
+ elif test "x$need_freetype2:$with_system_freetype2" = xyes:yes; then
+   as_fn_error $? "did not find freetype-config required for system freetype2 library" "$LINENO" 5
+ fi
+@@ -18408,6 +18423,82 @@ $(FREETYPE2_DEPEND): ${top_builddir}/../../libs/freety
+ ${top_builddir}/../../libs/freetype2/freetype2/ft2build.h:
+ 	cd ${top_builddir}/../../libs/freetype2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+ fi
++
++## _KPSE_LIB_FLAGS: Setup zlib (-lz) flags
++
++# Check whether --with-system-zlib was given.
++if test "${with_system_zlib+set}" = set; then :
++  withval=$with_system_zlib;
++fi
++
++# Check whether --with-zlib-includes was given.
++if test "${with_zlib_includes+set}" = set; then :
++  withval=$with_zlib_includes;
++fi
++
++# Check whether --with-zlib-libdir was given.
++if test "${with_zlib_libdir+set}" = set; then :
++  withval=$with_zlib_libdir;
++fi
++if test "x$with_system_zlib" = xyes; then
++  if test "x$with_zlib_includes" != x && test "x$with_zlib_includes" != xyes; then
++  ZLIB_INCLUDES="-I$with_zlib_includes"
++fi
++ZLIB_LIBS="-lz"
++if test "x$with_zlib_libdir" != x && test "x$with_zlib_libdir" != xyes; then
++  ZLIB_LIBS="-L$with_zlib_libdir $ZLIB_LIBS"
++fi
++else
++  ZLIB_INCLUDES="-I$kpse_BLD/libs/zlib/include"
++  ZLIB_LIBS="$kpse_BLD/libs/zlib/libz.a"
++  ZLIB_DEPEND='${top_builddir}/../../libs/zlib/libz.a'
++  ZLIB_RULE='# Rebuild libz
++$(ZLIB_DEPEND): ${top_builddir}/../../libs/zlib/include/zconf.h
++	cd ${top_builddir}/../../libs/zlib && $(MAKE) $(AM_MAKEFLAGS) rebuild
++${top_builddir}/../../libs/zlib/include/zconf.h:
++	cd ${top_builddir}/../../libs/zlib && $(MAKE) $(AM_MAKEFLAGS) rebuild'
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if <zlib.h> defines 'z_const'" >&5
++$as_echo_n "checking if <zlib.h> defines 'z_const'... " >&6; }
++if ${kpse_cv_have_decl_z_const+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  eval CPPFLAGS=\"$ZLIB_INCLUDES \$CPPFLAGS\"
++eval LIBS=\"$ZLIB_LIBS \$LIBS\"
++
++                cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#include <zlib.h>
++int
++main ()
++{
++z_const char * foo();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_compile "$LINENO"; then :
++  kpse_cv_have_decl_z_const=yes
++else
++  kpse_cv_have_decl_z_const=no
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++                CPPFLAGS=$kpse_save_CPPFLAGS
++LIBS=$kpse_save_LIBS
++
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $kpse_cv_have_decl_z_const" >&5
++$as_echo "$kpse_cv_have_decl_z_const" >&6; }
++case $kpse_cv_have_decl_z_const in #(
++  yes) :
++
++$as_echo "#define ZLIB_CONST 1" >>confdefs.h
++ ;; #(
++  *) :
++
++$as_echo "#define z_const /**/" >>confdefs.h
++ ;;
++esac
+ 
+ 
+ 

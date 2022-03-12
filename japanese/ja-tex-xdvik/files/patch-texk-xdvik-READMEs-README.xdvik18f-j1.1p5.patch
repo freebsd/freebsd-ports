@@ -1,0 +1,325 @@
+--- texk/xdvik/READMEs/README.xdvik18f-j1.1p5.patch.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.xdvik18f-j1.1p5.patch
+@@ -0,0 +1,322 @@
++*xdvik18f-j1.1p5.patch について
++
++					千葉大学 総合情報処理センター
++					山賀正人 (yamaga@ipc.chiba-u.ac.jp)
++
++
++  このパッチは xdvi (xdvik-18f) で日本語 (ASCII-pTeX および NTT-JTeX) 
++を表示できるようにするパッチです。
++
++このパッチは以前 中山＠東大(現:信州大)さん が作られた xdvik18f-j1.0 パッ
++チに以下の修整を加えたものです。
++
++         1. 小野＠早稲田さん 他による xdvi-17 の markpage+toc+printdvi 
++            パッチに相当する部分を markpage+toc+printdvi+paper パッチ
++            に置き換え
++
++         2. 竹中＠東大さんによる xdvi-17 の pTeX 縦書き用パッチを適応
++            (内山＠神戸大 さんによる作業)
++
++         3. 明朝体とゴシック体以外の日本語表示可能
++ 
++         4. いくつかのバグの修整
++
++中山さんのパッチについては添付の READMEs/README.xdvik18f-j1.0.patch を
++参照してください。
++
++
++
++[1] コンパイル・インストール
++
++ (1) ソースを展開
++
++     % gunzip -c xdvik-18f.tar.gz | tar xvf -
++
++ (2) パッチをあてる
++
++     % cd xdvik-18f/xdvik
++     % patch -p < (somewhere)/xdvik18f-j1.1p5.patch
++
++ (3) xdefs.make を自分の環境に併せて変更
++
++     % vi xdefs.make または mule xdefs.make
++
++     まず FILTOPTTBLDIR を自分の環境に合わせて変更します。FILTOPTTBLDIR
++     は xdvi から直接プリントアウトする場合に用いる dvi --> ps フィルタ
++     コマンドのオプション変換テーブルファイル xdvipaper.* の置き場所を
++     指定するものです。
++
++     また dvi --> ps フィルタとして default の dvi2ps-j 以外を使用する
++     場合は xdefs.make の FILTOPTTBLFILE と config.h の DVIFILTERCMD 
++     も変更します。その他に default のプリンタやプリントアウトコマンド
++     を変更したい場合は config.h の DVIPRINTER や PRINTCMD をそれぞれ
++     変更してください。
++
++     この markpage+toc+printdvi+paper パッチ部分の機能についての詳細は 
++     READMEs/README.markpage+toc+printdvi+paper を参照してください。
++
++     更に以下の３通りのうち、いずれかを選択してください。
++    
++ (3-1) VFlib を用いる場合
++
++     xdefs.make 中の DEFAULT_FONTMAP を自分の環境に併せて変更します。
++
++  *********************************************************************
++  *  DEFAULT_FONTMAP で指定するファイル名は日本語フォントを VFlib の  *
++  *  どのフォントにマップするかを指定するファイルです。               *
++  *                                                                   *
++  *          vfontmap は VFlib の vfontcap とは別のものです。         *
++  *                                                                   *
++  *  詳しいことは [2] で説明します。                                  *
++  *********************************************************************
++
++     ただし日本語多書体表示機能を利用しない場合はこの設定は必要ありません。
++     その替わり XDEFS に -DNOVFONTMAP を指定してください。
++
++ (3-2) VFlib を用いずに大日本印刷の pk フォントを用いる場合
++
++     xdefs.make 中の XDEFSに -DNOZEIT を指定し、VFLIB の行をコメント
++     アウトしてください。この場合 vfontmap による日本語多書体表示機能は
++     使えません。
++
++ (3-3) NTT-JTeX に対してのみ大日本印刷の pk フォントを用いる場合
++
++     xdefs.make 中の XDEFS に -DNONTTZEIT を指定してください。この場合
++     ASCII-pTeX に対しては日本語多書体表示機能が使えますが NTT-JTeX に
++     対しては使えません。
++
++
++ (4) トップディレクトリで configure --> make
++
++     % cd ..
++     % ./configure
++     % make
++
++ (5) インストール
++
++     % su
++
++     # make install
++   
++    (注) 既に TeX (3.1415以降)がインストールされている場合はディレクト
++         リ xdvik に移動してから make install したほうが良いでしょう。
++
++
++
++[2] 明朝体とゴシック体以外の日本語を表示させる方法
++
++  まずマップファイル (default では /usr/local/lib/texmf/xdvi/vfontmap) 
++に以下のように記述しておきます。
++
++	mgoth	maru
++	fmin	fmin
++	fgoth	goth
++
++間にスペース、もしくはタブを入れて第一カラムに "dvi ファイル中のフォント名"、
++第二カラムに "VFlib の vfontcap に登録されたフォント名" のように記述しておく
++だけで新たに xdvi を再コンパイルすることなく、自由に日本語の書体を追加する
++ことができます。
++
++またこのマップファイル中に明朝体とゴシック体の二書体を指定しない場合は
++default で
++
++	min	min	# for ASCII
++	nmin	min	# for ASCII
++	goth	goth	# for ASCII
++	ngoth	goth	# for ASCII
++	dm	min	# for NTT
++	dg	goth	# for NTT
++
++と設定されます。
++
++このマップファイル中では # 以降がコメントとして扱われます。またこのマッ
++プファイルは環境変数 VFONTMAP および起動時のオプション 
++
++	-vfontmap [マップファイル名]
++
++または X の resource
++
++	xdvi*vfontmap:	[マップファイル名]
++
++で変更可能です。ただし優先準位は
++
++	1. 起動時のオプション
++	2. X の resource (xdvi*vfontmap)
++	3. 環境変数 VFONTMAP
++
++の順に低くなっていきます。
++
++  この vfontmap を用いた機能のうち NTT-JTeX への対応部分は 川地＠東大 
++さん による xdvik18f-j1.0+vfontmap-ntt.patch を参考にさせていただいて
++おります。
++
++# NTT-JTeX で日本語の多書体を扱うためのスタイルファイルなどについては
++# 川地さんの作成なさった Web page
++#
++# 	http://www.cim.pe.u-tokyo.ac.jp/~kawachi/software/xdvik18f.html
++#
++# を参照してください。
++#
++# また ASCII-pTeX で多書体を扱う方法は VFlib に付属の jTeX/README.euc 
++# や doc/QA.txt などをご覧ください。
++
++
++
++[3] 著作権について
++
++  本パッチは東大の中山さんのパッチ xdvik18f-j1.0.patch を含んでおりま
++すが、その中山さんのパッチに含まれていた部分および本パッチから新たに組
++み込まれたコードの著作権は以下の方々にあります。
++
++          miyu patch に起因する部分
++                 杉浦茂樹さん <miyu@akiu.gw.tohoku.ac.jp>
++                 他
++
++                 (詳細は竹中さんによる READMEs/README.jp-patch
++                  をご覧ください)
++
++          pTeX 縦書き対応部分
++                 竹中浩さん <lh36112@hongo.ecc.u-tokyo.ac.jp>
++                 (xdvi-17jp.960209 より)
++
++          markpage+toc+printdvi+paper パッチに起因する部分 
++                 松浦俊さん <syun@fuka.info.waseda.ac.jp>
++                 平原厚志さん <hirahara@fuka.info.waseda.ac.jp>
++                 小野康一さん <onono@fuka.info.waseda.ac.jp>
++                 他
++
++                 (詳細は小野さんによる
++                  READMEs/README.markpage+toc+printdvi+paper
++                  をご覧ください)
++
++  また本パッチのうち vfontmap に関わる部分 (vfontmap.c) の著作権は山賀
++(yamaga@ipc.chiba-u.ac.jp)にありますが、それ以外の部分に関しては山賀は
++パッチのとりまとめを行っただけですので著作権を一切主張いたしません。同
++様に内山＠神戸大さんも
++
++   「パッチをつくる作業をしたのみで, 著作権の主張をするものではない」
++
++と明言なさっています。
++
++
++
++[4] その他の修整点
++
++ (1) default の Shrink factor を 4 にした(xdvi.c)
++
++ (2) -help オプションでのヘルプメッセージを修整(xdvi.c)
++
++ (3) xdvi.1 の内容を修整するために mksedscript と xdvi.man を修整
++	(プリントアウトコマンドの設定値などを config.h から拾うように)
++
++ (4) Shrink を変更すると core dump するバグの修正(zeit.c)
++
++     ※ Hayakawa Koichi さん と 内山＠神戸大 さん からのご指摘によるものです。
++
++ (5) FreeBSD でコンパイル可能に
++
++     ※ 萩原＠農工大さんが fj.comp.texhax に投稿された patches.tgz
++        (HITOSHI.96Apr30100219@mail01.tuat.ac.jp)に含まれている
++        freebsd.patch より
++
++ (6) \" が Shrink の変更についていかないバグ、及び NTT-JTeX で「投」の
++     文字が Shrink の変更についていかないバグの修整(dvi_init.c)
++
++     ※ 高村＠NTT HI研 さん からいただいたパッチです。
++
++ (7) 一部の FreeBSD で Segmentation Fault するバグの修整 (vfontmap.c)
++
++     ※ 森田＠京大 さん からいただいたパッチです。
++
++ (8) ASCII pTeX 日本語フォント (jfm) に関しては virtual font を先に読ま
++     ないように (font-open.c) また Linux でコンパイル可能に
++
++     ※ 内山＠神戸大 さん からいただいたパッチです。
++
++ (9) FreeBSD, Linux 上で selfile ウィンドウのスクロールバーが正しく表示
++     されないバグの修整 (sfinternal.h)
++
++     ※ 中山＠信州大 さん からいただいたパッチです。
++
++(10) SMALL_PANEL を指定した場合ページ番号の表示部分が画面からはみ出て
++     しまうバグの修整 (toc.c)
++
++     ※ 萩原＠農工大 さん からいただいたパッチです。
++
++(11) pstricks を使っている場合に PS の図が正しく表示されないバグの修正
++     (special.c)
++
++     ※ 中山＠信州大 さん からいただいたパッチです。
++
++(12) SunOS4.1.3_U1 の cc でコンパイルできるように
++     (dvi_init.c, special.c, xdvi.h)
++
++     ※ 近藤＠茨城大 さん からいただいたパッチです。
++
++(13) 東京書籍印刷同様の写研フォントにあわせたフォント名でも vfontmap
++     の機能が使えるように (dvi_init.c)
++
++     ※ 大岩＠東大 さん からいただいたパッチです。
++
++        fj.comp.texhax
++              <G540001.97Feb24012306@ecc-as52.komaba.ecc.u-tokyo.ac.jp>
++
++(14) 縦書き表示に関する誤動作を修正 (dvi_draw.c, dvi_init.c, xdvi.h)
++
++     ※ 竹中＠東大 さん の xdvi-17 に対するパッチを 大岩＠東大 さん
++        によって xdvik-18f に適応したものです。
++
++        fj.comp.texhax
++              <no7pvxq2pg9.fsf@ecc-as01.hongo.ecc.u-tokyo.ac.jp>
++              <G540001.97Feb25061004@ecc-as51.komaba.ecc.u-tokyo.ac.jp>
++              <G540001.97Feb25174119@ecc-as52.komaba.ecc.u-tokyo.ac.jp>
++
++	<http://www.komaba.ecc.u-tokyo.ac.jp/~g540001/pub/unix/
++                                            xdvik18f-j1.1p1-vfix.patch>
++
++(15) -DNOZEIT, -DNONTTZEIT, -DNOPRINTDVI に対して正常に動作するように
++     (font-open.c, xdvi.c, dvi_init.c, vfontmap.c, print.c)
++
++(16) ASCIIDNP でも pTeX の縦書きが表示できるように (dvi_init.c, pk.c)
++
++(17) ASCIIDNP で pTeX の min8 のフォントを表示しようとすると core dump する
++     バグの修正、および縦書きの表示で（）〈〉などがずれてしまうバグの修正
++     (dvi_init.c, tategaki.c)
++
++     ※ 竹野＠新潟工科大 さん からいただいたパッチです。
++
++
++
++[5] 注意事項
++
++  本パッチの再配布は自由に行って構いませんが付属のドキュメント類 
++(READMEs 以下のファイル)は必ずそのままの形で添付してください。また改変
++も自由に行って構いませんが、改変したものを配布する場合は山賀
++(yamaga@ipc.chiba-u.ac.jp)まで御連絡ください。またその際にも私からお願
++いすることになると思いますが、上で上げた各パッチの著作権保有者には必ず
++連絡をしてください。
++
++
++
++[6] 最後に
++
++  本パッチ作成にあたりご協力いただいた多くの皆様に感謝いたします。特に
++電子メールにより御助言を賜わった以下の方々に対し、そのお名前を列挙する
++ことで感謝の意を表したいと思います。
++
++      内山 孝憲 様
++      小野 康一 様
++      杉浦 茂樹 様
++      竹野 茂治 様
++      竹中 浩   様
++      中山 一昭 様
++      萩原 斉   様
++
++      (五十音順)
++
++このパッチに関する質問やご意見ご感想は
++
++		yamaga@ipc.chiba-u.ac.jp
++
++まで。
++						平成９年３月３日（月）

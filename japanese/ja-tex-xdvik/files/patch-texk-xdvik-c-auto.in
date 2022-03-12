@@ -1,0 +1,32 @@
+--- texk/xdvik/c-auto.in.orig	2014-04-13 01:27:58 UTC
++++ texk/xdvik/c-auto.in
+@@ -72,6 +72,9 @@
+ /* Define to 1 if you have the <float.h> header file. */
+ #undef HAVE_FLOAT_H
+ 
++/* Using fontconfig */
++#undef HAVE_FONTCONFIG
++
+ /* Define to 1 if you have the `fork' function. */
+ #undef HAVE_FORK
+ 
+@@ -108,6 +111,9 @@
+ /* Define to 1 if you have the <iconv.h> header file. */
+ #undef HAVE_ICONV_H
+ 
++/* Define to 1 if you have the `ptexenc' library. */
++#undef HAVE_PTEXENC
++
+ /* Define to 1 if you have the <ieeefp.h> header file. */
+ #undef HAVE_IEEEFP_H
+ 
+@@ -346,6 +352,9 @@
+ /* Define to the version of this package. */
+ #undef PACKAGE_VERSION
+ 
++/* Enabled Japanese pTeX support. */
++#undef PTEX
++
+ /* Define as the return type of signal handlers (`int' or `void'). */
+ #undef RETSIGTYPE
+ 

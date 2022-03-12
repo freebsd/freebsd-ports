@@ -1,0 +1,761 @@
+--- texk/xdvik/CHANGES.xdvik-jp.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/CHANGES.xdvik-jp
+@@ -0,0 +1,758 @@
++2013-05-04  TANAKA Takuji  <KXD02663@nifty.ne.jp>
++
++	* dvi-draw.c, dvi-init.c, dvi.h, dvisel.c, ft2.c, ft2.h,
++	ptexvf.c, vf.c:
++	Allow characters higher than 0xFFFF
++	up to 0x10FFFF Unicode maximum (from upTeX patch).
++
++2013-05-02  TANAKA Takuji  <KXD02663@nifty.ne.jp>
++
++	* Merge changes between xdvik-22.85 and xdvik-22.86.
++	xdvik-22.86 uses "config.ps" and "config.xdvi" for configuration
++	instead of "xdvi.cfg" by default.
++	However, this version still uses "pxdvi.cfg".
++
++        * ptexvf.{c,h}, dvi-init.c, Makefile.am:
++	Rename 'zeit' to 'ptexvf'.
++
++        * ptexvf.c:
++	Suppress warning for halfwidth characters in upTeX.
++
++        * encodings.{c,h}, ft2.c, c-auto.in:
++	Use ptexenc library for JIS to Unicode conversion
++	if !HAVE_ICONV_H and HAVE_PTEXENC are set.
++
++        * jisx0208.{c,h}, Makefile.am:
++	Remove jisx0208.{c,h}.
++
++	* version.h (JPVERSION): new version j1.42.
++
++2013-04-14  TANAKA Takuji  <KXD02663@nifty.ne.jp>
++
++        * {ft2,jfm,zeit}.{c,h}, ft2vert.h:
++         Clarify copyright.
++
++2013-03-20  TANAKA Takuji  <KXD02663@nifty.ne.jp>
++
++        * special.{c,h}, dvi-draw.c, psgs.c:
++         Bug fix: drawing bounding boxes around rotatebox and scalebox
++         in "Show PS and Bounding Boxes" mode and
++         "Show Bounding Boxes Only"  mode.
++
++2013-03-03  Hironori Kitagawa  <h_kitagawa2001@yahoo.co.jp>
++
++        * AJ16.c, tounimap2h.lua: These files are under X11 license.
++
++2011-11-06  Hironori Kitagawa  <h_kitagawa2001@yahoo.co.jp>
++
++        * ptexmap.c, texmf/pxdvi.cfg: Support "/AJ16" syntax in replace
++        entries of pxdvi.cfg.
++
++2011-11-05  Hironori Kitagawa  <h_kitagawa2001@yahoo.co.jp>
++
++        * ft2.c, ptexmap.{c,h}, AJ16.c, tounimap2h.lua, texmf/pxdvi.cfg,
++          xdvi-ptex.sample:
++        Support "/AJ16" syntax which can be exist in mapfiles for dvipdfmx.
++
++        * xdvi-debug.h, ptexmap.c, util.c: Add new debug option 'ptexfnt'.
++
++2009-07-23  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* main.c: Merge changes between xdvik-22.84.13 and xdvik-22.84.16,
++	again.
++
++	* ft2.c (ft2_get_bitmap): Check freetype2 error.
++	Use XDVI_WARNING() macro.
++
++	* gui/help-window.c, c-auto.in, ptexmap.c: Fix typo.
++
++2008-07-10  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* Merge changes between xdvik-22.84.13 and xdvik-22.84.16.
++
++2008-04-07  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* ptexmap.h, ptexmap.c, ft2.c (ptexmap):
++	Adjusted member variable names: jfmname -> jfm_name,
++	vfname -> font_filename, etc.
++
++2008-04-06  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* xdvi-ptex.sample: Enhancement.
++
++2008-02-08  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* ptexmap.c (XDVI_WARNING): Replace 'fprintf(stderr, ...)'
++	with 'XDVI_WARNING((stderr, ...))'.
++	Added check for duplicated entry for ptexmap.
++
++	* ptexmap.c, ptexmap.h (mapfilename): Store map filename
++	in ptexmap structure.
++
++	* version.h (JPVERSION): new version j1.40.
++	
++2008-01-30  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* Makefile.in, dvi-init.c, encodings.c, font-open.c, ft2.c,
++	ft2.h, xdvi.h, zeit.c: Renamed 'vfontmap' to 'ptexmap'.
++
++	* ptexmap.c, ptexmap.h, xdvi-ptex.sample:
++	Renamed from vfontmap.c, vfontmap.h, vfontmap.sample.
++
++	* configure, main.c, withenable.ac, xdvi-config.h, xdvi.c:
++	Removed 'vfontmap' options.
++
++	* dvi-draw.c, texmf/xdvi.cfg, README.xdvik-jp:
++	Added ptexmap support.
++
++	* ptexmap.c, xdvi-ptex.sample: Added new code.
++
++2008-01-22  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* c-auto.in, configure, configure.in, dvi-draw.c, dvi-draw.h,
++	dvi-init.c, dvi-init.h, encodings.c, font-open.c, ft2.c,
++	ft2vert.c, jfm.c, jisx0208.c, main.c, vfontmap.c, vfontmap.h,
++	withenable.ac, xdvi-config.h, xdvi.c, xdvi.h, zeit.c, zeit.h,
++	gui/help-window.c (PTEX):
++	Replaced KANJI and USE_ZEIT macros with PTEX.
++
++	* README.xdvik-jp, configure, withenable.ac:
++	Renamed option name '--disable-kanji' to '--disable-ptex'.
++	
++	* xdvi-config.h: Removed useless USE_VFONTMAP and
++	DEFAULT_FONTCONF macros.
++
++	* version.h (JPVERSION): new version j1.36.
++
++2008-01-19  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c (read_ZEIT_index): Do not stop even if a font
++	is not square.
++
++	* dvi-draw.c, dvi-draw.h, dvi-init.c, dvi-init.h, xdvi.h
++	(PTEX):	Added comments '/* PTEX */' around '#ifdef PTEX .. #endif'.
++
++	* configure.in, configure (tetex-build): Removed useless macro.
++
++	* dvi-draw.c (set_char_rotate_glyph): Moved body of function.
++
++	* special.c (elepsf_special) Changed int -> size_t,
++	which is same as in epsf_special().
++
++	* version.h (JPVERSION): new version j1.35.
++
++2007-12-14  TSUCHIMURA Nobuyuki  <tutimura(a)nn.iij4u.or.jp>
++
++	* c-auto.in (uint32_t): Reverted last change
++	as imported upstream fix in texk/etc/autoconf/acgeneral.m4.
++
++	* configure.in, Makefile.in (FREETYPE2CPPFLAGS, etc.):
++	Enhanced freetype2 check (ready for TeX Live).
++
++	* configure: Updated with new acgeneral.m4 and configure.in.
++
++2007-12-09  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* c-auto.in (uint32_t): Ad-hoc fix to avoid duplicate definition
++	error.
++
++	* Merge changes between xdvik-22.84.12 and xdvik-22.84.13.
++
++2007-07-28  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.84.10 and xdvik-22.84.12.
++
++2006-12-09  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* ft2vert.c: Added LGPL notices.
++
++2006-11-08  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* ft2.c, ft2.h, Makefile.in, vfontmap.c, xdvi.c, zeit.c:
++	Renamed "vf2ft.{c,h}" -> "ft2.{c,h}".
++
++	* version.h (JPVERSION): new version j1.34.
++
++2006-11-06  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* ft2vert.c (ft2vert_init): Added a detailed message
++	when FreeType2 can not handle GSUB table.
++
++	* chardef.h: Removed chardef.h which is not used.
++
++	* zeit.c (read_ZEIT_char):
++	Use struct 'glyph' mainly instead of struct 'bitmap'.
++	(read_ZEIT_index): Renamed 'j' to 'jfm'.
++	Use struct 'glyph' mainly instead of struct 'bitmap'.
++
++	* jfm.c (read_jfm): Replaced a chained pointer of struct 'jfm'
++	by an array of struct.
++	* vfontmap.c: Replaced a chained pointer of struct 'vfontmap'
++	by an array of struct.
++
++	* vfontmap.h, vfontmap.c, vf2ft.c (vfontmap):
++	Renamed 'fd' to 'ft2_index' in struct 'vfontmap'.
++	* dvi-init.h, zeit.c (font):
++	Renamed 'vf' to 'ft2_index' in struct 'font'.
++
++2006-11-05  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vf2ft.c (glyph_index, glyph_to_bitmap):
++	Separated glyph_index() and glyph_to_bitmap() from VF_GetBitmap().
++	(VF_OpenFont, VF_GetBitmap): Enabled Bold/Italic font.
++	* vfontmap.c (addfontmap): Initialized 'variant' field.
++
++	* dnpzeit.c, Makefile.in: Removed dnpzeit.c.
++	* dvi-draw.c, dvi-init.c, dvi-init.h, font-open.c, vfontmap.c,
++	vfontmap.h, xdvi-config.h, zeit.h: Removed NTTZEIT macro.
++	* README.xdvik-jp: Added an announcement that NTT JTeX (direct)
++	 support was removed.
++
++	* vf2ft.c, vf2ft.h, xdvi.c, zeit.c (ft2_init, ft2_open_font,
++	ft2_get_bitmap): Renamed VF_Init() -> ft2_init(), etc.
++	Removed needless args. Let ft2_init() static.
++	* vf2ft.c (glyph_to_bitmap): Enhanced glyph_to_bitmap()
++	to fix memory leak.
++	(ft_fonts): 'ft_fonts' became an array of flexible length instead
++	of fixed length.
++	(ft_error): 'ft_error' became a locale variable.
++	(glyph_index): Simplified glyph_index().
++
++	* zeit.c, zeit.h (open_ZEIT_font, get_ZEIT_font):
++	Removed needless func open_ZEIT_font() and get_ZEIT_font().
++	Replaced xmalloc() + memset() with xcalloc().
++
++2006-06-09  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* jisx0208.c (MAXJIS, jis2uni_table): Deleted category
++	85--92 which is out of JIS X 0208.
++	* util.c, util.h, zeit.c, dnpzeit.c (order_reverse_bitmap):
++	Renamed from reverse_endian_bitmap(). In fact, this is not
++	endian problem.
++
++2006-05-17  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* configure.in, configure (freetype):
++	Added a message when freetype is found.
++
++	* font-open.c (font_open): Fixed memory leak.
++	We must check iskanjifont() first.
++
++2006-05-09  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* encodings.c (guess_encoding): Added support for
++	ENC_UNICODE_{H|V}.
++
++	* events.c (do_sigpoll): Cleared allocated memory
++	to avoid ill condition jump.
++	Upstreamed as Request ID 1484561.
++
++2006-05-04  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (free_bitmap2): Removed free_bitmap2()
++	which leaks memory.
++	* dvi-init.c, dvi-init.h (free_bitmap2):
++	New function derived from delete_glyphs().
++	* ft2vert.c (ft2vert_init): Fixed memory leak.
++
++	* vfontmap.c, vfontmap.h (getdnpfont, isdnpfont):
++	Surround with #ifdef NTTZEIT.
++	* font-open.c (font_open): Added #ifdef NTTZEIT condition.
++
++2006-05-03  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c, zeit.h, dnpzeit.c, util.c, util.h:
++	Moved adj_ZEIT_bitmap() in 'zeit.c' as
++	reverse_endian_bitmap() in 'util.c'.
++	* dnpzeit.c: K&R -> ANSI prototype. Removed 'register'.
++	(read_NTT_char, read_NTT_char): int -> wide_ubyte ch.
++
++	* ft2vert.c (print_offset, tag_to_string, hex_dump):
++	Surround debug part with #ifdef DEBUG .. #endif.
++
++2006-05-01  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* jfm.h, zeit.c, Makefile.in: Renamed 'jtfm.h' -> 'jfm.h'.
++	* jfm.c, zeit.c (read_jfm, read_jfm0): Moved from 'zeit.c'
++	to new file 'jfm.c'.
++	* jfm.h (read_jfm0): Removed definition of internal function.
++	* jfm.h, jfm.c (jfm): Changed member variable from fn[128] to
++	*fontname.
++	* version.h (JPVERSION): new version j1.33.
++
++2006-04-29  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c (adj_ZEIT_bitmap): Makeing reverse_byte[]
++	by calculation instead of giving as data.
++
++2006-04-28  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c, dnpzeit.c: Use memset() instead of bzero().
++	* zeit.c, zeit.h: Adjusted under DEBUGZEIT condition.
++	* vf2ft.c, encodings.c, dvi-draw.c, vfontmap.h:
++	Converted space -> tab.
++	* vf2ft.c, vf2ft.h, ft2vert.c: Adjusted #include headers.
++	* vfontmap.c, encodings.c: Adjusted #ifdef KANJI condition.
++	* jisx0208.c: Added #ifdef USE_ZEIT condition.
++	* dvi-draw.c: K&R -> ANSI prototype.
++	* Makefile.in: Modified dependency of headers.
++
++2006-04-27  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vfontmap.c, vfontmap.h (first_ptr): Let 'first_ptr' private
++	variable.
++	* vfontmap.c, vfontmap.h, zeit.c, dnpzeit.c
++	(getkanjifont, getdnpfont): Renamed iskanjifont() to
++	getkanjifont() and changed its return value to the pointer of
++	structure 'vfontmap' instead of the index number.
++	Defined iskanjifont() as a macro using getkanjifont().
++	* zeit.c, zeit.h (open_ZEIT_font): Changed arg to pointer
++	instead of index number.
++
++2006-04-26  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-init.c, dvi-init.h, dnpzeit.c, encodings.c, font-open.c,
++	vfontmap.c, vfontmap.h, xdvi.c, Makefile.in (iskanjifont, isdnpfont):
++	Moved iskanjifont() and isdnpfont() from dvi-init.c to
++	vfontmap.c.
++	* ft2vert.h: Removed useless comment.
++	* ft2vert.c: Added '#ifdef USE_ZEIT' condition.
++	Converted space -> tab.
++
++2006-04-25  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (oldmaxchar): Enlarged 'oldmaxchar' from ubyte
++	to wide_ubyte to save whole 'maxchar'.
++	This fixes a string search trouble for Japanese characters.
++	(upstreamed as Request ID 1475921)
++
++2006-04-19  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* jisx0208.c, jisx0208.h, Mailefile.in (jisx0208): New file derived
++	from "src/VF_Ftype.c" in VFlib2-2.25.6.
++	* vf2ft.c (UnicodeTbl, jis2uni): Removed jis2uni() which overlaps
++	in jisx0208.c.
++	* ft2vert.c (ft2vert_get_gid): Fixed typo in error message.
++
++2005-11-21  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (bbox_scale_bitmap, rotate_bitmap,
++	reverse_rotate_bitmap):	Reduced "#ifdef WORDS_BIGENDIAN .. #endif"
++	by using new macros EXTREME_LEFT_BIT, EXTREME_RIGHT_BIT,
++	and SHIFT_RIGHT().
++
++2005-11-19  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vf2ft.c (VF_GetBitmap): Clean bitmap earlier.
++	* util.c, utl.h (clear_bitmap, fill_bitmap): new function
++	* zeit.c (read_ZEIT_index): Use fill_bitmap() instead of bbox().
++	* dvi-draw.c (reverse_rotate_bitmap, rotate_bitmap,
++	bbox_scale_bitmap): Use clear_bitmap().
++	(rotate_bitmap, reverse_rotate_bitmap): K&R -> ANSI prototype.
++
++2005-11-17  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* gui/help-window.c (default_help_general): Removed VF2FT macro.
++
++2005-11-16  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c: Converted K&R -> ANSI prototype.
++	(adj_ZEIT_bitmap): Simplified using new macro MAKE32BIT().
++	* zeit.h, jtfm.h (read_jfm0): Moved prototype.
++	* dvi-init.h (TateCorrectionTable): Removed tate adjustment.
++
++	* zeit.h, zeit.c (adj_ZEIT_bitmap, get_ZEIT_font), dnpzeit.c
++	(get_NTT_font): Omitted adjustment of bitmap padding by using 'bw'
++	parameter of VF_GetBitmap().
++	* vf2ft.c (VF_GetBitmap): Clean destination bitmap.
++
++2005-11-15  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c (USE_PXL, jis2ccode): Removed unused macro
++	since xdvik-22.40k-j1.04.
++	(get_ZEIT_font): Removed arg 'tate'.
++	* zeit.h, zeit.c, dnpzeit.c (adj_ZEIT_bitmap):
++	Omitted #if .. #endif using dummy macro.
++	* vf2ft.c (jis2cidv): Merged into is_jis_vertical().
++
++2005-11-14  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* README.xdvik-jp: Added announce that VFlib support was removed.
++	* configure, configure.in, withenable.ac: Removed
++	'--enable-freetype' option. It is now default.
++	* configure, configure.in: Added version check of FreeType.
++	2.1.10 or latter is OK.
++	* dnpzeit.c, ft2vert.c, vf2ft.c, vfontmap.c, vfontmap.h, xdvi.c,
++	xdvi.h, zeit.c, c-auto.in, withenable.ac (VF2FT): Deleted macro.
++	* vfontmap.c (default_jfonts): Removed default_jfonts.
++	We can't know appropriate default Japanese font name.
++	* vfontmap.vflib, Makefile.in (install-data): Removed vfontmap.vflib.
++
++	* vfontmap.h, zeit.c (vfontmap): Removed member variable 'tate'.
++	* vfontmap.c (addfontmap): Removed arg variable 'tate'.
++	* zeit.c (read_ZEIT_char): Removed tate adjustment.
++	Omitted swapping bm->h and bm->w because of square metric.
++	(get_ZEIT_font): Removed code in case of (bm->h != bm->w).
++	(trim_side_blanks_in_ZEIT_bitmap): Removed.
++	(trim_tate_blanks_in_ZEIT_bitmap): Removed.
++	(get_ZEIT_font): Removed arg 'code2' which is same as 'code'.
++	* zeit.c, zeit.h (auto_shift): Removed.
++	* dvi-init.h (font): Removed member variable 'tate'.
++	* tategaki.c, Makefile.in (tategaki.o): Removed tategaki.c.
++
++2005-11-13  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* version.h (JPVERSION): new version j1.32
++	* dvi-init.c (iskanjifont): Don't ignore decimal part of tfm name.
++
++2005-11-08  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* README.xdvik-jp: Added web site URI.
++
++2005-11-07  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* Makefile.in (install-data): Specify "vfontmap.sample" etc. by
++	full path to avoid error in case of 'configure' in other directory
++	as reported by Mr. Matsuyama.
++	http://oku.edu.mie-u.ac.jp/~okumura/texfaq/qa/39125.html
++
++2005-10-31  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* zeit.c (get_ZEIT_font): Canceled needless modification glyph->y
++	when vertical writing.
++
++2005-10-27  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vf2ft.c (VF_GetBitmap): Returns ascend.
++	Rewrited bitmap transformation code.
++	* zeit.c (get_ZEIT_font): Modify glyph->y using ascend.
++	Renamed arg 'flag' -> 'tate'.
++	* version.h (JPVERSION): new version j1.31
++
++2005-10-24  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-init.c (free_bitmap2): New function.
++	Freeing g->pixmap2_gc2 is important for Fedora Core4.
++	http://oku.edu.mie-u.ac.jp/~okumura/texfaq/qa/38747.html
++
++2005-10-17  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* special.c (psfig_special): Call ps_parseraw() even if
++	INSIDE_MANE_WIN to rotate characters.
++
++	* vf2ft.c: Renamed isJISVertical() -> is_jis_vertical().
++
++2005-10-16  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vf2ft.c (VF_GetBitmap): Get vertical font only for specific
++	characters among JIS-V encode.
++	(isJISVertical): New code to decide if vertical font is needed.
++
++2005-10-14  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* xdvi.c (display_version_info): Added FreeType/VFlib information.
++
++2005-10-12  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (bbox_scale_bitmap, rotate_bitmap,
++	reverse_rotate_bitmap): Used ADD(), SUB() macro to suppress
++	gcc warning 'dereferencing type-punned pointer will break
++	strict-aliasing rules'.
++
++	* vf2ft.c (VF_OpenFont, VF_GetBitmap): Don't exit
++	when we didn't find a font file.
++
++	* vfontmap.c, ft2vert.c: Avoid compile error with VFLib.
++
++2005-10-08  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vfontmap.c: Modified comments and local variable names.
++	* vf2ft.c: Modified spacing. Added comments.
++	* ft2vert.c: Removed many debug prints.
++	* version.h (JPVERSION): new version j1.30
++	* vf2ft.c, vfontmap.c, vfontmap.h, vfontmap.sample:
++	Fix typo Identify -> Identity.
++
++2005-10-06  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vfontmap.h (vfontmap): Removed 'cidv' member variable.
++	Renamed a member variable of structure 'flag' -> 'fd'.
++
++	* vfontmap.c (addfontmap): Removed 'cid' arg.
++
++	* zeit.c (open_ZEIT_font): Removed 'cid' variable.
++
++	* vf2ft.c, vf2ft.h (VF_OpenFont): Removed 'cid' arg
++	which is equivalent to (encoding == ENC_*_V).
++	Removed 'FT_Select_Charmap(face, ft_encoding_unicode)'
++	because it is default action.
++
++	* vf2ft.h, vf2ft.c, zeit.c (VF_OpenFont):
++	Change arg encoding -> vfontmap.
++	* vf2ft.c (VF_OpenFont): Replaced "fonts[fontsmax]" by pointer.
++	* vfontmap.c (addfontmap): Clear more vfontmap members.
++	(get_vfontmap_name): Adjusted spacing.
++
++	* vf2ft.c (VF_GetBitmap): Replaced "vfonts[fid]" by pointer.
++	(VF_OpenFont): Added FT_Set_Transform() for extend/slant font.
++
++	* vf2ft.c (FT_FONTS_MAX, ft_fonts_max, ft_font):
++	Renamed from FONTSMAX, fontsmax, vfont.
++	(ft_fonts): Changed to array of pointer instead of array.
++
++2005-10-05  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-init.h, vfontmap.h (vfontmap):
++	Moved struct definition form dvi-init.h to vfontmap.h.
++
++	* dvi-init.c, vf2ft.c, zeit.c, vfontmap.c, Makefile.in:
++	Modified #include and dependence of vfontmap.h.
++
++	* vfontmap.c (read_VFontmap, str2encoding),
++	vf2ft.c (ENC_*), vf2ft.h, vfontmap.sample:
++	Changed 'vfontmap' format using JIS-H, JIS-V, etc.
++	This is *** IMPORTANT *** change.
++
++2005-09-30  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* ft2vert.c, ft2vert.h: Added new files to get vertical glyph
++	of TrueType/OpenType font by supporting GSUB vrt2/vert feature.
++
++	* Makefile.in, vf2ft.c (VF_OpenFont, VF_GetBitmap):
++	test code for ft2vert.c
++
++2005-09-20b Takanori Uchiyama <uchiyama@appi.keio.ac.jp>
++	* vfontmap.c: Cancel 2005-09-20.
++2005-09-20  Takanori Uchiyama <uchiyama@appi.keio.ac.jp>
++	* vfontmap.c (read_VFontmap): Fix a bug where a font file name 
++	(not begining with '/') was not substituted to vfname.
++
++2005-09-19  Takanori Uchiyama <uchiyama@appi.keio.ac.jp>
++
++	* vf2ft.c: FT_Select_Charmap() in case of ADOBEJAPAN encoding 
++	was deleated in VF_OpenFont() 
++
++2005-05-10  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.84.8 and xdvik-22.84.10.
++
++2005-04-25  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vfontmap.sample, vfontmap.vflib, Makefile.in (install-data):
++	Imported from
++	http://www.nn.iij4u.or.jp/~tutimura/tex/xdvik-22.40y1-j1.21.patch.gz.
++
++	* vf2ft.c (get_font_pathname): Added new code to search font file
++	by kpse_find_file().
++	(freetype/freetype.h): Removed duplicated include (FT_FREETYPE_H).
++
++2005-04-24  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* xdvi.c (display_version_info): Replaced XDVI_VERSION
++	by XDVI_TERSE_VERSION_INFO to output Japanese version.
++
++	* vfontmap.c (get_vfontmap_name): Search vfontmap as fontmap
++	and as text by kpse_find_file().
++
++2005-04-05  Robert Hart <enxrah@nottingham.ac.uk>
++
++	* dvi-draw.c (set_rotated_rule): Fix the bug which stucks when
++	displaying dvi files that contain rotated tables.
++
++2005-03-03  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* events.c (do_pages): Added checking page number for history.
++	It was up-streamed.
++
++2005-02-24  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* texmf/XDvi: Added i18n resources for Xaw.
++	Modified fontList for Motif.
++
++2005-02-09  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vf2ft.c (VF_GetBitmap): Removed multiple code.
++	(fonts): Removed useless #ifdef VF2FT .. #endif.
++
++2005-02-09  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* vf2ft.c (jis2cidv, VF_Init, VF_GetBitmap):
++	Suppress warnings. (cast (int), UNUSED(useless para), return 0)
++
++2005-02-07  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (do_char): Inserted '#ifdef KANJI'.
++	Adopted better kanji font judgment by (fontp->flags & FONT_KANJI).
++
++2005-02-05  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* encodings.c (jis2unicode): New code derived from cjk2unicode.
++	(guess_encoding): Added encoding from kanji to unicode.
++
++	* version.h (JPVERSION): j1.22.
++
++2005-02-05  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* encodings.c (cjk2unicode): Removed multiple code which warns
++	that xdvi is compiled without iconv.
++	I'll send this patch upstream.
++	
++2005-02-05  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-init.c, zeit.c, dvi-init.h (first_ptr):
++	Moved definition to header.
++
++	* Makefile.in, dvi-draw.h, dvi-init.h, dvi-init.c, font-open.c
++	(isdnpfont, iskanjifont):
++	Moved definitions to proper headers.
++	Added 'const' to the parameter.
++
++2005-02-05  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* Makefile.in, dvi-draw.h, dvi-init.h, zeit.h, dvi-init.c
++	(set_char2, read_ZEIT_index):
++	Moved definitions to proper headers.
++
++2005-02-04  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (do_char): Check kanji font case.
++	(geom_do_char): Added the case of set_char2
++	to prevent segmentation fault of find or select.
++
++2005-01-01  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.84.5 and xdvik-22.84.8.
++
++2004-11-06  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.84.3 and xdvik-22.84.5.
++
++2004-08-28  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (common_set_char): Exchanged the order of parameters.
++	(TEXXET): Reversed #ifndef condition
++	to catch up with the coding style of upstream.
++
++2004-08-27  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* xdvi.h (fontconf): Removed useless variable.
++
++	* xdvi.c (DEFAULT_FONTCONF,vfontcap):
++	Removed useless macro and command line option.
++
++2004-08-27  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* gui/help-window.c (default_help_general):
++	Added renderer information about FreeType or VFlib.
++
++2004-08-27  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* READMEs/README.xdvik-22.40y1-j1.21,
++	READMEs/ChangeLog.xdvik22.40y1-j1.21.html: imported from
++	http://www.nn.iij4u.or.jp/~tutimura/tex/xdvik-22.40y1-j1.21.patch.gz.
++
++	* READMEs/README.xdvik-22.40b-j1.05.patch:
++	renamed from READMEs/README.xdvik-22.40w-j1.07.patch.
++
++	* READMEs/ChangeLog.xdvik22.40b-j1.05:
++	renamed from READMEs/ChangeLog.xdvik22.40w-j1.17.
++
++2004-08-25  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.84.1 and xdvik-22.84.3.
++
++2004-06-28  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.84 and xdvik-22.84.1.
++
++2004-06-11  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.82 and xdvik-22.84.
++
++2004-04-22  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.81.1 and xdvik-22.82.
++
++2004-03-18  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.81 and xdvik-22.81.1.
++
++2004-03-04  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Makefile.in (vf2ft.o): Add vf2ft.c to its requirements.
++
++2004-03-03  Nobuyuki Tsuchimura  <tutimura(a)nn.iij4u.or.jp>
++
++	* dvi-draw.c (draw_part): Removed usless code in #ifndef PTEX --
++	#endif.
++
++2004-02-27  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Changes to change default path of vfontmap.
++
++	* Makefile.in (VFONTMAP): New macro.
++	(vflib_def): Refer the above.
++	(install-data): Use the above.
++
++	* withenable.ac (--with-vfontmap): New configure option.
++
++2004-02-27  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Changes to fix the build problem reported by Nobuyuki Tsuchimura
++	in [xdvi-jp:00640].
++
++	* configure.in: Write the include path of FreeType library to
++	FT2_CFLAGS instead of CFLAGS.
++	(FT2_CFLAGS): New output variable.
++
++	* Makefile.in (freetype_cflags): New macro.
++	(prog_cflags): Refer the above.
++
++2004-02-26  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* configure, configure.in: Relax the existence check of FreeType
++	library.
++
++	* vf2ft.c: Include "xdvi.h" at the top of this file, in order to
++	check "VF2FT" macro.
++
++	* dvi-draw.c: Apply the patch posted by Nobuyuki Tsuchimura in
++	[xdvi-jp:00638].
++
++2004-02-25  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* dvi-draw.c (set_rotated_rule): Do not refer an abolished macro
++	`HTEX'.
++
++	* version.h, vf2ft.c, vfontmap.c: Merge changes between
++	xdvik-jp-22.40w-1.17 and xdvik-jp-22.40y1-1.21.
++
++	* Merge changes between xdvik-22.77.1 and xdvik-22.81.
++
++2003-09-29  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* vf2ft.c: Apply the change described in
++	http://www.matsusaka-u.ac.jp/~okumura/texfaq/qa/21268.html.
++
++2003-09-09  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.77 and xdvik-22.77.1.
++
++2003-08-27  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.76.1 and xdvik-22.77.
++
++2003-08-18  TSUCHIYA Masatoshi  <tsuchiya@namazu.org>
++
++	* Merge changes between xdvik-22.40x and xdvik-22.76.1.
++
++	* Start this project based on
++	http://www.nn.iij4u.or.jp/~tutimura/tex/xdvik-22.40w-j1.17.patch.gz.
++
++	* See READMEs/ChangeLog.xdvik-22.40w-j1.17, for older entries.
++
++
++Local Variables:
++mode: change-log
++coding: utf-8
++End:

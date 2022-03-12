@@ -1,0 +1,8 @@
+Xdvik is a program for displaying DVI files (generated e.g. by Troff or TeX)
+on the X window system. It is based on the regular (non-k) xdvi of the same
+version number.
+
+This package includes pTeX support.  A fontmap file for xdvi is installed as
+TEXMFDIST/fonts/map/xdvi/xdvi-ptex.map.
+
+WWW: http://xdvi.sourceforge.net/

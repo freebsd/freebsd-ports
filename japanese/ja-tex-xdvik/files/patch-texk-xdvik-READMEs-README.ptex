@@ -1,0 +1,83 @@
+--- texk/xdvik/READMEs/README.ptex.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.ptex
+@@ -0,0 +1,80 @@
++
++		  << xdvi-17+ptex patch について >>
++
++					1995/11/09
++					竹中 浩
++					lh36112@hongo.ecc.u-tokyo.ac.jp
++					KHB11235@niftyserve.or.jp
++
++○xdvi-17+ptex patch とは
++  xdvi-17 + miyu-patch for xdvi PL17 を ASCII pTeX の縦組み拡張 DVI に
++  対応させるパッチです。このパッチを当てることで xdvi での縦組み表示が
++  可能になります。
++
++○動作を確認した環境
++	linux 1.3.24 + Slackware 2.2 + JE-0.9.6
++
++○インストールについて
++
++  まず, xdvi PL17 のソース・ファイルである xdvi-17.tar.gz と、それに対
++  するパッチ xdvi-17miyu.patch-beta7.pre.gz (*1)、さらに本パッチ 
++  xdvi-17+ptex.patch  を用意します。
++
++  次に, 作業ディレクトリを作成して, そのディレクトリに移った後, 
++  xdvi-17.tar.gz を展開します。そのまま, ディレクトリを移動しないで, 
++  xdvi-17miyu.patch-beta7.pre.gz を用いてパッチをあてます。
++  このとき, GNU のツールである gzip および patch が必要となります (*2)。
++  同様に xdvi-17+ptex.patch を用いてパッチをあてます。
++
++  あとは, システムに応じて Imakefile を編集した後, 
++  xmkmf を実行して Makefile を生成して, make を実行します。
++
++  なお、miyu-patch for xdvi PL17 については、README.miyu-patch をよく
++  読んでください。
++
++  (*1) これらは, ftp://ftp.tohoku.ac.jp/pub/tex/dviwares/xdvi/PL17 な
++       どの anonymous ftp などから入手できます。
++       xdvi-17miyu.patch-beta6.gz や、Linux-JE の xdvi パッチでも OK 
++       です。
++
++  xdvi-17+markpage+toc+printdvi[+paper] patch との共存は問題ありません。
++  ただし Imakefile へのパッチあては当然うまくいかないでしょうから、
++  Imakefile.rej などを参照して適当に手動で修正してやってください。
++
++
++○Use_PTEX について
++  当然のことながら、これを define しなくては pTeX 対応になりません。試
++  してませんが、たぶん Use_ASCIIDNP とはうまく共存できないだろうと思い
++  ます。
++
++○tategaki.c について
++  xdvi-17+ptex.patch では横組み用の漢字フォントを縦組み用に修正して表
++  示します。このための修正情報のテーブルが tategaki.c に入ってます。
++
++     struct TateCorrection TateCorrectionTable[] = {
++	     { TCOR_NOP, 0, 0 },
++	     { TCOR_SHIFT, 64, 96 },	/* 2122 '、' */
++	     { TCOR_SHIFT, 64, 96 },	/* 2123 '。' */
++	     { TCOR_SHIFT, 64, 96 },	/* 2124 '，' */
++	     { TCOR_SHIFT, 64, 96 },	/* 2125 '．' */
++	     { TCOR_SHIFT, 42, 42 },	/* 2126 '・' */
++	     { TCOR_ROTATE, 0, 0 },	/* 2127 '：' */
++			:
++
++  というような具合です。
++
++  最初の項目が TCOR_NOP の場合には修正をしません。TCOR_SHIFT の場合に
++  は、位置の移動を行ないます。TCOR_ROTATE の場合には、右に90度回転して
++  から位置の移動を行ないます。'0x2121' などのように JIS の文字コードを
++  指定した場合には、その文字のフォントで代替します。
++
++  2番目、3番目の項目はそれぞれ x、y 方向の位置の移動量です。+/- 128 で
++  フォントの幅(高さ)の分だけ位置を左右(上下)にずらします。
++
++  使用するフォントや好みによって適切な修正方法・量は異なると思うので、
++  見た目にこだわる方は適当に修正してやってください。
++
++○著作権
++  日本の著作権法上放棄はできないはずですが、本パッチの著作権を積極的に
++  主張するつもりはありません。配布・改造は自由です。
++

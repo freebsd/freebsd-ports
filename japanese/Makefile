@@ -124,6 +124,7 @@
     SUBDIR += icanna
     SUBDIR += im-ja
     SUBDIR += ipadic
+    SUBDIR += ja-tex-xdvik
     SUBDIR += jacode.pl
     SUBDIR += japana
     SUBDIR += japaneseAFM
