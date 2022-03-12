@@ -2,7 +2,7 @@
 
 PORTNAME=	pynac
 PORTVERSION=	0.7.27
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
