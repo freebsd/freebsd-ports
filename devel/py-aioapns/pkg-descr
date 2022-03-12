@@ -1,0 +1,6 @@
+aioapns is a library designed specifically for sending
+push-notifications to iOS devices via Apple Push Notification Service.
+aioapns provides an efficient client through asynchronous HTTP2
+protocol for use with Python's asyncio framework.
+
+WWW: https://github.com/Fatal1ty/aioapns

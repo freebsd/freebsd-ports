@@ -4137,6 +4137,7 @@
     SUBDIR += py-adb
     SUBDIR += py-addict
     SUBDIR += py-aenum
+    SUBDIR += py-aioapns
     SUBDIR += py-aiocontextvars
     SUBDIR += py-aiofiles
     SUBDIR += py-aioice
