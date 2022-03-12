@@ -12,6 +12,7 @@ PLIST=		${.CURDIR}/pkg-plist
 LIB_DEPENDS=	#
 
 USES=		pathfix
+CFLAGS_riscv64=-fPIC
 LDFLAGS_i386=	-Wl,-znotext
 LDFLAGS_armv6=	-Wl,-znotext
 LDFLAGS_armv7=	-Wl,-znotext
