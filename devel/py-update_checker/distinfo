@@ -1,3 +1,3 @@
-TIMESTAMP = 1500218024
-SHA256 (update_checker-0.16.tar.gz) = 70e39446fccf77b21192cf7a8214051fa93a636dc3b5c8b602b589d100a168b8
-SIZE (update_checker-0.16.tar.gz) = 6456
+TIMESTAMP = 1647066569
+SHA256 (update_checker-0.18.0.tar.gz) = 6a2d45bb4ac585884a6b03f9eade9161cedd9e8111545141e9aa9058932acb13
+SIZE (update_checker-0.18.0.tar.gz) = 6699
