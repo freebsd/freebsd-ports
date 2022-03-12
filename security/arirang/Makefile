@@ -21,6 +21,7 @@ USES=		compiler:c11 ssl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+CFLAGS+=	-fdeclspec
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 CFLAGS+=	-DRUBY_19
 
