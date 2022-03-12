@@ -1,6 +1,6 @@
---- Makefile.in.orig	2019-01-26 06:20:29 UTC
+--- Makefile.in.orig	2022-01-16 01:25:58 UTC
 +++ Makefile.in
-@@ -23,16 +23,16 @@ objs     = arg_parser.o main.o
+@@ -22,16 +22,16 @@ objs     = arg_parser.o main.o
           uninstall uninstall-bin uninstall-info uninstall-man \
           doc info man check dist clean distclean
  
@@ -8,17 +8,18 @@
 +all : $(progname) lib$(libname).so
  
 -lib$(libname).a: $(ocr_objs) $(lib_objs)
--	$(AR) -crs $@ $(ocr_objs) $(lib_objs)
+-	$(AR) $(ARFLAGS) $@ $(ocr_objs) $(lib_objs)
 +lib$(libname).so: $(ocr_objs) $(lib_objs)
-+	$(CXX) -shared -fPIC -o $@ $(ocr_objs) $(lib_objs)
++	$(CXX) -shared -fPIC -o $@ $(LDFLAGS) $(ocr_objs) $(lib_objs)
  
  $(progname) : $(ocr_objs) $(objs)
- 	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ $(ocr_objs) $(objs)
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(ocr_objs) $(objs) $(LIBS)
++	$(CXX) $(CXXFLAGS) -o $@ $(ocr_objs) $(objs) $(LDFLAGS) $(LIBS)
  
--ocradcheck : ocradcheck.o lib$(libname).a
--	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ ocradcheck.o lib$(libname).a
-+ocradcheck : ocradcheck.o lib$(libname).so
-+	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ ocradcheck.o lib$(libname).so
+-ocradcheck : arg_parser.o ocradcheck.o lib$(libname).a
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ arg_parser.o ocradcheck.o lib$(libname).a $(LIBS)
++ocradcheck : arg_parser.o ocradcheck.o lib$(libname).so
++	$(CXX) $(CXXFLAGS) -o $@ arg_parser.o ocradcheck.o lib$(libname).so $(LDFLAGS) $(LIBS)
  
  ocradcheck.o : ocradcheck.cc
  	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
