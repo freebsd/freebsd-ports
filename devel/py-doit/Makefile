@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	doit
-PORTVERSION=	0.31.1
+PORTVERSION=	0.34.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,15 +13,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.4+
-USE_PYTHON=	distutils autoplist concurrent
+USES=		python:3.8+
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-# Doesn't support pytest > 4 yet
-# https://github.com/pydoit/doit/issues/275
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
