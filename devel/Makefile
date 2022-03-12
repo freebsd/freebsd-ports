@@ -4490,6 +4490,7 @@
     SUBDIR += py-enum-compat
     SUBDIR += py-envisage
     SUBDIR += py-envs
+    SUBDIR += py-epc
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
