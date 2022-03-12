@@ -24,7 +24,6 @@ AVIF_DESC=		AV1 Image File Format via libavif
 AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
 AVIF_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_libavif
 
-JXL_DESC=		JPEG XL image format via libjxl
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 JXL_CMAKE_BOOL=		KIMAGEFORMATS_JXL
 

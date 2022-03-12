@@ -184,6 +184,7 @@ JPEG_DESC?=		JPEG image format support
 JPEG2000_DESC?=		JPEG 2000 support
 JSON_C_DESC?=		JSON file/format parser support via json-c
 JSON_DESC?=		JSON file/format/parser support
+JXL_DESC?=		JPEG XL image format via libjxl
 KDE4_DESC?=		KDE 4 desktop environment support
 KERBEROS_DESC?=		Kerberos support
 KERBEROS4_DESC?=	Kerberos 4 support

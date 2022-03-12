@@ -50,7 +50,6 @@ GIF_MESON_ENABLED=	gif
 JPEG_USES=		jpeg
 JPEG_MESON_ENABLED=	jpeg
 
-JXL_DESC=		JPEG XL image format via libjxl
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 JXL_MESON_ENABLED=	jxl
 
