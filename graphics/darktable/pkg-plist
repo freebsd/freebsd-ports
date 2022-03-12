@@ -7,7 +7,7 @@ bin/darktable-generate-cache
 bin/darktable-rs-identify
 lib/darktable/libdarktable.so
 lib/darktable/plugins/imageio/format/libcopy.so
-%%LIBAVIF%%lib/darktable/plugins/imageio/format/libavif.so
+%%AVIF%%lib/darktable/plugins/imageio/format/libavif.so
 %%OPENEXR%%lib/darktable/plugins/imageio/format/libexr.so
 %%OPENJPEG%%lib/darktable/plugins/imageio/format/libj2k.so
 lib/darktable/plugins/imageio/format/libjpeg.so
