@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.0
+DISTVERSION=	0.26.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -84,8 +84,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		derivative-2.2.0 \
 		dialoguer-0.9.0 \
 		directories-next-2.0.0 \
-		dirs-2.0.2 \
-		dirs-sys-0.3.6 \
 		dirs-sys-next-0.1.2 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
@@ -111,7 +109,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		futures-util-0.3.17 \
 		generational-arena-0.2.8 \
 		getopts-0.2.21 \
-		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		ghost-0.1.2 \
 		gimli-0.22.0 \
@@ -137,7 +134,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
-		lev_distance-0.1.0 \
+		lev_distance-0.1.1 \
 		libc-0.2.112 \
 		libloading-0.6.7 \
 		libssh2-sys-0.2.23 \
@@ -158,7 +155,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		more-asserts-0.2.1 \
 		names-0.11.0 \
 		nix-0.19.1 \
-		nom-5.1.2 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
@@ -174,10 +170,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
 		percent-encoding-2.1.0 \
-		phf-0.8.0 \
-		phf_codegen-0.8.0 \
-		phf_generator-0.8.0 \
-		phf_shared-0.8.0 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.22 \
@@ -192,17 +184,12 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		quote-1.0.10 \
 		rand-0.3.23 \
 		rand-0.4.6 \
-		rand-0.7.3 \
 		rand-0.8.4 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
-		rand_core-0.5.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.2.0 \
 		rand_hc-0.3.1 \
-		rand_pcg-0.2.1 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		rdrand-0.4.0 \
@@ -228,7 +215,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		signal-hook-0.3.10 \
 		signal-hook-registry-1.4.0 \
 		similar-1.3.0 \
-		siphasher-0.3.7 \
 		slab-0.4.5 \
 		smallvec-1.7.0 \
 		socket2-0.4.2 \
@@ -239,14 +225,13 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		strsim-0.10.0 \
 		strum-0.20.0 \
 		strum_macros-0.20.1 \
-		suggestion-0.1.0 \
+		suggestion-0.3.0 \
 		syn-1.0.81 \
 		sysinfo-0.22.5 \
 		target-lexicon-0.11.2 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
-		terminfo-0.7.3 \
 		termion-1.5.6 \
 		textwrap-0.14.2 \
 		thiserror-1.0.30 \
@@ -277,7 +262,6 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.1 \
 		waker-fn-1.1.0 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.78 \
 		wasm-bindgen-backend-0.2.78 \
