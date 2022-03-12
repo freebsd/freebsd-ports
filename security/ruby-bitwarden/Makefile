@@ -13,6 +13,8 @@ LICENSE=	ISCL
 # Port is not maintained anymore:
 # https://github.com/jcs/rubywarden
 BROKEN_RUBY27=	yes
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
 
 RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler
 
