@@ -1,10 +1,10 @@
-TIMESTAMP = 1636159070
-SHA256 (uglide-RedisDesktopManager-2021.8_GH0.tar.gz) = 085aa528ba029880a2219f07b614bc198642bdeea2916b53b09e78f69dcc3add
-SIZE (uglide-RedisDesktopManager-2021.8_GH0.tar.gz) = 2853487
+TIMESTAMP = 1647203052
+SHA256 (uglide-RedisDesktopManager-2022.2_GH0.tar.gz) = f26fc7d50d8a8d8c6cc71455622432f400030cc56628c3591d33fac76a4a482f
+SIZE (uglide-RedisDesktopManager-2022.2_GH0.tar.gz) = 2447609
 SHA256 (benlau-asyncfuture-5ca0304_GH0.tar.gz) = 1718a942ee0c80d05765fd12a0717a99645f4e90f1cc34ad0dd571d386aad199
 SIZE (benlau-asyncfuture-5ca0304_GH0.tar.gz) = 35037
-SHA256 (uglide-qredisclient-1808ef8_GH0.tar.gz) = d934175755b4ef1fd9165d8ecaa9f38c4f9892b7065b45e5cc5e3fa7fab97b1f
-SIZE (uglide-qredisclient-1808ef8_GH0.tar.gz) = 223862
+SHA256 (uglide-qredisclient-9e1e29e_GH0.tar.gz) = 9c86a63639bb4fed41f4ce1c73c31e6d203b0f24e312cac08796cc46225a686a
+SIZE (uglide-qredisclient-9e1e29e_GH0.tar.gz) = 224064
 SHA256 (sijk-qt-unix-signals-d6a1d12_GH0.tar.gz) = 8bbc578430ab2fd6665ff2f2f6fcf402b3346b6d3cdfcc16e8c1d8f5a8f75ea2
 SIZE (sijk-qt-unix-signals-d6a1d12_GH0.tar.gz) = 3792
 SHA256 (uglide-qsshclient-6fa7fb7_GH0.tar.gz) = b9eaed71f8cae6d4fa1e6cf7de979ba8a5d1a14e2681cf1a0f2bfc42d5960ea1
