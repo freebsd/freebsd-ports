@@ -1,0 +1,7 @@
+bin/unison%%VERSIONSUFFIX%%
+%%FSMONITOR%%bin/unison-fsmonitor%%VERSIONSUFFIX%%
+%%X11%%share/applications/unison%%VERSIONSUFFIX%%.desktop
+%%X11%%bin/unison%%VERSIONSUFFIX%%-text
+%%X11%%share/pixmaps/unison%%VERSIONSUFFIX%%.png
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README

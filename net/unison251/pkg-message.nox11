@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+A text-only unison binary is installed.
+EOM
+}
+]

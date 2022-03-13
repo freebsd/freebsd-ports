@@ -1,0 +1,35 @@
+--- Makefile.OCaml.orig	2021-06-23 14:30:30 UTC
++++ Makefile.OCaml
+@@ -34,7 +34,11 @@ ifeq ($(shell uname),OpenBSD)
+ else
+ ifeq ($(shell uname),NetBSD)
+   OSARCH=NetBSD
++else
++ifeq ($(shell uname),FreeBSD)
++  OSARCH=FreeBSD
+ endif
++endif
+ ifeq ($(shell uname),Linux)
+   OSARCH=Linux
+ endif
+@@ -290,6 +294,11 @@ ifeq ($(OSARCH),Linux)
+ INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
+ endif
+ 
++ifeq ($(OSARCH),FreeBSD)
++-include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
++INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
++endif
++
+ ifeq ($(OSARCH),solaris)
+ -include fsmonitor/solaris/Makefile src/fsmonitor/solaris/Makefile
+ INCLFLAGS+=-I fsmonitor -I fsmonitor/solaris
+@@ -432,7 +441,7 @@ fswatch.cmi : ubase/prefs.cmi
+ 
+ %.o %.obj: %.c
+ 	@echo "$(CAMLC): $< ---> $@"
+-	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CWD)/$<
++	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CFLAGS) $(CWD)/$<
+ 
+ $(NAME)$(EXEC_EXT): $(CAMLOBJS) $(COBJS)
+ 	@echo Linking $@
