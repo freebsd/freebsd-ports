@@ -1,7 +1,7 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
 
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20220209
+PORTVERSION=	0.0.20220225
 CATEGORIES=	net-im
 
 MAINTAINER=	glebius@FreeBSD.org
@@ -25,7 +25,7 @@ USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GL=		gbm
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	4cba1ac
+GH_TAGNAME=	a264028
 
 # libyuv cloned from https://chromium.googlesource.com/libyuv/libyuv
 # when updating port check if hash tag in the submodule was updated
