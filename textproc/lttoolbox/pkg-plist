@@ -15,8 +15,8 @@ include/lttoolbox-%%APVER%%/lttoolbox/entry_token.h
 include/lttoolbox-%%APVER%%/lttoolbox/exception.h
 include/lttoolbox-%%APVER%%/lttoolbox/expander.h
 include/lttoolbox-%%APVER%%/lttoolbox/fst_processor.h
+include/lttoolbox-%%APVER%%/lttoolbox/input_file.h
 include/lttoolbox-%%APVER%%/lttoolbox/lt_locale.h
-include/lttoolbox-%%APVER%%/lttoolbox/ltstr.h
 include/lttoolbox-%%APVER%%/lttoolbox/match_exe.h
 include/lttoolbox-%%APVER%%/lttoolbox/match_node.h
 include/lttoolbox-%%APVER%%/lttoolbox/match_state.h
@@ -27,11 +27,13 @@ include/lttoolbox-%%APVER%%/lttoolbox/regexp_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/serialiser.h
 include/lttoolbox-%%APVER%%/lttoolbox/sorted_vector.h
 include/lttoolbox-%%APVER%%/lttoolbox/state.h
-include/lttoolbox-%%APVER%%/lttoolbox/string_to_wostream.h
+include/lttoolbox-%%APVER%%/lttoolbox/string_utils.h
 include/lttoolbox-%%APVER%%/lttoolbox/tmx_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/trans_exe.h
 include/lttoolbox-%%APVER%%/lttoolbox/transducer.h
+include/lttoolbox-%%APVER%%/lttoolbox/ustring.h
 include/lttoolbox-%%APVER%%/lttoolbox/xml_parse_util.h
+include/lttoolbox-%%APVER%%/lttoolbox/xml_walk_util.h
 libdata/pkgconfig/lttoolbox.pc
 lib/liblttoolbox3-%%APVER%%.so.1
 lib/liblttoolbox3-%%APVER%%.so.1.0.0
