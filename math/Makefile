@@ -996,6 +996,7 @@
     SUBDIR += rumur
     SUBDIR += saga
     SUBDIR += sage
+    SUBDIR += savage
     SUBDIR += sc
     SUBDIR += sc-im
     SUBDIR += scalapack

@@ -1,0 +1,17 @@
+Savage is a new computer algebra system written from scratch in pure
+Rust. Its goals are correctness, simplicity, and usability, in that
+order.
+
+Features:
+
+ - Arbitrary-precision integer, rational, and complex arithmetic
+ - Input, simplification, and evaluation of symbolic expressions
+ - First-class support for vectors and matrices, with coefficients
+   being arbitrary expressions
+ - REPL with syntax and bracket highlighting, persistent history,
+   and automatic multi-line input
+ - Macro-based system for defining functions with metadata and
+   automatic type checking
+ - Usable as a library from any Rust program
+
+WWW: https://github.com/p-e-w/savage
