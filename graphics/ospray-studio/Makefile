@@ -22,14 +22,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ospray
 GH_PROJECT=	${PORTNAME:S/-/_/}
 
-CMAKE_ON=	OSPRAY_INSTALL
 CMAKE_OFF=	USE_PYSG
+CMAKE_OFF+=	OSPRAY_INSTALL # otherwise it installs all dependencies, see https://github.com/ospray/ospray_studio/issues/8
 
 PLIST_FILES=	bin/ospStudio \
 		lib/libospray_sg.so
 
-do-install: # workaround for https://github.com/ospray/ospray_studio/issues/8
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ospStudio ${STAGEDIR}${LOCALBASE}/bin
-	${INSTALL_LIB} ${BUILD_WRKSRC}/libospray_sg.so ${STAGEDIR}${LOCALBASE}/lib
+post-install:
+	@${RM} -rf ${STAGEDIR}${LOCALBASE}/share/doc/ospray_studio
 
 .include <bsd.port.mk>
