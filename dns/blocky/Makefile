@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18
 CATEGORIES=	dns
 
-MAINTAINER=	gregf@beastie.tech
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and lightweight DNS proxy as ad-blocker
 
 LICENSE=	APACHE20

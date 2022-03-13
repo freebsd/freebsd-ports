@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	gregf@beastie.tech
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, secure, efficient backup program
 
 LICENSE=	BSD2CLAUSE

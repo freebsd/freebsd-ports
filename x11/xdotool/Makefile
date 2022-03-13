@@ -4,7 +4,7 @@ DISTVERSION=	3.20210804.2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
-MAINTAINER=	gregf@beastie.tech
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmatically simulate keyboard input or mouse activity
 
 LICENSE=	BSD3CLAUSE
