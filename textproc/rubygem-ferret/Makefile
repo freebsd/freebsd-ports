@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 BROKEN_aarch64=	fails to build: cannot determine target CPU
 BROKEN_riscv64=	fails to build: cannot determine target CPU
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
 
 USES=		gem
 USE_RUBY=	yes
