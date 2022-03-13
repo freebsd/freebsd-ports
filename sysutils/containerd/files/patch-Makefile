@@ -1,10 +1,10 @@
---- Makefile.orig	2021-05-03 20:52:36 UTC
+--- Makefile.orig	2022-03-02 18:52:57 UTC
 +++ Makefile
-@@ -21,8 +21,8 @@ DESTDIR ?= /usr/local
+@@ -30,8 +30,8 @@ MANDIR        ?= $(DATADIR)/man
  TEST_IMAGE_LIST ?=
  
  # Used to populate variables in version package.
--VERSION=$(shell git describe --match 'v[0-9]*' --dirty='.m' --always)
+-VERSION ?= $(shell git describe --match 'v[0-9]*' --dirty='.m' --always)
 -REVISION=$(shell git rev-parse HEAD)$(shell if ! git diff --no-ext-diff --quiet --exit-code; then echo .m; fi)
 +VERSION?=unknown
 +REVISION?=unknown
