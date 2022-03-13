@@ -1,7 +1,7 @@
 # Created by: Dan Pelleg <dpelleg+unison@cs.cmu.edu>
 
 PORTNAME=	unison
-PORTVERSION=	2.51.5
+PORTVERSION=	2.52.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -37,7 +37,7 @@ ALL_TARGET=	unison all
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcpierce00
 
-DOCS=		NEWS README
+DOCS=		NEWS.md README.md
 
 OPTIONS_DEFINE=		DOCS FSMONITOR
 OPTIONS_DEFAULT?=	FSMONITOR
@@ -93,7 +93,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 do-install-FSMONITOR-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-fsmonitor ${STAGEDIR}${PREFIX}/bin

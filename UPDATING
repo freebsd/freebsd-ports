@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220313:
+  AFFECTS: users of net/unison
+  AUTHOR: madpilot@FreeBSD.org
+
+  unison has been updated to version 2.52. The new version introduces
+  a new wire protocol and on disk archive format. This new version
+  is compatible with 2.51 clients for communication, so it's now
+  possible to upgrade one side and then the other.
+
+  The archive files are automatically converted to the new version,
+  but once they are converted the y are incompatible with the
+  previous version.
+
+  In case you need version 2.51, the previous version of the port
+  is preserved in net/unison251.
+
 20220311:
   AFFECTS: users of multimedia/get_iplayer
   AUTHOR: jamie@catflap.org
