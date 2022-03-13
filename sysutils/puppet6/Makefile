@@ -9,6 +9,9 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
+
 # rubygem-ruby-augeas add again see PR252339, it breaks the installation for some users
 # puppet7 does not have it anymore, so users can do a migration to next major version
 # without breaking their setup
