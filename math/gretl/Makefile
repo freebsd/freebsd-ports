@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	gretl
-PORTVERSION=	2021d
+PORTVERSION=	2022a
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -99,7 +99,13 @@ regression-test test check: build
 		${MAKE_ARGS} check
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gretl-*/*.so
+	# strip
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/gretlcli \
+		${STAGEDIR}${PREFIX}/bin/gretl_x11 \
+		${STAGEDIR}${PREFIX}/lib/libgretl-1.0.so.* \
+		${STAGEDIR}${PREFIX}/lib/gretl-gtk3/*.so
+	# rm doc
 	@${RMDIR} ${STAGEDIR}${DATADIR}/doc
 
 .include <bsd.port.mk>

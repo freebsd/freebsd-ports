@@ -139,8 +139,8 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.40
-lib/libgretl-1.0.so.40.0.0
+lib/libgretl-1.0.so.41
+lib/libgretl-1.0.so.41.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -179,6 +179,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/data/misc/australia.gdt
 %%DATADIR%%/data/misc/b-g.gdt
 %%DATADIR%%/data/misc/banks91.gdt
+%%DATADIR%%/data/misc/bikesharing.gdt
 %%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/brand_cassola.gdt
 %%DATADIR%%/data/misc/broiler.gdt
@@ -341,6 +342,8 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/HIP/examples/README.txt
 %%ADDONS%%%%DATADIR%%/functions/HIP/examples/camtriv_chap14.gdtb
 %%ADDONS%%%%DATADIR%%/functions/HIP/examples/camtriv_chap14.inp
+%%ADDONS%%%%DATADIR%%/functions/KFgui/KFgui.gfn
+%%ADDONS%%%%DATADIR%%/functions/KFgui/examples/kwh.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/SVAR.gfn
 %%ADDONS%%%%DATADIR%%/functions/SVAR/SVAR.pdf
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/BlQuah.gdt
