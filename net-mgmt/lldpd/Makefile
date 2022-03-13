@@ -1,11 +1,9 @@
 # Created by: Mathieu Simon <freebsd@simweb.ch>
 
 PORTNAME=	lldpd
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
-		http://mirror.1labs.ch/${PORTNAME}/
+MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/
 
 MAINTAINER=	freebsd@simweb.ch
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
@@ -63,6 +61,9 @@ XML_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 # libedit needed in combination of READLINE and XML
 XML_USES=			libedit
 XML_CONFIGURE_WITH=		xml
+
+post-extract:
+	${RM} ${WRKSRC}/include/netinet/if_ether.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}|g' ${WRKSRC}/src/daemon/lldpd.8.in
