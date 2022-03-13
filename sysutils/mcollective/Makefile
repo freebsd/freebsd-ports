@@ -11,6 +11,9 @@ COMMENT=	Modern scalable datacenter orchestration framework
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
+
 RUN_DEPENDS=	rubygem-stomp>=0:devel/rubygem-stomp
 
 USES=		cpe shebangfix
