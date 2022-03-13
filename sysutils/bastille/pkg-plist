@@ -28,6 +28,7 @@ bin/bastille
 %%DATADIR%%/sysrc.sh
 %%DATADIR%%/template.sh
 %%DATADIR%%/templates/default/base/Bastillefile
+%%DATADIR%%/templates/default/clone/Bastillefile
 %%DATADIR%%/templates/default/empty/Bastillefile
 %%DATADIR%%/templates/default/linux/Bastillefile
 %%DATADIR%%/templates/default/thick/Bastillefile

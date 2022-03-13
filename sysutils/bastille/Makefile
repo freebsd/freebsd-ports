@@ -1,7 +1,7 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
 
 PORTNAME=	bastille
-PORTVERSION=	0.9.20211225
+PORTVERSION=	0.9.20220216
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bastillebsd
-GH_TAGNAME=	00d9e03
+GH_TAGNAME=	ff7de91
 
 NO_BUILD=	yes
 NO_ARCH=	yes
