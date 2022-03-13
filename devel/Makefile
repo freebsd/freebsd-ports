@@ -694,6 +694,7 @@
     SUBDIR += flexjson
     SUBDIR += flyspray
     SUBDIR += fmake
+    SUBDIR += fnc
     SUBDIR += fnccheck
     SUBDIR += folly
     SUBDIR += forge
