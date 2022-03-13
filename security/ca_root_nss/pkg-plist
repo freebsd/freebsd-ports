@@ -1,6 +1,6 @@
 %%CERTDIR%%/ca-root-nss.crt
-@sample etc/ssl/cert.pem.sample
-@sample openssl/cert.pem.sample
+etc/ssl/cert.pem
+openssl/cert.pem
 %%ETCSYMLINK%%/etc/ssl/cert.pem
 %%ETCSYMLINK%%@dir /etc/ssl
 @postexec [ ! -e %%LOCALBASE%%/bin/cert-sync ] || %%LOCALBASE%%/bin/cert-sync --quiet %%PREFIX%%/share/certs/ca-root-nss.crt
