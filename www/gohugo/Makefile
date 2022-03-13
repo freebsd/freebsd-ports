@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.94.1
+DISTVERSION=	0.94.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -114,7 +114,7 @@ GH_TUPLE=	\
 		tdewolff:minify:v2.10.0:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.5.27:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		yuin:goldmark:v1.4.9:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.4.10:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		sanity-io:litter:v1.5.2:sanity_io_litter/vendor/github.com/sanity-io/litter
 
 post-extract:
@@ -159,7 +159,7 @@ PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershe
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
 # COMMIT_ID should be the first 8 positions of the commit hash, characters should be UPPERCASE
-COMMIT_ID=		0FCD9A5D
+COMMIT_ID=		48FB9E4D
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
