@@ -16957,3 +16957,4 @@ databases/postgresql96-plperl||2022-03-11|Has expired: PostgreSQL-9.6 has reache
 databases/postgresql96-plpython||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-pltcl||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-server||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
+net-im/pidgin-bs|net-im/pidgin-bot-sentry|2022-03-13|Project was renamed

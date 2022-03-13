@@ -98,7 +98,7 @@
     SUBDIR += p5-SOAP-Transport-JABBER
     SUBDIR += pecl-stomp2
     SUBDIR += pidgin
-    SUBDIR += pidgin-bs
+    SUBDIR += pidgin-bot-sentry
     SUBDIR += pidgin-fetion
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-icyque
