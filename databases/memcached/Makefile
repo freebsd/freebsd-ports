@@ -1,7 +1,7 @@
 # Created by: Sean Chittenden <seanc@FreeBSD.org>
 
 PORTNAME=	memcached
-PORTVERSION=	1.6.12
+PORTVERSION=	1.6.14
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
