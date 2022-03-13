@@ -1,5 +1,5 @@
 PORTNAME=	av
-PORTVERSION=	8.0.3
+PORTVERSION=	9.0.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 USES=		python:3.5+ pkgconfig
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 .include <bsd.port.mk>
