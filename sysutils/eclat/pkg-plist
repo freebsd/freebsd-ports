@@ -1,8 +1,11 @@
 bin/eclat
 bin/ispeek
 @sample etc/eclat.conf.sample
+man/man1/eclat-addr2ec2.1.gz
+man/man1/eclat-addr2vpc.1.gz
 man/man1/eclat-assocaddr.1.gz
 man/man1/eclat-atvol.1.gz
+man/man1/eclat-chvol.1.gz
 man/man1/eclat-clrsattr.1.gz
 man/man1/eclat-cpimg.1.gz
 man/man1/eclat-cpsnap.1.gz
@@ -12,6 +15,7 @@ man/man1/eclat-disasaddr.1.gz
 man/man1/eclat-dmesg.1.gz
 man/man1/eclat-lsaattr.1.gz
 man/man1/eclat-lsaddr.1.gz
+man/man1/eclat-lschvol.1.gz
 man/man1/eclat-lsiattr.1.gz
 man/man1/eclat-lsimg.1.gz
 man/man1/eclat-lsinst.1.gz
@@ -42,6 +46,7 @@ man/man1/eclat-setsattr.1.gz
 man/man1/eclat-sg.1.gz
 man/man1/eclat-start.1.gz
 man/man1/eclat-stop.1.gz
+man/man1/eclat-terminate.1.gz
 man/man1/eclat.1.gz
 man/man1/ispeek.1.gz
 man/man5/eclat.conf.5.gz

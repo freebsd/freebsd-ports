@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	eclat
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -15,7 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2
 
-USES=		localbase tar:xz
+USES=		gmake localbase tar:xz
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
