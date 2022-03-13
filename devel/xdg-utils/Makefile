@@ -4,7 +4,7 @@ PORTNAME=	xdg-utils
 PORTVERSION=	1.1.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://portland.freedesktop.org/download/
+MASTER_SITES=	https://portland.freedesktop.org/download/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Tools to allow all applications to integrate with the free desktop
