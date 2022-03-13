@@ -1,7 +1,6 @@
 PORTNAME=	cbc
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.10.5
-PORTREVISION=	6
+DISTVERSION=	2.10.7
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libClp.so:math/clp \
 		libcoinasl.so:math/asl \
 		libcoinmumps.so:math/ipopt \
+		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
 		liblapack.so:math/lapack \
 		libnauty.so:math/nauty \
