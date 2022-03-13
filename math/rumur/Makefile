@@ -1,6 +1,6 @@
 PORTNAME=	rumur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.12.27
+DISTVERSION=	2022.03.05
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,11 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgmpxx.so:math/gmp
 
 USES=		bison cmake compiler:c++11-lang python:build shebangfix
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	rumur/src/rumur-run
 SHEBANG_GLOB=	*.py
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Smattr
-USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	BISON_EXECUTABLE:STRING=${LOCALBASE}/bin/bison
