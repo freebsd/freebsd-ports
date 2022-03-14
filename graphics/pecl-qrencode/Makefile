@@ -1,7 +1,7 @@
 # Created by: vanilla
 
 PORTNAME=	qrencode
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	graphics pear
