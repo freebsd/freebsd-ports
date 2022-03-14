@@ -19,7 +19,6 @@ include/osmium/area/problem_reporter_stream.hpp
 include/osmium/area/stats.hpp
 include/osmium/builder/attr.hpp
 include/osmium/builder/builder.hpp
-include/osmium/builder/builder_helper.hpp
 include/osmium/builder/osm_object_builder.hpp
 include/osmium/diff_handler.hpp
 include/osmium/diff_iterator.hpp
@@ -68,7 +67,6 @@ include/osmium/index/map/flex_mem.hpp
 include/osmium/index/map/sparse_file_array.hpp
 include/osmium/index/map/sparse_mem_array.hpp
 include/osmium/index/map/sparse_mem_map.hpp
-include/osmium/index/map/sparse_mem_table.hpp
 include/osmium/index/map/sparse_mmap_array.hpp
 include/osmium/index/multimap.hpp
 include/osmium/index/multimap/all.hpp
@@ -181,7 +179,6 @@ include/osmium/thread/function_wrapper.hpp
 include/osmium/thread/pool.hpp
 include/osmium/thread/queue.hpp
 include/osmium/thread/util.hpp
-include/osmium/util/cast.hpp
 include/osmium/util/compatibility.hpp
 include/osmium/util/config.hpp
 include/osmium/util/delta.hpp
