@@ -204,6 +204,7 @@ include/thrift/lib/cpp2/op/Clear.h
 include/thrift/lib/cpp2/op/Compare.h
 include/thrift/lib/cpp2/op/Create.h
 include/thrift/lib/cpp2/op/DeterministicAccumulator.h
+include/thrift/lib/cpp2/op/Get.h
 include/thrift/lib/cpp2/op/Hash.h
 include/thrift/lib/cpp2/op/Patch.h
 include/thrift/lib/cpp2/op/StdHasher.h
@@ -403,7 +404,7 @@ include/thrift/lib/cpp2/type/AnyRef.h
 include/thrift/lib/cpp2/type/AnyType.h
 include/thrift/lib/cpp2/type/AnyValue.h
 include/thrift/lib/cpp2/type/BaseType.h
-include/thrift/lib/cpp2/type/Get.h
+include/thrift/lib/cpp2/type/Field.h
 include/thrift/lib/cpp2/type/Name.h
 include/thrift/lib/cpp2/type/Tag.h
 include/thrift/lib/cpp2/type/Testing.h
@@ -413,7 +414,7 @@ include/thrift/lib/cpp2/type/UniversalHashAlgorithm.h
 include/thrift/lib/cpp2/type/UniversalName.h
 include/thrift/lib/cpp2/type/detail/AnyData.h
 include/thrift/lib/cpp2/type/detail/AnyType.h
-include/thrift/lib/cpp2/type/detail/Get.h
+include/thrift/lib/cpp2/type/detail/Field.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/Traits.h
 include/thrift/lib/cpp2/type/detail/ThriftTypeInfo.h
