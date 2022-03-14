@@ -7,7 +7,7 @@ https://gitlab.com/veloren/veloren/-/issues/1493
                              }
                          },
 -                        unknown => unreachable!(unknown),
-+                        unknown => unreachable!("unknown"),
++                        unknown => unreachable!("{}", unknown),
                      };
  
                      let mut number = Text::new(&value)
