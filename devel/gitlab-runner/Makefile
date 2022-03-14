@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-runner
-PORTVERSION=	14.1.0
+PORTVERSION=	14.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -27,10 +27,10 @@ USE_GITHUB=	nodefault
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
 GL_ACCOUNT=	gitlab-org
-GL_COMMIT=	8925d9a06fd8e452e2161a768462652a2a13111f
-GITBRANCH=	14-1-stable
+GL_COMMIT=	f0a95a76c6db80232ae46716938e1b3c27950b3b
+GITBRANCH=	14-5-stable
 # https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-freebsd-amd64
-BUILT=		2021-02-22T20:17:08+0000
+BUILT=		2021-11-21T16:54:14+0000
 
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -59,25 +59,25 @@ GH_TUPLE=	\
 		fullsailor:pkcs7:d7302db945fa:fullsailor_pkcs7/vendor/github.com/fullsailor/pkcs7 \
 		getsentry:raven-go:dffeb57df75d:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
-		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.63.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v0.4.0:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:5ea612d1eb83:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
 		golang:mock:v1.4.4:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:3d97a244fca7:golang_net/vendor/golang.org/x/net \
+		golang:net:a5e095526f91:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0b49973bad19:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:f9321e4c35a6:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:751e447fb3d0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
 		golang:tools:113979e3529a:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -112,10 +112,9 @@ GH_TUPLE=	\
 		jpillora:backoff:06c7a16c845d:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
-		kardianos:osext:c2c54e542fb7:kardianos_osext/vendor/github.com/kardianos/osext \
 		kardianos:service:v1.2.0:kardianos_service/vendor/github.com/kardianos/service \
 		klauspost:compress:v1.11.6:klauspost_compress/vendor/github.com/klauspost/compress \
-		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
+		klauspost:cpuid:v2.0.9:klauspost_cpuid/vendor/github.com/klauspost/cpuid/v2 \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		kr:pty:v1.1.5:kr_pty/vendor/github.com/kr/pty \
 		kubernetes-sigs:structured-merge-diff:v4.1.0:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
@@ -127,9 +126,9 @@ GH_TUPLE=	\
 		kubernetes:utils:67b214c5f920:kubernetes_utils/vendor/k8s.io/utils \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		minio:md5-simd:v1.1.1:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:v6.0.57:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
-		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
+		minio:md5-simd:v1.1.2:minio_md5_simd/vendor/github.com/minio/md5-simd \
+		minio:minio-go:v7.0.13:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:gox:v1.0.1:mitchellh_gox/vendor/github.com/mitchellh/gox \
 		mitchellh:iochan:v1.0.0:mitchellh_iochan/vendor/github.com/mitchellh/iochan \
@@ -154,7 +153,7 @@ GH_TUPLE=	\
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		saracen:fastzip:v0.1.5:saracen_fastzip/vendor/github.com/saracen/fastzip \
 		saracen:zipextra:7347a2ee3f10:saracen_zipextra/vendor/github.com/saracen/zipextra \
-		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
@@ -162,10 +161,11 @@ GH_TUPLE=	\
 		tevino:abool:3c25f2fe7cd0:tevino_abool/vendor/github.com/tevino/abool \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
-GL_TUPLE=	ayufan:golang-cli-helpers:a7cf72d604cdf0af6031dd5d54a4e513abeff0d4:ayufan_golang_cli_helpers/vendor/gitlab.com/ayufan/golang-cli-helpers \
-		gitlab-org:gitlab-terminal:2a71b03b44621289b28493d8bf3eaa9f64dbb6c9:gitlab_org_gitlab_terminal/vendor/gitlab.com/gitlab-org/gitlab-terminal
+GL_TUPLE=	gitlab-org:gitlab-terminal:2a71b03b44621289b28493d8bf3eaa9f64dbb6c9:gitlab_org_gitlab_terminal/vendor/gitlab.com/gitlab-org/gitlab-terminal \
+		gitlab-org:golang-cli-helpers:70bef318ae0a3fe9734158b3a5f4dbea8c893bde:gitlab_org_golang_cli_helpers/vendor/gitlab.com/gitlab-org/golang-cli-helpers
 
 GO_BUILDFLAGS=	-ldflags=" \
+		-X gitlab.com/gitlab-org/gitlab-runner/commands.ROOTCONFIGDIR=${ETCDIR} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.VERSION=${PORTVERSION} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GL_COMMIT:C/^(........).*/\1/} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BUILT=${BUILT} \
