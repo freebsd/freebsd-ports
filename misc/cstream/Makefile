@@ -1,7 +1,7 @@
 # Created by: cracauer@cons.org "Martin Cracauer"
 
 PORTNAME=	cstream
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cons.org/cracauer/download/
 
