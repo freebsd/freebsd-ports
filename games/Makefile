@@ -488,6 +488,7 @@
     SUBDIR += libmt_client
     SUBDIR += libretro
     SUBDIR += libretro-2048
+    SUBDIR += libretro-a5200
     SUBDIR += libretro-beetle_bsnes
     SUBDIR += libretro-beetle_gba
     SUBDIR += libretro-beetle_lynx
