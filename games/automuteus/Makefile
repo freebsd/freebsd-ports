@@ -1,5 +1,5 @@
 PORTNAME=	automuteus
-DISTVERSION=	6.16.9
+DISTVERSION=	6.16.10
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -15,17 +15,17 @@ GH_ACCOUNT=	denverquane
 GH_TUPLE=	\
 		BurntSushi:toml:v1.0.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		automuteus:galactus:v1.2.2:automuteus_galactus/vendor/github.com/automuteus/galactus \
-		automuteus:utils:v0.0.28:automuteus_utils/vendor/github.com/automuteus/utils \
+		automuteus:utils:v0.0.31:automuteus_utils/vendor/github.com/automuteus/utils \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bsm:redislock:v0.7.1:bsm_redislock/vendor/github.com/bsm/redislock \
-		bwmarrin:discordgo:v0.23.2:bwmarrin_discordgo/vendor/github.com/bwmarrin/discordgo \
+		bwmarrin:discordgo:v0.24.0:bwmarrin_discordgo/vendor/github.com/bwmarrin/discordgo \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		georgysavva:scany:v0.2.7:georgysavva_scany/vendor/github.com/georgysavva/scany \
 		go-redis:redis:v8.8.0:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:83a5a9bb288b:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:68d13333faf2:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
