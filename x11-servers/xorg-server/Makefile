@@ -1,7 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME?=	xorg-server
-PORTVERSION?=	1.20.13
+PORTVERSION?=	1.20.14
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers

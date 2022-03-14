@@ -97,7 +97,7 @@
  pkg_failed=no
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for UDEV" >&5
 @@ -25884,11 +25924,12 @@ else
- $as_echo "yes" >&6; }
+ printf "%s\n" "yes" >&6; }
  	HAVE_LIBUDEV=yes
  fi
 -if test "x$CONFIG_UDEV" = xauto; then
@@ -105,7 +105,7 @@
 +	if test "x$CONFIG_UDEV" = xauto; then
 +		CONFIG_UDEV="$HAVE_LIBUDEV"
  
- $as_echo "#define HAVE_LIBUDEV 1" >>confdefs.h
+ printf "%s\n" "#define HAVE_LIBUDEV 1" >>confdefs.h
  
 +	fi
  fi
@@ -133,7 +133,7 @@
  
 -if test "x$CONFIG_HAL" = xno && test "x$CONFIG_UDEV" = xno; then
 +if test "x$CONFIG_HAL" = xno && test "x$CONFIG_UDEV" = xno && test "x$CONFIG_DEVD" = xno; then
-     { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING:
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING:
 -             ***********************************************
 -             Neither HAL nor udev backend will be enabled.
 +             *****************************************************
@@ -141,7 +141,7 @@
               Input device hotplugging will not be available!
 -             ***********************************************" >&5
 +             *****************************************************" >&5
- $as_echo "$as_me: WARNING:
+ printf "%s\n" "$as_me: WARNING:
 -             ***********************************************
 -             Neither HAL nor udev backend will be enabled.
 +             *****************************************************
