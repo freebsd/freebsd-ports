@@ -61,7 +61,7 @@ yesno() {
 # Respect POSTFIX_DEFAULT_MTA, do not ask for confirmation!
 # (This helps tools like salt, ansible or puppet on new installations)
 # ==============================================================================
-install_choise(){
+install_choice(){
 	local mailerconf
 	mailerconf=$1
 
@@ -167,12 +167,12 @@ if [ -f "${MC_BASE}" ]; then
 			cmp_mailer ${MC_LOCALBASE} || install_mailer_conf ${MC_LOCALBASE}
 			try_reload
 		else
-			cmp_mailer ${MC_LOCALBASE} || install_choise ${MC_LOCALBASE}
+			cmp_mailer ${MC_LOCALBASE} || install_choice ${MC_LOCALBASE}
 		fi
 	else
 		cmp_mailer ${MC_BASE}
 		if [ $? -ne 0 ]; then
-			install_choise ${MC_BASE}
+			install_choice ${MC_BASE}
 		else
 			show_activated_msg ${MC_BASE}
 			try_reload

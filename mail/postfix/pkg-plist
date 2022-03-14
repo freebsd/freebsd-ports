@@ -29,7 +29,7 @@ lib/postfix/libpostfix-util.so
 %%LDAP%%lib/postfix/postfix-ldap.so
 %%LMDB%%lib/postfix/postfix-lmdb.so
 %%MYSQL%%lib/postfix/postfix-mysql.so
-%%PCRE%%lib/postfix/postfix-pcre.so
+%%PCRE2%%lib/postfix/postfix-pcre.so
 %%PGSQL%%lib/postfix/postfix-pgsql.so
 %%SQLITE%%lib/postfix/postfix-sqlite.so
 libexec/postfix/anvil
@@ -42,7 +42,7 @@ libexec/postfix/dynamicmaps.cf
 %%LDAP%%libexec/postfix/dynamicmaps.cf.d/ldap.cf
 %%LMDB%%libexec/postfix/dynamicmaps.cf.d/lmdb.cf
 %%MYSQL%%libexec/postfix/dynamicmaps.cf.d/mysql.cf
-%%PCRE%%libexec/postfix/dynamicmaps.cf.d/pcre.cf
+%%PCRE2%%libexec/postfix/dynamicmaps.cf.d/pcre.cf
 %%PGSQL%%libexec/postfix/dynamicmaps.cf.d/pgsql.cf
 %%SQLITE%%libexec/postfix/dynamicmaps.cf.d/sqlite.cf
 libexec/postfix/error
@@ -63,7 +63,7 @@ libexec/postfix/postfix-files
 %%LDAP%%libexec/postfix/postfix-files.d/ldap-files
 %%LMDB%%libexec/postfix/postfix-files.d/lmdb-files
 %%MYSQL%%libexec/postfix/postfix-files.d/mysql-files
-%%PCRE%%libexec/postfix/postfix-files.d/pcre-files
+%%PCRE2%%libexec/postfix/postfix-files.d/pcre-files
 %%PGSQL%%libexec/postfix/postfix-files.d/pgsql-files
 %%SQLITE%%libexec/postfix/postfix-files.d/sqlite-files
 libexec/postfix/postfix-script
