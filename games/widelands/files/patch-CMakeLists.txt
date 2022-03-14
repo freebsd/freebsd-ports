@@ -124,3 +124,19 @@
    CONFIGURATIONS Debug
    COMPONENT DocFiles
    PATTERN "CMakeLists.txt" EXCLUDE
+@@ -482,6 +436,7 @@ install(
+ 
+ set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${WL_INSTALL_DATADIR}/locale)
+ 
++if(OPTION_BUILD_TRANSLATIONS)
+ install(
+   DIRECTORY
+     ${CMAKE_CURRENT_BINARY_DIR}/locale/
+@@ -489,6 +444,7 @@ install(
+   CONFIGURATIONS Debug;Release
+   COMPONENT CoreLanguageFiles
+ )
++endif()
+ 
+ if (UNIX AND NOT APPLE)
+   add_subdirectory(xdg)
