@@ -22,7 +22,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=	tar:Z
 
-CONFLICTS_INSTALL=	 rubygem-amatch # bin/agrep
+CONFLICTS_INSTALL=	rubygem-amatch # bin/agrep
 
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
