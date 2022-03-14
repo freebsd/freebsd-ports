@@ -1,0 +1,38 @@
+--- SConscript.orig	2021-09-21 21:53:44 UTC
++++ SConscript
+@@ -20,7 +20,7 @@ import re
+ import subprocess
+ import sys
+ import time
+-from distutils import sysconfig
++import sysconfig
+ import SCons
+ 
+ # scons does not like targets that come and go (if cleaning, if python,
+@@ -243,7 +243,7 @@ website = "https://gpsd.io/"
+ # Hosting information ends here
+ 
+ 
+-PYTHON_SYSCONFIG_IMPORT = 'from distutils import sysconfig'
++PYTHON_SYSCONFIG_IMPORT = 'import sysconfig'
+ 
+ # Utility productions
+ 
+@@ -1419,7 +1419,7 @@ if not cleaning and not helping:
+ 
+ # Set up configuration for target Python
+ 
+-PYTHON_LIBDIR_CALL = 'sysconfig.get_python_lib()'
++PYTHON_LIBDIR_CALL = 'sysconfig.get_paths()["purelib"]'
+ 
+ PYTHON_CONFIG_NAMES = ['SO']  # Now a fairly degenerate list
+ PYTHON_CONFIG_QUOTED = ["'%s'" % s for s in PYTHON_CONFIG_NAMES]
+@@ -1520,7 +1520,7 @@ if not cleaning and not helping and config.env['python
+                                        'import sys',
+                                        '"%d.%d" % sys.version_info[0:2]')
+ 
+-        if 3 > int(sysver[0]) or 6 > int(sysver[2]):
++        if 3 > int(sysver[0]) or 6 > int(sysver[2:]):
+             config.env['aiogps'] = False
+             announce("WARNING: Python%s too old (need 3.6): "
+                      "gps/aiogps.py will not be installed" %
