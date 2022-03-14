@@ -779,7 +779,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/README
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/test-invalid.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/test-valid.xml
-%%GSETTINGS%%%%DATADIR%%/%%EMACS_VER%%/etc/org.gnu.emacs.defaults.gschema.valid
+%%PGTK%%%%GSETTINGS%%%%DATADIR%%/%%EMACS_VER%%/etc/org.gnu.emacs.defaults.gschema.valid
 %%DATADIR%%/%%EMACS_VER%%/etc/org.gnu.emacs.defaults.gschema.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtContentTemplate.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtStyles.xml

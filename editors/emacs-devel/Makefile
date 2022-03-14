@@ -1,7 +1,7 @@
 # Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
 
 PORTNAME=	emacs
-DISTVERSION=	29.0.50.20220228
+DISTVERSION=	29.0.50.20220315
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	0470ef0
+GH_TAGNAME=	d932e25
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -143,7 +143,6 @@ GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=		gnutls
 GSETTINGS_USE=			GNOME=glib20
 GSETTINGS_CONFIGURE_WITH=	gsettings
-GSETTINGS_VARS=			GLIB_SCHEMAS+=org.gnu.emacs.defaults.gschema.xml
 GTK2_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 				libfreetype.so:print/freetype2
 GTK2_USE=			GNOME=cairo,gtk20
@@ -238,6 +237,12 @@ USE_XORG+=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3} && !${PORT_OPTIONS:MXAW} && \
 	!${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=	--with-x-toolkit=no
+.endif
+
+# Schema generation is dependent on both PGTK, and GSETTINGS options
+# as per https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=183936ee8e5
+.if ${PORT_OPTIONS:MGSETTINGS} && ${PORT_OPTIONS:MPGTK}
+GLIB_SCHEMAS+=		org.gnu.emacs.defaults.gschema.xml
 .endif
 
 .if ${FLAVOR} == nox
