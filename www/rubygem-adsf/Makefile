@@ -1,7 +1,7 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
 
 PORTNAME=	adsf
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
