@@ -1,6 +1,6 @@
 PORTNAME=	litestream
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	databases
 
 MAINTAINER=	nc@FreeBSD.org
@@ -19,12 +19,10 @@ GH_ACCOUNT=	benbjohnson
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
-		Azure:go-autorest:autorest/v0.9.0:azure_go_autorest_autorest/vendor/github.com/Azure/go-autorest \
 		aws:aws-sdk-go:v1.27.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:c07d793c2f9a:golang_crypto/vendor/golang.org/x/crypto \
@@ -51,7 +49,7 @@ GH_TUPLE=	\
 		kr:fs:v0.1.0:kr_fs/vendor/github.com/kr/fs \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-shellwords:v1.0.11:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
-		mattn:go-sqlite3:v1.14.5:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.12:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		pierrec:lz4:v4.1.3:pierrec_lz4_v4/vendor/github.com/pierrec/lz4/v4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
