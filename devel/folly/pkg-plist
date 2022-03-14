@@ -566,6 +566,7 @@ include/folly/io/coro/Transport.h
 include/folly/json.h
 include/folly/json_patch.h
 include/folly/json_pointer.h
+include/folly/lang/Access.h
 include/folly/lang/Align.h
 include/folly/lang/Aligned.h
 include/folly/lang/Assume.h
