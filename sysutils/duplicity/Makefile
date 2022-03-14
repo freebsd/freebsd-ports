@@ -1,7 +1,7 @@
 # Created by: Gerhard Häring <gh@ghaering.de>
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.20
+PORTVERSION=	0.8.22
 CATEGORIES=	sysutils
 MASTER_SITES=	CHEESESHOP
 

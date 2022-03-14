@@ -1,3 +1,3 @@
-TIMESTAMP = 1629651130
-SHA256 (duplicity-0.8.20.tar.gz) = 488af2ecadb059214074f2b3ac51bf9d7de55a800e37ccc2f1075cd0a74940e3
-SIZE (duplicity-0.8.20.tar.gz) = 1364900
+TIMESTAMP = 1646488786
+SHA256 (duplicity-0.8.22.tar.gz) = c3c89d96cd6d374c22abed939619f77b0252ffb2e400888efc6b86b88bcfe626
+SIZE (duplicity-0.8.22.tar.gz) = 1397557
