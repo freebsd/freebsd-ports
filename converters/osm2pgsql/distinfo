@@ -1,3 +1,3 @@
-TIMESTAMP = 1629133137
-SHA256 (openstreetmap-osm2pgsql-1.5.1_GH0.tar.gz) = 4df0d332e5d77a9d363f2f06f199da0ac23a0dc7890b3472ea1b5123ac363f6e
-SIZE (openstreetmap-osm2pgsql-1.5.1_GH0.tar.gz) = 2577801
+TIMESTAMP = 1647270699
+SHA256 (openstreetmap-osm2pgsql-1.6.0_GH0.tar.gz) = 0ec8b58ab972ac8356185af4161270c1b625a77299f09e5fb7f45e616ef1a9a5
+SIZE (openstreetmap-osm2pgsql-1.6.0_GH0.tar.gz) = 2592649

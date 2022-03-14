@@ -1,0 +1,4 @@
+bin/osm2pgsql
+bin/osm2pgsql-replication
+share/man/man1/osm2pgsql.1.gz
+share/man/man1/osm2pgsql-replication.1.gz
