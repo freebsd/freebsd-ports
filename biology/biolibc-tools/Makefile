@@ -1,7 +1,7 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	biolibc-tools
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	uthash>0:devel/uthash
 LIB_DEPENDS=	libbiolibc.so:biology/biolibc \
+		libxtend.so:devel/libxtend \
 		libxxhash.so:devel/xxhash
 
 USE_GITHUB=	yes
