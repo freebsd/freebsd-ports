@@ -1,9 +1,7 @@
 PORTNAME=	simutrans-pak128.german
-DISTVERSION=	1.2
-MASTER_SITES=	SF/simutrans/PAK128.german/pak128.german_${DISTVERSION}_for_ST_${SIMUTRANSVER:S/-/./g}
-DISTNAME=	PAK128.german_${DISTVERSION}_for_ST_${SIMUTRANSVER:S/./-/g}
-
-SIMUTRANSVER=	121-0
+DISTVERSION=	2.1
+MASTER_SITES=	SF/simutrans/PAK128.german/PAK128.german_${DISTVERSION}_for_ST_123.0/
+DISTNAME=	PAK128.german_${DISTVERSION}_for_ST_123.0
 
 COMMENT=	German graphics set for Simutrans
 
