@@ -14,7 +14,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCgl.so:math/cgl \
 		libClp.so:math/clp \
 		libcoinasl.so:math/asl \
-		libcoinmumps.so:math/ipopt \
+		libipopt.so:math/ipopt \
 		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
 		liblapack.so:math/lapack \
