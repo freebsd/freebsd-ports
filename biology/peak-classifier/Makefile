@@ -1,5 +1,5 @@
 PORTNAME=	peak-classifier
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
