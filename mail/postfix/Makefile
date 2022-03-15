@@ -308,7 +308,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
 		s!($$config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
-pre-patch:
+post-patch:
 .if ${PORT_OPTIONS:MSASL} && ! ${PORT_OPTIONS:MMYSQL} && exists(${LOCALBASE}/lib/libsasl2.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \
@@ -329,7 +329,6 @@ pre-patch:
 		-type f -a ! \( -name INSTALL -o -name aliases \) | ${XARGS} \
 		${REINPLACE_CMD} -i '' -E -e '${REINPLACE}'
 
-post-patch:
 .for f in ${HTML1}
 	@${ECHO_CMD} '$$html_directory/$f:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
