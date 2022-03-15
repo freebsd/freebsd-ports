@@ -1,7 +1,7 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	20211029
+PORTVERSION=	20220311
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	docproj>=4.0:textproc/docproj
 
-USES=		python:build,3.6+
 WRKSRC=		${WRKDIR}/doc/documentation
 PLIST_SUB=	DOCSDIR=${DOCBASE} \
 		DOCLANG=${DOCLANG} \
@@ -33,7 +32,9 @@ DOCLANG?=		en
 DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
 DOCBASE?=		share/doc/freebsd
 
-AVAILABLEFORMATS=	HTML PDF
+# HTML format disabled until separate localized-only build will work again
+#AVAILABLEFORMATS=	HTML PDF
+AVAILABLEFORMATS=	PDF
 
 OPTIONS_DEFINE=		${AVAILABLEFORMATS}
 OPTIONS_DEFAULT=	PDF
@@ -69,7 +70,6 @@ pre-build:
 		${CAT} ${i} >> ${PLIST}; \
 	fi
 .endfor
-	${REINPLACE_CMD} -e 's/python3/${PYTHON_CMD:T}/' ${WRKSRC}/Makefile
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -78,5 +78,10 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
 	${CP} -R ${WRKSRC}/public/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
+	if ${TEST} -f ${.CURDIR}/pkg-plist.extras; then \
+		${CAT} ${.CURDIR}/pkg-plist.extras | \
+		${SED} -e 's|%%DOCSDIR%%/%%DOCLANG%%||' | \
+		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/source/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}%; \
+	fi
 
 .include <bsd.port.mk>
