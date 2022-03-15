@@ -402,5 +402,6 @@
     SUBDIR += xdrawchem
     SUBDIR += xtb
     SUBDIR += yoda
+    SUBDIR += zotero
 
 .include <bsd.port.subdir.mk>
