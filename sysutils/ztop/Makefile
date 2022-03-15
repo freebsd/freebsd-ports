@@ -1,7 +1,6 @@
 PORTNAME=	ztop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
-PORTREVISION=	7
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -17,7 +16,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		bitflags-1.2.1 \
+		bitflags-1.3.2 \
 		byteorder-1.4.3 \
 		cassowary-0.3.0 \
 		cc-1.0.69 \
@@ -28,10 +27,10 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		humanize-rs-0.1.5 \
 		ieee754-0.2.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.98 \
+		libc-0.2.103 \
 		memchr-2.4.0 \
 		memoffset-0.6.4 \
-		nix-0.22.0 \
+		nix-0.23.0 \
 		numtoa-0.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
