@@ -10,6 +10,9 @@ COMMENT=	Open-source 3D chess game
 
 LICENSE=	GPLv2  # from sourceforge page
 
+DEPRECATED=	Abandonware with last release in 2006
+EXPIRATION_DATE=2022-04-15
+
 USES=		compiler dos2unix gl gmake sdl
 USE_SDL=	sdl image
 USE_GL=		gl glu
