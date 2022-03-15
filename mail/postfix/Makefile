@@ -2,7 +2,7 @@
 
 PORTNAME=	postfix
 DISTVERSION=	3.7.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -47,7 +47,7 @@ SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
 			postfix-current sendmail sendmail-devel
 
-PORTSCOUT=	limit:^3\.6\.
+PORTSCOUT=	limit:^3\.7\.
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -193,7 +193,7 @@ POSTFIX_CCARGS+=	-DNO_EAI
 
 .if ${PORT_OPTIONS:MPCRE2}
 DYN_EXT+=		pcre
-POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
+POSTFIX_CCARGS+=	-DHAS_PCRE=2 -I${LOCALBASE}/include
 POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PCRE=`${LOCALBASE}/bin/pcre2-config --libs8`"
 .else
 POSTFIX_CCARGS+=	-DNO_PCRE
@@ -312,7 +312,7 @@ post-patch:
 .if ${PORT_OPTIONS:MSASL} && ! ${PORT_OPTIONS:MMYSQL} && exists(${LOCALBASE}/lib/libsasl2.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \
-		${ECHO_MSG} "Your SASL library it's compiled with MYSQL"; \
+		${ECHO_MSG} "Your SASL library is compiled with MYSQL"; \
 		${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
 		${ECHO_MSG} "select MYSQL OPTION in config menu."; \
 		${ECHO_MSG} "# make clean config"; \
