@@ -1559,7 +1559,6 @@
     SUBDIR += rapidxml
     SUBDIR += raptor
     SUBDIR += raptor2
-    SUBDIR += rarian
     SUBDIR += rasqal
     SUBDIR += re-flex
     SUBDIR += re_graph

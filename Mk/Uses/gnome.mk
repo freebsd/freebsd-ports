@@ -42,10 +42,6 @@
 #				add the following to your Makefile:
 #				"GLIB_SCHEMAS=foo.gschema.xml bar.gschema.xml".
 #
-# INSTALLS_OMF		- If set, bsd.gnome.mk will automatically scan pkg-plist
-#				file and add apropriate @postexec/@postunexec directives for
-#				each .omf file found to track OMF registration database.
-#
 # MAINTAINER: gnome@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GNOME_MK)
@@ -434,17 +430,6 @@ gnome-post-glib-schemas:
 		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
 	done
 	@${ECHO_CMD} "@glib-schemas" >> ${TMPPLIST};
-.endif
-
-.if defined(INSTALLS_OMF)
-_USES_install+=	690:gnome-post-omf
-gnome-post-omf:
-	@for i in `${GREP} "\.omf$$" ${TMPPLIST}`; do \
-		${ECHO_CMD} "@postexec scrollkeeper-install -q %D/$${i} 2>/dev/null || /usr/bin/true" \
-			>> ${TMPPLIST}; \
-		${ECHO_CMD} "@postunexec scrollkeeper-uninstall -q %D/$${i} 2>/dev/null || /usr/bin/true" \
-			>> ${TMPPLIST}; \
-	done
 .endif
 
 .endif
