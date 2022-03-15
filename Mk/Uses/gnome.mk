@@ -89,7 +89,6 @@ _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
 USE_LOCALE?=	en_US.UTF-8
 
 GNOME_MAKEFILEIN?=	Makefile.in
-SCROLLKEEPER_DIR=	/var/db/rarian
 
 referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} -e \
 				"s|test \"\$$\$$installfiles\" = '\$$(srcdir)/html/\*'|:|"

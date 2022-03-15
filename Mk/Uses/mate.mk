@@ -49,8 +49,6 @@ _USE_MATE_ALL+=	caja common controlcenter desktop dialogs docutils icontheme \
 		marco menus mixer notificationdaemon panel polkit pluma \
 		session settingsdaemon
 
-SCROLLKEEPER_DIR=	/var/db/rarian
-
 caja_DETECT=		${LOCALBASE}/libdata/pkgconfig/libcaja-extension.pc
 caja_BUILD_DEPENDS=	${caja_DETECT}:x11-fm/caja
 caja_LIB_DEPENDS=	libcaja-extension.so:x11-fm/caja

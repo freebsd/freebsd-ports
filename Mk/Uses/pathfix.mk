@@ -53,7 +53,6 @@ pathfix:
 		s|[{]datadir[}]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[[:<:]]lib/pkgconfig|libdata/pkgconfig|g; \
-		s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
 		s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 .endfor
 .endif
