@@ -1,4 +1,4 @@
---- tools/migration/Makefile.orig	2020-01-02 09:49:37 UTC
+--- tools/migration/Makefile.orig	2022-03-08 12:34:39 UTC
 +++ tools/migration/Makefile
 @@ -5,7 +5,7 @@ BIN = $(DESTDIR)$(PREFIX)/bin
  CONFIG = $(DESTDIR)$(SYSCONFDIR)
@@ -9,10 +9,10 @@
  
  INSTALLEDSOURCE = $(LIBDIR)/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -22,14 +22,14 @@ install: prosody-migrator.install migrator.cfg.lua.ins
- 	install -d $(SOURCE)/migrator
+@@ -18,14 +18,14 @@ install: prosody-migrator.install migrator.cfg.lua.ins
+ 	install -d $(BIN) $(CONFIG) $(SOURCE)
+ 	install -d $(MAN)/man1
  	install -m755 ./prosody-migrator.install $(BIN)/prosody-migrator
- 	install -m644 $(SOURCE_FILES) $(SOURCE)/migrator
 -	test -e $(CONFIG)/migrator.cfg.lua || install -m644 migrator.cfg.lua.install $(CONFIG)/migrator.cfg.lua
 +	install -m644 migrator.cfg.lua.install $(CONFIG)/migrator.cfg.lua.sample
  
@@ -24,5 +24,5 @@
 -	sed "1s/\blua\b/$(RUNWITH)/; \
 +	sed "1s/ lua$$/ $(RUNWITH)/; \
  		s|^CFG_SOURCEDIR=.*;$$|CFG_SOURCEDIR='$(INSTALLEDSOURCE)';|; \
- 		s|^CFG_CONFIGDIR=.*;$$|CFG_CONFIGDIR='$(INSTALLEDCONFIG)';|;" \
- 			< prosody-migrator.lua > prosody-migrator.install
+ 		s|^CFG_CONFIGDIR=.*;$$|CFG_CONFIGDIR='$(INSTALLEDCONFIG)';|; \
+ 		s|^CFG_DATADIR=.*;$$|CFG_DATADIR='$(INSTALLEDDATA)';|; \
