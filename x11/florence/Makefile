@@ -13,7 +13,6 @@ LICENSE=	GPLv2+ GFDL
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
-BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
 
 USES=		gmake gnome iconv libtool pathfix pkgconfig tar:bzip2 xorg
 USE_XORG=	xtst xext
