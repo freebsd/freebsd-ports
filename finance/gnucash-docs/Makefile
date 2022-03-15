@@ -2,13 +2,13 @@
 
 PORTNAME=	gnucash-docs
 DISTVERSION=	4.9
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
-LIB_DEPENDS=	librarian.so:textproc/rarian
 RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		cmake localbase gnome
