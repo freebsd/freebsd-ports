@@ -1,8 +1,7 @@
 # Created by: Kris Moore <kris@pcbsd.org>
 
 PORTNAME=	qtcreator
-DISTVERSION=	5.0.3
-PORTREVISION=	1
+DISTVERSION=	6.0.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -17,54 +16,19 @@ LICENSE_NAME=	GPLv3 with Qt Company GPL Exception 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3-EXCEPT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-# depend on the split out qbs
-LIB_DEPENDS=	libqbscore.so:devel/qbs
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+LIB_DEPENDS=	libKF5SyntaxHighlighting.so:textproc/kf5-syntax-highlighting \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		compiler:c++14-lang gl python qmake qt:5 shebangfix tar:xz
-USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
+USES=		compiler:c++14-lang pkgconfig cmake gl python qt:5 shebangfix tar:xz \
+		desktop-file-utils
 USE_GL=		gl
+USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_QT=		buildtools concurrent core declarative designer gui help \
 		linguist location network printsupport qdoc qmake \
-		quickcontrols script script serialport sql svg webchannel \
-		widgets xml xmlpatterns
-
-# be paranoid and do not extract qbs (devel/qbs) copy from source tree
-EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
-# Set QBS_INSTALL_DIR for QBS plugin build and set config parameter to build
-# the qbsprojectmanager plugin without compile error
-QMAKE_ARGS+=	QBS_INSTALL_DIR=${PREFIX} CONFIG+=qbs_enable_project_file_updates
-
-# Enforce installation to ${PREFIX}.
-QMAKE_ARGS+=	QTC_PREFIX=${PREFIX} LLVM_INSTALL_DIR=${PREFIX}/llvm${LLVM_DEFAULT}
-
-DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
-		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
-
-PORTDOCS=		*
-
-OPTIONS_DEFINE=		DOCS EXAMPLES QTWEBENGINE
-OPTIONS_SUB=		yes
-DOCS_DESC=		Install the Qt5 api documentation
-DOCS_USE=		QT=doc_run
-EXAMPLES_DESC=		Install the Qt5 example projects
-EXAMPLES_USE=		QT=examples_run
-OPTIONS_DEFAULT=	DOCS EXAMPLES
-OPTIONS_DEFAULT_amd64=	QTWEBENGINE
-OPTIONS_DEFAULT_i386=	QTWEBENGINE
-
-QTWEBENGINE_DESC=	Add dependency on qt5-webengine
-QTWEBENGINE_USE=	qt=webengine
-QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine
-
-ALL_TARGET=		all
-INSTALL_TARGET=		install
-
-DOCS_ALL_TARGET=	docs
-DOCS_INSTALL_TARGET=	install_docs
-
-PLIST_SUB=		SHLIB_VER="${PORTVERSION}"
+		quick3d quickcontrols script serialport sql svg testlib \
+		webchannel widgets xml xmlpatterns
 
 SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 			tests/system/tools/findUnusedObjects.py \
@@ -84,33 +48,55 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 			scripts/uichanges.py \
 			scripts/makedmg.py
 
+# Provide library paths, default llvm first as a hint to the clang code model.
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${PREFIX}/llvm${LLVM_DEFAULT};${PREFIX}"
+# Prevent accidental pickup of devel/elfutils libraries.
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils
+# Disable precompiled headers for now, they are missing compile flags.
+CMAKE_OFF=	BUILD_WITH_PCH
+
+LDFLAGS+=	-lexecinfo
+
+# be paranoid and do not extract qbs (devel/qbs) copy from source tree
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
+
+PLIST_SUB=		SHLIB_VER="${PORTVERSION}"
+PORTDOCS=		*
+
+OPTIONS_DEFINE=		DOCS EXAMPLES QTWEBENGINE
+OPTIONS_DEFAULT=	DOCS EXAMPLES
+OPTIONS_DEFAULT_amd64=	QTWEBENGINE
+OPTIONS_DEFAULT_i386=	QTWEBENGINE
+OPTIONS_SUB=		yes
+
+DOCS_DESC=		Install the Qt5 api documentation
+EXAMPLES_DESC=		Install the Qt5 example projects
+QTWEBENGINE_DESC=	Add dependency on qt5-webengine
+
+DOCS_USE=		QT=doc_run
+DOCS_CMAKE_BOOL=	WITH_DOCS
+
+EXAMPLES_USE=		QT=examples_run
+
+QTWEBENGINE_USE=	qt=webengine
+QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine
+
 .include <bsd.port.pre.mk>
 
 # Force a modern LLVM >= 10
 .if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} > 80
-LLVM_DEFAULT=	11
+LLVM_DEFAULT=	13
 .endif
 
-post-patch:
-# Fix python binary in pro file.
-	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
-				${WRKSRC}/qtcreator.pro
+# Documentation is excluded from the default build targets.
+do-build-DOCS-on:
+	${CMAKE_BIN} --build ${BUILD_WRKSRC} --target docs
 
-pre-configure:
-# We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
-# the linker before -L/usr/local/lib. By default, the opposite happens, which
-# is a problem when a Qt port is being upgraded, since an existing library
-# would end up being picked up instead of those built in ${WRKSRC}/lib. Since
-# qmake appends the value of QMAKE_LIBDIR to QMAKE_LIBDIR_FLAGS, we can use the
-# latter to get the linker path order right. qmake is smart enough to strip
-# occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
-# See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
-	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
-
-post-stage:
-# There is **one** qmldir file that is staged, which gets stripped.
-# Since it's a text file, strip complains / falls over, but it does
-# leave a 0-size file behind. That in turn trips up check-plist.
-	${RM} ${STAGEDIR}/${PREFIX}/share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioTheme/ecp.*
+# This also means separate install steps for documentation.
+do-install-DOCS-on:
+	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX} \
+	    --component qch_docs
+	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX} \
+	    --component html_docs
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- src/libs/sqlite/CMakeLists.txt.orig	2022-02-17 18:51:21 UTC
++++ src/libs/sqlite/CMakeLists.txt
+@@ -47,6 +47,8 @@ extend_qtc_library(Sqlite DEFINES _HAVE_SQLITE_CONFIG_
+ 
+ if (APPLE)
+ extend_qtc_library(Sqlite DEFINES _BSD_SOURCE)
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++extend_qtc_library(Sqlite DEFINES _POSIX_C_SOURCE=200809L _BSD_SOURCE __XSI_VISIBLE)
+ elseif (UNIX)
+ extend_qtc_library(Sqlite DEFINES _POSIX_C_SOURCE=200809L _GNU_SOURCE _DEFAULT_SOURCE)
+ endif()
