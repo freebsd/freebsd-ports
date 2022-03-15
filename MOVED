@@ -16961,3 +16961,4 @@ net-im/pidgin-bs|net-im/pidgin-bot-sentry|2022-03-13|Project was renamed
 math/qalculate|math/qalculate-gtk|2022-03-14|Renamed to match project name
 deskutils/nautilus-actions||2022-03-15|Abandonware
 textproc/rarian||2022-03-15|Abandonware
+devel/ORBit2||2022-02-14|Gnome2 library unused anymore

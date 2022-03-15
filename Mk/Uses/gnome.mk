@@ -66,7 +66,7 @@ _USE_GNOME_ALL+= atk cairo \
 		libglade2 libgnomecanvas \
 		libgsf libidl librsvg2 libwnck \
 		libxml2 libxslt \
-		orbit2 pango pangox-compat \
+		pango pangox-compat \
 		vte
 
 # GNOME 3 components
@@ -181,9 +181,6 @@ GTK4_VERSION=		4.0.0
 
 libidl_LIB_DEPENDS=	libIDL-2.so:devel/libIDL
 libidl_USE_GNOME_IMPL=	glib20
-
-orbit2_LIB_DEPENDS=	libORBit-2.so:devel/ORBit2
-orbit2_USE_GNOME_IMPL=	libidl
 
 libglade2_LIB_DEPENDS=	libglade-2.0.so:devel/libglade2
 libglade2_USE_GNOME_IMPL=libxml2 gtk20

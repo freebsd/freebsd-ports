@@ -3,7 +3,6 @@
     SUBDIR += 9base
     SUBDIR += ChipmunkPhysics
     SUBDIR += ElectricFence
-    SUBDIR += ORBit2
     SUBDIR += R-cran-BH
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
