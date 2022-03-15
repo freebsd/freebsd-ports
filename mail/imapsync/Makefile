@@ -1,7 +1,7 @@
 # Created by: Alex Deiter <tiamat@komi.mts.ru>
 
 PORTNAME=	imapsync
-PORTVERSION=	1.977
+PORTVERSION=	2.178
 DISTVERSIONPREFIX=	imapsync-
 CATEGORIES=	mail perl5
 
@@ -34,7 +34,6 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 USES=		cpe perl5 tar:tgz shebangfix
 SHEBANG_FILES=	${PORTNAME}
 USE_GITHUB=	yes
-GH_TAGNAME=	1d08afa
 
 CPE_VENDOR=	gilles_lamiral
 NO_BUILD=	yes
