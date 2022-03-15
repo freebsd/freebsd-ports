@@ -1,0 +1,16 @@
+path: "%%PREFIX%%/share/glib-2.0/schemas"
+cleanup: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+os.remove("%%PREFIX%%/share/glib-2.0/schemas/gschemas.compiled")
+EOS
+}
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Compiling glib schemas")
+pkg.exec({"%%PREFIX%%/bin/glib-compile-schemas", "%%PREFIX%%/share/glib-2.0/schemas"})
+EOS
+}

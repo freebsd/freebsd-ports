@@ -140,9 +140,6 @@ while read -r modtype path extra; do
 		case "${sub_path}" in
 			# gconftool-2 --makefile-uninstall-rule is unpredictable
 			etc/gconf/gconf.xml.defaults/%gconf-tree*.xml) ;;
-			# This is a cache file for gio modules could be modified
-			# for any gio modules
-			lib/gio/modules/giomodule.cache) ;;
 			# removal of info files leaves entry uneasy to cleanup
 			# in info/dir
 			info/dir) ;;

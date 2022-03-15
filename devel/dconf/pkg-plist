@@ -20,5 +20,3 @@ share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
 @dir %%ETCDIR%%/db
 @dir %%ETCDIR%%/profile
-@postexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
-@postunexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

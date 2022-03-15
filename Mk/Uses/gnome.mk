@@ -411,15 +411,12 @@ gnome-post-gconf-schemas:
 	done
 .endif
 
-# we put the @glib-schemas behind the plist schema entry, because it compiles files 
-# in the directory. So we should remove the port file first before recompiling.
 .if defined(GLIB_SCHEMAS)
 _USES_install+=	690:gnome-post-glib-schemas
 gnome-post-glib-schemas:
 	@for i in ${GLIB_SCHEMAS}; do \
 		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
 	done
-	@${ECHO_CMD} "@glib-schemas" >> ${TMPPLIST};
 .endif
 
 .endif

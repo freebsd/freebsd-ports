@@ -2,6 +2,7 @@
 
 PORTNAME=	glib
 DISTVERSION=	2.70.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -18,7 +19,8 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
-		meson perl5 pkgconfig python:3.6+ tar:xz
+		meson perl5 pkgconfig python:3.6+ tar:xz trigger
+TRIGGERS=	gio-modules glib-schemas
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_PYTHON=	py3kplist
