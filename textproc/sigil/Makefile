@@ -1,7 +1,7 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
 
 PORTNAME=	sigil
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0.15.0:devel/dulwich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
-USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
+USES=		cmake cpe desktop-file-utils \
 		minizip pkgconfig python:3.4+ qt:5 shebangfix
 CPE_VENDOR=	${PORTNAME}-ebook
 
