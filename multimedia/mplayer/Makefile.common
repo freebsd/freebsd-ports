@@ -2,8 +2,8 @@
 # mplayer and mencoder....the variables that we need to set
 # before we include bsd.port.pre.mk
 
-MPLAYER_PORT_VERSION=	1.4.0
-MPLAYER_SNAPSHOT_DATE=	2021-12-29
+MPLAYER_PORT_VERSION=	1.5.0
+MPLAYER_SNAPSHOT_DATE=	2022-03-10
 MASTER_SITES=	LOCAL/riggs/mplayer
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
