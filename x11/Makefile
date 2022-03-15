@@ -17,6 +17,7 @@
     SUBDIR += arandr
     SUBDIR += arcan-trayicon
     SUBDIR += aterm
+    SUBDIR += autorandr
     SUBDIR += babl
     SUBDIR += bbappconf
     SUBDIR += bbdock
