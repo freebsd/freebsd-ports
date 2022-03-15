@@ -16958,3 +16958,4 @@ databases/postgresql96-plpython||2022-03-11|Has expired: PostgreSQL-9.6 has reac
 databases/postgresql96-pltcl||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-server||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 net-im/pidgin-bs|net-im/pidgin-bot-sentry|2022-03-13|Project was renamed
+math/qalculate|math/qalculate-gtk|2022-03-14|Renamed to match project name

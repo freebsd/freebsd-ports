@@ -957,7 +957,7 @@
     SUBDIR += py-yt
     SUBDIR += py-z3-solver
     SUBDIR += pynac
-    SUBDIR += qalculate
+    SUBDIR += qalculate-gtk
     SUBDIR += qalculate-qt
     SUBDIR += qd
     SUBDIR += qhull

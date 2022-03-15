@@ -1,10 +1,9 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
 
-PORTNAME=	qalculate
+PORTNAME=	qalculate-gtk
 PORTVERSION=	4.0.0
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
-DISTNAME=	${GH_PROJECT}-${PORTVERSION}
+MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (GTK+3 frontend)
@@ -20,13 +19,7 @@ USES=		compiler:c++11-lang gettext gmake gnome \
 		libtool:build localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
 
-# USE_GITHUB=	Use MASTER_SITES so that the pre-rolled release is downloaded
-GH_ACCOUNT=	Qalculate
-GH_PROJECT=	${PORTNAME}-gtk
-
 GNU_CONFIGURE=	yes
-DATADIR=	share/${GH_PROJECT}
-DOCSDIR=	share/doc/${GH_PROJECT}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
