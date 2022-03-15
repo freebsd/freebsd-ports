@@ -1,8 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	ddalpha
-PORTVERSION=	1.3.11
-PORTREVISION=	1
+PORTVERSION=	1.3.12
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -19,6 +18,6 @@ CRAN_DEPENDS=	R-cran-robustbase>0:math/R-cran-robustbase \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++11-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
