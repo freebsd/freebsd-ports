@@ -1,3 +1,50 @@
+  <vuln vid="6601c08d-a46c-11ec-8be6-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.53</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <ul>
+	    <li><p>mod_lua: Use of uninitialized value of in r:parsebody (moderate)
+	      (CVE-2022-22719)</p><p>A carefully crafted request body can cause a
+	      read to a random memory area which could cause the process to crash.
+	    </p></li>
+	    <li><p>HTTP request smuggling vulnerability (important) (CVE-2022-22720)
+	      </p><p>httpd fails to close inbound connection when errors are
+	      encountered discarding the request body, exposing the server to HTTP
+	      Request Smuggling</p></li>
+	    <li><p>core: Possible buffer overflow with very large or unlimited
+	      LimitXMLRequestBody (low) (CVE-2022-22721)</p><p>If LimitXMLRequestBody
+	      is set to allow request bodies larger than 350MB (defaults to 1M) on 32
+	      bit systems an integer overflow happens which later causes out of
+	      bounds writes.</p></li>
+	    <li><p>mod_sed: Read/write beyond bounds (important) (CVE-2022-23924)</p>
+	      <p>Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server
+		allows an attacker to overwrite heap memory with possibly attacker
+		provided data.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-22719</cvename>
+      <cvename>CVE-2022-22720</cvename>
+      <cvename>CVE-2022-22721</cvename>
+      <cvename>CVE-2022-23943</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-14</discovery>
+      <entry>2022-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5aaf534c-a069-11ec-acdc-14dae9d5a9d2">
     <topic>Teeworlds -- Buffer Overflow</topic>
     <affects>
