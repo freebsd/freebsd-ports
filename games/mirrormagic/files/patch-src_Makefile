@@ -1,0 +1,31 @@
+--- src/Makefile.orig	2018-04-10 19:44:08 UTC
++++ src/Makefile
+@@ -101,7 +101,7 @@ endif
+ 
+ CONFIG = $(CONFIG_RO_GAME_DIR) $(CONFIG_RW_GAME_DIR) $(JOYSTICK)
+ 
+-DEBUG = -DDEBUG -g
++DEBUG = 
+ 
+ # PROFILING = $(PROFILING_FLAGS)
+ 
+@@ -119,8 +119,8 @@ SYS_LDFLAGS := $(shell echo $(SYS_LDFLAGS) |	\
+ OPTIONS = -O3 -Wall
+ endif
+ 
+-CFLAGS = $(OPTIONS) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
+-LDFLAGS =           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
++CFLAGS += $(OPTIONS) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
++LDFLAGS +=           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
+ 
+ 
+ SRCS =	main.c		\
+@@ -221,7 +221,7 @@ GRAPHICS_DIR = ../graphics
+ all: $(AUTOCONF) libgame_dir game_em_dir game_sp_dir game_mm_dir $(PROGNAME) graphics_dir
+ 
+ $(PROGNAME): $(RNDLIBS) $(TIMESTAMP_FILE) $(OBJS) $(ICON)
+-	$(CC) $(PROFILING) $(OBJS) $(ICON) $(RNDLIBS) $(LDFLAGS) -o $(PROGNAME)
++	$(CC) $(PROFILING) $(RNDLIBS) $(OBJS) $(ICON) $(LDFLAGS) -o $(PROGNAME)
+ ifdef BUILD_DIST
+ 	strip $(PROGNAME)
+ endif
