@@ -1,5 +1,5 @@
 PORTNAME=	tpm2-tss
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tss/releases/download/${DISTVERSION}/
 
@@ -9,7 +9,8 @@ COMMENT=	TPM2 Software Stack core library
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libssl.so.11:security/openssl
 
 USES=		compiler:c11 gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes
