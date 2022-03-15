@@ -1,9 +1,9 @@
---- conf/main.cf.orig	2022-03-12 22:37:09 UTC
+--- conf/main.cf.orig	2022-03-15 21:02:43 UTC
 +++ conf/main.cf
-@@ -681,4 +681,7 @@ sample_directory = /etc/postfix
+@@ -682,4 +682,7 @@ sample_directory =
  # readme_directory: The location of the Postfix README files.
  #
- readme_directory = no
+ readme_directory =
 -inet_protocols = ipv4
 +inet_protocols = all
 +
