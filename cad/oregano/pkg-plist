@@ -2,7 +2,6 @@ bin/microtests
 bin/oregano
 man/man1/oregano.1.gz
 share/applications/oregano.desktop
-share/glib-2.0/schemas/gschemas.compiled
 share/help/C/oregano/figures/Screenshot-zener.oregano.png
 share/help/C/oregano/figures/oregano-Generate-List.png
 share/help/C/oregano/figures/oregano-Simulate.png
