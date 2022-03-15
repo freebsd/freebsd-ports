@@ -10,14 +10,9 @@ CMake Warning at loader/CMakeLists.txt:252 (message):
   does not do this, then unknown device extensions will suffer from a
   corrupted stack.
 
-
-CMake Error at loader/CMakeLists.txt:332 (target_compile_definitions):
-  Cannot specify compile definitions for target "asm_offset" which is not
-  built by this project.
-
---- loader/CMakeLists.txt.orig	2022-01-25 16:59:13 UTC
+--- loader/CMakeLists.txt.orig	2022-03-15 19:06:40 UTC
 +++ loader/CMakeLists.txt
-@@ -232,7 +232,7 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
+@@ -186,7 +186,7 @@ else() # i.e.: Linux
              if(ASSEMBLER_WORKS)
                  set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain_gas_aarch64.S)
              endif()
@@ -25,15 +20,4 @@ CMake Error at loader/CMakeLists.txt:332 (target_compile_definitions):
 +        elseif(${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64|amd64" OR ${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86$|i.86")
              check_include_file("cet.h" HAVE_CET_H)
              if(HAVE_CET_H)
-                 set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS HAVE_CET_H)
-@@ -333,7 +333,9 @@ else()
-     target_compile_definitions(vulkan PRIVATE _GNU_SOURCE)
-     if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
-         target_compile_definitions(vulkan PRIVATE __BSD_VISIBLE=1)
--        target_compile_definitions(asm_offset PRIVATE __BSD_VISIBLE=1)
-+        if(ASSEMBLER_WORKS)
-+            target_compile_definitions(asm_offset PRIVATE __BSD_VISIBLE=1)
-+        endif()
-     endif()
-     if(APPLE)
-         find_library(COREFOUNDATION_LIBRARY NAMES CoreFoundation)
+                 target_compile_definitions(loader_specific_options INTERFACE HAVE_CET_H)
