@@ -3089,6 +3089,7 @@ lib/mono/xbuild/Microsoft/VisualStudio/v11.0/WebApplications/Microsoft.WebApplic
 lib/mono/xbuild/Microsoft/VisualStudio/v12.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v14.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v15.0/WebApplications/Microsoft.WebApplication.targets
+lib/mono/xbuild/Microsoft/VisualStudio/v16.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/deniedAssembliesList.txt
 lib/monodoc/monodoc.xml

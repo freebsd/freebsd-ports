@@ -2,6 +2,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -45,7 +46,8 @@ USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.py
+SHEBANG_FILES=	scripts/mono-heapviz scripts/mono-package-runtime \
+		mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--disable-dtrace --enable-btls
