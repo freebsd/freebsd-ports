@@ -2,7 +2,7 @@
 
 PORTNAME=	pioneers
 PORTVERSION=	15.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	cairo gnomeprefix gtk30 intltool librsvg2
-INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

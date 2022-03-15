@@ -2,7 +2,7 @@
 
 PORTNAME=	gummi
 PORTVERSION=	0.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/alexandervdm/gummi/releases/download/${PORTVERSION}/
 
@@ -23,7 +23,6 @@ CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 USE_XORG=	xcomposite xcursor xdamage xft
 USE_GNOME=	cairo glib20 gtksourceview3 intlhack
-INSTALLS_OMF=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

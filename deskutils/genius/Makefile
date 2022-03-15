@@ -2,6 +2,7 @@
 
 PORTNAME=	genius
 DISTVERSION=	1.0.27
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
@@ -24,7 +25,6 @@ RUN_DEPENDS=	rarian-sk-config:textproc/rarian
 USES=		desktop-file-utils gmake gnome libtool pathfix pkgconfig \
 		readline shared-mime-info tar:xz xorg
 USE_GNOME=	cairo gnomeprefix gdkpixbuf2 gtksourceview4 intltool vte3
-INSTALLS_OMF=	yes
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization \

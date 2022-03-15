@@ -2,6 +2,7 @@
 
 PORTNAME=	yad
 PORTVERSION=	7.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11 gnome
 
@@ -18,7 +19,6 @@ USES=		autoreconf gettext gnome gmake pkgconfig
 
 USE_GNOME=	cairo gtk30 intltool
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 CONFIGURE_ARGS+=	--with-rgb=${LOCALBASE}/lib/X11/rgb.txt
 GLIB_SCHEMAS=	yad.gschema.xml

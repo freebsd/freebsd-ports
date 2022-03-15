@@ -2,7 +2,7 @@
 
 PORTNAME=	florence
 PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
@@ -22,7 +22,6 @@ USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --without-docs
 USE_LDCONFIG=	yes
-INSTALLS_OMF=	yes
 GLIB_SCHEMAS=	org.florence.gschema.xml
 INSTALL_TARGET=	install-strip
 
