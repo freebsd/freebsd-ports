@@ -1,6 +1,5 @@
 PORTNAME=	algol68g
-PORTVERSION=	2.8.4
-PORTREVISION=	10
+PORTVERSION=	3.0.6
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
@@ -9,10 +8,16 @@ COMMENT=	Algol 68 Genie compiler
 
 LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libgsl.so:math/gsl
+USES=		readline
+GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 
-OPTIONS_DEFINE=	PLOTUTILS PGSQL
-OPTIONS_DEFAULT=PLOTUTILS PGSQL
+OPTIONS_DEFINE=	GSL PGSQL PLOTUTILS RMATH
+OPTIONS_DEFAULT=	GSL PGSQL PLOTUTILS RMATH
+
+GSL_DESC=	Bindings for GNU Scientific Library
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
+GSL_CONFIGURE_ENABLE=	gsl
 
 PLOTUTILS_DESC=		Plotting support via plotutils
 PLOTUTILS_LIB_DEPENDS=	libplot.so:graphics/plotutils
@@ -21,12 +26,9 @@ PLOTUTILS_CONFIGURE_ENABLE=plotutils
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ENABLE=	postgresql
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-compiler
-USES=		readline
-
-PLIST_FILES=	bin/a68g man/man1/a68g.1.gz \
-		include/algol68g/a68g.h include/algol68g/a68g-config.h
+RMATH_DESC=	Bindings for GNU R's statistical routines
+RMATH_LIB_DEPENDS=	libRmath.so:math/libRmath
+RMATH_CONFIGURE_ENABLE=	mathlib
 
 post-patch:
 #	Skip broken check, assume our $CC works
