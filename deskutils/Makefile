@@ -176,7 +176,6 @@
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += myitcrm
-    SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note
