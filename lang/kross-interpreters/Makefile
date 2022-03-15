@@ -1,5 +1,6 @@
 PORTNAME=	kross-interpreters
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,6 +11,8 @@ USE_KDE=	kross \
 		ecm_build
 USE_QT=		core gui script widgets xml \
 		buildtools_build qmake_build
+
+CFLAGS+=	-fdeclspec
 
 OPTIONS_DEFINE=		RUBY DOCS
 OPTIONS_SUB=		yes
