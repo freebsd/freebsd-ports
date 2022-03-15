@@ -2,7 +2,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	2.0.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	xauth:x11/xauth \
 		sudo:security/sudo
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig xorg
-USE_GNOME=	cairo gconf2 gdkpixbuf2 glib20 intltool
+USE_GNOME=	cairo gconf2 gdkpixbuf2 glib20 intltool gtk20
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-gtk-doc=no

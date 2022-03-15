@@ -2,7 +2,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.16.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -25,7 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gconf=auto --with-gtkhtml=none
 USES=		gettext gnome libtool pkgconfig
-USE_GNOME=	gconf2 libxslt
+USE_GNOME=	gconf2 libxslt gtk20
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 DESKTOP_ENTRIES="morla" \
