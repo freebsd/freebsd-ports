@@ -2,6 +2,7 @@
 
 PORTNAME=	vaultwarden
 DISTVERSION=	1.24.0
+PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web

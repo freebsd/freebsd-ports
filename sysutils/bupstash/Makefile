@@ -1,6 +1,7 @@
 PORTNAME=	bupstash
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	felix@userspace.com.au
