@@ -206,7 +206,7 @@ introspection_USE_GNOME_IMPL=	glib20
 introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1
 
 gconf2_LIB_DEPENDS=	libgconf-2.so:devel/gconf2
-gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20
+gconf2_USE_GNOME_IMPL=	libxml2
 
 libgnomecanvas_LIB_DEPENDS=	libgnomecanvas-2.so:graphics/libgnomecanvas
 libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2

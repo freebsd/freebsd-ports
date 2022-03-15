@@ -2,8 +2,6 @@ bin/gconf-merge-tree
 bin/gconftool-2
 bin/gsettings-data-convert
 bin/gsettings-schema-convert
-etc/dbus-1/system.d/org.gnome.GConf.Defaults.conf
-%%LDAP%%etc/gconf/2/evoldap.conf
 etc/gconf/2/path
 etc/xdg/autostart/gsettings-data-convert.desktop
 include/gconf/2/gconf/gconf-changeset.h
@@ -15,8 +13,6 @@ include/gconf/2/gconf/gconf-listeners.h
 include/gconf/2/gconf/gconf-schema.h
 include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
-%%LDAP%%lib/GConf/2/libgconfbackend-evoldap.a
-%%LDAP%%lib/GConf/2/libgconfbackend-evoldap.so
 lib/GConf/2/libgconfbackend-oldxml.a
 lib/GConf/2/libgconfbackend-oldxml.so
 lib/GConf/2/libgconfbackend-xml.a
@@ -29,36 +25,12 @@ lib/libgconf-2.so
 lib/libgconf-2.so.4
 lib/libgconf-2.so.4.1.5
 libdata/pkgconfig/gconf-2.0.pc
-libexec/gconf-defaults-mechanism
 libexec/gconfd-2
 man/man1/gconftool-2.1.gz
 man/man1/gsettings-data-convert.1.gz
 man/man1/gsettings-schema-convert.1.gz
-%%LDAP%%share/GConf/schema/evoldap.schema
 share/aclocal/gconf-2.m4
-share/dbus-1/system-services/org.gnome.GConf.Defaults.service
 share/dbus-1/services/org.gnome.GConf.service
-%%PORTDOCS%%%%DOCSDIR%%/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-backend.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-changeset.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-client.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-engine.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-error.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-internals.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-listeners.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-locale.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-schema.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-sources.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-value.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf.html
-%%PORTDOCS%%%%DOCSDIR%%/gconf.devhelp2
-%%PORTDOCS%%%%DOCSDIR%%/home.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/right.png
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/up.png
 share/gir-1.0/GConf-2.0.gir
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
@@ -146,7 +118,6 @@ share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
-share/polkit-1/actions/org.gnome.gconf.defaults.policy
 share/sgml/gconf/gconf-1.0.dtd
 @dir etc/gconf/gconf.xml.defaults
 @dir etc/gconf/gconf.xml.mandatory
