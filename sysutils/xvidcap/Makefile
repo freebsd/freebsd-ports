@@ -2,7 +2,7 @@
 
 PORTNAME=		xvidcap
 PORTVERSION=		1.1.7
-PORTREVISION=		12
+PORTREVISION=		13
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		SF
@@ -12,7 +12,6 @@ COMMENT=		Capture your X display to individual frames or MPEG video
 
 LICENSE=		GPLv3
 
-BUILD_DEPENDS=		scrollkeeper-config:textproc/rarian
 LIB_DEPENDS=		libdbus-1.so:devel/dbus			\
 			libfreetype.so:print/freetype2		\
 			libswscale.so:multimedia/ffmpeg		\
@@ -25,8 +24,8 @@ USES=			gettext gmake gnome localbase magick:6,run pkgconfig xorg
 
 USE_GNOME=		cairo gdkpixbuf2 glib20 libglade2 intltool
 USE_XORG=		x11 xext xmu ice xfixes xdamage
-INSTALLS_OMF=		yes
 MANLANG=		"" de es it
+MAKE_ARGS=		omffile=""
 
 GNU_CONFIGURE=		yes
 # --export-dynamic fixes libglade problems
@@ -54,5 +53,9 @@ pre-configure-DOCS-on:
 
 post-install-DOCS-on:
 	${RM} ${NULLDOCS:S|^|${STAGEDIR}${DOCSDIR}/|}
+
+post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/omf/xvidcap
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/omf/
 
 .include <bsd.port.mk>

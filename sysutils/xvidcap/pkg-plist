@@ -139,10 +139,6 @@ share/locale/de/LC_MESSAGES/xvidcap.mo
 share/locale/en/LC_MESSAGES/xvidcap.mo
 share/locale/es/LC_MESSAGES/xvidcap.mo
 share/locale/it/LC_MESSAGES/xvidcap.mo
-share/omf/xvidcap/xvidcap-C.omf
-share/omf/xvidcap/xvidcap-de.omf
-share/omf/xvidcap/xvidcap-es.omf
-share/omf/xvidcap/xvidcap-it.omf
 share/pixmaps/xvidcap.png
 %%DATADIR%%/glade/gnome-xvidcap.glade
 %%DATADIR%%/glade/xvidcap_logo.png
