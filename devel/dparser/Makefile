@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	dparser
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
