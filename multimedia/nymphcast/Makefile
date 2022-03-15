@@ -1,20 +1,12 @@
 PORTNAME=	NymphCast
-DISTVERSION=	v0.1-rc0
-PORTREVISION=	2
+DISTVERSION=	v0.1-rc1
 CATEGORIES=	multimedia
-
-# -p3 because WRKSRC_SUBDIR is set; the patches are from the toplevel,
-# similarly the LICENSE_FILE lives at the toplevel of the upstream
-# source repo, outside of WRKSRC_SUBDIR.
-PATCHFILES=	e4de6983e738acff88db8c81a2e5bb0760db5855.patch:-p3 \
-		1d32a9d470dd8b6c2af5f6638b53b9a012865cc7.patch:-p3 \
-		40e8c286f7d5f37e976e655a086d5630107c7f09.patch:-p3 \
-		9e192666796bdb1913a2f965314a8cf51c2a644f.patch:-p3
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Audio and video source for a television or powered speakers
 
+# The LICENSE_FILE lives outside the top-of-the-tree because
+# WRKSRC_SUBDIR is set.
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
@@ -37,8 +29,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MayaPosch
 
 WRKSRC_SUBDIR=	src/server
-
-post-extract:
-	${MV} ${WRKSRC}/version ${WRKSRC}/version.mk
 
 .include <bsd.port.mk>

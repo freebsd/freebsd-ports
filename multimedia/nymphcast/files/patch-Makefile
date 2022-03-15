@@ -1,15 +1,14 @@
---- Makefile.orig	2021-12-29 08:48:31 UTC
+--- Makefile.orig	2022-03-15 23:26:07 UTC
 +++ Makefile
-@@ -9,7 +9,7 @@ TARGET := $(PLATFORM)
+@@ -9,15 +9,15 @@ TARGET := $(PLATFORM)
  CROSSC := 1
  else
  # Get the compiler's (GCC or Clang) target triplet and use that as platform.
 -TARGET := $(shell g++ -dumpmachine)
-+TARGET :=
- $(info TARGET: $(TARGET))
++# TARGET := $(shell g++ -dumpmachine)
  endif
  
-@@ -17,8 +17,8 @@ ifdef TOOLCHAIN
+ ifdef TOOLCHAIN
  #include Makefile.$(TARGET)
  include toolchain/$(TOOLCHAIN).mk
  else
@@ -20,34 +19,16 @@
  STRIP = strip
  MAKEDIR = mkdir -p
  RM = rm
-@@ -34,7 +34,7 @@ UMCH := $(shell uname -m)
- TARGET_BIN := $(TARGET)/
- 
- # Include the file with the versioning information ('VERSION' variable).
--include version
-+include version.mk
- VERSIONINFO = -D__VERSION="\"$(VERSION)\""
- 
- OUTPUT = nymphcast_server
-@@ -47,7 +47,7 @@ INCLUDE = -I . -I ffplay -I angelscript/angelscript/in
- 			-I gui/core/nanosvg
- ifdef CROSSC
- INCLUDE += -I $(SYSROOT)/usr/include/SDL2 -I $(SYSROOT)/usr/include/freetype2
--else 
-+else
- INCLUDE += `sdl2-config --cflags` \
- 			`pkg-config --cflags freetype2`
- endif
-@@ -55,7 +55,7 @@ endif
- LIB := -lnymphrpc -lPocoNet -lPocoNetSSL -lPocoUtil -lPocoFoundation -lPocoJSON -lPocoData \
- 		-lPocoDataSQLite -lswscale -lavcodec -lavdevice -lavformat -lavutil -lpostproc \
+@@ -56,7 +56,7 @@ endif
+ LIB := -lnymphrpc -lPocoUtil -lPocoNet -lPocoNetSSL -lPocoJSON -lPocoData -lPocoDataSQLite \
+ 		-lPocoFoundation -lswscale -lavcodec -lavdevice -lavformat -lavutil -lpostproc \
  		-lswresample -lavfilter -lSDL2_image -Langelscript/angelscript/lib-$(TARGET) -langelscript \
 -		-lstdc++fs -lfreetype \
 +		-lfreetype \
- 			 -lcurl -lvlc -lfreeimage \
+ 			 -lcurl -lfreeimage \
  			-lnymphcast -lPocoNet -lPocoUtil -lPocoFoundation
- ifdef CROSSC
-@@ -76,7 +76,7 @@ ifdef OS
+ 			# -lvlc
+@@ -95,7 +95,7 @@ ifdef OS
  	LDFLAGS += -lws2_32 -lopengl32 -lwinmm -lole32
  	OUTPUT := $(OUTPUT).exe
  else
@@ -56,71 +37,21 @@
  endif
  
  # Check which version of OpenGL or OpenGL ES to use.
-@@ -157,10 +157,10 @@ makedir:
- 	$(MAKEDIR) obj/$(TARGET_BIN)lcdapi/api
- 	$(MAKEDIR) obj/$(TARGET_BIN)lcdapi/sensors
+@@ -178,7 +178,7 @@ makedir:
  	$(MAKEDIR) bin/$(TARGET)
--	
-+
+ 	
  angelscript:
 -	make -C angelscript/angelscript/projects/gnuc/ static
--	
 +	$(MAKE) -C angelscript/angelscript/projects/gnuc/ static
-+
+ 	
  gui: $(GUI_OBJECTS)
  
- obj/$(TARGET_BIN)%.o: %.cpp
-@@ -168,7 +168,7 @@ obj/$(TARGET_BIN)%.o: %.cpp
- 
- obj/$(TARGET_BIN)%.o: %.c
- 	$(GCC) -c -o $@ $< -g3 $(CFLAGS)
--	
-+
- bin/$(TARGET_BIN)$(OUTPUT): angelscript $(OBJECTS) $(C_OBJECTS) $(GUI_OBJECTS)
- 	$(GPP) -o $@ $(OBJECTS) $(GUI_OBJECTS) $(C_OBJECTS) $(LDFLAGS)
- 	cp $@ $@.debug
-@@ -178,15 +178,15 @@ clean: clean-objects clean-angelscript clean-gui
- 
- clean-objects:
+@@ -199,7 +199,7 @@ clean-objects:
  	$(RM) $(OBJECTS) $(C_OBJECTS)
--	
-+
+ 	
  clean-angelscript:
 -	make -C angelscript/angelscript/projects/gnuc/ clean
--	
 +	$(MAKE) -C angelscript/angelscript/projects/gnuc/ clean
-+
+ 	
  clean-gui:
  	$(RM) $(GUI_OBJECTS)
--	
-+
- .PHONY: all clean angelscript makedir gui
--	
-+
- .PHONY: install
- install:
- 	install -d $(DESTDIR)$(PREFIX)/bin/ \
-@@ -201,12 +201,12 @@ install:
- 
- .PHONY: install-systemd
- install-systemd:
--	#install -d $(DESTDIR)$(CONFDIR)/systemd/system/ 
-+	#install -d $(DESTDIR)$(CONFDIR)/systemd/system/
- 	sed ${SED_REPLACE} systemd/nymphcast.service > /etc/systemd/system/nymphcast.service
- 
- .PHONY: install-openrc
- install-openrc:
--	install -d $(DESTDIR)$(CONFDIR)/init.d/	
-+	install -d $(DESTDIR)$(CONFDIR)/init.d/
- 	sed ${SED_REPLACE} openrc/nymphcast > $(DESTDIR)$(CONFDIR)/init.d/nymphcast
- 	chmod 0755 $(DESTDIR)$(CONFDIR)/init.d/nymphcast
- 
-@@ -227,7 +227,7 @@ ar-rasp-full: bin/$(TARGET_BIN)$(OUTPUT)
- 	cp -r wallpapers/ out/tmp/payload/usr/local/share/nymphcast/.
- 	#tar -cvJf out/nymphcast_raspbian.xz -C out/tmp/ .
- 	cd out/tmp && zip --symlinks -vr ../nymphcast_raspbian.zip . && cd -
--	
-+
- ar-rasp-audio: bin/$(TARGET_BIN)$(OUTPUT)
- 	rm -rf out/tmp
- 	rm -f out/nymphcast_audio_raspbian.zip

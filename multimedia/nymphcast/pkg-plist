@@ -11,7 +11,11 @@ share/nymphcast/apps/hellocast/index.html
 share/nymphcast/apps/hellocast/logo.jpg
 share/nymphcast/apps/hellocast/logo_large.jpg
 share/nymphcast/apps/soundcloud/logo.png
+share/nymphcast/apps/soundcloud/index.html
 share/nymphcast/apps/soundcloud/soundcloud.as
+share/nymphcast/apps/soundcloud/templates/footer.html
+share/nymphcast/apps/soundcloud/templates/header.html
 share/nymphcast/wallpapers/forest_brook.jpg
 share/nymphcast/wallpapers/green.jpg
 @dir etc/avahi/services
+
