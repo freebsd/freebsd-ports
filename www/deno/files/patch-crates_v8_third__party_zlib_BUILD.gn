@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.38.1/third_party/zlib/BUILD.gn.orig	2020-09-11 17:42:11 UTC
-+++ cargo-crates/v8-0.38.1/third_party/zlib/BUILD.gn
+--- cargo-crates/v8-0.40.2/third_party/zlib/BUILD.gn.orig	2020-09-11 17:42:11 UTC
++++ cargo-crates/v8-0.40.2/third_party/zlib/BUILD.gn
 @@ -108,6 +108,8 @@ if (use_arm_neon_optimizations) {
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
