@@ -1,7 +1,7 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
 
 PORTNAME=	qalculate-gtk
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
