@@ -1,7 +1,7 @@
 # Created by: Hugo Saro <hugo@barafranca.com>
 
 PORTNAME=	haproxy
-DISTVERSION=	2.6-dev2
+DISTVERSION=	2.6-dev3
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/2.6/src/devel/
 PKGNAMESUFFIX=	-devel
