@@ -1,5 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.2
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -27,25 +27,25 @@ CARGO_CRATES=	ahash-0.7.6 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
 		async-io-1.6.0 \
-		async-lock-2.4.0 \
+		async-lock-2.5.0 \
 		async-recursion-0.3.2 \
-		async-task-4.1.0 \
+		async-task-4.2.0 \
 		async-trait-0.1.52 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		base64-0.13.0 \
 		bitflags-1.3.2 \
 		blake2b_simd-0.5.11 \
 		block-0.1.6 \
 		block-buffer-0.7.3 \
-		block-buffer-0.10.0 \
+		block-buffer-0.10.2 \
 		block-padding-0.1.5 \
 		byte-tools-0.3.1 \
 		byte-unit-4.0.14 \
 		byteorder-1.4.3 \
 		bytes-1.1.0 \
-		cache-padded-1.1.1 \
-		cc-1.0.70 \
+		cache-padded-1.2.0 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-3.1.6 \
@@ -57,15 +57,15 @@ CARGO_CRATES=	ahash-0.7.6 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
 		cpufeatures-0.2.1 \
-		crossbeam-channel-0.5.1 \
+		crossbeam-channel-0.5.2 \
 		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.5 \
-		crossbeam-utils-0.8.5 \
-		crypto-common-0.1.0 \
+		crossbeam-epoch-0.9.7 \
+		crossbeam-utils-0.8.7 \
+		crypto-common-0.1.3 \
 		derivative-2.2.0 \
 		difflib-0.4.0 \
 		digest-0.8.1 \
-		digest-0.10.0 \
+		digest-0.10.3 \
 		directories-next-2.0.0 \
 		dirs-1.0.5 \
 		dirs-sys-next-0.1.2 \
@@ -78,21 +78,21 @@ CARGO_CRATES=	ahash-0.7.6 \
 		enumflags2_derive-0.7.3 \
 		event-listener-2.5.2 \
 		fake-simd-0.1.2 \
-		fastrand-1.5.0 \
+		fastrand-1.7.0 \
 		float-cmp-0.9.0 \
 		form_urlencoded-1.0.1 \
-		fragile-1.0.0 \
-		futures-core-0.3.17 \
-		futures-io-0.3.17 \
+		fragile-1.1.0 \
+		futures-core-0.3.21 \
+		futures-io-0.3.21 \
 		futures-lite-1.12.0 \
-		futures-sink-0.3.17 \
-		futures-task-0.3.17 \
-		futures-util-0.3.17 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
+		futures-util-0.3.21 \
 		generic-array-0.12.4 \
-		generic-array-0.14.4 \
+		generic-array-0.14.5 \
 		gethostname-0.2.2 \
 		getrandom-0.1.16 \
-		getrandom-0.2.3 \
+		getrandom-0.2.5 \
 		git2-0.13.25 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
@@ -101,17 +101,17 @@ CARGO_CRATES=	ahash-0.7.6 \
 		hex-0.4.3 \
 		idna-0.2.3 \
 		indexmap-1.8.0 \
-		instant-0.1.10 \
+		instant-0.1.12 \
 		is_debug-1.0.1 \
-		itertools-0.10.1 \
+		itertools-0.10.3 \
 		itoa-1.0.1 \
 		jobserver-0.1.24 \
-		kstring-1.0.5 \
+		kstring-1.0.6 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.102 \
+		libc-0.2.119 \
 		libgit2-sys-0.12.26+1.3.0 \
-		libz-sys-1.1.3 \
+		libz-sys-1.1.5 \
 		linked-hash-map-0.5.4 \
 		local_ipaddress-0.1.3 \
 		log-0.4.14 \
@@ -121,7 +121,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		maplit-1.0.2 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
-		memoffset-0.6.4 \
+		memoffset-0.6.5 \
 		minimal-lexical-0.2.1 \
 		mockall-0.11.0 \
 		mockall_derive-0.11.0 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		notify-rust-4.5.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
+		num_cpus-1.13.1 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
@@ -144,42 +144,42 @@ CARGO_CRATES=	ahash-0.7.6 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
 		path-slash-0.1.4 \
-		pathdiff-0.2.0 \
+		pathdiff-0.2.1 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
-		pin-project-lite-0.2.7 \
+		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.19 \
-		polling-2.1.0 \
-		ppv-lite86-0.2.10 \
-		predicates-2.1.0 \
-		predicates-core-1.0.2 \
-		predicates-tree-1.0.3 \
-		proc-macro-crate-1.1.0 \
+		pkg-config-0.3.24 \
+		polling-2.2.0 \
+		ppv-lite86-0.2.16 \
+		predicates-2.1.1 \
+		predicates-core-1.0.3 \
+		predicates-tree-1.0.5 \
+		proc-macro-crate-1.1.3 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.29 \
+		proc-macro2-1.0.36 \
 		process_control-3.2.1 \
 		quick-xml-0.22.0 \
-		quote-1.0.9 \
+		quote-1.0.15 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.1.57 \
-		redox_syscall-0.2.10 \
+		redox_syscall-0.2.11 \
 		redox_users-0.3.5 \
 		redox_users-0.4.0 \
-		regex-1.5.4 \
+		regex-1.5.5 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		rust-argon2-0.8.3 \
 		rust-ini-0.18.0 \
-		ryu-1.0.5 \
+		ryu-1.0.9 \
 		scopeguard-1.1.0 \
 		semver-1.0.6 \
 		serde-1.0.136 \
@@ -192,32 +192,32 @@ CARGO_CRATES=	ahash-0.7.6 \
 		sha1_smol-1.0.0 \
 		shadow-rs-0.9.0 \
 		shell-words-1.1.0 \
-		slab-0.4.4 \
-		socket2-0.4.2 \
+		slab-0.4.5 \
+		socket2-0.4.4 \
 		starship-battery-0.7.9 \
 		starship_module_config_derive-0.2.1 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		strum-0.22.0 \
 		strum_macros-0.22.0 \
-		syn-1.0.76 \
+		syn-1.0.86 \
 		sys-info-0.9.1 \
-		tempfile-3.2.0 \
-		termcolor-1.1.2 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
+		termtree-0.2.4 \
 		textwrap-0.15.0 \
-		thiserror-1.0.29 \
-		thiserror-impl-1.0.29 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
 		time-0.1.44 \
-		tinyvec-1.4.0 \
+		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		toml_edit-0.13.4 \
-		treeline-0.1.0 \
-		typenum-1.14.0 \
+		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.6 \
+		unicode-bidi-0.3.7 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
@@ -227,7 +227,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		urlencoding-2.1.0 \
 		utf8-width-0.1.5 \
 		vcpkg-0.2.15 \
-		version_check-0.9.3 \
+		version_check-0.9.4 \
 		versions-4.0.0 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
@@ -250,7 +250,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		windows_x86_64_msvc-0.24.0 \
 		windows_x86_64_msvc-0.30.0 \
 		winres-0.1.12 \
-		winrt-notification-0.5.0 \
+		winrt-notification-0.5.1 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5 \
 		zbus-2.1.1 \
