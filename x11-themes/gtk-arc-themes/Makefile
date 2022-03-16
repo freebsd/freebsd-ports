@@ -15,13 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	sassc:textproc/sassc
 RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine
 
-USES=		gnome meson tar:xz
+USES=		gnome meson python:build shebangfix tar:xz
 
 USE_GNOME=	gtk20 gtk30 gtk40
 
 MESON_ARGS=	-Dcinnamon_version=4.8 \
 		-Dgnome_shell_version=41.4 \
 		-Dthemes=cinnamon,gnome-shell,gtk2,gtk3,gtk4,metacity,plank,xfwm
+
+SHEBANG_FILES=	meson/install-file.py
 
 NO_ARCH=	yes
 
