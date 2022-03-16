@@ -214,8 +214,6 @@ lib/emby-server/system/arm64/libSkiaSharp.dll
 lib/emby-server/system/dashboard-ui/apikeys/apikeys.js
 lib/emby-server/system/dashboard-ui/app.js
 lib/emby-server/system/dashboard-ui/apploader.js
-lib/emby-server/system/dashboard-ui/bower_components/Swiper/css/swiper.css
-lib/emby-server/system/dashboard-ui/bower_components/Swiper/js/swiper.js
 lib/emby-server/system/dashboard-ui/bower_components/abortcontroller-polyfill/umd-polyfill.js
 lib/emby-server/system/dashboard-ui/bower_components/css-vars-ponyfill/css-vars-ponyfill.js
 lib/emby-server/system/dashboard-ui/bower_components/fetch/fetch.js
