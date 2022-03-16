@@ -1,6 +1,7 @@
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
+DISTVERSION_llvm14=	14.0.0
 DISTVERSION_llvm13=	13.0.0
 DISTVERSION_llvm12=	12.0.0
 DISTVERSION_llvm11=	11.0.0
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR}
 
-FLAVORS=	${13 12 11:L:S/^/llvm/}
+FLAVORS=	${14 13 12 11:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
@@ -23,6 +24,7 @@ USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-LLVM-Translator
 GH_TUPLE=	${GH_TUPLE_${FLAVOR}}
+GH_TUPLE_llvm14=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-124-g20b02de:headers/projects/SPIRV-Headers
 GH_TUPLE_llvm13=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-83-gddf3230:headers/projects/SPIRV-Headers
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 CMAKE_ON=	BUILD_SHARED_LIBS LLVM_BUILD_TOOLS LLVM_TOOL_SPIRV_HEADERS_BUILD
