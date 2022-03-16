@@ -19,7 +19,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL
 
-BUILD_DEPENDS=	itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		docbook-xsl>=0:textproc/docbook-xsl
 
 CONFLICTS=	glade3-3.*
 PORTSCOUT=	limitw:1,even
