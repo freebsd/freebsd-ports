@@ -1,3 +1,69 @@
+  <vuln vid="ea05c456-a4fd-11ec-90de-1c697aa5a594">
+    <topic>OpenSSL -- Infinite loop in BN_mod_sqrt parsing certificates</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1n,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.2</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.0</ge><lt>13.0_8</lt></range>
+	<range><ge>12.3</ge><lt>12.3_3</lt></range>
+	<range><ge>12.2</ge><lt>12.2_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220315.txt">
+	<p>Infinite loop in BN_mod_sqrt() reachable when parsing certificates
+	  (High)</p>
+	<p>The BN_mod_sqrt() function, which computes a modular square root,
+	  contains a bug that can cause it to loop forever for non-prime
+	  moduli.</p>
+	<p>Internally this function is used when parsing certificates that
+	  contain elliptic curve public keys in compressed form or explicit
+	  elliptic curve parameters with a base point encoded in compressed
+	  form.</p>
+	<p>It is possible to trigger the infinite loop by crafting a
+	  certificate that has invalid explicit curve parameters.</p>
+	<p>Since certificate parsing happens prior to verification of the
+	  certificate signature, any process that parses an externally
+	  supplied certificate may thus be subject to a denial of service
+	  attack. The infinite loop can also be reached when parsing crafted
+	  private keys as they can contain explicit elliptic curve
+	  parameters.</p>
+	<p>Thus vulnerable situations include:</p>
+	<ul>
+	  <li>TLS clients consuming server certificates</li>
+	  <li>TLS servers consuming client certificates</li>
+	  <li>Hosting providers taking certificates or private keys from
+	    customers</li>
+	  <li>Certificate authorities parsing certification requests from
+	    subscribers</li>
+	  <li>Anything else which parses ASN.1 elliptic curve parameters</li>
+	</ul>
+	<p>Also any other applications that use the BN_mod_sqrt() where the
+	  attacker can control the parameter values are vulnerable to this DoS
+	  issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0778</cvename>
+      <url>https://www.openssl.org/news/secadv/20220315.txt</url>
+      <freebsdsa>SA-22:03.openssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-03-15</discovery>
+      <entry>2022-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d20bd48-a4f3-11ec-90de-1c697aa5a594">
     <topic>FreeBSD-kernel -- Multiple WiFi issues</topic>
     <affects>
