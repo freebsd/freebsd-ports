@@ -3,7 +3,7 @@
   message: <<EOM
 ===>  Basic Instructions:
 
-After kldload fuse.ko and setting
+After kldload fusefs.ko and setting
 	# sysctl vfs.usermount=1
 
 you should make .smb directory in your homedir:

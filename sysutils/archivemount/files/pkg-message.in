@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Make sure you have fuse.ko loaded then use archivemount
+Make sure you have fusefs.ko loaded then use archivemount
 or mount_archive command or add an entry to the /etc/fstab such as:
 
 /path/to/archive /mnt/path fusefs ro,late,mountprog=%%PREFIX%%/sbin/mount_archive 0 0

@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Make sure you have fuse.ko loaded then use mount.webdavfs command
+Make sure you have fusefs.ko loaded then use mount.webdavfs command
 or add an entry to the /etc/fstab such as:
 
 https://webdav.server.net/path /mnt/path fusefs rw,late,mountprog=%%PREFIX%%/sbin/mount_webdavfs,username=login,password=pass,-F=/var/tmp/trace.log,-T=webdav,-T=httpreq,-T=httphdr 0 0

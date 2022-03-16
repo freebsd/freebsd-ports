@@ -1,11 +1,11 @@
 [
 { type: install
   message: <<EOM
-In order to use clamfs, you should load fuse.ko module and start clamd.
+In order to use clamfs, you should load fusefs.ko module and start clamd.
 
 Type:
 
- sudo kldload fuse.ko
+ sudo kldload fusefs.ko
  sudo service clamav-freshclam onestart
  sudo service clamav-daemon onestart
 
