@@ -1,9 +1,7 @@
 PORTNAME=	love
-PORTVERSION=	11.3
-PORTREVISION=	1
+PORTVERSION=	11.4
 CATEGORIES=	devel games
-MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://github.com/love2d/love/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -40,9 +38,7 @@ OPTIONS_DEFAULT_amd64=	LUAJIT
 LUAJIT_DESC=		Use luajit
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
-# does not build with newer lua versions:
-# love.cpp:217:9: error: no matching function for call to 'lua_resume'
-LUAJIT_USES_OFF=	lua:51
+LUAJIT_USES_OFF=	lua:51  # stay compatible, e.g. games/mari0 crashes with 53..54
 LUAJIT_CONFIGURE_OFF=	--with-lua=lua \
 			--with-luaversion="-${LUA_VER}"
 LUAJIT_CONFIGURE_ENV_OFF=LUA_EXECUTABLE="${LUA_CMD}"
