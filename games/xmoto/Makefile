@@ -1,10 +1,6 @@
 PORTNAME=	xmoto
-PORTVERSION=	0.5.11
-PORTREVISION=	10
+PORTVERSION=	0.6.1
 CATEGORIES=	games
-MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
-		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenging 2D motocross platform game
@@ -17,47 +13,39 @@ LIB_DEPENDS=	libode.so:devel/ode \
 		libcurl.so:ftp/curl \
 		libxdg-basedir.so:x11/libxdg-basedir
 
-GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang dos2unix gl gmake gnome jpeg localbase lua:51 sdl sqlite xorg
+USES=		compiler:c++11-lang cmake gl gnome jpeg lua:52 pkgconfig sdl sqlite
+USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu
-USE_CXXSTD=	c++11
-USE_XORG=	x11
-DOS2UNIX_GLOB=	*.cpp *.h
+CMAKE_ARGS=	-DOpenGL_GL_PREFERENCE="GLVND"
 
-CPPFLAGS+=	-isystem${LUA_INCDIR}
-LDFLAGS+=	-L${LUA_LIBDIR}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-PORTDOCS=	README ChangeLog
+PORTDOCS=	README.md ChangeLog
 PORTDATA=	*
 
-DESKTOP_ENTRIES="XMoto" \
-		"Motorcross game" \
-		"${DATADIR}/xmoto_icone_x.ico" \
-		"xmoto" \
-		"Game;SportsGame;ArcadeGame;" \
-		false
+ASIAN_FONT_PATH=${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf
 
 OPTIONS_DEFINE=	ASIAN_TTF DOCS NLS
 OPTIONS_SUB=	yes
 
 ASIAN_TTF_DESC=	Use asian TTF font
+ASIAN_TTF_RUN_DEPENDS=	${ASIAN_FONT_PATH}:chinese/arphicttf
 
-ASIAN_TTF_RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:chinese/arphicttf
-ASIAN_TTF_CONFIGURE_ON=	--with-asian-ttf-file=${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf
-ASIAN_TTF_CONFIGURE_OFF=--without-asian-ttf-file
+NLS_USES=	gettext
+NLS_CMAKE_BOOL=	USE_GETTEXT
 
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
-
+# ensure bundled depends are not used
 post-extract:
-	@${RM} -r ${WRKSRC}/src/ode
+.for d in bzip2 lua ode xdgbasedir
+	@${RM} -r ${WRKSRC}/src/${d}
+.endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e "s|find_package(Lua|& ${LUA_VER} REQUIRED EXACT|" \
+		-e "s|/usr/share/fonts/truetype/arphic/bkai00mp.ttf|${ASIAN_FONT_PATH}|" \
+		-e "s|DEFAULT_ASIAN_TTF_FILE|ASIAN_TTF_FILE|" \
+		${WRKSRC}/src/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,0 +1,57 @@
+--- src/CMakeLists.txt.orig	2020-06-21 19:18:16 UTC
++++ src/CMakeLists.txt
+@@ -41,7 +41,7 @@ endif()
+ find_package(PNG REQUIRED)
+ 
+ find_package(Lua)
+-set(USE_SYSTEM_Lua $<AND:$<BOOL:${PREFER_SYSTEM_Lua}>,$<BOOL:${LUA51_FOUND}>,$<NOT:$<BOOL:${WIN32}>>>)
++set(USE_SYSTEM_Lua $<AND:$<BOOL:${PREFER_SYSTEM_Lua}>,$<BOOL:${LUA_FOUND}>,$<NOT:$<BOOL:${WIN32}>>>)
+ if (NOT LUA_VERSION_STRING VERSION_LESS 5.2 AND LUA_VERSION_STRING VERSION_LESS 5.3)
+     add_definitions("-DLUA_COMPAT_ALL")
+ elseif (LUA_VERSION_STRING VERSION_GREATER_EQUAL "5.3")
+@@ -398,14 +398,30 @@ elseif(APPLE AND BUILD_MACOS_BUNDLE)
+ endif()
+ 
+ target_include_directories(xmoto
+-  PRIVATE
+-
+-  "${PROJECT_SOURCE_DIR}/src"
++  PRIVATE SYSTEM
++  "${Intl_INCLUDE_DIR}"
++  "${JPEG_INCLUDE_DIR}"
++  "${LIBLZMA_INCLUDE_DIR}"
+   "${LIBXML2_INCLUDE_DIR}"
++  "${OPENGL_INCLUDE_DIR}"
++  "${PNG_PNG_INCLUDE_DIR}"
++  "${SDL_INCLUDE_DIR}"
++  "${SDL_MIXER_INCLUDE_DIR}"
++  "${SDL_NET_INCLUDE_DIR}"
++  "${SQLITE3_INCLUDE_DIRS}"
++  "${ZLIB_INCLUDE_DIR}"
++  "$<${USE_SYSTEM_BZip2}:${BZIP2_INCLUDE_DIR}>"
+   "$<${USE_SYSTEM_Lua}:${LUA_INCLUDE_DIR}>"
+-  "$<$<NOT:${USE_SYSTEM_Lua}>:${PROJECT_SOURCE_DIR}/vendor/lua/lua>"
++  "$<${USE_SYSTEM_ODE}:${ODE_INCLUDE_DIR}>"
++  "$<${USE_SYSTEM_XDG}:${XDG_INCLUDE_DIR}>"
+ )
+ 
++target_include_directories(xmoto
++  PRIVATE
++  "${PROJECT_SOURCE_DIR}/src"
++#  "$<$<NOT:${USE_SYSTEM_Lua}>:${PROJECT_SOURCE_DIR}/vendor/lua/lua>"
++)
++
+ target_link_libraries(xmoto PUBLIC
+   $<$<PLATFORM_ID:Windows>:userenv>
+ 
+@@ -463,7 +479,9 @@ target_compile_definitions(xmoto PUBLIC MS_MKDIR=$<BOO
+ 
+ target_compile_definitions(xmoto PUBLIC USE_OPENGL=$<BOOL:${USE_OPENGL}>)
+ target_compile_definitions(xmoto PUBLIC USE_SDLGFX=$<BOOL:${USE_SDLGFX}>)
+-target_compile_definitions(xmoto PUBLIC USE_GETTEXT=$<BOOL:${USE_GETTEXT}>)
++if (USE_GETTEXT)
++  target_compile_definitions(xmoto PUBLIC USE_GETTEXT=1)
++endif()
+ target_compile_definitions(xmoto PUBLIC ALLOW_DEV=$<BOOL:${ALLOW_DEV}>)
+ target_compile_definitions(xmoto PUBLIC BUILD_MACOS_BUNDLE=$<BOOL:${BUILD_MACOS_BUNDLE}>)
+ 
