@@ -16,6 +16,6 @@ include/libHX/string.h
 include/libHX/wx_helper.hpp
 lib/libHX.so
 lib/libHX.so.32
-lib/libHX.so.32.2.0
+lib/libHX.so.32.3.0
 lib/libHX_rtcheck.so
 libdata/pkgconfig/libHX.pc
