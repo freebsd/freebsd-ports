@@ -1,7 +1,7 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	openssl
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	-quictls
 
@@ -25,7 +25,7 @@ USES=		cpe perl5
 USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PKGNAMESUFFIX:S/-//}
-GH_TAGNAME=	0ce9b022cb421b564bed9ebc9469e96258ec175d
+GH_TAGNAME=	7f2ab56a2b842b8e6fefc7b9d20eb5ff9c6ef151
 
 TEST_TARGET=	test
 
