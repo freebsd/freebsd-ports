@@ -55,8 +55,7 @@ IGNORE=	USES=gnome takes no arguments
 
 # non-version specific components
 _USE_GNOME_ALL= intlhack intltool introspection \
-		referencehack gnomemimedata \
-		gnomeprefix
+		gnomemimedata gnomeprefix
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
@@ -87,9 +86,6 @@ _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
 # glib-mkenums often fails with C locale
 # https://gitlab.gnome.org/GNOME/glib/issues/1430
 USE_LOCALE?=	en_US.UTF-8
-
-referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} -e \
-				"s|test \"\$$\$$installfiles\" = '\$$(srcdir)/html/\*'|:|"
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
 GCONF_CONFIG_OPTIONS?=	merged
