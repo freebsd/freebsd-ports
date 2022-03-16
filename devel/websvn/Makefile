@@ -1,5 +1,5 @@
 PORTNAME=	websvn
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	devel www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -31,8 +31,10 @@ PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^// \$$config->setSvnConfigDir.+|$$config->setSvnConfigDir('"'"'${ETCDIR}/subversion'"'"')\;|' \
-		-e 's|^// \$$config->setSVNCommandPath.+|$$config->setSVNCommandPath('"'"'${LOCALBASE}/bin'"'"')\;|' \
+		-e 's|^// \$$config->setSvnCommandPath.+|$$config->setSvnCommandPath('"'"'${LOCALBASE}/bin'"'"')\;|' \
+		-e 's|^// \$$config->setSvnAuthzCommandPath.+|$$config->setSvnAuthzCommandPath('"'"'${LOCALBASE}/bin'"'"')\;|' \
 		-e 's|^// \$$config->useGeshi.+|$$config->useGeshi()\;|' \
+		-e 's|^// \$$config->setLocale.+|$$config->setLocale('"'"'C.UTF-8'"'"')\;|' \
 	${WRKSRC}/include/distconfig.php
 
 do-install:
