@@ -3,7 +3,7 @@
 
 PORTNAME=	libgnomecanvas
 PORTVERSION=	2.30.3
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,10 +15,10 @@ USES+=		tar:bzip2
 
 USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	intltool libglade2 libartlgpl2
+USE_GNOME=	intltool libartlgpl2 gtk20 glib20 pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--enable-glade \
+		--disable-glade \
 		--disable-gtk-doc
 INSTALL_TARGET=	install-strip
 
