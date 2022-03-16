@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@FreeBSD.org>
 
 PORTNAME=	kicad
-PORTVERSION=	6.0.2
+PORTVERSION=	6.0.3
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${DISTVERSION}/
 PKGNAMESUFFIX=	-library-packages3d

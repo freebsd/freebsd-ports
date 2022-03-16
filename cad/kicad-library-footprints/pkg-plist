@@ -6529,6 +6529,7 @@
 %%DATADIR%%/footprints/Connector_USB.pretty/USB_A_Molex_105057_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_USB.pretty/USB_A_Molex_67643_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_USB.pretty/USB_A_Stewart_SS-52100-001_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Connector_USB.pretty/USB_A_TE_292303-7_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_USB.pretty/USB_A_Wuerth_614004134726_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_USB.pretty/USB_A_Wuerth_61400826021_Horizontal_Stacked.kicad_mod
 %%DATADIR%%/footprints/Connector_USB.pretty/USB_B_Amphenol_MUSB-D511_Vertical_Rugged.kicad_mod
@@ -7224,8 +7225,6 @@
 %%DATADIR%%/footprints/Diode_SMD.pretty/D_SOD-323_HandSoldering.kicad_mod
 %%DATADIR%%/footprints/Diode_SMD.pretty/D_SOD-523.kicad_mod
 %%DATADIR%%/footprints/Diode_SMD.pretty/D_SOD-923.kicad_mod
-%%DATADIR%%/footprints/Diode_SMD.pretty/D_SOT-23_ANK.kicad_mod
-%%DATADIR%%/footprints/Diode_SMD.pretty/D_SOT-23_NKA.kicad_mod
 %%DATADIR%%/footprints/Diode_SMD.pretty/D_TUMD2.kicad_mod
 %%DATADIR%%/footprints/Diode_SMD.pretty/Diode_Bridge_Bourns_CD-DF4xxS.kicad_mod
 %%DATADIR%%/footprints/Diode_SMD.pretty/Diode_Bridge_Diotec_ABS.kicad_mod
@@ -7616,6 +7615,7 @@
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns-SRN6028.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns-SRN8040_8x8.15mm.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns-SRR1005.kicad_mod
+%%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns_SRR1208_12.7x12.7mm.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns-SRU1028_10.0x10.0mm.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns-SRU8028_8.0x8.0mm.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Bourns-SRU8043.kicad_mod
@@ -8631,7 +8631,9 @@
 %%DATADIR%%/footprints/OptoDevice.pretty/LaserDiode_TO38ICut-3.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/LaserDiode_TO5-D9-3.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/LaserDiode_TO56-3.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_Dialight_515-1064F.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_LPF-C012303S.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_LPF-C013301S.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_Mentor_1275.x00x.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_Mentor_1276.1004.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_Mentor_1276.2004.kicad_mod
@@ -10727,6 +10729,7 @@
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK097_Dual_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK097_Dual_Horizontal_Switch.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK097_Single_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK097_Single_Horizontal_Switch.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK09K_Single_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK09K_Single_Vertical.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Alps_RK09L_Double_Horizontal.kicad_mod
@@ -10893,6 +10896,7 @@
 %%DATADIR%%/footprints/RF_Module.pretty/ESP-07.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/ESP-12E.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/ESP-WROOM-02.kicad_mod
+%%DATADIR%%/footprints/RF_Module.pretty/ESP32-S2-MINI-1U.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/ESP32-S2-WROVER.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/ESP32-WROOM-32.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/ESP32-WROOM-32U.kicad_mod
@@ -12035,6 +12039,9 @@
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_CurrentSense_8.4x7.2mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Bel_S558-5999-T7-F.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Bourns_PT61017PEL.kicad_mod
+%%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N2_SO-16_7.11x12.7mm.kicad_mod
+%%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N5_SO-16_7.11x12.7mm.kicad_mod
+%%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N6_SO-16_7.11x14.73mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_HALO_TG111-MSC13.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Wuerth_749013011A.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_MACOM_SM-22.kicad_mod
