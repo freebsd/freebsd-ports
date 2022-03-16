@@ -1,16 +1,11 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	openssl
-DISTVERSION=	3.0.1
-PORTREVISION=	1
+DISTVERSION=	3.0.2
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES=	https://github.com/openssl/openssl/commit/
-PATCHFILES=	f5485b97b6c9977c0d39c7669b9f97a879312447.patch:-p1 \
-		c2d1ad0e048dd3bfa60e6aa0b5ee343cc6d97a15.patch:-p1
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
