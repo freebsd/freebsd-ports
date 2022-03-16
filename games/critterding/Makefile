@@ -9,6 +9,9 @@ COMMENT=	Evolving Artificial Life
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
+DEPRECATED=	Abandonware with last release in 2013, newer version bundles depends and requires Qt4
+EXPIRATION_DATE=2022-04-16
+
 USES=		autoreconf gl libtool localbase:ldflags ncurses pkgconfig sdl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
