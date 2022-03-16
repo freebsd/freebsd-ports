@@ -1,18 +1,25 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 %%ETCDIRWEBUI%%/apache-bareos-webui.conf
+@(,www,640) %%ETCDIRWEBUI%%/configuration.ini
+@(,www,640) %%ETCDIRWEBUI%%/directors.ini
+%%ETCDIRWEBUI%%/nginx-bareos-webui.conf
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/console/admin.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-admin.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-limited.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-readonly.conf.sample
-@(,www,640) %%ETCDIRWEBUI%%/configuration.ini
-@(,www,640) %%ETCDIRWEBUI%%/directors.ini
-%%ETCDIRWEBUI%%/nginx-bareos-webui.conf
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config/application.config.php
 %%WWWDIR%%/config/autoload/README.md
 %%WWWDIR%%/config/autoload/global.php
 %%WWWDIR%%/init_autoloader.php
+%%WWWDIR%%/module/Analytics/Module.php
+%%WWWDIR%%/module/Analytics/autoload_classmap.php
+%%WWWDIR%%/module/Analytics/config/module.config.php
+%%WWWDIR%%/module/Analytics/src/Analytics/Controller/AnalyticsController.php
+%%WWWDIR%%/module/Analytics/src/Analytics/Model/Analytics.php
+%%WWWDIR%%/module/Analytics/src/Analytics/Model/AnalyticsModel.php
+%%WWWDIR%%/module/Analytics/view/analytics/analytics/index.phtml
 %%WWWDIR%%/module/Application/Module.php
 %%WWWDIR%%/module/Application/autoload_classmap.php
 %%WWWDIR%%/module/Application/config/commands.csv
@@ -84,6 +91,7 @@
 %%WWWDIR%%/module/Client/view/client/client/details.phtml
 %%WWWDIR%%/module/Client/view/client/client/index.phtml
 %%WWWDIR%%/module/Client/view/client/client/status.phtml
+%%WWWDIR%%/module/Client/view/client/client/timeline.phtml
 %%WWWDIR%%/module/Console/Module.php
 %%WWWDIR%%/module/Console/autoload_classmap.php
 %%WWWDIR%%/module/Console/config/module.config.php
@@ -208,6 +216,7 @@
 %%WWWDIR%%/public/css/spinner.gif
 %%WWWDIR%%/public/css/style.css
 %%WWWDIR%%/public/css/throbber.gif
+%%WWWDIR%%/public/css/timeline.css
 %%WWWDIR%%/public/fonts/glyphicons-halflings-regular.eot
 %%WWWDIR%%/public/fonts/glyphicons-halflings-regular.svg
 %%WWWDIR%%/public/fonts/glyphicons-halflings-regular.ttf
@@ -249,6 +258,8 @@
 %%WWWDIR%%/public/js/bootstrap.js
 %%WWWDIR%%/public/js/bootstrap.min.js
 %%WWWDIR%%/public/js/custom-functions.js
+%%WWWDIR%%/public/js/d3/d3.js
+%%WWWDIR%%/public/js/d3/d3.min.js
 %%WWWDIR%%/public/js/excanvas.js
 %%WWWDIR%%/public/js/excanvas.min.js
 %%WWWDIR%%/public/js/html5shiv.js
@@ -343,6 +354,7 @@
 %%WWWDIR%%/public/js/respond.min.js
 %%WWWDIR%%/public/js/responsive.bootstrap.js
 %%WWWDIR%%/public/js/responsive.bootstrap.min.js
+%%WWWDIR%%/public/js/timeline.js
 %%WWWDIR%%/vendor/Bareos/library/Bareos/BSock/BareosBSock.php
 %%WWWDIR%%/vendor/Bareos/library/Bareos/BSock/BareosBSockAbstractServiceFactory.php
 %%WWWDIR%%/vendor/Bareos/library/Bareos/BSock/BareosBSockInterface.php
