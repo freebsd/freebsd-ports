@@ -16,7 +16,6 @@ include/gconfmm-%%API_VERSION%%/gconfmm/value_listhelpers.h
 include/gconfmm-%%API_VERSION%%/gconfmm/wrap_init.h
 lib/gconfmm-%%API_VERSION%%/include/gconfmmconfig.h
 lib/libgconfmm-%%VERSION%%.a
-lib/libgconfmm-%%VERSION%%.la
 lib/libgconfmm-%%VERSION%%.so
 lib/libgconfmm-%%VERSION%%.so.1
 lib/libgconfmm-%%VERSION%%.so.1.0.6
