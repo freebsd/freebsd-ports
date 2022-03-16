@@ -1,26 +1,22 @@
---- Makefile.orig	2008-01-15 05:44:55.000000000 +0300
-+++ Makefile	2008-11-24 02:09:08.000000000 +0300
-@@ -18,8 +18,8 @@
- #   You should have received a copy of the GNU General Public License
- #   along with Meritous.  If not, see <http://www.gnu.org/licenses/>.
- #
--LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_mixer -lz
--CCFLAGS = -O2 -Wall `sdl-config --cflags` -g
-+LDFLAGS = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lm
-+CCFLAGS = ${CFLAGS} -Wall `${SDL_CONFIG} --cflags`
- #
- OBJS = 	src/levelblit.o \
- 		src/mapgen.o \
-@@ -35,10 +35,10 @@
- default:	meritous
+--- Makefile.orig	2022-03-16 15:01:57 UTC
++++ Makefile
+@@ -31,8 +31,8 @@ localedir=$(datarootdir)/locale
  
- %.o:		%.c
--		gcc -c -o $@ $? ${CCFLAGS}
-+		${CC} -c -o $@ $? ${CCFLAGS}
+ # Tools
+ INSTALL=install
+-MKDIR_P=$(INSTALL) -d -m 00755
+-CP_R=cp -r --preserve=timestamps
++MKDIR_P=mkdir -p
++CP_R=cp -rp
  
- meritous:	${OBJS}
--		gcc -o $@ $+ ${LDFLAGS}
-+		${CC} -o $@ $+ ${LDFLAGS}
+ # Compilations flags
+ CFLAGS ?= -O2 -g -Wall
+@@ -59,7 +59,7 @@ DEPS = $(OBJS:.o=.d)
+ -include $(DEPS)
  
- clean:		
- 		rm ${OBJS}
+ meritous: $(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $+ $(LDLIBS) -o $@
++	$(CC) $(LDFLAGS) $+ $(LDLIBS) -o $@
+ 
+ po/meritous.pot:
+ 	cd po; intltool-update --pot --gettext-package=meritous
