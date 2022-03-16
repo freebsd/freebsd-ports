@@ -16,12 +16,10 @@ PORTSCOUT=	ignore:1
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:x11-toolkits/gnome-pty-helper
 
-USES+=		cpe gettext gmake gnome libtool pathfix pkgconfig
+USES+=		cpe gettext gmake gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME?=	gnomeprefix gtk20 intltool introspection:build referencehack
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GNOME?=	gnomeprefix gtk20 intltool introspection:build
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS?=--disable-python \
 		--disable-Bsymbolic \

@@ -20,18 +20,16 @@ PORTSCOUT=	limitw:1,even
 BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
-USES+=		gettext gmake gnome libtool pathfix pkgconfig
+USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
 USE_CSTD=	c11
-USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intlhack \
-		introspection:build libxml2 referencehack
+USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 \
+		introspection:build libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no \
 		--enable-glade-catalog=no \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-introspection
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS

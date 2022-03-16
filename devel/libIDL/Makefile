@@ -14,7 +14,7 @@ COMMENT=	Library for creating trees of CORBA IDL files
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison:alias gettext gmake gnome libtool:keepla localbase \
+USES=		bison:alias gettext gnome libtool localbase \
 		pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip

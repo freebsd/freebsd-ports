@@ -16,13 +16,11 @@ USES=		tar:bzip2
 
 PORTSCOUT=	ignore:1
 
-USES+=		gettext gmake gnome libtool:keepla pathfix pkgconfig
+USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gtk20 gconf2 libxml2 intlhack referencehack
+USE_GNOME=	gnomeprefix gtk20 gconf2 libxml2 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ include/libwnck-1.0/libwnck/window.h
 include/libwnck-1.0/libwnck/wnck-enum-types.h
 include/libwnck-1.0/libwnck/workspace.h
 lib/libwnck-1.a
-lib/libwnck-1.la
 lib/libwnck-1.so
 lib/libwnck-1.so.22
 lib/libwnck-1.so.22.3.31

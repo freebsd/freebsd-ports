@@ -18,7 +18,6 @@ include/gtksourceview-2.0/gtksourceview/gtksourcestyleschememanager.h
 include/gtksourceview-2.0/gtksourceview/gtksourceundomanager.h
 include/gtksourceview-2.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-2.0/gtksourceview/gtksourceview.h
-lib/libgtksourceview-2.0.la
 lib/libgtksourceview-2.0.so
 lib/libgtksourceview-2.0.so.0
 lib/libgtksourceview-2.0.so.0.0.0
