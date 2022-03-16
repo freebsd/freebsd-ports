@@ -17,7 +17,7 @@
  
  add_executable(bscan ${BSCANSRCS})
 -target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats)
-+target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats ${PTHREAD_LIBRARIES})
++target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
  
  add_executable(btape ${BTAPESRCS})
 -target_link_libraries(btape bareossd bareos)
