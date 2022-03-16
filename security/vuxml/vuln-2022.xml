@@ -1,3 +1,42 @@
+  <vuln vid="8d20bd48-a4f3-11ec-90de-1c697aa5a594">
+    <topic>FreeBSD-kernel -- Multiple WiFi issues</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_8</lt></range>
+	<range><ge>12.3</ge><lt>12.3_3</lt></range>
+	<range><ge>12.2</ge><lt>12.2_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The paper "Fragment and Forge: Breaking Wi-Fi Through Frame
+	Aggregation and Fragmentation" reported a number of security
+	vulnerabilities in the 802.11 specification related to frame
+	aggregation and fragmentation.</p>
+	<p>Additionally, FreeBSD 12.x missed length validation of SSIDs and
+	Information Elements (IEs).</p>
+	<h1>Impact:</h1>
+	<p>As reported on the FragAttacks website, the "design flaws are hard
+	to abuse because doing so requires user interaction or is only
+	possible when using uncommon network settings."  Under suitable
+	conditions an attacker may be able to extract sensitive data or inject
+	data.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-26147</cvename>
+      <cvename>CVE-2020-24588</cvename>
+      <cvename>CVE-2020-26144</cvename>
+      <freebsdsa>SA-22:02.wifi</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-03-15</discovery>
+      <entry>2022-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="857be71a-a4b0-11ec-95fc-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
