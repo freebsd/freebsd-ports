@@ -1,0 +1,23 @@
+CMake Error at CMakeLists.txt:255 (find_package):
+  Could not find a package configuration file provided by "robin_hood" with
+  any of the following names:
+
+    robin_hoodConfig.cmake
+    robin_hood-config.cmake
+
+  Add the installation prefix of "robin_hood" to CMAKE_PREFIX_PATH or set
+  "robin_hood_DIR" to a directory containing one of the above files.  If
+  "robin_hood" provides a separate development package or SDK, be sure it has
+  been installed.
+
+--- CMakeLists.txt.orig	2022-03-16 04:06:06 UTC
++++ CMakeLists.txt
+@@ -105,6 +105,8 @@ if (ROBIN_HOOD_HASHING_INSTALL_DIR)
+ #backwards compatability settings for other parts of the build system that don't use find_package() variables yet
+ if (ROBIN_HOOD_HASHING_INSTALL_DIR)
+     list(APPEND CMAKE_PREFIX_PATH ${ROBIN_HOOD_HASHING_INSTALL_DIR})
++    add_library(robin_hood::robin_hood INTERFACE IMPORTED)
++    target_include_directories(robin_hood::robin_hood INTERFACE ${ROBIN_HOOD_HASHING_INSTALL_DIR}/src/include)
+ endif()
+ if (SPIRV_HEADERS_INSTALL_DIR)
+     list(APPEND CMAKE_PREFIX_PATH ${SPIRV_HEADERS_INSTALL_DIR})
