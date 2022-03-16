@@ -6,7 +6,7 @@ DISTVERSION=	1.4-15
 DISTVERSIONSUFFIX=	-g4ea2594
 CATEGORIES=	audio
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pulseaudio command line mixer
 
 LICENSE=	GPLv3
