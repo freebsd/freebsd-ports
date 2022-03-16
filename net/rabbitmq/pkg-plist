@@ -775,6 +775,7 @@ lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/rabbit_auth_backend_oauth2_app.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/rabbit_oauth2_scope.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/rabbitmq_auth_backend_oauth2.app
+lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/uaa_jwks.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/uaa_jwt.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/uaa_jwt_jwk.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_oauth2-%%VERSION%%/ebin/uaa_jwt_jwt.beam
@@ -1322,6 +1323,13 @@ lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.5.1/ebin/recon_lib.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.5.1/ebin/recon_map.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.5.1/ebin/recon_rec.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.5.1/ebin/recon_trace.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug.app
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug_compiler.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug_dtop.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug_lexer.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug_parser.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/redbug-2.0.7/ebin/redbug_targ.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/seshat-0.1.0/ebin/seshat.app
 lib/rabbitmq_server-%%VERSION%%/plugins/seshat-0.1.0/ebin/seshat_app.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/seshat-0.1.0/ebin/seshat_counters.beam

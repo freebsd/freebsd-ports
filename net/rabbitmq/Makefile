@@ -1,7 +1,7 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
 
 PORTNAME=	rabbitmq
-DISTVERSION=	3.9.11
+DISTVERSION=	3.9.13
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
