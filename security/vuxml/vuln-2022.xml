@@ -1,3 +1,44 @@
+  <vuln vid="5df757ef-a564-11ec-85fa-a0369f7f7be0">
+    <topic>wordpress -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>fr-wordpress</name>
+	<range><lt>5.9.2,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<name>zh_CN-wordpress</name>
+	<name>th_TW-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<range><lt>5.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>wordpress developers reports:</p>
+	<blockquote cite="https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/">
+	  <p>This security and maintenance release features 1 bug fix in addition to 3 security fixes.
+	    Because this is a security release, it is recommended that you update your sites immediately.
+	    All versions since WordPress 3.7 have also been updated.
+	    The security team would like to thank the following people for responsively reporting
+	    vulnerabilities, allowing them to be fixed in this release:
+	    -Melar Dev, for finding a Prototype Pollution Vulnerability in a jQuery dependency
+	    -Ben Bidner of the WordPress security team, for finding a Stored Cross Site Scripting Vulnerability
+	    -Researchers from Johns Hopkins University, for finding a Prototype Pollution Vulnerability in the block editor</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/</url>
+    </references>
+    <dates>
+      <discovery>2022-03-11</discovery>
+      <entry>2022-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ba1ca94-a563-11ec-8be6-d4c9ef517024">
     <topic>Weechat -- Possible man-in-the-middle attack in TLS connection to servers</topic>
     <affects>
