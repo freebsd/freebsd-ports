@@ -1,11 +1,14 @@
+bin/nv-gnome-thumbnailer
 bin/nvassemble
 bin/nvcompress
 bin/nvddsinfo
 bin/nvdecompress
-bin/nvimgdiff
+bin/nvhdrtest
+bin/nvtestsuite
 bin/nvzoom
 include/nvtt/nvtt.h
 lib/libnvcore.so
 lib/libnvimage.so
 lib/libnvmath.so
+lib/libnvthread.so
 lib/libnvtt.so
