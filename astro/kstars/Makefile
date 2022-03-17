@@ -1,6 +1,5 @@
 PORTNAME=	kstars
-DISTVERSION=	3.5.7
-PORTREVISION=	5
+DISTVERSION=	3.5.8
 PORTEPOCH=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
@@ -9,8 +8,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE desktop planetarium
 
 LICENSE=	GPLv2
-
-EXTRA_PATCHES=	${PATCHDIR}/bef3940aaceb1ba574687a4817ef829a04d49dd4.patch:-p1
 
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libindidriver.so:devel/indi \
