@@ -2,8 +2,8 @@
 
 PORTNAME=	icu
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	70-1
-PORTREVISION?=	1 # keep for icu-lx
+DISTVERSION=	71-1
+PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 
