@@ -16962,3 +16962,4 @@ math/qalculate|math/qalculate-gtk|2022-03-14|Renamed to match project name
 deskutils/nautilus-actions||2022-03-15|Abandonware
 textproc/rarian||2022-03-15|Abandonware
 devel/ORBit2||2022-02-14|Gnome2 library unused anymore
+games/pushover|games/domino-chain|2022-03-17|Chase upstream rename

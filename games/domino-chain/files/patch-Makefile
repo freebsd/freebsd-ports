@@ -1,0 +1,42 @@
+--- Makefile.orig	2020-02-09 08:53:36 UTC
++++ Makefile
+@@ -18,17 +18,17 @@
+ # along with this program; if not, write to the Free Software
+ # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335 USA
+ 
+-PREFIX = /usr
++PREFIX ?= /usr
+ BINDIR = $(PREFIX)/bin
+ DATADIR = $(PREFIX)/share
+-DESTDIR =
++DESTDIR ?=
+ CROSS =
+ 
+ BOOST_TAGS := $(if $(filter %-w64-mingw32.static-,$(CROSS)),-mt,)
+ CONVERT = convert
+-CXX = $(CROSS)$(CXX_NATIVE)
+-CXX_NATIVE = g++
+-CXXFLAGS = -Wall -Wextra -g -O2 -std=c++17
++CXX ?= $(CROSS)$(CXX_NATIVE)
++CXX_NATIVE = ${CXX}
++CXXFLAGS += -Wall -Wextra -std=c++17
+ EXEEXT = $(if $(filter %-w64-mingw32.static-,$(CROSS)),.exe,)
+ INSTALL = install
+ LDFLAGS =
+@@ -129,7 +129,7 @@ FILES_DATADIR += data/icons/hicolor/48x48/apps/domino-
+ FILES_DATADIR += data/icons/hicolor/64x64/apps/domino-chain.png
+ data/icons/hicolor/%/apps/domino-chain.png: src/doc/domino-chain.ico
+ 	@mkdir -p $(dir $@)
+-	$(CONVERT) +set date:create +set date:modify $<[$(shell expr substr $* 1 2 / 16 - 1)] $@
++	$(CONVERT) +set date:create +set date:modify $<[$(shell expr $$(echo $* | cut -b 1-2) / 16 - 1)] $@
+ 
+ DOC_INCLUDES += src/doc/upload-url-dist-windows
+ 
+@@ -182,7 +182,6 @@ _tmp/po/leveltexts.cpp: src/levels/*/*.level
+ 	@mkdir -p $(dir $@)
+ 	sed -n '/^\(Description\|Hint\|Name\|Tutorial\)$$/,/^[^|]/ s,^| \(.*\)$$,_("\1"),p' src/levels/*/*.level | LC_ALL=C sort -u >$@
+ 
+-FILES_DATADIR_SYS += data/fonts/FreeSans.ttf
+ data/fonts/FreeSans.ttf:
+ 	@mkdir -p $(dir $@)
+ 	if [ -e /usr/share/fonts/truetype/freefont/FreeSans.ttf ]; then cp /usr/share/fonts/truetype/freefont/$(notdir $@) $@; \

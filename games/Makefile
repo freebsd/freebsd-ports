@@ -197,6 +197,7 @@
     SUBDIR += dobutsu
     SUBDIR += dodgindiamond2
     SUBDIR += domination
+    SUBDIR += domino-chain
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += doom-data
@@ -778,7 +779,6 @@
     SUBDIR += prboom-plus
     SUBDIR += primateplunge
     SUBDIR += puckman
-    SUBDIR += pushover
     SUBDIR += pvpgn
     SUBDIR += py-2048-py
     SUBDIR += py-cbeams
