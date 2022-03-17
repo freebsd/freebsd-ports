@@ -445,7 +445,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/jbr/lib/modules
 %%DATADIR%%/jbr/lib/psfont.properties.ja
 %%DATADIR%%/jbr/lib/psfontj2d.properties
-%%DATADIR%%/jbr/lib/security/blacklisted.certs
+%%DATADIR%%/jbr/lib/security/blocked.certs
 %%DATADIR%%/jbr/lib/security/cacerts
 %%DATADIR%%/jbr/lib/security/default.policy
 %%DATADIR%%/jbr/lib/security/public_suffix_list.dat
@@ -468,7 +468,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-RM-213.6777.43
+%%DATADIR%%/lib/build-marker-RM-213.7172.23
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
