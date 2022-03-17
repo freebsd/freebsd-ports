@@ -1,7 +1,7 @@
-TIMESTAMP = 1645817567
-SHA256 (wrapl-rabs-v2.24.1_GH0.tar.gz) = 2760f97a2c4152f06a3d63e09a8e041d4ae70b3c700af099bc6e21b9673083dd
-SIZE (wrapl-rabs-v2.24.1_GH0.tar.gz) = 69296
-SHA256 (wrapl-minilang-422debe_GH0.tar.gz) = 391b5285891c78b733afad0e61759ace42e5fa13a2983b45fea742282c1bc305
-SIZE (wrapl-minilang-422debe_GH0.tar.gz) = 416401
+TIMESTAMP = 1647536263
+SHA256 (wrapl-rabs-v2.24.2_GH0.tar.gz) = 0951b3a89cc7b0528592c906c985af99edb40c9f028815eed47c5a9b5f21d4c0
+SIZE (wrapl-rabs-v2.24.2_GH0.tar.gz) = 69281
+SHA256 (wrapl-minilang-d7b57b5_GH0.tar.gz) = ec50e4b5a21f41449cec91b0795bc2248fc905cb1dd6e7a6a1adf99b80abce64
+SIZE (wrapl-minilang-d7b57b5_GH0.tar.gz) = 443863
 SHA256 (rajamukherji-radb-08027ac_GH0.tar.gz) = 1ac16217e59c1adf3959573eba51089a15cde15be92451e2d738e2e3b86e5172
 SIZE (rajamukherji-radb-08027ac_GH0.tar.gz) = 15325
