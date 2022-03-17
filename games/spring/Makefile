@@ -1,5 +1,5 @@
 PORTNAME=	spring
-PORTVERSION=	105.0.1
+PORTVERSION=	106.0.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,17 +25,17 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math and amd64 atomic ops
 
 USE_GITHUB=	yes
-GH_TUPLE=	spring:Python:3bb6837:Python/AI/Interfaces/Python \
-		spring:AAI:a15f45c:AAI/AI/Skirmish/AAI \
-		spring:CircuitAI:91fd31e:CircuitAI/AI/Skirmish/CircuitAI \
-		spring:HughAI:1a11f5a:HughAI/AI/Skirmish/HughAI \
-		spring:KAIK:f6bdd3e:KAIK/AI/Skirmish/KAIK \
-		spring:Shard:75339ae:Shard/AI/Skirmish/Shard \
-		spring:SpringMapConvNG:76429b4:SprintMapConvNG/tools/mapcompile \
-		spring:pr-downloader:67423a3:pr_downloader/tools/pr-downloader \
-		spring:pyunitsync:6e1b3fd:pyunitsync/tools/unitsync/python
+GH_TUPLE=	spring:Python:b69a4ea:Python/AI/Interfaces/Python \
+		spring:AAI:fba6d98:AAI/AI/Skirmish/AAI \
+		spring:CircuitAI:307daf7:CircuitAI/AI/Skirmish/CircuitAI \
+		spring:HughAI:2866476:HughAI/AI/Skirmish/HughAI \
+		spring:KAIK:2d9333e:KAIK/AI/Skirmish/KAIK \
+		spring:Shard:c551e5e:Shard/AI/Skirmish/Shard \
+		spring:SpringMapConvNG:0ddd86e:SprintMapConvNG/tools/mapcompile \
+		spring:pr-downloader:68b7dae:pr_downloader/tools/pr-downloader \
+		spring:pyunitsync:8dfe0bc:pyunitsync/tools/unitsync/python
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl localbase:ldflags \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags \
 		openal:al pkgconfig sdl shared-mime-info xorg
 USE_GL=		gl glu glew
 USE_SDL=	sdl2
@@ -45,8 +45,6 @@ CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DAI_TYPES:STRING="NATIVE" \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 		-Wno-dev
-
-MAKE_ENV=	PORTVERSION="${PORTVERSION:R}"  # build system expects 2 digit version
 
 .if defined(WITH_SYNC_DEBUG)
 CFLAGS=		# empty
@@ -70,7 +68,12 @@ MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 			bash:shells/bash
 
+post-extract:
+	# build system expects 2 digit version
+	@${ECHO_CMD} ${PORTVERSION:R} > ${WRKSRC}/VERSION
+
 post-patch:
+	@${REINPLACE_CMD} -i '' -e 's|LEGACY|OPENGL4|' ${WRKSRC}/doc/manpages/spring.6.txt
 .if defined(WITH_OPTIONAL_GS4)
 	# allows minimal runtest with older hardware
 	@${REINPLACE_CMD} -e '/GLEW_ARB_geometry_shader4/ s|CHECK_REQ_EXT|CHECK_OPT_EXT|' ${WRKSRC}/rts/Rendering/GlobalRendering.cpp

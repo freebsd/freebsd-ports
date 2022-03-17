@@ -1,0 +1,119 @@
+--- AI/Skirmish/CircuitAI/src/circuit/setup/SetupManager.cpp.orig	2021-01-01 16:10:55 UTC
++++ AI/Skirmish/CircuitAI/src/circuit/setup/SetupManager.cpp
+@@ -26,6 +26,8 @@
+ #include "Info.h"
+ 
+ #include <regex>
++#include <algorithm>
++#include <random>
+ 
+ namespace circuit {
+ 
+@@ -183,7 +185,9 @@ void CSetupManager::PickStartPos(CCircuitAI* circuit, 
+ 					c.distDivIncome = center.distance(cl.position) / income;
+ 					validClusters.push_back(std::make_pair(kv.first, c));
+ 				}
+-				std::random_shuffle(validClusters.begin(), validClusters.end());
++				std::random_device rd;
++				std::minstd_rand g(rd());
++				std::shuffle(validClusters.begin(), validClusters.end(), g);
+ 
+ 				auto cmp = [](const std::pair<int, SCluster>& a, const std::pair<int, SCluster>& b) {
+ 					if (a.second.count < b.second.count) {
+--- ./AI/Skirmish/CircuitAI/src/circuit/util/math/EncloseCircle.cpp.orig	2021-01-01 16:10:55 UTC
++++ ./AI/Skirmish/CircuitAI/src/circuit/util/math/EncloseCircle.cpp
+@@ -9,6 +9,7 @@
+ #include "util/utils.h"
+ 
+ #include <algorithm>
++#include <random>
+ #include <assert.h>
+ 
+ namespace circuit {
+@@ -48,7 +49,9 @@ void CEncloseCircle::MakeCircle(const std::vector<AIFl
+ 		}
+ 		// Randomize order
+ 		// TODO: Read why shuffle??
+-		std::random_shuffle(shuffled.begin(), shuffled.end());
++		std::random_device rd;
++		std::minstd_rand g(rd());
++		std::shuffle(shuffled.begin(), shuffled.end(), g);
+ 
+ 		// Progressively add points to circle or recompute circle
+ 		decltype(shuffled)::iterator it = shuffled.begin();
+--- rts/Game/GameSetup.cpp.orig	2021-01-01 16:12:22 UTC
++++ rts/Game/GameSetup.cpp
+@@ -255,7 +255,7 @@ void CGameSetup::LoadStartPositions(bool withoutMap)
+ 		// Server syncs these later, so we can use unsynced rng
+ 		CGlobalUnsyncedRNG rng;
+ 		rng.Seed(HsiehHash(setupText.c_str(), setupText.length(), 1234567));
+-		std::random_shuffle(teamStartNums.begin(), teamStartNums.begin() + teamStartingData.size(), rng);
++		std::shuffle(teamStartNums.begin(), teamStartNums.begin() + teamStartingData.size(), rng);
+ 	}
+ 
+ 	for (size_t i = 0; i < teamStartingData.size(); ++i)
+--- rts/Rendering/Env/Decals/DecalsDrawerGL4.cpp.orig	2021-01-01 19:08:25 UTC
++++ rts/Rendering/Env/Decals/DecalsDrawerGL4.cpp
+@@ -338,7 +338,7 @@ void CDecalsDrawerGL4::DetectMaxDecals()
+ 	decals.resize(maxDecals);
+ 	freeIds.resize(maxDecals - 1); // idx = 0 is invalid, so -1
+ 	std::iota(freeIds.begin(), freeIds.end(), 1); // start with 1, 0 is illegal
+-	std::random_shuffle(freeIds.begin(), freeIds.end(), guRNG);
++	std::shuffle(freeIds.begin(), freeIds.end(), guRNG);
+ 	groups.reserve(maxDecalGroups);
+ }
+ 
+--- rts/Sim/Misc/SimObjectIDPool.cpp.orig	2020-12-26 12:45:43 UTC
++++ rts/Sim/Misc/SimObjectIDPool.cpp
+@@ -25,8 +25,8 @@ void SimObjectIDPool::Expand(unsigned int baseID, unsi
+ 	std::generate(newIDs.begin(), newIDs.begin() + numIDs, [&baseID]() { return (baseID++); });
+ 
+ 	// randomize so that Lua widgets can not easily determine counts
+-	std::random_shuffle(newIDs.begin(), newIDs.begin() + numIDs, gsRNG);
+-	std::random_shuffle(newIDs.begin(), newIDs.begin() + numIDs, gsRNG);
++	std::shuffle(newIDs.begin(), newIDs.begin() + numIDs, gsRNG);
++	std::shuffle(newIDs.begin(), newIDs.begin() + numIDs, gsRNG);
+ 
+ 	// lambda capture ("[n = baseID]() mutable { return (n++); }") requires std=c++14
+ 	baseID -= numIDs;
+--- rts/Sim/Projectiles/ProjectileHandler.cpp.orig	2020-12-26 12:45:43 UTC
++++ rts/Sim/Projectiles/ProjectileHandler.cpp
+@@ -66,6 +66,18 @@ ProjMemPool projMemPool;
+ CProjectileHandler projectileHandler;
+ 
+ 
++namespace {
++	template<class RandomIt, class RandomFunc>
++	void random_shuffle(RandomIt first, RandomIt last, RandomFunc&& r)
++	{
++		typename std::iterator_traits<RandomIt>::difference_type i, n;
++		n = last - first;
++		for (i = n-1; i > 0; --i) {
++			using std::swap;
++			swap(first[i], first[r(i+1)]);
++		}
++	}
++}
+ 
+ void CProjectileHandler::Init()
+ {
+@@ -106,8 +118,8 @@ void CProjectileHandler::Init()
+ 			freeProjectileIDs[false].push_back(i);
+ 		}
+ 
+-		std::random_shuffle(freeProjectileIDs[ true].begin(), freeProjectileIDs[ true].end(), gsRNG);
+-		std::random_shuffle(freeProjectileIDs[false].begin(), freeProjectileIDs[false].end(), guRNG);
++		::random_shuffle(freeProjectileIDs[ true].begin(), freeProjectileIDs[ true].end(), gsRNG);
++		::random_shuffle(freeProjectileIDs[false].begin(), freeProjectileIDs[false].end(), guRNG);
+ 	}
+ 
+ 	for (int modelType = 0; modelType < MODELTYPE_OTHER; ++modelType) {
+@@ -395,7 +407,7 @@ void CProjectileHandler::AddProjectile(CProjectile* p)
+ 
+ 			// generate (newSize - oldSize) new id's starting from oldSize
+ 			std::for_each(freeIDs.begin(), freeIDs.end(), [k = oldSize](int& id) mutable { id = k++; });
+-			std::random_shuffle(freeIDs.begin(), freeIDs.end(), rngFunc);
++			::random_shuffle(freeIDs.begin(), freeIDs.end(), rngFunc);
+ 		}
+ 
+ 
