@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libcurl.so:ftp/curl \
 		libunwind.so:devel/libunwind \
 		libjsoncpp.so:devel/jsoncpp
-BUILD_DEPENDS=	7z:archivers/p7zip
+BUILD_DEPENDS=	7zz:archivers/7-zip
 
 BROKEN_FreeBSD_12=	ld: error: undefined symbol: streflop_libm::__inline_isnanf(float)
 ONLY_FOR_ARCHS=		amd64
