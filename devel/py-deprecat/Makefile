@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	@deprecat decorator to deprecate python classes, functions, methods
 
 LICENSE=	MIT
