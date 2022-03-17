@@ -1,0 +1,50 @@
+--- configure.ac.orig	2022-01-28 06:06:02.670611602 -0800
++++ configure.ac	2022-03-17 10:09:55.599298000 -0700
+@@ -811,11 +811,11 @@
+ dnl
+ dnl    ****  utmp handling  ****
+ dnl
+-AC_CHECKING(getutent)
++AC_CHECKING(getutxent)
+ AC_TRY_LINK([
+ #include <time.h> /* to get time_t on SCO */
+ #include <sys/types.h>
+-#if defined(SVR4) && !defined(DGUX)
++#if (defined(SVR4) && !defined(DGUX)) || defined(__FreeBSD__)
+ #include <utmpx.h>
+ #define utmp utmpx
+ #else
+@@ -825,14 +825,14 @@
+ #define pututline _pututline
+ #endif
+ ],
+-[int x = DEAD_PROCESS; pututline((struct utmp *)0); getutent();], AC_DEFINE(GETUTENT),
++[int x = DEAD_PROCESS; pututxline((struct utmp *)0); getutxent();], AC_DEFINE(GETUTENT),
+ olibs="$LIBS"
+ LIBS="$LIBS -lgen"
+-AC_CHECKING(getutent with -lgen)
++AC_CHECKING(getutxent with -lgen)
+ AC_TRY_LINK([
+ #include <time.h>
+ #include <sys/types.h>
+-#if defined(SVR4) && !defined(DGUX)
++#if defined(SVR4) && !defined(DGUX) || defined(__FreeBSD__)
+ #include <utmpx.h>
+ #define utmp utmpx
+ #else
+@@ -842,13 +842,13 @@
+ #define pututline _pututline
+ #endif
+ ],
+-[int x = DEAD_PROCESS; pututline((struct utmp *)0); getutent();], AC_DEFINE(GETUTENT), LIBS="$olibs")
++[int x = DEAD_PROCESS; pututxline((struct utmp *)0); getutxent();], AC_DEFINE(GETUTENT), LIBS="$olibs")
+ )
+ AC_CHECKING(ut_host)
+ AC_TRY_COMPILE([
+ #include <time.h>
+ #include <sys/types.h>
+-#if defined(SVR4) && !defined(DGUX)
++#if defined(SVR4) && !defined(DGUX) || defined(__FreeBSD__)
+ #include <utmpx.h>
+ #define utmp utmpx
+ #else

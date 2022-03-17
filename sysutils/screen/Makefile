@@ -1,8 +1,7 @@
 # Created by: Andrey Chernov <ache@FreeBSD.org>
 
 PORTNAME=	screen
-PORTVERSION=	4.8.0
-PORTREVISION=	3
+PORTVERSION=	4.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -34,7 +33,7 @@ NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
 
-NCURSES_DEFAULT_USES=	ncurses
+NCURSES_DEFAULT_USES=	autoreconf:build ncurses
 NCURSES_BASE_USES=	ncurses:base
 NCURSES_PORT_USES=	ncurses:port
 
@@ -81,13 +80,16 @@ EXTRA_PATCHES+=	${FILESDIR}/opt-showencoding
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
-	@${REINPLACE_CMD} -e 's|/dev/ptmx|/nonexistent|' ${WRKSRC}/configure
 
 # Bug 191029:	Users can choose whether to use sockets or named pipes.
 #		Choose sockets if you don't know what the difference is.
 #		Choose named pipes if your environment is heterogeneous,
 #		using both screen 4.0.3 and 4.2.1.
 # Bug 191017
+
+pre-configure:
+	cd ${WRKSRC} && ./autogen.sh
+
 post-configure-NAMED_PIPES-on:
 	@${ECHO_CMD} '#define NAMEDPIPE 1' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} User selected named pipes override set.
