@@ -1,9 +1,9 @@
---- glib/meson.build.orig	2021-09-17 10:17:56 UTC
+--- glib/meson.build.orig	2022-03-17 15:01:31 UTC
 +++ glib/meson.build
-@@ -367,7 +367,7 @@ libglib = library('glib-2.0',
-   # intl.lib is not compatible with SAFESEH
+@@ -375,7 +375,7 @@ libglib = library('glib-2.0',
    link_args : [noseh_link_args, glib_link_flags, win32_ldflags],
    include_directories : configinc,
+   link_with: [charset_lib, gnulib_lib],
 -  dependencies : [pcre, thread_dep, librt] + libintl_deps + libiconv + platform_deps + [gnulib_libm_dependency, libm] + [libsysprof_capture_dep],
 +  dependencies : [pcre, thread_dep, librt] + libintl_deps + libiconv + platform_deps + [gnulib_libm_dependency, libm] + [libsysprof_capture_dep] + libutil,
    c_args : glib_c_args,

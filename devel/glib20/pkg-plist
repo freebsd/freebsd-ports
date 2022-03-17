@@ -15,14 +15,11 @@ bin/gtester
 bin/gtester-report
 include/gio-unix-2.0/gio/gdesktopappinfo.h
 include/gio-unix-2.0/gio/gfiledescriptorbased.h
-include/gio-unix-2.0/gio/gunixconnection.h
-include/gio-unix-2.0/gio/gunixcredentialsmessage.h
 include/gio-unix-2.0/gio/gunixfdlist.h
 include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
 include/gio-unix-2.0/gio/gunixoutputstream.h
-include/gio-unix-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/gio/gaction.h
 include/glib-2.0/gio/gactiongroup.h
 include/glib-2.0/gio/gactiongroupexporter.h
@@ -67,6 +64,8 @@ include/glib-2.0/gio/gdbusobjectskeleton.h
 include/glib-2.0/gio/gdbusproxy.h
 include/glib-2.0/gio/gdbusserver.h
 include/glib-2.0/gio/gdbusutils.h
+include/glib-2.0/gio/gdebugcontroller.h
+include/glib-2.0/gio/gdebugcontrollerdbus.h
 include/glib-2.0/gio/gdrive.h
 include/glib-2.0/gio/gdtlsclientconnection.h
 include/glib-2.0/gio/gdtlsconnection.h
@@ -169,6 +168,9 @@ include/glib-2.0/gio/gtlsfiledatabase.h
 include/glib-2.0/gio/gtlsinteraction.h
 include/glib-2.0/gio/gtlspassword.h
 include/glib-2.0/gio/gtlsserverconnection.h
+include/glib-2.0/gio/gunixconnection.h
+include/glib-2.0/gio/gunixcredentialsmessage.h
+include/glib-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
 include/glib-2.0/gio/gvolumemonitor.h
@@ -264,6 +266,7 @@ include/glib-2.0/glib/gversionmacros.h
 include/glib-2.0/glib/gwin32.h
 include/glib-2.0/gmodule.h
 include/glib-2.0/gobject/gbinding.h
+include/glib-2.0/gobject/gbindinggroup.h
 include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
@@ -276,6 +279,7 @@ include/glib-2.0/gobject/gobjectnotifyqueue.c
 include/glib-2.0/gobject/gparam.h
 include/glib-2.0/gobject/gparamspecs.h
 include/glib-2.0/gobject/gsignal.h
+include/glib-2.0/gobject/gsignalgroup.h
 include/glib-2.0/gobject/gsourceclosure.h
 include/glib-2.0/gobject/gtype.h
 include/glib-2.0/gobject/gtypemodule.h
@@ -352,6 +356,9 @@ share/gettext/its/gschema.loc
 %%DATADIR%%-2.0/codegen/codegen_main.py
 %%DATADIR%%-2.0/codegen/codegen_main.pyc
 %%DATADIR%%-2.0/codegen/codegen_main.pyo
+%%DATADIR%%-2.0/codegen/codegen_rst.py
+%%DATADIR%%-2.0/codegen/codegen_rst.pyc
+%%DATADIR%%-2.0/codegen/codegen_rst.pyo
 %%DATADIR%%-2.0/codegen/config.py
 %%DATADIR%%-2.0/codegen/config.pyc
 %%DATADIR%%-2.0/codegen/config.pyo
@@ -410,6 +417,8 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/gio/GDataInputStream.html
 %%DOCS%%share/gtk-doc/html/gio/GDataOutputStream.html
 %%DOCS%%share/gtk-doc/html/gio/GDatagramBased.html
+%%DOCS%%share/gtk-doc/html/gio/GDebugController.html
+%%DOCS%%share/gtk-doc/html/gio/GDebugControllerDBus.html
 %%DOCS%%share/gtk-doc/html/gio/GDrive.html
 %%DOCS%%share/gtk-doc/html/gio/GDtlsClientConnection.html
 %%DOCS%%share/gtk-doc/html/gio/GDtlsConnection.html
@@ -540,6 +549,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/gio/api-index-2-66.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-2-68.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-2-70.html
+%%DOCS%%share/gtk-doc/html/gio/api-index-2-72.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-full.html
 %%DOCS%%share/gtk-doc/html/gio/application.html
@@ -675,6 +685,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-66.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-68.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-70.html
+%%DOCS%%share/gtk-doc/html/glib/api-index-2-72.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-8.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-full.html
@@ -788,6 +799,8 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/glib/up-insensitive.png
 %%DOCS%%share/gtk-doc/html/glib/up.png
 %%DOCS%%share/gtk-doc/html/gobject/GBinding.html
+%%DOCS%%share/gtk-doc/html/gobject/GBindingGroup.html
+%%DOCS%%share/gtk-doc/html/gobject/GSignalGroup.html
 %%DOCS%%share/gtk-doc/html/gobject/GTypeModule.html
 %%DOCS%%share/gtk-doc/html/gobject/GTypePlugin.html
 %%DOCS%%share/gtk-doc/html/gobject/annotation-glossary.html
@@ -817,6 +830,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-66.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-68.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-70.html
+%%DOCS%%share/gtk-doc/html/gobject/api-index-2-72.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-8.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-full.html
