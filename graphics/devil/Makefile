@@ -1,97 +1,70 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	devil
-PORTVERSION=	1.7.8
-PORTREVISION=	29
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
-DISTNAME=	DevIL-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Full featured cross-platform image library
+COMMENT=	Cross-platform image library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		alias autoreconf gmake libtool localbase pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ILU --enable-ILUT \
-		--disable-allegro --disable-directx8 --disable-directx9 \
-		--without-libsquish
-INSTALL_TARGET=	install-strip
+USES=		cmake pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	DentonW
+GH_PROJECT=	DevIL
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME:tl}
-
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
-# With EXR the library is not usable from plain C (instant segfault)
-OPTIONS_DEFINE=	JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL NVTT SIMD DOCS
-OPTIONS_DEFAULT=JPEG JASPER LCMS MNG PNG TIFF X11 SDL NVTT
-OPTIONS_DEFAULT_amd64=SIMD
+CMAKE_SOURCE_PATH=	${WRKSRC}/DevIL
 
-JPEG_DESC=	Enable JPEG support
-JASPER_DESC=	Enable JPEG2000 support
-LCMS_DESC=	Enable LCMS support
-MNG_DESC=	Enable MNG support
-PNG_DESC=	Enable PNG support
-TIFF_DESC=	Enable TIFF support
-EXR_DESC=	Enable EXR support
-X11_DESC=	Enable X11 support
-SDL_DESC=	Enable SDL support
-SQUISH_DESC=	Enable DXT compression via libsquish
-NVTT_DESC=	Enable NVidia texture tools support
-SIMD_DESC=	Enable SIMD autodetection (AltiVec, SSE3,...)
+OPTIONS_DEFINE=	JPEG JASPER LCMS2 LIBMNG PNG TIFF SQUISH DOCS EXAMPLES
+OPTIONS_DEFAULT=JPEG JASPER LCMS2 LIBMNG PNG TIFF SQUISH
 
 JPEG_USES=		jpeg
-JPEG_CONFIGURE_ENABLE=	jpeg
+JPEG_CMAKE_OFF=		-DIL_NO_JPG=1
+
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
-JASPER_CONFIGURE_ENABLE=jp2
-LCMS_LIB_DEPENDS=	liblcms.so:graphics/lcms
-LCMS_CONFIGURE_ENABLE=	lcms
-MNG_LIB_DEPENDS=	libmng.so:graphics/libmng
-MNG_CONFIGURE_ENABLE=	mng
+JASPER_CMAKE_OFF=	-DIL_NO_JP2=1
+
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_CMAKE_OFF=	-DIL_NO_LCMS=1
+
+LIBMNG_LIB_DEPENDS=	libmng.so:graphics/libmng
+LIBMNG_CMAKE_OFF=	-DIL_NO_MNG=1
+
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_CONFIGURE_ENABLE=	png
-PNG_CONFIGURE_OFF=	libpng_app=no
+PNG_CMAKE_OFF=		-DIL_NO_PNG=1
+
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_CONFIGURE_ENABLE=	tiff
-EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
-EXR_CONFIGURE_ENABLE=	exr
-#SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:graphics/squish
-#SQUISH_CONFIGURE_WITH=	libsquish
-NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
-NVTT_CONFIGURE_WITH=	nvtt
-X11_USES=		gl xorg
-X11_USE=		GL=gl,glu,glut XORG=x11,xext,xmu,xi,xrender,sm,ice
-X11_CONFIGURE_OFF=	--disable-opengl --disable-x11 --disable-xpm --disable-shm --disable-render
-SDL_USES=		sdl
-SDL_USE=		SDL=sdl
-SDL_CONFIGURE_OFF=	--disable-sdl
-SIMD_CONFIGURE_OFF=	--disable-altivec --disable-sse --disable-sse2 --disable-sse3
+TIFF_CMAKE_OFF=		-DIL_NO_TIF=1
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/^pkgdir=/s|$$(libdir)/|$$(prefix)/libdata/|g' \
-		${WRKSRC}/data/Makefile.am
-	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
-		${WRKSRC}/src-ILU/ilur/ilur.c
-	${REINPLACE_CMD} -e 's/Imf::Int64/uint64_t/g' \
-		${WRKSRC}/src-IL/src/il_exr.cpp \
-		${WRKSRC}/src-IL/include/il_exr.h
+# With OPENEXR the library is not usable from plain C (instant segfault)
+# (but need to recheck with 1.8.0), also the detection is broken
+#OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
+#OPENEXR_CMAKE_OFF=	-DIL_NO_EXR=1
+CMAKE_ARGS+=		-DIL_NO_EXR=1
 
-post-install:
-	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
-	@${RMDIR} ${STAGEDIR}${DATADIR}
+SQUISH_DESC=		Enable DXT compression via libsquish
+SQUISH_LIB_DEPENDS=	libsquish.so:graphics/squish
+SQUISH_CMAKE_BOOL=	IL_USE_DXTC_SQUISH
+
+# Fails to build with NVTT, uses not installed header
+# (and NVTT is deprecated anyway)
+#NVTT_DESC=		Enable NVidia texture tools support
+#NVTT_BROKEN=		does not build
+#NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
+#NVTT_CMAKE_BOOL=	IL_USE_DXTC_NVIDIA
+CMAKE_ARGS+=		-DIL_USE_DXTC_NVIDIA=0
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC}/DevIL-docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/DevIL && ${INSTALL_DATA} CREDITS NEWS README.md TODO ${STAGEDIR}${DOCSDIR}/
 
-do-test:
-	cd ${WRKSRC}/test && ${MAKE_CMD} testil
-	cd ${WRKSRC}/test && ${SH} format_test/format_checks.sh
+post-install-EXAMPLES-on:
+	cd ${WRKSRC}/DevIL/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
