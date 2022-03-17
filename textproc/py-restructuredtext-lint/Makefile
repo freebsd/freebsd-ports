@@ -1,5 +1,5 @@
 PORTNAME=	restructuredtext-lint
-DISTVERSION=	1.3.2
+DISTVERSION=	1.4.0
 CATEGORIES=	textproc devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
