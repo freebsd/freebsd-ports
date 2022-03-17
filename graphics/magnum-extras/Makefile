@@ -10,6 +10,9 @@ COMMENT=	Extras for the Magnum C++11/C++14 graphics engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=     Depends on broken graphics/magnum
+EXPIRATION_DATE=2022-05-17
+
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libCorradeUtility.so:devel/corrade \
 		libfaad.so:audio/faad \

@@ -11,6 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Player.hpp:193:32: error: too few arguments provided to function-like macro invocation
+DEPRECATED=	Broken for more than a year
+EXPIRATION_DATE=2022-05-17
 
 LIB_DEPENDS=	libCorradeUtility.so:devel/corrade \
 		libglfw.so:graphics/glfw
