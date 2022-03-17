@@ -1,4 +1,4 @@
-TIMESTAMP = 1647293517
+TIMESTAMP = 1647538987
 SHA256 (meilisearch-mini-dashboard-build-0.1.9.zip) = 402b3c2bbc34a74b31caeb2ef68b8c3d73e578b7de2283fba14b9e1b59c4d3c9
 SIZE (meilisearch-mini-dashboard-build-0.1.9.zip) = 1159405
 SHA256 (rust/crates/actix-codec-0.5.0.crate) = 57a7559404a7f3573127aab53c08ce37a6c6a315c374a31070f3c91cd1b4a7fe
@@ -733,5 +733,5 @@ SHA256 (Kerollmops-heed-v0.12.1_GH0.tar.gz) = ee267910ffe34cc5b469498b6d5e29f69c
 SIZE (Kerollmops-heed-v0.12.1_GH0.tar.gz) = 36466
 SHA256 (meilisearch-lmdb-rs-d0b50d02938ee84e4e4372697ea991fe2a4cae3b_GH0.tar.gz) = 13bd6e987e250e3f4df08359abcae709042e2cda5f8113d729f81ed8c8e1adcf
 SIZE (meilisearch-lmdb-rs-d0b50d02938ee84e4e4372697ea991fe2a4cae3b_GH0.tar.gz) = 49159
-SHA256 (meilisearch-meilisearch-v0.26.0_GH0.tar.gz) = 4ca2b4e746c640fc484a757e79503a7029aacce2875a57686bff89d4c76873d3
-SIZE (meilisearch-meilisearch-v0.26.0_GH0.tar.gz) = 7365106
+SHA256 (meilisearch-meilisearch-v0.26.1_GH0.tar.gz) = d5df8df24967b8f68b11c03cd8d0efd65d7284733fd54c6df842b9f19516d4a4
+SIZE (meilisearch-meilisearch-v0.26.1_GH0.tar.gz) = 7365112

@@ -1,7 +1,6 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.0
-PORTREVISION=	1
+DISTVERSION=	0.26.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v0.1.9/build.zip?dummy=/:mini_dashboard_assets
 DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets
