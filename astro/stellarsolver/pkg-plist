@@ -65,10 +65,11 @@ include/libstellarsolver/parameters.h
 include/libstellarsolver/stellarsolver.h
 include/libstellarsolver/structuredefinitions.h
 include/libstellarsolver/version.h
+include/libstellarsolver/wcsdata.h
 lib/cmake/StellarSolver/StellarSolverConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/StellarSolver/StellarSolverConfig.cmake
 lib/cmake/StellarSolver/StellarSolverConfigVersion.cmake
 lib/libstellarsolver.so
 lib/libstellarsolver.so.2
-lib/libstellarsolver.so.2.1
+lib/libstellarsolver.so.2.2
 libdata/pkgconfig/stellarsolver.pc
