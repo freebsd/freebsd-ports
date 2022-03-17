@@ -1,7 +1,7 @@
 # Created by: chinsan <chinsan@mail2000.com.tw>
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpmyfaq.de/files/
 
