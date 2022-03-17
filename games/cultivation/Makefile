@@ -10,6 +10,10 @@ COMMENT=	Unique game of conflict and cooperation in a gardening community
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
+BROKEN=		does not start
+DEPRECATED=	Abandonware with last release in 2010, non-portable build system
+EXPIRATION_DATE=2022-04-17
+
 USES=		gl gmake xorg
 USE_XORG=	x11 xi xext xmu
 USE_GL=		glut
