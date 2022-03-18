@@ -1,7 +1,7 @@
 # Created by: miwi
 
 PORTNAME=	wordpress
-DISTVERSION=	5.9.1
+DISTVERSION=	5.9.2
 DISTVERSIONSUFFIX=	-de_DE
 CATEGORIES=	german www
 MASTER_SITES=	https://de.wordpress.org/
