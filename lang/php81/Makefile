@@ -1,5 +1,5 @@
 PORTNAME=	php81
-DISTVERSION=	8.1.3
+DISTVERSION=	8.1.4
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -269,7 +269,8 @@ CONFIGURE_ARGS+=	--enable-filter
 CONFIGURE_ARGS+=	--enable-ftp
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+		PHP_OPENSSL=yes
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		pkgconfig ssl
@@ -332,7 +333,8 @@ CONFIGURE_ARGS+=	--with-imap-ssl=${OPENSSLBASE} \
 			--with-imap=${LOCALBASE}
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+		PHP_OPENSSL=yes
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl
