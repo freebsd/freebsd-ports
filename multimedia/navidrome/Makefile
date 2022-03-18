@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	npm>0:www/npm \
 LIB_DEPENDS+=	libtag.so:audio/taglib
 RUN_DEPENDS+=	ffmpeg:multimedia/ffmpeg
 
-USES=		go:modules pkgconfig
+USES=		cpe go:modules pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
