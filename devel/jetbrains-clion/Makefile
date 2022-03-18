@@ -17,10 +17,12 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		lsof:sysutils/lsof
 
-USES=		python:run shebangfix
+USES=		cpe python:run shebangfix
 
 USE_JAVA=	yes
 JAVA_VERSION=	11+
+
+CPE_VENDOR=	jetbrains
 
 SHEBANG_FILES=	bin/printenv.py bin/restart.py \
 		plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh
