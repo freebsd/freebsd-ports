@@ -210,6 +210,8 @@ include/wine/windows/cordebug.h
 include/wine/windows/cordebug.idl
 include/wine/windows/corerror.h
 include/wine/windows/corhdr.h
+include/wine/windows/corsym.h
+include/wine/windows/corsym.idl
 include/wine/windows/cpl.h
 include/wine/windows/crtrow.idl
 include/wine/windows/cryptdlg.h
@@ -1001,6 +1003,8 @@ include/wine/windows/windows.media.devices.h
 include/wine/windows/windows.media.devices.idl
 include/wine/windows/windows.media.h
 include/wine/windows/windows.media.idl
+include/wine/windows/windows.media.speechrecognition.h
+include/wine/windows/windows.media.speechrecognition.idl
 include/wine/windows/windows.media.speechsynthesis.h
 include/wine/windows/windows.media.speechsynthesis.idl
 %%STAGING%%include/wine/windows/windows.networking.connectivity.h
@@ -1641,6 +1645,7 @@ lib/wine/%%WINEARCH%%-windows/api-ms-win-security-base-private-l1-1-1.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-security-credentials-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-security-cryptoapi-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-security-grouppolicy-l1-1-0.dll
+lib/wine/%%WINEARCH%%-windows/api-ms-win-security-lsalookup-ansi-l2-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-security-lsalookup-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-security-lsalookup-l1-1-1.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-security-lsalookup-l2-1-0.dll
@@ -1794,6 +1799,7 @@ lib/wine/%%WINEARCH%%-windows/devenum.dll
 lib/wine/%%WINEARCH%%-windows/dhcpcsvc.dll
 lib/wine/%%WINEARCH%%-windows/dhcpcsvc6.dll
 lib/wine/%%WINEARCH%%-windows/dhtmled.ocx
+lib/wine/%%WINEARCH%%-windows/diasymreader.dll
 lib/wine/%%WINEARCH%%-windows/difxapi.dll
 lib/wine/%%WINEARCH%%-windows/dinput.dll
 lib/wine/%%WINEARCH%%-windows/dinput8.dll
