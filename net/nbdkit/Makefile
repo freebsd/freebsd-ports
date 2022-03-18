@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash \
 		bash-completion>0:shells/bash-completion
 
-USES=		compiler:c11 gmake libtool pkgconfig
+USES=		compiler:c11 cpe gmake libtool pkgconfig
+
+CPE_VENDOR=	nbdkit_project
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
