@@ -11,6 +11,10 @@ COMMENT=	On-the-fly verification system for asynchronous concurrent systems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Src/LICENSE
 
+USES=		cpe
+
+CPE_VENDOR=	spinroot
+
 MAKEFILE=	makefile
 ALL_TARGET=	all
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNXT"
