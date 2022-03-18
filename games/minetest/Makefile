@@ -12,7 +12,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c11 iconv:wchar_t sqlite
+USES=		cmake compiler:c11 cpe iconv:wchar_t sqlite
 USE_GITHUB=	yes
 GH_TUPLE=	minetest:irrlicht:d3132e0:irrlicht/lib/irrlichtmt
 
