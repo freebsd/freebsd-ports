@@ -17,13 +17,15 @@ BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion \
 LIB_DEPENDS=	libodbcinst.so:databases/unixODBC
 RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
 
-USES=		bison gnome iconv:wchar_t libtool pathfix \
+USES=		bison cpe gnome iconv:wchar_t libtool pathfix \
 		pkgconfig readline
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-unixodbc=${LOCALBASE}
+
+CPE_VENDOR=	mdbtools_project
 
 INSTALL_TARGET=	install-strip
 
