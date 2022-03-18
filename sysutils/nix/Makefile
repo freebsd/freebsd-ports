@@ -32,11 +32,13 @@ TEST_DEPENDS=	dot:graphics/graphviz \
 		gxargs:misc/findutils \
 		hg:devel/mercurial
 
-USES=		autoreconf bison compiler:c++17-lang gmake localbase pkgconfig \
+USES=		autoreconf bison compiler:c++17-lang cpe gmake localbase pkgconfig \
 		sqlite:3 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	NixOS
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	nix_project
 
 HAS_CONFIGURE=		yes
 # Workaround for bashisms in the configure script.
