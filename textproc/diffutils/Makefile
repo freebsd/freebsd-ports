@@ -12,10 +12,11 @@ COMMENT=	GNU differential compare utilities
 
 LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 
-USES=		charsetfix tar:xz
+USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 TEST_TARGET=	check
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
