@@ -1,9 +1,8 @@
 # Created by: Yinghong Liu <relaxbsd@gmail.com>
 
 PORTNAME=	etl
-PORTVERSION=	1.2.2
-DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTVERSION=	1.4.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel lang
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,19 +12,21 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-NO_ARCH=	yes
-PORTSCOUT=	limitw:1,even
-
-USES=		autoreconf pathfix pkgconfig
-GNU_CONFIGURE=	yes
+USES=		autoreconf gnome pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	synfig
 GH_PROJECT=	synfig
+USE_GNOME=	glibmm
+
+GNU_CONFIGURE=	yes
+
 WRKSRC_SUBDIR=	ETL
 
 OPTIONS_DEFINE=	DOCS
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
+NO_ARCH=	yes
+PORTSCOUT=	limitw:1,even
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
