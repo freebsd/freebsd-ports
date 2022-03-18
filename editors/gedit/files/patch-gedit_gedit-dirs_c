@@ -1,0 +1,58 @@
+$OpenBSD: patch-gedit_gedit-dirs_c,v 1.1 2022/02/18 08:33:43 sthen Exp $
+
+From ba2662ff9ee99ef0d85023b06053792fd3eb9272 Mon Sep 17 00:00:00 2001
+From: Laurent Bigonville <bigon@bigon.be>
+Date: Mon, 22 Nov 2021 13:03:48 +0100
+Subject: [PATCH] Revert "gedit-dirs: remove get_user_cache_dir() (no longer
+ used)"
+
+This also revert the move of the metadata file ("gedit-metadata.xml")
+from user_data_dir to user_cache_dir when not using GVFS to store the
+metadata
+
+This reverts commit f641a246fbaff482e216197d21e2e51397b1cb26.
+
+Fixes: https://gitlab.gnome.org/GNOME/gedit/-/issues/467
+
+Index: gedit/gedit-dirs.c
+--- gedit/gedit-dirs.c.orig
++++ gedit/gedit-dirs.c
+@@ -26,6 +26,7 @@
+ #include <gtkosxapplication.h>
+ #endif
+ 
++static gchar *user_cache_dir         = NULL;
+ static gchar *user_config_dir        = NULL;
+ static gchar *user_data_dir          = NULL;
+ static gchar *user_styles_dir        = NULL;
+@@ -95,6 +96,9 @@ gedit_dirs_init ()
+ 							   NULL);
+ 	}
+ 
++	user_cache_dir = g_build_filename (g_get_user_cache_dir (),
++					   "gedit",
++					   NULL);
+ 	user_config_dir = g_build_filename (g_get_user_config_dir (),
+ 					    "gedit",
+ 					    NULL);
+@@ -115,6 +119,7 @@ gedit_dirs_init ()
+ void
+ gedit_dirs_shutdown ()
+ {
++	g_clear_pointer (&user_cache_dir, g_free);
+ 	g_clear_pointer (&user_config_dir, g_free);
+ 	g_clear_pointer (&user_data_dir, g_free);
+ 	g_clear_pointer (&user_styles_dir, g_free);
+@@ -123,6 +128,12 @@ gedit_dirs_shutdown ()
+ 	g_clear_pointer (&gedit_lib_dir, g_free);
+ 	g_clear_pointer (&gedit_plugins_dir, g_free);
+ 	g_clear_pointer (&gedit_plugins_data_dir, g_free);
++}
++
++const gchar *
++gedit_dirs_get_user_cache_dir (void)
++{
++	return user_cache_dir;
+ }
+ 
+ const gchar *

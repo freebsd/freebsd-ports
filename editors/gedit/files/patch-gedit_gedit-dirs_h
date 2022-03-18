@@ -1,0 +1,28 @@
+$OpenBSD: patch-gedit_gedit-dirs_h,v 1.1 2022/02/18 08:33:43 sthen Exp $
+
+From ba2662ff9ee99ef0d85023b06053792fd3eb9272 Mon Sep 17 00:00:00 2001
+From: Laurent Bigonville <bigon@bigon.be>
+Date: Mon, 22 Nov 2021 13:03:48 +0100
+Subject: [PATCH] Revert "gedit-dirs: remove get_user_cache_dir() (no longer
+ used)"
+
+This also revert the move of the metadata file ("gedit-metadata.xml")
+from user_data_dir to user_cache_dir when not using GVFS to store the
+metadata
+
+This reverts commit f641a246fbaff482e216197d21e2e51397b1cb26.
+
+Fixes: https://gitlab.gnome.org/GNOME/gedit/-/issues/467
+
+Index: gedit/gedit-dirs.h
+--- gedit/gedit-dirs.h.orig
++++ gedit/gedit-dirs.h
+@@ -32,6 +32,8 @@ void		 gedit_dirs_init			(void);
+ void		 gedit_dirs_shutdown 			(void);
+ 
+ 
++const gchar	*gedit_dirs_get_user_cache_dir		(void);
++
+ const gchar	*gedit_dirs_get_user_config_dir		(void);
+ 
+ const gchar	*gedit_dirs_get_user_data_dir		(void);
