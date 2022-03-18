@@ -9,6 +9,10 @@ COMMENT=	Tool for extracting portions of pcap files
 
 LICENSE=	BSD3CLAUSE
 
+USES=		cpe
+
+CPE_VENDOR=	tcpdump
+
 PLIST_FILES=	sbin/tcpslice \
 		man/man1/tcpslice.1.gz
 
