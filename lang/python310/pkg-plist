@@ -2179,7 +2179,7 @@ lib/python%%XYDOT%%/ensurepip/_bundled/__init__.py
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.2.4-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-58.1.0-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
@@ -2423,6 +2423,9 @@ lib/python%%XYDOT%%/idlelib/__pycache__/tree.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/undo.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/undo.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/undo.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/util.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/util.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/util.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/window.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/window.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/window.cpython-%%XY%%.pyc
@@ -2645,6 +2648,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_tree.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_undo.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_undo.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_undo.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_util.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_util.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_util.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.pyc
@@ -2660,6 +2666,8 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.py
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/example_noext
+lib/python%%XYDOT%%/idlelib/idle_test/example_stub.pyi
 lib/python%%XYDOT%%/idlelib/idle_test/htest.py
 lib/python%%XYDOT%%/idlelib/idle_test/mock_idle.py
 lib/python%%XYDOT%%/idlelib/idle_test/mock_tk.py
@@ -2718,6 +2726,7 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_textview.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_tooltip.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_tree.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_undo.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_util.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_warning.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_window.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_zoomheight.py
@@ -2751,6 +2760,7 @@ lib/python%%XYDOT%%/idlelib/textview.py
 lib/python%%XYDOT%%/idlelib/tooltip.py
 lib/python%%XYDOT%%/idlelib/tree.py
 lib/python%%XYDOT%%/idlelib/undo.py
+lib/python%%XYDOT%%/idlelib/util.py
 lib/python%%XYDOT%%/idlelib/window.py
 lib/python%%XYDOT%%/idlelib/zoomheight.py
 lib/python%%XYDOT%%/idlelib/zzdummy.py
@@ -3560,6 +3570,9 @@ lib/python%%XYDOT%%/test/__pycache__/ann_module5.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module6.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module6.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module6.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/ann_module7.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/ann_module7.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/ann_module7.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.pyc
@@ -5021,6 +5034,7 @@ lib/python%%XYDOT%%/test/ann_module3.py
 lib/python%%XYDOT%%/test/ann_module4.py
 lib/python%%XYDOT%%/test/ann_module5.py
 lib/python%%XYDOT%%/test/ann_module6.py
+lib/python%%XYDOT%%/test/ann_module7.py
 lib/python%%XYDOT%%/test/audiodata/pluck-alaw.aifc
 lib/python%%XYDOT%%/test/audiodata/pluck-pcm16.aiff
 lib/python%%XYDOT%%/test/audiodata/pluck-pcm16.au
