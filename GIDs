@@ -810,7 +810,7 @@ opensearch:*:855:
 # free: 867
 # free: 868
 # free: 869
-buildbot:*:870
+buildbot:*:870:
 # free: 871
 bitmark:*:872:
 bitmark-recorder:*:873:
