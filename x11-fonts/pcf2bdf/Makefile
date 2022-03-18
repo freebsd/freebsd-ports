@@ -9,8 +9,12 @@ COMMENT=	Convert X font from PCF to BDF
 
 LICENSE=	MIT
 
+USES=		cpe
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ganaware
+
+CPE_VENDOR=	pcf2bdf_project
 
 MAKEFILE=	Makefile.gcc
 MAKE_ENV=	MANPATH="${PREFIX}/share/man/man1" \
