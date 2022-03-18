@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2
 CATEGORIES=	dns net
 
+PATCH_SITES=	https://github.com/DNS-OARC/dnsjit/commit/
+PATCHFILES=	4346a4859b1ff21f74cc4ae7c79ba6af07a5774f.patch:-p1
+
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Engine for capturing, parsing and replaying DNS
 
