@@ -11,7 +11,9 @@ COMMENT=	Subclass of Object includes Comparable module for handling dates
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
+
+CPE_VENDOR=	ruby-lang
 
 .include <bsd.port.mk>
