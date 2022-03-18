@@ -28,7 +28,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-PC-213.6777.50
+%%DATADIR%%/lib/build-marker-PC-213.7172.26
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -168,8 +168,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/platform-images/lib/platform-images.jar
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-8628e36dc4f1-eb8d386cac10.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-8628e36dc4f1-eb8d386cac10.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-eb61be770185-eb8d386cac10.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-eb61be770185-eb8d386cac10.txt
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/local/local.js
@@ -595,7 +595,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/py2only/docutils/writers/s5_html/themes/small-white/framing.css
 %%DATADIR%%/plugins/python-ce/helpers/py2only/docutils/writers/s5_html/themes/small-white/pretty.css
 %%DATADIR%%/plugins/python-ce/helpers/py2only/docutils/writers/xetex/__init__.py
-%%DATADIR%%/plugins/python-ce/helpers/py2only/roman.py
 %%DATADIR%%/plugins/python-ce/helpers/py3only/docutils/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/py3only/docutils/_compat.py
 %%DATADIR%%/plugins/python-ce/helpers/py3only/docutils/core.py
