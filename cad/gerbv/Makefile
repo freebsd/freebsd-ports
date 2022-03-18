@@ -15,10 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake gnome \
+USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gmake gnome \
 		libtool localbase pathfix pkgconfig
 USE_GNOME=	cairo gtk20
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	gerbv_project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_aux_dir="."
