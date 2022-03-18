@@ -8,8 +8,7 @@ COMMENT=	Validation layers for the Vulkan graphics API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	glslang>0:graphics/glslang \
-		spirv-tools>0:graphics/spirv-tools \
+BUILD_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
 		vulkan-headers>0:graphics/vulkan-headers
 
 USES=		alias cmake compiler:c++11-lib pkgconfig python:3.4+,build
@@ -21,8 +20,7 @@ GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-137-gb42ba6d:headers
 		martinus:robin-hood-hashing:3.11.3:robin_hood/external/robin-hood-hashing
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ON=	BUILD_LAYER_SUPPORT_FILES
-CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR:PATH="${LOCALBASE}" \
-		-DROBIN_HOOD_HASHING_INSTALL_DIR:PATH="${WRKSRC_robin_hood}" \
+CMAKE_ARGS=	-DROBIN_HOOD_HASHING_INSTALL_DIR:PATH="${WRKSRC_robin_hood}" \
 		-DSPIRV_HEADERS_INSTALL_DIR:PATH="${WRKSRC_headers}"
 CFLAGS+=	${WITH_DEBUG:U-DNDEBUG}
 
