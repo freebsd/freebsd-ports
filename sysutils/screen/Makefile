@@ -2,6 +2,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.9.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -17,7 +18,7 @@ COMMENT=	Multi-screen window manager
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SHOWENC SYSTEM_SCREENRC
+OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC
 OPTIONS_DEFAULT=	INFO NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC \
 			NCURSES_DEFAULT
 OPTIONS_SINGLE=		IPC NCURSES
@@ -25,7 +26,6 @@ OPTIONS_SINGLE_IPC=	SOCKETS NAMED_PIPES
 OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
 NETHACK_DESC=		Enable nethack-style messages
 XTERM_256_DESC=		Enable support for 256 colour xterm
-SHOWENC_DESC=		Show encoding on the status line
 SOCKETS_DESC=		Use new (4.2.1+) sockets for IPC (default)
 NAMED_PIPES_DESC=	Use legacy (4.0.3) named pipes for IPC (override)
 SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
@@ -71,11 +71,6 @@ CFLAGS+=	-DCOLORS256
 
 .if ! ${PORT_OPTIONS:MNETHACK}
 CFLAGS+=	-DNONETHACK
-.endif
-
-# show encoding on the status line via option "showenc"
-.if ${PORT_OPTIONS:MSHOWENC}
-CFLAGS+=	-DENCODINGS
 .endif
 
 post-patch:
