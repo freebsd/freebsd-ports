@@ -16,10 +16,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssselect2>=0.2.0:textproc/py-cssselect2@${P
 		${PYTHON_PKGNAMEPREFIX}tinycss2>=0.6.0:textproc/py-tinycss2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		cpe python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	deeplook
 USE_PYTHON=	autoplist concurrent distutils
+CPE_VENDOR=	svglib_project
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
