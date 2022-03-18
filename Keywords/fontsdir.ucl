@@ -1,25 +1,19 @@
 # MAINTAINER: x11@FreeBSD.org
 
 actions: [dir]
-post-install: <<EOD
-  case "%@" in
-  /*) fontsdir="%@" ;;
-  *) fontsdir="%D/%@" ;;
-  esac
-  mkfontscale ${fontsdir} 2>/dev/null || true
-  mkfontdir ${fontsdir} 2>/dev/null || true
+post-install-lua: <<EOD
+  fontdir = pkg.prefixed_path("%@")
+  pkg.exec({"mkfontscale", fontdir})
+  pkg.exec({"mkfontdir", fontdir})
 EOD
-post-deinstall: <<EOD
-  case "%@" in
-  /*) fontsdir="%@" ;;
-  *) fontsdir="%D/%@" ;;
-  esac
-  mkfontscale ${fontsdir} 2>/dev/null || true
-  if [ -e ${fontsdir}/fonts.scale -a "`stat -f '%%z' ${fontsdir}/fonts.scale 2>/dev/null`" = '2' ]; then
-    rm ${fontsdir}/fonts.scale
-  fi
-  mkfontdir ${fontsdir} 2>/dev/null || true
-  if [ -e ${fontsdir}/fonts.dir -a "`stat -f '%%z' ${fontsdir}/fonts.dir 2>/dev/null`" = '2' ]; then
-    rm ${fontsdir}/fonts.dir
-  fi
+post-deinstall-lua: <<EOD
+  fontdir = pkg.prefixed_path("%@")
+  pkg.exec({"mkfontscale", fontdir})
+  pkg.exec({"mkfontdir", fontdir})
+  for _, v in pairs {"/fonts.scale", "/fonts.dir" } do
+    local st = pkg.stat(fontdir .. v)
+    if st and st.type == "reg" and st.size == 2 then
+      os.remove(fontdir .. v)
+    end
+  end
 EOD

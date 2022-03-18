@@ -41,23 +41,23 @@
 _INCLUDE_USES_FONTS_MK=	yes
 
 .if empty(fonts_ARGS)
-fonts_ARGS=	fcfontsdir
+fonts_ARGS=	fontsdir
 .endif
 
-.if !empty(fonts_ARGS:Nfc:Nfontsdir:Nfcfontsdir:Nnone)
+.if !empty(fonts_ARGS:Nfc:Nfontsdir:Nnone)
 IGNORE=	USES=fonts - invalid ARGS (${fonts_ARGS})
 .endif
 
-.if !empty(fonts_ARGS:Mfc) || !empty(fonts_ARGS:Mfcfontsdir)
+.if !empty(fonts_ARGS:Mfc) || !empty(fonts_ARGS:Mfontsdir)
 RUN_DEPENDS+=	fc-cache:x11-fonts/fontconfig
 .endif
-.if !empty(fonts_ARGS:Mfontsdir) || !empty(fonts_ARGS:Mfcfontsdir)
+.if !empty(fonts_ARGS:Mfontsdir)
 RUN_DEPENDS+=	mkfontscale:x11-fonts/mkfontscale
 .endif
 
 FONTNAME?=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/share/fonts/${FONTNAME}
-.if !empty(fonts_ARGS:Nnone)
+.if !empty(fonts_ARGS:Mfontsdir)
 PLIST_FILES+=	"@${fonts_ARGS} ${FONTSDIR}"
 .endif
 .if defined(FONTPATHSPEC) && !empty(FONTPATHSPEC)

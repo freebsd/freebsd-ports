@@ -1,0 +1,9 @@
+path: [ "%%PREFIX%%/share/fonts", %%PREFIX%%/etc/fonts/conf.d ]
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Running fc-cache to build fontconfig cache...")
+pkg.exec({"%%PREFIX%%/bin/fc-cache", "-s" })
+EOS
+}

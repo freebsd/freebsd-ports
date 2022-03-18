@@ -1,4 +1,4 @@
-@fcfontsdir share/fonts/OTF
+@fontsdir share/fonts/OTF
 share/fonts/OTF/GohaTibebZemen.otf
 share/fonts/TTF/GohaTibebZemen.ttf
 @comment share/fonts/OTF/fonts.dir
