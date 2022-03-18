@@ -1,14 +1,11 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 
 PORTNAME=	gobject-introspection
-DISTVERSION=	1.70.0
+DISTVERSION=	1.72.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	effb1e09dee2.patch:-p1 # https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/305
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
