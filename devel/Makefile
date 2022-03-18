@@ -5116,6 +5116,8 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-pytest4
+    SUBDIR += py-pytest4-asyncio
+    SUBDIR += py-pytest4-cov
     SUBDIR += py-python-Levenshtein
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla

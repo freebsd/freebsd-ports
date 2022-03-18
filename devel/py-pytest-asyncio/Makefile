@@ -9,6 +9,8 @@ COMMENT=	Py.test plugin providing fixtures and markers for asyncio
 
 LICENSE=	APACHE20
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest4-asyncio
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0.6:devel/py-pytest@${PY_FLAVOR}
 
 NO_ARCH=	yes
