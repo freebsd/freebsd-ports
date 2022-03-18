@@ -13,6 +13,8 @@ LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	dual
 
 BROKEN=		does not build with clang13 or newer
+DEPRECATED=		Abandoned and not working with modern clang
+EXPIRATION_DATE=	2022-06-25
 
 USES=		cmake compiler:c++11-lib gl python:run qt:5 shebangfix
 USE_GL=		gl
