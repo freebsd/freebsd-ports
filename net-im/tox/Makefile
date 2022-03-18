@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_PROJECT=	c-toxcore
 
-CPE_VENDOR=	digitalocean
+CPE_VENDOR=	toktok
 
 USES=		cmake compiler:c11 cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
