@@ -10,6 +10,8 @@ COMMENT=	Database Change Management
 
 LICENSE=	APACHE20
 
+USES=		cpe
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
