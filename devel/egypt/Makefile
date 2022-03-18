@@ -1,8 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	egypt
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.gson.org/egypt/download/
 
