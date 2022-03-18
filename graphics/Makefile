@@ -528,6 +528,7 @@
     SUBDIR += linux-c7-tiff
     SUBDIR += linux-c7-wayland
     SUBDIR += lua-gd
+    SUBDIR += lux
     SUBDIR += luminance-qt5
     SUBDIR += lximage-qt
     SUBDIR += magnum
