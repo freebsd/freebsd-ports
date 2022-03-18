@@ -75,7 +75,7 @@ CFLAGS+=	-DNONETHACK
 
 # show encoding on the status line via option "showenc"
 .if ${PORT_OPTIONS:MSHOWENC}
-EXTRA_PATCHES+=	${FILESDIR}/opt-showencoding
+CFLAGS+=	-DENCODINGS
 .endif
 
 post-patch:
