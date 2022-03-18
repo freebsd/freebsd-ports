@@ -17,8 +17,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	proj-data>=0:graphics/proj-data
 
-USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig sqlite
+USES=		compiler:c++11-lang cpe gmake libtool pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	proj_project
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
