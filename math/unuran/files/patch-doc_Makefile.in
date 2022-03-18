@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	2011-04-19 10:50:45 UTC
+--- doc/Makefile.in.orig	2022-03-16 13:45:30 UTC
 +++ doc/Makefile.in
-@@ -50,7 +50,7 @@ CONFIG_CLEAN_FILES =
- CONFIG_CLEAN_VPATH_FILES =
- SOURCES =
- DIST_SOURCES =
+@@ -143,7 +143,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
 -INFO_DEPS = $(srcdir)/unuran.info $(srcdir)/unuran_win32.info
 +INFO_DEPS = $(srcdir)/unuran.info
  am__TEXINFO_TEX_DIR = $(srcdir)/./src

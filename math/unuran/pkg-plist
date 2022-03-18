@@ -5,5 +5,5 @@ include/unuran_urng_prng.h
 include/unuran_urng_rngstreams.h
 lib/libunuran.a
 lib/libunuran.so
-lib/libunuran.so.15
-lib/libunuran.so.15.0.0
+lib/libunuran.so.16
+lib/libunuran.so.16.0.0
