@@ -80,7 +80,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-CL-213.6777.58
+%%DATADIR%%/lib/build-marker-CL-213.7172.20
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -823,7 +823,6 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python-ce/helpers/py2only/docutils/writers/s5_html/themes/small-white/framing.css
 %%DATADIR%%/plugins/python-ce/helpers/py2only/docutils/writers/s5_html/themes/small-white/pretty.css
 %%DATADIR%%/plugins/python-ce/helpers/py2only/docutils/writers/xetex/__init__.py
-%%DATADIR%%/plugins/python-ce/helpers/py2only/roman.py
 %%DATADIR%%/plugins/python-ce/helpers/py3only/docutils/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/py3only/docutils/_compat.py
 %%DATADIR%%/plugins/python-ce/helpers/py3only/docutils/core.py
