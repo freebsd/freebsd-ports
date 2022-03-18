@@ -18,9 +18,11 @@ COMMENT=	Open source h.265 video codec
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lib cpe libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	struktur
 
 CONFIGURE_ARGS=	--disable-static --disable-sherlock265
 
