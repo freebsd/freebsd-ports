@@ -10,9 +10,11 @@ COMMENT=	Grep through binaries
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	m4b
+
+CPE_VENDOR=	bingrep_project
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
