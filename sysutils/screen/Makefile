@@ -2,7 +2,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -33,13 +33,13 @@ NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
 
-NCURSES_DEFAULT_USES=	autoreconf:build ncurses
+NCURSES_DEFAULT_USES=	ncurses
 NCURSES_BASE_USES=	ncurses:base
 NCURSES_PORT_USES=	ncurses:port
 
 OPTIONS_SUB=
 
-USES=		gmake cpe
+USES=		autoreconf:build gmake cpe
 MAKE_ARGS+=	WITH_MAN=1
 
 CPE_VENDOR=	gnu
