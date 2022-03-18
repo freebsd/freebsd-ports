@@ -9,6 +9,7 @@ MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
 RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		cmake localbase gnome
