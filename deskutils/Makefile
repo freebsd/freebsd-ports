@@ -183,6 +183,7 @@
     SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
+    SUBDIR += orage
     SUBDIR += osmo
     SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
