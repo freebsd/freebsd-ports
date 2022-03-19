@@ -45,6 +45,7 @@
     SUBDIR += fastdnaml
     SUBDIR += fastool
     SUBDIR += fastp
+    SUBDIR += fastq-trim
     SUBDIR += fastqc
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
