@@ -2,6 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.32
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod
