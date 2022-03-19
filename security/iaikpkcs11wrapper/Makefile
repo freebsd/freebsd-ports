@@ -27,7 +27,7 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH:M*64*}
 WRKSRC=		${WRKDIR}/src/native/unix/linux-x86_64
 .else
 WRKSRC=		${WRKDIR}/src/native/unix/linux-x86
