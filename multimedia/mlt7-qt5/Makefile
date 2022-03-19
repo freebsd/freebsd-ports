@@ -1,7 +1,7 @@
 MASTERDIR=	${.CURDIR:H}/mlt7
 SLAVEPORT=	qt5
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Qt plugin for the MLT multimedia framework

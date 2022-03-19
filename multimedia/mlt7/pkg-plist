@@ -90,7 +90,7 @@ lib/mlt-7/libmltcore.so
 %%VIDSTAB%%lib/mlt-7/libmltvidstab.so
 %%VORBIS%%lib/mlt-7/libmltvorbis.so
 %%XINE%%lib/mlt-7/libmltxine.so
-%%XML%%lib/mlt-7/libmltxml.so
+lib/mlt-7/libmltxml.so
 libdata/pkgconfig/mlt++-7.pc
 libdata/pkgconfig/mlt-framework-7.pc
 man/man1/melt-7.1.gz
@@ -302,9 +302,11 @@ man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/PPM
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/TGA
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/TIFF
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/webp
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/vp9
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/webm
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/webm-pass1
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/webp
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/x264-medium
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/x264-medium-baseline
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/x264-medium-main
@@ -407,8 +409,9 @@ man/man1/melt-7.1.gz
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_deshake.yml
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_vidstab.yml
 %%VORBIS%%%%DATADIR%%/vorbis/producer_vorbis.yml
-%%XML%%%%DATADIR%%/xml/consumer_xml.yml
-%%XML%%%%DATADIR%%/xml/mlt-xml.dtd
-%%XML%%%%DATADIR%%/xml/producer_xml-nogl.yml
-%%XML%%%%DATADIR%%/xml/producer_xml-string.yml
-%%XML%%%%DATADIR%%/xml/producer_xml.yml
+%%DATADIR%%/xml/consumer_xml.yml
+%%DATADIR%%/xml/filter_gpstext.yml
+%%DATADIR%%/xml/mlt-xml.dtd
+%%DATADIR%%/xml/producer_xml-nogl.yml
+%%DATADIR%%/xml/producer_xml-string.yml
+%%DATADIR%%/xml/producer_xml.yml
