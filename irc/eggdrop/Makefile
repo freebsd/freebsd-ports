@@ -1,7 +1,7 @@
 # Created by: Ulrich Spoerlein <q@uni.de>
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	irc
 
