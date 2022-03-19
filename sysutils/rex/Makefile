@@ -1,7 +1,7 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
 
 PORTNAME=	rex
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	sysutils tcl
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/
 
