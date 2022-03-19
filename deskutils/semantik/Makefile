@@ -34,6 +34,21 @@ CONFIGURE_ENV=	PATH="${KDE_PREFIX}/bin:$$PATH" \
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
+# Help WAF a bit more by simply adding the locations to the KF5
+# headers ourselves...
+CXXFLAGS+=	-I${LOCALBASE}/include/KF5/KAuthCore \
+		-I${LOCALBASE}/include/KF5/KConfigCore \
+		-I${LOCALBASE}/include/KF5/KConfigGui \
+		-I${LOCALBASE}/include/KF5/KConfigWidgets \
+		-I${LOCALBASE}/include/KF5/KCoreAddons \
+		-I${LOCALBASE}/include/KF5/KDELibs4Support \
+		-I${LOCALBASE}/include/KF5/KI18n \
+		-I${LOCALBASE}/include/KF5/KIOCore \
+		-I${LOCALBASE}/include/KF5/KIOWidgets \
+		-I${LOCALBASE}/include/KF5/KWidgetsAddons \
+		-I${LOCALBASE}/include/KF5/KXmlGui \
+		-I${LOCALBASE}/include/KF5/SonnetUi \
+
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
