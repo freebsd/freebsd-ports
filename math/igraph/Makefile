@@ -1,13 +1,15 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	igraph
-PORTVERSION=	0.9.6
+DISTVERSION=	0.9.6
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libcxsparse.so:math/suitesparse-cxsparse \
@@ -15,8 +17,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libgmp.so:math/gmp \
 		libopenblas.so:math/openblas
 
-USES=		bison cmake cpe gnome libtool pathfix
-USE_GITHUB=	yes
+USES=		bison cmake cpe gnome pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -25,7 +26,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 BINARY_ALIAS=	git=false
 
 pre-configure:
-	@${ECHO} ${PORTVERSION} > ${WRKSRC}/IGRAPH_VERSION
+	@${ECHO} ${DISTVERSION} > ${WRKSRC}/IGRAPH_VERSION
 
 .include <bsd.port.pre.mk>
 .if (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300523) || \
