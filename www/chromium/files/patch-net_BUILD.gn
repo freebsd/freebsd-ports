@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2022-03-16 08:38:25 UTC
+--- net/BUILD.gn.orig	2022-03-19 12:56:15 UTC
 +++ net/BUILD.gn
 @@ -100,7 +100,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,7 +9,15 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1215,6 +1215,15 @@ component("net") {
+@@ -1087,6 +1087,7 @@ component("net") {
+     "//net/dns:mdns_client",
+     "//net/dns/public",
+     "//net/third_party/quiche",
++    "//sandbox/policy",
+   ]
+ 
+   allow_circular_includes_from = [
+@@ -1215,6 +1216,15 @@ component("net") {
      ]
    }
  
@@ -25,7 +33,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1347,7 +1356,7 @@ component("net") {
+@@ -1347,7 +1357,7 @@ component("net") {
      }
    }
  
@@ -34,7 +42,7 @@
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1380,7 +1389,7 @@ component("net") {
+@@ -1380,7 +1390,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -43,7 +51,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2451,7 +2460,7 @@ if (is_linux || is_chromeos || is_mac) {
+@@ -2451,7 +2461,7 @@ if (is_linux || is_chromeos || is_mac) {
    }
  }
  
@@ -52,7 +60,7 @@
    static_library("epoll_server") {
      sources = [
        "tools/epoll_server/platform/impl/epoll_bug_impl.h",
-@@ -4445,7 +4454,7 @@ test("net_unittests") {
+@@ -4445,7 +4455,7 @@ test("net_unittests") {
      ]
    }
  
@@ -61,7 +69,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -4519,6 +4528,10 @@ test("net_unittests") {
+@@ -4519,6 +4529,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -72,7 +80,7 @@
    allow_circular_includes_from = [ "//net/third_party/quiche:quiche_tests" ]
  
    if (enable_websockets) {
-@@ -4566,7 +4579,7 @@ test("net_unittests") {
+@@ -4566,7 +4580,7 @@ test("net_unittests") {
      ]
    }
  
@@ -81,7 +89,7 @@
      sources += [
        "quic/platform/impl/quic_epoll_clock_test.cc",
        "quic/platform/impl/quic_flags_test.cc",
-@@ -4712,7 +4725,7 @@ test("net_unittests") {
+@@ -4712,7 +4726,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
