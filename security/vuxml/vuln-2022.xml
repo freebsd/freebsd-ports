@@ -1,3 +1,33 @@
+  <vuln vid="e2af876f-a7c8-11ec-9a2a-002324b2fba8">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/51112">
+	  <p>regexp: stack exhaustion compiling deeply nested expressions</p>
+	  <p>On 64-bit platforms, an extremely deeply nested expression can
+	    cause regexp.Compile to cause goroutine stack exhaustion, forcing
+	    the program to exit. Note this applies to very large expressions, on
+	    the order of 2MB.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24921</cvename>
+      <url>https://github.com/golang/go/issues/51112</url>
+    </references>
+    <dates>
+      <discovery>2022-02-09</discovery>
+      <entry>2022-03-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45a72180-a640-11ec-a08b-85298243e224">
     <topic>openvpn -- Potential authentication by-pass with multiple deferred authentication plug-ins</topic>
     <affects>
