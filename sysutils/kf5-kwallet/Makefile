@@ -1,6 +1,5 @@
 PORTNAME=	kwallet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +18,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		widgetsaddons windowsystem \
 		doctools_build ecm_build
 USE_QT=		core dbus gui widgets xml \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 OPTIONS_DEFINE=		PINENTRY
 OPTIONS_DEFAULT=	PINENTRY

@@ -79,7 +79,7 @@ KDE_PLASMA_VERSION?=		5.24.3
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.91.0
+KDE_FRAMEWORKS_VERSION?=	5.92.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -301,7 +301,7 @@ kde-activities-stats_PORT=	x11/kf5-kactivities-stats
 kde-activities-stats_LIB=	libKF5ActivitiesStats.so
 
 kde-apidox_PORT=		devel/kf5-kapidox
-kde-apidox_PATH=		${KDE_PREFIX}/bin/kapidox_generate
+kde-apidox_PATH=		${KDE_PREFIX}/bin/kapidox-generate
 kde-apidox_TYPE=		run
 
 kde-archive_PORT=		archivers/kf5-karchive

@@ -1,4 +1,5 @@
 include/KF5/KContacts/KContacts/Address
+include/KF5/KContacts/KContacts/AddressFormat
 include/KF5/KContacts/KContacts/Addressee
 include/KF5/KContacts/KContacts/AddresseeList
 include/KF5/KContacts/KContacts/CalendarUrl
@@ -14,6 +15,7 @@ include/KF5/KContacts/KContacts/Impp
 include/KF5/KContacts/KContacts/Key
 include/KF5/KContacts/KContacts/LDIFConverter
 include/KF5/KContacts/KContacts/Lang
+include/KF5/KContacts/KContacts/Namespace
 include/KF5/KContacts/KContacts/NickName
 include/KF5/KContacts/KContacts/Note
 include/KF5/KContacts/KContacts/Org
@@ -31,6 +33,7 @@ include/KF5/KContacts/KContacts/VCardDrag
 include/KF5/KContacts/kcontacts/address.h
 include/KF5/KContacts/kcontacts/addressee.h
 include/KF5/KContacts/kcontacts/addresseelist.h
+include/KF5/KContacts/kcontacts/addressformat.h
 include/KF5/KContacts/kcontacts/calendarurl.h
 include/KF5/KContacts/kcontacts/clientpidmap.h
 include/KF5/KContacts/kcontacts/contactgroup.h
@@ -45,6 +48,7 @@ include/KF5/KContacts/kcontacts/kcontacts_export.h
 include/KF5/KContacts/kcontacts/key.h
 include/KF5/KContacts/kcontacts/lang.h
 include/KF5/KContacts/kcontacts/ldifconverter.h
+include/KF5/KContacts/kcontacts/namespace.h
 include/KF5/KContacts/kcontacts/nickname.h
 include/KF5/KContacts/kcontacts/note.h
 include/KF5/KContacts/kcontacts/org.h
