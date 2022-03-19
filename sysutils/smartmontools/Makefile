@@ -1,8 +1,7 @@
 # Created by: Eduard Martinescu
 
 PORTNAME=	smartmontools
-DISTVERSION=	7.2
-PORTREVISION=	3
+DISTVERSION=	7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -12,7 +11,7 @@ COMMENT=	S.M.A.R.T. disk monitoring tools
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias compiler:c++11-lib cpe shebangfix
+USES=		compiler:c++11-lib cpe shebangfix
 USE_RC_SUBR=	smartd
 
 SHEBANG_FILES=	examplescripts/Example5
