@@ -35,7 +35,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pysaml26>=6.5.1:security/py-pysaml26@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR}
 
-USES=		gettext-tools:build python:3.6+ shebangfix
+USES=		gettext-tools:build python:3.7+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 SHEBANG_FILES=	*.sh tests/*.sh *.template *.py tools/*.py seahub/*.py \

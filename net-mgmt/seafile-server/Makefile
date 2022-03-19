@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 CONFLICTS=	seafile
 
 USES=		autoreconf compiler:c11 gnome iconv libarchive libtool localbase mysql \
-		pathfix pgsql pkgconfig python:3.6+ shebangfix sqlite ssl
+		pathfix pgsql pkgconfig python:3.7+ shebangfix sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 USE_GNOME=	glib20
