@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+To start openresty, please visit:
+http://openresty.org/en/getting-started.html
+
+EOM
+}
+]
