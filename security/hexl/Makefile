@@ -1,6 +1,6 @@
 PORTNAME=	hexl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ BROKEN_i386=	error: __int128 is not supported on this target
 
 LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
 
-USES=		cmake:testing compiler:c++11-lang localbase:ldflags
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
