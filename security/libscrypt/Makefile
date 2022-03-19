@@ -1,7 +1,7 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
 
 PORTNAME=	libscrypt
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -17,6 +17,8 @@ GH_ACCOUNT=	technion
 
 MAKE_ARGS=	CC="${CC}" LIBDIR="${PREFIX}"/lib
 TEST_TARGET=	check
+
+CFLAGS+=	-fPIC
 
 PLIST_FILES=	include/libscrypt.h \
 		lib/libscrypt.so \
