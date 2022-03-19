@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	tasks
-PORTVERSION=	0.14.2
+PORTVERSION=	0.14.3
 CATEGORIES=	www
 DISTVERSIONPREFIX=	v
 MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
