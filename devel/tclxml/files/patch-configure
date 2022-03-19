@@ -1,0 +1,20 @@
+--- configure.orig	2022-03-16 21:59:50 UTC
++++ configure
+@@ -8580,14 +8580,14 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6; }
+ 	FreeBSD-*|DragonFly-*)
+ 	    # FreeBSD 3.* and greater have ELF.
+ 	    SHLIB_CFLAGS="-fPIC"
+-	    SHLIB_LD="ld -Bshareable -x"
++	    SHLIB_LD="${CC} -shared -Wl,-x"
+ 	    SHLIB_LD_LIBS='${LIBS}'
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""
+-	    LDFLAGS="$LDFLAGS -export-dynamic"
++	    LDFLAGS="$LDFLAGS -Wl,-export-dynamic"
+ 	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+-	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
++	    LD_SEARCH_FLAGS='-Wl,-rpath ${LIB_RUNTIME_DIR}'
+ 	    if test "${TCL_THREADS}" = "1" ; then
+ 		# The -pthread needs to go in the CFLAGS, not LIBS
+ 		LIBS=`echo $LIBS | sed s/-pthread//`
