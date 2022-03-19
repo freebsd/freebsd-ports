@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	1password-client-devel
-DISTVERSION=	2.0.0-beta.14
+DISTVERSION=	2.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://cache.agilebits.com/dist/1P/op2/pkg/v${DISTVERSION}/ \
 		LOCAL/ler/op
