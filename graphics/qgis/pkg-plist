@@ -1585,6 +1585,7 @@ include/qgis/qgsvectortilelabeling.h
 include/qgis/qgsvectortilelayer.h
 include/qgis/qgsvectortilelayerrenderer.h
 include/qgis/qgsvectortileloader.h
+include/qgis/qgsvectortilematrixset.h
 include/qgis/qgsvectortilemvtdecoder.h
 include/qgis/qgsvectortilemvtencoder.h
 include/qgis/qgsvectortilemvtutils.h
