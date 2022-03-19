@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/csimdjson%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/simdjson/__init__.py
+%%PYTHON_SITELIBDIR%%/simdjson/__init__.pyi
+%%PYTHON_SITELIBDIR%%/simdjson/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/simdjson/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/simdjson/py.typed
