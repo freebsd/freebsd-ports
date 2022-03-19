@@ -12,6 +12,7 @@ PATCHFILES+=	993cd893f520.patch:-p1 # https://github.com/AOMediaCodec/libavif/pu
 PATCHFILES+=	29424a42c7e2.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/807
 PATCHFILES+=	de08d6436ea3.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/807
 PATCHFILES+=	480fb4bf3ed6.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/807
+PATCHFILES+=	c18228ff746a.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/886
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for encoding and decoding .avif files
