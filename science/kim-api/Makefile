@@ -1,13 +1,13 @@
 PORTNAME=	kim-api
-DISTVERSION=	2.2.1
+DISTVERSION=	2.3.0
 CATEGORIES=	science
 MASTER_SITES=	https://s3.openkim.org/kim-api/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for reliable, reproducible, portable molecular simulations
 
-LICENSE=	CDDL
-LICENSE_FILE=	${WRKSRC}/LICENSE.CDDL
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 BUILD_DEPENDS=	xxd:editors/vim
 
