@@ -1,6 +1,6 @@
 PORTNAME=	rabs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.24.2
+DISTVERSION=	2.24.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,5 +25,8 @@ MAKE_ARGS=	PREFIX=${PREFIX}
 BINARY_ALIAS=	make=${GMAKE}
 
 PLIST_FILES=	bin/rabs
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rabs
 
 .include <bsd.port.mk>
