@@ -1,6 +1,7 @@
 PORTNAME=	cawbird
 PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	nc@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		librest-0.7.so:devel/librest \
 		libsoup-gnome-2.4.so:devel/libsoup
 
-USES=		gnome meson pkgconfig sqlite:3
+USES=		gettext gnome meson pkgconfig sqlite:3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	IBBoard
