@@ -1,5 +1,5 @@
 PORTNAME=	xtensor
-DISTVERSION=	0.24.0
+DISTVERSION=	0.24.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		xtl-quant-stack>0:devel/xtl-quant-stack
 TEST_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		xtl-quant-stack>0:devel/xtl-quant-stack \
+		doctest>0:devel/doctest \
 		googletest>0:devel/googletest
 
 USES=		cmake

@@ -6,6 +6,8 @@ include/xtensor/xarray.hpp
 include/xtensor/xassign.hpp
 include/xtensor/xaxis_iterator.hpp
 include/xtensor/xaxis_slice_iterator.hpp
+include/xtensor/xblockwise_reducer.hpp
+include/xtensor/xblockwise_reducer_functors.hpp
 include/xtensor/xbroadcast.hpp
 include/xtensor/xbuffer_adaptor.hpp
 include/xtensor/xbuilder.hpp
@@ -37,6 +39,7 @@ include/xtensor/xmanipulation.hpp
 include/xtensor/xmasked_view.hpp
 include/xtensor/xmath.hpp
 include/xtensor/xmime.hpp
+include/xtensor/xmultiindex_iterator.hpp
 include/xtensor/xnoalias.hpp
 include/xtensor/xnorm.hpp
 include/xtensor/xnpy.hpp
