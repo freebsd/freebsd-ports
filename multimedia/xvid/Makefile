@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 # PR230208 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
 
+CFLAGS_powerpc=	-Dregister=
 CONFIGURE_ENV+=	ac_cv_prog_ac_yasm=no
 
 PLIST_FILES=	include/xvid.h \
