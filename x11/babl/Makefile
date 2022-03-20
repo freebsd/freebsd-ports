@@ -5,6 +5,9 @@ PORTVERSION=	0.1.88
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	9a74120fbdd2.patch:-p1 # https://gitlab.gnome.org/GNOME/babl/-/merge_requests/45
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dynamic pixel format conversion library
 
