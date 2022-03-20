@@ -3,7 +3,7 @@
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -16,7 +16,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		liburiparser.so:net/uriparser
+		liburiparser.so:net/uriparser \
+		libunwind.so:devel/libunwind
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
 USES=		compiler:c++11-lang gettext gmake pkgconfig python shebangfix ssl
