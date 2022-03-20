@@ -9,6 +9,8 @@ COMMENT=	Scientific program aimed at the ab initio virtual experimentation
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	undefined reference to `__aarch64_cas8_acq_rel' #'
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libblas.so:math/blas \
