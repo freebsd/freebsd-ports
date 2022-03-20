@@ -8,6 +8,8 @@ COMMENT=	FLAPW code for atomic computations in quantum chemistry and physics
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	Fatal Error: Cannot find an intrinsic module named 'ieee_arithmetic' at (1)
+
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 
