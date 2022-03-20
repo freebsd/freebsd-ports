@@ -1,6 +1,5 @@
 PORTNAME=	bolt-lmm
-DISTVERSION=	2.3.4
-PORTREVISION=	4
+DISTVERSION=	2.3.6
 CATEGORIES=	biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
@@ -15,9 +14,7 @@ LIB_DEPENDS=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
 		libboost_program_options.so:devel/boost-libs
 
-# gcc-c++11-lib needed to link with boost. Also requires compiler:openmp, but
-# both merely add a GCC requirement.
-USES=		compiler:gcc-c++11-lib gmake
+USES=		gmake
 
 BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/src
 INSTALL_WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -32,7 +29,7 @@ MAKE_ARGS=		BOOST_INSTALL_DIR=${LOCALBASE} \
 			GLIBC_STATIC_DIR=/usr/lib \
 			SSEFLAGS="" \
 			MEMCPY="" \
-			LLAPACK="-lopenblas -lgfortran"
+			LLAPACK="-lopenblas"
 
 CONFLICTS_INSTALL=	rubygem-bolt # bin/bolt
 
