@@ -1,12 +1,12 @@
 # Created by: JonathanChen <jonc@chen.org.nz>
 
 PORTNAME=	maven
-DISTVERSION=	3.8.4
+DISTVERSION=	3.8.5
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Java project management tool
 
 LICENSE=	APACHE20
@@ -14,16 +14,16 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
 USES=		cpe
+CPE_VENDOR=	apache
+CPE_PRODUCT=	maven
 USE_JAVA=	yes
 
-CPE_PRODUCT=	maven
-CPE_VENDOR=	apache
-NO_BUILD=	yes
-NO_ARCH=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	mvn.sh
 SUB_LIST=	CLASSWORLDS_JAR=plexus-classworlds-2.6.0.jar
+WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 INSTANCE_FILE=	${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/

@@ -30,7 +30,6 @@
 %%DATADIR%%/lib/javax.inject.license
 %%DATADIR%%/lib/jcl-over-slf4j-1.7.32.jar
 %%DATADIR%%/lib/jcl-over-slf4j.license
-%%DATADIR%%/lib/jsoup.license
 %%DATADIR%%/lib/maven-artifact-%%PORTVERSION%%.jar
 %%DATADIR%%/lib/maven-builder-support-%%PORTVERSION%%.jar
 %%DATADIR%%/lib/maven-compat-%%PORTVERSION%%.jar
@@ -67,7 +66,7 @@
 %%DATADIR%%/lib/plexus-utils.license
 %%DATADIR%%/lib/slf4j-api-1.7.32.jar
 %%DATADIR%%/lib/slf4j-api.license
-%%DATADIR%%/lib/wagon-file-3.4.3.jar
-%%DATADIR%%/lib/wagon-http-3.4.3-shaded.jar
-%%DATADIR%%/lib/wagon-provider-api-3.4.3.jar
+%%DATADIR%%/lib/wagon-file-3.5.1.jar
+%%DATADIR%%/lib/wagon-http-3.5.1-shaded.jar
+%%DATADIR%%/lib/wagon-provider-api-3.5.1.jar
 %%DATADIR%%/maven-%%PORTVERSION%%
