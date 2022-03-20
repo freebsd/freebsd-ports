@@ -1,7 +1,6 @@
 PORTNAME=	glewlwyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
-PORTREVISION=	1
+DISTVERSION=	2.6.2
 CATEGORIES=	www
 MASTER_SITES=	GH
 
@@ -10,9 +9,6 @@ COMMENT=	Single Sign On server, multiple factor authentication
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Doesn't build, ld: error: duplicate symbol
-EXPIRATION_DATE=2022-03-31
 
 USES=		cmake pgsql
 
