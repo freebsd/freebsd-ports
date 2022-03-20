@@ -16964,3 +16964,4 @@ devel/ORBit2||2022-02-14|Gnome2 library unused anymore
 games/pushover|games/domino-chain|2022-03-17|Chase upstream rename
 graphics/darktable38|graphics/darktable|2022-03-19|Darktable was upgraded to 3.8, separate port no longer needed
 security/1password-client-devel|security/1password-client2|2022-03-19|cli version 2 is now released.
+x11-toolkits/pangoxsl||2022-03-20|Has expired: Abandonware and not used by any port
