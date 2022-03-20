@@ -9,6 +9,8 @@ COMMENT=	Sympathetic string resonator LV2 plugin
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fatal error: 'linux/auxvec.h' file not found
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	libjack.so:audio/jack
