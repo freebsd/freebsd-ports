@@ -10,6 +10,8 @@ COMMENT=	Surge Synthesizer LV2 and VST plug-in
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	error: use of undeclared identifier '__builtin_ia32_packssdw'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/nanosvg.h:graphics/nanosvg \
 		${LOCALBASE}/include/simde/simde-common.h:devel/simde \
