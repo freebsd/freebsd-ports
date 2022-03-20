@@ -12,7 +12,7 @@ USES=		kmod uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlh-restart
-GH_TAGNAME=	2.0l
+GH_TAGNAME=	2.0m
 
 OPTIONS_DEFINE=	MMCCAM
 
