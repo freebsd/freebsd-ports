@@ -12,6 +12,12 @@ bin/astmkprof
 bin/astnoisechisel
 bin/astquery
 bin/astscript-ds9-region
+bin/astscript-fits-view
+bin/astscript-psf-scale-factor
+bin/astscript-psf-select-stars
+bin/astscript-psf-stamp
+bin/astscript-psf-subtract
+bin/astscript-psf-unite
 bin/astscript-radial-profile
 bin/astscript-sort-by-night
 bin/astsegment
@@ -76,8 +82,8 @@ include/gnuastro/units.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.14
-lib/libgnuastro.so.14.0.0
+lib/libgnuastro.so.15
+lib/libgnuastro.so.15.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz
@@ -93,6 +99,12 @@ man/man1/astmkprof.1.gz
 man/man1/astnoisechisel.1.gz
 man/man1/astquery.1.gz
 man/man1/astscript-ds9-region.1.gz
+man/man1/astscript-fits-view.1.gz
+man/man1/astscript-psf-scale-factor.1.gz
+man/man1/astscript-psf-select-stars.1.gz
+man/man1/astscript-psf-stamp.1.gz
+man/man1/astscript-psf-subtract.1.gz
+man/man1/astscript-psf-unite.1.gz
 man/man1/astscript-radial-profile.1.gz
 man/man1/astscript-sort-by-night.1.gz
 man/man1/astsegment.1.gz
@@ -120,4 +132,5 @@ share/info/gnuastro-figures/sphereandplane.eps
 share/info/gnuastro-figures/sphereandplane.pdf
 share/info/gnuastro-figures/sphereandplane.png
 share/info/gnuastro-figures/sphereandplane.txt
+%%DATADIR%%/astscript-fits-view.desktop
 %%DATADIR%%/completion.bash
