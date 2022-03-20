@@ -10,6 +10,8 @@ COMMENT=	Atomic-charge dependent london dispersion correction computation
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	Cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+
 BUILD_DEPENDS=	mstore>0:science/mstore
 LIB_DEPENDS=	libmctc-lib.so:science/mctc-lib \
 		libmulticharge.so:science/multicharge \
