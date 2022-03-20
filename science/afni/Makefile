@@ -8,6 +8,9 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	fails to build: statement requires expression of scalar type \
+		('va_list' (aka '__builtin_va_list') invalid)
+
 CRAN_DEPENDS=	R-cran-lme4>0:math/R-cran-lme4 \
 		R-cran-snow>0:science/R-cran-snow \
 		R-cran-psych>0:math/R-cran-psych
