@@ -8,6 +8,8 @@ COMMENT=	C library for the emulation of reduced-precision floating point types
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	unknown type name '__float128'; did you mean '_Float128'?
+
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	oprecomp
