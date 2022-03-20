@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	gmp
-DISTVERSION=	0.6-4
+DISTVERSION=	0.6-5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
