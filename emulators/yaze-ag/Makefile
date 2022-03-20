@@ -1,5 +1,6 @@
 PORTNAME=	yaze-ag
 DISTVERSION=	2.51.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/
 
@@ -13,8 +14,6 @@ LIB_DEPENDS=	libreadline.so:devel/readline
 
 USES=		compiler:c11
 
-CONFLICTS_INSTALL=	cpmtools
-
 MAKEFILE=	Makefile_freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin \
 		DESTDIR="${STAGEDIR}" \
@@ -25,6 +24,8 @@ MAKE_ENV=	BINDIR=${PREFIX}/bin \
 		LIBEXECDIR=${PREFIX}/libexec \
 		MANDIR=${MAN1PREFIX}/man/man1 \
 		OPTIMIZE="${CFLAGS}"
+
+CONFLICTS_INSTALL=	cpmtools
 
 OPTIONS_DEFINE=	DOCS
 

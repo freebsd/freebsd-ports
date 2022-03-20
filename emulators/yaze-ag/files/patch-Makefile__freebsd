@@ -19,7 +19,17 @@
  
  #OPTIMIZE	= -g -m486
  #OPTIMIZE	= -g -save-temps -m486
-@@ -210,29 +210,29 @@ cdm:		cdm.o
+@@ -59,7 +59,8 @@ DOCHTMLDIR    = $(LIBDIR)/doc_html
+ #OPTIMIZE	= -O3 -march=athlon64	# 64 Bit AMD
+ #OPTIMIZE	= -O3 -march=athlon64-sse3
+ #OPTIMIZE	= -O3 -march=barcelona
+-OPTIMIZE	= -O3 -march=x86-64
++#OPTIMIZE	= -O3 -march=x86-64
++OPTIMIZE	= -O3
+ 
+ # -DUSE_GNU_READLINE for command recall/editing and filename completion
+ # -DBGii_BUG works around a problem in Backgrounder II
+@@ -210,29 +211,29 @@ install:	all
  		$(CC) $(CFLAGS) cdm.o $(LIBS) -o $@
  
  install:	all
