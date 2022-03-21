@@ -4670,13 +4670,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/amxintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm64intr.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_acle.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_bf16.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_cde.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_cmse.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_fp16.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_mve.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_neon.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/arm_sve.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/armintr.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx2intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512bf16intrin.h
@@ -4783,7 +4777,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%%%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/profile/InstrProfData.inc
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/ptwriteintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/rdseedintrin.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/riscv_vector.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/rtmintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/s390intrin.h
 %%CLANG%%%%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/allocator_interface.h
@@ -4969,11 +4962,6 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVMTableGenGlobalISel.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMTarget.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMTextAPI.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMTransformUtils.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMVEAsmParser.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMVECodeGen.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMVEDesc.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMVEDisassembler.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMVEInfo.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMVectorize.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMWindowsManifest.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMXRay.a

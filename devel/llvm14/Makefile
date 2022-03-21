@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	14.0.0rc2
+DISTVERSION=	14.0.0rc4
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -119,7 +119,8 @@ BE_NATIVE_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${NATIVE_BACKENDS:ts;}"
 BE_STANDARD_DESC=	All non-experimental backends
 BE_WASM_DESC=		WebAssembly backend (required by firefox via wasi)
 .for BE in FREEBSD NATIVE STANDARD
-BE_${BE}_PLIST_FILES=	${_BE_LIBS_${BE}:O:S/$/.a/:S|^|${LLVM_DIR}/lib/libLLVM|}
+BE_${BE}_PLIST_FILES=	${_BE_LIBS_${BE}:O:S/$/.a/:S|^|${LLVM_DIR}/lib/libLLVM|} \
+			${_BE_INCS_${BE}:S|^|${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/include/|:N${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/include/$}
 .endfor
 CLANG_DESC=	Build clang
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
@@ -387,11 +388,12 @@ FREEBSD_BACKENDS+=	WebAssembly
 NATIVE_BACKENDS+=	WebAssembly
 .endif
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
-			MSP430 NVPTX SystemZ WebAssembly XCore
+			MSP430 NVPTX SystemZ VE WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler TargetMCA Utils
+_BE_INCS_ARM=		arm_bf16.h arm_cde.h arm_fp16.h arm_mve.h arm_neon.h arm_sve.h
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler
@@ -402,6 +404,7 @@ _BE_LIBS_Mips=		AsmParser Disassembler
 _BE_LIBS_BACKWARDS_Mips=Exegesis
 _BE_LIBS_PowerPC=	AsmParser Disassembler
 _BE_LIBS_BACKWARDS_PowerPC=Exegesis
+_BE_INCS_RISCV=		riscv_vector.h
 _BE_LIBS_RISCV=		AsmParser Disassembler
 _BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
@@ -415,9 +418,10 @@ _BE_LIBS_XCore=		Disassembler
 _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
 			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/} \
 			${_BE_LIBS_BACKWARDS_${BE_ARCH}:S/$/${BE_ARCH}/}
+_BE_INCS_${BE}+=	${_BE_INCS_${BE_ARCH}}
 .endfor
 .endfor
-BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
+BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}|${_BE_INCS_STANDARD:ts|}
 
 _CRTLIBDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/share
@@ -653,7 +657,7 @@ build-plist:
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${AWK} '{ \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(${OPENMP_PATTERN}|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN})/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(${OPENMP_PATTERN}|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN}|${BE_PATTERN})/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
