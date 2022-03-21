@@ -1,7 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	99.0.4844.74
+PORTVERSION=	99.0.4844.82
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:fonts
@@ -279,7 +279,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in \
 		${STAGEDIR}${MANPREFIX}/man/man1/chrome.1
-	@${SED} -ie 's,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g' \
+	@${SED} -i "" -e 's,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g' \
 		${STAGEDIR}${MANPREFIX}/man/man1/chrome.1
 	${CP} ${WRKSRC}/chrome/app/theme/chromium/product_logo_22_mono.png ${WRKSRC}/chrome/app/theme/chromium/product_logo_22.png
 .for s in 22 24 48 64 128 256

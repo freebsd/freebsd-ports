@@ -132,9 +132,6 @@ bin/chrome
 %%DATADIR%%/v8_context_snapshot.bin
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_khronos_validation.so
-%%DEBUG%%%%DATADIR%%/libimmediate_crash_test_helper.so
-%%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
-%%DEBUG%%%%DATADIR%%/libtest_shared_library.so
 %%DRIVER%%bin/chromedriver
 man/man1/chrome.1.gz
 share/applications/chromium-browser.desktop
