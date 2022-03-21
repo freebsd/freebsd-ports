@@ -1,7 +1,7 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
 
 PORTNAME=	terminology
-DISTVERSION=	1.9.0
+DISTVERSION=	1.12.1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment

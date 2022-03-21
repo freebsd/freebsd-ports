@@ -25,6 +25,7 @@ share/locale/eo/LC_MESSAGES/terminology.mo
 share/locale/es/LC_MESSAGES/terminology.mo
 share/locale/fi/LC_MESSAGES/terminology.mo
 share/locale/fr/LC_MESSAGES/terminology.mo
+share/locale/he/LC_MESSAGES/terminology.mo
 share/locale/hi/LC_MESSAGES/terminology.mo
 share/locale/hr/LC_MESSAGES/terminology.mo
 share/locale/it/LC_MESSAGES/terminology.mo
@@ -34,16 +35,41 @@ share/locale/ms/LC_MESSAGES/terminology.mo
 share/locale/nb_NO/LC_MESSAGES/terminology.mo
 share/locale/nl/LC_MESSAGES/terminology.mo
 share/locale/pl/LC_MESSAGES/terminology.mo
+share/locale/pt/LC_MESSAGES/terminology.mo
+share/locale/pt_BR/LC_MESSAGES/terminology.mo
 share/locale/ru/LC_MESSAGES/terminology.mo
+share/locale/si/LC_MESSAGES/terminology.mo
 share/locale/sl/LC_MESSAGES/terminology.mo
 share/locale/sr/LC_MESSAGES/terminology.mo
+share/locale/sv/LC_MESSAGES/terminology.mo
 share/locale/tr/LC_MESSAGES/terminology.mo
 share/locale/uk/LC_MESSAGES/terminology.mo
 share/locale/vi/LC_MESSAGES/terminology.mo
 share/locale/zh_Hans/LC_MESSAGES/terminology.mo
 %%DATADIR%%/backgrounds/mystic.png
 %%DATADIR%%/backgrounds/texture_background.png
-%%DATADIR%%/colorschemes.eet
+%%DATADIR%%/colorschemes/Belafonte Day.eet
+%%DATADIR%%/colorschemes/Belafonte Night.eet
+%%DATADIR%%/colorschemes/Black.eet
+%%DATADIR%%/colorschemes/Cobalt2.eet
+%%DATADIR%%/colorschemes/Default.eet
+%%DATADIR%%/colorschemes/Dracula.eet
+%%DATADIR%%/colorschemes/Fahrenheit.eet
+%%DATADIR%%/colorschemes/Material.eet
+%%DATADIR%%/colorschemes/Mild.eet
+%%DATADIR%%/colorschemes/Mustang.eet
+%%DATADIR%%/colorschemes/Nord.eet
+%%DATADIR%%/colorschemes/Ocean Dark.eet
+%%DATADIR%%/colorschemes/One Dark.eet
+%%DATADIR%%/colorschemes/PaleNight.eet
+%%DATADIR%%/colorschemes/PaperColor.eet
+%%DATADIR%%/colorschemes/Smyck.eet
+%%DATADIR%%/colorschemes/Soft Era.eet
+%%DATADIR%%/colorschemes/Solarized Light.eet
+%%DATADIR%%/colorschemes/Solarized.eet
+%%DATADIR%%/colorschemes/Tango Dark.eet
+%%DATADIR%%/colorschemes/Tango Light.eet
+%%DATADIR%%/colorschemes/Tomorrow Night Burns.eet
 %%DATADIR%%/fonts/10x20.pcf
 %%DATADIR%%/fonts/4x6.pcf
 %%DATADIR%%/fonts/5x7.pcf
@@ -71,5 +97,4 @@ share/locale/zh_Hans/LC_MESSAGES/terminology.mo
 %%DATADIR%%/fonts/terminus-20.pcf
 %%DATADIR%%/images/terminology.png
 %%DATADIR%%/themes/default.edj
-%%DATADIR%%/themes/mild.edj
 %%DATADIR%%/themes/nyanology.edj
