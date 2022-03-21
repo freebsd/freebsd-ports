@@ -2,6 +2,7 @@
 
 PORTNAME=	aiorpcX
 PORTVERSION=	0.18.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,9 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generic async RPC implementation, including JSON-RPC
 
 LICENSE=	MIT
+
+DEPRECATED=	Legacy port is no longer required, please use devel/py-aiorpcX instead
+EXPIRATION_DATE=2022-04-20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=0:devel/py-websockets@${PY_FLAVOR}
