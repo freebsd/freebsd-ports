@@ -1,6 +1,6 @@
 PORTNAME=	bupstash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.3
+DISTVERSION=	0.11.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -16,102 +16,114 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewchambers
 
-CARGO_CRATES=	ahash-0.7.4 \
+CARGO_CRATES=	ahash-0.7.6 \
 		aho-corasick-0.7.18 \
-		anyhow-1.0.41 \
+		anyhow-1.0.56 \
 		arrayref-0.3.6 \
-		arrayvec-0.7.1 \
+		arrayvec-0.7.2 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
-		bitflags-1.2.1 \
-		blake3-1.0.0 \
-		cc-1.0.68 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		blake3-1.3.1 \
+		block-buffer-0.10.2 \
+		bstr-0.2.17 \
+		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		codemap-0.1.3 \
 		codemap-diagnostic-0.1.1 \
-		console-0.14.1 \
+		console-0.15.0 \
 		constant_time_eq-0.1.5 \
-		crossbeam-channel-0.5.1 \
-		crossbeam-utils-0.8.5 \
-		digest-0.9.0 \
+		crossbeam-channel-0.5.3 \
+		crossbeam-utils-0.8.8 \
+		crypto-common-0.1.3 \
+		digest-0.10.3 \
+		either-1.6.1 \
 		encode_unicode-0.3.6 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
-		filetime-0.2.14 \
-		generic-array-0.14.4 \
+		fastrand-1.7.0 \
+		filetime-0.2.15 \
+		fnv-1.0.7 \
+		generic-array-0.14.5 \
 		getopts-0.2.21 \
-		getrandom-0.2.3 \
-		glob-0.3.0 \
+		getrandom-0.2.5 \
+		globset-0.4.8 \
 		hashbrown-0.11.2 \
 		hashlink-0.7.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
 		indicatif-0.16.2 \
-		instant-0.1.9 \
-		itoa-0.4.7 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-1.0.1 \
+		jobserver-0.1.24 \
 		lazy_static-1.4.0 \
-		libc-0.2.97 \
+		libc-0.2.120 \
 		libsqlite3-sys-0.22.2 \
-		lock_api-0.4.4 \
-		lz4-1.23.2 \
-		lz4-sys-1.9.2 \
-		memchr-2.4.0 \
-		nix-0.20.0 \
+		lock_api-0.4.6 \
+		log-0.4.14 \
+		lz4-1.23.3 \
+		lz4-sys-1.9.3 \
+		memchr-2.4.1 \
+		memoffset-0.6.5 \
+		nix-0.23.1 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		number_prefix-0.4.0 \
-		once_cell-1.8.0 \
+		once_cell-1.10.0 \
 		openat-0.1.21 \
-		parking_lot-0.11.1 \
-		parking_lot_core-0.8.3 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
 		path-clean-0.1.0 \
-		pkg-config-0.3.19 \
-		ppv-lite86-0.2.10 \
-		proc-macro2-1.0.27 \
-		quote-1.0.9 \
-		rand-0.8.4 \
+		pkg-config-0.3.24 \
+		ppv-lite86-0.2.16 \
+		proc-macro2-1.0.36 \
+		quote-1.0.15 \
+		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.3.1 \
-		rangemap-0.1.11 \
-		redox_syscall-0.2.9 \
-		regex-1.5.4 \
+		rangemap-0.1.14 \
+		redox_syscall-0.2.11 \
+		regex-1.5.5 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rusqlite-0.25.3 \
-		ryu-1.0.5 \
+		rusqlite-0.25.4 \
+		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.126 \
+		serde-1.0.136 \
 		serde_bare-0.4.0 \
-		serde_derive-1.0.126 \
-		serde_json-1.0.64 \
+		serde_derive-1.0.136 \
+		serde_json-1.0.79 \
 		serial_test-0.5.1 \
 		serial_test_derive-0.5.1 \
 		shlex-0.1.1 \
-		smallvec-1.6.1 \
-		syn-1.0.73 \
-		tar-0.4.35 \
-		tempfile-3.2.0 \
-		termcolor-1.1.2 \
+		smallvec-1.8.0 \
+		subtle-2.4.1 \
+		syn-1.0.88 \
+		tar-0.4.38 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		thiserror-1.0.26 \
-		thiserror-impl-1.0.26 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
 		time-0.1.43 \
-		typenum-1.13.0 \
-		unicode-width-0.1.8 \
+		typenum-1.15.0 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		vcpkg-0.2.15 \
-		version_check-0.9.3 \
+		version_check-0.9.4 \
 		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		xattr-0.2.2
+		xattr-0.2.2 \
+		zstd-safe-4.1.4+zstd.1.5.2 \
+		zstd-sys-1.6.3+zstd.1.5.2
 
 CARGO_FEATURES=	--no-default-features
 
