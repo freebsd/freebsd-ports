@@ -1,7 +1,7 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
 
 PORTNAME=	rage
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
