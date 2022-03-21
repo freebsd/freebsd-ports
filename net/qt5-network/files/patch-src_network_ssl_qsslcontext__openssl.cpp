@@ -1,7 +1,7 @@
-Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetwork/files/qtnetwork-5.15.1-libressl.patch
---- src/network/ssl/qsslcontext_openssl.cpp.orig	2020-09-02 10:15:07 UTC
+Patch based on Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-qt/qtnetwork/files/qtnetwork-5.15.1-libressl.patch?id=c60b2b11bd17afca9bbe546db12918f789b57e25
+--- src/network/ssl/qsslcontext_openssl.cpp.orig	2021-12-07 13:51:35 UTC
 +++ src/network/ssl/qsslcontext_openssl.cpp
-@@ -397,16 +397,28 @@ init_context:
+@@ -408,16 +408,28 @@ init_context:
          maxVersion = DTLS1_VERSION;
          break;
      case QSsl::DtlsV1_0OrLater:
@@ -30,7 +30,7 @@ Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetw
          break;
      case QSsl::TlsV1_3OrLater:
  #ifdef TLS1_3_VERSION
-@@ -711,6 +723,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -722,6 +734,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -38,7 +38,7 @@ Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetw
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -757,7 +770,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -768,7 +781,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }
