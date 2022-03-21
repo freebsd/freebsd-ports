@@ -1,7 +1,7 @@
 # Created by: Gabor Pali <pgj@FreeBSD.org>
 
 PORTNAME=	cppcheck
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.3
 PORTREVISION?=	0	# devel/cppcheck-gui
 CATEGORIES=	devel
 
@@ -11,16 +11,19 @@ COMMENT?=	Static analysis of C/C++ code
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
+
 USES=		compiler:c++11-lib cmake:insource tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	danmar
+CMAKE_OFF=	USE_BUNDLED_TINYXML2
 
 .if defined(GUI_ONLY)
 COMMENT=		Static analysis of C/C++ code (GUI)
 
 RUN_DEPENDS=		cppcheck:devel/cppcheck
 
-CMAKE_ARGS=		-DBUILD_GUI=TRUE
+CMAKE_ON+=		BUILD_GUI
 USES+=			qt:5
 USE_QT=			core gui widgets printsupport help qmake_build buildtools_build linguisttools_build
 
@@ -60,9 +63,6 @@ MATCHCOMPILER_DESC=	Build-time optimizations via Python
 MATCHCOMPILER_CMAKE_BOOL=	USE_MATCHCOMPILER
 MATCHCOMPILER_USES=	python:${PYUSE:C/ /,/W}
 MATCHCOMPILER_VARS=	PYUSE+=build
-
-post-patch:
-	@${REINPLACE_CMD} -e '/find_package(Qt5/ d' ${WRKSRC}/cmake/findDependencies.cmake
 
 post-install-HTMLREPORT-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${STAGEDIR}${PREFIX}/bin
