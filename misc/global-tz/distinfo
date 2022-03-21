@@ -1,0 +1,5 @@
+TIMESTAMP = 1647840925
+SHA256 (tzdata2022agtz/tzdata2022agtz.tar.gz) = cf8fadcbab6ef4031b840306d209479ee5f203ecca4de9b4447b6388b360f9d7
+SIZE (tzdata2022agtz/tzdata2022agtz.tar.gz) = 422245
+SHA256 (tzdata2022agtz/zone1970.tab) = 525991e907e3b2a7740e44f3404c425864de39f6ed3f4aee0417c8e3f30a2902
+SIZE (tzdata2022agtz/zone1970.tab) = 17593

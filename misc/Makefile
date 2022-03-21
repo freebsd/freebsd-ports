@@ -144,6 +144,7 @@
     SUBDIR += gkrellmlaunch2
     SUBDIR += gkrellshoot2
     SUBDIR += gkx86info2
+    SUBDIR += global-tz
     SUBDIR += glow
     SUBDIR += gnome-devel-docs
     SUBDIR += gnome-getting-started-docs

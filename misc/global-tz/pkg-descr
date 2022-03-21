@@ -1,0 +1,30 @@
+The Global Time Zone Database (global-tz) is a fork of the IANA Time
+Zone Database with expanded best-effort historical data for some time
+zones whose clocks have agreed with other time zones since 1970.
+
+In an up to date default FreeBSD installation /usr/share/zoneinfo
+contains the most recent IANA tzdb release as well as compatibility
+links for time zones that existed in previous IANA tzdb releases (from
+the "backward" file in the distribution).  FreeBSD releases have never
+included the out of scope pre-1970 historical data (from the "backzone"
+file in the distribution).  This is the same approach as taken by most
+other open source projects that distribute the IANA Time Zone Database.
+
+The global-tz fork was prompted by the controversial decision by the
+maintainers of the IANA Time Zone Database to move time zones whose
+clocks have not changed since 1970 to "backzone".  While previous IANA
+tzdb releases would return historical data for these zones if available,
+recent IANA tzdb releases instead return available pre-1970 data for the
+zones whose clocks they have agreed with since 1970 (the target of the
+"backward" link).
+
+The overwhelming majority of users are unlikely to be affected by this
+decision.  FreeBSD users who rely on pre-1970 time zone history may wish
+to install this port.
+
+This port overwrites system files in /usr/share/zoneinfo.  If you build
+your systems from source, add WITHOUT_ZONEINFO="yes" to /etc/src.conf.
+If you use freebsd-update(8), add /usr/share/zoneinfo to IgnorePaths in
+/etc/freebsd-update.conf.
+
+WWW: https://github.com/JodaOrg/global-tz
