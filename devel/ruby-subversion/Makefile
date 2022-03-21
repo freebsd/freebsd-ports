@@ -24,4 +24,6 @@ CONFIGURE_ARGS+=	--without-gnome-keyring \
 ALL_TARGET=	swig-rb-lib swig-rb
 INSTALL_TARGET=	install-swig-rb
 
+CFLAGS+=	-fdeclspec
+
 .include <bsd.port.post.mk>
