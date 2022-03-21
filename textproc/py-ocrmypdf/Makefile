@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	12.7.2
+DISTVERSION=	13.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,32 +9,30 @@ COMMENT=	Adds an OCR text layer to scanned PDF files
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+install_requires =
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
-LIB_DEPENDS=	liblept.so:graphics/leptonica
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coloredlogs>=14.0:devel/py-coloredlogs@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coloredlogs>=14.0:devel/py-coloredlogs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}img2pdf>=0.3.0<0.5:graphics/py-img2pdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=20:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.5.66:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110<20211013:textproc/py-pdfminer.six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pikepdf>=2.10.0:textproc/py-pikepdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pikepdf>=4.0.0:textproc/py-pikepdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0<2.0:devel/py-pluggy@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.31.0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.2.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
-USES=		ghostscript:run python:3.6+ shebangfix
+USES=		ghostscript:run python:3.7+ shebangfix
 USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		src/ocrmypdf/hocrtransform.py \
-	       	src/ocrmypdf/leptonica.py \
 		src/ocrmypdf/pdfinfo/__init__.py
 
 NO_ARCH=	yes
