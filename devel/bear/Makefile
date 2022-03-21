@@ -1,8 +1,7 @@
 # Created by: Jov <amutu@amutu.com>
 
 PORTNAME=	bear
-DISTVERSION=	3.0.18
-PORTREVISION=	2
+DISTVERSION=	3.0.19
 CATEGORIES=	devel
 
 MAINTAINER=	jrm@FreeBSD.org
