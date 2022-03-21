@@ -12,6 +12,8 @@ COMMENT=	Simple C++ PDB reader (reads the protein description format)
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN_aarch64=	ld: error: undefined symbol: .mcount (see bug#262709)
+
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake libtool localbase:ldflags tar:tgz
