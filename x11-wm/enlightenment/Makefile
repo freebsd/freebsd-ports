@@ -1,8 +1,7 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.24.2
-PORTEPOCH=	2
+PORTVERSION=	0.25.3
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -24,13 +23,19 @@ INSTALL_TARGET=	install-strip
 
 MESON_ARGS=	-Dsystemd=false -Ddevice-udev=false \
 		-Dmount-udisks=false -Dmount-eeze=false -Dbluez5=false \
-		-Dconnman=false --sysconfdir=/usr/local/etc
+		-Delput=false -Dgesture-recognition=false
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=		NLS EXIF
+OPTIONS_DEFAULT=	NLS EXIF
 OPTIONS_SUB=		yes
+
+EXIF_DESC=		Exif metadata display support
 
 NLS_USES=		gettext-runtime
 NLS_MESON_TRUE=		nls
+
+EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
+EXIF_MESON_TRUE=	libexif
 
 # MESON normalizes ${ARCH} so we cannot use it 'AS IS' without conversion
 CURRENT_ARCH=	${ARCH}
@@ -48,7 +53,7 @@ ENLIGHTENMENT_ARCH=	${OPSYS:tl}-arm
 ENLIGHTENMENT_ARCH=	${OPSYS:tl}-${CURRENT_ARCH}
 .endif
 
-ENLIGHTENMENT_VERSION=	0.24.2
+ENLIGHTENMENT_VERSION=	0.25.3
 PLIST_SUB=              ENLIGHTENMENT_ARCH=${ENLIGHTENMENT_ARCH}-${ENLIGHTENMENT_VERSION}
 
 .include <bsd.port.mk>

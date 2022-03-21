@@ -1,0 +1,11 @@
+[
+{ type: upgrade
+  message: <<EOM
+If you are experiencing strange bugs after upgrading Enlightenment, try to reset
+the E's configuration. To do this, rename the ~/.e directory to something like
+~/.e.old and then restart Enlightenment. The configuration wizard will be
+started, and the new config would be generated. The old configuration can be
+restored (if needed) by overwriting the ~/.e directory with the old one.
+EOM
+}
+]
