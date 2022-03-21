@@ -5,8 +5,8 @@ include/fastq-trim-mutators.h
 include/fastq-trim-rvs.h
 include/fastq-trim.h
 lib/libfastq-trim.a
+man/man1/fastq-scum.1.gz
 man/man1/fastq-trim.1.gz
-man/man1/fastq-vis.1.gz
 man/man3/FASTQ_TRIM_ADAPTER1.3.gz
 man/man3/FASTQ_TRIM_ADAPTER1_AE.3.gz
 man/man3/FASTQ_TRIM_ADAPTER2.3.gz
