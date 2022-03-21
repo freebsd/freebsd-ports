@@ -1,4 +1,4 @@
-Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetwork/files/qtnetwork-5.15.1-libressl.patch
+Patch based on Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-qt/qtnetwork/files/qtnetwork-5.15.1-libressl.patch?id=c60b2b11bd17afca9bbe546db12918f789b57e25
 --- src/network/ssl/qsslsocket_openssl.cpp.orig	2020-10-27 08:02:11 UTC
 +++ src/network/ssl/qsslsocket_openssl.cpp
 @@ -238,7 +238,11 @@ static int q_ssl_psk_use_session_callback(SSL *ssl, co

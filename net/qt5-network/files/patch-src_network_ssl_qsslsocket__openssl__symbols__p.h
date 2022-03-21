@@ -1,5 +1,5 @@
-Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetwork/files/qtnetwork-5.15.1-libressl.patch
---- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig	2020-09-02 10:15:07 UTC
+Patch based on Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-qt/qtnetwork/files/qtnetwork-5.15.1-libressl.patch?id=c60b2b11bd17afca9bbe546db12918f789b57e25
+--- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig	2021-12-07 13:51:35 UTC
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
 @@ -80,6 +80,13 @@ QT_BEGIN_NAMESPACE
  
@@ -19,7 +19,7 @@ Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetw
  Q_AUTOTEST_EXPORT BIO *q_BIO_new(const BIO_METHOD *a);
  Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
  
-+#ifndef LIBRESSL_VERSION_NUMBER
++#if !defined(LIBRESSL_VERSION_NUMBER) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x03050000fL)
  int q_DSA_bits(DSA *a);
 +#else
 +#define q_DSA_bits(dsa) q_BN_num_bits((dsa)->p)
@@ -104,7 +104,7 @@ Patch from Gentoo: https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtnetw
  int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash, ASN1_OBJECT **pmd, ASN1_OCTET_STRING **pikeyHash,
                          ASN1_INTEGER **pserial, OCSP_CERTID *cid);
  
-+#ifndef LIBRESSL_VERSION_NUMBER
++#if !defined(LIBRESSL_VERSION_NUMBER) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x03050000fL)
  const STACK_OF(X509) *q_OCSP_resp_get0_certs(const OCSP_BASICRESP *bs);
 +#else
 +#define q_OCSP_resp_get0_certs(bs) ((bs)->certs)
