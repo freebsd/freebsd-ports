@@ -1,12 +1,14 @@
-PDFMiner.six is a fork of PDFMiner using six for Python 2 + 3 compatibility.
+We fathom PDF
 
-PDFMiner is a tool for extracting information from PDF documents. Unlike other
-PDF-related tools, it focuses entirely on getting and analyzing text data.
+Pdfminer.six is a community maintained fork of the original PDFMiner. It is a
+tool for extracting information from PDF documents. It focuses on getting and
+analyzing text data. Pdfminer.six extracts the text from a page directly from
+the sourcecode of the PDF. It can also be used to get the exact location, font
+or color of the text.
 
-PDFMiner allows one to obtain the exact location of text in a page, as well as
-other information such as fonts or lines. It includes a PDF converter that can
-transform PDF files into other text formats (such as HTML). It has an extensible
-PDF parser that can be used for other purposes than text analysis.
+It is built in a modular way such that each component of pdfminer.six can be
+replaced easily. You can implement your own interpreter or rendering device
+that uses the power of pdfminer.six for other purposes than text analysis.
 
 Features:
 

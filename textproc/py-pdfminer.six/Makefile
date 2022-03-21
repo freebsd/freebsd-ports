@@ -1,6 +1,7 @@
 PORTNAME=	pdfminer.six
-PORTVERSION=	20201018
+PORTVERSION=	20211012
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -10,19 +11,16 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=0:devel/py-sortedcontainers@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 
-USES=		python:3.4+
-USE_GITHUB=	yes
-GH_ACCOUNT=	pdfminer
+USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 
 CONFLICTS_INSTALL=	py??-pdfminer py??-pdfminer3k
 NO_ARCH=		yes
 
-do-test:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v --nologcapture)
+post-extract:
+	@cd ${WRKSRC} && ${MV} tools/dumppdf.py tools/dumppdf
+	@cd ${WRKSRC} && ${MV} tools/pdf2txt.py tools/pdf2txt
 
 .include <bsd.port.mk>
