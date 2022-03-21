@@ -1,12 +1,9 @@
 # Created by: Mikhail Teterin <mi@aldan.algebra.com>
 
 PORTNAME=	neon
-DISTVERSION=	0.32.1
+DISTVERSION=	0.32.2
 CATEGORIES=	www
 MASTER_SITES=	https://notroj.github.io/neon/
-
-PATCH_SITES=	https://github.com/notroj/neon/commit/
-PATCHFILES=	f678aba4815bbcb63102dcdcd31f0ebcfdf553b4.patch:-p1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	HTTP and WebDAV client library for Unix systems

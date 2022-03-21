@@ -1,15 +1,15 @@
---- Makefile.in.orig	2021-09-25 06:06:07 UTC
+--- Makefile.in.orig	2022-02-27 07:23:39 UTC
 +++ Makefile.in
-@@ -90,7 +90,7 @@ subdirs:
- # Uses Tim Waugh's excellent "xmlto" utility, see
- # http://cyberelk.net/tim/xmlto/.  (The docs target is executed at release
- # time before generating a .tar.gz)
+@@ -89,7 +89,7 @@ subdirs:
+ 
+ # Regenerating the docs requires xmlto to be installed, this target is
+ # executed when release tarballs are generated.
 -docs: docs-man docs-html
-+# docs: docs-man docs-html
++#docs: docs-man docs-html
  
  docs-man:
  	rm -rf doc/man; mkdir -p doc/man
-@@ -149,7 +149,7 @@ install-memleak:
+@@ -148,7 +148,7 @@ install-memleak:
  	@echo "ERROR: purposes only; this copy of neon must not be installed."
  	@false
  
