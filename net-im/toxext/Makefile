@@ -14,10 +14,11 @@ LIB_DEPENDS=	libopus.so:audio/opus \
 		libtoxcore.so:net-im/tox \
 		libvpx.so:multimedia/libvpx
 
-USES=		cmake localbase:ldflags pkgconfig
+USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 CFLAGS+=	-fPIC # see https://github.com/toxext/toxext/issues/7
 

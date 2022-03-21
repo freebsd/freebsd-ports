@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2022-03-21 17:46:44 UTC
++++ CMakeLists.txt
+@@ -15,7 +15,9 @@ endfunction()
+ add_subdirectory(src)
+ add_subdirectory(mock)
+ 
+-enable_testing()
+-add_subdirectory(test)
++if (BUILD_TESTS)
++	enable_testing()
++	add_subdirectory(test)
++endif()
+ 
+ install(EXPORT ToxExtConfig DESTINATION lib/cmake/ToxExt NAMESPACE ToxExt::)
