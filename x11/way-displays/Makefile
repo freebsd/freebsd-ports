@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alex-courtis
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	VERSION="${DISTVERSIONFULL}"
-MAKE_ARGS=	OFLAGS=
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" OFLAGS=
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz \
 		"@sample ${ETCDIR}/cfg.yaml.sample"
