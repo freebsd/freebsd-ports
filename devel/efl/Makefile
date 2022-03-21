@@ -1,8 +1,7 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
 
 PORTNAME=	efl
-DISTVERSION=	1.25.1
-PORTREVISION=	19
+DISTVERSION=	1.26.2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -22,7 +21,6 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libdbus-1.so:devel/dbus \
 		libcurl.so:ftp/curl \
 		libsndfile.so:audio/libsndfile
-RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
 # lib/libeio.so.1
 CONFLICTS_INSTALL=	libeio
@@ -37,7 +35,7 @@ USE_XORG=	x11 xcb xcursor xcomposite xdamage xext xfixes xi xinerama \
 		xrandr xrender xtst xscrnsaver
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dsystemd=false -Deeze=false
+MESON_ARGS=	-Dsystemd=false -Deeze=false -Dinput=false
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -48,7 +46,7 @@ OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS PHYSICS PULSEAUDIO SDL VNC EFLONE EL
 OPTIONS_GROUP=		EMOTION INPUT LOADER BINDINGS
 OPTIONS_GROUP_EMOTION=	GSTREAMER V4L
 OPTIONS_GROUP_INPUT=	IBUS SCIM XIM
-OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF AV1
+OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF AV1 HEIF
 OPTIONS_GROUP_BINDINGS=	LUA CXX
 OPTIONS_GROUP_WAYLAND=	WAYLAND
 OPTIONS_SINGLE=		CRYPTO ENGINE LUAL
@@ -72,6 +70,7 @@ XIM_DESC=		X Input Method
 SVG_DESC=		Vector graphics support
 XCF_DESC=		Gimp image format support
 AV1_DESC=		AV1 image format support
+HEIF_DESC=		HEIF image format support
 LUAL_DESC=		LUA
 LUALANG_DESC=		Use Lua
 LUAJIT_DESC=		Use Luajit
@@ -107,9 +106,6 @@ ELUA_MESON_TRUE=		elua
 EXAMPLES_MESON_TRUE=		build-examples
 
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
-# PR 247427
-DOXYGEN_PREVENTS=		OPENJPEG
-DOXYGEN_PREVENTS_MSG=		devel/doxygen installs graphics/openjpeg15 which breaks build of all ports that depend on graphics/openjpeg
 
 VNC_MESON_TRUE=			vnc-server
 VNC_LIB_DEPENDS=		libvncserver.so:net/libvncserver
@@ -140,9 +136,6 @@ IBUS_MESON_TRUE=		glib
 SCIM_LIB_DEPENDS=		libscim-1.0.so:textproc/scim
 
 OPENJPEG_LIB_DEPENDS=		libopenjp2.so:graphics/openjpeg
-# PR 247427
-OPENJPEG_PREVENTS=		DOXYGEN
-OPENJPEG_PREVENTS_MSG=		devel/doxygen installs graphics/openjpeg15 which breaks build of all ports that depend on graphics/openjpeg
 
 GNUTLS_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt \
 				libgnutls.so:security/gnutls
@@ -161,7 +154,8 @@ SVG_USES=			gnome
 SVG_USE=			GNOME=cairo GNOME=librsvg2
 
 AV1_LIB_DEPENDS=		libavif.so:graphics/libavif
-AV1_BROKEN=			AV1 option is broken actually (according to the information from upstream)
+
+HEIF_LIB_DEPENDS=		libheif.so:graphics/libheif
 
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 
@@ -295,6 +289,15 @@ EVAS-LOADERS-DISABLER-BASE:=	${EVAS-LOADERS-DISABLER}
 EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE},avif"
 .else
 EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE}avif"
+.endif
+.endif
+
+.if empty(PORT_OPTIONS:MHEIF)
+.if ${EVAS-LOADERS-DISABLER} != ${EVAS-LOADERS-DISABLER-BASE}
+EVAS-LOADERS-DISABLER-BASE:=	${EVAS-LOADERS-DISABLER}
+EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE},heif"
+.else
+EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE}heif"
 .endif
 .endif
 
