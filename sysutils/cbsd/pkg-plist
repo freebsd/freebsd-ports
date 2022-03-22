@@ -7,6 +7,7 @@ bin/cbsd
 @mode
 man/man8/cbsd.8.gz
 %%X86%%cbsd/misc/popcnttest
+cbsd/.clang-format
 cbsd/.gitignore
 cbsd/.ssh/config
 cbsd/ISSUE_TEMPLATE.md
@@ -199,6 +200,7 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-12.3.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-21-RELEASE-amd64-21.conf
+cbsd/etc/defaults/vm-freebsd-helloSystem-x64.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-linux-Alpine-extended-3.conf
 cbsd/etc/defaults/vm-linux-Alpine-standart-3.conf
@@ -213,13 +215,14 @@ cbsd/etc/defaults/vm-linux-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-9-minimal.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-15.conf
-cbsd/etc/defaults/vm-linux-Kali-2021-amd64.conf
+cbsd/etc/defaults/vm-linux-Kali-2022-amd64.conf
 cbsd/etc/defaults/vm-linux-Mint-20.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-7.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-8.conf
 cbsd/etc/defaults/vm-linux-Parrot-security-4-x64.conf
 cbsd/etc/defaults/vm-linux-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-13.conf
+cbsd/etc/defaults/vm-linux-TrueNAS-Scale-22.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
