@@ -8,6 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Piranha, the computer algebra system
 
+BROKEN=		does not build: src/real.hpp:811:11: error: expected unqualified-id
+
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.gpl3
