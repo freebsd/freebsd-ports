@@ -24,6 +24,6 @@ man/man1/emu803.1.gz
 %%DATADIR%%/hello/hello-a60.script
 %%DATADIR%%/hello/hello-h-code.script
 %%DATADIR%%/hello/hello.a60
-%%DATADIR%%/hello/hello.hc
-%%DATADIR%%/hello/tins.hc
+%%DATADIR%%/hello/hello.h-code
+%%DATADIR%%/hello/tins.h-code
 %%DATADIR%%/hello/tins.md
