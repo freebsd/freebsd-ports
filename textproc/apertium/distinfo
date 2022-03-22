@@ -1,5 +1,5 @@
-TIMESTAMP = 1581616844
-SHA256 (apertium-apertium-v3.6.1_GH0.tar.gz) = 45150740fda3d37808233776f13328279a76dd7874be69b8aeb396afd20581bf
-SIZE (apertium-apertium-v3.6.1_GH0.tar.gz) = 395894
-SHA256 (unhammer-apertium-get-2ed405e_GH0.tar.gz) = e7df732a23ea76a3ecad708d40840599ea77932cb3a1767535aab8f0563162a3
-SIZE (unhammer-apertium-get-2ed405e_GH0.tar.gz) = 18799
+TIMESTAMP = 1647946411
+SHA256 (apertium-apertium-v3.8.1_GH0.tar.gz) = b628975861e27be9577b485acb6e215fe258bacaf3569225aa546cd845a83dae
+SIZE (apertium-apertium-v3.8.1_GH0.tar.gz) = 397957
+SHA256 (apertium-apertium-get-465f053_GH0.tar.gz) = a6e02971b6c79d282e0f3964202b3a1fb719aafdad752eb73b6fde9b9a7622c8
+SIZE (apertium-apertium-get-465f053_GH0.tar.gz) = 23786
