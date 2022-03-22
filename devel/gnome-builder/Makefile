@@ -1,12 +1,8 @@
 PORTNAME=	gnome-builder
-PORTVERSION=	41.3
-PORTREVISION=	1
+PORTVERSION=	42.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	b3bfa0df53a3.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/486
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IDE for writing software for GNOME
@@ -23,6 +19,7 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libgit2.so:devel/libgit2 \
 		libgladeui-2.so:devel/glade \
 		libgspell-1.so:textproc/gspell \
+		libhandy-1.so:x11-toolkits/libhandy \
 		libjson-glib-1.0.so:devel/json-glib \
 		libjsonrpc-glib-1.0.so:devel/jsonrpc-glib \
 		libpcre.so:devel/pcre \
