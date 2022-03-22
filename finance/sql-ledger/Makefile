@@ -1,7 +1,7 @@
 # Created by: lth@FreeBSD.org
 
 PORTNAME=	sql-ledger
-PORTVERSION=	3.2.10
+PORTVERSION=	3.2.11
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/
 
@@ -15,17 +15,19 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		apache:run,2.2+ perl5 pgsql shebangfix
 
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-SUB_FILES=	pkg-message sql-ledger-httpd.conf
-SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
+SHEBANG_FILES=	*.pl bin/*/*.pl locale/*/*.pl
+
 NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_FILES=	pkg-message sql-ledger-httpd.conf
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ROOT_DIRS=	SL bin css doc images js locale spool sql templates users
 ROOT_FILES=	VERSION favicon.ico index.html menu.ini
 ROOT_SCRIPTS=	admin.pl am.pl ap.pl ar.pl bp.pl ca.pl cp.pl ct.pl gl.pl hr.pl \
-	       	ic.pl im.pl ir.pl is.pl jc.pl login.pl menu.pl oe.pl pe.pl ps.pl \
-	       	rc.pl rd.pl rp.pl setup.pl sm.pl vr.pl
+		ic.pl im.pl ir.pl is.pl jc.pl login.pl menu.pl oe.pl pe.pl \
+		ps.pl rc.pl rd.pl rp.pl setup.pl sm.pl vr.pl
 
 .include <bsd.port.pre.mk>
 do-install:
