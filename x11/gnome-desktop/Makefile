@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	41.3
+PORTVERSION=	42.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -27,7 +27,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 USES=		bison cpe gettext gnome localbase:ldflags meson \
 		pkgconfig python:3.4+ tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gtk40 intltool introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgnome_distributor="FreeBSD GNOME Project" \
