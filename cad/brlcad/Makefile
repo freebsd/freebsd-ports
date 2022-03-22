@@ -1,11 +1,9 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
 
 PORTNAME=	brlcad
-PORTVERSION=	7.30.2
-DISTVERSIONSUFFIX=	-1
-PORTREVISION=	1
+PORTVERSION=	7.32.4
 CATEGORIES=	cad
-MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
+MASTER_SITES=	https://github.com/BRL-CAD/brlcad/releases/download/rel-${PORTVERSION:S/./-/g}/
 
 MAINTAINER=	erik@brlcad.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
