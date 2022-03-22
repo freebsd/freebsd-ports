@@ -92,7 +92,6 @@
     SUBDIR += latex-resume
     SUBDIR += latex2rtf
     SUBDIR += latexdiff
-    SUBDIR += lgrind
     SUBDIR += libharu
     SUBDIR += libijs
     SUBDIR += libmspub01
