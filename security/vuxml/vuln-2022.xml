@@ -1,3 +1,29 @@
+  <vuln vid="61f416ff-aa00-11ec-b439-000d3a450398">
+    <topic>tcpslice -- heap-based use-after-free in extract_slice()</topic>
+    <affects>
+      <package>
+	<name>tcpslice</name>
+	<range><lt>1.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tcpdump Group reports:</p>
+	<blockquote cite="https://github.com/the-tcpdump-group/tcpslice/commit/030859fce9c77417de657b9bb29c0f78c2d68f4a">
+	  <p>heap-based use-after-free in extract_slice()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41043</cvename>
+      <url>https://github.com/the-tcpdump-group/tcpslice/issues/11</url>
+    </references>
+    <dates>
+      <discovery>2021-09-13</discovery>
+      <entry>2022-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2af876f-a7c8-11ec-9a2a-002324b2fba8">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
