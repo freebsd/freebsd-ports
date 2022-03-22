@@ -76,7 +76,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		pygobject3 vte3
 
 # GNOME 40 components
-_USE_GNOME_ALL+=gtk40 libadwaita
+_USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
@@ -257,6 +257,9 @@ gtksourceview3_USE_GNOME_IMPL=gtk30 libxml2
 
 gtksourceview4_LIB_DEPENDS=	libgtksourceview-4.so:x11-toolkits/gtksourceview4
 gtksourceview4_USE_GNOME_IMPL=gtk30 libxml2
+
+gtksourceview5_LIB_DEPENDS=	libgtksourceview-5.so:x11-toolkits/gtksourceview5
+gtksourceview5_USE_GNOME_IMPL=gtk40 libxml2
 
 libgsf_LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 libgsf_USE_GNOME_IMPL=	glib20 libxml2
