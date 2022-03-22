@@ -20,7 +20,7 @@ GH_ACCOUNT=	apertium
 USE_LDCONFIG=	yes
 
 APVER=		3.6
-APREV=		0
+APREV=		1
 
 GNU_CONFIGURE=	yes
 

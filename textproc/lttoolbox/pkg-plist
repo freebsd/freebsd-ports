@@ -14,6 +14,7 @@ include/lttoolbox-%%APVER%%/lttoolbox/deserialiser.h
 include/lttoolbox-%%APVER%%/lttoolbox/entry_token.h
 include/lttoolbox-%%APVER%%/lttoolbox/exception.h
 include/lttoolbox-%%APVER%%/lttoolbox/expander.h
+include/lttoolbox-%%APVER%%/lttoolbox/file_utils.h
 include/lttoolbox-%%APVER%%/lttoolbox/fst_processor.h
 include/lttoolbox-%%APVER%%/lttoolbox/input_file.h
 include/lttoolbox-%%APVER%%/lttoolbox/lt_locale.h
