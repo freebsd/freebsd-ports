@@ -4452,7 +4452,6 @@
     SUBDIR += py-debugpy
     SUBDIR += py-debugtools
     SUBDIR += py-decorator
-    SUBDIR += py-decorator4
     SUBDIR += py-decoratortools
     SUBDIR += py-deepdiff
     SUBDIR += py-deepmerge
