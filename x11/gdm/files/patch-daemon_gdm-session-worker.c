@@ -1,4 +1,4 @@
---- daemon/gdm-session-worker.c.orig	2022-01-12 14:15:56 UTC
+--- daemon/gdm-session-worker.c.orig	2022-03-21 18:12:40 UTC
 +++ daemon/gdm-session-worker.c
 @@ -28,9 +28,11 @@
  #include <string.h>
@@ -22,15 +22,6 @@
  
  #ifdef ENABLE_SYSTEMD_JOURNAL
  #include <systemd/sd-journal.h>
-@@ -94,7 +98,7 @@
- #endif
- 
- #ifndef GDM_SESSION_DEFAULT_PATH
--#define GDM_SESSION_DEFAULT_PATH "/usr/local/bin:/usr/bin:/bin"
-+#define GDM_SESSION_DEFAULT_PATH "%%LOCALBASE%%/bin:/usr/bin:/bin"
- #endif
- 
- #ifndef GDM_SESSION_ROOT_UID
 @@ -126,6 +130,10 @@ struct GdmSessionWorkerPrivate
  
          int               exit_code;

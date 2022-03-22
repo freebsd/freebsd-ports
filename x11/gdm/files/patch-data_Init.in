@@ -1,6 +1,6 @@
---- data/Init.in.orig	2022-01-12 14:15:56 UTC
+--- data/Init.in.orig	2022-03-21 18:12:40 UTC
 +++ data/Init.in
-@@ -6,6 +6,19 @@
+@@ -6,6 +6,19 @@ OLD_IFS=$IFS
  PATH="@X_PATH@:$PATH"
  OLD_IFS=$IFS
  
@@ -26,34 +26,34 @@
  
 -if [ -f /etc/X11/Xresources ]; then
 -    sysresources=/etc/X11/Xresources
-+if [ -f /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources ]; then
-+    sysresources=/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources
++if [ -f /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources ]; then
++    sysresources=/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources
  else
 -    sysresources=/usr/etc/X11/Xresources
-+    sysresources=/usr/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources
++    sysresources=/usr/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xresources
  fi
  
  # merge in defaults
-@@ -33,10 +46,10 @@ if [ -f "$sysresources" ]; then
+@@ -33,10 +46,10 @@ fi
      xrdb -nocpp -merge "$sysresources"
  fi
  
 -if [ -f /etc/X11/Xmodmap ]; then
 -    sysmodmap=/etc/X11/Xmodmap
-+if [ -f /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap ]; then
-+    sysmodmap=/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap
++if [ -f /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap ]; then
++    sysmodmap=/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap
  else
 -    sysmodmap=/usr/etc/X11/Xmodmap
-+    sysmodmap=/usr/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap
++    sysmodmap=/usr/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/Xmodmap
  fi
  
  XMODMAP=`gdmwhich xmodmap`
-@@ -93,5 +106,15 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+@@ -93,5 +106,15 @@ fi
      fi
    fi
  fi
 +
-+# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/GiveConsole, fbtab(5)
++# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/GiveConsole, fbtab(5)
 +if [ -c /dev/dri/card0 ]; then
 +    /usr/sbin/chown _gdm /dev/dri/card0
 +fi
