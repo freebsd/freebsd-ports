@@ -1,6 +1,6 @@
 PORTNAME=	dsr-pdb
 DISTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	https://graphics.stanford.edu/~drussel/
 DISTNAME=	${PORTNAME}
@@ -17,8 +17,9 @@ BROKEN_aarch64=	ld: error: undefined symbol: .mcount (see bug#262709)
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake libtool localbase:ldflags tar:tgz
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CXXFLAGS+=	-fPIC --std=c++11 # libboost_program_options.so isn't found without --std=c++11
