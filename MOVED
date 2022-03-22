@@ -16967,3 +16967,4 @@ security/1password-client-devel|security/1password-client2|2022-03-19|cli versio
 x11-toolkits/pangoxsl||2022-03-20|Has expired: Abandonware and not used by any port
 print/lgrind||2022-03-22|Has expired: Abandonware as last release was in 2001
 devel/py-decorator4||2022-03-22|Has expired: Legacy version, use devel/py-decorator instead
+devel/p5-Log-Any-Adapter-Callback|devel/p5-Log-Any|2022-03-22|Has expired: Use devel/p5-Log-Any (Log::Any::Adapter::Capture) instead
