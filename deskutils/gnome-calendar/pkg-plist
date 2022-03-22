@@ -10,6 +10,7 @@ share/locale/af/LC_MESSAGES/gnome-calendar.mo
 share/locale/an/LC_MESSAGES/gnome-calendar.mo
 share/locale/ar/LC_MESSAGES/gnome-calendar.mo
 share/locale/be/LC_MESSAGES/gnome-calendar.mo
+share/locale/bg/LC_MESSAGES/gnome-calendar.mo
 share/locale/bs/LC_MESSAGES/gnome-calendar.mo
 share/locale/ca/LC_MESSAGES/gnome-calendar.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-calendar.mo
@@ -38,6 +39,7 @@ share/locale/id/LC_MESSAGES/gnome-calendar.mo
 share/locale/is/LC_MESSAGES/gnome-calendar.mo
 share/locale/it/LC_MESSAGES/gnome-calendar.mo
 share/locale/ja/LC_MESSAGES/gnome-calendar.mo
+share/locale/kab/LC_MESSAGES/gnome-calendar.mo
 share/locale/kk/LC_MESSAGES/gnome-calendar.mo
 share/locale/ko/LC_MESSAGES/gnome-calendar.mo
 share/locale/lt/LC_MESSAGES/gnome-calendar.mo
