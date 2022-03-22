@@ -10,11 +10,12 @@ include/vte-%%VERSION%%/vte/vtepty.h
 include/vte-%%VERSION%%/vte/vteregex.h
 include/vte-%%VERSION%%/vte/vteterminal.h
 include/vte-%%VERSION%%/vte/vtetypebuiltins.h
+include/vte-%%VERSION%%/vte/vtetypebuiltins-gtk3.h
 include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.6400.2
+lib/libvte-%%VERSION%%.so.0.6600.2
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
 share/gir-1.0/Vte-%%VERSION%%.gir
