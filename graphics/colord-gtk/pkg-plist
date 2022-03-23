@@ -9,7 +9,11 @@ lib/girepository-1.0/ColordGtk-1.0.typelib
 lib/libcolord-gtk.so
 lib/libcolord-gtk.so.1
 lib/libcolord-gtk.so.1.0.3
+lib/libcolord-gtk4.so
+lib/libcolord-gtk4.so.1
+lib/libcolord-gtk4.so.1.0.3
 libdata/pkgconfig/colord-gtk.pc
+libdata/pkgconfig/colord-gtk4.pc
 man/man1/cd-convert.1.gz
 share/gir-1.0/ColordGtk-1.0.gir
 share/locale/en_GB/LC_MESSAGES/colord-gtk.mo

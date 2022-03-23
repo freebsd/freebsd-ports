@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	colord-gtk
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcolord.so:graphics/colord \
 		libdbus-1.so:devel/dbus \
 		liblcms2.so:graphics/lcms2
 
-USE_GNOME=	cairo gtk30 introspection:build
+USE_GNOME=	cairo gtk30 gtk40 introspection:build
 USES=		gettext gnome localbase:ldflags meson pkgconfig sqlite tar:xz
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocs=false \
