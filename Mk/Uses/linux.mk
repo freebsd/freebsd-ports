@@ -236,7 +236,7 @@ SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}:SOURCE
 .ifdef USE_LINUX_RPM_BAD_PERMS
 EXTRACT_DEPENDS+=	rpm2archive:archivers/rpm4
 EXTRACT_CMD=		rpm2archive
-EXTRACT_BEFORE_ARGS=	<
+EXTRACT_BEFORE_ARGS=	- <
 EXTRACT_AFTER_ARGS=	| ${TAR} xf - --no-same-owner --no-same-permissions
 .endif
 
