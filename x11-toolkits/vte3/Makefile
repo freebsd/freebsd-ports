@@ -39,4 +39,6 @@ PLIST_SUB=	VERSION=2.91
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+LLVM_VERSION=	11
+
 .include <bsd.port.mk>
