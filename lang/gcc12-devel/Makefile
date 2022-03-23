@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	12.0.1.s20220306
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--with-abi=elfv2
 . endif
 USE_GCC=	yes
 
-.elif ${ARCH} == powerpc64le || ${ARCH} == powerpc
+.elif ${ARCH} == powerpc64le
 USE_GCC=	yes
 .endif
 
