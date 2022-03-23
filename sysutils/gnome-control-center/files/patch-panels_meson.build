@@ -1,27 +1,6 @@
-No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
-No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
-wwan needs network-manager
-
-Index: panels/meson.build
---- panels/meson.build.orig
+--- panels/meson.build.orig	2021-09-23 00:43:37 UTC
 +++ panels/meson.build
-@@ -4,7 +4,6 @@ panels = [
-   'applications',
-   'background',
-   'camera',
--  'color',
-   'datetime',
-   'default-apps',
-   'diagnostics',
-@@ -14,7 +13,6 @@ panels = [
-   'location',
-   'lock',
-   'microphone',
--  'mouse',
-   'multitasking',
-   'notifications',
-   'online-accounts',
-@@ -28,11 +26,13 @@ panels = [
+@@ -28,7 +28,6 @@ panels = [
    'universal-access',
    'usage',
    'user-accounts',
@@ -29,11 +8,3 @@ Index: panels/meson.build
  ]
  
  if host_is_linux
--  panels += ['network']
-+  panels += [
-+    'network',
-+    'wwan'
-+  ]
- endif
- 
- if host_is_linux_not_s390
