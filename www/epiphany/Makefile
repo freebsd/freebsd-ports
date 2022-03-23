@@ -1,13 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	epiphany
-PORTVERSION=	41.3
+PORTVERSION=	42.0
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	bfbb5f7bab38.patch:-p1 # https://gitlab.gnome.org/GNOME/epiphany/-/merge_requests/1031
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extremely lightweight and simple web browser for GNOME 3

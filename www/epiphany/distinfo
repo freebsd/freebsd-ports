@@ -1,5 +1,3 @@
-TIMESTAMP = 1642358635
-SHA256 (gnome/epiphany-41.3.tar.xz) = ba01268ee54f318dfdac2e01eba38a3fc96940c1cbf640ed2613ae29f8bcb9ad
-SIZE (gnome/epiphany-41.3.tar.xz) = 6153540
-SHA256 (gnome/bfbb5f7bab38.patch) = f7fa05bb177a8400f4c2f95dd2a3260ead32d2f321b29f89a8475699c4f4bf5a
-SIZE (gnome/bfbb5f7bab38.patch) = 1055
+TIMESTAMP = 1648067618
+SHA256 (gnome/epiphany-42.0.tar.xz) = 3dbfa8c00e45b7f44e1824d01f0febe83707b5fb9330c261173f68b7f03cd5e3
+SIZE (gnome/epiphany-42.0.tar.xz) = 6101296
