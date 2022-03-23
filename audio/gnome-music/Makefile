@@ -1,13 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-music
-PORTVERSION=	41.0
+PORTVERSION=	42.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	d9f35b542adb.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-music/-/merge_requests/899
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
@@ -18,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		grilo-plugins>0:net/grilo-plugins \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
+LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
+		libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgrilo-0.3.so:net/grilo \
 		libhandy-1.so:x11-toolkits/libhandy \
@@ -31,7 +29,7 @@ PORTSCOUT=	limitw:1,even
 USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
 		python:3.4+ shebangfix tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gtk30 introspection pygobject3
+USE_GNOME=	cairo gtk40 introspection pygobject3
 USE_GSTREAMER1=	mpg123 ogg
 SHEBANG_FILES=	gnome-music.in
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
