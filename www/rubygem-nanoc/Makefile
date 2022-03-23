@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	nanoc
-PORTVERSION=	4.11.19
+DISTVERSION=	4.12.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +11,11 @@ COMMENT=	Simple but flexible static site generator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=2.7:www/rubygem-addressable \
+RUN_DEPENDS=	rubygem-addressable>=2.5:www/rubygem-addressable \
 		rubygem-colored>=1.2:textproc/rubygem-colored \
 		rubygem-nanoc-checking>=1.0:www/rubygem-nanoc-checking \
-		rubygem-nanoc-cli=4.11.19:www/rubygem-nanoc-cli \
-		rubygem-nanoc-core=4.11.19:www/rubygem-nanoc-core \
+		rubygem-nanoc-cli=4.12.5:www/rubygem-nanoc-cli \
+		rubygem-nanoc-core=4.12.5:www/rubygem-nanoc-core \
 		rubygem-nanoc-deploying>=1.0:www/rubygem-nanoc-deploying \
 		rubygem-parallel>=1.12:sysutils/rubygem-parallel \
 		rubygem-tty-command>=0.8:devel/rubygem-tty-command \
