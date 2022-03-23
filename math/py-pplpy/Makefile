@@ -12,6 +12,8 @@ COMMENT=	Python wrapper to the C++ Parma Polyhedra Library (PPL)
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=	runaway build, 7200 seconds with no output
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2-devel>0:math/py-gmpy2-devel@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 LIB_DEPENDS=	libgmp.so:math/gmp	\
