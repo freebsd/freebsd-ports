@@ -10,22 +10,26 @@ COMMENT=	Connection pool server for PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream support ended use databases/pgpool-II-43
+EXPIRATION_DATE=	2022-06-30
+
 USES=		gmake libtool pgsql:9.3+
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgpool
 
 GNU_CONFIGURE=	yes
-PORTSCOUT=	limit:^3.6.[0-9]*
 
 CONFLICTS=	pgpool-II
 
+PORTSCOUT=	limit:^3.6.[0-9]*
+
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS SSL
+OPTIONS_DEFINE=		DOCS SSL
 OPTIONS_DEFAULT=	SSL
 
-SSL_CONFIGURE_WITH=	openssl
 SSL_USES=		ssl
+SSL_CONFIGURE_WITH=	openssl
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool
