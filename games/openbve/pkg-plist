@@ -510,6 +510,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Flags/IT.png
 %%DATADIR%%/Data/Flags/JP.png
 %%DATADIR%%/Data/Flags/KR.png
+%%DATADIR%%/Data/Flags/MY.png
 %%DATADIR%%/Data/Flags/NL.png
 %%DATADIR%%/Data/Flags/NO.png
 %%DATADIR%%/Data/Flags/PL.png
@@ -533,9 +534,9 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Formats/System.Memory.dll
 %%DATADIR%%/Data/Formats/System.Memory.xml
 %%DATADIR%%/Data/Formats/System.Numerics.Vectors.dll
+%%DATADIR%%/Data/Formats/System.Numerics.Vectors.xml
 %%DATADIR%%/Data/Formats/System.Runtime.CompilerServices.Unsafe.dll
 %%DATADIR%%/Data/Formats/System.Runtime.CompilerServices.Unsafe.xml
-%%DATADIR%%/Data/Formats/System.Numerics.Vectors.xml
 %%DATADIR%%/Data/Formats/System.ValueTuple.dll
 %%DATADIR%%/Data/Formats/System.ValueTuple.xml
 %%DATADIR%%/Data/Formats/Ude.NetStandard.dll
@@ -620,6 +621,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Languages/it-IT.xlf
 %%DATADIR%%/Data/Languages/ja-JP.xlf
 %%DATADIR%%/Data/Languages/ko-KR.xlf
+%%DATADIR%%/Data/Languages/ms_MY.xlf
 %%DATADIR%%/Data/Languages/nb_NO.xlf
 %%DATADIR%%/Data/Languages/nl-NL.xlf
 %%DATADIR%%/Data/Languages/pl-PL.xlf
