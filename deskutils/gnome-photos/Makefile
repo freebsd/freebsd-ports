@@ -1,13 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-photos
-DISTVERSION=	40.0
+DISTVERSION=	42.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	a0ac868a19d5.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-photos/-/merge_requests/226
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Photo application for GNOME
