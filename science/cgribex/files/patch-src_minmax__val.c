@@ -1,22 +1,41 @@
---- src/minmax_val.c.orig	2021-01-26 13:07:53 UTC
+--- src/minmax_val.c.orig	2022-03-21 21:31:13 UTC
 +++ src/minmax_val.c
-@@ -292,6 +291,19 @@ void sse2_minmax_val_double(const double *restrict buf
- #endif // SIMD
+@@ -303,8 +303,8 @@ void pwr6_minmax_val_double_unrolled6(const double *re
+     size_t i, j;
+     size_t residual =  datasize % __UNROLL_DEPTH_1;
+     size_t ofs = datasize - residual;
+-    double register dmin[__UNROLL_DEPTH_1];
+-    double register dmax[__UNROLL_DEPTH_1];
++    double dmin[__UNROLL_DEPTH_1];
++    double dmax[__UNROLL_DEPTH_1];
  
- #if defined(_ARCH_PWR6)
-+
-+#ifndef __fsel
-+static __inline__ double __fsel(double x, double y, double z)
-+  __attribute__((always_inline));
-+static __inline__ double
-+__fsel(double x, double y, double z)
-+{
-+  double r;
-+  __asm__("fsel %0,%1,%2,%3" : "=d"(r) : "d"(x),"d"(y),"d"(z));
-+  return r;
-+}
-+#endif
-+
- static
- void pwr6_minmax_val_double_unrolled6(const double *restrict data, size_t datasize, double *fmin, double *fmax)
- {
+     for ( j = 0; j < __UNROLL_DEPTH_1; j++) 
+       {
+@@ -316,21 +316,21 @@ void pwr6_minmax_val_double_unrolled6(const double *re
+       {
+ 	for (j = 0; j < __UNROLL_DEPTH_1; j++) 
+ 	  {
+-	    dmin[j] = __fsel(dmin[j] - data[i+j], data[i+j], dmin[j]);
+-	    dmax[j] = __fsel(data[i+j] - dmax[j], data[i+j], dmax[j]);
++	    dmin[j] = __builtin_ppc_fsel(dmin[j] - data[i+j], data[i+j], dmin[j]);
++	    dmax[j] = __builtin_ppc_fsel(data[i+j] - dmax[j], data[i+j], dmax[j]);
+ 	  }
+       }
+ 
+     for (j = 0; j < residual; j++) 
+       {
+-	dmin[j] = __fsel(dmin[j] - data[ofs+j], data[ofs+j], dmin[j]);
+-	dmax[j] = __fsel(data[ofs+j] - dmax[j], data[ofs+j], dmax[j]);
++	dmin[j] = __builtin_ppc_fsel(dmin[j] - data[ofs+j], data[ofs+j], dmin[j]);
++	dmax[j] = __builtin_ppc_fsel(data[ofs+j] - dmax[j], data[ofs+j], dmax[j]);
+       }
+ 
+     for ( j = 0; j < __UNROLL_DEPTH_1; j++) 
+       {
+-	*fmin = __fsel(*fmin - dmin[j], dmin[j], *fmin);
+-	*fmax = __fsel(dmax[j] - *fmax, dmax[j], *fmax);
++	*fmin = __builtin_ppc_fsel(*fmin - dmin[j], dmin[j], *fmin);
++	*fmax = __builtin_ppc_fsel(dmax[j] - *fmax, dmax[j], *fmax);
+       }
+   }
+ #undef __UNROLL_DEPTH_1
