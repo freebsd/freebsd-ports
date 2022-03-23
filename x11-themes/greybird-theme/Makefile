@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	greybird
-PORTVERSION=	3.22.15
+PORTVERSION=	3.23.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
@@ -17,8 +17,6 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine
 
 USES=		gnome meson pkgconfig python:3.5+,build
 USE_GNOME=	gdkpixbuf2:build glib20:build librsvg2:build
-
-PORTSCOUT=	limit:^3\.22\.
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird
