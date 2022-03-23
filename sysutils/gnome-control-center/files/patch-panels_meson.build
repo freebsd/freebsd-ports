@@ -1,10 +1,10 @@
---- panels/meson.build.orig	2021-09-23 00:43:37 UTC
+--- panels/meson.build.orig	2022-03-23 04:36:28 UTC
 +++ panels/meson.build
 @@ -28,7 +28,6 @@ panels = [
    'universal-access',
    'usage',
    'user-accounts',
--  'wwan',
+- 'wwan',
  ]
  
  if host_is_linux
