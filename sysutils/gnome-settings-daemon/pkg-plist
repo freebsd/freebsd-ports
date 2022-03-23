@@ -16,11 +16,10 @@ etc/xdg/autostart/org.gnome.SettingsDaemon.UsbProtection.desktop
 etc/xdg/autostart/org.gnome.SettingsDaemon.Wacom.desktop
 etc/xdg/autostart/org.gnome.SettingsDaemon.Wwan.desktop
 etc/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop
-include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
-lib/gnome-settings-daemon-3.0/libgsd.so
+include/gnome-settings-daemon-42/gnome-settings-daemon/gsd-enums.h
+lib/gnome-settings-daemon-42/libgsd.so
 libdata/pkgconfig/gnome-settings-daemon.pc
 libexec/gsd-a11y-settings
-libexec/gsd-color
 libexec/gsd-datetime
 libexec/gsd-housekeeping
 libexec/gsd-keyboard

@@ -1,25 +1,13 @@
-$OpenBSD: patch-meson_build,v 1.1 2018/04/23 15:37:34 ajacoutot Exp $
-
-XXX #define FOOBAR 0 does not do what you think it does...
+XXX push upstream
 
 Index: meson.build
---- meson.build.orig
+--- meson.build.orig	2022-03-19 23:08:57 UTC
 +++ meson.build
-@@ -131,7 +131,7 @@ if enable_wayland
-   assert(enable_gudev, 'GUDev support is required for wayland support.')
-   wayland_client_dep = dependency('wayland-client')
- endif
--config_h.set10('HAVE_WAYLAND', enable_wayland)
-+config_h.set('HAVE_WAYLAND', enable_wayland)
- 
- # wacom (disabled for s390/s390x and non Linux platforms)
- enable_wacom = host_is_linux_not_s390
-@@ -139,7 +139,7 @@ if enable_wacom
-   assert(enable_gudev, 'GUDev support is required for wacom support.')
-   libwacom_dep = dependency('libwacom', version: '>= 0.7')
- endif
--config_h.set10('HAVE_WACOM', enable_wacom)
-+config_h.set('HAVE_WACOM', enable_wacom)
- 
- # smartcard section
- enable_smartcard = get_option('smartcard')
+@@ -97,7 +97,6 @@ gweather_dep = dependency('gweather4')
+ gtk_dep = dependency('gtk+-3.0', version: '>= 3.15.3')
+ gtk_x11_dep = dependency('gtk+-x11-3.0')
+ gweather_dep = dependency('gweather4')
+-lcms_dep = dependency('lcms2', version: '>= 2.2')
+ libcanberra_gtk_dep = dependency('libcanberra-gtk3')
+ libgeoclue_dep = dependency('libgeoclue-2.0', version: '>= 2.3.1')
+ libnotify_dep = dependency('libnotify', version: '>= 0.7.3')
