@@ -22,8 +22,5 @@
   "author": {
     "name": "InfluxData"
   },
-  "license": "AGPL-3.0",
-  "resolutions": {
-    "**/node-gyp": "^7.0.0"
-  }
+  "license": "AGPL-3.0"
 }
