@@ -58,11 +58,11 @@ lib/libxine.so.2.10.0
 %%PLUGINSDIR%%/post/xineplug_post_switch.so
 %%PLUGINSDIR%%/post/xineplug_post_tvtime.so
 %%PLUGINSDIR%%/post/xineplug_post_visualizations.so
-%%PLUGINSDIR%%/xineplug_hw_frame_vaapi.so
-%%PLUGINSDIR%%/xineplug_va_display_drm.so
-%%PLUGINSDIR%%/xineplug_va_display_glx.so
-%%PLUGINSDIR%%/xineplug_va_display_wl.so
-%%PLUGINSDIR%%/xineplug_va_display_x11.so
+%%VAAPI%%%%PLUGINSDIR%%/xineplug_hw_frame_vaapi.so
+%%VAAPI%%%%PLUGINSDIR%%/xineplug_va_display_drm.so
+%%VAAPI%%%%PLUGINSDIR%%/xineplug_va_display_glx.so
+%%WAYLAND%%%%PLUGINSDIR%%/xineplug_va_display_wl.so
+%%VAAPI%%%%PLUGINSDIR%%/xineplug_va_display_x11.so
 %%ALSA%%%%PLUGINSDIR%%/xineplug_ao_out_alsa.so
 %%JACK%%%%PLUGINSDIR%%/xineplug_ao_out_jack.so
 %%PLUGINSDIR%%/xineplug_ao_out_oss.so
