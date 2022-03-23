@@ -1,7 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.2
-PORTREVISION=	1
+DISTVERSION=	0.19.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -15,30 +14,29 @@ USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	svenstaro
 
-CARGO_CRATES=	actix-codec-0.4.2 \
-		actix-codec-0.5.0 \
-		actix-files-0.6.0-beta.16 \
-		actix-http-3.0.0-rc.3 \
+CARGO_CRATES=	actix-codec-0.5.0 \
+		actix-files-0.6.0 \
+		actix-http-3.0.2 \
 		actix-macros-0.2.3 \
-		actix-multipart-0.4.0-beta.13 \
-		actix-router-0.5.0-rc.3 \
+		actix-multipart-0.4.0 \
+		actix-router-0.5.0 \
 		actix-rt-2.6.0 \
 		actix-server-2.0.0 \
 		actix-service-2.0.2 \
 		actix-tls-3.0.3 \
 		actix-utils-3.0.0 \
-		actix-web-4.0.0-rc.3 \
-		actix-web-codegen-0.5.0-rc.2 \
-		actix-web-httpauth-0.6.0-beta.8 \
+		actix-web-4.0.1 \
+		actix-web-codegen-4.0.0 \
+		actix-web-httpauth-0.6.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.18 \
 		alloc-no-stdlib-2.0.3 \
 		alloc-stdlib-0.2.1 \
-		alphanumeric-sort-1.4.3 \
+		alphanumeric-sort-1.4.4 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.54 \
+		anyhow-1.0.56 \
 		askama_escape-0.10.3 \
 		assert_cmd-2.0.4 \
 		assert_fs-1.0.7 \
@@ -66,9 +64,9 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		chrono-0.4.19 \
 		chrono-humanize-0.2.1 \
 		clap-2.34.0 \
-		clap-3.1.0 \
-		clap_complete-3.1.0 \
-		clap_derive-3.1.0 \
+		clap-3.1.6 \
+		clap_complete-3.1.1 \
+		clap_derive-3.1.4 \
 		clap_mangen-0.1.2 \
 		codemap-0.1.3 \
 		convert_case-0.4.0 \
@@ -107,13 +105,12 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		get_if_addrs-0.5.3 \
 		get_if_addrs-sys-0.1.1 \
 		getrandom-0.1.16 \
-		getrandom-0.2.4 \
+		getrandom-0.2.5 \
 		globset-0.4.8 \
 		globwalk-0.8.1 \
 		grass-0.10.8 \
 		h2-0.3.11 \
 		hashbrown-0.11.2 \
-		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
@@ -129,7 +126,7 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		ignore-0.4.18 \
 		indexmap-1.8.0 \
 		instant-0.1.12 \
-		ipnet-2.3.1 \
+		ipnet-2.4.0 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
 		jobserver-0.1.24 \
@@ -166,7 +163,7 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
 		num_threads-0.1.3 \
-		once_cell-1.9.0 \
+		once_cell-1.10.0 \
 		os_str_bytes-6.0.0 \
 		output_vt100-0.1.3 \
 		parking_lot-0.11.2 \
@@ -193,7 +190,7 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		predicates-2.1.1 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
-		pretty_assertions-1.1.0 \
+		pretty_assertions-1.2.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
@@ -208,19 +205,18 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
-		redox_syscall-0.2.10 \
-		regex-1.5.4 \
+		redox_syscall-0.2.11 \
+		regex-1.5.5 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.9 \
+		reqwest-0.11.10 \
 		ring-0.16.20 \
 		rle-decode-fast-1.0.3 \
 		roff-0.2.1 \
 		rstest-0.12.0 \
 		rustc_version-0.4.0 \
 		rustls-0.20.4 \
-		rustls-pemfile-0.2.1 \
 		rustls-pemfile-0.3.0 \
 		rustversion-1.0.6 \
 		ryu-1.0.9 \
@@ -228,7 +224,7 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
 		select-0.5.0 \
-		semver-1.0.5 \
+		semver-1.0.6 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.79 \
@@ -237,7 +233,7 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		sha2-0.10.2 \
 		signal-hook-registry-1.4.0 \
 		simplelog-0.11.2 \
-		siphasher-0.3.9 \
+		siphasher-0.3.10 \
 		slab-0.4.5 \
 		smallvec-1.8.0 \
 		socket2-0.4.4 \
@@ -246,17 +242,17 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		string_cache_codegen-0.5.1 \
 		strsim-0.8.0 \
 		strsim-0.10.0 \
-		strum-0.23.0 \
-		strum_macros-0.23.1 \
+		strum-0.24.0 \
+		strum_macros-0.24.0 \
 		syn-1.0.86 \
 		tar-0.4.38 \
 		tempfile-3.3.0 \
 		tendril-0.4.2 \
-		termcolor-1.1.2 \
+		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
 		textwrap-0.11.0 \
-		textwrap-0.14.2 \
+		textwrap-0.15.0 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		thread_local-1.1.4 \
@@ -279,7 +275,6 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.7 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		untrusted-0.7.1 \
@@ -312,7 +307,7 @@ CARGO_CRATES=	actix-codec-0.4.2 \
 		windows_i686_msvc-0.32.0 \
 		windows_x86_64_gnu-0.32.0 \
 		windows_x86_64_msvc-0.32.0 \
-		winreg-0.7.0 \
+		winreg-0.10.1 \
 		xattr-0.2.2 \
 		xml5ever-0.16.2 \
 		yansi-0.5.0 \
