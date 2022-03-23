@@ -1,5 +1,6 @@
 PORTNAME=	NymphCast
 DISTVERSION=	v0.1-rc1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	adridg@FreeBSD.org
