@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-initial-setup
-PORTVERSION=	41.4
+PORTVERSION=	42.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
@@ -14,7 +14,8 @@ BUILD_DEPENDS=	gdm>=3.0.0:x11/gdm \
 		krb5>0:security/krb5
 LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libgoa-1.0.so:net/gnome-online-accounts \
-		libgweather-3.so:net/libgweather \
+		libgweather-4.so:net/libgweather4 \
+		libhandy-1.so:x11-toolkits/libhandy \
 		libpwquality.so:security/libpwquality
 RUN_DEPENDS=	gdm>=3.0.0:x11/gdm \
 		krb5>0:security/krb5
