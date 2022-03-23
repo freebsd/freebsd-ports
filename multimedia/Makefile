@@ -418,6 +418,7 @@
     SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
     SUBDIR += vid.stab
+    SUBDIR += video-trimmer
     SUBDIR += vlc
     SUBDIR += vmaf
     SUBDIR += vtkmpeg2encode
