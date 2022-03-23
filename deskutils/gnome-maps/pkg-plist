@@ -93,7 +93,6 @@ share/dbus-1/services/org.gnome.Maps.service
 %%DATADIR%%/org.gnome.Maps
 %%DATADIR%%/org.gnome.Maps.data.gresource
 %%DATADIR%%/org.gnome.Maps.src.gresource
-share/icons/hicolor/scalable/apps/org.gnome.Maps.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Maps.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Maps-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-maps.mo
