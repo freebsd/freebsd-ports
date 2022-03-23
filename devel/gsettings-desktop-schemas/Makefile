@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gsettings-desktop-schemas
-DISTVERSION=	41.0
+DISTVERSION=	42.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R:R}
 DIST_SUBDIR=	gnome
@@ -14,21 +14,23 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.5+,build tar:xz
+USES=		gettext gnome localbase meson pkgconfig python:3.5+,build \
+		tar:xz
 USE_GNOME=	glib20 introspection:build
 
 NO_ARCH=	yes
 
 GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
 		org.gnome.desktop.a11y.gschema.xml \
+		org.gnome.desktop.a11y.interface.gschema.xml \
 		org.gnome.desktop.a11y.keyboard.gschema.xml \
 		org.gnome.desktop.a11y.magnifier.gschema.xml \
 		org.gnome.desktop.a11y.mouse.gschema.xml \
 		org.gnome.desktop.app-folders.gschema.xml \
 		org.gnome.desktop.background.gschema.xml \
 		org.gnome.desktop.calendar.gschema.xml \
-		org.gnome.desktop.default-applications.gschema.xml \
 		org.gnome.desktop.datetime.gschema.xml \
+		org.gnome.desktop.default-applications.gschema.xml \
 		org.gnome.desktop.enums.xml \
 		org.gnome.desktop.input-sources.gschema.xml \
 		org.gnome.desktop.interface.gschema.xml \
