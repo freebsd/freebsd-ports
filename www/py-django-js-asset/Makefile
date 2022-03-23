@@ -1,9 +1,9 @@
 PORTNAME=	django-js-asset
-DISTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	2.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_js_asset-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Insert script tags with additional attributes for django.forms.Media
@@ -11,9 +11,9 @@ COMMENT=	Insert script tags with additional attributes for django.forms.Media
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>0:www/py-django22@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2:www/py-django22@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=		yes
