@@ -19,7 +19,7 @@ USES=		cargo gl localbase:ldflags xorg
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_XORG=	x11 xi
-GH_PROJECT=	FishFight
+GH_PROJECT=	jumpy
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
