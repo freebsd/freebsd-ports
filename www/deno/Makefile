@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.3
+DISTVERSION=	1.20.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
-V8_VERS=	0.40.2
+V8_VERS=	0.41.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -45,6 +45,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.55 \
+		arrayvec-0.4.12 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.2 \
 		ash-0.34.0+1.2.203 \
@@ -118,6 +119,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno_doc-0.32.0 \
 		deno_graph-0.24.0 \
 		deno_lint-0.26.0 \
+		deno_task_shell-0.1.9 \
 		der-0.4.5 \
 		derive_more-0.99.17 \
 		diff-0.1.12 \
@@ -152,6 +154,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fixedbitset-0.2.0 \
 		flaky_test-0.1.0 \
 		flate2-1.0.22 \
+		fly-accept-encoding-0.2.0-alpha.5 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -227,7 +230,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libm-0.2.1 \
 		libsqlite3-sys-0.22.2 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.4.5 \
+		lock_api-0.4.6 \
 		log-0.4.14 \
 		lru-cache-0.1.2 \
 		lsp-types-0.91.1 \
@@ -249,10 +252,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		new_debug_unreachable-1.0.4 \
 		nibble_vec-0.1.0 \
 		nix-0.23.0 \
+		node_resolver-0.1.1 \
+		nodrop-0.1.14 \
 		notify-5.0.0-pre.12 \
 		ntapi-0.3.6 \
 		num-bigint-0.2.6 \
 		num-bigint-dig-0.7.0 \
+		num-format-0.4.0 \
 		num-integer-0.1.44 \
 		num-iter-0.1.42 \
 		num-traits-0.2.14 \
@@ -262,7 +268,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		once_cell-1.9.0 \
 		opaque-debug-0.3.0 \
 		openssl-probe-0.1.5 \
-		os_pipe-0.9.2 \
+		os_pipe-1.0.1 \
 		os_str_bytes-6.0.0 \
 		output_vt100-0.1.2 \
 		owning_ref-0.4.1 \
@@ -270,6 +276,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		p384-0.8.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
+		path-clean-0.1.0 \
 		pem-rfc7468-0.2.4 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
@@ -289,7 +296,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		polyval-0.5.3 \
 		ppv-lite86-0.2.16 \
 		precomputed-hash-0.1.1 \
-		pretty_assertions-0.7.2 \
+		pretty_assertions-1.2.0 \
+		proc-macro-crate-1.1.3 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
@@ -320,7 +328,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		relative-path-1.6.0 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-0.7.1 \
-		reqwest-0.11.9 \
+		reqwest-0.11.10 \
 		resolv-conf-0.7.0 \
 		retain_mut-0.1.5 \
 		ring-0.16.20 \
@@ -333,6 +341,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustls-0.20.2 \
 		rustls-native-certs-0.6.1 \
 		rustls-pemfile-0.2.1 \
+		rustls-pemfile-0.3.0 \
 		rustyline-9.1.2 \
 		rustyline-derive-0.6.0 \
 		ryu-1.0.9 \
@@ -352,7 +361,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_derive-1.0.133 \
 		serde_json-1.0.75 \
 		serde_repr-0.1.7 \
-		serde_urlencoded-0.7.0 \
+		serde_urlencoded-0.7.1 \
 		sha-1-0.9.8 \
 		sha2-0.9.9 \
 		sha2-0.10.1 \
@@ -460,7 +469,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-0.8.2 \
-		v8-0.40.2 \
+		v8-0.41.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
@@ -495,7 +504,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_gnu-0.28.0 \
 		windows_x86_64_msvc-0.28.0 \
 		winreg-0.6.2 \
-		winreg-0.7.0 \
+		winreg-0.10.1 \
 		winres-0.1.11 \
 		zeroize-1.4.3 \
 		zeroize_derive-1.3.1 \
