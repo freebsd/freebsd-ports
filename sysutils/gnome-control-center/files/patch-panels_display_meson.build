@@ -1,0 +1,13 @@
+No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
+
+Index: panels/display/meson.build
+--- panels/display/meson.build.orig
++++ panels/display/meson.build
+@@ -43,7 +43,6 @@ sources += gnome.compile_resources(
+ )
+ 
+ deps = common_deps + [
+-  colord_dep,
+   gnome_desktop_dep,
+   m_dep,
+   upower_glib_dep

@@ -1,14 +1,25 @@
-# find heimal from base, make configurable ?
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
---- shell/meson.build.orig	2020-09-27 18:22:48 UTC
+Find libkrb5.so
+
+Index: shell/meson.build
+--- shell/meson.build.orig
 +++ shell/meson.build
-@@ -130,7 +130,8 @@ executable(
+@@ -107,7 +107,6 @@ libshell_dep = declare_dependency(
+ shell_sources = common_sources + files('main.c')
+ 
+ shell_deps = common_deps + [
+-  libdevice_dep,
+   liblanguage_dep,
+   libwidgets_dep,
+   x11_dep,
+@@ -129,7 +128,8 @@ executable(
           dependencies : shell_deps,
                 c_args : cflags,
              link_with : panels_libs,
 -              install : true
 +              install : true,
-+              install_rpath : '/usr/lib'
++        install_rpath : '${LOCALBASE}/heimdal/lib'
  )
  
  

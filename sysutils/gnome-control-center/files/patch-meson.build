@@ -1,0 +1,22 @@
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
+No colord (needs GUdev) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -118,7 +118,6 @@ goa_req_version = '>= 3.25.3'
+ pulse_req_version = '>= 2.0'
+ 
+ accounts_dep = dependency('accountsservice', version: '>= 0.6.39')
+-colord_dep = dependency('colord', version: '>= 0.1.34')
+ gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0', version: '>= 2.23.0')
+ gio_dep = dependency('gio-2.0')
+ glib_dep = dependency('glib-2.0', version: '>= 2.68.0')
+@@ -131,7 +130,6 @@ polkit_gobject_dep = dependency('polkit-gobject-1', ve
+ pulse_dep = dependency('libpulse', version: pulse_req_version)
+ pulse_mainloop_dep = dependency('libpulse-mainloop-glib', version: pulse_req_version)
+ upower_glib_dep = dependency('upower-glib', version: '>= 0.99.8')
+-gudev_dep = dependency('gudev-1.0', version: '>= 232')
+ x11_dep = dependency('x11')
+ xi_dep = dependency('xi', version: '>= 1.2')
+ epoxy_dep = dependency('epoxy')

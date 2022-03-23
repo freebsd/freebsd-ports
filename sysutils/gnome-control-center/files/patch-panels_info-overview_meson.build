@@ -1,0 +1,13 @@
+No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
+
+Index: panels/info-overview/meson.build
+--- panels/info-overview/meson.build.orig
++++ panels/info-overview/meson.build
+@@ -39,7 +39,6 @@ sources += gnome.compile_resources(
+ )
+ 
+ deps = common_deps + [
+-  dependency('udisks2', version: '>= 2.8.2'),
+   dependency('libgtop-2.0')
+ ]
+ 

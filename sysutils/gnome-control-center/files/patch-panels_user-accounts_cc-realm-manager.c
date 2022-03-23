@@ -1,6 +1,7 @@
-http://git.pld-linux.org/gitweb.cgi?p=packages/gnome-control-center.git;a=blob;f=krb5.patch;h=260e9aac087453b798dc58b23bbc79705e6172d9;hb=49c1b881b47743e0c76eaf9158a37fd6532c111f
+Fix for Heimdal (versus MIT).
 
---- panels/user-accounts/cc-realm-manager.c.orig	2021-09-17 20:48:56 UTC
+Index: panels/user-accounts/cc-realm-manager.c
+--- panels/user-accounts/cc-realm-manager.c.orig
 +++ panels/user-accounts/cc-realm-manager.c
 @@ -22,7 +22,7 @@
  
