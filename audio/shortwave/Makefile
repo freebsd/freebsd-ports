@@ -9,6 +9,8 @@ COMMENT=	Listen to internet radio
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+IGNORE=		crashes with libadwaita >= 1.0
+
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
