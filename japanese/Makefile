@@ -228,7 +228,7 @@
     SUBDIR += pejv-fpw
     SUBDIR += plain2
     SUBDIR += plan
-    SUBDIR += prn
+    SUBDIR += prn-ps
     SUBDIR += py-SudachiPy
     SUBDIR += py-fugashi
     SUBDIR += py-ipadic
