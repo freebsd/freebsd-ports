@@ -33,6 +33,17 @@ details on this issue.
 
 EOM
 }
+{ type: upgrade
+  maximum_version: 1.55.0
+  message: <<EOM
+The default room version of synapse has been increased to version 9. Consider
+changing this if interoperability with other matrix servers is an issue.
+
+If you're using Mjolnir, be advised that this version of synapse is
+incompatible with Mjolnir 1.3.1 and earlier.
+
+EOM
+}
 {
   message: <<EOM
 Running synapse with the sqlite backend is only recommended for testing purposes.
