@@ -1,7 +1,7 @@
 # Created by: Martin Pala <martinp@tildeslash.com>
 
 PORTNAME=	monit
-DISTVERSION=	5.30.0
+DISTVERSION=	5.32.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mmonit.com/monit/dist/
 
