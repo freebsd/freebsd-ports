@@ -1,5 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.4
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -21,8 +21,6 @@ USES=		cargo ssl
 CARGO_CRATES=	ahash-0.7.6 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		arrayref-0.3.6 \
-		arrayvec-0.5.2 \
 		async-broadcast-0.3.4 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -33,9 +31,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		async-trait-0.1.52 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		base64-0.13.0 \
 		bitflags-1.3.2 \
-		blake2b_simd-0.5.11 \
 		block-0.1.6 \
 		block-buffer-0.7.3 \
 		block-buffer-0.10.2 \
@@ -53,7 +49,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		clap_derive-3.1.4 \
 		combine-4.6.3 \
 		concurrent-queue-1.2.2 \
-		constant_time_eq-0.1.5 \
+		const_format-0.2.22 \
+		const_format_proc_macros-0.2.22 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
 		cpufeatures-0.2.1 \
@@ -66,8 +63,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		difflib-0.4.0 \
 		digest-0.8.1 \
 		digest-0.10.3 \
-		directories-next-2.0.0 \
-		dirs-1.0.5 \
+		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		dlv-list-0.3.0 \
 		downcast-0.11.0 \
@@ -90,10 +86,9 @@ CARGO_CRATES=	ahash-0.7.6 \
 		futures-util-0.3.21 \
 		generic-array-0.12.4 \
 		generic-array-0.14.5 \
-		gethostname-0.2.2 \
-		getrandom-0.1.16 \
+		gethostname-0.2.3 \
 		getrandom-0.2.5 \
-		git2-0.13.25 \
+		git2-0.14.2 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		heck-0.4.0 \
@@ -109,13 +104,13 @@ CARGO_CRATES=	ahash-0.7.6 \
 		kstring-1.0.6 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.119 \
-		libgit2-sys-0.12.26+1.3.0 \
+		libc-0.2.121 \
+		libgit2-sys-0.13.2+1.4.2 \
 		libz-sys-1.1.5 \
 		linked-hash-map-0.5.4 \
 		local_ipaddress-0.1.3 \
 		log-0.4.14 \
-		mac-notification-sys-0.3.0 \
+		mac-notification-sys-0.5.0 \
 		mach-0.3.2 \
 		malloc_buf-0.0.6 \
 		maplit-1.0.2 \
@@ -128,10 +123,11 @@ CARGO_CRATES=	ahash-0.7.6 \
 		nix-0.23.1 \
 		nom-7.1.0 \
 		normalize-line-endings-0.3.0 \
-		notify-rust-4.5.6 \
+		notify-rust-4.5.7 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
+		num_threads-0.1.5 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
@@ -162,7 +158,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
-		process_control-3.2.1 \
+		process_control-3.3.0 \
 		quick-xml-0.22.0 \
 		quote-1.0.15 \
 		rand-0.8.5 \
@@ -170,14 +166,11 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rand_core-0.6.3 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.1.57 \
 		redox_syscall-0.2.11 \
-		redox_users-0.3.5 \
 		redox_users-0.4.0 \
 		regex-1.5.5 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rust-argon2-0.8.3 \
 		rust-ini-0.18.0 \
 		ryu-1.0.9 \
 		scopeguard-1.1.0 \
@@ -190,7 +183,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		sha-1-0.10.0 \
 		sha1-0.6.1 \
 		sha1_smol-1.0.0 \
-		shadow-rs-0.9.0 \
+		shadow-rs-0.11.0 \
 		shell-words-1.1.0 \
 		slab-0.4.5 \
 		socket2-0.4.4 \
@@ -210,6 +203,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		time-0.1.44 \
+		time-0.3.7 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
@@ -230,25 +224,24 @@ CARGO_CRATES=	ahash-0.7.6 \
 		version_check-0.9.4 \
 		versions-4.0.0 \
 		waker-fn-1.1.0 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wepoll-ffi-0.1.2 \
-		which-4.2.4 \
+		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.24.0 \
-		windows-sys-0.30.0 \
-		windows_aarch64_msvc-0.30.0 \
+		windows-sys-0.33.0 \
+		windows_aarch64_msvc-0.33.0 \
 		windows_i686_gnu-0.24.0 \
-		windows_i686_gnu-0.30.0 \
+		windows_i686_gnu-0.33.0 \
 		windows_i686_msvc-0.24.0 \
-		windows_i686_msvc-0.30.0 \
+		windows_i686_msvc-0.33.0 \
 		windows_x86_64_gnu-0.24.0 \
-		windows_x86_64_gnu-0.30.0 \
+		windows_x86_64_gnu-0.33.0 \
 		windows_x86_64_msvc-0.24.0 \
-		windows_x86_64_msvc-0.30.0 \
+		windows_x86_64_msvc-0.33.0 \
 		winres-0.1.12 \
 		winrt-notification-0.5.1 \
 		xml-rs-0.8.4 \
