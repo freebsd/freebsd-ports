@@ -13,6 +13,8 @@ COMMENT=	Pomodoro timer for the GNOME desktop
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+IGNORE=		crashes with libadwaita >= 1.0
+
 USES=		cargo gettext gnome meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
 USE_GNOME=	gtk40 libadwaita
