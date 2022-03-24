@@ -1,6 +1,6 @@
---- libpkg/pkg_jobs.c.orig	2019-09-18 07:11:10 UTC
+--- libpkg/pkg_jobs.c.orig	2021-11-12 08:57:25 UTC
 +++ libpkg/pkg_jobs.c
-@@ -74,7 +74,7 @@ struct pkg_jobs_locked {
+@@ -79,7 +79,7 @@ struct pkg_jobs_locked {
  	int (*locked_pkg_cb)(struct pkg *, void *);
  	void *context;
  };
