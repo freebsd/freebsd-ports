@@ -7,7 +7,6 @@ bin/ocsptool
 %%P11KIT%%bin/p11tool
 bin/psktool
 bin/srptool
-%%TPM%%bin/tpmtool
 include/gnutls/abstract.h
 include/gnutls/compat.h
 include/gnutls/crypto.h
@@ -32,10 +31,10 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.28.2
+lib/libgnutls.so.30.32.0
 lib/libgnutlsxx.so
-lib/libgnutlsxx.so.28
-lib/libgnutlsxx.so.28.1.0
+lib/libgnutlsxx.so.30
+lib/libgnutlsxx.so.30.0.0
 libdata/pkgconfig/gnutls.pc
 %%DANE%%libdata/pkgconfig/gnutls-dane.pc
 man/man1/certtool.1.gz
@@ -78,6 +77,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_alert_get_strname.3.gz
 %%MAN3%%man/man3/gnutls_alert_send.3.gz
 %%MAN3%%man/man3/gnutls_alert_send_appropriate.3.gz
+%%MAN3%%man/man3/gnutls_alert_set_read_function.3.gz
 %%MAN3%%man/man3/gnutls_alpn_get_selected_protocol.3.gz
 %%MAN3%%man/man3/gnutls_alpn_set_protocols.3.gz
 %%MAN3%%man/man3/gnutls_anon_allocate_client_credentials.3.gz
@@ -188,10 +188,13 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_cipher_suite_get_name.3.gz
 %%MAN3%%man/man3/gnutls_cipher_suite_info.3.gz
 %%MAN3%%man/man3/gnutls_cipher_tag.3.gz
+%%MAN3%%man/man3/gnutls_ciphersuite_get.3.gz
 %%MAN3%%man/man3/gnutls_compression_get.3.gz
 %%MAN3%%man/man3/gnutls_compression_get_id.3.gz
 %%MAN3%%man/man3/gnutls_compression_get_name.3.gz
 %%MAN3%%man/man3/gnutls_compression_list.3.gz
+%%MAN3%%man/man3/gnutls_compress_certificate_get_selected_method.3.gz
+%%MAN3%%man/man3/gnutls_compress_certificate_set_methods.3.gz
 %%MAN3%%man/man3/gnutls_credentials_clear.3.gz
 %%MAN3%%man/man3/gnutls_credentials_get.3.gz
 %%MAN3%%man/man3/gnutls_credentials_set.3.gz
@@ -236,6 +239,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_digest_get_name.3.gz
 %%MAN3%%man/man3/gnutls_digest_get_oid.3.gz
 %%MAN3%%man/man3/gnutls_digest_list.3.gz
+%%MAN3%%man/man3/gnutls_digest_set_secure.3.gz
 %%MAN3%%man/man3/gnutls_dtls_cookie_send.3.gz
 %%MAN3%%man/man3/gnutls_dtls_cookie_verify.3.gz
 %%MAN3%%man/man3/gnutls_dtls_get_data_mtu.3.gz
@@ -245,6 +249,8 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_dtls_set_data_mtu.3.gz
 %%MAN3%%man/man3/gnutls_dtls_set_mtu.3.gz
 %%MAN3%%man/man3/gnutls_dtls_set_timeouts.3.gz
+%%MAN3%%man/man3/gnutls_early_cipher_get.3.gz
+%%MAN3%%man/man3/gnutls_early_prf_hash_get.3.gz
 %%MAN3%%man/man3/gnutls_ecc_curve_get.3.gz
 %%MAN3%%man/man3/gnutls_ecc_curve_get_id.3.gz
 %%MAN3%%man/man3/gnutls_ecc_curve_get_name.3.gz
@@ -252,6 +258,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_ecc_curve_get_pk.3.gz
 %%MAN3%%man/man3/gnutls_ecc_curve_get_size.3.gz
 %%MAN3%%man/man3/gnutls_ecc_curve_list.3.gz
+%%MAN3%%man/man3/gnutls_ecc_curve_set_enabled.3.gz
 %%MAN3%%man/man3/gnutls_encode_ber_digest_info.3.gz
 %%MAN3%%man/man3/gnutls_encode_gost_rs_value.3.gz
 %%MAN3%%man/man3/gnutls_encode_rs_value.3.gz
@@ -266,8 +273,14 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_ext_register.3.gz
 %%MAN3%%man/man3/gnutls_ext_set_data.3.gz
 %%MAN3%%man/man3/gnutls_fingerprint.3.gz
+%%MAN3%%man/man3/gnutls_fips140_context_deinit.3.gz
+%%MAN3%%man/man3/gnutls_fips140_context_init.3.gz
+%%MAN3%%man/man3/gnutls_fips140_get_operation_state.3.gz
 %%MAN3%%man/man3/gnutls_fips140_mode_enabled.3.gz
+%%MAN3%%man/man3/gnutls_fips140_pop_context.3.gz
+%%MAN3%%man/man3/gnutls_fips140_push_context.3.gz
 %%MAN3%%man/man3/gnutls_fips140_set_mode.3.gz
+%%MAN3%%man/man3/gnutls_get_library_config.3.gz
 %%MAN3%%man/man3/gnutls_get_system_config_file.3.gz
 %%MAN3%%man/man3/gnutls_global_deinit.3.gz
 %%MAN3%%man/man3/gnutls_global_init.3.gz
@@ -292,7 +305,10 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_handshake_set_post_client_hello_function.3.gz
 %%MAN3%%man/man3/gnutls_handshake_set_private_extensions.3.gz
 %%MAN3%%man/man3/gnutls_handshake_set_random.3.gz
+%%MAN3%%man/man3/gnutls_handshake_set_read_function.3.gz
+%%MAN3%%man/man3/gnutls_handshake_set_secret_function.3.gz
 %%MAN3%%man/man3/gnutls_handshake_set_timeout.3.gz
+%%MAN3%%man/man3/gnutls_handshake_write.3.gz
 %%MAN3%%man/man3/gnutls_hash.3.gz
 %%MAN3%%man/man3/gnutls_hash_copy.3.gz
 %%MAN3%%man/man3/gnutls_hash_deinit.3.gz
@@ -609,6 +625,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_protocol_get_name.3.gz
 %%MAN3%%man/man3/gnutls_protocol_get_version.3.gz
 %%MAN3%%man/man3/gnutls_protocol_list.3.gz
+%%MAN3%%man/man3/gnutls_protocol_set_enabled.3.gz
 %%MAN3%%man/man3/gnutls_psk_allocate_client_credentials.3.gz
 %%MAN3%%man/man3/gnutls_psk_allocate_server_credentials.3.gz
 %%MAN3%%man/man3/gnutls_psk_client_get_hint.3.gz
@@ -692,6 +709,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_record_send.3.gz
 %%MAN3%%man/man3/gnutls_record_send2.3.gz
 %%MAN3%%man/man3/gnutls_record_send_early_data.3.gz
+%%MAN3%%man/man3/gnutls_record_send_file.3.gz
 %%MAN3%%man/man3/gnutls_record_send_range.3.gz
 %%MAN3%%man/man3/gnutls_record_set_max_early_data_size.3.gz
 %%MAN3%%man/man3/gnutls_record_set_max_recv_size.3.gz
@@ -737,6 +755,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_session_set_verify_cert.3.gz
 %%MAN3%%man/man3/gnutls_session_set_verify_cert2.3.gz
 %%MAN3%%man/man3/gnutls_session_set_verify_function.3.gz
+%%MAN3%%man/man3/gnutls_session_set_verify_output_function.3.gz
 %%MAN3%%man/man3/gnutls_session_supplemental_register.3.gz
 %%MAN3%%man/man3/gnutls_session_ticket_enable_client.3.gz
 %%MAN3%%man/man3/gnutls_session_ticket_enable_server.3.gz
@@ -755,6 +774,8 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_sign_is_secure.3.gz
 %%MAN3%%man/man3/gnutls_sign_is_secure2.3.gz
 %%MAN3%%man/man3/gnutls_sign_list.3.gz
+%%MAN3%%man/man3/gnutls_sign_set_secure.3.gz
+%%MAN3%%man/man3/gnutls_sign_set_secure_for_certs.3.gz
 %%MAN3%%man/man3/gnutls_sign_supports_pk_algorithm.3.gz
 %%MAN3%%man/man3/gnutls_srp_allocate_client_credentials.3.gz
 %%MAN3%%man/man3/gnutls_srp_allocate_server_credentials.3.gz
@@ -811,6 +832,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_transport_get_int2.3.gz
 %%MAN3%%man/man3/gnutls_transport_get_ptr.3.gz
 %%MAN3%%man/man3/gnutls_transport_get_ptr2.3.gz
+%%MAN3%%man/man3/gnutls_transport_is_ktls_enabled.3.gz
 %%MAN3%%man/man3/gnutls_transport_set_errno.3.gz
 %%MAN3%%man/man3/gnutls_transport_set_errno_function.3.gz
 %%MAN3%%man/man3/gnutls_transport_set_fastopen.3.gz
@@ -1067,6 +1089,8 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_x509_crt_sign2.3.gz
 %%MAN3%%man/man3/gnutls_x509_crt_verify.3.gz
 %%MAN3%%man/man3/gnutls_x509_crt_verify_data2.3.gz
+%%MAN3%%man/man3/gnutls_x509_ct_sct_get.3.gz
+%%MAN3%%man/man3/gnutls_x509_ct_sct_get_version.3.gz
 %%MAN3%%man/man3/gnutls_x509_dn_deinit.3.gz
 %%MAN3%%man/man3/gnutls_x509_dn_export.3.gz
 %%MAN3%%man/man3/gnutls_x509_dn_export2.3.gz
@@ -1078,6 +1102,10 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_x509_dn_oid_known.3.gz
 %%MAN3%%man/man3/gnutls_x509_dn_oid_name.3.gz
 %%MAN3%%man/man3/gnutls_x509_dn_set_str.3.gz
+%%MAN3%%man/man3/gnutls_x509_ext_ct_export_scts.3.gz
+%%MAN3%%man/man3/gnutls_x509_ext_ct_import_scts.3.gz
+%%MAN3%%man/man3/gnutls_x509_ext_ct_scts_deinit.3.gz
+%%MAN3%%man/man3/gnutls_x509_ext_ct_scts_init.3.gz
 %%MAN3%%man/man3/gnutls_x509_ext_deinit.3.gz
 %%MAN3%%man/man3/gnutls_x509_ext_export_aia.3.gz
 %%MAN3%%man/man3/gnutls_x509_ext_export_authority_key_id.3.gz
@@ -1187,12 +1215,15 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_get_issuer.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_get_issuer_by_dn.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_get_issuer_by_subject_key_id.3.gz
+%%MAN3%%man/man3/gnutls_x509_trust_list_get_ptr.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_init.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_iter_deinit.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_iter_get_ca.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_remove_cas.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_remove_trust_file.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_remove_trust_mem.3.gz
+%%MAN3%%man/man3/gnutls_x509_trust_list_set_getissuer_function.3.gz
+%%MAN3%%man/man3/gnutls_x509_trust_list_set_ptr.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_verify_crt.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_verify_crt2.3.gz
 %%MAN3%%man/man3/gnutls_x509_trust_list_verify_named_crt.3.gz
@@ -1225,6 +1256,7 @@ man/man1/tpmtool.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/verify.c
 share/info/gnutls-client-server-use-case.png
+share/info/gnutls-crypto-layers.png
 share/info/gnutls-handshake-sequence.png
 share/info/gnutls-handshake-state.png
 share/info/gnutls-internals.png
