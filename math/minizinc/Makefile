@@ -1,5 +1,5 @@
 PORTNAME=	minizinc
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
