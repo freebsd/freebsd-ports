@@ -1,7 +1,7 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
 		libcoinasl.so:math/asl \
-		libcoinmetis.so:math/ipopt \
+		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
 		libnauty.so:math/nauty \
 		libopenblas.so:math/openblas \
