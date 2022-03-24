@@ -1,7 +1,7 @@
 bin/wxmaxima
 %%DESKTOPDIR%%/io.github.wxmaxima_developers.wxMaxima.desktop
 share/bash-completion/completions/wxmaxima
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
 %%PORTDOCS%%%%DOCSDIR%%/BatchImage.png
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -13,6 +13,7 @@ share/bash-completion/completions/wxmaxima
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SecondTableExample.png
 %%PORTDOCS%%%%DOCSDIR%%/SidePanes.png
+%%PORTDOCS%%%%DOCSDIR%%/Sidepane-TOC-convert-headings.png
 %%PORTDOCS%%%%DOCSDIR%%/cell-example.png
 %%PORTDOCS%%%%DOCSDIR%%/ezUnits.png
 %%PORTDOCS%%%%DOCSDIR%%/header.html
@@ -64,6 +65,7 @@ share/pixmaps/text-x-wxmaxima-batch.svg
 share/pixmaps/wxmaxima-16.xpm
 share/pixmaps/wxmaxima-32.xpm
 share/wxMaxima/10MinuteTutorial.wxm
+share/wxMaxima/NaN.wxm
 share/wxMaxima/a.png
 share/wxMaxima/absCells.wxm
 share/wxMaxima/all-celltypes.wxmx
@@ -80,7 +82,6 @@ share/wxMaxima/d.png
 share/wxMaxima/diffCells.wxm
 share/wxMaxima/empty_file.wxm
 share/wxMaxima/exptCells.wxm
-share/wxMaxima/fonts/CMakeLists.txt
 share/wxMaxima/fonts/COPYING-Libertinus.txt
 share/wxMaxima/fonts/COPYING-LinLibertine.txt
 share/wxMaxima/fonts/COPYING-jsMath.txt
@@ -118,6 +119,8 @@ share/wxMaxima/fracCells.wxm
 share/wxMaxima/functionCells.wxm
 share/wxMaxima/imageCells.wxm
 share/wxMaxima/intCells.wxm
+share/wxMaxima/intervals.wxm
+share/wxMaxima/intervals.wxmx
 share/wxMaxima/io.github.wxmaxima_developers.wxMaxima.png
 share/wxMaxima/io.github.wxmaxima_developers.wxMaxima.svg
 share/wxMaxima/ipc_copypaste1.wxm
