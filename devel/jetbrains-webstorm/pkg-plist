@@ -29,7 +29,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/branding.jar
-%%DATADIR%%/lib/build-marker-WS-213.6777.57
+%%DATADIR%%/lib/build-marker-WS-213.7172.31
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
