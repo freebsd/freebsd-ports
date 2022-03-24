@@ -2167,7 +2167,7 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.1.1-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-56.0.0-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
