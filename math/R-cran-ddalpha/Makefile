@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	ddalpha
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
