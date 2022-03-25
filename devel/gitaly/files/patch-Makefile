@@ -1,6 +1,6 @@
---- Makefile.orig	2022-02-25 19:11:57 UTC
+--- Makefile.orig	2022-03-21 09:11:43 UTC
 +++ Makefile
-@@ -317,7 +317,7 @@ help:
+@@ -314,7 +314,7 @@ help:
  
  .PHONY: build
  ## Build Go binaries and install required Ruby Gems.
@@ -9,7 +9,7 @@
  	@ # We used to install Gitaly binaries into the source directory by default when executing
  	@ # "make" or "make all", which has been changed in v14.5 to only build binaries into
  	@ # `_build/bin`. In order to quickly fail in case any source install still refers to these
-@@ -348,7 +348,7 @@ $(call find_commands):
+@@ -345,7 +345,7 @@ $(call find_commands):
  	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
  	@ # GNU build-id from the empty string and causing guaranteed collisions.
  	GO_BUILD_ID=$$( go tool buildid $(addprefix ${BUILD_DIR}/bin/, $@) || openssl rand -hex 32 ) && \
@@ -18,7 +18,7 @@
  	go install -ldflags '${GO_LDFLAGS}'" -B 0x$$GNU_BUILD_ID" -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $@)
  endif
  
-@@ -558,7 +558,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -559,7 +559,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile

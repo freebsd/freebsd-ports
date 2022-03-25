@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.8.4
+DISTVERSION=	14.9.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.33.0:devel/git \
+MY_DEPENDS=	git>=2.35.1:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
 		rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
@@ -49,7 +49,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	d35ed2db0cdea9f7494a7f6758c06bacf0160c53
+GL_COMMIT=	b8dcfbb394eddfa30d27753a14792d54654cef56
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -155,7 +155,7 @@ GH_TUPLE=	\
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
-		libgit2:git2go:v33.0.6:libgit2_git2go_v33/vendor/github.com/libgit2/git2go/v33 \
+		libgit2:git2go:v33.0.9:libgit2_git2go_v33/vendor/github.com/libgit2/git2go/v33 \
 		lightstep:lightstep-tracer-common:a8dfcb80d3a7:lightstep_lightstep_tracer_common_gogo/vendor/github.com/lightstep/lightstep-tracer-common \
 		lightstep:lightstep-tracer-go:v0.24.0:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
@@ -200,6 +200,7 @@ GH_TUPLE=	\
 
 GL_TUPLE=	gitlab-org:gitlab-shell:50da611814d256c77e689977265ec7e07633a4dc:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
 		gitlab-org:labkit:397363e2404ac0276b1959373a1c1c2bc1610d67:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+
 
 # 13dd
 post-extract:
