@@ -2,7 +2,7 @@
 
 PORTNAME=	gupnp-tools
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
 		libgupnp-1.2.so:net/gupnp \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		gettext gnome meson pkgconfig tar:xz
+USES=		gettext-tools gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 libxml2
 
 USE_LDCONFIG=	yes
