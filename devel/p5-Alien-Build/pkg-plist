@@ -75,6 +75,7 @@
 %%SITE_PERL%%/Alien/Build/Version/Basic.pm
 %%SITE_PERL%%/Alien/Build/rc.pm
 %%SITE_PERL%%/Alien/Role.pm
+%%SITE_PERL%%/Alien/Util.pm
 %%SITE_PERL%%/Test/Alien.pm
 %%SITE_PERL%%/Test/Alien/Build.pm
 %%SITE_PERL%%/Test/Alien/CanCompile.pm
@@ -160,6 +161,7 @@
 %%PERL5_MAN3%%/Alien::Build::Version::Basic.3.gz
 %%PERL5_MAN3%%/Alien::Build::rc.3.gz
 %%PERL5_MAN3%%/Alien::Role.3.gz
+%%PERL5_MAN3%%/Alien::Util.3.gz
 %%PERL5_MAN3%%/Test::Alien.3.gz
 %%PERL5_MAN3%%/Test::Alien::Build.3.gz
 %%PERL5_MAN3%%/Test::Alien::CanCompile.3.gz
