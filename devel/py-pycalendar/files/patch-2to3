@@ -1,0 +1,48 @@
+--- src/pycalendar/datetime.py.orig	2011-05-24 16:51:10 UTC
++++ src/pycalendar/datetime.py
+@@ -20,7 +20,7 @@ from pycalendar import utils
+ from pycalendar.duration import PyCalendarDuration
+ from pycalendar.timezone import PyCalendarTimezone
+ from pycalendar.valueutils import ValueMixin
+-import cStringIO as StringIO
++import io as StringIO
+ import time
+ 
+ class PyCalendarDateTime(ValueMixin):
+@@ -254,13 +254,13 @@ class PyCalendarDateTime(ValueMixin):
+         # Look for cached value (or floating time which has to be calculated
+         # each time)
+         if ( not self.mPosixTimeCached ) or self.floating():
+-            result = 0L
++            result = 0
+ 
+             # Add hour/mins/secs
+-            result = ( self.mHours * 60L + self.mMinutes ) * 60L + self.mSeconds
++            result = ( self.mHours * 60 + self.mMinutes ) * 60 + self.mSeconds
+ 
+             # Number of days since 1970
+-            result += self.daysSince1970() * 24L * 60L * 60L
++            result += self.daysSince1970() * 24 * 60 * 60
+ 
+             # Adjust for timezone offset
+             result -= self.timeZoneSecondsOffset()
+--- src/pycalendar/vcard/card.py.orig	2011-05-24 16:51:10 UTC
++++ src/pycalendar/vcard/card.py
+@@ -14,7 +14,7 @@
+ #    limitations under the License.
+ ##
+ 
+-from cStringIO import StringIO
++from io import StringIO
+ from pycalendar.componentbase import PyCalendarComponentBase
+ from pycalendar.exceptions import PyCalendarInvalidData
+ from pycalendar.parser import ParserContext
+@@ -214,7 +214,7 @@ class Card(PyCalendarComponentBase):
+                             else:
+                                 self.addProperty(prop)
+                     except IndexError:
+-                        print line
++                        print(line)
+     
+         # Check for truncated data
+         if state != LOOK_FOR_VCARD:
