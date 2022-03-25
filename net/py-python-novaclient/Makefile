@@ -1,7 +1,7 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 
 PORTNAME=	python-novaclient
-PORTVERSION=	17.6.0
+PORTVERSION=	17.7.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
