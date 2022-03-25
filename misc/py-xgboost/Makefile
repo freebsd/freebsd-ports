@@ -35,6 +35,9 @@ POST_PLIST=	fix-plist
 fix-plist: # https://github.com/dmlc/xgboost/issues/5705
 	@${REINPLACE_CMD} 's|.*libxgboost${PYTHON_EXT_SUFFIX}.so$$||' ${TMPPLIST}
 
+post-install:
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+
 do-test: # tests fail w/out CUDA: https://github.com/dmlc/xgboost/issues/6881
 	@cd ${WRKSRC}/.. && ${PYTHON_CMD} -m pytest
 

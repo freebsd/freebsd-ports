@@ -1,0 +1,375 @@
+--- xgboost/callback.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/callback.py
+@@ -319,7 +319,7 @@ def _aggcv(rlist):
+             cvmap[(metric_idx, k)].append(float(v))
+     msg = idx
+     results = []
+-    for (metric_idx, k), v in sorted(cvmap.items(), key=lambda x: x[0][0]):
++    for (metric_idx, k), v in sorted(list(cvmap.items()), key=lambda x: x[0][0]):
+         v = numpy.array(v)
+         if not isinstance(msg, STRING_TYPES):
+             msg = msg.decode()
+@@ -595,10 +595,10 @@ class EarlyStopping(TrainingCallback):
+                         evals_log: TrainingCallback.EvalsLog) -> bool:
+         epoch += self.starting_round  # training continuation
+         msg = 'Must have at least 1 validation dataset for early stopping.'
+-        assert len(evals_log.keys()) >= 1, msg
++        assert len(list(evals_log.keys())) >= 1, msg
+         data_name = ''
+         if self.data:
+-            for d, _ in evals_log.items():
++            for d, _ in list(evals_log.items()):
+                 if d == self.data:
+                     data_name = d
+             if not data_name:
+@@ -672,8 +672,8 @@ class EvaluationMonitor(TrainingCallback):
+ 
+         msg: str = f'[{epoch}]'
+         if rabit.get_rank() == self.printer_rank:
+-            for data, metric in evals_log.items():
+-                for metric_name, log in metric.items():
++            for data, metric in list(evals_log.items()):
++                for metric_name, log in list(metric.items()):
+                     stdv: Optional[float] = None
+                     if isinstance(log[-1], tuple):
+                         score = log[-1][0]
+--- xgboost/compat.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/compat.py
+@@ -48,14 +48,14 @@ except ImportError:
+ 
+ # sklearn
+ try:
+-    from sklearn.base import BaseEstimator
+-    from sklearn.base import RegressorMixin, ClassifierMixin
+-    from sklearn.preprocessing import LabelEncoder
++    from .sklearn.base import BaseEstimator
++    from .sklearn.base import RegressorMixin, ClassifierMixin
++    from .sklearn.preprocessing import LabelEncoder
+ 
+     try:
+-        from sklearn.model_selection import KFold, StratifiedKFold
++        from .sklearn.model_selection import KFold, StratifiedKFold
+     except ImportError:
+-        from sklearn.cross_validation import KFold, StratifiedKFold
++        from .sklearn.cross_validation import KFold, StratifiedKFold
+ 
+     SKLEARN_INSTALLED = True
+ 
+@@ -71,7 +71,7 @@ try:
+         def to_json(self):
+             '''Returns a JSON compatible dictionary'''
+             meta = {}
+-            for k, v in self.__dict__.items():
++            for k, v in list(self.__dict__.items()):
+                 if isinstance(v, np.ndarray):
+                     meta[k] = v.tolist()
+                 else:
+@@ -82,7 +82,7 @@ try:
+             # pylint: disable=attribute-defined-outside-init
+             '''Load the encoder back from a JSON compatible dict.'''
+             meta = {}
+-            for k, v in doc.items():
++            for k, v in list(doc.items()):
+                 if k == 'classes_':
+                     self.classes_ = np.array(v)
+                     continue
+--- xgboost/core.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/core.py
+@@ -142,7 +142,7 @@ def _expect(expectations, got):
+ 
+ def _log_callback(msg: bytes) -> None:
+     """Redirect logs from native library into Python console"""
+-    print(py_str(msg))
++    print((py_str(msg)))
+ 
+ 
+ def _get_log_callback_func():
+@@ -479,7 +479,7 @@ def _deprecate_positional_args(f):
+     kwonly_args = []
+     all_args = []
+ 
+-    for name, param in sig.parameters.items():
++    for name, param in list(sig.parameters.items()):
+         if param.kind == Parameter.POSITIONAL_OR_KEYWORD:
+             all_args.append(name)
+         elif param.kind == Parameter.KEYWORD_ONLY:
+@@ -1346,7 +1346,7 @@ class Booster(object):
+     def _configure_metrics(self, params: Union[Dict, List]) -> Union[Dict, List]:
+         if isinstance(params, dict) and 'eval_metric' in params \
+            and isinstance(params['eval_metric'], list):
+-            params = dict((k, v) for k, v in params.items())
++            params = dict((k, v) for k, v in list(params.items()))
+             eval_metrics = params['eval_metric']
+             params.pop("eval_metric", None)
+             params = list(params.items())
+@@ -1577,7 +1577,7 @@ class Booster(object):
+         **kwargs
+             The attributes to set. Setting a value to None deletes an attribute.
+         """
+-        for key, value in kwargs.items():
++        for key, value in list(kwargs.items()):
+             if value is not None:
+                 if not isinstance(value, STRING_TYPES):
+                     raise ValueError("Set Attr only accepts string values")
+@@ -1650,7 +1650,7 @@ class Booster(object):
+            value of the specified parameter, when params is str key
+         """
+         if isinstance(params, Mapping):
+-            params = params.items()
++            params = list(params.items())
+         elif isinstance(params, STRING_TYPES) and value is not None:
+             params = [(params, value)]
+         for key, val in params:
+--- xgboost/dask.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/dask.py
+@@ -49,9 +49,9 @@ from .sklearn import _cls_predict_proba
+ from .sklearn import XGBRanker
+ 
+ if TYPE_CHECKING:
+-    from dask import dataframe as dd
+-    from dask import array as da
+-    import dask
++    from .dask import dataframe as dd
++    from .dask import array as da
++    from . import dask
+     import distributed
+ else:
+     dd = LazyLoader('dd', globals(), 'dask.dataframe')
+@@ -152,7 +152,7 @@ def _start_tracker(n_workers: int) -> Dict[str, Any]:
+ 
+ def _assert_dask_support() -> None:
+     try:
+-        import dask  # pylint: disable=W0621,W0611
++        from . import dask  # pylint: disable=W0621,W0611
+     except ImportError as e:
+         raise ImportError(
+             "Dask needs to be installed in order to use this module"
+@@ -394,7 +394,7 @@ class DaskDMatrix:
+         # [(x0, x1, ..), (y0, y1, ..), ..] in delayed form
+ 
+         # delay the zipped result
+-        parts = list(map(dask.delayed, zip(*parts)))  # pylint: disable=no-member
++        parts = list(map(dask.delayed, list(zip(*parts))))  # pylint: disable=no-member
+         # At this point, the mental model should look like:
+         # [(x0, y0, ..), (x1, y1, ..), ..] in delayed form
+ 
+@@ -414,7 +414,7 @@ class DaskDMatrix:
+ 
+         worker_map: Dict[str, "distributed.Future"] = defaultdict(list)
+ 
+-        for key, workers in who_has.items():
++        for key, workers in list(who_has.items()):
+             worker_map[next(iter(workers))].append(key_to_partition[key])
+ 
+         self.worker_map = worker_map
+@@ -803,7 +803,7 @@ def _dmatrix_from_list_of_parts(
+ async def _get_rabit_args(n_workers: int, client: "distributed.Client") -> List[bytes]:
+     '''Get rabit context arguments from data distribution in DaskDMatrix.'''
+     env = await client.run_on_scheduler(_start_tracker, n_workers)
+-    rabit_args = [f"{k}={v}".encode() for k, v in env.items()]
++    rabit_args = [f"{k}={v}".encode() for k, v in list(env.items())]
+     return rabit_args
+ 
+ # train and predict methods are supposed to be "functional", which meets the
+@@ -930,7 +930,7 @@ async def _train_async(
+ 
+         results = await client.gather(futures, asynchronous=True)
+ 
+-        return list(filter(lambda ret: ret is not None, results))[0]
++        return list([ret for ret in results if ret is not None])[0]
+ 
+ 
+ def train(                      # pylint: disable=unused-argument
+@@ -1579,7 +1579,7 @@ class DaskScikitLearnBase(XGBModel):
+ 
+     def __getstate__(self) -> Dict:
+         this = self.__dict__.copy()
+-        if "_client" in this.keys():
++        if "_client" in list(this.keys()):
+             del this["_client"]
+         return this
+ 
+@@ -1711,7 +1711,7 @@ class DaskXGBRegressor(DaskScikitLearnBase, XGBRegress
+         callbacks: Optional[List[TrainingCallback]] = None,
+     ) -> "DaskXGBRegressor":
+         _assert_dask_support()
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         return self._client_sync(self._fit_async, **args)
+ 
+ 
+@@ -1814,7 +1814,7 @@ class DaskXGBClassifier(DaskScikitLearnBase, XGBClassi
+         callbacks: Optional[List[TrainingCallback]] = None
+     ) -> "DaskXGBClassifier":
+         _assert_dask_support()
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         return self._client_sync(self._fit_async, **args)
+ 
+     async def _predict_proba_async(
+@@ -2002,7 +2002,7 @@ class DaskXGBRanker(DaskScikitLearnBase, XGBRankerMixI
+         callbacks: Optional[List[TrainingCallback]] = None
+     ) -> "DaskXGBRanker":
+         _assert_dask_support()
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         return self._client_sync(self._fit_async, **args)
+ 
+     # FIXME(trivialfis): arguments differ due to additional parameters like group and qid.
+@@ -2067,7 +2067,7 @@ class DaskXGBRFRegressor(DaskXGBRegressor):
+         callbacks: Optional[List[TrainingCallback]] = None
+     ) -> "DaskXGBRFRegressor":
+         _assert_dask_support()
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         _check_rf_callback(early_stopping_rounds, callbacks)
+         super().fit(**args)
+         return self
+@@ -2131,7 +2131,7 @@ class DaskXGBRFClassifier(DaskXGBClassifier):
+         callbacks: Optional[List[TrainingCallback]] = None
+     ) -> "DaskXGBRFClassifier":
+         _assert_dask_support()
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         _check_rf_callback(early_stopping_rounds, callbacks)
+         super().fit(**args)
+         return self
+--- xgboost/plotting.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/plotting.py
+@@ -81,7 +81,7 @@ def plot_importance(booster, ax=None, height=0.2,
+         tuples = sorted(tuples, key=lambda x: x[1])[-max_num_features:]
+     else:
+         tuples = sorted(tuples, key=lambda x: x[1])
+-    labels, values = zip(*tuples)
++    labels, values = list(zip(*tuples))
+ 
+     if ax is None:
+         _, ax = plt.subplots(1, 1)
+@@ -177,13 +177,13 @@ def to_graphviz(booster, fmap='', num_trees=0, rankdir
+     # squash everything back into kwargs again for compatibility
+     parameters = 'dot'
+     extra = {}
+-    for key, value in kwargs.items():
++    for key, value in list(kwargs.items()):
+         extra[key] = value
+ 
+     if rankdir is not None:
+         kwargs['graph_attrs'] = {}
+         kwargs['graph_attrs']['rankdir'] = rankdir
+-    for key, value in extra.items():
++    for key, value in list(extra.items()):
+         if kwargs.get("graph_attrs", None) is not None:
+             kwargs['graph_attrs'][key] = value
+         else:
+--- xgboost/sklearn.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/sklearn.py
+@@ -455,7 +455,7 @@ class XGBModel(XGBModelBase):
+         booster : a xgboost booster of underlying model
+         """
+         if not self.__sklearn_is_fitted__():
+-            from sklearn.exceptions import NotFittedError
++            from .sklearn.exceptions import NotFittedError
+             raise NotFittedError('need to call fit or load_model beforehand')
+         return self._Booster
+ 
+@@ -476,7 +476,7 @@ class XGBModel(XGBModelBase):
+ 
+         # this concatenates kwargs into parameters, enabling `get_params` for
+         # obtaining parameters from keyword parameters.
+-        for key, value in params.items():
++        for key, value in list(params.items()):
+             if hasattr(self, key):
+                 setattr(self, key, value)
+             else:
+@@ -526,14 +526,14 @@ class XGBModel(XGBModelBase):
+             internal = {}
+             while stack:
+                 obj = stack.pop()
+-                for k, v in obj.items():
++                for k, v in list(obj.items()):
+                     if k.endswith('_param'):
+-                        for p_k, p_v in v.items():
++                        for p_k, p_v in list(v.items()):
+                             internal[p_k] = p_v
+                     elif isinstance(v, dict):
+                         stack.append(v)
+ 
+-            for k, v in internal.items():
++            for k, v in list(internal.items()):
+                 if k in params and params[k] is None:
+                     params[k] = parse_parameter(v)
+         except ValueError:
+@@ -549,7 +549,7 @@ class XGBModel(XGBModelBase):
+             "enable_categorical"
+         }
+         filtered = {}
+-        for k, v in params.items():
++        for k, v in list(params.items()):
+             if k not in wrapper_specific and not callable(v):
+                 filtered[k] = v
+         return filtered
+@@ -568,7 +568,7 @@ class XGBModel(XGBModelBase):
+ 
+     def save_model(self, fname: Union[str, os.PathLike]) -> None:
+         meta = {}
+-        for k, v in self.__dict__.items():
++        for k, v in list(self.__dict__.items()):
+             if k == '_le':
+                 meta['_le'] = self._le.to_json()
+                 continue
+@@ -607,7 +607,7 @@ class XGBModel(XGBModelBase):
+             return
+         meta = json.loads(meta_str)
+         states = {}
+-        for k, v in meta.items():
++        for k, v in list(meta.items()):
+             if k == '_le':
+                 self._le = XGBoostLabelEncoder()
+                 self._le.from_json(v)
+@@ -660,7 +660,7 @@ class XGBModel(XGBModelBase):
+ 
+     def _set_evaluation_result(self, evals_result: TrainingCallback.EvalsLog) -> None:
+         if evals_result:
+-            for val in evals_result.items():
++            for val in list(evals_result.items()):
+                 evals_result_key = list(val[1].keys())[0]
+                 evals_result[val[0]][evals_result_key] = val[1][evals_result_key]
+             self.evals_result_ = evals_result
+@@ -1455,7 +1455,7 @@ class XGBRFClassifier(XGBClassifier):
+         feature_weights: Optional[array_like] = None,
+         callbacks: Optional[List[TrainingCallback]] = None
+     ) -> "XGBRFClassifier":
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         _check_rf_callback(early_stopping_rounds, callbacks)
+         super().fit(**args)
+         return self
+@@ -1526,7 +1526,7 @@ class XGBRFRegressor(XGBRegressor):
+         feature_weights: Optional[array_like] = None,
+         callbacks: Optional[List[TrainingCallback]] = None
+     ) -> "XGBRFRegressor":
+-        args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
++        args = {k: v for k, v in list(locals().items()) if k not in ("self", "__class__")}
+         _check_rf_callback(early_stopping_rounds, callbacks)
+         super().fit(**args)
+         return self
+--- xgboost/training.py.orig	2022-01-17 08:52:31 UTC
++++ xgboost/training.py
+@@ -452,7 +452,7 @@ def cv(params, dtrain, num_boost_round=10, nfold=3, st
+         if 'eval_metric' in params:
+             params['eval_metric'] = _metrics
+     else:
+-        params = dict((k, v) for k, v in params.items())
++        params = dict((k, v) for k, v in list(params.items()))
+ 
+     if (not metrics) and 'eval_metric' in params:
+         if isinstance(params['eval_metric'], list):
+@@ -506,7 +506,7 @@ def cv(params, dtrain, num_boost_round=10, nfold=3, st
+             results[key + '-std'].append(std)
+ 
+         if should_break:
+-            for k in results.keys():  # pylint: disable=consider-iterating-dictionary
++            for k in list(results.keys()):  # pylint: disable=consider-iterating-dictionary
+                 results[k] = results[k][:(booster.best_iteration + 1)]
+             break
+     if as_pandas:
