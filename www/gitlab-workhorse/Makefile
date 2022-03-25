@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	14.8.4
+PORTVERSION=	14.9.0
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -25,7 +25,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	ef2df7d848f4b13324ed2202fc17b983f34b154d
+GL_COMMIT=	77d81d7c756bf5b9e4f25aea294973b0d3b550da
 
 # for go dependencies
 USE_GITHUB=	nodefault
