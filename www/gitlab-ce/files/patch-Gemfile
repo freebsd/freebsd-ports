@@ -1,4 +1,4 @@
---- Gemfile.orig	2022-02-21 12:45:48 UTC
+--- Gemfile.orig	2022-03-21 09:13:50 UTC
 +++ Gemfile
 @@ -4,7 +4,7 @@ source 'https://rubygems.org'
  
@@ -9,7 +9,7 @@
  
  # Responders respond_to and respond_with
  gem 'responders', '~> 3.0'
-@@ -89,7 +89,7 @@ gem 'gpgme', '~> 2.0.19'
+@@ -91,7 +91,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
  # see https://github.com/intridea/omniauth-ldap/compare/master...gitlabhq:master
  gem 'gitlab_omniauth-ldap', '~> 2.1.1', require: 'omniauth-ldap'
@@ -18,7 +18,7 @@
  
  # API
  gem 'grape', '~> 1.5.2'
-@@ -100,7 +100,6 @@ gem 'rack-cors', '~> 1.0.6', require: 'rack/cors'
+@@ -102,7 +102,6 @@ gem 'rack-cors', '~> 1.0.6', require: 'rack/cors'
  gem 'graphql', '~> 1.11.10'
  gem 'graphiql-rails', '~> 1.8'
  gem 'apollo_upload_server', '~> 2.1.0'
@@ -26,7 +26,7 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -328,115 +327,14 @@ gem 'batch-loader', '~> 2.0.1'
+@@ -333,118 +332,14 @@ gem 'batch-loader', '~> 2.0.1'
  gem 'peek', '~> 1.1'
  
  # Snowplow events tracking
@@ -77,7 +77,7 @@
 -  gem 'spring', '~> 2.1.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -
--  gem 'gitlab-styles', '~> 6.6.0', require: false
+-  gem 'gitlab-styles', '~> 7.0.0', require: false
 -
 -  gem 'haml_lint', '~> 0.36.0', require: false
 -  gem 'bundler-audit', '~> 0.7.0.1', require: false
@@ -96,14 +96,16 @@
 -  gem 'parallel', '~> 1.19', require: false
 -
 -  gem 'test_file_finder', '~> 0.1.3'
+-
+-  gem 'sigdump', '~> 0.2.4', require: 'sigdump/setup'
 -end
 -
 -group :development, :test, :danger do
--  gem 'gitlab-dangerfiles', '~> 2.8.0', require: false
+-  gem 'gitlab-dangerfiles', '~> 2.11.0', require: false
 -end
 -
 -group :development, :test, :coverage do
--  gem 'simplecov', '~> 0.18.5', require: false
+-  gem 'simplecov', '~> 0.21', require: false
 -  gem 'simplecov-lcov', '~> 0.8.0', require: false
 -  gem 'simplecov-cobertura', '~> 1.3.1', require: false
 -  gem 'undercover', '~> 0.4.4', require: false
@@ -121,6 +123,7 @@
 -  gem 'fuubar', '~> 2.2.0'
 -  gem 'rspec-retry', '~> 0.6.1'
 -  gem 'rspec_profiling', '~> 0.0.6'
+-  gem 'rspec-benchmark', '~> 0.6.0'
 -  gem 'rspec-parameterized', require: false
 -
 -  gem 'capybara', '~> 3.35.3'
@@ -143,10 +146,9 @@
  gem 'octokit', '~> 4.15'
  
  # Updating this gem version here is deprecated. See:
-@@ -535,3 +433,6 @@ gem 'ipaddress', '~> 0.8.3'
+@@ -543,3 +438,5 @@ gem 'ipaddress', '~> 0.8.3'
  gem 'parslet', '~> 1.8'
  
- gem 'ipynbdiff', '0.3.8'
+ gem 'ipynbdiff', '0.4.4'
 +
 +gem 'parser'
-+
