@@ -1,0 +1,31 @@
+--- src/zope/contenttype/__init__.py.orig	2011-07-27 03:41:00 UTC
++++ src/zope/contenttype/__init__.py
+@@ -106,6 +106,6 @@ here = os.path.dirname(os.path.abspath(__file__))
+ add_files([os.path.join(here, "mime.types")])
+ 
+ if __name__ == '__main__':
+-    items = mimetypes.types_map.items()
++    items = list(mimetypes.types_map.items())
+     items.sort()
+-    for item in items: print "%s:\t%s" % item
++    for item in items: print("%s:\t%s" % item)
+--- src/zope/contenttype/parse.py.orig	2010-04-05 21:04:38 UTC
++++ src/zope/contenttype/parse.py
+@@ -112,14 +112,15 @@ def _unescape(string):
+     return string
+ 
+ 
+-def join((major, minor, params)):
++def join(xxx_todo_changeme):
++    (major, minor, params) = xxx_todo_changeme
+     pstr = ""
+     try:
+         params.items
+     except AttributeError:
+         pass
+     else:
+-        params = params.items()
++        params = list(params.items())
+         # ensure a predictable order:
+         params.sort()
+     for name, value in params:
