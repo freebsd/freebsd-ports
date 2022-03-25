@@ -1,0 +1,173 @@
+--- pyaxo.py.orig	2017-09-15 21:50:29 UTC
++++ pyaxo.py
+@@ -124,18 +124,18 @@ class Axolotl(object):
+     def initState(self, other_name, other_identityKey, other_handshakeKey,
+                   other_ratchetKey, verify=True):
+         if verify:
+-            print 'Confirm ' + other_name + ' has identity key fingerprint:\n'
++            print('Confirm ' + other_name + ' has identity key fingerprint:\n')
+             fingerprint = hash_(other_identityKey).encode('hex').upper()
+             fprint = ''
+             for i in range(0, len(fingerprint), 4):
+                 fprint += fingerprint[i:i+2] + ':'
+-            print fprint[:-1] + '\n'
+-            print 'Be sure to verify this fingerprint with ' + other_name + \
+-                  ' by some out-of-band method!'
+-            print 'Otherwise, you may be subject to a Man-in-the-middle attack!\n'
+-            ans = raw_input('Confirm? y/N: ').strip()
++            print(fprint[:-1] + '\n')
++            print('Be sure to verify this fingerprint with ' + other_name + \
++                  ' by some out-of-band method!')
++            print('Otherwise, you may be subject to a Man-in-the-middle attack!\n')
++            ans = input('Confirm? y/N: ').strip()
+             if ans != 'y':
+-                print 'Key fingerprint not confirmed - exiting...'
++                print('Key fingerprint not confirmed - exiting...')
+                 sys.exit()
+ 
+         self.conversation = self.init_conversation(other_name,
+@@ -386,7 +386,7 @@ class AxolotlConversation:
+     def _try_skipped_mk(self, msg, pad_length):
+         msg1 = msg[:HEADER_LEN-pad_length]
+         msg2 = msg[HEADER_LEN:]
+-        for skipped_mk in self.staged_hk_mk.values():
++        for skipped_mk in list(self.staged_hk_mk.values()):
+             try:
+                 decrypt_symmetric(skipped_mk.hk, msg1)
+                 body = decrypt_symmetric(skipped_mk.mk, msg2)
+@@ -456,7 +456,7 @@ class AxolotlConversation:
+             try:
+                 body = decrypt_symmetric(mk, msg[HEADER_LEN:])
+             except CryptoError:
+-                print 'Undecipherable message'
++                print('Undecipherable message')
+                 sys.exit(1)
+         else:
+             try:
+@@ -464,7 +464,7 @@ class AxolotlConversation:
+             except CryptoError:
+                 pass
+             if self.ratchet_flag or not header or header == '':
+-                print 'Undecipherable message'
++                print('Undecipherable message')
+                 sys.exit(1)
+             Np = struct.unpack('>I', header[:HEADER_COUNT_NUM_LEN])[0]
+             PNp = struct.unpack('>I', header[HEADER_COUNT_NUM_LEN:HEADER_COUNT_NUM_LEN*2])[0]
+@@ -481,7 +481,7 @@ class AxolotlConversation:
+             except CryptoError:
+                 pass
+             if not body or body == '':
+-                print 'Undecipherable message'
++                print('Undecipherable message')
+                 sys.exit(1)
+             self.keys['RK'] = RKp
+             self.keys['HKr'] = HKp
+@@ -499,7 +499,7 @@ class AxolotlConversation:
+             plaintext = f.read()
+         ciphertext = b2a(self.encrypt(plaintext)) + '\n'
+         with open(filename+'.asc', 'w') as f:
+-            lines = [ciphertext[i:i+64] for i in xrange(0, len(ciphertext), 64)]
++            lines = [ciphertext[i:i+64] for i in range(0, len(ciphertext), 64)]
+             for line in lines:
+                 f.write(line+'\n')
+ 
+@@ -507,7 +507,7 @@ class AxolotlConversation:
+         with open(filename, 'r') as f:
+             ciphertext = a2b(f.read())
+         plaintext = self.decrypt(ciphertext)
+-        print plaintext
++        print(plaintext)
+ 
+     def encrypt_pipe(self):
+         plaintext = sys.stdin.read()
+@@ -528,46 +528,46 @@ class AxolotlConversation:
+         self._axolotl.delete_conversation(self)
+ 
+     def print_keys(self):
+-        print 'Your Identity key is:\n' + b2a(self.keys['DHIs']) + '\n'
++        print('Your Identity key is:\n' + b2a(self.keys['DHIs']) + '\n')
+         fingerprint = hash_(self.keys['DHIs']).encode('hex').upper()
+         fprint = ''
+         for i in range(0, len(fingerprint), 4):
+             fprint += fingerprint[i:i+2] + ':'
+-        print 'Your identity key fingerprint is: '
+-        print fprint[:-1] + '\n'
+-        print 'Your Ratchet key is:\n' + b2a(self.keys['DHRs']) + '\n'
++        print('Your identity key fingerprint is: ')
++        print(fprint[:-1] + '\n')
++        print('Your Ratchet key is:\n' + b2a(self.keys['DHRs']) + '\n')
+         if self.handshake_key:
+-            print 'Your Handshake key is:\n' + b2a(self.handshake_pkey)
++            print('Your Handshake key is:\n' + b2a(self.handshake_pkey))
+         else:
+-            print 'Your Handshake key is not available'
++            print('Your Handshake key is not available')
+ 
+     def print_state(self):
+-        print
+-        print 'Warning: saving this data to disk is insecure!'
+-        print
++        print()
++        print('Warning: saving this data to disk is insecure!')
++        print()
+         for key in sorted(self.keys):
+              if 'priv' in key:
+                  pass
+              else:
+                  if self.keys[key] is None:
+-                     print key + ': None'
++                     print(key + ': None')
+                  elif type(self.keys[key]) is bool:
+                      if self.keys[key]:
+-                         print key + ': True'
++                         print(key + ': True')
+                      else:
+-                         print key + ': False'
++                         print(key + ': False')
+                  elif type(self.keys[key]) is str:
+                      try:
+                          self.keys[key].decode('ascii')
+-                         print key + ': ' + self.keys[key]
++                         print(key + ': ' + self.keys[key])
+                      except UnicodeDecodeError:
+-                         print key + ': ' + b2a(self.keys[key])
++                         print(key + ': ' + b2a(self.keys[key]))
+                  else:
+-                     print key + ': ' + str(self.keys[key])
++                     print(key + ': ' + str(self.keys[key]))
+         if self.mode is ALICE_MODE:
+-            print 'Mode: Alice'
++            print('Mode: Alice')
+         else:
+-            print 'Mode: Bob'
++            print('Mode: Bob')
+ 
+ 
+ class SkippedMessageKey:
+@@ -601,7 +601,7 @@ class SqlitePersistence(object):
+                             sql = decrypt_symmetric(self.dbpassphrase,
+                                                     crypt_sql)
+                         except CryptoError:
+-                            print 'Bad passphrase!'
++                            print('Bad passphrase!')
+                             sys.exit(1)
+                         else:
+                             db.cursor().executescript(sql)
+@@ -611,7 +611,7 @@ class SqlitePersistence(object):
+                         try:
+                             db.cursor().executescript(sql)
+                         except sqlite3.OperationalError:
+-                            print 'Bad sql! Password problem - cannot create the database.'
++                            print('Bad sql! Password problem - cannot create the database.')
+                             sys.exit(1)
+             except IOError as e:
+                 if e.errno == errno.ENOENT:
+@@ -687,7 +687,7 @@ class SqlitePersistence(object):
+                     to_identity = ?''', (
+                         conversation.name,
+                         conversation.other_name))
+-            for skipped_mk in conversation.staged_hk_mk.values():
++            for skipped_mk in list(conversation.staged_hk_mk.values()):
+                 db.execute('''
+                     INSERT INTO
+                         skipped_mk (
