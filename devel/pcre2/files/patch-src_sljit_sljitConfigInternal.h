@@ -1,5 +1,5 @@
---- sljit/sljitConfigInternal.h.orig	2022-03-25 09:54:56 UTC
-+++ sljit/sljitConfigInternal.h
+--- src/sljit/sljitConfigInternal.h.orig	2022-03-25 09:54:56 UTC
++++ src/sljit/sljitConfigInternal.h
 @@ -283,7 +283,7 @@
  /* Instruction cache flush. */
  /****************************/
