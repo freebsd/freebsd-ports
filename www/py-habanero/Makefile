@@ -1,8 +1,12 @@
 PORTNAME=	habanero
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/sckott/habanero/commit/
+PATCHFILES=	e50874fbea1944bd6e4f7bb97743200bdd7c7e9e.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Low-level client for Crossref search API
