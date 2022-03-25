@@ -1,0 +1,78 @@
+--- src/zope/size/tests.py.orig	2011-11-29 18:28:40 UTC
++++ src/zope/size/tests.py
+@@ -26,7 +26,7 @@ class ZCMLTest(unittest.TestCase):
+         try:
+             zope.configuration.xmlconfig.XMLConfig(
+                 'configure.zcml', zope.size)()
+-        except Exception, e:
++        except Exception as e:
+             self.fail(e)
+ 
+     def test_configure_should_register_n_components(self):
+@@ -58,54 +58,54 @@ class Test(unittest.TestCase):
+     def testImplementsISized(self):
+         from zope.size import DefaultSized
+         sized = DefaultSized(object())
+-        self.assert_(ISized.providedBy(sized))
++        self.assertTrue(ISized.providedBy(sized))
+ 
+     def testSizeWithBytes(self):
+         from zope.size import DefaultSized
+         obj = DummyObject(1023)
+         sized = DefaultSized(obj)
+         self.assertEqual(sized.sizeForSorting(), ('byte', 1023))
+-        self.assertEqual(sized.sizeForDisplay(), u'1 KB')
++        self.assertEqual(sized.sizeForDisplay(), '1 KB')
+ 
+     def testSizeWithNone(self):
+         from zope.size import DefaultSized
+         obj = DummyObject(None)
+         sized = DefaultSized(obj)
+         self.assertEqual(sized.sizeForSorting(), (None, None))
+-        self.assertEqual(sized.sizeForDisplay(), u'not-available')
++        self.assertEqual(sized.sizeForDisplay(), 'not-available')
+ 
+     def testSizeNotAvailable(self):
+         from zope.size import DefaultSized
+         sized = DefaultSized(object())
+         self.assertEqual(sized.sizeForSorting(), (None, None))
+-        self.assertEqual(sized.sizeForDisplay(), u'not-available')
++        self.assertEqual(sized.sizeForDisplay(), 'not-available')
+ 
+     def testVariousSizes(self):
+         from zope.size import DefaultSized
+ 
+         sized = DefaultSized(DummyObject(0))
+         self.assertEqual(sized.sizeForSorting(), ('byte', 0))
+-        self.assertEqual(sized.sizeForDisplay(), u'0 KB')
++        self.assertEqual(sized.sizeForDisplay(), '0 KB')
+ 
+         sized = DefaultSized(DummyObject(1))
+         self.assertEqual(sized.sizeForSorting(), ('byte', 1))
+-        self.assertEqual(sized.sizeForDisplay(), u'1 KB')
++        self.assertEqual(sized.sizeForDisplay(), '1 KB')
+ 
+         sized = DefaultSized(DummyObject(2048))
+         self.assertEqual(sized.sizeForSorting(), ('byte', 2048))
+-        self.assertEqual(sized.sizeForDisplay(), u'${size} KB')
++        self.assertEqual(sized.sizeForDisplay(), '${size} KB')
+         self.assertEqual(sized.sizeForDisplay().mapping, {'size': '2'})
+ 
+         sized = DefaultSized(DummyObject(2000000))
+         self.assertEqual(sized.sizeForSorting(), ('byte', 2000000))
+-        self.assertEqual(sized.sizeForDisplay(), u'${size} MB')
++        self.assertEqual(sized.sizeForDisplay(), '${size} MB')
+         self.assertEqual(sized.sizeForDisplay().mapping, {'size': '1.91'})
+ 
+     def test_byteDisplay(self):
+         from zope.size import byteDisplay
+-        self.assertEqual(byteDisplay(0), u'0 KB')
+-        self.assertEqual(byteDisplay(1), u'1 KB')
+-        self.assertEqual(byteDisplay(2048), u'${size} KB')
++        self.assertEqual(byteDisplay(0), '0 KB')
++        self.assertEqual(byteDisplay(1), '1 KB')
++        self.assertEqual(byteDisplay(2048), '${size} KB')
+         self.assertEqual(byteDisplay(2048).mapping, {'size': '2'})
+-        self.assertEqual(byteDisplay(2000000), u'${size} MB')
++        self.assertEqual(byteDisplay(2000000), '${size} MB')
+         self.assertEqual(byteDisplay(2000000).mapping, {'size': '1.91'})
