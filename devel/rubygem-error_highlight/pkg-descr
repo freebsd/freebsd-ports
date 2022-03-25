@@ -1,0 +1,7 @@
+Ruby 3.1 will ship with this gem and it will automatically be required when a
+Ruby process starts up. No special setup is required.
+
+This gem works only on MRI and requires Ruby 3.1 or later because it depends on
+MRI's internal APIs that are available since 3.1.
+
+WWW: https://github.com/ruby/error_highlight

@@ -6305,6 +6305,7 @@
     SUBDIR += rubygem-equatable
     SUBDIR += rubygem-erb
     SUBDIR += rubygem-errand
+    SUBDIR += rubygem-error_highlight
     SUBDIR += rubygem-et-orbi
     SUBDIR += rubygem-etc
     SUBDIR += rubygem-event_emitter
