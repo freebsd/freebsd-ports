@@ -1,8 +1,7 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
 
 PORTNAME=	dnscap
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
