@@ -1,0 +1,12 @@
+--- hash_ring/__init__.py.orig	2012-12-15 01:14:49 UTC
++++ hash_ring/__init__.py
+@@ -1,6 +1,6 @@
+-from hash_ring import HashRing
++from .hash_ring import HashRing
+ 
+ try:
+-    from memcache_ring import MemcacheRing
+-except ImportError, e:
++    from .memcache_ring import MemcacheRing
++except ImportError as e:
+     pass
