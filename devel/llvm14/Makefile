@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	14.0.0rc4
+DISTVERSION=	14.0.0
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -134,9 +134,6 @@ CLANG_SUB_LIST=		XCC=clang${LLVM_SUFFIX} \
 			X_COMPILER_TYPE=clang
 CLANG_USE=		GNOME=libxml2
 COMPILER_RT_DESC=	Sanitizer libraries
-# An unwind.h is require to build.  I think an in-tree one should be used
-# but this seems to work as a workaround...
-COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
 COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
 # Allow unwind.h to be found reliably
 COMPILER_RT_USES=	localbase
@@ -272,6 +269,12 @@ FLANG_PATTERN=	${FLANG_COMMANDS:S/^/bin./:tW:C/  */|/g}|flang|libFIR|libFortran
 MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR|obj.MLIRCAP
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1300525
+# An unwind.h is require to build.  I think an in-tree one should be used
+# but this seems to work as a workaround...
+COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
+.endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-clang_lib_Driver_ToolChains_Clang.cpp
