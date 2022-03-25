@@ -6791,7 +6791,11 @@
     SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-semver2
     SUBDIR += rubygem-semverse
+    SUBDIR += rubygem-sentry-rails
     SUBDIR += rubygem-sentry-raven
+    SUBDIR += rubygem-sentry-ruby
+    SUBDIR += rubygem-sentry-ruby-core
+    SUBDIR += rubygem-sentry-sidekiq
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-set
     SUBDIR += rubygem-settingslogic
@@ -6951,6 +6955,7 @@
     SUBDIR += rubygem-validate_url
     SUBDIR += rubygem-validates_timeliness
     SUBDIR += rubygem-versionomy
+    SUBDIR += rubygem-view_component-rails61
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
