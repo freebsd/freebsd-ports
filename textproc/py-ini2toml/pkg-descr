@@ -1,0 +1,10 @@
+The original purpose of this project is to help migrating setup.cfg files to PEP
+621, but by extension it can also be used to convert any compatible .ini/.cfg
+file to TOML.
+
+Please notice, the provided .ini/.cfg files should follow the same syntax
+supported by Python's ConfigParser library (here referred to as INI syntax) and
+more specifically abide by ConfigUpdater restrictions (e.g., no interpolation or
+repeated fields).
+
+WWW: https://github.com/abravalheri/ini2toml
