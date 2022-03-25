@@ -1,0 +1,19 @@
+--- build/moz.configure/init.configure.orig	2020-11-28 16:33:01.000000000 +0000
++++ build/moz.configure/init.configure	2022-03-22 20:13:07.253730000 +0000
+@@ -245,6 +245,7 @@
+ @imports('sys')
+ @imports('subprocess')
+ @imports('distutils.sysconfig')
++@imports(_from='distutils', _import='sysconfig')
+ @imports(_from='mozbuild.configure.util', _import='LineIO')
+ @imports(_from='mozbuild.virtualenv', _import='VirtualenvManager')
+ @imports(_from='mozbuild.virtualenv', _import='verify_python_version')
+@@ -375,7 +376,7 @@
+         sys.exit(subprocess.call([python] + sys.argv))
+ 
+     # We are now in the virtualenv
+-    if not distutils.sysconfig.get_python_lib():
++    if not sysconfig.get_python_lib():
+         die('Could not determine python site packages directory')
+ 
+     str_version = '.'.join(str(v) for v in version)
