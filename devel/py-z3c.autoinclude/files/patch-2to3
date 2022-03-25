@@ -1,0 +1,11 @@
+--- src/z3c/autoinclude/dependency.py.orig	2016-01-29 12:30:33 UTC
++++ src/z3c/autoinclude/dependency.py
+@@ -24,7 +24,7 @@ class DependencyFinder(DistributionManager):
+             for dotted_name in dist_manager.dottedNames():
+                 try:
+                     module = resolve(dotted_name)
+-                except ImportError, exc:
++                except ImportError as exc:
+                     logging.getLogger("z3c.autoinclude").warn(
+                         "resolve(%r) raised import error: %s" % (dotted_name, exc))
+                     continue
