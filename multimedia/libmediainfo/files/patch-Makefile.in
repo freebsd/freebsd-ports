@@ -1,0 +1,42 @@
+Obtained from:	https://github.com/MediaArea/MediaInfoLib/commit/e40d91326ab070f88d3e8d194268ce3cd9275028 (based on)
+
+--- Makefile.in.orig	2021-09-17 08:01:27 UTC
++++ Makefile.in
+@@ -113,7 +113,6 @@ host_triplet = @host@
+ @COMPILE_HMAC_TRUE@                       ../../../Source/ThirdParty/hmac-gladman/hmac.c
+ 
+ @COMPILE_TINYXML2_TRUE@am__append_7 = \
+-@COMPILE_TINYXML2_TRUE@                       ../../../Source/ThirdParty/tfsxml/tfsxml.c \
+ @COMPILE_TINYXML2_TRUE@                       ../../../Source/ThirdParty/tinyxml2/tinyxml2.cpp
+ 
+ subdir = .
+@@ -416,8 +415,7 @@ am__dirstamp = $(am__leading_dot)dirstamp
+ @COMPILE_SHA1_TRUE@am__objects_4 = ../../../Source/ThirdParty/sha1-gladman/sha1.lo
+ @COMPILE_SHA2_TRUE@am__objects_5 = ../../../Source/ThirdParty/sha2-gladman/sha2.lo
+ @COMPILE_HMAC_TRUE@am__objects_6 = ../../../Source/ThirdParty/hmac-gladman/hmac.lo
+-@COMPILE_TINYXML2_TRUE@am__objects_7 = ../../../Source/ThirdParty/tfsxml/tfsxml.lo \
+-@COMPILE_TINYXML2_TRUE@	../../../Source/ThirdParty/tinyxml2/tinyxml2.lo
++@COMPILE_TINYXML2_TRUE@am__objects_7 = ../../../Source/ThirdParty/tinyxml2/tinyxml2.lo
+ am_lib@MediaInfoLib_LibName@_la_OBJECTS =  \
+ 	../../../Source/MediaInfo/File__Analyze.lo \
+ 	../../../Source/MediaInfo/File__Analyze_Buffer.lo \
+@@ -647,7 +645,8 @@ am_lib@MediaInfoLib_LibName@_la_OBJECTS =  \
+ 	../../../Source/MediaInfo/Video/File_Vp8.lo \
+ 	../../../Source/MediaInfo/Video/File_Y4m.lo \
+ 	../../../Source/MediaInfo/XmlUtils.lo \
+-	../../../Source/MediaInfo/OutputHelpers.lo $(am__objects_1) \
++	../../../Source/MediaInfo/OutputHelpers.lo \
++	../../../Source/ThirdParty/tfsxml/tfsxml.lo $(am__objects_1) \
+ 	$(am__objects_2) $(am__objects_3) $(am__objects_4) \
+ 	$(am__objects_5) $(am__objects_6) $(am__objects_7)
+ lib@MediaInfoLib_LibName@_la_OBJECTS =  \
+@@ -1427,7 +1427,8 @@ lib@MediaInfoLib_LibName@_la_SOURCES =  \
+ 	../../../Source/MediaInfo/Video/File_Vp8.cpp \
+ 	../../../Source/MediaInfo/Video/File_Y4m.cpp \
+ 	../../../Source/MediaInfo/XmlUtils.cpp \
+-	../../../Source/MediaInfo/OutputHelpers.cpp $(am__append_1) \
++	../../../Source/MediaInfo/OutputHelpers.cpp \
++	../../../Source/ThirdParty/tfsxml/tfsxml.c $(am__append_1) \
+ 	$(am__append_2) $(am__append_3) $(am__append_4) \
+ 	$(am__append_5) $(am__append_6) $(am__append_7)
+ @MediaInfoLib_LibName@includedir = $(includedir)/MediaInfo
