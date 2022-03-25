@@ -1,5 +1,6 @@
 PORTNAME=		crystal
 DISTVERSION=		1.2.2
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${BOOTSTRAP
 		git:devel/git
 RUN_DEPENDS=	pkg-config:devel/pkgconf
 
-USES=		compiler gmake pkgconfig
+USES=		compiler gmake pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
@@ -52,12 +53,30 @@ OPTIONS_SUB=		yes
 IGNORE=		not supported on anything but FreeBSD
 .endif
 
+# crystal needs pkgconfig to determine SSL variants but these are not
+# present in FreeBSD base. We splice in the correct info based on
+# FreeBSD version and hope it doesn't change during minor releases.
+# See post-patch for the substitutions of these patches.
+.if ${SSL_DEFAULT} == "base"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_openssl_lib__crypto.cr \
+		${PATCHDIR}/extra-patch-src_openssl_lib__ssl.cr
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}/.build
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${BOOTSTRAP_PATH} ${WRKSRC}/.build/crystal
 	${CHMOD} +x ${WRKSRC}/.build/crystal
 	${LN} -s x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-portbld-freebsd
 	${LN} -s x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-freebsd
+
+post-patch:
+.if ${SSL_DEFAULT} == "base" && ${OSREL:R} < 15
+	@${REINPLACE_CMD} \
+		-e 's|CRYSTAL_SSL_VERSION|1.1.1|g' \
+		-e 's|CRYSTAL_SSL_LDFLAGS|${OPENSSLLIB}|g' \
+		${WRKSRC}/src/openssl/lib_ssl.cr \
+		${WRKSRC}/src/openssl/lib_crypto.cr
+.endif
 
 do-build-DOCS-on:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} docs \
