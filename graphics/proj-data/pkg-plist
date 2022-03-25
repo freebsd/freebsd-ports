@@ -23,6 +23,7 @@
 %%DATADIR%%/au_icsm_README.txt
 %%DATADIR%%/be_ign_README.txt
 %%DATADIR%%/be_ign_bd72lb72_etrs89lb08.tif
+%%DATADIR%%/be_ign_hBG18.tif
 %%DATADIR%%/br_ibge_CA61_003.tif
 %%DATADIR%%/br_ibge_CA7072_003.tif
 %%DATADIR%%/br_ibge_README.txt
@@ -170,6 +171,7 @@
 %%DATADIR%%/nl_nsgi_nlgeo2018.tif
 %%DATADIR%%/nl_nsgi_rdcorr2018.tif
 %%DATADIR%%/nl_nsgi_rdtrans2018.tif
+%%DATADIR%%/no_kv_CD_above_Ell_ETRS89_v2021a.tif
 %%DATADIR%%/no_kv_ETRS89NO_NGO48_TIN.json
 %%DATADIR%%/no_kv_HREF2018B_NN2000_EUREF89.tif
 %%DATADIR%%/no_kv_NKGETRF14_EPSG7922_2000.tif
@@ -234,6 +236,9 @@
 %%DATADIR%%/nz_linz_stisht1977-nzvd2016.tif
 %%DATADIR%%/nz_linz_taraht1970-nzvd2016.tif
 %%DATADIR%%/nz_linz_wellht1953-nzvd2016.tif
+%%DATADIR%%/pl_gugik_README.txt
+%%DATADIR%%/pl_gugik_geoid2011-PL-EVRF2007-NH.tif
+%%DATADIR%%/pl_gugik_geoid2011-PL-KRON86-NH.tif
 %%DATADIR%%/pt_dgt_D73_ETRS89_geo.tif
 %%DATADIR%%/pt_dgt_DLx_ETRS89_geo.tif
 %%DATADIR%%/pt_dgt_README.txt
