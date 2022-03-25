@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Inline-C
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Inline>=0.83:devel/p5-Inline \
+RUN_DEPENDS=	p5-Inline>=0.86:devel/p5-Inline \
 		p5-Parse-RecDescent>=1.967009:devel/p5-Parse-RecDescent \
 		p5-Pegex>=0.66:devel/p5-Pegex
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
