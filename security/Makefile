@@ -810,6 +810,7 @@
     SUBDIR += php81-filter
     SUBDIR += php81-sodium
     SUBDIR += phpsecinfo
+    SUBDIR += picocrypt
     SUBDIR += picosha2
     SUBDIR += pidgin-encryption
     SUBDIR += pidgin-otr

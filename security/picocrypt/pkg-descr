@@ -1,0 +1,10 @@
+Picocrypt is a very small (hence Pico), very simple, yet very secure
+encryption tool that you can use to protect your files.  It is designed
+to be the go-to tool for encryption, with a focus on security, simplicity,
+and reliability.  Picocrypt uses the secure XChaCha20 cipher and the
+Argon2id key derivation function to provide a high level of security,
+even from three-letter agencies like the NSA.  It is designed for maximal
+security, making absolutely no compromises security-wise, and is built
+with Go's standard x/crypto modules.
+
+WWW: https://github.com/HACKERALERT/Picocrypt
