@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe
 
-CPE_VENDOR=	nginx
+CPE_VENDOR=	f5
 
 USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:0.7.2
