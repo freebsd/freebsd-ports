@@ -1,0 +1,11 @@
+--- src/zope/cachedescriptors/property.py.orig	2007-05-09 07:11:30 UTC
++++ src/zope/cachedescriptors/property.py
+@@ -16,7 +16,7 @@ See the CachedProperty class.
+ $Id: property.py 75652 2007-05-09 13:11:30Z zagy $
+ """
+ 
+-ncaches = 0l
++ncaches = 0
+ 
+ 
+ class CachedProperty(object):
