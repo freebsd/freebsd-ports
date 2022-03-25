@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.6+ localbase:ldflags
+USES=		python:3.8+ localbase:ldflags
 USE_PYTHON=	distutils cython autoplist
 
 .include <bsd.port.mk>
