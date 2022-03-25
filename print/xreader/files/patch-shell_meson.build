@@ -1,0 +1,12 @@
+--- shell/meson.build.orig	2021-12-06 16:02:19 UTC
++++ shell/meson.build
+@@ -94,6 +94,9 @@ xreader_deps = [
+     gtk,
+     libsecret,
+     math,
++    ice,
++    sm,
++    X11,
+     xapp,
+ ]
+ 
