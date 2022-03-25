@@ -632,7 +632,6 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progressfunc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolve.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtsp.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleconv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendrecv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sepheaders.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessioninfo.c
