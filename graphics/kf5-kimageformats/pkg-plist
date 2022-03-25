@@ -1,7 +1,9 @@
+%%QT_PLUGINDIR%%/imageformats/kimg_ani.so
 %%AVIF%%%%QT_PLUGINDIR%%/imageformats/kimg_avif.so
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
 %%OPENEXR%%%%QT_PLUGINDIR%%/imageformats/kimg_exr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
+%%LIBHEIF%%%%QT_PLUGINDIR%%/imageformats/kimg_heif.so
 %%JXL%%%%QT_PLUGINDIR%%/imageformats/kimg_jxl.so
 %%QT_PLUGINDIR%%/imageformats/kimg_kra.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ora.so
@@ -12,13 +14,13 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so
 %%QT_PLUGINDIR%%/imageformats/kimg_xcf.so
-%%QT_PLUGINDIR%%/imageformats/kimg_ani.so
 share/kservices5/qimageioplugins/ani.desktop
 %%AVIF%%share/kservices5/qimageioplugins/avif.desktop
 share/kservices5/qimageioplugins/dds.desktop
 share/kservices5/qimageioplugins/eps.desktop
 %%OPENEXR%%share/kservices5/qimageioplugins/exr.desktop
 share/kservices5/qimageioplugins/hdr.desktop
+%%LIBHEIF%%share/kservices5/qimageioplugins/heif.desktop
 share/kservices5/qimageioplugins/jp2.desktop
 %%JXL%%share/kservices5/qimageioplugins/jxl.desktop
 share/kservices5/qimageioplugins/kra.desktop
