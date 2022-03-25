@@ -61,7 +61,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/changelog.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/deepalchemy.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/deepalchemy_original.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/detectmobile.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/docs.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/documentation_options.js
@@ -185,6 +184,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_config.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_mapping.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_mixins.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_styles.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_tables.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/events.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/examples.rst
@@ -352,6 +352,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_config.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_mapping.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_mixins.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/declarative_styles.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_tables.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/events.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/examples.html
