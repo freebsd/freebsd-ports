@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	jsbundling-rails
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
