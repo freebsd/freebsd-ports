@@ -19,13 +19,13 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
 
-USES=		blaslapack:openblas cmake:noninja compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python:build shebangfix
+USES=		blaslapack:openblas cmake:noninja compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_7Jan2022
+GH_TAGNAME=	patch_24Mar2022
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
@@ -127,14 +127,19 @@ PORTSCOUT=	ignore:1 # due to a special version tagging scheme that this project 
 CMAKE_ARGS+=	-DBUILD_OMP:BOOL=true
 .endif
 
-post-patch:
+xpost-patch:
 	# adjust SHELL in Makefile
 	@${REINPLACE_CMD} 's|SHELL = /bin/bash|SHELL = ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/Makefile
 	# fix python version, also see https://github.com/lammps/lammps/issues/3098, https://github.com/lammps/lammps/issues/3099
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" -o -name "*.cmake" | ${XARGS} ${REINPLACE_CMD} -e ' \
-		s|find_package(Python |find_package(Python $${FREEBSD_PYTHON_VER} EXACT |; \
-		s|find_package(Python3 3.6 |find_package(Python3 |; \
-		s|find_package(Python3 |find_package(Python3 $${FREEBSD_PYTHON_VER} EXACT | \
+		s|find_package(Python3 REQUIRED |find_package(Python $${FREEBSD_PYTHON_VER} EXACT REQUIRED |; \
+		s|find_package(Python 3.5 COMPONENTS |find_package(Python $${FREEBSD_PYTHON_VER} EXACT COMPONENTS |; \
+		s|find_package(Python 3.6 COMPONENTS |find_package(Python $${FREEBSD_PYTHON_VER} EXACT COMPONENTS |; \
+		s|find_package(Python3 REQUIRED |find_package(Python $${FREEBSD_PYTHON_VER} EXACT REQUIRED |; \
+		s|find_package(Python COMPONENTS |find_package(Python3 $${FREEBSD_PYTHON_VER} EXACT COMPONENTS |; \
+		s|find_package(Python3 COMPONENTS |find_package(Python3 $${FREEBSD_PYTHON_VER} EXACT COMPONENTS |; \
+		s|find_package(Python QUIET COMPONENTS |find_package(Python3 $${FREEBSD_PYTHON_VER} EXACT QUIET COMPONENTS |; \
+		s|find_package(Python REQUIRED COMPONENTS |find_package(Python3 $${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS | \
 		'
 
 post-patch-FFMPEG-off:
