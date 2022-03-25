@@ -1,0 +1,11 @@
+--- mpd.py.orig	2010-12-14 00:46:05 UTC
++++ mpd.py
+@@ -396,7 +396,7 @@ class MPDClient(object):
+                 sock = socket.socket(af, socktype, proto)
+                 sock.connect(sa)
+                 return sock
+-            except socket.error, err:
++            except socket.error as err:
+                 if sock is not None:
+                     sock.close()
+         if err is not None:
