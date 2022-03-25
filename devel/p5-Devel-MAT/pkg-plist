@@ -51,6 +51,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/strength-strong.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/strength-weak.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-ARRAY.svg
+%%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-BOOL.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-CODE.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-FORMAT.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-GLOB.svg
