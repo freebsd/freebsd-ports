@@ -36,6 +36,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Session.pm
 %%SITE_PERL%%/Dancer2/Core/Time.pm
 %%SITE_PERL%%/Dancer2/Core/Types.pm
+%%SITE_PERL%%/Dancer2/DeprecationPolicy.pod
 %%SITE_PERL%%/Dancer2/FileUtils.pm
 %%SITE_PERL%%/Dancer2/Handler/AutoPage.pm
 %%SITE_PERL%%/Dancer2/Handler/File.pm
@@ -128,6 +129,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Session.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Time.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Types.3.gz
+%%PERL5_MAN3%%/Dancer2::DeprecationPolicy.3.gz
 %%PERL5_MAN3%%/Dancer2::FileUtils.3.gz
 %%PERL5_MAN3%%/Dancer2::Handler::AutoPage.3.gz
 %%PERL5_MAN3%%/Dancer2::Handler::File.3.gz
