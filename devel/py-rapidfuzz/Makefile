@@ -25,5 +25,7 @@ post-install:
 		${STRIP_CMD} \
 			${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/*.so \
 			${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/distance/*.so
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
