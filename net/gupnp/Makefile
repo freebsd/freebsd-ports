@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	884639bd2932.patch:-p1 # https://gitlab.gnome.org/GNOME/gupnp/-/merge_requests/33
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 WWW=		https://wiki.gnome.org/Projects/GUPnP
