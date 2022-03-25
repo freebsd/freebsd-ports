@@ -1,0 +1,297 @@
+--- obelisk/bitcoin.py.orig	2014-08-10 17:00:16 UTC
++++ obelisk/bitcoin.py
+@@ -21,10 +21,10 @@ import hashlib
+ import base64
+ import ecdsa
+ import re
+-from util import print_error
+-import config
+-import models
+-import numbertheory
++from .util import print_error
++from . import config
++from . import models
++from . import numbertheory
+ import os
+ 
+ 
+@@ -162,7 +162,7 @@ __b58base = len(__b58chars)
+ def b58encode(v):
+     """ encode v, which is a string of bytes, to base58."""
+ 
+-    long_value = 0L
++    long_value = 0
+     for (i, c) in enumerate(v[::-1]):
+         long_value += (256**i) * ord(c)
+ 
+@@ -187,7 +187,7 @@ def b58encode(v):
+ 
+ def b58decode(v, length):
+     """ decode v into a string of len bytes."""
+-    long_value = 0L
++    long_value = 0
+     for (i, c) in enumerate(v[::-1]):
+         long_value += __b58chars.find(c) * (__b58base**i)
+ 
+@@ -303,12 +303,12 @@ def is_valid(addr):
+ ########### end pywallet functions #######################
+ 
+ # secp256k1, http://www.oid-info.com/get/1.3.132.0.10
+-_p = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2FL
+-_r = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141L
+-_b = 0x0000000000000000000000000000000000000000000000000000000000000007L
+-_a = 0x0000000000000000000000000000000000000000000000000000000000000000L
+-_Gx = 0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798L
+-_Gy = 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8L
++_p = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F
++_r = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
++_b = 0x0000000000000000000000000000000000000000000000000000000000000007
++_a = 0x0000000000000000000000000000000000000000000000000000000000000000
++_Gx = 0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798
++_Gy = 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8
+ curve_secp256k1 = ecdsa.ellipticcurve.CurveFp(_p, _a, _b)
+ generator_secp256k1 = ecdsa.ellipticcurve.Point(curve_secp256k1, _Gx, _Gy, _r)
+ oid_secp256k1 = (1, 3, 132, 0, 10)
+@@ -698,7 +698,7 @@ class Transaction:
+         self.deserialize()
+         self.inputs = self.d['inputs']
+         self.outputs = self.d['outputs']
+-        self.outputs = map(lambda x: (x['address'], x['value']), self.outputs)
++        self.outputs = [(x['address'], x['value']) for x in self.outputs]
+         self.input_info = None
+         self.is_complete = True
+ 
+@@ -835,7 +835,7 @@ class Transaction:
+         return Hash(self.raw.decode('hex'))[::-1].encode('hex')
+ 
+     def sign(self, private_keys):
+-        import deserialize
++        from . import deserialize
+ 
+         for i in range(len(self.inputs)):
+             txin = self.inputs[i]
+@@ -850,7 +850,7 @@ class Transaction:
+ 
+                 # build list of public/private keys
+                 keypairs = {}
+-                for sec in private_keys.values():
++                for sec in list(private_keys.values()):
+                     compressed = is_compressed(sec)
+                     pkey = regenerate_key(sec)
+                     pubkey = GetPubKey(pkey.pubkey, compressed)
+@@ -877,7 +877,7 @@ class Transaction:
+                     else:
+                         # check if we have a key
+                         # corresponding to the redeem script
+-                        if pubkey in keypairs.keys():
++                        if pubkey in list(keypairs.keys()):
+                             # add signature
+                             sec = keypairs[pubkey]
+                             compressed = is_compressed(sec)
+@@ -931,7 +931,7 @@ class Transaction:
+         self.raw = self.serialize(self.inputs, self.outputs)
+ 
+     def deserialize(self):
+-        import deserialize
++        from . import deserialize
+         vds = deserialize.BCDataStream()
+         vds.write(self.raw.decode('hex'))
+         self.d = deserialize.parse_Transaction(vds)
+--- obelisk/bittree.py.orig	2014-08-10 17:00:16 UTC
++++ obelisk/bittree.py
+@@ -120,22 +120,22 @@ if __name__ == "__main__":
+     tree.add("010101", 666)
+     tree.add("010101", 888)
+     tree.add("101", 110)
+-    print tree
++    print(tree)
+     tree.add("10111", 116)
+-    print tree.lookup("101")
+-    print tree.lookup("10111")
+-    print tree.lookup("010")
+-    print tree.lookup("010101")
+-    print tree
++    print(tree.lookup("101"))
++    print(tree.lookup("10111"))
++    print(tree.lookup("010"))
++    print(tree.lookup("010101"))
++    print(tree)
+     tree.delete("10111", 116)
+-    print tree
+-    print tree.lookup("101")
+-    print tree.lookup("0")
+-    print tree.lookup("1")
+-    print "------------"
++    print(tree)
++    print(tree.lookup("101"))
++    print(tree.lookup("0"))
++    print(tree.lookup("1"))
++    print("------------")
+     tree = BitTree()
+     tree.add("10", 777)
+     tree.add("101", 333)
+     tree.add("1011", 222)
+     tree.add("00", 666)
+-    print tree.lookup("1011")
++    print(tree.lookup("1011"))
+--- obelisk/client.py.orig	2014-08-10 17:00:16 UTC
++++ obelisk/client.py
+@@ -1,10 +1,10 @@
+ import struct
+ 
+-from zmqbase import ClientBase
++from .zmqbase import ClientBase
+ 
+-import bitcoin
+-import serialize
+-import error_code
++from . import bitcoin
++from . import serialize
++from . import error_code
+ 
+ 
+ def unpack_error(data):
+@@ -234,9 +234,9 @@ class ObeliskOfLightClient(ClientBase):
+         self.subscribed += 1
+         error = unpack_error(data)
+         if error:
+-            print "Error subscribing"
++            print("Error subscribing")
+         if not self.subscribed % 1000:
+-            print "Subscribed ok", self.subscribed
++            print("Subscribed ok", self.subscribed)
+         return (error, True)
+ 
+     def _on_update(self, data):
+@@ -257,7 +257,7 @@ class ObeliskOfLightClient(ClientBase):
+         self.subscribed += 1
+         error = unpack_error(data)
+         if error:
+-            print "Error subscribing"
++            print("Error subscribing")
+         if not self.subscribed % 1000:
+-            print "Renew ok", self.subscribed
++            print("Renew ok", self.subscribed)
+         return (error, True)
+--- obelisk/serialize.py.orig	2014-08-10 17:00:16 UTC
++++ obelisk/serialize.py
+@@ -5,7 +5,7 @@ import io
+ import hashlib
+ from binascii import hexlify, unhexlify
+ from hashlib import sha256
+-import models
++from . import models
+ 
+ 
+ # Py3 compatibility
+@@ -539,7 +539,7 @@ def deser_data(command, data_bytes):
+     elif command == "blockchain.fetch_block_transaction_hashes":
+         hash_list = []
+ 
+-        print hexlify(data_bytes[4:])
++        print(hexlify(data_bytes[4:]))
+ 
+         assert((len(data_bytes)-4) % 32 == 0)
+ 
+--- obelisk/util.py.orig	2014-08-10 17:00:16 UTC
++++ obelisk/util.py
+@@ -106,7 +106,7 @@ def format_satoshis(x, is_diff=False,
+     from decimal import Decimal
+     s = Decimal(x)
+     sign, digits, exp = s.as_tuple()
+-    digits = map(str, digits)
++    digits = list(map(str, digits))
+     while len(digits) < decimal_point + 1:
+         digits.insert(0, '0')
+     digits.insert(-decimal_point, '.')
+@@ -201,6 +201,6 @@ def parse_url(url):
+             identity, signature = uv.split(':')
+             url = url.replace('&%s=%s' % (k, v), '')
+         else:
+-            print k, v
++            print(k, v)
+ 
+     return address, amount, label, message, signature, identity, url
+--- obelisk/zmqbase.py.orig	2014-08-10 17:00:16 UTC
++++ obelisk/zmqbase.py
+@@ -7,7 +7,7 @@ import logging
+ #    from zmqproto import ZmqSocket
+ #except ImportError:
+ #    from zmq_fallback import ZmqSocket
+-from zmq_fallback import ZmqSocket
++from .zmq_fallback import ZmqSocket
+ 
+ 
+ SNDMORE = 1
+@@ -50,10 +50,10 @@ class ClientBase(object):
+             self.trigger_callbacks(id, *res)
+ 
+     def on_raw_block(self, height, hash, header, tx_num, tx_hashes):
+-        print "block", height, len(tx_hashes)
++        print("block", height, len(tx_hashes))
+ 
+     def on_raw_transaction(self, tx_data):
+-        print "tx", tx_data.encode('hex')
++        print("tx", tx_data.encode('hex'))
+ 
+     # Base Api
+     def send_command(self, command, data='', cb=None):
+@@ -71,7 +71,7 @@ class ClientBase(object):
+         return tx_id
+ 
+     def unsubscribe(self, cb):
+-        for sub_id in self._subscriptions.keys():
++        for sub_id in list(self._subscriptions.keys()):
+             if self._subscriptions[sub_id] == cb:
+                 self._subscriptions.pop(sub_id)
+ 
+@@ -88,8 +88,8 @@ class ClientBase(object):
+         self._messages.append(frame)
+         if not more:
+             if not len(self._messages) == 3:
+-                print "Sequence with wrong messages", len(self._messages)
+-                print [m.encode("hex") for m in self._messages]
++                print("Sequence with wrong messages", len(self._messages))
++                print([m.encode("hex") for m in self._messages])
+                 self._messages = []
+                 return
+             command, id, data = self._messages
+@@ -102,9 +102,9 @@ class ClientBase(object):
+         if not more:
+             nblocks = struct.unpack('Q', self._block_messages[3])[0]
+             if not len(self._block_messages) == 4 + nblocks:
+-                print "Sequence with wrong messages",\
++                print("Sequence with wrong messages",\
+                       len(self._block_messages),\
+-                      4 + nblocks
++                      4 + nblocks)
+                 self._block_messages = []
+                 return
+             height, hash, header, tx_num = self._block_messages[:4]
+@@ -112,7 +112,7 @@ class ClientBase(object):
+             if len(tx_num) >= 4:
+                 tx_num = struct.unpack_from('I', tx_num, 0)[0]
+             else:
+-                print "wrong tx_num length", len(tx_num), tx_num
++                print("wrong tx_num length", len(tx_num), tx_num)
+                 tx_num = struct.unpack('I', tx_num.zfill(4))[0]
+             self._block_messages = []
+             height = struct.unpack('I', height)[0]
+@@ -122,7 +122,7 @@ class ClientBase(object):
+         self._tx_messages.append(frame)
+         if not more:
+             if not len(self._tx_messages) == 1:
+-                print "Sequence with wrong messages", len(self._tx_messages)
++                print("Sequence with wrong messages", len(self._tx_messages))
+                 self._tx_messages = []
+                 return
+             tx_data = self._tx_messages[0]
+@@ -157,7 +157,7 @@ class ClientBase(object):
+ 
+         # unpack
+         rows = []
+-        for idx in xrange(nrows):
++        for idx in range(nrows):
+             offset = start+(idx*row_size)
+             row = struct.unpack_from(row_fmt, data, offset)
+             rows.append(row)
