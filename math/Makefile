@@ -834,6 +834,7 @@
     SUBDIR += py-fastdtw
     SUBDIR += py-flax
     SUBDIR += py-fpylll
+    SUBDIR += py-fraction
     SUBDIR += py-fvcore
     SUBDIR += py-gau2grid
     SUBDIR += py-gimmik
