@@ -1,5 +1,5 @@
 PORTNAME=	frozenlist
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,10 @@ COMMENT=	List-like structure which implements collections.abc.MutableSequence
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime python:3.6+
+USES=		gettext-runtime python:3.7+
 USE_PYTHON=	autoplist distutils
-INSTALL_TARGET=	install-strip
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
