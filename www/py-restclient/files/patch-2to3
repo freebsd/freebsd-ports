@@ -1,0 +1,377 @@
+--- restclient/__init__.py.orig	2012-11-17 20:17:26 UTC
++++ restclient/__init__.py
+@@ -84,10 +84,10 @@ CHANGESET:
+ 
+ import httplib2
+ import mimetypes
+-import thread
++import _thread
+ import types
+-import urllib
+-import urllib2
++import urllib.request, urllib.parse, urllib.error
++import urllib.request, urllib.error, urllib.parse
+ try:
+     import json
+ except ImportError:
+@@ -168,7 +168,7 @@ def get_content_type(filename):
+     return mimetypes.guess_type(filename)[0] or 'application/octet-stream'
+ 
+ 
+-def GET(url, params=None, files=None, accept=[], headers=None, async=False,
++def GET(url, params=None, files=None, accept=[], headers=None, asynchronous=False,
+         resp=False, credentials=None, httplib_params=None):
+     """ make an HTTP GET request.
+ 
+@@ -178,20 +178,20 @@ def GET(url, params=None, files=None, accept=[], heade
+     in addition, parameters and headers can be specified (as dicts). a
+     list of mimetypes to accept may be specified.
+ 
+-    if async=True is passed in, it will perform the request in a new
++    if asynchronous=True is passed in, it will perform the request in a new
+     thread and immediately return nothing.
+ 
+     if resp=True is passed in, it will return a tuple of an httplib2
+     response object and the content instead of just the content.
+     """
+-    return rest_invoke(url=url, method=u"GET", params=params,
++    return rest_invoke(url=url, method="GET", params=params,
+                        files=files, accept=accept, headers=headers,
+-                       async=async, resp=resp, credentials=credentials,
++                       asynchronous=async, resp=resp, credentials=credentials,
+                        httplib_params=httplib_params)
+ 
+ 
+ def POST(url, params=None, files=None, accept=[], headers=None,
+-         async=True, resp=False, credentials=None, httplib_params=None):
++         asynchronous=True, resp=False, credentials=None, httplib_params=None):
+     """ make an HTTP POST request.
+ 
+     performs a POST request to the specified URL.
+@@ -209,19 +209,19 @@ def POST(url, params=None, files=None, accept=[], head
+     (nothing) immediately.
+ 
+     To wait for the response and have it return the body of the
+-    response, specify async=False.
++    response, specify asynchronous=False.
+ 
+     if resp=True is passed in, it will return a tuple of an httplib2
+     response object and the content instead of just the content.
+     """
+-    return rest_invoke(url=url, method=u"POST", params=params,
++    return rest_invoke(url=url, method="POST", params=params,
+                        files=files, accept=accept, headers=headers,
+-                       async=async, resp=resp, credentials=credentials,
++                       asynchronous=async, resp=resp, credentials=credentials,
+                        httplib_params=httplib_params)
+ 
+ 
+ def PUT(url, params=None, files=None, accept=[], headers=None,
+-        async=True, resp=False, credentials=None, httplib_params=None):
++        asynchronous=True, resp=False, credentials=None, httplib_params=None):
+     """ make an HTTP PUT request.
+ 
+     performs a PUT request to the specified URL.
+@@ -239,20 +239,20 @@ def PUT(url, params=None, files=None, accept=[], heade
+     (nothing) immediately.
+ 
+     To wait for the response and have it return the body of the
+-    response, specify async=False.
++    response, specify asynchronous=False.
+ 
+     if resp=True is passed in, it will return a tuple of an httplib2
+     response object and the content instead of just the content.
+     """
+ 
+-    return rest_invoke(url=url, method=u"PUT", params=params,
++    return rest_invoke(url=url, method="PUT", params=params,
+                        files=files, accept=accept, headers=headers,
+-                       async=async, resp=resp, credentials=credentials,
++                       asynchronous=async, resp=resp, credentials=credentials,
+                        httplib_params=httplib_params)
+ 
+ 
+ def DELETE(url, params=None, files=None, accept=[], headers=None,
+-           async=True, resp=False, credentials=None,
++           asynchronous=True, resp=False, credentials=None,
+            httplib_params=None):
+     """ make an HTTP DELETE request.
+ 
+@@ -265,20 +265,20 @@ def DELETE(url, params=None, files=None, accept=[], he
+     returns (nothing) immediately.
+ 
+     To wait for the response and have it return the body of the
+-    response, specify async=False.
++    response, specify asynchronous=False.
+ 
+     if resp=True is passed in, it will return a tuple of an httplib2
+     response object and the content instead of just the content.
+     """
+ 
+-    return rest_invoke(url=url, method=u"DELETE", params=params,
++    return rest_invoke(url=url, method="DELETE", params=params,
+                        files=files, accept=accept, headers=headers,
+-                       async=async, resp=resp, credentials=credentials,
++                       asynchronous=async, resp=resp, credentials=credentials,
+                        httplib_params=httplib_params)
+ 
+ 
+-def rest_invoke(url, method=u"GET", params=None, files=None,
+-                accept=[], headers=None, async=False, resp=False,
++def rest_invoke(url, method="GET", params=None, files=None,
++                accept=[], headers=None, asynchronous=False, resp=False,
+                 httpcallback=None, credentials=None,
+                 httplib_params=None):
+     """ make an HTTP request with all the trimmings.
+@@ -315,7 +315,7 @@ def rest_invoke(url, method=u"GET", params=None, files
+     accept: list of mimetypes to accept in order of
+             preference. defaults to '*/*'
+     headers: dictionary of additional headers to send to the server
+-    async: Boolean. if true, does request in new thread and nothing is
++    asynchronous: Boolean. if true, does request in new thread and nothing is
+            returned
+     resp: Boolean. if true, returns a tuple of response,
+           content. otherwise returns just content
+@@ -325,8 +325,8 @@ def rest_invoke(url, method=u"GET", params=None, files
+     httplib_params: dict of parameters supplied to httplib2 - for
+                     example ca_certs='/etc/ssl/certs/ca-certificates.crt'
+     """
+-    if async:
+-        thread.start_new_thread(_rest_invoke,
++    if asynchronous:
++        _thread.start_new_thread(_rest_invoke,
+                                 (url, method, params, files, accept,
+                                  headers, resp, httpcallback, credentials,
+                                  httplib_params))
+@@ -335,7 +335,7 @@ def rest_invoke(url, method=u"GET", params=None, files
+                             resp, httpcallback, credentials, httplib_params)
+ 
+ 
+-def _rest_invoke(url, method=u"GET", params=None, files=None, accept=None,
++def _rest_invoke(url, method="GET", params=None, files=None, accept=None,
+                  headers=None, resp=False, httpcallback=None,
+                  credentials=None, httplib_params=None):
+     if params is None:
+@@ -363,7 +363,7 @@ def _rest_invoke(url, method=u"GET", params=None, file
+             headers[k] = v
+ 
+         if httpcallback.username or httpcallback.password:
+-            print "warning: restclient can't handle HTTP auth yet"
++            print("warning: restclient can't handle HTTP auth yet")
+         if httpcallback.redirections != 5:
+             print ("warning: restclient doesn't support "
+                    "HTTPCallback's restrictions yet")
+@@ -371,18 +371,18 @@ def _rest_invoke(url, method=u"GET", params=None, file
+             print ("warning: restclient doesn't support "
+                    "HTTPCallback's follow_all_redirects_yet")
+         if httpcallback.body != "":
+-            print "warning: restclient doesn't support HTTPCallback's body yet"
++            print("warning: restclient doesn't support HTTPCallback's body yet")
+ 
+     headers = add_accepts(accept, headers)
+     if method in ['POST', 'PUT'] and 'Content-Type' not in headers:
+         headers['Content-Type'] = 'application/x-www-form-urlencoded'
+-        params = urllib.urlencode(fix_params(params))
++        params = urllib.parse.urlencode(fix_params(params))
+     elif (method in ['POST', 'PUT'] and
+           headers['Content-Type'] == 'application/json'):
+         params = json.dumps(params)
+     else:
+         # GET and DELETE requests
+-        params = urllib.urlencode(fix_params(params))
++        params = urllib.parse.urlencode(fix_params(params))
+ 
+     if files:
+         return post_multipart(extract_host(url), extract_path(url),
+@@ -463,11 +463,11 @@ def my_urlparse(url):
+ 
+ 
+ def unpack_params(params):
+-    return [(k, params[k]) for k in params.keys()]
++    return [(k, params[k]) for k in list(params.keys())]
+ 
+ 
+ def unpack_files(files):
+-    return [(k, files[k]['filename'], files[k]['file']) for k in files.keys()]
++    return [(k, files[k]['filename'], files[k]['file']) for k in list(files.keys())]
+ 
+ 
+ def add_accepts(accept=None, headers=None):
+@@ -485,8 +485,8 @@ def add_accepts(accept=None, headers=None):
+ def fix_params(params=None):
+     if params is None:
+         params = {}
+-    for k in params.keys():
+-        if type(k) not in types.StringTypes:
++    for k in list(params.keys()):
++        if type(k) not in (str,):
+             new_k = str(k)
+             params[new_k] = params[k]
+             del params[k]
+@@ -500,8 +500,8 @@ def fix_params(params=None):
+             except UnicodeDecodeError:
+                 pass
+ 
+-    for k in params.keys():
+-        if type(params[k]) not in types.StringTypes:
++    for k in list(params.keys()):
++        if type(params[k]) not in (str,):
+             params[k] = str(params[k])
+         try:
+             params[k].encode('ascii')
+@@ -517,12 +517,12 @@ def fix_params(params=None):
+ def fix_headers(headers=None):
+     if headers is None:
+         headers = {}
+-    for k in headers.keys():
+-        if type(k) not in types.StringTypes:
++    for k in list(headers.keys()):
++        if type(k) not in (str,):
+             new_k = str(k)
+             headers[new_k] = headers[k]
+             del headers[k]
+-        if type(headers[k]) not in types.StringTypes:
++        if type(headers[k]) not in (str,):
+             headers[k] = str(headers[k])
+         try:
+             headers[k].encode('ascii')
+@@ -539,8 +539,8 @@ def fix_files(files=None):
+     if files is None:
+         files = {}
+     # fix keys in files
+-    for k in files.keys():
+-        if type(k) not in types.StringTypes:
++    for k in list(files.keys()):
++        if type(k) not in (str,):
+             new_k = str(k)
+             files[new_k] = files[k]
+             del files[k]
+@@ -551,7 +551,7 @@ def fix_files(files=None):
+             files[new_k] = files[k]
+             del files[k]
+     # second pass to fix filenames
+-    for k in files.keys():
++    for k in list(files.keys()):
+         try:
+             files[k]['filename'].encode('ascii')
+         except UnicodeEncodeError:
+@@ -560,15 +560,15 @@ def fix_files(files=None):
+ 
+ 
+ if __name__ == "__main__":
+-    print rest_invoke("http://localhost:9090/",
++    print(rest_invoke("http://localhost:9090/",
+                       method="POST", params={'value': 'store this'},
+-                      accept=["text/plain", "text/html"], async=False)
++                      accept=["text/plain", "text/html"], asynchronous=False))
+     image = open('sample.jpg').read()
+     r = rest_invoke("http://resizer.ccnmtl.columbia.edu/resize",
+                     method="POST",
+                     files={'image': {'file': image,
+                                      'filename': 'sample.jpg'}},
+-                    async=False)
++                    asynchronous=False)
+     out = open("thumb.jpg", "w")
+     out.write(r)
+     out.close()
+@@ -576,13 +576,13 @@ if __name__ == "__main__":
+     r = POST("http://resizer.ccnmtl.columbia.edu/resize",
+              files={'image': {'file': image,
+                               'filename': 'sample.jpg'}},
+-             async=False)
++             asynchronous=False)
+     # evil unicode tests
+-    print rest_invoke(u"http://localhost:9090/foo/",
+-                      params={u'foo\u2012': u'\u2012'},
+-                      headers={u"foo\u2012": u"foo\u2012"})
++    print(rest_invoke("http://localhost:9090/foo/",
++                      params={'foo\u2012': '\u2012'},
++                      headers={"foo\u2012": "foo\u2012"}))
+ 
+-    r = rest_invoke(u"http://localhost:9090/resize", method="POST",
+-                    files={u'image\u2012': {'file': image,
+-                                            'filename': u'samp\u2012le.jpg'}},
+-                    async=False)
++    r = rest_invoke("http://localhost:9090/resize", method="POST",
++                    files={'image\u2012': {'file': image,
++                                            'filename': 'samp\u2012le.jpg'}},
++                    asynchronous=False)
+--- restclient/test/test_everything.py.orig	2012-11-17 20:17:26 UTC
++++ restclient/test/test_everything.py
+@@ -39,7 +39,7 @@ on each request it handles, please submit a patch. 
+ 
+ from restclient import *
+ import threading, os
+-import BaseHTTPServer
++import http.server
+ import cgi
+ 
+ port_num = int(os.environ.get('RESTCLIENT_TEST_PORT',11123))
+@@ -47,12 +47,12 @@ hostname = "http://localhost:%d/" % port_num
+ image = open('sample.jpg').read()
+ 
+ def start_server(callback):
+-    class LoopbackHandler(BaseHTTPServer.BaseHTTPRequestHandler):
++    class LoopbackHandler(http.server.BaseHTTPRequestHandler):
+         """ a simple http server that will basically echo back the request
+         that was made to it """
+         def respond(self):
+-            s = self.requestline + u"\n" \
+-                + str(self.headers) + u"\n\n" \
++            s = self.requestline + "\n" \
++                + str(self.headers) + "\n\n" \
+                 + self.body()
+ 
+             response = s.encode('utf-8')
+@@ -82,7 +82,7 @@ def start_server(callback):
+ 
+     def run():
+         """ start the server for a single request """
+-        server_class=BaseHTTPServer.HTTPServer
++        server_class=http.server.HTTPServer
+         handler_class=LoopbackHandler
+         server_address = ('', port_num)
+         httpd = server_class(server_address, handler_class)
+@@ -116,7 +116,7 @@ def test_get():
+ @servify
+ def test_post():
+     expected = "POST\nvalue: store this\nDONE\n"
+-    r = POST(hostname, params={'value' : 'store this'}, accept=["text/plain","text/html"], async=False)
++    r = POST(hostname, params={'value' : 'store this'}, accept=["text/plain","text/html"], asynchronous=False)
+     assert r.startswith('POST /')
+     assert "value=store+this" in r
+     assert "accept: text/plain,text/html" in r
+@@ -124,25 +124,25 @@ def test_post():
+ @servify
+ def test_post_image():
+     result = POST(hostname + "resize", files={'image' : {'file' : image, 'filename' : 'sample.jpg'}},
+-                  async=False)
++                  asynchronous=False)
+     assert result.startswith('POST /resize')
+     assert "multipart" in result
+ 
+ @servify
+ def test_get_unicode():
+-    expected = u"GET\nfoo\u2012: \u2012\nDONE\n".encode('utf-8')
+-    r = GET(unicode(hostname + "foo/"),params={u'foo\u2012' : u'\u2012'},
+-            headers={u"foo\u2012" : u"foo\u2012"})
++    expected = "GET\nfoo\u2012: \u2012\nDONE\n".encode('utf-8')
++    r = GET(str(hostname + "foo/"),params={'foo\u2012' : '\u2012'},
++            headers={"foo\u2012" : "foo\u2012"})
+     # unicode in params gets urlencoded
+     assert r.startswith('GET /foo/?foo%E2%80%92=%E2%80%92')
+     # unicode in headers gets stripped out. they can only contain ascii.
+-    assert u"foo: foo" in r
++    assert "foo: foo" in r
+ 
+ @servify
+ def test_post_unicode():
+-    result = POST(unicode(hostname + "foo/"), 
+-                  params={u'foo\u2012' : u'\u2012'},
+-                  async=False)
++    result = POST(str(hostname + "foo/"), 
++                  params={'foo\u2012' : '\u2012'},
++                  asynchronous=False)
+     assert result.startswith('POST /foo/')
+     expected = "foo%E2%80%92=%E2%80%92" # urlencoded 
+     assert expected in result
