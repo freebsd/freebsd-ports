@@ -1,5 +1,5 @@
---- setup.py.orig	Wed Nov 21 14:25:46 2007
-+++ setup.py	Tue Jan 22 11:28:34 2008
+--- setup.py.orig	2009-02-05 04:14:48 UTC
++++ setup.py
 @@ -1,8 +1,6 @@
  #!/usr/bin/env python
  """Distutils setup file"""
