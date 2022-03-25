@@ -4146,6 +4146,7 @@
     SUBDIR += py-aiorpcX
     SUBDIR += py-aiorpcX-legacy
     SUBDIR += py-aiortc
+    SUBDIR += py-aiosignal
     SUBDIR += py-amalgamate
     SUBDIR += py-aniso8601
     SUBDIR += py-aniso86016
