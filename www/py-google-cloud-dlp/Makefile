@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-dlp
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}proto-plus>=0.4.0:devel/py-proto-plus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.15.0:devel/py-proto-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2021.1:devel/py-pytz@${PY_FLAVOR}
 
 USES=		python:3.6+
