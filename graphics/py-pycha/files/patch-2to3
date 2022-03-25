@@ -1,0 +1,104 @@
+--- chavier/gui.py.orig	2011-08-08 19:23:18 UTC
++++ chavier/gui.py
+@@ -37,7 +37,7 @@ class GUI(object):
+         self.main_window.connect('delete_event', self.delete_event)
+         self.main_window.connect('destroy', self.destroy)
+         self.main_window.set_default_size(640, 480)
+-        self.main_window.set_title(u'Chavier')
++        self.main_window.set_title('Chavier')
+ 
+         vbox = gtk.VBox()
+         self.main_window.add(vbox)
+@@ -59,7 +59,7 @@ class GUI(object):
+         hpaned.add1(vpaned)
+         vpaned.show()
+ 
+-        block1 = self._create_sidebar_block(u'Data sets',
++        block1 = self._create_sidebar_block('Data sets',
+                                             self._datasets_notebook_creator)
+         self._create_dataset("Dataset 1")
+         block1.set_size_request(-1, 200)
+@@ -67,7 +67,7 @@ class GUI(object):
+         vpaned.add1(block1)
+         block1.show()
+ 
+-        block2 = self._create_sidebar_block(u'Options',
++        block2 = self._create_sidebar_block('Options',
+                                             self._options_treeview_creator)
+         vpaned.add2(block2)
+         block2.show()
+@@ -215,7 +215,7 @@ class GUI(object):
+         box = gtk.VBox(spacing=6)
+         box.set_border_width(6)
+         label = gtk.Label()
+-        label.set_markup(u'<span size="large" weight="bold">%s</span>' % title)
++        label.set_markup('<span size="large" weight="bold">%s</span>' % title)
+         label.set_alignment(0.0, 0.5)
+         box.pack_start(label, False, False)
+         label.show()
+@@ -276,7 +276,7 @@ class GUI(object):
+         return scrolled_window
+ 
+     def _fill_options_store(self, options, parent_node, types):
+-        for name, value in options.items():
++        for name, value in list(options.items()):
+             value_type = types[name]
+             if isinstance(value, dict):
+                 current_parent = self.options_store.append(parent_node,
+@@ -356,7 +356,7 @@ class GUI(object):
+             parent = model.iter_parent(parent)
+         parents.reverse()
+         parents.append(name)
+-        label = u'.'.join(parents)
++        label = '.'.join(parents)
+ 
+         dialog = OptionDialog(self.main_window, label, value, value_type)
+         response = dialog.run()
+@@ -408,7 +408,7 @@ class GUI(object):
+ 
+     def add_dataset(self, action):
+         n_pages = self.datasets_notebook.get_n_pages()
+-        suggested_name = u'Dataset %d' % (n_pages + 1)
++        suggested_name = 'Dataset %d' % (n_pages + 1)
+         dialog = TextInputDialog(self.main_window, suggested_name)
+         response = dialog.run()
+         if response == gtk.RESPONSE_ACCEPT:
+@@ -523,18 +523,18 @@ class GUI(object):
+ 
+         alloc = self.drawing_area.get_allocation()
+ 
+-        print 'CHART STATE'
+-        print '-' * 70
+-        print 'surface: %d x %d' % (alloc.width, alloc.height)
+-        print 'area   :', self.chart.area
+-        print
+-        print 'minxval:', self.chart.minxval
+-        print 'maxxval:', self.chart.maxxval
+-        print 'xrange :', self.chart.xrange
+-        print
+-        print 'minyval:', self.chart.minyval
+-        print 'maxyval:', self.chart.maxyval
+-        print 'yrange :', self.chart.yrange
++        print('CHART STATE')
++        print('-' * 70)
++        print('surface: %d x %d' % (alloc.width, alloc.height))
++        print('area   :', self.chart.area)
++        print()
++        print('minxval:', self.chart.minxval)
++        print('maxxval:', self.chart.maxxval)
++        print('xrange :', self.chart.xrange)
++        print()
++        print('minyval:', self.chart.minyval)
++        print('maxyval:', self.chart.maxyval)
++        print('yrange :', self.chart.yrange)
+ 
+     def about(self, action=None):
+         dialog = AboutDialog(self.main_window)
+@@ -556,6 +556,6 @@ str_converters = {
+     str: str,
+     int: int,
+     float: float,
+-    unicode: unicode,
++    str: str,
+     bool: str2bool,
+ }
