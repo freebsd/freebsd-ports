@@ -1,3 +1,4 @@
+bin/yath-ui-backfill.pl
 bin/yath-ui-importer.pl
 bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/App/Yath/Command/ui.pm
@@ -6,6 +7,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/Renderer/UI.pm
 %%SITE_PERL%%/Test2/Harness/Renderer/UIDB.pm
 %%SITE_PERL%%/Test2/Harness/UI.pm
+%%SITE_PERL%%/Test2/Harness/UI/BackFill.pm
 %%SITE_PERL%%/Test2/Harness/UI/CPANImporter.pm
 %%SITE_PERL%%/Test2/Harness/UI/Config.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller.pm
@@ -46,6 +48,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Permission.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/PrimaryEmail.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Project.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Reporting.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Run.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Session.pm
@@ -67,6 +70,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Permission.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/PrimaryEmail.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Project.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Reporting.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Run.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Session.pm
@@ -87,6 +91,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Permission.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/PrimaryEmail.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Project.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Reporting.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Run.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Session.pm
@@ -108,6 +113,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Permission.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/PrimaryEmail.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Project.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Reporting.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Run.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Session.pm
@@ -128,6 +134,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Permission.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/PrimaryEmail.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Project.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Reporting.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Run.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Session.pm
