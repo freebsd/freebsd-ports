@@ -1,0 +1,45 @@
+--- src/zope/sequencesort/ssort.py.orig	2007-10-03 03:58:37 UTC
++++ src/zope/sequencesort/ssort.py
+@@ -66,13 +66,13 @@ def sort(sequence, sort=(), _=None, mapping=0):
+ 
+         # clean the mess a bit
+         if multsort: # More than one sort key.
+-            sortfields = map(lambda x: x[0], sf_list)
++            sortfields = [x[0] for x in sf_list]
+         else:
+             sort = sf_list[0][0]
+ 
+     elif sort:
+         if multsort: # More than one sort key.
+-            sortfields = map(lambda x: x[0], sort)
++            sortfields = [x[0] for x in sort]
+         else:
+             sort = sort[0][0]
+ 
+@@ -133,7 +133,7 @@ def nocase(str1, str2):
+     return cmp(str1.lower(), str2.lower())
+ 
+ import sys
+-if sys.modules.has_key("locale"): # only if locale is already imported
++if "locale" in sys.modules: # only if locale is already imported
+     from locale import strcoll
+ 
+     def strcoll_nocase(str1, str2):
+@@ -157,7 +157,7 @@ def make_sortfunctions(sortfields, _):
+         elif l == 3:
+             pass
+         else:
+-            raise SyntaxError, "sort option must contains no more than 2 fields"
++            raise SyntaxError("sort option must contains no more than 2 fields")
+ 
+         f_name = f[1]
+ 
+@@ -184,7 +184,7 @@ def make_sortfunctions(sortfields, _):
+         elif sort_order == "desc":
+             multiplier = -1
+         else:
+-            raise SyntaxError, "sort direction must be either ASC or DESC"
++            raise SyntaxError("sort direction must be either ASC or DESC")
+ 
+         sf_list.append((f[0], func, multiplier))
+ 
