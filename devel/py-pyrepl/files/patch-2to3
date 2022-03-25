@@ -1,0 +1,703 @@
+--- pyrepl/cmdrepl.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/cmdrepl.py
+@@ -33,7 +33,7 @@ It was designed to let you do this:
+ which is in fact done by the `pythoni' script that comes with
+ pyrepl."""
+ 
+-from __future__ import print_function
++
+ 
+ from pyrepl import completer
+ from pyrepl.completing_reader import CompletingReader as CR
+--- pyrepl/completer.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/completer.py
+@@ -18,7 +18,7 @@
+ # CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+ try:
+-    import __builtin__ as builtins
++    import builtins as builtins
+     builtins  # silence broken pyflakes
+ except ImportError:
+     import builtins
+@@ -44,8 +44,8 @@ class Completer(object):
+         import keyword
+         matches = []
+         for list in [keyword.kwlist,
+-                     builtins.__dict__.keys(),
+-                     self.ns.keys()]:
++                     list(builtins.__dict__.keys()),
++                     list(self.ns.keys())]:
+             for word in list:
+                 if word.startswith(text) and word != "__builtins__":
+                     matches.append(word)
+--- pyrepl/completing_reader.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/completing_reader.py
+@@ -64,7 +64,7 @@ def build_menu(cons, wordlist, start, use_brackets, so
+     else:
+         item = "%s  "
+         padding = 2
+-    maxlen = min(max(map(real_len, wordlist)), cons.width - padding)
++    maxlen = min(max(list(map(real_len, wordlist))), cons.width - padding)
+     cols = cons.width / (maxlen + padding)
+     rows = (len(wordlist) - 1)/cols + 1
+ 
+--- pyrepl/historical_reader.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/historical_reader.py
+@@ -23,7 +23,7 @@ from pyrepl.reader import Reader as R
+ isearch_keymap = tuple(
+     [('\\%03o'%c, 'isearch-end') for c in range(256) if chr(c) != '\\'] + \
+     [(c, 'isearch-add-character')
+-     for c in map(chr, range(32, 127)) if c != '\\'] + \
++     for c in map(chr, list(range(32, 127))) if c != '\\'] + \
+     [('\\%03o'%c, 'isearch-add-character')
+      for c in range(256) if chr(c).isalpha() and chr(c) != '\\'] + \
+     [('\\\\', 'self-insert'),
+@@ -292,7 +292,7 @@ class HistoricalReader(R):
+     def finish(self):
+         super(HistoricalReader, self).finish()
+         ret = self.get_unicode()
+-        for i, t in self.transient_history.items():
++        for i, t in list(self.transient_history.items()):
+             if i < len(self.history) and i != self.historyi:
+                 self.history[i] = t
+         if ret:
+--- pyrepl/input.py.orig	2019-04-16 13:00:52 UTC
++++ pyrepl/input.py
+@@ -32,11 +32,11 @@
+ # executive, temporary decision: [tab] and [C-i] are distinct, but
+ # [meta-key] is identified with [esc key].  We demand that any console
+ # class does quite a lot towards emulating a unix terminal.
+-from __future__ import print_function
++
+ import unicodedata
+ from collections import deque
+ import pprint
+-from trace import trace
++from .trace import trace
+ 
+ 
+ class InputTranslator(object):
+--- pyrepl/keymap.py.orig	2019-04-16 13:00:52 UTC
++++ pyrepl/keymap.py
+@@ -174,17 +174,17 @@ def parse_keys(key):
+ 
+ def compile_keymap(keymap, empty=b''):
+     r = {}
+-    for key, value in keymap.items():
++    for key, value in list(keymap.items()):
+         if isinstance(key, bytes):
+             first = key[:1]
+         else:
+             first = key[0]
+         r.setdefault(first, {})[key[1:]] = value
+-    for key, value in r.items():
++    for key, value in list(r.items()):
+         if empty in value:
+             if len(value) != 1:
+                 raise KeySpecError(
+-                      "key definitions for %s clash"%(value.values(),))
++                      "key definitions for %s clash"%(list(value.values()),))
+             else:
+                 r[key] = value[empty]
+         else:
+--- pyrepl/keymaps.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/keymaps.py
+@@ -62,9 +62,9 @@ reader_emacs_keymap = tuple(
+      (r'\M-\n', 'self-insert'),
+      (r'\<backslash>', 'self-insert')] + \
+     [(c, 'self-insert')
+-     for c in map(chr, range(32, 127)) if c <> '\\'] + \
++     for c in map(chr, list(range(32, 127))) if c != '\\'] + \
+     [(c, 'self-insert')
+-     for c in map(chr, range(128, 256)) if c.isalpha()] + \
++     for c in map(chr, list(range(128, 256))) if c.isalpha()] + \
+     [(r'\<up>', 'up'),
+      (r'\<down>', 'down'),
+      (r'\<left>', 'left'),
+@@ -101,9 +101,9 @@ python_emacs_keymap = comp_emacs_keymap + (
+     
+ reader_vi_insert_keymap = tuple(
+     [(c, 'self-insert')
+-     for c in map(chr, range(32, 127)) if c <> '\\'] + \
++     for c in map(chr, list(range(32, 127))) if c != '\\'] + \
+     [(c, 'self-insert')
+-     for c in map(chr, range(128, 256)) if c.isalpha()] + \
++     for c in map(chr, list(range(128, 256))) if c.isalpha()] + \
+     [(r'\C-d', 'delete'),
+      (r'\<backspace>', 'backspace'),
+      ('')])
+--- pyrepl/pygame_console.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/pygame_console.py
+@@ -72,7 +72,7 @@ class FakeStdin:
+         # argh!
+         raise NotImplementedError
+     def readline(self, n=None):
+-        from reader import Reader
++        from .reader import Reader
+         try:
+             # this isn't quite right: it will clobber any prompt that's
+             # been printed.  Not sure how to get around this...
+@@ -130,7 +130,8 @@ class PyGameConsole(Console):
+         s.fill(c, [0, 600 - bmargin, 800, bmargin])
+         s.fill(c, [800 - rmargin, 0, lmargin, 600])
+ 
+-    def refresh(self, screen, (cx, cy)):
++    def refresh(self, screen, xxx_todo_changeme):
++        (cx, cy) = xxx_todo_changeme
+         self.screen = screen
+         self.pygame_screen.fill(colors.bg,
+                                 [0, tmargin + self.cur_top + self.scroll,
+@@ -211,12 +212,12 @@ class PyGameConsole(Console):
+         meta = bool(pyg_event.mod & (KMOD_ALT|KMOD_META))
+ 
+         try:
+-            return self.k[(pyg_event.unicode, meta, ctrl)], pyg_event.unicode
++            return self.k[(pyg_event.str, meta, ctrl)], pyg_event.str
+         except KeyError:
+             try:
+-                return self.k[(pyg_event.key, meta, ctrl)], pyg_event.unicode
++                return self.k[(pyg_event.key, meta, ctrl)], pyg_event.str
+             except KeyError:
+-                return "invalid-key", pyg_event.unicode
++                return "invalid-key", pyg_event.str
+ 
+     def get_event(self, block=1):
+         """Return an Event instance.  Returns None if |block| is false
+@@ -239,7 +240,7 @@ class PyGameConsole(Console):
+             self.cmd_buf += c.encode('ascii', 'replace')
+             self.k = k
+ 
+-            if not isinstance(k, types.DictType):
++            if not isinstance(k, dict):
+                 e = Event(k, self.cmd_buf, [])
+                 self.k = self.keymap
+                 self.cmd_buf = ''
+@@ -282,7 +283,7 @@ class PyGameConsole(Console):
+ 
+     def forgetinput(self):
+         """Forget all pending, but not yet processed input."""
+-        while pygame.event.poll().type <> NOEVENT:
++        while pygame.event.poll().type != NOEVENT:
+             pass
+     
+     def getpending(self):
+@@ -299,7 +300,7 @@ class PyGameConsole(Console):
+ 
+     def wait(self):
+         """Wait for an event."""
+-        raise Exception, "erp!"
++        raise Exception("erp!")
+ 
+     def repaint(self):
+         # perhaps we should consolidate grobs?
+--- pyrepl/pygame_keymap.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/pygame_keymap.py
+@@ -85,27 +85,25 @@ def _parse_key1(key, s):
+     while not ret and s < len(key):
+         if key[s] == '\\':
+             c = key[s+1].lower()
+-            if _escapes.has_key(c):
++            if c in _escapes:
+                 ret = _escapes[c]
+                 s += 2
+             elif c == "c":
+                 if key[s + 2] != '-':
+-                    raise KeySpecError, \
+-                              "\\C must be followed by `-' (char %d of %s)"%(
+-                        s + 2, repr(key))
++                    raise KeySpecError("\\C must be followed by `-' (char %d of %s)"%(
++                        s + 2, repr(key)))
+                 if ctrl:
+-                    raise KeySpecError, "doubled \\C- (char %d of %s)"%(
+-                        s + 1, repr(key))
++                    raise KeySpecError("doubled \\C- (char %d of %s)"%(
++                        s + 1, repr(key)))
+                 ctrl = 1
+                 s += 3
+             elif c == "m":
+                 if key[s + 2] != '-':
+-                    raise KeySpecError, \
+-                              "\\M must be followed by `-' (char %d of %s)"%(
+-                        s + 2, repr(key))
++                    raise KeySpecError("\\M must be followed by `-' (char %d of %s)"%(
++                        s + 2, repr(key)))
+                 if meta:
+-                    raise KeySpecError, "doubled \\M- (char %d of %s)"%(
+-                        s + 1, repr(key))
++                    raise KeySpecError("doubled \\M- (char %d of %s)"%(
++                        s + 1, repr(key)))
+                 meta = 1
+                 s += 3
+             elif c.isdigit():
+@@ -119,28 +117,25 @@ def _parse_key1(key, s):
+             elif c == '<':
+                 t = key.find('>', s)
+                 if t == -1:
+-                    raise KeySpecError, \
+-                              "unterminated \\< starting at char %d of %s"%(
+-                        s + 1, repr(key))
++                    raise KeySpecError("unterminated \\< starting at char %d of %s"%(
++                        s + 1, repr(key)))
+                 try:
+                     ret = _keynames[key[s+2:t].lower()]
+                     s = t + 1
+                 except KeyError:
+-                    raise KeySpecError, \
+-                              "unrecognised keyname `%s' at char %d of %s"%(
+-                        key[s+2:t], s + 2, repr(key))
++                    raise KeySpecError("unrecognised keyname `%s' at char %d of %s"%(
++                        key[s+2:t], s + 2, repr(key)))
+                 if ret is None:
+                     return None, s
+             else:
+-                raise KeySpecError, \
+-                          "unknown backslash escape %s at char %d of %s"%(
+-                    `c`, s + 2, repr(key))
++                raise KeySpecError("unknown backslash escape %s at char %d of %s"%(
++                    repr(c), s + 2, repr(key)))
+         else:
+             if ctrl:
+                 ret = chr(ord(key[s]) & 0x1f)   # curses.ascii.ctrl()
+-                ret = unicode(ret)
++                ret = str(ret)
+             else:
+-                ret = unicode(key[s])
++                ret = str(key[s])
+             s += 1
+     return (ret, meta, ctrl), s
+ 
+@@ -156,13 +151,12 @@ def parse_keys(key):
+ 
+ def _compile_keymap(keymap):
+     r = {}
+-    for key, value in keymap.items():
++    for key, value in list(keymap.items()):
+         r.setdefault(key[0], {})[key[1:]] = value
+-    for key, value in r.items():
+-        if value.has_key(()):
+-            if len(value) <> 1:
+-                raise KeySpecError, \
+-                          "key definitions for %s clash"%(value.values(),)
++    for key, value in list(r.items()):
++        if () in value:
++            if len(value) != 1:
++                raise KeySpecError("key definitions for %s clash"%(list(value.values()),))
+             else:
+                 r[key] = value[()]
+         else:
+@@ -173,7 +167,7 @@ def compile_keymap(keymap):
+     r = {}
+     for key, value in keymap:
+         k = parse_keys(key)
+-        if value is None and r.has_key(k):
++        if value is None and k in r:
+             del r[k]
+         if k is not None:
+             r[k] = value
+@@ -182,7 +176,7 @@ def compile_keymap(keymap):
+ def keyname(key):
+     longest_match = ''
+     longest_match_name = ''
+-    for name, keyseq in keyset.items():
++    for name, keyseq in list(keyset.items()):
+         if keyseq and key.startswith(keyseq) and \
+                len(keyseq) > len(longest_match):
+             longest_match = keyseq
+@@ -202,7 +196,7 @@ def unparse_key(keyseq):
+         return ''
+     name, s = keyname(keyseq)
+     if name:
+-        if name <> 'escape' or s == len(keyseq):
++        if name != 'escape' or s == len(keyseq):
+             return '\\<' + name + '>' + unparse_key(keyseq[s:])
+         else:
+             return '\\M-' + unparse_key(keyseq[1:])
+@@ -211,7 +205,7 @@ def unparse_key(keyseq):
+         r = keyseq[1:]
+         if c == '\\':
+             p = '\\\\'
+-        elif _unescapes.has_key(c):
++        elif c in _unescapes:
+             p = _unescapes[c]
+         elif ord(c) < ord(' '):
+             p = '\\C-%s'%(chr(ord(c)+96),)
+@@ -226,7 +220,7 @@ def _unparse_keyf(keyseq):
+         return []
+     name, s = keyname(keyseq)
+     if name:
+-        if name <> 'escape' or s == len(keyseq):
++        if name != 'escape' or s == len(keyseq):
+             return [name] + _unparse_keyf(keyseq[s:])
+         else:
+             rest = _unparse_keyf(keyseq[1:])
+@@ -236,7 +230,7 @@ def _unparse_keyf(keyseq):
+         r = keyseq[1:]
+         if c == '\\':
+             p = '\\'
+-        elif _unescapes.has_key(c):
++        elif c in _unescapes:
+             p = _unescapes[c]
+         elif ord(c) < ord(' '):
+             p = 'C-%s'%(chr(ord(c)+96),)
+--- pyrepl/python_reader.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/python_reader.py
+@@ -20,8 +20,8 @@
+ # CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+ # one impressive collections of imports:
+-from __future__ import print_function
+-from __future__ import unicode_literals
++
++
+ from pyrepl.completing_reader import CompletingReader
+ from pyrepl.historical_reader import HistoricalReader
+ from pyrepl import completing_reader, reader
+@@ -31,9 +31,9 @@ import imp, sys, os, re, code, traceback
+ import atexit, warnings
+ 
+ try:
+-    unicode
++    str
+ except:
+-    unicode = str
++    str = str
+ 
+ try:
+     imp.find_module("twisted")
+@@ -179,7 +179,7 @@ class ReaderConsole(code.InteractiveInterpreter):
+         else:
+             return
+         try:
+-            execfile(initfile, self.locals, self.locals)
++            exec(compile(open(initfile, "rb").read(), initfile, 'exec'), self.locals, self.locals)
+         except:
+             etype, value, tb = sys.exc_info()
+             traceback.print_exception(etype, value, tb.tb_next)
+@@ -203,7 +203,7 @@ class ReaderConsole(code.InteractiveInterpreter):
+                         # can't have warnings spewed onto terminal
+                         sv = warnings.showwarning
+                         warnings.showwarning = eat_it
+-                        l = unicode(self.reader.readline(), 'utf-8')
++                        l = str(self.reader.readline(), 'utf-8')
+                     finally:
+                         warnings.showwarning = sv
+                 except KeyboardInterrupt:
+@@ -301,7 +301,7 @@ class ReaderConsole(code.InteractiveInterpreter):
+                     self.prepare()
+                     try:
+                         while 1:
+-                            if sys.modules.has_key("_tkinter"):
++                            if "_tkinter" in sys.modules:
+                                 self.really_tkinteract()
+                                 # really_tkinteract is not expected to
+                                 # return except via an exception, but:
+--- pyrepl/reader.py.orig	2019-04-16 13:00:52 UTC
++++ pyrepl/reader.py
+@@ -19,32 +19,32 @@
+ # CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+ # CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+-from __future__ import unicode_literals
++
+ import unicodedata
+ from pyrepl import commands
+ from pyrepl import input
+ try:
+-    unicode
++    str
+ except NameError:
+-    unicode = str
+-    unichr = chr
+-    basestring = bytes, str
++    str = str
++    chr = chr
++    str = bytes, str
+ 
+ 
+ def _make_unctrl_map():
+     uc_map = {}
+-    for c in map(unichr, range(256)):
++    for c in map(chr, list(range(256))):
+         if unicodedata.category(c)[0] != 'C':
+             uc_map[c] = c
+     for i in range(32):
+-        c = unichr(i)
+-        uc_map[c] = '^' + unichr(ord('A') + i - 1)
++        c = chr(i)
++        uc_map[c] = '^' + chr(ord('A') + i - 1)
+     uc_map[b'\t'] = '    '  # display TABs as 4 characters
+-    uc_map[b'\177'] = unicode('^?')
++    uc_map[b'\177'] = str('^?')
+     for i in range(256):
+-        c = unichr(i)
++        c = chr(i)
+         if c not in uc_map:
+-            uc_map[c] = unicode('\\%03o') % i
++            uc_map[c] = str('\\%03o') % i
+     return uc_map
+ 
+ 
+@@ -87,17 +87,17 @@ del _make_unctrl_map
+ 
+ [SYNTAX_WHITESPACE,
+  SYNTAX_WORD,
+- SYNTAX_SYMBOL] = range(3)
++ SYNTAX_SYMBOL] = list(range(3))
+ 
+ 
+ def make_default_syntax_table():
+     # XXX perhaps should use some unicodedata here?
+     st = {}
+-    for c in map(unichr, range(256)):
++    for c in map(chr, list(range(256))):
+         st[c] = SYNTAX_SYMBOL
+-    for c in [a for a in map(unichr, range(256)) if a.isalpha()]:
++    for c in [a for a in map(chr, list(range(256))) if a.isalpha()]:
+         st[c] = SYNTAX_WORD
+-    st[unicode('\n')] = st[unicode(' ')] = SYNTAX_WHITESPACE
++    st[str('\n')] = st[str(' ')] = SYNTAX_WHITESPACE
+     return st
+ 
+ default_keymap = tuple(
+@@ -145,9 +145,9 @@ default_keymap = tuple(
+      #(r'\M-\n', 'insert-nl'),
+      ('\\\\', 'self-insert')] +
+     [(c, 'self-insert')
+-     for c in map(chr, range(32, 127)) if c != '\\'] +
++     for c in map(chr, list(range(32, 127))) if c != '\\'] +
+     [(c, 'self-insert')
+-     for c in map(chr, range(128, 256)) if c.isalpha()] +
++     for c in map(chr, list(range(128, 256))) if c.isalpha()] +
+     [(r'\<up>', 'up'),
+      (r'\<down>', 'down'),
+      (r'\<left>', 'left'),
+@@ -245,7 +245,7 @@ feeling more loquacious than I am now."""
+         self.console = console
+         self.commands = {}
+         self.msg = ''
+-        for v in vars(commands).values():
++        for v in list(vars(commands).values()):
+             if (isinstance(v, type) and
+                     issubclass(v, commands.Command) and
+                     v.__name__[0].islower()):
+@@ -273,7 +273,7 @@ feeling more loquacious than I am now."""
+         screeninfo = []
+         w = self.console.width - 1
+         p = self.pos
+-        for ln, line in zip(range(len(lines)), lines):
++        for ln, line in zip(list(range(len(lines))), lines):
+             ll = len(line)
+             if 0 <= p <= ll:
+                 if self.msg and not self.msg_at_bottom:
+@@ -523,7 +523,7 @@ feeling more loquacious than I am now."""
+ 
+     def do_cmd(self, cmd):
+         #print cmd
+-        if isinstance(cmd[0], basestring):
++        if isinstance(cmd[0], str):
+             #XXX: unify to text
+             cmd = self.commands.get(cmd[0],
+                                     commands.invalid_command)(self, *cmd)
+@@ -619,11 +619,11 @@ feeling more loquacious than I am now."""
+     def get_buffer(self, encoding=None):
+         if encoding is None:
+             encoding = self.console.encoding
+-        return unicode('').join(self.buffer).encode(self.console.encoding)
++        return str('').join(self.buffer).encode(self.console.encoding)
+ 
+     def get_unicode(self):
+         """Return the current buffer as a unicode string."""
+-        return unicode('').join(self.buffer)
++        return str('').join(self.buffer)
+ 
+ 
+ def test():
+--- pyrepl/readline.py.orig	2019-04-16 14:11:33 UTC
++++ pyrepl/readline.py
+@@ -248,16 +248,16 @@ class _ReadlineWrapper(object):
+         self.config.completer_delims = dict.fromkeys(string)
+ 
+     def get_completer_delims(self):
+-        chars = self.config.completer_delims.keys()
++        chars = list(self.config.completer_delims.keys())
+         chars.sort()
+         return ''.join(chars)
+ 
+     def _histline(self, line):
+         line = line.rstrip('\n')
+         try:
+-            return unicode(line, ENCODING)
++            return str(line, ENCODING)
+         except UnicodeDecodeError:   # bah, silently fall back...
+-            return unicode(line, 'utf-8', 'replace')
++            return str(line, 'utf-8', 'replace')
+ 
+     def get_history_length(self):
+         return self.saved_history_length
+@@ -293,7 +293,7 @@ class _ReadlineWrapper(object):
+         history = self.get_reader().get_trimmed_history(maxlength)
+         f = open(os.path.expanduser(filename), 'w')
+         for entry in history:
+-            if isinstance(entry, unicode):
++            if isinstance(entry, str):
+                 try:
+                     entry = entry.encode(ENCODING)
+                 except UnicodeEncodeError:   # bah, silently fall back...
+@@ -340,7 +340,7 @@ class _ReadlineWrapper(object):
+     def _get_idxs(self):
+         start = cursor = self.get_reader().pos
+         buf = self.get_line_buffer()
+-        for i in xrange(cursor - 1, -1, -1):
++        for i in range(cursor - 1, -1, -1):
+             if buf[i] in self.get_completer_delims():
+                 break
+             start = i
+@@ -396,7 +396,7 @@ def _make_stub(_name, _ret):
+     def stub(*args, **kwds):
+         import warnings
+         warnings.warn("readline.%s() not implemented" % _name, stacklevel=2)
+-    stub.func_name = _name
++    stub.__name__ = _name
+     globals()[_name] = stub
+ 
+ for _name, _ret in [
+@@ -438,14 +438,14 @@ def _setup():
+                 del sys.__raw_input__
+             except AttributeError:
+                 pass
+-            return raw_input(prompt)
++            return input(prompt)
+         sys.__raw_input__ = _wrapper.raw_input
+ 
+     else:
+         # this is not really what readline.c does.  Better than nothing I guess
+-        import __builtin__
+-        _old_raw_input = __builtin__.raw_input
+-        __builtin__.raw_input = _wrapper.raw_input
++        import builtins
++        _old_raw_input = builtins.raw_input
++        builtins.raw_input = _wrapper.raw_input
+ 
+ _old_raw_input = None
+ _setup()
+--- pyrepl/unix_console.py.orig	2015-12-06 11:35:46 UTC
++++ pyrepl/unix_console.py
+@@ -40,9 +40,9 @@ class InvalidTerminal(RuntimeError):
+     pass
+ 
+ try:
+-    unicode
++    str
+ except NameError:
+-    unicode = str
++    str = str
+ 
+ _error = (termios.error, curses.error, InvalidTerminal)
+ 
+@@ -221,7 +221,7 @@ class UnixConsole(Console):
+ 
+         self.__offset = offset
+ 
+-        for y, oldline, newline, in zip(range(offset, offset + height),
++        for y, oldline, newline, in zip(list(range(offset, offset + height)),
+                                         oldscr,
+                                         newscr):
+             if oldline != newline:
+@@ -533,7 +533,7 @@ class UnixConsole(Console):
+             amount = struct.unpack(
+                 "i", ioctl(self.input_fd, FIONREAD, "\0\0\0\0"))[0]
+             data = os.read(self.input_fd, amount)
+-            raw = unicode(data, self.encoding, 'replace')
++            raw = str(data, self.encoding, 'replace')
+             #XXX: something is wrong here
+             e.data += raw
+             e.raw += raw
+@@ -549,7 +549,7 @@ class UnixConsole(Console):
+ 
+             amount = 10000
+             data = os.read(self.input_fd, amount)
+-            raw = unicode(data, self.encoding, 'replace')
++            raw = str(data, self.encoding, 'replace')
+             #XXX: something is wrong here
+             e.data += raw
+             e.raw += raw
+--- pyrepl/unix_eventqueue.py.orig	2019-04-16 13:00:52 UTC
++++ pyrepl/unix_eventqueue.py
+@@ -30,9 +30,9 @@ from .trace import trace
+ from termios import tcgetattr, VERASE
+ import os
+ try:
+-    unicode
++    str
+ except NameError:
+-    unicode = str
++    str = str
+ 
+ 
+ _keynames = {
+@@ -74,7 +74,7 @@ CTRL_ARROW_KEYCODE = {
+ 
+ def general_keycodes():
+     keycodes = {}
+-    for key, tiname in _keynames.items():
++    for key, tiname in list(_keynames.items()):
+         keycode = curses.tigetstr(tiname)
+         trace('key {key} tiname {tiname} keycode {keycode!r}', **locals())
+         if keycode:
+@@ -87,7 +87,7 @@ def EventQueue(fd, encoding):
+     keycodes = general_keycodes()
+     if os.isatty(fd):
+         backspace = tcgetattr(fd)[6][VERASE]
+-        keycodes[backspace] = unicode('backspace')
++        keycodes[backspace] = str('backspace')
+     k = keymap.compile_keymap(keycodes)
+     trace('keymap {k!r}', k=k)
+     return EncodedQueue(k, encoding)
+@@ -133,7 +133,7 @@ class EncodedQueue(object):
+                 self.insert(Event('key', k, self.flush_buf()))
+                 self.k = self.ck
+ 
+-        elif self.buf and self.buf[0] == 033: # 033 == escape
++        elif self.buf and self.buf[0] == 0o33: # 033 == escape
+             # escape sequence not recognized by our keymap: propagate it
+             # outside so that i can be recognized as an M-... key (see also
+             # the docstring in keymap.py, in particular the line \\E.
+--- testing/infrastructure.py.orig	2015-12-06 11:35:46 UTC
++++ testing/infrastructure.py
+@@ -17,7 +17,7 @@
+ # CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+ # CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+-from __future__ import print_function
++
+ from pyrepl.reader import Reader
+ from pyrepl.console import Console, Event
+ 
+--- testing/test_readline.py.orig	2015-12-06 11:35:46 UTC
++++ testing/test_readline.py
+@@ -5,7 +5,7 @@ import sys
+ 
+ if sys.version_info < (3, ):
+     bytes_type = str
+-    unicode_type = unicode
++    unicode_type = str
+ else:
+     bytes_type = bytes
+     unicode_type = str
+--- testing/test_unix_reader.py.orig	2019-04-16 13:00:52 UTC
++++ testing/test_unix_reader.py
+@@ -1,11 +1,11 @@
+-from __future__ import unicode_literals
++
+ from pyrepl.unix_eventqueue import EncodedQueue, Event
+ 
+ 
+ def test_simple():
+     q = EncodedQueue({}, 'utf-8')
+ 
+-    a = u'\u1234'
++    a = '\u1234'
+     b = a.encode('utf-8')
+     for c in b:
+         q.push(c)
