@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-initial-setup
 PORTVERSION=	42.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 RUN_DEPENDS=	gdm>=3.0.0:x11/gdm \
 		krb5>0:security/krb5
 
-USES=		compiler:c++11-lib gnome meson pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gettext gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack
 
 MESON_ARGS=	-Dcheese=disabled \
