@@ -868,6 +868,7 @@
     SUBDIR += py-matplotlib2
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
+    SUBDIR += py-moarchiving
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-munkres10
