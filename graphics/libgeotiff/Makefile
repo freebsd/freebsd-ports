@@ -1,7 +1,7 @@
 # Created by: Sam Lawrance
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
 		LOCAL/sunpoet
