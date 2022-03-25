@@ -1,8 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	XML-Liberal
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
