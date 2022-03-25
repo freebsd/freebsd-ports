@@ -19,9 +19,11 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	PLOTTING
+OPTIONS_DEFINE=	CONSTRAINED_SOLUTION_TRACKING PLOTTING
+CONSTRAINED_SOLUTION_TRACKING_DESC=	Convergence tracking support
 PLOTTING_DESC=	Plotting support
 
+CONSTRAINED_SOLUTION_TRACKING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}moarchiving>=0:math/py-moarchiving@${PY_FLAVOR}
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
 
 .include <bsd.port.mk>
