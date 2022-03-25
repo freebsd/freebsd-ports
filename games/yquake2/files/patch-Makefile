@@ -1,0 +1,28 @@
+--- Makefile.orig	2022-01-22 08:51:28 UTC
++++ Makefile
+@@ -251,10 +251,13 @@ endif
+ # Systemwide installation.
+ ifeq ($(WITH_SYSTEMWIDE),yes)
+ override CFLAGS += -DSYSTEMWIDE
+-ifneq ($(WITH_SYSTEMDIR),"")
+-override CFLAGS += -DSYSTEMDIR=\"$(WITH_SYSTEMDIR)\"
++ifneq ($(WITH_SYSTEMDATADIR),"")
++override CFLAGS += -DSYSTEMDATADIR=\"$(WITH_SYSTEMDATADIR)\"
+ endif
++ifneq ($(WITH_SYSTEMLIBDIR),"")
++override CFLAGS += -DSYSTEMLIBDIR=\"$(WITH_SYSTEMLIBDIR)\"
+ endif
++endif
+ 
+ # ----------
+ 
+@@ -405,7 +408,8 @@ config:
+ 	@echo "WITH_OPENAL = $(WITH_OPENAL)"
+ 	@echo "WITH_RPATH = $(WITH_RPATH)"
+ 	@echo "WITH_SYSTEMWIDE = $(WITH_SYSTEMWIDE)"
+-	@echo "WITH_SYSTEMDIR = $(WITH_SYSTEMDIR)"
++	@echo "WITH_SYSTEMDATADIR = $(WITH_SYSTEMDATADIR)"
++	@echo "WITH_SYSTEMLIBDIR = $(WITH_SYSTEMLIBDIR)"
+ 	@echo "============================"
+ 	@echo ""
+ 

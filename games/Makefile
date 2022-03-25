@@ -1157,6 +1157,7 @@
     SUBDIR += xzip
     SUBDIR += yadex
     SUBDIR += yahtzee
+    SUBDIR += yquake2
     SUBDIR += zangband
     SUBDIR += zatacka
     SUBDIR += zaz
