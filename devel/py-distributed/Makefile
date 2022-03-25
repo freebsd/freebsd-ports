@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	distributed
-PORTVERSION=	2022.1.1
+PORTVERSION=	2022.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.6:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.3.0:devel/py-cloudpickle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.5.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask>=${PORTVERSION}:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.6.0:devel/py-msgpack@${PY_FLAVOR} \
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.6:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.0.3:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zict>=0.1.3:devel/py-zict@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
