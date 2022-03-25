@@ -1,0 +1,162 @@
+--- lib/yapps/grammar.py.orig	2005-09-15 07:55:16 UTC
++++ lib/yapps/grammar.py
+@@ -35,7 +35,7 @@ def resolve_name(rule, tokens, id, args):
+     if id in [x[0] for x in tokens]:
+         # It's a token
+         if args:
+-            print 'Warning: ignoring parameters on TOKEN %s<<%s>>' % (id, args)
++            print('Warning: ignoring parameters on TOKEN %s<<%s>>' % (id, args))
+         return parsetree.Terminal(rule, id)
+     else:
+         # It's a name, so assume it's a nonterminal
+--- lib/yapps/parsetree.py.orig	2005-09-15 07:55:40 UTC
++++ lib/yapps/parsetree.py
+@@ -41,8 +41,8 @@ class Generator:
+             if n == '#ignore':
+                 n = t
+                 self.ignore.append(n)
+-            if n in self.tokens.keys() and self.tokens[n] != t:
+-                print >>sys.stderr, 'Warning: token %s defined more than once.' % n
++            if n in list(self.tokens.keys()) and self.tokens[n] != t:
++                print('Warning: token %s defined more than once.' % n, file=sys.stderr)
+             self.tokens[n] = t
+             self.terminals.append(n)
+             
+@@ -236,20 +236,20 @@ class Generator:
+         """Display the grammar in somewhat human-readable form."""
+         self.calculate()
+         for r in self.goals:
+-            print '    _____' + '_'*len(r)
+-            print ('___/Rule '+r+'\\' + '_'*80)[:79]
++            print('    _____' + '_'*len(r))
++            print(('___/Rule '+r+'\\' + '_'*80)[:79])
+             queue = [self.rules[r]]
+             while queue:
+                 top = queue[0]
+                 del queue[0]
+ 
+-                print 'Rule', repr(top), 'of class', top.__class__.__name__
++                print('Rule', repr(top), 'of class', top.__class__.__name__)
+                 top.first.sort()
+                 top.follow.sort()
+                 eps = []
+                 if top.accepts_epsilon: eps = ['(null)']
+-                print '     FIRST:', ', '.join(top.first+eps)
+-                print '    FOLLOW:', ', '.join(top.follow)
++                print('     FIRST:', ', '.join(top.first+eps))
++                print('    FOLLOW:', ', '.join(top.follow))
+                 for x in top.get_children(): queue.append(x)
+                 
+     def generate_output(self):
+@@ -390,7 +390,7 @@ class NonTerminal(Node):
+                 self.accepts_epsilon = self.target.accepts_epsilon
+                 gen.changed()
+         except KeyError: # Oops, it's nonexistent
+-            print >>sys.stderr, 'Error: no rule <%s>' % self.name
++            print('Error: no rule <%s>' % self.name, file=sys.stderr)
+             self.target = self
+             
+     def __str__(self):
+@@ -518,12 +518,12 @@ class Choice(Node):
+             tokens_seen = tokens_seen + testset
+             if removed:
+                 if not testset:
+-                    print >>sys.stderr, 'Error in rule', self.rule+':'
++                    print('Error in rule', self.rule+':', file=sys.stderr)
+                 else:
+-                    print >>sys.stderr, 'Warning in rule', self.rule+':'
+-                print >>sys.stderr, ' *', self
+-                print >>sys.stderr, ' * These tokens could be matched by more than one clause:'
+-                print >>sys.stderr, ' *', ' '.join(removed)
++                    print('Warning in rule', self.rule+':', file=sys.stderr)
++                print(' *', self, file=sys.stderr)
++                print(' * These tokens could be matched by more than one clause:', file=sys.stderr)
++                print(' *', ' '.join(removed), file=sys.stderr)
+                 
+             if testset:
+                 if not tokens_unseen: # context sensitive scanners only!
+@@ -582,7 +582,7 @@ class Option(Wrapper):
+ 
+     def output(self, gen, indent):
+         if self.child.accepts_epsilon:
+-            print >>sys.stderr, 'Warning in rule', self.rule+': contents may be empty.'
++            print('Warning in rule', self.rule+': contents may be empty.', file=sys.stderr)
+         gen.write(indent, "if %s:\n" %
+                   gen.peek_test(self.first, self.child.first))
+         self.child.output(gen, indent+INDENT)
+@@ -604,8 +604,8 @@ class Plus(Wrapper):
+         
+     def output(self, gen, indent):
+         if self.child.accepts_epsilon:
+-            print >>sys.stderr, 'Warning in rule', self.rule+':'
+-            print >>sys.stderr, ' * The repeated pattern could be empty.  The resulting parser may not work properly.'
++            print('Warning in rule', self.rule+':', file=sys.stderr)
++            print(' * The repeated pattern could be empty.  The resulting parser may not work properly.', file=sys.stderr)
+         gen.write(indent, "while 1:\n")
+         self.child.output(gen, indent+INDENT)
+         union = self.first[:]
+@@ -630,8 +630,8 @@ class Star(Wrapper):
+         
+     def output(self, gen, indent):
+         if self.child.accepts_epsilon:
+-            print >>sys.stderr, 'Warning in rule', self.rule+':'
+-            print >>sys.stderr, ' * The repeated pattern could be empty.  The resulting parser probably will not work properly.'
++            print('Warning in rule', self.rule+':', file=sys.stderr)
++            print(' * The repeated pattern could be empty.  The resulting parser probably will not work properly.', file=sys.stderr)
+         gen.write(indent, "while %s:\n" %
+                   gen.peek_test(self.follow, self.child.first))
+         self.child.output(gen, indent+INDENT)
+--- lib/yapps/yapps_grammar.py.orig	2005-09-15 07:56:02 UTC
++++ lib/yapps/yapps_grammar.py
+@@ -35,7 +35,7 @@ def resolve_name(rule, tokens, id, args):
+     if id in [x[0] for x in tokens]:
+         # It's a token
+         if args:
+-            print 'Warning: ignoring parameters on TOKEN %s<<%s>>' % (id, args)
++            print('Warning: ignoring parameters on TOKEN %s<<%s>>' % (id, args))
+         return parsetree.Terminal(rule, id)
+     else:
+         # It's a name, so assume it's a nonterminal
+--- lib/yapps/yappsrt.py.orig	2005-09-15 07:56:12 UTC
++++ lib/yapps/yappsrt.py
+@@ -272,8 +272,8 @@ def print_line_with_pointer(text, p):
+         p = p - 7
+ 
+     # Now print the string, along with an indicator
+-    print >>sys.stderr, '> ',text
+-    print >>sys.stderr, '> ',' '*p + '^'
++    print('> ',text, file=sys.stderr)
++    print('> ',' '*p + '^', file=sys.stderr)
+     
+ def print_error(input, err, scanner):
+     """Print error messages, the parser stack, and the input text -- for human-readable error messages."""
+@@ -281,7 +281,7 @@ def print_error(input, err, scanner):
+     # Figure out the line number
+     line_number = scanner.get_line_number()
+     column_number = scanner.get_column_number()
+-    print >>sys.stderr, '%d:%d: %s' % (line_number, column_number, err.msg)
++    print('%d:%d: %s' % (line_number, column_number, err.msg), file=sys.stderr)
+ 
+     context = err.context
+     if not context:
+@@ -289,16 +289,16 @@ def print_error(input, err, scanner):
+         
+     while context:
+         # TODO: add line number
+-        print >>sys.stderr, 'while parsing %s%s:' % (context.rule, tuple(context.args))
++        print('while parsing %s%s:' % (context.rule, tuple(context.args)), file=sys.stderr)
+         print_line_with_pointer(input, context.scanner.get_prev_char_pos(context.tokenpos))
+         context = context.parent
+ 
+ def wrap_error_reporter(parser, rule):
+     try:
+         return getattr(parser, rule)()
+-    except SyntaxError, e:
++    except SyntaxError as e:
+         input = parser._scanner.input
+         print_error(input, e, parser._scanner)
+     except NoMoreTokens:
+-        print >>sys.stderr, 'Could not complete parsing; stopped around here:'
+-        print >>sys.stderr, parser._scanner
++        print('Could not complete parsing; stopped around here:', file=sys.stderr)
++        print(parser._scanner, file=sys.stderr)
