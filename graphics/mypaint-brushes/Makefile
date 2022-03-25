@@ -16,4 +16,6 @@ USE_GITHUB=yes
 
 GH_ACCOUNT=	mypaint
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
