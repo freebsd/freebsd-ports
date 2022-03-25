@@ -20,6 +20,6 @@ RUN_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
 USES=		perl5
 USE_PERL5=	configure
 
-NO_ARCH=	y
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
