@@ -11,9 +11,8 @@ COMMENT=	Advanced CPU-based password recovery utility
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
-NOT_FOR_ARCHS=	aarch64 powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS=	powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	fails to compile: compiling for big-endian architecture not supported
-NOT_FOR_ARCHS_REASON_aarch64=	fails to compile
 
 BUILD_DEPENDS=	minizip:archivers/minizip
 
@@ -39,6 +38,8 @@ OPTIONS_DEFAULT=	BRAIN
 BRAIN_DESC=		Build Hashcat Brain
 BRAIN_MAKE_ARGS_OFF=	ENABLE_BRAIN=0
 BRAIN_CFLAGS=		-DWITH_BRAIN -Ideps/git/xxHash
+
+CFLAGS_aarch64+=	-march=armv8-a+crc+crypto
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so.${PORTVERSION}
