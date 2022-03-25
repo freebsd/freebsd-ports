@@ -1,6 +1,5 @@
 PORTNAME=	cbindgen
-DISTVERSION=	0.20.0
-PORTREVISION=	7
+DISTVERSION=	0.21.0
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -17,16 +16,15 @@ RUN_DEPENDS=	cargo:lang/${RUST_DEFAULT}
 USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	ansi_term-0.11.0 \
-		atty-0.2.14 \
+CARGO_CRATES=	atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
 		cfg-if-0.1.10 \
-		clap-2.33.3 \
+		clap-3.1.6 \
 		cloudabi-0.0.3 \
 		getrandom-0.1.15 \
 		hashbrown-0.9.1 \
-		heck-0.3.1 \
+		heck-0.4.0 \
 		hermit-abi-0.1.16 \
 		indexmap-1.6.0 \
 		itoa-0.4.6 \
@@ -34,6 +32,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		libc-0.2.77 \
 		lock_api-0.3.4 \
 		log-0.4.11 \
+		memchr-2.4.1 \
+		os_str_bytes-6.0.0 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.2 \
 		ppv-lite86-0.2.9 \
@@ -53,18 +53,17 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		serial_test-0.5.0 \
 		serial_test_derive-0.5.0 \
 		smallvec-1.4.2 \
-		strsim-0.8.0 \
+		strsim-0.10.0 \
 		syn-1.0.41 \
 		tempfile-3.1.0 \
-		textwrap-0.11.0 \
+		termcolor-1.1.3 \
+		textwrap-0.15.0 \
 		toml-0.5.6 \
-		unicode-segmentation-1.6.0 \
-		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
-		vec_map-0.8.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 .include <bsd.port.mk>
