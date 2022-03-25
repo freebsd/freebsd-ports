@@ -1,0 +1,302 @@
+--- segyio/__init__.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/__init__.py
+@@ -51,7 +51,7 @@ class Enum(object):
+         return int(self._value)
+ 
+     def __str__(self):
+-        for k, v in self.__class__.__dict__.items():
++        for k, v in list(self.__class__.__dict__.items()):
+             if isinstance(v, int) and self._value == v:
+                 return k
+         return "Unknown Enum"
+@@ -76,7 +76,7 @@ class Enum(object):
+     @classmethod
+     def enums(cls):
+         result = []
+-        for v in cls.__dict__.values():
++        for v in list(cls.__dict__.values()):
+             if isinstance(v, int):
+                 result.append(cls(v))
+ 
+--- segyio/create.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/create.py
+@@ -200,7 +200,7 @@ def create(filename, spec):
+ 
+     if endian not in endians:
+         problem = 'unknown endianness {}, expected one of: '
+-        opts = ' '.join(endians.keys())
++        opts = ' '.join(list(endians.keys()))
+         raise ValueError(problem.format(endian) + opts)
+ 
+     fd = _segyio.segyiofd(str(filename), 'w+', endians[endian])
+--- segyio/depth.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/depth.py
+@@ -172,7 +172,7 @@ class Depth(Sequence):
+         >>> depth[::2] = other
+         """
+         if isinstance(depth, slice):
+-            for i, x in zip(range(*depth.indices(len(self))), val):
++            for i, x in zip(list(range(*depth.indices(len(self)))), val):
+                 self[i] = x
+             return
+ 
+--- segyio/field.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/field.py
+@@ -456,7 +456,7 @@ class Field(MutableMapping):
+             return False
+ 
+         def intkeys(d):
+-            return { int(k): v for k, v in d.items() }
++            return { int(k): v for k, v in list(d.items()) }
+ 
+         return intkeys(self) == intkeys(other)
+ 
+@@ -513,13 +513,13 @@ class Field(MutableMapping):
+                 for key in other:
+                     self.putfield(buf, int(key), other[key])
+             elif hasattr(other, "keys"):
+-                for key in other.keys():
++                for key in list(other.keys()):
+                     self.putfield(buf, int(key), other[key])
+             else:
+                 for key, value in other:
+                     self.putfield(buf, int(key), value)
+ 
+-        for key, value in kwargs.items():
++        for key, value in list(kwargs.items()):
+             self.putfield(buf, int(self._kwargs[key]), value)
+ 
+         self.buf = buf
+@@ -543,4 +543,4 @@ class Field(MutableMapping):
+                     ).reload()
+ 
+     def __repr__(self):
+-        return repr(self[self.keys()])
++        return repr(self[list(self.keys())])
+--- segyio/gather.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/gather.py
+@@ -119,7 +119,7 @@ class Gather(object):
+             offs = slice(off, off + 1, 1)
+ 
+         xs = list(filter(self.offsets.__contains__,
+-                    range(*offs.indices(self.offsets[-1]+1))))
++                    list(range(*offs.indices(self.offsets[-1]+1)))))
+ 
+         empty = np.empty(0, dtype = self.trace.dtype)
+         # gather[int,int,:]
+@@ -138,8 +138,8 @@ class Gather(object):
+             # buffered, and traces can be read from the iline. This is the
+             # least efficient when there are very few traces read per inline,
+             # but huge savings with larger subcubes
+-            last_il = self.iline.keys()[-1] + 1
+-            last_xl = self.xline.keys()[-1] + 1
++            last_il = list(self.iline.keys())[-1] + 1
++            last_xl = list(self.xline.keys())[-1] + 1
+ 
+             il_slice = il if isslice(il) else slice(il, il+1)
+             xl_slice = xl if isslice(xl) else slice(xl, xl+1)
+@@ -149,15 +149,15 @@ class Gather(object):
+             # but it's unnecessary to chck all keys up until the first xline
+             # because that will never be a hit anyway
+             if il_slice.start is None:
+-                start = self.iline.keys()[0]
++                start = list(self.iline.keys())[0]
+                 il_slice = slice(start, il_slice.stop, il_slice.step)
+ 
+             if xl_slice.start is None:
+-                start = self.xline.keys()[0]
++                start = list(self.xline.keys())[0]
+                 xl_slice = slice(start, xl_slice.stop, xl_slice.step)
+ 
+-            il_range = range(*il_slice.indices(last_il))
+-            xl_range = range(*xl_slice.indices(last_xl))
++            il_range = list(range(*il_slice.indices(last_il)))
++            xl_range = list(range(*xl_slice.indices(last_xl)))
+ 
+             # the try-except-else is essentially a filter on in/xl keys, but
+             # delegates the work (and decision) to the iline and xline modes
+@@ -372,7 +372,7 @@ class Groups(Mapping):
+             pass
+ 
+         try:
+-            items = key.items()
++            items = list(key.items())
+         except AttributeError:
+             items = iter(key)
+ 
+@@ -420,15 +420,15 @@ class Groups(Mapping):
+         return Group(key, self, self.bins[key])
+ 
+     def values(self):
+-        for key, index in self.bins.items():
++        for key, index in list(self.bins.items()):
+             yield Group(key, self, index)
+ 
+     def items(self):
+-        for key, index in self.bins.items():
++        for key, index in list(self.bins.items()):
+             yield key, Group(key, self, index)
+ 
+     def __iter__(self):
+-        return self.bins.keys()
++        return list(self.bins.keys())
+ 
+     def sort(self, fields):
+         """
+@@ -436,7 +436,7 @@ class Groups(Mapping):
+         """
+         bins = collections.OrderedDict()
+ 
+-        for key, index in self.bins.items():
++        for key, index in list(self.bins.items()):
+             g = Group(key, self, index)
+             g.sort(fields)
+             bins[key] = g.index
+--- segyio/line.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/line.py
+@@ -91,12 +91,12 @@ class Line(Mapping):
+         if not isinstance(offset, slice):
+             offset = slice(offset, offset + 1)
+ 
+-        index  = sanitize_slice(index, self.heads.keys())
+-        offset = sanitize_slice(offset, self.offsets.keys())
+-        irange = range(*index.indices(max(self.heads.keys()) + 1))
+-        orange = range(*offset.indices(max(self.offsets.keys()) + 1))
+-        irange = filter(self.heads.__contains__, irange)
+-        orange = filter(self.offsets.__contains__, orange)
++        index  = sanitize_slice(index, list(self.heads.keys()))
++        offset = sanitize_slice(offset, list(self.offsets.keys()))
++        irange = list(range(*index.indices(max(self.heads.keys()) + 1)))
++        orange = list(range(*offset.indices(max(self.offsets.keys()) + 1)))
++        irange = list(filter(self.heads.__contains__, irange))
++        orange = list(filter(self.offsets.__contains__, orange))
+         # offset-range is used in inner loops, so make it a list for
+         # reusability. offsets are usually few, so no real punishment by using
+         # non-generators here
+@@ -344,7 +344,7 @@ class Line(Mapping):
+ 
+     def items(self):
+         """D.values() -> generator of D's (key,values), as 2-tuples"""
+-        return zip(self.keys(), self[:])
++        return zip(list(self.keys()), self[:])
+ 
+ class HeaderLine(Line):
+     """
+--- segyio/open.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/open.py
+@@ -155,7 +155,7 @@ def open(filename, mode="r", iline = 189,
+ 
+     if endian not in endians:
+         problem = 'unknown endianness {}, expected one of: '
+-        opts = ' '.join(endians.keys())
++        opts = ' '.join(list(endians.keys()))
+         raise ValueError(problem.format(endian) + opts)
+ 
+     from . import _segyio
+--- segyio/segy.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/segy.py
+@@ -910,7 +910,7 @@ class SegyFile(object):
+ 
+         if sorting not in valid_sortings:
+             error = "Invalid sorting"
+-            solution = "valid sorting options are: {}".format(valid_sortings.keys())
++            solution = "valid sorting options are: {}".format(list(valid_sortings.keys()))
+             raise ValueError('{}, {}'.format(error, solution))
+ 
+         if offsets is None:
+--- segyio/su/file.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/su/file.py
+@@ -89,7 +89,7 @@ def open(filename, mode = 'r', iline = 189,
+ 
+     if endian not in endians:
+         problem = 'unknown endianness, must be one of: '
+-        candidates = ' '.join(endians.keys())
++        candidates = ' '.join(list(endians.keys()))
+         raise ValueError(problem + candidates)
+ 
+     from .. import _segyio
+--- segyio/tools.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/tools.py
+@@ -289,7 +289,7 @@ def rotation(f, line = 'fast'):
+ 
+     if line not in lines:
+         error = "Unknown line {}".format(line)
+-        solution = "Must be any of: {}".format(' '.join(lines.keys()))
++        solution = "Must be any of: {}".format(' '.join(list(lines.keys())))
+         raise ValueError('{} {}'.format(error, solution))
+ 
+     l = lines[line]
+@@ -299,7 +299,7 @@ def rotation(f, line = 'fast'):
+     rot = f.xfd.rotation( len(l),
+                           l.stride,
+                           len(f.offsets),
+-                          np.fromiter(l.keys(), dtype = np.intc) )
++                          np.fromiter(list(l.keys()), dtype = np.intc) )
+     return rot, cdpx, cdpy
+ 
+ def metadata(f):
+@@ -466,7 +466,7 @@ def from_array(filename, data, iline=189,
+     data = np.asarray(data)
+     dimensions = len(data.shape)
+ 
+-    if dimensions not in range(2, 5):
++    if dimensions not in list(range(2, 5)):
+         problem = "Expected 2, 3, or 4 dimensions, {} was given".format(dimensions)
+         raise ValueError(problem)
+ 
+--- segyio/trace.py.orig	2022-02-18 06:49:44 UTC
++++ segyio/trace.py
+@@ -198,7 +198,7 @@ class Trace(Sequence):
+             step = 1
+             single = True
+ 
+-        n_elements = len(range(start, stop, step))
++        n_elements = len(list(range(start, stop, step)))
+ 
+         try:
+             i = self.wrapindex(i)
+@@ -278,7 +278,7 @@ class Trace(Sequence):
+ 
+         """
+         if isinstance(i, slice):
+-            for j, x in zip(range(*i.indices(len(self))), val):
++            for j, x in zip(list(range(*i.indices(len(self)))), val):
+                 self[j] = x
+ 
+             return
+@@ -388,7 +388,7 @@ class RawTrace(Trace):
+                 msg = 'trace indices must be integers or slices, not {}'
+                 raise TypeError(msg.format(type(i).__name__))
+             start, _, step = indices
+-            length = len(range(*indices))
++            length = len(list(range(*indices)))
+             buf = np.empty((length, self.shape), dtype = self.dtype)
+             return self.filehandle.gettr(buf, start, step, length, 0, self.shape, 1, self.shape)
+ 
+@@ -435,7 +435,7 @@ class RefTrace(Trace):
+         be useful in certain contexts to provide stronger guarantees.
+         """
+         garbage = []
+-        for i, (x, signature) in self.refs.items():
++        for i, (x, signature) in list(self.refs.items()):
+             if sys.getrefcount(x) == 3:
+                 garbage.append(i)
+ 
+@@ -841,7 +841,7 @@ class Attributes(Sequence):
+             field = self.field
+ 
+             start, stop, step = i.indices(traces)
+-            indices = range(start, stop, step)
++            indices = list(range(start, stop, step))
+             attrs = np.empty(len(indices), dtype = self.dtype)
+             return filehandle.field_forall(attrs, start, stop, step, field)
+ 
+@@ -955,7 +955,7 @@ class Text(Sequence):
+                 msg = 'trace indices must be integers or slices, not {}'
+                 raise TypeError(msg.format(type(i).__name__))
+ 
+-            for i, text in zip(range(*indices), val):
++            for i, text in zip(list(range(*indices)), val):
+                 if isinstance(text, Text):
+                     text = text[0]
+                 self.filehandle.puttext(i, text)
