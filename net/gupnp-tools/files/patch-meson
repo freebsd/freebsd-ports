@@ -1,0 +1,35 @@
+Reference:	https://github.com/mesonbuild/meson/commit/6f4973abad9eec9fcc915117f1c3d1a93ccc948c
+
+--- subprojects/gssdp-1.6.wrap.orig	2022-10-11 21:00:49 UTC
++++ subprojects/gssdp-1.6.wrap
+@@ -3,6 +3,6 @@ depth = 1
+ revision = master
+ depth = 1
+  
+-[provides]
+-dependency_name = gssdp-1.2
++[provide]
++dependency_names = gssdp-1.6
+ 
+--- subprojects/gupnp-1.6.wrap.orig	2022-10-11 21:00:49 UTC
++++ subprojects/gupnp-1.6.wrap
+@@ -3,6 +3,6 @@ depth = 1
+ revision = master
+ depth = 1
+  
+-[provides]
+-dependency_name = gupnp-1.2
++[provide]
++dependency_names = gupnp-1.6
+ 
+--- subprojects/gupnp-av-1.0.wrap.orig	2022-10-11 21:00:49 UTC
++++ subprojects/gupnp-av-1.0.wrap
+@@ -3,6 +3,6 @@ depth = 1
+ revision = master
+ depth = 1
+  
+-[provides]
+-dependency_name = gupnp-av-1.0
++[provide]
++dependency_names = gupnp-av-1.0
+ 
