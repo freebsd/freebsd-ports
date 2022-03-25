@@ -1,0 +1,412 @@
+--- ApeTag.py.orig	2007-11-07 01:15:19 UTC
++++ ApeTag.py
+@@ -104,6 +104,7 @@ APEv2 specification is here:
+ 
+ from os.path import isfile as _isfile
+ from struct import pack as _pack, unpack as _unpack
++from functools import reduce
+ 
+ # Variable definitions
+ 
+@@ -115,7 +116,7 @@ _tagmustexistcommands = 'update getfields getrawtag'.s
+ _stringallowedcommands = 'getrawtag getnewrawtag getfields hastag'.split()
+ _filelikeattrs = 'flush read seek tell truncate write'.split()
+ _badapeitemkeys = 'id3 tag oggs mp+'.split()
+-_badapeitemkeychars = ''.join([chr(x) for x in range(32) + range(128,256)])
++_badapeitemkeychars = ''.join([chr(x) for x in list(range(32)) + list(range(128,256))])
+ _apeitemtypes = 'utf8 binary external reserved'.split()
+ _apeheaderflags = "\x00\x00\xA0"
+ _apefooterflags = "\x00\x00\x80"
+@@ -160,7 +161,7 @@ del i
+ 
+ # Classes
+ 
+-class TagError(StandardError):
++class TagError(Exception):
+     '''Raised when there is an error during a tagging operation'''
+     pass
+ 
+@@ -171,16 +172,16 @@ class ApeItem(list):
+         if key is None:
+             return
+         if not self.validkey(key):
+-            raise TagError, 'Invalid item key for ape tag item: %r' % key
++            raise TagError('Invalid item key for ape tag item: %r' % key)
+         if type not in _apeitemtypes:
+-            raise TagError, 'Invalid item type for ape tag item: %r' % type
++            raise TagError('Invalid item type for ape tag item: %r' % type)
+         self.key = key
+         self.readonly = bool(readonly)
+         self.type = type
+-        if isinstance(values, basestring):
++        if isinstance(values, str):
+             values = [values]
+         if type == 'utf8' or type == 'external':
+-            values = [unicode(value) for value in values]
++            values = [str(value) for value in values]
+         self.extend(values)
+     
+     def maketag(self):
+@@ -201,26 +202,26 @@ class ApeItem(list):
+         del self[:]
+         itemlength = _unpack("<i",data[curpos:curpos+4])[0]
+         if itemlength < 0:
+-            raise TagError, 'Corrupt tag, invalid item length at position ' \
+-                            '%i: %i bytes' % (curpos, itemlength)
++            raise TagError('Corrupt tag, invalid item length at position ' \
++                            '%i: %i bytes' % (curpos, itemlength))
+         if data[curpos+4:curpos+7] != '\x00\x00\x00':
+-            raise TagError, 'Corrupt tag, invalid item flags, bits 8-31 ' \
+-                            'nonzero at position %i' % curpos
++            raise TagError('Corrupt tag, invalid item flags, bits 8-31 ' \
++                            'nonzero at position %i' % curpos)
+         type, readonly = divmod(ord(data[curpos+7]), 2)
+         if type > 3:
+-            raise TagError, 'Corrupt tag, invalid item flags, bits 3-7 ' \
+-                            'nonzero at position %i' % curpos
++            raise TagError('Corrupt tag, invalid item flags, bits 3-7 ' \
++                            'nonzero at position %i' % curpos)
+         self.type = _apeitemtypes[type]
+         self.readonly = bool(readonly)
+         curpos += 8
+         keyend = data.find("\x00", curpos)
+         if keyend < curpos:
+-            raise TagError, 'Corrupt tag, unterminated item key at position ' \
+-                            '%i' % curpos
++            raise TagError('Corrupt tag, unterminated item key at position ' \
++                            '%i' % curpos)
+         itemkey = data[curpos:keyend]
+         if not self.validkey(itemkey):
+-            raise TagError, 'Corrupt tag, invalid item key at position ' \
+-                            '%i: %r' % (curpos, itemkey)
++            raise TagError('Corrupt tag, invalid item key at position ' \
++                            '%i: %r' % (curpos, itemkey))
+         self.key = itemkey
+         curpos = keyend + itemlength + 1
+         itemvalue = data[keyend+1:curpos]
+@@ -246,30 +247,30 @@ def _ape(fil, action, callback = None, callbackkwargs 
+ 
+     if _apepreamble != data[:12]:
+         if action in _tagmustexistcommands:
+-            raise TagError, "Nonexistant or corrupt tag, can't %s" % action
++            raise TagError("Nonexistant or corrupt tag, can't %s" % action)
+         elif action == "delete":
+             return 0
+         data = ''
+         tagstart = filesize - len(id3data)
+     elif _apefooterflags != data[21:24] or \
+         (data[20] != '\0' and data[20] != '\1'):
+-            raise TagError, "Bad tag footer flags"
++            raise TagError("Bad tag footer flags")
+     else:
+         # file has a valid APE footer
+         apesize = _unpack("<i",data[12:16])[0] + 32
+         if apesize > _maxapesize:
+-            raise TagError, 'Existing tag is too large: %i bytes' % apesize
++            raise TagError('Existing tag is too large: %i bytes' % apesize)
+         if apesize + len(id3data) > filesize:
+-            raise TagError, 'Existing tag says it is larger than the file: ' \
+-                            '%i bytes' % apesize
++            raise TagError('Existing tag says it is larger than the file: ' \
++                            '%i bytes' % apesize)
+         fil.seek(-apesize - len(id3data), 2)
+         tagstart = fil.tell()
+         data = fil.read(apesize)
+         if _apepreamble != data[:12] or _apeheaderflags != data[21:24] or \
+            (data[20] != '\0' and data[20] != '\1'):
+-            raise TagError, 'Nonexistent or corrupt tag, missing tag header'
++            raise TagError('Nonexistent or corrupt tag, missing tag header')
+         if apesize != _unpack("<i",data[12:16])[0] + 32:
+-            raise TagError, 'Corrupt tag, header and footer sizes do not match'
++            raise TagError('Corrupt tag, header and footer sizes do not match')
+         if action == "delete":
+             fil.seek(tagstart)
+             if not updateid3:
+@@ -307,13 +308,13 @@ def _ape(fil, action, callback = None, callbackkwargs 
+         return newtag
+     
+     if len(newtag) > _maxapesize:
+-        raise TagError, 'New tag is too large: %i bytes' % len(data)
++        raise TagError('New tag is too large: %i bytes' % len(data))
+     
+     if updateid3:
+         if action == 'replace':
+             id3data = ''
+         elif action != 'create' and not id3data:
+-            raise TagError, "Nonexistant or corrupt tag, can't %s" % action
++            raise TagError("Nonexistant or corrupt tag, can't %s" % action)
+         if callable(updateid3):
+             id3data = _id3(id3data, "getnewrawtag", updateid3, callbackkwargs)
+         else:
+@@ -330,7 +331,7 @@ def _ape(fil, action, callback = None, callbackkwargs 
+ def _apefieldstoid3fields(fields):
+     '''Convert APE tag fields to ID3 tag fields '''
+     id3fields = {}
+-    for key, value in fields.iteritems():
++    for key, value in fields.items():
+         key = key.lower()
+         if isinstance(value, (list, tuple)):
+             if not value:
+@@ -347,7 +348,7 @@ def _apefieldstoid3fields(fields):
+             else:
+                 id3fields['track'] = 0
+         elif key == 'genre':
+-            if isinstance(value, basestring) and value.lower() in _id3genresdict:
++            if isinstance(value, str) and value.lower() in _id3genresdict:
+                 id3fields[key] = value
+             else:
+                 id3fields[key] = ''
+@@ -357,7 +358,7 @@ def _apefieldstoid3fields(fields):
+             except ValueError:
+                 pass
+         elif key in _id3fields:
+-            if isinstance(value, unicode):
++            if isinstance(value, str):
+                 value = value.encode('utf8')
+             id3fields[key] = value
+     return id3fields
+@@ -367,28 +368,28 @@ _apelengthreduce = lambda i1, i2: i1 + len(i2)
+ def _checkargs(fil, action):
+     '''Check that arguments are valid, convert them, or raise an error'''
+     if not (isinstance(action,str) and action.lower() in _commands):
+-        raise TagError, "%r is not a valid action" % action
++        raise TagError("%r is not a valid action" % action)
+     action = action.lower()
+     fil = _getfileobj(fil, action)
+     for attr in _filelikeattrs:
+         if not hasattr(fil, attr) or not callable(getattr(fil, attr)):
+-            raise TagError, "fil does not support method %r" % attr
++            raise TagError("fil does not support method %r" % attr)
+     return fil, action
+     
+ def _checkfields(fields):
+     '''Check that the fields quacks like a dict'''
+     if not hasattr(fields, 'items') or not callable(fields.items):
+-        raise TagError, "fields does not support method 'items'"
++        raise TagError("fields does not support method 'items'")
+     
+ def _checkremovefields(removefields):
+     '''Check that removefields is iterable'''
+     if not hasattr(removefields, '__iter__') \
+        or not callable(removefields.__iter__):
+-        raise TagError, "removefields is not an iterable"
++        raise TagError("removefields is not an iterable")
+ 
+ def _getfileobj(fil, action):
+     '''Return a file object if given a filename, otherwise return file'''
+-    if isinstance(fil, basestring) and _isfile(fil):
++    if isinstance(fil, str) and _isfile(fil):
+         if action in _stringallowedcommands:
+             mode = 'rb'
+         else:
+@@ -423,7 +424,7 @@ def _id3(fil, action, callback = None, callbackkwargs=
+     '''Get or Modify ID3 tag for file'''
+     if isinstance(fil, str):
+         if action not in _stringallowedcommands:
+-            raise TagError, "String not allowed for %s action" % action
++            raise TagError("String not allowed for %s action" % action)
+         data = fil
+     else:
+         fil.seek(0, 2)
+@@ -438,7 +439,7 @@ def _id3(fil, action, callback = None, callbackkwargs=
+             if action == "delete":
+                 return 0
+             if action in _tagmustexistcommands: 
+-                raise TagError, "Nonexistant or corrupt tag, can't %s" % action
++                raise TagError("Nonexistant or corrupt tag, can't %s" % action)
+             data = ''
+         else:      
+             tagstart -= 128
+@@ -473,7 +474,7 @@ def _id3(fil, action, callback = None, callbackkwargs=
+ 
+ def _makeapev2tag(apeitems):
+     '''Construct an APE tag string from a dict of ApeItems'''
+-    apeentries = [item.maketag() for item in apeitems.itervalues()]
++    apeentries = [item.maketag() for item in apeitems.values()]
+     apeentries.sort(_sortapeitems)
+     apesize = _pack("<i",reduce(_apelengthreduce, apeentries, 32))
+     numitems = _pack("<i",len(apeentries))
+@@ -485,7 +486,7 @@ def _makeapev2tag(apeitems):
+ def _makeid3tag(fields):
+     '''Make an ID3 tag from the given dictionary'''
+     newfields = {}
+-    for field, value in fields.iteritems():
++    for field, value in fields.items():
+         if not isinstance(field, str):
+             continue
+         newfields[field.lower()] = fields[field]
+@@ -496,22 +497,22 @@ def _makeid3tag(fields):
+                     value = 0
+                 newfields['track'] = chr(int(value))
+             except ValueError:
+-                raise TagError, '%r is an invalid value for %r' % (value, field)
++                raise TagError('%r is an invalid value for %r' % (value, field))
+         elif field == 'genre':
+             if not isinstance(value, int):
+-                if not isinstance(value, basestring):
+-                    raise TagError, "%r is an invalid value for 'genre'" % value
++                if not isinstance(value, str):
++                    raise TagError("%r is an invalid value for 'genre'" % value)
+                 value = value.lower()
+                 if not value:
+                     value = 255
+                 elif value in _id3genresdict:
+                     value = _id3genresdict[value]
+                 else:
+-                    raise TagError, "%r is an invalid value for 'genre'" % value
++                    raise TagError("%r is an invalid value for 'genre'" % value)
+             elif not (0 <= value < 256):
+                 value = 255
+             newfields[field] = chr(value)
+-    for field, (startpos, endpos) in _id3fields.iteritems():
++    for field, (startpos, endpos) in _id3fields.items():
+         maxlength = endpos - startpos
+         if field in newfields:
+             fieldlength = len(newfields[field])
+@@ -534,32 +535,32 @@ def _parseapetag(data):
+     apeitems = {}
+     numitems = _unpack("<i",data[16:20])[0]
+     if numitems != _unpack("<i",data[-16:-12])[0]:
+-        raise TagError, 'Corrupt tag, mismatched header and footer item count' 
++        raise TagError('Corrupt tag, mismatched header and footer item count') 
+     # 32 is size of footer, 11 is minimum item length item
+     if numitems > (len(data) - 32)/11:
+-        raise TagError, 'Corrupt tag, specifies more items that is possible ' \
+-                        'given space remaining: %i items' % numitems
++        raise TagError('Corrupt tag, specifies more items that is possible ' \
++                        'given space remaining: %i items' % numitems)
+     curpos = 32
+     tagitemend = len(data) - 32
+     for x in range(numitems):
+         if curpos >= tagitemend:
+-            raise TagError, 'Corrupt tag, end of tag reached with more items' \
+-                            'specified'
++            raise TagError('Corrupt tag, end of tag reached with more items' \
++                            'specified')
+         item = ApeItem()
+         curpos = item.parsetag(data, curpos)
+         itemkey = item.key.lower()
+         if itemkey in apeitems:
+-            raise TagError, 'Corrupt tag, duplicate item key: %r' % itemkey
++            raise TagError('Corrupt tag, duplicate item key: %r' % itemkey)
+         apeitems[itemkey] = item
+     if tagitemend - curpos:
+-        raise TagError, 'Corrupt tag, parsing complete but not at end ' \
+-            'of input: %i bytes remaining' % (len(data) - curpos)
++        raise TagError('Corrupt tag, parsing complete but not at end ' \
++            'of input: %i bytes remaining' % (len(data) - curpos))
+     return apeitems
+ 
+ def _parseid3tag(data):
+     '''Parse an ID3 tag and return a dictionary of tag fields'''
+     fields = {}
+-    for key,(start,end) in _id3fields.iteritems():
++    for key,(start,end) in _id3fields.items():
+         fields[key] = data[start:end].rstrip("\x00")
+     if data[125] == "\x00":
+         # ID3v1.1 tags have tracks
+@@ -575,30 +576,30 @@ def _parseid3tag(data):
+ 
+ def _printapeitems(apeitems):
+     '''Pretty print given APE Items'''
+-    items = apeitems.items()
++    items = list(apeitems.items())
+     items.sort()
+-    print 'APE Tag\n-------'
++    print('APE Tag\n-------')
+     for key, value in items:
+         if value.readonly:
+             key = '[read only] %s' % key
+         if value.type == 'utf8':
+-            value = u', '.join([v.encode('ascii', 'replace') for v in value])
++            value = ', '.join([v.encode('ascii', 'replace') for v in value])
+         else:
+             key = '[%s] %s' % (value.type, key)
+             if value.type == 'binary':
+                 value = '[binary data]'
+             else:
+                 value = ', '.join(value)
+-        print '%s: %s' % (key, value)
++        print('%s: %s' % (key, value))
+ 
+ def _printid3items(tagfields):
+     '''Pretty print given ID3 Fields'''
+-    items = tagfields.items()
++    items = list(tagfields.items())
+     items.sort()
+-    print 'ID3 Tag\n-------'
++    print('ID3 Tag\n-------')
+     for key, value in items:
+         if value:
+-            print '%s: %s' % (key, value)
++            print('%s: %s' % (key, value))
+ 
+ def _removeapeitems(apeitems, removefields):
+     '''Remove items from the APE tag'''
+@@ -609,7 +610,7 @@ def _removeapeitems(apeitems, removefields):
+ def _restoredictcase(apeitems):
+     '''Restore the case of the dictionary keys for the ApeItems'''
+     fixeditems = {}
+-    for value in apeitems.itervalues():
++    for value in apeitems.values():
+         fixeditems[value.key] = value
+     return fixeditems
+ 
+@@ -634,13 +635,13 @@ def _tag(function, fil, action="update", *args, **kwar
+     try:
+         return function(fil, action, *args, **kwargs)
+     finally:
+-        if isinstance(origfil, basestring):
++        if isinstance(origfil, str):
+             # filename given as an argument, close file object
+             fil.close()
+     
+ def _updateapeitems(apeitems, fields):
+     '''Add/Update apeitems using data from fields'''
+-    for key, value in fields.iteritems():
++    for key, value in fields.items():
+         if isinstance(value, ApeItem):
+             apeitems[value.key.lower()] = value
+         else:
+@@ -655,7 +656,7 @@ def _updateapetagcallback(apeitems, fields={}, removef
+ 
+ def _updateid3fields(tagfields, fields):
+     '''Update ID3v1 tagfields using fields'''
+-    for field, value in fields.iteritems():
++    for field, value in fields.items():
+        if isinstance(field, str):
+            tagfields[field.lower()] = value
+     return tagfields
+@@ -806,10 +807,10 @@ if __name__ == '__main__':
+     import sys
+     for filename in sys.argv[1:]:
+         if _isfile(filename):
+-            print '\n%s' % filename
++            print('\n%s' % filename)
+             try:
+                 printtags(filename)
+             except TagError:
+-                print 'Missing APE or ID3 Tag'
++                print('Missing APE or ID3 Tag')
+         else:
+-            print "%s: file doesn't exist" % filename
++            print("%s: file doesn't exist" % filename)
+--- test_ApeTag.py.orig	2007-11-07 01:12:54 UTC
++++ test_ApeTag.py
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env python
+ import ApeTag
+-import cStringIO
++import io
+ import unittest
+ import os.path
+ 
+@@ -29,7 +29,7 @@ def rr(string, position, characters, io = True):
+     return s
+     
+ def sio(string):
+-    x = cStringIO.StringIO()
++    x = io.StringIO()
+     x.write(string)
+     return x
+ 
