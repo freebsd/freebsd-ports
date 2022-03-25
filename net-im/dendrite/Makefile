@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.5
+DISTVERSION=	0.7.0
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -39,7 +39,6 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		btcsuite:btcd:v0.20.1-beta:btcsuite_btcd/vendor/github.com/btcsuite/btcd \
 		census-instrumentation:opencensus-go:v0.22.4:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.2:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		codeclysm:extract:v2.2.0:codeclysm_extract/vendor/github.com/codeclysm/extract \
 		containerd:containerd:v1.5.9:containerd_containerd/vendor/github.com/containerd/containerd \
 		davidlazar:go-crypto:dcfb0a7ac018:davidlazar_go_crypto/vendor/github.com/davidlazar/go-crypto \
@@ -48,11 +47,8 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		flynn:noise:2492fe189ae6:flynn_noise/vendor/github.com/flynn/noise \
 		frankban:quicktest:v1.14.0:frankban_quicktest/vendor/github.com/frankban/quicktest \
-		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		getsentry:sentry-go:v0.12.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		go-macaroon:macaroon:v2.1.0:go_macaroon_macaroon/vendor/gopkg.in/macaroon.v2 \
-		go-task:slim-sprig:348f09dbbbc0:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
-		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -64,7 +60,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		golang:text:5bd84dd9b33b:golang_text/vendor/golang.org/x/text \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		golang:tools:316ba0b74098:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -93,7 +89,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		jbenet:goprocess:v0.1.4:jbenet_goprocess/vendor/github.com/jbenet/goprocess \
 		juju:errors:3fe23663418f:juju_errors/vendor/github.com/juju/errors \
 		juju:testing:77eb13d6cad2:juju_testing/vendor/github.com/juju/testing \
-		klauspost:compress:v1.13.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.14.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		koron:go-ssdp:2e1c40ed0b5d:koron_go_ssdp/vendor/github.com/koron/go-ssdp \
 		lib:pq:v1.10.4:lib_pq/vendor/github.com/lib/pq \
 		libp2p:go-addr-util:v0.0.2:libp2p_go_addr_util/vendor/github.com/libp2p/go-addr-util \
@@ -137,22 +133,18 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		libp2p:go-tcp-transport:v0.2.1:libp2p_go_tcp_transport/vendor/github.com/libp2p/go-tcp-transport \
 		libp2p:go-ws-transport:v0.4.0:libp2p_go_ws_transport/vendor/github.com/libp2p/go-ws-transport \
 		libp2p:go-yamux:v2.0.0:libp2p_go_yamux_v2/vendor/github.com/libp2p/go-yamux/v2 \
-		lucas-clemente:quic-go:v0.22.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
-		marten-seemann:qtls-go1-15:v0.1.5:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
-		marten-seemann:qtls-go1-16:v0.1.4:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
-		marten-seemann:qtls-go1-17:v0.1.0:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:b0d1ba599a6d:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:e124bd7d7902:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:0f0afd1a46aa:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:gomatrixserverlib:0980b7f341e0:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:6fb077377278:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.10:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.31:miekg_dns/vendor/github.com/miekg/dns \
 		minio:blake2b-simd:3f5f724cb5b1:minio_blake2b_simd/vendor/github.com/minio/blake2b-simd \
-		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
+		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		moby:moby:v20.10.12:moby_moby/vendor/github.com/docker/docker \
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
@@ -170,14 +162,14 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		nats-io:jwt:58e87895b296:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
-		neilalexander:nats-server:087330ed46ad:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		neilalexander:nats-server:e2e4a244f30e:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		neilalexander:nats.go:f4ddebe1061c:neilalexander_nats_go/vendor/github.com/nats-io/nats.go \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
 		ngrok:sqlmw:9d16fdc47b31:ngrok_sqlmw/vendor/github.com/ngrok/sqlmw \
 		nhooyr:websocket:v1.8.7:nhooyr_websocket/vendor/nhooyr.io/websocket \
-		nxadm:tail:v1.4.8:nxadm_tail/vendor/github.com/nxadm/tail \
 		onsi:ginkgo:v1.16.4:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:gomega:v1.13.0:onsi_gomega/vendor/github.com/onsi/gomega \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.2:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
 		opentracing:opentracing-go:v1.2.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
@@ -205,7 +197,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		whyrusleeping:mdns:b9b60ed33aa9:whyrusleeping_mdns/vendor/github.com/whyrusleeping/mdns \
 		whyrusleeping:multiaddr-filter:e903e4adabd7:whyrusleeping_multiaddr_filter/vendor/github.com/whyrusleeping/multiaddr-filter \
 		whyrusleeping:timecache:cfcb2f1abfee:whyrusleeping_timecache/vendor/github.com/whyrusleeping/timecache \
-		yggdrasil-network:yggdrasil-go:v0.4.2:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
+		yggdrasil-network:yggdrasil-go:v0.4.3:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
 
 post-build:
 	cd ${WRKSRC} && \
