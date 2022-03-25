@@ -1,0 +1,398 @@
+--- jon/cgi.py.orig	2012-04-04 15:01:19 UTC
++++ jon/cgi.py
+@@ -1,10 +1,10 @@
+ # $Id: cgi.py,v 9f23fa584882 2012/04/04 15:01:19 jon $
+ 
+-import sys, re, os, Cookie, errno
++import sys, re, os, http.cookies, errno
+ try:
+-  import cStringIO as StringIO
++  import io as StringIO
+ except ImportError:
+-  import StringIO
++  import io
+ 
+ """Object-oriented CGI interface."""
+ 
+@@ -38,13 +38,13 @@ def html_encode(raw):
+   Specifically, the following characters are encoded as entities:
+     & < > " ' +
+   """
+-  if not isinstance(raw, (str, unicode)):
++  if not isinstance(raw, str):
+     raw = str(raw)
+   return re.sub(_html_encre, lambda m: _html_encodes[m.group(0)], raw)
+ 
+ def url_encode(raw):
+   """Return the string parameter URL-encoded."""
+-  if not isinstance(raw, (str, unicode)):
++  if not isinstance(raw, str):
+     raw = str(raw)
+   return re.sub(_url_encre, lambda m: "%%%02X" % ord(m.group(0)), raw)
+ 
+@@ -69,7 +69,7 @@ def traceback(req, html=0):
+     except SequencingError:
+       pass
+     cgitb.Hook(file=req)(*exc)
+-  s = StringIO.StringIO()
++  s = io.StringIO()
+   cgitb.Hook(file=s, format="text")(*exc)
+   req.error(s.getvalue())
+ 
+@@ -90,7 +90,7 @@ class Request(object):
+     self._doneHeaders = 0
+     self._headers = []
+     self._bufferOutput = 1
+-    self._output = StringIO.StringIO()
++    self._output = io.StringIO()
+     self._pos = 0
+     self.closed = 0
+     self._encoding = self._inputencoding = self._form_encoding = None
+@@ -98,7 +98,7 @@ class Request(object):
+       del self.params
+     except AttributeError:
+       pass
+-    self.cookies = Cookie.SimpleCookie()
++    self.cookies = http.cookies.SimpleCookie()
+     if "HTTP_COOKIE" in self.environ:
+       self.cookies.load(self.environ["HTTP_COOKIE"])
+     self.aborted = 0
+@@ -263,11 +263,11 @@ class Request(object):
+     """Sends some data to the client."""
+     self._check_open()
+     if self._encoding:
+-      if not isinstance(s, unicode):
++      if not isinstance(s, str):
+         if self._inputencoding:
+-          s = unicode(s, self._inputencoding)
++          s = str(s, self._inputencoding)
+         else:
+-          s = unicode(s)
++          s = str(s)
+       s = s.encode(self._encoding)
+     else:
+       s = str(s)
+@@ -347,7 +347,7 @@ class Request(object):
+     placed in the dictionary will be a list. This is useful for multiple-value
+     fields. If the variable name ends with a '!' character (before the '*' if
+     present) then the value will be a mime.Entity object."""
+-    import mime
++    from . import mime
+     headers = "Content-Type: %s\n" % contenttype
+     for entity in mime.Entity(encoded.read(), mime=1, headers=headers).entities:
+       if not entity.content_disposition:
+@@ -504,7 +504,7 @@ class CGIRequest(Request):
+     if not self.aborted:
+       try:
+         self.__out.write(s)
+-      except IOError, x:
++      except IOError as x:
+         # Ignore EPIPE, caused by the browser having gone away
+         if x[0] != errno.EPIPE:
+           raise
+@@ -514,7 +514,7 @@ class CGIRequest(Request):
+     if not self.aborted:
+       try:
+         self.__out.flush()
+-      except IOError, x:
++      except IOError as x:
+         # Ignore EPIPE, caused by the browser having gone away
+         if x[0] != errno.EPIPE:
+           raise
+--- jon/fcgi.py.orig	2010-03-20 19:53:55 UTC
++++ jon/fcgi.py
+@@ -1,7 +1,7 @@
+ # $Id: fcgi.py,v 5efd11fe0588 2010/03/20 18:27:40 jribbens $
+ 
+ import struct, socket, sys, errno, os, select
+-import cgi, fakefile
++from . import cgi, fakefile
+ 
+ log_level = 0
+ log_name = "/tmp/fcgi.log"
+@@ -184,8 +184,8 @@ class Connection(object):
+     self.params = params
+     self.threading_level = threading_level
+     if self.threading_level > 1:
+-      import thread
+-      self.socketlock = thread.allocate_lock()
++      import _thread
++      self.socketlock = _thread.allocate_lock()
+     else:
+       self.socketlock = None
+ 
+@@ -216,9 +216,9 @@ class Connection(object):
+           self.socketlock.release()
+       else:
+         self.socket.sendall(rec.encode())
+-    except socket.error, x:
++    except socket.error as x:
+       if x[0] == errno.EPIPE:
+-        for req in self.requests.values():
++        for req in list(self.requests.values()):
+           req.aborted = 2
+       else:
+         raise
+@@ -242,7 +242,7 @@ class Connection(object):
+         if isinstance(x, (EOFError, ValueError)) or \
+           (isinstance(x, socket.error) and x[0] == errno.EBADF):
+           self.log(2, 0, "EOF received on connection")
+-          for req in self.requests.values():
++          for req in list(self.requests.values()):
+             req.aborted = 2
+           break
+         else:
+@@ -314,8 +314,8 @@ class Connection(object):
+             self.log(3, rec.request_id, "< FCGI_PARAMS: <empty>")
+             if self.threading_level > 1:
+               self.log(2, rec.request_id, "starting request thread")
+-              import thread
+-              thread.start_new_thread(req.run, ())
++              import _thread
++              _thread.start_new_thread(req.run, ())
+             else:
+               self.log(2, rec.request_id, "executing request")
+               req.run()
+@@ -417,7 +417,7 @@ class Request(cgi.Request):
+             0, 0, 0)
+           self.log(2, "> FCGI_END_REQUEST")
+           self.__connection.write(rec)
+-        except IOError, x:
++        except IOError as x:
+           if x[0] == errno.EPIPE:
+             self.log(2, "EPIPE during request finalisation")
+           else:
+@@ -457,7 +457,7 @@ class Request(cgi.Request):
+         pos += len(rec.content_data)
+         try:
+           self.__connection.write(rec)
+-        except IOError, x:
++        except IOError as x:
+           if x[0] == errno.EPIPE:
+             self.aborted = 2
+             self.log(2, "Aborted due to EPIPE")
+@@ -480,9 +480,9 @@ class Server(object):
+     self.log(2, "theading_level = %d" % threading_level)
+     if threading_level > 0:
+       try:
+-        import thread
+-        log_lock = thread.allocate_lock()
+-      except ImportError, x:
++        import _thread
++        log_lock = _thread.allocate_lock()
++      except ImportError as x:
+         threading_level = 0
+         self.log(2, "cannot import thread (%s), disabling threading" % str(x))
+     self.threading_level = threading_level
+@@ -505,7 +505,7 @@ class Server(object):
+       socket.SOCK_STREAM)
+     try:
+       self._sock.getpeername()
+-    except socket.error, x:
++    except socket.error as x:
+       if x[0] != errno.ENOTSOCK and x[0] != errno.ENOTCONN:
+         raise
+       if x[0] == errno.ENOTSOCK:
+@@ -522,7 +522,7 @@ class Server(object):
+         # OSes)
+         select.select([self._sock], [], [])
+         (newsock, addr) = self._sock.accept()
+-      except socket.error, x:
++      except socket.error as x:
+         if x[0] == errno.EBADF:
+           break
+         raise
+@@ -537,8 +537,8 @@ class Server(object):
+         self.params, self.threading_level)
+       del newsock
+       if self.threading_level > 0:
+-        import thread
+-        thread.start_new_thread(conn.run, ())
++        import _thread
++        _thread.start_new_thread(conn.run, ())
+       else:
+         conn.run()
+       if self.max_requests > 0:
+--- jon/session.py.orig	2011-05-27 18:04:15 UTC
++++ jon/session.py
+@@ -1,6 +1,6 @@
+ # $Id: session.py,v 2bbf755d62ad 2011/05/27 18:03:28 jon $
+ 
+-import time, hmac, Cookie, re, random, os, errno, fcntl
++import time, hmac, http.cookies, re, random, os, errno, fcntl
+ try:
+   import hashlib
+   sha = hashlib.sha1
+@@ -9,7 +9,7 @@ except ImportError:
+   import sha
+   shanew = sha.new
+ try:
+-  import cPickle as pickle
++  import pickle as pickle
+ except ImportError:
+   import pickle
+ 
+@@ -127,7 +127,7 @@ class Session(dict):
+     if "hash" not in self:
+       self["hash"] = self._make_hash(self["id"], self._secret)
+     if self.cookie:
+-      c = Cookie.SimpleCookie()
++      c = http.cookies.SimpleCookie()
+       c[self.cookie] = self["id"] + self["hash"]
+       c[self.cookie]["path"] = self.root + "/"
+       if self.secure:
+@@ -191,13 +191,13 @@ class FileSession(Session):
+       Session._create(self, secret)
+       try:
+         os.lstat("%s/%s" % (self.basedir, self["id"][:2]))
+-      except OSError, x:
++      except OSError as x:
+         if x[0] == errno.ENOENT:
+-          os.mkdir("%s/%s" % (self.basedir, self["id"][:2]), 0700)
++          os.mkdir("%s/%s" % (self.basedir, self["id"][:2]), 0o700)
+       try:
+         fd = os.open("%s/%s/%s" % (self.basedir, self["id"][:2],
+-          self["id"][2:]), os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0700)
+-      except OSError, x:
++          self["id"][2:]), os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o700)
++      except OSError as x:
+         if x[0] != errno.EEXIST:
+           raise
+         continue
+@@ -211,7 +211,7 @@ class FileSession(Session):
+     try:
+       f = open("%s/%s/%s" % (self.basedir, self["id"][:2], self["id"][2:]),
+         "r+b")
+-    except IOError, x:
++    except IOError as x:
+       if x[0] != errno.ENOENT:
+         raise
+       return 0
+@@ -255,9 +255,9 @@ class FileSession(Session):
+       st = os.lstat(basedir)
+       if st[4] != os.getuid():
+         raise Error("Sessions basedir is not owned by user %d" % os.getuid())
+-    except OSError, x:
++    except OSError as x:
+       if x[0] == errno.ENOENT:
+-        os.mkdir(basedir, 0700)
++        os.mkdir(basedir, 0o700)
+     return basedir
+   _find_basedir = staticmethod(_find_basedir)
+ 
+@@ -322,19 +322,19 @@ class MySQLSession(GenericSQLSession):
+     while 1:
+       Session._create(self, secret)
+       self.dbc.execute("SELECT 1 FROM %s WHERE ID=%%s" % (self.table,),
+-        (long(self["id"], 16),))
++        (int(self["id"], 16),))
+       if self.dbc.rowcount == 0:
+         break
+     self["hash"] = self._make_hash(self["id"], secret)
+     self.dbc.execute("INSERT INTO %s (ID,hash,created,updated,data) VALUES " \
+       "(%%s,%%s,%%s,%%s,%%s)" % (self.table,),
+-      (long(self["id"], 16), self["hash"], int(self.created),
++      (int(self["id"], 16), self["hash"], int(self.created),
+       int(self.created), pickle.dumps({}, 1)))
+     self.dbc.execute("UNLOCK TABLES")
+ 
+   def _load(self):
+     self.dbc.execute("SELECT created,data FROM %s WHERE ID=%%s" % (self.table,),
+-      (long(self["id"], 16),))
++      (int(self["id"], 16),))
+     if self.dbc.rowcount == 0:
+       return 0
+     row = self.dbc.fetchone()
+@@ -345,7 +345,7 @@ class MySQLSession(GenericSQLSession):
+   def save(self):
+     self.dbc.execute("UPDATE %s SET updated=%%s,data=%%s"
+       " WHERE ID=%%s" % (self.table,), (int(time.time()),
+-      pickle.dumps(self.copy(), 1), long(self["id"], 16)))
++      pickle.dumps(self.copy(), 1), int(self["id"], 16)))
+ 
+ 
+ SQLSession = MySQLSession # backwards compatibility name
+--- jon/wsgi.py.orig	2010-03-23 01:01:42 UTC
++++ jon/wsgi.py
+@@ -1,6 +1,6 @@
+ # $Id: wsgi.py,v a9ebd961ae72 2010/03/23 01:01:42 jon $
+ 
+-import cgi, fakefile
++from . import cgi, fakefile
+ 
+ 
+ # classes involving calling jonpy-style handlers from WSGI server connectors
+@@ -64,7 +64,7 @@ class Application(object):
+ 
+ class Handler(cgi.Handler):
+   def process(self, req):
+-    environ = dict(req.environ.items())
++    environ = dict(list(req.environ.items()))
+     environ["wsgi.version"] = (1, 0)
+     environ["wsgi.input"] = req
+     environ["wsgi.errors"] = fakefile.FakeOutput(req.error)
+@@ -81,7 +81,7 @@ class Handler(cgi.Handler):
+       if exc_info:
+         try:
+           if req.get_header("Status") is not None:
+-            raise exc_info[0], exc_info[1], exc_info[2]
++            raise exc_info[0](exc_info[1]).with_traceback(exc_info[2])
+         finally:
+           exc_info = None
+       elif req.get_header("Status") is not None:
+--- jon/wt/__init__.py.orig	2010-03-20 19:53:55 UTC
++++ jon/wt/__init__.py
+@@ -43,7 +43,7 @@ def replace(wt, template, namespace):
+           out = getattr(namespace, chunk)()
+         else:
+           out = getattr(namespace, chunk)
+-        if not isinstance(out, unicode):
++        if not isinstance(out, str):
+           out = str(out)
+         wt.req.write(encode(out))
+ 
+@@ -79,7 +79,7 @@ class GlobalTemplate(TemplateCode):
+         if encoding is None:
+           self.process(open(self.template_name(), "rb").read())
+         else:
+-          self.process(unicode(open(self.template_name(), "rb").read(),
++          self.process(str(open(self.template_name(), "rb").read(),
+             encoding))
+ 
+   def template_name(self):
+@@ -94,7 +94,7 @@ class GlobalTemplate(TemplateCode):
+       # is substituted instead
+       obj = self.outer.page(self.outer)
+       if obj.template_as_file:
+-        import StringIO as cStringIO
++        import io as cStringIO
+         obj.main(StringIO.StringIO(self.outer._pageTemplate))
+       else:
+         obj.main(self.outer._pageTemplate)
+@@ -123,7 +123,7 @@ def process(wt, template, namespace, selected=None):
+       (type(selected) == type(()) and name in selected)):
+       obj = getattr(namespace, name)(namespace, wt)
+       if obj.template_as_file:
+-        import cStringIO as StringIO
++        import io as StringIO
+         obj.main(StringIO.StringIO(template[start.end():end]))
+       else:
+         obj.main(template[start.end():end])
+@@ -177,7 +177,7 @@ class Handler(cgi.Handler):
+     except KeyError:
+       namespace = { "wt": sys.modules[__name__] }
+       code = compile(open(codefname, "r").read(), codefname, "exec")
+-      exec code in namespace
++      exec(code, namespace)
+       del code
+       if self.cache_code:
+         _code_cache[codefname] = namespace
+@@ -190,7 +190,7 @@ class Handler(cgi.Handler):
+       if encoding is None:
+         obj.main(open(self.template, "rb").read())
+       else:
+-        obj.main(unicode(open(self.template, "rb").read(), encoding))
++        obj.main(str(open(self.template, "rb").read(), encoding))
+     self.post_request(obj)
+ 
+ 
