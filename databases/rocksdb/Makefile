@@ -1,7 +1,7 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rocksdb
-PORTVERSION=	6.29.3
+PORTVERSION=	7.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++11-lib gmake localbase:ldflags perl5
+USES=		compiler:c++17-lang gmake localbase:ldflags perl5
 USE_PERL5=	build
 
 ALL_TARGET=	shared_lib static_lib all
@@ -32,7 +32,7 @@ CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_ROOT=${WRKSRC}
 CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
