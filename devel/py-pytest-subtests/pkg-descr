@@ -1,0 +1,4 @@
+This pytest plugin was generated with Cookiecutter along with @hackebrot's
+cookiecutter-pytest-plugin template.
+
+WWW: https://github.com/pytest-dev/pytest-subtests
