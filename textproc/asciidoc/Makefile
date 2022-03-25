@@ -1,7 +1,7 @@
 # Created by: anholt@FreeBSD.org
 
 PORTNAME=	asciidoc
-PORTVERSION=	10.1.3
+PORTVERSION=	10.1.4
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -15,8 +15,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 
 USES=		gnome python:3.5+ shebangfix
-USE_PYTHON=	autoplist distutils noflavors
 USE_GNOME=	libxml2 libxslt
+USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
 
