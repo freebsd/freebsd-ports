@@ -1,0 +1,811 @@
+--- lib/simpletal/simpleTAL.py.orig	2010-09-21 20:02:28 UTC
++++ lib/simpletal/simpleTAL.py
+@@ -37,11 +37,11 @@
+ try:
+ 	import logging
+ except:
+-	import DummyLogger as logging
++	from . import DummyLogger as logging
+ 	
+-import xml.sax, cgi, StringIO, codecs, re, sgmlentitynames, types
++import xml.sax, cgi, io, codecs, re, sgmlentitynames, types
+ import simpletal, copy, sys
+-import FixedHTMLParser
++from . import FixedHTMLParser
+ 
+ __version__ = simpletal.__version__
+ 
+@@ -61,7 +61,7 @@ try:
+ except ImportError:
+ 	use_dom2sax = 0
+ 
+-import simpleTALES
++from . import simpleTALES
+ 
+ # Name-space URIs
+ METAL_NAME_URI="http://xml.zope.org/namespaces/metal"
+@@ -144,9 +144,10 @@ class TemplateInterpreter:
+ 		self.commandHandler [METAL_DEFINE_SLOT] = self.cmdDefineSlot
+ 		self.commandHandler [TAL_NOOP] = self.cmdNoOp
+ 		
+-	def tagAsText (self, (tag,atts), singletonFlag=0):
++	def tagAsText (self, xxx_todo_changeme, singletonFlag=0):
+ 		""" This returns a tag as text.
+ 		"""
++		(tag,atts) = xxx_todo_changeme
+ 		result = ["<"]
+ 		result.append (tag)
+ 		for attName, attValue in atts:
+@@ -273,7 +274,7 @@ class TemplateInterpreter:
+ 				self.context.setLocal (args[0], self.repeatVariable.getCurrentValue())
+ 				self.programCounter += 1
+ 				return
+-			except IndexError, e:
++			except IndexError as e:
+ 				# We have finished the repeat
+ 				self.repeatVariable = None
+ 				self.context.removeRepeat (args[0])
+@@ -310,7 +311,7 @@ class TemplateInterpreter:
+ 			if (hasattr (result, "__iter__") and callable (result.__iter__)):
+ 				# We can get an iterator!
+ 				self.repeatVariable = simpleTALES.IteratorRepeatVariable (result.__iter__())
+-			elif (hasattr (result, "next") and callable (result.next)):
++			elif (hasattr (result, "next") and callable (result.__next__)):
+ 				# Treat as an iterator
+ 				self.repeatVariable = simpleTALES.IteratorRepeatVariable (result)
+ 			else:
+@@ -322,7 +323,7 @@ class TemplateInterpreter:
+ 				
+ 		try:
+ 			curValue = self.repeatVariable.getCurrentValue()
+-		except IndexError, e:
++		except IndexError as e:
+ 			# The iterator ran out of values before we started - treat as an empty list
+ 			self.outputTag = 0
+ 			self.repeatVariable = None
+@@ -377,20 +378,20 @@ class TemplateInterpreter:
+ 			elif (not resultVal == simpleTALES.DEFAULTVALUE):
+ 				# We have a value - let's use it!
+ 				attsToRemove [attName]=1
+-				if (isinstance (resultVal, types.UnicodeType)):
++				if (isinstance (resultVal, str)):
+ 					escapedAttVal = resultVal
+-				elif (isinstance (resultVal, types.StringType)):
++				elif (isinstance (resultVal, bytes)):
+ 					# THIS IS NOT A BUG!
+ 					# Use Unicode in the Context object if you are not using Ascii
+-					escapedAttVal = unicode (resultVal, 'ascii')
++					escapedAttVal = str (resultVal, 'ascii')
+ 				else:
+ 					# THIS IS NOT A BUG!
+ 					# Use Unicode in the Context object if you are not using Ascii
+-					escapedAttVal = unicode (resultVal)
++					escapedAttVal = str (resultVal)
+ 				newAtts.append ((attName, escapedAttVal))
+ 		# Copy over the old attributes 
+ 		for oldAttName, oldAttValue in self.currentAttributes:
+-			if (not attsToRemove.has_key (oldAttName)):
++			if (oldAttName not in attsToRemove):
+ 				newAtts.append ((oldAttName, oldAttValue))
+ 		self.currentAttributes = newAtts
+ 		# Evaluate all other commands
+@@ -436,27 +437,27 @@ class TemplateInterpreter:
+ 					# End of the macro expansion (if any) so clear the parameters
+ 					self.slotParameters = {}
+ 				else:
+-					if (isinstance (resultVal, types.UnicodeType)):
++					if (isinstance (resultVal, str)):
+ 						self.file.write (resultVal)
+-					elif (isinstance (resultVal, types.StringType)):
++					elif (isinstance (resultVal, bytes)):
+ 						# THIS IS NOT A BUG!
+ 						# Use Unicode in the Context object if you are not using Ascii
+-						self.file.write (unicode (resultVal, 'ascii'))
++						self.file.write (str (resultVal, 'ascii'))
+ 					else:
+ 						# THIS IS NOT A BUG!
+ 						# Use Unicode in the Context object if you are not using Ascii
+-						self.file.write (unicode (resultVal))
++						self.file.write (str (resultVal))
+ 			else:
+-				if (isinstance (resultVal, types.UnicodeType)):
++				if (isinstance (resultVal, str)):
+ 					self.file.write (cgi.escape (resultVal))
+-				elif (isinstance (resultVal, types.StringType)):
++				elif (isinstance (resultVal, bytes)):
+ 					# THIS IS NOT A BUG!
+ 					# Use Unicode in the Context object if you are not using Ascii
+-					self.file.write (cgi.escape (unicode (resultVal, 'ascii')))
++					self.file.write (cgi.escape (str (resultVal, 'ascii')))
+ 				else:
+ 					# THIS IS NOT A BUG!
+ 					# Use Unicode in the Context object if you are not using Ascii
+-					self.file.write (cgi.escape (unicode (resultVal)))
++					self.file.write (cgi.escape (str (resultVal)))
+ 					
+ 		if (self.outputTag and not args[1]):
+ 			# Do NOT output end tag if a singleton with no content
+@@ -535,7 +536,7 @@ class TemplateInterpreter:
+ 				If the slotName is filled then that is used, otherwise the original conent
+ 				is used.
+ 		"""
+-		if (self.currentSlots.has_key (args[0])):
++		if (args[0] in self.currentSlots):
+ 			# This slot is filled, so replace us with that content
+ 			self.outputTag = 0
+ 			self.tagContent = (1, self.currentSlots [args[0]])
+@@ -556,14 +557,15 @@ class HTMLTemplateInterpreter (TemplateInterpreter):
+ 			# Override the tagAsText method for this instance
+ 			self.tagAsText = self.tagAsTextMinimizeAtts
+ 		
+-	def tagAsTextMinimizeAtts (self, (tag,atts), singletonFlag=0):
++	def tagAsTextMinimizeAtts (self, xxx_todo_changeme1, singletonFlag=0):
+ 		""" This returns a tag as text.
+ 		"""
++		(tag,atts) = xxx_todo_changeme1
+ 		result = ["<"]
+ 		result.append (tag)
+ 		upperTag = tag.upper()
+ 		for attName, attValue in atts:
+-			if (HTML_BOOLEAN_ATTS.has_key ('%s:%s' % (upperTag, attName.upper()))):
++			if ('%s:%s' % (upperTag, attName.upper()) in HTML_BOOLEAN_ATTS):
+ 				# We should output a minimised boolean value
+ 				result.append (' ')
+ 				result.append (attName)
+@@ -587,7 +589,7 @@ class Template:
+ 		self.doctype = doctype
+ 		
+ 		# Setup the macros
+-		for macro in self.macros.values():
++		for macro in list(self.macros.values()):
+ 			macro.setParentTemplate (self)
+ 			
+ 		# Setup the slots
+@@ -595,7 +597,7 @@ class Template:
+ 			if (cmnd == METAL_USE_MACRO):
+ 				# Set the parent of each slot
+ 				slotMap = arg[1]
+-				for slot in slotMap.values():
++				for slot in list(slotMap.values()):
+ 					slot.setParentTemplate (self)
+ 
+ 	def expand (self, context, outputFile, outputEncoding=None, interpreter=None):
+@@ -616,7 +618,7 @@ class Template:
+ 			ourInterpreter = interpreter
+ 		try:
+ 			ourInterpreter.execute (self)
+-		except UnicodeError, unierror:
++		except UnicodeError as unierror:
+ 			logging.error ("UnicodeError caused by placing a non-Unicode string in the Context object.")
+ 			raise simpleTALES.ContextContentException ("Found non-unicode string in Context!")
+ 			
+@@ -632,16 +634,16 @@ class Template:
+ 				result = result + "\n[%s] %s" % (str (index), str (cmd))
+ 			else:
+ 				result = result + "\n[%s] %s, (%s{" % (str (index), str (cmd[0]), str (cmd[1][0]))
+-				for slot in cmd[1][1].keys():
++				for slot in list(cmd[1][1].keys()):
+ 					result = result + "%s: %s" % (slot, str (cmd[1][1][slot]))
+ 				result = result + "}, %s)" % str (cmd[1][2])
+ 			index += 1
+ 		result = result + "\n\nSymbols:\n"
+-		for symbol in self.symbolTable.keys():
++		for symbol in list(self.symbolTable.keys()):
+ 			result = result + "Symbol: " + str (symbol) + " points to: " + str (self.symbolTable[symbol]) + ", which is command: " + str (self.commandList[self.symbolTable[symbol]]) + "\n"	
+ 		
+ 		result = result + "\n\nMacros:\n"
+-		for macro in self.macros.keys():
++		for macro in list(self.macros.keys()):
+ 			result = result + "Macro: " + str (macro) + " value of: " + str (self.macros[macro])
+ 		return result
+ 		
+@@ -794,9 +796,10 @@ class TemplateCompiler:
+ 		newPrefix = self.metal_namespace_prefix_stack.pop()
+ 		self.setMETALPrefix (newPrefix)
+ 		
+-	def tagAsText (self, (tag,atts), singletonFlag=0):
++	def tagAsText (self, xxx_todo_changeme2, singletonFlag=0):
+ 		""" This returns a tag as text.
+ 		"""
++		(tag,atts) = xxx_todo_changeme2
+ 		result = ["<"]
+ 		result.append (tag)
+ 		for attName, attValue in atts:
+@@ -865,7 +868,7 @@ class TemplateCompiler:
+ 			popCommandList = tagProperties.get ('popFunctionList', [])
+ 			singletonTag = tagProperties.get ('singletonTag', 0)
+ 			for func in popCommandList:
+-				apply (func, ())
++				func(*())
+ 			self.log.debug ("Popped tag %s off stack" % oldTag[0])
+ 			if (oldTag[0] == tag[0]):
+ 				# We've found the right tag, now check to see if we have any TAL commands on it
+@@ -967,7 +970,7 @@ class TemplateCompiler:
+ 				else:
+ 					# It's nothing special, just an ordinary namespace declaration
+ 					cleanAttributes.append ((att, value))
+-			elif (self.tal_attribute_map.has_key (commandAttName)):
++			elif (commandAttName in self.tal_attribute_map):
+ 				# It's a TAL attribute
+ 				cmnd = self.tal_attribute_map [commandAttName]
+ 				if (cmnd == TAL_OMITTAG and TALElementNameSpace):
+@@ -975,7 +978,7 @@ class TemplateCompiler:
+ 				else:
+ 					foundCommandsArgs [cmnd] = value
+ 					foundTALAtts.append (cmnd)
+-			elif (self.metal_attribute_map.has_key (commandAttName)):
++			elif (commandAttName in self.metal_attribute_map):
+ 				# It's a METAL attribute
+ 				cmnd = self.metal_attribute_map [commandAttName]
+ 				foundCommandsArgs [cmnd] = value
+@@ -1184,7 +1187,7 @@ class TemplateCompiler:
+ 			msg = "Macro name %s is invalid." % argument
+ 			self.log.error (msg)
+ 			raise TemplateParseException (self.tagAsText (self.currentStartTag), msg)
+-		if (self.macroMap.has_key (argument)):
++		if (argument in self.macroMap):
+ 			msg = "Macro name %s is already defined!" % argument
+ 			self.log.error (msg)
+ 			raise TemplateParseException (self.tagAsText (self.currentStartTag), msg)
+@@ -1232,7 +1235,7 @@ class TemplateCompiler:
+ 			self.log.error (msg)
+ 			raise TemplateParseException (self.tagAsText (self.currentStartTag), msg)
+ 		
+-		if (slotMap.has_key (argument)):
++		if (argument in slotMap):
+ 			msg = "Slot %s has already been filled!" % argument
+ 			self.log.error (msg)
+ 			raise TemplateParseException (self.tagAsText (self.currentStartTag), msg)
+@@ -1281,14 +1284,15 @@ class HTMLTemplateCompiler (TemplateCompiler, FixedHTM
+ 		self.feed (encodedFile.read())
+ 		self.close()
+ 		
+-	def tagAsText (self, (tag,atts), singletonFlag=0):
++	def tagAsText (self, xxx_todo_changeme3, singletonFlag=0):
+ 		""" This returns a tag as text.
+ 		"""
++		(tag,atts) = xxx_todo_changeme3
+ 		result = ["<"]
+ 		result.append (tag)
+ 		upperTag = tag.upper()
+ 		for attName, attValue in atts:
+-			if (self.minimizeBooleanAtts and HTML_BOOLEAN_ATTS.has_key ('%s:%s' % (upperTag, attName.upper()))):
++			if (self.minimizeBooleanAtts and '%s:%s' % (upperTag, attName.upper()) in HTML_BOOLEAN_ATTS):
+ 				# We should output a minimised boolean value
+ 				result.append (' ')
+ 				result.append (attName)
+@@ -1306,7 +1310,7 @@ class HTMLTemplateCompiler (TemplateCompiler, FixedHTM
+ 		
+ 	def handle_startendtag (self, tag, attributes):
+ 		self.handle_starttag (tag, attributes)
+-		if not (HTML_FORBIDDEN_ENDTAG.has_key (tag.upper())):
++		if not (tag.upper() in HTML_FORBIDDEN_ENDTAG):
+ 			self.handle_endtag(tag)
+ 		
+ 	def handle_starttag (self, tag, attributes):
+@@ -1316,7 +1320,7 @@ class HTMLTemplateCompiler (TemplateCompiler, FixedHTM
+ 			# We need to spot empty tal:omit-tags 
+ 			if (attValue is None):
+ 				if (att == self.tal_namespace_omittag):
+-					atts.append ((att, u""))
++					atts.append ((att, ""))
+ 				else:
+ 					atts.append ((att, att))
+ 			else:
+@@ -1334,16 +1338,16 @@ class HTMLTemplateCompiler (TemplateCompiler, FixedHTM
+ 							refValue = int (ref[3:-1], 16)
+ 						else:
+ 							refValue = int (ref[2:-1])
+-						goodAttValue.append (unichr (refValue))
++						goodAttValue.append (chr (refValue))
+ 					else:
+ 						# A named reference.
+-						goodAttValue.append (unichr (sgmlentitynames.htmlNameToUnicodeNumber.get (ref[1:-1], 65533)))
++						goodAttValue.append (chr (sgmlentitynames.htmlNameToUnicodeNumber.get (ref[1:-1], 65533)))
+ 					last = match.end()
+ 					match = ENTITY_REF_REGEX.search (attValue, last)
+ 				goodAttValue.append (attValue [last:])
+-				atts.append ((att, u"".join (goodAttValue)))
++				atts.append ((att, "".join (goodAttValue)))
+ 				
+-		if (HTML_FORBIDDEN_ENDTAG.has_key (tag.upper())):
++		if (tag.upper() in HTML_FORBIDDEN_ENDTAG):
+ 			# This should have no end tag, so we just do the start and suppress the end
+ 			self.parseStartTag (tag, atts)
+ 			self.log.debug ("End tag forbidden, generating close tag with no output.")
+@@ -1353,7 +1357,7 @@ class HTMLTemplateCompiler (TemplateCompiler, FixedHTM
+ 		
+ 	def handle_endtag (self, tag):
+ 		self.log.debug ("Recieved End Tag: " + tag)
+-		if (HTML_FORBIDDEN_ENDTAG.has_key (tag.upper())):
++		if (tag.upper() in HTML_FORBIDDEN_ENDTAG):
+ 			self.log.warn ("HTML 4.01 forbids end tags for the %s element" % tag)
+ 		else:
+ 			# Normal end tag
+@@ -1365,24 +1369,24 @@ class HTMLTemplateCompiler (TemplateCompiler, FixedHTM
+ 	# These two methods are required so that we expand all character and entity references prior to parsing the template.
+ 	def handle_charref (self, ref):
+ 		self.log.debug ("Got Ref: %s", ref)
+-		self.parseData (unichr (int (ref)))
++		self.parseData (chr (int (ref)))
+ 		
+ 	def handle_entityref (self, ref):
+ 		self.log.debug ("Got Ref: %s", ref)
+ 		# Use handle_data so that <&> are re-encoded as required.
+-		self.handle_data( unichr (sgmlentitynames.htmlNameToUnicodeNumber.get (ref, 65533)))
++		self.handle_data( chr (sgmlentitynames.htmlNameToUnicodeNumber.get (ref, 65533)))
+ 		
+ 	# Handle document type declarations
+ 	def handle_decl (self, data):
+-		self.parseData (u'<!%s>' % data)
++		self.parseData ('<!%s>' % data)
+ 		
+ 	# Pass comments through un-affected.
+ 	def handle_comment (self, data):
+-		self.parseData (u'<!--%s-->' % data)
++		self.parseData ('<!--%s-->' % data)
+ 
+ 	def handle_pi (self, data):
+ 		self.log.debug ("Recieved processing instruction.")
+-		self.parseData (u'<?%s>' % data)
++		self.parseData ('<?%s>' % data)
+ 		
+ 	def report_unbalanced (self, tag):
+ 		self.log.warn ("End tag %s present with no corresponding open tag.")
+@@ -1442,7 +1446,7 @@ class XMLTemplateCompiler (TemplateCompiler, xml.sax.h
+ 			if (SINGLETON_XML_REGEX.match (xmlText)):
+ 				# This is a singleton!
+ 				self.singletonElement=1
+-		except xml.sax.SAXException, e:
++		except xml.sax.SAXException as e:
+ 			# Parser doesn't support this property
+ 			pass
+ 		# Convert attributes into a list of tuples
+@@ -1459,7 +1463,7 @@ class XMLTemplateCompiler (TemplateCompiler, xml.sax.h
+ 		
+ 	def skippedEntity (self, name):
+ 		self.log.info ("Recieved skipped entity: %s" % name)
+-		self.characters( unichr (sgmlentitynames.htmlNameToUnicodeNumber.get (name, 65533)))
++		self.characters( chr (sgmlentitynames.htmlNameToUnicodeNumber.get (name, 65533)))
+ 		
+ 	def characters (self, data):
+ 		#self.log.debug ("Recieved Real Data: " + data)
+@@ -1468,11 +1472,11 @@ class XMLTemplateCompiler (TemplateCompiler, xml.sax.h
+ 		
+ 	def processingInstruction (self, target, data):
+ 		self.log.debug ("Recieved processing instruction.")
+-		self.parseData (u'<?%s %s?>' % (target, data))
++		self.parseData ('<?%s %s?>' % (target, data))
+ 		
+ 	def comment (self, data):
+ 		# This is only called if your XML parser supports the LexicalHandler interface.
+-		self.parseData (u'<!--%s-->' % data)
++		self.parseData ('<!--%s-->' % data)
+ 		
+ 	def getTemplate (self):
+ 		template = XMLTemplate (self.commandList, self.macroMap, self.symbolLocationTable, self.doctype)
+@@ -1483,9 +1487,9 @@ def compileHTMLTemplate (template, inputEncoding="ISO-
+ 			To use the resulting template object call:
+ 				template.expand (context, outputFile)
+ 	"""
+-	if (isinstance (template, types.StringType) or isinstance (template, types.UnicodeType)):
++	if (isinstance (template, bytes) or isinstance (template, str)):
+ 		# It's a string!
+-		templateFile = StringIO.StringIO (template)
++		templateFile = io.StringIO (template)
+ 	else:
+ 		templateFile = template
+ 	compiler = HTMLTemplateCompiler()
+@@ -1497,9 +1501,9 @@ def compileXMLTemplate (template):
+ 			To use the resulting template object call:
+ 				template.expand (context, outputFile)
+ 	"""
+-	if (isinstance (template, types.StringType)):
++	if (isinstance (template, bytes)):
+ 		# It's a string!
+-		templateFile = StringIO.StringIO (template)
++		templateFile = io.StringIO (template)
+ 	else:
+ 		templateFile = template
+ 	compiler = XMLTemplateCompiler()
+--- lib/simpletal/simpleTALES.py.orig	2010-09-21 20:02:28 UTC
++++ lib/simpletal/simpleTALES.py
+@@ -38,7 +38,7 @@ import types, sys
+ try:
+ 	import logging
+ except:
+-	import DummyLogger as logging
++	from . import DummyLogger as logging
+ 	
+ import simpletal, simpleTAL
+ 
+@@ -63,7 +63,7 @@ class ContextVariable:
+ 		
+ 	def value (self, currentPath=None):
+ 		if (callable (self.ourValue)):
+-			return apply (self.ourValue, ())
++			return self.ourValue(*())
+ 		return self.ourValue
+ 		
+ 	def rawValue (self):
+@@ -190,8 +190,8 @@ class IteratorRepeatVariable (RepeatVariable):
+ 		if (self.iterStatus == 0):
+ 			self.iterStatus = 1
+ 			try:
+-				self.curValue = self.sequence.next()
+-			except StopIteration, e:
++				self.curValue = next(self.sequence)
++			except StopIteration as e:
+ 				self.iterStatus = 2
+ 				raise IndexError ("Repeat Finished")
+ 		return self.curValue
+@@ -200,8 +200,8 @@ class IteratorRepeatVariable (RepeatVariable):
+ 		# Need this for the repeat variable functions.
+ 		self.position += 1
+ 		try:
+-			self.curValue = self.sequence.next()
+-		except StopIteration, e:
++			self.curValue = next(self.sequence)
++		except StopIteration as e:
+ 			self.iterStatus = 2
+ 			raise IndexError ("Repeat Finished")
+ 			
+@@ -214,7 +214,7 @@ class IteratorRepeatVariable (RepeatVariable):
+ 		self.map ['start'] = self.getStart
+ 		self.map ['end'] = self.getEnd
+ 		# TODO: first and last need to be implemented.
+-		self.map ['length'] = sys.maxint
++		self.map ['length'] = sys.maxsize
+ 		self.map ['letter'] = self.getLowerLetter
+ 		self.map ['Letter'] = self.getUpperLetter
+ 		self.map ['roman'] = self.getLowerRoman
+@@ -233,7 +233,7 @@ class PathFunctionVariable (ContextVariable):
+ 	def value (self, currentPath=None):
+ 		if (currentPath is not None):
+ 			index, paths = currentPath
+-			result = ContextVariable (apply (self.func, ('/'.join (paths[index:]),)))
++			result = ContextVariable (self.func(*('/'.join (paths[index:]),)))
+ 			# Fast track the result
+ 			raise result
+ 			
+@@ -362,7 +362,7 @@ class Context:
+ 			else:
+ 				# Not specified - so it's a path
+ 				return self.evaluatePath (expr)
+-		except PathNotFoundException, e:
++		except PathNotFoundException as e:
+ 			if (suppressException):
+ 				return None
+ 			raise e
+@@ -374,7 +374,7 @@ class Context:
+ 		#self.log.debug ("Evaluating python expression %s" % expr)
+ 		
+ 		globals={}
+-		for name, value in self.globals.items():
++		for name, value in list(self.globals.items()):
+ 			if (isinstance (value, ContextVariable)): value = value.rawValue()
+ 			globals [name] = value
+ 		globals ['path'] = self.pythonPathFuncs.path
+@@ -384,7 +384,7 @@ class Context:
+ 		globals ['test'] = self.pythonPathFuncs.test
+ 			
+ 		locals={}
+-		for name, value in self.locals.items():
++		for name, value in list(self.locals.items()):
+ 			if (isinstance (value, ContextVariable)): value = value.rawValue()
+ 			locals [name] = value
+ 			
+@@ -393,7 +393,7 @@ class Context:
+ 			if (isinstance (result, ContextVariable)):
+ 				return result.value()
+ 			return result
+-		except Exception, e:
++		except Exception as e:
+ 			# An exception occured evaluating the template, return the exception as text
+ 			self.log.warn ("Exception occurred evaluating python path, exception: " + str (e))
+ 			return "Exception: %s" % str (e)
+@@ -406,7 +406,7 @@ class Context:
+ 				# Evaluate this path
+ 				try:
+ 					return self.evaluate (path.strip ())
+-				except PathNotFoundException, e:
++				except PathNotFoundException as e:
+ 					# Path didn't exist, try the next one
+ 					pass
+ 			# No paths evaluated - raise exception.
+@@ -424,7 +424,7 @@ class Context:
+ 		try:
+ 			result = self.traversePath (allPaths[0], canCall = 0)
+ 			return self.true
+-		except PathNotFoundException, e:
++		except PathNotFoundException as e:
+ 			# Look at the rest of the paths.
+ 			pass
+ 			
+@@ -435,7 +435,7 @@ class Context:
+ 				# If this is part of a "exists: path1 | exists: path2" path then we need to look at the actual result.
+ 				if (pathResult):
+ 					return self.true
+-			except PathNotFoundException, e:
++			except PathNotFoundException as e:
+ 				pass
+ 		# If we get this far then there are *no* paths that exist.
+ 		return self.false
+@@ -446,7 +446,7 @@ class Context:
+ 		# The first path is for us
+ 		try:
+ 			return self.traversePath (allPaths[0], canCall = 0)
+-		except PathNotFoundException, e:
++		except PathNotFoundException as e:
+ 			# Try the rest of the paths.
+ 			pass
+ 			
+@@ -454,7 +454,7 @@ class Context:
+ 			# Evaluate this path
+ 			try:
+ 				return self.evaluate (path.strip ())
+-			except PathNotFoundException, e:
++			except PathNotFoundException as e:
+ 				pass
+ 		# No path evaluated - raise error
+ 		raise PATHNOTFOUNDEXCEPTION
+@@ -465,7 +465,7 @@ class Context:
+ 		# Evaluate what I was passed
+ 		try:
+ 			pathResult = self.evaluate (expr)
+-		except PathNotFoundException, e:
++		except PathNotFoundException as e:
+ 			# In SimpleTAL the result of "not: no/such/path" should be TRUE not FALSE.
+ 			return self.true
+ 			
+@@ -492,7 +492,7 @@ class Context:
+ 		#self.log.debug ("Evaluating String %s" % expr)
+ 		result = ""
+ 		skipCount = 0
+-		for position in xrange (0,len (expr)):
++		for position in range (0,len (expr)):
+ 			if (skipCount > 0):
+ 				skipCount -= 1
+ 			else:
+@@ -510,16 +510,16 @@ class Context:
+ 								# Evaluate the path - missing paths raise exceptions as normal.
+ 								try:
+ 									pathResult = self.evaluate (path)
+-								except PathNotFoundException, e:
++								except PathNotFoundException as e:
+ 									# This part of the path didn't evaluate to anything - leave blank
+-									pathResult = u''
++									pathResult = ''
+ 								if (pathResult is not None):
+-									if (isinstance (pathResult, types.UnicodeType)):
++									if (isinstance (pathResult, str)):
+ 										result += pathResult
+ 									else:
+ 										# THIS IS NOT A BUG!
+ 										# Use Unicode in Context if you aren't using Ascii!
+-										result += unicode (pathResult)
++										result += str (pathResult)
+ 								skipCount = endPos - position 
+ 						else:
+ 							# It's a variable
+@@ -530,18 +530,18 @@ class Context:
+ 							# Evaluate the variable - missing paths raise exceptions as normal.
+ 							try:
+ 								pathResult = self.traversePath (path)
+-							except PathNotFoundException, e:
++							except PathNotFoundException as e:
+ 								# This part of the path didn't evaluate to anything - leave blank
+-								pathResult = u''
++								pathResult = ''
+ 							if (pathResult is not None):
+-								if (isinstance (pathResult, types.UnicodeType)):
++								if (isinstance (pathResult, str)):
+ 										result += pathResult
+ 								else:
+ 									# THIS IS NOT A BUG!
+ 									# Use Unicode in Context if you aren't using Ascii!
+-									result += unicode (pathResult)
++									result += str (pathResult)
+ 							skipCount = endPos - position - 1
+-					except IndexError, e:
++					except IndexError as e:
+ 						# Trailing $ sign - just suppress it
+ 						self.log.warn ("Trailing $ detected")
+ 						pass
+@@ -564,19 +564,19 @@ class Context:
+ 		path = pathList[0]
+ 		if path.startswith ('?'):
+ 			path = path[1:]
+-			if self.locals.has_key(path):
++			if path in self.locals:
+ 				path = self.locals[path]
+ 				if (isinstance (path, ContextVariable)): path = path.value()
+-				elif (callable (path)):path = apply (path, ())
++				elif (callable (path)):path = path(*())
+ 			
+-			elif self.globals.has_key(path):
++			elif path in self.globals:
+ 				path = self.globals[path]
+ 				if (isinstance (path, ContextVariable)): path = path.value()
+-				elif (callable (path)):path = apply (path, ())
++				elif (callable (path)):path = path(*())
+ 				#self.log.debug ("Dereferenced to %s" % path)
+-		if self.locals.has_key(path):
++		if path in self.locals:
+ 			val = self.locals[path]
+-		elif self.globals.has_key(path):
++		elif path in self.globals:
+ 			val = self.globals[path]  
+ 		else:
+ 			# If we can't find it then raise an exception
+@@ -586,20 +586,20 @@ class Context:
+ 			#self.log.debug ("Looking for path element %s" % path)
+ 			if path.startswith ('?'):
+ 				path = path[1:]
+-				if self.locals.has_key(path):
++				if path in self.locals:
+ 					path = self.locals[path]
+ 					if (isinstance (path, ContextVariable)): path = path.value()
+-					elif (callable (path)):path = apply (path, ())
+-				elif self.globals.has_key(path):
++					elif (callable (path)):path = path(*())
++				elif path in self.globals:
+ 					path = self.globals[path]
+ 					if (isinstance (path, ContextVariable)): path = path.value()
+-					elif (callable (path)):path = apply (path, ())
++					elif (callable (path)):path = path(*())
+ 				#self.log.debug ("Dereferenced to %s" % path)
+ 			try:
+ 				if (isinstance (val, ContextVariable)): temp = val.value((index,pathList))
+-				elif (callable (val)):temp = apply (val, ())
++				elif (callable (val)):temp = val(*())
+ 				else: temp = val
+-			except ContextVariable, e:
++			except ContextVariable as e:
+ 				# Fast path for those functions that return values
+ 				return e.value()
+ 				
+@@ -619,9 +619,9 @@ class Context:
+ 		if (canCall):
+ 			try:
+ 				if (isinstance (val, ContextVariable)): result = val.value((index,pathList))
+-				elif (callable (val)):result = apply (val, ())
++				elif (callable (val)):result = val(*())
+ 				else: result = val
+-			except ContextVariable, e:
++			except ContextVariable as e:
+ 				# Fast path for those functions that return values
+ 				return e.value()
+ 		else:
+@@ -643,7 +643,7 @@ class Context:
+ 		vars['attrs'] = None
+ 		
+ 		# Add all of these to the global context
+-		for name in vars.keys():
++		for name in list(vars.keys()):
+ 			self.addGlobal (name,vars[name])
+ 			
+ 		# Add also under CONTEXTS
+--- lib/simpletal/simpleTALUtils.py.orig	2010-09-21 20:02:28 UTC
++++ lib/simpletal/simpleTALUtils.py
+@@ -34,7 +34,7 @@
+ 		Module Dependencies: None
+ """
+ 
+-import StringIO, os, stat, threading, sys, codecs, sgmllib, cgi, re, types
++import io, os, stat, threading, sys, codecs, sgmllib, cgi, re, types
+ import simpletal, simpleTAL
+ 
+ __version__ = simpletal.__version__
+@@ -56,12 +56,12 @@ class HTMLStructureCleaner (sgmllib.SGMLParser):
+ 				The method returns a unicode string which is suitable for addition to a
+ 				simpleTALES.Context object.
+ 		"""
+-		if (isinstance (content, types.StringType)):
++		if (isinstance (content, bytes)):
+ 			# Not unicode, convert
+ 			converter = codecs.lookup (encoding)[1]
+-			file = StringIO.StringIO (converter (content)[0])
+-		elif (isinstance (content, types.UnicodeType)):
+-			file = StringIO.StringIO (content)
++			file = io.StringIO (converter (content)[0])
++		elif (isinstance (content, str)):
++			file = io.StringIO (content)
+ 		else:
+ 			# Treat it as a file type object - and convert it if we have an encoding
+ 			if (encoding is not None):
+@@ -70,7 +70,7 @@ class HTMLStructureCleaner (sgmllib.SGMLParser):
+ 			else:
+ 				file = content
+ 		
+-		self.outputFile = StringIO.StringIO (u"")
++		self.outputFile = io.StringIO ("")
+ 		self.feed (file.read())
+ 		self.close()
+ 		return self.outputFile.getvalue()
+@@ -85,10 +85,10 @@ class HTMLStructureCleaner (sgmllib.SGMLParser):
+ 		self.outputFile.write (cgi.escape (data))
+ 		
+ 	def handle_charref (self, ref):
+-		self.outputFile.write (u'&#%s;' % ref)
++		self.outputFile.write ('&#%s;' % ref)
+ 		
+ 	def handle_entityref (self, ref):
+-		self.outputFile.write (u'&%s;' % ref)
++		self.outputFile.write ('&%s;' % ref)
+ 		
+ 
+ class FastStringOutput:
+@@ -123,7 +123,7 @@ class TemplateCache:
+ 			inputEncoding is only used for HTML templates, and should be the encoding that the template
+ 			is stored in.
+ 		"""
+-		if (self.templateCache.has_key (name)):
++		if (name in self.templateCache):
+ 			template, oldctime = self.templateCache [name]
+ 			ctime = os.stat (name)[stat.ST_MTIME]
+ 			if (oldctime == ctime):
+@@ -136,7 +136,7 @@ class TemplateCache:
+ 	def getXMLTemplate (self, name):
+ 		""" Name should be the path of an XML template file.  
+ 		"""
+-		if (self.templateCache.has_key (name)):
++		if (name in self.templateCache):
+ 			template, oldctime = self.templateCache [name]
+ 			ctime = os.stat (name)[stat.ST_MTIME]
+ 			if (oldctime == ctime):
+@@ -164,7 +164,7 @@ class TemplateCache:
+ 			tempFile.close()
+ 			self.templateCache [name] = (template, os.stat (name)[stat.ST_MTIME])
+ 			self.misses += 1
+-		except Exception, e:
++		except Exception as e:
+ 			self.cacheLock.release()
+ 			raise e
+ 			
+@@ -216,7 +216,7 @@ class MacroExpansionInterpreter (simpleTAL.TemplateInt
+ 		
+ 	def cmdOutputStartTag (self, command, args):
+ 		newAtts = []
+-		for att, value in self.originalAttributes.items():
++		for att, value in list(self.originalAttributes.items()):
+ 			if (self.macroArg is not None and att == "metal:define-macro"):
+ 				newAtts.append (("metal:use-macro",self.macroArg))
+ 			elif (self.inMacro and att=="metal:define-slot"):
+@@ -251,19 +251,19 @@ class MacroExpansionInterpreter (simpleTAL.TemplateInt
+ 					# End of the macro
+ 					self.inMacro = 0
+ 				else:
+-					if (isinstance (resultVal, types.UnicodeType)):
++					if (isinstance (resultVal, str)):
+ 						self.file.write (resultVal)
+-					elif (isinstance (resultVal, types.StringType)):
+-						self.file.write (unicode (resultVal, 'ascii'))
++					elif (isinstance (resultVal, bytes)):
++						self.file.write (str (resultVal, 'ascii'))
+ 					else:
+-						self.file.write (unicode (str (resultVal), 'ascii'))
++						self.file.write (str (str (resultVal), 'ascii'))
+ 			else:
+-				if (isinstance (resultVal, types.UnicodeType)):
++				if (isinstance (resultVal, str)):
+ 					self.file.write (cgi.escape (resultVal))
+-				elif (isinstance (resultVal, types.StringType)):
+-					self.file.write (cgi.escape (unicode (resultVal, 'ascii')))
++				elif (isinstance (resultVal, bytes)):
++					self.file.write (cgi.escape (str (resultVal, 'ascii')))
+ 				else:
+-					self.file.write (cgi.escape (unicode (str (resultVal), 'ascii')))
++					self.file.write (cgi.escape (str (str (resultVal), 'ascii')))
+ 					
+ 		if (self.outputTag and not args[1]):
+ 			self.file.write ('</' + args[0] + '>')
+@@ -279,7 +279,7 @@ class MacroExpansionInterpreter (simpleTAL.TemplateInt
+ 		self.programCounter += 1
+ 			
+ def ExpandMacros (context, template, outputEncoding="ISO-8859-1"):
+-	out = StringIO.StringIO()
++	out = io.StringIO()
+ 	interp = MacroExpansionInterpreter()
+ 	interp.initialise (context, out)
+ 	template.expand (context, out, outputEncoding=outputEncoding, interpreter=interp)
