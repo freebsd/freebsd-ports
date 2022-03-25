@@ -5478,9 +5478,6 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/echo3.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/functional.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/functional.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/functional.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_base_events.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_base_events.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_base_events.cpython-%%XY%%.pyc
@@ -5550,6 +5547,9 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_transports.cpython-%%XY%%
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_unix_events.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_unix_events.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_unix_events.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_waitfor.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_waitfor.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_waitfor.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_windows_events.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_windows_events.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_windows_events.cpython-%%XY%%.pyc
@@ -5563,7 +5563,6 @@ lib/python%%XYDOT%%/test/test_asyncio/echo.py
 lib/python%%XYDOT%%/test/test_asyncio/echo2.py
 lib/python%%XYDOT%%/test/test_asyncio/echo3.py
 lib/python%%XYDOT%%/test/test_asyncio/functional.py
-lib/python%%XYDOT%%/test/test_asyncio/test_asyncio_waitfor.py
 lib/python%%XYDOT%%/test/test_asyncio/test_base_events.py
 lib/python%%XYDOT%%/test/test_asyncio/test_buffered_proto.py
 lib/python%%XYDOT%%/test/test_asyncio/test_context.py
@@ -5587,6 +5586,7 @@ lib/python%%XYDOT%%/test/test_asyncio/test_tasks.py
 lib/python%%XYDOT%%/test/test_asyncio/test_threads.py
 lib/python%%XYDOT%%/test/test_asyncio/test_transports.py
 lib/python%%XYDOT%%/test/test_asyncio/test_unix_events.py
+lib/python%%XYDOT%%/test/test_asyncio/test_waitfor.py
 lib/python%%XYDOT%%/test/test_asyncio/test_windows_events.py
 lib/python%%XYDOT%%/test/test_asyncio/test_windows_utils.py
 lib/python%%XYDOT%%/test/test_asyncio/utils.py
