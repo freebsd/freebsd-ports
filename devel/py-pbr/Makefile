@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	pbr
-PORTVERSION=	5.5.0
+PORTVERSION=	5.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,10 @@ COMMENT=	Python Build Reasonableness
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
-SHEBANG_FILES=	pbr/tests/testpackage/setup.py
 
 NO_ARCH=	yes
 
