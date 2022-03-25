@@ -1,0 +1,272 @@
+--- mongokit/document.py.orig	2014-02-16 10:19:42 UTC
++++ mongokit/document.py
+@@ -82,9 +82,9 @@ class DocumentProperties(SchemaProperties):
+                     if 'fields' not in index:
+                         raise BadIndexError(
+                             "'fields' key must be specify in indexes")
+-                    for key, value in index.iteritems():
++                    for key, value in index.items():
+                         if key == "fields":
+-                            if isinstance(value, basestring):
++                            if isinstance(value, str):
+                                 if value not in attrs['_namespaces'] and value not in STRUCTURE_KEYWORDS:
+                                     raise ValueError(
+                                         "Error in indexes: can't find %s in structure" % value)
+@@ -93,11 +93,11 @@ class DocumentProperties(SchemaProperties):
+                                     raise BadIndexError(
+                                         "Error in indexes: a tuple must contain "
+                                         "only two value : the field name and the direction")
+-                                if not (isinstance(value[1], int) or isinstance(value[1], basestring)):
++                                if not (isinstance(value[1], int) or isinstance(value[1], str)):
+                                     raise BadIndexError(
+                                         "Error in %s, the direction must be int or basestring "
+                                         "(got %s instead)" % (value[0], type(value[1])))
+-                                if not isinstance(value[0], basestring):
++                                if not isinstance(value[0], str):
+                                     raise BadIndexError(
+                                         "Error in %s, the field name must be string "
+                                         "(got %s instead)" % (value[0], type(value[0])))
+@@ -135,10 +135,8 @@ class DocumentProperties(SchemaProperties):
+                             assert isinstance(value, int)
+ 
+ 
+-class Document(SchemaDocument):
++class Document(SchemaDocument, metaclass=DocumentProperties):
+ 
+-    __metaclass__ = DocumentProperties
+-
+     type_field = '_type'
+ 
+     atomic_save = False  # XXX Deprecated
+@@ -166,7 +164,7 @@ class Document(SchemaDocument):
+         super(Document, self).__init__(doc=doc, gen_skel=gen_skel, gen_auth_types=False,
+                                        lang=lang, fallback_lang=fallback_lang)
+         if self.type_field in self:
+-            self[self.type_field] = unicode(self.__class__.__name__)
++            self[self.type_field] = str(self.__class__.__name__)
+         # collection
+         self.collection = collection
+         if collection:
+@@ -236,11 +234,11 @@ class Document(SchemaDocument):
+             error = None
+             try:
+                 super(Document, self).validate()
+-            except StructureError, e:
++            except StructureError as e:
+                 error = e
+-            except KeyError, e:
++            except KeyError as e:
+                 error = e
+-            except SchemaTypeError, e:
++            except SchemaTypeError as e:
+                 error = e
+             if error:
+                 if not self.migration_handler:
+@@ -313,7 +311,7 @@ class Document(SchemaDocument):
+             raise MultipleResultsFound("%s results found" % count)
+         elif count == 1:
+             try:
+-                doc = bson_obj.next()
++                doc = next(bson_obj)
+             except StopIteration:
+                 doc = None
+             return doc
+@@ -326,7 +324,7 @@ class Document(SchemaDocument):
+         max = self.collection.count()
+         if max:
+             num = random.randint(0, max-1)
+-            return self.find().skip(num).next()
++            return next(self.find().skip(num))
+ 
+     def find_fulltext(self, search, **kwargs):
+         """
+@@ -376,7 +374,7 @@ class Document(SchemaDocument):
+         if count > 1:
+             raise MultipleResultsFound("%s results found" % count)
+         elif count == 1:
+-            return bson_obj.next()
++            return next(bson_obj)
+ 
+     def reload(self):
+         """
+@@ -423,7 +421,7 @@ class Document(SchemaDocument):
+                 self._make_reference(self, self.structure)
+         if '_id' not in self:
+             if uuid:
+-                self['_id'] = unicode("%s-%s" % (self.__class__.__name__, uuid4()))
++                self['_id'] = str("%s-%s" % (self.__class__.__name__, uuid4()))
+         self._process_custom_type('bson', self, self.structure)
+         self.collection.save(self, safe=safe, *args, **kwargs)
+         self._process_custom_type('python', self, self.structure)
+@@ -453,12 +451,12 @@ class Document(SchemaDocument):
+ 
+             if isinstance(given_fields, tuple):
+                 fields = [given_fields]
+-            elif isinstance(given_fields, basestring):
++            elif isinstance(given_fields, str):
+                 fields = [(given_fields, 1)]
+             else:
+                 fields = []
+                 for field in given_fields:
+-                    if isinstance(field, basestring):
++                    if isinstance(field, str):
+                         field = (field, 1)
+                     fields.append(field)
+             log.debug('Creating index for %s' % str(given_fields))
+@@ -536,7 +534,7 @@ class Document(SchemaDocument):
+             raise ImportError("can't import anyjson. Please install it before continuing.")
+         obj = self.to_json_type()
+         _convert_to_python(obj, self.structure)
+-        return unicode(dumps(obj))
++        return str(dumps(obj))
+ 
+     def from_json(self, json):
+         """
+@@ -700,7 +698,7 @@ class Document(SchemaDocument):
+                 # it with None values
+                 #
+                 if len(struct[key]) and \
+-                        not [i for i in struct[key].keys() if type(i) is type]:
++                        not [i for i in list(struct[key].keys()) if type(i) is type]:
+                     if key in doc:
+                         self._make_reference(doc[key], struct[key], new_path)
+                 else:  # case {unicode:int}
+--- mongokit/migration.py.orig	2014-02-16 10:19:42 UTC
++++ mongokit/migration.py
+@@ -47,7 +47,7 @@ class DocumentMigration(object):
+ 
+     def validate_update(self, update_query):
+         structure = DotCollapsedDict(self.doc_class.structure)
+-        for op, fields in update_query.iteritems():
++        for op, fields in update_query.items():
+             for field in fields:
+                 if op != '$unset' and op != '$rename':
+                     if field not in structure:
+@@ -84,7 +84,7 @@ class DocumentMigration(object):
+                 collection.update(self.target, self.update, multi=True, safe=safe)
+                 status = collection.database.last_status()
+                 if not status.get('updatedExisting', 1):
+-                    print "%s : %s >>> deprecated" % (self.__class__.__name__, method_name)
++                    print("%s : %s >>> deprecated" % (self.__class__.__name__, method_name))
+ 
+     def get_deprecated(self, collection):
+         method_names = sorted([i for i in dir(self) if i.startswith('migration') or i.startswith('allmigration')])
+--- mongokit/schema_document.py.orig	2014-02-16 10:19:42 UTC
++++ mongokit/schema_document.py
+@@ -32,8 +32,8 @@ from copy import deepcopy
+ 
+ log = logging.getLogger(__name__)
+ 
+-from operators import SchemaOperator, IS
+-from helpers import *
++from .operators import SchemaOperator, IS
++from .helpers import *
+ 
+ __all__ = [
+     'CustomType',
+@@ -230,7 +230,7 @@ class SchemaProperties(type):
+                     raise ValueError("Error in i18n: can't find %s in structure" % i18n)
+ 
+ 
+-class SchemaDocument(dict):
++class SchemaDocument(dict, metaclass=SchemaProperties):
+     """
+     A SchemaDocument is dictionary with a building structured schema
+     The validate method will check that the document match the underling
+@@ -301,7 +301,6 @@ class SchemaDocument(dict):
+     >>> doc
+     {"foo":{"bar":u"bla}}
+     """
+-    __metaclass__ = SchemaProperties
+ 
+     structure = None
+     required_fields = []
+@@ -324,10 +323,10 @@ class SchemaDocument(dict):
+         type(None),
+         bool,
+         int,
+-        long,
++        int,
+         float,
+-        unicode,
+-        basestring,
++        str,
++        str,
+         list,
+         dict,
+         datetime.datetime,
+@@ -351,7 +350,7 @@ class SchemaDocument(dict):
+         self.validation_errors = {}
+         # init
+         if doc:
+-            for k, v in doc.iteritems():
++            for k, v in doc.items():
+                 self[k] = v
+             gen_skel = False
+         if gen_skel:
+@@ -421,7 +420,7 @@ class SchemaDocument(dict):
+     @classmethod
+     def __walk_dict(cls, dic):
+         # thanks jean_b for the patch
+-        for key, value in dic.items():
++        for key, value in list(dic.items()):
+             if isinstance(value, dict) and len(value):
+                 if type(key) is type:
+                     yield '$%s' % key.__name__
+@@ -478,7 +477,7 @@ class SchemaDocument(dict):
+                         raise StructureError("%s: %s is not an authorized type" % (name, struct))
+             elif isinstance(struct, dict):
+                 for key in struct:
+-                    if isinstance(key, basestring):
++                    if isinstance(key, str):
+                         if "." in key:
+                             raise BadKeyError("%s: %s must not contain '.'" % (name, key))
+                         if key.startswith('$'):
+@@ -642,7 +641,7 @@ class SchemaDocument(dict):
+     def _process_validators(self, doc, struct, path=""):
+         doted_struct = DotCollapsedDict(self.structure)
+         doted_doc = DotCollapsedDict(doc)
+-        for key, validators in self.validators.iteritems():
++        for key, validators in self.validators.items():
+             if key in doted_doc and doted_doc[key] is not None:
+                 if not hasattr(validators, "__iter__"):
+                     validators = [validators]
+@@ -650,9 +649,9 @@ class SchemaDocument(dict):
+                     try:
+                         if not validator(doted_doc[key]):
+                             raise ValidationError("%s does not pass the validator " + validator.__name__)
+-                    except Exception, e:
++                    except Exception as e:
+                         self._raise_exception(ValidationError, key,
+-                                              unicode(e) % key)
++                                              str(e) % key)
+ 
+     def _process_custom_type(self, target, doc, struct, path="", root_path=""):
+         for key in struct:
+@@ -751,7 +750,7 @@ class SchemaDocument(dict):
+                 # if the dict is still empty into the document we build
+                 # it with None values
+                 #
+-                if len(struct[key]) and not [i for i in struct[key].keys() if type(i) is type]:
++                if len(struct[key]) and not [i for i in list(struct[key].keys()) if type(i) is type]:
+                     self._set_default_fields(doc[key], struct[key], new_path)
+                 else:
+                     if new_path in self.default_values:
+@@ -912,7 +911,7 @@ class i18n(dict, CustomType):
+ 
+     def to_bson(self, value):
+         if value is not None:
+-            for l, v in value.iteritems():
++            for l, v in value.items():
+                 if isinstance(v, list) and isinstance(self._field_type, list):
+                     for i in v:
+                         if not isinstance(i, self._field_type[0]):
+@@ -922,7 +921,7 @@ class i18n(dict, CustomType):
+                     if not isinstance(v, self._field_type):
+                         raise SchemaTypeError("%s (%s) must be an instance of %s not %s" % (
+                                               self._field_name, l, self._field_type, type(v).__name__))
+-            return [{'lang': l, 'value': v} for l, v in value.iteritems()]
++            return [{'lang': l, 'value': v} for l, v in value.items()]
+ 
+     def to_python(self, value):
+         if value is not None:
