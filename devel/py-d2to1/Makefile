@@ -17,6 +17,8 @@ USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 GH_ACCOUNT=	embray
 
 do-test:
