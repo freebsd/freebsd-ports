@@ -1,0 +1,263 @@
+--- punjab/__init__.py.orig	2012-01-21 17:32:22 UTC
++++ punjab/__init__.py
+@@ -62,14 +62,14 @@ def makeService(config):
+     from twisted.web import  server, resource, static
+     from twisted.application import internet
+ 
+-    import httpb
++    from . import httpb
+ 
+     serviceCollection = PunjabService()
+ 
+     if config['html_dir']:
+         r = static.File(config['html_dir'])
+     else:
+-        print "The html directory is needed."
++        print("The html directory is needed.")
+         return
+ 
+     if config['white_list']:
+--- punjab/jabber.py.orig	2011-05-02 18:46:14 UTC
++++ punjab/jabber.py
+@@ -6,7 +6,7 @@ from copy import deepcopy
+ 
+ from twisted.words import version
+ hasNewTwisted = version.major >= 8
+-if version.major == 0 and version.minor < 5: raise Exception, "Unsupported Version of Twisted Words"
++if version.major == 0 and version.minor < 5: raise Exception("Unsupported Version of Twisted Words")
+ 
+ from twisted.words.xish import domish
+ from twisted.words.protocols.jabber import xmlstream
+@@ -64,11 +64,11 @@ class JabberClientFactory(xmlstream.XmlStreamFactory):
+ 
+ 
+     def rawDataIn(self, buf):
+-        log.msg("RECV: %s" % unicode(buf, 'utf-8').encode('ascii', 'replace'))
++        log.msg("RECV: %s" % str(buf, 'utf-8').encode('ascii', 'replace'))
+ 
+ 
+     def rawDataOut(self, buf):
+-        log.msg("SEND: %s" % unicode(buf, 'utf-8').encode('ascii', 'replace'))
++        log.msg("SEND: %s" % str(buf, 'utf-8').encode('ascii', 'replace'))
+ 
+ 
+ class PunjabAuthenticator(xmlstream.ConnectAuthenticator):
+--- punjab/session.py.orig	2013-07-24 20:35:00 UTC
++++ punjab/session.py
+@@ -21,7 +21,7 @@ from punjab import jabber
+ from punjab.xmpp import ns
+ 
+ import time
+-import error
++from . import error
+ 
+ try:
+     from twisted.internet import ssl
+@@ -40,7 +40,7 @@ class XMPPClientConnector(SRVConnector):
+     """
+     def __init__(self, client_reactor, domain, factory):
+         """ Init """
+-        if isinstance(domain, unicode):
++        if isinstance(domain, str):
+             warnings.warn(
+                 "Domain argument to XMPPClientConnector should be bytes, "
+                 "not unicode",
+@@ -75,7 +75,7 @@ def make_session(pint, attrs, session_type='BOSH'):
+         log.msg('================================== %s connect to %s:%s ==================================' % (str(time.time()),s.hostname,s.port))
+ 
+     connect_srv = s.connect_srv
+-    if attrs.has_key('route'):
++    if 'route' in attrs:
+         connect_srv = False
+     if s.hostname in ['localhost', '127.0.0.1']:
+         connect_srv = False
+@@ -119,7 +119,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         """
+         Initialize the session
+         """
+-        if attrs.has_key('charset'):
++        if 'charset' in attrs:
+             self.charset = str(attrs['charset'])
+         else:
+             self.charset = 'utf-8'
+@@ -152,7 +152,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         self.waiting_requests = []
+         self.use_raw = attrs.get('raw', False)
+ 
+-        self.raw_buffer = u""
++        self.raw_buffer = ""
+         self.xmpp_node  = ''
+         self.success    = 0
+         self.mechanisms = []
+@@ -173,20 +173,20 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         self.hold  = int(attrs.get('hold', 0))
+         self.inactivity = int(attrs.get('inactivity', 900)) # default inactivity 15 mins
+ 
+-        if attrs.has_key('window'):
++        if 'window' in attrs:
+             self.window  = int(attrs['window'])
+         else:
+             self.window  = self.hold + 2
+ 
+-        if attrs.has_key('polling'):
++        if 'polling' in attrs:
+             self.polling  = int(attrs['polling'])
+         else:
+             self.polling  = 0
+ 
+-        if attrs.has_key('port'):
++        if 'port' in attrs:
+             self.port = int(attrs['port'])
+ 
+-        if attrs.has_key('hostname'):
++        if 'hostname' in attrs:
+             self.hostname = attrs['hostname']
+         else:
+             self.hostname = self.to
+@@ -195,10 +195,10 @@ class Session(jabber.JabberClientFactory, server.Sessi
+ 
+         self.connect_srv = getattr(pint, 'connect_srv', True)
+ 
+-        self.secure = attrs.has_key('secure') and attrs['secure'] == 'true'
++        self.secure = 'secure' in attrs and attrs['secure'] == 'true'
+         self.authenticator.useTls = self.secure
+ 
+-        if attrs.has_key('route'):
++        if 'route' in attrs:
+             if attrs['route'].startswith("xmpp:"):
+                 self.route = attrs['route'][5:]
+                 if self.route.startswith("//"):
+@@ -246,7 +246,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+                 log.err()
+         if self.use_raw and self.authid:
+             if type(buf) == type(''):
+-                buf = unicode(buf, 'utf-8')
++                buf = str(buf, 'utf-8')
+             # add some raw data
+             self.raw_buffer = self.raw_buffer + buf
+ 
+@@ -402,7 +402,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+ 
+             self.authid    = self.xmlstream.sid
+ 
+-            if not self.attrs.has_key('no_events'):
++            if 'no_events' not in self.attrs:
+ 
+                 self.xmlstream.addOnetimeObserver("/auth", self.stanzaHandler)
+                 self.xmlstream.addOnetimeObserver("/response", self.stanzaHandler)
+@@ -461,7 +461,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         if len(self.waiting_requests) > 0:
+             self.returnWaitingRequests()
+             self.elems = [] # reset elems
+-            self.raw_buffer = u"" # reset raw buffer, features should not be in it
++            self.raw_buffer = "" # reset raw buffer, features should not be in it
+ 
+     def bindHandler(self, stz):
+         """bind debugger for punjab, this is temporary! """
+@@ -478,7 +478,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         stz.prefixes = ns.XMPP_PREFIXES
+         if self.use_raw and self.authid:
+             stz = domish.SerializedXML(self.raw_buffer)
+-            self.raw_buffer = u""
++            self.raw_buffer = ""
+ 
+         self.elems.append(stz)
+         if self.waiting_requests and len(self.waiting_requests) > 0:
+@@ -534,7 +534,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         else: # need to wait for a new request and then expire
+             do_expire = False
+ 
+-        if self.pint and self.pint.sessions.has_key(self.sid):
++        if self.pint and self.sid in self.pint.sessions:
+             if do_expire:
+                 try:
+                     self.expire()
+@@ -573,7 +573,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         else: # need to wait for a new request and then expire
+             do_expire = False
+ 
+-        if self.pint and self.pint.sessions.has_key(self.sid):
++        if self.pint and self.sid in self.pint.sessions:
+             if do_expire:
+                 try:
+                     self.expire()
+@@ -607,8 +607,8 @@ class Session(jabber.JabberClientFactory, server.Sessi
+         else:
+             observers = self.xmlstream._xpathObservers
+         emptyLists = []
+-        for priority, priorityObservers in observers.iteritems():
+-            for query, callbacklist in priorityObservers.iteritems():
++        for priority, priorityObservers in observers.items():
++            for query, callbacklist in priorityObservers.items():
+                 callbacklist.callbacks = []
+                 emptyLists.append((priority, query))
+ 
+@@ -663,7 +663,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+             wait += self.wait # if we have pending requests we need to add the wait time
+ 
+         if time.time() - self.lastModified > wait+(0.1):
+-            if self.site.sessions.has_key(self.uid):
++            if self.uid in self.site.sessions:
+                 self.terminate()
+             else:
+                 pass
+@@ -673,9 +673,9 @@ class Session(jabber.JabberClientFactory, server.Sessi
+ 
+ 
+     def _cacheData(self, rid, data):
+-        if len(self.cache_data.keys())>=3:
++        if len(list(self.cache_data.keys()))>=3:
+             # remove the first one in
+-            keys = self.cache_data.keys()
++            keys = list(self.cache_data.keys())
+             keys.sort()
+             del self.cache_data[keys[0]]
+ 
+@@ -686,11 +686,11 @@ class Session(jabber.JabberClientFactory, server.Sessi
+ 
+     def _sessionResultEvent(self, iq):
+         """ """
+-	if len(self.waiting_requests)>0:
+-		wr = self.waiting_requests.pop(0)
+-		d  = wr.deferred
+-	else:
+-		d = None
++        if len(self.waiting_requests)>0:
++            wr = self.waiting_requests.pop(0)
++            d  = wr.deferred
++        else:
++            d = None
+ 
+         if iq["type"] == "result":
+             if d:
+@@ -710,7 +710,7 @@ class Session(jabber.JabberClientFactory, server.Sessi
+ 
+         self.authenticator._reset()
+         if self.use_raw:
+-            self.raw_buffer = u""
++            self.raw_buffer = ""
+ 
+ 
+ 
+--- punjab/xmpp/server.py.orig	2012-07-15 00:26:12 UTC
++++ punjab/xmpp/server.py
+@@ -136,7 +136,7 @@ class XMPPServerProtocol(xmlstream.XmlStream):
+ 
+ 
+     def streamConnected(self, elm):
+-        print "stream connected"
++        print("stream connected")
+ 
+     def streamStarted(self, elm):
+         """stream has started, we need to respond
+@@ -162,8 +162,8 @@ class XMPPServerProtocol(xmlstream.XmlStream):
+     def onElement(self, element):
+         try:
+             xmlstream.XmlStream.onElement(self, element)
+-        except Exception, e:
+-            print "Exception!", e
++        except Exception as e:
++            print("Exception!", e)
+             raise e
+ 
+     def onDocumentEnd(self):
