@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Dimage_library=gdk-pixbuf
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_EXCLUDE=DOCS # https://gitlab.gnome.org/GNOME/libmediaart/-/issues/4
 DOCS_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
 DOCS_MESON_TRUE=	gtk_doc
 #option('image_library', type: 'combo', choices: ['auto', 'gdk-pixbuf', 'qt4', 'qt5'],
