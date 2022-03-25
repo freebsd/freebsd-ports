@@ -1,3 +1,29 @@
+  <vuln vid="955f377e-7bc3-11ec-a51c-7533f219d428">
+    <topic>Security Vulnerability found in ExifTool</topic>
+    <affects>
+      <package>
+	<name>p5-Image-ExifTool</name>
+	<range><ge>7.44</ge><lt>12.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security Advisory reports:</p>
+	<blockquote cite="https://www.debian.org/security/2021/dsa-4910">
+	  <p>A vulnerability was discovered in libimage-exiftool-perl, a library and program to read and write meta information in multimedia files, which may result in execution of arbitrary code if a malformed DjVu file is processed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22204</cvename>
+      <url>https://www.cvedetails.com/cve/CVE-2021-22204/</url>
+    </references>
+    <dates>
+      <discovery>2021-01-04</discovery>
+      <entry>2022-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61f416ff-aa00-11ec-b439-000d3a450398">
     <topic>tcpslice -- heap-based use-after-free in extract_slice()</topic>
     <affects>
