@@ -1,0 +1,11 @@
+--- python/Makefile.am.orig	2019-03-19 17:55:02 UTC
++++ python/Makefile.am
+@@ -22,7 +22,7 @@ clean: python-clean
+ distclean: clean
+ 
+ python-install:
+-	$(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix)
++	$(PYTHON) setup.py install --prefix=$(prefix) --root=$(DESTDIR)
+ 
+ install-exec-local: python-install
+ 
