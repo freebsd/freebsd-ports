@@ -1,0 +1,379 @@
+--- kartograph/cli.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/cli.py
+@@ -6,7 +6,7 @@ command line interface for kartograph
+ import argparse
+ import os
+ import os.path
+-from options import read_map_config
++from .options import read_map_config
+ import sys
+ 
+ 
+@@ -37,7 +37,7 @@ parser.add_argument('--format', '-f', metavar='svg', h
+ parser.add_argument('--preview', '-p', nargs='?', metavar='', const=True, help='opens the generated svg for preview')
+ parser.add_argument('--pretty-print', '-P', dest='pretty_print', action='store_true', help='pretty print the svg file')
+ 
+-from kartograph import Kartograph
++from .kartograph import Kartograph
+ import time
+ import os
+ 
+@@ -74,7 +74,7 @@ def render_map(args):
+             # print str(r)
+             pass
+ 
+-    except Exception, e:
++    except Exception as e:
+         print_error(e)
+         exit(-1)
+ 
+@@ -98,17 +98,17 @@ def main():
+ 
+     try:
+         args = parser.parse_args()
+-    except IOError, e:
++    except IOError as e:
+         # parser.print_help()
+         sys.stderr.write('\n' + str(e) + '\n')
+-    except Exception, e:
++    except Exception as e:
+         parser.print_help()
+-        print '\nError:', e
++        print('\nError:', e)
+     else:
+         args.func(args)
+         elapsed = (time.time() - start)
+         if args.output != '-':
+-            print 'execution time: %.3f secs' % elapsed
++            print('execution time: %.3f secs' % elapsed)
+ 
+     sys.exit(0)
+ 
+--- kartograph/kartograph.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/kartograph.py
+@@ -1,11 +1,11 @@
+ 
+-from options import parse_options
++from .options import parse_options
+ from shapely.geometry import Polygon, LineString, MultiPolygon
+-from errors import *
++from .errors import *
+ from copy import deepcopy
+-from renderer import SvgRenderer
+-from mapstyle import MapStyle
+-from map import Map
++from .renderer import SvgRenderer
++from .mapstyle import MapStyle
++from .map import Map
+ import os
+ 
+ 
+@@ -64,14 +64,14 @@ class Kartograph(object):
+                         command = commands[sys.platform]
+                     else:
+                         sys.stderr.write('don\'t know how to preview SVGs on your system. Try setting the KARTOGRAPH_PREVIEW environment variable.')
+-                        print renderer
++                        print(renderer)
+                         return
+                 renderer.preview(command)
+             # Write the map to a file or return the renderer instance.
+             if outfile is None:
+                 return renderer
+             elif outfile == '-':
+-                print renderer
++                print(renderer)
+             else:
+                 renderer.write(outfile)
+         else:
+--- kartograph/layersource/postgislayer.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/layersource/postgislayer.py
+@@ -1,5 +1,5 @@
+ 
+-from layersource import LayerSource
++from .layersource import LayerSource
+ from kartograph.errors import *
+ from kartograph.geometry import create_feature
+ import shapely.wkb
+@@ -72,11 +72,11 @@ class PostGISLayer(LayerSource):
+                 if fields[f] != self.geom_col:
+                     # but ignore null values
+                     if rec[f]:
+-                        if isinstance(rec[f], (str, unicode)):
++                        if isinstance(rec[f], str):
+                             try:
+                                 meta[fields[f]] = rec[f].decode('utf-8')
+                             except:
+-                                print 'decoding error', fields[f], rec[f]
++                                print('decoding error', fields[f], rec[f])
+                                 meta[fields[f]] = '--decoding error--'
+                         else:
+                             meta[fields[f]] = rec[f]
+@@ -84,7 +84,7 @@ class PostGISLayer(LayerSource):
+                     # Store geometry
+                     geom_wkb = rec[f]
+ 
+-            if filter is None or filter(meta):
++            if filter is None or list(filter(meta)):
+                 # construct geometry
+                 geom = shapely.wkb.loads(geom_wkb.decode('hex'))
+                 # Finally we construct the map feature and append it to the
+--- kartograph/layersource/shplayer.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/layersource/shplayer.py
+@@ -1,11 +1,11 @@
+ 
+-from layersource import LayerSource
++from .layersource import LayerSource
+ from kartograph.errors import *
+ from kartograph.geometry import BBox, create_feature
+ from os.path import exists
+ from osgeo.osr import SpatialReference
+ import pyproj
+-import shapefile
++from . import shapefile
+ 
+ 
+ verbose = False
+@@ -20,7 +20,7 @@ class ShapefileLayer(LayerSource):
+         """
+         initialize shapefile reader
+         """
+-        if isinstance(src, unicode):
++        if isinstance(src, str):
+             src = src.encode('ascii', 'ignore')
+         src = self.find_source(src)
+         self.shpSrc = src
+@@ -93,7 +93,7 @@ class ShapefileLayer(LayerSource):
+             for j in range(len(self.attributes)):
+                 drec[self.attributes[j]] = self.recs[i][j]
+             # For each record that is not filtered..
+-            if filter is None or filter(drec):
++            if filter is None or list(filter(drec)):
+                 props = {}
+                 # ..we try to decode the attributes (shapefile charsets are arbitrary)
+                 for j in range(len(self.attributes)):
+@@ -107,10 +107,10 @@ class ShapefileLayer(LayerSource):
+                                 break
+                             except:
+                                 if verbose:
+-                                    print 'warning: could not decode "%s" to %s' % (val, enc)
++                                    print('warning: could not decode "%s" to %s' % (val, enc))
+                         if not decoded:
+                             raise KartographError('having problems to decode the input data "%s"' % val)
+-                    if isinstance(val, (str, unicode)):
++                    if isinstance(val, str):
+                         val = val.strip()
+                     props[self.attributes[j]] = val
+ 
+@@ -129,7 +129,7 @@ class ShapefileLayer(LayerSource):
+                 feature = create_feature(geom, props)
+                 res.append(feature)
+         if bbox is not None and ignored > 0 and verbose:
+-            print "-ignoring %d shapes (not in bounds %s )" % (ignored, bbox)
++            print("-ignoring %d shapes (not in bounds %s )" % (ignored, bbox))
+         return res
+ 
+ # # shape2geometry
+--- kartograph/map.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/map.py
+@@ -1,11 +1,11 @@
+ from shapely.geometry import Polygon
+ from shapely.geometry.base import BaseGeometry
+-from maplayer import MapLayer
+-from geometry.utils import geom_to_bbox
+-from geometry import BBox, View
+-from proj import projections
+-from filter import filter_record
+-from errors import KartographError
++from .maplayer import MapLayer
++from .geometry.utils import geom_to_bbox
++from .geometry import BBox, View
++from .proj import projections
++from .filter import filter_record
++from .errors import KartographError
+ import sys
+ 
+ # Map
+@@ -154,7 +154,7 @@ class Map(object):
+         ### Initialize bounding polygons and bounding box
+         ### Compute the projected bounding box
+         """
+-        from geometry.utils import bbox_to_polygon
++        from .geometry.utils import bbox_to_polygon
+ 
+         opts = self.options
+         proj = self.proj
+@@ -306,7 +306,7 @@ class Map(object):
+         """
+         ### Simplify geometries
+         """
+-        from simplify import create_point_store, simplify_lines
++        from .simplify import create_point_store, simplify_lines
+ 
+         # We will use a glocal point cache for all layers. If the
+         # same point appears in more than one layer, it will be
+@@ -421,7 +421,7 @@ class Map(object):
+         a single feature. Kartograph uses the geometry.union() method of shapely
+         to do that.
+         """
+-        from geometry.utils import join_features
++        from .geometry.utils import join_features
+ 
+         for layer in self.layers:
+             if layer.options['join'] is not False:
+@@ -517,7 +517,7 @@ class Map(object):
+                         for feat in groupFeatures[g_id]:
+                             exp[g_id].append(feat.props[join['export-ids']])
+                     import json
+-                    print json.dumps(exp)
++                    print(json.dumps(exp))
+ 
+                 layer.features = res
+ 
+--- kartograph/proj/__init__.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/proj/__init__.py
+@@ -18,8 +18,8 @@
+ 
+ projections = dict()
+ 
+-from base import Proj
+-from cylindrical import *
++from .base import Proj
++from .cylindrical import *
+ 
+ projections['lonlat'] = Equirectangular
+ projections['cea'] = CEA
+@@ -30,7 +30,7 @@ projections['balthasart'] = Balthasart
+ projections['mercator'] = Mercator
+ projections['ll'] = LonLat
+ 
+-from pseudocylindrical import *
++from .pseudocylindrical import *
+ 
+ projections['naturalearth'] = NaturalEarth
+ projections['robinson'] = Robinson
+@@ -47,7 +47,7 @@ projections['aitoff'] = Aitoff
+ projections['winkel3'] = Winkel3
+ projections['nicolosi'] = Nicolosi
+ 
+-from azimuthal import *
++from .azimuthal import *
+ 
+ projections['ortho'] = Orthographic
+ projections['laea'] = LAEA
+@@ -58,11 +58,11 @@ projections['satellite'] = Satellite
+ projections['eda'] = EquidistantAzimuthal
+ projections['aitoff'] = Aitoff
+ 
+-from conic import *
++from .conic import *
+ 
+ projections['lcc'] = LCC
+ 
+-from proj4 import Proj4
++from .proj4 import Proj4
+ 
+ projections['proj4'] = Proj4
+ 
+@@ -78,7 +78,7 @@ if __name__ == '__main__':
+     #assert (round(x,2),round(y,2)) == (3962799.45, -2999718.85), 'LAEA proj error'
+     from kartograph.geometry import BBox
+ 
+-    print Proj.fromXML(Robinson(lat0=3, lon0=4).toXML(), projections)
++    print(Proj.fromXML(Robinson(lat0=3, lon0=4).toXML(), projections))
+ 
+     Robinson(lat0=3, lon0=4)
+ 
+@@ -87,10 +87,10 @@ if __name__ == '__main__':
+         bbox = BBox()
+         try:
+             proj = Proj(lon0=60)
+-            print proj.project(0, 0)
+-            print proj.world_bounds(bbox)
+-            print proj.toXML()
++            print(proj.project(0, 0))
++            print(proj.world_bounds(bbox))
++            print(proj.toXML())
+         except:
+-            print 'Error', pj
+-            print sys.exc_info()[0]
++            print('Error', pj)
++            print(sys.exc_info()[0])
+             raise
+--- kartograph/proj/azimuthal/azimuthal.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/proj/azimuthal/azimuthal.py
+@@ -62,7 +62,7 @@ class Azimuthal(Proj):
+     def sea_shape(self, llbbox=(-180, -90, 180, 90)):
+         out = []
+         if llbbox == (-180, -90, 180, 90) or llbbox == [-180, -90, 180, 90]:
+-            print "-> full extend"
++            print("-> full extend")
+             for phi in range(0, 360):
+                 x = self.r + math.cos(math.radians(phi)) * self.r
+                 y = self.r + math.sin(math.radians(phi)) * self.r
+--- kartograph/renderer/svg.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/renderer/svg.py
+@@ -239,7 +239,7 @@ class SvgRenderer(MapRenderer):
+ 
+         key = labelOpts['key']
+         if not key:
+-            key = feature.props.keys()[0]
++            key = list(feature.props.keys())[0]
+         if key not in feature.props:
+             #sys.stderr.write('could not find feature property "%s" for labeling\n' % key)
+             return
+@@ -411,7 +411,7 @@ class SvgDocument(object):
+     # Here we finally write the SVG file, and we're brave enough
+     # to try to write it in Unicode.
+     def write(self, outfile, pretty_print=False):
+-        if isinstance(outfile, (str, unicode)):
++        if isinstance(outfile, str):
+             outfile = open(outfile, 'w')
+         if pretty_print:
+             raw = self.doc.toprettyxml('utf-8')
+@@ -420,7 +420,7 @@ class SvgDocument(object):
+         try:
+             raw = raw.encode('utf-8')
+         except:
+-            print 'warning: could not encode to unicode'
++            print('warning: could not encode to unicode')
+ 
+         outfile.write(raw)
+         outfile.close()
+@@ -431,7 +431,7 @@ class SvgDocument(object):
+         import tempfile
+         tmpfile = tempfile.NamedTemporaryFile(suffix='.svg', delete=False)
+         self.write(tmpfile, pretty_print)
+-        print 'map stored to', tmpfile.name
++        print('map stored to', tmpfile.name)
+         from subprocess import call
+         call([command, tmpfile.name])
+ 
+--- kartograph/yaml_ordered_dict.py.orig	2014-03-27 03:57:55 UTC
++++ kartograph/yaml_ordered_dict.py
+@@ -19,8 +19,8 @@ class OrderedDictYAMLLoader(yaml.Loader):
+     def __init__(self, *args, **kwargs):
+         yaml.Loader.__init__(self, *args, **kwargs)
+ 
+-        self.add_constructor(u'tag:yaml.org,2002:map', type(self).construct_yaml_map)
+-        self.add_constructor(u'tag:yaml.org,2002:omap', type(self).construct_yaml_map)
++        self.add_constructor('tag:yaml.org,2002:map', type(self).construct_yaml_map)
++        self.add_constructor('tag:yaml.org,2002:omap', type(self).construct_yaml_map)
+ 
+     def construct_yaml_map(self, node):
+         data = OrderedDict()
+@@ -40,7 +40,7 @@ class OrderedDictYAMLLoader(yaml.Loader):
+             key = self.construct_object(key_node, deep=deep)
+             try:
+                 hash(key)
+-            except TypeError, exc:
++            except TypeError as exc:
+                 raise yaml.constructor.ConstructorError('while constructing a mapping',
+                     node.start_mark, 'found unacceptable key (%s)' % exc, key_node.start_mark)
+             value = self.construct_object(value_node, deep=deep)
+@@ -63,4 +63,4 @@ two:
+ 
+     data = yaml.load(textwrap.dedent(sample), OrderedDictYAMLLoader)
+     assert type(data) is OrderedDict
+-    print data
+\ No newline at end of file
++    print(data)
