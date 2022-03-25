@@ -25,7 +25,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		cpe gmake gnome localbase ssl
+USES=		cpe gmake gnome localbase pkgconfig ssl
 USE_GNOME=	libxml2 libxslt
 
 GNU_CONFIGURE=	yes
