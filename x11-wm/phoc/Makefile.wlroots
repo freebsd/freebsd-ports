@@ -10,6 +10,6 @@ LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
 		libxcb-icccm.so:x11/xcb-util-wm
 RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
 USE_GL+=	gbm egl
-GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:2fce64d30d378d7009a5770b2472231a0e535ada:wlroots/subprojects/wlroots
+GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:c9cd3502ba6113070020de50e41f0af72e0f5031:wlroots/subprojects/wlroots
 MESON_ARGS+=	-Dwlroots:default_library=static
 PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
