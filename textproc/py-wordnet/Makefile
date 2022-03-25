@@ -14,7 +14,7 @@ DISTFILES=	pywordnet-${PORTVERSION}.tar.gz:pywn \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to WordNet
 
-USES=		python:3.6+
+USES=		dos2unix python:3.6+
 USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
@@ -29,6 +29,8 @@ WN_DICTFILES=	adj.exc adv.exc cntlist cntlist.rev data.adj data.adv \
 		verb.exc
 
 post-patch:
+# concordance.py uses CR line terminators which cannot be fixed by USES=dos2unix
+	@${CP} ${FILESDIR}/concordance.py ${WRKSRC}/concordance.py
 	@${SED} -e 's|/usr/local/wordnet2.0|${PREFIX}/${WORDNETDATA}|g' \
 		-e 's|os.path.join(WNHOME.*))|WNHOME)|g' ${WRKSRC}/wordnet.py \
 		> ${WRKSRC}/wordnet.py.tmp && ${CAT} ${WRKSRC}/wordnet.py.tmp \
