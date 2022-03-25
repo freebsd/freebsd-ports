@@ -1017,6 +1017,7 @@
     SUBDIR += py-taxii2-client
     SUBDIR += py-tls-parser
     SUBDIR += py-tlslite
+    SUBDIR += py-tlslite-ng
     SUBDIR += py-trezor
     SUBDIR += py-trustme
     SUBDIR += py-tuf
