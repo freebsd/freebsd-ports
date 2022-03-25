@@ -4179,7 +4179,6 @@
     SUBDIR += py-astunparse
     SUBDIR += py-async_generator
     SUBDIR += py-async_timeout
-    SUBDIR += py-asyncio
     SUBDIR += py-asynctest
     SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
