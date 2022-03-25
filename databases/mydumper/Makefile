@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	mydumper
-DISTVERSION=	0.11.5-2
+PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -21,7 +21,6 @@ CMAKE_OFF=	BUILD_DOCS WITH_BINLOG
 
 PLIST_FILES=	sbin/mydumper sbin/myloader
 
-GH_ACCOUNT=	maxbube
 USE_GITHUB=	yes
 
 post-patch:
