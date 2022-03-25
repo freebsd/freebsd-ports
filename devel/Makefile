@@ -4828,6 +4828,7 @@
     SUBDIR += py-nose-timer
     SUBDIR += py-nose2
     SUBDIR += py-nosexcover
+    SUBDIR += py-notebook-shim
     SUBDIR += py-notify2
     SUBDIR += py-num2words
     SUBDIR += py-numba
