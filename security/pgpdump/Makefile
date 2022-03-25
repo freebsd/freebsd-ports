@@ -1,7 +1,7 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	security
 MASTER_SITES=	https://www.mew.org/~kazu/proj/pgpdump/
 
