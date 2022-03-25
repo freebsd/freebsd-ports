@@ -1,3 +1,34 @@
+  <vuln vid="323f900d-ac6d-11ec-a0b8-3065ec8fd3ec">
+    <topic>chromium -- V8 type confusion</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>99.0.4844.84</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/03/stable-channel-update-for-desktop_25.html">
+	  <p>This release contains 1 security fix:</p>
+	  <ul>
+	    <li>[1309225] High CVE-2022-1096: Type Confusion in V8. Reported by
+	      anonymous on 2022-03-23</li>
+	  </ul>
+	  <p>Google is aware that an exploit for CVE-2022-1096 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1096</cvename>
+      <url>https://chromereleases.googleblog.com/2022/03/stable-channel-update-for-desktop_25.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-25</discovery>
+      <entry>2022-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="955f377e-7bc3-11ec-a51c-7533f219d428">
     <topic>Security Vulnerability found in ExifTool</topic>
     <affects>
