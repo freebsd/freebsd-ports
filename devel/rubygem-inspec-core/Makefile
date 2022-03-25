@@ -1,8 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	inspec-core
-PORTVERSION=	4.41.20
-PORTREVISION=	3
+PORTVERSION=	4.52.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
