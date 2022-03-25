@@ -1,6 +1,6 @@
---- ./setup.py.orig	2012-10-03 15:57:50.000000000 +1000
-+++ ./setup.py	2012-10-03 15:57:50.000000000 +1000
-@@ -136,6 +136,7 @@
+--- setup.py.orig	2013-10-14 21:38:10 UTC
++++ setup.py
+@@ -136,6 +136,7 @@ class PCTBuildExt (build_ext):
                  # especially helps the DES modules.
                  self.__add_compiler_option("-O3")
                  self.__add_compiler_option("-fomit-frame-pointer")
