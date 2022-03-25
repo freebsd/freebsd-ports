@@ -1,11 +1,9 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 
 PORTNAME=	libxslt
-DISTVERSION=	1.1.34
-PORTREVISION=	2
+DISTVERSION=	1.1.35
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://xmlsoft.org/sources/ \
-		https://mirror.umd.edu/xbmc/build-deps/sources/
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -14,31 +12,32 @@ COMMENT=	XML stylesheet transformation library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gmake gnome localbase libtool pathfix pkgconfig
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
+
+USES=		cmake cpe gnome localbase:ldflags pathfix pkgconfig tar:xz
 CPE_VENDOR=	xmlsoft
-GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--without-python
+CMAKE_OFF=	LIBXSLT_WITH_PYTHON
+CMAKE_ON=	LIBXSLT_WITH_CRYPTO
 
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+OPTIONS_DEFINE=	DOCS DEBUG MEM_DEBUG TEST
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	CRYPTO MEM_DEBUG
-OPTIONS_DEFAULT=CRYPTO
-
-CRYPTO_DESC=	Enable crypto support
 MEM_DEBUG_DESC=	Enable memory debugging
 
-CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-			libgpg-error.so:security/libgpg-error
-CRYPTO_CONFIGURE_WITH=	crypto
-MEM_DEBUG_CONFIGURE_ON=	--with-mem-debug
+DEBUG_CMAKE_BOOL=	LIBXSLT_WITH_XSLT_DEBUG
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-docs
+MEM_DEBUG_CMAKE_BOOL=	LIBXSLT_WITH_MEM_DEBUG
+TEST_CMAKE_BOOL=	LIBXSLT_WITH_TESTS
+TEST_TEST_TARGET=	test
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
-		${WRKSRC}/doc/Makefile.in
+post-install:
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libexslt.so.0.8.20 ${STAGEDIR}${PREFIX}/lib/libexslt.so.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libxslt.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libxslt.so.1
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/libxslt-plugins
+	${INSTALL_DATA} ${WRKSRC}/libxslt.m4 ${STAGEDIR}${PREFIX}/share/aclocal/libxslt.m4
 
 .include <bsd.port.mk>
