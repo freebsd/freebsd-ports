@@ -1,0 +1,68 @@
+--- urlimport.py.orig	2022-03-18 17:06:46 UTC
++++ urlimport.py
+@@ -34,7 +34,7 @@ settings = sys.__dict__.setdefault(
+ 
+ def debug(s, pf='| |', lvl=1):
+     if lvl <= settings.get('debug'):
+-        print "%s %s" % (pf, s)
++        print("%s %s" % (pf, s))
+ 
+ class UrlFinder:
+     def __init__(self, path):
+@@ -60,7 +60,7 @@ class UrlFinder:
+          (self.path + fullname + '/__init__.py', self.path + fullname + '/')]:
+             try:
+                 source = self.get_source(url)
+-            except Exception, e:
++            except Exception as e:
+                 debug("find_module: failed to get '%s'. (%s)" % (url, e), lvl=3)
+             else:
+                 debug("find_module: got '%s'." % url, lvl=1)
+@@ -71,7 +71,7 @@ class UrlFinder:
+     def get_source(self, url):
+         """Download the source from given url.
+         """
+-        from urllib2 import urlopen
++        from urllib.request import urlopen
+ 
+         src = ''
+ 
+@@ -85,9 +85,9 @@ class UrlFinder:
+         
+         if proto == 'https' and cert:
+             # handle http over ssl with client certificate
+-            import httplib
++            import http.client
+             
+-            conn = httplib.HTTPSConnection(
++            conn = http.client.HTTPSConnection(
+             	host=host,
+             	port=port,
+             	key_file=key,
+@@ -98,7 +98,7 @@ class UrlFinder:
+             conn.endheaders()
+             response = conn.getresponse()
+             if response.status != 200:
+-                raise StandardError, "HTTPS Error: %d"%response.status
++                raise Exception("HTTPS Error: %d"%response.status)
+             src = response.read()
+         else:
+             # handle everything else
+@@ -131,7 +131,7 @@ class UrlLoader:
+ 
+         debug("load_module: executing %s's source..." % fullname, lvl=2)
+ 
+-        exec self.source in mod.__dict__
++        exec(self.source, mod.__dict__)
+ 
+         mod = sys.modules[fullname]
+         return mod
+@@ -142,7 +142,7 @@ def config(**kwargs):
+        config()          - Display settings.
+     """
+     settings.update(kwargs)
+-    for k,v in (kwargs or settings).iteritems():
++    for k,v in (kwargs or settings).items():
+         debug(" "+str(k)+"="+repr(v), lvl=0 )
+ 
+ # register The Hook
