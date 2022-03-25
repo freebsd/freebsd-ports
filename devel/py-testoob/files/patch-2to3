@@ -1,0 +1,1689 @@
+--- src/testoob/asserter.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/asserter.py
+@@ -32,7 +32,7 @@ class Asserter:
+         # Prevent recursion (accures in testoob tests, when ran with testoob :-) ).
+         if getattr(Class, method_name).__name__ == "_assert_reporting_func":
+             return
+-        variables = eval("Class.%s" % method_name).func_code.co_varnames
++        variables = eval("Class.%s" % method_name).__code__.co_varnames
+         setattr(Class, "_real_function_%s" % method_name, eval("Class.%s" % method_name))
+         method = eval("Class._real_function_%s" % method_name)
+         def _assert_reporting_func(*args, **kwargs):
+@@ -45,7 +45,7 @@ class Asserter:
+                 num_free_args -= 1
+                 additional_args = args[num_free_args:] + additional_args
+             # Can't be a dictionary, because the order matters.
+-            varList = zip(variables[1:], (args[1:num_free_args] + additional_args))
++            varList = list(zip(variables[1:], (args[1:num_free_args] + additional_args)))
+             # Here is some evil did to find the function which called me.
+             test = sys._getframe().f_back.f_locals["self"]
+             # If we run something that has no reporter, it should just run
+@@ -54,7 +54,7 @@ class Asserter:
+                 return method(*args, **kwargs)
+             try:
+                 method(*args, **kwargs)
+-            except Exception, e:
++            except Exception as e:
+                 self._reporters[test].addAssert(test, method_name, varList, e)
+                 raise
+             self._reporters[test].addAssert(test, method_name, varList, None)
+--- src/testoob/commandline/__init__.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/commandline/__init__.py
+@@ -17,8 +17,8 @@ def module_list():
+ 
+ def load_options():
+     for module in module_list():
+-        exec "import %s" % module
++        exec("import %s" % module)
+ 
+ load_options()
+ 
+-import parsing
++from . import parsing
+--- src/testoob/compatibility/itertools.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/compatibility/itertools.py
+@@ -20,8 +20,8 @@ takewhile(pred, seq) --> seq[0], seq[1], until pred fa
+ dropwhile(pred, seq) --> seq[n], seq[n+1], starting when pred fails
+ groupby(iterable[, keyfunc]) --> sub-iterators grouped by value of keyfunc(v)
+ """
+-from __future__ import generators
+ 
++
+ __all__ = ['chain', 'count', 'cycle', 'dropwhile', 'groupby', 'ifilter',
+            'ifilterfalse', 'imap', 'islice', 'izip', 'repeat', 'starmap',
+            'takewhile', 'tee']
+@@ -48,14 +48,14 @@ class chain:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         try:
+-            next_elt = self._cur_iterable_iter.next()
++            next_elt = next(self._cur_iterable_iter)
+         except StopIteration:
+             # The current list's iterator is exhausted, switch to next one
+-            self._cur_iterable_iter = iter(self._iterables_iter.next())
++            self._cur_iterable_iter = iter(next(self._iterables_iter))
+             try:
+-                next_elt = self._cur_iterable_iter.next()
++                next_elt = next(self._cur_iterable_iter)
+             except AttributeError:
+                 # CPython raises a TypeError when next() is not defined
+                 raise TypeError('%s has no next() method' % \
+@@ -92,7 +92,7 @@ class count:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         self.times += 1
+         return self.times
+ 
+@@ -125,15 +125,15 @@ class cycle:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         # XXX Could probably be improved
+         try:
+-            next_elt = self._cur_iter.next()
++            next_elt = next(self._cur_iter)
+             if self._must_save:
+                 self._saved.append(next_elt)
+         except StopIteration:
+             self._cur_iter = iter(self._saved)
+-            next_elt = self._cur_iter.next()
++            next_elt = next(self._cur_iter)
+             self._must_save = False
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+@@ -167,9 +167,9 @@ class dropwhile:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         try:
+-            value = self._iter.next()
++            value = next(self._iter)
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % \
+@@ -177,7 +177,7 @@ class dropwhile:
+         if self._dropped:
+             return value
+         while self._predicate(value):
+-            value = self._iter.next()
++            value = next(self._iter)
+         self._dropped = True
+         return value
+ 
+@@ -205,15 +205,15 @@ class groupby:
+             key = lambda x: x
+         self.keyfunc = key
+         self.it = iter(iterable)
+-        self.tgtkey = self.currkey = self.currvalue = xrange(0)
++        self.tgtkey = self.currkey = self.currvalue = range(0)
+ 
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         while self.currkey == self.tgtkey:
+             try:
+-                self.currvalue = self.it.next() # Exit on StopIteration
++                self.currvalue = next(self.it) # Exit on StopIteration
+             except AttributeError:
+                 # CPython raises a TypeError when next() is not defined
+                 raise TypeError('%s has no next() method' % \
+@@ -225,7 +225,7 @@ class groupby:
+     def _grouper(self, tgtkey):
+         while self.currkey == tgtkey:
+             yield self.currvalue
+-            self.currvalue = self.it.next() # Exit on StopIteration
++            self.currvalue = next(self.it) # Exit on StopIteration
+             self.currkey = self.keyfunc(self.currvalue)
+ 
+ 
+@@ -257,9 +257,9 @@ class ifilter(_ifilter_base):
+             if predicate(x):
+                 yield x
+     """
+-    def next(self):
++    def __next__(self):
+         try:
+-            next_elt = self._iter.next()
++            next_elt = next(self._iter)
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % \
+@@ -267,7 +267,7 @@ class ifilter(_ifilter_base):
+         while True:
+             if self._predicate(next_elt):
+                 return next_elt
+-            next_elt = self._iter.next()
++            next_elt = next(self._iter)
+ 
+ class ifilterfalse(_ifilter_base):
+     """Make an iterator that filters elements from iterable returning
+@@ -283,9 +283,9 @@ class ifilterfalse(_ifilter_base):
+             if not predicate(x):
+                 yield x
+     """
+-    def next(self):
++    def __next__(self):
+         try:
+-            next_elt = self._iter.next()
++            next_elt = next(self._iter)
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % \
+@@ -293,7 +293,7 @@ class ifilterfalse(_ifilter_base):
+         while True:
+             if not self._predicate(next_elt):
+                 return next_elt
+-            next_elt = self._iter.next()
++            next_elt = next(self._iter)
+ 
+ 
+ 
+@@ -322,14 +322,14 @@ class imap:
+     """
+     def __init__(self, function, iterable, *other_iterables):
+         self._func = function
+-        self._iters = map(iter, (iterable, ) + other_iterables)
++        self._iters = list(map(iter, (iterable, ) + other_iterables))
+ 
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         try:
+-            args = [it.next() for it in self._iters]
++            args = [next(it) for it in self._iters]
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % \
+@@ -357,15 +357,15 @@ class islice:
+     def __init__(self, iterable, *args):
+         s = slice(*args)
+         self.start, self.stop, self.step = s.start or 0, s.stop, s.step
+-        if not isinstance(self.start, (int, long)):
++        if not isinstance(self.start, int):
+            raise ValueError("Start argument must be an integer")
+-        if self.stop is not None and not isinstance(self.stop, (int,long)):
++        if self.stop is not None and not isinstance(self.stop, int):
+            raise ValueError("Stop argument must be an integer or None")
+         if self.step is None:
+             self.step = 1
+         if self.start<0 or (self.stop is not None and self.stop<0
+            ) or self.step<=0:
+-            raise ValueError, "indices for islice() must be positive"
++            raise ValueError("indices for islice() must be positive")
+         self.it = iter(iterable)
+         self.donext = None
+         self.cnt = 0
+@@ -373,10 +373,10 @@ class islice:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         if self.donext is None:
+             try:
+-                self.donext = self.it.next
++                self.donext = self.it.__next__
+             except AttributeError:
+                 raise TypeError
+         while self.cnt < self.start:
+@@ -403,17 +403,17 @@ class izip:
+             yield tuple(result)
+     """
+     def __init__(self, *iterables):
+-        self._iterators = map(iter, iterables)
++        self._iterators = list(map(iter, iterables))
+         self._result = [None] * len(self._iterators)
+ 
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         if not self._iterators:
+             raise StopIteration()
+         try:
+-            return tuple([i.next() for i in self._iterators])
++            return tuple([next(i) for i in self._iterators])
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % (i))
+@@ -439,7 +439,7 @@ class repeat:
+     def __init__(self, obj, times=None):
+         self._obj = obj
+         if times is not None:
+-            xrange(times) # Raise a TypeError
++            range(times) # Raise a TypeError
+             if times < 0:
+                 times = 0
+         self._times = times
+@@ -447,7 +447,7 @@ class repeat:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         # next() *need* to decrement self._times when consumed
+         if self._times is not None:
+             if self._times <= 0:
+@@ -489,10 +489,10 @@ class starmap:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         # CPython raises a TypeError when the iterator doesn't return a tuple
+         try:
+-            t = self._iter.next()
++            t = next(self._iter)
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % self._iter)
+@@ -522,9 +522,9 @@ class takewhile:
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         try:
+-            value = self._iter.next()
++            value = next(self._iter)
+         except AttributeError:
+             # CPython raises a TypeError when next() is not defined
+             raise TypeError('%s has no next() method' % \
+@@ -544,7 +544,7 @@ class TeeData(object):
+         # iterates until 'i' if not done yet
+         while i>= len(self.data):
+             try:
+-                self.data.append( self._iter.next() )
++                self.data.append( next(self._iter) )
+             except AttributeError:
+                 # CPython raises a TypeError when next() is not defined
+                 raise TypeError('%s has no next() method' % self._iter)
+@@ -565,7 +565,7 @@ class TeeObject(object):
+             self.tee_data = TeeData(iter(iterable))
+             self.pos = 0
+ 
+-    def next(self):
++    def __next__(self):
+         data = self.tee_data[self.pos]
+         self.pos += 1
+         return data
+@@ -603,6 +603,6 @@ def tee(iterable, n=2):
+     if isinstance(iterable, TeeObject):
+         # a,b = tee(range(10)) ; c,d = tee(a) ; self.assert_(a is c)
+         return tuple([iterable] +
+-        [TeeObject(tee_data=iterable.tee_data) for i in xrange(n-1)])
++        [TeeObject(tee_data=iterable.tee_data) for i in range(n-1)])
+     tee_data = TeeData(iter(iterable))
+-    return tuple([TeeObject(tee_data=tee_data) for i in xrange(n)])
++    return tuple([TeeObject(tee_data=tee_data) for i in range(n)])
+--- src/testoob/compatibility/optparse.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/compatibility/optparse.py
+@@ -70,7 +70,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH D
+ 
+ import sys, os
+ import types
+-import textwrap
++from . import textwrap
+ 
+ class OptParseError (Exception):
+     def __init__ (self, msg):
+@@ -161,10 +161,10 @@ class HelpFormatter:
+         self.level -= 1
+ 
+     def format_usage (self, usage):
+-        raise NotImplementedError, "subclasses must implement"
++        raise NotImplementedError("subclasses must implement")
+ 
+     def format_heading (self, heading):
+-        raise NotImplementedError, "subclasses must implement"
++        raise NotImplementedError("subclasses must implement")
+ 
+     def format_description (self, description):
+         desc_width = self.width - self.current_indent
+@@ -280,7 +280,7 @@ class TitledHelpFormatter (HelpFormatter):
+ 
+ 
+ _builtin_cvt = { "int" : (int, "integer"),
+-                 "long" : (long, "long integer"),
++                 "long" : (int, "long integer"),
+                  "float" : (float, "floating-point"),
+                  "complex" : (complex, "complex") }
+ 
+@@ -434,7 +434,7 @@ class Option:
+         # Filter out None because early versions of Optik had exactly
+         # one short option and one long option, either of which
+         # could be None.
+-        opts = filter(None, opts)
++        opts = [_f for _f in opts if _f]
+         if not opts:
+             raise TypeError("at least one option string must be supplied")
+         return opts
+@@ -462,7 +462,7 @@ class Option:
+ 
+     def _set_attrs (self, attrs):
+         for attr in self.ATTRS:
+-            if attrs.has_key(attr):
++            if attr in attrs:
+                 setattr(self, attr, attrs[attr])
+                 del attrs[attr]
+             else:
+@@ -472,7 +472,7 @@ class Option:
+                     setattr(self, attr, None)
+         if attrs:
+             raise OptionError(
+-                "invalid keyword arguments: %s" % ", ".join(attrs.keys()),
++                "invalid keyword arguments: %s" % ", ".join(list(attrs.keys())),
+                 self)
+ 
+ 
+@@ -507,7 +507,7 @@ class Option:
+             if self.choices is None:
+                 raise OptionError(
+                     "must supply a list of choices for type 'choice'", self)
+-            elif type(self.choices) not in (types.TupleType, types.ListType):
++            elif type(self.choices) not in (tuple, list):
+                 raise OptionError(
+                     "choices must be a list of strings ('%s' supplied)"
+                     % str(type(self.choices)).split("'")[1], self)
+@@ -547,12 +547,12 @@ class Option:
+                 raise OptionError(
+                     "callback not callable: %r" % self.callback, self)
+             if (self.callback_args is not None and
+-                type(self.callback_args) is not types.TupleType):
++                type(self.callback_args) is not tuple):
+                 raise OptionError(
+                     "callback_args, if supplied, must be a tuple: not %r"
+                     % self.callback_args, self)
+             if (self.callback_kwargs is not None and
+-                type(self.callback_kwargs) is not types.DictType):
++                type(self.callback_kwargs) is not dict):
+                 raise OptionError(
+                     "callback_kwargs, if supplied, must be a dict: not %r"
+                     % self.callback_kwargs, self)
+@@ -636,7 +636,7 @@ class Option:
+             parser.print_version()
+             sys.exit(0)
+         else:
+-            raise RuntimeError, "unknown action %r" % self.action
++            raise RuntimeError("unknown action %r" % self.action)
+ 
+         return 1
+ 
+@@ -662,7 +662,7 @@ class Values:
+ 
+     def __init__ (self, defaults=None):
+         if defaults:
+-            for (attr, val) in defaults.items():
++            for (attr, val) in list(defaults.items()):
+                 setattr(self, attr, val)
+ 
+     def __repr__ (self):
+@@ -677,7 +677,7 @@ class Values:
+         are silently ignored.
+         """
+         for attr in dir(self):
+-            if dict.has_key(attr):
++            if attr in dict:
+                 dval = dict[attr]
+                 if dval is not None:
+                     setattr(self, attr, dval)
+@@ -696,7 +696,7 @@ class Values:
+         elif mode == "loose":
+             self._update_loose(dict)
+         else:
+-            raise ValueError, "invalid update mode: %r" % mode
++            raise ValueError("invalid update mode: %r" % mode)
+ 
+     def read_module (self, modname, mode="careful"):
+         __import__(modname)
+@@ -705,7 +705,7 @@ class Values:
+ 
+     def read_file (self, filename, mode="careful"):
+         vars = {}
+-        execfile(filename, vars)
++        exec(compile(open(filename, "rb").read(), filename, 'exec'), vars)
+         self._update(vars, mode)
+ 
+     def ensure_value (self, attr, value):
+@@ -775,7 +775,7 @@ class OptionContainer:
+ 
+     def set_conflict_handler (self, handler):
+         if handler not in ("ignore", "error", "resolve"):
+-            raise ValueError, "invalid conflict_resolution value %r" % handler
++            raise ValueError("invalid conflict_resolution value %r" % handler)
+         self.conflict_handler = handler
+ 
+     def set_description (self, description):
+@@ -787,10 +787,10 @@ class OptionContainer:
+     def _check_conflict (self, option):
+         conflict_opts = []
+         for opt in option._short_opts:
+-            if self._short_opt.has_key(opt):
++            if opt in self._short_opt:
+                 conflict_opts.append((opt, self._short_opt[opt]))
+         for opt in option._long_opts:
+-            if self._long_opt.has_key(opt):
++            if opt in self._long_opt:
+                 conflict_opts.append((opt, self._long_opt[opt]))
+ 
+         if conflict_opts:
+@@ -817,14 +817,14 @@ class OptionContainer:
+         """add_option(Option)
+            add_option(opt_str, ..., kwarg=val, ...)
+         """
+-        if type(args[0]) is types.StringType:
++        if type(args[0]) is bytes:
+             option = self.option_class(*args, **kwargs)
+         elif len(args) == 1 and not kwargs:
+             option = args[0]
+             if not isinstance(option, Option):
+-                raise TypeError, "not an Option instance: %r" % option
++                raise TypeError("not an Option instance: %r" % option)
+         else:
+-            raise TypeError, "invalid arguments"
++            raise TypeError("invalid arguments")
+ 
+         self._check_conflict(option)
+ 
+@@ -838,7 +838,7 @@ class OptionContainer:
+         if option.dest is not None:     # option has a dest, we need a default
+             if option.default is not NO_DEFAULT:
+                 self.defaults[option.dest] = option.default
+-            elif not self.defaults.has_key(option.dest):
++            elif option.dest not in self.defaults:
+                 self.defaults[option.dest] = None
+ 
+         return option
+@@ -854,8 +854,8 @@ class OptionContainer:
+                 self._long_opt.get(opt_str))
+ 
+     def has_option (self, opt_str):
+-        return (self._short_opt.has_key(opt_str) or
+-                self._long_opt.has_key(opt_str))
++        return (opt_str in self._short_opt or
++                opt_str in self._long_opt)
+ 
+     def remove_option (self, opt_str):
+         option = self._short_opt.get(opt_str)
+@@ -1065,16 +1065,16 @@ class OptionParser (OptionContainer):
+ 
+     def add_option_group (self, *args, **kwargs):
+         # XXX lots of overlap with OptionContainer.add_option()
+-        if type(args[0]) is types.StringType:
++        if type(args[0]) is bytes:
+             group = OptionGroup(self, *args, **kwargs)
+         elif len(args) == 1 and not kwargs:
+             group = args[0]
+             if not isinstance(group, OptionGroup):
+-                raise TypeError, "not an OptionGroup instance: %r" % group
++                raise TypeError("not an OptionGroup instance: %r" % group)
+             if group.parser is not self:
+-                raise ValueError, "invalid OptionGroup (wrong parser)"
++                raise ValueError("invalid OptionGroup (wrong parser)")
+         else:
+-            raise TypeError, "invalid arguments"
++            raise TypeError("invalid arguments")
+ 
+         self.option_groups.append(group)
+         return group
+@@ -1128,7 +1128,7 @@ class OptionParser (OptionContainer):
+ 
+         try:
+             stop = self._process_args(largs, rargs, values)
+-        except (BadOptionError, OptionValueError), err:
++        except (BadOptionError, OptionValueError) as err:
+             self.error(err.msg)
+ 
+         args = largs + rargs
+@@ -1313,7 +1313,7 @@ class OptionParser (OptionContainer):
+         or not defined.
+         """
+         if self.usage:
+-            print >>file, self.get_usage()
++            print(self.get_usage(), file=file)
+ 
+     def get_version (self):
+         if self.version:
+@@ -1330,7 +1330,7 @@ class OptionParser (OptionContainer):
+         name.  Does nothing if self.version is empty or undefined.
+         """
+         if self.version:
+-            print >>file, self.get_version()
++            print(self.get_version(), file=file)
+ 
+     def format_option_help (self, formatter=None):
+         if formatter is None:
+@@ -1381,11 +1381,11 @@ def _match_abbrev (s, wordmap):
+     'words', raise BadOptionError.
+     """
+     # Is there an exact match?
+-    if wordmap.has_key(s):
++    if s in wordmap:
+         return s
+     else:
+         # Isolate all words with s as a prefix.
+-        possibilities = [word for word in wordmap.keys()
++        possibilities = [word for word in list(wordmap.keys())
+                          if word.startswith(s)]
+         # No exact match, so there had better be just one possibility.
+         if len(possibilities) == 1:
+--- src/testoob/compatibility/sets.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/compatibility/sets.py
+@@ -54,9 +54,9 @@ what's tested is actually `z in y'.
+ # - Raymond Hettinger added a number of speedups and other
+ #   improvements.
+ 
+-from __future__ import generators
++
+ try:
+-    from itertools import ifilter, ifilterfalse
++    from .itertools import ifilter, ifilterfalse
+ except ImportError:
+     # Code to make the module run under Py2.2
+     def ifilter(predicate, iterable):
+@@ -73,10 +73,6 @@ except ImportError:
+         for x in iterable:
+             if not predicate(x):
+                 yield x
+-    try:
+-        True, False
+-    except NameError:
+-        True, False = (0==0, 0!=0)
+ 
+ __all__ = ['BaseSet', 'Set', 'ImmutableSet']
+ 
+@@ -91,7 +87,7 @@ class BaseSet(object):
+         """This is an abstract class."""
+         # Don't call this from a concrete subclass!
+         if self.__class__ is BaseSet:
+-            raise TypeError, ("BaseSet is an abstract class.  "
++            raise TypeError("BaseSet is an abstract class.  "
+                               "Use Set or ImmutableSet.")
+ 
+     # Standard protocols: __len__, __repr__, __str__, __iter__
+@@ -111,7 +107,7 @@ class BaseSet(object):
+     __str__ = __repr__
+ 
+     def _repr(self, sorted=False):
+-        elements = self._data.keys()
++        elements = list(self._data.keys())
+         if sorted:
+             elements.sort()
+         return '%s(%r)' % (self.__class__.__name__, elements)
+@@ -121,7 +117,7 @@ class BaseSet(object):
+ 
+         This is the keys iterator for the underlying dict.
+         """
+-        return self._data.iterkeys()
++        return iter(self._data.keys())
+ 
+     # Three-way comparison is not supported.  However, because __eq__ is
+     # tried before __cmp__, if Set x == Set y, x.__eq__(y) returns True and
+@@ -129,7 +125,7 @@ class BaseSet(object):
+     # case).
+ 
+     def __cmp__(self, other):
+-        raise TypeError, "can't compare sets using cmp()"
++        raise TypeError("can't compare sets using cmp()")
+ 
+     # Equality comparisons using the underlying dicts.  Mixed-type comparisons
+     # are allowed here, where Set == z for non-Set z always returns False,
+@@ -231,7 +227,7 @@ class BaseSet(object):
+             little, big = self, other
+         else:
+             little, big = other, self
+-        common = ifilter(big._data.has_key, little)
++        common = filter(big._data.has_key, little)
+         return self.__class__(common)
+ 
+     def __xor__(self, other):
+@@ -256,9 +252,9 @@ class BaseSet(object):
+             otherdata = other._data
+         except AttributeError:
+             otherdata = Set(other)._data
+-        for elt in ifilterfalse(otherdata.has_key, selfdata):
++        for elt in filterfalse(otherdata.has_key, selfdata):
+             data[elt] = value
+-        for elt in ifilterfalse(selfdata.has_key, otherdata):
++        for elt in filterfalse(selfdata.has_key, otherdata):
+             data[elt] = value
+         return result
+ 
+@@ -283,7 +279,7 @@ class BaseSet(object):
+         except AttributeError:
+             otherdata = Set(other)._data
+         value = True
+-        for elt in ifilterfalse(otherdata.has_key, self):
++        for elt in filterfalse(otherdata.has_key, self):
+             data[elt] = value
+         return result
+ 
+@@ -309,7 +305,7 @@ class BaseSet(object):
+         self._binary_sanity_check(other)
+         if len(self) > len(other):  # Fast check for obvious cases
+             return False
+-        for elt in ifilterfalse(other._data.has_key, self):
++        for elt in filterfalse(other._data.has_key, self):
+             return False
+         return True
+ 
+@@ -318,7 +314,7 @@ class BaseSet(object):
+         self._binary_sanity_check(other)
+         if len(self) < len(other):  # Fast check for obvious cases
+             return False
+-        for elt in ifilterfalse(self._data.has_key, other):
++        for elt in filterfalse(self._data.has_key, other):
+             return False
+         return True
+ 
+@@ -340,7 +336,7 @@ class BaseSet(object):
+         # Check that the other argument to a binary operation is also
+         # a set, raising a TypeError otherwise.
+         if not isinstance(other, BaseSet):
+-            raise TypeError, "Binary operation only permitted between sets"
++            raise TypeError("Binary operation only permitted between sets")
+ 
+     def _compute_hash(self):
+         # Calculate hash code for a set by xor'ing the hash codes of
+@@ -438,7 +434,7 @@ class Set(BaseSet):
+     def __hash__(self):
+         """A Set cannot be hashed."""
+         # We inherit object.__hash__, so we must deny this explicitly
+-        raise TypeError, "Can't hash a Set, only an ImmutableSet."
++        raise TypeError("Can't hash a Set, only an ImmutableSet.")
+ 
+     # In-place union, intersection, differences.
+     # Subtle:  The xyz_update() functions deliberately return None,
+@@ -501,7 +497,7 @@ class Set(BaseSet):
+             other = Set(other)
+         if self is other:
+             self.clear()
+-        for elt in ifilter(data.has_key, other):
++        for elt in filter(data.has_key, other):
+             del data[elt]
+ 
+     # Python dict-like mass mutations: update, clear
+--- src/testoob/compatibility/subprocess.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/compatibility/subprocess.py
+@@ -403,13 +403,6 @@ try:
+ except:
+     MAXFD = 256
+ 
+-# True/False does not exist on 2.2.0
+-try:
+-    False
+-except NameError:
+-    False = 0
+-    True = 1
+-
+ _active = []
+ 
+ def _cleanup():
+@@ -600,7 +593,7 @@ class Popen(object):
+                 # Detach and turn into fd
+                 p2cwrite = p2cwrite.Detach()
+                 p2cwrite = msvcrt.open_osfhandle(p2cwrite, 0)
+-            elif type(stdin) == types.IntType:
++            elif type(stdin) == int:
+                 p2cread = msvcrt.get_osfhandle(stdin)
+             else:
+                 # Assuming file-like object
+@@ -614,7 +607,7 @@ class Popen(object):
+                 # Detach and turn into fd
+                 c2pread = c2pread.Detach()
+                 c2pread = msvcrt.open_osfhandle(c2pread, 0)
+-            elif type(stdout) == types.IntType:
++            elif type(stdout) == int:
+                 c2pwrite = msvcrt.get_osfhandle(stdout)
+             else:
+                 # Assuming file-like object
+@@ -630,7 +623,7 @@ class Popen(object):
+                 errread = msvcrt.open_osfhandle(errread, 0)
+             elif stderr == STDOUT:
+                 errwrite = c2pwrite
+-            elif type(stderr) == types.IntType:
++            elif type(stderr) == int:
+                 errwrite = msvcrt.get_osfhandle(stderr)
+             else:
+                 # Assuming file-like object
+@@ -673,13 +666,13 @@ class Popen(object):
+                            errread, errwrite):
+             """Execute program (MS Windows version)"""
+ 
+-            if not isinstance(args, types.StringTypes):
++            if not isinstance(args, (str,)):
+                 args = list2cmdline(args)
+ 
+             if shell:
+                 comspec = os.environ.get("COMSPEC", "cmd.exe")
+                 args = comspec + " /c " + args
+-                if (GetVersion() >= 0x80000000L or
++                if (GetVersion() >= 0x80000000 or
+                         os.path.basename(comspec).lower() == "command.com"):
+                     # Win9x, or using command.com on NT. We need to
+                     # use the w9xpopen intermediate program. For more
+@@ -716,7 +709,7 @@ class Popen(object):
+                                          env,
+                                          cwd,
+                                          startupinfo)
+-            except pywintypes.error, e:
++            except pywintypes.error as e:
+                 # Translate pywintypes.error to WindowsError, which is
+                 # a subclass of OSError.  FIXME: We should really
+                 # translate errno using _sys_errlist (or simliar), but
+@@ -835,7 +828,7 @@ class Popen(object):
+                 pass
+             elif stdin == PIPE:
+                 p2cread, p2cwrite = os.pipe()
+-            elif type(stdin) == types.IntType:
++            elif type(stdin) == int:
+                 p2cread = stdin
+             else:
+                 # Assuming file-like object
+@@ -845,7 +838,7 @@ class Popen(object):
+                 pass
+             elif stdout == PIPE:
+                 c2pread, c2pwrite = os.pipe()
+-            elif type(stdout) == types.IntType:
++            elif type(stdout) == int:
+                 c2pwrite = stdout
+             else:
+                 # Assuming file-like object
+@@ -857,7 +850,7 @@ class Popen(object):
+                 errread, errwrite = os.pipe()
+             elif stderr == STDOUT:
+                 errwrite = c2pwrite
+-            elif type(stderr) == types.IntType:
++            elif type(stderr) == int:
+                 errwrite = stderr
+             else:
+                 # Assuming file-like object
+@@ -896,7 +889,7 @@ class Popen(object):
+                            errread, errwrite):
+             """Execute program (POSIX version)"""
+ 
+-            if isinstance(args, types.StringTypes):
++            if isinstance(args, (str,)):
+                 args = [args]
+ 
+             if shell:
+@@ -1100,8 +1093,8 @@ def _demo_posix():
+     # Example 1: Simple redirection: Get process list
+     #
+     plist = Popen(["ps"], stdout=PIPE).communicate()[0]
+-    print "Process list:"
+-    print plist
++    print("Process list:")
++    print(plist)
+ 
+     #
+     # Example 2: Change uid before executing child
+@@ -1113,42 +1106,42 @@ def _demo_posix():
+     #
+     # Example 3: Connecting several subprocesses
+     #
+-    print "Looking for 'hda'..."
++    print("Looking for 'hda'...")
+     p1 = Popen(["dmesg"], stdout=PIPE)
+     p2 = Popen(["grep", "hda"], stdin=p1.stdout, stdout=PIPE)
+-    print repr(p2.communicate()[0])
++    print(repr(p2.communicate()[0]))
+ 
+     #
+     # Example 4: Catch execution error
+     #
+-    print
+-    print "Trying a weird file..."
++    print()
++    print("Trying a weird file...")
+     try:
+-        print Popen(["/this/path/does/not/exist"]).communicate()
+-    except OSError, e:
++        print(Popen(["/this/path/does/not/exist"]).communicate())
++    except OSError as e:
+         if e.errno == errno.ENOENT:
+-            print "The file didn't exist.  I thought so..."
+-            print "Child traceback:"
+-            print e.child_traceback
++            print("The file didn't exist.  I thought so...")
++            print("Child traceback:")
++            print(e.child_traceback)
+         else:
+-            print "Error", e.errno
++            print("Error", e.errno)
+     else:
+-        print >>sys.stderr, "Gosh.  No error."
++        print("Gosh.  No error.", file=sys.stderr)
+ 
+ 
+ def _demo_windows():
+     #
+     # Example 1: Connecting several subprocesses
+     #
+-    print "Looking for 'PROMPT' in set output..."
++    print("Looking for 'PROMPT' in set output...")
+     p1 = Popen("set", stdout=PIPE, shell=True)
+     p2 = Popen('find "PROMPT"', stdin=p1.stdout, stdout=PIPE)
+-    print repr(p2.communicate()[0])
++    print(repr(p2.communicate()[0]))
+ 
+     #
+     # Example 2: Simple execution of program
+     #
+-    print "Executing calc..."
++    print("Executing calc...")
+     p = Popen("calc")
+     p.wait()
+ 
+--- src/testoob/compatibility/textwrap.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/compatibility/textwrap.py
+@@ -10,14 +10,6 @@ __revision__ = "$Id: textwrap.py,v 1.32.8.2 2004/05/13
+ 
+ import string, re
+ 
+-# Do the right thing with boolean values for all known Python versions
+-# (so this module can be copied to projects that don't depend on Python
+-# 2.3, e.g. Optik and Docutils).
+-try:
+-    True, False
+-except NameError:
+-    (True, False) = (1, 0)
+-
+ __all__ = ['TextWrapper', 'wrap', 'fill']
+ 
+ # Hardcode the recognized whitespace characters to the US-ASCII
+@@ -69,7 +61,7 @@ class TextWrapper:
+     whitespace_trans = string.maketrans(_whitespace, ' ' * len(_whitespace))
+ 
+     unicode_whitespace_trans = {}
+-    uspace = ord(u' ')
++    uspace = ord(' ')
+     for x in map(ord, _whitespace):
+         unicode_whitespace_trans[x] = uspace
+ 
+@@ -123,7 +115,7 @@ class TextWrapper:
+         if self.replace_whitespace:
+             if isinstance(text, str):
+                 text = text.translate(self.whitespace_trans)
+-            elif isinstance(text, unicode):
++            elif isinstance(text, str):
+                 text = text.translate(self.unicode_whitespace_trans)
+         return text
+ 
+@@ -140,7 +132,7 @@ class TextWrapper:
+           'use', ' ', 'the', ' ', '-b', ' ', 'option!'
+         """
+         chunks = self.wordsep_re.split(text)
+-        chunks = filter(None, chunks)
++        chunks = [_f for _f in chunks if _f]
+         return chunks
+ 
+     def _fix_sentence_endings(self, chunks):
+--- src/testoob/compatibility/trace.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/compatibility/trace.py
+@@ -59,7 +59,7 @@ import types
+ import gc
+ 
+ try:
+-    import cPickle
++    import pickle
+     pickle = cPickle
+ except ImportError:
+     import pickle
+@@ -116,11 +116,11 @@ class Ignore:
+         self._mods = modules or []
+         self._dirs = dirs or []
+ 
+-        self._dirs = map(os.path.normpath, self._dirs)
++        self._dirs = list(map(os.path.normpath, self._dirs))
+         self._ignore = { '<string>': 1 }
+ 
+     def names(self, filename, modulename):
+-        if self._ignore.has_key(modulename):
++        if modulename in self._ignore:
+             return self._ignore[modulename]
+ 
+         # haven't seen this one before, so see if the module name is
+@@ -218,9 +218,9 @@ class CoverageResults:
+                 counts, calledfuncs, callers = \
+                         pickle.load(open(self.infile, 'rb'))
+                 self.update(self.__class__(counts, calledfuncs, callers))
+-            except (IOError, EOFError, ValueError), err:
+-                print >> sys.stderr, ("Skipping counts file %r: %s"
+-                                      % (self.infile, err))
++            except (IOError, EOFError, ValueError) as err:
++                print(("Skipping counts file %r: %s"
++                                      % (self.infile, err)), file=sys.stderr)
+ 
+     def update(self, other):
+         """Merge in the data from another CoverageResults"""
+@@ -231,13 +231,13 @@ class CoverageResults:
+         other_calledfuncs = other.calledfuncs
+         other_callers = other.callers
+ 
+-        for key in other_counts.keys():
++        for key in list(other_counts.keys()):
+             counts[key] = counts.get(key, 0) + other_counts[key]
+ 
+-        for key in other_calledfuncs.keys():
++        for key in list(other_calledfuncs.keys()):
+             calledfuncs[key] = 1
+ 
+-        for key in other_callers.keys():
++        for key in list(other_callers.keys()):
+             callers[key] = 1
+ 
+     def write_results(self, show_missing=True, summary=False, coverdir=None):
+@@ -245,42 +245,42 @@ class CoverageResults:
+         @param coverdir
+         """
+         if self.calledfuncs:
+-            print
+-            print "functions called:"
+-            calls = self.calledfuncs.keys()
++            print()
++            print("functions called:")
++            calls = list(self.calledfuncs.keys())
+             calls.sort()
+             for filename, modulename, funcname in calls:
+-                print ("filename: %s, modulename: %s, funcname: %s"
+-                       % (filename, modulename, funcname))
++                print(("filename: %s, modulename: %s, funcname: %s"
++                       % (filename, modulename, funcname)))
+ 
+         if self.callers:
+-            print
+-            print "calling relationships:"
+-            calls = self.callers.keys()
++            print()
++            print("calling relationships:")
++            calls = list(self.callers.keys())
+             calls.sort()
+             lastfile = lastcfile = ""
+             for ((pfile, pmod, pfunc), (cfile, cmod, cfunc)) in calls:
+                 if pfile != lastfile:
+-                    print
+-                    print "***", pfile, "***"
++                    print()
++                    print("***", pfile, "***")
+                     lastfile = pfile
+                     lastcfile = ""
+                 if cfile != pfile and lastcfile != cfile:
+-                    print "  -->", cfile
++                    print("  -->", cfile)
+                     lastcfile = cfile
+-                print "    %s.%s -> %s.%s" % (pmod, pfunc, cmod, cfunc)
++                print("    %s.%s -> %s.%s" % (pmod, pfunc, cmod, cfunc))
+ 
+         # turn the counts data ("(filename, lineno) = count") into something
+         # accessible on a per-file basis
+         per_file = {}
+-        for filename, lineno in self.counts.keys():
++        for filename, lineno in list(self.counts.keys()):
+             lines_hit = per_file[filename] = per_file.get(filename, {})
+             lines_hit[lineno] = self.counts[(filename, lineno)]
+ 
+         # accumulate summary info, if needed
+         sums = {}
+ 
+-        for filename, count in per_file.iteritems():
++        for filename, count in per_file.items():
+             # skip some "files" we don't care about...
+             if filename == "<string>":
+                 continue
+@@ -314,29 +314,29 @@ class CoverageResults:
+                 sums[modulename] = n_lines, percent, modulename, filename
+ 
+         if summary and sums:
+-            mods = sums.keys()
++            mods = list(sums.keys())
+             mods.sort()
+-            print "lines   cov%   module   (path)"
++            print("lines   cov%   module   (path)")
+             for m in mods:
+                 n_lines, percent, modulename, filename = sums[m]
+-                print "%5d   %3d%%   %s   (%s)" % sums[m]
++                print("%5d   %3d%%   %s   (%s)" % sums[m])
+ 
+         if self.outfile:
+             # try and store counts and module info into self.outfile
+             try:
+                 pickle.dump((self.counts, self.calledfuncs, self.callers),
+                             open(self.outfile, 'wb'), 1)
+-            except IOError, err:
+-                print >> sys.stderr, "Can't save counts files because %s" % err
++            except IOError as err:
++                print("Can't save counts files because %s" % err, file=sys.stderr)
+ 
+     def write_results_file(self, path, lines, lnotab, lines_hit):
+         """Return a coverage results file in path."""
+ 
+         try:
+             outfile = open(path, "w")
+-        except IOError, err:
+-            print >> sys.stderr, ("trace: Could not open %r for writing: %s"
+-                                  "- skipping" % (path, err))
++        except IOError as err:
++            print(("trace: Could not open %r for writing: %s"
++                                  "- skipping" % (path, err)), file=sys.stderr)
+             return 0, 0
+ 
+         n_lines = 0
+@@ -371,7 +371,7 @@ def find_lines_from_code(code, strs):
+ 
+     #line_increments = [ord(c) for c in code.co_lnotab[1::2]]
+     # XXX Replaced above line with Python 2.2-compatible line (orip)
+-    def odd_indexed_items(seq): return [seq[i] for i in xrange(1, len(seq), 2)]
++    def odd_indexed_items(seq): return [seq[i] for i in range(1, len(seq), 2)]
+     line_increments = [ord(c) for c in odd_indexed_items(code.co_lnotab)]
+ 
+     table_length = len(line_increments)
+@@ -424,9 +424,9 @@ def find_executable_linenos(filename):
+     """Return dict where keys are line numbers in the line number table."""
+     try:
+         prog = open(filename, "rU").read()
+-    except IOError, err:
+-        print >> sys.stderr, ("Not printing coverage data for %r: %s"
+-                              % (filename, err))
++    except IOError as err:
++        print(("Not printing coverage data for %r: %s"
++                              % (filename, err)), file=sys.stderr)
+         return {}
+     code = compile(prog, filename, "exec")
+     strs = find_strings(filename)
+@@ -486,7 +486,7 @@ class Trace:
+             sys.settrace(self.globaltrace)
+             threading.settrace(self.globaltrace)
+         try:
+-            exec cmd in dict, dict
++            exec(cmd, dict, dict)
+         finally:
+             if not self.donothing:
+                 sys.settrace(None)
+@@ -499,7 +499,7 @@ class Trace:
+             sys.settrace(self.globaltrace)
+             threading.settrace(self.globaltrace)
+         try:
+-            exec cmd in globals, locals
++            exec(cmd, globals, locals)
+         finally:
+             if not self.donothing:
+                 sys.settrace(None)
+@@ -598,8 +598,8 @@ class Trace:
+                     ignore_it = self.ignore.names(filename, modulename)
+                     if not ignore_it:
+                         if self.trace:
+-                            print (" --- modulename: %s, funcname: %s"
+-                                   % (modulename, code.co_name))
++                            print((" --- modulename: %s, funcname: %s"
++                                   % (modulename, code.co_name)))
+                         return self.localtrace
+             else:
+                 return None
+@@ -613,8 +613,8 @@ class Trace:
+             self.counts[key] = self.counts.get(key, 0) + 1
+ 
+             bname = os.path.basename(filename)
+-            print "%s(%d): %s" % (bname, lineno,
+-                                  linecache.getline(filename, lineno)),
++            print("%s(%d): %s" % (bname, lineno,
++                                  linecache.getline(filename, lineno)), end=' ')
+         return self.localtrace
+ 
+     def localtrace_trace(self, frame, why, arg):
+@@ -624,8 +624,8 @@ class Trace:
+             lineno = frame.f_lineno
+ 
+             bname = os.path.basename(filename)
+-            print "%s(%d): %s" % (bname, lineno,
+-                                  linecache.getline(filename, lineno)),
++            print("%s(%d): %s" % (bname, lineno,
++                                  linecache.getline(filename, lineno)), end=' ')
+         return self.localtrace
+ 
+     def localtrace_count(self, frame, why, arg):
+@@ -660,7 +660,7 @@ def main(argv=None):
+                                          "coverdir=", "listfuncs",
+                                          "trackcalls"])
+ 
+-    except getopt.error, msg:
++    except getopt.error as msg:
+         sys.stderr.write("%s: %s\n" % (sys.argv[0], msg))
+         sys.stderr.write("Try `%s --help' for more information\n"
+                          % sys.argv[0])
+@@ -780,7 +780,7 @@ def main(argv=None):
+                   outfile=counts_file)
+         try:
+             t.run('execfile(%r)' % (progname,))
+-        except IOError, err:
++        except IOError as err:
+             _err_exit("Cannot run file %r because: %s" % (sys.argv[0], err))
+         except SystemExit:
+             pass
+--- src/testoob/coverage.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/coverage.py
+@@ -16,6 +16,7 @@
+ "Code coverage module"
+ 
+ import os, sys
++from functools import reduce
+ 
+ def supported():
+     "Is coverage supported?"
+@@ -24,7 +25,7 @@ def supported():
+ try:
+     import trace
+ except ImportError:
+-    from compatibility import trace
++    from .compatibility import trace
+ 
+ try:
+     sum
+@@ -41,7 +42,7 @@ except NameError:
+         from sets import Set as set
+     except ImportError:
+         # Python 2.2 compatibility
+-        from compatibility.sets import Set as set
++        from .compatibility.sets import Set as set
+ 
+ def _find_executable_linenos(filename):
+     """
+@@ -50,9 +51,9 @@ def _find_executable_linenos(filename):
+     """
+     try:
+         prog = open(filename, "rU").read()
+-    except IOError, err:
+-        print >> sys.stderr, ("Not printing coverage data for %r: %s"
+-                              % (filename, err))
++    except IOError as err:
++        print(("Not printing coverage data for %r: %s"
++                              % (filename, err)), file=sys.stderr)
+         return {}
+ 
+     # Adding trailing EOL if missing
+@@ -80,7 +81,7 @@ class Coverage:
+         #    lines   - a set of number of executable lines in the file.
+         #    covered - a set of numbers of executed lines in the file.
+         self.coverage = {}
+-        self.ignorepaths = map(os.path.abspath, ignorepaths)
++        self.ignorepaths = list(map(os.path.abspath, ignorepaths))
+         self.modname = trace.modname
+ 
+     def runfunc(self, func, *args, **kwargs):
+@@ -108,7 +109,7 @@ class Coverage:
+         which holds the statistics for all the files together.
+         """
+         statistics = {}
+-        for filename, coverage in self.coverage.items():
++        for filename, coverage in list(self.coverage.items()):
+             statistics[filename] = self._single_file_statistics(coverage)
+         return statistics
+ 
+@@ -129,7 +130,7 @@ class Coverage:
+     def _sum_coverage(self, callable):
+         "Helper method for _total_{lines,covered}"
+         return sum([callable(coverage)
+-                    for coverage in self.coverage.values()])
++                    for coverage in list(self.coverage.values())])
+     def total_lines(self):
+         return self._sum_coverage(lambda coverage: len(coverage["lines"]))
+     def total_lines_covered(self):
+@@ -150,7 +151,7 @@ class Coverage:
+         if not (filename.endswith(".py") or filename.endswith(".pyc")):
+             return False
+             
+-        if not self.coverage.has_key(filename):
++        if filename not in self.coverage:
+             self.coverage[filename] = {
+                 "lines": set(_find_executable_linenos(filename)),
+                 "covered": set()
+--- src/testoob/main.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/main.py
+@@ -25,9 +25,9 @@ except NameError:
+         from sets import Set as set
+     except ImportError:
+         # Python 2.2 compatibility
+-        from compatibility.sets import Set as set
++        from .compatibility.sets import Set as set
+ 
+-import commandline
++from . import commandline
+ import testoob.reporting
+ 
+ def _arg_parser():
+@@ -82,18 +82,18 @@ def _get_suites(suite, defaultTest, test_names, test_l
+ 
+     try:
+         return test_loader.loadTestsFromNames(test_names, __main__)
+-    except AttributeError, e:
++    except AttributeError as e:
+         def testName(exception):
+             import re
+             mo = re.search("has no attribute '([^']+)'", str(e))
+             assert mo is not None
+             return mo.group(1)
+         import sys
+-        print >>sys.stderr, "ERROR: Can't find test case '%s'" % testName(e)
++        print("ERROR: Can't find test case '%s'" % testName(e), file=sys.stderr)
+         sys.exit(1)
+ 
+ def _dirname_from_func(func):
+-    return os.path.dirname(func.func_code.co_filename)
++    return os.path.dirname(func.__code__.co_filename)
+ 
+ def _coverage_ignore_paths():
+     # Ignore coverage from the 'testoob' library (where this file is), and
+@@ -105,11 +105,11 @@ def _coverage_ignore_paths():
+     python_dirname = _dirname_from_func(os.getenv)
+     return (testoob_dirname, python_dirname)
+ 
+-from commandline.parsing import ArgumentsError
++from .commandline.parsing import ArgumentsError
+ 
+ def _main(suite, defaultTest, options, test_names, parser):
+ 
+-    from commandline.parsing import require_posix, require_modules
++    from .commandline.parsing import require_posix, require_modules
+ 
+     def conflicting_options(*option_names):
+         given_options = [
+@@ -146,10 +146,10 @@ def _main(suite, defaultTest, options, test_names, par
+ 
+     def get_test_loader():
+         if options.test_method_regex is not None:
+-            from test_loaders import RegexLoader
++            from .test_loaders import RegexLoader
+             return RegexLoader(options.test_method_regex)
+         if options.test_method_glob is not None:
+-            from test_loaders import GlobLoader
++            from .test_loaders import GlobLoader
+             return GlobLoader(options.test_method_glob)
+         return None # use the default
+ 
+@@ -157,8 +157,8 @@ def _main(suite, defaultTest, options, test_names, par
+         suite, defaultTest, test_names, test_loader=get_test_loader())
+     
+     if options.coverage is not None:
+-        from running import fixture_decorators
+-        from coverage import Coverage
++        from .running import fixture_decorators
++        from .coverage import Coverage
+         cov = Coverage(_coverage_ignore_paths())
+         kwargs["fixture_decorators"].append(
+                 fixture_decorators.get_coverage_fixture(cov))
+@@ -166,17 +166,17 @@ def _main(suite, defaultTest, options, test_names, par
+             testoob.reporting.options.coverage = (options.coverage, cov)
+     
+     if options.capture is not None:
+-        from running import fixture_decorators
++        from .running import fixture_decorators
+         kwargs["fixture_decorators"].append(
+                 fixture_decorators.get_capture_fixture())
+ 
+     if options.vassert:
+-        import asserter
++        from . import asserter
+         asserter.register_asserter()
+     
+     if options.timeout is not None:
+         require_posix("--timeout")
+-        from running import fixture_decorators
++        from .running import fixture_decorators
+         kwargs["fixture_decorators"].append(
+             fixture_decorators.get_alarmed_fixture(options.timeout))
+         def alarm(sig, stack_frame):
+@@ -185,10 +185,10 @@ def _main(suite, defaultTest, options, test_names, par
+         signal.signal(signal.SIGALRM, alarm)
+ 
+     if options.timeout_with_threads is not None:
+-        import thread
++        import _thread
+         if not hasattr(thread, "interrupt_main"):
+             raise ArgumentsError("Older versions of Python don't support thread.interrupt_main")
+-        from running import fixture_decorators
++        from .running import fixture_decorators
+         kwargs["fixture_decorators"].append(
+             fixture_decorators.get_thread_timingout_fixture(options.timeout_with_threads))
+ 
+@@ -204,15 +204,15 @@ def _main(suite, defaultTest, options, test_names, par
+                 alarm(0) # Don't timeout on debug.
+             assert flavour in ("error", "failure")
+             real_add(test, err_info)
+-            print "\nDebugging for %s in test: %s" % (
+-                    flavour, reporter.getDescription(test))
++            print("\nDebugging for %s in test: %s" % (
++                    flavour, reporter.getDescription(test)))
+             if options.rerun_on_fail is not None:
+                 #test.funcname will be our current test function
+                 #use that to get the function object for our method
+                 #and call it manually. WD-rpw 10-31-06
+                 methodName = test.funcname()
+                 method = getattr( test.fixture,  methodName)
+-                print "rerunning test for failed %s()" % (methodName)
++                print("rerunning test for failed %s()" % (methodName))
+                 try:
+                     pdb.runcall( method )
+                 except:
+@@ -223,7 +223,7 @@ def _main(suite, defaultTest, options, test_names, par
+         kwargs["runDebug"] = runDebug
+ 
+     if options.threads is not None:
+-        from running import ThreadedRunner
++        from .running import ThreadedRunner
+         kwargs["runner"] = ThreadedRunner(num_threads = options.threads)
+         kwargs["threads"] = True
+ 
+@@ -234,7 +234,7 @@ def _main(suite, defaultTest, options, test_names, par
+ 
+     def text_run_decorator():
+         if options.profiler is not None:
+-            import profiling
++            from . import profiling
+             return profiling.profiling_decorator(
+                 options.profiler, options.profdata)
+ 
+@@ -242,7 +242,7 @@ def _main(suite, defaultTest, options, test_names, par
+         return lambda x: x
+ 
+     # apply the decorator to running.text_run
+-    import running
++    from . import running
+     return text_run_decorator()(running.text_run)(**kwargs)
+ 
+ def kwarg_to_option(arg, value):
+@@ -257,9 +257,9 @@ def _config_file_args():
+     if not os.path.exists(filename):
+         return [] # No config file
+ 
+-    import ConfigParser
++    import configparser
+     try:
+-        config = ConfigParser.ConfigParser()
++        config = configparser.ConfigParser()
+         config.read(filename)
+ 
+         result = []
+@@ -272,7 +272,7 @@ def _config_file_args():
+                 result.append("--%s=%s" % (option, value))
+ 
+         return result
+-    except ConfigParser.Error, e:
++    except configparser.Error as e:
+         import warnings
+         warnings.warn("Error reading config file: %s" % e)
+         return []
+@@ -286,13 +286,13 @@ def _parse_args():
+ 
+ def main(suite=None, defaultTest=None, **kwargs):
+     import sys
+-    for arg, value in kwargs.items():
++    for arg, value in list(kwargs.items()):
+         sys.argv.append(kwarg_to_option(arg, value))
+     
+     parser, options, test_names = _parse_args()
+ 
+     try:
+         sys.exit(not _main(suite, defaultTest, options, test_names, parser))
+-    except ArgumentsError, e:
++    except ArgumentsError as e:
+         parser.error(str(e))
+ 
+--- src/testoob/profiling.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/profiling.py
+@@ -28,7 +28,7 @@ def profiling_decorator(profiler_name, filename):
+     def decorator(callable):
+         def wrapper(*args, **kwargs):
+             helper = _helper_class(profiler_name)(filename, callable, *args, **kwargs)
+-            print "Profiling information saved to file '%s'" % helper.filename
++            print("Profiling information saved to file '%s'" % helper.filename)
+             helper.run()
+             helper.print_stats(MAX_PROFILING_LINES_TO_PRINT)
+ 
+--- src/testoob/reporting/base.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/reporting/base.py
+@@ -123,7 +123,7 @@ class BaseReporter(IReporter):
+     def startTest(self, test_info):
+         self.testsRun += 1
+         self.asserts[test_info] = []
+-	self.start_times[test_info] = _time.time()
++        self.start_times[test_info] = _time.time()
+ 
+     def stopTest(self, test_info):
+         # TODO: In Python >= 2.3 can use dict.pop
+--- src/testoob/reporting/xslt.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/reporting/xslt.py
+@@ -15,7 +15,7 @@
+ 
+ "Apply an XSL transformation to XMLReporter's xml output"
+ 
+-from xml import XMLReporter
++from .xml import XMLReporter
+ import time
+ class XSLTReporter(XMLReporter):
+     "This reporter uses an XSL transformation scheme to convert an XML output"
+@@ -65,7 +65,7 @@ class XSLTReporter(XMLReporter):
+     def done(self):
+         XMLReporter.done(self)
+         xslt_applier = self._create_xslt_applier()(self.converter)
+-        result = xslt_applier.apply(self.get_xml(), params = {u'date': unicode(time.asctime())})
++        result = xslt_applier.apply(self.get_xml(), params = {'date': str(time.asctime())})
+         open(self.filename, "wt").write(result)
+ 
+     def _create_xslt_applier(self):
+@@ -80,5 +80,5 @@ class XSLTReporter(XMLReporter):
+             return XSLTReporter.WinCOMXSLTApplier
+         except:
+             pass
+-        raise Exception,"Unable to find supported XSLT library (4Suite, MSXML)"
++        raise Exception("Unable to find supported XSLT library (4Suite, MSXML)")
+ 
+--- src/testoob/run_cmd.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/run_cmd.py
+@@ -20,7 +20,7 @@ class SubprocessCommandRunner(object):
+             from subprocess import Popen, PIPE
+         except ImportError:
+             # Python 2.2 and 2.3 compatibility
+-            from compatibility.subprocess import Popen, PIPE
++            from .compatibility.subprocess import Popen, PIPE
+         self._Popen = Popen
+         self._PIPE = PIPE
+ 
+@@ -49,19 +49,19 @@ class IronPythonCommandRunner(object):
+             p.StandardInput.Write(input)
+         p.WaitForExit() 
+         stdout = p.StandardOutput.ReadToEnd()
+-        stderr = p.StandardError.ReadToEnd()
++        stderr = p.Exception.ReadToEnd()
+         return stdout, stderr, p.ExitCode
+ 
+ def _choose_run_command():
+     errors = []
+     try:
+         return SubprocessCommandRunner().run
+-    except ImportError, e:
++    except ImportError as e:
+         errors.append(e)
+ 
+     try:
+         return IronPythonCommandRunner().run
+-    except ImportError, e:
++    except ImportError as e:
+         errors.append(e)
+ 
+     raise RuntimeError("couldn't find a working command runner", errors)
+--- src/testoob/running/convenience.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/running/convenience.py
+@@ -15,8 +15,8 @@
+ 
+ "convenience functions for running tests"
+ 
+-from __future__ import generators
+ 
++
+ import time
+ 
+ ###############################################################################
+@@ -38,7 +38,7 @@ class TestLoop(object):
+             suites, runner, interval=None, stop_on_fail=False,
+             extraction_decorators=None, fixture_decorators=None):
+ 
+-        from fixture_decorators import BaseFixture
++        from .fixture_decorators import BaseFixture
+         self.suites = suites
+         self.runner = runner
+         self.interval = interval
+@@ -73,7 +73,7 @@ class TestLoop(object):
+         self.last_result = self.runner.run(decorated_fixture)
+ 
+     def _handle_interrupt(self, fixture):
+-        from fixture_decorators import get_interrupterd_fixture
++        from .fixture_decorators import get_interrupterd_fixture
+         if hasattr(self, "last_interrupt") and (time.time() - self.last_interrupt < 1):
+             # Two interrupts in less than a second, cause all
+             # future tests to skip
+@@ -91,7 +91,7 @@ class TestLoop(object):
+                 self._run_fixture(fixture)
+                 if self.stop_on_fail and not self.last_result:
+                     return
+-            except KeyboardInterrupt, e:
++            except KeyboardInterrupt as e:
+                 self._handle_interrupt(fixture)
+ 
+     def run(self):
+@@ -140,7 +140,7 @@ def _create_reporter_proxy(reporters, runDebug, thread
+ def run_suites(suites, reporters, runner=None, runDebug=None, threads=None, **kwargs):
+     "Run the test suites"
+     if runner is None:
+-        from simplerunner import SimpleRunner
++        from .simplerunner import SimpleRunner
+         runner = SimpleRunner()
+     runner.reporter = _create_reporter_proxy(reporters, runDebug, threads=threads)
+     
+--- src/testoob/running/listingrunner.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/running/listingrunner.py
+@@ -15,7 +15,7 @@
+ 
+ "Runner that lists tests that would be run"
+ 
+-from baserunner import BaseRunner
++from .baserunner import BaseRunner
+ 
+ class ListingRunner(BaseRunner):
+     """Just list the test names, don't run them.
+@@ -30,9 +30,9 @@ class ListingRunner(BaseRunner):
+ 
+     def done(self):
+         if self.output_format == None:
+-            print self.history.get_string()
++            print(self.history.get_string())
+         elif self.output_format.lower() == "csv":
+-            print self.history.get_csv()
++            print(self.history.get_csv())
+ 
+ class _TestHistory:
+     def __init__(self):
+@@ -49,10 +49,10 @@ class _TestHistory:
+         """Show all test methods.
+         """
+         result = []
+-        for (module_name, module_info) in self.modules.items():
++        for (module_name, module_info) in list(self.modules.items()):
+             result.append("Module: %s (%s)" % \
+                     (module_name, module_info["filename"]))
+-            for (class_name, functions) in module_info["classes"].items():
++            for (class_name, functions) in list(module_info["classes"].items()):
+                 result.append("\tClass: %s (%d test functions)" %\
+                       (class_name, len(functions)))
+                 for func in functions:
+@@ -66,8 +66,8 @@ class _TestHistory:
+         #FIXXXME may be i should add the path that needs to be in sys.path 
+         # in order to import the module....
+         result = ["file,module,class,method,docstring"]
+-        for (module_name, module_info) in self.modules.items():
+-            for (class_name, functions) in module_info["classes"].items():
++        for (module_name, module_info) in list(self.modules.items()):
++            for (class_name, functions) in list(module_info["classes"].items()):
+                 for func in functions:
+                     data = [module_info["filename"],
+                             module_name,
+@@ -93,7 +93,7 @@ class _TestHistory:
+ 
+     def _num_functions(self):
+         result = 0
+-        for mod_info in self.modules.values():
+-            for functions in mod_info["classes"].values():
++        for mod_info in list(self.modules.values()):
++            for functions in list(mod_info["classes"].values()):
+                 result += len(functions)
+         return result
+--- src/testoob/testing.py.orig	2022-03-18 18:45:28 UTC
++++ src/testoob/testing.py
+@@ -47,7 +47,7 @@ def assert_true(condition, msg=None):
+ def assert_equals(expected, actual, msg=None, filter=None):
+     "works like unittest.TestCase.assertEquals"
+     if filter is not None:
+-        actual = filter(actual)
++        actual = list(filter(actual))
+ 
+     if expected == actual: return
+     if msg is None:
+@@ -58,7 +58,7 @@ def assert_matches(regex, actual, msg=None, filter=Non
+     "fail unless regex matches actual (using re.search)"
+     import re
+     if filter is not None:
+-        actual = filter(actual)
++        actual = list(filter(actual))
+ 
+     if re.search(regex, actual, re.DOTALL) is not None: return
+ 
+@@ -72,7 +72,7 @@ def _call_signature(callable, *args, **kwargs):
+ 
+     From recipe http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/307970
+     """
+-    argv = [repr(arg) for arg in args] + ["%s=%r" % x for x in kwargs.items()]
++    argv = [repr(arg) for arg in args] + ["%s=%r" % x for x in list(kwargs.items())]
+     return "%s(%s)" % (callable.__name__, ", ".join(argv))
+ 
+ def assert_raises(exception_class, callable, *args, **kwargs):
+@@ -94,7 +94,7 @@ def assert_raises(exception_class, callable, *args, **
+ 
+     try:
+         callable(*args, **kwargs)
+-    except exception_class, e:
++    except exception_class as e:
+         if expected_args is not None:
+             assert_equals(
+                 expected_args, e.args,
+@@ -131,7 +131,7 @@ def command_line(
+         used as the skip reason.
+     """
+ 
+-    from run_cmd import run_command
++    from .run_cmd import run_command
+     # run command
+     output, error, rc = run_command(args, input)
+ 
+@@ -154,7 +154,7 @@ def command_line(
+             assert_equals(expected_rc, rc)
+         if rc_predicate is not None:
+             assert_true(rc_predicate(rc))
+-    except TestoobAssertionError, e:
++    except TestoobAssertionError as e:
+         assert e.long_message is None
+         def annotated_err_string(name, value):
+             if not value: return "== %s: NONE" % name
