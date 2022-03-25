@@ -1,0 +1,165 @@
+--- Products/SecureMailHost/SecureMailHost.py.orig	2009-09-05 08:33:50 UTC
++++ Products/SecureMailHost/SecureMailHost.py
+@@ -16,7 +16,7 @@
+ $Id: SecureMailHost.py 96773 2009-09-05 14:33:50Z hannosch $
+ """
+ 
+-from config import BAD_HEADERS
++from .config import BAD_HEADERS
+ from copy import deepcopy
+ 
+ import email.Message
+@@ -201,10 +201,10 @@ class SecureMailBase(MailBase):
+             if addr:
+                 result = self.validateEmailAddresses(addr)
+                 if not result:
+-                    raise MailHostError, 'Invalid email address: %s' % addr
++                    raise MailHostError('Invalid email address: %s' % addr)
+         result = self.validateSingleEmailAddress(mfrom)
+         if not result:
+-            raise MailHostError, 'Invalid email address: %s' % mfrom
++            raise MailHostError('Invalid email address: %s' % mfrom)
+ 
+         # create message
+         if isinstance(message, email.Message.Message):
+@@ -212,7 +212,7 @@ class SecureMailBase(MailBase):
+             # change the message
+             msg = deepcopy(message)
+         else:
+-            if isinstance(message, unicode):
++            if isinstance(message, str):
+                 message = message.encode(charset)
+             msg = email.MIMEText.MIMEText(message, subtype, charset)
+ 
+@@ -228,7 +228,7 @@ class SecureMailBase(MailBase):
+ 
+         for bad in BAD_HEADERS:
+             if bad in kwargs:
+-                raise MailHostError, 'Header %s is forbidden' % bad
++                raise MailHostError('Header %s is forbidden' % bad)
+         self.setHeaderOf(msg, **kwargs)
+ 
+         # we have to pass *all* recipient email addresses to the
+@@ -251,7 +251,7 @@ class SecureMailBase(MailBase):
+ 
+         All occurences of the key are deleted first!
+         """
+-        for key, val in kwargs.items():
++        for key, val in list(kwargs.items()):
+             del msg[key] # save - email.Message won't raise a KeyError
+             if skipEmpty and not val:
+                 continue
+@@ -293,7 +293,7 @@ class SecureMailBase(MailBase):
+         # stage 2: get a list of address strings using email.formataddr
+         addresses = []
+         for addr in addr_list:
+-            if isinstance(addr, basestring):
++            if isinstance(addr, str):
+                 addresses.append(email.Utils.formataddr(('', addr)))
+             else:
+                 if len(addr) != 2:
+@@ -311,7 +311,7 @@ class SecureMailBase(MailBase):
+         """Lower-level function to validate a single normalized email
+         address, see validateEmailAddress
+         """
+-        if not isinstance(address, basestring):
++        if not isinstance(address, str):
+             return False
+ 
+         sub = EMAIL_CUTOFF_RE.match(address);
+@@ -329,7 +329,7 @@ class SecureMailBase(MailBase):
+     def validateSingleEmailAddress(self, address):
+         """Validate a single email address, see also validateEmailAddresses
+         """
+-        if not isinstance(address, basestring):
++        if not isinstance(address, str):
+             return False
+ 
+         sub = EMAIL_CUTOFF_RE.match(address);
+@@ -353,7 +353,7 @@ class SecureMailBase(MailBase):
+         """Validate a list of possibly several email addresses, see
+         also validateSingleEmailAddress
+         """
+-        if not isinstance(addresses, basestring):
++        if not isinstance(addresses, str):
+             return False
+ 
+         sub = EMAIL_CUTOFF_RE.match(addresses);
+--- Products/SecureMailHost/tests/common.py.orig	2004-07-18 15:21:52 UTC
++++ Products/SecureMailHost/tests/common.py
+@@ -2,12 +2,6 @@ from Testing import ZopeTestCase
+ 
+ from Products.SecureMailHost.SecureMailHost import SecureMailBase
+ 
+-try:
+-    True
+-except NameError:
+-    True=1
+-    False=0
+-
+ ZopeTestCase.installProduct('MailHost', quiet=1)
+ ZopeTestCase.installProduct('PageTemplates', quiet=1)
+ ZopeTestCase.installProduct('PythonScripts', quiet=1)
+--- Products/SecureMailHost/tests/framework.py.orig	2004-05-16 01:36:28 UTC
++++ Products/SecureMailHost/tests/framework.py
+@@ -52,7 +52,7 @@ if __INSTANCE_HOME.endswith(os.sep):
+ 
+ # Find and import the Testing package
+ #
+-if not sys.modules.has_key('Testing'):
++if 'Testing' not in sys.modules:
+     p0 = sys.path[0]
+     if p0 and __name__ == '__main__':
+         os.chdir(p0)
+@@ -66,12 +66,12 @@ if not sys.modules.has_key('Testing'):
+             break
+         p, d = s and ('','') or os.path.split(p)
+     else:
+-        print 'Unable to locate Testing package.',
+-        print 'You might need to set SOFTWARE_HOME.'
++        print('Unable to locate Testing package.', end=' ')
++        print('You might need to set SOFTWARE_HOME.')
+         sys.exit(1)
+ 
+ import Testing, unittest
+-execfile(os.path.join(os.path.dirname(Testing.__file__), 'common.py'))
++exec(compile(open(os.path.join(os.path.dirname(Testing.__file__), 'common.py'), "rb").read(), os.path.join(os.path.dirname(Testing.__file__), 'common.py'), 'exec'))
+ 
+ # Include ZopeTestCase support
+ #
+@@ -80,8 +80,8 @@ if 1:   # Create a new scope
+     p = os.path.join(os.path.dirname(Testing.__file__), 'ZopeTestCase')
+ 
+     if not os.path.isdir(p):
+-        print 'Unable to locate ZopeTestCase package.',
+-        print 'You might need to install ZopeTestCase.'
++        print('Unable to locate ZopeTestCase package.', end=' ')
++        print('You might need to install ZopeTestCase.')
+         sys.exit(1)
+ 
+     ztc_common = 'ztc_common.py'
+@@ -89,19 +89,19 @@ if 1:   # Create a new scope
+ 
+     f = 0
+     if os.path.exists(ztc_common_global):
+-        execfile(ztc_common_global)
++        exec(compile(open(ztc_common_global, "rb").read(), ztc_common_global, 'exec'))
+         f = 1
+     if os.path.exists(ztc_common):
+-        execfile(ztc_common)
++        exec(compile(open(ztc_common, "rb").read(), ztc_common, 'exec'))
+         f = 1
+ 
+     if not f:
+-        print 'Unable to locate %s.' % ztc_common
++        print('Unable to locate %s.' % ztc_common)
+         sys.exit(1)
+ 
+ # Debug
+ #
+-print 'SOFTWARE_HOME: %s' % os.environ.get('SOFTWARE_HOME', 'Not set')
+-print 'INSTANCE_HOME: %s' % os.environ.get('INSTANCE_HOME', 'Not set')
++print('SOFTWARE_HOME: %s' % os.environ.get('SOFTWARE_HOME', 'Not set'))
++print('INSTANCE_HOME: %s' % os.environ.get('INSTANCE_HOME', 'Not set'))
+ sys.stdout.flush()
+ 
