@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	que
-PORTVERSION=	1.0.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +11,14 @@ COMMENT=	Job queue that uses PostgreSQL advisory locks for speed and reliability
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gem
+USES=		gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/que
+
+SHEBANG_FILES=	auto/* \
+		scripts/*
 
 .include <bsd.port.mk>
