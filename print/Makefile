@@ -188,6 +188,7 @@
     SUBDIR += py-preppy
     SUBDIR += py-psautohint
     SUBDIR += py-pycups
+    SUBDIR += py-pypdf3
     SUBDIR += py-python-ly
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
