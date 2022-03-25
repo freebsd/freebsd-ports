@@ -16,4 +16,7 @@ USES=		python:3.6+,run
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
+post-patch:
+	@${RM} ${WRKSRC}/test/badsyntax_*.py
+
 .include <bsd.port.mk>
