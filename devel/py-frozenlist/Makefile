@@ -11,7 +11,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gettext-runtime python:3.7+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython distutils
+
+pre-configure:
+	@cd ${WRKSRC} && ${RM} frozenlist/_frozenlist.c && cython-${PYTHON_VER} -3 -I frozenlist -o frozenlist/_frozenlist.c frozenlist/_frozenlist.pyx
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
