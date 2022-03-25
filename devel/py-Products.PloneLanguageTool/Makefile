@@ -1,6 +1,6 @@
 PORTNAME=	Products.PloneLanguageTool
 PORTVERSION=	3.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +14,8 @@ LICENSE=	GPLv2
 NO_ARCH=	yes
 USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
+
+post-patch:
+	@${RM} ${WRKSRC}/Products/PloneLanguageTool/skins/LanguageTool/isTranslatable.py
 
 .include <bsd.port.mk>
