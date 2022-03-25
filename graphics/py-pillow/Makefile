@@ -1,10 +1,11 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	pillow
-PORTVERSION=	8.2.0
-PORTREVISION=	1
+PORTVERSION=	8.4.0
 CATEGORIES=	graphics python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Pillow-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fork of the Python Imaging Library (PIL)
@@ -16,13 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-# Python 3.5+
-USES=		cpe python:3.5+
-USE_GITHUB=	yes
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
-
-GH_ACCOUNT=	python-${PORTNAME}
-GH_PROJECT=	${PORTNAME:C/p/P/}
 
 CPE_VENDOR=	python
 
