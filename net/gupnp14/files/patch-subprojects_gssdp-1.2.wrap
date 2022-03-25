@@ -1,0 +1,12 @@
+https://gitlab.gnome.org/GNOME/gupnp/-/merge_requests/33
+
+--- subprojects/gssdp-1.2.wrap.orig	2022-11-09 11:25:35 UTC
++++ subprojects/gssdp-1.2.wrap
+@@ -3,6 +3,6 @@ depth = 1
+ revision = gssdp-1.4
+ depth = 1
+  
+-[provides]
++[provide]
+ dependency_name = gssdp-1.2
+ 
