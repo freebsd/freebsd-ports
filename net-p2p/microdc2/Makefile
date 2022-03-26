@@ -2,7 +2,7 @@
 
 PORTNAME=	microdc2
 PORTVERSION=	0.15.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://corsair626.no-ip.org/microdc/
 

@@ -1,6 +1,6 @@
 PORTNAME=	guile-gnome-platform
 DISTVERSION=	2.16.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNU/guile-gnome/${PORTNAME}
 

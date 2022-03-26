@@ -2,7 +2,7 @@
 
 PORTNAME=	diffmark
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mangrove.cz/diffmark/ \
 		http://penguin.cz/~vbarta/diffmark/

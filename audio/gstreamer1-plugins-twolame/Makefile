@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	GStreamer High-quality free MP2 encoder plugin

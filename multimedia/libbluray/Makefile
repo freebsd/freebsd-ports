@@ -2,6 +2,7 @@
 
 PORTNAME=	libbluray
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/

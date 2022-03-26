@@ -2,6 +2,7 @@
 
 PORTNAME=	libsbml
 PORTVERSION=	5.19.0
+PORTREVISION=	1
 CATEGORIES=	biology devel
 MASTER_SITES=	SF/sbml/libsbml/${PORTVERSION}/stable
 DISTNAME=	libSBML-${PORTVERSION}-core-src

@@ -2,6 +2,7 @@
 
 PORTNAME=	cinnamon-screensaver
 PORTVERSION=	4.8.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 

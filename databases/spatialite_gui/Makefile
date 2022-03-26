@@ -2,6 +2,7 @@
 
 PORTNAME=	spatialite_gui
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-beta1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/

@@ -2,6 +2,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org

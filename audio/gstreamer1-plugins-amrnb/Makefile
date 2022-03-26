@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	GStreamer OpenCore based Adaptive Multi-Rate Narrow-Band plugin

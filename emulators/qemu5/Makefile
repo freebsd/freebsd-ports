@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 DISTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	5
 MASTER_SITES=	https://download.qemu.org/

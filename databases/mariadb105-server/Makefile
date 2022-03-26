@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.5.15
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
 		http://gd.tuwien.ac.at/db/${SITESDIR}/ \

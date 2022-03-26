@@ -2,6 +2,7 @@
 
 PORTNAME=	libxml-ruby
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

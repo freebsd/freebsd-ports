@@ -1,4 +1,4 @@
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer OpenExr codec plugin

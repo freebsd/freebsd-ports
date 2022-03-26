@@ -2,6 +2,7 @@
 
 PORTNAME=	bulk_extractor
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nobutaka@FreeBSD.org

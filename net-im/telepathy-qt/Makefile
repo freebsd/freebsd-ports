@@ -2,7 +2,7 @@
 
 PORTNAME=	telepathy-qt
 DISTVERSION=	0.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMESUFFIX=	5

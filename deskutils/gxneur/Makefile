@@ -2,6 +2,7 @@
 
 PORTNAME=	gxneur
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=.orig
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/

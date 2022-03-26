@@ -1,7 +1,7 @@
 PORTNAME=	copperspice-examples
 DISTVERSIONPREFIX=	ks-
 DISTVERSION=	1.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	https://download.copperspice.com/kitchensink/source/
 DISTNAME=	KitchenSink-${DISTVERSION}

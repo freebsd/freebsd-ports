@@ -2,6 +2,7 @@
 
 PORTNAME=	ruby-xslt
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

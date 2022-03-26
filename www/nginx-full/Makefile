@@ -1,7 +1,7 @@
 # Created by: Bartek Rutkowski <robak@FreeBSD.org>
 
 PORTNAME=	nginx
-PORTREVISION=	7
+PORTREVISION=	8
 PKGNAMESUFFIX=	-full
 
 MAINTAINER=	joneum@FreeBSD.org

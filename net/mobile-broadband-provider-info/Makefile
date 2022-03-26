@@ -1,5 +1,6 @@
 PORTNAME=	mobile-broadband-provider-info
 PORTVERSION=	20210805
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 

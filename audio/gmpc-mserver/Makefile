@@ -2,7 +2,7 @@
 
 PORTNAME=	gmpc-mserver
 PORTVERSION=	0.20.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	ssddiff
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		http://ftp.is.co.za/FreeBSD/ports/distfiles/ \

@@ -1,5 +1,6 @@
 PORTNAME=		sane-airscan
 DISTVERSION=		0.99.26
+PORTREVISION=	1
 CATEGORIES=		graphics
 
 MAINTAINER=		henry.hu.sh@gmail.com

@@ -1,6 +1,6 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Poppler's xpdf-workalike command line utilities # '
 

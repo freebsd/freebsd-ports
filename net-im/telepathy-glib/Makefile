@@ -3,7 +3,7 @@
 
 PORTNAME=	telepathy-glib
 PORTVERSION=	0.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	plank
 PORTVERSION=	0.11.89
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 

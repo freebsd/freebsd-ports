@@ -2,6 +2,7 @@
 
 PORTNAME=	istatserver
 PORTVERSION=	3.02
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/bjango/files/istatserverlinux/
 

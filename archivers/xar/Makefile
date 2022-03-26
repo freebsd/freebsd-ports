@@ -2,6 +2,7 @@
 
 PORTNAME=	xar
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/downloads/mackyle/xar/ \
 		GENTOO

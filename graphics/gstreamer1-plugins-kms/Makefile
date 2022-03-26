@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer video sink via KMS plugin

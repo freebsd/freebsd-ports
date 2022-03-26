@@ -1,5 +1,6 @@
 PORTNAME=	bzrtp
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.linphone.org/releases/sources/bzrtp/
 

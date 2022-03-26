@@ -1,6 +1,6 @@
 PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/lingoteach/OldFiles
 

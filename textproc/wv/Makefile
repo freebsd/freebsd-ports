@@ -2,7 +2,7 @@
 
 PORTNAME=	wv
 PORTVERSION=	1.2.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 

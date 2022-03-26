@@ -1,6 +1,6 @@
 PORTNAME=	gobby
 PORTVERSION=	0.4.13
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 

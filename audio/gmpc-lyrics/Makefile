@@ -2,7 +2,7 @@
 
 PORTNAME=	gmpc-lyrics
 PORTVERSION=	11.8.16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 

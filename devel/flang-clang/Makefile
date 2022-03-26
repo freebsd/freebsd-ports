@@ -2,6 +2,7 @@
 
 PORTNAME=	flang-clang
 DISTVERSION=	7.0-g20191020
+PORTREVISION=	1
 CATEGORIES=	devel lang
 
 MAINTAINER=	jmd@FreeBSD.org

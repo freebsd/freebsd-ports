@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-photos
 DISTVERSION=	42.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

@@ -2,7 +2,7 @@
 
 PORTNAME=	lttng-tools
 PORTVERSION=	2.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	telepathy-farstream
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

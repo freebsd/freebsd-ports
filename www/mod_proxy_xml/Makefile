@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_proxy_xml
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/svn/apache/filters/xmlns/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

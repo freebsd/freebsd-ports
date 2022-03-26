@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer overlay renderer plugin based on cairo

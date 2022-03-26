@@ -2,7 +2,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	2.12.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/gtk-sharp212/
 PKGNAMESUFFIX=	20

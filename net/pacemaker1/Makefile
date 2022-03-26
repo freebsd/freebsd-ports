@@ -1,7 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTVERSION=		1.1.24
-PORTREVISION=		2
+PORTREVISION=		3
 PKGNAMESUFFIX=		1
 
 .include "${.CURDIR}/Makefile.common"

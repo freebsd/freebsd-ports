@@ -2,6 +2,7 @@
 
 PORTNAME=	solr
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	gaod@hychen.org

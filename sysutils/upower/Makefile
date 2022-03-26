@@ -2,6 +2,7 @@
 
 PORTNAME=	upower
 PORTVERSION=	0.99.13
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.freedesktop.org/upower/upower/uploads/177df5b9f9b76f25a2ad9da41aa0c1fa/
 

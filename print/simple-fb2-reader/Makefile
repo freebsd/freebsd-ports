@@ -2,6 +2,7 @@
 
 PORTNAME=	simple-fb2-reader
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	danfe@FreeBSD.org

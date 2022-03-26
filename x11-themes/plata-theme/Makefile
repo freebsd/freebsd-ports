@@ -1,5 +1,6 @@
 PORTNAME=	plata-theme
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org

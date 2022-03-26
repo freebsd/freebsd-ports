@@ -1,5 +1,6 @@
 PORTNAME=	sysctlview
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com

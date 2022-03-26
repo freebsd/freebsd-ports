@@ -2,6 +2,7 @@
 
 PORTNAME=	hexchat
 DISTVERSION=	2.16.1
+PORTREVISION=	1
 CATEGORIES=	irc gnome
 MASTER_SITES=	https://dl.hexchat.net/hexchat/
 

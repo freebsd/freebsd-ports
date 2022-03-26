@@ -2,6 +2,7 @@
 
 PORTNAME=	tidy-html5
 PORTVERSION=	5.8.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org

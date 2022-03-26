@@ -2,7 +2,7 @@
 
 PORTNAME=	nitrogen
 DISTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/l3ib/nitrogen/releases/download/${DISTVERSION}/
 

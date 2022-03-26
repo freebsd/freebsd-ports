@@ -2,6 +2,7 @@
 
 PORTNAME=	mate-control-center
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

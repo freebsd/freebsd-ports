@@ -2,6 +2,7 @@
 
 PORTNAME=	libvirt-glib
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 

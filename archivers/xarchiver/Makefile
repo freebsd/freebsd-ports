@@ -2,6 +2,7 @@
 
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.4.17
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	ports@FreeBSD.org
