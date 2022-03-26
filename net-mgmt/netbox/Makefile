@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.9
+DISTVERSION=	3.1.10
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj32-djangorestframework (in conjunction with www/py-dj32-drf-yasg)
 #
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-include>=0.6.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.2.5<9:textproc/py-mkdocs-material@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.2.7<9:textproc/py-mkdocs-material@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.11<3.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-cors-headers>=3.11.0<4:www/py-dj32-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-debug-toolbar>=3.2.4<4:www/py-dj32-django-debug-toolbar@${PY_FLAVOR} \
@@ -41,17 +41,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.11<3.3:www/py-django32@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}dj32-graphene-django>=2.15.0<3:devel/py-dj32-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.1<4:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.4<3.5:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.6<3.5:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.8.0<1:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.9.2<3:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-app-django>=5.0.0<6:www/py-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.1.0<5:security/py-social-auth-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.1<2:graphics/py-svgwrite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.2<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.2.0<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2021.5:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1<7:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.9.0<21:www/py-gunicorn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=20.1.0<21:www/py-gunicorn@${PY_FLAVOR}
 
 USES=		cpe pgsql:10+ python:3.7+
 CPE_VENDOR=	netbox_project

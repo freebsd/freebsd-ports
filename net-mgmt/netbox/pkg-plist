@@ -113,6 +113,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/models/ipam/aggregate.md
 %%PORTDOCS%%%%DOCSDIR%%/models/ipam/asn.md
 %%PORTDOCS%%%%DOCSDIR%%/models/ipam/fhrpgroup.md
+%%PORTDOCS%%%%DOCSDIR%%/models/ipam/fhrpgroupassignment.md
 %%PORTDOCS%%%%DOCSDIR%%/models/ipam/ipaddress.md
 %%PORTDOCS%%%%DOCSDIR%%/models/ipam/iprange.md
 %%PORTDOCS%%%%DOCSDIR%%/models/ipam/prefix.md
@@ -529,8 +530,8 @@
 %%DATADIR%%/project-static/docs/administration/permissions/index.html
 %%DATADIR%%/project-static/docs/administration/replicating-netbox/index.html
 %%DATADIR%%/project-static/docs/assets/images/favicon.png
-%%DATADIR%%/project-static/docs/assets/javascripts/bundle.467223ff.min.js
-%%DATADIR%%/project-static/docs/assets/javascripts/bundle.467223ff.min.js.map
+%%DATADIR%%/project-static/docs/assets/javascripts/bundle.e87a5f81.min.js
+%%DATADIR%%/project-static/docs/assets/javascripts/bundle.e87a5f81.min.js.map
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.ar.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.da.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.de.min.js
@@ -557,10 +558,10 @@
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/min/lunr.zh.min.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/tinyseg.js
 %%DATADIR%%/project-static/docs/assets/javascripts/lunr/wordcut.js
-%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.bd0b6b67.min.js
-%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.bd0b6b67.min.js.map
-%%DATADIR%%/project-static/docs/assets/stylesheets/main.2d9f7617.min.css
-%%DATADIR%%/project-static/docs/assets/stylesheets/main.2d9f7617.min.css.map
+%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.5e67fbfe.min.js
+%%DATADIR%%/project-static/docs/assets/javascripts/workers/search.5e67fbfe.min.js.map
+%%DATADIR%%/project-static/docs/assets/stylesheets/main.9d5733d3.min.css
+%%DATADIR%%/project-static/docs/assets/stylesheets/main.9d5733d3.min.css.map
 %%DATADIR%%/project-static/docs/assets/stylesheets/palette.e6a45f82.min.css
 %%DATADIR%%/project-static/docs/assets/stylesheets/palette.e6a45f82.min.css.map
 %%DATADIR%%/project-static/docs/configuration/dynamic-settings/index.html
@@ -668,6 +669,7 @@
 %%DATADIR%%/project-static/docs/models/ipam/aggregate/index.html
 %%DATADIR%%/project-static/docs/models/ipam/asn/index.html
 %%DATADIR%%/project-static/docs/models/ipam/fhrpgroup/index.html
+%%DATADIR%%/project-static/docs/models/ipam/fhrpgroupassignment/index.html
 %%DATADIR%%/project-static/docs/models/ipam/ipaddress/index.html
 %%DATADIR%%/project-static/docs/models/ipam/iprange/index.html
 %%DATADIR%%/project-static/docs/models/ipam/prefix/index.html
@@ -861,6 +863,7 @@
 %%DATADIR%%/templates/dcim/inc/device_import_header.html
 %%DATADIR%%/templates/dcim/inc/endpoint_connection.html
 %%DATADIR%%/templates/dcim/inc/interface_vlans_table.html
+%%DATADIR%%/templates/dcim/inc/nonracked_devices.html
 %%DATADIR%%/templates/dcim/inc/rack_elevation.html
 %%DATADIR%%/templates/dcim/interface.html
 %%DATADIR%%/templates/dcim/interface_create.html
