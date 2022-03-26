@@ -1,11 +1,10 @@
 PORTNAME=	varnish
-PORTVERSION=	6.6.2
+DISTVERSION=	7.1.0
 DISTVERSIONPREFIX=	varnish-
-PORTREVISION=	0
 CATEGORIES=	www
-PKGNAMESUFFIX=	6
+PKGNAMESUFFIX=	7
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
@@ -13,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		autoreconf compiler cpe gmake libedit libtool ncurses pathfix \
-		pkgconfig python:3.4+,build readline shebangfix
+		pkgconfig python:3.6+,build readline shebangfix
 
-CONFLICTS=	varnish4 varnish7
+CONFLICTS=	varnish4 varnish6
 
-SHEBANG_FILES=	lib/libvcc/*.py
+SHEBANG_FILES=	lib/libvcc/*.py lib/libvsc/*.py
 CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

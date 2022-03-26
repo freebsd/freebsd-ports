@@ -2,7 +2,7 @@
 #
 # Feature:      varnish
 # Usage:        USES=varnish
-# Valid ARGS:   4, 6, run
+# Valid ARGS:   4, 6, 7, run
 #
 # MAINTAINER: ports@FreeBSD.org
 
@@ -15,6 +15,8 @@ VARNISH_VERSION=	${VARNISH_DEFAULT}
 VARNISH_VERSION=	4
 . elif ${varnish_ARGS:M6}
 VARNISH_VERSION=	6
+. elif ${varnish_ARGS:M7}
+VARNISH_VERSION=	7
 . elif defined(VARNISH_DEFAULT)
 . endif
 
