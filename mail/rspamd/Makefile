@@ -1,5 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	ragel:devel/ragel
 LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
@@ -79,12 +79,11 @@ LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-.endif
-
 .if ${ARCH} == powerpc64
 CMAKE_ARGS+=		-DENABLE_LTO:BOOL=OFF
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.elif ${ARCH} == powerpc64le
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
 post-install:
