@@ -1,7 +1,7 @@
 # Created by: Brian Somers <brian@FreeBSD.org>
 
 PORTNAME=	arpwatch
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://ee.lbl.gov/downloads/arpwatch/ \
 		LOCAL/leres/arpwatch
