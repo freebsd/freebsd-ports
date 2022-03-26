@@ -29,7 +29,7 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/topologic${PYTHON_EXT_SUFFIX}.so
 
 do-install: # workaround for https://github.com/wassimj/Topologic/issues/34
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${INSTALL_LIB} ${BUILD_WRKSRC}/topologic.cpython-38.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/topologic${PYTHON_EXT_SUFFIX}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test: install
 	${PYTHON_CMD} ${WRKSRC}/test/topologictest01.py
