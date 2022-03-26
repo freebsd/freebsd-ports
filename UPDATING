@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220326:
+  AFFECTS: users of misc/freebsd-doc-*
+  AUTHOR: blackend@FreeBSD.org
+
+  A change to the doc toolchain prevents the build of individual
+  localized HTML versions of the documentation without building the
+  en_US version.  HTML option is currently disabled until a good
+  solution is found.  PDF version, the default option, is now the only
+  available option.
+
+  Please re-run "make config" to pick up this new default.
+
 20220313:
   AFFECTS: users of net/unison
   AUTHOR: madpilot@FreeBSD.org
