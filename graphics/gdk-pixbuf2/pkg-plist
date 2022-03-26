@@ -152,5 +152,3 @@ share/locale/zh_CN/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer
-@postexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
-@postunexec rm %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>&1 >/dev/null || true

@@ -1927,7 +1927,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						load-octave-pkg \
 						ocamlfind \
 						update-desktop-database update-mime-database \
-						gdk-pixbuf-query-loaders catalog.ports \
+						catalog.ports \
 						ccache-update-links
 
 .if defined(USE_LOCAL_MK)
