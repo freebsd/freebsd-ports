@@ -1,11 +1,8 @@
 PORTNAME=	simple-scan
-PORTVERSION=	40.7
+PORTVERSION=	42.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	da6626debe00.patch:-p1 # https://gitlab.gnome.org/GNOME/simple-scan/-/merge_requests/202
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple scanning utility
