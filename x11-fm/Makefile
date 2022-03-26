@@ -19,6 +19,7 @@
     SUBDIR += nemo
     SUBDIR += pcmanfm
     SUBDIR += pcmanfm-qt
+    SUBDIR += polo
     SUBDIR += qtfm
     SUBDIR += rodent
     SUBDIR += rox-filer

@@ -1,0 +1,32 @@
+--- makefile.orig	2018-08-12 04:41:58 UTC
++++ makefile
+@@ -1,7 +1,7 @@
+-SHELL=/bin/bash
++SHELL=/bin/sh
+ CFLAGS=--std=c99
+ 
+-prefix=/usr
++prefix=$(PREFIX)
+ bindir=$(prefix)/bin
+ sharedir=$(prefix)/share
+ localedir=$(sharedir)/locale
+@@ -101,17 +101,15 @@ install:
+ 	mkdir -p "$(DESTDIR)$(sharedir)/${app_name}"
+ 	mkdir -p "$(DESTDIR)$(sharedir)/pixmaps"
+ 	mkdir -p "$(DESTDIR)$(sharedir)/appdata"
+-	mkdir -p "$(DESTDIR)/var/log/polo"
+ 	
+ 	#binary
+ 	install -m 0755 ${app_name}-gtk "$(DESTDIR)$(bindir)"
+ 	install -m 0755 ${app_name}-gtk3-helper "$(DESTDIR)$(bindir)"
+ 	install -m 0755 ${app_name}-disk "$(DESTDIR)$(bindir)"
+-	install -m 0755 ${app_name}-uninstall "$(DESTDIR)$(bindir)"
+ 
+ 	#shared files
+-	cp -dpr --no-preserve=ownership -t "$(DESTDIR)$(sharedir)/${app_name}" ./share/${app_name}/*
+-	chmod --recursive 0755 $(DESTDIR)$(sharedir)/${app_name}/*
++	cp -Ppr share/${app_name}/* "$(DESTDIR)$(sharedir)/${app_name}"
++	chmod -R 0755 $(DESTDIR)$(sharedir)/${app_name}/*
+ 	chmod a+x $(DESTDIR)$(sharedir)/${app_name}/files/gtk-theme/install-gtk-theme
+ 
+ 	#launcher
