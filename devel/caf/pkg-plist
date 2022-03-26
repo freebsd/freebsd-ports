@@ -1,6 +1,7 @@
 include/caf/abstract_actor.hpp
 include/caf/abstract_channel.hpp
 include/caf/abstract_group.hpp
+include/caf/action.hpp
 include/caf/actor.hpp
 include/caf/actor_addr.hpp
 include/caf/actor_cast.hpp
@@ -88,8 +89,8 @@ include/caf/detail/consumer.hpp
 include/caf/detail/core_export.hpp
 include/caf/detail/default_invoke_result_visitor.hpp
 include/caf/detail/delegate_serialize.hpp
+include/caf/detail/dispose_on_call.hpp
 include/caf/detail/double_ended_queue.hpp
-include/caf/detail/encode_base64.hpp
 include/caf/detail/enqueue_result.hpp
 include/caf/detail/functor_attachable.hpp
 include/caf/detail/gcd.hpp
@@ -167,7 +168,6 @@ include/caf/detail/select_integer_type.hpp
 include/caf/detail/serialized_size.hpp
 include/caf/detail/set_thread_name.hpp
 include/caf/detail/shared_spinlock.hpp
-include/caf/detail/simple_actor_clock.hpp
 include/caf/detail/size_based_credit_controller.hpp
 include/caf/detail/socket_guard.hpp
 include/caf/detail/spawn_fwd.hpp
@@ -200,6 +200,7 @@ include/caf/detail/unordered_flat_map.hpp
 include/caf/detail/variant_data.hpp
 include/caf/detail/worker_hub.hpp
 include/caf/dictionary.hpp
+include/caf/disposable.hpp
 include/caf/downstream.hpp
 include/caf/downstream_manager.hpp
 include/caf/downstream_manager_base.hpp
@@ -342,20 +343,11 @@ include/caf/make_sink_result.hpp
 include/caf/make_source_result.hpp
 include/caf/make_stage_result.hpp
 include/caf/may_have_timeout.hpp
-include/caf/memory_managed.hpp
 include/caf/message.hpp
 include/caf/message_builder.hpp
 include/caf/message_handler.hpp
 include/caf/message_id.hpp
 include/caf/message_priority.hpp
-include/caf/meta/annotation.hpp
-include/caf/meta/hex_formatted.hpp
-include/caf/meta/load_callback.hpp
-include/caf/meta/omittable.hpp
-include/caf/meta/omittable_if_empty.hpp
-include/caf/meta/omittable_if_none.hpp
-include/caf/meta/save_callback.hpp
-include/caf/meta/type_name.hpp
 include/caf/mixin/actor_widget.hpp
 include/caf/mixin/behavior_changer.hpp
 include/caf/mixin/requester.hpp
@@ -506,6 +498,7 @@ lib/libcaf_openssl.so.%%PORTVERSION%%
 %%DATADIR%%/examples/aout.cpp
 %%DATADIR%%/examples/broker/simple_broker.cpp
 %%DATADIR%%/examples/broker/simple_http_broker.cpp
+%%DATADIR%%/examples/config/read-json.cpp
 %%DATADIR%%/examples/custom_type/custom_types_1.cpp
 %%DATADIR%%/examples/custom_type/custom_types_2.cpp
 %%DATADIR%%/examples/custom_type/custom_types_3.cpp
