@@ -1,8 +1,7 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 
 PORTNAME=	impressive
-DISTVERSION=	0.13.0-beta2
-PORTREVISION=	12
+DISTVERSION=	0.13.1
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${DISTVERSION}/
 DISTNAME=	Impressive-${DISTVERSION}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYGAME} \
-		${PY_PILLOW}
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
 USES=		python:3.5+ sdl shebangfix
 USE_SDL=	sdl
@@ -24,7 +23,7 @@ SHEBANG_FILES=	impressive.py
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 PORTDOCS=	${PORTNAME}.html demo.pdf
 
@@ -62,7 +61,7 @@ XPDF_RUN_DEPENDS=	${LOCALBASE}/libexec/xpdf/pdftoppm:graphics/xpdf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
