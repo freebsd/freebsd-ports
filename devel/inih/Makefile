@@ -1,6 +1,6 @@
 PORTNAME=	inih
 DISTVERSIONPREFIX=	r
-DISTVERSION=	53
+DISTVERSION=	55
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,7 @@ GH_ACCOUNT=	benhoyt
 do-test:
 	@cd ${WRKSRC}/tests && \
 		${REINPLACE_CMD} -e 's|gcc|${CC}|' unittest.sh && \
-		./unittest.sh
+		./unittest.sh && \
+		${ECHO} "Tests succeeded"
 
 .include <bsd.port.mk>
