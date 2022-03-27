@@ -1,6 +1,6 @@
 PORTNAME=	tracker
 PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Dbash_completion=true \
 		-Dbash_completion_dir=${PREFIX}/etc/bash_completion.d \
 		-Ddocs=false \
-		-Dman=false \
 		-Dstemmer=disabled \
 		-Dsystemd_user_services=false
 
@@ -40,11 +39,12 @@ OPTIONS_DEFINE=		DOCS MAN
 OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
-MAN_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+MAN_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 MAN_MESON_TRUE=		man
+MAN_DESC=		Install manual pages
 
 post-patch:
-	${REINPLACE_CMD} -e 's^/etc/asciidoc^${PREFIX}/etc/asciidoc^' \
+	${REINPLACE_CMD} -e 's|/etc/asciidoc|${PYTHONPREFIX_SITELIBDIR}/asciidoc/resources|' \
 		${WRKSRC}/docs/manpages/meson.build
 
 .include <bsd.port.mk>
