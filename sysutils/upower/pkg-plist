@@ -11,10 +11,9 @@ include/libupower-glib/up-wakeup-item.h
 include/libupower-glib/up-wakeups.h
 include/libupower-glib/upower.h
 lib/girepository-1.0/UPowerGlib-1.0.typelib
-lib/libupower-glib.a
 lib/libupower-glib.so
 lib/libupower-glib.so.3
-lib/libupower-glib.so.3.0.1
+lib/libupower-glib.so.3.1.0
 libdata/pkgconfig/upower-glib.pc
 libexec/upowerd
 %%MANPAGES%%man/man1/upower.1.gz
