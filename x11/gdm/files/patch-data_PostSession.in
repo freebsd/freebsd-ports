@@ -1,14 +1,10 @@
---- data/PostSession.in.orig	2022-03-21 18:12:40 UTC
+--- data/PostSession.in.orig	2022-03-27 19:50:55 UTC
 +++ data/PostSession.in
-@@ -1,3 +1,11 @@
+@@ -1,3 +1,7 @@
  #!/bin/sh
  
-+# /usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/usr/local/etc/X11/xenodm/TakeConsole, fbtab(5)
-+if [ -c /dev/dri/card0 ]; then
-+    /usr/sbin/chown root /dev/dri/card0
-+fi
-+if [ -c /dev/dri/renderD128 ]; then
-+    /usr/sbin/chown root /dev/dri/renderD128
-+fi
++# XXX: I hate this "solution", but we need to manually restart gdm here
++# otherwise we reach the console when we logout
++/usr/sbin/service gdm restart
 +
  exit 0
