@@ -1,6 +1,6 @@
 PORTNAME=	restic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.13.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +24,7 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		dchest:siphash:v1.2.2:dchest_siphash/vendor/github.com/dchest/siphash \
+		dnaeon:go-vcr:v1.2.0:dnaeon_go_vcr/vendor/github.com/dnaeon/go-vcr \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		elithrar:simple-scrypt:v1.3.0:elithrar_simple_scrypt/vendor/github.com/elithrar/simple-scrypt \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
@@ -63,18 +63,18 @@ GH_TUPLE=	\
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:cpuid:v2.0.4:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		kr:fs:v0.1.0:kr_fs/vendor/github.com/kr/fs \
-		kurin:blazer:v0.5.3:kurin_blazer/vendor/github.com/kurin/blazer \
+		kurin:blazer:ba894c124ac6:kurin_blazer/vendor/github.com/kurin/blazer \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:v7.0.12:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:v7.0.14:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
-		ncw:swift:v1.0.53:ncw_swift/vendor/github.com/ncw/swift \
+		ncw:swift:v2.0.0:ncw_swift_v2/vendor/github.com/ncw/swift/v2 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:profile:v1.6.0:pkg_profile/vendor/github.com/pkg/profile \
 		pkg:sftp:v1.13.2:pkg_sftp/vendor/github.com/pkg/sftp \
-		pkg:xattr:v0.4.3:pkg_xattr/vendor/github.com/pkg/xattr \
+		pkg:xattr:v0.4.5:pkg_xattr/vendor/github.com/pkg/xattr \
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		restic:chunker:v0.4.0:restic_chunker/vendor/github.com/restic/chunker \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
