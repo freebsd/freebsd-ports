@@ -66,6 +66,7 @@ include/stan/math/fwd/fun/inc_beta.hpp
 include/stan/math/fwd/fun/inv.hpp
 include/stan/math/fwd/fun/inv_Phi.hpp
 include/stan/math/fwd/fun/inv_cloglog.hpp
+include/stan/math/fwd/fun/inv_erfc.hpp
 include/stan/math/fwd/fun/inv_logit.hpp
 include/stan/math/fwd/fun/inv_sqrt.hpp
 include/stan/math/fwd/fun/inv_square.hpp
@@ -77,6 +78,7 @@ include/stan/math/fwd/fun/lbeta.hpp
 include/stan/math/fwd/fun/ldexp.hpp
 include/stan/math/fwd/fun/lgamma.hpp
 include/stan/math/fwd/fun/lmgamma.hpp
+include/stan/math/fwd/fun/lmultiply.hpp
 include/stan/math/fwd/fun/log.hpp
 include/stan/math/fwd/fun/log10.hpp
 include/stan/math/fwd/fun/log1m.hpp
@@ -106,6 +108,8 @@ include/stan/math/fwd/fun/multiply.hpp
 include/stan/math/fwd/fun/multiply_log.hpp
 include/stan/math/fwd/fun/multiply_lower_tri_self_transpose.hpp
 include/stan/math/fwd/fun/norm.hpp
+include/stan/math/fwd/fun/norm1.hpp
+include/stan/math/fwd/fun/norm2.hpp
 include/stan/math/fwd/fun/owens_t.hpp
 include/stan/math/fwd/fun/polar.hpp
 include/stan/math/fwd/fun/pow.hpp
@@ -226,6 +230,7 @@ include/stan/math/opencl/kernels/device_functions/inv_square.hpp
 include/stan/math/opencl/kernels/device_functions/lbeta.hpp
 include/stan/math/opencl/kernels/device_functions/lgamma_stirling.hpp
 include/stan/math/opencl/kernels/device_functions/lgamma_stirling_diff.hpp
+include/stan/math/opencl/kernels/device_functions/lmultiply.hpp
 include/stan/math/opencl/kernels/device_functions/log1m.hpp
 include/stan/math/opencl/kernels/device_functions/log1m_exp.hpp
 include/stan/math/opencl/kernels/device_functions/log1m_inv_logit.hpp
@@ -508,6 +513,7 @@ include/stan/math/opencl/rev/lb_constrain.hpp
 include/stan/math/opencl/rev/lbeta.hpp
 include/stan/math/opencl/rev/ldexp.hpp
 include/stan/math/opencl/rev/lgamma.hpp
+include/stan/math/opencl/rev/lmultiply.hpp
 include/stan/math/opencl/rev/log.hpp
 include/stan/math/opencl/rev/log10.hpp
 include/stan/math/opencl/rev/log1m.hpp
@@ -692,6 +698,7 @@ include/stan/math/prim/fun/asin.hpp
 include/stan/math/prim/fun/asinh.hpp
 include/stan/math/prim/fun/assign.hpp
 include/stan/math/prim/fun/atan.hpp
+include/stan/math/prim/fun/atan2.hpp
 include/stan/math/prim/fun/atanh.hpp
 include/stan/math/prim/fun/autocorrelation.hpp
 include/stan/math/prim/fun/autocovariance.hpp
@@ -814,6 +821,7 @@ include/stan/math/prim/fun/int_step.hpp
 include/stan/math/prim/fun/inv.hpp
 include/stan/math/prim/fun/inv_Phi.hpp
 include/stan/math/prim/fun/inv_cloglog.hpp
+include/stan/math/prim/fun/inv_erfc.hpp
 include/stan/math/prim/fun/inv_logit.hpp
 include/stan/math/prim/fun/inv_sqrt.hpp
 include/stan/math/prim/fun/inv_square.hpp
@@ -843,6 +851,7 @@ include/stan/math/prim/fun/linspaced_int_array.hpp
 include/stan/math/prim/fun/linspaced_row_vector.hpp
 include/stan/math/prim/fun/linspaced_vector.hpp
 include/stan/math/prim/fun/lmgamma.hpp
+include/stan/math/prim/fun/lmultiply.hpp
 include/stan/math/prim/fun/log.hpp
 include/stan/math/prim/fun/log10.hpp
 include/stan/math/prim/fun/log1m.hpp
@@ -906,6 +915,8 @@ include/stan/math/prim/fun/multiply.hpp
 include/stan/math/prim/fun/multiply_log.hpp
 include/stan/math/prim/fun/multiply_lower_tri_self_transpose.hpp
 include/stan/math/prim/fun/norm.hpp
+include/stan/math/prim/fun/norm1.hpp
+include/stan/math/prim/fun/norm2.hpp
 include/stan/math/prim/fun/num_elements.hpp
 include/stan/math/prim/fun/offset_multiplier_constrain.hpp
 include/stan/math/prim/fun/offset_multiplier_free.hpp
@@ -1311,6 +1322,7 @@ include/stan/math/prim/prob/logistic_log.hpp
 include/stan/math/prim/prob/logistic_lpdf.hpp
 include/stan/math/prim/prob/logistic_rng.hpp
 include/stan/math/prim/prob/loglogistic_cdf.hpp
+include/stan/math/prim/prob/loglogistic_log.hpp
 include/stan/math/prim/prob/loglogistic_lpdf.hpp
 include/stan/math/prim/prob/loglogistic_rng.hpp
 include/stan/math/prim/prob/lognormal_ccdf_log.hpp
@@ -1479,7 +1491,9 @@ include/stan/math/prim/prob/uniform_lcdf.hpp
 include/stan/math/prim/prob/uniform_log.hpp
 include/stan/math/prim/prob/uniform_lpdf.hpp
 include/stan/math/prim/prob/uniform_rng.hpp
+include/stan/math/prim/prob/von_mises_ccdf_log.hpp
 include/stan/math/prim/prob/von_mises_cdf.hpp
+include/stan/math/prim/prob/von_mises_cdf_log.hpp
 include/stan/math/prim/prob/von_mises_lccdf.hpp
 include/stan/math/prim/prob/von_mises_lcdf.hpp
 include/stan/math/prim/prob/von_mises_log.hpp
@@ -1616,6 +1630,7 @@ include/stan/math/rev/fun/cov_exp_quad.hpp
 include/stan/math/rev/fun/cov_matrix_constrain.hpp
 include/stan/math/rev/fun/cov_matrix_constrain_lkj.hpp
 include/stan/math/rev/fun/csr_matrix_times_vector.hpp
+include/stan/math/rev/fun/cumulative_sum.hpp
 include/stan/math/rev/fun/determinant.hpp
 include/stan/math/rev/fun/diag_post_multiply.hpp
 include/stan/math/rev/fun/diag_pre_multiply.hpp
@@ -1660,6 +1675,7 @@ include/stan/math/rev/fun/initialize_variable.hpp
 include/stan/math/rev/fun/inv.hpp
 include/stan/math/rev/fun/inv_Phi.hpp
 include/stan/math/rev/fun/inv_cloglog.hpp
+include/stan/math/rev/fun/inv_erfc.hpp
 include/stan/math/rev/fun/inv_logit.hpp
 include/stan/math/rev/fun/inv_sqrt.hpp
 include/stan/math/rev/fun/inv_square.hpp
@@ -1673,6 +1689,7 @@ include/stan/math/rev/fun/lbeta.hpp
 include/stan/math/rev/fun/ldexp.hpp
 include/stan/math/rev/fun/lgamma.hpp
 include/stan/math/rev/fun/lmgamma.hpp
+include/stan/math/rev/fun/lmultiply.hpp
 include/stan/math/rev/fun/log.hpp
 include/stan/math/rev/fun/log10.hpp
 include/stan/math/rev/fun/log1m.hpp
@@ -1706,6 +1723,8 @@ include/stan/math/rev/fun/multiply.hpp
 include/stan/math/rev/fun/multiply_log.hpp
 include/stan/math/rev/fun/multiply_lower_tri_self_transpose.hpp
 include/stan/math/rev/fun/norm.hpp
+include/stan/math/rev/fun/norm1.hpp
+include/stan/math/rev/fun/norm2.hpp
 include/stan/math/rev/fun/ordered_constrain.hpp
 include/stan/math/rev/fun/owens_t.hpp
 include/stan/math/rev/fun/polar.hpp
@@ -1772,13 +1791,13 @@ include/stan/math/rev/functor/coupled_ode_system.hpp
 include/stan/math/rev/functor/cvodes_integrator.hpp
 include/stan/math/rev/functor/cvodes_integrator_adjoint.hpp
 include/stan/math/rev/functor/cvodes_utils.hpp
+include/stan/math/rev/functor/dae.hpp
+include/stan/math/rev/functor/dae_system.hpp
 include/stan/math/rev/functor/finite_diff_hessian_auto.hpp
 include/stan/math/rev/functor/gradient.hpp
-include/stan/math/rev/functor/idas_forward_system.hpp
 include/stan/math/rev/functor/idas_integrator.hpp
-include/stan/math/rev/functor/idas_system.hpp
+include/stan/math/rev/functor/idas_service.hpp
 include/stan/math/rev/functor/integrate_1d.hpp
-include/stan/math/rev/functor/integrate_dae.hpp
 include/stan/math/rev/functor/integrate_ode_adams.hpp
 include/stan/math/rev/functor/integrate_ode_bdf.hpp
 include/stan/math/rev/functor/jacobian.hpp
