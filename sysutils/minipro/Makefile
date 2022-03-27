@@ -1,11 +1,10 @@
 # Created by: Hondareyte <lhondareyte@laposte.net>
 
 PORTNAME=	minipro
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 
-MAINTAINER=	lhondareyte@laposte.net
+MAINTAINER=	sbruno@freebsd.org
 COMMENT=	CLI for MiniPRO TL866xx chip programmers
 
 LICENSE=	GPLv3
@@ -17,7 +16,7 @@ USES=		compiler:c11 gmake pkgconfig shebangfix
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	DavidGriffith
-GL_COMMIT=	e6fb06822e6685886a045ae98c3c82d832bd8e9c
+GL_COMMIT=	8be592c954264afdc3a2cb596ee45517cc5dc621
 GL_PROJECT=	${PORTNAME}
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	miniprohex

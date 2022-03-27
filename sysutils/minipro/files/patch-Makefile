@@ -1,4 +1,4 @@
---- Makefile.orig	2019-02-27 06:19:06 UTC
+--- Makefile.orig	2022-03-27 01:54:42 UTC
 +++ Makefile
 @@ -1,16 +1,16 @@
  # Install Configuration
@@ -9,8 +9,8 @@
  #CC=clang
  
  # Compiler options
--CFLAGS = -g -O0 -Wall
-+CFLAGS ?= -g -O0 -Wall
+-CFLAGS = -g -O0 -Wall -DSHARE_INSTDIR="\"$(SHARE_INSTDIR)\""
++CFLAGS += -g -O0 -Wall -DSHARE_INSTDIR="\"$(SHARE_INSTDIR)\""
  
  # Normally minipro is installed to /usr/local.  If you want to put it
  # somewhere else, define that location here.
@@ -20,10 +20,10 @@
  
  # Some older releases of MacOS need some extra library flags.
  #EXTRA_LIBS += "-framework Foundation -framework IOKit"
-@@ -58,7 +58,7 @@ OBJCOPY=objcopy
- 
- DIST_DIR = $(MINIPRO)-$(VERSION)
- BIN_INSTDIR=$(DESTDIR)$(PREFIX)/bin
+@@ -70,7 +70,7 @@ INCLUDE_INSTDIR=$(DESTDIR)$(PREFIX)/include/libminipro
+ LIB_INSTDIR=$(DESTDIR)$(PREFIX)/lib
+ SHARE_INSTDIR=$(DESTDIR)$(PREFIX)/share/minipro
+ INCLUDE_INSTDIR=$(DESTDIR)$(PREFIX)/include/libminipro
 -MAN_INSTDIR=$(DESTDIR)$(PREFIX)/share/man/man1
 +MAN_INSTDIR=$(DESTDIR)$(PREFIX)/man/man1
  
