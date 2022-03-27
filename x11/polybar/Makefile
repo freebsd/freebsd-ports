@@ -1,6 +1,5 @@
 PORTNAME=	polybar
-DISTVERSION=	3.5.7
-PORTREVISION=	1
+DISTVERSION=	3.6.1
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION}/
 
@@ -14,6 +13,7 @@ BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libinotify.so:devel/libinotify \
+		libuv.so:devel/libuv \
 		libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
@@ -28,10 +28,10 @@ USE_GNOME=	cairo
 USE_XORG=	xcb
 
 # Needs libnl to work. Disabling it completely.
-CMAKE_OFF=	ENABLE_NETWORK
+CMAKE_OFF=	ENABLE_NETWORK BUILD_DOC
 
-OPTIONS_DEFINE=		ALSA CURSOR DEBUG GITHUB I3 IPC MPD PULSEAUDIO \
-			TESTS XKEYBOARD
+OPTIONS_DEFINE=		ALSA CURSOR DEBUG GITHUB I3 IPC MPD \
+			PULSEAUDIO TESTS XKEYBOARD
 OPTIONS_DEFAULT=	CURSOR GITHUB I3 IPC MPD PULSEAUDIO XKEYBOARD
 OPTIONS_SUB=		yes
 
@@ -50,10 +50,10 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 CURSOR_CMAKE_BOOL=	WITH_XCURSOR
 CURSOR_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor
 
+DEBUG_CMAKE_BOOL=	DEBUG_LOGGER
+
 GITHUB_CMAKE_BOOL=	ENABLE_CURL
 GITHUB_LIB_DEPENDS=	libcurl.so:ftp/curl
-
-DEBUG_CMAKE_BOOL=	DEBUG_LOGGER
 
 I3_BUILD_DEPENDS=	${LOCALBASE}/include/i3/ipc.h:x11-wm/i3
 I3_CMAKE_BOOL=		ENABLE_I3
@@ -74,6 +74,18 @@ TESTS_CMAKE_BOOL=	BUILD_TESTS
 
 XKEYBOARD_CMAKE_BOOL=	ENABLE_XKEYBOARD
 XKEYBOARD_LIB_DEPENDS=	libxcb-xkb.so:x11/libxcb
+
+ETCFIX =	include/utils/command.hpp \
+		contrib/bash/polybar \
+		contrib/zsh/_polybar \
+		doc/man/polybar.1.rst \
+		doc/man/polybar.5.rst \
+		CHANGELOG.md
+
+post-patch:
+.for f in ${ETCFIX}
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/${f}
+.endfor
 
 do-test-TESTS-on:
 	cd ${TEST_WRKSRC} && ${SETENV} BUILD_TESTS=ON \
