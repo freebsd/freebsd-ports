@@ -1,0 +1,5 @@
+Flask-Cache adds cache support to your Flask application. The cache
+backend can Be chosen from simple, memcached, and filesystem.
+Install databases/memcached from ports if needed.
+
+WWW: https://pythonhosted.org/Flask-Cache/
