@@ -1,10 +1,9 @@
 --- libpkg/pkg_elf.c.orig	2021-11-12 08:57:25 UTC
 +++ libpkg/pkg_elf.c
-@@ -715,6 +715,64 @@ aeabi_parse_arm_attributes(void *data, size_t length)
+@@ -715,6 +715,62 @@ aeabi_parse_arm_attributes(void *data, size_t length)
  #undef MOVE
  }
  
-+#ifdef __CheriBSD__
 +/*
 + * elf_note_analyse_cheribsd() looks for a second ELF note indicating that
 + * a binary was built for CheriBSD and overwrites OS information relevant for
@@ -60,22 +59,19 @@
 +	free(oi->version);
 +	xasprintf(&oi->version, "%d", version);
 +}
-+#endif
 +
  static bool
  elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
  {
-@@ -809,6 +867,9 @@ elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, st
+@@ -809,6 +865,7 @@ elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, st
  		xasprintf(&oi->version, "%d", version / 100000);
  	}
  
-+#ifdef __CheriBSD__
 +	elf_note_analyse_cheribsd(data, elfhdr, oi);
-+#endif
  	return (true);
  }
  
-@@ -825,7 +886,7 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -825,7 +882,7 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  	int fd, i;
  	int ret = EPKG_OK;
  	const char *arch, *abi, *endian_corres_str, *wordsize_corres_str, *fpu;
@@ -84,7 +80,7 @@
  	struct os_info loi;
  
  	const char *abi_files[] = {
-@@ -835,6 +896,7 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -835,6 +892,7 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  	};
  
  	arch = NULL;
@@ -92,7 +88,7 @@
  
  	if (oi == NULL) {
  		memset(&loi, 0, sizeof(loi));
-@@ -1002,6 +1064,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -1002,6 +1060,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  		    ":%s:%s:%s:%s:%s", arch, wordsize_corres_str,
  		    endian_corres_str, abi, fpu);
  		break;
@@ -108,7 +104,7 @@
  	case EM_MIPS:
  		/*
  		 * this is taken from binutils sources:
-@@ -1044,8 +1115,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -1044,8 +1111,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  				abi = "unknown";
  				break;
  		}
