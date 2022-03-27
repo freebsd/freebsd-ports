@@ -12,6 +12,6 @@ trigger: {
 	sandbox: false
 	script: <<EOS
 print("Generating gdk-pixbuf modules cache")
-pkg.exec({"%%PREFIX%%/bin/gdk-pixbuf-query-loaders"})
+pkg.exec({"%%PREFIX%%/bin/gdk-pixbuf-query-loaders", "--update-cache"})
 EOS
 }
