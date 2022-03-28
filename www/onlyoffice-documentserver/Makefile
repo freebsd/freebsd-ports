@@ -36,7 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv nodejs:16,build pkgconfig \
+USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase nodejs:16,build pkgconfig \
 		python:3.7+,build qt:5
 USE_QT=		qmake_build
 USE_GITHUB=	yes
