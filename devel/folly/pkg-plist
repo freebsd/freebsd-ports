@@ -124,6 +124,7 @@ include/folly/concurrency/CoreCachedSharedPtr.h
 include/folly/concurrency/DeadlockDetector.h
 include/folly/concurrency/DynamicBoundedQueue.h
 include/folly/concurrency/PriorityUnboundedQueueSet.h
+include/folly/concurrency/ThreadCachedSynchronized.h
 include/folly/concurrency/UnboundedQueue.h
 include/folly/concurrency/detail/AtomicSharedPtr-detail.h
 include/folly/concurrency/detail/ConcurrentHashMap-detail.h
@@ -387,6 +388,10 @@ include/folly/experimental/settings/Settings.h
 include/folly/experimental/settings/SettingsMetadata.h
 include/folly/experimental/settings/detail/SettingsImpl.h
 include/folly/experimental/symbolizer/Dwarf.h
+include/folly/experimental/symbolizer/DwarfImpl.h
+include/folly/experimental/symbolizer/DwarfLineNumberVM.h
+include/folly/experimental/symbolizer/DwarfSection.h
+include/folly/experimental/symbolizer/DwarfUtil.h
 include/folly/experimental/symbolizer/Elf-inl.h
 include/folly/experimental/symbolizer/Elf.h
 include/folly/experimental/symbolizer/ElfCache.h
@@ -397,6 +402,7 @@ include/folly/experimental/symbolizer/SymbolizePrinter.h
 include/folly/experimental/symbolizer/SymbolizedFrame.h
 include/folly/experimental/symbolizer/Symbolizer.h
 include/folly/experimental/symbolizer/detail/Debug.h
+include/folly/ext/test_ext.h
 include/folly/external/farmhash/farmhash.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
@@ -773,6 +779,7 @@ include/folly/synchronization/detail/Sleeper.h
 include/folly/synchronization/detail/Spin.h
 include/folly/synchronization/detail/ThreadCachedInts.h
 include/folly/synchronization/detail/ThreadCachedLists.h
+include/folly/synchronization/detail/ThreadCachedReaders.h
 include/folly/synchronization/example/HazptrLockFreeLIFO.h
 include/folly/synchronization/example/HazptrSWMRSet.h
 include/folly/synchronization/example/HazptrWideCAS.h

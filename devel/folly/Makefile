@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.03.14.00
+DISTVERSION=	2022.03.28.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
+RUN_DEPENDS=	elfutils>0:devel/elfutils # workaround for missing symbols like DW_UT_compile: https://github.com/facebook/folly/issues/1654
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake compiler:c++17-lang cpe ssl
