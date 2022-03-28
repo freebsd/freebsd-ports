@@ -2,7 +2,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -68,8 +68,14 @@ SQLITE_USES=	pkgconfig sqlite
 DEBIAN_PATCHES_PREFIX=	${FILESDIR}/debian/75
 EXTRA_PATCHES= \
 		${DEBIAN_PATCHES_PREFIX}_30-Avoid-calling-gettimeofday-select-per-char-for-cmdli.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_32-Fix-PAM-auth.-Bug-2813.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_35-Exiqgrep-check-arg-parsing.-Bug-2821.patch:-p1 \
 		${DEBIAN_PATCHES_PREFIX}_38-Convert-all-uses-of-select-to-poll.-Bug-2831.patch:-p1 \
-		${DEBIAN_PATCHES_PREFIX}_40-Fix-basic-memory-use-for-SPARC.-Bug-2838.patch:-p1
+		${DEBIAN_PATCHES_PREFIX}_40-Fix-basic-memory-use-for-SPARC.-Bug-2838.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_43-BSD-fix-resource-leak.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_45-Fix-bogus-error-message-copy.-Bug-2857.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_50-Fix-include_directory-in-redirect-routers.-Bug-2715.patch:-p1 \
+		${DEBIAN_PATCHES_PREFIX}_55-Specific-check-for-null-pointer.patch:-p1
 
 .include <bsd.port.options.mk>
 
@@ -327,7 +333,7 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-INVALID_BDB_VER=	2 3
+INVALID_BDB_VER=	2 3 6 18
 DB_LIBS=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 DB_INCLUDES=	-I${BDB_INCLUDE_DIR}
 .else
