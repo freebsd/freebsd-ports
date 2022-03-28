@@ -21,33 +21,34 @@ GH_PROJECT=	Xray-core
 GH_TUPLE=	\
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgryski:go-metro:2661b20a2446:dgryski_go_metro/vendor/github.com/dgryski/go-metro \
+		dgryski:go-metro:adc40b04c140:dgryski_go_metro/vendor/github.com/dgryski/go-metro \
 		fsnotify:fsnotify:v1.5.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		ghodss:yaml:25d852aebe32:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-task:slim-sprig:348f09dbbbc0:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
 		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:4570a0811e8b:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:198e4374d7ed:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.5.1:golang_mod/vendor/golang.org/x/mod \
-		golang:net:491a49abca63:golang_net/vendor/golang.org/x/net \
+		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:4825e8c3871d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:99c3d69c2c27:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.1.8:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.9:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:3a66f561d7aa:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-genproto:9970aeb2e350:google_go_genproto/vendor/google.golang.org/genproto \
 		google:starlark-go:70c0e40ae128:google_starlark_go/vendor/go.starlark.net \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		grpc:grpc-go:v1.43.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.44.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		h12w:socks:v1.0.3:h12w_socks/vendor/h12.io/socks \
-		lucas-clemente:quic-go:v0.24.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
+		lucas-clemente:quic-go:v0.25.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		marten-seemann:qtls-go1-16:v0.1.4:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
 		marten-seemann:qtls-go1-17:v0.1.0:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
-		miekg:dns:v1.1.43:miekg_dns/vendor/github.com/miekg/dns \
+		marten-seemann:qtls-go1-18:v0.1.0-beta.1:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
+		miekg:dns:v1.1.45:miekg_dns/vendor/github.com/miekg/dns \
 		nxadm:tail:v1.4.8:nxadm_tail/vendor/github.com/nxadm/tail \
 		onsi:ginkgo:v1.16.5:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		pelletier:go-toml:v1.9.4:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
@@ -65,4 +66,3 @@ GH_TUPLE=	\
 PLIST_FILES=	bin/xray
 
 .include <bsd.port.mk>
-
