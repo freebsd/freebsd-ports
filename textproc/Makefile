@@ -1377,6 +1377,7 @@
     SUBDIR += py-nbsphinx
     SUBDIR += py-nltk
     SUBDIR += py-normality
+    SUBDIR += py-ntc-templates
     SUBDIR += py-numpydoc
     SUBDIR += py-ocrmypdf
     SUBDIR += py-openpyxl
