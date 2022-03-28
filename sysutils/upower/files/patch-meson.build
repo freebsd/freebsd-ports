@@ -1,19 +1,6 @@
 --- meson.build.orig	2022-03-09 17:46:34 UTC
 +++ meson.build
-@@ -47,7 +47,11 @@ m_dep = cc.find_library('m', required: true)
- gio_unix_dep = dependency('gio-unix-2.0', version: '>=' + glib_min_version)
- m_dep = cc.find_library('m', required: true)
- 
--xsltproc = find_program('xsltproc', disabler: true, required: get_option('gtk-doc') or get_option('man'))
-+if get_option('gtk-doc') or get_option('man')
-+  xsltproc = find_program('xsltproc', disabler: true, required: get_option('gtk-doc') or get_option('man'))
-+else
-+  xsltproc = disabler()
-+endif
- 
- # Resolve OS backend
- os_backend = get_option('os_backend')
-@@ -105,7 +109,7 @@ subdir('etc')
+@@ -105,7 +105,7 @@ subdir('etc')
  config_h = configure_file(output: 'config.h', configuration: cdata)
  
  subdir('etc')
