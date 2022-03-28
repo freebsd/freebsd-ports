@@ -1,6 +1,6 @@
 PORTNAME=	element
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.8
+DISTVERSION=	1.10.9
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/vector-im/element-web/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	-web
@@ -17,7 +17,7 @@ CPE_VENDOR=	matrix
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-PLIST_SUB=	COMMITID=1324aa54203c1fcdfc73
+PLIST_SUB=	COMMITID=b9fceb6897ec5dc1a2e7
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
