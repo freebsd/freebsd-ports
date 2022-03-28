@@ -2,7 +2,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	3.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -42,12 +42,12 @@ PCRE2_DESC=	Regular expression support for SQLite
 RASTERLITE2_DESC=	RasterLite2 support
 TILEDB_DESC=	TileDB support
 
-USES=		compiler:c++14-lang cpe gmake iconv jpeg localbase pkgconfig ssl tar:xz
+USES=		compiler:c++17-lang cpe gmake iconv jpeg localbase pkgconfig ssl tar:xz
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--enable-static=yes \
-		--with-cpp14 \
+		--with-cpp17 \
 		--with-crypto=yes \
 		--with-geotiff=yes \
 		--with-gif=yes \
@@ -69,7 +69,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${ICONV_LIB}
 MAKEFILE=	GNUmakefile
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
