@@ -1,6 +1,6 @@
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33
+DISTVERSION=	0.34
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:66f061b1fc9b:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		gdamore:tcell:2a1a1b586447:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		go-errors:errors:v1.4.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
