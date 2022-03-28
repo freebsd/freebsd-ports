@@ -49,13 +49,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.22a0.2022.02.09
+ISCVERSION=	9.17.22a0.2022.03.25
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	59c3b17ad0b7590350b516eff62abde6a1f4382b
+GL_COMMIT=	23cb022247e414bb99d901ed5de0f8f0bc9b9b90
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -126,7 +126,7 @@ TCP_FASTOPEN_DESC=	RFC 7413 support
 DOCS_ALL_TARGET=	all html
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
-DOCS_USES=	python:env
+DOCS_USES=	gmake python:env
 
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
@@ -168,6 +168,7 @@ LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+MANPAGES_USES=	gmake
 
 OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 

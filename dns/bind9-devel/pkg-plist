@@ -97,7 +97,6 @@ include/dns/soa.h
 include/dns/ssu.h
 include/dns/stats.h
 include/dns/time.h
-include/dns/timer.h
 include/dns/tkey.h
 include/dns/transport.h
 include/dns/tsec.h
@@ -149,7 +148,6 @@ include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmac.h
-include/isc/hp.h
 include/isc/ht.h
 include/isc/httpd.h
 include/isc/interfaceiter.h
@@ -178,7 +176,6 @@ include/isc/parseint.h
 include/isc/pool.h
 include/isc/portset.h
 include/isc/print.h
-include/isc/queue.h
 include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
