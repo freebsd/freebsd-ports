@@ -947,7 +947,6 @@
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
-    SUBDIR += py-symcxx
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-topologic

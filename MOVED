@@ -16970,3 +16970,4 @@ devel/py-decorator4||2022-03-22|Has expired: Legacy version, use devel/py-decora
 devel/p5-Log-Any-Adapter-Callback|devel/p5-Log-Any|2022-03-22|Has expired: Use devel/p5-Log-Any (Log::Any::Adapter::Capture) instead
 devel/py-asyncio||2022-03-25|Remove obsoleted port. The asyncio package has been included in the standard library since Python 3.4
 math/py-mutatormath|math/py-MutatorMath|2022-03-25|Remove duplicate port
+math/py-symcxx||2022-03-28|Deprecated because the upstream repository was experimental and is now archived
