@@ -66,6 +66,7 @@ OPTIONS_SLAVE=	MONOLITE
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == aarch64
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-aarch64-race-workaround
 PLIST=	${.CURDIR}/pkg-plist.aarch64
 .endif
 
