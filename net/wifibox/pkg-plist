@@ -13,6 +13,7 @@ sbin/wifibox
 share/wifibox/device.map
 share/wifibox/grub.cfg
 share/wifibox/disk.img
+/var/run/wifibox/appliance/lock
 /var/run/wifibox/appliance/run
 @preexec /usr/bin/touch /var/log/wifibox.log
 @preunexec /bin/rm -f /var/log/wifibox.log
@@ -20,13 +21,11 @@ share/wifibox/disk.img
 @dir /var/run/wifibox/appliance/cache
 @dir /var/run/wifibox/appliance/empty
 @dir /var/run/wifibox/appliance/lib/apk
-@dir(squid,quagga,) /var/run/wifibox/appliance/lib/chrony
 @dir /var/run/wifibox/appliance/lib/iptables
 @dir /var/run/wifibox/appliance/lib/misc
 @dir /var/run/wifibox/appliance/lib/udhcpd
 @dir /var/run/wifibox/appliance/lib
 @dir /var/run/wifibox/appliance/local
-@dir(squid,quagga,) /var/run/wifibox/appliance/log/chrony
 @dir /var/run/wifibox/appliance/log
 @dir /var/run/wifibox/appliance/mail
 @dir /var/run/wifibox/appliance/opt
