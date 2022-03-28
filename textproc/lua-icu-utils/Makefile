@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	icu-utils
-DISTVERSION=	0.0-20160816
+DISTVERSION=	0.0-20220329
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -9,6 +9,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Lua interface to selected ICU utilities
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
@@ -17,10 +18,11 @@ USES=		gmake lua:module
 USE_GITHUB=	yes
 GH_ACCOUNT=	adam-stanek
 GH_PROJECT=	lua_icu_utils
-GH_TAGNAME=	df830c0
+GH_TAGNAME=	431dda1de
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-shared -L${LOCALBASE}/lib" LUA_INCDIR="${LUA_INCDIR}"
+LDFLAGS+=	-shared -L${LOCALBASE}/lib
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" LUA_INCDIR="${LUA_INCDIR}"
 
 PLIST_FILES=	${LUA_MODLIBDIR}/icu_utils.so
 PORTDOCS=	README.md
