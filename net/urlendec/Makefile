@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	URL encoder and decoder written in assembly
 
 LICENSE=	BSD2CLAUSE
