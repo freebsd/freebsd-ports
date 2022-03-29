@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220329:
+  AFFECTS: users of sysutils/screen
+  AUTHOR: cy@FreeBSD.org
+
+  As of sysutils/screen-4.9.0_3, the multiuser feature is not supported
+  by default. The multiuser feature requires setuid root to function.
+  This creates a security risk. Some Linux distributions have had
+  non-setuuid root screen for a dozen or more years. FreeBSD is following
+  suit. A new MULTIUSER option has been added to enable users to install
+  setuid root screen. The MULTIUSER option default is OFF.
+
+  Users who wish to use the multiuser feature may,
+
+  - Build screen using the MULTIUSER option, or
+  - Poudriere users can use poudriere-options to enable the MULTIUSER
+    option, or
+  - Users can chmod the setuid bit for ${LOCALBASE}/bin/screen-4.9.0,
+    making screen setuid root to enable the multiuser feature.
+  
 20220326:
   AFFECTS: users of misc/freebsd-doc-*
   AUTHOR: blackend@FreeBSD.org
