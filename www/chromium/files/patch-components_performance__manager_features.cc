@@ -1,6 +1,6 @@
---- components/performance_manager/features.cc.orig	2022-02-28 16:54:41 UTC
+--- components/performance_manager/features.cc.orig	2022-03-25 21:59:56 UTC
 +++ components/performance_manager/features.cc
-@@ -22,7 +22,7 @@ const base::Feature kUrgentDiscardingFromPerformanceMa
+@@ -21,7 +21,7 @@ const base::Feature kUrgentDiscardingFromPerformanceMa
    "UrgentDiscardingFromPerformanceManager",
  // Ash Chrome uses memory pressure evaluator instead of performance manager to
  // discard tabs.

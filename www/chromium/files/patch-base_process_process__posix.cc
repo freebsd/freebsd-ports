@@ -1,4 +1,4 @@
---- base/process/process_posix.cc.orig	2022-02-28 16:54:41 UTC
+--- base/process/process_posix.cc.orig	2022-03-25 21:59:56 UTC
 +++ base/process/process_posix.cc
 @@ -23,10 +23,15 @@
  #include "build/build_config.h"
@@ -35,7 +35,7 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -358,7 +363,55 @@ void Process::Exited(int exit_code) const {}
+@@ -356,7 +361,55 @@ void Process::Exited(int exit_code) const {}
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

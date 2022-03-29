@@ -1,7 +1,7 @@
---- net/dns/public/BUILD.gn.orig	2022-02-28 16:54:41 UTC
+--- net/dns/public/BUILD.gn.orig	2022-03-25 21:59:56 UTC
 +++ net/dns/public/BUILD.gn
-@@ -72,7 +72,7 @@ source_set("tests") {
-     "util_unittest.cc",
+@@ -74,7 +74,7 @@ source_set("tests") {
+     "doh_provider_entry_unittest.cc",
    ]
  
 -  if (is_posix && !is_android) {

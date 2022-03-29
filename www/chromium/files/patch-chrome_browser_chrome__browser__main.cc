@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2022-03-25 21:59:56 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -228,11 +228,11 @@
+@@ -231,11 +231,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -14,7 +14,7 @@
  #include "components/crash/core/app/breakpad_linux.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -267,7 +267,7 @@
+@@ -270,7 +270,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

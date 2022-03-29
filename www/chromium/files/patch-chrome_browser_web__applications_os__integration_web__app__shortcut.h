@@ -1,12 +1,12 @@
---- chrome/browser/web_applications/web_app_shortcut.h.orig	2022-02-28 16:54:41 UTC
-+++ chrome/browser/web_applications/web_app_shortcut.h
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2022-03-25 21:59:56 UTC
++++ chrome/browser/web_applications/os_integration/web_app_shortcut.h
 @@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_family.h"
  #include "url/gurl.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/web_applications/web_app_shortcut_linux.h"
+ #include "chrome/browser/web_applications/os_integration/web_app_shortcut_linux.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
 @@ -47,7 +47,7 @@ struct ScopedShortcutOverrideForTesting {

@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2022-03-25 21:59:56 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -209,7 +209,7 @@
+@@ -208,7 +208,7 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -18,7 +18,7 @@
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1418,7 +1418,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1412,7 +1412,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

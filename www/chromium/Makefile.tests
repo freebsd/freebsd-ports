@@ -4,9 +4,13 @@ TEST_TARGETS=	base_unittests \
 		components_unittests \
 		content_unittests \
 		crypto_unittests \
+		gl_tests \
+		gpu_unittests \
 		headless_unittests \
 		media_unittests \
 		mojo_unittests \
 		net_unittests \
 		printing_unittests \
-		url_unittests
+		skia_unittests \
+		url_unittests \
+		wm_unittests

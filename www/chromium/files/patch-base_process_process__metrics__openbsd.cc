@@ -1,6 +1,6 @@
---- base/process/process_metrics_openbsd.cc.orig	2022-02-07 13:39:41 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2022-03-25 21:59:56 UTC
 +++ base/process/process_metrics_openbsd.cc
-@@ -4,14 +4,30 @@
+@@ -4,17 +4,36 @@
  
  #include "base/process/process_metrics.h"
  
@@ -31,27 +31,40 @@
  
  namespace base {
  
-@@ -25,48 +41,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
++ProcessMetrics::ProcessMetrics(ProcessHandle process)
++    : process_(process) {}
++
+ // static
+ std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
+     ProcessHandle process) {
+@@ -25,49 +44,24 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
 -static int GetProcessCPU(pid_t pid) {
--  struct kinfo_proc info;
++double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+   struct kinfo_proc info;
 -  size_t length;
 -  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
 -                sizeof(struct kinfo_proc), 0 };
--
++  size_t length = sizeof(struct kinfo_proc);
+ 
 -  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
 -    return -1;
--
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
++                sizeof(struct kinfo_proc), 1 };
+ 
 -  mib[5] = (length / sizeof(struct kinfo_proc));
--
++  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
++    return 0.0;
+ 
 -  if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
 -    return 0;
 -
 -  return info.p_pctcpu;
--}
--
++  return static_cast<double>((info.p_pctcpu * 100.0) / FSCALE);
+ }
+ 
 -double ProcessMetrics::GetPlatformIndependentCPUUsage() {
 -  TimeTicks time = TimeTicks::Now();
 -
@@ -74,14 +87,23 @@
    return TimeDelta();
  }
  
- ProcessMetrics::ProcessMetrics(ProcessHandle process)
+-ProcessMetrics::ProcessMetrics(ProcessHandle process)
 -    : process_(process),
 -      last_cpu_(0) {}
-+    : process_(process) {}
- 
+-
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-@@ -85,6 +66,129 @@ size_t GetSystemCommitCharge() {
+   int pagesize;
+@@ -75,7 +69,7 @@ size_t GetSystemCommitCharge() {
+   unsigned long mem_total, mem_free, mem_inactive;
+   size_t len = sizeof(vmtotal);
+ 
+-  if (sysctl(mib, base::size(mib), &vmtotal, &len, NULL, 0) < 0)
++  if (sysctl(mib, std::size(mib), &vmtotal, &len, NULL, 0) < 0)
+     return 0;
+ 
+   mem_total = vmtotal.t_vm;
+@@ -85,6 +79,129 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

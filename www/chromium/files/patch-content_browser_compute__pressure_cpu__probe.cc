@@ -1,6 +1,6 @@
---- content/browser/compute_pressure/cpu_probe.cc.orig	2022-02-28 16:54:41 UTC
+--- content/browser/compute_pressure/cpu_probe.cc.orig	2022-03-25 21:59:56 UTC
 +++ content/browser/compute_pressure/cpu_probe.cc
-@@ -52,6 +52,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
+@@ -53,6 +53,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
    return CpuProbeLinux::Create();
  #else
