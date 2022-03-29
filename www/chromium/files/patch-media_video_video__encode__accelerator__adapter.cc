@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter.cc.orig	2022-02-28 16:54:41 UTC
+--- media/video/video_encode_accelerator_adapter.cc.orig	2022-03-25 21:59:56 UTC
 +++ media/video/video_encode_accelerator_adapter.cc
-@@ -88,7 +88,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
+@@ -96,7 +96,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
    if (is_rgb)
      config.input_format = PIXEL_FORMAT_I420;
  
@@ -9,7 +9,7 @@
    if (storage_type == VideoFrame::STORAGE_DMABUFS ||
        storage_type == VideoFrame::STORAGE_GPU_MEMORY_BUFFER) {
      if (is_rgb)
-@@ -227,7 +227,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
+@@ -235,7 +235,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
    auto vea_config =
        SetUpVeaConfig(profile_, options_, format, first_frame->storage_type());
  

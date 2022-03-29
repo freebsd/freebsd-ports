@@ -1,4 +1,4 @@
---- net/socket/udp_socket_unittest.cc.orig	2022-02-28 16:54:41 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2022-03-25 21:59:56 UTC
 +++ net/socket/udp_socket_unittest.cc
 @@ -324,7 +324,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
@@ -14,7 +14,7 @@
  
      rv = client.SetDoNotFragment();
 -#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_FUCHSIA)
-+#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #else
@@ -23,7 +23,7 @@
  
      rv = server.SetDoNotFragment();
 -#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_FUCHSIA)
-+#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #else
@@ -31,8 +31,8 @@
  
  // TODO(https://crbug.com/947115): failing on device on iOS 12.2.
  // TODO(https://crbug.com/1227554): flaky on Mac 11.
--#if BUILDFLAG(IS_IOS) || defined(OS_MAC)
-+#if BUILDFLAG(IS_IOS) || defined(OS_MAC) || defined(IS_BSD)
+-#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress
  #else
  #define MAYBE_SharedMulticastAddress SharedMulticastAddress

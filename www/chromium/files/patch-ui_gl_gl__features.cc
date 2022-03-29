@@ -1,11 +1,11 @@
---- ui/gl/gl_features.cc.orig	2022-02-28 16:54:41 UTC
+--- ui/gl/gl_features.cc.orig	2022-03-25 21:59:56 UTC
 +++ ui/gl/gl_features.cc
-@@ -72,7 +72,7 @@ bool IsDeviceBlocked(const char* field, const std::str
+@@ -76,7 +76,7 @@ bool IsDeviceBlocked(const char* field, const std::str
  const base::Feature kDefaultPassthroughCommandDecoder {
    "DefaultPassthroughCommandDecoder",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_FUCHSIA) ||              \
 -    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
 +    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)) && \
-      !defined(CHROMECAST_BUILD))
+      !defined(CHROMECAST_BUILD)) ||                            \
+     BUILDFLAG(IS_MAC)
        base::FEATURE_ENABLED_BY_DEFAULT
- #else

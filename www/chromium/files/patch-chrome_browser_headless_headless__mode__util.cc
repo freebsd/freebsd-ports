@@ -1,11 +1,11 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2022-03-25 21:59:56 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -9,7 +9,7 @@
- // Native headless is currently available only on Linux and Windows platforms.
+ // Native headless is currently available on Linux, Windows and Mac platforms.
  // More platforms will be added later, so avoid function level clutter by
  // providing stub implementations at the end of the file.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  
  #include <cstdlib>
  #include <vector>

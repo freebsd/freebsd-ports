@@ -1,11 +1,11 @@
---- weblayer/common/weblayer_paths.cc.orig	2021-04-14 18:41:39 UTC
+--- weblayer/common/weblayer_paths.cc.orig	2022-03-25 21:59:56 UTC
 +++ weblayer/common/weblayer_paths.cc
 @@ -18,7 +18,7 @@
  
- #if defined(OS_WIN)
+ #if BUILDFLAG(IS_WIN)
  #include "base/base_paths_win.h"
--#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  #include "base/nix/xdg_util.h"
  #endif
  
@@ -13,8 +13,8 @@
      return false;
    *result = result->AppendASCII("weblayer");
    return true;
--#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
    std::unique_ptr<base::Environment> env(base::Environment::Create());
    base::FilePath config_dir(base::nix::GetXDGDirectory(
        env.get(), base::nix::kXdgConfigHomeEnvVar, base::nix::kDotConfigDir));

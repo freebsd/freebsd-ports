@@ -1,6 +1,6 @@
---- net/url_request/url_fetcher.h.orig	2022-02-28 16:54:41 UTC
+--- net/url_request/url_fetcher.h.orig	2022-03-25 21:59:56 UTC
 +++ net/url_request/url_fetcher.h
-@@ -354,7 +354,7 @@ class NET_EXPORT URLFetcher {
+@@ -344,7 +344,7 @@ class NET_EXPORT URLFetcher {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if (!BUILDFLAG(IS_WIN) &&                                       \

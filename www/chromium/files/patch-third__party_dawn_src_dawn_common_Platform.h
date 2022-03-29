@@ -1,6 +1,6 @@
---- third_party/dawn/src/common/Platform.h.orig	2022-02-07 13:39:41 UTC
-+++ third_party/dawn/src/common/Platform.h
-@@ -26,6 +26,10 @@
+--- third_party/dawn/src/dawn/common/Platform.h.orig	2022-03-25 21:59:56 UTC
++++ third_party/dawn/src/dawn/common/Platform.h
+@@ -26,6 +26,11 @@
  #        error "Unsupported Windows platform."
  #    endif
  
@@ -8,6 +8,7 @@
 +#    define DAWN_PLATFORM_BSD 1
 +#    define DAWN_PLATFORM_LINUX 1
 +#    define DAWN_PLATFORM_POSIX 1
++
  #elif defined(__linux__)
  #    define DAWN_PLATFORM_LINUX 1
  #    define DAWN_PLATFORM_POSIX 1

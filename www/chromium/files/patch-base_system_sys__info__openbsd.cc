@@ -1,4 +1,4 @@
---- base/system/sys_info_openbsd.cc.orig	2022-02-07 13:39:41 UTC
+--- base/system/sys_info_openbsd.cc.orig	2022-03-25 21:59:56 UTC
 +++ base/system/sys_info_openbsd.cc
 @@ -12,6 +12,7 @@
  
@@ -8,7 +8,7 @@
  
  namespace {
  
-@@ -29,9 +30,14 @@ int64_t AmountOfMemory(int pages_name) {
+@@ -29,9 +30,15 @@ int64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
@@ -16,6 +16,7 @@
 +int64_t aofpmem = 0;
 +int64_t aofapmem = 0;
 +int64_t shmmax = 0;
++char cpumodel[256];
 +
  // static
  int SysInfo::NumberOfProcessors() {
@@ -24,7 +25,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, base::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -43,38 +49,61 @@ int SysInfo::NumberOfProcessors() {
+@@ -43,38 +50,62 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -49,13 +50,14 @@
  // static
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = {CTL_HW, HW_MODEL};
-+  char name[256];
-+  size_t len = base::size(name);
-+  if (sysctl(mib, base::size(mib), name, &len, NULL, 0) < 0) {
-+    NOTREACHED();
-+    return std::string();
++  size_t len = base::size(cpumodel);
++
++  if (cpumodel[0] == '\0') {
++    if (sysctl(mib, base::size(mib), cpumodel, &len, NULL, 0) < 0)
++      return std::string();
 +  }
-+  return name;
++
++  return std::string(cpumodel, len - 1);
 +}
 +
 +// static

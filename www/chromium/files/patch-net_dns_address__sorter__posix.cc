@@ -1,6 +1,6 @@
---- net/dns/address_sorter_posix.cc.orig	2022-02-07 13:39:41 UTC
+--- net/dns/address_sorter_posix.cc.orig	2022-03-25 21:59:56 UTC
 +++ net/dns/address_sorter_posix.cc
-@@ -17,6 +17,7 @@
+@@ -18,6 +18,7 @@
  #include <ifaddrs.h>
  #include <net/if.h>
  #include <netinet/in_var.h>

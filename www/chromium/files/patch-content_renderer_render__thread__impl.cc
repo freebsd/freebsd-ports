@@ -1,4 +1,4 @@
---- content/renderer/render_thread_impl.cc.orig	2022-02-28 16:54:41 UTC
+--- content/renderer/render_thread_impl.cc.orig	2022-03-25 21:59:56 UTC
 +++ content/renderer/render_thread_impl.cc
 @@ -189,7 +189,7 @@
  
@@ -27,7 +27,7 @@
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1075,7 +1075,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1093,7 +1093,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
    const bool enable_video_decode_accelerator =
  
@@ -36,7 +36,7 @@
        base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux) &&
  #else
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode) &&
-@@ -1086,7 +1086,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1104,7 +1104,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
    const bool enable_video_encode_accelerator =
  
