@@ -135,6 +135,7 @@ MLIR_COMMANDS=	\
 		mlir-lsp-server \
 		mlir-opt \
 		mlir-pdll \
+		mlir-pdll-lsp-server \
 		mlir-reduce \
 		mlir-tblgen \
 		mlir-translate

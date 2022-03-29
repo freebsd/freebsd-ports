@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -133,12 +133,7 @@ CLANG_USES=		perl5
 CLANG_USE=		PERL5=run
 .endif
 COMPILER_RT_DESC=	Sanitizer libraries
-# An unwind.h is require to build.  I think an in-tree one should be used
-# but this seems to work as a workaround...
-COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
 COMPILER_RT_IMPLIES=	CLANG
-# Allow unwind.h to be found reliably
-COMPILER_RT_USES=	localbase
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
 			${_COMPILER_RT_IGNORELISTS:S|^|${_CRTBLDIR}/|}
 DOCS_PORTDOCS=		llvm
@@ -296,6 +291,13 @@ USES+=	gnome
 .if ${PORT_OPTIONS:MCOMPILER_RT}
 LLVM_ENABLE_PROJECTS+=	compiler-rt
 COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer|profile\/InstrProfData.inc)
+.if ${OSVERSION} < 1300525
+# An unwind.h is require to build.  I think an in-tree one should be used
+# but this seems to work as a workaround...
+BUILD_DEPENDS+=	libunwind>0:devel/libunwind
+# Allow unwind.h to be found reliably
+USES+=	localbase
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
