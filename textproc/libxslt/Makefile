@@ -5,7 +5,7 @@ DISTVERSION=	1.1.35
 PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML stylesheet transformation library
@@ -13,32 +13,33 @@ COMMENT=	XML stylesheet transformation library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error
-
-USES=		cmake cpe gnome localbase:ldflags pathfix pkgconfig tar:xz
+LIB_DEPENDS=	libicudata.so:devel/icu
+USES=		cpe gmake gnome libtool localbase:ldflags pathfix pkgconfig tar:xz
 CPE_VENDOR=	xmlsoft
+# many ports use xsltproc as a BUILD_DEPENDS, using cmake can cause dependency loops
+GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	LIBXSLT_WITH_PYTHON
-CMAKE_ON=	LIBXSLT_WITH_CRYPTO
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--without-python
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS DEBUG MEM_DEBUG TEST
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	CRYPTO MEM_DEBUG
+OPTIONS_DEFAULT=	CRYPTO
 
+CRYPTO_DESC=	Enable crypto support
 MEM_DEBUG_DESC=	Enable memory debugging
 
-DEBUG_CMAKE_BOOL=	LIBXSLT_WITH_XSLT_DEBUG
-DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-docs
-MEM_DEBUG_CMAKE_BOOL=	LIBXSLT_WITH_MEM_DEBUG
-TEST_CMAKE_BOOL=	LIBXSLT_WITH_TESTS
-TEST_TEST_TARGET=	test
+CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
+CRYPTO_CONFIGURE_WITH=	crypto
 
-post-install:
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libexslt.so.0.8.20 ${STAGEDIR}${PREFIX}/lib/libexslt.so.0
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libxslt.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libxslt.so.1
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/libxslt-plugins
-	${INSTALL_DATA} ${WRKSRC}/libxslt.m4 ${STAGEDIR}${PREFIX}/share/aclocal/libxslt.m4
+MEM_DEBUG_CONFIGURE_WITH=	mem-debug
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
+		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
