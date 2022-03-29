@@ -1,8 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 
 PORTNAME=	bullet
-PORTVERSION=	3.21
-PORTREVISION=	1
+PORTVERSION=	3.22
 CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -49,7 +48,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_SUB=	LIB_VERSION=3.20
+PLIST_SUB=	LIB_VERSION=3.21
 
 .include <bsd.port.options.mk>
 
