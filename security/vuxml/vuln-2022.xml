@@ -1,3 +1,97 @@
+  <vuln vid="ab2d7f62-af9d-11ec-a0b8-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>100.0.4896.60</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/03/stable-channel-update-for-desktop_29.html">
+	  <p>This release contains 28 security fixes, including:</p>
+	  <ul>
+	    <li>[1292261] High CVE-2022-1125: Use after free in Portals.
+	      Reported by Khalil Zhani on 2022-01-29</li>
+	    <li>[1291891] High CVE-2022-1127: Use after free in QR Code
+	      Generator. Reported by anonymous on 2022-01-28</li>
+	    <li>[1301920] High CVE-2022-1128: Inappropriate implementation in
+	      Web Share API. Reported by Abdel Adim (@smaury92) Oisfi of
+	      Shielder on 2022-03-01</li>
+	    <li>[1300253] High CVE-2022-1129: Inappropriate implementation in
+	      Full Screen Mode. Reported by Irvan Kurniawan (sourc7) on
+	      2022-02-24</li>
+	    <li>[1142269] High CVE-2022-1130: Insufficient validation of
+	      untrusted input in WebOTP. Reported by Sergey Toshin of
+	      Oversecurity Inc. on 2020-10-25</li>
+	    <li>[1297404] High CVE-2022-1131: Use after free in Cast UI.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability
+	      Research on 2022-02-15</li>
+	    <li>[1303410] High CVE-2022-1132: Inappropriate implementation in
+	      Virtual Keyboard. Reported by Andr.Ess on 2022-03-07</li>
+	    <li>[1305776] High CVE-2022-1133: Use after free in WebRTC.
+	      Reported by Anonymous on 2022-03-13</li>
+	    <li>[1308360] High CVE-2022-1134: Type Confusion in V8. Reported by
+	      Man Yue Mo of GitHub Security Lab on 2022-03-21</li>
+	    <li>[1285601] Medium CVE-2022-1135: Use after free in Shopping Cart.
+	      Reported by Wei Yuan of MoyunSec VLab on 2022-01-09</li>
+	    <li>[1280205] Medium CVE-2022-1136: Use after free in Tab Strip.
+	      Reported by Krace on 2021-12-15</li>
+	    <li>[1289846] Medium CVE-2022-1137: Inappropriate implementation in
+	      Extensions. Reported by Thomas Orlita on 2022-01-22</li>
+	    <li>[1246188] Medium CVE-2022-1138: Inappropriate implementation in
+	      Web Cursor. Reported by Alesandro Ortiz on 2021-09-03</li>
+	    <li>[1268541] Medium CVE-2022-1139: Inappropriate implementation in
+	      Background Fetch API. Reported by Maurice Dauer on 2021-11-10</li>
+	    <li>[1303253] Medium CVE-2022-1141: Use after free in File Manager.
+	      Reported by raven at KunLun lab on 2022-03-05</li>
+	    <li>[1303613] Medium CVE-2022-1142: Heap buffer overflow in WebUI.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2022-03-07</li>
+	    <li>[1303615] Medium CVE-2022-1143: Heap buffer overflow in WebUI.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2022-03-07</li>
+	    <li>[1304145] Medium CVE-2022-1144: Use after free in WebUI.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2022-03-08</li>
+	    <li>[1304545] Medium CVE-2022-1145: Use after free in Extensions.
+	      Reported by Yakun Zhang of Baidu Security on 2022-03-09</li>
+	    <li>[1290150] Low CVE-2022-1146: Inappropriate implementation in
+	      Resource Timing. Reported by Sohom Datta on 2022-01-23</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1125</cvename>
+      <cvename>CVE-2022-1127</cvename>
+      <cvename>CVE-2022-1128</cvename>
+      <cvename>CVE-2022-1129</cvename>
+      <cvename>CVE-2022-1130</cvename>
+      <cvename>CVE-2022-1131</cvename>
+      <cvename>CVE-2022-1132</cvename>
+      <cvename>CVE-2022-1133</cvename>
+      <cvename>CVE-2022-1134</cvename>
+      <cvename>CVE-2022-1135</cvename>
+      <cvename>CVE-2022-1136</cvename>
+      <cvename>CVE-2022-1137</cvename>
+      <cvename>CVE-2022-1138</cvename>
+      <cvename>CVE-2022-1139</cvename>
+      <cvename>CVE-2022-1141</cvename>
+      <cvename>CVE-2022-1142</cvename>
+      <cvename>CVE-2022-1143</cvename>
+      <cvename>CVE-2022-1144</cvename>
+      <cvename>CVE-2022-1145</cvename>
+      <cvename>CVE-2022-1146</cvename>
+      <url>https://chromereleases.googleblog.com/2022/03/stable-channel-update-for-desktop_29.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-29</discovery>
+      <entry>2022-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="323f900d-ac6d-11ec-a0b8-3065ec8fd3ec">
     <topic>chromium -- V8 type confusion</topic>
     <affects>
