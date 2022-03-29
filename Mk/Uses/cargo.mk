@@ -129,10 +129,13 @@ CARGO_ENV+= \
 	CARGO_BUILD_TARGET=${CARGO_BUILD_TARGET} \
 	CARGO_TARGET_DIR=${CARGO_TARGET_DIR} \
 	CARGO_TARGET_${CARGO_BUILD_TARGET:S/-/_/g:tu}_LINKER="${CC}" \
-	RUST_BACKTRACE=1 \
 	RUSTC=${RUSTC} \
 	RUSTDOC=${RUSTDOC} \
 	RUSTFLAGS="${RUSTFLAGS} ${LDFLAGS:C/.+/-C link-arg=&/}"
+
+.if ${ARCH} != powerpc
+CARGO_ENV+=	RUST_BACKTRACE=1
+.endif
 
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
 .if ${ARCH} == amd64 || ${ARCH} == i386
