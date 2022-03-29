@@ -1,8 +1,7 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 
 PORTNAME=	evolution
-DISTVERSION=	3.42.4
-PORTREVISION=	1
+DISTVERSION=	3.44.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,35 +15,36 @@ LICENSE_NAME_OPENLDAP=	OpenLDAP Public License
 LICENSE_FILE_OPENLDAP=	${WRKSRC}/COPYING.OPENLDAP
 LICENSE_PERMS_OPENLDAP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	itstool:textproc/itstool \
+BUILD_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes \
-		highlight:textproc/highlight
-LIB_DEPENDS=	libnss3.so:security/nss \
-		libgcr-base-3.so:security/gcr \
-		libgtkspell3-3.so:textproc/gtkspell3 \
-		libgnome-autoar-gtk-0.so:archivers/gnome-autoar \
-		libsoup-2.4.so:devel/libsoup \
-		libicuuc.so:devel/icu \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libnspr4.so:devel/nspr \
-		libical.so:devel/libical \
-		libsecret-1.so:security/libsecret \
-		libenchant.so:textproc/enchant \
-		libenchant-2.so:textproc/enchant2 \
-		libfribidi.so:converters/fribidi \
-		libp11-kit.so:security/p11-kit \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libcryptui.so:security/libcryptui \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
+		libenchant-2.so:textproc/enchant2 \
+		libenchant.so:textproc/enchant \
+		libfribidi.so:converters/fribidi \
+		libgcr-base-3.so:security/gcr \
+		libgnome-autoar-gtk-0.so:archivers/gnome-autoar \
+		libgspell-1.so:textproc/gspell \
+		libgtkspell3-3.so:textproc/gtkspell3 \
+		libical.so:devel/libical \
+		libicuuc.so:devel/icu \
 		libnotify.so:devel/libnotify \
-		libgspell-1.so:textproc/gspell
+		libnspr4.so:devel/nspr \
+		libnss3.so:security/nss \
+		libp11-kit.so:security/p11-kit \
+		libsecret-1.so:security/libsecret \
+		libsoup-2.4.so:devel/libsoup \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 cpe desktop-file-utils cmake gettext gnome \
-		iconv:wchar_t sqlite libarchive localbase pathfix pkgconfig \
+USES=		cmake compiler:c11 cpe desktop-file-utils gettext gnome \
+		iconv:wchar_t libarchive localbase pathfix pkgconfig sqlite \
 		tar:xz xorg
 USE_GNOME=	cairo evolutiondataserver3 glib20 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
@@ -52,8 +52,8 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome
 CMAKE_ARGS=	-DENABLE_TEXT_HIGHLIGHT=YES \
-		-DWITH_ENCHANT_VERSION=2 \
-		-DVERSION_COMMENT="FreeBSD GNOME Team"
+		-DVERSION_COMMENT="FreeBSD GNOME Team" \
+		-DWITH_ENCHANT_VERSION=2
 
 GLIB_SCHEMAS=	org.gnome.evolution.addressbook.gschema.xml \
 		org.gnome.evolution.bogofilter.gschema.xml \
@@ -77,16 +77,16 @@ GLIB_SCHEMAS=	org.gnome.evolution.addressbook.gschema.xml \
 		org.gnome.evolution.text-highlight.gschema.xml
 
 EVO_VERSION=	3.24
-PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.12
+PLIST_SUB=	PORTVERSION=2.12 \
+		VERSION=${EVO_VERSION}
 
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	LDAP WEATHER CANBERRA PST YTNEF MAPS
-OPTIONS_DEFAULT=LDAP WEATHER CANBERRA BOGOFILTER
+OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		CANBERRA LDAP MAPS PST WEATHER YTNEF
+OPTIONS_DEFAULT=	BOGOFILTER CANBERRA LDAP WEATHER
 
-SPAM_DESC=	Spam filter support
-OPTIONS_GROUP=	SPAM
-OPTIONS_GROUP_SPAM=SPAMASSASSIN BOGOFILTER
+SPAM_DESC=		Spam filter support
+OPTIONS_GROUP=		SPAM
+OPTIONS_GROUP_SPAM=	BOGOFILTER SPAMASSASSIN
 
 LDAP_CMAKE_ON=	-DWITH_OPENLDAP=${LOCALBASE}
 LDAP_CMAKE_OFF=	-DWITH_OPENLDAP=OFF
@@ -101,8 +101,8 @@ WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 
 SPAMASSASSIN_DESC=		SpamAssassin spam filtering
-SPAMASSASSIN_CMAKE_ON=		-DWITH_SPAMASSASSIN=${LOCALBASE}/spamassassin \
-				-DWITH_SA_LEARN=${LOCALBASE}/bin/sa-learn
+SPAMASSASSIN_CMAKE_ON=		-DWITH_SA_LEARN=${LOCALBASE}/bin/sa-learn \
+				-DWITH_SPAMASSASSIN=${LOCALBASE}/spamassassin
 SPAMASSASSIN_CMAKE_OFF=		-DWITH_SPAMASSASSIN=NO
 SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMASSASSIN_RUN_DEPENDS=	spamassassin:mail/spamassassin
@@ -114,24 +114,25 @@ BOGOFILTER_BUILD_DEPENDS=	bogofilter:mail/bogofilter
 BOGOFILTER_RUN_DEPENDS=		bogofilter:mail/bogofilter
 
 CANBERRA_DESC=		Canberra theme audio plugin
-CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-			libcanberra-gtk3.so:audio/libcanberra-gtk3
+CANBERRA_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+			libcanberra.so:audio/libcanberra
 CANBERRA_CMAKE_BOOL=	ENABLE_CANBERRA
 
-PST_DESC=	Outlook .pst importer
+PST_DESC=		Outlook .pst importer
 PST_CMAKE_BOOL=		ENABLE_PST_IMPORT
 PST_BUILD_DEPENDS=	libpst>=0.6.58_1:mail/libpst
 PST_RUN_DEPENDS=	libpst>=0.6.58_1:mail/libpst
 
-MAPS_DESC=	Contact maps
+MAPS_DESC=		Contact maps
 MAPS_CMAKE_BOOL=	ENABLE_CONTACT_MAPS
-MAPS_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
-			libgeocode-glib.so:net/geocode-glib \
-			libcogl.so:graphics/cogl \
+MAPS_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 			libclutter-1.0.so:graphics/clutter \
 			libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
-			libchamplain-0.12.so:graphics/libchamplain
+			libcogl.so:graphics/cogl \
+			libgeocode-glib.so:net/geocode-glib \
+			libjson-glib-1.0.so:devel/json-glib
 MAPS_USES=		gl xorg
-MAPS_USE=		xorg=xcomposite,xdamage,xext,xfixes,xi,xrandr gl=egl
+MAPS_USE=		GL=egl \
+			XORG=xcomposite,xdamage,xext,xfixes,xi,xrandr
 
 .include <bsd.port.mk>
