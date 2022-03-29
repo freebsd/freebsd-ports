@@ -2,7 +2,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -18,7 +18,7 @@ COMMENT=	Multi-screen window manager
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC
+OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC MULTIUSER
 OPTIONS_DEFAULT=	INFO NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC \
 			NCURSES_DEFAULT
 OPTIONS_SINGLE=		IPC NCURSES
@@ -29,6 +29,9 @@ XTERM_256_DESC=		Enable support for 256 colour xterm
 SOCKETS_DESC=		Use new (4.2.1+) sockets for IPC (default)
 NAMED_PIPES_DESC=	Use legacy (4.0.3) named pipes for IPC (override)
 SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
+MULTIUSER_DESC=		Install setuid-root screen to support multiuser
+MULTIUSER_PLIST_SUB=	MULTIUSER_SCREEN="@(,,4755) "
+MULTUSER_PLIST_SUB_OFF=	MULTIUSER_SCREEN="@(,,0755) "
 NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
