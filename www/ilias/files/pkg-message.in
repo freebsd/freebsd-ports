@@ -22,12 +22,17 @@ some virus scanner by yourself.
       Require all granted
    </Directory>
 
-4 Then feel free to proceed to ILIAS web setup proccess.
+4 If you use MySQL, Strict SQL Mode MUST be disabled.
+
+5 After installation, you should use 'composer install'
+in the directory %%WWWDIR%%/libs/composer.
+
+6 Then feel free to proceed to ILIAS web setup proccess.
   When input Ilias data directory, please use
   %%PREFIX%%/%%ILIASDATADIR%% and uncheck the create option.
 
-5 After the installation, you can login into the system
-with username/root and password/homer as the administrator.
+7 If all is OK, you can login into the system with
+username/root and password/homer as the administrator.
 
 For more information, see the INSTALL DOCUMENTATION:
 http://www.ilias.de/docu/goto.php?target=lm_367&client_id=docu
