@@ -1,10 +1,13 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	0.21.3
+PORTVERSION=	0.22.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	710d1c5acd9e962260ce.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
@@ -17,7 +20,8 @@ GH_ACCOUNT=	Stellarium
 USES=		cmake compiler:c++11-lang desktop-file-utils \
 		qt:5 shared-mime-info
 USE_QT=		qmake_build buildtools_build \
-		concurrent core gui network opengl printsupport widgets
+		charts concurrent core gui network opengl \
+		printsupport widgets
 
 GUIDE_VERSION=	${PORTVERSION}
 
@@ -25,16 +29,17 @@ PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
-			TELESCOPE TEST TEXTURES
-OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS TELESCOPE
+			TELESCOPE TEST TEXTURES WEBENGINE
+OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS TELESCOPE WEBENGINE
 OPTIONS_SUB=		yes
 
 GPS_DESC=		GPS (NMEA handling) support
-MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
+MORE_STARS_DESC=	Install additional star catalogs (1.0GB)
 MULTIMEDIA_DESC=	Sound and video support
 SCRIPTS_DESC=		Remote control and scripting support
 TELESCOPE_DESC=		Telescope control plugin
 TEXTURES_DESC=		Install better quality textures
+WEBENGINE_DESC=		Get and show extra object information
 
 DOCS_MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${GUIDE_VERSION}/:ug
 DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
@@ -42,9 +47,6 @@ DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
 GPS_LIB_DEPENDS=	libgps.so:astro/gpsd
 GPS_USE=		QT=location,serialport
 GPS_CMAKE_OFF=		-DENABLE_GPS:BOOL=OFF
-
-TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
-TEXTURES_DISTFILES=	textures-1K.zip:gfx
 
 MULTIMEDIA_USE=		QT=multimedia
 MULTIMEDIA_CMAKE_OFF=	-DENABLE_MEDIA:BOOL=OFF
@@ -61,6 +63,12 @@ TELESCOPE_CMAKE_OFF=	-DUSE_PLUGIN_TELESCOPECONTROL:BOOL=OFF
 TEST_USE=		QT=testlib_build
 TEST_CMAKE_ON=		-DENABLE_TESTING:BOOL=ON
 
+TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
+TEXTURES_DISTFILES=	textures-1K.zip:gfx
+
+WEBENGINE_USE=		QT=declarative,webchannel,webengine
+WEBENGINE_CMAKE_OFF=	-DENABLE_QTWEBENGINE:BOOL=OFF
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMORE_STARS}
@@ -75,10 +83,6 @@ DISTFILES+=	stars_4_1v0_2.cat:stars4 stars_5_2v0_1.cat:stars5 \
 post-extract-DOCS-on:
 	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
 		${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/ADD_PLUGIN(OnlineQueries/s,1,0,' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR}/skycultures/greek_almagest/almstars
