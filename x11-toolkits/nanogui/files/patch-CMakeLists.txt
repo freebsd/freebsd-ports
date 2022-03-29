@@ -1,112 +1,20 @@
---- CMakeLists.txt.orig	2018-03-18 12:10:05 UTC
+--- CMakeLists.txt.orig	2022-02-15 15:25:41 UTC
 +++ CMakeLists.txt
-@@ -11,11 +11,11 @@ if (POLICY CMP0058)
-   cmake_policy(SET CMP0058 NEW)
- endif()
+@@ -1,6 +1,8 @@
+ cmake_minimum_required (VERSION 3.13..3.18)
+ set(CMAKE_OSX_DEPLOYMENT_TARGET 10.13)
  
--if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw/src")
--  message(FATAL_ERROR "The NanoGUI dependency repositories (GLFW, etc.) are missing! "
--    "You probably did not clone the project with --recursive. It is possible to recover "
--    "by calling \"git submodule update --init --recursive\"")
--endif()
-+#if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw/src")
-+#  message(FATAL_ERROR "The NanoGUI dependency repositories (GLFW, etc.) are missing! "
-+#    "You probably did not clone the project with --recursive. It is possible to recover "
-+#    "by calling \"git submodule update --init --recursive\"")
-+#endif()
- 
- if (WIN32)
-   set(NANOGUI_USE_GLAD_DEFAULT ON)
-@@ -23,6 +23,8 @@ else()
-   set(NANOGUI_USE_GLAD_DEFAULT OFF)
- endif()
- 
-+include_directories(${CMAKE_INSTALL_PREFIX}/include/eigen3)
++include(CMakePackageConfigHelpers)
 +
- option(NANOGUI_BUILD_EXAMPLE "Build NanoGUI example application?" ON)
- option(NANOGUI_BUILD_SHARED  "Build NanoGUI as a shared library?" ON)
- option(NANOGUI_BUILD_PYTHON  "Build a Python plugin for NanoGUI?" ON)
-@@ -78,13 +80,13 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang
-   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated-declarations")
- endif()
+ # Extract project version from source
+ file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/include/nanogui/common.h"
+   nanogui_version_defines REGEX "#define NANOGUI_VERSION_(MAJOR|MINOR|PATCH) ")
+@@ -580,7 +582,7 @@ if (NANOGUI_BUILD_PYTHON)
+         list(APPEND CMAKE_PREFIX_PATH "${_tmp_dir}")
+       find_package(pybind11 CONFIG REQUIRED)
+     else()
+-      find_package(Python COMPONENTS Interpreter Development REQUIRED)
++      find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} EXACT REQUIRED COMPONENTS Interpreter Development REQUIRED)
  
--add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw" "ext_build/glfw")
-+#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw" "ext_build/glfw")
- # Two targets have now been defined: `glfw_objects`, which will be merged into
- # NanoGUI at the end, and `glfw`.  The `glfw` target is the library itself
- # (e.g., libglfw.so), but can be skipped as we do not need to link against it
- # (because we merge `glfw_objects` into NanoGUI).  Skipping is required for
- # XCode, but preferable for all build systems (reduces build artifacts).
--set_target_properties(glfw PROPERTIES EXCLUDE_FROM_ALL 1 EXCLUDE_FROM_DEFAULT_BUILD 1)
-+#set_target_properties(glfw PROPERTIES EXCLUDE_FROM_ALL 1 EXCLUDE_FROM_DEFAULT_BUILD 1)
- 
- # Python support: add NANOGUI_PYTHON flag to all targets
- if (NANOGUI_BUILD_PYTHON)
-@@ -218,7 +220,7 @@ if (NANOGUI_USE_GLAD)
- endif()
- 
- list(APPEND NANOGUI_EXTRA_INCS
--  "${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw/include"
-+  #"${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw/include"
-   "${CMAKE_CURRENT_SOURCE_DIR}/ext/nanovg/src"
- )
- 
-@@ -254,6 +256,9 @@ elseif(CMAKE_SYSTEM MATCHES "Linux" OR C
-   if(CMAKE_SYSTEM MATCHES "Linux")
-     list(APPEND NANOGUI_EXTRA_LIBS dl)
-   endif()
-+  if(CMAKE_SYSTEM MATCHES "FreeBSD")
-+    list(APPEND NANOGUI_EXTRA_LIBS glfw)
-+  endif()
- endif()
- 
- include_directories(${NANOGUI_EIGEN_INCLUDE_DIR} ext/glfw/include ext/nanovg/src include ${CMAKE_CURRENT_BINARY_DIR})
-@@ -293,7 +298,7 @@ else()
-   set(NANOGUI_LIBRARY_TYPE "STATIC")
- endif()
- 
--if (APPLE OR CMAKE_SYSTEM MATCHES "Linux")
-+if (APPLE OR CMAKE_SYSTEM MATCHES "Linux|FreeBSD")
-   # Include coroutine support for running the mainloop in detached mode
-   add_definitions(-DCORO_SJLJ)
-   include_directories(ext/coro)
-@@ -368,7 +373,7 @@ if (CMAKE_GENERATOR STREQUAL Xcode)
- else()
-   add_library(nanogui ${NANOGUI_LIBRARY_TYPE}
-     $<TARGET_OBJECTS:nanogui-obj>
--    $<TARGET_OBJECTS:glfw_objects>
-+    #$<TARGET_OBJECTS:glfw_objects>
-   )
- endif()
- 
-@@ -441,7 +446,7 @@ if (NANOGUI_BUILD_PYTHON)
-   # Detect Python
- 
-   # Try to autodetect Python (can be overridden manually if needed)
--  list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/ext/pybind11/tools")
-+  list(APPEND CMAKE_MODULE_PATH "${CMAKE_INSTALL_PREFIX}/share/cmake/pybind11/")
-   set(Python_ADDITIONAL_VERSIONS 3.7 3.6 3.5 3.4)
-   find_package(PythonLibsNew ${NANOGUI_PYTHON_VERSION})
-   if (NOT PYTHONLIBS_FOUND)
-@@ -456,7 +461,7 @@ endif()
- if (NANOGUI_BUILD_PYTHON)
-   # Need PIC code in libnanogui even when compiled as a static library
-   set_target_properties(nanogui-obj PROPERTIES POSITION_INDEPENDENT_CODE ON)
--  set_target_properties(glfw_objects PROPERTIES POSITION_INDEPENDENT_CODE ON)
-+  #set_target_properties(glfw_objects PROPERTIES POSITION_INDEPENDENT_CODE ON)
- 
-   include_directories("ext/pybind11/include" ${PYTHON_INCLUDE_DIR})
-   add_library(nanogui-python-obj OBJECT
-@@ -515,9 +520,9 @@ if (NANOGUI_BUILD_PYTHON)
-     endif()
-   elseif(UNIX)
-     # Optimize for size
--    if (U_CMAKE_BUILD_TYPE MATCHES REL)
--      set_property(TARGET nanogui-python-obj APPEND PROPERTY COMPILE_OPTIONS "-Os")
--    endif()
-+    #if (U_CMAKE_BUILD_TYPE MATCHES REL)
-+    #  set_property(TARGET nanogui-python-obj APPEND PROPERTY COMPILE_OPTIONS "-Os")
-+    #endif()
- 
-     # Strip unnecessary sections of the binary on Linux/Mac OS
-     if(APPLE)
+       # Allow overriding the pybind11 library used to compile NanoGUI
+       set(NANOGUI_PYBIND11_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ext/pybind11"
