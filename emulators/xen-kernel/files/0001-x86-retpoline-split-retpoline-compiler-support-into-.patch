@@ -1,0 +1,66 @@
+From e245bc154300b5d0367b64e8b937c9d1da508ad3 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Fri, 18 Feb 2022 15:34:14 +0100
+Subject: [PATCH 1/2] x86/retpoline: split retpoline compiler support into
+ separate option
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Keep the previous option as a way to signal generic retpoline support
+regardless of the underlying compiler, while introducing a new
+CC_HAS_INDIRECT_THUNK that signals whether the underlying compiler
+supports retpoline.
+
+No functional change intended.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+ xen/arch/x86/Kconfig |  6 +++++-
+ xen/arch/x86/arch.mk | 10 ++++++----
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/xen/arch/x86/Kconfig b/xen/arch/x86/Kconfig
+index b4abfca46f..fe89fa7274 100644
+--- a/xen/arch/x86/Kconfig
++++ b/xen/arch/x86/Kconfig
+@@ -32,9 +32,13 @@ config ARCH_DEFCONFIG
+ 	string
+ 	default "arch/x86/configs/x86_64_defconfig"
+ 
+-config INDIRECT_THUNK
++config CC_HAS_INDIRECT_THUNK
+ 	def_bool $(cc-option,-mindirect-branch-register)
+ 
++config INDIRECT_THUNK
++	def_bool y
++	depends on CC_HAS_INDIRECT_THUNK
++
+ config HAS_AS_CET_SS
+ 	# binutils >= 2.29 or LLVM >= 6
+ 	def_bool $(as-instr,wrssq %rax$(comma)0;setssbsy)
+diff --git a/xen/arch/x86/arch.mk b/xen/arch/x86/arch.mk
+index bfd5eaa35f..15d0cbe487 100644
+--- a/xen/arch/x86/arch.mk
++++ b/xen/arch/x86/arch.mk
+@@ -42,10 +42,12 @@ CFLAGS += -mno-red-zone -fpic
+ # SSE setup for variadic function calls.
+ CFLAGS += -mno-sse $(call cc-option,$(CC),-mskip-rax-setup)
+ 
+-# Compile with thunk-extern, indirect-branch-register if avaiable.
+-CFLAGS-$(CONFIG_INDIRECT_THUNK) += -mindirect-branch=thunk-extern
+-CFLAGS-$(CONFIG_INDIRECT_THUNK) += -mindirect-branch-register
+-CFLAGS-$(CONFIG_INDIRECT_THUNK) += -fno-jump-tables
++ifeq ($(CONFIG_INDIRECT_THUNK),y)
++# Compile with gcc thunk-extern, indirect-branch-register if available.
++CFLAGS-$(CONFIG_CC_IS_GCC) += -mindirect-branch=thunk-extern
++CFLAGS-$(CONFIG_CC_IS_GCC) += -mindirect-branch-register
++CFLAGS-$(CONFIG_CC_IS_GCC) += -fno-jump-tables
++endif
+ 
+ # If supported by the compiler, reduce stack alignment to 8 bytes. But allow
+ # this to be overridden elsewhere.
+-- 
+2.35.1
+

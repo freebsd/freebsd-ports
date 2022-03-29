@@ -1,0 +1,97 @@
+From 08fc03c855c071e9b1aaaa96403f2a90433336a7 Mon Sep 17 00:00:00 2001
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Date: Tue, 25 Jan 2022 17:14:48 +0000
+Subject: [PATCH 2/2] x86/spec-ctrl: Introduce new has_spec_ctrl boolean
+
+Most MSR_SPEC_CTRL setup will be common between Intel and AMD.  Instead of
+opencoding an OR of two features everywhere, introduce has_spec_ctrl instead.
+
+Reword the comment above the Intel specific alternatives block to highlight
+that it is Intel specific, and pull the setting of default_xen_spec_ctrl.IBRS
+out because it will want to be common.
+
+No functional change.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+(cherry picked from commit 5d9eff3a312763d889cfbf3c8468b6dfb3ab490c)
+---
+ xen/arch/x86/spec_ctrl.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/xen/arch/x86/spec_ctrl.c b/xen/arch/x86/spec_ctrl.c
+index 8a550d0a09..2072daf662 100644
+--- a/xen/arch/x86/spec_ctrl.c
++++ b/xen/arch/x86/spec_ctrl.c
+@@ -927,7 +927,7 @@ static __init void mds_calculations(uint64_t caps)
+ void __init init_speculation_mitigations(void)
+ {
+     enum ind_thunk thunk = THUNK_DEFAULT;
+-    bool ibrs = false, hw_smt_enabled;
++    bool has_spec_ctrl, ibrs = false, hw_smt_enabled;
+     bool cpu_has_bug_taa;
+     uint64_t caps = 0;
+ 
+@@ -936,6 +936,8 @@ void __init init_speculation_mitigations(void)
+ 
+     hw_smt_enabled = check_smt_enabled();
+ 
++    has_spec_ctrl = boot_cpu_has(X86_FEATURE_IBRSB);
++
+     /*
+      * First, disable the use of retpolines if Xen is using shadow stacks, as
+      * they are incompatible.
+@@ -973,11 +975,11 @@ void __init init_speculation_mitigations(void)
+              */
+             else if ( retpoline_safe(caps) )
+                 thunk = THUNK_RETPOLINE;
+-            else if ( boot_cpu_has(X86_FEATURE_IBRSB) )
++            else if ( has_spec_ctrl )
+                 ibrs = true;
+         }
+         /* Without compiler thunk support, use IBRS if available. */
+-        else if ( boot_cpu_has(X86_FEATURE_IBRSB) )
++        else if ( has_spec_ctrl )
+             ibrs = true;
+     }
+ 
+@@ -1008,10 +1010,7 @@ void __init init_speculation_mitigations(void)
+     else if ( thunk == THUNK_JMP )
+         setup_force_cpu_cap(X86_FEATURE_IND_THUNK_JMP);
+ 
+-    /*
+-     * If we are on hardware supporting MSR_SPEC_CTRL, see about setting up
+-     * the alternatives blocks so we can virtualise support for guests.
+-     */
++    /* Intel hardware: MSR_SPEC_CTRL alternatives setup. */
+     if ( boot_cpu_has(X86_FEATURE_IBRSB) )
+     {
+         if ( opt_msr_sc_pv )
+@@ -1030,11 +1029,12 @@ void __init init_speculation_mitigations(void)
+             default_spec_ctrl_flags |= SCF_ist_wrmsr;
+             setup_force_cpu_cap(X86_FEATURE_SC_MSR_HVM);
+         }
+-
+-        if ( ibrs )
+-            default_xen_spec_ctrl |= SPEC_CTRL_IBRS;
+     }
+ 
++    /* If we have IBRS available, see whether we should use it. */
++    if ( has_spec_ctrl && ibrs )
++        default_xen_spec_ctrl |= SPEC_CTRL_IBRS;
++
+     /* If we have SSBD available, see whether we should use it. */
+     if ( boot_cpu_has(X86_FEATURE_SSBD) && opt_ssbd )
+         default_xen_spec_ctrl |= SPEC_CTRL_SSBD;
+@@ -1268,7 +1268,7 @@ void __init init_speculation_mitigations(void)
+      * boot won't have any other code running in a position to mount an
+      * attack.
+      */
+-    if ( boot_cpu_has(X86_FEATURE_IBRSB) )
++    if ( has_spec_ctrl )
+     {
+         bsp_delay_spec_ctrl = !cpu_has_hypervisor && default_xen_spec_ctrl;
+ 
+-- 
+2.35.1
+

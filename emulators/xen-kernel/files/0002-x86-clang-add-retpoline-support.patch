@@ -1,0 +1,56 @@
+From 9412486707f8f1ca2eb31c2ef330c5e39c0a2f30 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Fri, 18 Feb 2022 15:34:15 +0100
+Subject: [PATCH 2/2] x86/clang: add retpoline support
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Detect whether the compiler supports clang retpoline option and enable
+by default if available, just like it's done for gcc.
+
+Note clang already disables jump tables when retpoline is enabled, so
+there's no need to also pass the fno-jump-tables parameter. Also clang
+already passes the return address in a register always on amd64, so
+there's no need for any equivalent mindirect-branch-register
+parameter.
+
+Reported-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+ xen/arch/x86/Kconfig | 3 ++-
+ xen/arch/x86/arch.mk | 3 +++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/xen/arch/x86/Kconfig b/xen/arch/x86/Kconfig
+index fe89fa7274..1465874097 100644
+--- a/xen/arch/x86/Kconfig
++++ b/xen/arch/x86/Kconfig
+@@ -33,7 +33,8 @@ config ARCH_DEFCONFIG
+ 	default "arch/x86/configs/x86_64_defconfig"
+ 
+ config CC_HAS_INDIRECT_THUNK
+-	def_bool $(cc-option,-mindirect-branch-register)
++	def_bool $(cc-option,-mindirect-branch-register) || \
++	         $(cc-option,-mretpoline-external-thunk)
+ 
+ config INDIRECT_THUNK
+ 	def_bool y
+diff --git a/xen/arch/x86/arch.mk b/xen/arch/x86/arch.mk
+index 15d0cbe487..edfc043dbb 100644
+--- a/xen/arch/x86/arch.mk
++++ b/xen/arch/x86/arch.mk
+@@ -47,6 +47,9 @@ ifeq ($(CONFIG_INDIRECT_THUNK),y)
+ CFLAGS-$(CONFIG_CC_IS_GCC) += -mindirect-branch=thunk-extern
+ CFLAGS-$(CONFIG_CC_IS_GCC) += -mindirect-branch-register
+ CFLAGS-$(CONFIG_CC_IS_GCC) += -fno-jump-tables
++
++# Enable clang retpoline support if available.
++CFLAGS-$(CONFIG_CC_IS_CLANG) += -mretpoline-external-thunk
+ endif
+ 
+ # If supported by the compiler, reduce stack alignment to 8 bytes. But allow
+-- 
+2.35.1
+

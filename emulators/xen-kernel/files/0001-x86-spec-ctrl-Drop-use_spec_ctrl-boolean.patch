@@ -1,0 +1,65 @@
+From 7f34b6a895d10744bab32fc843246c45da444d8b Mon Sep 17 00:00:00 2001
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Date: Tue, 25 Jan 2022 16:09:59 +0000
+Subject: [PATCH 1/2] x86/spec-ctrl: Drop use_spec_ctrl boolean
+
+Several bugfixes have reduced the utility of this variable from it's original
+purpose, and now all it does is aid in the setup of SCF_ist_wrmsr.
+
+Simplify the logic by drop the variable, and doubling up the setting of
+SCF_ist_wrmsr for the PV and HVM blocks, which will make the AMD SPEC_CTRL
+support easier to follow.  Leave a comment explaining why SCF_ist_wrmsr is
+still necessary for the VMExit case.
+
+No functional change.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+(cherry picked from commit ec083bf552c35e10347449e21809f4780f8155d2)
+---
+ xen/arch/x86/spec_ctrl.c | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+diff --git a/xen/arch/x86/spec_ctrl.c b/xen/arch/x86/spec_ctrl.c
+index c18cc8aa49..8a550d0a09 100644
+--- a/xen/arch/x86/spec_ctrl.c
++++ b/xen/arch/x86/spec_ctrl.c
+@@ -927,7 +927,7 @@ static __init void mds_calculations(uint64_t caps)
+ void __init init_speculation_mitigations(void)
+ {
+     enum ind_thunk thunk = THUNK_DEFAULT;
+-    bool use_spec_ctrl = false, ibrs = false, hw_smt_enabled;
++    bool ibrs = false, hw_smt_enabled;
+     bool cpu_has_bug_taa;
+     uint64_t caps = 0;
+ 
+@@ -1016,19 +1016,21 @@ void __init init_speculation_mitigations(void)
+     {
+         if ( opt_msr_sc_pv )
+         {
+-            use_spec_ctrl = true;
++            default_spec_ctrl_flags |= SCF_ist_wrmsr;
+             setup_force_cpu_cap(X86_FEATURE_SC_MSR_PV);
+         }
+ 
+         if ( opt_msr_sc_hvm )
+         {
+-            use_spec_ctrl = true;
++            /*
++             * While the guest MSR_SPEC_CTRL value is loaded/saved atomically,
++             * Xen's value is not restored atomically.  An early NMI hitting
++             * the VMExit path needs to restore Xen's value for safety.
++             */
++            default_spec_ctrl_flags |= SCF_ist_wrmsr;
+             setup_force_cpu_cap(X86_FEATURE_SC_MSR_HVM);
+         }
+ 
+-        if ( use_spec_ctrl )
+-            default_spec_ctrl_flags |= SCF_ist_wrmsr;
+-
+         if ( ibrs )
+             default_xen_spec_ctrl |= SPEC_CTRL_IBRS;
+     }
+-- 
+2.35.1
+
