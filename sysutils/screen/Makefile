@@ -30,8 +30,8 @@ SOCKETS_DESC=		Use new (4.2.1+) sockets for IPC (default)
 NAMED_PIPES_DESC=	Use legacy (4.0.3) named pipes for IPC (override)
 SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 MULTIUSER_DESC=		Install setuid-root screen to support multiuser
-MULTIUSER_PLIST_SUB=	MULTIUSER_SCREEN="@(,,4755) "
-MULTUSER_PLIST_SUB_OFF=	MULTIUSER_SCREEN="@(,,0755) "
+MULTIUSER_PLIST_SUB=	MULTIUSER="@(,,4755) "
+MULTUSER_PLIST_SUB_OFF=	MULTIUSER="@(,,0755) "
 NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
