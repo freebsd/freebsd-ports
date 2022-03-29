@@ -1,0 +1,6 @@
+wireproxy is a completely userspace application that connects to a wireguard
+peer, and exposes a socks5 proxy or tunnels on the machine. This can be useful
+if you need to connect to certain sites via a wireguard peer, but can't be
+bothered to setup a new network interface for whatever reasons.
+
+WWW: https://github.com/octeep/wireproxy
