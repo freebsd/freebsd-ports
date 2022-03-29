@@ -1,3 +1,64 @@
+  <vuln vid="83466f76-aefe-11ec-b4b6-d05099c0c059">
+    <topic>gitea -- Open Redirect on login</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.16.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andrew Thornton reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1058">
+	  <p>
+	    When a location containing backslashes is presented, the existing
+	    protections against open redirect are bypassed, because browsers
+	    will convert adjacent forward and backslashes within the location
+	    to double forward slashes.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1058</cvename>
+      <url>https://huntr.dev/bounties/4fb42144-ac70-4f76-a5e1-ef6b5e55dc0d/</url>
+    </references>
+    <dates>
+      <discovery>2022-03-23</discovery>
+      <entry>2022-03-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0ff80f41-aefe-11ec-b4b6-d05099c0c059">
+    <topic>gitea -- Improper/incorrect authorization</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.16.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Youssef Rebahi-Gilbert reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0905">
+	  <p>
+	    When Gitea is built and configured for PAM authentication
+	    it skips checking authorization completely. Therefore expired
+	    accounts and accounts with expired passwords can still login.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0905</cvename>
+      <url>https://huntr.dev/bounties/8d221f92-b2b1-4878-bc31-66ff272e5ceb</url>
+    </references>
+    <dates>
+      <discovery>2022-03-06</discovery>
+      <entry>2022-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab2d7f62-af9d-11ec-a0b8-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
