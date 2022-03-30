@@ -13,6 +13,8 @@ COMMENT=	Flashcard trainer with spaced repetition
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	needs adjustments (e.g. "//platforms:freebsd_arm64") for the shipped Bazel rules files to include several files during build.
+
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	the bazel build framework supports only 64-bit systems.
 
