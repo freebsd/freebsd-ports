@@ -1,7 +1,7 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
 
 PORTNAME=	smart_proxy_salt
-PORTVERSION=	4.0.0
+PORTVERSION=	5.0.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
