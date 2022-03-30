@@ -1,5 +1,5 @@
 PORTNAME=	hyperrogue
-PORTVERSION=	12.0f
+PORTVERSION=	12.0m
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -38,11 +38,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hyperrogue ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/hr-icon.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
-	@${MKDIR} ${STAGEDIR}${DATADIR}/sounds
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/hyperrogue-music.txt ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sounds/* ${STAGEDIR}${DATADIR}/sounds
-	${INSTALL_DATA} ${WRKSRC}/music/* ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "*.ttf hyperrogue-music.txt sounds music" \
+		${STAGEDIR}${DATADIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
