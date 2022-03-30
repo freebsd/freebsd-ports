@@ -1,13 +1,12 @@
 # Created by: Michael Schout <mschout@gkg.net>
 
 PORTNAME=	libxml-ruby
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ruby bindings for the GNOME Libxml2 toolkit
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Ruby language bindings for the GNOME Libxml2 XML toolkit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
