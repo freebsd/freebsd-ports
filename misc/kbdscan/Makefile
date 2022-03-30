@@ -10,9 +10,9 @@ LICENSE=	ISCL
 
 USES=		tar:bzip2
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/kbdscan
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/kbdscan ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
