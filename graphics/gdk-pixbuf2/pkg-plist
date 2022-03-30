@@ -152,3 +152,5 @@ share/locale/zh_CN/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer
+@dir lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%
+@dir lib/gdk-pixbuf-2.0

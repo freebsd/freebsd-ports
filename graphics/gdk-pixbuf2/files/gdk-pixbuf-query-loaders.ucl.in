@@ -4,7 +4,7 @@ cleanup: {
 	sandbox: false
 	script: <<EOS
 print("Removing gdk-pixbuf cache directory")
-os.remove("%%PREFIX%%/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders")
+os.remove("%%PREFIX%%/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache")
 EOS
 }
 trigger: {
