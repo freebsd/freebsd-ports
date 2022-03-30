@@ -3,7 +3,7 @@
 PORTNAME=	pptpclient
 DISTVERSION=	1.10.0
 CATEGORIES=	net net-vpn
-MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
+MASTER_SITES=	SF/pptpclient/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,7 +18,7 @@ CFLAGS+=	-DUSER_PPP
 MAKE_ARGS=	CC="${CC}" DEBUG="" OPTIMIZE="${CFLAGS}" PPPD=/usr/sbin/ppp
 USE_RC_SUBR=	pptp
 
-PLIST_FILES=	share/man/man8/pptp.8.gz sbin/pptp
+PLIST_FILES=	sbin/pptp share/man/man8/pptp.8.gz
 PORTEXAMPLES=	README ppp.conf
 
 OPTIONS_DEFINE=	EXAMPLES
