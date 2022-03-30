@@ -2,7 +2,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.19
+DISTVERSION=	0.9.20.b20220329
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	xterm:x11/xterm \
-		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
+		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp-devel \
 		${LOCALBASE}/lib/pulse-14.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
@@ -31,6 +31,7 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
+GH_TAGNAME=	cd1af47
 GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.6:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
 

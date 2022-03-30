@@ -38,10 +38,10 @@ lib/xrdp/libcommon.so.0
 lib/xrdp/libcommon.so.0.0.0
 lib/xrdp/libmc.a
 lib/xrdp/libmc.so
-lib/xrdp/libscp.a
-lib/xrdp/libscp.so
-lib/xrdp/libscp.so.0
-lib/xrdp/libscp.so.0.0.0
+lib/xrdp/libipm.a
+lib/xrdp/libipm.so
+lib/xrdp/libipm.so.0
+lib/xrdp/libipm.so.0.0.0
 lib/xrdp/libvnc.a
 lib/xrdp/libvnc.so
 lib/xrdp/libxrdp.a
