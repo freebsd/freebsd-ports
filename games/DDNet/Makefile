@@ -1,5 +1,5 @@
 PORTNAME=	DDNet
-PORTVERSION=	15.9.1
+PORTVERSION=	16.0
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libpnglite.so:graphics/pnglite
 
-USES=		cmake compiler:c++11-lang pkgconfig python sqlite:3 ssl tar:xz
+USES=		cmake compiler:c++17-lang pkgconfig python sqlite:3 ssl tar:xz
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE="${PYTHON_CMD}"
 CMAKE_OFF=	AUTOUPDATE DOWNLOAD_GTEST PREFER_BUNDLED_LIBS
 
@@ -20,10 +20,10 @@ CXXFLAGS+=	-DBINARY_DIR="\\\"${PREFIX}/bin\\\""
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/ddnet
 
-OPTIONS_DEFINE=		TEST WEBSOCKETS MYSQL VIDEORECORDER UPNP
+OPTIONS_DEFINE=		TEST WEBSOCKETS MYSQL VIDEORECORDER UPNP VULKAN
 OPTIONS_MULTI=		COMPONENTS
 OPTIONS_MULTI_COMPONENTS=CLIENT SERVER
-OPTIONS_DEFAULT=	CLIENT SERVER TEST VIDEORECORDER UPNP
+OPTIONS_DEFAULT=	CLIENT SERVER TEST VIDEORECORDER UPNP VULKAN
 OPTIONS_SUB=		yes
 
 CLIENT_DESC=		Build game client
@@ -65,6 +65,13 @@ UPNP_DESC=		UPnP support for the server
 UPNP_CMAKE_BOOL=	UPNP
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_IMPLIES=		SERVER
+
+VULKAN_DESC=		Enable the vulkan backend
+VULKAN_CMAKE_BOOL=	VULKAN
+VULKAN_IMPLIES=		CLIENT
+VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
+			${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 post-extract:
 # json-parser and md5 are left intact
