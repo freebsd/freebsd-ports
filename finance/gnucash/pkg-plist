@@ -327,7 +327,6 @@ lib/guile/2.2/site-ccache/gnucash/eguile/eguile-html-utilities.go
 lib/guile/2.2/site-ccache/gnucash/eguile/eguile-utilities.go
 lib/guile/2.2/site-ccache/gnucash/engine.go
 lib/guile/2.2/site-ccache/gnucash/engine/business-core.go
-lib/guile/2.2/site-ccache/gnucash/engine/commodity-table.go
 lib/guile/2.2/site-ccache/gnucash/engine/gnc-numeric.go
 lib/guile/2.2/site-ccache/gnucash/gnc-module.go
 lib/guile/2.2/site-ccache/gnucash/gnome-utils.go
@@ -496,6 +495,7 @@ share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2018
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2019
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2020
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2021
 %%PORTDOCS%%%%DOCSDIR%%/DOCUMENTERS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -870,8 +870,10 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/pt_BR/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/pt_BR/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_brokerage.gnucash-xea
+%%DATADIR%%/accounts/pt_PT/acctchrt_business.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_carloan.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_cdmoneymkt.gnucash-xea
+%%DATADIR%%/accounts/pt_PT/acctchrt_checkbook.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_childcare.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_eduloan.gnucash-xea
@@ -976,6 +978,7 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/gtkbuilder/assistant-loan.glade
 %%DATADIR%%/gtkbuilder/assistant-qif-import.glade
 %%DATADIR%%/gtkbuilder/assistant-stock-split.glade
+%%DATADIR%%/gtkbuilder/assistant-stock-transaction.glade
 %%DATADIR%%/gtkbuilder/assistant-xml-encoding.glade
 %%DATADIR%%/gtkbuilder/business-options-gnome.glade
 %%DATADIR%%/gtkbuilder/business-prefs.glade
@@ -1206,7 +1209,6 @@ share/guile/site/2.2/gnucash/eguile/eguile-html-utilities.scm
 share/guile/site/2.2/gnucash/eguile/eguile-utilities.scm
 share/guile/site/2.2/gnucash/engine.scm
 share/guile/site/2.2/gnucash/engine/business-core.scm
-share/guile/site/2.2/gnucash/engine/commodity-table.scm
 share/guile/site/2.2/gnucash/engine/gnc-numeric.scm
 share/guile/site/2.2/gnucash/gnc-module.scm
 share/guile/site/2.2/gnucash/gnome-utils.scm
