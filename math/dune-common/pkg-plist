@@ -140,7 +140,7 @@ lib/dunecontrol/dune-common/dune.module
 lib/dunemodules.lib
 lib/libdunecommon.so
 libdata/pkgconfig/dune-common.pc
-%%DOCS%%man/man1/dunecontrol.1.gz
+%%DOCS%%share/man/man1/dunecontrol.1.gz
 share/bash-completion/completions/dunecontrol
 %%DATADIR%%/config.h.cmake
 %%DOCS%%%%DATADIR%%/doc/doxygen/Doxystyle
@@ -212,3 +212,4 @@ share/dune/cmake/scripts/main77.cc.in
 share/dune/cmake/scripts/module_library.cc.in
 share/dune/cmake/scripts/pyversion.py
 share/dune/cmake/scripts/sphinx_cmake_dune.py
+%%PORTDOCS%%@dir %%DOCSDIR%%/comm

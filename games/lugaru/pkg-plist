@@ -1,5 +1,5 @@
 bin/lugaru
-man/man6/lugaru.6.gz
+share/man/man6/lugaru.6.gz
 share/appdata/lugaru.appdata.xml
 share/applications/lugaru.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

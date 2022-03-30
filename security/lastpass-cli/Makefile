@@ -37,7 +37,7 @@ MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			xmlto:textproc/xmlto
 MANPAGES_ALL_TARGET=	all doc-man
 MANPAGES_INSTALL_TARGET=install install-doc
-MANPAGES_PLIST_FILES=	${MANPREFIX}/man/man1/lpass.1.gz
+MANPAGES_PLIST_FILES=	${MANPREFIX}/share/man/man1/lpass.1.gz
 
 PINENTRY_RUN_DEPENDS=	pinentry:security/pinentry
 XCLIP_RUN_DEPENDS=	xclip:x11/xclip

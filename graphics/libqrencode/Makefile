@@ -26,10 +26,6 @@ PLIST_FILES=	bin/qrencode \
 		lib/libqrencode.so.4 \
 		lib/libqrencode.so.${PORTVERSION} \
 		libdata/pkgconfig/libqrencode.pc \
-		man/man1/qrencode.1.gz
-
-post-patch:
-	@${SED} -i -e 's|share\/man\/man1|man\/man1|' \
-		${WRKSRC}/CMakeLists.txt
+		share/man/man1/qrencode.1.gz
 
 .include <bsd.port.mk>

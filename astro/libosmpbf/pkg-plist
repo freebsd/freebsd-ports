@@ -6,4 +6,4 @@ lib/libosmpbf.a
 lib/libosmpbf.so
 lib/libosmpbf.so.1
 lib/libosmpbf.so.1.5.0
-man/man1/osmpbf-outline.1.gz
+share/man/man1/osmpbf-outline.1.gz

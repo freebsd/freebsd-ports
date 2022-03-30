@@ -2,7 +2,7 @@ bin/yoshimi
 lib/lv2/yoshimi.lv2/manifest.ttl
 lib/lv2/yoshimi.lv2/yoshimi.ttl
 lib/lv2/yoshimi.lv2/yoshimi_lv2.so
-man/man1/yoshimi.1.gz
+share/man/man1/yoshimi.1.gz
 share/applications/yoshimi.desktop
 share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg

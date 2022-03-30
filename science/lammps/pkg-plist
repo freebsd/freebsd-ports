@@ -44,7 +44,7 @@ lib/cmake/LAMMPS/LAMMPS_Targets.cmake
 lib/liblammps.so
 lib/liblammps.so.0
 libdata/pkgconfig/liblammps.pc
-man/man1/lmp.1.gz
+share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ag_u3.eam
 %%DATADIR%%/potentials/AlCu.adp
 %%DATADIR%%/potentials/AlCu.bop.table

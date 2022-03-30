@@ -12,7 +12,7 @@ lib/libnlopt.so.0.11.1
 %%PYTHON_SITELIBDIR%%/_nlopt.so
 %%PYTHON_SITELIBDIR%%/nlopt.py
 libdata/pkgconfig/nlopt.pc
-man/man3/nlopt.3.gz
-man/man3/nlopt_minimize.3.gz
-man/man3/nlopt_minimize_constrained.3.gz
+share/man/man3/nlopt.3.gz
+share/man/man3/nlopt_minimize.3.gz
+share/man/man3/nlopt_minimize_constrained.3.gz
 share/guile/site/2.2/nlopt.scm

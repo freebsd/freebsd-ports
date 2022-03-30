@@ -25,7 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lepoll-shim
 PLIST_FILES=	bin/ydotool \
 		bin/ydotoold \
 		lib/systemd/user/ydotool.service \
-		man/man1/ydotool.1.gz \
-		man/man8/ydotoold.8.gz
+		share/man/man1/ydotool.1.gz \
+		share/man/man8/ydotoold.8.gz
 
 .include <bsd.port.mk>

@@ -50,9 +50,9 @@ lib/codelite/libplugin.so
 lib/codelite/libwxshapeframework.so
 lib/codelite/libwxsqlite3.so
 lib/codelite/wxFormBuilder.so
-man/man1/codelite.1.gz
-man/man1/codelite-make.1.gz
-man/man1/codelite_fix_files.1.gz
+share/man/man1/codelite.1.gz
+share/man/man1/codelite-make.1.gz
+share/man/man1/codelite_fix_files.1.gz
 share/applications/codelite.desktop
 %%DATADIR%%/LICENSE
 %%DATADIR%%/PHP.zip

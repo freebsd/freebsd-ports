@@ -122,7 +122,7 @@ lib/cmake/gsl-lite/gsl-lite-config.cmake
 lib/cmake/gsl-lite/gsl-lite-targets.cmake
 lib/libfaddeeva.a
 lib/libopenmc.so
-man/man1/openmc.1.gz
+share/man/man1/openmc.1.gz
 %%DATADIR%%/relaxng/cross_sections.rnc
 %%DATADIR%%/relaxng/cross_sections.rng
 %%DATADIR%%/relaxng/geometry.rnc

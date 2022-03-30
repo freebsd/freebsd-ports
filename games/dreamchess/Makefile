@@ -24,8 +24,8 @@ USE_SDL=	image2 mixer2
 
 PLIST_FILES=	bin/dreamchess \
 		bin/dreamer \
-		man/man6/dreamchess.6.gz \
-		man/man6/dreamer.6.gz \
+		share/man/man6/dreamchess.6.gz \
+		share/man/man6/dreamer.6.gz \
 		share/applications/dreamchess.desktop \
 		share/icons/hicolor/256x256/apps/dreamchess.png \
 		share/icons/hicolor/48x48/apps/dreamchess.png

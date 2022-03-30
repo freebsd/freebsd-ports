@@ -1,6 +1,6 @@
 bin/qsynth
-man/fr/man1/qsynth.1.gz
-man/man1/qsynth.1.gz
+share/man/fr/man1/qsynth.1.gz
+share/man/man1/qsynth.1.gz
 share/applications/org.rncbc.qsynth.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qsynth.png
 share/icons/hicolor/scalable/apps/org.rncbc.qsynth.svg

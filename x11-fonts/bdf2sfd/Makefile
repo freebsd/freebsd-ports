@@ -17,6 +17,6 @@ USE_CSTD=	c99
 GH_ACCOUNT=	fcambus
 
 PLIST_FILES=	bin/bdf2sfd \
-		man/man1/bdf2sfd.1.gz
+		share/man/man1/bdf2sfd.1.gz
 
 .include <bsd.port.mk>

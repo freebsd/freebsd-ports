@@ -13,6 +13,6 @@ lib/libcaf_mpi.a
 lib/libcaf_mpi.so
 lib/libcaf_mpi.so.%%SOVERSION%%
 lib/libopencoarrays_mod.a
-man/man1/caf.1.gz
-man/man1/cafrun.1.gz
+share/man/man1/caf.1.gz
+share/man/man1/cafrun.1.gz
 %%DATADIR%%/install_manifest.SHA256.txt

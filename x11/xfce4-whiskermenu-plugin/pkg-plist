@@ -1,6 +1,6 @@
 bin/xfce4-popup-whiskermenu
 lib/xfce4/panel/plugins/libwhiskermenu.so
-man/man1/xfce4-popup-whiskermenu.1.gz
+share/man/man1/xfce4-popup-whiskermenu.1.gz
 share/icons/hicolor/128x128/apps/org.xfce.panel.whiskermenu.png
 share/icons/hicolor/16x16/apps/org.xfce.panel.whiskermenu.png
 share/icons/hicolor/22x22/apps/org.xfce.panel.whiskermenu.png

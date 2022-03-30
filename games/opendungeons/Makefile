@@ -36,8 +36,4 @@ CMAKE_ARGS=	-DOD_BIN_PATH:PATH=${PREFIX}/bin \
 
 LDFLAGS+=	-lexecinfo
 
-post-patch:
-	@${REINPLACE_CMD} '/man6/ s|OD_SHARE_PATH|CMAKE_INSTALL_PREFIX|' \
-		${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>

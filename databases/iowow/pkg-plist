@@ -29,7 +29,7 @@ lib/libiowow.so
 lib/libiowow.so.1
 lib/libiowow.so.%%VERSION%%
 libdata/pkgconfig/libiowow.pc
-man/man3/iowow.3.gz
+share/man/man3/iowow.3.gz
 %%DATADIR%%/iowow-exports-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/iowow-exports.cmake
 %%DATADIR%%/iowow-static-exports-%%CMAKE_BUILD_TYPE%%.cmake

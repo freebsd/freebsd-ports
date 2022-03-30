@@ -136,8 +136,8 @@ include/kodi/versions.h
 %%X11%%lib/kodi/kodi-xrandr
 %%SSE4_1%%lib/kodi/system/libsse4-%%ARCH%%-freebsd.so
 lib/kodi/system/players/VideoPlayer/libdvdnav-%%ARCH%%-freebsd.so
-man/man1/kodi.1.gz
-man/man1/kodi.bin.1.gz
+share/man/man1/kodi.1.gz
+share/man/man1/kodi.bin.1.gz
 share/applications/kodi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.Linux.md

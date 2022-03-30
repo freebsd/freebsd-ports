@@ -1,5 +1,5 @@
 bin/utox
-man/man1/utox.1.gz
+share/man/man1/utox.1.gz
 share/applications/utox.desktop
 share/icons/hicolor/128x128/apps/utox-128x128.png
 share/icons/hicolor/14x14/apps/utox-14x14.png

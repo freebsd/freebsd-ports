@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/unionfs \
 		bin/unionfsctl \
-		man/man8/unionfs.8.gz
+		share/man/man8/unionfs.8.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

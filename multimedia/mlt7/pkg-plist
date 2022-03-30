@@ -93,7 +93,7 @@ lib/mlt-7/libmltcore.so
 lib/mlt-7/libmltxml.so
 libdata/pkgconfig/mlt++-7.pc
 libdata/pkgconfig/mlt-framework-7.pc
-man/man1/melt-7.1.gz
+share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/blacklist.txt
 %%AVFORMAT%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml

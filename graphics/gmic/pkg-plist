@@ -5,5 +5,5 @@ lib/cmake/gmic/GmicTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/gmic/GmicTargets.cmake
 lib/libgmic.so
 lib/libgmic.so.1
-man/man1/gmic.1.gz
+share/man/man1/gmic.1.gz
 share/bash-completion/completions/gmic

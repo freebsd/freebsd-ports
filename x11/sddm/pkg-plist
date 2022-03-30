@@ -18,10 +18,10 @@ etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
 %%QT_QMLDIR%%/SddmComponents/qmldir
 %%QT_QMLDIR%%/SddmComponents/warning.png
 libexec/sddm-helper
-man/man1/sddm-greeter.1.gz
-man/man1/sddm.1.gz
-man/man5/sddm-state.conf.5.gz
-man/man5/sddm.conf.5.gz
+share/man/man1/sddm-greeter.1.gz
+share/man/man1/sddm.1.gz
+share/man/man5/sddm-state.conf.5.gz
+share/man/man5/sddm.conf.5.gz
 %%DATADIR%%/faces/.face.icon
 %%DATADIR%%/faces/root.face.icon
 %%DATADIR%%/flags/ae.png

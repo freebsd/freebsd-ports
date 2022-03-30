@@ -6,10 +6,10 @@ lib/libfontforge.so
 lib/libfontforge.so.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/fontforge.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/psMat.so
-man/man1/fontforge.1.gz
-man/man1/fontimage.1.gz
-man/man1/fontlint.1.gz
-man/man1/sfddiff.1.gz
+share/man/man1/fontforge.1.gz
+share/man/man1/fontimage.1.gz
+share/man/man1/fontlint.1.gz
+share/man/man1/sfddiff.1.gz
 %%X11%%share/applications/org.fontforge.FontForge.desktop
 %%DATADIR%%/hotkeys/default
 %%TANGO%%%%DATADIR%%/pixmaps/Cantarell-Bold.ttf

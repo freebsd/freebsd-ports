@@ -1,5 +1,5 @@
 bin/getdp
-man/man1/getdp.1.gz
+share/man/man1/getdp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

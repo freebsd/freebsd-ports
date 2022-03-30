@@ -1,7 +1,7 @@
 bin/xiphos
 bin/xiphos-nav
-man/man1/xiphos-nav.1.gz
-man/man1/xiphos.1.gz
+share/man/man1/xiphos-nav.1.gz
+share/man/man1/xiphos.1.gz
 share/appdata/xiphos.appdata.xml
 share/applications/xiphos.desktop
 share/help/C/xiphos/figures/first_start.png

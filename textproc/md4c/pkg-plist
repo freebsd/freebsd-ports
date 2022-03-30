@@ -13,4 +13,4 @@ lib/libmd4c.so.0
 lib/libmd4c.so.0.4.7
 libdata/pkgconfig/md4c-html.pc
 libdata/pkgconfig/md4c.pc
-man/man1/md2html.1.gz
+share/man/man1/md2html.1.gz

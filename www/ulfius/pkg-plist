@@ -5,4 +5,4 @@ lib/libulfius.so
 lib/libulfius.so.2.7
 lib/libulfius.so.%%PORTVERSION%%
 libdata/pkgconfig/libulfius.pc
-man/man1/uwsc.1.gz
+share/man/man1/uwsc.1.gz

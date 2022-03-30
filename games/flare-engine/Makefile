@@ -18,7 +18,7 @@ USES=		cmake compiler:env sdl
 USE_SDL=	sdl2 mixer2 image2 ttf2
 CMAKE_BUILD_TYPE=	#empty
 
-CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare" -DMANDIR="man"
+CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"
 
 PORTDOCS=	*
 PORTDATA=	*

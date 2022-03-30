@@ -18,6 +18,6 @@ USES=		cmake compiler:c++11-lang iconv
 CMAKE_ON=	Boost_USE_STATIC_LIBS
 
 PLIST_FILES=	bin/innoextract \
-		man/man1/innoextract.1.gz
+		share/man/man1/innoextract.1.gz
 
 .include <bsd.port.mk>

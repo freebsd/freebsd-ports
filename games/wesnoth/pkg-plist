@@ -1,7 +1,7 @@
 bin/wesnoth
-man/man6/wesnoth.6.gz
+share/man/man6/wesnoth.6.gz
 %%SERVER%%bin/wesnothd
-%%SERVER%%man/man6/wesnothd.6.gz
+%%SERVER%%share/man/man6/wesnothd.6.gz
 share/applications/org.wesnoth.Wesnoth.desktop
 share/icons/hicolor/128x128/apps/wesnoth-icon.png
 share/icons/hicolor/16x16/apps/wesnoth-icon.png
@@ -11,35 +11,35 @@ share/icons/hicolor/512x512/apps/wesnoth-icon.png
 share/icons/hicolor/64x64/apps/wesnoth-icon.png
 share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%CAMPAIGN%%bin/campaignd
-%%NLS%%%%SERVER%%man/ca/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/cs/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/de/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/en_GB/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/es/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/fr/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/gl/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/hu/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/it/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/ja/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/pt_BR/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/ru/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/tr/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/zh_CN/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/zh_TW/man6/wesnothd.6.gz
-%%NLS%%man/ca/man6/wesnoth.6.gz
-%%NLS%%man/cs/man6/wesnoth.6.gz
-%%NLS%%man/de/man6/wesnoth.6.gz
-%%NLS%%man/en_GB/man6/wesnoth.6.gz
-%%NLS%%man/es/man6/wesnoth.6.gz
-%%NLS%%man/fr/man6/wesnoth.6.gz
-%%NLS%%man/hu/man6/wesnoth.6.gz
-%%NLS%%man/it/man6/wesnoth.6.gz
-%%NLS%%man/ja/man6/wesnoth.6.gz
-%%NLS%%man/pt_BR/man6/wesnoth.6.gz
-%%NLS%%man/ru/man6/wesnoth.6.gz
-%%NLS%%man/tr/man6/wesnoth.6.gz
-%%NLS%%man/zh_CN/man6/wesnoth.6.gz
-%%NLS%%man/zh_TW/man6/wesnoth.6.gz
+%%NLS%%%%SERVER%%share/man/ca/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/cs/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/de/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/en_GB/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/es/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/fr/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/gl/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/hu/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/it/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/ja/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/pt_BR/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/ru/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/tr/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/zh_CN/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/zh_TW/man6/wesnothd.6.gz
+%%NLS%%share/man/ca/man6/wesnoth.6.gz
+%%NLS%%share/man/cs/man6/wesnoth.6.gz
+%%NLS%%share/man/de/man6/wesnoth.6.gz
+%%NLS%%share/man/en_GB/man6/wesnoth.6.gz
+%%NLS%%share/man/es/man6/wesnoth.6.gz
+%%NLS%%share/man/fr/man6/wesnoth.6.gz
+%%NLS%%share/man/hu/man6/wesnoth.6.gz
+%%NLS%%share/man/it/man6/wesnoth.6.gz
+%%NLS%%share/man/ja/man6/wesnoth.6.gz
+%%NLS%%share/man/pt_BR/man6/wesnoth.6.gz
+%%NLS%%share/man/ru/man6/wesnoth.6.gz
+%%NLS%%share/man/tr/man6/wesnoth.6.gz
+%%NLS%%share/man/zh_CN/man6/wesnoth.6.gz
+%%NLS%%share/man/zh_TW/man6/wesnoth.6.gz
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-dm.mo
@@ -1491,3 +1491,46 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-wc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 @dir /var/run/wesnothd
+@dir share/man/af/man6
+@dir share/man/ang@latin/man6
+@dir share/man/ar/man6
+@dir share/man/bg/man6
+@dir share/man/ca_ES@valencia/man6
+@dir share/man/da/man6
+@dir share/man/el/man6
+@dir share/man/en@shaw/man6
+@dir share/man/eo/man6
+@dir share/man/es_419/man6
+@dir share/man/et/man6
+@dir share/man/eu/man6
+@dir share/man/fi/man6
+@dir share/man/ga/man6
+@dir share/man/gd/man6
+@dir share/man/grc/man6
+@dir share/man/he/man6
+@dir share/man/hr/man6
+@dir share/man/id/man6
+@dir share/man/is/man6
+@dir share/man/ko/man6
+@dir share/man/la/man6
+@dir share/man/lt/man6
+@dir share/man/lv/man6
+@dir share/man/mk/man6
+@dir share/man/mr/man6
+@dir share/man/my/man6
+@dir share/man/nb_NO/man6
+@dir share/man/nl/man6
+@dir share/man/pl/man6
+@dir share/man/pt/man6
+@dir share/man/racv/man6
+@dir share/man/ro/man6
+@dir share/man/sk/man6
+@dir share/man/sl/man6
+@dir share/man/sr/man6
+@dir share/man/sr@ijekavian/man6
+@dir share/man/sr@ijekavianlatin/man6
+@dir share/man/sr@latin/man6
+@dir share/man/sv/man6
+@dir share/man/tl/man6
+@dir share/man/uk/man6
+@dir share/man/vi/man6

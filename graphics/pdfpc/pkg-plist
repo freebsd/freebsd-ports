@@ -1,7 +1,7 @@
 bin/pdfpc
 @sample etc/pdfpcrc.sample
-man/man1/pdfpc.1.gz
-man/man5/pdfpcrc.5.gz
+share/man/man1/pdfpc.1.gz
+share/man/man5/pdfpcrc.5.gz
 share/pixmaps/pdfpc/blank.svg
 share/pixmaps/pdfpc/empty.svg
 share/pixmaps/pdfpc/eraser.svg

@@ -33,9 +33,9 @@ include/rumur/stack.hh
 include/rumur/traverse.h
 include/rumur/validate.h
 lib/librumur.so
-man/man1/murphi2c.1.gz
-man/man1/murphi2murphi.1.gz
-man/man1/murphi2uclid.1.gz
-man/man1/murphi2xml.1.gz
-man/man1/rumur-run.1.gz
-man/man1/rumur.1.gz
+share/man/man1/murphi2c.1.gz
+share/man/man1/murphi2murphi.1.gz
+share/man/man1/murphi2uclid.1.gz
+share/man/man1/murphi2xml.1.gz
+share/man/man1/rumur-run.1.gz
+share/man/man1/rumur.1.gz

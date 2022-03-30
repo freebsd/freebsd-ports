@@ -17,5 +17,5 @@ lib/librtr.so
 lib/librtr.so.0
 lib/librtr.so.0.6.3
 libdata/pkgconfig/rtrlib.pc
-man/man1/rpki-rov.1.gz
-man/man1/rtrclient.1.gz
+share/man/man1/rpki-rov.1.gz
+share/man/man1/rtrclient.1.gz

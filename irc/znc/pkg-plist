@@ -82,8 +82,8 @@ lib/znc/stripcontrols.so
 lib/znc/watch.so
 lib/znc/webadmin.so
 libdata/pkgconfig/znc.pc
-man/man1/znc-buildmod.1.gz
-man/man1/znc.1.gz
+share/man/man1/znc-buildmod.1.gz
+share/man/man1/znc.1.gz
 %%CYRUS%%lib/znc/cyrusauth.so
 %%DATADIR%%/cmake/ZNCConfig.cmake
 %%DATADIR%%/cmake/ZNCConfigVersion.cmake

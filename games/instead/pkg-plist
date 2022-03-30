@@ -1,6 +1,6 @@
 bin/instead
 bin/sdl-instead
-man/man6/instead.6.gz
+share/man/man6/instead.6.gz
 share/applications/instead.desktop
 share/pixmaps/sdl_instead.ico
 share/pixmaps/sdl_instead.png

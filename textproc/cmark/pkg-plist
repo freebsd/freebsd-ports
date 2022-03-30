@@ -10,5 +10,5 @@ lib/libcmark.a
 lib/libcmark.so
 lib/libcmark.so.%%VERSION%%
 libdata/pkgconfig/libcmark.pc
-man/man1/cmark.1.gz
-man/man3/cmark.3.gz
+share/man/man1/cmark.1.gz
+share/man/man3/cmark.3.gz

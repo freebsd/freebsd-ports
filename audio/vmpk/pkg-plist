@@ -1,5 +1,5 @@
 bin/vmpk
-man/man1/vmpk.1.gz
+share/man/man1/vmpk.1.gz
 share/applications/net.sourceforge.VMPK.desktop
 share/icons/hicolor/128x128/apps/vmpk.png
 share/icons/hicolor/16x16/apps/vmpk.png

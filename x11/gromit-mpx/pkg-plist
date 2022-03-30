@@ -1,6 +1,6 @@
 bin/gromit-mpx
 @sample %%ETCDIR%%/gromit-mpx.cfg.sample
-man/man1/gromit-mpx.1.gz
+share/man/man1/gromit-mpx.1.gz
 share/applications/net.christianbeier.Gromit-MPX.desktop
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.active.svg
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.svg

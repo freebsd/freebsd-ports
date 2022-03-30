@@ -5,4 +5,4 @@ lib/libprimecount.so
 lib/libprimecount.so.7
 lib/libprimecount.so.%%VER%%
 libdata/pkgconfig/primecount.pc
-man/man1/primecount.1.gz
+share/man/man1/primecount.1.gz

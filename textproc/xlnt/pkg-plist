@@ -73,4 +73,4 @@ lib/cmake/xlnt/XlntTargets.cmake
 lib/libxlnt.so
 lib/libxlnt.so.1.5.0
 libdata/pkgconfig/xlnt.pc
-man/man3/xlnt.3.gz
+share/man/man3/xlnt.3.gz

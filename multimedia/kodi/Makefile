@@ -283,8 +283,8 @@ post-patch:
 		${WRKSRC}/xbmc/platform/linux/input/LibInputSettings.cpp
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -s kodi.bin.1.gz kodi.1.gz
+	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1
+	cd ${STAGEDIR}${MAN1PREFIX}/share/man/man1 && ${LN} -s kodi.bin.1.gz kodi.1.gz
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} TexturePacker JsonSchemaBuilder
 	${FIND} ${STAGEDIR}${PREFIX}/lib/kodi -type f -name '*.so' -print0 | ${XARGS} -0 ${STRIP_CMD}
 	${RM} -rf ${STAGEDIR}${PREFIX}/lib/firewalld

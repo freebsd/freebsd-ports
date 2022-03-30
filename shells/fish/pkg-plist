@@ -5,9 +5,9 @@ share/applications/fish.desktop
 share/pixmaps/fish.png
 @sample %%ETCDIR%%/config.fish.sample
 libdata/pkgconfig/fish.pc
-%%MANPAGES%%man/man1/fish.1.gz
-%%MANPAGES%%man/man1/fish_indent.1.gz
-%%MANPAGES%%man/man1/fish_key_reader.1.gz
+%%MANPAGES%%share/man/man1/fish.1.gz
+%%MANPAGES%%share/man/man1/fish_indent.1.gz
+%%MANPAGES%%share/man/man1/fish_key_reader.1.gz
 %%DATADIR%%/__fish_build_paths.fish
 %%DATADIR%%/completions/..fish
 %%DATADIR%%/completions/7z.fish

@@ -24,10 +24,6 @@ DEBUG_CMAKE_ON=	-DENABLE_DEBUG=TRUE
 
 PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' \
-		${WRKSRC}/cmake/Modules/SMFMacros.cmake
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

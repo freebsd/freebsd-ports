@@ -26,7 +26,7 @@ CMAKE_ARGS=	-DUNICODE_BLOCKS=${WRKSRC}/Blocks.txt
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/fntsample \
-		man/man1/fntsample.1.gz \
+		share/man/man1/fntsample.1.gz \
 		share/locale/uk/LC_MESSAGES/fntsample.mo
 
 GH_ACCOUNT=	eugmes

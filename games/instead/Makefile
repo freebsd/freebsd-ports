@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang iconv lua:51 pkgconfig sdl
-CMAKE_ARGS=	-DMANDIR=man
+CMAKE_ARGS=	-DMANDIR=share/man
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

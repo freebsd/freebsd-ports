@@ -64,11 +64,11 @@ lib/libbareoslmdb.so
 lib/libbareoslmdb.so.21
 lib/libbareoslmdb.so.%%LIB_VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd%%PYTHON_EXT_SUFFIX%%.so
-man/man1/bconsole.1.gz
-man/man1/bsmtp.1.gz
-man/man8/bareos-fd.8.gz
-man/man8/bareos.8.gz
-man/man8/btraceback.8.gz
+share/man/man1/bconsole.1.gz
+share/man/man1/bsmtp.1.gz
+share/man/man8/bareos-fd.8.gz
+share/man/man8/bareos.8.gz
+share/man/man8/btraceback.8.gz
 @group bareos
 sbin/bareos
 @group bareos

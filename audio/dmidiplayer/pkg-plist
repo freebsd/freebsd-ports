@@ -1,5 +1,5 @@
 bin/dmidiplayer
-man/man1/dmidiplayer.1.gz
+share/man/man1/dmidiplayer.1.gz
 share/applications/net.sourceforge.dmidiplayer.desktop
 %%DATADIR%%/dmidiplayer_cs.qm
 %%DATADIR%%/dmidiplayer_de.qm

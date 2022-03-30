@@ -1,6 +1,6 @@
 bin/sdcv
-man/man1/sdcv.1.gz
-man/uk.UTF-8/man1/sdcv.1.gz
+share/man/man1/sdcv.1.gz
+share/man/uk.UTF-8/man1/sdcv.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/sdcv.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sdcv.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sdcv.mo

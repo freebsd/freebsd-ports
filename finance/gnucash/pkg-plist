@@ -465,10 +465,10 @@ lib/libgnucash-guile.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_business.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core_c.py
-man/man1/gnc-fq-dump.1.gz
-man/man1/gnc-fq-helper.1.gz
-man/man1/gnucash-cli.1.gz
-man/man1/gnucash.1.gz
+share/man/man1/gnc-fq-dump.1.gz
+share/man/man1/gnc-fq-helper.1.gz
+share/man/man1/gnucash-cli.1.gz
+share/man/man1/gnucash.1.gz
 share/applications/gnucash.desktop
 share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

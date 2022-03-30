@@ -1576,7 +1576,6 @@
 %%DOCSDIR%%/html/_sources/variable/CYGWIN.rst.txt
 %%DOCSDIR%%/html/_sources/variable/ENV.rst.txt
 %%DOCSDIR%%/html/_sources/variable/EXECUTABLE_OUTPUT_PATH.rst.txt
-%%DOCSDIR%%/html/_sources/variable/GHS-MULTI.rst.txt
 %%DOCSDIR%%/html/_sources/variable/IOS.rst.txt
 %%DOCSDIR%%/html/_sources/variable/LIBRARY_OUTPUT_PATH.rst.txt
 %%DOCSDIR%%/html/_sources/variable/MINGW.rst.txt
@@ -3217,7 +3216,6 @@
 %%DOCSDIR%%/html/variable/CYGWIN.html
 %%DOCSDIR%%/html/variable/ENV.html
 %%DOCSDIR%%/html/variable/EXECUTABLE_OUTPUT_PATH.html
-%%DOCSDIR%%/html/variable/GHS-MULTI.html
 %%DOCSDIR%%/html/variable/IOS.html
 %%DOCSDIR%%/html/variable/LIBRARY_OUTPUT_PATH.html
 %%DOCSDIR%%/html/variable/MINGW.html

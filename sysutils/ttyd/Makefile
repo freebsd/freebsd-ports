@@ -19,6 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/ttyd.1.gz
+		share/man/man1/ttyd.1.gz
 
 .include <bsd.port.mk>

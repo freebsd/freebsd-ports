@@ -11,6 +11,6 @@ lib/librnp.so
 lib/librnp.so.0
 lib/librnp.so.0.15.2
 libdata/pkgconfig/librnp.pc
-man/man1/rnp.1.gz
-man/man1/rnpkeys.1.gz
-man/man3/librnp.3.gz
+share/man/man1/rnp.1.gz
+share/man/man1/rnpkeys.1.gz
+share/man/man3/librnp.3.gz

@@ -41,9 +41,9 @@ lib/bareos/scripts/bareos-ctl-funcs
 lib/bareos/scripts/btraceback.dbx
 lib/bareos/scripts/btraceback.gdb
 lib/bareos/scripts/btraceback.mdb
-man/man1/bconsole.1.gz
-man/man8/bareos-fd.8.gz
-man/man8/bareos.8.gz
+share/man/man1/bconsole.1.gz
+share/man/man8/bareos-fd.8.gz
+share/man/man8/bareos.8.gz
 @group bareos
 sbin/bareos
 @group bareos

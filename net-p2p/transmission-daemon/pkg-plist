@@ -1,5 +1,5 @@
 bin/transmission-daemon
-man/man1/transmission-daemon.1.gz
+share/man/man1/transmission-daemon.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md

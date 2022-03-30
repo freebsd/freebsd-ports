@@ -19,7 +19,7 @@ PORTDOCS=	AUTHORS ChangeLog README.md THANKS
 PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/ansilove \
-		man/man1/ansilove.1.gz
+		share/man/man1/ansilove.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
