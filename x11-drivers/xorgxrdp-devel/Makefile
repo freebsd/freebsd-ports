@@ -1,8 +1,8 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.18
-PORTREVISION=	1
+DISTVERSION=	0.2.19.b20220329
 CATEGORIES=	x11-drivers
+PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	xrdp
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,12 +22,13 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:xrdp:v0.9.18.1:xrdp
+GH_TAGNAME=	0d5cbfe
+GH_TUPLE=	neutrinolabs:xrdp:cd1af47:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
-CONFLICTS=	xorgxrdp-devel
+CONFLICTS=	xorgxrdp
 
 OPTIONS_DEFINE=	DEBUG DRI3
 OPTIONS_DEFAULT=
