@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	tmuxinator
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Manage complex tmux sessions easily
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-erubis>=2.6<3:www/rubygem-erubis \
-		rubygem-thor>=1.0<2:devel/rubygem-thor \
+		rubygem-thor>=1.2.1<1.3:devel/rubygem-thor \
 		rubygem-xdg2>=2.2.5<3:devel/rubygem-xdg2
 
 USES=		gem
