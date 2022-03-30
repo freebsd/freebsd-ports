@@ -829,6 +829,7 @@
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-actdiag
     SUBDIR += py-altair
+    SUBDIR += py-asciitree
     SUBDIR += py-beziers
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco
