@@ -4,7 +4,7 @@ PORTNAME=	autogen
 PORTVERSION=	5.18.16
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	GNU/${PORTNAME}/rel${PORTVERSION}
+MASTER_SITES=	GNU/autogen/rel${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool designed to simplify the creation and maintenance of programs
