@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tiledb
-PORTVERSION=	2.6.4
+PORTVERSION=	2.7.1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -31,5 +31,8 @@ LDFLAGS+=	-lfmt
 GH_ACCOUNT=	TileDB-Inc
 GH_PROJECT=	TileDB
 USE_GITHUB=	yes
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/libbz2.so ${STAGEDIR}${PREFIX}/lib/liblz4.so ${STAGEDIR}${PREFIX}/lib/libzstd.so
 
 .include <bsd.port.mk>

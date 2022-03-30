@@ -22,6 +22,7 @@ include/tiledb/query.h
 include/tiledb/query_condition.h
 include/tiledb/schema_base.h
 include/tiledb/stats.h
+include/tiledb/subarray.h
 include/tiledb/tiledb
 include/tiledb/tiledb.h
 include/tiledb/tiledb_enum.h
