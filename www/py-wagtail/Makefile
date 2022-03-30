@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	wagtail
-PORTVERSION=	2.15.4
+PORTVERSION=	2.16.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.11:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=3.0<3.3:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.1:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-filter>=2.2<22:www/py-dj32-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj32-django-modelcluster>=5.2<6.0:www/py-dj32-django-modelcluster@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj32-django-taggit>=1.0:www/py-dj32-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj32-django-modelcluster>=5.2<6.1:www/py-dj32-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj32-django-taggit>=2.0<3.0:www/py-dj32-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-treebeard>=4.2.0<5.0:www/py-dj32-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-djangorestframework>=3.11.1<4.0:www/py-dj32-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5:www/py-draftjs-exporter@${PY_FLAVOR} \
