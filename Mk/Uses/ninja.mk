@@ -8,7 +8,7 @@
 # make			use ninja for the build instead of make, implies "build"
 # run			add a run dependency on ninja
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NINJA_MK)
 _INCLUDE_USES_NINJA_MK=	yes

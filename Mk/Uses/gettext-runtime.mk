@@ -4,7 +4,7 @@
 # Usage:	USES=gettext-runtime or USES=gettext-runtime:ARGS
 # Valid ARGS:	lib (default), build, run
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GETTEXT_RUNTIME_MK)
 _INCLUDE_USES_GETTEXT_RUNTIME_MK=	yes

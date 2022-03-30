@@ -31,7 +31,7 @@
 #
 #   perl_CMD=	${SETENV} perl
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SHEBANGFIX_MK)
 _INCLUDE_USES_SHEBANGFIX_MK=	yes

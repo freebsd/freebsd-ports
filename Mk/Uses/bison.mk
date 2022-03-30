@@ -9,7 +9,7 @@
 # 'wrapper'	will automatically create BINARY_WRAPPER to use base
 #		byacc with a wrapper to mimic a bit more bison
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_BISON_MK)
 _INCLUDE_USES_BISON_MK=	yes

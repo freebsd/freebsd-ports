@@ -48,7 +48,7 @@
 # Usage:	USES=autoreconf or USES=autoreconf:args
 # Valid args:	build	Don't run autoreconf, only add build dependencies
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_AUTORECONF_MK)
 _INCLUDE_USES_AUTORECONF_MK=	yes

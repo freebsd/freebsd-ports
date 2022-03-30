@@ -7,7 +7,7 @@
 #	- env : Only provide the environment variables, no fetch/build/install
 #		targets.
 #
-# MAINTAINER=	portmgr@FreeBSD.org
+# MAINTAINER=	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PEAR_MK)
 _INCLUDE_USES_PEAR_MK=	yes

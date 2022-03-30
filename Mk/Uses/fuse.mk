@@ -3,7 +3,7 @@
 # Feature:	fuse
 # Usage:	USES=fuse[:version]
 # Valid ARGS:	2 [default], 3
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_FUSE_MK)
 _INCLUDE_USES_FUSE_MK=	yes

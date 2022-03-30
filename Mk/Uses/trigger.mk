@@ -5,7 +5,7 @@
 # Variables:
 # TRIGGERS: list of triggers to package
 #
-# MAINTAINER= portmgr@FreeBSD.org
+# MAINTAINER= ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_TRIGGER_MK)
 _INCLUDE_USES_TRIGGER_MK=	yes

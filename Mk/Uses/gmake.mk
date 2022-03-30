@@ -3,7 +3,7 @@
 # Feature:		gmake
 # Usage:		USES=gmake
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GMAKE_MK)
 _INCLUDE_USES_GMAKE_MK=	yes

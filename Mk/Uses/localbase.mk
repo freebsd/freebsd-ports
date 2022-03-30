@@ -4,7 +4,7 @@
 # Usage:	USES=localbase or USES=localbase:args
 # Valid ARGS:	ldflags		Set LDFLAGS instead of LIBS
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LOCALBASE_MK)
 _INCLUDE_USES_LOCALBASE_MK=	yes

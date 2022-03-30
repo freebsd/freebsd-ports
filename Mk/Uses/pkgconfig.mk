@@ -4,7 +4,7 @@
 # Usage:	USES=pkgconfig or USES=pkgconfig:ARGS
 # Valid ARGS:	build (default, implicit), run, both
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PKGCONFIG_MK)
 _INCLUDE_USES_PKGCONFIG_MK=	yes

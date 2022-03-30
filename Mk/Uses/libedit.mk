@@ -4,7 +4,7 @@
 # Usage:	USES=libedit
 # Valid ARGS:	none
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LIBEDIT_MK)
 _INCLUDE_USES_LIBEDIT_MK=	yes

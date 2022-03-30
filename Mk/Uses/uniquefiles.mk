@@ -70,7 +70,7 @@
 # NOTE:	multiple logical instances are not supported by pkg and the original
 # pkg_tools at the moment.
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_UNIQUEFILES_MK)
 _INCLUDE_USES_UNIQUEFILES_MK=	yes

@@ -4,7 +4,7 @@
 # Usage:	USES=gettext-tools or USES=gettext-tools:ARGS
 # Valid ARGS:	build (default), run
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GETTEXT_TOOLS_MK)
 _INCLUDE_USES_GETTEXT_TOOLS_MK=	yes

@@ -5,7 +5,7 @@
 # Usage:	USES=pathfix
 # Valid ARGS:	does not require args
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PATHFIX_MK)
 _INCLUDE_USES_PATHFIX_MK=	yes

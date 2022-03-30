@@ -3,7 +3,7 @@
 # Feature:	readline
 # Usage:	USES=readline
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_READLINE_MK)
 _INCLUDE_USES_READLINE_MK=	yes

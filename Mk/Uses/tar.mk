@@ -3,7 +3,7 @@
 # Feature:	tar
 # Usage:	USES=tar[:[xz|lz|lzma|txz|bz[ip]2|tgz|tbz|tbz2|Z]]
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_TAR_MK)
 _INCLUDE_USES_TAR_MK=	yes

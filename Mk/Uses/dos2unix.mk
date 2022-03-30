@@ -5,7 +5,7 @@
 # DOS2UNIX_GLOB		list of glob pattern find(1) will match with
 # DOS2UNIX_WRKSRC	top-level path for directory traversal instead of ${WRKSRC}
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_DOS2UNIX_MK)
 _INCLUDE_USES_DOS2UNIX_MK=	yes

@@ -4,7 +4,7 @@
 # Usage:	USES=desthack
 # Valid ARGS:	none
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_DESTHACK_MK)
 _INCLUDE_USES_DESTHACK_MK=	yes

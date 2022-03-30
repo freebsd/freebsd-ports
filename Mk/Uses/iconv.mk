@@ -6,7 +6,7 @@
 #		wchar_t (port uses "WCHAR_T" extension),
 #		translit (port uses "//TRANSLIT" extension)
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: desktop@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ICONV_MK)
 _INCLUDE_USES_ICONV_MK=	yes

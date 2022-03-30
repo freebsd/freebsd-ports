@@ -3,7 +3,7 @@
 # Feature:	makeself
 # Usage:	USES=makeself
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_MAKESELF_Mk)
 _INCLUDE_USES_MAKESELF_MK=	yes

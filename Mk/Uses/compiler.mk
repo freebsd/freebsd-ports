@@ -24,7 +24,7 @@
 # COMPILER_FEATURES:	the list of features supported by the compiler includes the standard C++ library.
 # CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the framework)
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_COMPILER_MK)
 _INCLUDE_USES_COMPILER_MK=	yes

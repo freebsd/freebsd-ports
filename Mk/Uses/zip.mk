@@ -3,7 +3,7 @@
 # Feature:	zip
 # Usage:	USES=zip[:infozip]
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ZIP_MK)
 _INCLUDE_USES_ZIP_MK=	yes

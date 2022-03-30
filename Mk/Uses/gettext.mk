@@ -4,7 +4,7 @@
 # Feature:	gettext
 # Usage:	USES=gettext
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GETTEXT_MK)
 _INCLUDE_USES_GETTEXT_MK=	yes

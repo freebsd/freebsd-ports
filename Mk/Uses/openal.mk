@@ -4,7 +4,7 @@
 # Usage:	USES=openal or USES=openal:ARGS
 # Valid ARGS:	al, soft (default), alut
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_OPENAL_MK)
 _INCLUDE_USES_OPENAL_MK=	yes

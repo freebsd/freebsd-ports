@@ -19,7 +19,7 @@
 # BUILD_DEPENDS		- are added if needed
 # RUN_DEPENDS		- are added if needed
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NCURSES_MK)
 _INCLUDE_USES_NCURSES_MK=	yes

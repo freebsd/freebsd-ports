@@ -1,4 +1,4 @@
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 #
 # Feature:	fam
 # Usage:	USES=fam or USES=fam:ARG

@@ -4,7 +4,7 @@
 # Usage:	USES=charsetfix
 # Valid ARGS:	does not require args
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CHARSETFIX_MK)
 _INCLUDE_USES_CHARSETFIX_MK=	yes

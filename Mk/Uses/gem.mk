@@ -4,7 +4,7 @@
 # Usage:	USES=gem[:noautoplist]
 # Valid args:	noautoplist	Don't generate the plist automatically
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ruby@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GEM_MK)
 

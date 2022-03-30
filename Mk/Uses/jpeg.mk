@@ -9,7 +9,7 @@
 #			Valid values: graphics/jpeg-turbo, graphics/mozjpeg
 #			Default value: graphics/jpeg-turbo
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_JPEG_MK)
 
