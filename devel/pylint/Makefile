@@ -1,7 +1,7 @@
 # Created by: Hye-Shik Chang
 
 PORTNAME=	pylint
-PORTVERSION=	2.12.2
+PORTVERSION=	2.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -13,9 +13,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.9.0<2.10:devel/py-astroid@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.11.0<2.12.0:devel/py-astroid@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dill>=0.2:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=4.2.5<6:devel/py-isort@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mccabe>=0.6<0.7:devel/py-mccabe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mccabe>=0.6<0.8:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.2.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.9.2:textproc/py-toml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
@@ -30,6 +31,10 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0:textproc/py-tomli@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
