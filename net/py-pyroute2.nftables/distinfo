@@ -1,3 +1,3 @@
-TIMESTAMP = 1647264628
-SHA256 (pyroute2.nftables-0.6.8.tar.gz) = 48d79bc6cd26085108e1b7a3b8b31e537c2b3bc299653d5fae77d0c3c1a4a3a1
-SIZE (pyroute2.nftables-0.6.8.tar.gz) = 26428
+TIMESTAMP = 1648248964
+SHA256 (pyroute2.nftables-0.6.9.tar.gz) = f012f3f082286e6ac66fae0f857cf55d67e5dca2533a138bfa3d42e3f8e55ee2
+SIZE (pyroute2.nftables-0.6.9.tar.gz) = 26483
