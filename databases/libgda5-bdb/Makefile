@@ -12,6 +12,9 @@ BUILD_WRKSRC=	${WRKSRC}/providers/bdb/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
 
+DEPRECATED=	Depends on deprecated databases/db5
+EXPIRATION_DATE=2022-06-30
+
 LIBGDA5_SLAVE=	bdb
 
 .include "${MASTERDIR}/Makefile"
