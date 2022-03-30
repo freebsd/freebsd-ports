@@ -1,0 +1,11 @@
+--- net/dns/public/BUILD.gn.orig	2022-03-28 18:11:04 UTC
++++ net/dns/public/BUILD.gn
+@@ -72,7 +72,7 @@ source_set("tests") {
+     "util_unittest.cc",
+   ]
+ 
+-  if (is_posix && !is_android) {
++  if (is_posix && !is_android && !is_bsd) {
+     sources += [ "resolv_reader_unittest.cc" ]
+   }
+ 

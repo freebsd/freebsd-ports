@@ -1,0 +1,185 @@
+--- build/config/compiler/BUILD.gn.orig	2022-03-29 10:33:34 UTC
++++ build/config/compiler/BUILD.gn
+@@ -236,13 +236,16 @@ config("default_include_dirs") {
+ # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+ # the executable they are loaded into, so they are unresolved at link-time.
+ config("no_unresolved_symbols") {
+-  if (!using_sanitizer &&
++  if (!using_sanitizer && !is_bsd &&
+       (is_linux || is_chromeos || is_android || is_fuchsia)) {
+     ldflags = [
+       "-Wl,-z,defs",
+       "-Wl,--as-needed",
+     ]
+   }
++  if (current_cpu == "x86" && is_openbsd) {
++    ldflags = [ "-Wl,-z,notext" ]
++  }
+ }
+ 
+ # compiler ---------------------------------------------------------------------
+@@ -291,7 +294,9 @@ config("compiler") {
+ 
+   configs += [
+     # See the definitions below.
++    ":clang_revision",
+     ":rustc_revision",
++    ":compiler_cpu_abi",
+     ":compiler_codegen",
+     ":compiler_deterministic",
+   ]
+@@ -450,6 +455,10 @@ config("compiler") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    ldflags += [ "-Wl,-z,wxneeded" ]
++  }
++
+   # Linux-specific compiler flags setup.
+   # ------------------------------------
+   if ((is_posix || is_fuchsia) && !is_apple && use_lld) {
+@@ -873,7 +882,7 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+@@ -887,7 +896,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1456,7 +1465,7 @@ config("default_warnings") {
+         "-Wno-ignored-pragma-optimize",
+       ]
+ 
+-      if (is_chromeos || default_toolchain == "//build/toolchain/cros:target") {
++      if (is_chromeos || default_toolchain == "//build/toolchain/cros:target" || is_bsd) {
+         # TODO(https://crbug.com/1016945): Re-enable once ChromeOS toolchain is up to date
+         cflags += [ "-Wno-builtin-assume-aligned-alignment" ]
+       }
+@@ -1628,7 +1637,7 @@ config("no_chromium_code") {
+       # third-party libraries.
+       "-Wno-c++11-narrowing",
+     ]
+-    if (!is_nacl) {
++    if (!is_nacl && !is_freebsd) {
+       cflags += [
+         # Disabled for similar reasons as -Wunused-variable.
+         "-Wno-unused-but-set-variable",
+@@ -1940,8 +1949,7 @@ config("default_stack_frames") {
+ }
+ 
+ # Default "optimization on" config.
+-config("optimize") { }
+-config("xoptimize") {
++config("optimize") {
+   if (is_win) {
+     if (chrome_pgo_phase != 2) {
+       # Favor size over speed, /O1 must be before the common flags.
+@@ -1979,8 +1987,7 @@ config("xoptimize") {
+ }
+ 
+ # Turn off optimizations.
+-config("no_optimize") { }
+-config("xno_optimize") {
++config("no_optimize") {
+   if (is_win) {
+     cflags = [
+       "/Od",  # Disable optimization.
+@@ -2020,8 +2027,7 @@ config("xno_optimize") {
+ # Turns up the optimization level. On Windows, this implies whole program
+ # optimization and link-time code generation which is very expensive and should
+ # be used sparingly.
+-config("optimize_max") { }
+-config("xoptimize_max") {
++config("optimize_max") {
+   if (is_nacl && is_nacl_irt) {
+     # The NaCl IRT is a special case and always wants its own config.
+     # Various components do:
+@@ -2054,8 +2060,7 @@ config("xoptimize_max") {
+ #
+ # TODO(crbug.com/621335) - rework how all of these configs are related
+ # so that we don't need this disclaimer.
+-config("optimize_speed") { }
+-config("xoptimize_speed") {
++config("optimize_speed") {
+   if (is_nacl && is_nacl_irt) {
+     # The NaCl IRT is a special case and always wants its own config.
+     # Various components do:
+@@ -2081,8 +2086,7 @@ config("xoptimize_speed") {
+   }
+ }
+ 
+-config("optimize_fuzzing") { }
+-config("xoptimize_fuzzing") {
++config("optimize_fuzzing") {
+   cflags = [ "-O1" ] + common_optimize_on_cflags
+   rustflags = [ "-Copt-level=1" ]
+   ldflags = common_optimize_on_ldflags
+@@ -2148,7 +2152,7 @@ config("afdo_optimize_size") {
+ # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags = []
+     if (clang_emit_debug_info_for_profiling) {
+       # Add the following flags to generate debug info for profiling.
+@@ -2164,7 +2168,7 @@ config("afdo") {
+       cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+       inputs = [ _clang_sample_profile ]
+     }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
+     cflags = [ "-fauto-profile=${auto_profile_path}" ]
+     inputs = [ auto_profile_path ]
+   }
+@@ -2202,8 +2206,7 @@ config("win_pdbaltpath") {
+ }
+ 
+ # Full symbols.
+-config("symbols") { }
+-config("xsymbols") {
++config("symbols") {
+   if (is_win) {
+     if (is_clang) {
+       cflags = [ "/Z7" ]  # Debug information in the .obj files.
+@@ -2304,7 +2307,8 @@ config("xsymbols") {
+     }
+   }
+ 
+-  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {
++  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos" &&
++      !is_bsd) {
+     if (is_apple) {
+       # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+       # Make sure we don't use constructor homing on mac.
+@@ -2327,8 +2331,7 @@ config("xsymbols") {
+ # Minimal symbols.
+ # This config guarantees to hold symbol for stack trace which are shown to user
+ # when crash happens in unittests running on buildbot.
+-config("minimal_symbols") { }
+-config("xminimal_symbols") {
++config("minimal_symbols") {
+   if (is_win) {
+     # Functions, files, and line tables only.
+     cflags = []
+@@ -2397,8 +2400,7 @@ config("xminimal_symbols") {
+ # This configuration contains function names only. That is, the compiler is
+ # told to not generate debug information and the linker then just puts function
+ # names in the final debug information.
+-config("no_symbols") { }
+-config("xno_symbols") {
++config("no_symbols") {
+   if (is_win) {
+     ldflags = [ "/DEBUG" ]
+ 
