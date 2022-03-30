@@ -1,0 +1,32 @@
+# Created by: Michael Muenz <m.muenz@gmail.com>
+
+PORTNAME=	pcapy-ng
+PORTVERSION=	1.0.4
+CATEGORIES=	net python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	m.muenz@gmail.com
+COMMENT=	Python pcap extension
+
+LICENSE=	APACHE11
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist distutils
+
+CONFLICTS_INSTALL=	pcapy
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+PORTDOCS=	README pcapy.html
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pcapy*.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
