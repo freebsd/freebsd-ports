@@ -1,8 +1,7 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	snort
-PORTVERSION=	2.9.18
-PORTREVISION=	1
+PORTVERSION=	2.9.19
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		https://snort.org/downloads/archive/snort/
