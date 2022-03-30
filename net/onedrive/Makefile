@@ -1,6 +1,6 @@
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.15
+DISTVERSION=	2.4.16
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -22,6 +22,8 @@ GH_ACCOUNT=	abraunegg
 GNU_CONFIGURE=	yes
 PKGCONFIG=		pkgconf
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=		DOCS NOTIFY COMPLETION
 OPTIONS_DEFAULT=	NOTIFY COMPLETION
 OPTIONS_SUB=		yes
@@ -37,8 +39,6 @@ COMPLETION_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
 COMPLETION_RUN_DEPENDS=		bash-completion>0:shells/bash-completion
 
 ONEDRIVE_LOGDIR=	/var/log/${PORTNAME}
-
-PORTDOCS=	*
 
 post-extract:
 	${CP} ${FILESDIR}/freebsd_inotify.d ${WRKSRC}/src
