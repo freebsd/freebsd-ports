@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	exception_notification
-PORTVERSION=	4.4.3
+PORTVERSION=	4.5.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Exception notification for Rails apps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionmailer4>=4.0<7:mail/rubygem-actionmailer4 \
-		rubygem-activesupport4>=4.0<7:devel/rubygem-activesupport4
+RUN_DEPENDS=	rubygem-actionmailer52>=5.2<8:mail/rubygem-actionmailer52 \
+		rubygem-activesupport52>=5.2<8:devel/rubygem-activesupport52
 
 USES=		gem
 USE_RUBY=	yes
