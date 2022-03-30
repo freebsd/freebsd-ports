@@ -1,10 +1,9 @@
 # Created by: Glenn Johnson <glennpj@charter.net>
 
 PORTNAME=	gnucash-docs
-DISTVERSION=	4.9
-PORTREVISION=	2
+DISTVERSION=	4.10.1
 CATEGORIES=	finance gnome
-MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION}
+MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION:R}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Documentation for gnucash
