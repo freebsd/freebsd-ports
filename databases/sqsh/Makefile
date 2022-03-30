@@ -2,17 +2,18 @@
 
 PORTNAME=	sqsh
 PORTVERSION=	2.5.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R:R}
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	https://raw.githubusercontent.com/netzbasis/openbsd-ports/11f6e510cbdf022a7b6c71ee125a41ba443fe927/databases/sqsh/patches/
+PATCHFILES=	patch-src_cmd_connect_c
+
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Interactive tool for querying Sybase database servers
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		cmd_connect.c:1897:17: error: use of undeclared identifier 'CS_MAX_CHAR'
 
 LIB_DEPENDS=	libct.so:databases/freetds
 
@@ -29,6 +30,7 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
 X11_USES=	motif
+X11_USE=	xorg=x11,xext,xmu,xt
 X11_CONFIGURE_ON=	--with-motif --with-x
 
 post-patch:
