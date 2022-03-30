@@ -406,8 +406,6 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xpm.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xps.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xps.so
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xtrn.la
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xtrn.so
 %%X11%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xwd.la
 %%X11%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xwd.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ycbcr.la
@@ -469,7 +467,7 @@ man/man1/stream.1.gz
 %%DATADIR%%-6/english.xml
 %%DATADIR%%-6/francais.xml
 %%DATADIR%%-6/locale.xml
-%%PORTDOCS%%%%DOCSDIR%%-6/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%-6/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%-6/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%-6/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%-6/images/ImageMagick.ico
@@ -586,7 +584,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/images/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/images/wizard.png
 %%PORTDOCS%%%%DOCSDIR%%-6/index.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/ImageMagickObject.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Blob.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Cache.fig
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Cache.png
