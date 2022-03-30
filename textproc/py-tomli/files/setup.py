@@ -9,6 +9,9 @@ packages = \
 package_data = \
 {'': ['*']}
 
+package_dir = \
+{'': 'src'}
+
 setup(name='tomli',
       version='%%PORTVERSION%%',
       description="A lil' TOML parser",
@@ -17,5 +20,6 @@ setup(name='tomli',
       url=None,
       packages=packages,
       package_data=package_data,
-      python_requires='>=3.6',
+      package_dir=package_dir,
+      python_requires='>=3.7',
      )
