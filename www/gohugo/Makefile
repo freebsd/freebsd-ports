@@ -1,7 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.95.0
-PORTREVISION=	1
+DISTVERSION=	0.96.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -28,7 +27,7 @@ GH_TUPLE=	\
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.1.2:bep_gitmap/vendor/github.com/bep/gitmap \
 		bep:goat:v0.5.0:bep_goat/vendor/github.com/bep/goat \
-		bep:godartsass:v0.12.0:bep_godartsass/vendor/github.com/bep/godartsass \
+		bep:godartsass:v0.14.0:bep_godartsass/vendor/github.com/bep/godartsass \
 		bep:golibsass:v1.0.0:bep_golibsass/vendor/github.com/bep/golibsass \
 		bep:gowebp:v0.1.0:bep_gowebp/vendor/github.com/bep/gowebp \
 		bep:tmc:v0.5.1:bep_tmc/vendor/github.com/bep/tmc \
@@ -43,7 +42,7 @@ GH_TUPLE=	\
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		frankban:quicktest:v1.14.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.5.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		getkin:kin-openapi:v0.91.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
+		getkin:kin-openapi:v0.93.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-openapi:jsonpointer:v0.19.5:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
 		go-openapi:swag:v0.19.5:go_openapi_swag/vendor/github.com/go-openapi/swag \
@@ -108,14 +107,14 @@ GH_TUPLE=	\
 		sanity-io:litter:v1.5.2:sanity_io_litter/vendor/github.com/sanity-io/litter \
 		spf13:afero:v1.8.1:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.4.1:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.3.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:fsync:v0.9.0:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		tdewolff:minify:v2.10.0:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.5.27:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		yuin:goldmark:v1.4.10:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.4.11:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/compute
@@ -125,14 +124,14 @@ post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 	@${RLN} ${WRKSRC_googleapis_gax_go_v2}/v2 ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 
-CONFLICTS_INSTALL=	hugo # bin/hugo
-
 GO_BUILDFLAGS=	-ldflags="\
 		-s -w \
 		-X github.com/gohugoio/hugo/common/hugo.buildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}} \
 		-X github.com/gohugoio/hugo/common/hugo.commitHash=${COMMIT_ID} \
 		-X github.com/gohugoio/hugo/common/hugo.vendorInfo=freebsd" \
 		${BUILD_TAGS}
+
+CONFLICTS_INSTALL=	hugo # bin/hugo
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 OPTIONS_DEFAULT=	MANPAGES EXTENDED
@@ -159,7 +158,7 @@ PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershe
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
 # COMMIT_ID should be the first 8 positions of the commit hash, characters should be UPPERCASE
-COMMIT_ID=		9F2E76AF
+COMMIT_ID=		2FD4A7D3
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
