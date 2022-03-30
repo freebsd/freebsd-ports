@@ -1,6 +1,6 @@
---- src/uharfbuzz/_harfbuzz.cpp.orig	2021-05-09 03:05:40 UTC
+--- src/uharfbuzz/_harfbuzz.cpp.orig	2022-03-22 22:30:14 UTC
 +++ src/uharfbuzz/_harfbuzz.cpp
-@@ -18,13 +18,12 @@
+@@ -30,14 +30,12 @@
              "-std=c++11"
          ],
          "include_dirs": [
@@ -11,7 +11,8 @@
          "name": "uharfbuzz._harfbuzz",
          "sources": [
              "src/uharfbuzz/_harfbuzz.pyx",
--            "harfbuzz/src/harfbuzz.cc"
+-            "harfbuzz/src/harfbuzz.cc",
+-            "harfbuzz/src/hb-subset-repacker.cc"
          ]
      },
      "module_name": "uharfbuzz._harfbuzz"
