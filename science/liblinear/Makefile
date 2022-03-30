@@ -1,7 +1,7 @@
 # Created by: Rong-En Fan <rafan@FreeBSD.org>
 
 PORTNAME=	liblinear
-PORTVERSION=	2.43
+PORTVERSION=	2.44
 CATEGORIES=	science math
 MASTER_SITES=	https://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 		https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
