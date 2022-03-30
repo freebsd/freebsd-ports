@@ -1,8 +1,7 @@
 # Created by: Randall Hopper
 
 PORTNAME=	gdal
-PORTVERSION=	3.4.1
-PORTREVISION=	10
+PORTVERSION=	3.4.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -57,6 +56,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--with-liblzma=yes \
 		--with-libtiff=yes \
 		--with-libz=/usr \
+		--with-msg=no \
 		--with-pcidsk=internal \
 		--with-pcraster=internal \
 		--with-png=yes \
