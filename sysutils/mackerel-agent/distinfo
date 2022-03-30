@@ -1,6 +1,6 @@
-TIMESTAMP = 1647180221
-SHA256 (mackerelio-mackerel-agent-v0.72.8_GH0.tar.gz) = 578ca1b572d43264ab115175798837c20978c06b093f8fc317023289d0993aba
-SIZE (mackerelio-mackerel-agent-v0.72.8_GH0.tar.gz) = 262377
+TIMESTAMP = 1648451374
+SHA256 (mackerelio-mackerel-agent-v0.72.9_GH0.tar.gz) = 64f4ae5ad79816b5643d886079db49373cbcec03151b522658b6c12e7ad4192d
+SIZE (mackerelio-mackerel-agent-v0.72.9_GH0.tar.gz) = 262353
 SHA256 (BurntSushi-toml-v1.0.0_GH0.tar.gz) = 7f2c8a91ddaed4455c889baf526a5c0a57f9574676513d546b9f0499eae9b0c8
 SIZE (BurntSushi-toml-v1.0.0_GH0.tar.gz) = 90415
 SHA256 (Songmu-gocredits-v0.2.0_GH0.tar.gz) = 3e79e688679a94bdf3e74b326eb120a03577ac582fc0af6f020fba8706de36dd
