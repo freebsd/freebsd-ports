@@ -135,6 +135,7 @@
     SUBDIR += diffmark
     SUBDIR += diffsplit
     SUBDIR += diffstat
+    SUBDIR += difftastic
     SUBDIR += diffutils
     SUBDIR += dikt
     SUBDIR += discount
