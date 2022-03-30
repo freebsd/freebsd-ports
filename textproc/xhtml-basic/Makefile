@@ -4,10 +4,10 @@ PORTNAME=	xhtml-basic
 PORTVERSION=	1.0.${RECDATE}
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.w3.org/TR/2000/REC-${PORTNAME}-${RECDATE}/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	https://www.w3.org/TR/2000/REC-xhtml-basic-${RECDATE}/
+DISTNAME=	xhtml-basic
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	W3C's XHTML Basic DTD
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr \
@@ -19,7 +19,7 @@ USES=		tar:tgz
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/REC-${PORTNAME}-${RECDATE}
+WRKSRC=		${WRKDIR}/REC-xhtml-basic-${RECDATE}
 
 PORTDATA=	xhtml-basic10-model-1.mod \
 		xhtml-basic10.cat \
