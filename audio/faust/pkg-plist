@@ -1,5 +1,6 @@
 bin/encoderunitypackage
 bin/faust
+bin/faust-config
 bin/faust2alqt
 bin/faust2alsa
 bin/faust2alsaconsole
@@ -67,11 +68,13 @@ bin/faust2rpialsaconsole
 bin/faust2rpinetjackconsole
 bin/faust2sam
 bin/faust2sc
+bin/faust2sc.py
 bin/faust2sig
 bin/faust2sigviewer
 bin/faust2smartkeyb
 bin/faust2sndfile
 bin/faust2soul
+bin/faust2sublimecompletions
 bin/faust2supercollider
 bin/faust2svg
 bin/faust2svgviewer
@@ -255,7 +258,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.37.3
+lib/libfaust.so.2.40.0
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -644,6 +647,9 @@ lib/libfaust.so.2.37.3
 %%DATADIR%%/max-msp/faustgen-wrapper.maxpat
 %%DATADIR%%/max-msp/max-msp.cpp
 %%DATADIR%%/max-msp/max-msp64.cpp
+%%DATADIR%%/max-msp/sndfile/arm/libsndfile.a
+%%DATADIR%%/max-msp/sndfile/intel/libsndfile.a
+%%DATADIR%%/max-msp/sndfile/sndfile.h
 %%DATADIR%%/max-msp/ui.js
 %%DATADIR%%/max-msp/wrapper-poly.maxpat
 %%DATADIR%%/max-msp/wrapper.maxpat
