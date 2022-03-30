@@ -35,5 +35,5 @@ setup(name='sphinx-theme-builder',
       install_requires=install_requires,
       extras_require=extras_require,
       entry_points=entry_points,
-      python_requires='~=3.7',
+      python_requires='>=3.7',
      )
