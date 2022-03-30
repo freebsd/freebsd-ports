@@ -1,3 +1,3 @@
-TIMESTAMP = 1608382794
-SHA256 (rubygem/bcrypt-3.1.16.gem) = 0b8bf031ba81aa76c0f10c5a8dac779b6035d84b09af1dbb2b1a32a7e360210b
-SIZE (rubygem/bcrypt-3.1.16.gem) = 54272
+TIMESTAMP = 1648249206
+SHA256 (rubygem/bcrypt-3.1.17.gem) = c53876c0fdd9604a0c0927a8f7f79cd21dd8f88d29c2a88fbf99326a336c53e5
+SIZE (rubygem/bcrypt-3.1.17.gem) = 55808

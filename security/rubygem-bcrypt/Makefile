@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	bcrypt
-PORTVERSION=	3.1.16
+PORTVERSION=	3.1.17
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
