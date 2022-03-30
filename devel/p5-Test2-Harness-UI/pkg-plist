@@ -2,6 +2,7 @@ bin/yath-ui-backfill.pl
 bin/yath-ui-importer.pl
 bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/App/Yath/Command/ui.pm
+%%SITE_PERL%%/App/Yath/Command/upload.pm
 %%SITE_PERL%%/App/Yath/Plugin/YathUIDB.pm
 %%SITE_PERL%%/App/Yath/Tester/UI.pm
 %%SITE_PERL%%/Test2/Harness/Renderer/UI.pm
@@ -15,7 +16,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Download.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Durations.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Events.pm
-%%SITE_PERL%%/Test2/Harness/UI/Controller/Failed.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/Files.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Interactions.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Job.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/JobField.pm
@@ -215,7 +216,7 @@ bin/yath-ui-sweeper.pl
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Download.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Durations.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Events.3.gz
-%%PERL5_MAN3%%/Test2::Harness::UI::Controller::Failed.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::Files.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Interactions.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Job.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::JobField.3.gz
