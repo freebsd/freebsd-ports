@@ -5,7 +5,7 @@ PORTVERSION=	2.1.7
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 
-MAINTAINER=	mp39590@gmail.com
+MAINTAINER=	epic@dsllsn.net
 COMMENT=	Enhanced Programmable IRC-II Client
 
 LICENSE=	BSD3CLAUSE
