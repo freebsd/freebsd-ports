@@ -47,7 +47,7 @@ USES=		compiler:c++17-lang cpe gmake iconv jpeg localbase pkgconfig ssl tar:xz
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--enable-static=yes \
-		--with-cpp17 \
+		--with-cpp14 \
 		--with-crypto=yes \
 		--with-geotiff=yes \
 		--with-gif=yes \
