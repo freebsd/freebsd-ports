@@ -18,6 +18,7 @@ man/man1/profanity.1.gz
 %%DATADIR%%/themes/orange
 %%DATADIR%%/themes/original
 %%DATADIR%%/themes/shade
+%%DATADIR%%/themes/snikket
 %%DATADIR%%/themes/spawn
 %%DATADIR%%/themes/whiteness
 %%DATADIR%%/themes/complex
@@ -52,6 +53,7 @@ man/man1/profanity-color.1.gz
 man/man1/profanity-connect.1.gz
 man/man1/profanity-console.1.gz
 man/man1/profanity-correct.1.gz
+man/man1/profanity-correct-editor.1.gz
 man/man1/profanity-correction.1.gz
 man/man1/profanity-disco.1.gz
 man/man1/profanity-disconnect.1.gz
@@ -75,6 +77,7 @@ man/man1/profanity-log.1.gz
 man/man1/profanity-logging.1.gz
 man/man1/profanity-mainwin.1.gz
 man/man1/profanity-mam.1.gz
+man/man1/profanity-mood.1.gz
 man/man1/profanity-msg.1.gz
 man/man1/profanity-nick.1.gz
 man/man1/profanity-notify.1.gz
@@ -95,6 +98,7 @@ man/man1/profanity-privileges.1.gz
 man/man1/profanity-quit.1.gz
 man/man1/profanity-receipts.1.gz
 man/man1/profanity-reconnect.1.gz
+man/man1/profanity-register.1.gz
 man/man1/profanity-reload.1.gz
 man/man1/profanity-resource.1.gz
 man/man1/profanity-role.1.gz
