@@ -1,6 +1,7 @@
 PORTNAME=	codesearch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	eborisch@gmail.com

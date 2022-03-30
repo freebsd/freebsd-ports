@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-workhorse
 PORTVERSION=	14.9.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org

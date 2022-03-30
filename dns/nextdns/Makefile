@@ -1,5 +1,6 @@
 PORTNAME=	nextdns
 PORTVERSION=	1.37.7
+PORTREVISION=	1
 CATEGORIES=	dns security
 
 MAINTAINER=	rs@nextdns.io

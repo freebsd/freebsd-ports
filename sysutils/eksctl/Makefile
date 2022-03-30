@@ -2,6 +2,7 @@
 
 PORTNAME=	eksctl
 PORTVERSION=	0.30.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org

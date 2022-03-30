@@ -2,6 +2,7 @@
 
 PORTNAME=	picocrypt
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	danfe@FreeBSD.org

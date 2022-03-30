@@ -3,6 +3,7 @@
 PORTNAME=	mirrorselect
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	www ports-mgmt
 
 MAINTAINER=	aly@aaronly.me

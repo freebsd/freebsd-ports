@@ -1,6 +1,7 @@
 PORTNAME=			nginx-vts-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.10.7
+PORTREVISION=	1
 CATEGORIES=			www
 
 MAINTAINER=			joneum@FreeBSD.org

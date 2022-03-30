@@ -1,5 +1,6 @@
 PORTNAME=		carbon-relay-ng
 DISTVERSION=		0.10.0
+PORTREVISION=	1
 PORTREVISION=		1
 CATEGORIES=		net-mgmt
 

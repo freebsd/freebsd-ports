@@ -2,7 +2,7 @@ PORTNAME=	govendor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.9-6
 DISTVERSIONSUFFIX=	-gc5ee5dc # includes the fix for 32-bit systems: https://github.com/kardianos/govendor/issues/386
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	rwestlun@gmail.com

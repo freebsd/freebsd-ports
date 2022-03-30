@@ -1,6 +1,7 @@
 PORTNAME=	kepubify
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	textproc converters
 
 MAINTAINER=	fuz@fuz.su

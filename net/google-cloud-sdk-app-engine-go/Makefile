@@ -1,5 +1,6 @@
 PORTNAME=	google-cloud-sdk-app-engine-go
 DISTVERSION=	g20181102165140
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/components/
 DISTNAME=	${PORTNAME}-linux-x86_64-${DISTVERSION:S/^g//}
