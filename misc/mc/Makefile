@@ -1,8 +1,7 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	mc
-PORTVERSION=	4.8.27
-PORTREVISION=	1
+PORTVERSION=	4.8.28
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -38,7 +37,7 @@ OPTIONS_SUB=	yes
 
 ASPELL_DESC=	Aspell support for internal editor
 EDITOR_DESC=	Build with internal text editor
-EXTATTR_DESC=	Extended attributes support
+EXTATTR_DESC=	Extended filesystem attributes support
 SCREEN_DESC=	Screen library
 SFTP_DESC=	Support for SFTP (via libssh)
 SUBSHELL_DESC=	Build with subshell support
