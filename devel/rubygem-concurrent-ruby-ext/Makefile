@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	concurrent-ruby-ext
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
