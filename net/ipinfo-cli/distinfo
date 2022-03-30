@@ -1,6 +1,6 @@
-TIMESTAMP = 1640648920
-SHA256 (ipinfo-cli-ipinfo-2.7.0_GH0.tar.gz) = a111d1d9180e65ed52eefce59b63b851420df9548b8aaba8742e0a30136c3219
-SIZE (ipinfo-cli-ipinfo-2.7.0_GH0.tar.gz) = 2389638
+TIMESTAMP = 1648319319
+SHA256 (ipinfo-cli-ipinfo-2.8.0_GH0.tar.gz) = b46e533978e442656203122f42bee5917ba3ba388b579a1c0b7bd6ac02985ad1
+SIZE (ipinfo-cli-ipinfo-2.8.0_GH0.tar.gz) = 3583498
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (etcd-io-bbolt-v1.3.6_GH0.tar.gz) = a2e524f7f32c44fa0765de192ac0789c585010cadd2c2ddcf9518e858a96ec1f
