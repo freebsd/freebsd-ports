@@ -1,7 +1,7 @@
 # Created by: Jonathan Weiss (<jw@innerewut.de>)
 
 PORTNAME=	hoe
-PORTVERSION=	3.23.0
+PORTVERSION=	3.23.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
