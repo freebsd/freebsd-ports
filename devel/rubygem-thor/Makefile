@@ -1,9 +1,9 @@
 PORTNAME=	thor
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Scripting framework that replaces rake, sake, and rubigen
 
 LICENSE=	MIT
