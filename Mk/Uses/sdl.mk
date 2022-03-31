@@ -3,7 +3,7 @@
 # Feature:	sdl
 # Usage:	USES=sdl
 #		USE_SDL=sdl console gfx image mixer mm net pango sound ttf
-#		        sdl2 gfx2 image2 mixer2 net2 ttf2
+#		        sdl2 gfx2 image2 mixer2 net2 sound2 ttf2
 #
 #		USE_SDL specifies which SDL components to add as dependencies.
 #		Not specifying USE_SDL with USES=sdl is an error.
@@ -47,7 +47,7 @@ _SDL_ttf_LIB_DEPENDS=		libSDL_ttf.so:graphics/sdl_ttf
 _SDL_ttf_REQUIRES=		sdl
 
 # These are the current supported SDL2 modules
-_SDL_USE_ALL+=	sdl2 gfx2 image2 mixer2 net2 ttf2
+_SDL_USE_ALL+=	sdl2 gfx2 image2 mixer2 net2 sound2 ttf2
 
 _SDL_sdl2_LIB_DEPENDS=		libSDL2.so:devel/sdl20
 
@@ -62,6 +62,9 @@ _SDL_mixer2_REQUIRES=		sdl2
 
 _SDL_net2_LIB_DEPENDS=		libSDL2_net.so:net/sdl2_net
 _SDL_net2_REQUIRES=		sdl2
+
+_SDL_sound2_LIB_DEPENDS=	libSDL2_sound.so:audio/sdl2_sound
+_SDL_sound2_REQUIRES=		sdl2
 
 _SDL_ttf2_LIB_DEPENDS=		libSDL2_ttf.so:graphics/sdl2_ttf
 _SDL_ttf2_REQUIRES=		sdl2

@@ -1,0 +1,6 @@
+bin/playsound2
+include/SDL2/SDL_sound.h
+lib/libSDL2_sound.a
+lib/libSDL2_sound.so
+lib/libSDL2_sound.so.2
+lib/libSDL2_sound.so.2.0.1

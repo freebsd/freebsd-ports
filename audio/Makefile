@@ -718,6 +718,7 @@
     SUBDIR += schismtracker
     SUBDIR += screcord-lv2
     SUBDIR += sdl2_mixer
+    SUBDIR += sdl2_sound
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
     SUBDIR += sfizz
