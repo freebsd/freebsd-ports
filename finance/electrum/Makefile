@@ -1,7 +1,7 @@
 # Created by: Neil Booth
 
 PORTNAME=	electrum
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
