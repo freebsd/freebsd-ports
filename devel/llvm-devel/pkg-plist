@@ -77,7 +77,6 @@ bin/split-file-devel
 %%CLANG%%bin/clang-nvlink-wrapper-devel
 %%CLANG%%bin/clang-offload-bundler-devel
 %%CLANG%%bin/clang-offload-wrapper-devel
-%%CLANG%%bin/clang-pseudo-devel
 %%CLANG%%bin/clang-repl-devel
 %%CLANG%%bin/clang-scan-deps-devel
 %%CLANG%%bin/diagtool-devel
@@ -92,6 +91,7 @@ bin/split-file-devel
 %%EXTRAS%%bin/clang-doc-devel
 %%EXTRAS%%bin/clang-include-fixer-devel
 %%EXTRAS%%bin/clang-move-devel
+%%EXTRAS%%bin/clang-pseudo-devel
 %%EXTRAS%%bin/clang-query-devel
 %%EXTRAS%%bin/clang-rename-devel
 %%EXTRAS%%bin/clang-reorder-fields-devel
@@ -170,7 +170,7 @@ llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/clang-nvlink-wrapper
 %%CLANG%%llvm-devel/bin/clang-offload-bundler
 %%CLANG%%llvm-devel/bin/clang-offload-wrapper
-%%CLANG%%llvm-devel/bin/clang-pseudo
+%%EXTRAS%%llvm-devel/bin/clang-pseudo
 %%EXTRAS%%llvm-devel/bin/clang-query
 %%CLANG%%llvm-devel/bin/clang-refactor
 %%EXTRAS%%llvm-devel/bin/clang-rename

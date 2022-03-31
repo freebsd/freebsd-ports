@@ -78,7 +78,6 @@ CLANG_COMMANDS=	\
 		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-wrapper \
-		clang-pseudo \
 		clang-repl \
 		clang-scan-deps \
 		diagtool \
@@ -95,6 +94,7 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-fixer \
 		clang-move \
+		clang-pseudo \
 		clang-query \
 		clang-rename \
 		clang-reorder-fields \
