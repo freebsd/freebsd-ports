@@ -205,7 +205,6 @@
     SUBDIR += hardening-check
     SUBDIR += hash
     SUBDIR += hashcat
-    SUBDIR += hashcat-legacy
     SUBDIR += heaan
     SUBDIR += headscale
     SUBDIR += heimdal
@@ -812,7 +811,6 @@
     SUBDIR += pwman
     SUBDIR += pwman3
     SUBDIR += pwned-check
-    SUBDIR += pxytest
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
     SUBDIR += py-YubiOTP
@@ -1000,9 +998,6 @@
     SUBDIR += racoon2
     SUBDIR += ratproxy
     SUBDIR += rats
-    SUBDIR += razorback-api
-    SUBDIR += razorback-masterNugget
-    SUBDIR += razorback-syslogNugget
     SUBDIR += rcracki_mt
     SUBDIR += reop
     SUBDIR += rhash

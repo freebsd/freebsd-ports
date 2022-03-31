@@ -1,5 +1,0 @@
-@sample etc/razorback/syslog.conf.sample
-lib/razorback/syslogNugget.so.2.0.0
-lib/razorback/syslogNugget.so.2
-lib/razorback/syslogNugget.so
-lib/razorback/syslogNugget.a
