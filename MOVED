@@ -17055,7 +17055,6 @@ security/smtpscan||2022-03-31|Has expired: Abandonware, last release in 2003 and
 security/cisco-torch||2022-03-31|Has expired: Abandonware, dead upstream
 security/amavis-stats||2022-03-31|Has expired: Abandoned, upstream is dead and last release was back in 2005
 textproc/lucene4||2022-03-31|Has expired: Unsupported by upstream, released in 2015
-java/apache-commons-discovery||2022-03-31|Has expired: Abandoned upstream, last release in 2006
 devel/liballium||2022-03-31|Has expired: Abandonware, last release in 2014 and upstream is dead
 www/sakai||2022-03-31|Has expired: Depends on expired www/tomcat7
 graphics/deegree-wpvs||2022-03-31|Has expired: Depends on expired www/tomcat7
