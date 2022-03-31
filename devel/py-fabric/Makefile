@@ -1,7 +1,7 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 
 PORTNAME=	fabric
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
