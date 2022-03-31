@@ -2,7 +2,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -76,6 +76,11 @@ EXTRA_PATCHES= \
 		${DEBIAN_PATCHES_PREFIX}_45-Fix-bogus-error-message-copy.-Bug-2857.patch:-p1 \
 		${DEBIAN_PATCHES_PREFIX}_50-Fix-include_directory-in-redirect-routers.-Bug-2715.patch:-p1 \
 		${DEBIAN_PATCHES_PREFIX}_55-Specific-check-for-null-pointer.patch:-p1
+
+TLS_PATCHES_PREFIX=	${FILESDIR}/tls/
+EXTRA_PATCHES+= \
+		${TLS_PATCHES_PREFIX}patch-tls1:-p1 \
+		${TLS_PATCHES_PREFIX}patch-tls2:-p1
 
 .include <bsd.port.options.mk>
 
