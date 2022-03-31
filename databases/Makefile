@@ -973,6 +973,7 @@
     SUBDIR += rubygem-redis-actionpack-rails52
     SUBDIR += rubygem-redis-actionpack-rails60
     SUBDIR += rubygem-redis-actionpack-rails61
+    SUBDIR += rubygem-redis-actionpack52-rails61
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-redis44
     SUBDIR += rubygem-sdbm
