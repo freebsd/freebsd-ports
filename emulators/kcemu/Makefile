@@ -10,6 +10,9 @@ DISTNAME=	KCemu-${PORTVERSION}
 MAINTAINER=	hardy.schumacher@gmx.de
 COMMENT=	KC85 emulator
 
+DECREPATED=	Depends on expired multimedia/schroedinger
+EXPIRATION_DATE=2022-06-30
+
 BUILD_DEPENDS=	pngtopnm:graphics/netpbm
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libavformat.so:multimedia/ffmpeg \
