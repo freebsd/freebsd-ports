@@ -1,6 +1,5 @@
 PORTNAME=	stuntrally
-PORTVERSION=	2.6.1
-PORTREVISION=	4
+PORTVERSION=	2.6.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,8 +13,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 USE_GITHUB=	yes
 GH_TUPLE=	stuntrally:tracks:${PORTVERSION}:tracks/data/tracks
 
-USES=		compiler:c++11-lib cmake dos2unix pkgconfig sdl
-USE_CXXSTD=	gnu++11
+USES=		compiler:c++14-lang cmake dos2unix pkgconfig
 DOS2UNIX_FILES=	source/ogre/BaseApp_Create.cpp
 CMAKE_ARGS=	-DSHARE_INSTALL="${DATADIR_REL}" \
 		-DBULLET_ROOT="${LOCALBASE}"
@@ -39,7 +37,7 @@ GAME_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19 \
 			libenet.so:net/enet
 GAME_BUILD_DEPENDS=	${LOCALBASE}/include/MYGUI/MyGUI_OgreTexture.h:x11-toolkits/mygui-ogre
 GAME_USE=		SDL=sdl2
-GAME_USES=		openal
+GAME_USES=		openal sdl
 
 EDITOR_DESC=		Build the track editor
 EDITOR_CMAKE_BOOL=	BUILD_EDITOR
@@ -49,6 +47,7 @@ EDITOR_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19 \
 			libogg.so:audio/libogg \
 			libvorbisfile.so:audio/libvorbis
 EDITOR_USE=		SDL=sdl2
+EDITOR_USES=		sdl
 EDITOR_BUILD_DEPENDS=	${LOCALBASE}/include/MYGUI/MyGUI_OgreTexture.h:x11-toolkits/mygui-ogre
 
 MASTER_SERVER_CMAKE_BOOL=	BUILD_MASTER_SERVER
