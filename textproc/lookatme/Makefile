@@ -1,5 +1,6 @@
 PORTNAME=	lookatme
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +24,9 @@ USES=		cpe python:3.6+
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|>.*||' ${WRKSRC}/requirements.txt
 
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
