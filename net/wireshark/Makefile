@@ -1,8 +1,7 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 
 PORTNAME?=	wireshark
-DISTVERSION=	3.6.2
-PORTREVISION=	1
+DISTVERSION=	3.6.3
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
