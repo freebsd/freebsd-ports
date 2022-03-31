@@ -97,7 +97,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-carrierwave>=1.3.2<2.0:www/rubygem-carrierwave \
 	rubygem-mini_magick410>=4.10.1<4.11:graphics/rubygem-mini_magick410 \
 	rubygem-fog-aws>=3.12<4:net/rubygem-fog-aws \
-	rubygem-fog-core210=2.1.0:devel/rubygem-fog-core210 \
+	rubygem-fog-core210>=2.1.0<2.1.1:devel/rubygem-fog-core210 \
 	rubygem-fog-google>=1.15<2:net/rubygem-fog-google \
 	rubygem-fog-local>=0.6<1.0:net/rubygem-fog-local \
 	rubygem-fog-openstack>=1.0<2.0:net/rubygem-fog-openstack \
