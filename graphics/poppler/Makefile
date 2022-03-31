@@ -34,6 +34,11 @@ CMAKE_ON=	ENABLE_LIBJPEG  \
 		ENABLE_NSS \
 		ENABLE_SPLASH
 CMAKE_OFF=	BUILD_GTK_TESTS
+# Ensure that path ordering does not lead to openjpeg15 being found and picked
+# instead of openjpeg2 on systems that have both installed
+# Note: since f3ba77e14cac05d43caf35100848eeaee3bc64b4 graphics/openjpeg15 installs
+# its cmake files to ${PREFIX}/lib/openjpeg15
+CMAKE_ARGS+=	-DCMAKE_IGNORE_PATH:PATH=${PREFIX}/lib/openjpeg-1.5
 
 # Slave ports.
 _POPPLER_SLAVES=	library glib qt5 utils
