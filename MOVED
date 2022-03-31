@@ -17117,3 +17117,6 @@ security/razorback-masterNugget||2022-03-31|Has expired: Abandonware, last relea
 security/razorback-syslogNugget||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
 security/pxytest||2022-03-31|Has expired: Abandonware, last release around 2003, dead upsteam and unfetchable
 security/razorback-api||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+devel/hadoop2||2022-03-31|Has expired: Depends on expired devel/maven3
+databases/opentsdb||2022-03-31|Removed: unmaintained, depends on expired devel/hadoop2 and databases/hbase
+databases/hbase||2022-03-31|Has expired: Outdated, unsupported by upstream since June 2019 (upstream is at 2.3 and higher)

@@ -104,7 +104,6 @@
     SUBDIR += grass7
     SUBDIR += grass8
     SUBDIR += hashtypes
-    SUBDIR += hbase
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += influxdb
@@ -243,7 +242,6 @@
     SUBDIR += ods2sql
     SUBDIR += opendbviewer
     SUBDIR += opendbx
-    SUBDIR += opentsdb
     SUBDIR += ora2pg
     SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB

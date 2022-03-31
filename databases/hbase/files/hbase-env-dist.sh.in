@@ -1,9 +1,0 @@
-# This file contains FreeBSD-specific configuration parameters.
-# It is not supposed to be edited.  It will be overwritten during upgrades.
-# Edit hbase-env.sh instead.
-
-export JAVA_HOME=%%JAVA_HOME%%
-export HBASE_LOG_DIR=%%HBASE_LOG_DIR%%
-export HBASE_PID_DIR=%%HBASE_PID_DIR%%
-export HBASE_HOME=%%PREFIX%%/hbase
-export HBASE_CONF_DIR=%%ETCDIR%%
