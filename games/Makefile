@@ -46,6 +46,7 @@
     SUBDIR += alienblaster
     SUBDIR += alienwave
     SUBDIR += allacrost
+    SUBDIR += amnesia-tdd
     SUBDIR += amoebax
     SUBDIR += an
     SUBDIR += angband
