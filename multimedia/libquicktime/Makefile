@@ -2,7 +2,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.4
-PORTREVISION?=	31
+PORTREVISION?=	32
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -26,11 +26,12 @@ INSTALL_TARGET=	install-strip
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USES+=		xorg
 USE_XORG=	xaw xv
-CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
+CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame \
+		--without-schroedinger
 
 OPTIONS_DEFINE=	ALSA DV FAAC FAAD FFMPEG GTK2 JPEG OPENGL OPTIMIZED_CFLAGS PNG \
-		SCHROEDINGER X264 DOCS
-OPTIONS_DEFAULT=	FFMPEG JPEG OPENGL PNG SCHROEDINGER X264
+		X264 DOCS
+OPTIONS_DEFAULT=	FFMPEG JPEG OPENGL PNG X264
 OPTIONS_SUB=	yes
 
 PORTDOCS=	api_usage.html codecs.html
@@ -116,12 +117,6 @@ LIB_DEPENDS+=	libx264.so:multimedia/libx264
 CONFIGURE_ARGS+=	--with-x264
 .else
 CONFIGURE_ARGS+=	--without-x264
-.endif
-
-.if ${PORT_OPTIONS:MSCHROEDINGER}
-LIB_DEPENDS+=	libschroedinger-1.0.so:multimedia/schroedinger
-.else
-CONFIGURE_ARGS+=	--without-schroedinger
 .endif
 
 .endif
