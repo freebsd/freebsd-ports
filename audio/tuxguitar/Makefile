@@ -19,6 +19,9 @@ COMMENT=	Multitrack tablature editor and player
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/itext
+EXPIRATION_DATE=2022-06-30
+
 BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:devel/itext \
 		${JAVALIBDIR}/gervill.jar:audio/gervill
