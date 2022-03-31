@@ -3,7 +3,7 @@
 # Feature:      nodejs
 # Usage:        USES=nodejs or USES=nodejs:args
 # Valid ARGS:	build and/or run <version>
-# version:      lts, current, 10, 14, 16, 17
+# version:      lts, current, 14, 16, 17
 # Default is:   build,run
 # Note:			if you define a version, you must provide run and/or build
 #
@@ -12,7 +12,7 @@
 .if !defined(_INCLUDE_USES_NODEJS_MK)
 _INCLUDE_USES_NODEJS_MK=	yes
 
-_VALID_NODEJS_VERSION=	10 14 16 17 lts current
+_VALID_NODEJS_VERSION=	14 16 17 lts current
 _NODEJS_VERSION_SUFFIX=	${NODEJS_DEFAULT}
 
 .if ! ${_VALID_NODEJS_VERSION:M${_NODEJS_VERSION_SUFFIX}}
@@ -23,9 +23,7 @@ IGNORE=	Invalid nodejs default version ${_NODEJS_VERSION_SUFFIX}; valid versions
 nodejs_ARGS=	build,run
 .endif
 
-. if ${nodejs_ARGS:M10}
-_NODEJS_VERSION_SUFFIX=	10
-. elif ${nodejs_ARGS:M14}
+. if ${nodejs_ARGS:M14}
 _NODEJS_VERSION_SUFFIX=	14
 . elif ${nodejs_ARGS:M16}
 _NODEJS_VERSION_SUFFIX=	16

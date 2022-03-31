@@ -131,16 +131,7 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 .if defined(RUBY_VER)
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-. if ${RUBY_VER} == 2.6
-#
-# Ruby 2.6
-#
-RUBY_DISTVERSION=	2.6.9
-RUBY_PORTREVISION=	1
-RUBY_PORTEPOCH=		1
-RUBY26=			""	# PLIST_SUB helpers
-
-. elif ${RUBY_VER} == 2.7
+. if ${RUBY_VER} == 2.7
 #
 # Ruby 2.7
 #
@@ -172,7 +163,7 @@ RUBY31=			""	# PLIST_SUB helpers
 #
 # Other versions
 #
-IGNORE=	Only ruby 2.6, 2.7, 3.0 and 3.1 are supported
+IGNORE=	Only ruby 2.7, 3.0 and 3.1 are supported
 _INVALID_RUBY_VER=	1
 . endif
 RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
@@ -180,7 +171,6 @@ RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 
 .if !defined(_INVALID_RUBY_VER)
 
-RUBY26?=		"@comment "
 RUBY27?=		"@comment "
 RUBY30?=		"@comment "
 RUBY31?=		"@comment "
@@ -291,7 +281,6 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_ARCH="${RUBY_ARCH}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
-			RUBY26=${RUBY26} \
 			RUBY27=${RUBY27} \
 			RUBY30=${RUBY30} \
 			RUBY31=${RUBY31}
