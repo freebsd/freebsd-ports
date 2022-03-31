@@ -12,6 +12,9 @@ COMMENT=	Personal organizer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired security/libgringotts
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libical.so:devel/libical \
 		libnotify.so:devel/libnotify \
 		libgringotts.so:security/libgringotts \
