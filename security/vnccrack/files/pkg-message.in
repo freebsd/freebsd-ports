@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Additional info on program usage can be found in this file:
-%%DOCSDIR%%/readme.txt
-EOM
-}
-]

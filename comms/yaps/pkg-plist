@@ -1,5 +1,0 @@
-@(root,dialer,2711) bin/yaps
-@sample etc/yaps.rc.sample
-man/man1/yaps.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/yaps.doc
-%%PORTDOCS%%%%DOCSDIR%%/yaps.html

@@ -1,9 +1,0 @@
-include/allium/allium.h
-include/allium/allium_ptcfg.h
-include/allium/bstrlib.h
-lib/liballium-1.0.a
-lib/liballium-1.0.so
-lib/liballium-1.0.so.0
-lib/liballium-1.0.so.0.0.1
-libdata/pkgconfig/liballium-1.0.pc
-%%PORTDOCS%%%%DOCSDIR%%/COPYING

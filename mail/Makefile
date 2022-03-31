@@ -550,7 +550,6 @@
     SUBDIR += rblcheck
     SUBDIR += renattach
     SUBDIR += ripmime
-    SUBDIR += rlytest
     SUBDIR += rmilter
     SUBDIR += roundcube
     SUBDIR += roundcube-automatic_addressbook

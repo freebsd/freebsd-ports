@@ -1,8 +1,0 @@
-Razorback is a framework for an intelligence driven security solution.
-It consists of a Dispatcher at the core of the system, surrounded by
-Nuggets of varying types.
-
-This nugget uses inotify to monitor any number of file system paths
-and send any changed or created files to the dispatcher for collection.
-
-WWW: http://razorbacktm.sourceforge.net/

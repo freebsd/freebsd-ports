@@ -1,9 +1,0 @@
---- configure.in.orig	2015-04-19 16:17:12.000000000 +0200
-+++ configure.in	2015-04-19 16:17:24.000000000 +0200
-@@ -113,5 +113,6 @@ esac
- dnl Checks for library functions.
- AC_FUNC_MEMCMP
- AC_CHECK_FUNCS(getopt pidfile inet_aton RAND_status errx strlcpy daemon getnameinfo setproctitle)
-+AC_CHECK_LIB(crypto, RAND_egd, AC_DEFINE(HAVE_RAND_EGD, 1, [Define if the libcrypto has RAND_egd]))
- AC_SUBST(INCLUDES)
- AC_OUTPUT(Makefile)

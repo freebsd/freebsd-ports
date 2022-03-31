@@ -1,4 +1,0 @@
-liballium attempts to reduce the amount of boilerplate code required to
-implement pluggable transports for Tor in C or C++.
-
-WWW: https://github.com/yawning/liballium

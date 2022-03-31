@@ -1,6 +1,0 @@
-@sample etc/razorback/scriptNugget.conf.sample
-lib/razorback/scriptNugget.so.2.0.0
-lib/razorback/scriptNugget.so.2
-lib/razorback/scriptNugget.so
-lib/razorback/scriptNugget.a
-libexec/razorback/scriptNugget/test.rb

@@ -1,9 +1,0 @@
-Razorback is a framework for an intelligence driven security solution.
-It consists of a Dispatcher at the core of the system, surrounded by
-Nuggets of varying types.
-
-The OfficeCat nugget provides the ability to examine Microsoft
-Office documents to determine the presence of potential exploit
-conditions in the file.
-
-WWW: http://razorbacktm.sourceforge.net/

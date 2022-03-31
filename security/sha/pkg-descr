@@ -1,7 +1,0 @@
-sha is a simple program that hashes files. It uses the National
-Institute of Standards and Technology's Secure Hash Algorithm.
-It can use SHA-1, SHA-256, SHA-384, or SHA-512, which generate
-respectively, hashes of 160, 256, 384, or 512 bits. sha can be
-used in scripts to do, for example, file integrity checking.
-
-WWW: http://www.saddi.com/software/sha/

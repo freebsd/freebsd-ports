@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You need to edit your inetd.conf to enable the suckers
-EOM
-}
-]

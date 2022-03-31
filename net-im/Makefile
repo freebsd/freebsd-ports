@@ -13,7 +13,6 @@
     SUBDIR += coyim
     SUBDIR += cutegram
     SUBDIR += dendrite
-    SUBDIR += diligent
     SUBDIR += dino
     SUBDIR += echat
     SUBDIR += ejabberd

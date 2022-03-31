@@ -69,7 +69,6 @@
     SUBDIR += avir
     SUBDIR += azpainter
     SUBDIR += azpainterb
-    SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik
     SUBDIR += birdfont
@@ -126,13 +125,6 @@
     SUBDIR += dcp2icc
     SUBDIR += dcraw
     SUBDIR += dcraw-m
-    SUBDIR += deegree-csw
-    SUBDIR += deegree-igeoportal
-    SUBDIR += deegree-wcs
-    SUBDIR += deegree-wfs
-    SUBDIR += deegree-wms
-    SUBDIR += deegree-wps
-    SUBDIR += deegree-wpvs
     SUBDIR += delaboratory
     SUBDIR += derelict-gl3
     SUBDIR += devil

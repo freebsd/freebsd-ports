@@ -10,7 +10,6 @@
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
     SUBDIR += adminer
-    SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
     SUBDIR += apache-commons-dbutils
@@ -116,7 +115,6 @@
     SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += isql-viewer
-    SUBDIR += jasperreports
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g
     SUBDIR += jetbrains-datagrip
@@ -853,7 +851,6 @@
     SUBDIR += recutils
     SUBDIR += redis
     SUBDIR += redis-devel
-    SUBDIR += redis5
     SUBDIR += redis6
     SUBDIR += redis_exporter
     SUBDIR += redisdesktopmanager

@@ -86,7 +86,6 @@
     SUBDIR += cheesecutter
     SUBDIR += chordpack
     SUBDIR += chromaprint
-    SUBDIR += clementine-player
     SUBDIR += cli-visualizer
     SUBDIR += clunk
     SUBDIR += cmp3

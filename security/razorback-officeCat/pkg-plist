@@ -1,8 +1,0 @@
-etc/razorback/officecat.conf.sample
-lib/razorback/officeCat.so.2.0.0
-lib/razorback/officeCat.so.2
-lib/razorback/officeCat.so
-lib/razorback/officeCat.a
-libexec/razorback/officeCat/officecat.exe
-libexec/razorback/officeCat/officecat.exe.so
-libexec/razorback/officeCat/officecat.exe.exe.so

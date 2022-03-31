@@ -1,8 +1,0 @@
-Razorback is a framework for an intelligence driven security solution.
-It consists of a Dispatcher at the core of the system, surrounded by
-Nuggets of varying types.
-
-File Inject is a command-line file submission tool for the razorback
-framework.
-
-WWW: http://razorbacktm.sourceforge.net/

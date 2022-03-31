@@ -1,4 +1,0 @@
-bin/slush
-sbin/slushd
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/control.txt

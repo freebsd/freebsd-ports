@@ -1,5 +1,0 @@
-This is isakmpd, a BSD-licensed ISAKMP/Oakley (a.k.a. IKE)
-implementation.  It's written by Niklas Hallqvist and Niels Provos,
-funded by Ericsson Radio Systems AB.
-
-WWW: http://www.openbsd.org/

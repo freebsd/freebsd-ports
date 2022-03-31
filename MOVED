@@ -16974,3 +16974,141 @@ net-p2p/bazarr-devel|net-p2p/bazarr|2022-03-29|Use net-p2p/bazarr instead
 dns/py-dnspython2|dns/py-dnspython|2022-03-30|Has expired: Use dns/py-dnspython
 net/inlets||2022-03-30|FOSS version removed, project went commercial
 editors/libreoffice6|editors/libreoffice|2022-03-31|Unsupported upstream. Please use editors/libreoffice instead
+security/revealrk||2022-03-31|Has expired: Deprecate, marked BROKEN on 12+ in 2018
+devel/apache-commons-modeler||2022-03-31|Has expired: Abandoned upstream, last release in 2013
+security/afl||2022-03-31|Has expired: Abandoned upstream, no new release since 2017. Please consider using security/afl++ instead
+www/mod_line_edit||2022-03-31|Has expired: Abandoned upstream, last release in 2006, Apache includes mod_sed
+www/myfaces||2022-03-31|Has expired: Unsupported by upstream, released in 2005
+www/mod_backtrace||2022-03-31|Has expired: Abandoned upstream in 2012 (version 2.0)
+security/base||2022-03-31|Has expired: Broken with PHP 7+, forked here https://github.com/NathanGibbs3/BASE/
+security/find-zlib||2022-03-31|Has expired: Deprecated, no longer relevant
+security/razorback-clamavNugget||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/shimmer||2022-03-31|Has expired: Abandonware, last release in 2008
+security/kripp||2022-03-31|Has expired: Abandonware, upstream returns 404 and last release was back in 2007
+security/ipfilter2dshield||2022-03-31|Has expired: Abandonware, no word of it on upstream web site
+security/sha||2022-03-31|Has expired: Obsolete, we have tools in base
+security/gputty||2022-03-31|Has expired: Unfetchable, dead upstream
+java/apache-commons-discovery||2022-03-31|Has expired: Abandoned upstream, last release in 2006
+www/geronimo||2022-03-31|Has expired: Port outdated, unsupported upstream and depends on deprecated software
+security/isakmpd||2022-03-31|Has expired: 15+ years old and broken on multiple versions
+security/razorback-swfScanner||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+devel/hadoop||2022-03-31|Has expired: Outdated, unsupported upstream
+java/apache-commons-primitives||2022-03-31|Has expired: Abandoned upstream, last release in 2003
+security/l5||2022-03-31|Has expired: Abandonware, broken on amd64 for 10+ years
+security/unicornscan||2022-03-31|Has expired: Very outdated and abandoned, current version in tree was released in 2004 and last release by upstream in Aug 2013. Please consider using security/nmap or security/rustscan
+security/gringotts||2022-03-31|Has expired: Abandonware, upstream dead and last release in 2009
+security/axTLS||2022-03-31|Has expired: Very outdated and abandoned, current version in tree was released in 2013 and last by upstream in 2019
+security/shttpscanner||2022-03-31|Has expired: Abandonware, last release in 2006
+security/sniff||2022-03-31|Has expired: Abandonware, last release around 2000 and dead upstream. Please consider using net/wireshark
+security/razorback-archiveInflate||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/scanssh||2022-03-31|Has expired: Abandonware, last release in 2005. Please consider using security/nmap or security/rustscan
+security/symbion-sslproxy||2022-03-31|Has expired: Abandonware, last release in 2009 and inactive upstream
+security/manipulate_data||2022-03-31|Has expired: Abandonware, unsupported upstream
+security/vinetto||2022-03-31|Has expired: Obsolete, targets deprecated Windows operating systems such as XP and 2003 Server
+security/pbnj||2022-03-31|Has expired: Abandonware, last release in 2006 and reported broken upstream in 2017 upstream
+databases/jasperreports||2022-03-31|Has expired: Unsupported by upstream, released in 2013
+security/retranslator||2022-03-31|Has expired: Deprecated upstream (EOL)
+security/cp2fwb||2022-03-31|Has expired: Abandonware, used with deprecated software Firewall Builder.
+security/webscarab||2022-03-31|Has expired: Deprecated by upstream in 2014
+security/pscan||2022-03-31|Has expired: Abandonware, last release in 2000
+security/vnccrack||2022-03-31|Has expired: Outdated and abandoned, last release in 2008. Upstream is at 2.1 while version in ports is 1.0.0
+security/doscan||2022-03-31|Has expired: Abandonware, last release in 2014. Please consider using security/masscan or sysutils/pnscan
+security/radamsa||2022-03-31|Has expired: Abandonware, last release in 2017 and marked as BROKEN in late 2020
+security/trinokiller||2022-03-31|Has expired: Abandonware, dead upstream
+security/spybye||2022-03-31|Has expired: Abandonware, last release in 2008 and no upstream development
+security/razorback-officeCat||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+textproc/crimson||2022-03-31|Has expired: Deprecated by upstream 2010-08-06
+security/tripwire-131||2022-03-31|Has expired: Deprecated, please consider using security/tripwire instead
+security/bruteforceblocker||2022-03-31|Has expired: Abandonware, please consider using security/sshguard
+security/razorback-fsMonitor||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/tlswrap||2022-03-31|Has expired: Abandonware, last release in 2007 and dead upstream
+security/sslsniffer||2022-03-31|Has expired: Abandonware, last release in 2001. Please consider using security/sslsplit or security/sslproxy
+security/strobe||2022-03-31|Has expired: Abandonware, last release around 2000 and dead upstream. Please consider using security/nmap or security/rustscan
+security/amap||2022-03-31|Has expired: Abandoned upstream, no new release for 10+ years. Please consider using security/nmap or security/rustscan
+security/ppars||2022-03-31|Has expired: Abandonware, no word of it on upstream web site
+security/zebedee||2022-03-31|Has expired: Abandonware, last release in 2005 and runtime issues reported upstream
+security/matrixssl||2022-03-31|Has expired: Abandonware, dead upstream
+security/razorback-virusTotal||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/stud||2022-03-31|Has expired: Abandonware, marked BROKEN on 12+ in 2019
+security/sslwrap||2022-03-31|Has expired: Abandonware, marked BROKEN on 12+ in 2019
+security/dcetest||2022-03-31|Has expired: Targets deprecated protocol by Microsoft in favour of .NET
+security/l0phtcrack||2022-03-31|Has expired: Obsolete, Microsoft LANMAN and NT password hashes are deprecated
+security/slurpie||2022-03-31|Has expired: Abandonware, last release around 2000 and dead upstream
+security/ike||2022-03-31|Has expired: Abandonware, last release in 2013 and IKEv1 is considered to be insecure
+security/mussh||2022-03-31|Has expired: Abandonware, last release in 2011 please consider using security/teleport
+security/razorback-fsWalk||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/hackbot||2022-03-31|Has expired: Abandonware, last release in 2003. Please consider using security/nmap or security/rustscan
+security/phpsecinfo||2022-03-31|Has expired: Abandonware, last release in 2006
+security/libpreludedb||2022-03-31|Has expired: Very outdated, current version in tree was released back in 2015 and upstream is still active
+security/ipfw2dshield||2022-03-31|Has expired: Abandonware, no word of it on upstream web site
+security/razorback-fileInject||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/gwee||2022-03-31|Has expired: Abandonware, last release 15+ years ago and dead upstream
+security/pktsuckers||2022-03-31|Has expired: Abandonware, last release from somewhere around 1999
+security/slush||2022-03-31|Has expired: Obsolete, listed as alpha quality, last release around 2000 and dead upstream
+security/integrit||2022-03-31|Has expired: Abandonware, last release in 2003
+security/razorback-pdfFox||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/razorback-yaraNugget||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+security/hlfl||2022-03-31|Has expired: Abandonware, last release in 2003
+security/jbrofuzz||2022-03-31|Has expired: Abandonware, no word of it on upstream web site and last release was 10 years ago
+security/libpwstor||2022-03-31|Has expired: Abandonware, last release in 2008
+security/smtpscan||2022-03-31|Has expired: Abandonware, last release in 2003 and dead upstream. Please consider using security/nmap
+security/cisco-torch||2022-03-31|Has expired: Abandonware, dead upstream
+security/amavis-stats||2022-03-31|Has expired: Abandoned, upstream is dead and last release was back in 2005
+textproc/lucene4||2022-03-31|Has expired: Unsupported by upstream, released in 2015
+java/apache-commons-discovery||2022-03-31|Has expired: Abandoned upstream, last release in 2006
+devel/liballium||2022-03-31|Has expired: Abandonware, last release in 2014 and upstream is dead
+www/sakai||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-wpvs||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-igeoportal||2022-03-31|Has expired: Depends on expired www/tomcat7
+www/jspwiki||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-wcs||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-csw||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-wms||2022-03-31|Has expired: Depends on expired www/tomcat7
+www/tomcat7||2022-03-31|Has expired: Tomcat 7 is EOL on 2021-03-31. Please upgrade to a later version
+devel/gitblit||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/barbecue||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-wfs||2022-03-31|Has expired: Depends on expired www/tomcat7
+graphics/deegree-wps||2022-03-31|Has expired: Depends on expired www/tomcat7
+sysutils/rubygem-smart_proxy_chef||2022-03-31|Has expired: Depends on expired sysutils/rubygem-chef-api
+sysutils/rubygem-chef-api||2022-03-31|Has expired: The chef-api gem is no longer maintained. Please use the supported Chef::ServerAPI library from the Chef gem
+databases/redis5||2022-03-31|Has expired: EOLed upstream
+security/outguess||2022-03-31|Has expired: Abandonware, dead upstream and last release in 2001
+devel/maven3||2022-03-31|Has expired: Outdated, unsupported upstream
+devel/maven33||2022-03-31|Has expired: Outdated, unsupported upstream
+devel/monotone||2022-03-31|Has expired: Abandoned upstream, no release since 2014
+security/botan110||2022-03-31|Has expired: Deprecated upstream, users are recommended to migrate to 2.x
+net/hping||2022-03-31|Has expired: Deprecated upstream, please consider using net/hping3 instead
+sysutils/autopsy||2022-03-31|Has expired: Very outdated, current version in tree was released back in 2010 and upstream is still active
+java/cryptix-jce||2022-03-31|Has expired: Abandonware, last release in 2005 and listed as dead upstream
+net-mgmt/netustad||2022-03-31|Has expired: Abandonware, dead upstream, unfetchable and is marked BROKEN for 13+
+www/paros||2022-03-31|Has expired: Abandonware, last release in 2006 and dead upstream
+net/queso||2022-03-31|Has expired: Abandonware and obsolete, last release back in 1998. Please consider using security/nmap instead
+mail/rlytest||2022-03-31|Has expired: Abandonware, last release in 2003 and dead upstream
+net/ssvnc||2022-03-31|Has expired: Abandonware, last release in 2011 and broken functionality reported upstream
+sysutils/webjob||2022-03-31|Has expired: Abandonware, last release in 2012 and broken on multiple architectures
+dns/bundy||2022-03-31|Has expired: Project is in hibernation and not recommended to use in production
+lang/ruby26||2022-03-31|Has expired: Use newer version of Ruby. Ruby 2.6 will reach its EoL on March 31, 2022
+textproc/kibana6||2022-03-31|Has expired: Uses expired www/node10
+www/node10||2022-03-31|Has expired: Node.js v10.x reaches end-of-life on 2021-04-30, see https://github.com/nodejs/Release
+comms/zssh||2022-03-31|Has expired: Abandonware, last release in 2003. Please consider using scp or net/croc instead
+devel/py-dataclasses||2022-03-31|Has expired: Included in Python 3.7 or later
+net-im/diligent||2022-03-31|Has expired: Abandoned upstream, users also confirms port to be non working
+www/typo3-9||2022-03-31|Has expired: Mainstream support ended 2021-09-30
+databases/adodb||2022-03-31|Has expired: Unsupported upstream, cannot be used with PHP 8.0+
+audio/clementine-player||2022-03-31|Has expired: Last release in 2016, many issue reports upstream and little to no development for years. Please consider using audio/strawberry
+security/libprelude||2022-03-31|Has expired: Very outdated, current version in tree was released back in 2015 and upstream is still active
+www/crp||2022-03-31|Has expired: Abandonware, last release in 2003 and upstream refers to PHP 4.x and is dead
+devel/fb-adb||2022-03-31|Has expired: Last release in 2016 and deprecated by upstream, please consider using devel/android-tools-adb instead
+comms/o2sms||2022-03-31|Has expired: Abandonware, last release in 2010 and upstream is dead
+comms/p5-SMS-Send-TW-Qma||2022-03-31|Has expired: QMA service provider is no longer around
+comms/p5-SMS-Send-TW-ShareSMS||2022-03-31|Has expired: Service provider is no longer around
+comms/yaps||2022-03-31|Has expired: Service providers are no longer around and/or are no longer providing this service
+security/arirang||2022-03-31|Has expired: Abandoned upstream and last release was back in 2011
+security/openvpn-mbedtls||2022-03-31|Has expired: mbedTLS only has a minimum viable TLSv1.3 implementation, and OpenVPN-mbedtls does not work on FreeBSD 14-CURRENT
+www/mod_proxy_xml||2022-03-31|Has expired: Abandoned upstream, last release in 2004
+www/mod_xmlns||2022-03-31|Has expired: Abandoned upstream, last release in 2004
+www/mod_authnz_crowd||2022-03-31|Has expired: Abandoned upstream in 2014, doesn't work with Apache 2.4+
+security/razorback-scriptNugget||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
+dns/bind911||2022-03-31|Has expired: End of life, please migrate to a newer version of BIND9
+www/grafana6||2022-03-31|Has expired: EOLed upstream, unfixed vulnerabilities
+security/govpn||2022-03-31|Has expired: Deprecated upstream, reference: http://www.govpn.info/

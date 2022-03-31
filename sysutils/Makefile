@@ -73,7 +73,6 @@
     SUBDIR += autojump
     SUBDIR += automount
     SUBDIR += automounter
-    SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b2sum
@@ -1165,7 +1164,6 @@
     SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-capistrano-harrow
     SUBDIR += rubygem-chef
-    SUBDIR += rubygem-chef-api
     SUBDIR += rubygem-chef-bin
     SUBDIR += rubygem-chef-cleanroom
     SUBDIR += rubygem-chef-config
@@ -1216,7 +1214,6 @@
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-serverspec
     SUBDIR += rubygem-shellany
-    SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_dynflow
     SUBDIR += rubygem-smart_proxy_remote_execution_ssh
     SUBDIR += rubygem-smart_proxy_salt
@@ -1519,7 +1516,6 @@
     SUBDIR += watchfolder
     SUBDIR += watchman
     SUBDIR += watchmen
-    SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += weedit
     SUBDIR += wemux

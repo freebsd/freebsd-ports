@@ -7,12 +7,10 @@
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
     SUBDIR += bind9-devel
-    SUBDIR += bind911
     SUBDIR += bind916
     SUBDIR += bind918
     SUBDIR += bindgraph
     SUBDIR += blocky
-    SUBDIR += bundy
     SUBDIR += c-ares
     SUBDIR += cli53
     SUBDIR += coredns

@@ -1,7 +1,0 @@
-man/man1/amavis-stats.1.gz
-sbin/amavis-stats
-@(%%USERS%%,%%GROUPS%%,) www/amavis-stats/index.php
-@(%%USERS%%,%%GROUPS%%,) www/amavis-stats/amavis-stats.php
-@(%%USERS%%,%%GROUPS%%,) www/amavis-stats/img/.keep
-@dir(%%WWWOWN%%,%%WWWGRP%%,) www/amavis-stats/img
-@dir(%%USERS%%,%%GROUPS%%,) www/amavis-stats

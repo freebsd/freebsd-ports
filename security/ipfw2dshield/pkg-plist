@@ -1,4 +1,0 @@
-bin/ipaddr
-bin/strpdate
-etc/ipfw2dshield.rc.sample
-sbin/ipfw2dshield
