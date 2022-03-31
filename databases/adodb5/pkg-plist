@@ -51,10 +51,7 @@
 %%DATADIR%%/drivers/adodb-mssqlnative.inc.php
 %%DATADIR%%/drivers/adodb-mssqlpo.inc.php
 %%DATADIR%%/drivers/adodb-mssql_n.inc.php
-%%DATADIR%%/drivers/adodb-mysql.inc.php
 %%DATADIR%%/drivers/adodb-mysqli.inc.php
-%%DATADIR%%/drivers/adodb-mysqlpo.inc.php
-%%DATADIR%%/drivers/adodb-mysqlt.inc.php
 %%DATADIR%%/drivers/adodb-netezza.inc.php
 %%DATADIR%%/drivers/adodb-oci8.inc.php
 %%DATADIR%%/drivers/adodb-oci8po.inc.php
