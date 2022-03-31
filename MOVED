@@ -16973,3 +16973,4 @@ math/py-symcxx||2022-03-28|Deprecated because the upstream repository was experi
 net-p2p/bazarr-devel|net-p2p/bazarr|2022-03-29|Use net-p2p/bazarr instead
 dns/py-dnspython2|dns/py-dnspython|2022-03-30|Has expired: Use dns/py-dnspython
 net/inlets||2022-03-30|FOSS version removed, project went commercial
+editors/libreoffice6|editors/libreoffice|2022-03-31|Unsupported upstream. Please use editors/libreoffice instead
