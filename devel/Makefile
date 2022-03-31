@@ -7058,7 +7058,6 @@
     SUBDIR += sope
     SUBDIR += sope2
     SUBDIR += sord
-    SUBDIR += spark
     SUBDIR += sparsehash
     SUBDIR += spatialindex
     SUBDIR += spdlog

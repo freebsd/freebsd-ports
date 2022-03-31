@@ -17112,3 +17112,4 @@ security/razorback-scriptNugget||2022-03-31|Has expired: Abandonware, last relea
 dns/bind911||2022-03-31|Has expired: End of life, please migrate to a newer version of BIND9
 www/grafana6||2022-03-31|Has expired: EOLed upstream, unfixed vulnerabilities
 security/govpn||2022-03-31|Has expired: Deprecated upstream, reference: http://www.govpn.info/
+devel/spark||2022-03-31|Has expired: Depends on expired devel/maven33
