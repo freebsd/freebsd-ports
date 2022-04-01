@@ -1066,7 +1066,6 @@
     SUBDIR += swappy
     SUBDIR += swfmill
     SUBDIR += swftools
-    SUBDIR += sxiv
     SUBDIR += synaesthesia
     SUBDIR += synfig
     SUBDIR += synfigstudio
