@@ -1,5 +1,5 @@
-libmdf is the Millistream Data Feed API library with which developers 
-can connect to the Millistream Market Data system and subscribe to 
+libmdf is the Millistream Data Feed API library with which developers
+can connect to the Millistream Market Data system and subscribe to
 streaming realtime or delayed market data such as stocks, indices,
 currencies, bonds, derivatives and news services.
 

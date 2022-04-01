@@ -1,12 +1,12 @@
-The Greenbone Vulnerability Management Tools gvm-tools are a collection of 
-tools that help with remote controlling a Greenbone Security Manager (GSM) 
-appliance and its underlying Greenbone Vulnerability Manager (GVM). The tools 
-aid in accessing the communication protocols GMP (Greenbone Management 
+The Greenbone Vulnerability Management Tools gvm-tools are a collection of
+tools that help with remote controlling a Greenbone Security Manager (GSM)
+appliance and its underlying Greenbone Vulnerability Manager (GVM). The tools
+aid in accessing the communication protocols GMP (Greenbone Management
 Protocol) and OSP (Open Scanner Protocol).
 
-This module is comprised of interactive and non-interactive clients. The 
-programming language Python is supported directly for interactive scripting. 
-But it is also possible to issue remote GMP/OSP commands without programming 
+This module is comprised of interactive and non-interactive clients. The
+programming language Python is supported directly for interactive scripting.
+But it is also possible to issue remote GMP/OSP commands without programming
 in Python.
 
 WWW: https://github.com/greenbone/gvm-tools

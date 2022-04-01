@@ -5,6 +5,6 @@ SpiceStream to convert any file format supported by the SpiceStream
 layer into one of several ASCII printable formats, and it is useful
 for converting files any of the binary formats into a printable form,
 where they can easily be processed by awk, perl, or some other scripting
-language. 
+language.
 
 WWW: http://gwave.sourceforge.net/

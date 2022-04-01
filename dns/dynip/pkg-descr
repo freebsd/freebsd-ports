@@ -13,7 +13,7 @@ variations in the URL format depending on the dynamic DNS hosting
 provider being used.
 
 Mandatory requirements. The host that is running dynip "MUST" be cabled
-directly to the ISP modem and be using the public routable dynamic IP 
+directly to the ISP modem and be using the public routable dynamic IP
 address assigned by the ISP.
 
 Includes templates for these dynamic DNS hosting providers

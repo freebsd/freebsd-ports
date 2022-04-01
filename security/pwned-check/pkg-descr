@@ -1,6 +1,6 @@
-Pwned Passwords are hundreds of millions of real world passwords exposed in 
+Pwned Passwords are hundreds of millions of real world passwords exposed in
 data breaches. This exposure makes them unsuitable for ongoing use as they
-are at much greater risk of being used to take over other accounts. 
+are at much greater risk of being used to take over other accounts.
 
 This script offers 2 methods to check whether a password has been exposed
 in an uncovered breach:
@@ -11,7 +11,7 @@ in an uncovered breach:
 2) Local check against a copy of the pawned passwords database.
 
 Since the local copy of the database requires nearly 20 GB of disk space
-(and a download of more than 10 GB of compressed data) the access via the 
+(and a download of more than 10 GB of compressed data) the access via the
 online check should be preferred, if the compatible with operational and
 security requirements.
 

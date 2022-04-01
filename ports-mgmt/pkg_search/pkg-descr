@@ -9,9 +9,9 @@ if necessary.  Example of usage to search for a package:
 
  # pkg_search -i cyrus-sasl-2.1.22
  Name : cyrus-sasl-2.1.22-50
- Dir  : /usr/ports/security/cyrus-sasl2                   
+ Dir  : /usr/ports/security/cyrus-sasl2
  Desc : RFC 2222 SASL (Simple Authentication and Security Layer)
- URL  : http://cyrusimap.web.cmu.edu/                     
- Deps : 
+ URL  : http://cyrusimap.web.cmu.edu/
+ Deps :
 
 WWW: http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/

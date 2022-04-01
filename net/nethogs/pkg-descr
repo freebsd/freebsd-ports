@@ -1,5 +1,5 @@
-NetHogs is a small 'net top' tool. Instead of breaking the traffic down 
-per protocol or per subnet, like most tools do, it groups bandwidth by 
+NetHogs is a small 'net top' tool. Instead of breaking the traffic down
+per protocol or per subnet, like most tools do, it groups bandwidth by
 process.
 
 WWW: https://github.com/raboof/nethogs

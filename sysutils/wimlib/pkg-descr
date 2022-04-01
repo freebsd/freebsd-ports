@@ -8,7 +8,7 @@ General capabilities:
 - Append, delete, and export WIM images (wimappend, wimdelete, wimexport)
 - Modify a WIM image (wimupdate)
 - Extract files or directories from a WIM image (wimextract)
-- Optimize a WIM archive, removing wasted space 
+- Optimize a WIM archive, removing wasted space
   and optionally recompressing (wimoptimize)
 - Split or join a WIM archive (wimsplit, wimjoin)
 - Mount a WIM image (wimmount, wimmountrw)

@@ -5,6 +5,6 @@ idiosyncratic: the main motivation behind the library is to have functionality
 available for the floating-point approach to complex multiplication. However,
 asymptotically fast routines such as Toom-Cook and the FFT for multiplication of
 polynomials are available, as well as fast routines for interpolation and
-evaluation based on trees of polynomials. 
+evaluation based on trees of polynomials.
 
 WWW: http://www.multiprecision.org/mpfrcx/home.html

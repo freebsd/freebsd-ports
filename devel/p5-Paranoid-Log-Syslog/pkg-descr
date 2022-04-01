@@ -1,4 +1,4 @@
-Paranoid::Log::Syslog provides syslog support from within the Paranoid::Log 
+Paranoid::Log::Syslog provides syslog support from within the Paranoid::Log
 framework.
 
 WWW: https://metacpan.org/release/Paranoid-Log-Syslog

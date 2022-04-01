@@ -11,6 +11,6 @@ reation field or simple cutoff. The program can be run both in sequential and
 parallel execution, in the latter case the MPI parallel environment is required.
 From v.5.1 possibility for taking into account quantum motion of nuclei using
 Path Integral approach is implemented. Expanded ensemble mode of simulations for
-calculation of solvation free energies is added in v.5.2. 
+calculation of solvation free energies is added in v.5.2.
 
 WWW: http://www.fos.su.se/~sasha/mdynamix/

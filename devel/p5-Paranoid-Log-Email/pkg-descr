@@ -1,4 +1,4 @@
-Paranoid::Log::Email provides SMTP support from within the Paranoid::Log 
+Paranoid::Log::Email provides SMTP support from within the Paranoid::Log
 framework.
 
 WWW: https://metacpan.org/release/Paranoid-Log-Email

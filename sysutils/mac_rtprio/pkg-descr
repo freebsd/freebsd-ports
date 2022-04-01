@@ -1,7 +1,7 @@
 Simple MAC framework policy to manage access for setting realtime priorities by
 selected GID.Running kldload mac_rtprio.ko to load the kernel module. The load
 action require root permissions. Set GID that should be able to change realtime
-priorities: 
+priorities:
     sysctl security.mac.rtprio.gid=1001
 and enable enforcing:
     sysctl security.mac.rtprio.enabled=1
