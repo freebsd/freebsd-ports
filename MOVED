@@ -17095,7 +17095,6 @@ net-im/diligent||2022-03-31|Has expired: Abandoned upstream, users also confirms
 www/typo3-9||2022-03-31|Has expired: Mainstream support ended 2021-09-30
 databases/adodb||2022-03-31|Has expired: Unsupported upstream, cannot be used with PHP 8.0+
 audio/clementine-player||2022-03-31|Has expired: Last release in 2016, many issue reports upstream and little to no development for years. Please consider using audio/strawberry
-security/libprelude||2022-03-31|Has expired: Very outdated, current version in tree was released back in 2015 and upstream is still active
 www/crp||2022-03-31|Has expired: Abandonware, last release in 2003 and upstream refers to PHP 4.x and is dead
 devel/fb-adb||2022-03-31|Has expired: Last release in 2016 and deprecated by upstream, please consider using devel/android-tools-adb instead
 comms/o2sms||2022-03-31|Has expired: Abandonware, last release in 2010 and upstream is dead
