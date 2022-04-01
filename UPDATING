@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220401:
+  AFFECTS: security/sshguard
+  AUTHOR: kevinz5000@gmail.com
+
+  Blacklisting is now disabled by default to avoid overriding the setting in
+  sshguard.conf. To enable blacklisting, uncomment the BLACKLIST_FILE line in
+  sshguard.conf.
+
 20220329:
   AFFECTS: users of sysutils/screen
   AUTHOR: cy@FreeBSD.org
