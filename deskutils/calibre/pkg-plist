@@ -1182,6 +1182,8 @@ lib/calibre/calibre/plugins/unicode_names.so
 lib/calibre/calibre/prints.py
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/rpdb.py
+lib/calibre/calibre/scraper/__init__.py
+lib/calibre/calibre/scraper/simple.py
 lib/calibre/calibre/spell/__init__.py
 lib/calibre/calibre/spell/break_iterator.py
 lib/calibre/calibre/spell/dictionary.py
@@ -1331,6 +1333,7 @@ lib/calibre/calibre/utils/serialize.py
 lib/calibre/calibre/utils/seven_zip.py
 lib/calibre/calibre/utils/shared_file.py
 lib/calibre/calibre/utils/short_uuid.py
+lib/calibre/calibre/utils/shm.py
 lib/calibre/calibre/utils/smartypants.py
 lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
@@ -1803,6 +1806,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/quick_start/swe.epub
 %%DATADIR%%/quick_start/tur.epub
 %%DATADIR%%/rapydscript/compiler.js.xz
+%%DATADIR%%/scraper.js
 %%DATADIR%%/scripts.calibre_msgpack
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css
