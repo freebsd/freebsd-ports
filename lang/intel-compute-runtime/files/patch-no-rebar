@@ -1,5 +1,14 @@
 Limit resizable BAR to Linux as NEO doesn't use libpci.
 
+level_zero/tools/source/sysman/linux/os_sysman_imp.cpp:17:10: fatal error: 'linux/pci_regs.h' file not found
+#include <linux/pci_regs.h>
+         ^~~~~~~~~~~~~~~~~~
+level_zero/tools/source/sysman/linux/os_sysman_imp.cpp:333:27: error: use of undeclared identifier 'PCI_BRIDGE_CONTROL'
+    unsigned int offset = PCI_BRIDGE_CONTROL; // Bridge control offset in Header of PCI config space
+                          ^
+level_zero/tools/source/sysman/linux/os_sysman_imp.cpp:342:26: error: use of undeclared identifier 'PCI_BRIDGE_CTL_BUS_RESET'
+    resetValue = value | PCI_BRIDGE_CTL_BUS_RESET;
+                         ^
 level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:15:10: fatal error: 'linux/pci_regs.h' file not found
 #include <linux/pci_regs.h>
          ^~~~~~~~~~~~~~~~~~
@@ -34,6 +43,21 @@ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of un
     this->preadFunction(fdConfig, configMemory.get(), PCI_CFG_SPACE_EXP_SIZE, 0);
                                                       ^
 
+--- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2022-04-01 18:23:59 UTC
++++ level_zero/tools/source/sysman/linux/os_sysman_imp.cpp
+@@ -14,7 +14,12 @@
+ 
+ #include "sysman/linux/firmware_util/firmware_util.h"
+ 
++#ifdef __linux__
+ #include <linux/pci_regs.h>
++#else
++#define PCI_BRIDGE_CONTROL 0x3e
++#define PCI_BRIDGE_CTL_BUS_RESET 0x40
++#endif
+ 
+ namespace L0 {
+ 
 --- level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp.orig	2021-08-11 16:12:33 UTC
 +++ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp
 @@ -12,7 +12,9 @@
