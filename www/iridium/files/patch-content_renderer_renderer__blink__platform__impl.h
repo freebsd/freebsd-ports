@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2022-03-28 18:11:04 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2022-04-01 07:48:30 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
  #include "third_party/blink/public/mojom/loader/code_cache.mojom.h"
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -274,7 +274,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -276,7 +276,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -18,9 +18,9 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -298,7 +298,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
-   mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_
-       GUARDED_BY(code_cache_host_lock_);
+@@ -304,7 +304,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+   mutable base::WaitableEvent io_thread_id_ready_event_;
+   base::PlatformThreadId io_thread_id_ = base::kInvalidThreadId;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

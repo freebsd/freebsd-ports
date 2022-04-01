@@ -1,6 +1,6 @@
---- content/gpu/gpu_sandbox_hook_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- content/gpu/gpu_sandbox_hook_linux.cc.orig	2022-04-01 07:48:30 UTC
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -101,6 +101,7 @@ static const char kLibV4lEncPluginPath[] =
+@@ -104,6 +104,7 @@ static const char kLibV4lEncPluginPath[] =
  
  constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
  
@@ -8,7 +8,7 @@
  void AddV4L2GpuPermissions(
      std::vector<BrokerFilePermission>* permissions,
      const sandbox::policy::SandboxSeccompBPF::Options& options) {
-@@ -407,8 +408,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+@@ -420,8 +421,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
    AddStandardGpuPermissions(&permissions);
    return permissions;
  }
@@ -19,7 +19,7 @@
    // Preload the Mali library.
    if (UseChromecastSandboxAllowlist()) {
      for (const char* path : kAllowedChromecastPaths) {
-@@ -450,6 +453,7 @@ void LoadArmGpuLibraries() {
+@@ -463,6 +466,7 @@ void LoadArmGpuLibraries() {
          dlopen(driver_paths[i], dlopen_flag);
      }
    }
@@ -27,7 +27,7 @@
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -513,12 +517,14 @@ void LoadV4L2Libraries(
+@@ -526,12 +530,14 @@ void LoadV4L2Libraries(
  }
  
  void LoadChromecastV4L2Libraries() {
@@ -42,7 +42,7 @@
  }
  
  bool LoadLibrariesForGpu(
-@@ -545,6 +551,7 @@ bool LoadLibrariesForGpu(
+@@ -558,6 +564,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -50,7 +50,7 @@
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const sandbox::policy::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -567,13 +574,17 @@ bool BrokerProcessPreSandboxHook(
+@@ -580,13 +587,17 @@ bool BrokerProcessPreSandboxHook(
    SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

@@ -1,47 +1,47 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2022-04-01 07:48:30 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
 @@ -59,7 +59,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -192,7 +192,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -184,7 +184,7 @@ class PLATFORM_EXPORT FontCache final {
    static void PrewarmFamily(const AtomicString& family_name) {}
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -275,7 +275,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -267,7 +267,7 @@ class PLATFORM_EXPORT FontCache final {
        const char* locale_family_name);
- #endif  // defined(OS_ANDROID)
+ #endif  // BUILDFLAG(IS_ANDROID)
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -355,7 +355,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -388,7 +388,7 @@ class PLATFORM_EXPORT FontCache final {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
--#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -402,7 +402,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -430,7 +430,7 @@ class PLATFORM_EXPORT FontCache final {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
- #endif  // defined(OS_WIN)
+ #endif  // BUILDFLAG(IS_WIN)
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    static float device_scale_factor_;
  #endif
  

@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2022-03-28 18:11:04 UTC
+--- chrome/common/pref_names.h.orig	2022-04-01 07:48:30 UTC
 +++ chrome/common/pref_names.h
-@@ -375,7 +375,7 @@ extern const char kUseAshProxy[];
+@@ -372,7 +372,7 @@ extern const char kUseAshProxy[];
  #endif  //  BUILDFLAG(IS_CHROMEOS_LACROS)
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -404,7 +404,7 @@ extern const char kShowUpdatePromotionInfoBar[];
+@@ -401,7 +401,7 @@ extern const char kShowUpdatePromotionInfoBar[];
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -587,7 +587,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -584,7 +584,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -694,7 +694,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -691,7 +691,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -36,7 +36,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -834,7 +834,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -830,7 +830,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  

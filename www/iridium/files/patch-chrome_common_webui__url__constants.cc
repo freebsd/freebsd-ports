@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/common/webui_url_constants.cc.orig	2022-04-01 07:48:30 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -428,18 +428,18 @@ const char kOsUIFlagsURL[] = "os://flags";
+@@ -434,18 +434,18 @@ const char kOsUIFlagsURL[] = "os://flags";
  const char kOsUIVersionURL[] = "os://version";
  #endif
  
@@ -22,7 +22,7 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -454,14 +454,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -460,14 +460,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -39,7 +39,7 @@
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -476,7 +476,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+@@ -482,7 +482,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -48,7 +48,16 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
-@@ -668,18 +668,18 @@ const char* const kChromeHostURLs[] = {
+@@ -554,7 +554,7 @@ const char kPrivacySandboxSubPagePath[] = "/privacySan
+ #endif
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
+ const char kChromeUIWebAppSettingsHost[] = "app-settings";
+ #endif
+@@ -678,21 +678,21 @@ const char* const kChromeHostURLs[] = {
      kChromeUIAssistantOptInHost,
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -61,6 +70,10 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      kChromeUIDiscardsHost,
  #endif
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     kChromeUIWebAppSettingsHost,
+ #endif
  #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)
      kChromeUILinuxProxyConfigHost,
  #endif
@@ -70,7 +83,7 @@
      kChromeUISandboxHost,
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -736,7 +736,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -749,7 +749,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

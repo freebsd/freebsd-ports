@@ -1,6 +1,6 @@
---- third_party/angle/src/common/system_utils_posix.cpp.orig	2022-03-28 18:11:04 UTC
+--- third_party/angle/src/common/system_utils_posix.cpp.orig	2022-04-01 07:48:30 UTC
 +++ third_party/angle/src/common/system_utils_posix.cpp
-@@ -248,7 +248,9 @@ Library *OpenSharedLibraryWithExtensionAndGetError(con
+@@ -197,7 +197,9 @@ void *OpenSystemLibraryWithExtensionAndGetError(const 
      int extraFlags = 0;
      if (searchType == SearchType::AlreadyLoaded)
      {

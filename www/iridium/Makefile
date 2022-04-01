@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2022.03.99.1
-PORTREVISION=	1
+PORTVERSION=	2022.04.100.0
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser

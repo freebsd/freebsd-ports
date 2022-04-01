@@ -1,5 +1,5 @@
---- chrome/browser/web_applications/web_app_shortcut.cc.orig	2022-03-28 18:11:04 UTC
-+++ chrome/browser/web_applications/web_app_shortcut.cc
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2022-04-01 07:48:30 UTC
++++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 @@ -43,7 +43,7 @@ namespace {
  
  #if BUILDFLAG(IS_MAC)

@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2022-03-28 18:11:04 UTC
+--- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2022-04-01 07:48:30 UTC
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -1010,7 +1010,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
+@@ -1498,7 +1498,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
    }
  
    if (gr_context_type_ != GrContextType::kVulkan) {

@@ -1,6 +1,6 @@
---- third_party/boringssl/src/crypto/cpu_aarch64_openbsd.c.orig	2022-03-28 18:11:04 UTC
+--- third_party/boringssl/src/crypto/cpu_aarch64_openbsd.c.orig	2022-04-01 07:48:30 UTC
 +++ third_party/boringssl/src/crypto/cpu_aarch64_openbsd.c
-@@ -0,0 +1,56 @@
+@@ -0,0 +1,57 @@
 +/* Copyright (c) 2022, Robert Nagy <robert@openbsd.org>
 + *
 + * Permission to use, copy, modify, and/or distribute this software for any
@@ -23,6 +23,7 @@
 +#include <sys/sysctl.h>
 +#include <machine/cpu.h>
 +#include <machine/armreg.h>
++#include <stdio.h>
 +
 +#include <openssl/arm_arch.h>
 +

@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2022-03-28 18:11:04 UTC
+--- content/public/common/content_features.cc.orig	2022-04-01 07:48:30 UTC
 +++ content/public/common/content_features.cc
 @@ -50,7 +50,7 @@ const base::Feature kAudioServiceOutOfProcess {
    "AudioServiceOutOfProcess",
@@ -18,16 +18,16 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -987,7 +987,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
+@@ -1030,7 +1030,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
  const base::Feature kWebAssemblyCodeProtection{
-     "WebAssemblyCodeProtection", base::FEATURE_DISABLED_BY_DEFAULT};
+     "WebAssemblyCodeProtection", base::FEATURE_ENABLED_BY_DEFAULT};
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_64)
  // Use memory protection keys in userspace (PKU) (if available) to protect code
  // JITed for WebAssembly. Fall back to traditional memory protection if
  // WebAssemblyCodeProtection is also enabled.
-@@ -1017,7 +1017,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
+@@ -1060,7 +1060,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
  const base::Feature kWebAssemblyTrapHandler {
    "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -36,16 +36,7 @@
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1039,7 +1039,7 @@ const base::Feature kWebAuthCable {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
- // If updating this, also update kWebAuthCableServerLink.
--#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       base::FEATURE_DISABLED_BY_DEFAULT
- #else
-       base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1107,7 +1107,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -1146,7 +1146,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

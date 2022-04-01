@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_page.h.orig	2022-03-28 18:11:04 UTC
+--- base/allocator/partition_allocator/partition_page.h.orig	2022-04-01 07:48:30 UTC
 +++ base/allocator/partition_allocator/partition_page.h
-@@ -129,7 +129,8 @@ struct __attribute__((packed)) SlotSpanMetadata {
+@@ -128,7 +128,8 @@ struct __attribute__((packed)) SlotSpanMetadata {
    PartitionBucket<thread_safe>* const bucket = nullptr;
  
    // CHECK()ed in AllocNewSlotSpan().
@@ -10,7 +10,7 @@
    // System page size is not a constant on Apple OSes, but is either 4 or 16kiB
    // (1 << 12 or 1 << 14), as checked in PartitionRoot::Init(). And
    // PartitionPageSize() is 4 times the OS page size.
-@@ -143,7 +144,9 @@ struct __attribute__((packed)) SlotSpanMetadata {
+@@ -142,7 +143,9 @@ struct __attribute__((packed)) SlotSpanMetadata {
  #endif  // defined(PA_HAS_64_BITS_POINTERS) && BUILDFLAG(IS_APPLE)
    // The maximum number of bits needed to cover all currently supported OSes.
    static constexpr size_t kMaxSlotsPerSlotSpanBits = 13;

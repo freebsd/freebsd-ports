@@ -1,4 +1,4 @@
---- media/webrtc/helpers_unittests.cc.orig	2022-03-28 18:11:04 UTC
+--- media/webrtc/helpers_unittests.cc.orig	2022-04-01 07:48:30 UTC
 +++ media/webrtc/helpers_unittests.cc
 @@ -36,7 +36,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
    EXPECT_FALSE(config.pre_amplifier.enabled);
@@ -9,7 +9,7 @@
    EXPECT_TRUE(config.gain_controller2.enabled);
  #else
    EXPECT_FALSE(config.gain_controller2.enabled);
-@@ -95,7 +95,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
+@@ -94,7 +94,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
  
    // Check that either AGC1 digital or AGC2 digital is used based on the
    // platforms where the Hybrid AGC is enabled by default.

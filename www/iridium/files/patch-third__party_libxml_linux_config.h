@@ -1,8 +1,8 @@
---- third_party/libxml/linux/config.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/libxml/linux/config.h.orig	2022-04-01 07:48:30 UTC
 +++ third_party/libxml/linux/config.h
-@@ -118,6 +118,9 @@
- /* Define to 1 if you have the `rand' function. */
- #define HAVE_RAND 1
+@@ -81,6 +81,9 @@
+ /* Define to 1 if you have the `putenv' function. */
+ #define HAVE_PUTENV 1
  
 +/* Define to 1 if you have the `arc4random' function. */
 +#define HAVE_ARC4RANDOM 1

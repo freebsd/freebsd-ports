@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_device_queue.cc.orig	2022-03-28 18:11:04 UTC
+--- gpu/vulkan/vulkan_device_queue.cc.orig	2022-04-01 07:48:30 UTC
 +++ gpu/vulkan/vulkan_device_queue.cc
 @@ -85,7 +85,7 @@ bool VulkanDeviceQueue::Initialize(
  
@@ -9,7 +9,7 @@
      // If gpu_info is provided, the device should match it.
      if (gpu_info && (device_properties.vendorID != gpu_info->gpu.vendor_id ||
                       device_properties.deviceID != gpu_info->gpu.device_id)) {
-@@ -230,7 +230,7 @@ bool VulkanDeviceQueue::Initialize(
+@@ -229,7 +229,7 @@ bool VulkanDeviceQueue::Initialize(
    enabled_device_features_2_ = {VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2};
  
    // Android, Fuchsia, and Linux(VaapiVideoDecoder) need YCbCr sampler support.

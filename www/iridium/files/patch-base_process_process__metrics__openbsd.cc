@@ -1,4 +1,4 @@
---- base/process/process_metrics_openbsd.cc.orig	2022-03-28 18:11:04 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2022-04-01 07:48:30 UTC
 +++ base/process/process_metrics_openbsd.cc
 @@ -4,17 +4,36 @@
  
@@ -55,11 +55,12 @@
 +                sizeof(struct kinfo_proc), 1 };
  
 -  mib[5] = (length / sizeof(struct kinfo_proc));
--
-   if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
--    return 0;
++  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
 +    return 0.0;
  
+-  if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
+-    return 0;
+-
 -  return info.p_pctcpu;
 +  return static_cast<double>((info.p_pctcpu * 100.0) / FSCALE);
  }

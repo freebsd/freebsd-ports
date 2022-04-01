@@ -1,4 +1,4 @@
---- ui/events/keycodes/dom/keycode_converter.cc.orig	2022-03-31 09:38:28 UTC
+--- ui/events/keycodes/dom/keycode_converter.cc.orig	2022-04-01 07:48:30 UTC
 +++ ui/events/keycodes/dom/keycode_converter.cc
 @@ -11,7 +11,7 @@
  #include "ui/events/keycodes/dom/dom_code.h"
@@ -18,7 +18,7 @@
  #define DOM_CODE(usb, evdev, xkb, win, mac, code, id) \
    { usb, xkb, code }
  #elif BUILDFLAG(IS_APPLE)
-@@ -67,7 +67,7 @@ struct DomKeyMapEntry {
+@@ -58,7 +58,7 @@ struct DomKeyMapEntry {
  #undef DOM_KEY_MAP
  #undef DOM_KEY_UNI
  
@@ -27,7 +27,7 @@
  
  // The offset between XKB Keycode and evdev code.
  constexpr int kXkbKeycodeOffset = 8;
-@@ -148,7 +148,7 @@ int KeycodeConverter::DomCodeToNativeKeycode(DomCode c
+@@ -139,7 +139,7 @@ int KeycodeConverter::DomCodeToNativeKeycode(DomCode c
    return UsbKeycodeToNativeKeycode(static_cast<uint32_t>(code));
  }
  

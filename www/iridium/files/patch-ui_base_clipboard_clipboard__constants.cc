@@ -1,8 +1,8 @@
---- ui/base/clipboard/clipboard_constants.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/base/clipboard/clipboard_constants.cc.orig	2022-04-01 07:48:30 UTC
 +++ ui/base/clipboard/clipboard_constants.cc
-@@ -22,7 +22,7 @@ const char kMimeTypePNG[] = "image/png";
- // Used for image drag & drop from LaCrOS.
- const char kMimeTypeOctetStream[] = "application/octet-stream";
+@@ -24,7 +24,7 @@ const char kMimeTypeOctetStream[] = "application/octet
+ // Used for window dragging on some platforms.
+ const char kMimeTypeWindowDrag[] = "chromium/x-window-drag";
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)

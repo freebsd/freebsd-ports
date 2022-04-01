@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2022-04-01 07:48:30 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -88,7 +88,7 @@
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -274,7 +274,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -277,7 +277,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -510,7 +510,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -513,7 +513,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -1026,7 +1026,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -1040,7 +1040,7 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

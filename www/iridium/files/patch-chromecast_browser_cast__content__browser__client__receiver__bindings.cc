@@ -1,4 +1,4 @@
---- chromecast/browser/cast_content_browser_client_receiver_bindings.cc.orig	2022-03-28 18:11:04 UTC
+--- chromecast/browser/cast_content_browser_client_receiver_bindings.cc.orig	2022-04-01 07:48:30 UTC
 +++ chromecast/browser/cast_content_browser_client_receiver_bindings.cc
 @@ -35,7 +35,7 @@
  #include "media/mojo/services/media_service.h"  // nogncheck
@@ -9,7 +9,7 @@
  #include "chromecast/browser/webview/js_channel_service.h"
  #include "chromecast/common/mojom/js_channel.mojom.h"
  #endif
-@@ -227,7 +227,7 @@ void CastContentBrowserClient::RunServiceInstance(
+@@ -234,7 +234,7 @@ void CastContentBrowserClient::RunServiceInstance(
  void CastContentBrowserClient::BindHostReceiverForRenderer(
      content::RenderProcessHost* render_process_host,
      mojo::GenericPendingReceiver receiver) {

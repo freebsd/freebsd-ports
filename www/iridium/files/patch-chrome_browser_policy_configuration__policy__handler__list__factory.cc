@@ -1,6 +1,6 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2022-04-01 07:48:30 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1443,7 +1443,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1456,7 +1456,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_CHROMEOS)
  
@@ -9,7 +9,7 @@
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1552,7 +1552,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1565,7 +1565,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -18,7 +18,7 @@
    { key::kChromeAppsEnabled,
      extensions::pref_names::kChromeAppsEnabled,
      base::Value::Type::BOOLEAN },
-@@ -1848,7 +1848,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -1885,7 +1885,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -27,7 +27,7 @@
    handlers->AddHandler(
        std::make_unique<
            enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
-@@ -2213,7 +2213,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2256,7 +2256,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
-@@ -2244,7 +2244,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2287,7 +2287,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
            policy::key::kSpellcheckLanguageBlocklist));
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

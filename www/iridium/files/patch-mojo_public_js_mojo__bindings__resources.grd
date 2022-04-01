@@ -1,6 +1,6 @@
---- mojo/public/js/mojo_bindings_resources.grd.orig	2022-03-28 18:11:04 UTC
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2022-04-01 07:48:30 UTC
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -110,7 +110,7 @@
+@@ -126,7 +126,7 @@
            use_base_dir="false"
            resource_path="mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js"
            type="BINDATA" />

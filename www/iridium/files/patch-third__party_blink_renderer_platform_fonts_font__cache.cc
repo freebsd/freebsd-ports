@@ -1,20 +1,20 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2022-04-01 07:48:30 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.cc
 @@ -87,7 +87,7 @@ extern const char kNotoColorEmojiCompat[] = "Noto Colo
  
  SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  float FontCache::device_scale_factor_ = 1.0;
  #endif
  
-@@ -127,7 +127,7 @@ FontCache::FontCache()
+@@ -120,7 +120,7 @@ FontCache::FontCache() : font_manager_(sk_ref_sp(stati
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    if (family.IsEmpty() || family == font_family_names::kSystemUi)
      return nullptr;
  #else

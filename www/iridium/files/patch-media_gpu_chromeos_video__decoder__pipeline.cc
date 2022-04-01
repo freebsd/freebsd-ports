@@ -1,6 +1,6 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2022-03-28 18:11:04 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2022-04-01 07:48:30 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -647,7 +647,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -646,7 +646,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
      }
    }
  

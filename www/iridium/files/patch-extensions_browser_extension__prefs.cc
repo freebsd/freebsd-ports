@@ -1,6 +1,6 @@
---- extensions/browser/extension_prefs.cc.orig	2022-03-28 18:11:04 UTC
+--- extensions/browser/extension_prefs.cc.orig	2022-04-01 07:48:30 UTC
 +++ extensions/browser/extension_prefs.cc
-@@ -2265,7 +2265,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
+@@ -2269,7 +2269,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
    registry->RegisterStringPref(pref_names::kLastChromeVersion, std::string());
    registry->RegisterDictionaryPref(kInstallSignature);
    registry->RegisterListPref(kExternalUninstalls);
