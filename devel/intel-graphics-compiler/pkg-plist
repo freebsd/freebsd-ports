@@ -52,7 +52,10 @@ include/igc/igc.opencl.h
 include/igc/ocl_igc_interface/code_type.h
 include/igc/ocl_igc_interface/fcl_ocl_device_ctx.h
 include/igc/ocl_igc_interface/fcl_ocl_translation_ctx.h
+include/igc/ocl_igc_interface/gt_dss_info.h
+include/igc/ocl_igc_interface/gt_slice_info.h
 include/igc/ocl_igc_interface/gt_system_info.h
+include/igc/ocl_igc_interface/igc_builtins.h
 include/igc/ocl_igc_interface/igc_features_and_workarounds.h
 include/igc/ocl_igc_interface/igc_ocl_device_ctx.h
 include/igc/ocl_igc_interface/igc_ocl_translation_ctx.h
@@ -60,8 +63,14 @@ include/igc/ocl_igc_interface/impl/fcl_ocl_device_ctx_impl.cpp
 include/igc/ocl_igc_interface/impl/fcl_ocl_device_ctx_impl.h
 include/igc/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp
 include/igc/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.h
+include/igc/ocl_igc_interface/impl/gt_dss_info_impl.cpp
+include/igc/ocl_igc_interface/impl/gt_dss_info_impl.h
+include/igc/ocl_igc_interface/impl/gt_slice_info_impl.cpp
+include/igc/ocl_igc_interface/impl/gt_slice_info_impl.h
 include/igc/ocl_igc_interface/impl/gt_system_info_impl.cpp
 include/igc/ocl_igc_interface/impl/gt_system_info_impl.h
+include/igc/ocl_igc_interface/impl/igc_builtins_impl.cpp
+include/igc/ocl_igc_interface/impl/igc_builtins_impl.h
 include/igc/ocl_igc_interface/impl/igc_features_and_workarounds_impl.cpp
 include/igc/ocl_igc_interface/impl/igc_features_and_workarounds_impl.h
 include/igc/ocl_igc_interface/impl/igc_ocl_device_ctx_impl.cpp
