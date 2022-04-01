@@ -1,7 +1,7 @@
 # Created by: Michael Muenz <m.muenz@gmail.com>
 
 PORTNAME=	pcapy-ng
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.7
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
