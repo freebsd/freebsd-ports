@@ -2,9 +2,9 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
-PORTREVISION=	1
+DISTVERSION=	2.14.0
 CATEGORIES=	sysutils
+EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	Manage your dotfiles across multiple diverse machines, securely
@@ -12,7 +12,7 @@ COMMENT=	Manage your dotfiles across multiple diverse machines, securely
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:modules python
 USE_GITHUB=	yes
 GH_ACCOUNT=	twpayne
 
@@ -45,18 +45,18 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		godbus:dbus:v5.0.6:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:86341886e292:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:27dd8689420f:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:ee480838109b:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:3681064d5158:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:btree:v1.0.1:google_btree/vendor/github.com/google/btree \
-		google:go-github:v42.0.0:google_go_github_v42/vendor/github.com/google/go-github/v42 \
+		google:go-github:v43.0.0:google_go_github_v43/vendor/github.com/google/go-github/v43 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:gops:v0.3.22:google_gops/vendor/github.com/google/gops \
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
@@ -70,7 +70,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:v1.1.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		magiconair:properties:v1.8.5:magiconair_properties/vendor/github.com/magiconair/properties \
+		magiconair:properties:v1.8.6:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		microcosm-cc:bluemonday:v1.0.18:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
@@ -107,11 +107,11 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		twpayne:go-vfs:v4.1.0:twpayne_go_vfs_v4/vendor/github.com/twpayne/go-vfs/v4 \
 		twpayne:go-xdg:v6.0.0:twpayne_go_xdg_v6/vendor/github.com/twpayne/go-xdg/v6 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr \
+		uber-go:multierr:v1.8.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		ulikunitz:xz:v0.5.10:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
-		yuin:goldmark:v1.4.7:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.4.8:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.2.0:zalando_go_keyring/vendor/github.com/zalando/go-keyring \
 		DHowett:go-plist:v1.0.0:go_plist/vendor/howett.net/plist
 
@@ -122,10 +122,20 @@ GO_BUILDFLAGS=	-tags noupgrade \
 
 PLIST_FILES=	bin/chezmoi
 
-OPTIONS_DEFINE=		BASH FISH ZSH
-OPTIONS_DEFAULT=	BASH FISH ZSH
+OPTIONS_DEFINE=		BASH DOCS FISH ZSH
+OPTIONS_DEFAULT=	BASH DOCS FISH ZSH
+
+DOCS_MASTER_SITES=	https://unpkg.com/:mermaid_js
+DOCS_DISTFILES=		mermaid@8.8.0/dist/mermaid.min.js:mermaid_js
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs>0:textproc/py-mkdocs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-mermaid2-plugin>0:textproc/py-mkdocs-mermaid2-plugin@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-simple-hooks>0:textproc/py-mkdocs-simple-hooks@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-redirects>0:textproc/py-mkdocs-redirects@${PY_FLAVOR}
 
 BASH_PLIST_FILES=	etc/bash_completion.d/chezmoi
+DOCS_PORTDOCS=		*
 FISH_PLIST_FILES=	share/fish/vendor_functions.d/chezmoi.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_chezmoi
 
@@ -134,6 +144,10 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_chezmoi
 
 SOURCE_DATE_EPOCH_CMD=	date -ur $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ'
 
+do-build-DOCS-on:
+	@${CP} ${_DISTDIR}/mermaid@8.8.0/dist/mermaid.min.js ${WRKSRC}/assets/chezmoi.io
+	(cd ${WRKSRC}/assets/chezmoi.io && mkdocs build)
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor/github.com/chris-ramon
 	@${RLN} ${WRKSRC_aymerick_douceur} ${WRKSRC}/vendor/github.com/chris-ramon/douceur
@@ -141,6 +155,10 @@ post-extract:
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi-completion.bash ${STAGEDIR}${PREFIX}/etc/bash_completion.d/chezmoi
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/assets/chezmoi.io/site && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 post-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_functions.d
