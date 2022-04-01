@@ -56,7 +56,7 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		kinetiknz:cubeb:cubeb-0.2-1350-gf79e0cf:cubeb/externals/cubeb \
 		yhirose:cpp-httplib:v0.9.0-5-g9648f95:cpp_httplib/externals/cpp-httplib
 
-USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig sdl ssl
+USES=		cmake:testing compiler:c++17-lang elfctl localbase:ldflags pkgconfig sdl ssl
 USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
 USE_SDL=	sdl2
 CMAKE_ON=	Boost_USE_STATIC_LIBS
@@ -66,6 +66,7 @@ CMAKE_OFF+=	${CMAKE_TESTING_ON}
 CMAKE_TESTING_ON=	YUZU_TESTS
 LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
+ELF_FEATURES=	${PLIST_FILES:Mbin/*:S/^/+wxneeded:/}
 PLIST_FILES=	bin/${PORTNAME}-cmd
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK NLS QT5 SNDIO VAAPI VULKAN WEBENGINE
