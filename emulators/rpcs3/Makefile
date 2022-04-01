@@ -35,7 +35,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.2-4-g6cf1336:hidapi/3rdparty/hidapi/hidapi \
 		kinetiknz:cubeb:cubeb-0.2-1350-gf79e0cf:cubeb/3rdparty/cubeb/cubeb \
 		wolfSSL:wolfssl:v5.2.0-stable-245-gdcaa218ed:wolfssl/3rdparty/wolfssl/wolfssl
 
-USES=		cmake compiler:c++17-lang gl iconv:wchar_t localbase:ldflags \
+USES=		cmake compiler:c++17-lang elfctl gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
 USE_GL=		gl glew
 USE_QT=		qmake_build buildtools_build core concurrent dbus gui multimedia svg widgets
@@ -44,6 +44,7 @@ CMAKE_ON=	CMAKE_SKIP_RPATH ${CURL FFMPEG FLATBUFFERS LIBPNG PUGIXML XXHASH:L:S/^
 CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
 LDFLAGS+=	-Wl,--as-needed # GLU
+ELF_FEATURES=	+noaslr:bin/${PORTNAME}
 
 OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
 OPTIONS_DEFAULT=EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
@@ -79,11 +80,6 @@ post-patch:
 		 -e '/GIT_FULL_BRANCH/s/local_build/${GH_ACCOUNT}\/${GH_PROJECT}\/master/' \
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
-
-post-install:
-.if exists(/usr/bin/elfctl)
-	elfctl -e +noaslr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.endif
 
 .include <bsd.port.pre.mk>
 
