@@ -1,5 +1,5 @@
 PORTNAME=	keyboard
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	deskutils kde
 PKGNAMEPREFIX=	maliit-
 
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libmaliit-plugins.so:deskutils/maliit-framework \
 		libQt5Feedback.so:deskutils/qtfeedback \
 		libhunspell-1.7.so:textproc/hunspell
 
-USES=		cmake gettext-runtime gnome pkgconfig qt:5
+USES=		cmake gettext gnome pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	maliit
 USE_GNOME=	glib20
@@ -20,6 +20,7 @@ GLIB_SCHEMAS=	org.maliit.keyboard.maliit.gschema.xml
 USE_QT=		core dbus declarative gui multimedia network \
 		buildtools_build qmake_build
 CMAKE_OFF=	enable-tests
+CMAKE_ARGS=	-DHUNSPELL_DICT_PATH=${PREFIX}/share/hunspell
 
 OPTIONS_DEFINE=	ANTHY CHEWING PINYIN
 OPTIONS_SUB=	yes
