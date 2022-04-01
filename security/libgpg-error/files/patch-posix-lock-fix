@@ -1,0 +1,85 @@
+From 6e17e70bb7eea1f6ed4c08f795ea65a09f89d38f Mon Sep 17 00:00:00 2001
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Mon, 28 Mar 2022 13:36:19 +0900
+Subject: [PATCH] core: Fix support of posix-lock for FreeBSD.
+
+* src/posix-lock.c [__FreeBSD__] (use_pthread_p): Use
+pthread_key_create to determine if it's linked to lpthread or not.
+
+--
+
+This is from glthread_in_use in gnulib/lib/glthread/threadlib.c.
+
+On FreeBSD, pthread_key_create in there in libc (stub function) as
+well as -lpthread (real one), while pthread_create is not available
+in libc.
+
+Signed-off-by: NIIBE Yutaka <gniibe@fsij.org>
+---
+ src/posix-lock.c | 36 +++++++++++++++++++++++++++++++++++-
+ 1 file changed, 35 insertions(+), 1 deletion(-)
+
+diff --git a/src/posix-lock.c b/src/posix-lock.c
+index d0fd07a..85ec660 100644
+--- src/posix-lock.c
++++ src/posix-lock.c
+@@ -67,6 +67,38 @@
+ #  endif
+ # endif /*!USE_POSIX_THREADS_WEAK*/
+ # if PTHREAD_IN_USE_DETECTION_HARD
++#  if defined __FreeBSD__ || defined __DragonFly__                 /* FreeBSD */
++
++/* Test using pthread_key_create.  */
++
++static int
++use_pthread_p (void)
++{
++  static int tested;
++  static int result; /* 1: linked with -lpthread, 0: only with libc */
++
++  if (!tested)
++    {
++      pthread_key_t key;
++      int err = pthread_key_create (&key, NULL);
++
++      if (err == ENOSYS)
++        result = 0;
++      else
++        {
++          result = 1;
++          if (err == 0)
++            pthread_key_delete (key);
++        }
++      tested = 1;
++    }
++  return result;
++}
++
++#  else                                                     /* Solaris, HP-UX */
++
++/* Test using pthread_create.  */
++
+ /* The function to be executed by a dummy thread.  */
+ static void *
+ dummy_thread_func (void *arg)
+@@ -84,7 +116,7 @@ use_pthread_p (void)
+     {
+       pthread_t thread;
+ 
+-      if (pthread_create (&thread, NULL, dummy_thread_func, NULL))
++      if (pthread_create (&thread, NULL, dummy_thread_func, NULL) != 0)
+         result = 0; /* Thread creation failed.  */
+       else
+         {
+@@ -102,6 +134,8 @@ use_pthread_p (void)
+     }
+   return result;
+ }
++#  endif                                                     /* Solaris, HP-UX */
++
+ # endif /*PTHREAD_IN_USE_DETECTION_HARD*/
+ #endif /*USE_POSIX_THREADS*/
+ 
+-- 
+2.11.0
+
