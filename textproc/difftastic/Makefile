@@ -1,5 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.24.0
+DISTVERSION=	0.25.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -59,7 +59,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rayon-core-1.9.1 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
-		rpds-0.11.0 \
+		rpds-0.10.0 \
 		rustc-hash-1.1.0 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
@@ -82,6 +82,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/difft
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
