@@ -1,5 +1,5 @@
 PORTNAME=	vctrs
-PORTVERSION=	0.3.8
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -8,9 +8,9 @@ COMMENT=	Vector Helpers
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-ellipsis>=0.2.0:devel/R-cran-ellipsis \
+CRAN_DEPENDS=	R-cran-cli>=3.2.0:devel/R-cran-cli \
 		R-cran-glue>0:devel/R-cran-glue \
-		R-cran-rlang>=0.4.10:devel/R-cran-rlang
+		R-cran-rlang>=1.0.2:devel/R-cran-rlang
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
