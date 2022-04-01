@@ -4,9 +4,11 @@ bin/nvcompress
 bin/nvddsinfo
 bin/nvdecompress
 bin/nvhdrtest
+bin/nvimgdiff
 bin/nvtestsuite
 bin/nvzoom
 include/nvtt/nvtt.h
+include/nvtt/nvtt_wrapper.h
 lib/libnvcore.so
 lib/libnvimage.so
 lib/libnvmath.so

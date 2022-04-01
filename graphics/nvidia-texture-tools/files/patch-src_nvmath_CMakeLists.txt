@@ -1,0 +1,11 @@
+--- src/nvmath/CMakeLists.txt.orig	2020-08-24 06:27:21 UTC
++++ src/nvmath/CMakeLists.txt
+@@ -14,7 +14,7 @@ SET(MATH_SRCS
+ 
+ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
+ 
+-ADD_LIBRARY(nvmath ${MATH_SRCS})
++ADD_LIBRARY(nvmath SHARED ${MATH_SRCS})
+ 
+ TARGET_LINK_LIBRARIES(nvmath ${LIBS} nvcore)
+ 

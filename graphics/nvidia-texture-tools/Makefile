@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-texture-tools
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,8 +11,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6 aarch64  # see src/nvcore/nvcore.h
 
 USES=		cmake compiler:c++11-lang
-CMAKE_ARGS=	-DNVTT_SHARED=TRUE \
-		-DNVTHREAD_SHARED=TRUE
+CMAKE_ON=	NVTT_SHARED \
+		NVCORE_SHARED \
+		NVTHREAD_SHARED \
+		NVIMAGE_SHARED
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	castano
 USE_LDCONFIG=	yes

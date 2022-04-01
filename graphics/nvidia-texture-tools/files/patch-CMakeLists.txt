@@ -1,26 +1,15 @@
---- CMakeLists.txt.orig	2017-08-23 18:05:30 UTC
+--- CMakeLists.txt.orig	2020-08-24 06:27:21 UTC
 +++ CMakeLists.txt
-@@ -25,9 +25,8 @@ IF(WIN32)
- 	
- ENDIF(WIN32)
- 
--INCLUDE(${NV_CMAKE_DIR}/OptimalOptions.cmake)
-+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC") # the only useful line from OptimalOptions.cmake
- MESSAGE(STATUS "Setting optimal options")
--MESSAGE(STATUS "  Processor: ${NV_SYSTEM_PROCESSOR}")
- MESSAGE(STATUS "  Compiler Flags: ${CMAKE_CXX_FLAGS}")
- 
- IF(CMAKE_BUILD_TYPE MATCHES "debug")
-@@ -45,12 +44,6 @@ ENDIF(NVTT_SHARED)
- ADD_SUBDIRECTORY(extern)
+@@ -28,12 +28,6 @@ ADD_SUBDIRECTORY(extern)
  
  ADD_SUBDIRECTORY(src)
--
+ 
 -# These files should only be installed when creating packages.
 -INSTALL(FILES 
 -	LICENSE
 -	README.md
 -	DESTINATION share/doc/nvtt)
- 
+-
  # Add packaging support
  INCLUDE(InstallRequiredSystemLibraries)
+ 
