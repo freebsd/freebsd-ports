@@ -1,8 +1,7 @@
 # Created by: Matt Lancereau
 
 PORTNAME=	xfce4-terminal
-PORTVERSION=	0.8.10
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
