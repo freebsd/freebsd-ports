@@ -1,7 +1,7 @@
 # Created by: David O'Brien (obrien@cs.ucdavis.edu)
 
 PORTNAME=	rsync
-DISTVERSION=	3.2.3
+DISTVERSION=	3.1.3
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
@@ -15,10 +15,6 @@ COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libxxhash.so:devel/xxhash \
-		libzstd.so:archivers/zstd \
-		liblz4.so:archivers/liblz4
 
 USES=		cpe shebangfix ssl
 SHEBANG_FILES=	support/rrsync
