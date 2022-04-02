@@ -123,9 +123,7 @@ CONFS=		cmu-backend.conf cmu-frontend.conf normal.conf prefork.conf \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBDB}
-INVALID_BDB_VER=2
-.else
+.if empty(${PORT_OPTIONS:MBDB})
 BDB_LIB_NAME=	no
 .endif
 
