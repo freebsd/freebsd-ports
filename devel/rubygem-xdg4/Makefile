@@ -13,8 +13,6 @@ COMMENT=	XDG Base Directory Standard Library for Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.adoc
 
-BROKEN_RUBY26=	yes
-
 USES=		gem
 USE_RUBY=	yes
 

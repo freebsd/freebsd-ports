@@ -233,11 +233,7 @@ RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 RUBY_MODNAME?=		${PORTNAME}
 
 # Commands
-.if ${RUBY_VER} < 2.7
-RUBY_RDOC?=		${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//}
-.else
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
-.endif
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}

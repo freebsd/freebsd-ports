@@ -11,8 +11,6 @@ COMMENT=	Mixin to add configuration functionality to your classes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_RUBY26=	yes
-
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-dry-core>=0.6<1:devel/rubygem-dry-core
 

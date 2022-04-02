@@ -9,7 +9,6 @@ COMMENT=	RubyGems plugin for comparing gem versions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_RUBY26=	yes
 BROKEN_RUBY27=	yes
 
 RUN_DEPENDS=	rubygem-curb>=0:ftp/rubygem-curb \

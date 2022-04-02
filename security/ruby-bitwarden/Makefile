@@ -10,6 +10,9 @@ COMMENT=	Ruby implementation of the BitWarden API
 
 LICENSE=	ISCL
 
+DEPRECATED=	Broken with all supported versions of Ruby
+EXPIRATION_DATE=	2022-06-30
+
 # Port is not maintained anymore:
 # https://github.com/jcs/rubywarden
 BROKEN_RUBY27=	yes
