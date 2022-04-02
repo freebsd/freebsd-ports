@@ -1,0 +1,35 @@
+diff --git a/acls.c b/acls.c
+index 264b920b..8c31adc5 100644
+--- a/acls.c
++++ b/acls.c
+@@ -28,7 +28,7 @@ extern int dry_run;
+ extern int am_root;
+ extern int read_only;
+ extern int list_only;
+-extern int orig_umask;
++extern mode_t orig_umask;
+ extern int numeric_ids;
+ extern int inc_recurse;
+ extern int preserve_devices;
+diff --git a/flist.c b/flist.c
+index c275e995..117b8531 100644
+--- a/flist.c
++++ b/flist.c
+@@ -486,7 +486,7 @@ static void send_file_entry(int f, const char *fname, struct file_struct *file,
+ 			struct ht_int64_node *np = idev_find(tmp_dev, tmp_ino);
+ 			first_hlink_ndx = (int32)(long)np->data - 1;
+ 			if (first_hlink_ndx < 0) {
+-				np->data = (void*)(long)(first_ndx + ndx + 1);
++				np->data = (void*)(intptr_t)(long)(first_ndx + ndx + 1);
+ 				xflags |= XMIT_HLINK_FIRST;
+ 			}
+ 			if (DEBUG_GTE(HLINK, 1)) {
+@@ -1078,7 +1078,7 @@ static struct file_struct *recv_file_entry(int f, struct file_list *flist, int x
+ 			ndx = (int32)(long)np->data - 1;
+ 			if (ndx < 0) {
+ 				ndx = cnt++;
+-				np->data = (void*)(long)cnt;
++				np->data = (void*)(intptr_t)(long)cnt;
+ 			}
+ 			F_HL_GNUM(file) = ndx;
+ 		}
