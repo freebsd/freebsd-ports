@@ -53,7 +53,7 @@ RENAMED_DESC=	Add support for renamed file detection
 FLAGS_DESC=	File system flags support patch, adds --fileflags
 
 # define default options
-OPTIONS_DEFAULT=FLAGS ICONV SSH ZLIB_BASE
+OPTIONS_DEFAULT=FLAGS SSH ZLIB_BASE
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 FLAGS_EXTRA_PATCHES=		${WRKSRC}/patches/fileflags.diff \
