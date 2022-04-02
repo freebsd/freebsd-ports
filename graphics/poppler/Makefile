@@ -1,8 +1,7 @@
 # Created by: marcus@FreeBSD.org
 
 PORTNAME=	poppler
-DISTVERSION=	22.01.0
-PORTREVISION=	1
+DISTVERSION=	22.04.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -53,7 +52,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=117
+PLIST_SUB+=	SHLIB_VER=120
 
 OPTIONS_DEFINE=		CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG
@@ -71,7 +70,9 @@ CMAKE_ARGS+=		-DENABLE_LIBOPENJPEG:STRING="none" \
 			-DENABLE_LIBCURL:BOOL=FALSE
 
 .  if ${_SLAVE_PORT} == glib
+USES+=			python:build
 USE_GNOME+=		glib20 introspection:Build
+BINARY_ALIAS=		python3=${PYTHON_CMD}
 .  elif ${_SLAVE_PORT} == qt5
 USES+=			qt:5
 USE_QT=			core gui widgets xml \
