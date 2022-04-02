@@ -658,4 +658,4 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlapi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/usercertinmem.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlstream.c
-share/zsh/site-functions/_curl
+%%ZSHCOMPLETION%%share/zsh/site-functions/_curl

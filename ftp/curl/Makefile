@@ -137,6 +137,15 @@ WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
+.if defined(CROSS_TOOLCHAIN)
+# ftp/curl does not generate zsh completion when cross-compiling.
+#
+# See files/patch-scripts-Makefile.in for more details.
+PLIST_SUB+=	ZSHCOMPLETION="@comment "
+.else
+PLIST_SUB+=	ZSHCOMPLETION=""
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MCA_BUNDLE} && (${PORT_OPTIONS:MGNUTLS} || ${PORT_OPTIONS:MOPENSSL})
