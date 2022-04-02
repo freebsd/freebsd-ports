@@ -1,12 +1,27 @@
-This is a free port of the original SIL (SNOBOL4 Implementation Language)
-macro version of SNOBOL4 (developed at Bell Labs) with the C language as
-target.  Includes SPITBOL and BLOCKS extensions.
+CSNOBOL4 is a free port of the original SIL (SNOBOL4 Implementation
+Language) macro version of SNOBOL4 (developed at Bell Labs) with the C
+language as its target.  Includes SPITBOL and BLOCKS extensions.
 
-SNOBOL4, while known primarily as a string language excels at any task
-involving symbolic manipulations.  It provides run time typing,
-garbage collection, user data types, on the fly compilation.  Its
-primary weakness is its simple syntax, and lack of structured
-programming constructs.  However some consider the spareness of
-SNOBOL4 syntax a strength when compared to some modern agglomerations.
+SNOBOL4 is a living fossil; a dynamically typed, garbage collected
+interpreter with a first-class pattern type (patterns can be composed
+from other patterns), and user defined data types (structs) from the
+1960's.
 
-WWW: http://www.snobol4.org/
+The language syntax is exceedingly simple, and statements consist of
+three optional parts: a label, an expression, and an unconditional or
+conditional branch labels.
+
+Pattern match (and replace) is a built in operator.  Built-in
+functions include predicates for comparison, pattern creation and
+string modification.  allow the compilation of code at run time, and
+the creation of new "user data types" (structures). Built-in types
+include string, integer, float, multi-dimension arrays, (hash) tables,
+pattern, and code.  Loadable modules can create new opaque types.
+
+CSNOBOL4 includes extensions to access base64, bit operations,
+cryptographic hashes, dbm, directories, ffi, fork, pipes,
+pseudo-terminals, random, readline, sprintf, sqlite3, stat, tcl, and
+TLS, documented in manual pages created using embedded POD-like
+"snopea" markup.
+
+WWW: http://www.regressive.org/snobol4/
