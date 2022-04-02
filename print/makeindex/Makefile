@@ -23,8 +23,8 @@ post-patch:
 		${WRKSRC}/src-3.0/Makefile.gen
 
 do-build:
-	@(cd ${WRKSRC}/src-3.0/regexp; ${MAKE} OPT="${CFLAGS}")
-	@(cd ${WRKSRC}/src-3.0; ${MAKE} OPT="${CFLAGS}")
+	@(cd ${WRKSRC}/src-3.0/regexp; ${MAKE} CC="${CC}" OPT="${CFLAGS}")
+	@(cd ${WRKSRC}/src-3.0; ${MAKE} CC="${CC}" OPT="${CFLAGS}")
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/texmf/makeindx
