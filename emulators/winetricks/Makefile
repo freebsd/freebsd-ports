@@ -1,5 +1,5 @@
 PORTNAME=	winetricks
-PORTVERSION=	20210825
+PORTVERSION=	20220328
 CATEGORIES=	emulators
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -21,7 +21,8 @@ GH_ACCOUNT=	Winetricks
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-PLIST_FILES=	bin/winetricks man/man1/winetricks.1.gz
+PLIST_FILES=	bin/winetricks \
+		man/man1/winetricks.1.gz
 
 OPTIONS_DEFINE=		X11
 OPTIONS_DEFAULT=	X11
