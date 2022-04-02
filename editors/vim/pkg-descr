@@ -8,7 +8,8 @@ configuration files.
 
 FreeBSD has the following Vim packages:
 * vim: Console-only Vim (vim binary) with all runtime files
-* vim-gtk3, -gtk2, -athena, -motif, -x11: Console Vim plus a GUI (gvim binary)
+* vim-gtk3, -gtk2, -motif: Console Vim plus a GUI (gvim binary)
+* vim-x11:  Console Vim only, with xclipboard support
 * vim-tiny: Vim binary only, with no runtime files. Not useful for most people;
   intended for minimal (ex. jail) installations
 
