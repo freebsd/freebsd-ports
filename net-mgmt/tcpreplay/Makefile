@@ -2,6 +2,7 @@
 
 PORTNAME=	tcpreplay
 DISTVERSION=	4.4.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -34,6 +35,7 @@ LIBPCAP_BASE_DESC=	Build with libpcap from the base OS
 LIBPCAP_PORTS_DESC=	Build with net/libpcap
 
 LIBPCAP_BASE_CONFIGURE_ON=	--with-libpcap=/usr/lib
-LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so:net/libpcap
+# needs .so version (see: 262976)
+LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
 .include <bsd.port.mk>
