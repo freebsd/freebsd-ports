@@ -30,7 +30,7 @@ DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/t-engine4-src-${DISTVERSION}
-MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC} CXX=${CXX}
+MAKE_ARGS+=	config=release verbose=yes ARCH="" CC="${CC}" CXX="${CXX}"
 LDFLAGS_i386=	-Wl,-znotext
 
 .include <bsd.port.options.mk>

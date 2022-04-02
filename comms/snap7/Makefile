@@ -19,7 +19,7 @@ CPE_VENDOR=	snap7_project
 
 WRKSRC_SUBDIR=	build/unix
 
-MAKE_ARGS=	CC=${CC} CXX=${CXX} LinkerName=${CXX} SharedObjectLinkerName="${CXX} -shared -fPIC"
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LinkerName="${CXX}" SharedObjectLinkerName="${CXX} -shared -fPIC"
 
 PLIST_FILES=	lib/libsnap7.so include/snap7.h share/examples/snap7/c-cpp/snap7.cpp
 

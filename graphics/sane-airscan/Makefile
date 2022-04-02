@@ -18,7 +18,7 @@ USE_GNOME=		libxml2
 USE_GITHUB=		yes
 GH_ACCOUNT=		alexpevzner
 
-MAKE_ARGS=		CC=${CC} PKG_CONFIG=pkgconf
+MAKE_ARGS=		CC="${CC}" PKG_CONFIG=pkgconf
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/airscan.conf \

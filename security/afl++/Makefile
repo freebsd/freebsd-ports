@@ -37,9 +37,9 @@ MAKE_ARGS=	${${ARCH} != amd64 && ${ARCH} != i386:?AFL_NO_X86=1:} \
 		PREFIX="${PREFIX}/${PKGBASE}"
 .if ${FLAVOR} == llvm
 CFLAGS_riscv64=	-mno-relax
-MAKE_ARGS+=	CC=clang${_LLVM_VER} \
-		CXX=clang++${_LLVM_VER} \
-		LLVM_CONFIG=llvm-config${_LLVM_VER}
+MAKE_ARGS+=	CC="clang${_LLVM_VER}" \
+		CXX="clang++${_LLVM_VER}" \
+		LLVM_CONFIG="llvm-config${_LLVM_VER}"
 .endif
 ALL_TARGET=	distrib
 QA_ENV=		IGNORE_QA_stripped=1 # unstripped to keep it functional

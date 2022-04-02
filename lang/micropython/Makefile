@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_TUPLE=	micropython:axtls:531cab9:axtls \
 		pfalcon:berkeley-db-1.xx:35aaec4:bdb
 
-MAKE_ARGS+=	CC=${CC} CPP="${CC} -E" V=1
+MAKE_ARGS+=	CC="${CC}" CPP="${CC} -E" V=1
 MAKE_ENV+=	CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS} -Wno-float-conversion" COPT=""
 
 # With aarch64 (QEMU) the float_parse and the float_parse_doubleprec tests

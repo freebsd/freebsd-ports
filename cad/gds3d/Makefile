@@ -19,7 +19,7 @@ GH_TAGNAME=	bcdb97a
 
 WRKSRC_SUBDIR=	linux
 
-MAKE_ARGS=	CC=${CXX}
+MAKE_ARGS=	CC="${CXX}"
 
 PLIST_FILES=	bin/${PORTNAME:tu}
 

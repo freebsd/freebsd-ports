@@ -20,8 +20,8 @@ GH_TUPLE=	cp2k:dbcsr:f385868eec7c89f40ac9d6d9783fc34a05d2f68e:cp2k_dbcsr/exts/db
 		pseewald:fprettify:2b2801bf91dd651c417c232bb891d407bf81085c:pseewald_fprettify/tools/prettify/fprettify \
 		aradi:fypp:7895a7efb7d2f07dc284cece6cc9474297b8dc55:aradi_fypp/exts/dbcsr/tools/build_utils/fypp
 
-MAKE_ARGS=	XARCH=FreeBSD-gfortran VERSION=${VERSION} FC=gfortran${GCC_DEFAULT} CC=${CC} LD=gfortran${GCC_DEFAULT} \
-		DATA_DIR=${DATADIR}
+MAKE_ARGS=	XARCH=FreeBSD-gfortran VERSION="${VERSION}" FC="gfortran${GCC_DEFAULT}" CC="${CC}" LD="gfortran${GCC_DEFAULT}" \
+		DATA_DIR="${DATADIR}"
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 

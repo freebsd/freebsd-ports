@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/vnc_unixsrc
 SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
 ALL_TARGET=	World
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 
 OPTIONS_DEFINE=	JVNC_VIEWER
 OPTIONS_SUB=	yes

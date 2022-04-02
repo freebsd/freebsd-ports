@@ -21,7 +21,7 @@ SHEBANG_FILES=	scripts/*
 USE_GITHUB=	yes
 GH_ACCOUNT=	mananapr
 
-MAKE_ARGS=	CC=${CC} NCURSES_CFLAGS=-I/usr/include NCURSES_LIBS=/usr/lib/libncursesw.so
+MAKE_ARGS=	CC="${CC}" NCURSES_CFLAGS=-I/usr/include NCURSES_LIBS=/usr/lib/libncursesw.so
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \

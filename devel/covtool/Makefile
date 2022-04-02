@@ -13,7 +13,7 @@ USES=		gmake zip
 USE_GCC=	yes
 
 MAKEFILE=	makefile
-MAKE_ARGS=	CC=${CXX} LN=${CXX} INSTALL_DIR=${STAGEDIR}${PREFIX}
+MAKE_ARGS=	CC="${CXX}" LN="${CXX}" INSTALL_DIR="${STAGEDIR}${PREFIX}"
 NO_WRKSUBDIR=	yes
 
 post-patch:

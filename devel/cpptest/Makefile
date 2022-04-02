@@ -14,6 +14,6 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-MAKE_ARGS=	CC=${CC} CCC=${CXX}
+MAKE_ARGS=	CC="${CC}" CCC="${CXX}"
 
 .include <bsd.port.mk>

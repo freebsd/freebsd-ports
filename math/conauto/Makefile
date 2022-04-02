@@ -12,7 +12,7 @@ USES=		gmake
 
 WRKSRC_SUBDIR=	src
 
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 CFLAGS+=	-fcommon
 

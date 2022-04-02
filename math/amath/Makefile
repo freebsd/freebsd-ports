@@ -18,7 +18,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --pkgconfig=libdata/pkgconfig \
 		--mandir=man LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ARGS=	CC=${CC} CXX=${CXX}
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 
 OPTIONS_DEFINE=	TESTS
 OPTIONS_DEFAULT=APPLIBM

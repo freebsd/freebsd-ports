@@ -21,7 +21,7 @@ USE_XORG=	x11 xext xmu
 
 MAKEFILE=	Makefile.complete
 
-MAKE_ARGS=	CC=${CC} COPT="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" COPT="${CFLAGS}"
 CFLAGS+=	-I${FILESDIR}
 WRKSRC_SUBDIR=	code
 

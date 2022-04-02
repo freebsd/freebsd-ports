@@ -18,7 +18,7 @@ USES=		compiler:c++11-lib gmake tar:bz2
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-fPIC
-MAKE_ARGS+=	CC=${CC} HOSTCC=${CC} AR=${AR}
+MAKE_ARGS+=	CC="${CC}" HOSTCC="${CC}" AR="${AR}"
 
 .include <bsd.port.pre.mk>
 

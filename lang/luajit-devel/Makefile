@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	luajit luajit-openresty
 
 USES=		cpe gmake
 USE_LDCONFIG=	yes
-MAKE_ARGS=	CC=${CC} CCOPT= CCOPT_x86= Q=
+MAKE_ARGS=	CC="${CC}" CCOPT= CCOPT_x86= Q=
 
 USE_GITHUB=	yes
 GH_TUPLE=	LuaJIT:LuaJIT:c4fe76d

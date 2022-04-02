@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:www/squid
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		perl5 tar:tgz
-MAKE_ARGS=	CC=${CC} INSTALL_PATH=${PREFIX}/rejik3
+MAKE_ARGS=	CC="${CC}" INSTALL_PATH="${PREFIX}/rejik3"
 
 USERS=		squid
 GROUPS=		squid

@@ -39,7 +39,7 @@ GITREVISION=	9957-6df591a07
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	CC=${CC} CXX=${CXX}
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 
 PLIST_FILES=	bin/eduke32 bin/mapster32
 PORTEXAMPLES=	*

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/sine_generator \
 		bin/sweep_generator \

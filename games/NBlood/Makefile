@@ -25,7 +25,7 @@ USE_GL=		glu
 USE_SDL=	sdl2
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	CC=${CC} CXX=${CXX}
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 PLIST_FILES=	bin/pcexhumed \
 		bin/nblood \
 		bin/rednukem

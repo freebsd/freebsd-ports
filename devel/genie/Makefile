@@ -11,7 +11,7 @@ GH_ACCOUNT=	bkaradzic
 GH_PROJECT=	GENie
 GH_TAGNAME=	a503d6e
 
-MAKE_ARGS=	-C build/gmake.freebsd config=release CC=${CC} CXX=${CXX}
+MAKE_ARGS=	-C build/gmake.freebsd config=release CC="${CC}" CXX="${CXX}"
 MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 

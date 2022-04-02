@@ -26,7 +26,7 @@ CONFLICTS_INSTALL=	unclutter-8*
 PLIST_FILES=	bin/unclutter \
 		man/man1/unclutter.1.gz
 
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 
 CFLAGS+=	-I${LOCALBASE}/include
 

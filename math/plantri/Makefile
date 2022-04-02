@@ -8,7 +8,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Plantri and fullgen are programs to generate planar graph
 
 MAKEFILE=	makefile
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/plantri \
 		bin/fullgen

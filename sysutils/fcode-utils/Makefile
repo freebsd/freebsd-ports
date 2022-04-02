@@ -15,7 +15,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	openbios
 
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 PLIST_FILES=	bin/detok \
 		bin/romheaders \
 		bin/toke
