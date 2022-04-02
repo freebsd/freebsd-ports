@@ -481,8 +481,7 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 PLIST_SUB+=		BACKEND=${BACKEND_PLIST}
 
 .if ${PORT_OPTIONS:MBDB}
-USES+=			bdb
-INVALID_BDB_VER=	6
+USES+=			bdb:5
 
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
