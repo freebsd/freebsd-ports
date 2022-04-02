@@ -1,3 +1,3 @@
-TIMESTAMP = 1646237277
-SHA256 (libvirt-8.1.0.tar.xz) = 3c6c43becffeb34a3f397c616206aa69a893ff8bf5e8208393c84e8e75352934
-SIZE (libvirt-8.1.0.tar.xz) = 8881608
+TIMESTAMP = 1648867797
+SHA256 (libvirt-8.2.0.tar.xz) = 0ecd9c7dd52db7a2d124155ffa5e11de2fbd05014eceffbd1972b022d21becba
+SIZE (libvirt-8.2.0.tar.xz) = 8871236
