@@ -13,6 +13,8 @@ validate_env dp_BZCAT dp_CAT dp_DISTDIR dp_ECHO_MSG dp_EXTRA_PATCHES \
 	dp_PATCH_SILENT dp_PATCH_WRKSRC dp_PKGNAME dp_PKGORIGIN \
 	dp_UNZIP_NATIVE_CMD dp_XZCAT
 
+PATCH_CHERIBSD="${dp_PATCHDIR}/cheribsd.patch"
+
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_PATCH}" ] && set -x
 
 set -u
@@ -153,6 +155,14 @@ if [ -n "${dp_EXTRA_PATCHES}" ]; then
 fi
 
 patch_from_directory "${dp_PATCHDIR}" "${dp_OPSYS}"
+
+if [ -f  "${PATCH_CHERIBSD}" ]; then
+	${dp_ECHO_MSG} "===>  Applying a CheriBSD patch for ${dp_PKGNAME}"
+	if ! apply_one_patch "${PATCH_CHERIBSD}" "CheriBSD patch" "" \
+		${dp_PATCH_ARGS}; then
+		failure_fatal
+	fi
+fi
 
 if [ -n "${dp_EXTRA_PATCH_TREE}" ]; then
 	patch_from_directory "${dp_EXTRA_PATCH_TREE}/${dp_PKGORIGIN}" "local"
