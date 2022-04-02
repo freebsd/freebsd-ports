@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.1
+DISTVERSION=	0.27.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -43,6 +43,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		base64-0.13.0 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
+		block-buffer-0.9.0 \
 		blocking-1.2.0 \
 		boxfnonce-0.1.1 \
 		bumpalo-3.9.1 \
@@ -62,6 +63,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		concurrent-queue-1.2.2 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.1 \
 		cranelift-bforest-0.68.0 \
 		cranelift-codegen-0.68.0 \
 		cranelift-codegen-meta-0.68.0 \
@@ -70,28 +72,32 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cranelift-frontend-0.68.0 \
 		crc32fast-1.3.2 \
 		crossbeam-0.8.1 \
-		crossbeam-channel-0.5.3 \
+		crossbeam-channel-0.5.4 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-queue-0.3.5 \
 		crossbeam-utils-0.8.8 \
-		ctor-0.1.21 \
+		ctor-0.1.22 \
 		daemonize-0.4.1 \
 		darling-0.13.1 \
 		darling_core-0.13.1 \
 		darling_macro-0.13.1 \
 		derivative-2.2.0 \
 		dialoguer-0.9.0 \
+		digest-0.9.0 \
 		directories-next-2.0.0 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
 		enumset-1.0.8 \
 		enumset_derive-0.5.5 \
-		erased-serde-0.3.19 \
+		erased-serde-0.3.20 \
 		event-listener-2.5.2 \
 		fallible-iterator-0.2.0 \
 		fastrand-1.7.0 \
+		filedescriptor-0.8.2 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		fuchsia-cprng-0.1.1 \
@@ -106,7 +112,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		futures-task-0.3.21 \
 		futures-util-0.3.21 \
 		generational-arena-0.2.8 \
+		generic-array-0.14.5 \
 		getopts-0.2.21 \
+		getrandom-0.1.16 \
 		getrandom-0.2.5 \
 		ghost-0.1.2 \
 		gimli-0.22.0 \
@@ -116,6 +124,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hex-0.4.3 \
 		highway-0.6.4 \
 		humantime-2.1.0 \
 		ident_case-1.0.1 \
@@ -133,19 +142,20 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
 		lev_distance-0.1.1 \
-		libc-0.2.120 \
+		libc-0.2.121 \
 		libloading-0.6.7 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.5 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.6 \
-		log-0.4.14 \
+		log-0.4.16 \
 		log-mdc-0.1.0 \
 		log4rs-1.0.0 \
 		mach-0.3.2 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
 		memmap2-0.2.3 \
+		memmem-0.1.1 \
 		memoffset-0.6.5 \
 		miette-3.3.0 \
 		miette-derive-3.3.0 \
@@ -154,23 +164,30 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		miow-0.3.7 \
 		more-asserts-0.2.2 \
 		names-0.11.0 \
-		nix-0.19.1 \
+		nix-0.23.1 \
+		nom-5.1.2 \
 		ntapi-0.3.7 \
+		num-derive-0.3.3 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
-		numtoa-0.1.0 \
 		object-0.22.0 \
 		object-0.27.1 \
 		once_cell-1.10.0 \
+		opaque-debug-0.3.0 \
 		openssl-sys-0.9.72 \
 		ordered-float-2.10.0 \
 		os_str_bytes-6.0.0 \
-		owo-colors-3.2.0 \
+		owo-colors-3.3.0 \
 		parking-2.0.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
 		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		phf-0.8.0 \
+		phf_codegen-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_shared-0.8.0 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.24 \
@@ -180,21 +197,25 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
-		quote-1.0.15 \
+		quote-1.0.16 \
 		rand-0.3.23 \
 		rand-0.4.6 \
+		rand-0.7.3 \
 		rand-0.8.5 \
+		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
+		rand_core-0.5.1 \
 		rand_core-0.6.3 \
+		rand_hc-0.2.0 \
+		rand_pcg-0.2.1 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.2.11 \
-		redox_termios-0.1.2 \
-		redox_users-0.4.0 \
+		redox_users-0.4.2 \
 		regalloc-0.0.31 \
 		regex-1.5.5 \
 		regex-syntax-0.6.25 \
@@ -204,15 +225,20 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.9 \
 		scopeguard-1.1.0 \
+		semver-0.11.0 \
+		semver-parser-0.10.2 \
 		serde-1.0.136 \
 		serde-value-0.7.0 \
 		serde_bytes-0.11.5 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.79 \
 		serde_yaml-0.8.23 \
+		sha2-0.9.9 \
+		signal-hook-0.1.17 \
 		signal-hook-0.3.13 \
 		signal-hook-registry-1.4.0 \
 		similar-2.1.0 \
+		siphasher-0.3.10 \
 		slab-0.4.5 \
 		smallvec-1.8.0 \
 		smawk-0.3.1 \
@@ -228,13 +254,15 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		supports-color-1.3.0 \
 		supports-hyperlinks-1.2.0 \
 		supports-unicode-1.0.2 \
-		syn-1.0.88 \
+		syn-1.0.89 \
 		sysinfo-0.22.5 \
 		target-lexicon-0.11.2 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		termion-1.5.6 \
+		terminfo-0.7.3 \
+		termios-0.3.3 \
+		termwiz-0.15.0 \
 		textwrap-0.14.2 \
 		textwrap-0.15.0 \
 		thiserror-1.0.30 \
@@ -248,8 +276,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		tracing-core-0.1.23 \
 		traitobject-0.1.0 \
 		typemap-0.3.3 \
+		typenum-1.15.0 \
 		typetag-0.1.8 \
 		typetag-impl-0.1.8 \
+		ucd-trie-0.1.3 \
 		unicode-bidi-0.3.7 \
 		unicode-linebreak-0.1.2 \
 		unicode-normalization-0.1.19 \
@@ -264,7 +294,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		version_check-0.9.4 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.1 \
+		vtparse-0.6.0 \
 		waker-fn-1.1.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.79 \
 		wasm-bindgen-backend-0.2.79 \
@@ -288,13 +320,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wat-1.0.41 \
 		web-sys-0.3.56 \
 		wepoll-ffi-0.1.2 \
-		which-4.2.4 \
+		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yaml-rust-0.4.5 \
-		zeroize-1.5.3
+		zeroize-1.5.4
 
 post-configure:
 	${REINPLACE_CMD} -e 's|macos|freebsd|g' \
