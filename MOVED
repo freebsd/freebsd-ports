@@ -17039,7 +17039,6 @@ security/mussh||2022-03-31|Has expired: Abandonware, last release in 2011 please
 security/razorback-fsWalk||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
 security/hackbot||2022-03-31|Has expired: Abandonware, last release in 2003. Please consider using security/nmap or security/rustscan
 security/phpsecinfo||2022-03-31|Has expired: Abandonware, last release in 2006
-security/libpreludedb||2022-03-31|Has expired: Very outdated, current version in tree was released back in 2015 and upstream is still active
 security/ipfw2dshield||2022-03-31|Has expired: Abandonware, no word of it on upstream web site
 security/razorback-fileInject||2022-03-31|Has expired: Abandonware, last release in 2012 and listed as alpha quality by upstream
 security/gwee||2022-03-31|Has expired: Abandonware, last release 15+ years ago and dead upstream
