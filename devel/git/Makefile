@@ -165,6 +165,10 @@ RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
 ALL_TARGET=	all strip
 .endif
 
+. if !${PORT_OPTIONS:MICONV}
+CONFIGURE_ARGS+=	NO_ICONV=1
+. endif
+
 .if ${SUBPORT} == p4 || ${PORT_OPTIONS:MCONTRIB}
 USES+=		python
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
