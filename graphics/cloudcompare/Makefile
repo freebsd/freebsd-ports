@@ -1,6 +1,6 @@
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.3
+DISTVERSION=	2.12.0
 CATEGORIES=	graphics
 
 MAINTAINER=	nc@FreeBSD.org
@@ -13,6 +13,8 @@ USES=		cmake compiler:c++11-lang localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
+GH_TUPLE=	CloudCompare:CCCoreLib:b81e0ba:CloudCompare/libs/qCC_db/extern/CCCoreLib
+
 USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build svg linguisttools_build
 USE_LDCONFIG=	yes
 
