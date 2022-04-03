@@ -17,6 +17,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe perl5 shebangfix ssl
+USE_PERL5=	build
 SHEBANG_FILES=	support/rrsync
 
 CPE_VENDOR=	samba
