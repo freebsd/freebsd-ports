@@ -1,0 +1,19 @@
+--- configure.ac.orig	2018-12-28 12:03:09 UTC
++++ configure.ac
+@@ -2678,7 +2678,7 @@ AS_IF([test "$with_dln_a_out" != yes], [
+ 			: ${LDSHARED='$(CC) -shared'}
+ 			AS_IF([test "$rb_cv_binary_elf" = yes], [
+ 			    LDFLAGS="$LDFLAGS -rdynamic"
+-			    DLDFLAGS="$DLDFLAGS "'-Wl,-soname,$@'
++			    DLDFLAGS="$DLDFLAGS "'-Wl,-E'
+ 			], [
+ 			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
+ 			])
+@@ -3163,6 +3163,7 @@ AS_CASE("$enable_shared", [yes], [
+     [freebsd*|dragonfly*], [
+ 	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR)$(MINOR)'
+ 	LIBRUBY_SONAME='$(LIBRUBY_SO)'
++	RUBY_APPEND_OPTIONS(LIBRUBY_DLDFLAGS, ['-Wl,-soname,${LIBRUBY_SO}'])
+ 	AS_IF([test "$rb_cv_binary_elf" != "yes" ], [
+ 	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
+ 	    LIBRUBY_ALIASES=''
