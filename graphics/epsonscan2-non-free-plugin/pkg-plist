@@ -1,0 +1,52 @@
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libcnx-esci-gt-s650.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libcnx-esci-gt-s650.so.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libcnx-esci-gt-s650.so.0.0.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libesci-interpreter-perfection-v330.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libesci-interpreter-perfection-v330.so.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libesci-interpreter-perfection-v330.so.0.0.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libesintA1.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libesintA1.so.2
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libesintA1.so.2.0.1
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libiscan-plugin-perfection-v370.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libiscan-plugin-perfection-v370.so.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libiscan-plugin-perfection-v370.so.0.0.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libiscan-plugin-perfection-v550.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libiscan-plugin-perfection-v550.so.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec/libiscan-plugin-perfection-v550.so.0.0.0
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/ddeplugin
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/dtrplugin
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/es2intif
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/es2netif
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/fitplugin
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/libdde6.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/libesdtr.so
+/compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec/libimf6.so
+/compat/linux/usr/%%DOCSDIR%%-1.0.0.5-1/COPYING.EPSON
+/compat/linux/usr/%%DOCSDIR%%-1.0.0.5-1/NEWS
+/compat/linux/usr/%%DOCSDIR%%-1.0.0.5-1/copyright
+/compat/linux/usr/share/epsonscan2/esfw010c.bin
+/compat/linux/usr/share/epsonscan2/esfwA1.bin
+/compat/linux/usr/share/epsonscan2/esfwad.bin
+/compat/linux/usr/share/epsonscan2/esfwdd.bin
+/compat/linux/usr/share/epsonscan2/esfweb.bin
+lib/epsonscan2/non-free-exec/ddeplugin
+lib/epsonscan2/non-free-exec/dtrplugin
+lib/epsonscan2/non-free-exec/es2intif
+lib/epsonscan2/non-free-exec/es2netif
+lib/epsonscan2/non-free-exec/fitplugin
+%%DOCSDIR%%/COPYING.EPSON
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/copyright
+@dir /compat/linux/usr/%%LINUX_LIB%%/epsonscan2/libexec
+@dir /compat/linux/usr/%%LINUX_LIB%%/epsonscan2/non-free-exec
+@dir /compat/linux/usr/%%LINUX_LIB%%/epsonscan2
+@dir /compat/linux/usr/%%LINUX_LIB%%
+%%LINUX_LIB_EXTRA%%@dir /compat/linux/usr/lib
+@dir /compat/linux/usr/libexec
+@dir /compat/linux/usr/%%DOCSDIR%%-1.0.0.5-1
+@dir /compat/linux/usr/share/doc
+@dir /compat/linux/usr/share/epsonscan2
+@dir /compat/linux/usr/share
+@dir /compat/linux/usr
+@dir /compat/linux
+@dir /compat

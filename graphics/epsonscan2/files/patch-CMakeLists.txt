@@ -1,0 +1,57 @@
+--- CMakeLists.txt.orig	2021-11-25 00:57:03 UTC
++++ CMakeLists.txt
+@@ -18,7 +18,6 @@
+ #  along with this package.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ project (epsonscan2)
+-set (CMAKE_INSTALL_PREFIX "/usr")
+ cmake_minimum_required (VERSION 2.8.12.2)
+ 
+ include(GNUInstallDirs)
+@@ -55,6 +54,14 @@ message(" Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}") 
+ message(" Boost_LIBRARIES: ${Boost_LIBRARIES}")  
+ message(" Boost_LIBRARY_DIRS: ${Boost_LIBRARY_DIRS}") 
+ 
++### USB library ##############
++
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++set(usb_LIBRARY "usb")
++else()
++set(usb_LIBRARY "usb-1.0")
++endif()
++
+ ##############################
+ 
+ #### Dependents package ######
+@@ -87,7 +94,11 @@ set(COMMON_ETC_PATH ${CMAKE_INSTALL_FULL_SYSCONFDIR})
+ set(EPSON_WORK_PATH /tmp/epsonWork/)
+ set(EPSON_SETTINGS_PATH $ENV{HOME}/.epsonscan2/)
+ 
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++set (CMAKE_INSTALL_PREFIX /usr/local)
++else()
+ SET (CMAKE_INSTALL_PREFIX /usr)
++endif()
+ set(EPSON_INSTALL_PATH ${CMAKE_INSTALL_FULL_LIBDIR}/epsonscan2/)
+ set(COMMON_SHARE_PATH ${CMAKE_INSTALL_FULL_DATAROOTDIR})
+ 
+@@ -114,11 +125,19 @@ add_subdirectory(src)
+ 
+ install(DIRECTORY Resources DESTINATION ${EPSON_INSTALL_ROOT}${EPSON_INSTALL_PATH})
+ 
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++install(FILES epsonscan2.rules DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/udev/rules.d/ RENAME 60-epsonscan2.rules)
++install(FILES epsonscan2 DESTINATION ${CMAKE_INSTALL_PREFIX}/etc/sane.d/dll.d)
++install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory $ENV{STAGEDIR}${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_FULL_LIBDIR}/sane/)")
++install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ../epsonscan2/libsane-epsonscan2.so $ENV{STAGEDIR}${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_FULL_LIBDIR}/sane/libsane-epsonscan2.so.1)")
++install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ../epsonscan2/libsane-epsonscan2.so $ENV{STAGEDIR}${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_FULL_LIBDIR}/sane/libsane-epsonscan2.so.1.0.0)")
++else()
+ install(FILES epsonscan2.rules DESTINATION ${EPSON_INSTALL_ROOT}/lib/udev/rules.d/ RENAME 60-epsonscan2.rules)
+ install(FILES epsonscan2 DESTINATION ${EPSON_INSTALL_ROOT}/etc/sane.d/dll.d)
+ install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_FULL_LIBDIR}/sane/)")
+ install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ../epsonscan2/libsane-epsonscan2.so ${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_FULL_LIBDIR}/sane/libsane-epsonscan2.so.1)")
+ install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ../epsonscan2/libsane-epsonscan2.so ${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_FULL_LIBDIR}/sane/libsane-epsonscan2.so.1.0.0)")
++endif()
+ 
+ install(FILES changelog.Debian DESTINATION ${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_PREFIX}/share/doc/epsonscan2${EPSON_VERSION})
+ 

@@ -168,6 +168,8 @@
     SUBDIR += ephoto
     SUBDIR += epix
     SUBDIR += eps2png
+    SUBDIR += epsonscan2
+    SUBDIR += epsonscan2-non-free-plugin
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evince

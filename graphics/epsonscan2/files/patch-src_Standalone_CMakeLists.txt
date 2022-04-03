@@ -1,0 +1,9 @@
+--- src/Standalone/CMakeLists.txt.orig	2021-11-25 00:56:54 UTC
++++ src/Standalone/CMakeLists.txt
+@@ -142,5 +142,5 @@ target_link_libraries(es2standalone ${QT_LIBRARIES}
+ )
+ 
+ QT5_USE_MODULES(es2standalone Widgets)
+-install(TARGETS es2standalone DESTINATION "${EPSON_INSTALL_ROOT}/usr/bin")
++install(TARGETS es2standalone DESTINATION "${EPSON_INSTALL_ROOT}${CMAKE_INSTALL_PREFIX}/bin")
+ 
