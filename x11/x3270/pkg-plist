@@ -30,9 +30,6 @@ man/man1/c3270.1.gz
 man/man1/pr3287.1.gz
 man/man1/s3270.1.gz
 man/man1/tcl3270.1.gz
-%%X3270%%man/man1/x3270-script.1.gz
 %%X3270%%man/man1/x3270.1.gz
 %%X3270%%man/man1/x3270if.1.gz
 man/man5/ibm_hosts.5.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DBCS%%%%PORTDOCS%%%%DOCSDIR%%/README.dbcs

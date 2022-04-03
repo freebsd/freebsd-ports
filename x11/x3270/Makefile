@@ -1,11 +1,10 @@
 # Created by: janek
 
 PORTNAME?=	x3270
-PORTVERSION=	4.0
-PORTREVISION=	3
+PORTVERSION=	4.1
 CATEGORIES?=	x11 net
-MASTER_SITES=	http://x3270.bgp.nu/download/04.00/
-DISTFILES=	suite3270-${PORTVERSION}ga14-src.tgz
+MASTER_SITES=	http://x3270.bgp.nu/download/04.01/
+DISTFILES=	suite3270-${PORTVERSION}ga13-src.tgz
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	3270 Terminal emulator
@@ -70,15 +69,8 @@ post-install:
 .if ! defined(C3270)
 	${INSTALL_MAN} ${WRKSRC}/x3270/x3270.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270.1
 	${INSTALL_MAN} ${WRKSRC}/x3270if/x3270if.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270if.1
-	${INSTALL_MAN} ${WRKSRC}/x3270/x3270-script.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270-script.1
 .endif
 	${INSTALL_MAN} ${WRKSRC}/c3270/ibm_hosts.man ${STAGEDIR}${MAN5PREFIX}/man/man5/ibm_hosts.5
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/x3270/README ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:DBCS}
-	${INSTALL_DATA} ${WRKSRC}/x3270/README.dbcs ${STAGEDIR}${DOCSDIR}
-.endif
 
 	@(cd ${WRKSRC}/x3270/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	@(cd ${WRKSRC}/x3270 && ${COPYTREE_SHARE} html ${STAGEDIR}${EXAMPLESDIR})
