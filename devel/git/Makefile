@@ -34,6 +34,9 @@ tiny_PKGNAMESUFFIX=		-tiny
 .endif
 
 USES=		cpe gmake iconv shebangfix tar:xz
+.if defined(CROSS_TOOLCHAIN)
+CONFIGURE_ARGS+=	ac_cv_fread_reads_directories=yes ac_cv_snprintf_returns_bogus=no
+.endif
 CPE_VENDOR=	git-scm
 
 .if ${SUBPORT} == core
@@ -68,7 +71,7 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		templates/hooks--fsmonitor-watchman.sample
 TEST_TARGET=	test
 
-CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
+CONFIGURE_ARGS+=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 .if ${SUBPORT} == core
 
