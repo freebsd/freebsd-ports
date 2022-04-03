@@ -738,6 +738,7 @@
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-alembic14
+    SUBDIR += py-alembic16
     SUBDIR += py-apsw
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
