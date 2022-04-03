@@ -16,7 +16,7 @@ COMMENT=	Network file distribution/synchronization utility
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe shebangfix ssl
+USES=		cpe perl5 shebangfix ssl
 SHEBANG_FILES=	support/rrsync
 
 CPE_VENDOR=	samba
