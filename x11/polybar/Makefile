@@ -1,5 +1,5 @@
 PORTNAME=	polybar
-DISTVERSION=	3.6.1
+DISTVERSION=	3.6.2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION}/
 
