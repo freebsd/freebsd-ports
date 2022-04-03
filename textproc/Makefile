@@ -87,6 +87,7 @@
     SUBDIR += castxml
     SUBDIR += catdoc
     SUBDIR += cdif
+    SUBDIR += cg3
     SUBDIR += cgrep
     SUBDIR += chkascii
     SUBDIR += chpp
