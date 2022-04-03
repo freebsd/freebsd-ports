@@ -1,3 +1,39 @@
+  <vuln vid="3f321a5a-b33b-11ec-80c2-1bb2c6a00592">
+    <topic>dnsmasq -- heap use-after-free in dhcp6_no_relay</topic>
+    <affects>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.86_4,1</lt></range>
+      </package>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><lt>2.86_4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Petr Menšík reports:</p>
+	<blockquote cite="https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2022q1/016272.html">
+	  <p>Possible vulnerability [...] found in latest dnsmasq. It [was] found
+	    with help of oss-fuzz Google project by me and short after that
+	    independently also by Richard Johnson of Trellix Threat Labs.</p>
+	  <p>It is affected only by DHCPv6 requests, which could be crafted to
+	    modify already freed memory. [...] We think it might be triggered
+	    remotely, but we do not think it could be used to execute remote
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0934</cvename>
+      <url>https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2022q1/016272.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-31</discovery>
+      <entry>2022-04-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83466f76-aefe-11ec-b4b6-d05099c0c059">
     <topic>gitea -- Open Redirect on login</topic>
     <affects>
