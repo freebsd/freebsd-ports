@@ -1,5 +1,5 @@
 PORTNAME=	gnupg-pkcs11-scd
-DISTVERSION=	0.9.2
+DISTVERSION=	0.10.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/alonbl/${PORTNAME}/releases/download/${DISTNAME}/
 
