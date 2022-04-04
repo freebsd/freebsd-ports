@@ -8,6 +8,9 @@ MASTER_SITES=	SF
 MAINTAINER=	valenok@gmail.com
 COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
 
+DEPRECATED=	Abandonware, last release over 12+ years ago
+EXPIRATION_DATE=2022-04-30
+
 ALL_TARGET=	unix
 LIBS+=		-lpthread
 BUILD_WRKSRC=	${WRKSRC}/src
