@@ -173,7 +173,6 @@ include/isc/offset.h
 include/isc/once.h
 include/isc/os.h
 include/isc/parseint.h
-include/isc/pool.h
 include/isc/portset.h
 include/isc/print.h
 include/isc/quota.h
@@ -200,7 +199,6 @@ include/isc/string.h
 include/isc/symtab.h
 include/isc/syslog.h
 include/isc/task.h
-include/isc/taskpool.h
 include/isc/thread.h
 include/isc/time.h
 include/isc/timer.h
