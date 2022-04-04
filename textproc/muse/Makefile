@@ -2,7 +2,7 @@
 
 PORTNAME=	muse
 PORTVERSION=	3.20
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		LOCAL/dryice \
