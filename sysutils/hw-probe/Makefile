@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	hw-probe
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	sysutils perl5
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -36,9 +36,8 @@ RUN_DEPENDS+=	dmidecode:sysutils/dmidecode \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/my @KNOWN_BSD/s/free/&bsd", "&/ ; \
-		s/if(checkCmd("pkg")/& and $$Name eq "ghostbsd"/ ; \
-		s/ps x | grep/pgrep -l/' ${WRKSRC}/${PORTNAME}.pl
+	@${REINPLACE_CMD} -e 's/s x | grep/grep -l/; s/ | grep -v grep//' \
+		${WRKSRC}/${PORTNAME}.pl
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
