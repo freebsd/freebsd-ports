@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.29.6
 CATEGORIES=	graphics x11-fonts
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for vector graphics and TTF, OTF, EOT and SVG fonts
 
 LICENSE=	GPLv3+
