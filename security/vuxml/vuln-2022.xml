@@ -1,3 +1,63 @@
+  <vuln vid="8657eedd-b423-11ec-9559-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.9.0</ge><lt>14.9.2</lt></range>
+	<range><ge>14.8.0</ge><lt>14.8.5</lt></range>
+	<range><ge>0</ge><lt>14.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/03/31/critical-security-release-gitlab-14-9-2-released/">
+	  <p>Static passwords inadvertently set during OmniAuth-based registration</p>
+	  <p>Stored XSS in notes</p>
+	  <p>Stored XSS on Multi-word milestone reference</p>
+	  <p>Denial of service caused by a specially crafted RDoc file</p>
+	  <p>GitLab Pages access tokens can be reused on multiple domains</p>
+	  <p>GitLab Pages uses default (disabled) server Timeouts and a weak TCP Keep-Alive timeout</p>
+	  <p>Incorrect include in pipeline definition exposes masked CI variables in UI</p>
+	  <p>Regular expression denial of service in release asset link</p>
+	  <p>Latest Commit details from private projects leaked to guest users via Merge Requests</p>
+	  <p>CI/CD analytics are available even when public pipelines are disabled</p>
+	  <p>Absence of limit for the number of tags that can be added to a runner can cause performance issues</p>
+	  <p>Client DoS through rendering crafted comments</p>
+	  <p>Blind SSRF Through Repository Mirroring</p>
+	  <p>Bypass of branch restriction in Asana integration</p>
+	  <p>Readable approval rules by Guest user</p>
+	  <p>Redact InvalidURIError error messages</p>
+	  <p>Project import maps members' created_by_id users based on source user ID</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1162</cvename>
+      <cvename>CVE-2022-1175</cvename>
+      <cvename>CVE-2022-1190</cvename>
+      <cvename>CVE-2022-1185</cvename>
+      <cvename>CVE-2022-1148</cvename>
+      <cvename>CVE-2022-1121</cvename>
+      <cvename>CVE-2022-1120</cvename>
+      <cvename>CVE-2022-1100</cvename>
+      <cvename>CVE-2022-1193</cvename>
+      <cvename>CVE-2022-1105</cvename>
+      <cvename>CVE-2022-1099</cvename>
+      <cvename>CVE-2022-1174</cvename>
+      <cvename>CVE-2022-1188</cvename>
+      <cvename>CVE-2022-0740</cvename>
+      <cvename>CVE-2022-1189</cvename>
+      <cvename>CVE-2022-1157</cvename>
+      <cvename>CVE-2022-1111</cvename>
+      <url>https://about.gitlab.com/releases/2022/03/31/critical-security-release-gitlab-14-9-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-03-31</discovery>
+      <entry>2022-04-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79ea6066-b40e-11ec-8b93-080027b24e86">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
