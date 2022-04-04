@@ -1,3 +1,4 @@
+@comment %%DATADIR%%/.github/workflows/php.yml
 %%DATADIR%%/README.md
 %%DATADIR%%/LICENSE
 %%DATADIR%%/composer.json
