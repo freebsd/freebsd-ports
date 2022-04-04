@@ -1,3 +1,47 @@
+  <vuln vid="79ea6066-b40e-11ec-8b93-080027b24e86">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.6</lt></range>
+      </package>
+      <package>
+	<name>mediawiki136</name>
+	<range><lt>1.36.4</lt></range>
+      </package>
+      <package>
+	<name>mediawiki137</name>
+	<range><lt>1.37.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/YJNXKPV5Z56NSUQ4G3SXPDUIZG5EQ7UR/">
+	  <p>(T297543, CVE-2022-28202) Messages widthheight/widthheightpage/nbytes not
+	    escaped when used in galleries or Special:RevisionDelete.</p>
+	  <p>(T297571, CVE-2022-28201) Title::newMainPage() goes into an infinite
+	    recursion loop if it points to a local interwiki.</p>
+	  <p>(T297731, CVE-2022-28203) Requesting Special:NewFiles on a wiki with many
+	    file uploads with actor as a condition can result in a DoS.</p>
+	  <p>(T297754, CVE-2022-28204) Special:WhatLinksHere can result in a DoS when
+	    a page is used on a extremely large number of other pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-28201</cvename>
+      <cvename>CVE-2022-28202</cvename>
+      <cvename>CVE-2022-28203</cvename>
+      <cvename>CVE-2022-28204</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/YJNXKPV5Z56NSUQ4G3SXPDUIZG5EQ7UR/</url>
+    </references>
+    <dates>
+      <discovery>2021-12-12</discovery>
+      <entry>2022-04-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f321a5a-b33b-11ec-80c2-1bb2c6a00592">
     <topic>dnsmasq -- heap use-after-free in dhcp6_no_relay</topic>
     <affects>
