@@ -9,9 +9,9 @@ To configure hardware acceleration, follow the following steps.
     # pkg install drm-kmod
 
 2. Configure to load kernel module (either one of the following)
-    # sysrc kld_list="/boot/modules/i915kms.ko"
-    # sysrc kld_list="/boot/modules/amdgpu.ko"
-    # sysrc kld_list="/boot/modules/radeonkms.ko"
+    # sysrc kld_list+="/boot/modules/i915kms.ko"
+    # sysrc kld_list+="/boot/modules/amdgpu.ko"
+    # sysrc kld_list+="/boot/modules/radeonkms.ko"
 
 3. Ensure users who login via xrdp are members of the "video" group
     # pw groupmod video -m username|| pw groupmod wheel -m username
