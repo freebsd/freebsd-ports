@@ -10,6 +10,9 @@ DISTNAME=	gogoc-1_2-RELEASE
 MAINTAINER=	kami@k5-storitve.net
 COMMENT=	GogoCLIENT, connect to Freenet6 tunnel
 
+DEPRECATED=	Services were discontinued in 2016
+EXPIRATION_DATE=2022-04-30
+
 USES=		gmake ssl
 USE_RC_SUBR=	gogoc
 
