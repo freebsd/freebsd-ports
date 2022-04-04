@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.9.1
-PORTREVISION=	1
+PORTVERSION=	14.9.2
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=2.17.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=14.9.0:net/gitlab-agent \
-	gitlab-pages>=1.56.0:www/gitlab-pages \
+	gitlab-pages>=1.56.1:www/gitlab-pages \
 	gitlab-shell>=13.24.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
@@ -70,7 +70,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-recaptcha>=4.11<5.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
 	rubygem-invisible_captcha>=1.1.0<1.2.0:graphics/rubygem-invisible_captcha \
-	rubygem-devise-two-factor-rails61>=4.0.0<4.1:security/rubygem-devise-two-factor-rails61 \
+	rubygem-devise-two-factor-rails61>=4.0.2<4.1:security/rubygem-devise-two-factor-rails61 \
 	rubygem-rqrcode-rails3>=0.1.7<0.2.0:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=3.1.0<3.2.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1<0.3.0:net/rubygem-u2f0 \
@@ -278,7 +278,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	5b713e1e9a309d1afff4c7068d1e03fbd6a5f7f7
+GL_COMMIT=	56bec66a79f1fd82a130cb7963d86b76bd5f9185
 
 USERS=	git
 GROUPS=	git
