@@ -52,6 +52,7 @@
     SUBDIR += apache-poi
     SUBDIR += apache-solr
     SUBDIR += apertium
+    SUBDIR += apertium-eng
     SUBDIR += artha
     SUBDIR += asciidoc
     SUBDIR += asm-xml
