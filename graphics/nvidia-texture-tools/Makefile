@@ -8,7 +8,7 @@ COMMENT=	Texture Tools with support for DirectX 10 texture formats
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6 aarch64  # see src/nvcore/nvcore.h
+ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6 aarch64 powerpc64le # see src/nvcore/nvcore.h
 
 USES=		cmake compiler:c++11-lang
 CMAKE_ON=	NVTT_SHARED \
