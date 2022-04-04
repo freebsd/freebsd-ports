@@ -13,11 +13,15 @@ ARCH_SUFX=	x86${ARCH:S/i386//:S/amd/_/}
 
 # NVVERSION is float since r372065 (integer values become less readable
 # after minor version could occupy three digits)
-.if ${DISTVERSION:C/[0-9]+//g} == ".."		# major.minor.update
-NVVERSION=	${DISTVERSION:S/./.0/:R}${DISTVERSION:E}
-.else						# major.minor
+.if ${DISTVERSION:C/[0-9]+//g} == ".."				# major.minor.update
+.  if ${DISTVERSION:C/[0-9]+\.([0-9]+)\.[0-9]+/\1/} < 100
+NVVERSION=	${DISTVERSION:S/./.0/:R}${DISTVERSION:E}	# allow minor > 99
+.  else
+NVVERSION=	${DISTVERSION:R}${DISTVERSION:E}
+.  endif
+.else								# major.minor
 .  if ${DISTVERSION:E} < 100
-NVVERSION=	${DISTVERSION:S/./.0/}		# allow minor > 99
+NVVERSION=	${DISTVERSION:S/./.0/}				# allow minor > 99
 .  else
 NVVERSION=	${DISTVERSION}
 .  endif
