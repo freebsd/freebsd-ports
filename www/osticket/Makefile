@@ -1,6 +1,7 @@
 PORTNAME=	osticket
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.16.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/osTicket/osTicket/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_F
 
 USES=		cpe php:web zip
 CPE_VENDOR=	enhancesoft
-USE_PHP=	curl dom fileinfo filter gd gettext iconv imap intl json \
+USE_PHP=	ctype curl dom fileinfo filter gd gettext iconv imap intl json \
 		mbstring mysqli opcache phar session xml zip
 IGNORE_WITH_PHP=	74 81
 NO_ARCH=	yes
