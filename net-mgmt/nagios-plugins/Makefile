@@ -1,11 +1,10 @@
 # Created by: Blaz Zupan <blaz@si.FreeBSD.org>
 
 PORTNAME=	nagios-plugins
-DISTVERSION=	2.3.3
-PORTREVISION=	2
+DISTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://nagios-plugins.org/download/ \
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
 		LOCAL/mat/${PORTNAME}
 
 MAINTAINER=	mat@FreeBSD.org
