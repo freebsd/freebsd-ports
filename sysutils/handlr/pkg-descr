@@ -2,6 +2,7 @@ Manage your default applications with ease using handlr!
 
 Features:
  Set default handler by extension or mime-type.
+ Set arbitrary commands as handlers based on regular expressions
  Intelligent mime type detection from files based on extension and content.
  Open multiple files at once.
  Set multiple handlers for mime/extension and use rofi/dmenu to pick one.
@@ -14,4 +15,4 @@ list.
  Single compiled binary with no dependencies.
 
 
-WWW: https://github.com/chmln/handlr
+WWW: https://github.com/Anomalocaridid/handlr
