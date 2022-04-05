@@ -42,5 +42,6 @@ share/vulkan/registry/genvk.py
 share/vulkan/registry/reg.py
 share/vulkan/registry/spec_tools/util.py
 share/vulkan/registry/validusage.json
+share/vulkan/registry/video.xml
 share/vulkan/registry/vk.xml
 share/vulkan/registry/vkconventions.py
