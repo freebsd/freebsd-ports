@@ -1,7 +1,7 @@
 PORTNAME=	ipfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/ipfs/go-ipfs/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-go
@@ -20,6 +20,7 @@ USES=		cpe go:modules
 CPE_VENDOR=	protocol
 
 GO_TARGET=	./cmd/ipfs:ipfs-go
+GO_PORT=	lang/go117 # quic-go does not build on Go 1.18 yet
 
 NO_WRKSUBDIR=	yes
 
