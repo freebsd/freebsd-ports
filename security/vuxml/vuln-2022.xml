@@ -1,3 +1,32 @@
+  <vuln vid="fe15f30a-b4c9-11ec-94a3-3065ec8fd3ec">
+    <topic>chromium -- Type confusion in V8</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>100.0.4896.75</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop.html">
+	  <p>This release includes one security fix:</p>
+	  <ul>
+	    <li>[1311641] High CVE-2022-1232: Type Confusion in V8. Reported by Sergei Glazunov of Google Project Zero on 2022-03-30</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1232</cvename>
+      <url>https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-04</discovery>
+      <entry>2022-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8657eedd-b423-11ec-9559-001b217b3468">
     <topic>Gitlab -- multiple vulnerabilities</topic>
     <affects>
