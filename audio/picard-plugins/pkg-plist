@@ -42,6 +42,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/instruments%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/keep%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/keep%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/key_wheel_converter%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/key_wheel_converter%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/loadasnat%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/loadasnat%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/no_release%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -76,8 +78,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/standardise_feat%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/standardise_performers%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/standardise_performers%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/tangoinfo%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/tangoinfo%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/titlecase%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/titlecase%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/tracks2clipboard%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -164,6 +164,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/keep.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/key_wheel_converter.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -222,7 +223,9 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/submit_isrc/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/submit_isrc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/submit_isrc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/tangoinfo.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/tangoinfo/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/tangoinfo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/tangoinfo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/theaudiodb/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/theaudiodb/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/theaudiodb/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
