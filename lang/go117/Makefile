@@ -4,7 +4,7 @@ PORTREVISION=	0
 PORTEPOCH=	0
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	117
 DISTFILES=	go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-${BOOTSTRAP_TAG}.tar.xz:bootstrap
 
 # Avoid conflicting patch files
