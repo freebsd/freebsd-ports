@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.3
-PORTREVISION=	1
+DISTVERSION=	1.11.1
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -25,20 +24,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_colours-1.1.1 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.53 \
+		anyhow-1.0.56 \
 		argh-0.1.7 \
 		argh_derive-0.1.7 \
 		argh_shared-0.1.7 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.0 \
-		bet-1.0.0 \
+		bet-1.0.1 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
-		bytemuck-1.7.3 \
+		bytemuck-1.8.0 \
 		byteorder-1.4.3 \
-		cc-1.0.72 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		char_reader-0.1.1 \
 		chrono-0.4.19 \
@@ -71,6 +70,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		directories-next-2.0.0 \
 		dirs-sys-0.3.6 \
 		dirs-sys-next-0.1.2 \
+		doc-comment-0.3.3 \
 		either-1.6.1 \
 		error-code-2.3.1 \
 		fallible-iterator-0.2.0 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.22 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		getrandom-0.2.4 \
+		getrandom-0.2.5 \
 		gif-0.11.3 \
 		git2-0.13.25 \
 		glassbench-0.3.1 \
@@ -100,14 +100,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		itoa-1.0.1 \
 		jobserver-0.1.24 \
 		jpeg-decoder-0.1.22 \
-		lazy-regex-2.2.2 \
-		lazy-regex-proc_macros-2.2.2 \
+		lazy-regex-2.3.0 \
+		lazy-regex-proc_macros-2.3.0 \
 		lazy_static-1.4.0 \
-		lfs-core-0.4.2 \
-		libc-0.2.118 \
+		lfs-core-0.11.0 \
+		libc-0.2.119 \
 		libgit2-sys-0.12.26+1.3.0 \
 		libsqlite3-sys-0.20.1 \
-		libz-sys-1.1.3 \
+		libz-sys-1.1.5 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.6 \
@@ -129,12 +129,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-rational-0.3.2 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
-		num_threads-0.1.3 \
-		once_cell-1.9.0 \
+		num_threads-0.1.4 \
+		once_cell-1.10.0 \
 		onig-6.3.1 \
 		onig_sys-69.7.1 \
 		open-1.7.1 \
-		open-2.0.3 \
+		opener-0.5.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
 		pathdiff-0.2.1 \
@@ -157,13 +157,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_core-0.6.3 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.2.10 \
+		redox_syscall-0.2.11 \
 		redox_users-0.4.0 \
-		regex-1.5.4 \
+		regex-1.5.5 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rgb-0.8.31 \
+		rgb-0.8.32 \
 		rusqlite-0.24.2 \
 		ryu-1.0.9 \
 		safemem-0.3.3 \
@@ -178,8 +178,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		signal-hook-0.3.13 \
 		signal-hook-mio-0.2.1 \
 		signal-hook-registry-1.4.0 \
-		siphasher-0.3.9 \
+		siphasher-0.3.10 \
 		smallvec-1.8.0 \
+		snafu-0.7.0 \
+		snafu-derive-0.7.0 \
 		splitty-0.1.0 \
 		str-buf-1.0.5 \
 		strict-0.1.4 \
