@@ -2,7 +2,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.14.8
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -21,7 +21,7 @@ CONFIGURE_ARGS?=--disable-gtkui \
 		--with-dynamic-prpls=${PRPL_MODULES:S/,$//} \
 		--enable-static \
 		--disable-nm \
-		--with-system-ssl-certs=/etc/ssl/certs
+		--with-system-ssl-certs=/usr/share/certs/trusted
 INSTALL_TARGET=	install-strip
 
 .if !defined(PIDGIN_SLAVE)
