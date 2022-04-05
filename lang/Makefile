@@ -113,6 +113,7 @@
     SUBDIR += gnustep-base
     SUBDIR += go
     SUBDIR += go-devel
+    SUBDIR += go117
     SUBDIR += gomacro
     SUBDIR += gprolog
     SUBDIR += gravity
