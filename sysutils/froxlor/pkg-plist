@@ -1,8 +1,19 @@
 @group %%WWWGRP%%
 @owner %%WWWOWN%%
+%%WWWDIR%%/.github/CONTRIBUTING.md
+%%WWWDIR%%/.github/FUNDING.yml
+%%WWWDIR%%/.github/ISSUE_TEMPLATE.md
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/bug_report.md
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/feature_request.md
+%%WWWDIR%%/.github/PULL_REQUEST_TEMPLATE.md
+%%WWWDIR%%/.github/workflows/build-apidocs.yml
+%%WWWDIR%%/.github/workflows/build-mariadb.yml
+%%WWWDIR%%/.github/workflows/build-mysql.yml
+%%WWWDIR%%/.travis.yml
+%%WWWDIR%%/2fa.php
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
-%%WWWDIR%%/actions/admin/settings/000.version.php
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/actions/admin/settings/100.panel.php
 %%WWWDIR%%/actions/admin/settings/110.accounts.php
 %%WWWDIR%%/actions/admin/settings/120.system.php
@@ -20,7 +31,6 @@
 %%WWWDIR%%/actions/admin/settings/170.logger.php
 %%WWWDIR%%/actions/admin/settings/180.dkim.php
 %%WWWDIR%%/actions/admin/settings/185.spf.php
-%%WWWDIR%%/actions/admin/settings/190.ticket.php
 %%WWWDIR%%/actions/admin/settings/210.security.php
 %%WWWDIR%%/actions/admin/settings/220.quota.php
 %%WWWDIR%%/admin_admins.php
@@ -36,25 +46,22 @@
 %%WWWDIR%%/admin_message.php
 %%WWWDIR%%/admin_opcacheinfo.php
 %%WWWDIR%%/admin_phpsettings.php
+%%WWWDIR%%/admin_plans.php
 %%WWWDIR%%/admin_settings.php
 %%WWWDIR%%/admin_templates.php
-%%WWWDIR%%/admin_tickets.php
 %%WWWDIR%%/admin_traffic.php
 %%WWWDIR%%/admin_updates.php
+%%WWWDIR%%/api.php
+%%WWWDIR%%/api_keys.php
+%%WWWDIR%%/build.xml
+%%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/css/images/animated-overlay.gif
-%%WWWDIR%%/css/images/ui-bg_diagonals-thick_18_b81900_40x40.png
-%%WWWDIR%%/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
-%%WWWDIR%%/css/images/ui-bg_flat_10_000000_40x100.png
-%%WWWDIR%%/css/images/ui-bg_glass_100_f6f6f6_1x400.png
-%%WWWDIR%%/css/images/ui-bg_glass_100_fdf5ce_1x400.png
-%%WWWDIR%%/css/images/ui-bg_glass_65_ffffff_1x400.png
-%%WWWDIR%%/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
-%%WWWDIR%%/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
-%%WWWDIR%%/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
-%%WWWDIR%%/css/images/ui-icons_222222_256x240.png
-%%WWWDIR%%/css/images/ui-icons_228ef1_256x240.png
-%%WWWDIR%%/css/images/ui-icons_ef8c08_256x240.png
-%%WWWDIR%%/css/images/ui-icons_ffd27a_256x240.png
+%%WWWDIR%%/css/images/ui-icons_444444_256x240.png
+%%WWWDIR%%/css/images/ui-icons_555555_256x240.png
+%%WWWDIR%%/css/images/ui-icons_777620_256x240.png
+%%WWWDIR%%/css/images/ui-icons_777777_256x240.png
+%%WWWDIR%%/css/images/ui-icons_cc0000_256x240.png
 %%WWWDIR%%/css/images/ui-icons_ffffff_256x240.png
 %%WWWDIR%%/css/jquery-ui.min.css
 %%WWWDIR%%/customer_domains.php
@@ -64,17 +71,21 @@
 %%WWWDIR%%/customer_index.php
 %%WWWDIR%%/customer_logger.php
 %%WWWDIR%%/customer_mysql.php
-%%WWWDIR%%/customer_tickets.php
 %%WWWDIR%%/customer_traffic.php
 %%WWWDIR%%/dns_editor.php
+%%WWWDIR%%/doc/example/FroxlorAPI.php
+%%WWWDIR%%/doc/example/create_customer.php
+%%WWWDIR%%/doc/example/list_functions.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/%%PORTNAME%%.sql
 %%WWWDIR%%/install/install.php
 %%WWWDIR%%/install/lib/class.FroxlorInstall.php
+%%WWWDIR%%/install/lib/updateFunctions.php
 %%WWWDIR%%/install/lng/english.lng.php
 %%WWWDIR%%/install/lng/french.lng.php
 %%WWWDIR%%/install/lng/german.lng.php
-%%WWWDIR%%/install/scripts/language-check.php
+%%WWWDIR%%/install/scripts/config-services.php
+%%WWWDIR%%/install/scripts/php-sessionclean.php
 %%WWWDIR%%/install/scripts/switch-server-ip.php
 %%WWWDIR%%/install/templates/assets/css/install.css
 %%WWWDIR%%/install/templates/assets/img/favicon.ico
@@ -85,6 +96,7 @@
 %%WWWDIR%%/install/templates/dataform2.tpl
 %%WWWDIR%%/install/templates/dataitem.tpl
 %%WWWDIR%%/install/templates/dataitemchk.tpl
+%%WWWDIR%%/install/templates/dataitemselect.tpl
 %%WWWDIR%%/install/templates/dataitemyesno.tpl
 %%WWWDIR%%/install/templates/datasection.tpl
 %%WWWDIR%%/install/templates/footer.tpl
@@ -93,9 +105,10 @@
 %%WWWDIR%%/install/templates/page.tpl
 %%WWWDIR%%/install/templates/pagebottom.tpl
 %%WWWDIR%%/install/templates/textarea.tpl
+%%WWWDIR%%/install/updates/%%PORTNAME%%/0.10/update_0.10.inc.php
 %%WWWDIR%%/install/updates/%%PORTNAME%%/0.9/update_0.9.inc.php
-%%WWWDIR%%/install/updates/%%PORTNAME%%/upgrade_syscp.inc.php
 %%WWWDIR%%/install/updates/preconfig.php
+%%WWWDIR%%/install/updates/preconfig/0.10/preconfig_0.10.inc.php
 %%WWWDIR%%/install/updates/preconfig/0.9/preconfig_0.9.inc.php
 %%WWWDIR%%/install/updatesql.php
 %%WWWDIR%%/js/excanvas.min.js
@@ -106,60 +119,129 @@
 %%WWWDIR%%/js/jquery.tablesorter.min.js
 %%WWWDIR%%/js/plugins/jquery.flot.resize.min.js
 %%WWWDIR%%/js/plugins/jquery.tablesorter.sizeparser.min.js
+%%WWWDIR%%/lib/Froxlor/Api/ApiCommand.php
+%%WWWDIR%%/lib/Froxlor/Api/ApiParameter.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Admins.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/ApiKeys.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Certificates.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Cronjobs.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/CustomerBackups.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Customers.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/DirOptions.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/DirProtections.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/DomainZones.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Domains.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/EmailAccounts.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/EmailForwarders.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Emails.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/FpmDaemons.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Froxlor.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Ftps.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/HostingPlans.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/IpsAndPorts.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Mysqls.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/PhpSettings.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/SubDomains.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/SysLog.php
+%%WWWDIR%%/lib/Froxlor/Api/Commands/Traffic.php
+%%WWWDIR%%/lib/Froxlor/Api/FroxlorRPC.php
+%%WWWDIR%%/lib/Froxlor/Api/ResourceEntity.php
+%%WWWDIR%%/lib/Froxlor/Bulk/BulkAction.php
+%%WWWDIR%%/lib/Froxlor/Bulk/DomainBulkAction.php
+%%WWWDIR%%/lib/Froxlor/Cli/Action.php
+%%WWWDIR%%/lib/Froxlor/Cli/Action/ConfigServicesAction.php
+%%WWWDIR%%/lib/Froxlor/Cli/Action/PhpSessioncleanAction.php
+%%WWWDIR%%/lib/Froxlor/Cli/Action/SwitchServerIpAction.php
+%%WWWDIR%%/lib/Froxlor/Cli/CmdLineHandler.php
+%%WWWDIR%%/lib/Froxlor/Cli/ConfigServicesCmd.php
+%%WWWDIR%%/lib/Froxlor/Cli/PhpSessioncleanCmd.php
+%%WWWDIR%%/lib/Froxlor/Cli/SwitchServerIpCmd.php
+%%WWWDIR%%/lib/Froxlor/Config/ConfigDaemon.php
+%%WWWDIR%%/lib/Froxlor/Config/ConfigParser.php
+%%WWWDIR%%/lib/Froxlor/Config/ConfigService.php
+%%WWWDIR%%/lib/Froxlor/Cron/CronConfig.php
+%%WWWDIR%%/lib/Froxlor/Cron/Dns/Bind.php
+%%WWWDIR%%/lib/Froxlor/Cron/Dns/DnsBase.php
+%%WWWDIR%%/lib/Froxlor/Cron/Dns/PowerDNS.php
+%%WWWDIR%%/lib/Froxlor/Cron/FroxlorCron.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/Apache.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/ApacheFcgi.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/ConfigIO.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/DomainSSL.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/HttpConfigBase.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/LetsEncrypt/AcmeSh.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/Lighttpd.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/LighttpdFcgi.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/Nginx.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/NginxFcgi.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/Php/Fcgid.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/Php/Fpm.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/Php/PhpInterface.php
+%%WWWDIR%%/lib/Froxlor/Cron/Http/WebserverBase.php
+%%WWWDIR%%/lib/Froxlor/Cron/MasterCron.php
+%%WWWDIR%%/lib/Froxlor/Cron/System/BackupCron.php
+%%WWWDIR%%/lib/Froxlor/Cron/System/Extrausers.php
+%%WWWDIR%%/lib/Froxlor/Cron/System/MailboxsizeCron.php
+%%WWWDIR%%/lib/Froxlor/Cron/System/TasksCron.php
+%%WWWDIR%%/lib/Froxlor/Cron/TaskId.php
+%%WWWDIR%%/lib/Froxlor/Cron/Traffic/ReportsCron.php
+%%WWWDIR%%/lib/Froxlor/Cron/Traffic/TrafficCron.php
+%%WWWDIR%%/lib/Froxlor/Customer/Customer.php
+%%WWWDIR%%/lib/Froxlor/Database/Database.php
+%%WWWDIR%%/lib/Froxlor/Database/DbManager.php
+%%WWWDIR%%/lib/Froxlor/Database/IntegrityCheck.php
+%%WWWDIR%%/lib/Froxlor/Database/Manager/DbManagerMySQL.php
+%%WWWDIR%%/lib/Froxlor/Dns/Dns.php
+%%WWWDIR%%/lib/Froxlor/Dns/DnsEntry.php
+%%WWWDIR%%/lib/Froxlor/Dns/DnsZone.php
+%%WWWDIR%%/lib/Froxlor/Dns/PowerDNS.php
+%%WWWDIR%%/lib/Froxlor/Domain/Domain.php
+%%WWWDIR%%/lib/Froxlor/Domain/IpAddr.php
+%%WWWDIR%%/lib/Froxlor/FileDir.php
+%%WWWDIR%%/lib/Froxlor/Froxlor.php
+%%WWWDIR%%/lib/Froxlor/FroxlorLogger.php
+%%WWWDIR%%/lib/Froxlor/FroxlorTwoFactorAuth.php
+%%WWWDIR%%/lib/Froxlor/Http/Directory.php
+%%WWWDIR%%/lib/Froxlor/Http/HttpClient.php
+%%WWWDIR%%/lib/Froxlor/Http/PhpConfig.php
+%%WWWDIR%%/lib/Froxlor/Http/Statistics.php
+%%WWWDIR%%/lib/Froxlor/Idna/IdnaWrapper.php
+%%WWWDIR%%/lib/Froxlor/MailLogParser.php
+%%WWWDIR%%/lib/Froxlor/PhpHelper.php
+%%WWWDIR%%/lib/Froxlor/SImExporter.php
+%%WWWDIR%%/lib/Froxlor/Settings.php
+%%WWWDIR%%/lib/Froxlor/Settings/FroxlorVhostSettings.php
+%%WWWDIR%%/lib/Froxlor/Settings/Store.php
+%%WWWDIR%%/lib/Froxlor/System/Cronjob.php
+%%WWWDIR%%/lib/Froxlor/System/Crypt.php
+%%WWWDIR%%/lib/Froxlor/System/IgnorantRecursiveDirectoryIterator.php
+%%WWWDIR%%/lib/Froxlor/System/Mailer.php
+%%WWWDIR%%/lib/Froxlor/System/MysqlHandler.php
+%%WWWDIR%%/lib/Froxlor/UI/Data.php
+%%WWWDIR%%/lib/Froxlor/UI/Fields.php
+%%WWWDIR%%/lib/Froxlor/UI/Form.php
+%%WWWDIR%%/lib/Froxlor/UI/HTML.php
+%%WWWDIR%%/lib/Froxlor/UI/HtmlForm.php
+%%WWWDIR%%/lib/Froxlor/UI/Linker.php
+%%WWWDIR%%/lib/Froxlor/UI/Pagination.php
+%%WWWDIR%%/lib/Froxlor/UI/Paging.php
+%%WWWDIR%%/lib/Froxlor/UI/Response.php
+%%WWWDIR%%/lib/Froxlor/UI/Template.php
+%%WWWDIR%%/lib/Froxlor/User.php
+%%WWWDIR%%/lib/Froxlor/Validate/Check.php
+%%WWWDIR%%/lib/Froxlor/Validate/Form.php
+%%WWWDIR%%/lib/Froxlor/Validate/Form/Data.php
+%%WWWDIR%%/lib/Froxlor/Validate/Validate.php
 %%WWWDIR%%/lib/ajax.php
-%%WWWDIR%%/lib/classes/bulk/class.DomainBulkAction.php
-%%WWWDIR%%/lib/classes/config/class.ConfigDaemon.php
-%%WWWDIR%%/lib/classes/config/class.ConfigParser.php
-%%WWWDIR%%/lib/classes/config/class.ConfigService.php
-%%WWWDIR%%/lib/classes/database/class.Database.php
-%%WWWDIR%%/lib/classes/database/class.DbManager.php
-%%WWWDIR%%/lib/classes/database/manager/class.DbManagerMySQL.php
-%%WWWDIR%%/lib/classes/dns/class.DnsEntry.php
-%%WWWDIR%%/lib/classes/dns/class.DnsZone.php
-%%WWWDIR%%/lib/classes/idna/class.idna_convert.php
-%%WWWDIR%%/lib/classes/idna/class.idna_convert_wrapper.php
-%%WWWDIR%%/lib/classes/idna/ext/EncodingHelper.php
-%%WWWDIR%%/lib/classes/idna/ext/IdnaConvert.php
-%%WWWDIR%%/lib/classes/idna/ext/NamePrepData.php
-%%WWWDIR%%/lib/classes/idna/ext/NamePrepData2003.php
-%%WWWDIR%%/lib/classes/idna/ext/NamePrepDataInterface.php
-%%WWWDIR%%/lib/classes/idna/ext/Punycode.php
-%%WWWDIR%%/lib/classes/idna/ext/PunycodeInterface.php
-%%WWWDIR%%/lib/classes/idna/ext/UnicodeTranscoder.php
-%%WWWDIR%%/lib/classes/idna/ext/UnicodeTranscoderInterface.php
-%%WWWDIR%%/lib/classes/idna/npdata.ser
-%%WWWDIR%%/lib/classes/integrity/class.IntegrityCheck.php
-%%WWWDIR%%/lib/classes/io/class.frxDirectory.php
-%%WWWDIR%%/lib/classes/logger/abstract.AbstractLogger.php
-%%WWWDIR%%/lib/classes/logger/class.FileLogger.php
-%%WWWDIR%%/lib/classes/logger/class.FroxlorLogger.php
-%%WWWDIR%%/lib/classes/logger/class.MysqlLogger.php
-%%WWWDIR%%/lib/classes/logger/class.SysLogger.php
-%%WWWDIR%%/lib/classes/mail/class.mailLogParser.php
-%%WWWDIR%%/lib/classes/output/class.htmlform.php
-%%WWWDIR%%/lib/classes/output/class.linker.php
-%%WWWDIR%%/lib/classes/output/class.paging.php
-%%WWWDIR%%/lib/classes/phpinterface/class.phpinterface.php
-%%WWWDIR%%/lib/classes/phpinterface/class.phpinterface_fcgid.php
-%%WWWDIR%%/lib/classes/phpinterface/class.phpinterface_fpm.php
-%%WWWDIR%%/lib/classes/phpmailer/PHPMailerAutoload.php
-%%WWWDIR%%/lib/classes/phpmailer/class.PHPMailer.php
-%%WWWDIR%%/lib/classes/phpmailer/class.PHPMailerAutoload.php
-%%WWWDIR%%/lib/classes/phpmailer/class.SMTP.php
-%%WWWDIR%%/lib/classes/settings/class.Settings.php
-%%WWWDIR%%/lib/classes/ssl/class.lescript.php
-%%WWWDIR%%/lib/classes/ticket/class.ticket.php
-%%WWWDIR%%/lib/classes/webserver/class.ConfigIO.php
-%%WWWDIR%%/lib/classes/webserver/class.DomainSSL.php
-%%WWWDIR%%/lib/classes/webserver/class.WebserverBase.php
+%%WWWDIR%%/lib/configfiles/bionic.xml
+%%WWWDIR%%/lib/configfiles/bullseye.xml
+%%WWWDIR%%/lib/configfiles/buster.xml
+%%WWWDIR%%/lib/configfiles/centos7.xml
+%%WWWDIR%%/lib/configfiles/centos8.xml
+%%WWWDIR%%/lib/configfiles/focal.xml
 %%WWWDIR%%/lib/configfiles/gentoo.xml
-%%WWWDIR%%/lib/configfiles/jessie.xml
-%%WWWDIR%%/lib/configfiles/precise.xml
-%%WWWDIR%%/lib/configfiles/rhel_centos.xml
-%%WWWDIR%%/lib/configfiles/trusty.xml
-%%WWWDIR%%/lib/configfiles/wheezy.xml
-%%WWWDIR%%/lib/cron_init.php
-%%WWWDIR%%/lib/cron_shutdown.php
+%%WWWDIR%%/lib/configfiles/stretch.xml
+%%WWWDIR%%/lib/configfiles/xenial.xml
 %%WWWDIR%%/lib/formfields/admin/admin/formfield.admin_add.php
 %%WWWDIR%%/lib/formfields/admin/admin/formfield.admin_edit.php
 %%WWWDIR%%/lib/formfields/admin/cronjobs/formfield.cronjobs_edit.php
@@ -170,16 +252,16 @@
 %%WWWDIR%%/lib/formfields/admin/domains/formfield.domains_import.php
 %%WWWDIR%%/lib/formfields/admin/ipsandports/formfield.ipsandports_add.php
 %%WWWDIR%%/lib/formfields/admin/ipsandports/formfield.ipsandports_edit.php
+%%WWWDIR%%/lib/formfields/admin/phpconfig/formfield.fpmconfig_add.php
+%%WWWDIR%%/lib/formfields/admin/phpconfig/formfield.fpmconfig_edit.php
 %%WWWDIR%%/lib/formfields/admin/phpconfig/formfield.phpconfig_add.php
 %%WWWDIR%%/lib/formfields/admin/phpconfig/formfield.phpconfig_edit.php
+%%WWWDIR%%/lib/formfields/admin/plans/formfield.plans_add.php
+%%WWWDIR%%/lib/formfields/admin/plans/formfield.plans_edit.php
 %%WWWDIR%%/lib/formfields/admin/templates/formfield.filetemplate_add.php
 %%WWWDIR%%/lib/formfields/admin/templates/formfield.filetemplate_edit.php
 %%WWWDIR%%/lib/formfields/admin/templates/formfield.template_add.php
 %%WWWDIR%%/lib/formfields/admin/templates/formfield.template_edit.php
-%%WWWDIR%%/lib/formfields/admin/tickets/formfield.category_edit.php
-%%WWWDIR%%/lib/formfields/admin/tickets/formfield.category_new.php
-%%WWWDIR%%/lib/formfields/admin/tickets/formfield.ticket_new.php
-%%WWWDIR%%/lib/formfields/admin/tickets/formfield.ticket_reply.php
 %%WWWDIR%%/lib/formfields/customer/domains/formfield.domain_ssleditor.php
 %%WWWDIR%%/lib/formfields/customer/domains/formfield.domains_add.php
 %%WWWDIR%%/lib/formfields/customer/domains/formfield.domains_edit.php
@@ -198,160 +280,11 @@
 %%WWWDIR%%/lib/formfields/customer/ftp/formfield.ftp_edit.php
 %%WWWDIR%%/lib/formfields/customer/mysql/formfield.mysql_add.php
 %%WWWDIR%%/lib/formfields/customer/mysql/formfield.mysql_edit.php
-%%WWWDIR%%/lib/formfields/customer/tickets/formfield.ticket_add.php
-%%WWWDIR%%/lib/formfields/customer/tickets/formfield.ticket_reply.php
-%%WWWDIR%%/lib/functions.php
-%%WWWDIR%%/lib/functions/database/function.correctMysqlUsers.php
-%%WWWDIR%%/lib/functions/dns/function.createDomainZone.php
-%%WWWDIR%%/lib/functions/dns/function.generateDkimEntries.php
-%%WWWDIR%%/lib/functions/dns/function.getAllowedDomainEntry.php
-%%WWWDIR%%/lib/functions/filedir/function.createCustomerBackup.php
-%%WWWDIR%%/lib/functions/filedir/function.fileImmutable.php
-%%WWWDIR%%/lib/functions/filedir/function.findDirs.php
-%%WWWDIR%%/lib/functions/filedir/function.makeChownWithNewStats.php
-%%WWWDIR%%/lib/functions/filedir/function.makeCorrectDir.php
-%%WWWDIR%%/lib/functions/filedir/function.makeCorrectFile.php
-%%WWWDIR%%/lib/functions/filedir/function.makePathfield.php
-%%WWWDIR%%/lib/functions/filedir/function.makeSecurePath.php
-%%WWWDIR%%/lib/functions/filedir/function.mkDirWithCorrectOwnership.php
-%%WWWDIR%%/lib/functions/filedir/function.safe_exec.php
-%%WWWDIR%%/lib/functions/filedir/function.storeDefaultIndex.php
-%%WWWDIR%%/lib/functions/formfields/bool/function.getFormFieldDataBool.php
-%%WWWDIR%%/lib/functions/formfields/bool/function.getFormFieldOutputBool.php
-%%WWWDIR%%/lib/functions/formfields/bool/function.validateFormFieldBool.php
-%%WWWDIR%%/lib/functions/formfields/constant.formfields.php
-%%WWWDIR%%/lib/functions/formfields/date/function.getFormFieldOutputDate.php
-%%WWWDIR%%/lib/functions/formfields/date/function.manipulateFormFieldDataDate.php
-%%WWWDIR%%/lib/functions/formfields/date/function.validateFormFieldDate.php
-%%WWWDIR%%/lib/functions/formfields/file/function.getFormFieldOutputFile.php
-%%WWWDIR%%/lib/functions/formfields/file/function.validateFormFieldFile.php
-%%WWWDIR%%/lib/functions/formfields/function.buildForm.php
-%%WWWDIR%%/lib/functions/formfields/function.buildFormEx.php
-%%WWWDIR%%/lib/functions/formfields/function.checkPlausibilityFormField.php
-%%WWWDIR%%/lib/functions/formfields/function.getFormFieldData.php
-%%WWWDIR%%/lib/functions/formfields/function.getFormFieldOutput.php
-%%WWWDIR%%/lib/functions/formfields/function.getFormGroupOutput.php
-%%WWWDIR%%/lib/functions/formfields/function.manipulateFormFieldData.php
-%%WWWDIR%%/lib/functions/formfields/function.prefetchFormFieldData.php
-%%WWWDIR%%/lib/functions/formfields/function.processForm.php
-%%WWWDIR%%/lib/functions/formfields/function.returnField.php
-%%WWWDIR%%/lib/functions/formfields/function.saveForm.php
-%%WWWDIR%%/lib/functions/formfields/function.saveFormField.php
-%%WWWDIR%%/lib/functions/formfields/function.validateFieldDefinition.php
-%%WWWDIR%%/lib/functions/formfields/function.validateFormDefinition.php
-%%WWWDIR%%/lib/functions/formfields/function.validateFormField.php
-%%WWWDIR%%/lib/functions/formfields/hidden/function.getFormFieldOutputHidden.php
-%%WWWDIR%%/lib/functions/formfields/hidden/function.validateFormFieldHidden.php
-%%WWWDIR%%/lib/functions/formfields/hiddenstring/function.getFormFieldOutputString.php
-%%WWWDIR%%/lib/functions/formfields/hiddenstring/function.validateFormFieldString.php
-%%WWWDIR%%/lib/functions/formfields/int/function.getFormFieldDataInt.php
-%%WWWDIR%%/lib/functions/formfields/int/function.getFormFieldOutputInt.php
-%%WWWDIR%%/lib/functions/formfields/int/function.validateFormFieldInt.php
-%%WWWDIR%%/lib/functions/formfields/label/function.getFormFieldOutputLabel.php
-%%WWWDIR%%/lib/functions/formfields/label/function.validateFormFieldLabel.php
-%%WWWDIR%%/lib/functions/formfields/option/function.getFormFieldDataOption.php
-%%WWWDIR%%/lib/functions/formfields/option/function.getFormFieldOutputOption.php
-%%WWWDIR%%/lib/functions/formfields/option/function.prefetchFormFieldDataOption.php
-%%WWWDIR%%/lib/functions/formfields/option/function.validateFormFieldOption.php
-%%WWWDIR%%/lib/functions/formfields/string/function.getFormFieldOutputString.php
-%%WWWDIR%%/lib/functions/formfields/string/function.validateFormFieldString.php
-%%WWWDIR%%/lib/functions/formfields/text/function.getFormFieldDataText.php
-%%WWWDIR%%/lib/functions/formfields/text/function.getFormFieldOutputText.php
-%%WWWDIR%%/lib/functions/formfields/text/function.validateFormFieldText.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.CorrectErrorDocument.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.CronjobFunctions.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.checkCrondConfigurationFile.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.checkMailAccDeletionState.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.createAWStatsConf.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.customerHasPerlEnabled.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.domainHasMainSubDomains.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.domainHasSslIpPort.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.generatePassword.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getCustomerDetail.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getFilesystemQuota.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getIpAddresses.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getIpPortCombinations.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getLanguages.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getLoginNameByUid.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getPhpConfigs.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.getThemes.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.inserttask.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.isCustomerStdSubdomain.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.loadConfigArrayDir.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.moveCustomerToAdmin.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.phpErrHandler.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.triggerLetsEncryptCSRForAliasDestinationDomain.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.updateCounters.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.updateFunctions.php
-%%WWWDIR%%/lib/functions/%%PORTNAME%%/function.version_compare2.php
-%%WWWDIR%%/lib/functions/logger/constant.logger.php
-%%WWWDIR%%/lib/functions/logger/function.getLogLevelDesc.php
-%%WWWDIR%%/lib/functions/output/function.RedirectCode.php
-%%WWWDIR%%/lib/functions/output/function.ask_yesno.php
-%%WWWDIR%%/lib/functions/output/function.buildNavigation.php
-%%WWWDIR%%/lib/functions/output/function.dieWithMail.php
-%%WWWDIR%%/lib/functions/output/function.getCorrectFullUserDetails.php
-%%WWWDIR%%/lib/functions/output/function.getCorrectUserSalutation.php
-%%WWWDIR%%/lib/functions/output/function.getTemplate.php
-%%WWWDIR%%/lib/functions/output/function.makecheckbox.php
-%%WWWDIR%%/lib/functions/output/function.makeoption.php
-%%WWWDIR%%/lib/functions/output/function.makeyesno.php
-%%WWWDIR%%/lib/functions/output/function.redirectTo.php
-%%WWWDIR%%/lib/functions/output/function.standard_error.php
-%%WWWDIR%%/lib/functions/output/function.standard_success.php
-%%WWWDIR%%/lib/functions/phphelpers/function.array_merge_prefix.php
-%%WWWDIR%%/lib/functions/phphelpers/function.array_trim.php
-%%WWWDIR%%/lib/functions/phphelpers/function.doubleval_ressource.php
-%%WWWDIR%%/lib/functions/phphelpers/function.html_entity_decode_array.php
-%%WWWDIR%%/lib/functions/phphelpers/function.html_entity_decode_complete.php
-%%WWWDIR%%/lib/functions/phphelpers/function.htmlentities_array.php
-%%WWWDIR%%/lib/functions/phphelpers/function.intval_ressource.php
-%%WWWDIR%%/lib/functions/phphelpers/function.replace_variables.php
-%%WWWDIR%%/lib/functions/phphelpers/function.size_readable.php
-%%WWWDIR%%/lib/functions/phphelpers/function.str_replace_array.php
-%%WWWDIR%%/lib/functions/phphelpers/function.stripslashes_array.php
-%%WWWDIR%%/lib/functions/phphelpers/function.stripslashes_complete.php
-%%WWWDIR%%/lib/functions/settings/function.loadSettings.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingClearCertificates.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingDefaultIp.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingDefaultTheme.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingField.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingHostname.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingIpAddress.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingMysqlAccessHost.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingResetCatchall.php
-%%WWWDIR%%/lib/functions/settings/function.storeSettingWebserverFcgidFpmUser.php
-%%WWWDIR%%/lib/functions/system/function.checklastguid.php
-%%WWWDIR%%/lib/functions/system/function.getAvailablePasswordHashes.php
-%%WWWDIR%%/lib/functions/system/function.isFreeBSD.php
-%%WWWDIR%%/lib/functions/system/function.makeCryptPassword.php
-%%WWWDIR%%/lib/functions/system/function.randomStr.php
-%%WWWDIR%%/lib/functions/validate/function.appendOpenbasedirPath.php
-%%WWWDIR%%/lib/functions/validate/function.buildValidMailFrom.php
-%%WWWDIR%%/lib/functions/validate/function.checkDisallowedPaths.php
-%%WWWDIR%%/lib/functions/validate/function.checkFcgidPhpFpm.php
-%%WWWDIR%%/lib/functions/validate/function.checkHostname.php
-%%WWWDIR%%/lib/functions/validate/function.checkMysqlAccessHost.php
-%%WWWDIR%%/lib/functions/validate/function.checkPathConflicts.php
-%%WWWDIR%%/lib/functions/validate/function.checkPhpInterfaceSetting.php
-%%WWWDIR%%/lib/functions/validate/function.checkUsername.php
-%%WWWDIR%%/lib/functions/validate/function.checkValidRegEx.php
-%%WWWDIR%%/lib/functions/validate/function.makeCorrectDestination.php
-%%WWWDIR%%/lib/functions/validate/function.setCycleOfCronjob.php
-%%WWWDIR%%/lib/functions/validate/function.validate.php
-%%WWWDIR%%/lib/functions/validate/function.validateDomain.php
-%%WWWDIR%%/lib/functions/validate/function.validateEmail.php
-%%WWWDIR%%/lib/functions/validate/function.validatePassword.php
-%%WWWDIR%%/lib/functions/validate/function.validatePasswordLogin.php
-%%WWWDIR%%/lib/functions/validate/function.validateSqlInterval.php
-%%WWWDIR%%/lib/functions/validate/function.validateUrl.php
-%%WWWDIR%%/lib/functions/validate/function.validateUsername.php
-%%WWWDIR%%/lib/functions/validate/function.validate_ip.php
 %%WWWDIR%%/lib/init.php
 %%WWWDIR%%/lib/navigation/00.%%PORTNAME%%.main.php
-%%WWWDIR%%/lib/navigation/10.tickets.php
 %%WWWDIR%%/lib/tables.inc.php
 %%WWWDIR%%/lib/version.inc.php
+%%WWWDIR%%/lng/czech.lng.php
 %%WWWDIR%%/lng/dutch.lng.php
 %%WWWDIR%%/lng/english.lng.php
 %%WWWDIR%%/lng/french.lng.php
@@ -360,30 +293,17 @@
 %%WWWDIR%%/lng/lng_references.php
 %%WWWDIR%%/lng/portugues.lng.php
 %%WWWDIR%%/lng/swedish.lng.php
-%%WWWDIR%%/logs/.keep
+%%WWWDIR%%/logfiles_viewer.php
 %%WWWDIR%%/logs/index.html
-%%WWWDIR%%/scripts/classes/class.DnsBase.php
-%%WWWDIR%%/scripts/classes/class.HttpConfigBase.php
+%%WWWDIR%%/phpcs.xml
+%%WWWDIR%%/phpdox.xml
+%%WWWDIR%%/phpmd.xml
+%%WWWDIR%%/phpunit.xml
+%%WWWDIR%%/robots.txt
 %%WWWDIR%%/scripts/%%PORTNAME%%_master_cronjob.php
-%%WWWDIR%%/scripts/jobs/cron_backup.php
-%%WWWDIR%%/scripts/jobs/cron_letsencrypt.php
-%%WWWDIR%%/scripts/jobs/cron_mailboxsize.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.dns.10.bind.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.dns.20.pdns.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.10.apache.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.15.apache_fcgid.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.20.lighttpd.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.25.lighttpd_fcgid.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.30.nginx.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.35.nginx_phpfpm.php
-%%WWWDIR%%/scripts/jobs/cron_tasks.php
-%%WWWDIR%%/scripts/jobs/cron_ticketarchive.php
-%%WWWDIR%%/scripts/jobs/cron_traffic.inc.functions.php
-%%WWWDIR%%/scripts/jobs/cron_traffic.php
-%%WWWDIR%%/scripts/jobs/cron_usage.inc.diskspace.php
-%%WWWDIR%%/scripts/jobs/cron_usage_report.php
-%%WWWDIR%%/scripts/jobs/cron_used_tickets_reset.php
 %%WWWDIR%%/ssl_certificates.php
+%%WWWDIR%%/templates/Sparkle/2fa/entercode.tpl
+%%WWWDIR%%/templates/Sparkle/2fa/overview.tpl
 %%WWWDIR%%/templates/Sparkle/AUTHORS
 %%WWWDIR%%/templates/Sparkle/admin/admins/admins.tpl
 %%WWWDIR%%/templates/Sparkle/admin/admins/admins_add.tpl
@@ -425,13 +345,22 @@
 %%WWWDIR%%/templates/Sparkle/admin/logger/logger_action.tpl
 %%WWWDIR%%/templates/Sparkle/admin/logger/logger_log.tpl
 %%WWWDIR%%/templates/Sparkle/admin/message/message.tpl
+%%WWWDIR%%/templates/Sparkle/admin/phpconfig/fpmconfig_add.tpl
+%%WWWDIR%%/templates/Sparkle/admin/phpconfig/fpmconfig_edit.tpl
+%%WWWDIR%%/templates/Sparkle/admin/phpconfig/fpmdaemons.tpl
+%%WWWDIR%%/templates/Sparkle/admin/phpconfig/fpmdaemons_overview.tpl
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview.tpl
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview_add.tpl
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview_edit.tpl
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview_overview.tpl
+%%WWWDIR%%/templates/Sparkle/admin/plans/plans.tpl
+%%WWWDIR%%/templates/Sparkle/admin/plans/plans_add.tpl
+%%WWWDIR%%/templates/Sparkle/admin/plans/plans_edit.tpl
+%%WWWDIR%%/templates/Sparkle/admin/plans/plans_plan.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo/img_line.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo/runtime_line.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo/showinfo.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/importexport/index.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/integritycheck.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/integritycheck_row.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/opcacheinfo/blacklist_line.tpl
@@ -448,6 +377,7 @@
 %%WWWDIR%%/templates/Sparkle/admin/settings/settings_group.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/settings_overview.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/settings_overviewgroup.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/testmail.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/updatecounters.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/updatecounters_row_admin.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/updatecounters_row_customer.tpl
@@ -459,21 +389,6 @@
 %%WWWDIR%%/templates/Sparkle/admin/templates/templates_edit.tpl
 %%WWWDIR%%/templates/Sparkle/admin/templates/templates_filetemplate.tpl
 %%WWWDIR%%/templates/Sparkle/admin/templates/templates_template.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/archive.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/archived_tickets.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/archivesearch.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/categories.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_categories.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_customer.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_editcategory.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_new.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_newcategory.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_reply.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_tickets.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_tickets_list.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_tickets_main.tpl
-%%WWWDIR%%/templates/Sparkle/admin/tickets/tickets_view.tpl
 %%WWWDIR%%/templates/Sparkle/admin/traffic/index.tpl
 %%WWWDIR%%/templates/Sparkle/admin/traffic/index_table.tpl
 %%WWWDIR%%/templates/Sparkle/admin/traffic/index_table_row.tpl
@@ -482,6 +397,10 @@
 %%WWWDIR%%/templates/Sparkle/admin/update/preconfigitem.tpl
 %%WWWDIR%%/templates/Sparkle/admin/update/update_end.tpl
 %%WWWDIR%%/templates/Sparkle/admin/update/update_start.tpl
+%%WWWDIR%%/templates/Sparkle/api_keys/keys_error.tpl
+%%WWWDIR%%/templates/Sparkle/api_keys/keys_key.tpl
+%%WWWDIR%%/templates/Sparkle/api_keys/keys_list.tpl
+%%WWWDIR%%/templates/Sparkle/assets/css/custom.example.css
 %%WWWDIR%%/templates/Sparkle/assets/css/dark.css
 %%WWWDIR%%/templates/Sparkle/assets/css/%%PORTNAME%%.css
 %%WWWDIR%%/templates/Sparkle/assets/css/main.css
@@ -579,8 +498,12 @@
 %%WWWDIR%%/templates/Sparkle/assets/img/tipper.png
 %%WWWDIR%%/templates/Sparkle/assets/img/top.png
 %%WWWDIR%%/templates/Sparkle/assets/img/touchicon.png
+%%WWWDIR%%/templates/Sparkle/assets/js/apikey.js
 %%WWWDIR%%/templates/Sparkle/assets/js/autosize.min.js
 %%WWWDIR%%/templates/Sparkle/assets/js/circular.js
+%%WWWDIR%%/templates/Sparkle/assets/js/customers.js
+%%WWWDIR%%/templates/Sparkle/assets/js/domains.js
+%%WWWDIR%%/templates/Sparkle/assets/js/ipsandports.js
 %%WWWDIR%%/templates/Sparkle/assets/js/jcanvas.min.js
 %%WWWDIR%%/templates/Sparkle/assets/js/main.js
 %%WWWDIR%%/templates/Sparkle/assets/js/tipper.min.js
@@ -633,13 +556,6 @@
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls_add.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls_database.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls_edit.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/ticket.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/tickets.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/tickets_new.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/tickets_reply.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/tickets_tickets.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/tickets_tickets_list.tpl
-%%WWWDIR%%/templates/Sparkle/customer/tickets/tickets_tickets_main.tpl
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic.tpl
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic_details.tpl
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic_month.tpl
@@ -652,14 +568,15 @@
 %%WWWDIR%%/templates/Sparkle/formfields/file.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/hidden.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/hiddenstring.tpl
+%%WWWDIR%%/templates/Sparkle/formfields/image.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/label.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/option.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/string.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/text.tpl
 %%WWWDIR%%/templates/Sparkle/header.tpl
+%%WWWDIR%%/templates/Sparkle/logfiles_viewer/index.tpl
 %%WWWDIR%%/templates/Sparkle/login/fpwd.tpl
 %%WWWDIR%%/templates/Sparkle/login/login.tpl
-%%WWWDIR%%/templates/Sparkle/login/login_ftp.tpl
 %%WWWDIR%%/templates/Sparkle/login/rpwd.tpl
 %%WWWDIR%%/templates/Sparkle/misc/alreadyinstalledhint.tpl
 %%WWWDIR%%/templates/Sparkle/misc/configurehint.tpl
@@ -676,9 +593,11 @@
 %%WWWDIR%%/templates/Sparkle/misc/htmlsortcode.tpl
 %%WWWDIR%%/templates/Sparkle/misc/ownershiphint.tpl
 %%WWWDIR%%/templates/Sparkle/misc/phperrornice.tpl
+%%WWWDIR%%/templates/Sparkle/misc/phprequirementfailed.tpl
 %%WWWDIR%%/templates/Sparkle/misc/question_yesno.tpl
 %%WWWDIR%%/templates/Sparkle/misc/question_yesno_checkbox.tpl
 %%WWWDIR%%/templates/Sparkle/misc/success.tpl
+%%WWWDIR%%/templates/Sparkle/misc/vendormissinghint.tpl
 %%WWWDIR%%/templates/Sparkle/navigation_element.tpl
 %%WWWDIR%%/templates/Sparkle/navigation_link.tpl
 %%WWWDIR%%/templates/Sparkle/ssl_certificates/certs_cert.tpl
@@ -687,138 +606,625 @@
 %%WWWDIR%%/templates/misc/awstats/awstats.%%PORTNAME%%.model.conf
 %%WWWDIR%%/templates/misc/awstats/index.html
 %%WWWDIR%%/templates/misc/awstats/nav.html
+%%WWWDIR%%/templates/misc/php/default.ini.php
 %%WWWDIR%%/templates/misc/standardcustomer/index.html
-@dir %%WWWDIR%%/templates/misc/standardcustomer
-@dir %%WWWDIR%%/templates/misc/awstats
-@dir %%WWWDIR%%/templates/misc
-@dir %%WWWDIR%%/templates/Sparkle/ssl_certificates
-@dir %%WWWDIR%%/templates/Sparkle/misc/form
-@dir %%WWWDIR%%/templates/Sparkle/misc
-@dir %%WWWDIR%%/templates/Sparkle/login
-@dir %%WWWDIR%%/templates/Sparkle/formfields
-@dir %%WWWDIR%%/templates/Sparkle/dns_editor
-@dir %%WWWDIR%%/templates/Sparkle/customer/traffic
-@dir %%WWWDIR%%/templates/Sparkle/customer/tickets
-@dir %%WWWDIR%%/templates/Sparkle/customer/mysql
-@dir %%WWWDIR%%/templates/Sparkle/customer/logger
-@dir %%WWWDIR%%/templates/Sparkle/customer/index
-@dir %%WWWDIR%%/templates/Sparkle/customer/ftp
-@dir %%WWWDIR%%/templates/Sparkle/customer/extras
-@dir %%WWWDIR%%/templates/Sparkle/customer/email
-@dir %%WWWDIR%%/templates/Sparkle/customer/domains
-@dir %%WWWDIR%%/templates/Sparkle/customer
-@dir %%WWWDIR%%/templates/Sparkle/assets/js
-@dir %%WWWDIR%%/templates/Sparkle/assets/img/icons
-@dir %%WWWDIR%%/templates/Sparkle/assets/img
-@dir %%WWWDIR%%/templates/Sparkle/assets/css
-@dir %%WWWDIR%%/templates/Sparkle/assets
-@dir %%WWWDIR%%/templates/Sparkle/admin/update
-@dir %%WWWDIR%%/templates/Sparkle/admin/traffic
-@dir %%WWWDIR%%/templates/Sparkle/admin/tickets
-@dir %%WWWDIR%%/templates/Sparkle/admin/templates
-@dir %%WWWDIR%%/templates/Sparkle/admin/settings/phpinfo
-@dir %%WWWDIR%%/templates/Sparkle/admin/settings/opcacheinfo
-@dir %%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo
-@dir %%WWWDIR%%/templates/Sparkle/admin/settings
-@dir %%WWWDIR%%/templates/Sparkle/admin/phpconfig
-@dir %%WWWDIR%%/templates/Sparkle/admin/message
-@dir %%WWWDIR%%/templates/Sparkle/admin/logger
-@dir %%WWWDIR%%/templates/Sparkle/admin/ipsandports
-@dir %%WWWDIR%%/templates/Sparkle/admin/index
-@dir %%WWWDIR%%/templates/Sparkle/admin/domains
-@dir %%WWWDIR%%/templates/Sparkle/admin/customers
-@dir %%WWWDIR%%/templates/Sparkle/admin/cronjobs
-@dir %%WWWDIR%%/templates/Sparkle/admin/configfiles
-@dir %%WWWDIR%%/templates/Sparkle/admin/admins
-@dir %%WWWDIR%%/templates/Sparkle/admin
-@dir %%WWWDIR%%/templates/Sparkle
-@dir %%WWWDIR%%/templates
-@dir %%WWWDIR%%/scripts/jobs
-@dir %%WWWDIR%%/scripts/classes
-@dir %%WWWDIR%%/scripts
-@dir %%WWWDIR%%/logs
-@dir %%WWWDIR%%/lng
-@dir %%WWWDIR%%/lib/navigation
-@dir %%WWWDIR%%/lib/functions/validate
-@dir %%WWWDIR%%/lib/functions/system
-@dir %%WWWDIR%%/lib/functions/settings
-@dir %%WWWDIR%%/lib/functions/phphelpers
-@dir %%WWWDIR%%/lib/functions/output
-@dir %%WWWDIR%%/lib/functions/logger
-@dir %%WWWDIR%%/lib/functions/froxlor
-@dir %%WWWDIR%%/lib/functions/formfields/text
-@dir %%WWWDIR%%/lib/functions/formfields/string
-@dir %%WWWDIR%%/lib/functions/formfields/option
-@dir %%WWWDIR%%/lib/functions/formfields/label
-@dir %%WWWDIR%%/lib/functions/formfields/int
-@dir %%WWWDIR%%/lib/functions/formfields/hiddenstring
-@dir %%WWWDIR%%/lib/functions/formfields/hidden
-@dir %%WWWDIR%%/lib/functions/formfields/file
-@dir %%WWWDIR%%/lib/functions/formfields/date
-@dir %%WWWDIR%%/lib/functions/formfields/bool
-@dir %%WWWDIR%%/lib/functions/formfields
-@dir %%WWWDIR%%/lib/functions/filedir
-@dir %%WWWDIR%%/lib/functions/dns
-@dir %%WWWDIR%%/lib/functions/database
-@dir %%WWWDIR%%/lib/functions
-@dir %%WWWDIR%%/lib/formfields/customer/tickets
-@dir %%WWWDIR%%/lib/formfields/customer/mysql
-@dir %%WWWDIR%%/lib/formfields/customer/ftp
-@dir %%WWWDIR%%/lib/formfields/customer/extras
-@dir %%WWWDIR%%/lib/formfields/customer/email
-@dir %%WWWDIR%%/lib/formfields/customer/domains
-@dir %%WWWDIR%%/lib/formfields/customer
-@dir %%WWWDIR%%/lib/formfields/admin/tickets
-@dir %%WWWDIR%%/lib/formfields/admin/templates
-@dir %%WWWDIR%%/lib/formfields/admin/phpconfig
-@dir %%WWWDIR%%/lib/formfields/admin/ipsandports
-@dir %%WWWDIR%%/lib/formfields/admin/domains
-@dir %%WWWDIR%%/lib/formfields/admin/customer
-@dir %%WWWDIR%%/lib/formfields/admin/cronjobs
-@dir %%WWWDIR%%/lib/formfields/admin/admin
-@dir %%WWWDIR%%/lib/formfields/admin
-@dir %%WWWDIR%%/lib/formfields
-@dir %%WWWDIR%%/lib/configfiles
-@dir %%WWWDIR%%/lib/classes/webserver
-@dir %%WWWDIR%%/lib/classes/ticket
-@dir %%WWWDIR%%/lib/classes/ssl
-@dir %%WWWDIR%%/lib/classes/settings
-@dir %%WWWDIR%%/lib/classes/phpmailer
-@dir %%WWWDIR%%/lib/classes/phpinterface
-@dir %%WWWDIR%%/lib/classes/output
-@dir %%WWWDIR%%/lib/classes/mail
-@dir %%WWWDIR%%/lib/classes/logger
-@dir %%WWWDIR%%/lib/classes/io
-@dir %%WWWDIR%%/lib/classes/integrity
-@dir %%WWWDIR%%/lib/classes/idna/ext
-@dir %%WWWDIR%%/lib/classes/idna
-@dir %%WWWDIR%%/lib/classes/dns
-@dir %%WWWDIR%%/lib/classes/database/manager
-@dir %%WWWDIR%%/lib/classes/database
-@dir %%WWWDIR%%/lib/classes/config
-@dir %%WWWDIR%%/lib/classes/bulk
-@dir %%WWWDIR%%/lib/classes
-@dir %%WWWDIR%%/lib
-@dir %%WWWDIR%%/js/plugins
-@dir %%WWWDIR%%/js
-@dir %%WWWDIR%%/install/updates/preconfig/0.9
-@dir %%WWWDIR%%/install/updates/preconfig
-@dir %%WWWDIR%%/install/updates/froxlor/0.9
-@dir %%WWWDIR%%/install/updates/froxlor
-@dir %%WWWDIR%%/install/updates
-@dir %%WWWDIR%%/install/templates/assets/img
-@dir %%WWWDIR%%/install/templates/assets/css
-@dir %%WWWDIR%%/install/templates/assets
-@dir %%WWWDIR%%/install/templates
-@dir %%WWWDIR%%/install/scripts
-@dir %%WWWDIR%%/install/lng
-@dir %%WWWDIR%%/install/lib
-@dir %%WWWDIR%%/install
-@dir %%WWWDIR%%/css/images
-@dir %%WWWDIR%%/css
-@dir %%WWWDIR%%/actions/admin/settings
-@dir %%WWWDIR%%/actions/admin
-@dir %%WWWDIR%%/actions
-@dir %%WWWDIR%%
+%%WWWDIR%%/tests/Admins/AdminsTest.php
+%%WWWDIR%%/tests/Backup/CustomerBackupsTest.php
+%%WWWDIR%%/tests/Bulk/DomainBulkTest.php
+%%WWWDIR%%/tests/Certificates/CertificatesTest.php
+%%WWWDIR%%/tests/Cron/TaskIdTest.php
+%%WWWDIR%%/tests/Cronjobs/CronjobsTest.php
+%%WWWDIR%%/tests/Customers/CustomersTest.php
+%%WWWDIR%%/tests/Customers/HostingPlansTest.php
+%%WWWDIR%%/tests/DomainZones/DomainZonesTest.php
+%%WWWDIR%%/tests/Domains/DomainsTest.php
+%%WWWDIR%%/tests/Emails/EmailsTest.php
+%%WWWDIR%%/tests/Extras/DirOptionsTest.php
+%%WWWDIR%%/tests/Extras/DirProtectionsTest.php
+%%WWWDIR%%/tests/Froxlor/FroxlorTest.php
+%%WWWDIR%%/tests/Froxlor/SettingsTest.php
+%%WWWDIR%%/tests/Froxlor/StoreTest.php
+%%WWWDIR%%/tests/Froxlor/ValidateTest.php
+%%WWWDIR%%/tests/Ftps/FtpsTest.php
+%%WWWDIR%%/tests/Global/ApiParameterTest.php
+%%WWWDIR%%/tests/Global/FroxlorRpcTest.php
+%%WWWDIR%%/tests/IpsAndPorts/IpsAndPortsTest.php
+%%WWWDIR%%/tests/Mysqls/MysqlsTest.php
+%%WWWDIR%%/tests/PhpAndFpm/FpmDaemonsTest.php
+%%WWWDIR%%/tests/PhpAndFpm/PhpSettingsTest.php
+%%WWWDIR%%/tests/SubDomains/SubDomainsTest.php
+%%WWWDIR%%/tests/Traffic/TrafficTest.php
+%%WWWDIR%%/tests/bootstrap.php
+%%WWWDIR%%/vendor/autoload.php
+%%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
+%%WWWDIR%%/vendor/composer/LICENSE
+%%WWWDIR%%/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/vendor/composer/autoload_files.php
+%%WWWDIR%%/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/vendor/composer/autoload_psr4.php
+%%WWWDIR%%/vendor/composer/autoload_real.php
+%%WWWDIR%%/vendor/composer/autoload_static.php
+%%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installed.php
+%%WWWDIR%%/vendor/composer/platform_check.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/LICENSE
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/README.md
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/composer.json
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/phpunit.xml
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/EncodingHelper.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/IdnaConvert.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/NamePrepData.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/NamePrepData2003.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/NamePrepDataInterface.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/Punycode.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/PunycodeInterface.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/UnicodeTranscoder.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/src/UnicodeTranscoderInterface.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/tests/integration/IdnaConvertDecodeTest.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/tests/integration/IdnaConvertEncodeTest.php
+%%WWWDIR%%/vendor/%%PORTNAME%%/idna-convert-legacy/tests/unit/.gitkeep
+%%WWWDIR%%/vendor/monolog/monolog/CHANGELOG.md
+%%WWWDIR%%/vendor/monolog/monolog/LICENSE
+%%WWWDIR%%/vendor/monolog/monolog/README.md
+%%WWWDIR%%/vendor/monolog/monolog/composer.json
+%%WWWDIR%%/vendor/monolog/monolog/phpstan.neon.dist
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ErrorHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/FlowdockFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/FluentdFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/FormatterInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/LogglyFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/LogstashFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/MongoDBFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ScalarFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/WildfireFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/AbstractHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/AbstractSyslogHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/AmqpHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/BufferHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ChromePHPHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/CouchDBHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/CubeHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Curl/Util.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/DeduplicationHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/DoctrineCouchDBHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/DynamoDbHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ElasticSearchHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ErrorLogHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FilterHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ActivationStrategyInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ErrorLevelActivationStrategy.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossedHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FirePHPHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FleepHookHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FlowdockHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FormattableHandlerInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FormattableHandlerTrait.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/GelfHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/GroupHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HandlerInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HipChatHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/LogglyHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/MandrillHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/MissingExtensionException.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/MongoDBHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NullHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PHPConsoleHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ProcessableHandlerInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ProcessableHandlerTrait.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PsrHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RavenHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RedisHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RollbarHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Slack/SlackRecord.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SlackHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SlackWebhookHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SlackbotHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SocketHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdp/UdpSocket.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdpHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/TestHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/WhatFailureGroupHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ZendMonitorHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Logger.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/GitProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MemoryPeakUsageProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/TagProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/UidProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Registry.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ResettableInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/SignalHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
+%%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
+%%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
+%%WWWDIR%%/vendor/phpmailer/phpmailer/SECURITY.md
+%%WWWDIR%%/vendor/phpmailer/phpmailer/VERSION
+%%WWWDIR%%/vendor/phpmailer/phpmailer/composer.json
+%%WWWDIR%%/vendor/phpmailer/phpmailer/get_oauth_token.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-el.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-eo.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-es.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-et.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-fa.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-fi.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-fo.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-fr.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-gl.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-he.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hi.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hr.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hu.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hy.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-id.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ka.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-pl.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr_latn.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/Exception.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuth.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/PHPMailer.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/POP3.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/SMTP.php
+%%WWWDIR%%/vendor/psr/log/LICENSE
+%%WWWDIR%%/vendor/psr/log/Psr/Log/AbstractLogger.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/InvalidArgumentException.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LogLevel.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerAwareInterface.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerAwareTrait.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerInterface.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerTrait.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/Test/DummyTest.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/Test/TestLogger.php
+%%WWWDIR%%/vendor/psr/log/README.md
+%%WWWDIR%%/vendor/psr/log/composer.json
+%%WWWDIR%%/vendor/robthree/twofactorauth/.github/FUNDING.yml
+%%WWWDIR%%/vendor/robthree/twofactorauth/.github/workflows/test.yml
+%%WWWDIR%%/vendor/robthree/twofactorauth/LICENSE
+%%WWWDIR%%/vendor/robthree/twofactorauth/README.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/TwoFactorAuth.phpproj
+%%WWWDIR%%/vendor/robthree/twofactorauth/TwoFactorAuth.sln
+%%WWWDIR%%/vendor/robthree/twofactorauth/composer.json
+%%WWWDIR%%/vendor/robthree/twofactorauth/demo/demo.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/_config.yml
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/_layouts/post.html
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/assets/css/style.scss
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/getting-started.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/improved-code-verification.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/index.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/optional-configuration.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/qr-codes.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/qr-codes/bacon.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/qr-codes/endroid.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/qr-codes/image-charts.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/qr-codes/qr-server.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/docs/qr-codes/qrickit.md
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/BaconQrCodeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/BaseHTTPQRCodeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/EndroidQrCodeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/EndroidQrCodeWithLogoProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/GoogleChartsQrCodeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/IQRCodeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/ImageChartsQRCodeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/QRException.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/QRServerProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Qr/QRicketProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Rng/CSRNGProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Rng/HashRNGProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Rng/IRNGProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Rng/MCryptRNGProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Rng/OpenSSLRNGProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Rng/RNGException.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Time/HttpTimeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Time/ITimeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Time/LocalMachineTimeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Time/NTPTimeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/Providers/Time/TimeException.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/TwoFactorAuth.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/lib/TwoFactorAuthException.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/logo.png
+%%WWWDIR%%/vendor/robthree/twofactorauth/multifactorauthforeveryone.png
+%%WWWDIR%%/vendor/robthree/twofactorauth/phpunit.xml
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/MightNotMakeAssertions.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Qr/IQRCodeProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Qr/TestQrProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/CSRNGProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/HashRNGProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/IRNGProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/MCryptRNGProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/NeedsRngLengths.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/OpenSSLRNGProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Rng/TestRNGProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Time/ITimeProviderTest.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/Providers/Time/TestTimeProvider.php
+%%WWWDIR%%/vendor/robthree/twofactorauth/tests/TwoFactorAuthTest.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Iconv.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.big5.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp037.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp1006.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp1026.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp424.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp437.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp500.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp737.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp775.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp850.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp852.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp855.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp856.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp857.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp860.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp861.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp862.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp863.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp864.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp865.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp866.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp869.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp874.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp875.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp932.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp936.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp949.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.cp950.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-1.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-10.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-11.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-13.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-14.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-15.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-16.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-2.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-3.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-4.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-5.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-6.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-7.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-8.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.iso-8859-9.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.koi8-r.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.koi8-u.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.us-ascii.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1250.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1251.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1252.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1253.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1254.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1255.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1256.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1257.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/from.windows-1258.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset/translit.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-iconv/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/Grapheme.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Normalizer.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalComposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/combiningClass.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/compatibilityDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-php72/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-php72/Php72.php
+%%WWWDIR%%/vendor/symfony/polyfill-php72/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php72/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php72/composer.json
+%%WWWDIR%%/vendor/voku/anti-xss/CHANGELOG.md
+%%WWWDIR%%/vendor/voku/anti-xss/LICENSE
+%%WWWDIR%%/vendor/voku/anti-xss/README.md
+%%WWWDIR%%/vendor/voku/anti-xss/build/composer.json
+%%WWWDIR%%/vendor/voku/anti-xss/build/docs/base.md
+%%WWWDIR%%/vendor/voku/anti-xss/build/generate_docs.php
+%%WWWDIR%%/vendor/voku/anti-xss/composer.json
+%%WWWDIR%%/vendor/voku/anti-xss/src/voku/helper/AntiXSS.php
+%%WWWDIR%%/vendor/voku/anti-xss/src/voku/helper/data/entities_fallback.php
+%%WWWDIR%%/vendor/voku/portable-ascii/CHANGELOG.md
+%%WWWDIR%%/vendor/voku/portable-ascii/LICENSE.txt
+%%WWWDIR%%/vendor/voku/portable-ascii/README.md
+%%WWWDIR%%/vendor/voku/portable-ascii/build/composer.json
+%%WWWDIR%%/vendor/voku/portable-ascii/build/docs/base.md
+%%WWWDIR%%/vendor/voku/portable-ascii/build/generate_docs.php
+%%WWWDIR%%/vendor/voku/portable-ascii/build/generate_max_key_length.php
+%%WWWDIR%%/vendor/voku/portable-ascii/composer.json
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/ASCII.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/ascii_by_languages.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/ascii_extras_by_languages.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/ascii_language_max_key.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/ascii_ord.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x000.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x001.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x002.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x003.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x004.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x005.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x006.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x007.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x009.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x00a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x00b.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x00c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x00d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x00e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x00f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x010.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x011.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x012.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x013.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x014.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x015.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x016.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x017.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x018.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x01d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x01e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x01f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x020.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x021.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x022.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x023.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x024.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x025.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x026.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x027.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x028.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x029.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x02a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x02c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x02e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x02f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x030.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x031.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x032.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x033.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x04d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x04e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x04f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x050.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x051.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x052.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x053.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x054.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x055.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x056.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x057.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x058.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x059.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x05a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x05b.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x05c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x05d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x05e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x05f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x060.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x061.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x062.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x063.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x064.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x065.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x066.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x067.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x068.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x069.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x06a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x06b.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x06c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x06d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x06e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x06f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x070.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x071.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x072.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x073.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x074.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x075.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x076.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x077.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x078.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x079.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x07a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x07b.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x07c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x07d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x07e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x07f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x080.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x081.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x082.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x083.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x084.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x085.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x086.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x087.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x088.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x089.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x08a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x08b.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x08c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x08d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x08e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x08f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x090.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x091.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x092.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x093.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x094.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x095.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x096.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x097.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x098.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x099.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x09a.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x09b.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x09c.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x09d.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x09e.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x09f.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0a0.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0a1.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0a2.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0a3.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0a4.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ac.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ad.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ae.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0af.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b0.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b1.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b2.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b3.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b4.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b5.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b6.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b7.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b8.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0b9.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ba.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0bb.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0bc.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0bd.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0be.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0bf.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c0.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c1.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c2.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c3.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c4.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c5.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c6.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c7.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c8.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0c9.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ca.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0cb.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0cc.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0cd.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ce.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0cf.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d0.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d1.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d2.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d3.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d4.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d5.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d6.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0d7.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0f9.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0fa.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0fb.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0fc.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0fd.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0fe.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x0ff.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1d4.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1d5.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1d6.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1d7.php
+%%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1f1.php
+%%WWWDIR%%/vendor/voku/portable-utf8/CHANGELOG.md
+%%WWWDIR%%/vendor/voku/portable-utf8/LICENSE%%AP_MOD_EN%%PACHE
+%%WWWDIR%%/vendor/voku/portable-utf8/LICENSE-GPL
+%%WWWDIR%%/vendor/voku/portable-utf8/README.md
+%%WWWDIR%%/vendor/voku/portable-utf8/SECURITY.md
+%%WWWDIR%%/vendor/voku/portable-utf8/SUMMARY.md
+%%WWWDIR%%/vendor/voku/portable-utf8/bootstrap.php
+%%WWWDIR%%/vendor/voku/portable-utf8/composer.json
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/Bootup.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/UTF8.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/caseFolding_full.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/chr.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/emoji.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/encodings.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/ord.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/transliterator_list.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/utf8_fix.php
+%%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/win1252_to_utf8.php
 @group
 @owner
