@@ -5,6 +5,9 @@ PORTVERSION=	2.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	6c94276f361614b4c447.diff:-p1 e08856647724737ca15e.diff:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 

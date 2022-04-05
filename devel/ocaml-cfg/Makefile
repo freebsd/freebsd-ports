@@ -1,43 +1,33 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 
 PORTNAME=	cfg
-PORTVERSION=	2.0.4
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Library for manipulation of context-free grammars
+COMMENT=	Library for manipulating context-free grammars
 
 LICENSE=	LGPL21+
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	menhir:devel/menhir
-BUILD_DEPENDS+=	ocamlbuild:devel/ocaml-ocamlbuild
+BUILD_DEPENDS=	dune:devel/ocaml-dune
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
-
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
-USE_OCAML_WASH=	yes
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples
-MAKE_JOBS_UNSAFE=yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS.txt CHANGES.txt README.md ${STAGEDIR}${DOCSDIR}
+do-build:
+	cd ${BUILD_WRKSRC} && dune build --verbose
+
+do-install:
+	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
+		--prefix=${PREFIX} --libdir=${OCAML_SITELIBDIR}
 
 post-install-EXAMPLES-on:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
