@@ -1,5 +1,6 @@
 PORTNAME=	epsonscan2-non-free-plugin
 DISTVERSION=	6.6.40.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://download2.ebz.epson.net/${EPSONSCAN2}/common/rpm/x64/:amd64 \
 		https://download2.ebz.epson.net/${EPSONSCAN2}/common/deb/arm/:armv7 \
@@ -51,14 +52,6 @@ PLIST_SUB+=	LINUX_LIB=${LINUX_LIB} \
 		LINUX_LIB_EXTRA=${LINUX_LIB_EXTRA}
 
 .include <bsd.port.pre.mk>
-
-.if ((${OSVERSION} >= 1400000 && ${OSVERSION} <= 1400053) || \
-     (${OSVERSION} >= 1300000 && ${OSVERSION} <= 1300526) || \
-      ${OSVERSION} < 1300000)
-.warning epsonscan2-non-free-plugin's es2intif requires FreeBSD 13.x or 14.x
-.warning kernel later than 2022/03/05 for operation with scanners shown with
-.warning [*] in ${PREFIX}/lib/epsonscan2/Read_me.FreeBSD.
-.endif
 
 .if ${ARCH} == amd64
 DIST_FMT=	rpm
