@@ -1,0 +1,133 @@
+PORTNAME=	yadf
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0
+CATEGORIES=	sysutils
+
+MAINTAINER=	sec.research.2005@gmail.com
+COMMENT=	Yet Another Duplicate files finder
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	jrimbault
+
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		ahash-0.7.6 \
+		aho-corasick-0.7.18 \
+		anyhow-1.0.53 \
+		assert_cmd-2.0.4 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.63 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
+		byte-unit-4.0.13 \
+		cc-1.0.72 \
+		cfg-if-1.0.0 \
+		clap-3.0.10 \
+		clap-verbosity-flag-0.4.0 \
+		clap_derive-3.0.6 \
+		core-foundation-sys-0.8.3 \
+		crossbeam-channel-0.5.2 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.6 \
+		crossbeam-utils-0.8.6 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
+		difflib-0.4.0 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.6 \
+		doc-comment-0.3.3 \
+		dunce-1.0.2 \
+		either-1.6.1 \
+		env_logger-0.9.0 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		getrandom-0.2.4 \
+		gimli-0.26.1 \
+		globset-0.4.8 \
+		hashbrown-0.11.2 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		highway-0.7.0 \
+		human-panic-1.0.3 \
+		humantime-2.1.0 \
+		ignore-0.4.18 \
+		indexmap-1.8.0 \
+		itertools-0.10.3 \
+		itoa-0.4.8 \
+		itoa-1.0.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.113 \
+		log-0.4.14 \
+		memchr-2.4.1 \
+		memoffset-0.6.5 \
+		metrohash-1.0.6 \
+		miniz_oxide-0.4.4 \
+		normalize-line-endings-0.3.0 \
+		ntapi-0.3.6 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.1 \
+		object-0.27.1 \
+		once_cell-1.9.0 \
+		os_str_bytes-6.0.0 \
+		os_type-2.4.0 \
+		ppv-lite86-0.2.16 \
+		predicates-2.1.1 \
+		predicates-core-1.0.3 \
+		predicates-tree-1.0.5 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.36 \
+		quote-1.0.15 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
+		redox_syscall-0.2.10 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.25 \
+		rustc-demangle-0.1.21 \
+		ryu-1.0.9 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		seahash-4.1.0 \
+		serde-1.0.135 \
+		serde_derive-1.0.135 \
+		serde_json-1.0.78 \
+		static_assertions-1.1.0 \
+		strsim-0.10.0 \
+		syn-1.0.86 \
+		sysinfo-0.23.0 \
+		termcolor-1.1.2 \
+		termtree-0.2.4 \
+		textwrap-0.14.2 \
+		thread_local-1.1.3 \
+		toml-0.5.8 \
+		twox-hash-1.6.2 \
+		typed-builder-0.9.1 \
+		unicode-xid-0.2.2 \
+		utf8-width-0.1.5 \
+		uuid-0.8.2 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
