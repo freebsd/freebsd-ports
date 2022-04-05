@@ -2,6 +2,7 @@
 
 PORTNAME=	weechat
 DISTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
-		libgpg-error.so:security/libgpg-error
+		libgpg-error.so:security/libgpg-error \
+		libzstd.so:archivers/zstd
 
 USES=		cmake cpe ncurses libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
