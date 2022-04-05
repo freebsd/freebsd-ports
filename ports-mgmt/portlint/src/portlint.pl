@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 10;
+my $micro = 11;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -2860,7 +2860,14 @@ DIST_SUBDIR EXTRACT_ONLY
 						my $ip = $i;
 						$ip =~ s/^$ms\///;
 						my (@ip_parts) = split(/:/, $ip);
-						my $exp_sd = get_makevar($ip_parts[0]);
+						my $check_var = $ip_parts[0];
+						shift(@ip_parts);
+						foreach my $check_part (@ip_parts) {
+							if ($check_part =~ /^[A-Z]}/) {
+								$check_var .= ":$check_part";
+							}
+						}
+						my $exp_sd = get_makevar($check_var);
 						if ($exp_sd eq $sd) {
 							&perror("WARN", $file, -1, "typically when you specify magic site $ms ".
 								"you do not need anything else as $sd is assumed");
@@ -2994,12 +3001,6 @@ DIST_SUBDIR EXTRACT_ONLY
 		my %seen;
 		foreach my $conflict (split ' ', $conflicts) {
 			if (not $seen{$conflict}) {
-#				`$pkg_version -T '$makevar{PKGBASE}' '$conflict' || $pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
-#				my $selfconflict = !$?;
-#				if ($selfconflict) {
-#					&perror("FATAL", "", -1, "Package conflicts with itself. ".
-#						"You should remove \"$conflict\" from CONFLICTS.");
-#				} elsif ($conflict =~ m/-\[0-9\]\*$/) {
 				if ($conflict =~ m/-\[0-9\]\*$/) {
 					&perror("WARN", $file, -1, "CONFLICTS definition \"$conflict\" ".
 						"ends in redundant version pattern. ".
