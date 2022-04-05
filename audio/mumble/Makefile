@@ -89,6 +89,7 @@ MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
+	@${REINPLACE_CMD} -e 's|--no-add-needed|--no-copy-dt-needed-entries|' ${WRKSRC}/qmake/compiler.pri
 	@${RM} ${WRKSRC}/plugins/manual/.qmake.cache
 
 do-install:
