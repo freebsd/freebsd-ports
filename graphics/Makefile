@@ -1137,7 +1137,6 @@
     SUBDIR += xcftools
     SUBDIR += xd3d
     SUBDIR += xdgagrab
-    SUBDIR += xface.el
     SUBDIR += xfig
     SUBDIR += xfpovray
     SUBDIR += xfractint
