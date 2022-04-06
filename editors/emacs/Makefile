@@ -7,8 +7,8 @@ CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 .if ${FLAVOR:U} == canna
-PATCH_SITES+=		https://www.gentei.org/~yuuji/software/emacs27canna/:canna
-PATCHFILES+=		emacs27.0.90-canna-20200308.diff.gz:-p1:canna
+PATCH_SITES+=		https://www.gentei.org/~yuuji/software/emacs28canna/:canna
+PATCHFILES+=		emacs28.1-canna-20220406b.diff.gz:-p1:canna
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org
