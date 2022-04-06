@@ -1,11 +1,11 @@
-PORTNAME=	libgweather4
+PORTNAME=	libgweather
 PORTVERSION=	4.0.0
 PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/libgweather/${PORTVERSION:R}
-DISTNAME=	libgweather-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to access online weather information
