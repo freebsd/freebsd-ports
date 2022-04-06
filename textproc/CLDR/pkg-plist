@@ -51,6 +51,7 @@
 %%DATADIR%%/common/annotations/ha_NE.xml
 %%DATADIR%%/common/annotations/he.xml
 %%DATADIR%%/common/annotations/hi.xml
+%%DATADIR%%/common/annotations/hi_Latn.xml
 %%DATADIR%%/common/annotations/hr.xml
 %%DATADIR%%/common/annotations/hsb.xml
 %%DATADIR%%/common/annotations/hu.xml
@@ -196,6 +197,7 @@
 %%DATADIR%%/common/annotationsDerived/ha.xml
 %%DATADIR%%/common/annotationsDerived/he.xml
 %%DATADIR%%/common/annotationsDerived/hi.xml
+%%DATADIR%%/common/annotationsDerived/hi_Latn.xml
 %%DATADIR%%/common/annotationsDerived/hr.xml
 %%DATADIR%%/common/annotationsDerived/hsb.xml
 %%DATADIR%%/common/annotationsDerived/hu.xml
@@ -210,6 +212,7 @@
 %%DATADIR%%/common/annotationsDerived/ka.xml
 %%DATADIR%%/common/annotationsDerived/kab.xml
 %%DATADIR%%/common/annotationsDerived/kk.xml
+%%DATADIR%%/common/annotationsDerived/kl.xml
 %%DATADIR%%/common/annotationsDerived/km.xml
 %%DATADIR%%/common/annotationsDerived/kn.xml
 %%DATADIR%%/common/annotationsDerived/ko.xml
@@ -235,6 +238,7 @@
 %%DATADIR%%/common/annotationsDerived/no.xml
 %%DATADIR%%/common/annotationsDerived/or.xml
 %%DATADIR%%/common/annotationsDerived/pa.xml
+%%DATADIR%%/common/annotationsDerived/pa_Arab.xml
 %%DATADIR%%/common/annotationsDerived/pcm.xml
 %%DATADIR%%/common/annotationsDerived/pl.xml
 %%DATADIR%%/common/annotationsDerived/ps.xml
@@ -245,6 +249,7 @@
 %%DATADIR%%/common/annotationsDerived/ro.xml
 %%DATADIR%%/common/annotationsDerived/root.xml
 %%DATADIR%%/common/annotationsDerived/ru.xml
+%%DATADIR%%/common/annotationsDerived/rw.xml
 %%DATADIR%%/common/annotationsDerived/sa.xml
 %%DATADIR%%/common/annotationsDerived/sat.xml
 %%DATADIR%%/common/annotationsDerived/sc.xml
@@ -278,6 +283,7 @@
 %%DATADIR%%/common/annotationsDerived/uz.xml
 %%DATADIR%%/common/annotationsDerived/vi.xml
 %%DATADIR%%/common/annotationsDerived/wo.xml
+%%DATADIR%%/common/annotationsDerived/xh.xml
 %%DATADIR%%/common/annotationsDerived/yo.xml
 %%DATADIR%%/common/annotationsDerived/yo_BJ.xml
 %%DATADIR%%/common/annotationsDerived/yue.xml
@@ -399,6 +405,7 @@
 %%DATADIR%%/common/casing/ko.xml
 %%DATADIR%%/common/casing/kok.xml
 %%DATADIR%%/common/casing/ks.xml
+%%DATADIR%%/common/casing/ks_Deva.xml
 %%DATADIR%%/common/casing/ksb.xml
 %%DATADIR%%/common/casing/ksf.xml
 %%DATADIR%%/common/casing/ksh.xml
@@ -843,6 +850,7 @@
 %%DATADIR%%/common/main/en_MS.xml
 %%DATADIR%%/common/main/en_MT.xml
 %%DATADIR%%/common/main/en_MU.xml
+%%DATADIR%%/common/main/en_MV.xml
 %%DATADIR%%/common/main/en_MW.xml
 %%DATADIR%%/common/main/en_MY.xml
 %%DATADIR%%/common/main/en_NA.xml
@@ -1040,6 +1048,8 @@
 %%DATADIR%%/common/main/he_IL.xml
 %%DATADIR%%/common/main/hi.xml
 %%DATADIR%%/common/main/hi_IN.xml
+%%DATADIR%%/common/main/hi_Latn.xml
+%%DATADIR%%/common/main/hi_Latn_IN.xml
 %%DATADIR%%/common/main/hr.xml
 %%DATADIR%%/common/main/hr_BA.xml
 %%DATADIR%%/common/main/hr_HR.xml
@@ -1108,6 +1118,8 @@
 %%DATADIR%%/common/main/ks.xml
 %%DATADIR%%/common/main/ks_Arab.xml
 %%DATADIR%%/common/main/ks_Arab_IN.xml
+%%DATADIR%%/common/main/ks_Deva.xml
+%%DATADIR%%/common/main/ks_Deva_IN.xml
 %%DATADIR%%/common/main/ksb.xml
 %%DATADIR%%/common/main/ksb_TZ.xml
 %%DATADIR%%/common/main/ksf.xml
@@ -1446,6 +1458,7 @@
 %%DATADIR%%/common/main/zu.xml
 %%DATADIR%%/common/main/zu_ZA.xml
 %%DATADIR%%/common/properties/ExtendedPictographic.txt
+%%DATADIR%%/common/properties/coverageLevels.txt
 %%DATADIR%%/common/properties/external_data_versions.tsv
 %%DATADIR%%/common/properties/labels.txt
 %%DATADIR%%/common/properties/readme.md
@@ -1646,6 +1659,7 @@
 %%DATADIR%%/common/subdivisions/yue_Hans.xml
 %%DATADIR%%/common/subdivisions/zh.xml
 %%DATADIR%%/common/subdivisions/zu.xml
+%%DATADIR%%/common/supplemental-temp/coverageLevels2.xml
 %%DATADIR%%/common/supplemental/attributeValueValidity.xml
 %%DATADIR%%/common/supplemental/characters.xml
 %%DATADIR%%/common/supplemental/coverageLevels.xml
@@ -1678,6 +1692,7 @@
 %%DATADIR%%/common/testData/segmentation/graphemeCluster/TestSegmenter-Telugu.txt
 %%DATADIR%%/common/testData/segmentation/graphemeCluster/_readme.txt
 %%DATADIR%%/common/testData/transforms/_readme.txt
+%%DATADIR%%/common/testData/transforms/am-Brai-t-am-ethi.txt
 %%DATADIR%%/common/testData/transforms/am-Latn-t-am-m0-bgn.txt
 %%DATADIR%%/common/testData/transforms/am-fonipa-t-am.txt
 %%DATADIR%%/common/testData/transforms/am-t-am-fonipa.txt
@@ -1728,6 +1743,8 @@
 %%DATADIR%%/common/testData/transforms/be-Latn-t-be-m0-bgn.txt
 %%DATADIR%%/common/testData/transforms/bg-Latn-t-bg-m0-bgn.txt
 %%DATADIR%%/common/testData/transforms/blt-fonipa-t-blt.txt
+%%DATADIR%%/common/testData/transforms/byn-Latn-t-byn-ethi-m0-tekie-alibekit.txt
+%%DATADIR%%/common/testData/transforms/byn-Latn-t-byn-ethi-m0-xaleget.txt
 %%DATADIR%%/common/testData/transforms/ch-fonipa-t-ch.txt
 %%DATADIR%%/common/testData/transforms/chr-fonipa-t-chr.txt
 %%DATADIR%%/common/testData/transforms/chr-t-am.txt
@@ -1753,6 +1770,7 @@
 %%DATADIR%%/common/testData/transforms/chr-t-zu.txt
 %%DATADIR%%/common/testData/transforms/cs-fonipa-t-cs.txt
 %%DATADIR%%/common/testData/transforms/cy-fonipa-t-cy.txt
+%%DATADIR%%/common/testData/transforms/d0-morse-t-am-Ethi.txt
 %%DATADIR%%/common/testData/transforms/de-t-de-d0-ascii.txt
 %%DATADIR%%/common/testData/transforms/dv-Latn-t-dv-m0-bgn.txt
 %%DATADIR%%/common/testData/transforms/el-Latn-t-el-m0-bgn.txt
@@ -1851,6 +1869,7 @@
 %%DATADIR%%/common/testData/transforms/und-Beng-t-und-orya.txt
 %%DATADIR%%/common/testData/transforms/und-Beng-t-und-taml.txt
 %%DATADIR%%/common/testData/transforms/und-Beng-t-und-telu.txt
+%%DATADIR%%/common/testData/transforms/und-Cyrl-t-und-ethi-m0-gutgarts.txt
 %%DATADIR%%/common/testData/transforms/und-Deva-t-und-beng.txt
 %%DATADIR%%/common/testData/transforms/und-Deva-t-und-gujr.txt
 %%DATADIR%%/common/testData/transforms/und-Deva-t-und-guru.txt
@@ -1859,6 +1878,7 @@
 %%DATADIR%%/common/testData/transforms/und-Deva-t-und-orya.txt
 %%DATADIR%%/common/testData/transforms/und-Deva-t-und-taml.txt
 %%DATADIR%%/common/testData/transforms/und-Deva-t-und-telu.txt
+%%DATADIR%%/common/testData/transforms/und-Ethi-t-sgw-ethi-m0-gurage-2013.txt
 %%DATADIR%%/common/testData/transforms/und-Gujr-t-und-beng.txt
 %%DATADIR%%/common/testData/transforms/und-Gujr-t-und-deva.txt
 %%DATADIR%%/common/testData/transforms/und-Gujr-t-und-guru.txt
@@ -1885,6 +1905,13 @@
 %%DATADIR%%/common/testData/transforms/und-Knda-t-und-telu.txt
 %%DATADIR%%/common/testData/transforms/und-Latn-t-und-beng.txt
 %%DATADIR%%/common/testData/transforms/und-Latn-t-und-deva.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-aethiopi.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-alaloc.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-beta-metsehaf.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-es3842.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-ies-jes-1964.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-lambdin.txt
+%%DATADIR%%/common/testData/transforms/und-Latn-t-und-ethi-m0-sera.txt
 %%DATADIR%%/common/testData/transforms/und-Latn-t-und-gujr.txt
 %%DATADIR%%/common/testData/transforms/und-Latn-t-und-guru.txt
 %%DATADIR%%/common/testData/transforms/und-Latn-t-und-knda.txt
@@ -1908,6 +1935,7 @@
 %%DATADIR%%/common/testData/transforms/und-Orya-t-und-mlym.txt
 %%DATADIR%%/common/testData/transforms/und-Orya-t-und-taml.txt
 %%DATADIR%%/common/testData/transforms/und-Orya-t-und-telu.txt
+%%DATADIR%%/common/testData/transforms/und-Sarb-t-und-ethi.txt
 %%DATADIR%%/common/testData/transforms/und-Taml-t-und-beng.txt
 %%DATADIR%%/common/testData/transforms/und-Taml-t-und-deva.txt
 %%DATADIR%%/common/testData/transforms/und-Taml-t-und-gujr.txt
@@ -1984,6 +2012,20 @@
 %%DATADIR%%/common/transforms/Devanagari-Tamil.xml
 %%DATADIR%%/common/transforms/Devanagari-Telugu.xml
 %%DATADIR%%/common/transforms/Devanagari-ur.xml
+%%DATADIR%%/common/transforms/Ethiopic-Braille-Amharic.xml
+%%DATADIR%%/common/transforms/Ethiopic-Cyrillic-Gutgarts.xml
+%%DATADIR%%/common/transforms/Ethiopic-Ethiopic-Gurage.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-ALALOC.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-Aethiopica.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-BetaMetsehaf.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-ES3842.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-IES_JES_1964.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-Lambdin.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-SERA.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-TekieAlibekit.xml
+%%DATADIR%%/common/transforms/Ethiopic-Latin-Xaleget.xml
+%%DATADIR%%/common/transforms/Ethiopic-MorseCode-Amharic.xml
+%%DATADIR%%/common/transforms/Ethiopic-Musnad.xml
 %%DATADIR%%/common/transforms/Fullwidth-Halfwidth.xml
 %%DATADIR%%/common/transforms/Georgian-Latin-BGN.xml
 %%DATADIR%%/common/transforms/Georgian-Latin-BGN_1981.xml
