@@ -10,8 +10,8 @@ COMMENT=	Pytest plugin to check PEP8 requirements
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cache>=0:devel/py-pytest-cache@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>=2.4.2:devel/py-pytest4@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest4-cache>=0:devel/py-pytest4-cache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pep8>=1.3:devel/pep8@${PY_FLAVOR}
 
 USES=		python:3.6+
