@@ -1,8 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	igraph
-DISTVERSION=	1.2.11
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -20,7 +19,7 @@ CRAN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran:auto-plist,compiles gnome
+USES=		compiler:c++11-lang cran:auto-plist,compiles gnome
 USE_GNOME=	libxml2
 
 .include <bsd.port.mk>
