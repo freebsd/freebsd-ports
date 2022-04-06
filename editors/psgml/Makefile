@@ -16,6 +16,10 @@ COMMENT=	Major mode for editing SGML and XML documents for Emacs
 
 LICENSE=	GPLv2
 
+.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
+BROKEN=		fails to build
+.endif
+
 USES=		emacs
 
 GNU_CONFIGURE=	YES
