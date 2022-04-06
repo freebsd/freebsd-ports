@@ -276,8 +276,6 @@ lib/emby-server/system/dashboard-ui/home_horiz/home.html
 lib/emby-server/system/dashboard-ui/home_horiz/home.js
 lib/emby-server/system/dashboard-ui/home_horiz/spotlight.js
 lib/emby-server/system/dashboard-ui/home_horiz/tabbedpage.js
-lib/emby-server/system/dashboard-ui/home_horiz/views.channels.html
-lib/emby-server/system/dashboard-ui/home_horiz/views.channels.js
 lib/emby-server/system/dashboard-ui/home_horiz/views.generic.html
 lib/emby-server/system/dashboard-ui/home_horiz/views.generic.js
 lib/emby-server/system/dashboard-ui/home_horiz/views.livetv.html
