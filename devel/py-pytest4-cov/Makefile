@@ -3,7 +3,7 @@ PORTVERSION=	2.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       ${PORTNAME:C/4//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Pytest plugin for measuring coverage (legacy version for pytest 4)
