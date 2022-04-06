@@ -5111,6 +5111,7 @@
     SUBDIR += py-pytest4-asyncio
     SUBDIR += py-pytest4-cache
     SUBDIR += py-pytest4-cov
+    SUBDIR += py-pytest4-flakes
     SUBDIR += py-python-Levenshtein
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
