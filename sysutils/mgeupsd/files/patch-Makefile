@@ -1,5 +1,13 @@
---- Makefile.orig	1998-12-25 17:10:57.000000000 +0800
-+++ Makefile	2013-11-15 23:04:20.000000000 +0800
+--- Makefile.orig	1998-12-25 09:10:57 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+-CC=gcc
+-CFLAGS=-Wall -O2
++CC=cc
++CFLAGS=-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing 
+ LDFLAGS=-s
+ 
+ all:	mgeupsd
 @@ -8,8 +8,8 @@ mgeupsd:	mgeupsd.o
  	$(CC) $(LDFLAGS) -o $@ $<
  

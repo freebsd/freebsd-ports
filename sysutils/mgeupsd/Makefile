@@ -2,12 +2,15 @@
 
 PORTNAME=	mgeupsd
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SUNSITE/system/ups
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor a state of MGE Pulsar UPS connected to RS-232 port
+
+DEPRECATED=	Last release is 23 years old. It is not clear what devices are supported.
+EXPIRATION_DATE=	2022-07-25
 
 USES=		gmake
 WRKSRC=		${WRKDIR}/MGE
