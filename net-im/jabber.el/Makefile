@@ -11,9 +11,8 @@ DISTNAME=		emacs-jabber-${PORTVERSION}
 MAINTAINER=	max.n.boyarov@gmail.com
 COMMENT=	Minimal jabber client for [X]Emacs
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		Debugger entered--Lisp error: (wrong-type-argument stringp nil)
-.endif
+BROKEN=		fails to build: jabber-chat.el:25:1: Error: Wrong number of arguments: (3 . 3), 2
+EXPIRATION_DATE=	2022-06-01
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnutls-cli:security/gnutls
 
