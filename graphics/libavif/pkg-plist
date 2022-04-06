@@ -6,6 +6,6 @@ lib/cmake/libavif/libavif-config-version.cmake
 lib/cmake/libavif/libavif-config.cmake
 %%PIXBUF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-avif.so
 lib/libavif.so
-lib/libavif.so.13
-lib/libavif.so.13.0.0
+lib/libavif.so.14
+lib/libavif.so.14.0.0
 libdata/pkgconfig/libavif.pc

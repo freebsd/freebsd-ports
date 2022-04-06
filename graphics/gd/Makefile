@@ -2,7 +2,7 @@
 
 PORTNAME=	libgd
 PORTVERSION=	2.3.3
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
