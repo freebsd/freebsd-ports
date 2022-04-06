@@ -322,6 +322,58 @@
     </dates>
   </vuln>
 
+  <vuln vid="cb84b940-add5-11ec-9bc8-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><eq>4.6.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://www.powerdns.com/news.html#20220325">
+	  <p>PowerDNS Security Advisory 2022-01: incomplete validation of incoming IXFR transfer in Authoritative Server and Recursor.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-27227</cvename>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2022-01.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-25</discovery>
+      <entry>2022-03-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2cda5c88-add4-11ec-9bc8-6805ca2fa271">
+    <topic>powerdns -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><eq>4.6.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://www.powerdns.com/news.html#20220325">
+	  <p>PowerDNS Security Advisory 2022-01: incomplete validation of incoming IXFR transfer in Authoritative Server and Recursor.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-27227</cvename>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2022-01.html</url>
+    </references>
+    <dates>
+      <discovery>2022-03-25</discovery>
+      <entry>2022-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="323f900d-ac6d-11ec-a0b8-3065ec8fd3ec">
     <topic>chromium -- V8 type confusion</topic>
     <affects>
