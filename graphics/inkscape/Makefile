@@ -6,6 +6,10 @@ PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.org/gallery/item/31668/
 
+PATCH_SITES=	https://gitlab.com/inkscape/inkscape/-/commit/
+PATCHFILES=	a18c57ffff313fd08bc8a44f6b6bf0b01d7e9b75.diff:-p1 \
+		d989cdf1059c78bc3bb6414330242073768d640b.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
 
