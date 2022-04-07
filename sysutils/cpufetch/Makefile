@@ -1,15 +1,16 @@
 PORTNAME=	cpufetch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	joel@insane.engineer
+MAINTAINER=	jbo@insane.engineer
 COMMENT=	Simple yet fancy CPU architecture fetching tool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to other architectures
 
 USES=		gmake
