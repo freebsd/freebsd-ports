@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.3
+DISTVERSION=	3.2.4
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		async-lock-2.4.0 \
 		async-mutex-1.4.0 \
 		async-process-1.3.0 \
-		async-std-1.10.0 \
+		async-std-1.11.0 \
 		async-task-4.0.3 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.1.6 \
+		clap-3.1.8 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
 		criterion-0.3.5 \
