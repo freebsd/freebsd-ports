@@ -1,7 +1,7 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
 
 PORTNAME=	SQL-Abstract-More
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
