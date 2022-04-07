@@ -1,3 +1,33 @@
+  <vuln vid="38f2e3a0-b61e-11ec-9ebc-1c697aa5a594">
+    <topic>FreeBSD -- zlib compression out-of-bounds write</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.0</ge><lt>13.0_11</lt></range>
+	<range><ge>12.3</ge><lt>12.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Certain inputs can cause zlib's compression routine to overwrite an
+	internal buffer with compressed data.  This issue may require the use
+	of uncommon or non-default compression parameters.</p>
+	<h1>Impact:</h1>
+	<p>The out-of-bounds write may result in memory corruption and an
+	application crash or kernel panic.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2018-25032</cvename>
+      <freebsdsa>SA-22:08.zlib</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-04-06</discovery>
+      <entry>2022-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d4cc994f-b61d-11ec-9ebc-1c697aa5a594">
     <topic>FreeBSD -- 802.11 heap buffer overflow</topic>
     <affects>
