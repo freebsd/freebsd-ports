@@ -1,10 +1,13 @@
 # Created by: Will Andrews <andrews@technologist.com>
 
 PORTNAME=	ScrollZ
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
 CATEGORIES=	irc
+
+# Fix build with clang
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	c0dfa140341cf9a848a6e5f926392623d03d2c28.patch:-p1
 
 MAINTAINER=	freebsd@bitchx.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
@@ -20,9 +23,9 @@ DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 PLIST_SUB=	SCROLLZ_VER="${PORTVERSION}"
 
 OPTIONS_DEFINE=		IPV6 REGEX UTF8
+OPTIONS_DEFAULT=	OPENSSL REGEX UTF8
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL REGEX UTF8
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
