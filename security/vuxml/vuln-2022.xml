@@ -1,3 +1,34 @@
+  <vuln vid="d4cc994f-b61d-11ec-9ebc-1c697aa5a594">
+    <topic>FreeBSD -- 802.11 heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_11</lt></range>
+	<range><ge>12.3</ge><lt>12.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The 802.11 beacon handling routine failed to validate the length of
+	an IEEE 802.11s Mesh ID before copying it to a heap-allocated
+	buffer.</p>
+	<h1>Impact:</h1>
+	<p>While a FreeBSD Wi-Fi client is in scanning mode (i.e., not
+	associated with a SSID) a malicious beacon frame may overwrite kernel
+	memory, leading to remote code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23088</cvename>
+      <freebsdsa>SA-22:07.wifi_meshid</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-04-06</discovery>
+      <entry>2022-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="703c4761-b61d-11ec-9ebc-1c697aa5a594">
     <topic>FreeBSD -- mpr/mps/mpt driver ioctl heap out-of-bounds write</topic>
     <affects>
