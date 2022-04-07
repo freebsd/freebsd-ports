@@ -1,5 +1,5 @@
 PORTNAME=	splitter
-PORTVERSION=	r650
+PORTVERSION=	r651
 CATEGORIES=	astro converters java
 MASTER_SITES=	https://www.mkgmap.org.uk/download/
 PKGNAMEPREFIX=	mkgmap-
