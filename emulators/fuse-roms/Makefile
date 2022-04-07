@@ -5,9 +5,9 @@ PORTVERSION=	0.9.0
 PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.pbone.net/mirror/rpmfusion.org/${FC_SUBDIR}/:1 \
-		http://zxspectrum.it.omegahg.com/rom/:2
+		https://gitlab.com/menelkir/fuseroms/-/raw/main/fuse/:2
 DISTFILES=	fuse-emulator-roms-${PORTVERSION}-${FCREV}.fc${FCVER}.noarch.rpm:1 \
-		Opus-22.rom:2
+		opus.rom:2
 EXTRACT_ONLY=	fuse-emulator-roms-${PORTVERSION}-${FCREV}.fc${FCVER}.noarch.rpm
 
 MAINTAINER=	rene@FreeBSD.org
@@ -16,8 +16,8 @@ COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 LICENSE=	NONE
 # No explicit permission to redistribute
 
-FCREV=		14
-FCVER=		33
+FCREV=		16
+FCVER=		35
 FC_SUBDIR=	nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/Packages/f
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_PLIST_FILES=${DOCSDIR_REL}/rom-distribution.txt
 
 post-extract:
-	${CP} ${DISTDIR}/Opus-22.rom ${WRKDIR}/usr/share/fuse/opus.rom
+	${CP} ${DISTDIR}/opus.rom ${WRKDIR}/usr/share/fuse/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
