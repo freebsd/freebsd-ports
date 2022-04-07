@@ -2,6 +2,7 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-server
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -10,11 +11,11 @@ COMMENT=	Web frontend for Seafile
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=0:www/py-django32@${PY_FLAVOR}
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
-		${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django32>=0:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-webpack-loader>=0:www/py-django-webpack-loader@${PY_FLAVOR} \
@@ -23,17 +24,17 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}django-picklefield>=0:www/py-django-picklefield@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-formtools>=0:www/py-django-formtools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-formtools>=2.3:www/py-django-formtools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-simple-captcha>=0:www/py-django-simple-captcha@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework>=0:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj32-djangorestframework>=0:www/py-dj32-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysaml26>=6.5.1:security/py-pysaml26@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.14.0:devel/py-cffi@${PY_FLAVOR}
 
 USES=		gettext-tools:build python:3.7+ shebangfix
 USE_GITHUB=	yes
