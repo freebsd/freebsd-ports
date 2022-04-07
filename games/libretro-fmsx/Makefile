@@ -1,5 +1,5 @@
 PORTNAME=	libretro-fmsx
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220309
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	fmsx-libretro
-GH_TAGNAME=	c2c26b1
+GH_TAGNAME=	f9ea9ea
 
 PLIST_FILES=	lib/libretro/fmsx_libretro.so
 

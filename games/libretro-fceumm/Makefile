@@ -1,5 +1,5 @@
 PORTNAME=	libretro-fceumm
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220406
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -12,7 +12,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	91ccd3b
+GH_TAGNAME=	b3c35b6
 
 PLIST_FILES=	lib/libretro/fceumm_libretro.so
 

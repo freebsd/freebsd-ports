@@ -1,5 +1,5 @@
 PORTNAME=	libretro-beetle_wswan
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20220221
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-wswan-libretro
-GH_TAGNAME=	5b03d1b
+GH_TAGNAME=	8f9fc6b
 
 PLIST_FILES=	lib/libretro/mednafen_wswan_libretro.so
 

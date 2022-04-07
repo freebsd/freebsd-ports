@@ -1,5 +1,5 @@
 PORTNAME=	libretro-dosbox
-PORTVERSION=	0.20201229
+PORTVERSION=	0.20220406
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	dosbox-libretro
-GH_TAGNAME=	aa71b67
+GH_TAGNAME=	74cd17e
 
 PLIST_FILES=	lib/libretro/dosbox_libretro.so
 

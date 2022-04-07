@@ -1,5 +1,5 @@
 PORTNAME=	libretro-a5200
-PORTVERSION=	0.20220113
+PORTVERSION=	0.20220327
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -12,7 +12,7 @@ USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	a5200
-GH_TAGNAME=	20c92c9bb159ddb9cc80afb66ad67148c995f7a1
+GH_TAGNAME=	599a2e5
 
 USE_LDCONFIG=	yes
 PLIST_FILES=	lib/libretro/a5200_libretro.so

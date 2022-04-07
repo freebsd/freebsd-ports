@@ -1,5 +1,5 @@
 PORTNAME=	libretro-beetle_gba
-PORTVERSION=	0.20210131
+PORTVERSION=	0.20210918
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-gba-libretro
-GH_TAGNAME=	8d1e421
+GH_TAGNAME=	3818257
 
 PLIST_FILES=	lib/libretro/mednafen_gba_libretro.so
 

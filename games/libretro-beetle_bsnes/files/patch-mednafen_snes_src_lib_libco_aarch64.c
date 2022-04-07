@@ -1,17 +1,18 @@
---- mednafen/snes/src/lib/libco/aarch64.c.orig	2020-04-28 06:21:33 UTC
+--- mednafen/snes/src/lib/libco/aarch64.c.orig	2022-04-07 09:05:20 UTC
 +++ mednafen/snes/src/lib/libco/aarch64.c
-@@ -12,7 +12,13 @@
- #include <stdint.h>
+@@ -15,6 +15,15 @@
+ #include <malloc.h>
+ #endif
  
- #ifndef IOS
--#include <malloc.h>
++#ifndef __BSD__
 +#include <sys/param.h>
 +
 +void *
 +memalign(size_t align, size_t size)
 +{
-+	return (aligned_alloc(align, roundup(size, align)));
++        return (aligned_alloc(align, roundup(size, align)));
 +}
- #endif
- 
++
  #ifdef __cplusplus
+ extern "C" {
+ #endif

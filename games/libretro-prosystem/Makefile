@@ -1,5 +1,5 @@
 PORTNAME=	libretro-prosystem
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220228
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	prosystem-libretro
-GH_TAGNAME=	a812cab
+GH_TAGNAME=	fbf62c3
 
 PLIST_FILES=	lib/libretro/prosystem_libretro.so
 

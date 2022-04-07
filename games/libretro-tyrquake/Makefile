@@ -1,5 +1,5 @@
 PORTNAME=	libretro-tyrquake
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220401
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	tyrquake
-GH_TAGNAME=	e76477d
+GH_TAGNAME=	c2b8ea0
 
 PLIST_FILES=	lib/libretro/tyrquake_libretro.so
 

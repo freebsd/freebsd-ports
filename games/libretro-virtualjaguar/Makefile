@@ -1,5 +1,5 @@
 PORTNAME=	libretro-virtualjaguar
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220304
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	virtualjaguar-libretro
-GH_TAGNAME=	afe223e
+GH_TAGNAME=	263c979
 
 PLIST_FILES=	lib/libretro/virtualjaguar_libretro.so
 

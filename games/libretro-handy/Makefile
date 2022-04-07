@@ -1,5 +1,5 @@
 PORTNAME=	libretro-handy
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220215
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -12,7 +12,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	94c0ab5
+GH_TAGNAME=	5145f79
 
 PLIST_FILES=	lib/libretro/handy_libretro.so
 

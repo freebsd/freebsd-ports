@@ -1,5 +1,5 @@
 PORTNAME=	libretro-2048
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220327
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -12,7 +12,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	35a299c
+GH_TAGNAME=	a8899c9
 
 PLIST_FILES=	lib/libretro/2048_libretro.so
 

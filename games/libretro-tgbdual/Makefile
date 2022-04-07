@@ -1,5 +1,5 @@
 PORTNAME=	libretro-tgbdual
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20210606
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	tgbdual-libretro
-GH_TAGNAME=	18fd609
+GH_TAGNAME=	1e0c4f9
 
 PLIST_FILES=	lib/libretro/tgbdual_libretro.so
 

@@ -1,5 +1,5 @@
 PORTNAME=	libretro-bluemsx
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220213
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	blueMSX-libretro
-GH_TAGNAME=	faf470e
+GH_TAGNAME=	92d0c41
 
 PLIST_FILES=	lib/libretro/bluemsx_libretro.so
 

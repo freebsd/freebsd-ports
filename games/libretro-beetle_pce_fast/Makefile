@@ -1,5 +1,5 @@
 PORTNAME=	libretro-beetle_pce_fast
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220205
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-pce-fast-libretro
-GH_TAGNAME=	67426f4
+GH_TAGNAME=	e880168
 
 PLIST_FILES=	lib/libretro/mednafen_pce_fast_libretro.so
 

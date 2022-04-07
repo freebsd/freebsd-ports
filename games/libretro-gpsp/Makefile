@@ -1,5 +1,5 @@
 PORTNAME=	libretro-gpsp
-PORTVERSION=	0.20210215
+PORTVERSION=	0.20220403
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	gpsp
-GH_TAGNAME=	300d0c0
+GH_TAGNAME=	d4547ba
 
 PLIST_FILES=	lib/libretro/gpsp_libretro.so
 

@@ -1,5 +1,5 @@
 PORTNAME=	libretro-stella2014
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220205
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	stella2014-libretro
-GH_TAGNAME=	64f9364
+GH_TAGNAME=	1a2e96b
 
 PLIST_FILES=	lib/libretro/stella2014_libretro.so
 

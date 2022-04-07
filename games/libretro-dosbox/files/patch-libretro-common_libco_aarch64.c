@@ -1,17 +1,18 @@
---- libretro-common/libco/aarch64.c.orig	2020-04-28 06:08:20 UTC
+--- libretro-common/libco/aarch64.c.orig	2022-04-07 09:34:40 UTC
 +++ libretro-common/libco/aarch64.c
-@@ -12,7 +12,13 @@
- #include <stdint.h>
+@@ -15,6 +15,15 @@
+ #include <malloc.h>
+ #endif
  
- #ifndef IOS
--#include <malloc.h>
++#ifndef __BSD__
 +#include <sys/param.h>
-+
 +void *
 +memalign(size_t align, size_t size)
 +{
-+	return (aligned_alloc(align, roundup(size, align)));
++    return (aligned_alloc(align, roundup(size, align)));
 +}
- #endif
- 
++#endif
++
  #ifdef __cplusplus
+ extern "C" {
+ #endif

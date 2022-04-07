@@ -1,5 +1,5 @@
 PORTNAME=	libretro-cap32
-PORTVERSION=	0.20210110
+PORTVERSION=	0.20220402
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -12,7 +12,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	ad7397f
+GH_TAGNAME=	a1b2329
 
 PLIST_FILES=	lib/libretro/cap32_libretro.so
 
