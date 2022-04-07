@@ -1,4 +1,4 @@
-TIMESTAMP = 1631913563
+TIMESTAMP = 1649365093
 SHA256 (rust/crates/aho-corasick-0.7.6.crate) = 58fb5e95d83b38284460a5fda7d6470aa0b8844d283a0b614b8535e880800d2d
 SIZE (rust/crates/aho-corasick-0.7.6.crate) = 108953
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -323,5 +323,5 @@ SHA256 (rust/crates/zeroize-1.4.1.crate) = 377db0846015f7ae377174787dd452e1c5f5a
 SIZE (rust/crates/zeroize-1.4.1.crate) = 16153
 SHA256 (rust/crates/zeroize_derive-1.0.0.crate) = de251eec69fc7c1bc3923403d18ececb929380e016afe103da75f396704f8ca2
 SIZE (rust/crates/zeroize_derive-1.0.0.crate) = 4247
-SHA256 (guoxbin-dtool-v0.11.0_GH0.tar.gz) = 97a0c7f54e4e58001d02a031564cab391c26baf9a729417d59002863e03804d6
-SIZE (guoxbin-dtool-v0.11.0_GH0.tar.gz) = 59587
+SHA256 (guoxbin-dtool-v0.12.0_GH0.tar.gz) = e1a1f531f9d01dbe67416cf7ee9a8237326030e8baa311484b7d1a9ff35bd9ff
+SIZE (guoxbin-dtool-v0.12.0_GH0.tar.gz) = 59700
