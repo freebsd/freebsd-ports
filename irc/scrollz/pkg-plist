@@ -541,6 +541,7 @@ man/man1/scrollz.1.gz
 %%DATADIR%%/help/set/netsplit_time
 %%DATADIR%%/help/set/no_ask_nickname
 %%DATADIR%%/help/set/no_ctcp_flood
+%%DATADIR%%/help/set/notification_level
 %%DATADIR%%/help/set/notify_handler
 %%DATADIR%%/help/set/notify_level
 %%DATADIR%%/help/set/notify_on_termination
