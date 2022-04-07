@@ -4,7 +4,7 @@ DISTVERSION=	2.3.1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple color chooser
+COMMENT=	Colour picker is a simple color chooser
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
