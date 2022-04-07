@@ -1,3 +1,44 @@
+  <vuln vid="ba796b98-b61c-11ec-9ebc-1c697aa5a594">
+    <topic>FreeBSD -- Bhyve e82545 device emulation out-of-bounds write</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_11</lt></range>
+	<range><ge>12.3</ge><lt>12.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The e1000 network adapters permit a variety of modifications to an
+	Ethernet packet when it is being transmitted.  These include the
+	insertion of IP and TCP checksums, insertion of an Ethernet VLAN
+	header, and TCP segmentation offload ("TSO").  The e1000 device model
+	uses an on-stack buffer to generate the modified packet header when
+	simulating these modifications on transmitted packets.</p>
+	<p>When checksum offload is requested for a transmitted packet, the
+	e1000 device model used a guest-provided value to specify the checksum
+	offset in the on-stack buffer.  The offset was not validated for
+	certain packet types.</p>
+	<h1>Impact:</h1>
+	<p>A misbehaving bhyve guest could overwrite memory in the bhyve
+	process on the host, possibly leading to code execution in the host
+	context.</p>
+	<p>The bhyve process runs in a Capsicum sandbox, which (depending on
+	the FreeBSD version and bhyve configuration) limits the impact of
+	exploiting this issue.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23087</cvename>
+      <freebsdsa>SA-22:05.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-04-06</discovery>
+      <entry>2022-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27d39055-b61b-11ec-9ebc-1c697aa5a594">
     <topic>FreeBSD -- Potential jail escape vulnerabilities in netmap</topic>
     <affects>
