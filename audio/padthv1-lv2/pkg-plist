@@ -6,9 +6,9 @@ lib/lv2/padthv1.lv2/padthv1_ui.ttl
 man/fr/man1/padthv1.1.gz
 man/man1/padthv1.1.gz
 share/applications/org.rncbc.padthv1.desktop
-share/icons/hicolor/32x32/apps/padthv1.png
-share/icons/hicolor/32x32/mimetypes/application-x-padthv1-preset.png
-share/icons/hicolor/scalable/apps/padthv1.svg
-share/icons/hicolor/scalable/mimetypes/application-x-padthv1-preset.svg
-share/metainfo/org.rncbc.padthv1.xml
-share/mime/packages/padthv1.xml
+share/icons/hicolor/32x32/apps/org.rncbc.padthv1.png
+share/icons/hicolor/32x32/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.png
+share/icons/hicolor/scalable/apps/org.rncbc.padthv1.svg
+share/icons/hicolor/scalable/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.svg
+share/metainfo/org.rncbc.padthv1.metainfo.xml
+share/mime/packages/org.rncbc.padthv1.xml
