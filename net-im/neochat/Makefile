@@ -1,8 +1,7 @@
 PORTNAME=	neochat
-DISTVERSION=	1.2.0
-PORTREVISION=	5
+DISTVERSION=	22.02
 CATEGORIES=	net-im
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Glossy Matrix IM client based on KDE technologies
@@ -13,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libqt5keychain.so:security/qtkeychain
 BUILD_DEPENDS=	libquotient>=0.6.11:net-im/libquotient \
-		kquickimageeditor>=0.1.2:graphics/kquickimageeditor
+		kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
+		${LOCALBASE}/include/qcoro5/qcoro/qcoro.h:devel/qcoro
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
-RUN_DEPENDS=	kquickimageeditor>=0.1.2:graphics/kquickimageeditor
+RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor
 
 USES=		cmake compiler:c++17-lang gl kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		gl
