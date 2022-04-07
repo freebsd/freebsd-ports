@@ -24,7 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=2.1.1:devel/py-cli-helpers@${PY
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0<0.5:databases/py-sqlparse@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.7.0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sshtunnel>=0:net/py-sshtunnel@${PY_FLAVOR}
 
 USES=		pgsql python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
