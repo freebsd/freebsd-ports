@@ -106,9 +106,11 @@ post-patch:
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} \
 		-e 's|$$OCAMLLIB/$$LABLGTK_NAME|$$OCAMLLIB/site-lib/$$LABLGTK_NAME|' \
+		-e 's|^DEVFLAGS=|&-unsafe-string|' \
 		${WRKSRC}/config/configure
 	@${REINPLACE_CMD} \
 		-e 's|+labl|+site-lib/labl|' \
+		-e '/BITSTRING/s|OCAMLC)|& -unsafe-string|' \
 		${WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -E \
 		-e 's@(#include <)(lablgtk2/)@\1site-lib/\2@'  \
