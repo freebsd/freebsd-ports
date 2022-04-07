@@ -1,0 +1,7 @@
+This is micro-framework that provides validation in your Dancer2
+application. It consists of dsl's keywords and a set of agreements.
+It has a set of built-in validators that can be extended by
+compatible modules (extensions). Also proved runtime switching
+between languages, so you can show proper error messages to users.
+
+WWW: https://metacpan.org/pod/Dancer2::Plugin::FormValidator
