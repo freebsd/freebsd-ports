@@ -680,12 +680,6 @@ include/chrono/utils/ChUtilsGeometry.h
 include/chrono/utils/ChUtilsInputOutput.h
 include/chrono/utils/ChUtilsSamplers.h
 include/chrono/utils/ChUtilsValidation.h
-%%CASCADE%%include/chrono_cascade/ChApiCASCADE.h
-%%CASCADE%%include/chrono_cascade/ChBodyEasyCascade.h
-%%CASCADE%%include/chrono_cascade/ChCascadeDoc.h
-%%CASCADE%%include/chrono_cascade/ChCascadeMeshTools.h
-%%CASCADE%%include/chrono_cascade/ChCascadeShapeAsset.h
-%%CASCADE%%include/chrono_cascade/ChCascadeTriangulate.h
 %%COSIMULATION%%include/chrono_cosimulation/ChApiCosimulation.h
 %%COSIMULATION%%include/chrono_cosimulation/ChCosimulation.h
 %%COSIMULATION%%include/chrono_cosimulation/ChExceptionSocket.h
@@ -1407,7 +1401,6 @@ include/chrono_thirdparty/yafel/DualNumber.hpp
 %%VEHICLE%%include/chrono_vehicle/wheeled_vehicle/wheel/Wheel.h
 lib/cmake/ChronoConfig.cmake
 lib/libChronoEngine.so
-%%CASCADE%%lib/libChronoEngine_cascade.so
 %%COSIMULATION%%lib/libChronoEngine_cosimulation.so
 %%IRRLICHT%%lib/libChronoEngine_irrlicht.so
 %%MUMPS%%lib/libChronoEngine_mumps.so
