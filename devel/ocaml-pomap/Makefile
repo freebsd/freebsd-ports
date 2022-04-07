@@ -1,47 +1,36 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 
 PORTNAME=	pomap
-PORTVERSION=	3.0.7
-DISTVERSIONPREFIX=	v
+PORTVERSION=	4.1.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library to maintain a list of partially ordered elements
 
-LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	mmottl
+BUILD_DEPENDS=	dune:devel/ocaml-dune
 
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
-USE_OCAML_WASH=	yes
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples
-MAKE_JOBS_UNSAFE=yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-build:
+	cd ${BUILD_WRKSRC} && dune build --verbose
+
+do-install:
+	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
+		--libdir=${OCAML_SITELIBDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/pomap/pomap.cmxs
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS.txt CHANGES.txt README.md
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
