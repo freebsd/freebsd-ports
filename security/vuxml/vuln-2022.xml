@@ -1,3 +1,36 @@
+  <vuln vid="703c4761-b61d-11ec-9ebc-1c697aa5a594">
+    <topic>FreeBSD -- mpr/mps/mpt driver ioctl heap out-of-bounds write</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_11</lt></range>
+	<range><ge>12.3</ge><lt>12.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Handlers for *_CFG_PAGE read / write ioctls in the mpr, mps, and
+	mpt drivers allocated a buffer of a caller-specified size, but
+	copied to it a fixed size header.  Other heap content would be
+	overwritten if the specified size was too small.</p>
+	<h1>Impact:</h1>
+	<p>Users with access to the mpr, mps or mpt device node may overwrite
+	heap data, potentially resulting in privilege escalation.  Note that
+	the device node is only accessible to root and members of the operator
+	group.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23086</cvename>
+      <freebsdsa>SA-22:06.ioctl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-04-06</discovery>
+      <entry>2022-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba796b98-b61c-11ec-9ebc-1c697aa5a594">
     <topic>FreeBSD -- Bhyve e82545 device emulation out-of-bounds write</topic>
     <affects>
