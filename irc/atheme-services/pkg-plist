@@ -69,6 +69,7 @@ etc/atheme/atheme.cron.example
 %%CONTRIB%%lib/atheme/modules/contrib/os_testcmd.so
 %%CONTRIB%%lib/atheme/modules/contrib/os_testproc.so
 %%CONTRIB%%lib/atheme/modules/contrib/os_trace.so
+%%CONTRIB%%lib/atheme/modules/contrib/sasl_blacklist.so
 %%CONTRIB%%lib/atheme/modules/contrib/wumpus.so
 %%CRACKLIB%%lib/atheme/modules/nickserv/cracklib.so
 %%DOCS%%share/doc/atheme/FAQ
@@ -554,6 +555,7 @@ etc/atheme/atheme.cron.example
 %%NLS%%share/locale/es/LC_MESSAGES/atheme.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/atheme.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/atheme.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/atheme.mo
 %%PERL%%lib/atheme/modules/scripting/examples/catserv.pl
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme.pm
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme.so
@@ -602,6 +604,7 @@ include/atheme/hook.h
 include/atheme/hooktypes.h
 include/atheme/httpd.h
 include/atheme/i18n.h
+include/atheme/instpaths.h
 include/atheme/inline/account.h
 include/atheme/inline/channels.h
 include/atheme/inline/connection.h
@@ -720,6 +723,7 @@ lib/atheme/modules/chanserv/version.so
 lib/atheme/modules/chanserv/voice.so
 lib/atheme/modules/chanserv/why.so
 lib/atheme/modules/chanserv/xop.so
+lib/atheme/modules/crypto/argon2d.so
 lib/atheme/modules/crypto/ircservices.so
 lib/atheme/modules/crypto/pbkdf2.so
 lib/atheme/modules/crypto/pbkdf2v2.so
