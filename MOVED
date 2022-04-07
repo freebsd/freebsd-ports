@@ -17120,3 +17120,4 @@ databases/opentsdb||2022-03-31|Removed: unmaintained, depends on expired devel/h
 databases/hbase||2022-03-31|Has expired: Outdated, unsupported by upstream since June 2019 (upstream is at 2.3 and higher)
 textproc/rubygem-diffy330|textproc/rubygem-diffy|2022-04-01|Obsolete, please use textproc/rubygem-diffy
 graphics/sxiv|graphics/nsxiv|2022-04-01|Has expired: Upstream has archived the project; please switch to the maintained fork (graphics/nsxiv)
+graphics/xface.el||2022-04-07|Port has failed to build for years; last release in 2003
