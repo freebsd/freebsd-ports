@@ -4,6 +4,11 @@ PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
 
+PATCH_SITES=	https://github.com/jwilk/pdf2djvu/commit/
+PATCHFILES=	e170ad557d5f13daeeac047dfaa79347bbe5062f.diff:-p1 \
+		956fedc7e0831126b9006efedad5519c14201c52.diff:-p1 \
+		dca43e8182174bc04e107eaefcafcfdfdf9bcd61.diff:-p1
+
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Creates DjVu files from PDF files
 
