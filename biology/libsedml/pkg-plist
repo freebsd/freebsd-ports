@@ -105,7 +105,13 @@ include/sedml/common/libsedml-config.h
 include/sedml/common/libsedml-namespace.h
 include/sedml/common/libsedml-version.h
 include/sedml/common/sedmlfwd.h
+lib/cmake/sedml-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/sedml-config-version.cmake
+lib/cmake/sedml-config.cmake
+lib/cmake/sedml-static-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/sedml-static-config-version.cmake
+lib/cmake/sedml-static-config.cmake
 lib/libsedml-static.a
 lib/libsedml.so
 lib/libsedml.so.2
-lib/libsedml.so.2.0.28
+lib/libsedml.so.2.0.30
