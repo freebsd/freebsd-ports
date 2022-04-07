@@ -1,3 +1,39 @@
+  <vuln vid="27d39055-b61b-11ec-9ebc-1c697aa5a594">
+    <topic>FreeBSD -- Potential jail escape vulnerabilities in netmap</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_11</lt></range>
+	<range><ge>12.3</ge><lt>12.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The total size of the user-provided nmreq to nmreq_copyin() was
+	first computed and then trusted during the copyin.  This
+	time-of-check to time-of-use bug could lead to kernel memory
+	corruption.  [CVE-2022-23084]</p>
+	<p>A user-provided integer option was passed to nmreq_copyin() without
+	checking if it would overflow.  This insufficient bounds checking
+	could lead to kernel memory corruption.  [CVE-2022-23085]</p>
+	<h1>Impact:</h1>
+	<p>On systems configured to include netmap in their devfs_ruleset, a
+	privileged process running in a jail can affect the host
+	environment.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23084</cvename>
+      <cvename>CVE-2022-23085</cvename>
+      <freebsdsa>SA-22:04.netmap</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-04-06</discovery>
+      <entry>2022-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe15f30a-b4c9-11ec-94a3-3065ec8fd3ec">
     <topic>chromium -- Type confusion in V8</topic>
     <affects>
