@@ -20,13 +20,15 @@ GH_TUPLE=	\
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-oauth2:oauth2:v4.4.2:go_oauth2_oauth2/vendor/github.com/go-oauth2/oauth2/v4 \
 		go-redis:redis:v8.7.1:go_redis_redis/vendor/github.com/go-redis/redis/v8 \
 		go-task:slim-sprig:348f09dbbbc0:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
 		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
-		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_0/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
+		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
+		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:30dcbda58838:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
@@ -43,6 +45,7 @@ GH_TUPLE=	\
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:e9b028704de0:google_pprof/vendor/github.com/google/pprof \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.52.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
@@ -69,7 +72,7 @@ GH_TUPLE=	\
 		marten-seemann:qtls-go1-16:v0.1.4:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
 		marten-seemann:qtls-go1-17:v0.1.0:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
 		marten-seemann:qtls-go1-18:v0.1.0-beta.1:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
-		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v1.14.8:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
@@ -96,11 +99,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:ee3a77cfa9eb:storj_common/vendor/storj.io/common \
-		storj:drpc:v0.0.29:storj_drpc/vendor/storj.io/drpc \
+		storj:common:dd5c8642e8cf:storj_common/vendor/storj.io/common \
+		storj:drpc:v0.0.30:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:dc4cb5a0d97a:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:c913260b9ec2:storj_private/vendor/storj.io/private \
-		storj:uplink:9e00d72711dc:storj_uplink/vendor/storj.io/uplink \
+		storj:private:08c4b5e752f4:storj_private/vendor/storj.io/private \
+		storj:uplink:2ca4df442232:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -113,7 +116,7 @@ GH_TUPLE=	\
 		zeebo:admission:v3.0.3:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
 		zeebo:assert:v1.3.0:zeebo_assert/vendor/github.com/zeebo/assert \
 		zeebo:clingy:1457d47c8d8d:zeebo_clingy/vendor/github.com/zeebo/clingy \
-		zeebo:errs:v1.2.2:zeebo_errs/vendor/github.com/zeebo/errs \
+		zeebo:errs:v1.3.0:zeebo_errs/vendor/github.com/zeebo/errs \
 		zeebo:errs:v2.0.3:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
 		zeebo:incenc:0d92902eec54:zeebo_incenc/vendor/github.com/zeebo/incenc \
