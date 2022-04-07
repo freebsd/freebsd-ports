@@ -1,7 +1,6 @@
 PORTNAME=	libnuml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.4
-PORTREVISION=	1
+DISTVERSION=	1.1.5
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +21,9 @@ GH_PROJECT=	NuML
 WRKSRC_SUBDIR=	${PORTNAME}
 
 post-install:
+	# no need to install LICENSE, README, VERSION
 	@${RM} -r ${STAGEDIR}${DATADIR}
+	# workaround for https://github.com/NuML/NuML/issues/26
+	${RM} -r ${STAGEDIR}${PREFIX}/share/cmake
 
 .include <bsd.port.mk>
