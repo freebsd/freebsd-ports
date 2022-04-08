@@ -152,6 +152,7 @@ bin/yosys-smtbmc
 %%DATADIR%%/intel_alm/common/alm_sim.v
 %%DATADIR%%/intel_alm/common/arith_alm_map.v
 %%DATADIR%%/intel_alm/common/bram_m10k.txt
+%%DATADIR%%/intel_alm/common/bram_m10k_map.v
 %%DATADIR%%/intel_alm/common/bram_m20k.txt
 %%DATADIR%%/intel_alm/common/bram_m20k_map.v
 %%DATADIR%%/intel_alm/common/dff_map.v
