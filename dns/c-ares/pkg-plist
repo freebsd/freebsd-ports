@@ -4,12 +4,13 @@ bin/ahost
 include/ares.h
 include/ares_build.h
 include/ares_dns.h
+include/ares_nameser.h
 include/ares_rules.h
 include/ares_version.h
 lib/libcares.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.4.3
+lib/libcares.so.2.5.1
 libdata/pkgconfig/libcares.pc
 man/man3/ares_cancel.3.gz
 man/man3/ares_create_query.3.gz
@@ -50,6 +51,7 @@ man/man3/ares_parse_ptr_reply.3.gz
 man/man3/ares_parse_soa_reply.3.gz
 man/man3/ares_parse_srv_reply.3.gz
 man/man3/ares_parse_txt_reply.3.gz
+man/man3/ares_parse_uri_reply.3.gz
 man/man3/ares_process.3.gz
 man/man3/ares_query.3.gz
 man/man3/ares_save_options.3.gz
