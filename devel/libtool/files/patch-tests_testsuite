@@ -1,0 +1,20 @@
+--- tests/testsuite.orig	2022-03-17 02:45:47 UTC
++++ tests/testsuite
+@@ -8737,7 +8737,7 @@ at_xfail=no
+ 
+ { set +x
+ $as_echo "$at_srcdir/demo.at:513: case \$host in
+-hppa*|x86_64*|s390*)
++hppa*|amd64*|x86_64*|s390*)
+   # These hosts cannot use non-PIC shared libs
+   exit 77 ;;
+ *-solaris*|*-sunos*)
+@@ -8762,7 +8762,7 @@ fi
+ "
+ at_fn_check_prepare_notrace 'a `...` command substitution' "demo.at:513"
+ ( $at_check_trace; case $host in
+-hppa*|x86_64*|s390*)
++hppa*|amd64*|x86_64*|s390*)
+   # These hosts cannot use non-PIC shared libs
+   exit 77 ;;
+ *-solaris*|*-sunos*)
