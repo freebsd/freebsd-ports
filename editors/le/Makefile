@@ -1,7 +1,7 @@
 # Created by: Andrey Zakhvatov
 
 PORTNAME=	le
-PORTVERSION=	1.16.6
+PORTVERSION=	1.16.8
 CATEGORIES=	editors
 MASTER_SITES=	http://lav.yar.ru/download/${PORTNAME}/ \
 		ZI
