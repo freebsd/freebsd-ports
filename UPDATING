@@ -207,6 +207,14 @@ you update your ports collection, before attempting any port upgrades.
   # rm -rf ~/.config/nvim/plugin/packer_compiled.lua
 
 20220128:
+  AFFECTS: users of x11-fonts/source-sans-ttf
+  AUTHOR: fernape@FreeBSD.org
+
+  The font name has changed its prefix from SourceSansPro* to SourceSans*.
+  Users of this font might need to change their configurations to pick up
+  the new names.
+
+20220128:
   AFFECTS: users of net-im/dendrite
   AUTHOR: ashish@FreeBSD.org
 
