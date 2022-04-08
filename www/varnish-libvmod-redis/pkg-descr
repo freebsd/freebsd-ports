@@ -1,0 +1,3 @@
+This module provides an interface to access redis servers, via VCL.
+
+WWW: https://github.com/carlosabalde/libvmod-redis
