@@ -2,6 +2,7 @@
 
 PORTNAME=		intel-backlight
 DISTVERSION=		20200418
+PORTREVISION=		1
 CATEGORIES=		graphics
 
 MAINTAINER=		jmd@FreeBSD.org
