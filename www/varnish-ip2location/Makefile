@@ -2,6 +2,7 @@
 
 PORTNAME=	ip2location
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LIB_DEPENDS=	libIP2Location.so:net/ip2location
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		autoreconf:build libtool pkgconfig python:build varnish:6
+USES=		autoreconf:build libtool pkgconfig python:build varnish:7
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/varnish/vmods/libvmod_ip2location.so
@@ -30,7 +31,7 @@ CFLAGS+=	-I${WRKSRC}/src
 USE_GITHUB=	yes
 GH_ACCOUNT=	ip2location
 GH_PROJECT=	${PORTNAME}-varnish
-GH_TAGNAME=	25928cf
+GH_TAGNAME=	b24b36e
 
 OPTIONS_DEFINE=	DOCS
 
