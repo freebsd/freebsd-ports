@@ -38,6 +38,9 @@
     SUBDIR += awstats
     SUBDIR += axis2
     SUBDIR += bacula-web
+    SUBDIR += baculum-api
+    SUBDIR += baculum-common
+    SUBDIR += baculum-web
     SUBDIR += baikal
     SUBDIR += bareos-webui
     SUBDIR += bareos18-webui

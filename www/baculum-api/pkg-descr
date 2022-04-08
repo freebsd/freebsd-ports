@@ -1,0 +1,7 @@
+The Baculum API is a web application that is used to work with the Baculum Web.
+It provides an interface, which serves data for Baculum Web.
+The Baculum API is also capable to take actions with Bconsole, the Bacula configuration and the Bacula components.
+
+There is possible to use the Baculum API separately (without Baculum Web) as a Bacula programming interface but using Baculum Web without Baculum API is not possible.
+
+WWW: https://www.bacula.org/

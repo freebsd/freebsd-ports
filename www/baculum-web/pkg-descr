@@ -1,0 +1,6 @@
+The Baculum Web is a complete web interface (WebGUI) to manage Bacula.
+It provides the Bacula administration and configuration functions using by the Bacula API interface.
+
+There can be one or more Baculum API hosts managed by one Baculum Web interface.
+
+WWW: https://www.bacula.org/
