@@ -1,8 +1,7 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
 
 PORTNAME=	ip2location
-PORTVERSION=	8.0.9
-PORTREVISION=	1
+PORTVERSION=	8.4.1
 CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
