@@ -4,6 +4,7 @@ share/filebot/jar/args4j.jar
 share/filebot/jar/bcpg.jar
 share/filebot/jar/bcpkix.jar
 share/filebot/jar/bcprov.jar
+share/filebot/jar/bcutil.jar
 share/filebot/jar/bencode.jar
 share/filebot/jar/caffeine.jar
 share/filebot/jar/commons-io.jar
@@ -45,7 +46,6 @@ share/filebot/jar/sevenzipjbinding.jar
 share/filebot/jar/simmetrics-core.jar
 share/filebot/jar/slf4j-api.jar
 share/filebot/jar/slf4j-jdk14.jar
-share/filebot/jar/streamex.jar
 share/filebot/jar/xmlrpc.jar
 share/filebot/jar/xmpcore.jar
 share/filebot/jar/xz.jar
