@@ -1,8 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	RColorBrewer
-DISTVERSION=	1.1-2
-PORTREVISION=	4
+DISTVERSION=	1.1-3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
