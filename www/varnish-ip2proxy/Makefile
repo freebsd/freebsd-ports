@@ -2,7 +2,7 @@
 
 PORTNAME=	ip2proxy
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		autoreconf:build libtool pkgconfig python:build varnish:6
+USES=		autoreconf:build libtool pkgconfig python:build varnish:7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
