@@ -2505,6 +2505,7 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/c_949.nls
 %%DATADIR%%/nls/c_950.nls
 %%DATADIR%%/nls/l_intl.nls
+%%DATADIR%%/nls/locale.nls
 %%DATADIR%%/nls/normidna.nls
 %%DATADIR%%/nls/normnfc.nls
 %%DATADIR%%/nls/normnfd.nls
