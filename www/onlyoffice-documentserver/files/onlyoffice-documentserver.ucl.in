@@ -1,0 +1,9 @@
+path: [ "%%WWWDIR%%/documentserver/fonts", "%%PREFIX%%/share/fonts" ]
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Running documentserver-generate-allfonts.sh to generate OnlyOffice fonts and themes...")
+pkg.exec("{%%PREFIX%%/bin/documentserver-generate-allfonts.sh}")
+EOS
+}

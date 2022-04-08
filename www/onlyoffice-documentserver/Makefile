@@ -5,12 +5,14 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
-		https://nodejs.org/dist/v16.13.0/:source3 \
+		https://nodejs.org/dist/v${NODE_VERSION_PKGFETCH}/:source3 \
+		https://nodejs.org/dist/v${NODE_VERSION_PORTS}/:source3 \
 		SF/optipng/OptiPNG/optipng-0.7.7/:source4
 DISTFILES+=	v8-6.8.275.32_all.tar.gz:source1 \
 		v8-6.8.275.32_122aarch64.tar.gz:source1 \
 		v8-6.8.275.32_122amd64.tar.gz:source1 \
-		node-v16.13.0.tar.gz:source3 \
+		node-v${NODE_VERSION_PKGFETCH}.tar.gz:source3 \
+		node-v${NODE_VERSION_PORTS}.tar.gz:source3 \
 		optipng-0.7.7.tar.gz:source4 \
 		onlyoffice-${DISTVERSION}-npm-cache.tar.gz:source2 \
 
@@ -38,7 +40,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		webfonts>=0:x11-fonts/webfonts
 
 USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase nodejs:16,build pkgconfig \
-		python:3.7+,build qt:5
+		python:3.7+,build qt:5 trigger
 USE_QT=		qmake_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
@@ -97,6 +99,11 @@ SUB_LIST=	ETCDIR=${ETCDIR} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
 
+# node version used with "npm install pkg@5.5.1"
+NODE_VERSION_PKGFETCH=	16.13.0
+# node version used in the ports tree
+NODE_VERSION_PORTS=	16.14.2
+
 MAKE_ENV=	BUILD_NUMBER="1" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
 		PRODUCT_VERSION="${DISTVERSION}"
@@ -115,10 +122,13 @@ post-extract:
 	@${MV} ${WRKDIR}/v8_obj_122${ARCH}/obj ${WRKSRC}/core/Common/3dParty/v8/v8/out.gn/freebsd_64
 
 	@${MKDIR} ${WRKDIR}/.pkg-cache/node
-	@${CP} ${DISTDIR}/node-v16.13.0.tar.gz ${WRKDIR}/.pkg-cache/node
-# Checksum can be verified here: https://nodejs.org/dist/v16.13.0/SHASUMS256.txt
-	@${ECHO} "9c00e5b6024cfcbc9105f9c58cf160762e78659a345d100c5bd80a7fb38c684f  node-v16.13.0.tar.gz" > \
-		${WRKDIR}/.pkg-cache/node/node-v16.13.0.tar.gz.sha256sum
+	@${CP} ${DISTDIR}/node-v${NODE_VERSION_PKGFETCH}.tar.gz ${DISTDIR}/node-v${NODE_VERSION_PORTS}.tar.gz \
+		${WRKDIR}/.pkg-cache/node
+# Checksum can be verified here: https://nodejs.org/dist/v${NODE_VERSION_PKGFETCH}/SHASUMS256.txt
+	@${ECHO} "9c00e5b6024cfcbc9105f9c58cf160762e78659a345d100c5bd80a7fb38c684f  node-v${NODE_VERSION_PKGFETCH}.tar.gz" > \
+		${WRKDIR}/.pkg-cache/node/node-v${NODE_VERSION_PKGFETCH}.tar.gz.sha256sum
+	@${ECHO} "082170f362c4da0e97f3a1899e3f5e4c998bbc245b803c77c6ab113a2b5cbd5f  node-v${NODE_VERSION_PKGPORTS}.tar.gz" > \
+		${WRKDIR}/.pkg-cache/node/node-v${NODE_VERSION_PORTS}.tar.gz.sha256sum
 
 	@${MKDIR} ${WRKSRC}/sdkjs-plugins/v1
 	@${CP} ${WRKSRC}/onlyoffice.github.io/sdkjs-plugins/v1/* ${WRKSRC}/sdkjs-plugins/v1

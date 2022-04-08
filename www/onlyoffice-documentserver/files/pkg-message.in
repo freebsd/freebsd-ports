@@ -59,20 +59,7 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
   - start nginx:
     # service nginx start
 
-6. Generate fonts and presentation themes:
-  # %%PREFIX%%/bin/documentserver-generate-allfonts.sh
-
-7. Follow the following doc If you want to use Onlyoffice with Nextcloud:
+6. Follow the following doc If you want to use Onlyoffice with Nextcloud:
   - https://api.onlyoffice.com/editors/nextcloud
 
-8. Enjoy.
-
-EOM
-}
-{ type: upgrade
-  message: <<EOM
-After each update, you have to generate the fonts and presentation themes:
-  # %%PREFIX%%/bin/documentserver-generate-allfonts.sh
-EOM
-}
-]
+7. Enjoy.

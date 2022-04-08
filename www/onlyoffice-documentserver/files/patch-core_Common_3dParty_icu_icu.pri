@@ -7,10 +7,10 @@
 +}
 +
 +core_freebsd {
-+    INCLUDEPATH += /usr/local/include
++    INCLUDEPATH += %%LOCALBASE%%/include
 +
-+    LIBS        += /usr/local/lib/libicuuc.so
-+    LIBS        += /usr/local/lib/libicudata.so
++    LIBS        += %%LOCALBASE%%/lib/libicuuc.so
++    LIBS        += %%LOCALBASE%%/lib/libicudata.so
  }
  
  core_linux {
