@@ -1,4 +1,4 @@
-TIMESTAMP = 1645227666
+TIMESTAMP = 1649409856
 SHA256 (rust/crates/ab_glyph-0.2.12.crate) = 20b228f2c198f98d4337ceb560333fb12cbb2f4948a953bf8c57d09deb219603
 SIZE (rust/crates/ab_glyph-0.2.12.crate) = 15684
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.5.crate) = a13739d7177fbd22bb0ed28badfff9f372f8bef46c863db4e1c6248f6b223b6e
@@ -721,8 +721,8 @@ SHA256 (rust/crates/owned_ttf_parser-0.6.0.crate) = 9f923fb806c46266c02ab4a5b239
 SIZE (rust/crates/owned_ttf_parser-0.6.0.crate) = 20574
 SHA256 (rust/crates/owned_ttf_parser-0.13.2.crate) = 65ee3f72636e6f164cc41c9f9057f4e58c4e13507699ea7f5e5242b64b8198ee
 SIZE (rust/crates/owned_ttf_parser-0.13.2.crate) = 22997
-SHA256 (rust/crates/packed_simd_2-0.3.6.crate) = 71c0c06716cfc81616fa8e22b721ce92fecd594508bc0eb3d04ae3ef35ac10c5
-SIZE (rust/crates/packed_simd_2-0.3.6.crate) = 98119
+SHA256 (rust/crates/packed_simd_2-0.3.7.crate) = defdcfef86dcc44ad208f71d9ff4ce28df6537a4e0d6b0e8e845cb8ca10059a6
+SIZE (rust/crates/packed_simd_2-0.3.7.crate) = 97413
 SHA256 (rust/crates/parking_lot-0.10.2.crate) = d3a704eb390aafdc107b0e392f56a82b668e3a71366993b5340f5833fd62505e
 SIZE (rust/crates/parking_lot-0.10.2.crate) = 39536
 SHA256 (rust/crates/parking_lot-0.11.2.crate) = 7d17b78036a60663b797adeaee46f5c9dfebb86948d1255007a1d6be0271ff99
