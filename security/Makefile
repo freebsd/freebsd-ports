@@ -902,6 +902,7 @@
     SUBDIR += py-muacrypt
     SUBDIR += py-netbox-secretstore
     SUBDIR += py-netmiko
+    SUBDIR += py-noiseprotocol
     SUBDIR += py-ntlm-auth
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
