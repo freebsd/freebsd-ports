@@ -1,6 +1,5 @@
 PORTNAME=	libvmod-querystring
-DISTVERSION=	v2.0.2
-PORTREVISION=	1
+DISTVERSION=	v2.0.3
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -12,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		autoreconf libtool pkgconfig python:3.5+,build varnish:6
+USES=		autoreconf libtool pkgconfig python:3.5+,build varnish:7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
