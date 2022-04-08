@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	mod_auth_openidc
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -38,7 +38,7 @@ HIREDIS_CONFIGURE_WITH=	hiredis
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|@APXS2@ @APXS2_OPTS@ -i|@APXS2@ @APXS2_OPTS@ -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i|' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.*
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
