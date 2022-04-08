@@ -19,3 +19,13 @@
 #        match "type"            "ATTACH";
 #        action "/bin/chmod g=rw /dev/$cdev";
 #};
+
+## shiftcrypto.ch BitBox02
+#notify 301 {
+#        match "system"          "USB";
+#        match "subsystem"       "DEVICE";
+#        match "vendor"          "0x03eb";
+#        match "product"         "0x2403";
+#        match "type"            "ATTACH";
+#        action "/bin/chmod g=rw /dev/$cdev";
+#};
