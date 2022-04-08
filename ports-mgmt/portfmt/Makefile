@@ -1,5 +1,5 @@
 PORTNAME=	portfmt
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://github.com/t6/portfmt/releases/download/v${DISTVERSION}/
 
