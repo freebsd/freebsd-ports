@@ -1,5 +1,5 @@
 PORTNAME=	libvmod-dynamic
-PORTVERSION=	20210513
+PORTVERSION=	20220202
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgetdns.so:dns/getdns
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig \
-		python:3.5+,build varnish:6
+		python:3.5+,build varnish:7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -29,7 +29,7 @@ CFLAGS+=	-I${WRKSRC}/src
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nigoroll
-GH_TAGNAME=	1bf8f07
+GH_TAGNAME=	9666973
 
 OPTIONS_DEFINE=	DOCS
 
