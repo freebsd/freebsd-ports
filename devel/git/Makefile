@@ -1,9 +1,9 @@
 # Created by: Eric Anholt
 
 PORTNAME=	git
-DISTVERSION=	2.35.1
+PORTVERSION=	2.36.0.rc0
 CATEGORIES=	devel
-MASTER_SITES=	KERNEL_ORG/software/scm/git
+MASTER_SITES=	KERNEL_ORG/software/scm/git/testing
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
