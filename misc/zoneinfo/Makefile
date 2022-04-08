@@ -2,6 +2,7 @@
 
 PORTNAME=	zoneinfo
 DISTVERSION=	2022a
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://data.iana.org/time-zones/releases/ \
 		ftp://ftp.iana.org/tz/releases/
@@ -17,7 +18,7 @@ PREFIX=		/usr
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	BACKWARD
-OPTIONS_DEFAULT=
+OPTIONS_DEFAULT= BACKWARD
 OPTIONS_SUB=	yes
 
 BACKWARD_DESC=	Include backwards compatible zones
