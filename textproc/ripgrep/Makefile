@@ -2,7 +2,7 @@
 
 PORTNAME=	ripgrep
 DISTVERSION=	13.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -59,7 +59,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		memmap2-0.3.0 \
 		num_cpus-1.13.0 \
 		once_cell-1.7.2 \
-		packed_simd_2-0.3.6 \
+		packed_simd_2-0.3.7 \
 		pcre2-0.2.3 \
 		pcre2-sys-0.2.5 \
 		pkg-config-0.3.19 \
