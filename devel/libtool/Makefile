@@ -19,4 +19,11 @@ TEST_TARGET=	check
 NO_ARCH=	yes
 INFO=		libtool
 
+.if "${CC}" == "/nxb-bin/usr/bin/cc"
+# Generate libtool script for the native compiler, not the cross compiler.
+CC=		cc
+CXX=		c++
+LD=		ld
+.endif
+
 .include <bsd.port.mk>
