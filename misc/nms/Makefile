@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	nms
-PORTVERSION=	0.3.3
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	misc
