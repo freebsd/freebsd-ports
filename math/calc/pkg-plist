@@ -1,5 +1,6 @@
 bin/calc
 %%FULL%%include/calc/alloc.h
+%%FULL%%include/calc/attribute.h
 %%FULL%%include/calc/banned.h
 %%FULL%%include/calc/blkcpy.h
 %%FULL%%include/calc/block.h
