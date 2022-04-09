@@ -27,10 +27,11 @@ load_rc_config $name
 : ${arti_enable:="NO"}
 : ${arti_config="%%PREFIX%%/etc/arti/arti.toml"}
 : ${arti_pidfile="/var/run/arti/arti.pid"}
+: ${arti_logfile="/var/log/arti/arti.log"}
 
 command=/usr/sbin/daemon
 arti=%%PREFIX%%/bin/${name}
 
-command_args="-c -f -o /var/log/arti/arti.log -P $arti_pidfile $arti proxy -c $arti_config"
+command_args="-f -o $arti_logfile -P $arti_pidfile $arti proxy -c $arti_config"
 
 run_rc_command "$1"

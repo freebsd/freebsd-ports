@@ -1,6 +1,6 @@
---- crates/arti-config/src/arti_defaults.toml.orig	2022-01-31 16:05:34 UTC
+--- crates/arti-config/src/arti_defaults.toml.orig	2022-03-01 13:59:34 UTC
 +++ crates/arti-config/src/arti_defaults.toml
-@@ -51,7 +51,7 @@ console = "debug"
+@@ -61,7 +61,7 @@ console = "debug"
  #
  # The state directory is not yet used.
  [storage]
