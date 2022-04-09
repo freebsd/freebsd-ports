@@ -52,6 +52,7 @@ pathfix:
 		s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[{]datadir[}]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		s|[(]prefix[)]/share/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[[:<:]]lib/pkgconfig|libdata/pkgconfig|g; \
 		s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 .endfor
