@@ -1,5 +1,5 @@
 include/console_bridge/console.h
-include/console_bridge_export.h
+include/console_bridge/console_bridge_export.h
 lib/console_bridge/cmake/console_bridge-config-version.cmake
 lib/console_bridge/cmake/console_bridge-config.cmake
 lib/console_bridge/cmake/console_bridge-targets-%%CMAKE_BUILD_TYPE%%.cmake
