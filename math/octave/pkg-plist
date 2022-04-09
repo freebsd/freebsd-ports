@@ -6,6 +6,7 @@ bin/octave-cli
 bin/octave-cli-%%OCTAVE_VERSION%%
 bin/octave-config
 bin/octave-config-%%OCTAVE_VERSION%%
+include/octave-%%OCTAVE_VERSION%%/octave/Array-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/Array-util.h
 include/octave-%%OCTAVE_VERSION%%/octave/Array.cc
 include/octave-%%OCTAVE_VERSION%%/octave/Array.h
@@ -33,6 +34,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/DiagArray2.h
 include/octave-%%OCTAVE_VERSION%%/octave/EIG.h
 include/octave-%%OCTAVE_VERSION%%/octave/LSODE-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/LSODE.h
+include/octave-%%OCTAVE_VERSION%%/octave/MArray-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/MArray.cc
 include/octave-%%OCTAVE_VERSION%%/octave/MArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/MDiagArray2.cc
@@ -50,6 +52,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/Quad-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/Quad.h
 include/octave-%%OCTAVE_VERSION%%/octave/Range.h
 include/octave-%%OCTAVE_VERSION%%/octave/Sparse-diag-op-defs.h
+include/octave-%%OCTAVE_VERSION%%/octave/Sparse-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/Sparse-op-decls.h
 include/octave-%%OCTAVE_VERSION%%/octave/Sparse-op-defs.h
 include/octave-%%OCTAVE_VERSION%%/octave/Sparse-perm-op-defs.h
@@ -58,10 +61,10 @@ include/octave-%%OCTAVE_VERSION%%/octave/Sparse.h
 include/octave-%%OCTAVE_VERSION%%/octave/action-container.h
 include/octave-%%OCTAVE_VERSION%%/octave/aepbalance.h
 include/octave-%%OCTAVE_VERSION%%/octave/anon-fcn-validator.h
+include/octave-%%OCTAVE_VERSION%%/octave/auto-shlib.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-dae.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-de.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-list.h
-include/octave-%%OCTAVE_VERSION%%/octave/base-min.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-text-renderer.h
 include/octave-%%OCTAVE_VERSION%%/octave/boolMatrix.h
 include/octave-%%OCTAVE_VERSION%%/octave/boolNDArray.h
@@ -77,6 +80,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/c-file-ptr-stream.h
 include/octave-%%OCTAVE_VERSION%%/octave/call-stack.h
 include/octave-%%OCTAVE_VERSION%%/octave/caseless-str.h
 include/octave-%%OCTAVE_VERSION%%/octave/cdef-class.h
+include/octave-%%OCTAVE_VERSION%%/octave/cdef-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/cdef-manager.h
 include/octave-%%OCTAVE_VERSION%%/octave/cdef-method.h
 include/octave-%%OCTAVE_VERSION%%/octave/cdef-object.h
@@ -137,11 +141,11 @@ include/octave-%%OCTAVE_VERSION%%/octave/gl-render.h
 include/octave-%%OCTAVE_VERSION%%/octave/gl2ps-print.h
 include/octave-%%OCTAVE_VERSION%%/octave/glob-match.h
 include/octave-%%OCTAVE_VERSION%%/octave/graphics-handle.h
-include/octave-%%OCTAVE_VERSION%%/octave/graphics-props.cc
 include/octave-%%OCTAVE_VERSION%%/octave/graphics-toolkit.h
 include/octave-%%OCTAVE_VERSION%%/octave/graphics.h
 include/octave-%%OCTAVE_VERSION%%/octave/gsvd.h
 include/octave-%%OCTAVE_VERSION%%/octave/gtk-manager.h
+include/octave-%%OCTAVE_VERSION%%/octave/gzfstream.h
 include/octave-%%OCTAVE_VERSION%%/octave/help.h
 include/octave-%%OCTAVE_VERSION%%/octave/hess.h
 include/octave-%%OCTAVE_VERSION%%/octave/hook-fcn.h
@@ -151,12 +155,11 @@ include/octave-%%OCTAVE_VERSION%%/octave/int16NDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/int32NDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/int64NDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/int8NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/intNDArray-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/intNDArray.cc
 include/octave-%%OCTAVE_VERSION%%/octave/intNDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/interpreter.h
-include/octave-%%OCTAVE_VERSION%%/octave/jit-ir.h
-include/octave-%%OCTAVE_VERSION%%/octave/jit-typeinfo.h
-include/octave-%%OCTAVE_VERSION%%/octave/jit-util.h
+include/octave-%%OCTAVE_VERSION%%/octave/latex-text-renderer.h
 include/octave-%%OCTAVE_VERSION%%/octave/lex.h
 include/octave-%%OCTAVE_VERSION%%/octave/liboctave-build-info.h
 include/octave-%%OCTAVE_VERSION%%/octave/liboctinterp-build-info.h
@@ -266,6 +269,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/mx-fs-ui16nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-fs-ui32nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-fs-ui64nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-fs-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-fnda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-i32nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-i64nda.h
@@ -416,6 +420,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui16nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui32nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui64nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-type-traits.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-fnda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-i16nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-i32nda.h
@@ -525,6 +530,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui32nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui64.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui64nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mxarray.h
+include/octave-%%OCTAVE_VERSION%%/octave/mxtypes.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-atomic.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-base64.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-binmap.h
@@ -547,7 +553,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/oct-lvalue.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-map.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-mutex.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-norm.h
-include/octave-%%OCTAVE_VERSION%%/octave/oct-passwd.h
+include/octave-%%OCTAVE_VERSION%%/octave/oct-password.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-prcstrm.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-procbuf.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-process.h
@@ -610,10 +616,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/ov-int8.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-intx.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-java.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-lazy-idx.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-legacy-range.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-magic-int.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-mex-fcn.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-null-mat.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-oncleanup.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-perm.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-range-traits.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-range.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-re-diag.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-re-mat.h
@@ -639,6 +648,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/profiler.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-all.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-anon-scopes.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-arg-list.h
+include/octave-%%OCTAVE_VERSION%%/octave/pt-args-block.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-array-list.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-assign.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-binop.h
@@ -657,13 +667,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/pt-exp.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-fcn-handle.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-id.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-idx.h
-include/octave-%%OCTAVE_VERSION%%/octave/pt-jit.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-jump.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-loop.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-mat.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-misc.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-pr-code.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-select.h
+include/octave-%%OCTAVE_VERSION%%/octave/pt-spmd.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-stmt.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-tm-const.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-unop.h
@@ -675,6 +685,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/quit.h
 include/octave-%%OCTAVE_VERSION%%/octave/randgamma.h
 include/octave-%%OCTAVE_VERSION%%/octave/randmtzig.h
 include/octave-%%OCTAVE_VERSION%%/octave/randpoisson.h
+include/octave-%%OCTAVE_VERSION%%/octave/range-fwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/schur.h
 include/octave-%%OCTAVE_VERSION%%/octave/settings.h
 include/octave-%%OCTAVE_VERSION%%/octave/sighandlers.h
@@ -700,7 +711,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/sparse-chol.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-dmsolve.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-lu.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-qr.h
-include/octave-%%OCTAVE_VERSION%%/octave/sparse-sort.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-util.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-xpow.h
@@ -715,7 +725,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/sysdep.h
 include/octave-%%OCTAVE_VERSION%%/octave/text-engine.h
 include/octave-%%OCTAVE_VERSION%%/octave/text-renderer.h
 include/octave-%%OCTAVE_VERSION%%/octave/token.h
-include/octave-%%OCTAVE_VERSION%%/octave/txt-eng.h
 include/octave-%%OCTAVE_VERSION%%/octave/uint16NDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/uint32NDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/uint64NDArray.h
@@ -754,16 +763,15 @@ include/octave-%%OCTAVE_VERSION%%/octave/vx-s-crv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
-include/octave-%%OCTAVE_VERSION%%/octave/zfstream.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.8
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.8.0.2
-%%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
-%%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.6
-%%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.6.1.0
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.9
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.9.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
+lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.8
+lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.8.0.0
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.9
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.9.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.10
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.10.0.0
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/PKG_ADD
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__delaunayn__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__fltk_uigetfile__.oct
@@ -779,12 +787,12 @@ lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fftw.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/gzip.oct
 libdata/pkgconfig/octave.pc
 libdata/pkgconfig/octinterp.pc
-%%QT5%%libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-gui
-%%QT5%%libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-svgconvert
-%%PORTDOCS%%man/man1/mkoctfile.1.gz
-%%PORTDOCS%%man/man1/octave-cli.1.gz
-%%PORTDOCS%%man/man1/octave-config.1.gz
-%%PORTDOCS%%man/man1/octave.1.gz
+libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-gui
+libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-svgconvert
+man/man1/mkoctfile.1.gz
+man/man1/octave-cli.1.gz
+man/man1/octave-config.1.gz
+man/man1/octave.1.gz
 share/applications/org.octave.Octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/octave.ps
@@ -802,14 +810,15 @@ share/icons/hicolor/48x48/apps/octave.png
 share/icons/hicolor/512x512/apps/octave.png
 share/icons/hicolor/64x64/apps/octave.png
 share/icons/hicolor/scalable/apps/octave.svg
+share/info/dir
 share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/data/penny.mat
+%%DATADIR%%/%%OCTAVE_VERSION%%/data/west0479.mat
 %%DATADIR%%/%%OCTAVE_VERSION%%/doc/octave_interpreter.qch
 %%DATADIR%%/%%OCTAVE_VERSION%%/doc/octave_interpreter.qhc
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/CITATION
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/NEWS
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/built-in-docstrings
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/etc/default-qt-settings
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/doc-cache
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/macros.texi
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/flat.html
@@ -818,23 +827,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/hierarchical.html
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/hierarchical_entry.html
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/style.css
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@cell/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@char/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@double/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@function_handle/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int16/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int32/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int64/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int8/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@logical/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@single/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@struct/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint16/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint32/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint64/tbcover.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint8/tbcover.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/args.tst
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bc-overloads.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-31371.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-35448/bug-35448.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-35448/fA.m
@@ -854,6 +847,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-38691/dir2/func1.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-38691/dir2/func2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-38691/dir2/func3.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-40117.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-41723/bug-41723.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-41723/class_bug41723.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-44940/bug-44940.tst
@@ -933,6 +927,8 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-55322.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-55758/bug-55758.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-55758/class_bug_55758.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-56068/bug-56068.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-56068/bug_56068.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-58572/bug-58572.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-58572/bug58572.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-58593/bug-58593.tst
@@ -953,15 +949,18 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59704/bug59704_2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59937/bug-59937.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59937/eval_global_script.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59950.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60237/bug-60237.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60237/bug_60237.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60882/bug-60882.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60882/bug_60882.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/bug-61105.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/nested_test_1.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/nested_test_2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61105/nested_test_3.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61191/bug-61191.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61191/subdir/bug_61191.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/bug_59989.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-61201.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/class-concat/@foo/foo.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/class-concat/class-concat.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/base_1.m
@@ -969,6 +968,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/child_from_base_1.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/child_from_base_1_and_2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/classdef-multiple-inheritance.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/bug_60763.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug52614A.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug52614B.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug55766.m
@@ -1080,6 +1080,10 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classes/@Spork/saveobj.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classes/@Spork/set.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classes/classes.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/colon-op/@legacy_colon_op/colon.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/colon-op/@legacy_colon_op/legacy_colon_op.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/colon-op/colon-op.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/colon-op/colon_op.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/colormaps.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/command.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/complex.tst
@@ -1134,7 +1138,11 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/inline-fcn.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/integer.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/io.tst
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/jit.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/json/jsondecode_BIST.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/json/jsonencode_BIST.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/jupyter-notebook/jupyter-notebook.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/jupyter-notebook/octave_kernel.ipynb
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/jupyter-notebook/plot_magic_and_errors.ipynb
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/leftdiv.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/line-continue.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/local-functions/local_function_eval.m
@@ -1142,6 +1150,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/logical-index.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/arg_nest.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/arg_ret.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/bug_59989.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/counter.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/nest.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/nest_eval.m
@@ -1194,14 +1203,31 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/return.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/single-index.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/slice.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/sparse-assign.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/sparse.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/struct.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/switch.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/system.tst
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/tbcover.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/transpose.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/try.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/unwind.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@cell/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@char/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@double/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@function_handle/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@int16/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@int32/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@int64/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@int8/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@logical/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@single/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@struct/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@uint16/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@uint32/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@uint64/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/@uint8/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/bc-overloads.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/usr/ports/math/octave/work/octave-%%OCTAVE_VERSION%%/test/tbcover.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/while.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/Cell.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__contourc__.cc-tst
@@ -1209,6 +1235,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__eigs__.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__ichol__.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__ilu__.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__isprimelarge__.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__lin_interpn__.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__magick_read__.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/__pchip_deriv__.cc-tst
@@ -1255,7 +1282,10 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/hex2num.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/input.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/inv.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/jsondecode.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/jsonencode.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/kron.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/load-save.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/lookup.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/lsode.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/lu.cc-tst
@@ -1266,6 +1296,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/nproc.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/oct-hist.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/oct-map.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/ordqz.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/ordschur.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/pinv.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/corefcn/pr-output.cc-tst
@@ -1322,6 +1353,8 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-lazy-idx.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-null-mat.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-oncleanup.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-range.cc-tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-str-mat.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-struct.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-typeinfo.cc-tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/libinterp/octave-value/ov-usr-fcn.cc-tst
@@ -1353,25 +1386,29 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/imagelib/octave-logo.ico
 %%DATADIR%%/%%OCTAVE_VERSION%%/imagelib/octave-logo.svg
 %%DATADIR%%/%%OCTAVE_VERSION%%/imagelib/octave-sombrero.png
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/be_BY.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/ca_ES.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/de_DE.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/en_US.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/es_ES.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/eu_ES.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/fr_FR.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/it_IT.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/ja_JP.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/lt_LT.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/nl_NL.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/pt_BR.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/pt_PT.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/ru_RU.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/uk_UA.qm
-%%QT5%%%%DATADIR%%/%%OCTAVE_VERSION%%/locale/zh_CN.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/be_BY.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/ca_ES.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/de_DE.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/en_US.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/es_ES.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/eu_ES.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/fr_FR.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/hu_HU.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/it_IT.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/ja_JP.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/lt_LT.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/nl_NL.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/pt_BR.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/pt_PT.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/ru_RU.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/tr_TR.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/uk_UA.qm
+%%DATADIR%%/%%OCTAVE_VERSION%%/locale/zh_CN.qm
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/+containers/Map.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/+matlab/+lang/makeUniqueStrings.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/+matlab/+lang/makeValidName.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/+matlab/+net/base64decode.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/+matlab/+net/base64encode.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/@ftp/ascii.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/@ftp/binary.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/@ftp/cd.m
@@ -1387,6 +1424,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/@ftp/rename.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/@ftp/rmdir.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/@ftp/saveobj.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/@audioplayer/__get_properties__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/@audioplayer/audioplayer.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/@audioplayer/disp.m
@@ -1421,8 +1459,12 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/record.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/sound.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/audio/soundsc.m
-%%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/output_max_field_width.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/.oct-config
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/disable_diagonal_matrix.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/disable_permutation_matrix.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/disable_range.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/runtests.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/acosd.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/acot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/acotd.m
@@ -1437,6 +1479,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/atan2d.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/atand.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/cosd.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/cospi.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/cot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/cotd.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/coth.m
@@ -1447,7 +1490,9 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/secd.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/sech.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/sind.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/sinpi.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/elfun/tand.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/general/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/accumarray.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/accumdim.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/bincoeff.m
@@ -1503,6 +1548,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/repelem.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/repmat.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/rescale.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/general/rng.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/rot90.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/rotdim.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/shift.m
@@ -1514,6 +1560,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/trapz.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/triplequad.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/general/xor.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/convhull.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/delaunay.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/delaunayn.m
@@ -1530,15 +1577,18 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/tsearchn.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/voronoi.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/geometry/voronoin.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/dialog.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/errordlg.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/getappdata.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/getpixelposition.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/guidata.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/guihandles.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/helpdlg.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/inputdlg.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/isappdata.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/listdlg.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/listfonts.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/movegui.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/msgbox.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/private/__file_filter__.m
@@ -1571,6 +1621,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/waitbar.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/waitforbuttonpress.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/gui/warndlg.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/help/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/help/__gripe_missing_component__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/help/__makeinfo__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/help/__unimplemented__.m
@@ -1590,6 +1641,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/help/type.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/help/warning_ids.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/help/which.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/image/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/autumn.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/bone.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/brighten.m
@@ -1643,9 +1695,11 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/spinmap.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/spring.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/summer.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/image/turbo.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/viridis.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/white.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/image/winter.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/io/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/io/beep.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/io/csvread.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/io/csvwrite.m
@@ -1653,6 +1707,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/io/fileread.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/io/importdata.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/io/is_valid_file_id.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/java/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javaArray.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/java_get.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/java_set.m
@@ -1661,8 +1716,9 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javaclasspath.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javamem.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javarmpath.m
-%%JAVA%%%%DATADIR%%/%%OCTAVE_VERSION%%/m/java/octave.jar
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/java/octave.jar
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/usejava.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/@inline/argnames.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/@inline/char.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/@inline/feval.m
@@ -1677,11 +1733,13 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/isdir.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/isequalwithequalnans.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/isstr.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/maxNumCompThreads.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/setstr.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/strmatch.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/strread.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/textread.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/vectorize.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/bandwidth.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/commutation_matrix.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/cond.m
@@ -1717,6 +1775,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/trace.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/vech.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/linear-algebra/vecnorm.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/bug_report.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/bunzip2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/cast.m
@@ -1746,11 +1805,13 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/ismethod.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/ispc.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/isunix.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/jupyter_notebook.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/license.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/list_primes.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/loadobj.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/ls.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/ls_command.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/memory.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/menu.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/methods.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/mex.m
@@ -1814,6 +1875,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/version.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/what.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/miscellaneous/zip.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/decic.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/ode15i.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/ode15s.m
@@ -1835,6 +1897,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/private/runge_kutta_45_dorpri.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/private/runge_kutta_interpolate.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/ode/private/starting_stepsize.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/PKG_ADD
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/__all_opts__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/fminbnd.m
@@ -1851,11 +1914,13 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/private/__fdjac__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/qp.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/optimization/sqp.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/path/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/path/import.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/path/matlabroot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/path/pathdef.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/path/private/getsavepath.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/path/savepath.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/pkg.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/private/build.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/private/configure_make.m
@@ -1881,6 +1946,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/private/standardize_paths.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/private/uninstall.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/pkg/private/unload_packages.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/__clabel__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/__getlegenddata__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/__rotate_around_axis__.m
@@ -1911,6 +1977,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/private/__axis_label__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/private/__axis_limits__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/private/__gnuplot_legend__.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/private/__tickangle__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/rticks.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/shading.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/specular.m
@@ -1921,16 +1988,20 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/whitebg.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/xlabel.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/xlim.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/xtickangle.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/xticklabels.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/xticks.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/ylabel.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/ylim.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/ytickangle.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/yticklabels.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/yticks.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/zlabel.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/zlim.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/ztickangle.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/zticklabels.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/appearance/zticks.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/area.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/bar.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/barh.m
@@ -1957,6 +2028,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/ezsurfc.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/feather.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/fill.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/fill3.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/fplot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/hist.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/isocaps.m
@@ -1989,6 +2061,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__contour__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__errplot__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__ezplot__.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__gnuplot_scatter__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__interp_cube__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__line__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/private/__marching_cube__.m
@@ -2024,6 +2097,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/stream2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/stream3.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/streamline.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/streamribbon.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/streamtube.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/surf.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/surface.m
@@ -2035,7 +2109,9 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/triplot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/trisurf.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/draw/waterfall.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/__actual_axis_position__.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/__check_rendering_capability__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/__default_plot_options__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/__gnuplot_drawnow__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/__next_line_color__.m
@@ -2111,6 +2187,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/struct2hdl.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/subplot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/plot/util/zoom.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/compan.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/conv.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/deconv.m
@@ -2139,6 +2216,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/spline.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/splinefit.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/polynomial/unmkpp.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/addpref.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/getpref.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/ispref.m
@@ -2149,10 +2227,12 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/private/saveprefs.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/rmpref.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/prefs/setpref.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/profiler/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/profiler/profexplore.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/profiler/profexport.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/profiler/profile.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/profiler/profshow.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/set/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/set/intersect.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/set/ismember.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/set/powerset.m
@@ -2161,6 +2241,8 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/set/setxor.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/set/union.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/set/unique.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/set/uniquetol.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/__parse_movargs__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/arch_fit.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/arch_rnd.m
@@ -2200,6 +2282,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/synthesis.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/unwrap.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/signal/yulewalker.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/bicg.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/bicgstab.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/cgs.m
@@ -2232,6 +2315,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/tfqmr.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/treelayout.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/sparse/treeplot.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/beta.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/betainc.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/betaincinv.m
@@ -2255,6 +2339,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/realpow.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/realsqrt.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/specfun/sinint.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/special-matrix/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/special-matrix/gallery.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/special-matrix/hadamard.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/special-matrix/hankel.m
@@ -2268,6 +2353,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/special-matrix/wilkinson.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/startup/inputrc
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/startup/octaverc
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/bounds.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/center.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/corr.m
@@ -2312,6 +2398,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/std.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/var.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics/zscore.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/base2dec.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/bin2dec.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/blanks.m
@@ -2320,6 +2407,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/dec2base.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/dec2bin.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/dec2hex.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/endsWith.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/erase.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/hex2dec.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/index.m
@@ -2331,6 +2419,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/ostrsplit.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/regexptranslate.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/rindex.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/startsWith.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/str2num.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/strcat.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/strchr.m
@@ -2344,6 +2433,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/unicode2native.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/untabify.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings/validatestring.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/__debug_octave__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/__have_feature__.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/__printf_assert__.m
@@ -2361,6 +2451,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/rundemos.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/speed.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/testfun/test.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/time/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/time/addtodate.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/time/asctime.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/time/calendar.m
@@ -2375,6 +2466,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/time/is_leap_year.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/time/now.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/time/weekday.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/web/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/web/web.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/web/weboptions.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/web/webread.m
@@ -2383,9 +2475,9 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/site/m/startup/octaverc
 @dir lib/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
 @dir lib/octave/site/oct/%%GNU_HOST%%
-@dir lib/octave/site/oct/api-v56/%%GNU_HOST%%
+@dir lib/octave/site/oct/api-v57/%%GNU_HOST%%
 @dir libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%%
-@dir libexec/octave/api-v56/site/exec/%%GNU_HOST%%
+@dir libexec/octave/api-v57/site/exec/%%GNU_HOST%%
 @dir libexec/octave/site/exec/%%GNU_HOST%%
 @dir %%DATADIR%%/%%OCTAVE_VERSION%%/site/m
-@dir %%DATADIR%%/site/api-v56/m
+@dir %%DATADIR%%/site/api-v57/m

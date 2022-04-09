@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-plot
 PORTVERSION=	1.1.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

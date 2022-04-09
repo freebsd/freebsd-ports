@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-bioinfo
 PORTVERSION=	0.1.2
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

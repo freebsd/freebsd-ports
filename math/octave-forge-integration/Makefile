@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-integration
 PORTVERSION=	1.0.7
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

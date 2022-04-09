@@ -2,6 +2,7 @@
 
 PORTNAME=	octave-forge-nan
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

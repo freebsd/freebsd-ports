@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-matgeom
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
