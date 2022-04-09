@@ -1,7 +1,7 @@
 # Created by: Roy Boerner
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	squirrelsql-${PORTVERSION}-optional
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		zip
 
-USE_JAVA=	8+
+USE_JAVA=	11+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
