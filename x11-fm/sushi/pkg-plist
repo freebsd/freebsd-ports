@@ -3,6 +3,7 @@ lib/sushi/girepository-1.0/Sushi-1.0.typelib
 lib/sushi/libsushi-1.0.so
 libexec/org.gnome.NautilusPreviewer
 share/dbus-1/services/org.gnome.NautilusPreviewer.service
+share/locale/ab/LC_MESSAGES/sushi.mo
 share/locale/af/LC_MESSAGES/sushi.mo
 share/locale/an/LC_MESSAGES/sushi.mo
 share/locale/ar/LC_MESSAGES/sushi.mo

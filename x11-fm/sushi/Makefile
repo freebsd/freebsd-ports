@@ -1,8 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	sushi
-PORTVERSION=	41.0
-PORTREVISION=	1
+PORTVERSION=	41.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
