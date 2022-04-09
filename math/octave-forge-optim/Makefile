@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-optim
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -25,6 +25,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
 GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
+USES+=		shebangfix
+SHEBANG_FILES=	*.pl
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
