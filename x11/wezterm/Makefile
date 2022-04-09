@@ -36,6 +36,7 @@ PLIST_FILES=	bin/strip-ansi-escapes \
 		share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png \
 		share/icons/hicolor/scalable/apps/org.wezfurlong.wezterm.svg \
 		share/metainfo/org.wezfurlong.wezterm.appdata.xml \
+		share/nautilus-python/extensions/${PORTNAME}-nautilus.py \
 		${NULL}
 
 .if exists(/usr/bin/tic)
@@ -551,7 +552,7 @@ do-install-DOCS-on:
 
 post-install:
 # Install assets similar to ci/deploy.sh
-.for f in ${PORTNAME}.desktop ${PORTNAME}.appdata.xml \
+.for f in ${PORTNAME}.desktop ${PORTNAME}.appdata.xml ${PORTNAME}-nautilus.py \
 	icon/terminal.png icon/${PORTNAME}-icon.svg shell-integration/${PORTNAME}.sh
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
 	${INSTALL_DATA} ${WRKSRC}/assets/${f:R}.${f:E} \
