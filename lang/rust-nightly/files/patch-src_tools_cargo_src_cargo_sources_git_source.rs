@@ -13,33 +13,34 @@ be stabilized first.  It will be available in Rust 1.56.
 
 --- src/tools/cargo/src/cargo/sources/git/source.rs.orig	2021-10-04 20:59:57 UTC
 +++ src/tools/cargo/src/cargo/sources/git/source.rs
-@@ -84,6 +84,9 @@ impl<'cfg> Debug for GitSource<'cfg> {
+@@ -86,6 +86,9 @@ impl<'cfg> Source for GitSource<'cfg> {
  
  impl<'cfg> Source for GitSource<'cfg> {
-     fn query(&mut self, dep: &Dependency, f: &mut dyn FnMut(Summary)) -> CargoResult<()> {
+     fn query(&mut self, dep: &Dependency, f: &mut dyn FnMut(Summary)) -> Poll<CargoResult<()>> {
 +        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
-+            return Ok(());
++            return Poll::Ready(Ok(()));
 +        }
-         let src = self
-             .path_source
-             .as_mut()
-@@ -92,6 +95,9 @@ impl<'cfg> Source for GitSource<'cfg> {
-     }
+         if let Some(src) = self.path_source.as_mut() {
+             src.query(dep, f)
+         } else {
+@@ -98,6 +101,9 @@ impl<'cfg> Source for GitSource<'cfg> {
+         dep: &Dependency,
+         f: &mut dyn FnMut(Summary),
+     ) -> Poll<CargoResult<()>> {
++        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
++            return Poll::Ready(Ok(()));
++        }
+         if let Some(src) = self.path_source.as_mut() {
+             src.fuzzy_query(dep, f)
+         } else {
+@@ -119,6 +125,10 @@ impl<'cfg> Source for GitSource<'cfg> {
  
-     fn fuzzy_query(&mut self, dep: &Dependency, f: &mut dyn FnMut(Summary)) -> CargoResult<()> {
-+        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
+     fn block_until_ready(&mut self) -> CargoResult<()> {
+         if self.path_source.is_some() {
 +            return Ok(());
 +        }
-         let src = self
-             .path_source
-             .as_mut()
-@@ -112,6 +118,9 @@ impl<'cfg> Source for GitSource<'cfg> {
-     }
++
++        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
+             return Ok(());
+         }
  
-     fn update(&mut self) -> CargoResult<()> {
-+        if std::env::var("CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE").is_ok() {
-+            return Ok(());
-+        }
-         let git_path = self.config.git_path();
-         let git_path = self.config.assert_package_cache_locked(&git_path);
-         let db_path = git_path.join("db").join(&self.ident);
