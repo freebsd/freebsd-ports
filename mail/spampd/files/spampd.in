@@ -22,8 +22,7 @@ rcvar=spampd_enable
 
 : ${spampd_enable="NO"}
 : ${spampd_pidfile="/var/run/spamd/spampd.pid"}
-: ${spampd_flags="--user=spamd --group=spamd --host 127.0.0.1:10024 --relayhost=127.0.0.1:10025 --dose --tagall --auto-whitelist"}
-
+: ${spampd_flags="--user=spamd --group=spamd --homedir=/var/spool/spamd --host=127.0.0.1:10025 --relayhost=127.0.0.1:10026 --dose --tagall"}
 load_rc_config $name
 
 command="%%PREFIX%%/sbin/$name"
