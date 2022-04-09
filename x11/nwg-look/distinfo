@@ -1,6 +1,6 @@
-TIMESTAMP = 1649376992
-SHA256 (nwg-piotr-nwg-look-v0.1.0_GH0.tar.gz) = 73c0324ec658d78902d94ea4220f4b824a75ad665183ececba246bfc94bb089e
-SIZE (nwg-piotr-nwg-look-v0.1.0_GH0.tar.gz) = 19620
+TIMESTAMP = 1649465555
+SHA256 (nwg-piotr-nwg-look-v0.1.1_GH0.tar.gz) = dba9d060241b9606798d6f669759d99047b479bc6189d0da242611528c199b2e
+SIZE (nwg-piotr-nwg-look-v0.1.1_GH0.tar.gz) = 19926
 SHA256 (creack-pty-v1.1.17_GH0.tar.gz) = 0e80751ab6f85cccee8cb20fbeeb970d69854aa19c857a26f7fdaabfbc20d66d
 SIZE (creack-pty-v1.1.17_GH0.tar.gz) = 9960
 SHA256 (golang-mod-9b9b3d81d5e3_GH0.tar.gz) = 17a6e030b6e35cce6189203a8f86f0c4d26cb70f16cfd10c510b0876ff9852fc
