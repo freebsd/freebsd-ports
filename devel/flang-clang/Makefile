@@ -41,6 +41,9 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 CC=		${LOCALBASE}/llvm${LLVM_VER}/bin/clang
 CXX=		${LOCALBASE}/llvm${LLVM_VER}/bin/clang++
 
+# Support __builtin_is_constant_evaluated(), for libc++ >= 14
+CXXFLAGS+=	-include ${FILESDIR}/builtin_is_constant_evaluated.h
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/lib/Driver/ToolChains/FreeBSD.cpp
 
