@@ -11,8 +11,6 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-BROKEN=		does not build with octave version >= 7.1.0
-
 LIB_DEPENDS=	librsb.so:math/librsb
 
 # OCTSRC is the name of the directory of the package.
