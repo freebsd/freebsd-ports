@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer libx264 based H264 plugin

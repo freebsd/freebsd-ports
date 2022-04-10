@@ -2,7 +2,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 

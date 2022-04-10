@@ -1,6 +1,6 @@
 PORTNAME=	lookbook
 DISTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	greg@unrelenting.technology

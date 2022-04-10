@@ -2,7 +2,7 @@
 
 PORTNAME=	adapta-backgrounds
 PORTVERSION=	0.5.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 
 MAINTAINER=	nivit@FreeBSD.org

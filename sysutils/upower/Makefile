@@ -2,6 +2,7 @@
 
 PORTNAME=	upower
 PORTVERSION=	0.99.17
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.freedesktop.org/upower/upower/-/archive/${DISTVERSIONFULL}/

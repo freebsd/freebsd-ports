@@ -2,7 +2,7 @@
 
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 		GENTOO

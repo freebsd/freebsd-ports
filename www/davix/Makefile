@@ -1,6 +1,6 @@
 PORTNAME=	davix
 DISTVERSION=	0.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://grid-deployment.web.cern.ch/grid-deployment/dms/lcgutil/tar/${PORTNAME}/${DISTVERSION}/
 

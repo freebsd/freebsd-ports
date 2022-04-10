@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.3.34
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.nluug.nl/db/${SITESDIR} \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \

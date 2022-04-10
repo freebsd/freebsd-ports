@@ -1,6 +1,6 @@
 PORTNAME=	elementary-code
 DISTVERSION=	6.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

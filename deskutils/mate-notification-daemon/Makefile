@@ -2,6 +2,7 @@
 
 PORTNAME=	mate-notification-daemon
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

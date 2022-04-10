@@ -1,6 +1,6 @@
 PORTNAME=	alarm-clock-applet
 PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/alarm-clock/trunk/0.3.4/+download/
 

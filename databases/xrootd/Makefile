@@ -1,6 +1,6 @@
 PORTNAME=	xrootd
 DISTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://xrootd.org/download/v${DISTVERSION}/
 

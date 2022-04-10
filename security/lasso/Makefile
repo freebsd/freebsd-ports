@@ -2,7 +2,7 @@
 
 PORTNAME=	lasso
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 

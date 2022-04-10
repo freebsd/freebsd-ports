@@ -3,7 +3,7 @@
 
 PORTNAME=	telepathy-logger
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

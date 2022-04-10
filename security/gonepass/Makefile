@@ -1,6 +1,6 @@
 PORTNAME=	gonepass
 DISTVERSION=	g20181221
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	greg@unrelenting.technology

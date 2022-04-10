@@ -2,7 +2,7 @@
 
 PORTNAME=	tablix2
 PORTVERSION=	0.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math www
 MASTER_SITES=	http://www.tablix.org/releases/stable/ \
 		http://my.samba.org/

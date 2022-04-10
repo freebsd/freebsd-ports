@@ -2,7 +2,7 @@
 
 PORTNAME=	foomatic-db-engine
 PORTVERSION=	4.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/

@@ -1,6 +1,6 @@
 PORTNAME=	ztoolkit
 DISTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://git.zrythm.org/zrythm/ztoolkit/archive/ # .../v${DISTVERSION}.tar.gz&dummy=/ doesn't work with Gitea
 DISTNAME=	v${DISTVERSION}

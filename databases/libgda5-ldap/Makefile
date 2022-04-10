@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	5-ldap
 

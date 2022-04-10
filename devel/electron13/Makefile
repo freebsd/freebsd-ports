@@ -1,7 +1,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts

@@ -1,6 +1,6 @@
 PORTNAME=	geany-plugin-pretty-printer
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org

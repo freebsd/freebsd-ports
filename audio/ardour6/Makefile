@@ -2,7 +2,7 @@
 
 PORTNAME=	ardour6
 PORTVERSION=	6.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/nc/mirror/ \
 		https://community.ardour.org/srctar/ \

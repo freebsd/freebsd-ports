@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer DVD access plugin with libdvdread

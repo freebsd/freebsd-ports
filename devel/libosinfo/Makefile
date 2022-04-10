@@ -2,7 +2,7 @@
 
 PORTNAME=	libosinfo
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 

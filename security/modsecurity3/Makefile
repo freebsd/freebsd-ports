@@ -1,7 +1,7 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3

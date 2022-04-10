@@ -2,7 +2,7 @@
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
 		https://ftp.osuosl.org/pub/xiph/releases/ezstream/

@@ -1,7 +1,7 @@
 PORTNAME=	mod_security
 DISTVERSIONPREFIX=	v
 PORTVERSION=	2.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

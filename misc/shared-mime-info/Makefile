@@ -2,6 +2,7 @@
 
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 
 MAINTAINER=	desktop@FreeBSD.org

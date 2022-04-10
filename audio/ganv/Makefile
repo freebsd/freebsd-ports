@@ -1,6 +1,6 @@
 PORTNAME=	ganv
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 

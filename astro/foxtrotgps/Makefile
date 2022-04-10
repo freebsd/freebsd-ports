@@ -2,7 +2,7 @@
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
