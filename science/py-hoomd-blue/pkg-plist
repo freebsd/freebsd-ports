@@ -666,6 +666,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairOPP.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairReactionField.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairTWF.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairTable.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairYukawa.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairZBL.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorSpecialPairCoulomb.h
