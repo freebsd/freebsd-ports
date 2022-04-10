@@ -1,7 +1,7 @@
 # Created by: Nicola Vitale <nivit@email.it>
 
 PORTNAME=	wxmaxima
-PORTVERSION=	22.03.0
+PORTVERSION=	22.04.0
 DISTVERSIONPREFIX=	Version-
 CATEGORIES=	math
 
