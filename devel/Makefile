@@ -5097,6 +5097,7 @@
     SUBDIR += py-pytest-mutagen
     SUBDIR += py-pytest-mypy
     SUBDIR += py-pytest-pep8
+    SUBDIR += py-pytest-plus
     SUBDIR += py-pytest-pycodestyle
     SUBDIR += py-pytest-randomly
     SUBDIR += py-pytest-regressions
