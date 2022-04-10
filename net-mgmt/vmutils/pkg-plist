@@ -12,6 +12,9 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_ha.png
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_multicluster.png
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_single.png
+%%PORTDOCS%%%%DOCSDIR%%/vmanomaly-holtwinters-example.png
+%%PORTDOCS%%%%DOCSDIR%%/vmanomaly-prophet-example.png
+%%PORTDOCS%%%%DOCSDIR%%/vmanomaly.md
 %%PORTDOCS%%%%DOCSDIR%%/vmauth.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackup.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager.md
