@@ -1,5 +1,5 @@
 PORTNAME=	pdfminer.six
-PORTVERSION=	20211012
+PORTVERSION=	20220319
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,12 @@ USE_PYTHON=	distutils concurrent autoplist
 
 CONFLICTS_INSTALL=	py??-pdfminer py??-pdfminer3k
 NO_ARCH=		yes
+
+OPTIONS_DEFINE=		IMAGE
+OPTIONS_DEFAULT=	IMAGE
+
+IMAGE_DESC=	Enable support for image extraction
+IMAGE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
 post-extract:
 	@cd ${WRKSRC} && ${MV} tools/dumppdf.py tools/dumppdf
