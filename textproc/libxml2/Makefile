@@ -2,43 +2,57 @@
 
 PORTNAME=	libxml2
 DISTVERSION=	2.9.13
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
 LICENSE=	MIT
 
-USES+=		cmake cpe iconv localbase:ldflags pkgconfig tar:xz
-
+# Upstream offers CMake in addition to autotools, but we use the latter.
+# CMake is a heavy build system, heavier than autotools, and this
+# port has many consumers of its core functionality. Some such
+# consumers, especially when optioned appropriately (and users have
+# a right to do so), may become dependencies of dependencies of CMake.
+# Additionally, some consumers rely on symbol versioning that CMake
+# does not support (as of Q2 2022) without a hack. Please consider the
+# effects of the ecosystem and technical merits before considering
+# switching build systems again. Any changes to this end not dogfooded
+# thoroughly may be reverted.
+USES+=		cpe iconv libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	xmlsoft
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PLIST_SUB+=	LIBVERSION=${DISTVERSION}
 
 # Don't build with Python support unless requested
-CMAKE_${LIBXML2_SLAVE:DON:UOFF}=LIBXML2_WITH_PYTHON
+CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
+			--with-html-subdir=${PORTNAME} \
+			--with-lzma=/usr \
+			--${LIBXML2_SLAVE:Dwith:Uwithout}-python${LIBXML2_SLAVE:D=${PYTHON_CMD}:U}
 
-OPTIONS_DEFINE=		DOCS ICU MEM_DEBUG READLINE TEST THREAD_ALLOC
-OPTIONS_DEFAULT=	ICU READLINE
+OPTIONS_DEFINE=	DOCS ICU MEM_DEBUG READLINE THREAD_ALLOC
+OPTIONS_DEFAULT=	READLINE
 OPTIONS_SUB=		yes
 
 MEM_DEBUG_DESC=		Memory debugging (DEVELOPERS ONLY!)
-THREAD_ALLOC_DESC=	Per-thread memory (DEVELOPERS ONLY!)
 READLINE_DESC=		History for xmllint
+THREAD_ALLOC_DESC=	Per-thread memory (DEVELOPERS ONLY!)
 
-DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-docs
-ICU_LIB_DEPENDS=	libicudata.so:devel/icu
-ICU_CMAKE_BOOL=		LIBXML2_WITH_ICU
-MEM_DEBUG_CAKE_BOOL=	LIBXML2_WITH_MEM_DEBUG
-READLINE_LIB_DEPENDS=	libreadline.so:devel/readline
-READLINE_CMAKE_OFF=	-DHAVE_LIBHISTORY=false -DHAVE_LIBREADLINE=false
-THREAD_ALLOC_CMAKE_BOOL=LIBXML2_WITH_THREAD_ALLOC
-TEST_CMAKE_BOOL=	LIBXML2_WITH_TESTS
-TEST_TEST_TARGET=	test
+ICU_LIB_DEPENDS=		libicudata.so:devel/icu
+ICU_CONFIGURE_WITH=		icu
+MEM_DEBUG_CONFIGURE_WITH=	mem-debug
+READLINE_LIB_DEPENDS=		libreadline.so:devel/readline
+READLINE_CONFIGURE_WITH=	history \
+				readline
+THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
 
 post-patch:
 .for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
@@ -50,11 +64,12 @@ post-patch:
 
 .if !defined(LIBXML2_SLAVE)
 post-install:
-	${RM} ${STAGEDIR}${DOCSDIR}/xmlcatalog.1
-	${RM} ${STAGEDIR}${DOCSDIR}/xmllint.1.bak
-	${RM} ${STAGEDIR}${DOCSDIR}/xmllint.1
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libxml2.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libxml2.so.2
-	${INSTALL_DATA} ${WRKSRC}/libxml.m4 ${STAGEDIR}${PREFIX}/share/aclocal/libxml.m4
+# Documentation should be in DOCSDIR
+	@${MV} ${STAGEDIR}${PREFIX}/share/gtk-doc/html/libxml2 \
+		${STAGEDIR}${DOCSDIR}/devhelp
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
+# Install remaining documentation that's not connected to autotools
+	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

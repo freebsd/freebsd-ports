@@ -2,7 +2,7 @@
 
 PORTNAME=	libxslt
 DISTVERSION=	1.1.35
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
@@ -13,10 +13,10 @@ COMMENT=	XML stylesheet transformation library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libicudata.so:devel/icu
+# See note in textproc/libxml2 for why this port uses autotools
+# from the choices of that and CMake.
 USES=		cpe gmake gnome libtool localbase:ldflags pathfix pkgconfig tar:xz
 CPE_VENDOR=	xmlsoft
-# many ports use xsltproc as a BUILD_DEPENDS, using cmake can cause dependency loops
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
