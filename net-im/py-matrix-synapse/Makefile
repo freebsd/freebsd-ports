@@ -2,7 +2,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.55.2
+DISTVERSION=	1.56.0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.4.0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2<3.1.0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.3:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=3.1.4:devel/py-ijson@${PY_FLAVOR} \
