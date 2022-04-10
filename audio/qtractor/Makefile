@@ -1,7 +1,6 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	qtractor_
-DISTVERSION=	0_9_25
-PORTREVISION=	3
+DISTVERSION=	0_9_26
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/rncbc/qtractor/archive/refs/tags/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
