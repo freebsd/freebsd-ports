@@ -1,0 +1,47 @@
+--- Makefile.in.orig	2021-06-09 19:53:33 UTC
++++ Makefile.in
+@@ -760,7 +760,7 @@ man_MANS = xml2-config.1 libxml.3
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libxml.m4
+ runtest_SOURCES = runtest.c
+-runtest_LDFLAGS = 
++runtest_LDFLAGS = -pthread
+ runtest_DEPENDENCIES = $(DEPS)
+ runtest_LDADD = $(BASE_THREAD_LIBS) $(RDL_LIBS) $(LDADDS)
+ testrecurse_SOURCES = testrecurse.c
+@@ -808,7 +808,7 @@ testC14N_LDFLAGS = 
+ testC14N_DEPENDENCIES = $(DEPS)
+ testC14N_LDADD = $(LDADDS)
+ testThreads_SOURCES = testThreads.c
+-testThreads_LDFLAGS = 
++testThreads_LDFLAGS = -pthread
+ testThreads_DEPENDENCIES = $(DEPS)
+ testThreads_LDADD = $(BASE_THREAD_LIBS) $(LDADDS)
+ testURI_SOURCES = testURI.c
+@@ -1285,7 +1285,7 @@ am--depfiles: $(am__depfiles_remade)
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+ 
+ .c.lo:
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -fPIC -DPIC -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+ @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@@ -1774,7 +1774,7 @@ check-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-recursive
+-all-am: Makefile $(PROGRAMS) $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
++all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
+ 		config.h
+ install-binPROGRAMS: install-libLTLIBRARIES
+ 
+@@ -1911,7 +1911,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-cmakeDATA install-data-local \
++install-data-am: install-cmakeDATA \
+ 	install-m4dataDATA install-man install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive
