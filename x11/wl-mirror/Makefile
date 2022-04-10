@@ -1,6 +1,6 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.11.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,6 +23,7 @@ GL_TUPLE=	https://gitlab.freedesktop.org:wlroots:wlr-protocols:0c7437e2b600382f0
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
+	@${ECHO_CMD} "${DISTVERSIONFULL}" >${WRKSRC}/version.txt
 	@${REINPLACE_CMD} 's,/usr,${LOCALBASE},' ${WRKSRC}/CMakeLists.txt
 
 pre-configure:
