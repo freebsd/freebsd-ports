@@ -20,16 +20,6 @@ You can also start the RStudio Server service once with:
 # service rstudio-server onestart
 and then navigate to http://localhost:8787/ in your browser.
 
-
-Workaround for the path bug in RStudio Server
-(https://github.com/rstudio/rstudio/issues/8939):
-- In order to be able to install R packages from RStudio Server you
-- need to first correct the path by executing this command in the
-- 'Console' tab (in the RStudio Server running in your browser):
-
-Sys.setenv(PATH = paste("/usr/local/bin:",Sys.getenv("PATH"), sep=""))
-
-
 EOM
 }
 ]
