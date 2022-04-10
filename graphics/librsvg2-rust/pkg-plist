@@ -117,7 +117,6 @@ man/man1/rsvg-convert.1.gz
 %%DOCSDIR%%/Rsvg-2.0/property.Handle.metadata.html
 %%DOCSDIR%%/Rsvg-2.0/property.Handle.title.html
 %%DOCSDIR%%/Rsvg-2.0/property.Handle.width.html
-%%DOCSDIR%%/Rsvg-2.0/pygment.css
 %%DOCSDIR%%/Rsvg-2.0/recommendations.html
 %%DOCSDIR%%/Rsvg-2.0/search.js
 %%DOCSDIR%%/Rsvg-2.0/struct.DimensionData.html

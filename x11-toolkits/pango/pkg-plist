@@ -72,6 +72,8 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/RedHatDisplay-Bold.woff2
 %%PORTDOCS%%share/doc/Pango/RedHatDisplay-BoldItalic.woff
 %%PORTDOCS%%share/doc/Pango/RedHatDisplay-BoldItalic.woff2
+%%PORTDOCS%%share/doc/Pango/RedHatDisplay-Italic.woff
+%%PORTDOCS%%share/doc/Pango/RedHatDisplay-Italic.woff2
 %%PORTDOCS%%share/doc/Pango/RedHatDisplay-Medium.woff
 %%PORTDOCS%%share/doc/Pango/RedHatDisplay-Medium.woff2
 %%PORTDOCS%%share/doc/Pango/RedHatDisplay-MediumItalic.woff
@@ -90,6 +92,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/RedHatText-MediumItalic.woff2
 %%PORTDOCS%%share/doc/Pango/RedHatText-Regular.woff
 %%PORTDOCS%%share/doc/Pango/RedHatText-Regular.woff2
+%%PORTDOCS%%share/doc/Pango/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%share/doc/Pango/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%share/doc/Pango/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%share/doc/Pango/alias.Glyph.html
 %%PORTDOCS%%share/doc/Pango/alias.GlyphUnit.html
 %%PORTDOCS%%share/doc/Pango/alias.LayoutRun.html
@@ -603,11 +608,12 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/pango_rendering.html
 %%PORTDOCS%%share/doc/Pango/pipeline-dark.png
 %%PORTDOCS%%share/doc/Pango/pipeline-light.png
-%%PORTDOCS%%share/doc/Pango/pygment.css
 %%PORTDOCS%%share/doc/Pango/rects1.png
 %%PORTDOCS%%share/doc/Pango/rects2.png
 %%PORTDOCS%%share/doc/Pango/rects3.png
 %%PORTDOCS%%share/doc/Pango/search.js
+%%PORTDOCS%%share/doc/Pango/solarized-dark.css
+%%PORTDOCS%%share/doc/Pango/solarized-light.css
 %%PORTDOCS%%share/doc/Pango/split-cursor-dark.png
 %%PORTDOCS%%share/doc/Pango/split-cursor-light.png
 %%PORTDOCS%%share/doc/Pango/struct.Analysis.html
@@ -722,6 +728,8 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-Bold.woff2
 %%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-BoldItalic.woff
 %%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-BoldItalic.woff2
+%%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-Italic.woff
+%%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-Italic.woff2
 %%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-Medium.woff
 %%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-Medium.woff2
 %%PORTDOCS%%share/doc/PangoCairo/RedHatDisplay-MediumItalic.woff
@@ -740,6 +748,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoCairo/RedHatText-MediumItalic.woff2
 %%PORTDOCS%%share/doc/PangoCairo/RedHatText-Regular.woff
 %%PORTDOCS%%share/doc/PangoCairo/RedHatText-Regular.woff2
+%%PORTDOCS%%share/doc/PangoCairo/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%share/doc/PangoCairo/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%share/doc/PangoCairo/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%share/doc/PangoCairo/callback.ShapeRendererFunc.html
 %%PORTDOCS%%share/doc/PangoCairo/classes_hierarchy.html
 %%PORTDOCS%%share/doc/PangoCairo/fonts.css
@@ -777,9 +788,10 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoCairo/method.FontMap.set_resolution.html
 %%PORTDOCS%%share/doc/PangoCairo/pango-name.png
 %%PORTDOCS%%share/doc/PangoCairo/pango_cairo.html
-%%PORTDOCS%%share/doc/PangoCairo/pygment.css
 %%PORTDOCS%%share/doc/PangoCairo/rotated-text.png
 %%PORTDOCS%%share/doc/PangoCairo/search.js
+%%PORTDOCS%%share/doc/PangoCairo/solarized-dark.css
+%%PORTDOCS%%share/doc/PangoCairo/solarized-light.css
 %%PORTDOCS%%share/doc/PangoCairo/style.css
 %%PORTDOCS%%share/doc/PangoCairo/type_func.FontMap.get_default.html
 %%PORTDOCS%%share/doc/PangoCairo/type_func.FontMap.new.html
@@ -794,6 +806,8 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-Bold.woff2
 %%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-BoldItalic.woff
 %%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-BoldItalic.woff2
+%%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-Italic.woff
+%%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-Italic.woff2
 %%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-Medium.woff
 %%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-Medium.woff2
 %%PORTDOCS%%share/doc/PangoFT2/RedHatDisplay-MediumItalic.woff
@@ -812,6 +826,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoFT2/RedHatText-MediumItalic.woff2
 %%PORTDOCS%%share/doc/PangoFT2/RedHatText-Regular.woff
 %%PORTDOCS%%share/doc/PangoFT2/RedHatText-Regular.woff2
+%%PORTDOCS%%share/doc/PangoFT2/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%share/doc/PangoFT2/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%share/doc/PangoFT2/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%share/doc/PangoFT2/callback.SubstituteFunc.html
 %%PORTDOCS%%share/doc/PangoFT2/class.FontMap.html
 %%PORTDOCS%%share/doc/PangoFT2/classes_hierarchy.html
@@ -839,8 +856,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoFT2/method.FontMap.set_resolution.html
 %%PORTDOCS%%share/doc/PangoFT2/method.FontMap.substitute_changed.html
 %%PORTDOCS%%share/doc/PangoFT2/pango-name.png
-%%PORTDOCS%%share/doc/PangoFT2/pygment.css
 %%PORTDOCS%%share/doc/PangoFT2/search.js
+%%PORTDOCS%%share/doc/PangoFT2/solarized-dark.css
+%%PORTDOCS%%share/doc/PangoFT2/solarized-light.css
 %%PORTDOCS%%share/doc/PangoFT2/style.css
 %%PORTDOCS%%share/doc/PangoFT2/type_func.FontMap.for_display.html
 %%PORTDOCS%%share/doc/PangoFT2/urlmap.js
@@ -853,6 +871,8 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-Bold.woff2
 %%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-BoldItalic.woff
 %%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-BoldItalic.woff2
+%%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-Italic.woff
+%%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-Italic.woff2
 %%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-Medium.woff
 %%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-Medium.woff2
 %%PORTDOCS%%share/doc/PangoFc/RedHatDisplay-MediumItalic.woff
@@ -871,6 +891,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoFc/RedHatText-MediumItalic.woff2
 %%PORTDOCS%%share/doc/PangoFc/RedHatText-Regular.woff
 %%PORTDOCS%%share/doc/PangoFc/RedHatText-Regular.woff2
+%%PORTDOCS%%share/doc/PangoFc/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%share/doc/PangoFc/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%share/doc/PangoFc/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%share/doc/PangoFc/callback.DecoderFindFunc.html
 %%PORTDOCS%%share/doc/PangoFc/callback.SubstituteFunc.html
 %%PORTDOCS%%share/doc/PangoFc/class.Decoder.html
@@ -912,8 +935,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoFc/pango-name.png
 %%PORTDOCS%%share/doc/PangoFc/property.Font.fontmap.html
 %%PORTDOCS%%share/doc/PangoFc/property.Font.pattern.html
-%%PORTDOCS%%share/doc/PangoFc/pygment.css
 %%PORTDOCS%%share/doc/PangoFc/search.js
+%%PORTDOCS%%share/doc/PangoFc/solarized-dark.css
+%%PORTDOCS%%share/doc/PangoFc/solarized-light.css
 %%PORTDOCS%%share/doc/PangoFc/style.css
 %%PORTDOCS%%share/doc/PangoFc/type_func.Font.description_from_pattern.html
 %%PORTDOCS%%share/doc/PangoFc/urlmap.js
@@ -928,6 +952,8 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-Bold.woff2
 %%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-BoldItalic.woff
 %%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-BoldItalic.woff2
+%%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-Italic.woff
+%%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-Italic.woff2
 %%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-Medium.woff
 %%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-Medium.woff2
 %%PORTDOCS%%share/doc/PangoOT/RedHatDisplay-MediumItalic.woff
@@ -946,6 +972,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoOT/RedHatText-MediumItalic.woff2
 %%PORTDOCS%%share/doc/PangoOT/RedHatText-Regular.woff
 %%PORTDOCS%%share/doc/PangoOT/RedHatText-Regular.woff2
+%%PORTDOCS%%share/doc/PangoOT/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%share/doc/PangoOT/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%share/doc/PangoOT/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%share/doc/PangoOT/alias.Tag.html
 %%PORTDOCS%%share/doc/PangoOT/class.Info.html
 %%PORTDOCS%%share/doc/PangoOT/class.Ruleset.html
@@ -995,8 +1024,9 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoOT/method.RulesetDescription.free.html
 %%PORTDOCS%%share/doc/PangoOT/method.RulesetDescription.hash.html
 %%PORTDOCS%%share/doc/PangoOT/pango-name.png
-%%PORTDOCS%%share/doc/PangoOT/pygment.css
 %%PORTDOCS%%share/doc/PangoOT/search.js
+%%PORTDOCS%%share/doc/PangoOT/solarized-dark.css
+%%PORTDOCS%%share/doc/PangoOT/solarized-light.css
 %%PORTDOCS%%share/doc/PangoOT/struct.Buffer.html
 %%PORTDOCS%%share/doc/PangoOT/struct.FeatureMap.html
 %%PORTDOCS%%share/doc/PangoOT/struct.Glyph.html
@@ -1005,6 +1035,13 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoOT/type_func.Info.get.html
 %%PORTDOCS%%share/doc/PangoOT/type_func.Ruleset.get_for_description.html
 %%PORTDOCS%%share/doc/PangoOT/urlmap.js
+%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Italic.woff
+%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Italic.woff2
+%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-Semibold.ttf.woff
+%%PORTDOCS%%share/doc/PangoXft/solarized-dark.css
+%%PORTDOCS%%share/doc/PangoXft/solarized-light.css
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/PangoXft.devhelp2
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Black.woff
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Black.woff2
@@ -1066,7 +1103,6 @@ libdata/pkgconfig/pangoot.pc
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/pango_xft.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/property.Renderer.display.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/property.Renderer.screen.html
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/pygment.css
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/search.js
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/style.css
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/type_func.Font.get_font.html

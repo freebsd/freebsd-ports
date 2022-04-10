@@ -1,5 +1,6 @@
 PORTNAME=	libadwaita
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	gnome@FreeBSD.org

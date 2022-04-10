@@ -64,6 +64,8 @@ share/applications/org.gnome.Adwaita1.Demo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Bold.woff2
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-BoldItalic.woff
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-BoldItalic.woff2
+%%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Italic.woff
+%%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Italic.woff2
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Medium.woff
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Medium.woff2
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-MediumItalic.woff
@@ -82,6 +84,9 @@ share/applications/org.gnome.Adwaita1.Demo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatText-MediumItalic.woff2
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatText-Regular.woff
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatText-Regular.woff2
+%%PORTDOCS%%%%DOCSDIR%%-1/SourceCodePro-It.ttf.woff
+%%PORTDOCS%%%%DOCSDIR%%-1/SourceCodePro-Regular.ttf.woff
+%%PORTDOCS%%%%DOCSDIR%%-1/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%%%DOCSDIR%%-1/action-row-dark.png
 %%PORTDOCS%%%%DOCSDIR%%-1/action-row.png
 %%PORTDOCS%%%%DOCSDIR%%-1/adaptive-boxed-lists-narrow-dark.png
@@ -1016,7 +1021,6 @@ share/applications/org.gnome.Adwaita1.Demo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1/property.Window.content.html
 %%PORTDOCS%%%%DOCSDIR%%-1/property.WindowTitle.subtitle.html
 %%PORTDOCS%%%%DOCSDIR%%-1/property.WindowTitle.title.html
-%%PORTDOCS%%%%DOCSDIR%%-1/pygment.css
 %%PORTDOCS%%%%DOCSDIR%%-1/search-bar-inline-dark.png
 %%PORTDOCS%%%%DOCSDIR%%-1/search-bar-inline.png
 %%PORTDOCS%%%%DOCSDIR%%-1/search.js
@@ -1040,6 +1044,8 @@ share/applications/org.gnome.Adwaita1.Demo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1/signal.TabView.page-reordered.html
 %%PORTDOCS%%%%DOCSDIR%%-1/signal.TabView.setup-menu.html
 %%PORTDOCS%%%%DOCSDIR%%-1/signal.Toast.dismissed.html
+%%PORTDOCS%%%%DOCSDIR%%-1/solarized-dark.css
+%%PORTDOCS%%%%DOCSDIR%%-1/solarized-light.css
 %%PORTDOCS%%%%DOCSDIR%%-1/split-button-dark.png
 %%PORTDOCS%%%%DOCSDIR%%-1/split-button.png
 %%PORTDOCS%%%%DOCSDIR%%-1/squeezer-narrow-dark.png
