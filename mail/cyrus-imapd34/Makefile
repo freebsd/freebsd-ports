@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
@@ -166,6 +166,8 @@ CYRUS_PERL_MAN3=Cyrus::Annotator::Daemon Cyrus::Annotator::Message \
 
 INSTALL_TARGET=	install-strip
 
+REINPLACE_ARGS=	-i ''
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
@@ -217,6 +219,10 @@ post-install:
 	${SED} -e 's,/run/cyrus/socket,/var/imap/socket,' \
 		${WRKSRC}/doc/examples/cyrus_conf/normal.conf \
 		> ${STAGEDIR}${EXAMPLESDIR}/cyrus.conf
+.if !${PORT_OPTIONS:MHTTP}
+	${REINPLACE_CMD} -e 's/^\(  http\)/#\1/' \
+		${STAGEDIR}${EXAMPLESDIR}/cyrus.conf
+.endif
 .for f in mkimap masssievec translatesieve
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/${f} \
 		${STAGEDIR}${CYRUS_PREFIX}/sbin/${f}
