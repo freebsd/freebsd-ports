@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220413:
+  AFFECTS: users of net-im/py-matrix-synapse
+  AUTHOR: ports@skyforge.at
+
+  Synapse will now refuse to start up if open registration is enabled,
+  in order to help mitigate abuse across the federation. If you would
+  like to provide registration to anyone, consider adding email,
+  recaptcha or token-based verification in order to prevent automated
+  registration from bad actors. This check can be disabled by setting
+  the enable_registration_without_verification option in your
+  homeserver configuration file to true. More details are available in
+  the upgrade notes[0].
+
+  Synapse will additionally now refuse to start when using PostgreSQL
+  with a non-C values for COLLATE and CTYPE, unless the config flag
+  allow_unsafe_locale, found in the database section of the
+  configuration file, is set to true. See the upgrade notes[1] for
+  details.
+
+  [0] https://matrix-org.github.io/synapse/v1.56/upgrade.html#open-registration-without-verification-is-now-disabled-by-default
+  [1] https://matrix-org.github.io/synapse/v1.56/upgrade#change-in-behaviour-for-postgresql-databases-with-unsafe-locale
+
 20220410:
   AFFECTS: users of sysutils/screen
   AUTHOR: cy@FreeBSD.org
