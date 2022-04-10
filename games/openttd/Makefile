@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	openttd
-DISTVERSION=	12.1
-PORTREVISION=	2
+DISTVERSION=	12.2
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -43,7 +42,7 @@ SERVER_LIB_DEPENDS_OFF=	libfontconfig.so:x11-fonts/fontconfig \
 SERVER_VARS=		USE_RC_SUBR=${PORTNAME}
 
 post-install-SERVER-on:
-	@${REINPLACE_CMD} -E '/icons|pixmaps/d' ${TMPPLIST}
+	@${REINPLACE_CMD} -E '/\.desktop|icons|pixmaps/d' ${TMPPLIST}
 
 do-test:
 	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
