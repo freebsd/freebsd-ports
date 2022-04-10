@@ -2,7 +2,7 @@
 
 PORTNAME=	wayland
 DISTVERSION=	1.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 

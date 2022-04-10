@@ -1,6 +1,6 @@
 PORTNAME=	growl-for-linux
 PORTVERSION=	0.8.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org

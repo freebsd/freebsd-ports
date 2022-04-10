@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	GStreamer free lossless audio encoder/decoder plugin

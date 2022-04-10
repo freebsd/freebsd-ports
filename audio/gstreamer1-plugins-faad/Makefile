@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	GStreamer MPEG-2 and MPEG-4 AAC decoder plugin

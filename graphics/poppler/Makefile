@@ -2,6 +2,7 @@
 
 PORTNAME=	poppler
 DISTVERSION=	22.01.0
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 

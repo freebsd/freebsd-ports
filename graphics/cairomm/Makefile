@@ -2,7 +2,7 @@
 
 PORTNAME=	cairomm
 PORTVERSION=	1.12.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 

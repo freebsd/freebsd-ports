@@ -2,7 +2,7 @@
 
 PORTNAME=	libsexy
 PORTVERSION=	0.1.11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 

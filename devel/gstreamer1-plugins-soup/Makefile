@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 COMMENT=	GStreamer soup based http input plugin

@@ -1,7 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.16.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 

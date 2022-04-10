@@ -2,7 +2,7 @@
 
 PORTNAME=	synapse
 DISTVERSION=	0.2.99.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/363823069/
 

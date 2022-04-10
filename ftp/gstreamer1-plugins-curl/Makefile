@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 
 COMMENT=	GStreamer curl based output plugin

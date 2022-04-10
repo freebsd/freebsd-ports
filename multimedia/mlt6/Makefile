@@ -1,6 +1,6 @@
 PORTNAME=		${_MLT_PORTNAME}
 DISTVERSION=		${_MLT_VERSION}
-PORTREVISION?=		5
+PORTREVISION?=		6
 CATEGORIES?=		multimedia
 # Don't use GitHub "fake" downloads that are auto-generated from a
 # tag; the project uploads tarballs for each release.

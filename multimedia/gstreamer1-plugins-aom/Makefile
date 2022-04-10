@@ -1,4 +1,4 @@
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer (libaom) plugin

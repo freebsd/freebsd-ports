@@ -2,7 +2,7 @@
 
 PORTNAME=	aria2
 PORTVERSION=	1.36.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/aria2/aria2/releases/download/release-${PORTVERSION}/ \
 		LOCAL/sunpoet

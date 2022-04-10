@@ -2,7 +2,7 @@
 
 PORTNAME=	yaz
 DISTVERSION=	5.31.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://ftp.indexdata.dk/pub/yaz/
 

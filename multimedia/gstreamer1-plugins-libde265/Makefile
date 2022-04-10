@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer HEVC/H.265 decoder (libde265) plugin

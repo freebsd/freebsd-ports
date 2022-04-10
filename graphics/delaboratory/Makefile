@@ -2,7 +2,7 @@
 
 PORTNAME=	delaboratory
 PORTVERSION=	0.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/delaboratory/
 

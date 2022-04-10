@@ -2,7 +2,7 @@
 
 PORTNAME=	webkit
 DISTVERSION=	2.34.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3

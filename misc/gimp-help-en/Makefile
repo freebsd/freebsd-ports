@@ -2,7 +2,7 @@
 
 PORTNAME=	gimp-help
 PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc graphics
 MASTER_SITES=	http://gimp.mirrors.hoobly.com/pub/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/grafik/%SUBDIR%/ \

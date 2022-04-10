@@ -2,7 +2,7 @@
 
 PORTNAME=	gmpc-magnatune
 PORTVERSION=	11.8.16
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 

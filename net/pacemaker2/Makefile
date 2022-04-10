@@ -1,7 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTVERSION=		2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=		2
 
 .include "${.CURDIR}/../pacemaker1/Makefile.common"

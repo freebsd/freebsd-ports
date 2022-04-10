@@ -2,6 +2,7 @@
 
 PORTNAME=	gnucash-docs
 DISTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION:R}
 

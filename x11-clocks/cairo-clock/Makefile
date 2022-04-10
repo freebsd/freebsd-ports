@@ -1,6 +1,6 @@
 PORTNAME=	cairo-clock
 DISTVERSION=	0.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/c/cairo-clock/
 DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
