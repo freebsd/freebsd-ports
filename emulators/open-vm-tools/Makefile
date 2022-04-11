@@ -1,8 +1,7 @@
 # Created by: mbr@FreeBSD.org
 
 PORTNAME=	open-vm-tools
-PORTVERSION=	11.3.5
-PORTREVISION=	4
+PORTVERSION=	12.0.0
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=	2
 CATEGORIES=	emulators
@@ -13,7 +12,7 @@ COMMENT=	Open VMware tools for FreeBSD VMware guests ${${FLAVOR}_COMMENT}
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 aarch64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libmspack.so:archivers/libmspack
@@ -35,6 +34,7 @@ USE_RC_SUBR=	vmware-guestd vmware-kmod
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-vgauth \
+		--enable-containerinfo=no \
 		--sysconfdir=${PREFIX}/etc \
 		--without-icu
 CONFIGURE_ENV+=	SYSDIR=${SRC_BASE}/sys
