@@ -4,6 +4,9 @@ DISTVERSION=	1.00
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
+PATCH_SITES=	https://github.com/Dr-Noob/cpufetch/commit/
+PATCHFILES=	0db9f1f5c26e57a6383f4609c5605ed5d3d41fd1.patch:-p1
+
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	Simple yet fancy CPU architecture fetching tool
 
