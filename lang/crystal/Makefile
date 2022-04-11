@@ -1,6 +1,5 @@
 PORTNAME=		crystal
-DISTVERSION=		1.2.2
-PORTREVISION=		1
+DISTVERSION=		1.4.0
 CATEGORIES=		lang
 MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
@@ -15,12 +14,12 @@ LICENSE=	APACHE20
 ONLY_FOR_ARCHS=			aarch64 amd64
 ONLY_FOR_ARCHS_REASON=		requires prebuilt bootstrap compiler
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${BOOTSTRAP_LLVM_VERSION} \
+		git:devel/git
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libevent.so:devel/libevent \
 		libpcre.so:devel/pcre \
 		libLLVM-${LLVM_VERSION:C/^([6-9])0/\1/:S/-devel/15/}.so:devel/llvm${LLVM_VERSION}
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${BOOTSTRAP_LLVM_VERSION} \
-		git:devel/git
 RUN_DEPENDS=	pkg-config:devel/pkgconf
 
 USES=		compiler gmake pkgconfig ssl
