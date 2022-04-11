@@ -1,7 +1,7 @@
 # Created by: Gleb Smirnoff <glebius@FreeBSD.org>
 
 PORTNAME=	josm
-PORTVERSION=	18387
+PORTVERSION=	18427
 CATEGORIES=	astro java
 MASTER_SITES=	https://josm.openstreetmap.de/download/ \
 		https://mirror.amdmi3.ru/distfiles/
