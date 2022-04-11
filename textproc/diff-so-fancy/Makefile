@@ -1,5 +1,5 @@
 PORTNAME=	diff-so-fancy
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -8,6 +8,8 @@ COMMENT=	Fancier diff output formatter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	git:devel/git
 
 USES=		perl5 shebangfix
 USE_GITHUB=	yes
