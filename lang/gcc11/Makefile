@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	11.2.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -77,7 +78,7 @@ CONFIGURE_OUTSOURCE=	yes
 .if empty(PORT_OPTIONS:MBOOTSTRAP)
 CONFIGURE_ARGS+=--disable-bootstrap
 .else
-CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
+CONFIGURE_ARGS+=--with-build-config=bootstrap-lto-noplugin
 ALL_TARGET=	bootstrap-lean
 .endif
 INSTALL_TARGET=	install-strip
