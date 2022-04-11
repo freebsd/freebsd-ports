@@ -103,6 +103,7 @@ include/snort/lua/snort_plugin.lua
 include/snort/main/analyzer.h
 include/snort/main/analyzer_command.h
 include/snort/main/policy.h
+include/snort/main/reload_tuner.h
 include/snort/main/reload_tracker.h
 include/snort/main/snort.h
 include/snort/main/snort_config.h
