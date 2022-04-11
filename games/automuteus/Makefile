@@ -1,5 +1,5 @@
 PORTNAME=	automuteus
-DISTVERSION=	7.0.9
+DISTVERSION=	7.1.1
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -59,13 +59,13 @@ GO_TARGET=	.:${PORTNAME}
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
-		"@sample etc/${PORTNAME}/config.txt.sample" \
+		"@sample etc/${PORTNAME}/automuteus.conf.sample" \
 		"@dir /var/log/automuteus" \
 		/var/log/${PORTNAME}/logs.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${CP} ${FILESDIR}/config.txt ${STAGEDIR}${ETCDIR}/config.txt.sample
+	@${CP} ${FILESDIR}/automuteus.conf ${STAGEDIR}${ETCDIR}/automuteus.conf.sample
 	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
 	@${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/logs.txt
 
