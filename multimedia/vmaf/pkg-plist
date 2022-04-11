@@ -8,7 +8,7 @@ include/libvmaf/version.h
 lib/libvmaf.a
 lib/libvmaf.so
 lib/libvmaf.so.1
-lib/libvmaf.so.1.1.2
+lib/libvmaf.so.1.1.3
 libdata/pkgconfig/libvmaf.pc
 share/model/other_models/nflx_v1.json
 share/model/other_models/nflxtrain_norm_type_none.json
