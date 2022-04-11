@@ -1,0 +1,9 @@
+reprise is a tool primarily designed to test package production on
+FreeBSD. Unlike poudriere, it's focused on port testing only, without
+support for repository production, and has important features still
+lacking in poudriere, such as `make test` support, and more eager
+use of prebuilt packages. As a result, with reprise you test your
+ports, not rebuild llvm and other heavy dependencies over and over
+again.
+
+WWW: https://github.com/AMDmi3/reprise
