@@ -1069,7 +1069,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perllinux.1.gz
 %%MAN1%%/perllocale.1.gz
 %%MAN1%%/perllol.1.gz
-%%MAN1%%/perlmacos.1.gz
 %%MAN1%%/perlmacosx.1.gz
 %%MAN1%%/perlmod.1.gz
 %%MAN1%%/perlmodinstall.1.gz
@@ -1878,7 +1877,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perllinux.pod
 %%PRIV_LIB%%/pod/perllocale.pod
 %%PRIV_LIB%%/pod/perllol.pod
-%%PRIV_LIB%%/pod/perlmacos.pod
 %%PRIV_LIB%%/pod/perlmacosx.pod
 %%PRIV_LIB%%/pod/perlmod.pod
 %%PRIV_LIB%%/pod/perlmodinstall.pod
