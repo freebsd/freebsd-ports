@@ -1,11 +1,10 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e08bd1292288.patch:-p1 # https://github.com/djpohly/dwl/pull/212
+PATCHFILES+=	cba259e9bf4a.patch:-p1 # https://github.com/djpohly/dwl/pull/212
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	dwm for Wayland
@@ -28,6 +27,7 @@ USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	djpohly
 PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz \
 		share/wayland-sessions/${PORTNAME}.desktop
 PORTDOCS=	README.md
 
@@ -59,6 +59,7 @@ post-patch-X11-off:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/wayland-sessions
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/wayland-sessions
