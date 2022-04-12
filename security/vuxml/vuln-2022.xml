@@ -1,3 +1,47 @@
+  <vuln vid="0db46f84-b9fa-11ec-89df-080027240888">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py37-django22</name>
+	<name>py38-django22</name>
+	<name>py39-django22</name>
+	<name>py310-django22</name>
+	<range><lt>2.2.28</lt></range>
+      </package>
+      <package>
+	<name>py37-django32</name>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<range><lt>3.2.13</lt></range>
+      </package>
+      <package>
+	<name>py38-django40</name>
+	<name>py39-django40</name>
+	<name>py31-django40</name>
+	<range><lt>4.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django Release  reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2022/apr/11/security-releases/">
+	  <p>CVE-2022-28346: Potential SQL injection in QuerySet.annotate(), aggregate(), and extra().</p>
+	  <p>CVE-2022-28347: Potential SQL injection via QuerySet.explain(**options) on PostgreSQL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-28346</cvename>
+      <cvename>CVE-2022-28347</cvename>
+      <url>https://www.djangoproject.com/weblog/2022/apr/11/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-04-02</discovery>
+      <entry>2022-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38f2e3a0-b61e-11ec-9ebc-1c697aa5a594">
     <topic>FreeBSD -- zlib compression out-of-bounds write</topic>
     <affects>
