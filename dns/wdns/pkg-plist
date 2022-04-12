@@ -2,5 +2,5 @@ include/wdns.h
 lib/libwdns.a
 lib/libwdns.so
 lib/libwdns.so.1
-lib/libwdns.so.1.2.0
+lib/libwdns.so.1.3.0
 libdata/pkgconfig/libwdns.pc
