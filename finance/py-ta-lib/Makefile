@@ -1,11 +1,10 @@
 PORTNAME=	ta-lib
 DISTVERSIONPREFIX=	TA_Lib-
-DISTVERSION=	0.4.17
-PORTREVISION=	1
+DISTVERSION=	0.4.24
 CATEGORIES=	finance python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper for ta-lib (tools for market analysis)
 
 LICENSE=	BSD2CLAUSE
