@@ -12,7 +12,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonslicer>=0:textproc/py-jsonslicer@${PY_FL
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 USE_PYTHON=	autoplist distutils noflavors
@@ -29,4 +29,10 @@ post-install-DOCS-on:
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+IGNORE=		does not yet support python < 3.10
+.endif
+
+.include <bsd.port.post.mk>
