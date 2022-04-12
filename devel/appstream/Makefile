@@ -1,6 +1,5 @@
 PORTNAME=	AppStream
-DISTVERSION=	0.15.2
-PORTREVISION=	2
+DISTVERSION=	0.15.3
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
