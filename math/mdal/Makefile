@@ -1,8 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	mdal
-DISTVERSION=	0.9.0
-PORTREVISION=	3
+DISTVERSION=	0.9.4
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
