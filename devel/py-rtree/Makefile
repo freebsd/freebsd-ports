@@ -1,7 +1,7 @@
 # Created by: wenheping@gmail.com
 
 PORTNAME=	rtree
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0.0
 CATEGORIES=	devel science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialind
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialindex
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
