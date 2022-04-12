@@ -4,6 +4,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2022.02.1+461
+PORTREVISION=	1
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -132,7 +133,7 @@ post-install:
 	) > ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
 .if ${FLAVOR:U} == desktop
-	${REINPLACE_CMD} -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop
+	${REINPLACE_CMD} -i '' -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop
 .endif
 .if ${FLAVOR:U} == server
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/${INSTALL_SUBDIR}/bin/rstudio-server # not compatible with FreeBSD
