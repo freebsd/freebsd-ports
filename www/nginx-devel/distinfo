@@ -1,4 +1,4 @@
-TIMESTAMP = 1646793809
+TIMESTAMP = 1649766847
 SHA256 (nginx-1.21.6.tar.gz) = 66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
 SIZE (nginx-1.21.6.tar.gz) = 1073364
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -111,8 +111,8 @@ SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.2_GH0.tar.gz) = f8d3ff15520df736c5e20e
 SIZE (SpiderLabs-ModSecurity-nginx-v1.0.2_GH0.tar.gz) = 33767
 SHA256 (nbs-system-naxsi-1.3_GH0.tar.gz) = 439c8677372d2597b4360bbcc10bc86490de1fc75695b193ad5df154a214d628
 SIZE (nbs-system-naxsi-1.3_GH0.tar.gz) = 235626
-SHA256 (nginx-njs-0.7.2_GH0.tar.gz) = a1481be96989842ed05d06eab4ae4e79790c552196e5624dd38d42bc2d275829
-SIZE (nginx-njs-0.7.2_GH0.tar.gz) = 584483
+SHA256 (nginx-njs-0.7.3_GH0.tar.gz) = a212ed7d4c9f8d6da0fed651ac1e2399a7d92e3f32000e2c2684364d52ee7880
+SIZE (nginx-njs-0.7.3_GH0.tar.gz) = 586271
 SHA256 (opentracing-contrib-nginx-opentracing-4984aab_GH0.tar.gz) = 5071ec63763edbc1a28da33c39cd530cb41f5de2fdccf64885da2e71ae251848
 SIZE (opentracing-contrib-nginx-opentracing-4984aab_GH0.tar.gz) = 679411
 SHA256 (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = c69ad4495de7c7883ebc23e1e6c4cc83a4ac6a7fddd4d5c12e49d33b65f7c50b
