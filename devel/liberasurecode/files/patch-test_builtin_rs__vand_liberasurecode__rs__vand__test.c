@@ -1,8 +1,8 @@
---- test/builtin/rs_vand/liberasurecode_rs_vand_test.c.orig	2017-04-06 11:14:01 UTC
+--- test/builtin/rs_vand/liberasurecode_rs_vand_test.c.orig	2022-04-08 23:59:40 UTC
 +++ test/builtin/rs_vand/liberasurecode_rs_vand_test.c
-@@ -32,6 +32,10 @@
- #include <time.h>
+@@ -33,6 +33,10 @@
  #include <liberasurecode_rs_vand.h>
+ #include <sys/stat.h>
  
 +#ifdef __FreeBSD__
 +#include <sys/stat.h>
