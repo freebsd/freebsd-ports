@@ -1,3 +1,50 @@
+  <vuln vid="b582a85a-ba4a-11ec-8d1e-3065ec8fd3ec">
+    <topic>Chromium -- mulitple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>100.0.4896.88</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop_11.html">
+	  <p>This release contains 11 security fixes, including:</p>
+	  <ul>
+	    <li>[1285234] High CVE-2022-1305: Use after free in storage. Reported by Anonymous on 2022-01-07</li>
+	    <li>[1299287] High CVE-2022-1306: Inappropriate implementation in compositing. Reported by Sven Dysthe on 2022-02-21</li>
+	    <li>[1301873] High CVE-2022-1307: Inappropriate implementation in full screen. Reported by Irvan Kurniawan (sourc7) on 2022-03-01</li>
+	    <li>[1283050] High CVE-2022-1308: Use after free in BFCache. Reported by Samet Bekmezci (@sametbekmezci) on 2021-12-28</li>
+	    <li>[1106456] High CVE-2022-1309: Insufficient policy enforcement in developer tools. Reported by David Erceg on 2020-07-17</li>
+	    <li>[1307610] High CVE-2022-1310: Use after free in regular expressions. Reported by Brendon Tiszka on 2022-03-18</li>
+	    <li>[1310717] High CVE-2022-1311: Use after free in Chrome OS shell. Reported by Nan Wang (@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-03-28</li>
+	    <li>[1311701] High CVE-2022-1312: Use after free in storage. Reported by Leecraso and Guang Gong of 360 Vulnerability Research Institute on 2022-03-30</li>
+	    <li>[1270539] Medium CVE-2022-1313: Use after free in tab groups. Reported by Thomas Orlita on 2021-11-16</li>
+	    <li>[1304658] Medium CVE-2022-1314: Type Confusion in V8. Reported by Bohan Liu (@P4nda20371774) of Tencent Security Xuanwu Lab on 2022-03-09</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1305</cvename>
+      <cvename>CVE-2022-1306</cvename>
+      <cvename>CVE-2022-1307</cvename>
+      <cvename>CVE-2022-1308</cvename>
+      <cvename>CVE-2022-1309</cvename>
+      <cvename>CVE-2022-1310</cvename>
+      <cvename>CVE-2022-1311</cvename>
+      <cvename>CVE-2022-1312</cvename>
+      <cvename>CVE-2022-1313</cvename>
+      <cvename>CVE-2022-1314</cvename>
+      <url>https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop_11.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-11</discovery>
+      <entry>2022-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0db46f84-b9fa-11ec-89df-080027240888">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
