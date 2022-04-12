@@ -1,0 +1,59 @@
+diff --git a/image/imgFrame.cpp b/image/imgFrame.cpp
+--- image/imgFrame.cpp
++++ image/imgFrame.cpp
+@@ -372,6 +372,15 @@ nsresult imgFrame::InitWithDrawable(gfxD
+     return NS_ERROR_OUT_OF_MEMORY;
+   }
+ 
++  if (aBackend == gfx::BackendType::SKIA && canUseDataSurface) {
++      // SKIA is lying about what format it returns on big endian
++      for (int ii=0; ii < mRawSurface->GetSize().Height()*mRawSurface->Stride() / 4; ++ii) {
++        uint32_t *vals = (uint32_t*)(mRawSurface->GetData());
++        uint32_t val = ((vals[ii] << 8) & 0xFF00FF00 ) | ((vals[ii] >> 8) & 0xFF00FF );
++        vals[ii] = (val << 16) | (val >> 16);
++      }
++  }
++
+   if (!canUseDataSurface) {
+     // We used an offscreen surface, which is an "optimized" surface from
+     // imgFrame's perspective.
+# HG changeset patch
+# User M. Sirringhaus <msirringhaus@suse.de>
+# Date 1645518286 -3600
+#      Tue Feb 22 09:24:46 2022 +0100
+# Node ID 494640792b4677f6462e95b90a54a4e22aeb738b
+# Parent  81832d035e101471dcf52dd91de287268add7a91
+
+diff --git a/gfx/webrender_bindings/RenderCompositorSWGL.cpp b/gfx/webrender_bindings/RenderCompositorSWGL.cpp
+--- gfx/webrender_bindings/RenderCompositorSWGL.cpp
++++ gfx/webrender_bindings/RenderCompositorSWGL.cpp
+@@ -7,6 +7,7 @@
+ #include "RenderCompositorSWGL.h"
+ 
+ #include "mozilla/gfx/Logging.h"
++#include "mozilla/gfx/Swizzle.h"
+ #include "mozilla/widget/CompositorWidget.h"
+ 
+ #ifdef MOZ_WIDGET_GTK
+@@ -134,6 +135,7 @@ bool RenderCompositorSWGL::AllocateMappe
+     mMappedData = map.mData;
+     mMappedStride = map.mStride;
+   }
++
+   MOZ_ASSERT(mMappedData != nullptr && mMappedStride > 0);
+   wr_swgl_init_default_framebuffer(mContext, bounds.x, bounds.y, bounds.width,
+                                    bounds.height, mMappedStride, mMappedData);
+@@ -235,6 +237,13 @@ void RenderCompositorSWGL::CommitMappedB
+   }
+   mDT->Flush();
+ 
++#if MOZ_BIG_ENDIAN()
++  // One swizzle to rule them all.
++  gfx::SwizzleData(mMappedData, mMappedStride, gfx::SurfaceFormat::B8G8R8A8,
++                   mMappedData, mMappedStride, gfx::SurfaceFormat::A8R8G8B8,
++                   mDT->GetSize());
++#endif
++
+   // Done with the DT. Hand it back to the widget and clear out any trace of it.
+   mWidget->EndRemoteDrawingInRegion(mDT, mDirtyRegion);
+   mDirtyRegion.SetEmpty();
