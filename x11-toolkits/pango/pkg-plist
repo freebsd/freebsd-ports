@@ -1035,13 +1035,6 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/PangoOT/type_func.Info.get.html
 %%PORTDOCS%%share/doc/PangoOT/type_func.Ruleset.get_for_description.html
 %%PORTDOCS%%share/doc/PangoOT/urlmap.js
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Italic.woff
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Italic.woff2
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-It.ttf.woff
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-Regular.ttf.woff
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-Semibold.ttf.woff
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/solarized-dark.css
-%%X11%%%%PORTDOCS%%share/doc/PangoXft/solarized-light.css
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/PangoXft.devhelp2
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Black.woff
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Black.woff2
@@ -1051,6 +1044,8 @@ libdata/pkgconfig/pangoot.pc
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Bold.woff2
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-BoldItalic.woff
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-BoldItalic.woff2
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Italic.woff
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Italic.woff2
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Medium.woff
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-Medium.woff2
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatDisplay-MediumItalic.woff
@@ -1069,6 +1064,9 @@ libdata/pkgconfig/pangoot.pc
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatText-MediumItalic.woff2
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatText-Regular.woff
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/RedHatText-Regular.woff2
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-It.ttf.woff
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-Regular.ttf.woff
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/SourceCodePro-Semibold.ttf.woff
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/callback.SubstituteFunc.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/class.Font.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/class.FontMap.html
@@ -1104,6 +1102,8 @@ libdata/pkgconfig/pangoot.pc
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/property.Renderer.display.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/property.Renderer.screen.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/search.js
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/solarized-dark.css
+%%X11%%%%PORTDOCS%%share/doc/PangoXft/solarized-light.css
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/style.css
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/type_func.Font.get_font.html
 %%X11%%%%PORTDOCS%%share/doc/PangoXft/urlmap.js
