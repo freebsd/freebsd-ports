@@ -114,9 +114,9 @@ pre-everything::
 pre-configure:
 .if ${PORT_OPTIONS:MBDB}
 	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
-	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "6" ] ; then \
+	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "6"  -a "$${BDB_VERSION}" != "18" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4, 5 or 6) support to use subversion with it." ; \
+		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4, 5, 6 or 18) support to use subversion with it." ; \
 		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"BDB' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
