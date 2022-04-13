@@ -1,3 +1,42 @@
+  <vuln vid="24a9bd2b-bb43-11ec-af81-0897988a1c07">
+    <topic>Composer -- Command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>php74-composer</name>
+	<name>php80-composer</name>
+	<name>php81-composer</name>
+	<range><lt>1.10.26</lt></range>
+      </package>
+      <package>
+	<name>php74-composer2</name>
+	<name>php80-composer2</name>
+	<name>php81-composer2</name>
+	<range><ge>2.0.0</ge><lt>2.2.12</lt></range>
+	<range><ge>2.3.0</ge><lt>2.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Composer developers reports:</p>
+	<blockquote cite="https://github.com/composer/composer/security/advisories/GHSA-x7cr-6qr6-2hh6">
+	  <p>The Composer method VcsDriver::getFileContent() with
+	  user-controlled $file or $identifier arguments is susceptible
+	  to an argument injection vulnerability. It can be leveraged
+	  to gain arbitrary command execution if the Mercurial or
+	  the Git driver are used.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24828</cvename>
+      <url>https://github.com/composer/composer/security/advisories/GHSA-x7cr-6qr6-2hh6</url>
+    </references>
+    <dates>
+      <discovery>2022-04-13</discovery>
+      <entry>2022-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a1dc8c8-bb27-11ec-98d1-d43d7eed0ce2">
     <topic>Subversion -- Multiple vulnerabilities in server code</topic>
     <affects>
