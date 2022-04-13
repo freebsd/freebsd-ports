@@ -1,5 +1,5 @@
 PORTNAME=	reprise
-PORTVERSION=	0.0.1
+PORTVERSION=	0.1.0
 CATEGORIES=	ports-mgmt python
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -32,7 +32,7 @@ do-test:
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
-IGNORE=		does not yet support python < 3.10
+IGNORE=		needs python 3.10+, but we can't express this in the port due to poudriere brokenness, so please build with FLAVOR=py310
 .endif
 
 .include <bsd.port.post.mk>
