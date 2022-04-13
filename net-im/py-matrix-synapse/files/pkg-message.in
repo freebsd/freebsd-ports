@@ -73,4 +73,5 @@ section of the configuration file, is set to true. See the upgrade notes[1] for 
 [0] https://matrix-org.github.io/synapse/v1.56/upgrade.html#open-registration-without-verification-is-now-disabled-by-default
 [1] https://matrix-org.github.io/synapse/v1.56/upgrade#change-in-behaviour-for-postgresql-databases-with-unsafe-locale
 EOM
+}
 ]
