@@ -5,15 +5,14 @@ PORTVERSION=	1.1a
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Avoid running into walls, your own tail, and that of your opponent
 
-BROKEN_FreeBSD_13=	duplicate symbol: b
-BROKEN_FreeBSD_14=	duplicate symbol: b
+LICENSE=	GPLv1+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg
+USES=		xorg tar:tgz
 USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/${PORTNAME} lib/X11/app-defaults/Tron
@@ -34,10 +33,12 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/xtronrc ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Tron
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
