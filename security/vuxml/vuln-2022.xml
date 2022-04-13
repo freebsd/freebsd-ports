@@ -1,3 +1,47 @@
+  <vuln vid="f22144d7-bad1-11ec-9cfe-0800270512f4">
+    <topic>Ruby -- Double free in Regexp compilation</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.4,1</lt></range>
+	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>ruby31</name>
+	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>piao reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/">
+	  <p>
+	    Due to a bug in the Regexp compilation process, creating
+	    a Regexp object with a crafted source string could cause
+	    the same memory to be freed twice. This is known as a
+	    &quot;double free&quot; vulnerability. Note that, in general, it
+	    is considered unsafe to create and use a Regexp object
+	    generated from untrusted input. In this case, however,
+	    following a comprehensive assessment, we treat this issue
+	    as a vulnerability.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-28738</cvename>
+      <url>https://www.ruby-lang.org/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b582a85a-ba4a-11ec-8d1e-3065ec8fd3ec">
     <topic>Chromium -- mulitple vulnerabilities</topic>
     <affects>
