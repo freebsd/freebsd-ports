@@ -1,3 +1,58 @@
+  <vuln vid="3a1dc8c8-bb27-11ec-98d1-d43d7eed0ce2">
+    <topic>Subversion -- Multiple vulnerabilities in server code</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+	<range><ge>1.11.0</ge><lt>1.14.2</lt></range>
+      </package>
+      <package>
+        <name>mod_dav_svn</name>
+        <range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+        <range><ge>1.11.0</ge><lt>1.14.2</lt></range>
+      </package>
+      <package>
+        <name>subversion-lts</name>
+        <range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+      </package>
+      <package>
+        <name>mod_dav_svn-lts</name>
+        <range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+      </package>
+     </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion project reports:</p>
+	<blockquote cite="https://subversion.apache.org/security/CVE-2021-28544-advisory.txt">
+	  <p>
+            Subversion servers reveal 'copyfrom' paths that should be hidden according
+            to configured path-based authorization (authz) rules.  When a node has been
+            copied from a protected location, users with access to the copy can see the
+            'copyfrom' path of the original.  This also reveals the fact that the node
+            was copied.  Only the 'copyfrom' path is revealed; not its contents. Both
+            httpd and svnserve servers are vulnerable.
+          </p>
+	</blockquote>
+        <blockquote cite="https://subversion.apache.org/security/CVE-2022-24070-advisory.txt">
+          <p>
+            While looking up path-based authorization rules, mod_dav_svn servers
+            may attempt to use memory which has already been freed.
+          </p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-28544</cvename>
+      <cvename>CVE-2022-24070</cvename>
+      <url>https://subversion.apache.org/security/CVE-2021-28544-advisory.txt</url>
+      <url>https://subversion.apache.org/security/CVE-2022-24070-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06ed6a49-bad4-11ec-9cfe-0800270512f4">
     <topic>Ruby -- Buffer overrun in String-to-Float conversion</topic>
     <affects>
