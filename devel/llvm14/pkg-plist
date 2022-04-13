@@ -5179,6 +5179,7 @@ llvm%%LLVM_SUFFIX%%/lib/libRemarks.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang-cpp.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang-cpp.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so.%%LLVM_RELEASE%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so.13
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangAPINotes.a

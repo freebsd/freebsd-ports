@@ -1,6 +1,6 @@
 PORTNAME=	llvm
-DISTVERSION=	14.0.0
-PORTREVISION=	2
+DISTVERSION=	14.0.1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -580,6 +580,7 @@ post-install-CLANG-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
 	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
+	${LN} -s libclang.so.13 ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so.${LLVM_MAJOR}
 
 post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CodeGen/CMakeFiles
