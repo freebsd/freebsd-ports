@@ -1,5 +1,5 @@
 PORTNAME=	git-arc
-PORTVERSION=	20211118
+PORTVERSION=	20220214
 CATEGORIES=	devel
 MASTER_SITES=	https://cgit.freebsd.org/src/plain/tools/tools/git/
 DISTFILES=	${PORTNAME}.sh?id=${_REV} \
@@ -25,7 +25,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
-_REV=		964035c409b1b7229c7bc0220e7455e4a038ed4b
+_REV=		99589993ceb5e6ec2511f29899e75bab1ef2f325
 
 post-patch:
 	@${MV} ${WRKSRC}/${PORTNAME}.sh?id=* ${WRKSRC}/${PORTNAME}.sh
