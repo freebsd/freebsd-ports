@@ -7,8 +7,8 @@ This is
 which is on the GCC 10 release branch and thus part of lang/gcc10-devel;
 we should automatically get it with GCC 10.3.
 
---- gcc-9.2.0/libcpp/lex.c.orig	2020-11-02 10:24:50 UTC
-+++ gcc-9.2.0/libcpp/lex.c
+--- gcc-9.3.0/libcpp/lex.c.orig	2020-11-02 10:24:50 UTC
++++ gcc-9.3.0/libcpp/lex.c
 @@ -531,11 +531,11 @@ init_vectorized_lexer (void)
    search_line_fast = impl;
  }
