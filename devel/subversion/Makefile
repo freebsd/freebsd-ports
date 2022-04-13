@@ -85,6 +85,15 @@ WITH_REPOSITORY_CREATION=	yes
 MKREPOS_TARGET=	_mkrepos
 .endif
 
+
+BINS_TO_STRIP= svn svnadmin svnbench svndumpfilter svnfsfs svnlook svnmucc \
+		svnrdump svnserve svnsync svnversion
+
+TOOLS_TO_STRIP=	fsfs-access-map svn-mergeinfo-normalizer \
+		 svn-populate-node-origins-index svnauthz \
+		 svnauthz-validate svnconflict svndiff svndiff3 \
+		 svndiff4 svnmover svnraisetreeconflict x509-parser
+
 pre-everything::
 	@${ECHO_MSG} ""
 .if defined(WITH_REPOSITORY_CREATION)
@@ -148,7 +157,9 @@ post-build-TOOLS-on:
 	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
 
 post-install:	${MKREPOS_TARGET}
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	for F in ${BINS_TO_STRIP} ; do \
+	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
+	done
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -162,7 +173,10 @@ post-install-SVNSERVE_WRAPPER-on:
 
 post-install-TOOLS-on:
 	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	for F in ${TOOLS_TO_STRIP} ; do \
+	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
+	done
+ 
 
 # ===============================================================================
 repository:	_mkrepos
