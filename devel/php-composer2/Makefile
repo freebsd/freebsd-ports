@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	composer
-DISTVERSION=	2.3.4
+DISTVERSION=	2.3.5
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
