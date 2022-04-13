@@ -1,7 +1,7 @@
 # Created by: Stefan Wendler <stefan.wendler@tngtech.com>
 
 PORTNAME=	rubymine
-PORTVERSION=	2021.3.3
+PORTVERSION=	2022.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
@@ -24,7 +24,7 @@ JAVA_VERSION=	11+
 
 CPE_VENDOR=	jetbrains
 
-SHEBANG_FILES=	bin/printenv.py bin/restart.py
+SHEBANG_FILES=	bin/restart.py
 
 NO_BUILD=	yes
 
