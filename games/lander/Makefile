@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		compiler:c++17-lang gettext gl meson sdl pkgconfig tar:xz
+USES=		compiler:c++17-lang display:test gettext gl meson sdl pkgconfig tar:xz
 USE_SDL=	sdl2 image2 mixer2
 USE_GL=		gl glew
 
