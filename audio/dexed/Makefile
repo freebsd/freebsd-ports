@@ -56,6 +56,6 @@ do-install: # workaround for https://github.com/asb2m10/dexed/issues/342
 
 do-install-VST3-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vst
-	${INSTALL_LIB} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/VST3/Dexed.vst3/Contents/x86_64-linux/Dexed.so ${STAGEDIR}${PREFIX}/lib/vst
+	${INSTALL_LIB} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/VST3/Dexed.vst3/Contents/*/Dexed.so ${STAGEDIR}${PREFIX}/lib/vst
 
 .include <bsd.port.mk>
