@@ -2,7 +2,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors java
 MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
 		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source/ \
@@ -83,7 +83,7 @@ LIB_DEPENDS=								\
 		libClpSolver.so:math/clp				\
 		libCoinMP.so:math/coinmp				\
 		libCoinUtils.so:math/coinutils				\
-		libcoinmumps.so:math/ipopt				\
+		libcoinmumps.so:math/coin-or-mumps			\
 		libnauty.so:math/nauty					\
 		libopenblas.so:math/openblas				\
 		libOsi.so:math/osi					\
@@ -113,7 +113,7 @@ USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
 		shared-mime-info ssl tar:bzip2 xorg
 USE_GL=		gl glu
-USE_GNOME=	gtk20 libxslt libidl glib20
+USE_GNOME=	gdkpixbuf2 gtk20 libxslt libidl glib20
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jdk
