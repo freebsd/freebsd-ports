@@ -1,5 +1,5 @@
 PORTNAME=	arx-libertatis
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	https://arx-libertatis.org/files/ \
 		https://github.com/arx/ArxLibertatis/releases/download/${PORTVERSION}/
