@@ -343,7 +343,7 @@ do-extract-SDK-on:
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PYTHON_DISTFILE} ${WRKSUBDIR}/ext_sources/${PYTHON_DISTFILE}
-.if ${CHOSEN_COMPILER_TYPE} == gcc || ${COMPILER_VERSION} >= 130 
+.if ${CHOSEN_COMPILER_TYPE} == gcc || ${COMPILER_VERSION} >= 130
 .  for f in ${GCC_EXTRA_DISTFILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
 .  endfor
