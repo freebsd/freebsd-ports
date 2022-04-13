@@ -1,3 +1,50 @@
+  <vuln vid="06ed6a49-bad4-11ec-9cfe-0800270512f4">
+    <topic>Ruby -- Buffer overrun in String-to-Float conversion</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.6,1</lt></range>
+	<range><ge>3.0.0,1</ge><lt>3.0.4,1</lt></range>
+	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+      </package>
+      <package>
+	<name>ruby27</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.10,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>ruby31</name>
+	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>piao reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2022/04/12/buffer-overrun-in-string-to-float-cve-2022-28739/">
+	  <p>
+	    Due to a bug in an internal function that converts a String
+	    to a Float, some convertion methods like <code>Kernel#Float</code>
+	    and <code>String#to_f</code> could cause buffer over-read.
+	    A typical consequence is a process termination due to
+	    segmentation fault, but in a limited circumstances, it may
+	    be exploitable for illegal memory read.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-28739</cvename>
+      <url>https://www.ruby-lang.org/en/news/2022/04/12/buffer-overrun-in-string-to-float-cve-2022-28739/</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f22144d7-bad1-11ec-9cfe-0800270512f4">
     <topic>Ruby -- Double free in Regexp compilation</topic>
     <affects>
