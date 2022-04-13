@@ -12,7 +12,7 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/algebra_minus.rcc
 %%DATADIR%%/rcc/algebra_plus.rcc
 %%DATADIR%%/rcc/algorithm.rcc
-%%DATADIR%%/rcc/align4-2players.rcc
+%%DATADIR%%/rcc/align4_2players.rcc
 %%DATADIR%%/rcc/align4.rcc
 %%DATADIR%%/rcc/alphabet-sequence.rcc
 %%DATADIR%%/rcc/analog_electricity.rcc
