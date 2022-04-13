@@ -3,6 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6-16
 DISTVERSIONSUFFIX=	-g1df9a58
 CATEGORIES=	audio
+PKGNAMESUFFIX=	-synth
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DX7 FM multi plaform/multi format plugin
