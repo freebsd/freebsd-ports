@@ -1,25 +1,25 @@
-PORTNAME=		voc
-PORTVERSION=	g20191119
-CATEGORIES=		lang
+PORTNAME=	voc
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.1
+CATEGORIES=	lang
 
-MAINTAINER=		antranigv@freebsd.am
-COMMENT=		Vishap Oberon Compiler for Oberon-2
+MAINTAINER=	antranigv@freebsd.am
+COMMENT=	Vishap Oberon Compiler for Oberon-2
 
-LICENSE=		GPLv3
+LICENSE=	GPLv3
 
-BROKEN_powerpc64=	fails to compile: C compiler does not store multibyte numeric values in little-endian order
+BROKEN_powerpc64=	fails to compile: voc is not yet available for powerpc64
 
-USE_GITHUB=		yes
-GH_ACCOUNT=		vishaps
-GH_PROJECT=		voc
-GH_TAGNAME=		63008f6
+USE_GITHUB=	yes
+GH_ACCOUNT=	vishaps
+GH_PROJECT=	voc
+
+USE_LDCONFIG=	${PREFIX}/share/voc/lib
+
+MAKEFILE=	makefile
+ALL_TARGET=	full
 
 MAKE_JOBS_UNSAFE=	yes
-
-MAKEFILE=		makefile
-ALL_TARGET=		full
-
-USE_LDCONFIG=		${PREFIX}/share/voc/lib
 
 post-patch:
 	# we cannot run ldconfig (which is what addlibrary does) on the destination
