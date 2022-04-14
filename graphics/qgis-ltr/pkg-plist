@@ -1725,7 +1725,7 @@ lib/qgis/untwine
 %%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so
 %%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.%%DISTVERSION%%
 %%SERVER%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlspatialite.so
-man/man1/qgis.1.gz
+share/man/man1/qgis.1.gz
 share/applications/org.qgis.qgis.desktop
 share/icons/hicolor/128x128/apps/qgis.png
 share/icons/hicolor/128x128/mimetypes/qgis-mime.png
