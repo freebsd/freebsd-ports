@@ -56,9 +56,11 @@ CONFIGURE_ARGS+=	--without-gnome-keyring \
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
 PLIST_SUB+=	NO_SVNSERVE_WRAPPER="@comment "
+SVNSERVE_EXT=	.bin
 .else
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
 PLIST_SUB+=	NO_SVNSERVE_WRAPPER=""
+SVNSERVE_EXT=
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
@@ -87,7 +89,7 @@ MKREPOS_TARGET=	_mkrepos
 
 
 BINS_TO_STRIP= svn svnadmin svnbench svndumpfilter svnfsfs svnlook svnmucc \
-		svnrdump svnserve svnsync svnversion
+		svnrdump svnserve${SVNSERVE_EXT} svnsync svnversion
 
 TOOLS_TO_STRIP=	fsfs-access-map svn-mergeinfo-normalizer \
 		 svn-populate-node-origins-index svnauthz \
