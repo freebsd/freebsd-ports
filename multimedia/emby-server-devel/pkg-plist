@@ -375,6 +375,7 @@ lib/emby-server/system/dashboard-ui/modules/common/input/api.js
 lib/emby-server/system/dashboard-ui/modules/common/inputmanager.js
 lib/emby-server/system/dashboard-ui/modules/common/itemhelper.js
 lib/emby-server/system/dashboard-ui/modules/common/itemsrefresher.js
+lib/emby-server/system/dashboard-ui/modules/common/methodtimer.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/experimentalwarnings.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/playaccessvalidation.js
 lib/emby-server/system/dashboard-ui/modules/common/playback/playbackmanager.js
@@ -697,6 +698,8 @@ lib/emby-server/system/dashboard-ui/modules/polyfills/weakmap.js
 lib/emby-server/system/dashboard-ui/modules/prompt/prompt.js
 lib/emby-server/system/dashboard-ui/modules/prompt/prompt.template.html
 lib/emby-server/system/dashboard-ui/modules/querystring/querystring.js
+lib/emby-server/system/dashboard-ui/modules/recordingcreator/channelrecording.template.html
+lib/emby-server/system/dashboard-ui/modules/recordingcreator/channelrecordingcreator.js
 lib/emby-server/system/dashboard-ui/modules/recordingcreator/recordingbutton.js
 lib/emby-server/system/dashboard-ui/modules/recordingcreator/recordingcreator.css
 lib/emby-server/system/dashboard-ui/modules/recordingcreator/recordingcreator.js
