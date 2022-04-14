@@ -1,8 +1,7 @@
 # Created by: jmz
 
 PORTNAME=	xsnow
-PORTVERSION=	3.4.4
-PORTREVISION=	2
+PORTVERSION=	3.5.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -11,6 +10,8 @@ COMMENT=	Create a snowy and Santa-y desktop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		compiler:c11 gmake gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2
