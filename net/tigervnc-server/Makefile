@@ -34,7 +34,7 @@ GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 PAM_CMAKE_BOOL=	ENABLE_PAM
 
 CONFIGURE_ARGS+=	\
-		--prefix=${PREFIX} --mandir=${PREFIX}/man/ \
+		--prefix=${PREFIX} --mandir=${PREFIX}/share/man/ \
 		--docdir=${PREFIX}/share/doc/${PORTNAME}/ --with-pic --without-dtrace \
 		--disable-static --disable-dri --disable-unit-tests \
 		--disable-xinerama --disable-xvfb --disable-xnest --disable-xorg \
