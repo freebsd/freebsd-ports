@@ -359,9 +359,17 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/actions/MoveTool.action
 %%DATADIR%%/actions/PathTool.action
 %%DATADIR%%/actions/SvgTextTool.action
+%%DATADIR%%/actions/asccdl.action
+%%DATADIR%%/actions/colorsfilters.action
+%%DATADIR%%/actions/convertheightnormalmap.action
 %%DATADIR%%/actions/dbexplorer.action
+%%DATADIR%%/actions/gaussianhighpass.action
+%%DATADIR%%/actions/gradientmap.action
+%%DATADIR%%/actions/halftone.action
 %%DATADIR%%/actions/krita.action
 %%DATADIR%%/actions/kritamenu.action
+%%DATADIR%%/actions/normalize.action
+%%DATADIR%%/actions/palettize.action
 %%DATADIR%%/actions/recorder.action
 %%DATADIR%%/actions/threshold.action
 %%DATADIR%%/actions/tools.action
@@ -1028,6 +1036,7 @@ share/locale/hne/LC_MESSAGES/krita.mo
 share/locale/hr/LC_MESSAGES/krita.mo
 share/locale/hu/LC_MESSAGES/krita.mo
 share/locale/ia/LC_MESSAGES/krita.mo
+share/locale/id/LC_MESSAGES/krita.mo
 share/locale/is/LC_MESSAGES/krita.mo
 share/locale/it/LC_MESSAGES/krita.mo
 share/locale/ja/LC_MESSAGES/krita.mo
