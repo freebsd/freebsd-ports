@@ -6,7 +6,7 @@ MULTILIB_LIST=	rmprofile,aprofile
 MULTILIB_LIST=	rmprofile
 .endif
 
-PKGVERSION=	GNU Arm Embedded Toolchain
+PKGVERSION=	GNU Arm Embedded Toolchain ${FULL_VERSION}
 
 BUILD_PREFIX=	${WRKDIR}/build
 DOC_PREFIX=	${INTERIM_PREFIX}/${DOCS_SUFFIX}
