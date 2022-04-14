@@ -1,8 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	ffmpeg
-PORTVERSION=	4.4.1
-PORTREVISION=	13
+PORTVERSION=	4.4.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
