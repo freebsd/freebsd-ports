@@ -194,7 +194,7 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${MAN1PREFIX}/share/man/man1
 	# rename files to prevent conflict with other blender versions
 	${MV} ${STAGEDIR}${PREFIX}/share/blender \
 		${STAGEDIR}${PREFIX}/share/blender${PKGNAMESUFFIX}
@@ -205,8 +205,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/blender ${STAGEDIR}/${PREFIX}/bin/blender${PKGNAMESUFFIX}
 	${MV} ${STAGEDIR}${PREFIX}/bin/blender-thumbnailer.py \
 		${STAGEDIR}${PREFIX}/bin/blender${PKGNAMESUFFIX}-thumbnailer.py
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/blender.1 \
-		${STAGEDIR}${PREFIX}/man/man1/blender${PKGNAMESUFFIX}.1
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/blender.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/blender${PKGNAMESUFFIX}.1
 	${MV} ${STAGEDIR}${PREFIX}/share/applications/blender.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/blender${PKGNAMESUFFIX}.desktop
 	${MV} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/blender.svg \
