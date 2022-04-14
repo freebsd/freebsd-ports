@@ -1,5 +1,5 @@
 bin/vncviewer
-man/man1/vncviewer.1.gz
+share/man/man1/vncviewer.1.gz
 share/icons/hicolor/16x16/apps/tigervnc.png
 share/icons/hicolor/22x22/apps/tigervnc.png
 share/icons/hicolor/24x24/apps/tigervnc.png
