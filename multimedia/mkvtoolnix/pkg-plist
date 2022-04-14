@@ -142,9 +142,10 @@ man/man1/mkvpropedit.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
+%%NLS%%share/locale/zh_SG/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%GUI%%share/metainfo/org.bunkus.mkvtoolnix-gui.appdata.xml
 %%GUI%%share/mime/packages/org.bunkus.mkvtoolnix-gui.xml
-%%GUI%%%%DATADIR%%/sounds/finished-1.ogg
-%%GUI%%%%DATADIR%%/sounds/finished-2.ogg
-%%GUI%%%%DATADIR%%/sounds/finished-3.ogg
+%%GUI%%%%DATADIR%%/sounds/finished-1.webm
+%%GUI%%%%DATADIR%%/sounds/finished-2.webm
+%%GUI%%%%DATADIR%%/sounds/finished-3.webm
