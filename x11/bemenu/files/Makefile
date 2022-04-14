@@ -34,8 +34,8 @@ bemenu.pc: bemenu.pc.in
 	sed -e 's,@INCLUDEDIR@,/include,' -e 's,@LIBDIR@,/lib,' -e 's,@PREFIX@,${PREFIX},' -e 's,@VERSION@,${VERSION},' $> > $@
 	cat $@
 
-bemenu.1: man/bemenu.1.in
-	sed 's,@LIBDIR@,${PREFIX}/lib,' $> > $@
+bemenu.1: man/bemenu.1.scd.in
+	sed 's,@LIBDIR@,${PREFIX}/lib,' $> | scdoc > $@
 
 install:
 	@mkdir -p ${DESTDIR}${PREFIX}/bin ${DESTDIR}${PREFIX}/include ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/libdata/pkgconfig ${DESTDIR}${PREFIX}/share/man/man1
