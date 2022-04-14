@@ -1,7 +1,7 @@
 # Created by: Glenn Johnson
 
 PORTNAME=	tinker
-DISTVERSION=	8.10.1
+DISTVERSION=	8.10.2
 CATEGORIES=	science
 MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
@@ -56,6 +56,8 @@ FFLAGS+=	-mfancy-math-387 -malign-double
 post-extract:
 	@${RM} ${BUILD_WRKSRC}/*.c
 	@${RM} ${WRKSRC}/other/eopbend.orig
+	# remove bundled linux libraries
+	@${RM} ${WRKSRC}/lib/linux/*
 
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|\.\./bin/|${STAGEDIR}${PREFIX}/bin/|' ${BUILD_WRKSRC}/../bench/bench*.run
