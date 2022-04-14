@@ -10,7 +10,7 @@ COMMENT=	Abstract puzzle game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext localbase sdl tar:bzip2
+USES=		gettext localbase tar:bzip2
 GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	chroma-syntax-highlighter
@@ -32,7 +32,7 @@ CURSES_CONFIGURE_ENABLE=curses
 CURSES_PLIST_FILES=	bin/${PORTNAME}-curses
 SDL_CONFIGURE_ENABLE=	sdl
 SDL_LIB_DEPENDS=	libfreetype.so:print/freetype2
-SDL_USES=		pkgconfig
+SDL_USES=		pkgconfig sdl
 SDL_USE=		SDL=sdl,image
 SDL_PLIST_FILES=	bin/${PORTNAME}
 
