@@ -3,9 +3,9 @@ GH_TUPLE=	\
 		VictoriaMetrics:fastcache:v1.10.0:victoriametrics_fastcache/vendor/github.com/VictoriaMetrics/fastcache \
 		VictoriaMetrics:fasthttp:v1.1.0:victoriametrics_fasthttp/vendor/github.com/VictoriaMetrics/fasthttp \
 		VictoriaMetrics:metrics:v1.18.1:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
-		VictoriaMetrics:metricsql:v0.40.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
+		VictoriaMetrics:metricsql:v0.41.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		aws:aws-sdk-go:v1.43.34:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.43.37:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.2:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
@@ -19,20 +19,21 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:749bd193bc2b:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:6242fa91716a:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:290c469a71a5:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:9780585627b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:3f8b81556e12:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:889880a91fd5:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:xerrors:2f41105eb62f:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:9d709892a2bf:google_go_genproto/vendor/google.golang.org/genproto \
-		googleapis:gax-go:v2.2.0:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		google:go-genproto:9054f6ed7bac:google_go_genproto/vendor/google.golang.org/genproto \
+		googleapis:gax-go:v2.3.0:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		googleapis:go-type-adapters:v1.0.0:googleapis_go_type_adapters/vendor/github.com/googleapis/go-type-adapters \
 		googleapis:google-api-go-client:v0.74.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:compute/v1.5.0:googleapis_google_cloud_go_compute \
-		googleapis:google-cloud-go:storage/v1.21.0:googleapis_google_cloud_go_storage \
+		googleapis:google-cloud-go:storage/v1.22.0:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.100.2:googleapis_google_cloud_go \
 		googleapis:google-cloud-go:v0.3.0:googleapis_google_cloud_go_iam/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.45.0:grpc_grpc_go/vendor/google.golang.org/grpc \
