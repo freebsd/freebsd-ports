@@ -1,5 +1,6 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	${COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-devel
 
