@@ -1,7 +1,7 @@
 # Created by: Kevin Golding <ports@caomhin.org>
 
 PORTNAME=	django-hijack
-PORTVERSION=	3.1.4
+PORTVERSION=	3.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://ports.caomhin.org/:npmcache
