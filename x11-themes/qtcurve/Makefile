@@ -52,8 +52,9 @@ PLIST=		${PKGDIR}/pkg-plist.${QTCURVE_SLAVE}
 
 .if ${QTCURVE_SLAVE} == "utils"
 PKGNAMESUFFIX=	-utils
-USES+=		gettext-runtime kde:5
+USES+=		gettext-runtime kde:5 qt:5
 USE_KDE+=	i18n_build
+USE_QT+=	buildtools_build qmake_build
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}
 .else
