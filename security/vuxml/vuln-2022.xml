@@ -1,3 +1,75 @@
+  <vuln vid="a5de43ed-bc49-11ec-b516-0897988a1c07">
+    <topic>Asterisk -- func_odbc: Possible SQL Injection</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><lt>16.25.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.11.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories/">
+	  <p>Some databases can use backslashes to escape certain
+	  characters, such as backticks. If input is provided to
+	  func_odbc which includes backslashes it is possible for
+	  func_odbc to construct a broken SQL query and the SQL
+	  query to fail.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-26651</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-003.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-14</discovery>
+      <entry>2022-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8838abf0-bc47-11ec-b516-0897988a1c07">
+    <topic>Asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><gt>16.15.0</gt><lt>16.25.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.11.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories/">
+	  <p>AST-2022-001 - When using STIR/SHAKEN, its possible
+	  to download files that are not certificates. These files
+	  could be much larger than what you would expect to
+	  download.</p>
+	  <p>AST-2022-002 - When using STIR/SHAKEN, its possible
+	  to send arbitrary requests like GET to interfaces such
+	  as localhost using the Identity header.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-26498</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-001.html</url>
+      <cvename>CVE-2022-26499</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-002.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-14</discovery>
+      <entry>2022-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24a9bd2b-bb43-11ec-af81-0897988a1c07">
     <topic>Composer -- Command injection vulnerability</topic>
     <affects>
