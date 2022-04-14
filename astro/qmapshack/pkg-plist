@@ -2,10 +2,10 @@ bin/qmapshack
 bin/qmaptool
 bin/qmt_map2jnx
 bin/qmt_rgb2pct
-man/man1/qmapshack.1.gz
-man/man1/qmaptool.1.gz
-man/man1/qmt_map2jnx.1.gz
-man/man1/qmt_rgb2pct.1.gz
+share/man/man1/qmapshack.1.gz
+share/man/man1/qmaptool.1.gz
+share/man/man1/qmt_map2jnx.1.gz
+share/man/man1/qmt_rgb2pct.1.gz
 share/applications/qmapshack.desktop
 share/applications/qmaptool.desktop
 share/icons/hicolor/128x128/apps/QMapShack.png
