@@ -1,10 +1,10 @@
 bin/qsynth
-man/man1/qsynth.1.gz
 man/fr/man1/qsynth.1.gz
-share/applications/qsynth.desktop
-share/icons/hicolor/32x32/apps/qsynth.png
-share/icons/hicolor/scalable/apps/qsynth.svg
-share/metainfo/qsynth.appdata.xml
+man/man1/qsynth.1.gz
+share/applications/org.rncbc.qsynth.desktop
+share/icons/hicolor/32x32/apps/org.rncbc.qsynth.png
+share/icons/hicolor/scalable/apps/org.rncbc.qsynth.svg
+share/metainfo/org.rncbc.qsynth.metainfo.xml
 %%DATADIR%%/translations/qsynth_cs.qm
 %%DATADIR%%/translations/qsynth_de.qm
 %%DATADIR%%/translations/qsynth_es.qm
