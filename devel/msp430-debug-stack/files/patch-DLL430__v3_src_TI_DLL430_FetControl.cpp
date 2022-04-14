@@ -5,7 +5,7 @@
  	this->sendData(data);		// reset connection
  
 -	std::this_thread::sleep_for(std::chrono::milliseconds(100));
-+	std::this_thread::sleep_for(std::chrono::milliseconds(300));
++	std::this_thread::sleep_for(std::chrono::milliseconds(500));
  
  	HalExecElement* el = new HalExecElement(ID_Zero);
  	el->appendInputData8(STREAM_CORE_ZERO_VERSION);
