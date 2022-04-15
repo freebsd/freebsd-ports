@@ -28,6 +28,7 @@ share/emacs/site-lisp/setup-imaxima-imath.el
 share/emacs/site-lisp/smart-complete.el
 share/emacs/site-lisp/sshell.el
 share/info/maxima-index.lisp
+share/info/symplectic_ode.info
 share/metainfo/net.sourceforge.maxima.xmaxima.appdata.xml
 share/mime/packages/x-mac.xml
 share/mime/packages/x-maxima-out.xml
