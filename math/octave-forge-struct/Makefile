@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-struct
-PORTVERSION=	1.0.17
-PORTREVISION=	3
+PORTVERSION=	1.0.18
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
