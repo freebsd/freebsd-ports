@@ -16,12 +16,9 @@ USE_GITHUB=	yes  # LICENSE and tests are missing from PyPI distribution
 GH_ACCOUNT=	timpaquatte
 GH_TAGNAME=	b4cc63c  # 1.3 tag is also missing
 
-USES=		python:3.6+
+USES=		python:3.6+ pytest
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
-TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}"
-
-do-test:
-	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
+PYTEST_BROKEN_TESTS=	test_BST_mutations test_short_example test_separate_files
 
 .include <bsd.port.mk>
