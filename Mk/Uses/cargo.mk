@@ -391,13 +391,15 @@ cargo-crates-licenses: configure
 # cargo-crates-merge will in-place update CARGO_CRATES in the port
 # based on the crates list from Cargo.lock.  If there is no Cargo.lock
 # for some reason, try and generate it first.
-cargo-crates-merge: cargo-crates-generate-lockfile
+cargo-crates-merge:
 	@if ! type portedit > /dev/null 2>&1; then \
 		${ECHO_MSG} "===> Please install \"ports-mgmt/portfmt\""; exit 1; \
 	fi
+	@${MAKE} clean cargo-crates-generate-lockfile
 	@f="${MASTERDIR}/Makefile"; [ -r "${MASTERDIR}/Makefile.crates" ] && f="${MASTERDIR}/Makefile.crates"; \
 		${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK} | \
 			portedit merge -i $$f; \
-		${ECHO_MSG} "CARGO_CRATES in $$f was updated"
+		${MAKE} clean makesum; \
+		${ECHO_MSG} "${DISTINFO_FILE} and CARGO_CRATES in $$f were updated";
 
 .endif
