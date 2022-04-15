@@ -50,6 +50,7 @@ share/gnome-shell/theme/classic-toggle-on-intl.svg
 share/gnome-shell/theme/classic-toggle-on-us.svg
 share/gnome-shell/theme/gnome-classic-high-contrast.css
 share/gnome-shell/theme/gnome-classic.css
+share/locale/ab/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/af/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ar/LC_MESSAGES/gnome-shell-extensions.mo
@@ -121,4 +122,7 @@ share/locale/vi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell-extensions.mo
+share/wayland-sessions/gnome-classic-wayland.desktop
+share/wayland-sessions/gnome-classic.desktop
+share/xsessions/gnome-classic-xorg.desktop
 share/xsessions/gnome-classic.desktop
