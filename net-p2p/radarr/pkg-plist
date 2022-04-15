@@ -202,6 +202,7 @@
 %%DATADIR%%/bin/Microsoft.IdentityModel.Tokens.dll
 %%DATADIR%%/bin/Microsoft.JSInterop.dll
 %%DATADIR%%/bin/Microsoft.Net.Http.Headers.dll
+%%DATADIR%%/bin/Microsoft.OpenApi.dll
 %%DATADIR%%/bin/Microsoft.VisualBasic.Core.dll
 %%DATADIR%%/bin/Microsoft.VisualBasic.dll
 %%DATADIR%%/bin/Microsoft.Win32.Primitives.dll
@@ -212,6 +213,7 @@
 %%DATADIR%%/bin/Mono.Posix.NETStandard.dll
 %%DATADIR%%/bin/MonoTorrent.dll
 %%DATADIR%%/bin/NLog.Extensions.Logging.dll
+%%DATADIR%%/bin/NLog.Targets.Syslog.dll
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Newtonsoft.Json.dll
 %%DATADIR%%/bin/NodaTime.dll
@@ -246,6 +248,8 @@
 %%DATADIR%%/bin/ServiceInstall
 %%DATADIR%%/bin/ServiceUninstall
 %%DATADIR%%/bin/SixLabors.ImageSharp.dll
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.Swagger.dll
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.SwaggerGen.dll
 %%DATADIR%%/bin/System.AppContext.dll
 %%DATADIR%%/bin/System.Buffers.dll
 %%DATADIR%%/bin/System.Collections.Concurrent.dll
