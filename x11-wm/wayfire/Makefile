@@ -1,23 +1,10 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	3
+DISTVERSION=	0.7.3
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	dd479c06bf84.patch:-p1 # https://github.com/WayfireWM/wayfire/issues/599
-PATCHFILES+=	7b664f055249.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1230
-PATCHFILES+=	8096b2f6d190.patch:-p1 # wlroots 0.15
-PATCHFILES+=	394fc3a86db4.patch:-p1 # wlroots 0.15
-PATCHFILES+=	839c11ec4d39.patch:-p1 # wlroots 0.15
-PATCHFILES+=	be3113dda0c9.patch:-p1 # wlroots 0.15
-PATCHFILES+=	2d212482870a.patch:-p1 # wlroots 0.15
-PATCHFILES+=	e6f403af09cc.patch:-p1 # wlroots 0.15
-PATCHFILES+=	7355cf0f1f64.patch:-p1 # wlroots 0.15
-PATCHFILES+=	f9446a5d7496.patch:-p1 # wlroots 0.15
-PATCHFILES+=	a4e83480ad60.patch:-p1 # wlroots 0.15
-PATCHFILES+=	292b0d28aab5.patch:-p1 # wlroots 0.15
-PATCHFILES+=	6603ba65e1c4.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor
@@ -42,7 +29,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 USES=		compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		egl glesv2
-USE_GNOME=	cairo
+USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
