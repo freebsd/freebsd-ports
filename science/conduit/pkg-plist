@@ -10,6 +10,7 @@ include/conduit/conduit_bitwidth_style_types.h
 include/conduit/conduit_blueprint.h
 include/conduit/conduit_blueprint.hpp
 include/conduit/conduit_blueprint.mod
+include/conduit/conduit_blueprint_config.h
 include/conduit/conduit_blueprint_exports.h
 include/conduit/conduit_blueprint_mcarray.h
 include/conduit/conduit_blueprint_mcarray.hpp
@@ -20,6 +21,8 @@ include/conduit/conduit_blueprint_mesh.hpp
 include/conduit/conduit_blueprint_mesh.mod
 include/conduit/conduit_blueprint_mesh_examples.hpp
 include/conduit/conduit_blueprint_mesh_examples_julia.hpp
+include/conduit/conduit_blueprint_mesh_examples_polystar.hpp
+include/conduit/conduit_blueprint_mesh_examples_related_boundary.hpp
 include/conduit/conduit_blueprint_mesh_examples_venn.hpp
 include/conduit/conduit_blueprint_mesh_utils.hpp
 include/conduit/conduit_blueprint_mpi.hpp
