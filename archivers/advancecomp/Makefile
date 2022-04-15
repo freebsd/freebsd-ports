@@ -1,10 +1,9 @@
 # Created by: Radim Kolar
 
 PORTNAME=	advancecomp
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1-6
-DISTVERSIONSUFFIX=	-g7b08f7a
+DISTVERSION=	2.3
 CATEGORIES=	archivers
+MASTER_SITES=	https://github.com/amadvance/advancecomp/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG, and .GZ files
@@ -15,8 +14,6 @@ LIB_DEPENDS=	libzopfli.so:archivers/zopfli \
 		libdeflate.so:archivers/libdeflate
 
 USES=		autoreconf cpe
-USE_GITHUB=	yes
-GH_ACCOUNT=	amadvance
 CPE_VENDOR=	advancemame
 
 GNU_CONFIGURE=	yes
