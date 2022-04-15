@@ -23,6 +23,14 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd
 USES=		cpe iconv libtool pkgconfig ssl
 USE_RC_SUBR=	dovecot
 
+FLAVORS=	default cdb ldap mysql pgsql sqlite3
+FLAVOR?=	${FLAVORS:[1]}
+cdb_PKGNAMESUFFIX=	-cdb
+ldap_PKGNAMESUFFIX=	-ldap
+mysql_PKGNAMESUFFIX=	-mysql
+pgsql_PKGNAMESUFFIX=	-pgsql
+sqlite3_PKGNAMESUFFIX=	-sqlite3
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-docs \
@@ -47,6 +55,22 @@ OPTIONS_GROUP_FTS=	ICU LUCENE SOLR TEXTCAT
 
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+
+.if ${FLAVOR} == cdb
+OPTIONS_DEFAULT+=	CDB
+.endif
+.if ${FLAVOR} == ldap
+OPTIONS_DEFAULT+=	LDAP
+.endif
+.if ${FLAVOR} == mysql
+OPTIONS_DEFAULT+=	MYSQL
+.endif
+.if ${FLAVOR} == pgsql
+OPTIONS_DEFAULT+=	PGSQL
+.endif
+.if ${FLAVOR} == sqlite3
+OPTIONS_DEFAULT+=	SQLITE3
+.endif
 
 DB_DESC=	Database support
 CDB_DESC=	CDB database support
