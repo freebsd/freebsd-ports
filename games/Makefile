@@ -771,7 +771,6 @@
     SUBDIR += pongix
     SUBDIR += ponscripter-07th-mod
     SUBDIR += popstar
-    SUBDIR += pouetchess
     SUBDIR += powder
     SUBDIR += powder-toy
     SUBDIR += powermanga

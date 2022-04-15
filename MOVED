@@ -17122,3 +17122,4 @@ textproc/rubygem-diffy330|textproc/rubygem-diffy|2022-04-01|Obsolete, please use
 graphics/sxiv|graphics/nsxiv|2022-04-01|Has expired: Upstream has archived the project; please switch to the maintained fork (graphics/nsxiv)
 graphics/xface.el||2022-04-07|Port has failed to build for years; last release in 2003
 lang/gcc9-devel||2022-04-14|Has expired: Not serving its purpose any longer due to lack of maintenance
+games/pouetchess||2022-04-15|Has expired: Abandonware with last release in 2006
