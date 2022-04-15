@@ -1,0 +1,14 @@
+Work around inability to configure with
+https://reviews.llvm.org/rG7fa7b0cbd8f8d43c2237b75423cd25e74edde820
+
+--- openmp/libomptarget/plugins/amdgpu/CMakeLists.txt.orig
++++ openmp/libomptarget/plugins/amdgpu/CMakeLists.txt
+@@ -71,7 +71,7 @@
+       src/rtl.cpp
+       ${LIBOMPTARGET_EXTRA_SOURCE}
+       )
+-add_dependencies(omptarget.rtl.amdgpu omptarget.devicertl.amdgpu)
++#add_dependencies(omptarget.rtl.amdgpu omptarget.devicertl.amdgpu)
+ 
+ # Install plugin under the lib destination folder.
+ # When we build for debug, OPENMP_LIBDIR_SUFFIX get set to -debug

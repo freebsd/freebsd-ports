@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -68,9 +68,7 @@ CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
 CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
 CMAKE_ARGS+=	-DLLVM_ENABLE_LIBXML2=OFF
 CMAKE_ARGS+=	-DLLVM_ENABLE_LIBEDIT=OFF
-CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
-		-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
-		-DPYTHON_LIBRARY=${LOCALBASE}/lib/lib${PYTHON_VERSION}m.so
+CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD}
 
 # Disable assertions.  They should be disabled by cmake, but USES=cmake
 # overrides -DCMAKE_*_FLAGS_RELEASE.
@@ -92,7 +90,7 @@ OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFINE_powerpc=	GOLD
 OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
 OPTIONS_DEFINE_powerpc64le=	GOLD OPENMP
-OPTIONS_DEFINE_riscv64=	OPENMP
+OPTIONS_DEFINE_riscv64=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT+=	EXTRAS FLANG LIT LLDB MLIR STATIC_LIBS
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
@@ -101,7 +99,7 @@ OPTIONS_DEFAULT_powerpc64=	${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
 OPTIONS_DEFAULT_powerpc64_13=	GOLD
 OPTIONS_DEFAULT_powerpc64_14=	GOLD
 OPTIONS_DEFAULT_powerpc64le=	GOLD OPENMP
-OPTIONS_DEFAULT_riscv64=	OPENMP
+OPTIONS_DEFAULT_riscv64=	COMPILER_RT OPENMP
 OPTIONS_EXCLUDE_i386=	FLANG
 OPTIONS_EXCLUDE_powerpc=	FLANG
 OPTIONS_EXCLUDE_riscv64=	LLDB
@@ -117,8 +115,7 @@ PLIST_FILES=
 PLIST_SUB_SED_EXCLUDE_VAL=	lib "3.0.0"
 
 CLANG_DESC=	Build clang
-CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp \
-			-DCLANG_LINK_LLVM_DYLIB=ON
+CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 CLANG_PORTDOCS=		clang
 CLANG_PLIST_FILES=	share/toolchains/llvm-devel.mk
 CLANG_SUB_FILES=	xtoolchain.mk
@@ -215,6 +212,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-ranlib.1 \
 		llvm-readelf.1 \
 		llvm-readobj.1 \
+		llvm-remark-size-diff.1 \
 		llvm-size.1 \
 		llvm-stress.1 \
 		llvm-strings.1 \
@@ -356,7 +354,6 @@ STRIP=
 
 _CRTLIBDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_DIR}/lib/clang/%%LLVM_RELEASE%%/share
-_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
 _COMPILER_RT_LIBS_i386= \
 	libclang_rt.asan-i386.a \
 	libclang_rt.asan-i386.so \
@@ -376,6 +373,7 @@ _COMPILER_RT_LIBS_i386= \
 	libclang_rt.ubsan_standalone-i386.so \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .if ${ARCH} == "amd64"
+_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
 _COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
 _COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 _COMPILER_RT_LIBS= \
@@ -423,10 +421,31 @@ _COMPILER_RT_LIBS= \
 .if exists(/usr/lib32/libc.so.7)
 _COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
 .endif
-.endif
-.if ${ARCH} == "i386"
+.elif ${ARCH} == "i386"
+_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
 _COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
 _COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+.elif ${ARCH} == "riscv64"
+_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+_COMPILER_RT_LIBS= \
+	libclang_rt.asan-preinit-riscv64.a \
+	libclang_rt.asan-riscv64.a \
+	libclang_rt.asan-riscv64.a.syms \
+	libclang_rt.asan-riscv64.so \
+	libclang_rt.asan_cxx-riscv64.a \
+	libclang_rt.asan_cxx-riscv64.a.syms \
+	libclang_rt.asan_static-riscv64.a \
+	libclang_rt.builtins-riscv64.a \
+	libclang_rt.stats-riscv64.a \
+	libclang_rt.stats_client-riscv64.a \
+	libclang_rt.ubsan_minimal-riscv64.a \
+	libclang_rt.ubsan_minimal-riscv64.a.syms \
+	libclang_rt.ubsan_minimal-riscv64.so \
+	libclang_rt.ubsan_standalone-riscv64.a \
+	libclang_rt.ubsan_standalone-riscv64.a.syms \
+	libclang_rt.ubsan_standalone-riscv64.so \
+	libclang_rt.ubsan_standalone_cxx-riscv64.a \
+	libclang_rt.ubsan_standalone_cxx-riscv64.a.syms
 .endif
 
 # Comment out plist entries for unsupported options.
