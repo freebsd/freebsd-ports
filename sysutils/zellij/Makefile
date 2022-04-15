@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.0
+DISTVERSION=	0.28.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -43,10 +43,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		base64-0.13.0 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
+		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
+		block-padding-0.1.5 \
 		blocking-1.2.0 \
 		boxfnonce-0.1.1 \
 		bumpalo-3.9.1 \
+		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
 		cache-padded-1.2.0 \
 		cassowary-0.3.0 \
@@ -77,6 +80,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-queue-0.3.5 \
 		crossbeam-utils-0.8.8 \
+		csscolorparser-0.5.0 \
 		ctor-0.1.22 \
 		daemonize-0.4.1 \
 		darling-0.13.1 \
@@ -84,6 +88,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		darling_macro-0.13.1 \
 		derivative-2.2.0 \
 		dialoguer-0.9.0 \
+		digest-0.8.1 \
 		digest-0.9.0 \
 		directories-next-2.0.0 \
 		dirs-2.0.2 \
@@ -95,6 +100,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		enumset_derive-0.5.5 \
 		erased-serde-0.3.20 \
 		event-listener-2.5.2 \
+		fake-simd-0.1.2 \
 		fallible-iterator-0.2.0 \
 		fastrand-1.7.0 \
 		filedescriptor-0.8.2 \
@@ -112,6 +118,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		futures-task-0.3.21 \
 		futures-util-0.3.21 \
 		generational-arena-0.2.8 \
+		generic-array-0.12.4 \
 		generic-array-0.14.5 \
 		getopts-0.2.21 \
 		getrandom-0.1.16 \
@@ -152,6 +159,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		log-mdc-0.1.0 \
 		log4rs-1.0.0 \
 		mach-0.3.2 \
+		maplit-1.0.2 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
 		memmap2-0.2.3 \
@@ -174,6 +182,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		object-0.22.0 \
 		object-0.27.1 \
 		once_cell-1.10.0 \
+		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
 		openssl-sys-0.9.72 \
 		ordered-float-2.10.0 \
@@ -184,9 +193,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		parking_lot_core-0.8.5 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
 		phf-0.8.0 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
@@ -196,6 +209,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pretty-bytes-0.2.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.36 \
 		quote-1.0.16 \
 		rand-0.3.23 \
@@ -233,6 +247,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.79 \
 		serde_yaml-0.8.23 \
+		sha-1-0.8.2 \
 		sha2-0.9.9 \
 		signal-hook-0.1.17 \
 		signal-hook-0.3.13 \
@@ -262,7 +277,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		terminal_size-0.1.17 \
 		terminfo-0.7.3 \
 		termios-0.3.3 \
-		termwiz-0.15.0 \
+		termwiz-0.16.0 \
 		textwrap-0.14.2 \
 		textwrap-0.15.0 \
 		thiserror-1.0.30 \
@@ -294,7 +309,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		version_check-0.9.4 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.1 \
-		vtparse-0.6.0 \
+		vtparse-0.6.1 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
@@ -320,6 +335,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wat-1.0.41 \
 		web-sys-0.3.56 \
 		wepoll-ffi-0.1.2 \
+		wezterm-bidi-0.1.0 \
+		wezterm-color-types-0.1.0 \
 		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
