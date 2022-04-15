@@ -147,17 +147,17 @@
 	<range><ge>1.11.0</ge><lt>1.14.2</lt></range>
       </package>
       <package>
-        <name>mod_dav_svn</name>
-        <range><ge>1.10.0</ge><lt>1.10.8</lt></range>
-        <range><ge>1.11.0</ge><lt>1.14.2</lt></range>
+	<name>mod_dav_svn</name>
+	<range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+	<range><ge>1.11.0</ge><lt>1.14.2</lt></range>
       </package>
       <package>
-        <name>subversion-lts</name>
-        <range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+	<name>subversion-lts</name>
+	<range><ge>1.10.0</ge><lt>1.10.8</lt></range>
       </package>
       <package>
-        <name>mod_dav_svn-lts</name>
-        <range><ge>1.10.0</ge><lt>1.10.8</lt></range>
+	<name>mod_dav_svn-lts</name>
+	<range><ge>1.10.0</ge><lt>1.10.8</lt></range>
       </package>
      </affects>
     <description>
@@ -165,20 +165,20 @@
 	<p>Subversion project reports:</p>
 	<blockquote cite="https://subversion.apache.org/security/CVE-2021-28544-advisory.txt">
 	  <p>
-            Subversion servers reveal 'copyfrom' paths that should be hidden according
-            to configured path-based authorization (authz) rules.  When a node has been
-            copied from a protected location, users with access to the copy can see the
-            'copyfrom' path of the original.  This also reveals the fact that the node
-            was copied.  Only the 'copyfrom' path is revealed; not its contents. Both
-            httpd and svnserve servers are vulnerable.
-          </p>
+	    Subversion servers reveal 'copyfrom' paths that should be hidden according
+	    to configured path-based authorization (authz) rules.  When a node has been
+	    copied from a protected location, users with access to the copy can see the
+	    'copyfrom' path of the original.  This also reveals the fact that the node
+	    was copied.  Only the 'copyfrom' path is revealed; not its contents. Both
+	    httpd and svnserve servers are vulnerable.
+	  </p>
 	</blockquote>
-        <blockquote cite="https://subversion.apache.org/security/CVE-2022-24070-advisory.txt">
-          <p>
-            While looking up path-based authorization rules, mod_dav_svn servers
-            may attempt to use memory which has already been freed.
-          </p>
-        </blockquote>
+	<blockquote cite="https://subversion.apache.org/security/CVE-2022-24070-advisory.txt">
+	  <p>
+	    While looking up path-based authorization rules, mod_dav_svn servers
+	    may attempt to use memory which has already been freed.
+	  </p>
+	</blockquote>
       </body>
     </description>
     <references>
