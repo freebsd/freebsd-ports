@@ -354,6 +354,15 @@ do-test:
 # Helper targets for port maintainers
 #
 
+# cargo-audit generates a vulnerability report using
+# security/cargo-audit based on the crates in Cargo.lock.
+cargo-audit: configure
+	@if ! type cargo-audit > /dev/null 2>&1; then \
+		${ECHO_MSG} "===> Please install \"security/cargo-audit\""; exit 1; \
+	fi
+	@${ECHO_MSG} "===> Checking for vulnerable crates"
+	@${CARGO} audit --file ${CARGO_CARGOLOCK}
+
 # cargo-crates will output the crates list from Cargo.lock.  If there
 # is no Cargo.lock for some reason, try and generate it first.
 cargo-crates: cargo-crates-generate-lockfile
