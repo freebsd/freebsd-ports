@@ -1,14 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gnome-terminal
-DISTVERSION=	3.42.2
-PORTREVISION=	2
+DISTVERSION=	3.44.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	9a168cc23962.patch:-p1 # meson 0.61
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME Desktop
