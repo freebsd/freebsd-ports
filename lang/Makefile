@@ -331,6 +331,7 @@
     SUBDIR += solidity
     SUBDIR += spidermonkey17
     SUBDIR += spidermonkey78
+    SUBDIR += spidermonkey91
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
