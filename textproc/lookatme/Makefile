@@ -17,18 +17,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>=0:devel/py-marshmallow@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urwid>=0:devel/py-urwid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python:3.6+ pytest
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
+# https://github.com/d0c-s4vage/lookatme/issues/126
+PYTEST_BROKEN_TESTS=	test_sanity_check_that_errors_are_detected \
+			test_styles_defaults
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|>.*||' ${WRKSRC}/requirements.txt
-
-do-test:
-	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>
