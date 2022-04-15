@@ -40,12 +40,14 @@ share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/dbus-1/services/org.gnome.Shell.Notifications.service
 share/dbus-1/services/org.gnome.Shell.Screencast.service
 share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
+share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 %%DATADIR%%/Gvc-1.0.gir
 %%DATADIR%%/Shell-0.1.gir
 %%DATADIR%%/St-1.0.gir
 %%DATADIR%%/gir-1.0/Shew-0.gir
 %%DATADIR%%/gnome-shell-dbus-interfaces.gresource
+%%DATADIR%%/gnome-shell-icons.gresource
 %%DATADIR%%/gnome-shell-osk-layouts.gresource
 %%DATADIR%%/gnome-shell-theme.gresource
 %%DATADIR%%/org.gnome.Extensions

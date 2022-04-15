@@ -1,0 +1,54 @@
+Disable broken signal handler which locks the malloc mutex recursively.
+
+What's happening here is that gnome-shell wants to print a gjs stack
+trace when certain signals are caught, and sets up a signal handler
+which uses stdio and malloc. This isn't safe.
+
+For now, just disable this signal handler, which will always crash
+on OpenBSD rather than producing stack trace information, to prevent
+gnome-shell from littering home directories with useless core dumps.
+
+#0  thrkill () at -:3
+#1  0x00000dc8de8ca89e in _libc_abort () at /usr/src/lib/libc/stdlib/abort.c:51
+#2  0x00000dc8de93cbba in _rthread_mutex_timedlock (mutexp=Variable "mutexp" is 
+not available.
+)
+    at /usr/src/lib/libc/thread/rthread_mutex.c:117
+#3  0x00000dc8de8adf12 in malloc (size=128)
+    at /usr/src/lib/libc/stdlib/malloc.c:1253
+#4  0x00000dc8de947746 in _libc_vasprintf (str=0xdc9b1be0b08, 
+    fmt=0xdc935649217 "== Stack trace for context %p ==\n", ap=0xdc9b1be0ce0)
+    at /usr/src/lib/libc/stdio/vasprintf.c:39
+#5  0x00000dc975b5cbbd in g_vasprintf (string=0xdc9b1be0b08, 
+    format=0xdc935649217 "== Stack trace for context %p ==\n", 
+    args=0xdc9b1be0ce0) at ../glib-2.58.3/glib/gprintf.c:330
+#6  0x00000dc975b13661 in g_strdup_vprintf (
+    format=0xdc935649217 "== Stack trace for context %p ==\n", 
+    args=0xdc9b1be0ce0) at ../glib-2.58.3/glib/gstrfuncs.c:514
+#7  0x00000dc975aef17f in g_printerr (
+    format=0xdc935649217 "== Stack trace for context %p ==\n")
+    at ../glib-2.58.3/glib/gmessages.c:3247
+#8  0x00000dc935781742 in gjs_context_print_stack_stderr ()
+   from /usr/local/lib/libgjs.so.5.0
+#9  0x00000dc9357817c5 in gjs_dumpstack () from /usr/local/lib/libgjs.so.5.0
+#10 0x00000dc6bd8b62f0 in dump_gjs_stack_on_signal_handler (signo=6)
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -356,6 +356,7 @@ dump_gjs_stack_on_signal_handler (int signo)
+ static void
+ dump_gjs_stack_on_signal (int signo)
+ {
++#if 0 /* this handler is disabled because it triggers malloc mutex recursion */
+   struct sigaction sa = {
+     .sa_flags   = SA_RESETHAND | SA_NODEFER,
+     .sa_handler = dump_gjs_stack_on_signal_handler,
+@@ -365,6 +366,7 @@ dump_gjs_stack_on_signal (int signo)
+ 
+   sigaction (signo, &sa, NULL);
+   _tracked_signals[signo] = TRUE;
++#endif
+ }
+ 
+ static gboolean

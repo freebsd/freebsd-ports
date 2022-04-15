@@ -1,5 +1,3 @@
-$OpenBSD: patch-subprojects_extensions-tool_man_meson_build,v 1.1 2020/05/14 15:28:46 jasper Exp $
-
 https://gitlab.gnome.org/GNOME/gnome-shell/issues/1854
 
 Index: subprojects/extensions-tool/man/meson.build

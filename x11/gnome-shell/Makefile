@@ -1,8 +1,7 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 
 PORTNAME=	gnome-shell
-PORTVERSION=	41.4
-PORTREVISION=	4
+PORTVERSION=	42.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -30,7 +29,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libical.so:devel/libical \
 		libicuuc.so:devel/icu \
 		libjson-glib-1.0.so:devel/json-glib \
-		libmutter-9.so:x11-wm/mutter \
+		libmutter-10.so:x11-wm/mutter \
 		libp11-kit.so:security/p11-kit \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libpulse.so:audio/pulseaudio \
