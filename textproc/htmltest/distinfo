@@ -1,6 +1,6 @@
-TIMESTAMP = 1636840211
-SHA256 (wjdp-htmltest-v0.15.0_GH0.tar.gz) = d8a8fa1f7ce6cf7a05401fa7ae3f1dd85e4abb2f0354f8825a2e628d4824df9b
-SIZE (wjdp-htmltest-v0.15.0_GH0.tar.gz) = 5679726
+TIMESTAMP = 1650050974
+SHA256 (wjdp-htmltest-v0.16.0_GH0.tar.gz) = f6db6cd746cf8f28063ce806bb8b02e53165808f85400c93e844f9c51822e47e
+SIZE (wjdp-htmltest-v0.16.0_GH0.tar.gz) = 5680104
 SHA256 (badoux-checkmail-v1.2.1_GH0.tar.gz) = 41e1b4afb111bcbec7b0650a4a02ea9f68dd4178f80dc3e33727c45481dfe6eb
 SIZE (badoux-checkmail-v1.2.1_GH0.tar.gz) = 3188
 SHA256 (daviddengcn-go-algs-fe23fabd9d06_GH0.tar.gz) = e14291ed15d7bc62e55f3ae1eb74fda28185574bc3353291db0fc93cfcd899b6
