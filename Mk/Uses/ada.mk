@@ -10,17 +10,19 @@
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes
 
+DEPRECATED=	Depends on expired lang/gcc6-aux
+EXPIRATION_DATE=2022-06-30
+
 CC=	ada
-ADAXX=	gcc6	# framework default
 
 . if ${ada_ARGS:Mrun}
-RUN_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:lang/${ADAXX}-aux
+RUN_DEPENDS+=	${LOCALBASE}/gcc6-aux/bin/ada:lang/gcc6-aux
 . endif
 
-BUILD_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:lang/${ADAXX}-aux
-MAKE_ENV+=	PATH=${LOCALBASE}/${ADAXX}-aux/bin:${PATH} \
+BUILD_DEPENDS+=	${LOCALBASE}/gcc6-aux/bin/ada:lang/gcc6-aux
+MAKE_ENV+=	PATH=${LOCALBASE}/gcc6-aux/bin:${PATH} \
 		ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/${ADAXX}-aux/bin:${PATH} \
+CONFIGURE_ENV+=	PATH=${LOCALBASE}/gcc6-aux/bin:${PATH} \
 		ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
 
 .endif
