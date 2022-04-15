@@ -1,4 +1,4 @@
-path: [ "%%WWWDIR%%/documentserver/fonts", "%%PREFIX%%/share/fonts" ]
+path: [ "%%WWWDIR%%/documentserver", "%%PREFIX%%/share/fonts" ]
 trigger: {
 	type: lua
 	sandbox: false
