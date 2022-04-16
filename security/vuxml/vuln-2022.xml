@@ -1,3 +1,39 @@
+  <vuln vid="add683be-bd76-11ec-a06f-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.38</lt></range>
+      </package>
+      <package>
+	<name>mysql80-client</name>
+	<range><lt>8.0.29</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.29</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpuapr2022.html">
+	  <p>The 2022 April Critical Patch Update contains 43 new security
+	    patches for Oracle MySQL. 11 of these vulnerabilities may be
+	    remotely exploitable without authentication, i.e., may be
+	    exploited over a network without requiring user credentials.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpuapr2022.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-16</discovery>
+      <entry>2022-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a25ea27b-bced-11ec-87b5-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
