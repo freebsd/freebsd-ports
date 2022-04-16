@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-More
-PORTVERSION=	0.023
+PORTVERSION=	0.025
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-BorderStyles-Standard>=0.011:devel/p5-BorderStyles-Standard \
+RUN_DEPENDS=	p5-BorderStyles-Standard>=0.014:devel/p5-BorderStyles-Standard \
 		p5-List-AllUtils>=0:devel/p5-List-AllUtils \
 		p5-Module-Load-Util>=0.004:devel/p5-Module-Load-Util \
 		p5-String-Pad>=0.021:textproc/p5-String-Pad \
