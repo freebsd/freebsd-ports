@@ -1,5 +1,5 @@
 PORTNAME=	nbformat
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,8 @@ COMMENT=	Jupyter Notebook format
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.4:devel/py-jsonschema@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastjsonschema>=0:devel/py-fastjsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.6:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-core>=0:devel/py-jupyter-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.1:devel/py-traitlets@${PY_FLAVOR}
@@ -23,12 +24,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	FASTJSON
-
-FASTJSON_DESC=		Fast validation with fastjsonschema
-FASTJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastjsonschema>=0:devel/py-fastjsonschema@${PY_FLAVOR}
-
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
+	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v -o addopts=
 
 .include <bsd.port.mk>
