@@ -2,6 +2,7 @@
 
 PORTNAME=	cucumber-create-meta
 PORTVERSION=	6.0.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Produce the meta message for Cucumber Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-cucumber-messages>=17.1.1<18:devel/rubygem-cucumber-messages \
+RUN_DEPENDS=	rubygem-cucumber-messages17>=17.1.1<18:devel/rubygem-cucumber-messages17 \
 		rubygem-sys-uname>=1.2.2<2:sysutils/rubygem-sys-uname
 
 USES=		gem
