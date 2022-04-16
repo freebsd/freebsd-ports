@@ -1,0 +1,8 @@
+pyhanko-certvalidator is a Python library for validating X.509 certificates
+paths. It supports various options, including: validation at a specific moment
+in time, whitelisting and revocation checks.
+
+This library started as a fork of wbond/certvalidator with patches for pyHanko,
+but has since diverged considerably from its parent repository.
+
+WWW: https://github.com/MatthiasValvekens/certvalidator

@@ -930,6 +930,7 @@
     SUBDIR += py-pycryptodome
     SUBDIR += py-pycryptodomex
     SUBDIR += py-pyelliptic
+    SUBDIR += py-pyhanko-certvalidator
     SUBDIR += py-pylibacl
     SUBDIR += py-pymacaroons
     SUBDIR += py-pynacl
