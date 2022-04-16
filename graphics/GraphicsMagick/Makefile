@@ -16,7 +16,7 @@ USES=		cpe libtool localbase pathfix tar:bzip2
 
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
-		--without-perl --without-trio
+		--without-jxl --without-perl --without-trio
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
