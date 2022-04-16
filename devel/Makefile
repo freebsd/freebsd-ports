@@ -6426,6 +6426,7 @@
     SUBDIR += rubygem-google-apis-storage_v1
     SUBDIR += rubygem-google-gax
     SUBDIR += rubygem-google-protobuf
+    SUBDIR += rubygem-google-protobuf319
     SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
