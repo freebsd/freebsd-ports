@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	dateutil
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,22 +13,19 @@ COMMENT=	Extensions to the standard Python datetime module
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hypothesis>=3.30:devel/py-hypothesis@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hypothesis>=3.30:devel/py-hypothesis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=3.0,1:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.0.0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_LOCALE=	en_US.UTF-8
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-# -W fixes PytestUnknownMarkWarning: Unknown pytest.mark.no_cover
 do-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
-	${PYTHON_CMD} -m pytest -v -rs -o addopts= \
-		-W ignore::pytest.PytestUnknownMarkWarning
+	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
