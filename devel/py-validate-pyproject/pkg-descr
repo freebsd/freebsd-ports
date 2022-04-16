@@ -1,0 +1,16 @@
+With the approval of PEP 517 and PEP 518, the Python community shifted towards a
+strong focus on standardisation for packaging software, which allows more
+freedom when choosing tools during development and make sure packages created
+using different technologies can interoperate without the need for custom
+installation procedures.
+
+This shift became even more clear when PEP 621 was also approved, as a
+standardised way of specifying project metadata and dependencies.
+
+validate-pyproject was born in this context, with the mission of validating
+pyproject.toml files, and make sure they are compliant with the standards and
+PEPs. Behind the scenes, validate-pyproject relies on JSON Schema files, which,
+in turn, are also a standardised way of checking if a given data structure
+complies with a certain specification.
+
+WWW: https://github.com/abravalheri/validate-pyproject

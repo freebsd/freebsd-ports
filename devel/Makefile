@@ -5380,6 +5380,7 @@
     SUBDIR += py-user_agents
     SUBDIR += py-userpath
     SUBDIR += py-uvloop
+    SUBDIR += py-validate-pyproject
     SUBDIR += py-validators
     SUBDIR += py-validictory
     SUBDIR += py-vcrpy
