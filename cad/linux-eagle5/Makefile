@@ -2,9 +2,10 @@
 
 PORTNAME=	eagle5
 PORTVERSION=	${EAGLEVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad linux
-MASTER_SITES=	ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
+MASTER_SITES=	LOCAL/riggs/${PORTNAME} \
+		ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	eagle-lin-${EAGLEVERSION}
 EXTRACT_SUFX=	.run
@@ -19,6 +20,9 @@ LICENSE_FILE=	${WRKSRC}/doc/license_en.txt
 # Sale for profit is not permitted
 # Copying the software is only allowed for backup by an individual licensee
 LICENSE_PERMS=	auto-accept
+
+DEPRECATED=	Deprecated upstream, superseded by Autodesk EAGLE 9
+EXPIRATION_DATE=	2022-12-31
 
 ONLY_FOR_ARCHS=	i386 amd64
 
