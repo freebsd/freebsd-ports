@@ -929,7 +929,6 @@
     SUBDIR += grcov
     SUBDIR += grex
     SUBDIR += grpc
-    SUBDIR += grpc134
     SUBDIR += grpc142
     SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
