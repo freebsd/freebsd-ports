@@ -118,7 +118,6 @@ CTAGS_UNIVERSAL_DESC=	Use uctags instead of ctags
 
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
 OPTIONS_EXCLUDE_powerpc64=	RUBY
-OPTIONS_EXCLUDE_powerpc64le=	RUBY
 
 # GENERAL OPTIONS
 CTAGS_EXUBERANT_RUN_DEPENDS=	exctags:devel/ctags
