@@ -1,7 +1,7 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
 
 PORTNAME=	cfitsio
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
 CPE_VENDOR=	nasa
 
 OPTIONS_DEFINE=	DOCS
