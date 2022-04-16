@@ -1,7 +1,7 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
 
 PORTNAME=	jekyll
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	3
