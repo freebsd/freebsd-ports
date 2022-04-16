@@ -2,13 +2,11 @@
 # https://chromium.googlesource.com/v8/v8/+/refs/heads/10.0-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	10.0.139.6
-PORTREVISION=	1
+PORTVERSION=	10.1.124.1
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 PKGNAMESUFFIX=	-beta
-DISTFILES=	v8-${PORTVERSION}.tar.gz \
-		build-${BUILD_REV}.tar.gz \
+DISTFILES=	build-${BUILD_REV}.tar.gz \
 		buildtools-${BUILDTOOLS_REV}.tar.gz \
 		clang-${CLANG_REV}.tar.gz \
 		common-${COMMON_REV}.tar.gz \
@@ -36,22 +34,23 @@ USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MAKE_ARGS=	-C out/Release
-NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
 SUB_FILES=	v8.pc v8_libbase.pc v8_libplatform.pc
+
+USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8
 
-BUILD_REV=	62a6377648eb82cff75e3a12f689400694fbbb63
-BUILDTOOLS_REV=	169eef5b952dea9b285bf1a0a7aff7518a3ed907
-CLANG_REV=	62e2cd966f93a27aab0953ce7c2d83ffd6bdfdcc
+BUILD_REV=	3d9590754d5d23e62d15472c5baf6777ca59df20
+BUILDTOOLS_REV=	113dd1badbcbffea108a8c95ac7c89c22bfd25f3
+CLANG_REV=	b60d34c100e5a8f4b01d838527f000faab673da3
 COMMON_REV=	d115b033c4e53666b535cbd1985ffe60badad082
-GOOGLETEST_REV=	ea55f1f52c489535f0d3b583c81529762c9cb5ea
-ICU_REV=	b867f209e4b56b0a8c01aaaba3882ad41e438c4f
-ZLIB_REV=	9538f4194f6e5eff1bd59f2396ed9d05b1a8d801
+GOOGLETEST_REV=	ae5e06dd35c6137d335331b0815cf1f60fd7e3c5
+ICU_REV=	8a5b728e4f43b0eabdb9ea450f956d67cfb22719
+ZLIB_REV=	b0676a1f52484bf53a1a49d0e48ff8abc430fafe
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
