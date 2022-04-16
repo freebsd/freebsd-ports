@@ -38,7 +38,7 @@
 +    return rest_invoke(url=url, method="GET", params=params,
                         files=files, accept=accept, headers=headers,
 -                       async=async, resp=resp, credentials=credentials,
-+                       asynchronous=async, resp=resp, credentials=credentials,
++                       asynchronous=asynchronous, resp=resp, credentials=credentials,
                         httplib_params=httplib_params)
  
  
@@ -62,7 +62,7 @@
 +    return rest_invoke(url=url, method="POST", params=params,
                         files=files, accept=accept, headers=headers,
 -                       async=async, resp=resp, credentials=credentials,
-+                       asynchronous=async, resp=resp, credentials=credentials,
++                       asynchronous=asynchronous, resp=resp, credentials=credentials,
                         httplib_params=httplib_params)
  
  
@@ -87,7 +87,7 @@
 +    return rest_invoke(url=url, method="PUT", params=params,
                         files=files, accept=accept, headers=headers,
 -                       async=async, resp=resp, credentials=credentials,
-+                       asynchronous=async, resp=resp, credentials=credentials,
++                       asynchronous=asynchronous, resp=resp, credentials=credentials,
                         httplib_params=httplib_params)
  
  
@@ -112,7 +112,7 @@
 +    return rest_invoke(url=url, method="DELETE", params=params,
                         files=files, accept=accept, headers=headers,
 -                       async=async, resp=resp, credentials=credentials,
-+                       asynchronous=async, resp=resp, credentials=credentials,
++                       asynchronous=asynchronous, resp=resp, credentials=credentials,
                         httplib_params=httplib_params)
  
  
