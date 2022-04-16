@@ -24,7 +24,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
 #					versions. (allowed values: 7[+] 8[+] 11[+] 12[+] 13[+]
-#					14[+] 15[+] 16[+] 17[+])
+#					14[+] 15[+] 16[+] 17[+] 18[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -161,7 +161,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	7 8 11 12 13 14 15 16 17
+__JAVA_VERSION_LIST=	7 8 11 12 13 14 15 16 17 18
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
@@ -186,6 +186,8 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_16_INFO=		PORT=java/openjdk16			HOME=${LOCALBASE}/
 											VERSION=16	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_17_INFO=		PORT=java/openjdk17			HOME=${LOCALBASE}/openjdk17 \
 											VERSION=17	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_18_INFO=		PORT=java/openjdk18			HOME=${LOCALBASE}/openjdk18 \
+											VERSION=18	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_ORACLE_JDK_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=8	OS=linux	VENDOR=oracle
 
@@ -207,6 +209,7 @@ __JAVA_PORTS_ALL=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_14 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_15 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_16 \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_18 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_7  \
 					JAVA_PORT_LINUX_ORACLE_JDK_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
@@ -282,7 +285,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.7+/1.7 1.8+/:S/1.8+/1.8 11+/:S/1.7/7/:S/1.8/8/:S/7+/7 8+/:S/8+/8 11+/:S/11+/11 12+/:S/12+/12 13+/:S/13+/13 14+/:S/14+/14 15+/:S/15+/15 16+/:S/16+/16 17+/:S/17+/17/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.7+/1.7 1.8+/:S/1.8+/1.8 11+/:S/1.7/7/:S/1.8/8/:S/7+/7 8+/:S/8+/8 11+/:S/11+/11 12+/:S/12+/12 13+/:S/13+/13 14+/:S/14+/14 15+/:S/15+/15 16+/:S/16+/16 17+/:S/17+/17 18+/:S/18+/18/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
