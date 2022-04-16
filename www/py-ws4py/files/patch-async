@@ -1,0 +1,31 @@
+--- ws4py/async_websocket.py.orig	2014-01-25 21:30:21 UTC
++++ ws4py/async_websocket.py
+@@ -84,7 +84,7 @@ class WebSocket(_WebSocket):
+         def closeit():
+             yield from self.proto.writer.drain()
+             self.proto.writer.close()
+-        asyncio.async(closeit())
++        asyncio.ensure_future(closeit())
+ 
+     def _write(self, data):
+         """
+@@ -94,7 +94,7 @@ class WebSocket(_WebSocket):
+         def sendit(data):
+             self.proto.writer.write(data)
+             yield from self.proto.writer.drain()
+-        asyncio.async(sendit(data))
++        asyncio.ensure_future(sendit(data))
+ 
+     @asyncio.coroutine
+     def run(self):
+--- ws4py/server/tulipserver.py.orig	2014-01-25 21:30:21 UTC
++++ ws4py/server/tulipserver.py
+@@ -40,7 +40,7 @@ class WebSocketProtocol(asyncio.StreamReaderProtocol):
+         #self.stream.set_transport(transport)
+         asyncio.StreamReaderProtocol.connection_made(self, transport)
+         # Let make it concurrent for others to tag along
+-        f = asyncio.async(self.handle_initial_handshake())
++        f = asyncio.ensure_future(self.handle_initial_handshake())
+         f.add_done_callback(self.terminated)
+ 
+     @property
