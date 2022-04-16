@@ -1153,6 +1153,7 @@
     SUBDIR += py-txrestapi
     SUBDIR += py-uritemplate
     SUBDIR += py-uritools
+    SUBDIR += py-url-normalize
     SUBDIR += py-urlextract
     SUBDIR += py-urllib3
     SUBDIR += py-whois
