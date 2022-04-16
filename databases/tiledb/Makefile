@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tiledb
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,9 +16,11 @@ LIB_DEPENDS=	libcapnp.so:devel/capnproto080 \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	capnproto080>=0.8.0:devel/capnproto080 \
-		catch>=0:devel/catch \
-		clipp>=0:devel/clipp \
-		spdlog>=1.4:devel/spdlog
+		catch>=2.13.8:devel/catch \
+		clipp>=1.2.3:devel/clipp \
+		liblz4>=1.9.3,1:archivers/liblz4 \
+		spdlog>=1.9.0:devel/spdlog \
+		zstd>=1.4.8:archivers/zstd
 
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
 
