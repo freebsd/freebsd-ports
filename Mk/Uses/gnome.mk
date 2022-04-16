@@ -140,7 +140,7 @@ libgdamm5_USE_GNOME_IMPL=	libgda5 glibmm
 
 libsigc++20_LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
-libsigc++30_LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++30
+libsigc++30_LIB_DEPENDS=	libsigc-3.0.so:devel/libsigc++30
 
 pangomm_LIB_DEPENDS=	libpangomm-1.4.so:x11-toolkits/pangomm
 pangomm_USE_GNOME_IMPL=	pango glibmm cairomm
