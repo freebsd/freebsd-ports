@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.101
+PORTVERSION=	2.103
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,5 @@ USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-
-PORTSCOUT=	skipv:2.102
 
 .include <bsd.port.mk>
