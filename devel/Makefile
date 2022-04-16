@@ -5927,6 +5927,7 @@
     SUBDIR += rubygem-aws-sdk-pinpoint
     SUBDIR += rubygem-aws-sdk-pinpointemail
     SUBDIR += rubygem-aws-sdk-pinpointsmsvoice
+    SUBDIR += rubygem-aws-sdk-pinpointsmsvoicev2
     SUBDIR += rubygem-aws-sdk-polly
     SUBDIR += rubygem-aws-sdk-pricing
     SUBDIR += rubygem-aws-sdk-prometheusservice
