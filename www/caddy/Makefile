@@ -3,7 +3,7 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -12,8 +12,6 @@ COMMENT=	Fast, cross-platform HTTP/2 web server with automatic HTTPS
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		cpe go:modules
 CPE_VENDOR=	caddyserver

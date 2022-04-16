@@ -3,7 +3,7 @@
 PORTNAME=	geoipupdate
 PORTVERSION=	4.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -13,8 +13,6 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
-
-RUN_DEPENDS=	ca_root_nss>=3:security/ca_root_nss
 
 USES=		gmake go:modules,no_targets
 GO_MODULE=	github.com/maxmind/geoipupdate/v4
