@@ -1,6 +1,6 @@
---- setup.py.orig	2011-12-20 14:19:49.418637581 +0800
-+++ setup.py	2011-12-20 14:20:31.345637126 +0800
-@@ -38,7 +38,6 @@
+--- setup.py.orig	2012-09-14 19:01:37 UTC
++++ setup.py
+@@ -38,7 +38,6 @@ import sys
  try:
      from setuptools import setup
      kw = {
