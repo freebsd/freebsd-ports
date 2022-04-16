@@ -29,6 +29,7 @@ include/libkres/trie.h
 include/libkres/utils.h
 include/libkres/zonecut.h
 lib/knot-resolver/ahocorasick.so
+lib/knot-resolver/debug_opensslkeylog.so
 lib/knot-resolver/distro-preconfig.lua
 lib/knot-resolver/kluautil.lua
 lib/knot-resolver/kres-gen.lua
