@@ -56,7 +56,7 @@ NO_ARCH=	yes
 
 PLIST_SUB+=	DOC_DIR="lib/ruby/gems/${RUBY_VER}/doc" \
 		GEM_BASE_DIR="lib/ruby/gems/${RUBY_VER}/gems" \
-		GEMS_DIR="lib/ruby/gems/${RUBY_VER}/" \
+		GEMS_DIR="lib/ruby/gems/${RUBY_VER}" \
 		PORTVERSION="${PORTVERSION}"
 
 RUBYGEM_ARGS=	-l --no-document --no-update-sources --install-dir \
