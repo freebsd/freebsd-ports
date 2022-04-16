@@ -18,7 +18,8 @@ BROKEN_armv7=	fails to compile: Fatal error: exception Invalid_argument("index o
 BROKEN_powerpc=	fails to link
 
 BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
-		ocamlfind:devel/ocaml-findlib
+		ocamlfind:devel/ocaml-findlib \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 

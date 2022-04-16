@@ -1,12 +1,12 @@
 # Created by: Michael Grünewald <michipili@gmail.com>
 
 PORTNAME=	labltk
-PORTVERSION=	8.06.3
+PORTVERSION=	8.06.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://download.ocamlcore.org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to Tk
 
 LICENSE=	LGPL20

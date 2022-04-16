@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 CONFLICTS=	mldonkey{-{core,gui},}-devel
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/nums.cma:math/ocaml-num
+
 USES=		compiler:c++11-lang cpe gmake iconv pkgconfig tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes

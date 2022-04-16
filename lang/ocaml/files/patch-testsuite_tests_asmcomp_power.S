@@ -1,5 +1,5 @@
---- testsuite/tests/asmcomp/power.S.orig	2019-12-02 12:36:28 UTC
-+++ testsuite/tests/asmcomp/power.S
+--- testsuite/tests/asmgen/power.S.orig	2019-12-02 12:36:28 UTC
++++ testsuite/tests/asmgen/power.S
 @@ -26,11 +26,11 @@
  #define RESERVED_STACK 16
  #define LR_SAVE_AREA 4

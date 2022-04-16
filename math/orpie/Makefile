@@ -11,6 +11,7 @@ COMMENT=	Fullscreen RPN calculator for the console
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		gmake ncurses

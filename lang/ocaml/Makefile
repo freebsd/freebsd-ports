@@ -2,8 +2,7 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 
 PORTNAME=	ocaml
-PORTVERSION=	4.05.0
-PORTREVISION=	1
+PORTVERSION=	4.07.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
@@ -27,7 +26,7 @@ BROKEN_mips=	No ASM support
 BUILD_DEPENDS=	as:devel/binutils
 RUN_DEPENDS=	as:devel/binutils
 
-USES=		cpe compiler:c11 gmake tar:xz
+USES=		cpe compiler:c11 gmake shebangfix tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
 HAS_CONFIGURE=	yes
@@ -39,6 +38,11 @@ LDFLAGS_armv6=	-Wl,-znotext
 LDFLAGS_armv7=	-Wl,-znotext
 LDFLAGS_i386=	-Wl,-znotext
 
+SHEBANG_LANG=	awk
+awk_OLD_CMD=	/bin/awk
+awk_CMD=	/usr/bin/awk
+SHEBANG_FILES=	tools/ocaml-instr-graph tools/ocaml-instr-report
+
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 		-cc "${CC}" \
 		-aspp "${CC} -c" \
@@ -49,6 +53,7 @@ OPTIONS_DEFAULT=X11 THREADS
 CMP_LIB_DESC=	Install compiler libraries
 
 MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
+PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]
 DOCSDISTNAME=	${DISTNAME:C/([[:digit:]]+)\.([[:digit:]]+)\.([[:digit:]]+)/\1.\2/}
 
 CONFLICTS=	metaocaml
@@ -107,7 +112,7 @@ PLIST_SUB+=	PROF=""
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
 USE_GCC=	yes
 .endif
 
@@ -129,14 +134,14 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|MKLIB=|s|ar rc|${AR} rc|' \
 		-e '\|RANLIB|s|ranlib|${RANLIB}|' \
-		-e '\|bytecclinkopts=|s|""|"${LDFLAGS}"|' \
-		-e "\|nativecclinkopts=|s|''|\"${LDFLAGS:C/-Wl,//}\"|" \
+		-e '\|^ldflags=|s|""|"${LDFLAGS}"|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,$$(ARCH),$$(SYSTEM_ARCH),' \
 		${WRKSRC}/Makefile ${WRKSRC}/Makefile.tools \
 		${WRKSRC}/asmrun/Makefile \
+		${WRKSRC}/ocamltest/Makefile \
 		${WRKSRC}/otherlibs/systhreads/Makefile \
-		${WRKSRC}/testsuite/tests/asmcomp/Makefile
+		${WRKSRC}/testsuite/tests/asmgen/Makefile
 
 post-configure:
 	@${REINPLACE_CMD} -E \

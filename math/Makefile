@@ -486,6 +486,7 @@
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += obake
+    SUBDIR += ocaml-num
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += ocaml-zarith
     SUBDIR += ocamlgsl

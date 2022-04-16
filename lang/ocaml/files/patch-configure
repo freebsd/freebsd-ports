@@ -1,22 +1,13 @@
 --- configure.orig	2017-07-13 08:56:44 UTC
 +++ configure
-@@ -806,7 +806,7 @@ if test $with_sharedlibs = "yes"; then
-     *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
-     |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*)
-       sharedcccompopts="-fPIC"
--      mksharedlib="$bytecc -shared"
-+      mksharedlib="$bytecc $bytecclinkopts -shared"
-       bytecclinkopts="$bytecclinkopts -Wl,-E"
-       byteccrpath="-Wl,-rpath,"
-       mksharedlibrpath="-Wl,-rpath,"
 @@ -838,6 +838,7 @@ if test $with_sharedlibs = "yes"; then
      x86_64-*-darwin*)             natdynlink=true;;
      s390x*-*-linux*)              natdynlink=true;;
      powerpc*-*-linux*)            natdynlink=true;;
 +    powerpc*-*-freebsd*)          natdynlink=true;;
-     sparc*-*-linux*)              natdynlink=true;;
      i686-*-kfreebsd*)             natdynlink=true;;
      x86_64-*-kfreebsd*)           natdynlink=true;;
+     x86_64-*-dragonfly*)          natdynlink=true;;
 @@ -854,6 +855,7 @@ if test $with_sharedlibs = "yes"; then
      arm*-*-freebsd*)              natdynlink=true;;
      earm*-*-netbsd*)              natdynlink=true;;
@@ -33,7 +24,7 @@
 +  powerpc*-*-freebsd*)          arch=power;
 +                                if $arch64; then model=ppc64; else model=ppc; fi
 +                                system=bsd_elf;;
-   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=netbsd;;
    powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
    s390x*-*-linux*)              arch=s390x; model=z10; system=elf;;
 @@ -930,6 +936,7 @@ case "$target" in
@@ -65,21 +56,21 @@
    arm,linux*) profiling='true';;
    power,elf) profiling='true';;
    power,bsd*) profiling='true';;
-@@ -1168,7 +1178,7 @@ fi
- 
- if test "$with_curses" = "yes"; then
-   for libs in "" "-lcurses" "-ltermcap" "-lcurses -ltermcap" "-lncurses"; do
--    if sh ./hasgot $libs tgetent tgetstr tgetnum tputs; then
-+    if sh ./hasgot -i term.h $libs tgetent tgetstr tgetnum tputs; then
-       inf "termcap functions found (with libraries '$libs')"
-       echo "#define HAS_TERMCAP" >> s.h
-       curseslibs="${libs}"
 @@ -2029,7 +2037,7 @@ MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib
- #ml   Printf.sprintf "${TOOLPREF}ar rc %s %s %s; ${TOOLPREF}ranlib %s"
+ #ml   Printf.sprintf "${TOOLPREF}ar rc %s %s %s && ${TOOLPREF}ranlib %s"
  #ml                  out opts files out;;
  EOF
--echo "ARCH=$arch" >> Makefile
-+echo "SYSTEM_ARCH=$arch" >> Makefile
- echo "MODEL=$model" >> Makefile
- echo "SYSTEM=$system" >> Makefile
- echo "NATIVECC=$nativecc $nativecccompopts" >> Makefile
+-config ARCH "$arch"
++config SYSTEM_ARCH "$arch"
+ config MODEL "$model"
+ config SYSTEM "$system"
+ config OCAMLOPT_CFLAGS "$common_cflags"
+@@ -2112,7 +2122,7 @@ config NATDYNLINK "$natdynlink"
+ config CMXS "$cmxs"
+ config MKEXE "$mkexe"
+ config MKEXEDEBUGFLAG "$mkexedebugflag"
+-config MKDLL "$mksharedlib"
++config MKDLL "$mksharedlib \$(LDFLAGS)"
+ config MKMAINDLL "$mkmaindll"
+ config RUNTIMED "${debugruntime}"
+ config RUNTIMEI "${with_instrumented_runtime}"

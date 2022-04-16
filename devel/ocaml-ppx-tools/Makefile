@@ -1,9 +1,8 @@
 # Created by: Michael Grünewald <michipili@gmail.com>
 
 PORTNAME=	ppx-tools
-PORTVERSION=	5.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	+4.05.0
+PORTVERSION=	5.1
+DISTVERSIONSUFFIX=+4.06.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 

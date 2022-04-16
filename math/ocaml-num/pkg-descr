@@ -1,0 +1,10 @@
+The Num library implements integer arithmetic and rational arithmetic in
+arbitrary precision.  It was split off the core OCaml distribution starting
+with the 4.06.0 release.
+
+New applications that need arbitrary-precision arithmetic should use the
+Zarith library instead of the Num library, and older applications that
+already use Num are encouraged to switch to Zarith.  Zarith delivers much
+better performance than Num and has a nicer API.
+
+WWW: https://github.com/ocaml/num

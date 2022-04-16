@@ -1,0 +1,12 @@
+--- src/Makefile.orig	2020-11-09 16:22:09 UTC
++++ src/Makefile
+@@ -88,7 +88,8 @@ VERSION=$(shell sed -ne 's/^ *version *: *"\([^"]*\)".
+ install:
+ 	$(INSTALL_DIR) $(DESTDIR)$(STDLIBDIR)
+ 	sed -e 's/%%VERSION%%/$(VERSION)/g' META.in > META
+-	$(OCAMLFIND) install num META
++	$(INSTALL_DIR) $(OCAMLFIND_DESTDIR)/num
++	$(INSTALL_DATA) META $(OCAMLFIND_DESTDIR)/num
+ 	rm -f META
+ 	$(INSTALL_DATA) $(TOINSTALL) $(DESTDIR)$(STDLIBDIR)
+ ifeq "$(SUPPORTS_SHARED_LIBRARIES)" "true"

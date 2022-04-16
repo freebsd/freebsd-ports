@@ -10,6 +10,8 @@ COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
 LICENSE=	GPLv2+
 
+BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
+
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 USES=		bdb:5 perl5 gmake shebangfix tar:tgz
