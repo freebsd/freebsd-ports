@@ -118,8 +118,8 @@ gconfmm26_USE_GNOME_IMPL=	glibmm gconf2
 glibmm_lib_depends=	libglibmm-2.4.so:devel/glibmm
 glibmm_use_gnome_impl=	libsigc++20 glib20
 
-glibmm_lib_depends=	libglibmm-2.68.so:devel/glibmm268
-glibmm_use_gnome_impl=	libsigc++30 glib20
+glibmm268_lib_depends=		libglibmm-2.68.so:devel/glibmm268
+glibmm268_use_gnome_impl=	libsigc++30 glib20
 
 gsound_BUILD_DEPENDS=	gsound-play:audio/gsound
 gsound_LIB_DEPENDS=	libgsound.so:audio/gsound
