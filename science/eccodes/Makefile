@@ -2,7 +2,7 @@
 
 PORTNAME=	eccodes
 PORTVERSION=	2.24.2
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \

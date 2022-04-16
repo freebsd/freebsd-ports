@@ -2,7 +2,7 @@
 
 PORTNAME=	simage
 PORTVERSION=	1.7.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 

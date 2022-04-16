@@ -2,6 +2,7 @@
 
 PORTNAME=	mtpaint
 DISTVERSION=	3.50.09
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
