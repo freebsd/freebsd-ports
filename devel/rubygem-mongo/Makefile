@@ -1,7 +1,7 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
 
 PORTNAME=	mongo
-PORTVERSION=	2.17.0
+PORTVERSION=	2.17.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
