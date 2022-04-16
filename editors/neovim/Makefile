@@ -2,8 +2,7 @@
 
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
 USES=		cmake cpe iconv lua:52,build pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
-		libmpack:libmpack-lua:1.0.7:libmpack_lua
+		libmpack:libmpack-lua:1.0.9:libmpack_lua
 PORTSCOUT=	limit:^[0-9\.v]+$$
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
@@ -51,13 +50,6 @@ PYNVIM_USES=		python:run
 .if ${ARCH} == powerpc64
 USES+=		compiler:gcc-c++11-lib
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e \
-		's|lua_objlen|lua_rawlen| ; \
-		 s|luaL_reg |luaL_Reg | ; \
-		 s|luaL_register(L, NULL, \(.*\));|luaL_setfuncs(L, \1, 0);|' \
-		${WRKSRC_libmpack_lua}/lmpack.c
 
 post-patch-NLS-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' ${WRKSRC}/src/nvim/CMakeLists.txt
