@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rocksdb
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
