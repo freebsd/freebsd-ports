@@ -1,5 +1,5 @@
 PORTNAME=	activerecord-import
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
