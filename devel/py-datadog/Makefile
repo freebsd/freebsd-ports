@@ -23,6 +23,7 @@ NO_ARCH=	yes
 CONFLICTS_INSTALL=	dog
 
 post-patch:
+	@${RM} ${WRKSRC}/pyproject.toml
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 .include <bsd.port.mk>
