@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	PPIx-QuoteLike
-PORTVERSION=	0.020
+PORTVERSION=	0.021
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -16,7 +16,7 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSES/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSES/Copying
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-PPI>=1.117:textproc/p5-PPI \
+RUN_DEPENDS=	p5-PPI>=1.238:textproc/p5-PPI \
 		p5-Readonly>=0:devel/p5-Readonly
 
 USES=		perl5
