@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cucumber-messages
-PORTVERSION=	17.1.1
+PORTVERSION=	18.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
