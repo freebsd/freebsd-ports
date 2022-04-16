@@ -6,7 +6,7 @@
    s.licenses = ["Apache-2.0".freeze]
 -  s.required_ruby_version = Gem::Requirement.new("~> 2.5".freeze)
 +  s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-   s.rubygems_version = "3.3.10".freeze
+   s.rubygems_version = "3.3.11".freeze
    s.summary = "Execute commands remotely over SSH and WinRM".freeze
  
 @@ -27,7 +27,7 @@ Gem::Specification.new do |s|

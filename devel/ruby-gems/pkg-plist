@@ -57,6 +57,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/ext.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/build_error.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/builder.rb
+%%RUBY_SITELIBDIR%%/rubygems/ext/cargo_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/cmake_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/configure_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/ext_conf_builder.rb
