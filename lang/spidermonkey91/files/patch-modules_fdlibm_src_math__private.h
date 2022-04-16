@@ -1,24 +1,25 @@
-Index: modules/fdlibm/src/math_private.h
---- modules/fdlibm/src/math_private.h.orig	2022-04-16 01:44:07 UTC
+--- modules/fdlibm/src/math_private.h.orig	2022-04-16 03:20:29 UTC
 +++ modules/fdlibm/src/math_private.h
-@@ -634,6 +634,34 @@ rnint(__double_t x)
- 	return ((double)(x + 0x1.8p52) - 0x1.8p52);
- }
+@@ -30,7 +30,9 @@
+  * Adapted from https://github.com/freebsd/freebsd-src/search?q=__double_t
+  */
  
-+#ifdef __i386__
-+typedef long double      __double_t;
-+#else
-+typedef double      __double_t;
++#ifndef __FreeBSD__
+ typedef double      __double_t;
 +#endif
-+typedef __double_t  double_t;
+ typedef __double_t  double_t;
+ 
+ /*
+@@ -636,6 +638,33 @@ rnint(__double_t x)
+  * sometimes be more efficient because no rounding is required.
+  */
+ #if (defined(amd64) || defined(__i386__)) && defined(__GNUCLIKE_ASM)
 +
-+/* This is needed on FreeBSD i386. */
-+#if defined(__i386__) && defined(__GNUCLIKE_ASM)
++#if defined(__i386__)
 +static __inline int
 +irintf(float x)
 +{
 +	int n;
-+
 +	__asm("fistl %0" : "=m" (n) : "t" (x));
 +	return (n);
 +}
@@ -27,12 +28,19 @@ Index: modules/fdlibm/src/math_private.h
 +irintd(double x)
 +{
 +	int n;
++	__asm("fistl %0" : "=m" (n) : "t" (x));
++	return (n);
++}
 +
++static __inline int
++irintl(long x)
++{
++	int n;
 +	__asm("fistl %0" : "=m" (n) : "t" (x));
 +	return (n);
 +}
 +#endif
 +
- /*
-  * irint() and i64rint() give the same result as casting to their integer
-  * return type provided their arg is a floating point integer.  They can
+ #define	irint(x)						\
+     (sizeof(x) == sizeof(float) &&				\
+     sizeof(__float_t) == sizeof(long double) ? irintf(x) :	\
