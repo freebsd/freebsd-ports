@@ -4,9 +4,13 @@
 
 auth		required	pam_permit.so
 
+auth		optional	/usr/local/lib/pam_ck_connector.so
+auth		optional	/usr/local/lib/pam_gnome_keyring.so
+
 account		required	pam_nologin.so
 account		include		system
 
 password	include		system
 
 session		include		system
+session		optional	/usr/local/lib/pam_gnome_keyring.so auto_start
