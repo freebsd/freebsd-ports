@@ -1265,7 +1265,6 @@ lib/wine/%%WINEARCH%%-unix/libinetcomm.a
 lib/wine/%%WINEARCH%%-unix/libiphlpapi.a
 lib/wine/%%WINEARCH%%-unix/libjsproxy.a
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/libkernel.a
-%%WINE32%%lib/wine/%%WINEARCH%%-unix/libwow32.a
 lib/wine/%%WINEARCH%%-unix/libkernel32.a
 lib/wine/%%WINEARCH%%-unix/libkernelbase.a
 lib/wine/%%WINEARCH%%-unix/libloadperf.a
@@ -1395,6 +1394,7 @@ lib/wine/%%WINEARCH%%-unix/libwldap32.a
 lib/wine/%%WINEARCH%%-unix/libwmcodecdspuuid.a
 lib/wine/%%WINEARCH%%-unix/libwmvcore.a
 lib/wine/%%WINEARCH%%-unix/libwnaspi32.a
+%%WINE32%%lib/wine/%%WINEARCH%%-unix/libwow32.a
 %%WINE64%%lib/wine/%%WINEARCH%%-unix/libwow64.a
 lib/wine/%%WINEARCH%%-unix/libws2_32.a
 lib/wine/%%WINEARCH%%-unix/libwsdapi.a
