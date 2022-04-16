@@ -870,6 +870,7 @@
     SUBDIR += glademm
     SUBDIR += glib20
     SUBDIR += glibmm
+    SUBDIR += glibmm268
     SUBDIR += gllvm
     SUBDIR += global
     SUBDIR += glog
