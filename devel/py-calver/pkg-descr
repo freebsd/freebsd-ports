@@ -1,0 +1,4 @@
+The calver package is a setuptools extension for automatically defining your
+Python package version as a calendar version.
+
+WWW: https://github.com/di/calver
