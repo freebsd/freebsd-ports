@@ -1,7 +1,7 @@
 # Created by: vanilla
 
 PORTNAME=	protobuf
-PORTVERSION=	3.19.4
+PORTVERSION=	3.20.0
 DISTVERSIONPREFIX=	cpp-
 PORTEPOCH=	1
 CATEGORIES=	devel
