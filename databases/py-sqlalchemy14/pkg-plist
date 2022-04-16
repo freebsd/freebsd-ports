@@ -46,6 +46,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/performance/single_inserts.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/postgis/postgis.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/sharding/separate_databases.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/examples/sharding/separate_schema_translates.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/sharding/separate_tables.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/space_invaders/space_invaders.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/versioned_history/history_meta.html
@@ -59,6 +60,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/changelog.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/clipboard.min.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/copybutton.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/copybutton.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/copybutton_funcs.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/deepalchemy.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/deepalchemy_original.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/docs.css
@@ -228,6 +233,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/persistence_techniques.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/query.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/queryguide.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/orm/quickstart.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/relationship_api.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/relationship_persistence.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/relationships.rst
@@ -396,6 +402,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/orm/persistence_techniques.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/query.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/queryguide.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/relationship_api.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/relationship_persistence.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/relationships.html
@@ -491,6 +498,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postgis/postgis.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/separate_databases.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/separate_schema_translates.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/separate_tables.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/space_invaders/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/space_invaders/space_invaders.py
