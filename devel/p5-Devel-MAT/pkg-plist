@@ -53,6 +53,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-ARRAY.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-BOOL.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-CODE.svg
+%%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-C_STRUCT.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-FORMAT.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-GLOB.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-HASH.svg

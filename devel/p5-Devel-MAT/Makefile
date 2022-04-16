@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Devel-MAT
-PORTVERSION=	0.45
+PORTVERSION=	0.47
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-Commandable>=0.04:devel/p5-Commandable \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-String-Tagged>=0:textproc/p5-String-Tagged \
 		p5-String-Tagged-Terminal>=0.03:textproc/p5-String-Tagged-Terminal \
-		p5-Struct-Dumb>=0.07:devel/p5-Struct-Dumb
+		p5-Struct-Dumb>=0.07:devel/p5-Struct-Dumb \
+		p5-Syntax-Keyword-Match>=0:devel/p5-Syntax-Keyword-Match
 TEST_DEPENDS=	p5-Test-Identity>=0:devel/p5-Test-Identity \
 		p5-Test-Pod>=1:devel/p5-Test-Pod
 
