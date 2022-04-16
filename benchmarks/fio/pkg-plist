@@ -136,6 +136,9 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-client.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-server.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_verify-fail.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_verify.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_write_same_ndob.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-steadystate.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-steadystate.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-test.fio
