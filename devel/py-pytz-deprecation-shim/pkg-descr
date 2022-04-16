@@ -1,0 +1,15 @@
+pytz has served the Python community well for many years, but it is no longer
+the best option for providing time zones. pytz has a non-standard interface that
+is very easy to misuse; this interface was necessary when pytz was created,
+because datetime had no way to represent ambiguous datetimes, but this was
+solved in Python 3.6, which added a fold attribute to datetimes in PEP 495. With
+the addition of the zoneinfo module in Python 3.9 (PEP 615), there has never
+been a better time to migrate away from pytz.
+
+However, since pytz time zones are used very differently from a standard tzinfo,
+and many libraries have built pytz zones into their standard time zone interface
+(and thus may have users relying on the existence of the localize and normalize
+methods); this library provides shim classes that are compatible with both PEP
+495 and pytz's interface, to make it easier for libraries to deprecate pytz.
+
+WWW: https://github.com/pganssle/pytz-deprecation-shim
