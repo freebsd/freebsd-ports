@@ -504,37 +504,40 @@ setJavaHome() {
         for version in ${JAVA_VERSION}; do
             case "${version}" in
                 *7+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 7 8 9 10 11 12 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 7 8 9 10 11 12 13 14 15 16 17 18"
                     ;;
                 *8+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8 9 10 11 12 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8 9 10 11 12 13 14 15 16 17 18"
                     ;;
                 *9+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 9 10 11 12 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 9 10 11 12 13 14 15 16 17 18"
                     ;;
                 10+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 10 11 12 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 10 11 12 13 14 15 16 17 18"
                     ;;
                 11+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 11 12 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 11 12 13 14 15 16 17 18"
                     ;;
                 12+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 12 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 12 13 14 15 16 17 18"
                     ;;
                 13+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 13 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 13 14 15 16 17 18"
                     ;;
                 14+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 14 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 14 15 16 17 18"
                     ;;
                 15+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 15 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 15 16 17 18"
                     ;;
                 16+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 16 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 16 17 18"
                     ;;
                 17+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 17"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 17 18"
+                    ;;
+                18+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 18"
                     ;;
                 1.7)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 7"
