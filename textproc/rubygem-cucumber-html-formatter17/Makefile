@@ -2,6 +2,7 @@
 
 PORTNAME=	cucumber-html-formatter
 PORTVERSION=	17.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	17
@@ -11,7 +12,7 @@ COMMENT=	HTML formatter for Cucumber
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cucumber-messages>=17.1.0<18:devel/rubygem-cucumber-messages
+RUN_DEPENDS=	rubygem-cucumber-messages17>=17.1.0<18:devel/rubygem-cucumber-messages17
 
 USES=		gem
 USE_RUBY=	yes
