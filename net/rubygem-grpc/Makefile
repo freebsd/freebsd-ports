@@ -1,6 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.43.1
-PORTREVISION=	2
+PORTVERSION=	1.45.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libgrpc.so:devel/grpc
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
-		rubygem-google-protobuf>=3.18<4:devel/rubygem-google-protobuf \
+		rubygem-google-protobuf>=3.19<4:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos-types>=1.0<2:devel/rubygem-googleapis-common-protos-types
 
 USES=		cpe gem gmake pkgconfig
