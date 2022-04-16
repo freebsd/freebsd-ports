@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	urllib3
-PORTVERSION=	1.26.8
+PORTVERSION=	1.26.9
 PORTEPOCH=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
@@ -35,7 +35,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	BROTLI SOCKS SSL
 OPTIONS_DEFAULT=SOCKS SSL
 
-BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotlipy>=0.6.0:archivers/py-brotlipy@${PY_FLAVOR}
+BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR}
 SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.6<2.0:net/py-pysocks@${PY_FLAVOR}
 SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}cryptography>=1.3.4:security/py-cryptography@${PY_FLAVOR} \
