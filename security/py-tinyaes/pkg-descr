@@ -1,0 +1,11 @@
+tinyaes is a few lines Cython wrapper for the tiny-AES-c library, a Small
+portable AES128/192/256 in C.
+
+The library offers a few modes, CTR mode is the only one currently wrapped.
+Given the C API works modifying a buffer in-place, the wrapper offers:
+- CTR_xcrypt_buffer(..) that works on all bytes convertible types, and
+  encrypting a copy of the buffer,
+- CTR_xcrypt_buffer_inplace(..) that works on bytearrays only, modifying the
+  buffer in-place.
+
+WWW: https://github.com/naufraghi/tinyaes-py
