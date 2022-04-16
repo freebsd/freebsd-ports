@@ -88,7 +88,6 @@
     SUBDIR += cadubi
     SUBDIR += cairo
     SUBDIR += cairomm
-    SUBDIR += cairomm16
     SUBDIR += cal3d
     SUBDIR += camera
     SUBDIR += camerakit
