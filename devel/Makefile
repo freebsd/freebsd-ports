@@ -3334,6 +3334,7 @@
     SUBDIR += p5-Syntax-Keyword-Dynamically
     SUBDIR += p5-Syntax-Keyword-Gather
     SUBDIR += p5-Syntax-Keyword-Junction
+    SUBDIR += p5-Syntax-Keyword-Match
     SUBDIR += p5-Syntax-Keyword-Try
     SUBDIR += p5-Sys-CPU
     SUBDIR += p5-Sys-Info
