@@ -1,9 +1,9 @@
 # Created by: luigi@FreeBSD.org
 
 PORTNAME=	fio
-PORTVERSION=	3.29
+PORTVERSION=	3.30
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://brick.kernel.dk/snaps/
+MASTER_SITES=	https://brick.kernel.dk/snaps/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Flexible IO tester
