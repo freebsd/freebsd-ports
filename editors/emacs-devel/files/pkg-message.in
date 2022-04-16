@@ -1,0 +1,73 @@
+[
+%%NATIVECOMP_COMMENT_START%%
+{ type: install
+  message: <<EOM
+Emacs is now built with native compilation enabled, however it is
+known that some elisp applications don't work correctly when compiled.
+You can work any such issues by disabling native compilation using
+the following steps.
+
+1. Add the following lines at the top of your Emacs configuration:
+
+(setq native-comp-deferred-compilation nil
+comp-enable-subr-trampolines nil)
+
+2. Exit emacs
+
+3. rm -rf ~/.emacs.d/eln-cache
+
+4. Start emacs again
+
+Whereas all elisp files included in the Emacs source archive are
+native compiled at build time, 3rd party elisp files (for example,
+from elisp ports/packages) are native compiled at run time. This will
+result in high CPU usage when they are compiled. If this annoys you,
+you can throttle the number of jobs by changing the value of the
+variable 'native-comp-async-jobs-number' in your emacs
+configuration. See the output of `C-h v native-comp-async-jobs-number`
+for details.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+Emacs is now built with native compilation enabled, however it is
+known that some elisp applications don't work correctly when compiled.
+You can work any such issues by disabling native compilation using
+the following steps.
+
+1. Add the following lines at the top of your Emacs configuration:
+
+(setq native-comp-deferred-compilation nil
+comp-enable-subr-trampolines nil)
+
+2. Exit emacs
+
+3. rm -rf ~/.emacs.d/eln-cache
+
+4. Start emacs again
+
+Whereas all elisp files included in the Emacs source archive are
+native compiled at build time, 3rd party elisp files (for example,
+from elisp ports/packages) are native compiled at run time. This will
+result in high CPU usage when they are compiled. If this annoys you,
+you can throttle the number of jobs by changing the value of the
+variable 'native-comp-async-jobs-number' in your emacs
+configuration. See the output of `C-h v native-comp-async-jobs-number`
+for details.
+EOM
+}
+%%NATIVECOMP_COMMENT_END%%
+{ type: upgrade
+  maximum_version: "28.0.50.20210302,2"
+  message: <<EOM
+If you get the error
+
+    Symbol's value as variable is void: minor-modes
+
+rebuild the offending Emacs packages.
+
+See https://lists.gnu.org/archive/html/emacs-devel/2021-02/msg01164.html
+for details.
+EOM
+}
+]

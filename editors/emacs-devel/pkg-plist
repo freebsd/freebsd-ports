@@ -4199,6 +4199,7 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/search.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sort.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sound.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sqlite.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/syntax.c
