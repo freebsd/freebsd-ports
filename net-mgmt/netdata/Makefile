@@ -2,14 +2,14 @@
 
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.33.1
-PORTREVISION=	3
+DISTVERSION=	1.34.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		eaaddaa3b1f4b748e2468ffd4d7afbc7cb0efe78.patch:dashboard
+		4f2ed3f01aee7a4fb8c4eaff26025ecc33d8d84a.patch:dashboard
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/${PORTNAME}-v1.33.1-345-g89fb721f6
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
@@ -101,7 +101,7 @@ post-patch:
 	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
 
 post-patch-CLOUD-off:
-	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/eaaddaa3b1f4b748e2468ffd4d7afbc7cb0efe78.patch
+	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/4f2ed3f01aee7a4fb8c4eaff26025ecc33d8d84a.patch
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

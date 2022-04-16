@@ -1,5 +1,5 @@
-TIMESTAMP = 1644946727
-SHA256 (netdata-v1.33.1.tar.gz) = 20ba8695d87187787b27128ac3aab9b09aa29ca6b508c48542e0f7d50ec9322b
-SIZE (netdata-v1.33.1.tar.gz) = 22611080
-SHA256 (eaaddaa3b1f4b748e2468ffd4d7afbc7cb0efe78.patch) = e906d3d73c92a7be9e27c12326e333543052452c6e331d8ae1429c818e4ebb86
-SIZE (eaaddaa3b1f4b748e2468ffd4d7afbc7cb0efe78.patch) = 37207184
+TIMESTAMP = 1650127297
+SHA256 (netdata-v1.34.1.tar.gz) = cc27a73d5e92eb7a89b85516594bf1c4f52d4f5cc2104772588d7b7ce093f179
+SIZE (netdata-v1.34.1.tar.gz) = 22529694
+SHA256 (4f2ed3f01aee7a4fb8c4eaff26025ecc33d8d84a.patch) = a7a0133bce10e776a1ff57305ccf096bb8fb24946a6c9af3e8c3eae5ff8bc13b
+SIZE (4f2ed3f01aee7a4fb8c4eaff26025ecc33d8d84a.patch) = 37940584
