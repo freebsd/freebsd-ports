@@ -16973,6 +16973,7 @@ math/py-symcxx||2022-03-28|Deprecated because the upstream repository was experi
 net-p2p/bazarr-devel|net-p2p/bazarr|2022-03-29|Use net-p2p/bazarr instead
 dns/py-dnspython2|dns/py-dnspython|2022-03-30|Has expired: Use dns/py-dnspython
 net/inlets||2022-03-30|FOSS version removed, project went commercial
+devel/ipython5|devel/ipython|2022-03-30|Remove obsoleted port. Use devel/ipython instead
 editors/libreoffice6|editors/libreoffice|2022-03-31|Unsupported upstream. Please use editors/libreoffice instead
 security/revealrk||2022-03-31|Has expired: Deprecate, marked BROKEN on 12+ in 2018
 devel/apache-commons-modeler||2022-03-31|Has expired: Abandoned upstream, last release in 2013
