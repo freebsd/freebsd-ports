@@ -173,7 +173,6 @@
     SUBDIR += crimson
     SUBDIR += crispy-doom
     SUBDIR += criticalmass
-    SUBDIR += critterding
     SUBDIR += crossfire-client
     SUBDIR += crrcsim
     SUBDIR += cryptoslam
