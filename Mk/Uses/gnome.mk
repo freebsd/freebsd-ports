@@ -79,7 +79,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 _USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5
 
 # C++ bindings
-_USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
+_USE_GNOME_ALL+=atkmm cairomm cairomm16 gconfmm26 glibmm gtkmm24 \
 		gtkmm30 gtksourceviewmm3 libgdamm5 libxml++26 libsigc++20 \
 		pangomm
 
@@ -108,6 +108,9 @@ cairo_LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 cairomm_LIB_DEPENDS=	libcairomm-1.0.so:graphics/cairomm
 cairomm_USE_GNOME_IMPL=	cairo libxml++26
+
+cairomm16_LIB_DEPENDS=	libcairomm-1.16.so:graphics/cairomm16
+cairomm16_USE_GNOME_IMPL=	cairo libxml++26
 
 gconfmm26_LIB_DEPENDS=		libgconfmm-2.6.so:devel/gconfmm26
 gconfmm26_USE_GNOME_IMPL=	glibmm gconf2
