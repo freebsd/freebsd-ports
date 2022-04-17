@@ -2,7 +2,7 @@
 
 PORTNAME=	glib
 DISTVERSION=	2.70.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -78,6 +78,20 @@ pre-configure-FAM_ALTBACKEND-on:
 	@${CP} -f ${FILESDIR}/gkqueuefilemonitor.c ${WRKSRC}/gio/kqueue/gkqueuefilemonitor.c
 	@${CP} ${FILESDIR}/kqueue_fnm.c ${WRKSRC}/gio/kqueue/kqueue_fnm.c
 	@${CP} ${FILESDIR}/kqueue_fnm.h ${WRKSRC}/gio/kqueue/kqueue_fnm.h
+
+# The generation of GIO documentation depends on a types-document
+# generated as part of the dbus-object-manager example. With an
+# embarrassingly parallel build, failures like this can happen:
+#
+# Building documentation for gdbus-object-manager-example
+# ERROR: Error in gtkdoc helper script:
+# FileNotFoundError: [Errno 2] No such file or directory: '_build/docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example.types'
+#
+# Meson does not seem to provide a way to express that dependency.
+#
+# Hack it into the generated ninja build instead.
+post-configure-DOCS-on:
+	@${REINPLACE_CMD} -e '\+^build docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example-decl.txt:+s+$$+ || gio/tests/gdbus-object-manager-example/libgdbus-example-objectmanager.so+' ${BUILD_WRKSRC}/build.ninja
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
