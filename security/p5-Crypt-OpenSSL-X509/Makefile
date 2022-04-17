@@ -1,7 +1,7 @@
 # Created by: kftseng@iyard.org
 
 PORTNAME=	Crypt-OpenSSL-X509
-PORTVERSION=	1.910
+PORTVERSION=	1.913
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,12 +12,16 @@ COMMENT=	Perl extension for OpenSSL X509 API
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Convert-ASN1>=0.33:converters/p5-Convert-ASN1
+TEST_DEPENDS=	p5-Test-Pod>=1.00:devel/p5-Test-Pod
+
 USES=		perl5 ssl
 USE_PERL5=	configure
 
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Crypt/OpenSSL/X509/X509.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/OpenSSL/X509/X509.so
 
 .include <bsd.port.mk>
