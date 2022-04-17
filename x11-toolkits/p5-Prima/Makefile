@@ -25,6 +25,8 @@ USE_XORG=	x11 xcursor xext xpm xrender xrandr
 
 MAKE_JOBS_UNSAFE=	yes
 
+PORTSCOUT=	skipv:1.64
+
 OPTIONS_DEFINE=	FRIBIDI GTK2 GTK3 HARFBUZZ ICONV XFT
 OPTIONS_DEFAULT=ICONV XFT
 FRIBIDI_DESC=	Bidirectional text support
