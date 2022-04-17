@@ -806,6 +806,7 @@
     SUBDIR += p5-HTML-Element-Library
     SUBDIR += p5-HTML-Element-Replacer
     SUBDIR += p5-HTML-Encoding
+    SUBDIR += p5-HTML-Escape
     SUBDIR += p5-HTML-ExtractContent
     SUBDIR += p5-HTML-ExtractMain
     SUBDIR += p5-HTML-Field
