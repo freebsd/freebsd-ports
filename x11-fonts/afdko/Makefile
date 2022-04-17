@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	afdko
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/adobe-type-tools/afdko/releases/download/${PORTVERSION}/
 
