@@ -1,6 +1,6 @@
---- t/lib/Perl/Metrics/Simple/TestData.pm.orig	2012-04-22 22:39:58.229109428 +0900
-+++ t/lib/Perl/Metrics/Simple/TestData.pm	2012-04-22 22:41:19.361852783 +0900
-@@ -127,12 +127,14 @@
+--- t/lib/Perl/Metrics/Simple/TestData.pm.orig	2021-03-21 15:14:01 UTC
++++ t/lib/Perl/Metrics/Simple/TestData.pm
+@@ -121,12 +121,14 @@ sub make_test_data {
                      name              => 'foo',
                      lines             => 1,
                      mccabe_complexity => 1,
@@ -15,7 +15,7 @@
                      path              => "$test_directory/subs_no_package.pl",
                  }
              ],
-@@ -152,18 +154,21 @@
+@@ -146,18 +148,21 @@ sub make_test_data {
                      name              => 'new',
                      lines             => 5,
                      mccabe_complexity => 1,
