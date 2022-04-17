@@ -1,3 +1,3 @@
-%%SITE_ARCH%%/auto/POSIX/getpeername/getpeername.so
 %%SITE_ARCH%%/POSIX/getpeername.pm
+%%SITE_ARCH%%/auto/POSIX/getpeername/getpeername.so
 %%PERL5_MAN3%%/POSIX::getpeername.3.gz
