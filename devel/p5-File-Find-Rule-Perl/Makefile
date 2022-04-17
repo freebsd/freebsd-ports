@@ -1,8 +1,7 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
 
 PORTNAME=	File-Find-Rule-Perl
-PORTVERSION=	1.15
-PORTREVISION=	2
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +16,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Find-Rule>=0.20:devel/p5-File-Find-Rule \
 		p5-Params-Util>=0.38:devel/p5-Params-Util
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
