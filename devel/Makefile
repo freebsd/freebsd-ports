@@ -2001,6 +2001,7 @@
     SUBDIR += p5-Complete-Sequence
     SUBDIR += p5-Complete-Util
     SUBDIR += p5-Config-AST
+    SUBDIR += p5-Config-AWS
     SUBDIR += p5-Config-Any
     SUBDIR += p5-Config-ApacheFormat
     SUBDIR += p5-Config-Auto
