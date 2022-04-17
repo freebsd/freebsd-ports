@@ -1,7 +1,7 @@
 PORTNAME=	jalv-select
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom
-RUN_DEPENDS=	jalv:audio/jalv
+RUN_DEPENDS=	gawk:lang/gawk \
+		jalv:audio/jalv
 
 USES=		compiler:c++11-lang gettext-runtime gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
