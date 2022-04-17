@@ -4377,6 +4377,7 @@
     SUBDIR += py-coloredlogs
     SUBDIR += py-colorful
     SUBDIR += py-colorlog
+    SUBDIR += py-colorspacious
     SUBDIR += py-columnize
     SUBDIR += py-commandlines
     SUBDIR += py-conditional
