@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cucumber-html-formatter
-PORTVERSION=	19.0.0
+PORTVERSION=	19.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	HTML formatter for Cucumber
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cucumber-messages17>=17.1.1<18:devel/rubygem-cucumber-messages17
+RUN_DEPENDS=	rubygem-cucumber-messages>=18.0.0<19:devel/rubygem-cucumber-messages
 
 USES=		gem
 USE_RUBY=	yes
