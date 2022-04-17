@@ -1,7 +1,7 @@
 # Created by: rpsfa@rit.edu
 
 PORTNAME=	pdfkit
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
