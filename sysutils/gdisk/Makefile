@@ -1,8 +1,7 @@
 # Created by: Dmitry N Fomin <fdn@okbire.ru>
 
 PORTNAME=	gdisk
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
