@@ -1,8 +1,8 @@
 - Workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=254489
 
---- public.sdk/source/vst/auwrapper/again/CMakeLists.txt.orig	2021-03-22 20:46:18 UTC
+--- public.sdk/source/vst/auwrapper/again/CMakeLists.txt.orig	2021-12-16 12:29:36 UTC
 +++ public.sdk/source/vst/auwrapper/again/CMakeLists.txt
-@@ -27,7 +27,7 @@ if(SMTG_MAC AND XCODE AND SMTG_COREAUDIO_SDK_PATH AND 
+@@ -33,7 +33,7 @@ if(SMTG_MAC AND XCODE AND SMTG_COREAUDIO_SDK_PATH AND 
          COMMAND /bin/mkdir "-p" ${outputdir}/${target}.component/Contents/Resources
          COMMAND /bin/rm "-f" "${outputdir}/${target}.component/Contents/Resources/plugin.vst3"
          COMMAND /bin/ln "-svfF" "${outputdir}/again.vst3" "${outputdir}/${target}.component/Contents/Resources/plugin.vst3"
