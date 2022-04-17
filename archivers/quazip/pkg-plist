@@ -20,6 +20,6 @@ lib/cmake/QuaZip-Qt5-%%QUAZIP_VERSION%%/QuaZip-Qt5ConfigVersion.cmake
 lib/cmake/QuaZip-Qt5-%%QUAZIP_VERSION%%/QuaZip-Qt5_SharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QuaZip-Qt5-%%QUAZIP_VERSION%%/QuaZip-Qt5_SharedTargets.cmake
 lib/libquazip1-qt5.so
-lib/libquazip1-qt5.so.1.0.0
 lib/libquazip1-qt5.so.%%QUAZIP_VERSION%%
+lib/libquazip1-qt5.so.%%QUAZIP_VERSION%%.0
 libdata/pkgconfig/quazip1-qt5.pc
