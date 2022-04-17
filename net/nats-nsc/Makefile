@@ -1,6 +1,6 @@
 PORTNAME=	nsc
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.7.0
+PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
 
@@ -24,29 +24,30 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.3.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
+		golang:crypto:5e0467b6c7ce:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d668ce993890:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:69cdffdb9359:golang_sys/vendor/golang.org/x/sys \
-		golang:time:89c76fbcd5d1:golang_time/vendor/golang.org/x/time \
+		golang:sys:5a964db01320:golang_sys/vendor/golang.org/x/sys \
+		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		google:go-github:v30.1.0:google_go_github_v30/vendor/github.com/google/go-github/v30 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.13.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.14.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.11:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
-		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
+		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-wordwrap:v1.0.0:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nats-io:cliprompts:372d79b36768:nats_io_cliprompts_v2/vendor/github.com/nats-io/cliprompts \
+		nats-io:jsm.go:v0.0.30:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
+		nats-io:jwt:442af02fd36a:nats_io_jwt_v2 \
 		nats-io:jwt:v1.2.2:nats_io_jwt/vendor/github.com/nats-io/jwt \
-		nats-io:jwt:v2.2.0:nats_io_jwt_v2 \
-		nats-io:nats-server:v2.6.4:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:f2416a8b1483:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:5c0d1999ff72:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:2f2f6968e98d:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		onsi:gomega:v1.4.3:onsi_gomega/vendor/github.com/onsi/gomega \
