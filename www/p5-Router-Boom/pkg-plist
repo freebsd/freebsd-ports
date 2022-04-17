@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Router::Boom.3.gz
-%%PERL5_MAN3%%/Router::Boom::Method.3.gz
-%%PERL5_MAN3%%/Router::Boom::Node.3.gz
 %%SITE_PERL%%/Router/Boom.pm
 %%SITE_PERL%%/Router/Boom/Method.pm
 %%SITE_PERL%%/Router/Boom/Node.pm
+%%PERL5_MAN3%%/Router::Boom.3.gz
+%%PERL5_MAN3%%/Router::Boom::Method.3.gz
+%%PERL5_MAN3%%/Router::Boom::Node.3.gz
