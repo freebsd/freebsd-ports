@@ -13,8 +13,6 @@ COMMENT=	ZenLib used by MediaInfo and its library
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../../../License.txt
 
-CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
-
 USES=		compiler:c++11-lang libtool pathfix tar:xz
 
 CONFIGURE_ARGS=	--enable-shared --enable-static
