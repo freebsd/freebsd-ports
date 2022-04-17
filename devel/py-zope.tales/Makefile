@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.tal>=0:textproc/py-zope.tal@${PY_FLAVOR
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
