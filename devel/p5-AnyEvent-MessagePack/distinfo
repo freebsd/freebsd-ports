@@ -1,2 +1,3 @@
-SHA256 (AnyEvent-MessagePack-0.19.tar.gz) = d34305b41c3ba083f0713808b5e0e5657478249552bb79de31cadefefee73dfb
-SIZE (AnyEvent-MessagePack-0.19.tar.gz) = 13215
+TIMESTAMP = 1650228988
+SHA256 (AnyEvent-MessagePack-0.20.tar.gz) = c63e06e8cb7840a705afbcd35df3ab285e9406ea9a8a3c2bb5dc11544dc22095
+SIZE (AnyEvent-MessagePack-0.20.tar.gz) = 10601
