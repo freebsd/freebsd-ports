@@ -1,7 +1,7 @@
 # Created by: Cezary Morga <cm@therek.net>
 
 PORTNAME=	CPAN-Checksums
-PORTVERSION=	2.12
+PORTVERSION=	2.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,12 +13,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
-		p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
+RUN_DEPENDS=	p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
+		p5-Data-Compare>=0:devel/p5-Data-Compare \
 		p5-Module-Signature>=0:security/p5-Module-Signature
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
