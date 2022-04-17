@@ -1,7 +1,8 @@
 include/entt/config/config.h
+include/entt/config/macro.h
 include/entt/config/version.h
-include/entt/container/dense_hash_map.hpp
-include/entt/container/dense_hash_set.hpp
+include/entt/container/dense_map.hpp
+include/entt/container/dense_set.hpp
 include/entt/container/fwd.hpp
 include/entt/core/algorithm.hpp
 include/entt/core/any.hpp
@@ -29,6 +30,7 @@ include/entt/entity/observer.hpp
 include/entt/entity/organizer.hpp
 include/entt/entity/registry.hpp
 include/entt/entity/runtime_view.hpp
+include/entt/entity/sigh_storage_mixin.hpp
 include/entt/entity/snapshot.hpp
 include/entt/entity/sparse_set.hpp
 include/entt/entity/storage.hpp
@@ -58,8 +60,8 @@ include/entt/process/process.hpp
 include/entt/process/scheduler.hpp
 include/entt/resource/cache.hpp
 include/entt/resource/fwd.hpp
-include/entt/resource/handle.hpp
 include/entt/resource/loader.hpp
+include/entt/resource/resource.hpp
 include/entt/signal/delegate.hpp
 include/entt/signal/dispatcher.hpp
 include/entt/signal/emitter.hpp
