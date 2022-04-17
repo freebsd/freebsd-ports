@@ -18,6 +18,8 @@ RUN_DEPENDS=	conky:sysutils/conky \
 
 USES=		gettext python:3.6+ fonts
 USE_PYTHON=	distutils concurrent optsuffix
+
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/src
