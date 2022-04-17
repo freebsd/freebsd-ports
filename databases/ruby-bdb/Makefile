@@ -15,45 +15,37 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
 
+BROKEN_RUBY32=	yes
+
 BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 USES=		bdb shebangfix tar:bzip2
-USE_RUBY=		yes
+USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-ALL_TARGET=	all rdoc
+SHEBANG_FILES=	examples/basic.rb examples/cats.rb examples/cursor.rb \
+		examples/func.rb examples/join.rb examples/lock.rb \
+		examples/log.rb examples/queue.rb examples/recno.rb \
+		examples/record.rb examples/replication/base/b.rb \
+		examples/replication/base/cl.rb examples/replication/base/ma.rb \
+		examples/replication/base/mc.rb examples/replication/base/op.rb \
+		examples/replication/mgr/b.rb examples/txn.rb examples/zeroc.rb
+
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
-INSTALL_TARGET=	site-install
 MAKE_ENV=	RUBY_RDOC=${LOCALBASE}/bin/rdoc
+ALL_TARGET=	all rdoc
+INSTALL_TARGET=	site-install
 
 DOCS=		Changes README.en bdb.rd docs/*.rd
 DOCSDIR=	${RUBY_MODDOCDIR}
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 SHAREMODE=	0644
-PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
+PLIST_FILES=	${RUBY_SITEARCHLIBDIR}/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
-SHEBANG_FILES=	examples/record.rb \
-		examples/recno.rb \
-		examples/zeroc.rb \
-		examples/txn.rb \
-		examples/queue.rb \
-		examples/cats.rb \
-		examples/log.rb \
-		examples/cursor.rb \
-		examples/func.rb \
-		examples/replication/mgr/b.rb \
-		examples/replication/base/op.rb \
-		examples/replication/base/cl.rb \
-		examples/replication/base/b.rb \
-		examples/replication/base/ma.rb \
-		examples/replication/base/mc.rb \
-		examples/join.rb \
-		examples/basic.rb \
-		examples/lock.rb
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${RM} ${WRKSRC}/docs/*.orig
