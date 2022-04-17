@@ -20,4 +20,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	HTTPX
+HTTPX_DESC=	HTTP client support via httpx
+
+HTTPX__RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR}
+
 .include <bsd.port.mk>
