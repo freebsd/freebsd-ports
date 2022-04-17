@@ -2,7 +2,7 @@
 
 PORTNAME=	liblas12
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -11,6 +11,9 @@ COMMENT=	Library For Reading And Writing LAS-Format Data
 LICENSE=	BSD3CLAUSE BSL MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Previously only required by math/saga (now superseeded by math/pdal)
+EXPIRATION_DATE=2022-06-20
 
 USES=		autoreconf dos2unix gmake libtool
 GNU_CONFIGURE=	yes
