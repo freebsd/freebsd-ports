@@ -468,7 +468,7 @@ lib/node_modules/npm/node_modules/@npmcli/config/lib/type-description.js
 lib/node_modules/npm/node_modules/@npmcli/config/lib/umask.js
 lib/node_modules/npm/node_modules/@npmcli/config/package.json
 lib/node_modules/npm/node_modules/@npmcli/disparity-colors/LICENSE
-lib/node_modules/npm/node_modules/@npmcli/disparity-colors/index.js
+lib/node_modules/npm/node_modules/@npmcli/disparity-colors/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/disparity-colors/package.json
 lib/node_modules/npm/node_modules/@npmcli/fs/LICENSE.md
 lib/node_modules/npm/node_modules/@npmcli/fs/lib/common/file-url-to-path/index.js
@@ -515,13 +515,6 @@ lib/node_modules/npm/node_modules/@npmcli/installed-package-contents/index.js
 lib/node_modules/npm/node_modules/@npmcli/installed-package-contents/package.json
 lib/node_modules/npm/node_modules/@npmcli/map-workspaces/LICENSE.md
 lib/node_modules/npm/node_modules/@npmcli/map-workspaces/lib/index.js
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/brace-expansion/LICENSE
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/brace-expansion/index.js
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/brace-expansion/package.json
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/minimatch/LICENSE
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/minimatch/lib/path.js
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/minimatch/minimatch.js
-lib/node_modules/npm/node_modules/@npmcli/map-workspaces/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/@npmcli/map-workspaces/package.json
 lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/lib/advisory.js
@@ -530,7 +523,7 @@ lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/lib/hash.js
 lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/package.json
 lib/node_modules/npm/node_modules/@npmcli/move-file/LICENSE.md
-lib/node_modules/npm/node_modules/@npmcli/move-file/index.js
+lib/node_modules/npm/node_modules/@npmcli/move-file/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/move-file/package.json
 lib/node_modules/npm/node_modules/@npmcli/name-from-folder/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/name-from-folder/index.js
@@ -544,7 +537,7 @@ lib/node_modules/npm/node_modules/@npmcli/package-json/lib/update-scripts.js
 lib/node_modules/npm/node_modules/@npmcli/package-json/lib/update-workspaces.js
 lib/node_modules/npm/node_modules/@npmcli/package-json/package.json
 lib/node_modules/npm/node_modules/@npmcli/promise-spawn/LICENSE
-lib/node_modules/npm/node_modules/@npmcli/promise-spawn/index.js
+lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/promise-spawn/package.json
 lib/node_modules/npm/node_modules/@npmcli/run-script/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/run-script/lib/is-server-package.js
@@ -606,14 +599,6 @@ lib/node_modules/npm/node_modules/ansi-styles/index.js
 lib/node_modules/npm/node_modules/ansi-styles/license
 lib/node_modules/npm/node_modules/ansi-styles/package.json
 lib/node_modules/npm/node_modules/ansi-styles/readme.md
-lib/node_modules/npm/node_modules/ansicolors/LICENSE
-lib/node_modules/npm/node_modules/ansicolors/ansicolors.js
-lib/node_modules/npm/node_modules/ansicolors/package.json
-lib/node_modules/npm/node_modules/ansicolors/test/ansicolors.js
-lib/node_modules/npm/node_modules/ansistyles/LICENSE
-lib/node_modules/npm/node_modules/ansistyles/ansistyles.js
-lib/node_modules/npm/node_modules/ansistyles/package.json
-lib/node_modules/npm/node_modules/ansistyles/test/ansistyles.js
 lib/node_modules/npm/node_modules/aproba/LICENSE
 lib/node_modules/npm/node_modules/aproba/index.js
 lib/node_modules/npm/node_modules/aproba/package.json
@@ -728,7 +713,7 @@ lib/node_modules/npm/node_modules/clone/clone.iml
 lib/node_modules/npm/node_modules/clone/clone.js
 lib/node_modules/npm/node_modules/clone/package.json
 lib/node_modules/npm/node_modules/cmd-shim/LICENSE
-lib/node_modules/npm/node_modules/cmd-shim/index.js
+lib/node_modules/npm/node_modules/cmd-shim/lib/index.js
 lib/node_modules/npm/node_modules/cmd-shim/lib/to-batch-syntax.js
 lib/node_modules/npm/node_modules/cmd-shim/package.json
 lib/node_modules/npm/node_modules/color-convert/LICENSE
@@ -820,7 +805,6 @@ lib/node_modules/npm/node_modules/depd/package.json
 lib/node_modules/npm/node_modules/dezalgo/LICENSE
 lib/node_modules/npm/node_modules/dezalgo/dezalgo.js
 lib/node_modules/npm/node_modules/dezalgo/package.json
-lib/node_modules/npm/node_modules/dezalgo/test/basic.js
 lib/node_modules/npm/node_modules/diff/CONTRIBUTING.md
 lib/node_modules/npm/node_modules/diff/LICENSE
 lib/node_modules/npm/node_modules/diff/dist/diff.js
@@ -905,6 +889,12 @@ lib/node_modules/npm/node_modules/gauge/package.json
 lib/node_modules/npm/node_modules/glob/LICENSE
 lib/node_modules/npm/node_modules/glob/common.js
 lib/node_modules/npm/node_modules/glob/glob.js
+lib/node_modules/npm/node_modules/glob/node_modules/brace-expansion/LICENSE
+lib/node_modules/npm/node_modules/glob/node_modules/brace-expansion/index.js
+lib/node_modules/npm/node_modules/glob/node_modules/brace-expansion/package.json
+lib/node_modules/npm/node_modules/glob/node_modules/minimatch/LICENSE
+lib/node_modules/npm/node_modules/glob/node_modules/minimatch/minimatch.js
+lib/node_modules/npm/node_modules/glob/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/glob/package.json
 lib/node_modules/npm/node_modules/glob/sync.js
 lib/node_modules/npm/node_modules/graceful-fs/LICENSE
@@ -980,7 +970,7 @@ lib/node_modules/npm/node_modules/iconv-lite/lib/index.js
 lib/node_modules/npm/node_modules/iconv-lite/lib/streams.js
 lib/node_modules/npm/node_modules/iconv-lite/package.json
 lib/node_modules/npm/node_modules/ignore-walk/LICENSE
-lib/node_modules/npm/node_modules/ignore-walk/index.js
+lib/node_modules/npm/node_modules/ignore-walk/lib/index.js
 lib/node_modules/npm/node_modules/ignore-walk/package.json
 lib/node_modules/npm/node_modules/imurmurhash/imurmurhash.js
 lib/node_modules/npm/node_modules/imurmurhash/imurmurhash.min.js
@@ -1001,7 +991,7 @@ lib/node_modules/npm/node_modules/inherits/inherits.js
 lib/node_modules/npm/node_modules/inherits/inherits_browser.js
 lib/node_modules/npm/node_modules/inherits/package.json
 lib/node_modules/npm/node_modules/ini/LICENSE
-lib/node_modules/npm/node_modules/ini/ini.js
+lib/node_modules/npm/node_modules/ini/lib/ini.js
 lib/node_modules/npm/node_modules/ini/package.json
 lib/node_modules/npm/node_modules/init-package-json/LICENSE.md
 lib/node_modules/npm/node_modules/init-package-json/lib/default-input.js
@@ -1154,6 +1144,7 @@ lib/node_modules/npm/node_modules/make-fetch-happen/lib/options.js
 lib/node_modules/npm/node_modules/make-fetch-happen/lib/remote.js
 lib/node_modules/npm/node_modules/make-fetch-happen/package.json
 lib/node_modules/npm/node_modules/minimatch/LICENSE
+lib/node_modules/npm/node_modules/minimatch/lib/path.js
 lib/node_modules/npm/node_modules/minimatch/minimatch.js
 lib/node_modules/npm/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/minipass/LICENSE
@@ -1428,7 +1419,7 @@ lib/node_modules/npm/node_modules/npm-bundled/LICENSE
 lib/node_modules/npm/node_modules/npm-bundled/index.js
 lib/node_modules/npm/node_modules/npm-bundled/package.json
 lib/node_modules/npm/node_modules/npm-install-checks/LICENSE
-lib/node_modules/npm/node_modules/npm-install-checks/index.js
+lib/node_modules/npm/node_modules/npm-install-checks/lib/index.js
 lib/node_modules/npm/node_modules/npm-install-checks/package.json
 lib/node_modules/npm/node_modules/npm-normalize-package-bin/LICENSE
 lib/node_modules/npm/node_modules/npm-normalize-package-bin/index.js
@@ -1439,7 +1430,6 @@ lib/node_modules/npm/node_modules/npm-normalize-package-bin/test/nobin.js
 lib/node_modules/npm/node_modules/npm-normalize-package-bin/test/object.js
 lib/node_modules/npm/node_modules/npm-normalize-package-bin/test/string.js
 lib/node_modules/npm/node_modules/npm-package-arg/LICENSE
-lib/node_modules/npm/node_modules/npm-package-arg/README.md
 lib/node_modules/npm/node_modules/npm-package-arg/lib/npa.js
 lib/node_modules/npm/node_modules/npm-package-arg/package.json
 lib/node_modules/npm/node_modules/npm-packlist/LICENSE
@@ -1566,7 +1556,7 @@ lib/node_modules/npm/node_modules/read/LICENSE
 lib/node_modules/npm/node_modules/read/lib/read.js
 lib/node_modules/npm/node_modules/read/package.json
 lib/node_modules/npm/node_modules/read-cmd-shim/LICENSE
-lib/node_modules/npm/node_modules/read-cmd-shim/index.js
+lib/node_modules/npm/node_modules/read-cmd-shim/lib/index.js
 lib/node_modules/npm/node_modules/read-cmd-shim/package.json
 lib/node_modules/npm/node_modules/read-package-json/LICENSE
 lib/node_modules/npm/node_modules/read-package-json/lib/read-json.js
@@ -1632,7 +1622,6 @@ lib/node_modules/npm/node_modules/safer-buffer/dangerous.js
 lib/node_modules/npm/node_modules/safer-buffer/package.json
 lib/node_modules/npm/node_modules/safer-buffer/safer.js
 lib/node_modules/npm/node_modules/safer-buffer/tests.js
-lib/node_modules/npm/node_modules/semver/CHANGELOG.md
 lib/node_modules/npm/node_modules/semver/LICENSE
 lib/node_modules/npm/node_modules/semver/README.md
 lib/node_modules/npm/node_modules/semver/bin/semver.js
@@ -1670,9 +1659,6 @@ lib/node_modules/npm/node_modules/semver/internal/debug.js
 lib/node_modules/npm/node_modules/semver/internal/identifiers.js
 lib/node_modules/npm/node_modules/semver/internal/parse-options.js
 lib/node_modules/npm/node_modules/semver/internal/re.js
-lib/node_modules/npm/node_modules/semver/node_modules/lru-cache/LICENSE
-lib/node_modules/npm/node_modules/semver/node_modules/lru-cache/index.js
-lib/node_modules/npm/node_modules/semver/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/semver/package.json
 lib/node_modules/npm/node_modules/semver/preload.js
 lib/node_modules/npm/node_modules/semver/range.bnf
@@ -1754,7 +1740,7 @@ lib/node_modules/npm/node_modules/spdx-license-ids/deprecated.json
 lib/node_modules/npm/node_modules/spdx-license-ids/index.json
 lib/node_modules/npm/node_modules/spdx-license-ids/package.json
 lib/node_modules/npm/node_modules/ssri/LICENSE.md
-lib/node_modules/npm/node_modules/ssri/index.js
+lib/node_modules/npm/node_modules/ssri/lib/index.js
 lib/node_modules/npm/node_modules/ssri/package.json
 lib/node_modules/npm/node_modules/string-width/index.d.ts
 lib/node_modules/npm/node_modules/string-width/index.js
@@ -1764,9 +1750,6 @@ lib/node_modules/npm/node_modules/string-width/readme.md
 lib/node_modules/npm/node_modules/string_decoder/LICENSE
 lib/node_modules/npm/node_modules/string_decoder/lib/string_decoder.js
 lib/node_modules/npm/node_modules/string_decoder/package.json
-lib/node_modules/npm/node_modules/stringify-package/LICENSE
-lib/node_modules/npm/node_modules/stringify-package/index.js
-lib/node_modules/npm/node_modules/stringify-package/package.json
 lib/node_modules/npm/node_modules/strip-ansi/index.d.ts
 lib/node_modules/npm/node_modules/strip-ansi/index.js
 lib/node_modules/npm/node_modules/strip-ansi/license
@@ -1832,10 +1815,10 @@ lib/node_modules/npm/node_modules/tiny-relative-date/translations/en-short.js
 lib/node_modules/npm/node_modules/tiny-relative-date/translations/en.js
 lib/node_modules/npm/node_modules/tiny-relative-date/translations/es.js
 lib/node_modules/npm/node_modules/treeverse/LICENSE
-lib/node_modules/npm/node_modules/treeverse/index.js
 lib/node_modules/npm/node_modules/treeverse/lib/breadth.js
 lib/node_modules/npm/node_modules/treeverse/lib/depth-descent.js
 lib/node_modules/npm/node_modules/treeverse/lib/depth.js
+lib/node_modules/npm/node_modules/treeverse/lib/index.js
 lib/node_modules/npm/node_modules/treeverse/package.json
 lib/node_modules/npm/node_modules/unique-filename/LICENSE
 lib/node_modules/npm/node_modules/unique-filename/coverage/__root__/index.html
