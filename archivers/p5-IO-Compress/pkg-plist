@@ -13,7 +13,6 @@
 %%SITE_PERL%%/IO/Compress/RawDeflate.pm
 %%SITE_PERL%%/IO/Compress/Zip.pm
 %%SITE_PERL%%/IO/Compress/Zip/Constants.pm
-%%SITE_PERL%%/IO/Compress/Zip/WeakDecrypt.pm
 %%SITE_PERL%%/IO/Compress/Zlib/Constants.pm
 %%SITE_PERL%%/IO/Compress/Zlib/Extra.pm
 %%SITE_PERL%%/IO/Uncompress/Adapter/Bunzip2.pm
