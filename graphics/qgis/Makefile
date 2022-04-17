@@ -1,8 +1,7 @@
 # Created by: Laurent Courty
 
 PORTNAME=	qgis
-DISTVERSION=	3.24.1
-PORTREVISION=	4
+DISTVERSION=	3.24.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
