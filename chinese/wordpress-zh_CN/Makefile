@@ -1,7 +1,7 @@
 # Created by: Joe Horn <joehorn@gmail.com>
 
 PORTNAME=	wordpress
-DISTVERSION=	5.9.2
+DISTVERSION=	5.9.3
 DISTVERSIONSUFFIX=	-zh_CN
 CATEGORIES=	chinese www
 MASTER_SITES=	https://cn.wordpress.org/
