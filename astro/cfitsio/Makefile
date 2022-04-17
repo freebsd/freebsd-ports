@@ -2,6 +2,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cpe localbase pkgconfig
 
 ALL_TARGET=	libcfitsio.a shared
-CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
+CONFIGURE_ARGS=	ac_cv_prog_FC=f2c --enable-reentrant --with-bzip2=/usr
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
