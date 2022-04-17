@@ -1,0 +1,901 @@
+--- bs4/__init__.py.orig	2020-10-03 15:30:53 UTC
++++ bs4/__init__.py
+@@ -51,7 +51,7 @@ from .element import (
+ 
+ # The very first thing we do is give a useful error if someone is
+ # running this code under Python 3 without converting it.
+-'You are trying to run the Python 2 version of Beautiful Soup under Python 3. This will not work.'<>'You need to convert the code, either by installing it (`python setup.py install`) or by running 2to3 (`2to3 -w bs4`).'
++'You are trying to run the Python 2 version of Beautiful Soup under Python 3. This will not work.'!='You need to convert the code, either by installing it (`python setup.py install`) or by running 2to3 (`2to3 -w bs4`).'
+ 
+ # Define some custom warnings.
+ class GuessedAtParserWarning(UserWarning):
+@@ -100,7 +100,7 @@ class BeautifulSoup(Tag):
+     # Since BeautifulSoup subclasses Tag, it's possible to treat it as
+     # a Tag with a .name. This name makes it clear the BeautifulSoup
+     # object isn't a real markup tag.
+-    ROOT_TAG_NAME = u'[document]'
++    ROOT_TAG_NAME = '[document]'
+ 
+     # If the end-user gives no indication which tree builder they
+     # want, look for one with these features.
+@@ -217,7 +217,7 @@ class BeautifulSoup(Tag):
+         from_encoding = from_encoding or deprecated_argument(
+             "fromEncoding", "from_encoding")
+ 
+-        if from_encoding and isinstance(markup, unicode):
++        if from_encoding and isinstance(markup, str):
+             warnings.warn("You provided Unicode markup but also provided a value for from_encoding. Your from_encoding will be ignored.")
+             from_encoding = None
+ 
+@@ -234,7 +234,7 @@ class BeautifulSoup(Tag):
+             builder_class = builder
+             builder = None
+         elif builder is None:
+-            if isinstance(features, basestring):
++            if isinstance(features, str):
+                 features = [features]
+             if features is None or len(features) == 0:
+                 features = self.DEFAULT_BUILDER_FEATURES
+@@ -309,13 +309,13 @@ class BeautifulSoup(Tag):
+             markup = markup.read()
+         elif len(markup) <= 256 and (
+                 (isinstance(markup, bytes) and not b'<' in markup)
+-                or (isinstance(markup, unicode) and not u'<' in markup)
++                or (isinstance(markup, str) and not '<' in markup)
+         ):
+             # Print out warnings for a couple beginner problems
+             # involving passing non-markup to Beautiful Soup.
+             # Beautiful Soup will still parse the input as markup,
+             # just in case that's what the user really wants.
+-            if (isinstance(markup, unicode)
++            if (isinstance(markup, str)
+                 and not os.path.supports_unicode_filenames):
+                 possible_filename = markup.encode("utf8")
+             else:
+@@ -323,7 +323,7 @@ class BeautifulSoup(Tag):
+             is_file = False
+             try:
+                 is_file = os.path.exists(possible_filename)
+-            except Exception, e:
++            except Exception as e:
+                 # This is almost certainly a problem involving
+                 # characters not valid in filenames on this
+                 # system. Just let it go.
+@@ -353,9 +353,9 @@ class BeautifulSoup(Tag):
+                 pass
+ 
+         if not success:
+-            other_exceptions = [unicode(e) for e in rejections]
++            other_exceptions = [str(e) for e in rejections]
+             raise ParserRejectedMarkup(
+-                u"The markup you provided was rejected by the parser. Trying a different parser or a different encoding may help.\n\nOriginal exception(s) from parser:\n " + "\n ".join(other_exceptions)
++                "The markup you provided was rejected by the parser. Trying a different parser or a different encoding may help.\n\nOriginal exception(s) from parser:\n " + "\n ".join(other_exceptions)
+             )
+ 
+         # Clear out the markup and remove the builder's circular
+@@ -406,9 +406,9 @@ class BeautifulSoup(Tag):
+         if isinstance(markup, bytes):
+             space = b' '
+             cant_start_with = (b"http:", b"https:")
+-        elif isinstance(markup, unicode):
+-            space = u' '
+-            cant_start_with = (u"http:", u"https:")
++        elif isinstance(markup, str):
++            space = ' '
++            cant_start_with = ("http:", "https:")
+         else:
+             return
+ 
+@@ -545,7 +545,7 @@ class BeautifulSoup(Tag):
+         containerClass = self.string_container(containerClass)
+         
+         if self.current_data:
+-            current_data = u''.join(self.current_data)
++            current_data = ''.join(self.current_data)
+             # If whitespace is not preserved, and this string contains
+             # nothing but ASCII spaces, replace it with a single space
+             # or newline.
+@@ -748,9 +748,9 @@ class BeautifulSoup(Tag):
+                 eventual_encoding = None
+             if eventual_encoding != None:
+                 encoding_part = ' encoding="%s"' % eventual_encoding
+-            prefix = u'<?xml version="1.0"%s?>\n' % encoding_part
++            prefix = '<?xml version="1.0"%s?>\n' % encoding_part
+         else:
+-            prefix = u''
++            prefix = ''
+         if not pretty_print:
+             indent_level = None
+         else:
+@@ -788,4 +788,4 @@ class FeatureNotFound(ValueError):
+ if __name__ == '__main__':
+     import sys
+     soup = BeautifulSoup(sys.stdin)
+-    print(soup.prettify())
++    print((soup.prettify()))
+--- bs4/builder/_html5lib.py.orig	2020-09-26 14:36:10 UTC
++++ bs4/builder/_html5lib.py
+@@ -33,7 +33,7 @@ try:
+     # Pre-0.99999999
+     from html5lib.treebuilders import _base as treebuilder_base
+     new_html5lib = False
+-except ImportError, e:
++except ImportError as e:
+     # 0.99999999 and up
+     from html5lib.treebuilders import base as treebuilder_base
+     new_html5lib = True
+@@ -79,7 +79,7 @@ class HTML5TreeBuilder(HTMLTreeBuilder):
+         parser = html5lib.HTMLParser(tree=self.create_treebuilder)
+         self.underlying_builder.parser = parser
+         extra_kwargs = dict()
+-        if not isinstance(markup, unicode):
++        if not isinstance(markup, str):
+             if new_html5lib:
+                 extra_kwargs['override_encoding'] = self.user_specified_encoding
+             else:
+@@ -87,13 +87,13 @@ class HTML5TreeBuilder(HTMLTreeBuilder):
+         doc = parser.parse(markup, **extra_kwargs)
+         
+         # Set the character encoding detected by the tokenizer.
+-        if isinstance(markup, unicode):
++        if isinstance(markup, str):
+             # We need to special-case this because html5lib sets
+             # charEncoding to UTF-8 if it gets Unicode input.
+             doc.original_encoding = None
+         else:
+             original_encoding = parser.tokenizer.stream.charEncoding[0]
+-            if not isinstance(original_encoding, basestring):
++            if not isinstance(original_encoding, str):
+                 # In 0.99999999 and up, the encoding is an html5lib
+                 # Encoding object. We want to use a string for compatibility
+                 # with other tree builders.
+@@ -110,7 +110,7 @@ class HTML5TreeBuilder(HTMLTreeBuilder):
+ 
+     def test_fragment_to_document(self, fragment):
+         """See `TreeBuilder`."""
+-        return u'<html><head></head><body>%s</body></html>' % fragment
++        return '<html><head></head><body>%s</body></html>' % fragment
+ 
+ 
+ class TreeBuilderForHtml5lib(treebuilder_base.TreeBuilder):
+@@ -217,7 +217,7 @@ class TreeBuilderForHtml5lib(treebuilder_base.TreeBuil
+                 rv.append("|%s<%s>" % (' ' * indent, name))
+                 if element.attrs:
+                     attributes = []
+-                    for name, value in element.attrs.items():
++                    for name, value in list(element.attrs.items()):
+                         if isinstance(name, NamespacedAttribute):
+                             name = "%s %s" % (prefixes[name.namespace], name.name)
+                         if isinstance(value, list):
+@@ -272,7 +272,7 @@ class Element(treebuilder_base.Node):
+ 
+     def appendChild(self, node):
+         string_child = child = None
+-        if isinstance(node, basestring):
++        if isinstance(node, str):
+             # Some other piece of code decided to pass in a string
+             # instead of creating a TextElement object to contain the
+             # string.
+@@ -289,7 +289,7 @@ class Element(treebuilder_base.Node):
+             child = node.element
+             node.parent = self
+ 
+-        if not isinstance(child, basestring) and child.parent is not None:
++        if not isinstance(child, str) and child.parent is not None:
+             node.element.extract()
+ 
+         if (string_child is not None and self.element.contents
+@@ -302,7 +302,7 @@ class Element(treebuilder_base.Node):
+             old_element.replace_with(new_element)
+             self.soup._most_recent_element = new_element
+         else:
+-            if isinstance(node, basestring):
++            if isinstance(node, str):
+                 # Create a brand new NavigableString from this string.
+                 child = self.soup.new_string(node)
+ 
+@@ -340,7 +340,7 @@ class Element(treebuilder_base.Node):
+ 
+             self.soup.builder._replace_cdata_list_attribute_values(
+                 self.name, attributes)
+-            for name, value in attributes.items():
++            for name, value in list(attributes.items()):
+                 self.element[name] = value
+ 
+             # The attributes may contain variables that need substitution.
+--- bs4/builder/_htmlparser.py.orig	2020-09-26 14:36:05 UTC
++++ bs4/builder/_htmlparser.py
+@@ -8,11 +8,11 @@ __all__ = [
+     'HTMLParserTreeBuilder',
+     ]
+ 
+-from HTMLParser import HTMLParser
++from html.parser import HTMLParser
+ 
+ try:
+-    from HTMLParser import HTMLParseError
+-except ImportError, e:
++    from html.parser import HTMLParseError
++except ImportError as e:
+     # HTMLParseError is removed in Python 3.5. Since it can never be
+     # thrown in 3.5, we can just define our own class as a placeholder.
+     class HTMLParseError(Exception):
+@@ -219,14 +219,14 @@ class BeautifulSoupHTMLParser(HTMLParser):
+                     continue
+                 try:
+                     data = bytearray([real_name]).decode(encoding)
+-                except UnicodeDecodeError, e:
++                except UnicodeDecodeError as e:
+                     pass
+         if not data:
+             try:
+-                data = unichr(real_name)
+-            except (ValueError, OverflowError), e:
++                data = chr(real_name)
++            except (ValueError, OverflowError) as e:
+                 pass
+-        data = data or u"\N{REPLACEMENT CHARACTER}"
++        data = data or "\N{REPLACEMENT CHARACTER}"
+         self.handle_data(data)
+ 
+     def handle_entityref(self, name):
+@@ -353,7 +353,7 @@ class HTMLParserTreeBuilder(HTMLTreeBuilder):
+          document to Unicode and parsing it. Each strategy will be tried 
+          in turn.
+         """
+-        if isinstance(markup, unicode):
++        if isinstance(markup, str):
+             # Parse Unicode as-is.
+             yield (markup, None, None, False)
+             return
+@@ -376,7 +376,7 @@ class HTMLParserTreeBuilder(HTMLTreeBuilder):
+         try:
+             parser.feed(markup)
+             parser.close()
+-        except HTMLParseError, e:
++        except HTMLParseError as e:
+             warnings.warn(RuntimeWarning(
+                 "Python's built-in HTMLParser cannot parse the given document. This is not a bug in Beautiful Soup. The best solution is to install an external parser (lxml or html5lib), and use Beautiful Soup with that parser. See http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser for help."))
+             raise e
+--- bs4/builder/_lxml.py.orig	2020-09-07 11:13:41 UTC
++++ bs4/builder/_lxml.py
+@@ -8,11 +8,11 @@ __all__ = [
+ 
+ try:
+     from collections.abc import Callable # Python 3.6
+-except ImportError , e:
++except ImportError as e:
+     from collections import Callable
+ 
+ from io import BytesIO
+-from StringIO import StringIO
++from io import StringIO
+ from lxml import etree
+ from bs4.element import (
+     Comment,
+@@ -35,7 +35,7 @@ LXML = 'lxml'
+ 
+ def _invert(d):
+     "Invert a dictionary."
+-    return dict((v,k) for k, v in d.items())
++    return dict((v,k) for k, v in list(d.items()))
+ 
+ class LXMLTreeBuilderForXML(TreeBuilder):
+     DEFAULT_PARSER_CLASS = etree.XMLParser
+@@ -81,7 +81,7 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+ 
+         :param mapping: A dictionary mapping namespace prefixes to URIs.
+         """
+-        for key, value in mapping.items():
++        for key, value in list(mapping.items()):
+             if key and key not in self.soup._namespaces:
+                 # Let the BeautifulSoup object know about a new namespace.
+                 # If there are multiple namespaces defined with the same
+@@ -169,12 +169,12 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+         else:
+             self.processing_instruction_class = XMLProcessingInstruction
+ 
+-        if isinstance(markup, unicode):
++        if isinstance(markup, str):
+             # We were given Unicode. Maybe lxml can parse Unicode on
+             # this system?
+             yield markup, None, document_declared_encoding, False
+ 
+-        if isinstance(markup, unicode):
++        if isinstance(markup, str):
+             # No, apparently not. Convert the Unicode to UTF-8 and
+             # tell lxml to parse it as UTF-8.
+             yield (markup.encode("utf8"), "utf8",
+@@ -189,7 +189,7 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+     def feed(self, markup):
+         if isinstance(markup, bytes):
+             markup = BytesIO(markup)
+-        elif isinstance(markup, unicode):
++        elif isinstance(markup, str):
+             markup = StringIO(markup)
+ 
+         # Call feed() at least once, even if the markup is empty,
+@@ -204,7 +204,7 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+                 if len(data) != 0:
+                     self.parser.feed(data)
+             self.parser.close()
+-        except (UnicodeDecodeError, LookupError, etree.ParserError), e:
++        except (UnicodeDecodeError, LookupError, etree.ParserError) as e:
+             raise ParserRejectedMarkup(e)
+ 
+     def close(self):
+@@ -233,7 +233,7 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+             # Also treat the namespace mapping as a set of attributes on the
+             # tag, so we can recreate it later.
+             attrs = attrs.copy()
+-            for prefix, namespace in nsmap.items():
++            for prefix, namespace in list(nsmap.items()):
+                 attribute = NamespacedAttribute(
+                     "xmlns", prefix, "http://www.w3.org/2000/xmlns/")
+                 attrs[attribute] = namespace
+@@ -242,7 +242,7 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+         # from lxml with namespaces attached to their names, and
+         # turn then into NamespacedAttribute objects.
+         new_attrs = {}
+-        for attr, value in attrs.items():
++        for attr, value in list(attrs.items()):
+             namespace, attr = self._getNsTag(attr)
+             if namespace is None:
+                 new_attrs[attr] = value
+@@ -302,7 +302,7 @@ class LXMLTreeBuilderForXML(TreeBuilder):
+ 
+     def test_fragment_to_document(self, fragment):
+         """See `TreeBuilder`."""
+-        return u'<?xml version="1.0" encoding="utf-8"?>\n%s' % fragment
++        return '<?xml version="1.0" encoding="utf-8"?>\n%s' % fragment
+ 
+ 
+ class LXMLTreeBuilder(HTMLTreeBuilder, LXMLTreeBuilderForXML):
+@@ -323,10 +323,10 @@ class LXMLTreeBuilder(HTMLTreeBuilder, LXMLTreeBuilder
+             self.parser = self.parser_for(encoding)
+             self.parser.feed(markup)
+             self.parser.close()
+-        except (UnicodeDecodeError, LookupError, etree.ParserError), e:
++        except (UnicodeDecodeError, LookupError, etree.ParserError) as e:
+             raise ParserRejectedMarkup(e)
+ 
+ 
+     def test_fragment_to_document(self, fragment):
+         """See `TreeBuilder`."""
+-        return u'<html><body>%s</body></html>' % fragment
++        return '<html><body>%s</body></html>' % fragment
+--- bs4/diagnose.py.orig	2020-05-17 17:55:43 UTC
++++ bs4/diagnose.py
+@@ -4,8 +4,8 @@
+ __license__ = "MIT"
+ 
+ import cProfile
+-from StringIO import StringIO
+-from HTMLParser import HTMLParser
++from io import StringIO
++from html.parser import HTMLParser
+ import bs4
+ from bs4 import BeautifulSoup, __version__
+ from bs4.builder import builder_registry
+@@ -25,8 +25,8 @@ def diagnose(data):
+     :param data: A string containing markup that needs to be explained.
+     :return: None; diagnostics are printed to standard output.
+     """
+-    print("Diagnostic running on Beautiful Soup %s" % __version__)
+-    print("Python version %s" % sys.version)
++    print(("Diagnostic running on Beautiful Soup %s" % __version__))
++    print(("Python version %s" % sys.version))
+ 
+     basic_parsers = ["html.parser", "html5lib", "lxml"]
+     for name in basic_parsers:
+@@ -35,16 +35,16 @@ def diagnose(data):
+                 break
+         else:
+             basic_parsers.remove(name)
+-            print(
++            print((
+                 "I noticed that %s is not installed. Installing it may help." %
+-                name)
++                name))
+ 
+     if 'lxml' in basic_parsers:
+         basic_parsers.append("lxml-xml")
+         try:
+             from lxml import etree
+-            print("Found lxml version %s" % ".".join(map(str,etree.LXML_VERSION)))
+-        except ImportError, e:
++            print(("Found lxml version %s" % ".".join(map(str,etree.LXML_VERSION))))
++        except ImportError as e:
+             print(
+                 "lxml is not installed or couldn't be imported.")
+ 
+@@ -52,21 +52,21 @@ def diagnose(data):
+     if 'html5lib' in basic_parsers:
+         try:
+             import html5lib
+-            print("Found html5lib version %s" % html5lib.__version__)
+-        except ImportError, e:
++            print(("Found html5lib version %s" % html5lib.__version__))
++        except ImportError as e:
+             print(
+                 "html5lib is not installed or couldn't be imported.")
+ 
+     if hasattr(data, 'read'):
+         data = data.read()
+     elif data.startswith("http:") or data.startswith("https:"):
+-        print('"%s" looks like a URL. Beautiful Soup is not an HTTP client.' % data)
++        print(('"%s" looks like a URL. Beautiful Soup is not an HTTP client.' % data))
+         print("You need to use some other library to get the document behind the URL, and feed that document to Beautiful Soup.")
+         return
+     else:
+         try:
+             if os.path.exists(data):
+-                print('"%s" looks like a filename. Reading data from the file.' % data)
++                print(('"%s" looks like a filename. Reading data from the file.' % data))
+                 with open(data) as fp:
+                     data = fp.read()
+         except ValueError:
+@@ -76,19 +76,19 @@ def diagnose(data):
+         print("")
+ 
+     for parser in basic_parsers:
+-        print("Trying to parse your markup with %s" % parser)
++        print(("Trying to parse your markup with %s" % parser))
+         success = False
+         try:
+             soup = BeautifulSoup(data, features=parser)
+             success = True
+-        except Exception, e:
+-            print("%s could not parse the markup." % parser)
++        except Exception as e:
++            print(("%s could not parse the markup." % parser))
+             traceback.print_exc()
+         if success:
+-            print("Here's what %s did with the markup:" % parser)
+-            print(soup.prettify())
++            print(("Here's what %s did with the markup:" % parser))
++            print((soup.prettify()))
+ 
+-        print("-" * 80)
++        print(("-" * 80))
+ 
+ def lxml_trace(data, html=True, **kwargs):
+     """Print out the lxml events that occur during parsing.
+@@ -104,7 +104,7 @@ def lxml_trace(data, html=True, **kwargs):
+     """
+     from lxml import etree
+     for event, element in etree.iterparse(StringIO(data), html=html, **kwargs):
+-        print("%s, %4s, %s" % (event, element.tag, element.text))
++        print(("%s, %4s, %s" % (event, element.tag, element.text)))
+ 
+ class AnnouncingParser(HTMLParser):
+     """Subclass of HTMLParser that announces parse events, without doing
+@@ -193,9 +193,9 @@ def rdoc(num_elements=1000):
+ 
+ def benchmark_parsers(num_elements=100000):
+     """Very basic head-to-head performance benchmark."""
+-    print("Comparative parser benchmark on Beautiful Soup %s" % __version__)
++    print(("Comparative parser benchmark on Beautiful Soup %s" % __version__))
+     data = rdoc(num_elements)
+-    print("Generated a large invalid HTML document (%d bytes)." % len(data))
++    print(("Generated a large invalid HTML document (%d bytes)." % len(data)))
+     
+     for parser in ["lxml", ["lxml", "html"], "html5lib", "html.parser"]:
+         success = False
+@@ -204,24 +204,24 @@ def benchmark_parsers(num_elements=100000):
+             soup = BeautifulSoup(data, parser)
+             b = time.time()
+             success = True
+-        except Exception, e:
+-            print("%s could not parse the markup." % parser)
++        except Exception as e:
++            print(("%s could not parse the markup." % parser))
+             traceback.print_exc()
+         if success:
+-            print("BS4+%s parsed the markup in %.2fs." % (parser, b-a))
++            print(("BS4+%s parsed the markup in %.2fs." % (parser, b-a)))
+ 
+     from lxml import etree
+     a = time.time()
+     etree.HTML(data)
+     b = time.time()
+-    print("Raw lxml parsed the markup in %.2fs." % (b-a))
++    print(("Raw lxml parsed the markup in %.2fs." % (b-a)))
+ 
+     import html5lib
+     parser = html5lib.HTMLParser()
+     a = time.time()
+     parser.parse(data)
+     b = time.time()
+-    print("Raw html5lib parsed the markup in %.2fs." % (b-a))
++    print(("Raw html5lib parsed the markup in %.2fs." % (b-a)))
+ 
+ def profile(num_elements=100000, parser="lxml"):
+     """Use Python's profiler on a randomly generated document."""
+--- bs4/element.py.orig	2020-10-02 22:19:12 UTC
++++ bs4/element.py
+@@ -3,14 +3,14 @@ __license__ = "MIT"
+ 
+ try:
+     from collections.abc import Callable # Python 3.6
+-except ImportError , e:
++except ImportError as e:
+     from collections import Callable
+ import re
+ import sys
+ import warnings
+ try:
+     import soupsieve
+-except ImportError, e:
++except ImportError as e:
+     soupsieve = None
+     warnings.warn(
+         'The soupsieve package is not installed. CSS selectors cannot be used.'
+@@ -57,22 +57,22 @@ def _alias(attr):
+ # Source:
+ # https://docs.python.org/3/library/codecs.html#python-specific-encodings
+ PYTHON_SPECIFIC_ENCODINGS = set([
+-    u"idna",
+-    u"mbcs",
+-    u"oem",
+-    u"palmos",
+-    u"punycode",
+-    u"raw_unicode_escape",
+-    u"undefined",
+-    u"unicode_escape",
+-    u"raw-unicode-escape",
+-    u"unicode-escape",
+-    u"string-escape",
+-    u"string_escape",
++    "idna",
++    "mbcs",
++    "oem",
++    "palmos",
++    "punycode",
++    "raw_unicode_escape",
++    "undefined",
++    "unicode_escape",
++    "raw-unicode-escape",
++    "unicode-escape",
++    "string-escape",
++    "string_escape",
+ ])
+     
+ 
+-class NamespacedAttribute(unicode):
++class NamespacedAttribute(str):
+     """A namespaced string (e.g. 'xml:lang') that remembers the namespace
+     ('xml') and the name ('lang') that were used to create it.
+     """
+@@ -84,18 +84,18 @@ class NamespacedAttribute(unicode):
+             name = None
+ 
+         if name is None:
+-            obj = unicode.__new__(cls, prefix)
++            obj = str.__new__(cls, prefix)
+         elif prefix is None:
+             # Not really namespaced.
+-            obj = unicode.__new__(cls, name)
++            obj = str.__new__(cls, name)
+         else:
+-            obj = unicode.__new__(cls, prefix + ":" + name)
++            obj = str.__new__(cls, prefix + ":" + name)
+         obj.prefix = prefix
+         obj.name = name
+         obj.namespace = namespace
+         return obj
+ 
+-class AttributeValueWithCharsetSubstitution(unicode):
++class AttributeValueWithCharsetSubstitution(str):
+     """A stand-in object for a character encoding specified in HTML."""
+ 
+ class CharsetMetaAttributeValue(AttributeValueWithCharsetSubstitution):
+@@ -106,7 +106,7 @@ class CharsetMetaAttributeValue(AttributeValueWithChar
+     """
+ 
+     def __new__(cls, original_value):
+-        obj = unicode.__new__(cls, original_value)
++        obj = str.__new__(cls, original_value)
+         obj.original_value = original_value
+         return obj
+ 
+@@ -134,9 +134,9 @@ class ContentMetaAttributeValue(AttributeValueWithChar
+         match = cls.CHARSET_RE.search(original_value)
+         if match is None:
+             # No substitution necessary.
+-            return unicode.__new__(unicode, original_value)
++            return str.__new__(str, original_value)
+ 
+-        obj = unicode.__new__(cls, original_value)
++        obj = str.__new__(cls, original_value)
+         obj.original_value = original_value
+         return obj
+ 
+@@ -376,7 +376,7 @@ class PageElement(object):
+             raise ValueError("Cannot insert None into a tag.")
+         if new_child is self:
+             raise ValueError("Cannot insert a tag into itself.")
+-        if (isinstance(new_child, basestring)
++        if (isinstance(new_child, str)
+             and not isinstance(new_child, NavigableString)):
+             new_child = NavigableString(new_child)
+ 
+@@ -753,7 +753,7 @@ class PageElement(object):
+                 result = (element for element in generator
+                           if isinstance(element, Tag))
+                 return ResultSet(strainer, result)
+-            elif isinstance(name, basestring):
++            elif isinstance(name, str):
+                 # Optimization to find all tags with a given name.
+                 if name.count(':') == 1:
+                     # This is a name with a prefix. If this is a namespace-aware document,
+@@ -872,7 +872,7 @@ class PageElement(object):
+         return self.parents
+ 
+ 
+-class NavigableString(unicode, PageElement):
++class NavigableString(str, PageElement):
+     """A Python Unicode string that is part of a parse tree.
+ 
+     When Beautiful Soup parses the markup <b>penguin</b>, it will
+@@ -895,10 +895,10 @@ class NavigableString(unicode, PageElement):
+         passed in to the superclass's __new__ or the superclass won't know
+         how to handle non-ASCII characters.
+         """
+-        if isinstance(value, unicode):
+-            u = unicode.__new__(cls, value)
++        if isinstance(value, str):
++            u = str.__new__(cls, value)
+         else:
+-            u = unicode.__new__(cls, value, DEFAULT_OUTPUT_ENCODING)
++            u = str.__new__(cls, value, DEFAULT_OUTPUT_ENCODING)
+         u.setup()
+         return u
+ 
+@@ -909,7 +909,7 @@ class NavigableString(unicode, PageElement):
+         return type(self)(self)
+ 
+     def __getnewargs__(self):
+-        return (unicode(self),)
++        return (str(self),)
+ 
+     def __getattr__(self, attr):
+         """text.string gives you text. This is for backwards
+@@ -975,30 +975,30 @@ class PreformattedString(NavigableString):
+ 
+ class CData(PreformattedString):
+     """A CDATA block."""
+-    PREFIX = u'<![CDATA['
+-    SUFFIX = u']]>'
++    PREFIX = '<![CDATA['
++    SUFFIX = ']]>'
+ 
+ class ProcessingInstruction(PreformattedString):
+     """A SGML processing instruction."""
+ 
+-    PREFIX = u'<?'
+-    SUFFIX = u'>'
++    PREFIX = '<?'
++    SUFFIX = '>'
+ 
+ class XMLProcessingInstruction(ProcessingInstruction):
+     """An XML processing instruction."""
+-    PREFIX = u'<?'
+-    SUFFIX = u'?>'
++    PREFIX = '<?'
++    SUFFIX = '?>'
+ 
+ class Comment(PreformattedString):
+     """An HTML or XML comment."""
+-    PREFIX = u'<!--'
+-    SUFFIX = u'-->'
++    PREFIX = '<!--'
++    SUFFIX = '-->'
+ 
+ 
+ class Declaration(PreformattedString):
+     """An XML declaration."""
+-    PREFIX = u'<?'
+-    SUFFIX = u'?>'
++    PREFIX = '<?'
++    SUFFIX = '?>'
+ 
+ 
+ class Doctype(PreformattedString):
+@@ -1026,8 +1026,8 @@ class Doctype(PreformattedString):
+ 
+         return Doctype(value)
+ 
+-    PREFIX = u'<!DOCTYPE '
+-    SUFFIX = u'>\n'
++    PREFIX = '<!DOCTYPE '
++    SUFFIX = '>\n'
+ 
+ 
+ class Stylesheet(NavigableString):
+@@ -1263,7 +1263,7 @@ class Tag(PageElement):
+         for string in self._all_strings(True):
+             yield string
+ 
+-    def get_text(self, separator=u"", strip=False,
++    def get_text(self, separator="", strip=False,
+                  types=(NavigableString, CData)):
+         """Get all child strings, concatenated using the given separator.
+ 
+@@ -1416,7 +1416,7 @@ class Tag(PageElement):
+     def __contains__(self, x):
+         return x in self.contents
+ 
+-    def __nonzero__(self):
++    def __bool__(self):
+         "A tag is non-None even if it has no contents."
+         return True
+ 
+@@ -1565,8 +1565,8 @@ class Tag(PageElement):
+             else:
+                 if isinstance(val, list) or isinstance(val, tuple):
+                     val = ' '.join(val)
+-                elif not isinstance(val, basestring):
+-                    val = unicode(val)
++                elif not isinstance(val, str):
++                    val = str(val)
+                 elif (
+                         isinstance(val, AttributeValueWithCharsetSubstitution)
+                         and eventual_encoding is not None
+@@ -1575,7 +1575,7 @@ class Tag(PageElement):
+ 
+                 text = formatter.attribute_value(val)
+                 decoded = (
+-                    unicode(key) + '='
++                    str(key) + '='
+                     + formatter.quoted_attribute_value(text))
+             attrs.append(decoded)
+         close = ''
+@@ -1934,7 +1934,7 @@ class SoupStrainer(object):
+             else:
+                 attrs = kwargs
+         normalized_attrs = {}
+-        for key, value in attrs.items():
++        for key, value in list(attrs.items()):
+             normalized_attrs[key] = self._normalize_search_value(value)
+ 
+         self.attrs = normalized_attrs
+@@ -1943,7 +1943,7 @@ class SoupStrainer(object):
+     def _normalize_search_value(self, value):
+         # Leave it alone if it's a Unicode string, a callable, a
+         # regular expression, a boolean, or None.
+-        if (isinstance(value, unicode) or isinstance(value, Callable) or hasattr(value, 'match')
++        if (isinstance(value, str) or isinstance(value, Callable) or hasattr(value, 'match')
+             or isinstance(value, bool) or value is None):
+             return value
+ 
+@@ -1956,7 +1956,7 @@ class SoupStrainer(object):
+             new_value = []
+             for v in value:
+                 if (hasattr(v, '__iter__') and not isinstance(v, bytes)
+-                    and not isinstance(v, unicode)):
++                    and not isinstance(v, str)):
+                     # This is almost certainly the user's mistake. In the
+                     # interests of avoiding infinite loops, we'll let
+                     # it through as-is rather than doing a recursive call.
+@@ -1968,7 +1968,7 @@ class SoupStrainer(object):
+         # Otherwise, convert it into a Unicode string.
+         # The unicode(str()) thing is so this will do the same thing on Python 2
+         # and Python 3.
+-        return unicode(str(value))
++        return str(str(value))
+ 
+     def __str__(self):
+         """A human-readable representation of this SoupStrainer."""
+@@ -1996,7 +1996,7 @@ class SoupStrainer(object):
+             markup = markup_name
+             markup_attrs = markup
+ 
+-        if isinstance(self.name, basestring):
++        if isinstance(self.name, str):
+             # Optimization for a very common case where the user is
+             # searching for a tag with one specific name, and we're
+             # looking at a tag with a different name.
+@@ -2052,7 +2052,7 @@ class SoupStrainer(object):
+         found = None
+         # If given a list of items, scan it for a text element that
+         # matches.
+-        if hasattr(markup, '__iter__') and not isinstance(markup, (Tag, basestring)):
++        if hasattr(markup, '__iter__') and not isinstance(markup, (Tag, str)):
+             for element in markup:
+                 if isinstance(element, NavigableString) \
+                        and self.search(element):
+@@ -2065,7 +2065,7 @@ class SoupStrainer(object):
+                 found = self.search_tag(markup)
+         # If it's text, make sure the text matches.
+         elif isinstance(markup, NavigableString) or \
+-                 isinstance(markup, basestring):
++                 isinstance(markup, str):
+             if not self.name and not self.attrs and self._matches(markup, self.text):
+                 found = markup
+         else:
+@@ -2110,7 +2110,7 @@ class SoupStrainer(object):
+             return not match_against
+ 
+         if (hasattr(match_against, '__iter__')
+-            and not isinstance(match_against, basestring)):
++            and not isinstance(match_against, str)):
+             # We're asked to match against an iterable of items.
+             # The markup must be match at least one item in the
+             # iterable. We'll try each one in turn.
+@@ -2137,7 +2137,7 @@ class SoupStrainer(object):
+         # the tag's name and once against its prefixed name.
+         match = False
+         
+-        if not match and isinstance(match_against, unicode):
++        if not match and isinstance(match_against, str):
+             # Exact string match
+             match = markup == match_against
+ 
+--- bs4/tests/test_html5lib.py.orig	2020-04-05 19:54:12 UTC
++++ bs4/tests/test_html5lib.py
+@@ -5,7 +5,7 @@ import warnings
+ try:
+     from bs4.builder import HTML5TreeBuilder
+     HTML5LIB_PRESENT = True
+-except ImportError, e:
++except ImportError as e:
+     HTML5LIB_PRESENT = False
+ from bs4.element import SoupStrainer
+ from bs4.testing import (
+@@ -74,14 +74,14 @@ class HTML5LibBuilderSmokeTest(SoupTest, HTML5TreeBuil
+     def test_reparented_markup(self):
+         markup = '<p><em>foo</p>\n<p>bar<a></a></em></p>'
+         soup = self.soup(markup)
+-        self.assertEqual(u"<body><p><em>foo</em></p><em>\n</em><p><em>bar<a></a></em></p></body>", soup.body.decode())
++        self.assertEqual("<body><p><em>foo</em></p><em>\n</em><p><em>bar<a></a></em></p></body>", soup.body.decode())
+         self.assertEqual(2, len(soup.find_all('p')))
+ 
+ 
+     def test_reparented_markup_ends_with_whitespace(self):
+         markup = '<p><em>foo</p>\n<p>bar<a></a></em></p>\n'
+         soup = self.soup(markup)
+-        self.assertEqual(u"<body><p><em>foo</em></p><em>\n</em><p><em>bar<a></a></em></p>\n</body>", soup.body.decode())
++        self.assertEqual("<body><p><em>foo</em></p><em>\n</em><p><em>bar<a></a></em></p>\n</body>", soup.body.decode())
+         self.assertEqual(2, len(soup.find_all('p')))
+ 
+     def test_reparented_markup_containing_identical_whitespace_nodes(self):
+@@ -127,7 +127,7 @@ class HTML5LibBuilderSmokeTest(SoupTest, HTML5TreeBuil
+     def test_foster_parenting(self):
+         markup = b"""<table><td></tbody>A"""
+         soup = self.soup(markup)
+-        self.assertEqual(u"<body>A<table><tbody><tr><td></td></tr></tbody></table></body>", soup.body.decode())
++        self.assertEqual("<body>A<table><tbody><tr><td></td></tr></tbody></table></body>", soup.body.decode())
+ 
+     def test_extraction(self):
+         """
+--- bs4/tests/test_lxml.py.orig	2020-04-05 19:54:12 UTC
++++ bs4/tests/test_lxml.py
+@@ -7,7 +7,7 @@ try:
+     import lxml.etree
+     LXML_PRESENT = True
+     LXML_VERSION = lxml.etree.LXML_VERSION
+-except ImportError, e:
++except ImportError as e:
+     LXML_PRESENT = False
+     LXML_VERSION = (0,)
+ 
+@@ -68,7 +68,7 @@ class LXMLTreeBuilderSmokeTest(SoupTest, HTMLTreeBuild
+         # if one is installed.
+         with warnings.catch_warnings(record=True) as w:
+             soup = BeautifulStoneSoup("<b />")
+-        self.assertEqual(u"<b/>", unicode(soup.b))
++        self.assertEqual("<b/>", str(soup.b))
+         self.assertTrue("BeautifulStoneSoup class is deprecated" in str(w[0].message))
+ 
+     def test_tracking_line_numbers(self):
+--- setup.py.orig	2020-10-03 15:31:00 UTC
++++ setup.py
+@@ -30,7 +30,6 @@ setup(
+         'lxml' : [ 'lxml'],
+         'html5lib' : ['html5lib'],
+     },
+-    use_2to3 = True,
+     classifiers=["Development Status :: 5 - Production/Stable",
+                  "Intended Audience :: Developers",
+                  "License :: OSI Approved :: MIT License",
