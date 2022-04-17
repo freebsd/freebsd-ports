@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	gemdiff
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
