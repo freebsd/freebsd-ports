@@ -779,10 +779,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/debruijn-lookup-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-moves-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-moves-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-subset-lexrev-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-subset-lexrev-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep2-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/gotcha-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/gotcha-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/gray-demo.cc
