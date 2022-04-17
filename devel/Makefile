@@ -2794,6 +2794,7 @@
     SUBDIR += p5-Mo
     SUBDIR += p5-Mock-MonkeyPatch
     SUBDIR += p5-Mock-Quick
+    SUBDIR += p5-Mock-Sub
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
