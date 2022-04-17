@@ -2,4 +2,4 @@ eCAP is a software interface that allows a network application, such as an HTTP
 proxy or an ICAP server, to outsource content analysis and adaptation to a
 loadable module.
 
-WWW: http://www.e-cap.org/
+WWW: https://www.e-cap.org/
