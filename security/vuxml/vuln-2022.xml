@@ -237,6 +237,7 @@
 	<range><ge>2.7.0,1</ge><lt>2.7.6,1</lt></range>
 	<range><ge>3.0.0,1</ge><lt>3.0.4,1</lt></range>
 	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.0.p1_1,1</lt></range>
       </package>
       <package>
 	<name>ruby27</name>
@@ -249,6 +250,10 @@
       <package>
 	<name>ruby31</name>
 	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+      </package>
+      <package>
+	<name>ruby32</name>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.0.p1_1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -283,6 +288,7 @@
 	<name>ruby</name>
 	<range><ge>3.0.0,1</ge><lt>3.0.4,1</lt></range>
 	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.0.p1_1,1</lt></range>
       </package>
       <package>
 	<name>ruby30</name>
@@ -291,6 +297,10 @@
       <package>
 	<name>ruby31</name>
 	<range><ge>3.1.0,1</ge><lt>3.1.2,1</lt></range>
+      </package>
+      <package>
+	<name>ruby32</name>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.0.p1_1,1</lt></range>
       </package>
     </affects>
     <description>
