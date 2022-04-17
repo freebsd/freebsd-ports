@@ -1,5 +1,5 @@
 PORTNAME=	Spreadsheet-ReadSXC
-PORTVERSION=	0.35
+PORTVERSION=	0.37
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORION
@@ -13,7 +13,11 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Archive-Zip>=1.34:archivers/p5-Archive-Zip \
-		p5-XML-Parser>=0:textproc/p5-XML-Parser
+		p5-Moo>=2:devel/p5-Moo \
+		p5-PerlIO-gzip>=0:archivers/p5-PerlIO-gzip \
+		p5-PerlX-Maybe>=0:devel/p5-PerlX-Maybe \
+		p5-XML-Twig>=3.50:textproc/p5-XML-Twig \
+		p5-XML-XPath>=0:textproc/p5-XML-XPath
 
 USES=		perl5
 USE_PERL5=	configure
