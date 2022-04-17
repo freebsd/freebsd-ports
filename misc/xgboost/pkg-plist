@@ -20,6 +20,8 @@ include/xgboost/objective.h
 include/xgboost/parameter.h
 include/xgboost/predictor.h
 include/xgboost/span.h
+include/xgboost/string_view.h
+include/xgboost/task.h
 include/xgboost/tree_model.h
 include/xgboost/tree_updater.h
 include/xgboost/version_config.h

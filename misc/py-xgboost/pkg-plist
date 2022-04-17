@@ -1,0 +1,14 @@
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/_typing%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/callback%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/compat%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/core%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/dask%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/data%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/libpath%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/plotting%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/rabit%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/sklearn%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/tracker%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xgboost/__pycache__/training%%PYTHON_EXT_SUFFIX%%.pyc

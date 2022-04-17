@@ -17,10 +17,10 @@
  if (BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
    message(SEND_ERROR "Cannot build a static library libxgboost.a when R or JVM packages are enabled.")
  endif (BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
-@@ -160,7 +160,7 @@ endif (USE_NCCL)
- 
- # dmlc-core
- msvc_use_static_runtime()
+@@ -168,7 +168,7 @@ msvc_use_static_runtime()
+ if (FORCE_SHARED_CRT)
+   set(DMLC_FORCE_SHARED_CRT ON)
+ endif ()
 -add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
 +#add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
  
