@@ -1,5 +1,5 @@
 PORTNAME=	vctrs
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,6 +14,6 @@ CRAN_DEPENDS=	R-cran-cli>=3.2.0:devel/R-cran-cli \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++11-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
