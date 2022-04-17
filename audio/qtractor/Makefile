@@ -1,6 +1,7 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	qtractor_
 DISTVERSION=	0_9_26
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/rncbc/qtractor/archive/refs/tags/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -38,6 +39,15 @@ USE_GNOME=	atk cairo gdkpixbuf2 gtk20 gtkmm24 pango
 USE_QT=		core gui widgets xml buildtools_build linguisttools_build qmake_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${DISTVERSION}
+
+OPTIONS_DEFINE=		VST3
+#OPTIONS_DEFAULT=	VST3
+
+VST3_DESC=		Enable VST3 plug-in support
+VST3_CMAKE_BOOL=	CONFIG_VST3
+#VST3_CMAKE_ON=		-DCONFIG_VST3SDK=${LOCALBASE}/include/vst3sdk
+VST3_BUILD_DEPENDS=	vst3sdk>0:audio/vst3sdk
+VST3_BROKEN=		https://github.com/rncbc/qtractor/issues/331
 
 post-patch:
 	@${REINPLACE_CMD} \
