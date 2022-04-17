@@ -1,7 +1,7 @@
 # Created by: Anton Berezin <tobez@tobez.org>
 
 PORTNAME=	Set-Object
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage sets of objects
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace
