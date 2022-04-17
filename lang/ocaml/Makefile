@@ -116,7 +116,7 @@ USE_GCC=	yes
 .endif
 
 .if ${ARCH} == powerpc64le
-USE_GCC=	yes
+LLD_UNSAFE=	yes
 .endif
 
 post-extract:
