@@ -1,9 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	gomi
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,10 +30,10 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid
 
-OPTIONS_DEFINE=	DOCS
-
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
