@@ -1481,6 +1481,7 @@
     SUBDIR += py-django-babel
     SUBDIR += py-django-bakery
     SUBDIR += py-django-bitfield
+    SUBDIR += py-django-bleach
     SUBDIR += py-django-bootstrap-form
     SUBDIR += py-django-bootstrap-pagination
     SUBDIR += py-django-bootstrap3
