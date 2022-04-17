@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf pathfix gmake
 GNU_CONFIGURE=	yes
 
+NO_ARCH=	yes
+
 USE_GITHUB=yes
 
 GH_ACCOUNT=	mypaint
