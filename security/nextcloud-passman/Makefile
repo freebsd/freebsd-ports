@@ -19,6 +19,7 @@ RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:flavors
+IGNORE_WITH_PHP=81
 NO_BUILD=	yes
 NO_ARCH=	yes
 
