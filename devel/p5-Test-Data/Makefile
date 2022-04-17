@@ -1,7 +1,7 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
 
 PORTNAME=	Test-Data
-PORTVERSION=	1.243
+PORTVERSION=	1.244
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
