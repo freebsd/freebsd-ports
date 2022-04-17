@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tiledb
-PORTVERSION=	2.7.2
+PORTVERSION=	2.8.0
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libcapnp.so:devel/capnproto080 \
+		libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd

@@ -16,6 +16,7 @@ include/tiledb/filter.h
 include/tiledb/filter_list.h
 include/tiledb/fragment_info.h
 include/tiledb/group.h
+include/tiledb/group_experimental.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
 include/tiledb/query.h
