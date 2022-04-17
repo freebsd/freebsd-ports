@@ -1,0 +1,32 @@
+--- src/autoconf.orig	2001-09-10 21:55:46.000000000 -0700
++++ src/autoconf	2010-12-23 11:53:07.000000000 -0800
+@@ -230,7 +230,8 @@
+   echo ""
+   if test -z "$LOCKINGTEST"
+   then
+-     read b
++     #read b
++     b=""
+   elif test dummy = "$LOCKINGTEST"
+   then
+      b=""
+@@ -977,6 +978,7 @@
+ 
+ echo 'Checking realloc implementation'
+ 
++$RM -f _autotst
+ if $MAKE _autotst >$DEVNULL 2>&1
+  test -f _autotst
+ then
+@@ -1491,6 +1493,11 @@
+   fi
+ done
+ 
++case ":$lpath:" in
++    *:/usr/local/bin:*) ;;
++    *) lpath="$lpath:/usr/local/bin" ;;
++esac
++
+ echo "#define defPATH \"PATH=\$HOME/bin:$lpath\"" >>$ACONF
+ echo "#define defSPATH \"PATH=$lpath\"" >>$ACONF
+ 

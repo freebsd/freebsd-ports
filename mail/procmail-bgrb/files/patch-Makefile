@@ -1,0 +1,50 @@
+*** Makefile.orig	Mon Apr 28 04:27:40 1997
+--- Makefile	Wed May 14 18:16:50 1997
+***************
+*** 2,8 ****
+  
+  # BASENAME should point to where the whole lot will be installed
+  # change BASENAME to your home directory if need be
+! BASENAME	= /usr
+  # For display in the man pages
+  VISIBLE_BASENAME= $(BASENAME)
+  
+--- 2,8 ----
+  
+  # BASENAME should point to where the whole lot will be installed
+  # change BASENAME to your home directory if need be
+! BASENAME      = $(DESTDIR)$(PREFIX)
+  # For display in the man pages
+  VISIBLE_BASENAME= $(BASENAME)
+  
+***************
+*** 53,59 ****
+--- 53,63 ----
+  
+  # Makefile.0 - mark, don't (re)move this, a sed script needs it
+  
++ .if defined(BATCH)
++ LOCKINGTEST=/tmp .
++ .else
+  LOCKINGTEST=__defaults__
++ .endif
+  
+  #LOCKINGTEST=/tmp .	# Uncomment and add any directories you see fit.
+  #			If LOCKINGTEST is defined, autoconf will NOT
+***************
+*** 86,92 ****
+   #-Wimplicit -Wshadow -Wid-clash-6 #-Wuninitialized
+  
+  # The place to put your favourite extra cc flag
+! CFLAGS0 = -O #$(GCC_WARNINGS)
+  LDFLAGS0= -s
+  # Read my libs :-)
+  LIBS=
+--- 90,96 ----
+   #-Wimplicit -Wshadow -Wid-clash-6 #-Wuninitialized
+  
+  # The place to put your favourite extra cc flag
+! CFLAGS0 = #-O #$(GCC_WARNINGS)
+  LDFLAGS0= -s
+  # Read my libs :-)
+  LIBS=

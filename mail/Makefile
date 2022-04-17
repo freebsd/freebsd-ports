@@ -481,6 +481,7 @@
     SUBDIR += postsrsd
     SUBDIR += prepflog
     SUBDIR += procmail
+    SUBDIR += procmail-bgrb
     SUBDIR += proxsmtp
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-afew
