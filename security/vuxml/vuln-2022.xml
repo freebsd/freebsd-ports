@@ -1,3 +1,33 @@
+  <vuln vid="2a314635-be46-11ec-a06f-d4c9ef517024">
+    <topic>Nextcloud Calendar -- SMTP Command Injection</topic>
+    <affects>
+      <package>
+	<name>nextcloud-calendar</name>
+	<range><lt>3.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p> reports:</p>
+	<blockquote cite="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-8xv5-4855-24qf">
+	  <p>SMTP Command Injection in Appointment Emails via Newlines: as newlines
+	    and special characters are not sanitized in the email value in the JSON
+	    request, a malicious attacker can inject newlines to break out of the
+	    `RCPT TO:&lt;BOOKING USER'S EMAIL&gt;` SMTP command and begin injecting
+	    arbitrary SMTP commands.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24838</cvename>
+      <url>https://github.com/nextcloud/security-advisories/security/advisories/GHSA-8xv5-4855-24qf</url>
+    </references>
+    <dates>
+      <discovery>2022-04-11</discovery>
+      <entry>2022-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="add683be-bd76-11ec-a06f-d4c9ef517024">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
