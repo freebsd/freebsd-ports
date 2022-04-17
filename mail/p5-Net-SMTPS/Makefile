@@ -14,8 +14,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-SASL>=2:security/p5-Authen-SASL \
 		p5-IO-Socket-SSL>=1.9:security/p5-IO-Socket-SSL
 
-MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+MAKE_JOBS_UNSAFE=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
