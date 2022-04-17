@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	flipper-active_record
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
