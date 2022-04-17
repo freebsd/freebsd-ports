@@ -9,7 +9,7 @@ INSTALL_REQUIRE = [
     'blinker',
     'click>=7',
     'importlib-metadata; python_version < "3.8"',
-    'installer>=0.3.0,<0.6',
+    'installer>=0.5.1,<0.6',
     'packaging',
     'pdm-pep517>=0.9,<1',
     'pep517>=0.11.0',

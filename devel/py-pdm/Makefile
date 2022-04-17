@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pdm
-PORTVERSION=	1.13.6
+PORTVERSION=	1.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0:devel/py-findpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}installer03>=0.3.0<0.4:devel/py-installer03@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}installer>=0.5.1<0.6:devel/py-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdm-pep517>=0.9<1:devel/py-pdm-pep517@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pep517>=0.11.0:devel/py-pep517@${PY_FLAVOR} \
