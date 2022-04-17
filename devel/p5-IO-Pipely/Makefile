@@ -1,8 +1,7 @@
 # Created by: Mathieu Arnold
 
 PORTNAME=	IO-Pipely
-PORTVERSION=	0.005
-PORTREVISION=	2
+PORTVERSION=	0.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,9 +11,11 @@ COMMENT=	Portably create pipe() or pipe-like handles, one way or another
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 .include <bsd.port.mk>
