@@ -132,6 +132,7 @@ COLLADA_VARS_OFF=	FORCE_IGNORE+=COLLADA
 ASIO_BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
 ASIO_VARS=		FORCE_REQUIRE+=Asio
 ASIO_VARS_OFF=		FORCE_IGNORE+=Asio
+ASIO_BROKEN=		does not build: no member named 'get_io_service' in 'asio::basic_socket_acceptor<asio::ip::tcp, asio::executor>'
 
 # GUI toolkits are only needed for building examples, which are not even installed
 FORCE_IGNORE=	FLTK FOX wxWidgets GtkGl SDL2		# only for examples
