@@ -1,12 +1,12 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	ocamlbuild
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Build tool for OCaml libraries and programs
+COMMENT=	Legacy build tool for OCaml libraries and programs
 
 LICENSE=	GPLv2
 
