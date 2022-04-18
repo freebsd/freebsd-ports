@@ -179,7 +179,6 @@
     SUBDIR += csmash
     SUBDIR += ctris
     SUBDIR += cube
-    SUBDIR += cultivation
     SUBDIR += cursive
     SUBDIR += cutemaze
     SUBDIR += cuyo
