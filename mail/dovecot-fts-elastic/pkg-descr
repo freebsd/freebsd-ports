@@ -1,0 +1,10 @@
+This projects provides a Dovecot full-text search indexing plugin that uses
+ElasticSearch 6 or 7 as a backend.
+
+Dovecot communicates with ElasticSearch using direct HTTP/JSON queries, and
+does not require ElasticSearch client libraries. It supports automatic indexing
+and searching of e-mail. For mailboxes with more than 10000 messages, it uses
+the Elastic Scroll API.
+
+WWW: https://github.com/filiphanes/fts-elastic
+
