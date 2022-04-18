@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
 		libpcre.so:devel/pcre
 
-USES=		gmake perl5 ssl
+USES=		cpe gmake perl5 ssl
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--group=${WWWGRP} \
