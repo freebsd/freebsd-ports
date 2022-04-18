@@ -2,7 +2,7 @@ PORTNAME=	dexed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6-16
 DISTVERSIONSUFFIX=	-g1df9a58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-synth
 
@@ -46,7 +46,7 @@ OPTIONS_DEFAULT=	VST3
 VST3_DESC=		Build the VST3 plugin
 VST3_BUILD_DEPENDS=	vst3sdk>0:audio/vst3sdk
 VST3_CXXFLAGS=		-DJUCE_CUSTOM_VST3_SDK=1 -fPIC
-VST3_PLIST_FILES=	lib/vst/Dexed.so
+VST3_PLIST_FILES=	lib/vst3/Dexed.so
 
 post-patch-VST3-off:
 	@${REINPLACE_CMD} -e 's/FORMATS AU VST3 Standalone/FORMATS AU Standalone/' ${WRKSRC}/Source/CMakeLists.txt
@@ -55,7 +55,7 @@ do-install: # workaround for https://github.com/asb2m10/dexed/issues/342
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/Standalone/Dexed ${STAGEDIR}${PREFIX}/bin
 
 do-install-VST3-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vst
-	${INSTALL_LIB} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/VST3/Dexed.vst3/Contents/*/Dexed.so ${STAGEDIR}${PREFIX}/lib/vst
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vst3
+	${INSTALL_LIB} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/VST3/Dexed.vst3/Contents/*/Dexed.so ${STAGEDIR}${PREFIX}/lib/vst3
 
 .include <bsd.port.mk>
