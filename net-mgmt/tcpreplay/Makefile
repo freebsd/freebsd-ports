@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libopts.so:devel/autogen
 
 USES=		cpe gmake libtool pkgconfig tar:xz
-CPE_VENDOR=	appneta
+CPE_VENDOR=	broadcom
 
 GNU_CONFIGURE=	yes
 # libopts options are required when using autogen
