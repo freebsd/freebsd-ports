@@ -14,10 +14,12 @@ RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt@${PY_FLAVOR} \
 		rubygem-smart_proxy_dynflow>=0.5.0:sysutils/rubygem-smart_proxy_dynflow
 
-USES=		gem python shebangfix
+USES=		cpe gem python shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	theforeman
 
 SHEBANG_FILES=	bin/foreman-node \
 		sbin/upload-salt-reports
