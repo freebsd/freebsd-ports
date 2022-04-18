@@ -1,5 +1,6 @@
 PORTNAME=	jna
 PORTVERSION=	5.7.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@markdixon.name
@@ -40,7 +41,7 @@ ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/:S/powerpc64/ppc64/}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
 USE_GCC=	yes
 .endif
 
