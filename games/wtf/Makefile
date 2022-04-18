@@ -1,7 +1,7 @@
 # Created by: Maxime Henrion <mux@FreeBSD.org>
 
 PORTNAME=	wtf
-PORTVERSION=	20211110
+PORTVERSION=	20220320
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
@@ -10,12 +10,12 @@ COMMENT=	Translates common Internet acronyms
 
 LICENSE=	PD
 
-OPTIONS_DEFINE=	OFFENSIVE
-OPTIONS_DEFAULT=OFFENSIVE
-OFFENSIVE_DESC=	Include offensive acronyms
-
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+OPTIONS_DEFINE=		OFFENSIVE
+OPTIONS_DEFAULT=	OFFENSIVE
+OFFENSIVE_DESC=		Include offensive acronyms
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/misc|${DATADIR}|g' ${WRKSRC}/wtf*
