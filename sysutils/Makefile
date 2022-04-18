@@ -1022,6 +1022,7 @@
     SUBDIR += pxattr
     SUBDIR += pxp-agent
     SUBDIR += py-ansible-base
+    SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-core211
     SUBDIR += py-ansible-lint
