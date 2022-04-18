@@ -17131,3 +17131,4 @@ graphics/py-pyglet150|graphics/py-pyglet|2022-04-16|Has expired: No longer neede
 games/critterding||2022-04-16|Has expired: Abandonware with last release in 2013, newer version bundles depends and requires Qt4
 lang/gcc10-devel||2022-04-17|Has expired: Not serving its purpose any longer due to lack of maintenance
 devel/py-installer03|devel/py-installer|2022-04-17|Remove obsoleted port. Use devel/py-installer instead
+games/cultivation||2022-04-18|Has expired: Abandonware with last release in 2010, non-portable build system
