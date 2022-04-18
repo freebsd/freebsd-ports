@@ -3,7 +3,7 @@
 PORTNAME=	fastnetmon
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -45,7 +45,7 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
 .elif ${ARCH:Mpowerpc64*}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_fast__library.h \
