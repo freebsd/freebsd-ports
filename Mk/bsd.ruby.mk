@@ -71,8 +71,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #
 # RUBY_MODNAME		- Set to the module name (default: ${PORTNAME}).
 #
-# RUBY_RDOC		- Full path of rdoc executable.
-#
 # RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without
 #			  suffix except version.
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
@@ -241,9 +239,6 @@ DEPENDS_ARGS+=		RUBY_VER=${RUBY_VER}
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 
 RUBY_MODNAME?=		${PORTNAME}
-
-# Commands
-RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}

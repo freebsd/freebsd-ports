@@ -1,15 +1,6 @@
 --- extconf.rb.orig	2011-04-06 19:35:39 UTC
 +++ extconf.rb
-@@ -50,7 +50,7 @@
- rdoc: docs/doc/index.html
- 
- docs/doc/index.html: $(RDOC)
--\t@-(cd docs; rdoc .)
-+\t@-(cd docs; ${RUBY_RDOC} .)
- 
- ri:
- \t@-(rdoc -r docs/*rb)
-@@ -67,7 +67,7 @@
+@@ -67,7 +67,7 @@ test: $(DLLIB)
     Dir.foreach('tests') do |x|
        next if /^\./ =~ x || /(_\.rb|~)$/ =~ x
        next if FileTest.directory?(x)
@@ -18,7 +9,7 @@
     end
  ensure
     make.close
-@@ -76,7 +76,7 @@
+@@ -76,7 +76,7 @@ end
  subdirs.each do |subdir|
     STDERR.puts("#{$0}: Entering directory `#{subdir}'")
     Dir.chdir(subdir)

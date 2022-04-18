@@ -33,7 +33,6 @@ SHEBANG_FILES=	examples/basic.rb examples/cats.rb examples/cursor.rb \
 
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
-MAKE_ENV=	RUBY_RDOC=${LOCALBASE}/bin/rdoc
 ALL_TARGET=	all rdoc
 INSTALL_TARGET=	site-install
 
