@@ -2,6 +2,7 @@
 
 PORTNAME=	epic5
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 
@@ -11,17 +12,22 @@ COMMENT=	Enhanced Programmable IRC-II Client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		iconv libarchive ncurses ssl tar:xz
+
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CFLAGS:=	${CFLAGS:C/-O2/-O/g}
 
-OPTIONS_DEFINE=	DOCS PERL RUBY TCL
+OPTIONS_DEFINE=	DOCS PERL PYTHON RUBY TCL
+OPTIONS_DEFAULT=	PYTHON
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
-USES=		iconv libarchive ncurses ssl tar:xz
 
 PERL_USES=	perl5
 PERL_CONFIGURE_WITH=	perl
+PYTHON_USES=	python gettext-runtime
+PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}-config
+PYTHON_CONFIGURE_OFF=	--without-python
 RUBY_USE=	ruby=yes
 RUBY_CONFIGURE_WITH=	ruby
 TCL_USES=	tcl
