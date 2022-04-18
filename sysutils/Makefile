@@ -76,6 +76,7 @@
     SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b2sum
+    SUBDIR += b3sum
     SUBDIR += b43-fwcutter
     SUBDIR += backuppc
     SUBDIR += backuppc-devel
