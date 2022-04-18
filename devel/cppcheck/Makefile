@@ -1,7 +1,7 @@
 # Created by: Gabor Pali <pgj@FreeBSD.org>
 
 PORTNAME=	cppcheck
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 PORTREVISION?=	0	# devel/cppcheck-gui
 CATEGORIES=	devel
 
