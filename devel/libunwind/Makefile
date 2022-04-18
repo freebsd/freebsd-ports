@@ -18,7 +18,6 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 USES=		compiler:c11 cpe libtool pathfix pkgconfig
 
 CFLAGS_powerpc64=	-maltivec
-CFLAGS_powerpc64le=	-maltivec
 CONFIGURE_ARGS=	ac_cv_path_LATEX2MAN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
