@@ -8,7 +8,7 @@ COMMENT=	Diff tool that compares files based on their syntax
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo cpe
+USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wilfred
 
