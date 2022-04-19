@@ -236,6 +236,7 @@ include/rte_stack.h
 include/rte_stack_lf.h
 include/rte_stack_lf_c11.h
 include/rte_stack_lf_generic.h
+include/rte_stack_lf_stubs.h
 include/rte_stack_std.h
 include/rte_string_fns.h
 include/rte_table.h
@@ -1056,5 +1057,4 @@ lib/librte_table.so.20.0
 lib/librte_timer.a
 lib/librte_timer.so
 lib/librte_timer.so.20.0
-libdata/pkgconfig/libdpdk-libs.pc
 libdata/pkgconfig/libdpdk.pc
