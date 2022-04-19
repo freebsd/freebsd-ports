@@ -1,6 +1,6 @@
---- src/mtest/mtest.c.orig	Sat May 29 08:07:06 1999
-+++ src/mtest/mtest.c	Sun Dec 19 15:29:29 1999
-@@ -95,6 +95,7 @@
+--- src/mtest/mtest.c.orig	2022-04-17 00:12:02 UTC
++++ src/mtest/mtest.c
+@@ -79,6 +79,7 @@ void display_body (BODY *body,char *pfx,long i);
  void status (MAILSTREAM *stream);
  void prompt (char *msg,char *txt);
  void smtptest (long debug);
@@ -8,7 +8,7 @@
  
  /* Main program - initialization */
  
-@@ -528,7 +529,7 @@
+@@ -603,7 +604,7 @@ void status (MAILSTREAM *stream)
  void prompt (char *msg,char *txt)
  {
    printf ("%s",msg);
@@ -17,7 +17,7 @@
  }
  
  /* Interfaces to C-client */
-@@ -713,7 +714,7 @@
+@@ -787,7 +788,7 @@ void smtptest (long debug)
    puts (" Msg (end with a line with only a '.'):");
    body->type = TYPETEXT;
    *text = '\0';
@@ -26,7 +26,7 @@
      if (line[0] == '.') {
        if (line[1] == '\0') break;
        else strcat (text,".");
-@@ -744,4 +745,18 @@
+@@ -818,4 +819,18 @@ void smtptest (long debug)
    else puts ("[Can't open connection to any server]");
    mail_free_envelope (&msg);
    mail_free_body (&body);

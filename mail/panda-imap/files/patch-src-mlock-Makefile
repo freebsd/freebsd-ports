@@ -1,6 +1,6 @@
---- src/mlock/Makefile.orig	Wed Nov 27 04:06:19 2002
-+++ src/mlock/Makefile	Wed Nov 27 04:09:37 2002
-@@ -22,8 +22,7 @@
+--- src/mlock/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/mlock/Makefile
+@@ -30,8 +30,7 @@ SHELL = /bin/sh
  
  # Get local definitions from c-client directory
  

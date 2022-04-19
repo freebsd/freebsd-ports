@@ -1,6 +1,6 @@
---- src/tmail/Makefile.orig	2008-06-04 20:18:34.000000000 +0200
-+++ src/tmail/Makefile	2009-01-16 10:30:24.000000000 +0100
-@@ -31,20 +31,12 @@
+--- src/tmail/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/tmail/Makefile
+@@ -31,19 +31,11 @@ SHELL = /bin/sh
  
  # Get local definitions from c-client directory
  
@@ -8,19 +8,18 @@
 -CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
-+LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
++LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client
  
 -tmail: $(CCLIENTLIB) tmail.o tquota.o
 +tmail: tmail.o tquota.o
  	$(CC) $(CFLAGS) -o tmail tmail.o tquota.o $(LDFLAGS)
- 
+-
 -tmail.o: $C/mail.h $C/misc.h $C/osdep.h tquota.h
 -
 -tquota.o: tquota.h
 -
 -$(CCLIENTLIB):
 -	cd $C;make
--
+ 
  clean:
  	rm -f *.o tmail
- 

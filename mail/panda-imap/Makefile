@@ -2,7 +2,7 @@
 
 PORTNAME=	panda-imap
 PORTVERSION=	20130621
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,11 +11,11 @@ COMMENT=	IMAP4rev1/POP2/POP3 mail servers forked from imap-uw
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libc-client4.so.10:mail/panda-cclient
+LIB_DEPENDS=	libc-client.so.2010:mail/panda-cclient
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
-GH_TAGNAME=	7905901
+GH_TAGNAME=	3452f1598a8b4eeb44b38aead1c1598e379b05de
 
 CONFLICTS_INSTALL=	imap-uw # bin/dmail
 
@@ -29,12 +29,11 @@ ALL_TARGET=	bsf
 # This port must have the same SSL settings as mail/cclient, which it depends on
 # To make MBX format the default mailbox format, change the settings of cclient
 
-OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT NETSCAPE_BRAIN_DAMAGE DOCS
+OPTIONS_DEFINE=	DOCS SSL SSL_AND_PLAINTEXT
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=	yes
 
 SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
-NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 
 .include <bsd.port.options.mk>
 
@@ -49,11 +48,7 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd
 .endif
 .endif
 
-# Define this to get somewhat better interoperability with Netscape.
-.if ${PORT_OPTIONS:MNETSCAPE_BRAIN_DAMAGE}
-MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
-.endif
-# See src/imapd/Makefile for more information about these three options.
+# See src/imapd/Makefile for more information about these two options.
 
 .include <bsd.port.pre.mk>
 post-patch:
