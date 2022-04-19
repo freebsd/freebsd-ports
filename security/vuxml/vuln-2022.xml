@@ -1,3 +1,39 @@
+  <vuln vid="b019585a-bfea-11ec-b46c-b42e991fc52e">
+    <topic>zgrep -- arbitrary file write</topic>
+    <affects>
+      <package>
+	<name>gzip</name>
+	<range><lt>1.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat reports:</p>
+	<blockquote cite="https://access.redhat.com/security/cve/cve-2022-1271">
+	  <p>An arbitrary file write vulnerability was found in GNU
+		gzip's zgrep utility. When zgrep is applied on the
+		attacker's chosen file name (for example, a crafted
+		file name), this can overwrite an attacker's content
+		to an arbitrary attacker-selected file. This flaw
+		occurs due to insufficient validation when processing
+		filenames with two or more newlines where selected
+		content and the target file names are embedded in
+		crafted multi-line file names. This flaw allows a
+		remote, low privileged attacker to force zgrep to
+		write arbitrary files on the system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1271</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2073310</url>
+    </references>
+    <dates>
+      <discovery>2022-04-07</discovery>
+      <entry>2022-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a314635-be46-11ec-a06f-d4c9ef517024">
     <topic>Nextcloud Calendar -- SMTP Command Injection</topic>
     <affects>
