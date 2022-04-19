@@ -9,6 +9,8 @@ COMMENT=	Minimalistic GUI library for OpenGL
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_aarch64=	error: the clang compiler does not support '-march=nehalem', see https://github.com/mitsuba-renderer/nanogui/issues/118
+
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 TEST_DEPENDS=	zenity:x11/zenity
 
