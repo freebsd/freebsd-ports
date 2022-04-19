@@ -22,6 +22,7 @@ share/gir-1.0/Vte-%%VERSION%%.gir
 share/glade/catalogs/vte-%%VERSION%%.xml
 share/glade/pixmaps/hicolor/16x16/actions/widget-vte-terminal.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-vte-terminal.png
+share/locale/ab/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/am/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/an/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ang/LC_MESSAGES/vte-%%VERSION%%.mo
