@@ -1,6 +1,5 @@
 PORTNAME=	xpdf
-PORTVERSION=	4.03
-PORTREVISION=	1
+PORTVERSION=	4.04
 PORTEPOCH=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://dl.xpdfreader.com/
@@ -22,7 +21,8 @@ CONFLICTS_INSTALL+=	xpdf3 xpdf4
 
 USES=		compiler:c++11-lang cmake cpe localbase:ldflags
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libfontconfig.so:x11-fonts/fontconfig
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
 MANPREFIX=	${PREFIX}/share/xpdf
