@@ -32,5 +32,5 @@ include/c-client/CFLAGS
 include/c-client/LDFLAGS
 include/c-client/OSCFLAGS
 lib/%%SHLIBNAME%%
-lib/libc-client4.a
-lib/libc-client4.so
+lib/libc-client.a
+lib/libc-client.so
