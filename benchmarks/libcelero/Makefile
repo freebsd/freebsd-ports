@@ -28,4 +28,4 @@ do-test: # Tests terminate with Signal 11, see https://github.com/DigitalInBlue/
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${BUILD_WRKSRC}/celero-test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
