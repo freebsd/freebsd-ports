@@ -1,7 +1,7 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
 
 PORTNAME=	webstorm
-PORTVERSION=	2021.3.3
+PORTVERSION=	2022.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -26,7 +26,7 @@ JAVA_VERSION=	11+
 
 CPE_VENDOR=	jetbrains
 
-SHEBANG_FILES=	bin/printenv.py bin/restart.py \
+SHEBANG_FILES=	bin/restart.py \
 		plugins/spy-js/server/node_modules/node-uuid/benchmark/bench.sh \
 		plugins/spy-js/server/proxy-nix.sh \
 		plugins/spy-js/server/proxy-osx.sh
@@ -35,7 +35,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/WebStorm-213.7172.31
+WRKSRC=		${WRKDIR}/WebStorm-221.5080.193
 
 do-install:
 # Linux/Windows/OS X only so remove them
