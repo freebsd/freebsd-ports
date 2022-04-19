@@ -43,8 +43,8 @@
    x86_64-*-cygwin*)             arch=amd64; system=cygwin;;
  esac
  
-@@ -1051,10 +1059,12 @@ case "$arch,$system" in
-     case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
+@@ -1086,10 +1094,13 @@ case "$arch,$system" in
+   i386,macosx) profiling='true';;
    amd64,linux) profiling='true';;
    amd64,openbsd) profiling='true';;
 +  amd64,dragonfly) profiling='true';;
@@ -52,6 +52,7 @@
    amd64,netbsd) profiling='true';;
    arm,netbsd) profiling='true';;
    amd64,gnu) profiling='true';;
++  arm64,freebsd) profiling='true';;
 +  arm,freebsd) profiling='true';;
    arm,linux*) profiling='true';;
    power,elf) profiling='true';;
