@@ -141,6 +141,9 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/divbyzero2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/divmod.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dlog.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draper.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draperFunny.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draperPretty.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dump.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dump2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpExit.slq
@@ -283,6 +286,7 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piToRat.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/print.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qft.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qftPretty.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quantumBitNotMinus.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quantumControlClassicalAssignment.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quantumIfClassicalUpdate.slq
@@ -371,6 +375,7 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testHadamard.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testLiftedClassical.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testParamSameName.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testPunning.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testQFT.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testQFT2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testQFT3.slq
