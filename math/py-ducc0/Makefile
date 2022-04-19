@@ -1,5 +1,6 @@
 PORTNAME=	ducc0
 DISTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +25,7 @@ MAKE_ENV=	DUCC0_OPTIMIZATION=none
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
 CFLAGS+=	-DNO_WARN_X86_INTRINSICS
 USES+=		compiler:gcc-c++11-lib
 .else
