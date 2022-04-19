@@ -10,6 +10,8 @@ COMMENT=	Software platform for handling a wide class of economic models
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tokenizer.hpp:devel/boost-libs
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libmatio.so:math/matio \
