@@ -513,7 +513,7 @@ CONFIGURE_ARGS+=--with-xpm
 
 .if ${PHP_MODNAME} == "imap"
 .	if ${PORT_OPTIONS:MPANDA}
-LIB_DEPENDS+=	libc-client4.so.10:mail/panda-cclient
+LIB_DEPENDS+=	libc-client.so.2010:mail/panda-cclient
 .	else
 LIB_DEPENDS+=	libc-client4.so.9:mail/cclient
 .	endif

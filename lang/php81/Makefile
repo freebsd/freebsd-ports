@@ -326,7 +326,7 @@ OPTIONS_RADIO_CLIENT=	CCLIENT PANDA
 OPTIONS_DEFAULT=	PANDA
 CCLIENT_DESC=		Uses the original but unmaintained cclient
 PANDA_DESC=		Uses the forked panda-cclient instead of the original cclient
-PANDA_LIB_DEPENDS=	libc-client4.so.10:mail/panda-cclient
+PANDA_LIB_DEPENDS=	libc-client.so.2010:mail/panda-cclient
 PANDA_LIB_DEPENDS_OFF=	libc-client4.so.9:mail/cclient
 
 CONFIGURE_ARGS+=	--with-imap-ssl=${OPENSSLBASE} \
