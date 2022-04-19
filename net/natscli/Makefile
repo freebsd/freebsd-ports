@@ -1,5 +1,5 @@
 PORTNAME=	natscli
-PORTVERSION=	0.0.31
+PORTVERSION=	0.0.32
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -11,8 +11,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-GO_TARGET=	./nats
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
 GH_TUPLE=	AlecAivazis:survey:v2.3.4:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
@@ -46,8 +44,8 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jsm.go:v0.0.31:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
 		nats-io:jwt:442af02fd36a:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:a6b62f61a703:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:c75dfd54b52c:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:79b4374d01d8:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:9c077d0ebaf3:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		prometheus:client_golang:v1.12.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
@@ -58,6 +56,10 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		santhosh-tekuri:jsonschema:v5.0.0:santhosh_tekuri_jsonschema_v5/vendor/github.com/santhosh-tekuri/jsonschema/v5 \
 		tylertreat:hdrhistogram-writer:2e440612a39f:tylertreat_hdrhistogram_writer/vendor/github.com/tylertreat/hdrhistogram-writer \
 		xlab:tablewriter:80b567a11ad5:xlab_tablewriter/vendor/github.com/xlab/tablewriter
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_TARGET=	./nats
+GO_BUILDFLAGS=	-buildvcs=false
 
 PLIST_FILES=	bin/nats \
 		share/doc/${PORTNAME}/README.md
