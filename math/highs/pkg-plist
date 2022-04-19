@@ -81,7 +81,7 @@ include/presolve/Presolve.h
 include/presolve/PresolveAnalysis.h
 include/presolve/PresolveComponent.h
 include/presolve/PresolveUtils.h
-include/qpsolver/solver.hpp
+include/qpsolver/quass.hpp
 include/qpsolver/vector.hpp
 include/simplex/HApp.h
 include/simplex/HEkk.h
