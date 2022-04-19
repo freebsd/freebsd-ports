@@ -1,5 +1,5 @@
 PORTNAME=	kitty
-DISTVERSION=	0.24.2
+DISTVERSION=	0.25.0
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
