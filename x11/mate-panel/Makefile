@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	mate-panel
-PORTVERSION=	1.26.1
-PORTREVISION=	1
+PORTVERSION=	1.26.2
 PORTEPOCH=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
