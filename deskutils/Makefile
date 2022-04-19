@@ -72,6 +72,7 @@
     SUBDIR += gnome-initial-setup
     SUBDIR += gnome-maps
     SUBDIR += gnome-photos
+    SUBDIR += gnome-planner
     SUBDIR += gnome-pomodoro
     SUBDIR += gnome-screenshot
     SUBDIR += gnome-search-tool
