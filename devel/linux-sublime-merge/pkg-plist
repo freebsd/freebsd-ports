@@ -1,26 +1,3 @@
-===>  License SUBLIMEHQ accepted by the user
-===>   linux-sublime-merge-2069 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by linux-sublime-merge-2069 for building
-===>  Extracting for linux-sublime-merge-2069
-=> SHA256 Checksum OK for sublime_merge_build_2069_x64.tar.xz.
-===>  Patching for linux-sublime-merge-2069
-===>  Applying FreeBSD patches for linux-sublime-merge-2069 from /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/files
-===>   linux-sublime-merge-2069 depends on executable: update-desktop-database - found
-===>  Configuring for linux-sublime-merge-2069
-===>  Staging for linux-sublime-merge-2069
-===>   linux-sublime-merge-2069 depends on executable: update-desktop-database - found
-===>   linux-sublime-merge-2069 depends on package: linux-c7-gtk3>0 - found
-===>   Generating temporary packing list
-install  -m 0644 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge/Icon/16x16/sublime-merge.png /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/icons/hicolor/16x16/apps/
-install  -m 0644 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge/Icon/32x32/sublime-merge.png /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/icons/hicolor/32x32/apps/
-install  -m 0644 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge/Icon/48x48/sublime-merge.png /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/icons/hicolor/48x48/apps/
-install  -m 0644 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge/Icon/128x128/sublime-merge.png /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/icons/hicolor/128x128/apps/
-install  -m 0644 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge/Icon/256x256/sublime-merge.png /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/icons/hicolor/256x256/apps/
-install  -m 0644 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge/sublime_merge.desktop /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/applications/
-cd /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime_merge && /bin/sh -c '(/usr/bin/find -Ed $1 $3 | /usr/bin/cpio -dumpl $2 >/dev/null 2>&1) &&  /usr/bin/find -Ed $1 $3 \(   -type d -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 755 "$@"'\'' . {} +  -o -type f -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 0644 "$@"'\'' . {} + \)' COPYTREE_SHARE . /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/share/sublime-merge
-install  -m 555 /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/sublime-merge /usr/home/ericbsd/projects/freebsd/ports/devel/linux-sublime-merge/work/stage/usr/local/bin/sublime_merge
-====> Compressing man pages (compress-man)
-/you/have/to/check/what/makeplist/gives/you
 bin/sublime_merge
 share/applications/sublime_merge.desktop
 share/icons/hicolor/128x128/apps/sublime-merge.png
@@ -90,6 +67,6 @@ share/icons/hicolor/48x48/apps/sublime-merge.png
 %%DATADIR%%/crash_reporter
 %%DATADIR%%/git-credential-sublime
 %%DATADIR%%/ssh-askpass-sublime
-%%DATADIR%%/sublime_merge
+@(,,555) %%DATADIR%%/sublime_merge
 %%DATADIR%%/sublime_merge.desktop
 %%DATADIR%%/sublime_merge.desktop.orig
