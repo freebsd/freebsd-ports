@@ -1,13 +1,10 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	0.22.0
+PORTVERSION=	0.22.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	710d1c5acd9e962260ce.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
