@@ -1632,4 +1632,3 @@ lib/dynare/matlab/writematrixofchar.m
 %%OCTAVE%%lib/dynare/mex/octave/qmc_sequence.mex
 %%OCTAVE%%lib/dynare/mex/octave/sparse_hessian_times_B_kronecker_C.mex
 %%OCTAVE%%lib/dynare/preprocessor/dynare-preprocessor
-
