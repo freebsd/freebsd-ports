@@ -1,7 +1,7 @@
 PORTNAME=	wlrobs
 DISTVERSIONPREFIX=	v
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL:C/.*-//}${EXTRACT_SUFX}?dummy=/
 
@@ -21,7 +21,7 @@ PORTDATA=	lib${PORTNAME}.so
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c11
