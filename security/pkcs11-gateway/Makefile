@@ -10,6 +10,8 @@ COMMENT=	Wrapper Cryptoki library to use Linux PKCS\#11 modules
 
 LICENSE=	LGPL20
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 USES=		linux
 
 OPTIONS_DEFINE=	DOCS
