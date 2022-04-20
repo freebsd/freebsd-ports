@@ -70,7 +70,6 @@ GIF_VARS_OFF=		FORCE_IGNORE+=GIFLIB
 GSTREAMER_USE=		GNOME=glib20 GSTREAMER1=yes
 GSTREAMER_VARS=		FORCE_REQUIRE+=GStreamer
 GSTREAMER_VARS_OFF=	FORCE_IGNORE+=GStreamer
-GSTREAMER_BROKEN=	fails when linking gstreamer plugin, with error cannot find -lgstreamer-1.0
 GTA_LIB_DEPENDS=	libgta.so:devel/libgta
 GTA_VARS=		FORCE_REQUIRE+=GTA
 GTA_VARS_OFF=		FORCE_IGNORE+=GTA
