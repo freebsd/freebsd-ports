@@ -1,4 +1,4 @@
---- build.xml.orig	2021-07-25 16:37:33 UTC
+--- build.xml.orig	2022-01-15 09:03:19 UTC
 +++ build.xml
 @@ -20,6 +20,8 @@
      <property file="build.properties" />
@@ -34,6 +34,15 @@
          </exec>
          <exec executable="cmd" osfamily="dos" dir="${doc.dir}">
              <arg value="/c"/>
+@@ -704,7 +707,7 @@
+     <target name="build" depends="resolver-retrieve-build,build-project" description="Compile Cassandra classes"/>
+     <target name="codecoverage" depends="jacoco-run,jacoco-report" description="Create code coverage report"/>
+ 
+-    <target depends="init,gen-cql3-grammar,generate-cql-html,generate-jflex-java,rat-check"
++    <target depends="init,gen-cql3-grammar,generate-cql-html,generate-jflex-java"
+             name="build-project">
+         <echo message="${ant.project.name}: ${ant.file}"/>
+         <!-- Order matters! -->
 @@ -894,6 +897,88 @@
        </jar>
      </target>
