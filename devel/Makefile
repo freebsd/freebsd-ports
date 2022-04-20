@@ -5627,7 +5627,6 @@
     SUBDIR += ros-console_bridge
     SUBDIR += ros-rosdep
     SUBDIR += ros-rosdistro
-    SUBDIR += ros-rosinstall
     SUBDIR += ros-rosinstall_generator
     SUBDIR += ros-rospkg
     SUBDIR += ros-urdfdom
