@@ -15,6 +15,7 @@ share/icons/hicolor/scalable/status/weather-few-clouds-night-small.svg
 share/icons/hicolor/scalable/status/weather-few-clouds-small.svg
 share/icons/hicolor/scalable/status/weather-fog-large.svg
 share/icons/hicolor/scalable/status/weather-fog-small.svg
+share/icons/hicolor/scalable/status/weather-hourly-symbolic.svg
 share/icons/hicolor/scalable/status/weather-overcast-large.svg
 share/icons/hicolor/scalable/status/weather-overcast-small.svg
 share/icons/hicolor/scalable/status/weather-severe-alert-large.svg
@@ -32,6 +33,7 @@ share/icons/hicolor/scalable/status/weather-tornado-small.svg
 share/icons/hicolor/scalable/status/weather-windy-large.svg
 share/icons/hicolor/scalable/status/weather-windy-small.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Weather-symbolic.svg
+share/locale/ab/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/af/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/an/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Weather.mo
