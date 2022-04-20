@@ -815,7 +815,6 @@ opensearch:*:855:855::0:0:opensearch user:/nonexistent:/usr/sbin/nologin
 # free: 866
 # free: 867
 # free: 868
-# free: 869
 keyd:*:869:869::0:0:Key remapping daemon for evdev:/nonexistent:/usr/sbin/nologin
 buildbot:*:870:870::0:0:Buildbot user:/var/db/buildbot:/usr/sbin/nologin
 archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
