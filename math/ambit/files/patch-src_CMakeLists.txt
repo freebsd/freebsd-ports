@@ -1,0 +1,14 @@
+- python bindinf isn't installed into the right location, see https://github.com/jturney/ambit/issues/54
+
+--- src/CMakeLists.txt.orig	2022-04-20 02:23:19 UTC
++++ src/CMakeLists.txt
+@@ -128,7 +128,9 @@ else()
+     add_library(ambit-lib ALIAS ambit-shared)
+ endif()
+ 
++if (FREEBSD_BUILD_PYTHON_BINDING)
+ add_subdirectory(python)
++endif()
+ 
+ # <<<  Install  >>>
+ 
