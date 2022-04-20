@@ -5,6 +5,7 @@ include/mctc-lib/mctc_env_error.mod
 include/mctc-lib/mctc_env_system.mod
 include/mctc-lib/mctc_env_testing.mod
 include/mctc-lib/mctc_io.mod
+include/mctc-lib/mctc_io_codata2018.mod
 include/mctc-lib/mctc_io_constants.mod
 include/mctc-lib/mctc_io_convert.mod
 include/mctc-lib/mctc_io_filetype.mod
@@ -44,5 +45,5 @@ lib/cmake/mctc-lib/mctc-lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.2.5
+lib/libmctc-lib.so.0.3.0
 libdata/pkgconfig/mctc-lib.pc
