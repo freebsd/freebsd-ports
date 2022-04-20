@@ -18,14 +18,6 @@ PGSQL_DESC=	Enable PostgreSQL PDO support
 
 USE_PHP=	bcmath pdo
 
-.if !empty(PORT_OPTIONS:MMYSQL)
-USE_PHP+=	pdo_mysql
-.endif
-
-.if !empty(PORT_OPTIONS:MPGSQL)
-USE_PHP+=	pdo_pgsql
-.endif
-
-MASTERDIR=	${.CURDIR}/../baculum-common
+MASTERDIR=      ${.CURDIR}/../baculum-common
 
 .include "${MASTERDIR}/Makefile"

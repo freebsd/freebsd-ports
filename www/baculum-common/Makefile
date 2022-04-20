@@ -1,7 +1,7 @@
 # Created by: Sergey Osipov <sipopo@yandex.ru>
 
 PORTNAME=	baculum
-PORTVERSION=	11.0.5
+PORTVERSION=	11.0.6
 CATEGORIES?=	www
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMESUFFIX?=	-common
@@ -29,17 +29,26 @@ OPTIONS_DEFINE?=EXAMPLES
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MMYSQL}
+USE_PHP+=       pdo_mysql
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=       pdo_pgsql
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/htdocs/protected/Common
-	${MKDIR} ${STAGEDIR}${WWWDIR}/htdocs/framework
+	${MKDIR} ${STAGEDIR}${WWWDIR}/htdocs/protected/vendor
 	${MKDIR} ${STAGEDIR}${WWWDIR}/htdocs/themes
 	${MKDIR} ${STAGEDIR}${BCL_CACHEDIR}
 	${MKDIR} ${STAGEDIR}${BCL_LOGDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}/Config
 .if ${PKGNAMESUFFIX} == "-common"
-	${CP} -R ${WRKSRC}/${PORTNAME}/framework ${STAGEDIR}${WWWDIR}/htdocs
 	${CP} -R ${WRKSRC}/${PORTNAME}/protected/Common ${STAGEDIR}${WWWDIR}/htdocs/protected
+	${CP} -R ${WRKSRC}/${PORTNAME}/protected/vendor ${STAGEDIR}${WWWDIR}/htdocs/protected
 	${CP} ${WRKSRC}/${PORTNAME}/protected/application.xml ${STAGEDIR}${WWWDIR}/htdocs/protected
+	${CP} ${WRKSRC}/${PORTNAME}/protected/autoload.php ${STAGEDIR}${WWWDIR}/htdocs/protected
 	${CP} -R ${WRKSRC}/${PORTNAME}/themes ${STAGEDIR}${WWWDIR}/htdocs
 	${RLN} ${STAGEDIR}${BCL_CACHEDIR} ${STAGEDIR}${WWWDIR}/htdocs/protected/runtime
 	${RLN} ${STAGEDIR}${BCL_CACHEDIR} ${STAGEDIR}${WWWDIR}/htdocs/assets
@@ -73,7 +82,7 @@ do-install:
 		'@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${BCL_LOGDIR}' \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} \
-		'@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${BCL_LOGDIR}' \
+		'@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${BCL_CACHEDIR}' \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} \
 		'@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ETCDIR}' \

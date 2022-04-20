@@ -3,6 +3,7 @@
 %%WWWDIR%%/htdocs/protected/Web/Class/BasicWebUserConfig.php
 %%WWWDIR%%/htdocs/protected/Web/Class/DataDependencies.php
 %%WWWDIR%%/htdocs/protected/Web/Class/DataDescription.php
+%%WWWDIR%%/htdocs/protected/Web/Class/DirectiveDoc.php
 %%WWWDIR%%/htdocs/protected/Web/Class/HostConfig.php
 %%WWWDIR%%/htdocs/protected/Web/Class/HostRecord.php
 %%WWWDIR%%/htdocs/protected/Web/Class/JobInfo.php
@@ -24,15 +25,12 @@
 %%WWWDIR%%/htdocs/protected/Web/Config
 %%WWWDIR%%/htdocs/protected/Web/Data/data_deps.json
 %%WWWDIR%%/htdocs/protected/Web/Data/data_desc.json
+%%WWWDIR%%/htdocs/protected/Web/Data/dir_docs.html
 %%WWWDIR%%/htdocs/protected/Web/Init.php
 %%WWWDIR%%/htdocs/protected/Web/JavaScript/bacula-config.js
-%%WWWDIR%%/htdocs/protected/Web/JavaScript/flotr2.js
-%%WWWDIR%%/htdocs/protected/Web/JavaScript/gauge.js
 %%WWWDIR%%/htdocs/protected/Web/JavaScript/graph.js
 %%WWWDIR%%/htdocs/protected/Web/JavaScript/misc.js
-%%WWWDIR%%/htdocs/protected/Web/JavaScript/opentip.js
 %%WWWDIR%%/htdocs/protected/Web/JavaScript/statistics.js
-%%WWWDIR%%/htdocs/protected/Web/JavaScript/tooltip.js
 %%WWWDIR%%/htdocs/protected/Web/Lang/en/messages.mo
 %%WWWDIR%%/htdocs/protected/Web/Lang/en/messages.po
 %%WWWDIR%%/htdocs/protected/Web/Lang/ja/messages.mo
@@ -60,14 +58,16 @@
 %%WWWDIR%%/htdocs/protected/Web/Pages/ClientList.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/ClientView.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/ClientView.php
-%%WWWDIR%%/htdocs/protected/Web/Pages/ConfigureHosts.page
-%%WWWDIR%%/htdocs/protected/Web/Pages/ConfigureHosts.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/Console.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/Console.php
+%%WWWDIR%%/htdocs/protected/Web/Pages/ConsoleView.page
+%%WWWDIR%%/htdocs/protected/Web/Pages/ConsoleView.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/Dashboard.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/Dashboard.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/DeviceView.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/DeviceView.php
+%%WWWDIR%%/htdocs/protected/Web/Pages/DirectorView.page
+%%WWWDIR%%/htdocs/protected/Web/Pages/DirectorView.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/FileSetList.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/FileSetList.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/FileSetView.page
@@ -85,8 +85,12 @@
 %%WWWDIR%%/htdocs/protected/Web/Pages/LoginPage.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/LoginPage.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/Monitor.php
-%%WWWDIR%%/htdocs/protected/Web/Pages/NewJobWizard.page
-%%WWWDIR%%/htdocs/protected/Web/Pages/NewJobWizard.php
+%%WWWDIR%%/htdocs/protected/Web/Pages/NewBackupJobWizard.page
+%%WWWDIR%%/htdocs/protected/Web/Pages/NewBackupJobWizard.php
+%%WWWDIR%%/htdocs/protected/Web/Pages/NewCopyJobWizard.page
+%%WWWDIR%%/htdocs/protected/Web/Pages/NewCopyJobWizard.php
+%%WWWDIR%%/htdocs/protected/Web/Pages/NewMigrateJobWizard.page
+%%WWWDIR%%/htdocs/protected/Web/Pages/NewMigrateJobWizard.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/NewResource.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/NewResource.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/OAuth2Redirect.php
@@ -107,10 +111,6 @@
 %%WWWDIR%%/htdocs/protected/Web/Pages/Security.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/SelectAPIHost.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/SelectAPIHost.php
-%%WWWDIR%%/htdocs/protected/Web/Pages/StatisticsList.page
-%%WWWDIR%%/htdocs/protected/Web/Pages/StatisticsList.php
-%%WWWDIR%%/htdocs/protected/Web/Pages/StatisticsView.page
-%%WWWDIR%%/htdocs/protected/Web/Pages/StatisticsView.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/StorageList.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/StorageList.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/StorageView.page
@@ -122,6 +122,8 @@
 %%WWWDIR%%/htdocs/protected/Web/Pages/WebConfigWizard.page
 %%WWWDIR%%/htdocs/protected/Web/Pages/WebConfigWizard.php
 %%WWWDIR%%/htdocs/protected/Web/Pages/config.xml
+%%WWWDIR%%/htdocs/protected/Web/Portlets/AssignVolumesToPool.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/AssignVolumesToPool.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/BConditional.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/BaculaConfigComponents.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/BaculaConfigComponents.tpl
@@ -148,6 +150,10 @@
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveComboBox.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveComboBox.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveControlTemplate.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveDaysOfMonth.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveDaysOfMonth.tpl
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveDaysOfWeek.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveDaysOfWeek.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveFileSet.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveFileSet.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveInteger.php
@@ -157,6 +163,8 @@
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveListTemplate.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMessages.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMessages.tpl
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMonthsOfYear.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMonthsOfYear.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMultiComboBox.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMultiComboBox.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveMultiTextBox.php
@@ -177,8 +185,16 @@
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTemplate.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTextBox.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTextBox.tpl
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTime.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTime.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTimePeriod.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveTimePeriod.tpl
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveWeeksOfMonth.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveWeeksOfMonth.tpl
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveWeeksOfYear.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/DirectiveWeeksOfYear.tpl
+%%WWWDIR%%/htdocs/protected/Web/Portlets/ErrorMessageBox.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/ErrorMessageBox.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/FileSetBrowser.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/FileSetBrowser.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/FileSetOptionRenderer.php
@@ -215,6 +231,8 @@
 %%WWWDIR%%/htdocs/protected/Web/Portlets/NewScheduleMenu.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/Portlets.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/ResourceListTemplate.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/ResourceMonitor.php
+%%WWWDIR%%/htdocs/protected/Web/Portlets/ResourceMonitor.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/RunJob.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/RunJob.tpl
 %%WWWDIR%%/htdocs/protected/Web/Portlets/StatusSchedule.php
@@ -223,8 +241,5 @@
 %%WWWDIR%%/htdocs/protected/Web/Portlets/UpdateSlots.tpl
 %%WWWDIR%%/htdocs/protected/Web/endpoints.xml
 @dir %%ETCDIR%%/Config/WEB
-@dir %%WWWDIR%%/htdocs/framework
-@dir %%WWWDIR%%/htdocs/protected/Common
-@dir %%WWWDIR%%/htdocs/themes
 @dir /var/cache/baculum
 @dir /var/log/baculum

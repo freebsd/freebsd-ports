@@ -15,6 +15,7 @@
 %%WWWDIR%%/htdocs/protected/API/Class/BaculumAPIPage.php
 %%WWWDIR%%/htdocs/protected/API/Class/BaculumAPIServer.php
 %%WWWDIR%%/htdocs/protected/API/Class/BasicAPIUserConfig.php
+%%WWWDIR%%/htdocs/protected/API/Class/BasicConfig.php
 %%WWWDIR%%/htdocs/protected/API/Class/Bconsole.php
 %%WWWDIR%%/htdocs/protected/API/Class/ChangerCommand.php
 %%WWWDIR%%/htdocs/protected/API/Class/ClientManager.php
@@ -22,6 +23,7 @@
 %%WWWDIR%%/htdocs/protected/API/Class/ComponentActions.php
 %%WWWDIR%%/htdocs/protected/API/Class/ComponentStatusModule.php
 %%WWWDIR%%/htdocs/protected/API/Class/ConsoleOutputPage.php
+%%WWWDIR%%/htdocs/protected/API/Class/ConsoleOutputShowPage.php
 %%WWWDIR%%/htdocs/protected/API/Class/Database.php
 %%WWWDIR%%/htdocs/protected/API/Class/DeviceConfig.php
 %%WWWDIR%%/htdocs/protected/API/Class/FileSetManager.php
@@ -75,6 +77,8 @@
 %%WWWDIR%%/htdocs/protected/API/Pages/API/BVFSRestore.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/BVFSUpdate.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/BVFSVersions.php
+%%WWWDIR%%/htdocs/protected/API/Pages/API/BasicUser.php
+%%WWWDIR%%/htdocs/protected/API/Pages/API/BasicUsers.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/Catalog.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/ChangerDriveLoad.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/ChangerDriveLoaded.php
@@ -94,6 +98,7 @@
 %%WWWDIR%%/htdocs/protected/API/Pages/API/Config.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/ConsoleCommand.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/DbSize.php
+%%WWWDIR%%/htdocs/protected/API/Pages/API/DirectorShow.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/DirectorStatus.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/Directors.php
 %%WWWDIR%%/htdocs/protected/API/Pages/API/FileSet.php
@@ -176,8 +181,5 @@
 %%WWWDIR%%/htdocs/protected/API/Portlets/SudoConfig.tpl
 %%WWWDIR%%/htdocs/protected/API/openapi_baculum.json
 @dir %%ETCDIR%%/Config/API
-@dir %%WWWDIR%%/htdocs/framework
-@dir %%WWWDIR%%/htdocs/protected/Common
-@dir %%WWWDIR%%/htdocs/themes
 @dir /var/cache/baculum
 @dir /var/log/baculum
