@@ -1,25 +1,25 @@
 PORTNAME=	lsp-plugins
-DISTVERSION=	1.1.31
+DISTVERSION=	1.2.0
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/sadko4u/lsp-plugins/releases/download/1.2.0/
 PKGNAMESUFFIX=	-lv2
+DISTFILES=	${PORTNAME}-src-${DISTVERSION}.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of free LV2 plugins
 
 LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	assembly only for these architectures
 BROKEN_i386=	error: inline assembly requires more registers than available
 
-BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
-		lv2>0:audio/lv2
-LIB_DEPENDS=	libsndfile.so:audio/libsndfile
+BUILD_DEPENDS=	lv2>0:audio/lv2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libsndfile.so:audio/libsndfile
 
 USES=		gmake gl gnome iconv:wchar_t pkgconfig xorg # compiler:c11
-USE_GITHUB=	yes
-GH_ACCOUNT=	sadko4u
 USE_GNOME=	cairo
 USE_XORG=	x11
 USE_GL=		gl
@@ -27,18 +27,20 @@ USE_GL=		gl
 BINARY_ALIAS=	g++=${CXX} c++=${CXX}
 MAKE_ARGS=	BUILD_MODULES='lv2' ETC_PATH=${PREFIX}/etc VERSION=${DISTVERSION}
 
-# clang-8, 9, 10 crash: fatal error: error in backend: Cannot select: 0x805afb270: v4f32 = fp_extend 0x805afbc98
-LLVM_VERSION=	11
-CPP=		clang-cpp${LLVM_VERSION}
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=		JACK
-OPTIONS_DEFAULT=	JACK
+MAKE_ARGS=	FEATURES+='lv2'
+
+OPTIONS_DEFINE=		JACK VST2
+OPTIONS_DEFAULT=	JACK VST2
 OPTIONS_SUB=		yes
 
-JACK_MAKE_ARGS=		BUILD_MODULES+='jack'
+JACK_DESC=		Build Jack plugins
+JACK_MAKE_ARGS=		FEATURES+='jack'
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
+
+VST2_DESC=		Build VST2 plugins
+VST2_MAKE_ARGS=		FEATURES+='vst2'
 
 post-patch:
 # FreeBSD does not have exp10(3), use pow(3) instead
@@ -47,10 +49,20 @@ post-patch:
 	@${GREP} -lR "<alloca\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<alloca\.h>|<stdlib.h>|'
 
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} config ${MAKE_ARGS}
+
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/lsp-plugins.lv2/lsp-*.so
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/lib/lv2/lsp-plugins.lv2/lsp-*.so \
+		${STAGEDIR}${PREFIX}/lib/liblsp-r3d-glx-lib-1.0.1.so
 
 post-install-JACK-on:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lsp-* ${STAGEDIR}${PREFIX}/lib/lsp-plugins/lsp-*.so
+	@${STRIP_CMD}
+		${STAGEDIR}${PREFIX}/bin/lsp-* \
+		${STAGEDIR}${PREFIX}/lib/lsp-plugins/liblsp-plugins-jack-1.2.0.so
+
+post-install-VST2-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vst/lsp-plugins/*.so
 
 .include <bsd.port.mk>
