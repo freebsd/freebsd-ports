@@ -1,5 +1,5 @@
 PORTNAME=	libmdf
-PORTVERSION=	1.0.21
+PORTVERSION=	1.0.26
 CATEGORIES=	net finance
 MASTER_SITES=	https://packages.millistream.com/source/
 
@@ -9,9 +9,10 @@ COMMENT=	Millistream Data Feed API library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		libtool pkgconfig ssl
+
 GNU_CONFIGURE=	yes
 
-USES=		libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
