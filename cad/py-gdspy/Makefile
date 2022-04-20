@@ -34,7 +34,7 @@ EXAMPLES_PLIST_FILES=	\
 	${EXAMPLESDIR}/tutils.py \
 	${EXAMPLESDIR}/maketestgds.py
 
-test:
+do-test:
 	cd ${WRKSRC} && \
 	    ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} \
 	    ${LOCALBASE}/bin/pytest
