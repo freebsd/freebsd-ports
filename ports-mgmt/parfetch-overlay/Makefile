@@ -1,5 +1,5 @@
 PORTNAME=	parfetch
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://github.com/t6/parfetch/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-overlay
@@ -10,8 +10,7 @@ COMMENT=	Fetch distfiles in parallel and with pipelining
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libevent.so:devel/libevent
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		compiler:c11 ninja pkgconfig ssl tar:lz
 HAS_CONFIGURE=	yes
