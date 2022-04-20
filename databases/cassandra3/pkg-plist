@@ -30,6 +30,7 @@
 %%DATADIR%%/lib/disruptor-3.0.1.jar
 %%DATADIR%%/lib/ecj-4.4.2.jar
 %%DATADIR%%/lib/futures-2.1.6-py2.py3-none-any.zip
+%%DATADIR%%/lib/geomet-0.1.0.zip
 %%DATADIR%%/lib/guava-18.0.jar
 %%DATADIR%%/lib/HdrHistogram-2.1.9.jar
 %%DATADIR%%/lib/high-scale-lib-1.0.6.jar
