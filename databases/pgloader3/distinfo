@@ -1,4 +1,4 @@
-TIMESTAMP = 1640476747
+TIMESTAMP = 1646149110
 SHA256 (pgloader/alexandria-20200925-git.tgz) = d425c4106dbdf879d900d5979189c6df675323bd13cd0c0f80ea00a4ddb7fbb2
 SIZE (pgloader/alexandria-20200925-git.tgz) = 54730
 SHA256 (pgloader/anaphora-20210124-git.tgz) = 9b44816fc9a76f9293f9e1a714206a75ec94dcca59cd3e3173fa00b06de69d2c
@@ -119,8 +119,8 @@ SHA256 (pgloader/yason-v0.7.8.tgz) = c1193980a3588f163ecfd7810f221fbafa9fb8d1032
 SIZE (pgloader/yason-v0.7.8.tgz) = 27918
 SHA256 (pgloader/zs3-1.3.3.tgz) = d6b5e2958f68957269147a1047e9a4f619d6e18be98e68021e2c8ef208fbccb5
 SIZE (pgloader/zs3-1.3.3.tgz) = 57149
-SHA256 (pgloader/dimitri-pgloader-v3.6.2_GH0.tar.gz) = 33f87df9cb8f9a36f9836cd691ad6dfa72ae76200a12fe01ee89584f3b771ae7
-SIZE (pgloader/dimitri-pgloader-v3.6.2_GH0.tar.gz) = 3717111
+SHA256 (pgloader/dimitri-pgloader-v3.6.3_GH0.tar.gz) = 9dae3ebd29923f62967f734dc60599fafb451e778cd5e5e92f95ec229892bc4c
+SIZE (pgloader/dimitri-pgloader-v3.6.3_GH0.tar.gz) = 3718218
 SHA256 (pgloader/quicklisp-quicklisp-bootstrap-version-2015-01-28_GH0.tar.gz) = 92aef100970de4e64b102be1f08de1c9a9e8f22d6711f6aad217ffb6d16fc82f
 SIZE (pgloader/quicklisp-quicklisp-bootstrap-version-2015-01-28_GH0.tar.gz) = 13942
 SHA256 (pgloader/quicklisp-quicklisp-client-version-2021-02-13_GH0.tar.gz) = b0606eb7da7d98111430342a5cd6c7a3f7e2a86bdc4b0350e095d8dc06a995a2

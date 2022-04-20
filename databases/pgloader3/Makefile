@@ -1,6 +1,5 @@
 PORTNAME=	pgloader
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 MASTER_SITES=	https://beta.quicklisp.org/archive/alexandria/2020-09-25/:alexandria \
