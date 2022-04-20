@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 PATCHLEVEL=	13
 PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 
-USES=		libtool tar:xz
+USES=		gmake libtool makeinfo tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 INSTALL_TARGET=	install-strip
