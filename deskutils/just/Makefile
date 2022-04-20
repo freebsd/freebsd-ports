@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
 		cradle-0.2.1 \
-		ctor-0.1.21 \
+		ctor-0.1.22 \
 		ctrlc-3.2.1 \
 		derivative-2.2.0 \
 		diff-0.1.12 \
@@ -43,19 +42,19 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.119 \
+		libc-0.2.121 \
 		linked-hash-map-0.5.4 \
-		log-0.4.14 \
+		log-0.4.16 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
 		nix-0.23.1 \
 		output_vt100-0.1.3 \
-		pretty_assertions-1.1.0 \
+		pretty_assertions-1.2.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.36 \
-		quote-1.0.15 \
-		redox_syscall-0.2.11 \
+		quote-1.0.17 \
+		redox_syscall-0.2.13 \
 		regex-1.5.5 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
@@ -73,7 +72,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		structopt-derive-0.4.18 \
 		strum-0.24.0 \
 		strum_macros-0.24.0 \
-		syn-1.0.86 \
+		syn-1.0.90 \
 		target-2.0.0 \
 		tempfile-3.3.0 \
 		temptree-0.2.0 \
@@ -86,7 +85,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-xid-0.2.2 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
-		which-4.2.4 \
+		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
