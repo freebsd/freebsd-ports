@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	${PORTNAME}-*
 USES=		compiler:c11 cpe gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT?=	swaywm
-CPE_VENDOR=	swayvm
+CPE_VENDOR=	swaywm
 USE_GNOME=	cairo pango
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME} \
