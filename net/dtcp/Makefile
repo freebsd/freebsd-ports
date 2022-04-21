@@ -1,6 +1,6 @@
 PORTNAME=	dtcp
 PORTVERSION=	20130602
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/
 
