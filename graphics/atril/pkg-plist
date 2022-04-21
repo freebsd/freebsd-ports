@@ -75,7 +75,7 @@ lib/libatrilview.so.3
 lib/libatrilview.so.%%GTK3_VERSION%%
 libdata/pkgconfig/atril-document-1.5.0.pc
 libdata/pkgconfig/atril-view-1.5.0.pc
-libexec/atrild
+%%DBUS%%libexec/atrild
 man/man1/atril-previewer.1.gz
 man/man1/atril-thumbnailer.1.gz
 man/man1/atril.1.gz
@@ -120,8 +120,8 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
-share/caja/extensions/libatril-properties-page.caja-extension
-share/dbus-1/services/org.mate.atril.Daemon.service
+%%CAJA%%share/caja/extensions/libatril-properties-page.caja-extension
+%%DBUS%%share/dbus-1/services/org.mate.atril.Daemon.service
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html
