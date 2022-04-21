@@ -1,5 +1,5 @@
 PORTNAME=	reprise
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	ports-mgmt python
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -8,7 +8,8 @@ COMMENT=	Port testing system
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonslicer>=0:textproc/py-jsonslicer@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonslicer>=0:textproc/py-jsonslicer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}termcolor>=0:devel/py-termcolor@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR}
