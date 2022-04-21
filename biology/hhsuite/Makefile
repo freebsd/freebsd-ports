@@ -1,6 +1,7 @@
 PORTNAME=	hhsuite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	biology science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +26,7 @@ LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/mpi/openmpi/lib -L${LOCALBASE}/mpi/openmpi/lib
 CMAKE_ON=	HAVE_ARM8
 .elif ${ARCH} == amd64 || ${ARCH} == i386
 CMAKE_ON=	HAVE_SSE2
-.elif ${ARCH:Mpowerpc64*}
+.elif ${ARCH} == powerpc64le
 CMAKE_ON=	HAVE_POWER8
 .endif
 
