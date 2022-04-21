@@ -2,7 +2,6 @@ PORTNAME=	kineto
 DISTVERSION=	g20211104
 PORTREVISION=	1
 CATEGORIES=	www
-SH_COMMIT=	857f8c97ebc5
 
 MAINTAINER=	corey@electrickite.org
 COMMENT=	HTTP to Gemini proxy
@@ -16,9 +15,10 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text
 
+SH_COMMIT=	857f8c97ebc5
 # Additional distfiles to fetch from https://git.sr.ht
-_SRHT_TUPLE=	adnano:go-gemini:v0.1.17:vendor/git.sr.ht/~adnano/go-gemini \
-		sircmpwn:${PORTNAME}:${SH_COMMIT}:"" \
+_SRHT_TUPLE=	sircmpwn:${PORTNAME}:${SH_COMMIT}:"" \
+		adnano:go-gemini:v0.1.17:vendor/git.sr.ht/~adnano/go-gemini \
 		sircmpwn:getopt:23622cc906b3:vendor/git.sr.ht/~sircmpwn/getopt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${SH_COMMIT}
