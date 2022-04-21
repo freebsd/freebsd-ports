@@ -1,10 +1,9 @@
 # Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
 
 PORTNAME=	camlp5
-PORTVERSION=	7.07
+PORTVERSION=	7.14
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
-DIST_SUBDIR=	${PKGBASE}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
@@ -14,10 +13,11 @@ LICENSE_NAME=	INRIA permissive license with copyright notice requirements
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:tgz
+USES=		perl5 tar:tgz
 USE_GITHUB=	yes
 GH_TAGNAME=	rel${PORTVERSION:S/.//}
 USE_OCAML=	yes
+USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 ALL_TARGET=	world.opt
@@ -32,7 +32,7 @@ STRICT_DESC=		New syntax tree quotations kit
 OPTIONS_DEFINE=	DOCS
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
-PORTDOCS=	CHANGES DEVEL ICHANGES INSTALL MODE README UPGRADING
+PORTDOCS=	CHANGES DEVEL ICHANGES MODE README.md UPGRADING
 
 STRICT_CONFIGURE_ON=	--strict
 TRANSITIONAL_CONFIGURE_ON=	--transitional
