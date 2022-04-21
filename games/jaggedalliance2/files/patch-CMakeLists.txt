@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-04-23 09:23:24 UTC
+--- CMakeLists.txt.orig	2022-04-14 10:20:57 UTC
 +++ CMakeLists.txt
 @@ -94,6 +94,8 @@ option(WITH_MAEMO "Build with right click mapped to F4
  option(BUILD_LAUNCHER "Build the ja2 launcher application" ON)

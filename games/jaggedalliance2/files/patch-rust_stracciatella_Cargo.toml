@@ -1,16 +1,18 @@
---- rust/stracciatella/Cargo.toml.orig	2021-04-23 09:23:24 UTC
+--- rust/stracciatella/Cargo.toml.orig	2022-04-14 10:20:57 UTC
 +++ rust/stracciatella/Cargo.toml
-@@ -33,22 +33,6 @@ tempfile = "3.0"
+@@ -36,24 +36,6 @@ slug = "0.1.4"
  [target.'cfg(not(target_os = "android"))'.dependencies.simplelog]
- version = "0.6"
+ version = "0.10"
  
 -[target.'cfg(windows)'.dependencies.winapi]
 -# @see stracciatella::fs::free_space
 -version = "0.3"
 -features = ["std", "fileapi"]
 -
+-[target.'cfg(target_os = "android")'.dependencies.send_wrapper]
+-version = "0.5"
 -[target.'cfg(target_os = "android")'.dependencies.android_logger]
--version = "0.9"
+-version = "0.10"
 -[target.'cfg(target_os = "android")'.dependencies.lazy_static]
 -version = "1.4"
 -[target.'cfg(target_os = "android")'.dependencies.jni]
@@ -20,6 +22,6 @@
 -[target.'cfg(target_os = "android")'.dependencies.ndk-sys]
 -git = "https://github.com/selaux/android-ndk-rs"
 -
- [dev-dependencies]
- regex = "1.0"
- 
+ [build-dependencies]
+ serde = "1.0"
+ serde_json = "1.0"
