@@ -1,7 +1,6 @@
 PORTNAME=	kalendar
-DISTVERSION=	1.0.0
-CATEGORIES=	deskutils
-MASTER_SITES=	KDE/stable/${PORTNAME}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Calendar application using Akonadi and QML for online calendars
