@@ -1,6 +1,6 @@
 PORTNAME=	scikit-bio
 PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology education python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,9 +35,6 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}ddtrace # lib/python3.8/site-packages/
 .if ${ARCH} == i386
 CFLAGS+=	-msse2 # workaround for https://github.com/biocore/scikit-bio/issues/1727
 CXXFLAGS+=	-msse2
-.elif ${ARCH} == powerpc64
-CFLAGS+=	-DNO_WARN_X86_INTRINSICS
-USE_GCC=	yes
 .endif
 
 .include <bsd.port.mk>
