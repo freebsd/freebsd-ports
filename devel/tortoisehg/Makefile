@@ -1,12 +1,12 @@
 PORTNAME=	tortoisehg
-DISTVERSION=	6.1
+DISTVERSION=	6.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	GUI for Mercurial VCS
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	${PY_MERCURIAL}
