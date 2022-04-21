@@ -1,24 +1,24 @@
---- Makefile.orig	2022-03-21 09:11:43 UTC
+--- Makefile.orig	2022-04-21 05:54:57 UTC
 +++ Makefile
-@@ -314,7 +314,7 @@ help:
+@@ -271,7 +271,7 @@ build: ${SOURCE_DIR}/.ruby-bundle ${GITALY_EXECUTABLES
+ gitaly:            GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
+ praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
+ gitaly-git2go-v14: GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
+-gitaly-git2go-v14: libgit2
++#gitaly-git2go-v14: libgit2
  
- .PHONY: build
- ## Build Go binaries and install required Ruby Gems.
--build: ${SOURCE_DIR}/.ruby-bundle libgit2
-+build: ${SOURCE_DIR}/.ruby-bundle
- 	@ # We used to install Gitaly binaries into the source directory by default when executing
- 	@ # "make" or "make all", which has been changed in v14.5 to only build binaries into
- 	@ # `_build/bin`. In order to quickly fail in case any source install still refers to these
-@@ -345,7 +345,7 @@ $(call find_commands):
+ .PHONY: ${GITALY_EXECUTABLES}
+ ${GITALY_EXECUTABLES}:
+@@ -283,7 +283,7 @@ ${GITALY_EXECUTABLES}:
  	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
  	@ # GNU build-id from the empty string and causing guaranteed collisions.
- 	GO_BUILD_ID=$$( go tool buildid $(addprefix ${BUILD_DIR}/bin/, $@) || openssl rand -hex 32 ) && \
+ 	${Q}GO_BUILD_ID=$$( go tool buildid $(addprefix ${BUILD_DIR}/bin/, $@) || openssl rand -hex 32 ) && \
 -	GNU_BUILD_ID=$$( echo $$GO_BUILD_ID | sha1sum | cut -d' ' -f1 ) && \
 +	GNU_BUILD_ID=$$( echo $$GO_BUILD_ID | sha1 | cut -d' ' -f1 ) && \
  	go install -ldflags '${GO_LDFLAGS}'" -B 0x$$GNU_BUILD_ID" -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $@)
- endif
  
-@@ -559,7 +559,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+ .PHONY: install
+@@ -482,7 +482,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile

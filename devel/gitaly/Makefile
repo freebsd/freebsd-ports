@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.9.3
-PORTREVISION=	1
+DISTVERSION=	14.10.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,7 @@ MY_DEPENDS=	git>=2.35.1:devel/git \
 		rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport61>=6.1.4.6<6.1.5:devel/rubygem-activesupport61 \
+		rubygem-activesupport61>=6.1.4.7<6.1.5:devel/rubygem-activesupport61 \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.2<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
@@ -49,7 +49,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	b17cdf96c4a7ec7a81b44fd5ffdb964c596d7fcd
+GL_COMMIT=	1478932866d068186c3a8af85fa11e5a97f5558e
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -115,7 +115,7 @@ GH_TUPLE=	\
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:4dd72447c267:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
+		golang:time:0e9765cccd65:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.23.0:google_go_cloud/vendor/gocloud.dev \
