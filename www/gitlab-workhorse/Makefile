@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	14.9.3
+PORTVERSION=	14.10.0
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -25,12 +25,12 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	ec11aba56f1765125e699155cb39387aaa4d0ca3
+GL_COMMIT=	88da5554d9626377fe7868e956a47a0498e04eb5
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 105dd
+# 106dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -49,6 +49,7 @@ GH_TUPLE=	\
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		aws:aws-sdk-go:v1.38.35:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		beevik:ntp:v0.3.0:beevik_ntp/vendor/github.com/beevik/ntp \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-ecosystem:opencensus-go-exporter-stackdriver:v0.13.8:census_ecosystem_opencensus_go_exporter_stackdriver/vendor/contrib.go.opencensus.io/exporter/stackdriver \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -68,7 +69,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v4.0.0:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:e7c1f5e7dbb8:golang_image/vendor/golang.org/x/image \
@@ -78,7 +79,7 @@ GH_TUPLE=	\
 		golang:oauth2:81ed05c6b58c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:0981d6026fa6:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:4dd72447c267:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
@@ -133,7 +134,7 @@ GH_TUPLE=	\
 		uber:jaeger-client-go:v2.27.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
-GL_TUPLE=	gitlab-org:gitaly:df7dadcc3f74276a7176234d4b1475299f46c05c:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
+GL_TUPLE=	gitlab-org:gitaly:51da8bc17059e4ccd39873e4f3def935341472b8:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:golang-archive-zip:84007c99e03b62ee4dc62a94048d6e59552299d7:gitlab_org_golang_archive_zip/vendor/gitlab.com/gitlab-org/golang-archive-zip \
 		gitlab-org:labkit:9205b46eea68f47a36cefa783a306476f0b2dbfd:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
