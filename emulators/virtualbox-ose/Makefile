@@ -1,8 +1,7 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.32
-PORTREVISION=	3
+PORTVERSION=	6.1.34
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
