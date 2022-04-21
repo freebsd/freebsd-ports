@@ -15,6 +15,7 @@ include/KF5/KConfigWidgets/KLanguageName
 include/KF5/KConfigWidgets/KPasteTextAction
 include/KF5/KConfigWidgets/KRecentFilesAction
 include/KF5/KConfigWidgets/KStandardAction
+include/KF5/KConfigWidgets/KStatefulBrush
 include/KF5/KConfigWidgets/KTipDialog
 include/KF5/KConfigWidgets/KViewStateMaintainer
 include/KF5/KConfigWidgets/kcmodule.h
@@ -35,6 +36,7 @@ include/KF5/KConfigWidgets/klanguagename.h
 include/KF5/KConfigWidgets/kpastetextaction.h
 include/KF5/KConfigWidgets/krecentfilesaction.h
 include/KF5/KConfigWidgets/kstandardaction.h
+include/KF5/KConfigWidgets/kstatefulbrush.h
 include/KF5/KConfigWidgets/ktip.h
 include/KF5/KConfigWidgets/ktipdialog.h
 include/KF5/KConfigWidgets/kviewstatemaintainer.h

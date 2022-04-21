@@ -58,6 +58,7 @@ share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEInstallDirs5.cmake
 share/ECM/kde-modules/KDEInstallDirs6.cmake
 share/ECM/kde-modules/KDEInstallDirsCommon.cmake
+share/ECM/kde-modules/KDEMetaInfoPlatformCheck.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/KDESetupPrefixScript.cmake
 share/ECM/kde-modules/appstreamtest.cmake
@@ -105,6 +106,7 @@ share/ECM/modules/ECMQtDeclareLoggingCategory.cmake
 share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in
 share/ECM/modules/ECMQtDeclareLoggingCategory.h.in
 share/ECM/modules/ECMQueryQmake.cmake
+share/ECM/modules/ECMQueryQt.cmake
 share/ECM/modules/ECMSetupQtPluginMacroNames.cmake
 share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMSourceVersionControl.cmake

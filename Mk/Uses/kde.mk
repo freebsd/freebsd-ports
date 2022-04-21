@@ -79,7 +79,7 @@ KDE_PLASMA_VERSION?=		5.24.4
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.92.0
+KDE_FRAMEWORKS_VERSION?=	5.93.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -434,7 +434,7 @@ kde-kirigami2_PORT=		x11-toolkits/kf5-kirigami2
 kde-kirigami2_PATH=		${QT_QMLDIR}/org/kde/kirigami.2/libKirigamiPlugin.so
 
 kde-kquickcharts_PORT=		graphics/kf5-kquickcharts
-kde-kquickcharts_PATH=		${QT_QMLDIR}/org/kde/quickcharts/controls/libchartscontrolsplugin.so
+kde-kquickcharts_PATH=		${QT_QMLDIR}/org/kde/quickcharts/libQuickCharts.so
 
 kde-kross_PORT=			lang/kf5-kross
 kde-kross_LIB=			libKF5KrossCore.so
