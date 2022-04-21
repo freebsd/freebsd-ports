@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	13.24.0
-PORTREVISION=	1
+PORTVERSION=	13.25.1
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		gmake go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	3e853cfd74643495d4facab6c8b2fc75becdb5fe
+GL_COMMIT=	47a45afc661cd86c878e113602a78c3e74739f78
 
 USERS=		git
 GROUPS=		git
@@ -25,7 +25,7 @@ GROUPS=		git
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 73dd
+# 74dd
 GH_TUPLE=	\
 		DataDog:datadog-go:v4.4.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.32.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -33,6 +33,7 @@ GH_TUPLE=	\
 		Microsoft:go-winio:v0.5.0:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		aws:aws-sdk-go:v1.38.35:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		beevik:ntp:v0.3.0:beevik_ntp/vendor/github.com/beevik/ntp \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-ecosystem:opencensus-go-exporter-stackdriver:v0.13.8:census_ecosystem_opencensus_go_exporter_stackdriver/vendor/contrib.go.opencensus.io/exporter/stackdriver \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -96,7 +97,7 @@ GH_TUPLE=	\
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
 GL_TUPLE=	\
-		gitlab-org:gitaly:2e398afa0490ccdf5a82e1a7c7d824ae491eba16:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
+		gitlab-org:gitaly:51da8bc17059e4ccd39873e4f3def935341472b8:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:golang-crypto:5be136049a80e23e6ae1498c1303b93fb5445cf0:gitlab_org_golang_crypto/vendor/golang.org/x/crypto \
 		gitlab-org:labkit:3c92d42f21ffe0f8b022626411f76fa89087464d:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
@@ -155,3 +156,4 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
+
