@@ -1,6 +1,6 @@
---- remoting/host/host_attributes.cc.orig	2022-02-28 16:54:41 UTC
+--- remoting/host/host_attributes.cc.orig	2022-04-21 18:48:31 UTC
 +++ remoting/host/host_attributes.cc
-@@ -122,7 +122,7 @@ std::string GetHostAttributes() {
+@@ -121,7 +121,7 @@ std::string GetHostAttributes() {
        media::InitializeMediaFoundation()) {
      result.push_back("HWEncoder");
    }

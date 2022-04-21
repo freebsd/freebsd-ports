@@ -1,4 +1,4 @@
---- remoting/host/host_main.cc.orig	2022-03-25 21:59:56 UTC
+--- remoting/host/host_main.cc.orig	2022-04-21 18:48:31 UTC
 +++ remoting/host/host_main.cc
 @@ -50,7 +50,7 @@ int FileChooserMain();
  int RdpDesktopSessionMain();
@@ -18,7 +18,7 @@
      "  --audio-pipe-name=<pipe> - Sets the pipe name to capture audio on "
      "Linux.\n"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -154,7 +154,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -155,7 +155,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeUrlForwarderConfigurator) {
      main_routine = &UrlForwarderConfiguratorMain;
  #endif  // BUILDFLAG(IS_WIN)

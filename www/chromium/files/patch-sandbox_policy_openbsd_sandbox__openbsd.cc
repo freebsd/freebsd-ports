@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2022-03-25 21:59:56 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
 @@ -0,0 +1,407 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -133,7 +133,7 @@
 +    auto* display = connection->GetXlibDisplay().display();
 +
 +    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, base::size(buf));
++    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
 +  }
 +
 +  if (process_type.empty()) {

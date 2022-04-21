@@ -1,6 +1,6 @@
---- base/debug/debugger_posix.cc.orig	2022-02-28 16:54:41 UTC
+--- base/debug/debugger_posix.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/debug/debugger_posix.cc
-@@ -36,6 +36,10 @@
+@@ -35,6 +35,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -96,32 +100,51 @@ bool BeingDebugged() {
+@@ -95,32 +99,51 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.
@@ -24,7 +24,7 @@
 +#endif
  
  #if BUILDFLAG(IS_OPENBSD)
-   if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
+   if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
      return -1;
  
    mib[5] = (info_size / sizeof(struct kinfo_proc));
@@ -34,11 +34,11 @@
 +    return being_debugged;
 +  }
 +
-+  int sysctl_result = sysctl(mib, base::size(mib), info, &info_size, NULL, 0);
++  int sysctl_result = sysctl(mib, std::size(mib), info, &info_size, NULL, 0);
  #endif
  
 +#if !BUILDFLAG(IS_OPENBSD)
-   int sysctl_result = sysctl(mib, base::size(mib), &info, &info_size, NULL, 0);
+   int sysctl_result = sysctl(mib, std::size(mib), &info, &info_size, NULL, 0);
 +#endif
    DCHECK_EQ(sysctl_result, 0);
    if (sysctl_result != 0) {

@@ -1,6 +1,6 @@
---- weblayer/browser/content_browser_client_impl.cc.orig	2022-03-25 21:59:56 UTC
+--- weblayer/browser/content_browser_client_impl.cc.orig	2022-04-21 18:48:31 UTC
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -153,7 +153,7 @@
+@@ -154,7 +154,7 @@
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \
@@ -9,7 +9,7 @@
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -1000,7 +1000,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -1001,7 +1001,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

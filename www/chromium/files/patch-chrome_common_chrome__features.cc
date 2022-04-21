@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/common/chrome_features.cc.orig	2022-04-21 18:48:31 UTC
 +++ chrome/common/chrome_features.cc
-@@ -105,7 +105,7 @@ const base::Feature kAsyncDns {
+@@ -110,7 +110,7 @@ const base::Feature kAsyncDns {
  };
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Enables or disables the Autofill survey triggered by opening a prompt to
  // save address info.
  const base::Feature kAutofillAddressSurvey{"AutofillAddressSurvey",
-@@ -120,7 +120,7 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
+@@ -125,7 +125,7 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
                                              base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
@@ -18,16 +18,7 @@
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -142,7 +142,7 @@ const base::Feature kBorealis{"Borealis", base::FEATUR
- const base::Feature kChangePictureVideoMode{"ChangePictureVideoMode",
-                                             base::FEATURE_ENABLED_BY_DEFAULT};
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
- // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
- // Apps will not launch and will be marked in the UI as deprecated.
-@@ -298,7 +298,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
+@@ -295,7 +295,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
  // Enables or disables Desktop PWAs to be auto-started on OS login.
  const base::Feature kDesktopPWAsRunOnOsLogin {
    "DesktopPWAsRunOnOsLogin",
@@ -36,7 +27,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -320,7 +320,7 @@ const base::Feature kDesktopPWAsWebBundles{"DesktopPWA
+@@ -317,7 +317,7 @@ const base::Feature kDesktopPWAsWebBundles{"DesktopPWA
                                             base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -45,7 +36,7 @@
  // Serves web app settings at chrome://app-settings/<app-id>.
  const base::Feature kDesktopPWAsWebAppSettingsPage{
      "DesktopPWAsWebAppSettingsPage", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -330,7 +330,7 @@ const base::Feature kDesktopPWAsWebAppSettingsPage{
+@@ -332,7 +332,7 @@ const base::Feature kChromeAppsDeprecation{"ChromeApps
  const base::Feature kDnsOverHttps {
    "DnsOverHttps",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -54,7 +45,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -352,7 +352,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+@@ -348,7 +348,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
  const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
    &kDnsOverHttps, "ShowUi",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -63,17 +54,8 @@
        true
  #else
        false
-@@ -624,7 +624,7 @@ const base::Feature kIncognitoNtpRevamp{"IncognitoNtpR
-                                         base::FEATURE_DISABLED_BY_DEFAULT};
- 
- #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- // When enabled, removes any theme or background customization done by the user
- // on the Incognito UI.
- const base::Feature kIncognitoBrandConsistencyForDesktop{
-@@ -658,7 +658,7 @@ const base::Feature kLinkCapturingUiUpdate{"LinkCaptur
-                                            base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -639,7 +639,7 @@ const base::Feature kKernelnextVMs{"KernelnextVMs",
+                                    base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
 -#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
@@ -81,7 +63,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  const base::Feature kLinuxLowMemoryMonitor{"LinuxLowMemoryMonitor",
                                             base::FEATURE_DISABLED_BY_DEFAULT};
-@@ -671,7 +671,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -652,7 +652,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

@@ -1,6 +1,6 @@
---- content/app/content_main.cc.orig	2022-03-25 21:59:56 UTC
+--- content/app/content_main.cc.orig	2022-04-21 18:48:31 UTC
 +++ content/app/content_main.cc
-@@ -254,7 +254,7 @@ RunContentProcess(ContentMainParams params,
+@@ -260,7 +260,7 @@ RunContentProcess(ContentMainParams params,
      base::allocator::InstallDanglingRawPtrChecks();
      base::EnableTerminationOnOutOfMemory();
  

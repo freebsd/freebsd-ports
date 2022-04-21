@@ -1,24 +1,6 @@
---- gpu/vulkan/generate_bindings.py.orig	2022-02-28 16:54:41 UTC
+--- gpu/vulkan/generate_bindings.py.orig	2022-04-21 18:48:31 UTC
 +++ gpu/vulkan/generate_bindings.py
-@@ -185,7 +185,7 @@ VULKAN_DEVICE_FUNCTIONS = [
-   },
-   {
-     'ifdef':
--    'BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)',
-+    'BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)',
-     'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
-     'functions': [
-       'vkGetSemaphoreFdKHR',
-@@ -202,7 +202,7 @@ VULKAN_DEVICE_FUNCTIONS = [
-   },
-   {
-     'ifdef':
--    'BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)',
-+    'BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)',
-     'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
-     'functions': [
-       'vkGetMemoryFdKHR',
-@@ -253,7 +253,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -259,7 +259,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
