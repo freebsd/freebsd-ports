@@ -58,7 +58,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/liblsp-r3d-glx-lib-1.0.1.so
 
 post-install-JACK-on:
-	@${STRIP_CMD}
+	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/lsp-* \
 		${STAGEDIR}${PREFIX}/lib/lsp-plugins/liblsp-plugins-jack-1.2.0.so
 
