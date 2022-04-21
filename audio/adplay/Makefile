@@ -2,8 +2,8 @@
 
 PORTNAME=	adplay
 PORTVERSION=	1.8.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	adplug:database:${DBVERSION}:database/database-${DBVERSION}
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
 
-PLIST_FILES=	${DATADIR}/adplug.db \
+PLIST_FILES=	${DATADIR}/adplug/adplug.db \
 		bin/adplay \
 		man/man1/adplay.1.gz
 
@@ -47,8 +47,8 @@ post-patch:
 	@${RM} ${WRKSRC}/src/getopt.h
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/adplug
 	${INSTALL_DATA} ${WRKSRC}/database-${DBVERSION}/${DBFILE} \
-		${STAGEDIR}${DATADIR}
+		${STAGEDIR}${DATADIR}/adplug
 
 .include <bsd.port.mk>
