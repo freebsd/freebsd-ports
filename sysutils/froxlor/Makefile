@@ -5,7 +5,7 @@ DISTVERSION=	0.10.33
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://files.froxlor.org/releases/
 
-MAINTAINER=	coco@executive-computing.de
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	PHP-based ISP Server Management Panel
 
 LICENSE=	GPLv2
