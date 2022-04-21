@@ -1,4 +1,4 @@
---- base/system/sys_info_freebsd.cc.orig	2022-03-25 21:59:56 UTC
+--- base/system/sys_info_freebsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/system/sys_info_freebsd.cc
 @@ -9,30 +9,106 @@
  #include <sys/sysctl.h>
@@ -13,7 +13,7 @@
 +  int mib[] = {CTL_HW, HW_NCPU};
 +  int ncpu;
 +  size_t size = sizeof(ncpu);
-+  if (sysctl(mib, base::size(mib), &ncpu, &size, NULL, 0) < 0) {
++  if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
 +    NOTREACHED();
 +    return 1;
 +  }
@@ -76,9 +76,9 @@
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = { CTL_HW, HW_MODEL };
 +  char name[256];
-+  size_t size = base::size(name);
++  size_t size = std::size(name);
 +
-+  if (sysctl(mib, base::size(mib), &name, &size, NULL, 0) == 0) {
++  if (sysctl(mib, std::size(mib), &name, &size, NULL, 0) == 0) {
 +    return name;
 +  }
 +

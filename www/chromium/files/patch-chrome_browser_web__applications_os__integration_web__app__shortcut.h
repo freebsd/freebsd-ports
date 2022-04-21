@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2022-04-21 18:48:31 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.h
 @@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_family.h"
@@ -16,9 +16,9 @@
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    base::ScopedTempDir desktop;
+   base::ScopedTempDir startup;
  #endif
- };
-@@ -89,7 +89,7 @@ struct ShortcutInfo {
+@@ -90,7 +90,7 @@ struct ShortcutInfo {
    std::set<std::string> file_handler_extensions;
    std::set<std::string> file_handler_mime_types;
    std::set<std::string> protocol_handlers;

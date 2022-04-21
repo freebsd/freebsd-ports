@@ -1,4 +1,4 @@
---- media/gpu/buffer_validation.cc.orig	2022-03-16 08:38:25 UTC
+--- media/gpu/buffer_validation.cc.orig	2022-04-21 18:48:31 UTC
 +++ media/gpu/buffer_validation.cc
 @@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -18,8 +18,8 @@
    if (fd < 0) {
      VLOGF(1) << "Invalid file descriptor";
      return false;
-@@ -66,7 +66,7 @@ bool VerifyGpuMemoryBufferHandle(
-              << coded_size.ToString();
+@@ -73,7 +73,7 @@ bool VerifyGpuMemoryBufferHandle(
+     VLOGF(1) << "Unsupported: " << pixel_format;
      return false;
    }
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

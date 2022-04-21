@@ -1,20 +1,20 @@
---- v8/src/base/platform/platform-posix.cc.orig	2022-03-25 21:59:56 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2022-04-21 18:48:31 UTC
 +++ v8/src/base/platform/platform-posix.cc
-@@ -65,7 +65,7 @@
+@@ -68,7 +68,7 @@
  #include <sys/syscall.h>
  #endif
  
--#if V8_OS_FREEBSD || V8_OS_MACOSX || V8_OS_OPENBSD || V8_OS_SOLARIS
-+#if V8_OS_FREEBSD || V8_OS_MACOSX || V8_OS_BSD || V8_OS_SOLARIS
+-#if V8_OS_FREEBSD || V8_OS_DARWIN || V8_OS_OPENBSD || V8_OS_SOLARIS
++#if V8_OS_FREEBSD || V8_OS_DARWIN || V8_OS_BSD || V8_OS_SOLARIS
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -291,8 +291,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -294,8 +294,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
 +#if V8_OS_OPENBSD
-+// Allow OpenBSD's mmap to select a random address on OpenBSD
++// Allow OpenBSD's mmap to select a random address on OpenBSD 
  // static
  void* OS::GetRandomMmapAddr() {
 +  return nullptr;
@@ -25,7 +25,7 @@
    uintptr_t raw_addr;
    {
      MutexGuard guard(rng_mutex.Pointer());
-@@ -383,6 +390,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -386,6 +393,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -33,19 +33,19 @@
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -598,7 +606,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -612,7 +620,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  
  // static
  bool OS::HasLazyCommits() {
--#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX
-+#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX || V8_OS_BSD
+-#if V8_OS_AIX || V8_OS_LINUX || V8_OS_DARWIN
++#if V8_OS_AIX || V8_OS_LINUX || V8_OS_DARWIN || V8_OS_BSD
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1217,7 +1225,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1231,7 +1239,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
- #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && \
+ #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \
 -    !defined(V8_OS_SOLARIS)
 +    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
  

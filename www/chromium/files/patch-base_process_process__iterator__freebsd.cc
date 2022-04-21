@@ -1,6 +1,6 @@
---- base/process/process_iterator_freebsd.cc.orig	2021-09-24 04:25:55 UTC
+--- base/process/process_iterator_freebsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/process/process_iterator_freebsd.cc
-@@ -21,7 +21,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -20,7 +20,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
      : index_of_kinfo_proc_(),
        filter_(filter) {
  
@@ -9,25 +9,25 @@
  
    bool done = false;
    int try_num = 1;
-@@ -40,7 +40,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -39,7 +39,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
        num_of_kinfo_proc += 16;
        kinfo_procs_.resize(num_of_kinfo_proc);
        len = num_of_kinfo_proc * sizeof(struct kinfo_proc);
--      if (sysctl(mib, base::size(mib), &kinfo_procs_[0], &len, NULL, 0) < 0) {
-+      if (sysctl(mib, base::size(mib), kinfo_procs_.data(), &len, NULL, 0) < 0) {
+-      if (sysctl(mib, std::size(mib), &kinfo_procs_[0], &len, NULL, 0) < 0) {
++      if (sysctl(mib, std::size(mib), kinfo_procs_.data(), &len, NULL, 0) < 0) {
          // If we get a mem error, it just means we need a bigger buffer, so
          // loop around again.  Anything else is a real error and give up.
          if (errno != ENOMEM) {
-@@ -50,7 +50,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -49,7 +49,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
          }
        } else {
          // Got the list, just make sure we're sized exactly right
 -        size_t num_of_kinfo_proc = len / sizeof(struct kinfo_proc);
-+        num_of_kinfo_proc = len / sizeof(struct kinfo_proc);
++	num_of_kinfo_proc = len / sizeof(struct kinfo_proc);
          kinfo_procs_.resize(num_of_kinfo_proc);
          done = true;
        }
-@@ -72,18 +72,13 @@ bool ProcessIterator::CheckForNextProcess() {
+@@ -71,18 +71,13 @@ bool ProcessIterator::CheckForNextProcess() {
    for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++index_of_kinfo_proc_) {
      size_t length;
      struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];
@@ -38,7 +38,7 @@
        continue;
  
 -    length = 0;
--    if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0) {
+-    if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0) {
 -      LOG(ERROR) << "failed to figure out the buffer size for a command line";
 -      continue;
 -    }
@@ -47,5 +47,5 @@
 +    data.resize(ARG_MAX);
 +    length = ARG_MAX;
  
-     if (sysctl(mib, base::size(mib), &data[0], &length, NULL, 0) < 0) {
+     if (sysctl(mib, std::size(mib), &data[0], &length, NULL, 0) < 0) {
        LOG(ERROR) << "failed to fetch a commandline";

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2022-03-25 21:59:56 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2022-04-21 18:48:31 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -224,7 +224,7 @@ DEFINE_VARIATION_PARAM(kIPHDefaultSiteViewFeature, "IP
+@@ -223,7 +223,7 @@ DEFINE_VARIATION_PARAM(kIPHDefaultSiteViewFeature, "IP
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
-@@ -254,7 +254,8 @@ DEFINE_VARIATION_PARAM(kIPHDesktopSharedHighlightingFe
+@@ -253,7 +253,8 @@ DEFINE_VARIATION_PARAM(kIPHDesktopSharedHighlightingFe
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@
  DEFINE_VARIATION_PARAM(kIPHAutofillVirtualCardSuggestionFeature,
                         "IPH_AutofillVirtualCardSuggestion");
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
-@@ -359,7 +360,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -358,7 +359,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
          VARIATION_ENTRY(kIPHDefaultSiteViewFeature),
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -28,7 +28,7 @@
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),
          VARIATION_ENTRY(kIPHFocusModeFeature),
          VARIATION_ENTRY(kIPHGlobalMediaControls),
-@@ -382,7 +383,8 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -381,7 +382,8 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

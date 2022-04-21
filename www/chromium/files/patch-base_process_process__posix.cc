@@ -1,4 +1,4 @@
---- base/process/process_posix.cc.orig	2022-03-25 21:59:56 UTC
+--- base/process/process_posix.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/process/process_posix.cc
 @@ -23,10 +23,15 @@
  #include "build/build_config.h"
@@ -58,14 +58,14 @@
 +  Time ct = Time();
 +
 +#if !defined(OS_BSD)
-+  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
++  if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
 +    goto out;
 +
 +  mib[5] = (info_size / sizeof(struct kinfo_proc));
 +  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL)
 +    goto out;
 +
-+  if (sysctl(mib, base::size(mib), info, &info_size, NULL, 0) < 0)
++  if (sysctl(mib, std::size(mib), info, &info_size, NULL, 0) < 0)
 +    goto out;
 +
 +  ct = Time::FromTimeT(info->p_ustart_sec);

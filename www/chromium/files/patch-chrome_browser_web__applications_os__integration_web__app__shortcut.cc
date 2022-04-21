@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2022-04-21 18:48:31 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 @@ -43,7 +43,7 @@ namespace {
  
@@ -27,7 +27,7 @@
      bool success =
          scoped_override->desktop.CreateUniqueTempDirUnderPath(base_path);
      DCHECK(success);
-@@ -195,7 +195,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
+@@ -197,7 +197,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
  #elif BUILDFLAG(IS_MAC)
      bool success = scoped_override->chrome_apps_folder.CreateUniqueTempDir();
      DCHECK(success);
@@ -35,4 +35,4 @@
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      bool success = scoped_override->desktop.CreateUniqueTempDir();
      DCHECK(success);
- #endif
+     success = scoped_override->startup.CreateUniqueTempDir();

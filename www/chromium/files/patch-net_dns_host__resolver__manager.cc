@@ -1,6 +1,6 @@
---- net/dns/host_resolver_manager.cc.orig	2022-03-25 21:59:56 UTC
+--- net/dns/host_resolver_manager.cc.orig	2022-04-21 18:48:31 UTC
 +++ net/dns/host_resolver_manager.cc
-@@ -2979,7 +2979,7 @@ HostResolverManager::HostResolverManager(
+@@ -2996,7 +2996,7 @@ HostResolverManager::HostResolverManager(
    NetworkChangeNotifier::AddConnectionTypeObserver(this);
    if (system_dns_config_notifier_)
      system_dns_config_notifier_->AddObserver(this);

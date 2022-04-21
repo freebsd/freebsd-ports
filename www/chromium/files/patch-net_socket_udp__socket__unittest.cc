@@ -1,6 +1,6 @@
---- net/socket/udp_socket_unittest.cc.orig	2022-03-25 21:59:56 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2022-04-21 18:48:31 UTC
 +++ net/socket/udp_socket_unittest.cc
-@@ -324,7 +324,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
+@@ -327,7 +327,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
  }
  
@@ -9,25 +9,25 @@
  // - MacOS: requires root permissions on OSX 10.7+.
  // - Android: devices attached to testbots don't have default network, so
  // broadcasting to 255.255.255.255 returns error -109 (Address not reachable).
-@@ -584,7 +584,7 @@ TEST_F(UDPSocketTest, ClientSetDoNotFragment) {
+@@ -587,7 +587,7 @@ TEST_F(UDPSocketTest, ClientSetDoNotFragment) {
      EXPECT_THAT(rv, IsOk());
  
      rv = client.SetDoNotFragment();
--#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_FUCHSIA)
-+#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
- #else
-@@ -606,7 +606,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
+ #elif BUILDFLAG(IS_MAC)
+@@ -615,7 +615,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
      EXPECT_THAT(rv, IsOk());
  
      rv = server.SetDoNotFragment();
--#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_FUCHSIA)
-+#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
- #else
-@@ -665,7 +665,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
+ #elif BUILDFLAG(IS_MAC)
+@@ -680,7 +680,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
  
  // TODO(https://crbug.com/947115): failing on device on iOS 12.2.
  // TODO(https://crbug.com/1227554): flaky on Mac 11.
@@ -36,7 +36,7 @@
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress
  #else
  #define MAYBE_SharedMulticastAddress SharedMulticastAddress
-@@ -719,7 +719,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
+@@ -734,7 +734,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
                                  NetLogSource());
    ASSERT_THAT(client_socket.Connect(send_address), IsOk());
  

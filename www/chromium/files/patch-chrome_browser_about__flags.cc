@@ -1,6 +1,6 @@
---- chrome/browser/about_flags.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/about_flags.cc.orig	2022-04-21 18:48:31 UTC
 +++ chrome/browser/about_flags.cc
-@@ -206,7 +206,7 @@
+@@ -205,7 +205,7 @@
  #include "ui/native_theme/native_theme_features.h"
  #include "ui/ui_features.h"
  
@@ -9,7 +9,7 @@
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -275,7 +275,7 @@
+@@ -277,7 +277,7 @@
  #include "chrome/browser/supervised_user/supervised_user_features/supervised_user_features.h"
  #endif  // ENABLE_SUPERVISED_USERS
  
@@ -18,7 +18,7 @@
  #include "ui/ozone/buildflags.h"
  #include "ui/ozone/public/ozone_switches.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -362,7 +362,7 @@ const FeatureEntry::Choice kUseAngleChoicesMac[] = {
+@@ -364,7 +364,7 @@ const FeatureEntry::Choice kUseAngleChoicesMac[] = {
       gl::kANGLEImplementationMetalName}};
  #endif
  
@@ -27,7 +27,7 @@
  const FeatureEntry::Choice kOzonePlatformHintRuntimeChoices[] = {
      {flag_descriptions::kOzonePlatformHintChoiceDefault, "", ""},
      {flag_descriptions::kOzonePlatformHintChoiceAuto,
-@@ -976,7 +976,7 @@ const FeatureEntry::FeatureVariation kPageContentAnnot
+@@ -1047,7 +1047,7 @@ const FeatureEntry::FeatureVariation kJourneysOnDevice
  };
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -36,7 +36,7 @@
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -3424,7 +3424,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3520,7 +3520,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(chromeos::kLacrosTtsSupport)},
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -45,7 +45,7 @@
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -3838,7 +3838,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3938,7 +3938,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"enable-login-detection", flag_descriptions::kEnableLoginDetectionName,
       flag_descriptions::kEnableLoginDetectionDescription, kOsAll,
       FEATURE_VALUE_TYPE(login_detection::kLoginDetection)},
@@ -54,7 +54,7 @@
      {"enable-navigation-predictor",
       flag_descriptions::kEnableNavigationPredictorName,
       flag_descriptions::kEnableNavigationPredictorDescription,
-@@ -4031,7 +4031,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4138,7 +4138,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kWebShare)},
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
@@ -63,7 +63,7 @@
      {"ozone-platform-hint", flag_descriptions::kOzonePlatformHintName,
       flag_descriptions::kOzonePlatformHintDescription, kOsLinux,
       MULTI_VALUE_TYPE(kOzonePlatformHintRuntimeChoices)},
-@@ -4050,7 +4050,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4157,7 +4157,7 @@ const FeatureEntry kFeatureEntries[] = {
           password_manager::features::kForceInitialSyncWhenDecryptionFails)},
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -72,7 +72,7 @@
      {"skip-undecryptable-passwords",
       flag_descriptions::kSkipUndecryptablePasswordsName,
       flag_descriptions::kSkipUndecryptablePasswordsDescription,
-@@ -4760,7 +4760,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4886,7 +4886,7 @@ const FeatureEntry kFeatureEntries[] = {
                                      "OmniboxBundledExperimentV1")},
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -81,7 +81,7 @@
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -5158,7 +5158,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5299,7 +5299,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -90,7 +90,7 @@
      {"webui-feedback", flag_descriptions::kWebuiFeedbackName,
       flag_descriptions::kWebuiFeedbackDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kWebUIFeedback)},
-@@ -6198,7 +6198,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6363,7 +6363,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -99,25 +99,16 @@
      {"global-media-controls-modern-ui",
       flag_descriptions::kGlobalMediaControlsModernUIName,
       flag_descriptions::kGlobalMediaControlsModernUIDescription,
-@@ -6912,7 +6912,7 @@ const FeatureEntry kFeatureEntries[] = {
- #endif
- 
- #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     {"incognito-clear-browsing-data-dialog-for-desktop",
-      flag_descriptions::kIncognitoClearBrowsingDataDialogForDesktopName,
-      flag_descriptions::kIncognitoClearBrowsingDataDialogForDesktopDescription,
-@@ -7037,7 +7037,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7230,7 +7230,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     {"commander", flag_descriptions::kCommanderName,
-      flag_descriptions::kCommanderDescription, kOsDesktop,
-      FEATURE_VALUE_TYPE(features::kCommander)},
-@@ -7291,7 +7291,7 @@ const FeatureEntry kFeatureEntries[] = {
+     {"quick-commands", flag_descriptions::kQuickCommandsName,
+      flag_descriptions::kQuickCommandsDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(features::kQuickCommands)},
+@@ -7536,7 +7536,7 @@ const FeatureEntry kFeatureEntries[] = {
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -1,14 +1,14 @@
---- base/system/sys_info_openbsd.cc.orig	2022-03-25 21:59:56 UTC
+--- base/system/sys_info_openbsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/system/sys_info_openbsd.cc
-@@ -12,6 +12,7 @@
+@@ -11,6 +11,7 @@
+ #include <sys/sysctl.h>
  
- #include "base/cxx17_backports.h"
  #include "base/notreached.h"
 +#include "base/strings/string_util.h"
  
  namespace {
  
-@@ -29,9 +30,15 @@ int64_t AmountOfMemory(int pages_name) {
+@@ -28,9 +29,15 @@ int64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
@@ -24,8 +24,8 @@
 +  int mib[] = {CTL_HW, HW_NCPUONLINE};
    int ncpu;
    size_t size = sizeof(ncpu);
-   if (sysctl(mib, base::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -43,38 +50,62 @@ int SysInfo::NumberOfProcessors() {
+   if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
+@@ -42,10 +49,26 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -37,23 +37,12 @@
  }
  
  // static
- int64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
-   // We should add inactive file-backed memory also but there is no such
-   // information from OpenBSD unfortunately.
--  return AmountOfMemory(_SC_AVPHYS_PAGES);
-+  // pledge(2)
-+  if (!aofapmem)
-+    aofapmem = AmountOfMemory(_SC_AVPHYS_PAGES);
-+  return aofapmem;
- }
- 
- // static
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = {CTL_HW, HW_MODEL};
-+  size_t len = base::size(cpumodel);
++  size_t len = std::size(cpumodel);
 +
 +  if (cpumodel[0] == '\0') {
-+    if (sysctl(mib, base::size(mib), cpumodel, &len, NULL, 0) < 0)
++    if (sysctl(mib, std::size(mib), cpumodel, &len, NULL, 0) < 0)
 +      return std::string();
 +  }
 +
@@ -61,14 +50,17 @@
 +}
 +
 +// static
- uint64_t SysInfo::MaxSharedMemorySize() {
+ int64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
+   // We should add inactive file-backed memory also but there is no such
+   // information from OpenBSD unfortunately.
+@@ -57,23 +80,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);
 +  // pledge(2)
 +  if (shmmax)
 +    goto out;
-   if (sysctl(mib, base::size(mib), &limit, &size, NULL, 0) < 0) {
+   if (sysctl(mib, std::size(mib), &limit, &size, NULL, 0) < 0) {
      NOTREACHED();
      return 0;
    }
@@ -82,8 +74,8 @@
 -std::string SysInfo::CPUModelName() {
 -  int mib[] = {CTL_HW, HW_MODEL};
 -  char name[256];
--  size_t len = base::size(name);
--  if (sysctl(mib, base::size(mib), name, &len, NULL, 0) < 0) {
+-  size_t len = std::size(name);
+-  if (sysctl(mib, std::size(mib), name, &len, NULL, 0) < 0) {
 -    NOTREACHED();
 -    return std::string();
 -  }

@@ -1,6 +1,6 @@
---- sandbox/policy/features.cc.orig	2022-02-28 16:54:41 UTC
+--- sandbox/policy/features.cc.orig	2022-04-21 18:48:31 UTC
 +++ sandbox/policy/features.cc
-@@ -16,7 +16,11 @@ namespace features {
+@@ -14,7 +14,11 @@ namespace sandbox::policy::features {
  // Enables network service sandbox.
  // (Only causes an effect when feature kNetworkService is enabled.)
  const base::Feature kNetworkServiceSandbox{"NetworkServiceSandbox",
