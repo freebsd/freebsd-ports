@@ -1,6 +1,6 @@
---- net/socket/udp_socket_posix.cc.orig	2022-04-15 05:34:28 UTC
+--- net/socket/udp_socket_posix.cc.orig	2022-04-21 18:48:31 UTC
 +++ net/socket/udp_socket_posix.cc
-@@ -574,7 +574,7 @@ int UDPSocketPosix::SetDoNotFragment() {
+@@ -620,7 +620,7 @@ int UDPSocketPosix::SetDoNotFragment() {
  }
  
  void UDPSocketPosix::SetMsgConfirm(bool confirm) {
@@ -9,7 +9,7 @@
    if (confirm) {
      sendto_flags_ |= MSG_CONFIRM;
    } else {
-@@ -595,7 +595,7 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
+@@ -641,7 +641,7 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
    DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
    int value = broadcast ? 1 : 0;
    int rv;

@@ -1,12 +1,14 @@
---- base/process/process_handle_freebsd.cc.orig	2021-09-24 04:25:55 UTC
+--- base/process/process_handle_freebsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/process/process_handle_freebsd.cc
-@@ -12,15 +12,19 @@
- #include <unistd.h>
+@@ -3,6 +3,7 @@
+ // found in the LICENSE file.
  
- #include "base/cxx17_backports.h"
-+#include "base/files/file_path.h"
+ #include "base/process/process_handle.h"
++#include "base/files/file_util.h"
  
- namespace base {
+ #include <limits.h>
+ #include <stddef.h>
+@@ -15,10 +16,13 @@ namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
    struct kinfo_proc info;
@@ -14,7 +16,7 @@
 +  size_t length = sizeof(struct kinfo_proc);
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process };
  
-   if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
+   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
 +    return -1;
 +
 +  if (length < sizeof(struct kinfo_proc))

@@ -1,6 +1,6 @@
---- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2022-04-21 18:48:31 UTC
 +++ chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
-@@ -749,7 +749,7 @@ bool ChromeAuthenticatorRequestDelegate::ShouldPermitC
+@@ -869,7 +869,7 @@ bool ChromeAuthenticatorRequestDelegate::ShouldPermitC
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete. If updating this, also update
    // kWebAuthCableServerLink.

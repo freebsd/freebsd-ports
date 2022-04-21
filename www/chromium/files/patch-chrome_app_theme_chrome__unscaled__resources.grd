@@ -1,4 +1,4 @@
---- chrome/app/theme/chrome_unscaled_resources.grd.orig	2022-03-25 21:59:56 UTC
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2022-04-21 18:48:31 UTC
 +++ chrome/app/theme/chrome_unscaled_resources.grd
 @@ -15,12 +15,12 @@
    <release seq="1">
@@ -15,7 +15,7 @@
            <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/linux/product_logo_64.png" type="BINDATA" />
            <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/linux/product_logo_128.png" type="BINDATA" />
            <include name="IDR_PRODUCT_LOGO_128_BETA" file="google_chrome/linux/product_logo_128_beta.png" type="BINDATA" />
-@@ -52,12 +52,12 @@
+@@ -53,12 +53,12 @@
          </if>
        </if>
        <if expr="not _google_chrome">

@@ -1,11 +1,12 @@
---- content/utility/utility_main.cc.orig	2022-02-28 16:54:41 UTC
+--- content/utility/utility_main.cc.orig	2022-04-21 18:48:31 UTC
 +++ content/utility/utility_main.cc
-@@ -32,16 +32,22 @@
+@@ -32,17 +32,23 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"
  #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
  #if BUILDFLAG(ENABLE_PRINTING)
  #include "printing/sandbox/print_backend_sandbox_hook_linux.h"
@@ -24,7 +25,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "ash/services/ime/ime_sandbox_hook.h"
  #include "chromeos/assistant/buildflags.h"
-@@ -135,7 +141,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -136,7 +142,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -33,7 +34,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -179,6 +185,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -183,6 +189,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -41,7 +42,7 @@
    if (parameters.zygote_child || !pre_sandbox_hook.is_null()) {
      sandbox::policy::SandboxLinux::Options sandbox_options;
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -194,6 +201,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -198,6 +205,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

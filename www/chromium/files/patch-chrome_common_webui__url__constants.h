@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.h.orig	2022-03-25 21:59:56 UTC
+--- chrome/common/webui_url_constants.h.orig	2022-04-21 18:48:31 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -371,24 +371,24 @@ extern const char kOsUIFlagsURL[];
+@@ -376,24 +376,24 @@ extern const char kOsUIFlagsURL[];
  extern const char kOsUIVersionURL[];
  #endif
  
@@ -11,8 +11,8 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_CHROMEOS_ASH)
++    BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
  extern const char kChromeUIConnectorsInternalsHost[];
  #endif
  
@@ -29,7 +29,7 @@
  extern const char kChromeUIWebAppSettingsURL[];
  extern const char kChromeUIWebAppSettingsHost[];
  #endif
-@@ -403,14 +403,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -408,14 +408,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -42,11 +42,11 @@
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  extern const char kChromeUIEnterpriseProfileWelcomeHost[];
-@@ -422,7 +422,7 @@ extern const char kChromeUIProfilePickerUrl[];
+@@ -427,7 +427,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

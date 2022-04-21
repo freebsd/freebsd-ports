@@ -1,4 +1,4 @@
---- base/process/process_iterator_openbsd.cc.orig	2022-02-07 13:39:41 UTC
+--- base/process/process_iterator_openbsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/process/process_iterator_openbsd.cc
 @@ -6,6 +6,9 @@
  
@@ -9,8 +9,8 @@
 +#include <sys/proc.h>
  #include <sys/sysctl.h>
  
- #include "base/cxx17_backports.h"
-@@ -19,12 +22,13 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+ #include "base/logging.h"
+@@ -18,12 +21,13 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
      : index_of_kinfo_proc_(),
        filter_(filter) {
  
@@ -25,7 +25,7 @@
  
    do {
      size_t len = 0;
-@@ -33,7 +37,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -32,7 +36,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
        kinfo_procs_.resize(0);
        done = true;
      } else {
@@ -34,7 +34,7 @@
        // Leave some spare room for process table growth (more could show up
        // between when we check and now)
        num_of_kinfo_proc += 16;
-@@ -49,7 +53,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -48,7 +52,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
          }
        } else {
          // Got the list, just make sure we're sized exactly right

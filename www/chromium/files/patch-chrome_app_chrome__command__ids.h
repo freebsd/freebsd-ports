@@ -1,4 +1,4 @@
---- chrome/app/chrome_command_ids.h.orig	2022-02-28 16:54:41 UTC
+--- chrome/app/chrome_command_ids.h.orig	2022-04-21 18:48:31 UTC
 +++ chrome/app/chrome_command_ids.h
 @@ -66,7 +66,7 @@
  #define IDC_NAME_WINDOW                 34049
@@ -8,4 +8,13 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  #define IDC_USE_SYSTEM_TITLE_BAR        34051
  #define IDC_RESTORE_WINDOW              34052
+ #endif
+@@ -447,7 +447,7 @@
+ #define IDC_CONTENT_CONTEXT_QUICK_ANSWERS_INLINE_QUERY 52414
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Screen AI
+ #define IDC_RUN_SCREEN_AI 52420
  #endif

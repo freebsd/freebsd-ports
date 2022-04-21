@@ -1,6 +1,6 @@
---- components/os_crypt/keyring_util_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- components/os_crypt/keyring_util_linux.cc.orig	2022-04-21 18:48:31 UTC
 +++ components/os_crypt/keyring_util_linux.cc
-@@ -69,12 +69,12 @@ bool GnomeKeyringLoader::LoadGnomeKeyring() {
+@@ -68,12 +68,12 @@ bool GnomeKeyringLoader::LoadGnomeKeyring() {
    if (keyring_loaded)
      return true;
  

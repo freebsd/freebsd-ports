@@ -1,6 +1,6 @@
---- base/files/file_util_posix.cc.orig	2022-02-07 13:39:41 UTC
+--- base/files/file_util_posix.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/files/file_util_posix.cc
-@@ -694,32 +694,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -695,32 +695,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
                                  File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().
@@ -21,29 +21,29 @@
    }
  
    // Iterate through the parents and create the missing ones.
-   for (auto i = subpaths.rbegin(); i != subpaths.rend(); ++i) {
--    if (DirectoryExists(*i))
+   for (const FilePath& subpath : base::Reversed(subpaths)) {
+-    if (DirectoryExists(subpath))
 -      continue;
--    if (mkdir(i->value().c_str(), 0700) == 0)
+-    if (mkdir(subpath.value().c_str(), 0700) == 0)
 -      continue;
 -    // Mkdir failed, but it might have failed with EEXIST, or some other error
 -    // due to the directory appearing out of thin air. This can occur if
 -    // two processes are trying to create the same file system tree at the same
 -    // time. Check to see if it exists and make sure it is a directory.
 -    int saved_errno = errno;
--    if (!DirectoryExists(*i)) {
+-    if (!DirectoryExists(subpath)) {
 -      if (error)
 -        *error = File::OSErrorToFileError(saved_errno);
 -      return false;
-+    if (!PathExists(*i)) {
-+      if ((mkdir(i->value().c_str(), 0700) == -1) &&
-+          ((full_path != *i) ? (errno != ENOENT) : (-1))) {
++    if (!PathExists(subpath)) {
++      if ((mkdir(subpath.value().c_str(), 0700) == -1) &&
++          ((full_path != subpath) ? (errno != ENOENT) : (-1))) {
 +        int saved_errno = errno;
 +        if (error)
 +          *error = File::OSErrorToFileError(saved_errno);
 +        return false;
 +      }
-+    } else if (!DirectoryExists(*i)) {
++    } else if (!DirectoryExists(subpath)) {
 +        if (error)
 +          *error = File::OSErrorToFileError(ENOTDIR);
 +        return false;

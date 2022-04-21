@@ -1,4 +1,4 @@
---- base/process/process_handle_openbsd.cc.orig	2022-02-07 13:39:41 UTC
+--- base/process/process_handle_openbsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ base/process/process_handle_openbsd.cc
 @@ -3,8 +3,11 @@
  // found in the LICENSE file.
@@ -12,7 +12,7 @@
  #include <sys/sysctl.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -14,39 +17,59 @@
+@@ -12,39 +15,59 @@
  namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
@@ -23,16 +23,16 @@
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
                  sizeof(struct kinfo_proc), 0 };
  
-   if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
+   if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0)
      return -1;
  
 +  info = (struct kinfo_proc *)malloc(length);
 +
    mib[5] = (length / sizeof(struct kinfo_proc));
  
--  if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
+-  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
 -    return -1;
-+  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0) {
++  if (sysctl(mib, std::size(mib), info, &length, NULL, 0) < 0) {
 +    ppid = -1;
 +    goto out;
 +  }
@@ -54,11 +54,11 @@
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
                  sizeof(struct kinfo_proc), 0 };
  
--  if (sysctl(mib, base::size(mib), NULL, &len, NULL, 0) == -1)
-+  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) == -1)
+-  if (sysctl(mib, std::size(mib), NULL, &len, NULL, 0) == -1)
++  if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) == -1)
      return FilePath();
 -  mib[5] = (len / sizeof(struct kinfo_proc));
--  if (sysctl(mib, base::size(mib), &kp, &len, NULL, 0) < 0)
+-  if (sysctl(mib, std::size(mib), &kp, &len, NULL, 0) < 0)
 -    return FilePath();
 -  if ((kp.p_flag & P_SYSTEM) != 0)
 -    return FilePath();
@@ -70,7 +70,7 @@
 +
 +  mib[5] = (length / sizeof(struct kinfo_proc));
 +
-+  if (sysctl(mib, base::size(mib), info, &length, NULL, 0) < 0)
++  if (sysctl(mib, std::size(mib), info, &length, NULL, 0) < 0)
 +    goto out;
 +
 +  if ((info->p_flag & P_SYSTEM) != 0)

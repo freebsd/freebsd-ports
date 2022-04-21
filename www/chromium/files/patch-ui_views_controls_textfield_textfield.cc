@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2022-03-25 21:59:56 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2022-04-21 18:48:31 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -73,7 +73,7 @@
  
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1721,7 +1721,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -1723,7 +1723,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2220,14 +2220,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2222,14 +2222,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

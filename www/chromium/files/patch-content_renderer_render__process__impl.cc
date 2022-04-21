@@ -1,6 +1,6 @@
---- content/renderer/render_process_impl.cc.orig	2022-02-28 16:54:41 UTC
+--- content/renderer/render_process_impl.cc.orig	2022-04-21 18:48:31 UTC
 +++ content/renderer/render_process_impl.cc
-@@ -47,7 +47,7 @@
+@@ -48,7 +48,7 @@
  #if BUILDFLAG(IS_WIN)
  #include "base/win/win_util.h"
  #endif
@@ -9,7 +9,7 @@
  #include "v8/include/v8-wasm-trap-handler-posix.h"
  #endif
  
-@@ -146,7 +146,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -147,7 +147,7 @@ RenderProcessImpl::RenderProcessImpl()
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtection,
                          "--no-wasm-write-protect-code-memory");
  
@@ -18,7 +18,7 @@
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -227,7 +227,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -228,7 +228,7 @@ RenderProcessImpl::RenderProcessImpl()
    SetV8FlagIfFeature(features::kWebAssemblyDynamicTiering,
                       "--wasm-dynamic-tiering");
  
