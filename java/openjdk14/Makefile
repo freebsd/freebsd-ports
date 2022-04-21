@@ -26,6 +26,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 
+DEPRECATED=	EOLed since 30 september 2020
+EXPIRATION_DATE=	2022-05-21
+
 USES=		compiler:features cpe gmake iconv jpeg pkgconfig xorg
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
 
