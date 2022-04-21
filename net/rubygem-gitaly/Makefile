@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-PORTVERSION=	14.9.0.pre.rc4
+PORTVERSION=	14.10.0.pre.rc1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
